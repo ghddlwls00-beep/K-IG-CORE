@@ -1,0 +1,70 @@
+{
+  "id": "qa111-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa111",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 111-1 〕",
+  "menuLabel": null,
+  "unit": 11,
+  "part": 1,
+  "order": 266,
+  "audio": [
+    {
+      "src": "/audio/basics/qa111.mp3",
+      "legacySrc": "sounds/qa111.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 111-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(토요일 오후) → 토요일에는 무엇이 다릅니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What is different on Saturdays?"
+        },
+        {
+          "n": "A",
+          "text": "On Saturdays, we only have morning classes."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 토요일에는 무엇이 다릅니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 토요일에 우리는 오전에만 수업이 있어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa111-1.htm",
+  "legacyEncoding": "utf-8"
+}

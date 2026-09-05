@@ -1,0 +1,70 @@
+{
+  "id": "qa092-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa092",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 092-1 〕",
+  "menuLabel": null,
+  "unit": 9,
+  "part": 2,
+  "order": 218,
+  "audio": [
+    {
+      "src": "/audio/basics/qa092.mp3",
+      "legacySrc": "sounds/qa092.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 092-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(아침에 2 ) → 아침에 당신은 무엇을 합니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What do you do in the morning?"
+        },
+        {
+          "n": "A",
+          "text": "I clean my room and go jogging with my dog. After jogging, I take a shower. I have breakfast at 7:30 AM and go to school around 8:00. I have four classes that start at 9:00."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 아침에 당신은 무엇을 합니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 난 나의 방을 청소하고, 나의 개와 함께 조깅하러 가. 조깅이 끝난 후에, 난 샤워를 해. 난 오전 7시 반에 아침식사를 하고, 8시경에 학교에 가. 난 9시에 시작되는 4교시 수업이 있어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa092-1.htm",
+  "legacyEncoding": "utf-8"
+}

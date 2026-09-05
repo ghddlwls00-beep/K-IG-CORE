@@ -1,0 +1,70 @@
+{
+  "id": "qa051-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa051",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 051-1 〕",
+  "menuLabel": null,
+  "unit": 5,
+  "part": 1,
+  "order": 118,
+  "audio": [
+    {
+      "src": "/audio/basics/qa051.mp3",
+      "legacySrc": "sounds/qa051.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 051-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(바쁜 아침) → 당신의 아침은 어떻습니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "How many students are there in your class?"
+        },
+        {
+          "n": "A",
+          "text": "There are 30 students in my class: 15 boys and 15 girls."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신의 아침은 어떻습니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 난 늦잠을 자기 때문에 학교에 종종 늦어. 나의 가족은 너무 바빠서 우리는 함께 아침식사 조차 할 수 없어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa051-1.htm",
+  "legacyEncoding": "utf-8"
+}

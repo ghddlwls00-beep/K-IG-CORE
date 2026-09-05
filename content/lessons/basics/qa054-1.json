@@ -1,0 +1,70 @@
+{
+  "id": "qa054-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa054",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 054-1 〕",
+  "menuLabel": null,
+  "unit": 5,
+  "part": 4,
+  "order": 130,
+  "audio": [
+    {
+      "src": "/audio/basics/qa054.mp3",
+      "legacySrc": "sounds/qa054.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 054-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(아침 전달사항들) → 당신은 아침에 어떤 일과들을 따릅니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What is your favorite part of school?"
+        },
+        {
+          "n": "A",
+          "text": "My favorite part of school is recess and physical education class. I love playing with my classmates."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 아침에 어떤 일과들을 따릅니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 우리 선생님은 수업이 시작하기 전에 출석을 부르셔. 그녀는 또한 우리에게 그 날의 공지사항을 전하셔.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa054-1.htm",
+  "legacyEncoding": "utf-8"
+}

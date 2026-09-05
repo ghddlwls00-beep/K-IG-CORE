@@ -1,0 +1,70 @@
+{
+  "id": "qa203-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa203",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 203-1 〕",
+  "menuLabel": null,
+  "unit": 20,
+  "part": 3,
+  "order": 460,
+  "audio": [
+    {
+      "src": "/audio/basics/qa203.mp3",
+      "legacySrc": "sounds/qa203.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 203-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(경주) → 경주는 왜 특별합니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "Why is Gyeongju special?"
+        },
+        {
+          "n": "A",
+          "text": "Gyeongju was the ancient capital of the Silla Kingdom. Many consider it a museum without walls because so many historic relics remain from the Silla dynasty."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 경주는 왜 특별합니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 경주는 신라 왕국의 옛 수도 였어. 신라는 8세기에 가장 강력했던 왕국 이었어. 많은 사람들은 경주가 벽 없는 박물관이라고 생각해. 신라 왕조로부터 아직까지 남아 있는 많은 유적지들이 있어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa203-1.htm",
+  "legacyEncoding": "utf-8"
+}

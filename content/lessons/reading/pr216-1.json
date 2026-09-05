@@ -1,0 +1,47 @@
+{
+  "id": "pr216-1",
+  "course": "reading",
+  "series": "pr",
+  "variant": "script",
+  "pairId": "pr216",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "[ K-IG 교육 Reading 216-1 ]",
+  "menuLabel": "[ pr216-1 ]",
+  "unit": 216,
+  "part": null,
+  "order": 431,
+  "audio": [
+    {
+      "src": "/audio/reading/pr216.mp3",
+      "legacySrc": "sounds/pr216.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "[ K-IG 교육 Reading 216-1 ]"
+    },
+    {
+      "type": "instruction",
+      "text": "얼마를 벌 수 있는지는 물론 중요하지만, 소홀히 하면 훗날 좌절을 낳을 수 있는 똑같이 중요한 다른 고려사항들이 있다. 진정한 흥미가 있는 곳에서는 자기도 모르게 부지런히 일하게 되며, 그러한 상황에서는 성공이 뒤따른다. 일반적으로 승진이나 급여 인상을 의미하는 성공보다 더 중요한 것은, 일이 가져다주는 보상 때문만이 아니라 일 그 자체를 즐기는 데서만 발견될 수 있는 행복이다."
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "reading/pr216-1.htm",
+  "legacyEncoding": "utf-8"
+}

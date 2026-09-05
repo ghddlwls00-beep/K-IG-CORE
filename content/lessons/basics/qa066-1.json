@@ -1,0 +1,70 @@
+{
+  "id": "qa066-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa066",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 066-1 〕",
+  "menuLabel": null,
+  "unit": 6,
+  "part": 6,
+  "order": 164,
+  "audio": [
+    {
+      "src": "/audio/basics/qa066.mp3",
+      "legacySrc": "sounds/qa066.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 066-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(나의 선생님은 조언자 입니다) → 당신 선생님은 어떻게 도와 줍니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "How does your teacher help you?"
+        },
+        {
+          "n": "A",
+          "text": "My teacher always encourages us to set goals to achieve our dreams. She is very kind to all students and helps us develop our talents."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신 선생님은 어떻게 도와 줍니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 나의 선생님은 항상 우리에게 우리의 꿈을 이루기 위해 목표를 세우라고 그녀는 모든 학생에게 매우 친절해 그리고 우리의 재능을 개발하도록",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa066-1.htm",
+  "legacyEncoding": "utf-8"
+}

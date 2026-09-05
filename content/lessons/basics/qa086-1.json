@@ -1,0 +1,70 @@
+{
+  "id": "qa086-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa086",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 086-1 〕",
+  "menuLabel": null,
+  "unit": 8,
+  "part": 6,
+  "order": 208,
+  "audio": [
+    {
+      "src": "/audio/basics/qa086.mp3",
+      "legacySrc": "sounds/qa086.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 086-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(잠자러 가기) → 당신은 몇 시에 자러 갑니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What time do you go to bed?"
+        },
+        {
+          "n": "A",
+          "text": "I usually go to bed around 10 o'clock. Before going to bed, I write in my diary and pack my school bag. My days are very busy, but also a lot of fun."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 몇 시에 자러 갑니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 난 보통 10시경에 잠자러 가. 난 잠자러 가기 전에, 일기를 쓰고, 학교 가방을 준비해. 나의 하루는 매우 바쁘지만 또한 매우 재미있어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa086-1.htm",
+  "legacyEncoding": "utf-8"
+}

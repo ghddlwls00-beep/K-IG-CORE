@@ -1,0 +1,74 @@
+{
+  "id": "qa115-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa115",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 115-1 〕",
+  "menuLabel": null,
+  "unit": 11,
+  "part": 5,
+  "order": 282,
+  "audio": [
+    {
+      "src": "/audio/basics/qa115.mp3",
+      "legacySrc": "sounds/qa115.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 115-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(일요일 아침) → 일요일 아침에 당신 가족은 어디를 갑니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "Where does your family go on Sunday mornings?"
+        },
+        {
+          "n": "A",
+          "text": "We go to church every Sunday morning. I have many friends at church. Other families go hiking, shopping, or have picnics on Sundays."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 일요일 아침에 당신 가족은 어디를 갑니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 우리는 매주 일요일 아침에 교회에 가. 난 교회에 많은 친구들이 있어. 다른 가족들은 일요일에 하이킹을 가거나, 쇼핑을 하거나",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "/ 스포츠를 하기도 해."
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa115-1.htm",
+  "legacyEncoding": "utf-8"
+}

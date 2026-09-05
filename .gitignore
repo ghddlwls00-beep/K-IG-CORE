@@ -1,0 +1,60 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Extracted media — deliberately NOT committed.
+#
+# MP3 and H.264 are already compressed: measured on this archive, gzip saves
+# only 1.9-3.9% on them, so ~2GB stays ~2GB, permanently, in a history that
+# clones in full. These are uploaded to Cloudflare R2 instead — see
+# scripts/upload-media.mjs — and reached via NEXT_PUBLIC_MEDIA_URL.
+#
+# The lesson JSON under content/ IS committed: it is text, ~88% compressible,
+# and diffs properly, so the app builds from a clone without the archive.
+/public/audio
+/public/video
+
+# Old local backup of public/ from before media moved to R2 — huge (~2GB) and
+# no longer needed now that scripts/upload-media.mjs is the source of truth.
+/public.zip
+
+# Scratch files from Claude's automated setup — not part of the app.
+/Claude outputs/

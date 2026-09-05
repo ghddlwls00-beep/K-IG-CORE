@@ -1,0 +1,70 @@
+{
+  "id": "qa184-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa184",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 184-1 〕",
+  "menuLabel": null,
+  "unit": 18,
+  "part": 4,
+  "order": 428,
+  "audio": [
+    {
+      "src": "/audio/basics/qa184.mp3",
+      "legacySrc": "sounds/qa184.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 184-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(추석 2) → 추석에 당신은 어떤 특별한 음식을 먹습니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What special food do you eat on Chuseok?"
+        },
+        {
+          "n": "A",
+          "text": "We make and eat Songpyeon, traditional Korean rice cakes."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 추석에 당신은 어떤 특별한 음식을 먹습니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 우리는 전통 한국 쌀 떡인 송편을 만들어 먹어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa184-1.htm",
+  "legacyEncoding": "utf-8"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "qa013-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa013",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 013-1 〕",
+  "menuLabel": null,
+  "unit": 1,
+  "part": 3,
+  "order": 14,
+  "audio": [
+    {
+      "src": "/audio/basics/qa013.mp3",
+      "legacySrc": "sounds/qa013.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 013-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "( 나이 ) → 당신은 몇 살 입니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "How old are you?"
+        },
+        {
+          "n": "A",
+          "text": "I am 12 years old."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 몇 살 입니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 난 12살 이야.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa013-1.htm",
+  "legacyEncoding": "utf-8"
+}

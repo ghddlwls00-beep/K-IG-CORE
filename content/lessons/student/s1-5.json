@@ -1,0 +1,163 @@
+{
+  "id": "s1-5",
+  "course": "student",
+  "series": "s",
+  "variant": "main",
+  "pairId": null,
+  "title": "Favorite Subject (좋아하는 과목)",
+  "label": "Chapter 1. Self-introduction (자기소개)",
+  "menuLabel": "1-5. Favorite Subject",
+  "unit": 1,
+  "part": 5,
+  "order": 5,
+  "audio": [
+    {
+      "src": "/audio/student/s1-5-1.mp3",
+      "legacySrc": "s1-5.swf#event",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-2.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-3.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-4.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-5.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-6.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-7.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-8.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-9.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-10.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-11.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-12.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-5-13.mp3",
+      "legacySrc": "s1-5.swf#stream",
+      "autoplay": false
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "instruction",
+      "text": "Chapter 1. Self-introduction (자기소개) - Favorite Subject (좋아하는 과목)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "I have been studying English for (3, 4 or 5) years so far."
+        },
+        {
+          "n": "2",
+          "text": "I like studying English because it is fun and exciting to learn."
+        },
+        {
+          "n": "3",
+          "text": "I study English everyday."
+        },
+        {
+          "n": "4",
+          "text": "I study many different subjects at school, but my favorite subject is English."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 학교에서 많은 다른 과목들을 공부하지만 나의 가장 좋아하는 과목은 영어입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 매일 영어공부를 합니다",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "왜냐하면 배우는 것이 재미있고 신이 납니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 많은 다른 과목들을 공부합니다.",
+      "lang": "ko"
+    }
+  ],
+  "legacyPath": "Student/s1-5.html",
+  "legacyEncoding": "euc-kr",
+  "legacyFlash": [
+    "s1-5.swf"
+  ],
+  "chunkDrills": [
+    {
+      "ko": "나는 많은 다른 과목들을 공부합니다.",
+      "en": "I study many different subjects"
+    },
+    {
+      "ko": "(유치원에서) 학교에서",
+      "en": "at (kindergarten) school,"
+    },
+    {
+      "ko": "그러나 나의 가장 좋아하는 과목은 영어입니다.",
+      "en": "but my favorite subject is English."
+    },
+    {
+      "ko": "나는 영어를 공부해 왔습니다.",
+      "en": "I have been studying English"
+    },
+    {
+      "ko": "나는 영어공부하기를 좋아합니다",
+      "en": "I like studying English"
+    },
+    {
+      "ko": "왜냐하면 그것은 재미있고 흥미롭기 때문입니다",
+      "en": "because it is fun and exciting"
+    },
+    {
+      "ko": "배우기에",
+      "en": "to learn."
+    }
+  ]
+}

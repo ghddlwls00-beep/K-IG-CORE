@@ -1,0 +1,47 @@
+{
+  "id": "pr208-1",
+  "course": "reading",
+  "series": "pr",
+  "variant": "script",
+  "pairId": "pr208",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "[ K-IG 교육 Reading 208-1 ]",
+  "menuLabel": "[ pr208-1 ]",
+  "unit": 208,
+  "part": null,
+  "order": 415,
+  "audio": [
+    {
+      "src": "/audio/reading/pr208.mp3",
+      "legacySrc": "sounds/pr208.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "[ K-IG 교육 Reading 208-1 ]"
+    },
+    {
+      "type": "instruction",
+      "text": "우리는 몇 년 동안 이 문제에 대해 알고 있었다. 우리는 관련된 공장의 소유주들과 관리자들에게 경고했고, 그들은 여유가 생기는 대로 오염 방지 장비를 설치하겠다고 약속했다. 물론 우리는 그들이 지금 당장 강을 오염시키는 것을 중단하기를 바라지만, 그들이 많은 세금을 내고 많은 근로자를 고용하고 있기 때문에 강제할 수는 없다. 만약 우리가 그들의 공장을 닫게 한다면 많은 사람들이 일자리를 잃게 될 것이다."
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "reading/pr208-1.htm",
+  "legacyEncoding": "utf-8"
+}

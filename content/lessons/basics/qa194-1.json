@@ -1,0 +1,70 @@
+{
+  "id": "qa194-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa194",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 194-1 〕",
+  "menuLabel": null,
+  "unit": 19,
+  "part": 4,
+  "order": 446,
+  "audio": [
+    {
+      "src": "/audio/basics/qa194.mp3",
+      "legacySrc": "sounds/qa194.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 194-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(언어) → 한글은 언제 발명되었습니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "When was Hangul invented?"
+        },
+        {
+          "n": "A",
+          "text": "In 1443, King Sejong created a unique Korean writing system with scholars. I am very proud of my country and culture."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 한글은 언제 발명되었습니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 1420년에 세종대왕은 학자들에게 독자적인 한국어 표기법을 난 나의 나라와 나의 문화가 자랑스러워.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa194-1.htm",
+  "legacyEncoding": "utf-8"
+}

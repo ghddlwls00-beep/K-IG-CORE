@@ -1,0 +1,47 @@
+{
+  "id": "pr225-1",
+  "course": "reading",
+  "series": "pr",
+  "variant": "script",
+  "pairId": "pr225",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "[ K-IG 교육 Reading 225-1 ]",
+  "menuLabel": "[ pr225-1 ]",
+  "unit": 225,
+  "part": null,
+  "order": 449,
+  "audio": [
+    {
+      "src": "/audio/reading/pr225.mp3",
+      "legacySrc": "sounds/pr225.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "[ K-IG 교육 Reading 225-1 ]"
+    },
+    {
+      "type": "instruction",
+      "text": "어떤 사람들은 '첫눈에 반하는 사랑'을 주장하지만, 나는 그들이 진정하고 다시 한 번 살펴보기를 권한다. 첫눈에 반하는 사랑 같은 것은 없다. 첫눈에 반하게 만드는 매력적인 특징들 중 일부가 진실되고 오래 지속되는 것으로 밝혀질 수도 있지만, 동화 같은 공식을 너무 믿지는 마라."
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "reading/pr225-1.htm",
+  "legacyEncoding": "utf-8"
+}

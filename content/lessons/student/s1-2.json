@@ -1,0 +1,127 @@
+{
+  "id": "s1-2",
+  "course": "student",
+  "series": "s",
+  "variant": "main",
+  "pairId": null,
+  "title": "Name, School & Age (이름, 학교 및 나이)",
+  "label": "Chapter 1. Self-introduction (자기소개)",
+  "menuLabel": "1-2. Name, School & Age",
+  "unit": 1,
+  "part": 2,
+  "order": 2,
+  "audio": [
+    {
+      "src": "/audio/student/s1-2-1.mp3",
+      "legacySrc": "s1-2.swf#event",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-2.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-3.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-4.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-5.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-6.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-7.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-8.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    },
+    {
+      "src": "/audio/student/s1-2-9.mp3",
+      "legacySrc": "s1-2.swf#stream",
+      "autoplay": false
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "instruction",
+      "text": "Chapter 1. Self-introduction (자기소개) - Name, School & Age (이름, 학교 및 나이)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "My name is Hong Gil Dong, and I live in Seoul."
+        },
+        {
+          "n": "2",
+          "text": "I live at 한국Apartment."
+        },
+        {
+          "n": "3",
+          "text": "I am a 4th grade student at 한국 Elementary School."
+        },
+        {
+          "n": "4",
+          "text": "I am 11 years old."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "나의 이름은 홍길동입니다 그리고 나는 서울에 삽니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 한국아파트에 삽니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 한국 초등학교 4학년입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 11살 입니다.",
+      "lang": "ko"
+    }
+  ],
+  "legacyPath": "Student/s1-2.html",
+  "legacyEncoding": "euc-kr",
+  "legacyFlash": [
+    "s1-2.swf"
+  ],
+  "chunkDrills": [
+    {
+      "ko": "나의 이름은 홍길동입니다.",
+      "en": "My name is Hong Gil Dong."
+    },
+    {
+      "ko": "그리고 나는 서울에 삽니다",
+      "en": "and I live in Seoul."
+    },
+    {
+      "ko": "한국 초등학교에서",
+      "en": "at 한국 Elementary School."
+    }
+  ]
+}

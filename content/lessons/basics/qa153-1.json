@@ -1,0 +1,70 @@
+{
+  "id": "qa153-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa153",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 153-1 〕",
+  "menuLabel": null,
+  "unit": 15,
+  "part": 3,
+  "order": 366,
+  "audio": [
+    {
+      "src": "/audio/basics/qa153.mp3",
+      "legacySrc": "sounds/qa153.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 153-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(내가 그를 존경하는 이유 1) → 당신은 왜 그(히딩크)를 존경합니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "Why do you admire Guus Hiddink?"
+        },
+        {
+          "n": "A",
+          "text": "Despite numerous challenges, he never lost confidence. By emphasizing the basics and working hard, he led the Korean team all the way to the World Cup semifinals."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 왜 그(히딩크)를 존경합니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 많은 어려움 에도 불구하고 그분은 자신감을 절대 잃지 않으셨어. 그분은 항상 승리하기 위해서는 기초부터 시작해야 한다는 것을 열심히 노력함으로서, 그분은 한국팀을 월드컵 준결승까지",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa153-1.htm",
+  "legacyEncoding": "utf-8"
+}

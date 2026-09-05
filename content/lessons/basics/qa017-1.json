@@ -1,0 +1,70 @@
+{
+  "id": "qa017-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa017",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 017-1 〕",
+  "menuLabel": null,
+  "unit": 1,
+  "part": 7,
+  "order": 30,
+  "audio": [
+    {
+      "src": "/audio/basics/qa017.mp3",
+      "legacySrc": "sounds/qa017.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 017-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "( 과목 ) → 당신의 가장 좋아하는 과목은 무엇입니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What is your favorite subject?"
+        },
+        {
+          "n": "A",
+          "text": "My favorite subject is English. So I study English every day."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신의 가장 좋아하는 과목은 무엇입니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 내가 가장 좋아하는 과목은 영어 야. 그래서 난 매일 영어를 공부해.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa017-1.htm",
+  "legacyEncoding": "utf-8"
+}

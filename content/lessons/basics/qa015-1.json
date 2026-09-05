@@ -1,0 +1,70 @@
+{
+  "id": "qa015-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa015",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 015-1 〕",
+  "menuLabel": null,
+  "unit": 1,
+  "part": 5,
+  "order": 22,
+  "audio": [
+    {
+      "src": "/audio/basics/qa015.mp3",
+      "legacySrc": "sounds/qa015.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 015-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "( 성격 ) → 당신은 어떤 성격을 가지고 있습니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What is your personality like?"
+        },
+        {
+          "n": "A",
+          "text": "I am kind of an active person. I have many friends. Most people like me."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 어떤 성격을 가지고 있습니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 난 좀 활동적인 사람 이야. 난 많은 친구들이 있어. 대부분 사람들은 나를 좋아해.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa015-1.htm",
+  "legacyEncoding": "utf-8"
+}

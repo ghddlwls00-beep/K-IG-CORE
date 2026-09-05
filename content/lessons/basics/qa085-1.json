@@ -1,0 +1,70 @@
+{
+  "id": "qa085-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa085",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 085-1 〕",
+  "menuLabel": null,
+  "unit": 8,
+  "part": 5,
+  "order": 204,
+  "audio": [
+    {
+      "src": "/audio/basics/qa085.mp3",
+      "legacySrc": "sounds/qa085.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 085-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(TV 보기 2) → 당신은 어떤 프로그램을 보기를 좋아합니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What kind of programs do you like to watch?"
+        },
+        {
+          "n": "A",
+          "text": "I like watching sports and comedy programs. But my dad likes watching the news."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 어떤 프로그램을 보기를 좋아합니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 난 스포츠와 코미디 프로그램 보는 것을 좋아해. 하지만 나의 아빠는 뉴스 보는 것을 좋아하셔.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa085-1.htm",
+  "legacyEncoding": "utf-8"
+}

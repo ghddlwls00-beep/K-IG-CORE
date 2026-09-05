@@ -1,0 +1,70 @@
+{
+  "id": "qa141-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa141",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 141-1 〕",
+  "menuLabel": null,
+  "unit": 14,
+  "part": 1,
+  "order": 344,
+  "audio": [
+    {
+      "src": "/audio/basics/qa141.mp3",
+      "legacySrc": "sounds/qa141.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 141-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(나의 미래의 꿈) → 당신이 어른이 되면 어떤 사람이 되기를 원합니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What do you want to become when you grow up?"
+        },
+        {
+          "n": "A",
+          "text": "There are so many careers in the world that it is hard to choose just one. I have changed my mind several times, but now my dream is to become a teacher."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신이 어른이 되면 어떤 사람이 되기를 원합니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 세상에는 많은 직업이 있어. 단지 하나를 선택하기란 매우 어려워. 난 무엇이 될까에 대해 나의 마음을 여러 번 바꿨어. 지금 내 꿈은 선생님이 되는 것 이야.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa141-1.htm",
+  "legacyEncoding": "utf-8"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "pr151-1",
+  "course": "reading",
+  "series": "pr",
+  "variant": "script",
+  "pairId": "pr151",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "[ K-IG 교육 Reading 151-1 ]",
+  "menuLabel": "[ pr151-1 ]",
+  "unit": 151,
+  "part": null,
+  "order": 301,
+  "audio": [
+    {
+      "src": "/audio/reading/pr151.mp3",
+      "legacySrc": "sounds/pr151.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "[ K-IG 교육 Reading 151-1 ]"
+    },
+    {
+      "type": "instruction",
+      "text": "노무현 대통령과 차베스 대통령 사이에 몇 가지 두드러진 유사점이 있다는 점은 흥미롭다. 한국 대통령의 관점은 부의 재분배에 대한 뚜렷한 의지와 지지자들의 반미주의라는 공통점을 가지고 있다는 점에서 현재 남미에서 승리를 축하하고 있는 그 인물과 상당히 유사하다. 노 대통령이 최근 탄핵에서 벗어난 점도 흥미로운 비교 대상이 된다."
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "reading/pr151-1.htm",
+  "legacyEncoding": "utf-8"
+}

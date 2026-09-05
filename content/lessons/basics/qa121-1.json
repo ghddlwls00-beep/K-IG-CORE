@@ -1,0 +1,70 @@
+{
+  "id": "qa121-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa121",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 121-1 〕",
+  "menuLabel": null,
+  "unit": 12,
+  "part": 1,
+  "order": 296,
+  "audio": [
+    {
+      "src": "/audio/basics/qa121.mp3",
+      "legacySrc": "sounds/qa121.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 121-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(방학 1) → 당신은 학교 방학이 몇 번 있습니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "How many school vacations do you have?"
+        },
+        {
+          "n": "A",
+          "text": "We have two main school vacations. One is in the summer, and the other is in the winter."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 학교 방학이 몇 번 있습니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 우리는 두 개의 주요 학교 방학이 있어. 하나는 여름에 있고, 다른 하나는 겨울에 있어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa121-1.htm",
+  "legacyEncoding": "utf-8"
+}

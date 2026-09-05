@@ -1,0 +1,70 @@
+{
+  "id": "qa181-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa181",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 181-1 〕",
+  "menuLabel": null,
+  "unit": 18,
+  "part": 1,
+  "order": 416,
+  "audio": [
+    {
+      "src": "/audio/basics/qa181.mp3",
+      "legacySrc": "sounds/qa181.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 181-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(한국의 국가 공휴일들 소개) → 당신은 국가공휴일들이 얼마나 많은지 아십니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "Do you know how many national holidays there are?"
+        },
+        {
+          "n": "A",
+          "text": "There are many national holidays in Korea, such as New Year's Day, Arbor Day, Liberation Day, Chuseok, and many more."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신은 국가공휴일들이 얼마나 많은지 아십니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 우리나라에는 많은 공휴일이 있어. 그 공휴일들에는 설날, 식목일, 광복절, 추석 그리고 더 많은 날들이 있어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa181-1.htm",
+  "legacyEncoding": "utf-8"
+}

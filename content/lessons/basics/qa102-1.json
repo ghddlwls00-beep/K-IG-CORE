@@ -1,0 +1,70 @@
+{
+  "id": "qa102-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa102",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 102-1 〕",
+  "menuLabel": null,
+  "unit": 10,
+  "part": 2,
+  "order": 248,
+  "audio": [
+    {
+      "src": "/audio/basics/qa102.mp3",
+      "legacySrc": "sounds/qa102.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 102-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(평일(월～금까지)의 매일) → 당신의 평일(월～금까지)은 어떻습니까 ?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "What are your weekdays like?"
+        },
+        {
+          "n": "A",
+          "text": "My weekdays are similar to other students'. From Monday to Friday, I go to school and academies. Sometimes I feel like I study too much, but I enjoy learning new things and hanging out with my friends."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신의 평일(월～금까지)은 어떻습니까 ?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 나의 평일은 다른 학생들과 비슷해. 월요일부터 금요일까지 난 학교와 학원에 가. 때로는 나는 내가 너무 많이 공부하는 것 처럼 느껴져. 그러나 난 새로운 것들을 배우고 내 친구들과 노는 것이 즐거워.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa102-1.htm",
+  "legacyEncoding": "utf-8"
+}

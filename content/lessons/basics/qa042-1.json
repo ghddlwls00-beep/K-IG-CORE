@@ -1,0 +1,70 @@
+{
+  "id": "qa042-1",
+  "course": "basics",
+  "series": "qa",
+  "variant": "script",
+  "pairId": "qa042",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "〔 K-IG 교육 - 042-1 〕",
+  "menuLabel": null,
+  "unit": 4,
+  "part": 2,
+  "order": 92,
+  "audio": [
+    {
+      "src": "/audio/basics/qa042.mp3",
+      "legacySrc": "sounds/qa042.mp3",
+      "autoplay": true
+    }
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "〔 K-IG 교육 - 042-1 〕"
+    },
+    {
+      "type": "instruction",
+      "text": "(나의 어머니 가족) → 당신 어머니는 몇 명의 형제자매가 있습니까?"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "Q",
+          "text": "How many brothers and sisters does your mother have?"
+        },
+        {
+          "n": "A",
+          "text": "My mother has one younger brother and three younger sisters. My mom is the oldest daughter. My aunts and uncles are all married."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "질문: 당신 어머니는 몇 명의 형제자매가 있습니까?",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "답변: 나의 어머니는 한 명의 남동생과 세 명의 여동생이 있어. 나의 엄마는 장녀 이셔. 나의 삼촌과 이모들은 모두 결혼하셨어.",
+      "lang": "ko"
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "basics/qa042-1.htm",
+  "legacyEncoding": "utf-8"
+}
