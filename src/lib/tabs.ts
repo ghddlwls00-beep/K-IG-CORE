@@ -28,7 +28,7 @@ export const TABS: Tab[] = [
     legacyImage: "VOCA.jpg",
     legacyIndex: "phonics/index.htm",
     courses: ["phonics"],
-    blurb: "Essential 3,877-Word Matrix & AI Pronunciation Clinic",
+    blurb: "Middle & High school vocabulary matrix with pronunciation clinic",
   },
   {
     slug: "grammar1",

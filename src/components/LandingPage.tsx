@@ -134,7 +134,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           className="text-[15px] font-semibold tracking-[0.14em] text-ink"
           style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
         >
-          K-IG ENGLISH
+          K-IG 교육
         </div>
 
         <div className="flex items-center gap-5 sm:gap-7">
