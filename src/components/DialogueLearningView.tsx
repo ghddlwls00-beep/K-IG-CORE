@@ -887,10 +887,10 @@ export function DialogueLearningView({
                         type="button"
                         onClick={() => playAudioSnippet(item.englishText, item.id, item.audioSrc)}
                         className={
-                          "flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-all cursor-pointer " +
+                          "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 min-h-[36px] text-[12px] font-semibold transition-all cursor-pointer " +
                           (isSpeaking
-                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold shadow-xs"
-                            : "border-line text-ink-soft hover:bg-raised hover:text-ink")
+                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 shadow-xs"
+                            : "border-line text-ink-soft hover:bg-raised hover:text-ink active:scale-95")
                         }
                       >
                         <span>{isSpeaking ? "⏹️" : "🔊"}</span>
@@ -909,7 +909,11 @@ export function DialogueLearningView({
                         🔍 영문 가림 상태 (클릭하여 확인하거나 스스로 말해보세요)
                       </div>
                     ) : (
-                      <p className={`font-semibold text-ink tracking-tight ${fontStyles.english}`}>
+                      <p
+                        onClick={() => playAudioSnippet(item.englishText, item.id, item.audioSrc)}
+                        className={`font-semibold text-ink tracking-tight cursor-pointer hover:text-primary transition-colors ${fontStyles.english}`}
+                        title="클릭하여 발음 듣기"
+                      >
                         {item.englishText}
                       </p>
                     )}

@@ -247,10 +247,10 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
                             e.stopPropagation();
                             togglePlaySnippet(item.en, "en");
                           }}
-                          className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer ${
+                          className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 min-h-[36px] text-[12px] font-semibold transition-all cursor-pointer ${
                             playingText === item.en
-                              ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
-                              : "border-line bg-surface text-ink hover:bg-raised"
+                              ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400"
+                              : "border-line bg-surface text-ink hover:bg-raised active:scale-95"
                           }`}
                         >
                           {playingText === item.en ? "⏹️ 정지" : "🔊 원어민 낭독 듣기"}

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
-import { playSentenceQueue, stopSpeech, isSpeaking, type VoiceGender } from "@/lib/speech";
+import { playSentenceQueue, stopSpeech, isSpeaking, unlockMobileAudio, type VoiceGender } from "@/lib/speech";
 
 /**
  * Intelligent Audio Player with native Web Speech API (TTS) Fallback.
@@ -75,6 +75,7 @@ export function AudioPlayer({
   }, [missing, src, ttsActive, fallbackSentences, lang, gender, rate, ttsCurrentIndex]);
 
   function toggle() {
+    unlockMobileAudio();
     if (missing || !src || !hasAudioFile(src)) {
       // Toggle TTS mode
       if (ttsActive) {
@@ -211,7 +212,7 @@ export function AudioPlayer({
           type="button"
           onClick={toggle}
           aria-label={playing ? t("player.pause") : t("player.play")}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-sm cursor-pointer"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer"
         >
           {playing ? (
             <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden>

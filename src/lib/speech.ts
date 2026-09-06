@@ -18,7 +18,19 @@ export interface SpeechState {
   currentIndex: number | null;
 }
 
-let activeUtterance: SpeechSynthesisUtterance | null = null;
+// 0.05-second silent PCM WAV audio to unlock iOS Media Channel & bypass physical mute switch
+const SILENT_WAV =
+  "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+
+let globalAudioCtx: AudioContext | null = null;
+let unlockAudioElement: HTMLAudioElement | null = null;
+
+// Persistent GC root for iOS WebKit
+const activeUtterances = new Set<SpeechSynthesisUtterance>();
+if (typeof window !== "undefined") {
+  (window as unknown as { __kigUtterances?: Set<SpeechSynthesisUtterance> }).__kigUtterances = activeUtterances;
+}
+
 let queue: string[] = [];
 let queueIndex = 0;
 let queueLang = "en";
@@ -27,41 +39,87 @@ let queueGender: VoiceGender = "neutral";
 let onQueueProgress: ((index: number, text: string) => void) | null = null;
 let onQueueEnd: (() => void) | null = null;
 let isQueueRunning = false;
-let lastCancelTime = 0;
 
 // Cached voices
 let cachedVoices: SpeechSynthesisVoice[] = [];
 
 function refreshVoices(): SpeechSynthesisVoice[] {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return [];
-  const v = window.speechSynthesis.getVoices();
-  if (v && v.length > 0) {
-    cachedVoices = v;
+  try {
+    const v = window.speechSynthesis.getVoices();
+    if (v && v.length > 0) {
+      cachedVoices = v;
+    }
+  } catch {
+    // ignore
   }
   return cachedVoices;
 }
 
-// Auto-register voiceschanged listener and iOS audio unlock
-if (typeof window !== "undefined" && "speechSynthesis" in window) {
-  refreshVoices();
-  window.speechSynthesis.onvoiceschanged = () => {
-    refreshVoices();
-  };
+/**
+ * Robustly unlocks the mobile browser audio pipeline (especially iOS Safari & WebKit).
+ * 1. Plays a 0.05s silent audio tag to switch iOS Audio Session from ambient/ringer to media playback.
+ * 2. Resumes AudioContext if suspended.
+ * 3. Resumes SpeechSynthesis if paused.
+ */
+export function unlockMobileAudio(): void {
+  if (typeof window === "undefined") return;
 
-  // iOS Safari audio unlock on first user gesture
-  const unlockAudio = () => {
-    try {
+  // 1. HTML5 Audio element unlock (switches iOS audio session to media channel)
+  try {
+    if (!unlockAudioElement) {
+      unlockAudioElement = new Audio(SILENT_WAV);
+      unlockAudioElement.volume = 0.01;
+    }
+    const p = unlockAudioElement.play();
+    if (p && typeof p.then === "function") {
+      p.catch(() => {});
+    }
+  } catch {
+    // ignore
+  }
+
+  // 2. Web AudioContext unlock
+  try {
+    const AudioCtx =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (AudioCtx) {
+      if (!globalAudioCtx) {
+        globalAudioCtx = new AudioCtx();
+      }
+      if (globalAudioCtx.state === "suspended") {
+        globalAudioCtx.resume().catch(() => {});
+      }
+    }
+  } catch {
+    // ignore
+  }
+
+  // 3. SpeechSynthesis unlock
+  try {
+    if ("speechSynthesis" in window) {
       if (window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
       }
-    } catch {
-      // ignore
     }
-  };
+  } catch {
+    // ignore
+  }
+}
 
-  window.addEventListener("touchstart", unlockAudio, { passive: true });
-  window.addEventListener("touchend", unlockAudio, { passive: true });
-  window.addEventListener("click", unlockAudio, { passive: true });
+// Auto-register voiceschanged listener and iOS audio unlock
+if (typeof window !== "undefined") {
+  if ("speechSynthesis" in window) {
+    refreshVoices();
+    window.speechSynthesis.onvoiceschanged = () => {
+      refreshVoices();
+    };
+  }
+
+  window.addEventListener("touchstart", unlockMobileAudio, { passive: true });
+  window.addEventListener("touchend", unlockMobileAudio, { passive: true });
+  window.addEventListener("click", unlockMobileAudio, { passive: true });
 }
 
 function getVoices(): SpeechSynthesisVoice[] {
@@ -144,7 +202,19 @@ export function speakText(
     return;
   }
 
-  // Ensure speech synthesis engine is awake (critical for iOS Safari)
+  // Activate mobile audio session immediately inside the user gesture
+  unlockMobileAudio();
+
+  // If already speaking or pending, cancel previous speech immediately
+  try {
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+      window.speechSynthesis.cancel();
+    }
+  } catch {
+    // ignore
+  }
+
+  // Ensure speech synthesis engine is not paused
   try {
     if (window.speechSynthesis.paused) {
       window.speechSynthesis.resume();
@@ -164,15 +234,21 @@ export function speakText(
   u.pitch = options.pitch ?? defaultPitch;
 
   const voice = findBestVoice(options.lang ?? "en", gender);
-  if (voice) u.voice = voice;
+  if (voice) {
+    u.voice = voice;
+  }
 
-  u.onstart = () => options.onStart?.();
+  u.onstart = () => {
+    options.onStart?.();
+  };
+
   u.onend = () => {
-    activeUtterance = null;
+    activeUtterances.delete(u);
     options.onEnd?.();
   };
+
   u.onerror = (e) => {
-    activeUtterance = null;
+    activeUtterances.delete(u);
     if (e.error !== "canceled" && e.error !== "interrupted") {
       options.onError?.(e);
     } else {
@@ -180,40 +256,16 @@ export function speakText(
     }
   };
 
-  // Retain utterance reference to prevent GC mid-sentence on iOS WebKit
-  activeUtterance = u;
+  // Retain utterance reference in a global Set to prevent GC mid-sentence on iOS WebKit
+  activeUtterances.add(u);
 
-  // Safe cancellation logic for mobile:
-  // If browser is actively speaking OR cancel was called within the last 60ms,
-  // ensure WebKit settles before queuing the new utterance.
-  const isSpeakingNow = window.speechSynthesis.speaking || window.speechSynthesis.pending;
-  const timeSinceCancel = Date.now() - lastCancelTime;
-
-  if (isSpeakingNow || timeSinceCancel < 60) {
-    try {
-      if (isSpeakingNow) {
-        window.speechSynthesis.cancel();
-        lastCancelTime = Date.now();
-      }
-    } catch {
-      // ignore
-    }
-    setTimeout(() => {
-      try {
-        if (window.speechSynthesis.paused) {
-          window.speechSynthesis.resume();
-        }
-        window.speechSynthesis.speak(u);
-      } catch (err) {
-        options.onError?.(err);
-      }
-    }, 40);
-  } else {
-    try {
-      window.speechSynthesis.speak(u);
-    } catch (err) {
-      options.onError?.(err);
-    }
+  // CRITICAL: Must execute speak() SYNCHRONOUSLY within the user gesture event loop!
+  // Deferring into setTimeout() strips iOS user activation tokens and silences mobile audio.
+  try {
+    window.speechSynthesis.speak(u);
+  } catch (err) {
+    activeUtterances.delete(u);
+    options.onError?.(err);
   }
 }
 
@@ -232,6 +284,8 @@ export function playSentenceQueue(
   stopSpeech();
   if (!sentences || sentences.length === 0) return;
 
+  unlockMobileAudio();
+
   queue = sentences;
   queueIndex = options.startIndex ?? 0;
   queueLang = options.lang ?? "en";
@@ -241,12 +295,8 @@ export function playSentenceQueue(
   onQueueEnd = options.onEnd ?? null;
   isQueueRunning = true;
 
-  // Small delay after stopSpeech() so mobile cancel settles
-  setTimeout(() => {
-    if (isQueueRunning) {
-      playNextInQueue();
-    }
-  }, 40);
+  // Start the first sentence SYNCHRONOUSLY inside the user gesture
+  playNextInQueue();
 }
 
 function playNextInQueue() {
@@ -279,6 +329,7 @@ function playNextInQueue() {
 /** Stop all ongoing speech and clear queue. */
 export function stopSpeech(): void {
   isQueueRunning = false;
+  activeUtterances.clear();
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   try {
     if (window.speechSynthesis.paused) {
@@ -286,12 +337,10 @@ export function stopSpeech(): void {
     }
     if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
       window.speechSynthesis.cancel();
-      lastCancelTime = Date.now();
     }
   } catch {
     // ignore
   }
-  activeUtterance = null;
   queue = [];
   queueIndex = 0;
   onQueueProgress = null;

@@ -345,11 +345,12 @@ export function LessonBody({
             return (
               <div
                 key={idx}
+                onClick={() => playSentence(item.targetText, idx, item.audioSrc)}
                 className={
-                  "group relative rounded-lg border p-4 transition-all duration-150 " +
+                  "group relative rounded-xl border p-4 transition-all duration-150 cursor-pointer select-none " +
                   (isSpeaking
-                    ? "border-ink bg-raised ring-1 ring-ink shadow-sm"
-                    : "border-line bg-surface hover:border-line-strong hover:bg-raised/30")
+                    ? "border-primary bg-primary/[0.04] ring-2 ring-primary/30 shadow-xs"
+                    : "border-line bg-surface hover:border-line-strong hover:bg-raised/40 active:bg-raised/70")
                 }
               >
                 <div className="flex items-start justify-between gap-3">
@@ -365,8 +366,11 @@ export function LessonBody({
                       {studyMode === "koreanOnly" && !isRevealed ? (
                         <button
                           type="button"
-                          onClick={() => toggleReveal(idx)}
-                          className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-3 py-1 font-mono text-[12px] text-ink-soft hover:border-ink hover:text-ink"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleReveal(idx);
+                          }}
+                          className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-3 py-1 font-mono text-[12px] text-ink-soft hover:border-ink hover:text-ink cursor-pointer"
                         >
                           👁️ 영어 확인하기
                         </button>
@@ -386,8 +390,11 @@ export function LessonBody({
                         studyMode === "englishOnly" && !isRevealed ? (
                           <button
                             type="button"
-                            onClick={() => toggleReveal(idx)}
-                            className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-2.5 py-0.5 font-mono text-[11px] text-ink-faint hover:border-ink hover:text-ink"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleReveal(idx);
+                            }}
+                            className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-2.5 py-0.5 font-mono text-[11px] text-ink-faint hover:border-ink hover:text-ink cursor-pointer"
                           >
                             💬 {t("sentence.showTranslation")}
                           </button>
@@ -403,10 +410,13 @@ export function LessonBody({
                   {/* Play Sentence Audio Button */}
                   <button
                     type="button"
-                    onClick={() => playSentence(item.targetText, idx, item.audioSrc)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      playSentence(item.targetText, idx, item.audioSrc);
+                    }}
                     aria-label={isSpeaking ? "정지" : t("sentence.play")}
                     className={
-                      "shrink-0 flex h-8 w-8 items-center justify-center rounded-full border transition-all cursor-pointer " +
+                      "shrink-0 flex h-9 w-9 items-center justify-center rounded-full border transition-all cursor-pointer " +
                       (isSpeaking
                         ? "border-red-500 bg-red-600 text-white scale-105 shadow-xs font-bold"
                         : "border-line bg-surface text-ink-soft hover:border-ink hover:text-ink hover:scale-105 active:scale-95")
@@ -416,7 +426,7 @@ export function LessonBody({
                     {isSpeaking ? (
                       <span className="text-[12px] font-bold">⏹️</span>
                     ) : (
-                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="ml-0.5">
+                      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="ml-0.5">
                         <path d="M4 2.5v11a.5.5 0 0 0 .77.42l8.5-5.5a.5.5 0 0 0 0-.84l-8.5-5.5A.5.5 0 0 0 4 2.5Z" />
                       </svg>
                     )}

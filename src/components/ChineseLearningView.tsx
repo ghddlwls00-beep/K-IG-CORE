@@ -162,10 +162,11 @@ export function ChineseLearningView({
           return (
             <div
               key={idx}
-              className={`flex flex-col gap-2 rounded-2xl border p-5 transition-all shadow-2xs ${
+              onClick={() => playChinese(item.hanzi, idx)}
+              className={`flex flex-col gap-2 rounded-2xl border p-5 transition-all shadow-2xs cursor-pointer select-none ${
                 isPlaying
-                  ? "border-red-600 bg-red-600/[0.03] ring-1 ring-red-600/40 shadow-xs"
-                  : "border-line bg-surface hover:border-line-strong hover:bg-raised/30"
+                  ? "border-red-600 bg-red-600/[0.04] ring-2 ring-red-600/30 shadow-xs"
+                  : "border-line bg-surface hover:border-line-strong hover:bg-raised/30 active:bg-raised/60"
               }`}
             >
               <div className="flex items-center justify-between">
@@ -175,11 +176,14 @@ export function ChineseLearningView({
 
                 <button
                   type="button"
-                  onClick={() => playChinese(item.hanzi, idx)}
-                  className={`flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-all cursor-pointer ${
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    playChinese(item.hanzi, idx);
+                  }}
+                  className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 min-h-[36px] text-[12px] font-semibold transition-all cursor-pointer ${
                     isPlaying
-                      ? "border-red-600 bg-red-600 text-white font-semibold shadow-xs"
-                      : "border-line bg-surface text-ink-soft hover:bg-raised hover:text-ink"
+                      ? "border-red-600 bg-red-600 text-white shadow-xs"
+                      : "border-line bg-surface text-ink-soft hover:bg-raised hover:text-ink active:scale-95"
                   }`}
                   title={isPlaying ? "발음 정지" : "중국어 발음"}
                 >

@@ -689,10 +689,10 @@ export function GrammarLearningView({
                         type="button"
                         onClick={() => playEnglish(item.englishText, item.id)}
                         className={
-                          "flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-all cursor-pointer " +
+                          "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 min-h-[36px] text-[12px] font-semibold transition-all cursor-pointer " +
                           (activeSpeakingId === item.id
-                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold shadow-xs"
-                            : "border-line text-ink-soft hover:bg-raised hover:text-ink")
+                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 shadow-xs"
+                            : "border-line text-ink-soft hover:bg-raised hover:text-ink active:scale-95")
                         }
                         title={activeSpeakingId === item.id ? "정지" : "정답 영어 발음 듣기"}
                       >
