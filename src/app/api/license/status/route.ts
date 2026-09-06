@@ -1,16 +1,25 @@
 import { NextResponse } from "next/server";
 import { loadDeviceRecords } from "@/lib/deviceStorage";
+import { verifyAdminSession } from "@/lib/adminAuth";
+
+export async function GET(request: Request) {
+  if (!verifyAdminSession(request)) {
+    return NextResponse.json(
+      { success: false, error: "관리자 인증이 필요하거나 세션이 만료되었습니다." },
+      { status: 401 },
+    );
+  }
+
+  const records = loadDeviceRecords();
+  return NextResponse.json({ success: true, records });
+}
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { pin } = body;
-
-    // PIN gate check
-    if (pin !== "kig2026!") {
+    if (!verifyAdminSession(request)) {
       return NextResponse.json(
-        { success: false, error: "관리자 인증에 실패했습니다." },
-        { status: 401 }
+        { success: false, error: "관리자 인증이 필요하거나 세션이 만료되었습니다." },
+        { status: 401 },
       );
     }
 
@@ -20,7 +29,7 @@ export async function POST(request: Request) {
     console.error("License status API error:", err);
     return NextResponse.json(
       { success: false, error: "서버 처리 중 오류가 발생했습니다." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

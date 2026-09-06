@@ -5,8 +5,6 @@ import Link from "next/link";
 import { generateLicenseKey, getPlanLabel, type LicensePlan } from "@/lib/license";
 import { getOrCreateDeviceId } from "@/lib/device";
 
-const ADMIN_PIN_KEY = "kig:admin:pin";
-const DEFAULT_PIN = "kig2026!";
 const GENERATED_HISTORY_KEY = "kig:admin:history";
 
 interface HistoryItem {
@@ -35,8 +33,11 @@ interface DeviceRecordMap {
 
 export default function AdminLicensePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [pinInput, setPinInput] = useState("");
   const [pinError, setPinError] = useState(false);
+  const [loginErrorMessage, setLoginErrorMessage] = useState<string | null>(null);
 
   const [selectedPlan, setSelectedPlan] = useState<LicensePlan>("1Y");
   const [quantity, setQuantity] = useState<number>(1);
@@ -50,13 +51,24 @@ export default function AdminLicensePage() {
   const [deviceRecords, setDeviceRecords] = useState<DeviceRecordMap>({});
   const [isRefreshingDevices, setIsRefreshingDevices] = useState(false);
 
-  // Load history on mount
+  // Check server-side admin session on mount
   useEffect(() => {
-    try {
-      const savedAuth = window.sessionStorage.getItem(ADMIN_PIN_KEY);
-      if (savedAuth === "true") {
-        setIsAuthenticated(true);
+    async function checkSession() {
+      try {
+        const res = await fetch("/api/admin/check");
+        const data = await res.json();
+        if (data.authenticated) {
+          setIsAuthenticated(true);
+        }
+      } catch {
+        // ignore
+      } finally {
+        setIsCheckingAuth(false);
       }
+    }
+    checkSession();
+
+    try {
       const raw = window.localStorage.getItem(GENERATED_HISTORY_KEY);
       if (raw) {
         setHistory(JSON.parse(raw));
@@ -77,13 +89,13 @@ export default function AdminLicensePage() {
     setIsRefreshingDevices(true);
     try {
       const res = await fetch("/api/license/status", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pin: DEFAULT_PIN }),
+        method: "GET",
       });
       const data = await res.json();
       if (data.success && data.records) {
         setDeviceRecords(data.records);
+      } else if (res.status === 401) {
+        setIsAuthenticated(false);
       }
     } catch (err) {
       console.error("Failed to fetch device status:", err);
@@ -92,17 +104,43 @@ export default function AdminLicensePage() {
     }
   }
 
-  function handleLogin(e: React.FormEvent) {
+  async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (pinInput.trim() === DEFAULT_PIN) {
-      setIsAuthenticated(true);
-      setPinError(false);
-      try {
-        window.sessionStorage.setItem(ADMIN_PIN_KEY, "true");
-      } catch {}
-    } else {
+    if (!pinInput.trim() || isLoggingIn) return;
+    setIsLoggingIn(true);
+    setPinError(false);
+    setLoginErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin: pinInput.trim() }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setIsAuthenticated(true);
+        setPinInput("");
+      } else {
+        setPinError(true);
+        setLoginErrorMessage(data.error || "관리자 인증에 실패했습니다.");
+      }
+    } catch {
       setPinError(true);
+      setLoginErrorMessage("서버 통신 오류가 발생했습니다.");
+    } finally {
+      setIsLoggingIn(false);
     }
+  }
+
+  async function handleLogout() {
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+    } catch {
+      // ignore
+    }
+    setIsAuthenticated(false);
+    setDeviceRecords({});
   }
 
   async function handleGenerate() {
@@ -130,7 +168,6 @@ export default function AdminLicensePage() {
             key: k,
             maxDevices: maxDevicesPerKey,
             plan: selectedPlan,
-            pin: DEFAULT_PIN,
           }),
         });
       } catch (e) {
@@ -157,7 +194,7 @@ export default function AdminLicensePage() {
       const res = await fetch("/api/license/update-limit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key, maxDevices: newLimit, pin: DEFAULT_PIN }),
+        body: JSON.stringify({ key, maxDevices: newLimit }),
       });
       const data = await res.json();
       if (data.success) {
@@ -234,7 +271,7 @@ export default function AdminLicensePage() {
       const res = await fetch("/api/license/reset", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key, pin: DEFAULT_PIN }),
+        body: JSON.stringify({ key }),
       });
       const data = await res.json();
       if (data.success) {
@@ -261,16 +298,20 @@ export default function AdminLicensePage() {
       </nav>
 
       {/* ADMIN LOGIN PIN GATE */}
-      {!isAuthenticated ? (
+      {isCheckingAuth ? (
+        <div className="mx-auto max-w-md rounded-3xl border border-black/10 bg-white p-12 text-center text-ink-soft text-[14px]">
+          관리자 인증 확인 중...
+        </div>
+      ) : !isAuthenticated ? (
         <div className="mx-auto max-w-md rounded-3xl border border-black/10 bg-white p-8 shadow-xl flex flex-col gap-6 text-center">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/10 text-[26px] self-center">
             🔐
           </div>
 
           <div className="flex flex-col gap-1">
-            <h1 className="text-[20px] font-bold text-ink">관리자 인증</h1>
+            <h1 className="text-[20px] font-bold text-ink">관리자 보안 인증</h1>
             <p className="text-[13px] text-ink-soft">
-              이용권 발급기 접근을 위한 관리자 PIN 번호를 입력해 주세요.
+              이용권 발급 및 기기 관리를 위해 관리자 보안 암호를 입력해 주세요.
             </p>
           </div>
 
@@ -279,22 +320,24 @@ export default function AdminLicensePage() {
               type="password"
               value={pinInput}
               onChange={(e) => setPinInput(e.target.value)}
-              placeholder="관리자 암호 입력 (기본: kig2026!)"
+              placeholder="관리자 암호(PIN) 입력"
               className="w-full rounded-xl border border-black/15 px-4 py-3 text-center font-mono text-[16px] text-ink focus:border-ink focus:outline-none"
               autoFocus
+              disabled={isLoggingIn}
             />
 
-            {pinError && (
-              <span className="text-[12px] text-red-600 font-semibold animate-in fade-in">
-                암호가 올바르지 않습니다.
+            {loginErrorMessage && (
+              <span className="text-[12px] text-red-600 font-semibold animate-in fade-in leading-relaxed">
+                {loginErrorMessage}
               </span>
             )}
 
             <button
               type="submit"
-              className="w-full rounded-xl bg-ink py-3 text-[14px] font-bold text-white hover:bg-black/80 transition-all cursor-pointer shadow-xs"
+              disabled={isLoggingIn}
+              className="w-full rounded-xl bg-ink py-3 text-[14px] font-bold text-white hover:bg-black/80 transition-all cursor-pointer shadow-xs disabled:opacity-50"
             >
-              관리자 모드 접속
+              {isLoggingIn ? "인증 확인 중..." : "관리자 모드 접속"}
             </button>
           </form>
         </div>
@@ -328,13 +371,10 @@ export default function AdminLicensePage() {
               </button>
               <button
                 type="button"
-                onClick={() => {
-                  sessionStorage.removeItem(ADMIN_PIN_KEY);
-                  setIsAuthenticated(false);
-                }}
-                className="rounded-xl border border-black/15 bg-white px-3 py-1.5 text-[12px] font-medium text-ink-soft hover:text-red-600 transition-colors cursor-pointer"
+                onClick={handleLogout}
+                className="rounded-xl border border-red-200 bg-red-50/70 px-3 py-1.5 text-[12px] font-medium text-red-700 hover:bg-red-100 transition-colors cursor-pointer"
               >
-                로그아웃
+                🚪 로그아웃
               </button>
             </div>
           </div>
