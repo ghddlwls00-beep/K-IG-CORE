@@ -1,7 +1,7 @@
 {
   "course": "phonics",
   "tab": "voca",
-  "lessonCount": 197,
+  "lessonCount": 195,
   "groups": [
     {
       "label": "[ 중등01 ]",
@@ -216,13 +216,6 @@
         "hv-73",
         "hv-74",
         "hv-75"
-      ]
-    },
-    {
-      "label": "기타 · Other",
-      "lessons": [
-        "phonics_001",
-        "phonics_002"
       ]
     }
   ],
@@ -2566,30 +2559,6 @@
       "order": 194,
       "hasAudio": true,
       "menuLabel": "[ hv-75 ]"
-    },
-    {
-      "id": "phonics_001",
-      "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초1 | 제 001 회 강의 :::",
-      "label": "[ 제 001 회 ]",
-      "series": null,
-      "variant": "main",
-      "unit": 1,
-      "part": null,
-      "order": 195,
-      "hasAudio": true,
-      "menuLabel": null
-    },
-    {
-      "id": "phonics_002",
-      "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초1 | 제 001 회 강의 :::",
-      "label": "[ 제 001 회 ]",
-      "series": null,
-      "variant": "main",
-      "unit": 2,
-      "part": null,
-      "order": 196,
-      "hasAudio": true,
-      "menuLabel": null
     }
   ]
 }

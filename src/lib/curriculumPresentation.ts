@@ -83,7 +83,6 @@ export function formatGroupTitle(courseSlug: string, rawLabel: string): string {
       "중등03": "중등 단어 3단계 (MV3 Series)",
       "중등04": "중등 단어 4단계 (MV4 Series)",
       "고등 단어": "고등 심화 단어 (HV Series)",
-      "기타 · Other": "단어 기초 및 롤플레잉",
     };
     return map[clean] || (clean.includes("고등") ? "고등 심화 단어 (HV Series)" : clean);
   }
