@@ -618,9 +618,9 @@ export function PhonicsLearningView({
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
             <div className="flex flex-wrap items-center gap-2">
               <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-faint">
-                클러스터 선택 (6단어 단위):
+                클러스터 선택{rows[0] && rows[0].filter(Boolean).length > 0 ? ` (${rows[0].filter(Boolean).length}단어 단위)` : ""}:
               </span>
-              {rows.map((_, rIdx) => (
+              {rows.map((row, rIdx) => (
                 <button
                   key={rIdx}
                   type="button"
@@ -648,7 +648,7 @@ export function PhonicsLearningView({
                     : "border border-line bg-surface text-ink-soft hover:text-ink"
                 }`}
               >
-                {showAllClusters ? "전체 펼쳐보기 닫기" : "전체 36단어 펼쳐보기"}
+                {showAllClusters ? "전체 펼쳐보기 닫기" : `전체 ${totalCount}단어 펼쳐보기`}
               </button>
             </div>
           </div>
@@ -692,7 +692,7 @@ export function PhonicsLearningView({
                           </>
                         ) : (
                           <>
-                            <span>▶ 이 행 6단어 연속 청취</span>
+                            <span>▶ 이 행 {validWords.length}단어 연속 청취</span>
                           </>
                         )}
                       </button>
