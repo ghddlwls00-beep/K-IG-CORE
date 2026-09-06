@@ -28,7 +28,7 @@ export const TABS: Tab[] = [
     legacyImage: "VOCA.jpg",
     legacyIndex: "phonics/index.htm",
     courses: ["phonics"],
-    blurb: "",
+    blurb: "Essential 3,877-Word Matrix & AI Pronunciation Clinic",
   },
   {
     slug: "grammar1",
@@ -36,7 +36,7 @@ export const TABS: Tab[] = [
     legacyImage: "grammar1.gif",
     legacyIndex: "grammar1/index.htm",
     courses: ["grammar1"],
-    blurb: "",
+    blurb: "Foundational English Composition & Sentence Building",
   },
   {
     slug: "grammar2",
@@ -44,7 +44,7 @@ export const TABS: Tab[] = [
     legacyImage: "grammar2.gif",
     legacyIndex: "grammar2/index.htm",
     courses: ["grammar2"],
-    blurb: "",
+    blurb: "Advanced Syntax Exercises & In-Depth Grammar Practice",
   },
   {
     slug: "ld",
@@ -52,7 +52,7 @@ export const TABS: Tab[] = [
     legacyImage: "LD.gif",
     legacyIndex: "LD/index.htm",
     courses: ["ld"],
-    blurb: "",
+    blurb: "수능 및 실전형 듣기 평가: 영문 스크립트와 한글 대본 1:1 연동 및 받아쓰기 시험.",
   },
   {
     slug: "reading",
@@ -60,15 +60,15 @@ export const TABS: Tab[] = [
     legacyImage: "reading.gif",
     legacyIndex: "reading/index.htm",
     courses: ["reading"],
-    blurb: "",
+    blurb: "원어민 내레이션 리딩 본문과 문장별 직독직해 심층 분석 뷰어.",
   },
   {
     slug: "cnn",
-    label: "CNN 뉴스",
+    label: "CNN NEWS",
     legacyImage: "CNN.jpg",
     legacyIndex: "CNN/index.htm",
     courses: ["cnn"],
-    blurb: "",
+    blurb: "CNN 실전 보도 영상, 1:1 보도 대본 완역 대조, 시사 어휘 및 연음 디코딩.",
   },
 ];
 

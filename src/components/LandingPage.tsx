@@ -134,7 +134,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           className="text-[15px] font-semibold tracking-[0.14em] text-ink"
           style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
         >
-          K-IG 교육
+          K-IG ENGLISH
         </div>
 
         <div className="flex items-center gap-5 sm:gap-7">
@@ -233,6 +233,12 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                         {tab.label}
                       </Link>
                     </h2>
+
+                    {tab.blurb ? (
+                      <p className="mt-4 max-w-[580px] text-[clamp(17px,2.2vw,24px)] font-light leading-snug tracking-wide text-ink-soft">
+                        {tab.blurb}
+                      </p>
+                    ) : null}
 
                     <div className="mt-8">
                       <Link
