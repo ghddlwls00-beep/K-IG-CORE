@@ -137,6 +137,15 @@ export interface SentenceItem {
   text: string;
 }
 
+export interface ReadingSentence {
+  /** Stable unique identifier (e.g. reading-001-s001) */
+  id: string;
+  /** Canonical English sentence text */
+  english: string;
+  /** Exact corresponding Korean translation sentence text */
+  korean: string;
+}
+
 export interface Lesson {
   /** Stable id, unique within a course. Derived from the legacy filename. */
   id: string;
@@ -170,6 +179,8 @@ export interface Lesson {
   blocks: Block[];
   /** Phrasal chunk drill breakdowns for progressive speech training */
   chunkDrills?: { en: string; ko: string }[];
+  /** 1:1 Aligned Reading sentences with unique IDs for reading course */
+  readingSentences?: ReadingSentence[];
 
   /** Original file, relative to the archive root. Kept for verification. */
   legacyPath: string;

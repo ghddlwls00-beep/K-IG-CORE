@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState, useRef } from "react";
-import type { Block } from "@/lib/types";
+import type { Block, ReadingSentence } from "@/lib/types";
 import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
@@ -9,6 +9,7 @@ import {
   extractFullReadingPassage,
   generateReadingQuiz,
   generateClozeItems,
+  getReadingSentencesForLesson,
   type KeyWord,
   type ReadingQuestion,
   type ClozeItem,
@@ -21,6 +22,7 @@ interface ReadingLearningViewProps {
   isScript: boolean;
   audioTracks?: { src: string; label?: string }[];
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
+  readingSentences?: ReadingSentence[] | null;
 }
 
 export function ReadingLearningView({
@@ -29,22 +31,60 @@ export function ReadingLearningView({
   lessonKey,
   isScript,
   vocaDictionary = null,
+  readingSentences = null,
 }: ReadingLearningViewProps) {
   // Extract full passages from main and pair blocks (supporting multi-paragraph & section labels like (A), (B), (C))
   const mainText = extractFullReadingPassage(blocks);
   const pairText = extractFullReadingPassage(pairBlocks);
 
-  // Determine English vs Korean passage
+  // Determine English vs Korean fallback passages
   const mainIsEn = isEnglish(mainText);
-  const enPassage = mainIsEn ? mainText : pairText;
-  const koPassage = mainIsEn ? pairText : mainText;
+  const enPassageFallback = mainIsEn ? mainText : pairText;
+  const koPassageFallback = mainIsEn ? pairText : mainText;
 
-  // Aligned sentence pairs for dual & breakdown modes
+  // 1:1 Aligned sentence pairs from canonical data layer
   const sentencePairs = useMemo(() => {
-    const enSents = splitSentences(enPassage);
-    const koSents = splitSentences(koPassage);
-    return alignSentences(enSents, koSents);
-  }, [enPassage, koPassage]);
+    if (readingSentences && readingSentences.length > 0) {
+      return readingSentences.map((s, idx) => ({
+        id: s.id,
+        index: idx,
+        en: s.english,
+        ko: s.korean,
+      }));
+    }
+    const fromDict = getReadingSentencesForLesson(lessonKey);
+    if (fromDict && fromDict.length > 0) {
+      return fromDict.map((s, idx) => ({
+        id: s.id,
+        index: idx,
+        en: s.english,
+        ko: s.korean,
+      }));
+    }
+    const enSents = splitSentences(enPassageFallback);
+    const koSents = splitSentences(koPassageFallback);
+    return alignSentences(enSents, koSents).map((s, idx) => ({
+      id: `fallback-s${idx + 1}`,
+      index: idx,
+      en: s.en,
+      ko: s.ko,
+    }));
+  }, [readingSentences, lessonKey, enPassageFallback, koPassageFallback]);
+
+  // Canonical full text derived from verified 1:1 sentences
+  const enPassage = useMemo(() => {
+    if (sentencePairs.length > 0) {
+      return sentencePairs.map((s) => s.en).join(" ");
+    }
+    return enPassageFallback;
+  }, [sentencePairs, enPassageFallback]);
+
+  const koPassage = useMemo(() => {
+    if (sentencePairs.length > 0) {
+      return sentencePairs.map((s) => s.ko).join(" ");
+    }
+    return koPassageFallback;
+  }, [sentencePairs, koPassageFallback]);
 
   // Total words calculation for WPM
   const wordCount = useMemo(() => {
@@ -159,8 +199,20 @@ export function ReadingLearningView({
   const [clozeAnswers, setClozeAnswers] = useState<Record<number, number>>({});
   const [readingScore, setReadingScore] = useState<number | null>(null);
 
-  // --- Dual Mode Pinned Sentence ---
+  // --- Dual Mode Pinned Sentence & 1:1 Live Hover Translation State ---
   const [pinnedSentence, setPinnedSentence] = useState<number | null>(null);
+  const [hoveredSentenceId, setHoveredSentenceId] = useState<string | null>(null);
+
+  // Active sentence either hovered or pinned
+  const activeSentence = useMemo(() => {
+    if (hoveredSentenceId) {
+      return sentencePairs.find((s) => s.id === hoveredSentenceId) || null;
+    }
+    if (pinnedSentence !== null && sentencePairs[pinnedSentence]) {
+      return sentencePairs[pinnedSentence];
+    }
+    return null;
+  }, [hoveredSentenceId, pinnedSentence, sentencePairs]);
 
   // --- Notes state ---
   const [notes, setNotes] = useState("");
@@ -497,26 +549,32 @@ export function ReadingLearningView({
               </button>
             </div>
 
-            {/* Seamless Paragraph Reading */}
+            {/* Seamless Paragraph Reading with 1:1 Hover Focus */}
             <div className={`${fontClasses} font-serif tracking-normal text-ink text-justify select-none`}>
-              {sentencePairs.map((pair, idx) => {
-                const isPlaying = playingSentence === idx;
+              {sentencePairs.map((pair) => {
+                const isPlaying = playingSentence === pair.index;
+                const isHovered = hoveredSentenceId === pair.id;
 
                 return (
                   <span
-                    key={idx}
-                    onClick={() => playSentenceEn(pair.en, idx)}
+                    key={pair.id}
+                    data-sentence-id={pair.id}
+                    onMouseEnter={() => setHoveredSentenceId(pair.id)}
+                    onMouseLeave={() => setHoveredSentenceId(null)}
+                    onClick={() => playSentenceEn(pair.en, pair.index)}
                     className={
                       "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
                       (isPlaying
                         ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold ring-2 ring-red-500/30"
+                        : isHovered
+                        ? "bg-amber-100 text-amber-950 dark:bg-amber-900/40 dark:text-amber-100 ring-2 ring-amber-400/50 font-medium"
                         : "hover:bg-raised hover:text-primary")
                     }
-                    title="터치하여 발음 청취"
+                    title="터치하여 발음 청취 / 마우스 올려 번역 미리보기"
                   >
                     {showNumbers && (
-                      <sup className="mr-1 select-none font-mono text-[10px] font-bold opacity-60">
-                        [{idx + 1}]
+                      <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isHovered ? "text-amber-700 dark:text-amber-300 opacity-100" : "opacity-60"}`}>
+                        [{pair.index + 1}]
                       </sup>
                     )}
                     <span>{pair.en}</span>{" "}
@@ -524,6 +582,21 @@ export function ReadingLearningView({
                 );
               })}
             </div>
+
+            {/* Quick sentence translation tooltip in Step 1 if hovering */}
+            {activeSentence && (
+              <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-300/80 bg-amber-50/90 dark:border-amber-700/60 dark:bg-amber-950/40 p-3.5 text-[13.5px] animate-in fade-in duration-150 shadow-xs">
+                <span className="shrink-0 rounded bg-amber-200/80 dark:bg-amber-800/60 px-1.5 py-0.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100">
+                  [{activeSentence.index + 1}]
+                </span>
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <span className="font-serif text-[13px] text-ink/80">{activeSentence.en}</span>
+                  <span className="text-amber-950 dark:text-amber-100 font-semibold leading-relaxed">
+                    👉 {activeSentence.ko}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -838,83 +911,136 @@ export function ReadingLearningView({
       {/* STEP 4: ⚖️ 원문 vs 완역 좌우 대조 (Dual Passage Review) */}
       {/* ========================================================================= */}
       {activeTab === "dual" && (
-        <section aria-label="Side-by-Side Dual Reading" className="grid grid-cols-1 gap-6 lg:grid-cols-2 animate-in fade-in duration-200">
-          {/* Left Column: English Passage */}
-          <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
-            <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
-              <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink uppercase tracking-wider border border-line">
-                English Passage (영어 원문)
+        <section aria-label="Side-by-Side Dual Reading" className="flex flex-col gap-4 animate-in fade-in duration-200">
+          {/* Real-time 1:1 Synchronized Hover Translation Banner */}
+          {activeSentence ? (
+            <div className="flex items-start justify-between gap-4 rounded-2xl border border-amber-400/80 bg-amber-50/95 dark:border-amber-600/70 dark:bg-amber-950/40 p-4 shadow-sm transition-all duration-150">
+              <div className="flex items-start gap-3 min-w-0">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 font-mono text-[12px] font-bold text-amber-900 dark:text-amber-200">
+                  #{activeSentence.index + 1}
+                </div>
+                <div className="flex flex-col gap-1 min-w-0">
+                  <div className="font-serif text-[15px] font-semibold text-ink leading-snug">
+                    {activeSentence.en}
+                  </div>
+                  <div className="text-[14px] text-amber-950 dark:text-amber-100 font-medium leading-relaxed">
+                    👉 {activeSentence.ko}
+                  </div>
+                  <div className="font-mono text-[10.5px] text-amber-800/70 dark:text-amber-400/70">
+                    ID: {activeSentence.id}
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => playSentenceEn(activeSentence.en, activeSentence.index)}
+                  className="rounded-xl border border-amber-400/60 bg-amber-200/50 dark:bg-amber-800/40 px-3 py-1.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100 hover:bg-amber-300/50 transition-colors cursor-pointer flex items-center gap-1"
+                >
+                  <span>🔊</span>
+                  <span>발음 듣기</span>
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-between rounded-xl border border-line/70 bg-raised/40 px-4 py-2.5 text-[12.5px] text-ink-soft">
+              <span className="flex items-center gap-2">
+                <span className="text-[14px]">💡</span>
+                <span>마우스를 영어 문장이나 한국어 문장에 올리면(Hover) 1:1로 정확하게 대응하는 번역이 실시간으로 하이라이트됩니다.</span>
               </span>
-              <span className="font-mono text-[11px] text-ink-faint">클릭하여 발음 듣기</span>
+              <span className="font-mono text-[11px] text-ink-faint">1:1 ID 매핑 완료 ({sentencePairs.length}문장)</span>
+            </div>
+          )}
+
+          {/* Dual Columns: Left English, Right Korean */}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {/* Left Column: English Passage */}
+            <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
+              <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
+                <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink uppercase tracking-wider border border-line">
+                  English Passage (영어 원문)
+                </span>
+                <span className="font-mono text-[11px] text-ink-faint">Hover / 클릭 발음 재생</span>
+              </div>
+
+              <div className={`${fontClasses} font-serif text-ink leading-loose text-justify select-none`}>
+                {sentencePairs.map((pair) => {
+                  const isSelected = pinnedSentence === pair.index;
+                  const isHovered = hoveredSentenceId === pair.id;
+                  const isPlaying = playingSentence === pair.index;
+                  const isHighlight = isSelected || isHovered || isPlaying;
+
+                  return (
+                    <span
+                      key={pair.id}
+                      data-sentence-id={pair.id}
+                      onMouseEnter={() => setHoveredSentenceId(pair.id)}
+                      onMouseLeave={() => setHoveredSentenceId(null)}
+                      onClick={() => {
+                        setPinnedSentence((prev) => (prev === pair.index ? null : pair.index));
+                        playSentenceEn(pair.en, pair.index);
+                      }}
+                      className={
+                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
+                        (isHighlight
+                          ? "bg-amber-100 text-amber-950 dark:bg-amber-900/50 dark:text-amber-100 font-semibold shadow-xs ring-2 ring-amber-400"
+                          : "hover:bg-raised hover:text-ink")
+                      }
+                    >
+                      {showNumbers && (
+                        <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isHighlight ? "text-amber-700 dark:text-amber-300 opacity-100" : "opacity-70"}`}>
+                          [{pair.index + 1}]
+                        </sup>
+                      )}
+                      <span>{pair.en}</span>{" "}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className={`${fontClasses} font-serif text-ink leading-loose text-justify select-none`}>
-              {sentencePairs.map((pair, idx) => {
-                const isSelected = pinnedSentence === idx;
-                const isPlaying = playingSentence === idx;
+            {/* Right Column: Korean Passage */}
+            <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
+              <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
+                <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink-soft uppercase tracking-wider border border-line">
+                  Korean Interpretation (한글 완역)
+                </span>
+                <span className="font-mono text-[11px] text-ink-faint">1:1 일치 단락</span>
+              </div>
 
-                return (
-                  <span
-                    key={idx}
-                    onClick={() => {
-                      setPinnedSentence((prev) => (prev === idx ? null : idx));
-                      playSentenceEn(pair.en, idx);
-                    }}
-                    className={
-                      "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
-                      (isSelected || isPlaying
-                        ? "bg-ink text-surface font-semibold shadow-xs ring-2 ring-ink/20"
-                        : "hover:bg-raised hover:text-ink")
-                    }
-                  >
-                    {showNumbers && (
-                      <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isSelected || isPlaying ? "text-surface/80" : "opacity-75"}`}>
-                        [{idx + 1}]
-                      </sup>
-                    )}
-                    <span>{pair.en}</span>{" "}
-                  </span>
-                );
-              })}
-            </div>
-          </div>
+              <div className={`${fontClasses} text-ink/90 leading-loose text-justify select-none`}>
+                {sentencePairs.map((pair) => {
+                  const isSelected = pinnedSentence === pair.index;
+                  const isHovered = hoveredSentenceId === pair.id;
+                  const isPlaying = playingSentence === pair.index;
+                  const isHighlight = isSelected || isHovered || isPlaying;
 
-          {/* Right Column: Korean Passage */}
-          <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
-            <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
-              <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink-soft uppercase tracking-wider border border-line">
-                Korean Interpretation (한글 완역)
-              </span>
-              <span className="font-mono text-[11px] text-ink-faint">1:1 일치 단락</span>
-            </div>
-
-            <div className={`${fontClasses} text-ink/90 leading-loose text-justify select-none`}>
-              {sentencePairs.map((pair, idx) => {
-                const isSelected = pinnedSentence === idx;
-                const isPlaying = playingSentence === idx;
-
-                return (
-                  <span
-                    key={idx}
-                    onClick={() => {
-                      setPinnedSentence((prev) => (prev === idx ? null : idx));
-                    }}
-                    className={
-                      "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
-                      (isSelected || isPlaying
-                        ? "bg-ink text-surface font-semibold shadow-xs ring-2 ring-ink/20"
-                        : "hover:bg-raised hover:text-ink")
-                    }
-                  >
-                    {showNumbers && (
-                      <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isSelected || isPlaying ? "text-surface/80" : "opacity-75"}`}>
-                        [{idx + 1}]
-                      </sup>
-                    )}
-                    <span>{pair.ko}</span>{" "}
-                  </span>
-                );
-              })}
+                  return (
+                    <span
+                      key={pair.id}
+                      data-sentence-id={pair.id}
+                      onMouseEnter={() => setHoveredSentenceId(pair.id)}
+                      onMouseLeave={() => setHoveredSentenceId(null)}
+                      onClick={() => {
+                        setPinnedSentence((prev) => (prev === pair.index ? null : pair.index));
+                      }}
+                      className={
+                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
+                        (isHighlight
+                          ? "bg-amber-100 text-amber-950 dark:bg-amber-900/50 dark:text-amber-100 font-semibold shadow-xs ring-2 ring-amber-400"
+                          : "hover:bg-raised hover:text-ink")
+                      }
+                    >
+                      {showNumbers && (
+                        <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isHighlight ? "text-amber-700 dark:text-amber-300 opacity-100" : "opacity-70"}`}>
+                          [{pair.index + 1}]
+                        </sup>
+                      )}
+                      <span>{pair.ko}</span>{" "}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

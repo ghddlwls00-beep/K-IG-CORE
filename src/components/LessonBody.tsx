@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Block } from "@/lib/types";
+import type { Block, ReadingSentence } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
 import { DictationPanel } from "./DictationPanel";
 import { LdLearningView } from "./LdLearningView";
@@ -46,6 +46,7 @@ export function LessonBody({
   ldEnglishScript = null,
   menTranslations = null,
   vocaDictionary = null,
+  readingSentences = null,
 }: {
   blocks: Block[];
   pairBlocks?: Block[] | null;
@@ -59,6 +60,7 @@ export function LessonBody({
   ldEnglishScript?: { n: string; ko: string; en: string }[] | null;
   menTranslations?: Record<string, string> | null;
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
+  readingSentences?: ReadingSentence[] | null;
 }) {
   const { t } = useLanguage();
 
@@ -86,6 +88,7 @@ export function LessonBody({
         isScript={isScript}
         audioTracks={audioTracks}
         vocaDictionary={vocaDictionary}
+        readingSentences={readingSentences}
       />
     );
   }

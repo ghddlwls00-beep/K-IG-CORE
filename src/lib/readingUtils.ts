@@ -1,7 +1,15 @@
+import type { ReadingSentence } from "./types";
+import readingSentencesData from "./readingSentences.json";
+
 /**
- * Pedagogical utilities for Reading Comprehension Courseware.
- * Powers WPM calculations, Vocabulary Extraction, Syntax Chunking, and Interactive Quizzes.
+ * Get canonical 1:1 aligned reading sentences for any reading lesson key.
+ * Normalizes keys like "reading/pr001", "pr001-1", or "pr001".
  */
+export function getReadingSentencesForLesson(lessonKey: string): ReadingSentence[] {
+  if (!lessonKey) return [];
+  const normalized = lessonKey.replace(/^reading\//, "").replace(/-1$/, "");
+  return (readingSentencesData as Record<string, ReadingSentence[]>)[normalized] || [];
+}
 
 // Comprehensive vocabulary database for reading course passages
 const VOCAB_DATABASE: Record<string, { meaning: string; pos: string }> = {
