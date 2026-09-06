@@ -21,6 +21,7 @@ interface ReadingLearningViewProps {
   lessonKey: string;
   isScript: boolean;
   audioTracks?: { src: string; label?: string }[];
+  vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
 }
 
 export function ReadingLearningView({
@@ -28,6 +29,7 @@ export function ReadingLearningView({
   pairBlocks = null,
   lessonKey,
   isScript,
+  vocaDictionary = null,
 }: ReadingLearningViewProps) {
   // Extract full passages from main and pair blocks (supporting multi-paragraph & section labels like (A), (B), (C))
   const mainText = extractFullReadingPassage(blocks);
@@ -53,10 +55,10 @@ export function ReadingLearningView({
   // Expected reading time in seconds at 180 WPM
   const expectedSeconds = Math.max(15, Math.round((wordCount / 180) * 60));
 
-  // Extract keywords
+  // Extract keywords (up to 14 high-yield academic terms with dictionary integration)
   const keywords: KeyWord[] = useMemo(() => {
-    return extractPassageKeywords(enPassage, 6);
-  }, [enPassage]);
+    return extractPassageKeywords(enPassage, 14, vocaDictionary);
+  }, [enPassage, vocaDictionary]);
 
   // Generate syntactic chunks for each sentence
   const chunkedPairs = useMemo(() => {
@@ -562,9 +564,34 @@ export function ReadingLearningView({
                 본문에 등장한 핵심 단어의 발음과 의미를 먼저 파악하고, 단어 카드를 클릭하여 암기 상태를 확인하세요.
               </p>
             </div>
-            <span className="rounded bg-raised px-2.5 py-0.5 font-mono text-[11.5px] font-semibold text-ink-soft border border-line">
-              총 {keywords.length}개 핵심 어휘
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="rounded bg-raised px-2.5 py-0.5 font-mono text-[11.5px] font-semibold text-ink-soft border border-line">
+                총 {keywords.length}개 핵심 어휘
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  const allRevealed =
+                    keywords.length > 0 &&
+                    keywords.every((kw) => revealedVocaMeaning[kw.word]);
+                  if (allRevealed) {
+                    setRevealedVocaMeaning({});
+                  } else {
+                    const all: Record<string, boolean> = {};
+                    keywords.forEach((kw) => {
+                      all[kw.word] = true;
+                    });
+                    setRevealedVocaMeaning(all);
+                  }
+                }}
+                className="rounded-lg border border-line bg-raised px-3 py-1.5 text-[11.5px] font-medium text-ink hover:bg-surface cursor-pointer transition-colors"
+              >
+                {keywords.length > 0 &&
+                keywords.every((kw) => revealedVocaMeaning[kw.word])
+                  ? "🙈 전체 뜻 가리기"
+                  : "💡 전체 뜻 보기"}
+              </button>
+            </div>
           </div>
 
           {/* Vocabulary Cards Grid */}
@@ -1084,10 +1111,81 @@ function cleanSentenceText(text: string): string {
 
 function splitSentences(text: string): string[] {
   if (!text) return [];
-  return text
+  // Protect abbreviations like Mr., Mrs., Ms., Dr., Prof., etc. from being split
+  const protectedText = text
+    .replace(/\b(Mr|Mrs|Ms|Dr|Prof|Sr|Jr)\.\s+/gi, "$1.__SPACE__")
+    .replace(/\b(U\.S\.|e\.g\.|i\.e\.)\s+/gi, (m) => m.replace(/\s+/g, "__SPACE__"));
+
+  return protectedText
     .split(/(?<=[.?!])\s+/)
-    .map((s) => cleanSentenceText(s))
+    .map((s) => cleanSentenceText(s.replace(/__SPACE__/g, " ")))
     .filter((s) => s.length > 0);
+}
+
+function alignDP(enSents: string[], koSents: string[]): { en: string; ko: string }[] {
+  const N = enSents.length;
+  const M = koSents.length;
+  const dp: number[][] = Array.from({ length: N + 1 }, () => Array(M + 1).fill(Infinity));
+  const parent: ([number, number] | null)[][] = Array.from({ length: N + 1 }, () => Array(M + 1).fill(null));
+
+  dp[0][0] = 0;
+
+  function cost(eText: string, kText: string, di: number, dj: number): number {
+    const elen = eText.length;
+    const klen = kText.length;
+    let base = 0;
+    if (di === 1 && dj === 1) base = 0;
+    else if ((di === 1 && dj === 2) || (di === 2 && dj === 1)) base = 25;
+    else if ((di === 1 && dj === 3) || (di === 3 && dj === 1)) base = 80;
+    else base = 150;
+
+    const diff = elen - klen * 1.7;
+    const varLen = Math.sqrt(elen + klen * 1.7 + 1);
+    const score = Math.pow(diff / varLen, 2);
+    return base + Math.min(score, 100);
+  }
+
+  const moves = [
+    [1, 1],
+    [1, 2],
+    [2, 1],
+    [1, 3],
+    [3, 1],
+  ];
+
+  for (let i = 0; i <= N; i++) {
+    for (let j = 0; j <= M; j++) {
+      if (dp[i][j] === Infinity) continue;
+      for (const [di, dj] of moves) {
+        if (i + di <= N && j + dj <= M) {
+          const eText = enSents.slice(i, i + di).join(" ");
+          const kText = koSents.slice(j, j + dj).join(" ");
+          const c = cost(eText, kText, di, dj);
+          if (dp[i][j] + c < dp[i + di][j + dj]) {
+            dp[i + di][j + dj] = dp[i][j] + c;
+            parent[i + di][j + dj] = [i, j];
+          }
+        }
+      }
+    }
+  }
+
+  let currI = N;
+  let currJ = M;
+  const path: { en: string; ko: string }[] = [];
+  while (currI > 0 || currJ > 0) {
+    const p = parent[currI][currJ];
+    if (!p) break;
+    const [prevI, prevJ] = p;
+    path.push({
+      en: enSents.slice(prevI, currI).join(" "),
+      ko: koSents.slice(prevJ, currJ).join(" "),
+    });
+    currI = prevI;
+    currJ = prevJ;
+  }
+  path.reverse();
+  return path;
 }
 
 function alignSentences(enSents: string[], koSents: string[]) {
@@ -1095,31 +1193,31 @@ function alignSentences(enSents: string[], koSents: string[]) {
   if (enSents.length === 0) return koSents.map((k) => ({ en: "", ko: k }));
   if (koSents.length === 0) return enSents.map((e) => ({ en: e, ko: "" }));
 
+  // If enSents is shorter than koSents, check if any enSent contains a semicolon ';' separating clauses
+  if (enSents.length < koSents.length) {
+    const candidateEn: string[] = [];
+    for (const s of enSents) {
+      if (s.includes(";")) {
+        const parts = s.split(/;\s*/).map(cleanSentenceText).filter(Boolean);
+        if (parts.length > 1) {
+          candidateEn.push(...parts);
+        } else {
+          candidateEn.push(s);
+        }
+      } else {
+        candidateEn.push(s);
+      }
+    }
+    if (candidateEn.length === koSents.length) {
+      enSents = candidateEn;
+    } else if (candidateEn.length > enSents.length && candidateEn.length <= koSents.length) {
+      enSents = candidateEn;
+    }
+  }
+
   if (enSents.length === koSents.length) {
     return enSents.map((en, i) => ({ en, ko: koSents[i] }));
   }
 
-  const result: { en: string; ko: string }[] = [];
-  if (enSents.length < koSents.length) {
-    const numBuckets = enSents.length;
-    const buckets: string[][] = Array.from({ length: numBuckets }, () => []);
-    koSents.forEach((k, idx) => {
-      const bucketIdx = Math.min(Math.floor((idx / koSents.length) * numBuckets), numBuckets - 1);
-      buckets[bucketIdx].push(k);
-    });
-    for (let i = 0; i < numBuckets; i++) {
-      result.push({ en: enSents[i], ko: buckets[i].join(" ") });
-    }
-  } else {
-    const numBuckets = koSents.length;
-    const buckets: string[][] = Array.from({ length: numBuckets }, () => []);
-    enSents.forEach((e, idx) => {
-      const bucketIdx = Math.min(Math.floor((idx / enSents.length) * numBuckets), numBuckets - 1);
-      buckets[bucketIdx].push(e);
-    });
-    for (let i = 0; i < numBuckets; i++) {
-      result.push({ en: buckets[i].join(" "), ko: koSents[i] });
-    }
-  }
-  return result;
+  return alignDP(enSents, koSents);
 }

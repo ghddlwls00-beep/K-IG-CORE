@@ -60,7 +60,7 @@ export default async function LessonPage({
   const menTranslations = ["man", "adults-m", "adults-w", "woman"].includes(course)
     ? getMenTranslations()
     : null;
-  const vocaDictionary = course === "phonics" ? getVocaDictionary() : null;
+  const vocaDictionary = course === "phonics" || course === "reading" ? getVocaDictionary() : null;
 
   // Determine voice profile: Male for MEN tracks, Female for WOMEN tracks
   const voiceGender = getVoiceGender(course, id);

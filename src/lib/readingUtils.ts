@@ -5,11 +5,50 @@
 
 // Comprehensive vocabulary database for reading course passages
 const VOCAB_DATABASE: Record<string, { meaning: string; pos: string }> = {
+  // Common core & high-yield academic reading terms
+  teenager: { meaning: "십 대, 청소년", pos: "n." },
+  question: { meaning: "의문을 제기하다, 질문", pos: "v./n." },
+  blindly: { meaning: "맹목적으로, 무비판적으로", pos: "adv." },
+  accept: { meaning: "받아들이다, 수용하다", pos: "v." },
+  gradually: { meaning: "서서히, 점진적으로", pos: "adv." },
+  aware: { meaning: "자각하는, 알고 있는", pos: "adj." },
+  unique: { meaning: "고유한, 독특한", pos: "adj." },
+  attitude: { meaning: "태도, 자세", pos: "n." },
+  choice: { meaning: "선택, 선택권", pos: "n." },
+  lifestyle: { meaning: "생활 방식, 라이프스타일", pos: "n." },
+  instinct: { meaning: "직감, 본능", pos: "n." },
+  inner: { meaning: "내면의, 내부의", pos: "adj." },
+  sufficient: { meaning: "충분한, 흡족한", pos: "adj." },
+  impulsive: { meaning: "충동적인, 즉흥적인", pos: "adj." },
+  dictate: { meaning: "지시하다, 좌우하다", pos: "v." },
+  basis: { meaning: "근거, 기초", pos: "n." },
+  analyze: { meaning: "분석하다, 검토하다", pos: "v." },
+  trusted: { meaning: "신뢰받는, 믿을 수 있는", pos: "adj." },
+  trust: { meaning: "신뢰하다, 믿다", pos: "v." },
+  observe: { meaning: "관찰하다, 지켜보다", pos: "v." },
+  observation: { meaning: "관찰, 관측", pos: "n." },
+  evaluate: { meaning: "평가하다, 가늠하다", pos: "v." },
+  knowledge: { meaning: "지식, 앎", pos: "n." },
+  situation: { meaning: "상황, 처지", pos: "n." },
+  experience: { meaning: "경험, 체험", pos: "n./v." },
+  judgment: { meaning: "판단, 판정", pos: "n." },
+  judge: { meaning: "판단하다, 심사하다", pos: "v." },
+  distance: { meaning: "거리, 간격", pos: "n." },
+  traffic: { meaning: "교통량, 통행", pos: "n." },
+  route: { meaning: "경로, 노선", pos: "n." },
+  hurry: { meaning: "서두르다", pos: "v." },
+  suddenly: { meaning: "갑자기, 불현듯", pos: "adv." },
+  support: { meaning: "뒷받침하다, 지지하다", pos: "v." },
+  require: { meaning: "요구하다, 필요로 하다", pos: "v." },
+  correct: { meaning: "올바른, 정확한", pos: "adj." },
+  ignore: { meaning: "무시하다, 외면하다", pos: "v." },
+  regret: { meaning: "후회하다, 유감스러워하다", pos: "v." },
   counsel: { meaning: "조언, 상담, 권고", pos: "n." },
   miscommunicate: { meaning: "의사소통이 잘못되다, 오해하다", pos: "v." },
   respect: { meaning: "존중하다, 존경하다", pos: "v." },
   successful: { meaning: "성공적인, 결실 있는", pos: "adj." },
   differently: { meaning: "다르게, 별개로", pos: "adv." },
+  difference: { meaning: "차이점, 다름", pos: "n." },
   differences: { meaning: "차이점, 다름", pos: "n." },
   problem: { meaning: "문제, 난제", pos: "n." },
   problems: { meaning: "문제점들", pos: "n." },
@@ -44,14 +83,12 @@ const VOCAB_DATABASE: Record<string, { meaning: string; pos: string }> = {
   generations: { meaning: "세대들", pos: "n." },
   technology: { meaning: "기술, 과학기술", pos: "n." },
   tradition: { meaning: "전통, 관습", pos: "n." },
-  experience: { meaning: "경험, 체험", pos: "n." },
   influence: { meaning: "영향을 미치다, 영향력", pos: "v." },
   education: { meaning: "교육", pos: "n." },
   educational: { meaning: "교육적인", pos: "adj." },
   individual: { meaning: "개인, 개별의", pos: "n." },
   community: { meaning: "지역사회, 공동체", pos: "n." },
   behavior: { meaning: "행동, 품행", pos: "n." },
-  attitude: { meaning: "태도, 자세", pos: "n." },
   opinion: { meaning: "의견, 견해", pos: "n." },
   decision: { meaning: "결정, 결단", pos: "n." },
   opportunity: { meaning: "기회", pos: "n." },
@@ -72,11 +109,44 @@ const VOCAB_DATABASE: Record<string, { meaning: string; pos: string }> = {
   effective: { meaning: "효과적인, 유효한", pos: "adj." },
   difficulty: { meaning: "어려움, 곤경", pos: "n." },
   advantage: { meaning: "이점, 장점", pos: "n." },
-  disadvantage: { meaning: "불리한 점, 단점", pos: "n." }
+  disadvantage: { meaning: "불리한 점, 단점", pos: "n." },
+  balance: { meaning: "균형, 조화", pos: "n." },
+  rhythm: { meaning: "리듬, 박자", pos: "n." },
+  harmony: { meaning: "조화, 화음", pos: "n." },
+  species: { meaning: "생물 종(種)", pos: "n." },
+  temperature: { meaning: "온도, 기온", pos: "n." },
+  climate: { meaning: "기후", pos: "n." },
+  emotion: { meaning: "감정, 정서", pos: "n." },
+  conscience: { meaning: "양심", pos: "n." },
+  justice: { meaning: "정의, 공정", pos: "n." },
+  morality: { meaning: "도덕성", pos: "n." },
+  curiosity: { meaning: "호기심", pos: "n." },
+  imagination: { meaning: "상상력", pos: "n." },
+  creativity: { meaning: "창의성", pos: "n." },
+  memory: { meaning: "기억, 추억", pos: "n." },
+  friendship: { meaning: "우정, 친교", pos: "n." },
+  courage: { meaning: "용기, 담력", pos: "n." },
+  persistence: { meaning: "끈기, 지속", pos: "n." },
+  achievement: { meaning: "성취, 업적", pos: "n." },
+  failure: { meaning: "실패, 결점", pos: "n." },
+  profession: { meaning: "전문직, 직업", pos: "n." },
+  industry: { meaning: "산업, 근면", pos: "n." },
+  economy: { meaning: "경제, 절약", pos: "n." },
+  resource: { meaning: "자원, 재원", pos: "n." },
+  energy: { meaning: "에너지, 활력", pos: "n." },
+  efficiency: { meaning: "효율성", pos: "n." },
+  innovation: { meaning: "혁신, 쇄신", pos: "n." },
+  evidence: { meaning: "증거, 흔적", pos: "n." },
+  perspective: { meaning: "관점, 시각", pos: "n." },
+  consequence: { meaning: "결과, 중대성", pos: "n." },
+  independence: { meaning: "독립, 자립", pos: "n." },
+  responsibility: { meaning: "책임, 의무", pos: "n." },
+  cooperation: { meaning: "협력, 협동", pos: "n." },
+  contribution: { meaning: "기여, 공헌", pos: "n." },
 };
 
 const STOP_WORDS = new Set([
-  "a", "an", "the", "and", "or", "but", "is", "are", "was", "were", "be", "been",
+  "a", "an", "the", "and", "or", "but", "is", "are", "was", "were", "be", "been", "being",
   "to", "of", "in", "on", "at", "by", "for", "with", "about", "against", "between",
   "into", "through", "during", "before", "after", "above", "below", "from", "up",
   "down", "in", "out", "over", "under", "again", "further", "then", "once", "here",
@@ -85,8 +155,40 @@ const STOP_WORDS = new Set([
   "same", "so", "than", "too", "very", "can", "will", "just", "don", "should",
   "now", "i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us",
   "them", "my", "your", "his", "its", "our", "their", "this", "that", "these",
-  "those", "am", "has", "have", "had", "do", "does", "did", "though"
+  "those", "am", "has", "have", "had", "do", "does", "did", "though", "may",
+  // Common grammatical / functional glue words to skip in reading voca:
+  "however", "sometimes", "become", "became", "begin", "began", "start", "started",
+  "also", "even", "always", "never", "often", "usually", "make", "made", "take", "took",
+  "get", "got", "come", "came", "go", "went", "gone", "know", "knew", "known",
+  "think", "thought", "say", "said", "tell", "told", "see", "saw", "seen",
+  "look", "looked", "give", "gave", "given", "find", "found", "use", "used",
+  "well", "much", "many", "like", "every", "thing", "things", "person", "people",
+  "small", "big", "time", "year", "years", "day", "days", "way", "ways", "first",
+  "second", "good", "better", "best", "new", "little", "put", "another", "instead",
+  "really", "almost", "quite", "rather", "perhaps", "maybe", "probably", "actually",
+  "already", "still", "yet", "what", "which", "who", "whom", "whose"
 ]);
+
+function getWordCandidates(w: string): string[] {
+  const list = [w];
+  if (w.endsWith("ies") && w.length > 4) list.push(w.slice(0, -3) + "y");
+  if (w.endsWith("es") && w.length > 4) list.push(w.slice(0, -2));
+  if (w.endsWith("s") && !w.endsWith("ss") && w.length > 3) list.push(w.slice(0, -1));
+  if (w.endsWith("ied") && w.length > 4) list.push(w.slice(0, -3) + "y");
+  if (w.endsWith("ed") && w.length > 4) {
+    list.push(w.slice(0, -2));
+    list.push(w.slice(0, -1));
+  }
+  if (w.endsWith("ing") && w.length > 5) {
+    list.push(w.slice(0, -3));
+    list.push(w.slice(0, -3) + "e");
+  }
+  if (w.endsWith("ly") && w.length > 4) {
+    list.push(w.slice(0, -2));
+    list.push(w.slice(0, -2) + "e");
+  }
+  return list;
+}
 
 export interface KeyWord {
   word: string;
@@ -94,7 +196,11 @@ export interface KeyWord {
   meaning: string;
 }
 
-export function extractPassageKeywords(enPassage: string, limit = 6): KeyWord[] {
+export function extractPassageKeywords(
+  enPassage: string,
+  limit = 14,
+  vocaDict?: Record<string, { meaning: string; searchWord?: string }> | null
+): KeyWord[] {
   if (!enPassage) return [];
   const words = enPassage
     .toLowerCase()
@@ -103,29 +209,52 @@ export function extractPassageKeywords(enPassage: string, limit = 6): KeyWord[] 
     .filter((w) => w.length >= 4 && !STOP_WORDS.has(w));
 
   const unique = Array.from(new Set(words));
-  const matched: KeyWord[] = [];
-  const unmatched: string[] = [];
+  const result: KeyWord[] = [];
+  const seenStems = new Set<string>();
 
   for (const w of unique) {
-    if (VOCAB_DATABASE[w]) {
-      matched.push({
-        word: w,
-        pos: VOCAB_DATABASE[w].pos,
-        meaning: VOCAB_DATABASE[w].meaning,
-      });
-    } else {
-      unmatched.push(w);
+    if (result.length >= limit) break;
+    const candidates = getWordCandidates(w);
+    const baseStem = candidates[candidates.length - 1];
+
+    if (seenStems.has(baseStem)) continue;
+
+    let matched: KeyWord | null = null;
+    for (const c of candidates) {
+      if (VOCAB_DATABASE[c]) {
+        matched = { word: w, pos: VOCAB_DATABASE[c].pos, meaning: VOCAB_DATABASE[c].meaning };
+        break;
+      }
+      if (vocaDict && vocaDict[c]) {
+        let pos = "n.";
+        if (w.endsWith("ly")) pos = "adv.";
+        else if (w.endsWith("able") || w.endsWith("ive") || w.endsWith("al") || w.endsWith("ous")) pos = "adj.";
+        else if (w.endsWith("ize") || w.endsWith("ate") || w.endsWith("ed") || w.endsWith("ing")) pos = "v.";
+        matched = { word: w, pos, meaning: vocaDict[c].meaning };
+        break;
+      }
+    }
+
+    if (matched) {
+      result.push(matched);
+      seenStems.add(baseStem);
+      seenStems.add(w);
     }
   }
 
-  const result = [...matched];
-  for (const w of unmatched) {
-    if (result.length >= limit) break;
-    result.push({
-      word: w,
-      pos: "n./v.",
-      meaning: "지문 핵심 어휘",
-    });
+  // If still under limit, include any remaining valid content words
+  if (result.length < limit) {
+    for (const w of unique) {
+      if (result.length >= limit) break;
+      if (!seenStems.has(w)) {
+        result.push({
+          word: w,
+          pos: w.endsWith("ly") ? "adv." : w.endsWith("ing") || w.endsWith("ed") ? "v." : "n./adj.",
+          meaning: "지문 핵심 어휘",
+        });
+        seenStems.add(w);
+      }
+    }
   }
 
   return result.slice(0, limit);

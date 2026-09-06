@@ -85,6 +85,7 @@ export function LessonBody({
         lessonKey={lessonKey}
         isScript={isScript}
         audioTracks={audioTracks}
+        vocaDictionary={vocaDictionary}
       />
     );
   }
