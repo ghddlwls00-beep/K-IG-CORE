@@ -65,51 +65,50 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
   ).filter((section) => section.lessons.length > 0);
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-14">
+    <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-14">
+      {/* Apple-style subtle Back Navigation Pill */}
       <nav className="mb-8">
         <Link
           href="/"
-          className="link-underline font-mono text-[11px] tracking-wide text-ink-soft hover:text-ink"
+          className="group inline-flex items-center gap-2 rounded-full border border-black/8 bg-black/[0.03] px-3.5 py-1.5 font-mono text-[11.5px] font-medium text-ink-soft hover:bg-black/[0.06] hover:text-ink transition-all shadow-2xs"
         >
-          ← K-IG 교육
+          <span className="transition-transform duration-200 group-hover:-translate-x-0.5">←</span>
+          <span>홈으로 돌아가기</span>
         </Link>
       </nav>
 
+      {/* Apple Pro Course Hero Header */}
       <header
-        className="mb-12 border-b border-line pb-8"
+        className="mb-10 sm:mb-12 flex flex-col gap-3 pb-8 border-b border-black/[0.06]"
         style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}
       >
-        <h1 className="text-[2.25rem] leading-tight font-medium tracking-tight text-ink">{course.title}</h1>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="rounded-full bg-black/5 px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
+            CORE TRACK
+          </span>
+          <span className="text-black/20">·</span>
+          <span className="font-mono text-[12px] font-semibold text-emerald-600">
+            총 {listed.length}개 정규 레슨
+          </span>
+          {sections.length > 0 && (
+            <>
+              <span className="text-black/20">·</span>
+              <span className="font-mono text-[12px] text-ink-faint">
+                {sections.length}개 단계 구성
+              </span>
+            </>
+          )}
+        </div>
+
+        <h1 className="text-[2.75rem] sm:text-[3.25rem] leading-[1.08] font-bold tracking-tight text-ink">
+          {course.title}
+        </h1>
+
         {course.description ? (
-          <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+          <p className="max-w-2xl text-[16px] sm:text-[17px] leading-relaxed text-ink-soft font-normal tracking-tight mt-1">
             {course.description}
           </p>
         ) : null}
-        <p className="mt-5 font-mono text-[11px] tabular-nums text-ink-faint">
-          <T k={listed.length === 1 ? "course.lesson" : "course.lessons"} count={listed.length} />
-          {lessons.length > listed.length ? (
-            <>
-              {" · "}
-              <T
-                k={
-                  lessons.length - listed.length === 1
-                    ? "course.scriptPaired"
-                    : "course.scriptsPaired"
-                }
-                count={lessons.length - listed.length}
-              />
-            </>
-          ) : null}
-          {sections.length > 0 ? (
-            <>
-              {" · "}
-              <T
-                k={sections.length === 1 ? "course.group" : "course.groups"}
-                count={sections.length}
-              />
-            </>
-          ) : null}
-        </p>
       </header>
 
       <CourseDashboard

@@ -21,7 +21,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Listening",
     kind: "audio-drill",
     description:
-      "Exam-style listening sets. Each round pairs an English dictation drill with a Korean script page for reverse translation.",
+      "실전 수능·토익 대비 받아쓰기 훈련. 원어민 고음질 음성과 딕테이션 훈련으로 완벽한 청취력을 완성합니다.",
     series: [{ slug: "d", title: "Listening Rounds", prefix: "d" }],
   },
   {
@@ -32,7 +32,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "READING",
     titleEn: "Reading",
     kind: "audio-drill",
-    description: "Numbered reading passages with narration, each with a companion script page.",
+    description: "원어민 내레이션과 구문 분석이 결합된 원문 독해 훈련으로 문해력과 직독직해 능력을 완성합니다.",
     series: [{ slug: "pr", title: "Reading Passages", prefix: "pr" }],
   },
   {
@@ -43,7 +43,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "VOCA",
     titleEn: "Vocabulary",
     kind: "audio-drill",
-    description: "Middle & High school vocabulary matrix with pronunciation clinic",
+    description: "중등 1~4단계부터 고등 심화까지 필수 영단어 매트릭스 및 원어민 발음 정밀 클리닉.",
     series: [
       { slug: "mv1", title: "Middle School Vocabulary 1 (MV1)", prefix: "mv1-" },
       { slug: "mv2", title: "Middle School Vocabulary 2 (MV2)", prefix: "mv2-" },
@@ -59,7 +59,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "GRAMMAR I",
     titleEn: "Grammar 1",
     kind: "audio-drill",
-    description: "English composition exercises: Korean prompts to be translated into English.",
+    description: "한국어 문장을 즉시 영어로 변환하는 기초 영작 훈련. 6단계 체계적 문장 구조 정복.",
     lessonNaming: "number",
     series: [{ slug: "gh1", title: "Composition Practice", prefix: "gh1-" }],
   },
@@ -71,7 +71,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "GRAMMAR II",
     titleEn: "Grammar 2",
     kind: "audio-drill",
-    description: "Second-level composition exercises, each with a paired answer page.",
+    description: "심화 구문 및 패턴별 집중 영작 트레이닝. 고난도 문형과 어순 감각 완성.",
     lessonNaming: "number",
     series: [{ slug: "gh2", title: "Composition Practice", prefix: "gh2-" }],
   },
@@ -84,7 +84,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "CNN News",
     kind: "video",
     description:
-      "News clips transcoded from the original Windows Media files, each with its English transcript, Korean translation and vocabulary notes.",
+      "실제 CNN 글로벌 뉴스 클립과 원문 스크립트, 한영 대역 번역으로 실전 시사 영어를 마스터합니다.",
     series: [{ slug: "cnn", title: "Clips", prefix: "" }],
   },
 ];

@@ -177,10 +177,10 @@ export function CourseDashboard({
       ) : (
         <div className="flex flex-col gap-6">
           {/* Quick Jump & Expand/Collapse Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-black/[0.06] pb-3.5">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-mono text-[11px] font-semibold uppercase text-ink-faint mr-1">
-                커리큘럼 단계 ({filteredSections.length}개):
+              <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-faint mr-1">
+                커리큘럼 단계:
               </span>
               {filteredSections.map((sec, i) => {
                 const isOpen = openSections[sec.label] ?? false;
@@ -195,10 +195,10 @@ export function CourseDashboard({
                         el.scrollIntoView({ behavior: "smooth", block: "start" });
                       }
                     }}
-                    className={`rounded-lg px-2.5 py-1 font-mono text-[11.5px] transition-all cursor-pointer border ${
+                    className={`rounded-full px-3 py-1 font-mono text-[11.5px] font-medium transition-all duration-200 cursor-pointer border ${
                       isOpen
-                        ? "border-primary/40 bg-primary/10 text-primary font-medium"
-                        : "border-line bg-surface text-ink-soft hover:border-ink-soft hover:text-ink"
+                        ? "border-black/20 bg-ink text-white shadow-xs"
+                        : "border-black/[0.08] bg-white text-ink-soft hover:border-black/20 hover:text-ink shadow-2xs"
                     }`}
                   >
                     {sec.label.split(" (")[0].replace(/^Section\s*\d+\s*·\s*/, "")}
@@ -207,19 +207,19 @@ export function CourseDashboard({
               })}
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={expandAll}
-                className="text-[11.5px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
+                className="text-[12px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
               >
                 모두 펼치기
               </button>
-              <span className="text-line text-xs">|</span>
+              <span className="text-black/20 text-xs">|</span>
               <button
                 type="button"
                 onClick={collapseAll}
-                className="text-[11.5px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
+                className="text-[12px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
               >
                 모두 접기
               </button>
@@ -227,7 +227,7 @@ export function CourseDashboard({
           </div>
 
           {/* Accordion List */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3.5">
             {filteredSections.map((section, index) => {
               const isOpen = openSections[section.label] ?? false;
               const completedInSection = section.lessons.filter((l) =>
@@ -238,28 +238,28 @@ export function CourseDashboard({
                 <div
                   key={`${index}-${section.label}`}
                   id={`section-${index}`}
-                  className="rounded-2xl border border-line bg-surface shadow-2xs overflow-hidden transition-all duration-200 scroll-mt-24"
+                  className="rounded-3xl border border-black/[0.06] bg-white shadow-2xs overflow-hidden transition-all duration-200 scroll-mt-24"
                 >
                   {/* Clickable Section Accordion Header */}
                   <button
                     type="button"
                     onClick={() => toggleSection(section.label)}
-                    className="w-full flex items-center justify-between p-4.5 text-left hover:bg-raised/50 transition-colors cursor-pointer select-none"
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50/80 transition-colors cursor-pointer select-none"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3.5">
                       <div
-                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-line font-mono text-[12px] font-bold transition-transform duration-200 ${
-                          isOpen ? "rotate-90 bg-primary/10 text-primary border-primary/30" : "bg-raised text-ink-soft"
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-black/[0.08] font-mono text-[11px] font-bold transition-all duration-300 ${
+                          isOpen ? "rotate-90 bg-ink text-white" : "bg-black/[0.03] text-ink-soft"
                         }`}
                       >
                         ▶
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-[15px] text-ink flex items-center gap-2">
+                        <span className="font-bold text-[16px] text-ink tracking-tight flex items-center gap-2">
                           {section.label}
                         </span>
-                        <span className="font-mono text-[11px] text-ink-faint mt-0.5">
+                        <span className="font-mono text-[11.5px] text-ink-faint mt-0.5">
                           총 {section.lessons.length}개 레슨
                           {completedInSection > 0 && (
                             <span className="text-emerald-600 font-semibold ml-2">
@@ -270,9 +270,9 @@ export function CourseDashboard({
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <span className="text-[12px] font-medium text-ink-soft hidden sm:inline">
-                        {isOpen ? "접기 ▲" : "클릭하여 펼치기 ▼"}
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-full border border-black/[0.06] bg-black/[0.02] px-3 py-1 text-[11.5px] font-medium text-ink-soft hidden sm:inline">
+                        {isOpen ? "접기 ▲" : "펼치기 ▼"}
                       </span>
                     </div>
                   </button>
