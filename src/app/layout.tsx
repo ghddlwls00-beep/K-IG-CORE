@@ -4,6 +4,7 @@ import { ProgressProvider } from "@/components/ProgressProvider";
 import { LicenseProvider } from "@/components/LicenseProvider";
 import { LicenseModal } from "@/components/LicenseModal";
 import { TabBar } from "@/components/TabBar";
+import { KakaoTalkNoticeBanner } from "@/components/KakaoTalkNoticeBanner";
 import { getCourseTabMap, getTabs } from "@/lib/content";
 import "./globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
           <ProgressProvider>
             <LicenseProvider>
+              <KakaoTalkNoticeBanner />
               <TabBar tabs={tabs} courseTabs={courseTabs} />
               <LicenseModal />
               {children}

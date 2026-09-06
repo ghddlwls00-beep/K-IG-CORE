@@ -8,6 +8,7 @@ import {
   type EvaluationResult,
   type VoiceRecognizerHandle,
 } from "@/lib/speechRecognition";
+import { isKakaoTalk, isInAppBrowser, isIOS, isAndroid } from "@/lib/speech";
 
 export interface VoiceSpeakingTesterProps {
   targetText: string;
@@ -91,10 +92,38 @@ export function VoiceSpeakingTester({
     handleStartListening();
   }
 
+  function openExternalBrowser() {
+    if (typeof window === "undefined") return;
+    const currentUrl = window.location.href;
+    if (isAndroid()) {
+      const target = currentUrl.replace(/^https?:\/\//i, "");
+      window.location.href = `intent://${target}#Intent;scheme=https;package=com.android.chrome;end`;
+      setTimeout(() => {
+        window.location.href = `kakaotalk://web/openExternal?url=${encodeURIComponent(currentUrl)}`;
+      }, 500);
+    } else {
+      window.location.href = `kakaotalk://web/openExternal?url=${encodeURIComponent(currentUrl)}`;
+    }
+  }
+
   if (!supported) {
+    const isRestricted = isKakaoTalk() || isInAppBrowser();
     return (
-      <div className="text-[11px] text-ink-faint">
-        (마이크 음성 인식이 지원되지 않는 브라우저입니다. Chrome 또는 Safari를 권장합니다.)
+      <div className="flex flex-wrap items-center gap-2 text-[11.5px] text-ink-soft bg-surface border border-line rounded-lg px-3 py-2">
+        <span>
+          {isRestricted
+            ? "⚠️ 카카오톡 브라우저는 보안상 마이크 음성 인식이 지원되지 않습니다."
+            : "(마이크 음성 인식이 지원되지 않는 브라우저입니다. Chrome 또는 Safari를 권장합니다.)"}
+        </span>
+        {isRestricted && (
+          <button
+            type="button"
+            onClick={openExternalBrowser}
+            className="inline-flex items-center gap-1 rounded bg-[#371D1E] px-2.5 py-1 text-[11px] font-semibold text-[#FEE500] hover:bg-black transition-colors cursor-pointer"
+          >
+            🌐 {isIOS() ? "Safari로 열기" : "Chrome으로 열기"}
+          </button>
+        )}
       </div>
     );
   }
@@ -166,8 +195,20 @@ export function VoiceSpeakingTester({
 
       {/* Error Notice */}
       {errorMessage && (
-        <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-2.5 text-[12px] text-amber-800">
-          ⚠️ {errorMessage}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-[12px] text-amber-900">
+          <div className="flex items-center gap-1.5">
+            <span>⚠️</span>
+            <span>{errorMessage}</span>
+          </div>
+          {(isKakaoTalk() || isInAppBrowser()) && (
+            <button
+              type="button"
+              onClick={openExternalBrowser}
+              className="inline-flex items-center gap-1 rounded bg-[#371D1E] px-2.5 py-1 text-[11px] font-semibold text-[#FEE500] shrink-0 hover:bg-black transition-colors cursor-pointer"
+            >
+              🌐 {isIOS() ? "Safari로 열기" : "Chrome으로 열기"}
+            </button>
+          )}
         </div>
       )}
 
