@@ -13,7 +13,8 @@
  * extractor run.
  */
 
-const BASE = (process.env.NEXT_PUBLIC_MEDIA_URL ?? "").replace(/\/+$/, "");
+const DEFAULT_R2_MEDIA_URL = "https://pub-94ce8b8436d54ffc971d30f2096951cc.r2.dev";
+const BASE = (process.env.NEXT_PUBLIC_MEDIA_URL || DEFAULT_R2_MEDIA_URL).replace(/\/+$/, "");
 
 export const HAS_REMOTE_MEDIA = Boolean(BASE);
 
