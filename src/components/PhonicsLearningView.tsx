@@ -8,11 +8,9 @@ import {
   analyzeEtymology,
   getCollocation,
   generateActiveRecallQuizzes,
-  generateClozeQuestions,
   generateSpeedDrillItems,
   updateLeitnerCard,
   type ActiveRecallQuestion,
-  type ClozeQuestion,
   type SpeedDrillItem,
   type LeitnerCard,
 } from "@/lib/vocaUtils";
@@ -37,9 +35,9 @@ export function PhonicsLearningView({
     return rows.flat().map((w) => w?.trim()).filter(Boolean) as string[];
   }, [rows]);
 
-  // Main 5-Stage Tab State
+  // Main 4-Stage Tab State: Step 1 (matrix) -> Step 2 (recall) -> Step 3 (speaking) -> Step 4 (speed)
   const [activeTab, setActiveTab] = useState<
-    "matrix" | "recall" | "cloze" | "speed" | "speaking"
+    "matrix" | "recall" | "speaking" | "speed"
   >("matrix");
 
   // Playback & Selection
@@ -259,46 +257,6 @@ export function PhonicsLearningView({
   }
 
   // ---------------------------------------------------------------------------
-  // STEP 3: In-Context Cloze Sentence Engine
-  // ---------------------------------------------------------------------------
-  const clozeQuestions = useMemo(() => {
-    return generateClozeQuestions(words, dictMap);
-  }, [words, dictMap]);
-
-  const [clozeIdx, setClozeIdx] = useState(0);
-  const [selectedClozeWord, setSelectedClozeWord] = useState<string | null>(null);
-  const [isClozeAnswered, setIsClozeAnswered] = useState(false);
-
-  function handleSelectCloze(w: string) {
-    if (isClozeAnswered) return;
-    const currentQ = clozeQuestions[clozeIdx];
-    if (!currentQ) return;
-
-    setSelectedClozeWord(w);
-    setIsClozeAnswered(true);
-
-    const isCorrect = w.toLowerCase().trim() === currentQ.correctAnswer.toLowerCase().trim();
-    const nextLeitner = updateLeitnerCard(
-      leitnerCards,
-      currentQ.targetWord,
-      currentQ.meaning,
-      isCorrect,
-    );
-    saveLeitnerCards(nextLeitner);
-
-    // Speak sentence on correct
-    if (isCorrect) {
-      speakText(currentQ.targetWord, { lang: "en", rate: speed });
-    }
-  }
-
-  function handleNextCloze() {
-    setSelectedClozeWord(null);
-    setIsClozeAnswered(false);
-    setClozeIdx((prev) => (prev + 1) % Math.max(1, clozeQuestions.length));
-  }
-
-  // ---------------------------------------------------------------------------
   // STEP 4: 60-Second Speed Reflex Drill
   // ---------------------------------------------------------------------------
   const speedItems = useMemo(() => {
@@ -386,7 +344,7 @@ export function PhonicsLearningView({
   }
 
   // ---------------------------------------------------------------------------
-  // STEP 5: Leitner Box Filtering & Speaking
+  // STEP 3: Leitner Box Filtering & Speaking
   // ---------------------------------------------------------------------------
   const [leitnerFilter, setLeitnerFilter] = useState<1 | 2 | 3 | "all">("all");
 
@@ -447,7 +405,7 @@ export function PhonicsLearningView({
               )}
             </div>
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
-              뇌과학 기반 5단계 음향·인지 어휘 마스터리 파이프라인
+              뇌과학 기반 4단계 음향·인지 어휘 마스터리 파이프라인
             </h2>
           </div>
 
@@ -473,8 +431,8 @@ export function PhonicsLearningView({
           </div>
         </div>
 
-        {/* 5 STAGE TABS */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 border-t border-line/60 pt-3">
+        {/* 4 STAGE TABS (문맥예문조립 제외, Step 3 AI 발음&오답노트, Step 4 60초 타임어택) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 border-t border-line/60 pt-3">
           {[
             {
               id: "matrix",
@@ -489,22 +447,16 @@ export function PhonicsLearningView({
               sub: "테스트 효과 4지선다",
             },
             {
-              id: "cloze",
+              id: "speaking",
               step: "Step 3",
-              label: "🧩 문맥 예문 조립",
-              sub: "실전문맥 빈칸 탭완성",
+              label: "🗣️ AI 발음 & 오답노트",
+              sub: "망각곡선 라이트너 복습",
             },
             {
               id: "speed",
               step: "Step 4",
               label: "⏱️ 60초 타임어택",
               sub: "두뇌 반사신경 드릴",
-            },
-            {
-              id: "speaking",
-              step: "Step 5",
-              label: "🗣️ AI 발음 & 오답노트",
-              sub: "망각곡선 라이트너 복습",
             },
           ].map((tab) => {
             const isActive = activeTab === tab.id;
@@ -516,7 +468,7 @@ export function PhonicsLearningView({
                   stopRowPlayback();
                   setActiveTab(tab.id as any);
                 }}
-                className={`flex flex-col items-start gap-0.5 rounded-2xl border p-3 text-left transition-all cursor-pointer ${
+                className={`flex flex-col items-start gap-1 rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
                   isActive
                     ? "border-[#D4AF37] bg-gradient-to-b from-[#D4AF37]/15 to-surface shadow-xs text-ink ring-1 ring-[#D4AF37]/40"
                     : "border-line bg-surface hover:bg-raised/60 text-ink-soft hover:text-ink"
@@ -525,10 +477,10 @@ export function PhonicsLearningView({
                 <span className="font-mono text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">
                   {tab.step}
                 </span>
-                <span className="text-[13px] font-bold leading-snug">
+                <span className="text-[13.5px] font-bold leading-snug">
                   {tab.label}
                 </span>
-                <span className="text-[10.5px] text-ink-faint line-clamp-1">
+                <span className="text-[11px] text-ink-faint line-clamp-1">
                   {tab.sub}
                 </span>
               </button>
@@ -538,7 +490,7 @@ export function PhonicsLearningView({
       </div>
 
       {/* ------------------------------------------------------------------- */}
-      {/* 💡 TAB 1: SOUND & CHUNK MATRIX (소리 & 청크 매트릭스) */}
+      {/* 💡 STEP 1: SOUND & CHUNK MATRIX (소리 & 청크 매트릭스) */}
       {/* ------------------------------------------------------------------- */}
       {activeTab === "matrix" && (
         <div className="flex flex-col gap-6 animate-in fade-in duration-200">
@@ -821,7 +773,7 @@ export function PhonicsLearningView({
       )}
 
       {/* ------------------------------------------------------------------- */}
-      {/* ⚡ TAB 2: ACTIVE FLASH RECALL (능동적 인출 4지선다) */}
+      {/* ⚡ STEP 2: ACTIVE FLASH RECALL (능동적 인출 4지선다) */}
       {/* ------------------------------------------------------------------- */}
       {activeTab === "recall" && activeRecallQuizzes.length > 0 && (
         <div className="flex flex-col gap-6 animate-in fade-in duration-200">
@@ -945,278 +897,7 @@ export function PhonicsLearningView({
       )}
 
       {/* ------------------------------------------------------------------- */}
-      {/* 🧩 TAB 3: IN-CONTEXT CLOZE SENTENCE (문맥 예문 조립) */}
-      {/* ------------------------------------------------------------------- */}
-      {activeTab === "cloze" && clozeQuestions.length > 0 && (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-200">
-          {(() => {
-            const q = clozeQuestions[clozeIdx];
-            if (!q) return null;
-
-            return (
-              <div className="rounded-3xl border-2 border-line bg-surface p-6 sm:p-8 shadow-sm flex flex-col gap-6 max-w-2xl mx-auto w-full">
-                <div className="flex items-center justify-between border-b border-line pb-4">
-                  <span className="font-mono text-[12px] font-bold text-[#D4AF37] uppercase tracking-wider">
-                    Context Sentence #{clozeIdx + 1} / {clozeQuestions.length}
-                  </span>
-                  <span className="text-[12px] font-semibold text-ink-soft">
-                    목표 단어: <strong className="text-ink">{q.targetWord}</strong> ({q.meaning})
-                  </span>
-                </div>
-
-                {/* Sentence Display */}
-                <div className="rounded-2xl border border-line bg-raised/70 p-6 flex flex-col gap-4">
-                  <div className="text-[18px] sm:text-[20px] font-semibold text-ink leading-relaxed font-sans">
-                    {q.sentenceWithBlank.split("[ _______ ]").map((part, pIdx, arr) => (
-                      <span key={pIdx}>
-                        {part}
-                        {pIdx < arr.length - 1 && (
-                          <span
-                            className={`inline-block px-3 py-0.5 mx-1.5 rounded-lg border-2 font-mono font-bold text-[16px] transition-all ${
-                              selectedClozeWord
-                                ? selectedClozeWord.toLowerCase() === q.correctAnswer.toLowerCase()
-                                  ? "border-emerald-500 bg-emerald-500/20 text-emerald-900 dark:text-emerald-200"
-                                  : "border-rose-500 bg-rose-500/20 text-rose-900 dark:text-rose-200"
-                                : "border-dashed border-[#D4AF37] bg-surface text-ink-faint"
-                            }`}
-                          >
-                            {selectedClozeWord || "빈칸 [ ? ]"}
-                          </span>
-                        )}
-                      </span>
-                    ))}
-                  </div>
-
-                  <p className="text-[13.5px] text-ink-soft border-t border-line/60 pt-3">
-                    번역: {q.sentenceKo}
-                  </p>
-                </div>
-
-                {/* Word Tile Options to Tap */}
-                <div className="flex flex-col gap-3">
-                  <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-faint">
-                    알맞은 단어 블록을 탭하여 빈칸을 완성하세요:
-                  </span>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    {q.options.map((wOpt, oIdx) => {
-                      const isSelected = selectedClozeWord === wOpt;
-                      const isCorrect =
-                        wOpt.toLowerCase().trim() === q.correctAnswer.toLowerCase().trim();
-
-                      let btnStyle =
-                        "border-line bg-surface hover:border-[#D4AF37] text-ink";
-
-                      if (isClozeAnswered) {
-                        if (isCorrect) {
-                          btnStyle =
-                            "border-emerald-500 bg-emerald-500/15 text-emerald-900 dark:text-emerald-200 font-bold ring-2 ring-emerald-500/40";
-                        } else if (isSelected) {
-                          btnStyle =
-                            "border-rose-500 bg-rose-500/15 text-rose-900 dark:text-rose-200 font-bold ring-2 ring-rose-500/40";
-                        } else {
-                          btnStyle = "border-line bg-surface opacity-40 text-ink-faint";
-                        }
-                      }
-
-                      return (
-                        <button
-                          key={oIdx}
-                          type="button"
-                          disabled={isClozeAnswered}
-                          onClick={() => handleSelectCloze(wOpt)}
-                          className={`rounded-2xl border py-4 px-3 font-mono text-[15px] font-bold text-center transition-all cursor-pointer active:scale-95 shadow-2xs ${btnStyle}`}
-                        >
-                          {wOpt}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Feedback & Next */}
-                {isClozeAnswered && (
-                  <div className="flex items-center justify-between border-t border-line pt-4 animate-in fade-in">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        speakText(q.targetWord, { lang: "en", rate: speed })
-                      }
-                      className="text-[12.5px] font-bold text-[#D4AF37] hover:underline cursor-pointer flex items-center gap-1.5"
-                    >
-                      <span>🔊 단어 표준 발음 다시 듣기</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleNextCloze}
-                      className="rounded-xl bg-ink px-5 py-2.5 text-[13px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
-                    >
-                      다음 문장 도전하기 →
-                    </button>
-                  </div>
-                )}
-              </div>
-            );
-          })()}
-        </div>
-      )}
-
-      {/* ------------------------------------------------------------------- */}
-      {/* ⏱️ TAB 4: 60-SECOND SPEED REFLEX DRILL (스피드 반사신경 드릴) */}
-      {/* ------------------------------------------------------------------- */}
-      {activeTab === "speed" && (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-200 max-w-2xl mx-auto w-full">
-          {!speedGameActive && !speedGameOver ? (
-            <div className="rounded-3xl border-2 border-line bg-surface p-8 text-center flex flex-col items-center gap-5 shadow-sm">
-              <div className="h-16 w-16 rounded-full bg-amber-500/10 border-2 border-[#D4AF37] flex items-center justify-center text-[28px]">
-                ⏱️
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="text-[22px] font-bold text-ink">
-                  60초 타임어택 스피드 드릴
-                </h3>
-                <p className="text-[13.5px] text-ink-soft max-w-md">
-                  화면에 나타나는 영단어와 한국어 뜻이 일치하는지 0.5초 만에 판단하세요!
-                  빠르고 정확하게 맞힐수록 콤보 보너스 점수가 폭증합니다.
-                </p>
-              </div>
-
-              {speedHighScore > 0 && (
-                <div className="rounded-xl bg-amber-500/10 border border-[#D4AF37]/30 px-4 py-2 font-mono text-[12px] font-bold text-amber-900 dark:text-amber-200">
-                  🏆 현재 레슨 최고 점수: {speedHighScore} pts
-                </div>
-              )}
-
-              <button
-                type="button"
-                onClick={startSpeedGame}
-                className="rounded-2xl bg-ink px-8 py-3.5 text-[15px] font-bold text-white shadow-md hover:bg-[#2a292e] transition-all cursor-pointer active:scale-95"
-              >
-                도전 시작하기 (60초 타이머) ⚡
-              </button>
-            </div>
-          ) : speedGameOver ? (
-            <div className="rounded-3xl border-2 border-line bg-surface p-8 text-center flex flex-col items-center gap-6 shadow-sm">
-              <div className="text-[36px]">🎉</div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[24px] font-black text-ink">타임오버! 훈련 완료</h3>
-                <p className="text-[14px] text-ink-soft">
-                  뇌신경 반사 속도가 한층 더 날카로워졌습니다!
-                </p>
-              </div>
-
-              <div className="grid grid-cols-3 gap-4 w-full max-w-md">
-                <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
-                  <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
-                    최종 점수
-                  </span>
-                  <span className="font-mono text-[24px] font-black text-[#D4AF37]">
-                    {speedScore}
-                  </span>
-                </div>
-                <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
-                  <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
-                    최대 콤보
-                  </span>
-                  <span className="font-mono text-[24px] font-black text-orange-600">
-                    {speedMaxCombo}
-                  </span>
-                </div>
-                <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
-                  <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
-                    정답 / 오답
-                  </span>
-                  <span className="font-mono text-[20px] font-bold text-emerald-800 dark:text-emerald-300">
-                    {speedCorrectCount} / {speedWrongCount}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={startSpeedGame}
-                  className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
-                >
-                  다시 도전하기 ↺
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("speaking")}
-                  className="rounded-2xl border border-line bg-surface px-5 py-3 text-[13.5px] font-semibold text-ink hover:bg-raised transition-all cursor-pointer"
-                >
-                  오답노트 복습하러 가기 →
-                </button>
-              </div>
-            </div>
-          ) : (
-            // Active Game Screen
-            (() => {
-              const cur = speedItems[speedCurIdx % speedItems.length];
-              if (!cur) return null;
-
-              return (
-                <div className="rounded-3xl border-2 border-[#D4AF37]/50 bg-surface p-6 sm:p-8 shadow-md flex flex-col gap-6">
-                  {/* Top Bar: Timer & Combo */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-[18px] font-black text-rose-600">
-                        ⏳ {speedTimeLeft}s
-                      </span>
-                      {speedCombo >= 2 && (
-                        <span className="font-mono text-[12px] font-extrabold text-orange-600 animate-pulse">
-                          🔥 {speedCombo} COMBO!
-                        </span>
-                      )}
-                    </div>
-                    <span className="font-mono text-[16px] font-bold text-ink">
-                      Score: {speedScore}
-                    </span>
-                  </div>
-
-                  {/* Visual Timer Progress */}
-                  <div className="h-1.5 w-full rounded-full bg-line overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-[#D4AF37] to-rose-500 transition-all duration-1000 ease-linear"
-                      style={{ width: `${(speedTimeLeft / 60) * 100}%` }}
-                    />
-                  </div>
-
-                  {/* Word Display */}
-                  <div className="rounded-2xl border border-line bg-raised/80 p-8 flex flex-col items-center justify-center text-center gap-3 min-h-[160px]">
-                    <span className="font-mono text-[36px] sm:text-[44px] font-black text-ink tracking-tight">
-                      {cur.word}
-                    </span>
-                    <span className="text-[20px] sm:text-[24px] font-bold text-amber-900 dark:text-amber-200">
-                      = {cur.displayedMeaning}
-                    </span>
-                  </div>
-
-                  {/* Two Fast Decision Buttons */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <button
-                      type="button"
-                      onClick={() => handleSpeedAnswer(false)}
-                      className="rounded-2xl border-2 border-rose-500/40 bg-rose-500/10 py-5 text-[18px] font-black text-rose-700 dark:text-rose-300 hover:bg-rose-500/20 active:scale-95 transition-all cursor-pointer shadow-xs"
-                    >
-                      ❌ 불일치 (다름)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleSpeedAnswer(true)}
-                      className="rounded-2xl border-2 border-emerald-500/40 bg-emerald-500/10 py-5 text-[18px] font-black text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20 active:scale-95 transition-all cursor-pointer shadow-xs"
-                    >
-                      ⭕ 일치 (맞음)
-                    </button>
-                  </div>
-                </div>
-              );
-            })()
-          )}
-        </div>
-      )}
-
-      {/* ------------------------------------------------------------------- */}
-      {/* 🗣️ TAB 5: AI SPEAKING & LEITNER REVIEW (발음 채점 & 망각곡선 복습) */}
+      {/* 🗣️ STEP 3: AI SPEAKING & LEITNER REVIEW (발음 채점 & 망각곡선 복습) */}
       {/* ------------------------------------------------------------------- */}
       {activeTab === "speaking" && (
         <div className="flex flex-col gap-6 animate-in fade-in duration-200">
@@ -1225,7 +906,7 @@ export function PhonicsLearningView({
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-col">
                 <span className="font-mono text-[10.5px] font-bold tracking-wider text-[#D4AF37] uppercase">
-                  AI Speaking & Pronunciation Tester
+                  Step 3 · AI Speaking & Pronunciation Tester
                 </span>
                 <h3 className="text-[17px] font-bold text-ink">
                   "내가 직접 발음할 수 있는 단어만 뇌에 영구 각인된다"
@@ -1396,6 +1077,164 @@ export function PhonicsLearningView({
               })}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* ------------------------------------------------------------------- */}
+      {/* ⏱️ STEP 4: 60-SECOND SPEED REFLEX DRILL (스피드 반사신경 드릴) */}
+      {/* ------------------------------------------------------------------- */}
+      {activeTab === "speed" && (
+        <div className="flex flex-col gap-6 animate-in fade-in duration-200 max-w-2xl mx-auto w-full">
+          {!speedGameActive && !speedGameOver ? (
+            <div className="rounded-3xl border-2 border-line bg-surface p-8 text-center flex flex-col items-center gap-5 shadow-sm">
+              <div className="h-16 w-16 rounded-full bg-amber-500/10 border-2 border-[#D4AF37] flex items-center justify-center text-[28px]">
+                ⏱️
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-[#D4AF37]">
+                  Step 4 · Speed Reflex Drill
+                </span>
+                <h3 className="text-[22px] font-bold text-ink">
+                  60초 타임어택 스피드 드릴
+                </h3>
+                <p className="text-[13.5px] text-ink-soft max-w-md">
+                  화면에 나타나는 영단어와 한국어 뜻이 일치하는지 0.5초 만에 판단하세요!
+                  빠르고 정확하게 맞힐수록 콤보 보너스 점수가 폭증합니다.
+                </p>
+              </div>
+
+              {speedHighScore > 0 && (
+                <div className="rounded-xl bg-amber-500/10 border border-[#D4AF37]/30 px-4 py-2 font-mono text-[12px] font-bold text-amber-900 dark:text-amber-200">
+                  🏆 현재 레슨 최고 점수: {speedHighScore} pts
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={startSpeedGame}
+                className="rounded-2xl bg-ink px-8 py-3.5 text-[15px] font-bold text-white shadow-md hover:bg-[#2a292e] transition-all cursor-pointer active:scale-95"
+              >
+                도전 시작하기 (60초 타이머) ⚡
+              </button>
+            </div>
+          ) : speedGameOver ? (
+            <div className="rounded-3xl border-2 border-line bg-surface p-8 text-center flex flex-col items-center gap-6 shadow-sm">
+              <div className="text-[36px]">🎉</div>
+              <div className="flex flex-col gap-1">
+                <h3 className="text-[24px] font-black text-ink">타임오버! 훈련 완료</h3>
+                <p className="text-[14px] text-ink-soft">
+                  뇌신경 반사 속도가 한층 더 날카로워졌습니다!
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 w-full max-w-md">
+                <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
+                  <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
+                    최종 점수
+                  </span>
+                  <span className="font-mono text-[24px] font-black text-[#D4AF37]">
+                    {speedScore}
+                  </span>
+                </div>
+                <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
+                  <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
+                    최대 콤보
+                  </span>
+                  <span className="font-mono text-[24px] font-black text-orange-600">
+                    {speedMaxCombo}
+                  </span>
+                </div>
+                <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
+                  <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
+                    정답 / 오답
+                  </span>
+                  <span className="font-mono text-[20px] font-bold text-emerald-800 dark:text-emerald-300">
+                    {speedCorrectCount} / {speedWrongCount}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={startSpeedGame}
+                  className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
+                >
+                  다시 도전하기 ↺
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("speaking")}
+                  className="rounded-2xl border border-line bg-surface px-5 py-3 text-[13.5px] font-semibold text-ink hover:bg-raised transition-all cursor-pointer"
+                >
+                  Step 3 오답노트 복습하러 가기 →
+                </button>
+              </div>
+            </div>
+          ) : (
+            // Active Game Screen
+            (() => {
+              const cur = speedItems[speedCurIdx % speedItems.length];
+              if (!cur) return null;
+
+              return (
+                <div className="rounded-3xl border-2 border-[#D4AF37]/50 bg-surface p-6 sm:p-8 shadow-md flex flex-col gap-6">
+                  {/* Top Bar: Timer & Combo */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-[18px] font-black text-rose-600">
+                        ⏳ {speedTimeLeft}s
+                      </span>
+                      {speedCombo >= 2 && (
+                        <span className="font-mono text-[12px] font-extrabold text-orange-600 animate-pulse">
+                          🔥 {speedCombo} COMBO!
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-mono text-[16px] font-bold text-ink">
+                      Score: {speedScore}
+                    </span>
+                  </div>
+
+                  {/* Visual Timer Progress */}
+                  <div className="h-1.5 w-full rounded-full bg-line overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-[#D4AF37] to-rose-500 transition-all duration-1000 ease-linear"
+                      style={{ width: `${(speedTimeLeft / 60) * 100}%` }}
+                    />
+                  </div>
+
+                  {/* Word Display */}
+                  <div className="rounded-2xl border border-line bg-raised/80 p-8 flex flex-col items-center justify-center text-center gap-3 min-h-[160px]">
+                    <span className="font-mono text-[36px] sm:text-[44px] font-black text-ink tracking-tight">
+                      {cur.word}
+                    </span>
+                    <span className="text-[20px] sm:text-[24px] font-bold text-amber-900 dark:text-amber-200">
+                      = {cur.displayedMeaning}
+                    </span>
+                  </div>
+
+                  {/* Two Fast Decision Buttons */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <button
+                      type="button"
+                      onClick={() => handleSpeedAnswer(false)}
+                      className="rounded-2xl border-2 border-rose-500/40 bg-rose-500/10 py-5 text-[18px] font-black text-rose-700 dark:text-rose-300 hover:bg-rose-500/20 active:scale-95 transition-all cursor-pointer shadow-xs"
+                    >
+                      ❌ 불일치 (다름)
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleSpeedAnswer(true)}
+                      className="rounded-2xl border-2 border-emerald-500/40 bg-emerald-500/10 py-5 text-[18px] font-black text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20 active:scale-95 transition-all cursor-pointer shadow-xs"
+                    >
+                      ⭕ 일치 (맞음)
+                    </button>
+                  </div>
+                </div>
+              );
+            })()
+          )}
         </div>
       )}
     </div>
