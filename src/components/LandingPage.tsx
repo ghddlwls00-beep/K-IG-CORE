@@ -181,7 +181,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                       </p>
                     ) : null}
 
-                    <div className="mt-8 flex flex-wrap items-center gap-3.5">
+                    <div className="mt-8 flex items-center gap-4">
                       <Link
                         href={`/${targetCourse}`}
                         className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[15px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
@@ -189,26 +189,6 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                         <span>학습 시작하기</span>
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </Link>
-
-                      {i < tabs.length - 1 ? (
-                        <button
-                          type="button"
-                          onClick={() => scrollToTab(i + 1)}
-                          className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-line bg-surface/80 px-4 py-3 text-[13px] font-semibold text-ink-soft hover:text-ink hover:bg-surface transition-all shadow-2xs active:scale-95"
-                        >
-                          <span>다음 코스 보기</span>
-                          <span>↓</span>
-                        </button>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => scrollToTab(0)}
-                          className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-line bg-surface/80 px-4 py-3 text-[13px] font-semibold text-ink-soft hover:text-ink hover:bg-surface transition-all shadow-2xs active:scale-95"
-                        >
-                          <span>처음으로</span>
-                          <span>↑</span>
-                        </button>
-                      )}
                     </div>
                   </>
                 );

@@ -128,13 +128,13 @@ export function SearchDialog() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group flex items-center gap-2 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] backdrop-blur-md px-3.5 py-1.5 text-[12px] text-ink-soft hover:bg-black/[0.06] dark:hover:bg-white/[0.12] hover:text-ink transition-all duration-200 cursor-pointer shadow-2xs active:scale-95"
-        aria-label="레슨 검색 (Cmd+K)"
-        title="레슨 검색 (단축키: Cmd+K 또는 Ctrl+K)"
+        className="group flex items-center gap-1.5 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] backdrop-blur-md px-3 py-1.5 text-[12px] text-ink-soft hover:bg-black/[0.06] dark:hover:bg-white/[0.12] hover:text-ink transition-all duration-200 cursor-pointer shadow-2xs active:scale-95 shrink-0 whitespace-nowrap"
+        aria-label="검색 (Cmd+K)"
+        title="검색 (단축키: Cmd+K 또는 Ctrl+K)"
       >
         <span className="text-[12px] opacity-70 group-hover:opacity-100 transition-opacity">🔍</span>
-        <span className="hidden sm:inline font-medium tracking-tight">빠른 레슨 검색</span>
-        <kbd className="hidden md:inline-flex items-center gap-0.5 rounded-full border border-black/8 bg-black/[0.04] dark:border-white/10 dark:bg-white/[0.08] px-2 py-0.5 font-mono text-[9.5px] font-semibold text-ink-faint group-hover:text-ink transition-colors">
+        <span className="font-medium tracking-tight whitespace-nowrap">검색</span>
+        <kbd className="hidden md:inline-flex items-center gap-0.5 rounded-full border border-black/8 bg-black/[0.04] dark:border-white/10 dark:bg-white/[0.08] px-1.5 py-0.5 font-mono text-[9.5px] font-semibold text-ink-faint group-hover:text-ink transition-colors">
           ⌘K
         </kbd>
       </button>
