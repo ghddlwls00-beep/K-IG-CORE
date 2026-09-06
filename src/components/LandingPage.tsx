@@ -94,45 +94,12 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       el.scrollTo({ top: next * height, behavior: "smooth" });
       timer = setTimeout(() => {
         locked = false;
-      }, 300);
-    }
-
-    // Touch swipe support for mobile
-    let touchStartY = 0;
-    let touchStartTime = 0;
-
-    function onTouchStart(e: TouchEvent) {
-      touchStartY = e.touches[0].clientY;
-      touchStartTime = Date.now();
-    }
-
-    function onTouchEnd(e: TouchEvent) {
-      if (!el) return;
-      if (locked) return;
-      const dy = touchStartY - e.changedTouches[0].clientY;
-      const dt = Date.now() - touchStartTime;
-      // Require at least 40px swipe and within 500ms (fast flick)
-      if (Math.abs(dy) < 40 || dt > 500) return;
-
-      const height = el.clientHeight;
-      const current = Math.round(el.scrollTop / height);
-      const next = Math.min(Math.max(current + (dy > 0 ? 1 : -1), 0), tabs.length - 1);
-      if (next === current) return;
-
-      locked = true;
-      el.scrollTo({ top: next * height, behavior: "smooth" });
-      timer = setTimeout(() => {
-        locked = false;
-      }, 600);
+      }, 400);
     }
 
     el.addEventListener("wheel", onWheel, { passive: false });
-    el.addEventListener("touchstart", onTouchStart, { passive: true });
-    el.addEventListener("touchend", onTouchEnd, { passive: true });
     return () => {
       el.removeEventListener("wheel", onWheel);
-      el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchend", onTouchEnd);
       clearTimeout(timer);
     };
   }, [tabs.length]);
@@ -170,14 +137,18 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="relative flex-1 overflow-y-auto snap-y snap-mandatory select-text"
-        style={{ scrollSnapType: "y mandatory", overscrollBehavior: "contain" }}
+        className="relative flex-1 overflow-y-auto snap-y snap-mandatory select-text overscroll-y-contain"
+        style={{
+          scrollSnapType: "y mandatory",
+          scrollBehavior: "smooth",
+          WebkitOverflowScrolling: "touch",
+        }}
       >
         {tabs.map((tab, i) => (
           <section
             key={tab.slug}
-            className="relative flex h-[100dvh] min-h-[100dvh] w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start"
-            style={{ scrollSnapAlign: "start" }}
+            className="relative flex h-[100dvh] min-h-[100dvh] w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start snap-always"
+            style={{ scrollSnapAlign: "start", scrollSnapStop: "always" }}
           >
             <SectionPhoto slug={tab.slug} priority={i < 2} />
 
@@ -210,7 +181,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                       </p>
                     ) : null}
 
-                    <div className="mt-8 flex items-center gap-4">
+                    <div className="mt-8 flex flex-wrap items-center gap-3.5">
                       <Link
                         href={`/${targetCourse}`}
                         className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[15px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
@@ -218,11 +189,46 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                         <span>학습 시작하기</span>
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </Link>
+
+                      {i < tabs.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={() => scrollToTab(i + 1)}
+                          className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-line bg-surface/80 px-4 py-3 text-[13px] font-semibold text-ink-soft hover:text-ink hover:bg-surface transition-all shadow-2xs active:scale-95"
+                        >
+                          <span>다음 코스 보기</span>
+                          <span>↓</span>
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => scrollToTab(0)}
+                          className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-line bg-surface/80 px-4 py-3 text-[13px] font-semibold text-ink-soft hover:text-ink hover:bg-surface transition-all shadow-2xs active:scale-95"
+                        >
+                          <span>처음으로</span>
+                          <span>↑</span>
+                        </button>
+                      )}
                     </div>
                   </>
                 );
               })()}
             </div>
+
+            {/* Mobile & Desktop Next Indicator */}
+            {i < tabs.length - 1 && (
+              <button
+                type="button"
+                onClick={() => scrollToTab(i + 1)}
+                aria-label="다음 코스로 이동"
+                className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-0.5 text-ink-faint hover:text-primary transition-colors cursor-pointer select-none"
+              >
+                <span className="font-mono text-[9px] font-bold tracking-[0.2em] text-primary/70 uppercase">
+                  NEXT
+                </span>
+                <span className="text-[13px] animate-bounce text-primary leading-none">↓</span>
+              </button>
+            )}
           </section>
         ))}
       </div>
