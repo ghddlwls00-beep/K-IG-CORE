@@ -59,11 +59,11 @@ export function CourseDashboard({
       .filter((sec) => sec.lessons.length > 0);
   }, [sections, filter, courseSlug, isBookmarked, isCompleted]);
 
-  // Track open/collapsed state of sections. Default first 2 open, or all open if <= 3.
+  // Track open/collapsed state of sections. All sections start collapsed by default.
   const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
     const initial: Record<string, boolean> = {};
-    sections.forEach((sec, idx) => {
-      initial[sec.label] = idx < 2 || sections.length <= 3;
+    sections.forEach((sec) => {
+      initial[sec.label] = false;
     });
     return initial;
   });
