@@ -9,6 +9,7 @@ import {
   type LicenseInfo,
   type LicensePlan,
 } from "@/lib/license";
+import { getOrCreateDeviceId, type ClientDevice } from "@/lib/device";
 
 interface StoredLicense {
   key: string;
@@ -20,9 +21,10 @@ interface StoredLicense {
 interface LicenseContextType {
   hasActiveLicense: boolean;
   licenseInfo: LicenseInfo | null;
+  currentDevice: ClientDevice;
   isUnlocked: (courseSlug: string, lessonId: string, indexInSection?: number) => boolean;
-  activateKey: (key: string) => { success: boolean; message: string };
-  deactivateLicense: () => void;
+  activateKey: (key: string) => Promise<{ success: boolean; message: string }>;
+  deactivateLicense: () => Promise<void>;
   isModalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
@@ -35,11 +37,17 @@ const STORAGE_KEY = "kig:license:v1";
 export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const [stored, setStored] = useState<StoredLicense | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [currentDevice, setCurrentDevice] = useState<ClientDevice>({
+    id: "",
+    name: "기기 확인 중...",
+  });
 
-  // Load license from localStorage on client mount
+  // Load license and device info on client mount
   useEffect(() => {
     try {
+      const dev = getOrCreateDeviceId();
+      setCurrentDevice(dev);
+
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as StoredLicense;
@@ -48,7 +56,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // ignore
     }
-    setIsLoaded(true);
   }, []);
 
   // Compute active status
@@ -72,10 +79,38 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     return isFreePreviewLesson(courseSlug, lessonId, indexInSection);
   }
 
-  function activateKey(rawKey: string): { success: boolean; message: string } {
+  async function activateKey(rawKey: string): Promise<{ success: boolean; message: string }> {
     const res = validateLicenseKey(rawKey);
     if (!res.valid || !res.plan) {
       return { success: false, message: res.error || "유효하지 않은 이용권입니다." };
+    }
+
+    const dev = getOrCreateDeviceId();
+
+    // Enforce 2-device limit via API
+    try {
+      const resp = await fetch("/api/license/activate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          key: rawKey,
+          deviceId: dev.id,
+          deviceName: dev.name,
+        }),
+      });
+
+      const data = await resp.json();
+
+      if (!resp.ok || !data.success) {
+        return {
+          success: false,
+          message:
+            data.error ||
+            "이용권 등록 가능한 최대 기기 수(2대)를 초과하였습니다. 기존 기기에서 등록을 해제해 주세요.",
+        };
+      }
+    } catch (err) {
+      console.warn("Device registration API network issue, falling back to local verification:", err);
     }
 
     const activatedAt = Date.now();
@@ -92,14 +127,27 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       setStored(newStored);
       return {
         success: true,
-        message: `${getPlanLabel(res.plan)}이 성공적으로 등록되었습니다! 1,677개 모든 레슨이 활성화되었습니다.`,
+        message: `${getPlanLabel(res.plan)}이 성공적으로 등록되었습니다! (최대 2대 기기 중 1대로 등록됨)`,
       };
     } catch (e) {
       return { success: false, message: "이용권 저장에 실패했습니다. 브라우저 저장소를 확인해 주세요." };
     }
   }
 
-  function deactivateLicense() {
+  async function deactivateLicense(): Promise<void> {
+    if (stored?.key) {
+      const dev = getOrCreateDeviceId();
+      try {
+        await fetch("/api/license/deactivate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: stored.key, deviceId: dev.id }),
+        });
+      } catch {
+        // ignore
+      }
+    }
+
     try {
       window.localStorage.removeItem(STORAGE_KEY);
       setStored(null);
@@ -113,6 +161,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       value={{
         hasActiveLicense,
         licenseInfo,
+        currentDevice,
         isUnlocked,
         activateKey,
         deactivateLicense,

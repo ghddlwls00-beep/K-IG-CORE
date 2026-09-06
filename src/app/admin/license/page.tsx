@@ -15,6 +15,21 @@ interface HistoryItem {
   memo?: string;
 }
 
+interface DeviceInfo {
+  deviceId: string;
+  deviceName: string;
+  registeredAt: number;
+  lastSeenAt: number;
+}
+
+interface DeviceRecordMap {
+  [key: string]: {
+    key: string;
+    plan: string;
+    devices: DeviceInfo[];
+  };
+}
+
 export default function AdminLicensePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pinInput, setPinInput] = useState("");
@@ -26,6 +41,10 @@ export default function AdminLicensePage() {
   const [newlyGenerated, setNewlyGenerated] = useState<string[]>([]);
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  // Device registration records loaded from server
+  const [deviceRecords, setDeviceRecords] = useState<DeviceRecordMap>({});
+  const [isRefreshingDevices, setIsRefreshingDevices] = useState(false);
 
   // Load history on mount
   useEffect(() => {
@@ -42,6 +61,32 @@ export default function AdminLicensePage() {
       // ignore
     }
   }, []);
+
+  // Fetch registered devices when authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchDeviceStatus();
+    }
+  }, [isAuthenticated]);
+
+  async function fetchDeviceStatus() {
+    setIsRefreshingDevices(true);
+    try {
+      const res = await fetch("/api/license/status", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin: DEFAULT_PIN }),
+      });
+      const data = await res.json();
+      if (data.success && data.records) {
+        setDeviceRecords(data.records);
+      }
+    } catch (err) {
+      console.error("Failed to fetch device status:", err);
+    } finally {
+      setIsRefreshingDevices(false);
+    }
+  }
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -106,6 +151,29 @@ export default function AdminLicensePage() {
     }
   }
 
+  async function handleResetDevice(key: string) {
+    if (!confirm(`이용권 [${key}]에 등록된 기기 목록을 초기화하시겠습니까?\n초기화 시 고객이 새 기기에서 다시 등록할 수 있게 됩니다.`)) {
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/license/reset", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key, pin: DEFAULT_PIN }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert("기기 등록이 성공적으로 초기화되었습니다.");
+        fetchDeviceStatus();
+      } else {
+        alert(data.error || "초기화에 실패했습니다.");
+      }
+    } catch {
+      alert("서버 통신 오류가 발생했습니다.");
+    }
+  }
+
   return (
     <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12">
       {/* Top Breadcrumb */}
@@ -160,91 +228,93 @@ export default function AdminLicensePage() {
         /* AUTHENTICATED KEY GENERATOR */
         <div className="flex flex-col gap-8">
           {/* Header */}
-          <div className="rounded-3xl border border-black/10 bg-gradient-to-b from-white to-gray-50/80 p-6 sm:p-8 shadow-xs flex flex-col gap-2">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-500/10 text-[20px]">
-                  🔑
-                </span>
-                <div>
-                  <h1 className="text-[22px] font-bold text-ink tracking-tight">
-                    K-IG 올패스 이용권 발급 센터
-                  </h1>
-                  <span className="text-[12.5px] text-ink-soft">
-                    스마트스토어, 크몽, 와디즈 구매 고객에게 전달할 인증 코드를 1초 만에 생성합니다.
-                  </span>
-                </div>
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-black/[0.08] pb-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black text-white text-[22px]">
+                🔑
               </div>
+              <div>
+                <h1 className="text-[22px] font-bold text-ink tracking-tight">
+                  이용권 코드 발급 및 관리
+                </h1>
+                <p className="text-[13px] text-ink-soft">
+                  스마트스토어, 크몽 판매용 시리얼 코드를 생성하고 기기 등록을 제어합니다. (기기 최대 2대 제한)
+                </p>
+              </div>
+            </div>
 
-              <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-mono text-[11.5px] font-bold text-emerald-700">
-                ● 관리자 승인 완료
-              </span>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={fetchDeviceStatus}
+                disabled={isRefreshingDevices}
+                className="rounded-xl border border-black/15 bg-white px-3 py-1.5 text-[12px] font-medium text-ink hover:bg-gray-50 transition-colors cursor-pointer"
+              >
+                {isRefreshingDevices ? "새로고침 중..." : "🔄 기기 현황 새로고침"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  sessionStorage.removeItem(ADMIN_PIN_KEY);
+                  setIsAuthenticated(false);
+                }}
+                className="rounded-xl border border-black/15 bg-white px-3 py-1.5 text-[12px] font-medium text-ink-soft hover:text-red-600 transition-colors cursor-pointer"
+              >
+                로그아웃
+              </button>
             </div>
           </div>
 
-          {/* Generator Form Card */}
+          {/* Generator Form */}
           <div className="rounded-3xl border border-black/10 bg-white p-6 sm:p-8 shadow-xs flex flex-col gap-6">
-            <h2 className="text-[17px] font-bold text-ink border-b border-black/[0.06] pb-3">
-              1. 발급할 이용권 옵션 선택
+            <h2 className="text-[17px] font-bold text-ink">
+              신규 이용권 코드 발급
             </h2>
 
-            {/* Plan selection */}
-            <div className="flex flex-col gap-2">
-              <label className="text-[13px] font-semibold text-ink">
-                이용권 종류 (Plan)
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {(
-                  [
-                    { id: "1Y", label: "1년 VIP 올패스 (추천)", desc: "365일 무제한", badge: "주력" },
-                    { id: "1M", label: "1개월 체험 패스", desc: "30일 무제한", badge: "단기" },
-                    { id: "LIFE", label: "평생 소장 VIP 패스", desc: "무기한 영구 소장", badge: "VIP" },
-                  ] as const
-                ).map((plan) => (
+            {/* Plan Selector */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {(["1M", "1Y", "LIFE"] as LicensePlan[]).map((plan) => {
+                const active = selectedPlan === plan;
+                return (
                   <button
-                    key={plan.id}
+                    key={plan}
                     type="button"
-                    onClick={() => setSelectedPlan(plan.id)}
-                    className={`rounded-2xl border p-4 text-left transition-all cursor-pointer flex flex-col gap-1.5 ${
-                      selectedPlan === plan.id
-                        ? "border-ink bg-black/[0.03] ring-2 ring-ink/20 shadow-xs"
-                        : "border-black/10 bg-white hover:border-black/20"
+                    onClick={() => setSelectedPlan(plan)}
+                    className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
+                      active
+                        ? "border-black bg-ink text-white shadow-sm"
+                        : "border-black/10 bg-white text-ink hover:border-black/30"
                     }`}
                   >
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-[14px] text-ink">{plan.label}</span>
-                      <span className="rounded-full bg-black/5 px-2 py-0.5 font-mono text-[10px] font-bold text-ink-soft">
-                        {plan.badge}
-                      </span>
+                    <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
+                    <div className={`text-[12px] mt-1 ${active ? "text-gray-300" : "text-ink-soft"}`}>
+                      {plan === "1M" && "30일간 1,677강 열람"}
+                      {plan === "1Y" && "365일간 1,677강 열람 (추천)"}
+                      {plan === "LIFE" && "무제한 평생 열람 (대표님/VIP용)"}
                     </div>
-                    <span className="text-[12px] text-ink-faint">{plan.desc}</span>
                   </button>
-                ))}
-              </div>
+                );
+              })}
             </div>
 
             {/* Quantity and Memo */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-ink">
-                  생성 수량
-                </label>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[13px] font-semibold text-ink">발급 수량</label>
                 <select
                   value={quantity}
                   onChange={(e) => setQuantity(Number(e.target.value))}
-                  className="rounded-xl border border-black/15 px-3.5 py-2.5 text-[13.5px] font-medium text-ink bg-white focus:border-ink focus:outline-none"
+                  className="rounded-xl border border-black/15 bg-white px-3.5 py-2.5 text-[14px] text-ink focus:border-ink focus:outline-none cursor-pointer"
                 >
-                  <option value={1}>1개 (고객 1명 즉시 발송용)</option>
-                  <option value={5}>5개 (일괄 생성)</option>
-                  <option value={10}>10개 (일괄 생성)</option>
-                  <option value={20}>20개 (단체/공구용)</option>
+                  <option value={1}>1개 (고객 주문 1건당)</option>
+                  <option value={5}>5개 (소량 묶음)</option>
+                  <option value={10}>10개 (이벤트/프로모션)</option>
+                  <option value={30}>30개 (단체 수강권)</option>
                 </select>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="text-[13px] font-semibold text-ink">
-                  구매자 메모 (선택 사항)
-                </label>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[13px] font-semibold text-ink">메모 (선택)</label>
                 <input
                   type="text"
                   value={memo}
@@ -309,22 +379,24 @@ export default function AdminLicensePage() {
 
               <div className="rounded-xl bg-emerald-500/10 p-3 text-[12.5px] text-emerald-900 dark:text-emerald-200 leading-relaxed">
                 💡 <strong>고객 발송 안내 팁:</strong> 복사한 코드를 고객에게 문자나 메시지로 전달하실 때 아래와 같이 보내주시면 됩니다:
-                <div className="mt-1 font-mono text-[12px] bg-white/70 p-2 rounded border border-emerald-500/20 select-all">
-                  안녕하세요! K-IG 올패스 이용권 번호는 [{newlyGenerated[0]}] 입니다. 웹사이트 상단 [이용권 등록]을 누르시고 입력하시면 1,677개 모든 레슨을 바로 학습하실 수 있습니다.
+                <div className="mt-1 font-mono text-[12px] bg-white/70 p-2.5 rounded border border-emerald-500/20 select-all leading-relaxed">
+                  안녕하세요! K-IG 올패스 이용권 번호는 [{newlyGenerated[0]}] 입니다.<br />
+                  웹사이트 상단 [이용권 등록]에 코드를 입력하시면 1,677개 모든 레슨이 즉시 열립니다.<br />
+                  (※ 본 이용권은 PC, 스마트폰 등 최대 2대 기기까지 등록 가능합니다)
                 </div>
               </div>
             </div>
           )}
 
-          {/* History Section */}
+          {/* History Section with Live Device Status */}
           <div className="rounded-3xl border border-black/10 bg-white p-6 sm:p-8 shadow-xs flex flex-col gap-4">
             <div className="flex items-center justify-between border-b border-black/[0.06] pb-3">
               <div>
                 <h3 className="text-[17px] font-bold text-ink">
-                  최근 발급 내역 (History)
+                  최근 발급 내역 및 기기 등록 현황
                 </h3>
                 <span className="text-[12px] text-ink-faint">
-                  이 기기에서 발급된 최근 이용권 목록입니다 (최대 100건)
+                  발급된 이용권별 실시간 기기 등록 현황(최대 2대)을 확인하고 초기화할 수 있습니다.
                 </span>
               </div>
 
@@ -334,7 +406,7 @@ export default function AdminLicensePage() {
                   onClick={clearHistory}
                   className="text-[12px] text-ink-faint hover:text-red-600 cursor-pointer"
                 >
-                  기록 지우기
+                  목록 지우기
                 </button>
               )}
             </div>
@@ -344,32 +416,83 @@ export default function AdminLicensePage() {
                 아직 발급된 내역이 없습니다. 상단에서 코드를 발급해 보세요.
               </div>
             ) : (
-              <div className="flex flex-col divide-y divide-black/[0.06] max-h-96 overflow-y-auto">
-                {history.map((item, idx) => (
-                  <div key={idx} className="flex flex-wrap items-center justify-between py-3 gap-2">
-                    <div className="flex flex-col gap-0.5">
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-[14px] font-bold text-ink select-all">
-                          {item.key}
-                        </span>
-                        <span className="rounded-full bg-black/5 px-2 py-0.5 text-[10.5px] font-medium text-ink-soft">
-                          {getPlanLabel(item.plan)}
-                        </span>
-                      </div>
-                      <span className="text-[11.5px] text-ink-faint">
-                        {item.createdAt} {item.memo ? `· ${item.memo}` : ""}
-                      </span>
-                    </div>
+              <div className="flex flex-col divide-y divide-black/[0.06] max-h-[500px] overflow-y-auto">
+                {history.map((item, idx) => {
+                  const record = deviceRecords[item.key];
+                  const devices = record?.devices || [];
+                  const deviceCount = devices.length;
 
-                    <button
-                      type="button"
-                      onClick={() => copyToClipboard(item.key)}
-                      className="rounded-lg border border-black/10 px-2.5 py-1 text-[11.5px] font-semibold text-ink-soft hover:bg-black/5 hover:text-ink cursor-pointer transition-colors"
-                    >
-                      {copiedKey === item.key ? "✓ 복사됨" : "복사"}
-                    </button>
-                  </div>
-                ))}
+                  return (
+                    <div key={idx} className="flex flex-col py-3.5 gap-2">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex flex-col gap-0.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-mono text-[14px] font-bold text-ink select-all">
+                              {item.key}
+                            </span>
+                            <span className="rounded-full bg-black/5 px-2 py-0.5 text-[10.5px] font-medium text-ink-soft">
+                              {getPlanLabel(item.plan)}
+                            </span>
+
+                            {/* Device Usage Badge */}
+                            {deviceCount === 0 ? (
+                              <span className="rounded-full bg-gray-100 text-gray-600 px-2 py-0.5 text-[10.5px] font-semibold font-mono">
+                                미등록 (0/2대)
+                              </span>
+                            ) : deviceCount === 1 ? (
+                              <span className="rounded-full bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 text-[10.5px] font-semibold font-mono">
+                                1/2대 사용 중
+                              </span>
+                            ) : (
+                              <span className="rounded-full bg-amber-50 text-amber-800 border border-amber-300 px-2 py-0.5 text-[10.5px] font-bold font-mono">
+                                2/2대 만석 (한도 도달)
+                              </span>
+                            )}
+                          </div>
+
+                          <span className="text-[11.5px] text-ink-faint">
+                            {item.createdAt} {item.memo ? `· ${item.memo}` : ""}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => copyToClipboard(item.key)}
+                            className="rounded-lg border border-black/10 px-2.5 py-1 text-[11.5px] font-semibold text-ink-soft hover:bg-black/5 hover:text-ink cursor-pointer transition-colors"
+                          >
+                            {copiedKey === item.key ? "✓ 복사됨" : "코드 복사"}
+                          </button>
+
+                          {deviceCount > 0 && (
+                            <button
+                              type="button"
+                              onClick={() => handleResetDevice(item.key)}
+                              className="rounded-lg border border-red-500/20 bg-red-500/5 px-2.5 py-1 text-[11.5px] font-semibold text-red-600 hover:bg-red-500/15 cursor-pointer transition-colors"
+                              title="고객이 기기를 분실/교체했을 때 기기 등록을 0대로 리셋합니다"
+                            >
+                              기기 초기화
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Detail list of registered devices */}
+                      {devices.length > 0 && (
+                        <div className="ml-1 pl-3 border-l-2 border-black/10 flex flex-col gap-1 text-[11.5px] text-ink-soft">
+                          {devices.map((d, dIdx) => (
+                            <div key={d.deviceId} className="flex items-center gap-2">
+                              <span>📱 기기 {dIdx + 1}: <strong>{d.deviceName}</strong></span>
+                              <span className="text-ink-faint">
+                                (등록일: {new Date(d.registeredAt).toLocaleDateString("ko-KR")})
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>

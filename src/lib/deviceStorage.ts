@@ -1,0 +1,149 @@
+import fs from "fs";
+import path from "path";
+
+export interface RegisteredDevice {
+  deviceId: string;
+  deviceName: string;
+  registeredAt: number;
+  lastSeenAt: number;
+}
+
+export interface LicenseDeviceRecord {
+  key: string;
+  plan: string;
+  devices: RegisteredDevice[];
+}
+
+export const MAX_DEVICES_PER_KEY = 2;
+
+function getStorageFilePath(): string {
+  const primaryDir = path.join(process.cwd(), "data");
+  const primaryFile = path.join(primaryDir, "license-devices.json");
+
+  try {
+    if (!fs.existsSync(primaryDir)) {
+      fs.mkdirSync(primaryDir, { recursive: true });
+    }
+    // Test write permission
+    fs.writeFileSync(primaryFile + ".test", "");
+    fs.unlinkSync(primaryFile + ".test");
+    return primaryFile;
+  } catch {
+    // Fallback to /tmp in read-only serverless environments
+    const fallbackDir = "/tmp";
+    return path.join(fallbackDir, "license-devices.json");
+  }
+}
+
+export function loadDeviceRecords(): Record<string, LicenseDeviceRecord> {
+  const filePath = getStorageFilePath();
+  try {
+    if (!fs.existsSync(filePath)) return {};
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as Record<string, LicenseDeviceRecord>;
+  } catch (err) {
+    console.error("Error reading device records:", err);
+    return {};
+  }
+}
+
+export function saveDeviceRecords(records: Record<string, LicenseDeviceRecord>): void {
+  const filePath = getStorageFilePath();
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(records, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Error saving device records:", err);
+  }
+}
+
+/**
+ * Attempt to register a device for a key.
+ * If the device is already registered, updates lastSeenAt and succeeds.
+ * If new device and count < 2, adds it and succeeds.
+ * If new device and count >= 2, rejects with a helpful message.
+ */
+export function registerDeviceForKey(
+  key: string,
+  plan: string,
+  deviceId: string,
+  deviceName: string,
+): { success: boolean; error?: string; devices: RegisteredDevice[] } {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+
+  const record: LicenseDeviceRecord = records[normalizedKey] || {
+    key: normalizedKey,
+    plan,
+    devices: [],
+  };
+
+  const now = Date.now();
+  const existingIdx = record.devices.findIndex((d) => d.deviceId === deviceId);
+
+  if (existingIdx !== -1) {
+    // Already registered device: update last seen and device name if changed
+    record.devices[existingIdx].lastSeenAt = now;
+    if (deviceName) record.devices[existingIdx].deviceName = deviceName;
+    records[normalizedKey] = record;
+    saveDeviceRecords(records);
+    return { success: true, devices: record.devices };
+  }
+
+  // New device: check limit
+  if (record.devices.length >= MAX_DEVICES_PER_KEY) {
+    return {
+      success: false,
+      error: `이용권 등록 가능한 최대 기기 수(${MAX_DEVICES_PER_KEY}대)를 초과하였습니다. 기존 기기에서 등록을 해제하신 후 다시 시도해 주세요.`,
+      devices: record.devices,
+    };
+  }
+
+  // Add new device
+  const newDevice: RegisteredDevice = {
+    deviceId,
+    deviceName: deviceName || "알 수 없는 기기",
+    registeredAt: now,
+    lastSeenAt: now,
+  };
+
+  record.devices.push(newDevice);
+  records[normalizedKey] = record;
+  saveDeviceRecords(records);
+
+  return { success: true, devices: record.devices };
+}
+
+/**
+ * Deactivate / Unlink a device from a license key.
+ */
+export function unregisterDeviceFromKey(
+  key: string,
+  deviceId: string,
+): { success: boolean; devices: RegisteredDevice[] } {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+  const record = records[normalizedKey];
+
+  if (!record) {
+    return { success: true, devices: [] };
+  }
+
+  record.devices = record.devices.filter((d) => d.deviceId !== deviceId);
+  records[normalizedKey] = record;
+  saveDeviceRecords(records);
+
+  return { success: true, devices: record.devices };
+}
+
+/**
+ * Admin reset: clear all registered devices for a key.
+ */
+export function resetAllDevicesForKey(key: string): { success: boolean } {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+  if (records[normalizedKey]) {
+    records[normalizedKey].devices = [];
+    saveDeviceRecords(records);
+  }
+  return { success: true };
+}

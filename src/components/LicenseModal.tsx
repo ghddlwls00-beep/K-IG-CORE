@@ -4,22 +4,43 @@ import { useState } from "react";
 import { useLicense } from "./LicenseProvider";
 
 export function LicenseModal() {
-  const { isModalOpen, closeModal, hasActiveLicense, licenseInfo, activateKey, deactivateLicense } =
-    useLicense();
+  const {
+    isModalOpen,
+    closeModal,
+    hasActiveLicense,
+    licenseInfo,
+    currentDevice,
+    activateKey,
+    deactivateLicense,
+  } = useLicense();
+
   const [inputCode, setInputCode] = useState("");
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isModalOpen) return null;
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setFeedback(null);
-    const res = activateKey(inputCode);
-    if (res.success) {
-      setFeedback({ type: "success", text: res.message });
-      setInputCode("");
-    } else {
-      setFeedback({ type: "error", text: res.message });
+    setIsSubmitting(true);
+    try {
+      const res = await activateKey(inputCode);
+      if (res.success) {
+        setFeedback({ type: "success", text: res.message });
+        setInputCode("");
+      } else {
+        setFeedback({ type: "error", text: res.message });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function handleDeactivate() {
+    if (confirm("현재 기기에서 이용권 등록을 해제하시겠습니까?\n(해제 시 새로운 기기를 등록할 수 있는 슬롯이 반환됩니다)")) {
+      await deactivateLicense();
+      setFeedback(null);
     }
   }
 
@@ -84,6 +105,16 @@ export function LicenseModal() {
                 </span>
               </div>
 
+              <div className="rounded-xl bg-black/[0.03] p-3 flex flex-col gap-1 text-[11.5px] text-ink-soft">
+                <div className="flex items-center justify-between">
+                  <span>현재 기기: <strong>{currentDevice.name}</strong></span>
+                  <span className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10.5px] font-bold text-emerald-700">기기 슬롯 정상</span>
+                </div>
+                <span className="text-[11px] text-ink-faint">
+                  ※ 최대 2대(데스크탑, 스마트폰 등)까지 등록하여 학습하실 수 있습니다.
+                </span>
+              </div>
+
               <div className="border-t border-emerald-500/20 pt-3 flex flex-wrap items-center justify-between text-[12px] text-ink-soft">
                 <span>등록일: {licenseInfo.activatedAt}</span>
                 <span>
@@ -95,15 +126,10 @@ export function LicenseModal() {
             <div className="flex items-center justify-between pt-2">
               <button
                 type="button"
-                onClick={() => {
-                  if (confirm("현재 기기에서 이용권 등록을 해제하시겠습니까?")) {
-                    deactivateLicense();
-                    setFeedback(null);
-                  }
-                }}
+                onClick={handleDeactivate}
                 className="text-[11.5px] text-ink-faint hover:text-red-600 cursor-pointer underline"
               >
-                이용권 등록 해제 (다른 코드로 변경)
+                이 기기에서 등록 해제 (슬롯 반환)
               </button>
 
               <button
@@ -129,10 +155,12 @@ export function LicenseModal() {
                 placeholder="KIG-1Y-XXXX-XXXX"
                 className="w-full rounded-xl border border-black/15 bg-black/[0.02] px-4 py-3 font-mono text-[16px] font-bold text-ink placeholder:text-ink-faint focus:border-ink focus:bg-white focus:outline-none transition-colors"
                 autoFocus
+                disabled={isSubmitting}
               />
-              <span className="text-[11.5px] text-ink-faint">
-                스마트스토어, 크몽 또는 카카오톡 메시지로 발송된 코드를 입력해 주세요.
-              </span>
+              <div className="flex items-center justify-between text-[11.5px] text-ink-faint">
+                <span>현재 기기: <strong>{currentDevice.name}</strong></span>
+                <span className="text-amber-700 font-medium">1인 최대 2대 기기 제한</span>
+              </div>
             </div>
 
             {feedback && (
@@ -149,9 +177,10 @@ export function LicenseModal() {
 
             <button
               type="submit"
-              className="mt-1 w-full rounded-xl bg-ink py-3 text-[14px] font-bold text-white hover:bg-black/80 transition-colors cursor-pointer shadow-sm active:scale-[0.99]"
+              disabled={isSubmitting}
+              className="mt-1 w-full rounded-xl bg-ink py-3 text-[14px] font-bold text-white hover:bg-black/80 transition-colors cursor-pointer shadow-sm active:scale-[0.99] disabled:opacity-50"
             >
-              이용권 즉시 등록 & 전체 해제하기
+              {isSubmitting ? "인증 및 기기 등록 중..." : "이용권 즉시 등록 & 전체 해제하기"}
             </button>
 
             {/* SmartStore / External Purchase Guide */}
