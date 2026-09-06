@@ -47,10 +47,11 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
           <nav aria-label="Courses" className="no-scrollbar -mx-1 flex flex-1 items-center gap-0.5 overflow-x-auto">
             {ordered.map((tab) => {
               const active = activeTab === tab.slug;
+              const targetUrl = tab.courses[0] ? `/${tab.courses[0]}` : `/t/${tab.slug}`;
               return (
                 <Link
                   key={tab.slug}
-                  href={`/t/${tab.slug}`}
+                  href={targetUrl}
                   aria-current={active ? "page" : undefined}
                   className={
                     "relative shrink-0 px-2.5 py-1.5 text-[12.5px] whitespace-nowrap " +

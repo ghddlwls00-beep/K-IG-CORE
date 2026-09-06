@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { course } = await params;
   const index = getCourseIndex(course);
-  return { title: index?.course.titleEn ?? "K-IG 교육" };
+  return { title: `${index?.course.title ?? "K-IG"} · K-IG 교육` };
 }
 
 export default async function CoursePage({ params }: { params: Promise<{ course: string }> }) {
@@ -67,10 +67,10 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
     <main className="mx-auto max-w-4xl px-5 py-14">
       <nav className="mb-8">
         <Link
-          href={tab ? `/t/${tab.slug}` : "/"}
+          href="/"
           className="link-underline font-mono text-[11px] tracking-wide text-ink-soft hover:text-ink"
         >
-          ← {tab?.label ?? <T k="nav.allSections" />}
+          ← K-IG 교육
         </Link>
       </nav>
 
@@ -78,11 +78,12 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         className="mb-12 border-b border-line pb-8"
         style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}
       >
-        <h1 className="text-[2rem] leading-tight font-medium tracking-tight">{course.titleEn}</h1>
-        <p className="mt-2 text-[15px] text-ink-soft">{course.title}</p>
-        <p className="mt-4 max-w-lg text-[13.5px] leading-relaxed text-ink-soft">
-          {course.description}
-        </p>
+        <h1 className="text-[2.25rem] leading-tight font-medium tracking-tight text-ink">{course.title}</h1>
+        {course.description ? (
+          <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+            {course.description}
+          </p>
+        ) : null}
         <p className="mt-5 font-mono text-[11px] tabular-nums text-ink-faint">
           <T k={listed.length === 1 ? "course.lesson" : "course.lessons"} count={listed.length} />
           {lessons.length > listed.length ? (

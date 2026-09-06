@@ -75,7 +75,7 @@ export default async function LessonPage({
     <main className="mx-auto max-w-3xl px-5 py-12">
       <nav className="mb-8 flex items-center justify-between gap-4 font-mono text-[11.5px]">
         <Link href={`/${course}`} className="link-underline text-ink-soft hover:text-ink font-medium">
-          ← {courseInfo?.titleEn ?? course}
+          ← {courseInfo?.title ?? course}
         </Link>
         <span className="flex items-center gap-4">
           {prev ? (

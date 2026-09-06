@@ -47,8 +47,9 @@ export function getCourseIndex(slug: string): CourseIndex | null {
 
 export function getLesson(course: string, id: string): Lesson | null {
   // Guard against path traversal via the URL segment.
-  if (!/^[\w.-]+$/.test(course) || !/^[\w.-]+$/.test(id)) return null;
-  return readJson<Lesson>(path.join(CONTENT_DIR, "lessons", course, `${id}.json`));
+  const filePath = path.join(CONTENT_DIR, "lessons", course, `${id}.json`);
+  if (!fs.existsSync(filePath)) return null;
+  return readJson<Lesson>(filePath);
 }
 
 /** All (course, lesson) pairs, for generateStaticParams. */

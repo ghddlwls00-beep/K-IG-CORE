@@ -174,7 +174,6 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
             >
               <p className="mb-4 font-mono text-[16.5px] tracking-[0.24em] text-ink-faint uppercase">
                 {tab.num}
-                {tab.unavailable ? " · ARCHIVE ONLY" : ""}
               </p>
 
               {(() => {
