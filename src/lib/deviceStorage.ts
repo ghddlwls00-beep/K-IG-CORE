@@ -11,6 +11,7 @@ export interface RegisteredDevice {
 export interface LicenseDeviceRecord {
   key: string;
   plan: string;
+  maxDevices?: number;
   devices: RegisteredDevice[];
 }
 
@@ -57,26 +58,51 @@ export function saveDeviceRecords(records: Record<string, LicenseDeviceRecord>):
 }
 
 /**
+ * Configure the maximum allowed devices for a key.
+ */
+export function setMaxDevicesForKey(
+  key: string,
+  maxDevices: number,
+  plan?: string,
+): { success: boolean; record: LicenseDeviceRecord } {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+  const record: LicenseDeviceRecord = records[normalizedKey] || {
+    key: normalizedKey,
+    plan: plan || "1Y",
+    maxDevices,
+    devices: [],
+  };
+
+  record.maxDevices = Math.max(1, maxDevices);
+  records[normalizedKey] = record;
+  saveDeviceRecords(records);
+  return { success: true, record };
+}
+
+/**
  * Attempt to register a device for a key.
  * If the device is already registered, updates lastSeenAt and succeeds.
- * If new device and count < 2, adds it and succeeds.
- * If new device and count >= 2, rejects with a helpful message.
+ * If new device and count < maxDevices, adds it and succeeds.
+ * If new device and count >= maxDevices, rejects with a helpful message.
  */
 export function registerDeviceForKey(
   key: string,
   plan: string,
   deviceId: string,
   deviceName: string,
-): { success: boolean; error?: string; devices: RegisteredDevice[] } {
+): { success: boolean; error?: string; devices: RegisteredDevice[]; maxDevices: number } {
   const normalizedKey = key.trim().toUpperCase();
   const records = loadDeviceRecords();
 
   const record: LicenseDeviceRecord = records[normalizedKey] || {
     key: normalizedKey,
     plan,
+    maxDevices: MAX_DEVICES_PER_KEY,
     devices: [],
   };
 
+  const effectiveMaxDevices = record.maxDevices || MAX_DEVICES_PER_KEY;
   const now = Date.now();
   const existingIdx = record.devices.findIndex((d) => d.deviceId === deviceId);
 
@@ -86,15 +112,16 @@ export function registerDeviceForKey(
     if (deviceName) record.devices[existingIdx].deviceName = deviceName;
     records[normalizedKey] = record;
     saveDeviceRecords(records);
-    return { success: true, devices: record.devices };
+    return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices };
   }
 
   // New device: check limit
-  if (record.devices.length >= MAX_DEVICES_PER_KEY) {
+  if (record.devices.length >= effectiveMaxDevices) {
     return {
       success: false,
-      error: `이용권 등록 가능한 최대 기기 수(${MAX_DEVICES_PER_KEY}대)를 초과하였습니다. 기존 기기에서 등록을 해제하신 후 다시 시도해 주세요.`,
+      error: `이용권 등록 가능한 최대 기기 수(${effectiveMaxDevices}대)를 초과하였습니다. 기존 기기에서 등록을 해제하신 후 다시 시도해 주세요.`,
       devices: record.devices,
+      maxDevices: effectiveMaxDevices,
     };
   }
 
@@ -110,7 +137,7 @@ export function registerDeviceForKey(
   records[normalizedKey] = record;
   saveDeviceRecords(records);
 
-  return { success: true, devices: record.devices };
+  return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices };
 }
 
 /**

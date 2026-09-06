@@ -44,7 +44,7 @@ export async function POST(request: Request) {
           success: false,
           error: regResult.error,
           registeredDevicesCount: regResult.devices.length,
-          maxDevices: 2,
+          maxDevices: regResult.maxDevices,
         },
         { status: 403 }
       );
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
       success: true,
       plan: validation.plan,
       registeredDevicesCount: regResult.devices.length,
-      maxDevices: 2,
+      maxDevices: regResult.maxDevices,
     });
   } catch (err) {
     console.error("License activation API error:", err);

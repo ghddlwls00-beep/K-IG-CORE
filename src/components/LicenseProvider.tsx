@@ -92,7 +92,10 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
 
     const dev = getOrCreateDeviceId();
 
-    // Enforce 2-device limit via API
+    let regDevicesCount = 1;
+    let regMaxDevices = 2;
+
+    // Enforce device limit via API
     try {
       const resp = await fetch("/api/license/activate", {
         method: "POST",
@@ -111,9 +114,12 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
           success: false,
           message:
             data.error ||
-            "이용권 등록 가능한 최대 기기 수(2대)를 초과하였습니다. 기존 기기에서 등록을 해제해 주세요.",
+            "이용권 등록 가능한 최대 기기 수를 초과하였습니다. 기존 기기에서 등록을 해제해 주세요.",
         };
       }
+
+      if (data.registeredDevicesCount) regDevicesCount = data.registeredDevicesCount;
+      if (data.maxDevices) regMaxDevices = data.maxDevices;
     } catch (err) {
       console.warn("Device registration API network issue, falling back to local verification:", err);
     }
@@ -132,7 +138,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       setStored(newStored);
       return {
         success: true,
-        message: `${getPlanLabel(res.plan)}이 성공적으로 등록되었습니다! (최대 2대 기기 중 1대로 등록됨)`,
+        message: `${getPlanLabel(res.plan)}이 성공적으로 등록되었습니다! (기기 등록 현황: ${regDevicesCount}/${regMaxDevices}대)`,
       };
     } catch (e) {
       return { success: false, message: "이용권 저장에 실패했습니다. 브라우저 저장소를 확인해 주세요." };
