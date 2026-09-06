@@ -3,9 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
-import { useProgress } from "./ProgressProvider";
-import { SearchDialog } from "./SearchDialog";
-import { LicenseButton } from "./LicenseButton";
 import { TAB_IMAGES } from "@/lib/tabImages";
 
 interface CourseDetail {
@@ -71,8 +68,6 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
 }
 
 export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
-  const { recent } = useProgress();
-
   const [scrollActive, setScrollActive] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -136,23 +131,6 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
         >
           K-IG 교육
-        </div>
-
-        <div className="flex items-center gap-3 sm:gap-4">
-          {recent ? (
-            <Link
-              href={`/${recent.course}/${recent.lessonId}`}
-              className="group flex items-center gap-2 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] backdrop-blur-md px-3.5 py-1.5 text-[12px] font-medium text-ink hover:bg-black/[0.06] dark:hover:bg-white/[0.12] transition-all duration-300 shadow-2xs"
-            >
-              <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-ink-soft group-hover:text-ink transition-colors hidden sm:inline">최근 학습:</span>
-              <span className="font-mono text-[11.5px] font-semibold">{recent.courseTitle || recent.course} · {recent.lessonId}</span>
-              <span className="text-ink-faint group-hover:translate-x-0.5 transition-transform">→</span>
-            </Link>
-          ) : null}
-
-          <LicenseButton />
-          <SearchDialog />
         </div>
       </header>
 
