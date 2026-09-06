@@ -1,7 +1,7 @@
 {
   "course": "ld",
   "tab": "ld",
-  "lessonCount": 553,
+  "lessonCount": 552,
   "groups": [
     {
       "label": "[ 001번 - 050번 ]",
@@ -337,7 +337,7 @@
         "d157-1",
         "d158",
         "d158-1",
-        "d158",
+        "d159",
         "d159-1",
         "d160",
         "d160-1",
@@ -551,7 +551,7 @@
         "d262",
         "d262-1",
         "d263",
-        "d263",
+        "d263-1",
         "d264",
         "d264-1",
         "d265",
@@ -578,14 +578,6 @@
         "d275-1",
         "d276",
         "d276-1"
-      ]
-    },
-    {
-      "label": "기타 · Other",
-      "lessons": [
-        "LD_001",
-        "d159",
-        "d263-1"
       ]
     }
   ],
@@ -4383,6 +4375,18 @@
       "menuLabel": "[ D 158-1 ]"
     },
     {
+      "id": "d159",
+      "title": "수능영어 듣기 - 제 001 회",
+      "label": "[ 제 159 회 ]",
+      "series": "d",
+      "variant": "main",
+      "unit": 159,
+      "part": null,
+      "hasAudio": true,
+      "menuLabel": "[ D 159 ]",
+      "order": 316
+    },
+    {
       "id": "d159-1",
       "title": "수능영어 듣기 - 제 001 회",
       "label": "[ 제 159 회 ]",
@@ -4390,7 +4394,7 @@
       "variant": "script",
       "unit": 159,
       "part": null,
-      "order": 316,
+      "order": 317,
       "hasAudio": true,
       "menuLabel": "[ D 159-1 ]"
     },
@@ -4402,7 +4406,7 @@
       "variant": "main",
       "unit": 160,
       "part": null,
-      "order": 317,
+      "order": 318,
       "hasAudio": true,
       "menuLabel": "[ D 160 ]"
     },
@@ -4414,7 +4418,7 @@
       "variant": "script",
       "unit": 160,
       "part": null,
-      "order": 318,
+      "order": 319,
       "hasAudio": true,
       "menuLabel": "[ D 160-1 ]"
     },
@@ -4426,7 +4430,7 @@
       "variant": "main",
       "unit": 161,
       "part": null,
-      "order": 319,
+      "order": 320,
       "hasAudio": true,
       "menuLabel": "[ D 161 ]"
     },
@@ -4438,7 +4442,7 @@
       "variant": "script",
       "unit": 161,
       "part": null,
-      "order": 320,
+      "order": 321,
       "hasAudio": true,
       "menuLabel": "[ D 161-1 ]"
     },
@@ -4450,7 +4454,7 @@
       "variant": "main",
       "unit": 162,
       "part": null,
-      "order": 321,
+      "order": 322,
       "hasAudio": true,
       "menuLabel": "[ D 162 ]"
     },
@@ -4462,7 +4466,7 @@
       "variant": "script",
       "unit": 162,
       "part": null,
-      "order": 322,
+      "order": 323,
       "hasAudio": true,
       "menuLabel": "[ D 162-1 ]"
     },
@@ -4474,7 +4478,7 @@
       "variant": "main",
       "unit": 163,
       "part": null,
-      "order": 323,
+      "order": 324,
       "hasAudio": true,
       "menuLabel": "[ D 163 ]"
     },
@@ -4486,7 +4490,7 @@
       "variant": "script",
       "unit": 163,
       "part": null,
-      "order": 324,
+      "order": 325,
       "hasAudio": true,
       "menuLabel": "[ D 163-1 ]"
     },
@@ -4498,7 +4502,7 @@
       "variant": "main",
       "unit": 164,
       "part": null,
-      "order": 325,
+      "order": 326,
       "hasAudio": true,
       "menuLabel": "[ D 164 ]"
     },
@@ -4510,7 +4514,7 @@
       "variant": "script",
       "unit": 164,
       "part": null,
-      "order": 326,
+      "order": 327,
       "hasAudio": true,
       "menuLabel": "[ D 164-1 ]"
     },
@@ -4522,7 +4526,7 @@
       "variant": "main",
       "unit": 165,
       "part": null,
-      "order": 327,
+      "order": 328,
       "hasAudio": true,
       "menuLabel": "[ D 165 ]"
     },
@@ -4534,7 +4538,7 @@
       "variant": "script",
       "unit": 165,
       "part": null,
-      "order": 328,
+      "order": 329,
       "hasAudio": true,
       "menuLabel": "[ D 165-1 ]"
     },
@@ -4546,7 +4550,7 @@
       "variant": "main",
       "unit": 166,
       "part": null,
-      "order": 329,
+      "order": 330,
       "hasAudio": true,
       "menuLabel": "[ D 166 ]"
     },
@@ -4558,7 +4562,7 @@
       "variant": "script",
       "unit": 166,
       "part": null,
-      "order": 330,
+      "order": 331,
       "hasAudio": true,
       "menuLabel": "[ D 166-1 ]"
     },
@@ -4570,7 +4574,7 @@
       "variant": "main",
       "unit": 167,
       "part": null,
-      "order": 331,
+      "order": 332,
       "hasAudio": true,
       "menuLabel": "[ D 167 ]"
     },
@@ -4582,7 +4586,7 @@
       "variant": "script",
       "unit": 167,
       "part": null,
-      "order": 332,
+      "order": 333,
       "hasAudio": true,
       "menuLabel": "[ D 167-1 ]"
     },
@@ -4594,7 +4598,7 @@
       "variant": "main",
       "unit": 168,
       "part": null,
-      "order": 333,
+      "order": 334,
       "hasAudio": true,
       "menuLabel": "[ D 168 ]"
     },
@@ -4606,7 +4610,7 @@
       "variant": "script",
       "unit": 168,
       "part": null,
-      "order": 334,
+      "order": 335,
       "hasAudio": true,
       "menuLabel": "[ D 168-1 ]"
     },
@@ -4618,7 +4622,7 @@
       "variant": "main",
       "unit": 169,
       "part": null,
-      "order": 335,
+      "order": 336,
       "hasAudio": true,
       "menuLabel": "[ D 169 ]"
     },
@@ -4630,7 +4634,7 @@
       "variant": "script",
       "unit": 169,
       "part": null,
-      "order": 336,
+      "order": 337,
       "hasAudio": true,
       "menuLabel": "[ D 169-1 ]"
     },
@@ -4642,7 +4646,7 @@
       "variant": "main",
       "unit": 170,
       "part": null,
-      "order": 337,
+      "order": 338,
       "hasAudio": true,
       "menuLabel": "[ D 170 ]"
     },
@@ -4654,7 +4658,7 @@
       "variant": "script",
       "unit": 170,
       "part": null,
-      "order": 338,
+      "order": 339,
       "hasAudio": true,
       "menuLabel": "[ D 170-1 ]"
     },
@@ -4666,7 +4670,7 @@
       "variant": "main",
       "unit": 171,
       "part": null,
-      "order": 339,
+      "order": 340,
       "hasAudio": true,
       "menuLabel": "[ D 171 ]"
     },
@@ -4678,7 +4682,7 @@
       "variant": "script",
       "unit": 171,
       "part": null,
-      "order": 340,
+      "order": 341,
       "hasAudio": true,
       "menuLabel": "[ D 171-1 ]"
     },
@@ -4690,7 +4694,7 @@
       "variant": "main",
       "unit": 172,
       "part": null,
-      "order": 341,
+      "order": 342,
       "hasAudio": true,
       "menuLabel": "[ D 172 ]"
     },
@@ -4702,7 +4706,7 @@
       "variant": "script",
       "unit": 172,
       "part": null,
-      "order": 342,
+      "order": 343,
       "hasAudio": true,
       "menuLabel": "[ D 172-1 ]"
     },
@@ -4714,7 +4718,7 @@
       "variant": "main",
       "unit": 173,
       "part": null,
-      "order": 343,
+      "order": 344,
       "hasAudio": true,
       "menuLabel": "[ D 173 ]"
     },
@@ -4726,7 +4730,7 @@
       "variant": "script",
       "unit": 173,
       "part": null,
-      "order": 344,
+      "order": 345,
       "hasAudio": true,
       "menuLabel": "[ D 173-1 ]"
     },
@@ -4738,7 +4742,7 @@
       "variant": "main",
       "unit": 174,
       "part": null,
-      "order": 345,
+      "order": 346,
       "hasAudio": true,
       "menuLabel": "[ D 174 ]"
     },
@@ -4750,7 +4754,7 @@
       "variant": "script",
       "unit": 174,
       "part": null,
-      "order": 346,
+      "order": 347,
       "hasAudio": true,
       "menuLabel": "[ D 174-1 ]"
     },
@@ -4762,7 +4766,7 @@
       "variant": "main",
       "unit": 175,
       "part": null,
-      "order": 347,
+      "order": 348,
       "hasAudio": true,
       "menuLabel": "[ D 175 ]"
     },
@@ -4774,7 +4778,7 @@
       "variant": "script",
       "unit": 175,
       "part": null,
-      "order": 348,
+      "order": 349,
       "hasAudio": true,
       "menuLabel": "[ D 175-1 ]"
     },
@@ -4786,7 +4790,7 @@
       "variant": "main",
       "unit": 176,
       "part": null,
-      "order": 349,
+      "order": 350,
       "hasAudio": true,
       "menuLabel": "[ D 176 ]"
     },
@@ -4798,7 +4802,7 @@
       "variant": "script",
       "unit": 176,
       "part": null,
-      "order": 350,
+      "order": 351,
       "hasAudio": true,
       "menuLabel": "[ D 176-1 ]"
     },
@@ -4810,7 +4814,7 @@
       "variant": "main",
       "unit": 177,
       "part": null,
-      "order": 351,
+      "order": 352,
       "hasAudio": true,
       "menuLabel": "[ D 177 ]"
     },
@@ -4822,7 +4826,7 @@
       "variant": "script",
       "unit": 177,
       "part": null,
-      "order": 352,
+      "order": 353,
       "hasAudio": true,
       "menuLabel": "[ D 177-1 ]"
     },
@@ -4834,7 +4838,7 @@
       "variant": "main",
       "unit": 178,
       "part": null,
-      "order": 353,
+      "order": 354,
       "hasAudio": true,
       "menuLabel": "[ D 178 ]"
     },
@@ -4846,7 +4850,7 @@
       "variant": "script",
       "unit": 178,
       "part": null,
-      "order": 354,
+      "order": 355,
       "hasAudio": true,
       "menuLabel": "[ D 178-1 ]"
     },
@@ -4858,7 +4862,7 @@
       "variant": "main",
       "unit": 179,
       "part": null,
-      "order": 355,
+      "order": 356,
       "hasAudio": true,
       "menuLabel": "[ D 179 ]"
     },
@@ -4870,7 +4874,7 @@
       "variant": "script",
       "unit": 179,
       "part": null,
-      "order": 356,
+      "order": 357,
       "hasAudio": true,
       "menuLabel": "[ D 179-1 ]"
     },
@@ -4882,7 +4886,7 @@
       "variant": "main",
       "unit": 180,
       "part": null,
-      "order": 357,
+      "order": 358,
       "hasAudio": true,
       "menuLabel": "[ D 180 ]"
     },
@@ -4894,7 +4898,7 @@
       "variant": "script",
       "unit": 180,
       "part": null,
-      "order": 358,
+      "order": 359,
       "hasAudio": true,
       "menuLabel": "[ D 180-1 ]"
     },
@@ -4906,7 +4910,7 @@
       "variant": "main",
       "unit": 181,
       "part": null,
-      "order": 359,
+      "order": 360,
       "hasAudio": true,
       "menuLabel": "[ D 181 ]"
     },
@@ -4918,7 +4922,7 @@
       "variant": "script",
       "unit": 181,
       "part": null,
-      "order": 360,
+      "order": 361,
       "hasAudio": true,
       "menuLabel": "[ D 181-1 ]"
     },
@@ -4930,7 +4934,7 @@
       "variant": "main",
       "unit": 182,
       "part": null,
-      "order": 361,
+      "order": 362,
       "hasAudio": true,
       "menuLabel": "[ D 182 ]"
     },
@@ -4942,7 +4946,7 @@
       "variant": "script",
       "unit": 182,
       "part": null,
-      "order": 362,
+      "order": 363,
       "hasAudio": true,
       "menuLabel": "[ D 182-1 ]"
     },
@@ -4954,7 +4958,7 @@
       "variant": "main",
       "unit": 183,
       "part": null,
-      "order": 363,
+      "order": 364,
       "hasAudio": true,
       "menuLabel": "[ D 183 ]"
     },
@@ -4966,7 +4970,7 @@
       "variant": "script",
       "unit": 183,
       "part": null,
-      "order": 364,
+      "order": 365,
       "hasAudio": true,
       "menuLabel": "[ D 183-1 ]"
     },
@@ -4978,7 +4982,7 @@
       "variant": "main",
       "unit": 184,
       "part": null,
-      "order": 365,
+      "order": 366,
       "hasAudio": true,
       "menuLabel": "[ D 184 ]"
     },
@@ -4990,7 +4994,7 @@
       "variant": "script",
       "unit": 184,
       "part": null,
-      "order": 366,
+      "order": 367,
       "hasAudio": true,
       "menuLabel": "[ D 184-1 ]"
     },
@@ -5002,7 +5006,7 @@
       "variant": "main",
       "unit": 185,
       "part": null,
-      "order": 367,
+      "order": 368,
       "hasAudio": true,
       "menuLabel": "[ D 185 ]"
     },
@@ -5014,7 +5018,7 @@
       "variant": "script",
       "unit": 185,
       "part": null,
-      "order": 368,
+      "order": 369,
       "hasAudio": true,
       "menuLabel": "[ D 185-1 ]"
     },
@@ -5026,7 +5030,7 @@
       "variant": "main",
       "unit": 186,
       "part": null,
-      "order": 369,
+      "order": 370,
       "hasAudio": true,
       "menuLabel": "[ D 186 ]"
     },
@@ -5038,7 +5042,7 @@
       "variant": "script",
       "unit": 186,
       "part": null,
-      "order": 370,
+      "order": 371,
       "hasAudio": true,
       "menuLabel": "[ D 186-1 ]"
     },
@@ -5050,7 +5054,7 @@
       "variant": "main",
       "unit": 187,
       "part": null,
-      "order": 371,
+      "order": 372,
       "hasAudio": true,
       "menuLabel": "[ D 187 ]"
     },
@@ -5062,7 +5066,7 @@
       "variant": "script",
       "unit": 187,
       "part": null,
-      "order": 372,
+      "order": 373,
       "hasAudio": true,
       "menuLabel": "[ D 187-1 ]"
     },
@@ -5074,7 +5078,7 @@
       "variant": "main",
       "unit": 188,
       "part": null,
-      "order": 373,
+      "order": 374,
       "hasAudio": true,
       "menuLabel": "[ D 188 ]"
     },
@@ -5086,7 +5090,7 @@
       "variant": "script",
       "unit": 188,
       "part": null,
-      "order": 374,
+      "order": 375,
       "hasAudio": true,
       "menuLabel": "[ D 188-1 ]"
     },
@@ -5098,7 +5102,7 @@
       "variant": "main",
       "unit": 189,
       "part": null,
-      "order": 375,
+      "order": 376,
       "hasAudio": true,
       "menuLabel": "[ D 189 ]"
     },
@@ -5110,7 +5114,7 @@
       "variant": "script",
       "unit": 189,
       "part": null,
-      "order": 376,
+      "order": 377,
       "hasAudio": true,
       "menuLabel": "[ D 189-1 ]"
     },
@@ -5122,7 +5126,7 @@
       "variant": "main",
       "unit": 190,
       "part": null,
-      "order": 377,
+      "order": 378,
       "hasAudio": true,
       "menuLabel": "[ D 190 ]"
     },
@@ -5134,7 +5138,7 @@
       "variant": "script",
       "unit": 190,
       "part": null,
-      "order": 378,
+      "order": 379,
       "hasAudio": true,
       "menuLabel": "[ D 190-1 ]"
     },
@@ -5146,7 +5150,7 @@
       "variant": "main",
       "unit": 191,
       "part": null,
-      "order": 379,
+      "order": 380,
       "hasAudio": true,
       "menuLabel": "[ D 191 ]"
     },
@@ -5158,7 +5162,7 @@
       "variant": "script",
       "unit": 191,
       "part": null,
-      "order": 380,
+      "order": 381,
       "hasAudio": true,
       "menuLabel": "[ D 191-1 ]"
     },
@@ -5170,7 +5174,7 @@
       "variant": "main",
       "unit": 192,
       "part": null,
-      "order": 381,
+      "order": 382,
       "hasAudio": true,
       "menuLabel": "[ D 192 ]"
     },
@@ -5182,7 +5186,7 @@
       "variant": "script",
       "unit": 192,
       "part": null,
-      "order": 382,
+      "order": 383,
       "hasAudio": true,
       "menuLabel": "[ D 192-1 ]"
     },
@@ -5194,7 +5198,7 @@
       "variant": "main",
       "unit": 193,
       "part": null,
-      "order": 383,
+      "order": 384,
       "hasAudio": true,
       "menuLabel": "[ D 193 ]"
     },
@@ -5206,7 +5210,7 @@
       "variant": "script",
       "unit": 193,
       "part": null,
-      "order": 384,
+      "order": 385,
       "hasAudio": true,
       "menuLabel": "[ D 193-1 ]"
     },
@@ -5218,7 +5222,7 @@
       "variant": "main",
       "unit": 194,
       "part": null,
-      "order": 385,
+      "order": 386,
       "hasAudio": true,
       "menuLabel": "[ D 194 ]"
     },
@@ -5230,7 +5234,7 @@
       "variant": "script",
       "unit": 194,
       "part": null,
-      "order": 386,
+      "order": 387,
       "hasAudio": true,
       "menuLabel": "[ D 194-1 ]"
     },
@@ -5242,7 +5246,7 @@
       "variant": "main",
       "unit": 195,
       "part": null,
-      "order": 387,
+      "order": 388,
       "hasAudio": true,
       "menuLabel": "[ D 195 ]"
     },
@@ -5254,7 +5258,7 @@
       "variant": "script",
       "unit": 195,
       "part": null,
-      "order": 388,
+      "order": 389,
       "hasAudio": true,
       "menuLabel": "[ D 195-1 ]"
     },
@@ -5266,7 +5270,7 @@
       "variant": "main",
       "unit": 196,
       "part": null,
-      "order": 389,
+      "order": 390,
       "hasAudio": true,
       "menuLabel": "[ D 196 ]"
     },
@@ -5278,7 +5282,7 @@
       "variant": "script",
       "unit": 196,
       "part": null,
-      "order": 390,
+      "order": 391,
       "hasAudio": true,
       "menuLabel": "[ D 196-1 ]"
     },
@@ -5290,7 +5294,7 @@
       "variant": "main",
       "unit": 197,
       "part": null,
-      "order": 391,
+      "order": 392,
       "hasAudio": true,
       "menuLabel": "[ D 197 ]"
     },
@@ -5302,7 +5306,7 @@
       "variant": "script",
       "unit": 197,
       "part": null,
-      "order": 392,
+      "order": 393,
       "hasAudio": true,
       "menuLabel": "[ D 197-1 ]"
     },
@@ -5314,7 +5318,7 @@
       "variant": "main",
       "unit": 198,
       "part": null,
-      "order": 393,
+      "order": 394,
       "hasAudio": true,
       "menuLabel": "[ D 198 ]"
     },
@@ -5326,7 +5330,7 @@
       "variant": "script",
       "unit": 198,
       "part": null,
-      "order": 394,
+      "order": 395,
       "hasAudio": true,
       "menuLabel": "[ D 198-1 ]"
     },
@@ -5338,7 +5342,7 @@
       "variant": "main",
       "unit": 199,
       "part": null,
-      "order": 395,
+      "order": 396,
       "hasAudio": true,
       "menuLabel": "[ D 199 ]"
     },
@@ -5350,7 +5354,7 @@
       "variant": "script",
       "unit": 199,
       "part": null,
-      "order": 396,
+      "order": 397,
       "hasAudio": true,
       "menuLabel": "[ D 199-1 ]"
     },
@@ -5362,7 +5366,7 @@
       "variant": "main",
       "unit": 200,
       "part": null,
-      "order": 397,
+      "order": 398,
       "hasAudio": true,
       "menuLabel": "[ D 200 ]"
     },
@@ -5374,7 +5378,7 @@
       "variant": "script",
       "unit": 200,
       "part": null,
-      "order": 398,
+      "order": 399,
       "hasAudio": true,
       "menuLabel": "[ D 200-1 ]"
     },
@@ -5386,7 +5390,7 @@
       "variant": "main",
       "unit": 201,
       "part": null,
-      "order": 399,
+      "order": 400,
       "hasAudio": true,
       "menuLabel": "[ D 201 ]"
     },
@@ -5398,7 +5402,7 @@
       "variant": "script",
       "unit": 201,
       "part": null,
-      "order": 400,
+      "order": 401,
       "hasAudio": true,
       "menuLabel": "[ D 201-1 ]"
     },
@@ -5410,7 +5414,7 @@
       "variant": "main",
       "unit": 202,
       "part": null,
-      "order": 401,
+      "order": 402,
       "hasAudio": true,
       "menuLabel": "[ D 202 ]"
     },
@@ -5422,7 +5426,7 @@
       "variant": "script",
       "unit": 202,
       "part": null,
-      "order": 402,
+      "order": 403,
       "hasAudio": true,
       "menuLabel": "[ D 202-1 ]"
     },
@@ -5434,7 +5438,7 @@
       "variant": "main",
       "unit": 203,
       "part": null,
-      "order": 403,
+      "order": 404,
       "hasAudio": true,
       "menuLabel": "[ D 203 ]"
     },
@@ -5446,7 +5450,7 @@
       "variant": "script",
       "unit": 203,
       "part": null,
-      "order": 404,
+      "order": 405,
       "hasAudio": true,
       "menuLabel": "[ D 203-1 ]"
     },
@@ -5458,7 +5462,7 @@
       "variant": "main",
       "unit": 204,
       "part": null,
-      "order": 405,
+      "order": 406,
       "hasAudio": true,
       "menuLabel": "[ D 204 ]"
     },
@@ -5470,7 +5474,7 @@
       "variant": "script",
       "unit": 204,
       "part": null,
-      "order": 406,
+      "order": 407,
       "hasAudio": true,
       "menuLabel": "[ D 204-1 ]"
     },
@@ -5482,7 +5486,7 @@
       "variant": "main",
       "unit": 205,
       "part": null,
-      "order": 407,
+      "order": 408,
       "hasAudio": true,
       "menuLabel": "[ D 205 ]"
     },
@@ -5494,7 +5498,7 @@
       "variant": "script",
       "unit": 205,
       "part": null,
-      "order": 408,
+      "order": 409,
       "hasAudio": true,
       "menuLabel": "[ D 205-1 ]"
     },
@@ -5506,7 +5510,7 @@
       "variant": "main",
       "unit": 206,
       "part": null,
-      "order": 409,
+      "order": 410,
       "hasAudio": true,
       "menuLabel": "[ D 206 ]"
     },
@@ -5518,7 +5522,7 @@
       "variant": "script",
       "unit": 206,
       "part": null,
-      "order": 410,
+      "order": 411,
       "hasAudio": true,
       "menuLabel": "[ D 206-1 ]"
     },
@@ -5530,7 +5534,7 @@
       "variant": "main",
       "unit": 207,
       "part": null,
-      "order": 411,
+      "order": 412,
       "hasAudio": true,
       "menuLabel": "[ D 207 ]"
     },
@@ -5542,7 +5546,7 @@
       "variant": "script",
       "unit": 207,
       "part": null,
-      "order": 412,
+      "order": 413,
       "hasAudio": true,
       "menuLabel": "[ D 207-1 ]"
     },
@@ -5554,7 +5558,7 @@
       "variant": "main",
       "unit": 208,
       "part": null,
-      "order": 413,
+      "order": 414,
       "hasAudio": true,
       "menuLabel": "[ D 208 ]"
     },
@@ -5566,7 +5570,7 @@
       "variant": "script",
       "unit": 208,
       "part": null,
-      "order": 414,
+      "order": 415,
       "hasAudio": true,
       "menuLabel": "[ D 208-1 ]"
     },
@@ -5578,7 +5582,7 @@
       "variant": "main",
       "unit": 209,
       "part": null,
-      "order": 415,
+      "order": 416,
       "hasAudio": true,
       "menuLabel": "[ D 209 ]"
     },
@@ -5590,7 +5594,7 @@
       "variant": "script",
       "unit": 209,
       "part": null,
-      "order": 416,
+      "order": 417,
       "hasAudio": true,
       "menuLabel": "[ D 209-1 ]"
     },
@@ -5602,7 +5606,7 @@
       "variant": "main",
       "unit": 210,
       "part": null,
-      "order": 417,
+      "order": 418,
       "hasAudio": true,
       "menuLabel": "[ D 210 ]"
     },
@@ -5614,7 +5618,7 @@
       "variant": "script",
       "unit": 210,
       "part": null,
-      "order": 418,
+      "order": 419,
       "hasAudio": true,
       "menuLabel": "[ D 210-1 ]"
     },
@@ -5626,7 +5630,7 @@
       "variant": "main",
       "unit": 211,
       "part": null,
-      "order": 419,
+      "order": 420,
       "hasAudio": true,
       "menuLabel": "[ D 211 ]"
     },
@@ -5638,7 +5642,7 @@
       "variant": "script",
       "unit": 211,
       "part": null,
-      "order": 420,
+      "order": 421,
       "hasAudio": true,
       "menuLabel": "[ D 211-1 ]"
     },
@@ -5650,7 +5654,7 @@
       "variant": "main",
       "unit": 212,
       "part": null,
-      "order": 421,
+      "order": 422,
       "hasAudio": true,
       "menuLabel": "[ D 212 ]"
     },
@@ -5662,7 +5666,7 @@
       "variant": "script",
       "unit": 212,
       "part": null,
-      "order": 422,
+      "order": 423,
       "hasAudio": true,
       "menuLabel": "[ D 212-1 ]"
     },
@@ -5674,7 +5678,7 @@
       "variant": "main",
       "unit": 213,
       "part": null,
-      "order": 423,
+      "order": 424,
       "hasAudio": true,
       "menuLabel": "[ D 213 ]"
     },
@@ -5686,7 +5690,7 @@
       "variant": "script",
       "unit": 213,
       "part": null,
-      "order": 424,
+      "order": 425,
       "hasAudio": true,
       "menuLabel": "[ D 213-1 ]"
     },
@@ -5698,7 +5702,7 @@
       "variant": "main",
       "unit": 214,
       "part": null,
-      "order": 425,
+      "order": 426,
       "hasAudio": true,
       "menuLabel": "[ D 214 ]"
     },
@@ -5710,7 +5714,7 @@
       "variant": "script",
       "unit": 214,
       "part": null,
-      "order": 426,
+      "order": 427,
       "hasAudio": true,
       "menuLabel": "[ D 214-1 ]"
     },
@@ -5722,7 +5726,7 @@
       "variant": "main",
       "unit": 215,
       "part": null,
-      "order": 427,
+      "order": 428,
       "hasAudio": true,
       "menuLabel": "[ D 215 ]"
     },
@@ -5734,7 +5738,7 @@
       "variant": "script",
       "unit": 215,
       "part": null,
-      "order": 428,
+      "order": 429,
       "hasAudio": true,
       "menuLabel": "[ D 215-1 ]"
     },
@@ -5746,7 +5750,7 @@
       "variant": "main",
       "unit": 216,
       "part": null,
-      "order": 429,
+      "order": 430,
       "hasAudio": true,
       "menuLabel": "[ D 216 ]"
     },
@@ -5758,7 +5762,7 @@
       "variant": "script",
       "unit": 216,
       "part": null,
-      "order": 430,
+      "order": 431,
       "hasAudio": true,
       "menuLabel": "[ D 216-1 ]"
     },
@@ -5770,7 +5774,7 @@
       "variant": "main",
       "unit": 217,
       "part": null,
-      "order": 431,
+      "order": 432,
       "hasAudio": true,
       "menuLabel": "[ D 217 ]"
     },
@@ -5782,7 +5786,7 @@
       "variant": "script",
       "unit": 217,
       "part": null,
-      "order": 432,
+      "order": 433,
       "hasAudio": true,
       "menuLabel": "[ D 217-1 ]"
     },
@@ -5794,7 +5798,7 @@
       "variant": "main",
       "unit": 218,
       "part": null,
-      "order": 433,
+      "order": 434,
       "hasAudio": true,
       "menuLabel": "[ D 218 ]"
     },
@@ -5806,7 +5810,7 @@
       "variant": "script",
       "unit": 218,
       "part": null,
-      "order": 434,
+      "order": 435,
       "hasAudio": true,
       "menuLabel": "[ D 218-1 ]"
     },
@@ -5818,7 +5822,7 @@
       "variant": "main",
       "unit": 219,
       "part": null,
-      "order": 435,
+      "order": 436,
       "hasAudio": true,
       "menuLabel": "[ D 219 ]"
     },
@@ -5830,7 +5834,7 @@
       "variant": "script",
       "unit": 219,
       "part": null,
-      "order": 436,
+      "order": 437,
       "hasAudio": true,
       "menuLabel": "[ D 219-1 ]"
     },
@@ -5842,7 +5846,7 @@
       "variant": "main",
       "unit": 220,
       "part": null,
-      "order": 437,
+      "order": 438,
       "hasAudio": true,
       "menuLabel": "[ D 220 ]"
     },
@@ -5854,7 +5858,7 @@
       "variant": "script",
       "unit": 220,
       "part": null,
-      "order": 438,
+      "order": 439,
       "hasAudio": true,
       "menuLabel": "[ D 220-1 ]"
     },
@@ -5866,7 +5870,7 @@
       "variant": "main",
       "unit": 221,
       "part": null,
-      "order": 439,
+      "order": 440,
       "hasAudio": true,
       "menuLabel": "[ D 221 ]"
     },
@@ -5878,7 +5882,7 @@
       "variant": "script",
       "unit": 221,
       "part": null,
-      "order": 440,
+      "order": 441,
       "hasAudio": true,
       "menuLabel": "[ D 221-1 ]"
     },
@@ -5890,7 +5894,7 @@
       "variant": "main",
       "unit": 222,
       "part": null,
-      "order": 441,
+      "order": 442,
       "hasAudio": true,
       "menuLabel": "[ D 222 ]"
     },
@@ -5902,7 +5906,7 @@
       "variant": "script",
       "unit": 222,
       "part": null,
-      "order": 442,
+      "order": 443,
       "hasAudio": true,
       "menuLabel": "[ D 222-1 ]"
     },
@@ -5914,7 +5918,7 @@
       "variant": "main",
       "unit": 223,
       "part": null,
-      "order": 443,
+      "order": 444,
       "hasAudio": true,
       "menuLabel": "[ D 223 ]"
     },
@@ -5926,7 +5930,7 @@
       "variant": "script",
       "unit": 223,
       "part": null,
-      "order": 444,
+      "order": 445,
       "hasAudio": true,
       "menuLabel": "[ D 223-1 ]"
     },
@@ -5938,7 +5942,7 @@
       "variant": "main",
       "unit": 224,
       "part": null,
-      "order": 445,
+      "order": 446,
       "hasAudio": true,
       "menuLabel": "[ D 224 ]"
     },
@@ -5950,7 +5954,7 @@
       "variant": "script",
       "unit": 224,
       "part": null,
-      "order": 446,
+      "order": 447,
       "hasAudio": true,
       "menuLabel": "[ D 224-1 ]"
     },
@@ -5962,7 +5966,7 @@
       "variant": "main",
       "unit": 225,
       "part": null,
-      "order": 447,
+      "order": 448,
       "hasAudio": true,
       "menuLabel": "[ D 225 ]"
     },
@@ -5974,7 +5978,7 @@
       "variant": "script",
       "unit": 225,
       "part": null,
-      "order": 448,
+      "order": 449,
       "hasAudio": true,
       "menuLabel": "[ D 225-1 ]"
     },
@@ -5986,7 +5990,7 @@
       "variant": "main",
       "unit": 226,
       "part": null,
-      "order": 449,
+      "order": 450,
       "hasAudio": true,
       "menuLabel": "[ D 226 ]"
     },
@@ -5998,7 +6002,7 @@
       "variant": "script",
       "unit": 226,
       "part": null,
-      "order": 450,
+      "order": 451,
       "hasAudio": true,
       "menuLabel": "[ D 226-1 ]"
     },
@@ -6010,7 +6014,7 @@
       "variant": "main",
       "unit": 227,
       "part": null,
-      "order": 451,
+      "order": 452,
       "hasAudio": true,
       "menuLabel": "[ D 227 ]"
     },
@@ -6022,7 +6026,7 @@
       "variant": "script",
       "unit": 227,
       "part": null,
-      "order": 452,
+      "order": 453,
       "hasAudio": true,
       "menuLabel": "[ D 227-1 ]"
     },
@@ -6034,7 +6038,7 @@
       "variant": "main",
       "unit": 228,
       "part": null,
-      "order": 453,
+      "order": 454,
       "hasAudio": true,
       "menuLabel": "[ D 228 ]"
     },
@@ -6046,7 +6050,7 @@
       "variant": "script",
       "unit": 228,
       "part": null,
-      "order": 454,
+      "order": 455,
       "hasAudio": true,
       "menuLabel": "[ D 228-1 ]"
     },
@@ -6058,7 +6062,7 @@
       "variant": "main",
       "unit": 229,
       "part": null,
-      "order": 455,
+      "order": 456,
       "hasAudio": true,
       "menuLabel": "[ D 229 ]"
     },
@@ -6070,7 +6074,7 @@
       "variant": "script",
       "unit": 229,
       "part": null,
-      "order": 456,
+      "order": 457,
       "hasAudio": true,
       "menuLabel": "[ D 229-1 ]"
     },
@@ -6082,7 +6086,7 @@
       "variant": "main",
       "unit": 230,
       "part": null,
-      "order": 457,
+      "order": 458,
       "hasAudio": true,
       "menuLabel": "[ D 230 ]"
     },
@@ -6094,7 +6098,7 @@
       "variant": "script",
       "unit": 230,
       "part": null,
-      "order": 458,
+      "order": 459,
       "hasAudio": true,
       "menuLabel": "[ D 230-1 ]"
     },
@@ -6106,7 +6110,7 @@
       "variant": "main",
       "unit": 231,
       "part": null,
-      "order": 459,
+      "order": 460,
       "hasAudio": true,
       "menuLabel": "[ D 231 ]"
     },
@@ -6118,7 +6122,7 @@
       "variant": "script",
       "unit": 231,
       "part": null,
-      "order": 460,
+      "order": 461,
       "hasAudio": true,
       "menuLabel": "[ D 231-1 ]"
     },
@@ -6130,7 +6134,7 @@
       "variant": "main",
       "unit": 232,
       "part": null,
-      "order": 461,
+      "order": 462,
       "hasAudio": true,
       "menuLabel": "[ D 232 ]"
     },
@@ -6142,7 +6146,7 @@
       "variant": "script",
       "unit": 232,
       "part": null,
-      "order": 462,
+      "order": 463,
       "hasAudio": true,
       "menuLabel": "[ D 232-1 ]"
     },
@@ -6154,7 +6158,7 @@
       "variant": "main",
       "unit": 233,
       "part": null,
-      "order": 463,
+      "order": 464,
       "hasAudio": true,
       "menuLabel": "[ D 233 ]"
     },
@@ -6166,7 +6170,7 @@
       "variant": "script",
       "unit": 233,
       "part": null,
-      "order": 464,
+      "order": 465,
       "hasAudio": true,
       "menuLabel": "[ D 233-1 ]"
     },
@@ -6178,7 +6182,7 @@
       "variant": "main",
       "unit": 234,
       "part": null,
-      "order": 465,
+      "order": 466,
       "hasAudio": true,
       "menuLabel": "[ D 234 ]"
     },
@@ -6190,7 +6194,7 @@
       "variant": "script",
       "unit": 234,
       "part": null,
-      "order": 466,
+      "order": 467,
       "hasAudio": true,
       "menuLabel": "[ D 234-1 ]"
     },
@@ -6202,7 +6206,7 @@
       "variant": "main",
       "unit": 235,
       "part": null,
-      "order": 467,
+      "order": 468,
       "hasAudio": true,
       "menuLabel": "[ D 235 ]"
     },
@@ -6214,7 +6218,7 @@
       "variant": "script",
       "unit": 235,
       "part": null,
-      "order": 468,
+      "order": 469,
       "hasAudio": true,
       "menuLabel": "[ D 235-1 ]"
     },
@@ -6226,7 +6230,7 @@
       "variant": "main",
       "unit": 236,
       "part": null,
-      "order": 469,
+      "order": 470,
       "hasAudio": true,
       "menuLabel": "[ D 236 ]"
     },
@@ -6238,7 +6242,7 @@
       "variant": "script",
       "unit": 236,
       "part": null,
-      "order": 470,
+      "order": 471,
       "hasAudio": true,
       "menuLabel": "[ D 236-1 ]"
     },
@@ -6250,7 +6254,7 @@
       "variant": "main",
       "unit": 237,
       "part": null,
-      "order": 471,
+      "order": 472,
       "hasAudio": true,
       "menuLabel": "[ D 237 ]"
     },
@@ -6262,7 +6266,7 @@
       "variant": "script",
       "unit": 237,
       "part": null,
-      "order": 472,
+      "order": 473,
       "hasAudio": true,
       "menuLabel": "[ D 237-1 ]"
     },
@@ -6274,7 +6278,7 @@
       "variant": "main",
       "unit": 238,
       "part": null,
-      "order": 473,
+      "order": 474,
       "hasAudio": true,
       "menuLabel": "[ D 238 ]"
     },
@@ -6286,7 +6290,7 @@
       "variant": "script",
       "unit": 238,
       "part": null,
-      "order": 474,
+      "order": 475,
       "hasAudio": true,
       "menuLabel": "[ D 238-1 ]"
     },
@@ -6298,7 +6302,7 @@
       "variant": "main",
       "unit": 239,
       "part": null,
-      "order": 475,
+      "order": 476,
       "hasAudio": true,
       "menuLabel": "[ D 239 ]"
     },
@@ -6310,7 +6314,7 @@
       "variant": "script",
       "unit": 239,
       "part": null,
-      "order": 476,
+      "order": 477,
       "hasAudio": true,
       "menuLabel": "[ D 239-1 ]"
     },
@@ -6322,7 +6326,7 @@
       "variant": "main",
       "unit": 240,
       "part": null,
-      "order": 477,
+      "order": 478,
       "hasAudio": true,
       "menuLabel": "[ D 240 ]"
     },
@@ -6334,7 +6338,7 @@
       "variant": "script",
       "unit": 240,
       "part": null,
-      "order": 478,
+      "order": 479,
       "hasAudio": true,
       "menuLabel": "[ D 240-1 ]"
     },
@@ -6346,7 +6350,7 @@
       "variant": "main",
       "unit": 241,
       "part": null,
-      "order": 479,
+      "order": 480,
       "hasAudio": true,
       "menuLabel": "[ D 241 ]"
     },
@@ -6358,7 +6362,7 @@
       "variant": "script",
       "unit": 241,
       "part": null,
-      "order": 480,
+      "order": 481,
       "hasAudio": true,
       "menuLabel": "[ D 241-1 ]"
     },
@@ -6370,7 +6374,7 @@
       "variant": "main",
       "unit": 242,
       "part": null,
-      "order": 481,
+      "order": 482,
       "hasAudio": true,
       "menuLabel": "[ D 242 ]"
     },
@@ -6382,7 +6386,7 @@
       "variant": "script",
       "unit": 242,
       "part": null,
-      "order": 482,
+      "order": 483,
       "hasAudio": true,
       "menuLabel": "[ D 242-1 ]"
     },
@@ -6394,7 +6398,7 @@
       "variant": "main",
       "unit": 243,
       "part": null,
-      "order": 483,
+      "order": 484,
       "hasAudio": true,
       "menuLabel": "[ D 243 ]"
     },
@@ -6406,7 +6410,7 @@
       "variant": "script",
       "unit": 243,
       "part": null,
-      "order": 484,
+      "order": 485,
       "hasAudio": true,
       "menuLabel": "[ D 243-1 ]"
     },
@@ -6418,7 +6422,7 @@
       "variant": "main",
       "unit": 244,
       "part": null,
-      "order": 485,
+      "order": 486,
       "hasAudio": true,
       "menuLabel": "[ D 244 ]"
     },
@@ -6430,7 +6434,7 @@
       "variant": "script",
       "unit": 244,
       "part": null,
-      "order": 486,
+      "order": 487,
       "hasAudio": true,
       "menuLabel": "[ D 244-1 ]"
     },
@@ -6442,7 +6446,7 @@
       "variant": "main",
       "unit": 245,
       "part": null,
-      "order": 487,
+      "order": 488,
       "hasAudio": true,
       "menuLabel": "[ D 245 ]"
     },
@@ -6454,7 +6458,7 @@
       "variant": "script",
       "unit": 245,
       "part": null,
-      "order": 488,
+      "order": 489,
       "hasAudio": true,
       "menuLabel": "[ D 245-1 ]"
     },
@@ -6466,7 +6470,7 @@
       "variant": "main",
       "unit": 246,
       "part": null,
-      "order": 489,
+      "order": 490,
       "hasAudio": true,
       "menuLabel": "[ D 246 ]"
     },
@@ -6478,7 +6482,7 @@
       "variant": "script",
       "unit": 246,
       "part": null,
-      "order": 490,
+      "order": 491,
       "hasAudio": true,
       "menuLabel": "[ D 246-1 ]"
     },
@@ -6490,7 +6494,7 @@
       "variant": "main",
       "unit": 247,
       "part": null,
-      "order": 491,
+      "order": 492,
       "hasAudio": true,
       "menuLabel": "[ D 247 ]"
     },
@@ -6502,7 +6506,7 @@
       "variant": "script",
       "unit": 247,
       "part": null,
-      "order": 492,
+      "order": 493,
       "hasAudio": true,
       "menuLabel": "[ D 247-1 ]"
     },
@@ -6514,7 +6518,7 @@
       "variant": "main",
       "unit": 248,
       "part": null,
-      "order": 493,
+      "order": 494,
       "hasAudio": true,
       "menuLabel": "[ D 248 ]"
     },
@@ -6526,7 +6530,7 @@
       "variant": "script",
       "unit": 248,
       "part": null,
-      "order": 494,
+      "order": 495,
       "hasAudio": true,
       "menuLabel": "[ D 248-1 ]"
     },
@@ -6538,7 +6542,7 @@
       "variant": "main",
       "unit": 249,
       "part": null,
-      "order": 495,
+      "order": 496,
       "hasAudio": true,
       "menuLabel": "[ D 249 ]"
     },
@@ -6550,7 +6554,7 @@
       "variant": "script",
       "unit": 249,
       "part": null,
-      "order": 496,
+      "order": 497,
       "hasAudio": true,
       "menuLabel": "[ D 249-1 ]"
     },
@@ -6562,7 +6566,7 @@
       "variant": "main",
       "unit": 250,
       "part": null,
-      "order": 497,
+      "order": 498,
       "hasAudio": true,
       "menuLabel": "[ D 250 ]"
     },
@@ -6574,7 +6578,7 @@
       "variant": "script",
       "unit": 250,
       "part": null,
-      "order": 498,
+      "order": 499,
       "hasAudio": true,
       "menuLabel": "[ D 250-1 ]"
     },
@@ -6586,7 +6590,7 @@
       "variant": "main",
       "unit": 251,
       "part": null,
-      "order": 499,
+      "order": 500,
       "hasAudio": true,
       "menuLabel": "[ D 251 ]"
     },
@@ -6598,7 +6602,7 @@
       "variant": "script",
       "unit": 251,
       "part": null,
-      "order": 500,
+      "order": 501,
       "hasAudio": true,
       "menuLabel": "[ D 251-1 ]"
     },
@@ -6610,7 +6614,7 @@
       "variant": "main",
       "unit": 252,
       "part": null,
-      "order": 501,
+      "order": 502,
       "hasAudio": true,
       "menuLabel": "[ D 252 ]"
     },
@@ -6622,7 +6626,7 @@
       "variant": "script",
       "unit": 252,
       "part": null,
-      "order": 502,
+      "order": 503,
       "hasAudio": true,
       "menuLabel": "[ D 252-1 ]"
     },
@@ -6634,7 +6638,7 @@
       "variant": "main",
       "unit": 253,
       "part": null,
-      "order": 503,
+      "order": 504,
       "hasAudio": true,
       "menuLabel": "[ D 253 ]"
     },
@@ -6646,7 +6650,7 @@
       "variant": "script",
       "unit": 253,
       "part": null,
-      "order": 504,
+      "order": 505,
       "hasAudio": true,
       "menuLabel": "[ D 253-1 ]"
     },
@@ -6658,7 +6662,7 @@
       "variant": "main",
       "unit": 254,
       "part": null,
-      "order": 505,
+      "order": 506,
       "hasAudio": true,
       "menuLabel": "[ D 254 ]"
     },
@@ -6670,7 +6674,7 @@
       "variant": "script",
       "unit": 254,
       "part": null,
-      "order": 506,
+      "order": 507,
       "hasAudio": true,
       "menuLabel": "[ D 254-1 ]"
     },
@@ -6682,7 +6686,7 @@
       "variant": "main",
       "unit": 255,
       "part": null,
-      "order": 507,
+      "order": 508,
       "hasAudio": true,
       "menuLabel": "[ D 255 ]"
     },
@@ -6694,7 +6698,7 @@
       "variant": "script",
       "unit": 255,
       "part": null,
-      "order": 508,
+      "order": 509,
       "hasAudio": true,
       "menuLabel": "[ D 255-1 ]"
     },
@@ -6706,7 +6710,7 @@
       "variant": "main",
       "unit": 256,
       "part": null,
-      "order": 509,
+      "order": 510,
       "hasAudio": true,
       "menuLabel": "[ D 256 ]"
     },
@@ -6718,7 +6722,7 @@
       "variant": "script",
       "unit": 256,
       "part": null,
-      "order": 510,
+      "order": 511,
       "hasAudio": true,
       "menuLabel": "[ D 256-1 ]"
     },
@@ -6730,7 +6734,7 @@
       "variant": "main",
       "unit": 257,
       "part": null,
-      "order": 511,
+      "order": 512,
       "hasAudio": true,
       "menuLabel": "[ D 257 ]"
     },
@@ -6742,7 +6746,7 @@
       "variant": "script",
       "unit": 257,
       "part": null,
-      "order": 512,
+      "order": 513,
       "hasAudio": true,
       "menuLabel": "[ D 257-1 ]"
     },
@@ -6754,7 +6758,7 @@
       "variant": "main",
       "unit": 258,
       "part": null,
-      "order": 513,
+      "order": 514,
       "hasAudio": true,
       "menuLabel": "[ D 258 ]"
     },
@@ -6766,7 +6770,7 @@
       "variant": "script",
       "unit": 258,
       "part": null,
-      "order": 514,
+      "order": 515,
       "hasAudio": true,
       "menuLabel": "[ D 258-1 ]"
     },
@@ -6778,7 +6782,7 @@
       "variant": "main",
       "unit": 259,
       "part": null,
-      "order": 515,
+      "order": 516,
       "hasAudio": true,
       "menuLabel": "[ D 259 ]"
     },
@@ -6790,7 +6794,7 @@
       "variant": "script",
       "unit": 259,
       "part": null,
-      "order": 516,
+      "order": 517,
       "hasAudio": true,
       "menuLabel": "[ D 259-1 ]"
     },
@@ -6802,7 +6806,7 @@
       "variant": "main",
       "unit": 260,
       "part": null,
-      "order": 517,
+      "order": 518,
       "hasAudio": true,
       "menuLabel": "[ D 260 ]"
     },
@@ -6814,7 +6818,7 @@
       "variant": "script",
       "unit": 260,
       "part": null,
-      "order": 518,
+      "order": 519,
       "hasAudio": true,
       "menuLabel": "[ D 260-1 ]"
     },
@@ -6826,7 +6830,7 @@
       "variant": "main",
       "unit": 261,
       "part": null,
-      "order": 519,
+      "order": 520,
       "hasAudio": true,
       "menuLabel": "[ D 261 ]"
     },
@@ -6838,7 +6842,7 @@
       "variant": "script",
       "unit": 261,
       "part": null,
-      "order": 520,
+      "order": 521,
       "hasAudio": true,
       "menuLabel": "[ D 261-1 ]"
     },
@@ -6850,7 +6854,7 @@
       "variant": "main",
       "unit": 262,
       "part": null,
-      "order": 521,
+      "order": 522,
       "hasAudio": true,
       "menuLabel": "[ D 262 ]"
     },
@@ -6862,7 +6866,7 @@
       "variant": "script",
       "unit": 262,
       "part": null,
-      "order": 522,
+      "order": 523,
       "hasAudio": true,
       "menuLabel": "[ D 262-1 ]"
     },
@@ -6874,9 +6878,21 @@
       "variant": "main",
       "unit": 263,
       "part": null,
-      "order": 523,
+      "order": 524,
       "hasAudio": true,
       "menuLabel": "[ D 263-1 ]"
+    },
+    {
+      "id": "d263-1",
+      "title": "수능영어 듣기 - 제 001 회",
+      "label": "[ 제 263 회 ]",
+      "series": "d",
+      "variant": "script",
+      "unit": 263,
+      "part": null,
+      "hasAudio": true,
+      "menuLabel": "[ D 263-1 ]",
+      "order": 525
     },
     {
       "id": "d264",
@@ -6886,7 +6902,7 @@
       "variant": "main",
       "unit": 264,
       "part": null,
-      "order": 524,
+      "order": 526,
       "hasAudio": true,
       "menuLabel": "[ D 264 ]"
     },
@@ -6898,7 +6914,7 @@
       "variant": "script",
       "unit": 264,
       "part": null,
-      "order": 525,
+      "order": 527,
       "hasAudio": true,
       "menuLabel": "[ D 264-1 ]"
     },
@@ -6910,7 +6926,7 @@
       "variant": "main",
       "unit": 265,
       "part": null,
-      "order": 526,
+      "order": 528,
       "hasAudio": true,
       "menuLabel": "[ D 265 ]"
     },
@@ -6922,7 +6938,7 @@
       "variant": "script",
       "unit": 265,
       "part": null,
-      "order": 527,
+      "order": 529,
       "hasAudio": true,
       "menuLabel": "[ D 265-1 ]"
     },
@@ -6934,7 +6950,7 @@
       "variant": "main",
       "unit": 266,
       "part": null,
-      "order": 528,
+      "order": 530,
       "hasAudio": true,
       "menuLabel": "[ D 266 ]"
     },
@@ -6946,7 +6962,7 @@
       "variant": "script",
       "unit": 266,
       "part": null,
-      "order": 529,
+      "order": 531,
       "hasAudio": true,
       "menuLabel": "[ D 266-1 ]"
     },
@@ -6958,7 +6974,7 @@
       "variant": "main",
       "unit": 267,
       "part": null,
-      "order": 530,
+      "order": 532,
       "hasAudio": true,
       "menuLabel": "[ D 267 ]"
     },
@@ -6970,7 +6986,7 @@
       "variant": "script",
       "unit": 267,
       "part": null,
-      "order": 531,
+      "order": 533,
       "hasAudio": true,
       "menuLabel": "[ D 267-1 ]"
     },
@@ -6982,7 +6998,7 @@
       "variant": "main",
       "unit": 268,
       "part": null,
-      "order": 532,
+      "order": 534,
       "hasAudio": true,
       "menuLabel": "[ D 268 ]"
     },
@@ -6994,7 +7010,7 @@
       "variant": "script",
       "unit": 268,
       "part": null,
-      "order": 533,
+      "order": 535,
       "hasAudio": true,
       "menuLabel": "[ D 268-1 ]"
     },
@@ -7006,7 +7022,7 @@
       "variant": "main",
       "unit": 269,
       "part": null,
-      "order": 534,
+      "order": 536,
       "hasAudio": true,
       "menuLabel": "[ D 269 ]"
     },
@@ -7018,7 +7034,7 @@
       "variant": "script",
       "unit": 269,
       "part": null,
-      "order": 535,
+      "order": 537,
       "hasAudio": true,
       "menuLabel": "[ D 269-1 ]"
     },
@@ -7030,7 +7046,7 @@
       "variant": "main",
       "unit": 270,
       "part": null,
-      "order": 536,
+      "order": 538,
       "hasAudio": true,
       "menuLabel": "[ D 270 ]"
     },
@@ -7042,7 +7058,7 @@
       "variant": "script",
       "unit": 270,
       "part": null,
-      "order": 537,
+      "order": 539,
       "hasAudio": true,
       "menuLabel": "[ D 270-1 ]"
     },
@@ -7054,7 +7070,7 @@
       "variant": "main",
       "unit": 271,
       "part": null,
-      "order": 538,
+      "order": 540,
       "hasAudio": true,
       "menuLabel": "[ D 271 ]"
     },
@@ -7066,7 +7082,7 @@
       "variant": "script",
       "unit": 271,
       "part": null,
-      "order": 539,
+      "order": 541,
       "hasAudio": true,
       "menuLabel": "[ D 271-1 ]"
     },
@@ -7078,7 +7094,7 @@
       "variant": "main",
       "unit": 272,
       "part": null,
-      "order": 540,
+      "order": 542,
       "hasAudio": true,
       "menuLabel": "[ D 272 ]"
     },
@@ -7090,7 +7106,7 @@
       "variant": "script",
       "unit": 272,
       "part": null,
-      "order": 541,
+      "order": 543,
       "hasAudio": true,
       "menuLabel": "[ D 272-1 ]"
     },
@@ -7102,7 +7118,7 @@
       "variant": "main",
       "unit": 273,
       "part": null,
-      "order": 542,
+      "order": 544,
       "hasAudio": true,
       "menuLabel": "[ D 273 ]"
     },
@@ -7114,7 +7130,7 @@
       "variant": "script",
       "unit": 273,
       "part": null,
-      "order": 543,
+      "order": 545,
       "hasAudio": true,
       "menuLabel": "[ D 273-1 ]"
     },
@@ -7126,7 +7142,7 @@
       "variant": "main",
       "unit": 274,
       "part": null,
-      "order": 544,
+      "order": 546,
       "hasAudio": true,
       "menuLabel": "[ D 274 ]"
     },
@@ -7138,7 +7154,7 @@
       "variant": "script",
       "unit": 274,
       "part": null,
-      "order": 545,
+      "order": 547,
       "hasAudio": true,
       "menuLabel": "[ D 274-1 ]"
     },
@@ -7150,7 +7166,7 @@
       "variant": "main",
       "unit": 275,
       "part": null,
-      "order": 546,
+      "order": 548,
       "hasAudio": true,
       "menuLabel": "[ D 275 ]"
     },
@@ -7162,7 +7178,7 @@
       "variant": "script",
       "unit": 275,
       "part": null,
-      "order": 547,
+      "order": 549,
       "hasAudio": true,
       "menuLabel": "[ D 275-1 ]"
     },
@@ -7174,7 +7190,7 @@
       "variant": "main",
       "unit": 276,
       "part": null,
-      "order": 548,
+      "order": 550,
       "hasAudio": true,
       "menuLabel": "[ D 276 ]"
     },
@@ -7186,45 +7202,9 @@
       "variant": "script",
       "unit": 276,
       "part": null,
-      "order": 549,
-      "hasAudio": true,
-      "menuLabel": "[ D 276-1 ]"
-    },
-    {
-      "id": "LD_001",
-      "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초1 | 제 001 회 강의 :::",
-      "label": "[ 제 001 회 ]",
-      "series": null,
-      "variant": "main",
-      "unit": 1,
-      "part": null,
-      "order": 550,
-      "hasAudio": true,
-      "menuLabel": null
-    },
-    {
-      "id": "d159",
-      "title": "수능영어 듣기 - 제 001 회",
-      "label": "[ 제 159 회 ]",
-      "series": "d",
-      "variant": "main",
-      "unit": 159,
-      "part": null,
       "order": 551,
       "hasAudio": true,
-      "menuLabel": null
-    },
-    {
-      "id": "d263-1",
-      "title": "수능영어 듣기 - 제 001 회",
-      "label": "[ 제 263 회 ]",
-      "series": "d",
-      "variant": "script",
-      "unit": 263,
-      "part": null,
-      "order": 552,
-      "hasAudio": true,
-      "menuLabel": null
+      "menuLabel": "[ D 276-1 ]"
     }
   ]
 }
