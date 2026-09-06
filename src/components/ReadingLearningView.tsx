@@ -7,7 +7,6 @@ import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
   extractPassageKeywords,
   extractFullReadingPassage,
-  parseSlashChunks,
   generateReadingQuiz,
   generateClozeItems,
   type KeyWord,
@@ -60,11 +59,6 @@ export function ReadingLearningView({
     return extractPassageKeywords(enPassage, 14, vocaDictionary);
   }, [enPassage, vocaDictionary]);
 
-  // Generate syntactic chunks for each sentence
-  const chunkedPairs = useMemo(() => {
-    return sentencePairs.map((p) => parseSlashChunks(p.en, p.ko));
-  }, [sentencePairs]);
-
   // Generate comprehension quiz and cloze items
   const questions: ReadingQuestion[] = useMemo(() => {
     return generateReadingQuiz(enPassage, koPassage, lessonKey);
@@ -74,8 +68,8 @@ export function ReadingLearningView({
     return generateClozeItems(sentencePairs);
   }, [sentencePairs]);
 
-  // Current active mode (5-Step Pedagogical reading flow)
-  const [activeTab, setActiveTab] = useState<"speed" | "voca" | "chunks" | "quiz" | "dual">("speed");
+  // Current active mode (4-Step Pedagogical reading flow)
+  const [activeTab, setActiveTab] = useState<"speed" | "voca" | "quiz" | "dual">("speed");
   const [fontSize, setFontSize] = useState<"normal" | "large" | "xlarge">("normal");
   const [showNumbers, setShowNumbers] = useState(true);
 
@@ -160,10 +154,7 @@ export function ReadingLearningView({
   // --- STEP 2: Vocabulary Tooltip & Reveal State ---
   const [revealedVocaMeaning, setRevealedVocaMeaning] = useState<Record<string, boolean>>({});
 
-  // --- STEP 3: Syntax Chunk Hidden State ---
-  const [revealedChunks, setRevealedChunks] = useState<Record<number, boolean>>({});
-
-  // --- STEP 4: Quiz & Cloze Answer States ---
+  // --- STEP 3: Quiz & Cloze Answer States ---
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
   const [clozeAnswers, setClozeAnswers] = useState<Record<number, number>>({});
   const [readingScore, setReadingScore] = useState<number | null>(null);
@@ -358,19 +349,6 @@ export function ReadingLearningView({
 
         <button
           type="button"
-          onClick={() => setActiveTab("chunks")}
-          className={
-            "rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer " +
-            (activeTab === "chunks"
-              ? "bg-ink text-surface font-semibold shadow-xs"
-              : "text-ink-soft hover:bg-raised hover:text-ink")
-          }
-        >
-          Step 3 · 🧩 슬래시 직독직해
-        </button>
-
-        <button
-          type="button"
           onClick={() => setActiveTab("quiz")}
           className={
             "rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer " +
@@ -379,7 +357,7 @@ export function ReadingLearningView({
               : "text-ink-soft hover:bg-raised hover:text-ink")
           }
         >
-          Step 4 · 📝 독해력 퀴즈 & 클로즈
+          Step 3 · 📝 독해력 퀴즈 & 클로즈
         </button>
 
         <button
@@ -392,7 +370,7 @@ export function ReadingLearningView({
               : "text-ink-soft hover:bg-raised hover:text-ink")
           }
         >
-          Step 5 · ⚖️ 원문/완역 대조
+          Step 4 · ⚖️ 원문/완역 대조
         </button>
       </div>
 
@@ -660,125 +638,7 @@ export function ReadingLearningView({
       )}
 
       {/* ========================================================================= */}
-      {/* STEP 3: 🧩 슬래시 직독직해 구문 훈련 (Slash-Chunking Syntax Drill) */}
-      {/* ========================================================================= */}
-      {activeTab === "chunks" && (
-        <section aria-label="Slash Chunking" className="flex flex-col gap-4 animate-in fade-in duration-200">
-          <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
-                <span>🧩</span> 슬래시(/) 직독직해 어순 훈련 (Phrase-cued Chunking)
-              </h2>
-              <p className="mt-0.5 text-[12.5px] text-ink-soft">
-                문장을 의미 단위(주어+동사 / 목적어 / 전치사구 / 절)로 끊어 읽으며 한국어 번역 없이 순서대로 이해하세요.
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => {
-                const all: Record<number, boolean> = {};
-                sentencePairs.forEach((_, idx) => {
-                  all[idx] = true;
-                });
-                setRevealedChunks(all);
-              }}
-              className="rounded-lg border border-line bg-raised px-3 py-1.5 text-[11.5px] font-medium text-ink hover:bg-surface cursor-pointer"
-            >
-              전체 직독직해 열기
-            </button>
-          </div>
-
-          <div className="flex flex-col gap-3.5">
-            {chunkedPairs.map((cp, idx) => {
-              const isPlaying = playingSentence === idx;
-              const isRevealed = revealedChunks[idx] === true;
-              const orig = sentencePairs[idx];
-
-              return (
-                <div
-                  key={idx}
-                  onClick={() => playSentenceEn(orig.en, idx)}
-                  className={
-                    "rounded-2xl border p-5 transition-all shadow-2xs cursor-pointer select-none " +
-                    (isPlaying
-                      ? "border-primary bg-primary/[0.04] ring-2 ring-primary/30 shadow-xs"
-                      : "border-line bg-surface hover:border-line-strong hover:bg-raised/20")
-                  }
-                >
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink font-mono text-[11px] font-bold text-surface">
-                        {idx + 1}
-                      </span>
-                      <span className="font-mono text-[11px] font-bold text-ink-faint uppercase">
-                        Chunk #{idx + 1}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          playSentenceEn(orig.en, idx);
-                        }}
-                        className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 min-h-[34px] text-[12px] font-semibold transition-all cursor-pointer ${
-                          isPlaying
-                            ? "border-red-500 bg-red-600 text-white shadow-xs"
-                            : "border-line bg-surface text-ink-soft hover:bg-raised active:scale-95"
-                        }`}
-                      >
-                        <span>{isPlaying ? "⏹️" : "🔊"}</span>
-                        <span>{isPlaying ? "정지" : "문장 듣기"}</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setRevealedChunks((prev) => ({ ...prev, [idx]: !prev[idx] }));
-                        }}
-                        className="rounded-lg border border-line bg-raised px-3 py-1.5 min-h-[34px] text-[12px] font-medium text-ink-soft hover:text-ink cursor-pointer"
-                      >
-                        {isRevealed ? "해석 닫기" : "직독직해 확인"}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Slashed English Chunks */}
-                  <div className="text-[17px] font-serif leading-relaxed text-ink flex flex-wrap items-center gap-x-2 gap-y-1">
-                    {cp.enChunks.map((chunk, cIdx) => (
-                      <span key={cIdx} className="inline-flex items-center gap-2">
-                        <span className="font-medium text-ink">{chunk}</span>
-                        {cIdx < cp.enChunks.length - 1 && (
-                          <span className="text-emerald-700 dark:text-emerald-400 font-bold font-mono">/</span>
-                        )}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Slashed Korean Literal Interpretation */}
-                  {isRevealed && (
-                    <div className="mt-3.5 border-t border-line/60 pt-3 text-[14px] leading-relaxed text-ink-soft flex flex-wrap items-center gap-x-2 gap-y-1 animate-in fade-in">
-                      {cp.koChunks.map((chunk, cIdx) => (
-                        <span key={cIdx} className="inline-flex items-center gap-2">
-                          <span>{chunk}</span>
-                          {cIdx < cp.koChunks.length - 1 && (
-                            <span className="text-emerald-700/60 font-mono font-semibold">/</span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* ========================================================================= */}
-      {/* STEP 4: 📝 독해력 실전 퀴즈 & 클로즈 (Comprehension Check & Cloze Drill) */}
+      {/* STEP 3: 📝 독해력 실전 퀴즈 & 클로즈 (Comprehension Check & Cloze Drill) */}
       {/* ========================================================================= */}
       {activeTab === "quiz" && (
         <section aria-label="Reading Quizzes" className="flex flex-col gap-6 animate-in fade-in duration-200">
@@ -975,7 +835,7 @@ export function ReadingLearningView({
       )}
 
       {/* ========================================================================= */}
-      {/* STEP 5: ⚖️ 원문 vs 완역 좌우 대조 (Dual Passage Review) */}
+      {/* STEP 4: ⚖️ 원문 vs 완역 좌우 대조 (Dual Passage Review) */}
       {/* ========================================================================= */}
       {activeTab === "dual" && (
         <section aria-label="Side-by-Side Dual Reading" className="grid grid-cols-1 gap-6 lg:grid-cols-2 animate-in fade-in duration-200">
