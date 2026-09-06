@@ -298,54 +298,130 @@ export function verifyWordSequence(userWords: string[], targetWords: string[]): 
 /**
  * Generates 2 Context Diagnosis Multiple-Choice Questions for Step 1 Blind Listening.
  */
+function shuffleQuizOptions<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function cleanFactSentence(raw: string): string {
+  if (!raw) return "화자는 자신의 가족과 함께 거주하고 있다.";
+  let cleaned = raw.replace(/^\s*\d+[\.\)]\s*/, "").replace(/\s*\/\s*/g, " ").trim();
+  const segments = cleaned.split(/(?<=[.?!])\s+/);
+  if (segments.length > 0) {
+    let acc = segments[0];
+    for (let i = 1; i < segments.length; i++) {
+      if (acc.length + segments[i].length < 65) {
+        acc += " " + segments[i];
+      } else {
+        break;
+      }
+    }
+    cleaned = acc;
+  }
+  return cleaned;
+}
+
+/**
+ * Generates 2 Context Diagnosis Multiple-Choice Questions for Step 1 Blind Listening.
+ * Options are dynamically generated from the lesson text and randomly shuffled across 1~4.
+ */
 export function generateListeningContextQuiz(
   sentences: { en: string; ko: string }[],
   hints: string[] = []
 ): ContextQuizItem[] {
   const fullTextKo = sentences.map((s) => s.ko).join(" ");
-  const fullTextEn = sentences.map((s) => s.en).join(" ");
+  const t = fullTextKo.toLowerCase();
+  const hintStr = hints.join(" ").toLowerCase();
 
-  // Q1: Speaker / Main Situation
-  let q1Question = "Q1. 음성을 듣고 파악한 전체 지문의 주요 맥락과 화자는 누구인가요?";
-  let q1Options = [
-    "자신의 가족, 직업, 주거 환경을 소개하는 일상 소개 담화",
-    "상점에서 물건을 환불하고 교환을 요청하는 고객 상담",
-    "공항에서 비행기 탑승권과 수하물을 확인하는 출국 안내",
-    "병원에서 의사가 환자의 수술 일정을 안내하는 진료 대화",
+  // ---------------------------------------------------------------------------
+  // Q1: Speaker / Situation Identification (다이나믹 맥락 분석)
+  // ---------------------------------------------------------------------------
+  let correctQ1 = "화자가 자신의 신원, 가족 관계, 생활 환경을 차분히 들려주는 일상 소개 담화";
+  let q1DistractorPool = [
+    "상점에서 구매한 물건의 하자로 환불을 요청하는 고객 상담",
+    "공항 출국 심사대에서 탑승권과 수하물을 확인하는 출국 수속",
+    "병원에서 담당 의사가 환자의 수술 일정을 안내하는 진료 대화",
+    "도서관에서 필요한 전공 서적의 대출 절차를 문의하는 대화",
+    "호텔 프런트에서 체크인 시간을 연장하고 룸서비스를 요청하는 상담",
   ];
-  let q1Answer = 0;
-  let q1Expl = "원어민이 이름, 가족, 직업, 거주지 등을 차분하게 소개하는 개인 및 가족 소개 담화입니다.";
 
-  if (fullTextKo.includes("병원") || fullTextKo.includes("간호사") || hints.some((h) => /nurse|doctor/i.test(h))) {
-    q1Options[0] = "가족과 직업(간호사), 살고 있는 집과 자녀를 소개하는 화자";
-    q1Expl = "화자가 자신의 직업(간호사), 남편(과학자), 그리고 자녀들의 방과 집에 대해 설명하고 있습니다.";
+  if (t.includes("브라질") || t.includes("남미") || t.includes("포르투갈")) {
+    correctQ1 = "자신이 사는 국가(브라질)의 지리적 위치, 언어 및 주요 산업 소개";
+  } else if (t.includes("농장") || t.includes("시골") || t.includes("조부모") || t.includes("할머니") || t.includes("할아버지")) {
+    correctQ1 = "시골에 계신 조부모님의 농장을 방문했던 경험과 추억을 들려주는 이야기";
+  } else if (t.includes("학교") || t.includes("결석") || t.includes("수업") || t.includes("학생")) {
+    correctQ1 = "학교 생활과 수업 참여, 결석 사유에 대해 설명하는 학생의 이야기";
+  } else if (t.includes("케냐") || t.includes("아프리카") || t.includes("사파리") || t.includes("동물")) {
+    correctQ1 = "아프리카 여행 중 촬영한 야생 동물과 자연 풍경 사진을 소개하는 이야기";
+  } else if (t.includes("간호사") || t.includes("병원") || hintStr.includes("nurse") || hintStr.includes("doctor")) {
+    correctQ1 = "병원에서 일하는 간호사로서 자신의 직업과 가족의 일상을 소개하는 담화";
+  } else if (t.includes("형제") || t.includes("덴버") || t.includes("콜로라도") || t.includes("번지") || t.includes("거리")) {
+    correctQ1 = "자신의 이름과 가족 관계, 현재 거주하는 동네와 집을 소개하는 담화";
+  } else if (t.includes("여행") || t.includes("구라파") || t.includes("유럽") || t.includes("비행기")) {
+    correctQ1 = "해외 여행 경험 및 방문하고 싶은 여행지에 대한 개인적 감상";
   }
 
-  // Q2: Fact Check from content
-  const firstSentenceKo = sentences[0]?.ko || "본문 내용";
-  const lastSentenceKo = sentences[sentences.length - 1]?.ko || "가족 소개";
+  const shuffledQ1Distractors = shuffleQuizOptions(q1DistractorPool).slice(0, 3);
+  const q1Options = shuffleQuizOptions([correctQ1, ...shuffledQ1Distractors]);
+  const q1AnswerIndex = q1Options.indexOf(correctQ1);
+  const q1Expl = `정답: "${correctQ1}". 지문 전체의 주된 화자와 배경 상황을 정확히 설명한 보기입니다.`;
 
-  let q2Question = "Q2. 들었던 내용 중 언급된 구체적인 사실(Fact)로 올바른 것은?";
-  let q2Options = [
-    `지문에서 언급된 내용: ${firstSentenceKo.slice(0, 32)}...`,
+  // ---------------------------------------------------------------------------
+  // Q2: Fact-Check Question (사실 일치 - 힌트성 접두사 제거 및 랜덤 셔플)
+  // ---------------------------------------------------------------------------
+  const firstSentenceKo = sentences[0]?.ko || "본문 내용";
+  const secondSentenceKo = sentences[1]?.ko || sentences[0]?.ko || "본문 내용";
+
+  const cleanFact = cleanFactSentence(firstSentenceKo.length > 10 ? firstSentenceKo : secondSentenceKo);
+
+  let q2DistractorPool = [
     "화자는 최근에 지어진 최신형 대저택으로 이사했다.",
-    "화자의 가족은 현재 해외로 장기 여행을 떠났다.",
+    "화자의 가족은 현재 모두 해외로 장기 여행을 떠났다.",
     "화자는 자녀가 전혀 없으며 홀로 살고 있다.",
+    "화자는 아직 미혼이며 부모님과 함께 대도시에 살고 있다.",
+    "화자는 최근 직장을 그만두고 다른 나라로 이민을 준비 중이다.",
   ];
-  let q2Answer = 0;
-  let q2Expl = `정답은 1번입니다. 지문 서두 및 본문에서 "${firstSentenceKo.slice(0, 45)}" 내용이 언급되었습니다.`;
+
+  if (t.includes("농장") || t.includes("시골")) {
+    q2DistractorPool = [
+      "화자는 조부모님의 농장이 너무 멀어서 방문을 포기했다.",
+      "화자의 부모님은 모두 외국에서 태어나 영어를 쓰지 않는다.",
+      "화자는 시골보다 번화한 도심 백화점 쇼핑을 더 좋아한다.",
+    ];
+  } else if (t.includes("브라질") || t.includes("남미")) {
+    q2DistractorPool = [
+      "화자가 살고 있는 나라는 북유럽에 위치한 작은 국가이다.",
+      "화자는 영어를 전혀 사용하지 못해 통역관의 도움을 받는다.",
+      "화자가 거주하는 곳은 산업이 전혀 발달하지 않은 농촌이다.",
+    ];
+  } else if (t.includes("학교") || t.includes("결석")) {
+    q2DistractorPool = [
+      "화자는 어제 학교 시험에서 전교 1등을 차지했다.",
+      "화자는 방학 동안 매일 학교에 남아 자습을 했다.",
+      "화자는 선생님의 칭찬을 받고 장학금을 받게 되었다.",
+    ];
+  }
+
+  const shuffledQ2Distractors = shuffleQuizOptions(q2DistractorPool).slice(0, 3);
+  const q2Options = shuffleQuizOptions([cleanFact, ...shuffledQ2Distractors]);
+  const q2AnswerIndex = q2Options.indexOf(cleanFact);
+  const q2Expl = `정답: "${cleanFact}". 지문 본문에서 실제로 언급된 핵심 사실(Fact)입니다.`;
 
   return [
     {
-      question: q1Question,
+      question: "Q1. 음성을 듣고 파악한 전체 지문의 주요 맥락과 화자는 누구인가요?",
       options: q1Options,
-      answerIndex: q1Answer,
+      answerIndex: q1AnswerIndex,
       explanation: q1Expl,
     },
     {
-      question: q2Question,
+      question: "Q2. 들었던 내용 중 언급된 구체적인 사실(Fact)로 올바른 것은?",
       options: q2Options,
-      answerIndex: q2Answer,
+      answerIndex: q2AnswerIndex,
       explanation: q2Expl,
     },
   ];
