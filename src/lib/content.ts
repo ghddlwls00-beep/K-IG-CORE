@@ -175,34 +175,29 @@ export function getVocaDictionary(): Record<string, { meaning: string; searchWor
 }
 
 /**
- * Determine if a lesson belongs to the top 2 sections of a course.
- * The top 2 sections are always free preview for all visitors.
+ * Determine if a lesson is one of the free preview lessons:
+ * Only the very first section's 1st and 2nd lessons are free. All others are locked.
  */
-export function isLessonInTopTwoSections(courseSlug: string, lessonId: string): boolean {
+export function isFreePreviewLessonServer(courseSlug: string, lessonId: string): boolean {
   const index = getCourseIndex(courseSlug);
   if (!index) return false;
   const { groups, lessons } = index;
 
-  if (groups.length > 0) {
-    const top2Lessons = new Set([
-      ...(groups[0]?.lessons ?? []),
-      ...(groups[1]?.lessons ?? []),
-    ]);
-    if (top2Lessons.has(lessonId)) return true;
-    for (const topId of top2Lessons) {
-      if (lessonId.startsWith(`${topId}-`)) return true;
+  if (groups.length > 0 && groups[0]) {
+    // Look for the first 2 main lessons in group 0
+    const mainGroupLessons = groups[0].lessons.filter((id) => !id.includes("-") || id.endsWith("-01") || id.endsWith("-02"));
+    const freeLessonIds = (mainGroupLessons.length >= 2 ? mainGroupLessons : groups[0].lessons).slice(0, 2);
+    
+    if (freeLessonIds.includes(lessonId)) return true;
+    for (const freeId of freeLessonIds) {
+      if (lessonId.startsWith(`${freeId}-`)) return true;
     }
     return false;
   }
 
-  // Fallback by series
-  const seriesSlugs = (index.course.series ?? []).slice(0, 2).map((s) => s.slug);
-  const lesson = lessons.find((l) => l.id === lessonId);
-  if (lesson && lesson.series && seriesSlugs.includes(lesson.series)) return true;
-
-  // Fallback by lesson index
-  const idx = lessons.findIndex((l) => l.id === lessonId);
-  return idx >= 0 && idx < 20;
+  // Fallback if no groups: only first 2 lessons of the course
+  const freeLessonIds = lessons.slice(0, 2).map((l) => l.id);
+  return freeLessonIds.includes(lessonId);
 }
 
 

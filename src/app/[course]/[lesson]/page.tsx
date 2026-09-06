@@ -7,7 +7,7 @@ import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonClientGate } from "@/components/LessonClientGate";
 import { T } from "@/components/LanguageProvider";
-import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslations, getVocaDictionary, isLessonInTopTwoSections } from "@/lib/content";
+import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslations, getVocaDictionary, isFreePreviewLessonServer } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
 import { lessonDisplay } from "@/lib/courses";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
@@ -143,7 +143,7 @@ export default async function LessonPage({
         courseTitle={courseInfo?.title ?? tab?.label}
         lessonId={lesson.id}
         lessonTitle={pres.title}
-        isFreePreview={isLessonInTopTwoSections(course, lesson.id)}
+        isFreePreview={isFreePreviewLessonServer(course, lesson.id)}
       >
         {video.length > 0 ? (
           <div className="mb-8 flex flex-col gap-2.5">

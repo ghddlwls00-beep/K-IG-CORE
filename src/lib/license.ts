@@ -114,15 +114,16 @@ export function getPlanLabel(plan: LicensePlan): string {
 
 /**
  * Check if a lesson is free for preview when the user doesn't have an active license.
- * Rule: The first 2 sections (Stage 1 & Stage 2, sectionIndex < 2) are free preview for visitors.
+ * Rule: Only Section 1's 1st and 2nd lessons (sectionIndex === 0 && lessonIndex < 2) are free preview.
  */
 export function isFreePreviewLesson(
   courseSlug: string,
   lessonId: string,
   sectionIndex?: number,
+  lessonIndex?: number,
 ): boolean {
-  if (typeof sectionIndex === "number") {
-    return sectionIndex < 2;
+  if (typeof sectionIndex === "number" && typeof lessonIndex === "number") {
+    return sectionIndex === 0 && lessonIndex < 2;
   }
 
   const match = lessonId.match(/(\d+)$/);
