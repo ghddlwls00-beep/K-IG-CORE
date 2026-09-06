@@ -70,6 +70,27 @@ export default async function LessonPage({
   const video = lesson.video ?? [];
   const fromFlash = lesson.blocks.length === 0 && audio.length > 0;
 
+  // Determine top-level audio player(s):
+  // 1. Grammar 1: Consolidated lessons contained both Korean questions (even) and English native answers (odd).
+  //    Select ONLY the English native recording (exactly like Grammar 2 has 1 single English audio player).
+  // 2. Middle: Deduplicate multiple tracks (e.g. p101.mp3 and alternate p0101.mp3) to 1 primary track.
+  // 3. Dialogue / Clip courses (man, woman, student, chinese):
+  //    Individual short sentence clips are passed to the interactive LessonBody (DialogueLearningView, etc.).
+  //    Suppress stacking 5~11 redundant AudioPlayer bars at the top of the page.
+  let topLevelAudio = audio;
+  if (course === "grammar1") {
+    const englishAudio =
+      audio.find((a) => {
+        const m = a.src.match(/gh1-(\d+)/);
+        return m ? parseInt(m[1], 10) % 2 !== 0 : false;
+      }) || audio[audio.length - 1];
+    topLevelAudio = englishAudio ? [englishAudio] : [];
+  } else if (course === "middle" && topLevelAudio.length > 1) {
+    topLevelAudio = [topLevelAudio[0]];
+  } else if (["man", "woman", "student", "chinese"].includes(course) && topLevelAudio.length > 1) {
+    topLevelAudio = [];
+  }
+
   // Extract fallback sentences for TTS reading (prioritizes English target text)
   const fallbackSentences = extractSentencesForAudio(lesson.blocks, pairLesson?.blocks, isScript, course);
 
@@ -153,21 +174,21 @@ export default async function LessonPage({
           </div>
         ) : null}
 
-        {/* Audio Players with native TTS fallback & gender profile */}
-        {audio.length > 0 ? (
+        {/* Unified Audio Player with native TTS fallback & gender profile */}
+        {topLevelAudio.length > 0 ? (
           <div className="mb-8 flex flex-col gap-2.5">
-            {audio.map((a, i) => (
+            {topLevelAudio.map((a) => (
               <AudioPlayer
                 key={a.src}
                 src={a.src}
                 fallbackSentences={fallbackSentences}
                 lang={courseInfo?.contentLang ?? "en"}
                 gender={voiceGender}
-                label={audioLabel(audio.length, i, fromFlash)}
+                label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
               />
             ))}
           </div>
-        ) : fallbackSentences.length > 0 ? (
+        ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course) ? (
           <div className="mb-8">
             <AudioPlayer
               fallbackSentences={fallbackSentences}
@@ -228,11 +249,6 @@ function getVoiceGender(course: string, lessonId: string): VoiceGender {
   return "neutral";
 }
 
-function audioLabel(count: number, index: number, fromFlash: boolean): string | undefined {
-  if (count <= 1) return undefined;
-  if (fromFlash) return index === 0 ? "전체 강의 (Full lesson)" : `클립 ${index} (Clip ${index})`;
-  return index === 0 ? "본문 듣기 (Listen)" : "따라하기 (Repeat)";
-}
 
 function isEnglishText(text: string): boolean {
   const latin = (text.match(/[a-zA-Z]/g) || []).length;

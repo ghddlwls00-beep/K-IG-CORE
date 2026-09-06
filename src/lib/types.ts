@@ -102,6 +102,8 @@ export interface AudioRef {
   legacySrc: string;
   /** The legacy pages autostarted the first player and not the second. */
   autoplay: boolean;
+  /** Optional descriptive label for multi-track lessons */
+  label?: string;
 }
 
 /**
