@@ -149,7 +149,7 @@ export function AudioPlayer({
   const isTtsMode = (missing || !src) && fallbackSentences.length > 0;
 
   return (
-    <div className="border border-line bg-surface p-4 transition-colors duration-200 ease-out hover:border-line-strong rounded-sm shadow-xs">
+    <div className="rounded-3xl border border-black/[0.06] bg-gradient-to-b from-white to-gray-50/80 p-5 transition-all duration-300 hover:shadow-md shadow-2xs">
       {src && !missing ? (
         <audio
           ref={ref}
@@ -164,9 +164,10 @@ export function AudioPlayer({
         />
       ) : null}
 
-      <div className="mb-2.5 flex items-center justify-between gap-2">
+      <div className="mb-3 flex items-center justify-between gap-2">
         {label ? (
-          <p className="font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase font-medium">
+          <p className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider text-ink-faint uppercase font-bold">
+            <span className="h-1.5 w-1.5 rounded-full bg-black/40" />
             {label}
           </p>
         ) : (
@@ -174,7 +175,7 @@ export function AudioPlayer({
         )}
 
         {isTtsMode ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-raised px-2.5 py-0.5 font-mono text-[10.5px] text-ink-soft border border-line">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10.5px] font-semibold text-emerald-700 border border-emerald-500/20">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             {t("player.ttsMode")} · {gender === "male" ? "남성 보이스" : gender === "female" ? "여성 보이스" : "음성"} ({fallbackSentences.length}문장)
           </span>
@@ -186,15 +187,15 @@ export function AudioPlayer({
           type="button"
           onClick={toggle}
           aria-label={playing ? t("player.pause") : t("player.play")}
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-surface hover:scale-105 active:scale-95 transition-all shadow-xs"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-sm cursor-pointer"
         >
           {playing ? (
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
               <rect x="3" y="2" width="4" height="12" rx="1" />
               <rect x="9" y="2" width="4" height="12" rx="1" />
             </svg>
           ) : (
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="ml-0.5">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="ml-0.5">
               <path d="M4 2.5v11a.5.5 0 0 0 .77.42l8.5-5.5a.5.5 0 0 0 0-.84l-8.5-5.5A.5.5 0 0 0 4 2.5Z" />
             </svg>
           )}
@@ -204,16 +205,16 @@ export function AudioPlayer({
           type="button"
           onClick={() => seek(-5)}
           aria-label={t("player.back5")}
-          className="px-2 py-1 font-mono text-[11px] text-ink-soft hover:bg-raised hover:text-ink rounded"
+          className="px-2.5 py-1 font-mono text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer"
         >
           {isTtsMode ? "이전 문장" : "−5s"}
         </button>
 
         {isTtsMode ? (
           <div className="flex-1 px-2">
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-line">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-black/[0.06]">
               <div
-                className="h-full bg-ink transition-all duration-300"
+                className="h-full bg-ink rounded-full transition-all duration-300"
                 style={{
                   width: `${fallbackSentences.length > 0 ? ((ttsCurrentIndex + 1) / fallbackSentences.length) * 100 : 0}%`,
                 }}
@@ -229,18 +230,18 @@ export function AudioPlayer({
             value={time}
             onChange={scrub}
             aria-label={t("player.seek")}
-            className="h-1 flex-1 cursor-pointer appearance-none bg-line accent-[var(--ink)] hover:h-1.5 transition-all rounded-full"
+            className="h-1.5 flex-1 cursor-pointer appearance-none bg-black/[0.06] accent-[var(--ink)] hover:h-2 transition-all rounded-full"
           />
         )}
 
-        <span className="w-24 shrink-0 text-right font-mono text-[11px] tabular-nums text-ink-faint">
+        <span className="w-24 shrink-0 text-right font-mono text-[11.5px] tabular-nums text-ink-faint">
           {isTtsMode
             ? `${ttsCurrentIndex + 1} / ${fallbackSentences.length}`
             : `${fmt(time)} / ${fmt(duration)}`}
         </span>
       </div>
 
-      <div className="mt-2.5 flex items-center justify-between border-t border-line/50 pt-2 text-[11px]">
+      <div className="mt-3 flex items-center justify-between border-t border-black/[0.05] pt-2.5 text-[11.5px]">
         <div className="flex items-center gap-1.5">
           <span className="font-mono text-[10px] tracking-wide text-ink-faint uppercase">{t("player.speed")}</span>
           {[0.8, 1, 1.2].map((r) => (

@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
-import { useTheme } from "./LanguageProvider";
 import { useProgress } from "./ProgressProvider";
 import { SearchDialog } from "./SearchDialog";
 import { TAB_IMAGES } from "@/lib/tabImages";
@@ -71,7 +70,6 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
 }
 
 export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
-  const { theme, toggleTheme } = useTheme();
   const { recent } = useProgress();
 
   const [scrollActive, setScrollActive] = useState(0);
@@ -139,33 +137,20 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           K-IG 교육
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="flex items-center gap-3 sm:gap-4">
           {recent ? (
             <Link
               href={`/${recent.course}/${recent.lessonId}`}
-              className="flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-1 text-[12px] font-semibold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20 transition-colors shadow-2xs"
+              className="group flex items-center gap-2 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] backdrop-blur-md px-3.5 py-1.5 text-[12px] font-medium text-ink hover:bg-black/[0.06] dark:hover:bg-white/[0.12] transition-all duration-300 shadow-2xs"
             >
-              <span className="text-emerald-500">▶</span>
-              <span className="hidden sm:inline">최근 학습:</span>
-              <span className="font-mono">{recent.courseTitle || recent.course} · {recent.lessonId}</span>
+              <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-ink-soft group-hover:text-ink transition-colors hidden sm:inline">최근 학습:</span>
+              <span className="font-mono text-[11.5px] font-semibold">{recent.courseTitle || recent.course} · {recent.lessonId}</span>
+              <span className="text-ink-faint group-hover:translate-x-0.5 transition-transform">→</span>
             </Link>
           ) : null}
 
           <SearchDialog />
-
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={`Toggle theme (currently ${theme})`}
-            className="relative h-[23px] w-[42px] rounded-[12px] border border-line bg-transparent p-0 transition-colors hover:border-ink-soft cursor-pointer"
-          >
-            <span
-              className="absolute top-[2px] left-[2px] h-[17px] w-[17px] rounded-full bg-ink transition-transform duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
-              style={{
-                transform: theme === "dark" ? "translateX(19px)" : "translateX(0px)",
-              }}
-            />
-          </button>
         </div>
       </header>
 
@@ -185,38 +170,41 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
             <SectionPhoto slug={tab.slug} priority={i < 2} />
 
             <div
-              className="relative z-10 max-w-[640px]"
+              className="relative z-10 max-w-[680px]"
               style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}
             >
-              <p className="mb-4 font-mono text-[16.5px] tracking-[0.24em] text-ink-faint uppercase">
-                {tab.num}
-              </p>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-md px-3 py-1 font-mono text-[12px] font-semibold tracking-widest text-ink-soft uppercase shadow-2xs">
+                <span>STAGE {tab.num}</span>
+                <span className="text-ink-faint">·</span>
+                <span>CURRICULUM</span>
+              </div>
 
               {(() => {
                 const targetCourse = tab.courseDetails[0]?.slug ?? tab.courses[0];
                 return (
                   <>
-                    <h2 className="text-[clamp(60px,8.25vw,96px)] font-medium leading-[1.08] tracking-[-0.01em] text-ink">
+                    <h2 className="text-[clamp(56px,7.5vw,92px)] font-bold leading-[1.04] tracking-[-0.03em] text-ink">
                       <Link
                         href={`/${targetCourse}`}
-                        className="transition-opacity hover:opacity-80"
+                        className="transition-all duration-300 hover:opacity-85"
                       >
                         {tab.label}
                       </Link>
                     </h2>
 
                     {tab.blurb ? (
-                      <p className="mt-4 max-w-[580px] text-[clamp(17px,2.2vw,24px)] font-light leading-snug tracking-wide text-ink-soft">
+                      <p className="mt-4 max-w-[560px] text-[clamp(16px,2vw,22px)] font-normal leading-relaxed tracking-tight text-ink-soft">
                         {tab.blurb}
                       </p>
                     ) : null}
 
-                    <div className="mt-8">
+                    <div className="mt-8 flex items-center gap-4">
                       <Link
                         href={`/${targetCourse}`}
-                        className="inline-flex cursor-pointer items-center gap-2 border border-ink bg-surface px-8 py-3.5 text-[19.5px] tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-surface"
+                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[16px] font-medium tracking-wide text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
                       >
-                        ENTER →
+                        <span>학습 시작하기</span>
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </Link>
                     </div>
                   </>

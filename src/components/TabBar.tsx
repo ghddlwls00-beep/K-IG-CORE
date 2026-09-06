@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Tab } from "@/lib/types";
-import { useTheme } from "./LanguageProvider";
 import { SearchDialog } from "./SearchDialog";
 
 /**
@@ -15,7 +14,6 @@ import { SearchDialog } from "./SearchDialog";
  */
 export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<string, string> }) {
   const pathname = usePathname();
-  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Close mobile drawer when route changes
@@ -95,20 +93,6 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             {/* Right Controls */}
             <div className="flex items-center justify-end gap-2.5 sm:gap-3 shrink-0">
               <SearchDialog />
-
-              <button
-                type="button"
-                onClick={toggleTheme}
-                aria-label={`Toggle theme (currently ${theme})`}
-                className="relative h-[23px] w-[42px] shrink-0 rounded-[12px] border border-line bg-transparent p-0 transition-colors hover:border-ink-soft cursor-pointer"
-              >
-                <span
-                  className="absolute top-[2px] left-[2px] h-[17px] w-[17px] rounded-full bg-ink transition-transform duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
-                  style={{
-                    transform: theme === "dark" ? "translateX(19px)" : "translateX(0)",
-                  }}
-                />
-              </button>
 
               {/* Mobile 3-bar Hamburger Button (Visible only below md) */}
               <button

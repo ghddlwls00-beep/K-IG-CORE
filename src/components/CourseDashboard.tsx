@@ -89,61 +89,62 @@ export function CourseDashboard({
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Course Progress Dashboard Card */}
-      <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-col gap-4">
+      {/* Course Progress Dashboard Card - Apple Glass / Clean Depth */}
+      <div className="rounded-3xl border border-black/[0.06] bg-gradient-to-b from-white to-gray-50/70 p-6 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-faint">
-              Course Progress & Management
-            </span>
-            <h2 className="text-[17px] font-bold text-ink mt-0.5">
-              학습 진도율: {completedCount} / {totalLessons}개 완료 ({progressPercent}%)
+            <div className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-faint">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Course Progress & Analytics
+            </div>
+            <h2 className="text-[20px] font-bold text-ink tracking-tight mt-1">
+              학습 진도율: <span className="text-emerald-600">{completedCount}</span> / {totalLessons}개 완료 <span className="text-ink-faint text-[16px] font-normal">({progressPercent}%)</span>
             </h2>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex items-center rounded-xl border border-line bg-raised/70 p-1 text-[12px]">
+          {/* Apple-style Segmented Control Filter Pills */}
+          <div className="flex items-center rounded-full border border-black/[0.08] bg-black/[0.03] p-1 text-[12.5px]">
             <button
               type="button"
               onClick={() => setFilter("all")}
-              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer font-medium ${
+              className={`px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium ${
                 filter === "all"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                  ? "bg-white text-ink font-semibold shadow-xs"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              전체 보기 ({totalLessons})
+              전체 ({totalLessons})
             </button>
             <button
               type="button"
               onClick={() => setFilter("bookmarked")}
-              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer font-medium flex items-center gap-1 ${
+              className={`px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium flex items-center gap-1.5 ${
                 filter === "bookmarked"
-                  ? "bg-surface text-amber-600 dark:text-amber-400 font-semibold shadow-2xs border border-line/80"
+                  ? "bg-white text-amber-600 font-semibold shadow-xs"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              <span>★ 북마크만</span>
-              <span>({bookmarkCount})</span>
+              <span>★</span>
+              <span>북마크 ({bookmarkCount})</span>
             </button>
             <button
               type="button"
               onClick={() => setFilter("incomplete")}
-              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer font-medium ${
+              className={`px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium ${
                 filter === "incomplete"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                  ? "bg-white text-ink font-semibold shadow-xs"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              미완료만 ({Math.max(0, totalLessons - completedCount)})
+              미완료 ({Math.max(0, totalLessons - completedCount)})
             </button>
           </div>
         </div>
 
-        {/* Visual Progress Bar */}
-        <div className="w-full bg-raised rounded-full h-2 overflow-hidden">
+        {/* Apple-style Smooth Rounded Progress Bar */}
+        <div className="w-full bg-black/[0.05] rounded-full h-2.5 overflow-hidden p-0.5">
           <div
-            className="bg-emerald-600 h-full rounded-full transition-all duration-500 ease-out"
+            className="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}
           />
         </div>
@@ -278,8 +279,8 @@ export function CourseDashboard({
 
                   {/* Section Content Grid */}
                   {isOpen && (
-                    <div className="border-t border-line/70 p-4 sm:p-5 bg-raised/20 animate-fade-in">
-                      <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="border-t border-black/[0.06] p-4 sm:p-6 bg-gray-50/50">
+                      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                         {section.lessons.map((lesson) => {
                           const pres = lesson.presentation;
                           const isDone = isCompleted(courseSlug, lesson.id);
@@ -288,25 +289,25 @@ export function CourseDashboard({
                           return (
                             <li key={lesson.id}>
                               <div
-                                className={`group relative flex h-full flex-col justify-between gap-2.5 rounded-xl border p-3.5 transition-all duration-200 hover:shadow-xs ${
+                                className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
                                   isDone
-                                    ? "border-emerald-500/40 bg-emerald-500/[0.03] hover:border-emerald-500"
-                                    : "border-line bg-surface hover:border-ink hover:bg-raised/60"
+                                    ? "border-emerald-500/30 bg-white shadow-2xs hover:border-emerald-500/60"
+                                    : "border-black/[0.06] bg-white shadow-2xs hover:border-black/20"
                                 }`}
                               >
-                                <div className="flex flex-col gap-1">
+                                <div className="flex flex-col gap-1.5">
                                   <div className="flex items-center justify-between gap-1.5">
-                                    <span className="font-mono text-[11px] font-semibold text-primary tracking-wide">
+                                    <span className="font-mono text-[11px] font-bold text-gray-900 tracking-wider">
                                       {pres.code}
                                     </span>
                                     <div className="flex items-center gap-1.5">
                                       {isDone && (
-                                        <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600">
+                                        <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
                                           ✓ 완료
                                         </span>
                                       )}
                                       {pres.badge && (
-                                        <span className="rounded-md bg-raised px-1.5 py-0.5 text-[10px] font-medium text-ink-soft">
+                                        <span className="rounded-full bg-black/[0.04] px-2 py-0.5 text-[10px] font-medium text-ink-soft">
                                           {pres.badge}
                                         </span>
                                       )}
@@ -337,25 +338,26 @@ export function CourseDashboard({
 
                                   <Link
                                     href={`/${courseSlug}/${lesson.id}`}
-                                    className="text-[13.5px] font-semibold leading-snug text-ink hover:underline focus:outline-none"
+                                    className="text-[14px] font-semibold leading-snug text-ink group-hover:text-black transition-colors focus:outline-none"
                                   >
                                     {pres.title}
                                   </Link>
 
                                   {pres.subtitle && (
-                                    <span className="text-[11.5px] text-ink-soft line-clamp-1">
+                                    <span className="text-[12px] text-ink-soft line-clamp-1">
                                       {pres.subtitle}
                                     </span>
                                   )}
                                 </div>
 
-                                <div className="flex items-center justify-between border-t border-line/50 pt-2 font-mono text-[10.5px] text-ink-faint">
+                                <div className="flex items-center justify-between border-t border-black/[0.05] pt-2.5 font-mono text-[10.5px] text-ink-faint">
                                   <span className="tabular-nums">{lesson.id}</span>
                                   <Link
                                     href={`/${courseSlug}/${lesson.id}`}
-                                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-ink font-medium"
+                                    className="inline-flex items-center gap-1 font-semibold text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
                                   >
-                                    학습하기 →
+                                    <span>학습하기</span>
+                                    <span>→</span>
                                   </Link>
                                 </div>
                               </div>

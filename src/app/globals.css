@@ -11,9 +11,9 @@
 
 @theme inline {
   --font-sans:
-    ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo",
-    "Noto Sans KR", sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Pretendard Variable",
+    Pretendard, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
 
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
@@ -25,23 +25,24 @@
 }
 
 :root {
-  --ink: #0b0b0b;
-  --ink-soft: #565656;
-  --ink-faint: #8e8e8e;
+  /* Apple Pro Clean Light Aesthetic: Pure White, Subtly Cool Off-Whites, Deep Graphite Ink */
+  --ink: #111827;
+  --ink-soft: #4b5563;
+  --ink-faint: #9ca3af;
   --surface: #ffffff;
-  --raised: #f6f6f6;
-  --line: #e4e4e4;
-  --line-strong: #0b0b0b;
+  --raised: #f9fafb;
+  --line: rgba(0, 0, 0, 0.07);
+  --line-strong: #111827;
 
-  --dur: 180ms;
-  --dur-slow: 420ms;
-  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 200ms;
+  --dur-slow: 450ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -59,35 +60,29 @@
 }
 
 @keyframes floatSlow {
-  from {
-    transform: translateY(0) scale(1);
+  0% {
+    transform: translateY(0px);
   }
-  to {
-    transform: translateY(-18px) scale(1.05);
+  50% {
+    transform: translateY(-8px);
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ink: #f2f2f2;
-    --ink-soft: #a8a8a8;
-    --ink-faint: #6f6f6f;
-    --surface: #0a0a0a;
-    --raised: #161616;
-    --line: #262626;
-    --line-strong: #f2f2f2;
+  100% {
+    transform: translateY(0px);
   }
 }
 
-:root[data-theme="dark"] {
-  --ink: #f2f2f2;
-  --ink-soft: #a8a8a8;
-  --ink-faint: #6f6f6f;
-  --surface: #0a0a0a;
-  --raised: #161616;
-  --line: #262626;
-  --line-strong: #f2f2f2;
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
 }
+
+/* Apple-grade pristine light theme with crisp typography and subtle micro-shadows */
 
 html {
   -webkit-text-size-adjust: 100%;
