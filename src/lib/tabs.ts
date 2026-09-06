@@ -28,7 +28,7 @@ export const TABS: Tab[] = [
     legacyImage: "VOCA.jpg",
     legacyIndex: "phonics/index.htm",
     courses: ["phonics"],
-    blurb: "중등·고등 필수 3,877 어휘 매트릭스, 1:1 한국어 뜻 연동 및 발음 클리닉.",
+    blurb: "",
   },
   {
     slug: "grammar1",
@@ -36,7 +36,7 @@ export const TABS: Tab[] = [
     legacyImage: "grammar1.gif",
     legacyIndex: "grammar1/index.htm",
     courses: ["grammar1"],
-    blurb: "핵심 영작 연습: 한국어 프롬프트와 정답 모범 영작 대조 훈련.",
+    blurb: "",
   },
   {
     slug: "grammar2",
@@ -44,15 +44,15 @@ export const TABS: Tab[] = [
     legacyImage: "grammar2.gif",
     legacyIndex: "grammar2/index.htm",
     courses: ["grammar2"],
-    blurb: "심화 구문 영작 및 1:1 문제-해설 완역 대조 훈련.",
+    blurb: "",
   },
   {
     slug: "ld",
-    label: "수능영어 듣기",
+    label: "LISTENING",
     legacyImage: "LD.gif",
     legacyIndex: "LD/index.htm",
     courses: ["ld"],
-    blurb: "수능 및 실전형 듣기 평가: 영문 스크립트와 한글 대본 1:1 연동 및 받아쓰기 시험.",
+    blurb: "",
   },
   {
     slug: "reading",
@@ -60,7 +60,7 @@ export const TABS: Tab[] = [
     legacyImage: "reading.gif",
     legacyIndex: "reading/index.htm",
     courses: ["reading"],
-    blurb: "원어민 내레이션 리딩 본문과 문장별 직독직해 심층 분석 뷰어.",
+    blurb: "",
   },
   {
     slug: "cnn",
@@ -68,7 +68,7 @@ export const TABS: Tab[] = [
     legacyImage: "CNN.jpg",
     legacyIndex: "CNN/index.htm",
     courses: ["cnn"],
-    blurb: "CNN 실전 보도 영상, 1:1 보도 대본 완역 대조, 시사 어휘 및 연음 디코딩.",
+    blurb: "",
   },
 ];
 

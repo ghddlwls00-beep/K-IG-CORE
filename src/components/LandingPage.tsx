@@ -241,17 +241,24 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                 {tab.label}
               </h2>
 
-              <p className="my-6 max-w-[480px] text-[22.5px] leading-relaxed text-ink-soft">
-                {tab.blurb}
-              </p>
-
-              <button
-                type="button"
-                onClick={() => setOpenTabSlug(tab.slug)}
-                className="inline-flex cursor-pointer items-center gap-2 border border-ink bg-surface px-8 py-3.5 text-[19.5px] tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-surface"
-              >
-                ENTER →
-              </button>
+              <div className="mt-8">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const targetCourse = tab.courseDetails[0]?.slug;
+                    if (targetCourse) {
+                      startTransition(() => {
+                        router.push(`/${targetCourse}`);
+                      });
+                    } else {
+                      setOpenTabSlug(tab.slug);
+                    }
+                  }}
+                  className="inline-flex cursor-pointer items-center gap-2 border border-ink bg-surface px-8 py-3.5 text-[19.5px] tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-surface"
+                >
+                  ENTER →
+                </button>
+              </div>
             </div>
           </section>
         ))}
@@ -305,13 +312,9 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
               {selectedTab.num}
             </p>
 
-            <h2 className="mb-3 max-w-[640px] text-[clamp(36px,5vw,56px)] font-medium leading-tight text-ink">
+            <h2 className="mb-6 max-w-[640px] text-[clamp(36px,5vw,56px)] font-medium leading-tight text-ink">
               {selectedTab.label}
             </h2>
-
-            <p className="mb-8 max-w-[520px] text-[15px] leading-relaxed text-ink-soft">
-              {selectedTab.blurb}
-            </p>
 
             {selectedTab.unavailable && (
               <div className="mb-8 max-w-[560px] border border-line bg-surface p-6 text-[13.5px] leading-relaxed text-ink-soft">

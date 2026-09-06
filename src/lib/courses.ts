@@ -17,8 +17,8 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     tab: "ld",
     legacyFolder: "LD",
     numbering: "sequence",
-    title: "수능영어 듣기",
-    titleEn: "Listening & Dictation",
+    title: "LISTENING",
+    titleEn: "Listening",
     kind: "audio-drill",
     description:
       "Exam-style listening sets. Each round pairs an English dictation drill with a Korean script page for reverse translation.",

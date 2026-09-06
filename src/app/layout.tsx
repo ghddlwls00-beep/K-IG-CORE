@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s · K-IG 핵심 어학 마스터",
   },
   description:
-    "K-IG 핵심 6개 과정 전용 플랫폼: VOCA 어휘 매트릭스, 영문법 1·2, 수능영어 듣기, 리딩 본문 분석, CNN 뉴스 러닝.",
+    "K-IG 핵심 6개 과정 전용 플랫폼: VOCA 어휘 매트릭스, 영문법 1·2, LISTENING, 리딩 본문 분석, CNN 뉴스 러닝.",
   other: {
     google: "notranslate",
   },

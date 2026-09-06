@@ -21,7 +21,7 @@
    - 핵심 영작 연습, 한글 프롬프트와 모범 답안 1:1 대조 및 해설
 3. **GRAMMAR II (영문법 2, slug: grammar2)**
    - 심화 영작 연습, 문제-해설 완역 대조
-4. **수능영어 듣기 (Listening & Dictation, slug: ld)**
+4. **LISTENING (Listening & Dictation, slug: ld)**
    - 실전 수능형 리스닝, 영문 스크립트와 한글 대본 1:1 대조 및 Dictation(받아쓰기) 시험
 5. **READING (리딩, slug: reading)**
    - 원어민 오디오 + 문장별 직독직해 분석 뷰어
