@@ -22,7 +22,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     kind: "audio-drill",
     description:
       "Exam-style listening sets. Each round pairs an English dictation drill with a Korean script page for reverse translation.",
-    series: [{ slug: "d", title: "듣기 회차", prefix: "d" }],
+    series: [{ slug: "d", title: "Listening Rounds", prefix: "d" }],
   },
   {
     slug: "reading",
@@ -33,7 +33,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Reading",
     kind: "audio-drill",
     description: "Numbered reading passages with narration, each with a companion script page.",
-    series: [{ slug: "pr", title: "리딩", prefix: "pr" }],
+    series: [{ slug: "pr", title: "Reading Passages", prefix: "pr" }],
   },
   {
     slug: "phonics",
@@ -43,12 +43,12 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "VOCA",
     titleEn: "Vocabulary",
     kind: "audio-drill",
-    description: "중등 필수 어휘 및 고등 심화 어휘 매트릭스 & 발음 훈련.",
+    description: "Essential middle and high school vocabulary matrix with AI pronunciation clinic.",
     series: [
-      { slug: "mv1", title: "중등 단어 1 (MV1)", prefix: "mv1-" },
-      { slug: "mv2", title: "중등 단어 2 (MV2)", prefix: "mv2-" },
-      { slug: "mv3", title: "중등 단어 3 (MV3)", prefix: "mv3-" },
-      { slug: "hv", title: "고등 단어 (HV)", prefix: "hv-" },
+      { slug: "mv1", title: "Middle School Vocabulary 1 (MV1)", prefix: "mv1-" },
+      { slug: "mv2", title: "Middle School Vocabulary 2 (MV2)", prefix: "mv2-" },
+      { slug: "mv3", title: "Middle School Vocabulary 3 (MV3)", prefix: "mv3-" },
+      { slug: "hv", title: "High School Vocabulary (HV)", prefix: "hv-" },
     ],
   },
   {
@@ -61,7 +61,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     kind: "audio-drill",
     description: "English composition exercises: Korean prompts to be translated into English.",
     lessonNaming: "number",
-    series: [{ slug: "gh1", title: "영작 연습", prefix: "gh1-" }],
+    series: [{ slug: "gh1", title: "Composition Practice", prefix: "gh1-" }],
   },
   {
     slug: "grammar2",
@@ -73,7 +73,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     kind: "audio-drill",
     description: "Second-level composition exercises, each with a paired answer page.",
     lessonNaming: "number",
-    series: [{ slug: "gh2", title: "영작 연습", prefix: "gh2-" }],
+    series: [{ slug: "gh2", title: "Composition Practice", prefix: "gh2-" }],
   },
   {
     slug: "cnn",
@@ -85,7 +85,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     kind: "video",
     description:
       "News clips transcoded from the original Windows Media files, each with its English transcript, Korean translation and vocabulary notes.",
-    series: [{ slug: "cnn", title: "클립", prefix: "" }],
+    series: [{ slug: "cnn", title: "Clips", prefix: "" }],
   },
 ];
 
