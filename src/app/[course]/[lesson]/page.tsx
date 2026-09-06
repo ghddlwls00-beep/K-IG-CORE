@@ -92,7 +92,13 @@ export default async function LessonPage({
   }
 
   // Extract fallback sentences for TTS reading (prioritizes English target text)
-  const fallbackSentences = extractSentencesForAudio(lesson.blocks, pairLesson?.blocks, isScript, course);
+  const fallbackSentences = extractSentencesForAudio(
+    lesson.blocks,
+    pairLesson?.blocks,
+    isScript,
+    course,
+    ldEnglishScript,
+  );
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-12">
@@ -268,8 +274,31 @@ function extractSentencesForAudio(
   pairBlocks: Block[] | null | undefined,
   isScript: boolean,
   course: string,
+  ldEnglishScript?: { n: string; ko: string; en: string }[] | null,
 ): string[] {
   let targetBlocks = isScript && pairBlocks && pairBlocks.length > 0 ? pairBlocks : blocks;
+
+  // LD course: prioritize actual model English script
+  if (course === "ld") {
+    if (ldEnglishScript && ldEnglishScript.length > 0) {
+      const enList = ldEnglishScript.map((s) => cleanText(s.en)).filter(Boolean);
+      if (enList.length > 0) return enList;
+      const koList = ldEnglishScript.map((s) => cleanText(s.ko)).filter(Boolean);
+      if (koList.length > 0) return koList;
+    }
+    const hints = targetBlocks.find((b) => b.type === "hints") as { type: "hints"; text: string } | undefined;
+    if (hints?.text) {
+      const hintWords = hints.text.split(/[.,]/).map((w) => cleanText(w)).filter(Boolean);
+      if (hintWords.length > 0) return hintWords;
+    }
+  }
+
+  // Phonics / VOCA course: extract from wordgrid
+  const wordgrid = targetBlocks.find((b) => b.type === "wordgrid") as { type: "wordgrid"; rows: string[][] } | undefined;
+  if (wordgrid?.rows) {
+    const words = wordgrid.rows.flat().map((w) => cleanText(w)).filter(Boolean);
+    if (words.length > 0) return words;
+  }
 
   // In grammar1 (or whenever targetBlocks has Korean sentences and pairBlocks has English sentences):
   // We MUST pick the English sentences so AudioPlayer reads the English lesson!

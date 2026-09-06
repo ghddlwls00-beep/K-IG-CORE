@@ -283,7 +283,7 @@ export function listenToSpeech({
       if (event.error === "no-speech") {
         onError?.("음성이 감지되지 않았습니다. 다시 마이크를 켜고 말씀해보세요.");
       } else if (event.error === "not-allowed" || event.error === "service-not-allowed") {
-        onError?.("마이크 접근 권한이 차단되었습니다. 브라우저 주소창 왼쪽 자물쇠 아이콘을 눌러 마이크 권한을 허용해주세요.");
+        onError?.("마이크 접근 권한이 거부되었거나 차단되었습니다. 브라우저 설정에서 마이크를 허용해 주세요. (모바일 기기에서는 HTTPS 보안 연결이 필요할 수 있습니다)");
       } else {
         onError?.(`음성 인식 오류: ${event.error}`);
       }

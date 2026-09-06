@@ -14,7 +14,7 @@ import { BasicsLearningView } from "./BasicsLearningView";
 import { CnnLearningView } from "./CnnLearningView";
 import { ChineseLearningView } from "./ChineseLearningView";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
-import { mediaUrl } from "@/lib/media";
+import { mediaUrl, hasAudioFile } from "@/lib/media";
 
 export interface PairedSentence {
   index: number;
@@ -208,7 +208,7 @@ export function LessonBody({
     stopSpeech();
     setActiveSentenceIndex(idx);
 
-    if (audioSrc) {
+    if (audioSrc && hasAudioFile(audioSrc)) {
       const audio = new Audio(mediaUrl(audioSrc));
       audio.onended = () => setActiveSentenceIndex((curr) => (curr === idx ? null : curr));
       audio.onerror = () => {

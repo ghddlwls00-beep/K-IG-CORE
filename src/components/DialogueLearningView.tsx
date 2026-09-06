@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
-import { mediaUrl } from "@/lib/media";
+import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 
 export interface DialogueItem {
@@ -375,8 +375,8 @@ export function DialogueLearningView({
     stopSpeech();
     setActiveSpeakingId(id);
 
-    // If audio file exists, try playing it, otherwise fallback to speech synthesis
-    if (audioSrc) {
+    // If audio file actually exists on remote media or localhost, try playing it, otherwise fallback to speech synthesis immediately
+    if (audioSrc && hasAudioFile(audioSrc)) {
       const audio = new Audio(mediaUrl(audioSrc));
       audio.playbackRate = audioSpeed;
       audio.onended = () => {

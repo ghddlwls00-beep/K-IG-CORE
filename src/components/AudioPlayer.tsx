@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
-import { mediaUrl } from "@/lib/media";
+import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { playSentenceQueue, stopSpeech, isSpeaking, type VoiceGender } from "@/lib/speech";
 
 /**
@@ -36,7 +36,7 @@ export function AudioPlayer({
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [rate, setRate] = useState(1);
-  const [missing, setMissing] = useState(false);
+  const [missing, setMissing] = useState(() => !hasAudioFile(src));
   const [playBlocked, setPlayBlocked] = useState(false);
 
   // TTS fallback state
@@ -75,7 +75,7 @@ export function AudioPlayer({
   }, [missing, src, ttsActive, fallbackSentences, lang, gender, rate, ttsCurrentIndex]);
 
   function toggle() {
-    if (missing || !src) {
+    if (missing || !src || !hasAudioFile(src)) {
       // Toggle TTS mode
       if (ttsActive) {
         stopSpeech();
@@ -108,11 +108,27 @@ export function AudioPlayer({
     if (el.paused) {
       setPlayBlocked(false);
       el.play().catch((err) => {
-        // iOS Safari blocks play() if not triggered by a direct user gesture,
-        // or if the audio source fails to load.
-        console.warn("Audio play() blocked:", err);
+        console.warn("Audio play() blocked, switching to TTS:", err);
+        setMissing(true);
         setPlaying(false);
-        setPlayBlocked(true);
+        if (fallbackSentences.length > 0) {
+          setTtsActive(true);
+          setPlaying(true);
+          playSentenceQueue(fallbackSentences, {
+            lang,
+            gender,
+            rate,
+            startIndex: ttsCurrentIndex,
+            onProgress: (idx) => setTtsCurrentIndex(idx),
+            onEnd: () => {
+              setTtsActive(false);
+              setPlaying(false);
+              setTtsCurrentIndex(0);
+            },
+          });
+        } else {
+          setPlayBlocked(true);
+        }
       });
     } else {
       el.pause();

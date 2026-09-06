@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
-import { mediaUrl } from "@/lib/media";
+import { mediaUrl, hasAudioFile } from "@/lib/media";
 
 interface StudentLearningViewProps {
   blocks: Block[];
@@ -59,7 +59,7 @@ export function StudentLearningView({
 
     // Audio tracks: index 0 is usually full, index 1..N correspond to sentence 1..N
     const track = audioTracks[idx + 1] || audioTracks[idx];
-    if (track?.src) {
+    if (track?.src && hasAudioFile(track.src)) {
       const audio = new Audio(mediaUrl(track.src));
       audio.playbackRate = speed;
       audio.onended = () => setActiveIdx((curr) => (curr === idx ? null : curr));

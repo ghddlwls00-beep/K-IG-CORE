@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
-import { mediaUrl } from "@/lib/media";
+import { mediaUrl, hasAudioFile } from "@/lib/media";
 
 interface ChineseLearningViewProps {
   blocks: Block[];
@@ -65,9 +65,9 @@ export function ChineseLearningView({
     stopSpeech();
     setActiveIdx(idx);
 
-    // If native Chinese audio tracks exist
+    // If native Chinese audio tracks actually exist
     const track = audioTracks[idx + 1] || audioTracks[idx];
-    if (track?.src) {
+    if (track?.src && hasAudioFile(track.src)) {
       const audio = new Audio(mediaUrl(track.src));
       audio.playbackRate = speed;
       audio.onended = () => setActiveIdx((curr) => (curr === idx ? null : curr));

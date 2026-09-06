@@ -15,6 +15,14 @@
 
 const BASE = (process.env.NEXT_PUBLIC_MEDIA_URL ?? "").replace(/\/+$/, "");
 
+export const HAS_REMOTE_MEDIA = Boolean(BASE);
+
+export function hasAudioFile(src?: string): boolean {
+  if (!src) return false;
+  if (/^https?:\/\//i.test(src)) return true;
+  return HAS_REMOTE_MEDIA;
+}
+
 export function mediaUrl(src: string): string {
   if (!BASE) return src;
   // Anything already absolute is left alone.

@@ -26,10 +26,45 @@ let queueRate = 1.0;
 let queueGender: VoiceGender = "neutral";
 let onQueueProgress: ((index: number, text: string) => void) | null = null;
 let onQueueEnd: (() => void) | null = null;
+let isQueueRunning = false;
+
+// Cached voices
+let cachedVoices: SpeechSynthesisVoice[] = [];
+
+function refreshVoices(): SpeechSynthesisVoice[] {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) return [];
+  const v = window.speechSynthesis.getVoices();
+  if (v && v.length > 0) {
+    cachedVoices = v;
+  }
+  return cachedVoices;
+}
+
+// Auto-register voiceschanged listener and iOS audio unlock
+if (typeof window !== "undefined" && "speechSynthesis" in window) {
+  refreshVoices();
+  window.speechSynthesis.onvoiceschanged = () => {
+    refreshVoices();
+  };
+
+  // iOS Safari audio unlock on first user gesture
+  const unlockAudio = () => {
+    try {
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
+    } catch {
+      // ignore
+    }
+  };
+
+  window.addEventListener("touchstart", unlockAudio, { passive: true });
+  window.addEventListener("touchend", unlockAudio, { passive: true });
+  window.addEventListener("click", unlockAudio, { passive: true });
+}
 
 function getVoices(): SpeechSynthesisVoice[] {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return [];
-  return window.speechSynthesis.getVoices();
+  return cachedVoices.length > 0 ? cachedVoices : refreshVoices();
 }
 
 const MALE_VOICE_REGEX =
@@ -49,9 +84,13 @@ export function findBestVoice(
   const matches = voices.filter((v) => v.lang.toLowerCase().startsWith(target));
   if (matches.length === 0) return null;
 
+  // Prefer local voices to avoid network download failures on mobile data
+  const localMatches = matches.filter((v) => v.localService !== false);
+  const pool = localMatches.length > 0 ? localMatches : matches;
+
   // 1. If male voice requested (e.g. MEN courseware)
   if (gender === "male") {
-    const males = matches.filter((v) => MALE_VOICE_REGEX.test(v.name));
+    const males = pool.filter((v) => MALE_VOICE_REGEX.test(v.name));
     if (males.length > 0) {
       const natural = males.find((v) => /natural|online|neural|google|premium/i.test(v.name));
       return natural ?? males[0];
@@ -60,7 +99,7 @@ export function findBestVoice(
 
   // 2. If female voice requested (e.g. WOMEN courseware)
   if (gender === "female") {
-    const females = matches.filter((v) => FEMALE_VOICE_REGEX.test(v.name));
+    const females = pool.filter((v) => FEMALE_VOICE_REGEX.test(v.name));
     if (females.length > 0) {
       const natural = females.find((v) => /natural|online|neural|google|premium/i.test(v.name));
       return natural ?? females[0];
@@ -68,15 +107,15 @@ export function findBestVoice(
   }
 
   // 3. General natural / neural voice
-  const preferred = matches.find(
+  const preferred = pool.find(
     (v) =>
       /natural|premium|online|google|siri|neural/i.test(v.name) &&
       !/compact/i.test(v.name),
   );
-  return preferred ?? matches[0];
+  return preferred ?? pool.find((v) => v.default) ?? pool[0];
 }
 
-/** Speak a single sentence or text snippet. */
+/** Speak a single sentence or text snippet safely on mobile and desktop. */
 export function speakText(
   text: string,
   options: {
@@ -94,20 +133,27 @@ export function speakText(
     return;
   }
 
-  // Clean text: remove slash markers (e.g. "내 이름은 / 김민우 / 야." -> "내 이름은 김민우 야.")
+  // Clean text: remove slash markers
   const clean = text.replace(/\s*\/\s*/g, " ").trim();
   if (!clean) return;
 
-  window.speechSynthesis.cancel();
+  // Ensure speech synthesis engine is awake (critical for iOS Safari)
+  try {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+  } catch {
+    // ignore
+  }
 
   const langCode = options.lang === "zh" ? "zh-CN" : options.lang === "ko" ? "ko-KR" : "en-US";
   const gender = options.gender ?? "neutral";
   const u = new SpeechSynthesisUtterance(clean);
   u.lang = langCode;
-  u.rate = options.rate ?? 1.0;
+  u.rate = Math.max(0.7, Math.min(1.3, options.rate ?? 1.0));
 
   // Set characteristic pitch for gender differentiation
-  const defaultPitch = gender === "male" ? 0.82 : gender === "female" ? 1.15 : 1.0;
+  const defaultPitch = gender === "male" ? 0.85 : gender === "female" ? 1.12 : 1.0;
   u.pitch = options.pitch ?? defaultPitch;
 
   const voice = findBestVoice(options.lang ?? "en", gender);
@@ -127,8 +173,35 @@ export function speakText(
     }
   };
 
+  // Retain utterance reference to prevent GC mid-sentence on iOS WebKit
   activeUtterance = u;
-  window.speechSynthesis.speak(u);
+
+  // Safe cancellation logic for mobile:
+  // If browser is actively speaking, call cancel() and schedule speak() after
+  // a micro-delay (30ms) so WebKit doesn't drop the new utterance.
+  if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch {
+      // ignore
+    }
+    setTimeout(() => {
+      try {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+        }
+        window.speechSynthesis.speak(u);
+      } catch (err) {
+        options.onError?.(err);
+      }
+    }, 30);
+  } else {
+    try {
+      window.speechSynthesis.speak(u);
+    } catch (err) {
+      options.onError?.(err);
+    }
+  }
 }
 
 /** Play a queue of sentences sequentially (for whole-lesson TTS playback). */
@@ -153,12 +226,18 @@ export function playSentenceQueue(
   queueGender = options.gender ?? "neutral";
   onQueueProgress = options.onProgress ?? null;
   onQueueEnd = options.onEnd ?? null;
+  isQueueRunning = true;
 
-  playNextInQueue();
+  // Small delay after stopSpeech() so mobile cancel settles
+  setTimeout(() => {
+    if (isQueueRunning) {
+      playNextInQueue();
+    }
+  }, 40);
 }
 
 function playNextInQueue() {
-  if (queueIndex >= queue.length) {
+  if (!isQueueRunning || queueIndex >= queue.length) {
     stopSpeech();
     onQueueEnd?.();
     return;
@@ -172,10 +251,12 @@ function playNextInQueue() {
     gender: queueGender,
     rate: queueRate,
     onEnd: () => {
+      if (!isQueueRunning) return;
       queueIndex++;
       playNextInQueue();
     },
     onError: () => {
+      if (!isQueueRunning) return;
       queueIndex++;
       playNextInQueue();
     },
@@ -184,12 +265,15 @@ function playNextInQueue() {
 
 /** Stop all ongoing speech and clear queue. */
 export function stopSpeech(): void {
+  isQueueRunning = false;
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   try {
     if (window.speechSynthesis.paused) {
       window.speechSynthesis.resume();
     }
-    window.speechSynthesis.cancel();
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+      window.speechSynthesis.cancel();
+    }
   } catch {
     // ignore
   }
@@ -202,12 +286,20 @@ export function stopSpeech(): void {
 
 export function pauseSpeech(): void {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.pause();
+  try {
+    window.speechSynthesis.pause();
+  } catch {
+    // ignore
+  }
 }
 
 export function resumeSpeech(): void {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.resume();
+  try {
+    window.speechSynthesis.resume();
+  } catch {
+    // ignore
+  }
 }
 
 export function isSpeaking(): boolean {
