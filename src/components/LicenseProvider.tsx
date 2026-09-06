@@ -22,7 +22,7 @@ interface LicenseContextType {
   hasActiveLicense: boolean;
   licenseInfo: LicenseInfo | null;
   currentDevice: ClientDevice;
-  isUnlocked: (courseSlug: string, lessonId: string, indexInSection?: number) => boolean;
+  isUnlocked: (courseSlug: string, lessonId: string, sectionIndex?: number, lessonIndex?: number) => boolean;
   activateKey: (key: string) => Promise<{ success: boolean; message: string }>;
   deactivateLicense: () => Promise<void>;
   isModalOpen: boolean;
@@ -74,9 +74,14 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       }
     : null;
 
-  function isUnlocked(courseSlug: string, lessonId: string, indexInSection?: number): boolean {
+  function isUnlocked(
+    courseSlug: string,
+    lessonId: string,
+    sectionIndex?: number,
+    lessonIndex?: number,
+  ): boolean {
     if (hasActiveLicense) return true;
-    return isFreePreviewLesson(courseSlug, lessonId, indexInSection);
+    return isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex);
   }
 
   async function activateKey(rawKey: string): Promise<{ success: boolean; message: string }> {

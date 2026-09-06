@@ -179,6 +179,11 @@ export function getVocaDictionary(): Record<string, { meaning: string; searchWor
  * Only the very first section's 1st and 2nd lessons are free. All others are locked.
  */
 export function isFreePreviewLessonServer(courseSlug: string, lessonId: string): boolean {
+  // Phonics / VOCA course: strictly Section 1's 1st and 2nd lessons ONLY
+  if (courseSlug === "phonics") {
+    return lessonId === "mv1-01" || lessonId === "mv1-02";
+  }
+
   const index = getCourseIndex(courseSlug);
   if (!index) return false;
   const { groups, lessons } = index;

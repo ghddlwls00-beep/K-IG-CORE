@@ -114,7 +114,8 @@ export function getPlanLabel(plan: LicensePlan): string {
 
 /**
  * Check if a lesson is free for preview when the user doesn't have an active license.
- * Rule: Only Section 1's 1st and 2nd lessons (sectionIndex === 0 && lessonIndex < 2) are free preview.
+ * Rule: Only Section 1's 1st and 2nd lessons are free preview.
+ * For VOCA (phonics): ONLY Section 1's mv1-01 and mv1-02 are free preview. All mv2-*, mv3-*, hv-* are strictly locked.
  */
 export function isFreePreviewLesson(
   courseSlug: string,
@@ -122,8 +123,58 @@ export function isFreePreviewLesson(
   sectionIndex?: number,
   lessonIndex?: number,
 ): boolean {
+  // Phonics / VOCA course: strictly Section 1's 1st and 2nd lessons ONLY
+  if (courseSlug === "phonics") {
+    return lessonId === "mv1-01" || lessonId === "mv1-02";
+  }
+
+  // Grammar 1: Only first 2 lessons of Section 1
+  if (courseSlug === "grammar1") {
+    return lessonId === "gh1-001" || lessonId === "gh1-002";
+  }
+
+  // Grammar 2: Only first 2 lessons of Section 1
+  if (courseSlug === "grammar2") {
+    return (
+      lessonId === "gh2-001" ||
+      lessonId === "gh2-001-1" ||
+      lessonId === "gh2-002" ||
+      lessonId === "gh2-002-1"
+    );
+  }
+
+  // LD (Listening & Dictate): Only first 2 rounds
+  if (courseSlug === "ld") {
+    return (
+      lessonId === "d001" ||
+      lessonId === "d001-1" ||
+      lessonId === "d002" ||
+      lessonId === "d002-1"
+    );
+  }
+
+  // Reading: Only first 2 lessons
+  if (courseSlug === "reading") {
+    return lessonId === "rc001" || lessonId === "rc002";
+  }
+
+  // CNN: Only first 2 lessons
+  if (courseSlug === "cnn") {
+    return lessonId === "cnn001" || lessonId === "cnn002";
+  }
+
+  // When sectionIndex and lessonIndex are explicitly provided
   if (typeof sectionIndex === "number" && typeof lessonIndex === "number") {
     return sectionIndex === 0 && lessonIndex < 2;
+  }
+
+  // Generic fallback: strictly exclude subsequent sections
+  if (
+    lessonId.includes("mv2") ||
+    lessonId.includes("mv3") ||
+    lessonId.includes("hv")
+  ) {
+    return false;
   }
 
   const match = lessonId.match(/(\d+)$/);
