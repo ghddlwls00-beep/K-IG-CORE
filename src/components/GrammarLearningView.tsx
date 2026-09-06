@@ -919,14 +919,7 @@ export function GrammarLearningView({
                   </div>
 
                   {/* Controls */}
-                  <div className="flex items-center justify-between pt-1">
-                    <div className="flex items-center gap-1 text-[12px] text-ink-faint">
-                      <span>핵심 문법 키워드:</span>
-                      <span className="font-mono font-medium text-ink-soft">
-                        {item.targetKeywords.join(", ")}
-                      </span>
-                    </div>
-
+                  <div className="flex items-center justify-end pt-1">
                     <button
                       type="button"
                       onClick={() => toggleReveal(item.id)}
