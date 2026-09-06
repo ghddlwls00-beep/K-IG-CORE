@@ -43,7 +43,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "VOCA",
     titleEn: "Vocabulary",
     kind: "audio-drill",
-    description: "Essential middle and high school vocabulary matrix with AI pronunciation clinic.",
+    description: "Middle & High school vocabulary matrix with pronunciation clinic",
     series: [
       { slug: "mv1", title: "Middle School Vocabulary 1 (MV1)", prefix: "mv1-" },
       { slug: "mv2", title: "Middle School Vocabulary 2 (MV2)", prefix: "mv2-" },
