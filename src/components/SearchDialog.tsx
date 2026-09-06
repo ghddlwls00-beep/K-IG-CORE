@@ -133,7 +133,7 @@ export function SearchDialog() {
         title="레슨 검색 (단축키: Cmd+K 또는 Ctrl+K)"
       >
         <span className="text-[12px] opacity-70 group-hover:opacity-100 transition-opacity">🔍</span>
-        <span className="font-medium tracking-tight">빠른 레슨 검색</span>
+        <span className="hidden sm:inline font-medium tracking-tight">빠른 레슨 검색</span>
         <kbd className="hidden md:inline-flex items-center gap-0.5 rounded-full border border-black/8 bg-black/[0.04] dark:border-white/10 dark:bg-white/[0.08] px-2 py-0.5 font-mono text-[9.5px] font-semibold text-ink-faint group-hover:text-ink transition-colors">
           ⌘K
         </kbd>
@@ -144,7 +144,7 @@ export function SearchDialog() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-start justify-center pt-[10vh] px-4 bg-black/60 backdrop-blur-xs animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-start justify-center pt-[5vh] sm:pt-[10vh] px-4 bg-black/60 backdrop-blur-xs animate-in fade-in"
           onClick={() => setOpen(false)}
         >
           <div
@@ -192,7 +192,7 @@ export function SearchDialog() {
             </div>
 
             {/* Search Results List */}
-            <div className="max-h-[60vh] overflow-y-auto p-2">
+            <div className="max-h-[40vh] sm:max-h-[60vh] overflow-y-auto p-2">
               {loading ? (
                 <div className="py-10 text-center text-[13px] text-ink-soft">
                   검색 인덱스를 불러오는 중입니다…
@@ -204,7 +204,7 @@ export function SearchDialog() {
                     &apos;{query}&apos;에 해당하는 학습 과정을 찾을 수 없습니다.
                   </p>
                   <p className="text-[11.5px] text-ink-faint mt-1">
-                    추천 검색어: <span className="font-medium text-primary">중등 단어, 고등, 1강, 패턴, 수능 듣기, 독해</span>
+                    추천 검색어: <span className="font-medium text-ink">중등 단어, 고등, 1강, 패턴, 수능 듣기, 독해</span>
                   </p>
                 </div>
               ) : (

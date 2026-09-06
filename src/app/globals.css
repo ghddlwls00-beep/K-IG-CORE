@@ -86,12 +86,31 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* Prevent iOS font size inflation in landscape */
+  text-size-adjust: 100%;
 }
 
 body {
   background: var(--surface);
   color: var(--ink);
   font-family: var(--font-sans);
+  /* Momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Remove the blue tap flash on mobile browsers */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Faster touch response on interactive elements */
+a,
+button,
+[role="button"],
+summary,
+select,
+label {
+  touch-action: manipulation;
 }
 
 :lang(ko) {

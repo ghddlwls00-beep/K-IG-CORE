@@ -37,6 +37,7 @@ export function AudioPlayer({
   const [duration, setDuration] = useState(0);
   const [rate, setRate] = useState(1);
   const [missing, setMissing] = useState(false);
+  const [playBlocked, setPlayBlocked] = useState(false);
 
   // TTS fallback state
   const [ttsActive, setTtsActive] = useState(false);
@@ -105,7 +106,14 @@ export function AudioPlayer({
     const el = ref.current;
     if (!el) return;
     if (el.paused) {
-      void el.play();
+      setPlayBlocked(false);
+      el.play().catch((err) => {
+        // iOS Safari blocks play() if not triggered by a direct user gesture,
+        // or if the audio source fails to load.
+        console.warn("Audio play() blocked:", err);
+        setPlaying(false);
+        setPlayBlocked(true);
+      });
     } else {
       el.pause();
     }
@@ -155,7 +163,7 @@ export function AudioPlayer({
           ref={ref}
           src={mediaUrl(src)}
           preload="metadata"
-          autoPlay={autoplay}
+          playsInline
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
@@ -293,6 +301,12 @@ export function AudioPlayer({
           </span>
         ) : null}
       </div>
+
+      {playBlocked && (
+        <p className="mt-2 text-center text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2">
+          ▶ 재생 버튼을 한 번 더 탭해 주세요 (브라우저 자동재생 정책)
+        </p>
+      )}
     </div>
   );
 }

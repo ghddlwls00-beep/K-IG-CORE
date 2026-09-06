@@ -71,9 +71,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   const [scrollActive, setScrollActive] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // One wheel gesture moves one whole section. Without this a 100vh section
-  // creeps a few pixels per notch and the snap keeps pulling it back, which is
-  // what makes wheel scrolling feel slow.
+  // One wheel gesture moves one whole section (desktop).
+  // Touch swipe on mobile does the same via touchstart/touchend.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -98,9 +97,42 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       }, 300);
     }
 
+    // Touch swipe support for mobile
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    function onTouchStart(e: TouchEvent) {
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    }
+
+    function onTouchEnd(e: TouchEvent) {
+      if (!el) return;
+      if (locked) return;
+      const dy = touchStartY - e.changedTouches[0].clientY;
+      const dt = Date.now() - touchStartTime;
+      // Require at least 40px swipe and within 500ms (fast flick)
+      if (Math.abs(dy) < 40 || dt > 500) return;
+
+      const height = el.clientHeight;
+      const current = Math.round(el.scrollTop / height);
+      const next = Math.min(Math.max(current + (dy > 0 ? 1 : -1), 0), tabs.length - 1);
+      if (next === current) return;
+
+      locked = true;
+      el.scrollTo({ top: next * height, behavior: "smooth" });
+      timer = setTimeout(() => {
+        locked = false;
+      }, 600);
+    }
+
     el.addEventListener("wheel", onWheel, { passive: false });
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
     return () => {
       el.removeEventListener("wheel", onWheel);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
       clearTimeout(timer);
     };
   }, [tabs.length]);
@@ -123,7 +155,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   };
 
   return (
-    <div className="relative flex h-screen flex-col overflow-hidden bg-surface text-ink antialiased select-none">
+    <div className="relative flex h-[100dvh] flex-col overflow-hidden bg-surface text-ink antialiased select-none">
       {/* Top Header */}
       <header className="relative z-20 flex shrink-0 items-center justify-between border-b border-line bg-surface/90 px-6 py-4 backdrop-blur-sm sm:px-12">
         <div
@@ -139,12 +171,12 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
         ref={containerRef}
         onScroll={handleScroll}
         className="relative flex-1 overflow-y-auto snap-y snap-mandatory select-text"
-        style={{ scrollSnapType: "y mandatory", overscrollBehaviorY: "contain" }}
+        style={{ scrollSnapType: "y mandatory", overscrollBehavior: "contain" }}
       >
         {tabs.map((tab, i) => (
           <section
             key={tab.slug}
-            className="relative flex h-full min-h-full w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start"
+            className="relative flex h-[100dvh] min-h-[100dvh] w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start"
             style={{ scrollSnapAlign: "start" }}
           >
             <SectionPhoto slug={tab.slug} priority={i < 2} />

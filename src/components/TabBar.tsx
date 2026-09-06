@@ -172,7 +172,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center justify-between rounded-xl px-3.5 py-3 text-[14px] transition-colors ${
                         active
-                          ? "bg-primary/10 text-primary font-bold border border-primary/20"
+                          ? "bg-ink/[0.07] text-ink font-bold border border-ink/15"
                           : "text-ink hover:bg-raised font-medium"
                       }`}
                     >
