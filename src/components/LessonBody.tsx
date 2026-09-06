@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Block } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
 import { DictationPanel } from "./DictationPanel";
@@ -13,7 +13,7 @@ import { StudentLearningView } from "./StudentLearningView";
 import { BasicsLearningView } from "./BasicsLearningView";
 import { CnnLearningView } from "./CnnLearningView";
 import { ChineseLearningView } from "./ChineseLearningView";
-import { speakText, type VoiceGender } from "@/lib/speech";
+import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
 import { mediaUrl } from "@/lib/media";
 
 export interface PairedSentence {
@@ -176,6 +176,13 @@ export function LessonBody({
   const [studyMode, setStudyMode] = useState<"bilingual" | "englishOnly" | "koreanOnly">("bilingual");
   const [revealedItems, setRevealedItems] = useState<Record<number, boolean>>({});
   const [activeSentenceIndex, setActiveSentenceIndex] = useState<number | null>(null);
+  const [activeWord, setActiveWord] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
 
   // Extract choices & dictation
   const choice = blocks.find((b) => b.type === "choice") || pairBlocks?.find((b) => b.type === "choice");
@@ -193,11 +200,17 @@ export function LessonBody({
 
   function playSentence(text: string, idx: number, audioSrc?: string) {
     if (!text) return;
+    if (activeSentenceIndex === idx) {
+      stopSpeech();
+      setActiveSentenceIndex(null);
+      return;
+    }
+    stopSpeech();
     setActiveSentenceIndex(idx);
 
     if (audioSrc) {
       const audio = new Audio(mediaUrl(audioSrc));
-      audio.onended = () => setActiveSentenceIndex(null);
+      audio.onended = () => setActiveSentenceIndex((curr) => (curr === idx ? null : curr));
       audio.onerror = () => {
         speakSentenceTts(text, idx);
       };
@@ -213,16 +226,26 @@ export function LessonBody({
       gender: voiceGender,
       rate: 0.95,
       onStart: () => setActiveSentenceIndex(idx),
-      onEnd: () => setActiveSentenceIndex(null),
-      onError: () => setActiveSentenceIndex(null),
+      onEnd: () => setActiveSentenceIndex((curr) => (curr === idx ? null : curr)),
+      onError: () => setActiveSentenceIndex((curr) => (curr === idx ? null : curr)),
     });
   }
 
   function playWord(word: string) {
+    if (!word) return;
+    if (activeWord === word) {
+      stopSpeech();
+      setActiveWord(null);
+      return;
+    }
+    stopSpeech();
+    setActiveWord(word);
     speakText(word, {
       lang: contentLang,
       gender: voiceGender,
       rate: 0.9,
+      onEnd: () => setActiveWord((curr) => (curr === word ? null : curr)),
+      onError: () => setActiveWord((curr) => (curr === word ? null : curr)),
     });
   }
 
@@ -381,16 +404,17 @@ export function LessonBody({
                   <button
                     type="button"
                     onClick={() => playSentence(item.targetText, idx, item.audioSrc)}
-                    aria-label={t("sentence.play")}
+                    aria-label={isSpeaking ? "정지" : t("sentence.play")}
                     className={
-                      "shrink-0 flex h-8 w-8 items-center justify-center rounded-full border transition-all " +
+                      "shrink-0 flex h-8 w-8 items-center justify-center rounded-full border transition-all cursor-pointer " +
                       (isSpeaking
-                        ? "border-ink bg-ink text-surface scale-105 shadow-xs"
+                        ? "border-red-500 bg-red-600 text-white scale-105 shadow-xs font-bold"
                         : "border-line bg-surface text-ink-soft hover:border-ink hover:text-ink hover:scale-105 active:scale-95")
                     }
+                    title={isSpeaking ? "정지" : "음성 듣기"}
                   >
                     {isSpeaking ? (
-                      <span className="h-2 w-2 rounded-xs bg-surface animate-pulse" />
+                      <span className="text-[12px] font-bold">⏹️</span>
                     ) : (
                       <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="ml-0.5">
                         <path d="M4 2.5v11a.5.5 0 0 0 .77.42l8.5-5.5a.5.5 0 0 0 0-.84l-8.5-5.5A.5.5 0 0 0 4 2.5Z" />
@@ -501,11 +525,15 @@ export function LessonBody({
                     e.stopPropagation();
                     playWord(chunk.en);
                   }}
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface text-ink-soft group-hover:bg-ink group-hover:text-surface transition-all shadow-2xs cursor-pointer"
-                  title="청크 발음 듣기"
-                  aria-label="청크 발음 듣기"
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all shadow-2xs cursor-pointer font-bold ${
+                    activeWord === chunk.en
+                      ? "bg-red-500 text-white"
+                      : "bg-surface text-ink-soft group-hover:bg-ink group-hover:text-surface"
+                  }`}
+                  title={activeWord === chunk.en ? "발음 정지" : "청크 발음 듣기"}
+                  aria-label={activeWord === chunk.en ? "발음 정지" : "청크 발음 듣기"}
                 >
-                  <span className="text-[11px]">🔊</span>
+                  <span className="text-[11px]">{activeWord === chunk.en ? "⏹️" : "🔊"}</span>
                 </button>
               </div>
             ))}

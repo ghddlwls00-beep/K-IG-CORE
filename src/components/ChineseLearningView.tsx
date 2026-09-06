@@ -56,6 +56,12 @@ export function ChineseLearningView({
   }, []);
 
   function playChinese(hanzi: string, idx: number) {
+    if (!hanzi) return;
+    if (activeIdx === idx) {
+      stopSpeech();
+      setActiveIdx(null);
+      return;
+    }
     stopSpeech();
     setActiveIdx(idx);
 
@@ -64,7 +70,7 @@ export function ChineseLearningView({
     if (track?.src) {
       const audio = new Audio(mediaUrl(track.src));
       audio.playbackRate = speed;
-      audio.onended = () => setActiveIdx(null);
+      audio.onended = () => setActiveIdx((curr) => (curr === idx ? null : curr));
       audio.onerror = () => {
         playWithTts(hanzi, idx);
       };
@@ -79,8 +85,8 @@ export function ChineseLearningView({
       lang: "zh",
       rate: speed,
       onStart: () => setActiveIdx(idx),
-      onEnd: () => setActiveIdx(null),
-      onError: () => setActiveIdx(null),
+      onEnd: () => setActiveIdx((curr) => (curr === idx ? null : curr)),
+      onError: () => setActiveIdx((curr) => (curr === idx ? null : curr)),
     });
   }
 
@@ -175,9 +181,10 @@ export function ChineseLearningView({
                       ? "border-red-600 bg-red-600 text-white font-semibold shadow-xs"
                       : "border-line bg-surface text-ink-soft hover:bg-raised hover:text-ink"
                   }`}
+                  title={isPlaying ? "발음 정지" : "중국어 발음"}
                 >
-                  <span>🔊</span>
-                  <span>{isPlaying ? "재생 중..." : "중국어 발음"}</span>
+                  <span>{isPlaying ? "⏹️" : "🔊"}</span>
+                  <span>{isPlaying ? "정지" : "중국어 발음"}</span>
                 </button>
               </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
 
@@ -71,6 +71,13 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
   const [layoutMode, setLayoutMode] = useState<"paired" | "dual">("paired");
   const [showKoTranslation, setShowKoTranslation] = useState(true);
   const [pinnedSection, setPinnedSection] = useState<number | null>(null);
+  const [playingText, setPlayingText] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
 
   const pairCount = Math.max(enReport.length, koReport.length);
   const pairedTranscript: { en: string; ko: string }[] = [];
@@ -81,9 +88,20 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
     });
   }
 
-  function playEnglishSnippet(text: string) {
+  function togglePlaySnippet(text: string, lang: "en" | "ko" = "en") {
+    if (playingText === text) {
+      stopSpeech();
+      setPlayingText(null);
+      return;
+    }
     stopSpeech();
-    speakText(text, { lang: "en", rate: 0.95 });
+    setPlayingText(text);
+    speakText(text, {
+      lang,
+      rate: 0.95,
+      onEnd: () => setPlayingText((curr) => (curr === text ? null : curr)),
+      onError: () => setPlayingText((curr) => (curr === text ? null : curr)),
+    });
   }
 
   return (
@@ -227,11 +245,15 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
                           type="button"
                           onClick={(e) => {
                             e.stopPropagation();
-                            playEnglishSnippet(item.en);
+                            togglePlaySnippet(item.en, "en");
                           }}
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-surface px-2.5 py-1 text-[11.5px] font-medium text-ink hover:bg-raised transition-colors cursor-pointer"
+                          className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer ${
+                            playingText === item.en
+                              ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
+                              : "border-line bg-surface text-ink hover:bg-raised"
+                          }`}
                         >
-                          🔊 원어민 낭독 듣기
+                          {playingText === item.en ? "⏹️ 정지" : "🔊 원어민 낭독 듣기"}
                         </button>
                       )}
                     </div>
@@ -291,11 +313,18 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
                             type="button"
                             onClick={(e) => {
                               e.stopPropagation();
-                              playEnglishSnippet(text);
+                              togglePlaySnippet(text, "en");
                             }}
-                            className={`text-[10.5px] cursor-pointer ${isPinned ? "text-surface/80 hover:text-surface" : "text-ink-faint hover:text-ink"}`}
+                            className={`text-[11px] cursor-pointer font-bold px-1.5 py-0.5 rounded ${
+                              playingText === text
+                                ? "bg-red-500/20 text-red-600 dark:text-red-400"
+                                : isPinned
+                                ? "text-surface/80 hover:text-surface"
+                                : "text-ink-faint hover:text-ink"
+                            }`}
+                            title={playingText === text ? "낭독 정지" : "낭독 듣기"}
                           >
-                            🔊
+                            {playingText === text ? "⏹️ 정지" : "🔊"}
                           </button>
                         </div>
                         <p className="text-[14.5px] font-serif leading-relaxed text-justify">
@@ -358,26 +387,35 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            {vocabItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col gap-1 rounded-xl border border-line bg-surface p-4 shadow-2xs hover:border-line-strong transition-colors"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-[13.5px] font-bold text-ink text-primary">
-                    {item.n}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => speakText(item.n.replace(/^\d+\)\s*/, ""), { lang: "en" })}
-                    className="text-[11px] text-ink-faint hover:text-ink cursor-pointer"
-                  >
-                    🔊
-                  </button>
+            {vocabItems.map((item, idx) => {
+              const word = item.n.replace(/^\d+\)\s*/, "");
+              const isPlayingWord = playingText === word;
+              return (
+                <div
+                  key={idx}
+                  className="flex flex-col gap-1 rounded-xl border border-line bg-surface p-4 shadow-2xs hover:border-line-strong transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[13.5px] font-bold text-ink text-primary">
+                      {item.n}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => togglePlaySnippet(word, "en")}
+                      className={`text-[11px] cursor-pointer px-1.5 py-0.5 rounded transition-colors ${
+                        isPlayingWord
+                          ? "bg-red-500/20 text-red-600 dark:text-red-400 font-bold"
+                          : "text-ink-faint hover:text-ink"
+                      }`}
+                      title={isPlayingWord ? "정지" : "발음 듣기"}
+                    >
+                      {isPlayingWord ? "⏹️ 정지" : "🔊"}
+                    </button>
+                  </div>
+                  <p className="text-[13px] text-ink-soft leading-relaxed">{item.text}</p>
                 </div>
-                <p className="text-[13px] text-ink-soft leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}

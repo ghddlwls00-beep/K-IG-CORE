@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
-import { speakText } from "@/lib/speech";
+import { speakText, stopSpeech } from "@/lib/speech";
 
 /**
  * Enhanced Dictation and Answer Verification Panel.
@@ -28,6 +28,29 @@ export function DictationPanel({
   const [restored, setRestored] = useState(false);
   const [savedAt, setSavedAt] = useState<string | null>(null);
   const [showAnswerCheck, setShowAnswerCheck] = useState(false);
+  const [playingRef, setPlayingRef] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
+
+  function toggleSpeakRef(refText: string) {
+    if (!refText) return;
+    if (playingRef === refText) {
+      stopSpeech();
+      setPlayingRef(null);
+      return;
+    }
+    stopSpeech();
+    setPlayingRef(refText);
+    speakText(refText, {
+      lang: "en",
+      onEnd: () => setPlayingRef((curr) => (curr === refText ? null : curr)),
+      onError: () => setPlayingRef((curr) => (curr === refText ? null : curr)),
+    });
+  }
 
   const key = `kig:work:${storageKey}`;
 
@@ -171,11 +194,15 @@ export function DictationPanel({
                   </div>
                   <button
                     type="button"
-                    onClick={() => speakText(ref, { lang: "en" })}
-                    title="원어민 발음 듣기"
-                    className="shrink-0 rounded p-1 text-ink-faint hover:bg-surface hover:text-ink transition-colors cursor-pointer text-[12px]"
+                    onClick={() => toggleSpeakRef(ref)}
+                    title={playingRef === ref ? "발음 정지" : "원어민 발음 듣기"}
+                    className={`shrink-0 rounded p-1 transition-colors cursor-pointer text-[12px] font-bold ${
+                      playingRef === ref
+                        ? "text-red-600 dark:text-red-400 bg-red-500/15"
+                        : "text-ink-faint hover:bg-surface hover:text-ink"
+                    }`}
                   >
-                    🔊
+                    {playingRef === ref ? "⏹️" : "🔊"}
                   </button>
                 </div>
               </div>

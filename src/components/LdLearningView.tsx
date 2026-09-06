@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { Block } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
 import { DictationPanel } from "./DictationPanel";
-import { speakText } from "@/lib/speech";
+import { speakText, stopSpeech } from "@/lib/speech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 
 interface LdLearningViewProps {
@@ -83,6 +83,13 @@ export function LdLearningView({
   const [copied, setCopied] = useState(false);
   const [savedAt, setSavedAt] = useState<string | null>(null);
   const [restored, setRestored] = useState(false);
+  const [playingText, setPlayingText] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
 
   const storageKey = `kig:ld:trainer:${lessonKey}`;
 
@@ -151,16 +158,33 @@ export function LdLearningView({
     setRevealedEn(updated);
   }
 
+  function toggleSpeak(text: string, lang: "ko" | "en" = "en", rate = 0.95) {
+    if (!text) return;
+    if (playingText === text) {
+      stopSpeech();
+      setPlayingText(null);
+      return;
+    }
+    stopSpeech();
+    setPlayingText(text);
+    speakText(text, {
+      lang,
+      rate,
+      onEnd: () => setPlayingText((curr) => (curr === text ? null : curr)),
+      onError: () => setPlayingText((curr) => (curr === text ? null : curr)),
+    });
+  }
+
   function speakKorean(text: string) {
-    speakText(text, { lang: "ko", rate: 0.95 });
+    toggleSpeak(text, "ko", 0.95);
   }
 
   function speakEnglish(text: string) {
-    speakText(text, { lang: "en", rate: 0.95 });
+    toggleSpeak(text, "en", 0.95);
   }
 
   function speakHint(word: string) {
-    speakText(word, { lang: "en", rate: 0.9 });
+    toggleSpeak(word, "en", 0.9);
   }
 
   function handleCopyFullEssay() {
@@ -273,18 +297,25 @@ export function LdLearningView({
               <span>{hintWords.length}개 단어</span>
             </div>
             <div className="flex flex-wrap gap-2">
-              {hintWords.map((word, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => speakHint(word)}
-                  title="클릭하여 영어 발음 청취"
-                  className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-2.5 py-1 text-[12.5px] font-medium text-ink hover:border-ink/50 hover:bg-raised transition-colors cursor-pointer shadow-2xs"
-                >
-                  <span>{word}</span>
-                  <span className="text-[11px] text-ink-faint">🔊</span>
-                </button>
-              ))}
+              {hintWords.map((word, i) => {
+                const isPlaying = playingText === word;
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => speakHint(word)}
+                    title={isPlaying ? "발음 정지" : "영어 발음 청취"}
+                    className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[12.5px] font-medium transition-colors cursor-pointer shadow-2xs ${
+                      isPlaying
+                        ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-bold"
+                        : "border-line bg-surface text-ink hover:border-ink/50 hover:bg-raised"
+                    }`}
+                  >
+                    <span>{word}</span>
+                    <span className="text-[11px]">{isPlaying ? "⏹️" : "🔊"}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         ) : null}
@@ -296,6 +327,8 @@ export function LdLearningView({
               const isDone = Boolean(completedSentences[idx]);
               const isRevealed = Boolean(showAllEn || revealedEn[idx]);
               const userAns = sentenceAnswers[idx] || "";
+              const isPlayingKo = playingText === item.ko;
+              const isPlayingEn = playingText === item.en;
 
               return (
                 <div
@@ -321,10 +354,14 @@ export function LdLearningView({
                       <button
                         type="button"
                         onClick={() => speakKorean(item.ko)}
-                        title="한글 음성 듣기"
-                        className="rounded p-1.5 text-ink-faint hover:bg-raised hover:text-ink transition-colors cursor-pointer"
+                        title={isPlayingKo ? "한글 음성 정지" : "한글 음성 듣기"}
+                        className={`rounded p-1.5 transition-colors cursor-pointer ${
+                          isPlayingKo
+                            ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold"
+                            : "text-ink-faint hover:bg-raised hover:text-ink"
+                        }`}
                       >
-                        🔊
+                        {isPlayingKo ? "⏹️" : "🔊"}
                       </button>
                       <button
                         type="button"
@@ -393,10 +430,14 @@ export function LdLearningView({
                           <button
                             type="button"
                             onClick={() => speakEnglish(item.en)}
-                            title="원어민 표준 발음 듣기"
-                            className="inline-flex items-center gap-1 rounded bg-emerald-600/20 px-2 py-0.5 text-[11px] font-medium text-emerald-900 dark:text-emerald-200 hover:bg-emerald-600/30 transition-colors cursor-pointer"
+                            title={isPlayingEn ? "원어민 발음 정지" : "원어민 표준 발음 듣기"}
+                            className={`inline-flex items-center gap-1 rounded px-2 py-0.5 text-[11px] font-medium transition-colors cursor-pointer ${
+                              isPlayingEn
+                                ? "bg-red-500/20 text-red-600 dark:text-red-400 font-semibold"
+                                : "bg-emerald-600/20 text-emerald-900 dark:text-emerald-200 hover:bg-emerald-600/30"
+                            }`}
                           >
-                            <span>🔊 원어민 발음</span>
+                            <span>{isPlayingEn ? "⏹️ 정지" : "🔊 원어민 발음"}</span>
                           </button>
                         </div>
                         <p className="font-mono font-medium select-text">{item.en}</p>
@@ -419,43 +460,55 @@ export function LdLearningView({
                 <span className="text-[11px] text-ink-faint">총 {sentences.length}개 문장</span>
               </div>
               <div className="flex flex-col gap-3.5 max-h-[600px] overflow-y-auto pr-1">
-                {sentences.map((s, i) => (
-                  <div key={i} className="border-b border-line/40 pb-3 last:border-0 last:pb-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <p className="text-[14px] leading-relaxed text-ink/90">
-                        <span className="mr-2 font-mono text-[11px] font-bold text-ink-faint">
-                          {s.n || i + 1}.
-                        </span>
-                        {s.ko}
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => speakKorean(s.ko)}
-                        title="한글 음성 듣기"
-                        className="shrink-0 text-[11px] text-ink-faint hover:text-ink cursor-pointer p-1"
-                      >
-                        🔊
-                      </button>
-                    </div>
-                    {s.en ? (
-                      <div className="mt-2 rounded bg-emerald-500/10 border border-emerald-500/20 p-2.5 text-emerald-950 dark:text-emerald-200">
-                        <div className="flex items-start justify-between gap-2">
-                          <p className="font-mono text-[13px] leading-relaxed select-text">
-                            {s.en}
-                          </p>
-                          <button
-                            type="button"
-                            onClick={() => speakEnglish(s.en)}
-                            title="영문 표준 발음 듣기"
-                            className="shrink-0 text-[11px] text-emerald-800 dark:text-emerald-300 hover:text-emerald-900 cursor-pointer p-0.5"
-                          >
-                            🔊
-                          </button>
-                        </div>
+                {sentences.map((s, i) => {
+                  const isPlayingKo = playingText === s.ko;
+                  const isPlayingEn = playingText === s.en;
+                  return (
+                    <div key={i} className="border-b border-line/40 pb-3 last:border-0 last:pb-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="text-[14px] leading-relaxed text-ink/90">
+                          <span className="mr-2 font-mono text-[11px] font-bold text-ink-faint">
+                            {s.n || i + 1}.
+                          </span>
+                          {s.ko}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => speakKorean(s.ko)}
+                          title={isPlayingKo ? "한글 음성 정지" : "한글 음성 듣기"}
+                          className={`shrink-0 text-[11px] cursor-pointer p-1 rounded transition-colors ${
+                            isPlayingKo
+                              ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold"
+                              : "text-ink-faint hover:text-ink"
+                          }`}
+                        >
+                          {isPlayingKo ? "⏹️" : "🔊"}
+                        </button>
                       </div>
-                    ) : null}
-                  </div>
-                ))}
+                      {s.en ? (
+                        <div className="mt-2 rounded bg-emerald-500/10 border border-emerald-500/20 p-2.5 text-emerald-950 dark:text-emerald-200">
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="font-mono text-[13px] leading-relaxed select-text">
+                              {s.en}
+                            </p>
+                            <button
+                              type="button"
+                              onClick={() => speakEnglish(s.en)}
+                              title={isPlayingEn ? "발음 정지" : "영문 표준 발음 듣기"}
+                              className={`shrink-0 text-[11px] cursor-pointer p-0.5 rounded ${
+                                isPlayingEn
+                                  ? "text-red-600 dark:text-red-400 font-bold"
+                                  : "text-emerald-800 dark:text-emerald-300 hover:text-emerald-900"
+                              }`}
+                            >
+                              {isPlayingEn ? "⏹️" : "🔊"}
+                            </button>
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 

@@ -185,7 +185,14 @@ function playNextInQueue() {
 /** Stop all ongoing speech and clear queue. */
 export function stopSpeech(): void {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
+  try {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+    window.speechSynthesis.cancel();
+  } catch {
+    // ignore
+  }
   activeUtterance = null;
   queue = [];
   queueIndex = 0;

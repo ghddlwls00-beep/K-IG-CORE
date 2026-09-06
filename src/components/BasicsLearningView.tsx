@@ -65,6 +65,28 @@ function QaTrackView({
 
   const [revealed, setRevealed] = useState(false);
   const [response, setResponse] = useState("");
+  const [playingIdx, setPlayingIdx] = useState<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
+
+  function togglePlayItem(text: string, idx: number) {
+    if (playingIdx === idx) {
+      stopSpeech();
+      setPlayingIdx(null);
+      return;
+    }
+    stopSpeech();
+    setPlayingIdx(idx);
+    speakText(text, {
+      lang: "en",
+      onEnd: () => setPlayingIdx((curr) => (curr === idx ? null : curr)),
+      onError: () => setPlayingIdx((curr) => (curr === idx ? null : curr)),
+    });
+  }
 
   return (
     <div className="flex flex-col gap-6">
@@ -109,10 +131,14 @@ function QaTrackView({
                     </span>
                     <button
                       type="button"
-                      onClick={() => speakText(item.text, { lang: "en" })}
-                      className="text-[11.5px] text-ink-soft hover:text-ink cursor-pointer"
+                      onClick={() => togglePlayItem(item.text, idx)}
+                      className={`text-[11.5px] cursor-pointer px-2 py-0.5 rounded font-medium transition-colors ${
+                        playingIdx === idx
+                          ? "bg-red-500/20 text-red-600 dark:text-red-400 font-semibold"
+                          : "text-ink-soft hover:text-ink"
+                      }`}
                     >
-                      🔊 발음 듣기
+                      {playingIdx === idx ? "⏹️ 정지" : "🔊 발음 듣기"}
                     </button>
                   </div>
                   <p className="text-[15px] font-semibold text-ink">{item.text}</p>
@@ -221,14 +247,25 @@ function SentenceTrackView({
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
 
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
+
   function playSentence(text: string, idx: number) {
+    if (activeIdx === idx) {
+      stopSpeech();
+      setActiveIdx(null);
+      return;
+    }
     stopSpeech();
     setActiveIdx(idx);
     speakText(text.replace(/\s*\/\s*/g, " "), {
       lang: "en",
       rate: 0.95,
-      onEnd: () => setActiveIdx(null),
-      onError: () => setActiveIdx(null),
+      onEnd: () => setActiveIdx((curr) => (curr === idx ? null : curr)),
+      onError: () => setActiveIdx((curr) => (curr === idx ? null : curr)),
     });
   }
 
@@ -313,12 +350,13 @@ function SentenceTrackView({
                   onClick={() => playSentence(pair.en, idx)}
                   className={`flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-all cursor-pointer ${
                     isPlaying
-                      ? "border-primary bg-primary text-surface font-semibold shadow-xs"
+                      ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold shadow-xs"
                       : "border-line bg-surface text-ink-soft hover:bg-raised hover:text-ink"
                   }`}
+                  title={isPlaying ? "발음 정지" : "발음 듣기"}
                 >
-                  <span>🔊</span>
-                  <span>{isPlaying ? "재생 중..." : "발음 듣기"}</span>
+                  <span>{isPlaying ? "⏹️" : "🔊"}</span>
+                  <span>{isPlaying ? "정지" : "발음 듣기"}</span>
                 </button>
               </div>
 

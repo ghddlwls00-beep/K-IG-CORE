@@ -191,6 +191,12 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
   }
 
   function playWord(word: string, onEnd?: () => void) {
+    if (!word) return;
+    if (activeWord === word) {
+      stopSpeech();
+      setActiveWord(null);
+      return;
+    }
     if (rowPlayingRef.current) stopRowPlayback();
     if (isPlayingRef.current) {
       isPlayingRef.current = false;
@@ -208,11 +214,11 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
       lang: "en",
       rate: speed,
       onEnd: () => {
-        setActiveWord(null);
+        setActiveWord((curr) => (curr === word ? null : curr));
         onEnd?.();
       },
       onError: () => {
-        setActiveWord(null);
+        setActiveWord((curr) => (curr === word ? null : curr));
         onEnd?.();
       },
     });
@@ -545,9 +551,13 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
               <button
                 type="button"
                 onClick={() => playWord(selectedWord)}
-                className="flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-[13px] font-bold text-white shadow-xs hover:bg-indigo-700 transition-colors cursor-pointer"
+                className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-[13px] font-bold text-white shadow-xs transition-colors cursor-pointer ${
+                  activeWord === selectedWord
+                    ? "bg-red-600 hover:bg-red-700"
+                    : "bg-indigo-600 hover:bg-indigo-700"
+                }`}
               >
-                <span>🔊 발음 듣기</span>
+                <span>{activeWord === selectedWord ? "⏹️ 정지" : "🔊 발음 듣기"}</span>
               </button>
             </div>
           </div>
@@ -604,10 +614,14 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                 e.stopPropagation();
                 playWord(words[cardIndex]);
               }}
-              className="absolute bottom-4 right-4 rounded-full bg-surface border border-line p-2 text-ink hover:bg-raised shadow-2xs cursor-pointer"
-              title="발음 듣기"
+              className={`absolute bottom-4 right-4 rounded-full border p-2 shadow-2xs cursor-pointer font-bold transition-colors ${
+                activeWord === words[cardIndex]
+                  ? "bg-red-500/20 border-red-500/50 text-red-600 dark:text-red-400"
+                  : "bg-surface border-line text-ink hover:bg-raised"
+              }`}
+              title={activeWord === words[cardIndex] ? "발음 정지" : "발음 듣기"}
             >
-              🔊
+              {activeWord === words[cardIndex] ? "⏹️" : "🔊"}
             </button>
           </div>
 

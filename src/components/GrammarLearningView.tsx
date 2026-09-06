@@ -277,24 +277,48 @@ export function GrammarLearningView({
     return () => clearTimeout(timer);
   }, [answers, selfGrades, clozeInputs, revealedAnswers, shadowingRepeats, examSubmitted, storageKey, restored]);
 
+  // Stop speech synthesis on component unmount
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
+
   // Audio Playback
   function playEnglish(text: string, id: number) {
     if (!text) return;
+    if (activeSpeakingId === id) {
+      stopSpeech();
+      setActiveSpeakingId(null);
+      return;
+    }
     stopSpeech();
     setActiveSpeakingId(id);
     speakText(text, {
       lang: "en",
       rate: audioSpeed,
       onStart: () => setActiveSpeakingId(id),
-      onEnd: () => setActiveSpeakingId(null),
-      onError: () => setActiveSpeakingId(null),
+      onEnd: () => setActiveSpeakingId((curr) => (curr === id ? null : curr)),
+      onError: () => setActiveSpeakingId((curr) => (curr === id ? null : curr)),
     });
   }
 
-  function playKorean(text: string) {
+  function playKorean(text: string, id?: number) {
     if (!text) return;
+    const koId = id !== undefined ? -id - 1 : -999;
+    if (activeSpeakingId === koId) {
+      stopSpeech();
+      setActiveSpeakingId(null);
+      return;
+    }
     stopSpeech();
-    speakText(text, { lang: "ko", rate: 1.0 });
+    setActiveSpeakingId(koId);
+    speakText(text, {
+      lang: "ko",
+      rate: 1.0,
+      onEnd: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
+      onError: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
+    });
   }
 
   // Self Grading & Answer Handlers
@@ -679,11 +703,15 @@ export function GrammarLearningView({
                     <div className="flex items-center gap-1">
                       <button
                         type="button"
-                        onClick={() => playKorean(item.koreanText)}
-                        className="flex items-center gap-1 rounded-md border border-line px-2 py-1 text-[11.5px] text-ink-soft hover:bg-raised transition-colors cursor-pointer"
-                        title="우리말 듣기"
+                        onClick={() => playKorean(item.koreanText, item.id)}
+                        className={`flex items-center gap-1 rounded-md border px-2 py-1 text-[11.5px] transition-colors cursor-pointer ${
+                          activeSpeakingId === -item.id - 1
+                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
+                            : "border-line text-ink-soft hover:bg-raised"
+                        }`}
+                        title={activeSpeakingId === -item.id - 1 ? "우리말 듣기 정지" : "우리말 듣기"}
                       >
-                        <span>🔊</span>
+                        <span>{activeSpeakingId === -item.id - 1 ? "⏹️" : "🔊"}</span>
                         <span className="hidden sm:inline">우리말</span>
                       </button>
                       <button
@@ -692,13 +720,13 @@ export function GrammarLearningView({
                         className={
                           "flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-all cursor-pointer " +
                           (activeSpeakingId === item.id
-                            ? "border-primary bg-primary text-surface font-semibold shadow-xs"
+                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold shadow-xs"
                             : "border-line text-ink-soft hover:bg-raised hover:text-ink")
                         }
-                        title="정답 영어 발음 듣기"
+                        title={activeSpeakingId === item.id ? "정지" : "정답 영어 발음 듣기"}
                       >
-                        <span>🔊</span>
-                        <span>영어 정답 발음</span>
+                        <span>{activeSpeakingId === item.id ? "⏹️" : "🔊"}</span>
+                        <span>{activeSpeakingId === item.id ? "정지" : "영어 정답 발음"}</span>
                       </button>
                     </div>
                   </div>
@@ -1012,14 +1040,14 @@ export function GrammarLearningView({
                           playEnglish(item.englishText, item.id);
                         }}
                         className={
-                          "flex h-7 w-7 items-center justify-center rounded-full transition-all " +
+                          "flex h-7 w-7 items-center justify-center rounded-full transition-all cursor-pointer " +
                           (isSpeaking
-                            ? "bg-primary text-surface scale-110 shadow-xs"
+                            ? "bg-red-500 text-white scale-110 shadow-xs"
                             : "bg-raised text-ink-soft group-hover:bg-ink group-hover:text-surface")
                         }
-                        title="발음 듣기"
+                        title={isSpeaking ? "발음 정지" : "발음 듣기"}
                       >
-                        <span className="text-[12px]">🔊</span>
+                        <span className="text-[12px]">{isSpeaking ? "⏹️" : "🔊"}</span>
                       </button>
                     </div>
                   </div>

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Block } from "@/lib/types";
-import { speakText } from "@/lib/speech";
+import { speakText, stopSpeech } from "@/lib/speech";
 
 interface ReadingLearningViewProps {
   blocks: Block[];
@@ -44,8 +44,16 @@ export function ReadingLearningView({
   // Active pinned sentence (selected via click) and temporarily playing sentence
   const [pinnedSentence, setPinnedSentence] = useState<number | null>(null);
   const [playingSentence, setPlayingSentence] = useState<number | null>(null);
+  const [playingLang, setPlayingLang] = useState<"en" | "ko" | null>(null);
   const activeSentence = pinnedSentence;
   const [revealedTranslations, setRevealedTranslations] = useState<Record<number, boolean>>({});
+
+  // Stop TTS speech on component unmount
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
 
   // Reading Notes & Summary saved to localStorage
   const [notes, setNotes] = useState("");
@@ -91,19 +99,54 @@ export function ReadingLearningView({
 
   function playSentenceEn(text: string, idx: number) {
     if (!text) return;
+    if (playingSentence === idx && playingLang === "en") {
+      stopSpeech();
+      setPlayingSentence(null);
+      setPlayingLang(null);
+      return;
+    }
+    stopSpeech();
     setPinnedSentence(idx);
     setPlayingSentence(idx);
+    setPlayingLang("en");
     speakText(text, {
       lang: "en",
       rate: 0.95,
-      onEnd: () => setPlayingSentence(null),
-      onError: () => setPlayingSentence(null),
+      onEnd: () => {
+        setPlayingSentence((curr) => (curr === idx ? null : curr));
+        setPlayingLang(null);
+      },
+      onError: () => {
+        setPlayingSentence((curr) => (curr === idx ? null : curr));
+        setPlayingLang(null);
+      },
     });
   }
 
-  function playSentenceKo(text: string) {
+  function playSentenceKo(text: string, idx: number) {
     if (!text) return;
-    speakText(text, { lang: "ko", rate: 0.95 });
+    if (playingSentence === idx && playingLang === "ko") {
+      stopSpeech();
+      setPlayingSentence(null);
+      setPlayingLang(null);
+      return;
+    }
+    stopSpeech();
+    setPinnedSentence(idx);
+    setPlayingSentence(idx);
+    setPlayingLang("ko");
+    speakText(text, {
+      lang: "ko",
+      rate: 0.95,
+      onEnd: () => {
+        setPlayingSentence((curr) => (curr === idx ? null : curr));
+        setPlayingLang(null);
+      },
+      onError: () => {
+        setPlayingSentence((curr) => (curr === idx ? null : curr));
+        setPlayingLang(null);
+      },
+    });
   }
 
   function toggleRevealTranslation(idx: number) {
@@ -284,16 +327,24 @@ export function ReadingLearningView({
                     <button
                       type="button"
                       onClick={() => playSentenceEn(sentencePairs[pinnedSentence].en, pinnedSentence)}
-                      className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-2.5 py-1 text-[11.5px] font-medium text-ink hover:bg-raised transition-colors cursor-pointer"
+                      className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer ${
+                        playingSentence === pinnedSentence && playingLang === "en"
+                          ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
+                          : "border-line bg-surface text-ink hover:bg-raised"
+                      }`}
                     >
-                      <span>🔊 {playingSentence === pinnedSentence ? "재생 중..." : "원문 듣기"}</span>
+                      <span>{playingSentence === pinnedSentence && playingLang === "en" ? "⏹️ 정지" : "🔊 원문 듣기"}</span>
                     </button>
                     <button
                       type="button"
-                      onClick={() => playSentenceKo(sentencePairs[pinnedSentence].ko)}
-                      className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-2.5 py-1 text-[11.5px] font-medium text-ink hover:bg-raised transition-colors cursor-pointer"
+                      onClick={() => playSentenceKo(sentencePairs[pinnedSentence].ko, pinnedSentence)}
+                      className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer ${
+                        playingSentence === pinnedSentence && playingLang === "ko"
+                          ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
+                          : "border-line bg-surface text-ink hover:bg-raised"
+                      }`}
                     >
-                      <span>🔊 해석 듣기</span>
+                      <span>{playingSentence === pinnedSentence && playingLang === "ko" ? "⏹️ 정지" : "🔊 해석 듣기"}</span>
                     </button>
                     <button
                       type="button"
@@ -380,7 +431,7 @@ export function ReadingLearningView({
                     key={idx}
                     onClick={() => {
                       setPinnedSentence((prev) => (prev === idx ? null : idx));
-                      playSentenceKo(pair.ko);
+                      playSentenceKo(pair.ko, idx);
                     }}
                     className={
                       "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
@@ -434,9 +485,13 @@ export function ReadingLearningView({
                     <button
                       type="button"
                       onClick={() => playSentenceEn(pair.en, idx)}
-                      className="inline-flex items-center gap-1.5 rounded border border-line bg-surface px-2.5 py-1 text-[11.5px] font-medium text-ink hover:bg-raised transition-colors cursor-pointer"
+                      className={`inline-flex items-center gap-1.5 rounded border px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer ${
+                        isPlaying && playingLang === "en"
+                          ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
+                          : "border-line bg-surface text-ink hover:bg-raised"
+                      }`}
                     >
-                      <span>🔊 {isPlaying ? "재생 중..." : "원문 듣기"}</span>
+                      <span>{isPlaying && playingLang === "en" ? "⏹️ 정지" : "🔊 원문 듣기"}</span>
                     </button>
                     <button
                       type="button"

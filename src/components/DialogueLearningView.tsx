@@ -367,6 +367,11 @@ export function DialogueLearningView({
   // Audio Playback
   function playAudioSnippet(text: string, id: number, audioSrc?: string, onComplete?: () => void) {
     if (!text) return;
+    if (activeSpeakingId === id) {
+      stopSpeech();
+      setActiveSpeakingId(null);
+      return;
+    }
     stopSpeech();
     setActiveSpeakingId(id);
 
@@ -375,7 +380,7 @@ export function DialogueLearningView({
       const audio = new Audio(mediaUrl(audioSrc));
       audio.playbackRate = audioSpeed;
       audio.onended = () => {
-        setActiveSpeakingId(null);
+        setActiveSpeakingId((curr) => (curr === id ? null : curr));
         onComplete?.();
       };
       audio.onerror = () => {
@@ -397,24 +402,33 @@ export function DialogueLearningView({
       pitch: defaultPitch,
       onStart: () => setActiveSpeakingId(id),
       onEnd: () => {
-        setActiveSpeakingId(null);
+        setActiveSpeakingId((curr) => (curr === id ? null : curr));
         onComplete?.();
       },
       onError: () => {
-        setActiveSpeakingId(null);
+        setActiveSpeakingId((curr) => (curr === id ? null : curr));
         onComplete?.();
       },
     });
   }
 
-  function playKoreanSnippet(text: string) {
+  function playKoreanSnippet(text: string, id?: number) {
     if (!text) return;
+    const koId = id !== undefined ? -id - 1 : -999;
+    if (activeSpeakingId === koId) {
+      stopSpeech();
+      setActiveSpeakingId(null);
+      return;
+    }
     stopSpeech();
+    setActiveSpeakingId(koId);
     speakText(text, {
       lang: "ko",
       gender: effectiveGender,
       rate: 0.95,
       pitch: defaultPitch,
+      onEnd: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
+      onError: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
     });
   }
 
@@ -890,11 +904,15 @@ export function DialogueLearningView({
                       {item.koreanText && (
                         <button
                           type="button"
-                          onClick={() => playKoreanSnippet(item.koreanText)}
-                          className="rounded-md border border-line px-2 py-1 text-[11.5px] text-ink-soft hover:bg-raised transition-colors cursor-pointer"
-                          title="우리말 음성 듣기"
+                          onClick={() => playKoreanSnippet(item.koreanText, item.id)}
+                          className={`rounded-md border px-2 py-1 text-[11.5px] transition-colors cursor-pointer ${
+                            activeSpeakingId === -item.id - 1
+                              ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
+                              : "border-line text-ink-soft hover:bg-raised"
+                          }`}
+                          title={activeSpeakingId === -item.id - 1 ? "우리말 음성 정지" : "우리말 음성 듣기"}
                         >
-                          🔊 우리말
+                          {activeSpeakingId === -item.id - 1 ? "⏹️ 정지" : "🔊 우리말"}
                         </button>
                       )}
                       <button
@@ -903,12 +921,12 @@ export function DialogueLearningView({
                         className={
                           "flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-all cursor-pointer " +
                           (isSpeaking
-                            ? "border-primary bg-primary text-surface font-semibold shadow-xs"
+                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold shadow-xs"
                             : "border-line text-ink-soft hover:bg-raised hover:text-ink")
                         }
                       >
-                        <span>🔊</span>
-                        <span>{isMale ? "남성 원어민 발음" : "여성 원어민 발음"}</span>
+                        <span>{isSpeaking ? "⏹️" : "🔊"}</span>
+                        <span>{isSpeaking ? "정지" : isMale ? "남성 원어민 발음" : "여성 원어민 발음"}</span>
                       </button>
                     </div>
                   </div>
@@ -1075,10 +1093,10 @@ export function DialogueLearningView({
 
                     <button
                       type="button"
-                      className="text-[12px] text-ink-soft hover:text-primary transition-colors"
-                      title="이 문장 듣기"
+                      className={`text-[12px] transition-colors font-bold ${isCurrent ? "text-red-600 dark:text-red-400" : "text-ink-soft hover:text-primary"}`}
+                      title={isCurrent ? "정지" : "이 문장 듣기"}
                     >
-                      🔊
+                      {isCurrent ? "⏹️" : "🔊"}
                     </button>
                   </div>
 

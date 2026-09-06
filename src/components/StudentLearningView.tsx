@@ -36,6 +36,7 @@ export function StudentLearningView({
 
   const [studyMode, setStudyMode] = useState<"shadowing" | "chunks" | "recall">("shadowing");
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const [activeChunk, setActiveChunk] = useState<string | null>(null);
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
   const [recallInputs, setRecallInputs] = useState<Record<number, string>>({});
   const [speed, setSpeed] = useState<0.85 | 1.0>(1.0);
@@ -47,6 +48,12 @@ export function StudentLearningView({
   }, []);
 
   function playSentence(text: string, idx: number) {
+    if (!text) return;
+    if (activeIdx === idx) {
+      stopSpeech();
+      setActiveIdx(null);
+      return;
+    }
     stopSpeech();
     setActiveIdx(idx);
 
@@ -55,7 +62,7 @@ export function StudentLearningView({
     if (track?.src) {
       const audio = new Audio(mediaUrl(track.src));
       audio.playbackRate = speed;
-      audio.onended = () => setActiveIdx(null);
+      audio.onended = () => setActiveIdx((curr) => (curr === idx ? null : curr));
       audio.onerror = () => {
         playWithTts(text, idx);
       };
@@ -70,14 +77,26 @@ export function StudentLearningView({
       lang: "en",
       rate: speed,
       onStart: () => setActiveIdx(idx),
-      onEnd: () => setActiveIdx(null),
-      onError: () => setActiveIdx(null),
+      onEnd: () => setActiveIdx((curr) => (curr === idx ? null : curr)),
+      onError: () => setActiveIdx((curr) => (curr === idx ? null : curr)),
     });
   }
 
   function playChunk(chunkText: string) {
+    if (!chunkText) return;
+    if (activeChunk === chunkText) {
+      stopSpeech();
+      setActiveChunk(null);
+      return;
+    }
     stopSpeech();
-    speakText(chunkText, { lang: "en", rate: speed });
+    setActiveChunk(chunkText);
+    speakText(chunkText, {
+      lang: "en",
+      rate: speed,
+      onEnd: () => setActiveChunk((curr) => (curr === chunkText ? null : curr)),
+      onError: () => setActiveChunk((curr) => (curr === chunkText ? null : curr)),
+    });
   }
 
   function toggleReveal(idx: number) {
@@ -190,12 +209,13 @@ export function StudentLearningView({
                     onClick={() => playSentence(item.text, idx)}
                     className={`flex items-center gap-1.5 rounded-lg border px-3 py-1 text-[12px] font-medium transition-all cursor-pointer ${
                       isPlaying
-                        ? "border-primary bg-primary text-surface font-semibold shadow-xs"
+                        ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold shadow-xs"
                         : "border-line bg-surface text-ink-soft hover:bg-raised hover:text-ink"
                     }`}
+                    title={isPlaying ? "발음 정지" : "원어민 발음 듣기"}
                   >
-                    <span>🔊</span>
-                    <span>{isPlaying ? "재생 중..." : "원어민 발음 듣기"}</span>
+                    <span>{isPlaying ? "⏹️" : "🔊"}</span>
+                    <span>{isPlaying ? "정지" : "원어민 발음 듣기"}</span>
                   </button>
                 </div>
 
@@ -236,10 +256,14 @@ export function StudentLearningView({
                 </div>
                 <button
                   type="button"
-                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-raised text-ink-soft group-hover:bg-primary group-hover:text-surface transition-all shadow-2xs"
-                  title="청크 발음 듣기"
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all shadow-2xs font-bold ${
+                    activeChunk === chunk.en
+                      ? "bg-red-500 text-white"
+                      : "bg-raised text-ink-soft group-hover:bg-primary group-hover:text-surface"
+                  }`}
+                  title={activeChunk === chunk.en ? "발음 정지" : "청크 발음 듣기"}
                 >
-                  <span className="text-[12px]">🔊</span>
+                  <span className="text-[12px]">{activeChunk === chunk.en ? "⏹️" : "🔊"}</span>
                 </button>
               </div>
             ))}
