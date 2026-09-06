@@ -591,12 +591,12 @@ export function ReadingLearningView({
                     onMouseLeave={() => setHoveredSentenceId(null)}
                     onClick={() => playSentenceEn(pair.en, pair.index)}
                     className={
-                      "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
+                      "inline cursor-pointer rounded px-1.5 py-0.5 transition-colors duration-100 " +
                       (isPlaying
-                        ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold ring-2 ring-red-500/30"
+                        ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold"
                         : isHovered
-                        ? "bg-amber-100 text-amber-950 dark:bg-amber-900/40 dark:text-amber-100 ring-2 ring-amber-400/50 font-medium"
-                        : "hover:bg-raised hover:text-primary")
+                        ? "bg-amber-200/80 text-amber-950 dark:bg-amber-900/60 dark:text-amber-100 ring-1 ring-amber-400/80"
+                        : "hover:bg-raised/80")
                     }
                     title="터치하여 발음 청취 / 마우스 올려 번역 미리보기"
                   >
@@ -611,20 +611,26 @@ export function ReadingLearningView({
               })}
             </div>
 
-            {/* Quick sentence translation tooltip in Step 1 if hovering */}
-            {activeSentence && (
-              <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-300/80 bg-amber-50/90 dark:border-amber-700/60 dark:bg-amber-950/40 p-3.5 text-[13.5px] animate-in fade-in duration-150 shadow-xs">
-                <span className="shrink-0 rounded bg-amber-200/80 dark:bg-amber-800/60 px-1.5 py-0.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100">
-                  [{activeSentence.index + 1}]
-                </span>
-                <div className="flex flex-col gap-0.5 min-w-0">
-                  <span className="font-serif text-[13px] text-ink/80">{activeSentence.en}</span>
-                  <span className="text-amber-950 dark:text-amber-100 font-semibold leading-relaxed">
-                    👉 {activeSentence.ko}
-                  </span>
+            {/* Stable height translation hint bar in Step 1 (Zero Layout Shift) */}
+            <div className="mt-5 min-h-[52px] flex items-center">
+              {activeSentence ? (
+                <div className="w-full flex items-center justify-between gap-3 rounded-xl border border-amber-300/80 bg-amber-50/90 dark:border-amber-700/60 dark:bg-amber-950/40 px-3.5 py-2 text-[13px] animate-in fade-in duration-100">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="shrink-0 rounded bg-amber-200/80 dark:bg-amber-800/60 px-1.5 py-0.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100">
+                      [{activeSentence.index + 1}]
+                    </span>
+                    <span className="text-amber-950 dark:text-amber-100 font-semibold truncate">
+                      👉 {activeSentence.ko}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[10.5px] text-ink-faint shrink-0">1:1 직독직해</span>
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="w-full text-center text-[11.5px] text-ink-faint py-2">
+                  문장에 마우스를 올리면(Hover) 한국어 직독직해 번역이 여기에 표시됩니다.
+                </div>
+              )}
+            </div>
           </div>
         </section>
       )}
@@ -978,51 +984,24 @@ export function ReadingLearningView({
       )}
 
       {/* ========================================================================= */}
+      {/* ========================================================================= */}
       {/* STEP 4: ⚖️ 원문 vs 완역 좌우 대조 (Dual Passage Review) */}
       {/* ========================================================================= */}
       {activeTab === "dual" && (
         <section aria-label="Side-by-Side Dual Reading" className="flex flex-col gap-4 animate-in fade-in duration-200">
-          {/* Real-time 1:1 Synchronized Hover Translation Banner */}
-          {activeSentence ? (
-            <div className="flex items-start justify-between gap-4 rounded-2xl border border-amber-400/80 bg-amber-50/95 dark:border-amber-600/70 dark:bg-amber-950/40 p-4 shadow-sm transition-all duration-150">
-              <div className="flex items-start gap-3 min-w-0">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 font-mono text-[12px] font-bold text-amber-900 dark:text-amber-200">
-                  #{activeSentence.index + 1}
-                </div>
-                <div className="flex flex-col gap-1 min-w-0">
-                  <div className="font-serif text-[15px] font-semibold text-ink leading-snug">
-                    {activeSentence.en}
-                  </div>
-                  <div className="text-[14px] text-amber-950 dark:text-amber-100 font-medium leading-relaxed">
-                    👉 {activeSentence.ko}
-                  </div>
-                  <div className="font-mono text-[10.5px] text-amber-800/70 dark:text-amber-400/70">
-                    ID: {activeSentence.id}
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => playSentenceEn(activeSentence.en, activeSentence.index)}
-                  className="rounded-xl border border-amber-400/60 bg-amber-200/50 dark:bg-amber-800/40 px-3 py-1.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100 hover:bg-amber-300/50 transition-colors cursor-pointer flex items-center gap-1"
-                >
-                  <span>🔊</span>
-                  <span>발음 듣기</span>
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-center justify-between rounded-xl border border-line/70 bg-raised/40 px-4 py-2.5 text-[12.5px] text-ink-soft">
-              <span className="flex items-center gap-2">
-                <span className="text-[14px]">💡</span>
-                <span>마우스를 영어 문장이나 한국어 문장에 올리면(Hover) 1:1로 정확하게 대응하는 번역이 실시간으로 하이라이트됩니다.</span>
-              </span>
-              <span className="font-mono text-[11px] text-ink-faint">1:1 ID 매핑 완료 ({sentencePairs.length}문장)</span>
-            </div>
-          )}
+          {/* Top Invariant Status Header Bar (Zero Layout Shift - Invariant Height) */}
+          <div className="flex items-center justify-between rounded-xl border border-line/70 bg-surface px-4 py-2.5 text-[12px] text-ink-soft shadow-2xs">
+            <span className="flex items-center gap-2">
+              <span className="text-[13px]">⚖️</span>
+              <span className="font-medium text-ink">영어 원문과 한글 완역 1:1 대조 리딩</span>
+              <span className="text-ink-faint hidden sm:inline">· 문장에 마우스를 올리면 대응 번역이 실시간 동기화됩니다</span>
+            </span>
+            <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              {sentencePairs.length}개 문장 1:1 정합
+            </span>
+          </div>
 
-          {/* Dual Columns: Left English, Right Korean */}
+          {/* Dual Columns: Left English, Right Korean (Directly below static header) */}
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {/* Left Column: English Passage */}
             <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
@@ -1030,7 +1009,7 @@ export function ReadingLearningView({
                 <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink uppercase tracking-wider border border-line">
                   English Passage (영어 원문)
                 </span>
-                <span className="font-mono text-[11px] text-ink-faint">Hover / 클릭 발음 재생</span>
+                <span className="font-mono text-[11px] text-ink-faint">Hover 동기화 / 클릭 발음 재생</span>
               </div>
 
               <div className={`${fontClasses} font-serif text-ink leading-loose text-justify select-none`}>
@@ -1051,10 +1030,10 @@ export function ReadingLearningView({
                         playSentenceEn(pair.en, pair.index);
                       }}
                       className={
-                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
+                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-colors duration-100 " +
                         (isHighlight
-                          ? "bg-amber-100 text-amber-950 dark:bg-amber-900/50 dark:text-amber-100 font-semibold shadow-xs ring-2 ring-amber-400"
-                          : "hover:bg-raised hover:text-ink")
+                          ? "bg-amber-200/90 text-amber-950 dark:bg-amber-900/60 dark:text-amber-100 ring-1 ring-amber-400/80"
+                          : "hover:bg-raised/80 hover:text-ink")
                       }
                     >
                       {showNumbers && (
@@ -1095,10 +1074,10 @@ export function ReadingLearningView({
                         setPinnedSentence((prev) => (prev === pair.index ? null : pair.index));
                       }}
                       className={
-                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +
+                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-colors duration-100 " +
                         (isHighlight
-                          ? "bg-amber-100 text-amber-950 dark:bg-amber-900/50 dark:text-amber-100 font-semibold shadow-xs ring-2 ring-amber-400"
-                          : "hover:bg-raised hover:text-ink")
+                          ? "bg-amber-200/90 text-amber-950 dark:bg-amber-900/60 dark:text-amber-100 ring-1 ring-amber-400/80"
+                          : "hover:bg-raised/80 hover:text-ink")
                       }
                     >
                       {showNumbers && (
@@ -1111,6 +1090,51 @@ export function ReadingLearningView({
                   );
                 })}
               </div>
+            </div>
+          </div>
+
+          {/* Synchronized 1:1 Live Translation Overlay Layer (Docked Below Columns & Sticky Bottom HUD) */}
+          <div className="sticky bottom-4 z-20 pointer-events-none mt-2">
+            <div className={`pointer-events-auto mx-auto max-w-3xl rounded-2xl border p-4 shadow-xl backdrop-blur-md transition-all duration-150 ${
+              activeSentence
+                ? "border-amber-400/90 bg-surface/95 dark:bg-neutral-900/95 ring-1 ring-amber-500/30"
+                : "border-line/80 bg-surface/90 dark:bg-neutral-900/90 opacity-80"
+            }`}>
+              {activeSentence ? (
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-3 min-w-0">
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 font-mono text-[12px] font-bold text-amber-900 dark:text-amber-200">
+                      #{activeSentence.index + 1}
+                    </div>
+                    <div className="flex flex-col gap-0.5 min-w-0">
+                      <div className="font-serif text-[14.5px] font-medium text-ink leading-snug">
+                        {activeSentence.en}
+                      </div>
+                      <div className="text-[14px] text-amber-950 dark:text-amber-200 font-semibold leading-relaxed">
+                        👉 {activeSentence.ko}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button
+                      type="button"
+                      onClick={() => playSentenceEn(activeSentence.en, activeSentence.index)}
+                      className="rounded-xl border border-amber-400/60 bg-amber-200/70 dark:bg-amber-800/60 px-3 py-1.5 font-mono text-[11px] font-bold text-amber-950 dark:text-amber-100 hover:bg-amber-300 transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
+                    >
+                      <span>🔊</span>
+                      <span>발음 듣기</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-between text-[12px] text-ink-soft">
+                  <span className="flex items-center gap-2">
+                    <span>💡</span>
+                    <span>영어 또는 한국어 문장에 마우스를 올리면(Hover) 해당 문장의 1:1 번역이 여기에 표시됩니다.</span>
+                  </span>
+                  <span className="font-mono text-[11px] text-ink-faint">클릭하면 문장 고정(Pin)</span>
+                </div>
+              )}
             </div>
           </div>
         </section>
