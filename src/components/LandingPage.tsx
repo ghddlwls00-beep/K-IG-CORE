@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
 import { useTheme } from "./LanguageProvider";
+import { useProgress } from "./ProgressProvider";
+import { SearchDialog } from "./SearchDialog";
 import { TAB_IMAGES } from "@/lib/tabImages";
 
 interface CourseDetail {
@@ -70,6 +72,7 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
 
 export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   const { theme, toggleTheme } = useTheme();
+  const { recent } = useProgress();
 
   const [scrollActive, setScrollActive] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -136,7 +139,20 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           K-IG 교육
         </div>
 
-        <div className="flex items-center gap-5 sm:gap-7">
+        <div className="flex items-center gap-3 sm:gap-5">
+          {recent ? (
+            <Link
+              href={`/${recent.course}/${recent.lessonId}`}
+              className="flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-1 text-[12px] font-semibold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20 transition-colors shadow-2xs"
+            >
+              <span className="text-emerald-500">▶</span>
+              <span className="hidden sm:inline">최근 학습:</span>
+              <span className="font-mono">{recent.courseTitle || recent.course} · {recent.lessonId}</span>
+            </Link>
+          ) : null}
+
+          <SearchDialog />
+
           <button
             type="button"
             onClick={toggleTheme}

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { LessonBody } from "@/components/LessonBody";
 import { VideoPlayer } from "@/components/VideoPlayer";
+import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { T } from "@/components/LanguageProvider";
 import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslations, getVocaDictionary } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
@@ -73,28 +74,36 @@ export default async function LessonPage({
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-12">
-      <nav className="mb-8 flex items-center justify-between gap-4 font-mono text-[11.5px]">
+      <nav className="mb-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11.5px]">
         <Link href={`/${course}`} className="link-underline text-ink-soft hover:text-ink font-medium">
           ← {courseInfo?.title ?? course}
         </Link>
-        <span className="flex items-center gap-4">
-          {prev ? (
-            <Link
-              href={`/${course}/${prev.id}`}
-              className="text-ink-soft transition-transform duration-200 ease-out hover:-translate-x-0.5 hover:text-ink"
-            >
-              ← {prev.id}
-            </Link>
-          ) : null}
-          {next ? (
-            <Link
-              href={`/${course}/${next.id}`}
-              className="text-ink-soft transition-transform duration-200 ease-out hover:translate-x-0.5 hover:text-ink"
-            >
-              {next.id} →
-            </Link>
-          ) : null}
-        </span>
+        <div className="flex flex-wrap items-center gap-4">
+          <LessonActionButtons
+            course={course}
+            lessonId={lesson.id}
+            title={pres.title}
+            courseTitle={courseInfo?.title ?? tab?.label}
+          />
+          <span className="flex items-center gap-3 border-l border-line/60 pl-3">
+            {prev ? (
+              <Link
+                href={`/${course}/${prev.id}`}
+                className="text-ink-soft transition-transform duration-200 ease-out hover:-translate-x-0.5 hover:text-ink"
+              >
+                ← {prev.id}
+              </Link>
+            ) : null}
+            {next ? (
+              <Link
+                href={`/${course}/${next.id}`}
+                className="text-ink-soft transition-transform duration-200 ease-out hover:translate-x-0.5 hover:text-ink"
+              >
+                {next.id} →
+              </Link>
+            ) : null}
+          </span>
+        </div>
       </nav>
 
       <header className="mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>
