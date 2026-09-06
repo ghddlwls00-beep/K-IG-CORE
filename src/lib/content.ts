@@ -174,3 +174,35 @@ export function getVocaDictionary(): Record<string, { meaning: string; searchWor
   return dict ?? {};
 }
 
+/**
+ * Determine if a lesson belongs to the top 2 sections of a course.
+ * The top 2 sections are always free preview for all visitors.
+ */
+export function isLessonInTopTwoSections(courseSlug: string, lessonId: string): boolean {
+  const index = getCourseIndex(courseSlug);
+  if (!index) return false;
+  const { groups, lessons } = index;
+
+  if (groups.length > 0) {
+    const top2Lessons = new Set([
+      ...(groups[0]?.lessons ?? []),
+      ...(groups[1]?.lessons ?? []),
+    ]);
+    if (top2Lessons.has(lessonId)) return true;
+    for (const topId of top2Lessons) {
+      if (lessonId.startsWith(`${topId}-`)) return true;
+    }
+    return false;
+  }
+
+  // Fallback by series
+  const seriesSlugs = (index.course.series ?? []).slice(0, 2).map((s) => s.slug);
+  const lesson = lessons.find((l) => l.id === lessonId);
+  if (lesson && lesson.series && seriesSlugs.includes(lesson.series)) return true;
+
+  // Fallback by lesson index
+  const idx = lessons.findIndex((l) => l.id === lessonId);
+  return idx >= 0 && idx < 20;
+}
+
+

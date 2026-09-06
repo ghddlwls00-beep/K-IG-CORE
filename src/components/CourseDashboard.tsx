@@ -62,11 +62,11 @@ export function CourseDashboard({
       .filter((sec) => sec.lessons.length > 0);
   }, [sections, filter, courseSlug, isBookmarked, isCompleted]);
 
-  // Track open/collapsed state of sections. All sections start collapsed by default.
+  // Track open/collapsed state of sections. The top 2 sections start open by default.
   const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
     const initial: Record<string, boolean> = {};
-    sections.forEach((sec) => {
-      initial[sec.label] = false;
+    sections.forEach((sec, idx) => {
+      initial[sec.label] = idx < 2;
     });
     return initial;
   });
@@ -288,7 +288,7 @@ export function CourseDashboard({
                           const pres = lesson.presentation;
                           const isDone = isCompleted(courseSlug, lesson.id);
                           const isStarred = isBookmarked(courseSlug, lesson.id);
-                          const isFree = isFreePreviewLesson(courseSlug, lesson.id, lessonIdx);
+                          const isFree = isFreePreviewLesson(courseSlug, lesson.id, index);
                           const isUnlocked = hasActiveLicense || isFree;
 
                           return (

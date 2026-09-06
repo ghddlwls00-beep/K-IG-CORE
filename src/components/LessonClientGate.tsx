@@ -10,12 +10,13 @@ interface LessonClientGateProps {
   courseTitle?: string;
   lessonId: string;
   lessonTitle?: string;
+  isFreePreview?: boolean;
   children: React.ReactNode;
 }
 
 /**
  * Wraps lesson learning body (video, audio, drill content) with access control.
- * Free preview lessons (1~2) are always accessible.
+ * Free preview lessons (Top 2 sections) are always accessible.
  * Locked lessons require an active license; otherwise displays the high-converting Paywall card.
  */
 export function LessonClientGate({
@@ -23,6 +24,7 @@ export function LessonClientGate({
   courseTitle,
   lessonId,
   lessonTitle,
+  isFreePreview,
   children,
 }: LessonClientGateProps) {
   const { isUnlocked } = useLicense();
@@ -32,7 +34,7 @@ export function LessonClientGate({
     setMounted(true);
   }, []);
 
-  const isFree = isFreePreviewLesson(courseSlug, lessonId);
+  const isFree = typeof isFreePreview === "boolean" ? isFreePreview : isFreePreviewLesson(courseSlug, lessonId);
 
   // Free preview lessons are always accessible immediately
   if (isFree) {
