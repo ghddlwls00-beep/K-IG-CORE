@@ -87,6 +87,12 @@ export function formatGroupTitle(courseSlug: string, rawLabel: string): string {
     return map[clean] || (clean.includes("고등") ? "고등 심화 단어 (HV Series)" : clean);
   }
 
+  if (courseSlug === "cnn") {
+    if (clean === "CNN1-60") return "Part 1 · 실전 뉴스 리스닝 (001 ~ 060)";
+    if (clean === "CNN61-120") return "Part 2 · 실전 뉴스 리스닝 (061 ~ 120)";
+    return clean;
+  }
+
   return clean;
 }
 

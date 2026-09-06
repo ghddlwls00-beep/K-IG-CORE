@@ -65,7 +65,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
   ).filter((section) => section.lessons.length > 0);
 
   return (
-    <main className="mx-auto max-w-4xl px-5 py-14">
+    <main className="mx-auto max-w-6xl px-5 py-14">
       <nav className="mb-8">
         <Link
           href="/"

@@ -59,6 +59,34 @@ export function CourseDashboard({
       .filter((sec) => sec.lessons.length > 0);
   }, [sections, filter, courseSlug, isBookmarked, isCompleted]);
 
+  // Track open/collapsed state of sections. Default first 2 open, or all open if <= 3.
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    sections.forEach((sec, idx) => {
+      initial[sec.label] = idx < 2 || sections.length <= 3;
+    });
+    return initial;
+  });
+
+  const toggleSection = (label: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [label]: !prev[label],
+    }));
+  };
+
+  const expandAll = () => {
+    const next: Record<string, boolean> = {};
+    sections.forEach((s) => (next[s.label] = true));
+    setOpenSections(next);
+  };
+
+  const collapseAll = () => {
+    const next: Record<string, boolean> = {};
+    sections.forEach((s) => (next[s.label] = false));
+    setOpenSections(next);
+  };
+
   return (
     <div className="flex flex-col gap-8">
       {/* Course Progress Dashboard Card */}
@@ -121,7 +149,7 @@ export function CourseDashboard({
         </div>
       </div>
 
-      {/* Sections and Lessons */}
+      {/* Sections and Quick Controls */}
       {filteredSections.length === 0 ? (
         <div className="rounded-2xl border border-line bg-surface p-12 text-center flex flex-col items-center justify-center gap-3">
           <span className="text-3xl">📭</span>
@@ -146,104 +174,201 @@ export function CourseDashboard({
           )}
         </div>
       ) : (
-        <div className="flex flex-col gap-12">
-          {filteredSections.map((section, index) => (
-            <section key={`${index}-${section.label}`}>
-              <div className="mb-4 flex items-center justify-between">
-                <h3 className="font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase font-bold">
-                  {section.label}
-                </h3>
-                <span className="font-mono text-[11px] text-ink-faint">
-                  {section.lessons.length}개 레슨
-                </span>
-              </div>
+        <div className="flex flex-col gap-6">
+          {/* Quick Jump & Expand/Collapse Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[11px] font-semibold uppercase text-ink-faint mr-1">
+                커리큘럼 단계 ({filteredSections.length}개):
+              </span>
+              {filteredSections.map((sec, i) => {
+                const isOpen = openSections[sec.label] ?? false;
+                return (
+                  <button
+                    key={`pill-${i}`}
+                    type="button"
+                    onClick={() => {
+                      setOpenSections((prev) => ({ ...prev, [sec.label]: true }));
+                      const el = document.getElementById(`section-${i}`);
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }}
+                    className={`rounded-lg px-2.5 py-1 font-mono text-[11.5px] transition-all cursor-pointer border ${
+                      isOpen
+                        ? "border-primary/40 bg-primary/10 text-primary font-medium"
+                        : "border-line bg-surface text-ink-soft hover:border-ink-soft hover:text-ink"
+                    }`}
+                  >
+                    {sec.label.split(" (")[0].replace(/^Section\s*\d+\s*·\s*/, "")}
+                  </button>
+                );
+              })}
+            </div>
 
-              <ul className="grid max-h-[30rem] grid-cols-1 gap-2.5 overflow-y-auto pr-1 sm:grid-cols-2 lg:grid-cols-3">
-                {section.lessons.map((lesson) => {
-                  const pres = lesson.presentation;
-                  const isDone = isCompleted(courseSlug, lesson.id);
-                  const isStarred = isBookmarked(courseSlug, lesson.id);
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={expandAll}
+                className="text-[11.5px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
+              >
+                모두 펼치기
+              </button>
+              <span className="text-line text-xs">|</span>
+              <button
+                type="button"
+                onClick={collapseAll}
+                className="text-[11.5px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
+              >
+                모두 접기
+              </button>
+            </div>
+          </div>
 
-                  return (
-                    <li key={lesson.id}>
+          {/* Accordion List */}
+          <div className="flex flex-col gap-4">
+            {filteredSections.map((section, index) => {
+              const isOpen = openSections[section.label] ?? false;
+              const completedInSection = section.lessons.filter((l) =>
+                isCompleted(courseSlug, l.id),
+              ).length;
+
+              return (
+                <div
+                  key={`${index}-${section.label}`}
+                  id={`section-${index}`}
+                  className="rounded-2xl border border-line bg-surface shadow-2xs overflow-hidden transition-all duration-200 scroll-mt-24"
+                >
+                  {/* Clickable Section Accordion Header */}
+                  <button
+                    type="button"
+                    onClick={() => toggleSection(section.label)}
+                    className="w-full flex items-center justify-between p-4.5 text-left hover:bg-raised/50 transition-colors cursor-pointer select-none"
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex items-center gap-3">
                       <div
-                        className={`group relative flex h-full flex-col justify-between gap-2.5 rounded-xl border p-3.5 transition-all duration-200 hover:shadow-xs ${
-                          isDone
-                            ? "border-emerald-500/40 bg-emerald-500/[0.03] hover:border-emerald-500"
-                            : "border-line bg-surface hover:border-ink hover:bg-raised/60"
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-line font-mono text-[12px] font-bold transition-transform duration-200 ${
+                          isOpen ? "rotate-90 bg-primary/10 text-primary border-primary/30" : "bg-raised text-ink-soft"
                         }`}
                       >
-                        <div className="flex flex-col gap-1">
-                          <div className="flex items-center justify-between gap-1.5">
-                            <span className="font-mono text-[11px] font-semibold text-primary tracking-wide">
-                              {pres.code}
-                            </span>
-                            <div className="flex items-center gap-1.5">
-                              {isDone && (
-                                <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600">
-                                  ✓ 완료
-                                </span>
-                              )}
-                              {pres.badge && (
-                                <span className="rounded-md bg-raised px-1.5 py-0.5 text-[10px] font-medium text-ink-soft">
-                                  {pres.badge}
-                                </span>
-                              )}
-                              {/* Quick Bookmark Toggle on card */}
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  toggleBookmark(courseSlug, lesson.id);
-                                }}
-                                title={isStarred ? "북마크 해제" : "북마크 추가"}
-                                aria-label={isStarred ? "북마크 해제" : "북마크 추가"}
-                                className="-m-1 p-1 cursor-pointer transition-transform active:scale-90"
-                              >
-                                <span
-                                  className={`text-[13px] ${
-                                    isStarred
-                                      ? "text-amber-500 font-bold"
-                                      : "text-ink-faint hover:text-ink"
-                                  }`}
-                                >
-                                  {isStarred ? "★" : "☆"}
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-
-                          <Link
-                            href={`/${courseSlug}/${lesson.id}`}
-                            className="text-[13.5px] font-semibold leading-snug text-ink hover:underline focus:outline-none"
-                          >
-                            {pres.title}
-                          </Link>
-
-                          {pres.subtitle && (
-                            <span className="text-[11.5px] text-ink-soft line-clamp-1">
-                              {pres.subtitle}
+                        ▶
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-[15px] text-ink flex items-center gap-2">
+                          {section.label}
+                        </span>
+                        <span className="font-mono text-[11px] text-ink-faint mt-0.5">
+                          총 {section.lessons.length}개 레슨
+                          {completedInSection > 0 && (
+                            <span className="text-emerald-600 font-semibold ml-2">
+                              · {completedInSection}개 완료
                             </span>
                           )}
-                        </div>
-
-                        <div className="flex items-center justify-between border-t border-line/50 pt-2 font-mono text-[10.5px] text-ink-faint">
-                          <span className="tabular-nums">{lesson.id}</span>
-                          <Link
-                            href={`/${courseSlug}/${lesson.id}`}
-                            className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-ink font-medium"
-                          >
-                            학습하기 →
-                          </Link>
-                        </div>
+                        </span>
                       </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          ))}
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <span className="text-[12px] font-medium text-ink-soft hidden sm:inline">
+                        {isOpen ? "접기 ▲" : "클릭하여 펼치기 ▼"}
+                      </span>
+                    </div>
+                  </button>
+
+                  {/* Section Content Grid */}
+                  {isOpen && (
+                    <div className="border-t border-line/70 p-4 sm:p-5 bg-raised/20 animate-fade-in">
+                      <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                        {section.lessons.map((lesson) => {
+                          const pres = lesson.presentation;
+                          const isDone = isCompleted(courseSlug, lesson.id);
+                          const isStarred = isBookmarked(courseSlug, lesson.id);
+
+                          return (
+                            <li key={lesson.id}>
+                              <div
+                                className={`group relative flex h-full flex-col justify-between gap-2.5 rounded-xl border p-3.5 transition-all duration-200 hover:shadow-xs ${
+                                  isDone
+                                    ? "border-emerald-500/40 bg-emerald-500/[0.03] hover:border-emerald-500"
+                                    : "border-line bg-surface hover:border-ink hover:bg-raised/60"
+                                }`}
+                              >
+                                <div className="flex flex-col gap-1">
+                                  <div className="flex items-center justify-between gap-1.5">
+                                    <span className="font-mono text-[11px] font-semibold text-primary tracking-wide">
+                                      {pres.code}
+                                    </span>
+                                    <div className="flex items-center gap-1.5">
+                                      {isDone && (
+                                        <span className="rounded-md bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600">
+                                          ✓ 완료
+                                        </span>
+                                      )}
+                                      {pres.badge && (
+                                        <span className="rounded-md bg-raised px-1.5 py-0.5 text-[10px] font-medium text-ink-soft">
+                                          {pres.badge}
+                                        </span>
+                                      )}
+                                      {/* Quick Bookmark Toggle on card */}
+                                      <button
+                                        type="button"
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          e.stopPropagation();
+                                          toggleBookmark(courseSlug, lesson.id);
+                                        }}
+                                        title={isStarred ? "북마크 해제" : "북마크 추가"}
+                                        aria-label={isStarred ? "북마크 해제" : "북마크 추가"}
+                                        className="-m-1 p-1 cursor-pointer transition-transform active:scale-90"
+                                      >
+                                        <span
+                                          className={`text-[13px] ${
+                                            isStarred
+                                              ? "text-amber-500 font-bold"
+                                              : "text-ink-faint hover:text-ink"
+                                          }`}
+                                        >
+                                          {isStarred ? "★" : "☆"}
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <Link
+                                    href={`/${courseSlug}/${lesson.id}`}
+                                    className="text-[13.5px] font-semibold leading-snug text-ink hover:underline focus:outline-none"
+                                  >
+                                    {pres.title}
+                                  </Link>
+
+                                  {pres.subtitle && (
+                                    <span className="text-[11.5px] text-ink-soft line-clamp-1">
+                                      {pres.subtitle}
+                                    </span>
+                                  )}
+                                </div>
+
+                                <div className="flex items-center justify-between border-t border-line/50 pt-2 font-mono text-[10.5px] text-ink-faint">
+                                  <span className="tabular-nums">{lesson.id}</span>
+                                  <Link
+                                    href={`/${courseSlug}/${lesson.id}`}
+                                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-ink font-medium"
+                                  >
+                                    학습하기 →
+                                  </Link>
+                                </div>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
