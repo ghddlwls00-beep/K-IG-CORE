@@ -141,8 +141,8 @@
       "lemma": "world",
       "partOfSpeech": "n.",
       "korean": "세계",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "score": 94,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
         "중학기초"
       ],
@@ -161,6 +161,18 @@
       "freq": 1
     },
     {
+      "word": "classify",
+      "lemma": "classify",
+      "partOfSpeech": "v.",
+      "korean": "분류하다, 구분하다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
       "word": "define",
       "lemma": "define",
       "partOfSpeech": "n.",
@@ -173,22 +185,10 @@
       "freq": 2
     },
     {
-      "word": "classify",
-      "lemma": "classify",
-      "partOfSpeech": "n.",
-      "korean": "classify (핵심 어휘)",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "trait",
       "lemma": "trait",
       "partOfSpeech": "n.",
-      "korean": "trait (핵심 어휘)",
+      "korean": "특성, 특징",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -210,9 +210,9 @@
     },
     {
       "word": "viruses",
-      "lemma": "viruse",
+      "lemma": "viruses",
       "partOfSpeech": "n.",
-      "korean": "viruses (핵심 어휘)",
+      "korean": "바이러스들",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -234,9 +234,9 @@
     },
     {
       "word": "characteristics",
-      "lemma": "characteristic",
+      "lemma": "characteristics",
       "partOfSpeech": "n.",
-      "korean": "characteristics (핵심 어휘)",
+      "korean": "특성들, 성격들",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -269,22 +269,22 @@
       "freq": 1
     },
     {
-      "word": "none-living",
-      "lemma": "none-live",
+      "word": "called",
+      "lemma": "call",
       "partOfSpeech": "v.",
-      "korean": "none-living (핵심 어휘)",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "korean": "전화",
+      "score": 74,
+      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "called",
-      "lemma": "call",
+      "word": "stored",
+      "lemma": "store",
       "partOfSpeech": "v.",
-      "korean": "전화",
+      "korean": "저장",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [

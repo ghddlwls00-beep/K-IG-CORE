@@ -215,18 +215,6 @@
       "freq": 1
     },
     {
-      "word": "so-called",
-      "lemma": "so-cal",
-      "partOfSpeech": "v.",
-      "korean": "so-called (핵심 어휘)",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "walks",
       "lemma": "walk",
       "partOfSpeech": "n.",
@@ -249,6 +237,18 @@
         "독해필수"
       ],
       "freq": 2
+    },
+    {
+      "word": "able",
+      "lemma": "able",
+      "partOfSpeech": "adj.",
+      "korean": "할 수 있는",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     }
   ]
 }

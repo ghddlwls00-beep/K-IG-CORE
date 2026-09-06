@@ -724,100 +724,58 @@ export function ReadingLearningView({
             {keywords.map((kw, i) => {
               const isPlaying = playingWord === kw.word;
               const isRevealed = revealedVocaMeaning[kw.word] === true;
-              const hasLemmaDiff = kw.lemma && kw.lemma.toLowerCase() !== kw.word.toLowerCase();
 
               return (
                 <div
-                  key={i}
+                  key={kw.word + i}
                   onClick={() => playWordAudio(kw.word)}
                   className="rounded-2xl border border-line bg-surface p-4 shadow-2xs hover:border-line-strong hover:shadow-xs transition-all cursor-pointer flex flex-col justify-between gap-3 group select-none"
                 >
-                  <div className="flex flex-col gap-2">
-                    {/* Top Row: POS, Exam Tags, Card Number & Audio */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">
-                          {kw.pos}
-                        </span>
-                        {kw.examTags && kw.examTags.map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className={`font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded border ${
-                              tag === "중학기초"
-                                ? "text-blue-700 dark:text-blue-400 bg-blue-500/10 border-blue-500/20"
-                                : tag === "수능"
-                                ? "text-amber-700 dark:text-amber-400 bg-amber-500/10 border-amber-500/20"
-                                : tag === "TOEIC"
-                                ? "text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
-                                : "text-purple-700 dark:text-purple-400 bg-purple-500/10 border-purple-500/20"
-                            }`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[11px] font-mono font-bold text-ink-faint">
-                          #{String(i + 1).padStart(2, "0")}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            playWordAudio(kw.word);
-                          }}
-                          className={`flex h-7 w-7 items-center justify-center rounded-full transition-all cursor-pointer ${
-                            isPlaying
-                              ? "bg-red-500 text-white"
-                              : "bg-raised text-ink-soft hover:bg-ink hover:text-white"
-                          }`}
-                          title="발음 듣기"
-                        >
-                          <span className="text-[11px]">{isPlaying ? "⏹️" : "🔊"}</span>
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Word Display with Lemma Indication */}
-                    <div className="mt-0.5 flex flex-wrap items-baseline gap-2">
-                      <span className="text-[18px] font-bold text-ink group-hover:text-primary transition-colors tracking-tight">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-mono text-[11px] font-bold text-emerald-700 bg-emerald-500/10 px-1.5 py-0.5 rounded">
+                        {kw.pos}
+                      </span>
+                      <span className="text-[17px] font-bold text-ink group-hover:text-primary transition-colors">
                         {kw.word}
                       </span>
-                      {hasLemmaDiff && (
-                        <span className="font-mono text-[11px] text-ink-faint">
-                          [원형: <span className="font-semibold text-ink-soft">{kw.lemma}</span>]
-                        </span>
-                      )}
                     </div>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        playWordAudio(kw.word);
+                      }}
+                      className={`flex h-8 w-8 items-center justify-center rounded-full transition-all cursor-pointer ${
+                        isPlaying
+                          ? "bg-red-500 text-white"
+                          : "bg-raised text-ink-soft hover:bg-ink hover:text-white"
+                      }`}
+                      title="발음 듣기"
+                    >
+                      <span className="text-[12px]">{isPlaying ? "⏹️" : "🔊"}</span>
+                    </button>
                   </div>
 
-                  {/* Korean Meaning Reveal Section & Pedagogical Reason */}
-                  <div className="border-t border-line/60 pt-2 flex flex-col gap-1.5">
-                    <div className="flex items-center justify-between">
-                      {isRevealed ? (
-                        <span className="text-[14px] font-semibold text-ink animate-in fade-in">
-                          {kw.meaning}
-                        </span>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setRevealedVocaMeaning((prev) => ({ ...prev, [kw.word]: true }));
-                          }}
-                          className="text-[12px] text-ink-faint hover:text-ink cursor-pointer underline decoration-dotted"
-                        >
-                          💡 뜻 확인하기
-                        </button>
-                      )}
-                    </div>
-
-                    {kw.reason && (
-                      <p className="text-[10px] text-ink-faint line-clamp-1 group-hover:line-clamp-none transition-all">
-                        {kw.reason}
-                      </p>
+                  <div className="border-t border-line/60 pt-2 flex items-center justify-between">
+                    {isRevealed ? (
+                      <span className="text-[13.5px] font-medium text-ink animate-in fade-in">
+                        {kw.meaning}
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setRevealedVocaMeaning((prev) => ({ ...prev, [kw.word]: true }));
+                        }}
+                        className="text-[12px] text-ink-faint hover:text-ink cursor-pointer underline decoration-dotted"
+                      >
+                        💡 뜻 확인하기
+                      </button>
                     )}
+                    <span className="text-[10.5px] font-mono text-ink-faint">#0{i + 1}</span>
                   </div>
                 </div>
               );

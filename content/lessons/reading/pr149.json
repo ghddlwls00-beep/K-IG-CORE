@@ -202,22 +202,10 @@
       "lemma": "world",
       "partOfSpeech": "n.",
       "korean": "세계",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 86점)",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
       "examTags": [
         "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "greed",
-      "lemma": "gree",
-      "partOfSpeech": "v.",
-      "korean": "greed (핵심 어휘)",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
       ],
       "freq": 1
     },
@@ -244,6 +232,18 @@
         "수능"
       ],
       "freq": 1
+    },
+    {
+      "word": "problem",
+      "lemma": "problem",
+      "partOfSpeech": "n.",
+      "korean": "문제",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     }
   ]
 }

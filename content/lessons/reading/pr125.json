@@ -95,6 +95,18 @@
       "freq": 1
     },
     {
+      "word": "world",
+      "lemma": "world",
+      "partOfSpeech": "n.",
+      "korean": "세계",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 97점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
       "word": "car",
       "lemma": "car",
       "partOfSpeech": "n.",
@@ -119,30 +131,6 @@
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 86점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "auto-making",
-      "lemma": "auto-make",
-      "partOfSpeech": "v.",
-      "korean": "auto-making (핵심 어휘)",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "skilled",
       "lemma": "skill",
       "partOfSpeech": "v.",
@@ -157,10 +145,22 @@
     {
       "word": "largest",
       "lemma": "largest",
-      "partOfSpeech": "n.",
-      "korean": "largest (핵심 어휘)",
+      "partOfSpeech": "adj.",
+      "korean": "가장 큰, 최대의",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "sixth",
+      "lemma": "sixth",
+      "partOfSpeech": "adj.",
+      "korean": "여섯 번째의, 6번째",
       "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
@@ -215,10 +215,10 @@
       "freq": 1
     },
     {
-      "word": "sixth",
-      "lemma": "sixth",
+      "word": "auto-making",
+      "lemma": "auto-making",
       "partOfSpeech": "n.",
-      "korean": "sixth (핵심 어휘)",
+      "korean": "자동차 제조, 자동차 산업",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

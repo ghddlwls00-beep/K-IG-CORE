@@ -132,18 +132,6 @@
       "freq": 1
     },
     {
-      "word": "whenever",
-      "lemma": "whenever",
-      "partOfSpeech": "n.",
-      "korean": "whenever (핵심 어휘)",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "tell",
       "lemma": "tell",
       "partOfSpeech": "n.",
@@ -231,11 +219,23 @@
     },
     {
       "word": "decision-makers",
-      "lemma": "decision-maker",
+      "lemma": "decision-makers",
       "partOfSpeech": "n.",
-      "korean": "decision-makers (핵심 어휘)",
+      "korean": "의사결정자들",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "whenever",
+      "lemma": "whenever",
+      "partOfSpeech": "conj.",
+      "korean": "언제든지, ~할 때마다",
+      "score": 69,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
         "독해필수"
       ],

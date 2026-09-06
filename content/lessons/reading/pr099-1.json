@@ -138,10 +138,10 @@
     {
       "word": "eighteenth-century",
       "lemma": "eighteenth-century",
-      "partOfSpeech": "n.",
-      "korean": "eighteenth-century (핵심 어휘)",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "partOfSpeech": "adj.",
+      "korean": "18세기의",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
         "독해필수"
       ],
@@ -172,16 +172,16 @@
       "freq": 2
     },
     {
-      "word": "world",
-      "lemma": "world",
+      "word": "well",
+      "lemma": "well",
       "partOfSpeech": "n.",
-      "korean": "세계",
+      "korean": "음",
       "score": 76,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 76점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "hundred",
@@ -208,34 +208,22 @@
       "freq": 1
     },
     {
-      "word": "well",
-      "lemma": "well",
+      "word": "world",
+      "lemma": "world",
       "partOfSpeech": "n.",
-      "korean": "음",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+      "korean": "세계",
+      "score": 74,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 74점)",
       "examTags": [
-        "독해필수"
+        "중학기초"
       ],
       "freq": 1
     },
     {
       "word": "diamonds",
-      "lemma": "diamond",
+      "lemma": "diamonds",
       "partOfSpeech": "n.",
-      "korean": "diamonds (핵심 어휘)",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "writer's",
-      "lemma": "writer'",
-      "partOfSpeech": "n.",
-      "korean": "writer's (핵심 어휘)",
+      "korean": "다이아몬드, 금강석들",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -254,6 +242,18 @@
         "독해필수"
       ],
       "freq": 1
+    },
+    {
+      "word": "true",
+      "lemma": "true",
+      "partOfSpeech": "n.",
+      "korean": "사실",
+      "score": 68,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 68점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     }
   ]
 }
