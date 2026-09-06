@@ -34,6 +34,11 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
 
   const playIndexRef = useRef(0);
   const isPlayingRef = useRef(false);
+  const allTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const rowPlayingRef = useRef(false);
+  const activeRowRef = useRef<number | null>(null);
+  const rowTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Local storage key for memorized checklist
   const storageKey = `kig:voca:memorized:${lessonKey}`;
@@ -60,10 +65,27 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
     });
   }
 
+  function stopRowPlayback() {
+    rowPlayingRef.current = false;
+    activeRowRef.current = null;
+    if (rowTimeoutRef.current) {
+      clearTimeout(rowTimeoutRef.current);
+      rowTimeoutRef.current = null;
+    }
+    stopSpeech();
+    setActiveRowIdx(null);
+    setActiveWord(null);
+  }
+
   useEffect(() => {
     return () => {
-      stopSpeech();
+      stopRowPlayback();
       isPlayingRef.current = false;
+      if (allTimeoutRef.current) {
+        clearTimeout(allTimeoutRef.current);
+        allTimeoutRef.current = null;
+      }
+      stopSpeech();
     };
   }, []);
 
@@ -81,6 +103,15 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
   }
 
   function playWord(word: string, onEnd?: () => void) {
+    if (rowPlayingRef.current) stopRowPlayback();
+    if (isPlayingRef.current) {
+      isPlayingRef.current = false;
+      if (allTimeoutRef.current) {
+        clearTimeout(allTimeoutRef.current);
+        allTimeoutRef.current = null;
+      }
+      setIsPlayingAll(false);
+    }
     stopSpeech();
     setActiveWord(word);
     setSelectedWord(word);
@@ -102,13 +133,17 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
   function handlePlayAll() {
     if (isPlayingAll) {
       isPlayingRef.current = false;
+      if (allTimeoutRef.current) {
+        clearTimeout(allTimeoutRef.current);
+        allTimeoutRef.current = null;
+      }
       setIsPlayingAll(false);
       stopSpeech();
       setActiveWord(null);
-      setActiveRowIdx(null);
       return;
     }
 
+    stopRowPlayback();
     if (words.length === 0) return;
     isPlayingRef.current = true;
     setIsPlayingAll(true);
@@ -121,43 +156,106 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
       isPlayingRef.current = false;
       setIsPlayingAll(false);
       setActiveWord(null);
-      setActiveRowIdx(null);
       return;
     }
 
     const word = words[playIndexRef.current];
-    playWord(word, () => {
-      playIndexRef.current += 1;
-      setTimeout(() => {
-        if (isPlayingRef.current) {
-          playNextSequential();
-        }
-      }, 350);
+    setActiveWord(word);
+    setSelectedWord(word);
+
+    speakText(word, {
+      lang: "en",
+      rate: speed,
+      onEnd: () => {
+        if (!isPlayingRef.current) return;
+        playIndexRef.current += 1;
+        allTimeoutRef.current = setTimeout(() => {
+          if (isPlayingRef.current) {
+            playNextSequential();
+          }
+        }, 350);
+      },
+      onError: () => {
+        if (!isPlayingRef.current) return;
+        playIndexRef.current += 1;
+        allTimeoutRef.current = setTimeout(() => {
+          if (isPlayingRef.current) {
+            playNextSequential();
+          }
+        }, 350);
+      },
     });
   }
 
   function playRow(rowIndex: number) {
+    if (activeRowIdx === rowIndex && rowPlayingRef.current) {
+      stopRowPlayback();
+      return;
+    }
+
+    if (isPlayingAll) {
+      isPlayingRef.current = false;
+      if (allTimeoutRef.current) {
+        clearTimeout(allTimeoutRef.current);
+        allTimeoutRef.current = null;
+      }
+      setIsPlayingAll(false);
+    }
+    stopRowPlayback();
+
     const rowWords = (rows[rowIndex] || []).filter(Boolean);
     if (rowWords.length === 0) return;
 
-    stopSpeech();
+    rowPlayingRef.current = true;
+    activeRowRef.current = rowIndex;
     setActiveRowIdx(rowIndex);
     let idx = 0;
 
-    function next() {
-      if (idx >= rowWords.length) {
-        setActiveRowIdx(null);
-        setActiveWord(null);
+    function playNextInRow() {
+      if (!rowPlayingRef.current || activeRowRef.current !== rowIndex) {
         return;
       }
+
+      if (idx >= rowWords.length) {
+        stopRowPlayback();
+        return;
+      }
+
       const w = rowWords[idx];
-      playWord(w, () => {
-        idx++;
-        setTimeout(next, 350);
+      setActiveWord(w);
+      setSelectedWord(w);
+
+      speakText(w, {
+        lang: "en",
+        rate: speed,
+        onEnd: () => {
+          if (!rowPlayingRef.current || activeRowRef.current !== rowIndex) {
+            return;
+          }
+          idx++;
+          rowTimeoutRef.current = setTimeout(() => {
+            if (!rowPlayingRef.current || activeRowRef.current !== rowIndex) {
+              return;
+            }
+            playNextInRow();
+          }, 350);
+        },
+        onError: () => {
+          if (!rowPlayingRef.current || activeRowRef.current !== rowIndex) {
+            return;
+          }
+          idx++;
+          rowTimeoutRef.current = setTimeout(() => {
+            if (!rowPlayingRef.current || activeRowRef.current !== rowIndex) {
+              return;
+            }
+            playNextInRow();
+          }, 350);
+        },
       });
     }
 
-    next();
+    playNextInRow();
   }
 
   const memorizedCount = useMemo(() => {
@@ -435,11 +533,24 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                   <button
                     type="button"
                     onClick={() => playRow(rIdx)}
-                    className={`text-[11.5px] font-semibold cursor-pointer transition-colors ${
-                      isRowActive ? "text-indigo-600 font-bold" : "text-ink-soft hover:text-ink"
+                    className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-[11.5px] font-semibold cursor-pointer transition-all ${
+                      isRowActive
+                        ? "bg-rose-50 text-rose-600 border border-rose-200 dark:bg-rose-950/40 dark:text-rose-400 dark:border-rose-900/60 font-bold shadow-2xs hover:bg-rose-100"
+                        : "text-ink-soft hover:text-ink hover:bg-raised/70 border border-transparent"
                     }`}
+                    title={isRowActive ? "이 행 연속 재생 중지" : "이 행의 모든 단어를 순서대로 재생"}
                   >
-                    {isRowActive ? "🔊 이 행 연속 재생 중..." : "▶ 이 행 연속 재생"}
+                    {isRowActive ? (
+                      <>
+                        <span className="inline-block h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
+                        <span>⏹ 이 행 재생 중지</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>▶</span>
+                        <span>이 행 연속 재생</span>
+                      </>
+                    )}
                   </button>
                 </div>
 
