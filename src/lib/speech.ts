@@ -27,6 +27,7 @@ let queueGender: VoiceGender = "neutral";
 let onQueueProgress: ((index: number, text: string) => void) | null = null;
 let onQueueEnd: (() => void) | null = null;
 let isQueueRunning = false;
+let lastCancelTime = 0;
 
 // Cached voices
 let cachedVoices: SpeechSynthesisVoice[] = [];
@@ -177,11 +178,17 @@ export function speakText(
   activeUtterance = u;
 
   // Safe cancellation logic for mobile:
-  // If browser is actively speaking, call cancel() and schedule speak() after
-  // a micro-delay (30ms) so WebKit doesn't drop the new utterance.
-  if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+  // If browser is actively speaking OR cancel was called within the last 60ms,
+  // ensure WebKit settles before queuing the new utterance.
+  const isSpeakingNow = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+  const timeSinceCancel = Date.now() - lastCancelTime;
+
+  if (isSpeakingNow || timeSinceCancel < 60) {
     try {
-      window.speechSynthesis.cancel();
+      if (isSpeakingNow) {
+        window.speechSynthesis.cancel();
+        lastCancelTime = Date.now();
+      }
     } catch {
       // ignore
     }
@@ -194,7 +201,7 @@ export function speakText(
       } catch (err) {
         options.onError?.(err);
       }
-    }, 30);
+    }, 40);
   } else {
     try {
       window.speechSynthesis.speak(u);
@@ -273,6 +280,7 @@ export function stopSpeech(): void {
     }
     if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
       window.speechSynthesis.cancel();
+      lastCancelTime = Date.now();
     }
   } catch {
     // ignore
