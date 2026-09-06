@@ -221,6 +221,7 @@ export default async function LessonPage({
             menTranslations={menTranslations}
             vocaDictionary={vocaDictionary}
             readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
+            readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
           />
         ) : fromFlash ? (
           <p className="text-[13.5px] text-ink-soft">

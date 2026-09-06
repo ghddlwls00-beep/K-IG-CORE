@@ -1,5 +1,6 @@
-import type { ReadingSentence } from "./types";
+import type { ReadingSentence, ReadingVocabularyItem } from "./types";
 import readingSentencesData from "./readingSentences.json";
+import readingVocabularyData from "./readingVocabulary.json";
 
 /**
  * Get canonical 1:1 aligned reading sentences for any reading lesson key.
@@ -9,6 +10,16 @@ export function getReadingSentencesForLesson(lessonKey: string): ReadingSentence
   if (!lessonKey) return [];
   const normalized = lessonKey.replace(/^reading\//, "").replace(/-1$/, "");
   return (readingSentencesData as Record<string, ReadingSentence[]>)[normalized] || [];
+}
+
+/**
+ * Get canonical 14-item curated reading vocabulary for any reading lesson key.
+ * Normalizes keys like "reading/pr001", "pr001-1", or "pr001".
+ */
+export function getReadingVocabularyForLesson(lessonKey: string): ReadingVocabularyItem[] {
+  if (!lessonKey) return [];
+  const normalized = lessonKey.replace(/^reading\//, "").replace(/-1$/, "");
+  return (readingVocabularyData as Record<string, ReadingVocabularyItem[]>)[normalized] || [];
 }
 
 // Comprehensive vocabulary database for reading course passages
@@ -202,6 +213,11 @@ export interface KeyWord {
   word: string;
   pos: string;
   meaning: string;
+  lemma?: string;
+  score?: number;
+  reason?: string;
+  examTags?: string[];
+  freq?: number;
 }
 
 export function extractPassageKeywords(

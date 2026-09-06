@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:reading": "node scripts/audit-reading.mjs",
+    "test:voca": "node scripts/audit-reading-voca.mjs",
     "extract": "node scripts/extract.mjs",
     "upload-media": "node scripts/upload-media.mjs"
   },

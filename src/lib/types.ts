@@ -146,6 +146,25 @@ export interface ReadingSentence {
   korean: string;
 }
 
+export interface ReadingVocabularyItem {
+  /** Surface word as it appears in the reading passage */
+  word: string;
+  /** Canonical base dictionary form */
+  lemma: string;
+  /** Part of speech abbreviation (n., v., adj., adv., prep.) */
+  partOfSpeech: string;
+  /** Context-accurate Korean translation */
+  korean: string;
+  /** Algorithmic quality/relevance score (0-120) */
+  score: number;
+  /** Pedagogical rationale for selection */
+  reason: string;
+  /** Target exam tags (중학기초, 수능, TOEIC, TOEFL) */
+  examTags: string[];
+  /** Passage frequency */
+  freq?: number;
+}
+
 export interface Lesson {
   /** Stable id, unique within a course. Derived from the legacy filename. */
   id: string;
@@ -181,6 +200,8 @@ export interface Lesson {
   chunkDrills?: { en: string; ko: string }[];
   /** 1:1 Aligned Reading sentences with unique IDs for reading course */
   readingSentences?: ReadingSentence[];
+  /** 14 Pedagogically curated and ranked vocabulary items for reading course */
+  readingVocabulary?: ReadingVocabularyItem[];
 
   /** Original file, relative to the archive root. Kept for verification. */
   legacyPath: string;

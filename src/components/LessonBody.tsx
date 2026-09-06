@@ -47,6 +47,7 @@ export function LessonBody({
   menTranslations = null,
   vocaDictionary = null,
   readingSentences = null,
+  readingVocabulary = null,
 }: {
   blocks: Block[];
   pairBlocks?: Block[] | null;
@@ -61,6 +62,7 @@ export function LessonBody({
   menTranslations?: Record<string, string> | null;
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
   readingSentences?: ReadingSentence[] | null;
+  readingVocabulary?: import("@/lib/types").ReadingVocabularyItem[] | null;
 }) {
   const { t } = useLanguage();
 
@@ -89,6 +91,7 @@ export function LessonBody({
         audioTracks={audioTracks}
         vocaDictionary={vocaDictionary}
         readingSentences={readingSentences}
+        readingVocabulary={readingVocabulary}
       />
     );
   }
