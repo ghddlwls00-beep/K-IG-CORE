@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
-import { useLanguage, useTheme } from "./LanguageProvider";
+import { useTheme } from "./LanguageProvider";
 import { TAB_IMAGES } from "@/lib/tabImages";
 
 interface CourseDetail {
@@ -69,7 +69,6 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
 }
 
 export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
-  const { lang, setLang } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
   const [scrollActive, setScrollActive] = useState(0);
@@ -138,50 +137,11 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
         </div>
 
         <div className="flex items-center gap-5 sm:gap-7">
-          <div className="flex items-center gap-0.5">
-            <button
-              type="button"
-              onClick={() => setLang("en")}
-              className={
-                "border px-2.5 py-1 font-mono text-[11px] tracking-wider transition-colors " +
-                (lang === "en"
-                  ? "border-line bg-ink text-surface"
-                  : "border-line bg-transparent text-ink-soft hover:text-ink")
-              }
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              onClick={() => setLang("ja")}
-              className={
-                "border px-2.5 py-1 font-mono text-[11px] tracking-wider transition-colors " +
-                (lang === "ja"
-                  ? "border-line bg-ink text-surface"
-                  : "border-line bg-transparent text-ink-soft hover:text-ink")
-              }
-            >
-              日
-            </button>
-            <button
-              type="button"
-              onClick={() => setLang("zh")}
-              className={
-                "border px-2.5 py-1 font-mono text-[11px] tracking-wider transition-colors " +
-                (lang === "zh"
-                  ? "border-line bg-ink text-surface"
-                  : "border-line bg-transparent text-ink-soft hover:text-ink")
-              }
-            >
-              中
-            </button>
-          </div>
-
           <button
             type="button"
             onClick={toggleTheme}
             aria-label={`Toggle theme (currently ${theme})`}
-            className="relative h-[23px] w-[42px] rounded-[12px] border border-line bg-transparent p-0 transition-colors hover:border-ink-soft"
+            className="relative h-[23px] w-[42px] rounded-[12px] border border-line bg-transparent p-0 transition-colors hover:border-ink-soft cursor-pointer"
           >
             <span
               className="absolute top-[2px] left-[2px] h-[17px] w-[17px] rounded-full bg-ink transition-transform duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
@@ -214,11 +174,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
             >
               <p className="mb-4 font-mono text-[16.5px] tracking-[0.24em] text-ink-faint uppercase">
                 {tab.num}
-                {tab.unavailable
-                  ? " · ARCHIVE ONLY"
-                  : tab.contentLang === lang
-                    ? " · IN YOUR LANGUAGE"
-                    : ""}
+                {tab.unavailable ? " · ARCHIVE ONLY" : ""}
               </p>
 
               {(() => {
