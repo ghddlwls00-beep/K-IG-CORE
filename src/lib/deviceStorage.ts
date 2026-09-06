@@ -13,6 +13,9 @@ export interface LicenseDeviceRecord {
   plan: string;
   maxDevices?: number;
   devices: RegisteredDevice[];
+  isRevoked?: boolean;
+  revokedAt?: number;
+  revokeReason?: string;
 }
 
 export const MAX_DEVICES_PER_KEY = 2;
@@ -103,6 +106,16 @@ export function registerDeviceForKey(
   };
 
   const effectiveMaxDevices = record.maxDevices || MAX_DEVICES_PER_KEY;
+
+  // 0. Check if revoked
+  if (record.isRevoked) {
+    return {
+      success: false,
+      error: `환불 처리되어 사용이 영구 중지된 이용권입니다. (${record.revokeReason || "환불 처리"})`,
+      devices: [],
+      maxDevices: effectiveMaxDevices,
+    };
+  }
   const now = Date.now();
   const existingIdx = record.devices.findIndex((d) => d.deviceId === deviceId);
 
@@ -174,3 +187,60 @@ export function resetAllDevicesForKey(key: string): { success: boolean } {
   }
   return { success: true };
 }
+
+/**
+ * Admin revoke / block: instantly blacklist a key (e.g. customer refund).
+ * Clears all registered devices and marks as isRevoked.
+ */
+export function revokeLicenseKey(
+  key: string,
+  reason = "환불 처리 / 관리자 차단",
+): { success: boolean; record: LicenseDeviceRecord } {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+  const record: LicenseDeviceRecord = records[normalizedKey] || {
+    key: normalizedKey,
+    plan: "1Y",
+    maxDevices: MAX_DEVICES_PER_KEY,
+    devices: [],
+  };
+
+  record.isRevoked = true;
+  record.revokedAt = Date.now();
+  record.revokeReason = reason;
+  record.devices = []; // disconnect all devices immediately
+
+  records[normalizedKey] = record;
+  saveDeviceRecords(records);
+  return { success: true, record };
+}
+
+/**
+ * Admin unrevoke / restore: remove from blacklist.
+ */
+export function unrevokeLicenseKey(
+  key: string,
+): { success: boolean; record?: LicenseDeviceRecord } {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+  const record = records[normalizedKey];
+  if (!record) return { success: false };
+
+  record.isRevoked = false;
+  record.revokedAt = undefined;
+  record.revokeReason = undefined;
+
+  records[normalizedKey] = record;
+  saveDeviceRecords(records);
+  return { success: true, record };
+}
+
+/**
+ * Check if a license key is revoked.
+ */
+export function isLicenseRevoked(key: string): boolean {
+  const normalizedKey = key.trim().toUpperCase();
+  const records = loadDeviceRecords();
+  return Boolean(records[normalizedKey]?.isRevoked);
+}
+

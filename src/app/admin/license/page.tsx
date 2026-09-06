@@ -28,6 +28,9 @@ interface DeviceRecordMap {
     plan: string;
     maxDevices?: number;
     devices: DeviceInfo[];
+    isRevoked?: boolean;
+    revokedAt?: number;
+    revokeReason?: string;
   };
 }
 
@@ -268,6 +271,51 @@ export default function AdminLicensePage() {
         fetchDeviceStatus();
       } else {
         alert(data.error || "초기화에 실패했습니다.");
+      }
+    } catch {
+      alert("서버 통신 오류가 발생했습니다.");
+    }
+  }
+
+  async function handleRevokeLicense(key: string) {
+    const reason = prompt(`이용권 [${key}]을 환불 차단하시겠습니까?\n차단 사유를 입력하세요 (예: 스마트스토어 환불):`, "환불 처리");
+    if (!reason) return;
+
+    try {
+      const res = await fetch("/api/license/revoke", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key, reason }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert("이용권이 즉시 차단되었습니다. 모든 등록 기기의 수강이 중단됩니다.");
+        fetchDeviceStatus();
+      } else {
+        alert(data.error || "차단 실패");
+      }
+    } catch {
+      alert("서버 통신 오류가 발생했습니다.");
+    }
+  }
+
+  async function handleUnrevokeLicense(key: string) {
+    if (!confirm(`이용권 [${key}]의 차단을 해제하고 정상 상태로 복구하시겠습니까?`)) {
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/license/unrevoke", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert("이용권 차단이 성공적으로 해제되었습니다.");
+        fetchDeviceStatus();
+      } else {
+        alert(data.error || "해제 실패");
       }
     } catch {
       alert("서버 통신 오류가 발생했습니다.");
@@ -576,7 +624,11 @@ export default function AdminLicensePage() {
                             </span>
 
                             {/* Device Usage Badge with Dynamic Limit */}
-                            {deviceCount === 0 ? (
+                            {record?.isRevoked ? (
+                              <span className="rounded-full bg-red-100 text-red-700 border border-red-300 px-2 py-0.5 text-[10.5px] font-bold font-mono">
+                                🚫 환불/차단됨{record.revokeReason ? ` (${record.revokeReason})` : ""}
+                              </span>
+                            ) : deviceCount === 0 ? (
                               <span className="rounded-full bg-gray-100 text-gray-700 border border-gray-200/60 px-2 py-0.5 text-[10.5px] font-semibold font-mono">
                                 미등록 (0/{itemLimit}대)
                               </span>
@@ -605,6 +657,7 @@ export default function AdminLicensePage() {
                               onChange={(e) => handleUpdateMaxDevices(item.key, Number(e.target.value))}
                               className="bg-transparent font-bold text-ink focus:outline-none cursor-pointer"
                               title="이 이용권의 등록 가능한 최대 기기 대수를 변경합니다"
+                              disabled={record?.isRevoked}
                             >
                               <option value={1}>1대 제한</option>
                               <option value={2}>2대 제한 (기본)</option>
@@ -623,7 +676,7 @@ export default function AdminLicensePage() {
                           </button>
 
                           {/* Test Register Button */}
-                          {deviceCount === 0 && (
+                          {!record?.isRevoked && deviceCount === 0 && (
                             <button
                               type="button"
                               onClick={() => handleTestRegister(item.key)}
@@ -634,7 +687,7 @@ export default function AdminLicensePage() {
                             </button>
                           )}
 
-                          {deviceCount > 0 && (
+                          {!record?.isRevoked && deviceCount > 0 && (
                             <button
                               type="button"
                               onClick={() => handleResetDevice(item.key)}
@@ -644,11 +697,38 @@ export default function AdminLicensePage() {
                               기기 초기화
                             </button>
                           )}
+
+                          {/* Revoke / Unrevoke Refund Blocking Buttons */}
+                          {record?.isRevoked ? (
+                            <button
+                              type="button"
+                              onClick={() => handleUnrevokeLicense(item.key)}
+                              className="rounded-lg border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-[11px] font-semibold text-amber-800 hover:bg-amber-500/20 cursor-pointer transition-colors"
+                              title="차단된 이용권을 정상 상태로 복구합니다"
+                            >
+                              ↺ 차단 해제
+                            </button>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={() => handleRevokeLicense(item.key)}
+                              className="rounded-lg border border-red-500/20 bg-red-500/10 px-2.5 py-1 text-[11px] font-semibold text-red-700 hover:bg-red-500/20 cursor-pointer transition-colors"
+                              title="환불 고객 이용권을 즉시 차단하고 등록 기기를 모두 해제합니다"
+                            >
+                              🚫 환불 차단
+                            </button>
+                          )}
                         </div>
                       </div>
 
                       {/* Detail list of registered devices */}
-                      {devices.length > 0 ? (
+                      {record?.isRevoked ? (
+                        <div className="ml-1 pl-3 border-l-2 border-red-500/40 flex flex-col gap-1 text-[11.5px] text-red-600">
+                          <span>
+                            🚫 <strong>환불 차단된 이용권입니다.</strong> (차단 시점: {record.revokedAt ? new Date(record.revokedAt).toLocaleString("ko-KR") : "기록 없음"}{record.revokeReason ? ` · 사유: ${record.revokeReason}` : ""})
+                          </span>
+                        </div>
+                      ) : devices.length > 0 ? (
                         <div className="ml-1 pl-3 border-l-2 border-emerald-500/40 flex flex-col gap-1 text-[11.5px] text-ink-soft">
                           {devices.map((d, dIdx) => (
                             <div key={d.deviceId} className="flex items-center gap-2">

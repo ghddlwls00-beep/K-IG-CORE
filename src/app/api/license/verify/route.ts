@@ -60,6 +60,18 @@ export async function POST(request: Request) {
     const normalizedKey = key.trim().toUpperCase();
     const record = records[normalizedKey];
 
+    // 4. Check if license has been revoked (e.g. customer refund)
+    if (record?.isRevoked) {
+      return NextResponse.json(
+        {
+          valid: false,
+          error: `환불 처리되어 사용이 영구 중지된 이용권입니다. (${record.revokeReason || "환불 완료"})`,
+          revoked: true,
+        },
+        { status: 403 },
+      );
+    }
+
     if (record && record.devices && record.devices.length > 0) {
       const isDeviceRegistered = record.devices.some(
         (d) => d.deviceId === deviceId,
