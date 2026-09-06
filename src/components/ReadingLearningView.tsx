@@ -6,6 +6,7 @@ import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
   extractPassageKeywords,
+  extractFullReadingPassage,
   parseSlashChunks,
   generateReadingQuiz,
   generateClozeItems,
@@ -28,14 +29,14 @@ export function ReadingLearningView({
   lessonKey,
   isScript,
 }: ReadingLearningViewProps) {
-  // Extract passages from main and pair blocks
-  const mainInstruction = blocks.find((b) => b.type === "instruction")?.text ?? "";
-  const pairInstruction = pairBlocks?.find((b) => b.type === "instruction")?.text ?? "";
+  // Extract full passages from main and pair blocks (supporting multi-paragraph & section labels like (A), (B), (C))
+  const mainText = extractFullReadingPassage(blocks);
+  const pairText = extractFullReadingPassage(pairBlocks);
 
   // Determine English vs Korean passage
-  const mainIsEn = isEnglish(mainInstruction);
-  const enPassage = mainIsEn ? mainInstruction : pairInstruction;
-  const koPassage = mainIsEn ? pairInstruction : mainInstruction;
+  const mainIsEn = isEnglish(mainText);
+  const enPassage = mainIsEn ? mainText : pairText;
+  const koPassage = mainIsEn ? pairText : mainText;
 
   // Aligned sentence pairs for dual & breakdown modes
   const sentencePairs = useMemo(() => {
@@ -1075,6 +1076,8 @@ function cleanSentenceText(text: string): string {
   if (!text) return "";
   return text
     .replace(/^\s*\d+[\.\)]\s*/, "")
+    .replace(/^\s*\([A-Za-z0-9]\)\s*/, "")
+    .replace(/^\s*\[[A-Za-z0-9]\]\s*/, "")
     .replace(/\s*\/\s*/g, " ")
     .trim();
 }
