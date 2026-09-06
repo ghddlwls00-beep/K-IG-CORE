@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useProgress } from "./ProgressProvider";
+import { useLicense } from "./LicenseProvider";
+import { isFreePreviewLesson } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
 
 export interface DashboardLessonItem {
@@ -25,6 +27,7 @@ export function CourseDashboard({
   totalLessons: number;
 }) {
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked } = useProgress();
+  const { hasActiveLicense } = useLicense();
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
 
   // Calculate stats for this course
@@ -281,10 +284,12 @@ export function CourseDashboard({
                   {isOpen && (
                     <div className="border-t border-black/[0.06] p-4 sm:p-6 bg-gray-50/50">
                       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                        {section.lessons.map((lesson) => {
+                        {section.lessons.map((lesson, lessonIdx) => {
                           const pres = lesson.presentation;
                           const isDone = isCompleted(courseSlug, lesson.id);
                           const isStarred = isBookmarked(courseSlug, lesson.id);
+                          const isFree = isFreePreviewLesson(courseSlug, lesson.id, lessonIdx);
+                          const isUnlocked = hasActiveLicense || isFree;
 
                           return (
                             <li key={lesson.id}>
@@ -292,6 +297,8 @@ export function CourseDashboard({
                                 className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
                                   isDone
                                     ? "border-emerald-500/30 bg-white shadow-2xs hover:border-emerald-500/60"
+                                    : !isUnlocked
+                                    ? "border-black/[0.06] bg-white/70 shadow-2xs hover:border-amber-500/40"
                                     : "border-black/[0.06] bg-white shadow-2xs hover:border-black/20"
                                 }`}
                               >
@@ -306,6 +313,15 @@ export function CourseDashboard({
                                           ✓ 완료
                                         </span>
                                       )}
+                                      {!isUnlocked ? (
+                                        <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-700">
+                                          🔒 올패스
+                                        </span>
+                                      ) : !hasActiveLicense && isFree ? (
+                                        <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
+                                          ✓ 무료체험
+                                        </span>
+                                      ) : null}
                                       {pres.badge && (
                                         <span className="rounded-full bg-black/[0.04] px-2 py-0.5 text-[10px] font-medium text-ink-soft">
                                           {pres.badge}
@@ -354,10 +370,13 @@ export function CourseDashboard({
                                   <span className="tabular-nums">{lesson.id}</span>
                                   <Link
                                     href={`/${courseSlug}/${lesson.id}`}
-                                    className="inline-flex items-center gap-1 font-semibold text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
+                                    className={`inline-flex items-center gap-1 font-semibold transition-all group-hover:translate-x-0.5 ${
+                                      !isUnlocked
+                                        ? "text-amber-700 group-hover:text-amber-800"
+                                        : "text-ink-soft group-hover:text-ink"
+                                    }`}
                                   >
-                                    <span>학습하기</span>
-                                    <span>→</span>
+                                    <span>{!isUnlocked ? "올패스 전용 🔒" : "학습하기 →"}</span>
                                   </Link>
                                 </div>
                               </div>

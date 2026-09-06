@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { ProgressProvider } from "@/components/ProgressProvider";
+import { LicenseProvider } from "@/components/LicenseProvider";
+import { LicenseModal } from "@/components/LicenseModal";
 import { TabBar } from "@/components/TabBar";
 import { getCourseTabMap, getTabs } from "@/lib/content";
 import "./globals.css";
@@ -32,8 +34,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="notranslate min-h-screen bg-surface text-ink antialiased" translate="no">
         <LanguageProvider>
           <ProgressProvider>
-            <TabBar tabs={tabs} courseTabs={courseTabs} />
-            {children}
+            <LicenseProvider>
+              <TabBar tabs={tabs} courseTabs={courseTabs} />
+              <LicenseModal />
+              {children}
+            </LicenseProvider>
           </ProgressProvider>
         </LanguageProvider>
       </body>

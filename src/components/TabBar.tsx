@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Tab } from "@/lib/types";
 import { SearchDialog } from "./SearchDialog";
+import { useLicense } from "./LicenseProvider";
 
 /**
  * The persistent top navigation.
@@ -15,6 +16,7 @@ import { SearchDialog } from "./SearchDialog";
 export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<string, string> }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { hasActiveLicense, openModal } = useLicense();
 
   // Close mobile drawer when route changes
   useEffect(() => {
@@ -94,7 +96,29 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             </nav>
 
             {/* Right Controls */}
-            <div className="flex items-center justify-end gap-2.5 sm:gap-3 shrink-0">
+            <div className="flex items-center justify-end gap-2 sm:gap-2.5 shrink-0">
+              {/* VIP / License Status Button */}
+              {hasActiveLicense ? (
+                <button
+                  type="button"
+                  onClick={openModal}
+                  title="VIP 이용권 상태 확인"
+                  className="flex items-center gap-1.5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 font-mono text-[11.5px] font-semibold text-amber-700 hover:bg-amber-500/20 transition-all cursor-pointer shadow-2xs"
+                >
+                  <span>👑</span>
+                  <span className="hidden sm:inline">VIP 올패스</span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="flex items-center gap-1.5 rounded-xl bg-ink px-2.5 sm:px-3 py-1.5 text-[11.5px] sm:text-[12px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
+                >
+                  <span>🔑</span>
+                  <span>이용권 등록</span>
+                </button>
+              )}
+
               <SearchDialog />
 
               {/* Mobile 3-bar Hamburger Button (Visible only below md) */}
@@ -183,7 +207,22 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             </div>
 
             {/* Drawer Footer */}
-            <div className="border-t border-line/70 pt-4 flex flex-col gap-2">
+            <div className="border-t border-line/70 pt-4 flex flex-col gap-2.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openModal();
+                }}
+                className={`flex items-center justify-center gap-2 rounded-xl py-3 text-[13px] font-bold transition-all cursor-pointer ${
+                  hasActiveLicense
+                    ? "border border-amber-500/30 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
+                    : "bg-ink text-surface shadow-xs hover:opacity-90 active:scale-[0.99]"
+                }`}
+              >
+                <span>{hasActiveLicense ? "👑 VIP 올패스 회원 (확인)" : "🔑 이용권 코드 등록"}</span>
+              </button>
+
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}

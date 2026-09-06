@@ -5,6 +5,7 @@ import { AudioPlayer } from "@/components/AudioPlayer";
 import { LessonBody } from "@/components/LessonBody";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
+import { LessonClientGate } from "@/components/LessonClientGate";
 import { T } from "@/components/LanguageProvider";
 import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslations, getVocaDictionary } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
@@ -137,67 +138,74 @@ export default async function LessonPage({
         </div>
       </header>
 
-      {video.length > 0 ? (
-        <div className="mb-8 flex flex-col gap-2.5">
-          {video.map((v) => (
-            <VideoPlayer key={v.src} src={v.src} />
-          ))}
-        </div>
-      ) : null}
+      <LessonClientGate
+        courseSlug={course}
+        courseTitle={courseInfo?.title ?? tab?.label}
+        lessonId={lesson.id}
+        lessonTitle={pres.title}
+      >
+        {video.length > 0 ? (
+          <div className="mb-8 flex flex-col gap-2.5">
+            {video.map((v) => (
+              <VideoPlayer key={v.src} src={v.src} />
+            ))}
+          </div>
+        ) : null}
 
-      {/* Audio Players with native TTS fallback & gender profile */}
-      {audio.length > 0 ? (
-        <div className="mb-8 flex flex-col gap-2.5">
-          {audio.map((a, i) => (
+        {/* Audio Players with native TTS fallback & gender profile */}
+        {audio.length > 0 ? (
+          <div className="mb-8 flex flex-col gap-2.5">
+            {audio.map((a, i) => (
+              <AudioPlayer
+                key={a.src}
+                src={a.src}
+                fallbackSentences={fallbackSentences}
+                lang={courseInfo?.contentLang ?? "en"}
+                gender={voiceGender}
+                label={audioLabel(audio.length, i, fromFlash)}
+              />
+            ))}
+          </div>
+        ) : fallbackSentences.length > 0 ? (
+          <div className="mb-8">
             <AudioPlayer
-              key={a.src}
-              src={a.src}
               fallbackSentences={fallbackSentences}
               lang={courseInfo?.contentLang ?? "en"}
               gender={voiceGender}
-              label={audioLabel(audio.length, i, fromFlash)}
+              label="전체 듣기 (AI 음성 재생)"
             />
-          ))}
-        </div>
-      ) : fallbackSentences.length > 0 ? (
-        <div className="mb-8">
-          <AudioPlayer
-            fallbackSentences={fallbackSentences}
-            lang={courseInfo?.contentLang ?? "en"}
-            gender={voiceGender}
-            label="전체 듣기 (AI 음성 재생)"
-          />
-        </div>
-      ) : null}
+          </div>
+        ) : null}
 
-      {/* Educational Body with Aligned Sentences */}
-      {lesson.blocks.length > 0 ? (
-        <LessonBody
-          blocks={lesson.blocks}
-          pairBlocks={pairLesson?.blocks ?? null}
-          course={course}
-          lessonKey={`${course}/${lesson.id}`}
-          isScript={isScript}
-          contentLang={courseInfo?.contentLang ?? "en"}
-          voiceGender={voiceGender}
-          audioTracks={audio}
-          chunkDrills={lesson.chunkDrills}
-          ldEnglishScript={ldEnglishScript}
-          menTranslations={menTranslations}
-          vocaDictionary={vocaDictionary}
-        />
-      ) : fromFlash ? (
-        <p className="text-[13.5px] text-ink-soft">
-          <T
-            k={audio.length === 1 ? "lesson.trackRecovered" : "lesson.tracksRecovered"}
-            count={audio.length}
+        {/* Educational Body with Aligned Sentences */}
+        {lesson.blocks.length > 0 ? (
+          <LessonBody
+            blocks={lesson.blocks}
+            pairBlocks={pairLesson?.blocks ?? null}
+            course={course}
+            lessonKey={`${course}/${lesson.id}`}
+            isScript={isScript}
+            contentLang={courseInfo?.contentLang ?? "en"}
+            voiceGender={voiceGender}
+            audioTracks={audio}
+            chunkDrills={lesson.chunkDrills}
+            ldEnglishScript={ldEnglishScript}
+            menTranslations={menTranslations}
+            vocaDictionary={vocaDictionary}
           />
-        </p>
-      ) : (
-        <p className="border border-dashed border-line px-4 py-6 text-[13.5px] text-ink-soft rounded">
-          <T k="lesson.notMigrated" />
-        </p>
-      )}
+        ) : fromFlash ? (
+          <p className="text-[13.5px] text-ink-soft">
+            <T
+              k={audio.length === 1 ? "lesson.trackRecovered" : "lesson.tracksRecovered"}
+              count={audio.length}
+            />
+          </p>
+        ) : (
+          <p className="border border-dashed border-line px-4 py-6 text-[13.5px] text-ink-soft rounded">
+            <T k="lesson.notMigrated" />
+          </p>
+        )}
+      </LessonClientGate>
 
       <footer className="mt-20 border-t border-line pt-4">
         <p className="font-mono text-[10.5px] text-ink-faint">
