@@ -2,10 +2,8 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import {
-  calculateExpiry,
   getPlanLabel,
   isFreePreviewLesson,
-  validateLicenseKey,
   type LicenseInfo,
   type LicensePlan,
 } from "@/lib/license";
@@ -16,13 +14,19 @@ interface StoredLicense {
   plan: LicensePlan;
   activatedAt: number;
   expiresAt: number | null;
+  token?: string;
 }
 
 interface LicenseContextType {
   hasActiveLicense: boolean;
   licenseInfo: LicenseInfo | null;
   currentDevice: ClientDevice;
-  isUnlocked: (courseSlug: string, lessonId: string, sectionIndex?: number, lessonIndex?: number) => boolean;
+  isUnlocked: (
+    courseSlug: string,
+    lessonId: string,
+    sectionIndex?: number,
+    lessonIndex?: number,
+  ) => boolean;
   activateKey: (key: string) => Promise<{ success: boolean; message: string }>;
   deactivateLicense: () => Promise<void>;
   isModalOpen: boolean;
@@ -42,7 +46,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     name: "기기 확인 중...",
   });
 
-  // Load license and device info on client mount
+  // Load license and verify with server on mount
   useEffect(() => {
     try {
       const dev = getOrCreateDeviceId();
@@ -51,7 +55,37 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as StoredLicense;
-        setStored(parsed);
+
+        // Verify stored license with server to prevent localStorage tampering
+        if (parsed.token && parsed.key) {
+          fetch("/api/license/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              key: parsed.key,
+              deviceId: dev.id,
+              token: parsed.token,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.valid) {
+                setStored(parsed);
+              } else {
+                console.warn("Server rejected license:", data.error);
+                window.localStorage.removeItem(STORAGE_KEY);
+                setStored(null);
+              }
+            })
+            .catch(() => {
+              // Offline fallback: allow only if valid token string exists
+              setStored(parsed);
+            });
+        } else {
+          // Untrusted / un-signed localStorage data
+          window.localStorage.removeItem(STORAGE_KEY);
+          setStored(null);
+        }
       }
     } catch {
       // ignore
@@ -61,7 +95,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   // Compute active status
   const now = Date.now();
   const isExpired = Boolean(stored?.expiresAt && stored.expiresAt < now);
-  const hasActiveLicense = Boolean(stored && !isExpired);
+  const hasActiveLicense = Boolean(stored && !isExpired && stored.token);
 
   const licenseInfo: LicenseInfo | null = stored
     ? {
@@ -69,7 +103,9 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         plan: stored.plan,
         planLabel: getPlanLabel(stored.plan),
         activatedAt: new Date(stored.activatedAt).toLocaleDateString("ko-KR"),
-        expiresAt: stored.expiresAt ? new Date(stored.expiresAt).toLocaleDateString("ko-KR") : null,
+        expiresAt: stored.expiresAt
+          ? new Date(stored.expiresAt).toLocaleDateString("ko-KR")
+          : null,
         isExpired,
       }
     : null;
@@ -84,24 +120,22 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     return isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex);
   }
 
-  async function activateKey(rawKey: string): Promise<{ success: boolean; message: string }> {
-    const res = validateLicenseKey(rawKey);
-    if (!res.valid || !res.plan) {
-      return { success: false, message: res.error || "유효하지 않은 이용권입니다." };
+  async function activateKey(
+    rawKey: string,
+  ): Promise<{ success: boolean; message: string }> {
+    if (!rawKey || !rawKey.trim()) {
+      return { success: false, message: "이용권 코드를 입력해 주세요." };
     }
 
     const dev = getOrCreateDeviceId();
 
-    let regDevicesCount = 1;
-    let regMaxDevices = 2;
-
-    // Enforce device limit via API
+    // Authenticate and register exclusively through the server API
     try {
       const resp = await fetch("/api/license/activate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          key: rawKey,
+          key: rawKey.trim().toUpperCase(),
           deviceId: dev.id,
           deviceName: dev.name,
         }),
@@ -114,34 +148,36 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
           success: false,
           message:
             data.error ||
-            "이용권 등록 가능한 최대 기기 수를 초과하였습니다. 기존 기기에서 등록을 해제해 주세요.",
+            "이용권 등록에 실패했습니다. 코드 형식을 다시 확인해 주세요.",
         };
       }
 
-      if (data.registeredDevicesCount) regDevicesCount = data.registeredDevicesCount;
-      if (data.maxDevices) regMaxDevices = data.maxDevices;
-    } catch (err) {
-      console.warn("Device registration API network issue, falling back to local verification:", err);
-    }
-
-    const activatedAt = Date.now();
-    const expiresAt = calculateExpiry(res.plan, activatedAt);
-    const newStored: StoredLicense = {
-      key: rawKey.trim().toUpperCase(),
-      plan: res.plan,
-      activatedAt,
-      expiresAt,
-    };
-
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(newStored));
-      setStored(newStored);
-      return {
-        success: true,
-        message: `${getPlanLabel(res.plan)}이 성공적으로 등록되었습니다! (기기 등록 현황: ${regDevicesCount}/${regMaxDevices}대)`,
+      const newStored: StoredLicense = {
+        key: rawKey.trim().toUpperCase(),
+        plan: data.plan,
+        activatedAt: data.activatedAt || Date.now(),
+        expiresAt: data.expiresAt,
+        token: data.licenseToken,
       };
-    } catch (e) {
-      return { success: false, message: "이용권 저장에 실패했습니다. 브라우저 저장소를 확인해 주세요." };
+
+      try {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(newStored));
+        setStored(newStored);
+        return {
+          success: true,
+          message: `${getPlanLabel(data.plan)}이 성공적으로 등록되었습니다! (기기 등록 현황: ${data.registeredDevicesCount || 1}/${data.maxDevices || 2}대)`,
+        };
+      } catch {
+        return {
+          success: false,
+          message: "브라우저 저장소 접근에 실패했습니다.",
+        };
+      }
+    } catch {
+      return {
+        success: false,
+        message: "서버 통신 오류가 발생했습니다. 인터넷 연결을 확인해 주세요.",
+      };
     }
   }
 
@@ -186,10 +222,10 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useLicense() {
-  const ctx = useContext(LicenseContext);
-  if (!ctx) {
-    throw new Error("useLicense must be used within LicenseProvider");
+export function useLicense(): LicenseContextType {
+  const context = useContext(LicenseContext);
+  if (!context) {
+    throw new Error("useLicense must be used within a LicenseProvider");
   }
-  return ctx;
+  return context;
 }

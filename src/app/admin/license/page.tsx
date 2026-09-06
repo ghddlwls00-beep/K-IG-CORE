@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { generateLicenseKey, getPlanLabel, type LicensePlan } from "@/lib/license";
+import { getPlanLabel, type LicensePlan } from "@/lib/license";
 import { getOrCreateDeviceId } from "@/lib/device";
 
 const GENERATED_HISTORY_KEY = "kig:admin:history";
@@ -144,49 +144,38 @@ export default function AdminLicensePage() {
   }
 
   async function handleGenerate() {
-    const keys: string[] = [];
-    const now = new Date().toLocaleString("ko-KR");
-    const newItems: HistoryItem[] = [];
-
-    for (let i = 0; i < quantity; i++) {
-      const k = generateLicenseKey(selectedPlan);
-      keys.push(k);
-      newItems.push({
-        key: k,
-        plan: selectedPlan,
-        createdAt: now,
-        memo: memo.trim() || undefined,
-        maxDevices: maxDevicesPerKey,
+    try {
+      const res = await fetch("/api/admin/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          plan: selectedPlan,
+          quantity,
+          maxDevices: maxDevicesPerKey,
+          memo: memo.trim() || undefined,
+        }),
       });
 
-      // Save initial maxDevices limit to server
-      try {
-        fetch("/api/license/update-limit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            key: k,
-            maxDevices: maxDevicesPerKey,
-            plan: selectedPlan,
-          }),
-        });
-      } catch (e) {
-        console.warn("Failed to set max devices limit on server:", e);
+      const data = await res.json();
+      if (data.success && data.keys && data.items) {
+        setNewlyGenerated(data.keys);
+        const updatedHistory = [...data.items, ...history].slice(0, 100);
+        setHistory(updatedHistory);
+        setMemo("");
+
+        try {
+          window.localStorage.setItem(GENERATED_HISTORY_KEY, JSON.stringify(updatedHistory));
+        } catch {}
+
+        setTimeout(() => {
+          fetchDeviceStatus();
+        }, 300);
+      } else {
+        alert(data.error || "이용권 발급에 실패했습니다.");
       }
+    } catch {
+      alert("서버 통신 오류가 발생했습니다.");
     }
-
-    setNewlyGenerated(keys);
-    const updatedHistory = [...newItems, ...history].slice(0, 100);
-    setHistory(updatedHistory);
-    setMemo("");
-
-    try {
-      window.localStorage.setItem(GENERATED_HISTORY_KEY, JSON.stringify(updatedHistory));
-    } catch {}
-
-    setTimeout(() => {
-      fetchDeviceStatus();
-    }, 300);
   }
 
   async function handleUpdateMaxDevices(key: string, newLimit: number) {
