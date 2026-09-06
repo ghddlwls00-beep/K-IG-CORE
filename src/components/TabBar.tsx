@@ -37,15 +37,17 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-surface/85 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-5">
-        <div className="flex items-center gap-6 py-3">
-          <Link
-            href="/"
-            className="shrink-0 font-mono text-[11px] tracking-[0.22em] text-ink uppercase opacity-70 hover:opacity-100"
-          >
-            K&#8209;IG&nbsp;교육
-          </Link>
+        <div className="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] gap-4 py-3">
+          <div className="flex items-center justify-start shrink-0">
+            <Link
+              href="/"
+              className="shrink-0 font-mono text-[11px] tracking-[0.22em] text-ink uppercase opacity-70 hover:opacity-100"
+            >
+              K&#8209;IG&nbsp;교육
+            </Link>
+          </div>
 
-          <nav aria-label="Courses" className="no-scrollbar -mx-1 flex flex-1 items-center gap-0.5 overflow-x-auto">
+          <nav aria-label="Courses" className="no-scrollbar flex items-center justify-center gap-0.5 sm:gap-1 overflow-x-auto">
             {ordered.map((tab) => {
               const active = activeTab === tab.slug;
               const targetUrl = tab.courses[0] ? `/${tab.courses[0]}` : `/t/${tab.slug}`;
@@ -55,7 +57,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                   href={targetUrl}
                   aria-current={active ? "page" : undefined}
                   className={
-                    "relative shrink-0 px-2.5 py-1.5 text-[12.5px] whitespace-nowrap " +
+                    "relative shrink-0 px-2.5 sm:px-3 py-1.5 text-[12.5px] whitespace-nowrap " +
                     (active
                       ? "font-semibold text-ink"
                       : "font-normal text-ink-soft hover:text-ink")
@@ -65,7 +67,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                   <span
                     aria-hidden
                     className={
-                      "absolute inset-x-2.5 -bottom-px h-px origin-left bg-ink transition-transform duration-200 ease-out " +
+                      "absolute inset-x-2.5 sm:inset-x-3 -bottom-px h-px origin-left bg-ink transition-transform duration-200 ease-out " +
                       (active ? "scale-x-100" : "scale-x-0")
                     }
                   />
@@ -74,7 +76,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             })}
           </nav>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center justify-end gap-3 shrink-0">
             <SearchDialog />
 
             <button
