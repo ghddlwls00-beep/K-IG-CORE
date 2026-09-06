@@ -88,7 +88,7 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
     });
   }
 
-  function togglePlaySnippet(text: string, lang: "en" | "ko" = "en") {
+  function togglePlaySnippet(text: string, lang: "en" = "en") {
     if (playingText === text) {
       stopSpeech();
       setPlayingText(null);

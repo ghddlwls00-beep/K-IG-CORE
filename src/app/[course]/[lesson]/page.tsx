@@ -283,8 +283,6 @@ function extractSentencesForAudio(
     if (ldEnglishScript && ldEnglishScript.length > 0) {
       const enList = ldEnglishScript.map((s) => cleanText(s.en)).filter(Boolean);
       if (enList.length > 0) return enList;
-      const koList = ldEnglishScript.map((s) => cleanText(s.ko)).filter(Boolean);
-      if (koList.length > 0) return koList;
     }
     const hints = targetBlocks.find((b) => b.type === "hints") as { type: "hints"; text: string } | undefined;
     if (hints?.text) {

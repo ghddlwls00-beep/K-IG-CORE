@@ -303,23 +303,7 @@ export function GrammarLearningView({
     });
   }
 
-  function playKorean(text: string, id?: number) {
-    if (!text) return;
-    const koId = id !== undefined ? -id - 1 : -999;
-    if (activeSpeakingId === koId) {
-      stopSpeech();
-      setActiveSpeakingId(null);
-      return;
-    }
-    stopSpeech();
-    setActiveSpeakingId(koId);
-    speakText(text, {
-      lang: "ko",
-      rate: 1.0,
-      onEnd: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
-      onError: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
-    });
-  }
+
 
   // Self Grading & Answer Handlers
   function handleAnswerChange(id: number, val: string) {
@@ -701,19 +685,6 @@ export function GrammarLearningView({
                     </div>
 
                     <div className="flex items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => playKorean(item.koreanText, item.id)}
-                        className={`flex items-center gap-1 rounded-md border px-2 py-1 text-[11.5px] transition-colors cursor-pointer ${
-                          activeSpeakingId === -item.id - 1
-                            ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
-                            : "border-line text-ink-soft hover:bg-raised"
-                        }`}
-                        title={activeSpeakingId === -item.id - 1 ? "우리말 듣기 정지" : "우리말 듣기"}
-                      >
-                        <span>{activeSpeakingId === -item.id - 1 ? "⏹️" : "🔊"}</span>
-                        <span className="hidden sm:inline">우리말</span>
-                      </button>
                       <button
                         type="button"
                         onClick={() => playEnglish(item.englishText, item.id)}

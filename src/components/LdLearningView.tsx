@@ -158,7 +158,7 @@ export function LdLearningView({
     setRevealedEn(updated);
   }
 
-  function toggleSpeak(text: string, lang: "ko" | "en" = "en", rate = 0.95) {
+  function toggleSpeak(text: string, lang: "en" = "en", rate = 0.95) {
     if (!text) return;
     if (playingText === text) {
       stopSpeech();
@@ -175,9 +175,7 @@ export function LdLearningView({
     });
   }
 
-  function speakKorean(text: string) {
-    toggleSpeak(text, "ko", 0.95);
-  }
+
 
   function speakEnglish(text: string) {
     toggleSpeak(text, "en", 0.95);
@@ -353,18 +351,6 @@ export function LdLearningView({
                     <div className="flex shrink-0 items-center gap-1.5">
                       <button
                         type="button"
-                        onClick={() => speakKorean(item.ko)}
-                        title={isPlayingKo ? "한글 음성 정지" : "한글 음성 듣기"}
-                        className={`rounded p-1.5 transition-colors cursor-pointer ${
-                          isPlayingKo
-                            ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold"
-                            : "text-ink-faint hover:bg-raised hover:text-ink"
-                        }`}
-                      >
-                        {isPlayingKo ? "⏹️" : "🔊"}
-                      </button>
-                      <button
-                        type="button"
                         onClick={() => toggleComplete(idx)}
                         className={
                           "flex items-center gap-1 rounded px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer " +
@@ -472,18 +458,6 @@ export function LdLearningView({
                           </span>
                           {s.ko}
                         </p>
-                        <button
-                          type="button"
-                          onClick={() => speakKorean(s.ko)}
-                          title={isPlayingKo ? "한글 음성 정지" : "한글 음성 듣기"}
-                          className={`shrink-0 text-[11px] cursor-pointer p-1 rounded transition-colors ${
-                            isPlayingKo
-                              ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold"
-                              : "text-ink-faint hover:text-ink"
-                          }`}
-                        >
-                          {isPlayingKo ? "⏹️" : "🔊"}
-                        </button>
                       </div>
                       {s.en ? (
                         <div className="mt-2 rounded bg-emerald-500/10 border border-emerald-500/20 p-2.5 text-emerald-950 dark:text-emerald-200">

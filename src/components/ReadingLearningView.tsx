@@ -123,31 +123,6 @@ export function ReadingLearningView({
     });
   }
 
-  function playSentenceKo(text: string, idx: number) {
-    if (!text) return;
-    if (playingSentence === idx && playingLang === "ko") {
-      stopSpeech();
-      setPlayingSentence(null);
-      setPlayingLang(null);
-      return;
-    }
-    stopSpeech();
-    setPinnedSentence(idx);
-    setPlayingSentence(idx);
-    setPlayingLang("ko");
-    speakText(text, {
-      lang: "ko",
-      rate: 0.95,
-      onEnd: () => {
-        setPlayingSentence((curr) => (curr === idx ? null : curr));
-        setPlayingLang(null);
-      },
-      onError: () => {
-        setPlayingSentence((curr) => (curr === idx ? null : curr));
-        setPlayingLang(null);
-      },
-    });
-  }
 
   function toggleRevealTranslation(idx: number) {
     setRevealedTranslations((prev) => ({ ...prev, [idx]: !prev[idx] }));
@@ -337,17 +312,6 @@ export function ReadingLearningView({
                     </button>
                     <button
                       type="button"
-                      onClick={() => playSentenceKo(sentencePairs[pinnedSentence].ko, pinnedSentence)}
-                      className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11.5px] font-medium transition-colors cursor-pointer ${
-                        playingSentence === pinnedSentence && playingLang === "ko"
-                          ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
-                          : "border-line bg-surface text-ink hover:bg-raised"
-                      }`}
-                    >
-                      <span>{playingSentence === pinnedSentence && playingLang === "ko" ? "⏹️ 정지" : "🔊 해석 듣기"}</span>
-                    </button>
-                    <button
-                      type="button"
                       onClick={() => setPinnedSentence(null)}
                       className="rounded p-1 text-ink-faint hover:text-ink hover:bg-surface cursor-pointer"
                       title="닫기"
@@ -431,7 +395,6 @@ export function ReadingLearningView({
                     key={idx}
                     onClick={() => {
                       setPinnedSentence((prev) => (prev === idx ? null : idx));
-                      playSentenceKo(pair.ko, idx);
                     }}
                     className={
                       "inline cursor-pointer rounded px-1.5 py-0.5 transition-all duration-150 " +

@@ -138,6 +138,12 @@ export function speakText(
   const clean = text.replace(/\s*\/\s*/g, " ").trim();
   if (!clean) return;
 
+  // Global policy: Completely disable and suppress all Korean (우리말/한글) TTS
+  if (options.lang === "ko") {
+    options.onEnd?.();
+    return;
+  }
+
   // Ensure speech synthesis engine is awake (critical for iOS Safari)
   try {
     if (window.speechSynthesis.paused) {

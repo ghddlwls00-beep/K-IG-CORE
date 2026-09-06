@@ -412,25 +412,7 @@ export function DialogueLearningView({
     });
   }
 
-  function playKoreanSnippet(text: string, id?: number) {
-    if (!text) return;
-    const koId = id !== undefined ? -id - 1 : -999;
-    if (activeSpeakingId === koId) {
-      stopSpeech();
-      setActiveSpeakingId(null);
-      return;
-    }
-    stopSpeech();
-    setActiveSpeakingId(koId);
-    speakText(text, {
-      lang: "ko",
-      gender: effectiveGender,
-      rate: 0.95,
-      pitch: defaultPitch,
-      onEnd: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
-      onError: () => setActiveSpeakingId((curr) => (curr === koId ? null : curr)),
-    });
-  }
+
 
   // 3-Step Shadowing Progression Handler
   function advanceShadowingStep(id: number, text: string, audioSrc?: string) {
@@ -901,20 +883,6 @@ export function DialogueLearningView({
                     </div>
 
                     <div className="flex items-center gap-1.5">
-                      {item.koreanText && (
-                        <button
-                          type="button"
-                          onClick={() => playKoreanSnippet(item.koreanText, item.id)}
-                          className={`rounded-md border px-2 py-1 text-[11.5px] transition-colors cursor-pointer ${
-                            activeSpeakingId === -item.id - 1
-                              ? "border-red-500/50 bg-red-500/10 text-red-600 dark:text-red-400 font-semibold"
-                              : "border-line text-ink-soft hover:bg-raised"
-                          }`}
-                          title={activeSpeakingId === -item.id - 1 ? "우리말 음성 정지" : "우리말 음성 듣기"}
-                        >
-                          {activeSpeakingId === -item.id - 1 ? "⏹️ 정지" : "🔊 우리말"}
-                        </button>
-                      )}
                       <button
                         type="button"
                         onClick={() => playAudioSnippet(item.englishText, item.id, item.audioSrc)}
