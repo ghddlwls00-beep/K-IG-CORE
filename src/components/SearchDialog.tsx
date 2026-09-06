@@ -3,12 +3,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
-interface SearchItem {
+export interface SearchItem {
   id: string;
   course: string;
   courseTitle: string;
-  label: string;
+  code: string;
   title: string;
+  subtitle: string;
+  badge?: string;
+  searchText: string;
 }
 
 export function SearchDialog() {
@@ -39,9 +42,7 @@ export function SearchDialog() {
   // Global hotkeys: Cmd+K / Ctrl+K / '/'
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (
-        (e.metaKey || e.ctrlKey) && e.key === "k"
-      ) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setOpen((prev) => !prev);
       } else if (e.key === "/" && !open) {
@@ -76,20 +77,19 @@ export function SearchDialog() {
     }
   }, [open]);
 
-  // Filtered results
+  // Filtered results by multiple words and curriculum titles
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return items.slice(0, 8); // show first 8 items by default
+    if (!q) return items.slice(0, 10);
+
+    const tokens = q.split(/\s+/).filter(Boolean);
 
     return items
-      .filter(
-        (it) =>
-          it.id.toLowerCase().includes(q) ||
-          it.label.toLowerCase().includes(q) ||
-          it.courseTitle.toLowerCase().includes(q) ||
-          it.title.toLowerCase().includes(q)
-      )
-      .slice(0, 15);
+      .filter((it) => {
+        const text = it.searchText;
+        return tokens.every((tok) => text.includes(tok));
+      })
+      .slice(0, 20);
   }, [items, query]);
 
   // Reset selected index when query changes
@@ -99,7 +99,10 @@ export function SearchDialog() {
 
   // Handle keyboard navigation within results
   function handleInputKeyDown(e: React.KeyboardEvent) {
-    if (e.key === "ArrowDown") {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      setOpen(false);
+    } else if (e.key === "ArrowDown") {
       e.preventDefault();
       setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : 0));
     } else if (e.key === "ArrowUp") {
@@ -141,7 +144,7 @@ export function SearchDialog() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-start justify-center pt-[12vh] px-4 bg-black/50 backdrop-blur-xs animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-start justify-center pt-[10vh] px-4 bg-black/60 backdrop-blur-xs animate-in fade-in"
           onClick={() => setOpen(false)}
         >
           <div
@@ -150,44 +153,58 @@ export function SearchDialog() {
           >
             {/* Search Input Bar */}
             <div className="flex items-center gap-3 border-b border-line px-4 py-3.5 bg-raised/40">
-              <span className="text-ink-soft text-[16px]">🔍</span>
+              <span className="text-ink-soft text-[16px] shrink-0">🔍</span>
               <input
                 ref={inputRef}
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleInputKeyDown}
-                placeholder="레슨 번호나 키워드를 입력하세요... (예: d001, mv1-01, gh1, 문법)"
+                placeholder="단어, 문법, 듣기, 독해, 뉴스 또는 레슨 번호 검색 (예: 중등, 1강, 수능, MV1)"
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
                 className="w-full bg-transparent text-[14.5px] text-ink placeholder:text-ink-faint focus:outline-none"
               />
+
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
-                  className="text-[11px] text-ink-faint hover:text-ink cursor-pointer px-1"
+                  className="text-[12px] text-ink-faint hover:text-ink cursor-pointer px-1 shrink-0"
+                  title="검색어 지우기"
                 >
                   ✕
                 </button>
               )}
-              <kbd className="rounded border border-line bg-surface px-1.5 py-0.5 font-mono text-[10px] text-ink-faint">
-                ESC
-              </kbd>
+
+              {/* Explicit Clickable Close / Exit Button */}
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-1 rounded-lg border border-line bg-surface px-2.5 py-1 text-[12px] font-medium text-ink-soft hover:bg-raised hover:text-ink cursor-pointer transition-colors shrink-0"
+                title="창 닫기 (ESC)"
+                aria-label="창 닫기"
+              >
+                <span>✕</span>
+                <span className="hidden sm:inline">닫기</span>
+              </button>
             </div>
 
             {/* Search Results List */}
             <div className="max-h-[60vh] overflow-y-auto p-2">
               {loading ? (
-                <div className="py-8 text-center text-[13px] text-ink-soft">
+                <div className="py-10 text-center text-[13px] text-ink-soft">
                   검색 인덱스를 불러오는 중입니다…
                 </div>
               ) : results.length === 0 ? (
-                <div className="py-8 text-center text-[13px] text-ink-soft">
-                  <p className="font-semibold text-ink">검색 결과가 없습니다.</p>
-                  <p className="mt-1 text-[12px] text-ink-faint">
-                    &apos;{query}&apos;에 해당하는 레슨을 찾을 수 없습니다.
+                <div className="py-10 text-center text-[13px] text-ink-soft flex flex-col items-center gap-1.5">
+                  <p className="font-semibold text-ink text-[14px]">검색 결과가 없습니다.</p>
+                  <p className="text-[12px] text-ink-faint">
+                    &apos;{query}&apos;에 해당하는 학습 과정을 찾을 수 없습니다.
+                  </p>
+                  <p className="text-[11.5px] text-ink-faint mt-1">
+                    추천 검색어: <span className="font-medium text-primary">중등 단어, 고등, 1강, 패턴, 수능 듣기, 독해</span>
                   </p>
                 </div>
               ) : (
@@ -202,13 +219,13 @@ export function SearchDialog() {
                           onMouseEnter={() => setSelectedIndex(idx)}
                           className={`flex w-full items-center justify-between gap-3 rounded-xl px-3.5 py-2.5 text-left transition-colors cursor-pointer ${
                             isSelected
-                              ? "bg-primary text-surface font-medium"
+                              ? "bg-primary text-surface font-medium shadow-xs"
                               : "hover:bg-raised text-ink"
                           }`}
                         >
                           <div className="flex items-center gap-3 min-w-0">
                             <span
-                              className={`rounded-md px-2 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider ${
+                              className={`shrink-0 rounded-md px-2 py-0.5 font-mono text-[10.5px] font-bold uppercase tracking-wider ${
                                 isSelected
                                   ? "bg-surface/20 text-surface"
                                   : "bg-raised text-ink-soft"
@@ -217,32 +234,45 @@ export function SearchDialog() {
                               {item.courseTitle}
                             </span>
                             <div className="flex flex-col min-w-0">
-                              <span className="truncate text-[13.5px] font-semibold">
-                                {item.label}
-                              </span>
-                              {item.title && item.title !== item.label && (
+                              <div className="flex items-center gap-2">
+                                <span
+                                  className={`font-mono text-[11.5px] font-bold ${
+                                    isSelected ? "text-surface" : "text-primary"
+                                  }`}
+                                >
+                                  {item.code}
+                                </span>
+                                <span className="truncate text-[13.5px] font-semibold">
+                                  {item.title}
+                                </span>
+                              </div>
+                              {item.subtitle ? (
                                 <span
                                   className={`truncate text-[11.5px] ${
                                     isSelected ? "text-surface/80" : "text-ink-soft"
                                   }`}
                                 >
-                                  {item.title}
+                                  {item.subtitle}
                                 </span>
-                              )}
+                              ) : null}
                             </div>
                           </div>
 
                           <div className="flex items-center gap-2 shrink-0">
-                            <span
-                              className={`font-mono text-[11px] tabular-nums ${
-                                isSelected ? "text-surface/80" : "text-ink-faint"
-                              }`}
-                            >
-                              {item.id}
-                            </span>
+                            {item.badge && (
+                              <span
+                                className={`hidden sm:inline rounded px-1.5 py-0.5 text-[10px] font-medium ${
+                                  isSelected
+                                    ? "bg-surface/20 text-surface"
+                                    : "bg-raised text-ink-faint"
+                                }`}
+                              >
+                                {item.badge}
+                              </span>
+                            )}
                             <span
                               className={`text-[12px] ${
-                                isSelected ? "text-surface" : "text-ink-faint"
+                                isSelected ? "text-surface font-bold" : "text-ink-faint"
                               }`}
                             >
                               →
@@ -256,10 +286,19 @@ export function SearchDialog() {
               )}
             </div>
 
-            {/* Footer shortcuts tip */}
+            {/* Footer shortcuts and Exit Button */}
             <div className="flex items-center justify-between border-t border-line/60 bg-raised/30 px-4 py-2 text-[11px] text-ink-faint font-mono">
-              <span>↑↓ 탐색</span>
-              <span>↵ 선택 즉시 이동</span>
+              <div className="flex items-center gap-3">
+                <span>↑↓ 탐색</span>
+                <span>↵ 선택 즉시 이동</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="hover:text-ink cursor-pointer underline text-[11px]"
+              >
+                닫기 (ESC)
+              </button>
             </div>
           </div>
         </div>
