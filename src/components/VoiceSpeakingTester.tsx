@@ -99,6 +99,8 @@ export function VoiceSpeakingTester({
     );
   }
 
+  const cleanLabel = buttonLabel.replace(/^🎙️\s*/, "");
+
   return (
     <div className="flex flex-col gap-2">
       {/* Trigger & Status Button */}
@@ -126,7 +128,7 @@ export function VoiceSpeakingTester({
               ? "듣고 있는 중... (말씀하세요)"
               : result
               ? `${result.score}점 (${result.ratingLabel})`
-              : buttonLabel}
+              : cleanLabel}
           </span>
         </button>
 

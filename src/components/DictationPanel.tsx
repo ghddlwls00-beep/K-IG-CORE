@@ -40,9 +40,15 @@ export function DictationPanel({
         setChoice(saved.choice ?? null);
         setText(saved.text ?? "");
         setSavedAt(saved.at ?? null);
+      } else {
+        setChoice(null);
+        setText("");
+        setSavedAt(null);
       }
     } catch {
-      // ignore storage errors
+      setChoice(null);
+      setText("");
+      setSavedAt(null);
     }
     setRestored(true);
   }, [key]);

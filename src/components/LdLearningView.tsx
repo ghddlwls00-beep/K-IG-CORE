@@ -92,13 +92,21 @@ export function LdLearningView({
       const raw = window.localStorage.getItem(storageKey);
       if (raw) {
         const data = JSON.parse(raw);
-        if (data.sentenceAnswers) setSentenceAnswers(data.sentenceAnswers);
-        if (data.completedSentences) setCompletedSentences(data.completedSentences);
-        if (data.fullEssay) setFullEssay(data.fullEssay);
-        if (data.at) setSavedAt(data.at);
+        setSentenceAnswers(data.sentenceAnswers || {});
+        setCompletedSentences(data.completedSentences || {});
+        setFullEssay(data.fullEssay || "");
+        setSavedAt(data.at || null);
+      } else {
+        setSentenceAnswers({});
+        setCompletedSentences({});
+        setFullEssay("");
+        setSavedAt(null);
       }
     } catch {
-      // ignore
+      setSentenceAnswers({});
+      setCompletedSentences({});
+      setFullEssay("");
+      setSavedAt(null);
     }
     setRestored(true);
   }, [storageKey]);

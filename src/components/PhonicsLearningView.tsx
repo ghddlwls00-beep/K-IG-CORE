@@ -17,7 +17,9 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
     | undefined;
 
   const rows = wordgridBlock?.rows ?? [];
-  const words = useMemo(() => rows.flat().filter(Boolean), [rows]);
+  const words = useMemo(() => {
+    return rows.flat().map((w) => w?.trim()).filter(Boolean) as string[];
+  }, [rows]);
 
   const [activeWord, setActiveWord] = useState<string | null>(null);
   const [selectedWord, setSelectedWord] = useState<string>(words[0] || "");
@@ -43,19 +45,35 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
   // Local storage key for memorized checklist
   const storageKey = `kig:voca:memorized:${lessonKey}`;
 
+  // Restore memorized words on lesson change
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(storageKey);
-      if (raw) setMemorizedWords(JSON.parse(raw));
+      setMemorizedWords(raw ? JSON.parse(raw) : {});
     } catch {
-      // ignore
+      setMemorizedWords({});
     }
   }, [storageKey]);
 
+  // Keep selectedWord valid when words change
+  useEffect(() => {
+    if (words.length > 0) {
+      if (!selectedWord || !words.includes(selectedWord)) {
+        setSelectedWord(words[0]);
+      }
+    } else {
+      setSelectedWord("");
+    }
+    setCardIndex(0);
+  }, [words, lessonKey]);
+
   function toggleMemorized(word: string, e?: React.MouseEvent) {
     e?.stopPropagation();
+    const cleanWord = word?.trim();
+    if (!cleanWord) return;
+
     setMemorizedWords((prev) => {
-      const next = { ...prev, [word]: !prev[word] };
+      const next = { ...prev, [cleanWord]: !prev[cleanWord] };
       try {
         window.localStorage.setItem(storageKey, JSON.stringify(next));
       } catch {
@@ -63,6 +81,24 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
       }
       return next;
     });
+  }
+
+  function markAllMemorized() {
+    const next: Record<string, boolean> = {};
+    for (const w of words) {
+      next[w] = true;
+    }
+    setMemorizedWords(next);
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(next));
+    } catch {}
+  }
+
+  function resetAllMemorized() {
+    setMemorizedWords({});
+    try {
+      window.localStorage.removeItem(storageKey);
+    } catch {}
   }
 
   function stopRowPlayback() {
@@ -130,12 +166,16 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
         } else if (selectedWord) {
           playWord(selectedWord);
         }
+      } else if (e.key === "m" || e.key === "M") {
+        e.preventDefault();
+        const target = viewTab === "cards" ? words[cardIndex] : selectedWord;
+        if (target) toggleMemorized(target);
       }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [viewTab, words, selectedWord, cardIndex, isPlayingAll]);
+  }, [viewTab, words, selectedWord, cardIndex, isPlayingAll, storageKey]);
 
   function getMeaning(word: string): string {
     if (!word) return "";
@@ -316,13 +356,24 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
     <div className="flex flex-col gap-6 notranslate" translate="no">
       {/* 1. Header Toolbar & Progress */}
       <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-line bg-surface p-5 shadow-xs">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col gap-1.5">
+          <div className="flex flex-wrap items-center gap-2.5">
             <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-ink-faint">
               Vocabulary Matrix ({words.length} Words)
             </span>
-            <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
-              암기 완료: {memorizedCount} / {words.length}
+            <span
+              className={`rounded-full px-2.5 py-0.5 text-[11.5px] font-bold transition-all ${
+                memorizedCount === words.length && words.length > 0
+                  ? "bg-emerald-500 text-white shadow-xs"
+                  : "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
+              }`}
+            >
+              {memorizedCount === words.length && words.length > 0
+                ? `🎉 ${words.length}단어 전체 암기 완료!`
+                : `암기 완료: ${memorizedCount} / ${words.length}`}
+            </span>
+            <span className="font-mono text-[11px] text-ink-faint">
+              (단축키: M 키로 선택 단어 암기 토글)
             </span>
           </div>
           <span className="text-[13.5px] font-medium text-ink">
@@ -332,6 +383,28 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
 
         {/* Action Controls */}
         <div className="flex flex-wrap items-center gap-2.5">
+          {/* Bulk Memorize / Reset */}
+          <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={markAllMemorized}
+              className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-[12px] font-bold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20 transition-all cursor-pointer shadow-2xs"
+              title="현재 레슨의 모든 단어를 암기 완료로 일괄 체크"
+            >
+              ✓ 전체 암기
+            </button>
+            {memorizedCount > 0 && (
+              <button
+                type="button"
+                onClick={resetAllMemorized}
+                className="rounded-xl border border-line bg-surface px-2.5 py-1.5 text-[12px] font-medium text-ink-soft hover:text-ink hover:bg-raised transition-all cursor-pointer"
+                title="암기 체크 전체 초기화"
+              >
+                ↺ 초기화
+              </button>
+            )}
+          </div>
+
           {/* View Mode Switcher */}
           <div className="flex items-center rounded-xl border border-line bg-raised/70 p-1 text-[12px]">
             <button
@@ -385,7 +458,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              0.8x 느리게
+              0.8x
             </button>
             <button
               type="button"
@@ -396,7 +469,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              1.0x 보통
+              1.0x
             </button>
             <button
               type="button"
@@ -407,7 +480,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              1.2x 빠르게
+              1.2x
             </button>
           </div>
 
@@ -454,19 +527,25 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
               <button
                 type="button"
                 onClick={(e) => toggleMemorized(selectedWord, e)}
-                className={`flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-[12.5px] font-bold transition-colors cursor-pointer ${
+                className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-[13px] font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
                   memorizedWords[selectedWord]
-                    ? "border-emerald-600 bg-emerald-600 text-white"
-                    : "border-line bg-surface text-ink hover:bg-raised"
+                    ? "bg-emerald-600 text-white hover:bg-emerald-700 ring-2 ring-emerald-600/30"
+                    : "border-2 border-emerald-500/50 bg-surface text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 hover:border-emerald-600"
                 }`}
+                title={memorizedWords[selectedWord] ? "암기 완료 취소" : "암기 완료로 체크"}
               >
-                <span>{memorizedWords[selectedWord] ? "✓ 암기 완료" : "○ 암기 체크"}</span>
+                <span className="text-[14px]">
+                  {memorizedWords[selectedWord] ? "✓" : "○"}
+                </span>
+                <span>
+                  {memorizedWords[selectedWord] ? "암기 완료됨" : "암기 체크"}
+                </span>
               </button>
 
               <button
                 type="button"
                 onClick={() => playWord(selectedWord)}
-                className="flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-[13px] font-bold text-white shadow-xs hover:bg-indigo-700 transition-colors cursor-pointer"
+                className="flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-[13px] font-bold text-white shadow-xs hover:bg-indigo-700 transition-colors cursor-pointer"
               >
                 <span>🔊 발음 듣기</span>
               </button>
@@ -477,7 +556,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
           <div className="pt-3 border-t border-indigo-500/20">
             <VoiceSpeakingTester
               targetText={selectedWord}
-              buttonLabel="🎙️ 내 발음 정밀 테스트"
+              buttonLabel="내 발음 정밀 테스트"
             />
           </div>
         </div>
@@ -624,11 +703,13 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                       <div
                         key={cIdx}
                         onClick={() => playWord(w)}
-                        className={`group relative flex flex-col justify-between rounded-xl border p-3 transition-all cursor-pointer text-center min-h-[82px] ${
+                        className={`group relative flex flex-col justify-between rounded-xl border p-3 transition-all cursor-pointer text-center min-h-[84px] select-none ${
                           isActive
                             ? "border-indigo-600 bg-indigo-600 text-white scale-105 shadow-md z-10"
                             : isSelected
                             ? "border-indigo-500 bg-indigo-500/10 text-ink ring-2 ring-indigo-500/40 shadow-xs"
+                            : isMemorized
+                            ? "border-emerald-500/40 bg-emerald-500/[0.04] text-ink hover:border-emerald-500 hover:bg-emerald-500/[0.08]"
                             : "border-line bg-surface text-ink hover:border-line-strong hover:bg-raised/40"
                         }`}
                       >
@@ -637,15 +718,19 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                           <button
                             type="button"
                             onClick={(e) => toggleMemorized(w, e)}
-                            className="-m-2 p-2 rounded-full flex items-center justify-center cursor-pointer transition-transform active:scale-90"
+                            className="p-1 -m-1 rounded-full flex items-center justify-center cursor-pointer transition-transform active:scale-90"
                             title={isMemorized ? "암기 완료 취소" : "암기 완료 체크"}
                             aria-label={isMemorized ? "암기 완료 취소" : "암기 완료 체크"}
                           >
                             <span
-                              className={`h-[18px] w-[18px] rounded-full flex items-center justify-center text-[9.5px] font-bold transition-colors ${
+                              className={`h-[20px] w-[20px] rounded-full flex items-center justify-center text-[10px] font-bold transition-all ${
                                 isMemorized
-                                  ? isActive ? "bg-white text-indigo-600 shadow-2xs" : "bg-emerald-600 text-white shadow-2xs"
-                                  : isActive ? "border border-white/60 text-white" : "border border-line-strong/50 text-transparent hover:text-ink-faint"
+                                  ? isActive
+                                    ? "bg-white text-indigo-600 shadow-2xs"
+                                    : "bg-emerald-600 text-white shadow-2xs scale-105"
+                                  : isActive
+                                  ? "border-2 border-white/70 text-transparent hover:text-white"
+                                  : "border-2 border-black/20 dark:border-white/25 text-transparent hover:border-emerald-500 hover:text-emerald-600"
                               }`}
                             >
                               ✓
@@ -670,6 +755,8 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                                   ? "text-indigo-100"
                                   : isSelected
                                   ? "text-indigo-700 dark:text-indigo-300 font-semibold"
+                                  : isMemorized
+                                  ? "text-emerald-700 dark:text-emerald-400 font-medium"
                                   : "text-ink-soft group-hover:text-ink"
                               }`}
                             >

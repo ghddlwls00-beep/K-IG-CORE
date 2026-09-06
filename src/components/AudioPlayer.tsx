@@ -210,6 +210,15 @@ export function AudioPlayer({
           {isTtsMode ? "이전 문장" : "−5s"}
         </button>
 
+        <button
+          type="button"
+          onClick={() => seek(5)}
+          aria-label="앞으로 5초 이동"
+          className="px-2.5 py-1 font-mono text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer"
+        >
+          {isTtsMode ? "다음 문장" : "+5s"}
+        </button>
+
         {isTtsMode ? (
           <div className="flex-1 px-2">
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-black/[0.06]">

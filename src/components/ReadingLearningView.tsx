@@ -61,11 +61,15 @@ export function ReadingLearningView({
       const raw = window.localStorage.getItem(storageKey);
       if (raw) {
         const data = JSON.parse(raw);
-        if (data.notes) setNotes(data.notes);
-        if (data.at) setSavedAt(data.at);
+        setNotes(data.notes || "");
+        setSavedAt(data.at || null);
+      } else {
+        setNotes("");
+        setSavedAt(null);
       }
     } catch {
-      // ignore
+      setNotes("");
+      setSavedAt(null);
     }
     setRestored(true);
   }, [storageKey]);
