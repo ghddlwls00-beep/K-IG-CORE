@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import type { Tab } from "@/lib/types";
 import { useLanguage, useTheme } from "./LanguageProvider";
 import { TAB_IMAGES } from "@/lib/tabImages";
@@ -70,24 +69,11 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
 }
 
 export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
-  const router = useRouter();
-  const [, startTransition] = useTransition();
   const { lang, setLang } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
   const [scrollActive, setScrollActive] = useState(0);
-  const [openTabSlug, setOpenTabSlug] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape" && openTabSlug) {
-        setOpenTabSlug(null);
-      }
-    }
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [openTabSlug]);
 
   // One wheel gesture moves one whole section. Without this a 100vh section
   // creeps a few pixels per notch and the snap keeps pulling it back, which is
@@ -139,8 +125,6 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       behavior: "smooth",
     });
   };
-
-  const selectedTab = tabs.find((t) => t.slug === openTabSlug) ?? null;
 
   return (
     <div className="relative flex h-screen flex-col overflow-hidden bg-surface text-ink antialiased select-none">
@@ -237,28 +221,30 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                     : ""}
               </p>
 
-              <h2 className="text-[clamp(60px,8.25vw,96px)] font-medium leading-[1.08] tracking-[-0.01em] text-ink">
-                {tab.label}
-              </h2>
+              {(() => {
+                const targetCourse = tab.courseDetails[0]?.slug ?? tab.courses[0];
+                return (
+                  <>
+                    <h2 className="text-[clamp(60px,8.25vw,96px)] font-medium leading-[1.08] tracking-[-0.01em] text-ink">
+                      <Link
+                        href={`/${targetCourse}`}
+                        className="transition-opacity hover:opacity-80"
+                      >
+                        {tab.label}
+                      </Link>
+                    </h2>
 
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => {
-                    const targetCourse = tab.courseDetails[0]?.slug;
-                    if (targetCourse) {
-                      startTransition(() => {
-                        router.push(`/${targetCourse}`);
-                      });
-                    } else {
-                      setOpenTabSlug(tab.slug);
-                    }
-                  }}
-                  className="inline-flex cursor-pointer items-center gap-2 border border-ink bg-surface px-8 py-3.5 text-[19.5px] tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-surface"
-                >
-                  ENTER →
-                </button>
-              </div>
+                    <div className="mt-8">
+                      <Link
+                        href={`/${targetCourse}`}
+                        className="inline-flex cursor-pointer items-center gap-2 border border-ink bg-surface px-8 py-3.5 text-[19.5px] tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-surface"
+                      >
+                        ENTER →
+                      </Link>
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           </section>
         ))}
@@ -287,101 +273,6 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           );
         })}
       </nav>
-
-      {/* Section Detail Overlay Modal */}
-      {selectedTab && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={selectedTab.label}
-          className="fixed inset-0 z-50 flex flex-col justify-center overflow-y-auto bg-surface px-[9vw] py-12 text-ink select-text"
-          style={{ animation: "fadeIn var(--dur-slow) var(--ease) both" }}
-        >
-          <SectionPhoto slug={selectedTab.slug} priority />
-
-          <button
-            type="button"
-            onClick={() => setOpenTabSlug(null)}
-            className="absolute top-8 left-[9vw] z-20 cursor-pointer border-none bg-transparent p-0 font-mono text-[11px] tracking-wider text-ink-soft transition-colors hover:text-ink"
-          >
-            ← BACK TO SECTIONS
-          </button>
-
-          <div className="relative z-10 max-w-[820px]">
-            <p className="mb-4 font-mono text-[11px] tracking-[0.24em] text-ink-faint uppercase">
-              {selectedTab.num}
-            </p>
-
-            <h2 className="mb-6 max-w-[640px] text-[clamp(36px,5vw,56px)] font-medium leading-tight text-ink">
-              {selectedTab.label}
-            </h2>
-
-            {selectedTab.unavailable && (
-              <div className="mb-8 max-w-[560px] border border-line bg-surface p-6 text-[13.5px] leading-relaxed text-ink-soft">
-                <p className="mb-2 font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase">
-                  Archive Material Notice
-                </p>
-                <p>{selectedTab.unavailable}</p>
-                {selectedTab.legacyModules && selectedTab.legacyModules.length > 0 && (
-                  <div className="mt-4">
-                    <p className="mb-2 font-mono text-[10px] tracking-wider text-ink-faint uppercase">
-                      Included Modules:
-                    </p>
-                    <ul className="flex flex-col gap-1 text-[13px] text-ink-soft">
-                      {selectedTab.legacyModules.map((mod) => (
-                        <li key={mod}>• {mod}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {selectedTab.courseDetails && selectedTab.courseDetails.length > 0 && (
-              <div className="flex max-w-[820px] flex-wrap gap-4">
-                {selectedTab.courseDetails.map((course) => (
-                  <button
-                    key={course.slug}
-                    type="button"
-                    onClick={() => {
-                      startTransition(() => {
-                        router.push(`/${course.slug}`);
-                      });
-                    }}
-                    className="group relative w-full cursor-pointer border border-line bg-surface p-6 text-left transition-colors duration-200 hover:border-ink hover:bg-raised sm:w-[380px]"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="text-[16px] font-medium tracking-tight text-ink group-hover:text-ink">
-                        {course.titleEn || course.title}
-                      </div>
-                      <span className="font-mono text-sm text-ink-faint transition-transform duration-200 group-hover:translate-x-1 group-hover:text-ink">
-                        →
-                      </span>
-                    </div>
-                    {course.title && course.title !== course.titleEn && (
-                      <div className="mt-1 font-mono text-[11px] text-ink-faint">
-                        {course.title}
-                      </div>
-                    )}
-                    <p className="mt-2 text-[13px] leading-relaxed text-ink-soft">
-                      {course.description}
-                    </p>
-                  </button>
-                ))}
-              </div>
-            )}
-
-            <div className="mt-8">
-              <Link
-                href={`/t/${selectedTab.slug}`}
-                className="font-mono text-[11px] tracking-wider text-ink-soft hover:text-ink hover:underline"
-              >
-                View all lessons in {selectedTab.label} →
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
