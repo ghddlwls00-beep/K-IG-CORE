@@ -61,7 +61,10 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             </div>
 
             {/* Desktop Navigation (md+) */}
-            <nav aria-label="Courses" className="hidden md:flex items-center justify-center gap-1 overflow-x-auto">
+            <nav
+              aria-label="Courses"
+              className="no-scrollbar hidden md:flex items-center justify-center gap-1 overflow-x-auto overflow-y-hidden py-1"
+            >
               {ordered.map((tab) => {
                 const active = activeTab === tab.slug;
                 const targetUrl = tab.courses[0] ? `/${tab.courses[0]}` : `/t/${tab.slug}`;
@@ -71,7 +74,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                     href={targetUrl}
                     aria-current={active ? "page" : undefined}
                     className={
-                      "relative shrink-0 px-3 py-1.5 text-[12.5px] whitespace-nowrap transition-colors " +
+                      "relative shrink-0 px-3 py-1.5 text-[12.5px] whitespace-nowrap transition-colors select-none " +
                       (active
                         ? "font-semibold text-ink"
                         : "font-normal text-ink-soft hover:text-ink")
@@ -81,7 +84,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                     <span
                       aria-hidden
                       className={
-                        "absolute inset-x-3 -bottom-px h-px origin-left bg-ink transition-transform duration-200 ease-out " +
+                        "absolute inset-x-3 bottom-0 h-[2px] origin-left bg-ink transition-transform duration-200 ease-out " +
                         (active ? "scale-x-100" : "scale-x-0")
                       }
                     />
