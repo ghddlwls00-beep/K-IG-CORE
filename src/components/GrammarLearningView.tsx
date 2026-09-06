@@ -480,7 +480,7 @@ export function GrammarLearningView({
               }
             >
               <span>🧩</span>
-              <span>Step 2 · 캠브리지 뉘앙스 대조</span>
+              <span>Step 2 · 문법 패턴 빈칸 완성</span>
             </button>
 
             <button
