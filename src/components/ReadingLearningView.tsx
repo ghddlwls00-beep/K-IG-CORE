@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useRef } from "react";
+import { useEffect, useMemo, useState, useRef, memo, useCallback } from "react";
 import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
 import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
@@ -26,6 +26,139 @@ interface ReadingLearningViewProps {
   readingSentences?: ReadingSentence[] | null;
   readingVocabulary?: ReadingVocabularyItem[] | null;
 }
+
+// ---------------------------------------------------------------------------
+// Isolated Micro-Component: WPM Stopwatch Bar
+// Encapsulates 1-second interval ticks so the 1,300-line reading view never re-renders
+// ---------------------------------------------------------------------------
+const WpmStopwatchBar = memo(function WpmStopwatchBar({
+  wordCount,
+  bestWpm,
+  wpmStorageKey,
+  onFinish,
+  onReset,
+}: {
+  wordCount: number;
+  bestWpm: number | null;
+  wpmStorageKey: string;
+  onFinish: (wpm: number, seconds: number) => void;
+  onReset: () => void;
+}) {
+  const [running, setRunning] = useState(false);
+  const [elapsed, setElapsed] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (running) {
+      timerRef.current = setInterval(() => {
+        setElapsed((prev) => prev + 1);
+      }, 1000);
+    } else if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [running]);
+
+  function start() {
+    unlockMobileAudio();
+    stopSpeech();
+    setElapsed(0);
+    setRunning(true);
+  }
+
+  function finish() {
+    setRunning(false);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    const finalSeconds = Math.max(1, elapsed);
+    const calculated = Math.round((wordCount / finalSeconds) * 60);
+    if (!bestWpm || calculated > bestWpm) {
+      try {
+        window.localStorage.setItem(wpmStorageKey, String(calculated));
+      } catch {
+        // ignore
+      }
+    }
+    onFinish(calculated, finalSeconds);
+  }
+
+  function reset() {
+    setRunning(false);
+    setElapsed(0);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    onReset();
+  }
+
+  return (
+    <div className="rounded-2xl border border-line bg-gradient-to-br from-surface via-raised/30 to-surface p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+      <div className="flex flex-col gap-1.5">
+        <span className="font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">
+          하버드 속독식 페이싱 훈련 (Evelyn Wood WPM System)
+        </span>
+        <h2 className="text-[17px] font-bold text-ink">
+          한국어 번역을 멈추고 영어 어순대로 눈을 빠르게 굴려 읽어보세요.
+        </h2>
+        <p className="text-[13px] text-ink-soft">
+          글을 읽기 시작할 때 [속독 시작]을 누르고, 마지막 마침표를 읽는 순간 [완독 완료]를 눌러 WPM을 측정하세요.
+        </p>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-3">
+        <div className="rounded-xl border border-line bg-surface px-4 py-2 text-center shadow-2xs">
+          <span className="block font-mono text-[10.5px] font-semibold text-ink-faint uppercase">경과 시간</span>
+          <span className="font-mono text-[20px] font-bold text-ink tabular-nums">
+            {Math.floor(elapsed / 60)
+              .toString()
+              .padStart(2, "0")}
+            :{(elapsed % 60).toString().padStart(2, "0")}
+          </span>
+        </div>
+
+        {!running ? (
+          <button
+            type="button"
+            onClick={start}
+            className="rounded-xl bg-ink px-5 py-3 text-[13.5px] font-bold text-surface shadow-xs hover:opacity-90 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
+          >
+            <span>⏱️</span>
+            <span>{elapsed > 0 ? "다시 측정 시작" : "속독 측정 시작"}</span>
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={finish}
+            className="rounded-xl bg-emerald-600 px-5 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-emerald-700 active:scale-95 transition-all cursor-pointer flex items-center gap-2 animate-pulse"
+          >
+            <span>✓</span>
+            <span>완독 완료! (속도 측정)</span>
+          </button>
+        )}
+
+        {elapsed > 0 && !running && (
+          <button
+            type="button"
+            onClick={reset}
+            className="rounded-xl border border-line bg-surface px-3 py-3 text-[12.5px] font-medium text-ink-soft hover:bg-raised transition-colors cursor-pointer"
+            title="타이머 초기화"
+          >
+            ↺
+          </button>
+        )}
+      </div>
+    </div>
+  );
+});
 
 export function ReadingLearningView({
   blocks,
@@ -145,12 +278,10 @@ export function ReadingLearningView({
   const [playingSentence, setPlayingSentence] = useState<number | null>(null);
   const [playingWord, setPlayingWord] = useState<string | null>(null);
 
-  // --- STEP 1: WPM Speed Reading Stopwatch State ---
-  const [wpmTimerRunning, setWpmTimerRunning] = useState(false);
-  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  // --- STEP 1: WPM Speed Reading Isolated State (Micro-Render Optimization) ---
   const [measuredWpm, setMeasuredWpm] = useState<number | null>(null);
+  const [measuredSeconds, setMeasuredSeconds] = useState<number | null>(null);
   const [bestWpm, setBestWpm] = useState<number | null>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const wpmStorageKey = `kig:reading:wpm:${lessonKey}`;
 
@@ -167,57 +298,16 @@ export function ReadingLearningView({
     }
   }, [wpmStorageKey]);
 
-  function startWpmTimer() {
-    unlockMobileAudio();
-    stopSpeech();
-    setElapsedSeconds(0);
+  const handleFinishWpm = useCallback((wpm: number, seconds: number) => {
+    setMeasuredWpm(wpm);
+    setMeasuredSeconds(seconds);
+    setBestWpm((prev) => (!prev || wpm > prev ? wpm : prev));
+  }, []);
+
+  const handleResetWpm = useCallback(() => {
     setMeasuredWpm(null);
-    setWpmTimerRunning(true);
-  }
-
-  function finishWpmTimer() {
-    setWpmTimerRunning(false);
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-    const finalSeconds = Math.max(1, elapsedSeconds);
-    const calculated = Math.round((wordCount / finalSeconds) * 60);
-    setMeasuredWpm(calculated);
-
-    if (!bestWpm || calculated > bestWpm) {
-      setBestWpm(calculated);
-      try {
-        window.localStorage.setItem(wpmStorageKey, String(calculated));
-      } catch {
-        // ignore
-      }
-    }
-  }
-
-  function resetWpmTimer() {
-    setWpmTimerRunning(false);
-    setElapsedSeconds(0);
-    setMeasuredWpm(null);
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-  }
-
-  useEffect(() => {
-    if (wpmTimerRunning) {
-      timerRef.current = setInterval(() => {
-        setElapsedSeconds((prev) => prev + 1);
-      }, 1000);
-    } else if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [wpmTimerRunning]);
+    setMeasuredSeconds(null);
+  }, []);
 
   // --- STEP 2: Vocabulary Tooltip & Reveal State ---
   const [revealedVocaMeaning, setRevealedVocaMeaning] = useState<Record<string, boolean>>({});
@@ -459,64 +549,14 @@ export function ReadingLearningView({
       {/* ========================================================================= */}
       {activeTab === "speed" && (
         <section aria-label="Speed Reading" className="flex flex-col gap-6 animate-in fade-in duration-200">
-          {/* Stopwatch & Metrics Banner */}
-          <div className="rounded-2xl border border-line bg-gradient-to-br from-surface via-raised/30 to-surface p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
-            <div className="flex flex-col gap-1.5">
-              <span className="font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">
-                하버드 속독식 페이싱 훈련 (Evelyn Wood WPM System)
-              </span>
-              <h2 className="text-[17px] font-bold text-ink">
-                한국어 번역을 멈추고 영어 어순대로 눈을 빠르게 굴려 읽어보세요.
-              </h2>
-              <p className="text-[13px] text-ink-soft">
-                글을 읽기 시작할 때 [속독 시작]을 누르고, 마지막 마침표를 읽는 순간 [완독 완료]를 눌러 WPM을 측정하세요.
-              </p>
-            </div>
-
-            {/* Interactive Stopwatch Controller */}
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="rounded-xl border border-line bg-surface px-4 py-2 text-center shadow-2xs">
-                <span className="block font-mono text-[10.5px] font-semibold text-ink-faint uppercase">경과 시간</span>
-                <span className="font-mono text-[20px] font-bold text-ink tabular-nums">
-                  {Math.floor(elapsedSeconds / 60)
-                    .toString()
-                    .padStart(2, "0")}
-                  :{(elapsedSeconds % 60).toString().padStart(2, "0")}
-                </span>
-              </div>
-
-              {!wpmTimerRunning ? (
-                <button
-                  type="button"
-                  onClick={startWpmTimer}
-                  className="rounded-xl bg-ink px-5 py-3 text-[13.5px] font-bold text-surface shadow-xs hover:opacity-90 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
-                >
-                  <span>⏱️</span>
-                  <span>{elapsedSeconds > 0 ? "다시 측정 시작" : "속독 측정 시작"}</span>
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={finishWpmTimer}
-                  className="rounded-xl bg-emerald-600 px-5 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-emerald-700 active:scale-95 transition-all cursor-pointer flex items-center gap-2 animate-pulse"
-                >
-                  <span>✓</span>
-                  <span>완독 완료! (속도 측정)</span>
-                </button>
-              )}
-
-              {elapsedSeconds > 0 && !wpmTimerRunning && (
-                <button
-                  type="button"
-                  onClick={resetWpmTimer}
-                  className="rounded-xl border border-line bg-surface px-3 py-3 text-[12.5px] font-medium text-ink-soft hover:bg-raised transition-colors cursor-pointer"
-                  title="타이머 초기화"
-                >
-                  ↺
-                </button>
-              )}
-            </div>
-          </div>
+          {/* Isolated High-Performance Stopwatch Controller */}
+          <WpmStopwatchBar
+            wordCount={wordCount}
+            bestWpm={bestWpm}
+            wpmStorageKey={wpmStorageKey}
+            onFinish={handleFinishWpm}
+            onReset={handleResetWpm}
+          />
 
           {/* WPM Measurement Result Card */}
           {measuredWpm !== null && (
@@ -541,7 +581,7 @@ export function ReadingLearningView({
                     </span>
                   </div>
                   <p className="text-[12.5px] text-emerald-900 dark:text-emerald-300 mt-0.5">
-                    {wordCount}개 단어를 {elapsedSeconds}초 만에 완독하셨습니다. (내 최고 기록: {bestWpm} WPM)
+                    {wordCount}개 단어를 {measuredSeconds ?? 0}초 만에 완독하셨습니다. (내 최고 기록: {bestWpm} WPM)
                   </p>
                 </div>
               </div>

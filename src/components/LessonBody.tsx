@@ -1,20 +1,59 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import type { Block, ReadingSentence } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
 import { DictationPanel } from "./DictationPanel";
-import { LdLearningView } from "./LdLearningView";
-import { ReadingLearningView } from "./ReadingLearningView";
-import { GrammarLearningView } from "./GrammarLearningView";
-import { DialogueLearningView } from "./DialogueLearningView";
-import { PhonicsLearningView } from "./PhonicsLearningView";
-import { StudentLearningView } from "./StudentLearningView";
-import { BasicsLearningView } from "./BasicsLearningView";
-import { CnnLearningView } from "./CnnLearningView";
-import { ChineseLearningView } from "./ChineseLearningView";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
+
+function ViewLoadingSkeleton() {
+  return (
+    <div className="flex flex-col gap-6 animate-pulse p-4">
+      <div className="h-10 w-48 rounded-xl bg-black/[0.05]" />
+      <div className="h-32 w-full rounded-2xl bg-black/[0.04]" />
+      <div className="h-64 w-full rounded-2xl bg-black/[0.03]" />
+    </div>
+  );
+}
+
+const LdLearningView = dynamic(
+  () => import("./LdLearningView").then((mod) => mod.LdLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const ReadingLearningView = dynamic(
+  () => import("./ReadingLearningView").then((mod) => mod.ReadingLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const GrammarLearningView = dynamic(
+  () => import("./GrammarLearningView").then((mod) => mod.GrammarLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const DialogueLearningView = dynamic(
+  () => import("./DialogueLearningView").then((mod) => mod.DialogueLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const PhonicsLearningView = dynamic(
+  () => import("./PhonicsLearningView").then((mod) => mod.PhonicsLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const StudentLearningView = dynamic(
+  () => import("./StudentLearningView").then((mod) => mod.StudentLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const BasicsLearningView = dynamic(
+  () => import("./BasicsLearningView").then((mod) => mod.BasicsLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const CnnLearningView = dynamic(
+  () => import("./CnnLearningView").then((mod) => mod.CnnLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
+const ChineseLearningView = dynamic(
+  () => import("./ChineseLearningView").then((mod) => mod.ChineseLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
 
 export interface PairedSentence {
   index: number;

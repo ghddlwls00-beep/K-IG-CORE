@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, memo, useCallback } from "react";
 import Link from "next/link";
 import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
@@ -17,6 +17,122 @@ export interface DashboardSection {
   lessons: DashboardLessonItem[];
 }
 
+const DashboardLessonCard = memo(function DashboardLessonCard({
+  lesson,
+  courseSlug,
+  isDone,
+  isStarred,
+  isUnlocked,
+  isFree,
+  hasActiveLicense,
+  onToggleBookmark,
+}: {
+  lesson: DashboardLessonItem;
+  courseSlug: string;
+  isDone: boolean;
+  isStarred: boolean;
+  isUnlocked: boolean;
+  isFree: boolean;
+  hasActiveLicense: boolean;
+  onToggleBookmark: (courseSlug: string, lessonId: string) => void;
+}) {
+  const pres = lesson.presentation;
+
+  return (
+    <li
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 130px",
+      }}
+    >
+      <div
+        className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
+          isDone
+            ? "border-emerald-500/30 bg-white shadow-2xs hover:border-emerald-500/60"
+            : "border-black/[0.06] bg-white shadow-2xs hover:border-black/20"
+        }`}
+      >
+        <div className="flex flex-col gap-1.5">
+          <div className="flex items-center justify-between gap-1.5">
+            <span className="font-mono text-[11px] font-bold text-gray-900 tracking-wider">
+              {pres.code}
+            </span>
+            <div className="flex items-center gap-1.5">
+              {isDone && (
+                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
+                  ✓ 완료
+                </span>
+              )}
+              {!isUnlocked ? (
+                <span className="inline-flex items-center gap-1 rounded-full border border-black/8 bg-black/[0.03] px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
+                  <span>🔒</span>
+                  <span>올패스</span>
+                </span>
+              ) : !hasActiveLicense && isFree ? (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                  <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>무료 체험</span>
+                </span>
+              ) : null}
+              {pres.badge && (
+                <span className="rounded-full bg-black/[0.04] px-2 py-0.5 text-[10px] font-medium text-ink-soft">
+                  {pres.badge}
+                </span>
+              )}
+              {/* Quick Bookmark Toggle on card */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onToggleBookmark(courseSlug, lesson.id);
+                }}
+                title={isStarred ? "북마크 해제" : "북마크 추가"}
+                aria-label={isStarred ? "북마크 해제" : "북마크 추가"}
+                className="-m-1 p-1 cursor-pointer transition-transform active:scale-90"
+              >
+                <span
+                  className={`text-[13px] ${
+                    isStarred
+                      ? "text-amber-500 font-bold"
+                      : "text-ink-faint hover:text-ink"
+                  }`}
+                >
+                  {isStarred ? "★" : "☆"}
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <Link
+            href={`/${courseSlug}/${lesson.id}`}
+            className="text-[14px] font-semibold leading-snug text-ink group-hover:text-black transition-colors focus:outline-none"
+          >
+            {pres.title}
+          </Link>
+
+          {pres.subtitle && (
+            <span className="text-[12px] text-ink-soft line-clamp-1">
+              {pres.subtitle}
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center justify-between border-t border-black/[0.05] pt-2.5 font-mono text-[10.5px] text-ink-faint">
+          <span className="tabular-nums">{lesson.id}</span>
+          <Link
+            href={`/${courseSlug}/${lesson.id}`}
+            className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
+          >
+            <span>{!isUnlocked ? "올패스 열람" : "학습하기"}</span>
+            <span className="text-[11px] opacity-60">{!isUnlocked ? "🔒" : "→"}</span>
+          </Link>
+        </div>
+      </div>
+    </li>
+  );
+});
+
 export function CourseDashboard({
   courseSlug,
   sections,
@@ -29,6 +145,13 @@ export function CourseDashboard({
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked } = useProgress();
   const { hasActiveLicense } = useLicense();
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
+
+  const handleToggleBookmark = useCallback(
+    (slug: string, id: string) => {
+      toggleBookmark(slug, id);
+    },
+    [toggleBookmark]
+  );
 
   // Calculate stats for this course
   const prefix = `${courseSlug}:`;
@@ -285,99 +408,23 @@ export function CourseDashboard({
                     <div className="border-t border-black/[0.06] p-4 sm:p-6 bg-gray-50/50">
                       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                         {section.lessons.map((lesson, lessonIdx) => {
-                          const pres = lesson.presentation;
                           const isDone = isCompleted(courseSlug, lesson.id);
                           const isStarred = isBookmarked(courseSlug, lesson.id);
                           const isFree = isFreePreviewLesson(courseSlug, lesson.id, index, lessonIdx);
                           const isUnlocked = hasActiveLicense || isFree;
 
                           return (
-                            <li key={lesson.id}>
-                              <div
-                                className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
-                                  isDone
-                                    ? "border-emerald-500/30 bg-white shadow-2xs hover:border-emerald-500/60"
-                                    : "border-black/[0.06] bg-white shadow-2xs hover:border-black/20"
-                                }`}
-                              >
-                                <div className="flex flex-col gap-1.5">
-                                  <div className="flex items-center justify-between gap-1.5">
-                                    <span className="font-mono text-[11px] font-bold text-gray-900 tracking-wider">
-                                      {pres.code}
-                                    </span>
-                                    <div className="flex items-center gap-1.5">
-                                      {isDone && (
-                                        <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
-                                          ✓ 완료
-                                        </span>
-                                      )}
-                                      {!isUnlocked ? (
-                                        <span className="inline-flex items-center gap-1 rounded-full border border-black/8 bg-black/[0.03] px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
-                                          <span>🔒</span>
-                                          <span>올패스</span>
-                                        </span>
-                                      ) : !hasActiveLicense && isFree ? (
-                                        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                                          <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
-                                          <span>무료 체험</span>
-                                        </span>
-                                      ) : null}
-                                      {pres.badge && (
-                                        <span className="rounded-full bg-black/[0.04] px-2 py-0.5 text-[10px] font-medium text-ink-soft">
-                                          {pres.badge}
-                                        </span>
-                                      )}
-                                      {/* Quick Bookmark Toggle on card */}
-                                      <button
-                                        type="button"
-                                        onClick={(e) => {
-                                          e.preventDefault();
-                                          e.stopPropagation();
-                                          toggleBookmark(courseSlug, lesson.id);
-                                        }}
-                                        title={isStarred ? "북마크 해제" : "북마크 추가"}
-                                        aria-label={isStarred ? "북마크 해제" : "북마크 추가"}
-                                        className="-m-1 p-1 cursor-pointer transition-transform active:scale-90"
-                                      >
-                                        <span
-                                          className={`text-[13px] ${
-                                            isStarred
-                                              ? "text-amber-500 font-bold"
-                                              : "text-ink-faint hover:text-ink"
-                                          }`}
-                                        >
-                                          {isStarred ? "★" : "☆"}
-                                        </span>
-                                      </button>
-                                    </div>
-                                  </div>
-
-                                  <Link
-                                    href={`/${courseSlug}/${lesson.id}`}
-                                    className="text-[14px] font-semibold leading-snug text-ink group-hover:text-black transition-colors focus:outline-none"
-                                  >
-                                    {pres.title}
-                                  </Link>
-
-                                  {pres.subtitle && (
-                                    <span className="text-[12px] text-ink-soft line-clamp-1">
-                                      {pres.subtitle}
-                                    </span>
-                                  )}
-                                </div>
-
-                                <div className="flex items-center justify-between border-t border-black/[0.05] pt-2.5 font-mono text-[10.5px] text-ink-faint">
-                                  <span className="tabular-nums">{lesson.id}</span>
-                                  <Link
-                                    href={`/${courseSlug}/${lesson.id}`}
-                                    className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
-                                  >
-                                    <span>{!isUnlocked ? "올패스 열람" : "학습하기"}</span>
-                                    <span className="text-[11px] opacity-60">{!isUnlocked ? "🔒" : "→"}</span>
-                                  </Link>
-                                </div>
-                              </div>
-                            </li>
+                            <DashboardLessonCard
+                              key={lesson.id}
+                              lesson={lesson}
+                              courseSlug={courseSlug}
+                              isDone={isDone}
+                              isStarred={isStarred}
+                              isUnlocked={isUnlocked}
+                              isFree={isFree}
+                              hasActiveLicense={hasActiveLicense}
+                              onToggleBookmark={handleToggleBookmark}
+                            />
                           );
                         })}
                       </ul>

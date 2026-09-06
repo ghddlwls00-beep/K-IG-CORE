@@ -160,9 +160,8 @@ label {
 }
 
 /*
- * Anything the cursor can reach transitions. Declaring it once here — rather
- * than per component — is what makes the motion feel like one system, and it
- * means a new control cannot accidentally ship without it.
+ * Optimized transitions: Fast color/opacity transitions for controls,
+ * reserving expensive transform/box-shadow transitions for cards and interactive surfaces.
  */
 a,
 button,
@@ -170,15 +169,23 @@ summary,
 select,
 input,
 textarea,
-[role="button"],
-.interactive {
-  transition:
-    color var(--dur) var(--ease),
-    background-color var(--dur) var(--ease),
-    border-color var(--dur) var(--ease),
-    opacity var(--dur) var(--ease),
-    transform var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease);
+[role="button"] {
+  transition-property: color, background-color, border-color, opacity;
+  transition-duration: var(--dur);
+  transition-timing-function: var(--ease);
+}
+
+.interactive,
+.interactive-card {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: var(--dur);
+  transition-timing-function: var(--ease);
+}
+
+/* Hardware accelerated layer promotion for buttery 120fps mobile responsiveness */
+.gpu-accel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* A focus ring that reads on either ground, since the palette is monochrome. */

@@ -7,7 +7,7 @@ import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonClientGate } from "@/components/LessonClientGate";
 import { T } from "@/components/LanguageProvider";
-import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslations, getVocaDictionary, isFreePreviewLessonServer } from "@/lib/content";
+import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
 import { lessonDisplay } from "@/lib/courses";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
@@ -57,10 +57,41 @@ export default async function LessonPage({
     }
   }
   const ldEnglishScript = course === "ld" ? getLdEnglishScript(id) : null;
-  const menTranslations = ["man", "adults-m", "adults-w", "woman"].includes(course)
-    ? getMenTranslations()
-    : null;
-  const vocaDictionary = course === "phonics" || course === "reading" ? getVocaDictionary() : null;
+
+  // Ultra-fast payload minimization: Extract ONLY the needed translations for this lesson (saving 120KB+ JSON payload per page)
+  let menTranslations: Record<string, string> | null = null;
+  if (["man", "adults-m", "adults-w", "woman"].includes(course)) {
+    const texts: string[] = [];
+    for (const b of lesson.blocks) {
+      if (b.type === "sentences" && Array.isArray(b.items)) {
+        for (const item of b.items) {
+          if (item.text) texts.push(item.text);
+        }
+      } else if (b.type === "paragraph" && b.text) {
+        texts.push(b.text);
+      }
+    }
+    if (pairLesson?.blocks) {
+      for (const b of pairLesson.blocks) {
+        if (b.type === "sentences" && Array.isArray(b.items)) {
+          for (const item of b.items) {
+            if (item.text) texts.push(item.text);
+          }
+        } else if (b.type === "paragraph" && b.text) {
+          texts.push(b.text);
+        }
+      }
+    }
+    menTranslations = getMenTranslationsForLesson(texts);
+  }
+
+  // Ultra-fast payload minimization: Phonics only extracts words for this lesson; Reading has pre-baked keywords (saving 290KB+ JSON payload per page)
+  let vocaDictionary: Record<string, { meaning: string; searchWord?: string }> | null = null;
+  if (course === "phonics") {
+    const wordgrid = lesson.blocks.find((b) => b.type === "wordgrid") as { type: "wordgrid"; rows: string[][] } | undefined;
+    const words = wordgrid?.rows?.flat().map((w) => w?.trim()).filter(Boolean) as string[] || [];
+    vocaDictionary = getVocaDictionaryForWords(words);
+  }
 
   // Determine voice profile: Male for MEN tracks, Female for WOMEN tracks
   const voiceGender = getVoiceGender(course, id);

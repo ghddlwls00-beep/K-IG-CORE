@@ -13,9 +13,17 @@ import { TABS } from "./tabs";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
+// In-memory cache to eliminate repeated synchronous disk I/O and JSON parsing
+const jsonCache = new Map<string, unknown>();
+
 function readJson<T>(file: string): T | null {
+  if (jsonCache.has(file)) {
+    return jsonCache.get(file) as T;
+  }
   try {
-    return JSON.parse(fs.readFileSync(file, "utf-8")) as T;
+    const data = JSON.parse(fs.readFileSync(file, "utf-8")) as T;
+    jsonCache.set(file, data);
+    return data;
   } catch {
     return null;
   }
@@ -172,6 +180,38 @@ export function getVocaDictionary(): Record<string, { meaning: string; searchWor
     path.join(CONTENT_DIR, "voca_dictionary.json"),
   );
   return dict ?? {};
+}
+
+/** Filtered Korean vocabulary dictionary for only the words in a specific phonics lesson. */
+export function getVocaDictionaryForWords(words: string[]): Record<string, { meaning: string; searchWord?: string }> {
+  if (!words || words.length === 0) return {};
+  const fullDict = getVocaDictionary();
+  const subset: Record<string, { meaning: string; searchWord?: string }> = {};
+  for (const w of words) {
+    if (!w) continue;
+    const clean = w.toLowerCase().trim();
+    if (fullDict[clean]) {
+      subset[clean] = fullDict[clean];
+    } else if (fullDict[w]) {
+      subset[w] = fullDict[w];
+    }
+  }
+  return subset;
+}
+
+/** Filtered Korean translations for only the sentences in a specific conversation lesson. */
+export function getMenTranslationsForLesson(texts: string[]): Record<string, string> {
+  if (!texts || texts.length === 0) return {};
+  const fullDict = getMenTranslations();
+  const subset: Record<string, string> = {};
+  for (const t of texts) {
+    if (!t) continue;
+    const norm = t.toLowerCase().replace(/[^a-z0-9]/g, "");
+    if (fullDict[norm]) {
+      subset[norm] = fullDict[norm];
+    }
+  }
+  return subset;
 }
 
 /**

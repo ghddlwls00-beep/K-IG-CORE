@@ -42,6 +42,7 @@ export function AudioPlayer({
   // TTS fallback state
   const [ttsActive, setTtsActive] = useState(false);
   const [ttsCurrentIndex, setTtsCurrentIndex] = useState(0);
+  const lastTimeRef = useRef(0);
 
   useEffect(() => {
     const el = ref.current;
@@ -183,7 +184,13 @@ export function AudioPlayer({
           playsInline
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
-          onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
+          onTimeUpdate={(e) => {
+            const ct = e.currentTarget.currentTime;
+            if (Math.abs(ct - lastTimeRef.current) >= 0.25 || ct === 0 || ct >= duration) {
+              lastTimeRef.current = ct;
+              setTime(ct);
+            }
+          }}
           onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
           onError={() => setMissing(true)}
         />
