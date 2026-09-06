@@ -20,23 +20,60 @@
   --color-ink-faint: var(--ink-faint);
   --color-surface: var(--surface);
   --color-raised: var(--raised);
+  --color-sunken: var(--sunken);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-champagne: var(--champagne);
+  --color-champagne-soft: var(--champagne-soft);
+  --color-champagne-gold: var(--champagne-gold);
 }
 
 :root {
-  /* Apple Pro Clean Light Aesthetic: Pure White, Subtly Cool Off-Whites, Deep Graphite Ink */
-  --ink: #111827;
-  --ink-soft: #4b5563;
-  --ink-faint: #9ca3af;
-  --surface: #ffffff;
-  --raised: #f9fafb;
-  --line: rgba(0, 0, 0, 0.07);
-  --line-strong: #111827;
+  /* High-End Luxury Aesthetic (Option 1): Warm Alabaster & Deep Obsidian Champagne */
+  --surface: #FAF8F5;              /* Warm Luxury Alabaster Canvas */
+  --raised: #FFFFFF;               /* Pure Crisp White Card Surface */
+  --sunken: #F2EFE9;               /* Soft Warm Stone Tint */
+
+  --ink: #121316;                  /* Deep Obsidian Velvet Ink */
+  --ink-soft: #4E4B46;             /* Warm Espresso Stone */
+  --ink-faint: #9C978F;            /* Cashmere Taupe Stone */
+
+  --line: rgba(34, 30, 26, 0.08);   /* Hairline Warm Border */
+  --line-strong: #121316;
+
+  /* Signature Burnished Champagne Gold Accent */
+  --primary: #A8824B;              /* Burnished Warm Champagne Gold */
+  --primary-soft: #F7F2EA;         /* Very Soft Champagne Cream */
+  --champagne: #A8824B;
+  --champagne-soft: #F7F2EA;
+  --champagne-gold: #C5A46D;
 
   --dur: 200ms;
   --dur-slow: 450ms;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  /* Midnight Obsidian & Burnished Gold for Dark Mode */
+  --surface: #0E0E11;
+  --raised: #17171C;
+  --sunken: #121216;
+
+  --ink: #F5F3EF;
+  --ink-soft: #A8A39D;
+  --ink-faint: #6B665F;
+
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: #F5F3EF;
+
+  --primary: #D4AF37;
+  --primary-soft: rgba(212, 175, 55, 0.12);
+  --champagne: #D4AF37;
+  --champagne-soft: rgba(212, 175, 55, 0.12);
+  --champagne-gold: #E5C358;
 }
 
 @keyframes fadeUp {

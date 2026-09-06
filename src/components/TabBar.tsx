@@ -57,9 +57,11 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             <div className="flex items-center justify-start shrink-0">
               <Link
                 href="/"
-                className="shrink-0 font-mono text-[12px] font-bold tracking-[0.2em] text-ink uppercase opacity-85 hover:opacity-100"
+                className="shrink-0 font-mono text-[12.5px] font-bold tracking-[0.22em] text-ink uppercase hover:text-primary transition-colors flex items-center gap-1.5 select-none"
               >
-                K&#8209;IG&nbsp;교육
+                <span>K&#8209;IG</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span className="font-normal text-ink-soft tracking-widest text-[11px]">교육</span>
               </Link>
             </div>
 
@@ -77,7 +79,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                     href={targetUrl}
                     aria-current={active ? "page" : undefined}
                     className={
-                      "relative shrink-0 px-3 py-1.5 text-[12.5px] whitespace-nowrap transition-colors select-none " +
+                      "relative shrink-0 px-3.5 py-1.5 text-[12.5px] whitespace-nowrap transition-colors select-none " +
                       (active
                         ? "font-semibold text-ink"
                         : "font-normal text-ink-soft hover:text-ink")
@@ -87,7 +89,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                     <span
                       aria-hidden
                       className={
-                        "absolute inset-x-3 bottom-0 h-[2px] origin-left bg-ink transition-transform duration-200 ease-out " +
+                        "absolute inset-x-3 bottom-0 h-[2px] origin-left bg-primary transition-transform duration-200 ease-out " +
                         (active ? "scale-x-100" : "scale-x-0")
                       }
                     />

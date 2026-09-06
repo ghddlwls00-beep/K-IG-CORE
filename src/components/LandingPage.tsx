@@ -185,9 +185,9 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
               className="relative z-10 max-w-[680px]"
               style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}
             >
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-md px-3 py-1 font-mono text-[12px] font-semibold tracking-widest text-ink-soft uppercase shadow-2xs">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-white/80 dark:bg-white/10 backdrop-blur-md px-3.5 py-1 font-mono text-[11.5px] font-semibold tracking-widest text-primary uppercase shadow-2xs">
                 <span>STAGE {tab.num}</span>
-                <span className="text-ink-faint">·</span>
+                <span className="text-primary/40">·</span>
                 <span>CURRICULUM</span>
               </div>
 
@@ -213,7 +213,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                     <div className="mt-8 flex items-center gap-4">
                       <Link
                         href={`/${targetCourse}`}
-                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[16px] font-medium tracking-wide text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
+                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[15px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
                       >
                         <span>학습 시작하기</span>
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -243,8 +243,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
               className={
                 "h-[7px] w-[7px] cursor-pointer rounded-full border-none p-0 transition-[transform,background-color] duration-200 " +
                 (isActive
-                  ? "scale-140 bg-ink"
-                  : "bg-line hover:scale-120 hover:bg-ink-soft")
+                  ? "scale-140 bg-primary ring-2 ring-primary/25"
+                  : "bg-ink/20 hover:scale-120 hover:bg-ink-soft")
               }
             />
           );

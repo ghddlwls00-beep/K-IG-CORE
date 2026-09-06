@@ -174,7 +174,7 @@ export function AudioPlayer({
   const isTtsMode = (missing || !src) && fallbackSentences.length > 0;
 
   return (
-    <div className="rounded-3xl border border-black/[0.06] bg-gradient-to-b from-white to-gray-50/80 p-5 transition-all duration-300 hover:shadow-md shadow-2xs">
+    <div className="rounded-3xl border border-line bg-raised p-5 transition-all duration-300 hover:shadow-md shadow-2xs">
       {src && !missing ? (
         <audio
           ref={ref}
@@ -192,7 +192,7 @@ export function AudioPlayer({
       <div className="mb-3 flex items-center justify-between gap-2">
         {label ? (
           <p className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider text-ink-faint uppercase font-bold">
-            <span className="h-1.5 w-1.5 rounded-full bg-black/40" />
+            <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
             {label}
           </p>
         ) : (
@@ -200,8 +200,8 @@ export function AudioPlayer({
         )}
 
         {isTtsMode ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 font-mono text-[10.5px] font-semibold text-emerald-700 border border-emerald-500/20">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-0.5 font-mono text-[10.5px] font-semibold text-primary border border-primary/20">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
             {t("player.ttsMode")} · {gender === "male" ? "남성 보이스" : gender === "female" ? "여성 보이스" : "음성"} ({fallbackSentences.length}문장)
           </span>
         ) : null}
@@ -212,7 +212,7 @@ export function AudioPlayer({
           type="button"
           onClick={toggle}
           aria-label={playing ? t("player.pause") : t("player.play")}
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer hover:bg-black/90"
         >
           {playing ? (
             <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
@@ -246,9 +246,9 @@ export function AudioPlayer({
 
         {isTtsMode ? (
           <div className="flex-1 px-2">
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-black/[0.06]">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-black/[0.06] dark:bg-white/[0.08]">
               <div
-                className="h-full bg-ink rounded-full transition-all duration-300"
+                className="h-full bg-primary rounded-full transition-all duration-300"
                 style={{
                   width: `${fallbackSentences.length > 0 ? ((ttsCurrentIndex + 1) / fallbackSentences.length) * 100 : 0}%`,
                 }}
@@ -264,7 +264,7 @@ export function AudioPlayer({
             value={time}
             onChange={scrub}
             aria-label={t("player.seek")}
-            className="h-1.5 flex-1 cursor-pointer appearance-none bg-black/[0.06] accent-[var(--ink)] hover:h-2 transition-all rounded-full"
+            className="h-1.5 flex-1 cursor-pointer appearance-none bg-black/[0.06] dark:bg-white/[0.08] accent-[var(--primary)] hover:h-2 transition-all rounded-full"
           />
         )}
 
