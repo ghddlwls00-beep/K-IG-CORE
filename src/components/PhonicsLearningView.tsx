@@ -22,7 +22,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
   const [activeWord, setActiveWord] = useState<string | null>(null);
   const [selectedWord, setSelectedWord] = useState<string>(words[0] || "");
   const [isPlayingAll, setIsPlayingAll] = useState(false);
-  const [speed, setSpeed] = useState<0.85 | 1.0>(1.0);
+  const [speed, setSpeed] = useState<0.8 | 1.0 | 1.2>(1.0);
   const [activeRowIdx, setActiveRowIdx] = useState<number | null>(null);
 
   // Vocabulary Learning Enhancements
@@ -88,6 +88,54 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
       stopSpeech();
     };
   }, []);
+
+  // Keyboard navigation & playback shortcuts
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        (e.target as HTMLElement)?.isContentEditable
+      ) {
+        return;
+      }
+
+      if (e.code === "Space") {
+        e.preventDefault();
+        handlePlayAll();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        if (viewTab === "cards") {
+          setCardIndex((prev) => (prev > 0 ? prev - 1 : words.length - 1));
+          setIsCardFlipped(false);
+        } else {
+          const curIdx = words.indexOf(selectedWord);
+          const prevIdx = curIdx > 0 ? curIdx - 1 : words.length - 1;
+          if (words[prevIdx]) setSelectedWord(words[prevIdx]);
+        }
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        if (viewTab === "cards") {
+          setCardIndex((prev) => (prev < words.length - 1 ? prev + 1 : 0));
+          setIsCardFlipped(false);
+        } else {
+          const curIdx = words.indexOf(selectedWord);
+          const nextIdx = curIdx < words.length - 1 ? curIdx + 1 : 0;
+          if (words[nextIdx]) setSelectedWord(words[nextIdx]);
+        }
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (viewTab === "cards" && words[cardIndex]) {
+          playWord(words[cardIndex]);
+        } else if (selectedWord) {
+          playWord(selectedWord);
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [viewTab, words, selectedWord, cardIndex, isPlayingAll]);
 
   function getMeaning(word: string): string {
     if (!word) return "";
@@ -330,8 +378,19 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
           <div className="flex items-center rounded-xl border border-line bg-raised/70 p-1 text-[12px]">
             <button
               type="button"
+              onClick={() => setSpeed(0.8)}
+              className={`px-2.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                speed === 0.8
+                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                  : "text-ink-soft hover:text-ink"
+              }`}
+            >
+              0.8x 느리게
+            </button>
+            <button
+              type="button"
               onClick={() => setSpeed(1.0)}
-              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+              className={`px-2.5 py-1.5 rounded-lg transition-all cursor-pointer ${
                 speed === 1.0
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink"
@@ -341,14 +400,14 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
             </button>
             <button
               type="button"
-              onClick={() => setSpeed(0.85)}
-              className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                speed === 0.85
+              onClick={() => setSpeed(1.2)}
+              className={`px-2.5 py-1.5 rounded-lg transition-all cursor-pointer ${
+                speed === 1.2
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
-              0.85x 느리게
+              1.2x 빠르게
             </button>
           </div>
 
@@ -578,14 +637,19 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary }: Phoni
                           <button
                             type="button"
                             onClick={(e) => toggleMemorized(w, e)}
-                            className={`h-4 w-4 rounded-full flex items-center justify-center text-[9px] font-bold transition-colors cursor-pointer ${
-                              isMemorized
-                                ? isActive ? "bg-white text-indigo-600" : "bg-emerald-600 text-white"
-                                : isActive ? "border border-white/50 text-white" : "border border-line-strong/40 text-transparent hover:text-ink-faint"
-                            }`}
+                            className="-m-2 p-2 rounded-full flex items-center justify-center cursor-pointer transition-transform active:scale-90"
                             title={isMemorized ? "암기 완료 취소" : "암기 완료 체크"}
+                            aria-label={isMemorized ? "암기 완료 취소" : "암기 완료 체크"}
                           >
-                            ✓
+                            <span
+                              className={`h-[18px] w-[18px] rounded-full flex items-center justify-center text-[9.5px] font-bold transition-colors ${
+                                isMemorized
+                                  ? isActive ? "bg-white text-indigo-600 shadow-2xs" : "bg-emerald-600 text-white shadow-2xs"
+                                  : isActive ? "border border-white/60 text-white" : "border border-line-strong/50 text-transparent hover:text-ink-faint"
+                              }`}
+                            >
+                              ✓
+                            </span>
                           </button>
                           <span className={`font-mono text-[9px] ${isActive ? "text-white/80" : "text-ink-faint"}`}>
                             🔊

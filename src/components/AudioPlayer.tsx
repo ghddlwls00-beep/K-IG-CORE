@@ -54,6 +54,25 @@ export function AudioPlayer({
     };
   }, []);
 
+  // Keyboard shortcut: Space to toggle playback
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        (e.target as HTMLElement)?.isContentEditable
+      ) {
+        return;
+      }
+      if (e.code === "Space") {
+        e.preventDefault();
+        toggle();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [missing, src, ttsActive, fallbackSentences, lang, gender, rate, ttsCurrentIndex]);
+
   function toggle() {
     if (missing || !src) {
       // Toggle TTS mode
@@ -224,7 +243,7 @@ export function AudioPlayer({
       <div className="mt-2.5 flex items-center justify-between border-t border-line/50 pt-2 text-[11px]">
         <div className="flex items-center gap-1.5">
           <span className="font-mono text-[10px] tracking-wide text-ink-faint uppercase">{t("player.speed")}</span>
-          {[0.75, 1, 1.25].map((r) => (
+          {[0.8, 1, 1.2].map((r) => (
             <button
               key={r}
               type="button"

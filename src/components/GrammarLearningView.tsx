@@ -718,6 +718,9 @@ export function GrammarLearningView({
                         value={answers[item.id] || ""}
                         onChange={(e) => handleAnswerChange(item.id, e.target.value)}
                         placeholder="이곳에 영어 문장을 영작해보세요... (예: I am...)"
+                        autoCapitalize="none"
+                        autoCorrect="off"
+                        spellCheck={false}
                         className={`w-full rounded-xl border border-line bg-surface px-4 py-2.5 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none focus:ring-1 focus:ring-ink transition-all ${fontStyles.input}`}
                       />
                       {isAnswered && (
@@ -890,20 +893,26 @@ export function GrammarLearningView({
                         }
 
                         return (
-                          <span key={pIdx} className="inline-flex items-center">
+                          <span key={pIdx} className="inline-flex items-center gap-1">
                             <input
                               type="text"
                               value={userVal}
                               onChange={(e) => handleClozeChange(item.id, pIdx, e.target.value)}
                               placeholder="___"
-                              style={{ width: `${Math.max((part.answer?.length || 3) * 14, 55)}px` }}
+                              autoCapitalize="none"
+                              autoCorrect="off"
+                              spellCheck={false}
+                              style={{ width: `${Math.max((part.answer?.length || 3) * 14, 58)}px` }}
                               className={
-                                "rounded-md border text-center font-semibold px-1.5 py-0.5 text-sm transition-all focus:outline-none " +
+                                "rounded-md border text-center font-semibold px-2 py-1 text-sm transition-all focus:outline-none " +
                                 (isCorrect
-                                  ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 font-bold"
+                                  ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 font-bold ring-2 ring-emerald-500/30"
                                   : "border-line bg-surface text-ink focus:border-ink")
                               }
                             />
+                            {isCorrect && (
+                              <span className="text-emerald-600 font-bold text-xs">✓</span>
+                            )}
                           </span>
                         );
                       })}
@@ -1128,6 +1137,9 @@ export function GrammarLearningView({
                       value={userVal}
                       onChange={(e) => handleAnswerChange(item.id, e.target.value)}
                       placeholder="답안을 입력하세요..."
+                      autoCapitalize="none"
+                      autoCorrect="off"
+                      spellCheck={false}
                       className={
                         "w-full rounded-lg border px-3.5 py-2 text-ink placeholder:text-ink-faint transition-all " +
                         (examSubmitted

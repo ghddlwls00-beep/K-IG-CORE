@@ -103,6 +103,8 @@ export function DictationPanel({
             onChange={(e) => setText(e.target.value)}
             placeholder={t("answer.placeholder")}
             spellCheck={false}
+            autoCapitalize="none"
+            autoCorrect="off"
             className="w-full resize-y border border-line bg-surface p-3.5 font-mono text-[13.5px] leading-relaxed text-ink hover:border-line-strong focus:border-line-strong focus:outline-none rounded-sm transition-colors"
           />
         </div>
