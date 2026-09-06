@@ -19,61 +19,61 @@ export function LessonPaywall({
   const { openModal } = useLicense();
 
   return (
-    <div className="my-8 rounded-3xl border border-black/10 bg-gradient-to-b from-white via-gray-50/60 to-gray-100/50 p-8 sm:p-12 shadow-md flex flex-col items-center justify-center text-center gap-6">
+    <div className="my-10 rounded-3xl border border-line bg-surface/80 backdrop-blur-xl p-8 sm:p-12 shadow-sm flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden">
       {/* Icon Pill */}
-      <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-amber-500/10 border border-amber-500/20 text-[28px] text-amber-600 shadow-xs">
+      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] text-[22px] text-ink shadow-2xs">
         🔒
       </div>
 
       {/* Main Text */}
-      <div className="flex flex-col gap-2 max-w-lg">
-        <span className="font-mono text-[12px] font-bold uppercase tracking-wider text-amber-700 bg-amber-500/10 px-3 py-1 rounded-full self-center border border-amber-500/20">
-          올패스 회원 전용 콘텐츠
+      <div className="flex flex-col items-center gap-2.5 max-w-md">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-ink-soft">
+          <span className="h-1.5 w-1.5 rounded-full bg-amber-500/70" />
+          ALL-PASS ONLY
         </span>
-        <h2 className="text-[22px] sm:text-[24px] font-bold text-ink tracking-tight mt-1">
-          {title || "본 레슨은 이용권 등록 후 학습하실 수 있습니다"}
+        <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
+          {title || "본 레슨은 올패스 등록 후 학습하실 수 있습니다"}
         </h2>
-        <p className="text-[14px] text-ink-soft leading-relaxed mt-1">
-          현재 레슨은 프리미엄 정규 과정입니다. 스마트스토어 또는 크몽에서 발급받으신
-          인증 코드를 등록하시면 <strong>1,677개 모든 레슨</strong>이 즉시 무제한 열람됩니다.
+        <p className="text-[13px] text-ink-soft leading-relaxed">
+          스마트스토어 또는 크몽에서 발급받으신 인증 코드를 등록하시면
+          <br className="hidden sm:inline" />
+          <strong className="text-ink font-semibold"> 1,677개 모든 레슨</strong>을 제한 없이 무제한으로 학습하실 수 있습니다.
         </p>
       </div>
 
       {/* Action Buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-3 w-full max-w-md">
+      <div className="flex flex-wrap items-center justify-center gap-2.5 w-full max-w-sm mt-1">
         <button
           type="button"
           onClick={openModal}
-          className="flex-1 rounded-2xl bg-ink px-6 py-3.5 text-[14px] font-bold text-white shadow-md hover:bg-black/80 transition-all cursor-pointer active:scale-[0.99]"
+          className="flex-1 min-w-[140px] rounded-full bg-ink px-5 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
         >
-          🔑 이용권 코드 등록하기
+          🔑 이용권 코드 등록
         </button>
 
-        <a
-          href="#buy-allpass"
-          onClick={(e) => {
-            e.preventDefault();
-            openModal();
-          }}
-          className="flex-1 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-6 py-3.5 text-[14px] font-bold text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20 transition-all cursor-pointer"
+        <button
+          type="button"
+          onClick={openModal}
+          className="flex-1 min-w-[140px] rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] px-5 py-2.5 text-[13px] font-medium text-ink-soft hover:text-ink hover:bg-black/[0.06] dark:hover:bg-white/[0.12] transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
         >
-          🛒 올패스 구매 안내
-        </a>
+          🛒 구매 안내
+        </button>
       </div>
 
       {/* Secondary Back Navigation */}
-      <div className="border-t border-black/[0.06] pt-5 mt-2 flex flex-wrap items-center justify-center gap-4 text-[12.5px] text-ink-soft">
+      <div className="border-t border-line/60 pt-5 mt-1 flex flex-wrap items-center justify-center gap-3 text-[12px] text-ink-faint">
         <Link
           href={`/${courseSlug}`}
-          className="hover:text-ink font-semibold underline underline-offset-4 decoration-black/20 hover:decoration-black"
+          className="hover:text-ink transition-colors underline underline-offset-4 decoration-black/20 hover:decoration-black"
         >
-          ← {courseTitle} 목록으로 돌아가기
+          ← {courseTitle} 전체 목록
         </Link>
-        <span className="text-black/20">·</span>
-        <span className="font-mono text-ink-faint">
+        <span className="opacity-40">·</span>
+        <span className="font-mono">
           1~2강은 무료로 상시 체험 가능합니다
         </span>
       </div>
     </div>
   );
 }
+

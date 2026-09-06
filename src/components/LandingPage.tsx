@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Tab } from "@/lib/types";
 import { useProgress } from "./ProgressProvider";
 import { SearchDialog } from "./SearchDialog";
+import { LicenseButton } from "./LicenseButton";
 import { TAB_IMAGES } from "@/lib/tabImages";
 
 interface CourseDetail {
@@ -150,6 +151,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
             </Link>
           ) : null}
 
+          <LicenseButton />
           <SearchDialog />
         </div>
       </header>

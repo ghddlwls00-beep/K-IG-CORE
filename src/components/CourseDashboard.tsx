@@ -297,8 +297,6 @@ export function CourseDashboard({
                                 className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
                                   isDone
                                     ? "border-emerald-500/30 bg-white shadow-2xs hover:border-emerald-500/60"
-                                    : !isUnlocked
-                                    ? "border-black/[0.06] bg-white/70 shadow-2xs hover:border-amber-500/40"
                                     : "border-black/[0.06] bg-white shadow-2xs hover:border-black/20"
                                 }`}
                               >
@@ -314,12 +312,14 @@ export function CourseDashboard({
                                         </span>
                                       )}
                                       {!isUnlocked ? (
-                                        <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-700">
-                                          🔒 올패스
+                                        <span className="inline-flex items-center gap-1 rounded-full border border-black/8 bg-black/[0.03] px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
+                                          <span>🔒</span>
+                                          <span>올패스</span>
                                         </span>
                                       ) : !hasActiveLicense && isFree ? (
-                                        <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700">
-                                          ✓ 무료체험
+                                        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                                          <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
+                                          <span>무료 체험</span>
                                         </span>
                                       ) : null}
                                       {pres.badge && (
@@ -370,13 +370,10 @@ export function CourseDashboard({
                                   <span className="tabular-nums">{lesson.id}</span>
                                   <Link
                                     href={`/${courseSlug}/${lesson.id}`}
-                                    className={`inline-flex items-center gap-1 font-semibold transition-all group-hover:translate-x-0.5 ${
-                                      !isUnlocked
-                                        ? "text-amber-700 group-hover:text-amber-800"
-                                        : "text-ink-soft group-hover:text-ink"
-                                    }`}
+                                    className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
                                   >
-                                    <span>{!isUnlocked ? "올패스 전용 🔒" : "학습하기 →"}</span>
+                                    <span>{!isUnlocked ? "올패스 열람" : "학습하기"}</span>
+                                    <span className="text-[11px] opacity-60">{!isUnlocked ? "🔒" : "→"}</span>
                                   </Link>
                                 </div>
                               </div>

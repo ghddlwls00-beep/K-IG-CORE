@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Tab } from "@/lib/types";
 import { SearchDialog } from "./SearchDialog";
+import { LicenseButton } from "./LicenseButton";
 import { useLicense } from "./LicenseProvider";
 
 /**
@@ -97,28 +98,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
 
             {/* Right Controls */}
             <div className="flex items-center justify-end gap-2 sm:gap-2.5 shrink-0">
-              {/* VIP / License Status Button */}
-              {hasActiveLicense ? (
-                <button
-                  type="button"
-                  onClick={openModal}
-                  title="VIP 이용권 상태 확인"
-                  className="flex items-center gap-1.5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-2.5 py-1.5 font-mono text-[11.5px] font-semibold text-amber-700 hover:bg-amber-500/20 transition-all cursor-pointer shadow-2xs"
-                >
-                  <span>👑</span>
-                  <span className="hidden sm:inline">VIP 올패스</span>
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={openModal}
-                  className="flex items-center gap-1.5 rounded-xl bg-ink px-2.5 sm:px-3 py-1.5 text-[11.5px] sm:text-[12px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
-                >
-                  <span>🔑</span>
-                  <span>이용권 등록</span>
-                </button>
-              )}
-
+              <LicenseButton />
               <SearchDialog />
 
               {/* Mobile 3-bar Hamburger Button (Visible only below md) */}
