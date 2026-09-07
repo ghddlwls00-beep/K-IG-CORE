@@ -460,87 +460,63 @@ export function GrammarLearningView({
           )}
         </div>
 
-        {/* Study Mode Selector - Responsive 4 Columns, 100% visible on both mobile & desktop */}
-        <nav aria-label="문법 4단계 학습 모드" className="w-full rounded-xl bg-raised/80 p-1 border border-line/70">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-1.5">
+        {/* Study Mode Selector - Clean, Balanced 4-Pill Grid */}
+        <nav aria-label="문법 4단계 학습 모드" className="w-full rounded-2xl border border-line bg-surface p-1.5 shadow-2xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
             <button
               type="button"
               onClick={() => setStudyMode("composition")}
               className={
-                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
+                "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
                 (studyMode === "composition"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink hover:bg-surface/50")
+                  ? "bg-ink text-surface font-semibold shadow-xs"
+                  : "text-ink-soft hover:bg-raised hover:text-ink")
               }
             >
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-                Step 1
-              </span>
-              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-                <span>✍️</span>
-                <span className="hidden md:inline">FSI 통사 영작 훈련</span>
-                <span className="inline md:hidden">통사 영작 훈련</span>
-              </span>
+              <span>✍️</span>
+              <span>Step 1 · 영작 훈련</span>
             </button>
 
             <button
               type="button"
               onClick={() => setStudyMode("cloze")}
               className={
-                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
+                "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
                 (studyMode === "cloze"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink hover:bg-surface/50")
+                  ? "bg-ink text-surface font-semibold shadow-xs"
+                  : "text-ink-soft hover:bg-raised hover:text-ink")
               }
             >
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-                Step 2
-              </span>
-              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-                <span>🧩</span>
-                <span className="hidden md:inline">문법 패턴 빈칸 완성</span>
-                <span className="inline md:hidden">패턴 빈칸 완성</span>
-              </span>
+              <span>🧩</span>
+              <span>Step 2 · 빈칸 완성</span>
             </button>
 
             <button
               type="button"
               onClick={() => setStudyMode("shadowing")}
               className={
-                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
+                "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
                 (studyMode === "shadowing"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink hover:bg-surface/50")
+                  ? "bg-ink text-surface font-semibold shadow-xs"
+                  : "text-ink-soft hover:bg-raised hover:text-ink")
               }
             >
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-                Step 3
-              </span>
-              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-                <span>⚖️</span>
-                <span className="hidden md:inline">음성 구문 각인</span>
-                <span className="inline md:hidden">음성 구문 각인</span>
-              </span>
+              <span>⚖️</span>
+              <span>Step 3 · 구문 각인</span>
             </button>
 
             <button
               type="button"
               onClick={() => setStudyMode("exam")}
               className={
-                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
+                "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
                 (studyMode === "exam"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink hover:bg-surface/50")
+                  ? "bg-ink text-surface font-semibold shadow-xs"
+                  : "text-ink-soft hover:bg-raised hover:text-ink")
               }
             >
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-                Step 4
-              </span>
-              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-                <span>📝</span>
-                <span className="hidden md:inline">종합 평가 시험</span>
-                <span className="inline md:hidden">종합 평가 시험</span>
-              </span>
+              <span>📝</span>
+              <span>Step 4 · 종합 평가</span>
             </button>
           </div>
         </nav>

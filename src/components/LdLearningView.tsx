@@ -387,14 +387,14 @@ export function LdLearningView({
                 type="button"
                 onClick={() => goToStep(tab.id)}
                 className={
-                  "flex flex-col items-center justify-center rounded-xl py-1.5 px-1 sm:py-2.5 sm:px-2 transition-all cursor-pointer select-none text-center min-w-0 " +
+                  "flex flex-col items-center justify-center rounded-xl py-1.5 px-1 sm:py-2.5 sm:px-2 transition-all cursor-pointer select-none text-center min-w-0 whitespace-nowrap " +
                   (active
                     ? "bg-ink font-semibold text-white shadow-xs ring-1 ring-white/10"
                     : "text-ink-soft hover:bg-raised hover:text-ink")
                 }
               >
                 {/* Step indicator & badge */}
-                <div className="flex items-center gap-1 leading-none font-mono text-[9.5px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
+                <div className="flex items-center gap-1 leading-none font-mono text-[9.5px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75 whitespace-nowrap">
                   <span>{tab.stepNum}</span>
                   {tab.badge && (
                     <span className="hidden sm:inline-block font-mono text-[9px] opacity-85">

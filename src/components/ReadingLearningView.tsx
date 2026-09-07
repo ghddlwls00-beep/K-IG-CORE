@@ -490,86 +490,63 @@ export function ReadingLearningView({
         </div>
       </div>
 
-      {/* 2. Step Selector Tabs (Responsive Grid, 100% visible on both Mobile & Desktop) */}
-      <nav aria-label="리딩 4단계 학습 단계" className="w-full rounded-2xl border border-line bg-surface p-1 sm:p-1.5 shadow-2xs">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-1.5">
+      {/* 2. Step Selector Tabs (Clean, Balanced 4-Pill Grid) */}
+      <nav aria-label="리딩 4단계 학습 단계" className="w-full rounded-2xl border border-line bg-surface p-1.5 shadow-2xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
           <button
             type="button"
             onClick={() => setActiveTab("speed")}
             className={
-              "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-xl px-2 py-2 sm:py-2.5 text-center transition-all cursor-pointer select-none min-w-0 " +
+              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
               (activeTab === "speed"
                 ? "bg-ink text-surface font-semibold shadow-xs"
                 : "text-ink-soft hover:bg-raised hover:text-ink")
             }
           >
-            <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-              Step 1
-            </span>
-            <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-              <span>⏱️</span>
-              <span className="hidden md:inline">속독 챌린지 (WPM)</span>
-              <span className="inline md:hidden">속독 챌린지</span>
-            </span>
+            <span>⏱️</span>
+            <span>Step 1 · 속독 챌린지</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab("voca")}
             className={
-              "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-xl px-2 py-2 sm:py-2.5 text-center transition-all cursor-pointer select-none min-w-0 " +
+              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
               (activeTab === "voca"
                 ? "bg-ink text-surface font-semibold shadow-xs"
                 : "text-ink-soft hover:bg-raised hover:text-ink")
             }
           >
-            <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-              Step 2
-            </span>
-            <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-              <span>📚</span>
-              <span>핵심 어휘 ({keywords.length})</span>
-            </span>
+            <span>📚</span>
+            <span>Step 2 · 핵심 어휘</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab("quiz")}
             className={
-              "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-xl px-2 py-2 sm:py-2.5 text-center transition-all cursor-pointer select-none min-w-0 " +
+              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
               (activeTab === "quiz"
                 ? "bg-ink text-surface font-semibold shadow-xs"
                 : "text-ink-soft hover:bg-raised hover:text-ink")
             }
           >
-            <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-              Step 3
-            </span>
-            <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-              <span>📝</span>
-              <span className="hidden md:inline">독해력 퀴즈 & 클로즈</span>
-              <span className="inline md:hidden">독해력 퀴즈</span>
-            </span>
+            <span>📝</span>
+            <span>Step 3 · 독해 퀴즈</span>
           </button>
 
           <button
             type="button"
             onClick={() => setActiveTab("dual")}
             className={
-              "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-xl px-2 py-2 sm:py-2.5 text-center transition-all cursor-pointer select-none min-w-0 " +
+              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
               (activeTab === "dual"
                 ? "bg-ink text-surface font-semibold shadow-xs"
                 : "text-ink-soft hover:bg-raised hover:text-ink")
             }
           >
-            <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
-              Step 4
-            </span>
-            <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
-              <span>⚖️</span>
-              <span className="hidden md:inline">원문/완역 대조</span>
-              <span className="inline md:hidden">원문 대조</span>
-            </span>
+            <span>⚖️</span>
+            <span>Step 4 · 원문 대조</span>
           </button>
         </div>
       </nav>
