@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
+import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 
 export interface DialogueItem {
@@ -376,7 +377,7 @@ export function DialogueLearningView({
     setActiveSpeakingId(id);
 
     // If audio file actually exists on remote media or localhost, try playing it, otherwise fallback to speech synthesis immediately
-    if (audioSrc && hasAudioFile(audioSrc)) {
+    if (!shouldUseUnifiedSpeech() && audioSrc && hasAudioFile(audioSrc)) {
       const audio = new Audio(mediaUrl(audioSrc));
       audio.playbackRate = audioSpeed;
       audio.onended = () => {

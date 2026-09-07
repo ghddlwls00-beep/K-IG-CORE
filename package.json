@@ -10,6 +10,8 @@
     "test:reading": "node scripts/audit-reading.mjs",
     "test:voca": "node scripts/audit-reading-voca.mjs",
     "extract": "node scripts/extract.mjs",
+    "generate:ava": "node scripts/generate-azure-ava.mjs",
+    "upload:ava": "node scripts/upload-azure-ava-r2.mjs",
     "upload-media": "node scripts/upload-media.mjs"
   },
   "dependencies": {

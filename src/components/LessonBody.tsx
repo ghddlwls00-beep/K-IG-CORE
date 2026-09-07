@@ -7,6 +7,7 @@ import { useLanguage } from "./LanguageProvider";
 import { DictationPanel } from "./DictationPanel";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
+import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 
 function ViewLoadingSkeleton() {
   return (
@@ -254,7 +255,7 @@ export function LessonBody({
     stopSpeech();
     setActiveSentenceIndex(idx);
 
-    if (audioSrc && hasAudioFile(audioSrc)) {
+    if (!shouldUseUnifiedSpeech() && audioSrc && hasAudioFile(audioSrc)) {
       const audio = new Audio(mediaUrl(audioSrc));
       audio.onended = () => setActiveSentenceIndex((curr) => (curr === idx ? null : curr));
       audio.onerror = () => {

@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "./LanguageProvider";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
+import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 import {
   playSentenceQueue,
   stopSpeech,
@@ -40,6 +42,7 @@ export function AudioPlayer({
   label?: string;
 }) {
   const { t } = useLanguage();
+  const pathname = usePathname();
   const ref = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
@@ -56,7 +59,8 @@ export function AudioPlayer({
     getServerSpeechSnapshot
   );
 
-  const isTtsMode = (missing || !src) && fallbackSentences.length > 0;
+  const isTtsMode =
+    fallbackSentences.length > 0 && (shouldUseUnifiedSpeech(pathname) || missing || !src);
   const ttsIndex = speech.index >= 0 ? speech.index : 0;
   const ttsActive = isTtsMode && speech.speaking;
 
@@ -188,7 +192,7 @@ export function AudioPlayer({
 
   return (
     <div className="rounded-3xl border border-line bg-raised p-5 transition-all duration-300 hover:shadow-md shadow-2xs">
-      {src && !missing ? (
+      {src && !missing && !isTtsMode ? (
         <audio
           ref={ref}
           src={mediaUrl(src)}

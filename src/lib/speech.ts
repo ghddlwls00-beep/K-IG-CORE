@@ -1,3 +1,10 @@
+import { mediaUrl } from "@/lib/media";
+import {
+  normalizeUnifiedSpeechText,
+  shouldUseUnifiedSpeech,
+  unifiedSpeechPath,
+} from "@/lib/unifiedSpeech";
+
 /**
  * Dual-Engine Speech & Audio System for K-IG 교육 courseware.
  *
@@ -489,16 +496,7 @@ export function normalizeLang(lang: SpeechLang | undefined): string {
 
 /** Strips reading marks the courseware uses ("/" chunk markers, [tags]). */
 function cleanText(text: string): string {
-  return text
-    .replace(/\s*\/\s*/g, " ")
-    .replace(/\[[^\]]*\]/g, " ") // pronunciation guides: [릴렌리ㅆ디멘]
-    .replace(/:{2,}/g, " ") // ::: header rules
-    .replace(/-{2,}/g, " ") // --- placeholders
-    .replace(/[…]+/g, " ")
-    .replace(/\s*\|\s*/g, ", ") // header pipes become a short pause
-    .replace(/\(\s*\)/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return normalizeUnifiedSpeechText(text);
 }
 
 /** Break a long string into speakable chunks at sentence, then word boundaries. */
@@ -739,6 +737,79 @@ function playChunkViaStream(chunk: LangSegment, runToken: number) {
   playPiece();
 }
 
+/** Play the pre-generated Ava clip, falling back to the legacy engines on 404/error. */
+function playUnifiedClip(
+  clean: string,
+  options: SpeakOptions,
+  runToken: number,
+  fallback: () => void,
+): boolean {
+  if (!shouldUseUnifiedSpeech()) return false;
+  const audio = getSharedAudio();
+  if (!audio) return false;
+
+  active = {
+    runToken,
+    chunks: [{ text: clean, lang: options.lang ?? "en" }],
+    chunkIndex: 0,
+    gender: "female",
+    rate: options.rate ?? 1.0,
+    pitch: options.pitch,
+    onStart: options.onStart,
+    onEnd: options.onEnd,
+    onError: options.onError,
+    started: false,
+    usingStream: true,
+  };
+  manuallyPaused = false;
+  emit({ speaking: true, paused: false, text: clean });
+
+  let settled = false;
+  const useFallback = () => {
+    if (settled || runToken !== token) return;
+    settled = true;
+    audio.onended = null;
+    audio.onerror = null;
+    try {
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+    } catch {
+      // ignore cleanup failures and let the fallback engine continue
+    }
+    fallback();
+  };
+
+  audio.src = mediaUrl(unifiedSpeechPath(clean));
+  audio.playbackRate = Math.max(0.5, Math.min(2, options.rate ?? 1.0));
+  audio.onended = () => {
+    if (settled || isStale(runToken)) return;
+    settled = true;
+    finishRun(runToken);
+  };
+  audio.onerror = useFallback;
+
+  try {
+    const playback = audio.play();
+    if (playback && typeof playback.then === "function") {
+      playback
+        .then(() => {
+          if (settled || isStale(runToken)) return;
+          const run = active;
+          if (run && !run.started) {
+            run.started = true;
+            run.onStart?.();
+          }
+        })
+        .catch(useFallback);
+    }
+  } catch {
+    useFallback();
+  }
+
+  return true;
+}
+
 // --- Web Speech engine -----------------------------------------------------
 
 function playChunkViaSynthesis(chunk: LangSegment, runToken: number) {
@@ -862,42 +933,46 @@ function speakWithToken(text: string, options: SpeakOptions, runToken: number) {
     return;
   }
 
-  const baseLang = options.lang ?? "en";
-  const autoDetect = options.autoDetectLanguage !== false;
+  const startLegacyEngine = () => {
+    if (runToken !== token) return;
+    const baseLang = options.lang ?? "en";
+    const autoDetect = options.autoDetectLanguage !== false;
+    const segments: LangSegment[] = autoDetect
+      ? segmentByLanguage(clean, baseLang)
+      : [{ text: clean, lang: baseLang }];
 
-  const segments: LangSegment[] = autoDetect
-    ? segmentByLanguage(clean, baseLang)
-    : [{ text: clean, lang: baseLang }];
-
-  // Split each language run into engine-safe chunks.
-  const chunks: LangSegment[] = [];
-  for (const seg of segments) {
-    for (const piece of splitChunks(seg.text, 200)) {
-      chunks.push({ text: piece, lang: seg.lang });
+    const chunks: LangSegment[] = [];
+    for (const seg of segments) {
+      for (const piece of splitChunks(seg.text, 200)) {
+        chunks.push({ text: piece, lang: seg.lang });
+      }
     }
-  }
-  if (chunks.length === 0) {
-    if (runToken === token) options.onEnd?.();
-    return;
-  }
+    if (chunks.length === 0) {
+      if (runToken === token) options.onEnd?.();
+      return;
+    }
 
-  active = {
-    runToken,
-    chunks,
-    chunkIndex: 0,
-    gender: options.gender ?? "neutral",
-    rate: options.rate ?? 1.0,
-    pitch: options.pitch,
-    onStart: options.onStart,
-    onEnd: options.onEnd,
-    onError: options.onError,
-    started: false,
-    usingStream: false,
+    active = {
+      runToken,
+      chunks,
+      chunkIndex: 0,
+      gender: options.gender ?? "neutral",
+      rate: options.rate ?? 1.0,
+      pitch: options.pitch,
+      onStart: options.onStart,
+      onEnd: options.onEnd,
+      onError: options.onError,
+      started: false,
+      usingStream: false,
+    };
+    manuallyPaused = false;
+    emit({ speaking: true, paused: false, text: chunks[0].text });
+    runCurrentChunk(runToken);
   };
-  manuallyPaused = false;
-  emit({ speaking: true, paused: false, text: chunks[0].text });
 
-  runCurrentChunk(runToken);
+  if (!playUnifiedClip(clean, options, runToken, startLegacyEngine)) {
+    startLegacyEngine();
+  }
 }
 
 // ---------------------------------------------------------------------------

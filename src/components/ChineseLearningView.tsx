@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
+import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 
 interface ChineseLearningViewProps {
   blocks: Block[];
@@ -67,7 +68,7 @@ export function ChineseLearningView({
 
     // If native Chinese audio tracks actually exist
     const track = audioTracks[idx + 1] || audioTracks[idx];
-    if (track?.src && hasAudioFile(track.src)) {
+    if (!shouldUseUnifiedSpeech() && track?.src && hasAudioFile(track.src)) {
       const audio = new Audio(mediaUrl(track.src));
       audio.playbackRate = speed;
       audio.onended = () => setActiveIdx((curr) => (curr === idx ? null : curr));

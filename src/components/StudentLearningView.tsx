@@ -14,6 +14,7 @@ import {
   unlockMobileAudio,
 } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
+import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 import { generateWordBank, verifyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
 
@@ -216,6 +217,11 @@ export function StudentLearningView({
 
     unlockMobileAudio();
     stopAll();
+
+    if (shouldUseUnifiedSpeech()) {
+      playFullTts(0);
+      return;
+    }
 
     const fullTrack = audioTracks[0];
     if (fullTrack?.src && hasAudioFile(fullTrack.src)) {
