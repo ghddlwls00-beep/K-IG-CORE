@@ -28,7 +28,7 @@ export const TABS: Tab[] = [
     legacyImage: "STUDENT.jpg",
     legacyIndex: "basics/index.htm",
     courses: ["student"],
-    blurb: "Real-Life Spoken English & Chunk Mastery with Interactive Speaking",
+    blurb: "Real Conversations. Pure Listening & Reading.",
   },
   {
     slug: "voca",

@@ -44,7 +44,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Student",
     kind: "audio-drill",
     description:
-      "원어민 실전 회화와 단계별 청크 훈련. 생생한 구어체 표현과 블라인드 스피킹 훈련으로 자연스러운 영어 회화력을 완성합니다.",
+      "원어민 일상 회화로 마스터하는 실전 듣기와 정독 훈련.",
     series: [{ slug: "s", title: "Conversation Lessons", prefix: "s" }],
   },
   {
