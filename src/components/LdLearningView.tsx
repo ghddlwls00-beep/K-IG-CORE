@@ -356,44 +356,20 @@ export function LdLearningView({
     <div className="flex flex-col gap-6">
       {/* 1. High-End Stage Header Banner */}
       <div className="rounded-2xl border border-line bg-surface/90 p-5 shadow-soft backdrop-blur-md">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="rounded-full bg-primary/10 px-3 py-0.5 font-mono text-[11px] font-bold text-primary tracking-wider uppercase border border-primary/20">
-                Acoustic Cognitive System
-              </span>
-              <span className="font-mono text-[11px] text-ink-faint">
-                {sentences.length}개 문장 완성 코스웨어
-              </span>
-            </div>
-            <h1 className="mt-2 text-[20px] font-bold tracking-tight text-ink">
-              5단계 음향 인지 리스닝 마스터리
-            </h1>
-            <p className="mt-1 text-[13px] text-ink-soft leading-relaxed">
-              블라인드 청취 ➔ 스마트 탭-딕테이션 ➔ 연음 분해 클리닉 ➔ 실전 섀도잉 & AI 평가 ➔ 1.5배속 뇌 트레이닝으로 이어지는 실전 청취력 완성 시스템입니다.
-            </p>
-          </div>
-
-          {/* Vocabulary hint chips */}
-          {hintWords.length > 0 && (
-            <div className="flex flex-wrap items-center gap-1.5 max-w-md justify-end">
-              <span className="font-mono text-[11px] text-ink-faint uppercase tracking-wider mr-1">
-                핵심 단어:
-              </span>
-              {hintWords.slice(0, 6).map((word, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => playText(word, 0.9)}
-                  className="rounded-lg border border-line bg-raised/70 px-2 py-0.5 font-mono text-[11.5px] font-medium text-ink-soft hover:text-primary hover:border-primary/40 transition-colors cursor-pointer"
-                  title="발음 듣기"
-                >
-                  {word} 🔊
-                </button>
-              ))}
-            </div>
-          )}
+        <div className="flex items-center gap-2">
+          <span className="rounded-full bg-primary/10 px-3 py-0.5 font-mono text-[11px] font-bold text-primary tracking-wider uppercase border border-primary/20">
+            Acoustic Cognitive System
+          </span>
+          <span className="font-mono text-[11px] text-ink-faint">
+            {sentences.length}개 문장 완성 코스웨어
+          </span>
         </div>
+        <h1 className="mt-2 text-[20px] font-bold tracking-tight text-ink">
+          5단계 음향 인지 리스닝 마스터리
+        </h1>
+        <p className="mt-1 text-[13px] text-ink-soft leading-relaxed">
+          블라인드 청취 ➔ 스마트 탭-딕테이션 ➔ 연음 분해 클리닉 ➔ 실전 섀도잉 & AI 평가 ➔ 1.5배속 뇌 트레이닝으로 이어지는 실전 청취력 완성 시스템입니다.
+        </p>
       </div>
 
       {/* 2. Step Navigation Bar (Sticky 5-Column Grid, 100% visible on both Mobile & Desktop) */}
