@@ -1,8 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, useSyncExternalStore } from "react";
 import type { Block } from "@/lib/types";
-import { speakText, stopSpeech } from "@/lib/speech";
+import {
+  playSentenceQueue,
+  stopSpeech,
+  togglePauseSpeech,
+  nextSentence,
+  previousSentence,
+  subscribeSpeech,
+  getSpeechSnapshot,
+  getServerSpeechSnapshot,
+  unlockMobileAudio,
+} from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { generateWordBank, verifyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
@@ -17,6 +27,14 @@ interface StudentLearningViewProps {
 type StudyMode = "listen" | "dictation" | "shadowing";
 type ScriptFilter = "hidden" | "en_only" | "ko_only" | "all";
 type PlaySpeed = 0.85 | 1.0 | 1.2;
+type FullMode = "none" | "audio" | "tts";
+
+/** Which single sentence is currently targeted by the player. */
+interface ActiveTarget {
+  idx: number;
+  kind: "en" | "ko";
+  loop: boolean;
+}
 
 export function StudentLearningView({
   blocks,
@@ -45,12 +63,20 @@ export function StudentLearningView({
     blocks.find((b) => b.type === "instruction")?.text ||
     "STUDENT 실전 듣기·읽기 완성 훈련";
 
+  // Live engine state — the single source of truth for speaking/paused.
+  const speech = useSyncExternalStore(
+    subscribeSpeech,
+    getSpeechSnapshot,
+    getServerSpeechSnapshot
+  );
+
   // Main navigation & general settings
   const [studyMode, setStudyMode] = useState<StudyMode>("listen");
   const [speed, setSpeed] = useState<PlaySpeed>(1.0);
-  const [activeIdx, setActiveIdx] = useState<number | null>(null);
-  const [isLooping, setIsLooping] = useState<boolean>(false);
-  const [isPlayingFull, setIsPlayingFull] = useState(false);
+  const [target, setTarget] = useState<ActiveTarget | null>(null);
+  const [fullMode, setFullMode] = useState<FullMode>("none");
+  const [audioPaused, setAudioPaused] = useState(false);
+  const [fullIdx, setFullIdx] = useState(0);
   const fullAudioRef = useRef<HTMLAudioElement | null>(null);
 
   // Step 1: Blind Listening states
@@ -62,140 +88,285 @@ export function StudentLearningView({
   const [selectedTiles, setSelectedTiles] = useState<WordTile[]>([]);
   const [solvedSentences, setSolvedSentences] = useState<Record<number, boolean>>({});
   const [dictationFeedback, setDictationFeedback] = useState<"correct" | "wrong" | null>(null);
-  const [cachedWordBanks, setCachedWordBanks] = useState<
-    Record<number, { correctWords: string[]; allTiles: WordTile[] }>
-  >({});
 
   // Step 4: Shadowing & Paced Reading states
   const [completedSentences, setCompletedSentences] = useState<Record<number, boolean>>({});
   const [openMicTesters, setOpenMicTesters] = useState<Record<number, boolean>>({});
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      stopSpeech();
-      if (fullAudioRef.current) {
-        fullAudioRef.current.pause();
-        fullAudioRef.current = null;
+  const isPlayingFull = fullMode !== "none";
+  const isPaused = fullMode === "audio" ? audioPaused : speech.paused;
+
+  // ---------------------------------------------------------------------
+  // Transport helpers
+  // ---------------------------------------------------------------------
+
+  /** Hard stop: TTS engine + local mp3 element + all UI playback state. */
+  const stopAll = useCallback(() => {
+    stopSpeech();
+    const el = fullAudioRef.current;
+    if (el) {
+      el.onended = null;
+      el.onerror = null;
+      el.pause();
+      try {
+        el.currentTime = 0;
+      } catch {
+        // ignore
       }
-    };
+      fullAudioRef.current = null;
+    }
+    setFullMode("none");
+    setAudioPaused(false);
+    setTarget(null);
+    setFullIdx(0);
   }, []);
 
-  // Initialize or retrieve word bank for a sentence
-  const currentSentenceText = sentenceItems[dictationIdx]?.text || "";
-  const currentWordBank = useMemo(() => {
-    if (!currentSentenceText) return { correctWords: [], allTiles: [] };
-    if (cachedWordBanks[dictationIdx]) {
-      return cachedWordBanks[dictationIdx];
-    }
-    const bank = generateWordBank(currentSentenceText);
-    setCachedWordBanks((prev) => ({ ...prev, [dictationIdx]: bank }));
-    return bank;
-  }, [currentSentenceText, dictationIdx, cachedWordBanks]);
-
-  // Reset tile selection when moving to another sentence in dictation
+  // Cleanup on unmount / lesson change
   useEffect(() => {
-    setSelectedTiles([]);
-    setDictationFeedback(null);
-  }, [dictationIdx]);
+    return () => {
+      stopAll();
+    };
+  }, [stopAll, lessonKey]);
 
-  // Full audio player
-  const playFullAudio = useCallback(() => {
-    if (isPlayingFull) {
-      if (fullAudioRef.current) {
-        fullAudioRef.current.pause();
-        fullAudioRef.current.currentTime = 0;
+  /** Start (or restart) playback of one sentence, optionally looping. */
+  const startSentence = useCallback(
+    (text: string, idx: number, kind: "en" | "ko", loop: boolean) => {
+      if (!text) return;
+      unlockMobileAudio();
+      stopAll();
+      setTarget({ idx, kind, loop });
+      playSentenceQueue([text], {
+        lang: kind,
+        rate: speed,
+        loop,
+        gap: loop ? 600 : 250,
+        onEnd: () => setTarget(null),
+        onError: () => setTarget(null),
+      });
+    },
+    [speed, stopAll]
+  );
+
+  const isTargetPlaying = useCallback(
+    (idx: number, kind: "en" | "ko", loop: boolean) =>
+      target !== null &&
+      target.idx === idx &&
+      target.kind === kind &&
+      target.loop === loop &&
+      speech.speaking,
+    [target, speech.speaking]
+  );
+
+  /** 🔊 듣기 / ⏹️ 정지 toggle for a single sentence. */
+  const toggleSentence = useCallback(
+    (text: string, idx: number, kind: "en" | "ko" = "en") => {
+      if (isTargetPlaying(idx, kind, false)) {
+        stopAll();
+        return;
       }
-      stopSpeech();
-      setIsPlayingFull(false);
+      startSentence(text, idx, kind, false);
+    },
+    [isTargetPlaying, startSentence, stopAll]
+  );
+
+  /** 🔁 무한 반복 toggle for a single sentence. */
+  const toggleLoop = useCallback(
+    (text: string, idx: number, kind: "en" | "ko" = "en") => {
+      if (isTargetPlaying(idx, kind, true)) {
+        stopAll();
+        return;
+      }
+      startSentence(text, idx, kind, true);
+    },
+    [isTargetPlaying, startSentence, stopAll]
+  );
+
+  const allSentences = useMemo(
+    () => sentenceItems.map((s) => s.text).filter(Boolean),
+    [sentenceItems]
+  );
+
+  /** Whole-lesson TTS playback, sentence by sentence (so 다음/이전 works). */
+  const playFullTts = useCallback(
+    (startIndex = 0) => {
+      if (allSentences.length === 0) return;
+      setFullMode("tts");
+      setFullIdx(startIndex);
+      playSentenceQueue(allSentences, {
+        lang: "en",
+        rate: speed,
+        startIndex,
+        gap: 350,
+        onProgress: (idx) => setFullIdx(idx),
+        onEnd: () => {
+          setFullMode("none");
+          setFullIdx(0);
+        },
+      });
+    },
+    [allSentences, speed]
+  );
+
+  /** 전체 본문 듣기 / 전체 정지. */
+  const toggleFullAudio = useCallback(() => {
+    if (isPlayingFull) {
+      stopAll();
       return;
     }
 
-    stopSpeech();
-    setActiveIdx(null);
+    unlockMobileAudio();
+    stopAll();
 
     const fullTrack = audioTracks[0];
     if (fullTrack?.src && hasAudioFile(fullTrack.src)) {
       const audio = new Audio(mediaUrl(fullTrack.src));
       audio.playbackRate = speed;
-      audio.onended = () => setIsPlayingFull(false);
-      audio.onerror = () => playFullTts();
+      audio.preload = "auto";
+      audio.onended = () => {
+        fullAudioRef.current = null;
+        setFullMode("none");
+        setAudioPaused(false);
+      };
+      audio.onerror = () => {
+        fullAudioRef.current = null;
+        playFullTts(0);
+      };
       fullAudioRef.current = audio;
-      setIsPlayingFull(true);
-      audio.play().catch(() => playFullTts());
+      setFullMode("audio");
+      setAudioPaused(false);
+      audio.play().catch(() => {
+        fullAudioRef.current = null;
+        playFullTts(0);
+      });
     } else {
-      playFullTts();
+      playFullTts(0);
     }
-  }, [isPlayingFull, audioTracks, speed, sentenceItems]);
+  }, [isPlayingFull, audioTracks, speed, stopAll, playFullTts]);
 
-  const playFullTts = useCallback(() => {
-    const fullText = sentenceItems.map((s) => s.text).join(" ");
-    setIsPlayingFull(true);
-    speakText(fullText, {
-      lang: "en",
-      rate: speed,
-      onEnd: () => setIsPlayingFull(false),
-      onError: () => setIsPlayingFull(false),
-    });
-  }, [sentenceItems, speed]);
+  /** ⏸️ / ▶️ pause-resume that works for both engines. */
+  const togglePause = useCallback(() => {
+    if (fullMode === "audio") {
+      const el = fullAudioRef.current;
+      if (!el) return;
+      if (el.paused) {
+        el.play().catch(() => {});
+        setAudioPaused(false);
+      } else {
+        el.pause();
+        setAudioPaused(true);
+      }
+      return;
+    }
+    togglePauseSpeech();
+  }, [fullMode]);
 
-  // Sentence-level playback with optional loop
-  const playSentence = useCallback(
-    (text: string, idx: number, loop = false) => {
-      if (!text) return;
+  const goPrev = useCallback(() => {
+    if (fullMode === "audio") {
+      const el = fullAudioRef.current;
+      if (el) el.currentTime = Math.max(0, el.currentTime - 5);
+      return;
+    }
+    previousSentence();
+  }, [fullMode]);
 
-      if (activeIdx === idx && !loop) {
-        stopSpeech();
-        setActiveIdx(null);
-        setIsLooping(false);
+  const goNext = useCallback(() => {
+    if (fullMode === "audio") {
+      const el = fullAudioRef.current;
+      if (el) el.currentTime = Math.min(el.duration || 0, el.currentTime + 5);
+      return;
+    }
+    nextSentence();
+  }, [fullMode]);
+
+  /** Changing speed restarts what is currently playing at the new rate. */
+  const changeSpeed = useCallback(
+    (s: PlaySpeed) => {
+      setSpeed(s);
+
+      if (fullMode === "audio" && fullAudioRef.current) {
+        fullAudioRef.current.playbackRate = s;
         return;
       }
 
-      stopSpeech();
-      if (fullAudioRef.current) {
-        fullAudioRef.current.pause();
-        fullAudioRef.current.currentTime = 0;
+      if (fullMode === "tts") {
+        const resumeAt = fullIdx;
+        setTimeout(() => {
+          if (allSentences.length === 0) return;
+          playSentenceQueue(allSentences, {
+            lang: "en",
+            rate: s,
+            startIndex: resumeAt,
+            gap: 350,
+            onProgress: (idx) => setFullIdx(idx),
+            onEnd: () => {
+              setFullMode("none");
+              setFullIdx(0);
+            },
+          });
+        }, 0);
+        return;
       }
-      setIsPlayingFull(false);
-      setActiveIdx(idx);
-      setIsLooping(loop);
 
-      const doSpeak = () => {
-        speakText(text, {
-          lang: "en",
-          rate: speed,
-          onStart: () => setActiveIdx(idx),
-          onEnd: () => {
-            if (loop) {
-              setTimeout(() => {
-                doSpeak();
-              }, 400);
-            } else {
-              setActiveIdx((curr) => (curr === idx ? null : curr));
-            }
-          },
-          onError: () => {
-            setActiveIdx((curr) => (curr === idx ? null : curr));
-            setIsLooping(false);
-          },
-        });
-      };
-
-      doSpeak();
+      if (target) {
+        const t = target;
+        const text =
+          t.kind === "ko" ? koParas[t.idx] ?? "" : sentenceItems[t.idx]?.text ?? "";
+        if (text) {
+          setTimeout(() => {
+            playSentenceQueue([text], {
+              lang: t.kind,
+              rate: s,
+              loop: t.loop,
+              gap: t.loop ? 600 : 250,
+              onEnd: () => setTarget(null),
+              onError: () => setTarget(null),
+            });
+          }, 0);
+        }
+      }
     },
-    [activeIdx, speed]
+    [fullMode, fullIdx, allSentences, target, koParas, sentenceItems]
   );
 
-  // Toggle individual sentence visibility
-  const toggleItemReveal = (idx: number) => {
-    setRevealedItems((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  /** Switching study step must silence whatever is playing. */
+  const switchMode = useCallback(
+    (mode: StudyMode) => {
+      stopAll();
+      setStudyMode(mode);
+    },
+    [stopAll]
+  );
+
+  // ---------------------------------------------------------------------
+  // Dictation logic
+  // ---------------------------------------------------------------------
+
+  const currentSentenceText = sentenceItems[dictationIdx]?.text || "";
+
+  // Built once per lesson so tile order stays stable across re-renders.
+  const wordBanks = useMemo(
+    () => sentenceItems.map((s) => generateWordBank(s.text)),
+    [sentenceItems]
+  );
+  const currentWordBank = wordBanks[dictationIdx] ?? {
+    correctWords: [] as string[],
+    allTiles: [] as WordTile[],
   };
 
-  // Step 3 Tap-Dictation Handlers
+  /** Move to another dictation sentence and reset its working state. */
+  const goToDictation = useCallback(
+    (updater: number | ((i: number) => number)) => {
+      stopAll();
+      setSelectedTiles([]);
+      setDictationFeedback(null);
+      setDictationIdx((i) => (typeof updater === "function" ? updater(i) : updater));
+    },
+    [stopAll]
+  );
+
   const handleSelectTile = (tile: WordTile) => {
     if (selectedTiles.some((t) => t.id === tile.id)) return;
-    const next = [...selectedTiles, tile];
-    setSelectedTiles(next);
+    setSelectedTiles((prev) => [...prev, tile]);
     setDictationFeedback(null);
   };
 
@@ -212,8 +383,7 @@ export function StudentLearningView({
     if (isCorrect) {
       setDictationFeedback("correct");
       setSolvedSentences((prev) => ({ ...prev, [dictationIdx]: true }));
-      // Congratulatory replay
-      playSentence(currentSentenceText, dictationIdx);
+      startSentence(currentSentenceText, dictationIdx, "en", false);
     } else {
       setDictationFeedback("wrong");
     }
@@ -258,13 +428,13 @@ export function StudentLearningView({
           </div>
 
           {/* Full Narration & Speed Control */}
-          <div className="flex items-center gap-2 self-start sm:self-center">
+          <div className="flex flex-wrap items-center gap-2 self-start sm:self-center">
             <button
               type="button"
-              onClick={playFullAudio}
+              onClick={toggleFullAudio}
               className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12.5px] font-bold transition-all cursor-pointer shadow-2xs select-none ${
                 isPlayingFull
-                  ? "bg-red-500 text-white ring-2 ring-red-500/30 animate-pulse"
+                  ? "bg-red-500 text-white ring-2 ring-red-500/30"
                   : "bg-primary text-white hover:bg-primary/90 active:scale-[0.98]"
               }`}
             >
@@ -272,13 +442,48 @@ export function StudentLearningView({
               <span>{isPlayingFull ? "전체 정지" : "전체 본문 듣기"}</span>
             </button>
 
+            {/* Transport controls, only while something is playing */}
+            {isPlayingFull && (
+              <div className="flex items-center gap-1 rounded-xl border border-line bg-raised/70 p-1">
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  aria-label={fullMode === "tts" ? "이전 문장" : "5초 뒤로"}
+                  className="px-2 py-1 rounded-lg text-[12px] font-semibold text-ink-soft hover:text-ink hover:bg-surface transition-colors cursor-pointer"
+                >
+                  ⏮️
+                </button>
+                <button
+                  type="button"
+                  onClick={togglePause}
+                  aria-label={isPaused ? "이어 듣기" : "일시정지"}
+                  className="px-2 py-1 rounded-lg text-[12px] font-semibold text-ink hover:bg-surface transition-colors cursor-pointer"
+                >
+                  {isPaused ? "▶️" : "⏸️"}
+                </button>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  aria-label={fullMode === "tts" ? "다음 문장" : "5초 앞으로"}
+                  className="px-2 py-1 rounded-lg text-[12px] font-semibold text-ink-soft hover:text-ink hover:bg-surface transition-colors cursor-pointer"
+                >
+                  ⏭️
+                </button>
+                {fullMode === "tts" && (
+                  <span className="px-1.5 font-mono text-[11px] tabular-nums text-ink-faint">
+                    {fullIdx + 1}/{allSentences.length}
+                  </span>
+                )}
+              </div>
+            )}
+
             {/* Playback Speed Pill */}
             <div className="flex items-center rounded-xl border border-line bg-raised/70 p-1 text-[11px] font-semibold">
-              {( [0.85, 1.0, 1.2] as PlaySpeed[] ).map((s) => (
+              {([0.85, 1.0, 1.2] as PlaySpeed[]).map((s) => (
                 <button
                   key={s}
                   type="button"
-                  onClick={() => setSpeed(s)}
+                  onClick={() => changeSpeed(s)}
                   className={`px-2 py-1 rounded-lg transition-colors cursor-pointer ${
                     speed === s
                       ? "bg-surface text-ink font-bold shadow-2xs border border-line/60"
@@ -297,10 +502,7 @@ export function StudentLearningView({
           <div className="grid grid-cols-3 gap-1.5">
             <button
               type="button"
-              onClick={() => {
-                setStudyMode("listen");
-                stopSpeech();
-              }}
+              onClick={() => switchMode("listen")}
               className={`flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-[12px] sm:text-[13px] font-semibold transition-all cursor-pointer truncate ${
                 studyMode === "listen"
                   ? "bg-surface text-primary shadow-2xs border border-line/80 ring-1 ring-primary/20"
@@ -312,10 +514,7 @@ export function StudentLearningView({
             </button>
             <button
               type="button"
-              onClick={() => {
-                setStudyMode("dictation");
-                stopSpeech();
-              }}
+              onClick={() => switchMode("dictation")}
               className={`flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-[12px] sm:text-[13px] font-semibold transition-all cursor-pointer truncate ${
                 studyMode === "dictation"
                   ? "bg-surface text-primary shadow-2xs border border-line/80 ring-1 ring-primary/20"
@@ -329,10 +528,7 @@ export function StudentLearningView({
             </button>
             <button
               type="button"
-              onClick={() => {
-                setStudyMode("shadowing");
-                stopSpeech();
-              }}
+              onClick={() => switchMode("shadowing")}
               className={`flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-[12px] sm:text-[13px] font-semibold transition-all cursor-pointer truncate ${
                 studyMode === "shadowing"
                   ? "bg-surface text-primary shadow-2xs border border-line/80 ring-1 ring-primary/20"
@@ -362,58 +558,38 @@ export function StudentLearningView({
             </div>
 
             <div className="flex flex-wrap items-center gap-1.5 bg-raised/70 p-1 rounded-xl border border-line/60">
-              <button
-                type="button"
-                onClick={() => setScriptFilter("hidden")}
-                className={`px-2.5 py-1 rounded-lg text-[11.5px] font-semibold transition-all cursor-pointer ${
-                  scriptFilter === "hidden"
-                    ? "bg-primary text-white shadow-2xs"
-                    : "text-ink-soft hover:text-ink"
-                }`}
-              >
-                🙈 모두 가림 (순수 리스닝)
-              </button>
-              <button
-                type="button"
-                onClick={() => setScriptFilter("en_only")}
-                className={`px-2.5 py-1 rounded-lg text-[11.5px] font-semibold transition-all cursor-pointer ${
-                  scriptFilter === "en_only"
-                    ? "bg-primary text-white shadow-2xs"
-                    : "text-ink-soft hover:text-ink"
-                }`}
-              >
-                🔤 영어만
-              </button>
-              <button
-                type="button"
-                onClick={() => setScriptFilter("ko_only")}
-                className={`px-2.5 py-1 rounded-lg text-[11.5px] font-semibold transition-all cursor-pointer ${
-                  scriptFilter === "ko_only"
-                    ? "bg-primary text-white shadow-2xs"
-                    : "text-ink-soft hover:text-ink"
-                }`}
-              >
-                🇰🇷 해석만
-              </button>
-              <button
-                type="button"
-                onClick={() => setScriptFilter("all")}
-                className={`px-2.5 py-1 rounded-lg text-[11.5px] font-semibold transition-all cursor-pointer ${
-                  scriptFilter === "all"
-                    ? "bg-primary text-white shadow-2xs"
-                    : "text-ink-soft hover:text-ink"
-                }`}
-              >
-                👁️ 전체 보기
-              </button>
+              {(
+                [
+                  ["hidden", "🙈 모두 가림 (순수 리스닝)"],
+                  ["en_only", "🔤 영어만"],
+                  ["ko_only", "🇰🇷 해석만"],
+                  ["all", "👁️ 전체 보기"],
+                ] as [ScriptFilter, string][]
+              ).map(([value, labelText]) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setScriptFilter(value)}
+                  className={`px-2.5 py-1 rounded-lg text-[11.5px] font-semibold transition-all cursor-pointer ${
+                    scriptFilter === value
+                      ? "bg-primary text-white shadow-2xs"
+                      : "text-ink-soft hover:text-ink"
+                  }`}
+                >
+                  {labelText}
+                </button>
+              ))}
             </div>
           </div>
 
           {/* Sentence Cards */}
           <div className="flex flex-col gap-3">
             {sentenceItems.map((item, idx) => {
-              const isPlaying = activeIdx === idx;
-              const isLoopActive = isPlaying && isLooping;
+              const isPlaying = isTargetPlaying(idx, "en", false);
+              const isLoopActive = isTargetPlaying(idx, "en", true);
+              const isKoPlaying = isTargetPlaying(idx, "ko", false);
+              const isHighlighted =
+                isPlaying || isLoopActive || (fullMode === "tts" && fullIdx === idx);
               const ko = koParas[idx] || "";
               const isCardRevealed = revealedItems[idx] || scriptFilter === "all";
               const showEn = isCardRevealed || scriptFilter === "en_only";
@@ -423,7 +599,7 @@ export function StudentLearningView({
                 <div
                   key={idx}
                   className={`flex flex-col gap-3 rounded-2xl border p-4 sm:p-5 transition-all shadow-2xs ${
-                    isPlaying
+                    isHighlighted
                       ? "border-primary bg-primary/[0.03] ring-2 ring-primary/25 shadow-xs"
                       : "border-line bg-surface hover:border-line-strong"
                   }`}
@@ -443,36 +619,38 @@ export function StudentLearningView({
                     <div className="flex items-center gap-1.5">
                       <button
                         type="button"
-                        onClick={() => playSentence(item.text, idx, false)}
+                        onClick={() => toggleSentence(item.text, idx, "en")}
                         className={`flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-[12px] font-bold transition-all cursor-pointer ${
-                          isPlaying && !isLooping
+                          isPlaying
                             ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40 dark:text-red-400"
                             : "border-line bg-surface text-ink hover:bg-raised active:scale-95"
                         }`}
                         title={isPlaying ? "발음 정지" : "문장 듣기"}
                       >
-                        <span>{isPlaying && !isLooping ? "⏹️" : "🔊"}</span>
-                        <span>{isPlaying && !isLooping ? "정지" : "듣기"}</span>
+                        <span>{isPlaying ? "⏹️" : "🔊"}</span>
+                        <span>{isPlaying ? "정지" : "듣기"}</span>
                       </button>
 
                       <button
                         type="button"
-                        onClick={() => playSentence(item.text, idx, !isLoopActive)}
+                        onClick={() => toggleLoop(item.text, idx, "en")}
                         className={`flex items-center gap-1 rounded-xl border px-2.5 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${
                           isLoopActive
                             ? "border-primary bg-primary text-white shadow-2xs"
                             : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
                         }`}
-                        title="한 문장 무한 반복 듣기"
+                        title={isLoopActive ? "반복 정지" : "한 문장 무한 반복 듣기"}
                       >
-                        <span>🔁</span>
-                        <span className="hidden sm:inline">반복</span>
+                        <span>{isLoopActive ? "⏹️" : "🔁"}</span>
+                        <span className="hidden sm:inline">{isLoopActive ? "정지" : "반복"}</span>
                       </button>
 
                       {scriptFilter === "hidden" && (
                         <button
                           type="button"
-                          onClick={() => toggleItemReveal(idx)}
+                          onClick={() =>
+                            setRevealedItems((prev) => ({ ...prev, [idx]: !prev[idx] }))
+                          }
                           className="flex items-center gap-1 rounded-xl border border-line bg-raised/50 px-2.5 py-1.5 text-[12px] font-medium text-ink-soft hover:text-ink hover:bg-raised transition-colors cursor-pointer"
                         >
                           <span>{revealedItems[idx] ? "🔒 가림" : "👁️ 확인"}</span>
@@ -490,7 +668,7 @@ export function StudentLearningView({
                     </div>
                   ) : (
                     <div
-                      onClick={() => toggleItemReveal(idx)}
+                      onClick={() => setRevealedItems((prev) => ({ ...prev, [idx]: !prev[idx] }))}
                       className="flex items-center justify-between rounded-xl border border-dashed border-line bg-raised/40 p-3.5 cursor-pointer hover:bg-raised/70 transition-colors"
                     >
                       <div className="flex items-center gap-2 text-[13px] text-ink-soft font-medium">
@@ -501,13 +679,26 @@ export function StudentLearningView({
                     </div>
                   )}
 
-                  {/* Korean Meaning Area */}
+                  {/* Korean Meaning Area — now readable by TTS */}
                   {showKo && ko && (
-                    <p className="text-[13.5px] text-ink-soft border-t border-line/40 pt-2 font-normal leading-relaxed">
-                      {ko}
-                    </p>
+                    <div className="flex items-start justify-between gap-2 border-t border-line/40 pt-2">
+                      <p className="text-[13.5px] text-ink-soft font-normal leading-relaxed">
+                        {ko}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => toggleSentence(ko, idx, "ko")}
+                        className={`shrink-0 rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
+                          isKoPlaying
+                            ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
+                            : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
+                        }`}
+                        title={isKoPlaying ? "해석 정지" : "우리말 해석 듣기"}
+                      >
+                        {isKoPlaying ? "⏹️ 정지" : "🔈 해석"}
+                      </button>
+                    </div>
                   )}
-
                 </div>
               );
             })}
@@ -538,7 +729,7 @@ export function StudentLearningView({
                 <button
                   type="button"
                   disabled={dictationIdx === 0}
-                  onClick={() => setDictationIdx((i) => Math.max(0, i - 1))}
+                  onClick={() => goToDictation((i) => Math.max(0, i - 1))}
                   className="rounded-lg border border-line px-2.5 py-1 text-[12px] font-semibold text-ink disabled:opacity-30 hover:bg-raised transition-colors cursor-pointer"
                 >
                   ◀️ 이전
@@ -547,7 +738,7 @@ export function StudentLearningView({
                   type="button"
                   disabled={dictationIdx === sentenceItems.length - 1}
                   onClick={() =>
-                    setDictationIdx((i) => Math.min(sentenceItems.length - 1, i + 1))
+                    goToDictation((i) => Math.min(sentenceItems.length - 1, i + 1))
                   }
                   className="rounded-lg border border-line px-2.5 py-1 text-[12px] font-semibold text-ink disabled:opacity-30 hover:bg-raised transition-colors cursor-pointer"
                 >
@@ -561,7 +752,7 @@ export function StudentLearningView({
               <div
                 className="h-full bg-primary transition-all duration-300"
                 style={{
-                  width: `${((dictationIdx + 1) / sentenceItems.length) * 100}%`,
+                  width: `${((dictationIdx + 1) / Math.max(1, sentenceItems.length)) * 100}%`,
                 }}
               />
             </div>
@@ -575,32 +766,52 @@ export function StudentLearningView({
                 <span className="text-[12px] font-bold text-primary uppercase tracking-wider">
                   우리말 상황 맥락
                 </span>
-                <p className="text-[15px] sm:text-[16px] font-bold text-ink leading-relaxed">
-                  {koParas[dictationIdx] || "문장의 소리를 듣고 어순대로 조립하세요."}
-                </p>
+                <div className="flex items-start gap-2">
+                  <p className="text-[15px] sm:text-[16px] font-bold text-ink leading-relaxed">
+                    {koParas[dictationIdx] || "문장의 소리를 듣고 어순대로 조립하세요."}
+                  </p>
+                  {koParas[dictationIdx] && (
+                    <button
+                      type="button"
+                      onClick={() => toggleSentence(koParas[dictationIdx], dictationIdx, "ko")}
+                      className={`shrink-0 rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
+                        isTargetPlaying(dictationIdx, "ko", false)
+                          ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
+                          : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
+                      }`}
+                      title="우리말 힌트 듣기"
+                    >
+                      {isTargetPlaying(dictationIdx, "ko", false) ? "⏹️" : "🔈"}
+                    </button>
+                  )}
+                </div>
               </div>
 
               <div className="flex items-center gap-2 self-start sm:self-center">
                 <button
                   type="button"
-                  onClick={() => playSentence(currentSentenceText, dictationIdx)}
-                  className="flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-[13px] font-bold text-white shadow-2xs hover:bg-primary/90 active:scale-95 transition-all cursor-pointer"
+                  onClick={() => toggleSentence(currentSentenceText, dictationIdx, "en")}
+                  className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-[13px] font-bold shadow-2xs active:scale-95 transition-all cursor-pointer ${
+                    isTargetPlaying(dictationIdx, "en", false)
+                      ? "bg-red-500 text-white hover:bg-red-500/90"
+                      : "bg-primary text-white hover:bg-primary/90"
+                  }`}
                 >
-                  <span>🔊</span>
-                  <span>문장 듣기</span>
+                  <span>{isTargetPlaying(dictationIdx, "en", false) ? "⏹️" : "🔊"}</span>
+                  <span>{isTargetPlaying(dictationIdx, "en", false) ? "정지" : "문장 듣기"}</span>
                 </button>
                 <button
                   type="button"
-                  onClick={() => playSentence(currentSentenceText, dictationIdx, true)}
+                  onClick={() => toggleLoop(currentSentenceText, dictationIdx, "en")}
                   className={`flex items-center gap-1 rounded-xl border px-3 py-2.5 text-[12.5px] font-semibold transition-all cursor-pointer ${
-                    activeIdx === dictationIdx && isLooping
+                    isTargetPlaying(dictationIdx, "en", true)
                       ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
                       : "border-line bg-raised/60 text-ink-soft hover:text-ink hover:bg-raised"
                   }`}
                   title="무한 반복 청취"
                 >
-                  <span>🔁</span>
-                  <span>무한 반복</span>
+                  <span>{isTargetPlaying(dictationIdx, "en", true) ? "⏹️" : "🔁"}</span>
+                  <span>{isTargetPlaying(dictationIdx, "en", true) ? "반복 정지" : "무한 반복"}</span>
                 </button>
               </div>
             </div>
@@ -647,7 +858,7 @@ export function StudentLearningView({
                 {dictationIdx < sentenceItems.length - 1 && (
                   <button
                     type="button"
-                    onClick={() => setDictationIdx((i) => i + 1)}
+                    onClick={() => goToDictation((i) => i + 1)}
                     className="rounded-xl bg-emerald-600 px-3.5 py-1.5 text-[12.5px] font-bold text-white shadow-2xs hover:bg-emerald-700 transition-all cursor-pointer shrink-0"
                   >
                     다음 문장으로 ➡️
@@ -666,7 +877,7 @@ export function StudentLearningView({
                 </div>
                 <button
                   type="button"
-                  onClick={() => playSentence(currentSentenceText, dictationIdx)}
+                  onClick={() => startSentence(currentSentenceText, dictationIdx, "en", false)}
                   className="rounded-xl border border-red-400/40 bg-surface px-3 py-1.5 text-[12px] font-bold text-red-600 dark:text-red-400 hover:bg-red-50 transition-all cursor-pointer shrink-0"
                 >
                   🔊 다시 듣기
@@ -739,7 +950,7 @@ export function StudentLearningView({
                 <button
                   key={idx}
                   type="button"
-                  onClick={() => setDictationIdx(idx)}
+                  onClick={() => goToDictation(idx)}
                   className={`flex h-8 w-8 items-center justify-center rounded-xl text-[12px] font-bold transition-all cursor-pointer ${
                     isCurrent
                       ? "bg-primary text-white ring-2 ring-primary/40 shadow-xs scale-105"
@@ -790,8 +1001,11 @@ export function StudentLearningView({
           {/* Sentence Shadowing Cards */}
           <div className="flex flex-col gap-3">
             {sentenceItems.map((item, idx) => {
-              const isPlaying = activeIdx === idx;
-              const isLoopActive = isPlaying && isLooping;
+              const isPlaying = isTargetPlaying(idx, "en", false);
+              const isLoopActive = isTargetPlaying(idx, "en", true);
+              const isKoPlaying = isTargetPlaying(idx, "ko", false);
+              const isHighlighted =
+                isPlaying || isLoopActive || (fullMode === "tts" && fullIdx === idx);
               const ko = koParas[idx] || "";
               const isDone = completedSentences[idx] === true;
               const isMicOpen = openMicTesters[idx] === true;
@@ -800,7 +1014,7 @@ export function StudentLearningView({
                 <div
                   key={idx}
                   className={`flex flex-col gap-3 rounded-2xl border p-4 sm:p-5 transition-all shadow-2xs ${
-                    isPlaying
+                    isHighlighted
                       ? "border-primary bg-primary/[0.04] ring-2 ring-primary/25 shadow-xs"
                       : isDone
                       ? "border-emerald-500/30 bg-emerald-500/[0.02]"
@@ -832,29 +1046,29 @@ export function StudentLearningView({
                     <div className="flex items-center gap-1.5">
                       <button
                         type="button"
-                        onClick={() => playSentence(item.text, idx, false)}
+                        onClick={() => toggleSentence(item.text, idx, "en")}
                         className={`flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-[12px] font-bold transition-all cursor-pointer ${
-                          isPlaying && !isLooping
+                          isPlaying
                             ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
                             : "border-line bg-surface text-ink hover:bg-raised active:scale-95"
                         }`}
                       >
-                        <span>{isPlaying && !isLooping ? "⏹️" : "🔊"}</span>
-                        <span>{isPlaying && !isLooping ? "정지" : "낭독 가이드 듣기"}</span>
+                        <span>{isPlaying ? "⏹️" : "🔊"}</span>
+                        <span>{isPlaying ? "정지" : "낭독 가이드 듣기"}</span>
                       </button>
 
                       <button
                         type="button"
-                        onClick={() => playSentence(item.text, idx, !isLoopActive)}
+                        onClick={() => toggleLoop(item.text, idx, "en")}
                         className={`flex items-center gap-1 rounded-xl border px-2.5 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${
                           isLoopActive
                             ? "border-primary bg-primary text-white shadow-2xs"
                             : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
                         }`}
-                        title="반복 루프 섀도잉"
+                        title={isLoopActive ? "반복 정지" : "반복 루프 섀도잉"}
                       >
-                        <span>🔁</span>
-                        <span className="hidden sm:inline">반복</span>
+                        <span>{isLoopActive ? "⏹️" : "🔁"}</span>
+                        <span className="hidden sm:inline">{isLoopActive ? "정지" : "반복"}</span>
                       </button>
 
                       <button
@@ -880,11 +1094,25 @@ export function StudentLearningView({
                     {item.text}
                   </p>
 
-                  {/* Korean meaning */}
+                  {/* Korean meaning — readable */}
                   {ko && (
-                    <p className="text-[13.5px] text-ink-soft border-t border-line/40 pt-2 font-normal leading-relaxed">
-                      {ko}
-                    </p>
+                    <div className="flex items-start justify-between gap-2 border-t border-line/40 pt-2">
+                      <p className="text-[13.5px] text-ink-soft font-normal leading-relaxed">
+                        {ko}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => toggleSentence(ko, idx, "ko")}
+                        className={`shrink-0 rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
+                          isKoPlaying
+                            ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
+                            : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
+                        }`}
+                        title={isKoPlaying ? "해석 정지" : "우리말 해석 듣기"}
+                      >
+                        {isKoPlaying ? "⏹️ 정지" : "🔈 해석"}
+                      </button>
+                    </div>
                   )}
 
                   {/* Expandable Voice Speaking Tester */}
@@ -905,6 +1133,50 @@ export function StudentLearningView({
                 </div>
               );
             })}
+          </div>
+        </div>
+      )}
+
+      {/* Chunk drills reference (kept for prop compatibility) */}
+      {chunkDrills.length > 0 && studyMode === "shadowing" && (
+        <div className="rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-2xs flex flex-col gap-2">
+          <span className="text-[13px] font-bold text-ink">🧱 청크 드릴</span>
+          <div className="flex flex-col gap-2">
+            {chunkDrills.map((drill, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between gap-2 rounded-xl border border-line/60 bg-raised/40 px-3 py-2"
+              >
+                <div className="flex flex-col">
+                  <span className="text-[13.5px] font-semibold text-ink">{drill.en}</span>
+                  <span className="text-[12px] text-ink-soft">{drill.ko}</span>
+                </div>
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => toggleSentence(drill.en, 10000 + i, "en")}
+                    className={`rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
+                      isTargetPlaying(10000 + i, "en", false)
+                        ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
+                        : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
+                    }`}
+                  >
+                    {isTargetPlaying(10000 + i, "en", false) ? "⏹️" : "🔊 EN"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => toggleSentence(drill.ko, 20000 + i, "ko")}
+                    className={`rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
+                      isTargetPlaying(20000 + i, "ko", false)
+                        ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
+                        : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
+                    }`}
+                  >
+                    {isTargetPlaying(20000 + i, "ko", false) ? "⏹️" : "🔈 KO"}
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
