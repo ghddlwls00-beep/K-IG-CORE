@@ -259,14 +259,28 @@ export function formatLessonPresentation(
     };
   }
 
-  // 9. Dialogue tracks (man, woman, student)
-  if (["man", "woman", "student"].includes(courseSlug)) {
-    const prefix = courseSlug === "man" ? "m" : courseSlug === "woman" ? "w" : "s";
+  // 9. Student Conversation (실전 학생 회화)
+  if (courseSlug === "student") {
+    const parts = id.replace(/^s/, "").split("-");
+    const chapter = parts[0] || "1";
+    const part = parts[1] || "1";
+    const lessonTitle = lesson.title || rawLabel || `Part ${part}`;
+    return {
+      title: `Part ${part} · ${lessonTitle}`,
+      subtitle: lesson.label || `Chapter ${chapter} · 학생 실전 회화`,
+      badge: "🎙️ 실전 회화",
+      code: `Ch ${chapter}-${part}`,
+    };
+  }
+
+  // 10. Dialogue tracks (man, woman)
+  if (["man", "woman"].includes(courseSlug)) {
+    const prefix = courseSlug === "man" ? "m" : "w";
     const cleanId = id.replace(new RegExp(`^${prefix}`), "");
     const parts = cleanId.split("-");
     const chapter = parts[0] || "1";
     const track = parts[1] || "1";
-    const roleName = courseSlug === "man" ? "남성 실전 회화" : courseSlug === "woman" ? "여성 실전 회화" : "학생 실전 회화";
+    const roleName = courseSlug === "man" ? "남성 실전 회화" : "여성 실전 회화";
     return {
       title: `Chapter ${chapter} · ${roleName} ${track}`,
       subtitle: rawLabel && !rawLabel.includes(id) ? rawLabel : "Interactive Spoken Dialogue",

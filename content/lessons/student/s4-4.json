@@ -108,21 +108,31 @@
       "items": [
         {
           "n": "1",
-          "text": "My uncles and aunts are all married, so I have a lot of cousins as well."
+          "text": "My mother is the youngest child in her family."
         },
         {
           "n": "2",
-          "text": "Because grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother."
-        },
-        {
-          "n": "3",
           "text": "She has two older brothers and two sisters."
         },
         {
+          "n": "3",
+          "text": "My uncles and aunts are all married, so I have a lot of cousins as well."
+        },
+        {
           "n": "4",
-          "text": "My mother is the youngest child in her family."
+          "text": "Because grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother."
         }
       ]
+    },
+    {
+      "type": "paragraph",
+      "text": "나의 어머니는 그녀의 가족가운데 제일 막내입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "그녀는 오빠가 2명 있고, 여동생이 2명 있습니다.",
+      "lang": "ko"
     },
     {
       "type": "paragraph",
@@ -131,17 +141,7 @@
     },
     {
       "type": "paragraph",
-      "text": "할머니께서 몇 년 전에 돌아가셨기 때문에 나의 할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.",
-      "lang": "ko"
-    },
-    {
-      "type": "paragraph",
-      "text": "그녀는 오빠가2명 있고, 여동생이2명 있습니다.",
-      "lang": "ko"
-    },
-    {
-      "type": "paragraph",
-      "text": "나의 할아버지가 돌아가셨기 때문에",
+      "text": "할아버지께서 몇 년 전에 돌아가셨기 때문에 나의 할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.",
       "lang": "ko"
     }
   ],

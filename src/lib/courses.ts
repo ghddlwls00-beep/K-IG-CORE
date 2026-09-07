@@ -36,6 +36,18 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     series: [{ slug: "pr", title: "Reading Passages", prefix: "pr" }],
   },
   {
+    slug: "student",
+    tab: "students",
+    legacyFolder: "Student",
+    numbering: "unit-part",
+    title: "STUDENT CONVERSATION",
+    titleEn: "Student Conversation",
+    kind: "audio-drill",
+    description:
+      "원어민 실전 회화와 단계별 청크 훈련. 생생한 구어체 표현과 블라인드 스피킹 훈련으로 자연스러운 영어 회화력을 완성합니다.",
+    series: [{ slug: "s", title: "Conversation Lessons", prefix: "s" }],
+  },
+  {
     slug: "phonics",
     tab: "voca",
     legacyFolder: "phonics",

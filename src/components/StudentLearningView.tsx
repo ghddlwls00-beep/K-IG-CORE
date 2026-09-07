@@ -40,12 +40,59 @@ export function StudentLearningView({
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
   const [recallInputs, setRecallInputs] = useState<Record<number, string>>({});
   const [speed, setSpeed] = useState<0.85 | 1.0>(1.0);
+  const [isPlayingFull, setIsPlayingFull] = useState(false);
+  const fullAudioRef = useState<{ current: HTMLAudioElement | null }>({ current: null })[0];
 
   useEffect(() => {
     return () => {
       stopSpeech();
+      if (fullAudioRef.current) {
+        fullAudioRef.current.pause();
+      }
     };
-  }, []);
+  }, [fullAudioRef]);
+
+  function playFullAudio() {
+    if (isPlayingFull) {
+      if (fullAudioRef.current) {
+        fullAudioRef.current.pause();
+        fullAudioRef.current.currentTime = 0;
+      }
+      stopSpeech();
+      setIsPlayingFull(false);
+      return;
+    }
+
+    stopSpeech();
+    setActiveIdx(null);
+    setActiveChunk(null);
+
+    const fullTrack = audioTracks[0];
+    if (fullTrack?.src && hasAudioFile(fullTrack.src)) {
+      const audio = new Audio(mediaUrl(fullTrack.src));
+      audio.playbackRate = speed;
+      audio.onended = () => setIsPlayingFull(false);
+      audio.onerror = () => {
+        playFullTts();
+      };
+      fullAudioRef.current = audio;
+      setIsPlayingFull(true);
+      audio.play().catch(() => playFullTts());
+    } else {
+      playFullTts();
+    }
+  }
+
+  function playFullTts() {
+    const fullText = sentenceItems.map((s) => s.text).join(" ");
+    setIsPlayingFull(true);
+    speakText(fullText, {
+      lang: "en",
+      rate: speed,
+      onEnd: () => setIsPlayingFull(false),
+      onError: () => setIsPlayingFull(false),
+    });
+  }
 
   function playSentence(text: string, idx: number) {
     if (!text) return;
@@ -117,6 +164,22 @@ export function StudentLearningView({
           <p className="text-[12px] text-ink-soft mt-1">
             원어민 분할 음원과 청크 직독직해를 활용하여 자연스러운 회화 순발력을 길러보세요.
           </p>
+        </div>
+
+        {/* Full Narration Audio Button */}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={playFullAudio}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[12.5px] font-semibold transition-all cursor-pointer shadow-2xs select-none ${
+              isPlayingFull
+                ? "bg-primary text-white ring-2 ring-primary/30 animate-pulse"
+                : "bg-surface border border-line-strong text-ink hover:border-primary hover:text-primary active:scale-[0.98]"
+            }`}
+          >
+            <span>{isPlayingFull ? "⏹️" : "▶️"}</span>
+            <span>{isPlayingFull ? "전체 재생 정지" : "전체 본문 듣기"}</span>
+          </button>
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-1">

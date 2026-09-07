@@ -4,23 +4,95 @@
   "series": "s",
   "variant": "main",
   "pairId": null,
-  "title": "Friday Wrap-up (금요일 마무리)",
+  "title": "Friday Night Wrap-up (금요일 밤의 마무리)",
   "label": "Chapter 10. What Do I Do during the Week? (평일 일과)",
-  "menuLabel": "10-5. Friday Wrap-up",
+  "menuLabel": "10-5. Friday Night Wrap-up",
   "unit": 10,
   "part": 5,
   "order": 50,
-  "audio": [],
+  "audio": [
+    {
+      "src": "/audio/middle/p105.mp3",
+      "autoplay": false
+    }
+  ],
   "video": [],
   "blocks": [
     {
       "type": "instruction",
-      "text": "Chapter 10. What Do I Do during the Week? (평일 일과) - Friday Wrap-up (금요일 마무리)"
+      "text": "Chapter 10. What Do I Do during the Week? (평일 일과) - Friday Night Wrap-up (금요일 밤의 마무리)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "My favorite time is Friday night because it is the start of the weekend."
+        },
+        {
+          "n": "2",
+          "text": "It is the end of the normal schedule of school and academies."
+        },
+        {
+          "n": "3",
+          "text": "I can reflect on things that did not go well and hopefully plan a better new week."
+        },
+        {
+          "n": "4",
+          "text": "Before I do this, I start thinking about the fun things that I have planned for the upcoming weekend."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "나의 가장 좋아하는 날은 금요일 밤입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "그것은 학원들과 학교의 정상적인 계획의 끝입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 잘되지 못한 것들을 되돌아 볼 수 있고 희망을 가지고 더 나은 새로운 한 주를 계획할 수 있습니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "내가 이것을 하기 전에, 나는 다가오는 주말을 위해 내가 계획했던 재미있는 것들에 대해 생각하기 시작합니다.",
+      "lang": "ko"
     }
   ],
   "legacyPath": "Student/s10-5.html",
   "legacyEncoding": "euc-kr",
   "legacyFlash": [
     "s10-5.swf"
+  ],
+  "chunkDrills": [
+    {
+      "ko": "내가 가장 좋아하는 시간",
+      "en": "My favorite time is Friday night"
+    },
+    {
+      "ko": "주말의 시작",
+      "en": "the start of the weekend."
+    },
+    {
+      "ko": "학교와 학원 일정의 끝",
+      "en": "the end of the normal schedule"
+    },
+    {
+      "ko": "잘되지 못한 것들을 되돌아보다",
+      "en": "reflect on things that did not go well"
+    },
+    {
+      "ko": "더 나은 새 주를 계획하다",
+      "en": "plan a better new week."
+    },
+    {
+      "ko": "다가오는 주말",
+      "en": "the upcoming weekend."
+    }
   ]
 }

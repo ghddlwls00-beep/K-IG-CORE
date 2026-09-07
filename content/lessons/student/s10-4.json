@@ -4,23 +4,113 @@
   "series": "s",
   "variant": "main",
   "pairId": null,
-  "title": "Midweek Activities (주중 활동)",
+  "title": "At Night (Midweek Activities) (밤 시간 활동 (채팅과 숙제))",
   "label": "Chapter 10. What Do I Do during the Week? (평일 일과)",
-  "menuLabel": "10-4. Midweek Activities",
+  "menuLabel": "10-4. At Night (Midweek Activities)",
   "unit": 10,
   "part": 4,
   "order": 49,
-  "audio": [],
+  "audio": [
+    {
+      "src": "/audio/middle/p104.mp3",
+      "autoplay": false
+    }
+  ],
   "video": [],
   "blocks": [
     {
       "type": "instruction",
-      "text": "Chapter 10. What Do I Do during the Week? (평일 일과) - Midweek Activities (주중 활동)"
+      "text": "Chapter 10. What Do I Do during the Week? (평일 일과) - At Night (Midweek Activities) (밤 시간 활동 (채팅과 숙제))"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "Every night when I get home, I chat on the computer with my friends."
+        },
+        {
+          "n": "2",
+          "text": "Nowadays, I am on the computer for a couple of hours every day."
+        },
+        {
+          "n": "3",
+          "text": "It is a great way to talk to my friends about what we did during the day."
+        },
+        {
+          "n": "4",
+          "text": "I exchange information about our homework, about other friends, and what is going on in the entertainment scene in Korea."
+        },
+        {
+          "n": "5",
+          "text": "Also, I often do my homework on the computer."
+        },
+        {
+          "n": "6",
+          "text": "Sometimes I watch TV or listen to music before I go to bed."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "매일 밤 내가 집에 도착했을 때, 나는 나의 친구들과 함께 컴퓨터로 채팅을 합니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "요즈음, 나는 매일 몇 시간씩 컴퓨터를 합니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나의 친구들과 하루 동안 우리가 했던 것에 대해 이야기 할 수 있는 좋은 방법입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "나는 숙제와 다른 친구들, 그리고 한국의 연예계에 어떤 일이 일어나는지에 관해 정보를 교환합니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "또한 나는 종종 컴퓨터로 나의 숙제를 합니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "가끔씩 나는 내가 잠들기 전에 TV를 보거나 음악을 듣습니다.",
+      "lang": "ko"
     }
   ],
   "legacyPath": "Student/s10-4.html",
   "legacyEncoding": "euc-kr",
   "legacyFlash": [
     "s10-4.swf"
+  ],
+  "chunkDrills": [
+    {
+      "ko": "매일 밤 내가 집에 왔을 때",
+      "en": "Every night when I get home,"
+    },
+    {
+      "ko": "친구들과 채팅을 한다",
+      "en": "I chat on the computer with my friends."
+    },
+    {
+      "ko": "매일 몇 시간씩",
+      "en": "for a couple of hours every day."
+    },
+    {
+      "ko": "하루 동안 했던 일",
+      "en": "what we did during the day."
+    },
+    {
+      "ko": "정보를 교환한다",
+      "en": "I exchange information"
+    },
+    {
+      "ko": "잠들기 전에",
+      "en": "before I go to bed."
+    }
   ]
 }

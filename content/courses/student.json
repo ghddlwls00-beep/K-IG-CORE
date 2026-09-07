@@ -1,7 +1,7 @@
 {
   "course": "student",
   "tab": "students",
-  "lessonCount": 86,
+  "lessonCount": 81,
   "groups": [
     {
       "title": "Chapter 1. 자기소개 (Self-introduction)",
@@ -187,18 +187,6 @@
   ],
   "lessons": [
     {
-      "id": "s1",
-      "title": "Self-introduction (자기소개) 개요",
-      "label": "Chapter 1. Self-introduction (자기소개)",
-      "series": "s",
-      "variant": "main",
-      "unit": 1,
-      "part": null,
-      "order": 0,
-      "hasAudio": false,
-      "menuLabel": "Chapter 1 개요"
-    },
-    {
       "id": "s1-1",
       "title": "Greeting (인사말)",
       "label": "Chapter 1. Self-introduction (자기소개)",
@@ -236,7 +224,7 @@
     },
     {
       "id": "s1-4",
-      "title": "Hobby (취미)",
+      "title": "Personality - Shy Person (성격 - 내성적인 성격)",
       "label": "Chapter 1. Self-introduction (자기소개)",
       "series": "s",
       "variant": "main",
@@ -244,11 +232,11 @@
       "part": 4,
       "order": 4,
       "hasAudio": true,
-      "menuLabel": "1-4. Hobby"
+      "menuLabel": "1-4. Personality - Shy Person"
     },
     {
       "id": "s1-5",
-      "title": "Favorite Subject (좋아하는 과목)",
+      "title": "Hobby (취미)",
       "label": "Chapter 1. Self-introduction (자기소개)",
       "series": "s",
       "variant": "main",
@@ -256,11 +244,11 @@
       "part": 5,
       "order": 5,
       "hasAudio": true,
-      "menuLabel": "1-5. Favorite Subject"
+      "menuLabel": "1-5. Hobby"
     },
     {
       "id": "s1-6",
-      "title": "Helping Hand & Volunteering (봉사활동과 남 돕기)",
+      "title": "Favorite Subject (좋아하는 과목)",
       "label": "Chapter 1. Self-introduction (자기소개)",
       "series": "s",
       "variant": "main",
@@ -268,19 +256,7 @@
       "part": 6,
       "order": 6,
       "hasAudio": true,
-      "menuLabel": "1-6. Helping Hand & Volunteering"
-    },
-    {
-      "id": "s2",
-      "title": "Family Introduction (가족 소개) 개요",
-      "label": "Chapter 2. Family Introduction (가족 소개)",
-      "series": "s",
-      "variant": "main",
-      "unit": 2,
-      "part": null,
-      "order": 7,
-      "hasAudio": false,
-      "menuLabel": "Chapter 2 개요"
+      "menuLabel": "1-6. Favorite Subject"
     },
     {
       "id": "s2-1",
@@ -290,7 +266,7 @@
       "variant": "main",
       "unit": 2,
       "part": 1,
-      "order": 8,
+      "order": 7,
       "hasAudio": true,
       "menuLabel": "2-1. Greeting"
     },
@@ -302,7 +278,7 @@
       "variant": "main",
       "unit": 2,
       "part": 2,
-      "order": 9,
+      "order": 8,
       "hasAudio": true,
       "menuLabel": "2-2. Family Unit"
     },
@@ -314,7 +290,7 @@
       "variant": "main",
       "unit": 2,
       "part": 3,
-      "order": 10,
+      "order": 9,
       "hasAudio": true,
       "menuLabel": "2-3. Father and Mother's Job"
     },
@@ -326,7 +302,7 @@
       "variant": "main",
       "unit": 2,
       "part": 4,
-      "order": 11,
+      "order": 10,
       "hasAudio": true,
       "menuLabel": "2-4. Life at My House"
     },
@@ -338,7 +314,7 @@
       "variant": "main",
       "unit": 2,
       "part": 5,
-      "order": 12,
+      "order": 11,
       "hasAudio": true,
       "menuLabel": "2-5. Sister's School & Talents"
     },
@@ -350,21 +326,9 @@
       "variant": "main",
       "unit": 2,
       "part": 6,
-      "order": 13,
+      "order": 12,
       "hasAudio": true,
       "menuLabel": "2-6. Sister's Hobby"
-    },
-    {
-      "id": "s3",
-      "title": "Friend Introduction (친구 소개) 개요",
-      "label": "Chapter 3. Friend Introduction (친구 소개)",
-      "series": "s",
-      "variant": "main",
-      "unit": 3,
-      "part": null,
-      "order": 14,
-      "hasAudio": false,
-      "menuLabel": "Chapter 3 개요"
     },
     {
       "id": "s3-1",
@@ -374,7 +338,7 @@
       "variant": "main",
       "unit": 3,
       "part": 1,
-      "order": 15,
+      "order": 13,
       "hasAudio": true,
       "menuLabel": "3-1. Greeting"
     },
@@ -386,7 +350,7 @@
       "variant": "main",
       "unit": 3,
       "part": 2,
-      "order": 16,
+      "order": 14,
       "hasAudio": true,
       "menuLabel": "3-2. Friend's Personality"
     },
@@ -398,7 +362,7 @@
       "variant": "main",
       "unit": 3,
       "part": 3,
-      "order": 17,
+      "order": 15,
       "hasAudio": true,
       "menuLabel": "3-3. Friend's Talents"
     },
@@ -410,21 +374,9 @@
       "variant": "main",
       "unit": 3,
       "part": 4,
-      "order": 18,
+      "order": 16,
       "hasAudio": true,
       "menuLabel": "3-4. Friend's Dreams"
-    },
-    {
-      "id": "s4",
-      "title": "Relative Introduction (친척 소개) 개요",
-      "label": "Chapter 4. Relative Introduction (친척 소개)",
-      "series": "s",
-      "variant": "main",
-      "unit": 4,
-      "part": null,
-      "order": 19,
-      "hasAudio": false,
-      "menuLabel": "Chapter 4 개요"
     },
     {
       "id": "s4-1",
@@ -434,7 +386,7 @@
       "variant": "main",
       "unit": 4,
       "part": 1,
-      "order": 20,
+      "order": 17,
       "hasAudio": true,
       "menuLabel": "4-1. Greeting"
     },
@@ -446,7 +398,7 @@
       "variant": "main",
       "unit": 4,
       "part": 2,
-      "order": 21,
+      "order": 18,
       "hasAudio": true,
       "menuLabel": "4-2. Aunts, Uncles and Cousins"
     },
@@ -458,7 +410,7 @@
       "variant": "main",
       "unit": 4,
       "part": 3,
-      "order": 22,
+      "order": 19,
       "hasAudio": true,
       "menuLabel": "4-3. Father's Brother and Sister"
     },
@@ -470,7 +422,7 @@
       "variant": "main",
       "unit": 4,
       "part": 4,
-      "order": 23,
+      "order": 20,
       "hasAudio": true,
       "menuLabel": "4-4. Mother's Brother and Sister"
     },
@@ -482,7 +434,7 @@
       "variant": "main",
       "unit": 4,
       "part": 5,
-      "order": 24,
+      "order": 21,
       "hasAudio": true,
       "menuLabel": "4-5. My Favorite Relative"
     },
@@ -494,21 +446,9 @@
       "variant": "main",
       "unit": 4,
       "part": 6,
-      "order": 25,
+      "order": 22,
       "hasAudio": true,
       "menuLabel": "4-6. Oldest Uncle's Talents"
-    },
-    {
-      "id": "s5",
-      "title": "Getting Ready for School / At School (학교 갈 준비 및 학교생활) 개요",
-      "label": "Chapter 5. Getting Ready for School / At School (학교 갈 준비 및 학교생활)",
-      "series": "s",
-      "variant": "main",
-      "unit": 5,
-      "part": null,
-      "order": 26,
-      "hasAudio": false,
-      "menuLabel": "Chapter 5 개요"
     },
     {
       "id": "s5-1",
@@ -518,7 +458,7 @@
       "variant": "main",
       "unit": 5,
       "part": 1,
-      "order": 27,
+      "order": 23,
       "hasAudio": true,
       "menuLabel": "5-1. Getting Ready for School"
     },
@@ -530,7 +470,7 @@
       "variant": "main",
       "unit": 5,
       "part": 2,
-      "order": 28,
+      "order": 24,
       "hasAudio": true,
       "menuLabel": "5-2. On the Way to School"
     },
@@ -542,7 +482,7 @@
       "variant": "main",
       "unit": 5,
       "part": 3,
-      "order": 29,
+      "order": 25,
       "hasAudio": true,
       "menuLabel": "5-3. Morning Session"
     },
@@ -554,7 +494,7 @@
       "variant": "main",
       "unit": 5,
       "part": 4,
-      "order": 30,
+      "order": 26,
       "hasAudio": true,
       "menuLabel": "5-4. Introducing My Class"
     },
@@ -566,7 +506,7 @@
       "variant": "main",
       "unit": 5,
       "part": 5,
-      "order": 31,
+      "order": 27,
       "hasAudio": true,
       "menuLabel": "5-5. My School Friends"
     },
@@ -578,7 +518,7 @@
       "variant": "main",
       "unit": 6,
       "part": 1,
-      "order": 32,
+      "order": 28,
       "hasAudio": true,
       "menuLabel": "6-1. Introducing My School"
     },
@@ -590,7 +530,7 @@
       "variant": "main",
       "unit": 6,
       "part": 2,
-      "order": 33,
+      "order": 29,
       "hasAudio": true,
       "menuLabel": "6-2. Introducing My Teacher"
     },
@@ -602,7 +542,7 @@
       "variant": "main",
       "unit": 6,
       "part": 3,
-      "order": 34,
+      "order": 30,
       "hasAudio": true,
       "menuLabel": "6-3. Teacher's Personality"
     },
@@ -614,7 +554,7 @@
       "variant": "main",
       "unit": 6,
       "part": 4,
-      "order": 35,
+      "order": 31,
       "hasAudio": true,
       "menuLabel": "6-4. My Teacher Helps Me"
     },
@@ -626,7 +566,7 @@
       "variant": "main",
       "unit": 7,
       "part": 1,
-      "order": 36,
+      "order": 32,
       "hasAudio": true,
       "menuLabel": "7-1. Introducing Academies"
     },
@@ -638,7 +578,7 @@
       "variant": "main",
       "unit": 7,
       "part": 2,
-      "order": 37,
+      "order": 33,
       "hasAudio": true,
       "menuLabel": "7-2. My Favorite Academy"
     },
@@ -650,7 +590,7 @@
       "variant": "main",
       "unit": 7,
       "part": 3,
-      "order": 38,
+      "order": 34,
       "hasAudio": true,
       "menuLabel": "7-3. Friends and Teachers at Academy"
     },
@@ -662,7 +602,7 @@
       "variant": "main",
       "unit": 8,
       "part": 1,
-      "order": 39,
+      "order": 35,
       "hasAudio": true,
       "menuLabel": "8-1. After School & Coming Home"
     },
@@ -674,7 +614,7 @@
       "variant": "main",
       "unit": 8,
       "part": 2,
-      "order": 40,
+      "order": 36,
       "hasAudio": true,
       "menuLabel": "8-2. Doing Homework"
     },
@@ -686,7 +626,7 @@
       "variant": "main",
       "unit": 8,
       "part": 3,
-      "order": 41,
+      "order": 37,
       "hasAudio": true,
       "menuLabel": "8-3. Dinnertime with Family"
     },
@@ -698,7 +638,7 @@
       "variant": "main",
       "unit": 8,
       "part": 4,
-      "order": 42,
+      "order": 38,
       "hasAudio": true,
       "menuLabel": "8-4. Watching TV & Going to Bed"
     },
@@ -710,7 +650,7 @@
       "variant": "main",
       "unit": 9,
       "part": 1,
-      "order": 43,
+      "order": 39,
       "hasAudio": true,
       "menuLabel": "9-1. What I Do in the Morning"
     },
@@ -722,7 +662,7 @@
       "variant": "main",
       "unit": 9,
       "part": 2,
-      "order": 44,
+      "order": 40,
       "hasAudio": true,
       "menuLabel": "9-2. What I Do in the Afternoon"
     },
@@ -734,7 +674,7 @@
       "variant": "main",
       "unit": 9,
       "part": 3,
-      "order": 45,
+      "order": 41,
       "hasAudio": true,
       "menuLabel": "9-3. What I Do in the Evening"
     },
@@ -746,7 +686,7 @@
       "variant": "main",
       "unit": 10,
       "part": 1,
-      "order": 46,
+      "order": 42,
       "hasAudio": true,
       "menuLabel": "10-1. My Weekday Schedule"
     },
@@ -758,7 +698,7 @@
       "variant": "main",
       "unit": 10,
       "part": 2,
-      "order": 47,
+      "order": 43,
       "hasAudio": true,
       "menuLabel": "10-2. The Start of a New Week (Monday)"
     },
@@ -770,33 +710,33 @@
       "variant": "main",
       "unit": 10,
       "part": 3,
-      "order": 48,
+      "order": 44,
       "hasAudio": true,
       "menuLabel": "10-3. Everyday School & Academies"
     },
     {
       "id": "s10-4",
-      "title": "Midweek Activities (주중 활동)",
+      "title": "At Night (Midweek Activities) (밤 시간 활동 (채팅과 숙제))",
       "label": "Chapter 10. What Do I Do during the Week? (평일 일과)",
       "series": "s",
       "variant": "main",
       "unit": 10,
       "part": 4,
-      "order": 49,
-      "hasAudio": false,
-      "menuLabel": "10-4. Midweek Activities"
+      "order": 45,
+      "hasAudio": true,
+      "menuLabel": "10-4. At Night (Midweek Activities)"
     },
     {
       "id": "s10-5",
-      "title": "Friday Wrap-up (금요일 마무리)",
+      "title": "Friday Night Wrap-up (금요일 밤의 마무리)",
       "label": "Chapter 10. What Do I Do during the Week? (평일 일과)",
       "series": "s",
       "variant": "main",
       "unit": 10,
       "part": 5,
-      "order": 50,
-      "hasAudio": false,
-      "menuLabel": "10-5. Friday Wrap-up"
+      "order": 46,
+      "hasAudio": true,
+      "menuLabel": "10-5. Friday Night Wrap-up"
     },
     {
       "id": "s11-1",
@@ -806,7 +746,7 @@
       "variant": "main",
       "unit": 11,
       "part": 1,
-      "order": 51,
+      "order": 47,
       "hasAudio": true,
       "menuLabel": "11-1. Saturday Afternoon"
     },
@@ -818,7 +758,7 @@
       "variant": "main",
       "unit": 11,
       "part": 2,
-      "order": 52,
+      "order": 48,
       "hasAudio": true,
       "menuLabel": "11-2. Saturday Night & Family Outing"
     },
@@ -830,7 +770,7 @@
       "variant": "main",
       "unit": 11,
       "part": 3,
-      "order": 53,
+      "order": 49,
       "hasAudio": true,
       "menuLabel": "11-3. Sunday Morning & Church"
     },
@@ -842,7 +782,7 @@
       "variant": "main",
       "unit": 11,
       "part": 4,
-      "order": 54,
+      "order": 50,
       "hasAudio": true,
       "menuLabel": "11-4. Sunday Afternoon Leisure"
     },
@@ -854,7 +794,7 @@
       "variant": "main",
       "unit": 12,
       "part": 1,
-      "order": 55,
+      "order": 51,
       "hasAudio": true,
       "menuLabel": "12-1. School Vacations"
     },
@@ -866,7 +806,7 @@
       "variant": "main",
       "unit": 12,
       "part": 2,
-      "order": 56,
+      "order": 52,
       "hasAudio": true,
       "menuLabel": "12-2. Summer Vacation"
     },
@@ -878,7 +818,7 @@
       "variant": "main",
       "unit": 12,
       "part": 3,
-      "order": 57,
+      "order": 53,
       "hasAudio": true,
       "menuLabel": "12-3. Winter Vacation"
     },
@@ -890,7 +830,7 @@
       "variant": "main",
       "unit": 12,
       "part": 4,
-      "order": 58,
+      "order": 54,
       "hasAudio": true,
       "menuLabel": "12-4. My Dream Vacation"
     },
@@ -902,7 +842,7 @@
       "variant": "main",
       "unit": 13,
       "part": 1,
-      "order": 59,
+      "order": 55,
       "hasAudio": true,
       "menuLabel": "13-1. My Favorite Kind of Books & Biographies"
     },
@@ -914,7 +854,7 @@
       "variant": "main",
       "unit": 13,
       "part": 2,
-      "order": 60,
+      "order": 56,
       "hasAudio": true,
       "menuLabel": "13-2. The Person I Respect the Most (Admiral Yi Sun-sin)"
     },
@@ -926,7 +866,7 @@
       "variant": "main",
       "unit": 13,
       "part": 3,
-      "order": 61,
+      "order": 57,
       "hasAudio": true,
       "menuLabel": "13-3. Why I Respect Him"
     },
@@ -938,7 +878,7 @@
       "variant": "main",
       "unit": 14,
       "part": 1,
-      "order": 62,
+      "order": 58,
       "hasAudio": true,
       "menuLabel": "14-1. My Dream for the Future"
     },
@@ -950,7 +890,7 @@
       "variant": "main",
       "unit": 14,
       "part": 2,
-      "order": 63,
+      "order": 59,
       "hasAudio": true,
       "menuLabel": "14-2. Reasons for Wanting to Become a Teacher"
     },
@@ -962,7 +902,7 @@
       "variant": "main",
       "unit": 14,
       "part": 3,
-      "order": 64,
+      "order": 60,
       "hasAudio": true,
       "menuLabel": "14-3. How I Will Achieve My Dream"
     },
@@ -974,7 +914,7 @@
       "variant": "main",
       "unit": 15,
       "part": 1,
-      "order": 65,
+      "order": 61,
       "hasAudio": true,
       "menuLabel": "15-1. The World Cup Memories"
     },
@@ -986,7 +926,7 @@
       "variant": "main",
       "unit": 15,
       "part": 2,
-      "order": 66,
+      "order": 62,
       "hasAudio": true,
       "menuLabel": "15-2. The Person I Admire the Most (Coach Hiddink)"
     },
@@ -998,7 +938,7 @@
       "variant": "main",
       "unit": 15,
       "part": 3,
-      "order": 67,
+      "order": 63,
       "hasAudio": true,
       "menuLabel": "15-3. Why I Admire Him"
     },
@@ -1010,7 +950,7 @@
       "variant": "main",
       "unit": 16,
       "part": 1,
-      "order": 68,
+      "order": 64,
       "hasAudio": true,
       "menuLabel": "16-1. My Other Dream Job"
     },
@@ -1022,7 +962,7 @@
       "variant": "main",
       "unit": 16,
       "part": 2,
-      "order": 69,
+      "order": 65,
       "hasAudio": true,
       "menuLabel": "16-2. Why I Want to Become an Interpreter"
     },
@@ -1034,7 +974,7 @@
       "variant": "main",
       "unit": 16,
       "part": 3,
-      "order": 70,
+      "order": 66,
       "hasAudio": true,
       "menuLabel": "16-3. How I Will Fulfill My Dream"
     },
@@ -1046,7 +986,7 @@
       "variant": "main",
       "unit": 17,
       "part": 1,
-      "order": 71,
+      "order": 67,
       "hasAudio": true,
       "menuLabel": "17-1. How Korea Was Founded"
     },
@@ -1058,7 +998,7 @@
       "variant": "main",
       "unit": 17,
       "part": 2,
-      "order": 72,
+      "order": 68,
       "hasAudio": true,
       "menuLabel": "17-2. The Three Kingdoms Era"
     },
@@ -1070,7 +1010,7 @@
       "variant": "main",
       "unit": 17,
       "part": 3,
-      "order": 73,
+      "order": 69,
       "hasAudio": true,
       "menuLabel": "17-3. Independence of Korea & Civil War"
     },
@@ -1082,7 +1022,7 @@
       "variant": "main",
       "unit": 17,
       "part": 4,
-      "order": 74,
+      "order": 70,
       "hasAudio": true,
       "menuLabel": "17-4. Development and Prosperity of Korea"
     },
@@ -1094,7 +1034,7 @@
       "variant": "main",
       "unit": 18,
       "part": 1,
-      "order": 75,
+      "order": 71,
       "hasAudio": true,
       "menuLabel": "18-1. Introduction to Korean Holidays"
     },
@@ -1106,7 +1046,7 @@
       "variant": "main",
       "unit": 18,
       "part": 2,
-      "order": 76,
+      "order": 72,
       "hasAudio": true,
       "menuLabel": "18-2. Lunar New Year's Day (Seollal)"
     },
@@ -1118,7 +1058,7 @@
       "variant": "main",
       "unit": 18,
       "part": 3,
-      "order": 77,
+      "order": 73,
       "hasAudio": true,
       "menuLabel": "18-3. Harvest Moon Festival (Chuseok)"
     },
@@ -1130,7 +1070,7 @@
       "variant": "main",
       "unit": 19,
       "part": 1,
-      "order": 78,
+      "order": 74,
       "hasAudio": true,
       "menuLabel": "19-1. Korean Culture is Unique"
     },
@@ -1142,7 +1082,7 @@
       "variant": "main",
       "unit": 19,
       "part": 2,
-      "order": 79,
+      "order": 75,
       "hasAudio": true,
       "menuLabel": "19-2. Traditional Clothing (Hanbok)"
     },
@@ -1154,7 +1094,7 @@
       "variant": "main",
       "unit": 19,
       "part": 4,
-      "order": 80,
+      "order": 76,
       "hasAudio": true,
       "menuLabel": "19-4. Our Language (Hangul)"
     },
@@ -1166,7 +1106,7 @@
       "variant": "main",
       "unit": 20,
       "part": 1,
-      "order": 81,
+      "order": 77,
       "hasAudio": true,
       "menuLabel": "20-1. Location and Geography of Korea"
     },
@@ -1178,7 +1118,7 @@
       "variant": "main",
       "unit": 20,
       "part": 2,
-      "order": 82,
+      "order": 78,
       "hasAudio": true,
       "menuLabel": "20-2. Famous Attractions Overview"
     },
@@ -1190,7 +1130,7 @@
       "variant": "main",
       "unit": 20,
       "part": 3,
-      "order": 83,
+      "order": 79,
       "hasAudio": true,
       "menuLabel": "20-3. Korean Folk Village"
     },
@@ -1202,7 +1142,7 @@
       "variant": "main",
       "unit": 20,
       "part": 4,
-      "order": 84,
+      "order": 80,
       "hasAudio": true,
       "menuLabel": "20-4. Historic City of Gyeongju"
     },
@@ -1214,7 +1154,7 @@
       "variant": "main",
       "unit": 20,
       "part": 5,
-      "order": 85,
+      "order": 81,
       "hasAudio": true,
       "menuLabel": "20-5. Jeju Island and Mt. Halla"
     }

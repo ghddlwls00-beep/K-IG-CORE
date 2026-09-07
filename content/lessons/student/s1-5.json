@@ -4,9 +4,9 @@
   "series": "s",
   "variant": "main",
   "pairId": null,
-  "title": "Favorite Subject (좋아하는 과목)",
+  "title": "Hobby (취미)",
   "label": "Chapter 1. Self-introduction (자기소개)",
-  "menuLabel": "1-5. Favorite Subject",
+  "menuLabel": "1-5. Hobby",
   "unit": 1,
   "part": 5,
   "order": 5,
@@ -81,47 +81,47 @@
   "blocks": [
     {
       "type": "instruction",
-      "text": "Chapter 1. Self-introduction (자기소개) - Favorite Subject (좋아하는 과목)"
+      "text": "Chapter 1. Self-introduction (자기소개) - Hobby (취미)"
     },
     {
       "type": "sentences",
       "items": [
         {
           "n": "1",
-          "text": "I have been studying English for (3, 4 or 5) years so far."
+          "text": "My hobbies include reading books, listening to music, hiking, watching movies, and participating in sports."
         },
         {
           "n": "2",
-          "text": "I like studying English because it is fun and exciting to learn."
+          "text": "I especially like watching movies."
         },
         {
           "n": "3",
-          "text": "I study English everyday."
+          "text": "I like to play computer games as well."
         },
         {
           "n": "4",
-          "text": "I study many different subjects at school, but my favorite subject is English."
+          "text": "I have been studying English for (3, 4 or 5) years so far."
         }
       ]
     },
     {
       "type": "paragraph",
-      "text": "나는 학교에서 많은 다른 과목들을 공부하지만 나의 가장 좋아하는 과목은 영어입니다.",
+      "text": "나의 취미들은 책 읽기, 음악듣기, 등산, 영화보기, 스포츠에 참가하는 것 입니다.",
       "lang": "ko"
     },
     {
       "type": "paragraph",
-      "text": "나는 매일 영어공부를 합니다",
+      "text": "나는 특별히 영화 보는 것을 좋아합니다.",
       "lang": "ko"
     },
     {
       "type": "paragraph",
-      "text": "왜냐하면 배우는 것이 재미있고 신이 납니다.",
+      "text": "나는 컴퓨터게임 하기도 또한 좋아합니다.",
       "lang": "ko"
     },
     {
       "type": "paragraph",
-      "text": "나는 많은 다른 과목들을 공부합니다.",
+      "text": "나는 지금까지 3~5년 동안 영어를 공부해오고 있습니다.",
       "lang": "ko"
     }
   ],

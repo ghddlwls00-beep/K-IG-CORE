@@ -23,6 +23,14 @@ import type { Tab } from "./types";
  */
 export const TABS: Tab[] = [
   {
+    slug: "students",
+    label: "STUDENT CONVERSATION",
+    legacyImage: "STUDENT.jpg",
+    legacyIndex: "basics/index.htm",
+    courses: ["student"],
+    blurb: "Real-Life Spoken English & Chunk Mastery with Interactive Speaking",
+  },
+  {
     slug: "voca",
     label: "VOCA",
     legacyImage: "VOCA.jpg",
