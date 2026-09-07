@@ -17,7 +17,15 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { plan, quantity = 1, maxDevices = 2, memo } = body;
 
-    const validPlans: LicensePlan[] = ["1M", "1Y", "LIFE"];
+    const validPlans: LicensePlan[] = [
+      "1M",
+      "1Y",
+      "LIFE",
+      "STU1M",
+      "STU1Y",
+      "STULIFE",
+      "STU",
+    ];
     if (!validPlans.includes(plan)) {
       return NextResponse.json(
         { success: false, error: "유효하지 않은 플랜입니다." },

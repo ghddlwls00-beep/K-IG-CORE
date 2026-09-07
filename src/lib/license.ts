@@ -8,7 +8,14 @@
  *   - KIG-LIFE-XXXX-YYYY (Lifetime VIP Pass)
  */
 
-export type LicensePlan = "1M" | "1Y" | "LIFE";
+export type LicensePlan =
+  | "1M"
+  | "1Y"
+  | "LIFE"
+  | "STU1M"
+  | "STU1Y"
+  | "STULIFE"
+  | "STU";
 
 export interface LicenseInfo {
   key: string;
@@ -17,17 +24,24 @@ export interface LicenseInfo {
   activatedAt: string;
   expiresAt: string | null;
   isExpired: boolean;
+  isStudentOnly: boolean;
+}
+
+/** Returns whether a given plan grants access exclusively to the STUDENT section. */
+export function isStudentOnlyPlan(plan?: string | null): boolean {
+  if (!plan) return false;
+  return plan.startsWith("STU");
 }
 
 /** Calculate expiration timestamp in milliseconds from now. */
-export function calculateExpiry(plan: LicensePlan, fromMs = Date.now()): number | null {
-  if (plan === "LIFE") return null;
-  if (plan === "1M") return fromMs + 30 * 24 * 60 * 60 * 1000;
-  if (plan === "1Y") return fromMs + 365 * 24 * 60 * 60 * 1000;
+export function calculateExpiry(plan: LicensePlan | string, fromMs = Date.now()): number | null {
+  if (plan === "LIFE" || plan === "STULIFE") return null;
+  if (plan === "1M" || plan === "STU1M") return fromMs + 30 * 24 * 60 * 60 * 1000;
+  if (plan === "1Y" || plan === "STU1Y" || plan === "STU") return fromMs + 365 * 24 * 60 * 60 * 1000;
   return null;
 }
 
-export function getPlanLabel(plan: LicensePlan): string {
+export function getPlanLabel(plan: LicensePlan | string): string {
   switch (plan) {
     case "1M":
       return "1개월 체험 패스";
@@ -35,8 +49,15 @@ export function getPlanLabel(plan: LicensePlan): string {
       return "1년 VIP 올패스";
     case "LIFE":
       return "평생 소장 VIP 패스";
+    case "STU1M":
+      return "STUDENT 1개월 패스";
+    case "STU1Y":
+    case "STU":
+      return "STUDENT 1년 패스";
+    case "STULIFE":
+      return "STUDENT 평생 소장 패스";
     default:
-      return "K-IG 올패스";
+      return "K-IG 이용권";
   }
 }
 

@@ -61,7 +61,16 @@ export function validateLicenseKey(
   }
 
   const plan = parts[1] as LicensePlan;
-  if (plan !== "1M" && plan !== "1Y" && plan !== "LIFE") {
+  const validPlans: LicensePlan[] = [
+    "1M",
+    "1Y",
+    "LIFE",
+    "STU1M",
+    "STU1Y",
+    "STULIFE",
+    "STU",
+  ];
+  if (!validPlans.includes(plan)) {
     return { valid: false, error: "알 수 없는 이용권 플랜입니다." };
   }
 
@@ -80,10 +89,10 @@ export function validateLicenseKey(
 }
 
 /** Calculate expiration timestamp in milliseconds from now. */
-export function calculateExpiry(plan: LicensePlan, fromMs = Date.now()): number | null {
-  if (plan === "LIFE") return null;
-  if (plan === "1M") return fromMs + 30 * 24 * 60 * 60 * 1000;
-  if (plan === "1Y") return fromMs + 365 * 24 * 60 * 60 * 1000;
+export function calculateExpiry(plan: LicensePlan | string, fromMs = Date.now()): number | null {
+  if (plan === "LIFE" || plan === "STULIFE") return null;
+  if (plan === "1M" || plan === "STU1M") return fromMs + 30 * 24 * 60 * 60 * 1000;
+  if (plan === "1Y" || plan === "STU1Y" || plan === "STU") return fromMs + 365 * 24 * 60 * 60 * 1000;
   return null;
 }
 

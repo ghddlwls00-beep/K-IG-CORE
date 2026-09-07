@@ -27,7 +27,7 @@ export function LessonClientGate({
   isFreePreview,
   children,
 }: LessonClientGateProps) {
-  const { hasActiveLicense } = useLicense();
+  const { isUnlocked } = useLicense();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -52,8 +52,8 @@ export function LessonClientGate({
     );
   }
 
-  // Active license holders get full access
-  if (hasActiveLicense) {
+  // Active license holders get access according to their plan (VIP vs STUDENT-only)
+  if (isUnlocked(courseSlug, lessonId)) {
     return <>{children}</>;
   }
 

@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import {
   getPlanLabel,
   isFreePreviewLesson,
+  isStudentOnlyPlan,
   type LicenseInfo,
   type LicensePlan,
 } from "@/lib/license";
@@ -107,6 +108,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
           ? new Date(stored.expiresAt).toLocaleDateString("ko-KR")
           : null,
         isExpired,
+        isStudentOnly: isStudentOnlyPlan(stored.plan),
       }
     : null;
 
@@ -116,8 +118,23 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     sectionIndex?: number,
     lessonIndex?: number,
   ): boolean {
-    if (hasActiveLicense) return true;
-    return isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex);
+    // 1. Free preview lessons (e.g. 1st & 2nd lessons of Section 1) are always open
+    if (isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex)) {
+      return true;
+    }
+
+    // 2. Requires active, non-expired license
+    if (!hasActiveLicense || !stored) {
+      return false;
+    }
+
+    // 3. STUDENT-only pass grants access exclusively to the student course
+    if (isStudentOnlyPlan(stored.plan)) {
+      return courseSlug === "student";
+    }
+
+    // 4. VIP All-pass grants access to all courses
+    return true;
   }
 
   async function activateKey(

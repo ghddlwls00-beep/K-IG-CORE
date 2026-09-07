@@ -42,6 +42,7 @@ export default function AdminLicensePage() {
   const [pinError, setPinError] = useState(false);
   const [loginErrorMessage, setLoginErrorMessage] = useState<string | null>(null);
 
+  const [planCategory, setPlanCategory] = useState<"VIP" | "STUDENT">("VIP");
   const [selectedPlan, setSelectedPlan] = useState<LicensePlan>("1Y");
   const [quantity, setQuantity] = useState<number>(1);
   const [maxDevicesPerKey, setMaxDevicesPerKey] = useState<number>(2);
@@ -422,30 +423,95 @@ export default function AdminLicensePage() {
               신규 이용권 코드 발급
             </h2>
 
+            {/* Plan Category Switcher */}
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-ink">이용권 수강 범위 선택</label>
+              <div className="flex items-center gap-2 p-1 bg-black/[0.04] rounded-2xl max-w-lg border border-black/5">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPlanCategory("VIP");
+                    setSelectedPlan("1Y");
+                  }}
+                  className={`flex-1 py-2.5 px-4 rounded-xl text-[13px] font-bold transition-all cursor-pointer text-center ${
+                    planCategory === "VIP"
+                      ? "bg-white text-ink shadow-2xs border border-black/10"
+                      : "text-ink-soft hover:text-ink"
+                  }`}
+                >
+                  👑 VIP 올패스 (전체 1,677강)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPlanCategory("STUDENT");
+                    setSelectedPlan("STU1Y");
+                  }}
+                  className={`flex-1 py-2.5 px-4 rounded-xl text-[13px] font-bold transition-all cursor-pointer text-center ${
+                    planCategory === "STUDENT"
+                      ? "bg-white text-blue-600 shadow-2xs border border-blue-200"
+                      : "text-ink-soft hover:text-ink"
+                  }`}
+                >
+                  🎓 STUDENT 전용 (81강 전용)
+                </button>
+              </div>
+            </div>
+
             {/* Plan Selector */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {(["1M", "1Y", "LIFE"] as LicensePlan[]).map((plan) => {
-                const active = selectedPlan === plan;
-                return (
-                  <button
-                    key={plan}
-                    type="button"
-                    onClick={() => setSelectedPlan(plan)}
-                    className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
-                      active
-                        ? "border-black bg-ink text-white shadow-sm"
-                        : "border-black/10 bg-white text-ink hover:border-black/30"
-                    }`}
-                  >
-                    <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
-                    <div className={`text-[12px] mt-1 ${active ? "text-gray-300" : "text-ink-soft"}`}>
-                      {plan === "1M" && "30일간 1,677강 열람"}
-                      {plan === "1Y" && "365일간 1,677강 열람 (추천)"}
-                      {plan === "LIFE" && "무제한 평생 열람 (대표님/VIP용)"}
-                    </div>
-                  </button>
-                );
-              })}
+            <div className="flex flex-col gap-2">
+              <label className="text-[13px] font-semibold text-ink">
+                {planCategory === "VIP" ? "VIP 올패스 수강 기간" : "STUDENT 전용 패스 수강 기간"}
+              </label>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {planCategory === "VIP" ? (
+                  (["1M", "1Y", "LIFE"] as LicensePlan[]).map((plan) => {
+                    const active = selectedPlan === plan;
+                    return (
+                      <button
+                        key={plan}
+                        type="button"
+                        onClick={() => setSelectedPlan(plan)}
+                        className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
+                          active
+                            ? "border-black bg-ink text-white shadow-sm"
+                            : "border-black/10 bg-white text-ink hover:border-black/30"
+                        }`}
+                      >
+                        <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
+                        <div className={`text-[12px] mt-1 ${active ? "text-gray-300" : "text-ink-soft"}`}>
+                          {plan === "1M" && "30일간 1,677강 열람"}
+                          {plan === "1Y" && "365일간 1,677강 열람 (추천)"}
+                          {plan === "LIFE" && "무제한 평생 열람 (대표님/VIP용)"}
+                        </div>
+                      </button>
+                    );
+                  })
+                ) : (
+                  (["STU1M", "STU1Y", "STULIFE"] as LicensePlan[]).map((plan) => {
+                    const active = selectedPlan === plan;
+                    return (
+                      <button
+                        key={plan}
+                        type="button"
+                        onClick={() => setSelectedPlan(plan)}
+                        className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
+                          active
+                            ? "border-blue-600 bg-blue-600 text-white shadow-sm"
+                            : "border-black/10 bg-white text-ink hover:border-blue-300"
+                        }`}
+                      >
+                        <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
+                        <div className={`text-[12px] mt-1 ${active ? "text-blue-100" : "text-ink-soft"}`}>
+                          {plan === "STU1M" && "30일간 STUDENT 81강 열람"}
+                          {plan === "STU1Y" && "365일간 STUDENT 81강 열람 (추천)"}
+                          {plan === "STULIFE" && "무제한 평생 열람 (STUDENT 전용)"}
+                        </div>
+                      </button>
+                    );
+                  })
+                )}
+              </div>
             </div>
 
             {/* Quantity, Device Limit, and Memo */}
@@ -619,7 +685,14 @@ export default function AdminLicensePage() {
                             <span className="font-mono text-[14px] font-bold text-ink select-all">
                               {item.key}
                             </span>
-                            <span className="rounded-full bg-black/5 px-2 py-0.5 text-[10.5px] font-medium text-ink-soft">
+                            <span
+                              className={`rounded-full px-2 py-0.5 text-[10.5px] font-semibold border ${
+                                item.plan.startsWith("STU")
+                                  ? "bg-blue-50 text-blue-700 border-blue-200"
+                                  : "bg-amber-50 text-amber-800 border-amber-300/80"
+                              }`}
+                            >
+                              {item.plan.startsWith("STU") ? "🎓 " : "👑 "}
                               {getPlanLabel(item.plan)}
                             </span>
 

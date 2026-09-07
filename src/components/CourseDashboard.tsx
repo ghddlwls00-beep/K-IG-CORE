@@ -145,7 +145,7 @@ export function CourseDashboard({
   totalLessons: number;
 }) {
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked } = useProgress();
-  const { hasActiveLicense } = useLicense();
+  const { hasActiveLicense, isUnlocked: checkUnlocked } = useLicense();
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
 
   const handleToggleBookmark = useCallback(
@@ -413,7 +413,7 @@ export function CourseDashboard({
                           const isDone = isCompleted(courseSlug, lesson.id);
                           const isStarred = isBookmarked(courseSlug, lesson.id);
                           const isFree = isFreePreviewLesson(courseSlug, lesson.id, index, lessonIdx);
-                          const isUnlocked = hasActiveLicense || isFree;
+                          const isUnlocked = checkUnlocked(courseSlug, lesson.id, index, lessonIdx);
 
                           return (
                             <DashboardLessonCard
