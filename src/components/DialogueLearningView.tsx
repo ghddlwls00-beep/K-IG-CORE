@@ -704,12 +704,12 @@ export function DialogueLearningView({
 
         {/* Study Mode Selector & Controls */}
         <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-          <div className="flex flex-wrap items-center gap-1 rounded-xl bg-raised/80 p-1 border border-line/70">
+          <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 max-w-full flex-nowrap">
             <button
               type="button"
               onClick={() => setStudyMode("shadowing")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "shadowing"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
@@ -723,7 +723,7 @@ export function DialogueLearningView({
               type="button"
               onClick={() => setStudyMode("continuous")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "continuous"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
@@ -737,7 +737,7 @@ export function DialogueLearningView({
               type="button"
               onClick={() => setStudyMode("speaking")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "speaking"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
@@ -751,7 +751,7 @@ export function DialogueLearningView({
               type="button"
               onClick={() => setStudyMode("cloze")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "cloze"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")

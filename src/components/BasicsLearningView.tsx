@@ -288,11 +288,11 @@ function SentenceTrackView({
         </div>
 
         {/* Mode Selector */}
-        <div className="flex items-center rounded-xl bg-raised/80 p-1 border border-line/70 text-[12px] font-medium">
+        <div className="no-scrollbar flex items-center gap-1 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 text-[12px] font-medium max-w-full flex-nowrap">
           <button
             type="button"
             onClick={() => setStudyMode("bilingual")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               studyMode === "bilingual"
                 ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                 : "text-ink-soft hover:text-ink"
@@ -303,7 +303,7 @@ function SentenceTrackView({
           <button
             type="button"
             onClick={() => setStudyMode("englishOnly")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               studyMode === "englishOnly"
                 ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                 : "text-ink-soft hover:text-ink"
@@ -314,7 +314,7 @@ function SentenceTrackView({
           <button
             type="button"
             onClick={() => setStudyMode("koreanOnly")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               studyMode === "koreanOnly"
                 ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                 : "text-ink-soft hover:text-ink"

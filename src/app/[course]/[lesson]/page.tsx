@@ -132,24 +132,24 @@ export default async function LessonPage({
   );
 
   return (
-    <main className="mx-auto max-w-3xl px-5 py-12">
-      <nav className="mb-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11.5px]">
+    <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
+      <nav className="mb-6 sm:mb-8 flex flex-wrap items-center justify-between gap-3 sm:gap-4 font-mono text-[11.5px]">
         <Link href={`/${course}`} className="link-underline text-ink-soft hover:text-ink font-medium">
           ← {courseInfo?.title ?? course}
         </Link>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
           <LessonActionButtons
             course={course}
             lessonId={lesson.id}
             title={pres.title}
             courseTitle={courseInfo?.title ?? tab?.label}
           />
-          <span className="flex items-center gap-3 border-l border-line/60 pl-3">
+          <span className="flex items-center gap-2.5 sm:gap-3 border-l border-line/60 pl-2.5 sm:pl-3">
             {prev ? (
               <Link
                 href={`/${course}/${prev.id}`}
                 scroll={true}
-                className="text-ink-soft transition-transform duration-200 ease-out hover:-translate-x-0.5 hover:text-ink"
+                className="text-ink-soft transition-transform duration-200 ease-out hover:-translate-x-0.5 hover:text-ink py-1"
               >
                 ← {prev.id}
               </Link>
@@ -158,7 +158,7 @@ export default async function LessonPage({
               <Link
                 href={`/${course}/${next.id}`}
                 scroll={true}
-                className="text-ink-soft transition-transform duration-200 ease-out hover:translate-x-0.5 hover:text-ink"
+                className="text-ink-soft transition-transform duration-200 ease-out hover:translate-x-0.5 hover:text-ink py-1"
               >
                 {next.id} →
               </Link>
@@ -167,8 +167,8 @@ export default async function LessonPage({
         </div>
       </nav>
 
-      <header className="mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>
-        <div className="mb-3 flex flex-wrap items-center gap-2.5 font-mono text-[11px] tracking-wide text-ink-faint">
+      <header className="mb-6 sm:mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>
+        <div className="mb-2.5 sm:mb-3 flex flex-wrap items-center gap-2 sm:gap-2.5 font-mono text-[11px] tracking-wide text-ink-faint">
           <span className="uppercase font-semibold tracking-wider text-ink-soft">{tab?.label}</span>
           <span aria-hidden>·</span>
           <span className="font-mono font-semibold text-primary">{pres.code}</span>
@@ -187,11 +187,11 @@ export default async function LessonPage({
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <h1 className="text-[1.85rem] leading-snug font-bold tracking-tight text-balance text-ink">
+          <h1 className="text-[1.5rem] sm:text-[1.85rem] leading-snug font-bold tracking-tight text-balance text-ink">
             {pres.title}
           </h1>
           {pres.subtitle && (
-            <p className="text-[14px] font-medium text-ink-soft">
+            <p className="text-[13.5px] sm:text-[14px] font-medium text-ink-soft">
               {pres.subtitle}
             </p>
           )}
@@ -270,7 +270,41 @@ export default async function LessonPage({
         )}
       </LessonClientGate>
 
-      <footer className="mt-20 border-t border-line pt-4">
+      {/* Bottom Navigation Bar for Effortless Mobile Progression */}
+      <nav aria-label="Lesson pagination" className="mt-12 sm:mt-16 flex items-center justify-between gap-3 border-t border-line pt-6 pb-2">
+        {prev ? (
+          <Link
+            href={`/${course}/${prev.id}`}
+            scroll={true}
+            className="flex items-center gap-1.5 sm:gap-2 rounded-xl border border-line bg-surface px-3.5 sm:px-4 py-2.5 text-[12px] sm:text-[13px] font-medium text-ink hover:bg-raised transition-colors shadow-2xs cursor-pointer active:scale-95"
+          >
+            <span>← 이전 ({prev.id})</span>
+          </Link>
+        ) : (
+          <div />
+        )}
+
+        <Link
+          href={`/${course}`}
+          className="rounded-lg px-2.5 py-1.5 font-mono text-[11.5px] sm:text-[12px] text-ink-soft hover:text-ink transition-colors"
+        >
+          목록으로
+        </Link>
+
+        {next ? (
+          <Link
+            href={`/${course}/${next.id}`}
+            scroll={true}
+            className="flex items-center gap-1.5 sm:gap-2 rounded-xl bg-ink px-4 sm:px-5 py-2.5 text-[12px] sm:text-[13px] font-semibold text-surface hover:opacity-90 transition-all shadow-xs cursor-pointer active:scale-95"
+          >
+            <span>다음 ({next.id}) →</span>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </nav>
+
+      <footer className="mt-8 border-t border-line/60 pt-4">
         <p className="font-mono text-[10.5px] text-ink-faint">
           <T k="lesson.source" />: {lesson.legacyPath} · {lesson.legacyEncoding}
         </p>

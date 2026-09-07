@@ -121,11 +121,11 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
         </div>
 
         {/* Tabs */}
-        <div className="flex items-center rounded-xl bg-raised/80 p-1 border border-line/70 text-[12px] font-medium">
+        <div className="no-scrollbar flex items-center gap-1 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 text-[12px] font-medium max-w-full flex-nowrap">
           <button
             type="button"
             onClick={() => setActiveTab("script")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               activeTab === "script"
                 ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                 : "text-ink-soft hover:text-ink"
@@ -136,7 +136,7 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
           <button
             type="button"
             onClick={() => setActiveTab("vocab")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               activeTab === "vocab"
                 ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                 : "text-ink-soft hover:text-ink"
@@ -147,7 +147,7 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
           <button
             type="button"
             onClick={() => setActiveTab("phonetics")}
-            className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
               activeTab === "phonetics"
                 ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                 : "text-ink-soft hover:text-ink"

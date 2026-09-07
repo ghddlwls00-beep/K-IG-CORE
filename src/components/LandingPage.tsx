@@ -57,10 +57,18 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
       />
       {/* Legibility scrim: text sits on the left, so fade the photo out toward that edge. */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hidden sm:block"
         style={{
           background:
             "linear-gradient(90deg, var(--surface) 0%, color-mix(in srgb, var(--surface) 82%, transparent) 42%, color-mix(in srgb, var(--surface) 15%, transparent) 78%)",
+        }}
+      />
+      {/* Mobile scrim: vertical gradient for portrait clarity and high contrast text */}
+      <div
+        className="absolute inset-0 block sm:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent) 0%, color-mix(in srgb, var(--surface) 90%, transparent) 55%, color-mix(in srgb, var(--surface) 75%, transparent) 100%)",
         }}
       />
     </div>
@@ -220,9 +228,9 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
       {/* Top Header */}
-      <header className="absolute top-0 inset-x-0 z-30 flex shrink-0 items-center justify-between border-b border-line/60 bg-surface/80 px-6 py-4 backdrop-blur-md sm:px-12">
+      <header className="absolute top-0 inset-x-0 z-30 flex shrink-0 items-center justify-between border-b border-line/60 bg-surface/80 px-5 py-3.5 backdrop-blur-md sm:px-12 sm:py-4">
         <div
-          className="text-[15px] font-semibold tracking-[0.14em] text-ink"
+          className="text-[14px] sm:text-[15px] font-semibold tracking-[0.14em] text-ink"
           style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
         >
           K-IG 교육
@@ -242,7 +250,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
         {tabs.map((tab, i) => (
           <section
             key={tab.slug}
-            className="relative flex h-full min-h-full w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start snap-always"
+            className="relative flex h-full min-h-full w-full flex-col justify-center overflow-hidden border-b border-line px-6 sm:px-[9vw] pt-16 pb-14 sm:py-0 snap-start snap-always"
             style={{ scrollSnapAlign: "start", scrollSnapStop: "always" }}
           >
             <SectionPhoto slug={tab.slug} priority={i < 2} />
@@ -251,7 +259,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
               className="relative z-10 max-w-[680px]"
               style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}
             >
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-white/80 dark:bg-white/10 backdrop-blur-md px-3.5 py-1 font-mono text-[11.5px] font-semibold tracking-widest text-primary uppercase shadow-2xs">
+              <div className="mb-3 sm:mb-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-white/80 dark:bg-white/10 backdrop-blur-md px-3 sm:px-3.5 py-0.5 sm:py-1 font-mono text-[10.5px] sm:text-[11.5px] font-semibold tracking-widest text-primary uppercase shadow-2xs">
                 <span>STAGE {tab.num}</span>
                 <span className="text-primary/40">·</span>
                 <span>CURRICULUM</span>
@@ -261,7 +269,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                 const targetCourse = tab.courseDetails[0]?.slug ?? tab.courses[0];
                 return (
                   <>
-                    <h2 className="text-[clamp(56px,7.5vw,92px)] font-bold leading-[1.04] tracking-[-0.03em] text-ink">
+                    <h2 className="text-[clamp(32px,8vw,78px)] font-bold leading-[1.06] tracking-[-0.03em] text-ink text-balance">
                       <Link
                         href={`/${targetCourse}`}
                         className="transition-all duration-300 hover:opacity-85"
@@ -271,15 +279,15 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                     </h2>
 
                     {tab.blurb ? (
-                      <p className="mt-4 max-w-[560px] text-[clamp(16px,2vw,22px)] font-normal leading-relaxed tracking-tight text-ink-soft">
+                      <p className="mt-2.5 sm:mt-4 max-w-[560px] text-[14px] sm:text-[clamp(16px,2vw,22px)] font-normal leading-relaxed tracking-tight text-ink-soft">
                         {tab.blurb}
                       </p>
                     ) : null}
 
-                    <div className="mt-8 flex items-center gap-4">
+                    <div className="mt-5 sm:mt-8 flex items-center gap-4">
                       <Link
                         href={`/${targetCourse}`}
-                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-8 py-3.5 text-[15px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
+                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 sm:px-8 py-3 sm:py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
                       >
                         <span>학습 시작하기</span>
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -296,7 +304,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                 type="button"
                 onClick={() => scrollToTab(i + 1)}
                 aria-label="다음 코스로 이동"
-                className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-0.5 text-ink-faint hover:text-primary transition-colors cursor-pointer select-none"
+                className="absolute bottom-3.5 sm:bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-0.5 text-ink-faint hover:text-primary transition-colors cursor-pointer select-none"
               >
                 <span className="font-mono text-[9px] font-bold tracking-[0.2em] text-primary/70 uppercase">
                   NEXT

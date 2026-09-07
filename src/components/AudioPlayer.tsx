@@ -214,12 +214,12 @@ export function AudioPlayer({
         ) : null}
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <button
           type="button"
           onClick={toggle}
           aria-label={playing ? t("player.pause") : t("player.play")}
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer hover:bg-black/90"
+          className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer hover:bg-black/90"
         >
           {playing ? (
             <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
@@ -237,22 +237,22 @@ export function AudioPlayer({
           type="button"
           onClick={() => seek(-5)}
           aria-label={t("player.back5")}
-          className="px-2.5 py-1 font-mono text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer"
+          className="px-2 sm:px-2.5 py-1 font-mono text-[10.5px] sm:text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer shrink-0"
         >
-          {isTtsMode ? "이전 문장" : "−5s"}
+          {isTtsMode ? "이전" : "−5s"}
         </button>
 
         <button
           type="button"
           onClick={() => seek(5)}
           aria-label="앞으로 5초 이동"
-          className="px-2.5 py-1 font-mono text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer"
+          className="px-2 sm:px-2.5 py-1 font-mono text-[10.5px] sm:text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer shrink-0"
         >
-          {isTtsMode ? "다음 문장" : "+5s"}
+          {isTtsMode ? "다음" : "+5s"}
         </button>
 
         {isTtsMode ? (
-          <div className="flex-1 px-2">
+          <div className="flex-1 px-1 sm:px-2 min-w-[50px]">
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-black/[0.06] dark:bg-white/[0.08]">
               <div
                 className="h-full bg-primary rounded-full transition-all duration-300"
@@ -271,13 +271,13 @@ export function AudioPlayer({
             value={time}
             onChange={scrub}
             aria-label={t("player.seek")}
-            className="h-1.5 flex-1 cursor-pointer appearance-none bg-black/[0.06] dark:bg-white/[0.08] accent-[var(--primary)] hover:h-2 transition-all rounded-full"
+            className="h-2 flex-1 min-w-[60px] cursor-pointer appearance-none bg-black/[0.06] dark:bg-white/[0.08] accent-[var(--primary)] hover:h-2.5 transition-all rounded-full"
           />
         )}
 
-        <span className="w-24 shrink-0 text-right font-mono text-[11.5px] tabular-nums text-ink-faint">
+        <span className="w-18 sm:w-24 shrink-0 text-right font-mono text-[10.5px] sm:text-[11.5px] tabular-nums text-ink-faint">
           {isTtsMode
-            ? `${ttsCurrentIndex + 1} / ${fallbackSentences.length}`
+            ? `${ttsCurrentIndex + 1}/${fallbackSentences.length}`
             : `${fmt(time)} / ${fmt(duration)}`}
         </span>
       </div>

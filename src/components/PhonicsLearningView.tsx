@@ -432,7 +432,7 @@ export function PhonicsLearningView({
         </div>
 
         {/* 4 STAGE TABS (문맥예문조립 제외, Step 3 AI 발음&오답노트, Step 4 60초 타임어택) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 border-t border-line/60 pt-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5 border-t border-line/60 pt-3">
           {[
             {
               id: "matrix",
@@ -468,7 +468,7 @@ export function PhonicsLearningView({
                   stopRowPlayback();
                   setActiveTab(tab.id as any);
                 }}
-                className={`flex flex-col items-start gap-1 rounded-2xl border p-3.5 text-left transition-all cursor-pointer ${
+                className={`flex flex-col items-start gap-1 rounded-2xl border p-2.5 sm:p-3.5 text-left transition-all cursor-pointer ${
                   isActive
                     ? "border-[#D4AF37] bg-gradient-to-b from-[#D4AF37]/15 to-surface shadow-xs text-ink ring-1 ring-[#D4AF37]/40"
                     : "border-line bg-surface hover:bg-raised/60 text-ink-soft hover:text-ink"
@@ -477,10 +477,10 @@ export function PhonicsLearningView({
                 <span className="font-mono text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">
                   {tab.step}
                 </span>
-                <span className="text-[13.5px] font-bold leading-snug">
+                <span className="text-[12.5px] sm:text-[13.5px] font-bold leading-snug">
                   {tab.label}
                 </span>
-                <span className="text-[11px] text-ink-faint line-clamp-1">
+                <span className="text-[10.5px] sm:text-[11px] text-ink-faint line-clamp-1">
                   {tab.sub}
                 </span>
               </button>
@@ -496,15 +496,15 @@ export function PhonicsLearningView({
         <div className="flex flex-col gap-6 animate-in fade-in duration-200">
           {/* Spotlight Word Detail Card */}
           {selectedWord && (
-            <div className="rounded-3xl border-2 border-[#D4AF37]/35 bg-gradient-to-br from-surface via-surface to-amber-500/[0.04] p-6 shadow-sm flex flex-col gap-5">
+            <div className="rounded-3xl border-2 border-[#D4AF37]/35 bg-gradient-to-br from-surface via-surface to-amber-500/[0.04] p-4.5 sm:p-6 shadow-sm flex flex-col gap-5">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <div className="flex flex-col">
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-mono text-[36px] font-black tracking-tight text-ink">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                      <span className="font-mono text-[clamp(24px,7vw,36px)] font-black tracking-tight text-ink">
                         {selectedWord}
                       </span>
-                      <span className="text-[20px] font-bold text-amber-900 dark:text-amber-200">
+                      <span className="text-[17px] sm:text-[20px] font-bold text-amber-900 dark:text-amber-200">
                         {selectedMeaning}
                       </span>
                     </div>

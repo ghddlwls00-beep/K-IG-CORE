@@ -25,13 +25,13 @@ export function LessonActionButtons({
   }, [course, lessonId, title, courseTitle, recordRecent]);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1.5 sm:gap-2">
       {/* Bookmark Button */}
       <button
         type="button"
         onClick={() => toggleBookmark(course, lessonId)}
         aria-label={bookmarked ? "북마크 해제" : "북마크 추가"}
-        className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${
+        className={`flex items-center gap-1 sm:gap-1.5 rounded-lg border px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-[12px] font-medium transition-all cursor-pointer shrink-0 ${
           bookmarked
             ? "border-amber-400 bg-amber-400/10 text-amber-600 dark:text-amber-400 font-semibold shadow-2xs"
             : "border-line bg-surface text-ink-soft hover:border-line-strong hover:text-ink"
@@ -48,7 +48,7 @@ export function LessonActionButtons({
         type="button"
         onClick={() => toggleComplete(course, lessonId)}
         aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
-        className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${
+        className={`flex items-center gap-1 sm:gap-1.5 rounded-lg border px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-[12px] font-medium transition-all cursor-pointer shrink-0 ${
           completed
             ? "border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-bold shadow-2xs"
             : "border-line bg-surface text-ink-soft hover:border-line-strong hover:text-ink"

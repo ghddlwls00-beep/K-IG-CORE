@@ -101,7 +101,7 @@ const WpmStopwatchBar = memo(function WpmStopwatchBar({
   }
 
   return (
-    <div className="rounded-2xl border border-line bg-gradient-to-br from-surface via-raised/30 to-surface p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+    <div className="rounded-2xl border border-line bg-gradient-to-br from-surface via-raised/30 to-surface p-4 sm:p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-5">
       <div className="flex flex-col gap-1.5">
         <span className="font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">
           하버드 속독식 페이싱 훈련 (Evelyn Wood WPM System)
@@ -273,6 +273,7 @@ export function ReadingLearningView({
   const [activeTab, setActiveTab] = useState<"speed" | "voca" | "quiz" | "dual">("speed");
   const [fontSize, setFontSize] = useState<"normal" | "large" | "xlarge">("normal");
   const [showNumbers, setShowNumbers] = useState(true);
+  const [dualMobileView, setDualMobileView] = useState<"both" | "en" | "ko">("both");
 
   // Active playing audio state
   const [playingSentence, setPlayingSentence] = useState<number | null>(null);
@@ -490,12 +491,12 @@ export function ReadingLearningView({
       </div>
 
       {/* 2. Step Selector Tabs */}
-      <div className="flex flex-wrap items-center gap-1.5 rounded-2xl border border-line bg-surface p-1.5 shadow-2xs">
+      <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto rounded-2xl border border-line bg-surface p-1.5 shadow-2xs flex-nowrap">
         <button
           type="button"
           onClick={() => setActiveTab("speed")}
           className={
-            "rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer " +
+            "shrink-0 whitespace-nowrap rounded-xl px-3 sm:px-3.5 py-2 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
             (activeTab === "speed"
               ? "bg-ink text-surface font-semibold shadow-xs"
               : "text-ink-soft hover:bg-raised hover:text-ink")
@@ -508,7 +509,7 @@ export function ReadingLearningView({
           type="button"
           onClick={() => setActiveTab("voca")}
           className={
-            "rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer " +
+            "shrink-0 whitespace-nowrap rounded-xl px-3 sm:px-3.5 py-2 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
             (activeTab === "voca"
               ? "bg-ink text-surface font-semibold shadow-xs"
               : "text-ink-soft hover:bg-raised hover:text-ink")
@@ -521,7 +522,7 @@ export function ReadingLearningView({
           type="button"
           onClick={() => setActiveTab("quiz")}
           className={
-            "rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer " +
+            "shrink-0 whitespace-nowrap rounded-xl px-3 sm:px-3.5 py-2 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
             (activeTab === "quiz"
               ? "bg-ink text-surface font-semibold shadow-xs"
               : "text-ink-soft hover:bg-raised hover:text-ink")
@@ -534,7 +535,7 @@ export function ReadingLearningView({
           type="button"
           onClick={() => setActiveTab("dual")}
           className={
-            "rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer " +
+            "shrink-0 whitespace-nowrap rounded-xl px-3 sm:px-3.5 py-2 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
             (activeTab === "dual"
               ? "bg-ink text-surface font-semibold shadow-xs"
               : "text-ink-soft hover:bg-raised hover:text-ink")
@@ -987,27 +988,55 @@ export function ReadingLearningView({
       {/* ========================================================================= */}
       {activeTab === "dual" && (
         <section aria-label="Side-by-Side Dual Reading" className="flex flex-col gap-4 animate-in fade-in duration-200">
-          {/* Top Invariant Status Header Bar (Zero Layout Shift - Invariant Height) */}
-          <div className="flex items-center justify-between rounded-xl border border-line/70 bg-surface px-4 py-2.5 text-[12px] text-ink-soft shadow-2xs">
-            <span className="flex items-center gap-2">
+          {/* Top Invariant Status Header Bar & Mobile View Switcher */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-line/70 bg-surface px-4 py-2.5 text-[12px] text-ink-soft shadow-2xs">
+            <div className="flex items-center gap-2">
               <span className="text-[13px]">⚖️</span>
               <span className="font-medium text-ink">영어 원문과 한글 완역 1:1 대조 리딩</span>
-              <span className="text-ink-faint hidden sm:inline">· 문장에 마우스를 올리면 대응 번역이 실시간 동기화됩니다</span>
-            </span>
-            <span className="font-mono text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-              {sentencePairs.length}개 문장 1:1 정합
-            </span>
+              <span className="text-ink-faint hidden sm:inline">· 문장을 탭하면 대응 번역이 실시간 동기화됩니다</span>
+            </div>
+
+            <div className="flex items-center justify-between sm:justify-end gap-2">
+              {/* Mobile View Toggle (visible only below lg) */}
+              <div className="flex lg:hidden items-center rounded-lg border border-line bg-raised/70 p-0.5 text-[11px] font-medium">
+                <button
+                  type="button"
+                  onClick={() => setDualMobileView("both")}
+                  className={`px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "both" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
+                >
+                  양방향
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDualMobileView("en")}
+                  className={`px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "en" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
+                >
+                  영어만
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setDualMobileView("ko")}
+                  className={`px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "ko" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
+                >
+                  한글만
+                </button>
+              </div>
+
+              <span className="font-mono text-[10.5px] sm:text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                {sentencePairs.length}개 문장 1:1 정합
+              </span>
+            </div>
           </div>
 
-          {/* Dual Columns: Left English, Right Korean (Directly below static header) */}
+          {/* Dual Columns: Left English, Right Korean (Responsive with mobile toggle) */}
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {/* Left Column: English Passage */}
-            <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
+            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "ko" ? "hidden lg:block" : "block"}`}>
               <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
                 <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink uppercase tracking-wider border border-line">
                   English Passage (영어 원문)
                 </span>
-                <span className="font-mono text-[11px] text-ink-faint">Hover 동기화 / 클릭 발음 재생</span>
+                <span className="font-mono text-[11px] text-ink-faint">탭 발음 듣기 / 번역 확인</span>
               </div>
 
               <div className={`${fontClasses} font-serif text-ink leading-loose text-justify select-none`}>
@@ -1047,7 +1076,7 @@ export function ReadingLearningView({
             </div>
 
             {/* Right Column: Korean Passage */}
-            <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs">
+            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "en" ? "hidden lg:block" : "block"}`}>
               <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
                 <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink-soft uppercase tracking-wider border border-line">
                   Korean Interpretation (한글 완역)
@@ -1092,35 +1121,47 @@ export function ReadingLearningView({
           </div>
 
           {/* Synchronized 1:1 Live Translation Overlay Layer (Docked Below Columns & Sticky Bottom HUD) */}
-          <div className="sticky bottom-4 z-20 pointer-events-none mt-2">
-            <div className={`pointer-events-auto mx-auto max-w-3xl rounded-2xl border p-4 shadow-xl backdrop-blur-md transition-all duration-150 ${
+          <div className="sticky bottom-3 sm:bottom-4 z-20 pointer-events-none mt-2">
+            <div className={`pointer-events-auto mx-auto max-w-3xl rounded-2xl border p-3 sm:p-4 shadow-xl backdrop-blur-md transition-all duration-150 ${
               activeSentence
                 ? "border-amber-400/90 bg-surface/95 dark:bg-neutral-900/95 ring-1 ring-amber-500/30"
-                : "border-line/80 bg-surface/90 dark:bg-neutral-900/90 opacity-80"
+                : "hidden sm:block border-line/80 bg-surface/90 dark:bg-neutral-900/90 opacity-80"
             }`}>
               {activeSentence ? (
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-3 min-w-0">
-                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 font-mono text-[12px] font-bold text-amber-900 dark:text-amber-200">
+                <div className="flex items-start justify-between gap-3 sm:gap-4 max-h-[35vh] overflow-y-auto">
+                  <div className="flex items-start gap-2.5 sm:gap-3 min-w-0">
+                    <div className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 font-mono text-[11px] sm:text-[12px] font-bold text-amber-900 dark:text-amber-200">
                       #{activeSentence.index + 1}
                     </div>
                     <div className="flex flex-col gap-0.5 min-w-0">
-                      <div className="font-serif text-[14.5px] font-medium text-ink leading-snug">
+                      <div className="font-serif text-[13.5px] sm:text-[14.5px] font-medium text-ink leading-snug">
                         {activeSentence.en}
                       </div>
-                      <div className="text-[14px] text-amber-950 dark:text-amber-200 font-semibold leading-relaxed">
+                      <div className="text-[13px] sm:text-[14px] text-amber-950 dark:text-amber-200 font-semibold leading-relaxed">
                         👉 {activeSentence.ko}
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     <button
                       type="button"
                       onClick={() => playSentenceEn(activeSentence.en, activeSentence.index)}
-                      className="rounded-xl border border-amber-400/60 bg-amber-200/70 dark:bg-amber-800/60 px-3 py-1.5 font-mono text-[11px] font-bold text-amber-950 dark:text-amber-100 hover:bg-amber-300 transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
+                      className="rounded-xl border border-amber-400/60 bg-amber-200/70 dark:bg-amber-800/60 px-2.5 sm:px-3 py-1.5 font-mono text-[10.5px] sm:text-[11px] font-bold text-amber-950 dark:text-amber-100 hover:bg-amber-300 transition-colors cursor-pointer flex items-center gap-1 shadow-2xs"
                     >
                       <span>🔊</span>
-                      <span>발음 듣기</span>
+                      <span className="hidden xs:inline">발음</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPinnedSentence(null);
+                        setHoveredSentenceId(null);
+                      }}
+                      className="rounded-lg p-1.5 text-ink-faint hover:text-ink hover:bg-raised transition-colors cursor-pointer"
+                      title="닫기"
+                      aria-label="닫기"
+                    >
+                      ✕
                     </button>
                   </div>
                 </div>
@@ -1128,7 +1169,7 @@ export function ReadingLearningView({
                 <div className="flex items-center justify-between text-[12px] text-ink-soft">
                   <span className="flex items-center gap-2">
                     <span>💡</span>
-                    <span>영어 또는 한국어 문장에 마우스를 올리면(Hover) 해당 문장의 1:1 번역이 여기에 표시됩니다.</span>
+                    <span>영어 또는 한국어 문장에 마우스를 올리거나 탭하면 해당 문장의 1:1 번역이 여기에 표시됩니다.</span>
                   </span>
                   <span className="font-mono text-[11px] text-ink-faint">클릭하면 문장 고정(Pin)</span>
                 </div>
@@ -1139,7 +1180,7 @@ export function ReadingLearningView({
       )}
 
       {/* 6. Reading Notes & Summary Notepad */}
-      <section aria-label="Reading Notes" className="rounded-xl border border-line bg-surface p-5 shadow-xs">
+      <section aria-label="Reading Notes" className="rounded-xl border border-line bg-surface p-4 sm:p-5 shadow-xs">
         <div className="mb-3.5 flex items-center justify-between border-b border-line/70 pb-2.5">
           <div className="flex items-center gap-2">
             <span className="font-mono text-[11px] font-semibold uppercase text-ink tracking-wider">
@@ -1162,7 +1203,7 @@ export function ReadingLearningView({
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="지문의 핵심 주제문, 새로 배운 단어, 문법 포인트 등을 자유롭게 메모하세요... (실시간 자동 저장)"
-          className="w-full rounded-lg border border-line/80 bg-raised/20 p-3.5 text-[13.5px] text-ink placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors"
+          className="w-full rounded-lg border border-line/80 bg-raised/20 p-3.5 text-[16px] sm:text-[13.5px] text-ink placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors"
         />
       </section>
     </div>

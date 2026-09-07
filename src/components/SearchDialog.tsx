@@ -164,7 +164,7 @@ export function SearchDialog() {
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                className="w-full bg-transparent text-[14.5px] text-ink placeholder:text-ink-faint focus:outline-none"
+                className="w-full bg-transparent text-[16px] text-ink placeholder:text-ink-faint focus:outline-none"
               />
 
               {query && (

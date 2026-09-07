@@ -154,7 +154,7 @@ export function LicenseModal() {
                 value={inputCode}
                 onChange={(e) => setInputCode(e.target.value.toUpperCase())}
                 placeholder="KIG-1Y-XXXX-XXXX"
-                className="w-full rounded-full border border-line bg-raised/50 px-4 py-2.5 font-mono text-[14px] font-bold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors tracking-wide"
+                className="w-full rounded-full border border-line bg-raised/50 px-4 py-2.5 font-mono text-[16px] font-bold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors tracking-wide"
                 autoFocus
                 disabled={isSubmitting}
               />

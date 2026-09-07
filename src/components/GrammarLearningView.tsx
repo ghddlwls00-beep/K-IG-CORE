@@ -417,12 +417,12 @@ export function GrammarLearningView({
     normal: {
       korean: "text-[16px] leading-[1.6]",
       english: "text-[16.5px] leading-[1.6]",
-      input: "text-[15px]",
+      input: "text-[16px] sm:text-[15px]",
     },
     large: {
       korean: "text-[18px] leading-[1.7]",
       english: "text-[18.5px] leading-[1.7]",
-      input: "text-[16.5px]",
+      input: "text-[17px] sm:text-[16.5px]",
     },
     xlarge: {
       korean: "text-[20px] leading-[1.8]",
@@ -462,12 +462,12 @@ export function GrammarLearningView({
 
         <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
           {/* Study Mode Selector */}
-          <div className="flex flex-wrap items-center gap-1 rounded-xl bg-raised/80 p-1 border border-line/70">
+          <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 max-w-full flex-nowrap">
             <button
               type="button"
               onClick={() => setStudyMode("composition")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "composition"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
@@ -481,7 +481,7 @@ export function GrammarLearningView({
               type="button"
               onClick={() => setStudyMode("cloze")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "cloze"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
@@ -495,7 +495,7 @@ export function GrammarLearningView({
               type="button"
               onClick={() => setStudyMode("shadowing")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "shadowing"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
@@ -509,7 +509,7 @@ export function GrammarLearningView({
               type="button"
               onClick={() => setStudyMode("exam")}
               className={
-                "flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12.5px] font-medium transition-all cursor-pointer " +
+                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
                 (studyMode === "exam"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")

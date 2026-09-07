@@ -109,7 +109,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
                 aria-expanded={mobileMenuOpen}
-                className="flex md:hidden h-9 w-9 items-center justify-center rounded-xl border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
+                className="flex md:hidden h-10 w-10 min-w-[40px] items-center justify-center rounded-xl border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
               >
                 <div className="flex flex-col items-center justify-center gap-1.5 w-4.5">
                   <span
@@ -145,7 +145,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
           />
 
           {/* Drawer Content */}
-          <aside className="relative z-10 flex h-full w-[280px] max-w-[85vw] flex-col justify-between border-l border-line bg-surface p-6 shadow-2xl animate-in slide-in-from-right duration-250">
+          <aside className="relative z-10 flex h-full w-[290px] max-w-[85vw] flex-col justify-between border-l border-line bg-surface p-5 sm:p-6 shadow-2xl animate-in slide-in-from-right duration-250 overflow-y-auto">
             <div className="flex flex-col gap-6">
               {/* Drawer Header */}
               <div className="flex items-center justify-between border-b border-line/70 pb-4">
@@ -156,7 +156,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="닫기"
-                  className="rounded-lg p-1.5 text-ink-soft hover:bg-raised hover:text-ink cursor-pointer"
+                  className="rounded-lg p-2 text-ink-soft hover:bg-raised hover:text-ink cursor-pointer"
                 >
                   ✕
                 </button>
@@ -189,7 +189,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             </div>
 
             {/* Drawer Footer */}
-            <div className="border-t border-line/70 pt-4 flex flex-col gap-2.5">
+            <div className="border-t border-line/70 pt-4 flex flex-col gap-2.5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
               <button
                 type="button"
                 onClick={() => {
