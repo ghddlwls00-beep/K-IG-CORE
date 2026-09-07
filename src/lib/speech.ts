@@ -171,11 +171,16 @@ export function unlockMobileAudio(): void {
     if (audio && !audioUnlocked && !audio.src) {
       audio.src = SILENT_WAV;
       audio.volume = 0.01;
+      const restoreAudibleVolume = () => {
+        audio.muted = false;
+        audio.defaultMuted = false;
+        audio.volume = 1;
+      };
       const p = audio.play();
       if (p && typeof p.then === "function") {
-        p.then(() => {
-          audio.volume = 1;
-        }).catch(() => {});
+        p.then(restoreAudibleVolume).catch(restoreAudibleVolume);
+      } else {
+        restoreAudibleVolume();
       }
     }
   } catch {
@@ -782,6 +787,12 @@ function playUnifiedClip(
     );
   };
 
+  // The one-time mobile warm-up briefly lowers the shared element's volume.
+  // Some WebViews reject that silent primer, so always restore an audible
+  // state immediately before loading a real clip.
+  audio.muted = false;
+  audio.defaultMuted = false;
+  audio.volume = 1;
   audio.src = mediaUrl(unifiedSpeechPath(clean));
   audio.playbackRate = Math.max(0.5, Math.min(2, options.rate ?? 1.0));
   audio.onended = () => {
