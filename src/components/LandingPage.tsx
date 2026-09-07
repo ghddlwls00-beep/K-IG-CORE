@@ -70,37 +70,138 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
 export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   const [scrollActive, setScrollActive] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const activeIdxRef = useRef(0);
+  const isAnimatingRef = useRef(false);
 
-  // One wheel gesture moves one whole section (desktop).
-  // Touch swipe on mobile does the same via touchstart/touchend.
+  // Synchronize activeIdxRef whenever scrollActive changes
+  useEffect(() => {
+    activeIdxRef.current = scrollActive;
+  }, [scrollActive]);
+
+  const scrollToTab = (index: number) => {
+    const el = containerRef.current;
+    if (!el) return;
+    const targetIdx = Math.min(Math.max(index, 0), tabs.length - 1);
+    activeIdxRef.current = targetIdx;
+    setScrollActive(targetIdx);
+    el.scrollTo({
+      top: targetIdx * el.clientHeight,
+      behavior: "smooth",
+    });
+  };
+
+  // Strictly advance or retreat one section at a time on desktop wheel, mobile touch swipe, and keyboard
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    let locked = false;
-    let timer: ReturnType<typeof setTimeout>;
+
+    let cooldownTimer: ReturnType<typeof setTimeout> | null = null;
+    let wheelDelta = 0;
+    let wheelResetTimer: ReturnType<typeof setTimeout> | null = null;
+
+    function handleNavigate(direction: 1 | -1) {
+      if (isAnimatingRef.current) return;
+      const current = activeIdxRef.current;
+      const next = Math.min(Math.max(current + direction, 0), tabs.length - 1);
+      if (next === current) return;
+
+      isAnimatingRef.current = true;
+      activeIdxRef.current = next;
+      setScrollActive(next);
+
+      el?.scrollTo({
+        top: next * el.clientHeight,
+        behavior: "smooth",
+      });
+
+      if (cooldownTimer) clearTimeout(cooldownTimer);
+      cooldownTimer = setTimeout(() => {
+        isAnimatingRef.current = false;
+      }, 700);
+    }
 
     function onWheel(e: WheelEvent) {
       if (!el) return;
       e.preventDefault();
-      if (locked) return;
-      if (Math.abs(e.deltaY) < 2) return;
 
-      const height = el.clientHeight;
-      const current = Math.round(el.scrollTop / height);
-      const next = Math.min(Math.max(current + (e.deltaY > 0 ? 1 : -1), 0), tabs.length - 1);
-      if (next === current) return;
+      if (isAnimatingRef.current) return;
 
-      locked = true;
-      el.scrollTo({ top: next * height, behavior: "smooth" });
-      timer = setTimeout(() => {
-        locked = false;
-      }, 400);
+      wheelDelta += e.deltaY;
+
+      if (wheelResetTimer) clearTimeout(wheelResetTimer);
+      wheelResetTimer = setTimeout(() => {
+        wheelDelta = 0;
+      }, 150);
+
+      // Require a decisive wheel gesture (threshold 20px)
+      if (Math.abs(wheelDelta) >= 20) {
+        const direction = wheelDelta > 0 ? 1 : -1;
+        wheelDelta = 0;
+        handleNavigate(direction);
+      }
+    }
+
+    // Touch swipe support for mobile
+    let touchStartY = 0;
+    let touchStartX = 0;
+    let touchStartTime = 0;
+
+    function onTouchStart(e: TouchEvent) {
+      if (e.touches.length !== 1) return;
+      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+      touchStartTime = Date.now();
+    }
+
+    function onTouchEnd(e: TouchEvent) {
+      if (!el || isAnimatingRef.current) return;
+      if (e.changedTouches.length !== 1) return;
+
+      const dy = touchStartY - e.changedTouches[0].clientY;
+      const dx = touchStartX - e.changedTouches[0].clientX;
+      const dt = Date.now() - touchStartTime;
+
+      if (Math.abs(dy) >= 30 && Math.abs(dy) > Math.abs(dx) * 1.2 && dt < 800) {
+        const direction = dy > 0 ? 1 : -1;
+        handleNavigate(direction);
+      }
+    }
+
+    // Keyboard arrow keys
+    function onKeyDown(e: KeyboardEvent) {
+      if (["INPUT", "TEXTAREA", "SELECT"].includes((e.target as HTMLElement)?.tagName)) return;
+
+      if (e.key === "ArrowDown" || e.key === "PageDown" || (e.key === " " && !e.shiftKey)) {
+        e.preventDefault();
+        handleNavigate(1);
+      } else if (e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey)) {
+        e.preventDefault();
+        handleNavigate(-1);
+      }
+    }
+
+    function onResize() {
+      if (!el) return;
+      el.scrollTo({
+        top: activeIdxRef.current * el.clientHeight,
+        behavior: "instant",
+      });
     }
 
     el.addEventListener("wheel", onWheel, { passive: false });
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+
     return () => {
       el.removeEventListener("wheel", onWheel);
-      clearTimeout(timer);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+      if (cooldownTimer) clearTimeout(cooldownTimer);
+      if (wheelResetTimer) clearTimeout(wheelResetTimer);
     };
   }, [tabs.length]);
 
@@ -108,23 +209,18 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     const el = e.currentTarget;
     if (!el.clientHeight) return;
     const idx = Math.round(el.scrollTop / el.clientHeight);
-    if (idx !== scrollActive && idx >= 0 && idx < tabs.length) {
-      setScrollActive(idx);
+    if (idx >= 0 && idx < tabs.length) {
+      activeIdxRef.current = idx;
+      if (idx !== scrollActive) {
+        setScrollActive(idx);
+      }
     }
   };
 
-  const scrollToTab = (index: number) => {
-    if (!containerRef.current) return;
-    containerRef.current.scrollTo({
-      top: index * containerRef.current.clientHeight,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div className="relative flex h-[100dvh] flex-col overflow-hidden bg-surface text-ink antialiased select-none">
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
       {/* Top Header */}
-      <header className="relative z-20 flex shrink-0 items-center justify-between border-b border-line bg-surface/90 px-6 py-4 backdrop-blur-sm sm:px-12">
+      <header className="absolute top-0 inset-x-0 z-30 flex shrink-0 items-center justify-between border-b border-line/60 bg-surface/80 px-6 py-4 backdrop-blur-md sm:px-12">
         <div
           className="text-[15px] font-semibold tracking-[0.14em] text-ink"
           style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
@@ -137,17 +233,16 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="relative flex-1 overflow-y-auto snap-y snap-mandatory select-text overscroll-y-contain"
+        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar"
         style={{
           scrollSnapType: "y mandatory",
-          scrollBehavior: "smooth",
           WebkitOverflowScrolling: "touch",
         }}
       >
         {tabs.map((tab, i) => (
           <section
             key={tab.slug}
-            className="relative flex h-[100dvh] min-h-[100dvh] w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start snap-always"
+            className="relative flex h-full min-h-full w-full flex-col justify-center overflow-hidden border-b border-line px-[9vw] snap-start snap-always"
             style={{ scrollSnapAlign: "start", scrollSnapStop: "always" }}
           >
             <SectionPhoto slug={tab.slug} priority={i < 2} />
