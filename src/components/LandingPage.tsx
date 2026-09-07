@@ -84,13 +84,20 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     const targetIdx = Math.min(Math.max(index, 0), tabs.length - 1);
     activeIdxRef.current = targetIdx;
     setScrollActive(targetIdx);
+    isAnimatingRef.current = true;
+    el.style.scrollSnapType = "none";
     el.scrollTo({
       top: targetIdx * el.clientHeight,
       behavior: "smooth",
     });
+    setTimeout(() => {
+      if (el) el.style.scrollSnapType = "y mandatory";
+      isAnimatingRef.current = false;
+    }, 600);
   };
 
-  // Strictly advance or retreat one section at a time on desktop wheel, mobile touch swipe, and keyboard
+  // Strictly advance or retreat one section at a time on desktop wheel and keyboard
+  // Mobile touch uses native CSS scroll-snap (scroll-snap-stop: always) for buttery 120Hz smooth physics
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -100,7 +107,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     let wheelResetTimer: ReturnType<typeof setTimeout> | null = null;
 
     function handleNavigate(direction: 1 | -1) {
-      if (isAnimatingRef.current) return;
+      if (!el || isAnimatingRef.current) return;
       const current = activeIdxRef.current;
       const next = Math.min(Math.max(current + direction, 0), tabs.length - 1);
       if (next === current) return;
@@ -109,15 +116,17 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       activeIdxRef.current = next;
       setScrollActive(next);
 
-      el?.scrollTo({
+      el.style.scrollSnapType = "none";
+      el.scrollTo({
         top: next * el.clientHeight,
         behavior: "smooth",
       });
 
       if (cooldownTimer) clearTimeout(cooldownTimer);
       cooldownTimer = setTimeout(() => {
+        if (el) el.style.scrollSnapType = "y mandatory";
         isAnimatingRef.current = false;
-      }, 700);
+      }, 600);
     }
 
     function onWheel(e: WheelEvent) {
@@ -133,36 +142,10 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
         wheelDelta = 0;
       }, 150);
 
-      // Require a decisive wheel gesture (threshold 20px)
-      if (Math.abs(wheelDelta) >= 20) {
+      // Require a decisive wheel gesture (threshold 25px)
+      if (Math.abs(wheelDelta) >= 25) {
         const direction = wheelDelta > 0 ? 1 : -1;
         wheelDelta = 0;
-        handleNavigate(direction);
-      }
-    }
-
-    // Touch swipe support for mobile
-    let touchStartY = 0;
-    let touchStartX = 0;
-    let touchStartTime = 0;
-
-    function onTouchStart(e: TouchEvent) {
-      if (e.touches.length !== 1) return;
-      touchStartY = e.touches[0].clientY;
-      touchStartX = e.touches[0].clientX;
-      touchStartTime = Date.now();
-    }
-
-    function onTouchEnd(e: TouchEvent) {
-      if (!el || isAnimatingRef.current) return;
-      if (e.changedTouches.length !== 1) return;
-
-      const dy = touchStartY - e.changedTouches[0].clientY;
-      const dx = touchStartX - e.changedTouches[0].clientX;
-      const dt = Date.now() - touchStartTime;
-
-      if (Math.abs(dy) >= 30 && Math.abs(dy) > Math.abs(dx) * 1.2 && dt < 800) {
-        const direction = dy > 0 ? 1 : -1;
         handleNavigate(direction);
       }
     }
@@ -189,15 +172,11 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     }
 
     el.addEventListener("wheel", onWheel, { passive: false });
-    el.addEventListener("touchstart", onTouchStart, { passive: true });
-    el.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("resize", onResize);
 
     return () => {
       el.removeEventListener("wheel", onWheel);
-      el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
       if (cooldownTimer) clearTimeout(cooldownTimer);
