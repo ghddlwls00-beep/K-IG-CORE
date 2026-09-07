@@ -14,76 +14,9 @@ interface StudentLearningViewProps {
   chunkDrills?: { en: string; ko: string }[];
 }
 
-type StudyMode = "listen" | "chunk" | "dictation" | "shadowing";
+type StudyMode = "listen" | "dictation" | "shadowing";
 type ScriptFilter = "hidden" | "en_only" | "ko_only" | "all";
 type PlaySpeed = 0.85 | 1.0 | 1.2;
-
-interface ParsedChunk {
-  en: string;
-  ko?: string;
-}
-
-/**
- * Intelligent Syntactic Chunk Splitter
- * Splits an English sentence into natural, rhythmic semantic chunks.
- */
-function getSentenceChunks(
-  text: string,
-  drills: { en: string; ko: string }[] = []
-): ParsedChunk[] {
-  if (!text) return [];
-
-  // 1. If text already has pre-formatted slashes
-  if (text.includes("/")) {
-    return text
-      .split("/")
-      .map((c) => c.trim())
-      .filter(Boolean)
-      .map((en) => {
-        const matchingDrill = drills.find(
-          (d) =>
-            d.en.toLowerCase() === en.toLowerCase() ||
-            en.toLowerCase().includes(d.en.toLowerCase())
-        );
-        return { en, ko: matchingDrill?.ko };
-      });
-  }
-
-  const clean = text.trim();
-
-  // 2. Syntactic boundary segmentation
-  const parts = clean
-    .replace(/,\s*/g, ", | ")
-    .replace(/;\s*/g, "; | ")
-    .replace(/:\s*/g, ": | ")
-    .replace(
-      /\s+(and|but|or|so|because|although|though|when|while|before|after|if|since|until|whereas)\s+/gi,
-      " | $1 "
-    )
-    .replace(/\s+(that|which|who|whom|whose|where)\s+/gi, " | $1 ")
-    .replace(/\s+(in order to|so that|as well as|not only|but also)\s+/gi, " | $1 ")
-    .replace(/\s+(to\s+[a-z]+)\s+/gi, (match, p1) => ` | ${p1} `)
-    .split("|")
-    .map((p) => p.trim())
-    .filter((p) => p.length > 0);
-
-  const rawChunks = parts.length > 0 ? parts : [clean];
-
-  return rawChunks.map((en) => {
-    // Attempt to match with provided chunkDrills
-    const cleanEn = en.replace(/^[,\s;:]+|[,\s;:]+$/g, "").toLowerCase();
-    const matchingDrill = drills.find(
-      (d) =>
-        d.en.toLowerCase() === cleanEn ||
-        cleanEn.includes(d.en.toLowerCase()) ||
-        d.en.toLowerCase().includes(cleanEn)
-    );
-    return {
-      en,
-      ko: matchingDrill?.ko,
-    };
-  });
-}
 
 export function StudentLearningView({
   blocks,
@@ -112,20 +45,10 @@ export function StudentLearningView({
     blocks.find((b) => b.type === "instruction")?.text ||
     "STUDENT 실전 듣기·읽기 완성 훈련";
 
-  // Pre-compute sentence chunks for Step 2 & inline views
-  const sentenceChunksMap = useMemo(() => {
-    const map: Record<number, ParsedChunk[]> = {};
-    sentenceItems.forEach((s, idx) => {
-      map[idx] = getSentenceChunks(s.text, chunkDrills);
-    });
-    return map;
-  }, [sentenceItems, chunkDrills]);
-
   // Main navigation & general settings
   const [studyMode, setStudyMode] = useState<StudyMode>("listen");
   const [speed, setSpeed] = useState<PlaySpeed>(1.0);
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
-  const [activeChunk, setActiveChunk] = useState<string | null>(null);
   const [isLooping, setIsLooping] = useState<boolean>(false);
   const [isPlayingFull, setIsPlayingFull] = useState(false);
   const fullAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -133,12 +56,6 @@ export function StudentLearningView({
   // Step 1: Blind Listening states
   const [scriptFilter, setScriptFilter] = useState<ScriptFilter>("hidden");
   const [revealedItems, setRevealedItems] = useState<Record<number, boolean>>({});
-  const [inlineChunkViews, setInlineChunkViews] = useState<Record<number, boolean>>({});
-
-  // Step 2: Chunk Reading states
-  const [selectedChunkIdx, setSelectedChunkIdx] = useState<number | null>(null);
-  const [flippedDrills, setFlippedDrills] = useState<Record<number, boolean>>({});
-  const [playingDrillIdx, setPlayingDrillIdx] = useState<number | null>(null);
 
   // Step 3: Tap Dictation states
   const [dictationIdx, setDictationIdx] = useState<number>(0);
@@ -196,7 +113,6 @@ export function StudentLearningView({
 
     stopSpeech();
     setActiveIdx(null);
-    setActiveChunk(null);
 
     const fullTrack = audioTracks[0];
     if (fullTrack?.src && hasAudioFile(fullTrack.src)) {
@@ -241,7 +157,6 @@ export function StudentLearningView({
         fullAudioRef.current.currentTime = 0;
       }
       setIsPlayingFull(false);
-      setActiveChunk(null);
       setActiveIdx(idx);
       setIsLooping(loop);
 
@@ -271,35 +186,9 @@ export function StudentLearningView({
     [activeIdx, speed]
   );
 
-  // Chunk-level audio playback
-  const playChunk = useCallback(
-    (chunkText: string) => {
-      if (!chunkText) return;
-      if (activeChunk === chunkText) {
-        stopSpeech();
-        setActiveChunk(null);
-        return;
-      }
-      stopSpeech();
-      setActiveChunk(chunkText);
-      speakText(chunkText, {
-        lang: "en",
-        rate: speed,
-        onEnd: () => setActiveChunk((curr) => (curr === chunkText ? null : curr)),
-        onError: () => setActiveChunk((curr) => (curr === chunkText ? null : curr)),
-      });
-    },
-    [activeChunk, speed]
-  );
-
   // Toggle individual sentence visibility
   const toggleItemReveal = (idx: number) => {
     setRevealedItems((prev) => ({ ...prev, [idx]: !prev[idx] }));
-  };
-
-  // Toggle inline chunk slash view
-  const toggleInlineChunks = (idx: number) => {
-    setInlineChunkViews((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
   // Step 3 Tap-Dictation Handlers
@@ -362,12 +251,9 @@ export function StudentLearningView({
                 🎧
               </span>
               <h2 className="text-[16px] font-bold text-ink">{instructionText}</h2>
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary">
-                {sentenceItems.length}문장 마스터
-              </span>
             </div>
             <p className="text-[12.5px] text-ink-soft mt-1 leading-relaxed">
-              [소리 청취 ➔ 직독직해 ➔ 탭 딕테이션 ➔ 섀도잉] 4단계로 영어 어순과 귀를 완벽하게 틔워보세요.
+              원어민 분할 음원과 탭 딕테이션, 섀도잉 훈련을 통해 실전 회화 순발력과 귀를 틔워보세요.
             </p>
           </div>
 
@@ -406,9 +292,9 @@ export function StudentLearningView({
           </div>
         </div>
 
-        {/* 4-Step Navigation Tab Bar */}
+        {/* 3-Step Navigation Tab Bar */}
         <nav aria-label="학습 단계" className="w-full rounded-xl bg-raised/80 p-1.5 border border-line/70">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+          <div className="grid grid-cols-3 gap-1.5">
             <button
               type="button"
               onClick={() => {
@@ -427,21 +313,6 @@ export function StudentLearningView({
             <button
               type="button"
               onClick={() => {
-                setStudyMode("chunk");
-                stopSpeech();
-              }}
-              className={`flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-[12px] sm:text-[13px] font-semibold transition-all cursor-pointer truncate ${
-                studyMode === "chunk"
-                  ? "bg-surface text-primary shadow-2xs border border-line/80 ring-1 ring-primary/20"
-                  : "text-ink-soft hover:text-ink hover:bg-surface/50"
-              }`}
-            >
-              <span>📖</span>
-              <span className="truncate">Step 2. 직독직해 리딩</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => {
                 setStudyMode("dictation");
                 stopSpeech();
               }}
@@ -453,7 +324,7 @@ export function StudentLearningView({
             >
               <span>🧩</span>
               <span className="truncate">
-                Step 3. 탭 딕테이션 ({solvedCount}/{sentenceItems.length})
+                Step 2. 탭 딕테이션 ({solvedCount}/{sentenceItems.length})
               </span>
             </button>
             <button
@@ -469,7 +340,7 @@ export function StudentLearningView({
               }`}
             >
               <span>🗣️</span>
-              <span className="truncate">Step 4. 섀도잉 & 낭독</span>
+              <span className="truncate">Step 3. 섀도잉 & 낭독</span>
             </button>
           </div>
         </nav>
@@ -547,8 +418,6 @@ export function StudentLearningView({
               const isCardRevealed = revealedItems[idx] || scriptFilter === "all";
               const showEn = isCardRevealed || scriptFilter === "en_only";
               const showKo = isCardRevealed || scriptFilter === "ko_only";
-              const showInlineChunks = inlineChunkViews[idx] === true;
-              const chunks = sentenceChunksMap[idx] || [];
 
               return (
                 <div
@@ -639,39 +508,6 @@ export function StudentLearningView({
                     </p>
                   )}
 
-                  {/* Inline Chunk Slash Toggle */}
-                  <div className="flex items-center justify-between border-t border-line/30 pt-2 text-[12px]">
-                    <button
-                      type="button"
-                      onClick={() => toggleInlineChunks(idx)}
-                      className="flex items-center gap-1 text-primary hover:underline font-semibold cursor-pointer"
-                    >
-                      <span>✂️</span>
-                      <span>{showInlineChunks ? "직독직해 슬래시 접기" : "직독직해 슬래시 보기"}</span>
-                    </button>
-                  </div>
-
-                  {/* Inline Chunks View */}
-                  {showInlineChunks && (
-                    <div className="flex flex-wrap items-center gap-1.5 rounded-xl border border-primary/20 bg-primary/[0.02] p-3 animate-in fade-in">
-                      {chunks.map((chunk, cIdx) => (
-                        <span key={cIdx} className="inline-flex items-center gap-1">
-                          <button
-                            type="button"
-                            onClick={() => playChunk(chunk.en)}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-line bg-surface hover:border-primary hover:text-primary transition-all text-[13px] font-semibold cursor-pointer shadow-2xs"
-                            title="클릭 시 청크 발음 듣기"
-                          >
-                            <span>{chunk.en}</span>
-                            <span className="text-[11px] text-ink-faint">🔊</span>
-                          </button>
-                          {cIdx < chunks.length - 1 && (
-                            <span className="font-bold text-primary/60 px-0.5">/</span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
               );
             })}
@@ -680,180 +516,7 @@ export function StudentLearningView({
       )}
 
       {/* ========================================================================= */}
-      {/* [STEP 2] 📖 직독직해 리딩 (Chunk-by-Chunk Slash Reading)                  */}
-      {/* ========================================================================= */}
-      {studyMode === "chunk" && (
-        <div className="flex flex-col gap-5">
-          {/* Pedagogical Explanation Card */}
-          <div className="rounded-2xl border border-blue-500/20 bg-blue-500/[0.04] p-4 sm:p-5 shadow-2xs">
-            <div className="flex items-start gap-3">
-              <span className="text-[20px]">💡</span>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[14.5px] font-bold text-ink">
-                  직독직해(Slash Reading) 훈련법
-                </h3>
-                <p className="text-[13px] text-ink-soft leading-relaxed">
-                  문장 뒤에서부터 거슬러 번역하는 나쁜 습관을 없애고, 영어 어순 그대로 <strong>왼쪽에서 오른쪽으로 끊어 읽는 훈련</strong>입니다.
-                  각 청크(의미 덩어리)를 탭하면 원어민의 리듬과 호흡을 직접 들을 수 있습니다.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Section 1: Full Sentences with Slash Chunks */}
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <h4 className="text-[14px] font-bold text-ink flex items-center gap-2">
-                <span>✂️</span>
-                <span>본문 직독직해 슬래시 분할</span>
-              </h4>
-              <span className="text-[12px] text-ink-faint">
-                청크를 탭하여 개별 발음을 확인하세요
-              </span>
-            </div>
-
-            {sentenceItems.map((item, idx) => {
-              const chunks = sentenceChunksMap[idx] || [];
-              const ko = koParas[idx] || "";
-
-              return (
-                <div
-                  key={idx}
-                  className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-2xs hover:border-line-strong transition-all"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-raised font-mono text-[11px] font-bold text-ink">
-                        {item.n || idx + 1}
-                      </span>
-                      <span className="text-[12px] font-mono text-ink-faint">
-                        Sentence #{idx + 1}
-                      </span>
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={() => playSentence(item.text, idx)}
-                      className="flex items-center gap-1.5 rounded-xl border border-line bg-surface px-3 py-1.5 text-[12px] font-semibold text-ink hover:bg-raised active:scale-95 transition-all cursor-pointer"
-                    >
-                      <span>🔊</span>
-                      <span>전체 문장 듣기</span>
-                    </button>
-                  </div>
-
-                  {/* Chunks Pill Ribbon */}
-                  <div className="flex flex-wrap items-center gap-2 pt-1">
-                    {chunks.map((chunk, cIdx) => {
-                      const isChunkPlaying = activeChunk === chunk.en;
-                      return (
-                        <div key={cIdx} className="inline-flex items-center gap-1.5">
-                          <button
-                            type="button"
-                            onClick={() => playChunk(chunk.en)}
-                            className={`group relative flex flex-col items-start rounded-xl border px-3 py-2 text-left transition-all cursor-pointer shadow-2xs ${
-                              isChunkPlaying
-                                ? "border-primary bg-primary text-white shadow-xs scale-105"
-                                : "border-line bg-raised/50 hover:border-primary hover:bg-surface text-ink"
-                            }`}
-                          >
-                            <span className="text-[14.5px] font-bold flex items-center gap-1.5">
-                              <span>{chunk.en}</span>
-                              <span className="text-[11px] opacity-70">🔊</span>
-                            </span>
-                            {chunk.ko && (
-                              <span
-                                className={`text-[11.5px] mt-0.5 ${
-                                  isChunkPlaying ? "text-white/90 font-medium" : "text-ink-soft"
-                                }`}
-                              >
-                                {chunk.ko}
-                              </span>
-                            )}
-                          </button>
-                          {cIdx < chunks.length - 1 && (
-                            <span className="text-[18px] font-black text-primary/40 select-none">
-                              /
-                            </span>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Korean translation */}
-                  {ko && (
-                    <div className="border-t border-line/40 pt-2.5">
-                      <p className="text-[13.5px] text-ink-soft leading-relaxed">{ko}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Section 2: Key Chunk Flashcard Drills */}
-          {chunkDrills.length > 0 && (
-            <div className="flex flex-col gap-3 mt-4">
-              <div className="flex items-center justify-between">
-                <h4 className="text-[14px] font-bold text-ink flex items-center gap-2">
-                  <span>🧩</span>
-                  <span>핵심 청크 플래시카드 드릴 ({chunkDrills.length}개)</span>
-                </h4>
-                <span className="text-[12px] text-ink-soft">
-                  카드를 클릭하면 영문/한글 뜻이 반전됩니다
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {chunkDrills.map((drill, dIdx) => {
-                  const isFlipped = flippedDrills[dIdx] === true;
-                  const isPlaying = activeChunk === drill.en;
-
-                  return (
-                    <div
-                      key={dIdx}
-                      onClick={() =>
-                        setFlippedDrills((prev) => ({ ...prev, [dIdx]: !prev[dIdx] }))
-                      }
-                      className="group flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface p-4 transition-all hover:border-primary/50 hover:shadow-2xs cursor-pointer select-none"
-                    >
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[15px] font-bold text-ink group-hover:text-primary transition-colors">
-                          {isFlipped ? drill.ko : drill.en}
-                        </span>
-                        <span className="text-[12px] text-ink-faint">
-                          {isFlipped ? "🇰🇷 우리말 해석" : "🔤 영어 청크 (클릭하여 뜻 확인)"}
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            playChunk(drill.en);
-                          }}
-                          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border transition-all cursor-pointer ${
-                            isPlaying
-                              ? "border-red-500 bg-red-500 text-white"
-                              : "border-line bg-raised text-ink-soft hover:bg-primary hover:text-white"
-                          }`}
-                          title="청크 발음 듣기"
-                        >
-                          <span className="text-[12px]">{isPlaying ? "⏹️" : "🔊"}</span>
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* ========================================================================= */}
-      {/* [STEP 3] 🧩 스마트 탭 딕테이션 (Tap Word Dictation Puzzle)              */}
+      {/* [STEP 2] 🧩 스마트 탭 딕테이션 (Tap Word Dictation Puzzle)              */}
       {/* ========================================================================= */}
       {studyMode === "dictation" && (
         <div className="flex flex-col gap-5">
@@ -1095,7 +758,7 @@ export function StudentLearningView({
       )}
 
       {/* ========================================================================= */}
-      {/* [STEP 4] 🗣️ 섀도잉 & 동시 낭독 (Shadowing & Paced Reading)               */}
+      {/* [STEP 3] 🗣️ 섀도잉 & 동시 낭독 (Shadowing & Paced Reading)               */}
       {/* ========================================================================= */}
       {studyMode === "shadowing" && (
         <div className="flex flex-col gap-4">
