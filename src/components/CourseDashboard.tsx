@@ -203,18 +203,6 @@ export function CourseDashboard({
     }));
   };
 
-  const expandAll = () => {
-    const next: Record<string, boolean> = {};
-    sections.forEach((s) => (next[s.label] = true));
-    setOpenSections(next);
-  };
-
-  const collapseAll = () => {
-    const next: Record<string, boolean> = {};
-    sections.forEach((s) => (next[s.label] = false));
-    setOpenSections(next);
-  };
-
   return (
     <div className="flex flex-col gap-8">
       {/* Course Progress Dashboard Card - Apple Glass / Clean Depth */}
@@ -278,7 +266,7 @@ export function CourseDashboard({
         </div>
       </div>
 
-      {/* Sections and Quick Controls */}
+      {/* Sections */}
       {filteredSections.length === 0 ? (
         <div className="rounded-2xl border border-line bg-surface p-12 text-center flex flex-col items-center justify-center gap-3">
           <span className="text-3xl">📭</span>
@@ -304,56 +292,6 @@ export function CourseDashboard({
         </div>
       ) : (
         <div className="flex flex-col gap-6">
-          {/* Quick Jump & Expand/Collapse Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-black/[0.06] pb-3.5">
-            <div className="no-scrollbar flex items-center gap-2 overflow-x-auto py-1 max-w-full flex-nowrap">
-              <span className="shrink-0 font-mono text-[11px] font-bold uppercase tracking-wider text-ink-faint mr-1">
-                커리큘럼 단계:
-              </span>
-              {filteredSections.map((sec, i) => {
-                const isOpen = openSections[sec.label] ?? false;
-                return (
-                  <button
-                    key={`pill-${i}`}
-                    type="button"
-                    onClick={() => {
-                      setOpenSections((prev) => ({ ...prev, [sec.label]: true }));
-                      const el = document.getElementById(`section-${i}`);
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth", block: "start" });
-                      }
-                    }}
-                    className={`shrink-0 whitespace-nowrap rounded-full px-3 py-1 font-mono text-[11.5px] font-medium transition-all duration-200 cursor-pointer border ${
-                      isOpen
-                        ? "border-black/20 bg-ink text-white shadow-xs"
-                        : "border-black/[0.08] bg-white text-ink-soft hover:border-black/20 hover:text-ink shadow-2xs"
-                    }`}
-                  >
-                    {sec.label.split(" (")[0].replace(/^Section\s*\d+\s*·\s*/, "")}
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={expandAll}
-                className="text-[12px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
-              >
-                모두 펼치기
-              </button>
-              <span className="text-black/20 text-xs">|</span>
-              <button
-                type="button"
-                onClick={collapseAll}
-                className="text-[12px] text-ink-soft hover:text-ink cursor-pointer font-medium hover:underline"
-              >
-                모두 접기
-              </button>
-            </div>
-          </div>
-
           {/* Accordion List */}
           <div className="flex flex-col gap-3.5">
             {filteredSections.map((section, index) => {
