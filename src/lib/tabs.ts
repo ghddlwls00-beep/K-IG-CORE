@@ -24,7 +24,7 @@ import type { Tab } from "./types";
 export const TABS: Tab[] = [
   {
     slug: "students",
-    label: "STUDENT CONVERSATION",
+    label: "STUDENT",
     legacyImage: "STUDENT.jpg",
     legacyIndex: "basics/index.htm",
     courses: ["student"],
