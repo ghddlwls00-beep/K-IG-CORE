@@ -742,7 +742,6 @@ function playUnifiedClip(
   clean: string,
   options: SpeakOptions,
   runToken: number,
-  fallback: () => void,
 ): boolean {
   if (!shouldUseUnifiedSpeech()) return false;
   const audio = getSharedAudio();
@@ -765,7 +764,7 @@ function playUnifiedClip(
   emit({ speaking: true, paused: false, text: clean });
 
   let settled = false;
-  const useFallback = () => {
+  const failAvaPlayback = (error: unknown) => {
     if (settled || runToken !== token) return;
     settled = true;
     audio.onended = null;
@@ -775,9 +774,12 @@ function playUnifiedClip(
       audio.removeAttribute("src");
       audio.load();
     } catch {
-      // ignore cleanup failures and let the fallback engine continue
+      // Ignore cleanup failures; the Ava error is reported below.
     }
-    fallback();
+    finishRun(
+      runToken,
+      error instanceof Error ? error : new Error("Ava audio playback failed"),
+    );
   };
 
   audio.src = mediaUrl(unifiedSpeechPath(clean));
@@ -787,7 +789,7 @@ function playUnifiedClip(
     settled = true;
     finishRun(runToken);
   };
-  audio.onerror = useFallback;
+  audio.onerror = () => failAvaPlayback(new Error("Ava audio file could not be loaded"));
 
   try {
     const playback = audio.play();
@@ -801,10 +803,10 @@ function playUnifiedClip(
             run.onStart?.();
           }
         })
-        .catch(useFallback);
+        .catch(failAvaPlayback);
     }
-  } catch {
-    useFallback();
+  } catch (error) {
+    failAvaPlayback(error);
   }
 
   return true;
@@ -970,7 +972,7 @@ function speakWithToken(text: string, options: SpeakOptions, runToken: number) {
     runCurrentChunk(runToken);
   };
 
-  if (!playUnifiedClip(clean, options, runToken, startLegacyEngine)) {
+  if (!playUnifiedClip(clean, options, runToken)) {
     startLegacyEngine();
   }
 }
