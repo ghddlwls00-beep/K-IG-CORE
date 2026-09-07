@@ -1,4 +1,3 @@
-import { mediaUrl } from "@/lib/media";
 import {
   normalizeUnifiedSpeechText,
   shouldUseUnifiedSpeech,
@@ -793,7 +792,9 @@ function playUnifiedClip(
   audio.muted = false;
   audio.defaultMuted = false;
   audio.volume = 1;
-  audio.src = mediaUrl(unifiedSpeechPath(clean));
+  // Keep Ava playback same-origin. Next.js transparently proxies this stable
+  // path to R2 in production, avoiding CORS/WebView media restrictions.
+  audio.src = unifiedSpeechPath(clean);
   audio.playbackRate = Math.max(0.5, Math.min(2, options.rate ?? 1.0));
   audio.onended = () => {
     if (settled || isStale(runToken)) return;
