@@ -102,21 +102,16 @@ export function StudentLearningView({
       return;
     }
     stopSpeech();
+    if (fullAudioRef.current) {
+      fullAudioRef.current.pause();
+      fullAudioRef.current.currentTime = 0;
+    }
+    setIsPlayingFull(false);
+    setActiveChunk(null);
     setActiveIdx(idx);
 
-    // Audio tracks: index 0 is usually full, index 1..N correspond to sentence 1..N
-    const track = audioTracks[idx + 1] || audioTracks[idx];
-    if (track?.src && hasAudioFile(track.src)) {
-      const audio = new Audio(mediaUrl(track.src));
-      audio.playbackRate = speed;
-      audio.onended = () => setActiveIdx((curr) => (curr === idx ? null : curr));
-      audio.onerror = () => {
-        playWithTts(text, idx);
-      };
-      audio.play().catch(() => playWithTts(text, idx));
-    } else {
-      playWithTts(text, idx);
-    }
+    // Individual sentence audio strictly uses text-based TTS as specified
+    playWithTts(text, idx);
   }
 
   function playWithTts(text: string, idx: number) {
