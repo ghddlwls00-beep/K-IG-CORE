@@ -107,6 +107,16 @@ export function isFreePreviewLesson(
     return lessonId === "rc001" || lessonId === "rc002";
   }
 
+  // Student course: strictly Chapter 1's 1st and 2nd lessons ONLY
+  if (courseSlug === "student") {
+    return (
+      lessonId === "s1-1" ||
+      lessonId === "s1-2" ||
+      lessonId === "s1-1-1" ||
+      lessonId === "s1-2-1"
+    );
+  }
+
   // CNN: Only first 2 lessons
   if (courseSlug === "cnn") {
     return lessonId === "cnn001" || lessonId === "cnn002";
@@ -121,7 +131,8 @@ export function isFreePreviewLesson(
   if (
     lessonId.includes("mv2") ||
     lessonId.includes("mv3") ||
-    lessonId.includes("hv")
+    lessonId.includes("hv") ||
+    lessonId.startsWith("s")
   ) {
     return false;
   }

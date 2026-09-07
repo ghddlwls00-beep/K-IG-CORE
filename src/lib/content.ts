@@ -224,6 +224,16 @@ export function isFreePreviewLessonServer(courseSlug: string, lessonId: string):
     return lessonId === "mv1-01" || lessonId === "mv1-02";
   }
 
+  // Student course: strictly Chapter 1's 1st and 2nd lessons ONLY
+  if (courseSlug === "student") {
+    return (
+      lessonId === "s1-1" ||
+      lessonId === "s1-2" ||
+      lessonId === "s1-1-1" ||
+      lessonId === "s1-2-1"
+    );
+  }
+
   const index = getCourseIndex(courseSlug);
   if (!index) return false;
   const { groups, lessons } = index;

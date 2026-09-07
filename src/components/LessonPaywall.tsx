@@ -47,15 +47,25 @@ export function LessonPaywall({
           <>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-ink-soft">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500/70" />
-              ALL-PASS ONLY
+              {courseSlug === "student" ? "STUDENT PASS ONLY" : "ALL-PASS ONLY"}
             </span>
             <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
-              {title || "본 레슨은 올패스 등록 후 학습하실 수 있습니다"}
+              {title || (courseSlug === "student" ? "본 레슨은 STUDENT 이용권 등록 후 학습하실 수 있습니다" : "본 레슨은 올패스 등록 후 학습하실 수 있습니다")}
             </h2>
             <p className="text-[13px] text-ink-soft leading-relaxed">
-              스마트스토어 또는 크몽에서 발급받으신 인증 코드를 등록하시면
-              <br className="hidden sm:inline" />
-              <strong className="text-ink font-semibold"> 1,677개 모든 레슨</strong>을 제한 없이 무제한으로 학습하실 수 있습니다.
+              {courseSlug === "student" ? (
+                <>
+                  발급받으신 이용권 인증 코드를 등록하시면
+                  <br className="hidden sm:inline" />
+                  <strong className="text-ink font-semibold"> STUDENT 과정</strong>을 제한 없이 학습하실 수 있습니다.
+                </>
+              ) : (
+                <>
+                  스마트스토어 또는 크몽에서 발급받으신 인증 코드를 등록하시면
+                  <br className="hidden sm:inline" />
+                  <strong className="text-ink font-semibold"> 1,677개 모든 레슨</strong>을 제한 없이 무제한으로 학습하실 수 있습니다.
+                </>
+              )}
             </p>
           </>
         )}

@@ -66,7 +66,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
               {!isUnlocked ? (
                 <span className="inline-flex items-center gap-1 rounded-full border border-black/8 bg-black/[0.03] px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
                   <span>🔒</span>
-                  <span>올패스</span>
+                  <span>{courseSlug === "student" ? "STUDENT" : "올패스"}</span>
                 </span>
               ) : !hasActiveLicense && isFree ? (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
@@ -126,7 +126,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
             scroll={true}
             className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
           >
-            <span>{!isUnlocked ? "올패스 열람" : "학습하기"}</span>
+            <span>{!isUnlocked ? (courseSlug === "student" ? "수강권 열람" : "올패스 열람") : "학습하기"}</span>
             <span className="text-[11px] opacity-60">{!isUnlocked ? "🔒" : "→"}</span>
           </Link>
         </div>
