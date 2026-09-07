@@ -703,64 +703,92 @@ export function DialogueLearningView({
         </div>
 
         {/* Study Mode Selector & Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-          <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 max-w-full flex-nowrap">
+        <nav aria-label="회화 4단계 학습 모드" className="w-full rounded-xl bg-raised/80 p-1 border border-line/70">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-1.5">
             <button
               type="button"
               onClick={() => setStudyMode("shadowing")}
               className={
-                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
+                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
                 (studyMode === "shadowing"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
               }
             >
-              <span>🗣️</span>
-              <span>Step 1 · 문장별 섀도잉</span>
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
+                Step 1
+              </span>
+              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
+                <span>🗣️</span>
+                <span className="hidden md:inline">문장별 섀도잉</span>
+                <span className="inline md:hidden">문장별 섀도잉</span>
+              </span>
             </button>
 
             <button
               type="button"
               onClick={() => setStudyMode("continuous")}
               className={
-                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
+                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
                 (studyMode === "continuous"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
               }
             >
-              <span>💬</span>
-              <span>Step 2 · 전체 스피치 연속 청취</span>
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
+                Step 2
+              </span>
+              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
+                <span>💬</span>
+                <span className="hidden md:inline">전체 연속 청취</span>
+                <span className="inline md:hidden">전체 연속 청취</span>
+              </span>
             </button>
 
             <button
               type="button"
               onClick={() => setStudyMode("speaking")}
               className={
-                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
+                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
                 (studyMode === "speaking"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
               }
             >
-              <span>✍️</span>
-              <span>Step 3 · 블라인드 역인출 스피킹</span>
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
+                Step 3
+              </span>
+              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
+                <span>✍️</span>
+                <span className="hidden md:inline">블라인드 역인출</span>
+                <span className="inline md:hidden">역인출 스피킹</span>
+              </span>
             </button>
 
             <button
               type="button"
               onClick={() => setStudyMode("cloze")}
               className={
-                "shrink-0 whitespace-nowrap flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] sm:text-[12.5px] font-medium transition-all cursor-pointer " +
+                "flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 rounded-lg py-2 px-2 text-center transition-all cursor-pointer select-none min-w-0 " +
                 (studyMode === "cloze"
                   ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
                   : "text-ink-soft hover:text-ink hover:bg-surface/50")
               }
             >
-              <span>🧩</span>
-              <span>Step 4 · 핵심 표현 체득</span>
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
+                Step 4
+              </span>
+              <span className="text-[12px] sm:text-[12.5px] font-semibold truncate flex items-center gap-1">
+                <span>🧩</span>
+                <span className="hidden md:inline">핵심 표현 체득</span>
+                <span className="inline md:hidden">핵심 표현 체득</span>
+              </span>
             </button>
           </div>
+        </nav>
+
+        {/* Audio & Font Controls */}
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
 
           {/* Audio & Font Controls */}
           <div className="flex items-center gap-2">

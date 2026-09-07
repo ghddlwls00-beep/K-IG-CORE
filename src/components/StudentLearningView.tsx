@@ -119,46 +119,51 @@ export function StudentLearningView({
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-1">
           {/* Mode Switcher */}
-          <div className="no-scrollbar flex items-center gap-1 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 text-[12px] font-medium max-w-full flex-nowrap">
-            <button
-              type="button"
-              onClick={() => setStudyMode("shadowing")}
-              className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                studyMode === "shadowing"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              Step 1 · 🗣️ 원어민 섀도잉
-            </button>
-            <button
-              type="button"
-              onClick={() => setStudyMode("chunks")}
-              className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                studyMode === "chunks"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              Step 2 · 🧩 청크 끊어말하기 ({chunkDrills.length})
-            </button>
-            <button
-              type="button"
-              onClick={() => setStudyMode("recall")}
-              className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                studyMode === "recall"
-                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              Step 3 · ✍️ 블라인드 역인출
-            </button>
-          </div>
+          <nav aria-label="학습 모드" className="w-full sm:flex-1 rounded-xl bg-raised/80 p-1 border border-line/70">
+            <div className="grid grid-cols-3 gap-1">
+              <button
+                type="button"
+                onClick={() => setStudyMode("shadowing")}
+                className={`flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-[11.5px] sm:text-[12.5px] font-medium transition-all cursor-pointer truncate ${
+                  studyMode === "shadowing"
+                    ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                    : "text-ink-soft hover:text-ink"
+                }`}
+              >
+                <span>🗣️</span>
+                <span className="truncate">Step 1 섀도잉</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setStudyMode("chunks")}
+                className={`flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-[11.5px] sm:text-[12.5px] font-medium transition-all cursor-pointer truncate ${
+                  studyMode === "chunks"
+                    ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                    : "text-ink-soft hover:text-ink"
+                }`}
+              >
+                <span>🧩</span>
+                <span className="truncate">Step 2 청크 ({chunkDrills.length})</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setStudyMode("recall")}
+                className={`flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-[11.5px] sm:text-[12.5px] font-medium transition-all cursor-pointer truncate ${
+                  studyMode === "recall"
+                    ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                    : "text-ink-soft hover:text-ink"
+                }`}
+              >
+                <span>✍️</span>
+                <span className="truncate">Step 3 블라인드</span>
+              </button>
+            </div>
+          </nav>
 
           {/* Speed Toggle */}
-          <div className="flex items-center rounded-lg border border-line/70 bg-raised/50 p-0.5 text-[11px] font-mono">
+          <div className="flex items-center self-end sm:self-center rounded-lg border border-line/70 bg-raised/50 p-0.5 text-[11px] font-mono shrink-0">
             <button
               type="button"
               onClick={() => setSpeed(1.0)}

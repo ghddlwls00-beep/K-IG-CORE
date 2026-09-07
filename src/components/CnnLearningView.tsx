@@ -120,42 +120,47 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="no-scrollbar flex items-center gap-1 overflow-x-auto rounded-xl bg-raised/80 p-1 border border-line/70 text-[12px] font-medium max-w-full flex-nowrap">
-          <button
-            type="button"
-            onClick={() => setActiveTab("script")}
-            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-              activeTab === "script"
-                ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                : "text-ink-soft hover:text-ink"
-            }`}
-          >
-            Step 1 · 📰 실전 대본 대조
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab("vocab")}
-            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-              activeTab === "vocab"
-                ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                : "text-ink-soft hover:text-ink"
-            }`}
-          >
-            Step 3 · 📚 시사 어휘 ({vocabItems.length})
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab("phonetics")}
-            className={`shrink-0 whitespace-nowrap px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-              activeTab === "phonetics"
-                ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
-                : "text-ink-soft hover:text-ink"
-            }`}
-          >
-            Step 2 · 🎙️ 연음 디코딩 ({phoneticTips.length})
-          </button>
-        </div>
+        {/* Tabs - 3 Columns Grid */}
+        <nav aria-label="CNN 뉴스 학습 단계" className="w-full rounded-xl bg-raised/80 p-1 border border-line/70">
+          <div className="grid grid-cols-3 gap-1">
+            <button
+              type="button"
+              onClick={() => setActiveTab("script")}
+              className={`flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-[11.5px] sm:text-[12.5px] font-medium transition-all cursor-pointer truncate ${
+                activeTab === "script"
+                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                  : "text-ink-soft hover:text-ink"
+              }`}
+            >
+              <span>📰</span>
+              <span className="truncate">Step 1 대본 대조</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab("phonetics")}
+              className={`flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-[11.5px] sm:text-[12.5px] font-medium transition-all cursor-pointer truncate ${
+                activeTab === "phonetics"
+                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                  : "text-ink-soft hover:text-ink"
+              }`}
+            >
+              <span>🎙️</span>
+              <span className="truncate">Step 2 연음 디코딩</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab("vocab")}
+              className={`flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg text-[11.5px] sm:text-[12.5px] font-medium transition-all cursor-pointer truncate ${
+                activeTab === "vocab"
+                  ? "bg-surface text-ink font-semibold shadow-2xs border border-line/80"
+                  : "text-ink-soft hover:text-ink"
+              }`}
+            >
+              <span>📚</span>
+              <span className="truncate">Step 3 시사 어휘</span>
+            </button>
+          </div>
+        </nav>
       </div>
 
       {/* Headline Header */}
