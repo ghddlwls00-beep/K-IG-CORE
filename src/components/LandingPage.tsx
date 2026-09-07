@@ -57,18 +57,10 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
       />
       {/* Legibility scrim: text sits on the left, so fade the photo out toward that edge. */}
       <div
-        className="absolute inset-0 hidden sm:block"
+        className="absolute inset-0"
         style={{
           background:
             "linear-gradient(90deg, var(--surface) 0%, color-mix(in srgb, var(--surface) 82%, transparent) 42%, color-mix(in srgb, var(--surface) 15%, transparent) 78%)",
-        }}
-      />
-      {/* Mobile scrim: vertical gradient for portrait clarity and high contrast text */}
-      <div
-        className="absolute inset-0 block sm:hidden"
-        style={{
-          background:
-            "linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent) 0%, color-mix(in srgb, var(--surface) 90%, transparent) 55%, color-mix(in srgb, var(--surface) 75%, transparent) 100%)",
         }}
       />
     </div>
