@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Block } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
@@ -291,16 +291,65 @@ export function LdLearningView({
     }
   }
 
-  const TABS: { id: TabStep; label: string; icon: string; badge?: string }[] = [
-    { id: "step1_blind", label: "Step 1 · 🎧 블라인드 리스닝", icon: "🎧" },
+  const stepNavRef = useRef<HTMLElement>(null);
+
+  function goToStep(step: TabStep) {
+    setActiveTab(step);
+    stopSpeech();
+    setSpeedPlaying(false);
+    if (typeof window !== "undefined") {
+      const el = stepNavRef.current;
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      }
+    }
+  }
+
+  const TABS: {
+    id: TabStep;
+    stepNum: string;
+    icon: string;
+    shortLabel: string;
+    fullLabel: string;
+    badge?: string;
+  }[] = [
+    {
+      id: "step1_blind",
+      stepNum: "Step 1",
+      icon: "🎧",
+      shortLabel: "블라인드",
+      fullLabel: "블라인드 리스닝",
+    },
     {
       id: "step2_dictation",
-      label: `Step 2 · 🧩 탭-딕테이션 (${Object.keys(dictationProgress).length}/${sentences.length})`,
+      stepNum: "Step 2",
       icon: "🧩",
+      shortLabel: "딕테이션",
+      fullLabel: "탭-딕테이션",
+      badge: `${Object.keys(dictationProgress).length}/${sentences.length}`,
     },
-    { id: "step3_liaison", label: "Step 3 · 🔍 연음 & 소리 클리닉", icon: "🔍" },
-    { id: "step4_shadowing", label: "Step 4 · 🗣️ 섀도잉 & AI 평가", icon: "🗣️" },
-    { id: "step5_speed", label: "Step 5 · ⚡ 1.5배속 청취 & 대조", icon: "⚡" },
+    {
+      id: "step3_liaison",
+      stepNum: "Step 3",
+      icon: "🔍",
+      shortLabel: "소리클리닉",
+      fullLabel: "연음 & 소리 클리닉",
+    },
+    {
+      id: "step4_shadowing",
+      stepNum: "Step 4",
+      icon: "🗣️",
+      shortLabel: "실전섀도잉",
+      fullLabel: "섀도잉 & AI 평가",
+    },
+    {
+      id: "step5_speed",
+      stepNum: "Step 5",
+      icon: "⚡",
+      shortLabel: "1.5배속 대조",
+      fullLabel: "1.5배속 청취 & 대조",
+    },
   ];
 
   return (
@@ -347,31 +396,48 @@ export function LdLearningView({
         </div>
       </div>
 
-      {/* 2. Step Navigation Bar (Sticky on mobile & desktop) */}
-      <div className="no-scrollbar sticky top-[57px] z-30 flex items-center gap-1.5 overflow-x-auto rounded-2xl border border-line bg-surface/95 p-1.5 shadow-xs backdrop-blur-md">
-        {TABS.map((tab) => {
-          const active = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => {
-                setActiveTab(tab.id);
-                stopSpeech();
-                setSpeedPlaying(false);
-              }}
-              className={
-                "shrink-0 rounded-xl px-3.5 py-2 text-[12.5px] font-medium transition-all cursor-pointer select-none " +
-                (active
-                  ? "bg-ink font-semibold text-white shadow-xs"
-                  : "text-ink-soft hover:bg-raised hover:text-ink")
-              }
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
+      {/* 2. Step Navigation Bar (Sticky 5-Column Grid, 100% visible on both Mobile & Desktop) */}
+      <nav
+        ref={stepNavRef}
+        aria-label="리스닝 5단계 학습 단계"
+        className="sticky top-[57px] z-30 w-full rounded-2xl border border-line bg-surface/95 p-1 sm:p-1.5 shadow-xs backdrop-blur-md"
+      >
+        <div className="grid grid-cols-5 gap-1 sm:gap-1.5">
+          {TABS.map((tab) => {
+            const active = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => goToStep(tab.id)}
+                className={
+                  "flex flex-col items-center justify-center rounded-xl py-1.5 px-1 sm:py-2.5 sm:px-2 transition-all cursor-pointer select-none text-center min-w-0 " +
+                  (active
+                    ? "bg-ink font-semibold text-white shadow-xs ring-1 ring-white/10"
+                    : "text-ink-soft hover:bg-raised hover:text-ink")
+                }
+              >
+                {/* Step indicator & badge */}
+                <div className="flex items-center gap-1 leading-none font-mono text-[9.5px] sm:text-[11px] font-bold uppercase tracking-wider opacity-75">
+                  <span>{tab.stepNum}</span>
+                  {tab.badge && (
+                    <span className="hidden sm:inline-block font-mono text-[9px] opacity-85">
+                      ({tab.badge})
+                    </span>
+                  )}
+                </div>
+
+                {/* Title & icon */}
+                <div className="mt-0.5 sm:mt-1 flex items-center justify-center gap-1 leading-tight text-[11px] sm:text-[12.5px] font-semibold truncate w-full">
+                  <span className="shrink-0 text-[11px] sm:text-[13px]">{tab.icon}</span>
+                  <span className="hidden md:inline truncate">{tab.fullLabel}</span>
+                  <span className="inline md:hidden truncate">{tab.shortLabel}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </nav>
 
       {/* ========================================================================= */}
       {/* TAB 1: 🎧 STEP 1 · 블라인드 액티브 리스닝 & 맥락 진단 (Blind Context) */}
@@ -500,8 +566,8 @@ export function LdLearningView({
             <div className="flex justify-end pt-2">
               <button
                 type="button"
-                onClick={() => setActiveTab("step2_dictation")}
-                className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-black/90 transition-all cursor-pointer shadow-xs"
+                onClick={() => goToStep("step2_dictation")}
+                className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
               >
                 <span>다음: Step 2 탭-딕테이션 이동</span>
                 <span>→</span>
@@ -749,6 +815,25 @@ export function LdLearningView({
               </button>
             </div>
           </div>
+
+          {/* Step 2 Bottom Step Navigation */}
+          <div className="flex items-center justify-between pt-1">
+            <button
+              type="button"
+              onClick={() => goToStep("step1_blind")}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-surface px-4 py-2.5 text-[13px] font-medium text-ink-soft hover:bg-raised hover:text-ink transition-all cursor-pointer shadow-2xs"
+            >
+              <span>← Step 1 블라인드</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => goToStep("step3_liaison")}
+              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+            >
+              <span>다음: Step 3 소리 클리닉 이동</span>
+              <span>→</span>
+            </button>
+          </div>
         </div>
       )}
 
@@ -860,6 +945,25 @@ export function LdLearningView({
               </div>
             )}
           </div>
+
+          {/* Step 3 Bottom Step Navigation */}
+          <div className="flex items-center justify-between pt-1">
+            <button
+              type="button"
+              onClick={() => goToStep("step2_dictation")}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-surface px-4 py-2.5 text-[13px] font-medium text-ink-soft hover:bg-raised hover:text-ink transition-all cursor-pointer shadow-2xs"
+            >
+              <span>← Step 2 딕테이션</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => goToStep("step4_shadowing")}
+              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+            >
+              <span>다음: Step 4 섀도잉 & AI 평가 이동</span>
+              <span>→</span>
+            </button>
+          </div>
         </div>
       )}
 
@@ -969,6 +1073,25 @@ export function LdLearningView({
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Step 4 Bottom Step Navigation */}
+          <div className="flex items-center justify-between pt-1">
+            <button
+              type="button"
+              onClick={() => goToStep("step3_liaison")}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-surface px-4 py-2.5 text-[13px] font-medium text-ink-soft hover:bg-raised hover:text-ink transition-all cursor-pointer shadow-2xs"
+            >
+              <span>← Step 3 소리 클리닉</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => goToStep("step5_speed")}
+              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+            >
+              <span>다음: Step 5 1.5배속 청취 & 대조 이동</span>
+              <span>→</span>
+            </button>
           </div>
         </div>
       )}
@@ -1101,6 +1224,20 @@ export function LdLearningView({
                   className="w-full flex-1 resize-y rounded-xl border border-line/70 bg-raised/30 p-3 font-mono text-[13px] leading-relaxed text-ink placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Step 5 Bottom Step Navigation & Mastery Badge */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-line/60">
+            <button
+              type="button"
+              onClick={() => goToStep("step4_shadowing")}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-line bg-surface px-4 py-2.5 text-[13px] font-medium text-ink-soft hover:bg-raised hover:text-ink transition-all cursor-pointer shadow-2xs"
+            >
+              <span>← Step 4 섀도잉</span>
+            </button>
+            <div className="flex items-center gap-2 rounded-xl bg-primary/10 border border-primary/20 px-4 py-2 text-[13px] text-primary font-bold shadow-2xs">
+              <span>🎉 5단계 리스닝 마스터리 코스웨어 완료!</span>
             </div>
           </div>
         </div>
