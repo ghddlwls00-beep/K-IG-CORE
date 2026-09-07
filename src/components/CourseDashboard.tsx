@@ -106,6 +106,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
 
           <Link
             href={`/${courseSlug}/${lesson.id}`}
+            scroll={true}
             className="text-[14px] font-semibold leading-snug text-ink group-hover:text-black transition-colors focus:outline-none"
           >
             {pres.title}
@@ -122,6 +123,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
           <span className="tabular-nums">{lesson.id}</span>
           <Link
             href={`/${courseSlug}/${lesson.id}`}
+            scroll={true}
             className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
           >
             <span>{!isUnlocked ? "올패스 열람" : "학습하기"}</span>

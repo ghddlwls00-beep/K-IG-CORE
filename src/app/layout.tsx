@@ -5,6 +5,7 @@ import { LicenseProvider } from "@/components/LicenseProvider";
 import { LicenseModal } from "@/components/LicenseModal";
 import { TabBar } from "@/components/TabBar";
 import { KakaoTalkNoticeBanner } from "@/components/KakaoTalkNoticeBanner";
+import { NavigationScrollRestoration } from "@/components/NavigationScrollRestoration";
 import { getCourseTabMap, getTabs } from "@/lib/content";
 import "./globals.css";
 
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="robots" content="notranslate" />
       </head>
       <body className="notranslate min-h-screen bg-surface text-ink antialiased" translate="no">
+        <NavigationScrollRestoration />
         <LanguageProvider>
           <ProgressProvider>
             <LicenseProvider>

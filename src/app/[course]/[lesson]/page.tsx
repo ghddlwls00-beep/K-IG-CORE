@@ -148,6 +148,7 @@ export default async function LessonPage({
             {prev ? (
               <Link
                 href={`/${course}/${prev.id}`}
+                scroll={true}
                 className="text-ink-soft transition-transform duration-200 ease-out hover:-translate-x-0.5 hover:text-ink"
               >
                 ← {prev.id}
@@ -156,6 +157,7 @@ export default async function LessonPage({
             {next ? (
               <Link
                 href={`/${course}/${next.id}`}
+                scroll={true}
                 className="text-ink-soft transition-transform duration-200 ease-out hover:translate-x-0.5 hover:text-ink"
               >
                 {next.id} →
