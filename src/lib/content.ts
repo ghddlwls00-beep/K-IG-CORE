@@ -4,6 +4,7 @@ import path from "node:path";
 import type { Course, CourseIndex, Lesson, LessonGroup, LessonSummary, Tab } from "./types";
 import { COURSES } from "./courses";
 import { TABS } from "./tabs";
+import { isFreePreviewLesson } from "./license";
 
 /**
  * Content access. Every read here is a file read at build time — there is no
@@ -219,40 +220,7 @@ export function getMenTranslationsForLesson(texts: string[]): Record<string, str
  * Only the very first section's 1st and 2nd lessons are free. All others are locked.
  */
 export function isFreePreviewLessonServer(courseSlug: string, lessonId: string): boolean {
-  // Phonics / VOCA course: strictly Section 1's 1st and 2nd lessons ONLY
-  if (courseSlug === "phonics") {
-    return lessonId === "mv1-01" || lessonId === "mv1-02";
-  }
-
-  // Student course: strictly Chapter 1's 1st and 2nd lessons ONLY
-  if (courseSlug === "student") {
-    return (
-      lessonId === "s1-1" ||
-      lessonId === "s1-2" ||
-      lessonId === "s1-1-1" ||
-      lessonId === "s1-2-1"
-    );
-  }
-
-  const index = getCourseIndex(courseSlug);
-  if (!index) return false;
-  const { groups, lessons } = index;
-
-  if (groups.length > 0 && groups[0]) {
-    // Look for the first 2 main lessons in group 0
-    const mainGroupLessons = groups[0].lessons.filter((id) => !id.includes("-") || id.endsWith("-01") || id.endsWith("-02"));
-    const freeLessonIds = (mainGroupLessons.length >= 2 ? mainGroupLessons : groups[0].lessons).slice(0, 2);
-    
-    if (freeLessonIds.includes(lessonId)) return true;
-    for (const freeId of freeLessonIds) {
-      if (lessonId.startsWith(`${freeId}-`)) return true;
-    }
-    return false;
-  }
-
-  // Fallback if no groups: only first 2 lessons of the course
-  const freeLessonIds = lessons.slice(0, 2).map((l) => l.id);
-  return freeLessonIds.includes(lessonId);
+  return isFreePreviewLesson(courseSlug, lessonId);
 }
 
 

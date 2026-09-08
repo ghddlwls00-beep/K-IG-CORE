@@ -16,7 +16,7 @@ interface LessonClientGateProps {
 
 /**
  * Wraps lesson learning body (video, audio, drill content) with access control.
- * Free preview lessons (Top 2 sections) are always accessible.
+ * The first curriculum section's first two lessons are always accessible.
  * Locked lessons require an active license; otherwise displays the high-converting Paywall card.
  */
 export function LessonClientGate({

@@ -17,7 +17,7 @@ import { useLicense } from "./LicenseProvider";
 export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<string, string> }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { hasActiveLicense, openModal } = useLicense();
+  const { hasActiveLicense, licenseInfo, openModal } = useLicense();
 
   // Close mobile drawer when route changes
   useEffect(() => {
@@ -198,11 +198,19 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                 }}
                 className={`flex items-center justify-center gap-2 rounded-xl py-3 text-[13px] font-bold transition-all cursor-pointer ${
                   hasActiveLicense
-                    ? "border border-amber-500/30 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
+                    ? licenseInfo?.isStudentOnly
+                      ? "border border-blue-500/30 bg-blue-500/10 text-blue-700 hover:bg-blue-500/20"
+                      : "border border-amber-500/30 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
                     : "bg-ink text-surface shadow-xs hover:opacity-90 active:scale-[0.99]"
                 }`}
               >
-                <span>{hasActiveLicense ? "👑 VIP 올패스 회원 (확인)" : "🔑 이용권 코드 등록"}</span>
+                <span>
+                  {hasActiveLicense
+                    ? licenseInfo?.isStudentOnly
+                      ? "🎓 STUDENT 패스 회원 (확인)"
+                      : "👑 VIP 올패스 회원 (확인)"
+                    : "🔑 이용권 코드 등록"}
+                </span>
               </button>
 
               <Link

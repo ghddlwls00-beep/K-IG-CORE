@@ -24,7 +24,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   isStarred,
   isUnlocked,
   isFree,
-  hasActiveLicense,
+  hasCourseAccess,
   onToggleBookmark,
 }: {
   lesson: DashboardLessonItem;
@@ -33,7 +33,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   isStarred: boolean;
   isUnlocked: boolean;
   isFree: boolean;
-  hasActiveLicense: boolean;
+  hasCourseAccess: boolean;
   onToggleBookmark: (courseSlug: string, lessonId: string) => void;
 }) {
   const pres = lesson.presentation;
@@ -68,10 +68,10 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
                   <span>🔒</span>
                   <span>{courseSlug === "student" ? "STUDENT" : "올패스"}</span>
                 </span>
-              ) : !hasActiveLicense && isFree ? (
+              ) : !hasCourseAccess && isFree ? (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
                   <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>무료 체험</span>
+                  <span>무료 보기</span>
                 </span>
               ) : null}
               {pres.badge && (
@@ -126,7 +126,15 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
             scroll={true}
             className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
           >
-            <span>{!isUnlocked ? (courseSlug === "student" ? "수강권 열람" : "올패스 열람") : "학습하기"}</span>
+            <span>
+              {!isUnlocked
+                ? courseSlug === "student"
+                  ? "수강권 열람"
+                  : "올패스 열람"
+                : isFree && !hasCourseAccess
+                  ? "무료 보기"
+                  : "학습하기"}
+            </span>
             <span className="text-[11px] opacity-60">{!isUnlocked ? "🔒" : "→"}</span>
           </Link>
         </div>
@@ -145,7 +153,9 @@ export function CourseDashboard({
   totalLessons: number;
 }) {
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked } = useProgress();
-  const { hasActiveLicense, isUnlocked: checkUnlocked } = useLicense();
+  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked } = useLicense();
+  const hasCourseAccess =
+    hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student");
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
 
   const handleToggleBookmark = useCallback(
@@ -362,7 +372,7 @@ export function CourseDashboard({
                               isStarred={isStarred}
                               isUnlocked={isUnlocked}
                               isFree={isFree}
-                              hasActiveLicense={hasActiveLicense}
+                              hasCourseAccess={hasCourseAccess}
                               onToggleBookmark={handleToggleBookmark}
                             />
                           );

@@ -61,87 +61,26 @@ export function getPlanLabel(plan: LicensePlan | string): string {
   }
 }
 
-/**
- * Check if a lesson is free for preview when the user doesn't have an active license.
- * Rule: Only Section 1's 1st and 2nd lessons are free preview.
- * For VOCA (phonics): ONLY Section 1's mv1-01 and mv1-02 are free preview. All mv2-*, mv3-*, hv-* are strictly locked.
- */
+/** The two visible cards in each current course's first curriculum section. */
+export const FREE_PREVIEW_LESSON_IDS: Record<string, readonly string[]> = {
+  student: ["s1-1", "s1-2"],
+  phonics: ["mv1-01", "mv1-02"],
+  grammar1: ["gh1-006", "gh1-007", "gh1-008", "gh1-009"],
+  grammar2: ["gh2-007", "gh2-007-1", "gh2-008", "gh2-008-1"],
+  ld: ["d001", "d001-1", "d002", "d002-1"],
+  reading: ["pr001", "pr001-1", "pr002", "pr002-1"],
+  cnn: ["cnn001", "cnn002"],
+};
+
+/** Only the first curriculum section's first two visible lessons are free. */
 export function isFreePreviewLesson(
   courseSlug: string,
   lessonId: string,
   sectionIndex?: number,
   lessonIndex?: number,
 ): boolean {
-  // Phonics / VOCA course: strictly Section 1's 1st and 2nd lessons ONLY
-  if (courseSlug === "phonics") {
-    return lessonId === "mv1-01" || lessonId === "mv1-02";
-  }
-
-  // Grammar 1: Only first 2 lessons of Section 1
-  if (courseSlug === "grammar1") {
-    return lessonId === "gh1-001" || lessonId === "gh1-002";
-  }
-
-  // Grammar 2: Only first 2 lessons of Section 1
-  if (courseSlug === "grammar2") {
-    return (
-      lessonId === "gh2-001" ||
-      lessonId === "gh2-001-1" ||
-      lessonId === "gh2-002" ||
-      lessonId === "gh2-002-1"
-    );
-  }
-
-  // LD (Listening & Dictate): Only first 2 rounds
-  if (courseSlug === "ld") {
-    return (
-      lessonId === "d001" ||
-      lessonId === "d001-1" ||
-      lessonId === "d002" ||
-      lessonId === "d002-1"
-    );
-  }
-
-  // Reading: Only first 2 lessons
-  if (courseSlug === "reading") {
-    return lessonId === "rc001" || lessonId === "rc002";
-  }
-
-  // Student course: strictly Chapter 1's 1st and 2nd lessons ONLY
-  if (courseSlug === "student") {
-    return (
-      lessonId === "s1-1" ||
-      lessonId === "s1-2" ||
-      lessonId === "s1-1-1" ||
-      lessonId === "s1-2-1"
-    );
-  }
-
-  // CNN: Only first 2 lessons
-  if (courseSlug === "cnn") {
-    return lessonId === "cnn001" || lessonId === "cnn002";
-  }
-
-  // When sectionIndex and lessonIndex are explicitly provided
   if (typeof sectionIndex === "number" && typeof lessonIndex === "number") {
     return sectionIndex === 0 && lessonIndex < 2;
   }
-
-  // Generic fallback: strictly exclude subsequent sections
-  if (
-    lessonId.includes("mv2") ||
-    lessonId.includes("mv3") ||
-    lessonId.includes("hv") ||
-    lessonId.startsWith("s")
-  ) {
-    return false;
-  }
-
-  const match = lessonId.match(/(\d+)$/);
-  if (match) {
-    const num = parseInt(match[1], 10);
-    return num <= 2;
-  }
-
-  return false;
+  return FREE_PREVIEW_LESSON_IDS[courseSlug]?.includes(lessonId) ?? false;
 }
