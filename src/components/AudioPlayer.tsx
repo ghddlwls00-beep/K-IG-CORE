@@ -214,27 +214,14 @@ export function AudioPlayer({
         />
       ) : null}
 
-      <div className="mb-3 flex items-center justify-between gap-2">
-        {label ? (
+      {label ? (
+        <div className="mb-3 flex items-center gap-2">
           <p className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider text-ink-faint uppercase font-bold">
             <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
             {label}
           </p>
-        ) : (
-          <span />
-        )}
-
-        {isTtsMode ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-0.5 font-mono text-[10.5px] font-semibold text-primary border border-primary/20">
-            <span
-              className={`h-1.5 w-1.5 rounded-full bg-primary ${ttsActive ? "animate-pulse" : ""}`}
-            />
-            {t("player.ttsMode")} ·{" "}
-            {gender === "male" ? "남성 보이스" : gender === "female" ? "여성 보이스" : "음성"} (
-            {fallbackSentences.length}문장)
-          </span>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
 
       <div className="flex items-center gap-2 sm:gap-3">
         <button
