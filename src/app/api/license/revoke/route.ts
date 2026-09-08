@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const res = revokeLicenseKey(key, reason);
+    const res = await revokeLicenseKey(key, reason);
     return NextResponse.json({
       success: true,
       message: "이용권이 즉시 차단(환불 처리)되었습니다. 등록된 모든 기기 연결이 해제되었습니다.",

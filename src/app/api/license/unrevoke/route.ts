@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const res = unrevokeLicenseKey(key);
+    const res = await unrevokeLicenseKey(key);
     if (!res.success) {
       return NextResponse.json(
         { success: false, error: "해당 이용권 기록을 찾을 수 없습니다." },

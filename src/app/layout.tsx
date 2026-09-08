@@ -10,12 +10,16 @@ import { getCourseTabMap, getTabs } from "@/lib/content";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.app"),
   title: {
     default: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING · CNN)",
     template: "%s · K-IG 핵심 어학 마스터",
   },
   description:
-    "K-IG 핵심 6개 과정 전용 플랫폼: VOCA 어휘 매트릭스, 영문법 1·2, LISTENING, 리딩 본문 분석, CNN 뉴스 러닝.",
+    "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스 러닝.",
+  alternates: {
+    canonical: "/",
+  },
   other: {
     google: "notranslate",
   },
@@ -39,7 +43,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" translate="no" className="notranslate">
       <head>
         <meta name="google" content="notranslate" />
-        <meta name="robots" content="notranslate" />
       </head>
       <body className="notranslate min-h-screen bg-surface text-ink antialiased" translate="no">
         <NavigationScrollRestoration />

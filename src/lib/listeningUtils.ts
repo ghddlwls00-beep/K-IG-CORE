@@ -341,7 +341,7 @@ export function generateListeningContextQuiz(
   // Q1: Speaker / Situation Identification (다이나믹 맥락 분석)
   // ---------------------------------------------------------------------------
   let correctQ1 = "화자가 자신의 신원, 가족 관계, 생활 환경을 차분히 들려주는 일상 소개 담화";
-  let q1DistractorPool = [
+  const q1DistractorPool = [
     "상점에서 구매한 물건의 하자로 환불을 요청하는 고객 상담",
     "공항 출국 심사대에서 탑승권과 수하물을 확인하는 출국 수속",
     "병원에서 담당 의사가 환자의 수술 일정을 안내하는 진료 대화",

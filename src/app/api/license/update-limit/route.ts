@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const res = setMaxDevicesForKey(key, maxDevices, plan);
+    const res = await setMaxDevicesForKey(key, maxDevices, plan);
     return NextResponse.json({ success: true, record: res.record });
   } catch (err) {
     console.error("License update-limit API error:", err);

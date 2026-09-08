@@ -466,7 +466,7 @@ export function PhonicsLearningView({
                 type="button"
                 onClick={() => {
                   stopRowPlayback();
-                  setActiveTab(tab.id as any);
+                  setActiveTab(tab.id as "matrix" | "recall" | "speaking" | "speed");
                 }}
                 className={`flex flex-col items-start gap-1 rounded-2xl border p-2.5 sm:p-3.5 text-left transition-all cursor-pointer ${
                   isActive
@@ -588,14 +588,14 @@ export function PhonicsLearningView({
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-[15px] font-bold text-ink">
-                      "{selectedCollocation.phrase}"
+                      “{selectedCollocation.phrase}”
                     </span>
                     <span className="text-[13px] text-ink-soft">
                       ➔ {selectedCollocation.translation}
                     </span>
                   </div>
                   <p className="text-[12.5px] text-ink-faint italic">
-                    "{selectedCollocation.exampleSentence}" ({selectedCollocation.sentenceTranslation})
+                    “{selectedCollocation.exampleSentence}” ({selectedCollocation.sentenceTranslation})
                   </p>
                 </div>
               </div>
@@ -909,7 +909,7 @@ export function PhonicsLearningView({
                   Step 3 · AI Speaking & Pronunciation Tester
                 </span>
                 <h3 className="text-[17px] font-bold text-ink">
-                  "내가 직접 발음할 수 있는 단어만 뇌에 영구 각인된다"
+                  “내가 직접 발음할 수 있는 단어만 뇌에 영구 각인된다”
                 </h3>
               </div>
               <div className="flex items-center gap-2">

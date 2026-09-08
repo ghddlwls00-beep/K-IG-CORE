@@ -1,13 +1,31 @@
+import "server-only";
 import crypto from "crypto";
 
 export const ADMIN_COOKIE_NAME = "kig_admin_session";
 const SESSION_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
 
-const ADMIN_SECRET =
-  process.env.ADMIN_SESSION_SECRET || "KIG_ADMIN_SECRET_SALT_2026_SECURE_TOKEN";
+const COMPROMISED_ADMIN_PIN = "kig2026!";
+const COMPROMISED_ADMIN_SECRET = "KIG_ADMIN_SECRET_SALT_2026_SECURE_TOKEN";
+
+function getAdminSecret(): string | null {
+  const value = process.env.ADMIN_SESSION_SECRET?.trim();
+  if (
+    !value ||
+    value.length < 32 ||
+    value === COMPROMISED_ADMIN_SECRET ||
+    /^replace[-_ ]?me/i.test(value)
+  ) {
+    return null;
+  }
+  return value;
+}
 
 export function getAdminPin(): string {
-  return process.env.ADMIN_PIN || "kig2026!";
+  const value = process.env.ADMIN_PIN?.trim() || "";
+  if (value.length < 10 || value === COMPROMISED_ADMIN_PIN || /^replace[-_ ]?me/i.test(value)) {
+    return "";
+  }
+  return value;
 }
 
 export function verifyAdminPin(inputPin: string): boolean {
@@ -20,24 +38,30 @@ export function verifyAdminPin(inputPin: string): boolean {
 }
 
 export function createAdminSessionToken(): string {
+  const adminSecret = getAdminSecret();
+  if (!adminSecret) {
+    throw new Error("ADMIN_SESSION_SECRET is missing or insecure.");
+  }
   const expiresAt = Date.now() + SESSION_DURATION_MS;
   const payload = Buffer.from(
     JSON.stringify({ role: "admin", exp: expiresAt }),
   ).toString("base64url");
   const signature = crypto
-    .createHmac("sha256", ADMIN_SECRET)
+    .createHmac("sha256", adminSecret)
     .update(payload)
     .digest("base64url");
   return `${payload}.${signature}`;
 }
 
 export function verifyAdminSessionToken(token: string): boolean {
+  const adminSecret = getAdminSecret();
+  if (!adminSecret) return false;
   if (!token || !token.includes(".")) return false;
   const [payload, signature] = token.split(".");
   if (!payload || !signature) return false;
 
   const expectedSignature = crypto
-    .createHmac("sha256", ADMIN_SECRET)
+    .createHmac("sha256", adminSecret)
     .update(payload)
     .digest("base64url");
 

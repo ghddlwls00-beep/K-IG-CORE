@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       );
     }
 
-    resetAllDevicesForKey(key);
+    await resetAllDevicesForKey(key);
     return NextResponse.json({
       success: true,
       message: "기기 등록이 초기화되었습니다.",

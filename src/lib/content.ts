@@ -55,8 +55,36 @@ export function getCourseIndex(slug: string): CourseIndex | null {
 }
 
 export function getLesson(course: string, id: string): Lesson | null {
-  // Guard against path traversal via the URL segment.
-  const filePath = path.join(CONTENT_DIR, "lessons", course, `${id}.json`);
+  // Keep the build trace restricted to the seven public course directories and
+  // reject path traversal before a filesystem path is assembled.
+  if (!/^[a-z0-9-]+$/i.test(id)) return null;
+  let courseDir: string;
+  switch (course) {
+    case "ld":
+      courseDir = path.join(CONTENT_DIR, "lessons", "ld");
+      break;
+    case "reading":
+      courseDir = path.join(CONTENT_DIR, "lessons", "reading");
+      break;
+    case "student":
+      courseDir = path.join(CONTENT_DIR, "lessons", "student");
+      break;
+    case "phonics":
+      courseDir = path.join(CONTENT_DIR, "lessons", "phonics");
+      break;
+    case "grammar1":
+      courseDir = path.join(CONTENT_DIR, "lessons", "grammar1");
+      break;
+    case "grammar2":
+      courseDir = path.join(CONTENT_DIR, "lessons", "grammar2");
+      break;
+    case "cnn":
+      courseDir = path.join(CONTENT_DIR, "lessons", "cnn");
+      break;
+    default:
+      return null;
+  }
+  const filePath = path.join(courseDir, `${id}.json`);
   if (!fs.existsSync(filePath)) return null;
   return readJson<Lesson>(filePath);
 }

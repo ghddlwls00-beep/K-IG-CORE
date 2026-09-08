@@ -439,7 +439,7 @@ export default function AdminLicensePage() {
                       : "text-ink-soft hover:text-ink"
                   }`}
                 >
-                  👑 VIP 올패스 (전체 1,677강)
+                  👑 VIP 올패스 (전체 과정)
                 </button>
                 <button
                   type="button"
@@ -480,8 +480,8 @@ export default function AdminLicensePage() {
                       >
                         <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
                         <div className={`text-[12px] mt-1 ${active ? "text-gray-300" : "text-ink-soft"}`}>
-                          {plan === "1M" && "30일간 1,677강 열람"}
-                          {plan === "1Y" && "365일간 1,677강 열람 (추천)"}
+                          {plan === "1M" && "30일간 전체 과정 열람"}
+                          {plan === "1Y" && "365일간 전체 과정 열람 (추천)"}
                           {plan === "LIFE" && "무제한 평생 열람 (대표님/VIP용)"}
                         </div>
                       </button>
@@ -618,7 +618,7 @@ export default function AdminLicensePage() {
                 💡 <strong>고객 발송 안내 팁:</strong> 복사한 코드를 고객에게 문자나 메시지로 전달하실 때 아래와 같이 보내주시면 됩니다:
                 <div className="mt-1 font-mono text-[12px] bg-white/70 p-2.5 rounded border border-emerald-500/20 select-all leading-relaxed">
                   안녕하세요! K-IG 올패스 이용권 번호는 [{newlyGenerated[0]}] 입니다.<br />
-                  웹사이트 상단 [이용권 등록]에 코드를 입력하시면 1,677개 모든 레슨이 즉시 열립니다.<br />
+                  웹사이트 상단 [이용권 등록]에 코드를 입력하시면 모든 유료 레슨이 즉시 열립니다.<br />
                   (※ 본 이용권은 PC, 스마트폰 등 최대 {maxDevicesPerKey}대 기기까지 등록 가능합니다)
                 </div>
               </div>

@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     }
 
     // 2. Device slot registration
-    const regResult = registerDeviceForKey(
+    const regResult = await registerDeviceForKey(
       key,
       validation.plan,
       deviceId,

@@ -1,36 +1,36 @@
+import "server-only";
 import crypto from "crypto";
 import type { LicensePlan } from "./license";
 
-const SALT = process.env.LICENSE_SALT || "KIG_EDU_KEY_SALT_v1_2026";
-const LICENSE_SECRET =
-  process.env.LICENSE_SECRET || "KIG_SERVER_LICENSE_SIGNING_SECRET_2026_KEY";
+const COMPROMISED_LICENSE_SALT = "KIG_EDU_KEY_SALT_v1_2026";
+const COMPROMISED_LICENSE_SECRET = "KIG_SERVER_LICENSE_SIGNING_SECRET_2026_KEY";
 
-/** Simple deterministic hash for checksum computation. */
-function computeChecksum(input: string): string {
-  let h1 = 0xdeadbeef;
-  let h2 = 0x41c64e6d;
-  for (let i = 0; i < input.length; i++) {
-    const ch = input.charCodeAt(i);
-    h1 = Math.imul(h1 ^ ch, 2654435761);
-    h2 = Math.imul(h2 ^ ch, 1597334677);
+function requireSecret(name: "LICENSE_SALT" | "LICENSE_SECRET"): string {
+  const value = process.env[name]?.trim();
+  const compromised =
+    (name === "LICENSE_SALT" && value === COMPROMISED_LICENSE_SALT) ||
+    (name === "LICENSE_SECRET" && value === COMPROMISED_LICENSE_SECRET);
+
+  if (!value || value.length < 32 || compromised || /^replace[-_ ]?me/i.test(value)) {
+    throw new Error(`${name} is missing or insecure. Configure a unique 32+ character secret.`);
   }
-  h1 =
-    Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^
-    Math.imul(h2 ^ (h2 >>> 13), 3266489909);
-  h2 =
-    Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^
-    Math.imul(h1 ^ (h1 >>> 13), 3266489909);
-  const hash = 4294967296 * (2097151 & h2) + (h1 >>> 0);
-  const hex = Math.abs(hash).toString(16).toUpperCase().padStart(8, "0");
-  return hex.slice(0, 4);
+
+  return value;
 }
 
-/** Generate a 4-character random hex token. */
-function randomToken(): string {
-  return Math.floor((1 + Math.random()) * 0x10000)
-    .toString(16)
-    .substring(1)
+/** HMAC checksum used to prove that a key was issued by this service. */
+function computeChecksum(plan: LicensePlan, nonce: string): string {
+  return crypto
+    .createHmac("sha256", requireSecret("LICENSE_SALT"))
+    .update(`${plan}:${nonce}`)
+    .digest("hex")
+    .slice(0, 16)
     .toUpperCase();
+}
+
+/** Generate a cryptographically secure 64-bit random token. */
+function randomToken(): string {
+  return crypto.randomBytes(8).toString("hex").toUpperCase();
 }
 
 /**
@@ -38,7 +38,7 @@ function randomToken(): string {
  */
 export function generateLicenseKey(plan: LicensePlan): string {
   const nonce = randomToken();
-  const checksum = computeChecksum(`${SALT}:${plan}:${nonce}`);
+  const checksum = computeChecksum(plan, nonce);
   return `KIG-${plan}-${nonce}-${checksum}`;
 }
 
@@ -56,7 +56,7 @@ export function validateLicenseKey(
   if (parts.length !== 4 || parts[0] !== "KIG") {
     return {
       valid: false,
-      error: "올바른 형식의 이용권 코드가 아닙니다. (예: KIG-1Y-XXXX-XXXX)",
+      error: "올바른 형식의 이용권 코드가 아닙니다.",
     };
   }
 
@@ -76,9 +76,12 @@ export function validateLicenseKey(
 
   const nonce = parts[2];
   const checksum = parts[3];
-  const expectedChecksum = computeChecksum(`${SALT}:${plan}:${nonce}`);
+  if (!/^[A-F0-9]{16}$/.test(nonce) || !/^[A-F0-9]{16}$/.test(checksum)) {
+    return { valid: false, error: "유효하지 않은 이용권 코드입니다." };
+  }
+  const expectedChecksum = computeChecksum(plan, nonce);
 
-  if (checksum !== expectedChecksum) {
+  if (!crypto.timingSafeEqual(Buffer.from(checksum), Buffer.from(expectedChecksum))) {
     return {
       valid: false,
       error: "유효하지 않거나 검증에 실패한 이용권 코드입니다. 다시 확인해 주세요.",
@@ -124,7 +127,7 @@ export function issueLicenseToken(
 
   const payloadB64 = Buffer.from(JSON.stringify(payload)).toString("base64url");
   const signature = crypto
-    .createHmac("sha256", LICENSE_SECRET)
+    .createHmac("sha256", requireSecret("LICENSE_SECRET"))
     .update(payloadB64)
     .digest("base64url");
 
@@ -149,7 +152,7 @@ export function verifyLicenseToken(
 
   // 1. Verify HMAC Signature
   const expectedSig = crypto
-    .createHmac("sha256", LICENSE_SECRET)
+    .createHmac("sha256", requireSecret("LICENSE_SECRET"))
     .update(payloadB64)
     .digest("base64url");
 

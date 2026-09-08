@@ -15,6 +15,7 @@
     "upload-media": "node scripts/upload-media.mjs"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1127.0",
     "cfb": "^1.2.2",
     "cheerio": "^1.2.0",
     "next": "16.3.2",

@@ -46,6 +46,17 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     id: "",
     name: "기기 확인 중...",
   });
+  const [clock, setClock] = useState(0);
+
+  useEffect(() => {
+    const updateClock = () => setClock(Date.now());
+    const initialTimer = window.setTimeout(updateClock, 0);
+    const interval = window.setInterval(updateClock, 60_000);
+    return () => {
+      window.clearTimeout(initialTimer);
+      window.clearInterval(interval);
+    };
+  }, []);
 
   // Load license and verify with server on mount
   useEffect(() => {
@@ -94,8 +105,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   // Compute active status
-  const now = Date.now();
-  const isExpired = Boolean(stored?.expiresAt && stored.expiresAt < now);
+  const isExpired = Boolean(clock > 0 && stored?.expiresAt && stored.expiresAt < clock);
   const hasActiveLicense = Boolean(stored && !isExpired && stored.token);
 
   const licenseInfo: LicenseInfo | null = stored

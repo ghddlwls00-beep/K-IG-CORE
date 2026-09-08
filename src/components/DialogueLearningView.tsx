@@ -1195,7 +1195,12 @@ export function DialogueLearningView({
                       <button
                         type="button"
                         onClick={() =>
-                          setFluencyGrades((p) => ({ ...p, [item.id]: p[item.id] === true ? undefined : true } as any))
+                          setFluencyGrades((previous) => {
+                            const next = { ...previous };
+                            if (previous[item.id] === true) delete next[item.id];
+                            else next[item.id] = true;
+                            return next;
+                          })
                         }
                         className={
                           "rounded-lg border px-2.5 py-1 text-[12px] font-medium transition-all cursor-pointer " +
@@ -1209,7 +1214,12 @@ export function DialogueLearningView({
                       <button
                         type="button"
                         onClick={() =>
-                          setFluencyGrades((p) => ({ ...p, [item.id]: p[item.id] === false ? undefined : false } as any))
+                          setFluencyGrades((previous) => {
+                            const next = { ...previous };
+                            if (previous[item.id] === false) delete next[item.id];
+                            else next[item.id] = false;
+                            return next;
+                          })
                         }
                         className={
                           "rounded-lg border px-2.5 py-1 text-[12px] font-medium transition-all cursor-pointer " +

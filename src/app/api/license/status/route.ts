@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const records = loadDeviceRecords();
+  const records = await loadDeviceRecords();
   return NextResponse.json({ success: true, records });
 }
 
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const records = loadDeviceRecords();
+    const records = await loadDeviceRecords();
     return NextResponse.json({ success: true, records });
   } catch (err) {
     console.error("License status API error:", err);

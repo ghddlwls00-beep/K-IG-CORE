@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useSyncExternalStore } from "react";
 import { useLicense } from "@/components/LicenseProvider";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { isFreePreviewLesson } from "@/lib/license";
@@ -28,11 +28,11 @@ export function LessonClientGate({
   children,
 }: LessonClientGateProps) {
   const { isUnlocked } = useLicense();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => undefined,
+    () => true,
+    () => false,
+  );
 
   const isFree = typeof isFreePreview === "boolean" ? isFreePreview : isFreePreviewLesson(courseSlug, lessonId);
 

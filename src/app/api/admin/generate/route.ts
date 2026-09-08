@@ -52,7 +52,7 @@ export async function POST(request: Request) {
       });
 
       // Register initial device limit in device storage
-      setMaxDevicesForKey(k, limit, plan);
+      await setMaxDevicesForKey(k, limit, plan);
     }
 
     return NextResponse.json({

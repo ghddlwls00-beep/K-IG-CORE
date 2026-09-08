@@ -40,7 +40,7 @@ export function LessonPaywall({
             <p className="text-[13px] text-ink-soft leading-relaxed">
               현재 <strong className="text-ink font-semibold">STUDENT 전용 패스</strong>로 접속 중입니다.
               <br className="hidden sm:inline" />
-              {courseTitle}을(를) 포함한 1,677개 전 과정을 이용하시려면 VIP 올패스 코드를 등록해 주세요.
+              {courseTitle}을(를) 포함한 전체 과정을 이용하시려면 VIP 올패스 코드를 등록해 주세요.
             </p>
           </>
         ) : (
@@ -61,9 +61,9 @@ export function LessonPaywall({
                 </>
               ) : (
                 <>
-                  스마트스토어 또는 크몽에서 발급받으신 인증 코드를 등록하시면
+                  공식 판매처에서 발급받으신 인증 코드를 등록하시면
                   <br className="hidden sm:inline" />
-                  <strong className="text-ink font-semibold"> 1,677개 모든 레슨</strong>을 제한 없이 무제한으로 학습하실 수 있습니다.
+                  <strong className="text-ink font-semibold"> 모든 유료 레슨</strong>을 제한 없이 학습하실 수 있습니다.
                 </>
               )}
             </p>

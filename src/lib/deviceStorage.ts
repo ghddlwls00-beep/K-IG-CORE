@@ -1,5 +1,13 @@
+import "server-only";
+import crypto from "crypto";
 import fs from "fs";
 import path from "path";
+import {
+  GetObjectCommand,
+  ListObjectsV2Command,
+  PutObjectCommand,
+  S3Client,
+} from "@aws-sdk/client-s3";
 
 export interface RegisteredDevice {
   deviceId: string;
@@ -19,95 +27,239 @@ export interface LicenseDeviceRecord {
 }
 
 export const MAX_DEVICES_PER_KEY = 2;
+const RECORD_PREFIX = "private/license-records/";
+let cachedR2Client: S3Client | null = null;
 
-function getStorageFilePath(): string {
-  const primaryDir = path.join(process.cwd(), "data");
-  const primaryFile = path.join(primaryDir, "license-devices.json");
+interface R2Config {
+  client: S3Client;
+  bucket: string;
+  encryptionKey: Buffer;
+}
 
-  try {
-    if (!fs.existsSync(primaryDir)) {
-      fs.mkdirSync(primaryDir, { recursive: true });
+interface EncryptedRecordEnvelope {
+  version: 1;
+  iv: string;
+  tag: string;
+  ciphertext: string;
+}
+
+function getR2Config(): R2Config | null {
+  const accountId = process.env.R2_ACCOUNT_ID?.trim();
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID?.trim();
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY?.trim();
+  const bucket = process.env.R2_LICENSE_BUCKET?.trim();
+  const storageSecret = process.env.LICENSE_STORAGE_SECRET?.trim();
+  const values = [accountId, accessKeyId, secretAccessKey, bucket, storageSecret];
+
+  if (values.every(Boolean)) {
+    if (storageSecret!.length < 32) {
+      throw new Error("LICENSE_STORAGE_SECRET must contain at least 32 characters.");
     }
-    // Test write permission
-    fs.writeFileSync(primaryFile + ".test", "");
-    fs.unlinkSync(primaryFile + ".test");
-    return primaryFile;
-  } catch {
-    // Fallback to /tmp in read-only serverless environments
-    const fallbackDir = "/tmp";
-    return path.join(fallbackDir, "license-devices.json");
+    cachedR2Client ??= new S3Client({
+      region: "auto",
+      endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+      credentials: { accessKeyId: accessKeyId!, secretAccessKey: secretAccessKey! },
+    });
+    return {
+      client: cachedR2Client,
+      bucket: bucket!,
+      encryptionKey: crypto.createHash("sha256").update(storageSecret!).digest(),
+    };
   }
+
+  if (values.some(Boolean) || process.env.VERCEL || process.env.NODE_ENV === "production") {
+    throw new Error(
+      "Durable license storage is not configured. Set R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_LICENSE_BUCKET, and LICENSE_STORAGE_SECRET.",
+    );
+  }
+
+  return null;
 }
 
-export function loadDeviceRecords(): Record<string, LicenseDeviceRecord> {
-  const filePath = getStorageFilePath();
+function encryptRecord(record: LicenseDeviceRecord, encryptionKey: Buffer): string {
+  const iv = crypto.randomBytes(12);
+  const cipher = crypto.createCipheriv("aes-256-gcm", encryptionKey, iv);
+  const ciphertext = Buffer.concat([
+    cipher.update(JSON.stringify(record), "utf8"),
+    cipher.final(),
+  ]);
+  const envelope: EncryptedRecordEnvelope = {
+    version: 1,
+    iv: iv.toString("base64"),
+    tag: cipher.getAuthTag().toString("base64"),
+    ciphertext: ciphertext.toString("base64"),
+  };
+  return JSON.stringify(envelope);
+}
+
+function decryptRecord(raw: string, encryptionKey: Buffer): LicenseDeviceRecord {
+  const envelope = JSON.parse(raw) as EncryptedRecordEnvelope;
+  if (
+    envelope.version !== 1 ||
+    typeof envelope.iv !== "string" ||
+    typeof envelope.tag !== "string" ||
+    typeof envelope.ciphertext !== "string"
+  ) {
+    throw new Error("Invalid encrypted license record.");
+  }
+  const decipher = crypto.createDecipheriv(
+    "aes-256-gcm",
+    encryptionKey,
+    Buffer.from(envelope.iv, "base64"),
+  );
+  decipher.setAuthTag(Buffer.from(envelope.tag, "base64"));
+  const plaintext = Buffer.concat([
+    decipher.update(Buffer.from(envelope.ciphertext, "base64")),
+    decipher.final(),
+  ]).toString("utf8");
+  return JSON.parse(plaintext) as LicenseDeviceRecord;
+}
+
+function normalizeKey(key: string): string {
+  return key.trim().toUpperCase();
+}
+
+function objectKey(key: string): string {
+  const digest = crypto.createHash("sha256").update(normalizeKey(key)).digest("hex");
+  return `${RECORD_PREFIX}${digest}.json`;
+}
+
+function getLocalStorageFilePath(): string {
+  const dataDir = path.join(process.cwd(), "data");
+  fs.mkdirSync(dataDir, { recursive: true });
+  return path.join(dataDir, "license-devices.json");
+}
+
+function loadLocalRecords(): Record<string, LicenseDeviceRecord> {
+  const filePath = getLocalStorageFilePath();
+  if (!fs.existsSync(filePath)) return {};
+  return JSON.parse(fs.readFileSync(filePath, "utf-8")) as Record<string, LicenseDeviceRecord>;
+}
+
+function saveLocalRecords(records: Record<string, LicenseDeviceRecord>): void {
+  fs.writeFileSync(getLocalStorageFilePath(), JSON.stringify(records, null, 2), "utf-8");
+}
+
+function isMissingObject(error: unknown): boolean {
+  if (!error || typeof error !== "object") return false;
+  const candidate = error as { name?: string; $metadata?: { httpStatusCode?: number } };
+  return candidate.name === "NoSuchKey" || candidate.$metadata?.httpStatusCode === 404;
+}
+
+async function loadRemoteRecord(config: R2Config, key: string): Promise<LicenseDeviceRecord | null> {
   try {
-    if (!fs.existsSync(filePath)) return {};
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw) as Record<string, LicenseDeviceRecord>;
-  } catch (err) {
-    console.error("Error reading device records:", err);
-    return {};
+    const response = await config.client.send(
+      new GetObjectCommand({ Bucket: config.bucket, Key: objectKey(key) }),
+    );
+    const raw = await response.Body?.transformToString();
+    return raw ? decryptRecord(raw, config.encryptionKey) : null;
+  } catch (error) {
+    if (isMissingObject(error)) return null;
+    throw error;
   }
 }
 
-export function saveDeviceRecords(records: Record<string, LicenseDeviceRecord>): void {
-  const filePath = getStorageFilePath();
-  try {
-    fs.writeFileSync(filePath, JSON.stringify(records, null, 2), "utf-8");
-  } catch (err) {
-    console.error("Error saving device records:", err);
-  }
+async function saveRemoteRecord(config: R2Config, record: LicenseDeviceRecord): Promise<void> {
+  await config.client.send(
+    new PutObjectCommand({
+      Bucket: config.bucket,
+      Key: objectKey(record.key),
+      Body: encryptRecord(record, config.encryptionKey),
+      ContentType: "application/octet-stream",
+      CacheControl: "no-store",
+    }),
+  );
 }
 
-/**
- * Configure the maximum allowed devices for a key.
- */
-export function setMaxDevicesForKey(
+async function loadRecord(key: string): Promise<LicenseDeviceRecord | null> {
+  const normalizedKey = normalizeKey(key);
+  const config = getR2Config();
+  if (config) return loadRemoteRecord(config, normalizedKey);
+  return loadLocalRecords()[normalizedKey] ?? null;
+}
+
+async function saveRecord(record: LicenseDeviceRecord): Promise<void> {
+  const config = getR2Config();
+  if (config) {
+    await saveRemoteRecord(config, record);
+    return;
+  }
+  const records = loadLocalRecords();
+  records[normalizeKey(record.key)] = record;
+  saveLocalRecords(records);
+}
+
+export async function loadDeviceRecords(): Promise<Record<string, LicenseDeviceRecord>> {
+  const config = getR2Config();
+  if (!config) return loadLocalRecords();
+
+  const records: Record<string, LicenseDeviceRecord> = {};
+  let continuationToken: string | undefined;
+  do {
+    const page = await config.client.send(
+      new ListObjectsV2Command({
+        Bucket: config.bucket,
+        Prefix: RECORD_PREFIX,
+        ContinuationToken: continuationToken,
+      }),
+    );
+    const pageRecords = await Promise.all(
+      (page.Contents ?? [])
+        .filter((item) => item.Key?.endsWith(".json"))
+        .map(async (item) => {
+          try {
+            const response = await config.client.send(
+              new GetObjectCommand({ Bucket: config.bucket, Key: item.Key! }),
+            );
+            const raw = await response.Body?.transformToString();
+            return raw ? decryptRecord(raw, config.encryptionKey) : null;
+          } catch (error) {
+            console.error("Unable to read a license record from durable storage:", error);
+            return null;
+          }
+        }),
+    );
+    for (const record of pageRecords) {
+      if (record?.key) records[normalizeKey(record.key)] = record;
+    }
+    continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
+  } while (continuationToken);
+
+  return records;
+}
+
+export async function setMaxDevicesForKey(
   key: string,
   maxDevices: number,
   plan?: string,
-): { success: boolean; record: LicenseDeviceRecord } {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-  const record: LicenseDeviceRecord = records[normalizedKey] || {
+): Promise<{ success: boolean; record: LicenseDeviceRecord }> {
+  const normalizedKey = normalizeKey(key);
+  const record: LicenseDeviceRecord = (await loadRecord(normalizedKey)) || {
     key: normalizedKey,
     plan: plan || "1Y",
     maxDevices,
     devices: [],
   };
-
   record.maxDevices = Math.max(1, maxDevices);
-  records[normalizedKey] = record;
-  saveDeviceRecords(records);
+  await saveRecord(record);
   return { success: true, record };
 }
 
-/**
- * Attempt to register a device for a key.
- * If the device is already registered, updates lastSeenAt and succeeds.
- * If new device and count < maxDevices, adds it and succeeds.
- * If new device and count >= maxDevices, rejects with a helpful message.
- */
-export function registerDeviceForKey(
+export async function registerDeviceForKey(
   key: string,
   plan: string,
   deviceId: string,
   deviceName: string,
-): { success: boolean; error?: string; devices: RegisteredDevice[]; maxDevices: number } {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-
-  const record: LicenseDeviceRecord = records[normalizedKey] || {
+): Promise<{ success: boolean; error?: string; devices: RegisteredDevice[]; maxDevices: number }> {
+  const normalizedKey = normalizeKey(key);
+  const record: LicenseDeviceRecord = (await loadRecord(normalizedKey)) || {
     key: normalizedKey,
     plan,
     maxDevices: MAX_DEVICES_PER_KEY,
     devices: [],
   };
-
   const effectiveMaxDevices = record.maxDevices || MAX_DEVICES_PER_KEY;
 
-  // 0. Check if revoked
   if (record.isRevoked) {
     return {
       success: false,
@@ -116,19 +268,16 @@ export function registerDeviceForKey(
       maxDevices: effectiveMaxDevices,
     };
   }
-  const now = Date.now();
-  const existingIdx = record.devices.findIndex((d) => d.deviceId === deviceId);
 
-  if (existingIdx !== -1) {
-    // Already registered device: update last seen and device name if changed
-    record.devices[existingIdx].lastSeenAt = now;
-    if (deviceName) record.devices[existingIdx].deviceName = deviceName;
-    records[normalizedKey] = record;
-    saveDeviceRecords(records);
+  const now = Date.now();
+  const existing = record.devices.find((device) => device.deviceId === deviceId);
+  if (existing) {
+    existing.lastSeenAt = now;
+    if (deviceName) existing.deviceName = deviceName;
+    await saveRecord(record);
     return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices };
   }
 
-  // New device: check limit
   if (record.devices.length >= effectiveMaxDevices) {
     return {
       success: false,
@@ -138,109 +287,71 @@ export function registerDeviceForKey(
     };
   }
 
-  // Add new device
-  const newDevice: RegisteredDevice = {
+  record.devices.push({
     deviceId,
     deviceName: deviceName || "알 수 없는 기기",
     registeredAt: now,
     lastSeenAt: now,
-  };
-
-  record.devices.push(newDevice);
-  records[normalizedKey] = record;
-  saveDeviceRecords(records);
-
+  });
+  await saveRecord(record);
   return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices };
 }
 
-/**
- * Deactivate / Unlink a device from a license key.
- */
-export function unregisterDeviceFromKey(
+export async function unregisterDeviceFromKey(
   key: string,
   deviceId: string,
-): { success: boolean; devices: RegisteredDevice[] } {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-  const record = records[normalizedKey];
-
-  if (!record) {
-    return { success: true, devices: [] };
-  }
-
-  record.devices = record.devices.filter((d) => d.deviceId !== deviceId);
-  records[normalizedKey] = record;
-  saveDeviceRecords(records);
-
-  return { success: true, devices: record.devices };
+): Promise<{ success: boolean; devices: RegisteredDevice[]; maxDevices: number }> {
+  const record = await loadRecord(key);
+  if (!record) return { success: true, devices: [], maxDevices: MAX_DEVICES_PER_KEY };
+  record.devices = record.devices.filter((device) => device.deviceId !== deviceId);
+  await saveRecord(record);
+  return {
+    success: true,
+    devices: record.devices,
+    maxDevices: record.maxDevices || MAX_DEVICES_PER_KEY,
+  };
 }
 
-/**
- * Admin reset: clear all registered devices for a key.
- */
-export function resetAllDevicesForKey(key: string): { success: boolean } {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-  if (records[normalizedKey]) {
-    records[normalizedKey].devices = [];
-    saveDeviceRecords(records);
+export async function resetAllDevicesForKey(key: string): Promise<{ success: boolean }> {
+  const record = await loadRecord(key);
+  if (record) {
+    record.devices = [];
+    await saveRecord(record);
   }
   return { success: true };
 }
 
-/**
- * Admin revoke / block: instantly blacklist a key (e.g. customer refund).
- * Clears all registered devices and marks as isRevoked.
- */
-export function revokeLicenseKey(
+export async function revokeLicenseKey(
   key: string,
   reason = "환불 처리 / 관리자 차단",
-): { success: boolean; record: LicenseDeviceRecord } {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-  const record: LicenseDeviceRecord = records[normalizedKey] || {
+): Promise<{ success: boolean; record: LicenseDeviceRecord }> {
+  const normalizedKey = normalizeKey(key);
+  const record: LicenseDeviceRecord = (await loadRecord(normalizedKey)) || {
     key: normalizedKey,
     plan: "1Y",
     maxDevices: MAX_DEVICES_PER_KEY,
     devices: [],
   };
-
   record.isRevoked = true;
   record.revokedAt = Date.now();
   record.revokeReason = reason;
-  record.devices = []; // disconnect all devices immediately
-
-  records[normalizedKey] = record;
-  saveDeviceRecords(records);
+  record.devices = [];
+  await saveRecord(record);
   return { success: true, record };
 }
 
-/**
- * Admin unrevoke / restore: remove from blacklist.
- */
-export function unrevokeLicenseKey(
+export async function unrevokeLicenseKey(
   key: string,
-): { success: boolean; record?: LicenseDeviceRecord } {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-  const record = records[normalizedKey];
+): Promise<{ success: boolean; record?: LicenseDeviceRecord }> {
+  const record = await loadRecord(key);
   if (!record) return { success: false };
-
   record.isRevoked = false;
   record.revokedAt = undefined;
   record.revokeReason = undefined;
-
-  records[normalizedKey] = record;
-  saveDeviceRecords(records);
+  await saveRecord(record);
   return { success: true, record };
 }
 
-/**
- * Check if a license key is revoked.
- */
-export function isLicenseRevoked(key: string): boolean {
-  const normalizedKey = key.trim().toUpperCase();
-  const records = loadDeviceRecords();
-  return Boolean(records[normalizedKey]?.isRevoked);
+export async function isLicenseRevoked(key: string): Promise<boolean> {
+  return Boolean((await loadRecord(key))?.isRevoked);
 }
-

@@ -105,6 +105,17 @@ export function LessonBody({
   readingVocabulary?: import("@/lib/types").ReadingVocabularyItem[] | null;
 }) {
   const { t } = useLanguage();
+  // Keep hooks before all course-specific early returns so their order never changes.
+  const [studyMode, setStudyMode] = useState<"bilingual" | "englishOnly" | "koreanOnly">("bilingual");
+  const [revealedItems, setRevealedItems] = useState<Record<number, boolean>>({});
+  const [activeSentenceIndex, setActiveSentenceIndex] = useState<number | null>(null);
+  const [activeWord, setActiveWord] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeech();
+    };
+  }, []);
 
   // Dedicated pedagogical learning view for Listen & Dictate course
   if (course === "ld") {
@@ -218,18 +229,6 @@ export function LessonBody({
       />
     );
   }
-
-  // Learning modes: 'bilingual' (대조), 'englishOnly' (영어집중), 'koreanOnly' (영작훈련)
-  const [studyMode, setStudyMode] = useState<"bilingual" | "englishOnly" | "koreanOnly">("bilingual");
-  const [revealedItems, setRevealedItems] = useState<Record<number, boolean>>({});
-  const [activeSentenceIndex, setActiveSentenceIndex] = useState<number | null>(null);
-  const [activeWord, setActiveWord] = useState<string | null>(null);
-
-  useEffect(() => {
-    return () => {
-      stopSpeech();
-    };
-  }, []);
 
   // Extract choices & dictation
   const choice = blocks.find((b) => b.type === "choice") || pairBlocks?.find((b) => b.type === "choice");

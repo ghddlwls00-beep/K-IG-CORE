@@ -959,7 +959,7 @@ export function LdLearningView({
                   원어민을 0.5초 차이로 그림자처럼 따라 말하세요 (Shadowing)
                 </h2>
                 <p className="text-[13px] text-ink-soft mt-1 max-w-2xl leading-relaxed">
-                  "내가 직접 발음할 수 있는 소리만 귀에 들린다"는 언어학의 대원칙입니다. 원어민 발음을 듣고 즉시 마이크로 소리 내어 말해 일치도를 측정해 보세요.
+                  “내가 직접 발음할 수 있는 소리만 귀에 들린다”는 언어학의 대원칙입니다. 원어민 발음을 듣고 즉시 마이크로 소리 내어 말해 일치도를 측정해 보세요.
                 </p>
               </div>
 

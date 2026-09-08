@@ -13,11 +13,11 @@ export async function POST(request: Request) {
       );
     }
 
-    const result = unregisterDeviceFromKey(key, deviceId);
+    const result = await unregisterDeviceFromKey(key, deviceId);
     return NextResponse.json({
       success: true,
       registeredDevicesCount: result.devices.length,
-      maxDevices: 2,
+      maxDevices: result.maxDevices,
     });
   } catch (err) {
     console.error("License deactivation API error:", err);

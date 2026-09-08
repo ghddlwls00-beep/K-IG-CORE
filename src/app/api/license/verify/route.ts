@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     }
 
     // 3. Database registration check: Is this device still registered in deviceStorage?
-    const records = loadDeviceRecords();
+    const records = await loadDeviceRecords();
     const normalizedKey = key.trim().toUpperCase();
     const record = records[normalizedKey];
 

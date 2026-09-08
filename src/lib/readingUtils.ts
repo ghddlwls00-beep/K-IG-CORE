@@ -294,7 +294,7 @@ export function parseSlashChunks(enSentence: string, koSentence: string): ChunkP
 
   const enDelimiters = /(?<=[,\;])\s+|(?<=\w)\s+(?=(?:that|which|who|whom|whose|when|where|while|because|since|although|though|if|unless|in order to|as well as|for instance|for example)\b)|(?<=\w)\s+(?=(?:in|on|at|by|for|with|about|into|through|without|under|over|from|to)\s+(?:the|a|an|their|her|his|our|its|this|that|these|those|[A-Z]))/i;
 
-  let rawEnChunks = enSentence
+  const rawEnChunks = enSentence
     .split(enDelimiters)
     .map((c) => c.trim())
     .filter((c) => c.length > 0);

@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { useLicense } from "./LicenseProvider";
 
+const PURCHASE_URL = process.env.NEXT_PUBLIC_PURCHASE_URL?.trim() || "";
+const HAS_PURCHASE_URL = /^https:\/\//i.test(PURCHASE_URL);
+
 export function LicenseModal() {
   const {
     isModalOpen,
@@ -73,7 +76,7 @@ export function LicenseModal() {
                 {hasActiveLicense
                   ? licenseInfo?.isStudentOnly
                     ? "STUDENT 회화 81개 전 레슨이 활성화되어 있습니다."
-                    : "1,677개 모든 레슨이 활성화되어 있습니다."
+                    : "전체 유료 레슨이 활성화되어 있습니다."
                   : "발급받으신 코드를 등록하여 학습을 시작하세요."}
               </p>
             </div>
@@ -149,7 +152,7 @@ export function LicenseModal() {
                   <span className="text-[12px] font-bold text-amber-900 dark:text-amber-200">
                     👑 VIP 올패스로 업그레이드
                   </span>
-                  <span className="text-[11px] text-ink-faint">전 강좌(1,677강) 열람</span>
+                  <span className="text-[11px] text-ink-faint">전 강좌 열람</span>
                 </div>
                 <form onSubmit={handleSubmit} className="flex gap-2">
                   <input
@@ -245,20 +248,24 @@ export function LicenseModal() {
                 💡 아직 이용권 코드가 없으신가요?
               </span>
               <p className="text-[11.5px] text-ink-soft leading-relaxed">
-                스마트스토어 또는 크몽에서 1년 올패스를 구매하시면 1분 이내로 인증 코드가 발송됩니다.
+                공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드를 등록해 주세요.
               </p>
               <div className="mt-1">
+                {HAS_PURCHASE_URL ? (
                 <a
-                  href="#buy-smartstore"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    alert("대표님의 네이버 스마트스토어 또는 크몽 상품 판매 링크로 바로 연결할 수 있습니다.");
-                  }}
+                  href={PURCHASE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-black/8 dark:border-white/10 bg-surface px-3 py-1 text-[11px] font-medium text-ink hover:bg-raised transition-colors shadow-2xs cursor-pointer"
                 >
-                  <span>🛒 스마트스토어에서 구매하기</span>
+                  <span>🛒 이용권 구매하기</span>
                   <span>→</span>
                 </a>
+                ) : (
+                  <span className="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-[11px] font-medium text-ink-faint">
+                    구매 링크 준비 중
+                  </span>
+                )}
               </div>
             </div>
 
