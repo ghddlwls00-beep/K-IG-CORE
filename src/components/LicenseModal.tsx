@@ -75,7 +75,7 @@ export function LicenseModal() {
               <p className="text-[12px] text-ink-soft mt-0.5">
                 {hasActiveLicense
                   ? licenseInfo?.isStudentOnly
-                    ? "STUDENT 회화 81개 전 레슨이 활성화되어 있습니다."
+                    ? "STUDENT 이용권이 활성화되어 챕터 1부터 순차적으로 학습할 수 있습니다."
                     : "전체 유료 레슨이 활성화되어 있습니다."
                   : "발급받으신 코드를 등록하여 학습을 시작하세요."}
               </p>
@@ -132,7 +132,7 @@ export function LicenseModal() {
                 </div>
                 <span className="text-[11px] text-ink-faint">
                   {licenseInfo.isStudentOnly
-                    ? "※ STUDENT 회화 81강을 자유롭게 수강하실 수 있습니다."
+                    ? "※ 학습 완료 조건을 충족하면 다음 챕터가 순서대로 열립니다."
                     : "※ 최대 2대 기기까지 자동 연동되어 학습하실 수 있습니다."}
                 </span>
               </div>

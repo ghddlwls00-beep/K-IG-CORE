@@ -8,7 +8,6 @@ import { getAllLessonParams, getLesson } from "@/lib/content";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
 import {
   ADMIN_COOKIE_NAME,
-  ADMIN_PREVIEW_COOKIE_NAME,
   verifyAdminSessionToken,
 } from "@/lib/adminAuth";
 import {
@@ -47,21 +46,12 @@ export default async function StudentLessonPage({
   const isFree = id === "s1-1" || id === "s1-2";
   const adminToken = cookieStore.get(ADMIN_COOKIE_NAME)?.value;
   const isAdmin = Boolean(adminToken && verifyAdminSessionToken(adminToken));
-  const previewRaw = isAdmin ? cookieStore.get(ADMIN_PREVIEW_COOKIE_NAME)?.value : undefined;
-  const previewChapter = previewRaw && /^([1-9]|1\d|20)$/.test(previewRaw)
-    ? Number(previewRaw)
-    : null;
   const lessonChapter = Number(id.match(/^s(\d+)-/)?.[1] || 0);
 
   let accessAllowed = isFree;
   let sequentialLock = false;
   if (isAdmin) {
-    accessAllowed = previewRaw === "free"
-      ? isFree
-      : previewChapter
-        ? lessonChapter > 0 && lessonChapter <= previewChapter
-        : true;
-    sequentialLock = !accessAllowed && previewRaw !== "free";
+    accessAllowed = true;
   } else if (!isFree) {
     const session = await verifyLicenseSessionToken(
       cookieStore.get(LICENSE_SESSION_COOKIE_NAME)?.value,

@@ -157,10 +157,10 @@ export function CourseDashboard({
   totalLessons: number;
 }) {
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
-  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, isAdmin, adminPreview, studentProgress } = useLicense();
+  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, isAdmin, studentProgress } = useLicense();
   const hasCourseAccess =
     (hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student")) ||
-    (courseSlug === "student" && isAdmin && adminPreview !== "free");
+    (courseSlug === "student" && isAdmin);
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
   const [unlockNotice, setUnlockNotice] = useState<number | null>(null);
   const previousUnlockedRef = useRef<number | null>(null);

@@ -195,7 +195,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   );
 
   const toggleComplete = useCallback((course: string, lessonId: string) => {
-    if (course === "student" && isAdmin) return;
     setCompleted((prev) => {
       const key = `${course}:${lessonId}`;
       const next = { ...prev, [key]: !prev[key] };
@@ -214,7 +213,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       }
       return next;
     });
-  }, [hasActiveLicense, isAdmin, queueStudentUpdate]);
+  }, [hasActiveLicense, queueStudentUpdate]);
 
   const isBookmarked = useCallback(
     (course: string, lessonId: string) => {

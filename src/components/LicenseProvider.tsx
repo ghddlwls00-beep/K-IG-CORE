@@ -34,8 +34,6 @@ interface LicenseContextType {
   openModal: () => void;
   closeModal: () => void;
   isAdmin: boolean;
-  adminPreview: number | "free" | null;
-  setAdminPreview: (mode: number | "free" | "full") => Promise<void>;
   studentProgress: StudentProgressSnapshot | null;
   studentProgressLoading: boolean;
   refreshStudentProgress: () => Promise<StudentProgressSnapshot | null>;
@@ -76,7 +74,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   });
   const [clock, setClock] = useState(0);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [adminPreview, setAdminPreviewState] = useState<number | "free" | null>(null);
   const [studentProgress, setStudentProgress] = useState<StudentProgressSnapshot | null>(null);
   const [studentProgressLoading, setStudentProgressLoading] = useState(false);
 
@@ -85,7 +82,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       .then((response) => response.json())
       .then((data) => {
         setIsAdmin(Boolean(data.authenticated));
-        setAdminPreviewState(data.authenticated ? data.studentPreview ?? null : null);
       })
       .catch(() => undefined);
   }, []);
@@ -185,17 +181,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     else setStudentProgress(null);
   }, [hasActiveLicense, refreshStudentProgress]);
 
-  async function setAdminPreview(mode: number | "free" | "full") {
-    const response = await fetch("/api/admin/student-preview", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mode }),
-    });
-    if (!response.ok) throw new Error("관리자 미리보기 설정에 실패했습니다.");
-    setAdminPreviewState(mode === "full" ? null : mode);
-    window.location.reload();
-  }
-
   const licenseInfo: LicenseInfo | null = stored
     ? {
         key: stored.key,
@@ -217,11 +202,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     lessonIndex?: number,
   ): boolean {
     if (courseSlug === "student" && isAdmin) {
-      if (adminPreview === "free") {
-        return isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex);
-      }
-      const match = lessonId.match(/^s(\d+)-/);
-      return adminPreview === null || (match ? Number(match[1]) <= adminPreview : false);
+      return true;
     }
 
     // 1. Free preview lessons (e.g. 1st & 2nd lessons of Section 1) are always open
@@ -347,8 +328,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         openModal: () => setIsModalOpen(true),
         closeModal: () => setIsModalOpen(false),
         isAdmin,
-        adminPreview,
-        setAdminPreview,
         studentProgress,
         studentProgressLoading,
         refreshStudentProgress,
