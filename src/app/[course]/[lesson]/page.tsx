@@ -9,9 +9,8 @@ import { LessonClientGate } from "@/components/LessonClientGate";
 import { T } from "@/components/LanguageProvider";
 import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
-import { lessonDisplay } from "@/lib/courses";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
-import type { Block } from "@/lib/types";
+import type { Block, ReadingSentence } from "@/lib/types";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
@@ -129,6 +128,7 @@ export default async function LessonPage({
     isScript,
     course,
     ldEnglishScript,
+    lesson.readingSentences ?? pairLesson?.readingSentences,
   );
 
   return (
@@ -344,6 +344,7 @@ function extractSentencesForAudio(
   isScript: boolean,
   course: string,
   ldEnglishScript?: { n: string; ko: string; en: string }[] | null,
+  readingSentences?: ReadingSentence[] | null,
 ): string[] {
   let targetBlocks = isScript && pairBlocks && pairBlocks.length > 0 ? pairBlocks : blocks;
 
@@ -358,6 +359,13 @@ function extractSentencesForAudio(
       const hintWords = hints.text.split(/[.,]/).map((w) => cleanText(w)).filter(Boolean);
       if (hintWords.length > 0) return hintWords;
     }
+  }
+
+  // READING passages are already restored as canonical 1:1 sentence pairs.
+  // Using only the first legacy instruction block made the top player show
+  // 1/1 and stop after a fragment even when the passage contained 5-10 lines.
+  if (course === "reading" && readingSentences?.length) {
+    return readingSentences.map((sentence) => cleanText(sentence.english)).filter(Boolean);
   }
 
   // Phonics / VOCA course: extract from wordgrid

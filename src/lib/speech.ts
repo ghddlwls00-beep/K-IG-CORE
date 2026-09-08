@@ -746,6 +746,7 @@ function playUnifiedClip(
   clean: string,
   options: SpeakOptions,
   runToken: number,
+  onUnavailable: () => void,
 ): boolean {
   if (!shouldUseUnifiedSpeech()) return false;
   const audio = getSharedAudio();
@@ -768,7 +769,7 @@ function playUnifiedClip(
   emit({ speaking: true, paused: false, text: clean });
 
   let settled = false;
-  const failAvaPlayback = (error: unknown) => {
+  const failAvaPlayback = () => {
     if (settled || runToken !== token) return;
     settled = true;
     audio.onended = null;
@@ -780,10 +781,14 @@ function playUnifiedClip(
     } catch {
       // Ignore cleanup failures; the Ava error is reported below.
     }
-    finishRun(
-      runToken,
-      error instanceof Error ? error : new Error("Ava audio playback failed"),
-    );
+    // A missing/corrupt Ava file must not abort the whole sentence queue.
+    // Continue this same item through the browser/stream fallback so its
+    // onEnd handler can advance to every remaining sentence.
+    active = null;
+    stopKeepAlive();
+    clearWatchdog();
+    manuallyPaused = false;
+    if (runToken === token) onUnavailable();
   };
 
   // The one-time mobile warm-up briefly lowers the shared element's volume.
@@ -801,7 +806,7 @@ function playUnifiedClip(
     settled = true;
     finishRun(runToken);
   };
-  audio.onerror = () => failAvaPlayback(new Error("Ava audio file could not be loaded"));
+  audio.onerror = failAvaPlayback;
 
   try {
     const playback = audio.play();
@@ -817,8 +822,8 @@ function playUnifiedClip(
         })
         .catch(failAvaPlayback);
     }
-  } catch (error) {
-    failAvaPlayback(error);
+  } catch {
+    failAvaPlayback();
   }
 
   return true;
@@ -984,7 +989,7 @@ function speakWithToken(text: string, options: SpeakOptions, runToken: number) {
     runCurrentChunk(runToken);
   };
 
-  if (!playUnifiedClip(clean, options, runToken)) {
+  if (!playUnifiedClip(clean, options, runToken, startLegacyEngine)) {
     startLegacyEngine();
   }
 }
