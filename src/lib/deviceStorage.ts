@@ -178,6 +178,13 @@ async function loadRecord(key: string): Promise<LicenseDeviceRecord | null> {
   return loadLocalRecords()[normalizedKey] ?? null;
 }
 
+/** Read one license record without listing the entire private bucket. */
+export async function getDeviceRecordForKey(
+  key: string,
+): Promise<LicenseDeviceRecord | null> {
+  return loadRecord(key);
+}
+
 async function saveRecord(record: LicenseDeviceRecord): Promise<void> {
   const config = getR2Config();
   if (config) {

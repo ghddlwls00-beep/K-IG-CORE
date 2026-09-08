@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { unregisterDeviceFromKey } from "@/lib/deviceStorage";
+import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
   try {
@@ -14,11 +15,21 @@ export async function POST(request: Request) {
     }
 
     const result = await unregisterDeviceFromKey(key, deviceId);
-    return NextResponse.json({
+    const response = NextResponse.json({
       success: true,
       registeredDevicesCount: result.devices.length,
       maxDevices: result.maxDevices,
     });
+    response.cookies.set({
+      name: LICENSE_SESSION_COOKIE_NAME,
+      value: "",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 0,
+    });
+    return response;
   } catch (err) {
     console.error("License deactivation API error:", err);
     return NextResponse.json(

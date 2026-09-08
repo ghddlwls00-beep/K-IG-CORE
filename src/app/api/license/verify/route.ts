@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyLicenseToken } from "@/lib/serverLicense";
-import { loadDeviceRecords } from "@/lib/deviceStorage";
+import { getDeviceRecordForKey } from "@/lib/deviceStorage";
+import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
   try {
@@ -56,9 +57,8 @@ export async function POST(request: Request) {
     }
 
     // 3. Database registration check: Is this device still registered in deviceStorage?
-    const records = await loadDeviceRecords();
     const normalizedKey = key.trim().toUpperCase();
-    const record = records[normalizedKey];
+    const record = await getDeviceRecordForKey(normalizedKey);
 
     // 4. Check if license has been revoked (e.g. customer refund)
     if (record?.isRevoked) {
@@ -90,11 +90,23 @@ export async function POST(request: Request) {
       }
     }
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       valid: true,
       plan,
       expiresAt,
     });
+    response.cookies.set({
+      name: LICENSE_SESSION_COOKIE_NAME,
+      value: token,
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: expiresAt
+        ? Math.max(1, Math.floor((expiresAt - Date.now()) / 1000))
+        : 365 * 24 * 60 * 60,
+    });
+    return response;
   } catch (err) {
     console.error("License verify API error:", err);
     return NextResponse.json(

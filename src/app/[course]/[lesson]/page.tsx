@@ -15,7 +15,7 @@ import type { Block } from "@/lib/types";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
-  return getAllLessonParams();
+  return getAllLessonParams().filter((item) => item.course !== "student");
 }
 
 export async function generateMetadata({

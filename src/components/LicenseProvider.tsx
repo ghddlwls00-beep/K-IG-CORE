@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import {
   getPlanLabel,
   isFreePreviewLesson,
@@ -33,6 +33,34 @@ interface LicenseContextType {
   isModalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
+  isAdmin: boolean;
+  adminPreview: number | "free" | null;
+  setAdminPreview: (mode: number | "free" | "full") => Promise<void>;
+  studentProgress: StudentProgressSnapshot | null;
+  studentProgressLoading: boolean;
+  refreshStudentProgress: () => Promise<StudentProgressSnapshot | null>;
+  applyStudentProgress: (progress: StudentProgressSnapshot) => void;
+}
+
+export interface StudentChapterSnapshot {
+  chapter: number;
+  label: string;
+  lessonIds: string[];
+  completedCount: number;
+  requiredCount: number;
+  percent: number;
+  lastLessonCompleted: boolean;
+  complete: boolean;
+  unlocked: boolean;
+}
+
+export interface StudentProgressSnapshot {
+  version: number;
+  lessons: Record<string, { completed: boolean; updatedAt: number }>;
+  unlockedThrough: number;
+  lastLessonId?: string;
+  updatedAt: number;
+  chapters: StudentChapterSnapshot[];
 }
 
 const LicenseContext = createContext<LicenseContextType | null>(null);
@@ -47,6 +75,27 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     name: "기기 확인 중...",
   });
   const [clock, setClock] = useState(0);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [adminPreview, setAdminPreviewState] = useState<number | "free" | null>(null);
+  const [studentProgress, setStudentProgress] = useState<StudentProgressSnapshot | null>(null);
+  const [studentProgressLoading, setStudentProgressLoading] = useState(false);
+
+  const checkAdmin = useCallback(() => {
+    return fetch("/api/admin/check", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data) => {
+        setIsAdmin(Boolean(data.authenticated));
+        setAdminPreviewState(data.authenticated ? data.studentPreview ?? null : null);
+      })
+      .catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
+    void checkAdmin();
+    const onAuthChanged = () => void checkAdmin();
+    window.addEventListener("kig:admin-auth-changed", onAuthChanged);
+    return () => window.removeEventListener("kig:admin-auth-changed", onAuthChanged);
+  }, [checkAdmin]);
 
   useEffect(() => {
     const updateClock = () => setClock(Date.now());
@@ -70,19 +119,27 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
 
         // Verify stored license with server to prevent localStorage tampering
         if (parsed.token && parsed.key) {
+          const storedToken = parsed.token;
           fetch("/api/license/verify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               key: parsed.key,
               deviceId: dev.id,
-              token: parsed.token,
+              token: storedToken,
             }),
           })
             .then((res) => res.json())
             .then((data) => {
               if (data.valid) {
                 setStored(parsed);
+                if (window.location.pathname.startsWith("/student/")) {
+                  const reloadKey = `kig:license-cookie:${storedToken.slice(-16)}`;
+                  if (!window.sessionStorage.getItem(reloadKey)) {
+                    window.sessionStorage.setItem(reloadKey, "1");
+                    window.location.reload();
+                  }
+                }
               } else {
                 console.warn("Server rejected license:", data.error);
                 window.localStorage.removeItem(STORAGE_KEY);
@@ -108,6 +165,37 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const isExpired = Boolean(clock > 0 && stored?.expiresAt && stored.expiresAt < clock);
   const hasActiveLicense = Boolean(stored && !isExpired && stored.token);
 
+  const refreshStudentProgress = useCallback(async (): Promise<StudentProgressSnapshot | null> => {
+    setStudentProgressLoading(true);
+    try {
+      const response = await fetch("/api/progress/student", { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok || !data.success) return null;
+      setStudentProgress(data.progress);
+      return data.progress as StudentProgressSnapshot;
+    } catch {
+      return null;
+    } finally {
+      setStudentProgressLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (hasActiveLicense) void refreshStudentProgress();
+    else setStudentProgress(null);
+  }, [hasActiveLicense, refreshStudentProgress]);
+
+  async function setAdminPreview(mode: number | "free" | "full") {
+    const response = await fetch("/api/admin/student-preview", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode }),
+    });
+    if (!response.ok) throw new Error("관리자 미리보기 설정에 실패했습니다.");
+    setAdminPreviewState(mode === "full" ? null : mode);
+    window.location.reload();
+  }
+
   const licenseInfo: LicenseInfo | null = stored
     ? {
         key: stored.key,
@@ -128,6 +216,14 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     sectionIndex?: number,
     lessonIndex?: number,
   ): boolean {
+    if (courseSlug === "student" && isAdmin) {
+      if (adminPreview === "free") {
+        return isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex);
+      }
+      const match = lessonId.match(/^s(\d+)-/);
+      return adminPreview === null || (match ? Number(match[1]) <= adminPreview : false);
+    }
+
     // 1. Free preview lessons (e.g. 1st & 2nd lessons of Section 1) are always open
     if (isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex)) {
       return true;
@@ -136,6 +232,11 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     // 2. Requires active, non-expired license
     if (!hasActiveLicense || !stored) {
       return false;
+    }
+
+    if (courseSlug === "student") {
+      const match = lessonId.match(/^s(\d+)-/);
+      return Boolean(match && Number(match[1]) <= (studentProgress?.unlockedThrough || 1));
     }
 
     // 3. STUDENT-only pass grants access exclusively to the student course
@@ -190,6 +291,9 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       try {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(newStored));
         setStored(newStored);
+        window.setTimeout(() => {
+          if (window.location.pathname.startsWith("/student")) window.location.reload();
+        }, 250);
         return {
           success: true,
           message: `${getPlanLabel(data.plan)}이 성공적으로 등록되었습니다! (기기 등록 현황: ${data.registeredDevicesCount || 1}/${data.maxDevices || 2}대)`,
@@ -242,6 +346,13 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         isModalOpen,
         openModal: () => setIsModalOpen(true),
         closeModal: () => setIsModalOpen(false),
+        isAdmin,
+        adminPreview,
+        setAdminPreview,
+        studentProgress,
+        studentProgressLoading,
+        refreshStudentProgress,
+        applyStudentProgress: setStudentProgress,
       }}
     >
       {children}

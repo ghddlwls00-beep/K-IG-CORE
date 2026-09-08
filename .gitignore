@@ -22,6 +22,7 @@
 
 # Runtime-only license/device records. Production uses private Cloudflare R2.
 /data/license-devices.json
+/data/student-progress.json
 
 # misc
 .DS_Store

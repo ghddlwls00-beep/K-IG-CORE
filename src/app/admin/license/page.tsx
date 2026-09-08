@@ -34,6 +34,13 @@ interface DeviceRecordMap {
   };
 }
 
+interface AdminStudentProgress {
+  unlockedThrough: number;
+  completedLessons: number;
+  lastLessonId?: string;
+  updatedAt: number;
+}
+
 export default function AdminLicensePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
@@ -54,6 +61,9 @@ export default function AdminLicensePage() {
   // Device registration records loaded from server
   const [deviceRecords, setDeviceRecords] = useState<DeviceRecordMap>({});
   const [isRefreshingDevices, setIsRefreshingDevices] = useState(false);
+  const [openProgressKey, setOpenProgressKey] = useState<string | null>(null);
+  const [studentProgressByKey, setStudentProgressByKey] = useState<Record<string, AdminStudentProgress>>({});
+  const [progressLoadingKey, setProgressLoadingKey] = useState<string | null>(null);
 
   // Check server-side admin session on mount
   useEffect(() => {
@@ -125,6 +135,7 @@ export default function AdminLicensePage() {
       if (data.success) {
         setIsAuthenticated(true);
         setPinInput("");
+        window.dispatchEvent(new Event("kig:admin-auth-changed"));
       } else {
         setPinError(true);
         setLoginErrorMessage(data.error || "관리자 인증에 실패했습니다.");
@@ -145,6 +156,7 @@ export default function AdminLicensePage() {
     }
     setIsAuthenticated(false);
     setDeviceRecords({});
+    window.dispatchEvent(new Event("kig:admin-auth-changed"));
   }
 
   async function handleGenerate() {
@@ -321,6 +333,35 @@ export default function AdminLicensePage() {
     } catch {
       alert("서버 통신 오류가 발생했습니다.");
     }
+  }
+
+  async function requestStudentProgress(
+    key: string,
+    action = "get",
+    extra: Record<string, unknown> = {},
+  ) {
+    setProgressLoadingKey(key);
+    try {
+      const response = await fetch("/api/admin/student-progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key, action, ...extra }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) throw new Error(data.error || "진도 처리 실패");
+      setStudentProgressByKey((previous) => ({ ...previous, [key]: data.progress }));
+      setOpenProgressKey(key);
+    } catch (error) {
+      alert(error instanceof Error ? error.message : "STUDENT 진도를 처리하지 못했습니다.");
+    } finally {
+      setProgressLoadingKey(null);
+    }
+  }
+
+  async function handleStudentProgressReset(key: string) {
+    if (!confirm("이 이용권의 STUDENT 진도를 모두 초기화할까요? 이 작업은 되돌릴 수 없습니다.")) return;
+    if (!confirm("마지막 확인입니다. 완료 기록과 챕터 해금 상태를 초기화합니다.")) return;
+    await requestStudentProgress(key, "reset");
   }
 
   return (
@@ -618,7 +659,8 @@ export default function AdminLicensePage() {
                 💡 <strong>고객 발송 안내 팁:</strong> 복사한 코드를 고객에게 문자나 메시지로 전달하실 때 아래와 같이 보내주시면 됩니다:
                 <div className="mt-1 font-mono text-[12px] bg-white/70 p-2.5 rounded border border-emerald-500/20 select-all leading-relaxed">
                   안녕하세요! K-IG 올패스 이용권 번호는 [{newlyGenerated[0]}] 입니다.<br />
-                  웹사이트 상단 [이용권 등록]에 코드를 입력하시면 모든 유료 레슨이 즉시 열립니다.<br />
+                  웹사이트 상단 [이용권 등록]에 코드를 입력하시면 이용하실 수 있습니다.<br />
+                  {selectedPlan.startsWith("STU") ? "STUDENT는 챕터별 학습 완료에 따라 다음 챕터가 순서대로 열립니다." : "STUDENT는 순차 해금되며, 다른 과정은 올패스 범위에 따라 이용할 수 있습니다."}<br />
                   (※ 본 이용권은 PC, 스마트폰 등 최대 {maxDevicesPerKey}대 기기까지 등록 가능합니다)
                 </div>
               </div>
@@ -748,6 +790,16 @@ export default function AdminLicensePage() {
                             {copiedKey === item.key ? "✓ 복사됨" : "코드 복사"}
                           </button>
 
+                          <button
+                            type="button"
+                            onClick={() => openProgressKey === item.key
+                              ? setOpenProgressKey(null)
+                              : void requestStudentProgress(item.key)}
+                            className="rounded-lg border border-blue-500/20 bg-blue-500/5 px-2.5 py-1 text-[11.5px] font-semibold text-blue-700 hover:bg-blue-500/15 cursor-pointer transition-colors"
+                          >
+                            {progressLoadingKey === item.key ? "불러오는 중..." : "STUDENT 진도"}
+                          </button>
+
                           {/* Test Register Button */}
                           {!record?.isRevoked && deviceCount === 0 && (
                             <button
@@ -815,6 +867,40 @@ export default function AdminLicensePage() {
                       ) : (
                         <div className="text-[11px] text-ink-faint flex items-center gap-1 pl-1">
                           <span>💡 고객이 홈페이지 상단 [이용권 등록]에 이 코드를 입력하면 실시간으로 1/{itemLimit}대로 변경됩니다.</span>
+                        </div>
+                      )}
+
+                      {openProgressKey === item.key && studentProgressByKey[item.key] && (
+                        <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-4 text-[12px] text-blue-950">
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap gap-x-4 gap-y-1">
+                              <strong>현재 챕터 {studentProgressByKey[item.key].unlockedThrough}까지 해금</strong>
+                              <span>완료 강의 {studentProgressByKey[item.key].completedLessons}/81</span>
+                              <span>마지막 학습 {studentProgressByKey[item.key].lastLessonId || "기록 없음"}</span>
+                              <span>저장 {new Date(studentProgressByKey[item.key].updatedAt).toLocaleString("ko-KR")}</span>
+                            </div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <label className="flex items-center gap-1.5">
+                                <span>수동 해금</span>
+                                <select
+                                  value={studentProgressByKey[item.key].unlockedThrough}
+                                  onChange={(event) => void requestStudentProgress(item.key, "setChapter", { chapter: Number(event.target.value) })}
+                                  className="rounded-lg border border-blue-200 bg-white px-2 py-1 font-semibold"
+                                >
+                                  {Array.from({ length: 20 }, (_, chapterIndex) => (
+                                    <option key={chapterIndex + 1} value={chapterIndex + 1}>챕터 {chapterIndex + 1}</option>
+                                  ))}
+                                </select>
+                              </label>
+                              <button
+                                type="button"
+                                onClick={() => void handleStudentProgressReset(item.key)}
+                                className="rounded-lg border border-red-300 bg-white px-2.5 py-1 font-semibold text-red-600 hover:bg-red-50"
+                              >
+                                진도 초기화
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>

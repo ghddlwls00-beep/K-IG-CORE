@@ -2,6 +2,7 @@ import "server-only";
 import crypto from "crypto";
 
 export const ADMIN_COOKIE_NAME = "kig_admin_session";
+export const ADMIN_PREVIEW_COOKIE_NAME = "kig_admin_student_preview";
 const SESSION_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 const COMPROMISED_ADMIN_PIN = "kig2026!";
@@ -105,6 +106,20 @@ export function verifyAdminSession(request: Request): boolean {
   const token = getSessionTokenFromRequest(request);
   if (!token) return false;
   return verifyAdminSessionToken(token);
+}
+
+export function getAdminStudentPreview(request: Request): number | "free" | null {
+  if (!verifyAdminSession(request)) return null;
+  const cookieHeader = request.headers.get("cookie") || "";
+  const match = cookieHeader
+    .split(";")
+    .map((item) => item.trim())
+    .find((item) => item.startsWith(`${ADMIN_PREVIEW_COOKIE_NAME}=`));
+  if (!match) return null;
+  const value = decodeURIComponent(match.substring(ADMIN_PREVIEW_COOKIE_NAME.length + 1));
+  if (value === "free") return "free";
+  const chapter = Number(value);
+  return Number.isInteger(chapter) && chapter >= 1 && chapter <= 20 ? chapter : null;
 }
 
 // In-memory rate limiter for brute-force protection

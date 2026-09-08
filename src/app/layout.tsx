@@ -6,6 +6,7 @@ import { LicenseModal } from "@/components/LicenseModal";
 import { TabBar } from "@/components/TabBar";
 import { KakaoTalkNoticeBanner } from "@/components/KakaoTalkNoticeBanner";
 import { NavigationScrollRestoration } from "@/components/NavigationScrollRestoration";
+import { AdminStudentModeBanner } from "@/components/AdminStudentModeBanner";
 import { getCourseTabMap, getTabs } from "@/lib/content";
 import "./globals.css";
 
@@ -47,14 +48,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="notranslate min-h-screen bg-surface text-ink antialiased" translate="no">
         <NavigationScrollRestoration />
         <LanguageProvider>
-          <ProgressProvider>
-            <LicenseProvider>
+          <LicenseProvider>
+            <ProgressProvider>
               <KakaoTalkNoticeBanner />
               <TabBar tabs={tabs} courseTabs={courseTabs} />
+              <AdminStudentModeBanner />
               <LicenseModal />
               {children}
-            </LicenseProvider>
-          </ProgressProvider>
+            </ProgressProvider>
+          </LicenseProvider>
         </LanguageProvider>
       </body>
     </html>

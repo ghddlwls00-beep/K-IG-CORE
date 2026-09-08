@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, memo, useCallback } from "react";
+import { useMemo, useState, memo, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
@@ -26,6 +26,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   isFree,
   hasCourseAccess,
   onToggleBookmark,
+  sequentialLock,
 }: {
   lesson: DashboardLessonItem;
   courseSlug: string;
@@ -35,6 +36,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   isFree: boolean;
   hasCourseAccess: boolean;
   onToggleBookmark: (courseSlug: string, lessonId: string) => void;
+  sequentialLock: boolean;
 }) {
   const pres = lesson.presentation;
 
@@ -66,7 +68,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
               {!isUnlocked ? (
                 <span className="inline-flex items-center gap-1 rounded-full border border-black/8 bg-black/[0.03] px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
                   <span>🔒</span>
-                  <span>{courseSlug === "student" ? "STUDENT" : "올패스"}</span>
+                  <span>{sequentialLock ? "이전 챕터 완료 필요" : courseSlug === "student" ? "STUDENT" : "올패스"}</span>
                 </span>
               ) : !hasCourseAccess && isFree ? (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
@@ -129,7 +131,9 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
             <span>
               {!isUnlocked
                 ? courseSlug === "student"
-                  ? "수강권 열람"
+                  ? sequentialLock
+                    ? "해금 조건 보기"
+                    : "수강권 열람"
                   : "올패스 열람"
                 : isFree && !hasCourseAccess
                   ? "무료 보기"
@@ -152,11 +156,25 @@ export function CourseDashboard({
   sections: DashboardSection[];
   totalLessons: number;
 }) {
-  const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked } = useProgress();
-  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked } = useLicense();
+  const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
+  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, isAdmin, adminPreview, studentProgress } = useLicense();
   const hasCourseAccess =
-    hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student");
+    (hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student")) ||
+    (courseSlug === "student" && isAdmin && adminPreview !== "free");
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
+  const [unlockNotice, setUnlockNotice] = useState<number | null>(null);
+  const previousUnlockedRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (courseSlug !== "student" || !studentProgress || isAdmin) return;
+    const previous = previousUnlockedRef.current;
+    previousUnlockedRef.current = studentProgress.unlockedThrough;
+    if (previous !== null && studentProgress.unlockedThrough > previous) {
+      setUnlockNotice(studentProgress.unlockedThrough);
+      const timer = window.setTimeout(() => setUnlockNotice(null), 5000);
+      return () => window.clearTimeout(timer);
+    }
+  }, [courseSlug, isAdmin, studentProgress]);
 
   const handleToggleBookmark = useCallback(
     (slug: string, id: string) => {
@@ -215,6 +233,11 @@ export function CourseDashboard({
 
   return (
     <div className="flex flex-col gap-8">
+      {unlockNotice && (
+        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-emerald-300 bg-white px-5 py-4 text-center text-[14px] font-bold text-emerald-700 shadow-xl" role="status">
+          🎉 챕터 {unlockNotice}가 열렸습니다.
+        </div>
+      )}
       {/* Course Progress Dashboard Card - Apple Glass / Clean Depth */}
       <div className="rounded-3xl border border-black/[0.06] bg-gradient-to-b from-white to-gray-50/70 p-4.5 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4 sm:gap-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -226,6 +249,14 @@ export function CourseDashboard({
             <h2 className="text-[17px] sm:text-[20px] font-bold text-ink tracking-tight mt-1">
               학습 진도율: <span className="text-emerald-600">{completedCount}</span> / {totalLessons}개 완료 <span className="text-ink-faint text-[14px] sm:text-[16px] font-normal">({progressPercent}%)</span>
             </h2>
+            {courseSlug === "student" && hasActiveLicense && !isAdmin && (
+              <p className="mt-1 text-[11.5px] text-ink-faint" aria-live="polite">
+                {studentSyncStatus === "saved" && "✓ 서버에 저장됨"}
+                {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중..."}
+                {studentSyncStatus === "pending" && "연결 복구 후 자동 저장 예정"}
+                {studentSyncStatus === "error" && "저장 실패 · 연결되면 자동으로 다시 시도합니다"}
+              </p>
+            )}
           </div>
 
           {/* Apple-style Segmented Control Filter Pills */}
@@ -309,6 +340,14 @@ export function CourseDashboard({
               const completedInSection = section.lessons.filter((l) =>
                 isCompleted(courseSlug, l.id),
               ).length;
+              const studentChapter = courseSlug === "student"
+                ? studentProgress?.chapters.find((item) => item.chapter === index + 1)
+                : undefined;
+              const chapterUnlocked = courseSlug !== "student" || section.lessons.some((lesson, lessonIdx) =>
+                checkUnlocked(courseSlug, lesson.id, index, lessonIdx),
+              );
+              const chapterComplete = Boolean(studentChapter?.complete);
+              const chapterPercent = studentChapter?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
 
               return (
                 <div
@@ -343,10 +382,32 @@ export function CourseDashboard({
                             </span>
                           )}
                         </span>
+                        {courseSlug === "student" && (
+                          <span className="mt-1 text-[11px] font-medium text-ink-soft">
+                            {!hasCourseAccess && index === 0
+                              ? "1·2강 무료 체험"
+                              : !chapterUnlocked
+                                ? `챕터 ${index} 완료 후 해금`
+                                : chapterComplete
+                                  ? "✓ 챕터 완료"
+                                  : `진행률 ${chapterPercent}%${studentChapter ? ` · 해금 기준 ${studentChapter.requiredCount}강 + 마지막 강의` : ""}`}
+                          </span>
+                        )}
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
+                      {courseSlug === "student" && (
+                        <span className={`rounded-full px-3 py-1 text-[11px] font-semibold ${
+                          chapterComplete
+                            ? "bg-emerald-100 text-emerald-700"
+                            : chapterUnlocked
+                              ? "bg-blue-50 text-blue-700"
+                              : "bg-black/[0.04] text-ink-faint"
+                        }`}>
+                          {chapterComplete ? "완료" : chapterUnlocked ? "학습 가능" : "🔒 잠금"}
+                        </span>
+                      )}
                       <span className="rounded-full border border-black/[0.06] bg-black/[0.02] px-3 py-1 text-[11.5px] font-medium text-ink-soft hidden sm:inline">
                         {isOpen ? "접기 ▲" : "펼치기 ▼"}
                       </span>
@@ -362,6 +423,7 @@ export function CourseDashboard({
                           const isStarred = isBookmarked(courseSlug, lesson.id);
                           const isFree = isFreePreviewLesson(courseSlug, lesson.id, index, lessonIdx);
                           const isUnlocked = checkUnlocked(courseSlug, lesson.id, index, lessonIdx);
+                          const sequentialLock = courseSlug === "student" && hasCourseAccess && !isUnlocked;
 
                           return (
                             <DashboardLessonCard
@@ -374,6 +436,7 @@ export function CourseDashboard({
                               isFree={isFree}
                               hasCourseAccess={hasCourseAccess}
                               onToggleBookmark={handleToggleBookmark}
+                              sequentialLock={sequentialLock}
                             />
                           );
                         })}

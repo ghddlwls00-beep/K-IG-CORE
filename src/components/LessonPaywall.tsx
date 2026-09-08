@@ -8,6 +8,8 @@ interface LessonPaywallProps {
   courseTitle?: string;
   lessonId: string;
   title?: string;
+  lockReason?: "license" | "progress";
+  chapter?: number;
 }
 
 export function LessonPaywall({
@@ -15,6 +17,8 @@ export function LessonPaywall({
   courseTitle = "코스",
   lessonId,
   title,
+  lockReason = "license",
+  chapter,
 }: LessonPaywallProps) {
   const { openModal, licenseInfo } = useLicense();
   const isStudentOnly = licenseInfo?.isStudentOnly;
@@ -28,7 +32,20 @@ export function LessonPaywall({
 
       {/* Main Text */}
       <div className="flex flex-col items-center gap-2.5 max-w-md">
-        {isStudentOnly ? (
+        {lockReason === "progress" ? (
+          <>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-blue-700">
+              순차 학습 잠금
+            </span>
+            <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
+              챕터 {chapter || "다음"}은 이전 챕터 완료 후 열립니다
+            </h2>
+            <p className="text-[13px] text-ink-soft leading-relaxed">
+              현재 학습 중인 챕터의 필수 강의 80%와 마지막 강의를 완료해 주세요.
+              <br className="hidden sm:inline" /> 조건을 충족하면 다음 챕터가 즉시 열립니다.
+            </p>
+          </>
+        ) : isStudentOnly ? (
           <>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-blue-600 dark:text-blue-400">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
@@ -72,7 +89,14 @@ export function LessonPaywall({
       </div>
 
       {/* Action Buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-2.5 w-full max-w-sm mt-1">
+      {lockReason === "progress" ? (
+        <Link
+          href="/student"
+          className="rounded-full bg-ink px-6 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all shadow-2xs"
+        >
+          현재 학습 챕터로 돌아가기
+        </Link>
+      ) : <div className="flex flex-wrap items-center justify-center gap-2.5 w-full max-w-sm mt-1">
         <button
           type="button"
           onClick={openModal}
@@ -88,7 +112,7 @@ export function LessonPaywall({
         >
           🛒 구매 안내
         </button>
-      </div>
+      </div>}
 
       {/* Secondary Back Navigation */}
       <div className="border-t border-line/60 pt-5 mt-1 flex flex-wrap items-center justify-center gap-3 text-[12px] text-ink-faint">

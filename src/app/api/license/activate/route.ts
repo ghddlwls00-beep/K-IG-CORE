@@ -5,6 +5,7 @@ import {
   validateLicenseKey,
 } from "@/lib/serverLicense";
 import { registerDeviceForKey } from "@/lib/deviceStorage";
+import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
   try {
@@ -67,7 +68,7 @@ export async function POST(request: Request) {
       expiresAt,
     );
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       success: true,
       plan: validation.plan,
       activatedAt: now,
@@ -76,6 +77,18 @@ export async function POST(request: Request) {
       registeredDevicesCount: regResult.devices.length,
       maxDevices: regResult.maxDevices,
     });
+    response.cookies.set({
+      name: LICENSE_SESSION_COOKIE_NAME,
+      value: licenseToken,
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: expiresAt
+        ? Math.max(1, Math.floor((expiresAt - now) / 1000))
+        : 365 * 24 * 60 * 60,
+    });
+    return response;
   } catch (err) {
     console.error("License activation API error:", err);
     return NextResponse.json(
