@@ -112,6 +112,14 @@ function collectTexts() {
     collectValue(JSON.parse(fs.readFileSync(file, "utf8")), "", raw);
   }
 
+  // Listening & Dictate renders its authentic English script from this
+  // supplemental file rather than from content/lessons, so it must be part
+  // of the same unified Ava inventory.
+  const ldScriptsFile = path.join(ROOT, "content", "ld_english_scripts.json");
+  if (fs.existsSync(ldScriptsFile)) {
+    collectValue(JSON.parse(fs.readFileSync(ldScriptsFile, "utf8")), "", raw);
+  }
+
   const dictionaryFile = path.join(ROOT, "content", "voca_dictionary.json");
   if (fs.existsSync(dictionaryFile)) {
     const dictionary = JSON.parse(fs.readFileSync(dictionaryFile, "utf8"));

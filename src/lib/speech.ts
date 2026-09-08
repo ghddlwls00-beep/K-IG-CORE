@@ -1151,13 +1151,10 @@ function playQueueItem(runToken: number) {
       },
       onError: (err) => {
         if (runToken !== token || queueToken !== runToken) return;
-        queueOptions.onError?.(err);
-        queueIndex += 1;
-        queueGapTimer = setTimeout(() => {
-          queueGapTimer = null;
-          if (runToken !== token || queueToken !== runToken) return;
-          playQueueItem(runToken);
-        }, 200);
+        const failed = queueOptions.onError;
+        resetQueue();
+        emit({ speaking: false, paused: false, index: -1, total: 0, text: null });
+        failed?.(err);
       },
     },
     runToken,
