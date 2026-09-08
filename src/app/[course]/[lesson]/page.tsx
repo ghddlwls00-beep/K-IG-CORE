@@ -55,7 +55,9 @@ export default async function LessonPage({
       }
     }
   }
-  const ldEnglishScript = course === "ld" ? getLdEnglishScript(id) : null;
+  const ldEnglishScript = course === "ld"
+    ? getLdEnglishScript(id) ?? (pair ? getLdEnglishScript(pair.id) : null)
+    : null;
 
   // Ultra-fast payload minimization: Extract ONLY the needed translations for this lesson (saving 120KB+ JSON payload per page)
   let menTranslations: Record<string, string> | null = null;
@@ -380,8 +382,8 @@ function extractSentencesForAudio(
   if (course !== "chinese") {
     const mainSent = blocks.find((b) => b.type === "sentences") as { type: "sentences"; items: { text: string }[] } | undefined;
     const pairSent = pairBlocks?.find((b) => b.type === "sentences") as { type: "sentences"; items: { text: string }[] } | undefined;
-    if (mainSent?.items?.[0]?.text && pairSent?.items?.[0]?.text) {
-      const mainIsEn = isEnglishText(mainSent.items[0].text);
+    if (pairSent?.items?.[0]?.text) {
+      const mainIsEn = Boolean(mainSent?.items?.[0]?.text && isEnglishText(mainSent.items[0].text));
       const pairIsEn = isEnglishText(pairSent.items[0].text);
       if (!mainIsEn && pairIsEn) {
         targetBlocks = pairBlocks!;
@@ -423,6 +425,15 @@ function extractSentencesForAudio(
         .filter(Boolean);
     }
   }
+
+  // Legacy speaking/listening courses store their full narration as a run of
+  // instruction/hints blocks. When the historical MP3 is unavailable, feed
+  // every English-bearing line to Ava instead of leaving the player silent.
+  const legacyNarration = targetBlocks
+    .filter((block) => block.type === "instruction" || block.type === "hints")
+    .map((block) => cleanText(block.text))
+    .filter((text) => /[A-Za-z\u3131-\u318e\u3400-\u9fff\uac00-\ud7a3]/u.test(text));
+  if (legacyNarration.length > 0) return legacyNarration;
 
   // 4. Any paragraphs
   const allParas = targetBlocks.filter((b) => b.type === "paragraph") as { type: "paragraph"; text: string }[];

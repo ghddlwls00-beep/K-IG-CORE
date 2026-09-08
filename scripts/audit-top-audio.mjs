@@ -6,6 +6,8 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const LESSONS_ROOT = path.join(ROOT, "content", "lessons");
 const AVA_ROOT = path.join(ROOT, "public", "audio", "azure-ava", "v1");
+const remoteArg = process.argv.find((arg) => arg.startsWith("--remote-base="));
+const REMOTE_BASE = remoteArg ? remoteArg.slice("--remote-base=".length).replace(/\/+$/, "") : "";
 const LD_SCRIPTS = JSON.parse(
   fs.readFileSync(path.join(ROOT, "content", "ld_english_scripts.json"), "utf8"),
 );
@@ -57,14 +59,22 @@ const lessons = lessonFiles(LESSONS_ROOT).map((file) => ({
   lesson: JSON.parse(fs.readFileSync(file, "utf8")),
 }));
 const byId = new Map(lessons.map(({ lesson }) => [`${lesson.course}:${lesson.id}`, lesson]));
+const pairedByTarget = new Map(
+  lessons
+    .filter(({ lesson }) => lesson.pairId)
+    .map(({ lesson }) => [`${lesson.course}:${lesson.pairId}`, lesson]),
+);
 
 function queueFor(lesson) {
-  const pair = lesson.pairId ? byId.get(`${lesson.course}:${lesson.pairId}`) : null;
+  const pair = lesson.pairId
+    ? byId.get(`${lesson.course}:${lesson.pairId}`)
+    : pairedByTarget.get(`${lesson.course}:${lesson.id}`);
   const pairBlocks = pair?.blocks;
   let target = lesson.variant === "script" && pairBlocks?.length ? pairBlocks : lesson.blocks;
 
-  if (lesson.course === "ld" && LD_SCRIPTS[lesson.id]?.length) {
-    return LD_SCRIPTS[lesson.id].map((item) => normalize(item.en)).filter(Boolean);
+  const ldScript = LD_SCRIPTS[lesson.id] || (pair ? LD_SCRIPTS[pair.id] : null);
+  if (lesson.course === "ld" && ldScript?.length) {
+    return ldScript.map((item) => normalize(item.en)).filter(Boolean);
   }
   const reading = lesson.readingSentences?.length ? lesson.readingSentences : pair?.readingSentences;
   if (lesson.course === "reading" && reading?.length) {
@@ -77,9 +87,10 @@ function queueFor(lesson) {
   if (lesson.course !== "chinese") {
     const main = lesson.blocks.find((block) => block.type === "sentences");
     const paired = pairBlocks?.find((block) => block.type === "sentences");
-    if (main?.items?.[0]?.text && paired?.items?.[0]?.text) {
-      if (!isEnglish(main.items[0].text) && isEnglish(paired.items[0].text)) target = pairBlocks;
-      else if (isEnglish(main.items[0].text)) target = lesson.blocks;
+    if (paired?.items?.[0]?.text) {
+      const mainIsEnglish = Boolean(main?.items?.[0]?.text && isEnglish(main.items[0].text));
+      if (!mainIsEnglish && isEnglish(paired.items[0].text)) target = pairBlocks;
+      else if (mainIsEnglish) target = lesson.blocks;
     }
   }
 
@@ -99,14 +110,47 @@ function queueFor(lesson) {
     if (usable.length) return usable;
   }
 
+
+  const legacyNarration = target
+    .filter((block) => block.type === "instruction" || block.type === "hints")
+    .map((block) => normalize(block.text))
+    .filter((text) => /[A-Za-z\u3131-\u318e\u3400-\u9fff\uac00-\ud7a3]/u.test(text));
+  if (legacyNarration.length) return legacyNarration;
+
   const paragraphs = target.filter((block) => block.type === "paragraph");
   return paragraphs.map((block) => normalize(block.text)).filter(Boolean);
 }
 
 const failures = [];
+const remoteChecks = [];
 const courseStats = new Map();
 let auditedLessons = 0;
 let queuedClips = 0;
+let originalTracks = 0;
+
+function topAudioFor(lesson) {
+  const deduped = (lesson.audio || []).filter(
+    (item, index, all) => all.findIndex((candidate) => candidate.src === item.src) === index,
+  );
+  if (lesson.course === "grammar1") {
+    const english =
+      deduped.find((item) => {
+        const match = item.src.match(/gh1-(\d+)/);
+        return match ? Number.parseInt(match[1], 10) % 2 !== 0 : false;
+      }) || deduped.at(-1);
+    return english ? [english] : [];
+  }
+  if (lesson.course === "middle" && deduped.length > 1) return [deduped[0]];
+  if (["man", "woman", "student", "chinese"].includes(lesson.course) && deduped.length > 1) {
+    return [];
+  }
+  return deduped;
+}
+
+function localPublicFile(src) {
+  if (!src || /^https?:\/\//i.test(src)) return null;
+  return path.join(ROOT, "public", src.replace(/^\/+/, ""));
+}
 
 for (const { file, lesson } of lessons) {
   if (lesson.course === "cnn") continue;
@@ -119,6 +163,20 @@ for (const { file, lesson } of lessons) {
   if (queue.length === 0 && lesson.audio?.length) stat.originalOnly += 1;
   courseStats.set(lesson.course, stat);
 
+  // Lessons without a sentence queue rely entirely on their original top MP3.
+  // Verify those files too, otherwise a missing legacy track would leave the
+  // player with no Ava fallback and no audible output.
+  if (queue.length === 0) {
+    for (const track of topAudioFor(lesson)) {
+      originalTracks += 1;
+      const audioFile = localPublicFile(track.src);
+      if (audioFile && (!fs.existsSync(audioFile) || fs.statSync(audioFile).size < 1_000)) {
+        if (REMOTE_BASE) remoteChecks.push({ source: path.relative(ROOT, file), src: track.src });
+        else failures.push(`${path.relative(ROOT, file)}: missing original ${track.src}`);
+      }
+    }
+  }
+
   if (lesson.course === "reading") {
     const expected = lesson.readingSentences?.length || 0;
     if (expected > 0 && queue.length !== expected) {
@@ -129,9 +187,33 @@ for (const { file, lesson } of lessons) {
   for (const text of queue) {
     const audioFile = path.join(AVA_ROOT, `${speechKey(text)}.mp3`);
     if (!fs.existsSync(audioFile) || fs.statSync(audioFile).size < 1_000) {
-      failures.push(`${path.relative(ROOT, file)}: missing Ava ${path.basename(audioFile)}`);
+      const src = `/audio/azure-ava/v1/${path.basename(audioFile)}`;
+      if (REMOTE_BASE) remoteChecks.push({ source: path.relative(ROOT, file), src });
+      else failures.push(`${path.relative(ROOT, file)}: missing Ava ${path.basename(audioFile)} (${JSON.stringify(text)})`);
     }
   }
+}
+
+if (REMOTE_BASE && remoteChecks.length) {
+  const unique = [...new Map(remoteChecks.map((item) => [item.src, item])).values()];
+  const workers = Array.from({ length: Math.min(24, unique.length) }, async () => {
+    while (unique.length) {
+      const item = unique.pop();
+      try {
+        const response = await fetch(`${REMOTE_BASE}${item.src}`, {
+          method: "HEAD",
+          signal: AbortSignal.timeout(30_000),
+        });
+        const size = Number(response.headers.get("content-length") || 0);
+        if (!response.ok || (size > 0 && size < 1_000)) {
+          failures.push(`${item.source}: remote ${response.status} ${item.src}`);
+        }
+      } catch (error) {
+        failures.push(`${item.source}: remote error ${item.src} (${error.message})`);
+      }
+    }
+  });
+  await Promise.all(workers);
 }
 
 console.log("=================================================");
@@ -139,6 +221,8 @@ console.log(" K-IG TOP AUDIO COMPLETE-QUEUE AUDIT (CNN 제외)");
 console.log("=================================================");
 console.log(`Audited lessons : ${auditedLessons.toLocaleString("en-US")}`);
 console.log(`Queued Ava clips: ${queuedClips.toLocaleString("en-US")}`);
+console.log(`Original tracks : ${originalTracks.toLocaleString("en-US")}`);
+if (REMOTE_BASE) console.log(`Remote checks   : ${remoteChecks.length.toLocaleString("en-US")}`);
 for (const [course, stat] of [...courseStats].sort(([a], [b]) => a.localeCompare(b))) {
   console.log(`${course.padEnd(10)} lessons=${String(stat.lessons).padStart(4)} clips=${String(stat.queued).padStart(5)} original-only=${String(stat.originalOnly).padStart(4)}`);
 }
