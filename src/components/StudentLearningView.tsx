@@ -17,6 +17,7 @@ import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 import { generateWordBank, verifyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
+import { useProgress } from "@/components/ProgressProvider";
 
 interface StudentLearningViewProps {
   blocks: Block[];
@@ -43,6 +44,9 @@ export function StudentLearningView({
   audioTracks = [],
   chunkDrills = [],
 }: StudentLearningViewProps) {
+  const lessonId = lessonKey.split("/").pop() || lessonKey;
+  const { isCompleted, toggleComplete } = useProgress();
+  const lessonCompleted = isCompleted("student", lessonId);
   // Extract sentences and paired Korean paragraphs
   const sentBlock = blocks.find((b) => b.type === "sentences") as
     | { type: "sentences"; items: { n: string; text: string }[] }
@@ -1185,6 +1189,37 @@ export function StudentLearningView({
             ))}
           </div>
         </div>
+      )}
+
+      {studyMode === "shadowing" && (
+        <section className="rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.04] p-4 sm:p-5 shadow-2xs">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-1">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">
+                Step 3 학습 마무리
+              </span>
+              <h3 className="text-[15px] font-bold text-ink">
+                섀도잉과 낭독을 마쳤다면 이 강의를 완료하세요.
+              </h3>
+              <p className="text-[12.5px] text-ink-soft">
+                문장 연습 {completedCount}/{sentenceItems.length} · 완료 기록은 진도율과 다음 챕터 해금에 반영됩니다.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => toggleComplete("student", lessonId)}
+              aria-label={lessonCompleted ? "학습 완료 취소" : "학습 완료 체크"}
+              className={`flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl px-5 py-3 text-[13px] font-bold transition-all cursor-pointer active:scale-[0.98] ${
+                lessonCompleted
+                  ? "border border-emerald-600 bg-emerald-600 text-white shadow-xs"
+                  : "border border-ink bg-ink text-surface shadow-xs hover:opacity-90"
+              }`}
+            >
+              <span>{lessonCompleted ? "✓" : "○"}</span>
+              <span>{lessonCompleted ? "학습 완료됨" : "이 강의 학습 완료"}</span>
+            </button>
+          </div>
+        </section>
       )}
     </div>
   );

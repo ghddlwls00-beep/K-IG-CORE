@@ -5,6 +5,7 @@ import { AudioPlayer } from "@/components/AudioPlayer";
 import { LessonBody } from "@/components/LessonBody";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
+import { LessonStepNavigation } from "@/components/LessonStepNavigation";
 import { LessonClientGate } from "@/components/LessonClientGate";
 import { T } from "@/components/LanguageProvider";
 import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
@@ -170,34 +171,9 @@ export default async function LessonPage({
       </nav>
 
       <header className="mb-6 sm:mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>
-        <div className="mb-2.5 sm:mb-3 flex flex-wrap items-center gap-2 sm:gap-2.5 font-mono text-[11px] tracking-wide text-ink-faint">
-          <span className="uppercase font-semibold tracking-wider text-ink-soft">{tab?.label}</span>
-          <span aria-hidden>·</span>
-          <span className="font-mono font-semibold text-primary">{pres.code}</span>
-          <span aria-hidden>·</span>
-          <span className="tabular-nums">{lesson.id}</span>
-          {pres.badge && (
-            <span className="rounded-md bg-raised px-1.5 py-0.5 text-[10px] font-medium text-ink-soft">
-              {pres.badge}
-            </span>
-          )}
-          {isScript ? (
-            <span className="border border-line px-1.5 py-0.5 tracking-wide uppercase bg-raised rounded-xs">
-              <T k="lesson.koreanScript" />
-            </span>
-          ) : null}
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <h1 className="text-[1.5rem] sm:text-[1.85rem] leading-snug font-bold tracking-tight text-balance text-ink">
-            {pres.title}
-          </h1>
-          {pres.subtitle && (
-            <p className="text-[13.5px] sm:text-[14px] font-medium text-ink-soft">
-              {pres.subtitle}
-            </p>
-          )}
-        </div>
+        <h1 className="text-[1.5rem] sm:text-[1.85rem] leading-snug font-bold tracking-tight text-balance text-ink">
+          {pres.title}
+        </h1>
       </header>
 
       <LessonClientGate
@@ -272,39 +248,7 @@ export default async function LessonPage({
         )}
       </LessonClientGate>
 
-      {/* Bottom Navigation Bar for Effortless Mobile Progression */}
-      <nav aria-label="Lesson pagination" className="mt-12 sm:mt-16 flex items-center justify-between gap-3 border-t border-line pt-6 pb-2">
-        {prev ? (
-          <Link
-            href={`/${course}/${prev.id}`}
-            scroll={true}
-            className="flex items-center gap-1.5 sm:gap-2 rounded-xl border border-line bg-surface px-3.5 sm:px-4 py-2.5 text-[12px] sm:text-[13px] font-medium text-ink hover:bg-raised transition-colors shadow-2xs cursor-pointer active:scale-95"
-          >
-            <span>← 이전 ({prev.id})</span>
-          </Link>
-        ) : (
-          <div />
-        )}
-
-        <Link
-          href={`/${course}`}
-          className="rounded-lg px-2.5 py-1.5 font-mono text-[11.5px] sm:text-[12px] text-ink-soft hover:text-ink transition-colors"
-        >
-          목록으로
-        </Link>
-
-        {next ? (
-          <Link
-            href={`/${course}/${next.id}`}
-            scroll={true}
-            className="flex items-center gap-1.5 sm:gap-2 rounded-xl bg-ink px-4 sm:px-5 py-2.5 text-[12px] sm:text-[13px] font-semibold text-surface hover:opacity-90 transition-all shadow-xs cursor-pointer active:scale-95"
-          >
-            <span>다음 ({next.id}) →</span>
-          </Link>
-        ) : (
-          <div />
-        )}
-      </nav>
+      <LessonStepNavigation courseHref={`/${course}`} />
 
       <footer className="mt-8 border-t border-line/60 pt-4">
         <p className="font-mono text-[10.5px] text-ink-faint">

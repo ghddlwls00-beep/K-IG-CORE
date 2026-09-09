@@ -7,10 +7,6 @@ import { LessonPaywall } from "@/components/LessonPaywall";
 import { getAllLessonParams, getLesson } from "@/lib/content";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
 import {
-  ADMIN_COOKIE_NAME,
-  verifyAdminSessionToken,
-} from "@/lib/adminAuth";
-import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
 } from "@/lib/licenseSession";
@@ -44,21 +40,21 @@ export default async function StudentLessonPage({
   const pres = formatLessonPresentation("student", lesson);
   const cookieStore = await cookies();
   const isFree = id === "s1-1" || id === "s1-2";
-  const adminToken = cookieStore.get(ADMIN_COOKIE_NAME)?.value;
-  const isAdmin = Boolean(adminToken && verifyAdminSessionToken(adminToken));
   const lessonChapter = Number(id.match(/^s(\d+)-/)?.[1] || 0);
 
   let accessAllowed = isFree;
   let sequentialLock = false;
-  if (isAdmin) {
-    accessAllowed = true;
-  } else if (!isFree) {
+  if (!isFree) {
     const session = await verifyLicenseSessionToken(
       cookieStore.get(LICENSE_SESSION_COOKIE_NAME)?.value,
     );
     if (session) {
-      const progress = await getStudentProgress(session.payload.key);
-      accessAllowed = isStudentLessonUnlocked(id, progress);
+      if (session.payload.plan === "LIFE") {
+        accessAllowed = true;
+      } else {
+        const progress = await getStudentProgress(session.payload.key);
+        accessAllowed = isStudentLessonUnlocked(id, progress);
+      }
       sequentialLock = !accessAllowed;
     }
   }
@@ -70,8 +66,7 @@ export default async function StudentLessonPage({
           <Link href="/student" className="text-ink-soft hover:text-ink">← STUDENT</Link>
         </nav>
         <header className="mb-6 sm:mb-8">
-          <p className="font-mono text-[11px] font-semibold text-primary">{pres.code}</p>
-          <h1 className="mt-2 text-[1.5rem] sm:text-[1.85rem] font-bold text-ink">{pres.title}</h1>
+          <h1 className="text-[1.5rem] sm:text-[1.85rem] font-bold text-ink">{pres.title}</h1>
         </header>
         <LessonPaywall
           courseSlug="student"

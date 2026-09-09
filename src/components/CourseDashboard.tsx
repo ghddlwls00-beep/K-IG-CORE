@@ -157,16 +157,15 @@ export function CourseDashboard({
   totalLessons: number;
 }) {
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
-  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, isAdmin, studentProgress } = useLicense();
+  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress } = useLicense();
   const hasCourseAccess =
-    (hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student")) ||
-    (courseSlug === "student" && isAdmin);
+    hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student");
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
   const [unlockNotice, setUnlockNotice] = useState<number | null>(null);
   const previousUnlockedRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (courseSlug !== "student" || !studentProgress || isAdmin) return;
+    if (courseSlug !== "student" || !studentProgress || licenseInfo?.plan === "LIFE") return;
     const previous = previousUnlockedRef.current;
     previousUnlockedRef.current = studentProgress.unlockedThrough;
     if (previous !== null && studentProgress.unlockedThrough > previous) {
@@ -174,7 +173,7 @@ export function CourseDashboard({
       const timer = window.setTimeout(() => setUnlockNotice(null), 5000);
       return () => window.clearTimeout(timer);
     }
-  }, [courseSlug, isAdmin, studentProgress]);
+  }, [courseSlug, licenseInfo?.plan, studentProgress]);
 
   const handleToggleBookmark = useCallback(
     (slug: string, id: string) => {
@@ -249,7 +248,7 @@ export function CourseDashboard({
             <h2 className="text-[17px] sm:text-[20px] font-bold text-ink tracking-tight mt-1">
               학습 진도율: <span className="text-emerald-600">{completedCount}</span> / {totalLessons}개 완료 <span className="text-ink-faint text-[14px] sm:text-[16px] font-normal">({progressPercent}%)</span>
             </h2>
-            {courseSlug === "student" && hasActiveLicense && !isAdmin && (
+            {courseSlug === "student" && hasActiveLicense && (
               <p className="mt-1 text-[11.5px] text-ink-faint" aria-live="polite">
                 {studentSyncStatus === "saved" && "✓ 서버에 저장됨"}
                 {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중..."}
@@ -343,9 +342,12 @@ export function CourseDashboard({
               const studentChapter = courseSlug === "student"
                 ? studentProgress?.chapters.find((item) => item.chapter === index + 1)
                 : undefined;
-              const chapterUnlocked = courseSlug !== "student" || section.lessons.some((lesson, lessonIdx) =>
-                checkUnlocked(courseSlug, lesson.id, index, lessonIdx),
-              );
+              const chapterUnlocked = courseSlug !== "student"
+                || (!hasCourseAccess
+                  ? index === 0
+                  : section.lessons.some((lesson, lessonIdx) =>
+                      checkUnlocked(courseSlug, lesson.id, index, lessonIdx),
+                    ));
               const chapterComplete = Boolean(studentChapter?.complete);
               const chapterPercent = studentChapter?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
 

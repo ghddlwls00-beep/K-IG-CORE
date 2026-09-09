@@ -660,7 +660,11 @@ export default function AdminLicensePage() {
                 <div className="mt-1 font-mono text-[12px] bg-white/70 p-2.5 rounded border border-emerald-500/20 select-all leading-relaxed">
                   안녕하세요! K-IG 올패스 이용권 번호는 [{newlyGenerated[0]}] 입니다.<br />
                   웹사이트 상단 [이용권 등록]에 코드를 입력하시면 이용하실 수 있습니다.<br />
-                  {selectedPlan.startsWith("STU") ? "STUDENT는 챕터별 학습 완료에 따라 다음 챕터가 순서대로 열립니다." : "STUDENT는 순차 해금되며, 다른 과정은 올패스 범위에 따라 이용할 수 있습니다."}<br />
+                  {selectedPlan === "LIFE"
+                    ? "평생 VIP 올패스는 STUDENT 전 강의를 포함한 모든 과정을 즉시 열람할 수 있습니다."
+                    : selectedPlan.startsWith("STU")
+                      ? "STUDENT는 챕터별 학습 완료에 따라 다음 챕터가 순서대로 열립니다."
+                      : "STUDENT는 순차 해금되며, 다른 과정은 올패스 범위에 따라 이용할 수 있습니다."}<br />
                   (※ 본 이용권은 PC, 스마트폰 등 최대 {maxDevicesPerKey}대 기기까지 등록 가능합니다)
                 </div>
               </div>

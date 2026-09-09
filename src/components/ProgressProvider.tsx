@@ -55,7 +55,6 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const {
     hasActiveLicense,
     licenseInfo,
-    isAdmin,
     studentProgress,
     applyStudentProgress,
   } = useLicense();
@@ -68,7 +67,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const flushTimerRef = useRef<number | null>(null);
 
   const flushStudentUpdates = useCallback(async () => {
-    if (!hasActiveLicense || isAdmin || pendingRef.current.length === 0) return;
+    if (!hasActiveLicense || pendingRef.current.length === 0) return;
     const updates = pendingRef.current.slice(0, 100);
     setStudentSyncStatus("syncing");
     try {
@@ -86,7 +85,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     } catch {
       setStudentSyncStatus(navigator.onLine ? "error" : "pending");
     }
-  }, [applyStudentProgress, hasActiveLicense, isAdmin]);
+  }, [applyStudentProgress, hasActiveLicense]);
 
   const queueStudentUpdate = useCallback((update: StudentPendingUpdate) => {
     const identity = update.lessonId
@@ -159,15 +158,15 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   }, [studentProgress]);
 
   useEffect(() => {
-    if (!hasActiveLicense || isAdmin) return;
+    if (!hasActiveLicense) return;
     const onOnline = () => void flushStudentUpdates();
     window.addEventListener("online", onOnline);
     if (pendingRef.current.length) void flushStudentUpdates();
     return () => window.removeEventListener("online", onOnline);
-  }, [flushStudentUpdates, hasActiveLicense, isAdmin]);
+  }, [flushStudentUpdates, hasActiveLicense]);
 
   useEffect(() => {
-    if (!hasActiveLicense || !studentProgress || isAdmin) return;
+    if (!hasActiveLicense || !studentProgress) return;
     const legacyIds = legacyStudentIdsRef.current;
     if (!legacyIds.length) return;
     const marker = `kig:student:migrated:${licenseInfo?.key.slice(-16) || "active"}`;
@@ -185,7 +184,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           applyStudentProgress(data.progress);
         }
       });
-  }, [applyStudentProgress, hasActiveLicense, isAdmin, licenseInfo?.key, studentProgress]);
+  }, [applyStudentProgress, hasActiveLicense, licenseInfo?.key, studentProgress]);
 
   const isCompleted = useCallback(
     (course: string, lessonId: string) => {
@@ -251,11 +250,11 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       } catch {
         // ignore
       }
-      if (course === "student" && hasActiveLicense && !isAdmin) {
+      if (course === "student" && hasActiveLicense) {
         queueStudentUpdate({ lastLessonId: lessonId, clientUpdatedAt: Date.now() });
       }
     },
-    [hasActiveLicense, isAdmin, queueStudentUpdate]
+    [hasActiveLicense, queueStudentUpdate]
   );
 
   const getCourseCompletedCount = useCallback(

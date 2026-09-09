@@ -43,26 +43,28 @@ export function LessonActionButtons({
         <span>{bookmarked ? "북마크됨" : "북마크"}</span>
       </button>
 
-      {/* Complete Button */}
-      <button
-        type="button"
-        onClick={() => toggleComplete(course, lessonId)}
-        aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
-        className={`flex items-center gap-1 sm:gap-1.5 rounded-lg border px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-[12px] font-medium transition-all cursor-pointer shrink-0 ${
-          completed
-            ? "border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-bold shadow-2xs"
-            : "border-line bg-surface text-ink-soft hover:border-line-strong hover:text-ink"
-        }`}
-      >
-        <span
-          className={`flex h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] font-bold ${
-            completed ? "bg-emerald-600 text-white" : "border border-ink-soft/40"
+      {/* STUDENT completion lives at the end of Step 3, after the learning flow. */}
+      {course !== "student" && (
+        <button
+          type="button"
+          onClick={() => toggleComplete(course, lessonId)}
+          aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
+          className={`flex items-center gap-1 sm:gap-1.5 rounded-lg border px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-[12px] font-medium transition-all cursor-pointer shrink-0 ${
+            completed
+              ? "border-emerald-500 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 font-bold shadow-2xs"
+              : "border-line bg-surface text-ink-soft hover:border-line-strong hover:text-ink"
           }`}
         >
-          {completed ? "✓" : ""}
-        </span>
-        <span>{completed ? "학습 완료" : "완료 체크"}</span>
-      </button>
+          <span
+            className={`flex h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] font-bold ${
+              completed ? "bg-emerald-600 text-white" : "border border-ink-soft/40"
+            }`}
+          >
+            {completed ? "✓" : ""}
+          </span>
+          <span>{completed ? "학습 완료" : "완료 체크"}</span>
+        </button>
+      )}
     </div>
   );
 }

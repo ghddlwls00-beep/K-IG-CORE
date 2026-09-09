@@ -33,7 +33,6 @@ interface LicenseContextType {
   isModalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
-  isAdmin: boolean;
   studentProgress: StudentProgressSnapshot | null;
   studentProgressLoading: boolean;
   refreshStudentProgress: () => Promise<StudentProgressSnapshot | null>;
@@ -73,25 +72,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     name: "기기 확인 중...",
   });
   const [clock, setClock] = useState(0);
-  const [isAdmin, setIsAdmin] = useState(false);
   const [studentProgress, setStudentProgress] = useState<StudentProgressSnapshot | null>(null);
   const [studentProgressLoading, setStudentProgressLoading] = useState(false);
-
-  const checkAdmin = useCallback(() => {
-    return fetch("/api/admin/check", { cache: "no-store" })
-      .then((response) => response.json())
-      .then((data) => {
-        setIsAdmin(Boolean(data.authenticated));
-      })
-      .catch(() => undefined);
-  }, []);
-
-  useEffect(() => {
-    void checkAdmin();
-    const onAuthChanged = () => void checkAdmin();
-    window.addEventListener("kig:admin-auth-changed", onAuthChanged);
-    return () => window.removeEventListener("kig:admin-auth-changed", onAuthChanged);
-  }, [checkAdmin]);
 
   useEffect(() => {
     const updateClock = () => setClock(Date.now());
@@ -201,10 +183,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     sectionIndex?: number,
     lessonIndex?: number,
   ): boolean {
-    if (courseSlug === "student" && isAdmin) {
-      return true;
-    }
-
     // 1. Free preview lessons (e.g. 1st & 2nd lessons of Section 1) are always open
     if (isFreePreviewLesson(courseSlug, lessonId, sectionIndex, lessonIndex)) {
       return true;
@@ -216,6 +194,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     }
 
     if (courseSlug === "student") {
+      if (stored.plan === "LIFE") return true;
       const match = lessonId.match(/^s(\d+)-/);
       return Boolean(match && Number(match[1]) <= (studentProgress?.unlockedThrough || 1));
     }
@@ -327,7 +306,6 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         isModalOpen,
         openModal: () => setIsModalOpen(true),
         closeModal: () => setIsModalOpen(false),
-        isAdmin,
         studentProgress,
         studentProgressLoading,
         refreshStudentProgress,
