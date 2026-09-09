@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Tailwind dark utilities follow the app's explicit theme, including a saved
+ * preference that differs from the device setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /*
  * A deliberately monochrome system. There is no accent colour anywhere: rank is
  * expressed with weight, size and spacing instead, which keeps 2,700 dense
@@ -32,6 +36,7 @@
 }
 
 :root {
+  color-scheme: light;
   /* High-End Luxury Aesthetic (Option 1): Warm Alabaster & Deep Obsidian Champagne */
   --surface: #FAF8F5;              /* Warm Luxury Alabaster Canvas */
   --raised: #FFFFFF;               /* Pure Crisp White Card Surface */
@@ -57,6 +62,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
   /* Midnight Obsidian & Burnished Gold for Dark Mode */
   --surface: #0E0E11;
   --raised: #17171C;
@@ -133,6 +139,7 @@ body {
   font-family: var(--font-sans);
   /* Momentum scrolling on iOS */
   -webkit-overflow-scrolling: touch;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
 /* Remove the blue tap flash on mobile browsers */

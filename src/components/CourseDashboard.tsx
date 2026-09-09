@@ -50,13 +50,13 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
       <div
         className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
           isDone
-            ? "border-emerald-500/30 bg-white shadow-2xs hover:border-emerald-500/60"
-            : "border-black/[0.06] bg-white shadow-2xs hover:border-black/20"
+            ? "border-emerald-500/30 bg-raised shadow-2xs hover:border-emerald-500/60"
+            : "border-line bg-raised shadow-2xs hover:border-line-strong"
         }`}
       >
         <div className="flex flex-col gap-1.5">
           <div className="flex items-center justify-between gap-1.5">
-            <span className="font-mono text-[11px] font-bold text-gray-900 tracking-wider">
+            <span className="font-mono text-[11px] font-bold text-ink tracking-wider">
               {pres.code}
             </span>
             <div className="flex items-center gap-1.5">
@@ -66,7 +66,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
                 </span>
               )}
               {!isUnlocked ? (
-                <span className="inline-flex items-center gap-1 rounded-full border border-black/8 bg-black/[0.03] px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
+                <span className="inline-flex items-center gap-1 rounded-full border border-line bg-sunken px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
                   <span>🔒</span>
                   <span>{sequentialLock ? "이전 챕터 완료 필요" : courseSlug === "student" ? "STUDENT" : "올패스"}</span>
                 </span>
@@ -77,7 +77,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
                 </span>
               ) : null}
               {pres.badge && (
-                <span className="rounded-full bg-black/[0.04] px-2 py-0.5 text-[10px] font-medium text-ink-soft">
+                <span className="rounded-full bg-sunken px-2 py-0.5 text-[10px] font-medium text-ink-soft">
                   {pres.badge}
                 </span>
               )}
@@ -109,7 +109,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
           <Link
             href={`/${courseSlug}/${lesson.id}`}
             scroll={true}
-            className="text-[14px] font-semibold leading-snug text-ink group-hover:text-black transition-colors focus:outline-none"
+            className="text-[14px] font-semibold leading-snug text-ink transition-colors focus:outline-none group-hover:opacity-75"
           >
             {pres.title}
           </Link>
@@ -121,7 +121,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-black/[0.05] pt-2.5 font-mono text-[10.5px] text-ink-faint">
+        <div className="flex items-center justify-between border-t border-line pt-2.5 font-mono text-[10.5px] text-ink-faint">
           <span className="tabular-nums">{lesson.id}</span>
           <Link
             href={`/${courseSlug}/${lesson.id}`}
@@ -233,12 +233,12 @@ export function CourseDashboard({
   return (
     <div className="flex flex-col gap-8">
       {unlockNotice && (
-        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-emerald-300 bg-white px-5 py-4 text-center text-[14px] font-bold text-emerald-700 shadow-xl" role="status">
+        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-emerald-500/30 bg-raised px-5 py-4 text-center text-[14px] font-bold text-emerald-600 shadow-xl dark:text-emerald-300" role="status">
           🎉 챕터 {unlockNotice}가 열렸습니다.
         </div>
       )}
       {/* Course Progress Dashboard Card - Apple Glass / Clean Depth */}
-      <div className="rounded-3xl border border-black/[0.06] bg-gradient-to-b from-white to-gray-50/70 p-4.5 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4 sm:gap-5">
+      <div className="rounded-3xl border border-line bg-gradient-to-b from-raised to-sunken/70 p-4.5 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4 sm:gap-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-faint">
@@ -259,13 +259,13 @@ export function CourseDashboard({
           </div>
 
           {/* Apple-style Segmented Control Filter Pills */}
-          <div className="w-full sm:w-auto grid grid-cols-3 sm:flex items-center rounded-full border border-black/[0.08] bg-black/[0.03] p-1 text-[11.5px] sm:text-[12.5px]">
+          <div className="w-full sm:w-auto grid grid-cols-3 sm:flex items-center rounded-full border border-line bg-sunken p-1 text-[11.5px] sm:text-[12.5px]">
             <button
               type="button"
               onClick={() => setFilter("all")}
               className={`px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium text-center ${
                 filter === "all"
-                  ? "bg-white text-ink font-semibold shadow-xs"
+                  ? "bg-raised text-ink font-semibold shadow-xs"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
@@ -276,7 +276,7 @@ export function CourseDashboard({
               onClick={() => setFilter("bookmarked")}
               className={`px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium flex items-center justify-center gap-1 ${
                 filter === "bookmarked"
-                  ? "bg-white text-amber-600 font-semibold shadow-xs"
+                  ? "bg-raised text-amber-600 dark:text-amber-300 font-semibold shadow-xs"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
@@ -288,7 +288,7 @@ export function CourseDashboard({
               onClick={() => setFilter("incomplete")}
               className={`px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium text-center ${
                 filter === "incomplete"
-                  ? "bg-white text-ink font-semibold shadow-xs"
+                  ? "bg-raised text-ink font-semibold shadow-xs"
                   : "text-ink-soft hover:text-ink"
               }`}
             >
@@ -298,7 +298,7 @@ export function CourseDashboard({
         </div>
 
         {/* Apple-style Smooth Rounded Progress Bar */}
-        <div className="w-full bg-black/[0.05] rounded-full h-2.5 overflow-hidden p-0.5">
+        <div className="w-full bg-sunken rounded-full h-2.5 overflow-hidden p-0.5">
           <div
             className="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}
@@ -355,24 +355,24 @@ export function CourseDashboard({
                 <div
                   key={`${index}-${section.label}`}
                   id={`section-${index}`}
-                  className="rounded-3xl border border-black/[0.06] bg-white shadow-2xs overflow-hidden transition-all duration-200 scroll-mt-24"
+                  className="rounded-3xl border border-line bg-raised shadow-2xs overflow-hidden transition-all duration-200 scroll-mt-24"
                 >
                   {/* Clickable Section Accordion Header */}
                   <button
                     type="button"
                     onClick={() => toggleSection(section.label)}
-                    className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50/80 transition-colors cursor-pointer select-none"
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-sunken/80 transition-colors cursor-pointer select-none"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex items-center gap-3.5">
+                    <div className="flex min-w-0 flex-1 items-center gap-3.5">
                       <div
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-black/[0.08] font-mono text-[11px] font-bold transition-all duration-300 ${
-                          isOpen ? "rotate-90 bg-ink text-white" : "bg-black/[0.03] text-ink-soft"
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line font-mono text-[11px] font-bold transition-all duration-300 ${
+                          isOpen ? "rotate-90 bg-ink text-surface" : "bg-sunken text-ink-soft"
                         }`}
                       >
                         ▶
                       </div>
-                      <div className="flex flex-col">
+                      <div className="min-w-0 flex-1 flex flex-col">
                         <span className="font-bold text-[16px] text-ink tracking-tight flex items-center gap-2">
                           {section.label}
                         </span>
@@ -398,19 +398,19 @@ export function CourseDashboard({
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="ml-3 flex shrink-0 items-center gap-2">
                       {courseSlug === "student" && (
-                        <span className={`rounded-full px-3 py-1 text-[11px] font-semibold ${
+                        <span className={`inline-flex min-h-8 min-w-[72px] shrink-0 items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-[11px] font-semibold ${
                           chapterComplete
-                            ? "bg-emerald-100 text-emerald-700"
+                            ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
                             : chapterUnlocked
-                              ? "bg-blue-50 text-blue-700"
-                              : "bg-black/[0.04] text-ink-faint"
+                              ? "bg-blue-500/10 text-blue-700 dark:text-blue-300"
+                              : "bg-sunken text-ink-faint"
                         }`}>
                           {chapterComplete ? "완료" : chapterUnlocked ? "학습 가능" : "🔒 잠금"}
                         </span>
                       )}
-                      <span className="rounded-full border border-black/[0.06] bg-black/[0.02] px-3 py-1 text-[11.5px] font-medium text-ink-soft hidden sm:inline">
+                      <span className="rounded-full border border-line bg-sunken px-3 py-1 text-[11.5px] font-medium text-ink-soft hidden sm:inline">
                         {isOpen ? "접기 ▲" : "펼치기 ▼"}
                       </span>
                     </div>
@@ -418,7 +418,7 @@ export function CourseDashboard({
 
                   {/* Section Content Grid */}
                   {isOpen && (
-                    <div className="border-t border-black/[0.06] p-4 sm:p-6 bg-gray-50/50">
+                    <div className="border-t border-line p-4 sm:p-6 bg-sunken/50">
                       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                         {section.lessons.map((lesson, lessonIdx) => {
                           const isDone = isCompleted(courseSlug, lesson.id);

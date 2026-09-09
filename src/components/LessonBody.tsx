@@ -195,7 +195,6 @@ export function LessonBody({
         blocks={blocks}
         lessonKey={lessonKey}
         audioTracks={audioTracks}
-        chunkDrills={chunkDrills}
       />
     );
   }

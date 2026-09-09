@@ -661,16 +661,16 @@ export function ReadingLearningView({
             {/* Stable height translation hint bar in Step 1 (Zero Layout Shift) */}
             <div className="mt-5 min-h-[52px] flex items-center">
               {activeSentence ? (
-                <div className="w-full flex items-center justify-between gap-3 rounded-xl border border-amber-300/80 bg-amber-50/90 dark:border-amber-700/60 dark:bg-amber-950/40 px-3.5 py-2 text-[13px] animate-in fade-in duration-100">
-                  <div className="flex items-center gap-2 min-w-0">
+                <div className="w-full flex flex-col items-stretch gap-2 rounded-xl border border-amber-300/80 bg-amber-50/90 dark:border-amber-700/60 dark:bg-amber-950/40 px-3.5 py-2.5 text-[13px] animate-in fade-in duration-100 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                  <div className="flex min-w-0 items-start gap-2">
                     <span className="shrink-0 rounded bg-amber-200/80 dark:bg-amber-800/60 px-1.5 py-0.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100">
                       [{activeSentence.index + 1}]
                     </span>
-                    <span className="text-amber-950 dark:text-amber-100 font-semibold truncate">
+                    <span className="min-w-0 whitespace-normal break-keep font-semibold leading-relaxed text-amber-950 dark:text-amber-100">
                       👉 {activeSentence.ko}
                     </span>
                   </div>
-                  <span className="font-mono text-[10.5px] text-ink-faint shrink-0">1:1 직독직해</span>
+                  <span className="shrink-0 self-end font-mono text-[10.5px] text-ink-faint sm:self-auto">1:1 직독직해</span>
                 </div>
               ) : (
                 <div className="w-full text-center text-[11.5px] text-ink-faint py-2">

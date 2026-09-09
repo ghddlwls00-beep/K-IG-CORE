@@ -23,7 +23,6 @@ interface StudentLearningViewProps {
   blocks: Block[];
   lessonKey: string;
   audioTracks?: { src: string; label?: string }[];
-  chunkDrills?: { en: string; ko: string }[];
 }
 
 type StudyMode = "listen" | "dictation" | "shadowing";
@@ -42,7 +41,6 @@ export function StudentLearningView({
   blocks,
   lessonKey,
   audioTracks = [],
-  chunkDrills = [],
 }: StudentLearningViewProps) {
   const lessonId = lessonKey.split("/").pop() || lessonKey;
   const { isCompleted, toggleComplete } = useProgress();
@@ -1143,50 +1141,6 @@ export function StudentLearningView({
                 </div>
               );
             })}
-          </div>
-        </div>
-      )}
-
-      {/* Chunk drills reference (kept for prop compatibility) */}
-      {chunkDrills.length > 0 && studyMode === "shadowing" && (
-        <div className="rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-2xs flex flex-col gap-2">
-          <span className="text-[13px] font-bold text-ink">🧱 청크 드릴</span>
-          <div className="flex flex-col gap-2">
-            {chunkDrills.map((drill, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between gap-2 rounded-xl border border-line/60 bg-raised/40 px-3 py-2"
-              >
-                <div className="flex flex-col">
-                  <span className="text-[13.5px] font-semibold text-ink">{drill.en}</span>
-                  <span className="text-[12px] text-ink-soft">{drill.ko}</span>
-                </div>
-                <div className="flex items-center gap-1.5 shrink-0">
-                  <button
-                    type="button"
-                    onClick={() => toggleSentence(drill.en, 10000 + i, "en")}
-                    className={`rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
-                      isTargetPlaying(10000 + i, "en", false)
-                        ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
-                        : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
-                    }`}
-                  >
-                    {isTargetPlaying(10000 + i, "en", false) ? "⏹️" : "🔊 EN"}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => toggleSentence(drill.ko, 20000 + i, "ko")}
-                    className={`rounded-lg border px-2 py-1 text-[11.5px] font-semibold transition-all cursor-pointer ${
-                      isTargetPlaying(20000 + i, "ko", false)
-                        ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-950/40"
-                        : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
-                    }`}
-                  >
-                    {isTargetPlaying(20000 + i, "ko", false) ? "⏹️" : "🔈 KO"}
-                  </button>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       )}

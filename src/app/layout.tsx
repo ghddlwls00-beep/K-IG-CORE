@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { ProgressProvider } from "@/components/ProgressProvider";
 import { LicenseProvider } from "@/components/LicenseProvider";
@@ -40,9 +41,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const courseTabs = getCourseTabMap();
 
   return (
-    <html lang="ko" translate="no" className="notranslate">
+    <html lang="ko" translate="no" className="notranslate" suppressHydrationWarning>
       <head>
         <meta name="google" content="notranslate" />
+        <Script id="kig-theme" strategy="beforeInteractive">
+          {`(function(){try{var s=localStorage.getItem('kig:theme');var t=s==='light'||s==='dark'?s:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;}catch(e){}})();`}
+        </Script>
       </head>
       <body className="notranslate min-h-screen bg-surface text-ink antialiased" translate="no">
         <NavigationScrollRestoration />

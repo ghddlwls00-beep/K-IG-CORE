@@ -45,6 +45,8 @@ export default async function LessonPage({
   const tab = tabForCourse(course);
   const isScript = lesson.variant === "script";
   const pres = formatLessonPresentation(course, lesson);
+  const prevPresentation = prev ? formatLessonPresentation(course, prev) : null;
+  const nextPresentation = next ? formatLessonPresentation(course, next) : null;
 
   // For Grammar 1, odd-numbered answer pages (gh1-007, gh1-009, etc.) are consolidated into their primary unified lesson (gh1-006, gh1-008, etc.)
   if (course === "grammar1") {
@@ -136,38 +138,68 @@ export default async function LessonPage({
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-      <nav className="mb-6 sm:mb-8 flex flex-wrap items-center justify-between gap-3 sm:gap-4 font-mono text-[11.5px]">
-        <Link href={`/${course}`} className="link-underline text-ink-soft hover:text-ink font-medium">
-          ← {courseInfo?.title ?? course}
-        </Link>
-        <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
+      <nav className="mb-6 flex flex-col gap-3 sm:mb-8" aria-label="강의 이동">
+        <div className="flex items-center justify-between gap-3">
+          <Link
+            href={`/${course}`}
+            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-line bg-raised px-3.5 font-mono text-[11.5px] font-semibold text-ink-soft shadow-2xs hover:border-line-strong hover:text-ink"
+          >
+            <span aria-hidden>←</span>
+            <span>{courseInfo?.title ?? course} 목록</span>
+          </Link>
           <LessonActionButtons
             course={course}
             lessonId={lesson.id}
             title={pres.title}
             courseTitle={courseInfo?.title ?? tab?.label}
           />
-          <span className="flex items-center gap-2.5 sm:gap-3 border-l border-line/60 pl-2.5 sm:pl-3">
-            {prev ? (
+        </div>
+
+        {(prev || next) && (
+          <div
+            className={`grid gap-2 rounded-2xl border border-line bg-raised/70 p-2 shadow-2xs ${
+              prev && next ? "grid-cols-2" : "grid-cols-1"
+            }`}
+          >
+            {prev && prevPresentation ? (
               <Link
                 href={`/${course}/${prev.id}`}
                 scroll={true}
-                className="text-ink-soft transition-transform duration-200 ease-out hover:-translate-x-0.5 hover:text-ink py-1"
+                aria-label={`이전 강의: ${prevPresentation.title}`}
+                className="group flex min-h-14 min-w-0 items-center gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-sunken"
               >
-                ← {prev.id}
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[15px] text-ink-soft group-hover:border-line-strong group-hover:text-ink" aria-hidden>
+                  ←
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-mono text-[10px] font-bold tracking-wider text-ink-faint">이전 강의</span>
+                  <span className="mt-0.5 block truncate text-[12px] font-semibold text-ink sm:text-[13px]">
+                    {prevPresentation.title}
+                  </span>
+                </span>
               </Link>
             ) : null}
-            {next ? (
+
+            {next && nextPresentation ? (
               <Link
                 href={`/${course}/${next.id}`}
                 scroll={true}
-                className="text-ink-soft transition-transform duration-200 ease-out hover:translate-x-0.5 hover:text-ink py-1"
+                aria-label={`다음 강의: ${nextPresentation.title}`}
+                className="group flex min-h-14 min-w-0 items-center justify-end gap-3 rounded-xl px-3 py-2.5 text-right hover:bg-sunken"
               >
-                {next.id} →
+                <span className="min-w-0">
+                  <span className="block font-mono text-[10px] font-bold tracking-wider text-ink-faint">다음 강의</span>
+                  <span className="mt-0.5 block truncate text-[12px] font-semibold text-ink sm:text-[13px]">
+                    {nextPresentation.title}
+                  </span>
+                </span>
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[15px] text-ink-soft group-hover:border-line-strong group-hover:text-ink" aria-hidden>
+                  →
+                </span>
               </Link>
             ) : null}
-          </span>
-        </div>
+          </div>
+        )}
       </nav>
 
       <header className="mb-6 sm:mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>

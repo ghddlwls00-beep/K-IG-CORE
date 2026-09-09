@@ -134,7 +134,7 @@ export function KakaoTalkNoticeBanner() {
           <button
             type="button"
             onClick={handleCopyLink}
-            className="inline-flex items-center gap-1 rounded-lg border border-amber-300 bg-white/80 px-2.5 py-1.5 text-[11.5px] font-medium text-amber-900 hover:bg-white transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1 rounded-lg border border-amber-400/60 bg-raised/80 px-2.5 py-1.5 text-[11.5px] font-medium text-amber-900 hover:bg-raised dark:text-amber-200 transition-colors cursor-pointer"
             title="주소 복사"
           >
             <span>{copied ? "✓" : "📋"}</span>

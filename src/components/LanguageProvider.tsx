@@ -53,11 +53,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       if (savedLang && savedLang in HTML_LANG) setLangState(savedLang as LangCode);
 
       const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
-      if (savedTheme === "light" || savedTheme === "dark") {
-        setThemeState(savedTheme);
-      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setThemeState("dark");
-      }
+      const resolvedTheme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      setThemeState(resolvedTheme);
+      document.documentElement.setAttribute("data-theme", resolvedTheme);
+      document.documentElement.style.colorScheme = resolvedTheme;
     } catch {
       // storage unavailable — the default language and theme are used
     }
@@ -68,11 +71,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = HTML_LANG[lang];
   }, [lang]);
-
-  // Keep html data-theme aligned with current theme
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
 
   const setLang = useCallback((next: LangCode) => {
     setLangState(next);
@@ -87,6 +85,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setTheme = useCallback((next: ThemeMode) => {
     setThemeState(next);
+    document.documentElement.setAttribute("data-theme", next);
+    document.documentElement.style.colorScheme = next;
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, next);
     } catch {
@@ -97,6 +97,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = useCallback(() => {
     setThemeState((prev) => {
       const next = prev === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      document.documentElement.style.colorScheme = next;
       try {
         window.localStorage.setItem(THEME_STORAGE_KEY, next);
       } catch {

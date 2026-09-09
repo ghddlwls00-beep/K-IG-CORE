@@ -44,7 +44,7 @@ export function LessonClientGate({
   // Before hydration finishes, show a clean skeleton to prevent content flash
   if (!mounted) {
     return (
-      <div className="my-8 rounded-3xl border border-black/[0.06] bg-black/[0.02] p-12 text-center flex flex-col items-center justify-center gap-3 min-h-[280px] animate-pulse">
+      <div className="my-8 rounded-3xl border border-line bg-sunken p-12 text-center flex flex-col items-center justify-center gap-3 min-h-[280px] animate-pulse">
         <div className="h-10 w-10 rounded-2xl bg-black/10" />
         <div className="h-4 w-48 rounded bg-black/10" />
         <div className="h-3 w-64 rounded bg-black/5" />
