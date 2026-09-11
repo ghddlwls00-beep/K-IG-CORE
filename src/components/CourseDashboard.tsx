@@ -13,6 +13,7 @@ import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
+import { ChapterAudioBar } from "./ChapterAudioBar";
 
 export interface DashboardLessonItem {
   id: string;
@@ -425,6 +426,14 @@ export function CourseDashboard({
                     </div>
                   </button>
 
+                  {courseSlug === "student" && (
+                    <ChapterAudioBar
+                      chapterNumber={chapterNumber}
+                      chapterUnlocked={chapterUnlocked}
+                      previewOnly={!hasCourseAccess && sectionIndex === 0}
+                      totalLessons={section.lessons.length}
+                    />
+                  )}
 
                   {/* Section Content Grid */}
                   {isOpen && (
