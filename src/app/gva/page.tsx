@@ -47,26 +47,6 @@ export default function GvaPage() {
           구형 전용 프로그램 설치 없이, 웹 브라우저에서 바로 듣는 LISTENING(청취) 섹션 집중 해설 강의입니다.
           교재 원문 슬라이드와 실시간 판서를 보며 직관적인 오디오 배속 및 10강 단위 체계적 직청직해 학습을 진행할 수 있습니다.
         </p>
-
-        {/* Quick Stats Banner */}
-        <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div className="rounded-xl border border-line bg-raised p-3.5 flex flex-col">
-            <span className="font-mono text-[11px] text-ink-soft">중등 청취 해설</span>
-            <span className="text-xl font-bold text-ink">CH 01 ~ 10</span>
-          </div>
-          <div className="rounded-xl border border-line bg-raised p-3.5 flex flex-col">
-            <span className="font-mono text-[11px] text-ink-soft">고등 실전 청취</span>
-            <span className="text-xl font-bold text-ink">CH 11 ~ 20</span>
-          </div>
-          <div className="rounded-xl border border-line bg-raised p-3.5 flex flex-col">
-            <span className="font-mono text-[11px] text-ink-soft">학습 구성</span>
-            <span className="text-xl font-bold text-ink">20챕터 · 200강</span>
-          </div>
-          <div className="rounded-xl border border-line bg-raised p-3.5 flex flex-col">
-            <span className="font-mono text-[11px] text-ink-soft">학습 환경</span>
-            <span className="text-xl font-bold text-emerald-600">모바일 · PC 웹</span>
-          </div>
-        </div>
       </header>
 
       {/* Interactive Curriculum Dashboard */}

@@ -33,12 +33,8 @@ function formatDuration(totalSeconds: number): string {
 export function GvaDashboard({ lessons }: GvaDashboardProps) {
   const [filter, setFilter] = useState<FilterType>("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedChapter, setSelectedChapter] = useState<number | null>(null);
-
-  // Expanded chapters set (default: all expanded)
-  const [expandedChapters, setExpandedChapters] = useState<Set<number>>(() => {
-    return new Set(Array.from({ length: 20 }, (_, i) => i + 1));
-  });
+  // Expanded chapters set (default: all closed)
+  const [expandedChapters, setExpandedChapters] = useState<Set<number>>(() => new Set());
 
   const toggleChapter = (chapterNum: number) => {
     setExpandedChapters((prev) => {
@@ -50,14 +46,6 @@ export function GvaDashboard({ lessons }: GvaDashboardProps) {
       }
       return next;
     });
-  };
-
-  const expandAll = () => {
-    setExpandedChapters(new Set(Array.from({ length: 20 }, (_, i) => i + 1)));
-  };
-
-  const collapseAll = () => {
-    setExpandedChapters(new Set());
   };
 
   // Group lessons into 20 chapters of 10 lessons each with Listening subtopics
@@ -100,13 +88,12 @@ export function GvaDashboard({ lessons }: GvaDashboardProps) {
     return groups;
   }, [lessons]);
 
-  // Filter chapters based on level tab, search query, and chapter pill
+  // Filter chapters based on level tab and search query
   const filteredChapters = useMemo(() => {
     return chapterGroups
       .map((group) => {
         if (filter === "middle" && group.level !== "middle") return null;
         if (filter === "high" && group.level !== "high") return null;
-        if (selectedChapter !== null && group.chapter !== selectedChapter) return null;
 
         // If search query is present, filter lessons inside the chapter
         if (searchQuery.trim()) {
@@ -134,12 +121,14 @@ export function GvaDashboard({ lessons }: GvaDashboardProps) {
         return group;
       })
       .filter((g): g is ChapterGroup => g !== null);
-  }, [chapterGroups, filter, selectedChapter, searchQuery]);
+  }, [chapterGroups, filter, searchQuery]);
 
-  // Auto-expand chapters when searching
+  // Auto-expand chapters when searching, collapse when search cleared
   useEffect(() => {
     if (searchQuery.trim()) {
       setExpandedChapters(new Set(Array.from({ length: 20 }, (_, i) => i + 1)));
+    } else {
+      setExpandedChapters(new Set());
     }
   }, [searchQuery]);
 
@@ -148,137 +137,62 @@ export function GvaDashboard({ lessons }: GvaDashboardProps) {
   return (
     <div className="flex flex-col gap-8">
       {/* Top Controls: Level filter and Search */}
-      <div className="flex flex-col gap-5 border-b border-line pb-6">
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-          {/* Level Filter Tabs */}
-          <div className="inline-flex rounded-xl border border-line bg-raised p-1">
-            <button
-              type="button"
-              onClick={() => {
-                setFilter("all");
-                setSelectedChapter(null);
-              }}
-              className={`rounded-lg px-4 py-2 text-[13px] font-semibold transition-all cursor-pointer ${
-                filter === "all" && selectedChapter === null
-                  ? "bg-surface text-ink shadow-xs"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              전체 20개 챕터 ({allCount}강)
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setFilter("middle");
-                setSelectedChapter(null);
-              }}
-              className={`rounded-lg px-4 py-2 text-[13px] font-semibold transition-all cursor-pointer ${
-                filter === "middle" && selectedChapter === null
-                  ? "bg-blue-500/15 text-blue-700 dark:text-blue-400 shadow-xs"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              중등 청취 (CH 01~10 · 1~100강)
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setFilter("high");
-                setSelectedChapter(null);
-              }}
-              className={`rounded-lg px-4 py-2 text-[13px] font-semibold transition-all cursor-pointer ${
-                filter === "high" && selectedChapter === null
-                  ? "bg-amber-500/15 text-amber-700 dark:text-amber-400 shadow-xs"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              고등 실전 청취 (CH 11~20 · 101~200강)
-            </button>
-          </div>
-
-          {/* Quick Search */}
-          <div className="relative max-w-xs w-full">
-            <input
-              type="text"
-              placeholder="강의 번호 또는 주제 검색 (예: 5, 부사절)"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-line bg-surface px-4 py-2 text-[13px] text-ink placeholder:text-ink-faint focus:border-ink/40 focus:outline-none transition-colors"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-soft hover:text-ink text-[12px] cursor-pointer"
-              >
-                ✕
-              </button>
-            )}
-          </div>
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-line pb-6">
+        {/* Level Filter Tabs */}
+        <div className="inline-flex rounded-xl border border-line bg-raised p-1">
+          <button
+            type="button"
+            onClick={() => setFilter("all")}
+            className={`rounded-lg px-4 py-2 text-[13px] font-semibold transition-all cursor-pointer ${
+              filter === "all"
+                ? "bg-surface text-ink shadow-xs"
+                : "text-ink-soft hover:text-ink"
+            }`}
+          >
+            전체 ({allCount}강)
+          </button>
+          <button
+            type="button"
+            onClick={() => setFilter("middle")}
+            className={`rounded-lg px-4 py-2 text-[13px] font-semibold transition-all cursor-pointer ${
+              filter === "middle"
+                ? "bg-blue-500/15 text-blue-700 dark:text-blue-400 shadow-xs"
+                : "text-ink-soft hover:text-ink"
+            }`}
+          >
+            중등 청취 (CH 01~10 · 1~100강)
+          </button>
+          <button
+            type="button"
+            onClick={() => setFilter("high")}
+            className={`rounded-lg px-4 py-2 text-[13px] font-semibold transition-all cursor-pointer ${
+              filter === "high"
+                ? "bg-amber-500/15 text-amber-700 dark:text-amber-400 shadow-xs"
+                : "text-ink-soft hover:text-ink"
+            }`}
+          >
+            고등 실전 청취 (CH 11~20 · 101~200강)
+          </button>
         </div>
 
-        {/* 10-Lesson Chapter Fast Selector Bar */}
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center justify-between text-[11.5px] text-ink-soft font-mono">
-            <span className="font-bold text-ink flex items-center gap-1.5">
-              <span>⚡ 챕터 바로가기 (10강 단위 묶음):</span>
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={expandAll}
-                className="hover:text-primary transition-colors cursor-pointer"
-              >
-                모두 펼치기
-              </button>
-              <span>·</span>
-              <button
-                type="button"
-                onClick={collapseAll}
-                className="hover:text-primary transition-colors cursor-pointer"
-              >
-                모두 접기
-              </button>
-            </div>
-          </div>
-
-          <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto pb-1">
+        {/* Quick Search */}
+        <div className="relative max-w-xs w-full">
+          <input
+            type="text"
+            placeholder="강의 번호 또는 주제 검색 (예: 5, 부사절)"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full rounded-xl border border-line bg-surface px-4 py-2 text-[13px] text-ink placeholder:text-ink-faint focus:border-ink/40 focus:outline-none transition-colors"
+          />
+          {searchQuery && (
             <button
               type="button"
-              onClick={() => setSelectedChapter(null)}
-              className={`shrink-0 rounded-lg px-2.5 py-1 font-mono text-[11.5px] font-medium transition-all cursor-pointer ${
-                selectedChapter === null
-                  ? "bg-ink text-surface font-bold shadow-2xs"
-                  : "border border-line bg-raised text-ink-soft hover:bg-surface hover:text-ink"
-              }`}
+              onClick={() => setSearchQuery("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-soft hover:text-ink text-[12px] cursor-pointer"
             >
-              전체 챕터
+              ✕
             </button>
-            {chapterGroups.map((g) => {
-              const isSelected = selectedChapter === g.chapter;
-              const isHigh = g.chapter > 10;
-              return (
-                <button
-                  key={g.chapter}
-                  type="button"
-                  onClick={() => {
-                    setSelectedChapter(isSelected ? null : g.chapter);
-                    setExpandedChapters((prev) => new Set(prev).add(g.chapter));
-                  }}
-                  className={`shrink-0 rounded-lg px-2.5 py-1 font-mono text-[11.5px] font-medium transition-all cursor-pointer ${
-                    isSelected
-                      ? "bg-ink text-surface font-bold shadow-2xs"
-                      : isHigh
-                      ? "border border-amber-500/30 bg-amber-500/5 text-amber-700 dark:text-amber-400 hover:bg-amber-500/10"
-                      : "border border-blue-500/30 bg-blue-500/5 text-blue-700 dark:text-blue-400 hover:bg-blue-500/10"
-                  }`}
-                  title={`${g.label}: ${g.subtopic} (${g.range})`}
-                >
-                  CH {String(g.chapter).padStart(2, "0")} ({g.range})
-                </button>
-              );
-            })}
-          </div>
+          )}
         </div>
       </div>
 
