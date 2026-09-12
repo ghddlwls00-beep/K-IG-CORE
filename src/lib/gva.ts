@@ -6,9 +6,9 @@ export interface GvaLesson {
   number: number; // 1 ~ 200
   level: "middle" | "high";
   levelLabel: string; // "중등 독해" | "고등 독해"
-  title: string; // "중등 영어독해 1강"
-  passageNumber: number; // 1 ~ 100
-  instructor: string; // "강광진"
+  title: string;
+  passageNumber: number;
+  instructor?: string;
   audioKey: string;
   slideKey: string;
   strokeKey?: string;
@@ -18,6 +18,12 @@ export interface GvaLesson {
   strokeCount?: number;
   durationSeconds: number;
   durationFormatted: string;
+  chapter?: number;
+  chapterLabel?: string;
+  chapterRange?: string;
+  chapterSubtopic?: string;
+  chapterEnSubtopic?: string;
+  chapterDesc?: string;
 }
 
 let cachedLessons: GvaLesson[] | null = null;

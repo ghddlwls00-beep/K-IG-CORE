@@ -17,8 +17,8 @@ export async function generateMetadata({
   const lesson = getGvaLesson(lessonParam);
   if (!lesson) return { title: "강의를 찾을 수 없습니다 · K-IG 교육" };
   return {
-    title: `${lesson.title} (${lesson.levelLabel}) · GVA 독해 K-IG 교육`,
-    description: `강광진 원장의 ${lesson.title} 해설 강의. 교재 본문 슬라이드 동기화 스트리밍 학습`,
+    title: `${lesson.title} (${lesson.levelLabel}) · LISTENING 직강 K-IG 교육`,
+    description: `${lesson.title} (${lesson.chapterSubtopic || "실전 청취 해설"}). 교재 본문 슬라이드 및 실시간 판서 동기화 스트리밍 학습`,
   };
 }
 

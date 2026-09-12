@@ -104,14 +104,14 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     tab: "gva",
     legacyFolder: "gva",
     numbering: "sequence",
-    title: "GVA 독해",
-    titleEn: "GVA Reading",
+    title: "LISTENING 직강",
+    titleEn: "Listening Master",
     kind: "audio-drill",
     description:
-      "구형 전용 프로그램 없이 웹에서 바로 스트리밍되는 강광진 원장의 중·고등 영어독해 200강 육성 직강.",
+      "실전 청취(Listening) 구문과 지문을 원리부터 실전 적용까지 체계적으로 풀어주는 200강 집중 직청직해 해설 강의.",
     series: [
-      { slug: "middle", title: "중등 영어독해 (1~100강)", prefix: "gva-" },
-      { slug: "high", title: "고등 영어독해 (101~200강)", prefix: "gva-" },
+      { slug: "middle", title: "중등 청취 해설 (1~100강 · CH 01~10)", prefix: "gva-" },
+      { slug: "high", title: "고등 청취 해설 (101~200강 · CH 11~20)", prefix: "gva-" },
     ],
   },
 ];

@@ -80,11 +80,11 @@ export const TABS: Tab[] = [
   },
   {
     slug: "gva",
-    label: "GVA 독해",
+    label: "LISTENING 직강",
     legacyImage: "reading.gif",
     legacyIndex: "gva/index.htm",
     courses: ["gva"],
-    blurb: "강광진 원장 중·고등 영어독해 200강 육성 직강 스트리밍",
+    blurb: "실전 Listening 구문과 지문을 체계적으로 풀어주는 200강 집중 직청직해 해설 강의",
   },
 ];
 

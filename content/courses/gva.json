@@ -4,7 +4,11 @@
   "lessonCount": 200,
   "groups": [
     {
-      "label": "중등 영어독해 (1~100강)",
+      "chapter": 1,
+      "label": "CHAPTER 01: 기초 청취 구조와 주어·동사 직청직해 (1~10강)",
+      "subtopic": "기초 청취 구조와 주어·동사 직청직해",
+      "enSubtopic": "Foundations of Auditory Sentence Decoding",
+      "description": "기본 영어 문장의 핵심인 주어와 동사 음성을 빠르게 포착하고 우리말 어순 전환 없이 즉각 직청직해하는 훈련",
       "lessons": [
         "gva-001",
         "gva-002",
@@ -15,7 +19,16 @@
         "gva-007",
         "gva-008",
         "gva-009",
-        "gva-010",
+        "gva-010"
+      ]
+    },
+    {
+      "chapter": 2,
+      "label": "CHAPTER 02: 핵심 보어 및 목적어 연결 청취 (11~20강)",
+      "subtopic": "핵심 보어 및 목적어 연결 청취",
+      "enSubtopic": "Object & Complement Audio Linking",
+      "description": "동사 뒤에 이어지는 목적어와 보어의 소리 연결(연음)을 파악하여 문장의 완성된 의미 단위를 한 번에 청취하는 기법",
+      "lessons": [
         "gva-011",
         "gva-012",
         "gva-013",
@@ -25,7 +38,16 @@
         "gva-017",
         "gva-018",
         "gva-019",
-        "gva-020",
+        "gva-020"
+      ]
+    },
+    {
+      "chapter": 3,
+      "label": "CHAPTER 03: 전치사구와 수식어 덩어리 청취 (21~30강)",
+      "subtopic": "전치사구와 수식어 덩어리 청취",
+      "enSubtopic": "Prepositional Phrasing & Chunk Listening",
+      "description": "장소·시간·방향을 나타내는 전치사구 덩어리(Chunk)를 청크 단위로 끊어 듣고 직관적으로 이해하는 청취 훈련",
+      "lessons": [
         "gva-021",
         "gva-022",
         "gva-023",
@@ -35,7 +57,16 @@
         "gva-027",
         "gva-028",
         "gva-029",
-        "gva-030",
+        "gva-030"
+      ]
+    },
+    {
+      "chapter": 4,
+      "label": "CHAPTER 04: 시간·이유·조건 부사절 청취 포착 (31~40강)",
+      "subtopic": "시간·이유·조건 부사절 청취 포착",
+      "enSubtopic": "Adverbial Clause Listening Mastery",
+      "description": "when, because, if 등 문맥의 조건을 형성하는 부사절의 시작 시그널을 음성으로 캐치하는 실전 훈련",
+      "lessons": [
         "gva-031",
         "gva-032",
         "gva-033",
@@ -45,7 +76,16 @@
         "gva-037",
         "gva-038",
         "gva-039",
-        "gva-040",
+        "gva-040"
+      ]
+    },
+    {
+      "chapter": 5,
+      "label": "CHAPTER 05: 의문사 패턴과 대화형 문답 청취 (41~50강)",
+      "subtopic": "의문사 패턴과 대화형 문답 청취",
+      "enSubtopic": "Wh- Questions & Spoken Discourse",
+      "description": "What, Where, Why, How 등 핵심 질문 의문사와 일상 구어체 문답 구조를 빠르게 분석하는 청취 클리닉",
+      "lessons": [
         "gva-041",
         "gva-042",
         "gva-043",
@@ -55,7 +95,16 @@
         "gva-047",
         "gva-048",
         "gva-049",
-        "gva-050",
+        "gva-050"
+      ]
+    },
+    {
+      "chapter": 6,
+      "label": "CHAPTER 06: 관계사절과 후치 수식 음성 파악 (51~60강)",
+      "subtopic": "관계사절과 후치 수식 음성 파악",
+      "enSubtopic": "Relative Clauses & Post-Modifier Audio",
+      "description": "명사 뒤에서 길게 이어지는 관계대명사/관계부사 수식절을 소리로 듣고 바로 머릿속에 수식 관계를 그리는 훈련",
+      "lessons": [
         "gva-051",
         "gva-052",
         "gva-053",
@@ -65,7 +114,16 @@
         "gva-057",
         "gva-058",
         "gva-059",
-        "gva-060",
+        "gva-060"
+      ]
+    },
+    {
+      "chapter": 7,
+      "label": "CHAPTER 07: 접속사와 문장 확장 흐름 청취 (61~70강)",
+      "subtopic": "접속사와 문장 확장 흐름 청취",
+      "enSubtopic": "Conjunctions & Compound Sentence Flow",
+      "description": "and, but, so, however 등 논리 연결사를 중심으로 길어지는 복합 문장의 전개 흐름을 놓치지 않는 기법",
+      "lessons": [
         "gva-061",
         "gva-062",
         "gva-063",
@@ -75,7 +133,16 @@
         "gva-067",
         "gva-068",
         "gva-069",
-        "gva-070",
+        "gva-070"
+      ]
+    },
+    {
+      "chapter": 8,
+      "label": "CHAPTER 08: 수동태 및 완료시제 실전 청취 (71~80강)",
+      "subtopic": "수동태 및 완료시제 실전 청취",
+      "enSubtopic": "Passive Voice & Perfect Tense Auditory Drill",
+      "description": "be + p.p. 및 have/has + p.p. 등 빠르게 축약되는 조동사 음성과 시제 감각을 정밀하게 분별하는 훈련",
+      "lessons": [
         "gva-071",
         "gva-072",
         "gva-073",
@@ -85,7 +152,16 @@
         "gva-077",
         "gva-078",
         "gva-079",
-        "gva-080",
+        "gva-080"
+      ]
+    },
+    {
+      "chapter": 9,
+      "label": "CHAPTER 09: 비교구문과 연어(Collocation) 청취 (81~90강)",
+      "subtopic": "비교구문과 연어(Collocation) 청취",
+      "enSubtopic": "Comparisons & Audio Collocations",
+      "description": "원급·비교급 표현과 원어민이 자주 쓰는 연어(짝을 이루는 어휘) 조합을 음성으로 한 덩어리로 듣는 연습",
+      "lessons": [
         "gva-081",
         "gva-082",
         "gva-083",
@@ -95,7 +171,16 @@
         "gva-087",
         "gva-088",
         "gva-089",
-        "gva-090",
+        "gva-090"
+      ]
+    },
+    {
+      "chapter": 10,
+      "label": "CHAPTER 10: 중등 청취 완성: 장문 직청직해 및 흐름 파악 (91~100강)",
+      "subtopic": "중등 청취 완성: 장문 직청직해 및 흐름 파악",
+      "enSubtopic": "Middle Listening Completion: Long Passage Flow",
+      "description": "중등 교육과정의 모든 핵심 문형을 총망라하여 긴 담화와 이야기를 멈춤 없이 끝까지 직청직해하는 완성 단계",
+      "lessons": [
         "gva-091",
         "gva-092",
         "gva-093",
@@ -109,7 +194,11 @@
       ]
     },
     {
-      "label": "고등 영어독해 (101~200강)",
+      "chapter": 11,
+      "label": "CHAPTER 11: 고등 실전 청취: 주제문 포착과 요지 파악 (101~110강)",
+      "subtopic": "고등 실전 청취: 주제문 포착과 요지 파악",
+      "enSubtopic": "Advanced Listening: Theme & Main Idea Detection",
+      "description": "고등·수능 실전 청취의 첫걸음으로, 담화 초반에 제시되는 Topic Sentence와 핵심 요지를 정확히 선별하는 훈련",
       "lessons": [
         "gva-101",
         "gva-102",
@@ -120,7 +209,16 @@
         "gva-107",
         "gva-108",
         "gva-109",
-        "gva-110",
+        "gva-110"
+      ]
+    },
+    {
+      "chapter": 12,
+      "label": "CHAPTER 12: 논리적 인과관계와 담화 연결사 청취 (111~120강)",
+      "subtopic": "논리적 인과관계와 담화 연결사 청취",
+      "enSubtopic": "Discourse Markers & Cause-Effect Linking",
+      "description": "원인과 결과를 연결하는 Therefore, As a result 등의 담화 표지를 통해 문맥의 논리적 필연성을 파악하는 기법",
+      "lessons": [
         "gva-111",
         "gva-112",
         "gva-113",
@@ -130,7 +228,16 @@
         "gva-117",
         "gva-118",
         "gva-119",
-        "gva-120",
+        "gva-120"
+      ]
+    },
+    {
+      "chapter": 13,
+      "label": "CHAPTER 13: 함축 의미 파악과 문맥 추론 청취 (121~130강)",
+      "subtopic": "함축 의미 파악과 문맥 추론 청취",
+      "enSubtopic": "Implicit Meaning & Contextual Inference",
+      "description": "직접 언급되지 않은 화자의 숨은 의도와 전후 상황을 문맥 단서(Context Clues)를 통해 빠르고 정확하게 추론",
+      "lessons": [
         "gva-121",
         "gva-122",
         "gva-123",
@@ -140,7 +247,16 @@
         "gva-127",
         "gva-128",
         "gva-129",
-        "gva-130",
+        "gva-130"
+      ]
+    },
+    {
+      "chapter": 14,
+      "label": "CHAPTER 14: 도치·강조 구문 및 변형 어순 청취 (131~140강)",
+      "subtopic": "도치·강조 구문 및 변형 어순 청취",
+      "enSubtopic": "Inversion, Emphasis & Flexible Word Order",
+      "description": "It is ~ that 강조구문 및 부정어 도치 등 특수 구문의 어순 변화에 당황하지 않고 직청직해하는 심화 훈련",
+      "lessons": [
         "gva-131",
         "gva-132",
         "gva-133",
@@ -150,7 +266,16 @@
         "gva-137",
         "gva-138",
         "gva-139",
-        "gva-140",
+        "gva-140"
+      ]
+    },
+    {
+      "chapter": 15,
+      "label": "CHAPTER 15: 사실적 정보 파악과 세부 사항 청취 (141~150강)",
+      "subtopic": "사실적 정보 파악과 세부 사항 청취",
+      "enSubtopic": "Expository Details & Fact Extraction",
+      "description": "설명문과 안내문 등 사실적 정보가 촘촘히 배치된 지문에서 수치, 일정, 고유명사 등 세부 디테일을 정확히 추출",
+      "lessons": [
         "gva-141",
         "gva-142",
         "gva-143",
@@ -160,7 +285,16 @@
         "gva-147",
         "gva-148",
         "gva-149",
-        "gva-150",
+        "gva-150"
+      ]
+    },
+    {
+      "chapter": 16,
+      "label": "CHAPTER 16: 필자의 의도와 태도·어조 심화 청취 (151~160강)",
+      "subtopic": "필자의 의도와 태도·어조 심화 청취",
+      "enSubtopic": "Speaker's Attitude, Tone & Purpose",
+      "description": "비판적·낙관적·회의적 등 화자의 태도와 억양(Intonation)을 분석하여 지문의 궁극적 목적을 파악하는 고급 기술",
+      "lessons": [
         "gva-151",
         "gva-152",
         "gva-153",
@@ -170,7 +304,16 @@
         "gva-157",
         "gva-158",
         "gva-159",
-        "gva-160",
+        "gva-160"
+      ]
+    },
+    {
+      "chapter": 17,
+      "label": "CHAPTER 17: 학술·인문·사회 지문 담화 청취 (161~170강)",
+      "subtopic": "학술·인문·사회 지문 담화 청취",
+      "enSubtopic": "Academic, Humanities & Social Studies Listening",
+      "description": "심리학, 역사, 사회학 등 인문·사회 분야의 학술적 어휘와 논증 구조를 편안하게 청취하는 배경지식 융합 훈련",
+      "lessons": [
         "gva-161",
         "gva-162",
         "gva-163",
@@ -180,7 +323,16 @@
         "gva-167",
         "gva-168",
         "gva-169",
-        "gva-170",
+        "gva-170"
+      ]
+    },
+    {
+      "chapter": 18,
+      "label": "CHAPTER 18: 과학·기술·환경 지문 구조 청취 (171~180강)",
+      "subtopic": "과학·기술·환경 지문 구조 청취",
+      "enSubtopic": "Science, Technology & Ecology Discourse",
+      "description": "자연과학 원리, 첨단 기술, 생태 환경 지문의 실험 과정과 인과 구조를 청각적으로 시각화하며 듣는 전략",
+      "lessons": [
         "gva-171",
         "gva-172",
         "gva-173",
@@ -190,7 +342,16 @@
         "gva-177",
         "gva-178",
         "gva-179",
-        "gva-180",
+        "gva-180"
+      ]
+    },
+    {
+      "chapter": 19,
+      "label": "CHAPTER 19: 고난도 빈칸 추론 연계 직청직해 (181~190강)",
+      "subtopic": "고난도 빈칸 추론 연계 직청직해",
+      "enSubtopic": "Advanced Inferential & Cloze Listening",
+      "description": "수능 및 공인영어 최고난도 유형인 빈칸 추론 지문의 핵심 논리 빈틈을 청취만으로 짚어내는 극상위권 훈련",
+      "lessons": [
         "gva-181",
         "gva-182",
         "gva-183",
@@ -200,7 +361,16 @@
         "gva-187",
         "gva-188",
         "gva-189",
-        "gva-190",
+        "gva-190"
+      ]
+    },
+    {
+      "chapter": 20,
+      "label": "CHAPTER 20: 수능·토익 실전 완성: 고난도 종합 청취 마스터 (191~200강)",
+      "subtopic": "수능·토익 실전 완성: 고난도 종합 청취 마스터",
+      "enSubtopic": "Capstone: Comprehensive Real-Test Listening Mastery",
+      "description": "전 영역 종합 지문을 실전 시험 속도로 청취하며 완벽한 청해력과 직독직해 논리를 완성하는 최종 마스터 과정",
+      "lessons": [
         "gva-191",
         "gva-192",
         "gva-193",
@@ -1815,5 +1985,8 @@
       "variant": "main",
       "series": "high"
     }
-  ]
+  ],
+  "title": "LISTENING 강의",
+  "titleEn": "Listening Lectures",
+  "description": "실전 청취(Listening) 구문과 지문을 원리부터 문제 풀이까지 체계적으로 풀어주는 200강 집중 직청직해 해설 강의."
 }

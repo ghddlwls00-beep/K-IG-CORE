@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { GvaLesson } from "@/lib/gva";
@@ -70,6 +70,33 @@ export function GvaStreamingPlayer({
   const [strokesLoaded, setStrokesLoaded] = useState(
     Boolean(initialStrokes && initialStrokes.length > 0)
   );
+
+  const currentChapter = Math.ceil(lesson.number / 10);
+  const [drawerChapter, setDrawerChapter] = useState<number>(currentChapter);
+
+  const chapterList = useMemo(() => {
+    const list: {
+      chapter: number;
+      label: string;
+      range: string;
+      subtopic: string;
+      lessons: GvaLesson[];
+    }[] = [];
+    for (let ch = 1; ch <= 20; ch++) {
+      const start = (ch - 1) * 10 + 1;
+      const end = ch * 10;
+      const chLessons = allLessons.filter((l) => l.number >= start && l.number <= end);
+      const subtopic = chLessons[0]?.chapterSubtopic || `청취 실전 (${start}~${end}강)`;
+      list.push({
+        chapter: ch,
+        label: `CHAPTER ${String(ch).padStart(2, "0")}`,
+        range: `${start}~${end}강`,
+        subtopic,
+        lessons: chLessons,
+      });
+    }
+    return list;
+  }, [allLessons]);
 
   const strokesRef = useRef<StrokeTuple[]>(initialStrokes || []);
   const lastRenderedDeciRef = useRef<number>(-1);
@@ -500,7 +527,7 @@ export function GvaStreamingPlayer({
               {/* Live Status indicator */}
               <div className="p-2.5 flex items-center justify-between bg-raised/50 border-t border-line text-[11px] text-ink-soft">
                 <span>
-                  선생님의 육성 설명에 맞춰 화면에 빨간색/파란색 밑줄과 판서가 실시간으로 동기화됩니다.
+                  음성 설명에 맞춰 화면에 빨간색/파란색 밑줄과 판서가 실시간으로 동기화됩니다.
                 </span>
                 <span className="font-mono text-primary font-semibold">
                   {isPlaying ? "● 판서 진행중" : "일시정지"}
@@ -549,11 +576,11 @@ export function GvaStreamingPlayer({
           {/* Right Column: Audio Streaming Controller (lg:col-span-4) */}
           <div className="lg:col-span-4 flex flex-col gap-4 sticky top-20">
             <div className="rounded-2xl border border-line bg-raised p-5 shadow-md flex flex-col gap-5">
-              {/* Lecture Title & Instructor Info */}
+              {/* Lecture Title & Listening Subtopic Info */}
               <div className="flex flex-col gap-1 border-b border-line pb-4">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[11px] font-bold text-primary tracking-widest uppercase">
-                    K-IG 직강 스트리밍
+                    LISTENING 해설 · {lesson.chapterLabel || `CH ${Math.ceil(lesson.number / 10)}`}
                   </span>
                   <span className="font-mono text-[12px] text-ink-soft">
                     {lesson.durationFormatted}
@@ -562,9 +589,14 @@ export function GvaStreamingPlayer({
                 <h2 className="text-[18px] font-bold tracking-tight text-ink">
                   {lesson.title}
                 </h2>
-                <p className="text-[13px] text-ink-soft">
-                  강광진 선생님의 육성 직독직해 + 실시간 판서 강의
+                <p className="text-[13px] font-medium text-ink-soft">
+                  {lesson.chapterSubtopic || "실전 청취 구문 분석 및 직청직해 해설"}
                 </p>
+                {lesson.chapterDesc && (
+                  <p className="text-[11.5px] text-ink-faint leading-relaxed mt-1">
+                    {lesson.chapterDesc}
+                  </p>
+                )}
               </div>
 
               {/* Progress Slider */}
@@ -749,30 +781,72 @@ export function GvaStreamingPlayer({
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto py-3 space-y-1">
-              {allLessons.map((item) => {
-                const isActive = item.number === lesson.number;
+            <div className="flex-1 overflow-y-auto py-2 space-y-2">
+              {chapterList.map((chGroup) => {
+                const isOpen = drawerChapter === chGroup.chapter;
+                const containsActive = chGroup.lessons.some((l) => l.number === lesson.number);
                 return (
-                  <Link
-                    key={item.id}
-                    href={`/gva/${item.number}`}
-                    onClick={() => setIsListOpen(false)}
-                    className={`flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[13px] transition-colors ${
-                      isActive
-                        ? "bg-ink text-surface font-bold"
-                        : "text-ink hover:bg-raised"
-                    }`}
+                  <div
+                    key={chGroup.chapter}
+                    className="rounded-xl border border-line/80 overflow-hidden bg-raised/30"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-[11px] opacity-70">
-                        {String(item.number).padStart(3, "0")}
+                    <button
+                      type="button"
+                      onClick={() => setDrawerChapter(isOpen ? 0 : chGroup.chapter)}
+                      className={`w-full flex items-center justify-between p-2.5 text-left transition-colors cursor-pointer ${
+                        containsActive
+                          ? "bg-primary/10 text-primary font-bold"
+                          : "hover:bg-raised text-ink"
+                      }`}
+                    >
+                      <div className="flex flex-col gap-0.5 max-w-[80%]">
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-mono text-[11px] font-bold">
+                            {chGroup.label}
+                          </span>
+                          <span className="font-mono text-[10px] text-ink-soft">
+                            ({chGroup.range})
+                          </span>
+                        </div>
+                        <span className="text-[11.5px] truncate text-ink-soft">
+                          {chGroup.subtopic}
+                        </span>
+                      </div>
+                      <span className="text-[10px] text-ink-soft">
+                        {isOpen ? "▲" : "▼"}
                       </span>
-                      <span>{item.title}</span>
-                    </div>
-                    <span className="font-mono text-[11px] opacity-60">
-                      {item.durationFormatted}
-                    </span>
-                  </Link>
+                    </button>
+
+                    {isOpen && (
+                      <div className="p-1 space-y-0.5 border-t border-line/60 bg-surface">
+                        {chGroup.lessons.map((item) => {
+                          const isActive = item.number === lesson.number;
+                          return (
+                            <Link
+                              key={item.id}
+                              href={`/gva/${item.number}`}
+                              onClick={() => setIsListOpen(false)}
+                              className={`flex items-center justify-between rounded-lg px-2.5 py-1.5 text-[12px] transition-colors ${
+                                isActive
+                                  ? "bg-ink text-surface font-bold shadow-2xs"
+                                  : "text-ink hover:bg-raised"
+                              }`}
+                            >
+                              <div className="flex items-center gap-2 truncate">
+                                <span className="font-mono text-[10px] opacity-70 shrink-0">
+                                  {item.number}강
+                                </span>
+                                <span className="truncate">{item.title}</span>
+                              </div>
+                              <span className="font-mono text-[10px] opacity-60 shrink-0 ml-1">
+                                {item.durationFormatted}
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
