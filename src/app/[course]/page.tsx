@@ -10,9 +10,7 @@ import { CourseDashboard } from "@/components/CourseDashboard";
 import type { LessonSummary } from "@/lib/types";
 
 export function generateStaticParams() {
-  return getCourses()
-    .filter((c) => c.slug !== "gva")
-    .map((c) => ({ course: c.slug }));
+  return getCourses().map((c) => ({ course: c.slug }));
 }
 
 export async function generateMetadata({

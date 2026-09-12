@@ -99,21 +99,6 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
       "실제 CNN 글로벌 뉴스 클립과 원문 스크립트, 한영 대역 번역으로 실전 시사 영어를 마스터합니다.",
     series: [{ slug: "cnn", title: "Clips", prefix: "" }],
   },
-  {
-    slug: "gva",
-    tab: "gva",
-    legacyFolder: "gva",
-    numbering: "sequence",
-    title: "LISTENING 직강",
-    titleEn: "Listening Master",
-    kind: "audio-drill",
-    description:
-      "실전 청취(Listening) 구문과 지문을 원리부터 실전 적용까지 체계적으로 풀어주는 200강 집중 직청직해 해설 강의.",
-    series: [
-      { slug: "middle", title: "중등 청취 해설 (1~100강 · CH 01~10)", prefix: "gva-" },
-      { slug: "high", title: "고등 청취 해설 (101~200강 · CH 11~20)", prefix: "gva-" },
-    ],
-  },
 ];
 
 export const COURSE_BY_SLUG = new Map(COURSES.map((c) => [c.slug, c]));
@@ -121,6 +106,7 @@ export const COURSE_BY_FOLDER = new Map(COURSES.map((c) => [c.legacyFolder, c]))
 
 /** Folders deliberately excluded from the web app. */
 export const EXCLUDED_FOLDERS = [
+  "gva", // GVA files excluded
   "GVA 2000 Pro", // Windows installers for that trainer
   "css", // legacy stylesheet, superseded by Tailwind
   "images", // legacy chrome images, superseded by the new design
