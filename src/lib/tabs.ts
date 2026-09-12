@@ -78,6 +78,14 @@ export const TABS: Tab[] = [
     courses: ["cnn"],
     blurb: "Authentic CNN Broadcasts & Current Affairs Decoding",
   },
+  {
+    slug: "gva",
+    label: "GVA 독해",
+    legacyImage: "reading.gif",
+    legacyIndex: "gva/index.htm",
+    courses: ["gva"],
+    blurb: "중등·고등 영어 지문과 실제 강의 음성을 함께 학습하는 200강 독해 직강",
+  },
 ];
 
 export const TAB_BY_SLUG = new Map(TABS.map((t) => [t.slug, t]));

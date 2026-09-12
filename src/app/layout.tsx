@@ -13,11 +13,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.app"),
   title: {
-    default: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING · CNN)",
+    default: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING · GVA)",
     template: "%s · K-IG 핵심 어학 마스터",
   },
   description:
-    "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스 러닝.",
+    "K-IG 핵심 8개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스, GVA 영어독해 직강.",
   alternates: {
     canonical: "/",
   },

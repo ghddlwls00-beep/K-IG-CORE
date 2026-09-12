@@ -70,6 +70,7 @@ export const FREE_PREVIEW_LESSON_IDS: Record<string, readonly string[]> = {
   ld: ["d001", "d001-1", "d002", "d002-1"],
   reading: ["pr001", "pr001-1", "pr002", "pr002-1"],
   cnn: ["cnn001", "cnn002"],
+  gva: ["gva-001", "gva-002"],
 };
 
 /** Only the first curriculum section's first two visible lessons are free. */

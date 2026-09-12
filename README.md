@@ -1,6 +1,6 @@
 # K-IG 핵심 어학 마스터 (K-IG-CORE)
 
-K-IG 교육의 핵심 6대 과정만을 선별·집중하여 구축한 독립 웹 플랫폼입니다.
+K-IG 교육의 핵심 과정과 GVA 영어독해 직강을 웹에서 학습할 수 있도록 구축한 독립 플랫폼입니다.
 
 - **VOCA**: 중등·고등 필수 3,877 어휘 매트릭스, 1:1 한국어 뜻 연동 및 AI 발음 클리닉
 - **GRAMMAR I & II**: 핵심 및 심화 영작 연습, 1:1 모범 답안 및 해설 완역 대조
@@ -170,10 +170,12 @@ names and filename prefixes are load-bearing; see `src/lib/courses.ts`.
 | `grammar2` | `grammar2` | 91 | Second-level composition |
 | `man` / `woman` / `student` | `Man` etc. | 263 | Flash conversation lessons |
 | `cnn` | `CNN` | 120 | `.wmv` video clips — needs transcoding |
+| `gva` | Downloads `중등영어독해(1~200)` | 200 | GVA 독해 교재 이미지 + 실제 강의 MP3 스트리밍 |
 
-**Excluded:** `gva/` and `GVA 2000 Pro/` (231 Firebird `.gdb` files and Windows
-installers belonging to the separate offline desktop trainer), plus the legacy
-`css/`, `images/`, `scripts/`, `objects/` and `sources/` folders.
+**Excluded:** `GVA 2000 Pro/` Windows installers and the legacy `css/`, `images/`,
+`scripts/`, `objects/` and `sources/` folders. GVA `.gdb` archives are not committed;
+`scripts/process-and-upload-gva.mjs` extracts browser-playable assets and uploads
+them to Cloudflare R2.
 
 ### Page pairs
 
@@ -214,7 +216,7 @@ below were read off the images themselves:
 | Listen/Dictate | `LD` |
 | READING | `reading` |
 | CNN | `CNN` — archive only |
-| GVA | `gva` — archive only |
+| GVA 독해 | `gva` — 200강 웹 스트리밍 |
 
 **Three tabs hold two kinds of material.** Their framesets prove it:
 
@@ -238,10 +240,10 @@ and `adults` had no dropdowns, so they fall back to series and unit.
 
 ### GVA
 
-GVA was the companion Windows program: 뼈대세우기 01–04, 영어문장구조론 01–10,
-GVA 독해 001–200, and Reading Integraty 001–026. Its menu options point at
-Firebird `.gdb` files opened by `GVA2000_Student.exe`, not at web pages, so the
-tab is present and explains itself rather than pretending the content exists.
+GVA 독해 001–200은 원래 `GVA2000_Student.exe`가 읽는 전용 `.gdb` 아카이브입니다.
+현재 앱은 원본을 저장소나 브라우저에 노출하지 않고, 아카이브 안의 교재 JPEG와
+MPEG 오디오 프레임을 검증·재구성해 Cloudflare R2에서 스트리밍합니다. 1~2강은
+무료 체험이며 3~200강은 VIP 올패스 이용권으로 열립니다.
 
 ---
 

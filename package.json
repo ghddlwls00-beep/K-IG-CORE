@@ -13,6 +13,7 @@
     "extract": "node scripts/extract.mjs",
     "generate:ava": "node scripts/generate-azure-ava.mjs",
     "upload:ava": "node scripts/upload-azure-ava-r2.mjs",
+    "upload:gva": "node scripts/process-and-upload-gva.mjs",
     "upload-media": "node scripts/upload-media.mjs"
   },
   "dependencies": {
