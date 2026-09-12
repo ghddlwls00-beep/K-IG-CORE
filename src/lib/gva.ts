@@ -11,8 +11,11 @@ export interface GvaLesson {
   instructor: string; // "강광진"
   audioKey: string;
   slideKey: string;
+  strokeKey?: string;
   audioUrl: string;
   slideUrl: string;
+  strokeUrl?: string;
+  strokeCount?: number;
   durationSeconds: number;
   durationFormatted: string;
 }

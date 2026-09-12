@@ -21,6 +21,25 @@ function formatTime(sec: number) {
   return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 
+// Color map: 1=red, 2=blue, 3=green, 4=yellow, etc.
+function getStrokeColor(col: number): string {
+  switch (col) {
+    case 1:
+      return "#ef4444"; // Vivid Red
+    case 2:
+      return "#2563eb"; // Vivid Blue
+    case 3:
+      return "#16a34a"; // Green
+    case 4:
+      return "#eab308"; // Yellow / Highlighter
+    default:
+      return "#ef4444";
+  }
+}
+
+// Stroke tuple: [t, col, x1, y1, x2, y2]
+type StrokeTuple = [number, number, number, number, number, number];
+
 export function GvaStreamingPlayer({
   lesson,
   allLessons,
@@ -29,18 +48,55 @@ export function GvaStreamingPlayer({
 }: GvaStreamingPlayerProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Modal canvas refs
+  const modalCanvasRef = useRef<HTMLCanvasElement>(null);
+  const modalContainerRef = useRef<HTMLDivElement>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(lesson.durationSeconds || 0);
   const [playbackRate, setPlaybackRate] = useState(1.0);
-  const [isMuted, setIsMuted] = useState(false);
-  const [volume, setVolume] = useState(1.0);
   const [autoNext, setAutoNext] = useState(true);
   const [isFullscreenZoom, setIsFullscreenZoom] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [isListOpen, setIsListOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [strokesLoaded, setStrokesLoaded] = useState(false);
+
+  const strokesRef = useRef<StrokeTuple[]>([]);
+  const lastRenderedDeciRef = useRef<number>(-1);
+  const animationFrameRef = useRef<number | null>(null);
+
+  // 1. Fetch strokes data
+  useEffect(() => {
+    let active = true;
+    strokesRef.current = [];
+    lastRenderedDeciRef.current = -1;
+    setStrokesLoaded(false);
+
+    if (lesson.strokeUrl) {
+      fetch(lesson.strokeUrl)
+        .then((res) => (res.ok ? res.json() : []))
+        .then((data: StrokeTuple[]) => {
+          if (active) {
+            strokesRef.current = data;
+            setStrokesLoaded(true);
+            redrawCanvasUpTo(currentTime);
+          }
+        })
+        .catch((err) => {
+          console.error("Failed to load stroke data:", err);
+        });
+    }
+
+    return () => {
+      active = false;
+    };
+  }, [lesson.strokeUrl]);
 
   // Sync playback rate
   useEffect(() => {
@@ -48,6 +104,173 @@ export function GvaStreamingPlayer({
       audioRef.current.playbackRate = playbackRate;
     }
   }, [playbackRate]);
+
+  // Setup canvas resolution to match image container
+  const resizeCanvas = useCallback(() => {
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
+
+    const rect = container.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
+
+    const ctx = canvas.getContext("2d");
+    if (ctx) {
+      ctx.scale(dpr, dpr);
+    }
+  }, []);
+
+  // Redraw all strokes up to target time
+  const redrawCanvasUpTo = useCallback((sec: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const w = rect.width;
+    const h = rect.height;
+    if (w === 0 || h === 0) return;
+
+    // Reset transform & clear
+    const dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+
+    const targetDeci = Math.floor(sec * 10);
+    const strokes = strokesRef.current;
+    if (!strokes || strokes.length === 0) return;
+
+    ctx.lineWidth = Math.max(2, w * 0.0032);
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+
+    let currentColor = "";
+    ctx.beginPath();
+
+    for (let i = 0; i < strokes.length; i++) {
+      const [t, col, x1, y1, x2, y2] = strokes[i];
+      if (t > targetDeci) break;
+
+      const colorStr = getStrokeColor(col);
+      if (colorStr !== currentColor) {
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.strokeStyle = colorStr;
+        currentColor = colorStr;
+      }
+
+      ctx.moveTo(x1 * w, y1 * h);
+      ctx.lineTo(x2 * w, y2 * h);
+    }
+    ctx.stroke();
+
+    lastRenderedDeciRef.current = targetDeci;
+  }, []);
+
+  // Append new incremental strokes during playback (for silky smooth 60fps)
+  const drawIncrementalStrokes = useCallback((fromDeci: number, toDeci: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const w = rect.width;
+    const h = rect.height;
+    if (w === 0 || h === 0) return;
+
+    const strokes = strokesRef.current;
+    if (!strokes || strokes.length === 0) return;
+
+    const dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    ctx.lineWidth = Math.max(2, w * 0.0032);
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+
+    let currentColor = "";
+    ctx.beginPath();
+
+    for (let i = 0; i < strokes.length; i++) {
+      const [t, col, x1, y1, x2, y2] = strokes[i];
+      if (t <= fromDeci) continue;
+      if (t > toDeci) break;
+
+      const colorStr = getStrokeColor(col);
+      if (colorStr !== currentColor) {
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.strokeStyle = colorStr;
+        currentColor = colorStr;
+      }
+
+      ctx.moveTo(x1 * w, y1 * h);
+      ctx.lineTo(x2 * w, y2 * h);
+    }
+    ctx.stroke();
+  }, []);
+
+  // Animation frame loop synchronized with audio playback
+  useEffect(() => {
+    if (!isPlaying) {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+      return;
+    }
+
+    const loop = () => {
+      const audio = audioRef.current;
+      if (audio) {
+        const cur = audio.currentTime;
+        const currentDeci = Math.floor(cur * 10);
+        const lastDeci = lastRenderedDeciRef.current;
+
+        if (currentDeci < lastDeci) {
+          // Seek backwards
+          redrawCanvasUpTo(cur);
+        } else if (currentDeci > lastDeci) {
+          // Normal playback progress
+          drawIncrementalStrokes(lastDeci, currentDeci);
+          lastRenderedDeciRef.current = currentDeci;
+        }
+      }
+      animationFrameRef.current = requestAnimationFrame(loop);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(loop);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    };
+  }, [isPlaying, redrawCanvasUpTo, drawIncrementalStrokes]);
+
+  // Handle window resize and image load
+  useEffect(() => {
+    const handleResize = () => {
+      resizeCanvas();
+      redrawCanvasUpTo(currentTime);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [resizeCanvas, redrawCanvasUpTo, currentTime]);
+
+  const handleImageLoad = () => {
+    resizeCanvas();
+    redrawCanvasUpTo(currentTime);
+  };
 
   // Handle audio events
   const handleTimeUpdate = () => {
@@ -89,12 +312,19 @@ export function GvaStreamingPlayer({
     }
   }, [isPlaying]);
 
-  const seekRelative = useCallback((seconds: number) => {
-    if (!audioRef.current) return;
-    const target = Math.max(0, Math.min(audioRef.current.duration || duration, audioRef.current.currentTime + seconds));
-    audioRef.current.currentTime = target;
-    setCurrentTime(target);
-  }, [duration]);
+  const seekRelative = useCallback(
+    (seconds: number) => {
+      if (!audioRef.current) return;
+      const target = Math.max(
+        0,
+        Math.min(audioRef.current.duration || duration, audioRef.current.currentTime + seconds)
+      );
+      audioRef.current.currentTime = target;
+      setCurrentTime(target);
+      redrawCanvasUpTo(target);
+    },
+    [duration, redrawCanvasUpTo]
+  );
 
   const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseFloat(e.target.value);
@@ -102,12 +332,12 @@ export function GvaStreamingPlayer({
     if (audioRef.current) {
       audioRef.current.currentTime = val;
     }
+    redrawCanvasUpTo(val);
   };
 
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ignore when inside input/textarea
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
 
       if (e.code === "Space") {
@@ -137,11 +367,9 @@ export function GvaStreamingPlayer({
     };
   }, [isFullscreenZoom, isListOpen]);
 
-  const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
-
   return (
     <div className="min-h-screen bg-surface text-ink pb-24 lg:pb-12">
-      {/* Audio element */}
+      {/* Audio element - Pure streaming from R2 with clean headers */}
       <audio
         ref={audioRef}
         src={lesson.audioUrl}
@@ -203,14 +431,21 @@ export function GvaStreamingPlayer({
       {/* Main Content Area */}
       <main className="mx-auto max-w-6xl px-4 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-          {/* Left Column: Textbook Slide Image (lg:col-span-8) */}
+          {/* Left Column: Interactive Slide + Canvas Pen Board (lg:col-span-8) */}
           <div className="lg:col-span-8 flex flex-col gap-3">
             <div className="relative overflow-hidden rounded-2xl border border-line bg-raised shadow-md group">
               {/* Slide image header banner */}
               <div className="flex items-center justify-between border-b border-line bg-surface/80 px-4 py-2.5">
                 <div className="flex items-center gap-2 font-mono text-[12px] text-ink-soft">
                   <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>교재 본문 슬라이드 (지문 {lesson.passageNumber}번)</span>
+                  <span>
+                    지문 {lesson.passageNumber}번 본문 강의
+                    {strokesRef.current.length > 0 && (
+                      <span className="ml-1 text-primary font-bold">
+                        · 실시간 판서 연동 ({strokesRef.current.length}개 필기)
+                      </span>
+                    )}
+                  </span>
                 </div>
                 <button
                   type="button"
@@ -228,22 +463,32 @@ export function GvaStreamingPlayer({
                 </button>
               </div>
 
-              {/* Slide Image */}
-              <div className="relative flex items-center justify-center bg-zinc-950/5 min-h-[360px] sm:min-h-[480px]">
+              {/* Layered Slide & Real-time Canvas */}
+              <div
+                ref={containerRef}
+                className="relative flex items-center justify-center bg-zinc-950/5 min-h-[360px] sm:min-h-[480px]"
+              >
                 <img
+                  ref={imgRef}
                   src={lesson.slideUrl}
                   alt={lesson.title}
-                  className="w-full h-auto object-contain select-none cursor-zoom-in"
-                  onClick={() => {
-                    setIsFullscreenZoom(true);
-                    setZoomLevel(1);
-                  }}
+                  className="w-full h-auto object-contain select-none block"
+                  onLoad={handleImageLoad}
+                />
+                <canvas
+                  ref={canvasRef}
+                  className="absolute inset-0 w-full h-full pointer-events-none"
                 />
               </div>
 
-              {/* Mobile quick-zoom prompt */}
-              <div className="p-2.5 text-center bg-raised/50 border-t border-line text-[11px] text-ink-soft">
-                교재 이미지를 터치하거나 [크게 보기]를 누르면 고화질 확대 모드로 편하게 읽을 수 있습니다.
+              {/* Live Status indicator */}
+              <div className="p-2.5 flex items-center justify-between bg-raised/50 border-t border-line text-[11px] text-ink-soft">
+                <span>
+                  선생님의 육성 설명에 맞춰 화면에 빨간색/파란색 밑줄과 판서가 실시간으로 동기화됩니다.
+                </span>
+                <span className="font-mono text-primary font-semibold">
+                  {isPlaying ? "● 판서 진행중" : "일시정지"}
+                </span>
               </div>
             </div>
 
@@ -292,7 +537,7 @@ export function GvaStreamingPlayer({
               <div className="flex flex-col gap-1 border-b border-line pb-4">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[11px] font-bold text-primary tracking-widest uppercase">
-                    K-IG 독해 직강
+                    K-IG 직강 스트리밍
                   </span>
                   <span className="font-mono text-[12px] text-ink-soft">
                     {lesson.durationFormatted}
@@ -302,7 +547,7 @@ export function GvaStreamingPlayer({
                   {lesson.title}
                 </h2>
                 <p className="text-[13px] text-ink-soft">
-                  강광진 선생님의 육성 직독직해 해설 강의
+                  강광진 선생님의 육성 직독직해 + 실시간 판서 강의
                 </p>
               </div>
 
@@ -412,7 +657,7 @@ export function GvaStreamingPlayer({
 
             {/* Quick Tips */}
             <div className="rounded-xl border border-line bg-surface p-4 text-[12px] text-ink-soft space-y-1">
-              <div className="font-semibold text-ink">단축키 안내</div>
+              <div className="font-semibold text-ink">키보드 단축키</div>
               <div>• 스페이스바(Space): 재생 / 일시정지</div>
               <div>• 좌우 방향키(← / →): 10초 뒤로 / 앞으로 이동</div>
             </div>
@@ -423,17 +668,16 @@ export function GvaStreamingPlayer({
       {/* Fullscreen Zoom Lightbox Modal */}
       {isFullscreenZoom && (
         <div className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md animate-fade-in">
-          {/* Modal Header */}
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 text-white">
             <div className="flex items-center gap-3">
               <span className="font-bold text-[14px]">{lesson.title}</span>
-              <span className="text-[12px] text-white/60">교재 슬라이드 확대 뷰</span>
+              <span className="text-[12px] text-white/60">교재 슬라이드 확대 모드</span>
             </div>
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => setZoomLevel((z) => Math.max(1, z - 0.25))}
-                className="rounded-lg border border-white/20 bg-white/10 px-2.5 py-1 text-[12px] hover:bg-white/20"
+                className="rounded-lg border border-white/20 bg-white/10 px-2.5 py-1 text-[12px] hover:bg-white/20 cursor-pointer"
               >
                 축소 (-)
               </button>
@@ -441,28 +685,31 @@ export function GvaStreamingPlayer({
               <button
                 type="button"
                 onClick={() => setZoomLevel((z) => Math.min(2.5, z + 0.25))}
-                className="rounded-lg border border-white/20 bg-white/10 px-2.5 py-1 text-[12px] hover:bg-white/20"
+                className="rounded-lg border border-white/20 bg-white/10 px-2.5 py-1 text-[12px] hover:bg-white/20 cursor-pointer"
               >
                 확대 (+)
               </button>
               <button
                 type="button"
                 onClick={() => setIsFullscreenZoom(false)}
-                className="rounded-lg bg-white/20 px-3 py-1 text-[13px] font-bold text-white hover:bg-white/30"
+                className="rounded-lg bg-white/20 px-3 py-1 text-[13px] font-bold text-white hover:bg-white/30 cursor-pointer"
               >
                 닫기 ✕
               </button>
             </div>
           </div>
 
-          {/* Modal Body */}
           <div className="flex-1 overflow-auto flex items-center justify-center p-4">
-            <img
-              src={lesson.slideUrl}
-              alt={lesson.title}
+            <div
               style={{ transform: `scale(${zoomLevel})`, transformOrigin: "center center" }}
-              className="max-h-[90vh] max-w-full object-contain transition-transform duration-150"
-            />
+              className="relative max-h-[90vh] max-w-full transition-transform duration-150"
+            >
+              <img
+                src={lesson.slideUrl}
+                alt={lesson.title}
+                className="max-h-[90vh] max-w-full object-contain"
+              />
+            </div>
           </div>
         </div>
       )}
@@ -480,7 +727,7 @@ export function GvaStreamingPlayer({
               <button
                 type="button"
                 onClick={() => setIsListOpen(false)}
-                className="rounded-md p-1 text-ink-soft hover:bg-raised"
+                className="rounded-md p-1 text-ink-soft hover:bg-raised cursor-pointer"
               >
                 ✕
               </button>
