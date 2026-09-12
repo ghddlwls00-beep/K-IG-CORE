@@ -10,7 +10,9 @@ import { CourseDashboard } from "@/components/CourseDashboard";
 import type { LessonSummary } from "@/lib/types";
 
 export function generateStaticParams() {
-  return getCourses().map((c) => ({ course: c.slug }));
+  return getCourses()
+    .filter((c) => c.slug !== "gva")
+    .map((c) => ({ course: c.slug }));
 }
 
 export async function generateMetadata({
@@ -100,12 +102,12 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
           )}
         </div>
 
-        <h1 className="text-[2.75rem] sm:text-[3.25rem] leading-[1.08] font-bold tracking-tight text-ink">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-ink">
           {course.title}
         </h1>
 
         {course.description ? (
-          <p className="max-w-2xl text-[16px] sm:text-[17px] leading-relaxed text-ink-soft font-normal tracking-tight mt-1">
+          <p className="max-w-2xl text-[15px] sm:text-[16px] text-ink-soft leading-relaxed">
             {course.description}
           </p>
         ) : null}

@@ -99,6 +99,21 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
       "실제 CNN 글로벌 뉴스 클립과 원문 스크립트, 한영 대역 번역으로 실전 시사 영어를 마스터합니다.",
     series: [{ slug: "cnn", title: "Clips", prefix: "" }],
   },
+  {
+    slug: "gva",
+    tab: "gva",
+    legacyFolder: "gva",
+    numbering: "sequence",
+    title: "GVA 독해",
+    titleEn: "GVA Reading",
+    kind: "audio-drill",
+    description:
+      "구형 전용 프로그램 없이 웹에서 바로 스트리밍되는 강광진 원장의 중·고등 영어독해 200강 육성 직강.",
+    series: [
+      { slug: "middle", title: "중등 영어독해 (1~100강)", prefix: "gva-" },
+      { slug: "high", title: "고등 영어독해 (101~200강)", prefix: "gva-" },
+    ],
+  },
 ];
 
 export const COURSE_BY_SLUG = new Map(COURSES.map((c) => [c.slug, c]));
@@ -106,7 +121,6 @@ export const COURSE_BY_FOLDER = new Map(COURSES.map((c) => [c.legacyFolder, c]))
 
 /** Folders deliberately excluded from the web app. */
 export const EXCLUDED_FOLDERS = [
-  "gva", // 231 Firebird .gdb files — offline desktop trainer
   "GVA 2000 Pro", // Windows installers for that trainer
   "css", // legacy stylesheet, superseded by Tailwind
   "images", // legacy chrome images, superseded by the new design
