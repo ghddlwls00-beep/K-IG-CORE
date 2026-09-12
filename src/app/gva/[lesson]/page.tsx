@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getAllGvaLessons, getGvaLesson, getGvaLessonContext } from "@/lib/gva";
+import { getAllGvaLessons, getGvaLesson, getGvaLessonContext, getGvaLessonStrokes } from "@/lib/gva";
 import { GvaStreamingPlayer } from "@/components/GvaStreamingPlayer";
 
 export function generateStaticParams() {
@@ -33,6 +33,7 @@ export default async function GvaLessonPage({
 
   const allLessons = getAllGvaLessons();
   const { prev, next } = getGvaLessonContext(lesson.number);
+  const strokes = getGvaLessonStrokes(lesson.number);
 
   return (
     <GvaStreamingPlayer
@@ -40,6 +41,7 @@ export default async function GvaLessonPage({
       allLessons={allLessons}
       prevLesson={prev}
       nextLesson={next}
+      initialStrokes={strokes}
     />
   );
 }

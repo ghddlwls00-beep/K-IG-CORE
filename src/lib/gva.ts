@@ -63,3 +63,20 @@ export function getGvaLessonContext(currentNumber: number): {
     next: idx < lessons.length - 1 ? lessons[idx + 1] : null,
   };
 }
+
+export type StrokeTuple = [number, number, number, number, number, number];
+
+export function getGvaLessonStrokes(num: number): StrokeTuple[] {
+  const id = `gva-${String(num).padStart(3, "0")}`;
+  const filePath = path.join(process.cwd(), "content", "gva-strokes", `${id}.json`);
+  if (!fs.existsSync(filePath)) {
+    return [];
+  }
+  try {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as StrokeTuple[];
+  } catch (e) {
+    console.error(`Failed to load stroke data for ${id}`, e);
+    return [];
+  }
+}

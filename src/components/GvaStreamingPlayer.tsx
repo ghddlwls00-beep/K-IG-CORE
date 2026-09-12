@@ -10,6 +10,7 @@ interface GvaStreamingPlayerProps {
   allLessons: GvaLesson[];
   prevLesson: GvaLesson | null;
   nextLesson: GvaLesson | null;
+  initialStrokes?: StrokeTuple[];
 }
 
 const SPEED_OPTIONS = [0.8, 1.0, 1.2, 1.5, 2.0];
@@ -45,6 +46,7 @@ export function GvaStreamingPlayer({
   allLessons,
   prevLesson,
   nextLesson,
+  initialStrokes,
 }: GvaStreamingPlayerProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -65,53 +67,21 @@ export function GvaStreamingPlayer({
   const [zoomLevel, setZoomLevel] = useState(1);
   const [isListOpen, setIsListOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [strokesLoaded, setStrokesLoaded] = useState(false);
+  const [strokesLoaded, setStrokesLoaded] = useState(
+    Boolean(initialStrokes && initialStrokes.length > 0)
+  );
 
-  const strokesRef = useRef<StrokeTuple[]>([]);
+  const strokesRef = useRef<StrokeTuple[]>(initialStrokes || []);
   const lastRenderedDeciRef = useRef<number>(-1);
   const animationFrameRef = useRef<number | null>(null);
-
-  // 1. Fetch strokes data
-  useEffect(() => {
-    let active = true;
-    strokesRef.current = [];
-    lastRenderedDeciRef.current = -1;
-    setStrokesLoaded(false);
-
-    if (lesson.strokeUrl) {
-      fetch(lesson.strokeUrl)
-        .then((res) => (res.ok ? res.json() : []))
-        .then((data: StrokeTuple[]) => {
-          if (active) {
-            strokesRef.current = data;
-            setStrokesLoaded(true);
-            redrawCanvasUpTo(currentTime);
-          }
-        })
-        .catch((err) => {
-          console.error("Failed to load stroke data:", err);
-        });
-    }
-
-    return () => {
-      active = false;
-    };
-  }, [lesson.strokeUrl]);
-
-  // Sync playback rate
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.playbackRate = playbackRate;
-    }
-  }, [playbackRate]);
 
   // Setup canvas resolution to match image container
   const resizeCanvas = useCallback(() => {
     const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container) return;
+    const img = imgRef.current;
+    if (!canvas || !img) return;
 
-    const rect = container.getBoundingClientRect();
+    const rect = img.getBoundingClientRect();
     if (rect.width === 0 || rect.height === 0) return;
 
     const dpr = window.devicePixelRatio || 1;
@@ -173,6 +143,50 @@ export function GvaStreamingPlayer({
 
     lastRenderedDeciRef.current = targetDeci;
   }, []);
+
+  // 1. Fetch strokes data if not provided
+  useEffect(() => {
+    if (initialStrokes && initialStrokes.length > 0) {
+      strokesRef.current = initialStrokes;
+      setStrokesLoaded(true);
+      lastRenderedDeciRef.current = -1;
+      resizeCanvas();
+      redrawCanvasUpTo(currentTime);
+      return;
+    }
+
+    let active = true;
+    strokesRef.current = [];
+    lastRenderedDeciRef.current = -1;
+    setStrokesLoaded(false);
+
+    const strokeUrl = `/gva-strokes/${lesson.id}.json`;
+    fetch(strokeUrl)
+      .then((res) => (res.ok ? res.json() : []))
+      .then((data: StrokeTuple[]) => {
+        if (active) {
+          strokesRef.current = data;
+          setStrokesLoaded(true);
+          resizeCanvas();
+          redrawCanvasUpTo(currentTime);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load stroke data:", err);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [lesson.id, initialStrokes, resizeCanvas, redrawCanvasUpTo, currentTime]);
+
+  // Sync playback rate
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = playbackRate;
+    }
+  }, [playbackRate]);
+
 
   // Append new incremental strokes during playback (for silky smooth 60fps)
   const drawIncrementalStrokes = useCallback((fromDeci: number, toDeci: number) => {
@@ -373,7 +387,7 @@ export function GvaStreamingPlayer({
       <audio
         ref={audioRef}
         src={lesson.audioUrl}
-        preload="metadata"
+        preload="auto"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onTimeUpdate={handleTimeUpdate}
@@ -468,17 +482,19 @@ export function GvaStreamingPlayer({
                 ref={containerRef}
                 className="relative flex items-center justify-center bg-zinc-950/5 min-h-[360px] sm:min-h-[480px]"
               >
-                <img
-                  ref={imgRef}
-                  src={lesson.slideUrl}
-                  alt={lesson.title}
-                  className="w-full h-auto object-contain select-none block"
-                  onLoad={handleImageLoad}
-                />
-                <canvas
-                  ref={canvasRef}
-                  className="absolute inset-0 w-full h-full pointer-events-none"
-                />
+                <div className="relative inline-block w-full max-w-full">
+                  <img
+                    ref={imgRef}
+                    src={lesson.slideUrl}
+                    alt={lesson.title}
+                    className="w-full h-auto object-contain select-none block"
+                    onLoad={handleImageLoad}
+                  />
+                  <canvas
+                    ref={canvasRef}
+                    className="absolute inset-0 w-full h-full pointer-events-none"
+                  />
+                </div>
               </div>
 
               {/* Live Status indicator */}
