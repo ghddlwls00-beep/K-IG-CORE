@@ -149,7 +149,6 @@ export function getSharedAudio(): HTMLAudioElement | null {
   if (!sharedAudioElement) {
     sharedAudioElement = new Audio();
     sharedAudioElement.setAttribute("playsinline", "true");
-    sharedAudioElement.crossOrigin = "anonymous";
     (
       sharedAudioElement as unknown as { playsInline?: boolean; webkitPlaysInline?: boolean }
     ).playsInline = true;

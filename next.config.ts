@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   // React Strict Mode
   reactStrictMode: true,
 
-  // Ava clips use a same-origin browser URL. Vercel forwards missing local
+  // Ava clips and media use a same-origin browser URL. Vercel forwards missing local
   // files to R2, which also keeps strict mobile and in-app browsers happy.
   async rewrites() {
     return {
@@ -23,8 +23,12 @@ const nextConfig: NextConfig = {
       afterFiles: [],
       fallback: [
         {
-          source: "/audio/azure-ava/v1/:path*",
-          destination: `${R2_MEDIA_ORIGIN}/audio/azure-ava/v1/:path*`,
+          source: "/audio/:path*",
+          destination: `${R2_MEDIA_ORIGIN}/audio/:path*`,
+        },
+        {
+          source: "/video/:path*",
+          destination: `${R2_MEDIA_ORIGIN}/video/:path*`,
         },
       ],
     };
@@ -49,6 +53,14 @@ const nextConfig: NextConfig = {
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*",
+          },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET, HEAD, OPTIONS",
           },
         ],
       },

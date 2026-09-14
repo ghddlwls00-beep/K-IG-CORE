@@ -378,8 +378,14 @@ export function PhonicsLearningView({
     [selectedWord],
   );
   const selectedCollocation = useMemo(
-    () => getCollocation(selectedWord, selectedMeaning),
-    [selectedWord, selectedMeaning],
+    () =>
+      getCollocation(
+        selectedWord,
+        selectedMeaning,
+        vocaDictionary?.[selectedWord]?.searchWord ||
+          vocaDictionary?.[selectedWord.toLowerCase().trim()]?.searchWord,
+      ),
+    [selectedWord, selectedMeaning, vocaDictionary],
   );
 
   return (

@@ -240,8 +240,8 @@ const COLLOCATION_PRESETS: Record<string, CollocationItem> = {
   },
 };
 
-export function getCollocation(word: string, meaning: string): CollocationItem {
-  const clean = word.toLowerCase().trim();
+export function getCollocation(word: string, meaning: string, searchWord?: string): CollocationItem {
+  const clean = (searchWord || word).toLowerCase().replace(/[()]/g, "").trim();
   if (COLLOCATION_PRESETS[clean]) {
     return COLLOCATION_PRESETS[clean];
   }
