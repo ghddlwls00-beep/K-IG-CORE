@@ -574,6 +574,12 @@ interface ActiveRun {
   started: boolean;
   /** true while the engine for the current chunk is the MP3 stream */
   usingStream: boolean;
+  /**
+   * The whole cleaned utterance, before it was split into chunks. Clips are
+   * keyed by the complete text, so the stream engine needs this rather than
+   * the 200-character pieces the synthesis engine works through.
+   */
+  fullText: string;
 }
 
 let active: ActiveRun | null = null;
@@ -682,6 +688,23 @@ function finishRun(runToken: number, error?: unknown) {
 
 // --- MP3 stream engine (used for In-App browsers & missing voices) ----------
 
+/**
+ * Plays a chunk from our own pre-generated clips.
+ *
+ * This used to fetch each 180-character piece from
+ * translate.google.com/translate_tts — an endpoint Google does not document or
+ * support, reached with a `client=tw-ob` parameter borrowed from its own web
+ * app. It was the real audio path for every in-app browser (KakaoTalk above
+ * all), so a commercial product's sound depended on an undocumented third
+ * party that could change or refuse traffic without notice, and the voice a
+ * listener heard there did not match the one everywhere else.
+ *
+ * Every sentence the app speaks is a finite, known set that is synthesized
+ * ahead of time and stored with the rest of the media, so there is a clip to
+ * play instead. When there isn't one, the run ends with an error rather than
+ * calling out to a third party: the caller already surfaces that, and silence
+ * we can explain beats sound we have no right to.
+ */
 function playChunkViaStream(chunk: LangSegment, runToken: number) {
   const audio = getSharedAudio();
   if (!audio) {
@@ -693,51 +716,39 @@ function playChunkViaStream(chunk: LangSegment, runToken: number) {
   if (!run) return;
   run.usingStream = true;
 
-  const tl = normalizeLang(chunk.lang).split("-")[0];
-  const pieces = splitChunks(chunk.text, 180);
-  let pieceIndex = 0;
+  // Clips are keyed by the whole utterance, so this plays run.fullText once
+  // rather than walking the chunks: the 200-character pieces the old endpoint
+  // needed have no clip of their own, and one clip already covers them all.
+  audio.src = unifiedSpeechPath(run.fullText);
+  audio.playbackRate = Math.max(0.5, Math.min(2, run.rate));
 
-  const playPiece = () => {
+  audio.onended = () => {
     if (isStale(runToken)) return;
-    if (pieceIndex >= pieces.length) {
-      advanceChunk(runToken);
-      return;
-    }
-    const q = encodeURIComponent(pieces[pieceIndex]);
-    audio.src = `https://translate.google.com/translate_tts?ie=UTF-8&tl=${tl}&client=tw-ob&ttsspeed=${run.rate}&q=${q}`;
-    audio.playbackRate = Math.max(0.5, Math.min(2, run.rate));
-
-    audio.onended = () => {
-      if (isStale(runToken)) return;
-      pieceIndex += 1;
-      playPiece();
-    };
-    audio.onerror = () => {
-      if (isStale(runToken)) return;
-      finishRun(runToken, new Error("audio stream failed"));
-    };
-
-    const p = audio.play();
-    if (p && typeof p.then === "function") {
-      p.then(() => {
-        if (isStale(runToken)) return;
-        if (!run.started) {
-          run.started = true;
-          emit({ speaking: true, paused: false, text: chunk.text });
-          run.onStart?.();
-        }
-      }).catch((err) => {
-        if (isStale(runToken)) return;
-        finishRun(runToken, err);
-      });
-    } else if (!run.started) {
-      run.started = true;
-      emit({ speaking: true, paused: false, text: chunk.text });
-      run.onStart?.();
-    }
+    finishRun(runToken);
+  };
+  audio.onerror = () => {
+    if (isStale(runToken)) return;
+    finishRun(runToken, new Error("no audio available for this text"));
   };
 
-  playPiece();
+  const p = audio.play();
+  if (p && typeof p.then === "function") {
+    p.then(() => {
+      if (isStale(runToken)) return;
+      if (!run.started) {
+        run.started = true;
+        emit({ speaking: true, paused: false, text: chunk.text });
+        run.onStart?.();
+      }
+    }).catch((err) => {
+      if (isStale(runToken)) return;
+      finishRun(runToken, err);
+    });
+  } else if (!run.started) {
+    run.started = true;
+    emit({ speaking: true, paused: false, text: chunk.text });
+    run.onStart?.();
+  }
 }
 
 /** Play the pre-generated Ava clip, falling back to the legacy engines on 404/error. */
@@ -754,6 +765,7 @@ function playUnifiedClip(
   active = {
     runToken,
     chunks: [{ text: clean, lang: options.lang ?? "en" }],
+    fullText: clean,
     chunkIndex: 0,
     gender: "female",
     rate: options.rate ?? 1.0,
@@ -973,6 +985,7 @@ function speakWithToken(text: string, options: SpeakOptions, runToken: number) {
     active = {
       runToken,
       chunks,
+      fullText: clean,
       chunkIndex: 0,
       gender: options.gender ?? "neutral",
       rate: options.rate ?? 1.0,
@@ -1041,6 +1054,7 @@ export function playAudioStream(
     active = {
       runToken,
       chunks: segmentByLanguage(clean, options.lang ?? "en"),
+      fullText: clean,
       chunkIndex: 0,
       gender: "neutral",
       rate: options.rate ?? 1.0,
