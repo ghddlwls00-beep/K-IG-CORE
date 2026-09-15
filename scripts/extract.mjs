@@ -471,7 +471,7 @@ function extractCnn(SRC, args, stats, CONTENT, PUBLIC_DIR) {
       {
         course: "cnn",
         tab: "cnn",
-        lessonCount: lessons.length,
+        lessonCount: lessons.filter((l) => l.variant === "main").length,
         groups,
         lessons: lessons.map((l) => ({
           id: l.id,
@@ -735,7 +735,7 @@ function main() {
       const index = {
         course: course.slug,
         tab: TAB_OF[course.slug] ?? null,
-        lessonCount: lessons.length,
+        lessonCount: lessons.filter((l) => l.variant === "main").length,
         groups,
         lessons: lessons.map((l) => ({
           id: l.id,

@@ -30,13 +30,22 @@ function readJson<T>(file: string): T | null {
   }
 }
 
-/** Courses that actually have extracted content on disk. */
+/**
+ * Courses that actually have extracted content on disk.
+ *
+ * `lessonCount` is derived from the index rather than trusted from its stored
+ * field. The extractor counted *pages*, and a lesson with a Korean script
+ * companion is two pages ("d001" and "d001-1"), so LISTENING advertised 552
+ * lessons for 276 and READING 512 for 256. The `main` variant is the lesson;
+ * the `script` variant is its companion page.
+ */
 export function getCourses(): Course[] {
   return COURSES.map((c) => {
-    const index = readJson<{ lessonCount: number }>(
+    const index = readJson<{ lessons?: LessonSummary[] }>(
       path.join(CONTENT_DIR, "courses", `${c.slug}.json`),
     );
-    return { ...c, lessonCount: index?.lessonCount ?? 0 };
+    const lessonCount = index?.lessons?.filter((l) => l.variant === "main").length ?? 0;
+    return { ...c, lessonCount };
   }).filter((c) => c.lessonCount > 0);
 }
 
