@@ -1,0 +1,122 @@
+{
+  "_": [
+    "KIG-006 — 소유자가 검수하고 승인한 행별 결정 (2026-09-16).",
+    "",
+    "엔진이 스스로 풀 수 없는 행만 여기 적습니다. 키는 content/ 의 원문 text 와",
+    "'문자 단위로 완전히 같아야' 합니다. 맞는 원문이 하나도 없는 키는 오류로 처리되어",
+    "review/apply 가 중단됩니다 — 교재가 수정되면 이 파일도 같이 손봐야 하기 때문입니다.",
+    "",
+    "review-kig006.cjs 와 apply-kig006.cjs 가 같은 파일을 읽으므로, 검수표에서 본 것과",
+    "실제로 기록되는 것이 어긋날 수 없습니다.",
+    "",
+    "reason 은 '왜 엔진 결과를 사람이 뒤집었는가' 입니다. 지우지 마세요 — 나중에 엔진을",
+    "고칠 때 이 목록이 회귀 테스트 케이스가 됩니다."
+  ],
+
+  "decisions": [
+    {
+      "en": "Isn't he studying English?(혹은 Is he not studying English)?",
+      "text": "Isn't he studying English?",
+      "alternatives": ["Is he not studying English?"],
+      "reason": "원문에 물음표가 두 개(괄호 앞·뒤) 들어가 있어 엔진이 문장을 통째로 잃고 주정답이 '?' 한 글자가 됐습니다. 학습자 화면에 정답이 '?' 로 표시될 뻔한 행입니다."
+    },
+
+    {
+      "en": "I don't either, (Neither do I).",
+      "text": "I don't either.",
+      "alternatives": ["Neither do I."],
+      "reason": "괄호가 절 전체를 대체합니다. 엔진은 뒤에 이어 붙여 'I don't either, Neither do I.' 를 만들었습니다."
+    },
+    {
+      "en": "Why doesn't he (does he not) welcome me?",
+      "text": "Why doesn't he welcome me?",
+      "alternatives": ["Why does he not welcome me?"],
+      "reason": "축약형↔비축약형 치환인데 엔진이 삽입으로 처리했습니다."
+    },
+    {
+      "en": "Don't your parents have a dream (dreams)?",
+      "text": "Don't your parents have a dream?",
+      "alternatives": ["Don't your parents have dreams?"],
+      "reason": "복수형이 관사까지 포함해 'a dream' 을 대체합니다. 엔진은 'a dreams' 를 만들었습니다."
+    },
+    {
+      "en": "Doesn't your son have a dream (dreams)?",
+      "text": "Doesn't your son have a dream?",
+      "alternatives": ["Doesn't your son have dreams?"],
+      "reason": "위와 같은 행."
+    },
+    {
+      "en": "Were they policemen (police officers)?",
+      "text": "Were they policemen?",
+      "alternatives": ["Were they police officers?"],
+      "reason": "동의어 치환인데 두 단어가 겹치지 않아 중복 검사에 걸리지 않고 'policemen police officers' 가 됐습니다."
+    },
+    {
+      "en": "You told me everything else(every other thing), didn't you?",
+      "text": "You told me everything else, didn't you?",
+      "alternatives": ["You told me every other thing, didn't you?"],
+      "reason": "'everything else' 두 단어를 대체해야 하는데 'everything' 만 남기고 삽입했습니다."
+    },
+    {
+      "en": "Please keep (be) quiet.",
+      "text": "Please keep quiet.",
+      "alternatives": ["Please be quiet."],
+      "reason": "괄호가 동사 keep 을 대체합니다. 엔진은 'Please keep be quiet.' 를 만들었습니다."
+    },
+    {
+      "en": "May I have the day off tomorrow(have tomorrow off)?",
+      "text": "May I have the day off tomorrow?",
+      "alternatives": ["May I have tomorrow off?"],
+      "reason": "괄호가 'have the day off tomorrow' 전체를 대체합니다. 엔진은 'have' 를 남겨 'have have' 가 됐습니다."
+    },
+    {
+      "en": "I never get carsick but I always get airsick (aboard a plane) or seasick (aboard a ship).",
+      "text": "I never get carsick but I always get airsick or seasick.",
+      "alternatives": [
+        "I never get carsick but I always get airsick aboard a plane or seasick aboard a ship.",
+        "I never get carsick but I always get airsick aboard a plane or seasick.",
+        "I never get carsick but I always get airsick or seasick aboard a ship."
+      ],
+      "reason": "괄호 두 개가 각각 앞 형용사에 붙는 선택 수식구입니다. 네 조합 중 셋이 정문이고, 엔진은 어느 쪽에 붙는지 몰라 뒤엉켰습니다."
+    },
+
+    {
+      "en": "This is he.(Speaking.)",
+      "text": "This is he.",
+      "alternatives": ["Speaking."],
+      "reason": "전화 영어의 정상적인 응답입니다. 한 단어라 자동 가드(G3)에 걸렸지만 소유자가 살리기로 했습니다."
+    },
+    {
+      "en": "Your teacher does not understand you, does he (or she)?",
+      "text": "Your teacher does not understand you, does he?",
+      "alternatives": ["Your teacher does not understand you, does he or she?"],
+      "reason": "여기서는 괄호가 치환이 아니라 '덧붙이기'가 맞습니다. 자동 가드(G2b)에 걸렸지만 소유자가 살리기로 했습니다."
+    }
+  ],
+
+  "approved": [
+    "What was her maiden name(family name: last name)?",
+    "Wasn't there a boy? (Was there not a boy?)",
+    "Weren't there boys? (Were there not boys?)",
+    "The lights were all on.(All the lights were on.)",
+    "It takes one hour for me to get here. (It takes me one hour to get here.)",
+    "He should be in high school now if he had not flunked a grade. (Had he not flunked a grade, he should be in high school now.)",
+    "I think it the best way to success to work hard. (I think the best way to success is to work hard.)"
+  ],
+  "_approved": "엔진 결과가 그대로 맞다고 소유자가 확인한 행입니다. 가드가 의심 표시를 했지만 뒤집을 필요가 없었습니다. 다시 검수 대상으로 올라오지 않게 기록해 둡니다.",
+
+  "_reverted": [
+    "gh2-032 'I think it the best way to success to work hard.' 는 한때 '비문'으로 판정해",
+    "괄호 안의 현대식 표현을 주정답으로 올렸다가, 2026-09-16 같은 날 되돌렸습니다.",
+    "",
+    "되돌린 이유: 레슨 32 는 to부정사 과이고, 그 안의 문장이 전부 to부정사 구문입니다",
+    "(how to regain / whether to go / waited for her to come / no choice but to study /",
+    "permits the company to import …). 문제의 문장은 'think it + 보어 + to부정사' —",
+    "'I think it best to leave.' 와 같은 정식 구문이며, 바로 이 레슨이 가르치려는 문형입니다.",
+    "괄호 안은 교정문이 아니라 쉽게 풀어 쓴 현대식 표현이었습니다.",
+    "",
+    "교훈: 문장 하나만 보고 비문 여부를 판정하면 안 됩니다. 이 교재는 문법서이고,",
+    "낯설어 보이는 구문이 바로 그 과의 학습 목표일 수 있습니다. 주정답을 뒤집기 전에",
+    "반드시 같은 레슨의 다른 문장들이 무엇을 가르치는지 확인하세요."
+  ]
+}

@@ -1,0 +1,7041 @@
+{
+ "comparedAt": "2026-09-15",
+ "freshTree": "C:\\kigextract\\content",
+ "onlyInArchive": [
+  "phonics/phonics_001",
+  "phonics/phonics_002",
+  "grammar1/grammar1_001"
+ ],
+ "onlyInCurrent": [],
+ "counts": {
+  "ARCHIVE_FIXES": 18,
+  "SAME_IN_BOTH": 589,
+  "NOT_IN_ARCHIVE": 6,
+  "NEEDS_EYES": 9
+ },
+ "verdict": {
+  "ARCHIVE_FIXES": [
+   {
+    "section": "reading",
+    "lesson": "pr231",
+    "code": "MOJIBAKE",
+    "severity": "P1",
+    "detail": "깨진 문자 166개 — EUC-KR을 UTF-8로 읽은 흔적. 원본 바이트로 재디코딩 필요",
+    "count": 166
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "ITEM_NUMBER_GAP",
+    "severity": "P1",
+    "detail": "문항 결번 37, 39 — 원본에서 해당 문항 확인",
+    "gaps": [
+     37,
+     39
+    ]
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "ITEM_SWALLOWED_NEXT",
+    "severity": "P1",
+    "detail": "#36이 37번을 흡수 — 원본에서 두 문항을 분리",
+    "n": "36",
+    "text": "Don't I love her(Do I not ---)? 37.This is mine."
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "ITEM_SWALLOWED_NEXT",
+    "severity": "P1",
+    "detail": "#38이 39번을 흡수 — 원본에서 두 문항을 분리",
+    "n": "38",
+    "text": "It is yours. 39.Those(They) are theirs."
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-088↔gh1-089",
+    "code": "PAIR_CONTENT_DIVERGES",
+    "severity": "P1",
+    "detail": "한↔영 일치 1/8 (13%) — 원본에서 정답 확인",
+    "samples": [
+     "#10 내가 어디 있나?(여기가 어딘가) | Are those animals dangerous?",
+     "#12 그녀는 그렇게 똑똑하지 않다. | Are these plants rare?",
+     "#14 오늘 그 장관들은 어디에 있나? | Is this car convenient?",
+     "#15 그 마이크가 여전히 켜져 있다. | Is your airplane safe?"
+    ]
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#28 영어 답안에 한국어 섞임: \"Don't I love you(혹은 Do I not ---)?\"",
+    "n": "28"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#29 영어 답안에 한국어 섞임: \"Don't you love my sister(혹은 Do you not ---- )?\"",
+    "n": "29"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#30 영어 답안에 한국어 섞임: \"Doesn't he love me(혹은 Does he not ---)?\"",
+    "n": "30"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#31 영어 답안에 한국어 섞임: \"Doesn't she love your brother(혹은 Does she not ---)?\"",
+    "n": "31"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#32 영어 답안에 한국어 섞임: \"Don't they love you(혹은 Do they not---)?\"",
+    "n": "32"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#33 영어 답안에 한국어 섞임: \"Doesn't she love his brother(혹은 Does she not ---) ?\"",
+    "n": "33"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#34 영어 답안에 한국어 섞임: \"Don't I love him(혹은 Do I not ---)?\"",
+    "n": "34"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#35 영어 답안에 한국어 섞임: \"Doesn't he love her sister(혹은 Does he not --)?\"",
+    "n": "35"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#47 영어 답안에 한국어 섞임: \"Isn't this mine(혹은 Is this not mine?)\"",
+    "n": "47"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-033",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#48 영어 답안에 한국어 섞임: \"Isn't it yours(혹은 Is it not yours)?\"",
+    "n": "48"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-047",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#81 영어 답안에 한국어 섞임: \"It is a book, isn't it(혹은 It is a book, is it not?)\"",
+    "n": "81"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-047",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#82 영어 답안에 한국어 섞임: \"These are pens, aren't these(혹은 ---, are these not)?\"",
+    "n": "82"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-047",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#83 영어 답안에 한국어 섞임: \"Those(they) are books, aren't they(혹은 ---, are they no\"",
+    "n": "83"
+   }
+  ],
+  "SAME_IN_BOTH": [
+   {
+    "section": "reading",
+    "lesson": "pr231-1",
+    "code": "MOJIBAKE",
+    "severity": "P1",
+    "detail": "깨진 문자 341개 — EUC-KR을 UTF-8로 읽은 흔적. 원본 바이트로 재디코딩 필요",
+    "count": 341
+   },
+   {
+    "section": "student",
+    "lesson": "s1",
+    "code": "ITEM_NUMBER_GAP",
+    "severity": "P1",
+    "detail": "문항 결번 7 — 원본에서 해당 문항 확인",
+    "gaps": [
+     7
+    ]
+   },
+   {
+    "section": "student",
+    "lesson": "s4",
+    "code": "ITEM_NUMBER_GAP",
+    "severity": "P1",
+    "detail": "문항 결번 66 — 원본에서 해당 문항 확인",
+    "gaps": [
+     66
+    ]
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-040↔gh1-041",
+    "code": "PAIR_CONTENT_DIVERGES",
+    "severity": "P1",
+    "detail": "한↔영 일치 10/20 (50%) — 원본에서 정답 확인",
+    "samples": [
+     "#26 너는 한국에 있지 않지? | I love you, don't I?",
+     "#27 그는 한국에 있지 않지? | You love my sister, don't yo",
+     "#28 그녀는 한국에 있지 않지? | He loves me, doesn't he?",
+     "#29 나는 소년이 아니지? | She loves your brother, does"
+    ]
+   },
+   {
+    "section": "reading",
+    "lesson": "pr037",
+    "code": "VOCAB_NOT_IN_PASSAGE",
+    "severity": "P2",
+    "detail": "어휘 \"arrogant\"가 지문에 없음"
+   },
+   {
+    "section": "ld",
+    "lesson": "d003",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d004",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d007",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d008",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d009",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d010",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d011",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d012",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d013",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d014",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d015",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d026",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d027",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d035",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d036",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 4개 — 원본 음성/스크립트와 대조",
+    "count": 4
+   },
+   {
+    "section": "ld",
+    "lesson": "d037",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 4개 — 원본 음성/스크립트와 대조",
+    "count": 4
+   },
+   {
+    "section": "ld",
+    "lesson": "d038",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 4개 — 원본 음성/스크립트와 대조",
+    "count": 4
+   },
+   {
+    "section": "ld",
+    "lesson": "d039",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d041",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d042",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d059",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d062",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d067",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d069",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d072",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d099",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d105",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d107",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d108",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d111",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d112",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d113",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d114",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d118",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 4개 — 원본 음성/스크립트와 대조",
+    "count": 4
+   },
+   {
+    "section": "ld",
+    "lesson": "d121",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d126",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d127",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d142",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d144",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d145",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d146",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d147",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d148",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d149",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d150",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d152",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d154",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d155",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d161",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d162",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d164",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d166",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d167",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d168",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d170",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d171",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d172",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d173",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d175",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d176",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d177",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d178",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d179",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d180",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d181",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d182",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 4개 — 원본 음성/스크립트와 대조",
+    "count": 4
+   },
+   {
+    "section": "ld",
+    "lesson": "d183",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d185",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d187",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 5개 — 원본 음성/스크립트와 대조",
+    "count": 5
+   },
+   {
+    "section": "ld",
+    "lesson": "d188",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d189",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d190",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d191",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d192",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d193",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 4개 — 원본 음성/스크립트와 대조",
+    "count": 4
+   },
+   {
+    "section": "ld",
+    "lesson": "d194",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d196",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d197",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d199",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d202",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d203",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d204",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d205",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d206",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d208",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d209",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d211",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d218",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d219",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d220",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d221",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d222",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d223",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d226",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d230",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d232",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d234",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d236",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d237",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d239",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d240",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d241",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d244",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d246",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d247",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 3개 — 원본 음성/스크립트와 대조",
+    "count": 3
+   },
+   {
+    "section": "ld",
+    "lesson": "d251",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d252",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d253",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d257",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 2개 — 원본 음성/스크립트와 대조",
+    "count": 2
+   },
+   {
+    "section": "ld",
+    "lesson": "d259",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d260",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d262",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d266",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d269",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d272",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "ld",
+    "lesson": "d276",
+    "code": "SENTENCE_TRUNCATED",
+    "severity": "P1",
+    "detail": "문장 끝이 잘린 문장 1개 — 원본 음성/스크립트와 대조",
+    "count": 1
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"billion\" → \"10억\" (한글 아님)",
+    "word": "billion",
+    "meaning": "10억"
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-38",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"judg(e)ment\"",
+    "word": "judg(e)ment"
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-41",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"medi(a)eval\"",
+    "word": "medi(a)eval"
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-44",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"marvel(l)ous\"",
+    "word": "marvel(l)ous"
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-56",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"enrol(l)\"",
+    "word": "enrol(l)"
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-60",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"sophomore\" → \"2학년\" (한글 아님)",
+    "word": "sophomore",
+    "meaning": "2학년"
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-62",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"\"insistence,-cy\"\"",
+    "word": "\"insistence,-cy\""
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-02",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"Mr.\" → \"씨.\" (한글 아님)",
+    "word": "Mr.",
+    "meaning": "씨."
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-10",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"colo(u)r\"",
+    "word": "colo(u)r"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-23",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"neighbo(u)r\"",
+    "word": "neighbo(u)r"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-34",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"favo(u)r\"",
+    "word": "favo(u)r"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-37",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"humo(u)r\"",
+    "word": "humo(u)r"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"January\" → \"1월\" (한글 아님)",
+    "word": "January",
+    "meaning": "1월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"February\" → \"2월\" (한글 아님)",
+    "word": "February",
+    "meaning": "2월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"March\" → \"3월\" (한글 아님)",
+    "word": "March",
+    "meaning": "3월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"April\" → \"4월\" (한글 아님)",
+    "word": "April",
+    "meaning": "4월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"May\" → \"5월\" (한글 아님)",
+    "word": "May",
+    "meaning": "5월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"June\" → \"6월\" (한글 아님)",
+    "word": "June",
+    "meaning": "6월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"July\" → \"7월\" (한글 아님)",
+    "word": "July",
+    "meaning": "7월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"August\" → \"8월\" (한글 아님)",
+    "word": "August",
+    "meaning": "8월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"September\" → \"9월\" (한글 아님)",
+    "word": "September",
+    "meaning": "9월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"October\" → \"10월\" (한글 아님)",
+    "word": "October",
+    "meaning": "10월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-12",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"November\" → \"11월\" (한글 아님)",
+    "word": "November",
+    "meaning": "11월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-12",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"December\" → \"12월\" (한글 아님)",
+    "word": "December",
+    "meaning": "12월"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-01",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"gray(grey)\"",
+    "word": "gray(grey)"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-08",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"afterward(s)\"",
+    "word": "afterward(s)"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-12",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"autumn(=fall)\"",
+    "word": "autumn(=fall)"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-13",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"hono(u)r\"",
+    "word": "hono(u)r"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-14",
+    "code": "WORD_MALFORMED",
+    "severity": "P2",
+    "detail": "단어 표기 이상: \"dialog(ue)\"",
+    "word": "dialog(ue)"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-21",
+    "code": "MEANING_NOT_KOREAN",
+    "severity": "P2",
+    "detail": "\"decade\" → \"10년\" (한글 아님)",
+    "word": "decade",
+    "meaning": "10년"
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-01",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"see\" → \"참조\" (제안: 보다) — 원본 단어장과 대조",
+    "word": "see",
+    "shown": "참조",
+    "suggested": "보다",
+    "lessons": [
+     "mv1-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-02",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"well\" → \"음\" (제안: 잘; 건강한) — 원본 단어장과 대조",
+    "word": "well",
+    "shown": "음",
+    "suggested": "잘; 건강한",
+    "lessons": [
+     "mv1-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-03",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"live\" → \"라이브\" (제안: 살다) — 원본 단어장과 대조",
+    "word": "live",
+    "shown": "라이브",
+    "suggested": "살다",
+    "lessons": [
+     "mv1-03",
+     "mv2-09",
+     "hv-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"put\" → \"넣어\" (제안: 놓다, 두다) — 원본 단어장과 대조",
+    "word": "put",
+    "shown": "넣어",
+    "suggested": "놓다, 두다",
+    "lessons": [
+     "mv1-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-06",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"let\" → \"하자\" (제안: ~하게 하다) — 원본 단어장과 대조",
+    "word": "let",
+    "shown": "하자",
+    "suggested": "~하게 하다",
+    "lessons": [
+     "mv1-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-08",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"shall\" → \"한다\" (제안: ~할 것이다) — 원본 단어장과 대조",
+    "word": "shall",
+    "shown": "한다",
+    "suggested": "~할 것이다",
+    "lessons": [
+     "mv1-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-09",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"ever\" → \"적\" (제안: 언젠가, 한 번이라도) — 원본 단어장과 대조",
+    "word": "ever",
+    "shown": "적",
+    "suggested": "언젠가, 한 번이라도",
+    "lessons": [
+     "mv1-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"hit\" → \"히트\" (제안: 치다, 때리다) — 원본 단어장과 대조",
+    "word": "hit",
+    "shown": "히트",
+    "suggested": "치다, 때리다",
+    "lessons": [
+     "mv1-10",
+     "mv2-06",
+     "mv3-14"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-10",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"wrong\" → \"틀렸어\" (제안: 잘못된, 틀린) — 원본 단어장과 대조",
+    "word": "wrong",
+    "shown": "틀렸어",
+    "suggested": "잘못된, 틀린",
+    "lessons": [
+     "mv1-10",
+     "mv2-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-11",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"follow\" → \"팔로우\" (제안: 따르다, 따라가다) — 원본 단어장과 대조",
+    "word": "follow",
+    "shown": "팔로우",
+    "suggested": "따르다, 따라가다",
+    "lessons": [
+     "mv1-11",
+     "mv2-18",
+     "mv3-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-12",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"rock\" → \"록\" (제안: 바위) — 원본 단어장과 대조",
+    "word": "rock",
+    "shown": "록",
+    "suggested": "바위",
+    "lessons": [
+     "mv1-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-12",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"few\" → \"거의\" (제안: (수가) 적은, 몇몇의) — 원본 단어장과 대조",
+    "word": "few",
+    "shown": "거의",
+    "suggested": "(수가) 적은, 몇몇의",
+    "lessons": [
+     "mv1-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-13",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"show\" → \"쇼\" (제안: 보여주다) — 원본 단어장과 대조",
+    "word": "show",
+    "shown": "쇼",
+    "suggested": "보여주다",
+    "lessons": [
+     "mv1-13",
+     "mv2-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-13",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"wait\" → \"잠깐\" (제안: 기다리다) — 원본 단어장과 대조",
+    "word": "wait",
+    "shown": "잠깐",
+    "suggested": "기다리다",
+    "lessons": [
+     "mv1-13",
+     "mv2-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-14",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"fly\" → \"파리\" (제안: 날다 (파리)) — 원본 단어장과 대조",
+    "word": "fly",
+    "shown": "파리",
+    "suggested": "날다 (파리)",
+    "lessons": [
+     "mv1-14",
+     "mv2-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-14",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"listen\" → \"들어봐\" (제안: 듣다) — 원본 단어장과 대조",
+    "word": "listen",
+    "shown": "들어봐",
+    "suggested": "듣다",
+    "lessons": [
+     "mv1-14",
+     "mv2-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-15",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"cold\" → \"감기\" (제안: 추운 (감기)) — 원본 단어장과 대조",
+    "word": "cold",
+    "shown": "감기",
+    "suggested": "추운 (감기)",
+    "lessons": [
+     "mv1-15",
+     "mv2-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-16",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"notebook\" → \"노트북\" (제안: 공책 (노트북=laptop)) — 원본 단어장과 대조",
+    "word": "notebook",
+    "shown": "노트북",
+    "suggested": "공책 (노트북=laptop)",
+    "lessons": [
+     "mv1-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-17",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"store\" → \"저장\" (제안: 가게; 저장하다) — 원본 단어장과 대조",
+    "word": "store",
+    "shown": "저장",
+    "suggested": "가게; 저장하다",
+    "lessons": [
+     "mv1-17",
+     "mv2-02",
+     "mv3-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-18",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"hold\" → \"보류\" (제안: 잡다, 들다) — 원본 단어장과 대조",
+    "word": "hold",
+    "shown": "보류",
+    "suggested": "잡다, 들다",
+    "lessons": [
+     "mv1-18",
+     "mv2-18",
+     "mv3-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"build\" → \"빌드\" (제안: 짓다, 세우다) — 원본 단어장과 대조",
+    "word": "build",
+    "shown": "빌드",
+    "suggested": "짓다, 세우다",
+    "lessons": [
+     "mv1-19",
+     "mv2-02",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-19",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"ride\" → \"타고\" (제안: 타다) — 원본 단어장과 대조",
+    "word": "ride",
+    "shown": "타고",
+    "suggested": "타다",
+    "lessons": [
+     "mv1-19",
+     "mv2-04",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-20",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"cool\" → \"멋지다\" (제안: 시원한) — 원본 단어장과 대조",
+    "word": "cool",
+    "shown": "멋지다",
+    "suggested": "시원한",
+    "lessons": [
+     "mv1-20",
+     "mv2-04",
+     "mv3-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-22",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"idle\" → \"유휴\" (제안: 게으른, 한가한) — 원본 단어장과 대조",
+    "word": "idle",
+    "shown": "유휴",
+    "suggested": "게으른, 한가한",
+    "lessons": [
+     "mv1-22",
+     "mv2-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-22",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"save\" → \"저장\" (제안: 구하다; 저축하다) — 원본 단어장과 대조",
+    "word": "save",
+    "shown": "저장",
+    "suggested": "구하다; 저축하다",
+    "lessons": [
+     "mv1-22",
+     "mv1-23",
+     "mv2-09",
+     "mv3-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-24",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"note\" → \"참고\" (제안: 메모, 쪽지) — 원본 단어장과 대조",
+    "word": "note",
+    "shown": "참고",
+    "suggested": "메모, 쪽지",
+    "lessons": [
+     "mv1-24",
+     "mv2-06",
+     "hv-45"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-26",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"push\" → \"푸시\" (제안: 밀다) — 원본 단어장과 대조",
+    "word": "push",
+    "shown": "푸시",
+    "suggested": "밀다",
+    "lessons": [
+     "mv1-26",
+     "mv2-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-26",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"lead\" → \"리드\" (제안: 이끌다) — 원본 단어장과 대조",
+    "word": "lead",
+    "shown": "리드",
+    "suggested": "이끌다",
+    "lessons": [
+     "mv1-26",
+     "mv2-20",
+     "mv3-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-27",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"blind\" → \"블라인드\" (제안: 눈이 먼) — 원본 단어장과 대조",
+    "word": "blind",
+    "shown": "블라인드",
+    "suggested": "눈이 먼",
+    "lessons": [
+     "mv1-27",
+     "mv2-13",
+     "mv3-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-27",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"burn\" → \"화상\" (제안: 타다, 태우다) — 원본 단어장과 대조",
+    "word": "burn",
+    "shown": "화상",
+    "suggested": "타다, 태우다",
+    "lessons": [
+     "mv1-27",
+     "mv2-08",
+     "mv3-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-27",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"draw\" → \"무승부\" (제안: 그리다; 끌다) — 원본 단어장과 대조",
+    "word": "draw",
+    "shown": "무승부",
+    "suggested": "그리다; 끌다",
+    "lessons": [
+     "mv1-27",
+     "mv2-37",
+     "mv3-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-28",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"drop\" → \"드롭\" (제안: 떨어뜨리다) — 원본 단어장과 대조",
+    "word": "drop",
+    "shown": "드롭",
+    "suggested": "떨어뜨리다",
+    "lessons": [
+     "mv1-28",
+     "mv2-14"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-28",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"race\" → \"인종\" (제안: 경주 (인종)) — 원본 단어장과 대조",
+    "word": "race",
+    "shown": "인종",
+    "suggested": "경주 (인종)",
+    "lessons": [
+     "mv1-28",
+     "mv2-40",
+     "mv3-31"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-29",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"against\" → \"반대하다\" (제안: ~에 반대하여 (전치사)) — 원본 단어장과 대조",
+    "word": "against",
+    "shown": "반대하다",
+    "suggested": "~에 반대하여 (전치사)",
+    "lessons": [
+     "mv1-29"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-30",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"blow\" → \"타격\" (제안: 불다) — 원본 단어장과 대조",
+    "word": "blow",
+    "shown": "타격",
+    "suggested": "불다",
+    "lessons": [
+     "mv1-30",
+     "mv2-13",
+     "mv3-14"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-31",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"bit\" → \"비트\" (제안: 조금) — 원본 단어장과 대조",
+    "word": "bit",
+    "shown": "비트",
+    "suggested": "조금",
+    "lessons": [
+     "mv1-31",
+     "mv3-29"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-32",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"lift\" → \"리프트\" (제안: 들어 올리다) — 원본 단어장과 대조",
+    "word": "lift",
+    "shown": "리프트",
+    "suggested": "들어 올리다",
+    "lessons": [
+     "mv1-32",
+     "mv2-22"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-32",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"bark\" → \"나무껍질\" (제안: 짖다) — 원본 단어장과 대조",
+    "word": "bark",
+    "shown": "나무껍질",
+    "suggested": "짖다",
+    "lessons": [
+     "mv1-32",
+     "mv2-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-32",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"raise\" → \"인상\" (제안: 올리다, 기르다) — 원본 단어장과 대조",
+    "word": "raise",
+    "shown": "인상",
+    "suggested": "올리다, 기르다",
+    "lessons": [
+     "mv1-32",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-32",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"although\" → \"그래도\" (제안: 비록 ~이지만) — 원본 단어장과 대조",
+    "word": "although",
+    "shown": "그래도",
+    "suggested": "비록 ~이지만",
+    "lessons": [
+     "mv1-32"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-33",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"hang\" → \"끊다\" (제안: 걸다, 매달다) — 원본 단어장과 대조",
+    "word": "hang",
+    "shown": "끊다",
+    "suggested": "걸다, 매달다",
+    "lessons": [
+     "mv1-33",
+     "mv2-17",
+     "mv3-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"feed\" → \"피드\" (제안: 먹이를 주다) — 원본 단어장과 대조",
+    "word": "feed",
+    "shown": "피드",
+    "suggested": "먹이를 주다",
+    "lessons": [
+     "mv1-37",
+     "mv2-14",
+     "mv3-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-38",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"luck\" → \"행운을 빌어요\" (제안: 운, 행운) — 원본 단어장과 대조",
+    "word": "luck",
+    "shown": "행운을 빌어요",
+    "suggested": "운, 행운",
+    "lessons": [
+     "mv1-38",
+     "mv2-37",
+     "mv3-06",
+     "mv3-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"count\" → \"카운트\" (제안: 세다) — 원본 단어장과 대조",
+    "word": "count",
+    "shown": "카운트",
+    "suggested": "세다",
+    "lessons": [
+     "mv1-38",
+     "mv2-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-38",
+    "code": "MEANING_MALFORMED",
+    "severity": "P1",
+    "detail": "\"calender\" → \"캘린더\" (제안: 철자 오류 (calendar)) — 원본 단어장과 대조",
+    "word": "calender",
+    "shown": "캘린더",
+    "suggested": "철자 오류 (calendar)",
+    "lessons": [
+     "mv1-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-38",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"well-done\" → \"잘했어\" (제안: 잘 익힌) — 원본 단어장과 대조",
+    "word": "well-done",
+    "shown": "잘했어",
+    "suggested": "잘 익힌",
+    "lessons": [
+     "mv1-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-39",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"express\" → \"익스프레스\" (제안: 표현하다) — 원본 단어장과 대조",
+    "word": "express",
+    "shown": "익스프레스",
+    "suggested": "표현하다",
+    "lessons": [
+     "mv1-39",
+     "mv2-23",
+     "hv-54"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-40",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"stream\" → \"스트림\" (제안: 개울, 시내) — 원본 단어장과 대조",
+    "word": "stream",
+    "shown": "스트림",
+    "suggested": "개울, 시내",
+    "lessons": [
+     "mv1-40",
+     "mv2-27",
+     "mv2-40",
+     "mv3-07"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-40",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"enter\" → \"입력하다\" (제안: 들어가다) — 원본 단어장과 대조",
+    "word": "enter",
+    "shown": "입력하다",
+    "suggested": "들어가다",
+    "lessons": [
+     "mv1-40",
+     "mv2-18"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-04",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"merry\" → \"메리\" (제안: 즐거운) — 원본 단어장과 대조",
+    "word": "merry",
+    "shown": "메리",
+    "suggested": "즐거운",
+    "lessons": [
+     "mv2-04",
+     "mv3-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-04",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"lay\" → \"누워\" (제안: 놓다; 낳다) — 원본 단어장과 대조",
+    "word": "lay",
+    "shown": "누워",
+    "suggested": "놓다; 낳다",
+    "lessons": [
+     "mv2-04",
+     "mv3-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"bore\" → \"보어\" (제안: 지루하게 하다) — 원본 단어장과 대조",
+    "word": "bore",
+    "shown": "보어",
+    "suggested": "지루하게 하다",
+    "lessons": [
+     "mv2-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-11",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"march\" → \"행진\" (제안: 3월 (월 이름 목록 안)) — 원본 단어장과 대조",
+    "word": "march",
+    "shown": "행진",
+    "suggested": "3월 (월 이름 목록 안)",
+    "lessons": [
+     "mv2-11",
+     "mv2-12",
+     "mv3-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"may\" → \"할 수 있다\" (제안: 5월 (월 이름 목록 안) / ~해도 된다) — 원본 단어장과 대조",
+    "word": "may",
+    "shown": "할 수 있다",
+    "suggested": "5월 (월 이름 목록 안) / ~해도 된다",
+    "lessons": [
+     "mv1-05",
+     "mv2-11",
+     "mv2-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-14",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"crop\" → \"자르기\" (제안: 농작물) — 원본 단어장과 대조",
+    "word": "crop",
+    "shown": "자르기",
+    "suggested": "농작물",
+    "lessons": [
+     "mv2-14",
+     "mv3-28"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-20",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"saw\" → \"보았다\" (제안: 톱 / see의 과거) — 원본 단어장과 대조",
+    "word": "saw",
+    "shown": "보았다",
+    "suggested": "톱 / see의 과거",
+    "lessons": [
+     "mv2-20",
+     "mv3-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-18",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"stand\" → \"스탠드\" (제안: 서다) — 원본 단어장과 대조",
+    "word": "stand",
+    "shown": "스탠드",
+    "suggested": "서다",
+    "lessons": [
+     "mv2-18",
+     "hv-61"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"nail\" → \"네일\" (제안: 손톱; 못) — 원본 단어장과 대조",
+    "word": "nail",
+    "shown": "네일",
+    "suggested": "손톱; 못",
+    "lessons": [
+     "mv2-19",
+     "mv3-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-01",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"grand\" → \"그랜드\" (제안: 웅장한) — 원본 단어장과 대조",
+    "word": "grand",
+    "shown": "그랜드",
+    "suggested": "웅장한",
+    "lessons": [
+     "mv3-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-01",
+    "code": "MEANING_MALFORMED",
+    "severity": "P1",
+    "detail": "\"gray(grey)\" → \"회색회색\" (제안: 회색 (현재 '회색회색')) — 원본 단어장과 대조",
+    "word": "gray(grey)",
+    "shown": "회색회색",
+    "suggested": "회색 (현재 '회색회색')",
+    "lessons": [
+     "mv3-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-12",
+    "code": "MEANING_MALFORMED",
+    "severity": "P1",
+    "detail": "\"autumn(=fall)\" → \"가을=가을\" (제안: 가을 (현재 '가을=가을')) — 원본 단어장과 대조",
+    "word": "autumn(=fall)",
+    "shown": "가을=가을",
+    "suggested": "가을 (현재 '가을=가을')",
+    "lessons": [
+     "mv3-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-02",
+    "code": "MEANING_INAPPROPRIATE",
+    "severity": "P1",
+    "detail": "\"gay\" → \"게이\" (제안: 명랑한, 쾌활한) — 원본 단어장과 대조",
+    "word": "gay",
+    "shown": "게이",
+    "suggested": "명랑한, 쾌활한",
+    "lessons": [
+     "mv3-02",
+     "mv3-36"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-13",
+    "code": "MEANING_INAPPROPRIATE",
+    "severity": "P1",
+    "detail": "\"affair\" → \"불륜\" (제안: 일, 사건 (현재 '불륜')) — 원본 단어장과 대조",
+    "word": "affair",
+    "shown": "불륜",
+    "suggested": "일, 사건 (현재 '불륜')",
+    "lessons": [
+     "mv3-13"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-34",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"swift\" → \"스위프트\" (제안: 빠른) — 원본 단어장과 대조",
+    "word": "swift",
+    "shown": "스위프트",
+    "suggested": "빠른",
+    "lessons": [
+     "mv3-34"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-16",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"bush\" → \"부시\" (제안: 덤불) — 원본 단어장과 대조",
+    "word": "bush",
+    "shown": "부시",
+    "suggested": "덤불",
+    "lessons": [
+     "mv3-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-16",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"log\" → \"로그\" (제안: 통나무) — 원본 단어장과 대조",
+    "word": "log",
+    "shown": "로그",
+    "suggested": "통나무",
+    "lessons": [
+     "mv3-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-06",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"interrupt\" → \"인터럽트\" (제안: 방해하다) — 원본 단어장과 대조",
+    "word": "interrupt",
+    "shown": "인터럽트",
+    "suggested": "방해하다",
+    "lessons": [
+     "hv-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"compile\" → \"컴파일하다\" (제안: 편집하다, 모으다) — 원본 단어장과 대조",
+    "word": "compile",
+    "shown": "컴파일하다",
+    "suggested": "편집하다, 모으다",
+    "lessons": [
+     "hv-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-08",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"display\" → \"디스플레이\" (제안: 전시하다) — 원본 단어장과 대조",
+    "word": "display",
+    "shown": "디스플레이",
+    "suggested": "전시하다",
+    "lessons": [
+     "hv-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"dual\" → \"듀얼\" (제안: 이중의) — 원본 단어장과 대조",
+    "word": "dual",
+    "shown": "듀얼",
+    "suggested": "이중의",
+    "lessons": [
+     "hv-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"twist\" → \"트위스트\" (제안: 비틀다) — 원본 단어장과 대조",
+    "word": "twist",
+    "shown": "트위스트",
+    "suggested": "비틀다",
+    "lessons": [
+     "hv-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"triple\" → \"트리플\" (제안: 3배의) — 원본 단어장과 대조",
+    "word": "triple",
+    "shown": "트리플",
+    "suggested": "3배의",
+    "lessons": [
+     "hv-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"account\" → \"계정\" (제안: 계좌; 설명) — 원본 단어장과 대조",
+    "word": "account",
+    "shown": "계정",
+    "suggested": "계좌; 설명",
+    "lessons": [
+     "hv-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"outlet\" → \"콘센트\" (제안: 배출구, 판로) — 원본 단어장과 대조",
+    "word": "outlet",
+    "shown": "콘센트",
+    "suggested": "배출구, 판로",
+    "lessons": [
+     "hv-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-09",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"union\" → \"노동조합\" (제안: 결합, 연합) — 원본 단어장과 대조",
+    "word": "union",
+    "shown": "노동조합",
+    "suggested": "결합, 연합",
+    "lessons": [
+     "hv-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-09",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"separation\" → \"별거\" (제안: 분리) — 원본 단어장과 대조",
+    "word": "separation",
+    "shown": "별거",
+    "suggested": "분리",
+    "lessons": [
+     "hv-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-09",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"disposed\" → \"처분하다\" (제안: ~하는 경향이 있는) — 원본 단어장과 대조",
+    "word": "disposed",
+    "shown": "처분하다",
+    "suggested": "~하는 경향이 있는",
+    "lessons": [
+     "hv-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-09",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"disposition\" → \"처분\" (제안: 기질, 성향) — 원본 단어장과 대조",
+    "word": "disposition",
+    "shown": "처분",
+    "suggested": "기질, 성향",
+    "lessons": [
+     "hv-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-03",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"upside\" → \"거꾸로\" (제안: 위쪽, 윗면) — 원본 단어장과 대조",
+    "word": "upside",
+    "shown": "거꾸로",
+    "suggested": "위쪽, 윗면",
+    "lessons": [
+     "hv-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-04",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"constant\" → \"상수\" (제안: 끊임없는) — 원본 단어장과 대조",
+    "word": "constant",
+    "shown": "상수",
+    "suggested": "끊임없는",
+    "lessons": [
+     "mv3-04",
+     "hv-62"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-03",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"confirmed\" → \"확인됨\" (제안: 확고한, 상습적인) — 원본 단어장과 대조",
+    "word": "confirmed",
+    "shown": "확인됨",
+    "suggested": "확고한, 상습적인",
+    "lessons": [
+     "mv3-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-36",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"determined\" → \"결정됨\" (제안: 단호한) — 원본 단어장과 대조",
+    "word": "determined",
+    "shown": "결정됨",
+    "suggested": "단호한",
+    "lessons": [
+     "mv3-36",
+     "hv-67"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-03",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"succeeding\" → \"성공하다\" (제안: 다음의, 계속되는) — 원본 단어장과 대조",
+    "word": "succeeding",
+    "shown": "성공하다",
+    "suggested": "다음의, 계속되는",
+    "lessons": [
+     "mv3-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-23",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"advance\" → \"사전\" (제안: 전진하다) — 원본 단어장과 대조",
+    "word": "advance",
+    "shown": "사전",
+    "suggested": "전진하다",
+    "lessons": [
+     "mv2-23",
+     "hv-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-22",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"cast\" → \"캐스트\" (제안: 던지다) — 원본 단어장과 대조",
+    "word": "cast",
+    "shown": "캐스트",
+    "suggested": "던지다",
+    "lessons": [
+     "mv2-22",
+     "hv-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-22",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"float\" → \"플로트\" (제안: 뜨다) — 원본 단어장과 대조",
+    "word": "float",
+    "shown": "플로트",
+    "suggested": "뜨다",
+    "lessons": [
+     "mv2-22",
+     "mv3-25"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-22",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"guard\" → \"가드\" (제안: 지키다; 경비원) — 원본 단어장과 대조",
+    "word": "guard",
+    "shown": "가드",
+    "suggested": "지키다; 경비원",
+    "lessons": [
+     "mv2-22",
+     "mv3-25",
+     "hv-75"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-29",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"prime\" → \"프라임\" (제안: 주요한) — 원본 단어장과 대조",
+    "word": "prime",
+    "shown": "프라임",
+    "suggested": "주요한",
+    "lessons": [
+     "mv2-29",
+     "hv-54"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-29",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"link\" → \"링크\" (제안: 연결하다) — 원본 단어장과 대조",
+    "word": "link",
+    "shown": "링크",
+    "suggested": "연결하다",
+    "lessons": [
+     "mv2-29"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-30",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"splash\" → \"스플래시\" (제안: 튀기다) — 원본 단어장과 대조",
+    "word": "splash",
+    "shown": "스플래시",
+    "suggested": "튀기다",
+    "lessons": [
+     "mv2-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-35",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"tap\" → \"탭\" (제안: 가볍게 두드리다) — 원본 단어장과 대조",
+    "word": "tap",
+    "shown": "탭",
+    "suggested": "가볍게 두드리다",
+    "lessons": [
+     "mv2-35",
+     "mv2-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-33",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"spin\" → \"스핀\" (제안: 돌다) — 원본 단어장과 대조",
+    "word": "spin",
+    "shown": "스핀",
+    "suggested": "돌다",
+    "lessons": [
+     "mv2-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-32",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"creep\" → \"크리프\" (제안: 기다) — 원본 단어장과 대조",
+    "word": "creep",
+    "shown": "크리프",
+    "suggested": "기다",
+    "lessons": [
+     "mv2-32"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"grip\" → \"그립\" (제안: 꽉 잡다) — 원본 단어장과 대조",
+    "word": "grip",
+    "shown": "그립",
+    "suggested": "꽉 잡다",
+    "lessons": [
+     "mv2-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"instance\" → \"인스턴스\" (제안: 사례, 경우) — 원본 단어장과 대조",
+    "word": "instance",
+    "shown": "인스턴스",
+    "suggested": "사례, 경우",
+    "lessons": [
+     "mv2-38",
+     "hv-62"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-39",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"motion\" → \"모션\" (제안: 움직임) — 원본 단어장과 대조",
+    "word": "motion",
+    "shown": "모션",
+    "suggested": "움직임",
+    "lessons": [
+     "mv2-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-39",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"hatch\" → \"해치\" (제안: 부화하다) — 원본 단어장과 대조",
+    "word": "hatch",
+    "shown": "해치",
+    "suggested": "부화하다",
+    "lessons": [
+     "mv2-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-40",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"peak\" → \"피크\" (제안: 정상, 절정) — 원본 단어장과 대조",
+    "word": "peak",
+    "shown": "피크",
+    "suggested": "정상, 절정",
+    "lessons": [
+     "mv2-40"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-25",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"beat\" → \"이길\" (제안: 이기다; 치다) — 원본 단어장과 대조",
+    "word": "beat",
+    "shown": "이길",
+    "suggested": "이기다; 치다",
+    "lessons": [
+     "mv2-25",
+     "mv3-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-26",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"means\" → \"의미한다\" (제안: 수단) — 원본 단어장과 대조",
+    "word": "means",
+    "shown": "의미한다",
+    "suggested": "수단",
+    "lessons": [
+     "mv2-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-26",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"elementary\" → \"초등학교\" (제안: 기초의, 초보의) — 원본 단어장과 대조",
+    "word": "elementary",
+    "shown": "초등학교",
+    "suggested": "기초의, 초보의",
+    "lessons": [
+     "mv2-26",
+     "mv3-18",
+     "hv-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-37",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"found\" → \"발견\" (제안: 설립하다) — 원본 단어장과 대조",
+    "word": "found",
+    "shown": "발견",
+    "suggested": "설립하다",
+    "lessons": [
+     "mv2-37",
+     "hv-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-22",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"saying\" → \"말하는\" (제안: 속담, 격언) — 원본 단어장과 대조",
+    "word": "saying",
+    "shown": "말하는",
+    "suggested": "속담, 격언",
+    "lessons": [
+     "mv3-22"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-33",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"refresh\" → \"새로 고침\" (제안: 상쾌하게 하다) — 원본 단어장과 대조",
+    "word": "refresh",
+    "shown": "새로 고침",
+    "suggested": "상쾌하게 하다",
+    "lessons": [
+     "mv3-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-25",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"drag\" → \"드래그\" (제안: 끌다) — 원본 단어장과 대조",
+    "word": "drag",
+    "shown": "드래그",
+    "suggested": "끌다",
+    "lessons": [
+     "mv3-25"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-25",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"slide\" → \"슬라이드\" (제안: 미끄러지다) — 원본 단어장과 대조",
+    "word": "slide",
+    "shown": "슬라이드",
+    "suggested": "미끄러지다",
+    "lessons": [
+     "mv3-25"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-29",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"bar\" → \"바\" (제안: 막대; 술집) — 원본 단어장과 대조",
+    "word": "bar",
+    "shown": "바",
+    "suggested": "막대; 술집",
+    "lessons": [
+     "mv3-29",
+     "hv-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-34",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"volume\" → \"볼륨\" (제안: 책, 권; 음량) — 원본 단어장과 대조",
+    "word": "volume",
+    "shown": "볼륨",
+    "suggested": "책, 권; 음량",
+    "lessons": [
+     "mv3-34",
+     "hv-74"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-34",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"label\" → \"라벨\" (제안: 꼬리표) — 원본 단어장과 대조",
+    "word": "label",
+    "shown": "라벨",
+    "suggested": "꼬리표",
+    "lessons": [
+     "mv3-34"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-01",
+    "code": "MEANING_MALFORMED",
+    "severity": "P1",
+    "detail": "\"ancesto\" → \"조상\" (제안: 단어 철자 잘림 (ancestor)) — 원본 단어장과 대조",
+    "word": "ancesto",
+    "shown": "조상",
+    "suggested": "단어 철자 잘림 (ancestor)",
+    "lessons": [
+     "hv-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-01",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"preoccupy\" → \"선점하다\" (제안: 몰두하게 하다) — 원본 단어장과 대조",
+    "word": "preoccupy",
+    "shown": "선점하다",
+    "suggested": "몰두하게 하다",
+    "lessons": [
+     "hv-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-02",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"postscript\" → \"포스트스크립트\" (제안: 추신) — 원본 단어장과 대조",
+    "word": "postscript",
+    "shown": "포스트스크립트",
+    "suggested": "추신",
+    "lessons": [
+     "hv-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"outgrow\" → \"자라다\" (제안: ~보다 커지다, 벗어나다) — 원본 단어장과 대조",
+    "word": "outgrow",
+    "shown": "자라다",
+    "suggested": "~보다 커지다, 벗어나다",
+    "lessons": [
+     "hv-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-05",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"ashore\" → \"해변\" (제안: 해안으로, 물가에) — 원본 단어장과 대조",
+    "word": "ashore",
+    "shown": "해변",
+    "suggested": "해안으로, 물가에",
+    "lessons": [
+     "hv-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-12",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"enable\" → \"활성화\" (제안: 가능하게 하다) — 원본 단어장과 대조",
+    "word": "enable",
+    "shown": "활성화",
+    "suggested": "가능하게 하다",
+    "lessons": [
+     "hv-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-11",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"synonymous\" → \"동의어\" (제안: 같은 뜻의) — 원본 단어장과 대조",
+    "word": "synonymous",
+    "shown": "동의어",
+    "suggested": "같은 뜻의",
+    "lessons": [
+     "hv-11"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-15",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"economical\" → \"경제적\" (제안: 절약하는 (economic과 구별)) — 원본 단어장과 대조",
+    "word": "economical",
+    "shown": "경제적",
+    "suggested": "절약하는 (economic과 구별)",
+    "lessons": [
+     "hv-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-17",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"disinterested\" → \"무관심한\" (제안: 사심 없는, 공평한 (uninterested와 구별)) — 원본 단어장과 대조",
+    "word": "disinterested",
+    "shown": "무관심한",
+    "suggested": "사심 없는, 공평한 (uninterested와 구별)",
+    "lessons": [
+     "hv-17"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-16",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"beneficent\" → \"유익한\" (제안: 자선을 베푸는) — 원본 단어장과 대조",
+    "word": "beneficent",
+    "shown": "유익한",
+    "suggested": "자선을 베푸는",
+    "lessons": [
+     "hv-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-17",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"historic\" → \"역사적인\" (제안: 역사적으로 중요한 (historical과 구별)) — 원본 단어장과 대조",
+    "word": "historic",
+    "shown": "역사적인",
+    "suggested": "역사적으로 중요한 (historical과 구별)",
+    "lessons": [
+     "hv-17"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-17",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"regretful\" → \"유감스럽다\" (제안: 후회하는 (regrettable과 구별)) — 원본 단어장과 대조",
+    "word": "regretful",
+    "shown": "유감스럽다",
+    "suggested": "후회하는 (regrettable과 구별)",
+    "lessons": [
+     "hv-17"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-60",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"resolution\" → \"해상도\" (제안: 결심, 결의; 해결) — 원본 단어장과 대조",
+    "word": "resolution",
+    "shown": "해상도",
+    "suggested": "결심, 결의; 해결",
+    "lessons": [
+     "hv-60"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-44",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"commit\" → \"커밋하다\" (제안: 저지르다; 약속하다) — 원본 단어장과 대조",
+    "word": "commit",
+    "shown": "커밋하다",
+    "suggested": "저지르다; 약속하다",
+    "lessons": [
+     "hv-44"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-57",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"escalate\" → \"에스컬레이션\" (제안: 확대되다) — 원본 단어장과 대조",
+    "word": "escalate",
+    "shown": "에스컬레이션",
+    "suggested": "확대되다",
+    "lessons": [
+     "hv-57"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-62",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"instant\" → \"인스턴트\" (제안: 즉각적인) — 원본 단어장과 대조",
+    "word": "instant",
+    "shown": "인스턴트",
+    "suggested": "즉각적인",
+    "lessons": [
+     "hv-62"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-62",
+    "code": "MEANING_INAPPROPRIATE",
+    "severity": "P1",
+    "detail": "\"ecstasy\" → \"엑스터시\" (제안: 황홀경 (현재 '엑스터시')) — 원본 단어장과 대조",
+    "word": "ecstasy",
+    "shown": "엑스터시",
+    "suggested": "황홀경 (현재 '엑스터시')",
+    "lessons": [
+     "hv-62"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-34",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"digest\" → \"다이제스트\" (제안: 소화하다) — 원본 단어장과 대조",
+    "word": "digest",
+    "shown": "다이제스트",
+    "suggested": "소화하다",
+    "lessons": [
+     "hv-34"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-34",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"genuine\" → \"정품\" (제안: 진짜의, 진실한) — 원본 단어장과 대조",
+    "word": "genuine",
+    "shown": "정품",
+    "suggested": "진짜의, 진실한",
+    "lessons": [
+     "hv-34"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-65",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"integrity\" → \"무결성\" (제안: 정직, 성실) — 원본 단어장과 대조",
+    "word": "integrity",
+    "shown": "무결성",
+    "suggested": "정직, 성실",
+    "lessons": [
+     "hv-65"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-65",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"attachment\" → \"첨부 파일\" (제안: 애착; 부착) — 원본 단어장과 대조",
+    "word": "attachment",
+    "shown": "첨부 파일",
+    "suggested": "애착; 부착",
+    "lessons": [
+     "hv-65"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"release\" → \"릴리스\" (제안: 풀어주다, 발표하다) — 원본 단어장과 대조",
+    "word": "release",
+    "shown": "릴리스",
+    "suggested": "풀어주다, 발표하다",
+    "lessons": [
+     "hv-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"relay\" → \"릴레이\" (제안: 중계하다, 전달하다) — 원본 단어장과 대조",
+    "word": "relay",
+    "shown": "릴레이",
+    "suggested": "중계하다, 전달하다",
+    "lessons": [
+     "hv-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-56",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"directory\" → \"디렉토리\" (제안: 명부) — 원본 단어장과 대조",
+    "word": "directory",
+    "shown": "디렉토리",
+    "suggested": "명부",
+    "lessons": [
+     "hv-56"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-53",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"probe\" → \"프로브\" (제안: 조사하다) — 원본 단어장과 대조",
+    "word": "probe",
+    "shown": "프로브",
+    "suggested": "조사하다",
+    "lessons": [
+     "hv-53"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-51",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"implement\" → \"구현하다\" (제안: 실행하다; 도구) — 원본 단어장과 대조",
+    "word": "implement",
+    "shown": "구현하다",
+    "suggested": "실행하다; 도구",
+    "lessons": [
+     "hv-51"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-70",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"utility\" → \"유틸리티\" (제안: 유용성; 공공시설) — 원본 단어장과 대조",
+    "word": "utility",
+    "shown": "유틸리티",
+    "suggested": "유용성; 공공시설",
+    "lessons": [
+     "hv-70"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-74",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"vocal\" → \"보컬\" (제안: 목소리의) — 원본 단어장과 대조",
+    "word": "vocal",
+    "shown": "보컬",
+    "suggested": "목소리의",
+    "lessons": [
+     "hv-74"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-73",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"viewer\" → \"뷰어\" (제안: 시청자) — 원본 단어장과 대조",
+    "word": "viewer",
+    "shown": "뷰어",
+    "suggested": "시청자",
+    "lessons": [
+     "hv-73"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-72",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"venture\" → \"벤처\" (제안: 모험(하다)) — 원본 단어장과 대조",
+    "word": "venture",
+    "shown": "벤처",
+    "suggested": "모험(하다)",
+    "lessons": [
+     "hv-72"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-72",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"convention\" → \"컨벤션\" (제안: 관습; 대회) — 원본 단어장과 대조",
+    "word": "convention",
+    "shown": "컨벤션",
+    "suggested": "관습; 대회",
+    "lessons": [
+     "hv-72"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-49",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"suspension\" → \"서스펜션\" (제안: 정지, 보류) — 원본 단어장과 대조",
+    "word": "suspension",
+    "shown": "서스펜션",
+    "suggested": "정지, 보류",
+    "lessons": [
+     "hv-49"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-43",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"moving\" → \"이사\" (제안: 감동적인) — 원본 단어장과 대조",
+    "word": "moving",
+    "shown": "이사",
+    "suggested": "감동적인",
+    "lessons": [
+     "hv-43"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-42",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"minor\" → \"미성년자\" (제안: 작은, 중요하지 않은) — 원본 단어장과 대조",
+    "word": "minor",
+    "shown": "미성년자",
+    "suggested": "작은, 중요하지 않은",
+    "lessons": [
+     "hv-42"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-44",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"ministry\" → \"사역\" (제안: (정부의) 부처) — 원본 단어장과 대조",
+    "word": "ministry",
+    "shown": "사역",
+    "suggested": "(정부의) 부처",
+    "lessons": [
+     "hv-44"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-21",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"conceive\" → \"임신하다\" (제안: 생각해 내다, 품다) — 원본 단어장과 대조",
+    "word": "conceive",
+    "shown": "임신하다",
+    "suggested": "생각해 내다, 품다",
+    "lessons": [
+     "hv-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-21",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"conception\" → \"임신\" (제안: 개념, 구상) — 원본 단어장과 대조",
+    "word": "conception",
+    "shown": "임신",
+    "suggested": "개념, 구상",
+    "lessons": [
+     "hv-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-20",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"bond\" → \"채권\" (제안: 유대, 결속) — 원본 단어장과 대조",
+    "word": "bond",
+    "shown": "채권",
+    "suggested": "유대, 결속",
+    "lessons": [
+     "hv-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"bind\" → \"바인딩\" (제안: 묶다) — 원본 단어장과 대조",
+    "word": "bind",
+    "shown": "바인딩",
+    "suggested": "묶다",
+    "lessons": [
+     "hv-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-20",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"barrel\" → \"배럴\" (제안: 통) — 원본 단어장과 대조",
+    "word": "barrel",
+    "shown": "배럴",
+    "suggested": "통",
+    "lessons": [
+     "hv-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-19",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"alien\" → \"외계인\" (제안: 외국의, 이질적인) — 원본 단어장과 대조",
+    "word": "alien",
+    "shown": "외계인",
+    "suggested": "외국의, 이질적인",
+    "lessons": [
+     "hv-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-26",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"concrete\" → \"콘크리트\" (제안: 구체적인) — 원본 단어장과 대조",
+    "word": "concrete",
+    "shown": "콘크리트",
+    "suggested": "구체적인",
+    "lessons": [
+     "hv-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-27",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"render\" → \"세우다\" (제안: ~하게 만들다; 제공하다) — 원본 단어장과 대조",
+    "word": "render",
+    "shown": "세우다",
+    "suggested": "~하게 만들다; 제공하다",
+    "lessons": [
+     "hv-27"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-27",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"due\" → \"기한\" (제안: ~하기로 되어 있는; ~때문에) — 원본 단어장과 대조",
+    "word": "due",
+    "shown": "기한",
+    "suggested": "~하기로 되어 있는; ~때문에",
+    "lessons": [
+     "hv-27"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-67",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"tense\" → \"시제\" (제안: 긴장한) — 원본 단어장과 대조",
+    "word": "tense",
+    "shown": "시제",
+    "suggested": "긴장한",
+    "lessons": [
+     "hv-67"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-67",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"tend\" → \"경향\" (제안: ~하는 경향이 있다) — 원본 단어장과 대조",
+    "word": "tend",
+    "shown": "경향",
+    "suggested": "~하는 경향이 있다",
+    "lessons": [
+     "hv-67"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-49",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"pant\" → \"바지\" (제안: 헐떡이다) — 원본 단어장과 대조",
+    "word": "pant",
+    "shown": "바지",
+    "suggested": "헐떡이다",
+    "lessons": [
+     "hv-49"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-49",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"appeal\" → \"항소\" (제안: 호소하다; 매력) — 원본 단어장과 대조",
+    "word": "appeal",
+    "shown": "항소",
+    "suggested": "호소하다; 매력",
+    "lessons": [
+     "hv-49"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-74",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"ware\" → \"도자기\" (제안: 제품, 상품) — 원본 단어장과 대조",
+    "word": "ware",
+    "shown": "도자기",
+    "suggested": "제품, 상품",
+    "lessons": [
+     "hv-74"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-20",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"capture\" → \"캡처\" (제안: 붙잡다) — 원본 단어장과 대조",
+    "word": "capture",
+    "shown": "캡처",
+    "suggested": "붙잡다",
+    "lessons": [
+     "hv-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-21",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"carrier\" → \"캐리어\" (제안: 운반인, 매개체) — 원본 단어장과 대조",
+    "word": "carrier",
+    "shown": "캐리어",
+    "suggested": "운반인, 매개체",
+    "lessons": [
+     "hv-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-23",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"casual\" → \"캐주얼\" (제안: 우연한, 격식 없는) — 원본 단어장과 대조",
+    "word": "casual",
+    "shown": "캐주얼",
+    "suggested": "우연한, 격식 없는",
+    "lessons": [
+     "hv-23"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-22",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"process\" → \"프로세스\" (제안: 과정) — 원본 단어장과 대조",
+    "word": "process",
+    "shown": "프로세스",
+    "suggested": "과정",
+    "lessons": [
+     "hv-22"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-27",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"edition\" → \"에디션\" (제안: 판(版)) — 원본 단어장과 대조",
+    "word": "edition",
+    "shown": "에디션",
+    "suggested": "판(版)",
+    "lessons": [
+     "hv-27"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-41",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"comment\" → \"코멘트\" (제안: 논평) — 원본 단어장과 대조",
+    "word": "comment",
+    "shown": "코멘트",
+    "suggested": "논평",
+    "lessons": [
+     "hv-41"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-41",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"manual\" → \"매뉴얼\" (제안: 손으로 하는; 설명서) — 원본 단어장과 대조",
+    "word": "manual",
+    "shown": "매뉴얼",
+    "suggested": "손으로 하는; 설명서",
+    "lessons": [
+     "hv-41"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-42",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"mechanism\" → \"메커니즘\" (제안: 구조, 기제) — 원본 단어장과 대조",
+    "word": "mechanism",
+    "shown": "메커니즘",
+    "suggested": "구조, 기제",
+    "lessons": [
+     "hv-42"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-43",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"promotion\" → \"프로모션\" (제안: 승진; 촉진) — 원본 단어장과 대조",
+    "word": "promotion",
+    "shown": "프로모션",
+    "suggested": "승진; 촉진",
+    "lessons": [
+     "hv-43"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-43",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"commission\" → \"커미션\" (제안: 위원회; 위임) — 원본 단어장과 대조",
+    "word": "commission",
+    "shown": "커미션",
+    "suggested": "위원회; 위임",
+    "lessons": [
+     "hv-43"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-47",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"option\" → \"옵션\" (제안: 선택권) — 원본 단어장과 대조",
+    "word": "option",
+    "shown": "옵션",
+    "suggested": "선택권",
+    "lessons": [
+     "hv-47"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-47",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"orientation\" → \"오리엔테이션\" (제안: 방향, 성향) — 원본 단어장과 대조",
+    "word": "orientation",
+    "shown": "오리엔테이션",
+    "suggested": "방향, 성향",
+    "lessons": [
+     "hv-47"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-49",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"penalty\" → \"페널티\" (제안: 처벌, 벌금) — 원본 단어장과 대조",
+    "word": "penalty",
+    "shown": "페널티",
+    "suggested": "처벌, 벌금",
+    "lessons": [
+     "hv-49"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-57",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"segment\" → \"세그먼트\" (제안: 부분) — 원본 단어장과 대조",
+    "word": "segment",
+    "shown": "세그먼트",
+    "suggested": "부분",
+    "lessons": [
+     "hv-57"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-56",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"routine\" → \"루틴\" (제안: 일상적인 일) — 원본 단어장과 대조",
+    "word": "routine",
+    "shown": "루틴",
+    "suggested": "일상적인 일",
+    "lessons": [
+     "hv-56"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-68",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"text\" → \"텍스트\" (제안: 본문) — 원본 단어장과 대조",
+    "word": "text",
+    "shown": "텍스트",
+    "suggested": "본문",
+    "lessons": [
+     "hv-68"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-67",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"tone\" → \"톤\" (제안: 어조) — 원본 단어장과 대조",
+    "word": "tone",
+    "shown": "톤",
+    "suggested": "어조",
+    "lessons": [
+     "hv-67"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-67",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"terminal\" → \"터미널\" (제안: 말기의; 종착역) — 원본 단어장과 대조",
+    "word": "terminal",
+    "shown": "터미널",
+    "suggested": "말기의; 종착역",
+    "lessons": [
+     "hv-67"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-52",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"pose\" → \"포즈\" (제안: 제기하다; 자세) — 원본 단어장과 대조",
+    "word": "pose",
+    "shown": "포즈",
+    "suggested": "제기하다; 자세",
+    "lessons": [
+     "hv-52"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-45",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"navigation\" → \"네비게이션\" (제안: 항해, 항법) — 원본 단어장과 대조",
+    "word": "navigation",
+    "shown": "네비게이션",
+    "suggested": "항해, 항법",
+    "lessons": [
+     "hv-45"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-43",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"messenger\" → \"메신저\" (제안: 전달자) — 원본 단어장과 대조",
+    "word": "messenger",
+    "shown": "메신저",
+    "suggested": "전달자",
+    "lessons": [
+     "hv-43"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-61",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"sponsor\" → \"스폰서\" (제안: 후원자) — 원본 단어장과 대조",
+    "word": "sponsor",
+    "shown": "스폰서",
+    "suggested": "후원자",
+    "lessons": [
+     "hv-61"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-58",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"session\" → \"세션\" (제안: 회기, 시간) — 원본 단어장과 대조",
+    "word": "session",
+    "shown": "세션",
+    "suggested": "회기, 시간",
+    "lessons": [
+     "hv-58"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-36",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"initiative\" → \"이니셔티브\" (제안: 주도권, 계획) — 원본 단어장과 대조",
+    "word": "initiative",
+    "shown": "이니셔티브",
+    "suggested": "주도권, 계획",
+    "lessons": [
+     "hv-36"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-26",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"curriculum\" → \"커리큘럼\" (제안: 교육과정) — 원본 단어장과 대조",
+    "word": "curriculum",
+    "shown": "커리큘럼",
+    "suggested": "교육과정",
+    "lessons": [
+     "hv-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-26",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"recreation\" → \"레크리에이션\" (제안: 휴양, 오락) — 원본 단어장과 대조",
+    "word": "recreation",
+    "shown": "레크리에이션",
+    "suggested": "휴양, 오락",
+    "lessons": [
+     "hv-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-34",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"graphic\" → \"그래픽\" (제안: 생생한; 도표의) — 원본 단어장과 대조",
+    "word": "graphic",
+    "shown": "그래픽",
+    "suggested": "생생한; 도표의",
+    "lessons": [
+     "hv-34"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-45",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"melody\" → \"멜로디\" (제안: 선율) — 원본 단어장과 대조",
+    "word": "melody",
+    "shown": "멜로디",
+    "suggested": "선율",
+    "lessons": [
+     "hv-45"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"collection\" → \"컬렉션\" (제안: 수집(품)) — 원본 단어장과 대조",
+    "word": "collection",
+    "shown": "컬렉션",
+    "suggested": "수집(품)",
+    "lessons": [
+     "hv-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-40",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"mansion\" → \"맨션\" (제안: 대저택) — 원본 단어장과 대조",
+    "word": "mansion",
+    "shown": "맨션",
+    "suggested": "대저택",
+    "lessons": [
+     "hv-40"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"lever\" → \"레버\" (제안: 지렛대) — 원본 단어장과 대조",
+    "word": "lever",
+    "shown": "레버",
+    "suggested": "지렛대",
+    "lessons": [
+     "hv-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-65",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"container\" → \"컨테이너\" (제안: 용기, 그릇) — 원본 단어장과 대조",
+    "word": "container",
+    "shown": "컨테이너",
+    "suggested": "용기, 그릇",
+    "lessons": [
+     "hv-65"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-65",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"entertainment\" → \"엔터테인먼트\" (제안: 오락, 대접) — 원본 단어장과 대조",
+    "word": "entertainment",
+    "shown": "엔터테인먼트",
+    "suggested": "오락, 대접",
+    "lessons": [
+     "hv-65"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-50",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"fantasy\" → \"판타지\" (제안: 공상) — 원본 단어장과 대조",
+    "word": "fantasy",
+    "shown": "판타지",
+    "suggested": "공상",
+    "lessons": [
+     "hv-50"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-49",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"pattern\" → \"패턴\" (제안: 양식, 무늬) — 원본 단어장과 대조",
+    "word": "pattern",
+    "shown": "패턴",
+    "suggested": "양식, 무늬",
+    "lessons": [
+     "hv-49"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-31",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"ferry\" → \"페리\" (제안: 연락선) — 원본 단어장과 대조",
+    "word": "ferry",
+    "shown": "페리",
+    "suggested": "연락선",
+    "lessons": [
+     "hv-31"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-29",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"facsimile\" → \"팩시밀리\" (제안: 복제, 팩스) — 원본 단어장과 대조",
+    "word": "facsimile",
+    "shown": "팩시밀리",
+    "suggested": "복제, 팩스",
+    "lessons": [
+     "hv-29"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-32",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"influenza\" → \"인플루엔자\" (제안: 독감) — 원본 단어장과 대조",
+    "word": "influenza",
+    "shown": "인플루엔자",
+    "suggested": "독감",
+    "lessons": [
+     "hv-32"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-21",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"reception\" → \"리셉션\" (제안: 환영회; 접수) — 원본 단어장과 대조",
+    "word": "reception",
+    "shown": "리셉션",
+    "suggested": "환영회; 접수",
+    "lessons": [
+     "hv-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-21",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"discharge\" → \"퇴원\" (제안: 방출하다; 해고하다) — 원본 단어장과 대조",
+    "word": "discharge",
+    "shown": "퇴원",
+    "suggested": "방출하다; 해고하다",
+    "lessons": [
+     "hv-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-43",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"remote\" → \"원격\" (제안: 먼, 외딴) — 원본 단어장과 대조",
+    "word": "remote",
+    "shown": "원격",
+    "suggested": "먼, 외딴",
+    "lessons": [
+     "hv-43"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-43",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"moderate\" → \"보통\" (제안: 적당한, 온건한) — 원본 단어장과 대조",
+    "word": "moderate",
+    "shown": "보통",
+    "suggested": "적당한, 온건한",
+    "lessons": [
+     "hv-43"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-41",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"intermediate\" → \"중급\" (제안: 중간의) — 원본 단어장과 대조",
+    "word": "intermediate",
+    "shown": "중급",
+    "suggested": "중간의",
+    "lessons": [
+     "hv-41"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-65",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"resume\" → \"이력서\" (제안: 재개하다) — 원본 단어장과 대조",
+    "word": "resume",
+    "shown": "이력서",
+    "suggested": "재개하다",
+    "lessons": [
+     "hv-65"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-30",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"estimate\" → \"견적\" (제안: 추정(하다)) — 원본 단어장과 대조",
+    "word": "estimate",
+    "shown": "견적",
+    "suggested": "추정(하다)",
+    "lessons": [
+     "hv-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-39",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"major\" → \"전공\" (제안: 주요한) — 원본 단어장과 대조",
+    "word": "major",
+    "shown": "전공",
+    "suggested": "주요한",
+    "lessons": [
+     "hv-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-23",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"critical\" → \"중요한\" (제안: 비판적인; 결정적인) — 원본 단어장과 대조",
+    "word": "critical",
+    "shown": "중요한",
+    "suggested": "비판적인; 결정적인",
+    "lessons": [
+     "hv-23"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-69",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"abstract\" → \"추상\" (제안: 추상적인) — 원본 단어장과 대조",
+    "word": "abstract",
+    "shown": "추상",
+    "suggested": "추상적인",
+    "lessons": [
+     "hv-69"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-69",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"extract\" → \"추출물\" (제안: 추출하다) — 원본 단어장과 대조",
+    "word": "extract",
+    "shown": "추출물",
+    "suggested": "추출하다",
+    "lessons": [
+     "hv-69"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-53",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"compound\" → \"화합물\" (제안: 합성의; 복합체) — 원본 단어장과 대조",
+    "word": "compound",
+    "shown": "화합물",
+    "suggested": "합성의; 복합체",
+    "lessons": [
+     "hv-53"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-53",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"deposit\" → \"예금\" (제안: 맡기다; 퇴적물) — 원본 단어장과 대조",
+    "word": "deposit",
+    "shown": "예금",
+    "suggested": "맡기다; 퇴적물",
+    "lessons": [
+     "hv-53"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-70",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"used\" → \"사용됨\" (제안: 익숙한; 중고의) — 원본 단어장과 대조",
+    "word": "used",
+    "shown": "사용됨",
+    "suggested": "익숙한; 중고의",
+    "lessons": [
+     "hv-70"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-16",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"confident\" → \"자신감\" (제안: 자신 있는) — 원본 단어장과 대조",
+    "word": "confident",
+    "shown": "자신감",
+    "suggested": "자신 있는",
+    "lessons": [
+     "hv-16",
+     "hv-32"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-37",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"elaborate\" → \"정교하게\" (제안: 정교한; 자세히 말하다) — 원본 단어장과 대조",
+    "word": "elaborate",
+    "shown": "정교하게",
+    "suggested": "정교한; 자세히 말하다",
+    "lessons": [
+     "hv-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-16",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"appreciative\" → \"감사하다\" (제안: 감사하는) — 원본 단어장과 대조",
+    "word": "appreciative",
+    "shown": "감사하다",
+    "suggested": "감사하는",
+    "lessons": [
+     "hv-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-16",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"credulous\" → \"잘 믿다\" (제안: 잘 믿는) — 원본 단어장과 대조",
+    "word": "credulous",
+    "shown": "잘 믿다",
+    "suggested": "잘 믿는",
+    "lessons": [
+     "hv-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"stop\" → \"중지\" (제안: 멈추다) — 원본 단어장과 대조",
+    "word": "stop",
+    "shown": "중지",
+    "suggested": "멈추다",
+    "lessons": [
+     "mv1-05",
+     "mv2-04"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-08",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"cut\" → \"절단\" (제안: 자르다) — 원본 단어장과 대조",
+    "word": "cut",
+    "shown": "절단",
+    "suggested": "자르다",
+    "lessons": [
+     "mv1-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-08",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"cook\" → \"요리사\" (제안: 요리하다) — 원본 단어장과 대조",
+    "word": "cook",
+    "shown": "요리사",
+    "suggested": "요리하다",
+    "lessons": [
+     "mv1-08",
+     "mv2-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"cover\" → \"커버\" (제안: 덮다) — 원본 단어장과 대조",
+    "word": "cover",
+    "shown": "커버",
+    "suggested": "덮다",
+    "lessons": [
+     "mv1-10",
+     "mv2-10",
+     "mv3-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-10",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"dance\" → \"댄스\" (제안: 춤추다) — 원본 단어장과 대조",
+    "word": "dance",
+    "shown": "댄스",
+    "suggested": "춤추다",
+    "lessons": [
+     "mv1-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-11",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"corner\" → \"코너\" (제안: 모퉁이) — 원본 단어장과 대조",
+    "word": "corner",
+    "shown": "코너",
+    "suggested": "모퉁이",
+    "lessons": [
+     "mv1-11"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-14",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"course\" → \"코스\" (제안: 과정, 강좌) — 원본 단어장과 대조",
+    "word": "course",
+    "shown": "코스",
+    "suggested": "과정, 강좌",
+    "lessons": [
+     "mv1-14",
+     "mv2-15",
+     "mv3-29"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-14",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"turn\" → \"회전\" (제안: 돌다, 돌리다) — 원본 단어장과 대조",
+    "word": "turn",
+    "shown": "회전",
+    "suggested": "돌다, 돌리다",
+    "lessons": [
+     "mv1-14",
+     "mv2-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-15",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"catch\" → \"잡기\" (제안: 잡다) — 원본 단어장과 대조",
+    "word": "catch",
+    "shown": "잡기",
+    "suggested": "잡다",
+    "lessons": [
+     "mv1-15",
+     "mv2-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-15",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"finish\" → \"마무리\" (제안: 끝내다) — 원본 단어장과 대조",
+    "word": "finish",
+    "shown": "마무리",
+    "suggested": "끝내다",
+    "lessons": [
+     "mv1-15",
+     "mv2-17"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-16",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"top\" → \"상단\" (제안: 꼭대기) — 원본 단어장과 대조",
+    "word": "top",
+    "shown": "상단",
+    "suggested": "꼭대기",
+    "lessons": [
+     "mv1-16",
+     "mv2-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-16",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"close\" → \"닫기\" (제안: 닫다; 가까운) — 원본 단어장과 대조",
+    "word": "close",
+    "shown": "닫기",
+    "suggested": "닫다; 가까운",
+    "lessons": [
+     "mv1-16",
+     "mv2-08",
+     "mv3-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-16",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"print\" → \"인쇄\" (제안: 인쇄하다) — 원본 단어장과 대조",
+    "word": "print",
+    "shown": "인쇄",
+    "suggested": "인쇄하다",
+    "lessons": [
+     "mv1-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-18",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"field\" → \"필드\" (제안: 들판; 분야) — 원본 단어장과 대조",
+    "word": "field",
+    "shown": "필드",
+    "suggested": "들판; 분야",
+    "lessons": [
+     "mv1-18"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-18",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"return\" → \"반환\" (제안: 돌아오다) — 원본 단어장과 대조",
+    "word": "return",
+    "shown": "반환",
+    "suggested": "돌아오다",
+    "lessons": [
+     "mv1-18",
+     "mv2-09",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-18",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"ready\" → \"준비\" (제안: 준비된) — 원본 단어장과 대조",
+    "word": "ready",
+    "shown": "준비",
+    "suggested": "준비된",
+    "lessons": [
+     "mv1-18",
+     "mv2-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-18",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"pull\" → \"당겨\" (제안: 당기다) — 원본 단어장과 대조",
+    "word": "pull",
+    "shown": "당겨",
+    "suggested": "당기다",
+    "lessons": [
+     "mv1-18",
+     "mv2-05",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-19",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"pass\" → \"통과\" (제안: 지나가다; 합격하다) — 원본 단어장과 대조",
+    "word": "pass",
+    "shown": "통과",
+    "suggested": "지나가다; 합격하다",
+    "lessons": [
+     "mv1-19",
+     "mv2-04",
+     "mv3-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"jump\" → \"점프\" (제안: 뛰다) — 원본 단어장과 대조",
+    "word": "jump",
+    "shown": "점프",
+    "suggested": "뛰다",
+    "lessons": [
+     "mv1-19",
+     "mv2-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-19",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"paint\" → \"페인트\" (제안: 칠하다; 그리다) — 원본 단어장과 대조",
+    "word": "paint",
+    "shown": "페인트",
+    "suggested": "칠하다; 그리다",
+    "lessons": [
+     "mv1-19",
+     "mv3-02"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-20",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"shake\" → \"흔들어\" (제안: 흔들다) — 원본 단어장과 대조",
+    "word": "shake",
+    "shown": "흔들어",
+    "suggested": "흔들다",
+    "lessons": [
+     "mv1-20",
+     "mv2-18",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-21",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"line\" → \"라인\" (제안: 선, 줄) — 원본 단어장과 대조",
+    "word": "line",
+    "shown": "라인",
+    "suggested": "선, 줄",
+    "lessons": [
+     "mv1-21",
+     "mv2-17"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-21",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"sign\" → \"기호\" (제안: 표지판; 서명하다) — 원본 단어장과 대조",
+    "word": "sign",
+    "shown": "기호",
+    "suggested": "표지판; 서명하다",
+    "lessons": [
+     "mv1-21",
+     "mv2-17",
+     "mv3-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-22",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"treat\" → \"치료하다\" (제안: 대하다; 치료하다) — 원본 단어장과 대조",
+    "word": "treat",
+    "shown": "치료하다",
+    "suggested": "대하다; 치료하다",
+    "lessons": [
+     "mv1-22",
+     "mv2-27",
+     "mv3-25",
+     "hv-69"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-23",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"order\" → \"주문\" (제안: 명령; 순서; 주문) — 원본 단어장과 대조",
+    "word": "order",
+    "shown": "주문",
+    "suggested": "명령; 순서; 주문",
+    "lessons": [
+     "mv1-23",
+     "mv2-11",
+     "mv3-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-23",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"notice\" → \"공지\" (제안: 알아차리다; 공고) — 원본 단어장과 대조",
+    "word": "notice",
+    "shown": "공지",
+    "suggested": "알아차리다; 공고",
+    "lessons": [
+     "mv1-23",
+     "mv2-36",
+     "hv-46"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-23",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"slow\" → \"천천히\" (제안: 느린) — 원본 단어장과 대조",
+    "word": "slow",
+    "shown": "천천히",
+    "suggested": "느린",
+    "lessons": [
+     "mv1-23"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-23",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"mark\" → \"마크\" (제안: 표시) — 원본 단어장과 대조",
+    "word": "mark",
+    "shown": "마크",
+    "suggested": "표시",
+    "lessons": [
+     "mv1-23"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-24",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"point\" → \"포인트\" (제안: 요점; 가리키다) — 원본 단어장과 대조",
+    "word": "point",
+    "shown": "포인트",
+    "suggested": "요점; 가리키다",
+    "lessons": [
+     "mv1-24"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-24",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"throw\" → \"던져\" (제안: 던지다) — 원본 단어장과 대조",
+    "word": "throw",
+    "shown": "던져",
+    "suggested": "던지다",
+    "lessons": [
+     "mv1-24",
+     "mv2-09",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-24",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"speaker\" → \"스피커\" (제안: 연설자, 화자) — 원본 단어장과 대조",
+    "word": "speaker",
+    "shown": "스피커",
+    "suggested": "연설자, 화자",
+    "lessons": [
+     "mv1-24",
+     "hv-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-24",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"center\" → \"센터\" (제안: 중심) — 원본 단어장과 대조",
+    "word": "center",
+    "shown": "센터",
+    "suggested": "중심",
+    "lessons": [
+     "mv1-24",
+     "mv3-32"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-25",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"cross\" → \"십자가\" (제안: 건너다) — 원본 단어장과 대조",
+    "word": "cross",
+    "shown": "십자가",
+    "suggested": "건너다",
+    "lessons": [
+     "mv1-25"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-26",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"rise\" → \"상승\" (제안: 오르다) — 원본 단어장과 대조",
+    "word": "rise",
+    "shown": "상승",
+    "suggested": "오르다",
+    "lessons": [
+     "mv1-26",
+     "mv2-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-27",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"set\" → \"세트\" (제안: 놓다; 한 벌) — 원본 단어장과 대조",
+    "word": "set",
+    "shown": "세트",
+    "suggested": "놓다; 한 벌",
+    "lessons": [
+     "mv1-27"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-27",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"case\" → \"케이스\" (제안: 경우; 상자) — 원본 단어장과 대조",
+    "word": "case",
+    "shown": "케이스",
+    "suggested": "경우; 상자",
+    "lessons": [
+     "mv1-27"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-28",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"master\" → \"마스터\" (제안: 주인; 숙달하다) — 원본 단어장과 대조",
+    "word": "master",
+    "shown": "마스터",
+    "suggested": "주인; 숙달하다",
+    "lessons": [
+     "mv1-28",
+     "mv2-35",
+     "mv3-06",
+     "hv-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-29",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"season\" → \"시즌\" (제안: 계절) — 원본 단어장과 대조",
+    "word": "season",
+    "shown": "시즌",
+    "suggested": "계절",
+    "lessons": [
+     "mv1-29"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-29",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"control\" → \"제어\" (제안: 통제(하다)) — 원본 단어장과 대조",
+    "word": "control",
+    "shown": "제어",
+    "suggested": "통제(하다)",
+    "lessons": [
+     "mv1-29",
+     "mv2-17",
+     "mv3-19",
+     "hv-56"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-30",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"stamp\" → \"스탬프\" (제안: 우표) — 원본 단어장과 대조",
+    "word": "stamp",
+    "shown": "스탬프",
+    "suggested": "우표",
+    "lessons": [
+     "mv1-30",
+     "mv2-40"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-30",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"hall\" → \"홀\" (제안: 회관, 복도) — 원본 단어장과 대조",
+    "word": "hall",
+    "shown": "홀",
+    "suggested": "회관, 복도",
+    "lessons": [
+     "mv1-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-30",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"gate\" → \"게이트\" (제안: 문) — 원본 단어장과 대조",
+    "word": "gate",
+    "shown": "게이트",
+    "suggested": "문",
+    "lessons": [
+     "mv1-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-31",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"stick\" → \"스틱\" (제안: 막대기; 붙이다) — 원본 단어장과 대조",
+    "word": "stick",
+    "shown": "스틱",
+    "suggested": "막대기; 붙이다",
+    "lessons": [
+     "mv1-31",
+     "mv2-32"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-32",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"host\" → \"호스트\" (제안: 주인, 주최자) — 원본 단어장과 대조",
+    "word": "host",
+    "shown": "호스트",
+    "suggested": "주인, 주최자",
+    "lessons": [
+     "mv1-32",
+     "mv2-18",
+     "mv3-33",
+     "hv-36"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-33",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"event\" → \"이벤트\" (제안: 사건, 행사) — 원본 단어장과 대조",
+    "word": "event",
+    "shown": "이벤트",
+    "suggested": "사건, 행사",
+    "lessons": [
+     "mv1-33",
+     "mv2-14",
+     "mv3-24",
+     "hv-71"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-35",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"post\" → \"포스트\" (제안: 우편; 기둥) — 원본 단어장과 대조",
+    "word": "post",
+    "shown": "포스트",
+    "suggested": "우편; 기둥",
+    "lessons": [
+     "mv1-35",
+     "mv2-29",
+     "mv3-40"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-35",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"double\" → \"더블\" (제안: 두 배의) — 원본 단어장과 대조",
+    "word": "double",
+    "shown": "더블",
+    "suggested": "두 배의",
+    "lessons": [
+     "mv1-35"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-36",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"knock\" → \"노크\" (제안: 두드리다) — 원본 단어장과 대조",
+    "word": "knock",
+    "shown": "노크",
+    "suggested": "두드리다",
+    "lessons": [
+     "mv1-36",
+     "mv2-15"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-36",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"recorder\" → \"레코더\" (제안: 녹음기; 리코더(악기)) — 원본 단어장과 대조",
+    "word": "recorder",
+    "shown": "레코더",
+    "suggested": "녹음기; 리코더(악기)",
+    "lessons": [
+     "mv1-36"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"cage\" → \"케이지\" (제안: 새장, 우리) — 원본 단어장과 대조",
+    "word": "cage",
+    "shown": "케이지",
+    "suggested": "새장, 우리",
+    "lessons": [
+     "mv1-37",
+     "mv2-14",
+     "mv3-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"band\" → \"밴드\" (제안: 악단; 띠) — 원본 단어장과 대조",
+    "word": "band",
+    "shown": "밴드",
+    "suggested": "악단; 띠",
+    "lessons": [
+     "mv1-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"mail\" → \"메일\" (제안: 우편) — 원본 단어장과 대조",
+    "word": "mail",
+    "shown": "메일",
+    "suggested": "우편",
+    "lessons": [
+     "mv1-37",
+     "mv2-26",
+     "mv3-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"couple\" → \"커플\" (제안: 한 쌍, 부부) — 원본 단어장과 대조",
+    "word": "couple",
+    "shown": "커플",
+    "suggested": "한 쌍, 부부",
+    "lessons": [
+     "mv1-37",
+     "mv2-15",
+     "mv3-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"trick\" → \"트릭\" (제안: 속임수) — 원본 단어장과 대조",
+    "word": "trick",
+    "shown": "트릭",
+    "suggested": "속임수",
+    "lessons": [
+     "mv1-38",
+     "mv2-26",
+     "mv3-23"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-40",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"guide\" → \"가이드\" (제안: 안내하다) — 원본 단어장과 대조",
+    "word": "guide",
+    "shown": "가이드",
+    "suggested": "안내하다",
+    "lessons": [
+     "mv1-40",
+     "mv2-20",
+     "mv3-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-40",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"track\" → \"트랙\" (제안: 자국; 경주로) — 원본 단어장과 대조",
+    "word": "track",
+    "shown": "트랙",
+    "suggested": "자국; 경주로",
+    "lessons": [
+     "mv1-40",
+     "mv3-12",
+     "hv-69"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-40",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"manager\" → \"매니저\" (제안: 관리자) — 원본 단어장과 대조",
+    "word": "manager",
+    "shown": "매니저",
+    "suggested": "관리자",
+    "lessons": [
+     "mv1-40"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-39",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"main\" → \"메인\" (제안: 주요한) — 원본 단어장과 대조",
+    "word": "main",
+    "shown": "메인",
+    "suggested": "주요한",
+    "lessons": [
+     "mv1-39",
+     "mv2-11",
+     "mv3-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv1-39",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"community\" → \"커뮤니티\" (제안: 공동체) — 원본 단어장과 대조",
+    "word": "community",
+    "shown": "커뮤니티",
+    "suggested": "공동체",
+    "lessons": [
+     "mv1-39",
+     "mv3-03",
+     "hv-45"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-13",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"base\" → \"베이스\" (제안: 기초) — 원본 단어장과 대조",
+    "word": "base",
+    "shown": "베이스",
+    "suggested": "기초",
+    "lessons": [
+     "mv2-13",
+     "mv3-24"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-18",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"board\" → \"보드\" (제안: 판자; 게시판) — 원본 단어장과 대조",
+    "word": "board",
+    "shown": "보드",
+    "suggested": "판자; 게시판",
+    "lessons": [
+     "mv2-18",
+     "mv3-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-20",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"kick\" → \"킥\" (제안: 차다) — 원본 단어장과 대조",
+    "word": "kick",
+    "shown": "킥",
+    "suggested": "차다",
+    "lessons": [
+     "mv2-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-20",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"roll\" → \"롤\" (제안: 구르다) — 원본 단어장과 대조",
+    "word": "roll",
+    "shown": "롤",
+    "suggested": "구르다",
+    "lessons": [
+     "mv2-20",
+     "mv3-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-23",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"flat\" → \"플랫\" (제안: 평평한) — 원본 단어장과 대조",
+    "word": "flat",
+    "shown": "플랫",
+    "suggested": "평평한",
+    "lessons": [
+     "mv2-23",
+     "mv3-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-14",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"level\" → \"레벨\" (제안: 수준) — 원본 단어장과 대조",
+    "word": "level",
+    "shown": "레벨",
+    "suggested": "수준",
+    "lessons": [
+     "mv2-14"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-28",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"item\" → \"아이템\" (제안: 항목, 품목) — 원본 단어장과 대조",
+    "word": "item",
+    "shown": "아이템",
+    "suggested": "항목, 품목",
+    "lessons": [
+     "mv2-28"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-28",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"dash\" → \"대시\" (제안: 돌진하다) — 원본 단어장과 대조",
+    "word": "dash",
+    "shown": "대시",
+    "suggested": "돌진하다",
+    "lessons": [
+     "mv2-28",
+     "mv3-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"section\" → \"섹션\" (제안: 부분, 구역) — 원본 단어장과 대조",
+    "word": "section",
+    "shown": "섹션",
+    "suggested": "부분, 구역",
+    "lessons": [
+     "mv2-37",
+     "mv3-13",
+     "hv-57"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-37",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"booth\" → \"부스\" (제안: 칸막이 공간) — 원본 단어장과 대조",
+    "word": "booth",
+    "shown": "부스",
+    "suggested": "칸막이 공간",
+    "lessons": [
+     "mv2-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-38",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"uniform\" → \"유니폼\" (제안: 제복; 균일한) — 원본 단어장과 대조",
+    "word": "uniform",
+    "shown": "유니폼",
+    "suggested": "제복; 균일한",
+    "lessons": [
+     "mv2-38",
+     "mv3-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-18",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"single\" → \"싱글\" (제안: 단 하나의; 독신의) — 원본 단어장과 대조",
+    "word": "single",
+    "shown": "싱글",
+    "suggested": "단 하나의; 독신의",
+    "lessons": [
+     "mv3-18"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"series\" → \"시리즈\" (제안: 연속) — 원본 단어장과 대조",
+    "word": "series",
+    "shown": "시리즈",
+    "suggested": "연속",
+    "lessons": [
+     "mv3-19",
+     "hv-58"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"premium\" → \"프리미엄\" (제안: 보험료; 할증금) — 원본 단어장과 대조",
+    "word": "premium",
+    "shown": "프리미엄",
+    "suggested": "보험료; 할증금",
+    "lessons": [
+     "mv3-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-19",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"design\" → \"디자인\" (제안: 설계(하다)) — 원본 단어장과 대조",
+    "word": "design",
+    "shown": "디자인",
+    "suggested": "설계(하다)",
+    "lessons": [
+     "mv3-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-20",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"dart\" → \"다트\" (제안: 화살; 돌진하다) — 원본 단어장과 대조",
+    "word": "dart",
+    "shown": "다트",
+    "suggested": "화살; 돌진하다",
+    "lessons": [
+     "mv3-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-21",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"stress\" → \"스트레스\" (제안: 압박; 강조) — 원본 단어장과 대조",
+    "word": "stress",
+    "shown": "스트레스",
+    "suggested": "압박; 강조",
+    "lessons": [
+     "mv3-21",
+     "hv-64"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-21",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"miniature\" → \"미니어처\" (제안: 축소 모형) — 원본 단어장과 대조",
+    "word": "miniature",
+    "shown": "미니어처",
+    "suggested": "축소 모형",
+    "lessons": [
+     "mv3-21"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-22",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"inning\" → \"이닝\" (제안: (야구) 회) — 원본 단어장과 대조",
+    "word": "inning",
+    "shown": "이닝",
+    "suggested": "(야구) 회",
+    "lessons": [
+     "mv3-22"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-23",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"site\" → \"사이트\" (제안: 장소, 부지) — 원본 단어장과 대조",
+    "word": "site",
+    "shown": "사이트",
+    "suggested": "장소, 부지",
+    "lessons": [
+     "mv3-23"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-23",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"torch\" → \"토치\" (제안: 횃불) — 원본 단어장과 대조",
+    "word": "torch",
+    "shown": "토치",
+    "suggested": "횃불",
+    "lessons": [
+     "mv3-23",
+     "hv-68"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-14",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"pop\" → \"팝\" (제안: 펑 터지다) — 원본 단어장과 대조",
+    "word": "pop",
+    "shown": "팝",
+    "suggested": "펑 터지다",
+    "lessons": [
+     "mv3-14"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-14",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"pitch\" → \"피치\" (제안: 던지다; 음높이) — 원본 단어장과 대조",
+    "word": "pitch",
+    "shown": "피치",
+    "suggested": "던지다; 음높이",
+    "lessons": [
+     "mv3-14"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-13",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"solution\" → \"솔루션\" (제안: 해결책; 용액) — 원본 단어장과 대조",
+    "word": "solution",
+    "shown": "솔루션",
+    "suggested": "해결책; 용액",
+    "lessons": [
+     "mv3-13",
+     "hv-60"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-16",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"lantern\" → \"랜턴\" (제안: 등불) — 원본 단어장과 대조",
+    "word": "lantern",
+    "shown": "랜턴",
+    "suggested": "등불",
+    "lessons": [
+     "mv3-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-16",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"wagon\" → \"왜건\" (제안: 마차) — 원본 단어장과 대조",
+    "word": "wagon",
+    "shown": "왜건",
+    "suggested": "마차",
+    "lessons": [
+     "mv3-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-16",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"scratch\" → \"스크래치\" (제안: 긁다) — 원본 단어장과 대조",
+    "word": "scratch",
+    "shown": "스크래치",
+    "suggested": "긁다",
+    "lessons": [
+     "mv3-16"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-33",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"coil\" → \"코일\" (제안: 고리; 감다) — 원본 단어장과 대조",
+    "word": "coil",
+    "shown": "코일",
+    "suggested": "고리; 감다",
+    "lessons": [
+     "mv3-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-06",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"ivy\" → \"아이비\" (제안: 담쟁이덩굴) — 원본 단어장과 대조",
+    "word": "ivy",
+    "shown": "아이비",
+    "suggested": "담쟁이덩굴",
+    "lessons": [
+     "mv3-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-06",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"sheet\" → \"시트\" (제안: (종이) 한 장) — 원본 단어장과 대조",
+    "word": "sheet",
+    "shown": "시트",
+    "suggested": "(종이) 한 장",
+    "lessons": [
+     "mv3-06"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-04",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"bundle\" → \"번들\" (제안: 묶음) — 원본 단어장과 대조",
+    "word": "bundle",
+    "shown": "번들",
+    "suggested": "묶음",
+    "lessons": [
+     "mv3-04",
+     "hv-19"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-30",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"sample\" → \"샘플\" (제안: 견본) — 원본 단어장과 대조",
+    "word": "sample",
+    "shown": "샘플",
+    "suggested": "견본",
+    "lessons": [
+     "mv3-30"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-30",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"version\" → \"버전\" (제안: 판, 변형) — 원본 단어장과 대조",
+    "word": "version",
+    "shown": "버전",
+    "suggested": "판, 변형",
+    "lessons": [
+     "mv3-30",
+     "hv-72"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-25",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"gallery\" → \"갤러리\" (제안: 화랑) — 원본 단어장과 대조",
+    "word": "gallery",
+    "shown": "갤러리",
+    "suggested": "화랑",
+    "lessons": [
+     "mv3-25"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-28",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"chain\" → \"체인\" (제안: 사슬) — 원본 단어장과 대조",
+    "word": "chain",
+    "shown": "체인",
+    "suggested": "사슬",
+    "lessons": [
+     "mv3-28"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-33",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"privacy\" → \"프라이버시\" (제안: 사생활) — 원본 단어장과 대조",
+    "word": "privacy",
+    "shown": "프라이버시",
+    "suggested": "사생활",
+    "lessons": [
+     "mv3-33",
+     "hv-14",
+     "hv-53"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-33",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"military\" → \"군사\" (제안: 군사의) — 원본 단어장과 대조",
+    "word": "military",
+    "shown": "군사",
+    "suggested": "군사의",
+    "lessons": [
+     "mv3-33"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-36",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"tire\" → \"타이어\" (제안: 지치게 하다 (타이어)) — 원본 단어장과 대조",
+    "word": "tire",
+    "shown": "타이어",
+    "suggested": "지치게 하다 (타이어)",
+    "lessons": [
+     "mv2-36"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-19",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"junior\" → \"후배\" (제안: 손아래의) — 원본 단어장과 대조",
+    "word": "junior",
+    "shown": "후배",
+    "suggested": "손아래의",
+    "lessons": [
+     "mv2-19",
+     "mv3-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-19",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"sink\" → \"싱크대\" (제안: 가라앉다) — 원본 단어장과 대조",
+    "word": "sink",
+    "shown": "싱크대",
+    "suggested": "가라앉다",
+    "lessons": [
+     "mv2-19",
+     "mv3-38"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-30",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"press\" → \"언론\" (제안: 누르다) — 원본 단어장과 대조",
+    "word": "press",
+    "shown": "언론",
+    "suggested": "누르다",
+    "lessons": [
+     "mv2-30",
+     "mv3-04",
+     "mv3-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-34",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"private\" → \"비공개\" (제안: 사적인, 개인의) — 원본 단어장과 대조",
+    "word": "private",
+    "shown": "비공개",
+    "suggested": "사적인, 개인의",
+    "lessons": [
+     "mv2-34",
+     "mv3-27",
+     "hv-53"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-34",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"regular\" → \"일반\" (제안: 규칙적인, 정기적인) — 원본 단어장과 대조",
+    "word": "regular",
+    "shown": "일반",
+    "suggested": "규칙적인, 정기적인",
+    "lessons": [
+     "mv2-34",
+     "mv3-27",
+     "hv-56"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-29",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"correct\" → \"맞다\" (제안: 정확한; 고치다) — 원본 단어장과 대조",
+    "word": "correct",
+    "shown": "맞다",
+    "suggested": "정확한; 고치다",
+    "lessons": [
+     "mv2-29",
+     "hv-56"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-28",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"current\" → \"현재\" (제안: 현재의; 흐름) — 원본 단어장과 대조",
+    "word": "current",
+    "shown": "현재",
+    "suggested": "현재의; 흐름",
+    "lessons": [
+     "mv2-28",
+     "hv-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-28",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"spot\" → \"자리\" (제안: 장소; 발견하다) — 원본 단어장과 대조",
+    "word": "spot",
+    "shown": "자리",
+    "suggested": "장소; 발견하다",
+    "lessons": [
+     "mv2-28",
+     "mv3-22"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-29",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"capital\" → \"자본\" (제안: 수도; 자본) — 원본 단어장과 대조",
+    "word": "capital",
+    "shown": "자본",
+    "suggested": "수도; 자본",
+    "lessons": [
+     "mv2-29",
+     "mv3-29",
+     "hv-20"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-38",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"sight\" → \"시력\" (제안: 시야, 광경) — 원본 단어장과 대조",
+    "word": "sight",
+    "shown": "시력",
+    "suggested": "시야, 광경",
+    "lessons": [
+     "mv2-38",
+     "mv3-09"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-39",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"extra\" → \"추가\" (제안: 여분의) — 원본 단어장과 대조",
+    "word": "extra",
+    "shown": "추가",
+    "suggested": "여분의",
+    "lessons": [
+     "mv2-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-39",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"furious\" → \"맹렬한\" (제안: 격노한) — 원본 단어장과 대조",
+    "word": "furious",
+    "shown": "맹렬한",
+    "suggested": "격노한",
+    "lessons": [
+     "mv2-39"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv2-40",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"type\" → \"유형\" (제안: 유형; 타자치다) — 원본 단어장과 대조",
+    "word": "type",
+    "shown": "유형",
+    "suggested": "유형; 타자치다",
+    "lessons": [
+     "mv2-40",
+     "mv3-22"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-02",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"relief\" → \"구호\" (제안: 안도) — 원본 단어장과 대조",
+    "word": "relief",
+    "shown": "구호",
+    "suggested": "안도",
+    "lessons": [
+     "mv3-02",
+     "hv-37"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-03",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"view\" → \"보기\" (제안: 경치; 견해) — 원본 단어장과 대조",
+    "word": "view",
+    "shown": "보기",
+    "suggested": "경치; 견해",
+    "lessons": [
+     "mv3-03",
+     "hv-73"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-03",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"operation\" → \"작동\" (제안: 수술; 작전; 운영) — 원본 단어장과 대조",
+    "word": "operation",
+    "shown": "작동",
+    "suggested": "수술; 작전; 운영",
+    "lessons": [
+     "mv3-03",
+     "hv-46"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"reverse\" → \"역방향\" (제안: 뒤집다; 반대의) — 원본 단어장과 대조",
+    "word": "reverse",
+    "shown": "역방향",
+    "suggested": "뒤집다; 반대의",
+    "lessons": [
+     "mv3-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"hardness\" → \"경도\" (제안: 단단함) — 원본 단어장과 대조",
+    "word": "hardness",
+    "shown": "경도",
+    "suggested": "단단함",
+    "lessons": [
+     "mv3-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"bid\" → \"입찰\" (제안: 명령하다; 입찰) — 원본 단어장과 대조",
+    "word": "bid",
+    "shown": "입찰",
+    "suggested": "명령하다; 입찰",
+    "lessons": [
+     "mv3-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-24",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"rear\" → \"후방\" (제안: 기르다; 뒤쪽) — 원본 단어장과 대조",
+    "word": "rear",
+    "shown": "후방",
+    "suggested": "기르다; 뒤쪽",
+    "lessons": [
+     "mv3-24"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-26",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"primary\" → \"기본\" (제안: 주요한; 초등의) — 원본 단어장과 대조",
+    "word": "primary",
+    "shown": "기본",
+    "suggested": "주요한; 초등의",
+    "lessons": [
+     "mv3-26",
+     "hv-54"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-26",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"rural\" → \"시골\" (제안: 시골의) — 원본 단어장과 대조",
+    "word": "rural",
+    "shown": "시골",
+    "suggested": "시골의",
+    "lessons": [
+     "mv3-26"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-27",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"independent\" → \"독립\" (제안: 독립적인) — 원본 단어장과 대조",
+    "word": "independent",
+    "shown": "독립",
+    "suggested": "독립적인",
+    "lessons": [
+     "mv3-27",
+     "hv-50"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-27",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"neutral\" → \"중립\" (제안: 중립의) — 원본 단어장과 대조",
+    "word": "neutral",
+    "shown": "중립",
+    "suggested": "중립의",
+    "lessons": [
+     "mv3-27",
+     "hv-46"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-35",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"civil\" → \"시민\" (제안: 시민의; 예의 바른) — 원본 단어장과 대조",
+    "word": "civil",
+    "shown": "시민",
+    "suggested": "시민의; 예의 바른",
+    "lessons": [
+     "mv3-35",
+     "hv-24"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-35",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"quarter\" → \"분기\" (제안: 4분의 1) — 원본 단어장과 대조",
+    "word": "quarter",
+    "shown": "분기",
+    "suggested": "4분의 1",
+    "lessons": [
+     "mv3-35"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-35",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"meanly\" → \"못된\" (제안: 비열하게; 초라하게) — 원본 단어장과 대조",
+    "word": "meanly",
+    "shown": "못된",
+    "suggested": "비열하게; 초라하게",
+    "lessons": [
+     "mv3-35"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-35",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"icy\" → \"얼음\" (제안: 얼음같이 찬) — 원본 단어장과 대조",
+    "word": "icy",
+    "shown": "얼음",
+    "suggested": "얼음같이 찬",
+    "lessons": [
+     "mv3-35"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-37",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"terror\" → \"테러\" (제안: 공포) — 원본 단어장과 대조",
+    "word": "terror",
+    "shown": "테러",
+    "suggested": "공포",
+    "lessons": [
+     "mv3-37",
+     "hv-68"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-37",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"trace\" → \"추적\" (제안: 흔적) — 원본 단어장과 대조",
+    "word": "trace",
+    "shown": "추적",
+    "suggested": "흔적",
+    "lessons": [
+     "mv3-37",
+     "hv-69"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-33",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"commercial\" → \"상업\" (제안: 상업의; 광고) — 원본 단어장과 대조",
+    "word": "commercial",
+    "shown": "상업",
+    "suggested": "상업의; 광고",
+    "lessons": [
+     "mv3-33",
+     "hv-42"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-01",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"advanced\" → \"고급\" (제안: 진보한; 고급의) — 원본 단어장과 대조",
+    "word": "advanced",
+    "shown": "고급",
+    "suggested": "진보한; 고급의",
+    "lessons": [
+     "hv-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-01",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"foremost\" → \"무엇보다도\" (제안: 가장 중요한, 맨 앞의) — 원본 단어장과 대조",
+    "word": "foremost",
+    "shown": "무엇보다도",
+    "suggested": "가장 중요한, 맨 앞의",
+    "lessons": [
+     "hv-01"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-07",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"transform\" → \"변환\" (제안: 변형시키다) — 원본 단어장과 대조",
+    "word": "transform",
+    "shown": "변환",
+    "suggested": "변형시키다",
+    "lessons": [
+     "hv-07"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-07",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"transfer\" → \"환승\" (제안: 옮기다) — 원본 단어장과 대조",
+    "word": "transfer",
+    "shown": "환승",
+    "suggested": "옮기다",
+    "lessons": [
+     "hv-07"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-05",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"aboard\" → \"탑승\" (제안: (탈것에) 타고) — 원본 단어장과 대조",
+    "word": "aboard",
+    "shown": "탑승",
+    "suggested": "(탈것에) 타고",
+    "lessons": [
+     "hv-05"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-08",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"occasional\" → \"가끔\" (제안: 가끔의) — 원본 단어장과 대조",
+    "word": "occasional",
+    "shown": "가끔",
+    "suggested": "가끔의",
+    "lessons": [
+     "hv-08"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-11",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"behold\" → \"보라\" (제안: 보다) — 원본 단어장과 대조",
+    "word": "behold",
+    "shown": "보라",
+    "suggested": "보다",
+    "lessons": [
+     "hv-11"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-11",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"abide\" → \"머무르다\" (제안: 참다; 준수하다) — 원본 단어장과 대조",
+    "word": "abide",
+    "shown": "머무르다",
+    "suggested": "참다; 준수하다",
+    "lessons": [
+     "hv-11"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-15",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"comparative\" → \"비교\" (제안: 비교의, 상대적인) — 원본 단어장과 대조",
+    "word": "comparative",
+    "shown": "비교",
+    "suggested": "비교의, 상대적인",
+    "lessons": [
+     "hv-15",
+     "hv-48"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"corresponding\" → \"해당\" (제안: 상응하는) — 원본 단어장과 대조",
+    "word": "corresponding",
+    "shown": "해당",
+    "suggested": "상응하는",
+    "lessons": [
+     "hv-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "hv-10",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"cooperative\" → \"협동조합\" (제안: 협력적인) — 원본 단어장과 대조",
+    "word": "cooperative",
+    "shown": "협동조합",
+    "suggested": "협력적인",
+    "lessons": [
+     "hv-10"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-11",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"upset\" → \"당황하다\" (제안: 속상한) — 원본 단어장과 대조",
+    "word": "upset",
+    "shown": "당황하다",
+    "suggested": "속상한",
+    "lessons": [
+     "mv3-11",
+     "hv-03"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-12",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"owe\" → \"빚진\" (제안: 빚지다) — 원본 단어장과 대조",
+    "word": "owe",
+    "shown": "빚진",
+    "suggested": "빚지다",
+    "lessons": [
+     "mv3-12"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-11",
+    "code": "MEANING_POS",
+    "severity": "P2",
+    "detail": "\"whisper\" → \"속삭임\" (제안: 속삭이다) — 원본 단어장과 대조",
+    "word": "whisper",
+    "shown": "속삭임",
+    "suggested": "속삭이다",
+    "lessons": [
+     "mv3-11"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-11",
+    "code": "MEANING_TRANSLITERATION",
+    "severity": "P1",
+    "detail": "\"surround\" → \"서라운드\" (제안: 둘러싸다) — 원본 단어장과 대조",
+    "word": "surround",
+    "shown": "서라운드",
+    "suggested": "둘러싸다",
+    "lessons": [
+     "mv3-11",
+     "hv-70"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-11",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"review\" → \"검토\" (제안: 복습; 검토) — 원본 단어장과 대조",
+    "word": "review",
+    "shown": "검토",
+    "suggested": "복습; 검토",
+    "lessons": [
+     "mv3-11",
+     "hv-73"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-11",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"row\" → \"행\" (제안: 줄, 열) — 원본 단어장과 대조",
+    "word": "row",
+    "shown": "행",
+    "suggested": "줄, 열",
+    "lessons": [
+     "mv3-11"
+    ]
+   },
+   {
+    "section": "phonics",
+    "lesson": "mv3-05",
+    "code": "MEANING_WRONG_SENSE",
+    "severity": "P1",
+    "detail": "\"gamble\" → \"도박\" (제안: 도박하다) — 원본 단어장과 대조",
+    "word": "gamble",
+    "shown": "도박",
+    "suggested": "도박하다",
+    "lessons": [
+     "mv3-05"
+    ]
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-011",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#8 영어 답안에 한국어 섞임: \"They have dreams (혹은 a dream.)\"",
+    "n": "8"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-011",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#19 영어 답안에 한국어 섞임: \"Do they have dreams (혹은 a dream)?\"",
+    "n": "19"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-011",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#43 영어 답안에 한국어 섞임: \"Didn't they have dreams? (혹은 a dream)?\"",
+    "n": "43"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-015",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#19 영어 답안에 한국어 섞임: \"I want apples (혹은 an apple).\"",
+    "n": "19"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-017",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#2 영어 답안에 한국어 섞임: \"Each boy receives a prize(혹은 prizes).\"",
+    "n": "2"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-017",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#3 영어 답안에 한국어 섞임: \"Every boy receives a prize(혹은 prizes).\"",
+    "n": "3"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-017",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#4 영어 답안에 한국어 섞임: \"All (the) boys receive a prize(혹은 prizes).\"",
+    "n": "4"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-017",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#5 영어 답안에 한국어 섞임: \"All (the) boys do not receive a prize(혹은 prizes).\"",
+    "n": "5"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#41 영어 답안에 한국어 섞임: \"Am I not a boy(혹은 Ain't I a boy)?\"",
+    "n": "41"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#42 영어 답안에 한국어 섞임: \"Aren't you a girl(혹은 Are you not a girl)?\"",
+    "n": "42"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#43 영어 답안에 한국어 섞임: \"Isn't he a boy(혹은 Is he not a boy?)\"",
+    "n": "43"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#44 영어 답안에 한국어 섞임: \"Isn't she a girl(혹은 Is she not a girl)?\"",
+    "n": "44"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#45 영어 답안에 한국어 섞임: \"Isn't this a pen(혹은 Is this not a pen)?\"",
+    "n": "45"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#46 영어 답안에 한국어 섞임: \"Isn't it a book(혹은 Is it not a book)?\"",
+    "n": "46"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#47 영어 답안에 한국어 섞임: \"Aren't these pens(혹은 Are these not pens)?\"",
+    "n": "47"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#48 영어 답안에 한국어 섞임: \"Aren't those books(혹은 Are those not books)?\"",
+    "n": "48"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#49 영어 답안에 한국어 섞임: \"Aren't you happy(혹은 Are you not happy)?\"",
+    "n": "49"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-025",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#50 영어 답안에 한국어 섞임: \"Isn't she happy(혹은 Is she not happy)?\"",
+    "n": "50"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#41 영어 답안에 한국어 섞임: \"Was I not a boy(혹은 Wasn't I a boy)?\"",
+    "n": "41"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#42 영어 답안에 한국어 섞임: \"Weren't you a girl(혹은 Were you not a girl)?\"",
+    "n": "42"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#43 영어 답안에 한국어 섞임: \"Wasn't he a boy(혹은 Was he not a boy?)\"",
+    "n": "43"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#44 영어 답안에 한국어 섞임: \"Wasn't she a girl(혹은 Was she not a girl)?\"",
+    "n": "44"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#45 영어 답안에 한국어 섞임: \"Wasn't this a pen(혹은 Was this not a pen)?\"",
+    "n": "45"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#46 영어 답안에 한국어 섞임: \"Wasn't it a book(혹은 Was it not a book)?\"",
+    "n": "46"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#47 영어 답안에 한국어 섞임: \"Weren't these pens(혹은 Were these not pens)?\"",
+    "n": "47"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#48 영어 답안에 한국어 섞임: \"Weren't those books(혹은 Were those not books)?\"",
+    "n": "48"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#49 영어 답안에 한국어 섞임: \"Weren't you happy(혹은 Were you not happy)?\"",
+    "n": "49"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-029",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#50 영어 답안에 한국어 섞임: \"Wasn't she happy(혹은 Was she not happy)?\"",
+    "n": "50"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#43 영어 답안에 한국어 섞임: \"Am I not studying English(혹은 Ain't I studying English)\"",
+    "n": "43"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#44 영어 답안에 한국어 섞임: \"Aren't you studying English(혹은 Are you not studying En\"",
+    "n": "44"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#45 영어 답안에 한국어 섞임: \"Isn't he studying English?(혹은 Is he not studying Engli\"",
+    "n": "45"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#46 영어 답안에 한국어 섞임: \"Isn't she studying English(혹은Is she not studying Engli\"",
+    "n": "46"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#47 영어 답안에 한국어 섞임: \"Aren't they studying English(혹은 Are they not studying \"",
+    "n": "47"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#48 영어 답안에 한국어 섞임: \"Was I not studying English(혹은 Wasn't I studying Englis\"",
+    "n": "48"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#49 영어 답안에 한국어 섞임: \"Were you not studying English(혹은 Weren't you studying \"",
+    "n": "49"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#50 영어 답안에 한국어 섞임: \"Wasn't he studying English(혹은 Was he not studying Engl\"",
+    "n": "50"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#51 영어 답안에 한국어 섞임: \"Wasn't she studying English(혹은 Was she not studying En\"",
+    "n": "51"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-037",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#52 영어 답안에 한국어 섞임: \"Weren't they studying English(혹은 Were they not studyin\"",
+    "n": "52"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#1 영어 답안에 한국어 섞임: \"I am a boy, ain't I(혹은 I am a boy, am I not)?\"",
+    "n": "1"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#2 영어 답안에 한국어 섞임: \"You are a girl, aren't you(혹은 You are a girl, are you \"",
+    "n": "2"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#3 영어 답안에 한국어 섞임: \"He is a boy, isn't he(혹은 He is a boy, is he not?)\"",
+    "n": "3"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#4 영어 답안에 한국어 섞임: \"She is a girl, isn't she(혹은 She is a girl, is she not)\"",
+    "n": "4"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#5 영어 답안에 한국어 섞임: \"This is a pen, isn't this(혹은 This is a pen, is this no\"",
+    "n": "5"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#6 영어 답안에 한국어 섞임: \"It is a book, isn't it(혹은 It is a book, is it not?)\"",
+    "n": "6"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#7 영어 답안에 한국어 섞임: \"These are pens, aren't these(혹은 ---, are these not)?\"",
+    "n": "7"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#8 영어 답안에 한국어 섞임: \"Those(they) are books, aren't they(혹은 ---, are they no\"",
+    "n": "8"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-039",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#9 영어 답안에 한국어 섞임: \"I am happy, ain't I(혹은 I am happy, am I not)?\"",
+    "n": "9"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#11 영어 답안에 한국어 섞임: \"Isn't he a boy(혹은 Is he not a boy?)\"",
+    "n": "11"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#12 영어 답안에 한국어 섞임: \"Isn't she a girl(혹은 Is she not a girl)?\"",
+    "n": "12"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#13 영어 답안에 한국어 섞임: \"Isn't this a pen(혹은 Is this not a pen)?\"",
+    "n": "13"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#14 영어 답안에 한국어 섞임: \"Isn't it a book(혹은 Is it not a book)?\"",
+    "n": "14"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#15 영어 답안에 한국어 섞임: \"Aren't these pens(혹은 Are these not pens)?\"",
+    "n": "15"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#16 영어 답안에 한국어 섞임: \"Aren't those books(혹은 Are those not books)?\"",
+    "n": "16"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#17 영어 답안에 한국어 섞임: \"Wasn't this a pen(혹은 Was this not a pen)?\"",
+    "n": "17"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#18 영어 답안에 한국어 섞임: \"Wasn't it a book(혹은 Was it not a book)?\"",
+    "n": "18"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#19 영어 답안에 한국어 섞임: \"Weren't these pens(혹은 Were these not pens)?\"",
+    "n": "19"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#20 영어 답안에 한국어 섞임: \"Weren't those books(혹은 Were those not books)?\"",
+    "n": "20"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#21 영어 답안에 한국어 섞임: \"Weren't you happy(혹은 Were you not happy)?\"",
+    "n": "21"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#22 영어 답안에 한국어 섞임: \"Wasn't she happy(혹은 Was she not happy)?\"",
+    "n": "22"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#27 영어 답안에 한국어 섞임: \"Doesn't he love me(혹은 Does he not ---)?\"",
+    "n": "27"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#28 영어 답안에 한국어 섞임: \"Doesn't she love your brother(혹은 Does she not ---)?\"",
+    "n": "28"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#29 영어 답안에 한국어 섞임: \"Don't they love you(혹은 Do they not---)?\"",
+    "n": "29"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#30 영어 답안에 한국어 섞임: \"Doesn't she love his brother(혹은 Does she not ---) ?\"",
+    "n": "30"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-043",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#31 영어 답안에 한국어 섞임: \"Doesn't he love her sister(혹은 Does he not --)?\"",
+    "n": "31"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#42 영어 답안에 한국어 섞임: \"Isn't this mine(혹은 Is this not mine?)\"",
+    "n": "42"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#43 영어 답안에 한국어 섞임: \"Isn't it yours(혹은 Is it not yours)?\"",
+    "n": "43"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#70 영어 답안에 한국어 섞임: \"Am I not studying English(혹은 Ain't I studying English)\"",
+    "n": "70"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#71 영어 답안에 한국어 섞임: \"Aren't you studying English(혹은 Are you not studying En\"",
+    "n": "71"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#72 영어 답안에 한국어 섞임: \"Isn't he studying English?(혹은 Is he not studying Engli\"",
+    "n": "72"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#73 영어 답안에 한국어 섞임: \"Isn't she studying English(혹은Is she not studying Engli\"",
+    "n": "73"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#74 영어 답안에 한국어 섞임: \"Aren't they studying English(혹은 Are they not studying \"",
+    "n": "74"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#75 영어 답안에 한국어 섞임: \"Was I not studying English(혹은 Wasn't I studying Englis\"",
+    "n": "75"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#76 영어 답안에 한국어 섞임: \"Were you not studying English(혹은 Weren't you studying \"",
+    "n": "76"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#77 영어 답안에 한국어 섞임: \"Wasn't he studying English(혹은 Was he not studying Engl\"",
+    "n": "77"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#78 영어 답안에 한국어 섞임: \"Wasn't she studying English(혹은 Was she not studying En\"",
+    "n": "78"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#79 영어 답안에 한국어 섞임: \"Weren't they studying English(혹은 Were they not studyin\"",
+    "n": "79"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-045",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#80 영어 답안에 한국어 섞임: \"This is a pen, isn't this(혹은 This is a pen, is this no\"",
+    "n": "80"
+   },
+   {
+    "section": "grammar1",
+    "lesson": "gh1-081",
+    "code": "KOREAN_IN_ANSWER",
+    "severity": "P2",
+    "detail": "#6 영어 답안에 한국어 섞임: \"The police arrested 15 people, didn't they? (police, p\"",
+    "n": "6"
+   }
+  ],
+  "NOT_IN_ARCHIVE": [
+   {
+    "section": "reading",
+    "lesson": "pr009==pr036",
+    "code": "DUPLICATE_PASSAGE",
+    "severity": "P2",
+    "detail": "두 회차의 지문이 글자 단위로 동일 — 원본에서 각 회차 지문 확인"
+   },
+   {
+    "section": "reading",
+    "lesson": "pr024==pr069",
+    "code": "DUPLICATE_PASSAGE",
+    "severity": "P2",
+    "detail": "두 회차의 지문이 글자 단위로 동일 — 원본에서 각 회차 지문 확인"
+   },
+   {
+    "section": "reading",
+    "lesson": "pr197==pr216",
+    "code": "DUPLICATE_PASSAGE",
+    "severity": "P2",
+    "detail": "두 회차의 지문이 글자 단위로 동일 — 원본에서 각 회차 지문 확인"
+   },
+   {
+    "section": "reading",
+    "lesson": "pr152==pr242",
+    "code": "DUPLICATE_PASSAGE",
+    "severity": "P2",
+    "detail": "두 회차의 지문이 글자 단위로 동일 — 원본에서 각 회차 지문 확인"
+   },
+   {
+    "section": "reading",
+    "lesson": "pr190==pr244",
+    "code": "DUPLICATE_PASSAGE",
+    "severity": "P2",
+    "detail": "두 회차의 지문이 글자 단위로 동일 — 원본에서 각 회차 지문 확인"
+   },
+   {
+    "section": "reading",
+    "lesson": "pr247==pr251",
+    "code": "DUPLICATE_PASSAGE",
+    "severity": "P2",
+    "detail": "두 회차의 지문이 글자 단위로 동일 — 원본에서 각 회차 지문 확인"
+   }
+  ],
+  "NEEDS_EYES": [
+   {
+    "section": "grammar1",
+    "lesson": "(과정 전체)",
+    "code": "LESSON_NUMBER_GAP",
+    "severity": "P1",
+    "detail": "결번 12개: 18, 19, 48, 49, 70, 71, 86, 87, 104, 105, 114, 115 — 원본에 실제로 있는지 확인",
+    "gaps": [
+     18,
+     19,
+     48,
+     49,
+     70,
+     71,
+     86,
+     87,
+     104,
+     105,
+     114,
+     115
+    ]
+   },
+   {
+    "section": "grammar1",
+    "lesson": "(과정 전체)",
+    "code": "LESSON_START_OFFSET",
+    "severity": "P2",
+    "detail": "6번부터 시작 — 1~5번이 원본에 있는지 확인",
+    "firstNumber": 6
+   },
+   {
+    "section": "grammar2",
+    "lesson": "(과정 전체)",
+    "code": "LESSON_START_OFFSET",
+    "severity": "P2",
+    "detail": "7번부터 시작 — 1~6번이 원본에 있는지 확인",
+    "firstNumber": 7
+   },
+   {
+    "section": "reading",
+    "lesson": "pr066",
+    "code": "TRANSLATION_LENGTH_OUTLIER",
+    "severity": "P2",
+    "detail": "한/영 길이비 0.04 — 번역 잘림 가능: \"A good illustration of these is that Having \""
+   },
+   {
+    "section": "reading",
+    "lesson": "pr118",
+    "code": "TRANSLATION_MISSING",
+    "severity": "P1",
+    "detail": "번역 없음: \"All of these will make us less human, in that the \""
+   },
+   {
+    "section": "reading",
+    "lesson": "pr167",
+    "code": "TRANSLATION_LENGTH_OUTLIER",
+    "severity": "P2",
+    "detail": "한/영 길이비 0.11 — 번역 잘림 가능: \"Language is not something that is inherited \""
+   },
+   {
+    "section": "reading",
+    "lesson": "pr192",
+    "code": "TRANSLATION_LENGTH_OUTLIER",
+    "severity": "P2",
+    "detail": "한/영 길이비 0.13 — 번역 잘림 가능: \"No one really knows, but many people think t\""
+   },
+   {
+    "section": "reading",
+    "lesson": "pr231",
+    "code": "TRANSLATION_LENGTH_OUTLIER",
+    "severity": "P2",
+    "detail": "한/영 길이비 2.06 — 번역 잘림 가능: \"People, therefore, have lost interest in mod\""
+   },
+   {
+    "section": "reading",
+    "lesson": "pr237",
+    "code": "TRANSLATION_LENGTH_OUTLIER",
+    "severity": "P2",
+    "detail": "한/영 길이비 0.10 — 번역 잘림 가능: \"Not everyone is in favor of using (a)the big\""
+   }
+  ]
+ }
+}

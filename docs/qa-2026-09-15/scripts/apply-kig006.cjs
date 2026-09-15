@@ -38,6 +38,33 @@ const COURSE = (() => {
   return i >= 0 && argv[i + 1] ? argv[i + 1] : null;
 })();
 
+/**
+ * STUDENT is excluded, and the exclusion is not a tuning knob.
+ *
+ * Parentheses mean different things in different courses. In GRAMMAR they mark
+ * an alternative answer, which is what this whole engine is built to split out.
+ * In STUDENT — the self-introduction templates — they mark a BLANK the learner
+ * fills in with their own answer:
+ *
+ *     My favorite food is (bulgogi).      the learner writes their own food
+ *     There are (4) people in my family.  the learner writes their own number
+ *
+ * Treating those as alternatives deletes the blank and leaves a sentence that
+ * stops mid-clause: "My favorite food is." / "There are people in my family."
+ * A 2026-09-16 run against a throwaway copy of content/ produced 25 such
+ * sentences out of 25 STUDENT items — a 100% failure rate — and the generated
+ * alternatives were worse ("Their names names.", "My teacher's name is
+ * Mr./MSurnameeacher's name is Mr./Ms."). None of the four verifiers caught it,
+ * because they all sample GRAMMAR rows.
+ *
+ * The clips are keyed on a hash of `text`, so applying this would also have
+ * synthesised and shipped audio of the broken sentences.
+ *
+ * Do not lift this by adding a flag. STUDENT needs its own lane that classifies
+ * the parentheses as placeholders and leaves the text alone.
+ */
+const EXCLUDED_COURSES = new Set(["student"]);
+
 /* ------------------------------------------------------ load the engine ---- */
 /**
  * The resolver is imported from report-kig006.cjs so there is exactly ONE
@@ -84,6 +111,28 @@ function loadEngine() {
 const engine = loadEngine();
 const { propose, kindFor } = engine;
 
+/* ------------------------------------------------------- owner decisions --- */
+/**
+ * Rows the owner settled, read from the SAME file review-kig006.cjs reads.
+ *
+ * The engine gets 220-odd rows right and a handful wrong in ways no general
+ * rule catches — a bracket replacing a whole clause, a source sentence carrying
+ * two terminators, a textbook correction written inside the bracket. Loosening
+ * the engine to cover those would put the 220 at risk; a curated list does not.
+ *
+ * Sharing one file with the review script is the point: what the owner approved
+ * in kig006-review-table.md and what `--write` records cannot drift apart,
+ * because there is nothing to keep in sync.
+ */
+function loadDecisions() {
+  const f = path.join(__dirname, "..", "kig006-decisions.json");
+  if (!fs.existsSync(f)) return new Map();
+  const j = JSON.parse(fs.readFileSync(f, "utf8"));
+  return new Map((j.decisions || []).map((d) => [d.en, d]));
+}
+const DECISIONS = loadDecisions();
+const decisionsUsed = new Set();
+
 /* ------------------------------------------------------------- helpers ----- */
 const hasParen = (s) => typeof s === "string" && s.includes("(");
 
@@ -120,6 +169,12 @@ function lessonFiles() {
   const out = [];
   const courses = COURSE ? [COURSE] : fs.readdirSync(LESSONS);
   for (const c of courses) {
+    // Honoured even when named with --course, so the exclusion cannot be
+    // stepped around by accident.
+    if (EXCLUDED_COURSES.has(c)) {
+      console.log(`제외: ${c} — 괄호가 대안이 아니라 빈칸 자리표시자입니다 (NEXT-SESSION.md §0)`);
+      continue;
+    }
     const dir = path.join(LESSONS, c);
     if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) continue;
     for (const f of fs.readdirSync(dir)) {
@@ -143,6 +198,21 @@ function splitItem(item, kindFor) {
   if (!item || typeof item.text !== "string") return null;
   if (!hasParen(item.text)) return null; // already split, or nothing to do
   const en = item.text;
+
+  // An owner decision wins over the engine outright.
+  const decided = DECISIONS.get(en);
+  if (decided) {
+    decisionsUsed.add(en);
+    // Still subject to the terminator gate: a reviewed row is not an unchecked
+    // row, and a typo in the decisions file should fail loudly like any other.
+    return {
+      text: decided.text,
+      alternatives: [...new Set(decided.alternatives || [])],
+      gloss: false,
+      sourceTerminator: SOURCE_TERMINATOR(en),
+    };
+  }
+
   const kind = kindFor(en);
   const p = propose(kind, en);
   if (!p || !p.text || hasParen(p.text)) return null;

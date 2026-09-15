@@ -38,6 +38,36 @@ const VERIFY_ONLY = process.argv.includes("--verify");
 const OUT_ROOT = path.resolve(arg("--out") || path.join(ROOT, "..", "kig-backups"));
 
 /**
+ * Refuse to write customer records anywhere inside the repository.
+ *
+ * The default is already outside it and 백업하기.bat only ever passes outside
+ * paths, so this guards the one remaining way in: a hand-typed `--out`. The
+ * failure it prevents is quiet and permanent — licence keys and device
+ * registrations land in the working tree, ride along on the next `git add -A`,
+ * and are then in the history and on GitHub, where deleting the file does not
+ * remove them. Better to refuse the run than to make that recoverable.
+ *
+ * The comparison is on resolved paths with a separator appended, so a sibling
+ * directory whose name merely starts with the repository's (…/K-IG-CORE-backups)
+ * is not mistaken for something inside it.
+ */
+{
+  const repo = path.resolve(ROOT) + path.sep;
+  const dest = OUT_ROOT + path.sep;
+  if (dest.startsWith(repo)) {
+    console.error(
+      `\n오류: 백업 위치가 저장소 안입니다.\n` +
+      `  요청한 위치 : ${OUT_ROOT}\n` +
+      `  저장소      : ${path.resolve(ROOT)}\n\n` +
+      `고객의 이용권·진도 기록이므로 저장소 안에 두면 git 에 딸려 들어가고,\n` +
+      `한 번 올라가면 파일을 지워도 기록에서 사라지지 않습니다.\n` +
+      `저장소 밖 경로를 지정하세요 (예: D:\\kig-backup, %OneDrive%\\KIG-백업).`,
+    );
+    process.exit(1);
+  }
+}
+
+/**
  * Falls back to .env.local for anything the environment did not supply.
  *
  * A backup only protects you if it runs unattended, and a scheduled task that
