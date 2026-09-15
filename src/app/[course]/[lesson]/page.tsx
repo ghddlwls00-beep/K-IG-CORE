@@ -325,12 +325,6 @@ export default async function LessonPage({
       )}
 
       <LessonStepNavigation courseHref={`/${course}`} />
-
-      <footer className="mt-8 border-t border-line/60 pt-4">
-        <p className="font-mono text-[10.5px] text-ink-faint">
-          <T k="lesson.source" />: {lesson.legacyPath} · {lesson.legacyEncoding}
-        </p>
-      </footer>
     </main>
   );
 }
