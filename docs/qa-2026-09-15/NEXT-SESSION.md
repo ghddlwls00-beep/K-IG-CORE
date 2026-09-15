@@ -6,6 +6,90 @@
 
 ---
 
+## 0. 🔴 KIG-006 이식 차단 — 2026-09-16 검증 결과 (다른 무엇보다 먼저 읽을 것)
+
+`apply-kig006.cjs --write` 를 **지금 상태로 실행하면 안 됩니다.** 실제로 확인한 방법은
+`content/` 를 임시 폴더로 복사한 뒤 그 복사본에 `--write` 를 돌려 결과물을 전수로 읽는 것이었습니다.
+작업 트리는 건드리지 않았습니다. 발견은 두 가지입니다.
+
+### 0-1. STUDENT 25건은 레인 자체가 틀렸습니다 — 이미 코드로 차단해 두었습니다
+
+STUDENT 의 괄호는 **대안 정답이 아니라 학습자가 채우는 빈칸**입니다.
+
+| 원문 | 적용 결과 |
+|---|---|
+| `My favorite food is (bulgogi).` | `My favorite food is.` |
+| `His/Her name is (friend's name).` | `His/Her name is.` |
+| `There are (4) people in my family: …` | `There are people in my family: …` |
+| `He/She is about (age) years old.` | `He/She is about years old.` |
+| `My best friend is (name), and I have known him/her for 3 years.` | `My best friend is, and I have known him/her for 3 years.` |
+
+생성된 대안도 같이 깨집니다 — `Their names names.` · `My favorite food bulgogi.` ·
+`My teacher's name is Mr./MSurnameeacher's name is Mr./Ms.`
+
+**25건 중 정상 0건입니다.** 게다가 `text` 가 바뀌므로 이 깨진 문장 25개로 **음성 클립이 합성·배포**됩니다.
+
+→ `apply-kig006.cjs` 에 `EXCLUDED_COURSES = new Set(["student"])` 를 넣어 두었습니다.
+`--course student` 로도 우회되지 않습니다. 이식 대상은 **429 → 404건**(grammar1 374 · grammar2 30).
+**플래그를 추가해 이 차단을 풀지 마세요.** STUDENT 는 괄호를 "자리표시자"로 분류만 하고
+`text` 를 건드리지 않는 **별도 레인**이 필요합니다.
+
+### 0-2. GRAMMAR 대안에 비문이 섞여 있고, 검증기 4종이 전부 놓칩니다
+
+`verify-kig006-multiparen` / `-determiners` / `-proposals` / `-insert-semantics` 는
+이 시점에 전부 통과(14/14, 47행 0실패, 19/19, 17/17)로 나오는데 아래를 하나도 잡지 못했습니다.
+
+```
+Please keep (be) quiet.
+  → 대안 "Please keep be quiet."                    (비문)
+May I have the day off tomorrow(have tomorrow off)?
+  → 대안 "May I have have tomorrow off?"            (have 중복)
+What was her maiden name(family name: last name)?
+  → 대안 "family name: last name"                   (문장이 아니라 주석)
+Were they policemen(police officers)?
+  → 대안 "Were they policemen police officers?"     (치환이 아니라 삽입)
+```
+
+전수 스캔으로 **명백한 파손 12건**을 확인했지만, `keep be quiet` 처럼 문법만 틀린 것은
+자동으로 잡히지 않습니다. 404건의 실제 불량률은 이보다 높습니다.
+
+**→ 가드와 검수표는 이미 만들어 두었습니다: `scripts/review-kig006.cjs`**
+
+```bash
+node docs/qa-2026-09-15/scripts/review-kig006.cjs
+  → evidence/kig006-review-table.md   (content/ 에 쓰지 않음)
+```
+
+현재 출력: **검수 대상 239문장 · 가드 적발 19행 · 버린 대안 15개 · 남은 대안 242개**
+
+가드는 4겹입니다. 각각 실제로 통과해 버린 행이 있어서 만든 것이고, 주석에 그 행을 적어 두었습니다.
+
+| 가드 | 잡는 것 | 예 |
+|---|---|---|
+| G1 `isGloss` | 괄호 안이 답이 아니라 설명, 또는 종결부호 소실 | `family name: last name` |
+| G2 `hasDoubledRun` | 같은 단어·구 연속 중복 | `May I have have tomorrow off?` |
+| G2b `isAppendNotSubstitute` | **치환이어야 할 것이 삽입됨** — 주정답이 대안 안에 통째로 살아 있음 | `Were they policemen police officers?` · `I don't either, Neither do I.` · `…airsick or seasick aboard a ship.` |
+| G3 `looksUngrammatical` | 동사 연속·한 단어짜리 | `Please keep be quiet.` · `Speaking.` |
+| (행 단위) `primaryDoubt` | 괄호 안이 **완전한 문장**이라 주정답 규칙이 뒤집힐 수 있는 행 | `I think it the best way to success to work hard. (I think the best way to success is to work hard.)` ← 주정답이 비문으로 남음 |
+
+**남은 할 일**
+
+1. `evidence/kig006-review-table.md` §1 의 **19행을 소유자가 검수**합니다. 승인 전 `--write` 금지.
+2. §2 의 220행도 소유자 검수 대상입니다. 가드는 **기계적으로 보이는 것만** 잡습니다 —
+   의미가 틀린 대안은 사람만 잡을 수 있습니다.
+3. 승인된 가드를 `report-kig006.cjs` 본체(또는 `apply-kig006.cjs`)에 반영해
+   `--write` 가 검수표와 **같은 결과**를 내도록 맞추세요. 지금은 `review-kig006.cjs` 에만 있습니다.
+4. 검증기 4종이 왜 위 7건을 전부 통과시켰는지 원인을 적고, 대안의 **문법**을 보는 검사를 신설하세요.
+   지금 검증기는 전부 GRAMMAR 표본만 보고 있어 STUDENT 100% 실패도 한 건 감지하지 못했습니다.
+
+### 0-3. 참고
+
+- 이 검증은 `content/` 를 **쓰지 않았습니다**. §C "`content/` 쓰기 금지" 는 그대로 유효합니다.
+- 위 두 파일(`NEXT-SESSION.md` · `apply-kig006.cjs`)은 **커밋되지 않은 상태**로 작업 트리에 있습니다.
+  git 은 한 AI만 쓴다는 §D 규칙 때문입니다. 확인한 뒤 당신 커밋에 함께 넣어 주세요.
+
+---
+
 ## A. 4차 세션 결과 검수 — 반드시 먼저 바로잡을 것
 
 > ### ✅ 2026-09-16 (6차 세션) — §A 는 전부 처리되었습니다. 아래 본문은 원래 지시문이며 기록으로 남깁니다.
@@ -112,8 +196,26 @@ return latin >= hangul && latin > 0;
 |---|---|---|---|
 | 1 | ~~RE-009~~ | 검색 인덱스 STUDENT — **4차에서 완료** (944→1,025) | 재작업 금지 |
 | 2 | ~~RE-011/012 잔여~~ | `/t/[tab]` canonical + OG (A-5) — **5차에서 완료, 커밋 `fd5acf0`** | 운영 14/14 PASS |
-| 3 | RE-014 | 홈 `h1` 없음 / `/ld/d001` `h1` 2개 → 페이지당 정확히 1개 | 주요 라우트 전수 h1 개수 = 1 |
-| 4 | RE-016 | `not-found.tsx` · `error.tsx` · `global-error.tsx` · `loading.tsx` 추가 | 없는 경로 404 화면이 사이트 디자인으로 표시, 빌드 성공 |
+| 3 | ~~RE-014~~ | 홈 `h1` 없음 / `/ld/d001` `h1` 2개 → 페이지당 정확히 1개 — **7차 완료, 커밋 `bb4baf2`** | 운영 23/23 PASS (수정 전 20/23) |
+| 4 | ~~RE-016~~ | `not-found.tsx` · `error.tsx` · `global-error.tsx` 추가 — **7차 완료, 커밋 `3705348`**. `loading.tsx` 는 **의도적 제외**(아래 참조) | 운영 5/5 PASS (수정 전 5/5 FAIL) |
+
+> ### ⚠️ RE-016 — `loading.tsx` 는 넣지 마세요 (7차 실측)
+> 루트 `loading.tsx` 는 모든 라우트를 Suspense 경계로 감싸고, 그 결과 Next 가 **404 를 발견하기 전에
+> 200 을 먼저 flush** 합니다. 같은 빌드·같은 서버에서 측정한 값입니다:
+>
+> | 경로 | `loading.tsx` 있음 | 없음 |
+> |---|---|---|
+> | `/x` (→ `[course]`) | **200** (소프트 404) | 404 |
+> | `/x/y` (→ `[course]/[lesson]`) | **200** (소프트 404) | 404 |
+> | `/x/y/z` (미매칭) | 404 | 404 |
+> | `/ld/x` | **200** (소프트 404) | 404 |
+> | `/t/x` | **200** (소프트 404) | 404 |
+>
+> 소프트 404 는 기본 404 화면보다 **나쁩니다** — 색인되므로 잘못된 URL 과 죽은 링크가
+> 전부 검색 결과에 남습니다(RE-008 이 다루는 문제). 404 상태 코드가 스피너보다 중요하므로 제외했습니다.
+> 로딩 표시가 필요하면 **레슨 페이지 내부에서 `<Suspense fallback=…>`** 으로 감싸세요.
+> 경계를 라우트 레벨에 두지 않으면 소프트 404 가 생기지 않습니다.
+
 | 5 | RE-006 | `next.config.ts` 에 **CSP** 헤더 (나머지 5종은 있음) | 운영에서 콘솔 CSP 위반 0건. 음성(`/audio`)·폰트·Next 인라인 스크립트가 막히지 않을 것 |
 | 6 | RE-008 | 사이트맵에서 잠긴 레슨 제외 **또는** 레슨별 고유 소개문 | 사이트맵 URL 이 전부 비로그인 200 + 본문 있음 |
 | 7 | RE-004 🔴 | `src/lib/mediaAccess.ts:60` 의 `unclaimed → allowed:true` 기본값 때문에 **폐지 과정 음원 1,463개가 인증 없이 받아짐** → **허용 목록** 방식으로 | 알려진 과정·섹션 이미지 외 경로는 403. 폐지 과정 음원 표본 403, 무료 레슨·Ava 클립은 200 유지 |
