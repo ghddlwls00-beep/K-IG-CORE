@@ -782,7 +782,9 @@ export function ReadingLearningView({
                         💡 뜻 확인하기
                       </button>
                     )}
-                    <span className="text-[10.5px] font-mono text-ink-faint">#0{i + 1}</span>
+                    <span className="text-[10.5px] font-mono text-ink-faint">
+                      #{String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
                 </div>
               );
