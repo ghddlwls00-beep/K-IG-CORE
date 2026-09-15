@@ -74,11 +74,39 @@ PROGRESS.md 의 "다음 착수" 순서대로 이어서 진행해줘.
     원본 강의 파일은 오프라인(외장하드)에 보관.
   - 복원이 필요하면 커밋 `ead6a01` 이전 이력을 참고. **R2 자산은 리포에 없으므로 재업로드 필요.**
 
-- **R2 공개 버킷 (⚠️ 미처리)** — `pub-94ce8b8436d54ffc971d30f2096951cc.r2.dev`가 인증 없이 접근
-  가능하고 경로가 추측 가능합니다(`audio/ld/dNNN.mp3`, `audio/reading/prNNN.mp3`).
-  GVA는 폐지로 해결됐지만 **나머지 6개 과정의 음원 2,510개는 여전히 같은 방식으로 노출**됩니다.
-  HTML 게이트(KIG-001)는 페이지만 막을 뿐 파일은 막지 못합니다.
-  → 비공개 버킷 + 서명 URL, 또는 최소한 경로 난수화가 필요. **제품 소유자 결정 필요.**
+- **R2 공개 버킷 — 코드 완료, 버킷 설정 1단계 남음 (2026-09-15)**
+
+  문제였던 것: `pub-94ce8b8436d54ffc971d30f2096951cc.r2.dev`가 인증 없이 응답하고 키가 순차적이라
+  (`audio/ld/dNNN.mp3`, `audio/reading/prNNN.mp3`) 페이지를 한 번도 열지 않고 카탈로그 전체를
+  걸어서 받아갈 수 있었습니다. KIG-001은 페이지만 막았지 파일은 막지 못했습니다.
+
+  **조치 (커밋 `91cc15b` → `4d7a4f7`)**
+  - `next.config.ts`의 `/audio/:path*`·`/video/:path*` fallback rewrite를 제거하고
+    **라우트 핸들러**(`src/app/audio/[...path]/route.ts`, `video/`)로 교체.
+    레슨 페이지와 **같은 쿠키·같은 규칙**을 적용합니다(`src/lib/mediaAccess.ts`).
+  - 무료 체험 레슨은 그대로 공개. `audio/azure-ava/` 클립도 공개 — 키가 콘텐츠 해시라
+    문장을 이미 아는 사람에게만 쓸모가 있고, 걸어다닐 카탈로그가 없습니다.
+  - `src/lib/media.ts`의 `mediaUrl()`이 절대 r2.dev URL을 만들던 것을 **같은 도메인 상대경로**로
+    변경. 이걸 안 고치면 브라우저가 버킷 직통 주소를 받아 **게이트를 통째로 우회**합니다.
+  - `NEXT_PUBLIC_MEDIA_URL`(브라우저가 요청할 주소)과 `R2_PUBLIC_BASE_URL`(서버가 읽을 주소)을
+    분리. 이 둘을 같은 변수로 쓴 것이 우회가 생긴 원인이었습니다.
+  - **캐시**: 기존 `public, immutable`을 전 경로에서 제거. 유료 응답은 `private`이어야 하며,
+    안 그러면 CDN이 구독자의 음성을 캐시해 다음 비로그인 방문자에게 그대로 내줍니다.
+  - Range 요청(206) 보존 — 오디오 탐색이 여기에 의존합니다.
+  - `src/lib/mediaOrigin.ts`: S3 자격증명이 있으면 S3 API로 읽어 **버킷을 비공개로 둘 수 있고**,
+    없으면 공개 URL로 폴백합니다. S3 읽기가 실패해도 폴백하므로 설정 오류가 서비스를 죽이지 않습니다.
+    SDK 기본 3회 재시도가 함수 타임아웃을 넘겼기 때문에 `maxAttempts: 1` + 4초 데드라인.
+  - `/api/media-health`가 어느 경로로 읽고 있는지 보고합니다(불리언과 오류 이름만, 설정값 없음).
+    **`readyForPrivateBucket: true`가 되기 전에는 버킷 공개를 끄면 안 됩니다.**
+
+  **검증**: 비로그인 잠금 403 / 무료 200, LIFE는 ld·reading·phonics 전부 200,
+  STUDENT 전용권은 ld·reading 403, Range 206, 렌더된 HTML에 r2.dev 0건 — 로컬·운영 모두 확인.
+
+  **남은 1단계 (소유자 작업)**: Cloudflare R2 → `k-iglab` → Settings → Public Development URL → Disable.
+  그 전에 Vercel의 `R2_ACCESS_KEY_ID`/`R2_SECRET_ACCESS_KEY`가 **`k-iglab`을 읽을 수 있어야** 합니다.
+  2026-09-15 시점의 Vercel 키는 `k-ig-license-private` 전용이라 `AccessDenied`가 났고,
+  `kig-reading-upload`(All buckets) 토큰 값이 `.env.local`에 있어 그것으로 교체하는 중입니다.
+  `NEXT_PUBLIC_MEDIA_URL`은 Vercel에서 **삭제**해야 합니다(남아 있으면 게이트 우회).
 - **🔴 KIG-002가 READING 음성 커버리지를 깨뜨렸다 (2차 세션 발견, 미처리)**
   - `readingSentences`를 정본 지문으로 교체했는데, **Ava 클립은 교체 전 문장으로 생성되어 있었습니다.** 그래서 새 문장에는 클립이 없습니다.
   - 운영 실측 (`scripts/verify/measure-tts-coverage.cjs`, `attribute-reading-gap.cjs`):
