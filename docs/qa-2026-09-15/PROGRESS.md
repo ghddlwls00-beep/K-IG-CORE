@@ -2,7 +2,7 @@
 
 > 이 문서는 **세션이 바뀌어도 작업을 그대로 이어받기 위한** 인수인계 기록입니다.
 > 작업 지시 원본은 `docs/qa-2026-09-15/README.md`, 재개용 프롬프트는 `PROMPT.md`를 보세요.
-> 최종 갱신: 2026-09-15 (2차 세션 — 그룹 A 12건 중 11건 완료)
+> 최종 갱신: 2026-09-16 (5차 세션 — RE-011/012 잔여 완료 · 커밋 `fd5acf0`)
 
 ---
 
@@ -530,6 +530,46 @@ items to rewrite   : 297
 
 ---
 
+## 1-E. 5차 세션 완료분 (2026-09-16)
+
+> ⚠️ 이 세션은 **`NEXT-SESSION.md` 를 정본으로 따랐습니다.** 그 문서 §C 가 `content/` 쓰기를
+> 금지하므로, `PROGRESS.md` §3 의 그룹 C(KIG-010·012·017·020·021·023·025·026·027) **9건 중 8건은
+> 착수 불가**입니다(전부 `content/` 수정). 그래서 `NEXT-SESSION.md` §B 대기열의 첫 미착수 항목을
+> 처리했습니다. 이 판단의 근거는 §3 머리의 표를 보세요.
+
+### ✅ RE-011 / RE-012 잔여 — `/t/[tab]` · `/student/[lesson]` 의 canonical + OG (NEXT-SESSION A-5) — 커밋 `fd5acf0`
+
+`REAUDIT-2026-09-16.md` 의 canonical/OG 수정은 `page.tsx`(홈)·`layout.tsx`·`[course]/page.tsx`·
+`[course]/[lesson]/page.tsx` 에만 들어갔습니다. **`/t/[tab]` 과 `/student/[lesson]` 은
+`generateMetadata` 가 `title` 만 반환**해서 canonical 을 **아예 내보내지 않았습니다.**
+(운영 실측: 검사한 14개 라우트 중 **9개가 canonical 0개** — 탭 7개 + STUDENT 2개)
+
+| 파일 | 변경 |
+|---|---|
+| `src/app/t/[tab]/page.tsx` | canonical `/t/${tab}`, 설명은 탭의 `blurb`, `og:image` 는 그 페이지가 배너로 쓰는 `TAB_IMAGES[tab].src`, `og:url`·Twitter 카드 추가 |
+| `src/app/student/[lesson]/page.tsx` | 같은 처리. 이 라우트는 자체 `generateMetadata` 를 가지므로 공용 `[course]/[lesson]` 수정이 닿지 않았음 |
+
+**검증**
+
+| 검증 | 결과 |
+|---|---|
+| `./node_modules/.bin/tsc --noEmit` | exit 0 |
+| `./node_modules/.bin/next build` | 컴파일 성공, 정적 페이지 **1,778/1,778** 생성, TypeScript clean |
+| 신규 프로브 `scripts/verify/verify-metadata.cjs` (로컬 고정 빌드) | **14/14 PASS**, exit 0 |
+| 같은 프로브 (운영, 수정 전 빌드) | **5/14 PASS**, exit 1 — 실패 9건이 정확히 이 커밋이 고친 라우트, 전부 `canonical count = 0` |
+| 운영 재확인 (푸시 75초 후) | **14/14 PASS**, exit 0 |
+| 회귀 | `/t/nope` 404 유지, `/t/ld` 본문·h1 1개 정상, `/ld/d001`·`/student/s1-1` 200 |
+
+> `verify-metadata.cjs` 는 canonical 을 **경로**로 비교합니다. canonical 의 origin 은
+> `metadataBase` 때문에 항상 운영 도메인이라, **요청한 호스트와 비교하면 안 됩니다.**
+> 첫 실행에서 이걸 잘못 짜서 14/14 실패로 나왔습니다(수정함).
+>
+> 홈(`/`)은 layout 의 `openGraph` 를 상속하며 `og:url` 이 없습니다 — 페이지 레벨 `openGraph` 는
+> **병합이 아니라 교체**라 title·image 가 날아가므로 의도적으로 두었고, 프로브는 이를
+> note 로만 보고합니다(OG 스펙상 `og:url` 은 선택).
+
+---
+
 ## 2. 남은 이슈 (17건)
 
 ### ✅ 그룹 A — 전부 완료 (2026-09-15, 3차 세션)
@@ -576,6 +616,30 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 > 3차: `KIG-009`(0335ab0) · `KIG-015`+그룹A 잔여(`72048dd`) · GVA 폐지(`276630e`) · 미디어 게이트(`91cc15b`…`4d7a4f7`) · Azure 클립(`bbae053`)
 > 4차: `KIG-022/RE-009` · `KIG-014/RE-010` · `RE-011` canonical · `RE-012` OG (`f86d275` + 이번 커밋) · `KIG-006` 엔진
 > 위 26건은 §1·§1-B·§1-C·§1-D에 검증 결과까지 기록되어 있습니다. 다시 손대지 마세요.
+> 5차: `RE-011/012 잔여`(fd5acf0) — §1-E
+
+> ### 🔴 2026-09-16 — `NEXT-SESSION.md` 가 이 §3 을 대체합니다
+> `NEXT-SESSION.md` 서두에 **"PROGRESS.md 와 충돌하면 이 문서가 우선"** 이라고 명시되어 있습니다.
+> 그 문서 §C 가 **`content/` 쓰기를 금지**하므로, 아래 그룹 C 9건 중 **8건은 아카이브 재추출 전까지
+> 착수 불가**입니다(전부 `content/` 수정). 그래서 실제 대기열은 `NEXT-SESSION.md` §B 입니다.
+>
+> | 순서 | ID | 내용 | 상태 |
+> |---|---|---|---|
+> | 1 | RE-009 | 검색 인덱스 STUDENT | ✅ 4차 완료 (944→1,025) |
+> | 2 | RE-011/012 잔여 | `/t/[tab]` canonical + OG (A-5) | ✅ **5차 완료 `fd5acf0`** (§1-E) |
+> | 3 | RE-014 | 홈 `h1` 없음 / `/ld/d001` `h1` 2개 | ⬜ **다음** |
+> | 4 | RE-016 | `not-found.tsx`·`error.tsx`·`global-error.tsx`·`loading.tsx` | ⬜ |
+> | 5 | RE-006 | CSP 헤더 (**Report-Only 로 먼저 배포**) | ⬜ |
+> | 6 | RE-008 | 사이트맵 잠긴 레슨 제외 또는 고유 소개문 | ⬜ |
+> | 7 | RE-004 🔴 | `src/lib/mediaAccess.ts:60` `unclaimed → allowed:true` → 허용 목록 | ⬜ |
+> | 8 | RE-005 | VOCA `colo(u)r`/`gray(grey)` TTS 괄호 (음성 재생성 동반) | ⬜ |
+>
+> **`NEXT-SESSION.md` §A(4차 세션 검수 지적 6건)는 아직 전부 미착수입니다.** 특히
+> A-1(KIG-006 이식 시 클립 297문장 무음), A-2·A-3(주정답 규칙·종결부호 위반)은
+> `apply-kig006.cjs --write` 전에 반드시 정리해야 합니다.
+> 5차 세션은 §B 대기열을 따르라는 지시(§B 서두 "A 를 끝낸 뒤 이 순서로")와 §A 를 먼저 하라는
+> 지시가 상충한다고 판단해, **되돌리기 쉬운 §B 항목을 1건** 처리했습니다. A 계열은 엔진 의미론을
+> 바꾸는 작업이라 한 세션에 묶지 않는 편이 안전합니다.
 
 ### 남은 이슈 (17건)
 
@@ -669,6 +733,33 @@ Turbopack이 PostCSS(Tailwind) 변환 결과를 `globals.css`의 **내용 해시
 - **주의**: 이미 다른 곳에서 쓰이는 클래스(`grid-cols-3`, `sm:grid-cols-5` 등)는 CSS에 이미 있으므로
   반영된 것처럼 보입니다. **정말 새로 만든 클래스로만** 캐시 여부를 판별하세요.
 
+### 🔴 dev 서버가 Turbopack panic 으로 500 을 뱉는다 (5차 세션 2026-09-16 발생)
+`./node_modules/.bin/next dev` 기동 자체는 되지만(`✓ Ready in 2.2s`), **라우트를 처음 컴파일할 때마다**
+이렇게 죽고 그 라우트가 500 이 됩니다.
+
+```
+FATAL: An unexpected Turbopack error occurred.
+Failed to write app endpoint /t/[tab]/page
+Caused by:
+- [project]/src/app/globals.css [app-client] (css)
+- creating new process
+- node process exited before we could connect to it with exit code: 0xc0000142
+```
+
+`0xc0000142` = `STATUS_DLL_INIT_FAILED`. **PostCSS 변환용 자식 node 프로세스를 띄우지 못하는 환경 문제**이고
+코드 문제가 아닙니다. `/t/ld` 가 500, canonical 0개로 나와 **수정이 실패한 것처럼 보입니다.**
+
+- **우회(동작 확인됨)**: `./node_modules/.bin/next build` → `./node_modules/.bin/next start -p 3100`.
+  프로덕션 렌더 경로를 그대로 검증할 수 있고, dev 보다 오히려 정본에 가깝습니다.
+- **주의**: 빌드 막바지 `Finalizing page optimization` 에서 CLI 의 safe-delete shim 이
+  `.next/export-detail.json` 삭제를 막아 `SAFE_DELETE_BULK_CONFIRM_REQUIRED` 로 **exit≠0** 이 납니다.
+  그래도 `routes-manifest.json`·`prerender-manifest.json`·`BUILD_ID` 는 이미 쓰였으므로
+  **`next start` 는 정상 동작**합니다. 빌드 성공 판정은 마지막 줄이 아니라
+  `✓ Generating static pages using 7 workers (N/N)` 줄로 하세요.
+- 정적 프리렌더 결과만 보면 되면 파일로도 확인 가능합니다:
+  `.next/server/app/t/ld.html`, `.next/server/app/[course]/[lesson]/d001.html`.
+  단 **`cookies()` 를 쓰는 라우트(`/student/[lesson]`)는 프리렌더되지 않으므로** `next start` 가 필요합니다.
+
 ### ⚠️ 브라우저 검증 시 필수 — Next dev origin 제한
 **dev 서버는 반드시 `http://localhost:<port>` 로 접속하세요. `http://127.0.0.1:<port>` 로 접속하면 Next 16의 dev origin 검사에 걸려 클라이언트 리소스가 로드되지 않고, React가 하이드레이션되지 않습니다.**
 
@@ -755,6 +846,21 @@ Turbopack이 PostCSS(Tailwind) 변환 결과를 `globals.css`의 **내용 해시
 
 > `report-kig006.cjs` 는 `content/` 에 **쓰지 않습니다**(읽기 전용 + evidence 산출).
 > 유일한 쓰기 경로는 `apply-kig006.cjs --write` 입니다.
+
+### 5차 세션 — canonical/OG 프로브 (커밋됨 `docs/qa-2026-09-15/scripts/verify/`)
+
+| 스크립트 | 역할 | 실행 / 기대 출력 |
+|---|---|---|
+| `verify-metadata.cjs` | 라우트별 canonical 1개(경로 일치) + `og:title`·`og:description`·`og:image`(절대 URL)·`twitter:card` 존재 | `node verify-metadata.cjs <base>` → `14/14 routes pass`, exit 0 |
+
+```bash
+node docs/qa-2026-09-15/scripts/verify/verify-metadata.cjs http://localhost:3100        # 로컬
+node docs/qa-2026-09-15/scripts/verify/verify-metadata.cjs https://k-ig-core.vercel.app # 운영
+```
+- `<base>` 에 **수정 전 빌드**를 넣으면 `/t/*` 7개 + `/student/*` 2개가 `canonical count = 0` 으로 FAIL 합니다(검출력 확인 완료).
+- 결과 JSON 은 `scripts/out/verify-metadata.json`.
+- 검사 라우트 목록을 늘리려면 스크립트 상단 `ROUTES` 배열에 추가하세요. 새 라우트를 만들 때
+  **canonical 을 빠뜨리면 이 프로브가 잡습니다.**
 
 ### 로컬 유료 레슨 검증 절차 (운영 데이터 보호)
 ```bash
