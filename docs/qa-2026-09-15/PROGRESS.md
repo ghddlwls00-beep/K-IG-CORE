@@ -2,7 +2,8 @@
 
 > 이 문서는 **세션이 바뀌어도 작업을 그대로 이어받기 위한** 인수인계 기록입니다.
 > 작업 지시 원본은 `docs/qa-2026-09-15/README.md`, 재개용 프롬프트는 `PROMPT.md`를 보세요.
-> 최종 갱신: 2026-09-16 (5차 세션 — RE-011/012 잔여 완료 · 커밋 `fd5acf0`)
+> 최종 갱신: 2026-09-16 (6차 세션 — `NEXT-SESSION.md` §A 4건 완료 · 커밋 `3e82465`)
+> ⚠️ `PROGRESS.md` 와 `NEXT-SESSION.md` 가 충돌하면 **`NEXT-SESSION.md` 가 우선**입니다.
 
 ---
 
@@ -570,6 +571,90 @@ items to rewrite   : 297
 
 ---
 
+## 1-F. 6차 세션 완료분 (2026-09-16) — `NEXT-SESSION.md` §A
+
+> 정본은 `NEXT-SESSION.md` §A(4차 세션 검수 지적 6건)입니다. 승인 범위: **A-1·A-2·A-3·A-6.**
+> A-5 는 5차 세션이 이미 완료(`fd5acf0`)했고, **A-4 는 착수 불가**(아래 참조).
+
+| 이슈 | 커밋 | 내용 | 검증 |
+|---|---|---|---|
+| A-1 | `ca3a7ba` | `PROGRESS.md` §3 의 **"주정답 텍스트 변화 0건 → 클립 영향 없음"을 정정**. `apply-kig006.cjs` 가 `text 변경`과 `대안만`을 분리해 출력하고, `text` 가 바뀌면 음성 단계를 필수로 안내 | dry-run 이 `text changed 429 / alternatives 0` 을 분리 출력. 실측으로 **429건 전부가 `text` 를 바꿈** — "대안만 추가"는 0건이었습니다 |
+| A-2 | `7d2a073` | `resolveOptionalDeterminers` 가 `text` 에 **마커 괄호까지 적용**하던 것을 `build(new Set())` 으로. 주정답이 교재의 괄호 밖 표현이 됩니다 | `All (the) boys receive a prize(혹은 prizes).` → text `All boys receive a prize.` (전: `All boys receive prizes.`). **검출력: 한 줄을 되돌리면 신설 check (8) 이 gh1-017 에서 FAIL 2건** |
+| A-3 | `f84678a` | **원인은 문서가 지목한 `/[.?!]$/` 가 아니라 `clean()`** 이었습니다. 종결부호 중복 축약 규칙이 `U.S.` 의 마침표를 문장 종결로 보고 뒤의 `?` 를 삭제 | `gh1-081`/`081-2` #26 → text·alt 모두 `?` 보존. **검출력: 되돌리면 신설 게이트가 DRIFT(4)** |
+| A-6 | `817b7a7` | 엔진 슬라이스를 **임시파일 대신 메모리에서 평가**(3개 스크립트). `apply-kig006.cjs` 의 슬라이스 지점을 "write out" 으로 옮겨 **dry-run 이 evidence 를 더럽히지 않게** 수정. `scripts/README.md` 색인 신설 | 5개 스크립트 실행 후 임시파일 0개, evidence `git diff` 0건. `--write` 경로를 복사본에서 확인(429건 → 97파일, 2회차 0건·바이트 동일) |
+
+### 🔴 A-2 를 하는 과정에서 발견한 결함 2건 (README·NEXT-SESSION 에 없음)
+
+**(1) `isEnglishAnswer` 가 `(혹은 …)` 셀 132건을 전부 건너뛰고 있었습니다** — 커밋 `3e82465` 로 수정.
+
+`apply-kig006.cjs` 의 `isEnglishAnswer` 는 "한글이 있으면 한국어"로 판정합니다. 그런데 **마커 `혹은` 자체가 한글**이라,
+`(혹은 …)` 가 들어간 셀은 **전부 한국어 문장으로 오판되어 이식 대상에서 빠졌습니다.**
+
+- 규모: **132건** (grammar1 131 / grammar2 1) — 이 코퍼스의 모든 `(혹은 …)` 셀.
+- 영향: 그 셀들은 **괄호가 그대로 남은 채** 화면에 나가고 TTS 가 괄호를 소리 내어 읽습니다.
+  엔진이 "가장 나쁜 실패 모드"라고 부르는 바로 그 상태이며, 학습자가 올바른 문장을 써도 오답 처리됩니다.
+- 즉 **A-2 의 수정은 `content/` 에 아무 영향을 주지 못하고 있었습니다** (해당 행이 애초에 처리되지 않으므로).
+- 수정: 마커를 제거한 뒤 한글을 검사합니다(`withoutMarker`). 한국어 프롬프트는 마커를 지워도 한글이 남아 그대로 제외됩니다 —
+  실제로 남은 `혹은` 7건은 전부 한국어 프롬프트였습니다.
+- 결과: 이식 대상 **297 → 429건**.
+
+**(2) `propose()` 가 마커 셀을 `parseAltMarker` 로 보내지 않아 문장부호와 대안이 깨졌습니다** — 같은 커밋.
+
+필터를 고쳐 132건이 처음으로 처리되자 **종결부호 게이트가 13건의 DRIFT 를 잡았습니다.** 원인은 두 갈래였고, 둘 다 `parseAltMarker` 는
+올바르게 처리하고 있었는데 `propose()` 가 그 레인을 건너뛰고 단일 괄호 분기로 보낸 탓입니다.
+
+| 원문 | 잘못 나오던 값 | 수정 후 |
+|---|---|---|
+| `Isn't he a boy(혹은 Is he not a boy?)` | text `Isn't he a boy.` (물음표 소실) | text `Isn't he a boy?` / alt `Is he not a boy?` |
+| `Didn't they have dreams? (혹은 a dream)?` | alt `혹은 a dream.` (**마커 유출**) | alt `Didn't they have a dream?` |
+| `These are pens, aren't these(혹은 ---, are these not)?` | alt `… are these not.` | alt `… are these not?` |
+
+수정: `propose()` 에 **마커 레인을 명시적으로 배선**하고, `parseAltMarker` 의 `substitute()`·`terminate()` 호출에
+**주정답을 기준 종결부호로 전달**했습니다. 부수적으로 `kindFor` 를 `report-kig006.cjs` 로 옮겨
+**작성기와 검증기 check (8) 이 같은 함수를 쓰도록** 했습니다(사본 드리프트 방지).
+
+### 검증 총괄 (이 세션 최종 상태)
+
+| 검증 | 결과 |
+|---|---|
+| `apply-kig006.cjs` dry-run | **429건 / text 변경 429 / 대안만 0 / DRIFT 0 / UNRESOLVED 0**, exit 0 |
+| `report-kig006.cjs` | 검증 (1)~(8) 전부 `0 violations`, `primary=out-of-paren 8 rows, 0` |
+| `verify/verify-kig006-terminator.cjs` | **PASS — 0 drift** (3031파일 / 12358항목) |
+| `verify-kig006-multiparen.cjs` | **14 / 14** |
+| `verify-kig006-determiners.cjs` | **rows 47, failing 0** |
+| `verify-kig006-proposals.cjs` | **0 fragment wrongly accepted** |
+| `verify-kig006-insert-semantics.cjs` | **rows with problems 0 / 17** |
+| `--write` 경로 (복사본, `KIG_ROOT_OVERRIDE`) | 429건 → 97파일 기록, **2회차 0건 · 바이트 동일(멱등)** |
+| 임시파일 · evidence 오염 | 스크립트 5개 실행 후 **0개 / `git diff` 0건** |
+| **`content/` 변경** | **0건** ✅ (아카이브 재추출 전 금지 유지) |
+
+### ⚠️ A-4 (`isEnglish()` 오판 16건) — 여전히 착수 불가
+
+`src/components/GrammarLearningView.tsx:46` 은 아직 `return latin >= hangul && latin > 0;` 이며
+`hangul === 0 && latin > 0` 으로 바꿔야 합니다. 다만 **게이트가 실물로 확인되었습니다**:
+
+```
+content/lessons/grammar1/gh1-081.json #6
+  "The police arrested 15 people, didn't they? (police, people, children은 항상 복수)"
+```
+
+영어 답안 안에 한국어 주석이 있습니다. 판정을 지금 바꾸면 이 항목이 한국어 칸으로 갑니다.
+**KIG-006 이식이 이 주석을 먼저 제거해야 하므로 A-4 는 이식 이후입니다.**
+
+부수: `docs/qa-2026-09-15/scripts/verify/verify-kig005.cjs:29-34` 가 컴포넌트의 `isEnglish` 를 **그대로 복사**해 검사합니다.
+A-4 를 적용할 때 **같은 커밋에서 함께 갱신**하지 않으면 구 로직을 계속 검증합니다.
+
+### 다음 사람이 이어받을 지점
+
+1. **`NEXT-SESSION.md` §A 는 이 세션으로 전부 끝났습니다** (A-1·A-2·A-3·A-6 완료, A-5 는 5차, A-4 는 이식 후).
+2. 다음은 **`NEXT-SESSION.md` §B 대기열** 입니다 — `RE-014`(h1 개수) → `RE-016`(에러/로딩 페이지) →
+   `RE-006`(CSP, Report-Only 먼저) → `RE-008`(사이트맵) → `RE-004`(미디어 허용 목록) → `RE-005`(VOCA 괄호 TTS).
+   전부 `src/`·`scripts/` 만 건드리므로 아카이브와 무관합니다.
+3. **`content/` 는 여전히 쓰기 금지**입니다. 아카이브가 도착하면 `ARCHIVE-PLAN.md` 를 따르고,
+   재추출 **직후** 위 §3 이식 절차(429건)를 실행하세요.
+
+---
+
 ## 2. 남은 이슈 (17건)
 
 ### ✅ 그룹 A — 전부 완료 (2026-09-15, 3차 세션)
@@ -669,24 +754,29 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 ```bash
 # 1) 재추출 먼저 (복사본에서, --no-media)
 # 2) 그 다음에 이식 — 반드시 --write 없이 먼저 확인
-node docs/qa-2026-09-15/scripts/apply-kig006.cjs                 # dry-run: 297건 (text 변경 297 / 대안만 0)
+node docs/qa-2026-09-15/scripts/apply-kig006.cjs                 # dry-run: 429건 (text 변경 429 / 대안만 0)
 node docs/qa-2026-09-15/scripts/apply-kig006.cjs --write         # 적용
 # 3) 검증
 npx tsc --noEmit
+node docs/qa-2026-09-15/scripts/verify/verify-kig006-terminator.cjs  # PASS (종결부호 전수)
 node docs/qa-2026-09-15/scripts/verify-kig006-multiparen.cjs     # 14/14
 node docs/qa-2026-09-15/scripts/verify-kig006-determiners.cjs    # 47/47
-node docs/qa-2026-09-15/scripts/verify-kig006-proposals.cjs      # 19/19
-# 4) 🔴 음성 클립 재생성 — 필수. 2)에서 무효화된 297문장이 여기서 되살아납니다.
-node scripts/generate-azure-ava.mjs --dry-run                    # pending 이 297 근처인지 확인
+node docs/qa-2026-09-15/scripts/verify-kig006-proposals.cjs      # 0 fragments
+node docs/qa-2026-09-15/scripts/verify-kig006-insert-semantics.cjs   # 0/17 problems
+# 4) 🔴 음성 클립 재생성 — 필수. 2)에서 무효화된 429문장이 여기서 되살아납니다.
+node scripts/generate-azure-ava.mjs --dry-run                    # pending 이 429 근처인지 확인
 node scripts/generate-azure-ava.mjs --concurrency 4
 node scripts/upload-azure-ava-r2.mjs
 node scripts/generate-azure-ava.mjs --dry-run                    # pending: 0 확인
 ```
 
+> ⚠️ **2)는 `DRIFT 0` 과 `UNRESOLVED 0` 이 아니면 아무것도 쓰지 않고 exit 1 로 끝납니다.**
+> 쓰기는 전 파일을 검사한 뒤로 미뤄져 있으므로, 중간에 실패해도 일부만 반영되는 일이 없습니다.
+
 - 4)는 `.env.local`(`AZURE_SPEECH_KEY`/`AZURE_SPEECH_REGION` + R2 자격증명)이 있어야 합니다.
   **없으면 2)를 실행하지 마세요.** 무효화된 클립을 되살릴 수단 없이 `content/` 만 바꾸면
-  그 297문장은 무음인 채로 배포됩니다.
-- 4)의 `--dry-run` 에서 pending 이 297보다 **훨씬 크게**(예: 수만 건) 나오면 R2 자격증명이 없는 것입니다.
+  그 429문장은 무음인 채로 배포됩니다.
+- 4)의 `--dry-run` 에서 pending 이 429보다 **훨씬 크게**(예: 수만 건) 나오면 R2 자격증명이 없는 것입니다.
   그 상태로 생성을 돌리면 전 코퍼스를 다시 굽습니다. 경고를 무시하지 마세요 (§아래 경고).
 
 - `apply-kig006.cjs` 는 **멱등**합니다 (2회차 0건, 바이트 동일). 중간에 죽어도 다시 돌리면 됩니다.
@@ -695,11 +785,14 @@ node scripts/generate-azure-ava.mjs --dry-run                    # pending: 0 �
 - `content/` 텍스트가 바뀌므로 **음성 클립 재생성이 필수**입니다 (§아래 경고 참조).
   **이식은 아래 4) 음성 단계와 한 묶음입니다. 따로 하지 마세요.**
   - 클립 키는 `text` 의 해시이고, 이식은 `text` 를 **직접 덮어씁니다**(`apply-kig006.cjs` 의 `item.text = split.text`).
-    실측: 이식 대상 **297건 전부가 `text` 를 바꿉니다**(대안만 추가되는 건 0건). 대안 320개가 함께 생깁니다.
-    따라서 **이식 직후 297문장이 무음**이 됩니다 — KIG-002 가 READING 음성을 40.6%까지 떨어뜨린 것과 같은 사고입니다.
+    실측: 이식 대상 **429건 전부가 `text` 를 바꿉니다**(대안만 추가되는 건 0건).
+    따라서 **이식 직후 429문장이 무음**이 됩니다 — KIG-002 가 READING 음성을 40.6%까지 떨어뜨린 것과 같은 사고입니다.
   - ⚠️ 2026-09-16 이전에 이 자리에 "대안만 추가하므로 클립 영향 없음"이라고 적혀 있었습니다. **그 판단은 틀렸습니다.**
     `apply-kig006.cjs` 의 `changed` 카운터가 `text` 와 `alternatives` 를 한 숫자로 세고 있어서
     "대안만 추가"와 "text 변경"을 구별할 수 없었던 것이 원인입니다. 이제 리포트가 두 수를 분리해 출력합니다.
+  - ⚠️ **429 = 297 + 132.** 원래 297 이었던 것은 `isEnglishAnswer` 가 `(혹은 …)` 셀을 전부 걸러냈기 때문입니다
+    (`혹은` 자체가 한글이라 "한국어 문장"으로 판정). 그 132건은 **괄호가 그대로 남아 화면·TTS 로 나가고 있었습니다.**
+    필터를 고쳐 함께 처리합니다 (§1-F 참조).
 
 ### ⏸️ gh1-032/033 재정렬 — 보류 상태
 
@@ -851,8 +944,9 @@ Caused by:
 
 | 스크립트 | 역할 | 기대 출력 |
 |---|---|---|
-| `report-kig006.cjs` | 엔진 본체 + 7종 검증 일괄 실행 | 아래 §검증 총괄 참조 |
-| **`apply-kig006.cjs`** | **재실행 가능 이식기** (dry-run 기본) | `297건` / `--write` 로 적용 |
+| `report-kig006.cjs` | 엔진 본체 + 8종 검증 일괄 실행 | 아래 §검증 총괄 참조 |
+| **`apply-kig006.cjs`** | **재실행 가능 이식기** (dry-run 기본, 임시파일 없음) | `429건` / `--write` 로 적용 |
+| `verify/verify-kig006-terminator.cjs` | 원문 종결부호가 `text`·모든 대안에 보존되는지 (3031파일 전수) | `PASS — 0 drift` |
 | `verify-kig006-multiparen.cjs` | 괄호 2개+ 경로 기대값 | `14 / 14` |
 | `verify-kig006-determiners.cjs` | 말뭉치 한정사 47행 | `47 / 47` |
 | `verify-kig006-proposals.cjs` | 제안 기대값 + 프래그먼트 가드 | `19 / 19`, 누출 0 |
