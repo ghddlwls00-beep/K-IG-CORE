@@ -75,11 +75,11 @@ Category B/C/D unique answers: **181**
 | gh1-036, gh1-037, gh1-044, gh1-044-2, gh1-045, gh1-045-2 | Weren't they studying English(혹은 Were they not studying English)? | Weren't they studying English? | Were they not studying English? |
 | gh1-038, gh1-039 | I am a boy, ain't I(혹은 I am a boy, am I not)? | I am a boy, ain't I? | I am a boy? |
 | gh1-038, gh1-039 | You are a girl, aren't you(혹은 You are a girl, are you not)? | You are a girl, aren't you? | You are a girl? |
-| gh1-038, gh1-039 | He is a boy, isn't he(혹은 He is a boy, is he not?) | He is a boy, isn't he? | He is a boy. |
+| gh1-038, gh1-039 | He is a boy, isn't he(혹은 He is a boy, is he not?) | He is a boy, isn't he? | He is a boy? |
 | gh1-038, gh1-039 | She is a girl, isn't she(혹은 She is a girl, is she not)? | She is a girl, isn't she? | She is a girl? |
 | gh1-038, gh1-039, gh1-044, gh1-044-2, gh1-045, gh1-045-2 | This is a pen, isn't this(혹은 This is a pen, is this not)? | This is a pen, isn't this? | This is a pen? |
-| gh1-038, gh1-039, gh1-046, gh1-046-1, gh1-047, gh1-047-1 | It is a book, isn't it(혹은 It is a book, is it not?) | It is a book, isn't it? | It is a book. |
-| gh1-038, gh1-039, gh1-046, gh1-046-1, gh1-047, gh1-047-1 | These are pens, aren't these(혹은 ---, are these not)? | These are pens, aren't these? | These are pens, are these not. |
+| gh1-038, gh1-039, gh1-046, gh1-046-1, gh1-047, gh1-047-1 | It is a book, isn't it(혹은 It is a book, is it not?) | It is a book, isn't it? | It is a book? |
+| gh1-038, gh1-039, gh1-046, gh1-046-1, gh1-047, gh1-047-1 | These are pens, aren't these(혹은 ---, are these not)? | These are pens, aren't these? | These are pens, are these not? |
 | gh1-038, gh1-039, gh1-046, gh1-046-1, gh1-047, gh1-047-1 | Those(they) are books, aren't they(혹은 ---, are they not)? | Those are books, aren't they? | Those are books, are they not? |
 | gh1-038, gh1-039 | I am happy, ain't I(혹은 I am happy, am I not)? | I am happy, ain't I? | I am happy? |
 | gh2-037, gh2-037-1 | I had a little alteration(혹은 a few alterations) made. | I had a little alteration made. | I had a little a few alterations made. |

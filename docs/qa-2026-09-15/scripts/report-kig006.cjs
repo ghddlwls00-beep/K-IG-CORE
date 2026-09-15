@@ -1394,10 +1394,12 @@ function parseAltMarker(en) {
     const expanded = expandContraction(primary);
     if (/^\s*--+/.test(altRaw)) {
       // leading-dash form: "<X>, aren't these?" -> "<X>, are these not?"
+      // `primary` is the reference terminator, so a question stays a question
+      // ("These are pens, aren't these(혹은 ---, are these not)?").
       const subject = primary.replace(/,\s*(isn't|aren't|wasn't|weren't)\s+.*$/, "").trim();
-      altText = terminate(altRaw.replace(/^\s*--+\s*,?\s*/, subject + ", "));
+      altText = terminate(altRaw.replace(/^\s*--+\s*,?\s*/, subject + ", "), primary);
     } else if (expanded) {
-      altText = terminate(expanded);
+      altText = terminate(expanded, primary);
     } else {
       needsManualAlt = true;
     }
@@ -1406,7 +1408,13 @@ function parseAltMarker(en) {
     // complete sentence rather than a fragment. When the substitution cannot
     // be aligned (single-token swap onto the immediately preceding word), fall
     // back to the plain splice.
-    const alts = substitute(beforeParen, altRaw, afterParen);
+    //
+    // `primary` is passed as the reference terminator so the alternative keeps
+    // the sentence's own punctuation. Without it the alternative always ended
+    // in "." — "Didn't they have dreams? (혹은 a dream)?" produced the
+    // alternative "Didn't they have a dream.", turning the question into a
+    // statement in the answer key.
+    const alts = substitute(beforeParen, altRaw, afterParen, primary);
     altText = alts[0] || "";
   }
 
@@ -1466,6 +1474,24 @@ function propose(kind, en) {
     const det = resolveOptionalDeterminers(en);
     if (det && !det.text.includes("(") && !det.alternatives.some((a) => a.includes("("))) {
       return det;
+    }
+  }
+
+  // "혹은" MARKER NEXT. The author's "or" notation is resolved by
+  // `parseAltMarker`, which takes the primary from OUTSIDE the bracket and the
+  // alternative from INSIDE it. `propose()` used to skip this lane entirely and
+  // hand marker cells to the single-paren branches below, which mangled them:
+  //   "Isn't he a boy(혹은 Is he not a boy?)"   -> text "Isn't he a boy."   ("?" lost)
+  //   "Didn't they have dreams? (혹은 a dream)?" -> alt "혹은 a dream."     (marker leaked)
+  // `parseAltMarker` gets both right, so the cell is routed through it.
+  {
+    const marker = parseAltMarker(en);
+    if (marker && marker.primary && !marker.primary.includes("(")) {
+      const raw = marker.altAll || (marker.altRaw ? [marker.altRaw] : []);
+      const alts = raw.filter(
+        (a) => a && a !== marker.primary && !a.includes("(") && !a.includes(ALT_MARK)
+      );
+      return { text: marker.primary, alternatives: [...new Set(alts)] };
     }
   }
 

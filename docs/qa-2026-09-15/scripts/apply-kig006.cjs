@@ -93,10 +93,27 @@ const hasParen = (s) => typeof s === "string" && s.includes("(");
  *    page: "내가 그것을 너와 공유하지 않았나(너에게 나누어주지 …");
  *  - a CNN glossary line ("antelope: (아프리카,아시아 산(産)의) 영양(羚羊)"), which
  *    is a dictionary entry, not a sentence.
+ *
+ * The "(혹은 …)" MARKER is not Korean prose — it is the author's "or" notation —
+ * so it is removed before the Hangul test. Without that step every
+ * cross-product cell was rejected as if it were a Korean prompt, because the
+ * marker itself is written in Hangul. 132 cells in GRAMMAR I/II (every
+ * "(혹은 …)" row in the corpus) were skipped that way, which meant the
+ * parenthetical was never split and shipped into `text` — where the TTS reads
+ * the bracket out loud and a learner who types the correct sentence is graded
+ * wrong. That is the failure mode the engine treats as the worst one, and it
+ * was reachable only because the filter never let those cells through.
+ *
+ * A cell whose ONLY Hangul is the marker is an English answer; a Korean prompt
+ * keeps its Hangul after the marker is removed and is still excluded.
  */
 const HAS_HANGUL = /[\uAC00-\uD7AF]/;
+const withoutMarker = (s) => String(s).split(ALT_MARK).join("");
 const isEnglishAnswer = (s) =>
-  typeof s === "string" && s.length > 0 && !HAS_HANGUL.test(s) && hasParen(s);
+  typeof s === "string" &&
+  s.length > 0 &&
+  !HAS_HANGUL.test(withoutMarker(s)) &&
+  hasParen(s);
 
 /** Lesson ids whose page carries an English `text` we must rewrite. */
 function lessonFiles() {
