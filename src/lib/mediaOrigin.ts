@@ -17,8 +17,11 @@
 
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 
+// Server-only, and deliberately not NEXT_PUBLIC_MEDIA_URL: that one decides what
+// the browser is told to request, and pointing the browser at the bucket would
+// walk around the licence check this module exists to serve.
 const PUBLIC_BASE = (
-  process.env.NEXT_PUBLIC_MEDIA_URL ||
+  process.env.R2_PUBLIC_BASE_URL ||
   "https://pub-94ce8b8436d54ffc971d30f2096951cc.r2.dev"
 ).replace(/\/+$/, "");
 
