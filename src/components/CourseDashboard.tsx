@@ -89,17 +89,35 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
                   {pres.badge}
                 </span>
               )}
-              {/* Quick Bookmark Toggle on card */}
+              {/* Quick Bookmark Toggle on card.
+                  KIG-013: the list page is not gated, so without this the star
+                  still toggled for lessons the learner cannot open. Locked cards
+                  keep the toggle disabled. */}
               <button
                 type="button"
+                disabled={!isUnlocked}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   onToggleBookmark(courseSlug, lesson.id);
                 }}
-                title={isStarred ? "북마크 해제" : "북마크 추가"}
-                aria-label={isStarred ? "북마크 해제" : "북마크 추가"}
-                className="-m-2 p-2 cursor-pointer transition-transform active:scale-90"
+                title={
+                  !isUnlocked
+                    ? "이용권 등록 후 북마크할 수 있습니다"
+                    : isStarred
+                      ? "북마크 해제"
+                      : "북마크 추가"
+                }
+                aria-label={
+                  !isUnlocked
+                    ? "잠긴 레슨은 북마크할 수 없습니다"
+                    : isStarred
+                      ? "북마크 해제"
+                      : "북마크 추가"
+                }
+                className={`-m-2 p-2 transition-transform ${
+                  isUnlocked ? "cursor-pointer active:scale-90" : "cursor-not-allowed opacity-40"
+                }`}
               >
                 <span
                   className={`text-[13px] ${
