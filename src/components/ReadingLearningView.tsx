@@ -31,6 +31,17 @@ interface ReadingLearningViewProps {
 // Isolated Micro-Component: WPM Stopwatch Bar
 // Encapsulates 1-second interval ticks so the 1,300-line reading view never re-renders
 // ---------------------------------------------------------------------------
+
+/**
+ * Fastest reading speed we are willing to score. Reading with comprehension
+ * tops out around 400 WPM and even competitive skimming stays under ~1,000, so
+ * anything above this is a mis-click (start then immediately finish), not a
+ * result. Without a ceiling the trainer happily reported 1,680 WPM for a
+ * three-second "completion" and saved it as the learner's personal best
+ * (KIG-035).
+ */
+const MAX_PLAUSIBLE_WPM = 1000;
+
 const WpmStopwatchBar = memo(function WpmStopwatchBar({
   wordCount,
   bestWpm,
@@ -41,7 +52,8 @@ const WpmStopwatchBar = memo(function WpmStopwatchBar({
   wordCount: number;
   bestWpm: number | null;
   wpmStorageKey: string;
-  onFinish: (wpm: number, seconds: number) => void;
+  /** `null` WPM means the run was too fast to be a real reading measurement. */
+  onFinish: (wpm: number | null, seconds: number) => void;
   onReset: () => void;
 }) {
   const [running, setRunning] = useState(false);
@@ -80,6 +92,11 @@ const WpmStopwatchBar = memo(function WpmStopwatchBar({
     }
     const finalSeconds = Math.max(1, elapsed);
     const calculated = Math.round((wordCount / finalSeconds) * 60);
+    if (calculated > MAX_PLAUSIBLE_WPM) {
+      // Do not score it and do not let it overwrite the stored best.
+      onFinish(null, finalSeconds);
+      return;
+    }
     if (!bestWpm || calculated > bestWpm) {
       try {
         window.localStorage.setItem(wpmStorageKey, String(calculated));
@@ -283,6 +300,7 @@ export function ReadingLearningView({
   const [measuredWpm, setMeasuredWpm] = useState<number | null>(null);
   const [measuredSeconds, setMeasuredSeconds] = useState<number | null>(null);
   const [bestWpm, setBestWpm] = useState<number | null>(null);
+  const [wpmTooFast, setWpmTooFast] = useState(false);
 
   const wpmStorageKey = `kig:reading:wpm:${lessonKey}`;
 
@@ -299,15 +317,24 @@ export function ReadingLearningView({
     }
   }, [wpmStorageKey]);
 
-  const handleFinishWpm = useCallback((wpm: number, seconds: number) => {
-    setMeasuredWpm(wpm);
+  const handleFinishWpm = useCallback((wpm: number | null, seconds: number) => {
     setMeasuredSeconds(seconds);
+    if (wpm === null) {
+      // Too fast to be a reading measurement: show why, and leave the personal
+      // best untouched.
+      setMeasuredWpm(null);
+      setWpmTooFast(true);
+      return;
+    }
+    setWpmTooFast(false);
+    setMeasuredWpm(wpm);
     setBestWpm((prev) => (!prev || wpm > prev ? wpm : prev));
   }, []);
 
   const handleResetWpm = useCallback(() => {
     setMeasuredWpm(null);
     setMeasuredSeconds(null);
+    setWpmTooFast(false);
   }, []);
 
   // --- STEP 2: Vocabulary Tooltip & Reveal State ---
@@ -564,6 +591,24 @@ export function ReadingLearningView({
             onFinish={handleFinishWpm}
             onReset={handleResetWpm}
           />
+
+          {/* Implausible measurement: explain instead of scoring it */}
+          {wpmTooFast && (
+            <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-5 shadow-xs flex flex-wrap items-center gap-4 animate-in slide-in-from-top-2 duration-300">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500 text-[22px] text-white shadow-xs font-bold">
+                ⏱️
+              </span>
+              <div>
+                <p className="font-mono text-[15px] font-extrabold text-amber-950 dark:text-amber-200">
+                  측정값을 저장하지 않았습니다
+                </p>
+                <p className="text-[12.5px] text-amber-900 dark:text-amber-300 mt-0.5">
+                  {measuredSeconds ?? 0}초 만에 완독하면 {MAX_PLAUSIBLE_WPM} WPM을 넘어 실제 읽기 속도로 볼 수
+                  없습니다. 지문을 끝까지 읽은 뒤 [완독 완료]를 눌러 주세요.
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* WPM Measurement Result Card */}
           {measuredWpm !== null && (
