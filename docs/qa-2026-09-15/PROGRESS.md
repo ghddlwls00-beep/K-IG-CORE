@@ -172,22 +172,25 @@ Turbopack이 PostCSS(Tailwind) 변환 결과를 `globals.css`의 **내용 해시
 
 ## 5. 재사용 자산
 
-### 1차 세션 (`.tmp-kig/` 는 2차 세션 워크스페이스에 없음 → 아래 2차 자산으로 대체)
+### 1차 세션
+> ⚠️ 1차 세션의 `.tmp-kig/`는 워크스페이스가 교체되면서 **소실**되었습니다. 아래는 기록만 남깁니다.
+
 | 자산 | 위치 |
 |---|---|
-| KIG-001 검증 (7코스 42건) | `.tmp-kig/verify-kig001.cjs` (워크스페이스) |
-| KIG-001 이용권 경로 검증 | `.tmp-kig/verify-licensed.cjs` |
-| KIG-002 재생성 / 최종 / 화면 검증 | `.tmp-kig/rebuild-reading-sentences.cjs`, `verify-kig002-final.cjs`, `verify-kig002-visual.cjs` |
+| KIG-001 검증 (7코스 42건) | `.tmp-kig/verify-kig001.cjs` (워크스페이스, 소실) |
+| KIG-001 이용권 경로 검증 | `.tmp-kig/verify-licensed.cjs` (소실) |
+| KIG-002 재생성 / 최종 / 화면 검증 | `.tmp-kig/rebuild-reading-sentences.cjs`, `verify-kig002-final.cjs`, `verify-kig002-visual.cjs` (소실) |
 | KIG-001 크롤 증거 | `docs/qa-2026-09-15/scripts/out/prod-crawl.json` (미커밋) |
 
-### 2차 세션 — 워크스페이스 `C:\Users\ghddl\WorkBuddy AI\2026-09-15-14-00-42\.tmp-kig\`
-> 리포 밖(워크스페이스)에 두어 리포를 더럽히지 않았습니다. 스크립트 상단 `REPO` 상수만 고치면 그대로 재사용 가능.
+### 2차 세션 — **리포에 커밋됨** `docs/qa-2026-09-15/scripts/verify/`
+> 1차 세션의 자산이 워크스페이스와 함께 사라진 것을 보고, 2차 세션 스크립트는 **리포에 커밋**했습니다.
+> 상단 `REPO` 상수만 고치면 그대로 재사용 가능. 결과 JSON은 `docs/qa-2026-09-15/scripts/out/`에 씁니다.
 
 | 자산 | 대상 | 실행 |
 |---|---|---|
 | `probe-kig019.cjs` | VOCA 퀴즈 복수정답 (전 레슨, 120회 반복 생성) | `node probe-kig019.cjs out.json` |
 | `verify-kig019.cjs` | 195레슨 349,860문항 보기 4개/중복/플레이스홀더 전수 | `node verify-kig019.cjs` |
-| `verify-kig033.cjs` | Leitner 상태기계 — **git에서 수정 전 구현을 로드해 양쪽 비교** | `node verify-kig033.cjs` |
+| `verify-kig033.cjs` | Leitner 상태기계 — **`11ef719`(수정 전) 구현을 git에서 로드해 양쪽 비교** | `node verify-kig033.cjs` |
 | `verify-kig034-035.cjs` | 브라우저: WPM 상한 + 어휘 카드 번호 | `node verify-kig034-035.cjs <base>` |
 | `verify-kig036.cjs` | 브라우저: 768~1600px 상단 내비 / 375px 단계 탭 잘림 | `node verify-kig036.cjs <base>` |
 | `measure-kig036.cjs` / `sweep-kig036.cjs` | 레이아웃 잘림 계측기 (뷰포트별) | `node sweep-kig036.cjs <base>` |
@@ -197,6 +200,7 @@ Turbopack이 PostCSS(Tailwind) 변환 결과를 `globals.css`의 **내용 해시
 | `make-favicon.cjs` | `src/app/icon.svg` + `favicon.ico` 재생성 | `node make-favicon.cjs` |
 
 > 모든 브라우저 프로브는 `<base>` 인자에 운영 URL을 넣어 **수정 전 빌드에서 실패하는지**를 함께 확인하도록 만들었습니다.
+> 2차 세션은 전 항목을 이 방식으로 검증했고, 배포 후 운영 URL로 다시 돌려 10/10·5/5 통과를 확인했습니다.
 
 ### 로컬 유료 레슨 검증 절차 (운영 데이터 보호)
 ```bash
