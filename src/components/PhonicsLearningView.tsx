@@ -515,7 +515,7 @@ export function PhonicsLearningView({
                       </span>
                     </div>
                     <span className="font-mono text-[11px] text-ink-faint">
-                      음절 수: {selectedWord.length}글자 · 표준 미국식 발음
+                      글자 수: {selectedWord.length}자 · 표준 미국식 발음
                     </span>
                   </div>
                 </div>
