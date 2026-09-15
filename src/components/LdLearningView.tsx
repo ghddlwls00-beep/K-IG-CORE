@@ -96,10 +96,22 @@ export function LdLearningView({
   // Active step tab
   const [activeTab, setActiveTab] = useState<TabStep>("step1_blind");
 
-  // Step 1: Blind Context State
-  const contextQuizzes = useMemo(() => {
-    return generateListeningContextQuiz(sentences, hintWords);
-  }, [sentences, hintWords]);
+  /**
+   * KIG-008 — the auto-generated context quiz is NOT shown.
+   *
+   * `generateListeningContextQuiz()` selects the answer by keyword substring
+   * match against the transcript, so the "correct" option frequently has
+   * nothing to do with what the speaker says. Measured: 254 of 276 lessons
+   * wrong, and 165 of those were the SAME fixed answer ("화자가 자신의 신원…을
+   * 들려주는 담화") regardless of content — d166 (a Mark Twain biography) and
+   * d218 (an essay on collecting walls) shared one answer.
+   *
+   * There are no reviewed questions to substitute, so the block is withheld.
+   * The generator stays where it is and is simply not called; reviewed
+   * questions can go into the same spot later. Step 1 itself, and the rest of
+   * the lesson (dictation, liaison clinic, shadowing), are unchanged.
+   */
+  const contextQuizzes: ContextQuizItem[] = [];
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState<Record<number, boolean>>({});
 
@@ -502,10 +514,28 @@ export function LdLearningView({
                   <span>블라인드 리스닝 맥락 진단 퀴즈</span>
                 </h3>
                 <p className="text-[12.5px] text-ink-soft mt-0.5">
-                  방금 들은 소리를 바탕으로 상황과 핵심 사실을 골라보세요.
+                  방금 들은 소리를 바탕으로 상황과 핵심 사실을 스스로 정리해 보세요.
                 </p>
               </div>
             </div>
+
+            {/*
+              KIG-008: the generated questions were withheld because their answer
+              keys do not follow from the transcript. The note keeps the step from
+              being an empty panel and stops the copy above promising questions
+              that are not there.
+            */}
+            {contextQuizzes.length === 0 ? (
+              <div className="rounded-2xl border border-dashed border-line bg-raised/40 p-5">
+                <p className="text-[13.5px] font-medium text-ink">
+                  이 레슨의 확인 문항은 준비 중입니다.
+                </p>
+                <p className="mt-1 text-[12.5px] leading-relaxed text-ink-soft">
+                  검수가 끝난 문항이 준비되면 이 자리에 표시됩니다. 그동안은 아래 받아쓰기와
+                  연음 클리닉으로 내용을 확인해 주세요.
+                </p>
+              </div>
+            ) : null}
 
             <div className="flex flex-col gap-6">
               {contextQuizzes.map((quiz, qIdx) => {

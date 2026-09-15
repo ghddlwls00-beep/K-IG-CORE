@@ -277,10 +277,24 @@ export function ReadingLearningView({
     return extractPassageKeywords(enPassage, 14, vocaDictionary);
   }, [readingVocabulary, lessonKey, enPassage, vocaDictionary]);
 
-  // Generate comprehension quiz and cloze items
-  const questions: ReadingQuestion[] = useMemo(() => {
-    return generateReadingQuiz(enPassage, koPassage, lessonKey);
-  }, [enPassage, koPassage, lessonKey]);
+  /**
+   * KIG-008 — the auto-generated comprehension questions are NOT shown.
+   *
+   * `generateReadingQuiz()` picks its "correct" option by keyword substring
+   * match against the passage: `tEn.includes("art")` also fires on start, part
+   * and heart, and `tKo.includes("법")` fires on 방법. Measured over the corpus,
+   * 208 of 256 lessons had a wrong answer key (170 simply wrong, 38 ungrammatical
+   * fallbacks), so a learner who reads the passage correctly is marked wrong.
+   *
+   * There are no reviewed questions to put here instead, and inventing them is
+   * not possible from the repository — the questions have to be written against
+   * the source material. So the block is not rendered.
+   *
+   * The generator is left in place and simply not called, so reviewed questions
+   * can be dropped into this same spot later. The step itself, and every other
+   * part of it (passage, translation, vocabulary), is unchanged.
+   */
+  const questions: ReadingQuestion[] = [];
 
   const clozeItems: ClozeItem[] = useMemo(() => {
     return generateClozeItems(sentencePairs);
@@ -850,13 +864,31 @@ export function ReadingLearningView({
                 <span>📝</span> 독해력 실전 인출 테스트 (Retrieval Practice)
               </h2>
               <p className="mt-0.5 text-[12.5px] text-ink-soft">
-                눈으로만 읽는 독해는 기억에 남지 않습니다. 문제를 풀며 지문의 주제와 세부 내용을 능동적으로 회상하세요.
+                눈으로만 읽는 독해는 기억에 남지 않습니다. 지문의 주제와 세부 내용을 스스로 정리해 보세요.
               </p>
             </div>
             <span className="rounded bg-primary/10 px-2.5 py-0.5 font-mono text-[11.5px] font-bold text-primary border border-primary/20">
               뇌인지과학 인출 훈련
             </span>
           </div>
+
+          {/*
+            KIG-008: the auto-generated questions were withheld because their
+            answer keys do not follow from the passage. Saying so is better than
+            a blank panel, and better than the copy above promising questions
+            that are not there.
+          */}
+          {questions.length === 0 ? (
+            <div className="rounded-2xl border border-dashed border-line bg-surface/60 p-5">
+              <p className="text-[13.5px] font-medium text-ink">
+                이 지문의 확인 문항은 준비 중입니다.
+              </p>
+              <p className="mt-1 text-[12.5px] leading-relaxed text-ink-soft">
+                지문에서 바로 만들 수 있는 문항만 싣고 있습니다. 검수가 끝난 문항이 준비되면
+                이 자리에 표시됩니다. 그동안은 아래 어휘와 문장 대조로 내용을 확인해 주세요.
+              </p>
+            </div>
+          ) : null}
 
           {/* Part 1: Multiple Choice Comprehension Questions */}
           <div className="flex flex-col gap-4">
