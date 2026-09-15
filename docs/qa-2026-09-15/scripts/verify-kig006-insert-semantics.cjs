@@ -6,6 +6,8 @@ const fs = require("fs");
 const ROOT = path.resolve(__dirname, "../../..");
 
 const src = fs.readFileSync(path.join(__dirname, "report-kig006.cjs"), "utf8")
+  // `require` strips the shebang; `new Function` does not, so do it by hand.
+  .replace(/^#!.*\n/, "")
   // cut at the section that begins emitting tables, and keep the helpers.
   .split("/* ------------------------------------------------------- prescribed repairs */")[0]
   + `
@@ -13,8 +15,18 @@ module.exports = { propose, resolveOptionalDeterminers, resolveMultiParen,
                    parseAltMarker, DETERMINER, norm, isInsertableDeterminer,
                    tokenizeParens, isDetachedDeterminer };
 `;
-fs.writeFileSync(path.join(__dirname, "_engine-slice.cjs"), src);
-const E = require("./_engine-slice.cjs");
+// Evaluated IN MEMORY. This probe used to write `_engine-slice.cjs` next to the
+// script and NEVER delete it, so every run left a ~78 KB file in the tree for a
+// `git add -A` to pick up. `__dirname` is passed through because the engine
+// resolves `evidence/` relative to it.
+const _mod = { exports: {} };
+new Function("module", "exports", "require", "__dirname", src)(
+  _mod,
+  _mod.exports,
+  require,
+  __dirname
+);
+const E = _mod.exports;
 
 const ROWS = [
   "All (the) boys receive a prize.",

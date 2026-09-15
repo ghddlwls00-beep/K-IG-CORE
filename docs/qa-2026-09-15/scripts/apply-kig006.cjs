@@ -42,26 +42,43 @@ const COURSE = (() => {
 /**
  * The resolver is imported from report-kig006.cjs so there is exactly ONE
  * implementation. That file is a script, not a module, so it is sliced at the
- * point where it starts writing evidence files and the slice is evaluated with
- * a `module.exports` appended. A copy would drift; this cannot.
+ * point where it stops defining helpers and starts writing evidence files, and
+ * the slice is evaluated IN MEMORY with a `module.exports` appended. A copy
+ * would drift; this cannot.
+ *
+ * Two things about how it is sliced, both deliberate:
+ *
+ *  - IN MEMORY, not through a temp file. An earlier version wrote the slice
+ *    next to this script and deleted it in a `finally`, which left a stray
+ *    `_eng-tmp.cjs` behind whenever the process was killed — and that file then
+ *    rode along on a `git add -A`. Nothing is written to disk now, so there is
+ *    nothing to clean up. `__dirname` is passed through because the engine
+ *    resolves `evidence/` relative to it.
+ *
+ *  - The cut is at the "write out" banner, NOT at check (6). Cutting later let
+ *    the report's evidence-writing section execute, so this script — whose own
+ *    report line reads "dry run (no files touched)" — rewrote
+ *    kig006-classification.md / kig006-polluted.md / kig006-alternatives.json
+ *    on every run. Dry run now means dry.
  */
 function loadEngine() {
   const enginePath = path.join(__dirname, "report-kig006.cjs");
-  const raw = fs.readFileSync(enginePath, "utf8");
-  const CUT = "/* =============================== (6) OPTIONAL-INSERT CONSERVATION";
+  // The shebang has to go: `require` strips it, `new Function` does not.
+  const raw = fs.readFileSync(enginePath, "utf8").replace(/^#!.*\n/, "");
+  const CUT = "/* ---------------------------------------------------------------- write out */";
   const cut = raw.indexOf(CUT);
   if (cut < 0) throw new Error("engine slice marker not found in report-kig006.cjs");
   const body =
     raw.slice(0, cut) +
     "\nmodule.exports = { propose, resolveMultiParen, parseAltMarker, tokenizeParens, isDetachedDeterminer, kindFor };\n";
-  const tmp = path.join(__dirname, ".apply-kig006-engine.cjs");
-  fs.writeFileSync(tmp, body);
-  try {
-    return require(tmp);
-  } finally {
-    // The sliced file is a build artifact; remove it so the tree stays clean.
-    try { fs.unlinkSync(tmp); } catch {}
-  }
+  const mod = { exports: {} };
+  new Function("module", "exports", "require", "__dirname", body)(
+    mod,
+    mod.exports,
+    require,
+    __dirname
+  );
+  return mod.exports;
 }
 
 const engine = loadEngine();

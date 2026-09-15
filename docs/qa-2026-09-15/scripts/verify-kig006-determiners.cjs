@@ -1,12 +1,23 @@
 /* Verify the 15 REAL corpus detached-determiner rows resolve correctly. */
 const fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../../..");
+// Evaluated IN MEMORY. This used to write `_eng-tmp.cjs` next to the script and
+// unlink it at the end, which meant a killed run left the file behind for a
+// `git add -A` to pick up. Nothing touches disk now. `__dirname` is passed
+// through because the engine resolves `evidence/` relative to it.
 const src = fs.readFileSync(path.join(__dirname, "report-kig006.cjs"), "utf8")
+  // `require` strips the shebang; `new Function` does not, so do it by hand.
+  .replace(/^#!.*\n/, "")
   .split("/* ------------------------------------------------------- prescribed repairs */")[0]
   + "\nmodule.exports={propose,tokenizeParens,isDetachedDeterminer,isInsertableDeterminer,determinersSane,wordCount};\n";
-const ENG = path.join(__dirname, "_eng-tmp.cjs");
-fs.writeFileSync(ENG, src);
-const E = require(ENG);
+const _mod = { exports: {} };
+new Function("module", "exports", "require", "__dirname", src)(
+  _mod,
+  _mod.exports,
+  require,
+  __dirname
+);
+const E = _mod.exports;
 
 const EXPOSURE = JSON.parse(
   fs.readFileSync(path.join(ROOT, "docs/qa-2026-09-15/evidence/kig006-exposure.json"), "utf8")
@@ -55,6 +66,5 @@ for (const r of rows) {
 }
 console.log("\nrows: " + rows.length + "   failing: " + fail);
 
-// Never leave the generated shim behind (it is gitignored, but keep the tree clean).
-try { fs.unlinkSync(ENG); } catch {}
+// No shim to remove any more: the engine is evaluated in memory (see the top).
 if (fail) process.exitCode = 1;
