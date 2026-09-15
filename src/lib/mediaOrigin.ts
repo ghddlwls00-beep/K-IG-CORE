@@ -104,14 +104,22 @@ export async function fetchMediaObject(
   } catch (err) {
     const status = (err as { $metadata?: { httpStatusCode?: number } })?.$metadata?.httpStatusCode;
     const name = (err as { name?: string })?.name ?? "UnknownError";
-    lastS3Error = { name, status, at: new Date().toISOString() };
 
     // A Range past the end of the object is a real 416, not a configuration fault.
     if (status === 416) return { status: 416, body: null, headers: new Headers() };
 
-    // Anything else — wrong bucket, a token without read access, a transient
-    // fault — must not take the audio down while the bucket is still public.
-    // Fall back so the site keeps working; /api/media-health names the fault.
+    // Neither is a missing object. Falling back for a 404 asks the public URL —
+    // switched off since the bucket went private — which answers 401 with its
+    // own HTML, so an absent clip surfaced as someone else's error page instead
+    // of a plain 404, after a pointless second round trip.
+    if (status === 404 || name === "NoSuchKey") {
+      return { status: 404, body: null, headers: new Headers() };
+    }
+
+    // What remains is a fault on our side: a wrong bucket, a token without read
+    // access, a transient failure. Those must not take the audio down while the
+    // public URL still works, so fall back and let /api/media-health name it.
+    lastS3Error = { name, status, at: new Date().toISOString() };
     return fetchFromPublicUrl(key, range);
   }
 }

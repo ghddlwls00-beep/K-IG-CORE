@@ -48,6 +48,19 @@ export async function handleMediaRequest(
   if (origin.status === 416) {
     return new Response(null, { status: 416, headers: { "Cache-Control": "no-store" } });
   }
+  // Anything that is not a delivered object is a failure, and a failure must not
+  // be stored: the success headers below carry a one-year immutable cache, so a
+  // clip that failed once — a transient origin fault, a misconfigured moment
+  // during a deploy — stayed broken for every listener for a year, with nothing
+  // able to clear it.
+  // The origin's body is left unread rather than cancelled: cancelling a stream
+  // that was never consumed has hung a handler here before.
+  if (origin.status !== 200 && origin.status !== 206) {
+    return new Response("Media unavailable", {
+      status: 502,
+      headers: { "Cache-Control": "no-store" },
+    });
+  }
 
   const headers = new Headers();
   for (const name of ["Content-Type", "Content-Length", "Content-Range", "ETag"]) {
