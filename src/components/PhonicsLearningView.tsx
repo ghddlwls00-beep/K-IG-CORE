@@ -10,6 +10,7 @@ import {
   generateActiveRecallQuizzes,
   generateSpeedDrillItems,
   updateLeitnerCard,
+  setLeitnerMastery,
   type ActiveRecallQuestion,
   type SpeedDrillItem,
   type LeitnerCard,
@@ -537,7 +538,7 @@ export function PhonicsLearningView({
                     onClick={() => {
                       const currentCard = leitnerCards[selectedWord.toLowerCase().trim()];
                       const isCurrentlyMastered = currentCard?.box === 3;
-                      const next = updateLeitnerCard(
+                      const next = setLeitnerMastery(
                         leitnerCards,
                         selectedWord,
                         selectedMeaning,

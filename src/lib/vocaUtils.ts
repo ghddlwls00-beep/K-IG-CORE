@@ -62,6 +62,14 @@ export interface LeitnerCard {
   streak: number;
 }
 
+/**
+ * Consecutive correct quiz answers needed before the quiz itself promotes a
+ * card to Box 3. The "마스터 체크" button bypasses this — see
+ * `setLeitnerMastery` — because there the learner asserts mastery directly
+ * rather than earning it one answer at a time (KIG-033).
+ */
+export const MASTERY_STREAK = 3;
+
 // -----------------------------------------------------------------------------
 // 1. Etymology & Affix Analysis Engine
 // -----------------------------------------------------------------------------
@@ -447,11 +455,12 @@ export function updateLeitnerCard(
 
   if (isCorrect) {
     nextStreak += 1;
-    if (nextStreak >= 3) {
-      nextBox = 3;
-    } else if (nextStreak >= 1) {
-      nextBox = 2;
-    }
+    const earned: 1 | 2 | 3 = nextStreak >= MASTERY_STREAK ? 3 : 2;
+    // A correct answer may promote a card but must never demote one. A card can
+    // already sit above what the streak alone would earn — it was mastered by
+    // hand with the "마스터 체크" button — and answering it correctly used to
+    // knock it back down to Box 2.
+    nextBox = Math.max(current.box, earned) as 1 | 2 | 3;
   } else {
     nextStreak = 0;
     nextBox = 1;
@@ -465,6 +474,42 @@ export function updateLeitnerCard(
       box: nextBox,
       lastTestedAt: Date.now(),
       streak: nextStreak,
+    },
+  };
+}
+
+/**
+ * The learner asserted mastery directly with the "마스터 체크" button instead of
+ * earning it through quiz answers. One click masters the card; the same button
+ * un-masters it. The quiz path is untouched and still climbs 1 -> 2 -> 3 over
+ * MASTERY_STREAK consecutive correct answers.
+ */
+export function setLeitnerMastery(
+  prevCards: Record<string, LeitnerCard>,
+  word: string,
+  meaning: string,
+  mastered: boolean,
+): Record<string, LeitnerCard> {
+  const clean = word.toLowerCase().trim();
+  const current = prevCards[clean] || {
+    word,
+    meaning,
+    box: 1 as const,
+    lastTestedAt: Date.now(),
+    streak: 0,
+  };
+
+  return {
+    ...prevCards,
+    [clean]: {
+      ...current,
+      word,
+      meaning,
+      box: mastered ? 3 : 1,
+      // The click is one demonstration of knowledge, so the streak moves by one
+      // rather than being fabricated up to the quiz threshold.
+      streak: mastered ? current.streak + 1 : 0,
+      lastTestedAt: Date.now(),
     },
   };
 }
