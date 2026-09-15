@@ -72,7 +72,10 @@
         },
         {
           "n": "10",
-          "text": "You need that(the) special book, don't you?"
+          "text": "You need that special book, don't you?",
+          "alternatives": [
+            "You need the special book, don't you?"
+          ]
         },
         {
           "n": "11",

@@ -56,23 +56,38 @@
         },
         {
           "n": "6",
-          "text": "Those(They) are her books."
+          "text": "Those are her books.",
+          "alternatives": [
+            "They are her books."
+          ]
         },
         {
           "n": "7",
-          "text": "Those(The) pencils are theirs."
+          "text": "Those pencils are theirs.",
+          "alternatives": [
+            "The pencils are theirs."
+          ]
         },
         {
           "n": "8",
-          "text": "It(That) is her car."
+          "text": "It is her car.",
+          "alternatives": [
+            "That is her car."
+          ]
         },
         {
           "n": "9",
-          "text": "It(That) is your dog."
+          "text": "It is your dog.",
+          "alternatives": [
+            "That is your dog."
+          ]
         },
         {
           "n": "10",
-          "text": "That(The) car is mine."
+          "text": "That car is mine.",
+          "alternatives": [
+            "The car is mine."
+          ]
         },
         {
           "n": "11",
@@ -80,7 +95,10 @@
         },
         {
           "n": "12",
-          "text": "Why did he study it(that)?"
+          "text": "Why did he study it?",
+          "alternatives": [
+            "Why did he study that?"
+          ]
         },
         {
           "n": "13",
@@ -88,7 +106,10 @@
         },
         {
           "n": "14",
-          "text": "Why were you not(weren't you) studying English?"
+          "text": "Why were you not studying English?",
+          "alternatives": [
+            "Why weren't you studying English?"
+          ]
         },
         {
           "n": "15",

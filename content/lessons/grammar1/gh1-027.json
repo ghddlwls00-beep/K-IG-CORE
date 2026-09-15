@@ -64,7 +64,10 @@
         },
         {
           "n": "8",
-          "text": "Those(they) were books."
+          "text": "Those were books.",
+          "alternatives": [
+            "They were books."
+          ]
         },
         {
           "n": "9",
@@ -128,7 +131,10 @@
         },
         {
           "n": "24",
-          "text": "They(those) were not books."
+          "text": "They were not books.",
+          "alternatives": [
+            "Those were not books."
+          ]
         },
         {
           "n": "25",

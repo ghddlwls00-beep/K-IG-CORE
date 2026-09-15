@@ -44,7 +44,10 @@
         },
         {
           "n": "3",
-          "text": "Isn't that(it) strange?"
+          "text": "Isn't that strange?",
+          "alternatives": [
+            "Isn't it strange?"
+          ]
         },
         {
           "n": "4",
@@ -88,7 +91,10 @@
         },
         {
           "n": "14",
-          "text": "The CIA did not take part(participate) in that(the) raid, did it?"
+          "text": "The CIA did not take part in that raid, did it?",
+          "alternatives": [
+            "The CIA did not participate in that raid, did it?"
+          ]
         },
         {
           "n": "15",

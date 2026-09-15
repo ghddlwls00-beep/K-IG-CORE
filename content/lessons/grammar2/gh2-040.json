@@ -36,11 +36,17 @@
         },
         {
           "n": "3",
-          "text": "A lot of people use a substance (which) we all say we abhor."
+          "text": "A lot of people use a substance we all say we abhor.",
+          "alternatives": [
+            "A lot of people use a substance which we all say we abhor."
+          ]
         },
         {
           "n": "4",
-          "text": "Complaining was just about all (that) the opposition could do to the President."
+          "text": "Complaining was just about all the opposition could do to the President.",
+          "alternatives": [
+            "Complaining was just about all that the opposition could do to the President."
+          ]
         },
         {
           "n": "5",
@@ -64,7 +70,10 @@
         },
         {
           "n": "10",
-          "text": "I want my lights and gas turned on(off)."
+          "text": "I want my lights and gas turned on.",
+          "alternatives": [
+            "I want my lights and gas turned off."
+          ]
         }
       ]
     },

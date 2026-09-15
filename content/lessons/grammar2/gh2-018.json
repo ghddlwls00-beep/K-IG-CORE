@@ -76,7 +76,11 @@
         },
         {
           "n": "13",
-          "text": "The members opposed(objected to, were opposed to) the plan"
+          "text": "The members opposed the plan.",
+          "alternatives": [
+            "The members objected to the plan.",
+            "The members were opposed to the plan."
+          ]
         }
       ]
     },

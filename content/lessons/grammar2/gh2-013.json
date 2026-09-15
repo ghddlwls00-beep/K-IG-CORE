@@ -60,7 +60,10 @@
         },
         {
           "n": "9",
-          "text": "You should(must) come here by ten o'clock."
+          "text": "You should come here by ten o'clock.",
+          "alternatives": [
+            "You must come here by ten o'clock."
+          ]
         },
         {
           "n": "10",
@@ -104,7 +107,10 @@
         },
         {
           "n": "20",
-          "text": "He will(would) solve the problem."
+          "text": "He will solve the problem.",
+          "alternatives": [
+            "He would solve the problem."
+          ]
         },
         {
           "n": "21",

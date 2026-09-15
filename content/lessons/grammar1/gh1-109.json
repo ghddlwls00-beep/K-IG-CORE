@@ -36,15 +36,24 @@
       "items": [
         {
           "n": "36",
-          "text": "When will they(are they going to) finish their freshman year?"
+          "text": "When will they finish their freshman year?",
+          "alternatives": [
+            "When are they going to finish their freshman year?"
+          ]
         },
         {
           "n": "37",
-          "text": "They will be(become) sophomores, won't they?"
+          "text": "They will be sophomores, won't they?",
+          "alternatives": [
+            "They will become sophomores, won't they?"
+          ]
         },
         {
           "n": "38",
-          "text": "It's going to(will) take time."
+          "text": "It's going to take time.",
+          "alternatives": [
+            "It's going will take time."
+          ]
         },
         {
           "n": "39",
@@ -140,11 +149,17 @@
         },
         {
           "n": "62",
-          "text": "It's nicer than my place(house)."
+          "text": "It's nicer than my place.",
+          "alternatives": [
+            "It's nicer than my house."
+          ]
         },
         {
           "n": "63",
-          "text": "I've never seen your place(house)."
+          "text": "I've never seen your place.",
+          "alternatives": [
+            "I've never seen your house."
+          ]
         },
         {
           "n": "64",
@@ -152,7 +167,10 @@
         },
         {
           "n": "65",
-          "text": "Professor Mcarthy is going to(will) give a difficult examination."
+          "text": "Professor Mcarthy is going to give a difficult examination.",
+          "alternatives": [
+            "Professor Mcarthy is going will give a difficult examination."
+          ]
         },
         {
           "n": "66",

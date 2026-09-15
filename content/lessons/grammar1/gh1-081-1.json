@@ -40,7 +40,10 @@
         },
         {
           "n": "2",
-          "text": "Is your father rich(a rich man)?"
+          "text": "Is your father rich?",
+          "alternatives": [
+            "Is your a rich man?"
+          ]
         },
         {
           "n": "3",
@@ -100,7 +103,10 @@
         },
         {
           "n": "17",
-          "text": "What time did you leave your home(house)?"
+          "text": "What time did you leave your home?",
+          "alternatives": [
+            "What time did you leave your house?"
+          ]
         },
         {
           "n": "18",

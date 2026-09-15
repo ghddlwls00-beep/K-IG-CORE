@@ -48,7 +48,10 @@
         },
         {
           "n": "41",
-          "text": "The team was able to(could) obtain numerous samples, wasn't it?"
+          "text": "The team was able to obtain numerous samples, wasn't it?",
+          "alternatives": [
+            "The team was able could obtain numerous samples, wasn't it?"
+          ]
         },
         {
           "n": "42",
@@ -92,7 +95,10 @@
         },
         {
           "n": "52",
-          "text": "Is that less(smaller) than President Bush estimated?"
+          "text": "Is that less than President Bush estimated?",
+          "alternatives": [
+            "Is that smaller than President Bush estimated?"
+          ]
         },
         {
           "n": "53",
@@ -132,7 +138,10 @@
         },
         {
           "n": "62",
-          "text": "Who gave you a ride(lift)?"
+          "text": "Who gave you a ride?",
+          "alternatives": [
+            "Who gave you a lift?"
+          ]
         },
         {
           "n": "63",
@@ -148,7 +157,12 @@
         },
         {
           "n": "66",
-          "text": "We are going to(will) do that another time (some other time)."
+          "text": "We are going to do that another time.",
+          "alternatives": [
+            "We are going to do that some other time.",
+            "We will do that another time.",
+            "We will do that some other time."
+          ]
         },
         {
           "n": "67",
@@ -160,7 +174,10 @@
         },
         {
           "n": "69",
-          "text": "Why didn't you take a cab(taxi)?"
+          "text": "Why didn't you take a cab?",
+          "alternatives": [
+            "Why didn't you take a taxi?"
+          ]
         },
         {
           "n": "70",

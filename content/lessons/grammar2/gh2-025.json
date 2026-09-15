@@ -36,7 +36,10 @@
         },
         {
           "n": "3",
-          "text": "May I have the day off tomorrow(have tomorrow off)?"
+          "text": "May I have the day off tomorrow?",
+          "alternatives": [
+            "May I have tomorrow off?"
+          ]
         },
         {
           "n": "4",

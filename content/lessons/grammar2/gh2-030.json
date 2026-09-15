@@ -40,7 +40,10 @@
         },
         {
           "n": "4",
-          "text": "It takes one hour for me to get here. (It takes me one hour to get here.)"
+          "text": "It takes one hour for me to get here.",
+          "alternatives": [
+            "It takes me one hour to get here."
+          ]
         },
         {
           "n": "5",

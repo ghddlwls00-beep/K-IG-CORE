@@ -68,11 +68,17 @@
         },
         {
           "n": "11",
-          "text": "This is he.(Speaking.)"
+          "text": "This is he.",
+          "alternatives": [
+            "Speaking."
+          ]
         },
         {
           "n": "12",
-          "text": "You have the wrong(right) number."
+          "text": "You have the wrong number.",
+          "alternatives": [
+            "You have the right number."
+          ]
         },
         {
           "n": "13",

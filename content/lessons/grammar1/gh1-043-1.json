@@ -56,7 +56,10 @@
         },
         {
           "n": "6",
-          "text": "Are those(they) books?"
+          "text": "Are those books?",
+          "alternatives": [
+            "Are they books?"
+          ]
         },
         {
           "n": "7",
@@ -76,43 +79,73 @@
         },
         {
           "n": "11",
-          "text": "Isn't he a boy(혹은 Is he not a boy?)"
+          "text": "Isn't he a boy?",
+          "alternatives": [
+            "Is he not a boy?"
+          ]
         },
         {
           "n": "12",
-          "text": "Isn't she a girl(혹은 Is she not a girl)?"
+          "text": "Isn't she a girl?",
+          "alternatives": [
+            "Is she not a girl?"
+          ]
         },
         {
           "n": "13",
-          "text": "Isn't this a pen(혹은 Is this not a pen)?"
+          "text": "Isn't this a pen?",
+          "alternatives": [
+            "Is this not a pen?"
+          ]
         },
         {
           "n": "14",
-          "text": "Isn't it a book(혹은 Is it not a book)?"
+          "text": "Isn't it a book?",
+          "alternatives": [
+            "Is it not a book?"
+          ]
         },
         {
           "n": "15",
-          "text": "Aren't these pens(혹은 Are these not pens)?"
+          "text": "Aren't these pens?",
+          "alternatives": [
+            "Are these not pens?"
+          ]
         },
         {
           "n": "16",
-          "text": "Aren't those books(혹은 Are those not books)?"
+          "text": "Aren't those books?",
+          "alternatives": [
+            "Are those not books?"
+          ]
         },
         {
           "n": "17",
-          "text": "Wasn't this a pen(혹은 Was this not a pen)?"
+          "text": "Wasn't this a pen?",
+          "alternatives": [
+            "Was this not a pen?"
+          ]
         },
         {
           "n": "18",
-          "text": "Wasn't it a book(혹은 Was it not a book)?"
+          "text": "Wasn't it a book?",
+          "alternatives": [
+            "Was it not a book?"
+          ]
         },
         {
           "n": "19",
-          "text": "Weren't these pens(혹은 Were these not pens)?"
+          "text": "Weren't these pens?",
+          "alternatives": [
+            "Were these not pens?"
+          ]
         },
         {
           "n": "20",
-          "text": "Weren't those books(혹은 Were those not books)?"
+          "text": "Weren't those books?",
+          "alternatives": [
+            "Were those not books?"
+          ]
         }
       ]
     },

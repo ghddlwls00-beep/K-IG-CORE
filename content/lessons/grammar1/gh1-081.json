@@ -40,7 +40,10 @@
         },
         {
           "n": "2",
-          "text": "Is your father rich(a rich man)?"
+          "text": "Is your father rich?",
+          "alternatives": [
+            "Is your a rich man?"
+          ]
         },
         {
           "n": "3",
@@ -100,7 +103,10 @@
         },
         {
           "n": "17",
-          "text": "What time did you leave your home(house)?"
+          "text": "What time did you leave your home?",
+          "alternatives": [
+            "What time did you leave your house?"
+          ]
         },
         {
           "n": "18",
@@ -136,7 +142,10 @@
         },
         {
           "n": "26",
-          "text": "When does he return(go back) to the U.S.?"
+          "text": "When does he return to the U.S.?",
+          "alternatives": [
+            "When does he go back to the U.S.?"
+          ]
         },
         {
           "n": "27",
@@ -176,7 +185,10 @@
         },
         {
           "n": "36",
-          "text": "Are(Were) you mad (angry)?"
+          "text": "Are you mad?",
+          "alternatives": [
+            "Were you mad?"
+          ]
         },
         {
           "n": "37",

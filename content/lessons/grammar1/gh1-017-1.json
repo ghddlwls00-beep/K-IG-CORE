@@ -40,19 +40,35 @@
         },
         {
           "n": "2",
-          "text": "Each boy receives a prize(혹은 prizes)."
+          "text": "Each boy receives a prize.",
+          "alternatives": [
+            "Each boy receives prizes."
+          ]
         },
         {
           "n": "3",
-          "text": "Every boy receives a prize(혹은 prizes)."
+          "text": "Every boy receives a prize.",
+          "alternatives": [
+            "Every boy receives prizes."
+          ]
         },
         {
           "n": "4",
-          "text": "All (the) boys receive a prize(혹은 prizes)."
+          "text": "All boys receive a prize.",
+          "alternatives": [
+            "All the boys receive prizes.",
+            "All boys receive prizes.",
+            "All the boys receive a prize."
+          ]
         },
         {
           "n": "5",
-          "text": "All (the) boys do not receive a prize(혹은 prizes)."
+          "text": "All boys do not receive a prize.",
+          "alternatives": [
+            "All the boys do not receive prizes.",
+            "All boys do not receive prizes.",
+            "All the boys do not receive a prize."
+          ]
         },
         {
           "n": "6",

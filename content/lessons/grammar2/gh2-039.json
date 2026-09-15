@@ -56,11 +56,17 @@
         },
         {
           "n": "8",
-          "text": "This is the book (which) I bought yesterday."
+          "text": "This is the book I bought yesterday.",
+          "alternatives": [
+            "This is the book which I bought yesterday."
+          ]
         },
         {
           "n": "9",
-          "text": "I sympathize with the girl (whom) he raped."
+          "text": "I sympathize with the girl he raped.",
+          "alternatives": [
+            "I sympathize with the girl whom he raped."
+          ]
         },
         {
           "n": "10",

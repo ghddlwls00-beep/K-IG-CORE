@@ -40,19 +40,31 @@
         },
         {
           "n": "42",
-          "text": "Isn't this mine(혹은 Is this not mine?)"
+          "text": "Isn't this mine?",
+          "alternatives": [
+            "Is this not mine?"
+          ]
         },
         {
           "n": "43",
-          "text": "Isn't it yours(혹은 Is it not yours)?"
+          "text": "Isn't it yours?",
+          "alternatives": [
+            "Is it not yours?"
+          ]
         },
         {
           "n": "44",
-          "text": "Aren't they(those) yours(Are they not yours)?"
+          "text": "Aren't they yours?",
+          "alternatives": [
+            "Are they not yours?"
+          ]
         },
         {
           "n": "45",
-          "text": "Aren't these his?(Are these not his)?"
+          "text": "Aren't these his?",
+          "alternatives": [
+            "Are these not his?"
+          ]
         },
         {
           "n": "46",

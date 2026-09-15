@@ -60,7 +60,10 @@
         },
         {
           "n": "7",
-          "text": "This is my hat(cap)."
+          "text": "This is my hat.",
+          "alternatives": [
+            "This is my cap."
+          ]
         },
         {
           "n": "8",
@@ -68,7 +71,10 @@
         },
         {
           "n": "9",
-          "text": "Those(They) are their guns."
+          "text": "Those are their guns.",
+          "alternatives": [
+            "They are their guns."
+          ]
         },
         {
           "n": "10",
@@ -80,7 +86,10 @@
         },
         {
           "n": "12",
-          "text": "It(That) is mine."
+          "text": "It is mine.",
+          "alternatives": [
+            "That is mine."
+          ]
         },
         {
           "n": "13",

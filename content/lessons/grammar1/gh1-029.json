@@ -60,7 +60,10 @@
         },
         {
           "n": "32",
-          "text": "Were those(they) books?"
+          "text": "Were those books?",
+          "alternatives": [
+            "Were they books?"
+          ]
         },
         {
           "n": "33",
@@ -96,43 +99,73 @@
         },
         {
           "n": "41",
-          "text": "Was I not a boy(혹은 Wasn't I a boy)?"
+          "text": "Was I not a boy?",
+          "alternatives": [
+            "Wasn't I a boy?"
+          ]
         },
         {
           "n": "42",
-          "text": "Weren't you a girl(혹은 Were you not a girl)?"
+          "text": "Weren't you a girl?",
+          "alternatives": [
+            "Were you not a girl?"
+          ]
         },
         {
           "n": "43",
-          "text": "Wasn't he a boy(혹은 Was he not a boy?)"
+          "text": "Wasn't he a boy?",
+          "alternatives": [
+            "Was he not a boy?"
+          ]
         },
         {
           "n": "44",
-          "text": "Wasn't she a girl(혹은 Was she not a girl)?"
+          "text": "Wasn't she a girl?",
+          "alternatives": [
+            "Was she not a girl?"
+          ]
         },
         {
           "n": "45",
-          "text": "Wasn't this a pen(혹은 Was this not a pen)?"
+          "text": "Wasn't this a pen?",
+          "alternatives": [
+            "Was this not a pen?"
+          ]
         },
         {
           "n": "46",
-          "text": "Wasn't it a book(혹은 Was it not a book)?"
+          "text": "Wasn't it a book?",
+          "alternatives": [
+            "Was it not a book?"
+          ]
         },
         {
           "n": "47",
-          "text": "Weren't these pens(혹은 Were these not pens)?"
+          "text": "Weren't these pens?",
+          "alternatives": [
+            "Were these not pens?"
+          ]
         },
         {
           "n": "48",
-          "text": "Weren't those books(혹은 Were those not books)?"
+          "text": "Weren't those books?",
+          "alternatives": [
+            "Were those not books?"
+          ]
         },
         {
           "n": "49",
-          "text": "Weren't you happy(혹은 Were you not happy)?"
+          "text": "Weren't you happy?",
+          "alternatives": [
+            "Were you not happy?"
+          ]
         },
         {
           "n": "50",
-          "text": "Wasn't she happy(혹은 Was she not happy)?"
+          "text": "Wasn't she happy?",
+          "alternatives": [
+            "Was she not happy?"
+          ]
         }
       ]
     },

@@ -40,7 +40,10 @@
         },
         {
           "n": "97",
-          "text": "The company took part(participated) in the project, didn't it?"
+          "text": "The company took part in the project, didn't it?",
+          "alternatives": [
+            "The company took participated in the project, didn't it?"
+          ]
         },
         {
           "n": "98",
@@ -60,7 +63,11 @@
         },
         {
           "n": "102",
-          "text": "How fast(soon, quickly) does it become clear?"
+          "text": "How fast does it become clear?",
+          "alternatives": [
+            "How soon does it become clear?",
+            "How quickly does it become clear?"
+          ]
         },
         {
           "n": "103",
@@ -88,19 +95,31 @@
         },
         {
           "n": "109",
-          "text": "He is (a) Korean, isn't he?"
+          "text": "He is Korean, isn't he?",
+          "alternatives": [
+            "He is a Korean, isn't he?"
+          ]
         },
         {
           "n": "110",
-          "text": "He is not (a) Japanese, is he?"
+          "text": "He is not Japanese, is he?",
+          "alternatives": [
+            "He is not a Japanese, is he?"
+          ]
         },
         {
           "n": "111",
-          "text": "She was (an) American, wasn't she?"
+          "text": "She was American, wasn't she?",
+          "alternatives": [
+            "She was an American, wasn't she?"
+          ]
         },
         {
           "n": "112",
-          "text": "She was not (a) Filipino, was she?"
+          "text": "She was not Filipino, was she?",
+          "alternatives": [
+            "She was not a Filipino, was she?"
+          ]
         },
         {
           "n": "113",

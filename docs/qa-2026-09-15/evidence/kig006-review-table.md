@@ -4,15 +4,15 @@
 > 이 스크립트는 `content/` 에 아무것도 쓰지 않습니다.
 > STUDENT 과정은 제외되어 있습니다 — 그쪽 괄호는 대안이 아니라 빈칸입니다 (`NEXT-SESSION.md` §0).
 
-생성: 2026-09-15T20:20:39.256Z
+생성: 2026-09-15T23:05:10.706Z
 
 | | 건수 |
 |---|---|
-| 검수 대상 문장 (중복 제거) | 239 |
+| 검수 대상 문장 (중복 제거) | 243 |
 | ✅ 소유자가 결정한 행 | 12 |
 | 🔴 가드에 걸린 행 (먼저 볼 것) | 0 |
 | 버려진 대안 | 1 |
-| 남은 대안 | 256 |
+| 남은 대안 | 260 |
 
 ---
 
@@ -185,95 +185,99 @@
 | 133 | gh1-081-2 | Are(Were) you mad (angry)? | Are you mad? | Were you mad? |
 | 134 | gh1-085 | The woman(She) received a letter. | The woman received a letter. | The She received a letter. |
 | 135 | gh1-085 | Is there no evidence(Isn't there any evidence)? | Is there no evidence? | Isn't there any evidence? |
-| 136 | gh1-089 | Is this your homework (assignment)? | Is this your homework? | Is this your assignment? |
-| 137 | gh1-091 | Do your son(s) and daughter(s) have pets(a pet)? | Do your son and daughter have pets? | Do your son and daughter have a pet? / Do your sons and daughter have pets? / Do your sons and daughter have a pet? / Do your son and daughters have pets? / Do your son and daughters have a pet? / Do your sons and daughters have pets? / Do your sons and daughters have a pet? |
-| 138 | gh1-091 | Do they take airplanes frequently(often)? | Do they take airplanes frequently? | Do they take airplanes often? |
-| 139 | gh1-091 | Why does it take place(happen) outside the border? | Why does it take place outside the border? | Why does it take happen outside the border? |
-| 140 | gh1-093 | Why do they buy it in a(the) black market? | Why do they buy it in a black market? | Why do they buy it in the black market? |
-| 141 | gh1-095 | Why was the vice president taking part(participating) in that project? | Why was the vice president taking part in that project? | Why was the vice president taking participating in that project? |
-| 142 | gh1-095 | Everybody(everyone) likes the solution, don't they? | Everybody likes the solution, don't they? | Everyone likes the solution, don't they? |
-| 143 | gh1-095 | Everybody(everyone) liked the contract, didn't they? | Everybody liked the contract, didn't they? | Everyone liked the contract, didn't they? |
-| 144 | gh1-095 | Every(Each) agency increases security. | Every agency increases security. | Each agency increases security. |
-| 145 | gh1-095 | Each(Every) boy gets a tour of the center. | Each boy gets a tour of the center. | Every boy gets a tour of the center. |
-| 146 | gh1-095 | Each(Every) boy worries about his future. | Each boy worries about his future. | Every boy worries about his future. |
-| 147 | gh1-095 | Every(Each) boy received a prize. | Every boy received a prize. | Each boy received a prize. |
-| 148 | gh1-095 | All the boys (Each boy, Every boy) ignored the advice. | All the boys ignored the advice. | All the boys Each boy, Every boy ignored the advice. |
-| 149 | gh1-095 | Each(Every) boy did his homework. | Each boy did his homework. | Every boy did his homework. |
-| 150 | gh1-095 | Every(Each) priest attended the fundraiser, didn't he? | Every priest attended the fundraiser, didn't he? | Each priest attended the fundraiser, didn't he? |
-| 151 | gh1-097 | Nobody(No one) called. | Nobody called. | No one called. |
-| 152 | gh1-097 | Nobody (No one) ignores it. | Nobody ignores it. | Nobody No one ignores it. |
-| 153 | gh1-097 | Nobody(No one) is buying it, are they? | Nobody is buying it, are they? | No one is buying it, are they? |
-| 154 | gh1-097 | Nobody(No one) knows everything, do they? | Nobody knows everything, do they? | No one knows everything, do they? |
-| 155 | gh1-099 | The company took part(participated) in the project, didn't it? | The company took part in the project, didn't it? | The company took participated in the project, didn't it? |
-| 156 | gh1-099 | How fast(soon, quickly) does it become clear? | How fast does it become clear? | How soon does it become clear? / How quickly does it become clear? |
-| 157 | gh1-099 | He is (a) Korean, isn't he? | He is Korean, isn't he? | He is a Korean, isn't he? |
-| 158 | gh1-099 | He is not (a) Japanese, is he? | He is not Japanese, is he? | He is not a Japanese, is he? |
-| 159 | gh1-099 | She was (an) American, wasn't she? | She was American, wasn't she? | She was an American, wasn't she? |
-| 160 | gh1-099 | She was not (a) Filipino, was she? | She was not Filipino, was she? | She was not a Filipino, was she? |
-| 161 | gh1-101 | Didn't(Hasn't) it become the symbol of the engagement policy? | Didn't it become the symbol of the engagement policy? | Hasn't it become the symbol of the engagement policy? |
-| 162 | gh1-101 | How did it go(proceed)? | How did it go? | How did it proceed? |
-| 163 | gh1-101 | We totally(completely) ignored market principles, didn't we? | We totally ignored market principles, didn't we? | We completely ignored market principles, didn't we? |
-| 164 | gh1-101 | Didn't I share that(it) with you? | Didn't I share that with you? | Didn't I share it with you? |
-| 165 | gh1-101 | Is that(it) a deal? | Is that a deal? | Is it a deal? |
-| 166 | gh1-103 | Will the United States undoubtedly(without a doubt) face future terrorist threats? | Will the United States undoubtedly face future terrorist threats? | Will the United States without a doubt face future terrorist threats? |
-| 167 | gh1-103 | When did our forces defeat adversaries(enemies)? | When did our forces defeat adversaries? | When did our forces defeat enemies? |
-| 168 | gh1-103 | What was that(it) like then? | What was that like then? | What was it like then? |
-| 169 | gh1-103 | Why don't you say that(it) again? | Why don't you say that again? | Why don't you say it again? |
-| 170 | gh1-103 | Do you still see(meet) all of them? | Do you still see all of them? | Do you still meet all of them? |
-| 171 | gh1-107 | Isn't that(it) strange? | Isn't that strange? | Isn't it strange? |
-| 172 | gh1-107 | The CIA did not take part(participate) in that(the) raid, did it? | The CIA did not take part in that raid, did it? | The CIA did not participate in that raid, did it? |
-| 173 | gh1-109 | When will they(are they going to) finish their freshman year? | When will they finish their freshman year? | When are they going to finish their freshman year? |
-| 174 | gh1-109 | They will be(become) sophomores, won't they? | They will be sophomores, won't they? | They will become sophomores, won't they? |
-| 175 | gh1-109 | It's going to(will) take time. | It's going to take time. | It's going will take time. |
-| 176 | gh1-109 | It's nicer than my place(house). | It's nicer than my place. | It's nicer than my house. |
-| 177 | gh1-109 | I've never seen your place(house). | I've never seen your place. | I've never seen your house. |
-| 178 | gh1-109 | Professor Mcarthy is going to(will) give a difficult examination. | Professor Mcarthy is going to give a difficult examination. | Professor Mcarthy is going will give a difficult examination. |
-| 179 | gh1-111-1 | When will(shall) we have a live report? | When will we have a live report? | When shall we have a live report? |
-| 180 | gh1-111-1 | They have to(must) deal with the disaster. | They have to deal with the disaster. | They have must deal with the disaster. |
-| 181 | gh1-111-1 | Which(what) company makes chewing tobacco? | Which company makes chewing tobacco? | What company makes chewing tobacco? |
-| 182 | gh1-111-2 | When am I going to(shall I, will I) meet your friends and your brothers? | When am I going to meet your friends and your brothers? | When shall I meet your friends and your brothers? / When will I meet your friends and your brothers? |
-| 183 | gh1-111-2 | Did you get(reach) there on time? | Did you get there on time? | Did you reach there on time? |
-| 184 | gh1-113-1 | The novelist won(received) the Nobel Prize, didn't he? | The novelist won the Nobel Prize, didn't he? | The novelist received the Nobel Prize, didn't he? |
-| 185 | gh1-113-2 | Will(would) you speak more slowly, please? | Will you speak more slowly, please? | Would you speak more slowly, please? |
-| 186 | gh1-113-2 | Isn't he working for(at) a bank? | Isn't he working for a bank? | Isn't he working at a bank? |
-| 187 | gh1-117-1 | When was the chopper(helicopter) hit by enemy fire? | When was the chopper hit by enemy fire? | When was the helicopter hit by enemy fire? |
-| 188 | gh1-117-1 | Who dragged off and killed the man(him)? | Who dragged off and killed the man? | Who dragged off and killed the him? |
-| 189 | gh1-117-1 | It could(can) be improved, couldn't(can't) it? | It could be improved, couldn't it? | It can be improved, can't it? |
-| 190 | gh1-117-1 | Weren't the other two German(s)? | Weren't the other two Germans? | Weren't the other two German? |
-| 191 | gh1-117-2 | Isn't the threat their way of retaliating(retaliation)? | Isn't the threat their way of retaliating? | Isn't the threat their way of retaliation? |
-| 192 | gh1-117-2 | The servicemen(soldiers) died in two separate incidents, didn't they? | The servicemen died in two separate incidents, didn't they? | The soldiers died in two separate incidents, didn't they? |
-| 193 | gh1-119-1 | The team was able to(could) obtain numerous samples, wasn't it? | The team was able to obtain numerous samples, wasn't it? | The team was able could obtain numerous samples, wasn't it? |
-| 194 | gh1-119-1 | Is that less(smaller) than President Bush estimated? | Is that less than President Bush estimated? | Is that smaller than President Bush estimated? |
-| 195 | gh1-119-2 | Who gave you a ride(lift)? | Who gave you a ride? | Who gave you a lift? |
-| 196 | gh1-119-2 | We are going to(will) do that another time (some other time). | We are going to do that another time. | We are going to do that some other time. / We will do that another time. / We will do that some other time. |
-| 197 | gh1-119-2 | Why didn't you take a cab(taxi)? | Why didn't you take a cab? | Why didn't you take a taxi? |
-| 198 | gh1-121-1 | The company constructs(builds) the most moving memorial possible. | The company constructs the most moving memorial possible. | The company builds the most moving memorial possible. |
-| 199 | gh1-121-1 | It will handle(deal with) redevelopment. | It will handle redevelopment. | It will deal with redevelopment. |
-| 200 | gh1-121-2 | (The) Palestinians and (the) Israelis must act. | Palestinians and Israelis must act. | The Palestinians and the Israelis must act. / The Palestinians and Israelis must act. / Palestinians and the Israelis must act. |
-| 201 | gh1-123-2 | Here's the (phone) number. | Here's the number. | Here's the phone number. |
-| 202 | gh2-008 | In trying to improve his English, he is building (on) his vocabulary. | In trying to improve his English, he is building his vocabulary. | In trying to improve his English, he is building on his vocabulary. |
-| 203 | gh2-009 | What do you do on Sunday(s)? | What do you do on Sundays? | What do you do on Sunday? |
-| 204 | gh2-013 | You should(must) come here by ten o'clock. | You should come here by ten o'clock. | You must come here by ten o'clock. |
-| 205 | gh2-013 | He will(would) solve the problem. | He will solve the problem. | He would solve the problem. |
-| 206 | gh2-017 | The lights were all on.(All the lights were on.) | The lights were all on. | All the lights were on. |
-| 207 | gh2-018 | The members opposed(objected to, were opposed to) the plan | The members opposed the plan. | The members objected to the plan. / The members were opposed to the plan. |
-| 208 | gh2-029 | You have the wrong(right) number. | You have the wrong number. | You have the right number. |
-| 209 | gh2-030 | It takes one hour for me to get here. (It takes me one hour to get here.) | It takes one hour for me to get here. | It takes me one hour to get here. |
-| 210 | gh2-032 | I think it the best way to success to work hard. (I think the best way to success is to work hard.) | I think it the best way to success to work hard. | I think the best way to success is to work hard. |
-| 211 | gh2-033 | Since I was in a hurry, I thought I had no choice but (to)step on it. | Since I was in a hurry, I thought I had no choice but step on it. | Since I was in a hurry, I thought I had no choice but to step on it. |
-| 212 | gh2-037 | I'd like to have a phone installed(my phone disconnected) in my apartment. | I'd like to have a phone installed in my apartment. | I'd like to have my phone disconnected in my apartment. |
-| 213 | gh2-037 | I had a little alteration(혹은 a few alterations) made. | I had a little alteration made. | I had a little a few alterations made. |
-| 214 | gh2-038 | Did you see the boy stand(ing) over there? | Did you see the boy standing over there? | Did you see the boy stand over there? |
-| 215 | gh2-039 | This is the book (which) I bought yesterday. | This is the book I bought yesterday. | This is the book which I bought yesterday. |
-| 216 | gh2-039 | I sympathize with the girl (whom) he raped. | I sympathize with the girl he raped. | I sympathize with the girl whom he raped. |
-| 217 | gh2-040 | A lot of people use a substance (which) we all say we abhor. | A lot of people use a substance we all say we abhor. | A lot of people use a substance which we all say we abhor. |
-| 218 | gh2-040 | Complaining was just about all (that) the opposition could do to the President. | Complaining was just about all the opposition could do to the President. | Complaining was just about all that the opposition could do to the President. |
-| 219 | gh2-040 | I want my lights and gas turned on(off). | I want my lights and gas turned on. | I want my lights and gas turned off. |
-| 220 | gh2-048 | If I had enough money(Had I enough money), I would buy you a diamond ring. | If I had enough money, I would buy you a diamond ring. | Had I enough money, I would buy you a diamond ring. |
-| 221 | gh2-048 | If I had known your phone number(Had I known your phone number), | If I had known your phone number,. | Had I known your phone number,. |
-| 222 | gh2-048 | If they had had the ability to make money(Had they had the ability to make money), | If they had had the ability to make money,. | Had they had the ability to make money,. |
-| 223 | gh2-048 | He should be in high school now if he had not flunked a grade. (Had he not flunked a grade, he should be in high school now.) | He should be in high school now if he had not flunked a grade. | Had he not flunked a grade, he should be in high school now. |
-| 224 | gh2-048 | If the blood products had been heat treated(Had the blood product been heat treated), | If the blood products had been heat treated,. | Had the blood product been heat treated,. |
-| 225 | gh2-048 | (Were it not for the sun,) nothing could live.(If it were not for the sun,) nothing could live. | Were it not for the sun, nothing could live. | If it were not for the sun, nothing could live. |
-| 226 | gh2-048 | Should I have been(If I had been, had I been) three minutes late, I should have missed the train. | Should I have been three minutes late, I should have missed the train. | If I had been three minutes late, I should have missed the train. / Had I been three minutes late, I should have missed the train. |
-| 227 | gh2-048 | Should you not go, he would go. (If you should not go,) he would go. | Should you not go, he would go. he would go. | If you should not go,. |
+| 136 | gh1-089 | Is this your homework(assignment)? | Is this your homework? | Is this your assignment? |
+| 137 | gh1-089 | Are they police officers(policemen)? | Are they police officers? | Are they police policemen? |
+| 138 | gh1-089 | Are these gentlemen your clients(customers)? | Are these gentlemen your clients? | Are these gentlemen your customers? |
+| 139 | gh1-089 | Whose fatherland(homeland) is this? | Whose fatherland is this? | Whose homeland is this? |
+| 140 | gh1-089 | The microphone(mike) is still on. | The microphone is still on. | The mike is still on. |
+| 141 | gh1-091 | Do your son(s) and daughter(s) have pets(a pet)? | Do your son and daughter have pets? | Do your son and daughter have a pet? / Do your sons and daughter have pets? / Do your sons and daughter have a pet? / Do your son and daughters have pets? / Do your son and daughters have a pet? / Do your sons and daughters have pets? / Do your sons and daughters have a pet? |
+| 142 | gh1-091 | Do they take airplanes frequently(often)? | Do they take airplanes frequently? | Do they take airplanes often? |
+| 143 | gh1-091 | Why does it take place(happen) outside the border? | Why does it take place outside the border? | Why does it take happen outside the border? |
+| 144 | gh1-093 | Why do they buy it in a(the) black market? | Why do they buy it in a black market? | Why do they buy it in the black market? |
+| 145 | gh1-095 | Why was the vice president taking part(participating) in that project? | Why was the vice president taking part in that project? | Why was the vice president taking participating in that project? |
+| 146 | gh1-095 | Everybody(everyone) likes the solution, don't they? | Everybody likes the solution, don't they? | Everyone likes the solution, don't they? |
+| 147 | gh1-095 | Everybody(everyone) liked the contract, didn't they? | Everybody liked the contract, didn't they? | Everyone liked the contract, didn't they? |
+| 148 | gh1-095 | Every(Each) agency increases security. | Every agency increases security. | Each agency increases security. |
+| 149 | gh1-095 | Each(Every) boy gets a tour of the center. | Each boy gets a tour of the center. | Every boy gets a tour of the center. |
+| 150 | gh1-095 | Each(Every) boy worries about his future. | Each boy worries about his future. | Every boy worries about his future. |
+| 151 | gh1-095 | Every(Each) boy received a prize. | Every boy received a prize. | Each boy received a prize. |
+| 152 | gh1-095 | All the boys (Each boy, Every boy) ignored the advice. | All the boys ignored the advice. | All the boys Each boy, Every boy ignored the advice. |
+| 153 | gh1-095 | Each(Every) boy did his homework. | Each boy did his homework. | Every boy did his homework. |
+| 154 | gh1-095 | Every(Each) priest attended the fundraiser, didn't he? | Every priest attended the fundraiser, didn't he? | Each priest attended the fundraiser, didn't he? |
+| 155 | gh1-097 | Nobody(No one) called. | Nobody called. | No one called. |
+| 156 | gh1-097 | Nobody (No one) ignores it. | Nobody ignores it. | Nobody No one ignores it. |
+| 157 | gh1-097 | Nobody(No one) is buying it, are they? | Nobody is buying it, are they? | No one is buying it, are they? |
+| 158 | gh1-097 | Nobody(No one) knows everything, do they? | Nobody knows everything, do they? | No one knows everything, do they? |
+| 159 | gh1-099 | The company took part(participated) in the project, didn't it? | The company took part in the project, didn't it? | The company took participated in the project, didn't it? |
+| 160 | gh1-099 | How fast(soon, quickly) does it become clear? | How fast does it become clear? | How soon does it become clear? / How quickly does it become clear? |
+| 161 | gh1-099 | He is (a) Korean, isn't he? | He is Korean, isn't he? | He is a Korean, isn't he? |
+| 162 | gh1-099 | He is not (a) Japanese, is he? | He is not Japanese, is he? | He is not a Japanese, is he? |
+| 163 | gh1-099 | She was (an) American, wasn't she? | She was American, wasn't she? | She was an American, wasn't she? |
+| 164 | gh1-099 | She was not (a) Filipino, was she? | She was not Filipino, was she? | She was not a Filipino, was she? |
+| 165 | gh1-101 | Didn't(Hasn't) it become the symbol of the engagement policy? | Didn't it become the symbol of the engagement policy? | Hasn't it become the symbol of the engagement policy? |
+| 166 | gh1-101 | How did it go(proceed)? | How did it go? | How did it proceed? |
+| 167 | gh1-101 | We totally(completely) ignored market principles, didn't we? | We totally ignored market principles, didn't we? | We completely ignored market principles, didn't we? |
+| 168 | gh1-101 | Didn't I share that(it) with you? | Didn't I share that with you? | Didn't I share it with you? |
+| 169 | gh1-101 | Is that(it) a deal? | Is that a deal? | Is it a deal? |
+| 170 | gh1-103 | Will the United States undoubtedly(without a doubt) face future terrorist threats? | Will the United States undoubtedly face future terrorist threats? | Will the United States without a doubt face future terrorist threats? |
+| 171 | gh1-103 | When did our forces defeat adversaries(enemies)? | When did our forces defeat adversaries? | When did our forces defeat enemies? |
+| 172 | gh1-103 | What was that(it) like then? | What was that like then? | What was it like then? |
+| 173 | gh1-103 | Why don't you say that(it) again? | Why don't you say that again? | Why don't you say it again? |
+| 174 | gh1-103 | Do you still see(meet) all of them? | Do you still see all of them? | Do you still meet all of them? |
+| 175 | gh1-107 | Isn't that(it) strange? | Isn't that strange? | Isn't it strange? |
+| 176 | gh1-107 | The CIA did not take part(participate) in that(the) raid, did it? | The CIA did not take part in that raid, did it? | The CIA did not participate in that raid, did it? |
+| 177 | gh1-109 | When will they(are they going to) finish their freshman year? | When will they finish their freshman year? | When are they going to finish their freshman year? |
+| 178 | gh1-109 | They will be(become) sophomores, won't they? | They will be sophomores, won't they? | They will become sophomores, won't they? |
+| 179 | gh1-109 | It's going to(will) take time. | It's going to take time. | It's going will take time. |
+| 180 | gh1-109 | It's nicer than my place(house). | It's nicer than my place. | It's nicer than my house. |
+| 181 | gh1-109 | I've never seen your place(house). | I've never seen your place. | I've never seen your house. |
+| 182 | gh1-109 | Professor Mcarthy is going to(will) give a difficult examination. | Professor Mcarthy is going to give a difficult examination. | Professor Mcarthy is going will give a difficult examination. |
+| 183 | gh1-111-1 | When will(shall) we have a live report? | When will we have a live report? | When shall we have a live report? |
+| 184 | gh1-111-1 | They have to(must) deal with the disaster. | They have to deal with the disaster. | They have must deal with the disaster. |
+| 185 | gh1-111-1 | Which(what) company makes chewing tobacco? | Which company makes chewing tobacco? | What company makes chewing tobacco? |
+| 186 | gh1-111-2 | When am I going to(shall I, will I) meet your friends and your brothers? | When am I going to meet your friends and your brothers? | When shall I meet your friends and your brothers? / When will I meet your friends and your brothers? |
+| 187 | gh1-111-2 | Did you get(reach) there on time? | Did you get there on time? | Did you reach there on time? |
+| 188 | gh1-113-1 | The novelist won(received) the Nobel Prize, didn't he? | The novelist won the Nobel Prize, didn't he? | The novelist received the Nobel Prize, didn't he? |
+| 189 | gh1-113-2 | Will(would) you speak more slowly, please? | Will you speak more slowly, please? | Would you speak more slowly, please? |
+| 190 | gh1-113-2 | Isn't he working for(at) a bank? | Isn't he working for a bank? | Isn't he working at a bank? |
+| 191 | gh1-117-1 | When was the chopper(helicopter) hit by enemy fire? | When was the chopper hit by enemy fire? | When was the helicopter hit by enemy fire? |
+| 192 | gh1-117-1 | Who dragged off and killed the man(him)? | Who dragged off and killed the man? | Who dragged off and killed the him? |
+| 193 | gh1-117-1 | It could(can) be improved, couldn't(can't) it? | It could be improved, couldn't it? | It can be improved, can't it? |
+| 194 | gh1-117-1 | Weren't the other two German(s)? | Weren't the other two Germans? | Weren't the other two German? |
+| 195 | gh1-117-2 | Isn't the threat their way of retaliating(retaliation)? | Isn't the threat their way of retaliating? | Isn't the threat their way of retaliation? |
+| 196 | gh1-117-2 | The servicemen(soldiers) died in two separate incidents, didn't they? | The servicemen died in two separate incidents, didn't they? | The soldiers died in two separate incidents, didn't they? |
+| 197 | gh1-119-1 | The team was able to(could) obtain numerous samples, wasn't it? | The team was able to obtain numerous samples, wasn't it? | The team was able could obtain numerous samples, wasn't it? |
+| 198 | gh1-119-1 | Is that less(smaller) than President Bush estimated? | Is that less than President Bush estimated? | Is that smaller than President Bush estimated? |
+| 199 | gh1-119-2 | Who gave you a ride(lift)? | Who gave you a ride? | Who gave you a lift? |
+| 200 | gh1-119-2 | We are going to(will) do that another time (some other time). | We are going to do that another time. | We are going to do that some other time. / We will do that another time. / We will do that some other time. |
+| 201 | gh1-119-2 | Why didn't you take a cab(taxi)? | Why didn't you take a cab? | Why didn't you take a taxi? |
+| 202 | gh1-121-1 | The company constructs(builds) the most moving memorial possible. | The company constructs the most moving memorial possible. | The company builds the most moving memorial possible. |
+| 203 | gh1-121-1 | It will handle(deal with) redevelopment. | It will handle redevelopment. | It will deal with redevelopment. |
+| 204 | gh1-121-2 | (The) Palestinians and (the) Israelis must act. | Palestinians and Israelis must act. | The Palestinians and the Israelis must act. / The Palestinians and Israelis must act. / Palestinians and the Israelis must act. |
+| 205 | gh1-123-2 | Here's the (phone) number. | Here's the number. | Here's the phone number. |
+| 206 | gh2-008 | In trying to improve his English, he is building (on) his vocabulary. | In trying to improve his English, he is building his vocabulary. | In trying to improve his English, he is building on his vocabulary. |
+| 207 | gh2-009 | What do you do on Sunday(s)? | What do you do on Sundays? | What do you do on Sunday? |
+| 208 | gh2-013 | You should(must) come here by ten o'clock. | You should come here by ten o'clock. | You must come here by ten o'clock. |
+| 209 | gh2-013 | He will(would) solve the problem. | He will solve the problem. | He would solve the problem. |
+| 210 | gh2-017 | The lights were all on.(All the lights were on.) | The lights were all on. | All the lights were on. |
+| 211 | gh2-018 | The members opposed(objected to, were opposed to) the plan | The members opposed the plan. | The members objected to the plan. / The members were opposed to the plan. |
+| 212 | gh2-029 | You have the wrong(right) number. | You have the wrong number. | You have the right number. |
+| 213 | gh2-030 | It takes one hour for me to get here. (It takes me one hour to get here.) | It takes one hour for me to get here. | It takes me one hour to get here. |
+| 214 | gh2-032 | I think it the best way to success to work hard. (I think the best way to success is to work hard.) | I think it the best way to success to work hard. | I think the best way to success is to work hard. |
+| 215 | gh2-033 | Since I was in a hurry, I thought I had no choice but (to)step on it. | Since I was in a hurry, I thought I had no choice but step on it. | Since I was in a hurry, I thought I had no choice but to step on it. |
+| 216 | gh2-037 | I'd like to have a phone installed(my phone disconnected) in my apartment. | I'd like to have a phone installed in my apartment. | I'd like to have my phone disconnected in my apartment. |
+| 217 | gh2-037 | I had a little alteration(혹은 a few alterations) made. | I had a little alteration made. | I had a little a few alterations made. |
+| 218 | gh2-038 | Did you see the boy stand(ing) over there? | Did you see the boy standing over there? | Did you see the boy stand over there? |
+| 219 | gh2-039 | This is the book (which) I bought yesterday. | This is the book I bought yesterday. | This is the book which I bought yesterday. |
+| 220 | gh2-039 | I sympathize with the girl (whom) he raped. | I sympathize with the girl he raped. | I sympathize with the girl whom he raped. |
+| 221 | gh2-040 | A lot of people use a substance (which) we all say we abhor. | A lot of people use a substance we all say we abhor. | A lot of people use a substance which we all say we abhor. |
+| 222 | gh2-040 | Complaining was just about all (that) the opposition could do to the President. | Complaining was just about all the opposition could do to the President. | Complaining was just about all that the opposition could do to the President. |
+| 223 | gh2-040 | I want my lights and gas turned on(off). | I want my lights and gas turned on. | I want my lights and gas turned off. |
+| 224 | gh2-048 | If I had enough money(Had I enough money), I would buy you a diamond ring. | If I had enough money, I would buy you a diamond ring. | Had I enough money, I would buy you a diamond ring. |
+| 225 | gh2-048 | If I had known your phone number(Had I known your phone number), | If I had known your phone number,. | Had I known your phone number,. |
+| 226 | gh2-048 | If they had had the ability to make money(Had they had the ability to make money), | If they had had the ability to make money,. | Had they had the ability to make money,. |
+| 227 | gh2-048 | He should be in high school now if he had not flunked a grade. (Had he not flunked a grade, he should be in high school now.) | He should be in high school now if he had not flunked a grade. | Had he not flunked a grade, he should be in high school now. |
+| 228 | gh2-048 | If the blood products had been heat treated(Had the blood product been heat treated), | If the blood products had been heat treated,. | Had the blood product been heat treated,. |
+| 229 | gh2-048 | (Were it not for the sun,) nothing could live.(If it were not for the sun,) nothing could live. | Were it not for the sun, nothing could live. | If it were not for the sun, nothing could live. |
+| 230 | gh2-048 | Should I have been(If I had been, had I been) three minutes late, I should have missed the train. | Should I have been three minutes late, I should have missed the train. | If I had been three minutes late, I should have missed the train. / Had I been three minutes late, I should have missed the train. |
+| 231 | gh2-048 | Should you not go, he would go. (If you should not go,) he would go. | Should you not go, he would go. he would go. | If you should not go,. |

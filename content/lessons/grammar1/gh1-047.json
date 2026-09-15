@@ -36,15 +36,26 @@
       "items": [
         {
           "n": "81",
-          "text": "It is a book, isn't it(혹은 It is a book, is it not?)"
+          "text": "It is a book, isn't it?",
+          "alternatives": [
+            "It is a book?"
+          ]
         },
         {
           "n": "82",
-          "text": "These are pens, aren't these(혹은 ---, are these not)?"
+          "text": "These are pens, aren't these?",
+          "alternatives": [
+            "These are pens, are these not?"
+          ]
         },
         {
           "n": "83",
-          "text": "Those(they) are books, aren't they(혹은 ---, are they not)?"
+          "text": "Those are books, aren't they?",
+          "alternatives": [
+            "Those are books, are they not?",
+            "They are books, aren't they?",
+            "They are books, are they not?"
+          ]
         },
         {
           "n": "84",

@@ -56,11 +56,14 @@
         },
         {
           "n": "6",
-          "text": "Those(They) are your books."
+          "text": "Those are your books.",
+          "alternatives": [
+            "They are your books."
+          ]
         },
         {
           "n": "7",
-          "text": "Those (The) books are theirs."
+          "text": "Those books are theirs."
         },
         {
           "n": "8",
@@ -72,7 +75,7 @@
         },
         {
           "n": "10",
-          "text": "That (The) house is mine."
+          "text": "That house is mine."
         },
         {
           "n": "11",

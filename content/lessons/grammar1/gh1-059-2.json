@@ -56,7 +56,10 @@
         },
         {
           "n": "27",
-          "text": "Isn't he(Is he not) coming here?"
+          "text": "Isn't he coming here?",
+          "alternatives": [
+            "Is he not coming here?"
+          ]
         },
         {
           "n": "28",
@@ -64,23 +67,38 @@
         },
         {
           "n": "29",
-          "text": "Each(Every) student has his own idea."
+          "text": "Each student has his own idea.",
+          "alternatives": [
+            "Every student has his own idea."
+          ]
         },
         {
           "n": "30",
-          "text": "Does each(every) student have his own plan?"
+          "text": "Does each student have his own plan?",
+          "alternatives": [
+            "Does every student have his own plan?"
+          ]
         },
         {
           "n": "31",
-          "text": "Aren't you(Are you not) happy?"
+          "text": "Aren't you happy?",
+          "alternatives": [
+            "Are you not happy?"
+          ]
         },
         {
           "n": "32",
-          "text": "Didn't he(Did he not) give money to each of his sons?"
+          "text": "Didn't he give money to each of his sons?",
+          "alternatives": [
+            "Did he not give money to each of his sons?"
+          ]
         },
         {
           "n": "33",
-          "text": "Doesn't she(Does she not) give money to each of her daughters?"
+          "text": "Doesn't she give money to each of her daughters?",
+          "alternatives": [
+            "Does she not give money to each of her daughters?"
+          ]
         },
         {
           "n": "34",
@@ -88,15 +106,24 @@
         },
         {
           "n": "35",
-          "text": "Isn't he(Is he not) popular?"
+          "text": "Isn't he popular?",
+          "alternatives": [
+            "Is he not popular?"
+          ]
         },
         {
           "n": "36",
-          "text": "Weren't they(Were they not) popular?"
+          "text": "Weren't they popular?",
+          "alternatives": [
+            "Were they not popular?"
+          ]
         },
         {
           "n": "37",
-          "text": "Am I not(ain't I) famous?"
+          "text": "Am I not famous?",
+          "alternatives": [
+            "Ain't I famous?"
+          ]
         }
       ]
     },

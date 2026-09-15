@@ -52,7 +52,10 @@
         },
         {
           "n": "28",
-          "text": "Whose car is that(it)?"
+          "text": "Whose car is that?",
+          "alternatives": [
+            "Whose car is it?"
+          ]
         },
         {
           "n": "29",
@@ -64,11 +67,17 @@
         },
         {
           "n": "31",
-          "text": "Are they(those) yours?"
+          "text": "Are they yours?",
+          "alternatives": [
+            "Are those yours?"
+          ]
         },
         {
           "n": "32",
-          "text": "Is it (that) mine?"
+          "text": "Is it mine?",
+          "alternatives": [
+            "Is it that mine?"
+          ]
         },
         {
           "n": "33",

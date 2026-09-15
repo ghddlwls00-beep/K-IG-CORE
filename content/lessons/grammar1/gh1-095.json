@@ -52,7 +52,10 @@
         },
         {
           "n": "62",
-          "text": "Why was the vice president taking part(participating) in that project?"
+          "text": "Why was the vice president taking part in that project?",
+          "alternatives": [
+            "Why was the vice president taking participating in that project?"
+          ]
         },
         {
           "n": "63",
@@ -68,7 +71,10 @@
         },
         {
           "n": "66",
-          "text": "Everybody(everyone) likes the solution, don't they?"
+          "text": "Everybody likes the solution, don't they?",
+          "alternatives": [
+            "Everyone likes the solution, don't they?"
+          ]
         }
       ]
     },
@@ -81,7 +87,10 @@
       "items": [
         {
           "n": "67",
-          "text": "Everybody(everyone) liked the contract, didn't they?"
+          "text": "Everybody liked the contract, didn't they?",
+          "alternatives": [
+            "Everyone liked the contract, didn't they?"
+          ]
         }
       ]
     },
@@ -102,7 +111,10 @@
         },
         {
           "n": "70",
-          "text": "Every(Each) agency increases security."
+          "text": "Every agency increases security.",
+          "alternatives": [
+            "Each agency increases security."
+          ]
         }
       ]
     },
@@ -128,7 +140,10 @@
       "items": [
         {
           "n": "72",
-          "text": "Each(Every) boy worries about his future."
+          "text": "Each boy worries about his future.",
+          "alternatives": [
+            "Every boy worries about his future."
+          ]
         }
       ]
     },
@@ -141,7 +156,10 @@
       "items": [
         {
           "n": "73",
-          "text": "Every(Each) boy received a prize."
+          "text": "Every boy received a prize.",
+          "alternatives": [
+            "Each boy received a prize."
+          ]
         }
       ]
     },
@@ -154,11 +172,17 @@
       "items": [
         {
           "n": "74",
-          "text": "All the boys (Each boy, Every boy) ignored the advice."
+          "text": "All the boys ignored the advice.",
+          "alternatives": [
+            "All the boys Each boy, Every boy ignored the advice."
+          ]
         },
         {
           "n": "75",
-          "text": "Each(Every) boy did his homework."
+          "text": "Each boy did his homework.",
+          "alternatives": [
+            "Every boy did his homework."
+          ]
         }
       ]
     },
@@ -171,7 +195,10 @@
       "items": [
         {
           "n": "76",
-          "text": "Every(Each) priest attended the fundraiser, didn't he?"
+          "text": "Every priest attended the fundraiser, didn't he?",
+          "alternatives": [
+            "Each priest attended the fundraiser, didn't he?"
+          ]
         }
       ]
     },

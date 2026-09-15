@@ -77,7 +77,10 @@
         },
         {
           "n": "32",
-          "text": "I am, too.(So am I)."
+          "text": "I am, too.",
+          "alternatives": [
+            "So am I."
+          ]
         },
         {
           "n": "33",
@@ -93,7 +96,10 @@
         },
         {
           "n": "36",
-          "text": "I don't either, (Neither do I)."
+          "text": "I don't either.",
+          "alternatives": [
+            "Neither do I."
+          ]
         },
         {
           "n": "37",
@@ -101,11 +107,11 @@
         },
         {
           "n": "38",
-          "text": "Each (Every) student has his own room."
+          "text": "Each student has his own room."
         },
         {
           "n": "39",
-          "text": "He goes there each (every) year."
+          "text": "He goes there each year."
         },
         {
           "n": "40",

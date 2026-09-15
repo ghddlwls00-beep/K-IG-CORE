@@ -60,7 +60,10 @@
         },
         {
           "n": "32",
-          "text": "Are those(they) books?"
+          "text": "Are those books?",
+          "alternatives": [
+            "Are they books?"
+          ]
         },
         {
           "n": "33",
@@ -96,43 +99,73 @@
         },
         {
           "n": "41",
-          "text": "Am I not a boy(혹은 Ain't I a boy)?"
+          "text": "Am I not a boy?",
+          "alternatives": [
+            "Ain't I a boy?"
+          ]
         },
         {
           "n": "42",
-          "text": "Aren't you a girl(혹은 Are you not a girl)?"
+          "text": "Aren't you a girl?",
+          "alternatives": [
+            "Are you not a girl?"
+          ]
         },
         {
           "n": "43",
-          "text": "Isn't he a boy(혹은 Is he not a boy?)"
+          "text": "Isn't he a boy?",
+          "alternatives": [
+            "Is he not a boy?"
+          ]
         },
         {
           "n": "44",
-          "text": "Isn't she a girl(혹은 Is she not a girl)?"
+          "text": "Isn't she a girl?",
+          "alternatives": [
+            "Is she not a girl?"
+          ]
         },
         {
           "n": "45",
-          "text": "Isn't this a pen(혹은 Is this not a pen)?"
+          "text": "Isn't this a pen?",
+          "alternatives": [
+            "Is this not a pen?"
+          ]
         },
         {
           "n": "46",
-          "text": "Isn't it a book(혹은 Is it not a book)?"
+          "text": "Isn't it a book?",
+          "alternatives": [
+            "Is it not a book?"
+          ]
         },
         {
           "n": "47",
-          "text": "Aren't these pens(혹은 Are these not pens)?"
+          "text": "Aren't these pens?",
+          "alternatives": [
+            "Are these not pens?"
+          ]
         },
         {
           "n": "48",
-          "text": "Aren't those books(혹은 Are those not books)?"
+          "text": "Aren't those books?",
+          "alternatives": [
+            "Are those not books?"
+          ]
         },
         {
           "n": "49",
-          "text": "Aren't you happy(혹은 Are you not happy)?"
+          "text": "Aren't you happy?",
+          "alternatives": [
+            "Are you not happy?"
+          ]
         },
         {
           "n": "50",
-          "text": "Isn't she happy(혹은 Is she not happy)?"
+          "text": "Isn't she happy?",
+          "alternatives": [
+            "Is she not happy?"
+          ]
         }
       ]
     },

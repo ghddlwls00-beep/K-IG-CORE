@@ -76,7 +76,10 @@
         },
         {
           "n": "11",
-          "text": "The woman(She) received a letter."
+          "text": "The woman received a letter.",
+          "alternatives": [
+            "The She received a letter."
+          ]
         },
         {
           "n": "12",
@@ -100,7 +103,10 @@
         },
         {
           "n": "17",
-          "text": "Is there no evidence(Isn't there any evidence)?"
+          "text": "Is there no evidence?",
+          "alternatives": [
+            "Isn't there any evidence?"
+          ]
         },
         {
           "n": "18",

@@ -88,7 +88,11 @@
         },
         {
           "n": "105",
-          "text": "When am I going to(shall I, will I) meet your friends and your brothers?"
+          "text": "When am I going to meet your friends and your brothers?",
+          "alternatives": [
+            "When shall I meet your friends and your brothers?",
+            "When will I meet your friends and your brothers?"
+          ]
         },
         {
           "n": "106",
@@ -96,7 +100,10 @@
         },
         {
           "n": "107",
-          "text": "Did you get(reach) there on time?"
+          "text": "Did you get there on time?",
+          "alternatives": [
+            "Did you reach there on time?"
+          ]
         },
         {
           "n": "108",

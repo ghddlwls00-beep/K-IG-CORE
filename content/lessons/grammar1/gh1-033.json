@@ -1,148 +1,193 @@
 {
- "id": "gh1-033",
- "course": "grammar1",
- "series": "gh1",
- "variant": "script",
- "pairId": "gh1-032",
- "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
- "label": "[ Page 033 ]",
- "menuLabel": "[ gh1-033 ]",
- "unit": 33,
- "part": null,
- "order": 46,
- "audio": [
-  {
-   "src": "/audio/grammar1/gh1-033.mp3",
-   "legacySrc": "sounds/gh1-033.mp3",
-   "autoplay": true
-  }
- ],
- "video": [],
- "blocks": [
-  {
-   "type": "heading",
-   "text": "[ Page 033 ]"
-  },
-  {
-   "type": "instruction",
-   "text": "영작문제 3 답안"
-  },
-  {
-   "type": "instruction",
-   "text": "다음 문제를 영작해주세요."
-  },
-  {
-   "type": "sentences",
-   "items": [
+  "id": "gh1-033",
+  "course": "grammar1",
+  "series": "gh1",
+  "variant": "script",
+  "pairId": "gh1-032",
+  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+  "label": "[ Page 033 ]",
+  "menuLabel": "[ gh1-033 ]",
+  "unit": 33,
+  "part": null,
+  "order": 46,
+  "audio": [
     {
-     "n": "26",
-     "text": "Does he love her sister?"
-    },
-    {
-     "n": "27",
-     "text": "Do I love her?"
-    },
-    {
-     "n": "28",
-     "text": "Don't I love you(혹은 Do I not ---)?"
-    },
-    {
-     "n": "29",
-     "text": "Don't you love my sister(혹은 Do you not ---- )?"
-    },
-    {
-     "n": "30",
-     "text": "Doesn't he love me(혹은 Does he not ---)?"
-    },
-    {
-     "n": "31",
-     "text": "Doesn't she love your brother(혹은 Does she not ---)?"
-    },
-    {
-     "n": "32",
-     "text": "Don't they love you(혹은 Do they not---)?"
-    },
-    {
-     "n": "33",
-     "text": "Doesn't she love his brother(혹은 Does she not ---) ?"
-    },
-    {
-     "n": "34",
-     "text": "Don't I love him(혹은 Do I not ---)?"
-    },
-    {
-     "n": "35",
-     "text": "Doesn't he love her sister(혹은 Does he not --)?"
-    },
-    {
-     "n": "36",
-     "text": "Don't I love her(Do I not ---)? 37.This is mine."
-    },
-    {
-     "n": "38",
-     "text": "It is yours. 39.Those(They) are theirs."
-    },
-    {
-     "n": "40",
-     "text": "These are his."
-    },
-    {
-     "n": "41",
-     "text": "It is hers."
-    },
-    {
-     "n": "42",
-     "text": "Is this mine?"
-    },
-    {
-     "n": "43",
-     "text": "Is it yours?"
-    },
-    {
-     "n": "44",
-     "text": "Are those(they) theirs?"
-    },
-    {
-     "n": "45",
-     "text": "Are these his?"
-    },
-    {
-     "n": "46",
-     "text": "Is it hers?"
-    },
-    {
-     "n": "47",
-     "text": "Isn't this mine(혹은 Is this not mine?)"
-    },
-    {
-     "n": "48",
-     "text": "Isn't it yours(혹은 Is it not yours)?"
-    },
-    {
-     "n": "49",
-     "text": "Aren't they(those) yours(Are they not yours)?"
-    },
-    {
-     "n": "50",
-     "text": "Aren't these his?(Are these not his)?"
+      "src": "/audio/grammar1/gh1-033.mp3",
+      "legacySrc": "sounds/gh1-033.mp3",
+      "autoplay": true
     }
-   ]
-  },
-  {
-   "type": "choice",
-   "options": [
-    "1 번",
-    "2 번",
-    "3 번",
-    "4 번",
-    "5 번"
-   ]
-  },
-  {
-   "type": "dictation",
-   "rows": 10
-  }
- ],
- "legacyPath": "grammar1/gh1-033.htm",
- "legacyEncoding": "utf-8"
+  ],
+  "video": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "[ Page 033 ]"
+    },
+    {
+      "type": "instruction",
+      "text": "영작문제 3 답안"
+    },
+    {
+      "type": "instruction",
+      "text": "다음 문제를 영작해주세요."
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "26",
+          "text": "Does he love her sister?"
+        },
+        {
+          "n": "27",
+          "text": "Do I love her?"
+        },
+        {
+          "n": "28",
+          "text": "Don't I love you?",
+          "alternatives": [
+            "Do I not love you?"
+          ]
+        },
+        {
+          "n": "29",
+          "text": "Don't you love my sister?",
+          "alternatives": [
+            "Do you not love my sister?"
+          ]
+        },
+        {
+          "n": "30",
+          "text": "Doesn't he love me?",
+          "alternatives": [
+            "Does he not love me?"
+          ]
+        },
+        {
+          "n": "31",
+          "text": "Doesn't she love your brother?",
+          "alternatives": [
+            "Does she not love your brother?"
+          ]
+        },
+        {
+          "n": "32",
+          "text": "Don't they love you?",
+          "alternatives": [
+            "Do they not love you?"
+          ]
+        },
+        {
+          "n": "33",
+          "text": "Doesn't she love his brother?",
+          "alternatives": [
+            "Does she not love his brother?"
+          ]
+        },
+        {
+          "n": "34",
+          "text": "Don't I love him?",
+          "alternatives": [
+            "Do I not love him?"
+          ]
+        },
+        {
+          "n": "35",
+          "text": "Doesn't he love her sister?",
+          "alternatives": [
+            "Does he not love her sister?"
+          ]
+        },
+        {
+          "n": "36",
+          "text": "Don't I love her? 37.This is mine.",
+          "alternatives": [
+            "Do I not love her? 37.This is mine."
+          ]
+        },
+        {
+          "n": "38",
+          "text": "It is yours. 39.Those are theirs.",
+          "alternatives": [
+            "It is yours. They are theirs."
+          ]
+        },
+        {
+          "n": "40",
+          "text": "These are his."
+        },
+        {
+          "n": "41",
+          "text": "It is hers."
+        },
+        {
+          "n": "42",
+          "text": "Is this mine?"
+        },
+        {
+          "n": "43",
+          "text": "Is it yours?"
+        },
+        {
+          "n": "44",
+          "text": "Are those theirs?",
+          "alternatives": [
+            "Are they theirs?"
+          ]
+        },
+        {
+          "n": "45",
+          "text": "Are these his?"
+        },
+        {
+          "n": "46",
+          "text": "Is it hers?"
+        },
+        {
+          "n": "47",
+          "text": "Isn't this mine?",
+          "alternatives": [
+            "Is this not mine?"
+          ]
+        },
+        {
+          "n": "48",
+          "text": "Isn't it yours?",
+          "alternatives": [
+            "Is it not yours?"
+          ]
+        },
+        {
+          "n": "49",
+          "text": "Aren't they yours?",
+          "alternatives": [
+            "Are they not yours?"
+          ]
+        },
+        {
+          "n": "50",
+          "text": "Aren't these his?",
+          "alternatives": [
+            "Are these not his?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "options": [
+        "1 번",
+        "2 번",
+        "3 번",
+        "4 번",
+        "5 번"
+      ]
+    },
+    {
+      "type": "dictation",
+      "rows": 10
+    }
+  ],
+  "legacyPath": "grammar1/gh1-033.htm",
+  "legacyEncoding": "utf-8"
 }

@@ -40,11 +40,17 @@
       "items": [
         {
           "n": "27",
-          "text": "Don't your parents have a dream (dreams)?"
+          "text": "Don't your parents have a dream?",
+          "alternatives": [
+            "Don't your parents have dreams?"
+          ]
         },
         {
           "n": "28",
-          "text": "Doesn't your son have a dream (dreams)?"
+          "text": "Doesn't your son have a dream?",
+          "alternatives": [
+            "Doesn't your son have dreams?"
+          ]
         },
         {
           "n": "29",
@@ -132,7 +138,10 @@
         },
         {
           "n": "50",
-          "text": "Are they(those) your sister's books?"
+          "text": "Are they your sister's books?",
+          "alternatives": [
+            "Are those your sister's books?"
+          ]
         },
         {
           "n": "51",

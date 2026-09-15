@@ -40,7 +40,10 @@
         },
         {
           "n": "135",
-          "text": "You told me everything else(every other thing), didn't you?"
+          "text": "You told me everything else, didn't you?",
+          "alternatives": [
+            "You told me every other thing, didn't you?"
+          ]
         },
         {
           "n": "136",
@@ -76,11 +79,17 @@
         },
         {
           "n": "144",
-          "text": "Will the United States undoubtedly(without a doubt) face future terrorist threats?"
+          "text": "Will the United States undoubtedly face future terrorist threats?",
+          "alternatives": [
+            "Will the United States without a doubt face future terrorist threats?"
+          ]
         },
         {
           "n": "145",
-          "text": "When did our forces defeat adversaries(enemies)?"
+          "text": "When did our forces defeat adversaries?",
+          "alternatives": [
+            "When did our forces defeat enemies?"
+          ]
         },
         {
           "n": "146",
@@ -96,7 +105,10 @@
         },
         {
           "n": "149",
-          "text": "What was that(it) like then?"
+          "text": "What was that like then?",
+          "alternatives": [
+            "What was it like then?"
+          ]
         },
         {
           "n": "150",
@@ -104,11 +116,17 @@
         },
         {
           "n": "151",
-          "text": "Why don't you say that(it) again?"
+          "text": "Why don't you say that again?",
+          "alternatives": [
+            "Why don't you say it again?"
+          ]
         },
         {
           "n": "152",
-          "text": "Do you still see(meet) all of them?"
+          "text": "Do you still see all of them?",
+          "alternatives": [
+            "Do you still meet all of them?"
+          ]
         }
       ]
     },

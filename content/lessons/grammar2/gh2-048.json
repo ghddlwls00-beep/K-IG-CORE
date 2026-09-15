@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "1",
-          "text": "If I had enough money(Had I enough money), I would buy you a diamond ring."
+          "text": "If I had enough money, I would buy you a diamond ring.",
+          "alternatives": [
+            "Had I enough money, I would buy you a diamond ring."
+          ]
         },
         {
           "n": "2",
@@ -36,7 +39,10 @@
         },
         {
           "n": "3",
-          "text": "If I had known your phone number(Had I known your phone number),"
+          "text": "If I had known your phone number,.",
+          "alternatives": [
+            "Had I known your phone number,."
+          ]
         }
       ]
     },
@@ -69,7 +75,10 @@
         },
         {
           "n": "9",
-          "text": "If they had had the ability to make money(Had they had the ability to make money),"
+          "text": "If they had had the ability to make money,.",
+          "alternatives": [
+            "Had they had the ability to make money,."
+          ]
         }
       ]
     },
@@ -82,11 +91,17 @@
       "items": [
         {
           "n": "10",
-          "text": "He should be in high school now if he had not flunked a grade. (Had he not flunked a grade, he should be in high school now.)"
+          "text": "He should be in high school now if he had not flunked a grade.",
+          "alternatives": [
+            "Had he not flunked a grade, he should be in high school now."
+          ]
         },
         {
           "n": "11",
-          "text": "If the blood products had been heat treated(Had the blood product been heat treated),"
+          "text": "If the blood products had been heat treated,.",
+          "alternatives": [
+            "Had the blood product been heat treated,."
+          ]
         }
       ]
     },
@@ -107,15 +122,25 @@
         },
         {
           "n": "14",
-          "text": "(Were it not for the sun,) nothing could live.(If it were not for the sun,) nothing could live."
+          "text": "Were it not for the sun, nothing could live.",
+          "alternatives": [
+            "If it were not for the sun, nothing could live."
+          ]
         },
         {
           "n": "15",
-          "text": "Should I have been(If I had been, had I been) three minutes late, I should have missed the train."
+          "text": "Should I have been three minutes late, I should have missed the train.",
+          "alternatives": [
+            "If I had been three minutes late, I should have missed the train.",
+            "Had I been three minutes late, I should have missed the train."
+          ]
         },
         {
           "n": "16",
-          "text": "Should you not go, he would go. (If you should not go,) he would go."
+          "text": "Should you not go, he would go. he would go.",
+          "alternatives": [
+            "If you should not go,."
+          ]
         }
       ]
     },

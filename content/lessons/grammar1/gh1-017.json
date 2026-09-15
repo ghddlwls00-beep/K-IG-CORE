@@ -40,19 +40,35 @@
         },
         {
           "n": "2",
-          "text": "Each boy receives a prize(혹은 prizes)."
+          "text": "Each boy receives a prize.",
+          "alternatives": [
+            "Each boy receives prizes."
+          ]
         },
         {
           "n": "3",
-          "text": "Every boy receives a prize(혹은 prizes)."
+          "text": "Every boy receives a prize.",
+          "alternatives": [
+            "Every boy receives prizes."
+          ]
         },
         {
           "n": "4",
-          "text": "All (the) boys receive a prize(혹은 prizes)."
+          "text": "All boys receive a prize.",
+          "alternatives": [
+            "All the boys receive prizes.",
+            "All boys receive prizes.",
+            "All the boys receive a prize."
+          ]
         },
         {
           "n": "5",
-          "text": "All (the) boys do not receive a prize(혹은 prizes)."
+          "text": "All boys do not receive a prize.",
+          "alternatives": [
+            "All the boys do not receive prizes.",
+            "All boys do not receive prizes.",
+            "All the boys do not receive a prize."
+          ]
         },
         {
           "n": "6",
@@ -124,7 +140,10 @@
         },
         {
           "n": "23",
-          "text": "How many girls were (there) in the classroom?"
+          "text": "How many girls were in the classroom?",
+          "alternatives": [
+            "How many girls were there in the classroom?"
+          ]
         },
         {
           "n": "24",
@@ -148,7 +167,10 @@
         },
         {
           "n": "29",
-          "text": "How much did you like it(that)?"
+          "text": "How much did you like it?",
+          "alternatives": [
+            "How much did you like that?"
+          ]
         },
         {
           "n": "30",

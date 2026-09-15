@@ -64,7 +64,7 @@
         },
         {
           "n": "7",
-          "text": "Is that (the) car yours?"
+          "text": "Is that car yours?"
         },
         {
           "n": "8",
@@ -140,7 +140,12 @@
         },
         {
           "n": "26",
-          "text": "Do your son(s) and daughter(s) have a dream (dreams)?"
+          "text": "Do your son and daughter have a dream?",
+          "alternatives": [
+            "Do your sons and daughter have a dream?",
+            "Do your son and daughters have a dream?",
+            "Do your sons and daughters have a dream?"
+          ]
         }
       ]
     },

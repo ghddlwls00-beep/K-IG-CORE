@@ -40,19 +40,31 @@
         },
         {
           "n": "42",
-          "text": "Isn't this mine(혹은 Is this not mine?)"
+          "text": "Isn't this mine?",
+          "alternatives": [
+            "Is this not mine?"
+          ]
         },
         {
           "n": "43",
-          "text": "Isn't it yours(혹은 Is it not yours)?"
+          "text": "Isn't it yours?",
+          "alternatives": [
+            "Is it not yours?"
+          ]
         },
         {
           "n": "44",
-          "text": "Aren't they(those) yours(Are they not yours)?"
+          "text": "Aren't they yours?",
+          "alternatives": [
+            "Are they not yours?"
+          ]
         },
         {
           "n": "45",
-          "text": "Aren't these his?(Are these not his)?"
+          "text": "Aren't these his?",
+          "alternatives": [
+            "Are these not his?"
+          ]
         },
         {
           "n": "46",
@@ -152,47 +164,80 @@
         },
         {
           "n": "70",
-          "text": "Am I not studying English(혹은 Ain't I studying English)?"
+          "text": "Am I not studying English?",
+          "alternatives": [
+            "Ain't I studying English?"
+          ]
         },
         {
           "n": "71",
-          "text": "Aren't you studying English(혹은 Are you not studying English)?"
+          "text": "Aren't you studying English?",
+          "alternatives": [
+            "Are you not studying English?"
+          ]
         },
         {
           "n": "72",
-          "text": "Isn't he studying English?(혹은 Is he not studying English)?"
+          "text": "Isn't he studying English?",
+          "alternatives": [
+            "Is he not studying English?"
+          ]
         },
         {
           "n": "73",
-          "text": "Isn't she studying English(혹은Is she not studying English)?"
+          "text": "Isn't she studying English?",
+          "alternatives": [
+            "Is she not studying English?"
+          ]
         },
         {
           "n": "74",
-          "text": "Aren't they studying English(혹은 Are they not studying English)?"
+          "text": "Aren't they studying English?",
+          "alternatives": [
+            "Are they not studying English?"
+          ]
         },
         {
           "n": "75",
-          "text": "Was I not studying English(혹은 Wasn't I studying English)?"
+          "text": "Was I not studying English?",
+          "alternatives": [
+            "Wasn't I studying English?"
+          ]
         },
         {
           "n": "76",
-          "text": "Were you not studying English(혹은 Weren't you studying English)"
+          "text": "Were you not studying English.",
+          "alternatives": [
+            "Weren't you studying English."
+          ]
         },
         {
           "n": "77",
-          "text": "Wasn't he studying English(혹은 Was he not studying English)?"
+          "text": "Wasn't he studying English?",
+          "alternatives": [
+            "Was he not studying English?"
+          ]
         },
         {
           "n": "78",
-          "text": "Wasn't she studying English(혹은 Was she not studying English)?"
+          "text": "Wasn't she studying English?",
+          "alternatives": [
+            "Was she not studying English?"
+          ]
         },
         {
           "n": "79",
-          "text": "Weren't they studying English(혹은 Were they not studying English)?"
+          "text": "Weren't they studying English?",
+          "alternatives": [
+            "Were they not studying English?"
+          ]
         },
         {
           "n": "80",
-          "text": "This is a pen, isn't this(혹은 This is a pen, is this not)?"
+          "text": "This is a pen, isn't this?",
+          "alternatives": [
+            "This is a pen?"
+          ]
         }
       ]
     },

@@ -56,7 +56,10 @@
         },
         {
           "n": "6",
-          "text": "Are those(they) books?"
+          "text": "Are those books?",
+          "alternatives": [
+            "Are they books?"
+          ]
         },
         {
           "n": "7",
@@ -76,51 +79,87 @@
         },
         {
           "n": "11",
-          "text": "Isn't he a boy(혹은 Is he not a boy?)"
+          "text": "Isn't he a boy?",
+          "alternatives": [
+            "Is he not a boy?"
+          ]
         },
         {
           "n": "12",
-          "text": "Isn't she a girl(혹은 Is she not a girl)?"
+          "text": "Isn't she a girl?",
+          "alternatives": [
+            "Is she not a girl?"
+          ]
         },
         {
           "n": "13",
-          "text": "Isn't this a pen(혹은 Is this not a pen)?"
+          "text": "Isn't this a pen?",
+          "alternatives": [
+            "Is this not a pen?"
+          ]
         },
         {
           "n": "14",
-          "text": "Isn't it a book(혹은 Is it not a book)?"
+          "text": "Isn't it a book?",
+          "alternatives": [
+            "Is it not a book?"
+          ]
         },
         {
           "n": "15",
-          "text": "Aren't these pens(혹은 Are these not pens)?"
+          "text": "Aren't these pens?",
+          "alternatives": [
+            "Are these not pens?"
+          ]
         },
         {
           "n": "16",
-          "text": "Aren't those books(혹은 Are those not books)?"
+          "text": "Aren't those books?",
+          "alternatives": [
+            "Are those not books?"
+          ]
         },
         {
           "n": "17",
-          "text": "Wasn't this a pen(혹은 Was this not a pen)?"
+          "text": "Wasn't this a pen?",
+          "alternatives": [
+            "Was this not a pen?"
+          ]
         },
         {
           "n": "18",
-          "text": "Wasn't it a book(혹은 Was it not a book)?"
+          "text": "Wasn't it a book?",
+          "alternatives": [
+            "Was it not a book?"
+          ]
         },
         {
           "n": "19",
-          "text": "Weren't these pens(혹은 Were these not pens)?"
+          "text": "Weren't these pens?",
+          "alternatives": [
+            "Were these not pens?"
+          ]
         },
         {
           "n": "20",
-          "text": "Weren't those books(혹은 Were those not books)?"
+          "text": "Weren't those books?",
+          "alternatives": [
+            "Were those not books?"
+          ]
         },
         {
           "n": "21",
-          "text": "Weren't you happy(혹은 Were you not happy)?"
+          "text": "Weren't you happy?",
+          "alternatives": [
+            "Were you not happy?"
+          ]
         },
         {
           "n": "22",
-          "text": "Wasn't she happy(혹은 Was she not happy)?"
+          "text": "Wasn't she happy?",
+          "alternatives": [
+            "Was she not happy?"
+          ]
         },
         {
           "n": "23",
@@ -140,23 +179,38 @@
         },
         {
           "n": "27",
-          "text": "Doesn't he love me(혹은 Does he not ---)?"
+          "text": "Doesn't he love me?",
+          "alternatives": [
+            "Does he not love me?"
+          ]
         },
         {
           "n": "28",
-          "text": "Doesn't she love your brother(혹은 Does she not ---)?"
+          "text": "Doesn't she love your brother?",
+          "alternatives": [
+            "Does she not love your brother?"
+          ]
         },
         {
           "n": "29",
-          "text": "Don't they love you(혹은 Do they not---)?"
+          "text": "Don't they love you?",
+          "alternatives": [
+            "Do they not love you?"
+          ]
         },
         {
           "n": "30",
-          "text": "Doesn't she love his brother(혹은 Does she not ---) ?"
+          "text": "Doesn't she love his brother?",
+          "alternatives": [
+            "Does she not love his brother?"
+          ]
         },
         {
           "n": "31",
-          "text": "Doesn't he love her sister(혹은 Does he not --)?"
+          "text": "Doesn't he love her sister?",
+          "alternatives": [
+            "Does he not love her sister?"
+          ]
         },
         {
           "n": "32",
@@ -168,7 +222,10 @@
         },
         {
           "n": "34",
-          "text": "Those(They) are theirs."
+          "text": "Those are theirs.",
+          "alternatives": [
+            "They are theirs."
+          ]
         },
         {
           "n": "35",
@@ -188,7 +245,10 @@
         },
         {
           "n": "39",
-          "text": "Are those(they) theirs?"
+          "text": "Are those theirs?",
+          "alternatives": [
+            "Are they theirs?"
+          ]
         },
         {
           "n": "40",

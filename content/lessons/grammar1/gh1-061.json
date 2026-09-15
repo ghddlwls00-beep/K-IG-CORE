@@ -112,7 +112,10 @@
         },
         {
           "n": "20",
-          "text": "How many boys were (there) in the library?"
+          "text": "How many boys were in the library?",
+          "alternatives": [
+            "How many boys were there in the library?"
+          ]
         },
         {
           "n": "21",
@@ -140,7 +143,10 @@
         },
         {
           "n": "27",
-          "text": "Why doesn't he (does he not) welcome me?"
+          "text": "Why doesn't he welcome me?",
+          "alternatives": [
+            "Why does he not welcome me?"
+          ]
         },
         {
           "n": "28",

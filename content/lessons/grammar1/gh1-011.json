@@ -64,7 +64,10 @@
         },
         {
           "n": "8",
-          "text": "They have dreams (혹은 a dream.)"
+          "text": "They have dreams.",
+          "alternatives": [
+            "They have a dream."
+          ]
         },
         {
           "n": "9",
@@ -108,7 +111,10 @@
         },
         {
           "n": "19",
-          "text": "Do they have dreams (혹은 a dream)?"
+          "text": "Do they have dreams?",
+          "alternatives": [
+            "Do they have a dream?"
+          ]
         },
         {
           "n": "20",
@@ -176,19 +182,31 @@
         },
         {
           "n": "36",
-          "text": "Did he like it(that)?"
+          "text": "Did he like it?",
+          "alternatives": [
+            "Did he like that?"
+          ]
         },
         {
           "n": "37",
-          "text": "Did they like it(that)?"
+          "text": "Did they like it?",
+          "alternatives": [
+            "Did they like that?"
+          ]
         },
         {
           "n": "38",
-          "text": "Wasn't there a boy? (Was there not a boy?)"
+          "text": "Wasn't there a boy?",
+          "alternatives": [
+            "Was there not a boy?"
+          ]
         },
         {
           "n": "39",
-          "text": "Weren't there boys? (Were there not boys?)"
+          "text": "Weren't there boys?",
+          "alternatives": [
+            "Were there not boys?"
+          ]
         },
         {
           "n": "40",
@@ -204,19 +222,31 @@
         },
         {
           "n": "43",
-          "text": "Didn't they have dreams? (혹은 a dream)?"
+          "text": "Didn't they have dreams?",
+          "alternatives": [
+            "Didn't they have a dream?"
+          ]
         },
         {
           "n": "44",
-          "text": "Didn't you like it(that)?"
+          "text": "Didn't you like it?",
+          "alternatives": [
+            "Didn't you like that?"
+          ]
         },
         {
           "n": "45",
-          "text": "Didn't he like it(that)?"
+          "text": "Didn't he like it?",
+          "alternatives": [
+            "Didn't he like that?"
+          ]
         },
         {
           "n": "46",
-          "text": "Didn't they like it(that)?"
+          "text": "Didn't they like it?",
+          "alternatives": [
+            "Didn't they like that?"
+          ]
         }
       ]
     },

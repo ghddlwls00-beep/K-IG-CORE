@@ -60,7 +60,16 @@
         },
         {
           "n": "26",
-          "text": "Do your son(s) and daughter(s) have pets(a pet)?"
+          "text": "Do your son and daughter have pets?",
+          "alternatives": [
+            "Do your son and daughter have a pet?",
+            "Do your sons and daughter have pets?",
+            "Do your sons and daughter have a pet?",
+            "Do your son and daughters have pets?",
+            "Do your son and daughters have a pet?",
+            "Do your sons and daughters have pets?",
+            "Do your sons and daughters have a pet?"
+          ]
         },
         {
           "n": "27",
@@ -104,7 +113,10 @@
         },
         {
           "n": "37",
-          "text": "Do they take airplanes frequently(often)?"
+          "text": "Do they take airplanes frequently?",
+          "alternatives": [
+            "Do they take airplanes often?"
+          ]
         },
         {
           "n": "38",
@@ -112,7 +124,10 @@
         },
         {
           "n": "39",
-          "text": "Why does it take place(happen) outside the border?"
+          "text": "Why does it take place outside the border?",
+          "alternatives": [
+            "Why does it take happen outside the border?"
+          ]
         }
       ]
     },

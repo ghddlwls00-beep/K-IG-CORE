@@ -48,7 +48,10 @@
         },
         {
           "n": "4",
-          "text": "The company constructs(builds) the most moving memorial possible."
+          "text": "The company constructs the most moving memorial possible.",
+          "alternatives": [
+            "The company builds the most moving memorial possible."
+          ]
         },
         {
           "n": "5",
@@ -60,7 +63,10 @@
         },
         {
           "n": "7",
-          "text": "It will handle(deal with) redevelopment."
+          "text": "It will handle redevelopment.",
+          "alternatives": [
+            "It will deal with redevelopment."
+          ]
         },
         {
           "n": "8",
@@ -116,7 +122,12 @@
         },
         {
           "n": "21",
-          "text": "(The) Palestinians and (the) Israelis must act."
+          "text": "Palestinians and Israelis must act.",
+          "alternatives": [
+            "The Palestinians and the Israelis must act.",
+            "The Palestinians and Israelis must act.",
+            "Palestinians and the Israelis must act."
+          ]
         },
         {
           "n": "22",

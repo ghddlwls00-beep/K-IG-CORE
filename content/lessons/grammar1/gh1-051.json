@@ -60,7 +60,10 @@
         },
         {
           "n": "7",
-          "text": "This is my hat(cap)."
+          "text": "This is my hat.",
+          "alternatives": [
+            "This is my cap."
+          ]
         },
         {
           "n": "8",
@@ -68,7 +71,10 @@
         },
         {
           "n": "9",
-          "text": "Those(They) are their guns."
+          "text": "Those are their guns.",
+          "alternatives": [
+            "They are their guns."
+          ]
         },
         {
           "n": "10",
@@ -80,7 +86,10 @@
         },
         {
           "n": "12",
-          "text": "It(That) is mine."
+          "text": "It is mine.",
+          "alternatives": [
+            "That is mine."
+          ]
         },
         {
           "n": "13",
@@ -144,7 +153,10 @@
         },
         {
           "n": "28",
-          "text": "Whose car is that(it)?"
+          "text": "Whose car is that?",
+          "alternatives": [
+            "Whose car is it?"
+          ]
         },
         {
           "n": "29",
@@ -156,11 +168,17 @@
         },
         {
           "n": "31",
-          "text": "Are they(those) yours?"
+          "text": "Are they yours?",
+          "alternatives": [
+            "Are those yours?"
+          ]
         },
         {
           "n": "32",
-          "text": "Is it (that) mine?"
+          "text": "Is it mine?",
+          "alternatives": [
+            "Is it that mine?"
+          ]
         },
         {
           "n": "33",

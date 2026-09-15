@@ -64,7 +64,10 @@
         },
         {
           "n": "8",
-          "text": "Whose books are they(those)?"
+          "text": "Whose books are they?",
+          "alternatives": [
+            "Whose books are those?"
+          ]
         },
         {
           "n": "9",
@@ -76,11 +79,17 @@
         },
         {
           "n": "11",
-          "text": "Which (What) book do you want?"
+          "text": "Which book do you want?",
+          "alternatives": [
+            "Which What book do you want?"
+          ]
         },
         {
           "n": "12",
-          "text": "Which(What) do you want?"
+          "text": "Which do you want?",
+          "alternatives": [
+            "What do you want?"
+          ]
         },
         {
           "n": "13",
@@ -92,7 +101,10 @@
         },
         {
           "n": "15",
-          "text": "You didn't have (eat) lunch, did you?"
+          "text": "You didn't have lunch, did you?",
+          "alternatives": [
+            "You didn't eat lunch, did you?"
+          ]
         },
         {
           "n": "16",
@@ -108,7 +120,10 @@
         },
         {
           "n": "19",
-          "text": "I want apples (혹은 an apple)."
+          "text": "I want apples.",
+          "alternatives": [
+            "I want an apple."
+          ]
         },
         {
           "n": "20",
