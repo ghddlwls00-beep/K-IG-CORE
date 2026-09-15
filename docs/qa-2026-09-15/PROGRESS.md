@@ -669,20 +669,37 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 ```bash
 # 1) 재추출 먼저 (복사본에서, --no-media)
 # 2) 그 다음에 이식 — 반드시 --write 없이 먼저 확인
-node docs/qa-2026-09-15/scripts/apply-kig006.cjs                 # dry-run: 297건 확인
+node docs/qa-2026-09-15/scripts/apply-kig006.cjs                 # dry-run: 297건 (text 변경 297 / 대안만 0)
 node docs/qa-2026-09-15/scripts/apply-kig006.cjs --write         # 적용
 # 3) 검증
 npx tsc --noEmit
 node docs/qa-2026-09-15/scripts/verify-kig006-multiparen.cjs     # 14/14
 node docs/qa-2026-09-15/scripts/verify-kig006-determiners.cjs    # 47/47
 node docs/qa-2026-09-15/scripts/verify-kig006-proposals.cjs      # 19/19
+# 4) 🔴 음성 클립 재생성 — 필수. 2)에서 무효화된 297문장이 여기서 되살아납니다.
+node scripts/generate-azure-ava.mjs --dry-run                    # pending 이 297 근처인지 확인
+node scripts/generate-azure-ava.mjs --concurrency 4
+node scripts/upload-azure-ava-r2.mjs
+node scripts/generate-azure-ava.mjs --dry-run                    # pending: 0 확인
 ```
+
+- 4)는 `.env.local`(`AZURE_SPEECH_KEY`/`AZURE_SPEECH_REGION` + R2 자격증명)이 있어야 합니다.
+  **없으면 2)를 실행하지 마세요.** 무효화된 클립을 되살릴 수단 없이 `content/` 만 바꾸면
+  그 297문장은 무음인 채로 배포됩니다.
+- 4)의 `--dry-run` 에서 pending 이 297보다 **훨씬 크게**(예: 수만 건) 나오면 R2 자격증명이 없는 것입니다.
+  그 상태로 생성을 돌리면 전 코퍼스를 다시 굽습니다. 경고를 무시하지 마세요 (§아래 경고).
 
 - `apply-kig006.cjs` 는 **멱등**합니다 (2회차 0건, 바이트 동일). 중간에 죽어도 다시 돌리면 됩니다.
 - `kig006-korean-concordance.md` 의 REVIEW 7건은 판정 완료했으나, **짝 한국어 페이지와
   아카이브 실물로 최종 확인**하는 것이 좋습니다.
-- `content/` 텍스트가 바뀌므로 **음성 클립 재생성**이 필요합니다 (§아래 경고 참조).
-  단 KIG-006 은 대안 정답만 추가하는 것이라 주정답 텍스트 변화는 0건입니다 → 클립 영향 없음.
+- `content/` 텍스트가 바뀌므로 **음성 클립 재생성이 필수**입니다 (§아래 경고 참조).
+  **이식은 아래 4) 음성 단계와 한 묶음입니다. 따로 하지 마세요.**
+  - 클립 키는 `text` 의 해시이고, 이식은 `text` 를 **직접 덮어씁니다**(`apply-kig006.cjs` 의 `item.text = split.text`).
+    실측: 이식 대상 **297건 전부가 `text` 를 바꿉니다**(대안만 추가되는 건 0건). 대안 320개가 함께 생깁니다.
+    따라서 **이식 직후 297문장이 무음**이 됩니다 — KIG-002 가 READING 음성을 40.6%까지 떨어뜨린 것과 같은 사고입니다.
+  - ⚠️ 2026-09-16 이전에 이 자리에 "대안만 추가하므로 클립 영향 없음"이라고 적혀 있었습니다. **그 판단은 틀렸습니다.**
+    `apply-kig006.cjs` 의 `changed` 카운터가 `text` 와 `alternatives` 를 한 숫자로 세고 있어서
+    "대안만 추가"와 "text 변경"을 구별할 수 없었던 것이 원인입니다. 이제 리포트가 두 수를 분리해 출력합니다.
 
 ### ⏸️ gh1-032/033 재정렬 — 보류 상태
 

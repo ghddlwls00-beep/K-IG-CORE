@@ -140,6 +140,13 @@ const stats = {
   files: 0,
   items: 0,
   changed: 0,
+  // `text` and `alternatives` are counted apart on purpose. `text` is what the
+  // speech clips are keyed on (a hash of the sentence), so rewriting it
+  // invalidates that sentence's clip; merely ADDING an alternative does not.
+  // Reporting the two as one number is how an earlier session concluded "no
+  // clip impact" about a pass that in fact rewrote 297 sentences.
+  textChanged: 0,
+  altOnly: 0,
   skippedNoParen: 0,
   unresolved: [],
   byCourse: {},
@@ -171,14 +178,16 @@ for (const { course, file } of lessonFiles()) {
         stats.unresolved.push({ file: path.basename(file), n: item.n, en: item.text });
         continue;
       }
-      if (
-        item.text !== split.text ||
-        JSON.stringify(item.alternatives) !== JSON.stringify(split.alternatives)
-      ) {
+      const textChanged = item.text !== split.text;
+      const altChanged =
+        JSON.stringify(item.alternatives) !== JSON.stringify(split.alternatives);
+      if (textChanged || altChanged) {
         item.text = split.text;
         if (split.alternatives.length) item.alternatives = split.alternatives;
         else delete item.alternatives;
         stats.changed++;
+        if (textChanged) stats.textChanged++;
+        else stats.altOnly++;
         dirty = true;
         stats.byCourse[course] = (stats.byCourse[course] || 0) + 1;
       }
@@ -197,7 +206,20 @@ console.log(`lesson files read  : ${stats.files}`);
 console.log(`sentence items     : ${stats.items}`);
 console.log(`already clean      : ${stats.skippedNoParen}`);
 console.log(`items to rewrite   : ${stats.changed}`);
+console.log(`    text changed   : ${stats.textChanged}   <- invalidates this many speech clips`);
+console.log(`    alternatives   : ${stats.altOnly}   (added without touching text; no clip impact)`);
 for (const [c, n] of Object.entries(stats.byCourse)) console.log(`    ${c.padEnd(12)} ${n}`);
+if (stats.textChanged > 0) {
+  console.log(
+    `\n🔴 ${stats.textChanged} sentences get new text. Clips are keyed on a hash of the text,\n` +
+      `   so those clips no longer match. Run the audio pass in the same change:\n` +
+      `     node scripts/generate-azure-ava.mjs --dry-run   # pending should be ~${stats.textChanged}\n` +
+      `     node scripts/generate-azure-ava.mjs --concurrency 4\n` +
+      `     node scripts/upload-azure-ava-r2.mjs\n` +
+      `     node scripts/generate-azure-ava.mjs --dry-run   # pending: 0\n` +
+      `   Requires .env.local (AZURE_SPEECH_KEY/REGION + R2). See PROGRESS.md §3.`
+  );
+}
 if (stats.unresolved.length) {
   console.log(`\nUNRESOLVED (${stats.unresolved.length}) — a paren survived; fix before applying:`);
   for (const u of stats.unresolved.slice(0, 25)) {
