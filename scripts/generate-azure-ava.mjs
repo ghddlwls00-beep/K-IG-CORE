@@ -105,24 +105,59 @@ function collectValue(value, key, output, inWordGrid = false) {
 }
 
 /**
- * Loads generateLiaisonPoints out of the TypeScript source and runs it over
- * every Listening script sentence, returning each card's spoken phrase.
+ * Loads a TypeScript module from src/ so this script can call the very function
+ * the component calls.
  *
- * listeningUtils.ts has no imports, so transpiling it on its own is enough;
- * if that ever changes this will throw rather than silently collect nothing.
+ * Reproducing a component's string here instead is how clips go missing: the
+ * VOCA collocation card speaks `getCollocation(...).phrase`, which lowercases
+ * the word, while this script used to rebuild the template from the raw
+ * dictionary key. "vital role of English" was generated and "vital role of
+ * english" was played, so 26 cards had no clip.
+ *
+ * Only modules without imports can be transpiled alone; if one gains an import
+ * this throws rather than silently collecting nothing.
  */
-function collectLiaisonPhrases() {
-  const source = path.join(ROOT, "src", "lib", "listeningUtils.ts");
-  const scripts = path.join(ROOT, "content", "ld_english_scripts.json");
-  if (!fs.existsSync(source) || !fs.existsSync(scripts)) return [];
-
-  const ts = createRequire(import.meta.url)(path.join(ROOT, "node_modules", "typescript"));
-  const js = ts.transpileModule(fs.readFileSync(source, "utf8"), {
+function loadTsModule(relativePath) {
+  const file = path.join(ROOT, relativePath);
+  if (!fs.existsSync(file)) return null;
+  const req = createRequire(import.meta.url);
+  const ts = req(path.join(ROOT, "node_modules", "typescript"));
+  const js = ts.transpileModule(fs.readFileSync(file, "utf8"), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
   }).outputText;
   const module = { exports: {} };
-  new Function("module", "exports", "require", js)(module, module.exports, createRequire(import.meta.url));
-  const generate = module.exports.generateLiaisonPoints;
+  new Function("module", "exports", "require", js)(module, module.exports, req);
+  return module.exports;
+}
+
+/**
+ * Every phrase the VOCA collocation card can speak, taken from the component's
+ * own function so the two cannot drift.
+ */
+function collectCollocationPhrases(dictionary) {
+  const voca = loadTsModule("src/lib/vocaUtils.ts");
+  const getCollocation = voca?.getCollocation;
+  if (typeof getCollocation !== "function") throw new Error("getCollocation not found");
+
+  const phrases = new Set();
+  for (const [word, entry] of Object.entries(dictionary)) {
+    const meaning = entry?.meaning || entry?.korean || "";
+    const item = getCollocation(word, meaning, entry?.searchWord);
+    if (item?.phrase) phrases.add(item.phrase);
+  }
+  return [...phrases];
+}
+
+/**
+ * Runs generateLiaisonPoints over every Listening script sentence, returning
+ * each card's spoken phrase.
+ */
+function collectLiaisonPhrases() {
+  const scripts = path.join(ROOT, "content", "ld_english_scripts.json");
+  if (!fs.existsSync(scripts)) return [];
+
+  const listening = loadTsModule("src/lib/listeningUtils.ts");
+  const generate = listening?.generateLiaisonPoints;
   if (typeof generate !== "function") throw new Error("generateLiaisonPoints not found");
 
   const phrases = new Set();
@@ -213,16 +248,10 @@ function collectTexts() {
     const dictionary = JSON.parse(fs.readFileSync(dictionaryFile, "utf8"));
     collectValue(dictionary, "", raw);
     for (const [word, entry] of Object.entries(dictionary)) {
-      const spokenWord = entry?.searchWord || word;
-      raw.add(spokenWord);
-      raw.add(`vital role of ${spokenWord}`);
+      raw.add(entry?.searchWord || word);
     }
-  }
-
-  const vocaUtils = path.join(ROOT, "src", "lib", "vocaUtils.ts");
-  if (fs.existsSync(vocaUtils)) {
-    const source = fs.readFileSync(vocaUtils, "utf8");
-    for (const match of source.matchAll(/\bphrase:\s*"([^"]+)"/g)) raw.add(match[1]);
+    // Ask the component's own function rather than rebuilding its template.
+    for (const phrase of collectCollocationPhrases(dictionary)) raw.add(phrase);
   }
 
   // KIG-015: the Listening sound clinic speaks each liaison card's `original`
