@@ -26,7 +26,29 @@ export async function generateMetadata({
   const { lesson: id } = await params;
   const lesson = getLesson("student", id);
   if (!lesson) return { title: "K-IG 교육" };
-  return { title: formatLessonPresentation("student", lesson).title };
+  const pres = formatLessonPresentation("student", lesson);
+  // RE-011/RE-012: STUDENT lessons live on their own route, so they need their
+  // own canonical + share card exactly like the shared `[course]/[lesson]`
+  // route. Without the canonical they were declared duplicates of "/".
+  const canonical = `/student/${id}`;
+  const title = pres.title;
+  const description = lesson.menuLabel
+    ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
+    : `${pres.title}. K-IG 핵심 어학 과정.`;
+  const image = "/images/sections/students.jpg";
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: canonical,
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
 }
 
 export default async function StudentLessonPage({

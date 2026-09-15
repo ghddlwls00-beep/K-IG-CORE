@@ -9,13 +9,39 @@ export function generateStaticParams() {
   return getTabs().map((t) => ({ tab: t.slug }));
 }
 
+/** Used when a tab has no blurb of its own, so a share card is never blank. */
+const TAB_FALLBACK_DESCRIPTION =
+  "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.";
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ tab: string }>;
 }): Promise<Metadata> {
   const { tab } = await params;
-  return { title: getTab(tab)?.label ?? "K-IG 교육" };
+  const section = getTab(tab);
+  // RE-011: this route used to return only a title, so it inherited the root
+  // layout's former global `canonical: "/"` and every section page told search
+  // engines it was a duplicate of the home page. It now names its own URL.
+  const canonical = `/t/${tab}`;
+  const title = section?.label ?? "K-IG 교육";
+  const description = section?.blurb || TAB_FALLBACK_DESCRIPTION;
+  // RE-012: the same section photograph the page renders as its banner, so a
+  // link shared into KakaoTalk previews as the page it points at.
+  const image = TAB_IMAGES[tab]?.src || "/images/sections/students.jpg";
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "website",
+      title,
+      description,
+      url: canonical,
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
 }
 
 export default async function TabPage({ params }: { params: Promise<{ tab: string }> }) {
