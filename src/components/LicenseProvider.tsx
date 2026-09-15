@@ -18,6 +18,16 @@ interface StoredLicense {
   token?: string;
 }
 
+/**
+ * Lesson routes whose access control now runs on the server (KIG-001).
+ * Activating a license while on one of these pages has to trigger a reload so
+ * the server sees the new session cookie and renders the lesson body instead of
+ * the paywall. Kept as an allow-list so the reload never fires on list pages,
+ * the section pages or any non-lesson route.
+ */
+const SERVER_GATED_LESSON_PATH =
+  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|student)\/[^/]+$/;
+
 interface LicenseContextType {
   hasActiveLicense: boolean;
   licenseInfo: LicenseInfo | null;
@@ -111,7 +121,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
             .then((data) => {
               if (data.valid) {
                 setStored(parsed);
-                if (window.location.pathname.startsWith("/student/")) {
+                if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
                   const reloadKey = `kig:license-cookie:${storedToken.slice(-16)}`;
                   if (!window.sessionStorage.getItem(reloadKey)) {
                     window.sessionStorage.setItem(reloadKey, "1");
@@ -252,7 +262,18 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(newStored));
         setStored(newStored);
         window.setTimeout(() => {
-          if (window.location.pathname.startsWith("/student")) window.location.reload();
+          if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
+            // Pre-arm the same guard the mount-time verification uses, so the
+            // reload below doesn't trigger a second one once the page comes back
+            // with a valid session cookie.
+            if (newStored.token) {
+              window.sessionStorage.setItem(
+                `kig:license-cookie:${newStored.token.slice(-16)}`,
+                "1",
+              );
+            }
+            window.location.reload();
+          }
         }, 250);
         return {
           success: true,
@@ -291,6 +312,15 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       setStored(null);
     } catch {
       // ignore
+    }
+
+    // Lesson routes are gated on the server now, so dropping the client state is
+    // not enough on its own: without a reload the body that was already rendered
+    // for a licensed visitor would stay on screen until the next navigation.
+    // The deactivate endpoint expires the session cookie, so the reload lands on
+    // the paywall. No loop risk — there is no stored license to verify afterwards.
+    if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
+      window.location.reload();
     }
   }
 

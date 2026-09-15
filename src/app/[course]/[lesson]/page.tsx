@@ -1,14 +1,20 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import type { Metadata } from "next";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { LessonBody } from "@/components/LessonBody";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
-import { LessonClientGate } from "@/components/LessonClientGate";
+import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
 import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
+import { isStudentOnlyPlan } from "@/lib/license";
+import {
+  LICENSE_SESSION_COOKIE_NAME,
+  verifyLicenseSessionToken,
+} from "@/lib/licenseSession";
 import { tabForCourse } from "@/lib/tabs";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
 import type { Block, ReadingSentence } from "@/lib/types";
@@ -58,6 +64,52 @@ export default async function LessonPage({
       }
     }
   }
+
+  // KIG-001: access control has to happen here, on the server, before any lesson
+  // body is assembled. LessonClientGate only hid the body visually — every block,
+  // script and vocabulary entry was still serialized into the RSC payload, so a
+  // locked lesson could be read straight out of the HTML without a license.
+  //
+  // This runs before menTranslations / vocaDictionary / fallbackSentences are
+  // computed so none of them can leak into the payload of a denied request.
+  // `student/[lesson]/page.tsx` gates its own route and only calls this component
+  // once access is granted, so the re-check below is a no-op for STUDENT.
+  const isFree = isFreePreviewLessonServer(course, lesson.id);
+  let accessAllowed = isFree;
+  if (!isFree) {
+    const session = await verifyLicenseSessionToken(
+      (await cookies()).get(LICENSE_SESSION_COOKIE_NAME)?.value,
+    );
+    if (session) {
+      accessAllowed = isStudentOnlyPlan(session.payload.plan)
+        ? course === "student" // STUDENT-only passes cover the STUDENT course alone
+        : true; // 1M / 1Y / LIFE all-pass
+    }
+  }
+
+  if (!accessAllowed) {
+    return (
+      <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
+        <nav className="mb-8 font-mono text-[11.5px]">
+          <Link href={`/${course}`} className="text-ink-soft hover:text-ink">
+            ← {courseInfo?.title ?? course}
+          </Link>
+        </nav>
+        <header className="mb-6 sm:mb-8">
+          <h1 className="text-[1.5rem] sm:text-[1.85rem] font-bold tracking-tight text-balance text-ink">
+            {pres.title}
+          </h1>
+        </header>
+        <LessonPaywall
+          courseSlug={course}
+          courseTitle={courseInfo?.title ?? tab?.label}
+          lessonId={lesson.id}
+          title={pres.title}
+        />
+      </main>
+    );
+  }
+
   const ldEnglishScript = course === "ld"
     ? getLdEnglishScript(id) ?? (pair ? getLdEnglishScript(pair.id) : null)
     : null;
@@ -208,77 +260,69 @@ export default async function LessonPage({
         </h1>
       </header>
 
-      <LessonClientGate
-        courseSlug={course}
-        courseTitle={courseInfo?.title ?? tab?.label}
-        lessonId={lesson.id}
-        lessonTitle={pres.title}
-        isFreePreview={isFreePreviewLessonServer(course, lesson.id)}
-      >
-        {video.length > 0 ? (
-          <div className="mb-8 flex flex-col gap-2.5">
-            {video.map((v) => (
-              <VideoPlayer key={v.src} src={v.src} />
-            ))}
-          </div>
-        ) : null}
+      {video.length > 0 ? (
+        <div className="mb-8 flex flex-col gap-2.5">
+          {video.map((v) => (
+            <VideoPlayer key={v.src} src={v.src} />
+          ))}
+        </div>
+      ) : null}
 
-        {/* Unified Audio Player with native TTS fallback & gender profile */}
-        {topLevelAudio.length > 0 ? (
-          <div className="mb-8 flex flex-col gap-2.5">
-            {topLevelAudio.map((a) => (
-              <AudioPlayer
-                key={a.src}
-                src={a.src}
-                fallbackSentences={fallbackSentences}
-                lang={courseInfo?.contentLang ?? "en"}
-                gender={voiceGender}
-                label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
-              />
-            ))}
-          </div>
-        ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course) ? (
-          <div className="mb-8">
+      {/* Unified Audio Player with native TTS fallback & gender profile */}
+      {topLevelAudio.length > 0 ? (
+        <div className="mb-8 flex flex-col gap-2.5">
+          {topLevelAudio.map((a) => (
             <AudioPlayer
+              key={a.src}
+              src={a.src}
               fallbackSentences={fallbackSentences}
               lang={courseInfo?.contentLang ?? "en"}
               gender={voiceGender}
-              label="전체 듣기 (AI 음성 재생)"
+              label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
             />
-          </div>
-        ) : null}
-
-        {/* Educational Body with Aligned Sentences */}
-        {lesson.blocks.length > 0 ? (
-          <LessonBody
-            blocks={lesson.blocks}
-            pairBlocks={pairLesson?.blocks ?? null}
-            course={course}
-            lessonKey={`${course}/${lesson.id}`}
-            isScript={isScript}
-            contentLang={courseInfo?.contentLang ?? "en"}
-            voiceGender={voiceGender}
-            audioTracks={audio}
-            chunkDrills={lesson.chunkDrills}
-            ldEnglishScript={ldEnglishScript}
-            menTranslations={menTranslations}
-            vocaDictionary={vocaDictionary}
-            readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
-            readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
+          ))}
+        </div>
+      ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course) ? (
+        <div className="mb-8">
+          <AudioPlayer
+            fallbackSentences={fallbackSentences}
+            lang={courseInfo?.contentLang ?? "en"}
+            gender={voiceGender}
+            label="전체 듣기 (AI 음성 재생)"
           />
-        ) : fromFlash ? (
-          <p className="text-[13.5px] text-ink-soft">
-            <T
-              k={audio.length === 1 ? "lesson.trackRecovered" : "lesson.tracksRecovered"}
-              count={audio.length}
-            />
-          </p>
-        ) : (
-          <p className="border border-dashed border-line px-4 py-6 text-[13.5px] text-ink-soft rounded">
-            <T k="lesson.notMigrated" />
-          </p>
-        )}
-      </LessonClientGate>
+        </div>
+      ) : null}
+
+      {/* Educational Body with Aligned Sentences */}
+      {lesson.blocks.length > 0 ? (
+        <LessonBody
+          blocks={lesson.blocks}
+          pairBlocks={pairLesson?.blocks ?? null}
+          course={course}
+          lessonKey={`${course}/${lesson.id}`}
+          isScript={isScript}
+          contentLang={courseInfo?.contentLang ?? "en"}
+          voiceGender={voiceGender}
+          audioTracks={audio}
+          chunkDrills={lesson.chunkDrills}
+          ldEnglishScript={ldEnglishScript}
+          menTranslations={menTranslations}
+          vocaDictionary={vocaDictionary}
+          readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
+          readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
+        />
+      ) : fromFlash ? (
+        <p className="text-[13.5px] text-ink-soft">
+          <T
+            k={audio.length === 1 ? "lesson.trackRecovered" : "lesson.tracksRecovered"}
+            count={audio.length}
+          />
+        </p>
+      ) : (
+        <p className="border border-dashed border-line px-4 py-6 text-[13.5px] text-ink-soft rounded">
+          <T k="lesson.notMigrated" />
+        </p>
+      )}
 
       <LessonStepNavigation courseHref={`/${course}`} />
 
