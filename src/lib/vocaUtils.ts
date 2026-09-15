@@ -315,7 +315,14 @@ export function generateActiveRecallQuizzes(
       };
     } else {
       const distractorWords = validWords
-        .filter((w) => w.toLowerCase().trim() !== clean)
+        .filter((w) => {
+          const other = w.toLowerCase().trim();
+          if (other === clean) return false;
+          // KIG-019: a word that carries the same Korean meaning as the answer is
+          // also correct, so it must never be offered as a wrong option.
+          // e.g. hv-15 "운이 좋은" would otherwise list both `lucky` and `fortunate`.
+          return (vocaDict[other]?.meaning || "") !== correctMeaning;
+        })
         .slice(0, 3);
       while (distractorWords.length < 3) {
         distractorWords.push(`vocab${distractorWords.length + 1}`);
