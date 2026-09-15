@@ -1,0 +1,177 @@
+[
+ {
+  "n": "26",
+  "korean": "그가 그녀의 누이를 사랑하나?",
+  "currentText": "Does he love her sister?",
+  "proposedText": "Does he love her sister?",
+  "changed": false
+ },
+ {
+  "n": "27",
+  "korean": "내가 그녀를 사랑하나?",
+  "currentText": "Do I love her?",
+  "proposedText": "Do I love her?",
+  "changed": false
+ },
+ {
+  "n": "28",
+  "korean": "내가 너를 사랑하지 않나?",
+  "currentText": "Don't I love you(혹은 Do I not ---)?",
+  "proposedText": "Don't I love you(혹은 Do I not ---)?",
+  "changed": false
+ },
+ {
+  "n": "29",
+  "korean": "너는 나의 누이를 사랑하지 않나?",
+  "currentText": "Don't you love my sister(혹은 Do you not ---- )?",
+  "proposedText": "Don't you love my sister(혹은 Do you not ---- )?",
+  "changed": false
+ },
+ {
+  "n": "30",
+  "korean": "그가 나를 사랑하지 않나?",
+  "currentText": "Doesn't he love me(혹은 Does he not ---)?",
+  "proposedText": "Doesn't he love me(혹은 Does he not ---)?",
+  "changed": false
+ },
+ {
+  "n": "31",
+  "korean": "그녀가 너의 형제를 사랑하지 않나?",
+  "currentText": "Doesn't she love your brother(혹은 Does she not ---)?",
+  "proposedText": "Doesn't she love your brother(혹은 Does she not ---)?",
+  "changed": false
+ },
+ {
+  "n": "32",
+  "korean": "그들이 너를 사랑하지 않나?",
+  "currentText": "Don't they love you(혹은 Do they not---)?",
+  "proposedText": "Don't they love you(혹은 Do they not---)?",
+  "changed": false
+ },
+ {
+  "n": "33",
+  "korean": "그녀가 그의 형제를 사랑하지 않나?",
+  "currentText": "Doesn't she love his brother(혹은 Does she not ---) ?",
+  "proposedText": "Doesn't she love his brother(혹은 Does she not ---) ?",
+  "changed": false
+ },
+ {
+  "n": "34",
+  "korean": "내가 그를 사랑하지 않나?",
+  "currentText": "Don't I love him(혹은 Do I not ---)?",
+  "proposedText": "Don't I love him(혹은 Do I not ---)?",
+  "changed": false
+ },
+ {
+  "n": "35",
+  "korean": "그가 그녀의 누이를 사랑하지 않나?",
+  "currentText": "Doesn't he love her sister(혹은 Does he not --)?",
+  "proposedText": "Doesn't he love her sister(혹은 Does he not --)?",
+  "changed": false
+ },
+ {
+  "n": "36",
+  "korean": "내가 그녀를 사랑하지 않나?",
+  "currentText": "Don't I love her(Do I not ---)? 37.This is mine.",
+  "proposedText": "Don't I love her(Do I not ---)?",
+  "changed": true
+ },
+ {
+  "n": "37",
+  "korean": "이것은 나의 것이다.",
+  "currentText": "It is yours. 39.Those(They) are theirs.",
+  "proposedText": "This is mine.",
+  "changed": true
+ },
+ {
+  "n": "38",
+  "korean": "그것은 너의 것이다.",
+  "currentText": "These are his.",
+  "proposedText": "It is yours.",
+  "changed": true
+ },
+ {
+  "n": "39",
+  "korean": "그들은 그들의 것들이다.",
+  "currentText": "It is hers.",
+  "proposedText": "Those(They) are theirs.",
+  "changed": true
+ },
+ {
+  "n": "40",
+  "korean": "이것들은 그의 것이다.",
+  "currentText": "Is this mine?",
+  "proposedText": "These are his.",
+  "changed": true
+ },
+ {
+  "n": "41",
+  "korean": "그것은 그녀의 것이다.",
+  "currentText": "Is it yours?",
+  "proposedText": "It is hers.",
+  "changed": true
+ },
+ {
+  "n": "42",
+  "korean": "이것은 나의 것이냐?",
+  "currentText": "Are those(they) theirs?",
+  "proposedText": "Is this mine?",
+  "changed": true
+ },
+ {
+  "n": "43",
+  "korean": "그것은 너의 것이냐?",
+  "currentText": "Are these his?",
+  "proposedText": "Is it yours?",
+  "changed": true
+ },
+ {
+  "n": "44",
+  "korean": "그것들은 그들의 것들이냐?",
+  "currentText": "Is it hers?",
+  "proposedText": "Are those(they) theirs?",
+  "changed": true
+ },
+ {
+  "n": "45",
+  "korean": "이것들은 그의 것이냐?",
+  "currentText": "Isn't this mine(혹은 Is this not mine?)",
+  "proposedText": "Are these his?",
+  "changed": true
+ },
+ {
+  "n": "46",
+  "korean": "그것은 그녀의 것이냐?",
+  "currentText": "Isn't it yours(혹은 Is it not yours)?",
+  "proposedText": "Is it hers?",
+  "changed": true
+ },
+ {
+  "n": "47",
+  "korean": "이것은 나의 것이 아니냐?",
+  "currentText": "Aren't they(those) yours(Are they not yours)?",
+  "proposedText": "Isn't this mine(혹은 Is this not mine?)",
+  "changed": true
+ },
+ {
+  "n": "48",
+  "korean": "그것은 너의 것이 아니냐?",
+  "currentText": "Aren't these his?(Are these not his)?",
+  "proposedText": "Isn't it yours(혹은 Is it not yours)?",
+  "changed": true
+ },
+ {
+  "n": "49",
+  "korean": "그들은 너의 것들이 아니냐?",
+  "currentText": "Aren't they yours?",
+  "proposedText": "Aren't they(those) yours(Are they not yours)?",
+  "changed": true
+ },
+ {
+  "n": "50",
+  "korean": "이것들은 그의 것이 아니냐?",
+  "currentText": "Aren't these his?",
+  "proposedText": "Aren't these his?(Are these not his)?",
+  "changed": true
+ }
+]
