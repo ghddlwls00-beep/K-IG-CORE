@@ -200,12 +200,21 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     <div className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
       {/* Top Header */}
       <header className="absolute top-0 inset-x-0 z-30 flex shrink-0 items-center justify-between border-b border-line/60 bg-surface/80 px-5 py-3.5 backdrop-blur-md sm:px-12 sm:py-4">
-        <div
+        {/*
+          RE-014: this is the page's h1. The home page is a carousel of
+          curriculum stages whose headings are h2, so without this the page had
+          NO h1 at all — a screen reader had nothing to announce as the page
+          subject and search engines had no title to weigh. The brand is the one
+          element that names the whole page rather than one stage of it.
+          Only the tag changed: Tailwind's preflight already resets heading
+          margin/size/weight, and the classes below set all three explicitly.
+        */}
+        <h1
           className="text-[14px] sm:text-[15px] font-semibold tracking-[0.14em] text-ink"
           style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
         >
           K-IG 교육
-        </div>
+        </h1>
       </header>
 
       {/* Main Snap-Scroll Section Container */}

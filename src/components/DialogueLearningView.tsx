@@ -589,7 +589,10 @@ export function DialogueLearningView({
                     </span>
                     <span className="text-[12px] text-ink-faint">총 {info.subLessons.length}개 세부 레슨</span>
                   </div>
-                  <h1 className="text-2xl font-bold text-ink mt-1">{info.titleKo}</h1>
+                  {/* RE-014: h2, not h1 — the lesson page already renders the
+                      lesson title as the page's h1, and this is the chapter
+                      overview heading inside the body. */}
+                  <h2 className="text-2xl font-bold text-ink mt-1">{info.titleKo}</h2>
                   <p className="text-[14px] text-ink-soft">{info.titleEn}</p>
                 </div>
               </div>

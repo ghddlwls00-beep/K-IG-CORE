@@ -379,9 +379,14 @@ export function LdLearningView({
             {sentences.length}개 문장 완성 코스웨어
           </span>
         </div>
-        <h1 className="mt-2 text-[20px] font-bold tracking-tight text-ink">
+        {/*
+          RE-014: h2, not h1. The lesson page already renders the lesson title
+          ("001회 · 실전 듣기 평가") as the page's h1; this is a section heading
+          inside the lesson body, like the other section headings below.
+        */}
+        <h2 className="mt-2 text-[20px] font-bold tracking-tight text-ink">
           5단계 음향 인지 리스닝 마스터리
-        </h1>
+        </h2>
         <p className="mt-1 text-[13px] text-ink-soft leading-relaxed">
           블라인드 청취 ➔ 스마트 탭-딕테이션 ➔ 연음 분해 클리닉 ➔ 실전 섀도잉 & AI 평가 ➔ 1.5배속 뇌 트레이닝으로 이어지는 실전 청취력 완성 시스템입니다.
         </p>
