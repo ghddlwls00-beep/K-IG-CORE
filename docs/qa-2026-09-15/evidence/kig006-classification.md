@@ -31,8 +31,8 @@ Category B/C/D unique answers: **181**
 | gh1-014, gh1-014-1, gh1-015, gh1-015-1 | I want apples (혹은 an apple). | I want apples. | I want an apple. |
 | gh1-016, gh1-016-1, gh1-017, gh1-017-1 | Each boy receives a prize(혹은 prizes). | Each boy receives a prize. | Each boy receives prizes. |
 | gh1-016, gh1-016-1, gh1-017, gh1-017-1 | Every boy receives a prize(혹은 prizes). | Every boy receives a prize. | Every boy receives prizes. |
-| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys receive a prize(혹은 prizes). | All boys receive prizes. | All the boys receive prizes. |
-| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys do not receive a prize(혹은 prizes). | All boys do not receive prizes. | All the boys do not receive prizes. |
+| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys receive a prize(혹은 prizes). | All boys receive a prize. | All the boys receive prizes. |
+| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys do not receive a prize(혹은 prizes). | All boys do not receive a prize. | All the boys do not receive prizes. |
 | gh1-024, gh1-025 | Am I not a boy(혹은 Ain't I a boy)? | Am I not a boy? | Ain't I a boy? |
 | gh1-024, gh1-025 | Aren't you a girl(혹은 Are you not a girl)? | Aren't you a girl? | Are you not a girl? |
 | gh1-024, gh1-025, gh1-042, gh1-042-1, gh1-043, gh1-043-1 | Isn't he a boy(혹은 Is he not a boy?) | Isn't he a boy? | Is he not a boy? |

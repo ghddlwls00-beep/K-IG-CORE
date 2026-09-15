@@ -37,7 +37,25 @@ const ROWS = [
 ];
 
 const strip = (s) => (s || "").replace(/[.?!]\s*$/, "");
+
+/**
+ * Does this row consist ONLY of detached determiners? If so, inserting one is
+ * the sole operation available, and it can only ADD a word — so an alternative
+ * shorter than the primary is a genuine defect. On any other row the rule does
+ * not apply:
+ *   - a GLUED multi-word substitution is a phrase->phrase swap and may shorten
+ *     ("take part(participate)" is one word shorter, and is correct);
+ *   - a "혹은" marker is a second, independent axis whose swap may shorten
+ *     ("a prize(혹은 prizes)" drops the article) and is a legitimate reading.
+ * Marker rows are asserted exactly by report-kig006.cjs check (8) instead.
+ */
+const determinerOnly = (en) => {
+  const parens = E.tokenizeParens(en).filter((t) => t.kind === "paren");
+  return parens.length > 0 && parens.every((p) => E.isDetachedDeterminer(p));
+};
+
 let bad = 0;
+let shortenChecked = 0;
 for (const en of ROWS) {
   const p = E.propose("SUBSTITUTE", en);
   const text = p.text || "";
@@ -45,10 +63,14 @@ for (const en of ROWS) {
   const flags = [];
   if (text.includes("(")) flags.push("TEXT-PAREN");
   if (alts.some((a) => a.includes("("))) flags.push("ALT-PAREN");
-  // An alternative must never be shorter than the primary.
-  for (const a of alts) {
-    const dw = a.split(/\s+/).length - text.split(/\s+/).length;
-    if (dw < 0) flags.push(`SHORTER(${dw})`);
+  // An alternative must never be shorter than the primary — determiner-only
+  // rows only; see determinerOnly() above.
+  if (determinerOnly(en)) {
+    for (const a of alts) {
+      shortenChecked++;
+      const dw = a.split(/\s+/).length - text.split(/\s+/).length;
+      if (dw < 0) flags.push(`SHORTER(${dw})`);
+    }
   }
   if (flags.length) bad++;
   console.log((flags.length ? "FAIL " : "ok   ") + en);
@@ -57,3 +79,4 @@ for (const en of ROWS) {
   if (flags.length) console.log("      >>> " + flags.join(" "));
 }
 console.log("\nrows with problems: " + bad + " / " + ROWS.length);
+console.log("shortenings checked on determiner-only rows: " + shortenChecked);

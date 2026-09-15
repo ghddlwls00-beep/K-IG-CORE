@@ -280,10 +280,18 @@ function resolveOptionalDeterminers(en) {
   //   - each detached determiner is kept or dropped (an optional insert);
   //   - each other paren (a "혹은" marker swap) is kept or left as the author
   //     wrote it.
-  // Cross-producting the two is what makes "All boys receive a prize." reachable
-  // (det dropped, marker kept) alongside "All the boys receive prizes."
-  // (det kept, marker dropped) and the author's own "All the boys receive a
-  // prize." `text` is the BARE form: no determiner, other parens applied.
+  // Cross-producting the two is what makes all four readings of
+  // "All (the) boys receive a prize(혹은 prizes)." reachable.
+  //
+  // `text` IS THE AUTHOR'S OUT-OF-PAREN WORDING — nothing applied. The author
+  // wrote "prize" outside the marker paren, so "prize" is the primary and
+  // "prizes" is the alternative. Applying the marker to `text` (which this line
+  // used to do, via `new Set(otherIs)`) promoted the alternative over the
+  // primary: it produced text "All boys receive prizes." and pushed the
+  // author's own "All boys receive a prize." into the alternatives.
+  //
+  // This is the same rule as the determiner axis, applied to both axes at once:
+  // the parenthetical is ALWAYS the alternative. See check (8).
   const build = (keep) =>
     finishText(
       applyChoices(
@@ -293,7 +301,7 @@ function resolveOptionalDeterminers(en) {
         parens.map(() => "variant")
       )
     );
-  const text = build(new Set(otherIs));
+  const text = build(new Set());
   if (!text) return null;
   const seen = new Set([text]);
   const alternatives = [];
@@ -1644,6 +1652,32 @@ function propose(kind, en) {
   return { text: en, alternatives: [] };
 }
 
+/**
+ * Classify a cell by SHAPE so `propose()` is driven the same way everywhere.
+ *
+ * This lives in the engine (rather than in each caller) because the writer
+ * (`apply-kig006.cjs`, which puts the result into `content/`) and the verifier
+ * (check (8) below, which asserts the result is right) must agree on what kind
+ * a cell is. Two copies would drift, and the check would then be measuring a
+ * different code path from the one that ships.
+ *
+ * Shape, not a lookup table: after a re-extraction the bucket assignments may
+ * have moved, so the kind has to be re-derived from the string itself.
+ */
+function kindFor(en) {
+  const parens = tokenizeParens(en).filter((t) => t.kind === "paren");
+  if (parens.length === 0) return "SUBSTITUTE";
+  if (parens.length >= 2) return "SUBSTITUTE"; // multi-paren path runs first anyway
+  const p = parens[0];
+  if (p.glued) {
+    // A bare suffix / inflection.
+    if (/^(s|es|ies|ed|ing|d)$/i.test(p.alt.trim())) return "SUFFIX";
+    return "SUBSTITUTE";
+  }
+  if (p.atSentenceStart) return "SENTENCE";
+  return "APPEND";
+}
+
 /* ------------------------------------------------------- prescribed repairs */
 /**
  * The 9 POLLUTED cells. Generating `alternatives` cannot fix these — the
@@ -1977,10 +2011,34 @@ console.log(`category A ratio violations     : ${aFrag}`);
  * SHORTER than the primary. The five structural checks above cannot see this:
  * a determiner lost to a mis-aligned substitution still yields a well-formed
  * string with no bracket residue and a matching terminator.
+ *
+ * SCOPE — this check can only speak about DETERMINER-ONLY rows, and that limit
+ * is what keeps it honest. On a determiner-only row the sole operation is
+ * "insert a determiner", which can only add words, so the rule holds
+ * absolutely. On a marker row there is a SECOND, independent axis whose swap
+ * may legitimately change the word count in either direction:
+ *     "All (the) boys receive a prize(혹은 prizes)."
+ *       text "All boys receive a prize."      (5w)
+ *       alt  "All boys receive prizes."       (4w)   <- marker applied, "a" gone
+ * That 4-word reading is a complete sentence a learner may legitimately type,
+ * not a fragment, so discarding it would lose a valid answer.
+ *
+ * In the corpus as it stands this exclusion never fires (every "혹은" cell is
+ * classified as category A, so it is not in `proposable` at all — which is also
+ * why checks 2-7 were blind to the gh1-017 defect). It is kept as a guard so
+ * that the check cannot silently start measuring a second axis if the bucket
+ * split ever changes. Marker rows are asserted instead by check (8), which is
+ * exact rather than a word count.
  */
 let insertShort = 0;
 let insertChecked = 0;
+let insertSkippedMarker = 0;
 for (const r of proposable) {
+  // See SCOPE above: the marker axis can shorten a reading legitimately.
+  if (r.en.includes(ALT_MARK)) {
+    insertSkippedMarker++;
+    continue;
+  }
   const p = propose(r.kind, r.en);
   const pw = wordCount(p.text);
   // Only rows whose parens are detached determiners are optional inserts.
@@ -1998,7 +2056,10 @@ for (const r of proposable) {
     }
   }
 }
-console.log(`optional-insert conservation    : ${insertChecked} alternatives, ${insertShort} shortenings`);
+console.log(
+  `optional-insert conservation    : ${insertChecked} alternatives, ${insertShort} shortenings` +
+    (insertSkippedMarker ? ` (${insertSkippedMarker} marker rows deferred to check 8)` : "")
+);
 
 /* =============================== (7) KOREAN CONCORDANCE ====================
  * THE DECISIVE TEST. Every other check is structural; only this one asks
@@ -2082,3 +2143,67 @@ cm += "assert 5종 + conservation + 이 표가 KIG-006 한정사 부류의 최�
 fs.writeFileSync(path.join(EV, "kig006-korean-concordance.md"), cm);
 console.log(`korean-concordance table        : ${concRows.length} rows, ${concMismatch} needing review`);
 console.log("wrote evidence/kig006-korean-concordance.md");
+
+/* =========================== (8) PRIMARY = OUT-OF-PAREN WORDING ============
+ * THE RULE: whatever the author wrote OUTSIDE the brackets is the primary
+ * answer, and the bracketed content is the alternative. It holds on every axis
+ * — an optional determiner ("All (the) boys" -> primary "All boys"), a "혹은"
+ * marker ("… a prize(혹은 prizes)" -> primary "… a prize"), and both together.
+ *
+ * WHY THIS CHECK HAS TO EXIST. Checks (2)-(7) iterate `proposable`, which is
+ * built from categories B/C/D. Every cell carrying a "혹은" marker is classified
+ * as category A and lives in `catA`, so the CROSS-PRODUCT rows — the ones with
+ * the most ways to go wrong — were never asserted at all. gh1-017 shipped with
+ * text "All boys receive prizes." (the marker applied, the author's own wording
+ * demoted to an alternative) and every existing check passed.
+ *
+ * The reference string is rebuilt here from the raw cell rather than read back
+ * out of the resolver, so a regression inside the resolver cannot satisfy this
+ * check by moving both sides at once.
+ */
+function outOfParenWording(en) {
+  return en
+    .replace(/\([^()]*\)/g, " ") // every parenthetical, determiner or marker
+    .replace(/\s+/g, " ")
+    .replace(/\s+([.,?!;:])/g, "$1")
+    .trim();
+}
+
+/**
+ * Compare WORDING only. Whether the sentence ends with "?" or "." is check
+ * (4b)'s job, and a few source cells carry no terminator at all
+ * ("The members opposed(objected to, were opposed to) the plan"), where the
+ * engine correctly supplies one. Stripping the terminator here keeps this check
+ * about the one thing it is for: which reading was made primary.
+ */
+const withoutTerminator = (s) => s.replace(/[.?!]+\s*$/, "").trim();
+
+let xprodRows = 0;
+let xprodFail = 0;
+const xprodSeen = new Set();
+const xprodSources = [
+  ...catA.map((a) => ({ en: a.en, page: a.pages.join(","), n: "" })),
+  ...proposable.map((r) => ({ en: r.en, page: r.page, n: r.n })),
+];
+for (const src of xprodSources) {
+  const key = src.page + "|" + src.en;
+  if (xprodSeen.has(key)) continue;
+  xprodSeen.add(key);
+  const p = propose(kindFor(src.en), src.en);
+  if (!p || !p.text || !Array.isArray(p.alternatives)) continue;
+  // Cross-product rows only. One alternative is a plain substitution, which has
+  // its own axis and is already covered by the checks above.
+  if (p.alternatives.length < 2) continue;
+  xprodRows++;
+  const want = outOfParenWording(src.en);
+  if (withoutTerminator(p.text) !== withoutTerminator(want)) {
+    xprodFail++;
+    console.log(`  PRIMARY != OUT-OF-PAREN ${src.page} #${src.n}`);
+    console.log(`        source : ${src.en}`);
+    console.log(`        want   : ${want}`);
+    console.log(`        text   : ${p.text}`);
+  }
+}
+console.log(
+  `primary=out-of-paren check      : ${xprodRows} cross-product rows, ${xprodFail} violations`
+);

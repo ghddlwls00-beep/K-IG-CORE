@@ -65,12 +65,19 @@ const EXPECT = {
   // The "(the)" in this cell is detached (space before the "(") and is an
   // optional insert; the "(혹은 prizes)" is the marker swap. The Korean prompt
   // gh1-016-1 #4 모든(All) 소년이 상을 받는다. carries no 그 for either.
+  //
+  // `text` is the author's OUT-OF-PAREN wording on BOTH axes: the bracketed
+  // determiner is optional (so "All boys"), and the bracketed "prizes" is an
+  // alternative (so "prize" stays primary). This expectation previously read
+  // text "All boys receive prizes.", which had the marker applied and demoted
+  // the author's own "a prize" into the alternatives — the defect NEXT-SESSION
+  // A-2 reported. See report-kig006.cjs check (8).
   "All (the) boys receive a prize(혹은 prizes).": {
-    text: "All boys receive prizes.",
+    text: "All boys receive a prize.",
     alts: [
-      "All boys receive a prize.",
-      "All the boys receive a prize.",
       "All the boys receive prizes.",
+      "All boys receive prizes.",
+      "All the boys receive a prize.",
     ],
     forbid: [],
   },

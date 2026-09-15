@@ -53,7 +53,7 @@ function loadEngine() {
   if (cut < 0) throw new Error("engine slice marker not found in report-kig006.cjs");
   const body =
     raw.slice(0, cut) +
-    "\nmodule.exports = { propose, resolveMultiParen, parseAltMarker, tokenizeParens, isDetachedDeterminer };\n";
+    "\nmodule.exports = { propose, resolveMultiParen, parseAltMarker, tokenizeParens, isDetachedDeterminer, kindFor };\n";
   const tmp = path.join(__dirname, ".apply-kig006-engine.cjs");
   fs.writeFileSync(tmp, body);
   try {
@@ -65,7 +65,7 @@ function loadEngine() {
 }
 
 const engine = loadEngine();
-const { propose } = engine;
+const { propose, kindFor } = engine;
 
 /* ------------------------------------------------------------- helpers ----- */
 const hasParen = (s) => typeof s === "string" && s.includes("(");
@@ -117,23 +117,9 @@ function splitItem(item, kindFor) {
 }
 
 /* ------------------------------------------------------------- classify ---- */
-/**
- * Classify by SHAPE, not by the old evidence file — after a re-extraction the
- * bucket assignments may have moved, so they must be re-derived from the string.
- */
-function kindFor(en) {
-  const parens = engine.tokenizeParens(en).filter((t) => t.kind === "paren");
-  if (parens.length === 0) return "SUBSTITUTE";
-  if (parens.length >= 2) return "SUBSTITUTE"; // multi-paren path runs first anyway
-  const p = parens[0];
-  if (p.glued) {
-    // A bare suffix / inflection.
-    if (/^(s|es|ies|ed|ing|d)$/i.test(p.alt.trim())) return "SUFFIX";
-    return "SUBSTITUTE";
-  }
-  if (p.atSentenceStart) return "SENTENCE";
-  return "APPEND";
-}
+// `kindFor` now lives in report-kig006.cjs (the engine) and is pulled from the
+// same slice as `propose`, so the writer and the verifier's check (8) cannot
+// disagree about what kind a cell is. See the note above `kindFor` there.
 
 /* ---------------------------------------------------------------- main ----- */
 const stats = {
