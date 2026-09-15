@@ -236,6 +236,9 @@ export function LdLearningView({
 
   // Step 1: Quiz Handler
   function handleSelectQuizOption(qIdx: number, oIdx: number) {
+    // The quiz is one-shot: the first choice reveals the answer, so a second
+    // click would let the learner change their answer after seeing it.
+    if (quizSubmitted[qIdx]) return;
     setSelectedAnswers((prev) => ({ ...prev, [qIdx]: oIdx }));
     setQuizSubmitted((prev) => ({ ...prev, [qIdx]: true }));
   }
@@ -528,7 +531,9 @@ export function LdLearningView({
                             key={oIdx}
                             type="button"
                             onClick={() => handleSelectQuizOption(qIdx, oIdx)}
-                            className={`flex items-center justify-between rounded-xl border p-3 text-left text-[13.5px] transition-all cursor-pointer ${optionStyle}`}
+                            disabled={isSubmitted}
+                            aria-disabled={isSubmitted}
+                            className={`flex items-center justify-between rounded-xl border p-3 text-left text-[13.5px] transition-all ${isSubmitted ? "cursor-default" : "cursor-pointer"} ${optionStyle}`}
                           >
                             <span>{opt}</span>
                             {isSubmitted && oIdx === quiz.answerIndex && (
