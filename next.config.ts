@@ -1,10 +1,5 @@
 import type { NextConfig } from "next";
 
-const R2_MEDIA_ORIGIN = (
-  process.env.NEXT_PUBLIC_MEDIA_URL ||
-  "https://pub-94ce8b8436d54ffc971d30f2096951cc.r2.dev"
-).replace(/\/+$/, "");
-
 const nextConfig: NextConfig = {
   // Gzip / Brotli payload compression
   compress: true,
@@ -15,24 +10,11 @@ const nextConfig: NextConfig = {
   // React Strict Mode
   reactStrictMode: true,
 
-  // Ava clips and media use a same-origin browser URL. Vercel forwards missing local
-  // files to R2, which also keeps strict mobile and in-app browsers happy.
-  async rewrites() {
-    return {
-      beforeFiles: [],
-      afterFiles: [],
-      fallback: [
-        {
-          source: "/audio/:path*",
-          destination: `${R2_MEDIA_ORIGIN}/audio/:path*`,
-        },
-        {
-          source: "/video/:path*",
-          destination: `${R2_MEDIA_ORIGIN}/video/:path*`,
-        },
-      ],
-    };
-  },
+  // Media keeps its same-origin browser URL, but /audio/* and /video/* are now
+  // served by route handlers that check the licence before reading from R2.
+  // The old fallback rewrite proxied those paths to the public bucket for
+  // anyone who asked, which left the catalogue reachable after KIG-001 gated
+  // the pages — object keys are sequential, so it could simply be walked.
 
   // Long-term immutable caching headers for static assets
   async headers() {
@@ -47,23 +29,9 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=(self)" },
         ],
       },
-      {
-        source: "/audio/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "*",
-          },
-          {
-            key: "Access-Control-Allow-Methods",
-            value: "GET, HEAD, OPTIONS",
-          },
-        ],
-      },
+      // No blanket Cache-Control for /audio/* any more: a licensed clip must not
+      // be stored by a shared cache and replayed to the next anonymous visitor.
+      // The route handler sets public-immutable or private per object instead.
       {
         source: "/images/:path*",
         headers: [
