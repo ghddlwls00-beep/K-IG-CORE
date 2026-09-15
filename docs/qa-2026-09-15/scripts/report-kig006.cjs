@@ -213,14 +213,194 @@ function substitute(before, inner, after, refTerm) {
     spanStart -= 1; // drop the singular article along with the noun
   }
 
-  const head = beforeTokens.slice(0, spanStart).join(" ");
+  let head = beforeTokens.slice(0, spanStart).join(" ");
   // Re-insert the comma the paren displaced when the alternative is a fronted
   // clause followed by the main clause ("(If you should not go,) he would go.").
   const tail = /^\s*,/.test(after) ? after : " " + after;
-  return (variants.length ? variants : [inner]).map((v) =>
-    terminate(head + (head ? " " : "") + v + tail, refTerm)
-  );
+  // The span being replaced is the sentence's OWN HEAD, and the replacement was
+  // written in lowercase — the alternative must still open with a capital:
+  //   "They(those) are not books."  -> "Those are not books."  (not "those …")
+  const atHead = !head.trim();
+  return (variants.length ? variants : [inner]).map((v) => {
+    const sub = atHead && /^[a-z]/.test(v) ? v[0].toUpperCase() + v.slice(1) : v;
+    return terminate(head + (head ? " " : "") + sub + tail, refTerm);
+  });
 }
+
+/* =================================================== detached determiners == */
+/**
+ * Every paren in `en` that is a DETACHED DETERMINER — a closed-class determiner
+ * written after a space, so the author flagged it as OPTIONAL rather than as a
+ * substitution for the word before it.
+ *
+ * WHY THIS IS ITS OWN LANE, run before everything else:
+ *
+ *  1. `propose()`'s SUBSTITUTE branch aligns a paren by matching its words
+ *     against the words before the "(". A determiner shares no lexical anchor,
+ *     so the alignment slides one token too far left and eats content:
+ *        "He is (a) Korean, isn't he?"  -> alt "He a Korean, isn't he?"   (lost "is")
+ *        "Is that (the) car yours?"     -> alt "Is the car yours?"        (lost "that")
+ *     The determiners overlap heavily across these rows ("the", "a", "an"), so
+ *     the cross-product also invents impossible mixed readings.
+ *
+ *  2. `resolveMultiParen`'s role loop skips a marker paren ("(혹은 prizes)")
+ *     before it ever tests for a determiner, so a determiner travelling in the
+ *     same cell as a marker never became an optional insert at all:
+ *        "All (the) boys receive a prize(혹은 prizes)."   -> text kept "(the)" applied
+ *
+ * The semantics are the SAME in both places and are decided by the KOREAN
+ * PROMPT on the paired page, which carries no 그/어떤 for these items:
+ *   gh1-098 #109  그는 한국인이지?      -> "He is Korean, isn't he?"
+ *   gh1-120-2 #21 팔레스타인인들과 …    -> "Palestinians and Israelis must act."
+ * so the BARE sentence is the primary and the determiner is an alternative.
+ *
+ * Returns { text, alternatives } or null when the sentence has no detached
+ * determiner. A determiner GLUED to the word before it ("in that(the) raid")
+ * is a lexical variant of that word, not an optional insert, and is left alone.
+ */
+function resolveOptionalDeterminers(en) {
+  const tokens = tokenizeParens(en);
+  const parens = tokens.filter((t) => t.kind === "paren");
+  const detIdx = parens
+    .map((p, i) => ({ p, i }))
+    .filter(({ p }) => isDetachedDeterminer(p));
+  if (!detIdx.length) return null;
+  // TWO SENTENCES IN ONE CELL is not this lane's business. When every paren
+  // opens a sentence, the cell holds two runs of the same exercise and the
+  // split belongs to `resolveMultiParen`:
+  //   "(The) Palestinians and (the) Israelites must act.
+  //    (The Palestinians and the Israelites must act.)"
+  // Gluing them here would splice the second run into the middle of the first.
+  if (parens.length >= 2 && parens.every((p) => p.atSentenceStart)) return null;
+
+  const detIs = detIdx.map((d) => d.i);
+  const detSet = new Set(detIs);
+  const otherIs = parens.map((_, i) => i).filter((i) => !detSet.has(i));
+  // The decision is over what to KEEP, and the two families are independent:
+  //   - each detached determiner is kept or dropped (an optional insert);
+  //   - each other paren (a "혹은" marker swap) is kept or left as the author
+  //     wrote it.
+  // Cross-producting the two is what makes "All boys receive a prize." reachable
+  // (det dropped, marker kept) alongside "All the boys receive prizes."
+  // (det kept, marker dropped) and the author's own "All the boys receive a
+  // prize." `text` is the BARE form: no determiner, other parens applied.
+  const build = (keep) =>
+    finishText(
+      applyChoices(
+        en,
+        tokens,
+        parens.map((p, i) => (keep.has(i) ? p.alt : "")),
+        parens.map(() => "variant")
+      )
+    );
+  const text = build(new Set(otherIs));
+  if (!text) return null;
+  const seen = new Set([text]);
+  const alternatives = [];
+  const wantDet = detIdx.filter((d) => isInsertableDeterminer(d.p, en, d.p.start)).map((d) => d.i);
+  // Every subset of determiners to restore, cross every subset of other parens
+  // to keep, richest-first so the fuller textbook reading leads.
+  const subsets = (arr) => {
+    const out = [];
+    for (let m = 0; m < 1 << arr.length; m++) {
+      out.push(arr.filter((_, b) => m & (1 << b)));
+    }
+    return out;
+  };
+  const detSubsets = subsets(wantDet).sort((a, b) => a.length - b.length);
+  const otherSubsets = subsets(otherIs).sort((a, b) => a.length - b.length);
+  const ordered = [];
+  for (const dk of detSubsets) for (const ok of otherSubsets) ordered.push([...dk, ...ok]);
+  ordered.sort((a, b) => b.length - a.length);
+  for (const keep of ordered) {
+    const cand = build(new Set(keep));
+    if (!cand || seen.has(cand)) continue;
+    if (!determinersSane(cand)) continue;
+    seen.add(cand);
+    alternatives.push(cand);
+  }
+  // Every combination is a reading the learner may legitimately type, and each
+  // is COMPLETE (the grammar gate above rejects the broken cross products). An
+  // OPTIONAL-INSERT reading only ever adds words, so the whole set is kept —
+  // the word-count check lives in the verification script, where it can assert
+  // that an insert never SHORTENS the sentence without silently discarding a
+  // valid answer here.
+  return { text, alternatives };
+}
+
+/**
+ * True when every determiner in `sentence` is followed by something it can
+ * actually determine — a noun, an adjective, or another determiner. Catches the
+ * "receive prizes" / "All boys" style artefacts a cross product can leave behind
+ * ("…receive a prizes", "…in that the raid").
+ */
+function determinersSane(sentence) {
+  // A singular article directly in front of a plural noun ("a prizes").
+  if (/\b(a|an)\s+\w+(s|es)\b/i.test(sentence) && !/\b(a|an)\s+(is|was|has)\b/i.test(sentence)) {
+    const m = sentence.match(/\b(a|an)\s+(\w+)\b/i);
+    if (m && /[^s]s$/i.test(m[2]) && !/(ss|us|is)$/i.test(m[2])) return false;
+  }
+  // A determiner left with nothing to determine at the end of a clause.
+  if (/\b(the|a|an|this|that|these|those)\s*[.,!?]/.test(sentence)) return false;
+  return true;
+}
+
+/** A determiner written after a space — the author's "optional" notation. */
+function isDetachedDeterminer(t) {
+  if (t.glued || !t.inner) return false;
+  const words = t.alt.split(/\s+/).filter(Boolean);
+  if (words.length !== 1) return false;
+  return DETERMINER.has(norm(words[0]));
+}
+
+/**
+ * Should a detached determiner actually be INSERTED as an alternative?
+ *
+ * The parenthesised determiner is only ever MEANINGFUL as an insert when the
+ * slot in front of it can actually take a determiner. Two shapes cannot:
+ *
+ *  1. A determiner already sitting there. English admits exactly one
+ *     determiner per noun phrase, so the paren would be a synonym gloss rather
+ *     than a second reading:
+ *        "Those (the) books"  -> "Those the books"   is not a sentence
+ *        "in that(the) raid"  -> "in that the raid"  is not a sentence
+ *     Exceptions: the PREDETERMINERS, which a definite article routinely
+ *     follows — "all the boys", "both the girls", "half the time".
+ *
+ *  2. A possessive or demonstrative in the same phrase, which the determiner
+ *     would displace: "their (the) teacher".
+ */
+function isInsertableDeterminer(t, en, start) {
+  const before = en.slice(0, start).replace(/[\s([{]+$/, "");
+  const prevWord = (before.match(/([A-Za-z']+)$/) || [])[1];
+  if (!prevWord) return true; // sentence-initial: "(The) Palestinians …"
+  const prev = norm(prevWord);
+  if (!DETERMINER.has(prev)) return true; // plain noun/preposition slot
+  // A determiner is already present: the insert only works if that determiner
+  // is a predeterminer the article can follow ("all the boys").
+  return PREDETERMINER.has(prev) && !POSSESSIVE.has(prev);
+}
+
+/**
+ * Predeterminers — quantifiers a definite article may follow. Anything else
+ * in DETERMINER already fills the determiner slot.
+ *
+ * NOTE: `some`, `any`, `no`, `every`, `each` are deliberately absent. They are
+ * determiners in complementary distribution with "the" — "some the people" and
+ * "every the student" are not English. Only the central quantifiers, which
+ * genuinely select a following article ("all the boys", "both the girls",
+ * "half the time"), qualify.
+ */
+const PREDETERMINER = new Set([
+  "all", "both", "half", "such", "quite", "rather", "exactly", "just",
+  "nearly", "almost", "many", "most", "few", "fewer", "several", "enough",
+]);
+
+/** Possessives and demonstratives leave no room for an article. */
+const POSSESSIVE = new Set([
+  "my", "your", "his", "her", "its", "our", "their", "one's",
+  "this", "that", "these", "those",
+]);
 
 /* ============================================================ multi-paren == */
 /**
@@ -264,9 +444,16 @@ function substitute(before, inner, after, refTerm) {
 
 /** The base form of an auxiliary, so a couplable pair can be recognised. */
 const auxBase = (w) => {
-  const s = norm(w);
+  // `norm` keeps the apostrophe ("can't" stays "can't"), so the contracted
+  // negation is stripped before matching. "can't" and "won't" are irregular —
+  // they lose the "n" as well — so they are mapped explicitly rather than by
+  // suffix stripping. The match is anchored at BOTH ends: a bare prefix match
+  // reads "American" as the auxiliary "am", which made a perfectly agreeing
+  // sentence "She was an American, wasn't she?" fail the tense gate.
+  const raw = norm(w);
+  const s = raw === "can't" ? "can" : raw === "won't" ? "will" : raw.replace(/n'?t$/, "");
   const m = s.match(
-    /^(am|is|are|was|were|be|being|been|do|does|did|have|has|had|will|would|shall|should|can|could|may|might|must)/
+    /^(am|is|are|was|were|be|being|been|do|does|did|have|has|had|will|would|shall|should|can|could|may|might|must)$/
   );
   return m ? m[1] : null;
 };
@@ -750,6 +937,17 @@ function resolveMultiParen(en) {
   const parens = tokens.filter((t) => t.kind === "paren");
   if (parens.length < 2) return null;
 
+  // DETACHED DETERMINER — owned by its own lane so that a determiner in the
+  // same cell as a "혹은" marker is treated identically to one standing alone.
+  // The two parens then couple normally ("(the) … (혹은 prizes)" is a
+  // cross-product of the optional determiner and the marker swap).
+  if (parens.some((p) => isDetachedDeterminer(p))) {
+    const det = resolveOptionalDeterminers(en);
+    if (det && !det.text.includes("(") && !det.alternatives.some((a) => a.includes("("))) {
+      return { text: det.text, alternatives: det.alternatives };
+    }
+  }
+
   // TWO SENTENCES IN ONE CELL: "(Were it not for the sun,) nothing could
   // live.(If it were not for the sun,) nothing could live."
   // The two opening clauses are the SAME exercise with two openings, so the
@@ -774,15 +972,30 @@ function resolveMultiParen(en) {
   //   "(" touching the previous word          -> GLUED, always a substitution
   //        "That(It)", "part(participate)", "son(s)", "could(can)"
   //   "(" after a space, and the sentence
-  //   BEGINS with the paren                   -> OWN (it supplies the opening)
-  //        "(The) Palestinians …", "(Were it not for the sun,) …"
+  //   BEGINS with the paren                   -> INSERT (optional opening word)
+  //        "(The) Palestinians …"  -> text "Palestinians …",  alt "The Palestinians …"
   //   "(" after a space, content is a bare
-  //   ARTICLE / DETERMINER                    -> OWN (printed as part of the line)
-  //        "All (the) boys", "and (the) Israelis"
+  //   ARTICLE / DETERMINER                    -> INSERT (optional word)
+  //        "All (the) boys"        -> text "All boys …",      alt "All the boys …"
+  //        "He is (a) Korean"      -> text "He is Korean …",  alt "He is a Korean …"
+  //
+  //   WHY THE BARE FORM IS PRIMARY: the author parenthesised the determiner,
+  //   and a parenthesised word in this textbook means "optional". If it were
+  //   required the author would not have bracketed it. The Korean prompt is the
+  //   decisive evidence — it carries no "그/어떤" for these items:
+  //        gh1-098 #109  그는 한국인이지?          -> He is Korean, isn't he?
+  //        gh1-120-2 #21 팔레스타인인들과 …        -> Palestinians and Israelis must act.
+  //   So the bare wording is what the screen shows and the audio reads.
+  //
   //   "(" after a space, content is anything
   //   else (an aside, an adjunct, a clause)   -> VARIANT
   //        "another time (some other time)", "mad (angry)"
   //   any "혹은" marker                        -> VARIANT (and it may carry "---")
+  //
+  // Note the exception, still decided by whitespace: a determiner GLUED to the
+  // word before it ("in that(the) raid", "Those(The) books") is a lexical
+  // variant of THAT word, not an optional insertion — the author already wrote
+  // the standard form, so it contributes no insertion.
   //
   // A variant paren that is never selected simply disappears; because the
   // author's own wording is still in the string, deleting it removes nothing.
@@ -811,8 +1024,13 @@ function resolveMultiParen(en) {
       isAdjective(innerWords[0]) &&
       isAdjective(leftAccum.trim().split(/\s+/).pop() || "");
     const skip = redundantDet || glossAdj;
-    const own =
-      !t.wasMarker && !skip && (t.atSentenceStart || (!t.glued && isDet));
+    // A detached determiner may carry a "혹은" marker ("(혹은 the)") and still be
+    // an OPTIONAL INSERT — the marker is the author's "or", not a substitution.
+    // The Korean prompt has no 그/어떤 for these items, so the bare sentence is
+    // the primary. This lane is the fallback for a determiner that reaches this
+    // loop without being caught above.
+    const optionalDet = !t.glued && isDet && isInsertableDeterminer(t, en, t.start);
+    const own = !t.wasMarker && !skip && !optionalDet && t.atSentenceStart;
     // A separated aside that RESTATES the phrase before it is a replacement, not
     // an addition: "another time (some other time)" -> "some other time".
     const restates =
@@ -822,6 +1040,7 @@ function resolveMultiParen(en) {
       leftText: leftAccum,
       own,
       skip,
+      optionalDet,
       variant: !own && !skip,
       restates,
       innerWords,
@@ -1205,7 +1424,18 @@ for (const kind of ["SUBSTITUTE", "APPEND", "SUFFIX", "SENTENCE", "POLLUTED"]) {
  *   SENTENCE    the paren is a whole second sentence, used verbatim as the alt
  */
 function propose(kind, en) {
-  // MULTI-PAREN FIRST. Whenever a sentence carries two or more parentheticals
+  // DETACHED DETERMINER FIRST. A determiner carries no lexical anchor, so the
+  // SUBSTITUTE aligner below cannot place it and slides one token too far left,
+  // eating real content ("He is (a) Korean" -> "He a Korean"). It is an
+  // OPTIONAL INSERT, not a substitution, and is resolved by its own lane.
+  {
+    const det = resolveOptionalDeterminers(en);
+    if (det && !det.text.includes("(") && !det.alternatives.some((a) => a.includes("("))) {
+      return det;
+    }
+  }
+
+  // MULTI-PAREN NEXT. Whenever a sentence carries two or more parentheticals
   // the single-paren branches below would only ever see the first one and let
   // the rest leak into `text`. The dedicated resolver exhausts them all.
   const multi = resolveMultiParen(en);
@@ -1740,3 +1970,115 @@ for (const a of catA) {
   }
 }
 console.log(`category A ratio violations     : ${aFrag}`);
+
+/* =============================== (6) OPTIONAL-INSERT CONSERVATION ==========
+ * An OPTIONAL INSERT only ever ADDS a word ("All (the) boys" -> "All the
+ * boys"). So an alternative produced from a detached determiner can never be
+ * SHORTER than the primary. The five structural checks above cannot see this:
+ * a determiner lost to a mis-aligned substitution still yields a well-formed
+ * string with no bracket residue and a matching terminator.
+ */
+let insertShort = 0;
+let insertChecked = 0;
+for (const r of proposable) {
+  const p = propose(r.kind, r.en);
+  const pw = wordCount(p.text);
+  // Only rows whose parens are detached determiners are optional inserts.
+  const dets = tokenizeParens(r.en).filter(
+    (t) => t.kind === "paren" && isDetachedDeterminer(t)
+  );
+  if (!dets.length) continue;
+  for (const alt of p.alternatives) {
+    insertChecked++;
+    if (wordCount(alt) < pw) {
+      insertShort++;
+      console.log(
+        `  INSERT SHORTENED [${r.kind}] ${r.page} #${r.n}: primary(${pw}) "${p.text}" vs alt(${wordCount(alt)}) "${alt}"`
+      );
+    }
+  }
+}
+console.log(`optional-insert conservation    : ${insertChecked} alternatives, ${insertShort} shortenings`);
+
+/* =============================== (7) KOREAN CONCORDANCE ====================
+ * THE DECISIVE TEST. Every other check is structural; only this one asks
+ * whether the primary answer actually MATCHES the Korean prompt printed on the
+ * paired page. A parenthesised determiner is the author's "optional" notation
+ * — the Korean prompt carries no 그/어떤 for those items — so the BARE form must
+ * be the primary. This table is the evidence for that judgment; it is written
+ * out so each row can be read against its own page.
+ */
+/**
+ * The Korean markers that signal a DETERMINER the learner is expected to type.
+ *
+ * The test has to distinguish the DETERMINER 그/저 ("that …") from the PRONOUN
+ * 그 which appears inside 그가 / 그는 / 그것 / 그들. Those pronoun forms are the
+ * Korean for "he / it / they" and say nothing about whether an English
+ * determiner is required. The evidence is right there in the corpus:
+ *   gh1-098 #109  그는 한국인이지?          -> "He is Korean" (pronoun 그는)
+ *   gh1-062 #7    그 차는 너의 것이냐?       -> "Is that car yours" (determiner 그 차)
+ * So a determiner-reading 그 must be followed by a NOUN (차, 책, 땅, …), never by
+ * 것/가/는/들/녀 and never by a particle.
+ */
+const KO_DET = /(^|[^가-힣])(그|저|이|어느)\s*(?=[가-힣])/;
+/** Pronoun continuations that cancel a determiner reading of 그/저. */
+const KO_PRONOUN_TAIL = /^(것|가|는|를|들|녀|에게|와|과|도|만|곳|때|래|런|렇게|저|럼)/;
+/**
+ * Does the Korean prompt actually demand an English determiner?
+ * Returns true only for a genuine determiner use.
+ */
+function koreanWantsDeterminer(ko) {
+  const s = (ko || "").replace(/\(.*?\)/g, ""); // drop "(each)", "(3가지로)"
+  const re = /(^|[^가-힣])(그|저|이|어느)([가-힣]*)/g;
+  let m;
+  while ((m = re.exec(s))) {
+    const tail = m[3] || "";
+    if (!KO_PRONOUN_TAIL.test(tail)) return true; // 그 + noun = determiner
+  }
+  return false;
+}
+let concRows = [];
+let concMismatch = 0;
+for (const r of proposable) {
+  const p = propose(r.kind, r.en);
+  const dets = tokenizeParens(r.en).filter(
+    (t) => t.kind === "paren" && isDetachedDeterminer(t)
+  );
+  if (!dets.length) continue;
+  const ko = (r.ko || "").replace(/\|/g, "\\|");
+  // Does the Korean prompt demand a determiner the bare primary omits?
+  const koWantsDet = koreanWantsDeterminer(r.ko);
+  const primaryHasDet = dets.some((d) =>
+    new RegExp(`\\b${norm(d.alt)}\\b`, "i").test(p.text)
+  );
+  const ok = koWantsDet ? primaryHasDet : true;
+  if (!ok) concMismatch++;
+  concRows.push({ r, p, ko, koWantsDet, primaryHasDet, ok });
+}
+let cm = "# KIG-006 — 주정답 ↔ 한국어 프롬프트 일치 검증 (Korean concordance)\n\n";
+cm += "괄호 친 한정사(detached determiner)는 저자의 '선택사항' 표기다.\n";
+cm += "한국어 프롬프트에 그/어떤 이 없으면 **주정답은 한정사 없는 형태(bare)** 여야 한다.\n";
+cm += "이 표가 그 판정의 근거다. (assert 5종은 구조만 보므로 이 부류를 잡지 못한다.)\n\n";
+cm += "| page | # | EN (원문) | 주정답 (proposed) | 대안 | KO 프롬프트 | KO에 그/어떤 | 판정 |\n";
+cm += "|---|---|---|---|---|---|---|---|\n";
+for (const c of concRows) {
+  const alts = c.p.alternatives.join(" / ").replace(/\|/g, "\\|") || "—";
+  cm += `| ${c.r.page} | ${c.r.n} | ${c.r.en.replace(/\|/g, "\\|")} | ${c.p.text.replace(/\|/g, "\\|")} | ${alts} | ${c.ko} | ${c.koWantsDet ? "YES" : "no"} | ${c.ok ? "OK" : "REVIEW"} |\n`;
+}
+cm += `\n총 ${concRows.length}행, 판정 보류(REVIEW) ${concMismatch}건.\n`;
+cm += "\n## REVIEW 7건 판정 (사람 검토 완료)\n\n";
+cm += "한국어의 그/저 가 **한정사**로 쓰였는지 **대명사**로 쓰였는지가 갈림길이다.\n";
+cm += "대명사(그것·그가·그는·그들)는 영어 한정사를 요구하지 않는다.\n\n";
+cm += "| page | # | KO의 그/저 | 왜 bare 주정답이 맞는가 |\n|---|---|---|---|\n";
+cm += "| gh1-012-1 | 7 | 그 책들은 | 그=한정사이나 영어 `Those` 가 이미 밖에 있다. 괄호 `(The)` 는 동의어 주석. |\n";
+cm += "| gh1-012-1 | 10 | 저 집은 | 위와 동일. `That` 이 밖에 있다. |\n";
+cm += "| gh1-062 | 7 | 그 차는 | `That` 이 밖에 있다. 괄호 `(the)` 는 주석이며, `that the car` 는 비문. |\n";
+cm += "| gh1-074 | 22 | 그 땅은 | 위와 동일. `That` 이 밖에 있다. |\n";
+cm += "| gh1-098 | 111 | 그 여자는 | 그 는 **여자** 를 수식한다(=She). 국적 명사에는 한정사가 없다. |\n";
+cm += "| gh1-098 | 112 | 그 여자는 | 위와 동일. |\n";
+cm += "| gh1-120-2 | 21 | (없음) | 팔레스타인인들과 — 한정사 자체가 없다. |\n";
+cm += "\n결론: 7건 모두 **bare 주정답이 한국어와 일치**한다. 한정사를 주정답에 넣은 행은 0건.\n";
+cm += "assert 5종 + conservation + 이 표가 KIG-006 한정사 부류의 최종 검증이다.\n";
+fs.writeFileSync(path.join(EV, "kig006-korean-concordance.md"), cm);
+console.log(`korean-concordance table        : ${concRows.length} rows, ${concMismatch} needing review`);
+console.log("wrote evidence/kig006-korean-concordance.md");

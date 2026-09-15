@@ -3,6 +3,10 @@ import path from "node:path";
 import { formatLessonPresentation } from "../src/lib/curriculumPresentation";
 
 const courses = [
+  // RE-009: "student" was missing from this list, so all 81 STUDENT conversation
+  // lessons were absent from public/search-index.json and the in-app search
+  // could not find a single one of them.
+  { slug: "student", title: "STUDENT" },
   { slug: "phonics", title: "VOCA" },
   { slug: "grammar1", title: "GRAMMAR I" },
   { slug: "grammar2", title: "GRAMMAR II" },
@@ -42,6 +46,7 @@ for (const { slug, title: courseTitle } of courses) {
       pres.title,
       pres.subtitle,
       pres.badge || "",
+      slug === "student" ? "회화 스피킹 대화 표현 conversation speaking student" : "",
       slug === "phonics" ? "중등 고등 단어 어휘 단어장 보카 voca matrix" : "",
       slug === "grammar1" ? "문법 영작 기초문법 문장구조 grammar1" : "",
       slug === "grammar2" ? "문법 패턴 구문 영작 grammar2" : "",

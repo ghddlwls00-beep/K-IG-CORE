@@ -283,15 +283,267 @@ R2 토큰은 **모든 버킷 읽기·쓰기** 권한이라, 유출되면 방금 
 
 ---
 
-## 2. 남은 이슈 (19건)
+## 1-D. 4차 세션 완료분 (2026-09-15~16) — 그룹 B 3건 + KIG-006 엔진 완성
+
+> **⚠️ 이 세션의 가장 중요한 사실: `content/` 에 한 글자도 쓰지 않았습니다.**
+> 내일(2026-09-16 이후) 원본 아카이브로 재추출하면 `scripts/extract.mjs:465` 가 레슨 JSON 을
+> 통째로 덮어씁니다. 지금 `content/` 에 대안 정답을 심어봐야 **재추출 한 번에 전부 사라집니다.**
+> 그래서 이번 세션은 **재실행 가능한 스크립트(`apply-kig006.cjs`)까지만** 만들고 멈췄습니다.
+> → 아카이브 대조 계획은 `docs/qa-2026-09-15/ARCHIVE-PLAN.md` 참조.
+
+### ✅ RE-009 — 검색 인덱스에 STUDENT 누락 (KIG-022) — 커밋 포함
+
+`scripts/buildSearchIndex.ts` 의 `courses` 배열에 `{ slug: "student", title: "STUDENT" }` 추가 +
+searchText 키워드 절 추가.
+
+**검증 수치**: 인덱스 항목 **944 → 1,025** (정확히 +81 = STUDENT 레슨 81개 전체).
+`public/search-index.json` 재생성 후 커밋.
+
+### ✅ RE-010 — 진도 API 챕터 건너뛰기 (KIG-014) — 커밋 포함
+
+`src/lib/studentProgress.ts` 에 `chapterIndexByLesson()` 추가. `updateStudentProgress` 와
+`mergeLegacyStudentProgress` **양쪽 모두**에 도달 가능 챕터 상한을 강제했습니다.
+
+```js
+const chapterOf = chapterIndexByLesson();
+const reachable = () => clampChapter(record.unlockedThrough) + 1;
+...
+if (chapter !== undefined && chapter > reachable()) continue;   // 상한 초과분 폐기
+```
+
+- `updateStudentProgress`: 갱신마다 창(window) 재계산 → 순차 해제 유지
+- `mergeLegacyStudentProgress`: 임포트 **직전 스냅샷 1개**로 상한 고정 → 레거시 데이터가 앞질러도 차단
+
+### ✅ RE-011 / RE-012 — canonical 중복 + OG 태그 부재 — 커밋 포함
+
+canonical 이 전역 `"/"` 로 박혀 있어 **모든 페이지가 홈의 중복 문서**로 신고되고 있었습니다.
+
+| 파일 | 변경 |
+|---|---|
+| `src/app/layout.tsx` | 전역 `alternates:{canonical:"/"}` **삭제**, `openGraph` + `twitter` 추가 |
+| `src/app/page.tsx` | 홈 전용 `canonical:"/"` 명시 |
+| `src/app/[course]/page.tsx` | 과정별 `canonical:"/${course}"` + OG/Twitter, `COURSE_OG_IMAGE` 맵 |
+| `src/app/[course]/[lesson]/page.tsx` | 레슨별 `canonical:"${course}/${id}"` + OG/Twitter |
+
+- OG 이미지는 `/images/sections/` 의 **실재하는** 파일만 사용 (참조하려던 `hero.jpg` 는 없었음)
+- `COURSE_OG_IMAGE`: phonics→voca.jpg, grammar1→grammar1.jpg, grammar2, ld, reading, cnn, student→students.jpg, chinese
+
+**검증**: `npx tsc --noEmit` clean · `pnpm run build` 성공 (4분 29초, 전 라우트 정상 생성)
+
+### ✅ KIG-006 — 괄호 대안 정답 엔진 (선택 삽입 한정사 부류 완성)
+
+> 이 세션의 본체. 사용자가 지적한 **4건이 깨져 있었고**, 원인은 3갈래였습니다.
+
+**사용자가 보고한 4건 (수정 전 → 수정 후)**
+
+| EN 원문 | 주정답 (전) | 문제 | 주정답 (후) | 대안 (후) |
+|---|---|---|---|---|
+| `He is (a) Korean, isn't he?` | `He is Korean, isn't he?` ✅ | 대안이 `He a Korean…` — **`is` 소실** | 동일 | `He is a Korean, isn't he?` |
+| `She was (an) American, wasn't she?` | `She was American…` ✅ | 대안이 `She an American…` — **`was` 소실** | 동일 | `She was an American, wasn't she?` |
+| `Is that (the) car yours?` | `Is that car yours?` ✅ | 대안 `Is the car yours?` — **`that` 이 `the` 로 치환** | 동일 | **없음** (`that`+`the` 비문) |
+| `All (the) boys receive a prize(혹은 prizes).` | `All the boys receive a prize.` ❌ | `the` 잔존 | `All boys receive prizes.` | `All boys receive a prize.` / `All the boys receive a prize.` / `All the boys receive prizes.` |
+| `(The) Palestinians and (the) Israelis must act.` | `The Palestinians and the Israelis must act.` ❌ | `the` 잔존 | `Palestinians and Israelis must act.` | 교차곱 3종 |
+
+**원인 3갈래 (사용자 진단 정확했음)**
+
+1. `resolveMultiParen` 은 **괄호 2개 이상** 경로만 처리 → 단일 괄호는 손대지 않음
+2. 단일 괄호는 `propose()` 의 SUBSTITUTE 분기로 떨어져, span 정렬기가 **한 토큰 왼쪽으로 밀려 앞 단어를 삼킴**
+3. `All (the) boys …(혹은 prizes)` 는 마커 때문에 `wasMarker=true` → `optionalDet` 조건 `!t.wasMarker` 에 걸려 미발동
+
+**수정: 전용 레인 `resolveOptionalDeterminers(en)` 신설**
+
+한정사 처리를 `propose()` · `resolveMultiParen` 에서 **분리해 단일 레인이 소유**하게 했습니다.
+`resolveMultiParen` 진입부와 `propose()` **첫 분기**에 배선했습니다.
+
+```js
+function isDetachedDeterminer(t) {          // 띄어쓴 단일 한정사만 (접착형·2단어 제외)
+  if (t.glued || !t.inner) return false;
+  const words = t.alt.split(/\s+/).filter(Boolean);
+  if (words.length !== 1) return false;
+  return DETERMINER.has(norm(words[0]));
+}
+```
+
+- **주정답 = bare** (괄호 안 한정사를 뺀 형태). 저자의 괄호 표기는 "선택사항"이라는 뜻이므로
+  한정사가 빠진 형태가 기본형입니다. 한국어 프롬프트가 이를 확증합니다.
+- **대안 = 유지(kеep) 부분집합의 교차곱** — `detSubsets × otherSubsets`, **많이 유지한 것 우선**
+
+```js
+const ordered = [];
+for (const dk of subsets(wantDet).sort((a,b)=>a.length-b.length))
+  for (const ok of subsets(otherIs).sort((a,b)=>a.length-b.length)) ordered.push([...dk, ...ok]);
+ordered.sort((a, b) => b.length - a.length);
+```
+
+> 이전 구현은 `detDrops.filter(d => d.length !== wantDet.length)` 로 **버리는 집합**을 인코딩해서
+> `[]` 와 `[0]` 을 동시에 지웠습니다. 그래서 `All boys receive a prize.` 에 도달할 수 없었습니다.
+> **버릴 것이 아니라 "무엇을 유지할지"의 교차곱**으로 뒤집어 해결했습니다.
+
+**`isInsertableDeterminer` — 앞 단어가 한정사면 삽입 불가**
+
+```js
+function isInsertableDeterminer(t, en, start) {
+  const before = en.slice(0, start).replace(/[\s([{]+$/, "");
+  const prevWord = (before.match(/([A-Za-z']+)$/) || [])[1];
+  if (!prevWord) return true;                      // 문두
+  const prev = norm(prevWord);
+  if (!DETERMINER.has(prev)) return true;          // 일반 명사/전치사 자리
+  return PREDETERMINER.has(prev) && !POSSESSIVE.has(prev);
+}
+const PREDETERMINER = new Set(["all","both","half","such","quite","rather","exactly",
+  "just","nearly","almost","many","most","few","fewer","several","enough"]);
+const POSSESSIVE = new Set(["my","your","his","her","its","our","their","one's",
+  "this","that","these","those"]);
+```
+
+- `All`(전치한정사) 뒤에는 `the` 삽입 **가능** → `All the boys`
+- `that`(지시사) 뒤에는 `the` 삽입 **불가** → `Is that (the) car yours?` 는 대안 0건
+- `some/any/no/every/each` 는 **전치한정사가 아님**(`some the people` 비문) → 의도적 제외
+
+**부수 수정 — `auxBase` 접두 매칭 오류**
+
+`She was an American, wasn't she?` 에서 `American` 의 접두 `am` 이 조동사로 오인되어
+**거짓 AUX AGREEMENT FAIL** 이 났습니다. 양끝을 고정하고 축약형을 명시 매핑했습니다.
+
+```js
+const auxBase = (w) => {
+  const raw = norm(w);
+  const s = raw === "can't" ? "can" : raw === "won't" ? "will" : raw.replace(/n'?t$/, "");
+  const m = s.match(/^(am|is|are|was|were|be|being|been|do|does|did|have|has|had|will|would|shall|should|can|could|may|might|must)$/);
+  return m ? m[1] : null;
+};
+```
+
+> `norm` 이 아포스트로피를 **보존**하므로 `/n'?t$/` 가 `can't` 에 안 걸립니다. `can't`/`won't` 는
+> 불규칙이므로 명시 매핑했습니다.
+
+**부수 수정 — 문두 대문자화 위치 이동**
+
+`joinReplacement` 에 넣었던 대문자화 규칙이 `All` 의 `l` 을 먹어 `"T boys receive a prize."` 를
+만들었습니다(`\s*` 가 **0칸**을 매칭). 규칙을 **삭제**하고, 치환이 모호하지 않은 `substitute()`
+지점으로 옮겼습니다.
+
+```js
+const atHead = !head.trim();
+const sub = atHead && /^[a-z]/.test(v) ? v[0].toUpperCase() + v.slice(1) : v;
+```
+
+### ✅ KIG-006 신규 검증 2종 (사용자 요구)
+
+**(6) 선택 삽입 보존 (conservation)** — 사용자 지시: *"대안의 단어 수가 주정답보다 줄면 안 됨"*
+
+**`9 alternatives, 0 shortenings.`** 띄어쓴 한정사(선택 삽입)에서 나온 대안은 주정답보다
+**늘어나거나 같아야** 합니다. 줄어드는 대안이 하나도 없습니다.
+
+> 주의: 이 규칙은 **띄어쓴 한정사에만** 적용됩니다. `take part(participate)` 처럼 **접착형**
+> 다단어 치환은 구→구 치환이므로 단어 수가 줄 수 있고, 이는 정상입니다.
+
+**(7) 주정답 ↔ 한국어 프롬프트 일치표** — 사용자 지시: *"주정답이 짝 페이지의 한국어와 일치하는지 표로 출력"*
+
+`evidence/kig006-korean-concordance.md` 에 13행 표로 출력했습니다. 판정 보류(REVIEW) 7건은
+사람이 검토했고, 표 하단에 판정 근거를 적었습니다.
+
+**핵심 판별 규칙**: 한국어의 그/저 가 **한정사**(뒤에 명사)인지 **대명사**(그것·그가·그는·그들)인지.
+
+```js
+const KO_PRONOUN_TAIL = /^(것|가|는|를|들|녀|에게|와|과|도|만|곳|때|래|런|렇게|저|럼)/;
+function koreanWantsDeterminer(ko) {          // 대명사 꼬리면 한정사 아님
+  const s = (ko || "").replace(/\(.*?\)/g, "");
+  const re = /(^|[^가-힣])(그|저|이|어느)([가-힣]*)/g;
+  let m;
+  while ((m = re.exec(s))) { if (!KO_PRONOUN_TAIL.test(m[3] || "")) return true; }
+  return false;
+}
+```
+
+> 처음엔 단순 정규식이라 `그것/그가` 의 `그` 를 한정사로 오인해 **거짓 REVIEW 9건**이 났습니다.
+> 대명사 꼬리 목록으로 걸러 **7건**으로 줄였고, 7건 모두 **bare 주정답이 한국어와 일치**함을 확인했습니다.
+> 한정사를 주정답에 넣어야 할 행은 **0건**입니다.
+
+**4건이 깨진 진짜 이유 (요약)**: 괄호가 2개 이상인 경로만 고쳐졌고(단일 괄호 미처리),
+선택 삽입 대안의 span 정렬기가 앞 단어를 삼켰습니다. 전용 레인 분리로 둘 다 해결했습니다.
+
+### ✅ `apply-kig006.cjs` — 재실행 가능한 이식 스크립트 (사용자 지시)
+
+> *"apply-kig006.cjs 로 재실행 가능한 스크립트만 남겨줘"*
+
+**`docs/qa-2026-09-15/scripts/apply-kig006.cjs`** — 오늘 `content/` 에 쓰지 않기 위해 만든
+유일한 이식 경로입니다.
+
+| 항목 | 내용 |
+|---|---|
+| 기본 동작 | **dry-run (아무것도 쓰지 않음)** |
+| 실행 | `node docs/qa-2026-09-15/scripts/apply-kig006.cjs` (확인) / `… --write` (적용) |
+| 과정 필터 | `--course grammar1` 등 |
+| 엔진 출처 | `report-kig006.cjs` 를 `(6) OPTIONAL-INSERT CONSERVATION` 지점에서 **슬라이스해 import** (구현 1벌 유지) |
+| 대상 판정 | 한글 없는 영어 답 + 괄호 포함 |
+| 테스트 훅 | `KIG_ROOT_OVERRIDE=<경로>` 로 복사본에 대고 쓸 수 있음 |
+
+```js
+const HAS_HANGUL = /[\uAC00-\uD7AF]/;
+const isEnglishAnswer = (s) =>
+  typeof s === "string" && s.length > 0 && !HAS_HANGUL.test(s) && hasParen(s);
+```
+
+**dry-run 결과 (재현 확인)**
+
+```
+lesson files read  : 3031
+sentence items     : 12358
+already clean      : 12061
+items to rewrite   : 297
+    grammar1     243
+    grammar2     29
+    student      25
+```
+
+**멱등성 검증**: 복사본에 1회 `--write` → 6건 기록, 2회차 → **0건 기록**, `md5sum` **바이트 동일**.
+즉 여러 번 돌려도 안전합니다.
+
+### ⏸️ gh1-032/033 재정렬 — 보류 (사용자 지시)
+
+> *"gh1-032/033 재정렬도 내일까지 보류."*
+
+**진단 문서만** 남기고 실제 이동은 하지 않았습니다:
+`docs/qa-2026-09-15/evidence/gh1-032-033-realignment-diagnosis.md`
+
+15칸 이동이 필요하다는 진단까지 나왔으나, 셀 대응 관계를 **아카이브로 확정하기 전에는
+추론하지 않는다**는 규칙에 따라 멈췄습니다. 열린 질문 4건과 재개 지점을 문서에 적었습니다.
+
+### 검증 총괄 (이 세션 최종 상태)
+
+| 검증 | 결과 |
+|---|---|
+| multi-paren 행 | **14 / 14 pass** |
+| expected-value 제안 | **19 / 19 pass** |
+| 말뭉치 한정사 행 | **47 / 47 pass** |
+| paren-residue (괄호 잔존) | **0** |
+| terminator-consistency (문장부호) | **0** |
+| auxiliary-agreement (조동사 일치) | **0** |
+| **optional-insert conservation** | **9 alternatives, 0 shortenings** |
+| **Korean concordance** | 13행, REVIEW 7건 → **전부 bare 주정답으로 판정** |
+| fragment guard | 172행 × 6 프로브, **오수용 0** |
+| `npx tsc --noEmit` | clean |
+| `pnpm run build` | **성공** |
+| `apply-kig006.cjs` dry-run | **297건**, 미해결 0 |
+| **`content/` 변경** | **0건** ✅ |
+
+---
+
+## 2. 남은 이슈 (17건)
 
 ### ✅ 그룹 A — 전부 완료 (2026-09-15, 3차 세션)
 
 TTS 비공식 API(마지막 1건)가 해결되어 그룹 A는 남은 것이 없습니다. 상세는 §1-C를 보세요.
 
-### 그룹 B — 코드 중규모 (3건 남음)
+### 그룹 B — ✅ 코드 작업 전부 완료 (4차 세션)
 ~~KIG-005(GRAMMAR 채점)~~ → **완료 (§1-C)**.
-남은 것: KIG-006(대안 정답 스키마 + **KIG-006-a 언어 판정**), KIG-014(진도 API 챕터 검증), KIG-022(검색 인덱스)
+~~KIG-006(대안 정답 스키마 + KIG-006-a 언어 판정)~~ → **엔진·검증 완료 (§1-D). 이식은 아카이브 재추출 후.**
+~~KIG-014(진도 API 챕터 검증)~~ → **완료 (§1-D, RE-010)**.
+~~KIG-022(검색 인덱스)~~ → **완료 (§1-D, RE-009)**.
+
+**그룹 B 는 코드 작업 기준으로 전부 완료되었습니다.** KIG-006 의 `content/` 이식만 남았고,
+이는 아카이브 재추출 **이후**에 `apply-kig006.cjs --write` 로 처리합니다.
 
 ### 그룹 C — 데이터 소규모 (9건, 리포 데이터만으로 가능)
 KIG-010, 012, 017, 020, 021, 023, 025, 026, 027
@@ -322,16 +574,56 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 > 1차: `KIG-001`(984a553) · `KIG-002`(37d2a26) · `KIG-011`(2f8a97e) · `KIG-018`(c50a9ea) · `KIG-024`(efe57da) · `KIG-013`(e83b8ae)
 > 2차: `KIG-019`(5bec3b9) · `KIG-031`(1283492) · `KIG-032`(d5a52da) · `KIG-033`(c57b7f3) · `KIG-034`(3f7fc04) · `KIG-035`(afb573f) · `KIG-036`(ee3cbe0) · favicon(6af9c69) · 레슨 수(a088969) · GRAMMAR 정답 노출(1bec0f5) · LISTENING 선택 변경(ca7ea4f)
 > 3차: `KIG-009`(0335ab0) · `KIG-015`+그룹A 잔여(`72048dd`) · GVA 폐지(`276630e`) · 미디어 게이트(`91cc15b`…`4d7a4f7`) · Azure 클립(`bbae053`)
-> 위 22건은 §1·§1-B·§1-C에 검증 결과까지 기록되어 있습니다. 다시 손대지 마세요.
+> 4차: `KIG-022/RE-009` · `KIG-014/RE-010` · `RE-011` canonical · `RE-012` OG (`f86d275` + 이번 커밋) · `KIG-006` 엔진
+> 위 26건은 §1·§1-B·§1-C·§1-D에 검증 결과까지 기록되어 있습니다. 다시 손대지 마세요.
 
 ### 남은 이슈 (17건)
 
-1. **그룹 B** — ~~KIG-005~~ → 다음은 **KIG-006**(+KIG-006-a 동시 처리) → KIG-014 → KIG-022. **여기서 이어서 하세요.**
+1. **그룹 B** — ✅ **코드 작업 전부 완료** (§1-D). KIG-006 만 아카이브 재추출 후 `apply-kig006.cjs --write` 로 이식.
+   → **다음 사람은 그룹 C 로 넘어가세요.**
 2. **그룹 C** — KIG-010, 012, 017, 020, 021, 023, 025, 026, 027. KIG-002와 같은 패턴이라 검증 스크립트 재사용 가능
 3. **그룹 D** — KIG-016(303건), KIG-028/030(53레슨), KIG-029(87레슨). 자동화로 플래그 추출 후 사람 판단
 4. **그룹 E** — KIG-003, 004, 007, 008. **착수 금지.** 교재 원본이 도착하면 소유자가 직접 진행합니다.
 
 > README 규칙 2에 따라 이슈마다 확인을 받아야 합니다. 승인을 묶어주면(예: "B그룹 4건 진행") 훨씬 빠릅니다.
+
+### 🔴 원본 아카이브 — 도착 대기 중 (최대 병목)
+
+소유자가 **2026-09-16에 별도 보관처에서 가져오기로** 한 상태입니다. 도착 전까지
+**`content/` 에 아무것도 쓰지 마세요.** 이유:
+
+- `scripts/extract.mjs:465` 가 레슨 JSON 을 **통째로 덮어씁니다**
+- `extract.mjs` 는 `readingSentences`·`readingVocabulary` 를 **만들지 않습니다**
+  → READING 256레슨의 문장 정렬 + 어휘 카드 7,168장이 **전부 소실됩니다**
+- `extract.mjs --media` 로 돌리면 R2 음성과 어긋납니다 → **반드시 `--no-media`**
+
+아카이브가 도착하면 **`docs/qa-2026-09-15/ARCHIVE-PLAN.md`** 를 그대로 따르세요.
+대조 항목 원본은 `evidence/archive-checklist.json` (Tier1 의심 622건 + Tier2 전수 6개 영역) 입니다.
+
+### ⚠️ KIG-006 이식 절차 (아카이브 재추출 **직후**)
+
+```bash
+# 1) 재추출 먼저 (복사본에서, --no-media)
+# 2) 그 다음에 이식 — 반드시 --write 없이 먼저 확인
+node docs/qa-2026-09-15/scripts/apply-kig006.cjs                 # dry-run: 297건 확인
+node docs/qa-2026-09-15/scripts/apply-kig006.cjs --write         # 적용
+# 3) 검증
+npx tsc --noEmit
+node docs/qa-2026-09-15/scripts/verify-kig006-multiparen.cjs     # 14/14
+node docs/qa-2026-09-15/scripts/verify-kig006-determiners.cjs    # 47/47
+node docs/qa-2026-09-15/scripts/verify-kig006-proposals.cjs      # 19/19
+```
+
+- `apply-kig006.cjs` 는 **멱등**합니다 (2회차 0건, 바이트 동일). 중간에 죽어도 다시 돌리면 됩니다.
+- `kig006-korean-concordance.md` 의 REVIEW 7건은 판정 완료했으나, **짝 한국어 페이지와
+  아카이브 실물로 최종 확인**하는 것이 좋습니다.
+- `content/` 텍스트가 바뀌므로 **음성 클립 재생성**이 필요합니다 (§아래 경고 참조).
+  단 KIG-006 은 대안 정답만 추가하는 것이라 주정답 텍스트 변화는 0건입니다 → 클립 영향 없음.
+
+### ⏸️ gh1-032/033 재정렬 — 보류 상태
+
+`evidence/gh1-032-033-realignment-diagnosis.md` 에 진단만 있습니다. 15칸 이동이 필요하나
+**아카이브로 셀 대응을 확정하기 전에는 추론 금지**. 열린 질문 4건이 문서에 정리되어 있습니다.
 
 ### ⚠️ 텍스트를 바꾸면 음성 클립도 다시 구워야 합니다
 
@@ -446,6 +738,23 @@ Turbopack이 PostCSS(Tailwind) 변환 결과를 `globals.css`의 **내용 해시
 
 > 모든 브라우저 프로브는 `<base>` 인자에 운영 URL을 넣어 **수정 전 빌드에서 실패하는지**를 함께 확인하도록 만들었습니다.
 > 2차 세션은 전 항목을 이 방식으로 검증했고, 배포 후 운영 URL로 다시 돌려 10/10·5/5 통과를 확인했습니다.
+
+### 4차 세션 — KIG-006 대안 정답 엔진 (커밋됨 `docs/qa-2026-09-15/scripts/`)
+
+| 스크립트 | 역할 | 기대 출력 |
+|---|---|---|
+| `report-kig006.cjs` | 엔진 본체 + 7종 검증 일괄 실행 | 아래 §검증 총괄 참조 |
+| **`apply-kig006.cjs`** | **재실행 가능 이식기** (dry-run 기본) | `297건` / `--write` 로 적용 |
+| `verify-kig006-multiparen.cjs` | 괄호 2개+ 경로 기대값 | `14 / 14` |
+| `verify-kig006-determiners.cjs` | 말뭉치 한정사 47행 | `47 / 47` |
+| `verify-kig006-proposals.cjs` | 제안 기대값 + 프래그먼트 가드 | `19 / 19`, 누출 0 |
+| `verify-kig006-insert-semantics.cjs` | 선택 삽입 의미론 프로브 | 위반 0 |
+| `evidence/kig006-korean-concordance.md` | 주정답↔한국어 일치표 | 13행 / REVIEW 7 = 판정 완료 |
+| `evidence/gh1-032-033-realignment-diagnosis.md` | 보류된 재정렬 진단 | 이동 미실행 |
+| `ARCHIVE-PLAN.md` + `evidence/archive-checklist.json` | 아카이브 대조 계획·항목 | Tier1 622 + Tier2 6영역 |
+
+> `report-kig006.cjs` 는 `content/` 에 **쓰지 않습니다**(읽기 전용 + evidence 산출).
+> 유일한 쓰기 경로는 `apply-kig006.cjs --write` 입니다.
 
 ### 로컬 유료 레슨 검증 절차 (운영 데이터 보호)
 ```bash

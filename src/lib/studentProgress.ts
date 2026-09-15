@@ -226,6 +226,31 @@ async function writeRecord(key: string, record: StudentProgressRecord): Promise<
   );
 }
 
+/**
+ * RE-010 — which chapter does a lesson belong to, and is that chapter unlocked?
+ *
+ * `updateStudentProgress` used to validate a `lessonId` only against the set of
+ * ALL Student lessons. A licence holder could therefore post all 81 ids as
+ * completed in one request and drive `unlockedThrough` straight to 20, which
+ * defeats the product's sequential-unlock design (and `/api/student/chapter-audio`
+ * trusts the same field, so it opens too).
+ *
+ * A completion is now accepted only for a lesson in a REACHABLE chapter:
+ * something at or below the current unlock, or exactly one chapter ahead — the
+ * chapter the learner is working through now. That admits the legitimate case
+ * (completing the chapter in progress unlocks the next) while refusing the bulk
+ * jump.
+ */
+function chapterIndexByLesson(): Map<string, number> {
+  const map = new Map<string, number>();
+  getCourseGroups("student").slice(0, 20).forEach((group, index) => {
+    for (const id of group.lessons) {
+      if (/^s\d+-\d+$/.test(id)) map.set(id, index + 1);
+    }
+  });
+  return map;
+}
+
 export function getStudentChapters(record: StudentProgressRecord): StudentChapterProgress[] {
   const groups = getCourseGroups("student");
   const manual = clampChapter(record.manualUnlockedThrough || 1);
@@ -294,12 +319,22 @@ export async function updateStudentProgress(
     .then(async () => {
       const record = await readRecord(normalized);
       const validIds = new Set(getCourseGroups("student").flatMap((group) => group.lessons));
+      // RE-010 — the sequential-unlock guard. Completions are accepted only for
+      // a lesson in a reachable chapter (current, earlier, or exactly one ahead),
+      // so a bulk POST of every lesson id can no longer unlock the whole course.
+      const chapterOf = chapterIndexByLesson();
+      const reachable = () => clampChapter(record.unlockedThrough) + 1;
       const updates = Array.isArray(updateOrUpdates) ? updateOrUpdates.slice(0, 100) : [updateOrUpdates];
       for (const update of updates) {
         const now = Date.now();
         const clientUpdatedAt = Math.min(now + 60_000, Math.max(0, update.clientUpdatedAt || now));
 
         if (update.lessonId && validIds.has(update.lessonId) && typeof update.completed === "boolean") {
+          const chapter = chapterOf.get(update.lessonId);
+          // A lesson outside the chapter map (an id that exists but is not
+          // chapter-numbered) keeps the old behaviour; a chapter-numbered lesson
+          // must be within reach.
+          if (chapter !== undefined && chapter > reachable()) continue;
           const existing = record.lessons[update.lessonId];
           if (!existing || clientUpdatedAt >= existing.updatedAt) {
             record.lessons[update.lessonId] = {
@@ -309,6 +344,8 @@ export async function updateStudentProgress(
           }
         }
         if (update.lastLessonId && validIds.has(update.lastLessonId)) {
+          const chapter = chapterOf.get(update.lastLessonId);
+          if (chapter !== undefined && chapter > reachable()) continue;
           if (!record.lastLessonUpdatedAt || clientUpdatedAt >= record.lastLessonUpdatedAt) {
             record.lastLessonId = update.lastLessonId;
             record.lastLessonUpdatedAt = clientUpdatedAt;
@@ -327,15 +364,30 @@ export async function updateStudentProgress(
   }
 }
 
+/**
+ * RE-010 — import a legacy completion list.
+ *
+ * This path is a MIGRATION: it carries a learner's already-earned progress from
+ * the old app into this one, so it must not be used to grant new unlocks. The
+ * reachable window is computed ONCE from the stored record and does not widen as
+ * ids are applied — otherwise importing 81 ids would unlock every chapter in
+ * exactly the way the per-request guard above prevents.
+ */
 export async function mergeLegacyStudentProgress(
   key: string,
   lessonIds: string[],
 ): Promise<StudentProgressRecord> {
   const validIds = new Set(getCourseGroups("student").flatMap((group) => group.lessons));
+  const chapterOf = chapterIndexByLesson();
   const now = Date.now();
   let record = await readRecord(key);
+  // One snapshot of what is reachable BEFORE the import; applying ids must not
+  // move this ceiling.
+  const ceiling = clampChapter(record.unlockedThrough) + 1;
   for (const id of lessonIds.slice(0, 100)) {
     if (!validIds.has(id) || record.lessons[id]?.completed) continue;
+    const chapter = chapterOf.get(id);
+    if (chapter !== undefined && chapter > ceiling) continue;
     record.lessons[id] = { completed: true, updatedAt: now };
   }
   record = recalculate(record);

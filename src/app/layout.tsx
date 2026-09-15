@@ -18,8 +18,35 @@ export const metadata: Metadata = {
   },
   description:
     "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
-  alternates: {
-    canonical: "/",
+  // RE-011: a GLOBAL `canonical: "/"` used to live here. Because no page
+  // overrode it, EVERY page declared itself a duplicate of the home page, so
+  // search engines indexed only "/" and the rest of the site dropped out.
+  // Canonical URLs are now set per page (course landing, lesson, home) via each
+  // route's own `generateMetadata` / `metadata`.
+  openGraph: {
+    type: "website",
+    siteName: "K-IG 핵심 어학 마스터",
+    locale: "ko_KR",
+    title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
+    description:
+      "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
+    // RE-012: without these, a KakaoTalk / SNS share renders as a bare link
+    // with no thumbnail and no description.
+    images: [
+      {
+        url: "/images/sections/students.jpg",
+        width: 1200,
+        height: 630,
+        alt: "K-IG 핵심 어학 마스터",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
+    description:
+      "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
+    images: ["/images/sections/students.jpg"],
   },
   other: {
     google: "notranslate",

@@ -31,8 +31,8 @@ Category B/C/D unique answers: **181**
 | gh1-014, gh1-014-1, gh1-015, gh1-015-1 | I want apples (혹은 an apple). | I want apples. | I want an apple. |
 | gh1-016, gh1-016-1, gh1-017, gh1-017-1 | Each boy receives a prize(혹은 prizes). | Each boy receives a prize. | Each boy receives prizes. |
 | gh1-016, gh1-016-1, gh1-017, gh1-017-1 | Every boy receives a prize(혹은 prizes). | Every boy receives a prize. | Every boy receives prizes. |
-| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys receive a prize(혹은 prizes). | All the boys receive a prize. | All the boys receive prizes. |
-| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys do not receive a prize(혹은 prizes). | All the boys do not receive a prize. | All the boys do not receive prizes. |
+| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys receive a prize(혹은 prizes). | All boys receive prizes. | All the boys receive prizes. |
+| gh1-016, gh1-016-1, gh1-017, gh1-017-1 | All (the) boys do not receive a prize(혹은 prizes). | All boys do not receive prizes. | All the boys do not receive prizes. |
 | gh1-024, gh1-025 | Am I not a boy(혹은 Ain't I a boy)? | Am I not a boy? | Ain't I a boy? |
 | gh1-024, gh1-025 | Aren't you a girl(혹은 Are you not a girl)? | Aren't you a girl? | Are you not a girl? |
 | gh1-024, gh1-025, gh1-042, gh1-042-1, gh1-043, gh1-043-1 | Isn't he a boy(혹은 Is he not a boy?) | Isn't he a boy? | Is he not a boy? |
@@ -96,32 +96,32 @@ Category B/C/D unique answers: **181**
 | gh1-010-2 | 45 | Didn't he like it(that)? | Didn't he like it? | Didn't he like that? |
 | gh1-010-2 | 46 | Didn't they like it(that)? | Didn't they like it? | Didn't they like that? |
 | gh1-012-1 | 6 | Those(They) are your books. | Those are your books. | They are your books. |
-| gh1-012-1 | 7 | Those (The) books are theirs. | Those books are theirs. | The books are theirs. |
-| gh1-012-1 | 10 | That (The) house is mine. | That house is mine. | The house is mine. |
+| gh1-012-1 | 7 | Those (The) books are theirs. | Those books are theirs. | — |
+| gh1-012-1 | 10 | That (The) house is mine. | That house is mine. | — |
 | gh1-014-1 | 8 | Whose books are they(those)? | Whose books are they? | Whose books are those? |
 | gh1-014-1 | 11 | Which (What) book do you want? | Which book do you want? | What book do you want? |
 | gh1-014-1 | 12 | Which(What) do you want? | Which do you want? | What do you want? |
 | gh1-014-2 | 32 | I am, too.(So am I). | I am, too. | So am I. |
 | gh1-014-2 | 36 | I don't either, (Neither do I). | I don't either. | I don't Neither do I. |
-| gh1-014-2 | 38 | Each (Every) student has his own room. | Each student has his own room. | Every student has his own room. |
-| gh1-014-2 | 39 | He goes there each (every) year. | He goes there each year. | He goes there every year. |
+| gh1-014-2 | 38 | Each (Every) student has his own room. | Each student has his own room. | — |
+| gh1-014-2 | 39 | He goes there each (every) year. | He goes there each year. | — |
 | gh1-016-2 | 29 | How much did you like it(that)? | How much did you like it? | How much did you like that? |
-| gh1-022 | 8 | Those(they) are books. | Those are books. | they are books. |
-| gh1-022 | 24 | They(those) are not books. | They are not books. | those are not books. |
+| gh1-022 | 8 | Those(they) are books. | Those are books. | They are books. |
+| gh1-022 | 24 | They(those) are not books. | They are not books. | Those are not books. |
 | gh1-024 | 32 | Are those(they) books? | Are those books? | Are they books? |
-| gh1-026 | 8 | Those(they) were books. | Those were books. | they were books. |
-| gh1-026 | 24 | They(those) were not books. | They were not books. | those were not books. |
+| gh1-026 | 8 | Those(they) were books. | Those were books. | They were books. |
+| gh1-026 | 24 | They(those) were not books. | They were not books. | Those were not books. |
 | gh1-028 | 32 | Were those(they) books? | Were those books? | Were they books? |
 | gh1-032 | 42 | Are those(they) theirs? | Are those theirs? | Are they theirs? |
 | gh1-032 | 48 | Aren't these his?(Are these not his)? | Aren't these his? | Are these not his? |
-| gh1-038 | 20 | They(those) are books, aren't they? | They are books, aren't they? | those are books, aren't they? |
+| gh1-038 | 20 | They(those) are books, aren't they? | They are books, aren't they? | Those are books, aren't they? |
 | gh1-042-2 | 34 | Those(They) are theirs. | Those are theirs. | They are theirs. |
 | gh1-050-1 | 7 | This is my hat(cap). | This is my hat. | This is my cap. |
 | gh1-050-1 | 9 | Those(They) are their guns. | Those are their guns. | They are their guns. |
 | gh1-050-1 | 12 | It(That) is mine. | It is mine. | That is mine. |
 | gh1-050-2 | 28 | Whose car is that(it)? | Whose car is that? | Whose car is it? |
 | gh1-050-2 | 31 | Are they(those) yours? | Are they yours? | Are those yours? |
-| gh1-050-2 | 32 | Is it (that) mine? | Is it mine? | Is that mine? |
+| gh1-050-2 | 32 | Is it (that) mine? | Is it mine? | Is it that mine? |
 | gh1-052-1 | 9 | Those(They) were their cows. | Those were their cows. | They were their cows. |
 | gh1-052-1 | 11 | It(That) was mine. | It was mine. | That was mine. |
 | gh1-052-2 | 31 | Were those(they) hers? | Were those hers? | Were they hers? |
@@ -143,16 +143,16 @@ Category B/C/D unique answers: **181**
 | gh1-058-2 | 33 | Doesn't she(Does she not) give money to each of her daughters? | Doesn't she give money to each of her daughters? | Does she not give money to each of her daughters? |
 | gh1-058-2 | 35 | Isn't he(Is he not) popular? | Isn't he popular? | Is he not popular? |
 | gh1-058-2 | 36 | Weren't they(Were they not) popular? | Weren't they popular? | Were they not popular? |
-| gh1-058-2 | 37 | Am I not(ain't I) famous? | Am I not famous? | ain't I famous? |
+| gh1-058-2 | 37 | Am I not(ain't I) famous? | Am I not famous? | Ain't I famous? |
 | gh1-060 | 27 | Why doesn't he (does he not) welcome me? | Why doesn't he welcome me? | Why does he not welcome me? |
-| gh1-062 | 7 | Is that (the) car yours? | Is that car yours? | Is the car yours? |
+| gh1-062 | 7 | Is that (the) car yours? | Is that car yours? | — |
 | gh1-064 | 50 | Are they(those) your sister's books? | Are they your sister's books? | Are those your sister's books? |
 | gh1-072 | 2 | Those(They) are their gloves. | Those are their gloves. | They are their gloves. |
 | gh1-074 | 4 | Those(They) were theirs. | Those were theirs. | They were theirs. |
 | gh1-074 | 6 | It(That) was hers. | It was hers. | That was hers. |
 | gh1-074 | 10 | Were they policemen (police officers)? | Were they policemen? | Were they police officers? |
 | gh1-074 | 13 | Was he a good student(pupil)? | Was he a good student? | Was he a good pupil? |
-| gh1-074 | 22 | Was that (the) land yours? | Was that land yours? | Was the land yours? |
+| gh1-074 | 22 | Was that (the) land yours? | Was that land yours? | — |
 | gh1-078-1 | 10 | You need that(the) special book, don't you? | You need that special book, don't you? | You need the special book, don't you? |
 | gh1-078-2 | 34 | Your teacher does not understand you, does he (or she)? | Your teacher does not understand you, does he? | Your teacher does not understand you, does or she? |
 | gh1-080-1 | 2 | Is your father rich(a rich man)? | Is your father rich? | Is your a rich man? |
@@ -165,8 +165,8 @@ Category B/C/D unique answers: **181**
 | gh1-090 | 39 | Why does it take place(happen) outside the border? | Why does it take place outside the border? | Why does it take happen outside the border? |
 | gh1-092 | 48 | Why do they buy it in a(the) black market? | Why do they buy it in a black market? | Why do they buy it in the black market? |
 | gh1-094 | 62 | Why was the vice president taking part(participating) in that project? | Why was the vice president taking part in that project? | Why was the vice president taking participating in that project? |
-| gh1-094 | 66 | Everybody(everyone) likes the solution, don't they? | Everybody likes the solution, don't they? | everyone likes the solution, don't they? |
-| gh1-094 | 67 | Everybody(everyone) liked the contract, didn't they? | Everybody liked the contract, didn't they? | everyone liked the contract, didn't they? |
+| gh1-094 | 66 | Everybody(everyone) likes the solution, don't they? | Everybody likes the solution, don't they? | Everyone likes the solution, don't they? |
+| gh1-094 | 67 | Everybody(everyone) liked the contract, didn't they? | Everybody liked the contract, didn't they? | Everyone liked the contract, didn't they? |
 | gh1-094 | 70 | Every(Each) agency increases security. | Every agency increases security. | Each agency increases security. |
 | gh1-094 | 72 | Each(Every) boy worries about his future. | Each boy worries about his future. | Every boy worries about his future. |
 | gh1-094 | 73 | Every(Each) boy received a prize. | Every boy received a prize. | Each boy received a prize. |
@@ -179,10 +179,10 @@ Category B/C/D unique answers: **181**
 | gh1-096 | 87 | Nobody(No one) knows everything, do they? | Nobody knows everything, do they? | No one knows everything, do they? |
 | gh1-098 | 97 | The company took part(participated) in the project, didn't it? | The company took part in the project, didn't it? | The company took participated in the project, didn't it? |
 | gh1-098 | 102 | How fast(soon, quickly) does it become clear? | How fast does it become clear? | How soon does it become clear? / How quickly does it become clear? |
-| gh1-098 | 109 | He is (a) Korean, isn't he? | He is Korean, isn't he? | He a Korean, isn't he? |
-| gh1-098 | 110 | He is not (a) Japanese, is he? | He is not Japanese, is he? | He is a Japanese, is he? |
-| gh1-098 | 111 | She was (an) American, wasn't she? | She was American, wasn't she? | She an American, wasn't she? |
-| gh1-098 | 112 | She was not (a) Filipino, was she? | She was not Filipino, was she? | She was a Filipino, was she? |
+| gh1-098 | 109 | He is (a) Korean, isn't he? | He is Korean, isn't he? | He is a Korean, isn't he? |
+| gh1-098 | 110 | He is not (a) Japanese, is he? | He is not Japanese, is he? | He is not a Japanese, is he? |
+| gh1-098 | 111 | She was (an) American, wasn't she? | She was American, wasn't she? | She was an American, wasn't she? |
+| gh1-098 | 112 | She was not (a) Filipino, was she? | She was not Filipino, was she? | She was not a Filipino, was she? |
 | gh1-100 | 117 | Didn't(Hasn't) it become the symbol of the engagement policy? | Didn't it become the symbol of the engagement policy? | Hasn't it become the symbol of the engagement policy? |
 | gh1-100 | 121 | How did it go(proceed)? | How did it go? | How did it proceed? |
 | gh1-100 | 126 | We totally(completely) ignored market principles, didn't we? | We totally ignored market principles, didn't we? | We completely ignored market principles, didn't we? |
@@ -204,11 +204,11 @@ Category B/C/D unique answers: **181**
 | gh1-108 | 65 | Professor Mcarthy is going to(will) give a difficult examination. | Professor Mcarthy is going to give a difficult examination. | Professor Mcarthy is going will give a difficult examination. |
 | gh1-110-1 | 76 | When will(shall) we have a live report? | When will we have a live report? | When shall we have a live report? |
 | gh1-110-1 | 88 | They have to(must) deal with the disaster. | They have to deal with the disaster. | They have must deal with the disaster. |
-| gh1-110-1 | 89 | Which(what) company makes chewing tobacco? | Which company makes chewing tobacco? | what company makes chewing tobacco? |
+| gh1-110-1 | 89 | Which(what) company makes chewing tobacco? | Which company makes chewing tobacco? | What company makes chewing tobacco? |
 | gh1-110-2 | 105 | When am I going to(shall I, will I) meet your friends and your brothers? | When am I going to meet your friends and your brothers? | When shall I meet your friends and your brothers? / When will I meet your friends and your brothers? |
 | gh1-110-2 | 107 | Did you get(reach) there on time? | Did you get there on time? | Did you reach there on time? |
 | gh1-112-1 | 114 | The novelist won(received) the Nobel Prize, didn't he? | The novelist won the Nobel Prize, didn't he? | The novelist received the Nobel Prize, didn't he? |
-| gh1-112-2 | 138 | Will(would) you speak more slowly, please? | Will you speak more slowly, please? | would you speak more slowly, please? |
+| gh1-112-2 | 138 | Will(would) you speak more slowly, please? | Will you speak more slowly, please? | Would you speak more slowly, please? |
 | gh1-112-2 | 143 | Isn't he working for(at) a bank? | Isn't he working for a bank? | Isn't he working at a bank? |
 | gh1-116-1 | 5 | When was the chopper(helicopter) hit by enemy fire? | When was the chopper hit by enemy fire? | When was the helicopter hit by enemy fire? |
 | gh1-116-1 | 6 | Who dragged off and killed the man(him)? | Who dragged off and killed the man? | Who dragged off and killed the him? |
@@ -221,7 +221,7 @@ Category B/C/D unique answers: **181**
 | gh1-118-2 | 69 | Why didn't you take a cab(taxi)? | Why didn't you take a cab? | Why didn't you take a taxi? |
 | gh1-120-1 | 4 | The company constructs(builds) the most moving memorial possible. | The company constructs the most moving memorial possible. | The company builds the most moving memorial possible. |
 | gh1-120-1 | 7 | It will handle(deal with) redevelopment. | It will handle redevelopment. | It will deal with redevelopment. |
-| gh1-120-2 | 21 | (The) Palestinians and (the) Israelis must act. | The Palestinians and the Israelis must act. | Palestinians and Israelis must act. |
+| gh1-120-2 | 21 | (The) Palestinians and (the) Israelis must act. | Palestinians and Israelis must act. | The Palestinians and the Israelis must act. / The Palestinians and Israelis must act. / Palestinians and the Israelis must act. |
 | gh2-013-1 | 9 | You should(must) come here by ten o'clock. | You should come here by ten o'clock. | You must come here by ten o'clock. |
 | gh2-013-1 | 20 | He will(would) solve the problem. | He will solve the problem. | He would solve the problem. |
 | gh2-018-1 | 13 | The members opposed(objected to, were opposed to) the plan | The members opposed the plan. | The members objected to the plan. / The members were opposed to the plan. |
@@ -231,13 +231,13 @@ Category B/C/D unique answers: **181**
 | gh2-037-1 | 13 | I'd like to have a phone installed(my phone disconnected) in my apartment. | I'd like to have a phone installed in my apartment. | I'd like to have my phone disconnected in my apartment. |
 | gh2-039-1 | 8 | This is the book (which) I bought yesterday. | This is the book I bought yesterday. | This is the which I bought yesterday. |
 | gh2-040-1 | 3 | A lot of people use a substance (which) we all say we abhor. | A lot of people use a substance we all say we abhor. | A lot of people use a which we all say we abhor. |
-| gh2-040-1 | 4 | Complaining was just about all (that) the opposition could do to the President. | Complaining was just about all the opposition could do to the President. | Complaining was just about that the opposition could do to the President. |
+| gh2-040-1 | 4 | Complaining was just about all (that) the opposition could do to the President. | Complaining was just about all the opposition could do to the President. | Complaining was just about all that the opposition could do to the President. |
 | gh2-040-1 | 10 | I want my lights and gas turned on(off). | I want my lights and gas turned on. | I want my lights and gas turned off. |
 | gh2-048-1 | 1 | If I had enough money(Had I enough money), I would buy you a diamond ring. | If I had enough money, I would buy you a diamond ring. | Had I enough money, I would buy you a diamond ring. |
 | gh2-048-1 | 3 | If I had known your phone number(Had I known your phone number), | If I had known your phone number,. | Had I known your phone number,. |
 | gh2-048-1 | 9 | If they had had the ability to make money(Had they had the ability to make money), | If they had had the ability to make money,. | Had they had the ability to make money,. |
 | gh2-048-1 | 11 | If the blood products had been heat treated(Had the blood product been heat treated), | If the blood products had been heat treated,. | Had the blood product been heat treated,. |
-| gh2-048-1 | 15 | Should I have been(If I had been, had I been) three minutes late, I should have missed the train. | Should I have been three minutes late, I should have missed the train. | If I had been three minutes late, I should have missed the train. / had I been three minutes late, I should have missed the train. |
+| gh2-048-1 | 15 | Should I have been(If I had been, had I been) three minutes late, I should have missed the train. | Should I have been three minutes late, I should have missed the train. | If I had been three minutes late, I should have missed the train. / Had I been three minutes late, I should have missed the train. |
 | gh2-048-1 | 16 | Should you not go, he would go. (If you should not go,) he would go. | Should you not go, he would go. | If you should not go, he would go. |
 
 ## APPEND (12)

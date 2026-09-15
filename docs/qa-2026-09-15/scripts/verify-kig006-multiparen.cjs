@@ -49,14 +49,29 @@ const EXPECT = {
     alts: ["It is your car, isn't it?"],
     forbid: [],
   },
+  // A DETACHED DETERMINER is an OPTIONAL INSERT: the author's "(the)" means
+  // "this word may be left out", so the BARE sentence is the primary and the
+  // determiner form is an alternative. The Korean prompts carry no 그/어떤
+  // (gh1-120-2 #21 팔레스타인인들과 이스라엘인들은 행동해야 한다.).
   "(The) Palestinians and (the) Israelis must act.": {
-    text: "The Palestinians and the Israelis must act.",
-    alts: ["Palestinians and Israelis must act."],
+    text: "Palestinians and Israelis must act.",
+    alts: [
+      "The Palestinians and Israelis must act.",
+      "Palestinians and the Israelis must act.",
+      "The Palestinians and the Israelis must act.",
+    ],
     forbid: [],
   },
+  // The "(the)" in this cell is detached (space before the "(") and is an
+  // optional insert; the "(혹은 prizes)" is the marker swap. The Korean prompt
+  // gh1-016-1 #4 모든(All) 소년이 상을 받는다. carries no 그 for either.
   "All (the) boys receive a prize(혹은 prizes).": {
-    text: "All the boys receive a prize.",
-    alts: ["All the boys receive prizes."],
+    text: "All boys receive prizes.",
+    alts: [
+      "All boys receive a prize.",
+      "All the boys receive a prize.",
+      "All the boys receive prizes.",
+    ],
     forbid: [],
   },
   "Those(they) are books, aren't they(혹은 ---, are they not)?": {

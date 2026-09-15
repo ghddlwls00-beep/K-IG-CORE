@@ -24,6 +24,21 @@ export function generateStaticParams() {
   return getAllLessonParams().filter((item) => item.course !== "student");
 }
 
+/**
+ * The banner that represents each course in a share card. Mirrors the map on
+ * the course landing page so a shared lesson looks like its section.
+ */
+const COURSE_OG_IMAGE: Record<string, string> = {
+  phonics: "/images/sections/voca.jpg",
+  grammar1: "/images/sections/grammar1.jpg",
+  grammar2: "/images/sections/grammar2.jpg",
+  ld: "/images/sections/ld.jpg",
+  reading: "/images/sections/reading.jpg",
+  cnn: "/images/sections/cnn.jpg",
+  student: "/images/sections/students.jpg",
+  chinese: "/images/sections/chinese.jpg",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -33,7 +48,28 @@ export async function generateMetadata({
   const lesson = getLesson(course, id);
   if (!lesson) return { title: "K-IG 교육" };
   const pres = formatLessonPresentation(course, lesson);
-  return { title: pres.title };
+  // RE-011: every lesson declares its OWN canonical URL, so each page is indexed
+  // on its own instead of being collapsed into the home page by the root
+  // layout's former global canonical.
+  const canonical = `/${course}/${id}`;
+  const title = pres.title;
+  const description = lesson.menuLabel
+    ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
+    : `${pres.title}. K-IG 핵심 어학 과정.`;
+  const image = COURSE_OG_IMAGE[course] || "/images/sections/students.jpg";
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: canonical,
+      images: [{ url: image, width: 1200, height: 630, alt: pres.title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
 }
 
 export default async function LessonPage({
