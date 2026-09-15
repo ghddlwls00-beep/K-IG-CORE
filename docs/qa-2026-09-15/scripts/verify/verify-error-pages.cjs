@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * RE-016 — a missing path must serve a 404 that a human can actually read.
+ * RE-016 — a missing path must serve a 404 that a human can actually read,
+ * and a real path must still be served at all.
  *
  * TWO THINGS WENT WRONG HERE, and the second is why this file was rewritten.
  *
@@ -21,14 +22,29 @@
  * first, then tags. Anything that only exists in the flight payload does not
  * count, which is exactly the distinction the previous version missed.
  *
- * FIVE PATH SHAPES, because the rendering path depends on how deep the path is
- * and which dynamic route it collides with:
+ * 3. THE SECOND AXIS IS NOT ENOUGH EITHER, and this is the third rewrite. The
+ *    fix for the blank 404 rejects unknown lessons BEFORE the page renders — so
+ *    a list that is wrong in the other direction turns real lessons into 404s.
+ *    That is worse than the blank page, and a previous attempt shipped it. The
+ *    MISSING and REAL sections below therefore run in the same probe and the
+ *    exit code covers both: a run that fixes the 404s by breaking `/ld/d001` is
+ *    a failure, not a partial success.
  *
- *   /x          matches [course]           -> the page calls notFound()
- *   /x/y        matches [course]/[lesson]  -> the page calls notFound()
- *   /x/y/z      matches no route at all
- *   /ld/x       matches [course]/[lesson] with a real course
- *   /t/x        matches t/[tab]
+ * MISSING — six shapes, because the rendering path depends on how deep the path
+ * is and which dynamic route it collides with:
+ *
+ *   /x            matches [course]              -> router, already fine
+ *   /x/y          matches [course]/[lesson]     -> the page calls notFound()
+ *   /x/y/z        matches no route at all       -> the control
+ *   /ld/x         matches [course]/[lesson] with a real course
+ *   /t/x          matches t/[tab]
+ *   /reading/x    a second real course, so a course-shaped hole cannot hide
+ *   /student/x    [student]/[lesson] is rendered on demand, not prerendered
+ *
+ * REAL — the pages the same code path must keep serving. `/student/s1-1` is
+ * here because that route is dynamic (it reads the licence cookie and is
+ * excluded from generateStaticParams), which makes it the one most likely to be
+ * caught by an over-eager rejection list.
  *
  *   node docs/qa-2026-09-15/scripts/verify/verify-error-pages.cjs http://localhost:3100
  *   node docs/qa-2026-09-15/scripts/verify/verify-error-pages.cjs https://k-ig-core.vercel.app
@@ -48,12 +64,47 @@ const OUT_DIR = path.join(__dirname, "..", "out");
 // A random suffix so a cached response cannot make a broken build look fixed.
 const S = Date.now().toString(36);
 
-const SHAPES = [
+const MISSING = [
   `/kig-404-probe-${S}`,
   `/kig-404-probe-${S}/child`,
   `/kig-404-probe-${S}/child/grandchild`,
   `/ld/kig-404-probe-${S}`,
   `/t/kig-404-probe-${S}`,
+  `/reading/kig-404-probe-${S}`,
+  `/student/kig-404-probe-${S}`,
+];
+
+/**
+ * One real page per course, plus a `script` variant, a tab and the one static
+ * two-segment route (`/admin/license`).
+ *
+ * `/student/s1-1` matters most: that route is dynamic (it reads the licence
+ * cookie and is excluded from `generateStaticParams`), so it is the one most
+ * likely to be caught by an over-eager rejection list — and the only one the
+ * offline allow-list cross-check cannot see, because there is no prerendered
+ * HTML for it. CNN is deliberately absent: it is being withdrawn, and this
+ * probe is not the place to QA it.
+ */
+const REAL = [
+  { path: "/", min: 200 },
+  { path: "/ld/d001", min: 200 },
+  { path: "/ld/d001-1", min: 200 },
+  { path: "/reading/pr001", min: 200 },
+  { path: "/student/s1-1", min: 200 },
+  // `/student/s1`–`s5` exist on disk but are NOT in `content/courses/student.json`.
+  // They answer 200 in production, and an allow list built from the course index
+  // instead of the lesson directory turns every one of them into a 404. That is
+  // the exact failure this probe is here to catch, so one of them is pinned.
+  { path: "/student/s1", min: 200 },
+  { path: "/phonics/mv1-01", min: 200 },
+  { path: "/grammar1/gh1-006", min: 200 },
+  { path: "/grammar2/gh2-007", min: 200 },
+  { path: "/t/voca", min: 200 },
+  // The one static two-segment route. It is the easiest thing for a
+  // deny-by-default rule to swallow by accident, and a healthy `/admin/license`
+  // only renders ~113 chars of server HTML, so the 200 floor would fail on a
+  // page that is fine.
+  { path: "/admin/license", min: 100 },
 ];
 
 const HEADING = "찾는 페이지가 없습니다";
@@ -88,12 +139,13 @@ const countH1 = (html) => (html.match(/<h1\b/gi) || []).length;
   const problems = [];
   const rows = [];
 
-  for (const route of SHAPES) {
+  for (const route of MISSING) {
     const res = await fetch(`${BASE}${route}`, { redirect: "follow" });
     const html = await res.text();
     const markup = serverRendered(html);
     const text = visibleText(html);
     const row = {
+      kind: "missing",
       route,
       status: res.status,
       h1: countH1(html),
@@ -148,23 +200,54 @@ const countH1 = (html) => (html.match(/<h1\b/gi) || []).length;
     problems.push(...row.problems.map((p) => `${route}: ${p}`));
   }
 
-  // 8. nothing was broken to get here.
-  const home = await fetch(`${BASE}/`, { redirect: "follow" });
-  if (home.status !== 200) problems.push(`/ returned ${home.status} (want 200)`);
-  console.log(`\n/ -> ${home.status}`);
+  console.log("");
+
+  // 8. nothing was broken to get here. This is the half a 404-only probe misses.
+  for (const { path: route, min } of REAL) {
+    const res = await fetch(`${BASE}${route}`, { redirect: "follow" });
+    const html = await res.text();
+    const text = visibleText(html);
+    const row = {
+      kind: "real",
+      route,
+      status: res.status,
+      h1: countH1(html),
+      visibleChars: text.length,
+      bytes: html.length,
+      problems: [],
+    };
+
+    if (res.status !== 200) row.problems.push(`status = ${res.status} (want 200)`);
+    if (text.length < min) {
+      row.problems.push(`server-rendered text is ${text.length} chars (want >= ${min})`);
+    }
+    if (text.includes(HEADING)) {
+      row.problems.push("the 404 screen is being served for a real page");
+    }
+
+    console.log(
+      `${row.problems.length === 0 ? "PASS" : "FAIL"}  ${route.padEnd(44)} ` +
+        `status=${row.status} text=${row.visibleChars}c h1=${row.h1}`
+    );
+    for (const p of row.problems) console.log(`        - ${p}`);
+
+    rows.push(row);
+    problems.push(...row.problems.map((p) => `${route}: ${p}`));
+  }
 
   const failed = rows.filter((r) => r.problems.length > 0).length;
   console.log(
     problems.length
-      ? `\nFAIL — ${failed}/${rows.length} missing-path shapes wrong`
-      : `\nPASS — all ${rows.length} shapes: 404, readable server-rendered text, a link home`
+      ? `\nFAIL — ${failed}/${rows.length} paths wrong`
+      : `\nPASS — ${MISSING.length}/${MISSING.length} missing shapes 404 with readable text, ` +
+        `${REAL.length}/${REAL.length} real pages still 200`
   );
 
   try {
     fs.mkdirSync(OUT_DIR, { recursive: true });
     fs.writeFileSync(
       path.join(OUT_DIR, "verify-error-pages.json"),
-      JSON.stringify({ base: BASE, at: new Date().toISOString(), rows, homeStatus: home.status, problems }, null, 2)
+      JSON.stringify({ base: BASE, at: new Date().toISOString(), rows, problems }, null, 2)
     );
   } catch {
     /* evidence is best-effort */
