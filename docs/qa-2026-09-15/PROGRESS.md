@@ -26,6 +26,7 @@ PROGRESS.md 의 "다음 착수" 순서대로 이어서 진행해줘.
 |---|---|---|---|
 | KIG-001 (P0) | `984a553` | 잠금 레슨 본문이 비로그인 HTML에 노출되던 문제. `[course]/[lesson]/page.tsx`에 서버 게이트 추가, `LessonClientGate` 래퍼 제거 | 7개 코스 42/42 PASS, 이용권 경로 10/10 PASS, 전수 크롤 실제 누출 0건, 운영 재확인 완료 |
 | KIG-002 (P1) | `37d2a26` | READING 85개 레슨의 `readingSentences`가 원본과 다른 지문/의역이던 문제. 리포 안 원본 지문에서 재생성 | `probe3.cjs` → `{}` (85건 → 0건), 세 저장소 불일치 0, 화면 7/7 문장 렌더 |
+| KIG-011 (P1) | (아래 커밋) | `/api/license/verify` 실패 시 `setStored(parsed)`로 권한을 부여하던 문제. 실패 시 잠금 유지로 변경, 400/403만 저장 키 삭제 | CDP로 요청 차단 → 페이월 표시 PASS. **수정 되돌린 원본 코드에서는 본문·플레이어가 노출되어 FAIL** (테스트가 버그를 실제로 검출함) |
 
 ### KIG-001 이후 확인된 신규 취약점 (README에 없음, 미처리)
 - **GVA P0** — `src/app/gva/[lesson]/page.tsx:39-52`가 `LessonClientGate`(클라이언트 게이트) 사용. VIP 전용 `/gva/gva-003` HTML에 슬라이드·오디오 직접 URL 노출. 실제 잠금 노출 규모는 814가 아니라 **약 1,012레슨**
@@ -61,11 +62,11 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 
 ## 3. 다음 착수 순서 (권장)
 
-1. **그룹 A** — 위험 낮고 검증 단순. 16건을 묶어 진행하면 하루면 대부분 정리됨
-2. **그룹 B** — KIG-005(채점) → KIG-011(이미 A) → KIG-014 → KIG-022 순
-3. **그룹 C** — KIG-002와 같은 패턴. 검증 스크립트 재사용 가능
-4. **그룹 D** — 자동화로 플래그 추출 후 사람 판단
-5. **그룹 E** — 원본 교재 확보 여부부터 확인. 없으면 README가 제시한 **비노출 B안**으로 전환
+1. **그룹 A (남은 것)** — KIG-013, 018, 019, 024, 031, 032, 033, 034, 035, 036 + §4 미분류(favicon 404, TTS 비공식 API, 섹션 소개 이중집계, Step1 정답공개, LISTENING Step1 선택변경). 위험 낮고 검증 단순
+2. **그룹 B** — KIG-005(채점) → KIG-006(스키마) → KIG-014(진도 API) → KIG-022(검색)
+3. **그룹 C** — KIG-010, 012, 017, 020, 021, 023, 025, 026, 027. KIG-002와 같은 패턴이라 검증 스크립트 재사용 가능
+4. **그룹 D** — KIG-016(303건), KIG-028/030(53레슨), KIG-029(87레슨). 자동화로 플래그 추출 후 사람 판단
+5. **그룹 E** — KIG-003, 004, 007, 008, 009, 015. **수정 금지.** 원본 교재 확보 여부부터 확인하고, 없으면 README가 제시한 비노출 B안으로 전환
 
 > README 규칙 2에 따라 이슈마다 확인을 받아야 합니다. 승인을 묶어주면(예: "A그룹 16건 진행") 훨씬 빠릅니다.
 
@@ -73,11 +74,25 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 
 ## 4. 환경 함정 (재발 방지 — 시간 절약용)
 
+### ⚠️ 브라우저 검증 시 필수 — Next dev origin 제한
+**dev 서버는 반드시 `http://localhost:<port>` 로 접속하세요. `http://127.0.0.1:<port>` 로 접속하면 Next 16의 dev origin 검사에 걸려 클라이언트 리소스가 로드되지 않고, React가 하이드레이션되지 않습니다.**
+증상: 페이지에 레이아웃 헤더만 보이고 본문이 비어 있음. `LessonClientGate` 를 쓰는 페이지는 하이드레이션 전 스켈레톤(회색 플레이스홀더)에 정지. 콘솔·예외 오류는 잡히지 않아 원인 파악이 어려움.
+→ 이 때문에 브라우저 검증을 한 번 실패했고, `localhost` 로 바꾸자 즉시 통과했습니다.
+
+### 브라우저 검증 방법 (동작 확인됨)
+`docs/qa-2026-09-15/scripts/ui-harness.cjs` 의 CDP `Tab` 패턴을 재사용하면 됩니다. headless Edge + `--remote-debugging-port`.
+- 요청 차단은 CDP `Fetch.enable` + `Fetch.failRequest(errorReason: "BlockedByClient")` 로 DevTools의 "Block request URL" 과 동일하게 재현됩니다.
+- 페이지 상태 확인은 `Runtime.evaluate` 로 DOM을 읽고, 판단이 어려우면 `Page.captureScreenshot` 으로 스크린샷을 찍어 직접 보는 게 가장 빠릅니다.
+- **dev 모드는 라우트를 온디맨드 컴파일**하므로 검증 전에 대상 URL을 curl로 예열하고, 하이드레이션 대기는 넉넉히(15초 이상) 잡으세요.
+- **검증 테스트는 "수정을 되돌리면 실패하는지"까지 확인하세요.** 실패할 수 없는 테스트는 아무것도 증명하지 않습니다. (KIG-011에서 실제로 이 방식으로 검출력을 확인했습니다.)
+
+### 빌드·설치
 - **샌드박스는 pnpm 심볼릭 링크 생성을 차단한다.** 워크스페이스에 새로 클론하면 `pnpm install` 기본(isolated) 모드가 빈 디렉터리를 만들어 실행 불가. → `pnpm install --force --config.node-linker=hoisted` 사용
 - **`pnpm run <script>`는 실행 전 자동 재설치로 링커 설정을 되돌린다.** → `./node_modules/.bin/next dev` 로 직접 실행
 - **`.next`가 채워져 있으면 `next build`가 컴파일 시작 전에서 무한 대기한다.** → 반드시 `rm -rf .next` 후 빌드. (`.next`가 936MB까지 부풀어 있었음)
 - `rm -rf .next`는 safe-delete 가드에 걸림 → `dangerouslyDisableSandbox` 필요. **가드 예산은 턴 단위**라 `rm -rf .next && next build`를 한 명령에 묶으면 삭제가 막혀 빌드가 아예 안 돌아감 → **삭제와 빌드를 분리**
 - dev 서버를 강제 종료하면 `.next/dev/types/routes.d.ts`가 잘려 `tsc`가 깨짐 → dev 서버 재기동으로 재생성
+- **dev 서버가 종료되지 않고 포트를 계속 잡는 경우가 있다.** `netstat -ano | grep ":3000"` 으로 PID를 찾아 `MSYS_NO_PATHCONV=1 taskkill /F /PID <pid>` 로 정리할 것 (`//PID` 형식은 Git Bash에서 경로 변환에 걸려 실패)
 - **QA 스크립트의 하드코딩 경로**: `probe3.cjs`·`crawl-prod.cjs`의 출력 경로는 `C:/Users/ghddl/AppData/Local/Temp/kq/out` → **디렉터리를 미리 만들어두면 스크립트 수정 없이 실행 가능**
 - `crawl-prod.cjs`는 `docs/qa-2026-09-15/scripts/out/`에 결과를 씀 (mkdir을 안 함) → 미리 만들어둘 것
 

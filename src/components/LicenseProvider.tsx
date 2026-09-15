@@ -117,9 +117,12 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
               token: storedToken,
             }),
           })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.valid) {
+            .then(async (res) => {
+              const data = (await res.json().catch(() => null)) as
+                | { valid?: boolean; error?: string }
+                | null;
+
+              if (res.ok && data?.valid) {
                 setStored(parsed);
                 if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
                   const reloadKey = `kig:license-cookie:${storedToken.slice(-16)}`;
@@ -128,15 +131,33 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
                     window.location.reload();
                   }
                 }
-              } else {
-                console.warn("Server rejected license:", data.error);
+                return;
+              }
+
+              if (res.status === 400 || res.status === 403) {
+                // The server gave a definitive answer: this key, token or device is
+                // not valid, so the stored copy is worthless — drop it.
+                console.warn("Server rejected license:", data?.error);
                 window.localStorage.removeItem(STORAGE_KEY);
                 setStored(null);
+                return;
               }
+
+              // KIG-011: a 5xx or an unreadable body is neither a rejection nor an
+              // approval. Stay locked, but keep the stored key so the next
+              // successful verification can restore access.
+              console.warn("License verification unavailable; staying locked.");
+              setStored(null);
             })
             .catch(() => {
-              // Offline fallback: allow only if valid token string exists
-              setStored(parsed);
+              // KIG-011: the request failed outright (offline, blocked, DNS, CORS).
+              // A signed token can only be validated by the server, so a failed
+              // request must never grant access. This used to call
+              // setStored(parsed), which handed an active license to any
+              // localStorage payload as soon as /api/license/verify could be
+              // blocked — a forged token needed no valid signature at all.
+              console.warn("License verification failed; staying locked.");
+              setStored(null);
             });
         } else {
           // Untrusted / un-signed localStorage data
