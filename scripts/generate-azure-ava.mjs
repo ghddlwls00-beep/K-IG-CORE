@@ -409,15 +409,20 @@ async function main() {
   console.log(`items      : ${texts.length.toLocaleString("en-US")}`);
   console.log(`characters : ${characters.toLocaleString("en-US")}`);
   console.log("CNN        : excluded");
-  if (DRY_RUN) return;
-  if (!KEY) throw new Error("AZURE_SPEECH_KEY is required");
 
-  fs.mkdirSync(OUTPUT, { recursive: true });
   const pending = texts
     .map((text) => ({ text, file: path.join(OUTPUT, `${speechKey(text)}.mp3`) }))
     .filter((item) => !fs.existsSync(item.file));
+  const pendingCharacters = pending.reduce((sum, item) => sum + item.text.length, 0);
   console.log(`pending    : ${pending.length.toLocaleString("en-US")}`);
+  // The free tier bills by character and caps at 500,000 a month, so what a run
+  // would actually synthesize is the number that decides whether it fits.
+  console.log(`  characters: ${pendingCharacters.toLocaleString("en-US")}`);
+
+  if (DRY_RUN) return;
+  if (!KEY) throw new Error("AZURE_SPEECH_KEY is required");
   if (pending.length === 0) return;
+  fs.mkdirSync(OUTPUT, { recursive: true });
 
   if (BATCH) {
     await runBatchGeneration(pending, RESUME_BATCH_PREFIX);
