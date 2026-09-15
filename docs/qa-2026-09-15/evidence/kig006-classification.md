@@ -158,7 +158,7 @@ Category B/C/D unique answers: **181**
 | gh1-080-1 | 2 | Is your father rich(a rich man)? | Is your father rich? | Is your a rich man? |
 | gh1-080-1 | 6 | The police arrested 15 people, didn't they? (police, people, children은 항상 복수) | The police arrested 15 people, didn't they? | — |
 | gh1-080-1 | 17 | What time did you leave your home(house)? | What time did you leave your home? | What time did you leave your house? |
-| gh1-080-2 | 26 | When does he return(go back) to the U.S.? | When does he return to the U.S. | When does he go back to the U.S. |
+| gh1-080-2 | 26 | When does he return(go back) to the U.S.? | When does he return to the U.S.? | When does he go back to the U.S.? |
 | gh1-084 | 11 | The woman(She) received a letter. | The woman received a letter. | The She received a letter. |
 | gh1-084 | 17 | Is there no evidence(Isn't there any evidence)? | Is there no evidence? | Isn't there any evidence? |
 | gh1-090 | 37 | Do they take airplanes frequently(often)? | Do they take airplanes frequently? | Do they take airplanes often? |

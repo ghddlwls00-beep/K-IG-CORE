@@ -113,8 +113,34 @@ function splitItem(item, kindFor) {
   const p = propose(kind, en);
   if (!p || !p.text || hasParen(p.text)) return null;
   const alts = (p.alternatives || []).filter((a) => a && a !== p.text && !hasParen(a));
-  return { text: p.text, alternatives: [...new Set(alts)] };
+  return {
+    text: p.text,
+    alternatives: [...new Set(alts)],
+    // A gloss ("maiden name(family name: last name)") is an explanatory aside,
+    // not an answer form, so it carries no terminator by design. Check (4) in
+    // report-kig006.cjs exempts it for the same reason.
+    gloss: !!p.gloss,
+    sourceTerminator: SOURCE_TERMINATOR(en),
+  };
 }
+
+/* ------------------------------------------------------- terminator gate --- */
+/**
+ * The terminator the SOURCE cell ends with ("?" / "." / "!"), or "" when the
+ * cell carries none. A "(혹은 …)" marker can sit before the sentence's own
+ * terminator, so this takes the LAST terminator in the cell rather than the
+ * first — and it looks past the periods inside abbreviations like "U.S.".
+ */
+const SOURCE_TERMINATOR = (s) => {
+  const m = String(s).match(/[.?!](?=[^.?!]*$)/);
+  return m ? m[0] : "";
+};
+
+/** The terminator a produced string ends with, or "". */
+const RESULT_TERMINATOR = (s) => {
+  const m = String(s).match(/([.?!])\s*$/);
+  return m ? m[1] : "";
+};
 
 /* ------------------------------------------------------------- classify ---- */
 // `kindFor` now lives in report-kig006.cjs (the engine) and is pulled from the
@@ -135,8 +161,14 @@ const stats = {
   altOnly: 0,
   skippedNoParen: 0,
   unresolved: [],
+  terminatorDrift: [],
   byCourse: {},
 };
+
+// Writes are DEFERRED until every file has been examined, so that a terminator
+// failure anywhere stops the whole run from touching `content/`. Writing as the
+// loop goes would let an earlier file be committed before a later one failed.
+const pendingWrites = [];
 
 for (const { course, file } of lessonFiles()) {
   let data;
@@ -164,6 +196,34 @@ for (const { course, file } of lessonFiles()) {
         stats.unresolved.push({ file: path.basename(file), n: item.n, en: item.text });
         continue;
       }
+      // The source cell's own terminator must survive into `text` and into
+      // every answer alternative. A "?" quietly becoming "." turns a question
+      // into a statement on screen and in the audio, and nothing downstream
+      // would catch it: the engine's own check (4) only compares alternatives
+      // against `text`, so if `text` itself lost the "?" both sides read "."
+      // and it passes. This is the only place that compares against the SOURCE.
+      if (split.sourceTerminator) {
+        if (RESULT_TERMINATOR(split.text) !== split.sourceTerminator) {
+          stats.terminatorDrift.push({
+            file: path.basename(file),
+            n: item.n,
+            what: "text",
+            want: split.sourceTerminator,
+            got: split.text,
+          });
+        }
+        for (const alt of split.gloss ? [] : split.alternatives) {
+          if (RESULT_TERMINATOR(alt) !== split.sourceTerminator) {
+            stats.terminatorDrift.push({
+              file: path.basename(file),
+              n: item.n,
+              what: "alt",
+              want: split.sourceTerminator,
+              got: alt,
+            });
+          }
+        }
+      }
       const textChanged = item.text !== split.text;
       const altChanged =
         JSON.stringify(item.alternatives) !== JSON.stringify(split.alternatives);
@@ -180,7 +240,13 @@ for (const { course, file } of lessonFiles()) {
     }
   }
   stats.files++;
-  if (dirty && WRITE) {
+  if (dirty) pendingWrites.push({ file, data });
+}
+
+// Deferred so a failure anywhere in the corpus blocks EVERY write, not just the
+// ones after it.
+if (WRITE && !stats.unresolved.length && !stats.terminatorDrift.length) {
+  for (const { file, data } of pendingWrites) {
     fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n", "utf8");
   }
 }
@@ -213,5 +279,20 @@ if (stats.unresolved.length) {
   }
   if (stats.unresolved.length > 25) console.log(`    … and ${stats.unresolved.length - 25} more`);
 }
+if (stats.terminatorDrift.length) {
+  console.log(
+    `\nTERMINATOR DRIFT (${stats.terminatorDrift.length}) — the source cell's own "?"/"!"/"." did not survive:`
+  );
+  for (const d of stats.terminatorDrift.slice(0, 25)) {
+    console.log(`    ${d.file} #${d.n} [${d.what}] want "${d.want}" got "${d.got}"`);
+  }
+  if (stats.terminatorDrift.length > 25) {
+    console.log(`    … and ${stats.terminatorDrift.length - 25} more`);
+  }
+  console.log("    Nothing was written. A question must not ship as a statement.");
+}
 if (!WRITE) console.log("\nRe-run with --write to apply. Nothing was written.");
-process.exit(stats.unresolved.length ? 1 : 0);
+else if (!stats.unresolved.length && !stats.terminatorDrift.length) {
+  console.log(`\nwrote ${pendingWrites.length} lesson file(s).`);
+}
+process.exit(stats.unresolved.length || stats.terminatorDrift.length ? 1 : 0);

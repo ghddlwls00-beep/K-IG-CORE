@@ -54,11 +54,37 @@ function expandContraction(sentence) {
 }
 
 /* ------------------------------------------------------------- sanity helpers */
+/**
+ * Does `t` end with the full stop of an ABBREVIATION rather than of a sentence?
+ *
+ * The two look identical to a regex: "… to the U.S." and "… to the house." both
+ * end in a letter followed by ".". The difference matters because a sentence's
+ * own terminator can follow an abbreviation ("… the U.S.?"), and a rule that
+ * treats the abbreviation's "." as the terminator will throw the "?" away.
+ *
+ * Two shapes are recognised: a run of single-letter initials ("U.S.", "e.g.",
+ * "Ph.D.") and a short list of abbreviations that are never the last word of a
+ * sentence. Anything ambiguous is deliberately absent — "No." is also the word
+ * "no", so it is not listed.
+ */
+const ABBREVIATION_TAIL =
+  /(?:[A-Za-z]\.){2,}$|\b(?:etc|vs|cf|al|approx|dept|est|Inc|Ltd|Corp|Jr|Sr|Prof|Dr|Mr|Mrs|Ms|St|Mt|Fig|Vol|pp)\.$/i;
+
 const clean = (s) =>
   (s || "")
     .replace(/\s+/g, " ")
     .replace(/\s+([.?!,])/g, "$1")
-    .replace(/([.?!])\s*[.?!]+/g, "$1")
+    // Collapse a run of terminators ("a.." -> "a.", "a?!" -> "a?") — EXCEPT when
+    // the first of them is an abbreviation's full stop and the run ends in "?"
+    // or "!". Collapsing "… the U.S.?" kept the "." and dropped the "?", which
+    // is how gh1-081 #26 ("When does he return(go back) to the U.S.?") came out
+    // as the statement "When does he return to the U.S.". The abbreviation's
+    // period is not a terminator, so there is nothing to collapse there.
+    .replace(/([.?!])(\s*)([.?!]+)/g, (m, first, _sp, rest, offset, whole) =>
+      first === "." && /[?!]/.test(rest) && ABBREVIATION_TAIL.test(whole.slice(0, offset + 1))
+        ? m
+        : first
+    )
     .replace(/,\s*([.?!])/g, "$1")
     .trim();
 
