@@ -18,6 +18,23 @@ export function generateStaticParams() {
     .map((item) => ({ lesson: item.lesson }));
 }
 
+/**
+ * RE-016: unknown params must be rejected by the ROUTER, not by this page.
+ *
+ * With the default (`dynamicParams = true`) an unknown lesson is rendered on
+ * demand, `notFound()` is thrown mid-render, and because the response has
+ * already started streaming Next flushes an EMPTY shell with a 404 status. The
+ * not-found content then exists only inside the script tags, so a visitor sees
+ * a blank page until React runs and a crawler sees a blank page forever.
+ *
+ * `false` makes the router handle it the way it handles a path that matches no
+ * route, which is the shape that rendered the 404 server-side.
+ *
+ * Safe: every lesson comes from `getAllLessonParams()` and the site is fully
+ * static.
+ */
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {

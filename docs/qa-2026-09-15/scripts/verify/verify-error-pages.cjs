@@ -1,38 +1,34 @@
 #!/usr/bin/env node
 /**
- * RE-016 — the 404 screen is real, is the site's own, and is still a 404.
+ * RE-016 — a missing path must serve a 404 that a human can actually read.
  *
- * Before this work an unmatched route fell through to Next's default page: it
- * rendered inside the layout, so the nav bar was there, but it said nothing a
- * visitor could act on and offered no route back.
+ * TWO THINGS WENT WRONG HERE, and the second is why this file was rewritten.
  *
- * SEVERAL PATH SHAPES, not one. The status code and the rendering path depend on
- * how deep the path is and which dynamic route it collides with, and they do NOT
- * all behave the same. This list is not padding: an earlier version of this
- * probe tested a single shape and passed, while four of these five were serving
- * HTTP 200 with 404 content — a soft 404, which is WORSE than the default it
- * replaced, because a soft 404 is indexable and every bad URL and stale link
- * becomes a page search engines keep.
+ * 1. STATUS. An unmatched route used to fall through to Next's default page: it
+ *    rendered inside the layout, so the nav was there, but it said nothing a
+ *    visitor could act on and offered no route back.
+ *
+ * 2. THE FIRST VERSION OF THIS PROBE CHECKED THE WRONG AXIS. It grew from one
+ *    path shape to five — and still only asserted the status code plus "is the
+ *    heading somewhere in the response". It passed. It passed while the page was
+ *    BLANK: for four of the five shapes Next was streaming an empty shell
+ *    (`<body><div hidden></div><script>…</script></body>`) with a 404 status, and
+ *    the not-found content existed only inside the flight payload in those
+ *    <script> tags. A visitor saw a white screen until React ran; a crawler and a
+ *    JS-disabled client saw a white screen forever. A status code is not a page.
+ *
+ * So the assertions below run on the SERVER-RENDERED TEXT: scripts removed
+ * first, then tags. Anything that only exists in the flight payload does not
+ * count, which is exactly the distinction the previous version missed.
+ *
+ * FIVE PATH SHAPES, because the rendering path depends on how deep the path is
+ * and which dynamic route it collides with:
  *
  *   /x          matches [course]           -> the page calls notFound()
  *   /x/y        matches [course]/[lesson]  -> the page calls notFound()
  *   /x/y/z      matches no route at all
  *   /ld/x       matches [course]/[lesson] with a real course
  *   /t/x        matches t/[tab]
- *
- * TWO RENDERING PATHS, and the probe asserts different things for each:
- *
- *   unmatched    Next server-renders `not-found.tsx` into the HTML. A crawler
- *                with no JavaScript sees the whole page, so this one must have
- *                the h1 and the chrome in the raw markup.
- *   notFound()   Next returns 404 and streams the not-found content through the
- *                RSC payload; the raw markup has the title, the noindex and the
- *                chrome but no <h1> element until React runs. That is Next's
- *                behaviour, not this project's -- production behaved the same
- *                way before this change -- so the probe does not demand a
- *                server-rendered h1 there, but it does demand the 404 status,
- *                the title and the noindex, which are the parts search engines
- *                act on.
  *
  *   node docs/qa-2026-09-15/scripts/verify/verify-error-pages.cjs http://localhost:3100
  *   node docs/qa-2026-09-15/scripts/verify/verify-error-pages.cjs https://k-ig-core.vercel.app
@@ -52,17 +48,39 @@ const OUT_DIR = path.join(__dirname, "..", "out");
 // A random suffix so a cached response cannot make a broken build look fixed.
 const S = Date.now().toString(36);
 
-/** `unmatched: true` = the shape Next server-renders the not-found page for. */
 const SHAPES = [
-  { route: `/kig-404-probe-${S}`, unmatched: false },
-  { route: `/kig-404-probe-${S}/child`, unmatched: false },
-  { route: `/kig-404-probe-${S}/child/grandchild`, unmatched: true },
-  { route: `/ld/kig-404-probe-${S}`, unmatched: false },
-  { route: `/t/kig-404-probe-${S}`, unmatched: false },
+  `/kig-404-probe-${S}`,
+  `/kig-404-probe-${S}/child`,
+  `/kig-404-probe-${S}/child/grandchild`,
+  `/ld/kig-404-probe-${S}`,
+  `/t/kig-404-probe-${S}`,
 ];
 
 const HEADING = "찾는 페이지가 없습니다";
 const TITLE = "페이지를 찾을 수 없습니다";
+/** A 404 that says nothing is not a 404 screen. See the header. */
+const MIN_VISIBLE_CHARS = 200;
+
+/**
+ * What a client without JavaScript receives: the body, with the flight payload
+ * and every other script removed, then tags stripped. This is the whole point
+ * of the probe — if the content is not here, the page is blank.
+ */
+function serverRendered(html) {
+  const body = (html.match(/<body\b[^>]*>([\s\S]*)<\/body>/i) || [, html])[1];
+  return body.replace(/<script[\s\S]*?<\/script>/gi, " ");
+}
+
+function visibleText(html) {
+  return serverRendered(html)
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
 const countH1 = (html) => (html.match(/<h1\b/gi) || []).length;
 
@@ -70,43 +88,59 @@ const countH1 = (html) => (html.match(/<h1\b/gi) || []).length;
   const problems = [];
   const rows = [];
 
-  for (const { route, unmatched } of SHAPES) {
+  for (const route of SHAPES) {
     const res = await fetch(`${BASE}${route}`, { redirect: "follow" });
     const html = await res.text();
-    const row = { route, unmatched, status: res.status, bytes: html.length, h1: countH1(html), problems: [] };
+    const markup = serverRendered(html);
+    const text = visibleText(html);
+    const row = {
+      route,
+      status: res.status,
+      h1: countH1(html),
+      visibleChars: text.length,
+      bytes: html.length,
+      problems: [],
+    };
 
-    // 1. the status code. The whole point.
+    // 1. the status code
     if (res.status !== 404) row.problems.push(`status = ${res.status} (want 404)`);
 
-    // 2. this site's 404 is the one being served, not Next's default.
-    if (!html.includes(HEADING)) row.problems.push(`"${HEADING}" absent from the response`);
-    if (/This page could not be found/i.test(html)) {
+    // 2. THE PAGE IS ACTUALLY THERE, in the server-rendered HTML.
+    if (text.length < MIN_VISIBLE_CHARS) {
+      row.problems.push(
+        `server-rendered text is ${text.length} chars (want >= ${MIN_VISIBLE_CHARS}) — ` +
+          `the body is an empty shell and the content is only in the flight payload`
+      );
+    }
+    if (!text.includes(HEADING)) {
+      row.problems.push(`"${HEADING}" is not in the server-rendered text`);
+    }
+
+    // 3. a way back, also server-rendered.
+    if (!/<a\b[^>]*href="\/"/i.test(markup)) {
+      row.problems.push('no server-rendered link home (href="/")');
+    }
+
+    // 4. this site's 404, not Next's default.
+    if (/This page could not be found/i.test(text)) {
       row.problems.push("Next's default 404 text is being served");
     }
 
-    // 3. the metadata a crawler acts on.
+    // 5. the metadata a crawler acts on.
     if (!html.includes(TITLE)) row.problems.push(`title "${TITLE}" missing`);
     if (!/noindex/i.test(html)) row.problems.push("not marked noindex");
 
-    // 4. the chrome survived, so the page is still the site's.
-    //
-    // Checked against the RAW response, not script-stripped text. For the
-    // notFound() shapes the nav arrives in the RSC payload and React renders it
-    // on the client, so stripping <script> would hide it and report a missing
-    // nav on a page that has one. If the layout were genuinely broken the
-    // labels would be absent from the payload too.
+    // 6. the chrome survived, so the page is still the site's.
     for (const label of ["VOCA", "LISTENING"]) {
-      if (!html.includes(label)) row.problems.push(`site chrome missing: nav label "${label}"`);
+      if (!text.includes(label)) row.problems.push(`nav label "${label}" missing from the text`);
     }
 
-    // 5. the unmatched shape is fully server-rendered; require the h1 there.
-    if (unmatched && row.h1 !== 1) {
-      row.problems.push(`server-rendered h1 = ${row.h1} (want exactly 1)`);
-    }
+    // 7. exactly one h1, and it is the 404's.
+    if (row.h1 !== 1) row.problems.push(`server-rendered h1 = ${row.h1} (want exactly 1)`);
 
     console.log(
       `${row.problems.length === 0 ? "PASS" : "FAIL"}  ${route.padEnd(44)} ` +
-        `status=${row.status} h1=${row.h1}${unmatched ? " (unmatched)" : ""}`
+        `status=${row.status} text=${row.visibleChars}c h1=${row.h1}`
     );
     for (const p of row.problems) console.log(`        - ${p}`);
 
@@ -114,7 +148,7 @@ const countH1 = (html) => (html.match(/<h1\b/gi) || []).length;
     problems.push(...row.problems.map((p) => `${route}: ${p}`));
   }
 
-  // 6. nothing was broken to get here.
+  // 8. nothing was broken to get here.
   const home = await fetch(`${BASE}/`, { redirect: "follow" });
   if (home.status !== 200) problems.push(`/ returned ${home.status} (want 200)`);
   console.log(`\n/ -> ${home.status}`);
@@ -123,7 +157,7 @@ const countH1 = (html) => (html.match(/<h1\b/gi) || []).length;
   console.log(
     problems.length
       ? `\nFAIL — ${failed}/${rows.length} missing-path shapes wrong`
-      : `\nPASS — all ${rows.length} missing-path shapes return 404 with this site's own screen`
+      : `\nPASS — all ${rows.length} shapes: 404, readable server-rendered text, a link home`
   );
 
   try {

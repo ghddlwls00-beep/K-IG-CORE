@@ -9,6 +9,22 @@ export function generateStaticParams() {
   return getTabs().map((t) => ({ tab: t.slug }));
 }
 
+/**
+ * RE-016: unknown tabs must be rejected by the ROUTER, not by this page.
+ *
+ * With the default (`dynamicParams = true`) an unknown tab is rendered on
+ * demand, `notFound()` is thrown mid-render, and because the response has
+ * already started streaming Next flushes an EMPTY shell with a 404 status —
+ * the not-found content only exists inside the script tags, so a visitor sees
+ * a blank page until React runs and a crawler sees a blank page forever.
+ *
+ * `false` makes the router handle it the way it already handles a path that
+ * matches no route, which is the shape that rendered the 404 server-side.
+ *
+ * Safe: every tab comes from `getTabs()` and the site is fully static.
+ */
+export const dynamicParams = false;
+
 /** Used when a tab has no blurb of its own, so a share card is never blank. */
 const TAB_FALLBACK_DESCRIPTION =
   "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.";
