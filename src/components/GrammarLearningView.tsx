@@ -219,7 +219,16 @@ export function GrammarLearningView({
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [selfGrades, setSelfGrades] = useState<Record<number, boolean>>({});
   const [clozeInputs, setClozeInputs] = useState<Record<number, Record<number, string>>>({});
-  const [revealedAnswers, setRevealedAnswers] = useState<Record<number, boolean>>({});
+  const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
+
+  /**
+   * Composition (mode 1) and cloze (mode 2) walk the same item list, and the
+   * reveal map used to be keyed on the bare item number. "전체 정답 보기" in
+   * composition therefore also uncovered the cloze blanks for every item with
+   * a matching number — a learner could read the answers before attempting
+   * them. Scope each reveal to the mode it was made in.
+   */
+  const revealKey = (id: number) => `${studyMode}:${id}`;
   const [shadowingRepeats, setShadowingRepeats] = useState<Record<number, number>>({});
   const [activeSpeakingId, setActiveSpeakingId] = useState<number | null>(null);
 
@@ -311,7 +320,7 @@ export function GrammarLearningView({
   }
 
   function toggleReveal(id: number) {
-    setRevealedAnswers((prev) => ({ ...prev, [id]: !prev[id] }));
+    setRevealedAnswers((prev) => ({ ...prev, [revealKey(id)]: !prev[revealKey(id)] }));
   }
 
   function toggleSelfGrade(id: number, passed: boolean) {
@@ -327,11 +336,15 @@ export function GrammarLearningView({
   }
 
   function handleBatchReveal(showAll: boolean) {
-    const next: Record<number, boolean> = {};
-    items.forEach((it) => {
-      next[it.id] = showAll;
+    // Merge rather than replace: wiping the whole map also cleared whatever the
+    // learner had revealed in the other modes.
+    setRevealedAnswers((prev) => {
+      const next = { ...prev };
+      items.forEach((it) => {
+        next[revealKey(it.id)] = showAll;
+      });
+      return next;
     });
-    setRevealedAnswers(next);
   }
 
   function handleResetAll() {
@@ -647,7 +660,7 @@ export function GrammarLearningView({
           <div className="flex flex-col gap-4">
             {items.map((item) => {
               const isAnswered = (answers[item.id] || "").trim().length > 0;
-              const isRevealed = revealedAnswers[item.id] === true;
+              const isRevealed = revealedAnswers[revealKey(item.id)] === true;
               const grade = selfGrades[item.id];
               const isExact =
                 isAnswered &&
@@ -847,7 +860,7 @@ export function GrammarLearningView({
 
           <div className="flex flex-col gap-4">
             {items.map((item) => {
-              const isRevealed = revealedAnswers[item.id] === true;
+              const isRevealed = revealedAnswers[revealKey(item.id)] === true;
               return (
                 <div
                   key={item.id}
