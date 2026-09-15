@@ -20,10 +20,14 @@ const PROBE_KEY = "audio/ld/d001.mp3";
 
 export async function GET() {
   let probe: "ok" | "failed" = "failed";
+  let probeStatus = 0;
   try {
     const res = await fetchMediaObject(PROBE_KEY, "bytes=0-15");
+    probeStatus = res.status;
     if (res.status === 200 || res.status === 206) probe = "ok";
-    await res.body?.cancel();
+    // The body is left unread on purpose: cancelling a stream that was never
+    // consumed hung this handler until the function timed out, which is the
+    // one thing a health check must not do.
   } catch {
     probe = "failed";
   }
@@ -34,6 +38,7 @@ export async function GET() {
     {
       credentialsConfigured: HAS_S3_CREDENTIALS,
       probe,
+      probeStatus,
       // Set when a read through the S3 API has failed since this instance
       // started. While the bucket is still public the request then falls back,
       // so the site keeps working and this is the only sign anything is wrong.
