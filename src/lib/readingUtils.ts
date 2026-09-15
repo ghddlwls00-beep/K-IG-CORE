@@ -695,14 +695,34 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
   const result: ClozeItem[] = [];
   const candidates = sentences.filter((s) => s.en.split(/\s+/).length >= 6);
 
+  // KIG-018: the target word is interpolated into a RegExp, so it must be clean
+  // and escaped. Quotes, semicolons and colons used to survive into the pattern
+  // (only .,!? were stripped), and metacharacters like ( or . either threw or
+  // failed to match — leaving the sentence unmasked and the answer on screen.
+  //
+  // Edge punctuation is stripped including trailing apostrophes: a possessive
+  // plural such as adults' would otherwise build \badults'\b, which can never
+  // match because ' and the following space are both non-word characters.
+  // Apostrophes inside a word (don't, It’s) are kept.
+  const stripEdgePunctuation = (word: string) =>
+    word.replace(/^[^A-Za-z0-9]+/, "").replace(/[^A-Za-z0-9]+$/, "");
+  const escapeRegExp = (word: string) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
   candidates.slice(0, 3).forEach((s, idx) => {
-    const words = s.en.replace(/[.,!?]/g, "").split(/\s+/);
+    const words = s.en
+      .split(/\s+/)
+      .map(stripEdgePunctuation)
+      .filter(Boolean);
     const validTargetWords = words.filter((w) => w.length >= 5 && !STOP_WORDS.has(w.toLowerCase()));
 
     if (validTargetWords.length > 0) {
       const target = validTargetWords[Math.floor(validTargetWords.length / 2)];
-      const regex = new RegExp(`\\b${target}\\b`, "i");
+      const regex = new RegExp(`\\b${escapeRegExp(target)}\\b`, "i");
       const masked = s.en.replace(regex, "_______");
+
+      // Never emit an item whose blank was not actually applied — that would show
+      // the learner the answer instead of a gap.
+      if (masked === s.en) return;
 
       const distractors = ["communication", "respect", "problems", "successful", "efforts", "quality"]
         .filter((w) => w.toLowerCase() !== target.toLowerCase())
