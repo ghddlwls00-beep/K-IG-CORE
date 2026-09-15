@@ -1,0 +1,926 @@
+{
+  "lessonsScanned": 195,
+  "wordsScanned": 5831,
+  "lessonsWithMeaningCollisions": 56,
+  "lessonsWithMultiCorrectQuiz": 0,
+  "ambiguousLessons": [
+    {
+      "lesson": "hv-01",
+      "collisions": [
+        [
+          "조상",
+          [
+            "ancesto",
+            "forefather"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-02",
+      "collisions": [
+        [
+          "제안",
+          [
+            "proposal",
+            "proposition"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-04",
+      "collisions": [
+        [
+          "실내",
+          [
+            "indoor",
+            "indoors"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-08",
+      "collisions": [
+        [
+          "가끔",
+          [
+            "occasional",
+            "occasionally"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-09",
+      "collisions": [
+        [
+          "처분",
+          [
+            "disposal",
+            "disposition"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-11",
+      "collisions": [
+        [
+          "동의어",
+          [
+            "synonym",
+            "synonymous"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-15",
+      "collisions": [
+        [
+          "운이 좋은",
+          [
+            "lucky",
+            "fortunate"
+          ]
+        ],
+        [
+          "경제적",
+          [
+            "economic",
+            "economical"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-16",
+      "collisions": [
+        [
+          "유익한",
+          [
+            "beneficial",
+            "beneficent"
+          ]
+        ],
+        [
+          "확실한",
+          [
+            "definite",
+            "definitive"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-17",
+      "collisions": [
+        [
+          "역사적인",
+          [
+            "historic",
+            "historical"
+          ]
+        ],
+        [
+          "유감스럽다",
+          [
+            "regretful",
+            "regrettable"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-20",
+      "collisions": [
+        [
+          "포로",
+          [
+            "captivity",
+            "captive"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-21",
+      "collisions": [
+        [
+          "속임수",
+          [
+            "deception",
+            "deceit"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-22",
+      "collisions": [
+        [
+          "성공하다",
+          [
+            "succeed",
+            "successful"
+          ]
+        ],
+        [
+          "끊임없는",
+          [
+            "ceaseless",
+            "incessant"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-23",
+      "collisions": [
+        [
+          "우연히",
+          [
+            "accidentally",
+            "incidentally"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-24",
+      "collisions": [
+        [
+          "시민",
+          [
+            "civil",
+            "citizen"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-25",
+      "collisions": [
+        [
+          "일치",
+          [
+            "accord",
+            "accordance"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-26",
+      "collisions": [
+        [
+          "농업",
+          [
+            "agriculture",
+            "agricultural"
+          ]
+        ],
+        [
+          "현재",
+          [
+            "current",
+            "currently"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-27",
+      "collisions": [
+        [
+          "호기심",
+          [
+            "curious",
+            "curiosity"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-28",
+      "collisions": [
+        [
+          "전기",
+          [
+            "electric",
+            "electrical",
+            "electricity"
+          ]
+        ],
+        [
+          "전자",
+          [
+            "electron",
+            "electronic"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-29",
+      "collisions": [
+        [
+          "현재",
+          [
+            "present",
+            "presently"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-30",
+      "collisions": [
+        [
+          "결함이 있는",
+          [
+            "defective",
+            "faulty"
+          ]
+        ],
+        [
+          "거짓",
+          [
+            "false",
+            "falsehood"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-32",
+      "collisions": [
+        [
+          "금융",
+          [
+            "finance",
+            "financial"
+          ]
+        ],
+        [
+          "자신감",
+          [
+            "confidence",
+            "confident"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-33",
+      "collisions": [
+        [
+          "요새",
+          [
+            "fort",
+            "fortress"
+          ]
+        ],
+        [
+          "혼란스러운",
+          [
+            "confusing",
+            "confused"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-34",
+      "collisions": [
+        [
+          "사진",
+          [
+            "photograph",
+            "photography"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-37",
+      "collisions": [
+        [
+          "관계",
+          [
+            "relation",
+            "relationship"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-39",
+      "collisions": [
+        [
+          "동맹",
+          [
+            "alliance",
+            "ally"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-42",
+      "collisions": [
+        [
+          "상업",
+          [
+            "commercial",
+            "commerce"
+          ]
+        ],
+        [
+          "기억",
+          [
+            "remembrance",
+            "memory"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-43",
+      "collisions": [
+        [
+          "허가",
+          [
+            "permission",
+            "permit"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-44",
+      "collisions": [
+        [
+          "동기",
+          [
+            "motive",
+            "motive"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-46",
+      "collisions": [
+        [
+          "갱신",
+          [
+            "renew",
+            "renewal"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-48",
+      "collisions": [
+        [
+          "동료",
+          [
+            "peer",
+            "peer"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-50",
+      "collisions": [
+        [
+          "독립",
+          [
+            "independent",
+            "independence"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-51",
+      "collisions": [
+        [
+          "복잡하다",
+          [
+            "complicate",
+            "complicated"
+          ]
+        ],
+        [
+          "당황하다",
+          [
+            "perplex",
+            "perplexed"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-52",
+      "collisions": [
+        [
+          "대도시",
+          [
+            "metropolis",
+            "metropolitan"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-54",
+      "collisions": [
+        [
+          "아마도",
+          [
+            "probably",
+            "probable"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-55",
+      "collisions": [
+        [
+          "적절한",
+          [
+            "proper",
+            "appropriate"
+          ]
+        ],
+        [
+          "평판",
+          [
+            "repute",
+            "reputation"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-56",
+      "collisions": [
+        [
+          "직접",
+          [
+            "direct",
+            "directly"
+          ]
+        ],
+        [
+          "지역",
+          [
+            "region",
+            "regional"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-57",
+      "collisions": [
+        [
+          "감각",
+          [
+            "sense",
+            "sensation"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-58",
+      "collisions": [
+        [
+          "거주하다",
+          [
+            "reside",
+            "reside"
+          ]
+        ],
+        [
+          "보존",
+          [
+            "conservation",
+            "preservation"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-60",
+      "collisions": [
+        [
+          "해결하다",
+          [
+            "resolve",
+            "solve"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-61",
+      "collisions": [
+        [
+          "상태",
+          [
+            "state",
+            "status"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-62",
+      "collisions": [
+        [
+          "도움",
+          [
+            "assist",
+            "assistance"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-66",
+      "collisions": [
+        [
+          "유지하다",
+          [
+            "sustain",
+            "retain"
+          ]
+        ],
+        [
+          "기술적",
+          [
+            "technologic",
+            "technical"
+          ]
+        ],
+        [
+          "기술",
+          [
+            "technology",
+            "technique"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-67",
+      "collisions": [
+        [
+          "경향",
+          [
+            "tend",
+            "tendency"
+          ]
+        ],
+        [
+          "의도",
+          [
+            "intent",
+            "intention"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-70",
+      "collisions": [
+        [
+          "교외",
+          [
+            "suburban",
+            "suburb"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-71",
+      "collisions": [
+        [
+          "귀중한",
+          [
+            "valuable",
+            "invaluable"
+          ]
+        ],
+        [
+          "결국",
+          [
+            "eventual",
+            "eventually"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "hv-73",
+      "collisions": [
+        [
+          "제공",
+          [
+            "provision",
+            "provided"
+          ]
+        ],
+        [
+          "부러워하다",
+          [
+            "envy",
+            "envious"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv1-03",
+      "collisions": [
+        [
+          "집",
+          [
+            "house",
+            "home"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv1-20",
+      "collisions": [
+        [
+          "문제",
+          [
+            "problem",
+            "trouble"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv2-12",
+      "collisions": [
+        [
+          "11월",
+          [
+            "November",
+            "November",
+            "November"
+          ]
+        ],
+        [
+          "12월",
+          [
+            "December",
+            "December",
+            "December"
+          ]
+        ],
+        [
+          "1월",
+          [
+            "January",
+            "January",
+            "January"
+          ]
+        ],
+        [
+          "2월",
+          [
+            "February",
+            "February",
+            "February"
+          ]
+        ],
+        [
+          "3월",
+          [
+            "March",
+            "March",
+            "March"
+          ]
+        ],
+        [
+          "4월",
+          [
+            "April",
+            "April",
+            "April"
+          ]
+        ],
+        [
+          "5월",
+          [
+            "May",
+            "May"
+          ]
+        ],
+        [
+          "6월",
+          [
+            "June",
+            "June"
+          ]
+        ],
+        [
+          "7월",
+          [
+            "July",
+            "July"
+          ]
+        ],
+        [
+          "8월",
+          [
+            "August",
+            "August"
+          ]
+        ],
+        [
+          "9월",
+          [
+            "September",
+            "September"
+          ]
+        ],
+        [
+          "10월",
+          [
+            "October",
+            "October"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv2-27",
+      "collisions": [
+        [
+          "용서하다",
+          [
+            "forgive",
+            "pardon"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv2-32",
+      "collisions": [
+        [
+          "턱",
+          [
+            "jaw",
+            "chin"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv2-33",
+      "collisions": [
+        [
+          "축하하다",
+          [
+            "congratulate",
+            "celebrate"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv3-07",
+      "collisions": [
+        [
+          "그렇지 않으면",
+          [
+            "else",
+            "otherwise"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv3-08",
+      "collisions": [
+        [
+          "앞으로",
+          [
+            "forward",
+            "ahead"
+          ]
+        ],
+        [
+          "정확하게",
+          [
+            "correctly",
+            "exactly"
+          ]
+        ],
+        [
+          "거의",
+          [
+            "almost",
+            "nearly"
+          ]
+        ],
+        [
+          "나중에",
+          [
+            "afterward(s)",
+            "later"
+          ]
+        ],
+        [
+          "아마도",
+          [
+            "perhaps",
+            "probably"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv3-10",
+      "collisions": [
+        [
+          "조카",
+          [
+            "nephew",
+            "niece"
+          ]
+        ]
+      ]
+    },
+    {
+      "lesson": "mv3-18",
+      "collisions": [
+        [
+          "거대한",
+          [
+            "giant",
+            "huge"
+          ]
+        ]
+      ]
+    }
+  ],
+  "misgraded": []
+}
