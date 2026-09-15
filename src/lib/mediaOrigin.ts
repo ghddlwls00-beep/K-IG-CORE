@@ -34,6 +34,14 @@ export const HAS_S3_CREDENTIALS = Boolean(
   accountId?.trim() && accessKeyId?.trim() && secretAccessKey?.trim() && bucket?.trim(),
 );
 
+/**
+ * A misconfigured account id points the SDK at a host that never answers, and
+ * the default three attempts with backoff then outlast the whole function. One
+ * attempt under a short deadline lets the fallback run while the listener is
+ * still waiting.
+ */
+const S3_DEADLINE_MS = 4000;
+
 let client: S3Client | null = null;
 function s3(): S3Client {
   if (!client) {
@@ -41,6 +49,7 @@ function s3(): S3Client {
       region: "auto",
       endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
       credentials: { accessKeyId: accessKeyId!, secretAccessKey: secretAccessKey! },
+      maxAttempts: 1,
     });
   }
   return client;
@@ -79,6 +88,7 @@ export async function fetchMediaObject(
   try {
     const out = await s3().send(
       new GetObjectCommand({ Bucket: bucket, Key: key, Range: range ?? undefined }),
+      { abortSignal: AbortSignal.timeout(S3_DEADLINE_MS) },
     );
     const headers = new Headers();
     if (out.ContentType) headers.set("Content-Type", out.ContentType);
