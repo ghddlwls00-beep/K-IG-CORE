@@ -378,15 +378,17 @@ export function PhonicsLearningView({
     () => analyzeEtymology(selectedWord),
     [selectedWord],
   );
+  // KIG-012: null when the author never wrote a collocation for this word.
+  // The card is hidden rather than filled with a generated template — see the
+  // note on `getCollocation`.
   const selectedCollocation = useMemo(
     () =>
       getCollocation(
         selectedWord,
-        selectedMeaning,
         vocaDictionary?.[selectedWord]?.searchWord ||
           vocaDictionary?.[selectedWord.toLowerCase().trim()]?.searchWord,
       ),
-    [selectedWord, selectedMeaning, vocaDictionary],
+    [selectedWord, vocaDictionary],
   );
 
   return (
@@ -573,39 +575,47 @@ export function PhonicsLearningView({
                 </p>
               </div>
 
-              {/* Collocation & Chunk Box */}
-              <div className="rounded-2xl border border-line bg-surface/90 p-4 flex flex-col gap-2">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10.5px] font-bold tracking-wider text-ink-faint uppercase">
-                    🔗 실전 연어 덩어리 (Essential Collocation Chunk)
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      speakText(selectedCollocation.phrase, {
-                        lang: "en",
-                        rate: speed,
-                      })
-                    }
-                    className="text-[11.5px] font-semibold text-[#D4AF37] hover:underline cursor-pointer flex items-center gap-1"
-                  >
-                    <span>청취 🔊</span>
-                  </button>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[15px] font-bold text-ink">
-                      “{selectedCollocation.phrase}”
+              {/*
+                KIG-012 — the whole box is omitted when there is no authored
+                collocation, rather than rendered with a generated sentence.
+                Rendering it conditionally (instead of hiding an inner element)
+                is what keeps the layout from collapsing into an empty bordered
+                card: the box and its border simply do not exist.
+              */}
+              {selectedCollocation ? (
+                <div className="rounded-2xl border border-line bg-surface/90 p-4 flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[10.5px] font-bold tracking-wider text-ink-faint uppercase">
+                      🔗 실전 연어 덩어리 (Essential Collocation Chunk)
                     </span>
-                    <span className="text-[13px] text-ink-soft">
-                      ➔ {selectedCollocation.translation}
-                    </span>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        speakText(selectedCollocation.phrase, {
+                          lang: "en",
+                          rate: speed,
+                        })
+                      }
+                      className="text-[11.5px] font-semibold text-[#D4AF37] hover:underline cursor-pointer flex items-center gap-1"
+                    >
+                      <span>청취 🔊</span>
+                    </button>
                   </div>
-                  <p className="text-[12.5px] text-ink-faint italic">
-                    “{selectedCollocation.exampleSentence}” ({selectedCollocation.sentenceTranslation})
-                  </p>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-[15px] font-bold text-ink">
+                        “{selectedCollocation.phrase}”
+                      </span>
+                      <span className="text-[13px] text-ink-soft">
+                        ➔ {selectedCollocation.translation}
+                      </span>
+                    </div>
+                    <p className="text-[12.5px] text-ink-faint italic">
+                      “{selectedCollocation.exampleSentence}” ({selectedCollocation.sentenceTranslation})
+                    </p>
+                  </div>
                 </div>
-              </div>
+              ) : null}
 
               {/* Next Step CTA */}
               <div className="flex items-center justify-end pt-1">

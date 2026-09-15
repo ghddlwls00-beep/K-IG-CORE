@@ -248,18 +248,40 @@ const COLLOCATION_PRESETS: Record<string, CollocationItem> = {
   },
 };
 
-export function getCollocation(word: string, meaning: string, searchWord?: string): CollocationItem {
+/**
+ * KIG-012 — the collocation and example for a word, or `null` when the author
+ * never wrote one.
+ *
+ * WHAT WAS WRONG. `COLLOCATION_PRESETS` holds real examples for 10 words. Every
+ * other word fell through to a generated template:
+ *
+ *     phrase          "vital role of ${word}"
+ *     exampleSentence 'Understanding the exact meaning of "${word}" is
+ *                      essential for daily conversation.'
+ *
+ * Measured over the corpus: 10 presets, 3,877 headwords, **3,868 words (99.8%)
+ * were served that template**. It reads like a definition, it is grammatically
+ * the same sentence for almost every word on the site, and it teaches nothing —
+ * "vital role of apple" is not English. Across all 195 VOCA lessons that is the
+ * majority of what the collocation card showed.
+ *
+ * WHY IT RETURNS NULL RATHER THAN A BETTER TEMPLATE. The examples cannot be
+ * invented: a collocation is a fact about the language, and a plausible-looking
+ * wrong one is worse than none, because a learner memorises it. The owner's
+ * decision is therefore to show nothing where nothing was written. The presets
+ * are kept — they are real — and the caller hides the card when this returns
+ * null, so no empty box is left behind.
+ *
+ * NOT DELETED, DELIBERATELY: when reviewed collocations are authored for more
+ * words, adding them to `COLLOCATION_PRESETS` brings the card back with no
+ * change here or at the call site.
+ */
+export function getCollocation(
+  word: string,
+  searchWord?: string,
+): CollocationItem | null {
   const clean = (searchWord || word).toLowerCase().replace(/[()]/g, "").trim();
-  if (COLLOCATION_PRESETS[clean]) {
-    return COLLOCATION_PRESETS[clean];
-  }
-
-  return {
-    phrase: `vital role of ${clean}`,
-    translation: `${clean} (${meaning})의 핵심적 역할`,
-    exampleSentence: `Understanding the exact meaning of "${clean}" is essential for daily conversation.`,
-    sentenceTranslation: `"${clean}"(${meaning})의 정확한 뉘앙스를 이해하는 것은 일상 대화에 필수적입니다.`,
-  };
+  return COLLOCATION_PRESETS[clean] ?? null;
 }
 
 // -----------------------------------------------------------------------------
@@ -355,37 +377,51 @@ export function generateActiveRecallQuizzes(
 // 4. In-Context Cloze Sentence Fill-in Generator
 // -----------------------------------------------------------------------------
 
+/**
+ * NOTE: nothing calls this. It is the only other consumer of `getCollocation`,
+ * and it was the reason the template fallback could not simply be deleted —
+ * removing it left this function dereferencing null.
+ *
+ * It now skips a word that has no authored collocation instead of inventing a
+ * sentence to blank out, which is the same rule the collocation card follows.
+ * Kept rather than deleted so that authored collocations, once they exist,
+ * bring this back with it.
+ */
 export function generateClozeQuestions(
   words: string[],
   vocaDict: Record<string, { meaning: string }>,
 ): ClozeQuestion[] {
   const validWords = words.filter((w) => Boolean(w && vocaDict[w.toLowerCase().trim()]?.meaning));
 
-  return validWords.map((word, idx) => {
-    const clean = word.toLowerCase().trim();
-    const meaning = vocaDict[clean]?.meaning || "";
-    const colloc = getCollocation(word, meaning);
+  return validWords
+    .map((word, idx) => {
+      const clean = word.toLowerCase().trim();
+      const meaning = vocaDict[clean]?.meaning || "";
+      const colloc = getCollocation(word);
+      // No authored collocation means no authored sentence to blank out.
+      if (!colloc) return null;
 
-    const regex = new RegExp(`\\b${clean}\\b`, "i");
-    let sentenceWithBlank = colloc.exampleSentence.replace(regex, "[ _______ ]");
-    if (!sentenceWithBlank.includes("[ _______ ]")) {
-      sentenceWithBlank = `We must pay close attention to [ _______ ] in this situation.`;
-    }
+      const regex = new RegExp(`\\b${clean}\\b`, "i");
+      let sentenceWithBlank = colloc.exampleSentence.replace(regex, "[ _______ ]");
+      if (!sentenceWithBlank.includes("[ _______ ]")) {
+        sentenceWithBlank = `We must pay close attention to [ _______ ] in this situation.`;
+      }
 
-    const otherWords = validWords.filter((w) => w.toLowerCase().trim() !== clean);
-    const shuffledOthers = [...otherWords].sort(() => Math.random() - 0.5).slice(0, 3);
-    const options = [word, ...shuffledOthers].sort(() => Math.random() - 0.5);
+      const otherWords = validWords.filter((w) => w.toLowerCase().trim() !== clean);
+      const shuffledOthers = [...otherWords].sort(() => Math.random() - 0.5).slice(0, 3);
+      const options = [word, ...shuffledOthers].sort(() => Math.random() - 0.5);
 
-    return {
-      id: `cloze-${clean}-${idx}`,
-      targetWord: word,
-      meaning,
-      sentenceWithBlank,
-      sentenceKo: colloc.sentenceTranslation,
-      options,
-      correctAnswer: word,
-    };
-  });
+      return {
+        id: `cloze-${clean}-${idx}`,
+        targetWord: word,
+        meaning,
+        sentenceWithBlank,
+        sentenceKo: colloc.sentenceTranslation,
+        options,
+        correctAnswer: word,
+      };
+    })
+    .filter((q): q is ClozeQuestion => q !== null);
 }
 
 // -----------------------------------------------------------------------------
