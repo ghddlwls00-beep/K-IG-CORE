@@ -139,6 +139,58 @@ function collectLiaisonPhrases() {
   return [...phrases];
 }
 
+/**
+ * The clip keys already in R2.
+ *
+ * `public/audio` is gitignored, so "is the file on disk?" answers a different
+ * question in a fresh clone than on the machine that generated the corpus.
+ * Asking the bucket is the answer that holds either way. Without credentials
+ * we can only fall back to the local view, and say so loudly, because acting
+ * on it would spend the month's character budget several times over.
+ */
+async function listUploadedKeys() {
+  const keys = new Set();
+  const accountId = process.env.R2_ACCOUNT_ID?.trim();
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID?.trim();
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY?.trim();
+  const bucket = process.env.R2_BUCKET_NAME?.trim();
+  if (!accountId || !accessKeyId || !secretAccessKey || !bucket) {
+    console.warn(
+      "warning: no R2 credentials, so only this checkout's files count as existing.\n" +
+        "         public/audio is gitignored — in a fresh clone that makes every clip look\n" +
+        "         missing. Set R2_ACCOUNT_ID, R2_BUCKET_NAME, R2_ACCESS_KEY_ID and\n" +
+        "         R2_SECRET_ACCESS_KEY before generating, or the run will rebuild the\n" +
+        "         whole corpus.",
+    );
+    return keys;
+  }
+
+  const { S3Client, ListObjectsV2Command } = createRequire(import.meta.url)(
+    path.join(ROOT, "node_modules", "@aws-sdk", "client-s3"),
+  );
+  const s3 = new S3Client({
+    region: "auto",
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId, secretAccessKey },
+  });
+
+  const prefix = "audio/azure-ava/v1/";
+  let token;
+  do {
+    const page = await s3.send(
+      new ListObjectsV2Command({ Bucket: bucket, Prefix: prefix, ContinuationToken: token }),
+    );
+    for (const object of page.Contents || []) {
+      const name = object.Key.slice(prefix.length);
+      if (name.endsWith(".mp3")) keys.add(name.slice(0, -4));
+    }
+    token = page.IsTruncated ? page.NextContinuationToken : undefined;
+  } while (token);
+
+  console.log(`in bucket  : ${keys.size.toLocaleString("en-US")}`);
+  return keys;
+}
+
 function collectTexts() {
   if (SAMPLE) return [normalizeText(SAMPLE)].filter(Boolean);
 
@@ -454,9 +506,15 @@ async function main() {
   console.log(`characters : ${characters.toLocaleString("en-US")}`);
   console.log("CNN        : excluded");
 
+  // A clip already in the bucket must not be synthesized again just because
+  // this checkout does not have it on disk. public/audio is gitignored, so a
+  // fresh clone starts with two files, and without this check a run there
+  // would rebuild the whole corpus -- 1.26M characters against a 500,000
+  // character monthly tier, and a needless re-upload of every object.
+  const uploaded = await listUploadedKeys();
   const pending = texts
-    .map((text) => ({ text, file: path.join(OUTPUT, `${speechKey(text)}.mp3`) }))
-    .filter((item) => !fs.existsSync(item.file));
+    .map((text) => ({ text, key: speechKey(text), file: path.join(OUTPUT, `${speechKey(text)}.mp3`) }))
+    .filter((item) => !fs.existsSync(item.file) && !uploaded.has(item.key));
   const pendingCharacters = pending.reduce((sum, item) => sum + item.text.length, 0);
   console.log(`pending    : ${pending.length.toLocaleString("en-US")}`);
   // The free tier bills by character and caps at 500,000 a month, so what a run
