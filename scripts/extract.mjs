@@ -118,6 +118,51 @@ function parseArgs(argv) {
 // so we validate rather than trust the meta tag.
 // ---------------------------------------------------------------------------
 
+/**
+ * Legacy word processors wrote a few characters as CESU-8: a surrogate PAIR
+ * encoded as two separate three-byte sequences instead of one four-byte UTF-8
+ * sequence. Strict UTF-8 rejects those bytes, so a file that is otherwise clean
+ * UTF-8 fails the check for the sake of a handful of characters.
+ *
+ * `reading/pr231-1.htm` is the case that exposed it. Read as UTF-8 the Korean
+ * is perfect apart from eight bytes around one word:
+ *
+ *     두 질문에 대한 대답은 ????아니요????이다.
+ *     ED AE 82 ED B1 92  아니요  ED AE 82 ED B1 93
+ *
+ * Those decode to U+DB82/U+DC52 and U+DB82/U+DC53 — surrogate pairs for
+ * U+F0852 and U+F0853, Private Use Area codepoints from a Korean font whose
+ * glyphs were curly quotes. The strict decode threw, the EUC-KR fallback ran,
+ * and the whole page came out as 341 replacement characters instead of eight.
+ * The fallback made a clean page unreadable.
+ *
+ * So: map the pairs we can name, then try strict UTF-8 again. EUC-KR stays the
+ * fallback for files that really are EUC-KR.
+ */
+const CESU8_REPAIRS = [
+  // U+F0852 / U+F0853 — the font's opening and closing quotation marks.
+  [Buffer.from([0xed, 0xae, 0x82, 0xed, 0xb1, 0x92]), Buffer.from("“", "utf8")],
+  [Buffer.from([0xed, 0xae, 0x82, 0xed, 0xb1, 0x93]), Buffer.from("”", "utf8")],
+];
+
+function repairCesu8(buf) {
+  let out = buf;
+  for (const [from, to] of CESU8_REPAIRS) {
+    if (out.includes(from)) {
+      const parts = [];
+      let at = 0;
+      for (;;) {
+        const i = out.indexOf(from, at);
+        if (i < 0) { parts.push(out.subarray(at)); break; }
+        parts.push(out.subarray(at, i), to);
+        at = i + from.length;
+      }
+      out = Buffer.concat(parts);
+    }
+  }
+  return out;
+}
+
 function decodeFile(buf) {
   // A strict UTF-8 decode throws on invalid sequences, which is the reliable
   // signal. EUC-KR bytes almost always fail it.
@@ -125,7 +170,15 @@ function decodeFile(buf) {
     const text = new TextDecoder("utf-8", { fatal: true }).decode(buf);
     return { text, encoding: "utf-8" };
   } catch {
-    return { text: new TextDecoder("euc-kr").decode(buf), encoding: "euc-kr" };
+    // Before falling back, see whether the only invalid bytes were the known
+    // CESU-8 pairs. Falling back on those turns a good page into mojibake.
+    const repaired = repairCesu8(Buffer.from(buf));
+    try {
+      const text = new TextDecoder("utf-8", { fatal: true }).decode(repaired);
+      return { text, encoding: "utf-8 (cesu-8 복구)" };
+    } catch {
+      return { text: new TextDecoder("euc-kr").decode(buf), encoding: "euc-kr" };
+    }
   }
 }
 
