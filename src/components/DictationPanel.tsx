@@ -195,7 +195,7 @@ export function DictationPanel({
                   <button
                     type="button"
                     onClick={() => toggleSpeakRef(ref)}
-                    title={playingRef === ref ? "발음 정지" : "원어민 발음 듣기"}
+                    title={playingRef === ref ? "발음 정지" : "발음 듣기"}
                     className={`shrink-0 rounded p-1 transition-colors cursor-pointer text-[12px] font-bold ${
                       playingRef === ref
                         ? "text-red-600 dark:text-red-400 bg-red-500/15"

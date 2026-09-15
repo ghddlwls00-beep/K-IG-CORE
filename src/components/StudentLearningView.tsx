@@ -431,7 +431,7 @@ export function StudentLearningView({
               <h2 className="text-[16px] font-bold text-ink">{instructionText}</h2>
             </div>
             <p className="text-[12.5px] text-ink-soft mt-1 leading-relaxed">
-              원어민 분할 음원과 탭 딕테이션, 섀도잉 훈련을 통해 실전 회화 순발력과 귀를 틔워보세요.
+              분할 음원과 탭 딕테이션, 섀도잉 훈련을 통해 실전 회화 순발력과 귀를 틔워보세요.
             </p>
           </div>
 
@@ -994,7 +994,7 @@ export function StudentLearningView({
                     동시 낭독 & 섀도잉(Shadowing) 실전 훈련
                   </h3>
                   <p className="text-[13px] text-ink-soft leading-relaxed">
-                    소리를 듣고 0.5초 뒤에 원어민의 억양, 호흡, 강세를 그대로 따라 읽으세요.
+                    소리를 듣고 0.5초 뒤에 억양, 호흡, 강세를 그대로 따라 읽으세요.
                     [마이크 발음 테스트]를 통해 내 발음의 정확도를 실시간으로 점검할 수 있습니다.
                   </p>
                 </div>

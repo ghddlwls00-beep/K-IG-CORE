@@ -112,10 +112,10 @@ export function KakaoTalkNoticeBanner() {
               {isKakao ? "카카오톡 브라우저 접속 중" : "인앱 브라우저 접속 중"}
             </span>
             <span className="text-amber-900 ml-1.5 hidden sm:inline">
-              · 원활한 원어민 오디오 재생 및 AI 마이크 학습을 위해 Safari 또는 Chrome 브라우저를 권장합니다.
+              · 원활한 오디오 재생 및 마이크 학습을 위해 Safari 또는 Chrome 브라우저를 권장합니다.
             </span>
             <p className="text-[11px] text-amber-800 sm:hidden mt-0.5">
-              원어민 오디오 및 AI 마이크 학습을 위해 Safari 또는 Chrome에서 열어주세요.
+              오디오 및 마이크 학습을 위해 Safari 또는 Chrome에서 열어주세요.
             </p>
           </div>
         </div>

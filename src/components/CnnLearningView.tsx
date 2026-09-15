@@ -258,7 +258,7 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
                               : "border-line bg-surface text-ink hover:bg-raised active:scale-95"
                           }`}
                         >
-                          {playingText === item.en ? "⏹️ 정지" : "🔊 원어민 낭독 듣기"}
+                          {playingText === item.en ? "⏹️ 정지" : "🔊 낭독 듣기"}
                         </button>
                       )}
                     </div>
@@ -429,7 +429,7 @@ export function CnnLearningView({ blocks, lessonKey }: CnnLearningViewProps) {
       {activeTab === "phonetics" && (
         <div className="flex flex-col gap-3">
           <div className="rounded-xl border border-line bg-surface p-4 text-[13px] text-ink-soft leading-relaxed shadow-2xs">
-            <span className="font-semibold text-ink">🎙️ 원어민 청취 & 연음 해설:</span> 뉴스 앵커와 리포터의 빠른 발화에서 일어나는 자음 탈락, 영국식 모음 변화, 축약 발음 포인트입니다.
+            <span className="font-semibold text-ink">🎙️ 청취 & 연음 해설:</span> 뉴스 앵커와 리포터의 빠른 발화에서 일어나는 자음 탈락, 영국식 모음 변화, 축약 발음 포인트입니다.
           </div>
 
           <div className="flex flex-col gap-3">

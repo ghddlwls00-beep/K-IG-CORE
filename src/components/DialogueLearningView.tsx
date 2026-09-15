@@ -143,7 +143,7 @@ export function DialogueLearningView({
     course === "adults-m" ||
     course === "middle" ||
     lessonKey.includes("am");
-  const speakerName = isMale ? "남성 성우 (Male Voice)" : "여성 성우 (Female Voice)";
+  const speakerName = isMale ? "남성 음성 (Male Voice)" : "여성 음성 (Female Voice)";
   const speakerAvatar = isMale ? "👨" : "👩";
   const effectiveGender: VoiceGender = isMale ? "male" : "female";
   const defaultPitch = isMale ? 0.82 : 1.15;
@@ -677,7 +677,7 @@ export function DialogueLearningView({
                       : "bg-rose-500/15 text-rose-700 border border-rose-500/30")
                   }
                 >
-                  {isMale ? "🎙️ 원본 오디오 재생 (남성 성우 트랙)" : "🎙️ 원본 오디오 재생 (여성 성우 트랙)"}
+                  {isMale ? "🎙️ 오디오 재생 (남성 트랙)" : "🎙️ 오디오 재생 (여성 트랙)"}
                 </span>
               </div>
               <p className="text-[12px] text-ink-soft mt-0.5">
@@ -899,7 +899,7 @@ export function DialogueLearningView({
                         }
                       >
                         <span>{isSpeaking ? "⏹️" : "🔊"}</span>
-                        <span>{isSpeaking ? "정지" : isMale ? "남성 원어민 발음" : "여성 원어민 발음"}</span>
+                        <span>{isSpeaking ? "정지" : isMale ? "남성 발음" : "여성 발음"}</span>
                       </button>
                     </div>
                   </div>
@@ -1100,7 +1100,7 @@ export function DialogueLearningView({
         <div className="flex flex-col gap-6">
           <div className="rounded-xl border border-line bg-surface p-4 text-[13px] text-ink-soft leading-relaxed shadow-2xs">
             <span className="font-semibold text-ink">✍️ 스피킹 역번역 훈련:</span> 우리말 대화 내용을 보고, 머릿속으로
-            영어 문장을 떠올려 직접 타이핑하거나 큰 소리로 말해보세요. [💡 모범 표현 확인]을 누르면 원어민의 실제 표현과
+            영어 문장을 떠올려 직접 타이핑하거나 큰 소리로 말해보세요. [💡 모범 표현 확인]을 누르면 모범 표현과
             일치 여부를 비교할 수 있습니다.
           </div>
 

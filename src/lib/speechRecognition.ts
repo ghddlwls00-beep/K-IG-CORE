@@ -193,7 +193,7 @@ export function evaluatePronunciation(spoken: string, target: string): Evaluatio
   if (score >= 92) {
     rating = "excellent";
     ratingLabel = "🌟 완벽한 발음 (Excellent!)";
-    feedback = "어순과 발음, 억양이 원어민 수준으로 완벽합니다!";
+    feedback = "어순과 발음, 억양이 완벽합니다!";
   } else if (score >= 80) {
     rating = "good";
     ratingLabel = "👍 우수한 발음 (Good!)";

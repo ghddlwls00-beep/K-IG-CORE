@@ -586,7 +586,7 @@ export function LdLearningView({
                   Sentence {dictationIndex + 1} of {sentences.length}
                 </span>
                 <h2 className="text-[17px] font-bold text-ink mt-0.5">
-                  원어민 소리를 듣고 단어 블록을 탭하여 문장을 완성하세요
+                  음성을 듣고 단어 블록을 탭하여 문장을 완성하세요
                 </h2>
               </div>
 
@@ -780,7 +780,7 @@ export function LdLearningView({
             {dictationStatus === "incorrect" && (
               <div className="rounded-xl bg-red-500/10 border border-red-500/30 p-3.5 text-[13px] text-red-950 flex items-center justify-between">
                 <div>
-                  <p className="font-bold">순서가 조금 다릅니다. 원어민 오디오를 다시 듣고 도전해 보세요!</p>
+                  <p className="font-bold">순서가 조금 다릅니다. 오디오를 다시 듣고 도전해 보세요!</p>
                 </div>
                 <button
                   type="button"
@@ -976,10 +976,10 @@ export function LdLearningView({
                   Shadowing & Speech Match
                 </span>
                 <h2 className="text-[18px] font-bold text-ink mt-0.5">
-                  원어민을 0.5초 차이로 그림자처럼 따라 말하세요 (Shadowing)
+                  음성을 0.5초 차이로 그림자처럼 따라 말하세요 (Shadowing)
                 </h2>
                 <p className="text-[13px] text-ink-soft mt-1 max-w-2xl leading-relaxed">
-                  “내가 직접 발음할 수 있는 소리만 귀에 들린다”는 언어학의 대원칙입니다. 원어민 발음을 듣고 즉시 마이크로 소리 내어 말해 일치도를 측정해 보세요.
+                  “내가 직접 발음할 수 있는 소리만 귀에 들린다”는 언어학의 대원칙입니다. 발음을 듣고 즉시 마이크로 소리 내어 말해 일치도를 측정해 보세요.
                 </p>
               </div>
 
@@ -1027,7 +1027,7 @@ export function LdLearningView({
                   1
                 </span>
                 <div>
-                  <span className="font-bold text-[13.5px] text-ink">먼저 원어민 음성 듣기</span>
+                  <span className="font-bold text-[13.5px] text-ink">먼저 음성 듣기</span>
                   <p className="text-[12px] text-ink-soft">음성의 억양과 끊어 읽는 리듬감을 귀로 확인하세요.</p>
                 </div>
               </div>
@@ -1037,7 +1037,7 @@ export function LdLearningView({
                 onClick={() => playText(currentShadowSentence.en, 1.0)}
                 className="inline-flex items-center gap-1.5 rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-white hover:bg-black/90 transition-all cursor-pointer shadow-xs"
               >
-                <span>🔊 원어민 소리 듣기</span>
+                <span>🔊 소리 듣기</span>
               </button>
             </div>
 

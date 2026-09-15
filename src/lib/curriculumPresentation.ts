@@ -159,7 +159,7 @@ export function formatLessonPresentation(
     return {
       title: `${roundNum}회 · 실전 듣기 평가`,
       subtitle: isKoreanScript ? "한국어 번역 및 어순 대조" : "수능/토익 딕테이션 훈련",
-      badge: "🔊 원어민 음성",
+      badge: "🔊 음성 듣기",
       code: `Round ${roundNum}`,
     };
   }
@@ -171,7 +171,7 @@ export function formatLessonPresentation(
     const isKoreanScript = id.endsWith("-1") || lesson.variant === "script";
     return {
       title: `${roundNum}회 · 원문 독해 & 리스닝`,
-      subtitle: isKoreanScript ? "우리말 해석 & 구문 해설" : `Passage ${roundNum} · 전문 나레이션`,
+      subtitle: isKoreanScript ? "우리말 해석 & 구문 해설" : `Passage ${roundNum} · 음성 듣기`,
       badge: "📖 직독직해",
       code: `Passage ${roundNum}`,
     };
@@ -214,7 +214,7 @@ export function formatLessonPresentation(
       return {
         title: `Unit ${unit} · 기본 문장 훈련 ${lessonNum}`,
         subtitle: "Foundational Sentence Drill",
-        badge: "🔊 원어민 음성",
+        badge: "🔊 음성 듣기",
         code: `Unit ${unit}-${lessonNum}`,
       };
     }
@@ -225,7 +225,7 @@ export function formatLessonPresentation(
       return {
         title: `Unit ${unit} · 질문과 대답 ${lessonNum}`,
         subtitle: "Spoken Q&A Interaction",
-        badge: "🔊 원어민 음성",
+        badge: "🔊 음성 듣기",
         code: `QA ${unit}-${lessonNum}`,
       };
     }
@@ -239,7 +239,7 @@ export function formatLessonPresentation(
     return {
       title: `Unit ${unit} · 중등 실전 문장 ${lessonNum}`,
       subtitle: "Middle-School Spoken Drills",
-      badge: "🔊 원어민 음성",
+      badge: "🔊 음성 듣기",
       code: `P ${unit}-${lessonNum}`,
     };
   }

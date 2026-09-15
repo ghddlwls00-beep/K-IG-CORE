@@ -101,7 +101,7 @@ function QaTrackView({
           {instruction}
         </h2>
         <p className="mt-1 text-[13px] text-ink-soft leading-relaxed">
-          상단의 원어민 질문 음성을 듣고, 머릿속으로 자연스러운 영어 응답을 구성해 보세요.
+          상단의 질문 음성을 듣고, 머릿속으로 자연스러운 영어 응답을 구성해 보세요.
         </p>
       </div>
 

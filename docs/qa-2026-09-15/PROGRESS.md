@@ -93,6 +93,59 @@ PROGRESS.md 의 "다음 착수" 순서대로 이어서 진행해줘.
 
 ---
 
+## 1-B. 제품 소유자 결정이 내려진 항목 (2026-09-15)
+
+> 아래는 **이미 결정이 끝났습니다.** 다시 묻지 말고 그대로 실행하세요.
+
+### ✅ KIG-009 — 결정: AI 음성 유지 + "원어민" 표기 전면 삭제 (완료)
+
+- **결정 내용**: 원본 녹음을 되살리지 않고 Azure Ava TTS를 계속 사용합니다.
+  대신 **오디오를 원어민 녹음인 것처럼 설명하는 문구를 전부 제거**했습니다.
+- **⚠️ 중요 — "AI 음성"이라는 표기도 넣지 않습니다.** 소유자가 명시적으로 지시했습니다.
+  음성의 출처를 언급하지 말고 기능만 설명하세요(예: "🔊 음성 듣기", "발음 듣기", "낭독 듣기").
+  앞으로 새 문구를 쓸 때도 이 규칙을 지키세요.
+- 처리한 것 27곳: `curriculumPresentation.ts` 배지 4 + 부제 1, `courses.ts` 과정 설명 4,
+  `LdLearningView` 6, `DialogueLearningView` 4, `CnnLearningView` 2, `ReadingLearningView` 2,
+  `StudentLearningView` 2, `KakaoTalkNoticeBanner` 2, `GrammarLearningView`·`ChineseLearningView`·
+  `DictationPanel`·`BasicsLearningView`·`speechRecognition.ts` 각 1.
+- **일부러 남긴 5곳** — 이건 재생되는 오디오에 대한 주장이 아니라 **영어라는 언어에 대한 설명**입니다.
+  지우면 학습 내용이 손상되므로 그대로 두세요.
+  `vocaUtils.ts:180`(원어민 강세 위치), `LdLearningView.tsx:851`(원어민 소리의 법칙),
+  `LdLearningView.tsx:1111`(실전 원어민 대화 속도), `DialogueLearningView.tsx:1260`(원어민 대화에서 자주 쓰는 표현),
+  `listeningUtils.ts:130`(원어민 회화에서 out of 축약).
+
+### ✅ GVA 섹션 폐지 (완료) — §1-A 참조
+
+### 📌 KIG-008 (퀴즈 462레슨) — 다른 AI에게 위임됨
+
+소유자가 이 작업을 **별도 AI에게 맡기기로** 했습니다. 인수받는 쪽이 알아야 할 것:
+
+- **범위**: READING 208/256 + LISTENING 254/276 레슨의 1번 문항 정답 키가 지문·스크립트와 무관합니다.
+- **원인 코드**: `src/lib/readingUtils.ts:402-683` `generateReadingQuiz()`,
+  `src/lib/listeningUtils.ts:332-428` `generateListeningContextQuiz()`.
+  정답을 **키워드 부분일치**로 고릅니다(`tEn.includes("art")`가 `start`·`part`·`heart`에 걸림).
+  LISTENING은 276개 중 165개가 같은 기본값 하나로 고정됩니다.
+- **증거**: `evidence/reading-q1-answer-keys.txt`, `evidence/ld-q1-answer-keys.txt`
+  (형식 `레슨|배정된 정답 태그|지문 앞부분`). 전수 판정이 들어 있습니다.
+- **⛔ 금지**: 임계값이나 키워드 목록만 손봐서 "고쳤다"고 하지 마세요.
+  정답이 지문에서 도출되지 않는 **구조적 문제**입니다.
+- **선택지**: (A) 레슨별 문항·정답·해설을 사람이 제작해 `content/`에 두고 생성기를 제거 (4~8주) ·
+  (B) 해당 퀴즈 단계를 비노출 (하루). 클로즈 빈칸은 지문에서 직접 나오므로 유지 가능.
+- **교재 원본이 Cloudflare R2에 올라가 있습니다** — §7 참조. 문항 제작 시 그 원본을 근거로 쓰세요.
+
+### 📌 그룹 A 잔여 1건 (TTS 비공식 API) — 다른 AI에게 위임됨
+
+소유자가 이 작업도 **별도 AI에게 맡기기로** 했습니다. §2 그룹 A에 분석과 권고가 이미 있고,
+**결론은 (b) 자체 클립 우선 + 실패 시에만 폴백 → 최종적으로 엔드포인트 삭제**입니다.
+키·비용·인프라가 필요 없으므로 바로 착수 가능합니다. 단, 아래 순서를 지키세요.
+
+1. 먼저 Azure 클립 545건을 생성·업로드(KIG-015·KIG-002 부작용과 **같은 배치**)해 커버리지를 ~100%로 올린다.
+2. `playChunkViaStream`에서 자체 클립 URL을 먼저 시도하고 `audio.onerror`에서만 폴백한다.
+3. 커버리지가 100%가 되면 `src/lib/speech.ts:707`의 `translate.google.com/translate_tts`를 **삭제**한다.
+4. 문구를 새로 쓸 일이 있으면 **KIG-009 결정(출처 언급 금지)** 을 지킨다.
+
+---
+
 ## 2. 남은 이슈 (28건)
 
 ### 그룹 A — 코드 소규모 (1건 남음, **결정 필요**)

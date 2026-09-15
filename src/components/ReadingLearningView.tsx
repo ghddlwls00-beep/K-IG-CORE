@@ -624,7 +624,7 @@ export function ReadingLearningView({
                     </span>
                     <span className="rounded-full bg-emerald-600 px-2 py-0.5 font-mono text-[11px] font-bold text-white uppercase">
                       {measuredWpm >= 200
-                        ? "🚀 원어민 최상위 속독 수준"
+                        ? "🚀 최상위 속독 수준"
                         : measuredWpm >= 160
                         ? "⚡ 권장 속도 완벽 마스터"
                         : measuredWpm >= 120
@@ -656,7 +656,7 @@ export function ReadingLearningView({
                   English Passage
                 </span>
                 <span className="text-[12px] text-ink-faint">
-                  단락 내 문장을 터치하면 즉시 원어민 발음이 재생됩니다
+                  단락 내 문장을 터치하면 즉시 발음이 재생됩니다
                 </span>
               </div>
 

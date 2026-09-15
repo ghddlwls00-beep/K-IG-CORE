@@ -21,7 +21,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Listening",
     kind: "audio-drill",
     description:
-      "실전 수능·토익 대비 받아쓰기 훈련. 원어민 고음질 음성과 딕테이션 훈련으로 완벽한 청취력을 완성합니다.",
+      "실전 수능·토익 대비 받아쓰기 훈련. 고음질 음성과 딕테이션 훈련으로 완벽한 청취력을 완성합니다.",
     series: [{ slug: "d", title: "Listening Rounds", prefix: "d" }],
   },
   {
@@ -32,7 +32,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "READING",
     titleEn: "Reading",
     kind: "audio-drill",
-    description: "원어민 내레이션과 구문 분석이 결합된 원문 독해 훈련으로 문해력과 직독직해 능력을 완성합니다.",
+    description: "문장 낭독과 구문 분석이 결합된 원문 독해 훈련으로 문해력과 직독직해 능력을 완성합니다.",
     series: [{ slug: "pr", title: "Reading Passages", prefix: "pr" }],
   },
   {
@@ -44,7 +44,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Student",
     kind: "audio-drill",
     description:
-      "원어민 일상 회화로 마스터하는 실전 듣기와 정독 훈련.",
+      "일상 회화로 마스터하는 실전 듣기와 정독 훈련.",
     series: [{ slug: "s", title: "Conversation Lessons", prefix: "s" }],
   },
   {
@@ -55,7 +55,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "VOCA",
     titleEn: "Vocabulary",
     kind: "audio-drill",
-    description: "중등 1~4단계부터 고등 심화까지 필수 영단어 매트릭스 및 원어민 발음 정밀 클리닉.",
+    description: "중등 1~4단계부터 고등 심화까지 필수 영단어 매트릭스 및 발음 정밀 클리닉.",
     series: [
       { slug: "mv1", title: "Middle School Vocabulary 1 (MV1)", prefix: "mv1-" },
       { slug: "mv2", title: "Middle School Vocabulary 2 (MV2)", prefix: "mv2-" },

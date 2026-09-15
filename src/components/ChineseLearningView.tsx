@@ -107,7 +107,7 @@ export function ChineseLearningView({
               </span>
             </div>
             <p className="text-[12px] text-ink-soft mt-0.5">
-              정확한 성조 병음(Pinyin)을 보며 원어민 음성을 따라 발음해 보세요.
+              정확한 성조 병음(Pinyin)을 보며 음성을 따라 발음해 보세요.
             </p>
           </div>
         </div>

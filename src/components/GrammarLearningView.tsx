@@ -959,7 +959,7 @@ export function GrammarLearningView({
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-line bg-surface p-4 text-[13px] text-ink-soft shadow-2xs">
             <div>
-              <span className="font-semibold text-ink">🗣️ 구문 섀도잉 훈련:</span> 카드를 누르면 원어민 발음이
+              <span className="font-semibold text-ink">🗣️ 구문 섀도잉 훈련:</span> 카드를 누르면 발음이
               재생됩니다. 소리를 들으며 억양과 문법 어순을 그대로 따라 말해보세요. (3회 이상 반복 권장)
             </div>
             <div className="flex items-center gap-1 font-mono text-[11.5px] text-ink-faint">
