@@ -263,6 +263,37 @@ gh1-024 #16 "Am I not a boy(혹은 Ain't I a boy)?"
 3. TTS로 읽을 문장에서는 한국어 주석과 괄호 대안을 제거한 **주 답**만 사용.
    전체 목록: `evidence/data-audit-raw.json` → `issues[]` 중 `code === "ANSWER_HAS_KOREAN"`.
 
+#### KIG-006-a (P1, 2026-09-15 신규) — `isEnglish()`가 한글 문장을 영어로 오판 → 언어 뒤바뀜
+
+**증상**: `GrammarLearningView.tsx:180-192`의 언어 판정이 뒤바뀌어, **모범답안(`englishText`) 자리에 한국어가 들어가는** 문항이 생긴다. 그러면 영어로 올바르게 영작해도 오답이 된다.
+
+**원인** — `isEnglish()`(`GrammarLearningView.tsx:42-47`)가 라틴/한글 **문자 수 비교**로 판정한다.
+```ts
+function isEnglish(text: string): boolean {
+  const latin = (text.match(/[a-zA-Z]/g) || []).length;
+  const hangul = (text.match(/[\uAC00-\uD7AF\u1100-\u11FF]/g) || []).length;
+  return latin >= hangul && latin > 0;   // ← 라틴 1자만 있어도 동률이면 영어
+}
+```
+괄호 안에 영어 약어·기호가 섞인 한국어 문장(`"그는 (Mr. Kim)이다"`)이나 `latin === hangul`인 경우 **한국어가 영어로 판정**된다. 그러면 `:183`의 분기가 반대로 걸려 `en`에 한국어가, `ko`에 영어가 들어간다.
+
+**실측 (2026-09-15)**: GRAMMAR II 44개 레슨 796문항 중 모범답안이 라틴 문자로만 구성된 것은 796건이지만, 페어(`gh2-###-1`)의 언어 구성에 따라 뒤바뀌는 문항이 존재. KIG-005 검증 중 발견.
+
+**수정 지시**
+1. `isEnglish()`를 **한글 포함 여부 우선**으로 바꾼다: 한글이 1자라도 있고 라틴 문자보다 많으면 한국어.
+   ```ts
+   function isEnglish(text: string): boolean {
+     if (!text) return false;
+     const latin = (text.match(/[a-zA-Z]/g) || []).length;
+     const hangul = (text.match(/[\uAC00-\uD7AF\u1100-\u11FF]/g) || []).length;
+     return hangul === 0 || latin > hangul;   // 한글이 하나라도 더 많으면 한국어
+   }
+   ```
+2. **KIG-006과 같은 커밋에서 처리한다** — 두 이슈가 같은 함수(`items` 판정 + 채점)를 건드리고, `alternatives[]` 스키마 도입 시 언어 판정도 함께 손대야 한다.
+3. 회귀 확인: `gh2-007` ~ `gh2-048`의 모범답안에 한글이 0건이어야 한다.
+
+**완료 조건**: GRAMMAR I/II 전 레슨에서 `englishText`에 한글 포함 **0건**, 그리고 KIG-006의 대안 정답 채점이 정상 동작.
+
 ---
 
 ### KIG-007 (P1) — gh1-020 이론 문항 답 8개 누락 + 음원 404
