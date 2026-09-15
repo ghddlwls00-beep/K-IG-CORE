@@ -1,0 +1,688 @@
+{
+ "checkedAt": "2026-09-15",
+ "originalMp3": {
+  "total": 2512,
+  "status": {
+   "200": 2510,
+   "404": 2
+  },
+  "missing": [
+   {
+    "src": "/audio/grammar1/gh1-020.mp3",
+    "status": 404,
+    "lessons": [
+     "gh1-020"
+    ]
+   },
+   {
+    "src": "/audio/grammar1/gh1-021.mp3",
+    "status": 404,
+    "lessons": [
+     "gh1-020",
+     "gh1-020"
+    ]
+   }
+  ]
+ },
+ "avaClips": {
+  "total": 22816,
+  "status": {
+   "200": 19378,
+   "404": 3438
+  }
+ },
+ "avaMissingContent": [
+  {
+   "section": "VOCA",
+   "lesson": "mv1-02",
+   "text": "vital role of mr."
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-02",
+   "text": "vital role of english"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-02",
+   "text": "vital role of korean"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-02",
+   "text": "vital role of german"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-02",
+   "text": "vital role of japanese"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-06",
+   "text": "vital role of sunday"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-11",
+   "text": "vital role of christmas"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-13",
+   "text": "vital role of england"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-15",
+   "text": "vital role of american"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-25",
+   "text": "vital role of china"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-39",
+   "text": "vital role of europe"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv1-40",
+   "text": "vital role of pacific"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of january"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of february"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of april"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of june"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of july"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of august"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of september"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-11",
+   "text": "vital role of october"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-12",
+   "text": "vital role of november"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv2-12",
+   "text": "vital role of december"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv3-25",
+   "text": "vital role of mars"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv3-32",
+   "text": "vital role of god"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "mv3-40",
+   "text": "vital role of british"
+  },
+  {
+   "section": "VOCA",
+   "lesson": "hv-41",
+   "text": "vital role of mediterranean"
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-008",
+   "text": "I was poor."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "주어가 먼저 나오고 그 다음에 동사가 나온다."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "am, is, are(be동사라고 함)이다."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "am이다."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "is를 쓴다."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "are를 쓴다."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "동사가 먼저 나오고 그 다음에 주어가 나오고 그 다음에 주격보어가 온다."
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-020",
+   "text": "동사 + 주어 + not + 주격 보어 혹은 동사와 not를 합친 축약어(isn't, aren't, ain't) + 주어 + 주격"
+  },
+  {
+   "section": "GRAMMAR I",
+   "lesson": "gh1-022",
+   "text": "I am a boy."
+  }
+ ],
+ "avaMissingLiaisonCount": 3403,
+ "avaMissingLiaisonSample": [
+  {
+   "lesson": "d001",
+   "text": "work in"
+  },
+  {
+   "lesson": "d001",
+   "text": "live in"
+  },
+  {
+   "lesson": "d001",
+   "text": "married to"
+  },
+  {
+   "lesson": "d001",
+   "text": "one of"
+  },
+  {
+   "lesson": "d001",
+   "text": "United States"
+  },
+  {
+   "lesson": "d001",
+   "text": "like it"
+  },
+  {
+   "lesson": "d001",
+   "text": "new and"
+  },
+  {
+   "lesson": "d001",
+   "text": "have one"
+  },
+  {
+   "lesson": "d001",
+   "text": "upstairs"
+  },
+  {
+   "lesson": "d002",
+   "text": "number is"
+  },
+  {
+   "lesson": "d002",
+   "text": "My address"
+  },
+  {
+   "lesson": "d002",
+   "text": "address is"
+  },
+  {
+   "lesson": "d002",
+   "text": "Bob and"
+  },
+  {
+   "lesson": "d002",
+   "text": "born in"
+  },
+  {
+   "lesson": "d002",
+   "text": "birthday is"
+  },
+  {
+   "lesson": "d002",
+   "text": "am an"
+  },
+  {
+   "lesson": "d002",
+   "text": "an economist"
+  },
+  {
+   "lesson": "d003",
+   "text": "was absent"
+  },
+  {
+   "lesson": "d003",
+   "text": "grandmother and"
+  },
+  {
+   "lesson": "d003",
+   "text": "farm in"
+  },
+  {
+   "lesson": "d003",
+   "text": "is also"
+  },
+  {
+   "lesson": "d003",
+   "text": "beautiful Although"
+  },
+  {
+   "lesson": "d003",
+   "text": "was also"
+  },
+  {
+   "lesson": "d003",
+   "text": "grandparents are"
+  },
+  {
+   "lesson": "d003",
+   "text": "getting older"
+  },
+  {
+   "lesson": "d003",
+   "text": "they are"
+  },
+  {
+   "lesson": "d003",
+   "text": "always enjoy"
+  },
+  {
+   "lesson": "d003",
+   "text": "grandparents and"
+  },
+  {
+   "lesson": "d004",
+   "text": "Brazil is"
+  },
+  {
+   "lesson": "d004",
+   "text": "country It"
+  },
+  {
+   "lesson": "d004",
+   "text": "many industries"
+  },
+  {
+   "lesson": "d004",
+   "text": "linen and"
+  },
+  {
+   "lesson": "d004",
+   "text": "steel and"
+  },
+  {
+   "lesson": "d004",
+   "text": "many important"
+  },
+  {
+   "lesson": "d004",
+   "text": "important agricultural"
+  },
+  {
+   "lesson": "d004",
+   "text": "cotton and"
+  },
+  {
+   "lesson": "d004",
+   "text": "beans and"
+  },
+  {
+   "lesson": "d004",
+   "text": "River is"
+  },
+  {
+   "lesson": "d004",
+   "text": "longest and"
+  },
+  {
+   "lesson": "d004",
+   "text": "Brazil It"
+  }
+ ],
+ "rangeRequests": [
+  {
+   "src": "/audio/student/s1-1-1.mp3",
+   "status": 206,
+   "contentRange": "bytes 0-1/163464",
+   "type": "audio/mpeg"
+  },
+  {
+   "src": "/audio/student/s1-1-2.mp3",
+   "status": 206,
+   "contentRange": "bytes 0-1/27105",
+   "type": "audio/mpeg"
+  },
+  {
+   "src": "/audio/student/s1-1-3.mp3",
+   "status": 206,
+   "contentRange": "bytes 0-1/52125",
+   "type": "audio/mpeg"
+  },
+  {
+   "src": "/audio/student/s1-1-4.mp3",
+   "status": 206,
+   "contentRange": "bytes 0-1/35028",
+   "type": "audio/mpeg"
+  },
+  {
+   "src": "/audio/student/s1-1-5.mp3",
+   "status": 206,
+   "contentRange": "bytes 0-1/38781",
+   "type": "audio/mpeg"
+  }
+ ],
+ "proxySample": [
+  {
+   "key": "t-33e5cee3fef08f81",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/34653"
+  },
+  {
+   "key": "z-431c60511b827777",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/46029"
+  },
+  {
+   "key": "y-a2d4d28aba65b383",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/32781"
+  },
+  {
+   "key": "o-adb6e9251298f779",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/31773"
+  },
+  {
+   "key": "3-2c29f04d3d779aad",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/25580"
+  },
+  {
+   "key": "m-0d5a7b96abfc2e0d",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  },
+  {
+   "key": "i-7a42820c516465b8",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/29037"
+  },
+  {
+   "key": "6-b5f82e71451cf8de",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/5328"
+  },
+  {
+   "key": "5-fb1de34a74bbdefb",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/25581"
+  },
+  {
+   "key": "n-075e2e045caf6617",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/31341"
+  },
+  {
+   "key": "5-6137ca8639f6dffb",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/25725"
+  },
+  {
+   "key": "6-2ee0698fdc471455",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/25581"
+  },
+  {
+   "key": "6-484dcab2d6ece85b",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/25581"
+  },
+  {
+   "key": "p-cf1d9ce09ea3acb6",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/32349"
+  },
+  {
+   "key": "9-8ffa6139e2638659",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/26733"
+  },
+  {
+   "key": "m-b338f8f114e8ed0b",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/30333"
+  },
+  {
+   "key": "a-8d1155d6e360fee9",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/26445"
+  },
+  {
+   "key": "m-8f61c1db8f9bf9d8",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/29613"
+  },
+  {
+   "key": "l-b97348aeb2023477",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/28173"
+  },
+  {
+   "key": "x-f76902b8c47c94d9",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/31485"
+  },
+  {
+   "key": "g-3bbdf8bab8c0fafb",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/29037"
+  },
+  {
+   "key": "1g-076de468e98a7f7e",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/41616"
+  },
+  {
+   "key": "2y-0d286d58a9c8fa32",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/62877"
+  },
+  {
+   "key": "1b-557bda1ac69b916c",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/50061"
+  },
+  {
+   "key": "1c-2b638dc3d1d8f8fd",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/61581"
+  },
+  {
+   "key": "z-bb0c681cacb1caee",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/37532"
+  },
+  {
+   "key": "12-9bd9b41866e0af02",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/48765"
+  },
+  {
+   "key": "1e-75ec50888ceda551",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/38685"
+  },
+  {
+   "key": "1g-fe4654f7f1824968",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/40032"
+  },
+  {
+   "key": "2g-f35ecf468a583df1",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/50493"
+  },
+  {
+   "key": "3c-2af4a9fd160ecb30",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/65757"
+  },
+  {
+   "key": "6-16dc43d00247515d",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/25581"
+  },
+  {
+   "key": "2g-84105e839e1dfc9c",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/55101"
+  },
+  {
+   "key": "t-a61ee1d513c39903",
+   "status": 206,
+   "type": "audio/mpeg",
+   "acceptRanges": "bytes",
+   "contentRange": "bytes 0-1/31628"
+  },
+  {
+   "key": "7-412204f644b20737",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  },
+  {
+   "key": "a-db199a77cf3bfd12",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  },
+  {
+   "key": "9-35fd9e5c44389bf3",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  },
+  {
+   "key": "a-2e78d9854a561a61",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  },
+  {
+   "key": "9-2ec8e95640f1c7a7",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  },
+  {
+   "key": "e-f2cff336919dc64c",
+   "status": 404,
+   "type": "text/html",
+   "acceptRanges": null,
+   "contentRange": null
+  }
+ ]
+}
