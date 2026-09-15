@@ -99,21 +99,6 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
       "실제 CNN 글로벌 뉴스 클립과 원문 스크립트, 한영 대역 번역으로 실전 시사 영어를 마스터합니다.",
     series: [{ slug: "cnn", title: "Clips", prefix: "" }],
   },
-  {
-    slug: "gva",
-    tab: "gva",
-    legacyFolder: "gva",
-    numbering: "sequence",
-    title: "GVA 독해 직강",
-    titleEn: "GVA Reading Master",
-    kind: "audio-drill",
-    description:
-      "중등·고등 영어 지문을 교재 원문과 실제 강의 음성으로 함께 학습하는 200강 독해 직강.",
-    series: [
-      { slug: "middle", title: "중등 영어독해 (1~100강 · CH 01~10)", prefix: "gva-" },
-      { slug: "high", title: "고등 영어독해 (101~200강 · CH 11~20)", prefix: "gva-" },
-    ],
-  },
 ];
 
 export const COURSE_BY_SLUG = new Map(COURSES.map((c) => [c.slug, c]));
