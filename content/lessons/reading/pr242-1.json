@@ -47,117 +47,53 @@
   "readingSentences": [
     {
       "id": "reading-242-s001",
-      "english": "Reading aloud improves pronunciation, rhythm, and comprehension.",
-      "korean": "소리 내어 읽는 것은 발음과 리듬감, 그리고 독해력을 크게 향상시킨다."
+      "english": "A child will often ask for approval openly.",
+      "korean": "아이는 종종 공개적으로 승인을 요청하는 경향이 있다."
     },
     {
       "id": "reading-242-s002",
-      "english": "It engages both visual and auditory processing pathways in the brain.",
-      "korean": "그것은 뇌의 시각적 처리 경로와 청각적 처리 경로 둘 다를 활성화한다."
+      "english": "\"Look at my painting!",
+      "korean": "\"내 그림을 보세요."
     },
     {
       "id": "reading-242-s003",
-      "english": "Students who read aloud regularly gain fluency and greater self-confidence.",
-      "korean": "정기적으로 소리 내어 낭독하는 학생들은 유창성과 더 큰 자신감을 얻게 된다."
+      "english": "Isn't it pretty?\" But adults are generally less honest about their need for support.",
+      "korean": "예쁘지 않아요?\" 그러나 어른들은 지지를 받고 싶은 욕구에 대해 일반적으로 (아이들보다) 덜 솔직하다."
     },
     {
       "id": "reading-242-s004",
-      "english": "Voice practice transforms passive reading into active linguistic mastery.",
-      "korean": "음성 연습은 수동적인 독서를 능동적인 언어적 통달로 전환시켜 준다."
+      "english": "A grown-up who tried his or her best at something isn't like to ask, \"Didn't I do a good job!\" But the adult needs to hear it all the same.",
+      "korean": "어떤 일에 최선을 다한 어떤 어른이 \"내가 일을 잘 하지 않았나요?\" 라는 질문을 할 것 같지는 않다. 그러나 그는 그럼에도 불구하고 그 말을 들을 필요가 있다."
+    },
+    {
+      "id": "reading-242-s005",
+      "english": "In other words, children and adults alike want to hear positive remarks.",
+      "korean": "즉, 아이들과 어른들 똑같이 긍정적인 말을 듣기 원한다."
+    },
+    {
+      "id": "reading-242-s006",
+      "english": "Therefore, don't forget to praise others when they need support.",
+      "korean": "그러므로 다른 사람들이 지원을 필요로 할 때 그들을 칭찬하는 것을 잊지 말아라."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "improves",
-      "lemma": "improve",
-      "partOfSpeech": "v.",
-      "korean": "향상시키다, 개선하다",
-      "score": 111,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
-      "examTags": [
-        "중학기초",
-        "수능",
-        "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "practice",
-      "lemma": "practice",
+      "word": "support",
+      "lemma": "support",
       "partOfSpeech": "n.",
-      "korean": "연습",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "korean": "지원하다",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
       "examTags": [
         "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "voice",
-      "lemma": "voice",
-      "partOfSpeech": "n.",
-      "korean": "목소리",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reading",
-      "lemma": "read",
-      "partOfSpeech": "v.",
-      "korean": "읽다",
-      "score": 99,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
-      "examTags": [
-        "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "linguistic",
-      "lemma": "linguistic",
-      "partOfSpeech": "adj.",
-      "korean": "언어학의, 언어의",
-      "score": 99,
-      "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 99점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "transforms",
-      "lemma": "transform",
+      "word": "honest",
+      "lemma": "honest",
       "partOfSpeech": "n.",
-      "korean": "변환",
-      "score": 97,
-      "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 97점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "students",
-      "lemma": "student",
-      "partOfSpeech": "n.",
-      "korean": "학생",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "brain",
-      "lemma": "brain",
-      "partOfSpeech": "n.",
-      "korean": "뇌",
+      "korean": "정직한",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -166,76 +102,149 @@
       "freq": 1
     },
     {
-      "word": "aloud",
-      "lemma": "aloud",
+      "word": "words",
+      "lemma": "word",
       "partOfSpeech": "n.",
-      "korean": "큰 소리로",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "pronunciation",
-      "lemma": "pronunciation",
-      "partOfSpeech": "n.",
-      "korean": "발음",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "comprehension",
-      "lemma": "comprehension",
-      "partOfSpeech": "n.",
-      "korean": "이해력",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "passive",
-      "lemma": "passive",
-      "partOfSpeech": "adj.",
-      "korean": "수동적인, 소극적인",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "rhythm",
-      "lemma": "rhythm",
-      "partOfSpeech": "n.",
-      "korean": "리듬, 율동, 주기",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "단어",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "active",
-      "lemma": "active",
+      "word": "approval",
+      "lemma": "approval",
       "partOfSpeech": "adj.",
-      "korean": "활성",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 77점)",
+      "korean": "승인",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
+    },
+    {
+      "word": "ask",
+      "lemma": "ask",
+      "partOfSpeech": "n.",
+      "korean": "묻다",
+      "score": 78,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "painting",
+      "lemma": "painting",
+      "partOfSpeech": "v.",
+      "korean": "그림",
+      "score": 76,
+      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "openly",
+      "lemma": "open",
+      "partOfSpeech": "adv.",
+      "korean": "열다",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "therefore",
+      "lemma": "therefore",
+      "partOfSpeech": "adv.",
+      "korean": "그러므로, 따라서",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "중학기초",
+        "수능"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "forget",
+      "lemma": "forget",
+      "partOfSpeech": "n.",
+      "korean": "잊어버리다",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "praise",
+      "lemma": "praise",
+      "partOfSpeech": "n.",
+      "korean": "칭찬하다",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "need",
+      "lemma": "need",
+      "partOfSpeech": "v.",
+      "korean": "필요",
+      "score": 74,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "child",
+      "lemma": "child",
+      "partOfSpeech": "n.",
+      "korean": "아이",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "isn't",
+      "lemma": "isn't",
+      "partOfSpeech": "n.",
+      "korean": "isn't (핵심 어휘)",
+      "score": 72,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "adults",
+      "lemma": "adult",
+      "partOfSpeech": "n.",
+      "korean": "성인",
+      "score": 72,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     }
   ]
 }

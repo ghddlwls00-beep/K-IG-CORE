@@ -51,45 +51,50 @@
   "readingSentences": [
     {
       "id": "reading-159-s001",
-      "english": "Public parks provide a vital green sanctuary within noisy modern cities.",
-      "korean": "공공 공원은 소음이 심한 현대 도시 속에서 필수적인 녹색 안식처를 제공한다."
+      "english": "Have you and your friend ever been to a museum together, looked at the same painting, and had different reactions to it?",
+      "korean": "친구와 함께 박물관에 가서 똑같은 그림을 보고 그것에 다른 반응을 가져본 적이 있나요?"
     },
     {
       "id": "reading-159-s002",
-      "english": "They offer city dwellers a place to walk, exercise, and reconnect with nature.",
-      "korean": "공원은 도시 거주자들에게 걷고, 운동하며, 자연과 다시 교감할 수 있는 장소를 마련해 준다."
+      "english": "If the painting you looked at was a seascape, you may have liked it because the dark colors and enormous waves reminded you of the wonderful memories you had in your hometown.",
+      "korean": "만약 당신이 본 그림이 바다풍경이었다면, 어두운 색과 거대한 파도가 당신이 고향에서 경험한 멋진 추억을 상기시켜 주기에 그것을 좋아했을 수도 있겠죠."
     },
     {
       "id": "reading-159-s003",
-      "english": "Urban trees filter pollution and significantly reduce heat island effects.",
-      "korean": "도시의 나무들은 오염 물질을 걸러주고 열섬 현상을 크게 완화시켜 준다."
-    },
-    {
-      "id": "reading-159-s004",
-      "english": "Investing in urban greenery enhances both public health and quality of life.",
-      "korean": "도시 녹지에 투자하는 것은 시민 건강과 삶의 질 모두를 향상시킨다."
+      "english": "In contrast, your friend might have had a negative reaction and said that the same things brought fear to his mind as he remembered sailing on a rough sea during a violent storm. Our experience may influence how we interpret paintings.",
+      "korean": "대조적으로, 당신의 친구는 부정적인 반응을 가졌을지도 모르며, 격렬한 폭풍우 동안에 거친 바다를 항해했던 게 생각나 똑같은 것(그림)이 그의 마음에 두려움을 가져온다고 말했을지도 모른다\n\n→ 우리의 (A) 경험은 어떻게 (B) 그림을 해석할 지에 영향을 끼칠지도 모른다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "provide",
-      "lemma": "provide",
-      "partOfSpeech": "v.",
-      "korean": "제공하다, 공급하다",
-      "score": 111,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
+      "word": "friend",
+      "lemma": "friend",
+      "partOfSpeech": "n.",
+      "korean": "친구",
+      "score": 115,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 115점)",
       "examTags": [
-        "중학기초",
-        "수능",
-        "TOEIC"
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "remembered",
+      "lemma": "remember",
+      "partOfSpeech": "v.",
+      "korean": "기억하다",
+      "score": 109,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
+      "examTags": [
+        "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "noisy",
-      "lemma": "noisy",
+      "word": "experience",
+      "lemma": "experience",
       "partOfSpeech": "n.",
-      "korean": "시끄러운",
+      "korean": "경험",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -98,94 +103,118 @@
       "freq": 1
     },
     {
-      "word": "health",
-      "lemma": "health",
+      "word": "influence",
+      "lemma": "influence",
       "partOfSpeech": "n.",
-      "korean": "건강",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "korean": "영향",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "exercise",
-      "lemma": "exercise",
-      "partOfSpeech": "n.",
-      "korean": "운동",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "reminded",
+      "lemma": "remind",
+      "partOfSpeech": "v.",
+      "korean": "생각나게 하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "public",
-      "lemma": "public",
-      "partOfSpeech": "adj.",
-      "korean": "대중",
-      "score": 92,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 92점)",
+      "word": "fear",
+      "lemma": "fear",
+      "partOfSpeech": "n.",
+      "korean": "무서움",
+      "score": 96,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "mind",
+      "lemma": "mind",
+      "partOfSpeech": "n.",
+      "korean": "마음",
+      "score": 96,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "different",
+      "lemma": "different",
+      "partOfSpeech": "n.",
+      "korean": "다른",
+      "score": 95,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "painting",
+      "lemma": "painting",
+      "partOfSpeech": "v.",
+      "korean": "그림",
+      "score": 91,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 91점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "offer",
-      "lemma": "offer",
-      "partOfSpeech": "n.",
-      "korean": "제안",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "nature",
-      "lemma": "nature",
-      "partOfSpeech": "n.",
-      "korean": "자연",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reduce",
-      "lemma": "reduce",
-      "partOfSpeech": "n.",
-      "korean": "감소시키다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "significantly",
-      "lemma": "significant",
-      "partOfSpeech": "adv.",
-      "korean": "중요한",
-      "score": 87,
-      "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "investing",
-      "lemma": "invest",
+      "word": "looked",
+      "lemma": "look",
       "partOfSpeech": "v.",
-      "korean": "투자하다",
+      "korean": "봐",
+      "score": 88,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 88점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "dark",
+      "lemma": "dark",
+      "partOfSpeech": "n.",
+      "korean": "어두운",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "same",
+      "lemma": "same",
+      "partOfSpeech": "n.",
+      "korean": "같은",
+      "score": 85,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "sailing",
+      "lemma": "sail",
+      "partOfSpeech": "v.",
+      "korean": "항해",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -194,46 +223,10 @@
       "freq": 1
     },
     {
-      "word": "urban",
-      "lemma": "urban",
+      "word": "together",
+      "lemma": "together",
       "partOfSpeech": "n.",
-      "korean": "도시의",
-      "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "vital",
-      "lemma": "vital",
-      "partOfSpeech": "adj.",
-      "korean": "중요한",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "green",
-      "lemma": "green",
-      "partOfSpeech": "adj.",
-      "korean": "친환경의, 녹색의",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "sanctuary",
-      "lemma": "sanctuary",
-      "partOfSpeech": "n.",
-      "korean": "보호구역, 안식처",
+      "korean": "함께",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [

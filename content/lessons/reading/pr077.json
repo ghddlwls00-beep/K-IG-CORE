@@ -47,68 +47,84 @@
   "readingSentences": [
     {
       "id": "reading-077-s001",
-      "english": "A great leader inspires confidence in others and moves them to action.",
-      "korean": "위대한 지도자는 타인에게 자신감을 불어넣고 그들을 행동하도록 이끈다."
+      "english": "According to some experts, we are leaving our children and grandchildren a frightening inheritance : an increased accumulation of so-called greenhouse gases in the atmosphere and the potentially disastrous climate changes that this increase may bring about.",
+      "korean": "일부 전문가들에 따르면, 우리가 우리의 자녀들과 손자들이 끔찍한 유산을 남기고 있다고 한다. 즉, 그 유산은 대기권에의 이른바 온실 가스의 증대된 누적 현상 및 이러한 증대 현상이 초래하게 될 가능성이 높은 불행스러운 기후의 변화이다."
     },
     {
       "id": "reading-077-s002",
-      "english": "He leads not by force or fear, but by personal example and vision.",
-      "korean": "그는 무력이나 두려움이 아니라 솔선수범과 비전을 통해 이끈다."
+      "english": "However, the scientific communityis not speaking with one voice .",
+      "korean": "그러나, 과학계는 한 목소리를 내지 못하고 있다(의견이 대립되고 있다)."
     },
     {
       "id": "reading-077-s003",
-      "english": "When people trust their leader, they can achieve extraordinary goals together.",
-      "korean": "사람들이 자신의 지도자를 신뢰할 때, 그들은 함께 놀라운 목표를 달성할 수 있다."
+      "english": "Other scientists claim that they evidence for global warming is inconclusive and argue that predictions based on it are questionable.",
+      "korean": "다른 과학자들은 지구 온난화에 대한 증거는 결정적인 것이 되지 못한다고 주장하고, 또한 이에 기초한 예측들은 의심스러운 것이라고 주장한다."
     },
     {
       "id": "reading-077-s004",
-      "english": "Trust is the foundational pillar of all lasting leadership.",
-      "korean": "신뢰는 모든 지속 가능한 리더십의 근본적인 기둥이다."
+      "english": "The scientific debate has been intense.",
+      "korean": "이러한 과학적인 논쟁이 격렬해져오고 있다."
+    },
+    {
+      "id": "reading-077-s005",
+      "english": "It has also fueled a political controversy about what measures, if any, should be taken to address the possible problem of climate changes.",
+      "korean": "이 논쟁은 또한 기후 변화라는 있을 수도 있을 문제에 대처하기 위하여 그 조치가 존재한다면 어떤 조치를 취해야 하는가에 대한 정치적인 논쟁에 연료를 대고 있다(논쟁을 더 격렬하게 만들고 있다)."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "trust",
-      "lemma": "trust",
+      "word": "climate",
+      "lemma": "climate",
+      "partOfSpeech": "v.",
+      "korean": "기후",
+      "score": 119,
+      "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 119점)",
+      "examTags": [
+        "TOEFL"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "increased",
+      "lemma": "increase",
+      "partOfSpeech": "v.",
+      "korean": "증가하다",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 107점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "atmosphere",
+      "lemma": "atmosphere",
       "partOfSpeech": "n.",
-      "korean": "신뢰",
-      "score": 105,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
+      "korean": "분위기",
+      "score": 99,
+      "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 (평가 점수: 99점)",
+      "examTags": [
+        "TOEFL"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "changes",
+      "lemma": "change",
+      "partOfSpeech": "n.",
+      "korean": "변화",
+      "score": 93,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 93점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 2
     },
     {
-      "word": "leads",
-      "lemma": "lead",
-      "partOfSpeech": "v.",
-      "korean": "이끌다, 초래하다",
-      "score": 99,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "achieve",
-      "lemma": "achieve",
+      "word": "voice",
+      "lemma": "voice",
       "partOfSpeech": "n.",
-      "korean": "달성하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "goals",
-      "lemma": "goal",
-      "partOfSpeech": "n.",
-      "korean": "목표",
+      "korean": "목소리",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -117,22 +133,58 @@
       "freq": 1
     },
     {
-      "word": "fear",
-      "lemma": "fear",
-      "partOfSpeech": "n.",
-      "korean": "무서움",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "according",
+      "lemma": "according",
+      "partOfSpeech": "v.",
+      "korean": "따라",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "lasting",
-      "lemma": "lasting",
+      "word": "leaving",
+      "lemma": "leave",
       "partOfSpeech": "v.",
-      "korean": "지속적인",
+      "korean": "떠나다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "grandchildren",
+      "lemma": "grandchildren",
+      "partOfSpeech": "v.",
+      "korean": "grandchildren (핵심 어휘)",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "frightening",
+      "lemma": "frighten",
+      "partOfSpeech": "v.",
+      "korean": "겁을 주다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "bring",
+      "lemma": "bring",
+      "partOfSpeech": "v.",
+      "korean": "가져오다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -141,96 +193,48 @@
       "freq": 1
     },
     {
-      "word": "leader",
-      "lemma": "leader",
-      "partOfSpeech": "n.",
-      "korean": "지도자",
+      "word": "fueled",
+      "lemma": "fuele",
+      "partOfSpeech": "v.",
+      "korean": "fueled (핵심 어휘)",
       "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "inspires",
-      "lemma": "inspire",
-      "partOfSpeech": "n.",
-      "korean": "영감을 주다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "confidence",
-      "lemma": "confidence",
-      "partOfSpeech": "n.",
-      "korean": "자신감",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "foundational",
-      "lemma": "foundational",
+      "word": "so-called",
+      "lemma": "so-called",
       "partOfSpeech": "adj.",
-      "korean": "기초적인, 근본적인",
+      "korean": "소위, 이른바",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "disastrous",
+      "lemma": "disastrous",
+      "partOfSpeech": "adj.",
+      "korean": "비참한",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "experts",
+      "lemma": "expert",
+      "partOfSpeech": "n.",
+      "korean": "전문가",
       "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "great",
-      "lemma": "great",
-      "partOfSpeech": "n.",
-      "korean": "대단해",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "moves",
-      "lemma": "move",
-      "partOfSpeech": "n.",
-      "korean": "움직이다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "action",
-      "lemma": "action",
-      "partOfSpeech": "n.",
-      "korean": "행동",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "leadership",
-      "lemma": "leadership",
-      "partOfSpeech": "n.",
-      "korean": "리더십",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],

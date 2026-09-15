@@ -47,13 +47,18 @@
   "readingSentences": [
     {
       "id": "reading-228-s001",
-      "english": "\"People think ushering is an easy job, but it is not,\" says Peter Sullivan, an usher at the Palladium Theater.",
-      "korean": "\"사람들은 안내원이 쉬운 직업이라고 생각하지만 결코 그렇지 않습니다,\"라고 팔라디움 극장의 안내원인 피터 설리번은 말한다."
+      "english": "\"People often think that being an usher is an easy job, but it isn't.\" says Peter Suilivan, an usher at the Palladium theater.",
+      "korean": "\"사람들은 안내원이 쉬운 직업이라고 생각하지만 그렇지 않습니다.\" 팔라디움 극장의 안내원인 피터 설리번은 말한다."
     },
     {
       "id": "reading-228-s002",
-      "english": "\"Standing so long is hard! When I'm tired, I sometimes sit in an aisle seat during intermission, but the boss could fire me for that.\"",
-      "korean": "\"그렇게 오래 서 있는 것은 정말 힘듭니다! 피곤할 때는 휴식 시간에 통로 좌석에 앉기도 하지만, 사장님은 그 일로 저를 해고할 수도 있지요.\""
+      "english": "\" It's difficult to stand so much!",
+      "korean": "\"그렇게 오래 서 있는 것은 어렵습니다!"
+    },
+    {
+      "id": "reading-228-s003",
+      "english": "When I'm tired, I sit in an aisle seat during intermission, but my boss could fire me for that.",
+      "korean": "피곤할 때는 휴식 시간에 통로 좌석에 앉기도 하지만, 사장님은 그 일로 저를 해고할 수도 있습니다.\""
     }
   ],
   "readingVocabulary": [
@@ -70,40 +75,28 @@
       "freq": 1
     },
     {
-      "word": "hard",
-      "lemma": "hard",
+      "word": "difficult",
+      "lemma": "difficult",
       "partOfSpeech": "n.",
-      "korean": "열심히",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "korean": "어려운",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "ushering",
-      "lemma": "ushering",
-      "partOfSpeech": "v.",
-      "korean": "안내하는, 인도하는",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "usher",
+      "lemma": "usher",
+      "partOfSpeech": "n.",
+      "korean": "좌석 안내원, 안내인",
+      "score": 82,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
-    },
-    {
-      "word": "standing",
-      "lemma": "stand",
-      "partOfSpeech": "v.",
-      "korean": "스탠드",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "tired",
@@ -118,10 +111,10 @@
       "freq": 1
     },
     {
-      "word": "sullivan",
-      "lemma": "sullivan",
+      "word": "suilivan",
+      "lemma": "suilivan",
       "partOfSpeech": "n.",
-      "korean": "설리번 (인명)",
+      "korean": "suilivan (핵심 어휘)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -154,34 +147,22 @@
       "freq": 1
     },
     {
+      "word": "isn't",
+      "lemma": "isn't",
+      "partOfSpeech": "n.",
+      "korean": "isn't (핵심 어휘)",
+      "score": 77,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
       "word": "peter",
       "lemma": "peter",
       "partOfSpeech": "n.",
       "korean": "피터 (인명)",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "usher",
-      "lemma": "usher",
-      "partOfSpeech": "n.",
-      "korean": "좌석 안내원, 안내인",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "sometimes",
-      "lemma": "sometimes",
-      "partOfSpeech": "n.",
-      "korean": "가끔",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -220,6 +201,30 @@
       "korean": "직업",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "i'm",
+      "lemma": "i'm",
+      "partOfSpeech": "n.",
+      "korean": "i'm (핵심 어휘)",
+      "score": 71,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "sit",
+      "lemma": "sit",
+      "partOfSpeech": "n.",
+      "korean": "앉다",
+      "score": 71,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
       "examTags": [
         "독해필수"
       ],

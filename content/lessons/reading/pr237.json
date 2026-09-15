@@ -59,18 +59,18 @@
   "readingSentences": [
     {
       "id": "reading-237-s001",
-      "english": "Not everyone is in favor of using the big ball, however.",
+      "english": "Not everyone is in favor of using (a)the big ball, however. Some players, such as hard hitting, six-time Wimbledon champ Pete Sampras, call the change “simply ridiculous.” Also, aside from modifying the current game, there is some concern that players may suffer arm and ligament injuries as they swing harder trying to draw more speed out of the ball.",
       "korean": "그러나 모든 사람이 큰 공을 사용하는 데 찬성하는 것은 아니다."
     },
     {
       "id": "reading-237-s002",
-      "english": "Some players, such as hard hitting, six-time Wimbledon champ Pete Sampras, call the change “simply ridiculous.”",
+      "english": "*ligament: 인대\n\nIn short, the game has (b)little action. Top male players play for an average of only four minutes per hour on grass, according to recent studies.",
       "korean": "윔블던에서 6차례 우승한 강타자 피트 샘프라스 같은 일부 선수들은 그 변화를 \"그야말로 터무니없다\"고 부른다."
     },
     {
       "id": "reading-237-s003",
-      "english": "Also, aside from modifying the current game, there is some concern that players may suffer arm and ligament injuries as they swing harder trying to draw more speed out of the ball.",
-      "korean": "또한 현재의 경기를 수정하는 것 외에도, 선수들이 공에서 더 많은 속도를 끌어내기 위해 더 강하게 스윙하면서 팔과 인대 부상을 입을 수 있다는 우려도 있다."
+      "english": "The hope is that the introduction of the new, bigger ball will cause first-class games to be dominated again by play involving (c)skill and artistry remindful of players like Bjorn Borg, Jimmy Connors and John McEnroe.",
+      "korean": "또한 현재의 경기를 수정하는 것 외에도, 선수들이 공에서 더 많은 속도를 이끌어내기 위해 더 강하게 스윙하면서 팔과 인대 부상을 입을 수 있다는 우려도 있다."
     },
     {
       "id": "reading-237-s004",
@@ -80,41 +80,65 @@
     {
       "id": "reading-237-s005",
       "english": "People seem to be losing interest in the game.",
-      "korean": "사람들은 테니스 경기에 대한 흥미를 잃어가고 있는 것처럼 보인다."
+      "korean": "사람들은 경기에 대한 흥미를 잃어가는 것 같다."
     },
     {
       "id": "reading-237-s006",
       "english": "One major reason for this is that the men’s professional game has lost some of its appeal.",
-      "korean": "이에 대한 한 가지 주요 이유는 남자 프로 경기가 본래의 매력 중 일부를 잃어버렸기 때문이다."
+      "korean": "이에 대한 한 가지 주요 이유는 남자 프로 경기가 그 매력의 일부를 잃어버렸기 때문이다."
     },
     {
       "id": "reading-237-s007",
-      "english": "The pro game has become a contest of strength, where powerful hitters with their high-tech rackets dominate.",
-      "korean": "프로 경기는 첨단 라켓을 든 강력한 강타자들이 지배하는 순수한 완력 대결이 되어버렸다."
+      "english": "The pro game has become a contest of (d)strength, where powerful hitters with their high-tech rackets dominate.",
+      "korean": "프로 경기는 첨단 라켓을 든 강력한 강타자들이 지배하는 완력 대결이 되어버렸다."
     },
     {
       "id": "reading-237-s008",
       "english": "At Wimbledon, for example, Britain’s Greg Rusedski hit the ball at 138 mph, the fastest recorded serve for the tournament.",
-      "korean": "예를 들어 윔블던에서 영국의 그렉 루세드스키는 시속 138마일로 서브를 넣었는데, 이는 대회 사상 가장 빠른 서브 기록이었다."
+      "korean": "예를 들어 윔블던에서 영국의 그렉 루세드스키는 시속 138마일로 공을 쳤는데, 이는 대회 사상 가장 빠른 서브 기록이었다."
     },
     {
       "id": "reading-237-s009",
-      "english": "As a result of this speed, very few points last more than three shots―serve, return and winning point.",
-      "korean": "이러한 엄청난 속도의 결과로 서브, 리턴, 위닝 포인트 등 3구 이상 지속되는 랠리가 거의 없게 되었다."
+      "english": "As a result of (e)this speed, very few points last more than three shots―serve, return and winning point.",
+      "korean": "이러한 속도의 결과로 서브, 리턴, 위닝 포인트 등 3구 이상 지속되는 랠리가 거의 없다."
     }
   ],
   "readingVocabulary": [
+    {
+      "word": "harder",
+      "lemma": "hard",
+      "partOfSpeech": "n.",
+      "korean": "열심히",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
     {
       "word": "result",
       "lemma": "result",
       "partOfSpeech": "n.",
       "korean": "결과",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "score": 99,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
+    },
+    {
+      "word": "speed",
+      "lemma": "speed",
+      "partOfSpeech": "v.",
+      "korean": "속도",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 97점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     },
     {
       "word": "fastest",
@@ -129,10 +153,10 @@
       "freq": 1
     },
     {
-      "word": "harder",
-      "lemma": "hard",
+      "word": "cause",
+      "lemma": "cause",
       "partOfSpeech": "n.",
-      "korean": "열심히",
+      "korean": "원인",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -153,12 +177,72 @@
       "freq": 1
     },
     {
-      "word": "speed",
-      "lemma": "speed",
+      "word": "players",
+      "lemma": "player",
+      "partOfSpeech": "n.",
+      "korean": "플레이어",
+      "score": 89,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 4
+    },
+    {
+      "word": "hope",
+      "lemma": "hope",
+      "partOfSpeech": "n.",
+      "korean": "희망",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "hitting",
+      "lemma": "hit",
       "partOfSpeech": "v.",
-      "korean": "속도",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 87점)",
+      "korean": "히트",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "modifying",
+      "lemma": "modify",
+      "partOfSpeech": "v.",
+      "korean": "수정하다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "wimbledon",
+      "lemma": "wimbledon",
+      "partOfSpeech": "n.",
+      "korean": "wimbledon (핵심 어휘)",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "ligament",
+      "lemma": "ligament",
+      "partOfSpeech": "n.",
+      "korean": "ligament (핵심 어휘)",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
@@ -177,96 +261,12 @@
       "freq": 1
     },
     {
-      "word": "winning",
-      "lemma": "win",
+      "word": "swing",
+      "lemma": "swing",
       "partOfSpeech": "v.",
-      "korean": "승리하다",
+      "korean": "그네",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "ball",
-      "lemma": "ball",
-      "partOfSpeech": "n.",
-      "korean": "공",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "favor",
-      "lemma": "favor",
-      "partOfSpeech": "n.",
-      "korean": "호의",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "shots―serve",
-      "lemma": "shots―serve",
-      "partOfSpeech": "n.",
-      "korean": "타구와 서브, 샷 동작",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "hitting",
-      "lemma": "hit",
-      "partOfSpeech": "v.",
-      "korean": "히트",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "modifying",
-      "lemma": "modify",
-      "partOfSpeech": "v.",
-      "korean": "수정하다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "dominate",
-      "lemma": "dominate",
-      "partOfSpeech": "v.",
-      "korean": "지배하다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "recorded",
-      "lemma": "record",
-      "partOfSpeech": "v.",
-      "korean": "기록",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
         "독해필수"
       ],

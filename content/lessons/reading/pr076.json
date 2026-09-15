@@ -47,67 +47,67 @@
   "readingSentences": [
     {
       "id": "reading-076-s001",
-      "english": "Computers have changed our lives in many ways.",
-      "korean": "컴퓨터는 여러 방면에서 우리의 삶을 변화시켰다."
+      "english": "People who are happy don't get everything they want, but they want most of what they can get.",
+      "korean": "행복한 사람들은 자신들이 원하는 모든 것을 얻지는 못하지만, 자신들이\n\n얻을 수 있는 것의 대부분은 원한다."
     },
     {
       "id": "reading-076-s002",
-      "english": "They help us calculate, store data, and communicate across the world instantly.",
-      "korean": "컴퓨터는 우리가 계산하고 데이터를 저장하며 전 세계와 즉각적으로 소통할 수 있도록 돕는다."
+      "english": "In other words, they equip the game in their favor by choosing to value things that are within their grasp.",
+      "korean": "다시 말해서, 그들은 자신의 능력이\n\n미치는 범위 내에 있는 것들을 높이 평가하기로 마음먹음 에 의해서\n\n인생이라는 게임을 자신들에게 이롭게 채비한다."
     },
     {
       "id": "reading-076-s003",
-      "english": "Yet we must remember that computers are only tools created by human minds.",
-      "korean": "그러나 우리는 컴퓨터가 인간의 지성에 의해 창조된 도구에 불과하다는 점을 기억해야 한다."
+      "english": "People who find themselves dissatisfied in life often set unreachable goals for themselves, setting themselves up to fail.",
+      "korean": "스스로 삶에 불만을 품은\n\n사람들(행복하지 못한 사람들)은 자주 스스로에게 도달할 수 없는(자신의\n\n능력이 미치니 못하는) 목표들을 설정하는데, 그리하여 스스로를 실패할\n\n수밖에 없는 처지로 만든다."
     },
     {
       "id": "reading-076-s004",
-      "english": "They cannot replace human empathy, creativity, or moral judgment.",
-      "korean": "컴퓨터는 인간의 공감이나 창의성, 또는 도덕적 판단력을 결코 대신할 수 없다."
+      "english": "People who set high goals for themselves and try to reach them are no longer happier than people who set and reach more modest goals.Stay within reality and strive to make things better.",
+      "korean": "그러나 스스로에게 높은 목표를 설정하고는 그\n\n목표들에 이르고자 노력하는 사람들은 적당한 정도의 목표를 설정하고서\n\n이에 이르고자 노력하는 사람들보다 행복한 것이 아니다. 현실성이라는 한계\n\n내에 머물면서(현실적 한계를 넘지 않으면서) 그리고 사정을 더 좋게\n\n개선하려고 열심히 노력하라."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "created",
-      "lemma": "create",
-      "partOfSpeech": "v.",
-      "korean": "창조하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "remember",
-      "lemma": "remember",
+      "word": "goals",
+      "lemma": "goal",
       "partOfSpeech": "n.",
-      "korean": "기억하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "목표",
+      "score": 105,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "changed",
-      "lemma": "change",
-      "partOfSpeech": "v.",
-      "korean": "변화",
-      "score": 92,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "minds",
-      "lemma": "mind",
+      "word": "happy",
+      "lemma": "happy",
       "partOfSpeech": "n.",
-      "korean": "마음",
+      "korean": "행복하다",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "high",
+      "lemma": "high",
+      "partOfSpeech": "n.",
+      "korean": "높다",
+      "score": 96,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "words",
+      "lemma": "word",
+      "partOfSpeech": "n.",
+      "korean": "단어",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -116,22 +116,70 @@
       "freq": 1
     },
     {
-      "word": "computers",
-      "lemma": "computer",
+      "word": "fail",
+      "lemma": "fail",
       "partOfSpeech": "n.",
-      "korean": "컴퓨터",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+      "korean": "실패하다",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "everything",
+      "lemma": "everything",
+      "partOfSpeech": "v.",
+      "korean": "모든 것",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "set",
+      "lemma": "set",
+      "partOfSpeech": "n.",
+      "korean": "세트",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "within",
+      "lemma": "within",
+      "partOfSpeech": "n.",
+      "korean": "within (핵심 어휘)",
+      "score": 80,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "replace",
-      "lemma": "replace",
+      "word": "reach",
+      "lemma": "reach",
       "partOfSpeech": "n.",
-      "korean": "교체하다",
+      "korean": "도달하다",
+      "score": 80,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "happier",
+      "lemma": "happier",
+      "partOfSpeech": "n.",
+      "korean": "happier (핵심 어휘)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -140,10 +188,10 @@
       "freq": 1
     },
     {
-      "word": "empathy",
-      "lemma": "empathy",
+      "word": "goals.stay",
+      "lemma": "goals.stay",
       "partOfSpeech": "n.",
-      "korean": "공감, 감정이입",
+      "korean": "goals.stay (핵심 어휘)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -152,10 +200,10 @@
       "freq": 1
     },
     {
-      "word": "creativity",
-      "lemma": "creativity",
+      "word": "reality",
+      "lemma": "reality",
       "partOfSpeech": "n.",
-      "korean": "창의성, 독창성",
+      "korean": "reality (핵심 어휘)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -164,10 +212,10 @@
       "freq": 1
     },
     {
-      "word": "moral",
-      "lemma": "moral",
+      "word": "strive",
+      "lemma": "strive",
       "partOfSpeech": "adj.",
-      "korean": "도덕적인, 윤리적인",
+      "korean": "strive (핵심 어휘)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 77점)",
       "examTags": [
@@ -176,61 +224,12 @@
       "freq": 1
     },
     {
-      "word": "judgment",
-      "lemma": "judgment",
-      "partOfSpeech": "n.",
-      "korean": "판단, 심판, 판결",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "수능",
-        "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "calculate",
-      "lemma": "calculate",
+      "word": "choosing",
+      "lemma": "choose",
       "partOfSpeech": "v.",
-      "korean": "계산하다, 산출하다",
+      "korean": "선택하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "communicate",
-      "lemma": "communicate",
-      "partOfSpeech": "v.",
-      "korean": "의사소통하다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 74,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 74점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "store",
-      "lemma": "store",
-      "partOfSpeech": "n.",
-      "korean": "저장",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
       "examTags": [
         "독해필수"
       ],

@@ -47,72 +47,75 @@
   "readingSentences": [
     {
       "id": "reading-046-s001",
-      "english": "There are two kinds of courage.",
-      "korean": "용기에는 두 가지 종류가 있다."
+      "english": "Touch is the first sense we develop, and we acquire it before birth.",
+      "korean": "촉각은 우리가 개발하는 첫 번째 감각이다. 그리고 우리는 탄생전에 그것을 얻는다."
     },
     {
       "id": "reading-046-s002",
-      "english": "One is physical courage, the other is moral courage.",
-      "korean": "하나는 육체적인 용기이고, 다른 하나는 도덕적인 용기이다."
+      "english": "We could not live without it.",
+      "korean": "우리는 그것 없이는 살수 없을 것이다."
     },
     {
       "id": "reading-046-s003",
-      "english": "Physical courage is common, but moral courage is rare.",
-      "korean": "육체적인 용기는 흔하지만, 도덕적인 용기는 드물다."
+      "english": "Imagine being unable to sense the danger of hot water or to feel our way down a dark stairway.",
+      "korean": "뜨거운 물의 위험을 감지할수 없거나, 어두운 계단을 내려가는 것을 느낄수 없다고 상상해보아라."
     },
     {
       "id": "reading-046-s004",
-      "english": "Moral courage requires standing up for what is right despite fear or opposition.",
-      "korean": "도덕적인 용기는 두려움이나 반대에도 불구하고 옳은 것을 위해 당당히 맞서는 것을 필요로 한다."
+      "english": "We tend to think of sight as our most important sense, yet we close our eyes in sleep for a third of each day.",
+      "korean": "우리는 시각을 우리의 가장 중요한 감각으로 보는 경향이 있다. 그러나, 우리는 매일의 3분의 1 동안 잠잘 때 우리의 눈을 감는다."
     },
     {
       "id": "reading-046-s005",
-      "english": "A society thrives when its citizens possess both qualities.",
-      "korean": "시민들이 이 두 가지 자질을 모두 갖출 때 사회는 번영한다."
+      "english": "Touch never blinks, never turns off its awareness of the world around us.",
+      "korean": "촉각은 결코 깜박거리지 않고 결코 우리 주위의 세계를 인식함을 결코 꺼지지 않는다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "society",
-      "lemma": "society",
-      "partOfSpeech": "n.",
-      "korean": "사회",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "develop",
+      "lemma": "develop",
+      "partOfSpeech": "v.",
+      "korean": "발전시키다, 개발하다",
+      "score": 111,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
-        "중학기초"
+        "중학기초",
+        "수능",
+        "TOEIC"
       ],
       "freq": 1
     },
     {
-      "word": "requires",
-      "lemma": "require",
+      "word": "danger",
+      "lemma": "danger",
       "partOfSpeech": "n.",
-      "korean": "요구하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "위험, 위험 요소",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
-        "중학기초"
+        "중학기초",
+        "수능"
       ],
       "freq": 1
     },
     {
-      "word": "courage",
-      "lemma": "courage",
+      "word": "touch",
+      "lemma": "touch",
       "partOfSpeech": "n.",
-      "korean": "용기",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+      "korean": "접촉",
+      "score": 90,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 90점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 6
+      "freq": 2
     },
     {
-      "word": "fear",
-      "lemma": "fear",
+      "word": "dark",
+      "lemma": "dark",
       "partOfSpeech": "n.",
-      "korean": "무서움",
+      "korean": "어두운",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -121,122 +124,122 @@
       "freq": 1
     },
     {
-      "word": "thrives",
-      "lemma": "thrives",
-      "partOfSpeech": "v.",
-      "korean": "번창하다, 잘 자라다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "eyes",
+      "lemma": "eye",
+      "partOfSpeech": "n.",
+      "korean": "눈",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
-        "독해필수"
+        "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "moral",
-      "lemma": "moral",
-      "partOfSpeech": "adj.",
-      "korean": "도덕적인, 윤리적인",
-      "score": 79,
-      "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "word": "sense",
+      "lemma": "sense",
+      "partOfSpeech": "n.",
+      "korean": "감각",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 3
     },
     {
-      "word": "citizens",
-      "lemma": "citizen",
+      "word": "never",
+      "lemma": "never",
       "partOfSpeech": "n.",
-      "korean": "시민",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "possess",
-      "lemma": "possess",
-      "partOfSpeech": "n.",
-      "korean": "소유하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "qualities",
-      "lemma": "quality",
-      "partOfSpeech": "n.",
-      "korean": "품질",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "physical",
-      "lemma": "physical",
-      "partOfSpeech": "adj.",
-      "korean": "물리적",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 76점)",
+      "korean": "결코",
+      "score": 80,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "standing",
-      "lemma": "stand",
-      "partOfSpeech": "v.",
-      "korean": "스탠드",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "acquire",
+      "lemma": "acquire",
+      "partOfSpeech": "n.",
+      "korean": "획득하다",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "despite",
-      "lemma": "despite",
+      "word": "important",
+      "lemma": "important",
       "partOfSpeech": "n.",
-      "korean": "그럼에도 불구하고",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "opposition",
-      "lemma": "opposition",
-      "partOfSpeech": "n.",
-      "korean": "반대",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "kinds",
-      "lemma": "kind",
-      "partOfSpeech": "n.",
-      "korean": "종류, 유형",
-      "score": 67,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 67점)",
+      "korean": "중요한",
+      "score": 79,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 79점)",
       "examTags": [
         "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "world",
+      "lemma": "world",
+      "partOfSpeech": "n.",
+      "korean": "세계",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "birth",
+      "lemma": "birth",
+      "partOfSpeech": "n.",
+      "korean": "출생",
+      "score": 77,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "awareness",
+      "lemma": "awareness",
+      "partOfSpeech": "n.",
+      "korean": "인식",
+      "score": 77,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "blinks",
+      "lemma": "blink",
+      "partOfSpeech": "n.",
+      "korean": "blinks (핵심 어휘)",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "turns",
+      "lemma": "turn",
+      "partOfSpeech": "n.",
+      "korean": "회전",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     }

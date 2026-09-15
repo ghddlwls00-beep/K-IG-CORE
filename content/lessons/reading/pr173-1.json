@@ -47,96 +47,153 @@
   "readingSentences": [
     {
       "id": "reading-173-s001",
-      "english": "Physical fitness is an ongoing journey rather than a temporary destination.",
-      "korean": "신체 건강은 일시적인 목적지가 아니라 평생에 걸친 지속적인 여정이다."
+      "english": "Different groups develop ideas in different ways.",
+      "korean": "서로 다른 그룹은 아이디어를 개발하는 데 서로 다른 방법을 취한다."
     },
     {
       "id": "reading-173-s002",
-      "english": "Short-term extreme diets often fail and lead to fatigue.",
-      "korean": "단기적인 극단적 다이어트는 대개 실패로 끝나며 피로를 유발한다."
+      "english": "In successful groups, individuals are encouraged to produce imaginative and original ideas and share them with others.",
+      "korean": "성공적인 그룹들은 그 구성원들이 상상적이고 독창적인 아이디어를 내는 데 고취되며 그것들을 다른 사람들과 공유한다."
     },
     {
       "id": "reading-173-s003",
-      "english": "Consistent moderate exercise combined with wholesome meals produces lasting vitality.",
-      "korean": "유익한 식사와 결합된 꾸준하고 적당한 운동이 지속 가능한 활력을 낳는다."
+      "english": "In unsuccessful groups, individual members are not encouraged to do so. Instead, they are always asked to do groupthinking.",
+      "korean": "성공적이지 못한 그룹의 개인 구성원들은 그렇게 하도록 고취되지 않으며, 대신 항상 집단적 사고를 하도록 강요받는다."
     },
     {
       "id": "reading-173-s004",
-      "english": "Small sustainable habits build a resilient body over decades.",
-      "korean": "지속 가능한 작은 습관들이 수십 년에 걸쳐 강인한 신체를 만들어 준다."
+      "english": "In the beginning, there are no differences in the abilities and qualities among the members of these two kinds of groups.",
+      "korean": "출발에 있어서 이 두 그룹 구성원의 능력이나 자질은 차이가 없다."
+    },
+    {
+      "id": "reading-173-s005",
+      "english": "However, in the end, the groups which encourage individual members to think creatively will prosper, whereas those which do not will fail.",
+      "korean": "하지만, 결국에는 그렇지 않았던 사람들은 실패할 것이고, 창조적인 생각을 하도록 고무되었던 개개인의 구성원들은 성공할 것이다."
+    },
+    {
+      "id": "reading-173-s006",
+      "english": "Therefore, group leaders must learn this lesson and put it into practice in order to achieve productive and positive results.",
+      "korean": "그러므로, 그룹의 리더들은 이것을 교훈으로 삼아야 하며, 생산적이고 긍정적인 결과를 성취하기 위해서는 이 점을 활용해야 한다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "habits",
-      "lemma": "habit",
+      "word": "develop",
+      "lemma": "develop",
+      "partOfSpeech": "v.",
+      "korean": "발전시키다, 개발하다",
+      "score": 111,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
+      "examTags": [
+        "중학기초",
+        "수능",
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "ideas",
+      "lemma": "idea",
       "partOfSpeech": "n.",
-      "korean": "습관, 버릇",
+      "korean": "아이디어",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "encouraged",
+      "lemma": "encourage",
+      "partOfSpeech": "v.",
+      "korean": "격려하다",
+      "score": 106,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 106점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "practice",
+      "lemma": "practice",
+      "partOfSpeech": "n.",
+      "korean": "연습",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "achieve",
+      "lemma": "achieve",
+      "partOfSpeech": "n.",
+      "korean": "달성하다",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "results",
+      "lemma": "result",
+      "partOfSpeech": "n.",
+      "korean": "결과",
+      "score": 101,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "different",
+      "lemma": "different",
+      "partOfSpeech": "n.",
+      "korean": "다른",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "sustainable",
-      "lemma": "sustainable",
-      "partOfSpeech": "adj.",
-      "korean": "지속 가능한",
-      "score": 99,
-      "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 99점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "body",
-      "lemma": "body",
-      "partOfSpeech": "n.",
-      "korean": "몸",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
-      "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "lead",
-      "lemma": "lead",
-      "partOfSpeech": "v.",
-      "korean": "이끌다, 초래하다",
-      "score": 95,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 95점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "exercise",
-      "lemma": "exercise",
-      "partOfSpeech": "n.",
-      "korean": "운동",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "produces",
+      "word": "produce",
       "lemma": "produce",
       "partOfSpeech": "n.",
       "korean": "생산하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "productive",
+      "lemma": "productive",
+      "partOfSpeech": "adj.",
+      "korean": "생산적인",
+      "score": 94,
+      "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
+      "examTags": [
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "share",
+      "lemma": "share",
+      "partOfSpeech": "n.",
+      "korean": "공유하다",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
@@ -155,82 +212,34 @@
       "freq": 1
     },
     {
-      "word": "physical",
-      "lemma": "physical",
+      "word": "groups",
+      "lemma": "group",
+      "partOfSpeech": "n.",
+      "korean": "그룹",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 5
+    },
+    {
+      "word": "members",
+      "lemma": "member",
+      "partOfSpeech": "n.",
+      "korean": "회원",
+      "score": 79,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "positive",
+      "lemma": "positive",
       "partOfSpeech": "adj.",
-      "korean": "물리적",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "ongoing",
-      "lemma": "ongoing",
-      "partOfSpeech": "adj.",
-      "korean": "진행 중인, 계속되는",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "fitness",
-      "lemma": "fitness",
-      "partOfSpeech": "n.",
-      "korean": "신체 건강, 적합성",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "journey",
-      "lemma": "journey",
-      "partOfSpeech": "n.",
-      "korean": "여행",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "temporary",
-      "lemma": "temporary",
-      "partOfSpeech": "n.",
-      "korean": "임시",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "destination",
-      "lemma": "destination",
-      "partOfSpeech": "n.",
-      "korean": "목적지",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "resilient",
-      "lemma": "resilient",
-      "partOfSpeech": "adj.",
-      "korean": "회복력 있는, 탄력적인",
+      "korean": "긍정적인",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [

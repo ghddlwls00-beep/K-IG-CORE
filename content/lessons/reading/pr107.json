@@ -47,38 +47,43 @@
   "readingSentences": [
     {
       "id": "reading-107-s001",
-      "english": "There are basically two types of magazines; news magazines and special-interest magazines.",
-      "korean": "잡지에는 기본적으로 두 가지 종류가 있는데, 바로 뉴스 잡지와 특별 관심사 잡지가 그것이다."
+      "english": "There are basically two types of magazines",
+      "korean": "잡지에는 기본적으로 두 가지 종류가 있다."
     },
     {
       "id": "reading-107-s002",
-      "english": "News magazines are a combination of newspaper and magazine.",
-      "korean": "뉴스 잡지는 신문과 잡지의 특성이 결합된 형태이다."
+      "english": "news magazines and special-interest magazines.",
+      "korean": "즉 뉴스 잡지와 특별한 관심사에 관한 잡지가 그것이다."
     },
     {
       "id": "reading-107-s003",
-      "english": "Most news magazines are published weekly.",
-      "korean": "대부분의 뉴스 잡지는 매주 발행된다."
+      "english": "News magazines are a combination of newspaper and magazine.",
+      "korean": "뉴스 잡지들은 신문과 잡지의 결합체이다."
     },
     {
       "id": "reading-107-s004",
-      "english": "They summarize the major world and national news stories.",
-      "korean": "그것들은 주요한 세계 뉴스 및 국내 주요 기사들을 요약하여 전달한다."
+      "english": "Most news magazines are published weekly.",
+      "korean": "대개의 잡지들은 매주 발간된다."
     },
     {
       "id": "reading-107-s005",
-      "english": "They also report on important events in many subject areas.",
-      "korean": "그것들은 또한 다양한 분야의 중요한 사건들에 대해 보도한다."
+      "english": "They summarize the major world and national news stories.",
+      "korean": "그 잡지들은 중요한 세계와 국가의 뉴스 이야기를 요약한다."
     },
     {
       "id": "reading-107-s006",
-      "english": "Special-interest magazines, on the other hand, deal mainly with one particular subject.",
-      "korean": "반면에 특별 관심사 잡지는 주로 하나의 특정한 주제만을 집중적으로 다룬다."
+      "english": "They also report on important events in many subject areas.",
+      "korean": "그 잡지들은 또한 많은 주제분야의 중요한 사건들을 보도한다."
     },
     {
       "id": "reading-107-s007",
+      "english": "Special-interest magazines, on the other hand, deal mainly with one particular subject.",
+      "korean": "특별한 관심사에 관한 잡지들은, 그 반대로, 한가지 특정한 주제를 주로 다룬다."
+    },
+    {
+      "id": "reading-107-s008",
       "english": "Magazines of this type are usually published once a month.",
-      "korean": "이러한 유형의 잡지는 대개 한 달에 한 번 월간으로 발행된다."
+      "korean": "이런 종류의 잡지들은 보통 한 달에 한 번 발간된다."
     }
   ],
   "readingVocabulary": [
@@ -131,36 +136,12 @@
       "freq": 1
     },
     {
-      "word": "special-interest",
-      "lemma": "special-interest",
-      "partOfSpeech": "adj.",
-      "korean": "특수 이익의, 특별한 관심의",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "news",
-      "lemma": "news",
-      "partOfSpeech": "n.",
-      "korean": "뉴스",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
       "word": "important",
       "lemma": "important",
       "partOfSpeech": "n.",
       "korean": "중요한",
-      "score": 82,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
+      "score": 79,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 79점)",
       "examTags": [
         "중학기초"
       ],
@@ -189,6 +170,18 @@
         "독해필수"
       ],
       "freq": 1
+    },
+    {
+      "word": "special-interest",
+      "lemma": "special-interest",
+      "partOfSpeech": "adj.",
+      "korean": "특수 이익의, 특별한 관심의",
+      "score": 76,
+      "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     },
     {
       "word": "summarize",
@@ -239,12 +232,24 @@
       "freq": 2
     },
     {
+      "word": "news",
+      "lemma": "news",
+      "partOfSpeech": "n.",
+      "korean": "뉴스",
+      "score": 73,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 4
+    },
+    {
       "word": "world",
       "lemma": "world",
       "partOfSpeech": "n.",
       "korean": "세계",
-      "score": 74,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 74점)",
+      "score": 71,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 71점)",
       "examTags": [
         "중학기초"
       ],

@@ -47,31 +47,89 @@
   "readingSentences": [
     {
       "id": "reading-211-s001",
-      "english": "Scientific curiosity drives human progress beyond established boundaries.",
-      "korean": "과학적 호기심은 기존의 한계를 넘어 인류의 진보를 견인한다."
+      "english": "When we think of the public face of scientific genius, we often remember someone with old and graying appearances.",
+      "korean": "우리가 과학의 천재들의 대중적인 얼굴을 생각하며, 종종 나이가 들었던지, 반백이 다 된 외모를 생각한다."
     },
     {
       "id": "reading-211-s002",
-      "english": "Researchers continually challenge old models in search of deeper truths.",
-      "korean": "연구자들은 더 깊은 진실을 찾아 끊임없이 낡은 이론 모델들에 도전한다."
+      "english": "For example, we think of Albert Einstein's disheveled hair. Charles Darwin's majestic beard.",
+      "korean": "예를 들어서, 우리는 아인슈타인의 헝클러진 머리칼, 다윈의 장엄한 수염, 그리고 뉴튼의 주름진 얼굴을 생각한다."
     },
     {
       "id": "reading-211-s003",
-      "english": "A single breakthrough can revolutionize medicine, energy, or communications.",
-      "korean": "단 하나의 획기적인 발견이 의학이나 에너지, 통신 분야에 일대 혁명을 일으킬 수 있다."
+      "english": "Isaac Newton's wrinkled visage. Yet the truth is that most of the scientific breakthroughs that have changed our lives are usually made by people who are still in their 30s--and that includes Einstein, Newton and Darwin.",
+      "korean": "그러나, 사실은 우리의 삶을 바꾼 과학의 대 발견은 30대의 사람들에 의해 되어졌고, 그리고 아인슈타인, 뉴튼 그리고 다윈도 포함된다."
     },
     {
       "id": "reading-211-s004",
-      "english": "Fostering rigorous research is an investment in global well-being.",
-      "korean": "엄밀한 기초 연구를 육성하는 것은 전 지구적 복지를 위한 필수적 투자이다."
+      "english": "Indeed, not surprisingly, younger scientists are less affected by (the intellectual dogma of the day) than their elders.",
+      "korean": "참으로 그들보다 나이든 사람보다 그들의 시대의 지적 원리에 영향을 들 받았다는 것은 별로 놀랄 일은 아니다."
+    },
+    {
+      "id": "reading-211-s005",
+      "english": "They question authority instinctively.",
+      "korean": "그들은 본능적으로 기존의 원리에 의문을 품었다."
+    },
+    {
+      "id": "reading-211-s006",
+      "english": "They do not believe it when they are told that a new idea is crazy, so they are free to do the impossible.",
+      "korean": "그들은 새로운 생각은 미친 짓이라는 이야기를 들어도 믿지 않고, 불가능한 일에 자유롭게 도전했다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "medicine",
-      "lemma": "medicine",
+      "word": "remember",
+      "lemma": "remember",
       "partOfSpeech": "n.",
-      "korean": "의학",
+      "korean": "기억하다",
+      "score": 104,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "affected",
+      "lemma": "affect",
+      "partOfSpeech": "v.",
+      "korean": "영향을 미치다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "believe",
+      "lemma": "believe",
+      "partOfSpeech": "n.",
+      "korean": "믿다",
+      "score": 101,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "idea",
+      "lemma": "idea",
+      "partOfSpeech": "n.",
+      "korean": "아이디어",
+      "score": 96,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "younger",
+      "lemma": "young",
+      "partOfSpeech": "n.",
+      "korean": "젊은",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -80,31 +138,7 @@
       "freq": 1
     },
     {
-      "word": "search",
-      "lemma": "search",
-      "partOfSpeech": "n.",
-      "korean": "검색",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "deeper",
-      "lemma": "deep",
-      "partOfSpeech": "n.",
-      "korean": "깊은",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "truths",
+      "word": "truth",
       "lemma": "truth",
       "partOfSpeech": "n.",
       "korean": "진실",
@@ -116,22 +150,22 @@
       "freq": 1
     },
     {
-      "word": "investment",
-      "lemma": "investment",
-      "partOfSpeech": "n.",
-      "korean": "투자",
-      "score": 92,
-      "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 92점)",
+      "word": "scientific",
+      "lemma": "scientific",
+      "partOfSpeech": "adj.",
+      "korean": "과학적",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
       "examTags": [
-        "TOEIC"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "established",
-      "lemma": "establish",
+      "word": "graying",
+      "lemma": "graye",
       "partOfSpeech": "v.",
-      "korean": "확립하다",
+      "korean": "graying (핵심 어휘)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -140,72 +174,10 @@
       "freq": 1
     },
     {
-      "word": "fostering",
-      "lemma": "foster",
-      "partOfSpeech": "v.",
-      "korean": "조성하다, 육성하다, 기르다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "scientific",
-      "lemma": "scientific",
+      "word": "public",
+      "lemma": "public",
       "partOfSpeech": "adj.",
-      "korean": "과학적",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "curiosity",
-      "lemma": "curiosity",
-      "partOfSpeech": "n.",
-      "korean": "호기심",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "progress",
-      "lemma": "progress",
-      "partOfSpeech": "n.",
-      "korean": "진행",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "boundaries",
-      "lemma": "boundary",
-      "partOfSpeech": "n.",
-      "korean": "경계선, 한계",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "rigorous",
-      "lemma": "rigorous",
-      "partOfSpeech": "adj.",
-      "korean": "엄격한, 철저한",
+      "korean": "대중",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -214,10 +186,22 @@
       "freq": 1
     },
     {
-      "word": "drives",
-      "lemma": "drive",
+      "word": "appearances",
+      "lemma": "appearance",
       "partOfSpeech": "n.",
-      "korean": "드라이브",
+      "korean": "외관",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "genius",
+      "lemma": "genius",
+      "partOfSpeech": "n.",
+      "korean": "천재",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -226,17 +210,38 @@
       "freq": 1
     },
     {
-      "word": "research",
-      "lemma": "research",
+      "word": "changed",
+      "lemma": "change",
+      "partOfSpeech": "v.",
+      "korean": "변화",
+      "score": 77,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 77점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "impossible",
+      "lemma": "impossible",
       "partOfSpeech": "n.",
-      "korean": "연구, 조사",
+      "korean": "불가능하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
-        "중학기초",
-        "수능",
-        "TOEIC",
-        "TOEFL"
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "disheveled",
+      "lemma": "dishevele",
+      "partOfSpeech": "v.",
+      "korean": "disheveled (핵심 어휘)",
+      "score": 76,
+      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     }

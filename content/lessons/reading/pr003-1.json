@@ -48,17 +48,22 @@
     {
       "id": "reading-003-s001",
       "english": "There is a balance in nature that can be hurt by the smallest change in living conditions.",
-      "korean": "자연 그대로의 조건에서 일어나는 가장 작은 변화에 의해서도 깨어질 수 있는 자연의 균형이 존재한다."
+      "korean": "자연 그대로의 조건에서 일어나는 심지어 가장 작은 변화에 의하여 깨어질 수 있는 자연의 균형이 존재한다.."
     },
     {
       "id": "reading-003-s002",
-      "english": "For example , in a healthy environment, the amount of plant food is just right for the number of fish in a river; however, when the river is dammed, the balance changes.",
-      "korean": "예를 들자면, 건강한 환경 속에서는 식물 먹이의 양이 강의 물고기 수에 딱 적당하지만, 강에 댐이 건설되면 그 균형이 변하게 된다."
+      "english": "For example , in a healthy environment, the amount of plant food is just right for the number of fish in a river",
+      "korean": "예를 들자면, 건강한 환경 속에서는 식물 식량의 양이 강의 물고기에게 딱 적당하다."
     },
     {
       "id": "reading-003-s003",
+      "english": "however, when the river is dammed, the balance changes.",
+      "korean": "그러나 그 강을 댐으로 막으면, 균형에 변화가 생긴다."
+    },
+    {
+      "id": "reading-003-s004",
       "english": "Too many fish or too much plant life can make the river unliveable.",
-      "korean": "물고기가 너무 많거나 식물이 너무 많아지면 그로 인해 강에는 생물이 살 수 없게 될 수 있다."
+      "korean": "물고기가 너무 많거나, (식량이 되는) 식물이 너무 많으면 그로 인해 강에는 아무것도 살 수 없게 된다."
     }
   ],
   "readingVocabulary": [
@@ -135,30 +140,6 @@
       "freq": 2
     },
     {
-      "word": "change",
-      "lemma": "change",
-      "partOfSpeech": "n.",
-      "korean": "변화",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "living",
-      "lemma": "live",
-      "partOfSpeech": "v.",
-      "korean": "살다, 거주하다",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "smallest",
       "lemma": "small",
       "partOfSpeech": "n.",
@@ -191,6 +172,30 @@
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
         "수능"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "change",
+      "lemma": "change",
+      "partOfSpeech": "n.",
+      "korean": "변화",
+      "score": 78,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 78점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "living",
+      "lemma": "live",
+      "partOfSpeech": "v.",
+      "korean": "살다, 거주하다",
+      "score": 77,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },

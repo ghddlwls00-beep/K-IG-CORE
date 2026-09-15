@@ -47,43 +47,26 @@
   "readingSentences": [
     {
       "id": "reading-236-s001",
-      "english": "Music education fosters cognitive development and emotional discipline in children.",
-      "korean": "음악 교육은 어린이의 인지 발달과 정서적 자기 훈련을 촉진한다."
+      "english": "When you clean out your storage room, don’t throw out any “junk”\n\nuntil you determine its potential as a collectible.In fact, what often\n\nappears to be a piece of worthless old junk may very well be quite\n\nvaluable.",
+      "korean": "창고를 청소할 때, 수집할 만한 물건으로서 그것의 가능성을 결정할 때까지는 어떤 “쓰레기”도 버리지 말라. 사실, 가치 없는 낡은 쓰레기 조각이 귀중한 것일 수도 충분히 있다."
     },
     {
       "id": "reading-236-s002",
-      "english": "Learning to play an instrument teaches patience, fine motor coordination, and focus.",
-      "korean": "악기를 배우는 것은 인내심, 정교한 운동 협응력, 그리고 집중력을 길러준다."
+      "english": "For instance, people often sell old record albums, bottles and\n\nbooks for pennies only to see them resold for tens or hundreds of\n\ndollars as parts of larger collections.",
+      "korean": "예를 들어 사람들은 종종 오래된 레코드판, 병, 책을 값싸게 팔고 그것들이 나중에 더 큰 수집품의 일부로 수십, 수백만 달러로 다시 팔리는 것을 본다."
     },
     {
       "id": "reading-236-s003",
-      "english": "Practicing regularly instills a strong sense of personal responsibility and accomplishment.",
-      "korean": "규칙적인 연습은 강한 개인적 책임감과 성취감을 심어준다."
-    },
-    {
-      "id": "reading-236-s004",
-      "english": "Every child deserves access to artistic training regardless of background.",
-      "korean": "모든 어린이는 배경에 상관없이 예술 교육을 받을 자격이 있다."
+      "english": "Rarer cases involve people selling\n\npaintings that were actually painted by famous painters.Therefore,\n\nbefore you have a garage sale, call an antique dealer to help you\n\nseparate the valuable from the worthless junk.",
+      "korean": "드문 경우이지만, 유명한 화가가 그린 그림을 파는 사람이 있다. 그러므로, 차고 세일을 하기 전에 귀중품과 쓸모없는 폐물을 구별하는 것을 도와달라고 골동품 판매상에게 전화를 하라."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "music",
-      "lemma": "music",
-      "partOfSpeech": "adj.",
-      "korean": "음악",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "education",
-      "lemma": "education",
+      "word": "appears",
+      "lemma": "appear",
       "partOfSpeech": "n.",
-      "korean": "교육",
+      "korean": "나타나다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -92,34 +75,58 @@
       "freq": 1
     },
     {
-      "word": "cognitive",
-      "lemma": "cognitive",
-      "partOfSpeech": "adj.",
-      "korean": "인지적인, 인식의",
-      "score": 101,
-      "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 101점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "practicing",
-      "lemma": "practice",
-      "partOfSpeech": "v.",
-      "korean": "연습",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "word": "clean",
+      "lemma": "clean",
+      "partOfSpeech": "n.",
+      "korean": "깨끗한",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "strong",
-      "lemma": "strong",
+      "word": "fact",
+      "lemma": "fact",
       "partOfSpeech": "n.",
-      "korean": "강한",
+      "korean": "사실",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 97점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "worthless",
+      "lemma": "worthless",
+      "partOfSpeech": "adj.",
+      "korean": "worthless (핵심 어휘)",
+      "score": 94,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "valuable",
+      "lemma": "valuable",
+      "partOfSpeech": "adj.",
+      "korean": "귀중한",
+      "score": 94,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "books",
+      "lemma": "book",
+      "partOfSpeech": "n.",
+      "korean": "책",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -128,23 +135,22 @@
       "freq": 1
     },
     {
-      "word": "fosters",
-      "lemma": "foster",
-      "partOfSpeech": "v.",
-      "korean": "조성하다, 육성하다, 기르다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "junk",
+      "lemma": "junk",
+      "partOfSpeech": "n.",
+      "korean": "junk (핵심 어휘)",
+      "score": 91,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 91점)",
       "examTags": [
-        "수능",
-        "TOEFL"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "training",
-      "lemma": "train",
+      "word": "selling",
+      "lemma": "sell",
       "partOfSpeech": "v.",
-      "korean": "기차",
+      "korean": "팔다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -153,23 +159,46 @@
       "freq": 1
     },
     {
-      "word": "emotional",
-      "lemma": "emotional",
+      "word": "painted",
+      "lemma": "paint",
+      "partOfSpeech": "v.",
+      "korean": "페인트",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "separate",
+      "lemma": "separate",
+      "partOfSpeech": "v.",
+      "korean": "별도의",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "potential",
+      "lemma": "potential",
       "partOfSpeech": "adj.",
-      "korean": "감정적인, 정서적인",
+      "korean": "잠재력",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
-        "중학기초",
-        "수능"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "development",
-      "lemma": "development",
+      "word": "storage",
+      "lemma": "storage",
       "partOfSpeech": "n.",
-      "korean": "발전, 개발, 발달",
+      "korean": "storage (핵심 어휘)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -178,10 +207,10 @@
       "freq": 1
     },
     {
-      "word": "discipline",
-      "lemma": "discipline",
+      "word": "determine",
+      "lemma": "determine",
       "partOfSpeech": "n.",
-      "korean": "규율",
+      "korean": "결정하다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -190,48 +219,12 @@
       "freq": 1
     },
     {
-      "word": "children",
-      "lemma": "child",
+      "word": "collectible.in",
+      "lemma": "collectible.in",
       "partOfSpeech": "n.",
-      "korean": "아이",
+      "korean": "collectible.in (핵심 어휘)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "artistic",
-      "lemma": "artistic",
-      "partOfSpeech": "adj.",
-      "korean": "예술적",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "deserves",
-      "lemma": "deserve",
-      "partOfSpeech": "n.",
-      "korean": "자격이 있다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "background",
-      "lemma": "background",
-      "partOfSpeech": "n.",
-      "korean": "배경",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
         "독해필수"
       ],

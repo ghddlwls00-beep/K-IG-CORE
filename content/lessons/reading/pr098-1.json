@@ -47,117 +47,133 @@
   "readingSentences": [
     {
       "id": "reading-098-s001",
-      "english": "Scientific discovery is a cumulative process built upon past achievements.",
-      "korean": "과학적 발견은 과거의 성취 위에 세워지는 누적적인 과정이다."
+      "english": "Most helpful to the calm and peaceful atmosphere that the two-year-old child needs but cannot produce for himself herself is the presence of comforting music, in almost any form.",
+      "korean": "\"2살된 어린이가 필요로 하지만, 기 스스로를 위하여 만들지 않은, 조용하고 평화스러운 분위기에 가장 도움이 되는것은 마음의 위로가 되는 음악이다. 어떤 형태로 되어 있던 간에."
     },
     {
       "id": "reading-098-s002",
-      "english": "Every new theory must be tested rigorously against observed data.",
-      "korean": "모든 새로운 이론은 관찰된 데이터를 바탕으로 엄격하게 검증되어야 한다."
+      "english": "Mother’s singing can help.",
+      "korean": "엄마의 노래가 도움이 될 수도 있다."
     },
     {
       "id": "reading-098-s003",
-      "english": "Errors and failed experiments are stepping stones to genuine breakthroughs.",
-      "korean": "오류와 실패한 실험들은 진정한 비약적 발전을 위한 디딤돌이 된다."
+      "english": "Chanting a request, such as “Time to come to breakfast,” may be more effective than simply saying the request.",
+      "korean": "가령, \"아침 먹을 시간\"과 같은 말을 노래로 읊조리는 것이 단순한 말보다 더 효과적일 수도 있다."
     },
     {
       "id": "reading-098-s004",
-      "english": "Humility before nature is the guiding spirit of true inquiry.",
-      "korean": "자연 앞에서의 겸손이야말로 진정한 탐구의 길잡이 정신이다."
+      "english": "Records, especially nursery rhymes, are just the thing for those periods at the end of the morning or afternoon when children are often easily irritated.",
+      "korean": "특히 동요 같은, 녹음 곡이 어린들이 짜증스러운 아침이나 오후 늦은 시간에 딱 좋다."
+    },
+    {
+      "id": "reading-098-s005",
+      "english": "Some children, especially boys, like to have their own music players and may play these for very long periods of time.",
+      "korean": "특히 어떤 남자아이들은 자기 자신만의 음악을 갖는 것을 좋아하고, 아주 오랜 시간 동안을 이것을 들으며 놀 수도 있다.\""
     }
   ],
   "readingVocabulary": [
     {
-      "word": "observed",
-      "lemma": "observe",
-      "partOfSpeech": "v.",
-      "korean": "관찰하다, 준수하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "word": "music",
+      "lemma": "music",
+      "partOfSpeech": "adj.",
+      "korean": "음악",
+      "score": 117,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 117점)",
       "examTags": [
-        "중학기초",
-        "수능",
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "comforting",
+      "lemma": "comfort",
+      "partOfSpeech": "v.",
+      "korean": "위로",
+      "score": 111,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "produce",
+      "lemma": "produce",
+      "partOfSpeech": "n.",
+      "korean": "생산하다",
+      "score": 104,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "atmosphere",
+      "lemma": "atmosphere",
+      "partOfSpeech": "n.",
+      "korean": "분위기",
+      "score": 99,
+      "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 (평가 점수: 99점)",
+      "examTags": [
         "TOEFL"
       ],
       "freq": 1
     },
     {
-      "word": "nature",
-      "lemma": "nature",
+      "word": "calm",
+      "lemma": "calm",
       "partOfSpeech": "n.",
-      "korean": "자연",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "korean": "진정",
+      "score": 98,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "failed",
-      "lemma": "fail",
-      "partOfSpeech": "v.",
-      "korean": "실패하다",
-      "score": 99,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "inquiry",
-      "lemma": "inquiry",
+      "word": "mother",
+      "lemma": "mother",
       "partOfSpeech": "n.",
-      "korean": "문의",
+      "korean": "어머니",
       "score": 92,
-      "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 92점)",
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
-        "TOEIC"
+        "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "guiding",
-      "lemma": "guide",
-      "partOfSpeech": "v.",
-      "korean": "가이드",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "scientific",
-      "lemma": "scientific",
-      "partOfSpeech": "adj.",
-      "korean": "과학적",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "cumulative",
-      "lemma": "cumulative",
-      "partOfSpeech": "adj.",
-      "korean": "누적되는, 점증하는",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "discovery",
-      "lemma": "discovery",
+      "word": "periods",
+      "lemma": "period",
       "partOfSpeech": "n.",
-      "korean": "발견",
+      "korean": "기간, 시기, 시대",
+      "score": 82,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+      "examTags": [
+        "중학기초",
+        "수능"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "especially",
+      "lemma": "especially",
+      "partOfSpeech": "adv.",
+      "korean": "특히",
+      "score": 80,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "helpful",
+      "lemma": "helpful",
+      "partOfSpeech": "n.",
+      "korean": "도움이 되는",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -166,10 +182,10 @@
       "freq": 1
     },
     {
-      "word": "process",
-      "lemma": "process",
+      "word": "peaceful",
+      "lemma": "peaceful",
       "partOfSpeech": "n.",
-      "korean": "프로세스",
+      "korean": "평화로운",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -178,10 +194,10 @@
       "freq": 1
     },
     {
-      "word": "achievements",
-      "lemma": "achievement",
+      "word": "two-year-old",
+      "lemma": "two-year-old",
       "partOfSpeech": "n.",
-      "korean": "성취",
+      "korean": "two-year-old (핵심 어휘)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -190,48 +206,36 @@
       "freq": 1
     },
     {
-      "word": "built",
-      "lemma": "build",
+      "word": "presence",
+      "lemma": "presence",
       "partOfSpeech": "n.",
-      "korean": "빌드",
+      "korean": "존재",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "children",
+      "lemma": "child",
+      "partOfSpeech": "n.",
+      "korean": "아이",
+      "score": 78,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "almost",
+      "lemma": "almost",
+      "partOfSpeech": "n.",
+      "korean": "거의",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "humility",
-      "lemma": "humility",
-      "partOfSpeech": "n.",
-      "korean": "겸손",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "stepping",
-      "lemma": "step",
-      "partOfSpeech": "v.",
-      "korean": "단계",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "spirit",
-      "lemma": "spirit",
-      "partOfSpeech": "n.",
-      "korean": "정신",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
         "독해필수"
       ],

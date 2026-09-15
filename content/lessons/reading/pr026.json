@@ -47,36 +47,46 @@
   "readingSentences": [
     {
       "id": "reading-026-s001",
-      "english": "The history of the telephone is a fascinating story of human communication.",
-      "korean": "전화의 역사는 인간 의사소통에 관한 대단히 흥미로운 이야기이다."
+      "english": "The average brain is naturally lazy and tends to take the line of least resistance.",
+      "korean": "보통 사람의 두뇌는 선천적으로 게으르고 저항심을 거의 갖고 있지 않다."
     },
     {
       "id": "reading-026-s002",
-      "english": "Alexander Graham Bell is widely recognized as the inventor who successfully transmitted the human voice over a wire.",
-      "korean": "알렉산더 그레이엄 벨은 전선을 통해 인간의 음성을 성공적으로 전달한 발명가로 널리 인정받고 있다."
+      "english": "The mental world of the ordinary man consists of beliefs which he has accepted without questioning and to which he is firmly attached",
+      "korean": "그래서 일반 사람들의 정신세계는 의심하지 않고 사실을 받아들이고 그것을 굳게 믿고 있다."
     },
     {
       "id": "reading-026-s003",
-      "english": "His discovery changed society forever and connected people across vast distances.",
-      "korean": "그의 발견은 사회를 영원히 변화시켰고 먼 거리에 있는 사람들을 연결해 주었다."
+      "english": "he is instinctively hostile to anything which would upset the established order of this familiar world.",
+      "korean": "이런 익숙한 기존 개념을 흔드는 어떤 것이던 적대심을 본능적으로 갖게 된다."
     },
     {
       "id": "reading-026-s004",
-      "english": "Today, mobile phones continue this remarkable evolution in ways Bell could never have imagined.",
-      "korean": "오늘날 휴대폰은 벨이 결코 상상하지 못했을 방식으로 이 놀라운 진화를 계속 이어가고 있다."
+      "english": "A new idea, inconsistent with some of the beliefs which he holds, means the necessity of rearranging his mind",
+      "korean": "그가 가지고 있던 믿음과 맞지 않는 새로운 생각은 그의 정신을 다시 바꾸어야 하는 필요성을 의미한다."
     },
     {
       "id": "reading-026-s005",
-      "english": "Communication has truly become instantaneous and universal.",
-      "korean": "의사소통은 참으로 즉각적이고 보편적인 것이 되었다."
+      "english": "and this process is laborious, requiring a painful expense of brain-energy.",
+      "korean": "그리고 이런 과정은 힘이 들고, 두뇌의 활동이라는 고통의 대가가 따른다."
+    },
+    {
+      "id": "reading-026-s006",
+      "english": "To him and his fellows, who form the vast majority, new ideas and options which cast doubt on established beliefs and institutions seem evil just because they are disagreeable.",
+      "korean": "대 다수를 형성하고 있는 그나 그 들의 동료들에게는, 기존의 믿음과 관례에 의혹을 불러일으키는 새로운 생각과 관례는 그 들이 받아들이기가 유쾌하지 못하기 때문에 악처럼 보인다."
+    },
+    {
+      "id": "reading-026-s007",
+      "english": "It is desirable that this attitude should be altered for the progress of the society.",
+      "korean": "이런 태도는 사회의 진보를 위해서는 바꾸는 것이 바람직하다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "story",
-      "lemma": "story",
+      "word": "brain",
+      "lemma": "brain",
       "partOfSpeech": "n.",
-      "korean": "이야기",
+      "korean": "뇌",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -85,24 +95,12 @@
       "freq": 1
     },
     {
-      "word": "recognized",
-      "lemma": "recognize",
-      "partOfSpeech": "v.",
-      "korean": "인식하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "connected",
-      "lemma": "connect",
-      "partOfSpeech": "v.",
-      "korean": "연결하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "word": "naturally",
+      "lemma": "natural",
+      "partOfSpeech": "adv.",
+      "korean": "자연스러운",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
         "중학기초"
       ],
@@ -113,42 +111,42 @@
       "lemma": "society",
       "partOfSpeech": "n.",
       "korean": "사회",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "continue",
-      "lemma": "continue",
-      "partOfSpeech": "n.",
-      "korean": "계속하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "accepted",
+      "lemma": "accept",
+      "partOfSpeech": "v.",
+      "korean": "받아들이다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "communication",
-      "lemma": "communication",
-      "partOfSpeech": "n.",
-      "korean": "의사소통",
-      "score": 92,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 92점)",
+      "word": "requiring",
+      "lemma": "require",
+      "partOfSpeech": "v.",
+      "korean": "요구하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
-        "독해필수"
+        "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "voice",
-      "lemma": "voice",
+      "word": "ideas",
+      "lemma": "idea",
       "partOfSpeech": "n.",
-      "korean": "목소리",
+      "korean": "아이디어",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -157,83 +155,95 @@
       "freq": 1
     },
     {
-      "word": "widely",
-      "lemma": "wide",
-      "partOfSpeech": "adv.",
-      "korean": "넓은",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "word": "doubt",
+      "lemma": "doubt",
+      "partOfSpeech": "n.",
+      "korean": "의심",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "evolution",
-      "lemma": "evolution",
+      "word": "mind",
+      "lemma": "mind",
       "partOfSpeech": "n.",
-      "korean": "진화, 발전",
-      "score": 89,
-      "reason": "대학 학술 독해 필수 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "fascinating",
-      "lemma": "fascinate",
-      "partOfSpeech": "v.",
-      "korean": "매료시키다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "changed",
-      "lemma": "change",
-      "partOfSpeech": "v.",
-      "korean": "변화",
-      "score": 82,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+      "korean": "마음",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "history",
-      "lemma": "history",
-      "partOfSpeech": "n.",
-      "korean": "역사",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "altered",
+      "lemma": "alter",
+      "partOfSpeech": "v.",
+      "korean": "바꾸다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "telephone",
-      "lemma": "telephone",
-      "partOfSpeech": "n.",
-      "korean": "전화",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "established",
+      "lemma": "establish",
+      "partOfSpeech": "v.",
+      "korean": "확립하다",
+      "score": 81,
+      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "instantaneous",
-      "lemma": "instantaneous",
+      "word": "average",
+      "lemma": "average",
       "partOfSpeech": "adj.",
-      "korean": "즉각적인, 순식간의",
+      "korean": "평균의, 보통의",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "beliefs",
+      "lemma": "belief",
+      "partOfSpeech": "n.",
+      "korean": "신념, 믿음",
+      "score": 79,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "중학기초",
+        "수능"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "resistance",
+      "lemma": "resistance",
+      "partOfSpeech": "n.",
+      "korean": "저항",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "desirable",
+      "lemma": "desirable",
+      "partOfSpeech": "adj.",
+      "korean": "바람직한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [

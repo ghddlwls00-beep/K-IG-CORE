@@ -47,48 +47,48 @@
   "readingSentences": [
     {
       "id": "reading-220-s001",
-      "english": "A common belief is that if we find someone who likes doing the same things we do, we will get along and be happy.",
-      "korean": "일반적인 믿음은 우리가 좋아하는 것과 똑같은 일을 좋아하는 사람을 만나면 서로 잘 어울리고 행복해질 것이라는 생각이다."
+      "english": "A common belief is that if we find someone who likes to do the same things we do, then we will get along and we will be happy.",
+      "korean": "일반적인 믿음은 우리가 하는 것과 같은 일을 좋아하는 사람을 찾으면 서로 잘 어울리고 행복해질 것이라는 점이다."
     },
     {
       "id": "reading-220-s002",
-      "english": "Participating in activities together is a great starting point for building relationships.",
-      "korean": "함께 활동에 참여하는 것은 원만한 관계를 형성하는 데 있어 훌륭한 출발점이 된다."
+      "english": "Participating in activities together is a great start for relationships",
+      "korean": "함께 활동에 참여하는 것은 관계 형성에 훌륭한 출발점이다."
     },
     {
       "id": "reading-220-s003",
-      "english": "However, you probably know people who like the same things but do not get along well.",
-      "korean": "그러나 같은 일을 좋아하면서도 실제로는 잘 어울리지 못하는 사람들을 여러분도 분명 알고 있을 것이다."
+      "english": "however, I am sure you know people who like to do the same things but who don't get along.",
+      "korean": "그러나 같은 일을 좋아하면서도 잘 어울리지 못하는 사람들을 여러분도 분명 알고 있을 것이다."
     },
     {
       "id": "reading-220-s004",
-      "english": "This applies to individuals in social groups, companies, and teams, as well as to different organizations.",
-      "korean": "이것은 다른 단체들뿐만 아니라 친목 모임, 회사, 팀에 속한 개인들에게도 고스란히 해당된다."
+      "english": "This is true with individuals who belong to the same social groups, companies, and teams, as well as other organizations.",
+      "korean": "이것은 다른 단체들뿐만 아니라 같은 사회적 모임, 회사, 팀에 속한 개인들에게도 해당된다."
     },
     {
       "id": "reading-220-s005",
-      "english": "Clearly, it is not common interests alone that create harmonious relationships.",
-      "korean": "분명히 조화로운 관계를 만들어내는 것은 단지 공통의 관심사만은 아니다."
+      "english": "Obviously, it is not a common interest alone that creates harmonious relationships.",
+      "korean": "분명히 조화로운 관계를 만들어내는 것은 공통의 관심사만은 아니다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "create",
-      "lemma": "create",
-      "partOfSpeech": "v.",
-      "korean": "창조하다",
-      "score": 107,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 107점)",
+      "word": "happy",
+      "lemma": "happy",
+      "partOfSpeech": "n.",
+      "korean": "행복하다",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "happy",
-      "lemma": "happy",
+      "word": "creates",
+      "lemma": "create",
       "partOfSpeech": "n.",
-      "korean": "행복하다",
+      "korean": "창조하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -109,6 +109,18 @@
       "freq": 1
     },
     {
+      "word": "belong",
+      "lemma": "belong",
+      "partOfSpeech": "n.",
+      "korean": "속하다",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
       "word": "common",
       "lemma": "common",
       "partOfSpeech": "n.",
@@ -121,16 +133,16 @@
       "freq": 2
     },
     {
-      "word": "different",
-      "lemma": "different",
+      "word": "same",
+      "lemma": "same",
       "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "korean": "같은",
+      "score": 82,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
       "word": "along",
@@ -169,18 +181,6 @@
       "freq": 1
     },
     {
-      "word": "same",
-      "lemma": "same",
-      "partOfSpeech": "n.",
-      "korean": "같은",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
       "word": "belief",
       "lemma": "belief",
       "partOfSpeech": "n.",
@@ -194,7 +194,7 @@
       "freq": 1
     },
     {
-      "word": "interests",
+      "word": "interest",
       "lemma": "interest",
       "partOfSpeech": "n.",
       "korean": "관심",
@@ -218,24 +218,24 @@
       "freq": 1
     },
     {
-      "word": "starting",
-      "lemma": "start",
-      "partOfSpeech": "v.",
-      "korean": "시작",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "obviously",
+      "lemma": "obviously",
+      "partOfSpeech": "adv.",
+      "korean": "분명히",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "building",
-      "lemma": "build",
-      "partOfSpeech": "v.",
-      "korean": "건물",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "alone",
+      "lemma": "alone",
+      "partOfSpeech": "n.",
+      "korean": "혼자",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
         "독해필수"
       ],

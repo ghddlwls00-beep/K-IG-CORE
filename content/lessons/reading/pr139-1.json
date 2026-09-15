@@ -47,56 +47,58 @@
   "readingSentences": [
     {
       "id": "reading-139-s001",
-      "english": "Critical thinking is an essential skill in our modern information-rich society.",
-      "korean": "비판적 사고는 정보가 넘쳐나는 현대 사회에서 필수적인 기술이다."
+      "english": "Albert Einstein once attribute the creativity of a famous scientist to the fact that he never went to school, and therefore preserved the rare gift of thinking freely.",
+      "korean": "알버트 아인슈타인은 한때 유명한 과학자의 창의성의 원인을 그가 학교;에 절대 가지 않아서 자유롭게 생각하는 흔치 않은 재능을 보존했다는 사실에 돌렸다."
     },
     {
       "id": "reading-139-s002",
-      "english": "We are inundated with news, advertising, and opinions from all directions.",
-      "korean": "우리는 모든 방향에서 쏟아지는 뉴스와 광고, 그리고 다양한 의견들에 둘러싸여 있다."
+      "english": "There is undoubtedly truth in Einstein's observation",
+      "korean": "아인슈타인의 관찰에서 의심할 수 없는 진리가 있다."
     },
     {
       "id": "reading-139-s003",
-      "english": "Without the ability to discern truth from falsehood, one easily falls prey to deception.",
-      "korean": "진실과 거짓을 분별하는 능력이 없다면 누구나 쉽게 기만의 희생양이 될 수 있다."
+      "english": "many artists and geniuses seem to view their schooling as an disadvantage.",
+      "korean": "많은 예술가와 천재는 자신들의 학교생활을 단점으로 보는 것 같다."
     },
     {
       "id": "reading-139-s004",
-      "english": "Asking rigorous questions and checking credible sources protects our intellectual freedom.",
-      "korean": "엄밀한 질문을 던지고 신뢰할 수 있는 출처를 확인하는 것이 우리의 지적 자유를 지켜준다."
+      "english": "But such a truth is not a criticism of schools.",
+      "korean": "그러나 그런 진리는 학교의 비판은 아니다."
+    },
+    {
+      "id": "reading-139-s005",
+      "english": "It is the function of schools to civilize, not to train explorers.",
+      "korean": "탐험가를 훈련하는 것이 아니라, 교화하는 것이 학교의 기능이다."
+    },
+    {
+      "id": "reading-139-s006",
+      "english": "The social order demands unity and widespread agreement, both characteristics that are destructive to creativity.",
+      "korean": "사회 질서는 창의성에 파괴적인 두 가지 특성인 단합과 광범위한 동의를 요구한다."
+    },
+    {
+      "id": "reading-139-s007",
+      "english": "There will be conflict between the demands of society and the impulses of creativity and genius.",
+      "korean": "사회의 요구와 창의성과 천재성의 충동사이에는 갈등이 있을 것이다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "society",
-      "lemma": "society",
+      "word": "demands",
+      "lemma": "demand",
       "partOfSpeech": "n.",
-      "korean": "사회",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+      "korean": "수요",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "prey",
-      "lemma": "prey",
+      "word": "school",
+      "lemma": "school",
       "partOfSpeech": "n.",
-      "korean": "먹이",
-      "score": 103,
-      "reason": "수능/TOEFL 학술 독해 최빈출 고득점 어휘 (평가 점수: 103점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "protects",
-      "lemma": "protect",
-      "partOfSpeech": "n.",
-      "korean": "보호하다",
+      "korean": "학교",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -105,94 +107,106 @@
       "freq": 1
     },
     {
-      "word": "opinions",
-      "lemma": "opinion",
+      "word": "society",
+      "lemma": "society",
       "partOfSpeech": "n.",
-      "korean": "의견",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "사회",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
+    },
+    {
+      "word": "creativity",
+      "lemma": "creativity",
+      "partOfSpeech": "n.",
+      "korean": "창의성, 독창성",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
     },
     {
       "word": "truth",
       "lemma": "truth",
       "partOfSpeech": "n.",
       "korean": "진실",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "score": 97,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 97점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "fact",
+      "lemma": "fact",
+      "partOfSpeech": "n.",
+      "korean": "사실",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 97점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "checking",
-      "lemma": "check",
+      "word": "social",
+      "lemma": "social",
+      "partOfSpeech": "adj.",
+      "korean": "사회적",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "preserved",
+      "lemma": "preserve",
       "partOfSpeech": "v.",
-      "korean": "확인",
+      "korean": "보존하다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "agreement",
+      "lemma": "agreement",
+      "partOfSpeech": "n.",
+      "korean": "합의",
       "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
+      "examTags": [
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "attribute",
+      "lemma": "attribute",
+      "partOfSpeech": "n.",
+      "korean": "속성",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "asking",
-      "lemma": "ask",
-      "partOfSpeech": "v.",
-      "korean": "묻다",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "critical",
-      "lemma": "critical",
+      "word": "famous",
+      "lemma": "famous",
       "partOfSpeech": "adj.",
-      "korean": "중요한",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "essential",
-      "lemma": "essential",
-      "partOfSpeech": "adj.",
-      "korean": "본질적인",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "information-rich",
-      "lemma": "information-rich",
-      "partOfSpeech": "adj.",
-      "korean": "정보가 풍부한",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "rigorous",
-      "lemma": "rigorous",
-      "partOfSpeech": "adj.",
-      "korean": "엄격한, 철저한",
+      "korean": "유명한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -201,23 +215,22 @@
       "freq": 1
     },
     {
-      "word": "intellectual",
-      "lemma": "intellectual",
-      "partOfSpeech": "adj.",
-      "korean": "지적인, 지식인",
+      "word": "scientist",
+      "lemma": "scientist",
+      "partOfSpeech": "n.",
+      "korean": "과학자",
       "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
-        "수능",
-        "TOEFL"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "skill",
-      "lemma": "skill",
+      "word": "never",
+      "lemma": "never",
       "partOfSpeech": "n.",
-      "korean": "기술",
+      "korean": "결코",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -226,14 +239,15 @@
       "freq": 1
     },
     {
-      "word": "modern",
-      "lemma": "modern",
-      "partOfSpeech": "n.",
-      "korean": "현대",
+      "word": "therefore",
+      "lemma": "therefore",
+      "partOfSpeech": "adv.",
+      "korean": "그러므로, 따라서",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
-        "독해필수"
+        "중학기초",
+        "수능"
       ],
       "freq": 1
     }

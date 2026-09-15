@@ -47,31 +47,82 @@
   "readingSentences": [
     {
       "id": "reading-047-s001",
-      "english": "A good listener is not only popular everywhere, but after a while he knows something.",
-      "korean": "남의 말을 잘 들어주는 사람은 어디서나 인기가 있을 뿐만 아니라, 얼마 지나지 않아 많은 것을 알게 된다."
+      "english": "This government has emphasized excellence in business.",
+      "korean": "정부는 기업의 우수성을 강조해 왔다."
     },
     {
       "id": "reading-047-s002",
-      "english": "People love to talk about themselves and their experiences.",
-      "korean": "사람들은 자기 자신과 자신의 경험에 대해 이야기하는 것을 아주 좋아한다."
+      "english": "It recognizes that the economy must remain strong and is willing to provide whatever is needed in order to achieve this excellence.",
+      "korean": "정부는 경제가 강하게 유지되어야 한다는 점을 인식하고 이러한 우수성을 성취하기 위해 필요로 하는 것은 무엇이든지 기꺼이 제공하고 있다."
     },
     {
       "id": "reading-047-s003",
-      "english": "By listening attentively, you learn about human nature and make friends easily.",
-      "korean": "주의 깊게 경청함으로써 당신은 인간 본성을 배우게 되고 쉽게 친구를 사귈 수 있다."
+      "english": "However, it hasn’t fully recognized the importance of the arts, especially the performing arts.",
+      "korean": "그러나 예술의 중요성, 특히 공연 예술의 중요성을 충분히 인식하지는 못하고 있다."
     },
     {
       "id": "reading-047-s004",
-      "english": "Listening is one of the highest compliments you can pay another person.",
-      "korean": "경청은 당신이 다른 사람에게 건넬 수 있는 가장 훌륭한 칭찬 중 하나이다."
+      "english": "The performing arts also desire excellence, but in order to achieve it, they need financial help.",
+      "korean": "공연 예술 또한 우수성을 바란다. 그러나 그것을 성취하기 위해서는 재정적 도움이 필요하다."
+    },
+    {
+      "id": "reading-047-s005",
+      "english": "Without the government’s support, the performing arts cannot survive.",
+      "korean": "정부의 지원이 없다면 공연 예술은 생존할 수 없다."
+    },
+    {
+      "id": "reading-047-s006",
+      "english": "This will affect other areas of culture, including film.",
+      "korean": "이것은 영화를 포함한 다른 문화 분야에도 영향을 주게 될 것이다."
+    },
+    {
+      "id": "reading-047-s007",
+      "english": "If the government doesn’t support the performing arts, this country will lose much of the heart and soul of its people.",
+      "korean": "만약 정부가 공연 예술을 후원하지 않는다면 이 나라는 국민들의 많은 마음과 영혼을 잃게 될 것이다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "highest",
-      "lemma": "high",
+      "word": "performing",
+      "lemma": "perform",
+      "partOfSpeech": "v.",
+      "korean": "수행하다",
+      "score": 119,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 119점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 4
+    },
+    {
+      "word": "support",
+      "lemma": "support",
       "partOfSpeech": "n.",
-      "korean": "높다",
+      "korean": "지원하다",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "arts",
+      "lemma": "art",
+      "partOfSpeech": "n.",
+      "korean": "예술",
+      "score": 106,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 106점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 5
+    },
+    {
+      "word": "country",
+      "lemma": "country",
+      "partOfSpeech": "n.",
+      "korean": "국가",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -80,10 +131,96 @@
       "freq": 1
     },
     {
-      "word": "experiences",
-      "lemma": "experience",
+      "word": "provide",
+      "lemma": "provide",
+      "partOfSpeech": "v.",
+      "korean": "제공하다, 공급하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초",
+        "수능",
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "recognized",
+      "lemma": "recognize",
+      "partOfSpeech": "v.",
+      "korean": "인식하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "heart",
+      "lemma": "heart",
       "partOfSpeech": "n.",
-      "korean": "경험",
+      "korean": "심장",
+      "score": 100,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "achieve",
+      "lemma": "achieve",
+      "partOfSpeech": "n.",
+      "korean": "달성하다",
+      "score": 99,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "government",
+      "lemma": "government",
+      "partOfSpeech": "n.",
+      "korean": "정부",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "survive",
+      "lemma": "survive",
+      "partOfSpeech": "adj.",
+      "korean": "살아남다",
+      "score": 96,
+      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "soul",
+      "lemma": "soul",
+      "partOfSpeech": "n.",
+      "korean": "영혼",
+      "score": 96,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "culture",
+      "lemma": "culture",
+      "partOfSpeech": "n.",
+      "korean": "문화",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -92,22 +229,10 @@
       "freq": 1
     },
     {
-      "word": "friends",
-      "lemma": "friend",
+      "word": "remain",
+      "lemma": "remain",
       "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "nature",
-      "lemma": "nature",
-      "partOfSpeech": "n.",
-      "korean": "자연",
+      "korean": "남아있다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -116,122 +241,14 @@
       "freq": 1
     },
     {
-      "word": "listening",
-      "lemma": "listen",
-      "partOfSpeech": "v.",
-      "korean": "들어봐",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "listener",
-      "lemma": "listener",
+      "word": "strong",
+      "lemma": "strong",
       "partOfSpeech": "n.",
-      "korean": "청취자, 듣는 사람",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "강한",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "popular",
-      "lemma": "popular",
-      "partOfSpeech": "n.",
-      "korean": "인기있는",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "everywhere",
-      "lemma": "everywhere",
-      "partOfSpeech": "n.",
-      "korean": "모든 곳에서",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "compliments",
-      "lemma": "compliment",
-      "partOfSpeech": "n.",
-      "korean": "칭찬",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "another",
-      "lemma": "another",
-      "partOfSpeech": "n.",
-      "korean": "또 다른",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "pay",
-      "lemma": "pay",
-      "partOfSpeech": "n.",
-      "korean": "지불하다",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "attentively",
-      "lemma": "attentive",
-      "partOfSpeech": "adv.",
-      "korean": "세심한",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "easily",
-      "lemma": "easily",
-      "partOfSpeech": "adv.",
-      "korean": "쉽게",
-      "score": 65,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 65점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "love",
-      "lemma": "love",
-      "partOfSpeech": "n.",
-      "korean": "사랑",
-      "score": 63,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 63점)",
-      "examTags": [
-        "독해필수"
+        "중학기초"
       ],
       "freq": 1
     }

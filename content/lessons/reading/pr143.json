@@ -47,31 +47,50 @@
   "readingSentences": [
     {
       "id": "reading-143-s001",
-      "english": "Friendship is one of life's most precious treasures.",
-      "korean": "우정은 인생에서 가장 소중한 보물 중 하나이다."
+      "english": "We need more effective ways to ensure that every citizen can fully exercise the right to secure private information.",
+      "korean": "모든 시민이 사적 정보를 지키는 권리를 완전히 행사하는 것을 보장하기\n\n위한 보다 효과적인 방법이 필요하다."
     },
     {
       "id": "reading-143-s002",
-      "english": "True friends stand by each other in moments of joy and in times of distress.",
-      "korean": "진정한 친구는 기쁨의 순간뿐만 아니라 고난의 시간에도 서로의 곁을 지켜준다."
+      "english": "We must protect citizens against the compiling of personal data and the unrestricted use and distribution of such data.",
+      "korean": "개인 자료의 수집과 그런 자료의 무\n\n제한적 사용 및 배포에 맞서 시민을 보호해야 한다."
     },
     {
       "id": "reading-143-s003",
-      "english": "They share our burdens and multiply our happiness through sincere empathy.",
-      "korean": "그들은 진심 어린 공감을 통해 우리의 짐을 덜어주고 행복을 배가시켜 준다."
-    },
-    {
-      "id": "reading-143-s004",
-      "english": "Nurturing genuine friendships requires mutual trust, loyalty, and time.",
-      "korean": "진정한 우정을 키워나가는 데는 상호 신뢰와 충실함, 그리고 충분한 시간이 필요하다."
+      "english": "The capacity to store and distribute information has increased through the use of computers and other devices, Thus, personal information has been collected and distributed without control, causing harm to the right to privacy.",
+      "korean": "정보의 축적과 배포\n\n능력은 컴퓨터와 다른 장비의 사용을 통해 증대됬다. 그 결과, 사적 정보는\n\n통제되지 않고 수집 및 배포되어, 개인의 사생활에 해를 끼치고 있다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "friendship",
-      "lemma": "friendship",
+      "word": "causing",
+      "lemma": "cause",
+      "partOfSpeech": "v.",
+      "korean": "원인",
+      "score": 109,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "increased",
+      "lemma": "increase",
+      "partOfSpeech": "v.",
+      "korean": "증가하다",
+      "score": 105,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "exercise",
+      "lemma": "exercise",
       "partOfSpeech": "n.",
-      "korean": "우정, 친선",
+      "korean": "운동",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -80,10 +99,10 @@
       "freq": 1
     },
     {
-      "word": "requires",
-      "lemma": "require",
+      "word": "control",
+      "lemma": "control",
       "partOfSpeech": "n.",
-      "korean": "요구하다",
+      "korean": "제어",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -92,146 +111,122 @@
       "freq": 1
     },
     {
-      "word": "trust",
-      "lemma": "trust",
+      "word": "information",
+      "lemma": "information",
       "partOfSpeech": "n.",
-      "korean": "신뢰",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "friends",
-      "lemma": "friend",
-      "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "happiness",
-      "lemma": "happiness",
-      "partOfSpeech": "n.",
-      "korean": "행복",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "share",
-      "lemma": "share",
-      "partOfSpeech": "n.",
-      "korean": "공유하다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "joy",
-      "lemma": "joy",
-      "partOfSpeech": "n.",
-      "korean": "기쁨",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "precious",
-      "lemma": "precious",
-      "partOfSpeech": "adj.",
-      "korean": "소중한",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "korean": "정보",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "treasures",
-      "lemma": "treasure",
+      "word": "capacity",
+      "lemma": "capacity",
       "partOfSpeech": "n.",
-      "korean": "보물",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "nurturing",
-      "lemma": "nurturing",
-      "partOfSpeech": "adj.",
-      "korean": "양육하는, 보살피는",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "genuine",
-      "lemma": "genuine",
-      "partOfSpeech": "n.",
-      "korean": "정품",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "mutual",
-      "lemma": "mutual",
-      "partOfSpeech": "adj.",
-      "korean": "상호",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "loyalty",
-      "lemma": "loyalty",
-      "partOfSpeech": "n.",
-      "korean": "충성도",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "sincere",
-      "lemma": "sincere",
-      "partOfSpeech": "adj.",
-      "korean": "진실된, 진심 어린",
-      "score": 71,
-      "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
+      "korean": "용량",
+      "score": 97,
+      "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 97점)",
       "examTags": [
         "수능"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "protect",
+      "lemma": "protect",
+      "partOfSpeech": "n.",
+      "korean": "보호하다",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "right",
+      "lemma": "right",
+      "partOfSpeech": "n.",
+      "korean": "맞아",
+      "score": 90,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 90점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "private",
+      "lemma": "private",
+      "partOfSpeech": "v.",
+      "korean": "비공개",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "personal",
+      "lemma": "personal",
+      "partOfSpeech": "adj.",
+      "korean": "개인",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "ensure",
+      "lemma": "ensure",
+      "partOfSpeech": "v.",
+      "korean": "보장하다, 확실하게 하다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "distribution",
+      "lemma": "distribution",
+      "partOfSpeech": "n.",
+      "korean": "유통",
+      "score": 84,
+      "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
+      "examTags": [
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "collected",
+      "lemma": "collect",
+      "partOfSpeech": "v.",
+      "korean": "수집하다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "distributed",
+      "lemma": "distribute",
+      "partOfSpeech": "v.",
+      "korean": "배포하다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     }

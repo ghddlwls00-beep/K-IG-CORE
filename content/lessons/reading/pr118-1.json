@@ -59,43 +59,81 @@
   "readingSentences": [
     {
       "id": "reading-118-s001",
-      "english": "The human brain is remarkably adaptable to new environments and challenges.",
-      "korean": "인간의 뇌는 새로운 환경과 도전에 놀라울 정도로 잘 적응한다."
+      "english": "More frequent use of computers will create a serious danger to our health.",
+      "korean": "잦은 컴퓨터 사용이 우리 건강에 심각한 위험을 초래할 수 있다."
     },
     {
       "id": "reading-118-s002",
-      "english": "This capacity for change is known as neuroplasticity.",
-      "korean": "이러한 변화의 능력을 뇌신경가소성이라고 부른다."
+      "english": "First of all, more people will have to wear glasses, because always staring at computer screens is likely to damage our eyes.",
+      "korean": "우선, 항상 컴퓨터 화면을 쳐다보는 것이 눈에 해를 끼치는 경향이 있어, 점점 더 많은 사람들이 안경을 착용하고 있다."
     },
     {
       "id": "reading-118-s003",
-      "english": "When we learn a new skill, new neural pathways are formed and strengthened.",
-      "korean": "우리가 새로운 기술을 배울 때, 새로운 신경 회로망이 형성되고 강화된다."
+      "english": "Sitting at computer desks for hours can also cause damage to our backs.",
+      "korean": "몇 시간 컴퓨터 책상에 앉아 있는 건 등에 해를 줄 수도 있다."
     },
     {
       "id": "reading-118-s004",
-      "english": "Continuous learning keeps the mind youthful and vibrant throughout life.",
-      "korean": "지속적인 학습은 평생 동안 정신을 젊고 활력 있게 유지시켜 준다."
+      "english": "In addition, we won't get enough exercise, for we will often be forced to spend a long period of time at the computers.",
+      "korean": "게다가, 컴퓨터 앞에서 장시간을 보내야 하기 때문에 충분히 운동을 할 수도 없다\n\n(B) 미래는 컴퓨터 때문에 살기에 외로운 곳이 될 것이다."
+    },
+    {
+      "id": "reading-118-s005",
+      "english": "The future will be a lonely place to live because of computers.",
+      "korean": "더 이상 슈퍼마켓에, 심지어는 학교에도 가지 않게 될 것이다."
+    },
+    {
+      "id": "reading-118-s006",
+      "english": "We won't be going to the supermarket, or even to school any more.",
+      "korean": "상품과 심지어는 교육마져도 통신으로 우리에게 올 것이기 때문이다."
+    },
+    {
+      "id": "reading-118-s007",
+      "english": "Everyday goods and even education will come to us on-line.",
+      "korean": "게다가, 우리는 컴퓨터를 이용해 서로 대화하게 될 것이다."
+    },
+    {
+      "id": "reading-118-s008",
+      "english": "In addition , we will talk with one another using the computer.",
+      "korean": "이 모든 것들은, 컴퓨터가 진정한 인간 관계를 위한 모임의 기회를 앗아가기에, 우리를 덜 인간적이게 만들 것이다."
+    },
+    {
+      "id": "reading-118-s009",
+      "english": "All of these will make us less human, in that the computer will take away our opportunities to meet for true human relationships.",
+      "korean": "."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "environments",
-      "lemma": "environment",
-      "partOfSpeech": "n.",
-      "korean": "환경",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+      "word": "create",
+      "lemma": "create",
+      "partOfSpeech": "v.",
+      "korean": "창조하다",
+      "score": 109,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "brain",
-      "lemma": "brain",
+      "word": "danger",
+      "lemma": "danger",
       "partOfSpeech": "n.",
-      "korean": "뇌",
+      "korean": "위험, 위험 요소",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초",
+        "수능"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "health",
+      "lemma": "health",
+      "partOfSpeech": "n.",
+      "korean": "건강",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -104,34 +142,94 @@
       "freq": 1
     },
     {
-      "word": "mind",
-      "lemma": "mind",
+      "word": "exercise",
+      "lemma": "exercise",
       "partOfSpeech": "n.",
-      "korean": "마음",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "korean": "운동",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "capacity",
-      "lemma": "capacity",
+      "word": "education",
+      "lemma": "education",
       "partOfSpeech": "n.",
-      "korean": "용량",
-      "score": 89,
-      "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
+      "korean": "교육",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
-        "수능"
+        "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "adaptable",
-      "lemma": "adaptable",
+      "word": "cause",
+      "lemma": "cause",
+      "partOfSpeech": "n.",
+      "korean": "원인",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "spend",
+      "lemma": "spend",
+      "partOfSpeech": "n.",
+      "korean": "지출하다",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "school",
+      "lemma": "school",
+      "partOfSpeech": "n.",
+      "korean": "학교",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "computers",
+      "lemma": "computer",
+      "partOfSpeech": "n.",
+      "korean": "컴퓨터",
+      "score": 89,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "eyes",
+      "lemma": "eye",
+      "partOfSpeech": "n.",
+      "korean": "눈",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "serious",
+      "lemma": "serious",
       "partOfSpeech": "adj.",
-      "korean": "적응력 있는, 융통성 있는",
+      "korean": "심각한",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -140,108 +238,36 @@
       "freq": 1
     },
     {
-      "word": "new",
-      "lemma": "new",
+      "word": "human",
+      "lemma": "human",
       "partOfSpeech": "n.",
-      "korean": "새로운",
+      "korean": "인간의",
+      "score": 80,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "frequent",
+      "lemma": "frequent",
+      "partOfSpeech": "n.",
+      "korean": "frequent (핵심 어휘)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
-      "word": "challenges",
-      "lemma": "challenge",
+      "word": "opportunities",
+      "lemma": "opportunity",
       "partOfSpeech": "n.",
-      "korean": "도전",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "continuous",
-      "lemma": "continuous",
-      "partOfSpeech": "adj.",
-      "korean": "연속적인",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "youthful",
-      "lemma": "youthful",
-      "partOfSpeech": "adj.",
-      "korean": "젊은, 청춘의",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "vibrant",
-      "lemma": "vibrant",
-      "partOfSpeech": "adj.",
-      "korean": "활기찬, 생동감 넘치는",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "learning",
-      "lemma": "learn",
-      "partOfSpeech": "v.",
-      "korean": "배우다",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "remarkably",
-      "lemma": "remarkably",
-      "partOfSpeech": "adv.",
-      "korean": "현저하게, 두드러지게",
+      "korean": "기회",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "strengthened",
-      "lemma": "strengthened",
-      "partOfSpeech": "v.",
-      "korean": "강화된, 힘을 얻은",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "keeps",
-      "lemma": "keep",
-      "partOfSpeech": "n.",
-      "korean": "유지하다",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
         "독해필수"
       ],

@@ -47,36 +47,60 @@
   "readingSentences": [
     {
       "id": "reading-244-s001",
-      "english": "How often do we forget someone's name only moments after being introduced?",
-      "korean": "우리는 누군가를 소개받고 나서 불과 몇 순간 뒤에 그의 이름을 잊어버리는 일이 얼마나 흔한가?"
+      "english": "How often are we introduced to someone only to forget his or her manes moments later?",
+      "korean": "우리는 누군가를 소개받은 잠시 후 그들의 이름을 잊어버리게 되는 일이 얼마나 흔한가?"
     },
     {
       "id": "reading-244-s002",
-      "english": "In fact, in many cases we never really learned the name in the first place.",
-      "korean": "사실상 많은 경우 우리는 애초에 그 이름을 제대로 알지도 못했다."
+      "english": "In fact, many times we never knew the name.",
+      "korean": "사실상, 우리는 많은 경우 그 이름을 결코 알지 못한다."
     },
     {
       "id": "reading-244-s003",
-      "english": "Introductions are made in an unclear manner today so that remembering another's name is very difficult.",
-      "korean": "오늘날 소개는 다른 사람의 이름을 기억하기가 매우 어렵도록 불분명한 방식으로 이루어진다."
+      "english": "Today introductions are made in an unclear manner so that it is very hard to remember other's names.",
+      "korean": "오늘날 소개는 다른 사람의 이름을 기억하는 것이 아주 어렵도록 불분명한 방식으로 되어진다."
     },
     {
       "id": "reading-244-s004",
-      "english": "Forgetting people's names often means that we are not truly interested in them.",
-      "korean": "사람들의 이름을 잊어버리는 것은 우리가 사실 그들에게 진정한 관심을 기울이지 않고 있음을 의미한다."
+      "english": "Forgetting people's names often means we do not really care about them.",
+      "korean": "사람들의 이름을 잊어버리는 것은 우리가 그들에게 사실은 관심이 없다는 것을 의미한다."
     },
     {
       "id": "reading-244-s005",
-      "english": "When we know their names, we are saying, \"You are important. I remember you.\"",
-      "korean": "우리가 그들의 이름을 알 때, 우리는 \"당신은 중요합니다. 나는 당신을 기억합니다\"라고 말하고 있는 것이다."
+      "english": "When we know their names, we are saying, \"You are important.",
+      "korean": "우리가 그들의 이름을 알 때. 우리는 \"너는 중요하다."
     },
     {
       "id": "reading-244-s006",
-      "english": "A clear introduction should be made, therefore, if you want to build good social relationships with others.",
-      "korean": "따라서 만약 당신이 다른 사람들과 좋은 사회적 관계를 맺고 싶다면 분명한 소개가 이루어져야 한다."
+      "english": "I remember you.\" A clear introduction should be made, therefore, if you want to build good social relationships with others.",
+      "korean": "나는 너를 기억한다.\"고 말하고 있다. 따라서 만약에 당신이 다른 사람들과 좋은 사회적 관계를 이루고(형성하고)싶다면 분명한 소개가 되어져야 한다."
     }
   ],
   "readingVocabulary": [
+    {
+      "word": "remember",
+      "lemma": "remember",
+      "partOfSpeech": "n.",
+      "korean": "기억하다",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "later",
+      "lemma": "late",
+      "partOfSpeech": "n.",
+      "korean": "나중에",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
     {
       "word": "social",
       "lemma": "social",
@@ -90,24 +114,12 @@
       "freq": 1
     },
     {
-      "word": "remembering",
-      "lemma": "remember",
-      "partOfSpeech": "v.",
-      "korean": "기억하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "difficult",
-      "lemma": "difficult",
+      "word": "hard",
+      "lemma": "hard",
       "partOfSpeech": "n.",
-      "korean": "어려운",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "열심히",
+      "score": 88,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
         "중학기초"
       ],
@@ -118,8 +130,8 @@
       "lemma": "fact",
       "partOfSpeech": "n.",
       "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "score": 87,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 87점)",
       "examTags": [
         "중학기초"
       ],
@@ -138,30 +150,6 @@
       "freq": 1
     },
     {
-      "word": "name",
-      "lemma": "name",
-      "partOfSpeech": "n.",
-      "korean": "이름",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "important",
-      "lemma": "important",
-      "partOfSpeech": "n.",
-      "korean": "중요한",
-      "score": 82,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "moments",
       "lemma": "moment",
       "partOfSpeech": "n.",
@@ -172,6 +160,30 @@
         "독해필수"
       ],
       "freq": 1
+    },
+    {
+      "word": "important",
+      "lemma": "important",
+      "partOfSpeech": "n.",
+      "korean": "중요한",
+      "score": 79,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 79점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "names",
+      "lemma": "name",
+      "partOfSpeech": "n.",
+      "korean": "이름",
+      "score": 77,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
     },
     {
       "word": "forget",
@@ -204,18 +216,6 @@
       "korean": "관계",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "interested",
-      "lemma": "interested",
-      "partOfSpeech": "v.",
-      "korean": "관심이 있다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
         "독해필수"
       ],

@@ -48,37 +48,17 @@
     {
       "id": "reading-012-s001",
       "english": "My belief is that all music has an expressive power, some more and some less, but that all music has a certain meaning behind the notes.",
-      "korean": "나는 모든 음악이 표현력을 가지고 있다고 믿으며, 정도의 차이는 있겠지만 모든 음악은 악보(음표) 뒤에 숨겨진 어떤 의미를 지니고 있다."
+      "korean": "나는 모든 음악이 표현력을 가지고 있다고 믿는다. 정도의 차이는 있겠지만, 모든 음악은 악보(notes) 뒤에 숨겨진 어떤 의미를 가지고 있다."
     },
     {
       "id": "reading-012-s002",
-      "english": "That meaning constitutes what the piece is saying.",
-      "korean": "그 의미가 바로 그 악곡이 말하고자 하는 바를 구성한다."
+      "english": "That meaning constitutes what the piece is saying, This whole problem can be stated quite simply by asking, \"Is there a meaning to music?",
+      "korean": "그 의미가 그 곡이 말하고자 하는 것을 구성한다. 이 모든 문제는 \"음악에 어떤 의미가 있는가?\"라고 단순히 물음으로써 언급되 질 수 있다."
     },
     {
       "id": "reading-012-s003",
-      "english": "This whole problem can be stated quite simply by asking, \"Is there a meaning to music?\"",
-      "korean": "이 모든 문제는 \"음악에 어떤 의미가 있는가?\"라고 아주 단순하게 질문함으로써 설명될 수 있다."
-    },
-    {
-      "id": "reading-012-s004",
-      "english": "My answer to that would be, \"Yes.\"",
-      "korean": "그 질문에 대한 나의 대답은 \"그렇다\"일 것이다."
-    },
-    {
-      "id": "reading-012-s005",
-      "english": "And \"Can you state in so many words what the meaning is?\"",
-      "korean": "그리고 \"그 의미가 무엇인지 여러 말로 설명할 수 있는가?\""
-    },
-    {
-      "id": "reading-012-s006",
-      "english": "My answer to that would be, \"No.\"",
-      "korean": "이 질문에 대한 나의 대답은 \"아니다\"일 것이다."
-    },
-    {
-      "id": "reading-012-s007",
-      "english": "Therein lies the difficulty.",
-      "korean": "바로 거기에 어려움이 존재한다."
+      "english": "\"My answer to that would be, \"Yes.\" And \"Can you state in so many words what the meaning is?\" My answer to that would be, \"No.\" Therein lies the difficulty.",
+      "korean": "그 질문에 대한 대답은 \"그렇다\"일 것이다. 그리고 \"아주 많은 단어로 그 의미가 무언지 표현할 수 있을까?\" 이 질문에 대한 나의 대답은 \"아니오\"일 것이다. 거기에 어려움이 있다."
     }
   ],
   "readingVocabulary": [
@@ -95,6 +75,18 @@
       "freq": 3
     },
     {
+      "word": "meaning",
+      "lemma": "meaning",
+      "partOfSpeech": "v.",
+      "korean": "의미",
+      "score": 104,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 104점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 4
+    },
+    {
       "word": "difficulty",
       "lemma": "difficulty",
       "partOfSpeech": "n.",
@@ -108,26 +100,26 @@
       "freq": 1
     },
     {
-      "word": "meaning",
-      "lemma": "meaning",
-      "partOfSpeech": "v.",
-      "korean": "의미",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
       "word": "words",
       "lemma": "word",
       "partOfSpeech": "n.",
       "korean": "단어",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "score": 100,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
         "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "state",
+      "lemma": "state",
+      "partOfSpeech": "v.",
+      "korean": "상태",
+      "score": 82,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
@@ -143,6 +135,18 @@
         "TOEFL"
       ],
       "freq": 1
+    },
+    {
+      "word": "answer",
+      "lemma": "answer",
+      "partOfSpeech": "n.",
+      "korean": "대답하다",
+      "score": 80,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     },
     {
       "word": "certain",
@@ -218,18 +222,6 @@
       "freq": 1
     },
     {
-      "word": "stated",
-      "lemma": "state",
-      "partOfSpeech": "v.",
-      "korean": "상태",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "asking",
       "lemma": "ask",
       "partOfSpeech": "v.",
@@ -240,18 +232,6 @@
         "독해필수"
       ],
       "freq": 1
-    },
-    {
-      "word": "answer",
-      "lemma": "answer",
-      "partOfSpeech": "n.",
-      "korean": "대답하다",
-      "score": 72,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
     }
   ]
 }

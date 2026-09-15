@@ -75,55 +75,134 @@
   "readingSentences": [
     {
       "id": "reading-097-s001",
-      "english": "Effective communication requires both speaking clearly and listening patiently.",
-      "korean": "효과적인 의사소통은 명확하게 말하는 것과 인내심 있게 경청하는 것 둘 다를 필요로 한다."
+      "english": "The introduction of unique products alone does not guarantee market success.",
+      "korean": "독특한 제품의 도입은 단지 시장의 성공을 보장하지 않는다."
     },
     {
       "id": "reading-097-s002",
-      "english": "Misunderstandings often arise from assumptions rather than actual facts.",
-      "korean": "오해는 대개 실제 사실보다는 지레짐작하는 추측에서 비롯된다."
+      "english": "Another vital factor is increasing one’s responsiveness to the markets by providing products suited for the local communities that make up the market.",
+      "korean": "또다른 핵심적인 요소\n\n가 시장을 구성하는 지역 사회에 알맞은 상품을 공급함으로써 시장의 반응을 증가\n\n시키고 있다."
     },
     {
       "id": "reading-097-s003",
-      "english": "Asking clarifying questions prevents costly errors in professional life.",
-      "korean": "명확히 짚고 넘어가는 질문을 하는 것은 직장 생활에서 큰 손실을 초래하는 실수를 방지해 준다."
+      "english": "This means understanding that each country, community and individual has unique characteristics and needs",
+      "korean": "이것은 각 나라 가 직역사회 그리고 각 개인이 독특한 특성과 필요사\n\n항을 가진다는 것을 의미한다 ; 그것은 지역과 개인의 차이에 민감함을 필요한다."
     },
     {
       "id": "reading-097-s004",
-      "english": "Clarity and courtesy build strong working relationships.",
-      "korean": "명료함과 예의바름은 강력한 업무 협력 관계를 구축한다."
+      "english": "it requires sensitivity to regional and individual differences.",
+      "korean": "다른 말로 하면 과제중의 하나는 세계화 관점에만 너무 많은 강조를 하는 하나로\n\n‘one-size-fits-all’ 전략을 피하는 것이다."
+    },
+    {
+      "id": "reading-097-s005",
+      "english": "In other words, one of the challenges is to avoid a one-size-fits-all strategy that places too much emphasis on the “global” aspect alone.",
+      "korean": "심지어 나라를 선진국, 신흥국가로 분\n\n류하는 것조차 위험하다."
+    },
+    {
+      "id": "reading-097-s006",
+      "english": "Even categorizing countries as “developed” or “emerging” is dangerous.",
+      "korean": "면필한 분석을 토대로 신흥 국가는 서로 크게 다르지\n\n않을 뿐만 아니라."
+    },
+    {
+      "id": "reading-097-s007",
+      "english": "Upon closer analysis, “emerging” countries are not only vastly different from one another, they are also composed of numerous unique individuals and communities.",
+      "korean": "그나라들은 또한 다양한 독특한 개인과 지역사회로 구성된다."
     }
   ],
   "readingVocabulary": [
+    {
+      "word": "countries",
+      "lemma": "country",
+      "partOfSpeech": "n.",
+      "korean": "국가",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "providing",
+      "lemma": "provide",
+      "partOfSpeech": "v.",
+      "korean": "제공하다, 공급하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초",
+        "수능",
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "understanding",
+      "lemma": "understand",
+      "partOfSpeech": "v.",
+      "korean": "이해하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "developed",
+      "lemma": "develop",
+      "partOfSpeech": "v.",
+      "korean": "발전시키다, 개발하다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초",
+        "수능",
+        "TOEIC"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "increasing",
+      "lemma": "increase",
+      "partOfSpeech": "v.",
+      "korean": "증가하다",
+      "score": 97,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 97점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "dangerous",
+      "lemma": "dangerous",
+      "partOfSpeech": "adj.",
+      "korean": "위험한",
+      "score": 96,
+      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "unique",
+      "lemma": "unique",
+      "partOfSpeech": "n.",
+      "korean": "독특한",
+      "score": 95,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
     {
       "word": "requires",
       "lemma": "require",
       "partOfSpeech": "n.",
       "korean": "요구하다",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "strong",
-      "lemma": "strong",
-      "partOfSpeech": "n.",
-      "korean": "강한",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "prevents",
-      "lemma": "prevent",
-      "partOfSpeech": "n.",
-      "korean": "예방하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -132,10 +211,22 @@
       "freq": 1
     },
     {
-      "word": "facts",
-      "lemma": "fact",
+      "word": "different",
+      "lemma": "different",
       "partOfSpeech": "n.",
-      "korean": "사실",
+      "korean": "다른",
+      "score": 93,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 93점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "words",
+      "lemma": "word",
+      "partOfSpeech": "n.",
+      "korean": "단어",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -144,121 +235,48 @@
       "freq": 1
     },
     {
-      "word": "assumptions",
-      "lemma": "assumption",
-      "partOfSpeech": "n.",
-      "korean": "가정",
+      "word": "emerging",
+      "lemma": "emerge",
+      "partOfSpeech": "v.",
+      "korean": "나타나다",
       "score": 89,
-      "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "speaking",
-      "lemma": "speak",
-      "partOfSpeech": "v.",
-      "korean": "말하다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "listening",
-      "lemma": "listen",
-      "partOfSpeech": "v.",
-      "korean": "들어봐",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "products",
+      "lemma": "product",
+      "partOfSpeech": "n.",
+      "korean": "제품",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "effective",
-      "lemma": "effective",
-      "partOfSpeech": "adj.",
-      "korean": "효과적인",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "word": "strategy",
+      "lemma": "strategy",
+      "partOfSpeech": "n.",
+      "korean": "전략",
+      "score": 84,
+      "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
-        "중학기초",
         "TOEIC"
       ],
       "freq": 1
     },
     {
-      "word": "communication",
-      "lemma": "communication",
-      "partOfSpeech": "n.",
-      "korean": "의사소통",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "clearly",
-      "lemma": "clear",
-      "partOfSpeech": "adv.",
-      "korean": "명확한",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "patiently",
-      "lemma": "patient",
-      "partOfSpeech": "adv.",
-      "korean": "환자",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "clarity",
-      "lemma": "clarity",
-      "partOfSpeech": "n.",
-      "korean": "명료함, 명확성",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "courtesy",
-      "lemma": "courtesy",
-      "partOfSpeech": "n.",
-      "korean": "예의, 공손함",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "relationships",
-      "lemma": "relationship",
-      "partOfSpeech": "n.",
-      "korean": "관계",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "composed",
+      "lemma": "compose",
+      "partOfSpeech": "v.",
+      "korean": "작곡하다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],

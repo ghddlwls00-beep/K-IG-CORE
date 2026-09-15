@@ -47,106 +47,125 @@
   "readingSentences": [
     {
       "id": "reading-079-s001",
-      "english": "Environmental protection is no longer an option, but an urgent necessity.",
-      "korean": "환경 보호는 더 이상 선택 사항이 아니라 시급한 필수 과제이다."
+      "english": "A long time ago, a dissatisfied horse asked the gods for longer, thinner legs, a neck like a swan, and a saddle that would grow upon him.",
+      "korean": "옛날에 불만족한 말 한 마리가 더 길고 더 날씬한 다리와 백조 같은 목과 그의 위에서 자라는 안장을 달라고 신들에게 빌었다."
     },
     {
       "id": "reading-079-s002",
-      "english": "Pollution of our oceans, air, and soil threatens the survival of countless species.",
-      "korean": "해양과 대기, 토양의 오염은 수많은 생물종의 생존을 위협하고 있다."
+      "english": "Right away, the merciful gods changed him into a creature having all the new features.",
+      "korean": "자비로운 신들이 즉시 그를 그 모든 새로운 특징들을 가진 동물로 바꾸었다."
     },
     {
       "id": "reading-079-s003",
-      "english": "Each individual must take responsibility by reducing waste and conserving energy.",
-      "korean": "모든 개인은 쓰레기를 줄이고 에너지를 절약함으로써 책임을 다해야 한다."
+      "english": "But although they had looked attractive separately, the entire assembly shocked him, for he found that he had been changed into an ugly camel.",
+      "korean": "그러나 그것들이 개별적으로는 매력적으로 보였지만 전체를 모아놓은 것은 그 말을 놀라게 했다. 왜냐하면 그 말은 자신이 못생긴 낙타로 변했다는 것을 발견했기 때문이었다."
     },
     {
       "id": "reading-079-s004",
-      "english": "Small daily actions collectively produce immense positive changes for our planet.",
-      "korean": "작은 일상적 실천들이 모여 우리 지구를 위한 거대하고 긍정적인 변화를 만들어 낸다."
+      "english": "“There now,” said the gods, “all your wishes are granted, and you will now live as you’ve wished all your life.” Remember!",
+      "korean": "신들이 말했다. “자, 이제 네 모든 소원을 들어주었고 너는 이제 네가 평생동안 소원했던 대로 살 것이다.” 기억하라!"
+    },
+    {
+      "id": "reading-079-s005",
+      "english": "Not all change is good.",
+      "korean": "모든 변화가 좋은 것은 아니다."
+    },
+    {
+      "id": "reading-079-s006",
+      "english": "You should be satisfied with what you have.",
+      "korean": "당신은 당신이 갖고 있는 것에 만족해야 한다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "species",
-      "lemma": "species",
-      "partOfSpeech": "n.",
-      "korean": "종",
-      "score": 109,
-      "reason": "수능/TOEFL 학술 독해 최빈출 고득점 어휘 (평가 점수: 109점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "produce",
-      "lemma": "produce",
-      "partOfSpeech": "n.",
-      "korean": "생산하다",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reducing",
-      "lemma": "reduce",
+      "word": "wishes",
+      "lemma": "wish",
       "partOfSpeech": "v.",
-      "korean": "감소시키다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "korean": "바라다, 원하다",
+      "score": 99,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "waste",
-      "lemma": "waste",
+      "word": "remember",
+      "lemma": "remember",
       "partOfSpeech": "n.",
-      "korean": "낭비",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "기억하다",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "changes",
-      "lemma": "change",
+      "word": "dissatisfied",
+      "lemma": "dissatisfy",
+      "partOfSpeech": "v.",
+      "korean": "dissatisfied (핵심 어휘)",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "asked",
+      "lemma": "ask",
+      "partOfSpeech": "v.",
+      "korean": "묻다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "satisfied",
+      "lemma": "satisfy",
+      "partOfSpeech": "v.",
+      "korean": "만족시키다",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "gods",
+      "lemma": "god",
       "partOfSpeech": "n.",
-      "korean": "변화",
+      "korean": "gods (핵심 어휘)",
       "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 83점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "changed",
+      "lemma": "change",
+      "partOfSpeech": "v.",
+      "korean": "변화",
+      "score": 82,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "environmental",
-      "lemma": "environmental",
-      "partOfSpeech": "adj.",
-      "korean": "환경의, 환경 보호의",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "중학기초",
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "protection",
-      "lemma": "protection",
+      "word": "thinner",
+      "lemma": "thinner",
       "partOfSpeech": "n.",
-      "korean": "보호",
+      "korean": "thinner (핵심 어휘)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -155,46 +174,10 @@
       "freq": 1
     },
     {
-      "word": "urgent",
-      "lemma": "urgent",
-      "partOfSpeech": "adj.",
-      "korean": "긴급한, 시급한",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "necessity",
-      "lemma": "necessity",
+      "word": "horse",
+      "lemma": "horse",
       "partOfSpeech": "n.",
-      "korean": "필요성, 필수품",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "positive",
-      "lemma": "positive",
-      "partOfSpeech": "adj.",
-      "korean": "긍정적인",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "longer",
-      "lemma": "long",
-      "partOfSpeech": "n.",
-      "korean": "긴",
+      "korean": "말",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -203,10 +186,10 @@
       "freq": 1
     },
     {
-      "word": "option",
-      "lemma": "option",
+      "word": "saddle",
+      "lemma": "saddle",
       "partOfSpeech": "n.",
-      "korean": "옵션",
+      "korean": "saddle (핵심 어휘)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -215,24 +198,48 @@
       "freq": 1
     },
     {
-      "word": "actions",
-      "lemma": "action",
-      "partOfSpeech": "n.",
-      "korean": "행동",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "shocked",
+      "lemma": "shock",
+      "partOfSpeech": "v.",
+      "korean": "충격",
+      "score": 76,
+      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "immense",
-      "lemma": "immense",
+      "word": "granted",
+      "lemma": "grante",
+      "partOfSpeech": "v.",
+      "korean": "granted (핵심 어휘)",
+      "score": 76,
+      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "ago",
+      "lemma": "ago",
       "partOfSpeech": "n.",
-      "korean": "엄청난",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "전",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "legs",
+      "lemma": "leg",
+      "partOfSpeech": "n.",
+      "korean": "다리",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [
         "독해필수"
       ],

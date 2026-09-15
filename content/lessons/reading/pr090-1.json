@@ -47,31 +47,68 @@
   "readingSentences": [
     {
       "id": "reading-090-s001",
-      "english": "Exercise benefits not only the physical body but also mental well-being.",
-      "korean": "운동은 신체뿐만 아니라 정신적인 건강에도 큰 유익을 준다."
+      "english": "Consider the relationships within a family unit made up of a husband, a wife, and a child.",
+      "korean": "남편과 아내 그리고 한 자녀로 일어진 가족 내에서의 관계를 생각해 보자."
     },
     {
       "id": "reading-090-s002",
-      "english": "Regular physical activity releases endorphins that reduce stress and anxiety.",
-      "korean": "규칙적인 신체 활동은 스트레스와 불안을 줄여주는 엔도르핀을 분비시킨다."
+      "english": "The husband influences his wife and child.",
+      "korean": "남편은 그의 아내와 자녀에게 영향을 미친다."
     },
     {
       "id": "reading-090-s003",
-      "english": "It enhances cardiovascular health and improves sleep quality.",
-      "korean": "그것은 심혈관 건강을 증진시키고 수면의 질을 향상시킨다."
+      "english": "The wife influences both mother and father. Add another child.",
+      "korean": "아내는 그의 남편과 자녀에게 영향을 주며, 자녀는 어머니, 아버지 모두에게 영향을 준다."
     },
     {
       "id": "reading-090-s004",
-      "english": "Maintaining a consistent workout routine is an investment in your future.",
-      "korean": "꾸준한 운동 루틴을 유지하는 것은 자신의 미래를 위한 훌륭한 투자이다."
+      "english": "A grandparent.",
+      "korean": "한 자녀를 더해 보자."
+    },
+    {
+      "id": "reading-090-s005",
+      "english": "Add an aunt. And an uncle.",
+      "korean": "조부모님을, 이모를, 삼촌을 추가해보자."
+    },
+    {
+      "id": "reading-090-s006",
+      "english": "Add a cousin. A neighbor.",
+      "korean": "사촌을, 이웃을, 친구들을 추가해 보자."
+    },
+    {
+      "id": "reading-090-s007",
+      "english": "Friends. If we were to make this list longer, we would end up with an entire society.",
+      "korean": "만약 우리가 이 명단을 더 늘려간다면 우리는 결국 하나의 전체 사회로 귀결될 것이다."
+    },
+    {
+      "id": "reading-090-s008",
+      "english": "A society is a network of relationships among individuals.",
+      "korean": "한 사회란 개인들 간의 관계로 엮어진 하나의 네트워크인 것이다."
+    },
+    {
+      "id": "reading-090-s009",
+      "english": "Each will influence the others, and each will be influenced by the others.",
+      "korean": "각자가 다른 사람들에게 영향을 주며 그들로부터 영향을 받는 것이다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "exercise",
-      "lemma": "exercise",
+      "word": "influenced",
+      "lemma": "influence",
+      "partOfSpeech": "v.",
+      "korean": "영향",
+      "score": 109,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "consider",
+      "lemma": "consider",
       "partOfSpeech": "n.",
-      "korean": "운동",
+      "korean": "고려하다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -80,36 +117,46 @@
       "freq": 1
     },
     {
-      "word": "improves",
-      "lemma": "improve",
-      "partOfSpeech": "v.",
-      "korean": "향상시키다, 개선하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초",
-        "수능",
-        "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "body",
-      "lemma": "body",
-      "partOfSpeech": "n.",
-      "korean": "몸",
-      "score": 98,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
+      "word": "family",
+      "lemma": "family",
+      "partOfSpeech": "adv.",
+      "korean": "가족",
+      "score": 100,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "reduce",
-      "lemma": "reduce",
+      "word": "society",
+      "lemma": "society",
       "partOfSpeech": "n.",
-      "korean": "감소시키다",
+      "korean": "사회",
+      "score": 99,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "friends",
+      "lemma": "friend",
+      "partOfSpeech": "n.",
+      "korean": "친구",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "mother",
+      "lemma": "mother",
+      "partOfSpeech": "n.",
+      "korean": "어머니",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -118,10 +165,10 @@
       "freq": 1
     },
     {
-      "word": "health",
-      "lemma": "health",
+      "word": "father",
+      "lemma": "father",
       "partOfSpeech": "n.",
-      "korean": "건강",
+      "korean": "아버지",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -130,82 +177,58 @@
       "freq": 1
     },
     {
-      "word": "investment",
-      "lemma": "investment",
+      "word": "relationships",
+      "lemma": "relationship",
       "partOfSpeech": "n.",
-      "korean": "투자",
-      "score": 92,
-      "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "physical",
-      "lemma": "physical",
-      "partOfSpeech": "adj.",
-      "korean": "물리적",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
+      "korean": "관계",
+      "score": 84,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "maintaining",
-      "lemma": "maintain",
-      "partOfSpeech": "v.",
-      "korean": "유지하다",
+      "word": "husband",
+      "lemma": "husband",
+      "partOfSpeech": "n.",
+      "korean": "남편",
       "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "benefits",
-      "lemma": "benefit",
+      "word": "wife",
+      "lemma": "wife",
       "partOfSpeech": "n.",
-      "korean": "혜택",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "아내",
+      "score": 83,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "mental",
-      "lemma": "mental",
-      "partOfSpeech": "adj.",
-      "korean": "정신적",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "well-being",
-      "lemma": "well-being",
+      "word": "child",
+      "lemma": "child",
       "partOfSpeech": "n.",
-      "korean": "복지, 행복, 안녕",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "아이",
+      "score": 83,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "consistent",
-      "lemma": "consistent",
+      "word": "within",
+      "lemma": "within",
       "partOfSpeech": "n.",
-      "korean": "일관된",
+      "korean": "within (핵심 어휘)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -214,24 +237,24 @@
       "freq": 1
     },
     {
-      "word": "workout",
-      "lemma": "workout",
+      "word": "add",
+      "lemma": "add",
       "partOfSpeech": "n.",
-      "korean": "운동, 체력 단련",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "추가하다",
+      "score": 73,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "routine",
-      "lemma": "routine",
+      "word": "unit",
+      "lemma": "unit",
       "partOfSpeech": "n.",
-      "korean": "루틴",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "단위",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [
         "독해필수"
       ],

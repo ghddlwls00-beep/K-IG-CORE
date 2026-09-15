@@ -47,79 +47,26 @@
   "readingSentences": [
     {
       "id": "reading-130-s001",
-      "english": "Music has the power to soothe the mind and heal the soul.",
-      "korean": "음악은 마음을 진정시키고 영혼을 치유하는 힘을 지니고 있다."
+      "english": "Work is desirable, first and foremost, as a preventive of boredom, for\n\nthe boredom that a man feels when he is doing uninteresting work is\n\nregarded as nothing in comparison with the boredom that he feels\n\nwhen he has nothing to do with his days.",
+      "korean": "일은 무엇보다도 지루함의 예방책으로써 바람직하다, 왜냐하면 사람이 흥미없는 일을 하고 있을 때 그 사람이 느끼는 지루함은 자신의 하루와 아무 관련이 없을 때 그가 느끼는 지루함에 비교하여 아무것도 아닌 것으로 간주되기 때문이다."
     },
     {
       "id": "reading-130-s002",
-      "english": "Listening to gentle melodies reduces stress and promotes emotional recovery.",
-      "korean": "부드러운 선율을 듣는 것은 스트레스를 줄이고 정서적 회복을 돕는다."
+      "english": "With this advantage of\n\nwork another is associated, namely that it makes holidays more\n\ndelicious when they come.",
+      "korean": "또 다른 장점이 이러한 장점에 연결된다. 즉 일은 휴일이 올 때 휴일을 더욱 달콤하게 만든다."
     },
     {
       "id": "reading-130-s003",
-      "english": "In many hospitals, music therapy is utilized to help patients recover faster.",
-      "korean": "많은 병원에서 환자들의 빠른 회복을 돕기 위해 음악 요법이 활용된다."
-    },
-    {
-      "id": "reading-130-s004",
-      "english": "It proves that the arts have tangible clinical benefits for physical health.",
-      "korean": "이는 예술이 신체 건강에도 실질적인 치료적 혜택을 준다는 사실을 증명한다."
+      "english": "Provided a man does not have to work so\n\nhard as to impair his vigor, he is likely to find more zest in his free\n\ntime than an idle man could find.",
+      "korean": "만약에 한 사람이 자신의 정력을 손상시킬 만큼 열심히 일해야만 하지 않는다면 그는 게으른 사람이 찾을 수 있는 여가 시간에 더욱 큰 열정을 찾을 것 같다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "music",
-      "lemma": "music",
-      "partOfSpeech": "adj.",
-      "korean": "음악",
-      "score": 109,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 109점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "health",
-      "lemma": "health",
+      "word": "hard",
+      "lemma": "hard",
       "partOfSpeech": "n.",
-      "korean": "건강",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "mind",
-      "lemma": "mind",
-      "partOfSpeech": "n.",
-      "korean": "마음",
-      "score": 98,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "soul",
-      "lemma": "soul",
-      "partOfSpeech": "n.",
-      "korean": "영혼",
-      "score": 98,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "arts",
-      "lemma": "art",
-      "partOfSpeech": "n.",
-      "korean": "예술",
+      "korean": "열심히",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -128,34 +75,46 @@
       "freq": 1
     },
     {
-      "word": "reduces",
-      "lemma": "reduce",
+      "word": "boredom",
+      "lemma": "boredom",
       "partOfSpeech": "n.",
-      "korean": "감소시키다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "boredom (핵심 어휘)",
+      "score": 89,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "faster",
-      "lemma": "fast",
-      "partOfSpeech": "n.",
-      "korean": "빨리",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "soothe",
-      "lemma": "soothe",
+      "word": "uninteresting",
+      "lemma": "unintereste",
       "partOfSpeech": "v.",
-      "korean": "달래다, 진정시키다",
+      "korean": "uninteresting (핵심 어휘)",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "regarded",
+      "lemma": "regard",
+      "partOfSpeech": "v.",
+      "korean": "존경하다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "provided",
+      "lemma": "provided",
+      "partOfSpeech": "v.",
+      "korean": "제공",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -164,72 +123,108 @@
       "freq": 1
     },
     {
-      "word": "tangible",
-      "lemma": "tangible",
+      "word": "desirable",
+      "lemma": "desirable",
       "partOfSpeech": "adj.",
-      "korean": "유형의, 만져서 알 수 있는",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "korean": "바람직한",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "clinical",
-      "lemma": "clinical",
+      "word": "preventive",
+      "lemma": "preventive",
       "partOfSpeech": "adj.",
-      "korean": "임상의, 객관적인",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "korean": "예방의, 방지하는",
+      "score": 81,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "physical",
-      "lemma": "physical",
-      "partOfSpeech": "adj.",
-      "korean": "물리적",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "power",
-      "lemma": "power",
+      "word": "foremost",
+      "lemma": "foremost",
       "partOfSpeech": "n.",
-      "korean": "힘",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "무엇보다도",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "benefits",
-      "lemma": "benefit",
+      "word": "comparison",
+      "lemma": "comparison",
       "partOfSpeech": "n.",
-      "korean": "혜택",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "비교",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "listening",
-      "lemma": "listen",
+      "word": "associated",
+      "lemma": "associate",
       "partOfSpeech": "v.",
-      "korean": "들어봐",
+      "korean": "동료",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "feels",
+      "lemma": "feel",
+      "partOfSpeech": "n.",
+      "korean": "느낌",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "impair",
+      "lemma": "impair",
+      "partOfSpeech": "n.",
+      "korean": "impair (핵심 어휘)",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "vigor",
+      "lemma": "vigor",
+      "partOfSpeech": "n.",
+      "korean": "활력",
+      "score": 75,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "delicious",
+      "lemma": "delicious",
+      "partOfSpeech": "adj.",
+      "korean": "맛있다",
+      "score": 71,
+      "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
         "독해필수"
       ],

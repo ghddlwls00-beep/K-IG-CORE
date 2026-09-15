@@ -47,93 +47,142 @@
   "readingSentences": [
     {
       "id": "reading-199-s001",
-      "english": "Artistic expression provides an emotional outlet that heals the human spirit.",
-      "korean": "예술적 표현은 인간의 영혼을 치유하는 감정적 출구를 제공한다."
+      "english": "Everyone has instincts, and listening to your inner voice is always a good idea.",
+      "korean": "모든 사람들은 직감을 가지고 있고, 자신의 내면의 소리를 듣는 것은 언제나 좋은 것이다."
     },
     {
       "id": "reading-199-s002",
-      "english": "Through painting, writing, or composing music, people process sorrow and joy.",
-      "korean": "그림을 그리거나 글을 쓰고 음악을 작곡하면서 사람들은 슬픔과 기쁨을 승화시킨다."
+      "english": "But when you’re making a decision, following your instincts is necessary but not sufficient.",
+      "korean": "그러나 여 러분이 결정을 할 때, 직감을 따르는 것은 필요하지만 충분한 것은 아니다."
     },
     {
       "id": "reading-199-s003",
-      "english": "Creative endeavors allow us to transcend difficult circumstances.",
-      "korean": "창조적인 노력은 우리가 어려운 상황을 초월할 수 있도록 도와준다."
+      "english": "Learning how to use your instincts as a guide in decision making requires effort.",
+      "korean": "결정을 내리는 지침으로 여러분의 직감을 사용하는 법을 배우는 것은 노력을 필요로 한다."
     },
     {
       "id": "reading-199-s004",
-      "english": "Art reminds us that beauty can emerge from the deepest suffering.",
-      "korean": "예술은 가장 깊은 고통 속에서도 아름다움이 피어날 수 있음을 일깨워 준다."
+      "english": "After all, no one’s instincts are always correct",
+      "korean": "무엇보다도, 어떤 사람의 본능도 언제나 옳지는 않다."
+    },
+    {
+      "id": "reading-199-s005",
+      "english": "so how do you know when to follow them and when to ignore them?",
+      "korean": "그렇다면, 직감을 언제는 따르고, 언제는 그것들을 무시해야 하는지 알 수 있을 까?"
+    },
+    {
+      "id": "reading-199-s006",
+      "english": "Following your instincts could lead you to make impulsive decisions that you may regret later.",
+      "korean": "여러분의 직감을 따르는 것은 여러분이 나중에 후회하게 될지도 모르는 충동적인 결정을 하게 할 수가 있다."
+    },
+    {
+      "id": "reading-199-s007",
+      "english": "The key is to learn how to use your instincts to support, not dictate, your decisions.",
+      "korean": "중요한 것은 여러분의 결정을 지시하는 것이 아닌 뒷받침해주기 위해서 직감을 사용 하는 법을 배우는 것이다."
+    },
+    {
+      "id": "reading-199-s008",
+      "english": "Use your experience to analyze the situation.",
+      "korean": "상황을 분석하기 위해서 여러분의 경험을 사용하라."
+    },
+    {
+      "id": "reading-199-s009",
+      "english": "Your past experience gives you the basis for judging whether your instincts can be trusted.",
+      "korean": "여러분의 과거의 경험 은 여러분의 직감이 믿을 수 있는 것인지 아닌지 판단하는 근거를 준다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "provides",
-      "lemma": "provide",
+      "word": "instincts",
+      "lemma": "instinct",
+      "partOfSpeech": "n.",
+      "korean": "본능",
+      "score": 137,
+      "reason": "지문 핵심 주제문 구성 어휘 · 수능/TOEFL 학술 독해 최빈출 고득점 어휘 (평가 점수: 137점)",
+      "examTags": [
+        "수능",
+        "TOEFL"
+      ],
+      "freq": 7
+    },
+    {
+      "word": "trusted",
+      "lemma": "trust",
       "partOfSpeech": "v.",
-      "korean": "제공하다, 공급하다",
-      "score": 111,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
+      "korean": "신뢰",
+      "score": 109,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "experience",
+      "lemma": "experience",
+      "partOfSpeech": "n.",
+      "korean": "경험",
+      "score": 107,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "following",
+      "lemma": "follow",
+      "partOfSpeech": "v.",
+      "korean": "팔로우",
+      "score": 106,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 106점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "voice",
+      "lemma": "voice",
+      "partOfSpeech": "n.",
+      "korean": "목소리",
+      "score": 102,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "idea",
+      "lemma": "idea",
+      "partOfSpeech": "n.",
+      "korean": "아이디어",
+      "score": 98,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "lead",
+      "lemma": "lead",
+      "partOfSpeech": "v.",
+      "korean": "이끌다, 초래하다",
+      "score": 95,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 95점)",
       "examTags": [
         "중학기초",
-        "수능",
-        "TOEIC"
+        "수능"
       ],
       "freq": 1
     },
     {
-      "word": "reminds",
-      "lemma": "remind",
+      "word": "requires",
+      "lemma": "require",
       "partOfSpeech": "n.",
-      "korean": "생각나게 하다",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "deepest",
-      "lemma": "deep",
-      "partOfSpeech": "n.",
-      "korean": "깊은",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "art",
-      "lemma": "art",
-      "partOfSpeech": "n.",
-      "korean": "예술",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "music",
-      "lemma": "music",
-      "partOfSpeech": "adj.",
-      "korean": "음악",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "difficult",
-      "lemma": "difficult",
-      "partOfSpeech": "n.",
-      "korean": "어려운",
+      "korean": "요구하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -142,10 +191,22 @@
       "freq": 1
     },
     {
-      "word": "allow",
-      "lemma": "allow",
+      "word": "support",
+      "lemma": "support",
       "partOfSpeech": "n.",
-      "korean": "허용하다",
+      "korean": "지원하다",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "later",
+      "lemma": "late",
+      "partOfSpeech": "n.",
+      "korean": "나중에",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -154,22 +215,22 @@
       "freq": 1
     },
     {
-      "word": "joy",
-      "lemma": "joy",
-      "partOfSpeech": "n.",
-      "korean": "기쁨",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "listening",
+      "lemma": "listen",
+      "partOfSpeech": "v.",
+      "korean": "들어봐",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "heals",
-      "lemma": "heals",
+      "word": "judging",
+      "lemma": "judge",
       "partOfSpeech": "v.",
-      "korean": "치유하다, 낫게 하다",
+      "korean": "판사",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -178,59 +239,22 @@
       "freq": 1
     },
     {
-      "word": "suffering",
-      "lemma": "suffering",
-      "partOfSpeech": "v.",
-      "korean": "괴로움",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "artistic",
-      "lemma": "artistic",
-      "partOfSpeech": "adj.",
-      "korean": "예술적",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "emotional",
-      "lemma": "emotional",
-      "partOfSpeech": "adj.",
-      "korean": "감정적인, 정서적인",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "expression",
-      "lemma": "expression",
+      "word": "always",
+      "lemma": "always",
       "partOfSpeech": "n.",
-      "korean": "표현",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "항상",
+      "score": 82,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "outlet",
-      "lemma": "outlet",
+      "word": "inner",
+      "lemma": "inner",
       "partOfSpeech": "n.",
-      "korean": "콘센트",
+      "korean": "내부",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

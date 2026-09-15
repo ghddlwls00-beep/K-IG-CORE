@@ -47,91 +47,77 @@
   "readingSentences": [
     {
       "id": "reading-195-s001",
-      "english": "The oceans cover more than seventy percent of our planet's surface.",
-      "korean": "바다는 우리 지구 표면의 70% 이상을 덮고 있다."
+      "english": "Suppose a football game begins at 1:00 p.m. in New York.",
+      "korean": "축구 경기가 오후 1시에 뉴욕에서 시작된다고 가정해 보자."
     },
     {
       "id": "reading-195-s002",
-      "english": "They regulate global climate patterns and produce the majority of the oxygen we breathe.",
-      "korean": "바다는 지구의 기후 패턴을 조절하고 우리가 숨 쉬는 산소의 대부분을 생산한다."
+      "english": "It is then 6:00 p.m. in London.",
+      "korean": "그 때 런던은 오후 6시이다."
     },
     {
       "id": "reading-195-s003",
-      "english": "Marine ecosystems support an astonishing variety of aquatic life.",
-      "korean": "해양 생태계는 놀랍도록 다양한 수생 생물들의 삶을 지탱해 준다."
+      "english": "Which time is correct?",
+      "korean": "어느 시각이 맞는 것일까?"
     },
     {
       "id": "reading-195-s004",
-      "english": "Safeguarding the health of our seas is essential for the future of humanity.",
-      "korean": "바다의 건강을 지키는 것은 인류의 미래를 위해 필수 불가결한 일이다."
+      "english": "if an explosion occurred on a star, scientists on the earth would record th time it happened.",
+      "korean": "어느 별에서 폭발이 발생했다면 지구에 있는 과학자들은 그것이 발생한 시간을 기록할 것이다."
+    },
+    {
+      "id": "reading-195-s005",
+      "english": "But anyone traveling in another part of the universe in a different direction would identify the time differently.",
+      "korean": "그러나 다른 방향으로 우주의 다른 지역을 여행하고 있는 사람들은 그 시각을 다르게 볼 것이다."
+    },
+    {
+      "id": "reading-195-s006",
+      "english": "Thus there is no absolute time.",
+      "korean": "그러므로 절대적인 시간은 존재하지 않는다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "health",
-      "lemma": "health",
-      "partOfSpeech": "n.",
-      "korean": "건강",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "climate",
-      "lemma": "climate",
+      "word": "happened",
+      "lemma": "happen",
       "partOfSpeech": "v.",
-      "korean": "기후",
-      "score": 96,
-      "reason": "대학 학술 독해 필수 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
-      "examTags": [
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "produce",
-      "lemma": "produce",
-      "partOfSpeech": "n.",
-      "korean": "생산하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "일어나다",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "support",
-      "lemma": "support",
+      "word": "earth",
+      "lemma": "earth",
       "partOfSpeech": "n.",
-      "korean": "지원하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "지구",
+      "score": 92,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "percent",
-      "lemma": "percent",
+      "word": "different",
+      "lemma": "different",
       "partOfSpeech": "n.",
-      "korean": "퍼센트, 백분율",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "다른",
+      "score": 85,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 85점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
     },
     {
-      "word": "surface",
-      "lemma": "surface",
+      "word": "suppose",
+      "lemma": "suppose",
       "partOfSpeech": "n.",
-      "korean": "표면",
+      "korean": "가정하다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -140,22 +126,34 @@
       "freq": 1
     },
     {
-      "word": "essential",
-      "lemma": "essential",
-      "partOfSpeech": "adj.",
-      "korean": "본질적인",
+      "word": "football",
+      "lemma": "football",
+      "partOfSpeech": "n.",
+      "korean": "축구",
       "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "oceans",
-      "lemma": "ocean",
+      "word": "p.m",
+      "lemma": "p.m",
       "partOfSpeech": "n.",
-      "korean": "바다",
+      "korean": "p.m (핵심 어휘)",
+      "score": 78,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "begins",
+      "lemma": "begin",
+      "partOfSpeech": "n.",
+      "korean": "시작하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -164,10 +162,10 @@
       "freq": 1
     },
     {
-      "word": "cover",
-      "lemma": "cover",
+      "word": "absolute",
+      "lemma": "absolute",
       "partOfSpeech": "n.",
-      "korean": "커버",
+      "korean": "절대",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -176,46 +174,10 @@
       "freq": 1
     },
     {
-      "word": "planet",
-      "lemma": "planet",
-      "partOfSpeech": "n.",
-      "korean": "행성",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "safeguarding",
-      "lemma": "safeguarding",
-      "partOfSpeech": "n.",
-      "korean": "보호하는 것, 안전장치",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "humanity",
-      "lemma": "humanity",
-      "partOfSpeech": "n.",
-      "korean": "인류, 인간성",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "regulate",
-      "lemma": "regulate",
+      "word": "occurred",
+      "lemma": "occur",
       "partOfSpeech": "v.",
-      "korean": "규제하다",
+      "korean": "발생하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -224,12 +186,60 @@
       "freq": 1
     },
     {
-      "word": "astonishing",
-      "lemma": "astonishing",
+      "word": "traveling",
+      "lemma": "travel",
       "partOfSpeech": "v.",
-      "korean": "놀라운",
+      "korean": "여행",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "game",
+      "lemma": "game",
+      "partOfSpeech": "n.",
+      "korean": "게임",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "york",
+      "lemma": "york",
+      "partOfSpeech": "n.",
+      "korean": "york (핵심 어휘)",
+      "score": 73,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "thus",
+      "lemma": "thus",
+      "partOfSpeech": "n.",
+      "korean": "thus (핵심 어휘)",
+      "score": 71,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "correct",
+      "lemma": "correct",
+      "partOfSpeech": "n.",
+      "korean": "맞다",
+      "score": 69,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
         "독해필수"
       ],
