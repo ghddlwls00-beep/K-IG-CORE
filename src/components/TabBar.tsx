@@ -11,8 +11,14 @@ import { useLicense } from "./LicenseProvider";
 /**
  * The persistent top navigation.
  *
- * Desktop (md+): Shows the horizontal row of all curriculum tabs in the center.
- * Mobile (<md): Cleanly consolidates the navigation tabs into a top-right 3-line hamburger menu drawer.
+ * Desktop (xl+): Shows the horizontal row of all curriculum tabs in the center.
+ * Narrower: Cleanly consolidates the navigation tabs into a top-right 3-line hamburger menu drawer.
+ *
+ * The row is ten tabs wide and needs about 1100px of viewport to fit; from md
+ * up to that point it used to overflow silently (141px of it at 800px, which
+ * put "CNN NEWS" and "GVA 독해" out of reach behind a scrollbar that
+ * no-scrollbar keeps invisible). Below xl the drawer lists every tab instead,
+ * so nothing is ever clipped (KIG-036).
  */
 export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<string, string> }) {
   const pathname = usePathname();
@@ -52,7 +58,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
     <>
       <header className="sticky top-0 z-50 border-b border-line bg-surface/85 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-4 sm:px-5">
-          <div className="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] gap-4 py-3">
+          <div className="flex items-center justify-between xl:grid xl:grid-cols-[1fr_auto_1fr] gap-4 py-3">
             {/* Logo */}
             <div className="flex items-center justify-start shrink-0">
               <Link
@@ -68,7 +74,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             {/* Desktop Navigation (md+) */}
             <nav
               aria-label="Courses"
-              className="no-scrollbar hidden md:flex items-center justify-center gap-1 overflow-x-auto overflow-y-hidden py-1"
+              className="no-scrollbar hidden xl:flex items-center justify-center gap-1 overflow-x-auto overflow-y-hidden py-1"
             >
               {ordered.map((tab) => {
                 const active = activeTab === tab.slug;
@@ -103,13 +109,13 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
               <LicenseButton />
               <SearchDialog />
 
-              {/* Mobile 3-bar Hamburger Button (Visible only below md) */}
+              {/* 3-bar Hamburger Button (Visible only below xl) */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
                 aria-expanded={mobileMenuOpen}
-                className="flex md:hidden h-10 w-10 min-w-[40px] items-center justify-center rounded-xl border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
+                className="flex xl:hidden h-10 w-10 min-w-[40px] items-center justify-center rounded-xl border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
               >
                 <div className="flex flex-col items-center justify-center gap-1.5 w-4.5">
                   <span
@@ -136,7 +142,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
 
       {/* Mobile Drawer Overlay & Slide-out Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden flex justify-end">
+        <div className="fixed inset-0 z-50 xl:hidden flex justify-end">
           {/* Backdrop */}
           <div
             className="fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity animate-fade-in"

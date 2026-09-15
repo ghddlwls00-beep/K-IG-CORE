@@ -507,7 +507,10 @@ export function StudentLearningView({
 
         {/* 3-Step Navigation Tab Bar */}
         <nav aria-label="학습 단계" className="w-full rounded-xl bg-raised/80 p-1.5 border border-line/70">
-          <div className="grid grid-cols-3 gap-1.5">
+          {/* Three columns only fit these labels from sm up; at 375px they were
+              truncated to "Step 1. 블라…" (50px of room for 115px of text), so
+              phones get a stacked list instead (KIG-036). */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
             <button
               type="button"
               onClick={() => switchMode("listen")}

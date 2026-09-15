@@ -390,7 +390,10 @@ export function LdLearningView({
         aria-label="리스닝 5단계 학습 단계"
         className="sticky top-[57px] z-30 w-full rounded-2xl border border-line bg-surface/95 p-1 sm:p-1.5 shadow-xs backdrop-blur-md"
       >
-        <div className="grid grid-cols-5 gap-1 sm:gap-1.5">
+        {/* Five columns leave ~36px for labels like "소리클리닉" on a 375px
+            screen, so phones wrap the row into two instead of clipping it
+            (KIG-036). */}
+        <div className="grid grid-cols-3 sm:grid-cols-5 gap-1 sm:gap-1.5">
           {TABS.map((tab) => {
             const active = activeTab === tab.id;
             return (
