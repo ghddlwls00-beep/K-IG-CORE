@@ -94,12 +94,27 @@ export default function proxy(request: NextRequest) {
 }
 
 /**
- * Page routes only. `_next/` is framework traffic, `api/` is endpoints, and
- * `/audio/...` and `/video/...` are served by route handlers that answer with
- * their own statuses — the proxy has no business rewriting those. Anything with
- * a dot in it is a file: `/robots.txt`, `/sitemap.xml`, `/icon.svg`,
- * `/search-index.json` and every clip.
+ * TWO-SEGMENT PATHS ONLY, and everything else stays off this function.
+ *
+ * The middleware hop is not free on Vercel — measured on production 2026-09-16,
+ * a page that goes through it answers in ~106ms while one that does not answers
+ * in ~20ms. So the matcher is as narrow as the bug allows.
+ *
+ * Narrowing it is safe because two segments is the ONLY shape that was broken:
+ *
+ *   one segment (`/x`)        `[course]` is static with `dynamicParams = false`,
+ *                             so the router already answers 404 with a real page
+ *   two segments (`/ld/x`)    THE BUG — dynamic route, `notFound()` mid-stream
+ *   three or more (`/x/y/z`)  matches no route, already server-rendered
+ *
+ * Both of the shapes left out are asserted by `verify-error-pages.cjs`, so a
+ * regression here cannot pass quietly.
+ *
+ * `_next/` is framework traffic, `api/` is endpoints, and `/audio/...` and
+ * `/video/...` are served by route handlers that answer with their own
+ * statuses. Anything with a dot in it is a file: `/robots.txt`, `/sitemap.xml`,
+ * `/icon.svg`, `/search-index.json` and every clip.
  */
 export const config = {
-  matcher: ["/((?!_next/|api/|audio/|video/|.*\\..*).*)"],
+  matcher: ["/((?!_next/|api/|audio/|video/|.*\\..*)[^/]+/[^/]+)"],
 };
