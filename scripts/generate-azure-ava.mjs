@@ -139,10 +139,19 @@ function collectCollocationPhrases(dictionary) {
   const getCollocation = voca?.getCollocation;
   if (typeof getCollocation !== "function") throw new Error("getCollocation not found");
 
+  // Signature is `(word, searchWord?)`. It was `(word, meaning, searchWord?)`
+  // until KIG-012 (commit 98c740e) dropped `meaning` — it only fed the template
+  // that is no longer produced. Passing the Korean meaning in the second slot
+  // now makes it the lookup key, which matches no preset, so every word returns
+  // null and this collects nothing: no crash, no error, just a silently empty
+  // clip list. Calling the component's real function protects against drift in
+  // what it RETURNS, not in how it is CALLED — from JavaScript there is no type
+  // check, so a changed signature has to be followed by hand.
   const phrases = new Set();
   for (const [word, entry] of Object.entries(dictionary)) {
-    const meaning = entry?.meaning || entry?.korean || "";
-    const item = getCollocation(word, meaning, entry?.searchWord);
+    const item = getCollocation(word, entry?.searchWord);
+    // null where the author never wrote a collocation: the card is hidden, so
+    // there is no phrase to speak and no clip to generate.
     if (item?.phrase) phrases.add(item.phrase);
   }
   return [...phrases];

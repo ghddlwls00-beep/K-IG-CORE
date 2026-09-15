@@ -236,10 +236,17 @@ function checkGroupsSequence(section, groups, expectIds) {
         }
         if (!/^[A-Za-z][A-Za-z'\-. ]*$/.test(w)) issue(S, "P2", id, "ODD_WORD_TOKEN", `word cell "${w}"`);
         const searchWord = subset[clean]?.searchWord;
-        const colloc = vocaUtils.getCollocation(w, meaning, subset[w]?.searchWord || searchWord);
-        if (colloc.phrase.startsWith("vital role of")) genericCollocation++;
+        // KIG-012 (commit 98c740e) changed this to `(word, searchWord)` and made
+        // it return null where no collocation was authored, so the card is
+        // hidden instead of showing a generated template. Passing the Korean
+        // `meaning` in the second slot would silently become the lookup key and
+        // match nothing; dereferencing the null threw and killed this audit.
+        const colloc = vocaUtils.getCollocation(w, subset[w]?.searchWord || searchWord);
+        if (colloc?.phrase?.startsWith("vital role of")) genericCollocation++;
         addSpeech(w, where);
-        addSpeech(colloc.phrase, where);
+        // A word with no authored collocation speaks no phrase, so there is no
+        // clip to expect for it — counting one here would report a false gap.
+        if (colloc?.phrase) addSpeech(colloc.phrase, where);
         const ety = vocaUtils.analyzeEtymology(w);
         if (ety.prefix) bogusEtymology.push({ id, word: w, explanation: ety.explanation });
       }
