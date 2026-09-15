@@ -52,18 +52,29 @@ export interface OriginResponse {
   headers: Headers;
 }
 
+/**
+ * The last S3 failure, so /api/media-health can name it. Only the error's own
+ * code and HTTP status are kept — never a key, a bucket or a credential.
+ */
+let lastS3Error: { name: string; status?: number; at: string } | null = null;
+export function getLastS3Error() {
+  return lastS3Error;
+}
+
+async function fetchFromPublicUrl(key: string, range: string | null): Promise<OriginResponse> {
+  const res = await fetch(`${PUBLIC_BASE}/${key}`, {
+    headers: range ? { Range: range } : undefined,
+    cache: "no-store",
+  });
+  return { status: res.status, body: res.body, headers: new Headers(res.headers) };
+}
+
 /** `key` is the object key without a leading slash, e.g. "audio/ld/d150.mp3". */
 export async function fetchMediaObject(
   key: string,
   range: string | null,
 ): Promise<OriginResponse> {
-  if (!HAS_S3_CREDENTIALS) {
-    const res = await fetch(`${PUBLIC_BASE}/${key}`, {
-      headers: range ? { Range: range } : undefined,
-      cache: "no-store",
-    });
-    return { status: res.status, body: res.body, headers: new Headers(res.headers) };
-  }
+  if (!HAS_S3_CREDENTIALS) return fetchFromPublicUrl(key, range);
 
   try {
     const out = await s3().send(
@@ -82,7 +93,15 @@ export async function fetchMediaObject(
     };
   } catch (err) {
     const status = (err as { $metadata?: { httpStatusCode?: number } })?.$metadata?.httpStatusCode;
-    // A Range past the end of the object is a 416, not a missing file.
-    return { status: status === 416 ? 416 : 404, body: null, headers: new Headers() };
+    const name = (err as { name?: string })?.name ?? "UnknownError";
+    lastS3Error = { name, status, at: new Date().toISOString() };
+
+    // A Range past the end of the object is a real 416, not a configuration fault.
+    if (status === 416) return { status: 416, body: null, headers: new Headers() };
+
+    // Anything else — wrong bucket, a token without read access, a transient
+    // fault — must not take the audio down while the bucket is still public.
+    // Fall back so the site keeps working; /api/media-health names the fault.
+    return fetchFromPublicUrl(key, range);
   }
 }
