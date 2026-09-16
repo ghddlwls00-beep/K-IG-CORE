@@ -3,12 +3,30 @@ import type { NextConfig } from "next";
 /**
  * RE-006 — Content-Security-Policy.
  *
- * SHIPPED AS REPORT-ONLY FIRST, and that is deliberate: a wrong CSP breaks the
+ * SHIPPED AS REPORT-ONLY FIRST, and that was deliberate: a wrong CSP breaks the
  * whole site at once (styles, audio, hydration), and it breaks it for everyone.
  * Report-Only sends violations to the browser console and blocks nothing, so
- * the policy can be checked against real traffic before it has teeth. Flip
- * `CSP_REPORT_ONLY` to false only after the console is clean on every route —
- * see `docs/qa-2026-09-15/PROGRESS.md`.
+ * the policy could be checked against real traffic before it had teeth.
+ *
+ * NOW ENFORCED. Before flipping, production was walked with a
+ * `securitypolicyviolation` listener and the console reader, over `/`, `/t/voca`,
+ * `/reading`, and one live page of every course — VOCA, LISTENING, READING,
+ * GRAMMAR I and II, STUDENT, CNN — plus `/admin/license`. Audio was played on
+ * the VOCA and LISTENING pages and served 206 from `/audio/*`. Zero violations.
+ *
+ * The instrument was proved before it was trusted: a deliberate off-origin
+ * script, stylesheet, font and image were injected into the live page first, and
+ * all four were reported. An empty console here means nothing fired, not that
+ * nothing was listening — the check that let a blank 404 page pass as fixed.
+ *
+ * Also verified by reading rather than by clicking, since a paid lesson cannot
+ * be opened anonymously: every client-side `fetch` in `src/` is same-origin
+ * (`/api/*`, `/search-index.json`), `content/` holds no absolute media URL, and
+ * `NEXT_PUBLIC_MEDIA_URL` is unset, so `mediaUrl()` keeps every clip on this
+ * origin. The R2 endpoints in `src/lib/` are server-side and CSP never sees them.
+ *
+ * If something does break, this is one boolean and a redeploy away from being
+ * Report-Only again.
  *
  * THE POLICY IS TIGHT BECAUSE THE SITE IS FULLY SAME-ORIGIN. Checked against
  * the built HTML: the only absolute URLs on any page are this site's own
@@ -29,7 +47,7 @@ import type { NextConfig } from "next";
  * with preload) and `report-uri` (no collector exists — see STATUS-2026-09-16
  * §3-3; the console is the only channel, so the header carries no report target).
  */
-const CSP_REPORT_ONLY = true;
+const CSP_REPORT_ONLY = false;
 
 const CSP = [
   "default-src 'self'",
