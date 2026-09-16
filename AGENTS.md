@@ -1,41 +1,110 @@
-# K-IG-CORE 프로젝트 가이드 & 에이전트 지침
+# K-IG-CORE — 에이전트 지침
 
-이 프로젝트는 **K-IG 핵심 6대 어학 과정 (VOCA · GRAMMAR 1·2 · 수능영어 듣기 · READING · CNN)** 전용 독립 웹 플랫폼입니다.
+상업 출시를 준비 중인 한국인 대상 영어 학습 플랫폼입니다.
+**운영 중인 사이트가 있습니다**: https://k-ig-core.vercel.app — `main` 에 푸시하면 바로 배포됩니다.
+
+## 🔴 시작하기 전에 반드시 읽을 것
+
+**`docs/qa-2026-09-15/NEXT-SESSION.md` 의 §0-Z 가 현재 작업 지시입니다.**
+무엇을 할지는 거기에 있습니다. 이 파일은 "어떻게" 에 해당합니다.
+같은 저장소에서 다른 AI 가 함께 일합니다. §0-Z 의 "직전 세션들이 끝낸 것" 표를
+먼저 보고, 이미 된 일을 다시 하지 마세요.
+
+## 절대 하지 말 것
+
+- **`git add -A` · `git add .` 금지.** 파일을 하나하나 이름으로 지정해서 add 하세요.
+  이 저장소는 두 AI 가 동시에 씁니다. 전체 스테이징은 남의 작업 중인 파일을
+  같이 커밋해 버립니다.
+- **`git stash` 금지.** 이 저장소에서 `fatal: unable to read tree` 가 난 이력이 있습니다.
+- **`.env.local` · `.vercel/` 의 값을 출력·캡처·커밋하지 마세요.** 한 번 노출된 적이 있습니다.
+- **CNN · GVA 과정은 폐지되었습니다.** 고치지도, 검수하지도, 음성을 만들지도 마세요.
+- **UI 문구에 음성 출처를 쓰지 마세요.** "원어민 음성" 도 "AI 음성" 도 안 됩니다.
+  기능만 설명하세요 ("문장 듣기" 처럼).
+- **`content/lessons/student/` 의 괄호를 대안 정답으로 분리하지 마세요.**
+  거긴 빈칸 자리표시자입니다. `apply-kig006.cjs` 의 `EXCLUDED_COURSES` 로 막혀
+  있으니 플래그로 풀지 마세요.
+- **소유자 몫은 손대지 마세요.** §0-Z 맨 아래 "소유자 몫" 목록 (법적 문서, 결제 수단,
+  교재 자체 결함 판정 등) 은 사람이 결정할 일입니다.
+
+## 🔴 텍스트를 바꾸면 음성이 깨집니다
+
+음성 클립의 키가 **텍스트의 해시**입니다 (`unifiedSpeechKey(text)`).
+영어 문장을 한 글자라도 바꾸면 그 문장의 클립은 **없는 것이 됩니다.**
+
+그러므로 텍스트 변경과 클립 재생성은 **같은 작업 안에서** 끝내야 합니다.
+
+```bash
+node scripts/generate-azure-ava.mjs --dry-run   # pending 이 0 이어야 합니다
+```
+
+한글 뜻만 바꾸는 경우는 해당 없습니다 — 음성은 영어만 읽습니다.
+
+## 검증 규칙 — 전부 실제로 난 실패에서 나온 것입니다
+
+- **상태 코드가 아니라 렌더링된 텍스트로 판정하세요.** `<body>` 에서 `<script>` 를
+  지우고 태그를 걷어낸 뒤 남은 글자 수를 보세요. 404 수정이 "5개 경로 통과" 로
+  보고됐지만 서버가 보낸 HTML 은 비어 있었습니다.
+- **개수가 아니라 내용을 보세요.** `gh1-033` 이 "우리가 망가뜨림" 으로 분류된 건
+  항목 수가 23 vs 25 였기 때문인데, 실제로는 교재가 두 문항을 한 줄에 쓴 것이었습니다.
+- **TS 함수 시그니처를 바꾸면 `.cjs` / `.mjs` 호출부를 grep 하세요.** 타입 검사가
+  못 잡습니다. `getCollocation` 인자 변경이 음성 수집기를 **에러 없이 0개** 로
+  만든 적이 있습니다. 조용히 실패하는 쪽이 더 위험합니다.
+- **표본으로 일반화하지 마세요.** 이 저장소의 데이터 문제는 레슨마다 다릅니다.
+  8개를 보고 276개를 판단하면 반드시 틀립니다.
+- 커밋 전에 `npx tsc --noEmit` 과 `npx next build`.
+- 보고할 때는 운영에서 실제로 잰 숫자를 쓰세요.
+
+## 새 레슨을 추가하거나 id 를 바꾸면
+
+```bash
+node scripts/buildValidRoutes.mjs
+```
+
+`src/lib/generated/validRoutes.json` 을 반드시 다시 만드세요 — proxy 가 이걸 읽습니다.
+`prebuild` 가 해 주지만 **`npx next build` 는 `prebuild` 를 돌리지 않습니다.**
+`s19-3` 을 복원했을 때 이 목록이 낡아서 새 레슨이 통째로 404 였습니다.
 
 ---
 
-## 1. 프로젝트 기본 정보
-- **로컬 경로**: `C:\Users\ghddl\.gemini\antigravity\scratch\K-IG-CORE`
-- **GitHub 원격 저장소**: [https://github.com/ghddlwls00-beep/K-IG-CORE](https://github.com/ghddlwls00-beep/K-IG-CORE)
-- **스택**: Next.js 16 (App Router, Turbopack) + TypeScript + Tailwind CSS 4 + Web Speech API
+## 프로젝트 기본 정보
+
+- **원격 저장소**: https://github.com/ghddlwls00-beep/K-IG-CORE
+- **스택**: Next.js 16 (App Router) · React 19 · TypeScript · Tailwind 4 · Vercel
 - **패키지 매니저**: `pnpm`
+- **저장소**: Cloudflare R2 — `k-iglab` (미디어), `k-ig-license-private` (라이선스·진도)
+- **음성**: Azure Speech, `en-US-AvaMultilingualNeural`
 
----
+## 운영 중인 과정
 
-## 2. 핵심 6대 과정 구성
-1. **VOCA (보카 어휘 매트릭스, slug: phonics)**
-   - 분류: 중등단어 1·2·3 (mv1, mv2, mv3), 고등단어 (hv)
-   - 사전: `content/voca_dictionary.json` (3,877개 단어 1:1 완벽 한글 뜻 연동)
-   - 발음 테스트: 엄격한 4단계 레벨 평가 시스템 (`VoiceSpeakingTester.tsx`)
-2. **GRAMMAR I (영문법 1, slug: grammar1)**
-   - 핵심 영작 연습, 한글 프롬프트와 모범 답안 1:1 대조 및 해설
-3. **GRAMMAR II (영문법 2, slug: grammar2)**
-   - 심화 영작 연습, 문제-해설 완역 대조
-4. **LISTENING (Listening & Dictation, slug: ld)**
-   - 실전 수능형 리스닝, 영문 스크립트와 한글 대본 1:1 대조 및 Dictation(받아쓰기) 시험
-5. **READING (리딩, slug: reading)**
-   - 원어민 오디오 + 문장별 직독직해 분석 뷰어
-   - 본문 클릭 및 마우스 드래그 시 고정 유지
-6. **CNN 뉴스 (slug: cnn)**
-   - CNN 비디오 영상 + 문장 단위 1:1 보도 대본 완역 대조 및 시사 어휘 디코딩
+| 과정 | slug | 데이터 |
+|---|---|---|
+| VOCA 어휘 | `phonics` | `content/voca_dictionary.json` (3,877 표제어) |
+| GRAMMAR I | `grammar1` | `content/lessons/grammar1/` |
+| GRAMMAR II | `grammar2` | `content/lessons/grammar2/` |
+| LISTENING | `ld` | `content/lessons/ld/` · `content/ld_english_scripts.json` |
+| READING | `reading` | `content/lessons/reading/` |
+| STUDENT | `student` | `content/lessons/student/` — 괄호는 **빈칸**입니다 |
 
----
+**CNN · GVA 는 폐지되었습니다.** 데이터는 남아 있지만 작업 대상이 아닙니다.
 
-## 3. 핵심 규칙 및 개발 가이드
-- **데이터 위치**: `content/lessons/` (각 과정별 JSON 데이터) 및 `content/voca_dictionary.json`
-- **빌드 검증**: 작업 후 `npx tsc --noEmit` 및 `pnpm run build`로 정적 생성 무결성 검증
-- **깃허브 배포**: 변경 완료 후 `git add -A`, `git commit -m "..."`, `git push origin main` 실행 (또는 `push_to_github.bat` 실행)
-- **자율 실행**: 사용자 확인 질문으로 지체하지 말고 최적의 방안으로 즉시 구현하고 검증 후 보고할 것.
+### 데이터에 대해 알아야 할 것
+
+교재 원본(2009·2012년판) 과의 대조가 끝났고, `content/` 쓰기 금지는 해제되었습니다.
+다만 **교재에 원래 없어서 생성된 데이터**가 있습니다. 여기는 "원본대로" 가 통하지 않으니
+고칠 때 근거를 따로 대야 합니다:
+
+- VOCA 의 한글 뜻 — 교재에 아예 없었습니다. 526건은 교정했고 507건은 미검수입니다.
+- LISTENING 의 영어 스크립트 — 교재에는 한글 대본만 있었습니다.
+  지금 본문은 **녹음이 실제로 말하는 문장**으로 맞춰져 있습니다 (일치율 99.9%).
+- READING 어휘 카드의 뜻 — 교재 지문에 나오는 건 3분의 1뿐이었습니다.
+
+대조 결과는 `docs/qa-2026-09-15/evidence/` 에 있습니다.
+
+## 자율성
+
+§0-Z 에 적힌 일은 묻지 말고 진행하세요. 다만 **되돌리기 어려운 일**
+(데이터 대량 삭제, 비밀키 변경, 결제·법적 문구) 과 위 "소유자 몫" 은
+사람에게 확인받고 하세요.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
