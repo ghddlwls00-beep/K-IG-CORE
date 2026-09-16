@@ -247,9 +247,33 @@ function collectTexts() {
   // Listening & Dictate renders its authentic English script from this
   // supplemental file rather than from content/lessons, so it must be part
   // of the same unified Ava inventory.
+  //
+  // ONLY the English. Every row here is {n, en, ko}, and LISTENING never speaks
+  // the translation — all twelve playback calls in LdLearningView pass `.en`,
+  // `.original` or the English queue, and the Korean is rendered as text.
+  //
+  // Collecting `ko` here made every correction to a translation look like
+  // missing audio: re-cutting the Korean sentence boundaries reported 62 clips
+  // pending when not one English character had changed. 109 entries leave the
+  // inventory — the Korean of these lessons is mostly also in
+  // content/lessons/ld/, which is collected separately and untouched, so the
+  // saving is the sentences that exist only here.
+  //
+  // Other courses are different and are left alone. STUDENT really does speak
+  // its Korean — StudentLearningView carries `kind: "en" | "ko"` and puts a
+  // play button beside each Korean line — so the blanket rule "skip Korean"
+  // would have silenced it.
   const ldScriptsFile = path.join(ROOT, "content", "ld_english_scripts.json");
   if (fs.existsSync(ldScriptsFile)) {
-    collectValue(JSON.parse(fs.readFileSync(ldScriptsFile, "utf8")), "", raw);
+    const ld = JSON.parse(fs.readFileSync(ldScriptsFile, "utf8"));
+    for (const rows of Object.values(ld)) {
+      if (!Array.isArray(rows)) continue;
+      // The row is handed over with only its `en` key, so `collectValue` sees a
+      // key it speaks and never sees `ko`. Passing `row.en` directly would not
+      // work: the key is what decides, and a bare value arrives with key "",
+      // which `SPEECH_KEYS` does not contain — the English would vanish too.
+      for (const row of rows) collectValue({ en: row?.en }, "", raw);
+    }
   }
 
   const dictionaryFile = path.join(ROOT, "content", "voca_dictionary.json");

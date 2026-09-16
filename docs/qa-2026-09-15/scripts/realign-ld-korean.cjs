@@ -52,6 +52,16 @@ const ONLY = (() => {
   const i = process.argv.indexOf("--only");
   return i >= 0 && process.argv[i + 1] ? new Set(process.argv[i + 1].split(",")) : null;
 })();
+/**
+ * Re-split a named lesson even when the boundary check says it is fine.
+ *
+ * That check asks whether a Korean entry finishes its sentence. It cannot see
+ * the other way a lesson goes wrong: every entry is a whole sentence, but sitting
+ * one slot from where it belongs — d008 #3 carries only the first half of its
+ * English, and the rest is the whole of #4. Those were found by comparing the
+ * numbers each pair should share, and they have to be named by hand.
+ */
+const FORCE = process.argv.includes("--force");
 
 const scripts = JSON.parse(fs.readFileSync(FILE, "utf8"));
 
@@ -95,7 +105,7 @@ for (const id of Object.keys(scripts)) {
     const prev = i > 0 ? String(rows[i - 1].ko ?? "").trim() : "";
     return Boolean(prev) && !ENDS_SENTENCE.test(prev);
   });
-  if (!needs) continue;
+  if (!needs && !(FORCE && ONLY?.has(id))) continue;
 
   const before = rows.map((r) => String(r.ko ?? "").trim());
   const joined = before.filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
