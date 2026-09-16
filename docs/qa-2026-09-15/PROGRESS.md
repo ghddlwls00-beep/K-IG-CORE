@@ -2,7 +2,7 @@
 
 > 이 문서는 **세션이 바뀌어도 작업을 그대로 이어받기 위한** 인수인계 기록입니다.
 > 작업 지시 원본은 `docs/qa-2026-09-15/README.md`, 재개용 프롬프트는 `PROMPT.md`를 보세요.
-> 최종 갱신: 2026-09-16 (9차 — RE-006 CSP 완료 `8c59d82`. RE-016 404 백지 후속 `9e65501` 도 같은 배포에 반영됨)
+> 최종 갱신: 2026-09-16 (10차 — RE-004 미디어 허용 목록 완료. 9차는 RE-006 CSP `8c59d82`, 그 배포에 RE-016 404 백지 후속 `9e65501` 도 반영됨)
 > ⚠️ `PROGRESS.md` 와 `NEXT-SESSION.md` 가 충돌하면 **`NEXT-SESSION.md` 가 우선**입니다.
 
 ---
@@ -159,6 +159,33 @@ PROGRESS.md 에 (1) 이번에 완료한 이슈와 커밋 해시·검증 수치, 
   `vocaUtils.ts:180`(원어민 강세 위치), `LdLearningView.tsx:851`(원어민 소리의 법칙),
   `LdLearningView.tsx:1111`(실전 원어민 대화 속도), `DialogueLearningView.tsx:1260`(원어민 대화에서 자주 쓰는 표현),
   `listeningUtils.ts:130`(원어민 회화에서 out of 축약).
+
+> ### 🔴 정정 (2026-09-16, 10차 세션) — KIG-009 는 **완료가 아니었습니다**
+>
+> 위 "처리한 것 27곳"은 **음성 출처를 언급하는 문구를 다 지우지 못했습니다.** 11곳이 남아 있었습니다.
+> `src/` 전수 grep(정규식 `AI ?음성|AI ?Speech|AI音声|AI语音|원어민 ?음성|native ?voice|Ava ?음성`) 결과:
+>
+> | 파일 | 남아 있던 문구 | 성격 |
+> |---|---|---|
+> | `src/app/[course]/[lesson]/page.tsx:348` | `전체 듣기 (AI 음성 재생)` | 한국어 하드코딩 |
+> | `src/lib/i18n.ts:56·112·168·224` | `player.missingAudio` 4개 로케일 전부 (`AI 음성(TTS)` / `AI Speech (TTS)` / `AI音声(TTS)` / `AI语音(TTS)`) | **전 과정 공용** |
+> | `src/lib/i18n.ts:60·116·172·228` | `player.ttsMode` 4개 로케일 전부 (`AI 음성` / `AI Speech` / `AI音声` / `AI语音`) | **전 과정 공용** |
+> | `src/components/ChapterAudioBar.tsx:280·281` | `1·2강을 Ava 음성으로 연속 재생` / `N개 파트를 Ava 음성으로 연속 재생` | `/[course]` 대시보드에 노출 |
+>
+> **왜 놓쳤나**: §1-B 는 `원어민` 이라는 낱말을 기준으로 훑었고, `AI 음성`·`Ava` 는 다른 낱말이라 걸리지 않았습니다.
+> `i18n.ts` 는 로케일마다 같은 키가 4벌이라 한 곳만 고치면 나머지 3개 언어가 그대로 남습니다.
+>
+> **10차 세션에서 11곳 전부 정리했습니다.** 대체 문구는 소유자 지정:
+> `전체 듣기` · `오디오 파일이 없어 합성 음성으로 재생합니다.` · `합성 재생`
+> (en `Synthesized`, ja `合成再生`, zh `合成播放`).
+> 검증: 같은 정규식으로 `src/` **11 → 0건**. 일부러 남긴 5곳(`원어민` = 언어 설명)은 그대로 유지.
+>
+> ⚠️ `DialogueLearningView.tsx:146` 의 `남성 음성 (Male Voice)` 는 **그대로 두었습니다** —
+> 재생되는 오디오의 출처가 아니라 화자 성별 선택 기능의 설명이고, 그 컴포넌트는
+> `man`·`woman`·`adults*` 전용이라 라우트 미노출입니다.
+>
+> ⚠️ `player.ttsMode`·`player.missingAudio` 는 **현재 어느 컴포넌트도 읽지 않습니다**(전수 grep 0건).
+> 그래도 4개 로케일에 남아 있으면 나중에 재사용될 때 잘못된 문구가 그대로 나가므로 함께 고쳤습니다.
 
 ### ✅ GVA 섹션 폐지 (완료) — §1-A 참조
 
@@ -809,6 +836,115 @@ canonical 이 엉뚱한 곳을 가리키면 allow-list 가 조용히 넓어지�
 
 ---
 
+## 1-I. 10차 세션 완료분 (2026-09-16) — RE-004 + KIG-009 잔여 + STUDENT 무료 음원
+
+> 정본은 `NEXT-SESSION.md` §0-Z [1]. 소유자 승인 범위: RE-004 허용 목록 전환 · KIG-009 잔여 문구 정리 ·
+> STUDENT 무료 미리보기 트랙 음원 403. **R2 객체 삭제는 하지 않기로 했습니다**(게이트 + 비공개 버킷으로 충분).
+
+### ✅ RE-004 — 미디어 게이트가 fail-open 이었습니다
+
+`src/lib/mediaAccess.ts` 의 `unclaimed` 분기가 **허용**이었습니다. 주석의 근거("섹션 이미지·아이콘")는
+**사실이 아닙니다** — 섹션 이미지는 `public/images/sections/` 의 10개 파일이고 Next 가 정적으로 서빙하며,
+이 핸들러는 `/audio/…`·`/video/…` 만 받습니다(proxy matcher 도 둘을 제외).
+그 분기가 실제로 통과시킨 것은 **버킷에 남아 있는 폐지 과정 음원**입니다.
+
+| 실측 (운영, HEAD, 2026-09-16) | 수정 전 | 수정 후(로컬 빌드) |
+|---|---|---|
+| `/audio/adults/am01.mp3` | **200** + `public, max-age=31536000, immutable` | **403** + `private, no-store` |
+| `/audio/man/m1-1-1.mp3` | 200 + immutable | 403 + no-store |
+| `/audio/woman/w1-1-1.mp3` | 200 + immutable | 403 + no-store |
+| `/audio/basics/po01.mp3` | 200 + immutable | 403 + no-store |
+| `/audio/chinese/c1-swf1.mp3` | 200 + immutable | 403 + no-store |
+| `/audio/middle/p01.mp3` | 200 + immutable | 403 + no-store |
+| `/audio/nosuchfolder/x.mp3` | 404 (게이트 통과 후 origin 404) | **403** (게이트에서 거부) |
+| `/audio/ld/d276.mp3` (유료) | 403 | 403 (회귀 없음) |
+
+**수정 (2개 파일)**
+- `src/lib/mediaAccess.ts` — `MediaAccess` 유니온에서 `unclaimed` 을 **거부 쪽으로 이동**.
+  `FOLDER_TO_COURSE` 가 곧 **허용 목록**입니다.
+- `src/lib/mediaRoute.ts` — `PUBLICLY_CACHEABLE` 에서 `unclaimed` 제거.
+  거부 응답이 `immutable` 로 캐시되면 상태 코드만 403 이고 CDN 은 계속 내줍니다.
+  셋을 `Set<MediaAccess["reason"]>` 로 타이핑해 **오타가 조용히 지나가지 못하게** 했습니다.
+
+> **버킷 직접 주소는 이미 닫혀 있습니다.** `pub-94ce8b8436d54ffc971d30f2096951cc.r2.dev/audio/…`
+> 는 무료·유료·폐지 전부 **401** (소유자가 Public Development URL 을 Disable).
+> 따라서 앱 오리진이 유일한 통로였고, 이 수정으로 그 통로가 닫힙니다.
+
+### ✅ STUDENT 무료 미리보기 트랙 음원 403 — 같은 뿌리
+
+무료 미리보기 레슨 `s1-1`·`s1-2` 의 **음원 18개가 전부 403** 이었습니다.
+`isFreePreviewLesson` 이 **파일명** `s1-1-1` 을 받는데 무료 목록은 `["s1-1","s1-2"]` 이기 때문입니다.
+게이트를 거부 기본값으로 뒤집으면 이런 어긋남이 곧바로 장애가 되므로 함께 고쳤습니다.
+
+`src/lib/license.ts` — id 를 **정확히 먼저** 보고, 안 맞으면 **꼬리 `-<숫자>` 를 한 단계씩 벗겨** 다시 봅니다.
+
+| | 수정 전 | 수정 후 |
+|---|---|---|
+| `/audio/student/s1-1-1.mp3` | **403** | **200** (163,464 bytes) |
+| `/audio/student/s1-2-9.mp3` | 403 | 200 (52,125 bytes) |
+| `/audio/grammar1/gh1-006-1.mp3` | 403 | 200 (1,561,495 bytes) |
+
+**부수 효과 — 페이월이 8개 id 만큼 넓어집니다 (소유자 승인 완료)**
+`/grammar1/gh1-006-1` 처럼 **무료 레슨의 script 짝 페이지**가 함께 열립니다.
+ld·reading·grammar2 는 `d001-1`·`pr001-1`·`gh2-007-1` 을 무료 목록에 **명시**하고 있으므로
+이것은 원래 의도로 되돌리는 것입니다. 소유자가 **레슨 3,032개·미디어 참조 4,186개 전수**로 확인했습니다 —
+새로 열리는 레슨 **8개**(gh1-006/007/008/009 의 `-1`·`-2`), 새로 열리는 미디어 **24개**
+(s1-1 9개 · s1-2 9개 · gh1-006/008/009 6개), **무료 레슨에 속하지 않는데 열린 것 0개**.
+
+`FREE_PREVIEW_LESSON_IDS.grammar1` 에도 `-1`·`-2` 를 **명시**했습니다(다른 과정과 동일한 형태).
+정규화 규칙은 미디어 트랙(`s1-1-1` 등)에 계속 필요하므로 둘 다 유지합니다.
+
+| | 수정 전 | 수정 후 |
+|---|---|---|
+| `/grammar1/gh1-006-1` | LOCKED (268자) | OPEN (2,027자) |
+| `/grammar1/gh1-006-2` | LOCKED | OPEN |
+| `/grammar1/gh1-008-1` | LOCKED | OPEN |
+| `/grammar1/gh1-007-1` | LOCKED | OPEN (`gh1-006` 으로 리다이렉트) |
+| `/grammar1/gh1-010-1` | LOCKED | **LOCKED** (확대 없음) |
+| `/grammar1/gh1-020` | LOCKED | **LOCKED** |
+| student · phonics · ld · reading · grammar2 · cnn | 변화 0 | 변화 0 |
+
+### ✅ KIG-009 잔여 — 음성 출처 문구 11곳 (위 §1-B 정정 참조)
+
+### 검증 총괄
+
+| 검증 | 결과 |
+|---|---|
+| `./node_modules/.bin/tsc --noEmit` | exit 0 |
+| `./node_modules/.bin/next build` | `✓ Generating static pages using 7 workers (1779/1779)`, exit 0 |
+| **`verify/verify-media-access.cjs` (운영, 수정 전)** | **16/24 FAIL, exit 1** — 검출력 증명 |
+| **`verify/verify-media-access.cjs` (로컬, 수정 후)** | **24/24 PASS, exit 0** |
+| `verify/verify-proxy-allowlist.cjs` (로컬) | 1,755개 실제 페이지 전부 콘텐츠와 함께 서빙, exit 0 |
+| `verify/verify-h1.cjs` (로컬) | 23/23, exit 0 |
+| `verify/verify-error-pages.cjs` (로컬) | 7/7 미매칭 404 + 11/11 실페이지 200, exit 0 |
+| `verify/verify-metadata.cjs` (로컬) | 14/14, exit 0 |
+| `verify/verify-csp.cjs` (로컬) | 11/11, exit 0 |
+| 음성 출처 문구 grep (`src/`) | **11 → 0건** |
+| **`content/` 변경** | **0건** ✅ |
+
+### 🔴 배포 후 반드시 볼 것 — 엣지 캐시
+
+폐지 음원은 수정 전 규칙 때문에 **`immutable` 1년**으로 엣지에 올라가 있습니다.
+**캐시 우회와 일반 URL 을 구분해서 봐야 합니다.**
+
+- 캐시 우회(`?cb=<ts>`)가 **403** → 코드는 맞음
+- 일반 URL 이 `x-vercel-cache: HIT` 로 **200** → 남은 것은 엣지 캐시 → **Vercel 캐시 퍼지 필요(소유자)**
+
+프로브가 응답마다 `x-vercel-cache`·`age` 를 기록하고, 폐지 표본이 엣지에서 몇 건 나왔는지 요약에 찍습니다.
+수정 전 운영 실행에서 폐지 18개 표본 중 **6건이 HIT** 였습니다(그중 일부는 이 세션의 프로브가 채운 것).
+
+### 🔎 부수 관찰 (수정하지 않음)
+
+- `public/audio/**` 가 로컬에 있으면 Next 가 **정적으로** 서빙해 라우트 핸들러를 건너뜁니다
+  (로컬에서 `azure-ava` 클립이 `max-age=0` 으로 나온 이유). **운영에는 이 디렉터리가 배포되지 않습니다**
+  (`.gitignore`) — 운영에서 같은 클립은 라우트 핸들러가 `immutable` 로 답합니다. 로컬 검증 시 착각 주의.
+- `content/lessons/` 의 폐지 폴더 8개 중 `adults-m`·`adults-w` 는 자기 폴더가 아니라
+  `audio/adults/` 를 참조합니다. 그래서 **폐지 미디어 폴더는 6개**입니다(레슨 폴더는 8개).
+- `adults_001.mp3`·`adults_005.mp3` 등 일부 참조는 **버킷에 존재하지 않습니다**(origin 404).
+  프로브가 "이 표본은 아무것도 증명하지 않는다"로 표시하고 건너뜁니다.
+
+---
+
 ## 2. 남은 이슈 (17건)
 
 ### ✅ 그룹 A — 전부 완료 (2026-09-15, 3차 세션)
@@ -854,8 +990,11 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 > 2차: `KIG-019`(5bec3b9) · `KIG-031`(1283492) · `KIG-032`(d5a52da) · `KIG-033`(c57b7f3) · `KIG-034`(3f7fc04) · `KIG-035`(afb573f) · `KIG-036`(ee3cbe0) · favicon(6af9c69) · 레슨 수(a088969) · GRAMMAR 정답 노출(1bec0f5) · LISTENING 선택 변경(ca7ea4f)
 > 3차: `KIG-009`(0335ab0) · `KIG-015`+그룹A 잔여(`72048dd`) · GVA 폐지(`276630e`) · 미디어 게이트(`91cc15b`…`4d7a4f7`) · Azure 클립(`bbae053`)
 > 4차: `KIG-022/RE-009` · `KIG-014/RE-010` · `RE-011` canonical · `RE-012` OG (`f86d275` + 이번 커밋) · `KIG-006` 엔진
-> 위 26건은 §1·§1-B·§1-C·§1-D에 검증 결과까지 기록되어 있습니다. 다시 손대지 마세요.
 > 5차: `RE-011/012 잔여`(fd5acf0) — §1-E
+> 6차: `A-1`(ca3a7ba) · `A-2`(7d2a073) · `A-3`(f84678a) · `A-6`(817b7a7) · `isEnglishAnswer`·`parseAltMarker`(3e82465) — §1-F
+> 7차: `RE-014`(bb4baf2) · `RE-016`(3705348) — §1-G · 9차: `RE-006`(8c59d82) — §1-H
+> 10차: `RE-004` 미디어 허용 목록 + `KIG-009` 잔여 11곳 + STUDENT 무료 트랙 음원 — §1-I
+> 위 30건은 §1·§1-B·§1-C·§1-D·§1-F·§1-G·§1-H·§1-I에 검증 결과까지 기록되어 있습니다. 다시 손대지 마세요.
 
 > ### 🔴 2026-09-16 — `NEXT-SESSION.md` 가 이 §3 을 대체합니다
 > `NEXT-SESSION.md` 서두에 **"PROGRESS.md 와 충돌하면 이 문서가 우선"** 이라고 명시되어 있습니다.
@@ -869,9 +1008,9 @@ KIG-016(어휘 품사·뜻 303건), KIG-028/030(힌트 누락 53레슨), KIG-029
 > | 3 | ~~RE-014~~ | 홈 `h1` 없음 / `/ld/d001` `h1` 2개 | ✅ **7차 완료 `bb4baf2`** (§1-G) |
 > | 4 | ~~RE-016~~ | 오류·404 화면 (`loading.tsx` 는 의도적 제외) | ✅ **7차 완료 `3705348`** (§1-G) |
 > | 5 | ~~RE-006~~ | CSP 헤더 (**Report-Only 로 먼저 배포**) | ✅ **9차 완료 `8c59d82`** (§1-H) |
-> | 6 | RE-008 | 사이트맵 잠긴 레슨 제외 또는 고유 소개문 | ⬜ **← 다음 착수** |
-> | 7 | RE-004 🔴 | `src/lib/mediaAccess.ts:60` `unclaimed → allowed:true` → 허용 목록 | ⬜ |
-> | 8 | RE-005 | VOCA `colo(u)r`/`gray(grey)` TTS 괄호 (음성 재생성 동반) | ⬜ |
+> | 6 | RE-008 | 사이트맵 잠긴 레슨 제외 또는 고유 소개문 | ⬜ |
+> | 7 | ~~RE-004~~ | `unclaimed → allowed:true` → 허용 목록 | ✅ **10차 완료** (§1-I) |
+> | 8 | RE-005 | VOCA `colo(u)r`/`gray(grey)` TTS 괄호 (음성 재생성 동반) | ⬜ **← 다음 착수** |
 >
 > **RE-006 은 끝났지만 강제 모드 전환은 남았습니다.** `CSP_REPORT_ONLY = false` 로 바꾸는 것은
 > **운영 콘솔에서 위반 0건을 확인한 뒤**입니다. 위반은 브라우저 콘솔에만 나오고(수집기 없음 —

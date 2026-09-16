@@ -277,8 +277,8 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
                   : isPlayingOrPaused && progress
                     ? `▶ ${status === "paused" ? "일시정지" : "재생 중"}: 파트 ${progress.partNumber}/${progress.partTotal} · 문장 ${progress.sentenceNumber}/${progress.sentenceTotal}`
                     : previewOnly
-                      ? "1·2강을 Ava 음성으로 연속 재생"
-                      : `${totalLessons}개 파트를 Ava 음성으로 연속 재생`}
+                      ? "1·2강 연속 재생"
+                      : `${totalLessons}개 파트 연속 재생`}
             </span>
           </span>
         </button>

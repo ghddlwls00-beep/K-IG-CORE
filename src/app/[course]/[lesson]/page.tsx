@@ -345,7 +345,7 @@ export default async function LessonPage({
             fallbackSentences={fallbackSentences}
             lang={courseInfo?.contentLang ?? "en"}
             gender={voiceGender}
-            label="전체 듣기 (AI 음성 재생)"
+            label="전체 듣기"
           />
         </div>
       ) : null}

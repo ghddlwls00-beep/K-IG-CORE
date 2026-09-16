@@ -78,6 +78,7 @@ KIG-006 관련:
 | `verify-metadata.cjs` | 라우트별 canonical 1개·경로 일치 + `og:*` 존재 (`<base>` 인자) |
 | `verify-kig005.cjs` / `verify-kig005-browser.cjs` | GRAMMAR 채점 LCS — **`isEnglish()`를 컴포넌트에서 그대로 복사**하므로 컴포넌트 수정 시 같이 갱신할 것 |
 | `measure-tts-coverage.cjs` / `attribute-reading-gap.cjs` | 음성 클립 커버리지 측정 / 결측 귀속 |
+| `verify-media-access.cjs` | **RE-004** — 미디어 게이트 6축: 폐지 폴더 403 + 캐시 불가, 폐지 객체 실존(S3), 무료 레슨 **페이지가 실제로 참조하는** 미디어 200, 유료 403, Ava 클립·Range, `/api/media-health`. 폐지 폴더 목록은 `content/lessons/` 에서 파생 (하드코딩 없음). `.env.local` 이 있으면 실존 확인까지 한다 |
 
 ## 그 밖의 감사·계측 스크립트
 

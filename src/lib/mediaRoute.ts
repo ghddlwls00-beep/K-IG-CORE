@@ -13,10 +13,13 @@
  */
 
 import { cookies } from "next/headers";
-import { LICENSE_SESSION_COOKIE_NAME, resolveMediaAccess } from "./mediaAccess";
+import { LICENSE_SESSION_COOKIE_NAME, resolveMediaAccess, type MediaAccess } from "./mediaAccess";
 import { fetchMediaObject } from "./mediaOrigin";
 
-const PUBLICLY_CACHEABLE = new Set(["unified-speech", "free-preview", "unclaimed"]);
+// Typed as MediaAccess["reason"] so a typo cannot pass silently. A misspelled
+// reason would still answer 200 — only without the shared cache — so nothing
+// outside would notice, and it would show up later as origin load.
+const PUBLICLY_CACHEABLE = new Set<MediaAccess["reason"]>(["unified-speech", "free-preview"]);
 
 export async function handleMediaRequest(
   request: Request,
