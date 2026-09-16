@@ -1,0 +1,65 @@
+{
+  "_why": [
+    "LISTENING 은 받아쓰기 과정이라 영어 대본이 곧 정답입니다. 276 회를 한 쌍씩 다 읽는 동안",
+    "정답이 틀린 곳이 나왔습니다. 전사기가 한 단어를 잘못 들은 자리들입니다.",
+    "고칠 근거는 한국어입니다. 교재의 한국어가 원래 어떤 단어였는지 매번 알려줍니다.",
+    "d086 #2 의 한국어는 '컴퓨터를 사용한다' 이므로 are 가 아니라 use 입니다.",
+    "적용기는 (1) 현재 문장이 from 과 글자 하나까지 같아야 하고 (2) to 와 단어가 꼭 한 개만",
+    "달라야 적용합니다. 둘 중 하나라도 어긋나면 그 항목을 건너뜁니다. 그래서 이 파일에 오타가",
+    "나도 대본을 조용히 고쳐쓸 수 없습니다.",
+    "단어 수가 달라지는 것은 아래 _one_off 에 따로 두고 손으로 확인했습니다."
+  ],
+
+  "words": {
+    "d086#2": {
+      "from": "Businesses and banks are computers to keep financial records.",
+      "to": "Businesses and banks use computers to keep financial records.",
+      "ko": "산업체들과 은행들은 재정 기록을 유지하기 위하여 컴퓨터를 사용한다."
+    },
+    "d155#7": {
+      "from": "Many persons find their place in government science.",
+      "to": "Many persons find their place in government service.",
+      "ko": "많은 사람들은 자신의 위치를 정부 서비스(공무원직)에서 찾는다."
+    },
+    "d175#5": {
+      "from": "Hundreds of people rushed to Big Ben to watch this great attraction.",
+      "to": "Hundreds of people rushed to Big Bend to watch this great attraction.",
+      "ko": "수백명의 사람이 이 굉장한 구경꺼리를 보기 위하여 Big Bend로 몰려왔다. (d174 #4 도 Big Bend tunnel 입니다)"
+    },
+    "d188#4": {
+      "from": "They built homes in public buildings of brick and stone.",
+      "to": "They built homes and public buildings of brick and stone.",
+      "ko": "그들은 벽돌과 돌로 된 집과 공공 건물을 지었다."
+    },
+    "d199#7": {
+      "from": "Nowadays, a woman who is excessively curious may often be returned to as a modern Lot's wife.",
+      "to": "Nowadays, a woman who is excessively curious may often be referred to as a modern Lot's wife.",
+      "ko": "오늘날 지나치게 호기심이 많은 여성은 종종 현대판 롯의 아내로 불릴지 모른다."
+    },
+    "d215#6": {
+      "from": "Some animals, such as the white buffalo, were even worshipped because they were thought to be scared.",
+      "to": "Some animals, such as the white buffalo, were even worshipped because they were thought to be sacred.",
+      "ko": "흰 들소같은 일부 동물들은 신성한 것으로 생각되었기 때문에 심지어 숭배받기까지 했다."
+    },
+    "d252#1": {
+      "from": "The interview begins the moment one wraps on the personnel manager's office door.",
+      "to": "The interview begins the moment one raps on the personnel manager's office door.",
+      "ko": "면담은 인사 책임자의 사무실 문을 두드리는 순간에 시작된다."
+    }
+  },
+
+  "_one_off": {
+    "note": "단어 수가 달라지는 세 건입니다. 한 단어 규칙에 걸리므로 적용기가 건너뜁니다. 고칠지는 회장님이 정하실 일이라 기록만 합니다.",
+    "d131#5": "All the guests are served in the All the guests are served in the lodge dining room. — 앞 7 단어가 그대로 한 번 더 들어가 있습니다. 한국어는 한 문장입니다.",
+    "d215#1": "215 In addition to the intercession of the priests… — 문장 앞에 회차 번호 215 가 붙어 있습니다. 276 회 중 이 한 곳뿐입니다.",
+    "d132#4": "I don't know. some people who make up their minds right away. — 한국어가 '나는 모르겠다. 나는 즉시 마음을 정하는 일부 사람들은 안다.' 이므로 I know 두 단어가 빠졌습니다.",
+    "d229#5": "Their trailers park side by side for miniature cities. — 한국어가 '나란히 주차된 그들의 trailer들은 작은 도시를 형성한다.' 이므로 parked … form 인 듯하나 두 단어를 지어내는 것이라 두었습니다."
+  },
+
+  "_entry_removals": {
+    "note": "항목 자체를 지워야 하는 세 건입니다. 녹음의 헛시작이 문장으로 남아 있고, 다음 항목이 같은 문장의 완성본입니다. 지우면 그 회차의 번호가 밀리고 한국어도 다음 항목으로 합쳐야 해서, 이번 변경에는 넣지 않았습니다.",
+    "d164#1": "They have both become an essential part of our daily lives. — #2 가 같은 문장의 완성본입니다.",
+    "d177#1": "Unfortunately, by the time Rudd gets to the train stop, his poor forgetfulness is gone. — #2 가 완성본입니다.",
+    "d221#5": "You just want to camp along the way and spend a week or so in a cozy retreat at the end of your trip. — #6 가 완성본입니다."
+  }
+}
