@@ -399,6 +399,7 @@ export default function AdminLicensePage() {
               type="password"
               value={pinInput}
               onChange={(e) => setPinInput(e.target.value)}
+              aria-label="관리자 암호(PIN)"
               placeholder="관리자 암호(PIN) 입력"
               className="w-full rounded-xl border border-black/15 px-4 py-3 text-center font-mono text-[16px] text-ink focus:border-ink focus:outline-none"
               autoFocus

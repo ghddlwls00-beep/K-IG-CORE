@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import type { Block } from "@/lib/types";
+import type { Block, SentenceItem } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
+import { gradeAgainstReferences, gradeAnswer } from "@/lib/grammarGrading";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 
 export interface GrammarItem {
@@ -11,6 +12,8 @@ export interface GrammarItem {
   numberLabel: string;
   koreanText: string;
   englishText: string;
+  /** Other sentences the textbook accepts for this prompt — graded as full marks. */
+  alternatives: string[];
   clozeParts: { text: string; isBlank: boolean; answer?: string }[];
   targetKeywords: string[];
   isTheory?: boolean;
@@ -59,70 +62,17 @@ function cleanText(text: string): string {
     .trim();
 }
 
-function normalizeForComparison(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[.,?!;:\"'()]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+// Grading (normalisation, LCS partial credit, contraction handling, alternatives)
+// lives in `@/lib/grammarGrading` so the audit's inputs can be graded from node.
 
-/**
- * Length of the longest common subsequence of two word arrays.
- *
- * Used for partial credit instead of a set intersection because a set throws
- * away both order and multiplicity: "a a a a" and a word-order scramble would
- * both score as a full match. LCS can never exceed the model length, so padding
- * gains nothing, and it requires the shared words to appear in sequence.
- */
-function lcsRatio(uw: string[], mw: string[]): number {
-  const dp = Array.from({ length: uw.length + 1 }, () =>
-    new Array<number>(mw.length + 1).fill(0),
-  );
-  for (let i = 1; i <= uw.length; i++) {
-    for (let j = 1; j <= mw.length; j++) {
-      dp[i][j] =
-        uw[i - 1] === mw[j - 1]
-          ? dp[i - 1][j - 1] + 1
-          : Math.max(dp[i - 1][j], dp[i][j - 1]);
-    }
-  }
-  return mw.length ? dp[uw.length][mw.length] / mw.length : 0;
-}
-
-/**
- * Grades one English composition answer.
- *
- * exact      verbatim match
- * partial    >= 70% of the model's words appear, in order, and the input is no
- *            more than 15% longer than the model
- * incorrect  everything else — including any single-word or single-letter input
- *
- * The >1-word floor is what stops "a" from scoring 70 points. The 1.15 length
- * cap is what stops a learner who has seen the answer from padding it past the
- * ratio check: measured against all 6,236 real model answers, a 1.4 cap let 476
- * padded answers through, while 1.15 allows 2 and keeps all 5,312 typo cases.
- */
-const MAX_ANSWER_LEN_RATIO = 1.15;
-
-function gradeAnswer(
-  userRaw: string,
-  modelRaw: string,
-): "exact" | "partial" | "incorrect" {
-  const user = normalizeForComparison(userRaw);
-  const model = normalizeForComparison(modelRaw);
-  if (!user) return "incorrect";
-  if (user === model) return "exact";
-
-  const uw = user.split(" ").filter(Boolean);
-  const mw = model.split(" ").filter(Boolean);
-  if (mw.length === 0) return "incorrect";
-
-  const ratio = lcsRatio(uw, mw);
-  if (uw.length > 1 && ratio >= 0.7 && uw.length <= mw.length * MAX_ANSWER_LEN_RATIO) {
-    return "partial";
-  }
-  return "incorrect";
+/** "9. 16. 오후 7:05" — the audit asked for a date, not only a clock time (FUN-07). */
+function formatSavedAt(): string {
+  return new Date().toLocaleString("ko-KR", {
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
 }
 
 function buildCloze(enText: string): {
@@ -201,6 +151,7 @@ export function GrammarLearningView({
             numberLabel: String(qNum),
             koreanText: qText,
             englishText: aText,
+            alternatives: [],
             clozeParts: [],
             targetKeywords: [],
             isTheory: true,
@@ -216,11 +167,11 @@ export function GrammarLearningView({
     // 2. Standard sentence extraction from main and pair blocks
     const mainSentences = blocks
       .filter((b) => b.type === "sentences")
-      .flatMap((b) => (b as { type: "sentences"; items: { n: string; text: string }[] }).items);
+      .flatMap((b) => (b as { type: "sentences"; items: SentenceItem[] }).items);
     const pairSentences = pairBlocks
       ? pairBlocks
           .filter((b) => b.type === "sentences")
-          .flatMap((b) => (b as { type: "sentences"; items: { n: string; text: string }[] }).items)
+          .flatMap((b) => (b as { type: "sentences"; items: SentenceItem[] }).items)
       : [];
 
     const count = Math.max(mainSentences.length, pairSentences.length);
@@ -231,22 +182,30 @@ export function GrammarLearningView({
       const p = pairSentences[i];
       const textM = m?.text ?? "";
       const textP = p?.text ?? "";
+      const altM = Array.isArray(m?.alternatives) ? m.alternatives : [];
+      const altP = Array.isArray(p?.alternatives) ? p.alternatives : [];
 
       let en = "";
       let ko = "";
+      // The alternatives travel with whichever side turned out to be the English.
+      let alternatives: string[] = [];
 
       if (isEnglish(textM) && !isEnglish(textP)) {
         en = textM;
         ko = textP;
+        alternatives = altM;
       } else if (!isEnglish(textM) && isEnglish(textP)) {
         en = textP;
         ko = textM;
+        alternatives = altP;
       } else if (hasKorean(textM)) {
         ko = textM;
         en = textP;
+        alternatives = altP;
       } else {
         en = textM;
         ko = textP;
+        alternatives = altM;
       }
 
       const cleanEn = cleanText(en);
@@ -258,6 +217,7 @@ export function GrammarLearningView({
         numberLabel: m?.n || p?.n || String(i + 1),
         koreanText: cleanKo,
         englishText: cleanEn,
+        alternatives: alternatives.map(cleanText).filter(Boolean),
         clozeParts: parts,
         targetKeywords: keywords,
       });
@@ -277,6 +237,9 @@ export function GrammarLearningView({
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [selfGrades, setSelfGrades] = useState<Record<number, boolean>>({});
   const [clozeInputs, setClozeInputs] = useState<Record<number, Record<number, string>>>({});
+  // FUN-06: a blank the learner has left (or filled to the answer's length) can
+  // be told it is wrong; an untouched one is simply empty, not wrong yet.
+  const [clozeTouched, setClozeTouched] = useState<Record<string, boolean>>({});
   const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
 
   /**
@@ -295,11 +258,24 @@ export function GrammarLearningView({
   const [copiedId, setCopiedId] = useState<number | null>(null);
   const [savedAt, setSavedAt] = useState<string | null>(null);
   const [restored, setRestored] = useState(false);
+  // FUN-07: the snapshot last written. Restoring saved work changes the state
+  // without the learner touching anything, and the save effect used to treat
+  // that as a save — so a fresh profile saw "오후 7:05:36 자동 저장됨" on first
+  // paint. A save is now only a save when the snapshot differs.
+  const lastSavedRef = useRef<string | null>(null);
 
   const storageKey = `kig:grammar:work:${lessonKey}`;
 
   // Restore saved progress from localStorage
   useEffect(() => {
+    let snapshot = {
+      answers: {},
+      selfGrades: {},
+      clozeInputs: {},
+      revealedAnswers: {},
+      shadowingRepeats: {},
+      examSubmitted: false,
+    };
     try {
       const raw = window.localStorage.getItem(storageKey);
       if (raw) {
@@ -311,19 +287,37 @@ export function GrammarLearningView({
         if (data.shadowingRepeats) setShadowingRepeats(data.shadowingRepeats);
         if (data.examSubmitted !== undefined) setExamSubmitted(data.examSubmitted);
         if (data.at) setSavedAt(data.at);
+        snapshot = {
+          answers: data.answers ?? {},
+          selfGrades: data.selfGrades ?? {},
+          clozeInputs: data.clozeInputs ?? {},
+          revealedAnswers: data.revealedAnswers ?? {},
+          shadowingRepeats: data.shadowingRepeats ?? {},
+          examSubmitted: data.examSubmitted ?? false,
+        };
       }
     } catch {
       // ignore
     }
+    lastSavedRef.current = JSON.stringify(snapshot);
     setRestored(true);
   }, [storageKey]);
 
-  // Auto-save to localStorage
+  // Auto-save to localStorage — only when something actually changed.
   useEffect(() => {
     if (!restored) return;
+    const snapshot = JSON.stringify({
+      answers,
+      selfGrades,
+      clozeInputs,
+      revealedAnswers,
+      shadowingRepeats,
+      examSubmitted,
+    });
+    if (snapshot === lastSavedRef.current) return;
     const timer = setTimeout(() => {
       try {
-        const at = new Date().toLocaleTimeString();
+        const at = formatSavedAt();
         window.localStorage.setItem(
           storageKey,
           JSON.stringify({
@@ -336,6 +330,7 @@ export function GrammarLearningView({
             at,
           })
         );
+        lastSavedRef.current = snapshot;
         setSavedAt(at);
       } catch {
         // ignore
@@ -391,6 +386,16 @@ export function GrammarLearningView({
       }
       return next;
     });
+  }
+
+  /**
+   * UX-02: "다시 풀기" used to clear only the self-grade, so the answer the
+   * learner had just checked stayed in the box they were about to retry in.
+   */
+  function handleRetry(id: number) {
+    setAnswers((prev) => ({ ...prev, [id]: "" }));
+    setSelfGrades((prev) => ({ ...prev, [id]: false }));
+    setRevealedAnswers((prev) => ({ ...prev, [revealKey(id)]: false }));
   }
 
   function handleBatchReveal(showAll: boolean) {
@@ -464,7 +469,7 @@ export function GrammarLearningView({
     const itemScores: Record<number, "exact" | "partial" | "incorrect"> = {};
 
     items.forEach((it) => {
-      const grade = gradeAnswer(answers[it.id] || "", it.englishText);
+      const grade = gradeAgainstReferences(answers[it.id] || "", [it.englishText, ...it.alternatives]);
       itemScores[it.id] = grade;
       if (grade === "exact") exactMatches++;
       else if (grade === "partial") partialMatches++;
@@ -713,7 +718,7 @@ export function GrammarLearningView({
               const grade = selfGrades[item.id];
               const isExact =
                 isAnswered &&
-                normalizeForComparison(answers[item.id]) === normalizeForComparison(item.englishText);
+                gradeAgainstReferences(answers[item.id], [item.englishText, ...item.alternatives]) === "exact";
 
               return (
                 <div
@@ -782,6 +787,7 @@ export function GrammarLearningView({
                         type="text"
                         value={answers[item.id] || ""}
                         onChange={(e) => handleAnswerChange(item.id, e.target.value)}
+                        aria-label={`${item.numberLabel}번 영작 답안`}
                         placeholder="이곳에 영어 문장을 영작해보세요... (예: I am...)"
                         autoCapitalize="none"
                         autoCorrect="off"
@@ -846,7 +852,7 @@ export function GrammarLearningView({
                       </button>
                       <button
                         type="button"
-                        onClick={() => toggleSelfGrade(item.id, false)}
+                        onClick={() => handleRetry(item.id)}
                         className={
                           "flex items-center gap-1 rounded-lg border px-2.5 py-1 text-[12px] font-medium transition-all cursor-pointer " +
                           (grade === false
@@ -887,6 +893,11 @@ export function GrammarLearningView({
                       <p className={`font-semibold text-emerald-900 tracking-tight ${fontStyles.english}`}>
                         {item.englishText}
                       </p>
+                      {item.alternatives.length > 0 && (
+                        <p className="text-[12.5px] text-emerald-800/80">
+                          다른 정답: {item.alternatives.join(" / ")}
+                        </p>
+                      )}
                     </div>
                   )}
                 </div>
@@ -943,8 +954,15 @@ export function GrammarLearningView({
                         }
 
                         const userVal = clozeInputs[item.id]?.[pIdx] || "";
-                        const isCorrect =
-                          normalizeForComparison(userVal) === normalizeForComparison(part.answer || "");
+                        // Same comparison as the exam: contractions expanded AND
+                        // literal, so "dont" for "don't" still counts (review finding).
+                        const isCorrect = gradeAnswer(userVal, part.answer || "") === "exact";
+                        const touchKey = `${item.id}:${pIdx}`;
+                        const isWrong =
+                          !isCorrect &&
+                          userVal.trim().length > 0 &&
+                          (clozeTouched[touchKey] === true ||
+                            userVal.trim().length >= (part.answer?.length ?? 0));
 
                         if (isRevealed) {
                           return (
@@ -963,6 +981,8 @@ export function GrammarLearningView({
                               type="text"
                               value={userVal}
                               onChange={(e) => handleClozeChange(item.id, pIdx, e.target.value)}
+                              onBlur={() => setClozeTouched((prev) => ({ ...prev, [touchKey]: true }))}
+                              aria-label={`${item.numberLabel}번 문장 빈칸`}
                               placeholder="___"
                               autoCapitalize="none"
                               autoCorrect="off"
@@ -972,11 +992,16 @@ export function GrammarLearningView({
                                 "rounded-md border text-center font-semibold px-2 py-1 text-sm transition-all focus:outline-none " +
                                 (isCorrect
                                   ? "border-emerald-500 bg-emerald-500/10 text-emerald-700 font-bold ring-2 ring-emerald-500/30"
+                                  : isWrong
+                                  ? "border-red-500 bg-red-500/10 text-red-700 ring-2 ring-red-500/30"
                                   : "border-line bg-surface text-ink focus:border-ink")
                               }
                             />
                             {isCorrect && (
-                              <span className="text-emerald-600 font-bold text-xs">✓</span>
+                              <span className="text-emerald-600 font-bold text-xs" role="status">✓</span>
+                            )}
+                            {isWrong && (
+                              <span className="text-red-600 font-bold text-xs" role="status" title="다시 확인해 보세요">✗</span>
                             )}
                           </span>
                         );
@@ -1133,7 +1158,7 @@ export function GrammarLearningView({
               </div>
 
               {examResults && (
-                <div className="flex items-center gap-3 rounded-xl bg-raised p-3 border border-line">
+                <div className="flex items-center gap-3 rounded-xl bg-raised p-3 border border-line" role="status">
                   <div className="text-right">
                     <span className="block text-[11px] font-medium text-ink-soft">최종 획득 점수</span>
                     <span className="text-[24px] font-bold text-primary">{examResults.score}점</span>
@@ -1194,6 +1219,7 @@ export function GrammarLearningView({
                       disabled={examSubmitted}
                       value={userVal}
                       onChange={(e) => handleAnswerChange(item.id, e.target.value)}
+                      aria-label={`${item.numberLabel}번 시험 답안`}
                       placeholder="답안을 입력하세요..."
                       autoCapitalize="none"
                       autoCorrect="off"
@@ -1214,9 +1240,12 @@ export function GrammarLearningView({
                   {/* Model Answer after Submission */}
                   {examSubmitted && (
                     <div className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-raised/50 p-2.5 text-[13px] border border-line/60">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
                         <span className="font-mono text-[11px] font-bold text-emerald-700">모범 답안:</span>
                         <span className="font-medium text-ink">{item.englishText}</span>
+                        {item.alternatives.length > 0 && (
+                          <span className="text-[12px] text-ink-soft">(또는: {item.alternatives.join(" / ")})</span>
+                        )}
                       </div>
                       <button
                         type="button"
@@ -1236,6 +1265,12 @@ export function GrammarLearningView({
           <div className="sticky bottom-6 flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface/95 p-4 shadow-lg backdrop-blur-md">
             <div className="text-[12.5px] text-ink-soft">
               작성 완료: <span className="font-bold text-ink">{answeredCount}</span> / {totalCount} 문항
+              {/* FUN-05: an empty sheet is told what to do, not graded as all wrong. */}
+              {!examSubmitted && answeredCount === 0 && (
+                <span className="ml-2 text-amber-700 dark:text-amber-300" role="status">
+                  작성한 문항이 없습니다. 답안을 입력한 뒤 채점하세요.
+                </span>
+              )}
             </div>
 
             <div className="flex items-center gap-2">
@@ -1250,8 +1285,9 @@ export function GrammarLearningView({
               ) : (
                 <button
                   type="button"
+                  disabled={answeredCount === 0}
                   onClick={() => setExamSubmitted(true)}
-                  className="rounded-xl bg-ink px-6 py-2 text-[13px] font-bold text-surface shadow-xs hover:opacity-90 active:scale-[0.99] transition-all cursor-pointer"
+                  className="rounded-xl bg-ink px-6 py-2 text-[13px] font-bold text-surface shadow-xs hover:opacity-90 active:scale-[0.99] transition-all cursor-pointer disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   🎯 전체 시험 채점하기
                 </button>

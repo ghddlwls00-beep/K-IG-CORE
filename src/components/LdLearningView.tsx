@@ -372,7 +372,7 @@ export function LdLearningView({
       stepNum: "Step 4",
       icon: "🗣️",
       shortLabel: "실전섀도잉",
-      fullLabel: "섀도잉 & AI 평가",
+      fullLabel: "섀도잉 & 발음 테스트",
     },
     {
       id: "step5_speed",
@@ -404,7 +404,7 @@ export function LdLearningView({
           5단계 음향 인지 리스닝 마스터리
         </h2>
         <p className="mt-1 text-[13px] text-ink-soft leading-relaxed">
-          블라인드 청취 ➔ 스마트 탭-딕테이션 ➔ 연음 분해 클리닉 ➔ 실전 섀도잉 & AI 평가 ➔ 1.5배속 뇌 트레이닝으로 이어지는 실전 청취력 완성 시스템입니다.
+          블라인드 청취 ➔ 스마트 탭-딕테이션 ➔ 연음 분해 클리닉 ➔ 실전 섀도잉 & 발음 테스트 ➔ 1.5배속 청취로 이어지는 실전 청취력 완성 시스템입니다.
         </p>
       </div>
 
@@ -509,41 +509,30 @@ export function LdLearningView({
             </div>
           </div>
 
-          {/* Context Diagnosis Quiz */}
+          {/*
+            Context Diagnosis Quiz — KIG-008 / CNT-08: the generated questions
+            are off (see quizFlags.ts), and while they are off the quiz is not
+            announced at all: no heading promising questions and no "준비 중"
+            note, which the audit read as an unfinished product. Keyed to the
+            FLAG, so turning the quiz back on restores heading and questions
+            together. The step's own navigation below stays either way.
+          */}
           <div className="rounded-2xl border border-line bg-surface p-6 shadow-xs flex flex-col gap-5">
-            <div className="flex items-center justify-between border-b border-line pb-3">
-              <div>
-                <h3 className="font-bold text-[16px] text-ink flex items-center gap-2">
-                  <span>🎯</span>
-                  <span>블라인드 리스닝 맥락 진단 퀴즈</span>
-                </h3>
-                <p className="text-[12.5px] text-ink-soft mt-0.5">
-                  방금 들은 소리를 바탕으로 상황과 핵심 사실을 스스로 정리해 보세요.
-                </p>
-              </div>
-            </div>
+            {SHOW_GENERATED_QUIZ ? (
+              <>
+                <div className="flex items-center justify-between border-b border-line pb-3">
+                  <div>
+                    <h3 className="font-bold text-[16px] text-ink flex items-center gap-2">
+                      <span>🎯</span>
+                      <span>블라인드 리스닝 맥락 진단 퀴즈</span>
+                    </h3>
+                    <p className="text-[12.5px] text-ink-soft mt-0.5">
+                      방금 들은 소리를 바탕으로 상황과 핵심 사실을 스스로 정리해 보세요.
+                    </p>
+                  </div>
+                </div>
 
-            {/*
-              KIG-008: the generated questions are off (see quizFlags.ts). The
-              note keeps the step from being an empty panel and stops the copy
-              above promising questions that are not there.
-
-              The note is keyed to the FLAG, not to the array being empty, so
-              turning the quiz back on cannot leave the note behind.
-            */}
-            {!SHOW_GENERATED_QUIZ ? (
-              <div className="rounded-2xl border border-dashed border-line bg-raised/40 p-5">
-                <p className="text-[13.5px] font-medium text-ink">
-                  이 레슨의 확인 문항은 준비 중입니다.
-                </p>
-                <p className="mt-1 text-[12.5px] leading-relaxed text-ink-soft">
-                  검수가 끝난 문항이 준비되면 이 자리에 표시됩니다. 그동안은 아래 받아쓰기와
-                  연음 클리닉으로 내용을 확인해 주세요.
-                </p>
-              </div>
-            ) : null}
-
-            <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6">
               {contextQuizzes.map((quiz, qIdx) => {
                 const selected = selectedAnswers[qIdx];
                 const isSubmitted = quizSubmitted[qIdx];
@@ -598,7 +587,9 @@ export function LdLearningView({
                   </div>
                 );
               })}
-            </div>
+                </div>
+              </>
+            ) : null}
 
             <div className="flex justify-end pt-2">
               <button
@@ -898,6 +889,7 @@ export function LdLearningView({
               <select
                 value={liaisonIndex}
                 onChange={(e) => setLiaisonIndex(Number(e.target.value))}
+                aria-label="소리 클리닉 문장 선택"
                 className="rounded-lg border border-line bg-raised px-3 py-1.5 font-mono text-[12.5px] font-medium text-ink focus:outline-none cursor-pointer"
               >
                 {sentences.map((s, idx) => (
@@ -997,7 +989,7 @@ export function LdLearningView({
               onClick={() => goToStep("step4_shadowing")}
               className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
             >
-              <span>다음: Step 4 섀도잉 & AI 평가 이동</span>
+              <span>다음: Step 4 섀도잉 & 발음 테스트 이동</span>
               <span>→</span>
             </button>
           </div>
@@ -1020,7 +1012,7 @@ export function LdLearningView({
                   음성을 0.5초 차이로 그림자처럼 따라 말하세요 (Shadowing)
                 </h2>
                 <p className="text-[13px] text-ink-soft mt-1 max-w-2xl leading-relaxed">
-                  “내가 직접 발음할 수 있는 소리만 귀에 들린다”는 언어학의 대원칙입니다. 발음을 듣고 즉시 마이크로 소리 내어 말해 일치도를 측정해 보세요.
+                  직접 소리 내어 말해 본 문장은 들을 때도 더 잘 들립니다. 발음을 듣고 즉시 마이크로 따라 말해, 인식된 문장이 원문과 얼마나 일치하는지 확인해 보세요.
                 </p>
               </div>
 
@@ -1090,7 +1082,7 @@ export function LdLearningView({
                 </span>
                 <div>
                   <span className="font-bold text-[13.5px] text-ink">마이크를 누르고 섀도잉하여 말하기</span>
-                  <p className="text-[12px] text-ink-soft">AI가 내 발음의 정확도, 연음, 억양을 실시간으로 채점합니다.</p>
+                  <p className="text-[12px] text-ink-soft">말한 문장을 인식해 원문과의 단어 일치도를 점수로 보여줍니다.</p>
                 </div>
               </div>
 
@@ -1143,13 +1135,13 @@ export function LdLearningView({
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <span className="rounded-full bg-primary/10 px-3 py-0.5 font-mono text-[11px] font-bold text-primary uppercase border border-primary/20">
-                  ⚡ Auditory Brain Overclock
+                  ⚡ Fast-Speed Ear Training
                 </span>
                 <h2 className="text-[19px] font-bold text-ink mt-1">
                   1.5배속 초고속 청취 챌린지 (Fast-Speed Ear Training)
                 </h2>
                 <p className="text-[13px] text-ink-soft mt-0.5 leading-relaxed">
-                  1.25x와 1.5x 고속 음성으로 뇌 청각 신경을 훈련하면, 평소 빠르다고 느끼던 실전 원어민 대화가 슬로우 모션처럼 또렷하고 여유 있게 들립니다.
+                  1.25x와 1.5x 빠른 음성에 익숙해지면, 평소 빠르다고 느끼던 실전 대화가 한결 또렷하고 여유 있게 들립니다.
                 </p>
               </div>
 
@@ -1171,7 +1163,7 @@ export function LdLearningView({
               {[
                 { r: 1.0, badge: "🥉 1.0x 표준 속도" },
                 { r: 1.25, badge: "🥈 1.25x 실전 회화 속도" },
-                { r: 1.5, badge: "🥇 1.5x 초고속 뇌 훈련" },
+                { r: 1.5, badge: "🥇 1.5x 초고속 청취" },
               ].map((item) => (
                 <button
                   key={item.r}
@@ -1257,6 +1249,7 @@ export function LdLearningView({
                   rows={14}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
+                  aria-label="스마트 청취 노트"
                   placeholder="들리지 않았던 연음, 새로운 어휘, 섀도잉 발음 팁을 자유롭게 기록해 보세요..."
                   className="w-full flex-1 resize-y rounded-xl border border-line/70 bg-raised/30 p-3 font-mono text-[13px] leading-relaxed text-ink placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors"
                 />
@@ -1273,9 +1266,21 @@ export function LdLearningView({
             >
               <span>← Step 4 섀도잉</span>
             </button>
-            <div className="flex items-center gap-2 rounded-xl bg-primary/10 border border-primary/20 px-4 py-2 text-[13px] text-primary font-bold shadow-2xs">
-              <span>🎉 5단계 리스닝 마스터리 코스웨어 완료!</span>
-            </div>
+            {/* FUN-02: the badge used to be static and read "완료!" before the learner had done anything. */}
+            {sentences.length > 0 && Object.keys(dictationProgress).length >= sentences.length ? (
+              <div
+                role="status"
+                className="flex items-center gap-2 rounded-xl bg-primary/10 border border-primary/20 px-4 py-2 text-[13px] text-primary font-bold shadow-2xs"
+              >
+                <span>🎉 5단계 리스닝 마스터리 코스웨어 완료!</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 rounded-xl border border-line bg-raised/60 px-4 py-2 text-[12.5px] text-ink-soft shadow-2xs">
+                <span>
+                  받아쓰기 {Object.keys(dictationProgress).length}/{sentences.length} 완료 — 전부 맞히면 마스터리 배지가 표시됩니다.
+                </span>
+              </div>
+            )}
           </div>
         </div>
       )}

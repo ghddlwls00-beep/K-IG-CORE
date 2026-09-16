@@ -129,56 +129,26 @@ const PREFIX_RULES: AffixRule[] = [
   { prefix: "overcome", meaning: "over(뛰어넘어) + come(오다) ➔ 장애물을 뛰어넘어 도달하다, 극복하다" },
 ];
 
-const GENERIC_PREFIX_MAP = [
-  { prefix: "pre", kor: "미리, 이전의", meaning: "사전에 일어남을 뜻하는 접두사" },
-  { prefix: "pro", kor: "앞으로, 찬성하여", meaning: "미래나 전진 방향을 뜻하는 접두사" },
-  { prefix: "post", kor: "이후에, 뒤에", meaning: "어떤 사건 뒤에 이어짐을 뜻하는 접두사" },
-  { prefix: "fore", kor: "앞의, 미리", meaning: "공간/시간상 앞쪽을 가리키는 접두사" },
-  { prefix: "anti", kor: "반대의, 대항하는 / 이전의", meaning: "대항하거나 사전을 의미하는 접두사" },
-  { prefix: "ante", kor: "앞서, 이전의", meaning: "시간적으로 앞선 시점을 뜻하는 접두사" },
-  { prefix: "re", kor: "다시, 뒤로", meaning: "반복이나 원래 상태로 돌아감을 뜻하는 접두사" },
-  { prefix: "sub", kor: "아래에, 하위의", meaning: "기준보다 밑에 위치함을 뜻하는 접두사" },
-  { prefix: "trans", kor: "가로질러, 넘어서", meaning: "경계를 통과하거나 변환됨을 뜻하는 접두사" },
-  { prefix: "in", kor: "안에 / 아닌(부정)", meaning: "내부로 들어가거나 반대 뜻을 만드는 접두사" },
-  { prefix: "im", kor: "안에 / 아닌(부정)", meaning: "내부로 들어가거나 반대 뜻을 만드는 접두사" },
-  { prefix: "ex", kor: "밖으로, 이전의", meaning: "바깥쪽으로 배출되거나 과거를 뜻하는 접두사" },
-  { prefix: "con", kor: "함께, 완전히", meaning: "여럿이 모이거나 강조하는 접두사" },
-  { prefix: "com", kor: "함께, 완전히", meaning: "여럿이 모이거나 강조하는 접두사" },
-  { prefix: "dis", kor: "반대의, 떨어져", meaning: "분리되거나 부정적인 반대를 뜻하는 접두사" },
-  { prefix: "mis", kor: "잘못된", meaning: "실수나 착오를 뜻하는 접두사" },
-  { prefix: "un", kor: "아닌(부정)", meaning: "형용사나 동사의 반대 상태를 뜻하는 접두사" },
-  { prefix: "over", kor: "과도한, 위의", meaning: "기준을 초과하거나 위쪽을 뜻하는 접두사" },
-  { prefix: "under", kor: "아래의, 부족한", meaning: "기준에 못 미치거나 아래를 뜻하는 접두사" },
-  { prefix: "inter", kor: "사이에, 상호간에", meaning: "둘 이상의 사이를 뜻하는 접두사" },
-  { prefix: "auto", kor: "스스로, 자신의", meaning: "외부의 힘 없이 스스로 작동함을 뜻하는 접두사" },
-  { prefix: "tele", kor: "멀리", meaning: "원거리 통신이나 시각을 뜻하는 접두사" },
-];
-
-export function analyzeEtymology(word: string): EtymologyInfo {
+/**
+ * CNT-09 — the authored etymology for a word, or `null` when none was written.
+ *
+ * WHAT WAS WRONG. `PREFIX_RULES` holds 48 real breakdowns. Every other word —
+ * 3,829 of the 3,877 headwords — fell through to one of two things: a generic
+ * prefix guess (`under` → "un- + der", `restaurant` → "re- + staurant",
+ * `important` → "im- + portant"), or a template sentence that only swapped the
+ * word in ("발음 음소 규칙: 영문 철자 [do]의 음절 구조와 …"). The audit read
+ * sixty free-lesson cards and found the template on all of them; the prefix
+ * guess is the same problem wearing a more convincing shape, since a wrong
+ * etymology is memorised exactly like a right one.
+ *
+ * Same rule as `getCollocation` (KIG-012): show what was written, hide the card
+ * otherwise. Adding a word to `PREFIX_RULES` brings its card back with no
+ * change here or at the call sites.
+ */
+export function analyzeEtymology(word: string): EtymologyInfo | null {
   const clean = word.toLowerCase().trim();
-
-  // 1. Direct preset match
   const preset = PREFIX_RULES.find((p) => p.prefix === clean);
-  if (preset) {
-    return { explanation: preset.meaning };
-  }
-
-  // 2. Prefix substring match
-  for (const p of GENERIC_PREFIX_MAP) {
-    if (clean.startsWith(p.prefix) && clean.length > p.prefix.length + 2) {
-      const rest = clean.slice(p.prefix.length);
-      return {
-        prefix: { part: p.prefix, meaning: p.kor },
-        root: { part: rest, meaning: "어근" },
-        explanation: `[접두사 ${p.prefix}- (${p.kor})] + [어근 ${rest}] ➔ ${p.meaning}`,
-      };
-    }
-  }
-
-  // 3. Sound-syllable phonics breakdown
-  return {
-    explanation: `발음 음소 규칙: 영문 철자 [${clean}]의 음절 구조와 원어민 강세 위치에 주목하여 소리로 각인하세요.`,
-  };
+  return preset ? { explanation: preset.meaning } : null;
 }
 
 // -----------------------------------------------------------------------------
@@ -341,9 +311,12 @@ export function generateActiveRecallQuizzes(
         questionPrompt: `"${word}" 의 가장 알맞은 한국어 뜻은 무엇일까요?`,
         options,
         correctIndex,
-        etymologyHint: analyzeEtymology(word).explanation,
+        etymologyHint: analyzeEtymology(word)?.explanation,
       };
     } else {
+      // CNT-10: sampled at random rather than `slice(0, 3)`, which offered the
+      // first three words of the list ("yes / day / school") on nearly every
+      // Korean-to-English question of a lesson.
       const distractorWords = validWords
         .filter((w) => {
           const other = w.toLowerCase().trim();
@@ -353,6 +326,7 @@ export function generateActiveRecallQuizzes(
           // e.g. hv-15 "운이 좋은" would otherwise list both `lucky` and `fortunate`.
           return (vocaDict[other]?.meaning || "") !== correctMeaning;
         })
+        .sort(() => Math.random() - 0.5)
         .slice(0, 3);
       while (distractorWords.length < 3) {
         distractorWords.push(`vocab${distractorWords.length + 1}`);
@@ -367,7 +341,7 @@ export function generateActiveRecallQuizzes(
         questionPrompt: `[ ${correctMeaning} ] 에 해당하는 올바른 영단어를 고르세요.`,
         options,
         correctIndex,
-        etymologyHint: analyzeEtymology(word).explanation,
+        etymologyHint: analyzeEtymology(word)?.explanation,
       };
     }
   });

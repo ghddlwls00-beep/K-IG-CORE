@@ -708,6 +708,21 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
     word.replace(/^[^A-Za-z0-9]+/, "").replace(/[^A-Za-z0-9]+$/, "");
   const escapeRegExp = (word: string) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+  // CNT-10: the wrong options come from THIS passage. They used to be one fixed
+  // list of six words lifted from the first two lessons, so on an air-pollution
+  // passage every blank offered "communication / respect / problems" and the
+  // answer was the only option on topic. Now every content word of the passage
+  // (other than the answer) is a candidate, nearest in length first.
+  const passagePool = Array.from(
+    new Set(
+      sentences
+        .flatMap((s) => s.en.split(/\s+/))
+        .map(stripEdgePunctuation)
+        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w.toLowerCase()))
+        .map((w) => w.toLowerCase()),
+    ),
+  );
+
   candidates.slice(0, 3).forEach((s, idx) => {
     const words = s.en
       .split(/\s+/)
@@ -724,9 +739,12 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
       // the learner the answer instead of a gap.
       if (masked === s.en) return;
 
-      const distractors = ["communication", "respect", "problems", "successful", "efforts", "quality"]
-        .filter((w) => w.toLowerCase() !== target.toLowerCase())
-        .slice(0, 3);
+      const distractors = passagePool
+        .filter((w) => w !== target.toLowerCase())
+        .map((w) => ({ w, spread: Math.abs(w.length - target.length) + Math.random() }))
+        .sort((a, b) => a.spread - b.spread)
+        .slice(0, 3)
+        .map((c) => c.w);
 
       const allOptions = [target, ...distractors].sort(() => 0.5 - Math.random());
       const answerIndex = allOptions.indexOf(target);

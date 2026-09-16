@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
 import { TAB_IMAGES } from "@/lib/tabImages";
@@ -23,6 +24,17 @@ export interface LandingTab extends Tab {
  * Section background photo. Renders the 20px blurred placeholder immediately,
  * then crossfades in the full photo once it has loaded — so the section never
  * shows a blank/white flash while the image is still downloading.
+ *
+ * PERF-01: the photo is served as WebP at 640 or 1000 px wide (55–75% smaller
+ * than the 1000×1250 JPEG the page used to send to every screen), with the
+ * JPEG kept as the fallback. Only the first section is fetched eagerly and
+ * preloaded; the rest wait until they are scrolled to, behind the placeholder.
+ *
+ * The FIRST photo is not faded in. The crossfade holds the image at opacity 0
+ * until React's onLoad runs, and onLoad cannot run before hydration — so on a
+ * slow phone the largest thing on the screen stayed invisible until every
+ * script had downloaded and executed. Measured at 390px, 400 kbps, CPU ×4:
+ * the WebP arrived in about a second, and LCP still landed at 11.7 s.
  */
 function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) {
   const [loaded, setLoaded] = useState(false);
@@ -36,6 +48,10 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
   }, []);
 
   if (!img) return null;
+  const srcSet = `${img.webp640} 640w, ${img.webp1000} 1000w`;
+  if (priority) {
+    preload(img.src, { as: "image", fetchPriority: "high", imageSrcSet: srcSet, imageSizes: "100vw" });
+  }
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-raised">
       <img
@@ -44,17 +60,20 @@ function SectionPhoto({ slug, priority }: { slug: string; priority?: boolean }) 
         className="absolute inset-0 h-full w-full object-cover"
         style={{ filter: "blur(18px)", transform: "scale(1.08)" }}
       />
-      <img
-        ref={imgRef}
-        src={img.src}
-        alt=""
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
-        decoding="async"
-        onLoad={() => setLoaded(true)}
-        className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
-        style={{ opacity: loaded ? 1 : 0 }}
-      />
+      <picture>
+        <source type="image/webp" srcSet={srcSet} sizes="100vw" />
+        <img
+          ref={imgRef}
+          src={img.src}
+          alt=""
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          decoding="async"
+          onLoad={() => setLoaded(true)}
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)]"
+          style={{ opacity: loaded || priority ? 1 : 0 }}
+        />
+      </picture>
       {/* Legibility scrim: text sits on the left, so fade the photo out toward that edge. */}
       <div
         className="absolute inset-0"
@@ -197,7 +216,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   };
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
+    // A11Y-02: the home page had no <main> landmark — every other route has one.
+    <main className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
       {/* Top Header */}
       <header className="absolute top-0 inset-x-0 z-30 flex shrink-0 items-center justify-between border-b border-line/60 bg-surface/80 px-5 py-3.5 backdrop-blur-md sm:px-12 sm:py-4">
         {/*
@@ -233,7 +253,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
             className="relative flex h-full min-h-full w-full flex-col justify-center overflow-hidden border-b border-line px-6 sm:px-[9vw] pt-16 pb-14 sm:py-0 snap-start snap-always"
             style={{ scrollSnapAlign: "start", scrollSnapStop: "always" }}
           >
-            <SectionPhoto slug={tab.slug} priority={i < 2} />
+            <SectionPhoto slug={tab.slug} priority={i === 0} />
 
             <div
               className="relative z-10 max-w-[680px]"
@@ -319,6 +339,6 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           );
         })}
       </nav>
-    </div>
+    </main>
   );
 }

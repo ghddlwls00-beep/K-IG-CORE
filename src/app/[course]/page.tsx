@@ -49,7 +49,7 @@ export async function generateMetadata({
     index?.course.description ||
     "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.";
   // RE-012: the representative image for a course is its own section banner.
-  const image = COURSE_OG_IMAGE[course] || "/images/sections/students.jpg";
+  const image = COURSE_OG_IMAGE[course] || "/images/og/students.jpg";
   return {
     title,
     description,
@@ -59,26 +59,27 @@ export async function generateMetadata({
       title,
       description,
       url: canonical,
-      images: [{ url: image, width: 1200, height: 630, alt: index?.course.title ?? "K-IG" }],
+      images: [{ url: image, width: 1000, height: 525, alt: index?.course.title ?? "K-IG" }],
     },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
 
 /**
- * The banner that represents each course in a share card. These are the same
- * section images the dashboard already shows, so a shared link looks like the
+ * The banner that represents each course in a share card. These are the
+ * 1000×525 landscape crops of the section photos (SEO-01 — the portrait
+ * originals were being declared as 1200×630), so a shared link looks like the
  * page it points at.
  */
 const COURSE_OG_IMAGE: Record<string, string> = {
-  phonics: "/images/sections/voca.jpg",
-  grammar1: "/images/sections/grammar1.jpg",
-  grammar2: "/images/sections/grammar2.jpg",
-  ld: "/images/sections/ld.jpg",
-  reading: "/images/sections/reading.jpg",
-  cnn: "/images/sections/cnn.jpg",
-  student: "/images/sections/students.jpg",
-  chinese: "/images/sections/chinese.jpg",
+  phonics: "/images/og/voca.jpg",
+  grammar1: "/images/og/grammar1.jpg",
+  grammar2: "/images/og/grammar2.jpg",
+  ld: "/images/og/ld.jpg",
+  reading: "/images/og/reading.jpg",
+  cnn: "/images/og/cnn.jpg",
+  student: "/images/og/students.jpg",
+  chinese: "/images/og/chinese.jpg",
 };
 
 export default async function CoursePage({ params }: { params: Promise<{ course: string }> }) {

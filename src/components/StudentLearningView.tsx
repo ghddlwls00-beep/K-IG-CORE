@@ -15,7 +15,7 @@ import {
 } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
-import { generateWordBank, verifyWordSequence, type WordTile } from "@/lib/listeningUtils";
+import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
 import { useProgress } from "@/components/ProgressProvider";
 
@@ -90,11 +90,51 @@ export function StudentLearningView({
   const [dictationIdx, setDictationIdx] = useState<number>(0);
   const [selectedTiles, setSelectedTiles] = useState<WordTile[]>([]);
   const [solvedSentences, setSolvedSentences] = useState<Record<number, boolean>>({});
-  const [dictationFeedback, setDictationFeedback] = useState<"correct" | "wrong" | null>(null);
+  const [dictationFeedback, setDictationFeedback] = useState<"correct" | "wrong" | "empty" | null>(null);
 
   // Step 4: Shadowing & Paced Reading states
   const [completedSentences, setCompletedSentences] = useState<Record<number, boolean>>({});
   const [openMicTesters, setOpenMicTesters] = useState<Record<number, boolean>>({});
+
+  // FUN-01: the solved dictation sentences and the shadowing checks used to
+  // live only in component state, so a refresh took "Step 2 (2/3)" back to
+  // (0/3) — while LISTENING kept the same kind of progress. Stored per lesson
+  // the way LISTENING does. `practiceKey` names the lesson the two maps belong
+  // to, so a navigation to another STUDENT lesson (which keeps this component
+  // mounted) cannot write the old lesson's progress under the new key before
+  // the new lesson's progress has been read.
+  const practiceStorageKey = `kig:student:practice:${lessonKey}`;
+  const [practiceKey, setPracticeKey] = useState<string | null>(null);
+
+  useEffect(() => {
+    let solved: Record<number, boolean> = {};
+    let completed: Record<number, boolean> = {};
+    try {
+      const raw = window.localStorage.getItem(practiceStorageKey);
+      if (raw) {
+        const data = JSON.parse(raw);
+        if (data.solved && typeof data.solved === "object") solved = data.solved;
+        if (data.completed && typeof data.completed === "object") completed = data.completed;
+      }
+    } catch {
+      // ignore
+    }
+    setSolvedSentences(solved);
+    setCompletedSentences(completed);
+    setPracticeKey(practiceStorageKey);
+  }, [practiceStorageKey]);
+
+  useEffect(() => {
+    if (practiceKey !== practiceStorageKey) return;
+    try {
+      window.localStorage.setItem(
+        practiceStorageKey,
+        JSON.stringify({ solved: solvedSentences, completed: completedSentences }),
+      );
+    } catch {
+      // ignore
+    }
+  }, [practiceKey, practiceStorageKey, solvedSentences, completedSentences]);
 
   const isPlayingFull = fullMode !== "none";
   const isPaused = fullMode === "audio" ? audioPaused : speech.paused;
@@ -358,6 +398,7 @@ export function StudentLearningView({
   );
   const currentWordBank = wordBanks[dictationIdx] ?? {
     correctWords: [] as string[],
+    acceptedWordSequences: [] as string[][],
     allTiles: [] as WordTile[],
   };
 
@@ -384,9 +425,15 @@ export function StudentLearningView({
   };
 
   const handleCheckDictation = () => {
+    // FUN-05: nothing assembled is not a wrong answer — say what to do instead.
+    if (selectedTiles.length === 0) {
+      setDictationFeedback("empty");
+      return;
+    }
     const userWords = selectedTiles.map((t) => t.word);
-    const targetWords = currentWordBank.correctWords;
-    const isCorrect = verifyWordSequence(userWords, targetWords);
+    // CNT-01: "Nice to meet you (sir/ma'am)." accepts either address, so the
+    // check runs against every accepted sequence, not the first one only.
+    const isCorrect = verifyAnyWordSequence(userWords, currentWordBank.acceptedWordSequences);
 
     if (isCorrect) {
       setDictationFeedback("correct");
@@ -417,6 +464,12 @@ export function StudentLearningView({
 
   const solvedCount = Object.values(solvedSentences).filter(Boolean).length;
   const completedCount = Object.values(completedSentences).filter(Boolean).length;
+  const hasPracticed = solvedCount + completedCount > 0;
+  // FUN-02 asks for one practised sentence before a lesson can be completed.
+  // A lesson with no sentence list at all (s19-3 is paragraphs only) has
+  // nothing to practise, and it still counts toward its chapter's unlock, so
+  // gating it would have locked chapter 20 for every STUDENT-pass learner.
+  const canComplete = lessonCompleted || hasPracticed || sentenceItems.length === 0;
 
   return (
     <div className="flex flex-col gap-6">
@@ -858,8 +911,20 @@ export function StudentLearningView({
             </div>
 
             {/* Feedback Alert */}
+            {dictationFeedback === "empty" && (
+              <div
+                role="status"
+                className="rounded-xl border border-amber-500/40 bg-amber-500/[0.08] p-4 flex items-center gap-2 text-amber-800 dark:text-amber-300 animate-in fade-in"
+              >
+                <span className="text-[18px]">👇</span>
+                <span className="text-[14px] font-bold">
+                  단어를 먼저 배열하세요. 아래 단어 보관함의 단어를 들리는 순서대로 탭하면 됩니다.
+                </span>
+              </div>
+            )}
+
             {dictationFeedback === "correct" && (
-              <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/[0.08] p-4 flex items-center justify-between gap-3 animate-in fade-in">
+              <div role="status" className="rounded-xl border border-emerald-500/40 bg-emerald-500/[0.08] p-4 flex items-center justify-between gap-3 animate-in fade-in">
                 <div className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
                   <span className="text-[18px]">🎉</span>
                   <span className="text-[14px] font-bold">
@@ -879,7 +944,7 @@ export function StudentLearningView({
             )}
 
             {dictationFeedback === "wrong" && (
-              <div className="rounded-xl border border-red-500/40 bg-red-500/[0.08] p-4 flex items-center justify-between gap-3 animate-in fade-in">
+              <div role="alert" className="rounded-xl border border-red-500/40 bg-red-500/[0.08] p-4 flex items-center justify-between gap-3 animate-in fade-in">
                 <div className="flex items-center gap-2 text-red-700 dark:text-red-300">
                   <span className="text-[18px]">⚠️</span>
                   <span className="text-[14px] font-bold">
@@ -1159,14 +1224,21 @@ export function StudentLearningView({
                 섀도잉과 낭독을 마쳤다면 이 강의를 완료하세요.
               </h3>
               <p className="text-[12.5px] text-ink-soft">
-                문장 연습 {completedCount}/{sentenceItems.length} · 완료 기록은 진도율과 다음 챕터 해금에 반영됩니다.
+                문장 연습 {completedCount}/{sentenceItems.length} · 받아쓰기 {solvedCount}/{sentenceItems.length} · 완료 기록은 진도율과 다음 챕터 해금에 반영됩니다.
               </p>
+              {/* FUN-02: completion asks for at least one sentence actually practised. */}
+              {!canComplete && (
+                <p className="text-[12px] text-amber-700 dark:text-amber-300" role="status">
+                  받아쓰기 정답 또는 낭독 완료 체크를 1개 이상 하면 완료할 수 있습니다.
+                </p>
+              )}
             </div>
             <button
               type="button"
+              disabled={!canComplete}
               onClick={() => toggleComplete("student", lessonId)}
               aria-label={lessonCompleted ? "학습 완료 취소" : "학습 완료 체크"}
-              className={`flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl px-5 py-3 text-[13px] font-bold transition-all cursor-pointer active:scale-[0.98] ${
+              className={`flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl px-5 py-3 text-[13px] font-bold transition-all cursor-pointer active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 ${
                 lessonCompleted
                   ? "border border-emerald-600 bg-emerald-600 text-white shadow-xs"
                   : "border border-ink bg-ink text-surface shadow-xs hover:opacity-90"

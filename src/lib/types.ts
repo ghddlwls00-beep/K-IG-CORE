@@ -135,6 +135,11 @@ export interface SentenceItem {
   /** Original number as printed on the page ("1", "12"). */
   n: string;
   text: string;
+  /**
+   * Other sentences the textbook accepts for the same prompt (KIG-006 put the
+   * bracketed alternatives here). Graded as full marks alongside `text`.
+   */
+  alternatives?: string[];
 }
 
 export interface ReadingSentence {

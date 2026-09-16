@@ -2,6 +2,22 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLicense } from "./LicenseProvider";
+
+/**
+ * FUN-09: a numeric token matches a lesson NUMBER, not a substring. "1강" used
+ * to match 01강, 11강 and 21강 alike, because the index text contains all
+ * three as substrings. A token that starts with digits is now matched at a
+ * number boundary — "1강" is 01강 only; "150" is d150 but not d1500.
+ */
+function tokenMatches(text: string, token: string): boolean {
+  const numeric = token.match(/^(\d+)(\D*)$/);
+  if (!numeric) return text.includes(token);
+  const number = String(parseInt(numeric[1], 10));
+  const suffix = numeric[2].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`(?:^|\\D)0*${number}${suffix ? suffix : "(?!\\d)"}`);
+  return pattern.test(text);
+}
 
 export interface SearchItem {
   id: string;
@@ -23,6 +39,7 @@ export function SearchDialog() {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const router = useRouter();
+  const { isUnlocked } = useLicense();
 
   // Load search index when dialog opens
   useEffect(() => {
@@ -87,7 +104,7 @@ export function SearchDialog() {
     return items
       .filter((it) => {
         const text = it.searchText;
-        return tokens.every((tok) => text.includes(tok));
+        return tokens.every((tok) => tokenMatches(text, tok));
       })
       .slice(0, 20);
   }, [items, query]);
@@ -160,7 +177,7 @@ export function SearchDialog() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleInputKeyDown}
-                placeholder="단어, 문법, 듣기, 독해, 뉴스 또는 레슨 번호 검색 (예: 중등, 1강, 수능, MV1)"
+                placeholder="레슨 제목·번호·과정 검색 (예: 중등 단어, 1강, 수능 듣기, MV1)"
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
@@ -211,6 +228,8 @@ export function SearchDialog() {
                 <ul ref={listRef} className="flex flex-col gap-1">
                   {results.map((item, idx) => {
                     const isSelected = idx === selectedIndex;
+                    // FUN-09: say which results need a licence before the click lands on a paywall.
+                    const locked = !isUnlocked(item.course, item.id);
                     return (
                       <li key={`${item.course}-${item.id}`}>
                         <button
@@ -259,6 +278,16 @@ export function SearchDialog() {
                           </div>
 
                           <div className="flex items-center gap-2 shrink-0">
+                            {locked && (
+                              <span
+                                className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${
+                                  isSelected ? "bg-surface/20 text-surface" : "bg-raised text-ink-soft"
+                                }`}
+                                title="이용권이 필요한 레슨"
+                              >
+                                🔒 <span className="hidden sm:inline">이용권</span>
+                              </span>
+                            )}
                             {item.badge && (
                               <span
                                 className={`hidden sm:inline rounded px-1.5 py-0.5 text-[10px] font-medium ${

@@ -185,19 +185,22 @@ export function evaluatePronunciation(spoken: string, target: string): Evaluatio
   const rawScore = (wordAccuracy * 65) + (charSim * 20) + (lenRatio * 15);
   const score = Math.min(100, Math.max(0, Math.round(rawScore)));
 
-  // 3. Rigorous Grade Calibration (현실적이고 공정한 등급 판정)
+  // 3. Grade calibration. The score above is a WORD-MATCH score — how much of
+  // the target the recogniser heard back, in order — so the feedback says that
+  // and nothing more. It used to praise "억양" and "연음", which this function
+  // never measures (CNT-07).
   let rating: EvaluationResult["rating"] = "poor";
   let ratingLabel = "다시 시도 (Try Again)";
   let feedback = "문장을 처음부터 끝까지 조금 더 또렷하게 소리내어 읽어보세요.";
 
   if (score >= 92) {
     rating = "excellent";
-    ratingLabel = "🌟 완벽한 발음 (Excellent!)";
-    feedback = "어순과 발음, 억양이 완벽합니다!";
+    ratingLabel = "🌟 모든 단어 일치 (Excellent!)";
+    feedback = "문장의 단어가 어순대로 모두 인식되었습니다!";
   } else if (score >= 80) {
     rating = "good";
-    ratingLabel = "👍 우수한 발음 (Good!)";
-    feedback = "의사소통에 충분한 훌륭한 발음입니다. 약간의 연음과 억양만 다듬어보세요.";
+    ratingLabel = "👍 대부분 일치 (Good!)";
+    feedback = "대부분의 단어가 인식되었습니다. 빨간색으로 표시된 단어만 다시 또렷하게 말해보세요.";
   } else if (score >= 60) {
     rating = "almost";
     ratingLabel = "💪 거의 맞았어요 (Almost!)";

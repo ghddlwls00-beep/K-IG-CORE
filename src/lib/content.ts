@@ -157,6 +157,37 @@ export function getLessonContext(course: string, id: string) {
   };
 }
 
+/**
+ * SEO-01 — the URL a lesson page should be indexed under.
+ *
+ * A script page (`d001-1`, `pr001-1`, `gh1-006-2`) renders the same lesson as
+ * its main page: the audit diffed ten of them line by line against their main
+ * page and found only the header differing. Each used to declare itself as its
+ * own canonical, so a search engine saw two pages with one body. The script
+ * page now points at the main page, which is also the only one the sitemap
+ * lists. A main page, or a script page with no main page, is its own canonical.
+ */
+export function canonicalLessonId(course: string, id: string): string {
+  const index = getCourseIndex(course);
+  const summary = index?.lessons.find((l) => l.id === id);
+  if (!index || !summary || summary.variant !== "script") return id;
+  const base = id.replace(/-\d+$/, "");
+  return index.lessons.some((l) => l.id === base && l.variant === "main") ? base : id;
+}
+
+/**
+ * True when `[course]/[lesson]/page.tsx` redirects this id instead of
+ * rendering it — GRAMMAR I's odd-numbered answer pages are folded into the
+ * even-numbered lesson before them. A sitemap must not list a redirect (the
+ * audit found six 307s in it), so this mirrors the page's own rule.
+ */
+export function isRedirectedLesson(course: string, id: string): boolean {
+  if (course !== "grammar1") return false;
+  const m = id.match(/^gh1-(\d+)/);
+  if (!m || parseInt(m[1], 10) % 2 === 0) return false;
+  return getLessonContext(course, id).pair !== null;
+}
+
 // ---------------------------------------------------------------------------
 // Legacy tab navigation
 // ---------------------------------------------------------------------------
@@ -220,18 +251,28 @@ export function getVocaDictionary(): Record<string, { meaning: string; searchWor
   return dict ?? {};
 }
 
-/** Filtered Korean vocabulary dictionary for only the words in a specific phonics lesson. */
+/**
+ * Filtered Korean vocabulary dictionary for only the words in a specific phonics lesson.
+ *
+ * THE WORD IS LOOKED UP AS WRITTEN FIRST. The dictionary keeps separate entries
+ * for a headword and its capitalised namesake — `miss` (그리워하다; 놓치다) and
+ * `Miss` (~양, 경칭) — and this used to try the lower-cased form first, so the
+ * card, the quiz and the drill for "Miss" in mv1-02 all taught the verb
+ * (CNT-04). The view asks `vocaDictionary[word]` before `vocaDictionary[clean]`,
+ * so the entry is stored under the key the view will ask for.
+ */
 export function getVocaDictionaryForWords(words: string[]): Record<string, { meaning: string; searchWord?: string }> {
   if (!words || words.length === 0) return {};
   const fullDict = getVocaDictionary();
   const subset: Record<string, { meaning: string; searchWord?: string }> = {};
   for (const w of words) {
     if (!w) continue;
-    const clean = w.toLowerCase().trim();
-    if (fullDict[clean]) {
+    const written = w.trim();
+    const clean = written.toLowerCase();
+    if (fullDict[written]) {
+      subset[written] = fullDict[written];
+    } else if (fullDict[clean]) {
       subset[clean] = fullDict[clean];
-    } else if (fullDict[w]) {
-      subset[w] = fullDict[w];
     }
   }
   return subset;

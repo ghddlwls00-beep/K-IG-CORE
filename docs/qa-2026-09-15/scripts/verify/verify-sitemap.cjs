@@ -73,7 +73,35 @@ const ALL_LESSONS = [];
 for (const [course, ids] of Object.entries(validRoutes.lessons)) {
   for (const id of ids) ALL_LESSONS.push({ course, lesson: id });
 }
-const FREE = ALL_LESSONS.filter((l) => isFreePreviewLesson(l.course, l.lesson));
+/**
+ * SEO-01: a listed lesson must also be its own canonical page and answer 200.
+ * Script pages (`-1` / `-2`) point at their main page, and GRAMMAR I's
+ * odd-numbered answer pages redirect to the even lesson before them — both
+ * are read from the same course indexes the app reads, not hand-listed.
+ */
+const COURSE_INDEX = Object.fromEntries(
+  COURSES.map((c) => [
+    c,
+    JSON.parse(fs.readFileSync(path.join(REPO, "content/courses", `${c}.json`), "utf8")),
+  ]),
+);
+function isScriptVariant(course, id) {
+  const summary = (COURSE_INDEX[course]?.lessons || []).find((l) => l.id === id);
+  return summary?.variant === "script";
+}
+function isRedirectedLesson(course, id) {
+  if (course !== "grammar1") return false;
+  const m = id.match(/^gh1-(\d+)/);
+  if (!m || parseInt(m[1], 10) % 2 === 0) return false;
+  const even = `gh1-${String(parseInt(m[1], 10) - 1).padStart(3, "0")}`;
+  return (COURSE_INDEX.grammar1?.lessons || []).some((l) => l.id === even || l.id.startsWith(`${even}-`));
+}
+const FREE = ALL_LESSONS.filter(
+  (l) =>
+    isFreePreviewLesson(l.course, l.lesson) &&
+    !isScriptVariant(l.course, l.lesson) &&
+    !isRedirectedLesson(l.course, l.lesson),
+);
 const LOCKED = ALL_LESSONS.filter((l) => !isFreePreviewLesson(l.course, l.lesson));
 const EXPECTED_COUNT = 1 + COURSES.length + TABS.length + FREE.length;
 

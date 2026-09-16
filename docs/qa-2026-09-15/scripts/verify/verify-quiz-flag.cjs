@@ -20,9 +20,13 @@
  * over CDP does that, and clicking the tab is what a learner does anyway.
  *
  * WHAT IT ASSERTS
- *   flag off  : the "준비 중입니다" note is present, no answered-question markers,
- *               and no generated question text
- *   flag on   : the note is GONE and the generated questions are back
+ *   flag off  : no generated question text and no answered-question markers —
+ *               and no "준비 중입니다" note either. The note used to be the
+ *               flag-off marker; the launch audit read it as an unfinished
+ *               product (CNT-08), so the withheld quiz is now not announced at
+ *               all. The step still has to be reachable, which `stepMarker`
+ *               (text the step carries in BOTH states) proves.
+ *   flag on   : the generated questions are back, still without the note
  *
  * THE MARKER IS A STRING THE GENERATOR EMITS VERBATIM, taken from the generator
  * itself (`listeningUtils.ts:416`, `readingUtils.ts:669`) rather than from a
@@ -220,8 +224,7 @@ async function probeOverHttp(route, marker) {
   const problems = [];
   const hasNote = text.includes(NOTE);
   const hasGenerated = text.includes(marker);
-  if (EXPECT_ON && hasNote) problems.push(`server HTML still carries "${NOTE}" with the flag on`);
-  if (!EXPECT_ON && !hasNote) problems.push(`server HTML is missing "${NOTE}" with the flag off`);
+  if (hasNote) problems.push(`server HTML carries "${NOTE}" — the note was removed in both states (CNT-08)`);
   if (EXPECT_ON && !hasGenerated) {
     problems.push(`server HTML does not carry the generated question "${marker}" with the flag on`);
   }
@@ -252,13 +255,12 @@ async function probeInBrowser(tab, route, tabLabel, stepMarker, marker) {
   if (!snap.onStep) {
     problems.push(`the quiz step was never reached — "${stepMarker}" is not on screen`);
   }
+  if (snap.hasNote) problems.push(`"${NOTE}" is rendered — the note was removed in both states (CNT-08)`);
   if (EXPECT_ON) {
-    if (snap.hasNote) problems.push(`"${NOTE}" is still rendered with the flag on`);
     if (!snap.hasGenerated) {
       problems.push(`the generated question did not appear with the flag on`);
     }
   } else {
-    if (!snap.hasNote) problems.push(`"${NOTE}" is not rendered with the flag off`);
     if (snap.hasGenerated) problems.push("a generated question is rendered with the flag off");
     if (snap.answerish > 0) problems.push(`${snap.answerish} answered-question markers rendered`);
   }
@@ -277,7 +279,7 @@ async function probeInBrowser(tab, route, tabLabel, stepMarker, marker) {
 
 (async () => {
   console.log(`KIG-008 quiz flag probe — ${BASE}`);
-  console.log(`expecting SHOW_GENERATED_QUIZ = ${EXPECT_ON ? "true (questions must render)" : "false (note must show)"}\n`);
+  console.log(`expecting SHOW_GENERATED_QUIZ = ${EXPECT_ON ? "true (questions must render)" : "false (no questions, no note)"}\n`);
 
   await probeOverHttp("/ld/d001", GENERATED_MARKER["/ld/d001"]);
 
@@ -305,13 +307,15 @@ async function probeInBrowser(tab, route, tabLabel, stepMarker, marker) {
     if (!ready) throw new Error("headless Edge never opened its debugging port");
 
     const tab = await Tab.open();
-    // LISTENING's quiz is the default step; READING's is behind a tab.
-    await probeInBrowser(tab, "/ld/d001", null, "맥락 진단 퀴즈", GENERATED_MARKER["/ld/d001"]);
+    // LISTENING's quiz is the default step; READING's is behind a tab. The step
+    // markers are text each step carries whether or not the quiz is on — the
+    // quiz heading itself is gone with the flag off, so it cannot be the marker.
+    await probeInBrowser(tab, "/ld/d001", null, "다음: Step 2 탭-딕테이션 이동", GENERATED_MARKER["/ld/d001"]);
     await probeInBrowser(
       tab,
       "/reading/pr001",
       "독해 퀴즈",
-      "뇌인지과학 인출 훈련",
+      "클로즈(Cloze) 빈칸 완성",
       GENERATED_MARKER["/reading/pr001"],
     );
   } catch (err) {

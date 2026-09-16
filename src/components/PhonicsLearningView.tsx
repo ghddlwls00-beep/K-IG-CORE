@@ -227,6 +227,16 @@ export function PhonicsLearningView({
   const [recallStreak, setRecallStreak] = useState(0);
   const [isRecallAnswered, setIsRecallAnswered] = useState(false);
 
+  // FUN-03: the quiz used to wrap from #30 back to #1 with no end — the score
+  // just kept climbing. It now ends with a summary of the words missed.
+  const [recallFinished, setRecallFinished] = useState(false);
+  const [recallCorrectCount, setRecallCorrectCount] = useState(0);
+  // Counted rather than assumed to be the whole list: "이 단어로 Step 2" can
+  // start the run part-way through.
+  const [recallAnsweredCount, setRecallAnsweredCount] = useState(0);
+  const [recallWrongWords, setRecallWrongWords] = useState<string[]>([]);
+  const isLastRecall = recallIdx >= activeRecallQuizzes.length - 1;
+
   function handleAnswerRecall(optIdx: number) {
     if (isRecallAnswered) return;
     const currentQ = activeRecallQuizzes[recallIdx];
@@ -234,13 +244,16 @@ export function PhonicsLearningView({
 
     setSelectedRecallAnswer(optIdx);
     setIsRecallAnswered(true);
+    setRecallAnsweredCount((c) => c + 1);
 
     const isCorrect = optIdx === currentQ.correctIndex;
     if (isCorrect) {
       setRecallScore((s) => s + 10 + recallStreak * 2);
       setRecallStreak((st) => st + 1);
+      setRecallCorrectCount((c) => c + 1);
     } else {
       setRecallStreak(0);
+      setRecallWrongWords((prev) => (prev.includes(currentQ.word) ? prev : [...prev, currentQ.word]));
     }
 
     // Update Leitner Box
@@ -256,7 +269,33 @@ export function PhonicsLearningView({
   function handleNextRecall() {
     setSelectedRecallAnswer(null);
     setIsRecallAnswered(false);
-    setRecallIdx((prev) => (prev + 1) % Math.max(1, activeRecallQuizzes.length));
+    if (isLastRecall) {
+      setRecallFinished(true);
+      return;
+    }
+    setRecallIdx((prev) => prev + 1);
+  }
+
+  function resetRecall(startIdx = 0) {
+    setRecallIdx(startIdx);
+    setRecallScore(0);
+    setRecallStreak(0);
+    setRecallCorrectCount(0);
+    setRecallAnsweredCount(0);
+    setRecallWrongWords([]);
+    setRecallFinished(false);
+    setSelectedRecallAnswer(null);
+    setIsRecallAnswered(false);
+  }
+
+  // FUN-04: "이 단어로 Step 2 퀴즈 풀기" opens the question FOR that word, not #1.
+  function startRecallAt(word: string) {
+    const target = word.toLowerCase().trim();
+    const idx = activeRecallQuizzes.findIndex((q) => q.word.toLowerCase().trim() === target);
+    // A new run from this word: the score, counts and missed words of any
+    // earlier run are cleared, or the results screen would mix two runs.
+    resetRecall(idx >= 0 ? idx : 0);
+    setActiveTab("recall");
   }
 
   // ---------------------------------------------------------------------------
@@ -416,7 +455,7 @@ export function PhonicsLearningView({
               )}
             </div>
             <h2 className="text-[20px] font-bold tracking-tight text-ink">
-              뇌과학 기반 4단계 음향·인지 어휘 마스터리 파이프라인
+              4단계 어휘 마스터리 — 소리 · 인출 · 발음 · 반사 드릴
             </h2>
           </div>
 
@@ -442,7 +481,7 @@ export function PhonicsLearningView({
           </div>
         </div>
 
-        {/* 4 STAGE TABS (문맥예문조립 제외, Step 3 AI 발음&오답노트, Step 4 60초 타임어택) */}
+        {/* 4 STAGE TABS (문맥예문조립 제외, Step 3 발음 테스트&오답노트, Step 4 60초 타임어택) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-2.5 border-t border-line/60 pt-3">
           {[
             {
@@ -460,7 +499,7 @@ export function PhonicsLearningView({
             {
               id: "speaking",
               step: "Step 3",
-              label: "🗣️ AI 발음 & 오답노트",
+              label: "🗣️ 발음 테스트 & 오답노트",
               sub: "망각곡선 라이트너 복습",
             },
             {
@@ -565,17 +604,23 @@ export function PhonicsLearningView({
                 </div>
               </div>
 
-              {/* Etymology Breakdown Box */}
-              <div className="rounded-2xl border border-[#D4AF37]/25 bg-amber-500/[0.04] p-4 flex flex-col gap-1.5">
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-[10.5px] font-bold tracking-wider text-[#D4AF37] uppercase">
-                    🧬 어원 & 파닉스 분해 (Etymology Decoding)
-                  </span>
+              {/*
+                CNT-09 — the etymology box exists only for words with an
+                authored breakdown; there is no template for the rest. Same
+                rule as the collocation card below.
+              */}
+              {selectedEtymology ? (
+                <div className="rounded-2xl border border-[#D4AF37]/25 bg-amber-500/[0.04] p-4 flex flex-col gap-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-[10.5px] font-bold tracking-wider text-[#D4AF37] uppercase">
+                      🧬 어원 분해 (Etymology Decoding)
+                    </span>
+                  </div>
+                  <p className="text-[13.5px] font-medium text-ink leading-relaxed">
+                    {selectedEtymology.explanation}
+                  </p>
                 </div>
-                <p className="text-[13.5px] font-medium text-ink leading-relaxed">
-                  {selectedEtymology.explanation}
-                </p>
-              </div>
+              ) : null}
 
               {/*
                 KIG-012 — the whole box is omitted when there is no authored
@@ -623,7 +668,7 @@ export function PhonicsLearningView({
               <div className="flex items-center justify-end pt-1">
                 <button
                   type="button"
-                  onClick={() => setActiveTab("recall")}
+                  onClick={() => startRecallAt(selectedWord)}
                   className="inline-flex items-center gap-2 text-[13px] font-bold text-[#D4AF37] hover:underline cursor-pointer"
                 >
                   <span>이 단어로 Step 2 액티브 인출 퀴즈 풀기</span>
@@ -794,7 +839,78 @@ export function PhonicsLearningView({
       {/* ------------------------------------------------------------------- */}
       {/* ⚡ STEP 2: ACTIVE FLASH RECALL (능동적 인출 4지선다) */}
       {/* ------------------------------------------------------------------- */}
-      {activeTab === "recall" && activeRecallQuizzes.length > 0 && (
+      {activeTab === "recall" && recallFinished && (
+        <div className="flex flex-col gap-6 animate-in fade-in duration-200 max-w-2xl mx-auto w-full">
+          <div
+            role="status"
+            className="rounded-3xl border-2 border-line bg-surface p-8 text-center flex flex-col items-center gap-6 shadow-sm"
+          >
+            <div className="text-[36px]">🏁</div>
+            <div className="flex flex-col gap-1">
+              <h3 className="text-[24px] font-black text-ink">
+                {recallAnsweredCount < activeRecallQuizzes.length
+                  ? `${recallAnsweredCount}문항 풀이 완료 (전체 ${activeRecallQuizzes.length}문항)`
+                  : `${activeRecallQuizzes.length}문항 완료`}
+              </h3>
+              <p className="text-[14px] text-ink-soft">
+                틀린 단어는 Step 3 오답노트의 Box 1(집중 복습)에 들어가 있습니다.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+              <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
+                <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">최종 점수</span>
+                <span className="font-mono text-[24px] font-black text-[#D4AF37]">{recallScore}</span>
+              </div>
+              <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
+                <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">정답 / 푼 문항</span>
+                <span className="font-mono text-[24px] font-black text-emerald-800 dark:text-emerald-300">
+                  {recallCorrectCount} / {recallAnsweredCount}
+                </span>
+              </div>
+            </div>
+
+            {recallWrongWords.length > 0 ? (
+              <div className="w-full max-w-md rounded-2xl border border-rose-500/30 bg-rose-500/[0.04] p-4 text-left">
+                <span className="font-mono text-[10.5px] font-bold uppercase tracking-wider text-rose-700 dark:text-rose-300">
+                  틀린 단어 {recallWrongWords.length}개
+                </span>
+                <ul className="mt-2 flex flex-col gap-1">
+                  {recallWrongWords.map((w) => (
+                    <li key={w} className="flex items-baseline justify-between gap-3 text-[13.5px]">
+                      <span className="font-mono font-bold text-ink">{w}</span>
+                      <span className="text-ink-soft">{dictMap[w.toLowerCase().trim()]?.meaning}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p className="text-[13.5px] font-semibold text-emerald-700 dark:text-emerald-300">
+                모든 문항을 맞혔습니다!
+              </p>
+            )}
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => resetRecall(0)}
+                className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
+              >
+                처음부터 다시 풀기 ↺
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("speaking")}
+                className="rounded-2xl border border-line bg-surface px-5 py-3 text-[13.5px] font-semibold text-ink hover:bg-raised transition-all cursor-pointer"
+              >
+                Step 3 오답노트 복습하러 가기 →
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "recall" && !recallFinished && activeRecallQuizzes.length > 0 && (
         <div className="flex flex-col gap-6 animate-in fade-in duration-200">
           {(() => {
             const q = activeRecallQuizzes[recallIdx];
@@ -894,18 +1010,18 @@ export function PhonicsLearningView({
                   <div className="rounded-2xl border border-line bg-raised/40 p-4 flex flex-col gap-3 animate-in fade-in">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D4AF37]">
-                        💡 기억 각인 힌트 & 어원 풀이
+                        {q.etymologyHint ? "💡 기억 각인 힌트 & 어원 풀이" : "✅ 정답 확인"}
                       </span>
                       <button
                         type="button"
                         onClick={handleNextRecall}
                         className="rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
                       >
-                        다음 문제 풀기 →
+                        {isLastRecall ? "결과 보기 →" : "다음 문제 풀기 →"}
                       </button>
                     </div>
                     <p className="text-[13px] font-medium text-ink leading-relaxed">
-                      {q.etymologyHint}
+                      {q.etymologyHint ?? `${q.word} = ${q.correctMeaning}`}
                     </p>
                   </div>
                 )}
@@ -925,10 +1041,10 @@ export function PhonicsLearningView({
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-col">
                 <span className="font-mono text-[10.5px] font-bold tracking-wider text-[#D4AF37] uppercase">
-                  Step 3 · AI Speaking & Pronunciation Tester
+                  Step 3 · Speaking & Pronunciation Tester
                 </span>
                 <h3 className="text-[17px] font-bold text-ink">
-                  “내가 직접 발음할 수 있는 단어만 뇌에 영구 각인된다”
+                  직접 소리 내어 말해 본 단어가 더 오래 기억에 남습니다
                 </h3>
               </div>
               <div className="flex items-center gap-2">
@@ -950,7 +1066,7 @@ export function PhonicsLearningView({
               */}
               <VoiceSpeakingTester
                 targetText={vocaSpeechForm(selectedWord)}
-                buttonLabel={`"${selectedWord}" AI 발음 정밀 테스트`}
+                buttonLabel={`"${selectedWord}" 발음 테스트`}
               />
             </div>
           </div>
@@ -1150,7 +1266,7 @@ export function PhonicsLearningView({
               <div className="flex flex-col gap-1">
                 <h3 className="text-[24px] font-black text-ink">타임오버! 훈련 완료</h3>
                 <p className="text-[14px] text-ink-soft">
-                  뇌신경 반사 속도가 한층 더 날카로워졌습니다!
+                  반응 속도가 한층 빨라졌습니다!
                 </p>
               </div>
 

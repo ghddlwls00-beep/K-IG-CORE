@@ -121,7 +121,7 @@ const WpmStopwatchBar = memo(function WpmStopwatchBar({
     <div className="rounded-2xl border border-line bg-gradient-to-br from-surface via-raised/30 to-surface p-4 sm:p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-5">
       <div className="flex flex-col gap-1.5">
         <span className="font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">
-          하버드 속독식 페이싱 훈련 (Evelyn Wood WPM System)
+          속독 페이싱 훈련 (WPM Pacing)
         </span>
         <h2 className="text-[17px] font-bold text-ink">
           한국어 번역을 멈추고 영어 어순대로 눈을 빠르게 굴려 읽어보세요.
@@ -382,26 +382,39 @@ export function ReadingLearningView({
   const [restored, setRestored] = useState(false);
   const notesStorageKey = `kig:reading:notes:${lessonKey}`;
 
+  // FUN-07: what was last written, so restoring a note is not itself "a save"
+  // and a fresh visit does not show "자동 저장됨" before anything was typed.
+  const lastSavedNotesRef = useRef<string | null>(null);
+
   useEffect(() => {
+    let restoredNotes = "";
     try {
       const raw = window.localStorage.getItem(notesStorageKey);
       if (raw) {
         const data = JSON.parse(raw);
-        setNotes(data.notes || "");
+        restoredNotes = data.notes || "";
+        setNotes(restoredNotes);
         setSavedAt(data.at || null);
       }
     } catch {
       // ignore
     }
+    lastSavedNotesRef.current = restoredNotes;
     setRestored(true);
   }, [notesStorageKey]);
 
   useEffect(() => {
-    if (!restored) return;
+    if (!restored || notes === lastSavedNotesRef.current) return;
     const timer = setTimeout(() => {
       try {
-        const at = new Date().toLocaleTimeString();
+        const at = new Date().toLocaleString("ko-KR", {
+          month: "numeric",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+        });
         window.localStorage.setItem(notesStorageKey, JSON.stringify({ notes, at }));
+        lastSavedNotesRef.current = notes;
         setSavedAt(at);
       } catch {
         // ignore
@@ -858,43 +871,32 @@ export function ReadingLearningView({
       {/* ========================================================================= */}
       {activeTab === "quiz" && (
         <section aria-label="Reading Quizzes" className="flex flex-col gap-6 animate-in fade-in duration-200">
-          {/* Header Banner */}
-          <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
-                <span>📝</span> 독해력 실전 인출 테스트 (Retrieval Practice)
-              </h2>
-              <p className="mt-0.5 text-[12.5px] text-ink-soft">
-                눈으로만 읽는 독해는 기억에 남지 않습니다. 지문의 주제와 세부 내용을 스스로 정리해 보세요.
-              </p>
-            </div>
-            <span className="rounded bg-primary/10 px-2.5 py-0.5 font-mono text-[11.5px] font-bold text-primary border border-primary/20">
-              뇌인지과학 인출 훈련
-            </span>
-          </div>
-
           {/*
-            KIG-008: the generated questions are off (see quizFlags.ts). Saying
-            so is better than a blank panel, and better than the copy above
-            promising questions that are not there.
-
-            The note is keyed to the FLAG, not to the array being empty, so
-            turning the quiz back on cannot leave the note behind.
+            KIG-008 / CNT-08: the generated comprehension questions are off (see
+            quizFlags.ts). While they are off, neither the banner announcing
+            them nor a "준비 중" note is shown — the audit read the note as an
+            unfinished product. The step keeps its cloze drill. Keyed to the
+            FLAG, so flipping it brings banner and questions back together.
           */}
-          {!SHOW_GENERATED_QUIZ ? (
-            <div className="rounded-2xl border border-dashed border-line bg-surface/60 p-5">
-              <p className="text-[13.5px] font-medium text-ink">
-                이 지문의 확인 문항은 준비 중입니다.
-              </p>
-              <p className="mt-1 text-[12.5px] leading-relaxed text-ink-soft">
-                지문에서 바로 만들 수 있는 문항만 싣고 있습니다. 검수가 끝난 문항이 준비되면
-                이 자리에 표시됩니다. 그동안은 아래 어휘와 문장 대조로 내용을 확인해 주세요.
-              </p>
-            </div>
-          ) : null}
+          {SHOW_GENERATED_QUIZ ? (
+            <>
+              {/* Header Banner */}
+              <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
+                    <span>📝</span> 독해력 실전 인출 테스트 (Retrieval Practice)
+                  </h2>
+                  <p className="mt-0.5 text-[12.5px] text-ink-soft">
+                    눈으로만 읽는 독해는 기억에 남지 않습니다. 지문의 주제와 세부 내용을 스스로 정리해 보세요.
+                  </p>
+                </div>
+                <span className="rounded bg-primary/10 px-2.5 py-0.5 font-mono text-[11.5px] font-bold text-primary border border-primary/20">
+                  인출 연습 (Retrieval Practice)
+                </span>
+              </div>
 
-          {/* Part 1: Multiple Choice Comprehension Questions */}
-          <div className="flex flex-col gap-4">
+              {/* Part 1: Multiple Choice Comprehension Questions */}
+              <div className="flex flex-col gap-4">
             {questions.map((q) => {
               const selectedIdx = userAnswers[q.id];
               const isAnswered = selectedIdx !== undefined;
@@ -965,7 +967,9 @@ export function ReadingLearningView({
                 </div>
               );
             })}
-          </div>
+              </div>
+            </>
+          ) : null}
 
           {/* Part 2: Cloze Keyword Fill-in Drills */}
           {clozeItems.length > 0 && (
@@ -1050,7 +1054,7 @@ export function ReadingLearningView({
                   <span>🎙️</span> 지문 대표 문장 낭독 & 발음 채점
                 </h3>
                 <p className="mt-0.5 text-[12px] text-ink-soft">
-                  직접 소리 내어 지문의 핵심 문장을 읽고 AI 발음 점수를 확인해보세요.
+                  직접 소리 내어 지문의 핵심 문장을 읽고, 인식된 문장이 원문과 얼마나 일치하는지 확인해보세요.
                 </p>
               </div>
 
@@ -1085,8 +1089,10 @@ export function ReadingLearningView({
             </div>
 
             <div className="flex items-center justify-between sm:justify-end gap-2">
-              {/* Mobile View Toggle (visible only below lg) */}
-              <div className="flex lg:hidden items-center rounded-lg border border-line bg-raised/70 p-0.5 text-[11px] font-medium">
+              {/* View toggle — FUN-08: it used to be a mobile-only control whose
+                  panels were forced back on at lg, so on a desktop "영어만" did
+                  nothing. It now applies at every width. */}
+              <div className="flex items-center rounded-lg border border-line bg-raised/70 p-0.5 text-[11px] font-medium" role="group" aria-label="대조 보기 선택">
                 <button
                   type="button"
                   onClick={() => setDualMobileView("both")}
@@ -1116,10 +1122,10 @@ export function ReadingLearningView({
             </div>
           </div>
 
-          {/* Dual Columns: Left English, Right Korean (Responsive with mobile toggle) */}
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {/* Dual Columns: Left English, Right Korean (the toggle above hides either side) */}
+          <div className={`grid grid-cols-1 gap-6 ${dualMobileView === "both" ? "lg:grid-cols-2" : ""}`}>
             {/* Left Column: English Passage */}
-            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "ko" ? "hidden lg:block" : "block"}`}>
+            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "ko" ? "hidden" : "block"}`}>
               <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
                 <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink uppercase tracking-wider border border-line">
                   English Passage (영어 원문)
@@ -1164,7 +1170,7 @@ export function ReadingLearningView({
             </div>
 
             {/* Right Column: Korean Passage */}
-            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "en" ? "hidden lg:block" : "block"}`}>
+            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "en" ? "hidden" : "block"}`}>
               <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
                 <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink-soft uppercase tracking-wider border border-line">
                   Korean Interpretation (한글 완역)
@@ -1290,6 +1296,7 @@ export function ReadingLearningView({
           rows={3}
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
+          aria-label="독해 핵심 메모 & 어휘 노트"
           placeholder="지문의 핵심 주제문, 새로 배운 단어, 문법 포인트 등을 자유롭게 메모하세요... (실시간 자동 저장)"
           className="w-full rounded-lg border border-line/80 bg-raised/20 p-3.5 text-[16px] sm:text-[13.5px] text-ink placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors"
         />

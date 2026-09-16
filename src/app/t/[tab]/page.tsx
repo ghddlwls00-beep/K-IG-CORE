@@ -44,7 +44,7 @@ export async function generateMetadata({
   const description = section?.blurb || TAB_FALLBACK_DESCRIPTION;
   // RE-012: the same section photograph the page renders as its banner, so a
   // link shared into KakaoTalk previews as the page it points at.
-  const image = TAB_IMAGES[tab]?.src || "/images/sections/students.jpg";
+  const image = TAB_IMAGES[tab]?.og || "/images/og/students.jpg";
   return {
     title,
     description,
@@ -54,7 +54,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonical,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: image, width: 1000, height: 525, alt: title }],
     },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };

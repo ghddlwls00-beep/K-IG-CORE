@@ -9,7 +9,7 @@ import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
-import { getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
+import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { isStudentOnlyPlan } from "@/lib/license";
 import {
   LICENSE_SESSION_COOKIE_NAME,
@@ -48,17 +48,22 @@ export const dynamicParams = false;
 /**
  * The banner that represents each course in a share card. Mirrors the map on
  * the course landing page so a shared lesson looks like its section.
+ *
+ * SEO-01: these are the 1000×525 landscape crops in `public/images/og/`. The
+ * portrait section photos (1000×1250) used to be declared as 1200×630.
  */
 const COURSE_OG_IMAGE: Record<string, string> = {
-  phonics: "/images/sections/voca.jpg",
-  grammar1: "/images/sections/grammar1.jpg",
-  grammar2: "/images/sections/grammar2.jpg",
-  ld: "/images/sections/ld.jpg",
-  reading: "/images/sections/reading.jpg",
-  cnn: "/images/sections/cnn.jpg",
-  student: "/images/sections/students.jpg",
-  chinese: "/images/sections/chinese.jpg",
+  phonics: "/images/og/voca.jpg",
+  grammar1: "/images/og/grammar1.jpg",
+  grammar2: "/images/og/grammar2.jpg",
+  ld: "/images/og/ld.jpg",
+  reading: "/images/og/reading.jpg",
+  cnn: "/images/og/cnn.jpg",
+  student: "/images/og/students.jpg",
+  chinese: "/images/og/chinese.jpg",
 };
+const OG_WIDTH = 1000;
+const OG_HEIGHT = 525;
 
 export async function generateMetadata({
   params,
@@ -71,13 +76,14 @@ export async function generateMetadata({
   const pres = formatLessonPresentation(course, lesson);
   // RE-011: every lesson declares its OWN canonical URL, so each page is indexed
   // on its own instead of being collapsed into the home page by the root
-  // layout's former global canonical.
-  const canonical = `/${course}/${id}`;
+  // layout's former global canonical. SEO-01: a script page (`-1` / `-2`)
+  // points at its main page, which renders the same lesson.
+  const canonical = `/${course}/${canonicalLessonId(course, id)}`;
   const title = pres.title;
   const description = lesson.menuLabel
     ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
     : `${pres.title}. K-IG 핵심 어학 과정.`;
-  const image = COURSE_OG_IMAGE[course] || "/images/sections/students.jpg";
+  const image = COURSE_OG_IMAGE[course] || "/images/og/students.jpg";
   // RE-008: a locked lesson renders the paywall shell — 270 characters of
   // navigation and an upsell, the same on 1,713 URLs except for the title. Left
   // indexable, those pages are what a crawler mostly sees of this site, and
@@ -98,7 +104,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonical,
-      images: [{ url: image, width: 1200, height: 630, alt: pres.title }],
+      images: [{ url: image, width: OG_WIDTH, height: OG_HEIGHT, alt: pres.title }],
     },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };

@@ -235,31 +235,137 @@ export function generateLiaisonPoints(sentence: string): LiaisonCard[] {
 }
 
 /**
+ * The words of a sentence as dictation tokens: trailing punctuation dropped,
+ * apostrophes inside words kept ("I'm", "don't").
+ */
+function dictationWords(sentence: string): string[] {
+  return (sentence.match(/[a-zA-Z0-9'’\-]+/g) || []).map((w) => w.trim()).filter(Boolean);
+}
+
+/**
+ * A word with its apostrophes and a trailing plural/possessive "s" removed, so
+ * that "I'm"/"Im" and "name's"/"names" compare equal. Two tiles that differ only
+ * this way SOUND the same, and a learner cannot tell them apart by ear — which
+ * makes the wrong one a spelling trap, not a listening exercise (CNT-14).
+ */
+function soundAlikeForm(word: string): string {
+  return word.toLowerCase().replace(/['’]/g, "").replace(/s$/, "");
+}
+
+/**
+ * The sentences a slashed alternative stands for.
+ *
+ * STUDENT writes "Nice to meet you (sir/ma'am)." and "His/Her name is …" —
+ * one sentence, two ways to say it. Tokenised as written, BOTH words became
+ * required, so "Nice to meet you sir" was wrong and only the ungrammatical
+ * "Nice to meet you sir ma'am" passed (CNT-01). Each "a/b" (with or without the
+ * bracket) is expanded into its choices; the first sentence in the result is
+ * the one the tiles are built from, and every one of them counts as correct.
+ * A sentence with no slash comes back as itself.
+ *
+ * PRONOUN GROUPS AGREE BY GENDER, not by position, and are not combined
+ * freely. STUDENT's pronoun slashes are one referent written both ways — "He/She
+ * has a habit of touching his/her nose … when he/she teaches" — so every pronoun
+ * group takes the form matching the chosen referent. A free product would also
+ * accept "He has a habit of touching her nose when she teaches", a different
+ * sentence. Position is not enough either: s6-3 #7 writes "He/She is very kind,
+ * and I like her/him a lot", where the first option of each group disagrees
+ * (independent review). Other slashed groups ("brother/sister", "sir/ma'am")
+ * are independent choices and are combined with each referent.
+ */
+const MASCULINE = new Set(["he", "him", "his", "himself"]);
+const FEMININE = new Set(["she", "her", "hers", "herself"]);
+const genderOf = (word: string) =>
+  MASCULINE.has(word.toLowerCase()) ? "m" : FEMININE.has(word.toLowerCase()) ? "f" : null;
+
+export function expandSlashAlternatives(sentence: string): string[] {
+  const pattern = /\(?([A-Za-z'’]+(?:\/[A-Za-z'’]+)+)\)?/g;
+  const groups = [...sentence.matchAll(pattern)].map((match) => {
+    const options = match[1].split("/").filter(Boolean);
+    return { whole: match[0], options, pronoun: options.every((o) => genderOf(o) !== null) };
+  });
+  if (groups.length === 0) return [sentence];
+
+  const hasPronouns = groups.some((g) => g.pronoun);
+  let variants = hasPronouns
+    ? (["m", "f"] as const).map((gender) =>
+        groups.reduce(
+          (text, g) =>
+            g.pronoun
+              ? text.replace(g.whole, g.options.find((o) => genderOf(o) === gender) ?? g.options[0])
+              : text,
+          sentence,
+        ),
+      )
+    : [sentence];
+
+  for (const g of groups.filter((x) => !x.pronoun)) {
+    variants = variants.flatMap((v) => g.options.map((o) => v.replace(g.whole, o)));
+    // Two independent groups is already four sentences; stop before a
+    // pathological line builds hundreds.
+    if (variants.length > 16) break;
+  }
+  return Array.from(new Set(variants));
+}
+
+/**
  * Creates word-bank tiles for mobile tap-to-assemble dictation with plausible distractors.
+ *
+ * `acceptedWordSequences` holds every word sequence that counts as correct —
+ * one per slashed alternative in the sentence — and `correctWords` is the first
+ * of them, which the tiles and the hint follow. The words the other
+ * alternatives need are added as tiles too, so each alternative can actually
+ * be assembled.
  */
 export function generateWordBank(
   sentence: string,
   extraDistractorPool: string[] = []
-): { correctWords: string[]; allTiles: WordTile[] } {
-  // Strip trailing punctuation but keep apostrophes inside words (e.g. "I'm", "don't")
-  const rawWords = sentence.match(/[a-zA-Z0-9'’\-]+/g) || [];
-  const correctWords = rawWords.map((w) => w.trim()).filter(Boolean);
+): { correctWords: string[]; acceptedWordSequences: string[][]; allTiles: WordTile[] } {
+  const acceptedWordSequences = expandSlashAlternatives(sentence).map(dictationWords);
+  const correctWords = acceptedWordSequences[0] ?? [];
 
   const tileList: WordTile[] = correctWords.map((word, idx) => ({
     id: `word-${idx}-${word}`,
     word,
   }));
 
+  // The other alternatives' own words ("ma'am" next to "sir") — as many copies
+  // as the alternative that needs the most, so "She … she" can be assembled
+  // even though the first sentence is "He … he".
+  const countWords = (words: string[]) => {
+    const counts = new Map<string, { count: number; word: string }>();
+    for (const word of words) {
+      const key = word.toLowerCase();
+      const entry = counts.get(key);
+      if (entry) entry.count += 1;
+      else counts.set(key, { count: 1, word });
+    }
+    return counts;
+  };
+  const have = countWords(correctWords);
+  for (const sequence of acceptedWordSequences.slice(1)) {
+    for (const [key, need] of countWords(sequence)) {
+      const available = have.get(key)?.count ?? 0;
+      for (let extra = available; extra < need.count; extra++) {
+        tileList.push({ id: `alt-${tileList.length}-${need.word}`, word: need.word });
+      }
+      if (need.count > available) have.set(key, { count: need.count, word: need.word });
+    }
+  }
+  const existingSet = new Set(have.keys());
+
   // Add 2~3 smart distractor words
   const defaultDistractors = [
     "was", "the", "with", "in", "at", "for", "on", "is", "he", "she", "we", "are", "very"
   ];
   const pool = Array.from(new Set([...extraDistractorPool, ...defaultDistractors]));
-  const existingSet = new Set(correctWords.map((w) => w.toLowerCase()));
+  const soundAlikes = new Set(
+    acceptedWordSequences.flat().map(soundAlikeForm),
+  );
 
   const addedDistractors: string[] = [];
   for (const d of pool) {
-    if (!existingSet.has(d.toLowerCase()) && d.length >= 2) {
+    if (!existingSet.has(d.toLowerCase()) && !soundAlikes.has(soundAlikeForm(d)) && d.length >= 2) {
       addedDistractors.push(d);
       if (addedDistractors.length >= 2) break;
     }
@@ -281,6 +387,7 @@ export function generateWordBank(
 
   return {
     correctWords,
+    acceptedWordSequences,
     allTiles: shuffled,
   };
 }
@@ -293,6 +400,11 @@ export function verifyWordSequence(userWords: string[], targetWords: string[]): 
   return userWords.every(
     (w, idx) => w.toLowerCase() === targetWords[idx].toLowerCase()
   );
+}
+
+/** True when the assembled tiles match ANY of the accepted word sequences. */
+export function verifyAnyWordSequence(userWords: string[], accepted: string[][]): boolean {
+  return accepted.some((target) => verifyWordSequence(userWords, target));
 }
 
 /**

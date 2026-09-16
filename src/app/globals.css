@@ -44,7 +44,7 @@
 
   --ink: #121316;                  /* Deep Obsidian Velvet Ink */
   --ink-soft: #4E4B46;             /* Warm Espresso Stone */
-  --ink-faint: #9C978F;            /* Cashmere Taupe Stone */
+  --ink-faint: #726D66;            /* Warm Taupe — 4.8:1 on the canvas (was #9C978F at 2.74:1, A11Y-02) */
 
   --line: rgba(34, 30, 26, 0.08);   /* Hairline Warm Border */
   --line-strong: #121316;
@@ -70,7 +70,7 @@
 
   --ink: #F5F3EF;
   --ink-soft: #A8A39D;
-  --ink-faint: #6B665F;
+  --ink-faint: #8A857E;            /* 5.3:1 on the dark canvas (was #6B665F at 3.4:1, A11Y-02) */
 
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: #F5F3EF;

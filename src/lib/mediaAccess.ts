@@ -11,10 +11,16 @@
  *
  *   - anything belonging to a free preview lesson, which is the point of the
  *     preview; and
- *   - the pre-generated speech clips under "audio/azure-ava/", whose keys are
- *     content hashes. A clip is only useful to someone who already knows the
- *     sentence it speaks, and the sentences are behind the page gate, so these
- *     carry no catalogue of their own to walk.
+ *   - the pre-generated speech clips under "audio/azure-ava/" THAT A FREE
+ *     LESSON SPEAKS. Their keys are content hashes, and the old rule let every
+ *     clip through on the theory that a hash is only guessable by someone who
+ *     already knows the sentence. That assumed the sentences were secret. They
+ *     are not — the repository that holds `content/` is public and so is the
+ *     hash function — and measured on production 2026-09-16, 19 of 20 clips
+ *     for four locked lessons answered 206 to an anonymous request (SEC-02).
+ *     The free set is now enumerated at build time by
+ *     `scripts/buildFreeSpeechKeys.mjs` into `generated/freeSpeechKeys.json`;
+ *     every other clip needs a licence session, exactly like course audio.
  *
  * EVERYTHING ELSE IS DENIED, and that is a change. The rule used to be the
  * opposite — a key whose folder did not map onto a course was allowed, on the
@@ -35,6 +41,14 @@ import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
 } from "./licenseSession";
+import freeSpeech from "./generated/freeSpeechKeys.json";
+
+/**
+ * Clip keys a free preview lesson can request. Built from `content/` by
+ * `scripts/buildFreeSpeechKeys.mjs` (run by `prebuild`), so a text change in a
+ * free lesson is followed by a rebuild of this list, never by editing it.
+ */
+const FREE_SPEECH_KEYS = new Set<string>(freeSpeech.keys);
 
 /** Folders under the media root that map onto a course slug. THE ALLOW LIST. */
 const FOLDER_TO_COURSE: Record<string, string> = {
@@ -60,12 +74,22 @@ export async function resolveMediaAccess(
   cookieValue: string | undefined,
 ): Promise<MediaAccess> {
   const parts = key.split("/").filter(Boolean);
+  const file = parts[parts.length - 1] ?? "";
 
-  // audio/azure-ava/v1/<hash>.mp3 — hashed keys, see the note above.
-  if (parts[1] === "azure-ava") return { allowed: true, reason: "unified-speech" };
+  // audio/azure-ava/v1/<hash>.mp3 — see the note above. A clip on the free
+  // list is public (and publicly cacheable); anything else is served only to a
+  // licence session, and privately, like the course folders below. The session
+  // is not narrowed by course here because a hash carries no course — a
+  // STUDENT-only pass can therefore fetch a GRAMMAR clip, but only after paying
+  // and only for a sentence it already has; the anonymous leak is what mattered.
+  if (parts[1] === "azure-ava") {
+    const clipKey = file.replace(/\.mp3$/i, "");
+    if (FREE_SPEECH_KEYS.has(clipKey)) return { allowed: true, reason: "unified-speech" };
+    const session = await verifyLicenseSessionToken(cookieValue);
+    return session ? { allowed: true, reason: "licensed" } : { allowed: false, reason: "locked" };
+  }
 
   const course = parts[1] ? FOLDER_TO_COURSE[parts[1]] : undefined;
-  const file = parts[parts.length - 1] ?? "";
   const lessonId = file.replace(/\.[a-z0-9]+$/i, "");
 
   // A key whose folder is not one of the courses this app serves belongs to a

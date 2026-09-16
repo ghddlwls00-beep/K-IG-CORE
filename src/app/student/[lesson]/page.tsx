@@ -53,7 +53,8 @@ export async function generateMetadata({
   const description = lesson.menuLabel
     ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
     : `${pres.title}. K-IG 핵심 어학 과정.`;
-  const image = "/images/sections/students.jpg";
+  // SEO-01: the 1000×525 landscape crop, declared at its real size.
+  const image = "/images/og/students.jpg";
   // RE-008: the locked STUDENT lessons render the same paywall shell as the
   // shared route, so they get the same treatment. `follow` stays true.
   //
@@ -72,7 +73,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonical,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: image, width: 1000, height: 525, alt: title }],
     },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };

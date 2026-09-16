@@ -1,5 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAllLessonParams, getCourses, getTabs } from "@/lib/content";
+import {
+  canonicalLessonId,
+  getAllLessonParams,
+  getCourses,
+  getTabs,
+  isRedirectedLesson,
+} from "@/lib/content";
 import { isFreePreviewLesson } from "@/lib/license";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.app";
@@ -24,7 +30,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.a
  * The tab pages are added because they are real content (a section
  * introduction, 395–2,613 characters measured) and were simply missing.
  *
- * Result: 45 URLs — home, 7 courses, 7 tabs, 30 free preview lessons.
+ * SEO-01 — two more exclusions, both measured against production 2026-09-16:
+ * six listed URLs answered 307 (GRAMMAR I's odd-numbered answer pages redirect
+ * to the lesson before them), and ten listed script pages (`-1` / `-2`)
+ * rendered the same body as their main page while claiming to be canonical.
+ * A sitemap lists canonical, 200-answering pages only, so a lesson is listed
+ * when it is free, is not a redirect, and is its own canonical.
+ *
+ * Result: 29 URLs — home, 7 courses, 7 tabs, 14 free preview lessons.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap = [{ url: SITE_URL, changeFrequency: "monthly", priority: 1 }];
@@ -42,7 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const lessonPages: MetadataRoute.Sitemap = getAllLessonParams()
-    .filter(({ course, lesson }) => isFreePreviewLesson(course, lesson))
+    .filter(
+      ({ course, lesson }) =>
+        isFreePreviewLesson(course, lesson) &&
+        !isRedirectedLesson(course, lesson) &&
+        canonicalLessonId(course, lesson) === lesson,
+    )
     .map(({ course, lesson }) => ({
       url: `${SITE_URL}/${course}/${lesson}`,
       changeFrequency: "monthly",

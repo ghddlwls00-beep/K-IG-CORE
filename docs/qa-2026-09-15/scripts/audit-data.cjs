@@ -248,7 +248,8 @@ function checkGroupsSequence(section, groups, expectIds) {
         // clip to expect for it — counting one here would report a false gap.
         if (colloc?.phrase) addSpeech(colloc.phrase, where);
         const ety = vocaUtils.analyzeEtymology(w);
-        if (ety.prefix) bogusEtymology.push({ id, word: w, explanation: ety.explanation });
+        // analyzeEtymology returns null for a word with no authored breakdown (CNT-09).
+        if (ety?.prefix) bogusEtymology.push({ id, word: w, explanation: ety.explanation });
       }
       if (lessonMissing.length) { issue(S, "P1", id, "MISSING_MEANING", `${lessonMissing.length} word(s) show placeholder meaning "단어": ${lessonMissing.join(", ")}`); failed.add(id); }
       for (const [m, ws] of meaningToWords) {

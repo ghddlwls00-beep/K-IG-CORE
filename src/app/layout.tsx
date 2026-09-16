@@ -31,12 +31,14 @@ export const metadata: Metadata = {
     description:
       "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
     // RE-012: without these, a KakaoTalk / SNS share renders as a bare link
-    // with no thumbnail and no description.
+    // with no thumbnail and no description. SEO-01: the image is the 1000×525
+    // landscape crop in public/images/og, declared at its real size — the
+    // portrait 1000×1250 section photo used to be declared as 1200×630.
     images: [
       {
-        url: "/images/sections/students.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/og/students.jpg",
+        width: 1000,
+        height: 525,
         alt: "K-IG 핵심 어학 마스터",
       },
     ],
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
     description:
       "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
-    images: ["/images/sections/students.jpg"],
+    images: ["/images/og/students.jpg"],
   },
   other: {
     google: "notranslate",
