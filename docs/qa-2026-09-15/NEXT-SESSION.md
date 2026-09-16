@@ -53,7 +53,31 @@
 생깁니다.** 이건 정상이고, 기존 클립은 그대로 두면 됩니다. `content/` 의 저장
 텍스트는 건드리지 마세요 — 건드리면 다른 화면의 클립까지 전부 무효가 됩니다.
 
+🔴 **`normalizeUnifiedSpeechText()` 에 괄호 제거 규칙을 넣어 일괄 처리하지 마세요.**
+그 함수는 모든 과정의 합성 입력을 지나갑니다. 지금 `content/` 안에서 괄호가 든
+영어 문자열을 세어 보면 이렇습니다:
+
+| 과정 | 건수 | |
+|---|---|---|
+| `phonics` (VOCA) | 13 | ← **이것만 대상입니다** |
+| `student` | 43 | 🔴 빈칸 자리표시자. 건드리면 안 됩니다 |
+| `cnn` | 111 | 폐지. 합성 대상이 아닙니다 |
+| `middle` · `adults*` · `man` · `woman` · `basics` | 175 | 사이트에 안 올라가는 과정들 |
+| `reading` · `grammar1` · `ld` | 29 | 무관한 괄호가 섞여 있습니다 |
+
+그리고 괄호를 푸는 방법이 단어마다 다릅니다 — 일괄 규칙이 없습니다:
+
+- `colo(u)r` → `color` · `gray(grey)` → `gray` · `autumn(=fall)` → `autumn` (괄호 **버림**)
+- `afterward(s)` → `afterwards` · `enrol(l)` → `enroll` (괄호 **살림**)
+- `I have a lot of friends who(m) I love to be around.` ← GRAMMAR 문장입니다.
+  `I (still) have a lot to learn` ← 생략 가능 단어입니다. **둘 다 대상 아닙니다.**
+
+그러니 **VOCA 표제어 13개를 하나씩 보고 읽을 형태를 직접 정하는 것**이 맞습니다.
+13개뿐이니 표로 만들어 놓고 그것만 적용하세요.
+
 보고할 것: 바꾼 건수와 `generate-azure-ava.mjs --dry-run` 의 `pending`.
+지금 기준선은 **items 33,496 · pending 0** 입니다. 작업 뒤 pending 이 13 언저리를
+넘으면 범위를 잘못 잡은 것입니다.
 
 **[2] RE-006 마무리 — CSP 를 강제 모드로**
 
