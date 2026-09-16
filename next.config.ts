@@ -34,6 +34,32 @@ import type { NextConfig } from "next";
  * and no analytics. Audio and video are served by this app's own route
  * handlers, so `media-src 'self'` covers them.
  *
+ * `data:` IN `media-src` IS NEEDED, AND THE WALK ABOVE MISSED IT. On the first
+ * pointerdown, touchend or keydown of every page, `unlockMobileAudio()` in
+ * `src/lib/speech.ts` plays a 48-byte silent WAV from a `data:` URI, so that iOS
+ * and in-app browsers count the shared <audio> element as started by the user.
+ * The listener is global, so this runs on desktop too, despite the name. Under
+ * `media-src 'self' blob:` the primer was blocked and its play() rejected with
+ * NotSupportedError. Chrome still played the real clip afterwards; iOS was not
+ * tested, and the primer exists for browsers stricter than Chrome.
+ *
+ * The walk saw zero violations because each page's first gesture was a play
+ * button. That click swapped in the real clip as `src` before Chrome loaded the
+ * primer, so nothing was loaded and nothing was reported. When the first tap
+ * landed on the page heading instead, the violation was reported on production
+ * (2026-09-17, `/student/s1-1`, at 375px and at desktop width), and the listener
+ * was proved on that page by loading a `data:` clip by hand.
+ *
+ * With `data:` added, on a local `next start` at 375px: `/student/s1-1`,
+ * `/phonics/mv1-01` and `/ld/d001`, first tap on the play button and first tap
+ * elsewhere, gave zero violations, and the real clip played each time. Each page
+ * still reported an off-origin clip, so `media-src` has not gone slack.
+ *
+ * `data:` rather than a silent file in `public/`: it keeps the primer exactly as
+ * it was before this policy existed, with no network request inside the
+ * gesture. A `data:` media resource can neither run script nor reach another
+ * origin, which is the same reason `img-src` and `font-src` already allow it.
+ *
  * `'unsafe-inline'` IS REQUIRED FOR SCRIPT AND STYLE, and it is the honest
  * weakness here. Next injects its bootstrap and the RSC flight payload as
  * inline <script>, and the app sets inline `style` attributes throughout; with
@@ -58,7 +84,7 @@ const CSP = [
   "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
-  "media-src 'self' blob:",
+  "media-src 'self' blob: data:",
   "font-src 'self' data:",
   "connect-src 'self'",
   "worker-src 'self' blob:",
