@@ -26,6 +26,30 @@
 - **소유자 몫은 손대지 마세요.** §0-Z 맨 아래 "소유자 몫" 목록 (법적 문서, 결제 수단,
   교재 자체 결함 판정 등) 은 사람이 결정할 일입니다.
 
+## 🔴 통째로 읽으면 안 되는 파일들
+
+`docs/qa-2026-09-15/` 안에는 **한 파일이 수십만 토큰인 감사 기록**이 있습니다.
+문서가 이름을 부른다고 해서 `cat` 하거나 통째로 읽지 마세요. **세션이 그 자리에서 죽습니다.**
+
+| 파일 | 대략 |
+|---|---|
+| `evidence/kig006-exposure.json` | **82만 토큰** ☠️ |
+| `scripts/out/speech-inventory.json` | 78만 토큰 ☠️ |
+| `scripts/out/prod-crawl.json` | 57만 토큰 ☠️ |
+| `evidence/ld-*.md` · `ld-transcripts.json` | 각 13만~19만 토큰 |
+| `evidence/textbook-defects.json` | 9.8만 토큰 |
+| `evidence/archive-comparison.json` | 7.4만 토큰 |
+
+10만 자가 넘는 파일이 15개, 합쳐서 약 360만 토큰입니다. 전부 **기록**이지 지시가
+아닙니다. 필요하면 이렇게 보세요:
+
+```bash
+node -e "const j=require('./docs/qa-2026-09-15/evidence/textbook-defects.json'); console.log(Object.keys(j).length)"
+```
+
+읽어도 안전한 것은 `AGENTS.md`, `NEXT-SESSION.md`, 그리고 `kig006-decisions.json`
+`ld-english-fixes.json` `ld-korean-fixes.json` (각 2천~8천 토큰) 정도입니다.
+
 ## 🔴 텍스트를 바꾸면 음성이 깨집니다
 
 음성 클립의 키가 **텍스트의 해시**입니다 (`unifiedSpeechKey(text)`).
