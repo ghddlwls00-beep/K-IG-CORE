@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useMemo } from "react";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
+import { vocaSpeechForm } from "@/lib/vocaSpeech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
   analyzeEtymology,
@@ -138,7 +139,8 @@ export function PhonicsLearningView({
     setActiveWord(word);
     setSelectedWord(word);
 
-    speakText(word, {
+    // The card keeps showing `colo(u)r`; only the audio drops the bracket.
+    speakText(vocaSpeechForm(word), {
       lang: "en",
       rate: speed,
       onEnd: () => {
@@ -178,7 +180,7 @@ export function PhonicsLearningView({
       setActiveWord(w);
       setSelectedWord(w);
 
-      speakText(w, {
+      speakText(vocaSpeechForm(w), {
         lang: "en",
         rate: speed,
         onEnd: () => {
@@ -938,8 +940,16 @@ export function PhonicsLearningView({
             </div>
 
             <div className="pt-2 border-t border-line">
+              {/*
+                The button still names the word as it is written, but the
+                target to match against is the spoken form. evaluatePronunciation
+                strips the bracket characters and keeps the letters inside, so
+                `gray(grey)` became "graygrey" and `autumn(=fall)` became
+                "autumn=fall" — targets no learner could ever say. These
+                thirteen words could not be passed at all.
+              */}
               <VoiceSpeakingTester
-                targetText={selectedWord}
+                targetText={vocaSpeechForm(selectedWord)}
                 buttonLabel={`"${selectedWord}" AI 발음 정밀 테스트`}
               />
             </div>

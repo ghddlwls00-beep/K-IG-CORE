@@ -8,6 +8,7 @@ import { DictationPanel } from "./DictationPanel";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
+import { vocaSpeechForm } from "@/lib/vocaSpeech";
 
 function ViewLoadingSkeleton() {
   return (
@@ -285,7 +286,9 @@ export function LessonBody({
     }
     stopSpeech();
     setActiveWord(word);
-    speakText(word, {
+    // The word grid shows the headword as written; only the audio drops a
+    // VOCA bracket. Anything not in that table of thirteen passes through.
+    speakText(vocaSpeechForm(word), {
       lang: contentLang,
       gender: voiceGender,
       rate: 0.9,

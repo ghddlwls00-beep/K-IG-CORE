@@ -295,9 +295,24 @@ function collectTexts() {
   // had no clip and fell through to the browser's own voice.
   for (const phrase of collectLiaisonPhrases()) raw.add(phrase);
 
+  // RE-005: thirteen VOCA headwords are written with a bracket so the card can
+  // teach two spellings — `colo(u)r`, `gray(grey)`, `autumn(=fall)`. Ava was
+  // reading the punctuation. The written form stays; the spoken one is looked
+  // up in the same table the VOCA view uses, so the clip that is generated and
+  // the clip that is requested are keyed off the identical string.
+  //
+  // It is an exact-match table, not a rule, so every other bracket in the
+  // corpus is left alone — a STUDENT fill-in blank and GRAMMAR's "who(m)" look
+  // the same and must keep their brackets.
+  const vocaSpeech = loadTsModule("src/lib/vocaSpeech.ts");
+  const vocaSpeechForm = vocaSpeech?.vocaSpeechForm;
+  if (typeof vocaSpeechForm !== "function") {
+    throw new Error("src/lib/vocaSpeech.ts did not export vocaSpeechForm — RE-005 clips would be keyed on the bracketed text.");
+  }
+
   const normalized = new Set();
   for (const value of raw) {
-    const clean = normalizeText(String(value));
+    const clean = normalizeText(vocaSpeechForm(String(value)));
     if (clean && isSpeakable(clean)) normalized.add(clean);
   }
   return [...normalized].sort((a, b) => a.localeCompare(b, "en"));
