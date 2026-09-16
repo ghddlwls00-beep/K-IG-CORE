@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, useRef, memo, useCallback } from "react";
 import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
 import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
+import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
   extractPassageKeywords,
@@ -12,7 +13,6 @@ import {
   getReadingSentencesForLesson,
   getReadingVocabularyForLesson,
   type KeyWord,
-  type ReadingQuestion,
   type ClozeItem,
 } from "@/lib/readingUtils";
 
@@ -278,7 +278,8 @@ export function ReadingLearningView({
   }, [readingVocabulary, lessonKey, enPassage, vocaDictionary]);
 
   /**
-   * KIG-008 — the auto-generated comprehension questions are NOT shown.
+   * KIG-008 — the auto-generated comprehension questions are off (see
+   * `quizFlags.ts`).
    *
    * `generateReadingQuiz()` picks its "correct" option by keyword substring
    * match against the passage: `tEn.includes("art")` also fires on start, part
@@ -286,15 +287,13 @@ export function ReadingLearningView({
    * 208 of 256 lessons had a wrong answer key (170 simply wrong, 38 ungrammatical
    * fallbacks), so a learner who reads the passage correctly is marked wrong.
    *
-   * There are no reviewed questions to put here instead, and inventing them is
-   * not possible from the repository — the questions have to be written against
-   * the source material. So the block is not rendered.
-   *
-   * The generator is left in place and simply not called, so reviewed questions
-   * can be dropped into this same spot later. The step itself, and every other
-   * part of it (passage, translation, vocabulary), is unchanged.
+   * The call site is kept, behind the flag, so turning it back on is one edit
+   * and does not mean reconstructing the memo's dependencies from history.
+   * Reviewed questions written against the source material do not belong here.
    */
-  const questions: ReadingQuestion[] = [];
+  const questions = useMemo(() => {
+    return SHOW_GENERATED_QUIZ ? generateReadingQuiz(enPassage, koPassage, lessonKey) : [];
+  }, [enPassage, koPassage, lessonKey]);
 
   const clozeItems: ClozeItem[] = useMemo(() => {
     return generateClozeItems(sentencePairs);
@@ -355,6 +354,8 @@ export function ReadingLearningView({
   const [revealedVocaMeaning, setRevealedVocaMeaning] = useState<Record<string, boolean>>({});
 
   // --- STEP 3: Quiz & Cloze Answer States ---
+  // `userAnswers` belongs to the quiz block. Live code the moment
+  // SHOW_GENERATED_QUIZ is true — do not delete it as dead.
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
   const [clozeAnswers, setClozeAnswers] = useState<Record<number, number>>({});
   const [readingScore, setReadingScore] = useState<number | null>(null);
@@ -873,12 +874,14 @@ export function ReadingLearningView({
           </div>
 
           {/*
-            KIG-008: the auto-generated questions were withheld because their
-            answer keys do not follow from the passage. Saying so is better than
-            a blank panel, and better than the copy above promising questions
-            that are not there.
+            KIG-008: the generated questions are off (see quizFlags.ts). Saying
+            so is better than a blank panel, and better than the copy above
+            promising questions that are not there.
+
+            The note is keyed to the FLAG, not to the array being empty, so
+            turning the quiz back on cannot leave the note behind.
           */}
-          {questions.length === 0 ? (
+          {!SHOW_GENERATED_QUIZ ? (
             <div className="rounded-2xl border border-dashed border-line bg-surface/60 p-5">
               <p className="text-[13.5px] font-medium text-ink">
                 이 지문의 확인 문항은 준비 중입니다.

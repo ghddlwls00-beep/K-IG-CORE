@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Block } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
 import { speakText, stopSpeech, playSentenceQueue, isSpeaking } from "@/lib/speech";
+import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
   generateLiaisonPoints,
@@ -13,7 +14,6 @@ import {
   generateListeningContextQuiz,
   type LiaisonCard,
   type WordTile,
-  type ContextQuizItem,
 } from "@/lib/listeningUtils";
 
 interface LdLearningViewProps {
@@ -97,7 +97,7 @@ export function LdLearningView({
   const [activeTab, setActiveTab] = useState<TabStep>("step1_blind");
 
   /**
-   * KIG-008 — the auto-generated context quiz is NOT shown.
+   * KIG-008 — the auto-generated context quiz is off (see `quizFlags.ts`).
    *
    * `generateListeningContextQuiz()` selects the answer by keyword substring
    * match against the transcript, so the "correct" option frequently has
@@ -106,12 +106,16 @@ export function LdLearningView({
    * 들려주는 담화") regardless of content — d166 (a Mark Twain biography) and
    * d218 (an essay on collecting walls) shared one answer.
    *
-   * There are no reviewed questions to substitute, so the block is withheld.
-   * The generator stays where it is and is simply not called; reviewed
-   * questions can go into the same spot later. Step 1 itself, and the rest of
-   * the lesson (dictation, liaison clinic, shadowing), are unchanged.
+   * The call site is kept, behind the flag, so turning it back on is one edit
+   * and does not mean reconstructing the memo's dependencies from history.
+   * Reviewed questions written against the transcript do not belong here.
    */
-  const contextQuizzes: ContextQuizItem[] = [];
+  const contextQuizzes = useMemo(() => {
+    return SHOW_GENERATED_QUIZ ? generateListeningContextQuiz(sentences, hintWords) : [];
+  }, [sentences, hintWords]);
+
+  // Used by the quiz block below. Live code the moment SHOW_GENERATED_QUIZ is
+  // true — do not delete these as dead: the block cannot work without them.
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [quizSubmitted, setQuizSubmitted] = useState<Record<number, boolean>>({});
 
@@ -520,12 +524,14 @@ export function LdLearningView({
             </div>
 
             {/*
-              KIG-008: the generated questions were withheld because their answer
-              keys do not follow from the transcript. The note keeps the step from
-              being an empty panel and stops the copy above promising questions
-              that are not there.
+              KIG-008: the generated questions are off (see quizFlags.ts). The
+              note keeps the step from being an empty panel and stops the copy
+              above promising questions that are not there.
+
+              The note is keyed to the FLAG, not to the array being empty, so
+              turning the quiz back on cannot leave the note behind.
             */}
-            {contextQuizzes.length === 0 ? (
+            {!SHOW_GENERATED_QUIZ ? (
               <div className="rounded-2xl border border-dashed border-line bg-raised/40 p-5">
                 <p className="text-[13.5px] font-medium text-ink">
                   이 레슨의 확인 문항은 준비 중입니다.

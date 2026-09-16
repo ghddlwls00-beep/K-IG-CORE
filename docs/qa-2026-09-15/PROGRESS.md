@@ -2,7 +2,7 @@
 
 > 이 문서는 **세션이 바뀌어도 작업을 그대로 이어받기 위한** 인수인계 기록입니다.
 > 작업 지시 원본은 `docs/qa-2026-09-15/README.md`, 재개용 프롬프트는 `PROMPT.md`를 보세요.
-> 최종 갱신: 2026-09-16 (10차 — RE-004 미디어 허용 목록 완료. 9차는 RE-006 CSP `8c59d82`, 그 배포에 RE-016 404 백지 후속 `9e65501` 도 반영됨)
+> 최종 갱신: 2026-09-16 (10차 — RE-004 미디어 허용 목록 + KIG-008 플래그화 완료. 9차는 RE-006 CSP `8c59d82`)
 > ⚠️ `PROGRESS.md` 와 `NEXT-SESSION.md` 가 충돌하면 **`NEXT-SESSION.md` 가 우선**입니다.
 
 ---
@@ -958,6 +958,93 @@ ld·reading·grammar2 는 `d001-1`·`pr001-1`·`gh2-007-1` 을 무료 목록에 
   `audio/adults/` 를 참조합니다. 그래서 **폐지 미디어 폴더는 6개**입니다(레슨 폴더는 8개).
 - `adults_001.mp3`·`adults_005.mp3` 등 일부 참조는 **버킷에 존재하지 않습니다**(origin 404).
   프로브가 "이 표본은 아무것도 증명하지 않는다"로 표시하고 건너뜁니다.
+
+---
+
+## 1-J. 10차 세션 (계속) — KIG-008 을 "꺼진 기능"으로 (2026-09-16)
+
+> 정본은 `NEXT-SESSION.md` §0-Z [2]. 소유자 승인 후 진행.
+
+### §0-Z 의 서술을 실측으로 정정
+
+§0-Z 는 "`f820a77` 이 JSX 를 `/* */` 로 감쌌다"고 적었지만 **사실이 아닙니다.**
+`f820a77` 은 생성기 호출을 **빈 배열 리터럴로 교체**했고, JSX 는 `[].map()` 으로 살아 있었습니다.
+그래서 문제는 "주석 코드"가 아니라 세 가지였습니다.
+
+1. **의도에 이름이 없음** — "자동 생성 퀴즈를 끈다"가 배열 길이(`length === 0`)에 숨었습니다.
+   문항이 0개인 정상 레슨과 구분되지 않습니다.
+2. **생성기 호출부가 삭제됨** — 지시한 "상수 하나만 바꾸면 되돌아온다"가 **그 코드에서 성립하지 않았습니다.**
+   되살리려면 `useMemo` 의존성까지 이력에서 재구성해야 했습니다.
+3. 죽은 상태·핸들러: `LdLearningView` 의 `selectedAnswers`·`quizSubmitted`·`handleSelectQuizOption`,
+   `ReadingLearningView` 의 `userAnswers`.
+
+### 수정
+
+**`src/lib/quizFlags.ts` (신규)** — 공용 스위치 하나
+```ts
+export const SHOW_GENERATED_QUIZ = false;
+```
+한 파일에 상수를 두 개 두면 **한쪽만 뒤집히고**, 그 반쪽 상태는 각 페이지가 혼자 보면 멀쩡해 보입니다.
+제품 결정은 하나이므로 두는 곳도 하나입니다.
+
+**생성기 호출을 `f820a77^` 에서 그대로 복원** (추측 금지 — 이력에서 그대로):
+```ts
+const contextQuizzes = useMemo(() => {
+  return SHOW_GENERATED_QUIZ ? generateListeningContextQuiz(sentences, hintWords) : [];
+}, [sentences, hintWords]);
+```
+```ts
+const questions = useMemo(() => {
+  return SHOW_GENERATED_QUIZ ? generateReadingQuiz(enPassage, koPassage, lessonKey) : [];
+}, [enPassage, koPassage, lessonKey]);
+```
+
+**안내문을 배열 길이가 아니라 플래그에 묶음** — `{contextQuizzes.length === 0 ? …}` → `{!SHOW_GENERATED_QUIZ ? …}`.
+플래그를 켰을 때 안내문이 남는 일이 구조적으로 불가능해집니다.
+
+**죽은 상태·핸들러는 유지**하고 "`SHOW_GENERATED_QUIZ` 가 true 가 되면 쓰인다 — 죽은 코드로 지우지 말 것" 주석을 붙였습니다.
+지우면 "상수 하나로 되돌린다"는 약속이 깨집니다.
+
+### 검증 — 7차 세션이 "측정 불가"로 남긴 축을 실제로 측정했습니다
+
+7차 세션은 *"문항이 클라이언트 상태에서 렌더되므로 HTTP 로는 관측되지 않는다"* 고 적었습니다.
+**절반만 맞습니다.** `questions` 는 렌더 중에 계산되므로 서버 HTML 에 나옵니다 —
+LISTENING 은 퀴즈가 **기본 단계**라 서버 HTML 에 그대로 있고, READING 은 `독해 퀴즈` 탭 뒤라 브라우저가 필요합니다.
+그래서 프로브를 2축으로 만들었습니다.
+
+신규 `scripts/verify/verify-quiz-flag.cjs` (headless Edge + CDP, READING 은 탭을 실제로 클릭):
+
+| 축 | 내용 |
+|---|---|
+| A (HTTP) | `/ld/d001` 서버 HTML 에서 안내문 유무 + 생성 문항 문자열 유무 |
+| B (브라우저) | `/ld/d001`(기본 단계) · `/reading/pr001`(`독해 퀴즈` 탭 클릭) 에서 `main().innerText` |
+
+**판정 문자열은 생성기가 그대로 출력하는 문장**입니다 — `listeningUtils.ts:416`
+(`음성을 듣고 파악한 전체 지문의 주요 맥락과 화자는 누구인가요?`) 과 `readingUtils.ts:669`
+(`위 지문의 핵심 주제(Main Idea)로 가장 적절한 것은?`). 개수가 아니라 **내용**으로 판정합니다.
+
+**두 방향 모두 측정 — 이게 핵심입니다. 한쪽만 보면 "지워진 기능"도 통과합니다.**
+
+| 빌드 | 결과 |
+|---|---|
+| `SHOW_GENERATED_QUIZ = false` (배포 상태) | **3/3 PASS, exit 0** — 안내문 있음, 생성 문항 0건 |
+| `SHOW_GENERATED_QUIZ = true` (임시 빌드) | **3/3 PASS, exit 0** — 안내문 사라짐, **생성 문항이 실제로 렌더됨** |
+
+플래그 ON 실측값: `/ld/d001` 890 → **1,123자**(서버 HTML) · 브라우저 731 → 962자 · 버튼 36 → 44.
+`/reading/pr001` 브라우저 1,188 → **1,483자** · 버튼 38 → 46.
+→ 플래그를 켜면 문항이 돌아옵니다. **꺼진 기능이지 지워진 기능이 아닙니다.**
+
+### 회귀 (플래그 OFF 최종 빌드)
+
+| 검증 | 결과 |
+|---|---|
+| `tsc --noEmit` | exit 0 |
+| `next build` | `✓ Generating static pages using 7 workers (1779/1779)`, exit 0 |
+| `verify-quiz-flag.cjs` | 3/3, exit 0 |
+| `verify-media-access.cjs` | 24/24, exit 0 |
+| `verify-proxy-allowlist.cjs` | 1,755/1,755, exit 0 |
+| `verify-h1.cjs` · `verify-error-pages.cjs` · `verify-metadata.cjs` · `verify-csp.cjs` | 23/23 · 7/7+11/11 · 14/14 · 11/11, 전부 exit 0 |
+| **`content/` 변경** | **0건** ✅ — 표시 분기만 바꿨으므로 **음성 클립 재생성 불필요** |
 
 ---
 
