@@ -1,264 +1,264 @@
 {
-  "id": "pr192",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 192 ]",
-  "menuLabel": "[ pr192 ]",
-  "unit": 192,
-  "part": null,
-  "order": 382,
-  "audio": [
-    {
-      "src": "/audio/reading/pr192.mp3",
-      "legacySrc": "sounds/pr192.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 192 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Most musicians agree that the world's best violins were made in Cremona, Italy, about 300 years ago. These violins sound better than any others. They even sound better than violins made today. Violin makers and scientists now try to make instruments like the Italian violins, but they are not the same. Musicians still prefer the old ones. Why are these old Italian violins so special? No one really knows, but many people think they have an answer. Some people think it is the age of the violins. Other people say that the kind of wood is not so important and that it is more important to cut the wood in a special way."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr192.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-192-s001",
-      "english": "Most musicians agree that the world's best violins were made in Cremona, Italy, about 300 years ago.",
-      "korean": "대부분의 음악가들이 동의하기를 세계에서 가장 좋은 바이올린은 이탈리아 Cremona에서 만들어진 것으로, 약 300년 전 것이다."
-    },
-    {
-      "id": "reading-192-s002",
-      "english": "These violins sound better than any others.",
-      "korean": "이 바이올린은 다른 어떤 것보다 소리가 좋다."
-    },
-    {
-      "id": "reading-192-s003",
-      "english": "They even sound better than violins made today.",
-      "korean": "바이올린 만드는 사람과 과학자들이 현재 이탈리아 것과 같은 악기를 만들려고 노력했다."
-    },
-    {
-      "id": "reading-192-s004",
-      "english": "Violin makers and scientists now try to make instruments like the Italian violins, but they are not the same.",
-      "korean": "그러나 똑같은 것을 만들 수 없었다."
-    },
-    {
-      "id": "reading-192-s005",
-      "english": "Musicians still prefer the old ones.",
-      "korean": "음악가들은 옛날 것을 더 좋아한다."
-    },
-    {
-      "id": "reading-192-s006",
-      "english": "Why are these old Italian violins so special?",
-      "korean": "왜 이 옛날 악기가 더 특별한가?"
-    },
-    {
-      "id": "reading-192-s007",
-      "english": "No one really knows, but many people think they have an answer.",
-      "korean": "아무도 모른다."
-    },
-    {
-      "id": "reading-192-s008",
-      "english": "Some people think it is the age of the violins.",
-      "korean": "그러나 많은 사람들은 나름대로의 대답을 한다."
-    },
-    {
-      "id": "reading-192-s009",
-      "english": "Other people say that the kind of wood is not so important and that it is more important to cut the wood in a special way.",
-      "korean": "어떤 사람은 바이올린의 나이, 또 어떤 사람은 나무의 종류가 중요한 것이 아니고 특별한 방법으로 나무를 베어내는 방법이라도 한다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "agree",
-      "lemma": "agree",
-      "partOfSpeech": "n.",
-      "korean": "동의하다",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "sound",
-      "lemma": "sound",
-      "partOfSpeech": "n.",
-      "korean": "소리",
-      "score": 97,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 97점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "important",
-      "lemma": "important",
-      "partOfSpeech": "n.",
-      "korean": "중요한",
-      "score": 95,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "prefer",
-      "lemma": "prefer",
-      "partOfSpeech": "n.",
-      "korean": "선호하다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "violins",
-      "lemma": "violin",
-      "partOfSpeech": "n.",
-      "korean": "바이올린",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 6
-    },
-    {
-      "word": "musicians",
-      "lemma": "musician",
-      "partOfSpeech": "n.",
-      "korean": "음악가",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "special",
-      "lemma": "special",
-      "partOfSpeech": "adj.",
-      "korean": "특별한",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "cremona",
-      "lemma": "cremona",
-      "partOfSpeech": "n.",
-      "korean": "크레모나 (명품 바이올린 도시)",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "wood",
-      "lemma": "wood",
-      "partOfSpeech": "n.",
-      "korean": "나무",
-      "score": 76,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "ago",
-      "lemma": "ago",
-      "partOfSpeech": "n.",
-      "korean": "전",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "cut",
-      "lemma": "cut",
-      "partOfSpeech": "n.",
-      "korean": "절단",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "scientists",
-      "lemma": "scientist",
-      "partOfSpeech": "n.",
-      "korean": "과학자",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "instruments",
-      "lemma": "instrument",
-      "partOfSpeech": "n.",
-      "korean": "악기",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr192",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 192 ]",
+ "menuLabel": "[ pr192 ]",
+ "unit": 192,
+ "part": null,
+ "order": 382,
+ "audio": [
+  {
+   "src": "/audio/reading/pr192.mp3",
+   "legacySrc": "sounds/pr192.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 192 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Most musicians agree that the world's best violins were made in Cremona, Italy, about 300 years ago. These violins sound better than any others. They even sound better than violins made today. Violin makers and scientists now try to make instruments like the Italian violins, but they are not the same. Musicians still prefer the old ones. Why are these old Italian violins so special? No one really knows, but many people think they have an answer. Some people think it is the age of the violins. Other people say that the kind of wood is not so important and that it is more important to cut the wood in a special way."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr192.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-192-s001",
+   "english": "Most musicians agree that the world's best violins were made in Cremona, Italy, about 300 years ago.",
+   "korean": "대부분의 음악가들이 동의하기를 세계에서 가장 좋은 바이올린은 이탈리아 Cremona에서 만들어진 것으로, 약 300년 전 것이다."
+  },
+  {
+   "id": "reading-192-s002",
+   "english": "These violins sound better than any others.",
+   "korean": "이 바이올린은 다른 어떤 것보다 소리가 좋다."
+  },
+  {
+   "id": "reading-192-s003",
+   "english": "They even sound better than violins made today.",
+   "korean": "바이올린 만드는 사람과 과학자들이 현재 이탈리아 것과 같은 악기를 만들려고 노력했다."
+  },
+  {
+   "id": "reading-192-s004",
+   "english": "Violin makers and scientists now try to make instruments like the Italian violins, but they are not the same.",
+   "korean": "그러나 똑같은 것을 만들 수 없었다."
+  },
+  {
+   "id": "reading-192-s005",
+   "english": "Musicians still prefer the old ones.",
+   "korean": "음악가들은 옛날 것을 더 좋아한다."
+  },
+  {
+   "id": "reading-192-s006",
+   "english": "Why are these old Italian violins so special?",
+   "korean": "왜 이 옛날 악기가 더 특별한가?"
+  },
+  {
+   "id": "reading-192-s007",
+   "english": "No one really knows, but many people think they have an answer.",
+   "korean": "아무도 모른다."
+  },
+  {
+   "id": "reading-192-s008",
+   "english": "Some people think it is the age of the violins.",
+   "korean": "그러나 많은 사람들은 나름대로의 대답을 한다."
+  },
+  {
+   "id": "reading-192-s009",
+   "english": "Other people say that the kind of wood is not so important and that it is more important to cut the wood in a special way.",
+   "korean": "어떤 사람은 바이올린의 나이, 또 어떤 사람은 나무의 종류가 중요한 것이 아니고 특별한 방법으로 나무를 베어내는 방법이라도 한다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "agree",
+   "lemma": "agree",
+   "partOfSpeech": "n.",
+   "korean": "동의하다",
+   "score": 102,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "sound",
+   "lemma": "sound",
+   "partOfSpeech": "n.",
+   "korean": "소리",
+   "score": 97,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 97점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "important",
+   "lemma": "important",
+   "partOfSpeech": "n.",
+   "korean": "중요한",
+   "score": 95,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "prefer",
+   "lemma": "prefer",
+   "partOfSpeech": "n.",
+   "korean": "선호하다",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "violins",
+   "lemma": "violin",
+   "partOfSpeech": "n.",
+   "korean": "바이올린",
+   "score": 89,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 6
+  },
+  {
+   "word": "musicians",
+   "lemma": "musician",
+   "partOfSpeech": "n.",
+   "korean": "음악가",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "special",
+   "lemma": "special",
+   "partOfSpeech": "adj.",
+   "korean": "특별한",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "world",
+   "lemma": "world",
+   "partOfSpeech": "n.",
+   "korean": "세계",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "cremona",
+   "lemma": "cremona",
+   "partOfSpeech": "n.",
+   "korean": "크레모나 (명품 바이올린 도시)",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "wood",
+   "lemma": "wood",
+   "partOfSpeech": "n.",
+   "korean": "나무",
+   "score": 76,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "ago",
+   "lemma": "ago",
+   "partOfSpeech": "n.",
+   "korean": "전",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "cut",
+   "lemma": "cut",
+   "partOfSpeech": "n.",
+   "korean": "자르다",
+   "score": 71,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "scientists",
+   "lemma": "scientist",
+   "partOfSpeech": "n.",
+   "korean": "과학자",
+   "score": 69,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "instruments",
+   "lemma": "instrument",
+   "partOfSpeech": "n.",
+   "korean": "악기",
+   "score": 69,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

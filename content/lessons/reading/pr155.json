@@ -1,252 +1,252 @@
 {
-  "id": "pr155",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 155 ]",
-  "menuLabel": "[ pr155 ]",
-  "unit": 155,
-  "part": null,
-  "order": 308,
-  "audio": [
-    {
-      "src": "/audio/reading/pr155.mp3",
-      "legacySrc": "sounds/pr155.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 155 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Nature seems to be constantly changing. If we observe nature closely, however, we discover that there is a constant tension between change and balance. In the case of human beings, the general shape and size of our body remains relatively constant while the cells within it are continually being replaced. Likewise, the forest remains a forest, even while individual trees and grasses are removed by death and replaced by birth. The dead bodies of organisms in the forest are broken down and turned into soil, which in turn nourishes other organisms. The elements of nature are continually changing, but nature itself remains constant."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr155.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-155-s001",
-      "english": "Nature seems to be constantly changing.",
-      "korean": "자연은 끊임없이 변하는 것 같다."
-    },
-    {
-      "id": "reading-155-s002",
-      "english": "If we observe nature closely, however, we discover that there is a constant tension between change and balance.",
-      "korean": "그러나 자연을 자세히 관찰하면 변화와 균형은 꾸준히 균형을 이룬다."
-    },
-    {
-      "id": "reading-155-s003",
-      "english": "In the case of human beings, the general shape and size of our body remains relatively constant while the cells within it are continually being replaced.",
-      "korean": "인간의 경우, 신체의 세포는 계속해서 교체되지만 신체의 일반적인 형태와 크기는 비교적 일정하다."
-    },
-    {
-      "id": "reading-155-s004",
-      "english": "Likewise, the forest remains a forest, even while individual trees and grasses are removed by death and replaced by birth.",
-      "korean": "마찬가지로 숲의 경우에도, 나무들과 풀은 죽어서 없어지거나 새롭게 자라나지만, 숲은 숲으로 남아있다."
-    },
-    {
-      "id": "reading-155-s005",
-      "english": "The dead bodies of organisms in the forest are broken down and turned into soil, which in turn nourishes other organisms.",
-      "korean": "숲 속에 있는 개체의 죽은 본체는 쓰러지고 토양이 되지만 다른 개체에게 영양을 공급해 준다."
-    },
-    {
-      "id": "reading-155-s006",
-      "english": "The elements of nature are continually changing, but nature itself remains constant.",
-      "korean": "자연의 구성 요소는 계속해서 변하지만 자연 그 자체는 꾸준히 유지된다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "nature",
-      "lemma": "nature",
-      "partOfSpeech": "n.",
-      "korean": "자연",
-      "score": 120,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 120점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "remains",
-      "lemma": "remain",
-      "partOfSpeech": "n.",
-      "korean": "남아있다",
-      "score": 112,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 112점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "changing",
-      "lemma": "change",
-      "partOfSpeech": "v.",
-      "korean": "변화",
-      "score": 105,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "observe",
-      "lemma": "observe",
-      "partOfSpeech": "v.",
-      "korean": "관찰하다, 준수하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초",
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "organisms",
-      "lemma": "organism",
-      "partOfSpeech": "n.",
-      "korean": "유기체, 생물",
-      "score": 94,
-      "reason": "대학 학술 독해 필수 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "discover",
-      "lemma": "discover",
-      "partOfSpeech": "n.",
-      "korean": "발견하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "bodies",
-      "lemma": "body",
-      "partOfSpeech": "n.",
-      "korean": "몸",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "constant",
-      "lemma": "constant",
-      "partOfSpeech": "n.",
-      "korean": "상수",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "replaced",
-      "lemma": "replace",
-      "partOfSpeech": "v.",
-      "korean": "교체하다",
-      "score": 81,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "continually",
-      "lemma": "continual",
-      "partOfSpeech": "adv.",
-      "korean": "지속적인",
-      "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "forest",
-      "lemma": "forest",
-      "partOfSpeech": "n.",
-      "korean": "숲",
-      "score": 77,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "seems",
-      "lemma": "seem",
-      "partOfSpeech": "n.",
-      "korean": "것 같다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "constantly",
-      "lemma": "constantly",
-      "partOfSpeech": "adv.",
-      "korean": "끊임없이",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "elements",
-      "lemma": "elements",
-      "partOfSpeech": "n.",
-      "korean": "요소들, 성분들",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr155",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 155 ]",
+ "menuLabel": "[ pr155 ]",
+ "unit": 155,
+ "part": null,
+ "order": 308,
+ "audio": [
+  {
+   "src": "/audio/reading/pr155.mp3",
+   "legacySrc": "sounds/pr155.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 155 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Nature seems to be constantly changing. If we observe nature closely, however, we discover that there is a constant tension between change and balance. In the case of human beings, the general shape and size of our body remains relatively constant while the cells within it are continually being replaced. Likewise, the forest remains a forest, even while individual trees and grasses are removed by death and replaced by birth. The dead bodies of organisms in the forest are broken down and turned into soil, which in turn nourishes other organisms. The elements of nature are continually changing, but nature itself remains constant."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr155.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-155-s001",
+   "english": "Nature seems to be constantly changing.",
+   "korean": "자연은 끊임없이 변하는 것 같다."
+  },
+  {
+   "id": "reading-155-s002",
+   "english": "If we observe nature closely, however, we discover that there is a constant tension between change and balance.",
+   "korean": "그러나 자연을 자세히 관찰하면 변화와 균형은 꾸준히 균형을 이룬다."
+  },
+  {
+   "id": "reading-155-s003",
+   "english": "In the case of human beings, the general shape and size of our body remains relatively constant while the cells within it are continually being replaced.",
+   "korean": "인간의 경우, 신체의 세포는 계속해서 교체되지만 신체의 일반적인 형태와 크기는 비교적 일정하다."
+  },
+  {
+   "id": "reading-155-s004",
+   "english": "Likewise, the forest remains a forest, even while individual trees and grasses are removed by death and replaced by birth.",
+   "korean": "마찬가지로 숲의 경우에도, 나무들과 풀은 죽어서 없어지거나 새롭게 자라나지만, 숲은 숲으로 남아있다."
+  },
+  {
+   "id": "reading-155-s005",
+   "english": "The dead bodies of organisms in the forest are broken down and turned into soil, which in turn nourishes other organisms.",
+   "korean": "숲 속에 있는 개체의 죽은 본체는 쓰러지고 토양이 되지만 다른 개체에게 영양을 공급해 준다."
+  },
+  {
+   "id": "reading-155-s006",
+   "english": "The elements of nature are continually changing, but nature itself remains constant.",
+   "korean": "자연의 구성 요소는 계속해서 변하지만 자연 그 자체는 꾸준히 유지된다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "nature",
+   "lemma": "nature",
+   "partOfSpeech": "n.",
+   "korean": "자연",
+   "score": 120,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 120점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 4
+  },
+  {
+   "word": "remains",
+   "lemma": "remain",
+   "partOfSpeech": "n.",
+   "korean": "남아있다",
+   "score": 112,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 112점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "changing",
+   "lemma": "change",
+   "partOfSpeech": "v.",
+   "korean": "변화",
+   "score": 105,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "observe",
+   "lemma": "observe",
+   "partOfSpeech": "v.",
+   "korean": "관찰하다, 준수하다",
+   "score": 101,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+   "examTags": [
+    "중학기초",
+    "수능",
+    "TOEFL"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "organisms",
+   "lemma": "organism",
+   "partOfSpeech": "n.",
+   "korean": "유기체, 생물",
+   "score": 94,
+   "reason": "대학 학술 독해 필수 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "수능",
+    "TOEFL"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "discover",
+   "lemma": "discover",
+   "partOfSpeech": "n.",
+   "korean": "발견하다",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "bodies",
+   "lemma": "body",
+   "partOfSpeech": "n.",
+   "korean": "몸",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "constant",
+   "lemma": "constant",
+   "partOfSpeech": "n.",
+   "korean": "끊임없는",
+   "score": 87,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "replaced",
+   "lemma": "replace",
+   "partOfSpeech": "v.",
+   "korean": "교체하다",
+   "score": 81,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "continually",
+   "lemma": "continual",
+   "partOfSpeech": "adv.",
+   "korean": "지속적인",
+   "score": 80,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "forest",
+   "lemma": "forest",
+   "partOfSpeech": "n.",
+   "korean": "숲",
+   "score": 77,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "seems",
+   "lemma": "seem",
+   "partOfSpeech": "n.",
+   "korean": "것 같다",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "constantly",
+   "lemma": "constantly",
+   "partOfSpeech": "adv.",
+   "korean": "끊임없이",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "elements",
+   "lemma": "elements",
+   "partOfSpeech": "n.",
+   "korean": "요소들, 성분들",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

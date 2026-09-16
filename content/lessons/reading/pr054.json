@@ -1,289 +1,289 @@
 {
-  "id": "pr054",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 054 ]",
-  "menuLabel": "[ pr054 ]",
-  "unit": 54,
-  "part": null,
-  "order": 106,
-  "audio": [
-    {
-      "src": "/audio/reading/pr054.mp3",
-      "legacySrc": "sounds/pr054.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 054 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "In order to implement successful database marketing solutions, you need"
-    },
-    {
-      "type": "hints",
-      "text": "to know how to identify and gather relevant data about customers and"
-    },
-    {
-      "type": "instruction",
-      "text": "prospects, use data warehousing techniques to transform raw data into"
-    },
-    {
-      "type": "instruction",
-      "text": "powerful marketing information, apply statistical techniques to customer and"
-    },
-    {
-      "type": "instruction",
-      "text": "prospect databases to analyze behavior, and score individuals in terms of"
-    },
-    {
-      "type": "instruction",
-      "text": "the probability of their response. At the Database Marketing Seminar, we"
-    },
-    {
-      "type": "instruction",
-      "text": "will address these topics and more, as we introduce you to the only"
-    },
-    {
-      "type": "instruction",
-      "text": "end-to-end software solution for database marketing. By applying database"
-    },
-    {
-      "type": "instruction",
-      "text": "marketing capabilities, you can increase profits while decreasing expenses."
-    },
-    {
-      "type": "instruction",
-      "text": "You can also increase your number of customers while reducing customer"
-    },
-    {
-      "type": "instruction",
-      "text": "attrition. Come and explore this important topic in depth with SAS Institute,"
-    },
-    {
-      "type": "instruction",
-      "text": "the leader in applied analysis."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr054.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-054-s001",
-      "english": "In order to implement successful database marketing solutions, you need to know how to identify and gather relevant data about customers and prospects, use data warehousing techniques to transform raw data into powerful marketing information, apply statistical techniques to customer and prospect databases to analyze behavior, and score individuals in terms of the probability of their response.",
-      "korean": "성공적인 데이터베이스 마케팅 솔루션을 수행하기 위해, 여러분은 고객과 잠재 고객에 대한 적절한 데이터를 구별하고 수집하는 방법을 알고 원자료를 강력한 마케팅 정보로 바꾸기 위하여 데이터 창고 기술을 사용해서 행동을 분석하기 위해 통계 기술을 고객과 잠재 고객 데이터베이스 적용하고 그들의 반응의 가능성의 각도에서 개인을 점수를 매기는 것이 필요하다."
-    },
-    {
-      "id": "reading-054-s002",
-      "english": "At the Database Marketing Seminar, we will address these topics and more, as we introduce you to the only end-to-end software solution for database marketing.",
-      "korean": "우리가 여러분에게 데이터베이스 마케팅을 위한 유일한 끝과 끝을 잇는 소프트웨어 솔류션을 여러분에게 소개함으로써 데이터베이스 마케팅 세미나에서 우리는 이러한 주제와 그 이상을 발표할 것이다."
-    },
-    {
-      "id": "reading-054-s003",
-      "english": "By applying database marketing capabilities, you can increase profits while decreasing expenses.",
-      "korean": "데이터 베이스 마케팅 능력을 적용함으로써 여러분은 비용을 감소하면서 이윤을 증가할 수 있다."
-    },
-    {
-      "id": "reading-054-s004",
-      "english": "You can also increase your number of customers while reducing customer attrition.",
-      "korean": "여러분은 또한 고객 마찰을 줄이면서 고객의 수를 증가시킬수 있다."
-    },
-    {
-      "id": "reading-054-s005",
-      "english": "Come and explore this important topic in depth with SAS Institute, the leader in applied analysis.",
-      "korean": "응용 분석의 선구자인 SAS 연구소와 깊이있는 중요한 주제를 와서 체험하십시오."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "explore",
-      "lemma": "explore",
-      "partOfSpeech": "n.",
-      "korean": "탐험하다",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reducing",
-      "lemma": "reduce",
-      "partOfSpeech": "v.",
-      "korean": "감소시키다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "customers",
-      "lemma": "customer",
-      "partOfSpeech": "n.",
-      "korean": "고객, 손님",
-      "score": 99,
-      "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 99점)",
-      "examTags": [
-        "중학기초",
-        "TOEIC"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "increase",
-      "lemma": "increase",
-      "partOfSpeech": "n.",
-      "korean": "증가하다",
-      "score": 99,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "transform",
-      "lemma": "transform",
-      "partOfSpeech": "n.",
-      "korean": "변환",
-      "score": 99,
-      "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 99점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "marketing",
-      "lemma": "market",
-      "partOfSpeech": "v.",
-      "korean": "시장",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 5
-    },
-    {
-      "word": "important",
-      "lemma": "important",
-      "partOfSpeech": "n.",
-      "korean": "중요한",
-      "score": 90,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 90점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "database",
-      "lemma": "database",
-      "partOfSpeech": "n.",
-      "korean": "데이터베이스, 자료 기지",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "TOEIC"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "warehousing",
-      "lemma": "warehouse",
-      "partOfSpeech": "v.",
-      "korean": "창고",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "techniques",
-      "lemma": "technique",
-      "partOfSpeech": "n.",
-      "korean": "기술",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "applied",
-      "lemma": "apply",
-      "partOfSpeech": "v.",
-      "korean": "적용하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "data",
-      "lemma": "data",
-      "partOfSpeech": "n.",
-      "korean": "데이터",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "statistical",
-      "lemma": "statistical",
-      "partOfSpeech": "adj.",
-      "korean": "통계적",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "need",
-      "lemma": "need",
-      "partOfSpeech": "v.",
-      "korean": "필요",
-      "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 80점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr054",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 054 ]",
+ "menuLabel": "[ pr054 ]",
+ "unit": 54,
+ "part": null,
+ "order": 106,
+ "audio": [
+  {
+   "src": "/audio/reading/pr054.mp3",
+   "legacySrc": "sounds/pr054.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 054 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "In order to implement successful database marketing solutions, you need"
+  },
+  {
+   "type": "hints",
+   "text": "to know how to identify and gather relevant data about customers and"
+  },
+  {
+   "type": "instruction",
+   "text": "prospects, use data warehousing techniques to transform raw data into"
+  },
+  {
+   "type": "instruction",
+   "text": "powerful marketing information, apply statistical techniques to customer and"
+  },
+  {
+   "type": "instruction",
+   "text": "prospect databases to analyze behavior, and score individuals in terms of"
+  },
+  {
+   "type": "instruction",
+   "text": "the probability of their response. At the Database Marketing Seminar, we"
+  },
+  {
+   "type": "instruction",
+   "text": "will address these topics and more, as we introduce you to the only"
+  },
+  {
+   "type": "instruction",
+   "text": "end-to-end software solution for database marketing. By applying database"
+  },
+  {
+   "type": "instruction",
+   "text": "marketing capabilities, you can increase profits while decreasing expenses."
+  },
+  {
+   "type": "instruction",
+   "text": "You can also increase your number of customers while reducing customer"
+  },
+  {
+   "type": "instruction",
+   "text": "attrition. Come and explore this important topic in depth with SAS Institute,"
+  },
+  {
+   "type": "instruction",
+   "text": "the leader in applied analysis."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr054.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-054-s001",
+   "english": "In order to implement successful database marketing solutions, you need to know how to identify and gather relevant data about customers and prospects, use data warehousing techniques to transform raw data into powerful marketing information, apply statistical techniques to customer and prospect databases to analyze behavior, and score individuals in terms of the probability of their response.",
+   "korean": "성공적인 데이터베이스 마케팅 솔루션을 수행하기 위해, 여러분은 고객과 잠재 고객에 대한 적절한 데이터를 구별하고 수집하는 방법을 알고 원자료를 강력한 마케팅 정보로 바꾸기 위하여 데이터 창고 기술을 사용해서 행동을 분석하기 위해 통계 기술을 고객과 잠재 고객 데이터베이스 적용하고 그들의 반응의 가능성의 각도에서 개인을 점수를 매기는 것이 필요하다."
+  },
+  {
+   "id": "reading-054-s002",
+   "english": "At the Database Marketing Seminar, we will address these topics and more, as we introduce you to the only end-to-end software solution for database marketing.",
+   "korean": "우리가 여러분에게 데이터베이스 마케팅을 위한 유일한 끝과 끝을 잇는 소프트웨어 솔류션을 여러분에게 소개함으로써 데이터베이스 마케팅 세미나에서 우리는 이러한 주제와 그 이상을 발표할 것이다."
+  },
+  {
+   "id": "reading-054-s003",
+   "english": "By applying database marketing capabilities, you can increase profits while decreasing expenses.",
+   "korean": "데이터 베이스 마케팅 능력을 적용함으로써 여러분은 비용을 감소하면서 이윤을 증가할 수 있다."
+  },
+  {
+   "id": "reading-054-s004",
+   "english": "You can also increase your number of customers while reducing customer attrition.",
+   "korean": "여러분은 또한 고객 마찰을 줄이면서 고객의 수를 증가시킬수 있다."
+  },
+  {
+   "id": "reading-054-s005",
+   "english": "Come and explore this important topic in depth with SAS Institute, the leader in applied analysis.",
+   "korean": "응용 분석의 선구자인 SAS 연구소와 깊이있는 중요한 주제를 와서 체험하십시오."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "explore",
+   "lemma": "explore",
+   "partOfSpeech": "n.",
+   "korean": "탐험하다",
+   "score": 102,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "reducing",
+   "lemma": "reduce",
+   "partOfSpeech": "v.",
+   "korean": "감소시키다",
+   "score": 101,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "customers",
+   "lemma": "customer",
+   "partOfSpeech": "n.",
+   "korean": "고객, 손님",
+   "score": 99,
+   "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 99점)",
+   "examTags": [
+    "중학기초",
+    "TOEIC"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "increase",
+   "lemma": "increase",
+   "partOfSpeech": "n.",
+   "korean": "증가하다",
+   "score": 99,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "transform",
+   "lemma": "transform",
+   "partOfSpeech": "n.",
+   "korean": "변형시키다",
+   "score": 99,
+   "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 99점)",
+   "examTags": [
+    "수능"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "marketing",
+   "lemma": "market",
+   "partOfSpeech": "v.",
+   "korean": "시장",
+   "score": 96,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 5
+  },
+  {
+   "word": "important",
+   "lemma": "important",
+   "partOfSpeech": "n.",
+   "korean": "중요한",
+   "score": 90,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "database",
+   "lemma": "database",
+   "partOfSpeech": "n.",
+   "korean": "데이터베이스, 자료 기지",
+   "score": 89,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+   "examTags": [
+    "TOEIC"
+   ],
+   "freq": 4
+  },
+  {
+   "word": "warehousing",
+   "lemma": "warehouse",
+   "partOfSpeech": "v.",
+   "korean": "창고",
+   "score": 86,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "techniques",
+   "lemma": "technique",
+   "partOfSpeech": "n.",
+   "korean": "기술",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "applied",
+   "lemma": "apply",
+   "partOfSpeech": "v.",
+   "korean": "적용하다",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "data",
+   "lemma": "data",
+   "partOfSpeech": "n.",
+   "korean": "데이터",
+   "score": 83,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "statistical",
+   "lemma": "statistical",
+   "partOfSpeech": "adj.",
+   "korean": "통계적",
+   "score": 81,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "need",
+   "lemma": "need",
+   "partOfSpeech": "v.",
+   "korean": "필요",
+   "score": 80,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

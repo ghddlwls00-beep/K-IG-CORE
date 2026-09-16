@@ -1,263 +1,263 @@
 {
-  "id": "pr146",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 146 ]",
-  "menuLabel": "[ pr146 ]",
-  "unit": 146,
-  "part": null,
-  "order": 290,
-  "audio": [
-    {
-      "src": "/audio/reading/pr146.mp3",
-      "legacySrc": "sounds/pr146.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 146 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Manufacturers encourage the \"new is better\" attitude. They'll make more money if we buy a new model as soon as the old one fails. They've even invented items that are meant to be used once and discarded. There are not only Paper Plates and napkins, but even disposable razors and cameras. Also fix-it shops are getting rare. Why should we repair the old when we can buy the new?"
-    },
-    {
-      "type": "hints",
-      "text": "As a result, junk yards are filled with still-usable items. We don't reuse or recycle which would save us money."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr146.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-146-s001",
-      "english": "Manufacturers encourage the \"new is better\" attitude.",
-      "korean": "제조업자는 \"새로운 것이 더 좋다\"라는 자세를 조장한다."
-    },
-    {
-      "id": "reading-146-s002",
-      "english": "They'll make more money if we buy a new model as soon as the old one fails.",
-      "korean": "구 모델이 고장나자마자 새 모델을 산다면 그들은 돈을 더 많이 벌 것이다."
-    },
-    {
-      "id": "reading-146-s003",
-      "english": "They've even invented items that are meant to be used once and discarded.",
-      "korean": "그들은 심지어 1회 사용하고 버려지도록 의도된 품목도 발명하고 있다."
-    },
-    {
-      "id": "reading-146-s004",
-      "english": "There are not only Paper Plates and napkins, but even disposable razors and cameras.",
-      "korean": "종이 접시와 앞치마 뿐아니라 심지어 1회용 면도기와 카메라도 있다."
-    },
-    {
-      "id": "reading-146-s005",
-      "english": "Also fix-it shops are getting rare.",
-      "korean": "또한 수리점도 점점 드물어지고 있다."
-    },
-    {
-      "id": "reading-146-s006",
-      "english": "Why should we repair the old when we can buy the new?",
-      "korean": "새 것을 살 수 있는데 왜 헌 것을 수리해야 하는가?"
-    },
-    {
-      "id": "reading-146-s007",
-      "english": "As a result, junk yards are filled with still-usable items.",
-      "korean": "그 결과, 쓰레기장은 여전히 사용할 수 있는 물품으로 가득하다."
-    },
-    {
-      "id": "reading-146-s008",
-      "english": "We don't reuse or recycle which would save us money.",
-      "korean": "우리는 돈을 절약해주는 재사용이나 재활용을 하지 않는다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "encourage",
-      "lemma": "encourage",
-      "partOfSpeech": "n.",
-      "korean": "격려하다",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "invented",
-      "lemma": "invent",
-      "partOfSpeech": "v.",
-      "korean": "발명하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "save",
-      "lemma": "save",
-      "partOfSpeech": "n.",
-      "korean": "저장",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "fails",
-      "lemma": "fail",
-      "partOfSpeech": "n.",
-      "korean": "실패하다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "result",
-      "lemma": "result",
-      "partOfSpeech": "n.",
-      "korean": "결과",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reuse",
-      "lemma": "reuse",
-      "partOfSpeech": "v.",
-      "korean": "재사용하다, 재활용하다",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "money",
-      "lemma": "money",
-      "partOfSpeech": "n.",
-      "korean": "돈",
-      "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "new",
-      "lemma": "new",
-      "partOfSpeech": "n.",
-      "korean": "새로운",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "manufacturers",
-      "lemma": "manufacturer",
-      "partOfSpeech": "n.",
-      "korean": "제조업체",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "attitude",
-      "lemma": "attitude",
-      "partOfSpeech": "n.",
-      "korean": "태도",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "recycle",
-      "lemma": "recycle",
-      "partOfSpeech": "n.",
-      "korean": "재활용",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "discarded",
-      "lemma": "discarded",
-      "partOfSpeech": "v.",
-      "korean": "버려진, 폐기된",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "filled",
-      "lemma": "fill",
-      "partOfSpeech": "v.",
-      "korean": "채우다",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "items",
-      "lemma": "item",
-      "partOfSpeech": "n.",
-      "korean": "아이템",
-      "score": 72,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    }
-  ]
+ "id": "pr146",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 146 ]",
+ "menuLabel": "[ pr146 ]",
+ "unit": 146,
+ "part": null,
+ "order": 290,
+ "audio": [
+  {
+   "src": "/audio/reading/pr146.mp3",
+   "legacySrc": "sounds/pr146.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 146 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Manufacturers encourage the \"new is better\" attitude. They'll make more money if we buy a new model as soon as the old one fails. They've even invented items that are meant to be used once and discarded. There are not only Paper Plates and napkins, but even disposable razors and cameras. Also fix-it shops are getting rare. Why should we repair the old when we can buy the new?"
+  },
+  {
+   "type": "hints",
+   "text": "As a result, junk yards are filled with still-usable items. We don't reuse or recycle which would save us money."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr146.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-146-s001",
+   "english": "Manufacturers encourage the \"new is better\" attitude.",
+   "korean": "제조업자는 \"새로운 것이 더 좋다\"라는 자세를 조장한다."
+  },
+  {
+   "id": "reading-146-s002",
+   "english": "They'll make more money if we buy a new model as soon as the old one fails.",
+   "korean": "구 모델이 고장나자마자 새 모델을 산다면 그들은 돈을 더 많이 벌 것이다."
+  },
+  {
+   "id": "reading-146-s003",
+   "english": "They've even invented items that are meant to be used once and discarded.",
+   "korean": "그들은 심지어 1회 사용하고 버려지도록 의도된 품목도 발명하고 있다."
+  },
+  {
+   "id": "reading-146-s004",
+   "english": "There are not only Paper Plates and napkins, but even disposable razors and cameras.",
+   "korean": "종이 접시와 앞치마 뿐아니라 심지어 1회용 면도기와 카메라도 있다."
+  },
+  {
+   "id": "reading-146-s005",
+   "english": "Also fix-it shops are getting rare.",
+   "korean": "또한 수리점도 점점 드물어지고 있다."
+  },
+  {
+   "id": "reading-146-s006",
+   "english": "Why should we repair the old when we can buy the new?",
+   "korean": "새 것을 살 수 있는데 왜 헌 것을 수리해야 하는가?"
+  },
+  {
+   "id": "reading-146-s007",
+   "english": "As a result, junk yards are filled with still-usable items.",
+   "korean": "그 결과, 쓰레기장은 여전히 사용할 수 있는 물품으로 가득하다."
+  },
+  {
+   "id": "reading-146-s008",
+   "english": "We don't reuse or recycle which would save us money.",
+   "korean": "우리는 돈을 절약해주는 재사용이나 재활용을 하지 않는다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "encourage",
+   "lemma": "encourage",
+   "partOfSpeech": "n.",
+   "korean": "격려하다",
+   "score": 104,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "invented",
+   "lemma": "invent",
+   "partOfSpeech": "v.",
+   "korean": "발명하다",
+   "score": 101,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "save",
+   "lemma": "save",
+   "partOfSpeech": "n.",
+   "korean": "구하다; 저축하다",
+   "score": 96,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "fails",
+   "lemma": "fail",
+   "partOfSpeech": "n.",
+   "korean": "실패하다",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "result",
+   "lemma": "result",
+   "partOfSpeech": "n.",
+   "korean": "결과",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "reuse",
+   "lemma": "reuse",
+   "partOfSpeech": "v.",
+   "korean": "재사용하다, 재활용하다",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "money",
+   "lemma": "money",
+   "partOfSpeech": "n.",
+   "korean": "돈",
+   "score": 80,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "new",
+   "lemma": "new",
+   "partOfSpeech": "n.",
+   "korean": "새로운",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "manufacturers",
+   "lemma": "manufacturer",
+   "partOfSpeech": "n.",
+   "korean": "제조업체",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "attitude",
+   "lemma": "attitude",
+   "partOfSpeech": "n.",
+   "korean": "태도",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "recycle",
+   "lemma": "recycle",
+   "partOfSpeech": "n.",
+   "korean": "재활용",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "discarded",
+   "lemma": "discarded",
+   "partOfSpeech": "v.",
+   "korean": "버려진, 폐기된",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "filled",
+   "lemma": "fill",
+   "partOfSpeech": "v.",
+   "korean": "채우다",
+   "score": 74,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "items",
+   "lemma": "item",
+   "partOfSpeech": "n.",
+   "korean": "아이템",
+   "score": 72,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  }
+ ]
 }

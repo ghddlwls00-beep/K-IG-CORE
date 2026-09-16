@@ -1,279 +1,279 @@
 {
-  "id": "pr055",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 055 ]",
-  "menuLabel": "[ pr055 ]",
-  "unit": 55,
-  "part": null,
-  "order": 108,
-  "audio": [
-    {
-      "src": "/audio/reading/pr055.mp3",
-      "legacySrc": "sounds/pr055.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 055 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "In making a successful school, we must consider the relationships among the people involved in the school community. Teachers need to know their students well in order to be able to teach them effectively. In addition, teachers must maintain a good relationship with the parents, who are also an important part of the total community."
-    },
-    {
-      "type": "hints",
-      "text": "In a community built on trust and openness, where teachers, students, and parents show respect for each other, students feel secure and can develop the self-confidence which makes learning and personal growth possible. When students are drawn into meaningful relationships with their teachers and other adults, they are better able to see them as real people. This affects their whole attitude toward school and learning."
-    },
-    {
-      "type": "instruction",
-      "text": "In such an environment, teachers feel valued and supported. Parents feel included. As a result, they are more likely to contribute to the improvement of the school and the learning of the students. All members of the school community feel as though they belong and can make a positive contribution to the school."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr055.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-055-s001",
-      "english": "In making a successful school, we must consider the relationships among the people involved in the school community.",
-      "korean": "성공적인 학교를 만들고자 할 때는, 학교 공동체에 포함되어 있는 사람들 간의 관계를 고려해야 한다."
-    },
-    {
-      "id": "reading-055-s002",
-      "english": "Teachers need to know their students well in order to be able to teach them effectively.",
-      "korean": "교사들이 학생들을 효율적으로 가르칠 수 있으려면 학생들을 잘 알 필요가 있다."
-    },
-    {
-      "id": "reading-055-s003",
-      "english": "In addition, teachers must maintain a good relationship with the parents, who are also an important part of the total community.",
-      "korean": "뿐만 아니라, 교사들은 그 부모들과도 좋은 관계를 유지해야만 하는데, 그 부모들도 또한 전공동체의 중요한 일부분이다."
-    },
-    {
-      "id": "reading-055-s004",
-      "english": "In a community built on trust and openness, where teachers, students, and parents show respect for each other, students feel secure and can develop the self-confidence which makes learning and personal growth possible.",
-      "korean": "교사와 학생, 그리고 부모들이 상호 간에 존경을 보여 주는 신뢰와 진솔함 위에 세워진 공동체 속에서, 학생들은 안정감을 느끼고 학습과 개인적인 성장을 가능케 하는 자신감을 발전시킬 수 있다."
-    },
-    {
-      "id": "reading-055-s005",
-      "english": "When students are drawn into meaningful relationships with their teachers and other adults, they are better able to see them as real people.",
-      "korean": "학생들이 그들의 선생님과 다른 성인들과 의미있는 관계를 맺을 때, 학생들은 그들을 실제적인 사람들로 더 잘 볼 수 있다."
-    },
-    {
-      "id": "reading-055-s006",
-      "english": "This affects their whole attitude toward school and learning.",
-      "korean": "이것은 학교와 학습에 대한 그들의 전반적인 태도에 영향을 끼친다."
-    },
-    {
-      "id": "reading-055-s007",
-      "english": "In such an environment, teachers feel valued and supported.",
-      "korean": "이런 환경 속에서, 교사들은 존경을 받고 지지받는다고 느낀다."
-    },
-    {
-      "id": "reading-055-s008",
-      "english": "Parents feel included.",
-      "korean": "부모들은 소속감을 갖는다."
-    },
-    {
-      "id": "reading-055-s009",
-      "english": "As a result, they are more likely to contribute to the improvement of the school and the learning of the students.",
-      "korean": "그 결과로, 그들은 학교와 학생들의 학습 향상에 더 공헌할 가능성이 있다."
-    },
-    {
-      "id": "reading-055-s010",
-      "english": "All members of the school community feel as though they belong and can make a positive contribution to the school.",
-      "korean": "그 학교 공동체의 모든 구성원들은 소속감을 느끼고, 그 학교에 적극적인 공헌을 할 수 있다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "school",
-      "lemma": "school",
-      "partOfSpeech": "n.",
-      "korean": "학교",
-      "score": 120,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 120점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 6
-    },
-    {
-      "word": "teachers",
-      "lemma": "teacher",
-      "partOfSpeech": "n.",
-      "korean": "선생님",
-      "score": 104,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 5
-    },
-    {
-      "word": "students",
-      "lemma": "student",
-      "partOfSpeech": "n.",
-      "korean": "학생",
-      "score": 104,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 5
-    },
-    {
-      "word": "consider",
-      "lemma": "consider",
-      "partOfSpeech": "n.",
-      "korean": "고려하다",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "develop",
-      "lemma": "develop",
-      "partOfSpeech": "v.",
-      "korean": "발전시키다, 개발하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초",
-        "수능",
-        "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "supported",
-      "lemma": "support",
-      "partOfSpeech": "v.",
-      "korean": "지원하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "belong",
-      "lemma": "belong",
-      "partOfSpeech": "n.",
-      "korean": "속하다",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "community",
-      "lemma": "community",
-      "partOfSpeech": "n.",
-      "korean": "커뮤니티",
-      "score": 97,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "affects",
-      "lemma": "affect",
-      "partOfSpeech": "n.",
-      "korean": "영향을 미치다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "environment",
-      "lemma": "environment",
-      "partOfSpeech": "n.",
-      "korean": "환경",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "trust",
-      "lemma": "trust",
-      "partOfSpeech": "n.",
-      "korean": "신뢰",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "result",
-      "lemma": "result",
-      "partOfSpeech": "n.",
-      "korean": "결과",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "contribute",
-      "lemma": "contribute",
-      "partOfSpeech": "n.",
-      "korean": "기여하다",
-      "score": 89,
-      "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "involved",
-      "lemma": "involve",
-      "partOfSpeech": "v.",
-      "korean": "포함하다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr055",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 055 ]",
+ "menuLabel": "[ pr055 ]",
+ "unit": 55,
+ "part": null,
+ "order": 108,
+ "audio": [
+  {
+   "src": "/audio/reading/pr055.mp3",
+   "legacySrc": "sounds/pr055.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 055 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "In making a successful school, we must consider the relationships among the people involved in the school community. Teachers need to know their students well in order to be able to teach them effectively. In addition, teachers must maintain a good relationship with the parents, who are also an important part of the total community."
+  },
+  {
+   "type": "hints",
+   "text": "In a community built on trust and openness, where teachers, students, and parents show respect for each other, students feel secure and can develop the self-confidence which makes learning and personal growth possible. When students are drawn into meaningful relationships with their teachers and other adults, they are better able to see them as real people. This affects their whole attitude toward school and learning."
+  },
+  {
+   "type": "instruction",
+   "text": "In such an environment, teachers feel valued and supported. Parents feel included. As a result, they are more likely to contribute to the improvement of the school and the learning of the students. All members of the school community feel as though they belong and can make a positive contribution to the school."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr055.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-055-s001",
+   "english": "In making a successful school, we must consider the relationships among the people involved in the school community.",
+   "korean": "성공적인 학교를 만들고자 할 때는, 학교 공동체에 포함되어 있는 사람들 간의 관계를 고려해야 한다."
+  },
+  {
+   "id": "reading-055-s002",
+   "english": "Teachers need to know their students well in order to be able to teach them effectively.",
+   "korean": "교사들이 학생들을 효율적으로 가르칠 수 있으려면 학생들을 잘 알 필요가 있다."
+  },
+  {
+   "id": "reading-055-s003",
+   "english": "In addition, teachers must maintain a good relationship with the parents, who are also an important part of the total community.",
+   "korean": "뿐만 아니라, 교사들은 그 부모들과도 좋은 관계를 유지해야만 하는데, 그 부모들도 또한 전공동체의 중요한 일부분이다."
+  },
+  {
+   "id": "reading-055-s004",
+   "english": "In a community built on trust and openness, where teachers, students, and parents show respect for each other, students feel secure and can develop the self-confidence which makes learning and personal growth possible.",
+   "korean": "교사와 학생, 그리고 부모들이 상호 간에 존경을 보여 주는 신뢰와 진솔함 위에 세워진 공동체 속에서, 학생들은 안정감을 느끼고 학습과 개인적인 성장을 가능케 하는 자신감을 발전시킬 수 있다."
+  },
+  {
+   "id": "reading-055-s005",
+   "english": "When students are drawn into meaningful relationships with their teachers and other adults, they are better able to see them as real people.",
+   "korean": "학생들이 그들의 선생님과 다른 성인들과 의미있는 관계를 맺을 때, 학생들은 그들을 실제적인 사람들로 더 잘 볼 수 있다."
+  },
+  {
+   "id": "reading-055-s006",
+   "english": "This affects their whole attitude toward school and learning.",
+   "korean": "이것은 학교와 학습에 대한 그들의 전반적인 태도에 영향을 끼친다."
+  },
+  {
+   "id": "reading-055-s007",
+   "english": "In such an environment, teachers feel valued and supported.",
+   "korean": "이런 환경 속에서, 교사들은 존경을 받고 지지받는다고 느낀다."
+  },
+  {
+   "id": "reading-055-s008",
+   "english": "Parents feel included.",
+   "korean": "부모들은 소속감을 갖는다."
+  },
+  {
+   "id": "reading-055-s009",
+   "english": "As a result, they are more likely to contribute to the improvement of the school and the learning of the students.",
+   "korean": "그 결과로, 그들은 학교와 학생들의 학습 향상에 더 공헌할 가능성이 있다."
+  },
+  {
+   "id": "reading-055-s010",
+   "english": "All members of the school community feel as though they belong and can make a positive contribution to the school.",
+   "korean": "그 학교 공동체의 모든 구성원들은 소속감을 느끼고, 그 학교에 적극적인 공헌을 할 수 있다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "school",
+   "lemma": "school",
+   "partOfSpeech": "n.",
+   "korean": "학교",
+   "score": 120,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 120점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 6
+  },
+  {
+   "word": "teachers",
+   "lemma": "teacher",
+   "partOfSpeech": "n.",
+   "korean": "선생님",
+   "score": 104,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 5
+  },
+  {
+   "word": "students",
+   "lemma": "student",
+   "partOfSpeech": "n.",
+   "korean": "학생",
+   "score": 104,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 5
+  },
+  {
+   "word": "consider",
+   "lemma": "consider",
+   "partOfSpeech": "n.",
+   "korean": "고려하다",
+   "score": 104,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "develop",
+   "lemma": "develop",
+   "partOfSpeech": "v.",
+   "korean": "발전시키다, 개발하다",
+   "score": 101,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+   "examTags": [
+    "중학기초",
+    "수능",
+    "TOEIC"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "supported",
+   "lemma": "support",
+   "partOfSpeech": "v.",
+   "korean": "지원하다",
+   "score": 101,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "belong",
+   "lemma": "belong",
+   "partOfSpeech": "n.",
+   "korean": "속하다",
+   "score": 100,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "community",
+   "lemma": "community",
+   "partOfSpeech": "n.",
+   "korean": "공동체",
+   "score": 97,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 4
+  },
+  {
+   "word": "affects",
+   "lemma": "affect",
+   "partOfSpeech": "n.",
+   "korean": "영향을 미치다",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "environment",
+   "lemma": "environment",
+   "partOfSpeech": "n.",
+   "korean": "환경",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "trust",
+   "lemma": "trust",
+   "partOfSpeech": "n.",
+   "korean": "신뢰",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "result",
+   "lemma": "result",
+   "partOfSpeech": "n.",
+   "korean": "결과",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "contribute",
+   "lemma": "contribute",
+   "partOfSpeech": "n.",
+   "korean": "기여하다",
+   "score": 89,
+   "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
+   "examTags": [
+    "수능"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "involved",
+   "lemma": "involve",
+   "partOfSpeech": "v.",
+   "korean": "포함하다",
+   "score": 86,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

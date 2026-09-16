@@ -1,260 +1,260 @@
 {
-  "id": "pr154",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 154 ]",
-  "menuLabel": "[ pr154 ]",
-  "unit": 154,
-  "part": null,
-  "order": 306,
-  "audio": [
-    {
-      "src": "/audio/reading/pr154.mp3",
-      "legacySrc": "sounds/pr154.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 154 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Some Korean artists suggest that the process of making hanji, hand-made Korean paper, reflects human life . In fact, you might say that people’s day-to-day existence is shown in this paper-making process. The process starts when the branches of a tree are cut off. The branches then go through a complex process to become strong and flexible paper. They are steamed, boiled, and then washed many times to remove any impure materials. They are also beaten for several hours. The more they are beaten, the stronger they actually become. This is similar to people getting wiser and more disciplined by overcoming the difficulties and hardships they encounter day after day."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr154.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-154-s001",
-      "english": "Some Korean artists suggest that the process of making hanji, hand-made Korean paper, reflects human life .",
-      "korean": "몇 명의 한국인 예술가들은 한국의 손으로 만든 종이인 ‘한지’를 만드는 과정은 인생을 반영한 것이라고 말한다."
-    },
-    {
-      "id": "reading-154-s002",
-      "english": "In fact, you might say that people’s day-to-day existence is shown in this paper-making process.",
-      "korean": "사실, 사람들의 하루 하루의 일상은 이 종이를 만드는 과정과도 같다."
-    },
-    {
-      "id": "reading-154-s003",
-      "english": "The process starts when the branches of a tree are cut off.",
-      "korean": "그 과정의 출발은 한 그루의 나무에서 나뭇가지를 자르는 것에 있다."
-    },
-    {
-      "id": "reading-154-s004",
-      "english": "The branches then go through a complex process to become strong and flexible paper.",
-      "korean": "그 나뭇가지들은 복잡한 과정을 거쳐서 질겨지고 유연해진다."
-    },
-    {
-      "id": "reading-154-s005",
-      "english": "They are steamed, boiled, and then washed many times to remove any impure materials.",
-      "korean": "그것들은 삶아지고, 끓여지고 그리고 나서 여러 번 씻겨지면서 불순물들이 제거되게 된다."
-    },
-    {
-      "id": "reading-154-s006",
-      "english": "They are also beaten for several hours.",
-      "korean": "그것들은 또한 상당한 시간 동안 두들겨진다."
-    },
-    {
-      "id": "reading-154-s007",
-      "english": "The more they are beaten, the stronger they actually become.",
-      "korean": "더 많이 두들겨질수록, 그것들은 실제로 더욱 강해진다."
-    },
-    {
-      "id": "reading-154-s008",
-      "english": "This is similar to people getting wiser and more disciplined by overcoming the difficulties and hardships they encounter day after day.",
-      "korean": "이것은 사람들이 매일매일 직면하는 어려움들과 고난들을 이겨내면서 좀 더 단련되어지고 현명해지는 것과 유사하다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "suggest",
-      "lemma": "suggest",
-      "partOfSpeech": "n.",
-      "korean": "제안하다",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "difficulties",
-      "lemma": "difficulty",
-      "partOfSpeech": "n.",
-      "korean": "어려움, 곤경",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "complex",
-      "lemma": "complex",
-      "partOfSpeech": "n.",
-      "korean": "복잡한",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "stronger",
-      "lemma": "strong",
-      "partOfSpeech": "n.",
-      "korean": "강한",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "process",
-      "lemma": "process",
-      "partOfSpeech": "n.",
-      "korean": "프로세스",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "branches",
-      "lemma": "branch",
-      "partOfSpeech": "n.",
-      "korean": "가지",
-      "score": 89,
-      "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "TOEIC"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "disciplined",
-      "lemma": "discipline",
-      "partOfSpeech": "v.",
-      "korean": "규율",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "overcoming",
-      "lemma": "overcome",
-      "partOfSpeech": "v.",
-      "korean": "극복하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "paper",
-      "lemma": "paper",
-      "partOfSpeech": "n.",
-      "korean": "종이",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "hand-made",
-      "lemma": "hand-made",
-      "partOfSpeech": "adj.",
-      "korean": "손으로 만든, 수제의",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "beaten",
-      "lemma": "beaten",
-      "partOfSpeech": "v.",
-      "korean": "두들겨 맞은, 패배한",
-      "score": 79,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "artists",
-      "lemma": "artist",
-      "partOfSpeech": "n.",
-      "korean": "예술가",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reflects",
-      "lemma": "reflect",
-      "partOfSpeech": "n.",
-      "korean": "반영하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr154",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 154 ]",
+ "menuLabel": "[ pr154 ]",
+ "unit": 154,
+ "part": null,
+ "order": 306,
+ "audio": [
+  {
+   "src": "/audio/reading/pr154.mp3",
+   "legacySrc": "sounds/pr154.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 154 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Some Korean artists suggest that the process of making hanji, hand-made Korean paper, reflects human life . In fact, you might say that people’s day-to-day existence is shown in this paper-making process. The process starts when the branches of a tree are cut off. The branches then go through a complex process to become strong and flexible paper. They are steamed, boiled, and then washed many times to remove any impure materials. They are also beaten for several hours. The more they are beaten, the stronger they actually become. This is similar to people getting wiser and more disciplined by overcoming the difficulties and hardships they encounter day after day."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr154.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-154-s001",
+   "english": "Some Korean artists suggest that the process of making hanji, hand-made Korean paper, reflects human life .",
+   "korean": "몇 명의 한국인 예술가들은 한국의 손으로 만든 종이인 ‘한지’를 만드는 과정은 인생을 반영한 것이라고 말한다."
+  },
+  {
+   "id": "reading-154-s002",
+   "english": "In fact, you might say that people’s day-to-day existence is shown in this paper-making process.",
+   "korean": "사실, 사람들의 하루 하루의 일상은 이 종이를 만드는 과정과도 같다."
+  },
+  {
+   "id": "reading-154-s003",
+   "english": "The process starts when the branches of a tree are cut off.",
+   "korean": "그 과정의 출발은 한 그루의 나무에서 나뭇가지를 자르는 것에 있다."
+  },
+  {
+   "id": "reading-154-s004",
+   "english": "The branches then go through a complex process to become strong and flexible paper.",
+   "korean": "그 나뭇가지들은 복잡한 과정을 거쳐서 질겨지고 유연해진다."
+  },
+  {
+   "id": "reading-154-s005",
+   "english": "They are steamed, boiled, and then washed many times to remove any impure materials.",
+   "korean": "그것들은 삶아지고, 끓여지고 그리고 나서 여러 번 씻겨지면서 불순물들이 제거되게 된다."
+  },
+  {
+   "id": "reading-154-s006",
+   "english": "They are also beaten for several hours.",
+   "korean": "그것들은 또한 상당한 시간 동안 두들겨진다."
+  },
+  {
+   "id": "reading-154-s007",
+   "english": "The more they are beaten, the stronger they actually become.",
+   "korean": "더 많이 두들겨질수록, 그것들은 실제로 더욱 강해진다."
+  },
+  {
+   "id": "reading-154-s008",
+   "english": "This is similar to people getting wiser and more disciplined by overcoming the difficulties and hardships they encounter day after day.",
+   "korean": "이것은 사람들이 매일매일 직면하는 어려움들과 고난들을 이겨내면서 좀 더 단련되어지고 현명해지는 것과 유사하다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "suggest",
+   "lemma": "suggest",
+   "partOfSpeech": "n.",
+   "korean": "제안하다",
+   "score": 104,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "difficulties",
+   "lemma": "difficulty",
+   "partOfSpeech": "n.",
+   "korean": "어려움, 곤경",
+   "score": 102,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "examTags": [
+    "중학기초",
+    "수능"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "complex",
+   "lemma": "complex",
+   "partOfSpeech": "n.",
+   "korean": "복잡한",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "stronger",
+   "lemma": "strong",
+   "partOfSpeech": "n.",
+   "korean": "강한",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "process",
+   "lemma": "process",
+   "partOfSpeech": "n.",
+   "korean": "과정",
+   "score": 89,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 4
+  },
+  {
+   "word": "branches",
+   "lemma": "branch",
+   "partOfSpeech": "n.",
+   "korean": "가지",
+   "score": 89,
+   "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 89점)",
+   "examTags": [
+    "TOEIC"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "fact",
+   "lemma": "fact",
+   "partOfSpeech": "n.",
+   "korean": "사실",
+   "score": 88,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "disciplined",
+   "lemma": "discipline",
+   "partOfSpeech": "v.",
+   "korean": "규율",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "overcoming",
+   "lemma": "overcome",
+   "partOfSpeech": "v.",
+   "korean": "극복하다",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "paper",
+   "lemma": "paper",
+   "partOfSpeech": "n.",
+   "korean": "종이",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "hand-made",
+   "lemma": "hand-made",
+   "partOfSpeech": "adj.",
+   "korean": "손으로 만든, 수제의",
+   "score": 81,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "beaten",
+   "lemma": "beaten",
+   "partOfSpeech": "v.",
+   "korean": "두들겨 맞은, 패배한",
+   "score": 79,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "artists",
+   "lemma": "artist",
+   "partOfSpeech": "n.",
+   "korean": "예술가",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "reflects",
+   "lemma": "reflect",
+   "partOfSpeech": "n.",
+   "korean": "반영하다",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

@@ -1,239 +1,239 @@
 {
-  "id": "pr032",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 032 ]",
-  "menuLabel": "[ pr032 ]",
-  "unit": 32,
-  "part": null,
-  "order": 62,
-  "audio": [
-    {
-      "src": "/audio/reading/pr032.mp3",
-      "legacySrc": "sounds/pr032.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 032 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "The old saying \" When in Rome, do as the Romans do\" is never more true than when at the dinner table. In some parts of Korea, it is a sign of appreciation to drink one's tea or soup with much gusto and smacking of lips. But in most Western countries no noise should be made while eating. Eating utensils, too, differ from country to country."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr032.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-032-s001",
-      "english": "The old saying \" When in Rome, do as the Romans do\" is never more true than when at the dinner table.",
-      "korean": "옛 속담, 로마에서는 로마인처럼 행동하라, 는 저녁식사 테이블에서 만큼 더 진실이 아니다."
-    },
-    {
-      "id": "reading-032-s002",
-      "english": "In some parts of Korea, it is a sign of appreciation to drink one's tea or soup with much gusto and smacking of lips.",
-      "korean": "한국의 일부 지역에서는 많이 입맛을 다시며 차나 국을 마시는 것은 감사의 표시이다."
-    },
-    {
-      "id": "reading-032-s003",
-      "english": "But in most Western countries no noise should be made while eating.",
-      "korean": "그러나 대부분의 서구에서는 어떤 소리도 먹는 동안 내어져서는 안된다."
-    },
-    {
-      "id": "reading-032-s004",
-      "english": "Eating utensils, too, differ from country to country.",
-      "korean": "식사도구 역시 나라마다 다르다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "country",
-      "lemma": "country",
-      "partOfSpeech": "n.",
-      "korean": "국가",
-      "score": 107,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "noise",
-      "lemma": "noise",
-      "partOfSpeech": "n.",
-      "korean": "소음",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "eating",
-      "lemma": "eat",
-      "partOfSpeech": "v.",
-      "korean": "먹다",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "table",
-      "lemma": "table",
-      "partOfSpeech": "adj.",
-      "korean": "테이블",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "never",
-      "lemma": "never",
-      "partOfSpeech": "n.",
-      "korean": "결코",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "dinner",
-      "lemma": "dinner",
-      "partOfSpeech": "n.",
-      "korean": "저녁 식사",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "utensils",
-      "lemma": "utensil",
-      "partOfSpeech": "n.",
-      "korean": "기구",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "differ",
-      "lemma": "differ",
-      "partOfSpeech": "n.",
-      "korean": "다르다",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "old",
-      "lemma": "old",
-      "partOfSpeech": "n.",
-      "korean": "늙은",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "true",
-      "lemma": "true",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "appreciation",
-      "lemma": "appreciation",
-      "partOfSpeech": "n.",
-      "korean": "감사",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "smacking",
-      "lemma": "smacking",
-      "partOfSpeech": "n.",
-      "korean": "손바닥 체벌, 찰싹 때리기",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "western",
-      "lemma": "western",
-      "partOfSpeech": "n.",
-      "korean": "서부의",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "saying",
-      "lemma": "say",
-      "partOfSpeech": "v.",
-      "korean": "말하는",
-      "score": 68,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 68점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr032",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 032 ]",
+ "menuLabel": "[ pr032 ]",
+ "unit": 32,
+ "part": null,
+ "order": 62,
+ "audio": [
+  {
+   "src": "/audio/reading/pr032.mp3",
+   "legacySrc": "sounds/pr032.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 032 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "The old saying \" When in Rome, do as the Romans do\" is never more true than when at the dinner table. In some parts of Korea, it is a sign of appreciation to drink one's tea or soup with much gusto and smacking of lips. But in most Western countries no noise should be made while eating. Eating utensils, too, differ from country to country."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr032.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-032-s001",
+   "english": "The old saying \" When in Rome, do as the Romans do\" is never more true than when at the dinner table.",
+   "korean": "옛 속담, 로마에서는 로마인처럼 행동하라, 는 저녁식사 테이블에서 만큼 더 진실이 아니다."
+  },
+  {
+   "id": "reading-032-s002",
+   "english": "In some parts of Korea, it is a sign of appreciation to drink one's tea or soup with much gusto and smacking of lips.",
+   "korean": "한국의 일부 지역에서는 많이 입맛을 다시며 차나 국을 마시는 것은 감사의 표시이다."
+  },
+  {
+   "id": "reading-032-s003",
+   "english": "But in most Western countries no noise should be made while eating.",
+   "korean": "그러나 대부분의 서구에서는 어떤 소리도 먹는 동안 내어져서는 안된다."
+  },
+  {
+   "id": "reading-032-s004",
+   "english": "Eating utensils, too, differ from country to country.",
+   "korean": "식사도구 역시 나라마다 다르다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "country",
+   "lemma": "country",
+   "partOfSpeech": "n.",
+   "korean": "국가",
+   "score": 107,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "noise",
+   "lemma": "noise",
+   "partOfSpeech": "n.",
+   "korean": "소음",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "eating",
+   "lemma": "eat",
+   "partOfSpeech": "v.",
+   "korean": "먹다",
+   "score": 87,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 87점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "table",
+   "lemma": "table",
+   "partOfSpeech": "adj.",
+   "korean": "테이블",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "never",
+   "lemma": "never",
+   "partOfSpeech": "n.",
+   "korean": "결코",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "dinner",
+   "lemma": "dinner",
+   "partOfSpeech": "n.",
+   "korean": "저녁 식사",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "utensils",
+   "lemma": "utensil",
+   "partOfSpeech": "n.",
+   "korean": "기구",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "differ",
+   "lemma": "differ",
+   "partOfSpeech": "n.",
+   "korean": "다르다",
+   "score": 75,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "old",
+   "lemma": "old",
+   "partOfSpeech": "n.",
+   "korean": "늙은",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "true",
+   "lemma": "true",
+   "partOfSpeech": "n.",
+   "korean": "사실",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "appreciation",
+   "lemma": "appreciation",
+   "partOfSpeech": "n.",
+   "korean": "감사",
+   "score": 69,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "smacking",
+   "lemma": "smacking",
+   "partOfSpeech": "n.",
+   "korean": "손바닥 체벌, 찰싹 때리기",
+   "score": 69,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "western",
+   "lemma": "western",
+   "partOfSpeech": "n.",
+   "korean": "서부의",
+   "score": 69,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "saying",
+   "lemma": "say",
+   "partOfSpeech": "v.",
+   "korean": "속담, 격언",
+   "score": 68,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 68점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

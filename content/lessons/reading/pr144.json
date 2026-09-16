@@ -1,249 +1,249 @@
 {
-  "id": "pr144",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 144 ]",
-  "menuLabel": "[ pr144 ]",
-  "unit": 144,
-  "part": null,
-  "order": 286,
-  "audio": [
-    {
-      "src": "/audio/reading/pr144.mp3",
-      "legacySrc": "sounds/pr144.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 144 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Crowding stresses us. The more crowded we feel, the more stressed we get. Work stresses us, too. Workers in manufacturing jobs are likely to suffer serious health problems as a result of the noise, or the stress of being paced by mechanical requirements of the assembly line. The amount of work involved, however, does not necessarily determine the level of stress. Air traffic controllers, for instance, report that the long stretches of doing relatively little are at least as stressful as the times when they are handling many aircraft in the sky."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr144.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-144-s001",
-      "english": "Crowding stresses us.",
-      "korean": "혼잡함이 우리에게 스트레스를 준다."
-    },
-    {
-      "id": "reading-144-s002",
-      "english": "The more crowded we feel, the more stressed we get.",
-      "korean": "더 혼잡함을 느낄수록 더 스트레스를 받는다."
-    },
-    {
-      "id": "reading-144-s003",
-      "english": "Work stresses us, too.",
-      "korean": "일도 우리에게 스트레스를 준다."
-    },
-    {
-      "id": "reading-144-s004",
-      "english": "Workers in manufacturing jobs are likely to suffer serious health problems as a result of the noise, or the stress of being paced by mechanical requirements of the assembly line.",
-      "korean": "제조업 근로자들은, 소음이나 작업 라인의 기계적 필요에 보조를 맞추어야 하는 것의 결과로, 심각한 건강상의 문제를 겪기 쉽다."
-    },
-    {
-      "id": "reading-144-s005",
-      "english": "The amount of work involved, however, does not necessarily determine the level of stress.",
-      "korean": "그 러나, 관계된 일의 양이 반드시 스트레스 수준을 결정하지는 않는다."
-    },
-    {
-      "id": "reading-144-s006",
-      "english": "Air traffic controllers, for instance, report that the long stretches of doing relatively little are at least as stressful as the times when they are handling many aircraft in the sky.",
-      "korean": "예를 들어, 항 공노선 통제관들은, 상대적으로 사소한 일을 장시간하는 것이 적어도, 하늘을 날고 있는 많은 비행기를 다룰 때 만큼, 스트레스를 준다고들 한다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "health",
-      "lemma": "health",
-      "partOfSpeech": "n.",
-      "korean": "건강",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "result",
-      "lemma": "result",
-      "partOfSpeech": "n.",
-      "korean": "결과",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "noise",
-      "lemma": "noise",
-      "partOfSpeech": "n.",
-      "korean": "소음",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "crowding",
-      "lemma": "crowd",
-      "partOfSpeech": "v.",
-      "korean": "군중",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "stresses",
-      "lemma": "stress",
-      "partOfSpeech": "n.",
-      "korean": "스트레스",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "stretches",
-      "lemma": "stretches",
-      "partOfSpeech": "v.",
-      "korean": "뻗어 있다; 구간들",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "handling",
-      "lemma": "handle",
-      "partOfSpeech": "v.",
-      "korean": "손잡이",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "traffic",
-      "lemma": "traffic",
-      "partOfSpeech": "adj.",
-      "korean": "교통",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "stressful",
-      "lemma": "stressful",
-      "partOfSpeech": "adj.",
-      "korean": "스트레스가 많은, 고단한",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "controllers",
-      "lemma": "controllers",
-      "partOfSpeech": "n.",
-      "korean": "관제사들, 통제관들",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "instance",
-      "lemma": "instance",
-      "partOfSpeech": "n.",
-      "korean": "인스턴스",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "aircraft",
-      "lemma": "aircraft",
-      "partOfSpeech": "n.",
-      "korean": "항공기, 비행기",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "manufacturing",
-      "lemma": "manufacture",
-      "partOfSpeech": "v.",
-      "korean": "제조",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "involved",
-      "lemma": "involve",
-      "partOfSpeech": "v.",
-      "korean": "포함하다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr144",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 144 ]",
+ "menuLabel": "[ pr144 ]",
+ "unit": 144,
+ "part": null,
+ "order": 286,
+ "audio": [
+  {
+   "src": "/audio/reading/pr144.mp3",
+   "legacySrc": "sounds/pr144.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 144 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Crowding stresses us. The more crowded we feel, the more stressed we get. Work stresses us, too. Workers in manufacturing jobs are likely to suffer serious health problems as a result of the noise, or the stress of being paced by mechanical requirements of the assembly line. The amount of work involved, however, does not necessarily determine the level of stress. Air traffic controllers, for instance, report that the long stretches of doing relatively little are at least as stressful as the times when they are handling many aircraft in the sky."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr144.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-144-s001",
+   "english": "Crowding stresses us.",
+   "korean": "혼잡함이 우리에게 스트레스를 준다."
+  },
+  {
+   "id": "reading-144-s002",
+   "english": "The more crowded we feel, the more stressed we get.",
+   "korean": "더 혼잡함을 느낄수록 더 스트레스를 받는다."
+  },
+  {
+   "id": "reading-144-s003",
+   "english": "Work stresses us, too.",
+   "korean": "일도 우리에게 스트레스를 준다."
+  },
+  {
+   "id": "reading-144-s004",
+   "english": "Workers in manufacturing jobs are likely to suffer serious health problems as a result of the noise, or the stress of being paced by mechanical requirements of the assembly line.",
+   "korean": "제조업 근로자들은, 소음이나 작업 라인의 기계적 필요에 보조를 맞추어야 하는 것의 결과로, 심각한 건강상의 문제를 겪기 쉽다."
+  },
+  {
+   "id": "reading-144-s005",
+   "english": "The amount of work involved, however, does not necessarily determine the level of stress.",
+   "korean": "그 러나, 관계된 일의 양이 반드시 스트레스 수준을 결정하지는 않는다."
+  },
+  {
+   "id": "reading-144-s006",
+   "english": "Air traffic controllers, for instance, report that the long stretches of doing relatively little are at least as stressful as the times when they are handling many aircraft in the sky.",
+   "korean": "예를 들어, 항 공노선 통제관들은, 상대적으로 사소한 일을 장시간하는 것이 적어도, 하늘을 날고 있는 많은 비행기를 다룰 때 만큼, 스트레스를 준다고들 한다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "health",
+   "lemma": "health",
+   "partOfSpeech": "n.",
+   "korean": "건강",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "result",
+   "lemma": "result",
+   "partOfSpeech": "n.",
+   "korean": "결과",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "noise",
+   "lemma": "noise",
+   "partOfSpeech": "n.",
+   "korean": "소음",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "crowding",
+   "lemma": "crowd",
+   "partOfSpeech": "v.",
+   "korean": "군중",
+   "score": 86,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "stresses",
+   "lemma": "stress",
+   "partOfSpeech": "n.",
+   "korean": "스트레스",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "stretches",
+   "lemma": "stretches",
+   "partOfSpeech": "v.",
+   "korean": "뻗어 있다; 구간들",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "handling",
+   "lemma": "handle",
+   "partOfSpeech": "v.",
+   "korean": "손잡이",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "traffic",
+   "lemma": "traffic",
+   "partOfSpeech": "adj.",
+   "korean": "교통",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "stressful",
+   "lemma": "stressful",
+   "partOfSpeech": "adj.",
+   "korean": "스트레스가 많은, 고단한",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "controllers",
+   "lemma": "controllers",
+   "partOfSpeech": "n.",
+   "korean": "관제사들, 통제관들",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "instance",
+   "lemma": "instance",
+   "partOfSpeech": "n.",
+   "korean": "사례, 경우",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "aircraft",
+   "lemma": "aircraft",
+   "partOfSpeech": "n.",
+   "korean": "항공기, 비행기",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "manufacturing",
+   "lemma": "manufacture",
+   "partOfSpeech": "v.",
+   "korean": "제조",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "involved",
+   "lemma": "involve",
+   "partOfSpeech": "v.",
+   "korean": "포함하다",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

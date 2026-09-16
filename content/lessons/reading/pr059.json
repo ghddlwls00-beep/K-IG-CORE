@@ -1,239 +1,239 @@
 {
-  "id": "pr059",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 059 ]",
-  "menuLabel": "[ pr059 ]",
-  "unit": 59,
-  "part": null,
-  "order": 116,
-  "audio": [
-    {
-      "src": "/audio/reading/pr059.mp3",
-      "legacySrc": "sounds/pr059.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 059 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Some people become blind because a part of the eye called the cornea doesn't let in enough light. The cornea becomes clouded over. These people can be made to see again, however, if they are able to get clear corneas to let in the light. The blind must get the corneas from people with healthy eyes-people who agree to let blind people use their eyes after they die"
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr059.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-059-s001",
-      "english": "Some people become blind because a part of the eye called the cornea doesn't let in enough light.",
-      "korean": "일부 사람들은 각막이라고 불리는 눈의 일부분이 충분한 빛을 받아들이지 못하기 때문에 맹인이 된다."
-    },
-    {
-      "id": "reading-059-s002",
-      "english": "The cornea becomes clouded over.",
-      "korean": "그 각막은 흐릿하게 된다."
-    },
-    {
-      "id": "reading-059-s003",
-      "english": "These people can be made to see again, however, if they are able to get clear corneas to let in the light.",
-      "korean": "그러나 만약에 빛을 받아들일 깨긋한 각막을 구할 수 있으면 이러한 사람들은 다시 보도록 만들어질 수 있다."
-    },
-    {
-      "id": "reading-059-s004",
-      "english": "The blind must get the corneas from people with healthy eyes-people who agree to let blind people use their eyes after they die",
-      "korean": "맹인은 사후에 자신의 눈을 사용하도록 허락하는 데 동의한 건강한 눈을 가진 사람들로부터 각막을 구해야만 한다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "light",
-      "lemma": "light",
-      "partOfSpeech": "n.",
-      "korean": "빛",
-      "score": 107,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "healthy",
-      "lemma": "healthy",
-      "partOfSpeech": "n.",
-      "korean": "건강한",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "agree",
-      "lemma": "agree",
-      "partOfSpeech": "n.",
-      "korean": "동의하다",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "eye",
-      "lemma": "eye",
-      "partOfSpeech": "n.",
-      "korean": "눈",
-      "score": 98,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "blind",
-      "lemma": "blind",
-      "partOfSpeech": "n.",
-      "korean": "블라인드",
-      "score": 95,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "called",
-      "lemma": "call",
-      "partOfSpeech": "v.",
-      "korean": "전화",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "cornea",
-      "lemma": "cornea",
-      "partOfSpeech": "n.",
-      "korean": "각막",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "enough",
-      "lemma": "enough",
-      "partOfSpeech": "n.",
-      "korean": "충분히",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "eyes-people",
-      "lemma": "eyes-people",
-      "partOfSpeech": "n.",
-      "korean": "사람들의 눈길, 대중의 시선",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "clouded",
-      "lemma": "cloud",
-      "partOfSpeech": "v.",
-      "korean": "구름",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "part",
-      "lemma": "part",
-      "partOfSpeech": "n.",
-      "korean": "부분",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "use",
-      "lemma": "use",
-      "partOfSpeech": "n.",
-      "korean": "사용하다",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "die",
-      "lemma": "die",
-      "partOfSpeech": "n.",
-      "korean": "죽다",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "get",
-      "lemma": "get",
-      "partOfSpeech": "n.",
-      "korean": "얻다",
-      "score": 70,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 70점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    }
-  ]
+ "id": "pr059",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 059 ]",
+ "menuLabel": "[ pr059 ]",
+ "unit": 59,
+ "part": null,
+ "order": 116,
+ "audio": [
+  {
+   "src": "/audio/reading/pr059.mp3",
+   "legacySrc": "sounds/pr059.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 059 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Some people become blind because a part of the eye called the cornea doesn't let in enough light. The cornea becomes clouded over. These people can be made to see again, however, if they are able to get clear corneas to let in the light. The blind must get the corneas from people with healthy eyes-people who agree to let blind people use their eyes after they die"
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr059.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-059-s001",
+   "english": "Some people become blind because a part of the eye called the cornea doesn't let in enough light.",
+   "korean": "일부 사람들은 각막이라고 불리는 눈의 일부분이 충분한 빛을 받아들이지 못하기 때문에 맹인이 된다."
+  },
+  {
+   "id": "reading-059-s002",
+   "english": "The cornea becomes clouded over.",
+   "korean": "그 각막은 흐릿하게 된다."
+  },
+  {
+   "id": "reading-059-s003",
+   "english": "These people can be made to see again, however, if they are able to get clear corneas to let in the light.",
+   "korean": "그러나 만약에 빛을 받아들일 깨긋한 각막을 구할 수 있으면 이러한 사람들은 다시 보도록 만들어질 수 있다."
+  },
+  {
+   "id": "reading-059-s004",
+   "english": "The blind must get the corneas from people with healthy eyes-people who agree to let blind people use their eyes after they die",
+   "korean": "맹인은 사후에 자신의 눈을 사용하도록 허락하는 데 동의한 건강한 눈을 가진 사람들로부터 각막을 구해야만 한다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "light",
+   "lemma": "light",
+   "partOfSpeech": "n.",
+   "korean": "빛",
+   "score": 107,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "healthy",
+   "lemma": "healthy",
+   "partOfSpeech": "n.",
+   "korean": "건강한",
+   "score": 102,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "agree",
+   "lemma": "agree",
+   "partOfSpeech": "n.",
+   "korean": "동의하다",
+   "score": 100,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "eye",
+   "lemma": "eye",
+   "partOfSpeech": "n.",
+   "korean": "눈",
+   "score": 98,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "blind",
+   "lemma": "blind",
+   "partOfSpeech": "n.",
+   "korean": "눈이 먼",
+   "score": 95,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "called",
+   "lemma": "call",
+   "partOfSpeech": "v.",
+   "korean": "전화",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "cornea",
+   "lemma": "cornea",
+   "partOfSpeech": "n.",
+   "korean": "각막",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "enough",
+   "lemma": "enough",
+   "partOfSpeech": "n.",
+   "korean": "충분히",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "eyes-people",
+   "lemma": "eyes-people",
+   "partOfSpeech": "n.",
+   "korean": "사람들의 눈길, 대중의 시선",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "clouded",
+   "lemma": "cloud",
+   "partOfSpeech": "v.",
+   "korean": "구름",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "part",
+   "lemma": "part",
+   "partOfSpeech": "n.",
+   "korean": "부분",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "use",
+   "lemma": "use",
+   "partOfSpeech": "n.",
+   "korean": "사용하다",
+   "score": 71,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "die",
+   "lemma": "die",
+   "partOfSpeech": "n.",
+   "korean": "죽다",
+   "score": 71,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "get",
+   "lemma": "get",
+   "partOfSpeech": "n.",
+   "korean": "얻다",
+   "score": 70,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 70점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  }
+ ]
 }

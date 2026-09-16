@@ -1,245 +1,245 @@
 {
-  "id": "pr252",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 252 ]",
-  "menuLabel": "[ pr252 ]",
-  "unit": 252,
-  "part": null,
-  "order": 502,
-  "audio": [
-    {
-      "src": "/audio/reading/pr252.mp3",
-      "legacySrc": "sounds/pr252.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 252 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Market researchers often comment that the elderly think of themselves as being much younger than they actually are. In fact, research confirms the public that age is more a state of mind than of body. The level of a person’s mental outlook and activity has much more to do with quality of life than does actual age. A recent study suggests that perceived age may be a more reliable predictor of marketing success on the gray market than actual age. For this reason, many marketers focus on perceived age in marketing campaigns."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr252.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-252-s001",
-      "english": "Market researchers often comment that the elderly think of themselves as being much younger than they actually are.",
-      "korean": "시장 연구자들은, 나이든 사람들은 자신이 실제보다 훨씬 더 젊다고 생각한다고 종종 말한다."
-    },
-    {
-      "id": "reading-252-s002",
-      "english": "In fact, research confirms the public that age is more a state of mind than of body.",
-      "korean": "실제로, 연구는 나이가 신체의 상태보다 마음의 상태를 가리킨다는 일반적인 생각을 확신시켜 준다."
-    },
-    {
-      "id": "reading-252-s003",
-      "english": "The level of a person’s mental outlook and activity has much more to do with quality of life than does actual age.",
-      "korean": "사람의 수명이나 삶의 질은 나이보다 정신적인 시야나 정신 활동의 정도와 훨씬 많은 관련이 있다."
-    },
-    {
-      "id": "reading-252-s004",
-      "english": "A recent study suggests that perceived age may be a more reliable predictor of marketing success on the gray market than actual age.",
-      "korean": "최근의 한 연구에 따르면, 체감 나이는 실제 나이보다 회색 시장에서 마케팅의 성공을 예측하는 데 더 도움이 된다."
-    },
-    {
-      "id": "reading-252-s005",
-      "english": "For this reason, many marketers focus on perceived age in marketing campaigns.",
-      "korean": "이러한 이유로, 많은 마케팅 담당자들은 매매 촉진 운동에서 체감 나이에 초점을 맞춘다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "perceived",
-      "lemma": "perceive",
-      "partOfSpeech": "v.",
-      "korean": "인지하다",
-      "score": 109,
-      "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "younger",
-      "lemma": "young",
-      "partOfSpeech": "n.",
-      "korean": "젊은",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "reason",
-      "lemma": "reason",
-      "partOfSpeech": "n.",
-      "korean": "이유",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "suggests",
-      "lemma": "suggest",
-      "partOfSpeech": "n.",
-      "korean": "제안하다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "marketing",
-      "lemma": "market",
-      "partOfSpeech": "v.",
-      "korean": "시장",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "mind",
-      "lemma": "mind",
-      "partOfSpeech": "n.",
-      "korean": "마음",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "body",
-      "lemma": "body",
-      "partOfSpeech": "n.",
-      "korean": "몸",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "confirms",
-      "lemma": "confirm",
-      "partOfSpeech": "n.",
-      "korean": "확인하다",
-      "score": 84,
-      "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "focus",
-      "lemma": "focus",
-      "partOfSpeech": "v.",
-      "korean": "집중하다, 초점을 맞추다",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "age",
-      "lemma": "age",
-      "partOfSpeech": "n.",
-      "korean": "나이",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 5
-    },
-    {
-      "word": "researchers",
-      "lemma": "researchers",
-      "partOfSpeech": "n.",
-      "korean": "연구원들, 조사관들",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "comment",
-      "lemma": "comment",
-      "partOfSpeech": "n.",
-      "korean": "코멘트",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "elderly",
-      "lemma": "elder",
-      "partOfSpeech": "adv.",
-      "korean": "장로",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr252",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 252 ]",
+ "menuLabel": "[ pr252 ]",
+ "unit": 252,
+ "part": null,
+ "order": 502,
+ "audio": [
+  {
+   "src": "/audio/reading/pr252.mp3",
+   "legacySrc": "sounds/pr252.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 252 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Market researchers often comment that the elderly think of themselves as being much younger than they actually are. In fact, research confirms the public that age is more a state of mind than of body. The level of a person’s mental outlook and activity has much more to do with quality of life than does actual age. A recent study suggests that perceived age may be a more reliable predictor of marketing success on the gray market than actual age. For this reason, many marketers focus on perceived age in marketing campaigns."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr252.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-252-s001",
+   "english": "Market researchers often comment that the elderly think of themselves as being much younger than they actually are.",
+   "korean": "시장 연구자들은, 나이든 사람들은 자신이 실제보다 훨씬 더 젊다고 생각한다고 종종 말한다."
+  },
+  {
+   "id": "reading-252-s002",
+   "english": "In fact, research confirms the public that age is more a state of mind than of body.",
+   "korean": "실제로, 연구는 나이가 신체의 상태보다 마음의 상태를 가리킨다는 일반적인 생각을 확신시켜 준다."
+  },
+  {
+   "id": "reading-252-s003",
+   "english": "The level of a person’s mental outlook and activity has much more to do with quality of life than does actual age.",
+   "korean": "사람의 수명이나 삶의 질은 나이보다 정신적인 시야나 정신 활동의 정도와 훨씬 많은 관련이 있다."
+  },
+  {
+   "id": "reading-252-s004",
+   "english": "A recent study suggests that perceived age may be a more reliable predictor of marketing success on the gray market than actual age.",
+   "korean": "최근의 한 연구에 따르면, 체감 나이는 실제 나이보다 회색 시장에서 마케팅의 성공을 예측하는 데 더 도움이 된다."
+  },
+  {
+   "id": "reading-252-s005",
+   "english": "For this reason, many marketers focus on perceived age in marketing campaigns.",
+   "korean": "이러한 이유로, 많은 마케팅 담당자들은 매매 촉진 운동에서 체감 나이에 초점을 맞춘다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "perceived",
+   "lemma": "perceive",
+   "partOfSpeech": "v.",
+   "korean": "인지하다",
+   "score": 109,
+   "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
+   "examTags": [
+    "수능"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "younger",
+   "lemma": "young",
+   "partOfSpeech": "n.",
+   "korean": "젊은",
+   "score": 104,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "reason",
+   "lemma": "reason",
+   "partOfSpeech": "n.",
+   "korean": "이유",
+   "score": 100,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "suggests",
+   "lemma": "suggest",
+   "partOfSpeech": "n.",
+   "korean": "제안하다",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "marketing",
+   "lemma": "market",
+   "partOfSpeech": "v.",
+   "korean": "시장",
+   "score": 89,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "fact",
+   "lemma": "fact",
+   "partOfSpeech": "n.",
+   "korean": "사실",
+   "score": 88,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "mind",
+   "lemma": "mind",
+   "partOfSpeech": "n.",
+   "korean": "마음",
+   "score": 88,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "body",
+   "lemma": "body",
+   "partOfSpeech": "n.",
+   "korean": "몸",
+   "score": 88,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "confirms",
+   "lemma": "confirm",
+   "partOfSpeech": "n.",
+   "korean": "확인하다",
+   "score": 84,
+   "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "TOEIC"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "focus",
+   "lemma": "focus",
+   "partOfSpeech": "v.",
+   "korean": "집중하다, 초점을 맞추다",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+   "examTags": [
+    "중학기초",
+    "수능"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "age",
+   "lemma": "age",
+   "partOfSpeech": "n.",
+   "korean": "나이",
+   "score": 81,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 5
+  },
+  {
+   "word": "researchers",
+   "lemma": "researchers",
+   "partOfSpeech": "n.",
+   "korean": "연구원들, 조사관들",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "comment",
+   "lemma": "comment",
+   "partOfSpeech": "n.",
+   "korean": "논평",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "elderly",
+   "lemma": "elder",
+   "partOfSpeech": "adv.",
+   "korean": "장로",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

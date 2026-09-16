@@ -1,249 +1,249 @@
 {
-  "id": "pr064",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 064 ]",
-  "menuLabel": "[ pr064 ]",
-  "unit": 64,
-  "part": null,
-  "order": 126,
-  "audio": [
-    {
-      "src": "/audio/reading/pr064.mp3",
-      "legacySrc": "sounds/pr064.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 064 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "If you want to keep your job, remember these things. You should not stop every hour for coffee. And you should not leave early too often. An important part of your job may be the war you work with other people. If you are difficult to work with, you may have trouble. Or you may have trouble if you do not make friends with the other people at your job."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr064.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-064-s001",
-      "english": "If you want to keep your job, remember these things.",
-      "korean": "만약에 직업을 유지하고 싶으면 이러한 것들을 기억하십시오."
-    },
-    {
-      "id": "reading-064-s002",
-      "english": "You should not stop every hour for coffee.",
-      "korean": "당신은 커피를 위해 매시간 멈추지 마십시오."
-    },
-    {
-      "id": "reading-064-s003",
-      "english": "And you should not leave early too often.",
-      "korean": "그리고 당신은 너무 자주 떠나서는 안된다."
-    },
-    {
-      "id": "reading-064-s004",
-      "english": "An important part of your job may be the war you work with other people.",
-      "korean": "당신 일의 중요한 부분은 다른 사람과 일하는 전쟁일지도 모른다."
-    },
-    {
-      "id": "reading-064-s005",
-      "english": "If you are difficult to work with, you may have trouble.",
-      "korean": "만약에 함께 일하는 것이 어렵다면 당신은 문제를 가지고 있을지도 모른다."
-    },
-    {
-      "id": "reading-064-s006",
-      "english": "Or you may have trouble if you do not make friends with the other people at your job.",
-      "korean": "그렇지 않으면 당신은 당신의 일에 다른 사람과 친구를 만들지 않으면 문제를 가질지도 모른다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "remember",
-      "lemma": "remember",
-      "partOfSpeech": "n.",
-      "korean": "기억하다",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "friends",
-      "lemma": "friend",
-      "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "difficult",
-      "lemma": "difficult",
-      "partOfSpeech": "n.",
-      "korean": "어려운",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "job",
-      "lemma": "job",
-      "partOfSpeech": "n.",
-      "korean": "직업",
-      "score": 91,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 91점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "early",
-      "lemma": "early",
-      "partOfSpeech": "adv.",
-      "korean": "일찍",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "war",
-      "lemma": "war",
-      "partOfSpeech": "n.",
-      "korean": "전쟁",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "trouble",
-      "lemma": "trouble",
-      "partOfSpeech": "n.",
-      "korean": "문제",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "important",
-      "lemma": "important",
-      "partOfSpeech": "n.",
-      "korean": "중요한",
-      "score": 82,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "want",
-      "lemma": "want",
-      "partOfSpeech": "n.",
-      "korean": "원하다",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "keep",
-      "lemma": "keep",
-      "partOfSpeech": "n.",
-      "korean": "유지하다",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "every",
-      "lemma": "every",
-      "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "coffee",
-      "lemma": "coffee",
-      "partOfSpeech": "n.",
-      "korean": "커피",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "leave",
-      "lemma": "leave",
-      "partOfSpeech": "n.",
-      "korean": "떠나다",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "stop",
-      "lemma": "stop",
-      "partOfSpeech": "n.",
-      "korean": "중지",
-      "score": 63,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 63점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr064",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 064 ]",
+ "menuLabel": "[ pr064 ]",
+ "unit": 64,
+ "part": null,
+ "order": 126,
+ "audio": [
+  {
+   "src": "/audio/reading/pr064.mp3",
+   "legacySrc": "sounds/pr064.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 064 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "If you want to keep your job, remember these things. You should not stop every hour for coffee. And you should not leave early too often. An important part of your job may be the war you work with other people. If you are difficult to work with, you may have trouble. Or you may have trouble if you do not make friends with the other people at your job."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr064.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-064-s001",
+   "english": "If you want to keep your job, remember these things.",
+   "korean": "만약에 직업을 유지하고 싶으면 이러한 것들을 기억하십시오."
+  },
+  {
+   "id": "reading-064-s002",
+   "english": "You should not stop every hour for coffee.",
+   "korean": "당신은 커피를 위해 매시간 멈추지 마십시오."
+  },
+  {
+   "id": "reading-064-s003",
+   "english": "And you should not leave early too often.",
+   "korean": "그리고 당신은 너무 자주 떠나서는 안된다."
+  },
+  {
+   "id": "reading-064-s004",
+   "english": "An important part of your job may be the war you work with other people.",
+   "korean": "당신 일의 중요한 부분은 다른 사람과 일하는 전쟁일지도 모른다."
+  },
+  {
+   "id": "reading-064-s005",
+   "english": "If you are difficult to work with, you may have trouble.",
+   "korean": "만약에 함께 일하는 것이 어렵다면 당신은 문제를 가지고 있을지도 모른다."
+  },
+  {
+   "id": "reading-064-s006",
+   "english": "Or you may have trouble if you do not make friends with the other people at your job.",
+   "korean": "그렇지 않으면 당신은 당신의 일에 다른 사람과 친구를 만들지 않으면 문제를 가질지도 모른다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "remember",
+   "lemma": "remember",
+   "partOfSpeech": "n.",
+   "korean": "기억하다",
+   "score": 104,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "friends",
+   "lemma": "friend",
+   "partOfSpeech": "n.",
+   "korean": "친구",
+   "score": 102,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "difficult",
+   "lemma": "difficult",
+   "partOfSpeech": "n.",
+   "korean": "어려운",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "job",
+   "lemma": "job",
+   "partOfSpeech": "n.",
+   "korean": "직업",
+   "score": 91,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 91점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "early",
+   "lemma": "early",
+   "partOfSpeech": "adv.",
+   "korean": "일찍",
+   "score": 90,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "war",
+   "lemma": "war",
+   "partOfSpeech": "n.",
+   "korean": "전쟁",
+   "score": 88,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "trouble",
+   "lemma": "trouble",
+   "partOfSpeech": "n.",
+   "korean": "문제",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "important",
+   "lemma": "important",
+   "partOfSpeech": "n.",
+   "korean": "중요한",
+   "score": 82,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "want",
+   "lemma": "want",
+   "partOfSpeech": "n.",
+   "korean": "원하다",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "keep",
+   "lemma": "keep",
+   "partOfSpeech": "n.",
+   "korean": "유지하다",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "every",
+   "lemma": "every",
+   "partOfSpeech": "n.",
+   "korean": "모든",
+   "score": 67,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "coffee",
+   "lemma": "coffee",
+   "partOfSpeech": "n.",
+   "korean": "커피",
+   "score": 67,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "leave",
+   "lemma": "leave",
+   "partOfSpeech": "n.",
+   "korean": "떠나다",
+   "score": 67,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "stop",
+   "lemma": "stop",
+   "partOfSpeech": "n.",
+   "korean": "멈추다",
+   "score": 63,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 63점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

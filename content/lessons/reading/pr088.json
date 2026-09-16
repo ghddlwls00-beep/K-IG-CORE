@@ -1,244 +1,244 @@
 {
-  "id": "pr088",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 088 ]",
-  "menuLabel": "[ pr088 ]",
-  "unit": 88,
-  "part": null,
-  "order": 174,
-  "audio": [
-    {
-      "src": "/audio/reading/pr088.mp3",
-      "legacySrc": "sounds/pr088.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 088 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "An increasing emphasis on the value of time is changing consumers’ behavior. A recent survey has found that shoppers want more time for themselves, and one way to get it is to spend less time shopping. Because of this change, shop owners are changing store designs to make shopping and consumer service easier. For example, to help busy shoppers race through the store, companies now display floor plans in many different places throughout the store. Also, they have made their stores bigger to minimize time spent shopping."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr088.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-088-s001",
-      "english": "An increasing emphasis on the value of time is changing consumers’ behavior.",
-      "korean": "시간의 가치가 더 중요하게 여겨짐에 따라서 소비자들의 행동에도 변화가 생기고 있다."
-    },
-    {
-      "id": "reading-088-s002",
-      "english": "A recent survey has found that shoppers want more time for themselves, and one way to get it is to spend less time shopping.",
-      "korean": "최근의 조사에 의하면, 구매자들은 자신만의 시간을 더 갖고 싶어 하고, 그것을 위한 한 가지 방법은 쇼핑 시간을 줄이는 것이다."
-    },
-    {
-      "id": "reading-088-s003",
-      "english": "Because of this change, shop owners are changing store designs to make shopping and consumer service easier.",
-      "korean": "이러한 변화로 인해, 가게 소유자들은 고객이 쇼핑을 더 수월하게 하도록 하고 고객 서비스를 더 쉽게 하기 위해 가게의 디자인을 바꾸고 있다."
-    },
-    {
-      "id": "reading-088-s004",
-      "english": "For example, to help busy shoppers race through the store, companies now display floor plans in many different places throughout the store.",
-      "korean": "예를 들어, 바쁜 구매자들이 매장에서 빠르게 이동할 수 있도록 회사들은 가게 전체의 여러 곳에 층별 지도를 붙여 둔다."
-    },
-    {
-      "id": "reading-088-s005",
-      "english": "Also, they have made their stores bigger to minimize time spent shopping.",
-      "korean": "또 쇼핑하는 데 걸리는 시간을 최소화하기 위해 매장들의 규모를 확대해 왔다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "increasing",
-      "lemma": "increase",
-      "partOfSpeech": "v.",
-      "korean": "증가하다",
-      "score": 111,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "spent",
-      "lemma": "spend",
-      "partOfSpeech": "n.",
-      "korean": "지출하다",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "changing",
-      "lemma": "change",
-      "partOfSpeech": "v.",
-      "korean": "변화",
-      "score": 97,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 97점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "shopping",
-      "lemma": "shop",
-      "partOfSpeech": "v.",
-      "korean": "가게",
-      "score": 94,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 94점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "easier",
-      "lemma": "easy",
-      "partOfSpeech": "n.",
-      "korean": "쉬운",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "minimize",
-      "lemma": "minimize",
-      "partOfSpeech": "v.",
-      "korean": "최소화하다, 축소하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "emphasis",
-      "lemma": "emphasis",
-      "partOfSpeech": "n.",
-      "korean": "강조",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "consumers",
-      "lemma": "consumer",
-      "partOfSpeech": "n.",
-      "korean": "소비자",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "behavior",
-      "lemma": "behavior",
-      "partOfSpeech": "n.",
-      "korean": "행동",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "store",
-      "lemma": "store",
-      "partOfSpeech": "n.",
-      "korean": "저장",
-      "score": 77,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "value",
-      "lemma": "value",
-      "partOfSpeech": "n.",
-      "korean": "가치",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "bigger",
-      "lemma": "big",
-      "partOfSpeech": "n.",
-      "korean": "큰",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "shoppers",
-      "lemma": "shoppers",
-      "partOfSpeech": "n.",
-      "korean": "쇼핑객들, 구매자들",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 74점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    }
-  ]
+ "id": "pr088",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 088 ]",
+ "menuLabel": "[ pr088 ]",
+ "unit": 88,
+ "part": null,
+ "order": 174,
+ "audio": [
+  {
+   "src": "/audio/reading/pr088.mp3",
+   "legacySrc": "sounds/pr088.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 088 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "An increasing emphasis on the value of time is changing consumers’ behavior. A recent survey has found that shoppers want more time for themselves, and one way to get it is to spend less time shopping. Because of this change, shop owners are changing store designs to make shopping and consumer service easier. For example, to help busy shoppers race through the store, companies now display floor plans in many different places throughout the store. Also, they have made their stores bigger to minimize time spent shopping."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr088.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-088-s001",
+   "english": "An increasing emphasis on the value of time is changing consumers’ behavior.",
+   "korean": "시간의 가치가 더 중요하게 여겨짐에 따라서 소비자들의 행동에도 변화가 생기고 있다."
+  },
+  {
+   "id": "reading-088-s002",
+   "english": "A recent survey has found that shoppers want more time for themselves, and one way to get it is to spend less time shopping.",
+   "korean": "최근의 조사에 의하면, 구매자들은 자신만의 시간을 더 갖고 싶어 하고, 그것을 위한 한 가지 방법은 쇼핑 시간을 줄이는 것이다."
+  },
+  {
+   "id": "reading-088-s003",
+   "english": "Because of this change, shop owners are changing store designs to make shopping and consumer service easier.",
+   "korean": "이러한 변화로 인해, 가게 소유자들은 고객이 쇼핑을 더 수월하게 하도록 하고 고객 서비스를 더 쉽게 하기 위해 가게의 디자인을 바꾸고 있다."
+  },
+  {
+   "id": "reading-088-s004",
+   "english": "For example, to help busy shoppers race through the store, companies now display floor plans in many different places throughout the store.",
+   "korean": "예를 들어, 바쁜 구매자들이 매장에서 빠르게 이동할 수 있도록 회사들은 가게 전체의 여러 곳에 층별 지도를 붙여 둔다."
+  },
+  {
+   "id": "reading-088-s005",
+   "english": "Also, they have made their stores bigger to minimize time spent shopping.",
+   "korean": "또 쇼핑하는 데 걸리는 시간을 최소화하기 위해 매장들의 규모를 확대해 왔다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "increasing",
+   "lemma": "increase",
+   "partOfSpeech": "v.",
+   "korean": "증가하다",
+   "score": 111,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "spent",
+   "lemma": "spend",
+   "partOfSpeech": "n.",
+   "korean": "지출하다",
+   "score": 100,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "changing",
+   "lemma": "change",
+   "partOfSpeech": "v.",
+   "korean": "변화",
+   "score": 97,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 97점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "shopping",
+   "lemma": "shop",
+   "partOfSpeech": "v.",
+   "korean": "가게",
+   "score": 94,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 94점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "easier",
+   "lemma": "easy",
+   "partOfSpeech": "n.",
+   "korean": "쉬운",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "different",
+   "lemma": "different",
+   "partOfSpeech": "n.",
+   "korean": "다른",
+   "score": 90,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "minimize",
+   "lemma": "minimize",
+   "partOfSpeech": "v.",
+   "korean": "최소화하다, 축소하다",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "emphasis",
+   "lemma": "emphasis",
+   "partOfSpeech": "n.",
+   "korean": "강조",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "consumers",
+   "lemma": "consumer",
+   "partOfSpeech": "n.",
+   "korean": "소비자",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "behavior",
+   "lemma": "behavior",
+   "partOfSpeech": "n.",
+   "korean": "행동",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "store",
+   "lemma": "store",
+   "partOfSpeech": "n.",
+   "korean": "가게; 저장하다",
+   "score": 77,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "value",
+   "lemma": "value",
+   "partOfSpeech": "n.",
+   "korean": "가치",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "bigger",
+   "lemma": "big",
+   "partOfSpeech": "n.",
+   "korean": "큰",
+   "score": 75,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "shoppers",
+   "lemma": "shoppers",
+   "partOfSpeech": "n.",
+   "korean": "쇼핑객들, 구매자들",
+   "score": 74,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 74점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  }
+ ]
 }

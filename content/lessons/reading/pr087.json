@@ -1,254 +1,254 @@
 {
-  "id": "pr087",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 087 ]",
-  "menuLabel": "[ pr087 ]",
-  "unit": 87,
-  "part": null,
-  "order": 172,
-  "audio": [
-    {
-      "src": "/audio/reading/pr087.mp3",
-      "legacySrc": "sounds/pr087.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 087 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Teens surround themselves with imaginary audiences. They imagine others are as interested in them as they are in themselves. Believing that everyone is watching them, teenagers are extremely self-conscious. A young boy, for example, may believe that he is unattractive because of his nose. Nothing can convince him that other people are paying no attention to his nose at all. Also, when chatting with friends, some teenage girls are too expressive, talking and laughing loudly, playing to their unreal audiences. They gradually realize, however, that others are not really interested in them. Teenagers’ behavior changes when they realize others are too busy with their own lives to be watching them."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr087.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-087-s001",
-      "english": "Teens surround themselves with imaginary audiences.",
-      "korean": "십대들은 상상(허상)의 관객들로 둘러싸여 있다."
-    },
-    {
-      "id": "reading-087-s002",
-      "english": "They imagine others are as interested in them as they are in themselves.",
-      "korean": "그들은 자신이 자기 자신에게 쏟는 관심만큼이나 남들도 그들에게 관심이 있을 것이라고 생각한다."
-    },
-    {
-      "id": "reading-087-s003",
-      "english": "Believing that everyone is watching them, teenagers are extremely self-conscious.",
-      "korean": "모든 사람들이 자신들을 지켜보고 있다고 생각하기 때문에, 그들은 대단히 남의 이목을 의식한다."
-    },
-    {
-      "id": "reading-087-s004",
-      "english": "A young boy, for example, may believe that he is unattractive because of his nose. Nothing can convince him that other people are paying no attention to his nose at all.",
-      "korean": "예를 들면, 자신의 코가 못생겼다고 생각하는 소년에게 다른 사람들은 그의 코에 전혀 신경 쓰지 않는다고 설득하는 것은 불가능하다."
-    },
-    {
-      "id": "reading-087-s005",
-      "english": "Also, when chatting with friends, some teenage girls are too expressive, talking and laughing loudly, playing to their unreal audiences.",
-      "korean": "또한, 십대 소녀들이 친구들과 얘기를 할 때면, 그들은 과장되게 표현하거나, 크게 웃고 얘기하며 가상의 청중들이 있는 것처럼 행동한다."
-    },
-    {
-      "id": "reading-087-s006",
-      "english": "They gradually realize, however, that others are not really interested in them.",
-      "korean": "하지만, 그들은 점차 남들은 그들에게 별로 관심이 없다는 사실을 깨닫는다."
-    },
-    {
-      "id": "reading-087-s007",
-      "english": "Teenagers’ behavior changes when they realize others are too busy with their own lives to be watching them.",
-      "korean": "십대들의 행동은 남들이 자신들을 지켜보기엔 남들의 삶이 아주 바쁘다는 것을 깨달으면서 변하게 된다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "realize",
-      "lemma": "realize",
-      "partOfSpeech": "v.",
-      "korean": "깨닫다",
-      "score": 114,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 114점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "believing",
-      "lemma": "believe",
-      "partOfSpeech": "v.",
-      "korean": "믿다",
-      "score": 100,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "friends",
-      "lemma": "friend",
-      "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "young",
-      "lemma": "young",
-      "partOfSpeech": "n.",
-      "korean": "젊은",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "watching",
-      "lemma": "watch",
-      "partOfSpeech": "v.",
-      "korean": "시계",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "audiences",
-      "lemma": "audience",
-      "partOfSpeech": "n.",
-      "korean": "청중",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "teenagers",
-      "lemma": "teenager",
-      "partOfSpeech": "n.",
-      "korean": "십대",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "interested",
-      "lemma": "interested",
-      "partOfSpeech": "v.",
-      "korean": "관심이 있다",
-      "score": 81,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "surround",
-      "lemma": "surround",
-      "partOfSpeech": "n.",
-      "korean": "서라운드",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "imaginary",
-      "lemma": "imaginary",
-      "partOfSpeech": "n.",
-      "korean": "상상의",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "changes",
-      "lemma": "change",
-      "partOfSpeech": "n.",
-      "korean": "변화",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "teens",
-      "lemma": "teen",
-      "partOfSpeech": "n.",
-      "korean": "teens (핵심 어휘)",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "behavior",
-      "lemma": "behavior",
-      "partOfSpeech": "n.",
-      "korean": "행동",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "chatting",
-      "lemma": "chat",
-      "partOfSpeech": "v.",
-      "korean": "chatting (핵심 어휘)",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr087",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 087 ]",
+ "menuLabel": "[ pr087 ]",
+ "unit": 87,
+ "part": null,
+ "order": 172,
+ "audio": [
+  {
+   "src": "/audio/reading/pr087.mp3",
+   "legacySrc": "sounds/pr087.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 087 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Teens surround themselves with imaginary audiences. They imagine others are as interested in them as they are in themselves. Believing that everyone is watching them, teenagers are extremely self-conscious. A young boy, for example, may believe that he is unattractive because of his nose. Nothing can convince him that other people are paying no attention to his nose at all. Also, when chatting with friends, some teenage girls are too expressive, talking and laughing loudly, playing to their unreal audiences. They gradually realize, however, that others are not really interested in them. Teenagers’ behavior changes when they realize others are too busy with their own lives to be watching them."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr087.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-087-s001",
+   "english": "Teens surround themselves with imaginary audiences.",
+   "korean": "십대들은 상상(허상)의 관객들로 둘러싸여 있다."
+  },
+  {
+   "id": "reading-087-s002",
+   "english": "They imagine others are as interested in them as they are in themselves.",
+   "korean": "그들은 자신이 자기 자신에게 쏟는 관심만큼이나 남들도 그들에게 관심이 있을 것이라고 생각한다."
+  },
+  {
+   "id": "reading-087-s003",
+   "english": "Believing that everyone is watching them, teenagers are extremely self-conscious.",
+   "korean": "모든 사람들이 자신들을 지켜보고 있다고 생각하기 때문에, 그들은 대단히 남의 이목을 의식한다."
+  },
+  {
+   "id": "reading-087-s004",
+   "english": "A young boy, for example, may believe that he is unattractive because of his nose. Nothing can convince him that other people are paying no attention to his nose at all.",
+   "korean": "예를 들면, 자신의 코가 못생겼다고 생각하는 소년에게 다른 사람들은 그의 코에 전혀 신경 쓰지 않는다고 설득하는 것은 불가능하다."
+  },
+  {
+   "id": "reading-087-s005",
+   "english": "Also, when chatting with friends, some teenage girls are too expressive, talking and laughing loudly, playing to their unreal audiences.",
+   "korean": "또한, 십대 소녀들이 친구들과 얘기를 할 때면, 그들은 과장되게 표현하거나, 크게 웃고 얘기하며 가상의 청중들이 있는 것처럼 행동한다."
+  },
+  {
+   "id": "reading-087-s006",
+   "english": "They gradually realize, however, that others are not really interested in them.",
+   "korean": "하지만, 그들은 점차 남들은 그들에게 별로 관심이 없다는 사실을 깨닫는다."
+  },
+  {
+   "id": "reading-087-s007",
+   "english": "Teenagers’ behavior changes when they realize others are too busy with their own lives to be watching them.",
+   "korean": "십대들의 행동은 남들이 자신들을 지켜보기엔 남들의 삶이 아주 바쁘다는 것을 깨달으면서 변하게 된다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "realize",
+   "lemma": "realize",
+   "partOfSpeech": "v.",
+   "korean": "깨닫다",
+   "score": 114,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 114점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "believing",
+   "lemma": "believe",
+   "partOfSpeech": "v.",
+   "korean": "믿다",
+   "score": 100,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 100점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "friends",
+   "lemma": "friend",
+   "partOfSpeech": "n.",
+   "korean": "친구",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "young",
+   "lemma": "young",
+   "partOfSpeech": "n.",
+   "korean": "젊은",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "watching",
+   "lemma": "watch",
+   "partOfSpeech": "v.",
+   "korean": "시계",
+   "score": 89,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "audiences",
+   "lemma": "audience",
+   "partOfSpeech": "n.",
+   "korean": "청중",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "teenagers",
+   "lemma": "teenager",
+   "partOfSpeech": "n.",
+   "korean": "십대",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "interested",
+   "lemma": "interested",
+   "partOfSpeech": "v.",
+   "korean": "관심이 있다",
+   "score": 81,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "surround",
+   "lemma": "surround",
+   "partOfSpeech": "n.",
+   "korean": "둘러싸다",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "imaginary",
+   "lemma": "imaginary",
+   "partOfSpeech": "n.",
+   "korean": "상상의",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "changes",
+   "lemma": "change",
+   "partOfSpeech": "n.",
+   "korean": "변화",
+   "score": 78,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 78점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "teens",
+   "lemma": "teen",
+   "partOfSpeech": "n.",
+   "korean": "teens (핵심 어휘)",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "behavior",
+   "lemma": "behavior",
+   "partOfSpeech": "n.",
+   "korean": "행동",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "chatting",
+   "lemma": "chat",
+   "partOfSpeech": "v.",
+   "korean": "chatting (핵심 어휘)",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

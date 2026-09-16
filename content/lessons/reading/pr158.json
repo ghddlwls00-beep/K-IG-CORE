@@ -1,259 +1,259 @@
 {
-  "id": "pr158",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 158 ]",
-  "menuLabel": "[ pr158 ]",
-  "unit": 158,
-  "part": null,
-  "order": 314,
-  "audio": [
-    {
-      "src": "/audio/reading/pr158.mp3",
-      "legacySrc": "sounds/pr158.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 158 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Ethics begins with our being conscious that we choose how we behave. For instance, we can either tell the truth or tell a lie. These two possibilities are presented to us as options. We are capable of doing either one because we can control our actions. A stone, however, does not face this kind of options because it cannot distinguish between different courses of action. A stone can behave only in the way an outside force makes it behave. Unlike a stone, a person can start an action by himself or herself. The difference, then, is that a stone is not conscious of possibilities, whereas human beings are conscious that they face genuine alternatives."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr158.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-158-s001",
-      "english": "Ethics begins with our being conscious that we choose how we behave.",
-      "korean": "윤리란 어떻게 행동할 것인가를 선택하는 것을 우리가 인식하는 것에서 시작된다."
-    },
-    {
-      "id": "reading-158-s002",
-      "english": "For instance, we can either tell the truth or tell a lie.",
-      "korean": "예를 들면, 우리는 진실을 말하거나 거짓말을 말할 수 있다."
-    },
-    {
-      "id": "reading-158-s003",
-      "english": "These two possibilities are presented to us as options.",
-      "korean": "이런 두 가지 가능성이 우리에게 선택으로서 주어진다."
-    },
-    {
-      "id": "reading-158-s004",
-      "english": "We are capable of doing either one because we can control our actions.",
-      "korean": "우리는 우리의 행동들을 통제할 수 있기에 어떤 하나를 할 수 있다."
-    },
-    {
-      "id": "reading-158-s005",
-      "english": "A stone, however, does not face this kind of options because it cannot distinguish between different courses of action.",
-      "korean": "그러나, 돌은 행동의 다른 과정들을 구분할 수 없기에 이런 종류의 선택에 직면하지 않는다."
-    },
-    {
-      "id": "reading-158-s006",
-      "english": "A stone can behave only in the way an outside force makes it behave.",
-      "korean": "돌은 단지 외부의 힘이 그에게 행동하게 만드는 방식으로만 행동할 수 있다."
-    },
-    {
-      "id": "reading-158-s007",
-      "english": "Unlike a stone, a person can start an action by himself or herself.",
-      "korean": "돌과는 달리, 사람은 혼자서 어떤 행위를 시작할 수 있다."
-    },
-    {
-      "id": "reading-158-s008",
-      "english": "The difference, then, is that a stone is not conscious of possibilities, whereas human beings are conscious that they face genuine alternatives.",
-      "korean": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는데 반해서, 인간은 그들이 진정한 양자 택일의 문제들에 직면해 있다는 것것을 인식한다는 것이다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "conscious",
-      "lemma": "conscious",
-      "partOfSpeech": "adj.",
-      "korean": "의식이 있는",
-      "score": 119,
-      "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 119점)",
-      "examTags": [
-        "TOEFL"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "control",
-      "lemma": "control",
-      "partOfSpeech": "n.",
-      "korean": "제어",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "truth",
-      "lemma": "truth",
-      "partOfSpeech": "n.",
-      "korean": "진실",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "distinguish",
-      "lemma": "distinguish",
-      "partOfSpeech": "n.",
-      "korean": "구별하다",
-      "score": 89,
-      "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "behave",
-      "lemma": "behave",
-      "partOfSpeech": "n.",
-      "korean": "행동하다",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "stone",
-      "lemma": "stone",
-      "partOfSpeech": "n.",
-      "korean": "돌",
-      "score": 85,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "possibilities",
-      "lemma": "possibility",
-      "partOfSpeech": "n.",
-      "korean": "가능성",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "ethics",
-      "lemma": "ethics",
-      "partOfSpeech": "n.",
-      "korean": "윤리학, 도덕",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "begins",
-      "lemma": "begin",
-      "partOfSpeech": "n.",
-      "korean": "시작하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "choose",
-      "lemma": "choose",
-      "partOfSpeech": "n.",
-      "korean": "선택하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "difference",
-      "lemma": "difference",
-      "partOfSpeech": "n.",
-      "korean": "차이",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "genuine",
-      "lemma": "genuine",
-      "partOfSpeech": "n.",
-      "korean": "정품",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "alternatives",
-      "lemma": "alternative",
-      "partOfSpeech": "n.",
-      "korean": "대안",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr158",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 158 ]",
+ "menuLabel": "[ pr158 ]",
+ "unit": 158,
+ "part": null,
+ "order": 314,
+ "audio": [
+  {
+   "src": "/audio/reading/pr158.mp3",
+   "legacySrc": "sounds/pr158.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 158 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Ethics begins with our being conscious that we choose how we behave. For instance, we can either tell the truth or tell a lie. These two possibilities are presented to us as options. We are capable of doing either one because we can control our actions. A stone, however, does not face this kind of options because it cannot distinguish between different courses of action. A stone can behave only in the way an outside force makes it behave. Unlike a stone, a person can start an action by himself or herself. The difference, then, is that a stone is not conscious of possibilities, whereas human beings are conscious that they face genuine alternatives."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr158.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-158-s001",
+   "english": "Ethics begins with our being conscious that we choose how we behave.",
+   "korean": "윤리란 어떻게 행동할 것인가를 선택하는 것을 우리가 인식하는 것에서 시작된다."
+  },
+  {
+   "id": "reading-158-s002",
+   "english": "For instance, we can either tell the truth or tell a lie.",
+   "korean": "예를 들면, 우리는 진실을 말하거나 거짓말을 말할 수 있다."
+  },
+  {
+   "id": "reading-158-s003",
+   "english": "These two possibilities are presented to us as options.",
+   "korean": "이런 두 가지 가능성이 우리에게 선택으로서 주어진다."
+  },
+  {
+   "id": "reading-158-s004",
+   "english": "We are capable of doing either one because we can control our actions.",
+   "korean": "우리는 우리의 행동들을 통제할 수 있기에 어떤 하나를 할 수 있다."
+  },
+  {
+   "id": "reading-158-s005",
+   "english": "A stone, however, does not face this kind of options because it cannot distinguish between different courses of action.",
+   "korean": "그러나, 돌은 행동의 다른 과정들을 구분할 수 없기에 이런 종류의 선택에 직면하지 않는다."
+  },
+  {
+   "id": "reading-158-s006",
+   "english": "A stone can behave only in the way an outside force makes it behave.",
+   "korean": "돌은 단지 외부의 힘이 그에게 행동하게 만드는 방식으로만 행동할 수 있다."
+  },
+  {
+   "id": "reading-158-s007",
+   "english": "Unlike a stone, a person can start an action by himself or herself.",
+   "korean": "돌과는 달리, 사람은 혼자서 어떤 행위를 시작할 수 있다."
+  },
+  {
+   "id": "reading-158-s008",
+   "english": "The difference, then, is that a stone is not conscious of possibilities, whereas human beings are conscious that they face genuine alternatives.",
+   "korean": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는데 반해서, 인간은 그들이 진정한 양자 택일의 문제들에 직면해 있다는 것것을 인식한다는 것이다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "conscious",
+   "lemma": "conscious",
+   "partOfSpeech": "adj.",
+   "korean": "의식이 있는",
+   "score": 119,
+   "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 119점)",
+   "examTags": [
+    "TOEFL"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "control",
+   "lemma": "control",
+   "partOfSpeech": "n.",
+   "korean": "통제(하다)",
+   "score": 94,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "truth",
+   "lemma": "truth",
+   "partOfSpeech": "n.",
+   "korean": "진실",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "different",
+   "lemma": "different",
+   "partOfSpeech": "n.",
+   "korean": "다른",
+   "score": 90,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "distinguish",
+   "lemma": "distinguish",
+   "partOfSpeech": "n.",
+   "korean": "구별하다",
+   "score": 89,
+   "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
+   "examTags": [
+    "수능"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "behave",
+   "lemma": "behave",
+   "partOfSpeech": "n.",
+   "korean": "행동하다",
+   "score": 87,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "stone",
+   "lemma": "stone",
+   "partOfSpeech": "n.",
+   "korean": "돌",
+   "score": 85,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 4
+  },
+  {
+   "word": "possibilities",
+   "lemma": "possibility",
+   "partOfSpeech": "n.",
+   "korean": "가능성",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "ethics",
+   "lemma": "ethics",
+   "partOfSpeech": "n.",
+   "korean": "윤리학, 도덕",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "begins",
+   "lemma": "begin",
+   "partOfSpeech": "n.",
+   "korean": "시작하다",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "choose",
+   "lemma": "choose",
+   "partOfSpeech": "n.",
+   "korean": "선택하다",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "difference",
+   "lemma": "difference",
+   "partOfSpeech": "n.",
+   "korean": "차이",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "genuine",
+   "lemma": "genuine",
+   "partOfSpeech": "n.",
+   "korean": "진짜의, 진실한",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "alternatives",
+   "lemma": "alternative",
+   "partOfSpeech": "n.",
+   "korean": "대안",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

@@ -1,239 +1,239 @@
 {
-  "id": "pr239",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 239 ]",
-  "menuLabel": "[ pr239 ]",
-  "unit": 239,
-  "part": null,
-  "order": 476,
-  "audio": [
-    {
-      "src": "/audio/reading/pr239.mp3",
-      "legacySrc": "sounds/pr239.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 239 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses. The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases. Of course, patients have the right to refuse medical treatment at any time ; requesting lethal injections, however, is another matter. Therefore, although it officially endorsed euthanasia in 1984, the Netherlands issued strict guidelines on how to perform it, and proclaimed that doctors who don't follow the guidelines can be imprisoned for up to 12 years."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr239.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-239-s001",
-      "english": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses.",
-      "korean": "전세계적으로 사람들은 특히 고통스런 말기의 죽음에 직면해서 인간적인 죽음(안락사)에 대한 문제(주제)로 씨름해 왔다."
-    },
-    {
-      "id": "reading-239-s002",
-      "english": "The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases.",
-      "korean": "이 딜레마는 진보된 의학 기술이 대부분의 극단적인 경우의 수술에서도 환자를 더 오래 살도록 해 주는 시대이기 때문에, 최근에 더 복잡한 문제가 되었다."
-    },
-    {
-      "id": "reading-239-s003",
-      "english": "Of course, patients have the right to refuse medical treatment at any time ; requesting lethal injections, however, is another matter.",
-      "korean": "물론 환자가 어느 때라도 의학의 치료를 거절할 권리는 있지만; 치명적인 주사를 요구하는 것은 그러나, (치료를 거부하는 것과는) 다른 문제이다."
-    },
-    {
-      "id": "reading-239-s004",
-      "english": "Therefore, although it officially endorsed euthanasia in 1984, the Netherlands issued strict guidelines on how to perform it, and proclaimed that doctors who don't follow the guidelines can be imprisoned for up to 12 years.",
-      "korean": "그런고로, 비록 네델란드에서는 1984년 안락사(euthanasia)를 승인은 했지만, 그 것을 실행하는 방법에서는 엄격한 기준을 설정해왔고, 이 규정을 따르지 않는 의사는 12년간의 형을 실행하였다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "illnesses",
-      "lemma": "illness",
-      "partOfSpeech": "n.",
-      "korean": "질병, 아픔",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "perform",
-      "lemma": "perform",
-      "partOfSpeech": "n.",
-      "korean": "수행하다",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "follow",
-      "lemma": "follow",
-      "partOfSpeech": "n.",
-      "korean": "팔로우",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "refuse",
-      "lemma": "refuse",
-      "partOfSpeech": "n.",
-      "korean": "거절하다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "endorsed",
-      "lemma": "endorsed",
-      "partOfSpeech": "v.",
-      "korean": "지지된, 승인받은",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "proclaimed",
-      "lemma": "proclaim",
-      "partOfSpeech": "v.",
-      "korean": "선포하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "imprisoned",
-      "lemma": "imprison",
-      "partOfSpeech": "v.",
-      "korean": "투옥하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "doctors",
-      "lemma": "doctor",
-      "partOfSpeech": "n.",
-      "korean": "의사",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "guidelines",
-      "lemma": "guidelines",
-      "partOfSpeech": "n.",
-      "korean": "지침들, 가이드라인",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "issued",
-      "lemma": "issue",
-      "partOfSpeech": "v.",
-      "korean": "문제",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "terminal",
-      "lemma": "terminal",
-      "partOfSpeech": "adj.",
-      "korean": "터미널",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "wrestling",
-      "lemma": "wrestling",
-      "partOfSpeech": "n.",
-      "korean": "레슬링, 씨름",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "question",
-      "lemma": "question",
-      "partOfSpeech": "n.",
-      "korean": "질문",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr239",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 239 ]",
+ "menuLabel": "[ pr239 ]",
+ "unit": 239,
+ "part": null,
+ "order": 476,
+ "audio": [
+  {
+   "src": "/audio/reading/pr239.mp3",
+   "legacySrc": "sounds/pr239.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 239 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses. The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases. Of course, patients have the right to refuse medical treatment at any time ; requesting lethal injections, however, is another matter. Therefore, although it officially endorsed euthanasia in 1984, the Netherlands issued strict guidelines on how to perform it, and proclaimed that doctors who don't follow the guidelines can be imprisoned for up to 12 years."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr239.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-239-s001",
+   "english": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses.",
+   "korean": "전세계적으로 사람들은 특히 고통스런 말기의 죽음에 직면해서 인간적인 죽음(안락사)에 대한 문제(주제)로 씨름해 왔다."
+  },
+  {
+   "id": "reading-239-s002",
+   "english": "The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases.",
+   "korean": "이 딜레마는 진보된 의학 기술이 대부분의 극단적인 경우의 수술에서도 환자를 더 오래 살도록 해 주는 시대이기 때문에, 최근에 더 복잡한 문제가 되었다."
+  },
+  {
+   "id": "reading-239-s003",
+   "english": "Of course, patients have the right to refuse medical treatment at any time ; requesting lethal injections, however, is another matter.",
+   "korean": "물론 환자가 어느 때라도 의학의 치료를 거절할 권리는 있지만; 치명적인 주사를 요구하는 것은 그러나, (치료를 거부하는 것과는) 다른 문제이다."
+  },
+  {
+   "id": "reading-239-s004",
+   "english": "Therefore, although it officially endorsed euthanasia in 1984, the Netherlands issued strict guidelines on how to perform it, and proclaimed that doctors who don't follow the guidelines can be imprisoned for up to 12 years.",
+   "korean": "그런고로, 비록 네델란드에서는 1984년 안락사(euthanasia)를 승인은 했지만, 그 것을 실행하는 방법에서는 엄격한 기준을 설정해왔고, 이 규정을 따르지 않는 의사는 12년간의 형을 실행하였다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "illnesses",
+   "lemma": "illness",
+   "partOfSpeech": "n.",
+   "korean": "질병, 아픔",
+   "score": 104,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "perform",
+   "lemma": "perform",
+   "partOfSpeech": "n.",
+   "korean": "수행하다",
+   "score": 102,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "follow",
+   "lemma": "follow",
+   "partOfSpeech": "n.",
+   "korean": "따르다, 따라가다",
+   "score": 100,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "refuse",
+   "lemma": "refuse",
+   "partOfSpeech": "n.",
+   "korean": "거절하다",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "world",
+   "lemma": "world",
+   "partOfSpeech": "n.",
+   "korean": "세계",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "endorsed",
+   "lemma": "endorsed",
+   "partOfSpeech": "v.",
+   "korean": "지지된, 승인받은",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "proclaimed",
+   "lemma": "proclaim",
+   "partOfSpeech": "v.",
+   "korean": "선포하다",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "imprisoned",
+   "lemma": "imprison",
+   "partOfSpeech": "v.",
+   "korean": "투옥하다",
+   "score": 84,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "doctors",
+   "lemma": "doctor",
+   "partOfSpeech": "n.",
+   "korean": "의사",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "guidelines",
+   "lemma": "guidelines",
+   "partOfSpeech": "n.",
+   "korean": "지침들, 가이드라인",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "issued",
+   "lemma": "issue",
+   "partOfSpeech": "v.",
+   "korean": "문제",
+   "score": 82,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "terminal",
+   "lemma": "terminal",
+   "partOfSpeech": "adj.",
+   "korean": "말기의; 종착역",
+   "score": 81,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "wrestling",
+   "lemma": "wrestling",
+   "partOfSpeech": "n.",
+   "korean": "레슬링, 씨름",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "question",
+   "lemma": "question",
+   "partOfSpeech": "n.",
+   "korean": "질문",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }

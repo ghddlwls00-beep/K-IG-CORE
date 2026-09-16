@@ -1,249 +1,249 @@
 {
-  "id": "pr195",
-  "course": "reading",
-  "series": "pr",
-  "variant": "main",
-  "pairId": null,
-  "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ K-IG 교육 Reading 195 ]",
-  "menuLabel": "[ pr195 ]",
-  "unit": 195,
-  "part": null,
-  "order": 388,
-  "audio": [
-    {
-      "src": "/audio/reading/pr195.mp3",
-      "legacySrc": "sounds/pr195.mp3",
-      "autoplay": true
-    }
-  ],
-  "video": [],
-  "blocks": [
-    {
-      "type": "heading",
-      "text": "[ K-IG 교육 Reading 195 ]"
-    },
-    {
-      "type": "instruction",
-      "text": "Suppose a football game begins at 1:00 p.m. in New York. It is then 6:00 p.m. in London. Which time is correct? if an explosion occurred on a star, scientists on the earth would record th time it happened. But anyone traveling in another part of the universe in a different direction would identify the time differently. Thus there is no absolute time."
-    },
-    {
-      "type": "choice",
-      "options": [
-        "1 번",
-        "2 번",
-        "3 번",
-        "4 번",
-        "5 번"
-      ]
-    },
-    {
-      "type": "dictation",
-      "rows": 10
-    }
-  ],
-  "legacyPath": "reading/pr195.htm",
-  "legacyEncoding": "utf-8",
-  "readingSentences": [
-    {
-      "id": "reading-195-s001",
-      "english": "Suppose a football game begins at 1:00 p.m. in New York.",
-      "korean": "축구 경기가 오후 1시에 뉴욕에서 시작된다고 가정해 보자."
-    },
-    {
-      "id": "reading-195-s002",
-      "english": "It is then 6:00 p.m. in London.",
-      "korean": "그 때 런던은 오후 6시이다."
-    },
-    {
-      "id": "reading-195-s003",
-      "english": "Which time is correct?",
-      "korean": "어느 시각이 맞는 것일까?"
-    },
-    {
-      "id": "reading-195-s004",
-      "english": "if an explosion occurred on a star, scientists on the earth would record th time it happened.",
-      "korean": "어느 별에서 폭발이 발생했다면 지구에 있는 과학자들은 그것이 발생한 시간을 기록할 것이다."
-    },
-    {
-      "id": "reading-195-s005",
-      "english": "But anyone traveling in another part of the universe in a different direction would identify the time differently.",
-      "korean": "그러나 다른 방향으로 우주의 다른 지역을 여행하고 있는 사람들은 그 시각을 다르게 볼 것이다."
-    },
-    {
-      "id": "reading-195-s006",
-      "english": "Thus there is no absolute time.",
-      "korean": "그러므로 절대적인 시간은 존재하지 않는다."
-    }
-  ],
-  "readingVocabulary": [
-    {
-      "word": "happened",
-      "lemma": "happen",
-      "partOfSpeech": "v.",
-      "korean": "일어나다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "earth",
-      "lemma": "earth",
-      "partOfSpeech": "n.",
-      "korean": "지구",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 85,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "suppose",
-      "lemma": "suppose",
-      "partOfSpeech": "n.",
-      "korean": "가정하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "football",
-      "lemma": "football",
-      "partOfSpeech": "n.",
-      "korean": "축구",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "p.m",
-      "lemma": "p.m",
-      "partOfSpeech": "n.",
-      "korean": "p.m (핵심 어휘)",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "begins",
-      "lemma": "begin",
-      "partOfSpeech": "n.",
-      "korean": "시작하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "absolute",
-      "lemma": "absolute",
-      "partOfSpeech": "n.",
-      "korean": "절대",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "occurred",
-      "lemma": "occur",
-      "partOfSpeech": "v.",
-      "korean": "발생하다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "traveling",
-      "lemma": "travel",
-      "partOfSpeech": "v.",
-      "korean": "여행",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "game",
-      "lemma": "game",
-      "partOfSpeech": "n.",
-      "korean": "게임",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "york",
-      "lemma": "york",
-      "partOfSpeech": "n.",
-      "korean": "york (핵심 어휘)",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "thus",
-      "lemma": "thus",
-      "partOfSpeech": "n.",
-      "korean": "thus (핵심 어휘)",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "correct",
-      "lemma": "correct",
-      "partOfSpeech": "n.",
-      "korean": "맞다",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    }
-  ]
+ "id": "pr195",
+ "course": "reading",
+ "series": "pr",
+ "variant": "main",
+ "pairId": null,
+ "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
+ "label": "[ K-IG 교육 Reading 195 ]",
+ "menuLabel": "[ pr195 ]",
+ "unit": 195,
+ "part": null,
+ "order": 388,
+ "audio": [
+  {
+   "src": "/audio/reading/pr195.mp3",
+   "legacySrc": "sounds/pr195.mp3",
+   "autoplay": true
+  }
+ ],
+ "video": [],
+ "blocks": [
+  {
+   "type": "heading",
+   "text": "[ K-IG 교육 Reading 195 ]"
+  },
+  {
+   "type": "instruction",
+   "text": "Suppose a football game begins at 1:00 p.m. in New York. It is then 6:00 p.m. in London. Which time is correct? if an explosion occurred on a star, scientists on the earth would record th time it happened. But anyone traveling in another part of the universe in a different direction would identify the time differently. Thus there is no absolute time."
+  },
+  {
+   "type": "choice",
+   "options": [
+    "1 번",
+    "2 번",
+    "3 번",
+    "4 번",
+    "5 번"
+   ]
+  },
+  {
+   "type": "dictation",
+   "rows": 10
+  }
+ ],
+ "legacyPath": "reading/pr195.htm",
+ "legacyEncoding": "utf-8",
+ "readingSentences": [
+  {
+   "id": "reading-195-s001",
+   "english": "Suppose a football game begins at 1:00 p.m. in New York.",
+   "korean": "축구 경기가 오후 1시에 뉴욕에서 시작된다고 가정해 보자."
+  },
+  {
+   "id": "reading-195-s002",
+   "english": "It is then 6:00 p.m. in London.",
+   "korean": "그 때 런던은 오후 6시이다."
+  },
+  {
+   "id": "reading-195-s003",
+   "english": "Which time is correct?",
+   "korean": "어느 시각이 맞는 것일까?"
+  },
+  {
+   "id": "reading-195-s004",
+   "english": "if an explosion occurred on a star, scientists on the earth would record th time it happened.",
+   "korean": "어느 별에서 폭발이 발생했다면 지구에 있는 과학자들은 그것이 발생한 시간을 기록할 것이다."
+  },
+  {
+   "id": "reading-195-s005",
+   "english": "But anyone traveling in another part of the universe in a different direction would identify the time differently.",
+   "korean": "그러나 다른 방향으로 우주의 다른 지역을 여행하고 있는 사람들은 그 시각을 다르게 볼 것이다."
+  },
+  {
+   "id": "reading-195-s006",
+   "english": "Thus there is no absolute time.",
+   "korean": "그러므로 절대적인 시간은 존재하지 않는다."
+  }
+ ],
+ "readingVocabulary": [
+  {
+   "word": "happened",
+   "lemma": "happen",
+   "partOfSpeech": "v.",
+   "korean": "일어나다",
+   "score": 101,
+   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "earth",
+   "lemma": "earth",
+   "partOfSpeech": "n.",
+   "korean": "지구",
+   "score": 92,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "different",
+   "lemma": "different",
+   "partOfSpeech": "n.",
+   "korean": "다른",
+   "score": 85,
+   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 85점)",
+   "examTags": [
+    "중학기초"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "suppose",
+   "lemma": "suppose",
+   "partOfSpeech": "n.",
+   "korean": "가정하다",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "football",
+   "lemma": "football",
+   "partOfSpeech": "n.",
+   "korean": "축구",
+   "score": 79,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "p.m",
+   "lemma": "p.m",
+   "partOfSpeech": "n.",
+   "korean": "p.m (핵심 어휘)",
+   "score": 78,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "begins",
+   "lemma": "begin",
+   "partOfSpeech": "n.",
+   "korean": "시작하다",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "absolute",
+   "lemma": "absolute",
+   "partOfSpeech": "n.",
+   "korean": "절대",
+   "score": 77,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "occurred",
+   "lemma": "occur",
+   "partOfSpeech": "v.",
+   "korean": "발생하다",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "traveling",
+   "lemma": "travel",
+   "partOfSpeech": "v.",
+   "korean": "여행",
+   "score": 76,
+   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "game",
+   "lemma": "game",
+   "partOfSpeech": "n.",
+   "korean": "게임",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "york",
+   "lemma": "york",
+   "partOfSpeech": "n.",
+   "korean": "york (핵심 어휘)",
+   "score": 73,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "thus",
+   "lemma": "thus",
+   "partOfSpeech": "n.",
+   "korean": "thus (핵심 어휘)",
+   "score": 71,
+   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "correct",
+   "lemma": "correct",
+   "partOfSpeech": "n.",
+   "korean": "정확한; 고치다",
+   "score": 69,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  }
+ ]
 }
