@@ -78,10 +78,21 @@ export async function generateMetadata({
     ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
     : `${pres.title}. K-IG 핵심 어학 과정.`;
   const image = COURSE_OG_IMAGE[course] || "/images/sections/students.jpg";
+  // RE-008: a locked lesson renders the paywall shell — 270 characters of
+  // navigation and an upsell, the same on 1,713 URLs except for the title. Left
+  // indexable, those pages are what a crawler mostly sees of this site, and
+  // near-duplicate thin pages drag down the ones that do have content.
+  //
+  // `follow` stays true: the links on the paywall are still worth walking.
+  // A free lesson gets NO `robots` key at all, which is what keeps it
+  // indexable — the preview is the point of the preview. Nothing sets `robots`
+  // globally, so the key is either here or absent, never inherited.
+  const isFree = isFreePreviewLessonServer(course, id);
   return {
     title,
     description,
     alternates: { canonical },
+    ...(isFree ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       type: "article",
       title,

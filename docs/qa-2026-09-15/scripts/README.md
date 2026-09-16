@@ -80,6 +80,7 @@ KIG-006 관련:
 | `measure-tts-coverage.cjs` / `attribute-reading-gap.cjs` | 음성 클립 커버리지 측정 / 결측 귀속 |
 | `verify-media-access.cjs` | **RE-004** — 미디어 게이트 6축: 폐지 폴더 403 + 캐시 불가, 폐지 객체 실존(S3), 무료 레슨 **페이지가 실제로 참조하는** 미디어 200, 유료 403, Ava 클립·Range, `/api/media-health`. 폐지 폴더 목록은 `content/lessons/` 에서 파생 (하드코딩 없음). `.env.local` 이 있으면 실존 확인까지 한다 |
 | `verify-quiz-flag.cjs` | **KIG-008** — `SHOW_GENERATED_QUIZ` 가 "꺼진 기능"인지 "지워진 기능"인지. 기본 실행은 플래그 OFF 를, `--expect-on` 은 플래그를 `true` 로 임시 빌드한 상태를 검사한다. **양쪽 다 통과해야 증거** — 한쪽만 보면 삭제된 기능도 통과한다. headless Edge(CDP)로 READING 의 탭까지 클릭한다 |
+| `verify-sitemap.cjs` | **RE-008** — 사이트맵 6축: 모든 URL 200 + 본문 + **페이월 문구 없음**, 잠긴 레슨 미등재(저장소의 `isFreePreviewLesson` 으로 교차 검사), 개수·중복, 잠긴 레슨 `noindex`, **홈·과정·탭·무료 레슨에 `noindex` 없음**(블라스트 반경), 탭 등재. ⚠️ 판정을 길이로 하지 말 것 — 페이월 270자 > 탭 188~229자 |
 
 ## 그 밖의 감사·계측 스크립트
 

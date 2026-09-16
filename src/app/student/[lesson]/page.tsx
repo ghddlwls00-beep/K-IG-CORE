@@ -6,6 +6,7 @@ import LessonPage from "@/app/[course]/[lesson]/page";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { getAllLessonParams, getLesson } from "@/lib/content";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
+import { isFreePreviewLesson } from "@/lib/license";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
@@ -53,10 +54,19 @@ export async function generateMetadata({
     ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
     : `${pres.title}. K-IG 핵심 어학 과정.`;
   const image = "/images/sections/students.jpg";
+  // RE-008: the locked STUDENT lessons render the same paywall shell as the
+  // shared route, so they get the same treatment. `follow` stays true.
+  //
+  // The free check goes through `isFreePreviewLesson` rather than the literal
+  // list this route used to carry: the sitemap and the shared route both ask
+  // that function, and a page whose gate and whose sitemap disagree is worse
+  // than either being wrong on its own.
+  const isFree = isFreePreviewLesson("student", id);
   return {
     title,
     description,
     alternates: { canonical },
+    ...(isFree ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       type: "article",
       title,
@@ -78,7 +88,10 @@ export default async function StudentLessonPage({
   if (!lesson) notFound();
   const pres = formatLessonPresentation("student", lesson);
   const cookieStore = await cookies();
-  const isFree = id === "s1-1" || id === "s1-2";
+  // Same predicate as the metadata above and as the sitemap. This used to be a
+  // literal `id === "s1-1" || id === "s1-2"`, which is the same answer today
+  // but a second list to keep in step.
+  const isFree = isFreePreviewLesson("student", id);
   const lessonChapter = Number(id.match(/^s(\d+)-/)?.[1] || 0);
 
   let accessAllowed = isFree;
