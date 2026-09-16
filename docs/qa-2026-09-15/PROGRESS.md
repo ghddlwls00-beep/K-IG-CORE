@@ -1136,6 +1136,28 @@ return {
 | 회귀: metadata 14/14 · h1 23/23 · error-pages 7/7+11/11 · csp 11/11 · media-access 24/24 · quiz-flag 3/3 · proxy-allowlist 1,755/1,755 | 전부 exit 0 |
 | **`content/` 변경** | **0건** ✅ |
 
+### ✅ 배포 결과 — 커밋 `149dd95`, 반영 약 31초
+
+| 확인 (운영) | 결과 |
+|---|---|
+| `sitemap.xml` URL 수 | **1,751 → 45** (배포 판정 기준으로 사용) |
+| **`verify-sitemap.cjs` (운영)** | **6/6 PASS, exit 0** |
+| 잠긴 레슨 표본 | `/ld/d003`·`/ld/d003-1`·`/ld/d004`·`/ld/d004-1` → `noindex, follow` |
+| 무료 레슨 | `/student/s1-1`·`/student/s1-2`·`/grammar1/gh1-006`·`/grammar1/gh1-006-1`·`/reading/pr001` → **robots 메타 없음**(색인 가능) |
+| 잠긴 레슨(STUDENT 라우트 포함) | `/student/s1-3`·`/student/s3-1`·`/grammar1/gh1-020`·`/reading/pr100` → `noindex, follow` |
+
+> 같은 푸시에 다른 세션의 `a49144a`(VOCA 526건)가 부모로 함께 올라갔습니다.
+> `a49144a` 는 `content/lessons/reading/*.json` 의 **`"korean":` 필드만** 666곳 바꿨습니다
+> (영어 텍스트 변경 0) → **음성 클립 무효화 없음.**
+
+### ⚠️ 이 저장소의 `git status` 에 CRLF 노이즈가 있습니다 (다음 사람 주의)
+
+`core.autocrlf=true` 이고 `.gitattributes` 가 없어서, 다른 도구가 `content/` 를 다시 쓰면
+`git status` 에 **수정된 것처럼** 나타나지만 `git diff` 는 **비어 있습니다**(내용 동일, 줄바꿈만 다름).
+이번 세션에서 `content/lessons/reading/*.json` 188개가 그렇게 보였습니다.
+**`git add -A` 를 쓰면 이런 항목이 통째로 딸려 들어갑니다** — 규칙이 금지하는 이유가 하나 더 있습니다.
+커밋은 항상 `git commit -F <msg> -- <경로들>` 로 하면 **다른 세션이 스테이징해 둔 파일까지 함께 커밋되는 사고**를 막을 수 있습니다.
+
 ### 📌 제안 (지금 하지 말 것, 소유자 지시로 기록만)
 
 **잠긴 레슨을 "270자 껍데기"가 아니라 진짜 미리보기로 만드는 것이 근본 해법입니다.**
