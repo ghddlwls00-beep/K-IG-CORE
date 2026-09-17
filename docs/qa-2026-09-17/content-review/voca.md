@@ -7,6 +7,33 @@
 
 화면 구성 (운영 렌더링 텍스트 `out/rendered/phonics/mv2-12.json` 로 확인): 카드에 **단어 + 한국어 뜻**, STEP 2 4지선다(영→한, 한→영 번갈아), STEP 3 발음 테스트·라이트너 상자, STEP 4 60초 일치/불일치 드릴. 레슨 파일의 `title`(모두 "영어듣기훈련프로그램 | 기초1 | 제 001 회 강의")은 화면 제목으로 쓰이지 않음 — 화면 제목은 `중등 단어 2단계 · 12회` 형식 (V-13 참고).
 
+## 처리 결과 (2026-09-17) — ✅ V-03~V-11 전부 로컬 수정·검증, 배포 대기 (V-12·V-13 은 확인 결과 수정 불필요)
+
+작업자 = 점검자 = Claude (독립 검수 없음). 아래 숫자는 스크립트가 낸 값.
+
+- **수정**
+  - 데이터 `scripts/apply-voca.cjs` (고치기 전 값을 전부 적어 두고 하나라도 다르면 아무것도 안 씀) + `apply-voca-followup.cjs` (검증이 찾은 1건) — 사전 뜻 113개 + 1, 레슨 파일 10개
+  - 코드 `src/lib/vocaUtils.ts` (V-04 드릴, V-11 어원), `src/components/PhonicsLearningView.tsx` (**감사 표에 없던 것, 수정 중 발견:** Step 3 라이트너 오답노트가 브라우저에 저장된 카드를 그대로 되살려서, 한 번 열어 본 학습자에게는 고친 뜻·바뀐 단어가 **영원히 안 보였음**. 이제 레슨의 현재 단어·뜻으로 다시 만들고 상자·연속 정답 기록만 이어받음. 같은 자리에서 `March` 를 소문자로 먼저 찾아 `행진하다` 로 저장하던 것도 카드와 같은 조회로)
+- **검증**
+  - `scripts/verify-voca-fixes.cjs` **19/19** — 195레슨 5,831칸 전부, 실제 `content.ts`·`vocaUtils.ts` 실행: 모든 칸에 사전 뜻, 쓰이지 않는 표제어 0, 한 레슨 안 같은 단어 0 (전 21), **같은 뜻 짝 0 (전 37)**, 드릴 233,240문항에서 "불일치인데 정답 뜻 표시" 0 + 모든 단어가 같은 뜻인 가상 레슨 200회에서도 0, 오타 6개 없음·고친 단어 있음, V-06~V-09 값, recover·foremost 어원 카드 없음, 기존 `verify-voca-quiz-meanings.cjs` 통과
+  - `scripts/verify-voca-ui.cjs` **13/13** — 격리 dev 서버·실제 브라우저. **옛 방식으로 저장된 진도를 먼저 넣고** (mv2-12 `November` Box 3·4회 연속, `March 행진하다`; hv-48 `apparently 분명히`) 열었을 때: mv2-12 Step 3 = 새 30단어·오늘 뜻·순서 그대로, November 는 Box 3·4회 기록 유지, March 없음 / hv-48 `보아하니, 겉보기에는`·Box 2 유지 / hv-66 `technological 과학 기술의`. 캡처 `out/voca-leitner-mv2-12.png`
+  - 음성 166개 생성·업로드, 버킷 50,065, pending 0 · `freeSpeechKeys.json` 1줄 바뀜 (532키) · speech gate 13/13 · `tsc --noEmit` · `pnpm build` 통과
+
+| ID | 처리 |
+|---|---|
+| V-01 · V-02 | 철회 (감사 오류, 아래 표) |
+| V-03 | 원본 아카이브는 이 PC 에 없고 정답지도 아님(소유자 기준) → 상식으로 완성: mv2-11 이 3월~10월·계절을 가르치므로 mv2-12 = `November` `December` + 요일 7개 + 다른 레슨에 없는 시간·달력 단어 21개 (`weekday` `minute` `hourly` `daily` `weekly` `monthly` `yearly` `daytime` `midday` `overnight` `bedtime` `lunchtime` `sunset` `period` `delay` `deadline` `nowadays` `someday` `timetable` `upcoming`, `weekend`). 새 표제어 26개 |
+| V-04 | 37쌍 모두 구별되는 뜻으로 (`interrupt` (말·일을) 가로막다 / `interfere` 간섭하다, `classic` 전형적인; 명작의 / `classical` 고전의, 클래식의, `electric` 전기로 움직이는 / `electrical` 전기에 관한, `confusing` 헷갈리게 하는 / `confused` (사람이) 혼란스러워하는, `valuable` / `invaluable` 매우 귀중한, `jaw` 턱, 턱뼈 / `chin` 턱 끝 …). 드릴도 같은 뜻 단어를 "불일치" 보기로 쓰지 않음 |
+| V-05 | `ancestor` `calendar` `scissors` `living room` `technological` `insistence` — 칸·표제어, 틀린 표제어 삭제 |
+| V-06 | `apparently` 보아하니, 겉보기에는 |
+| V-07 | 24개 기본 뜻 앞에 (`number` 수, 숫자; 번호 · `call` 부르다; 전화하다 · `right` 옳은; 오른쪽; 권리 · `atmosphere` 대기; 분위기 …) + `peer` 또래, 동료; 자세히 들여다보다 |
+| V-08 | 17개 (`emigrant` (다른 나라로 떠나는) 이민자 / `immigrant` (다른 나라에서 온) 이민자 / `migrant` 이주자; 철새, `presently` 곧; 현재, `incidentally` 그런데, `pretty` 예쁜; 꽤 …) |
+| V-09 | 띄어쓰기·기본형 7개, `tactful` 재치 → 요령 있는, `pebbles` 조약돌(들) |
+| V-10 | 같은 어근 묶음 안에서 교체: hv-44 둘째 `motive` → `momentum`, hv-48 둘째 `peer` → `impartial`, hv-58 둘째 `reside` → `residue` |
+| V-11 | `recover` · `foremost` 어원 카드 삭제 (틀린 풀이는 맞는 풀이처럼 외워지므로 없는 편이 나음), 나머지 46개 유지 |
+| V-12 | 수정 불필요 (모든 레슨 30칸, 가짜 보기 실제 발생 0 — 드릴의 `다른 뜻` 가짜 보기는 V-04 수정으로 코드에서도 없어짐) |
+| V-13 | 수정 불필요 — 확인: 화면 제목·`<title>`·설명·공유 미리보기는 `formatLessonPresentation` (`중등 단어 2단계 · 12회`), 검색 색인 `public/search-index.json` 에 `영어듣기훈련프로그램` 0건. 레슨 파일 `title` 은 어디에도 안 쓰임 |
+
 ## 발견 사항
 
 | ID | 위치 | 심각도 | 분류 | 실제 | 문제 | 고칠 방향 | 확인 방법 |

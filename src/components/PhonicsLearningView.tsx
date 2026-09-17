@@ -58,29 +58,29 @@ export function PhonicsLearningView({
   // Load & Save Leitner Data
   // ---------------------------------------------------------------------------
   useEffect(() => {
+    // The grid is rebuilt from the lesson's CURRENT words and meanings; only the
+    // progress (box, streak, last test) comes from storage. Saved cards used to be
+    // restored as they were, so a corrected meaning or a replaced word never
+    // reached a returning learner (V-03/V-05/V-06: the old month list of mv2-12,
+    // `apparently` 분명히). The meaning is looked up like the card above
+    // (`getMeaning`, exact form first) — `[clean]` first gave `March` 행진하다.
+    let saved: Record<string, LeitnerCard> = {};
     try {
       const raw = window.localStorage.getItem(leitnerStorageKey);
-      if (raw) {
-        setLeitnerCards(JSON.parse(raw));
-      } else {
-        // Initialize cards
-        const initial: Record<string, LeitnerCard> = {};
-        for (const w of words) {
-          const clean = w.toLowerCase().trim();
-          const m = vocaDictionary?.[clean]?.meaning || vocaDictionary?.[w]?.meaning || "단어";
-          initial[clean] = {
-            word: w,
-            meaning: m,
-            box: 1,
-            lastTestedAt: Date.now(),
-            streak: 0,
-          };
-        }
-        setLeitnerCards(initial);
-      }
+      if (raw) saved = JSON.parse(raw) || {};
     } catch {
-      setLeitnerCards({});
+      saved = {};
     }
+    const cards: Record<string, LeitnerCard> = {};
+    for (const w of words) {
+      const clean = w.toLowerCase().trim();
+      const meaning = getMeaning(w);
+      const prev = saved[clean];
+      cards[clean] = prev
+        ? { ...prev, word: w, meaning }
+        : { word: w, meaning, box: 1, lastTestedAt: Date.now(), streak: 0 };
+    }
+    setLeitnerCards(cards);
   }, [leitnerStorageKey, words, vocaDictionary]);
 
   function saveLeitnerCards(next: Record<string, LeitnerCard>) {

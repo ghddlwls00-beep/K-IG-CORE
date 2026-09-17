@@ -192,7 +192,7 @@
 | MED-L LISTENING | 56 / 38 | 전사 오류(Lite·Wilbur·Iditarod 등), 숫자 표기, 낡은 사실(L-27·49), **불쾌 표현**(L-74·84 freaks·minstrel·primitive tribes), 힌트-답 이름 불일치(L-00a) — **✅ L-74·L-84 외 전부 로컬 수정·검증, 배포 대기** (`listening.md` "처리 결과"; L-74·L-84 는 소유자 결정 대기) | `content-review/listening.md`, `listening-status.md` (PASS 64/FAIL 212) |
 | MED-R READING 지문 | 64 / 32 | 영한 정렬 어긋남 다수, 오역(뜻 반대), 낡은 전망(2010·2025), 정치·고정관념 지문(R-64 노무현·차베스, R-65 식사법), 중복 지문 8쌍(R-01), 사실(재향군인병·마라톤·Purloined Letter·안락사법) — **✅ 소유자/변호사 대기 항목(R-01 한쪽 교체·R-30 pr054·R-32 pr078·저작권) 외 전부 로컬 수정·검증, 배포 대기** (`reading.md` "처리 결과") | `content-review/reading.md` |
 | MED-RV READING 어휘 | (ISS-10 에 포함) | ✅ 3,584장 전부 재작성·검증, 배포 대기 | `content-review/reading.md` §어휘 카드 |
-| MED-V VOCA | 6 / 6 | mv2-12 달 이름 반복(V-03), 같은 뜻 짝 드릴 채점(V-04), 철자 오류 6(V-05), `apparently` 분명히(V-06), 다의어 첫 뜻 누락(V-07) | `content-review/voca.md`, `voca-status.md` (PASS 102 · NOTE 42 · FAIL 51) |
+| MED-V VOCA | 6 / 6 | mv2-12 달 이름 반복(V-03), 같은 뜻 짝 드릴 채점(V-04), 철자 오류 6(V-05), `apparently` 분명히(V-06), 다의어 첫 뜻 누락(V-07) — **✅ V-03~V-11 로컬 수정·검증, 배포 대기** (`voca.md` "처리 결과"; 수정 중 발견한 라이트너 오답노트 옛 뜻 고정 문제 포함) | `content-review/voca.md`, `voca-status.md` (PASS 102 · NOTE 42 · FAIL 51) |
 | MED-ADM 관리자 | 3 / 3 | 테스트 등록이 고객 칸 차지(ADM-02), 한도·해금 드롭다운 즉시 저장(ADM-03·04), 81강 표기(ADM-05) | `phase2-admin.md` |
 | MED-SEC 보안 | 2 / 4 | 기기 초기화 후 verify 불일치(SEC-03), CSP unsafe-inline(SEC-05), 메모리 요청 제한(SEC-07), 토큰 없이 기기 해제(SEC-04) | `phase8-security.md` |
 | MED-UX 접근성 | 1 / 4 | 음성 플레이어 문장 점 버튼 1~5px 누를 수 없음(UX-05), 금색 작은 글자(UX-02), `🔁` 이름(UX-03), 17~21px 칩(UX-06) | `phase6-ux-a11y.md` |

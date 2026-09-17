@@ -97,12 +97,10 @@ const PREFIX_RULES: AffixRule[] = [
   { prefix: "forefather", meaning: "fore(이전의) + father(아버지) ➔ 앞서 살았던 선조, 조상" },
   { prefix: "foresee", meaning: "fore(미리) + see(보다) ➔ 앞일을 미리 보다, 예견하다" },
   { prefix: "foresight", meaning: "fore(미리) + sight(시야) ➔ 앞일을 내다보는 눈, 선견지명" },
-  { prefix: "foremost", meaning: "fore(맨 앞의) + most(가장) ➔ 가장 앞서는, 으뜸가는" },
   { prefix: "ancestor", meaning: "ante(앞서) + cede(가다) ➔ 우리보다 앞서 간 사람, 조상" },
   { prefix: "anticipate", meaning: "anti/ante(앞서) + cip(잡다) ➔ 앞으로 일어날 일을 미리 마음에 품다, 예상하다" },
   { prefix: "antique", meaning: "ante/anti(고대의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품" },
   { prefix: "replace", meaning: "re(다시/제자리로) + place(놓다) ➔ 낡은 것을 다시 놓다, 대신하다/교체하다" },
-  { prefix: "recover", meaning: "re(다시) + cover(얻다) ➔ 잃었던 건강/상태를 다시 찾다, 회복하다" },
   { prefix: "revive", meaning: "re(다시) + vive(살다) ➔ 다시 살아나게 하다, 부활시키다" },
   { prefix: "reproduce", meaning: "re(다시) + produce(생산하다) ➔ 다시 만들어내다, 복제하다/번식하다" },
   { prefix: "remove", meaning: "re(뒤로/멀리) + move(옮기다) ➔ 멀리 옮겨 치우다, 제거하다" },
@@ -132,7 +130,12 @@ const PREFIX_RULES: AffixRule[] = [
 /**
  * CNT-09 — the authored etymology for a word, or `null` when none was written.
  *
- * WHAT WAS WRONG. `PREFIX_RULES` holds 48 real breakdowns. Every other word —
+ * V-11: `recover` (re + "cover 얻다") and `foremost` (fore + most) were removed —
+ * recover comes from Latin recuperare and has nothing to do with `cover`, and
+ * the `-most` of foremost is a reshaped Old English superlative ending (folk
+ * etymology). A wrong breakdown is learnt like a right one, so no card is better.
+ *
+ * WHAT WAS WRONG. `PREFIX_RULES` held 48 breakdowns (46 now). Every other word —
  * 3,829 of the 3,877 headwords — fell through to one of two things: a generic
  * prefix guess (`under` → "un- + der", `restaurant` → "re- + staurant",
  * `important` → "im- + portant"), or a template sentence that only swapped the
@@ -416,16 +419,23 @@ export function generateSpeedDrillItems(
     const clean = word.toLowerCase().trim();
     const actualMeaning = vocaDict[clean]?.meaning || "뜻";
 
-    const isMatch = Math.random() > 0.45;
+    let isMatch = Math.random() > 0.45;
     let displayedMeaning = actualMeaning;
 
     if (!isMatch) {
-      const otherWords = validWords.filter((w) => w.toLowerCase().trim() !== clean);
-      if (otherWords.length > 0) {
-        const randomOther = otherWords[Math.floor(Math.random() * otherWords.length)];
-        displayedMeaning = vocaDict[randomOther.toLowerCase().trim()]?.meaning || "다른 뜻";
+      // V-04 (same rule as KIG-019 in the quiz): a "does not match" item must show a
+      // meaning that really is different. Another word of the lesson with the same
+      // Korean meaning would put the correct meaning on screen and still expect
+      // "불일치". With no different meaning left, the item is a match instead of
+      // showing a made-up "다른 뜻".
+      const otherMeanings = validWords
+        .filter((w) => w.toLowerCase().trim() !== clean)
+        .map((w) => vocaDict[w.toLowerCase().trim()]?.meaning || "")
+        .filter((m) => m && m !== actualMeaning);
+      if (otherMeanings.length > 0) {
+        displayedMeaning = otherMeanings[Math.floor(Math.random() * otherMeanings.length)];
       } else {
-        displayedMeaning = "다른 뜻";
+        isMatch = true;
       }
     }
 
