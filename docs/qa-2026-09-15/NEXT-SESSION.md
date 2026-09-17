@@ -176,7 +176,7 @@ node scripts/buildValidRoutes.mjs
 처럼 추가해도 스캔이 찾지만, 목록을 다시 만들지 않은 빌드에서는 404 입니다. 추가 후
 `node docs/qa-2026-09-15/scripts/verify/verify-proxy-allowlist.cjs <로컬 주소> --nonce` 로 확인하세요.
 
-### SEC-05 (nonce CSP) — 배포했다면 바로 확인
+### SEC-05 (nonce CSP) — ✅ 배포 `9706a83`, 운영 69/69 (2026-09-17). 이후 배포마다 확인
 
 페이지는 `src/proxy.ts` 가 요청마다 nonce 정책을, 파일·API·음원·이미지는 `next.config.ts` 가
 `script-src 'none'` 을 보냅니다. 두 경로 집합은 겹치면 안 됩니다 (`src/lib/csp.ts` 맨 위 설명).
