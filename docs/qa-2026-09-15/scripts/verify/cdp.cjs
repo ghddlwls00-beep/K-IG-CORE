@@ -13,21 +13,26 @@ const os = require("os");
 const EDGE = process.env.QA_EDGE || "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function launch({ port = 9340, profile } = {}) {
+/**
+ * `headless: false` opens a visible window — used once, so that a person can
+ * register a licence in a profile the sweeps then reuse. The script never reads
+ * or copies the licence; it only reuses the profile directory.
+ */
+async function launch({ port = 9340, profile, headless = true, startUrl = "about:blank" } = {}) {
   const userDir = profile || path.join(os.tmpdir(), `kig-cdp-${port}`);
   const proc = spawn(
     EDGE,
     [
-      "--headless=new",
+      headless ? "--headless=new" : null,
       `--remote-debugging-port=${port}`,
       `--user-data-dir=${userDir}`,
       "--no-first-run",
       "--disable-extensions",
-      "--disable-gpu",
+      headless ? "--disable-gpu" : null,
       "--mute-audio",
       "--autoplay-policy=no-user-gesture-required",
-      "about:blank",
-    ],
+      startUrl,
+    ].filter(Boolean),
     { stdio: "ignore" },
   );
   for (let i = 0; i < 60; i++) {

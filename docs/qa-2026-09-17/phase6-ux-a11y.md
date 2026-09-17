@@ -1,0 +1,41 @@
+# Phase 6 — UX · 접근성 · 반응형 (운영, 2026-09-17)
+
+작업자 = 점검자 = Claude.
+
+## 6-1. 레슨 화면 틀(템플릿)별 — `scripts/a11y-templates.cjs` → `out/a11y-templates.json`
+
+대상: 홈, READING 목록, 7개 레슨 화면(STUDENT·VOCA·GRAMMAR I·GRAMMAR II·LISTENING·READING·CNN)의 무료 레슨 — 유료 레슨과 같은 컴포넌트. 데스크톱 1366 / 모바일 390 × 라이트 / 다크(시스템 설정 흉내 — 사이트는 시스템 설정을 따라 `data-theme` 을 바꿈).
+검사: 보이는 모든 글자의 대비(WCAG AA 4.5:1, 큰 글자 3:1; 색은 캔버스로 sRGB 변환 — 첫 실행은 `lab()` 색을 못 읽어 다시 돌림), 이름 없는 버튼·링크·입력칸, 기호만 있는 이름, `lang`·`title`·`main`·`h1`, Tab 30회 이동과 포커스 표시.
+
+| 화면 | 대비 미달 (라이트 / 다크, 데스크톱) | 이름 없는 조작 요소 | 기호만 이름 | 포커스 표시 없음 (Tab 30회) |
+|---|---|---|---|---|
+| 홈 `/` | 14/36 · 7/36 | 0 | 0 | 0 |
+| READING 목록 | 1/39 · 0/39 | 0 | 0 | 0 |
+| STUDENT s1-1 | 6/56 · 2/56 | 0 | 모바일 `🔁` | 0 |
+| VOCA mv1-01 | 5/71 · 1/71 | 0 | 0 | 0 |
+| GRAMMAR I gh1-006 | 2/388 · 0/388 | 0 | 0 | 0 |
+| GRAMMAR II gh2-007 | 2/180 · 0/180 | 0 | 0 | 0 |
+| LISTENING d001 | 4/54 · 5/54 | 0 | 0 | 0 |
+| READING pr001 | 0/62 · 0/62 | 0 | 0 | 0 |
+| CNN cnn001 | 1/103 · 1/103 | 0 | 0 | 6 (`VIDEO` 요소) |
+
+모든 화면: `lang="ko"` 계열·제목·`main` 1개 확인 (JSON). Tab 이동은 모든 화면에서 28~30개 요소를 차례로 지나감 (키보드 갇힘 없음).
+스크립트의 "화면 밖 포커스" 수치(모바일 19)는 긴 단어 격자를 Tab 으로 내려갈 때 3화면 아래 요소를 센 것이라 결함 판단에 쓰지 않음.
+
+대비 미달은 **캡처로 눈 확인** (`scripts/a11y-shots.cjs`, `out/a11y-shots/*.png`): 캡처 위치가 어긋난 첫 실행은 버리고 스크롤 보정 후 다시 찍음.
+
+## 6-2. 발견 사항
+
+| ID | 심각도 | 문제 | 근거 | 영향 | 권장 | 확인 |
+|---|---|---|---|---|---|---|
+| **UX-01** | **High** | **다크 모드에서 주요 버튼 글자·아이콘이 거의 안 보임** — 모든 레슨의 큰 재생 버튼(▶), LISTENING "전체 본문 듣기"·단계 버튼, VOCA "발음 청취"·퀴즈 버튼, 홈 "학습 시작하기", 404·오류 페이지 버튼 | `--ink` 가 다크 모드에서 `#F5F3EF` 로 바뀌는데(`globals.css:45,71`) 그 위 글자는 `text-white` 고정 → 흰색 on 미색, 대비 **1.11:1**. 같은 짝이 소스 **26곳** (`AudioPlayer.tsx:231`, `LdLearningView.tsx` 12곳, `PhonicsLearningView.tsx` 4곳, `LandingPage.tsx:290`, `error.tsx:53`, `not-found.tsx:42`, `LicenseModal.tsx:232`, `ReadingLearningView.tsx:833` hover, 관리자 4곳) | 휴대폰을 다크 모드로 쓰는 학습자(시스템 설정 자동 적용)는 재생·다음 단계 버튼을 찾기 어려움 | `bg-ink` 와 짝인 `text-white` → `text-surface` (테마 따라 바뀜) | **운영 캡처**: `play-dark.png` vs `play-light.png`, `home-dark-start.png`, `ld-dark-step.png`, `voca-dark-listen.png` |
+| UX-02 | Low | 금색 작은 글자 대비 부족 — 홈 `STAGE`·`CURRICULUM` 칩(3.32:1, 10.5~11.5px), VOCA `K-IG VOCA COGNITIVE MASTERY`·`Step 2~4`·`Word Cluster #`(`#D4AF37`, 1.98:1), STUDENT "클릭하여 보기"(3.32:1), GRAMMAR 점수 `0`(3.32:1) | `a11y-templates.json` 표본, 캡처 `voca-light-gold.png` `student-light-reveal.png` | 저시력·밝은 야외 화면에서 읽기 어려움 (장식성 제목이 대부분) | 금색 글자는 진한 금색(예 `#8A6A1F`)이나 큰 글자에만 | 운영 측정 + 캡처 |
+| UX-03 | Low | STUDENT 모바일에서 반복 버튼 이름이 `🔁` 뿐 (글자 라벨이 모바일에서 숨김) | `a11y-templates.json` symbolOnly | 화면낭독기가 "반복" 대신 이모지 이름을 읽음 | `aria-label="반복"` | 운영 측정 |
+| UX-04 | Low | CNN 동영상 요소가 포커스되지만 포커스 표시 없음 | 같은 파일 (CNN 은 폐지 과정) | — | 폐지 과정이므로 기록만 | 운영 측정 |
+
+| UX-05 | Medium | **음성 플레이어의 "N번째 문장으로 이동" 점 버튼이 폭 1~5px × 높이 6px 로 서로 붙어 있음** — 휴대폰에서 원하는 문장을 누를 수 없음 | `scripts/small-targets.cjs` (390px, 모든 단계) → GRAMMAR II gh2-007 1×6 px, LISTENING d001·READING pr001 5×6 px, 중심 간격 24px 미만(WCAG 2.2 SC 2.5.8 간격 예외도 불충족) | 문장 단위 반복 청취라는 핵심 조작이 손가락으로 안 됨 (앞/뒤 5초 버튼으로만 우회) | 점은 표시만 하고 누르는 영역을 24px 이상으로(투명 패딩), 또는 문장 목록 버튼 | 운영 측정 `out/small-targets.json` |
+| UX-06 | Low | 높이 17~21px 조작 요소 — 속도 칩 `0.8× 1× 1.2×`(21px), VOCA `🔊 발음`(38×17)·`다음 Box로 승급 ↑`(88×17), READING `💡 뜻 확인하기`(74×18), GRAMMAR `📋`(23×25), 글자 크기 `기본/크게/특대`(21px) | 같은 파일. 서로 떨어져 있어 SC 2.5.8 간격 예외로는 통과, 다만 휴대폰에서 누르기 작음 | 오터치·누르기 어려움 | 최소 높이 32~44px | 운영 측정 |
+
+## 6-3. 레슨 전체(1,748 × 데스크톱 1366·모바일 390) — v2 스윕 (`out/sweep-summary.json`)
+
+모든 단계 스냅샷 **17,200개** 기준 **가로 넘침 0, 라벨 없는 입력칸 0, 대체 텍스트 없는 이미지 0, 깨진 이미지 0** (3,302 정상 방문 × 단계). 24px 미만 조작 요소는 거의 모든 단계에 있음 — 종류는 UX-05(문장 점, 실제로 누를 수 없음)·UX-06(17~21px 높이, 간격 예외로 통과) 이 전부 (화면 틀이 같아 같은 요소가 반복).
