@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "옛 미신에 따르면 점은 사람의 성격을 드러낸다. 예를 들어 코에 있는 점은 그 사람이 의지가 강하고 믿을 만하다는 뜻이다. 점은 미래를 예언한다고도 여겨진다. 오른쪽 눈썹 위에 점이 있으면 돈복이 있고 직업에서 성공한다는 뜻이다. 그러나 사람들이 가장 바라는 것은 손에 있는 점이다. 그것은 재능과 건강과 행복을 예고한다."
+      "text": "문어는 변장의 달인이다. 문어의 피부에는 1초도 안 되는 사이에 몸 색깔을 바꿀 수 있는 특별한 세포가 많이 있다. 피부의 질감도 바꿀 수 있어서 모래처럼 매끄럽게, 또는 바위나 산호처럼 울퉁불퉁하게 보이게 만든다. 이렇게 해서 문어는 상어 같은 적에게서 숨고, 게나 물고기가 가까이 오기를 기다릴 수 있다. 들키면 검은 먹물을 구름처럼 뿜어 공격자가 앞을 보지 못하는 사이에 달아날 수 있다. 문어는 병뚜껑을 열어 안에 든 먹이를 꺼내는 것 같은 간단한 문제도 풀 수 있다. 그래서 과학자들은 문어를 척추가 없는 동물 가운데 가장 영리한 동물 중 하나로 여긴다."
     },
     {
       "type": "choice",
@@ -47,114 +47,58 @@
   "readingSentences": [
     {
       "id": "reading-066-s001",
-      "english": "According to ancient superstitions, moles reveal a person’s character.",
-      "korean": "옛 미신에 따르면 점은 사람의 성격을 드러낸다."
+      "english": "The octopus is a master of disguise.",
+      "korean": "문어는 변장의 달인이다."
     },
     {
       "id": "reading-066-s002",
-      "english": "For example, a mole on one’s nose means that he or she is strong-willed and trustworthy.",
-      "korean": "예를 들어 코에 있는 점은 그 사람이 의지가 강하고 믿을 만하다는 뜻이다."
+      "english": "Its skin contains many special cells that can change its color in less than a second.",
+      "korean": "문어의 피부에는 1초도 안 되는 사이에 몸 색깔을 바꿀 수 있는 특별한 세포가 많이 있다."
     },
     {
       "id": "reading-066-s003",
-      "english": "Moles are also believed to foretell the future.",
-      "korean": "점은 미래를 예언한다고도 여겨진다."
+      "english": "It can also change the texture of its skin, making it look smooth like sand or bumpy like rock or coral.",
+      "korean": "피부의 질감도 바꿀 수 있어서 모래처럼 매끄럽게, 또는 바위나 산호처럼 울퉁불퉁하게 보이게 만든다."
     },
     {
       "id": "reading-066-s004",
-      "english": "Having a mole over one’s right eyebrow means he or she will be lucky with money and have a successful career.",
-      "korean": "오른쪽 눈썹 위에 점이 있으면 돈복이 있고 직업에서 성공한다는 뜻이다."
+      "english": "In this way, an octopus can hide from enemies such as sharks and wait for crabs and fish to come close.",
+      "korean": "이렇게 해서 문어는 상어 같은 적에게서 숨고, 게나 물고기가 가까이 오기를 기다릴 수 있다."
     },
     {
       "id": "reading-066-s005",
-      "english": "A mole on the hand, however, is the most desired.",
-      "korean": "그러나 사람들이 가장 바라는 것은 손에 있는 점이다."
+      "english": "If it is discovered, it can shoot out a cloud of dark ink and escape while the attacker cannot see.",
+      "korean": "들키면 검은 먹물을 구름처럼 뿜어 공격자가 앞을 보지 못하는 사이에 달아날 수 있다."
     },
     {
       "id": "reading-066-s006",
-      "english": "It forecasts talent, health, and happiness.",
-      "korean": "그것은 재능과 건강과 행복을 예고한다."
+      "english": "Octopuses can also solve simple problems, such as opening a jar to get the food inside.",
+      "korean": "문어는 병뚜껑을 열어 안에 든 먹이를 꺼내는 것 같은 간단한 문제도 풀 수 있다."
+    },
+    {
+      "id": "reading-066-s007",
+      "english": "For this reason, scientists consider the octopus one of the most intelligent animals without a backbone.",
+      "korean": "그래서 과학자들은 문어를 척추가 없는 동물 가운데 가장 영리한 동물 중 하나로 여긴다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "happiness",
-      "lemma": "happiness",
+      "word": "octopus",
+      "lemma": "octopus",
       "partOfSpeech": "n.",
-      "korean": "행복",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "believed",
-      "lemma": "believe",
-      "partOfSpeech": "v.",
-      "korean": "믿다 (be believed to ~한다고 여겨지다)",
-      "score": 100,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "health",
-      "lemma": "health",
-      "partOfSpeech": "n.",
-      "korean": "건강",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "hand",
-      "lemma": "hand",
-      "partOfSpeech": "n.",
-      "korean": "손",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "according",
-      "lemma": "according",
-      "partOfSpeech": "adv.",
-      "korean": "(according to) ~에 따르면",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "korean": "문어",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "reveal",
-      "lemma": "reveal",
-      "partOfSpeech": "v.",
-      "korean": "드러내다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "forecasts",
-      "lemma": "forecast",
-      "partOfSpeech": "v.",
-      "korean": "예고하다, 예측하다",
+      "word": "master",
+      "lemma": "master",
+      "partOfSpeech": "n.",
+      "korean": "달인, 명수",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -163,22 +107,10 @@
       "freq": 1
     },
     {
-      "word": "moles",
-      "lemma": "mole",
+      "word": "disguise",
+      "lemma": "disguise",
       "partOfSpeech": "n.",
-      "korean": "(피부의) 점",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "trustworthy",
-      "lemma": "trustworthy",
-      "partOfSpeech": "adj.",
-      "korean": "믿을 만한",
+      "korean": "변장, 위장",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -187,46 +119,10 @@
       "freq": 1
     },
     {
-      "word": "ancient",
-      "lemma": "ancient",
-      "partOfSpeech": "adj.",
-      "korean": "옛, 고대의",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "superstitions",
-      "lemma": "superstition",
-      "partOfSpeech": "n.",
-      "korean": "미신",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "character",
-      "lemma": "character",
-      "partOfSpeech": "n.",
-      "korean": "성격",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "desired",
-      "lemma": "desired",
-      "partOfSpeech": "adj.",
-      "korean": "바라는 (the most desired 가장 바라는 것)",
+      "word": "contains",
+      "lemma": "contain",
+      "partOfSpeech": "v.",
+      "korean": "들어 있다, 포함하다",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -235,12 +131,120 @@
       "freq": 1
     },
     {
-      "word": "eyebrow",
-      "lemma": "eyebrow",
+      "word": "texture",
+      "lemma": "texture",
       "partOfSpeech": "n.",
-      "korean": "눈썹",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "질감",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "smooth",
+      "lemma": "smooth",
+      "partOfSpeech": "adj.",
+      "korean": "매끄러운",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "bumpy",
+      "lemma": "bumpy",
+      "partOfSpeech": "adj.",
+      "korean": "울퉁불퉁한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "coral",
+      "lemma": "coral",
+      "partOfSpeech": "n.",
+      "korean": "산호",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "enemies",
+      "lemma": "enemy",
+      "partOfSpeech": "n.",
+      "korean": "적",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "discovered",
+      "lemma": "discover",
+      "partOfSpeech": "v.",
+      "korean": "발견하다 (be discovered 들키다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "escape",
+      "lemma": "escape",
+      "partOfSpeech": "v.",
+      "korean": "달아나다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "attacker",
+      "lemma": "attacker",
+      "partOfSpeech": "n.",
+      "korean": "공격자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "intelligent",
+      "lemma": "intelligent",
+      "partOfSpeech": "adj.",
+      "korean": "영리한, 지능이 높은",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "backbone",
+      "lemma": "backbone",
+      "partOfSpeech": "n.",
+      "korean": "척추, 등뼈",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

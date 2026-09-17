@@ -11,10 +11,10 @@
  *    contradicts its own meaning, no broken token (dash, dot, backtick, apostrophe)
  *  - every wrong meaning the audit listed (RV-01/05/10/13/16/19/22/25, 217 lesson+card pairs) is gone from
  *    that lesson — corrected or the card replaced
- *  - passages found twice (R-01) carry identical cards
+ *  - R-01: no passage appears twice any more (one of each pair replaced, owner decision)
  *  - every wrong form the audit listed in the passages (R-02 … R-79) is gone, the corrected forms
  *    are present; no exam residue (①…, "(A)", "→", Hangul notes) in any passage
- *  - items that wait for the owner/lawyer (R-01 duplicates, R-29/R-43/R-75 copyright, R-30 pr054,
+ *  - items that wait for the owner/lawyer (R-29/R-43/R-75 copyright, R-30 pr054,
  *    R-32 pr078) are not decided here — the pr054 advert and pr078 joke are still in place
  */
 const fs = require("fs");
@@ -125,16 +125,26 @@ for (const item of WRONG) {
 }
 check(`RV-01…RV-25: every wrong meaning the audit listed is gone (${WRONG.length} cards: ${corrected} corrected, ${replaced} replaced)`, wrongLeft.length === 0 && WRONG.length >= 200, wrongLeft.join(" | "));
 
-// R-01: passages that appear twice carry identical cards
-const byPassage = new Map();
-for (const id of ids) {
-  const key = S(id).map((s) => s.english).join(" ");
-  byPassage.set(key, [...(byPassage.get(key) || []), id]);
+// R-01 (owner decision 2026-09-17: replace one of each duplicate pair) — no two lessons share a
+// passage, and no passage is mostly the words of another (the audit's own test: word Jaccard > 0.6
+// over every pair of the 256, which is how pr008 ⊂ pr026 and pr066 ≈ pr085 were found).
+const wordSet = (id) => new Set(tokensOf(S(id).map((s) => s.english).join(" ")));
+const sets = new Map(ids.map((id) => [id, wordSet(id)]));
+const similar = [];
+for (let i = 0; i < ids.length; i++) {
+  for (let j = i + 1; j < ids.length; j++) {
+    const a = sets.get(ids[i]), b = sets.get(ids[j]);
+    let inter = 0;
+    for (const w of a) if (b.has(w)) inter++;
+    const jaccard = inter / (a.size + b.size - inter);
+    const contained = inter / Math.min(a.size, b.size);
+    if (jaccard > 0.6 || contained > 0.9) similar.push(`${ids[i]}~${ids[j]} jaccard ${jaccard.toFixed(2)} contained ${contained.toFixed(2)}`);
+  }
 }
-const twins = [...byPassage.values()].filter((v) => v.length > 1);
-const cardText = (id) => J(V(id).map((c) => [c.word, c.lemma, c.partOfSpeech, c.korean]));
-bad = twins.filter((v) => v.some((id) => cardText(id) !== cardText(v[0]))).map((v) => v.join("="));
-check(`R-01: the ${twins.length} passages found twice (${twins.map((v) => v.join("=")).join(", ")}) carry identical cards`, twins.length === 7 && bad.length === 0, bad.join(" "));
+check("R-01: no two lessons share a passage or most of one (word Jaccard ≤ 0.6, containment ≤ 0.9, all 32,640 pairs)", similar.length === 0, similar.join(" | "));
+const NEW = { pr008: "leap years", pr012: "waggle dance", pr036: "hump", pr066: "octopus", pr069: "Jikji", pr216: "chlorophyll", pr242: "wavelength", pr244: "water cycle", pr251: "Great Wall" };
+bad = Object.entries(NEW).filter(([id, word]) => !S(id).some((s) => s.english.includes(word))).map(([id]) => id);
+check("R-01: the nine replaced lessons carry their new passages (pr008 pr012 pr036 pr066 pr069 pr216 pr242 pr244 pr251)", bad.length === 0, bad.join(" "));
 
 // ── passages ────────────────────────────────────────────────────────────────────────────────
 const gone = (label, re, rows = EN) => {
@@ -176,7 +186,7 @@ gone("R-21 pr056 options row and 중요하지 않기 때문", /disappointment �
 check("R-21 pr056 KO: 'because it does' = 중요하기 때문", S("pr056").some((s) => s.korean.includes("중요하기 때문")) && !S("pr056").some((s) => s.korean.includes("중요하지 않기 때문이다")));
 gone("R-22 pr066 glued sentences 'A good illustration of these is that Having'", /illustration of these is that Having|Other instance in this category/);
 gone("R-22 KO cut off 이러한 것중의 중요하", /이러한 것중의 중요하/, KO);
-has("pr066", "Having a mole over one’s right eyebrow");
+has("pr085", "Having a mole over one’s right eyebrow"); // pr066 was the damaged copy; replaced under R-01
 gone("R-23 pr067 'to straight to the sun'", /to straight to the sun/);
 has("pr067", "We're going to send a rocket straight to the sun.");
 gone("R-24 pr090 'The wife influences both mother and father'", /wife influences both mother and father/);

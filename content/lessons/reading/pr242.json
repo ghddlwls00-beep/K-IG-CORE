@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "A child will often ask for approval openly: \"Look at my painting! Isn't it pretty?\" But adults are generally less honest about their need for support. A grown-up who tried his or her best at something isn't likely to ask, \"Didn't I do a good job?\" But the adult needs to hear it all the same. In other words, children and adults alike want to hear positive remarks. Therefore, don't forget to praise others when they need support."
+      "text": "Sunlight looks white, but it is actually a mixture of all the colors of the rainbow. Each color travels as a wave, and blue light has a shorter wavelength than red light. When sunlight enters the air, it hits tiny gas molecules. These molecules scatter short blue waves much more strongly than long red waves. As a result, blue light is spread across the whole sky, and it reaches our eyes from every direction. At sunset, sunlight passes through much more air before it reaches us, so most of the blue is scattered away and the sky looks red and orange."
     },
     {
       "type": "choice",
@@ -47,60 +47,53 @@
   "readingSentences": [
     {
       "id": "reading-242-s001",
-      "english": "A child will often ask for approval openly: \"Look at my painting! Isn't it pretty?\"",
-      "korean": "아이는 흔히 드러내 놓고 인정을 구한다. \"내 그림 좀 보세요! 예쁘지 않아요?\""
+      "english": "Sunlight looks white, but it is actually a mixture of all the colors of the rainbow.",
+      "korean": "햇빛은 흰색으로 보이지만 사실은 무지개의 모든 색이 섞인 것이다."
     },
     {
       "id": "reading-242-s002",
-      "english": "But adults are generally less honest about their need for support.",
-      "korean": "그러나 어른은 대개 지지받고 싶은 마음을 덜 솔직하게 드러낸다."
+      "english": "Each color travels as a wave, and blue light has a shorter wavelength than red light.",
+      "korean": "각 색은 파동으로 이동하는데, 파란빛은 빨간빛보다 파장이 짧다."
     },
     {
       "id": "reading-242-s003",
-      "english": "A grown-up who tried his or her best at something isn't likely to ask, \"Didn't I do a good job?\" But the adult needs to hear it all the same.",
-      "korean": "무언가에 최선을 다한 어른이 \"나 잘하지 않았어요?\"라고 묻지는 않겠지만, 그래도 어른 역시 그 말을 들을 필요가 있다."
+      "english": "When sunlight enters the air, it hits tiny gas molecules.",
+      "korean": "햇빛이 공기 속으로 들어오면 아주 작은 기체 분자들과 부딪친다."
     },
     {
       "id": "reading-242-s004",
-      "english": "In other words, children and adults alike want to hear positive remarks.",
-      "korean": "다시 말해 아이든 어른이든 긍정적인 말을 듣고 싶어 한다."
+      "english": "These molecules scatter short blue waves much more strongly than long red waves.",
+      "korean": "이 분자들은 짧은 파란 파동을 긴 빨간 파동보다 훨씬 강하게 흩뜨린다."
     },
     {
       "id": "reading-242-s005",
-      "english": "Therefore, don't forget to praise others when they need support.",
-      "korean": "그러니 다른 사람이 지지를 필요로 할 때 칭찬하는 것을 잊지 마라."
+      "english": "As a result, blue light is spread across the whole sky, and it reaches our eyes from every direction.",
+      "korean": "그 결과 파란빛이 하늘 전체에 퍼져 모든 방향에서 우리 눈에 들어온다."
+    },
+    {
+      "id": "reading-242-s006",
+      "english": "At sunset, sunlight passes through much more air before it reaches us, so most of the blue is scattered away and the sky looks red and orange.",
+      "korean": "해 질 녘에는 햇빛이 우리에게 닿기 전에 훨씬 더 많은 공기를 지나기 때문에 파란빛은 대부분 흩어져 버리고 하늘은 붉은색과 주황색으로 보인다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "support",
-      "lemma": "support",
+      "word": "sunlight",
+      "lemma": "sunlight",
       "partOfSpeech": "n.",
-      "korean": "지지, 응원",
-      "score": 107,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
+      "korean": "햇빛",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 2
+      "freq": 3
     },
     {
-      "word": "honest",
-      "lemma": "honest",
-      "partOfSpeech": "adj.",
-      "korean": "솔직한",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "remarks",
-      "lemma": "remark",
-      "partOfSpeech": "n.",
-      "korean": "말 (positive remarks 긍정적인 말)",
+      "word": "actually",
+      "lemma": "actually",
+      "partOfSpeech": "adv.",
+      "korean": "사실은",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -109,119 +102,10 @@
       "freq": 1
     },
     {
-      "word": "approval",
-      "lemma": "approval",
+      "word": "mixture",
+      "lemma": "mixture",
       "partOfSpeech": "n.",
-      "korean": "인정, 칭찬",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "ask",
-      "lemma": "ask",
-      "partOfSpeech": "v.",
-      "korean": "(ask for) 구하다",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "painting",
-      "lemma": "painting",
-      "partOfSpeech": "n.",
-      "korean": "그림",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "openly",
-      "lemma": "openly",
-      "partOfSpeech": "adv.",
-      "korean": "드러내 놓고",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "therefore",
-      "lemma": "therefore",
-      "partOfSpeech": "adv.",
-      "korean": "그러므로",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "forget",
-      "lemma": "forget",
-      "partOfSpeech": "v.",
-      "korean": "잊다",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "praise",
-      "lemma": "praise",
-      "partOfSpeech": "v.",
-      "korean": "칭찬하다",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "need",
-      "lemma": "need",
-      "partOfSpeech": "n.",
-      "korean": "필요, 욕구 (need for support 지지받고 싶은 마음)",
-      "score": 74,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "child",
-      "lemma": "child",
-      "partOfSpeech": "n.",
-      "korean": "아이",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "grown-up",
-      "lemma": "grown-up",
-      "partOfSpeech": "n.",
-      "korean": "어른",
+      "korean": "섞인 것, 혼합물",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -230,16 +114,136 @@
       "freq": 1
     },
     {
-      "word": "adults",
-      "lemma": "adult",
+      "word": "rainbow",
+      "lemma": "rainbow",
       "partOfSpeech": "n.",
-      "korean": "성인",
-      "score": 72,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
+      "korean": "무지개",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "travels",
+      "lemma": "travel",
+      "partOfSpeech": "v.",
+      "korean": "이동하다, 나아가다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "wave",
+      "lemma": "wave",
+      "partOfSpeech": "n.",
+      "korean": "파동",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "wavelength",
+      "lemma": "wavelength",
+      "partOfSpeech": "n.",
+      "korean": "파장",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "molecules",
+      "lemma": "molecule",
+      "partOfSpeech": "n.",
+      "korean": "분자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
+    },
+    {
+      "word": "scatter",
+      "lemma": "scatter",
+      "partOfSpeech": "v.",
+      "korean": "흩뜨리다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "strongly",
+      "lemma": "strongly",
+      "partOfSpeech": "adv.",
+      "korean": "강하게",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "spread",
+      "lemma": "spread",
+      "partOfSpeech": "v.",
+      "korean": "퍼뜨리다 (be spread 퍼지다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "direction",
+      "lemma": "direction",
+      "partOfSpeech": "n.",
+      "korean": "방향",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "sunset",
+      "lemma": "sunset",
+      "partOfSpeech": "n.",
+      "korean": "해 질 녘",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "passes",
+      "lemma": "pass",
+      "partOfSpeech": "v.",
+      "korean": "(pass through) 통과하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     }
   ]
 }

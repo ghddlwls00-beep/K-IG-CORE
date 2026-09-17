@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "My belief is that all music has an expressive power, some more and some less, but that all music has a certain meaning behind the notes. That meaning constitutes what the piece is saying. This whole problem can be stated quite simply by asking, \"Is there a meaning to music?\" My answer to that would be, \"Yes.\" And \"Can you state in so many words what the meaning is?\" My answer to that would be, \"No.\" Therein lies the difficulty."
+      "text": "When a honeybee finds a good patch of flowers, it returns to the hive and shares the news with other bees. It does this by performing a special movement called the waggle dance. The bee runs forward in a straight line while shaking its body, then circles back and repeats the run. The direction of the straight run shows the direction of the flowers compared with the position of the sun. The length of the run tells the other bees how far away the flowers are. The Austrian scientist Karl von Frisch studied this dance for many years, and in 1973 he shared the Nobel Prize for his work."
     },
     {
       "type": "choice",
@@ -47,154 +47,41 @@
   "readingSentences": [
     {
       "id": "reading-012-s001",
-      "english": "My belief is that all music has an expressive power, some more and some less, but that all music has a certain meaning behind the notes.",
-      "korean": "나는 모든 음악에 정도의 차이는 있어도 표현력이 있으며, 모든 음악의 음표 뒤에는 어떤 의미가 있다고 믿는다."
+      "english": "When a honeybee finds a good patch of flowers, it returns to the hive and shares the news with other bees.",
+      "korean": "꿀벌은 꽃이 많은 좋은 곳을 찾으면 벌집으로 돌아와 다른 벌들에게 그 소식을 알린다."
     },
     {
       "id": "reading-012-s002",
-      "english": "That meaning constitutes what the piece is saying.",
-      "korean": "그 의미가 곡이 말하는 바를 이룬다."
+      "english": "It does this by performing a special movement called the waggle dance.",
+      "korean": "꿀벌은 '8자 춤'이라는 특별한 움직임으로 이 일을 한다."
     },
     {
       "id": "reading-012-s003",
-      "english": "This whole problem can be stated quite simply by asking, \"Is there a meaning to music?\" My answer to that would be, \"Yes.\"",
-      "korean": "이 문제 전체는 \"음악에 의미가 있는가?\"라고 묻는 것으로 아주 간단히 말할 수 있다. 그 질문에 대한 내 대답은 \"그렇다\"이다."
+      "english": "The bee runs forward in a straight line while shaking its body, then circles back and repeats the run.",
+      "korean": "벌은 몸을 흔들며 직선으로 달린 다음, 원을 그리며 돌아와 그 달리기를 되풀이한다."
     },
     {
       "id": "reading-012-s004",
-      "english": "And \"Can you state in so many words what the meaning is?\" My answer to that would be, \"No.\" Therein lies the difficulty.",
-      "korean": "그리고 \"그 의미가 무엇인지 말로 분명히 표현할 수 있는가?\"라는 질문에 대한 내 대답은 \"아니다\"이다. 바로 거기에 어려움이 있다."
+      "english": "The direction of the straight run shows the direction of the flowers compared with the position of the sun.",
+      "korean": "직선으로 달리는 방향은 해의 위치를 기준으로 꽃이 있는 방향을 나타낸다."
+    },
+    {
+      "id": "reading-012-s005",
+      "english": "The length of the run tells the other bees how far away the flowers are.",
+      "korean": "달리는 시간의 길이는 꽃이 얼마나 멀리 있는지를 다른 벌들에게 알려 준다."
+    },
+    {
+      "id": "reading-012-s006",
+      "english": "The Austrian scientist Karl von Frisch studied this dance for many years, and in 1973 he shared the Nobel Prize for his work.",
+      "korean": "오스트리아의 과학자 카를 폰 프리슈는 이 춤을 오랫동안 연구했고, 1973년에 그 공로로 노벨상을 공동 수상했다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "music",
-      "lemma": "music",
+      "word": "honeybee",
+      "lemma": "honeybee",
       "partOfSpeech": "n.",
-      "korean": "음악",
-      "score": 114,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 114점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "meaning",
-      "lemma": "meaning",
-      "partOfSpeech": "n.",
-      "korean": "의미",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 104점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "difficulty",
-      "lemma": "difficulty",
-      "partOfSpeech": "n.",
-      "korean": "어려움",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "words",
-      "lemma": "word",
-      "partOfSpeech": "n.",
-      "korean": "말 (in so many words 말로 분명하게)",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "state",
-      "lemma": "state",
-      "partOfSpeech": "v.",
-      "korean": "말하다, 진술하다",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "expressive",
-      "lemma": "expressive",
-      "partOfSpeech": "adj.",
-      "korean": "표현력 있는",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "수능",
-        "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "answer",
-      "lemma": "answer",
-      "partOfSpeech": "n.",
-      "korean": "대답",
-      "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "certain",
-      "lemma": "certain",
-      "partOfSpeech": "adj.",
-      "korean": "어떤 (a certain meaning 어떤 의미)",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "belief",
-      "lemma": "belief",
-      "partOfSpeech": "n.",
-      "korean": "믿음, 신념",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "중학기초",
-        "수능"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "power",
-      "lemma": "power",
-      "partOfSpeech": "n.",
-      "korean": "힘 (expressive power 표현력)",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "constitutes",
-      "lemma": "constitute",
-      "partOfSpeech": "v.",
-      "korean": "구성하다, ~을 이루다",
+      "korean": "꿀벌",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -203,36 +90,156 @@
       "freq": 1
     },
     {
-      "word": "notes",
-      "lemma": "note",
+      "word": "patch",
+      "lemma": "patch",
       "partOfSpeech": "n.",
-      "korean": "음, 음표",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "작은 구역 (a patch of flowers 꽃이 모여 핀 곳)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "therein",
-      "lemma": "therein",
-      "partOfSpeech": "adv.",
-      "korean": "거기에 (Therein lies ~ 바로 거기에 ~이 있다)",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "word": "hive",
+      "lemma": "hive",
+      "partOfSpeech": "n.",
+      "korean": "벌집",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "asking",
-      "lemma": "ask",
+      "word": "shares",
+      "lemma": "share",
       "partOfSpeech": "v.",
-      "korean": "묻다",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+      "korean": "나누다, 알리다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "performing",
+      "lemma": "perform",
+      "partOfSpeech": "v.",
+      "korean": "(동작을) 하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "movement",
+      "lemma": "movement",
+      "partOfSpeech": "n.",
+      "korean": "움직임",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "waggle",
+      "lemma": "waggle",
+      "partOfSpeech": "n.",
+      "korean": "흔들기 (waggle dance 8자 춤)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "straight",
+      "lemma": "straight",
+      "partOfSpeech": "adj.",
+      "korean": "곧은 (in a straight line 직선으로)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "shaking",
+      "lemma": "shake",
+      "partOfSpeech": "v.",
+      "korean": "흔들다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "circles",
+      "lemma": "circle",
+      "partOfSpeech": "v.",
+      "korean": "원을 그리며 돌다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "repeats",
+      "lemma": "repeat",
+      "partOfSpeech": "v.",
+      "korean": "되풀이하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "direction",
+      "lemma": "direction",
+      "partOfSpeech": "n.",
+      "korean": "방향",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "compared",
+      "lemma": "compare",
+      "partOfSpeech": "v.",
+      "korean": "(compared with) ~에 비해, ~을 기준으로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "position",
+      "lemma": "position",
+      "partOfSpeech": "n.",
+      "korean": "위치",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

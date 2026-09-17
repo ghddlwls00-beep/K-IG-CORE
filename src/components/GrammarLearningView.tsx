@@ -19,6 +19,8 @@ export interface GrammarItem {
   isTheory?: boolean;
   theoryQuestion?: string;
   theoryAnswer?: string;
+  /** English examples of the rule a theory question asks about, with their Korean. */
+  theoryExamples?: { en: string; ko: string }[];
 }
 
 export interface GrammarLearningViewProps {
@@ -126,40 +128,62 @@ export function GrammarLearningView({
 }: GrammarLearningViewProps) {
   // Extract Grammar Items
   const items = useMemo<GrammarItem[]>(() => {
-    // 1. Special case: gh1-020 / gh1-021 (Theory Q&A)
-    const isTheoryLesson = lessonKey.includes("020") || lessonKey.includes("021");
+    // 1. Special case: GRAMMAR I 07강, gh1-020 (questions) / gh1-021 (answers) — the
+    //    textbook's "문법 확인 문제": Korean questions about be-verb sentences with Korean
+    //    answers, not sentences to translate. It used to fall into the composition view
+    //    with the Korean answer as the "영어 정답", once from each page (16 items), and
+    //    `includes("020")` also matched GRAMMAR II gh2-020/021. The questions come from
+    //    whichever page carries the answers; the English examples (sentences block,
+    //    n = "question-example") are paired with their Korean by position.
+    const isTheoryLesson = /^grammar1\/gh1-02[01]$/.test(lessonKey);
     if (isTheoryLesson) {
-      const allBlocks = [...blocks, ...(pairBlocks || [])];
-      const instrs = allBlocks
-        .filter((b) => b.type === "instruction")
-        .map((b) => (b as { text: string }).text.trim());
+      const instructionsOf = (list: Block[] | null | undefined) =>
+        (list || [])
+          .filter((b) => b.type === "instruction")
+          .map((b) => (b as { text: string }).text.trim());
+      const sentencesOf = (list: Block[] | null | undefined) =>
+        (list || [])
+          .filter((b) => b.type === "sentences")
+          .flatMap((b) => (b as { type: "sentences"; items: SentenceItem[] }).items);
+      const hasAnswers = (lines: string[]) => lines.some((l) => /^답:\s*\S/.test(l));
+      const mainLines = instructionsOf(blocks);
+      const pairLines = instructionsOf(pairBlocks);
+      const instrs = hasAnswers(mainLines) || !hasAnswers(pairLines) ? mainLines : pairLines;
+
+      const mainSents = sentencesOf(blocks);
+      const pairSents = sentencesOf(pairBlocks);
+      const mainIsEnglish = mainSents.length > 0 && isEnglish(mainSents[0].text);
+      const enSents = mainIsEnglish ? mainSents : pairSents;
+      const koSents = mainIsEnglish ? pairSents : mainSents;
 
       const theoryItems: GrammarItem[] = [];
-      let qNum = 1;
       for (let i = 0; i < instrs.length; i++) {
-        const t = instrs[i];
-        if (/^\(\d+\)/.test(t)) {
-          const qText = t;
-          let aText = "";
-          const next = instrs[i + 1] || "";
-          if (next && !/^\(\d+\)/.test(next) && !next.includes("문법 확인")) {
-            aText = next.replace(/^답:\s*/, "").trim();
-            i++;
-          }
-          theoryItems.push({
-            id: qNum,
-            numberLabel: String(qNum),
-            koreanText: qText,
-            englishText: aText,
-            alternatives: [],
-            clozeParts: [],
-            targetKeywords: [],
-            isTheory: true,
-            theoryQuestion: qText,
-            theoryAnswer: aText,
-          });
-          qNum++;
+        const m = instrs[i].match(/^\((\d+)\)\s*(.*)$/);
+        if (!m) continue;
+        const qNum = Number(m[1]);
+        const answerLines: string[] = [];
+        while (i + 1 < instrs.length && !/^\(\d+\)/.test(instrs[i + 1])) {
+          const line = instrs[i + 1].replace(/^답:\s*/, "").trim();
+          if (line) answerLines.push(line);
+          i++;
         }
+        const theoryExamples = enSents
+          .map((s, k) => ({ n: String(s.n), en: s.text, ko: koSents[k]?.text ?? "" }))
+          .filter((s) => s.n.split("-")[0] === String(qNum))
+          .map(({ en, ko }) => ({ en, ko }));
+        theoryItems.push({
+          id: qNum,
+          numberLabel: String(qNum),
+          koreanText: m[2],
+          englishText: "",
+          alternatives: [],
+          clozeParts: [],
+          targetKeywords: [],
+          isTheory: true,
+          theoryQuestion: m[2],
+          theoryAnswer: answerLines.join(" "),
+          theoryExamples,
+        });
       }
       if (theoryItems.length > 0) return theoryItems;
     }
@@ -497,6 +521,129 @@ export function GrammarLearningView({
       input: "text-[18px]",
     },
   }[fontSize];
+
+  // GRAMMAR I 07강 — a concept check, so it is not forced through composition,
+  // cloze, shadowing and exam (all built for sentences to translate): each question,
+  // its answer behind a button, and English examples with their own voice.
+  if (items.length > 0 && items.every((it) => it.isTheory)) {
+    const theoryKey = (id: number) => `theory:${id}`;
+    const allShown = items.every((it) => revealedAnswers[theoryKey(it.id)]);
+    return (
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3 rounded-2xl border border-line bg-surface/90 p-4 shadow-xs">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-[14px]">✍️</span>
+              <div>
+                <span className="font-semibold text-ink text-[14.5px]">Grammar 1 : 문법 확인 문제</span>
+                <span className="ml-2 font-mono text-[11px] text-ink-faint">총 {totalCount}개 문항</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center rounded-lg border border-line/70 bg-raised/50 p-0.5 text-[11px] font-mono text-ink-soft">
+                <button
+                  type="button"
+                  onClick={() => setAudioSpeed(1.0)}
+                  aria-pressed={audioSpeed === 1.0}
+                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${audioSpeed === 1.0 ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                  title="음성 속도 1.0x"
+                >
+                  1.0x
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setAudioSpeed(0.85)}
+                  aria-pressed={audioSpeed === 0.85}
+                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${audioSpeed === 0.85 ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                  title="음성 속도 0.85x (천천히)"
+                >
+                  0.85x
+                </button>
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  setRevealedAnswers((prev) => {
+                    const next = { ...prev };
+                    items.forEach((it) => {
+                      next[theoryKey(it.id)] = !allShown;
+                    });
+                    return next;
+                  })
+                }
+                className="inline-flex min-h-6 items-center rounded-lg border border-line bg-raised px-3 py-1.5 text-[12px] font-semibold text-ink-soft hover:text-ink cursor-pointer"
+              >
+                {allShown ? "🔒 전체 답 가리기" : "💡 전체 답 보기"}
+              </button>
+            </div>
+          </div>
+          <p className="text-[13.5px] leading-relaxed text-ink-soft">
+            앞 강의의 영작 연습에서 쓴 be동사 문장의 규칙을 확인하는 단계입니다. 질문에 먼저 스스로 답해 본 뒤
+            [답 보기]로 확인하세요. 영어 예문의 🔊 버튼을 누르면 발음을 들을 수 있습니다.
+          </p>
+        </div>
+
+        <ol className="flex flex-col gap-3">
+          {items.map((it) => {
+            const shown = Boolean(revealedAnswers[theoryKey(it.id)]);
+            const examples = it.theoryExamples ?? [];
+            return (
+              <li key={it.id} className="rounded-2xl border border-line bg-surface p-4 shadow-2xs">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink text-surface text-[12px] font-bold">
+                    {it.numberLabel}
+                  </span>
+                  <p className={`${fontStyles.korean} font-medium text-ink`}>{it.theoryQuestion}</p>
+                </div>
+                <button
+                  type="button"
+                  aria-expanded={shown}
+                  onClick={() => setRevealedAnswers((prev) => ({ ...prev, [theoryKey(it.id)]: !shown }))}
+                  className="mt-3 inline-flex min-h-6 items-center rounded-lg border border-line bg-raised px-3 py-1.5 text-[12.5px] font-semibold text-ink-soft hover:text-ink cursor-pointer"
+                >
+                  {shown ? "답 가리기" : "💡 답 보기"}
+                </button>
+                {shown && (
+                  <div className="mt-3 flex flex-col gap-2 border-t border-line/60 pt-3">
+                    <p className={`${fontStyles.korean} text-ink`}>
+                      <span className="mr-1.5 font-semibold text-primary">답</span>
+                      {it.theoryAnswer}
+                    </p>
+                    {examples.length > 0 && (
+                      <ul className="flex flex-col gap-2" aria-label="영어 예문">
+                        {examples.map((ex, k) => {
+                          const speakId = it.id * 100 + k;
+                          const speaking = activeSpeakingId === speakId;
+                          return (
+                            <li key={k} className="flex items-start gap-2.5 rounded-xl bg-raised/60 px-3 py-2">
+                              <button
+                                type="button"
+                                onClick={() => playEnglish(ex.en, speakId)}
+                                aria-label={speaking ? "정지" : `예문 듣기: ${ex.en}`}
+                                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[13px] hover:bg-raised cursor-pointer"
+                              >
+                                <span aria-hidden>{speaking ? "⏹️" : "🔊"}</span>
+                              </button>
+                              <div className="flex flex-col">
+                                <span lang="en" className={`${fontStyles.english} font-medium text-ink`}>
+                                  {ex.en}
+                                </span>
+                                <span className="text-[13px] text-ink-soft">{ex.ko}</span>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-8">

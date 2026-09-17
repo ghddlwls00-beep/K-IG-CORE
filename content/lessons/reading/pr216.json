@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "How much one can earn is important, of course, but there are other equally important considerations, neglect of which may produce frustration in later years. Where there is genuine interest, one may work diligently without even realizing it, and in such situations success follows. More important than success, which generally means promotion or an increase in salary, is the happiness which can only be found in doing work that one enjoys for its own sake and not merely for the rewards it brings."
+   "text": "In autumn, the leaves of many trees turn yellow, orange, and red. During spring and summer, leaves are green because they are full of chlorophyll, which plants use to make food from sunlight. As the days get shorter and cooler, trees stop making chlorophyll, and the green color slowly disappears. Yellow and orange colors, which were in the leaves all along, can then be seen. Red colors are different: many trees produce them only in autumn, especially when the days are sunny and the nights are cool. That is why autumn reds are especially bright in years with many sunny days and cool nights."
   },
   {
    "type": "choice",
@@ -47,26 +47,149 @@
  "readingSentences": [
   {
    "id": "reading-216-s001",
-   "english": "How much one can earn is important, of course, but there are other equally important considerations, neglect of which may produce frustration in later years.",
-   "korean": "얼마를 벌 수 있는지는 물론 중요하지만, 소홀히 하면 훗날 좌절을 낳을 수 있는 똑같이 중요한 다른 고려사항들이 있다."
+   "english": "In autumn, the leaves of many trees turn yellow, orange, and red.",
+   "korean": "가을이 되면 많은 나무의 잎이 노란색, 주황색, 빨간색으로 변한다."
   },
   {
    "id": "reading-216-s002",
-   "english": "Where there is genuine interest, one may work diligently without even realizing it, and in such situations success follows.",
-   "korean": "진정한 흥미가 있는 곳에서는 자기도 모르게 부지런히 일하게 되며, 그러한 상황에서는 성공이 뒤따른다."
+   "english": "During spring and summer, leaves are green because they are full of chlorophyll, which plants use to make food from sunlight.",
+   "korean": "봄과 여름에 잎이 초록색인 것은 식물이 햇빛으로 양분을 만드는 데 쓰는 엽록소가 가득하기 때문이다."
   },
   {
    "id": "reading-216-s003",
-   "english": "More important than success, which generally means promotion or an increase in salary, is the happiness which can only be found in doing work that one enjoys for its own sake and not merely for the rewards it brings.",
-   "korean": "일반적으로 승진이나 급여 인상을 의미하는 성공보다 더 중요한 것은, 일이 가져다주는 보상 때문만이 아니라 일 그 자체를 즐기는 데서만 발견될 수 있는 행복이다."
+   "english": "As the days get shorter and cooler, trees stop making chlorophyll, and the green color slowly disappears.",
+   "korean": "낮이 짧아지고 서늘해지면 나무는 엽록소를 더 만들지 않고, 초록색이 서서히 사라진다."
+  },
+  {
+   "id": "reading-216-s004",
+   "english": "Yellow and orange colors, which were in the leaves all along, can then be seen.",
+   "korean": "그러면 줄곧 잎 속에 있던 노란색과 주황색이 보이게 된다."
+  },
+  {
+   "id": "reading-216-s005",
+   "english": "Red colors are different: many trees produce them only in autumn, especially when the days are sunny and the nights are cool.",
+   "korean": "빨간색은 다르다. 많은 나무가 가을에만 이 색을 새로 만들어 내는데, 특히 낮에 햇볕이 좋고 밤이 서늘할 때 그렇다."
+  },
+  {
+   "id": "reading-216-s006",
+   "english": "That is why autumn reds are especially bright in years with many sunny days and cool nights.",
+   "korean": "그래서 햇볕 좋은 낮과 서늘한 밤이 많은 해에는 가을 단풍의 붉은색이 특히 선명하다."
   }
  ],
  "readingVocabulary": [
   {
-   "word": "genuine",
-   "lemma": "genuine",
+   "word": "autumn",
+   "lemma": "autumn",
+   "partOfSpeech": "n.",
+   "korean": "가을",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "leaves",
+   "lemma": "leaf",
+   "partOfSpeech": "n.",
+   "korean": "잎 (leaf의 복수)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 3
+  },
+  {
+   "word": "during",
+   "lemma": "during",
+   "partOfSpeech": "prep.",
+   "korean": "~ 동안",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "chlorophyll",
+   "lemma": "chlorophyll",
+   "partOfSpeech": "n.",
+   "korean": "엽록소",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 2
+  },
+  {
+   "word": "sunlight",
+   "lemma": "sunlight",
+   "partOfSpeech": "n.",
+   "korean": "햇빛",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "shorter",
+   "lemma": "short",
    "partOfSpeech": "adj.",
-   "korean": "진정한",
+   "korean": "더 짧은",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "cooler",
+   "lemma": "cool",
+   "partOfSpeech": "adj.",
+   "korean": "더 서늘한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "stop",
+   "lemma": "stop",
+   "partOfSpeech": "v.",
+   "korean": "(stop -ing) ~하기를 멈추다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "slowly",
+   "lemma": "slowly",
+   "partOfSpeech": "adv.",
+   "korean": "서서히",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "disappears",
+   "lemma": "disappear",
+   "partOfSpeech": "v.",
+   "korean": "사라지다",
    "score": 80,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
@@ -78,7 +201,7 @@
    "word": "produce",
    "lemma": "produce",
    "partOfSpeech": "v.",
-   "korean": "낳다, 일으키다",
+   "korean": "만들어 내다",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
    "examTags": [
@@ -87,142 +210,34 @@
    "freq": 1
   },
   {
-   "word": "later",
-   "lemma": "later",
-   "partOfSpeech": "adj.",
-   "korean": "나중의 (in later years 훗날에)",
-   "score": 102,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "increase",
-   "lemma": "increase",
-   "partOfSpeech": "n.",
-   "korean": "인상, 증가 (an increase in salary 급여 인상)",
-   "score": 102,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "happiness",
-   "lemma": "happiness",
-   "partOfSpeech": "n.",
-   "korean": "행복",
-   "score": 102,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "realizing",
-   "lemma": "realize",
-   "partOfSpeech": "v.",
-   "korean": "깨닫다, 의식하다",
-   "score": 101,
-   "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "earn",
-   "lemma": "earn",
-   "partOfSpeech": "v.",
-   "korean": "(돈을) 벌다",
-   "score": 98,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "follows",
-   "lemma": "follow",
-   "partOfSpeech": "v.",
-   "korean": "뒤따르다",
-   "score": 94,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "promotion",
-   "lemma": "promotion",
-   "partOfSpeech": "n.",
-   "korean": "승진",
-   "score": 92,
-   "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 92점)",
-   "examTags": [
-    "TOEIC"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "success",
-   "lemma": "success",
-   "partOfSpeech": "n.",
-   "korean": "성공",
-   "score": 82,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+   "word": "especially",
+   "lemma": "especially",
+   "partOfSpeech": "adv.",
+   "korean": "특히",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
    "freq": 2
   },
   {
-   "word": "considerations",
-   "lemma": "consideration",
-   "partOfSpeech": "n.",
-   "korean": "고려 사항",
-   "score": 79,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "word": "sunny",
+   "lemma": "sunny",
+   "partOfSpeech": "adj.",
+   "korean": "햇볕이 좋은",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 1
+   "freq": 2
   },
   {
-   "word": "neglect",
-   "lemma": "neglect",
-   "partOfSpeech": "n.",
-   "korean": "소홀히 함",
-   "score": 79,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "frustration",
-   "lemma": "frustration",
-   "partOfSpeech": "n.",
-   "korean": "좌절감",
-   "score": 79,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "diligently",
-   "lemma": "diligently",
-   "partOfSpeech": "adv.",
-   "korean": "부지런히",
+   "word": "bright",
+   "lemma": "bright",
+   "partOfSpeech": "adj.",
+   "korean": "선명한, 밝은",
    "score": 80,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
