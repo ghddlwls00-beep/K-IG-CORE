@@ -165,4 +165,18 @@ function createEditor(REPO, course, opts = {}) {
   return { item, syncSplit, insertAfter, blockText, removeBlocks, field, commit, load };
 }
 
-module.exports = { createEditor };
+function formatOf(raw) {
+  return {
+    crlf: raw.includes("\r\n"),
+    indent: (raw.match(/^\{\r?\n( +)"/) || [, "  "])[1].length,
+    trailing: /\r?\n$/.test(raw),
+  };
+}
+function serialize(data, f) {
+  let s = JSON.stringify(data, null, f.indent);
+  if (f.crlf) s = s.replace(/\n/g, "\r\n");
+  if (f.trailing) s += f.crlf ? "\r\n" : "\n";
+  return s;
+}
+
+module.exports = { createEditor, formatOf, serialize };

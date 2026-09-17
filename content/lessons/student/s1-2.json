@@ -72,15 +72,15 @@
         },
         {
           "n": "2",
-          "text": "I live at 한국Apartment."
+          "text": "I live in (apartment name) Apartments."
         },
         {
           "n": "3",
-          "text": "I am a 4th grade student at 한국 Elementary School."
+          "text": "I am a 4th grade student at (school name) Elementary School."
         },
         {
           "n": "4",
-          "text": "I am 11 years old."
+          "text": "I am (10) years old."
         }
       ]
     },
@@ -91,17 +91,17 @@
     },
     {
       "type": "paragraph",
-      "text": "나는 한국아파트에 삽니다.",
+      "text": "나는 (아파트 이름) 아파트에 삽니다.",
       "lang": "ko"
     },
     {
       "type": "paragraph",
-      "text": "나는 한국 초등학교 4학년입니다.",
+      "text": "나는 (학교 이름) 초등학교 4학년입니다.",
       "lang": "ko"
     },
     {
       "type": "paragraph",
-      "text": "나는 11살 입니다.",
+      "text": "나는 (10)살입니다.",
       "lang": "ko"
     }
   ],
@@ -120,8 +120,8 @@
       "en": "and I live in Seoul."
     },
     {
-      "ko": "한국 초등학교에서",
-      "en": "at 한국 Elementary School."
+      "ko": "(학교 이름) 초등학교에서",
+      "en": "at (school name) Elementary School."
     }
   ]
 }

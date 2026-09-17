@@ -113,7 +113,7 @@
       "items": [
         {
           "n": "1",
-          "text": "My country has many traditional holidays."
+          "text": "My country has many holidays."
         },
         {
           "n": "2",
@@ -121,7 +121,7 @@
         },
         {
           "n": "3",
-          "text": "We celebrate Lunar New Year’s, Independence Day, Arbor Day, Buddha’s Birthday and many more."
+          "text": "We celebrate Seollal, Liberation Day, Children’s Day, Buddha’s Birthday, Chuseok, and many more."
         },
         {
           "n": "4",
@@ -131,7 +131,7 @@
     },
     {
       "type": "paragraph",
-      "text": "우리 나라는 많은 전통 공휴일들이 있습니다.",
+      "text": "우리나라에는 많은 공휴일이 있습니다.",
       "lang": "ko"
     },
     {
@@ -141,7 +141,7 @@
     },
     {
       "type": "paragraph",
-      "text": "우리는 음력설날, 독립기념일, 식목일, 석가탄신일, 그리고 더 많은 날들을 기념합니다.",
+      "text": "우리는 설날, 광복절, 어린이날, 부처님 오신 날, 추석 그리고 더 많은 날들을 기념합니다.",
       "lang": "ko"
     },
     {
@@ -157,56 +157,48 @@
   ],
   "chunkDrills": [
     {
-      "ko": "우리나라는 있습니다.",
+      "ko": "우리나라에는 있습니다",
       "en": "My country has"
     },
     {
-      "ko": "많은 전통휴일들이",
-      "en": "many traditional holidays."
+      "ko": "많은 공휴일이",
+      "en": "many holidays."
     },
     {
-      "ko": "휴일들은 특별한 시간입니다.",
+      "ko": "공휴일은 특별한 시간입니다",
       "en": "Holidays are a special time"
     },
     {
-      "ko": "가족들이",
-      "en": "when families"
+      "ko": "가족들이 함께 모일 수 있는",
+      "en": "when families can get together"
     },
     {
-      "ko": "함께 하고 기념할 수 있는",
-      "en": "can get together and celebrate."
+      "ko": "그리고 기념할 수 있는",
+      "en": "and celebrate."
     },
     {
-      "ko": "우리는 기념합니다.",
+      "ko": "우리는 기념합니다",
       "en": "We celebrate"
     },
     {
-      "ko": "구정(음력 설날)",
-      "en": "Lunar New Year's,"
+      "ko": "설날, 광복절, 어린이날,",
+      "en": "Seollal, Liberation Day, Children’s Day,"
     },
     {
-      "ko": "독립기념일",
-      "en": "Independence Day,"
+      "ko": "부처님 오신 날, 추석,",
+      "en": "Buddha’s Birthday, Chuseok,"
     },
     {
-      "ko": "식목일",
-      "en": "Arbor Day,"
+      "ko": "그리고 더 많은 날들을",
+      "en": "and many more."
     },
     {
-      "ko": "석가탄신일과 더많은 날들을",
-      "en": "Buddha's Birthday and many more."
-    },
-    {
-      "ko": "나는 당신에게 이야기 하고 싶습니다.",
+      "ko": "저는 이야기하고 싶습니다",
       "en": "I would like to tell you"
     },
     {
-      "ko": "가장 큰 두개의 전통 휴일에 관해",
-      "en": "about the two largest traditional holidays"
-    },
-    {
-      "ko": "한국에서의",
-      "en": "in Korea."
+      "ko": "한국에서 가장 큰 전통 명절 두 가지에 대해",
+      "en": "about the two largest traditional holidays in Korea."
     }
   ]
 }
