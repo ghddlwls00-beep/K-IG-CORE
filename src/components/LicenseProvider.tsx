@@ -8,7 +8,7 @@ import {
   type LicenseInfo,
   type LicensePlan,
 } from "@/lib/license";
-import { getOrCreateDeviceId, type ClientDevice } from "@/lib/device";
+import { adoptDeviceId, getOrCreateDeviceId, hasStoredDeviceId, type ClientDevice } from "@/lib/device";
 
 interface StoredLicense {
   key: string;
@@ -74,6 +74,19 @@ const LicenseContext = createContext<LicenseContextType | null>(null);
 
 const STORAGE_KEY = "kig:license:v1";
 
+/**
+ * PERF-01 — reload a lesson only when it is worth it: the server rendered the licence
+ * paywall (it saw no valid session cookie), and the plan would open this course.
+ * This used to reload every gated lesson once per tab — even when the server had
+ * already rendered the full lesson — costing about 2 s on 4G.
+ */
+function serverShowedLicensePaywall(plan: LicensePlan): boolean {
+  if (!SERVER_GATED_LESSON_PATH.test(window.location.pathname)) return false;
+  if (!document.querySelector('[data-kig-paywall="license"]')) return false;
+  const course = window.location.pathname.split("/")[1];
+  return !isStudentOnlyPlan(plan) || course === "student";
+}
+
 export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const [stored, setStored] = useState<StoredLicense | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -98,10 +111,50 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   // Load license and verify with server on mount
   useEffect(() => {
     try {
+      const hadDeviceId = hasStoredDeviceId();
       const dev = getOrCreateDeviceId();
       setCurrentDevice(dev);
 
       const raw = window.localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        // ISS-13: nothing in localStorage — maybe Safari cleared it after 7 days
+        // without a visit. The server-set httpOnly cookies survive that; ask the
+        // server what they still prove before treating this browser as new.
+        fetch("/api/license/session", { cache: "no-store" })
+          .then((res) => (res.ok ? res.json() : null))
+          .then((data: {
+            valid?: boolean;
+            key?: string;
+            plan?: LicensePlan;
+            deviceId?: string;
+            expiresAt?: number | null;
+            activatedAt?: number;
+            token?: string;
+          } | null) => {
+            if (!data) return;
+            if (data.deviceId && (!hadDeviceId || data.valid) && data.deviceId !== dev.id) {
+              setCurrentDevice(adoptDeviceId(data.deviceId));
+            }
+            if (data.valid && data.key && data.plan && data.token) {
+              const restored: StoredLicense = {
+                key: data.key,
+                plan: data.plan,
+                activatedAt: data.activatedAt || Date.now(),
+                expiresAt: data.expiresAt ?? null,
+                token: data.token,
+              };
+              try {
+                window.localStorage.setItem(STORAGE_KEY, JSON.stringify(restored));
+              } catch {
+                // ignore
+              }
+              setStored(restored);
+            }
+          })
+          .catch(() => {
+            // Offline or blocked: stay as a visitor without a licence.
+          });
+      }
       if (raw) {
         const parsed = JSON.parse(raw) as StoredLicense;
 
@@ -137,7 +190,9 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
                   }
                 }
                 setStored(fixed);
-                if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
+                if (serverShowedLicensePaywall(fixed.plan)) {
+                  // The cookie this response just set lets the server render the
+                  // lesson. The per-tab guard stops a loop if it still cannot.
                   const reloadKey = `kig:license-cookie:${storedToken.slice(-16)}`;
                   if (!window.sessionStorage.getItem(reloadKey)) {
                     window.sessionStorage.setItem(reloadKey, "1");
@@ -296,7 +351,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(newStored));
         setStored(newStored);
         window.setTimeout(() => {
-          if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
+          if (serverShowedLicensePaywall(newStored.plan)) {
             // Pre-arm the same guard the mount-time verification uses, so the
             // reload below doesn't trigger a second one once the page comes back
             // with a valid session cookie.
@@ -334,7 +389,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         await fetch("/api/license/deactivate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ key: stored.key, deviceId: dev.id }),
+          // SEC-04: the server frees the slot only for a token it signed for this device.
+          body: JSON.stringify({ key: stored.key, deviceId: dev.id, token: stored.token }),
         });
       } catch {
         // ignore

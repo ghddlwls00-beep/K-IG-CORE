@@ -5,7 +5,36 @@ import { verifyLicenseToken, type LicenseTokenPayload } from "@/lib/serverLicens
 
 export const LICENSE_SESSION_COOKIE_NAME = "kig_license_session";
 
-function readCookie(request: Request, name: string): string | null {
+/**
+ * ISS-13 — the device ID in an httpOnly cookie as well as localStorage.
+ *
+ * Safari (ITP) deletes script-writable storage — localStorage and cookies set by
+ * JavaScript — after 7 days without a visit; cookies the SERVER sets with
+ * Set-Cookie are not capped that way. The device ID lived only in localStorage, so
+ * an iPhone learner back after a week got a new ID and re-entering the code took a
+ * second device slot (the second time: "최대 기기 수 초과"). The ID is now also set
+ * here, and `/api/license/session` hands it (and a still-valid session) back.
+ */
+export const DEVICE_COOKIE_NAME = "kig_device";
+export const DEVICE_COOKIE_MAX_AGE = 400 * 24 * 60 * 60; // browsers cap cookie lifetime at 400 days
+
+export function isValidDeviceId(value: unknown): value is string {
+  return typeof value === "string" && /^[A-Za-z0-9_-]{4,80}$/.test(value);
+}
+
+export function deviceCookie(deviceId: string) {
+  return {
+    name: DEVICE_COOKIE_NAME,
+    value: deviceId,
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax" as const,
+    path: "/",
+    maxAge: DEVICE_COOKIE_MAX_AGE,
+  };
+}
+
+export function readCookie(request: Request, name: string): string | null {
   const cookies = (request.headers.get("cookie") || "").split(";");
   for (const cookie of cookies) {
     const [rawName, ...rawValue] = cookie.trim().split("=");

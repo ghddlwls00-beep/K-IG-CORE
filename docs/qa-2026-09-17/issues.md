@@ -140,7 +140,9 @@
 - **영향** 기간제 상품이 무기한이 됨 → 매출 손실
 - **증거** 코드 인용 · **원인** 최초 등록·만료 시각을 기록에 저장하지 않음 · **해결** 최초 등록 시각 저장 후 만료 고정 — **기존 구매자 기간에 영향, 소유자 결정 필요** · **검증** 단위 시험(시각 주입) + 소유자 발급 테스트 코드로 재등록 시 `expiresAt` 불변 확인 · **확신도** 높음 (코드), 운영 재현 **Read-only verification required**
 
-### ISS-13 iPhone Safari 7일 미사용 시 이용권·기기 ID 삭제 → 재등록마다 기기 칸 소모 (SEC-02, LX-02)
+### ISS-13 iPhone Safari 7일 미사용 시 이용권·기기 ID 삭제 → 재등록마다 기기 칸 소모 (SEC-02, LX-02) — ✅ 로컬 수정·검증, 배포 대기
+
+> **수정 (2026-09-17):** Safari 가 7일 뒤 지우는 것은 스크립트가 쓴 저장소(localStorage·JS 쿠키)이고, 서버가 Set-Cookie 로 준 httpOnly 쿠키는 남음. 그래서 (1) 등록·검증 때 기기 ID 를 httpOnly 쿠키 `kig_device`(400일)에도 저장, (2) 새 API `GET /api/license/session` — 이 브라우저의 쿠키만 읽어 유효한 세션(레슨 잠금과 같은 검사: 서명·기록·기기 등록·차단·기간)과 기기 ID 를 돌려줌, (3) 페이지에 이용권 사본이 없으면 이 API 로 이용권과 **같은 기기 ID** 를 되살림 — 세션이 끝났어도 기기 ID 는 되살려서 코드를 다시 넣으면 같은 칸을 씀. 같이: PERF-01/SEC-08 서버가 실제로 이용권 결제 안내를 그렸을 때만 새로고침(`data-kig-paywall`), SEC-03 `verify` 도 기록에 없는 기기는 거부(초기화 직후 "이용권 활성인데 레슨 잠김" 해소), SEC-04 기기 해제는 그 코드·그 기기용으로 서버가 서명한 토큰(쿠키 또는 본문)이 있어야 함 — 기간이 끝난 진짜 토큰은 허용. **검증:** `scripts/verify-license-device.cjs` 23/23 (실제 route·저장소, 임시 로컬 저장소·임의 비밀값: 쿠키만으로 세션·기기 ID 복원, 복원 ID 로 3번 재입력해도 1칸, 초기화 후 verify 403·레슨 잠금·세션 API 일치, 토큰 없는/남의/위조 토큰 해제 403), `scripts/verify-license-restore-ui.cjs` 18/18 (격리된 `next dev` 와 실제 브라우저, 문서 로드 수를 세서 판정: A 결제 안내에서 코드 등록 → 새로고침 1번 후 레슨 / **B 새 탭 유료 레슨 새로고침 0번** (감사 스윕은 탭마다 1번) / **C localStorage 전부 삭제 → 이용권·같은 기기 ID 복원, 새로고침 0, 1칸** / **D localStorage·세션 쿠키 삭제 후 코드 재입력 → 1칸 유지** / E 관리자 초기화 → 잠금·사본 삭제). 회귀: `verify-license-expiry.cjs` 14/14, `verify-admin-records.cjs` 37/37, `verify-speech-gate-rules.cjs` 13/13, `tsc` 0, `pnpm build` 성공. **실제 iPhone 에서 7일 경과는 시험 못 함** — Safari 규칙(스크립트 저장소만 7일 삭제)에 근거한 모의 시험.
 - **분류** 운영·사용성 · **심각도** High · **접근** 모든 iPhone/iPad Safari 학습자
 - **위치** `src/lib/device.ts:22-30`, `LicenseProvider.tsx:104`, 기기 한도 `deviceStorage.ts:29`
 - **재현 조건** iPhone Safari, 사이트를 7일 이상 사용 안 함 · **단계** 1) 등록 2) 7일간 Safari 로 다른 사이트만 사용 3) 재방문 → 이용권 없음 → 코드 재입력 (새 기기 ID) 4) 한 번 더 반복

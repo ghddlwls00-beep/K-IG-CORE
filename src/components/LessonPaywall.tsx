@@ -24,7 +24,12 @@ export function LessonPaywall({
   const isStudentOnly = licenseInfo?.isStudentOnly;
 
   return (
-    <div className="my-10 rounded-3xl border border-line bg-surface/80 backdrop-blur-xl p-8 sm:p-12 shadow-sm flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden">
+    <div
+      // PERF-01: LicenseProvider reloads a lesson after verifying the licence only when
+      // the server rendered THIS licence paywall (it had no valid session cookie).
+      data-kig-paywall={lockReason === "license" ? "license" : undefined}
+      className="my-10 rounded-3xl border border-line bg-surface/80 backdrop-blur-xl p-8 sm:p-12 shadow-sm flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden"
+    >
       {/* Icon Pill */}
       <div className="flex h-14 w-14 items-center justify-center rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] text-[22px] text-ink shadow-2xs">
         🔒

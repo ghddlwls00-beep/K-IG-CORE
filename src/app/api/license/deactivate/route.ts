@@ -1,20 +1,39 @@
 import { NextResponse } from "next/server";
 import { unregisterDeviceFromKey } from "@/lib/deviceStorage";
-import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
+import { verifyLicenseToken } from "@/lib/serverLicense";
+import { LICENSE_SESSION_COOKIE_NAME, readCookie } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { key, deviceId } = body;
+    const { key, deviceId, token } = body;
 
-    if (!key || !deviceId) {
+    if (!key || !deviceId || typeof key !== "string" || typeof deviceId !== "string") {
       return NextResponse.json(
         { success: false, error: "필수 정보가 누락되었습니다." },
         { status: 400 }
       );
     }
 
-    const result = await unregisterDeviceFromKey(key, deviceId);
+    // SEC-04: this used to free a device slot for anyone who sent a code and a device
+    // ID. It now needs a token this server signed for that code AND that device —
+    // the session cookie, or the copy the page keeps. An expired token still counts
+    // (its signature is genuine), so a learner whose period ended can free the slot.
+    const normalizedKey = key.trim().toUpperCase();
+    const candidates = [readCookie(request, LICENSE_SESSION_COOKIE_NAME), typeof token === "string" ? token : null];
+    const authorised = candidates.some((candidate) => {
+      if (!candidate) return false;
+      const result = verifyLicenseToken(candidate, deviceId);
+      return Boolean(result.payload && result.payload.key === normalizedKey && result.payload.deviceId === deviceId);
+    });
+    if (!authorised) {
+      return NextResponse.json(
+        { success: false, error: "이 기기에서 등록한 이용권만 해제할 수 있습니다." },
+        { status: 403 }
+      );
+    }
+
+    const result = await unregisterDeviceFromKey(normalizedKey, deviceId);
     const response = NextResponse.json({
       success: true,
       registeredDevicesCount: result.devices.length,

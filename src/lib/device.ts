@@ -42,6 +42,29 @@ export function getOrCreateDeviceId(): ClientDevice {
   return { id, name };
 }
 
+/** True when this browser already had a device ID before this page load touched it. */
+export function hasStoredDeviceId(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return Boolean(window.localStorage.getItem(DEVICE_ID_KEY));
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * ISS-13 — put back the device ID the server still holds in its httpOnly cookie after
+ * Safari cleared localStorage, so this browser keeps its registered slot.
+ */
+export function adoptDeviceId(id: string): ClientDevice {
+  try {
+    window.localStorage.setItem(DEVICE_ID_KEY, id);
+  } catch {
+    // ignore
+  }
+  return getOrCreateDeviceId();
+}
+
 function detectDeviceName(): string {
   if (typeof navigator === "undefined") return "알 수 없는 기기";
   const ua = navigator.userAgent;

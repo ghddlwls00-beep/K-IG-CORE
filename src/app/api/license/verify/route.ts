@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyLicenseToken } from "@/lib/serverLicense";
 import { effectiveLicenseExpiry, getDeviceRecordForKey } from "@/lib/deviceStorage";
-import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
+import { LICENSE_SESSION_COOKIE_NAME, deviceCookie, isValidDeviceId } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
   try {
@@ -72,22 +72,23 @@ export async function POST(request: Request) {
       );
     }
 
-    if (record && record.devices && record.devices.length > 0) {
-      const isDeviceRegistered = record.devices.some(
-        (d) => d.deviceId === deviceId,
+    // SEC-03: the same rule as the lesson gate (licenseSession.ts). This used to skip
+    // the device check when the record had NO devices — right after an admin "기기
+    // 초기화" — so the old device was told "valid" (header: licence active) while every
+    // paid lesson stayed locked.
+    const isDeviceRegistered = Boolean(
+      record?.devices?.some((d) => d.deviceId === deviceId),
+    );
+    if (!isDeviceRegistered) {
+      return NextResponse.json(
+        {
+          valid: false,
+          error:
+            "해당 기기의 이용권 등록이 관리자에 의해 초기화되었거나 해제되었습니다.",
+          revoked: true,
+        },
+        { status: 403 },
       );
-
-      if (!isDeviceRegistered) {
-        return NextResponse.json(
-          {
-            valid: false,
-            error:
-              "해당 기기의 이용권 등록이 관리자에 의해 초기화되었거나 해제되었습니다.",
-            revoked: true,
-          },
-          { status: 403 },
-        );
-      }
     }
 
     // 5. SEC-01: the paid period is fixed to the first registration. A token issued
@@ -116,6 +117,8 @@ export async function POST(request: Request) {
         ? Math.max(1, Math.floor((fixedExpiresAt - Date.now()) / 1000))
         : 365 * 24 * 60 * 60,
     });
+    // ISS-13: learners registered before the device cookie existed get it here.
+    if (isValidDeviceId(deviceId)) response.cookies.set(deviceCookie(deviceId));
     return response;
   } catch (err) {
     console.error("License verify API error:", err);

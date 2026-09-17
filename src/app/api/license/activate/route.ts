@@ -4,7 +4,7 @@ import {
   validateLicenseKey,
 } from "@/lib/serverLicense";
 import { registerDeviceForKey } from "@/lib/deviceStorage";
-import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
+import { LICENSE_SESSION_COOKIE_NAME, deviceCookie, isValidDeviceId } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
   try {
@@ -90,6 +90,8 @@ export async function POST(request: Request) {
         ? Math.max(1, Math.floor((expiresAt - now) / 1000))
         : 365 * 24 * 60 * 60,
     });
+    // ISS-13: keep the device ID where Safari's 7-day storage cap does not reach.
+    if (isValidDeviceId(deviceId)) response.cookies.set(deviceCookie(deviceId));
     return response;
   } catch (err) {
     console.error("License activation API error:", err);
