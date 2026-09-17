@@ -21,7 +21,7 @@
  * Resumable: results append to out/sweep-licensed<suffix>.jsonl; finished
  * page×viewport pairs are skipped on the next run.
  *
- *   node sweep-licensed.cjs [--course reading] [--limit 20] [--workers 4] [--suffix -v2]
+ *   node sweep-licensed.cjs [--course reading] [--ids pr151,pr151-1] [--limit 20] [--workers 4] [--suffix -v2]
  *
  * v2 (2026-09-17): the first run (out/sweep-licensed.jsonl, kept as evidence) is
  * NOT usable — `Tab.goto` returned as soon as the OLD document reported
@@ -57,6 +57,8 @@ const MARKERS = {
 };
 const ONLY_COURSE = arg("--course", null);
 const LIMIT = Number(arg("--limit", 0)) || 0;
+// --ids pr151,pr170-1 : only these lesson ids (checked right after a content change)
+const ONLY_IDS = arg("--ids", null) ? new Set(arg("--ids", "").split(",")) : null;
 const WORKERS = Number(arg("--workers", 4));
 const KEEP_KEYS = ["kig:license:v1", "kig:device:id:v1", "kig:device:name:v1", "kig:theme", "kig:lang"];
 const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED"];
@@ -67,7 +69,7 @@ function pageList() {
   const pages = [];
   for (const [course, ids] of Object.entries(validRoutes.lessons)) {
     if (ONLY_COURSE && course !== ONLY_COURSE) continue;
-    for (const id of ids) pages.push({ course, id, url: `/${course}/${id}` });
+    for (const id of ids) if (!ONLY_IDS || ONLY_IDS.has(id)) pages.push({ course, id, url: `/${course}/${id}` });
   }
   return LIMIT ? pages.slice(0, LIMIT) : pages;
 }

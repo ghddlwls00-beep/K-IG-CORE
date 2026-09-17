@@ -43,6 +43,12 @@ function needles(course, id) {
 }
 
 (async () => {
+  // A needle that is also in the site chrome (navigation, course blurbs) proves
+  // nothing: e.g. VOCA hv-46's grid word "pronunciation" is in every page's menu
+  // ("…vocabulary matrix with pronunciation clinic"). Drop needles found on the
+  // home page and record them as chromeNeedles.
+  const chrome = await (await fetch(`${BASE}/`)).text();
+  const inChrome = (n) => chrome.includes(n) || chrome.includes(esc(n));
   const list = Object.entries(routes).flatMap(([course, ids]) => ids.map((id) => ({ course, id })));
   const results = [];
   let i = 0;
@@ -52,7 +58,9 @@ function needles(course, id) {
       if (k >= list.length) return;
       const { course, id } = list[k];
       const free = FREE.has(id);
-      const ns = needles(course, id);
+      const all = needles(course, id);
+      const ns = all.filter((n) => !inChrome(n));
+      const chromeNeedles = all.filter(inChrome);
       let status = 0, html = "";
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
@@ -67,7 +75,7 @@ function needles(course, id) {
       const paywall = PAYWALL.test(body);
       const found = ns.filter((n) => html.includes(n) || html.includes(esc(n)));
       const pass = status === 200 && (free ? !paywall && (ns.length === 0 || found.length > 0) : paywall && found.length === 0);
-      results.push({ course, id, free, status, paywall, needles: ns.length, found, pass, bytes: html.length });
+      results.push({ course, id, free, status, paywall, needles: ns.length, ...(chromeNeedles.length ? { chromeNeedles } : {}), found, pass, bytes: html.length });
     }
   }
   await Promise.all(Array.from({ length: 4 }, worker));
