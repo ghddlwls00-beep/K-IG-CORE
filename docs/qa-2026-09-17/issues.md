@@ -96,7 +96,7 @@
 - **재현** 이용권 → `/student/s1-4` 청크 연습 · **기대** 이 레슨 문장의 의미 단위 · **실제** 다음 레슨·없는 레슨 내용, 영어 칸에 한국어
 - **영향** 학습 흐름 붕괴·혼란 · **증거** 일치율 계산 스크립트(scratchpad `drill-match.cjs`, 결과는 상세 표) · **원인** 청크 데이터가 다른 판본 기준 · **해결** 레슨 문장에서 재생성 후 일치율 100% 검사 · **검증** 같은 스크립트 0건 · **확신도** 높음
 
-### ISS-08 LISTENING d109 받아쓰기 한 칸에 다음 회차 본문 10문장이 통째로 붙음 (L-42)
+### ISS-08 LISTENING d109 받아쓰기 한 칸에 다음 회차 본문 10문장이 통째로 붙음 (L-42) — ✅ 로컬 수정·검증, 배포 대기 (`apply-listening.cjs`, `verify-listening-fixes.cjs` 100/100)
 - **분류** 데이터 손상 · **심각도** High · **접근** 유료
 - **위치** `content/ld_english_scripts.json` d109 #6
 - **재현** 이용권 → `/ld/d109` → Step 2 탭-딕테이션 6번 · **기대** `Franklin also discovered ways…` 한 문장 · **실제** 그 뒤에 d110 본문 전체가 붙은 한 문단 (KO 는 첫 문장만)
@@ -187,7 +187,7 @@
 | MED-G1 GRAMMAR I | 18 / 30 | 비문법적 "다른 정답"(G1-41), 채점 기준 불일치, 오역, 표기 | `content-review/grammar1.md` |
 | MED-G2 GRAMMAR II | 23 / 14 | Dallas 남부(G2-02), 로써/로서(G2-03), would/shall(G2-04·05) | `content-review/grammar2.md` |
 | MED-S STUDENT | 21 / 3 | 이순신 사실(S-08), 개요 페이지 s1–s5 목록 미노출·제목 불일치 | `content-review/student.md` |
-| MED-L LISTENING | 56 / 38 | 전사 오류(Lite·Wilbur·Iditarod 등), 숫자 표기, 낡은 사실(L-27·49), **불쾌 표현**(L-74·84 freaks·minstrel·primitive tribes), 힌트-답 이름 불일치(L-00a) | `content-review/listening.md`, `listening-status.md` (PASS 64/FAIL 212) |
+| MED-L LISTENING | 56 / 38 | 전사 오류(Lite·Wilbur·Iditarod 등), 숫자 표기, 낡은 사실(L-27·49), **불쾌 표현**(L-74·84 freaks·minstrel·primitive tribes), 힌트-답 이름 불일치(L-00a) — **✅ L-74·L-84 외 전부 로컬 수정·검증, 배포 대기** (`listening.md` "처리 결과"; L-74·L-84 는 소유자 결정 대기) | `content-review/listening.md`, `listening-status.md` (PASS 64/FAIL 212) |
 | MED-R READING 지문 | 64 / 32 | 영한 정렬 어긋남 다수, 오역(뜻 반대), 낡은 전망(2010·2025), 정치·고정관념 지문(R-64 노무현·차베스, R-65 식사법), 중복 지문 8쌍(R-01), 사실(재향군인병·마라톤·Purloined Letter·안락사법) | `content-review/reading.md` |
 | MED-RV READING 어휘 | (ISS-10 에 포함) | | `content-review/reading.md` §어휘 카드 |
 | MED-V VOCA | 6 / 6 | mv2-12 달 이름 반복(V-03), 같은 뜻 짝 드릴 채점(V-04), 철자 오류 6(V-05), `apparently` 분명히(V-06), 다의어 첫 뜻 누락(V-07) | `content-review/voca.md`, `voca-status.md` (PASS 102 · NOTE 42 · FAIL 51) |

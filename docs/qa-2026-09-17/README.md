@@ -50,7 +50,7 @@
 
 1. ~~배포~~ 완료 (2026-09-17 10:32 KST 반영, `c14c03d..886b08c`). 운영 재측정 완료: 유출 0, 잠금 1,748/1,748. READING 이용권 스윕 `-v3` 결과는 `phase4-functional.md` 끝
 2. ~~L-64~~ 배포·운영 확인 완료. 재확인 절차: `sweep-licensed.cjs --ids $(check-l64-prod.cjs --base 1dd14cb --list-ids) --suffix -l64` → `check-l64-prod.cjs --base 1dd14cb --suffix -l64`
-3. 이어서 `final-report.md` §20 순서
+3. 이어서 `final-report.md` §20 순서. **로컬 수정·검증 완료, 배포 대기:** ISS-16 다크 모드 · ISS-14 관리자 목록 · ISS-13 이용권 복원 · GRAMMAR I · GRAMMAR II · STUDENT · **LISTENING (L-74·L-84 제외 전부, `content-review/listening.md` "처리 결과")**. 소유자 결정 대기: L-74·L-84 불쾌 표현 회차
 4. 수정 후 `final-report.md` §19 재시험 → 커밋(파일 이름 지정) → 소유자가 `git push`
 
 ## 감사 중 바로잡은 판단 (기록)

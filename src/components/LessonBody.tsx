@@ -99,7 +99,7 @@ export function LessonBody({
   voiceGender?: VoiceGender;
   audioTracks?: { src: string; label?: string }[];
   chunkDrills?: { en: string; ko: string }[];
-  ldEnglishScript?: { n: string; ko: string; en: string }[] | null;
+  ldEnglishScript?: { n: string; ko: string; en: string; answer?: string }[] | null;
   menTranslations?: Record<string, string> | null;
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
   readingSentences?: ReadingSentence[] | null;

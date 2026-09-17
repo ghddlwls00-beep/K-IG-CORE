@@ -22,10 +22,26 @@ interface LdLearningViewProps {
   lessonKey: string;
   isScript: boolean;
   audioTracks?: { src: string; label?: string }[];
-  ldEnglishScript?: { n: string; ko: string; en: string }[] | null;
+  ldEnglishScript?: LdScriptRow[] | null;
 }
 
+/** `answer`: the solution of a riddle round ("Can you guess why?"), kept out of the Korean line. */
+type LdScriptRow = { n: string; ko: string; en: string; answer?: string };
+
 type TabStep = "step1_blind" | "step2_dictation" | "step3_liaison" | "step4_shadowing" | "step5_speed";
+
+/** Riddle answer behind a tap, so reading the Korean line does not give it away (L-71). */
+function RiddleAnswer({ answer }: { answer?: string }) {
+  if (!answer) return null;
+  return (
+    <details className="mt-1.5 text-[13px] text-ink-soft">
+      <summary className="inline-flex min-h-8 cursor-pointer select-none items-center font-semibold text-primary">
+        정답 보기
+      </summary>
+      <p className="mt-1 leading-relaxed">{answer}</p>
+    </details>
+  );
+}
 
 export function LdLearningView({
   blocks,
@@ -73,7 +89,7 @@ export function LdLearningView({
   }, [scriptBlocks]);
 
   // Model paired sentences (English + Korean)
-  const sentences: { n: string; ko: string; en: string }[] = useMemo(() => {
+  const sentences: LdScriptRow[] = useMemo(() => {
     if (ldEnglishScript && ldEnglishScript.length > 0) {
       return ldEnglishScript;
     }
@@ -685,6 +701,7 @@ export function LdLearningView({
                     한글 번역 가이드
                   </span>
                   <p className="text-[14.5px] font-medium text-ink">{currentDictationItem.ko}</p>
+                  <RiddleAnswer key={dictationIndex} answer={currentDictationItem.answer} />
                 </div>
               </div>
 
@@ -919,6 +936,7 @@ export function LdLearningView({
               {currentLiaisonSentence.en}
             </p>
             <p className="text-[14px] text-ink-soft">{currentLiaisonSentence.ko}</p>
+            <RiddleAnswer key={liaisonIndex} answer={currentLiaisonSentence.answer} />
           </div>
 
           {/* Liaison Cards List */}
@@ -1051,6 +1069,7 @@ export function LdLearningView({
                 {currentShadowSentence.en}
               </p>
               <p className="text-[14px] text-ink-soft">{currentShadowSentence.ko}</p>
+              <RiddleAnswer key={shadowIndex} answer={currentShadowSentence.answer} />
             </div>
 
             {/* Listening Step 1 */}
@@ -1220,6 +1239,7 @@ export function LdLearningView({
                           <p className="text-[13px] text-ink-soft mt-1 leading-relaxed select-text">
                             {item.ko}
                           </p>
+                          <RiddleAnswer answer={item.answer} />
                         </div>
                       </div>
 
