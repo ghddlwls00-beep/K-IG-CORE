@@ -36,11 +36,17 @@
       "items": [
         {
           "n": "1",
-          "text": "Why did you beat him?"
+          "text": "Why did you beat him?",
+          "alternatives": [
+            "Why did you hit him?"
+          ]
         },
         {
           "n": "2",
-          "text": "Why does he beat her?"
+          "text": "Why does he beat her?",
+          "alternatives": [
+            "Why does he hit her?"
+          ]
         },
         {
           "n": "3",
@@ -60,7 +66,7 @@
         },
         {
           "n": "7",
-          "text": "This is a very important problem, isn't this?"
+          "text": "This is a very important problem, isn't it?"
         },
         {
           "n": "8",
@@ -111,7 +117,10 @@
         },
         {
           "n": "19",
-          "text": "We didn't see each other for a long time, did we?"
+          "text": "We didn't see each other for a long time, did we?",
+          "alternatives": [
+            "We haven't seen each other for a long time, have we?"
+          ]
         },
         {
           "n": "20",
@@ -155,7 +164,7 @@
         },
         {
           "n": "30",
-          "text": "You met someone. didn't you?"
+          "text": "You met someone, didn't you?"
         },
         {
           "n": "31",
@@ -173,7 +182,8 @@
           "n": "34",
           "text": "Your teacher does not understand you, does he?",
           "alternatives": [
-            "Your teacher does not understand you, does he or she?"
+            "Your teacher does not understand you, does she?",
+            "Your teacher does not understand you, do they?"
           ]
         },
         {
@@ -198,7 +208,10 @@
         },
         {
           "n": "40",
-          "text": "I am a busy girl."
+          "text": "I am a busy woman.",
+          "alternatives": [
+            "I am a busy girl."
+          ]
         },
         {
           "n": "41",

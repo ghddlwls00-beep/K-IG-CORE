@@ -81,7 +81,7 @@
           "n": "11",
           "text": "Which book do you want?",
           "alternatives": [
-            "Which What book do you want?"
+            "What book do you want?"
           ]
         },
         {
@@ -93,7 +93,7 @@
         },
         {
           "n": "13",
-          "text": "This is your book. isn't this?"
+          "text": "This is your book, isn't it?"
         },
         {
           "n": "14",
@@ -108,7 +108,10 @@
         },
         {
           "n": "16",
-          "text": "He wants much money, doesn't he?"
+          "text": "He wants much money, doesn't he?",
+          "alternatives": [
+            "He wants a lot of money, doesn't he?"
+          ]
         },
         {
           "n": "17",
@@ -139,17 +142,12 @@
         },
         {
           "n": "23",
-          "text": "She looks beautiful, doesn't she?"
+          "text": "She is beautiful, isn't she?",
+          "alternatives": [
+            "She looks beautiful, doesn't she?"
+          ]
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "text": "혹은 She is beautiful,"
-    },
-    {
-      "type": "paragraph",
-      "text": "isn't she?"
     },
     {
       "type": "sentences",

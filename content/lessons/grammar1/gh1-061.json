@@ -60,7 +60,11 @@
         },
         {
           "n": "7",
-          "text": "He has more money than I."
+          "text": "He has more money than I.",
+          "alternatives": [
+            "He has more money than I do.",
+            "He has more money than me."
+          ]
         },
         {
           "n": "8",
@@ -139,7 +143,10 @@
         },
         {
           "n": "26",
-          "text": "Who loves you more than I?"
+          "text": "Who loves you more than I?",
+          "alternatives": [
+            "Who loves you more than I do?"
+          ]
         },
         {
           "n": "27",
@@ -162,7 +169,10 @@
         },
         {
           "n": "31",
-          "text": "All of them don't like it."
+          "text": "Not all of them like it.",
+          "alternatives": [
+            "All of them don't like it."
+          ]
         },
         {
           "n": "32",

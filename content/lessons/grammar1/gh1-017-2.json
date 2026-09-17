@@ -90,7 +90,12 @@
         },
         {
           "n": "32",
-          "text": "How many days were you in the U. S. A?"
+          "text": "How many days were you in the USA?",
+          "alternatives": [
+            "How many days were you in the U.S.A.?",
+            "How many days were you in the US?",
+            "How many days were you in the United States?"
+          ]
         },
         {
           "n": "33",

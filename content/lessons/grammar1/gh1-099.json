@@ -42,12 +42,15 @@
           "n": "97",
           "text": "The company took part in the project, didn't it?",
           "alternatives": [
-            "The company took participated in the project, didn't it?"
+            "The company participated in the project, didn't it?"
           ]
         },
         {
           "n": "98",
-          "text": "He doesn't go on a date today, does he?"
+          "text": "He isn't going on a date today, is he?",
+          "alternatives": [
+            "He doesn't go on a date today, does he?"
+          ]
         },
         {
           "n": "99",
@@ -71,7 +74,10 @@
         },
         {
           "n": "103",
-          "text": "How fast did the meeting end?"
+          "text": "How quickly did the meeting end?",
+          "alternatives": [
+            "How fast did the meeting end?"
+          ]
         },
         {
           "n": "104",
@@ -79,7 +85,10 @@
         },
         {
           "n": "105",
-          "text": "He takes care of the patient many hours every day, doesn't he?"
+          "text": "He takes care of the patient for many hours every day, doesn't he?",
+          "alternatives": [
+            "He takes care of the patient many hours every day, doesn't he?"
+          ]
         },
         {
           "n": "106",
@@ -87,7 +96,7 @@
         },
         {
           "n": "107",
-          "text": "Why didn't North and South reach a compromise?"
+          "text": "Why didn't North and South Korea reach a compromise?"
         },
         {
           "n": "108",
@@ -102,10 +111,7 @@
         },
         {
           "n": "110",
-          "text": "He is not Japanese, is he?",
-          "alternatives": [
-            "He is not a Japanese, is he?"
-          ]
+          "text": "He is not Japanese, is he?"
         },
         {
           "n": "111",

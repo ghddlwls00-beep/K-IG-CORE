@@ -63,8 +63,12 @@
         },
         {
           "n": "5",
-          "text": "All boys do not receive a prize.",
+          "text": "Not all boys receive a prize.",
           "alternatives": [
+            "Not all boys receive prizes.",
+            "Not all the boys receive a prize.",
+            "Not all the boys receive prizes.",
+            "All boys do not receive a prize.",
             "All the boys do not receive prizes.",
             "All boys do not receive prizes.",
             "All the boys do not receive a prize."
@@ -76,7 +80,10 @@
         },
         {
           "n": "7",
-          "text": "All of them didn't come."
+          "text": "Not all of them came.",
+          "alternatives": [
+            "All of them didn't come."
+          ]
         },
         {
           "n": "8",
@@ -182,7 +189,12 @@
         },
         {
           "n": "32",
-          "text": "How many days were you in the U. S. A?"
+          "text": "How many days were you in the USA?",
+          "alternatives": [
+            "How many days were you in the U.S.A.?",
+            "How many days were you in the US?",
+            "How many days were you in the United States?"
+          ]
         },
         {
           "n": "33",

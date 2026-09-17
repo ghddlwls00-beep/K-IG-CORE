@@ -28,17 +28,12 @@
       "items": [
         {
           "n": "23",
-          "text": "She looks beautiful, doesn't she?"
+          "text": "She is beautiful, isn't she?",
+          "alternatives": [
+            "She looks beautiful, doesn't she?"
+          ]
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "text": "혹은 She is beautiful,"
-    },
-    {
-      "type": "paragraph",
-      "text": "isn't she?"
     },
     {
       "type": "sentences",

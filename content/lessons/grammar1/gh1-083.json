@@ -92,11 +92,11 @@
         },
         {
           "n": "15",
-          "text": "They didn't spend some time on an island, did they?"
+          "text": "They didn't spend any time on an island, did they?"
         },
         {
           "n": "16",
-          "text": "They were not spending some time on an island."
+          "text": "They were not spending any time on an island."
         },
         {
           "n": "17",
@@ -156,7 +156,10 @@
         },
         {
           "n": "31",
-          "text": "Are officials cancelling ski races?"
+          "text": "Are officials cancelling ski races?",
+          "alternatives": [
+            "Are officials canceling ski races?"
+          ]
         },
         {
           "n": "32",

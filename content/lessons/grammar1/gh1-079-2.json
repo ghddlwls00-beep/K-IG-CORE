@@ -56,7 +56,7 @@
         },
         {
           "n": "30",
-          "text": "You met someone. didn't you?"
+          "text": "You met someone, didn't you?"
         },
         {
           "n": "31",
@@ -74,7 +74,8 @@
           "n": "34",
           "text": "Your teacher does not understand you, does he?",
           "alternatives": [
-            "Your teacher does not understand you, does he or she?"
+            "Your teacher does not understand you, does she?",
+            "Your teacher does not understand you, do they?"
           ]
         },
         {
@@ -99,7 +100,10 @@
         },
         {
           "n": "40",
-          "text": "I am a busy girl."
+          "text": "I am a busy woman.",
+          "alternatives": [
+            "I am a busy girl."
+          ]
         },
         {
           "n": "41",

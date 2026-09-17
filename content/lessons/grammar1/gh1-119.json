@@ -50,7 +50,7 @@
           "n": "41",
           "text": "The team was able to obtain numerous samples, wasn't it?",
           "alternatives": [
-            "The team was able could obtain numerous samples, wasn't it?"
+            "The team could obtain numerous samples, couldn't it?"
           ]
         },
         {
@@ -67,7 +67,7 @@
         },
         {
           "n": "45",
-          "text": "The telescope is not yet completely on line, is it?"
+          "text": "The telescope is not yet completely online, is it?"
         },
         {
           "n": "46",
@@ -118,7 +118,10 @@
         },
         {
           "n": "57",
-          "text": "What would you like? What do you want?"
+          "text": "What do you want?",
+          "alternatives": [
+            "What would you like?"
+          ]
         },
         {
           "n": "58",
