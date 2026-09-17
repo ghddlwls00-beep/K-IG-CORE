@@ -1,6 +1,6 @@
 import "server-only";
 
-import { getDeviceRecordForKey } from "@/lib/deviceStorage";
+import { effectiveLicenseExpiry, getDeviceRecordForKey } from "@/lib/deviceStorage";
 import { verifyLicenseToken, type LicenseTokenPayload } from "@/lib/serverLicense";
 
 export const LICENSE_SESSION_COOKIE_NAME = "kig_license_session";
@@ -31,6 +31,11 @@ export async function verifyLicenseSessionToken(
     (device) => device.deviceId === verified.payload!.deviceId,
   );
   if (!deviceIsRegistered) return null;
+
+  // SEC-01: lessons, media and progress follow the period fixed to the first
+  // registration, even for a token that a re-activation issued with a later date.
+  const expiresAt = effectiveLicenseExpiry(record, verified.payload.plan, verified.payload.expiresAt);
+  if (expiresAt !== null && expiresAt <= Date.now()) return null;
 
   return { payload: verified.payload };
 }

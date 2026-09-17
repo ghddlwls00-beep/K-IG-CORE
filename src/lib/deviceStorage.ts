@@ -8,6 +8,7 @@ import {
   PutObjectCommand,
   S3Client,
 } from "@aws-sdk/client-s3";
+import { calculateExpiry } from "./serverLicense";
 
 export interface RegisteredDevice {
   deviceId: string;
@@ -24,9 +25,65 @@ export interface LicenseDeviceRecord {
   isRevoked?: boolean;
   revokedAt?: number;
   revokeReason?: string;
+  /**
+   * When this licence was first registered on any device. The paid period of a
+   * 1M/1Y plan runs from here and does not restart (owner decision, 2026-09-17).
+   */
+  firstActivatedAt?: number;
 }
 
 export const MAX_DEVICES_PER_KEY = 2;
+
+/**
+ * SEC-01 — when the paid period of a licence started.
+ *
+ * WHAT WAS WRONG. `/api/license/activate` computed the expiry from "now" on every
+ * activation, and the record kept no start date. Re-entering a 1-month code on
+ * the same device after it expired issued a fresh 30-day token, and a second
+ * device registered later got its own later expiry — a fixed-term plan never
+ * ended.
+ *
+ * Records written before `firstActivatedAt` existed fall back to the earliest
+ * `registeredAt` of the devices still on the record: that is the oldest
+ * registration the record can prove. A record whose devices were all removed
+ * before this field existed has no proof left, so it returns null and the next
+ * activation starts the period. Reset, revoke and unregister now write the start
+ * date before removing devices, so that loss cannot happen again.
+ */
+export function licenseStartedAt(record: LicenseDeviceRecord | null | undefined): number | null {
+  if (!record) return null;
+  if (typeof record.firstActivatedAt === "number") return record.firstActivatedAt;
+  const times = (record.devices || [])
+    .map((device) => device.registeredAt)
+    .filter((time): time is number => typeof time === "number" && Number.isFinite(time));
+  return times.length > 0 ? Math.min(...times) : null;
+}
+
+/**
+ * The expiry that applies to a session: the fixed period from the record when
+ * the record knows its start, otherwise the token's own expiry. When both exist
+ * the earlier one wins — a token issued by a re-activation before SEC-01 carries
+ * a later date than the licence actually allows.
+ */
+export function effectiveLicenseExpiry(
+  record: LicenseDeviceRecord | null | undefined,
+  plan: string,
+  tokenExpiresAt: number | null,
+): number | null {
+  const startedAt = licenseStartedAt(record);
+  const fixed = startedAt === null ? null : calculateExpiry(plan, startedAt);
+  if (fixed === null) return startedAt === null ? tokenExpiresAt : null;
+  return tokenExpiresAt === null ? fixed : Math.min(fixed, tokenExpiresAt);
+}
+
+function keepStartDate(record: LicenseDeviceRecord): void {
+  const startedAt = licenseStartedAt(record);
+  if (startedAt !== null) record.firstActivatedAt = startedAt;
+}
+
+function formatKoreanDate(ms: number): string {
+  return new Date(ms).toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul" });
+}
 const RECORD_PREFIX = "private/license-records/";
 let cachedR2Client: S3Client | null = null;
 
@@ -257,7 +314,17 @@ export async function registerDeviceForKey(
   plan: string,
   deviceId: string,
   deviceName: string,
-): Promise<{ success: boolean; error?: string; devices: RegisteredDevice[]; maxDevices: number }> {
+): Promise<{
+  success: boolean;
+  error?: string;
+  devices: RegisteredDevice[];
+  maxDevices: number;
+  /** Start of the paid period (first registration). Absent only for a revoked key. */
+  firstActivatedAt?: number;
+  /** Fixed end of the paid period, null for lifetime plans. */
+  expiresAt?: number | null;
+  expired?: boolean;
+}> {
   const normalizedKey = normalizeKey(key);
   const record: LicenseDeviceRecord = (await loadRecord(normalizedKey)) || {
     key: normalizedKey,
@@ -277,12 +344,28 @@ export async function registerDeviceForKey(
   }
 
   const now = Date.now();
+  // SEC-01: the period starts at the first registration and never restarts.
+  const firstActivatedAt = licenseStartedAt(record) ?? now;
+  const expiresAt = calculateExpiry(plan, firstActivatedAt);
+  if (expiresAt !== null && expiresAt <= now) {
+    return {
+      success: false,
+      error: `이용 기간이 끝난 이용권입니다. (첫 등록 ${formatKoreanDate(firstActivatedAt)} · 만료 ${formatKoreanDate(expiresAt)})`,
+      devices: record.devices,
+      maxDevices: effectiveMaxDevices,
+      firstActivatedAt,
+      expiresAt,
+      expired: true,
+    };
+  }
+  record.firstActivatedAt = firstActivatedAt;
+
   const existing = record.devices.find((device) => device.deviceId === deviceId);
   if (existing) {
     existing.lastSeenAt = now;
     if (deviceName) existing.deviceName = deviceName;
     await saveRecord(record);
-    return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices };
+    return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices, firstActivatedAt, expiresAt };
   }
 
   if (record.devices.length >= effectiveMaxDevices) {
@@ -291,6 +374,8 @@ export async function registerDeviceForKey(
       error: `이용권 등록 가능한 최대 기기 수(${effectiveMaxDevices}대)를 초과하였습니다. 기존 기기에서 등록을 해제하신 후 다시 시도해 주세요.`,
       devices: record.devices,
       maxDevices: effectiveMaxDevices,
+      firstActivatedAt,
+      expiresAt,
     };
   }
 
@@ -301,7 +386,7 @@ export async function registerDeviceForKey(
     lastSeenAt: now,
   });
   await saveRecord(record);
-  return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices };
+  return { success: true, devices: record.devices, maxDevices: effectiveMaxDevices, firstActivatedAt, expiresAt };
 }
 
 export async function unregisterDeviceFromKey(
@@ -310,6 +395,7 @@ export async function unregisterDeviceFromKey(
 ): Promise<{ success: boolean; devices: RegisteredDevice[]; maxDevices: number }> {
   const record = await loadRecord(key);
   if (!record) return { success: true, devices: [], maxDevices: MAX_DEVICES_PER_KEY };
+  keepStartDate(record);
   record.devices = record.devices.filter((device) => device.deviceId !== deviceId);
   await saveRecord(record);
   return {
@@ -322,6 +408,7 @@ export async function unregisterDeviceFromKey(
 export async function resetAllDevicesForKey(key: string): Promise<{ success: boolean }> {
   const record = await loadRecord(key);
   if (record) {
+    keepStartDate(record);
     record.devices = [];
     await saveRecord(record);
   }
@@ -342,6 +429,7 @@ export async function revokeLicenseKey(
   record.isRevoked = true;
   record.revokedAt = Date.now();
   record.revokeReason = reason;
+  keepStartDate(record);
   record.devices = [];
   await saveRecord(record);
   return { success: true, record };

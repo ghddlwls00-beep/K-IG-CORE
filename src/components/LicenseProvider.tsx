@@ -119,11 +119,24 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
           })
             .then(async (res) => {
               const data = (await res.json().catch(() => null)) as
-                | { valid?: boolean; error?: string }
+                | { valid?: boolean; error?: string; expiresAt?: number | null }
                 | null;
 
               if (res.ok && data?.valid) {
-                setStored(parsed);
+                // SEC-01: the server fixes the period to the first registration. A copy
+                // saved by an earlier re-activation can show a later date — take the server's.
+                const fixed =
+                  data.expiresAt !== undefined && data.expiresAt !== parsed.expiresAt
+                    ? { ...parsed, expiresAt: data.expiresAt }
+                    : parsed;
+                if (fixed !== parsed) {
+                  try {
+                    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(fixed));
+                  } catch {
+                    // ignore
+                  }
+                }
+                setStored(fixed);
                 if (SERVER_GATED_LESSON_PATH.test(window.location.pathname)) {
                   const reloadKey = `kig:license-cookie:${storedToken.slice(-16)}`;
                   if (!window.sessionStorage.getItem(reloadKey)) {

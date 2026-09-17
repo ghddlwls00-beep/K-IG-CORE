@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { verifyLicenseToken } from "@/lib/serverLicense";
-import { getDeviceRecordForKey } from "@/lib/deviceStorage";
+import { effectiveLicenseExpiry, getDeviceRecordForKey } from "@/lib/deviceStorage";
 import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
 
 export async function POST(request: Request) {
@@ -90,10 +90,20 @@ export async function POST(request: Request) {
       }
     }
 
+    // 5. SEC-01: the paid period is fixed to the first registration. A token issued
+    // by a re-activation before that rule carries a later date; the record wins.
+    const fixedExpiresAt = effectiveLicenseExpiry(record, plan, expiresAt);
+    if (fixedExpiresAt !== null && fixedExpiresAt <= Date.now()) {
+      return NextResponse.json(
+        { valid: false, error: "이용 기간이 만료되었습니다.", expired: true, expiresAt: fixedExpiresAt },
+        { status: 403 },
+      );
+    }
+
     const response = NextResponse.json({
       valid: true,
       plan,
-      expiresAt,
+      expiresAt: fixedExpiresAt,
     });
     response.cookies.set({
       name: LICENSE_SESSION_COOKIE_NAME,
@@ -102,8 +112,8 @@ export async function POST(request: Request) {
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",
-      maxAge: expiresAt
-        ? Math.max(1, Math.floor((expiresAt - Date.now()) / 1000))
+      maxAge: fixedExpiresAt
+        ? Math.max(1, Math.floor((fixedExpiresAt - Date.now()) / 1000))
         : 365 * 24 * 60 * 60,
     });
     return response;

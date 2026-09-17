@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import {
-  calculateExpiry,
   issueLicenseToken,
   validateLicenseKey,
 } from "@/lib/serverLicense";
@@ -53,14 +52,17 @@ export async function POST(request: Request) {
           error: regResult.error,
           registeredDevicesCount: regResult.devices.length,
           maxDevices: regResult.maxDevices,
+          ...(regResult.expired ? { expired: true, expiresAt: regResult.expiresAt } : {}),
         },
         { status: 403 },
       );
     }
 
-    // 3. Calculate expiry & issue cryptographically signed license proof token
+    // 3. Issue the signed token. SEC-01: the expiry comes from the licence's first
+    // registration (kept on the record), not from this activation — re-entering
+    // a code must never extend a fixed-term plan.
     const now = Date.now();
-    const expiresAt = calculateExpiry(validation.plan, now);
+    const expiresAt = regResult.expiresAt ?? null;
     const licenseToken = issueLicenseToken(
       key,
       validation.plan,
@@ -71,7 +73,7 @@ export async function POST(request: Request) {
     const response = NextResponse.json({
       success: true,
       plan: validation.plan,
-      activatedAt: now,
+      activatedAt: regResult.firstActivatedAt ?? now,
       expiresAt,
       licenseToken,
       registeredDevicesCount: regResult.devices.length,
