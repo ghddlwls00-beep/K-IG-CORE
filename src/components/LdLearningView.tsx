@@ -428,7 +428,7 @@ export function LdLearningView({
                 className={
                   "flex flex-col items-center justify-center rounded-xl py-1.5 px-1 sm:py-2.5 sm:px-2 transition-all cursor-pointer select-none text-center min-w-0 whitespace-nowrap " +
                   (active
-                    ? "bg-ink font-semibold text-white shadow-xs ring-1 ring-white/10"
+                    ? "bg-ink font-semibold text-surface shadow-xs ring-1 ring-white/10"
                     : "text-ink-soft hover:bg-raised hover:text-ink")
                 }
               >
@@ -479,7 +479,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={() => toggleWholePassage(speedRate)}
-                className="inline-flex items-center gap-3 rounded-full bg-ink px-8 py-4 text-[16px] font-bold text-white shadow-lg hover:bg-black/90 active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center gap-3 rounded-full bg-ink px-8 py-4 text-[16px] font-bold text-surface shadow-lg hover:opacity-90 active:scale-95 transition-all cursor-pointer"
               >
                 <span className="text-[18px]">{speedPlaying ? "⏹️ 정지" : "▶️ 전체 본문 듣기"}</span>
               </button>
@@ -595,7 +595,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={() => goToStep("step2_dictation")}
-                className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
               >
                 <span>다음: Step 2 탭-딕테이션 이동</span>
                 <span>→</span>
@@ -692,7 +692,7 @@ export function LdLearningView({
                 <button
                   type="button"
                   onClick={() => playText(currentDictationItem.en, 1.0)}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-white shadow-xs hover:bg-black/90 active:scale-95 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-surface shadow-xs hover:opacity-90 active:scale-95 transition-all cursor-pointer"
                 >
                   <span>🔊 표준 속도</span>
                 </button>
@@ -740,11 +740,11 @@ export function LdLearningView({
                         key={tile.id}
                         type="button"
                         onClick={() => handleRemoveTile(tile)}
-                        className="group inline-flex items-center gap-1.5 rounded-xl bg-ink px-3.5 py-1.5 font-mono text-[14px] font-bold text-white shadow-xs hover:bg-red-700 transition-colors cursor-pointer"
+                        className="group inline-flex items-center gap-1.5 rounded-xl bg-ink px-3.5 py-1.5 font-mono text-[14px] font-bold text-surface shadow-xs hover:bg-red-700 hover:text-white transition-colors cursor-pointer"
                         title="클릭하여 되돌리기"
                       >
                         <span>{tile.word}</span>
-                        <span className="text-[10px] text-white/50 group-hover:text-white">✕</span>
+                        <span className="text-[10px] text-surface/60 group-hover:text-white">✕</span>
                       </button>
                     ))
                   )}
@@ -856,7 +856,7 @@ export function LdLearningView({
             <button
               type="button"
               onClick={() => goToStep("step3_liaison")}
-              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
             >
               <span>다음: Step 3 소리 클리닉 이동</span>
               <span>→</span>
@@ -910,7 +910,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={() => playText(currentLiaisonSentence.en, 0.9)}
-                className="inline-flex items-center gap-1 rounded-lg bg-ink px-3 py-1 text-[11.5px] font-bold text-white hover:bg-black/90 cursor-pointer"
+                className="inline-flex items-center gap-1 rounded-lg bg-ink px-3 py-1 text-[11.5px] font-bold text-surface hover:opacity-90 cursor-pointer"
               >
                 <span>🔊 문장 전체 발음</span>
               </button>
@@ -987,7 +987,7 @@ export function LdLearningView({
             <button
               type="button"
               onClick={() => goToStep("step4_shadowing")}
-              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
             >
               <span>다음: Step 4 섀도잉 & 발음 테스트 이동</span>
               <span>→</span>
@@ -1056,7 +1056,7 @@ export function LdLearningView({
             {/* Listening Step 1 */}
             <div className="rounded-2xl border border-line bg-surface p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-white text-xs font-bold">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-surface text-xs font-bold">
                   1
                 </span>
                 <div>
@@ -1068,7 +1068,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={() => playText(currentShadowSentence.en, 1.0)}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-white hover:bg-black/90 transition-all cursor-pointer shadow-xs"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-surface hover:opacity-90 transition-all cursor-pointer shadow-xs"
               >
                 <span>🔊 소리 듣기</span>
               </button>
@@ -1116,7 +1116,7 @@ export function LdLearningView({
             <button
               type="button"
               onClick={() => goToStep("step5_speed")}
-              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-white hover:bg-[#222126] transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
             >
               <span>다음: Step 5 1.5배속 청취 & 대조 이동</span>
               <span>→</span>
@@ -1175,7 +1175,7 @@ export function LdLearningView({
                   className={
                     "rounded-xl px-3.5 py-1.5 text-[12px] font-semibold transition-all cursor-pointer shadow-2xs " +
                     (speedRate === item.r
-                      ? "bg-ink text-white font-bold"
+                      ? "bg-ink text-surface font-bold"
                       : "border border-line bg-surface text-ink-soft hover:bg-raised hover:text-ink")
                   }
                 >

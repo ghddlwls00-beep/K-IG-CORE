@@ -287,7 +287,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                     <div className="mt-5 sm:mt-8 flex items-center gap-4">
                       <Link
                         href={`/${targetCourse}`}
-                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 sm:px-8 py-3 sm:py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
+                        className="group inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 sm:px-8 py-3 sm:py-3.5 text-[14px] sm:text-[15px] font-medium tracking-wide text-surface transition-all duration-300 hover:opacity-90 hover:shadow-xl active:scale-[0.98] border border-white/10 shadow-md"
                       >
                         <span>학습 시작하기</span>
                         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

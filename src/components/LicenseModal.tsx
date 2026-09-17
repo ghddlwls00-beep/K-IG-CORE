@@ -229,7 +229,7 @@ export function LicenseModal() {
                   <button
                     type="submit"
                     disabled={isSubmitting || !inputCode.trim()}
-                    className="rounded-xl bg-ink px-3 py-1.5 text-[12px] font-bold text-white hover:bg-black/80 disabled:opacity-40 cursor-pointer shrink-0"
+                    className="rounded-xl bg-ink px-3 py-1.5 text-[12px] font-bold text-surface hover:opacity-90 disabled:opacity-40 cursor-pointer shrink-0"
                   >
                     {isSubmitting ? "확인 중" : "등록"}
                   </button>

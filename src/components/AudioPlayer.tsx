@@ -228,7 +228,7 @@ export function AudioPlayer({
           type="button"
           onClick={toggle}
           aria-label={showPauseIcon ? t("player.pause") : t("player.play")}
-          className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-ink text-white hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer hover:bg-black/90"
+          className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-ink text-surface hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer hover:opacity-90"
         >
           {showPauseIcon ? (
             <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden>

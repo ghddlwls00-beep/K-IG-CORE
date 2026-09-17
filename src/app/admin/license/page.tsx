@@ -415,7 +415,7 @@ export default function AdminLicensePage() {
             <button
               type="submit"
               disabled={isLoggingIn}
-              className="w-full rounded-xl bg-ink py-3 text-[14px] font-bold text-white hover:bg-black/80 transition-all cursor-pointer shadow-xs disabled:opacity-50"
+              className="w-full rounded-xl bg-ink py-3 text-[14px] font-bold text-surface hover:opacity-90 transition-all cursor-pointer shadow-xs disabled:opacity-50"
             >
               {isLoggingIn ? "인증 확인 중..." : "관리자 모드 접속"}
             </button>
@@ -516,7 +516,7 @@ export default function AdminLicensePage() {
                         onClick={() => setSelectedPlan(plan)}
                         className={`rounded-2xl border p-4 text-left transition-all cursor-pointer ${
                           active
-                            ? "border-black bg-ink text-white shadow-sm"
+                            ? "border-ink bg-ink text-surface shadow-sm"
                             : "border-black/10 bg-white text-ink hover:border-black/30"
                         }`}
                       >
@@ -608,7 +608,7 @@ export default function AdminLicensePage() {
             <button
               type="button"
               onClick={handleGenerate}
-              className="rounded-2xl bg-ink py-3.5 text-[15px] font-bold text-white hover:bg-black/85 transition-all cursor-pointer shadow-sm active:scale-[0.99] flex items-center justify-center gap-2"
+              className="rounded-2xl bg-ink py-3.5 text-[15px] font-bold text-surface hover:opacity-90 transition-all cursor-pointer shadow-sm active:scale-[0.99] flex items-center justify-center gap-2"
             >
               <span>⚡ {getPlanLabel(selectedPlan)} 코드 즉시 발급하기 (기기 {maxDevicesPerKey}대 한도)</span>
             </button>
@@ -648,7 +648,7 @@ export default function AdminLicensePage() {
                     <button
                       type="button"
                       onClick={() => copyToClipboard(key)}
-                      className="rounded-lg border border-black/10 bg-gray-50 px-3 py-1.5 font-mono text-[12px] font-semibold text-ink hover:bg-ink hover:text-white transition-colors cursor-pointer"
+                      className="rounded-lg border border-black/10 bg-gray-50 px-3 py-1.5 font-mono text-[12px] font-semibold text-ink hover:bg-ink hover:text-surface transition-colors cursor-pointer"
                     >
                       {copiedKey === key ? "✓ 복사됨" : "코드 복사"}
                     </button>

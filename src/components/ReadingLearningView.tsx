@@ -808,7 +808,7 @@ export function ReadingLearningView({
                       className={`flex h-8 w-8 items-center justify-center rounded-full transition-all cursor-pointer ${
                         isPlaying
                           ? "bg-red-500 text-white"
-                          : "bg-raised text-ink-soft hover:bg-ink hover:text-white"
+                          : "bg-raised text-ink-soft hover:bg-ink hover:text-surface"
                       }`}
                       title="발음 듣기"
                     >

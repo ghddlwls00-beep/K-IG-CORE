@@ -50,7 +50,7 @@ export default function Error({
         <button
           type="button"
           onClick={() => reset()}
-          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink px-6 py-3 text-[14px] font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#222126] active:scale-[0.98] border border-white/10"
+          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink px-6 py-3 text-[14px] font-medium tracking-wide text-surface transition-all duration-300 hover:opacity-90 active:scale-[0.98] border border-white/10"
         >
           다시 시도
         </button>

@@ -161,7 +161,9 @@
 - **재현** 이용권 없는 새 브라우저 → `/reading/pr100` → `🛒 구매 안내` · **기대** 구매처 링크 · **실제** "구매 링크 준비 중"
 - **영향** 신규 방문자가 살 방법이 없음 · **증거** 새 프로필 모바일 폭 캡처 텍스트 (2026-09-17) · **원인** 환경변수 미설정 · **해결** 소유자가 구매처 URL 결정·설정 (결제·환경변수 영역이라 Claude 는 수정 안 함) · **검증** 같은 절차로 링크 표시·새 창 열림 · **확신도** 높음
 
-### ISS-16 다크 모드에서 재생·주요 버튼의 글자·아이콘이 거의 안 보임 (UX-01)
+### ISS-16 다크 모드에서 재생·주요 버튼의 글자·아이콘이 거의 안 보임 (UX-01) — ✅ 로컬 수정·검증, 배포 대기
+
+> **수정 (2026-09-17):** `bg-ink` 와 짝지은 `text-white` 26곳 → `text-surface` (사이트의 다른 `bg-ink` 버튼과 같은 방식). 다크 모드에서 다시 어두워지던 hover 배경(`hover:bg-black/90` `#222126` `#2a292e`) → `hover:opacity-90`. VOCA 발음 버튼은 빨간 "정지" 상태만 흰 글자로 분리, 받아쓰기 단어 타일은 ✕ 표시까지 `text-surface/60`, 빨간 hover 때만 흰 글자. 관리자 화면 4곳 포함. **검증:** 새 스크립트 `scripts/check-dark-buttons.cjs` — 7화면(홈·READING·LISTENING 전 단계·VOCA 전 단계·GRAMMAR·STUDENT·404) × 라이트/다크에서 `bg-ink` 요소의 글자·아이콘 대비 88곳: **운영(수정 전) 23곳 1.11:1 → 로컬 빌드(수정 후) 0곳, 최소 17.39:1** (라이트 17.52:1). 캡처 확인 `/ld/d001` 다크 재생 버튼. 관리자 화면(PIN 필요)·단어 타일·이용권 창 버튼은 소스 검사로만 확인 (`bg-ink`+`text-white` 남은 곳 0).
 - **분류** UX·접근성 · **심각도** High · **접근** 모든 방문자(무료·유료), 시스템 다크 모드
 - **위치** `bg-ink` + `text-white` 26곳 — `src/components/AudioPlayer.tsx:231`(모든 레슨 큰 재생 버튼), `LdLearningView.tsx` 12곳, `PhonicsLearningView.tsx` 4곳, `LandingPage.tsx:290`, `error.tsx:53`, `not-found.tsx:42`, `LicenseModal.tsx:232`, `ReadingLearningView.tsx:833`, 관리자 4곳; 색 정의 `src/app/globals.css:45,71`
 - **재현 조건** 휴대폰·PC 시스템 설정 다크 모드 · **단계** `/reading/pr001` 열기 → 재생 버튼 보기

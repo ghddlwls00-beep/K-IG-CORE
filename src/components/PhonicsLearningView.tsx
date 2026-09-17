@@ -568,10 +568,10 @@ export function PhonicsLearningView({
                   <button
                     type="button"
                     onClick={() => playWord(selectedWord)}
-                    className={`flex items-center gap-2 rounded-2xl px-5 py-3 text-[13.5px] font-bold text-white shadow-xs transition-all cursor-pointer active:scale-95 ${
+                    className={`flex items-center gap-2 rounded-2xl px-5 py-3 text-[13.5px] font-bold shadow-xs transition-all cursor-pointer active:scale-95 ${
                       activeWord === selectedWord
-                        ? "bg-rose-600 hover:bg-rose-700"
-                        : "bg-ink hover:bg-[#2a292e]"
+                        ? "bg-rose-600 text-white hover:bg-rose-700"
+                        : "bg-ink text-surface hover:opacity-90"
                     }`}
                   >
                     <span>{activeWord === selectedWord ? "⏹️ 정지" : "🔊 발음 청취"}</span>
@@ -894,7 +894,7 @@ export function PhonicsLearningView({
               <button
                 type="button"
                 onClick={() => resetRecall(0)}
-                className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
+                className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-surface shadow-xs hover:opacity-90 transition-all cursor-pointer"
               >
                 처음부터 다시 풀기 ↺
               </button>
@@ -1015,7 +1015,7 @@ export function PhonicsLearningView({
                       <button
                         type="button"
                         onClick={handleNextRecall}
-                        className="rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
+                        className="rounded-xl bg-ink px-4 py-2 text-[12.5px] font-bold text-surface shadow-xs hover:opacity-90 transition-all cursor-pointer"
                       >
                         {isLastRecall ? "결과 보기 →" : "다음 문제 풀기 →"}
                       </button>
@@ -1255,7 +1255,7 @@ export function PhonicsLearningView({
               <button
                 type="button"
                 onClick={startSpeedGame}
-                className="rounded-2xl bg-ink px-8 py-3.5 text-[15px] font-bold text-white shadow-md hover:bg-[#2a292e] transition-all cursor-pointer active:scale-95"
+                className="rounded-2xl bg-ink px-8 py-3.5 text-[15px] font-bold text-surface shadow-md hover:opacity-90 transition-all cursor-pointer active:scale-95"
               >
                 도전 시작하기 (60초 타이머) ⚡
               </button>
@@ -1301,7 +1301,7 @@ export function PhonicsLearningView({
                 <button
                   type="button"
                   onClick={startSpeedGame}
-                  className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-[#2a292e] transition-all cursor-pointer"
+                  className="rounded-2xl bg-ink px-6 py-3 text-[13.5px] font-bold text-surface shadow-xs hover:opacity-90 transition-all cursor-pointer"
                 >
                   다시 도전하기 ↺
                 </button>
