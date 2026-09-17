@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { NON_PAGE_SOURCES, NO_SCRIPT_CONTENT_SECURITY_POLICY } from "./src/lib/csp";
 
 /**
  * RE-006 — Content-Security-Policy.
@@ -25,8 +26,8 @@ import type { NextConfig } from "next";
  * `NEXT_PUBLIC_MEDIA_URL` is unset, so `mediaUrl()` keeps every clip on this
  * origin. The R2 endpoints in `src/lib/` are server-side and CSP never sees them.
  *
- * If something does break, this is one boolean and a redeploy away from being
- * Report-Only again.
+ * If something does break, this was one boolean and a redeploy away from being
+ * Report-Only again. (Removed with SEC-05 — see below.)
  *
  * THE POLICY IS TIGHT BECAUSE THE SITE IS FULLY SAME-ORIGIN. Checked against
  * the built HTML: the only absolute URLs on any page are this site's own
@@ -60,36 +61,23 @@ import type { NextConfig } from "next";
  * gesture. A `data:` media resource can neither run script nor reach another
  * origin, which is the same reason `img-src` and `font-src` already allow it.
  *
- * `'unsafe-inline'` IS REQUIRED FOR SCRIPT AND STYLE, and it is the honest
- * weakness here. Next injects its bootstrap and the RSC flight payload as
- * inline <script>, and the app sets inline `style` attributes throughout; with
- * no nonce or hash there is no way to allow them selectively. Removing it means
- * generating a per-request nonce, which needs a proxy — the same mechanism
- * RE-016 will need. Until then this policy still blocks the classes of attack
- * that matter most (external script injection, exfiltration to another origin,
- * framing, plugin content), and it is worth having now rather than waiting.
+ * SEC-05 — PAGES NO LONGER ALLOW `'unsafe-inline'` FOR SCRIPTS, AND THE PAGE
+ * POLICY IS NOT SENT FROM HERE ANY MORE. Next writes its bootstrap and the RSC
+ * flight payload as inline <script>, so this header had to allow every inline
+ * script, an injected one included. `src/proxy.ts` now sends each page a policy
+ * with a fresh nonce instead (`script-src 'self' 'nonce-…' 'strict-dynamic'`).
+ * This file only sends `script-src 'none'`, and only on the paths that are not
+ * pages (`NON_PAGE_SOURCES`: framework files, `/api/*`, clips, images, root
+ * files). Both policies, the reasons for them, and why the two path sets must
+ * never overlap are written in `src/lib/csp.ts`.
+ *
+ * The Report-Only switch that used to sit here is gone with it: the page policy
+ * lives in the proxy, and taking SEC-05 back means reverting it.
  *
  * Deliberately absent: `upgrade-insecure-requests` (Vercel already serves HSTS
  * with preload) and `report-uri` (no collector exists — see STATUS-2026-09-16
  * §3-3; the console is the only channel, so the header carries no report target).
  */
-const CSP_REPORT_ONLY = false;
-
-const CSP = [
-  "default-src 'self'",
-  "base-uri 'self'",
-  "object-src 'none'",
-  "frame-ancestors 'none'",
-  "form-action 'self'",
-  "script-src 'self' 'unsafe-inline'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
-  "media-src 'self' blob: data:",
-  "font-src 'self' data:",
-  "connect-src 'self'",
-  "worker-src 'self' blob:",
-  "manifest-src 'self'",
-].join("; ");
 
 const nextConfig: NextConfig = {
   // Gzip / Brotli payload compression
@@ -118,14 +106,14 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=(self)" },
-          {
-            key: CSP_REPORT_ONLY
-              ? "Content-Security-Policy-Report-Only"
-              : "Content-Security-Policy",
-            value: CSP,
-          },
         ],
       },
+      // SEC-05: pages get their policy from `src/proxy.ts`; everything else gets
+      // this one. The two path sets are disjoint — see `src/lib/csp.ts`.
+      ...NON_PAGE_SOURCES.map((source) => ({
+        source,
+        headers: [{ key: "Content-Security-Policy", value: NO_SCRIPT_CONTENT_SECURITY_POLICY }],
+      })),
       // No blanket Cache-Control for /audio/* any more: a licensed clip must not
       // be stored by a shared cache and replayed to the next anonymous visitor.
       // The route handler sets public-immutable or private per object instead.

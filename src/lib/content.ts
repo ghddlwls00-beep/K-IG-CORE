@@ -7,9 +7,14 @@ import { TABS } from "./tabs";
 import { isFreePreviewLesson } from "./license";
 
 /**
- * Content access. Every read here is a file read at build time — there is no
- * database, no client, no connection pool. Next.js statically generates the
- * pages, so these functions never run in the browser or in a request path.
+ * Content access. Every read here is a file read — there is no database, no
+ * client, no connection pool, and these functions never run in the browser.
+ *
+ * They DO run in a request path. Since SEC-05 every page renders per request (the
+ * root layout reads the request headers for the CSP nonce), so a lesson file is
+ * read from `content/` on the server the first time an instance serves it, then
+ * kept in the cache below. The `content/` files are traced into each page's
+ * server bundle by the build.
  */
 
 const CONTENT_DIR = path.join(process.cwd(), "content");

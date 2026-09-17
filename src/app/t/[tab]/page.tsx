@@ -10,18 +10,19 @@ export function generateStaticParams() {
 }
 
 /**
- * RE-016: unknown tabs must be rejected by the ROUTER, not by this page.
+ * RE-016: unknown tabs must be rejected BEFORE this page, not by it.
  *
- * With the default (`dynamicParams = true`) an unknown tab is rendered on
- * demand, `notFound()` is thrown mid-render, and because the response has
- * already started streaming Next flushes an EMPTY shell with a 404 status —
- * the not-found content only exists inside the script tags, so a visitor sees
- * a blank page until React runs and a crawler sees a blank page forever.
+ * An unknown tab that reaches this page calls `notFound()` mid-render, and Next
+ * answers 404 with an EMPTY shell — the not-found content only exists inside the
+ * script tags, so a visitor sees a blank page until React runs and a crawler
+ * sees a blank page forever.
  *
- * `false` makes the router handle it the way it already handles a path that
- * matches no route, which is the shape that rendered the 404 server-side.
- *
- * Safe: every tab comes from `getTabs()` and the site is fully static.
+ * `dynamicParams = false` used to stop that here, because the page was
+ * prerendered. SINCE SEC-05 IT NO LONGER DOES: the root layout reads the request
+ * headers for the CSP nonce, every page renders per request, and Next only
+ * enforces `dynamicParams = false` for prerendered routes. `src/proxy.ts`
+ * rejects unknown `/t/<tab>` paths before they get here. The export is kept so
+ * the router guard returns by itself if the page is ever prerendered again.
  */
 export const dynamicParams = false;
 

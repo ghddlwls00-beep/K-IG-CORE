@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { headers } from "next/headers";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { ProgressProvider } from "@/components/ProgressProvider";
 import { LicenseProvider } from "@/components/LicenseProvider";
@@ -63,17 +64,26 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // The original kept this bar in a permanent frame; putting it in the root
   // layout is the modern equivalent — it renders once and never reloads.
   const tabs = getTabs();
   const courseTabs = getCourseTabMap();
 
+  // SEC-05: the per-request CSP nonce made by `src/proxy.ts` (see `src/lib/csp.ts`).
+  // Next stamps it on every <script> it writes by itself, but NOT on this one: a
+  // `beforeInteractive` script is re-created later in the browser from its props,
+  // and without the prop that copy has no nonce. Reading the request headers here
+  // is also what makes every page render per request — a prerendered page would
+  // carry no nonce at all and every script on it would be blocked.
+  // It is null for a Link prefetch, which skips the proxy and is not a document.
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="ko" translate="no" className="notranslate" suppressHydrationWarning>
       <head>
         <meta name="google" content="notranslate" />
-        <Script id="kig-theme" strategy="beforeInteractive">
+        <Script id="kig-theme" strategy="beforeInteractive" nonce={nonce}>
           {`(function(){try{var s=localStorage.getItem('kig:theme');var t=s==='light'||s==='dark'?s:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;}catch(e){}})();`}
         </Script>
       </head>

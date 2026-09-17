@@ -14,22 +14,23 @@ export function generateStaticParams() {
 }
 
 /**
- * RE-016: unknown params must be rejected by the ROUTER, not by this page.
+ * RE-016: unknown params must be rejected BEFORE this page, not by it.
  *
- * With the default (`dynamicParams = true`) an unknown course is rendered on
- * demand, `notFound()` is thrown mid-render, and because the response has
- * already started streaming Next flushes an EMPTY shell — `<div hidden></div>`
- * plus the flight payload — with a 404 status. The not-found content exists
- * only inside the script tags, so a visitor sees a blank page until React runs,
- * and a crawler or a JS-disabled client sees a blank page forever.
+ * An unknown course that reaches this page calls `notFound()` mid-render, and
+ * Next answers 404 with an EMPTY shell — `<div hidden></div>` plus the flight
+ * payload. The not-found content exists only inside the script tags, so a
+ * visitor sees a blank page until React runs, and a crawler or a JS-disabled
+ * client sees a blank page forever.
  *
- * `false` makes the router handle it the same way it handles a path that
- * matches no route at all, which is the one shape that already rendered the
- * 404 server-side.
+ * `dynamicParams = false` used to stop that here: the page was prerendered, so
+ * the router itself answered an unknown course with a readable 404.
  *
- * Safe here because the param space is fully known at build time: every course
- * comes from `getCourses()` and the site is fully static, so a course that is
- * not in this list does not exist.
+ * SINCE SEC-05 IT NO LONGER DOES. The root layout reads the request headers for
+ * the CSP nonce, so this page renders per request, and Next only enforces
+ * `dynamicParams = false` for a route it has prerendered. `src/proxy.ts` now
+ * rejects unknown one-segment paths before they get here. The export is kept so
+ * that the router guard comes back by itself if the page is ever prerendered
+ * again; do not rely on it while the layout reads headers.
  */
 export const dynamicParams = false;
 

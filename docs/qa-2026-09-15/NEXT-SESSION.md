@@ -160,7 +160,7 @@ VOCA · LISTENING · READING · GRAMMAR I/II · STUDENT · CNN 각 1개 레슨,
 두 가지 순서로 했고 모두 0건이었습니다. 배포 후 **소유자가 아이폰 실기기에서 소리가
 나는 것을 확인했습니다.**
 
-### 🔴 새 레슨을 추가하거나 id 를 바꾸면
+### 🔴 새 레슨·새 페이지·`public/` 새 파일을 추가하거나 id 를 바꾸면
 
 `src/lib/generated/validRoutes.json` 을 반드시 다시 만드세요. proxy 가 이걸 읽습니다.
 
@@ -170,6 +170,24 @@ node scripts/buildValidRoutes.mjs
 
 `prebuild` 가 해 주지만 **`npx next build` 는 `prebuild` 를 돌리지 않습니다.**
 `s19-3` 을 복원했을 때 이 목록이 낡아서 새 레슨이 통째로 404 였습니다.
+
+**SEC-05 이후로는 레슨만이 아닙니다.** proxy 가 1단 경로(`/terms` 같은 새 페이지)와 점이 들어간
+경로(`public/` 의 새 파일)까지 목록에 없으면 404 로 보냅니다. 법적 문서 페이지를 `src/app/(legal)/terms/page.tsx`
+처럼 추가해도 스캔이 찾지만, 목록을 다시 만들지 않은 빌드에서는 404 입니다. 추가 후
+`node docs/qa-2026-09-15/scripts/verify/verify-proxy-allowlist.cjs <로컬 주소> --nonce` 로 확인하세요.
+
+### SEC-05 (nonce CSP) — 배포했다면 바로 확인
+
+페이지는 `src/proxy.ts` 가 요청마다 nonce 정책을, 파일·API·음원·이미지는 `next.config.ts` 가
+`script-src 'none'` 을 보냅니다. 두 경로 집합은 겹치면 안 됩니다 (`src/lib/csp.ts` 맨 위 설명).
+배포 직후:
+
+```bash
+node docs/qa-2026-09-17/scripts/verify-csp-nonce.cjs --base https://k-ig-core.vercel.app
+```
+
+변경 전 운영 기준값은 `docs/qa-2026-09-17/out/csp-nonce-baseline-prod.json` 입니다 (속도 N6 비교용).
+정적으로 나가던 홈·목록·무료 레슨이 요청마다 렌더링되므로 속도·Vercel 실행량이 늘어납니다 — 소유자가 알고 결정한 대가입니다.
 
 ### 검증 공통 규칙 — 오늘 실제로 난 실패에서 나온 것
 

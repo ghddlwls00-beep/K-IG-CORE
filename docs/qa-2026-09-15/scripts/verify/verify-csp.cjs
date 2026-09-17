@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 /**
+ * ⚠️ SUPERSEDED — kept as the record of RE-006, not as a current check. It expects the Report-Only
+ * header of 8c59d82 and has failed by design since the policy was enforced (71b9491). Since SEC-05 the
+ * page policy is a per-request nonce sent by `src/proxy.ts`; the current probe is
+ * `docs/qa-2026-09-17/scripts/verify-csp-nonce.cjs`.
+ *
  * RE-006 — Content-Security-Policy probe.
  *
  * WHY THIS EXISTS. A CSP is the one header that can take the whole site down at

@@ -30,16 +30,22 @@
  *    exit code covers both: a run that fixes the 404s by breaking `/ld/d001` is
  *    a failure, not a partial success.
  *
- * MISSING — six shapes, because the rendering path depends on how deep the path
+ * MISSING — several shapes, because the rendering path depends on how deep the path
  * is and which dynamic route it collides with:
  *
- *   /x            matches [course]              -> router, already fine
+ *   /x            matches [course]              -> was the router; since SEC-05
+ *                                                  every page renders per request
+ *                                                  and only the proxy stops it
  *   /x/y          matches [course]/[lesson]     -> the page calls notFound()
  *   /x/y/z        matches no route at all       -> the control
  *   /ld/x         matches [course]/[lesson] with a real course
  *   /t/x          matches t/[tab]
  *   /reading/x    a second real course, so a course-shaped hole cannot hide
  *   /student/x    [student]/[lesson] is rendered on demand, not prerendered
+ *   /admin        a real folder with no page of its own, one segment
+ *   /x.html       a typo with a dot: was the router, now the proxy's second matcher
+ *   /.x           the same, starting with the dot
+ *   /ld/x.html    the same at two segments — this one was blank before SEC-05
  *
  * REAL — the pages the same code path must keep serving. `/student/s1-1` is
  * here because that route is dynamic (it reads the licence cookie and is
@@ -72,6 +78,10 @@ const MISSING = [
   `/t/kig-404-probe-${S}`,
   `/reading/kig-404-probe-${S}`,
   `/student/kig-404-probe-${S}`,
+  "/admin",
+  `/kig-404-probe-${S}.html`,
+  `/.kig-404-probe-${S}`,
+  `/ld/kig-404-probe-${S}.html`,
 ];
 
 /**
@@ -87,15 +97,19 @@ const MISSING = [
  */
 const REAL = [
   { path: "/", min: 200 },
+  // A course list: one segment, which the proxy has denied by default since SEC-05.
+  { path: "/ld", min: 200 },
+  { path: "/student", min: 200 },
   { path: "/ld/d001", min: 200 },
   { path: "/ld/d001-1", min: 200 },
   { path: "/reading/pr001", min: 200 },
   { path: "/student/s1-1", min: 200 },
-  // `/student/s1`–`s5` exist on disk but are NOT in `content/courses/student.json`.
-  // They answer 200 in production, and an allow list built from the course index
-  // instead of the lesson directory turns every one of them into a 404. That is
-  // the exact failure this probe is here to catch, so one of them is pinned.
-  { path: "/student/s1", min: 200 },
+  // `/student/s1`–`s5` used to be pinned here: they were on disk but not in the
+  // course index, so they caught an allow list built from the index. They were
+  // removed on purpose in f3f6cb6 (S-30: overview pages whose titles did not
+  // match their content), so they are 404s now and are no longer a real page.
+  // A locked STUDENT lesson stands in: same dynamic route, cookie-reading path.
+  { path: "/student/s10-1", min: 200 },
   { path: "/phonics/mv1-01", min: 200 },
   { path: "/grammar1/gh1-006", min: 200 },
   { path: "/grammar2/gh2-007", min: 200 },

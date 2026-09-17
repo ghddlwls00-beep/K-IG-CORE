@@ -20,19 +20,19 @@ export function generateStaticParams() {
 }
 
 /**
- * RE-016: unknown params must be rejected by the ROUTER, not by this page.
+ * RE-016: unknown params must be rejected BEFORE this page, not by it.
  *
- * With the default (`dynamicParams = true`) an unknown lesson is rendered on
- * demand, `notFound()` is thrown mid-render, and because the response has
- * already started streaming Next flushes an EMPTY shell with a 404 status. The
- * not-found content then exists only inside the script tags, so a visitor sees
- * a blank page until React runs and a crawler sees a blank page forever.
+ * An unknown lesson that reaches this page calls `notFound()` mid-render, and
+ * Next answers 404 with an EMPTY shell. The not-found content then exists only
+ * inside the script tags, so a visitor sees a blank page until React runs and a
+ * crawler sees a blank page forever.
  *
- * `false` makes the router handle it the way it handles a path that matches no
- * route, which is the shape that rendered the 404 server-side.
- *
- * Safe: every lesson comes from `getAllLessonParams()` and the site is fully
- * static.
+ * `dynamicParams = false` DOES NOT PREVENT THAT HERE. Next only enforces it for
+ * a route it has prerendered, and this page never was: it reads the licence
+ * cookie on every request (and, since SEC-05, the root layout reads the request
+ * headers too). `src/proxy.ts` is what rejects an unknown `/student/<id>`, from
+ * a list of the lesson files on disk. The export is kept for the day the route
+ * is prerendered again.
  */
 export const dynamicParams = false;
 
