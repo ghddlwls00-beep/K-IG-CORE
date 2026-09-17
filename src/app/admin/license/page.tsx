@@ -1,45 +1,37 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { getPlanLabel, type LicensePlan } from "@/lib/license";
-import { getOrCreateDeviceId } from "@/lib/device";
+import {
+  buildAdminLicenseRows,
+  countLegacyToImport,
+  filterAdminLicenseRows,
+  formatKoreanDateTime,
+  parseKoreanDateTime,
+  type AdminLicenseRecord,
+  type LegacyHistoryItem,
+} from "@/lib/adminLicenseList";
 
-const GENERATED_HISTORY_KEY = "kig:admin:history";
+/**
+ * ISS-14 — the list below used to be this key in the ISSUING browser's localStorage,
+ * so any other browser (another PC, a phone, a cleared cache) showed "no codes issued"
+ * and the admin could not find a customer's code to block a refund. The list is now
+ * built from the server records (`/api/license/status`). The old key is only READ, to
+ * carry that browser's memos and issue dates over to the server (then removed).
+ */
+const LEGACY_HISTORY_KEY = "kig:admin:history";
 
-interface HistoryItem {
-  key: string;
-  plan: LicensePlan;
-  createdAt: string;
-  memo?: string;
-  maxDevices?: number;
-}
-
-interface DeviceInfo {
-  deviceId: string;
-  deviceName: string;
-  registeredAt: number;
-  lastSeenAt: number;
-}
-
-interface DeviceRecordMap {
-  [key: string]: {
-    key: string;
-    plan: string;
-    maxDevices?: number;
-    devices: DeviceInfo[];
-    isRevoked?: boolean;
-    revokedAt?: number;
-    revokeReason?: string;
-  };
-}
+type DeviceRecordMap = Record<string, AdminLicenseRecord>;
 
 interface AdminStudentProgress {
   unlockedThrough: number;
   completedLessons: number;
   lastLessonId?: string;
   updatedAt: number;
+  chapters?: { lessonIds: string[] }[];
 }
+
 
 export default function AdminLicensePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -55,11 +47,13 @@ export default function AdminLicensePage() {
   const [maxDevicesPerKey, setMaxDevicesPerKey] = useState<number>(2);
   const [memo, setMemo] = useState("");
   const [newlyGenerated, setNewlyGenerated] = useState<string[]>([]);
-  const [history, setHistory] = useState<HistoryItem[]>([]);
+  const [legacyHistory, setLegacyHistory] = useState<LegacyHistoryItem[]>([]);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Device registration records loaded from server
+  // Every issued code, from the server records
   const [deviceRecords, setDeviceRecords] = useState<DeviceRecordMap>({});
+  const [recordsLoaded, setRecordsLoaded] = useState(false);
   const [isRefreshingDevices, setIsRefreshingDevices] = useState(false);
   const [openProgressKey, setOpenProgressKey] = useState<string | null>(null);
   const [studentProgressByKey, setStudentProgressByKey] = useState<Record<string, AdminStudentProgress>>({});
@@ -83,9 +77,10 @@ export default function AdminLicensePage() {
     checkSession();
 
     try {
-      const raw = window.localStorage.getItem(GENERATED_HISTORY_KEY);
-      if (raw) {
-        setHistory(JSON.parse(raw));
+      const raw = window.localStorage.getItem(LEGACY_HISTORY_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(parsed)) {
+        setLegacyHistory(parsed.filter((item) => item && typeof item.key === "string"));
       }
     } catch {
       // ignore
@@ -108,6 +103,7 @@ export default function AdminLicensePage() {
       const data = await res.json();
       if (data.success && data.records) {
         setDeviceRecords(data.records);
+        setRecordsLoaded(true);
       } else if (res.status === 401) {
         setIsAuthenticated(false);
       }
@@ -175,17 +171,10 @@ export default function AdminLicensePage() {
       const data = await res.json();
       if (data.success && data.keys && data.items) {
         setNewlyGenerated(data.keys);
-        const updatedHistory = [...data.items, ...history].slice(0, 100);
-        setHistory(updatedHistory);
         setMemo("");
-
-        try {
-          window.localStorage.setItem(GENERATED_HISTORY_KEY, JSON.stringify(updatedHistory));
-        } catch {}
-
-        setTimeout(() => {
-          fetchDeviceStatus();
-        }, 300);
+        // The memo and issue time are on the server record now; nothing is written
+        // to this browser (ADM-06: customer names no longer sit in localStorage).
+        fetchDeviceStatus();
       } else {
         alert(data.error || "이용권 발급에 실패했습니다.");
       }
@@ -194,7 +183,19 @@ export default function AdminLicensePage() {
     }
   }
 
-  async function handleUpdateMaxDevices(key: string, newLimit: number) {
+  async function handleUpdateMaxDevices(key: string, currentLimit: number, newLimit: number) {
+    // ADM-03: the dropdown used to save on every change (an arrow key was enough to
+    // shrink a customer's limit). The select is controlled by the server value, so a
+    // cancelled change snaps back on the next render.
+    if (newLimit === currentLimit) return;
+    const deviceCount = deviceRecords[key]?.devices?.length ?? 0;
+    const warning = newLimit < deviceCount
+      ? `\n\n주의: 지금 ${deviceCount}대가 등록되어 있어, 새 기기는 등록할 수 없게 됩니다 (이미 등록된 기기는 유지).`
+      : "";
+    if (!confirm(`이용권 [${key}]의 기기 한도를 ${currentLimit}대 → ${newLimit}대로 바꿀까요?${warning}`)) {
+      setDeviceRecords((previous) => ({ ...previous }));
+      return;
+    }
     try {
       const res = await fetch("/api/license/update-limit", {
         method: "POST",
@@ -203,13 +204,6 @@ export default function AdminLicensePage() {
       });
       const data = await res.json();
       if (data.success) {
-        const updated = history.map((item) =>
-          item.key === key ? { ...item, maxDevices: newLimit } : item
-        );
-        setHistory(updated);
-        try {
-          window.localStorage.setItem(GENERATED_HISTORY_KEY, JSON.stringify(updated));
-        } catch {}
         fetchDeviceStatus();
       } else {
         alert(data.error || "기기 한도 변경에 실패했습니다.");
@@ -219,25 +213,54 @@ export default function AdminLicensePage() {
     }
   }
 
-  async function handleTestRegister(key: string) {
+  async function handleEditMemo(key: string, currentMemo: string) {
+    const next = prompt(`이용권 [${key}] 메모 (비우면 삭제, 최대 200자):`, currentMemo);
+    if (next === null || next.trim() === currentMemo.trim()) return;
     try {
-      const dev = getOrCreateDeviceId();
-      const res = await fetch("/api/license/activate", {
+      const res = await fetch("/api/admin/record-meta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "memo", key, memo: next }),
+      });
+      const data = await res.json();
+      if (data.success) fetchDeviceStatus();
+      else alert(data.error || "메모를 저장하지 못했습니다.");
+    } catch {
+      alert("서버 통신 오류가 발생했습니다.");
+    }
+  }
+
+  async function handleImportLegacyHistory() {
+    if (legacyHistory.length === 0) return;
+    if (!confirm(
+      `이 브라우저에만 저장돼 있던 발급 기록 ${legacyHistory.length}건의 메모·발급일을 서버 기록에 옮길까요?\n` +
+      "서버에 이미 메모·발급일이 있는 코드는 바꾸지 않습니다. 옮긴 뒤 이 브라우저의 사본은 지웁니다.",
+    )) return;
+    try {
+      const res = await fetch("/api/admin/record-meta", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          key,
-          deviceId: dev.id,
-          deviceName: dev.name || "관리자 테스트 기기",
+          mode: "import",
+          items: legacyHistory.map((item) => ({
+            key: item.key,
+            memo: item.memo,
+            createdAt: parseKoreanDateTime(item.createdAt),
+          })),
         }),
       });
       const data = await res.json();
-      if (data.success) {
-        alert(`[테스트 등록 성공!]\n현재 브라우저(${dev.name})가 해당 이용권에 등록되었습니다.\n'0대'에서 '1대'로 즉시 변경됩니다.`);
-        fetchDeviceStatus();
-      } else {
-        alert(data.error || "등록 실패");
+      if (!data.success) {
+        alert(data.error || "옮기지 못했습니다.");
+        return;
       }
+      try {
+        window.localStorage.removeItem(LEGACY_HISTORY_KEY);
+      } catch {}
+      setLegacyHistory([]);
+      const unknown = Array.isArray(data.unknown) ? data.unknown.length : 0;
+      alert(`서버에 ${data.updated}건을 옮겼습니다.${unknown ? `\n서버에 기록이 없는 코드 ${unknown}건은 건너뛰었습니다.` : ""}`);
+      fetchDeviceStatus();
     } catch {
       alert("서버 통신 오류가 발생했습니다.");
     }
@@ -256,15 +279,6 @@ export default function AdminLicensePage() {
       setCopiedKey("ALL");
       setTimeout(() => setCopiedKey(null), 2000);
     });
-  }
-
-  function clearHistory() {
-    if (confirm("발급 기록을 초기화하시겠습니까? (기존에 발급된 코드는 사이트에서 계속 유효합니다)")) {
-      setHistory([]);
-      try {
-        window.localStorage.removeItem(GENERATED_HISTORY_KEY);
-      } catch {}
-    }
   }
 
   async function handleResetDevice(key: string) {
@@ -363,6 +377,26 @@ export default function AdminLicensePage() {
     if (!confirm("마지막 확인입니다. 완료 기록과 챕터 해금 상태를 초기화합니다.")) return;
     await requestStudentProgress(key, "reset");
   }
+
+  async function handleSetStudentChapter(key: string, currentChapter: number, chapter: number) {
+    // ADM-04: this used to change the customer's unlocked chapter on every change of
+    // the dropdown, with no confirmation.
+    if (chapter === currentChapter) return;
+    const lowering = chapter < currentChapter
+      ? `\n\n주의: 챕터 ${chapter + 1}~${currentChapter} 이 다시 잠깁니다.`
+      : "";
+    if (!confirm(`이용권 [${key}]의 STUDENT 해금을 챕터 ${currentChapter} → 챕터 ${chapter} 로 바꿀까요?${lowering}`)) {
+      setStudentProgressByKey((previous) => ({ ...previous }));
+      return;
+    }
+    await requestStudentProgress(key, "setChapter", { chapter });
+  }
+
+  // ISS-14: every issued code on the server, newest first, with search.
+  const listRows = useMemo(() => buildAdminLicenseRows(deviceRecords, legacyHistory), [deviceRecords, legacyHistory]);
+  const filteredRows = useMemo(() => filterAdminLicenseRows(listRows, searchQuery), [listRows, searchQuery]);
+  const revokedCount = listRows.filter((row) => row.record.isRevoked).length;
+  const legacyToImport = countLegacyToImport(deviceRecords, legacyHistory);
 
   return (
     <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12">
@@ -495,7 +529,7 @@ export default function AdminLicensePage() {
                       : "text-ink-soft hover:text-ink"
                   }`}
                 >
-                  🎓 STUDENT 전용 (81강 전용)
+                  🎓 STUDENT 전용
                 </button>
               </div>
             </div>
@@ -545,8 +579,8 @@ export default function AdminLicensePage() {
                       >
                         <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
                         <div className={`text-[12px] mt-1 ${active ? "text-blue-100" : "text-ink-soft"}`}>
-                          {plan === "STU1M" && "30일간 STUDENT 81강 열람"}
-                          {plan === "STU1Y" && "365일간 STUDENT 81강 열람 (추천)"}
+                          {plan === "STU1M" && "30일간 STUDENT 전 강의 열람"}
+                          {plan === "STU1Y" && "365일간 STUDENT 전 강의 열람 (추천)"}
                           {plan === "STULIFE" && "무제한 평생 열람 (STUDENT 전용)"}
                         </div>
                       </button>
@@ -677,23 +711,49 @@ export default function AdminLicensePage() {
             <div className="flex items-center justify-between border-b border-black/[0.06] pb-3">
               <div>
                 <h3 className="text-[17px] font-bold text-ink">
-                  최근 발급 내역 및 기기 등록 현황
+                  발급된 전체 이용권 및 기기 등록 현황
                 </h3>
                 <span className="text-[12px] text-ink-faint">
-                  발급된 이용권별 실시간 기기 등록 현황을 확인하고, 허용 기기 대수(한도)를 즉시 변경하거나 초기화할 수 있습니다.
+                  서버에 저장된 모든 이용권입니다. 어느 PC·휴대폰에서 로그인해도 같은 목록이 보입니다.
                 </span>
               </div>
 
-              {history.length > 0 && (
-                <button
-                  type="button"
-                  onClick={clearHistory}
-                  className="text-[12px] text-ink-faint hover:text-red-600 cursor-pointer"
-                >
-                  목록 지우기
-                </button>
+              {recordsLoaded && (
+                <span className="text-[12px] text-ink-soft font-mono shrink-0">
+                  전체 {listRows.length}건 · 차단 {revokedCount}건
+                </span>
               )}
             </div>
+
+            {/* Search by code, memo, device name, plan or block reason */}
+            <label className="flex flex-col gap-1.5">
+              <span className="text-[12.5px] font-semibold text-ink">이용권 검색</span>
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="코드 일부(하이픈 없이도 됨), 메모, 기기 이름, 이용권 종류로 찾기"
+                className="rounded-xl border border-black/15 px-3.5 py-2.5 text-[13.5px] text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+              />
+              {searchQuery.trim() && (
+                <span className="text-[11.5px] text-ink-faint">검색 결과 {filteredRows.length}건</span>
+              )}
+            </label>
+
+            {legacyToImport > 0 && (
+              <div className="rounded-2xl border border-amber-400/40 bg-amber-50/70 p-4 text-[12.5px] text-amber-950 flex flex-wrap items-center justify-between gap-3">
+                <span>
+                  이 브라우저에만 저장돼 있던 발급 메모·발급일이 <strong>{legacyToImport}건</strong> 있습니다. 서버로 옮기면 다른 PC에서도 보입니다.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => void handleImportLegacyHistory()}
+                  className="rounded-lg border border-amber-500/40 bg-white px-3 py-1.5 text-[12px] font-semibold text-amber-900 hover:bg-amber-100 cursor-pointer"
+                >
+                  서버로 옮기기
+                </button>
+              </div>
+            )}
 
             {/* Informative Guidance Banner */}
             <div className="rounded-2xl border border-blue-500/20 bg-blue-50/50 p-4 text-[12.5px] text-blue-950 flex flex-col gap-2 leading-relaxed">
@@ -707,25 +767,33 @@ export default function AdminLicensePage() {
                 </div>
                 <div className="bg-white/80 rounded-xl p-3 border border-blue-200/50">
                   <strong className="text-blue-950 block mb-0.5">② 뒤의 숫자 (2대 / 허용 한도 대수)</strong>
-                  해당 이용권 1장으로 등록을 허용하는 <strong>최대 기기 대수</strong>입니다. 기본 2대이며, 상단 발급 시 또는 하단 각 이용권의 <strong>[기기 한도] 드롭다운</strong>을 통해 1대~5대로 언제든 즉시 변경하실 수 있습니다.
+                  해당 이용권 1장으로 등록을 허용하는 <strong>최대 기기 대수</strong>입니다. 기본 2대이며, 상단 발급 시 또는 하단 각 이용권의 <strong>[기기 한도] 드롭다운</strong>에서 1대~5대로 바꿀 수 있고, 바꾸기 전에 확인 창이 뜹니다.
                 </div>
               </div>
             </div>
 
-            {history.length === 0 ? (
+            {!recordsLoaded ? (
               <div className="py-8 text-center text-[13px] text-ink-faint">
-                아직 발급된 내역이 없습니다. 상단에서 코드를 발급해 보세요.
+                {isRefreshingDevices ? "서버에서 이용권 목록을 불러오는 중..." : "목록을 불러오지 못했습니다. [기기 현황 새로고침]을 눌러 주세요."}
+              </div>
+            ) : listRows.length === 0 ? (
+              <div className="py-8 text-center text-[13px] text-ink-faint">
+                아직 발급된 이용권이 없습니다. 상단에서 코드를 발급해 보세요.
+              </div>
+            ) : filteredRows.length === 0 ? (
+              <div className="py-8 text-center text-[13px] text-ink-faint">
+                &quot;{searchQuery.trim()}&quot; 와 일치하는 이용권이 없습니다.
               </div>
             ) : (
               <div className="flex flex-col divide-y divide-black/[0.06] max-h-[550px] overflow-y-auto">
-                {history.map((item, idx) => {
-                  const record = deviceRecords[item.key];
-                  const devices = record?.devices || [];
+                {filteredRows.map(({ record, createdAt, memo, legacyMemo }) => {
+                  const item = { key: record.key, plan: record.plan as LicensePlan };
+                  const devices = record.devices || [];
                   const deviceCount = devices.length;
-                  const itemLimit = record?.maxDevices || item.maxDevices || 2;
+                  const itemLimit = record.maxDevices || 2;
 
                   return (
-                    <div key={idx} className="flex flex-col py-3.5 gap-2.5">
+                    <div key={record.key} className="flex flex-col py-3.5 gap-2.5">
                       <div className="flex flex-wrap items-center justify-between gap-2">
                         <div className="flex flex-col gap-1">
                           <div className="flex flex-wrap items-center gap-2">
@@ -764,7 +832,9 @@ export default function AdminLicensePage() {
                           </div>
 
                           <span className="text-[11.5px] text-ink-faint">
-                            {item.createdAt} {item.memo ? `· ${item.memo}` : ""}
+                            {createdAt ? `발급 ${formatKoreanDateTime(createdAt)}` : "발급일 기록 없음"}
+                            {record.firstActivatedAt ? ` · 첫 등록 ${formatKoreanDateTime(record.firstActivatedAt)}` : ""}
+                            {memo ? ` · ${memo}` : legacyMemo ? ` · ${legacyMemo} (이 브라우저에만 있음)` : ""}
                           </span>
                         </div>
 
@@ -774,7 +844,7 @@ export default function AdminLicensePage() {
                             <span className="text-ink-faint font-medium">기기 한도:</span>
                             <select
                               value={itemLimit}
-                              onChange={(e) => handleUpdateMaxDevices(item.key, Number(e.target.value))}
+                              onChange={(e) => void handleUpdateMaxDevices(item.key, itemLimit, Number(e.target.value))}
                               className="bg-transparent font-bold text-ink focus:outline-none cursor-pointer"
                               title="이 이용권의 등록 가능한 최대 기기 대수를 변경합니다"
                               disabled={record?.isRevoked}
@@ -797,6 +867,14 @@ export default function AdminLicensePage() {
 
                           <button
                             type="button"
+                            onClick={() => void handleEditMemo(item.key, memo)}
+                            className="rounded-lg border border-black/10 px-2.5 py-1 text-[11.5px] font-semibold text-ink-soft hover:bg-black/5 hover:text-ink cursor-pointer transition-colors"
+                          >
+                            메모 {memo ? "수정" : "추가"}
+                          </button>
+
+                          <button
+                            type="button"
                             onClick={() => openProgressKey === item.key
                               ? setOpenProgressKey(null)
                               : void requestStudentProgress(item.key)}
@@ -805,17 +883,10 @@ export default function AdminLicensePage() {
                             {progressLoadingKey === item.key ? "불러오는 중..." : "STUDENT 진도"}
                           </button>
 
-                          {/* Test Register Button */}
-                          {!record?.isRevoked && deviceCount === 0 && (
-                            <button
-                              type="button"
-                              onClick={() => handleTestRegister(item.key)}
-                              className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-800 hover:bg-emerald-500/20 cursor-pointer transition-colors"
-                              title="현재 브라우저를 이 이용권에 테스트 등록하여 수치가 1대로 올라가는 것을 확인합니다"
-                            >
-                              🧪 내 기기에 등록 테스트
-                            </button>
-                          )}
+                          {/* ADM-02: the "🧪 내 기기에 등록 테스트" button was removed. It
+                              registered the admin's browser on a CUSTOMER code with no
+                              confirmation — taking one of the customer's device slots and,
+                              since SEC-01, starting a fixed-term code's paid period. */}
 
                           {!record?.isRevoked && deviceCount > 0 && (
                             <button
@@ -880,7 +951,12 @@ export default function AdminLicensePage() {
                           <div className="flex flex-wrap items-center justify-between gap-3">
                             <div className="flex flex-wrap gap-x-4 gap-y-1">
                               <strong>현재 챕터 {studentProgressByKey[item.key].unlockedThrough}까지 해금</strong>
-                              <span>완료 강의 {studentProgressByKey[item.key].completedLessons}/81</span>
+                              <span>
+                                완료 강의 {studentProgressByKey[item.key].completedLessons}
+                                {studentProgressByKey[item.key].chapters?.length
+                                  ? `/${studentProgressByKey[item.key].chapters!.reduce((sum, chapter) => sum + chapter.lessonIds.length, 0)}`
+                                  : ""}
+                              </span>
                               <span>마지막 학습 {studentProgressByKey[item.key].lastLessonId || "기록 없음"}</span>
                               <span>저장 {new Date(studentProgressByKey[item.key].updatedAt).toLocaleString("ko-KR")}</span>
                             </div>
@@ -889,7 +965,11 @@ export default function AdminLicensePage() {
                                 <span>수동 해금</span>
                                 <select
                                   value={studentProgressByKey[item.key].unlockedThrough}
-                                  onChange={(event) => void requestStudentProgress(item.key, "setChapter", { chapter: Number(event.target.value) })}
+                                  onChange={(event) => void handleSetStudentChapter(
+                                    item.key,
+                                    studentProgressByKey[item.key].unlockedThrough,
+                                    Number(event.target.value),
+                                  )}
                                   className="rounded-lg border border-blue-200 bg-white px-2 py-1 font-semibold"
                                 >
                                   {Array.from({ length: 20 }, (_, chapterIndex) => (

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/adminAuth";
 import { generateLicenseKey } from "@/lib/serverLicense";
-import { setMaxDevicesForKey } from "@/lib/deviceStorage";
+import { createIssuedLicenseRecord } from "@/lib/deviceStorage";
 import type { LicensePlan } from "@/lib/license";
 
 export async function POST(request: Request) {
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
     const count = Math.min(Math.max(1, Number(quantity) || 1), 100);
     const limit = Math.min(Math.max(1, Number(maxDevices) || 2), 10);
-    const now = new Date().toLocaleString("ko-KR");
+    const createdAt = Date.now();
 
     const items = [];
     const keys = [];
@@ -43,16 +43,22 @@ export async function POST(request: Request) {
     for (let i = 0; i < count; i++) {
       const k = generateLicenseKey(plan);
       keys.push(k);
-      items.push({
-        key: k,
+      // ISS-14: issue time and memo go into the server record, so the admin list is
+      // the same on every browser (it used to be the issuing browser's localStorage).
+      const record = await createIssuedLicenseRecord(
+        k,
         plan,
-        createdAt: now,
-        memo: memo ? String(memo).trim() : undefined,
-        maxDevices: limit,
+        limit,
+        typeof memo === "string" ? memo : undefined,
+        createdAt,
+      );
+      items.push({
+        key: record.key,
+        plan: record.plan,
+        createdAt: record.createdAt,
+        memo: record.memo,
+        maxDevices: record.maxDevices,
       });
-
-      // Register initial device limit in device storage
-      await setMaxDevicesForKey(k, limit, plan);
     }
 
     return NextResponse.json({

@@ -30,9 +30,18 @@ export interface LicenseDeviceRecord {
    * 1M/1Y plan runs from here and does not restart (owner decision, 2026-09-17).
    */
   firstActivatedAt?: number;
+  /**
+   * ISS-14 / ADM-06 — when the code was issued and the admin's note for it. Kept in
+   * this encrypted record so every admin browser sees the same list; they used to
+   * live only in the issuing browser's localStorage. Records issued before this
+   * field existed have neither until an admin saves them from that browser.
+   */
+  createdAt?: number;
+  memo?: string;
 }
 
 export const MAX_DEVICES_PER_KEY = 2;
+export const MAX_MEMO_LENGTH = 200;
 
 /**
  * SEC-01 — when the paid period of a licence started.
@@ -307,6 +316,69 @@ export async function setMaxDevicesForKey(
   record.maxDevices = Math.max(1, maxDevices);
   await saveRecord(record);
   return { success: true, record };
+}
+
+function cleanMemo(memo: unknown): string | undefined {
+  if (typeof memo !== "string") return undefined;
+  const text = memo.replace(/\s+/g, " ").trim().slice(0, MAX_MEMO_LENGTH);
+  return text || undefined;
+}
+
+/** A freshly issued code: device limit, plan, issue time and the admin's note. */
+export async function createIssuedLicenseRecord(
+  key: string,
+  plan: string,
+  maxDevices: number,
+  memo?: string,
+  createdAt = Date.now(),
+): Promise<LicenseDeviceRecord> {
+  const normalizedKey = normalizeKey(key);
+  const record: LicenseDeviceRecord = (await loadRecord(normalizedKey)) || {
+    key: normalizedKey,
+    plan,
+    devices: [],
+  };
+  record.maxDevices = Math.max(1, maxDevices);
+  record.createdAt ??= createdAt;
+  const note = cleanMemo(memo);
+  if (note !== undefined) record.memo = note;
+  await saveRecord(record);
+  return record;
+}
+
+/**
+ * Admin note and issue time for a code that ALREADY has a record — never creates one,
+ * so an arbitrary string cannot plant a record. `fillMissingOnly` is for carrying the
+ * old browser-only history over: it never overwrites what the server already has.
+ */
+export async function updateLicenseRecordMeta(
+  key: string,
+  meta: { memo?: string; createdAt?: number },
+  fillMissingOnly: boolean,
+): Promise<{ success: boolean; changed: boolean; record?: LicenseDeviceRecord }> {
+  const record = await loadRecord(key);
+  if (!record) return { success: false, changed: false };
+  let changed = false;
+  if (meta.memo !== undefined) {
+    const note = cleanMemo(meta.memo);
+    if (!(fillMissingOnly && record.memo) && note !== record.memo) {
+      record.memo = note;
+      changed = true;
+    }
+  }
+  if (
+    typeof meta.createdAt === "number" &&
+    Number.isFinite(meta.createdAt) &&
+    meta.createdAt > Date.UTC(2020, 0, 1) &&
+    meta.createdAt <= Date.now() &&
+    !(fillMissingOnly && record.createdAt) &&
+    meta.createdAt !== record.createdAt
+  ) {
+    record.createdAt = meta.createdAt;
+    changed = true;
+  }
+  if (changed) await saveRecord(record);
+  return { success: true, changed, record };
 }
 
 export async function registerDeviceForKey(
