@@ -55,3 +55,16 @@
 - STUDENT 완료 체크·챕터 해금 저장, 북마크·완료 체크: 감사용 이용권의 운영 진도가 바뀜 → **Read-only verification required** (서버 API 인증·요청 제한은 코드·401 탐침으로 확인).
 - UI 언어 en/ja/zh 전환: 이번 스윕은 한국어 UI 만 → **미시험**.
 - 카카오톡 인앱 브라우저 안내, 실제 iPhone Safari·Android Chrome: **미시험 (실기기)**.
+
+## 4-5. 배포 886b08c 후 READING 재스윕 (2026-09-17, `-v3`)
+
+ISS-00 수정이 클라이언트의 전체 지문 예비 조회를 없앴으므로, 모든 READING 페이지가 자기 데이터만으로 제대로 나오는지 운영에서 다시 확인. LIFE 이용권 감사 프로필, 데스크톱·모바일.
+
+| 항목 | 결과 | 근거 |
+|---|---|---|
+| 방문 | 1,024 / 1,024 열림 (512페이지 × 2), 문제 기록 **0**, 단계 클릭 4,096 | `sweep-licensed.cjs --course reading --suffix -v3` → `analyze-sweep.cjs --suffix -v3` |
+| 음성 | 재생 512회 눌림, 요청 오류 0 (요청 195건 — 나머지는 캐시) | 같은 결과 |
+| 지문이 실제로 보이는가 | **512 / 512 페이지** — 본문 영어·대본 한국어 **2,892 / 2,892문장**, 카드 14개 순서대로 **256 / 256** | `check-reading-rendered-all.cjs --suffix -v3` |
+| 교체 지문 pr151·pr170 | 4/4 — 새 문장·카드, 옛 표현 0, 음성 36/36 | `check-r64-r65-rendered.cjs`, `check-r64-r65-audio.cjs` |
+
+작업자와 점검자가 같음 (Claude). 실제 iPhone·Android 는 확인 안 함.
