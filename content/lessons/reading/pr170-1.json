@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "서양인들은 높은 수준의 위엄과 세련됨을 보여주기 위해 먹을 때 식사 도구를 사용한다. 중국인들도 젓가락을 사용하여 정결함을 보여준다. 그러나 사우디아라비아 인들은 손으로 식사한다. ‘왜 다른 사람들이 사용하던 식사도구나 젓가락을 더럽게 먹을 때 사용할 까 ? 그것들은 우리 손보다 깨끗하지도 못한데’ ‘ 손을 사용하면 깨끗한지 안한지를 알 수 있고(자기 손이니까) 다른 사람이 자기 손을 사용해서 식사할 일도 없는 데’ 라고 사우디아라비아인들은 다른 나라 사람들을 이상히 여긴다."
+      "text": "세계 사람들은 서로 다른 방식으로 식사를 하며, 각 방식에는 저마다의 역사가 있다. 많은 서양 나라에서는 보통 나이프와 포크로 식사를 하고, 중국에서는 젓가락을 흔히 쓴다. 사우디아라비아의 일부 지역에서는 몇몇 전통 음식을 오른손으로 먹는다. 이 관습을 따르는 사람들은 때때로 이렇게 묻는다. “왜 다른 사람들이 썼던 식사 도구로 먹어야 하나요? 우리 손이 더 깨끗할 수도 있어요.” 그들은 또한 자기 손이 깨끗한지는 스스로 알고, 다른 사람은 그 손을 쓰지 않는다는 점을 지적한다."
     },
     {
       "type": "choice",
@@ -47,64 +47,148 @@
   "readingSentences": [
     {
       "id": "reading-170-s001",
-      "english": "The Western people eat with utensils to show a high degree of prestige and sophistication",
-      "korean": "서양인들은 높은 수준의 위엄과 세련됨을 보여주기 위해 먹을 때 식사 도구를 사용한다."
+      "english": "People around the world eat in different ways, and each way has its own history.",
+      "korean": "세계 사람들은 서로 다른 방식으로 식사를 하며, 각 방식에는 저마다의 역사가 있다."
     },
     {
       "id": "reading-170-s002",
-      "english": "the Chinese eat with sticks to show their cleverness of dealing with those sticks",
-      "korean": "중국인들도 젓가락을 사용하여 정결함을 보여준다."
+      "english": "In many Western countries, people usually eat with knives and forks, while in China chopsticks are the common choice.",
+      "korean": "많은 서양 나라에서는 보통 나이프와 포크로 식사를 하고, 중국에서는 젓가락을 흔히 쓴다."
     },
     {
       "id": "reading-170-s003",
-      "english": "the Saudi people eat with their hands.",
-      "korean": "그러나 사우디아라비아 인들은 손으로 식사한다."
+      "english": "In parts of Saudi Arabia, some traditional dishes are eaten with the right hand.",
+      "korean": "사우디아라비아의 일부 지역에서는 몇몇 전통 음식을 오른손으로 먹는다."
     },
     {
       "id": "reading-170-s004",
-      "english": "They say, “Why should we eat with utensils or sticks that are used by other people?",
-      "korean": "‘왜 다른 사람들이 사용하던 식사도구나 젓가락을 더럽게 먹을 때 사용할 까 ?"
+      "english": "People who follow this custom sometimes ask, “Why should we eat with utensils that other people have used?",
+      "korean": "이 관습을 따르는 사람들은 때때로 이렇게 묻는다. “왜 다른 사람들이 썼던 식사 도구로 먹어야 하나요?"
     },
     {
       "id": "reading-170-s005",
-      "english": "They may not be as clean as our hands.” They also say that they know whether their hands are clean or not and that nobody else uses them.",
-      "korean": "그것들은 우리 손보다 깨끗하지도 못한데’ ‘ 손을 사용하면 깨끗한지 안한지를 알 수 있고(자기 손이니까) 다른 사람이 자기 손을 사용해서 식사할 일도 없는 데’ 라고 사우디아라비아인들은 다른 나라 사람들을 이상히 여긴다."
+      "english": "Our own hands may be cleaner.” They also point out that they know whether their hands are clean and that nobody else uses them.",
+      "korean": "우리 손이 더 깨끗할 수도 있어요.” 그들은 또한 자기 손이 깨끗한지는 스스로 알고, 다른 사람은 그 손을 쓰지 않는다는 점을 지적한다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "hands",
-      "lemma": "hand",
+      "word": "history",
+      "lemma": "history",
       "partOfSpeech": "n.",
-      "korean": "손",
-      "score": 110,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 110점)",
+      "korean": "역사",
+      "score": 99,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 99점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
-      "word": "clean",
-      "lemma": "clean",
+      "word": "Western",
+      "lemma": "western",
+      "partOfSpeech": "adj.",
+      "korean": "서양의",
+      "score": 97,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "knives",
+      "lemma": "knife",
       "partOfSpeech": "n.",
-      "korean": "깨끗한",
-      "score": 105,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
+      "korean": "나이프, 칼 (knife 의 복수형)",
+      "score": 95,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "high",
-      "lemma": "high",
+      "word": "chopsticks",
+      "lemma": "chopstick",
       "partOfSpeech": "n.",
-      "korean": "높다",
-      "score": 98,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
+      "korean": "젓가락",
+      "score": 94,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 94점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "common",
+      "lemma": "common",
+      "partOfSpeech": "adj.",
+      "korean": "흔한, 일반적인",
+      "score": 93,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 93점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "choice",
+      "lemma": "choice",
+      "partOfSpeech": "n.",
+      "korean": "선택",
+      "score": 91,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 91점)",
       "examTags": [
         "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "traditional",
+      "lemma": "traditional",
+      "partOfSpeech": "adj.",
+      "korean": "전통적인",
+      "score": 90,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 90점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "dishes",
+      "lemma": "dish",
+      "partOfSpeech": "n.",
+      "korean": "요리, 음식",
+      "score": 89,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "follow",
+      "lemma": "follow",
+      "partOfSpeech": "v.",
+      "korean": "(관습을) 따르다",
+      "score": 88,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 88점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "custom",
+      "lemma": "custom",
+      "partOfSpeech": "n.",
+      "korean": "관습, 풍습",
+      "score": 87,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
@@ -112,93 +196,33 @@
       "word": "utensils",
       "lemma": "utensil",
       "partOfSpeech": "n.",
-      "korean": "기구",
+      "korean": "식사 도구",
+      "score": 86,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "cleaner",
+      "lemma": "clean",
+      "partOfSpeech": "adj.",
+      "korean": "더 깨끗한 (clean 의 비교급)",
+      "score": 85,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "point",
+      "lemma": "point",
+      "partOfSpeech": "v.",
+      "korean": "(point out) 지적하다",
       "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "eat",
-      "lemma": "eat",
-      "partOfSpeech": "n.",
-      "korean": "먹다",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
-      "word": "western",
-      "lemma": "western",
-      "partOfSpeech": "n.",
-      "korean": "서부의",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "prestige",
-      "lemma": "prestige",
-      "partOfSpeech": "n.",
-      "korean": "명성",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "sophistication",
-      "lemma": "sophistication",
-      "partOfSpeech": "n.",
-      "korean": "sophistication (핵심 어휘)",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "show",
-      "lemma": "show",
-      "partOfSpeech": "n.",
-      "korean": "쇼",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "sticks",
-      "lemma": "stick",
-      "partOfSpeech": "n.",
-      "korean": "스틱",
-      "score": 77,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "degree",
-      "lemma": "degree",
-      "partOfSpeech": "n.",
-      "korean": "정도",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
@@ -207,34 +231,10 @@
     {
       "word": "whether",
       "lemma": "whether",
-      "partOfSpeech": "n.",
-      "korean": "여부",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "dealing",
-      "lemma": "deal",
-      "partOfSpeech": "v.",
-      "korean": "거래",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "nobody",
-      "lemma": "nobody",
-      "partOfSpeech": "n.",
-      "korean": "아무도",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "partOfSpeech": "conj.",
+      "korean": "~인지 아닌지",
+      "score": 83,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
         "독해필수"
       ],

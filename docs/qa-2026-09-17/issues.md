@@ -24,7 +24,9 @@
 
 ## Critical
 
-### ISS-00 READING 유료 지문 254개 전체(영어·한국어·어휘 카드)가 누구나 받는 공개 JS 파일에 들어 있음
+### ISS-00 READING 유료 지문 254개 전체(영어·한국어·어휘 카드)가 누구나 받는 공개 JS 파일에 들어 있음 — ✅ 로컬 수정 완료, 배포 대기
+
+> **수정 (2026-09-17):** `readingUtils.ts` 의 중앙 사본 import 와 조회 함수 2개 삭제, `ReadingLearningView.tsx` 대체 조회 삭제 (512개 레슨 파일 모두 자기 데이터 보유 확인), 꺼진 자동 퀴즈 코드 안의 pr081 한국어 문장 직접 인용 제거. **검증:** 새 스크립트 `scripts/scan-build-static.cjs` — 빌드 결과물 `.next/static` 전체에서 유료 문자열 6,263개 검색: 수정 전 빌드 **2,403건** → 수정 후 **0건**. 배포 후 `probe-bundle-leak-scope.cjs` 로 운영 재측정 필요.
 - **분류** 보안·유료 접근 통제 · **심각도** Critical · **접근** 이용권 없는 방문자 누구나
 - **위치** `src/components/ReadingLearningView.tsx:13-14,208,264` → `src/lib/readingUtils.ts:2-3` 가 `src/lib/readingSentences.json`·`readingVocabulary.json`(1.19 MB, 256지문 전부)을 클라이언트 번들로 가져옴. 운영 청크 `/_next/static/immutable/chunks/1adakktlfv_xs.js` (923 KB)
 - **재현 조건** 쿠키 없음, 아무 브라우저 · **단계** 1) 무료 레슨 `/reading/pr001` 열기 2) 개발자 도구 네트워크 탭에서 923 KB JS 파일 열기 (또는 HTML 의 `/_next/static/…js` 주소를 직접 요청) 3) 유료 pr100 의 `Some of their artificial mothers were ma…` 검색

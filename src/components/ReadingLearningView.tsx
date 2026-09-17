@@ -10,8 +10,6 @@ import {
   extractFullReadingPassage,
   generateReadingQuiz,
   generateClozeItems,
-  getReadingSentencesForLesson,
-  getReadingVocabularyForLesson,
   type KeyWord,
   type ClozeItem,
 } from "@/lib/readingUtils";
@@ -195,19 +193,12 @@ export function ReadingLearningView({
   const enPassageFallback = mainIsEn ? mainText : pairText;
   const koPassageFallback = mainIsEn ? pairText : mainText;
 
-  // 1:1 Aligned sentence pairs from canonical data layer
+  // 1:1 Aligned sentence pairs from the lesson's own data (passed by the server
+  // page after the licence check). ISS-00: never fall back to an all-lessons
+  // data file here — anything this client component imports ships publicly.
   const sentencePairs = useMemo(() => {
     if (readingSentences && readingSentences.length > 0) {
       return readingSentences.map((s, idx) => ({
-        id: s.id,
-        index: idx,
-        en: s.english,
-        ko: s.korean,
-      }));
-    }
-    const fromDict = getReadingSentencesForLesson(lessonKey);
-    if (fromDict && fromDict.length > 0) {
-      return fromDict.map((s, idx) => ({
         id: s.id,
         index: idx,
         en: s.english,
@@ -222,7 +213,7 @@ export function ReadingLearningView({
       en: s.en,
       ko: s.ko,
     }));
-  }, [readingSentences, lessonKey, enPassageFallback, koPassageFallback]);
+  }, [readingSentences, enPassageFallback, koPassageFallback]);
 
   // Canonical full text derived from verified 1:1 sentences
   const enPassage = useMemo(() => {
@@ -261,21 +252,8 @@ export function ReadingLearningView({
         freq: v.freq,
       }));
     }
-    const fromDict = getReadingVocabularyForLesson(lessonKey);
-    if (fromDict && fromDict.length === 14) {
-      return fromDict.map((v) => ({
-        word: v.word,
-        pos: v.partOfSpeech,
-        meaning: v.korean,
-        lemma: v.lemma,
-        score: v.score,
-        reason: v.reason,
-        examTags: v.examTags,
-        freq: v.freq,
-      }));
-    }
     return extractPassageKeywords(enPassage, 14, vocaDictionary);
-  }, [readingVocabulary, lessonKey, enPassage, vocaDictionary]);
+  }, [readingVocabulary, enPassage, vocaDictionary]);
 
   /**
    * KIG-008 — the auto-generated comprehension questions are off (see

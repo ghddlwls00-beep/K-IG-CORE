@@ -1,26 +1,21 @@
-import type { ReadingSentence, ReadingVocabularyItem } from "./types";
-import readingSentencesData from "./readingSentences.json";
-import readingVocabularyData from "./readingVocabulary.json";
-
-/**
- * Get canonical 1:1 aligned reading sentences for any reading lesson key.
- * Normalizes keys like "reading/pr001", "pr001-1", or "pr001".
+/*
+ * ISS-00 (Critical) — this module is imported by the CLIENT component
+ * ReadingLearningView. It used to import src/lib/readingSentences.json and
+ * readingVocabulary.json (every passage's English, Korean and vocabulary, 1.19 MB)
+ * to back two lookups, `getReadingSentencesForLesson` and
+ * `getReadingVocabularyForLesson`. Importing JSON from a client module ships the
+ * whole file in the public JavaScript: on production a free lesson
+ * (/reading/pr001) loaded a 923 KB chunk that held all 254 paid passages, so the
+ * server-side lesson gate (KIG-001) was bypassed by opening the JS file.
+ *
+ * The lookups were dead weight: all 512 READING lesson files carry their own
+ * `readingSentences` and a 14-item `readingVocabulary`, and the lesson page passes
+ * them as props only after the licence check. So the imports and both functions
+ * are removed. Do NOT import any all-lessons data file from this module or any
+ * other module a "use client" component reaches — pass the one lesson's data as
+ * props from the server page instead. The central JSON files stay for the build
+ * and audit scripts in scripts/.
  */
-export function getReadingSentencesForLesson(lessonKey: string): ReadingSentence[] {
-  if (!lessonKey) return [];
-  const normalized = lessonKey.replace(/^reading\//, "").replace(/-1$/, "");
-  return (readingSentencesData as Record<string, ReadingSentence[]>)[normalized] || [];
-}
-
-/**
- * Get canonical 14-item curated reading vocabulary for any reading lesson key.
- * Normalizes keys like "reading/pr001", "pr001-1", or "pr001".
- */
-export function getReadingVocabularyForLesson(lessonKey: string): ReadingVocabularyItem[] {
-  if (!lessonKey) return [];
-  const normalized = lessonKey.replace(/^reading\//, "").replace(/-1$/, "");
-  return (readingVocabularyData as Record<string, ReadingVocabularyItem[]>)[normalized] || [];
-}
 
 // Comprehensive vocabulary database for reading course passages
 const VOCAB_DATABASE: Record<string, { meaning: string; pos: string }> = {
@@ -633,7 +628,9 @@ export function generateReadingQuiz(
       "한 번 발생한 문제는 어떠한 객관적 지식으로도 해결하거나 평가할 수 없다.",
       "타인의 시선이나 감정은 개인의 일상적 문제 선택에 전혀 작용하지 않는다.",
     ];
-    q2Expl = "지문 본문에서 '문제를 해결하기 위해서는 여러분이 어떻게 느끼는가 하는 것을 뛰어넘어야 하고 새로운 관찰로 이미 인지하고 있는 정보를 연결시켜야 한다'고 명시되었습니다.";
+    // ISS-00: this used to quote a paid passage (pr081) word for word, which shipped
+    // in the public bundle. The explanation must not reproduce lesson text.
+    q2Expl = "지문은 느낌만으로 판단하지 말고, 이미 알고 있는 정보와 새로 관찰한 내용을 연결해 문제를 해결해야 한다고 말합니다.";
   } else if (koSentences.length >= 2) {
     // Pick the most informative sentence
     const targetSent = koSentences[Math.min(1, koSentences.length - 1)].replace(/[.?!]$/, "");
