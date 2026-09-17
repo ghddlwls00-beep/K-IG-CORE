@@ -50,8 +50,9 @@
 
 1. ~~배포~~ 완료 (2026-09-17 10:32 KST 반영, `c14c03d..886b08c`). 운영 재측정 완료: 유출 0, 잠금 1,748/1,748. READING 이용권 스윕 `-v3` 결과는 `phase4-functional.md` 끝
 2. ~~L-64~~ 배포·운영 확인 완료. 재확인 절차: `sweep-licensed.cjs --ids $(check-l64-prod.cjs --base 1dd14cb --list-ids) --suffix -l64` → `check-l64-prod.cjs --base 1dd14cb --suffix -l64`
-3. 이어서 `final-report.md` §20 순서. **로컬 수정·검증 완료, 배포 대기:** ISS-16 다크 모드 · ISS-14 관리자 목록 · ISS-13 이용권 복원 · GRAMMAR I · GRAMMAR II · STUDENT · **LISTENING (L-74·L-84 제외 전부, `content-review/listening.md` "처리 결과")** · **READING 지문 256개·카드 3,584장 (`content-review/reading.md` "처리 결과", `verify-reading-fixes.cjs`)** · **VOCA V-03~V-11 (`content-review/voca.md` "처리 결과")** · **ADM-07 · SEC-06·07 · UX-02·03·05·06 · F-01** (각 phase 문서 표; PERF-02 운영에서 해소 확인). **SEC-05 CSP nonce — 배포 `9706a83`, 운영 69/69** (`phase8-security.md` SEC-05 행). 소유자 결정 대기: **COM-05 Vercel Hobby 요금제 — 상업적 사용 금지·월 사용량 한도 초과 시 사이트 중지, Pro 권장** (`phase8-security.md` §5), **PERF-04 서버 함수 지역 미국 동부 → 서울** (`phase7-performance.md`). 판단 보류: PERF-03 목록 TBT(구조 변경, 조용한 환경에서 전후 측정 필요). 소유자 결정 대기: L-74·L-84 불쾌 표현 회차, READING 중복 지문 한쪽 교체(R-01)·pr054 광고문(R-30)·pr078 수녀 농담(R-32). 변호사 대기: 현대 저작물 발췌(R-29·R-43·R-75)
-4. 수정 후 `final-report.md` §19 재시험 → 커밋(파일 이름 지정) → 소유자가 `git push`
+3. ~~`final-report.md` §20 수정~~ **전부 배포됨 (2026-09-17~18)** — 각 문서의 상태 칸에 배포 커밋을 적어 둠: GRAMMAR I `d6da0a4` · GRAMMAR II `619003e` · STUDENT `f3f6cb6` · LISTENING (L-74·L-84 제외) `1adc2f5` · READING 지문·카드 `1a696f3` (R-01 교체 `f04b64b`) · VOCA `fa6c273` · ISS-13·SEC-02~04·PERF-01 `e4cc125` · ISS-14·ADM-02~06 `25f8c1d` · ISS-16 `a5a1537` · SEC-01 `822ec46` · ADM-07·SEC-06·07·UX-02·03·05·06·F-01 `de4cbcf` · GRAMMAR I 07강 `ebed505` · **SEC-05 nonce CSP `9706a83` (운영 69/69)** · **PERF-04 서울 이전 `614b696` (운영 페이지 0.15초대, R2 왕복 262 → 36 ms)**. **아직 운영 전체 재점검은 안 함** — "배포됨" 은 운영에서 항목별로 다시 확인했다는 뜻이 아님. MEDIA-01·02(음원 전송) 는 `phase4-functional.md` — 배포 후 운영 확인 예정.
+   소유자 결정 대기: **COM-05 Vercel Hobby 요금제 — 상업적 사용 금지·한도 초과 시 사이트 중지, Pro 권장** (`phase8-security.md` §5) · L-74·L-84 불쾌 표현 회차 · pr054 광고문(R-30) · pr078 수녀 농담(R-32) · 법적 문서·구매 링크·관리자 2차 인증. 변호사 대기: 현대 저작물 발췌(R-29·R-43·R-75). 판단 보류: PERF-03 목록 TBT.
+4. **최종 재점검은 새 세션에서** 소유자가 만든 전체 검수 명령어(바탕화면 `k-ig core lab 실 전체 검수 명령어 수정본 2026-09-18.txt`)로. 보고서 위치 `docs/qa-2026-09-18/K-IG_Commercial_Release_Readiness_Report.md`
 
 ## 감사 중 바로잡은 판단 (기록)
 
