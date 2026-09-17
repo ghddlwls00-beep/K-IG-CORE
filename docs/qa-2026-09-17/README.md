@@ -43,13 +43,13 @@
 | F-02 원본 녹음 3,187개 | **계속 보관** | 삭제 금지 |
 | R-64 노무현·차베스 지문 | **교체** | 배포·운영 확인 (언어·악기 배우기 비교 지문) — 화면 4/4, 음성 36/36 (`check-r64-r65-rendered.cjs`, `check-r64-r65-audio.cjs`). 음성 44개 생성·업로드, 버킷 44,730, pending 0 |
 | R-65 민족별 식사법 지문 | **중립 표현으로 다시 씀** | 배포·운영 확인 (같은 커밋 886b08c, 같은 검사) |
-| L-64 LISTENING 녹음에만 있는 문장 | **녹음대로 넣기, 칸 번호 유지, 표현만 다른 곳은 유지 (d071 만 수정)** | 로컬 수정 완료, 배포 대기 — 실제 누락 26 (자동 34 중 오탐 2·표현 차이 6), 27회차 30칸, 음성 37개, pending 0. 배포 후 `check-l64-prod.cjs` |
+| L-64 LISTENING 녹음에만 있는 문장 | **녹음대로 넣기, 칸 번호 유지, 표현만 다른 곳은 유지 (d071 만 수정)** | 배포·운영 확인 (c3a44d3) — 페이지 54/54, 음성 30/30, 무이용권 403 30/30. 실제 누락 26 (자동 34 중 오탐 2·표현 차이 6), 27회차 30칸, 음성 37개, pending 0. 배포 후 `check-l64-prod.cjs` |
 | ISS-00 공개 JS 유출 | 최우선 수정 | 배포·운영 확인 — 공개 JS 영어 0/1,423·한국어 0/1,423·카드 레코드 0/3,556, 잠금 1,748/1,748 |
 
 ## 다음 단계
 
 1. ~~배포~~ 완료 (2026-09-17 10:32 KST 반영, `c14c03d..886b08c`). 운영 재측정 완료: 유출 0, 잠금 1,748/1,748. READING 이용권 스윕 `-v3` 결과는 `phase4-functional.md` 끝
-2. ~~L-64 원문 누락 처리 방침~~ 결정·로컬 수정 완료 → 소유자가 배포 지시하면 push 후 `sweep-licensed.cjs --ids $(check-l64-prod.cjs --base 1dd14cb --list-ids) --suffix -l64` → `check-l64-prod.cjs --base 1dd14cb --suffix -l64`
+2. ~~L-64~~ 배포·운영 확인 완료. 재확인 절차: `sweep-licensed.cjs --ids $(check-l64-prod.cjs --base 1dd14cb --list-ids) --suffix -l64` → `check-l64-prod.cjs --base 1dd14cb --suffix -l64`
 3. 이어서 `final-report.md` §20 순서
 4. 수정 후 `final-report.md` §19 재시험 → 커밋(파일 이름 지정) → 소유자가 `git push`
 
@@ -61,5 +61,6 @@
 - L-64 High→Medium (플레이어가 원본 녹음을 틀지 않음)
 - 공개 JS 검사를 처음엔 "비밀값 모양"만 해서 유출을 놓침 → 성능 수치(READING JS 2배)에서 발견해 전수 확인
 - 성능 JSON `perf-4g-phone.json` 은 비교 측정이 덮어써 4G 전체는 `out/perf-4g.log` 로만 남음
+- **ISS-11·V-01·V-02 철회** (수정 착수 전 재확인): 감사가 `vocaUtils` 의 소문자 조회만 보고 판단 — 컴포넌트는 카드와 같은 조회로 만든 표를 넘김. 실제 코드로 5,831단어 0건 (`verify-voca-quiz-meanings.cjs`), 감사 운영 캡처도 mv2-12 30문항. High 44→43
 - 배포 후 `probe-entitlement-all.cjs` 첫 재실행이 VOCA hv-46·mv3-21 을 FAIL 로 냄 → 레슨 단어 "pronunciation" 이 모든 페이지 메뉴 문구("…vocabulary matrix with pronunciation clinic")에 있어서 생긴 스크립트 오탐. 홈페이지에도 있는 단어는 증거에서 빼도록 고친 뒤 1,748/1,748
 - 배포 후 공개 JS 카드 수치가 느슨한 기준으로 625 남음 → 흔한 단어가 무료 VOCA 사전·화면 문구에 따로 있어서임. 카드 레코드 형태로 찾는 `probe-reading-cards-strict.cjs` 0/3,556 으로 확인

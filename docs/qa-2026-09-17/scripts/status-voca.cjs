@@ -2,9 +2,9 @@
 /**
  * Per-lesson status for the VOCA content review (content-review/voca.md).
  *
- * FAIL  — the lesson is named by a Medium/High finding (V-01…V-07 lesson-level
+ * FAIL  — the lesson is named by a Medium/High finding (V-03…V-07 lesson-level
  *         items) or by a mechanical check that follows from the code
- *         (dropped from quiz, identical meanings, repeated word, card≠quiz meaning).
+ *         (identical meanings, repeated word). V-01/V-02 withdrawn — see below.
  * NOTE  — only Low items (V-08 glosses, V-09 spelling of the Korean, V-10 is a
  *         repeat and counts as FAIL above).
  * PASS  — nothing found.
@@ -39,13 +39,15 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
   const noteR = new Set();
   const seen = new Set();
   const byMeaning = new Map();
-  let dropped = 0;
+  // V-01 / V-02 (quiz meaning ≠ card, capitalised words dropped from the quiz) were
+  // WITHDRAWN on 2026-09-17: they modelled the quiz as `dict[word.toLowerCase()]` on the
+  // full dictionary, but PhonicsLearningView passes the quiz its own map built with the
+  // card lookup. The shipped code gives 0 / 0 over all 5,831 grid words
+  // (verify-voca-quiz-meanings.cjs), and the audit's own production snapshot of mv2-12
+  // shows "QUESTION #1 / 30".
   for (const w of words) {
     const lower = w.toLowerCase();
     const card = dict[w]?.meaning || dict[lower.replace(/[()"]/g, "").trim()]?.meaning;
-    const quiz = dict[lower.trim()]?.meaning;
-    if (card && !quiz) dropped++;
-    if (card && quiz && card !== quiz) failR.add(`V-01 ${w}`);
     if (seen.has(lower)) failR.add(`V-03/V-10 중복 ${w}`);
     seen.add(lower);
     if (card) {
@@ -58,7 +60,6 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
     if (V08.has(lower)) noteR.add(`V-08 ${lower}`);
     if (V09.has(lower)) noteR.add(`V-09 ${lower}`);
   }
-  if (dropped) failR.add(`V-02 퀴즈 제외 ${dropped}칸`);
   for (const [m, ws] of byMeaning) if (ws.size > 1) failR.add(`V-04 ${[...ws].join("/")}`);
   if (words.length !== 30) failR.add(`단어 ${words.length}칸`);
   const status = failR.size ? "FAIL" : noteR.size ? "NOTE" : "PASS";

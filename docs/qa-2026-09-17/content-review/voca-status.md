@@ -1,7 +1,7 @@
 # VOCA — 레슨별 상태 (195개)
 
 `scripts/status-voca.cjs` 가 생성. 사유는 `voca.md` 의 항목 ID.
-집계: PASS 102 · NOTE(Low 만) 42 · FAIL 51
+집계: PASS 113 · NOTE(Low 만) 45 · FAIL 37
 
 | 레슨 | 페이지 | 접근 | 단어 칸 | 상태 | 사유 |
 |---|---|---|---|---|---|
@@ -45,7 +45,7 @@
 | hv-38 | /phonics/hv-38 | 유료 | 30 | PASS |  |
 | hv-39 | /phonics/hv-39 | 유료 | 30 | FAIL | V-04 alliance/ally |
 | hv-40 | /phonics/hv-40 | 유료 | 30 | PASS |  |
-| hv-41 | /phonics/hv-41 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 · V-07 demand · V-08 immigrant |
+| hv-41 | /phonics/hv-41 | 유료 | 30 | NOTE | V-07 demand · V-08 immigrant |
 | hv-42 | /phonics/hv-42 | 유료 | 30 | FAIL | V-04 remembrance/memory · V-08 emigrant |
 | hv-43 | /phonics/hv-43 | 유료 | 30 | NOTE | V-08 prominent · V-08 movement |
 | hv-44 | /phonics/hv-44 | 유료 | 30 | FAIL | V-03/V-10 중복 motive |
@@ -72,7 +72,7 @@
 | hv-65 | /phonics/hv-65 | 유료 | 30 | NOTE | V-07 source · V-09 tactful · V-07 contact |
 | hv-66 | /phonics/hv-66 | 유료 | 30 | FAIL | V-05 technologic · V-04 sustain/retain |
 | hv-67 | /phonics/hv-67 | 유료 | 30 | FAIL | V-04 intent/intention |
-| hv-68 | /phonics/hv-68 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| hv-68 | /phonics/hv-68 | 유료 | 30 | PASS |  |
 | hv-69 | /phonics/hv-69 | 유료 | 30 | FAIL | V-04 trace/trail |
 | hv-70 | /phonics/hv-70 | 유료 | 30 | NOTE | V-08 utensil |
 | hv-71 | /phonics/hv-71 | 유료 | 30 | FAIL | V-04 valuable/invaluable · V-08 invention |
@@ -81,20 +81,20 @@
 | hv-74 | /phonics/hv-74 | 유료 | 30 | PASS |  |
 | hv-75 | /phonics/hv-75 | 유료 | 11 | FAIL | 단어 11칸 |
 | mv1-01 | /phonics/mv1-01 | 무료 | 30 | PASS |  |
-| mv1-02 | /phonics/mv1-02 | 무료 | 30 | FAIL | V-01 Miss · V-02 퀴즈 제외 5칸 · V-07 day |
+| mv1-02 | /phonics/mv1-02 | 무료 | 30 | NOTE | V-07 day |
 | mv1-03 | /phonics/mv1-03 | 유료 | 30 | FAIL | V-04 house/home · V-07 old · V-07 right |
 | mv1-04 | /phonics/mv1-04 | 유료 | 30 | NOTE | V-07 call |
 | mv1-05 | /phonics/mv1-05 | 유료 | 30 | NOTE | V-07 study |
-| mv1-06 | /phonics/mv1-06 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv1-06 | /phonics/mv1-06 | 유료 | 30 | PASS |  |
 | mv1-07 | /phonics/mv1-07 | 유료 | 30 | PASS |  |
 | mv1-08 | /phonics/mv1-08 | 유료 | 30 | NOTE | V-07 foot |
 | mv1-09 | /phonics/mv1-09 | 유료 | 30 | NOTE | V-08 pretty |
 | mv1-10 | /phonics/mv1-10 | 유료 | 30 | PASS |  |
-| mv1-11 | /phonics/mv1-11 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv1-11 | /phonics/mv1-11 | 유료 | 30 | PASS |  |
 | mv1-12 | /phonics/mv1-12 | 유료 | 30 | NOTE | V-07 train |
-| mv1-13 | /phonics/mv1-13 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 · V-07 still |
+| mv1-13 | /phonics/mv1-13 | 유료 | 30 | NOTE | V-07 still |
 | mv1-14 | /phonics/mv1-14 | 유료 | 30 | PASS |  |
-| mv1-15 | /phonics/mv1-15 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv1-15 | /phonics/mv1-15 | 유료 | 30 | PASS |  |
 | mv1-16 | /phonics/mv1-16 | 유료 | 30 | NOTE | V-07 break · V-07 since |
 | mv1-17 | /phonics/mv1-17 | 유료 | 30 | NOTE | V-07 poor |
 | mv1-18 | /phonics/mv1-18 | 유료 | 30 | PASS |  |
@@ -104,7 +104,7 @@
 | mv1-22 | /phonics/mv1-22 | 유료 | 30 | PASS |  |
 | mv1-23 | /phonics/mv1-23 | 유료 | 30 | PASS |  |
 | mv1-24 | /phonics/mv1-24 | 유료 | 30 | NOTE | V-07 number |
-| mv1-25 | /phonics/mv1-25 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv1-25 | /phonics/mv1-25 | 유료 | 30 | PASS |  |
 | mv1-26 | /phonics/mv1-26 | 유료 | 30 | PASS |  |
 | mv1-27 | /phonics/mv1-27 | 유료 | 30 | PASS |  |
 | mv1-28 | /phonics/mv1-28 | 유료 | 30 | NOTE | V-07 sentence |
@@ -118,8 +118,8 @@
 | mv1-36 | /phonics/mv1-36 | 유료 | 30 | PASS |  |
 | mv1-37 | /phonics/mv1-37 | 유료 | 30 | PASS |  |
 | mv1-38 | /phonics/mv1-38 | 유료 | 30 | FAIL | V-05 calender |
-| mv1-39 | /phonics/mv1-39 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
-| mv1-40 | /phonics/mv1-40 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv1-39 | /phonics/mv1-39 | 유료 | 30 | PASS |  |
+| mv1-40 | /phonics/mv1-40 | 유료 | 30 | PASS |  |
 | mv2-01 | /phonics/mv2-01 | 유료 | 30 | PASS |  |
 | mv2-02 | /phonics/mv2-02 | 유료 | 30 | NOTE | V-07 study |
 | mv2-03 | /phonics/mv2-03 | 유료 | 30 | PASS |  |
@@ -130,8 +130,8 @@
 | mv2-08 | /phonics/mv2-08 | 유료 | 30 | NOTE | V-07 train · V-07 care · V-07 call |
 | mv2-09 | /phonics/mv2-09 | 유료 | 30 | NOTE | V-07 break |
 | mv2-10 | /phonics/mv2-10 | 유료 | 30 | PASS |  |
-| mv2-11 | /phonics/mv2-11 | 유료 | 30 | FAIL | V-01 March · V-01 May · V-02 퀴즈 제외 8칸 |
-| mv2-12 | /phonics/mv2-12 | 유료 | 30 | FAIL | V-01 March · V-01 May · V-03/V-10 중복 November · V-03/V-10 중복 December · V-03/V-10 중복 January · V-03/V-10 중복 February · V-03/V-10 중복 March · V-03/V-10 중복 April · V-03/V-10 중복 May · V-03/V-10 중복 June · V-03/V-10 중복 July · V-03/V-10 중복 August · V-03/V-10 중복 September · V-03/V-10 중복 October · V-02 퀴즈 제외 25칸 |
+| mv2-11 | /phonics/mv2-11 | 유료 | 30 | PASS |  |
+| mv2-12 | /phonics/mv2-12 | 유료 | 30 | FAIL | V-03/V-10 중복 November · V-03/V-10 중복 December · V-03/V-10 중복 January · V-03/V-10 중복 February · V-03/V-10 중복 March · V-03/V-10 중복 April · V-03/V-10 중복 May · V-03/V-10 중복 June · V-03/V-10 중복 July · V-03/V-10 중복 August · V-03/V-10 중복 September · V-03/V-10 중복 October |
 | mv2-13 | /phonics/mv2-13 | 유료 | 30 | PASS |  |
 | mv2-14 | /phonics/mv2-14 | 유료 | 30 | PASS |  |
 | mv2-15 | /phonics/mv2-15 | 유료 | 30 | NOTE | V-07 rest |
@@ -184,14 +184,14 @@
 | mv3-22 | /phonics/mv3-22 | 유료 | 30 | PASS |  |
 | mv3-23 | /phonics/mv3-23 | 유료 | 30 | NOTE | V-07 care · V-07 sentence |
 | mv3-24 | /phonics/mv3-24 | 유료 | 30 | PASS |  |
-| mv3-25 | /phonics/mv3-25 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv3-25 | /phonics/mv3-25 | 유료 | 30 | PASS |  |
 | mv3-26 | /phonics/mv3-26 | 유료 | 30 | PASS |  |
 | mv3-27 | /phonics/mv3-27 | 유료 | 30 | PASS |  |
 | mv3-28 | /phonics/mv3-28 | 유료 | 30 | PASS |  |
 | mv3-29 | /phonics/mv3-29 | 유료 | 30 | PASS |  |
 | mv3-30 | /phonics/mv3-30 | 유료 | 30 | PASS |  |
 | mv3-31 | /phonics/mv3-31 | 유료 | 30 | PASS |  |
-| mv3-32 | /phonics/mv3-32 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv3-32 | /phonics/mv3-32 | 유료 | 30 | PASS |  |
 | mv3-33 | /phonics/mv3-33 | 유료 | 30 | PASS |  |
 | mv3-34 | /phonics/mv3-34 | 유료 | 30 | PASS |  |
 | mv3-35 | /phonics/mv3-35 | 유료 | 30 | PASS |  |
@@ -199,4 +199,4 @@
 | mv3-37 | /phonics/mv3-37 | 유료 | 30 | NOTE | V-07 rest |
 | mv3-38 | /phonics/mv3-38 | 유료 | 30 | PASS |  |
 | mv3-39 | /phonics/mv3-39 | 유료 | 30 | PASS |  |
-| mv3-40 | /phonics/mv3-40 | 유료 | 30 | FAIL | V-02 퀴즈 제외 1칸 |
+| mv3-40 | /phonics/mv3-40 | 유료 | 30 | PASS |  |
