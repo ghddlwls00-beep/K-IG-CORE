@@ -40,11 +40,18 @@
         },
         {
           "n": "4",
-          "text": "Would you mind if I ask a few questions about Korean customs?"
+          "text": "Would you mind if I asked a few questions about Korean customs?",
+          "alternatives": [
+            "Would you mind if I ask a few questions about Korean customs?"
+          ]
         },
         {
           "n": "5",
-          "text": "No, I don t. Go ahead."
+          "text": "No, not at all. Go ahead.",
+          "alternatives": [
+            "No, I don't mind. Go ahead.",
+            "No, I don't. Go ahead."
+          ]
         },
         {
           "n": "6",
@@ -112,7 +119,11 @@
         },
         {
           "n": "22",
-          "text": "We are gonna have a three-day weekend."
+          "text": "We are going to have a three-day weekend.",
+          "alternatives": [
+            "We're going to have a three-day weekend.",
+            "We are gonna have a three-day weekend."
+          ]
         }
       ]
     },

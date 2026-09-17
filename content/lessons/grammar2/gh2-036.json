@@ -32,7 +32,11 @@
         },
         {
           "n": "2",
-          "text": "To do his best, he could not succeed."
+          "text": "Though he did his best, he could not succeed.",
+          "alternatives": [
+            "Although he did his best, he could not succeed.",
+            "Though he did his best, he couldn't succeed."
+          ]
         },
         {
           "n": "3",
@@ -68,7 +72,7 @@
         },
         {
           "n": "11",
-          "text": "She rose to deliver a 40 minute speech."
+          "text": "She rose to deliver a 40-minute speech."
         },
         {
           "n": "12",

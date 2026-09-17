@@ -72,11 +72,17 @@
         },
         {
           "n": "12",
-          "text": "I must make you an apology."
+          "text": "I must make you an apology.",
+          "alternatives": [
+            "I owe you an apology."
+          ]
         },
         {
           "n": "13",
-          "text": "Let me make you amends for your loss."
+          "text": "Let me make you amends for your loss.",
+          "alternatives": [
+            "Let me make amends to you for your loss."
+          ]
         },
         {
           "n": "14",
@@ -112,7 +118,10 @@
         },
         {
           "n": "22",
-          "text": "I felt myself guilty."
+          "text": "I felt myself guilty.",
+          "alternatives": [
+            "I felt guilty."
+          ]
         },
         {
           "n": "23",

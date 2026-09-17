@@ -36,7 +36,10 @@
         },
         {
           "n": "3",
-          "text": "This is so heavy that I can not carry."
+          "text": "This is so heavy that I cannot carry it.",
+          "alternatives": [
+            "This is too heavy for me to carry."
+          ]
         },
         {
           "n": "4",
@@ -93,7 +96,7 @@
           "n": "16",
           "text": "I had a little alteration made.",
           "alternatives": [
-            "I had a little a few alterations made."
+            "I had a few alterations made."
           ]
         },
         {

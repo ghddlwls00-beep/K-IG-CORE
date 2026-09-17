@@ -40,7 +40,11 @@
         },
         {
           "n": "4",
-          "text": "I'm treating."
+          "text": "It's my treat.",
+          "alternatives": [
+            "It's on me.",
+            "I'm treating."
+          ]
         },
         {
           "n": "5",
@@ -104,7 +108,10 @@
         },
         {
           "n": "20",
-          "text": "Can you see me?"
+          "text": "Do you recognize me?",
+          "alternatives": [
+            "Can you recognize me?"
+          ]
         },
         {
           "n": "21",

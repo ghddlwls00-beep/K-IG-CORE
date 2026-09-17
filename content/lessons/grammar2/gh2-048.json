@@ -39,9 +39,9 @@
         },
         {
           "n": "3",
-          "text": "If I had known your phone number,.",
+          "text": "If I had known your phone number, I would have called you.",
           "alternatives": [
-            "Had I known your phone number,."
+            "Had I known your phone number, I would have called you."
           ]
         }
       ]
@@ -75,9 +75,9 @@
         },
         {
           "n": "9",
-          "text": "If they had had the ability to make money,.",
+          "text": "If they had had the ability to make money, they would have had food and clothing.",
           "alternatives": [
-            "Had they had the ability to make money,."
+            "Had they had the ability to make money, they would have had food and clothing."
           ]
         }
       ]
@@ -91,16 +91,17 @@
       "items": [
         {
           "n": "10",
-          "text": "He should be in high school now if he had not flunked a grade.",
+          "text": "He would be in high school now if he had not flunked a grade.",
           "alternatives": [
-            "Had he not flunked a grade, he should be in high school now."
+            "Had he not flunked a grade, he would be in high school now."
           ]
         },
         {
           "n": "11",
-          "text": "If the blood products had been heat treated,.",
+          "text": "If the blood products had been heat-treated, they could not have been infected with HIV.",
           "alternatives": [
-            "Had the blood product been heat treated,."
+            "Had the blood products been heat-treated, they could not have been infected with HIV.",
+            "If the blood products had been heat treated, they could not have been infected with HIV."
           ]
         }
       ]
@@ -129,17 +130,20 @@
         },
         {
           "n": "15",
-          "text": "Should I have been three minutes late, I should have missed the train.",
+          "text": "Had I been three minutes late, I would have missed the train.",
           "alternatives": [
+            "If I had been three minutes late, I would have missed the train.",
             "If I had been three minutes late, I should have missed the train.",
             "Had I been three minutes late, I should have missed the train."
           ]
         },
         {
           "n": "16",
-          "text": "Should you not go, he would go. he would go.",
+          "text": "Should you not go, he would go.",
           "alternatives": [
-            "If you should not go,."
+            "If you should not go, he would go.",
+            "Should you not go, he will go.",
+            "If you don't go, he will go."
           ]
         }
       ]

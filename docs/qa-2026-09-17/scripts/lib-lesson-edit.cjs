@@ -11,7 +11,13 @@
 const fs = require("fs");
 const path = require("path");
 
-function createEditor(REPO, course) {
+/**
+ * @param {object} [opts]
+ * @param {string[]} [opts.splits] suffixes of split copies of a page (GRAMMAR I: -1/-2). GRAMMAR II
+ *   uses "-1" for the KOREAN page, not a copy, so it passes [].
+ */
+function createEditor(REPO, course, opts = {}) {
+  const splits = opts.splits ?? ["-1", "-2"];
   const dir = path.join(REPO, "content/lessons", course);
   const cache = new Map(); // id -> { raw, data, format }
   const touched = new Set();
@@ -42,7 +48,7 @@ function createEditor(REPO, course) {
     cache.set(id, entry);
     return entry;
   }
-  const pagesOf = (id) => [id, `${id}-1`, `${id}-2`].map((p) => [p, load(p)]).filter(([, e]) => e);
+  const pagesOf = (id) => [id, ...splits.map((s) => `${id}${s}`)].map((p) => [p, load(p)]).filter(([, e]) => e);
   const findItem = (entry, n) => {
     for (const b of entry.data.blocks || []) {
       if (b.type !== "sentences") continue;

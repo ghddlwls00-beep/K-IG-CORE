@@ -36,7 +36,7 @@
         },
         {
           "n": "3",
-          "text": "Let me know the time of your arrival so that I can meet"
+          "text": "Let me know the time of your arrival so that I can meet you at the station."
         }
       ]
     },
@@ -73,7 +73,11 @@
         },
         {
           "n": "10",
-          "text": "He used to come here last year."
+          "text": "He often came here last year.",
+          "alternatives": [
+            "He would often come here last year.",
+            "He used to come here last year."
+          ]
         },
         {
           "n": "11",
@@ -89,7 +93,7 @@
         },
         {
           "n": "14",
-          "text": "The student is preparing for an entrance examination"
+          "text": "The student is preparing for an entrance examination."
         }
       ]
     },

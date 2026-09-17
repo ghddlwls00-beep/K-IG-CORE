@@ -40,7 +40,10 @@
         },
         {
           "n": "4",
-          "text": "He just arrived."
+          "text": "He just arrived.",
+          "alternatives": [
+            "He has just arrived."
+          ]
         },
         {
           "n": "5",
@@ -79,7 +82,11 @@
         },
         {
           "n": "13",
-          "text": "Both are not good."
+          "text": "They are not both good.",
+          "alternatives": [
+            "Not both of them are good.",
+            "Both are not good."
+          ]
         },
         {
           "n": "14",
@@ -87,7 +94,11 @@
         },
         {
           "n": "15",
-          "text": "Anything is good."
+          "text": "Either is good.",
+          "alternatives": [
+            "Either one is good.",
+            "Anything is good."
+          ]
         },
         {
           "n": "16",

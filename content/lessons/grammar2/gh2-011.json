@@ -60,7 +60,10 @@
         },
         {
           "n": "9",
-          "text": "He travelled through China."
+          "text": "He travelled through China.",
+          "alternatives": [
+            "He traveled through China."
+          ]
         },
         {
           "n": "10",
@@ -84,7 +87,10 @@
         },
         {
           "n": "15",
-          "text": "The office is in the southern Texas city of Dallas."
+          "text": "The office is in the North Texas city of Dallas.",
+          "alternatives": [
+            "The office is in the northern Texas city of Dallas."
+          ]
         },
         {
           "n": "16",
@@ -104,7 +110,10 @@
         },
         {
           "n": "20",
-          "text": "You can go to prison for drunken driving."
+          "text": "You can go to prison for drunk driving.",
+          "alternatives": [
+            "You can go to prison for drunken driving."
+          ]
         }
       ]
     },

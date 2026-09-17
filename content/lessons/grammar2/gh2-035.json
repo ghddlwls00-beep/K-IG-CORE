@@ -68,11 +68,17 @@
         },
         {
           "n": "11",
-          "text": "When you happen to come to town, be sure to look me up again."
+          "text": "If you happen to come to town, be sure to look me up again.",
+          "alternatives": [
+            "When you happen to come to town, be sure to look me up again."
+          ]
         },
         {
           "n": "12",
-          "text": "I am sorry to hear that you've got divorced."
+          "text": "I am sorry to hear that you got divorced.",
+          "alternatives": [
+            "I am sorry to hear that you've gotten divorced."
+          ]
         }
       ]
     },

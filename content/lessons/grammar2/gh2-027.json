@@ -32,11 +32,19 @@
         },
         {
           "n": "2",
-          "text": "Are you gonna breast feed your baby as you did before?"
+          "text": "Are you going to breast-feed your baby as you did before?",
+          "alternatives": [
+            "Are you going to breastfeed your baby as you did before?",
+            "Are you gonna breast-feed your baby as you did before?"
+          ]
         },
         {
           "n": "3",
-          "text": "No, I am gonna bottle feed my baby."
+          "text": "No, I am going to bottle-feed my baby.",
+          "alternatives": [
+            "No, I'm going to bottle-feed my baby.",
+            "No, I am gonna bottle-feed my baby."
+          ]
         },
         {
           "n": "4",
@@ -72,7 +80,7 @@
         },
         {
           "n": "12",
-          "text": "He got a \"C\" average on his report card but I am sure"
+          "text": "He got a \"C\" average on his report card, but I am sure he will get better grades next year."
         }
       ]
     },

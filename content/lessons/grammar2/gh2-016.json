@@ -80,7 +80,7 @@
         },
         {
           "n": "14",
-          "text": "He is so poor that he can not buy it."
+          "text": "He is so poor that he cannot buy it."
         },
         {
           "n": "15",
@@ -124,7 +124,10 @@
         },
         {
           "n": "25",
-          "text": "I didn't see any person."
+          "text": "I didn't see any person.",
+          "alternatives": [
+            "I didn't see anyone."
+          ]
         },
         {
           "n": "26",
@@ -168,7 +171,11 @@
         },
         {
           "n": "36",
-          "text": "He felt tired, still he continued his work."
+          "text": "He felt tired, still he continued his work.",
+          "alternatives": [
+            "He felt tired; still, he continued his work.",
+            "He felt tired, but he still continued his work."
+          ]
         }
       ]
     },

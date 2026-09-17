@@ -52,7 +52,7 @@
         },
         {
           "n": "7",
-          "text": "I can not solve the problem."
+          "text": "I cannot solve the problem."
         },
         {
           "n": "8",
@@ -79,7 +79,10 @@
         },
         {
           "n": "13",
-          "text": "It would be fine tomorrow."
+          "text": "It will be fine tomorrow.",
+          "alternatives": [
+            "The weather will be fine tomorrow."
+          ]
         },
         {
           "n": "14",
@@ -87,7 +90,10 @@
         },
         {
           "n": "15",
-          "text": "He shall be fifteen tomorrow."
+          "text": "He will be fifteen tomorrow.",
+          "alternatives": [
+            "He will turn fifteen tomorrow."
+          ]
         },
         {
           "n": "16",
@@ -122,7 +128,10 @@
         },
         {
           "n": "23",
-          "text": "You need not study English."
+          "text": "You need not study English.",
+          "alternatives": [
+            "You don't need to study English."
+          ]
         }
       ]
     },
