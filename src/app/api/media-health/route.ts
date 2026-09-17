@@ -34,9 +34,12 @@ async function runProbe() {
     const res = await fetchMediaObject(PROBE_KEY, "bytes=0-15");
     probeStatus = res.status;
     if (res.status === 200 || res.status === 206) probe = "ok";
-    // The body is left unread on purpose: cancelling a stream that was never
-    // consumed hung this handler until the function timed out, which is the
-    // one thing a health check must not do.
+    // The body is not needed. It is cancelled WITHOUT awaiting: awaiting the
+    // cancel of a stream that was never consumed once hung this handler until
+    // the function timed out, which is the one thing a health check must not do.
+    // Leaving it unread is not an option either since MEDIA-01: nothing else
+    // would ever give its R2 connection back (see `mediaOrigin.ts`).
+    void res.body?.cancel().catch(() => {});
   } catch {
     probe = "failed";
   }

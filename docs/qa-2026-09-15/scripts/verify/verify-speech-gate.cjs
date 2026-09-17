@@ -12,7 +12,8 @@
  *
  * FOUR AXES, none of them a route count:
  *
- *   A  FREE CLIPS ARE STILL SERVED, with real audio bytes and a public cache.
+ *   A  FREE CLIPS ARE STILL SERVED, as a correct 206 with real audio bytes and a
+ *      browser-only (`private`) cache — `public` was the MEDIA-02 bug, 2026-09-18.
  *      Narrowing an allow list is how a free lesson goes silent — RE-004 hit
  *      exactly that with STUDENT's `s1-1-1.mp3` — so this is asserted first.
  *   B  LOCKED CLIPS ARE DENIED, and the denial is not cacheable by a shared
@@ -134,13 +135,16 @@ async function probeFreeClips() {
       missing++;
       continue;
     }
-    if (res.status !== 206 && res.status !== 200) {
-      problems.push(`${key}: expected 200/206 for a free clip, got ${res.status}`);
+    // MEDIA-02 (2026-09-18): a Range request must get 206 with exactly the bytes asked for. A 200 here was
+    // the CDN answering from a stored copy with the slice as the "whole" file, which players misread.
+    if (res.status !== 206) {
+      problems.push(`${key}: expected 206 for bytes=0-1 on a free clip, got ${res.status}`);
       continue;
     }
-    if (!res.bytes) problems.push(`${key}: ${res.status} but no bytes`);
+    if (res.bytes !== 2) problems.push(`${key}: 206 but ${res.bytes} bytes (want 2)`);
     if (!/^audio\//.test(res.type || "")) problems.push(`${key}: Content-Type is "${res.type}"`);
-    if (!/\bpublic\b/.test(res.cache || "")) problems.push(`${key}: a free clip should be publicly cacheable — ${res.cache}`);
+    // Since MEDIA-02 no clip may be stored by a shared cache: private, never public or s-maxage.
+    if (!/\bprivate\b/.test(res.cache || "") || /\bpublic\b|s-maxage/.test(res.cache || "")) problems.push(`${key}: a free clip must be private (browser cache only) — ${res.cache}`);
     served++;
   }
   record(

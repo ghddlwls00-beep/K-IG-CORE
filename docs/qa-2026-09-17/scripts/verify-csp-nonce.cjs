@@ -371,7 +371,7 @@ async function n3() {
   for (const it of items) {
     if (!it.route) { record.n3[it.key] = null; continue; }
     const r = await get(it.route, it.headers || {});
-    record.n3[it.key] = { status: r.status, type: r.type, cache: r.cache, nonce: Boolean(nonceOf(r.csp)), policies: policyCount(r.csp), scriptSrc: directives(r.csp).find((d) => d.startsWith("script-src")) || null };
+    record.n3[it.key] = { status: r.status, type: r.type, cache: r.cache, nonce: Boolean(nonceOf(r.csp)), policies: policyCount(r.csp), scriptSrc: directives(r.csp).find((d) => d.startsWith("script-src")) || null, received: r.body.length };
   }
   if (BASELINE) return;
   const diffs = [];
@@ -384,9 +384,13 @@ async function n3() {
     if (row.policies !== 1 || row.scriptSrc !== "script-src 'none'") wrongPolicy.push(`${key}: ${row.policies} ${row.scriptSrc}`);
     if (NO_BASELINE) continue;
     if (!was) { diffs.push(`${key}: no baseline to compare with`); continue; }
-    const sameCache = key.startsWith("_next") ? true : row.cache === was.cache;
-    // A CDN may answer a Range request for a cached clip with the whole file (200) or the range (206).
-    const sameStatus = row.status === was.status || (key === "/audio free clip range" && [200, 206].includes(row.status) && [200, 206].includes(was.status));
+    // MEDIA-02 (2026-09-18) changed free clips on production from `public, …` to `private, max-age=31536000,
+    // immutable` on purpose; locally the clip is a file in public/ and keeps its static header.
+    const media02 = REMOTE && /^\/audio free clip/.test(key);
+    const sameCache = key.startsWith("_next") ? true : media02 ? /^private, max-age=31536000, immutable$/.test(row.cache || "") : row.cache === was.cache;
+    // The production baseline recorded 200 for the Range row: that was the MEDIA-02 bug (the CDN answering from a
+    // stored copy). Since MEDIA-02 the row must be 206, checked below, so its status is not compared here.
+    const sameStatus = row.status === was.status || (media02 && key === "/audio free clip range");
     if (!sameStatus || row.type !== was.type || !sameCache) diffs.push(`${key}: ${was.status} ${was.type} ${was.cache} → ${row.status} ${row.type} ${row.cache}`);
   }
   check(`N3 ${Object.keys(record.n3).length} files, clips and API routes answer as before (status, type, cache-control)${NO_BASELINE ? " — NOT COMPARED: no baseline file on this machine" : ""}`, diffs.length === 0, diffs.slice(0, 8).join(" | "));
@@ -395,9 +399,9 @@ async function n3() {
   check("N3 no nonce policy on a file, clip or API answer", proxied.length === 0, proxied.join(", "));
   check("N3 every one of them carries exactly one policy, and it is script-src 'none'", wrongPolicy.length === 0, wrongPolicy.slice(0, 8).join(" | "));
   const range = record.n3["/audio free clip range"];
-  // Locally the route handler answers the range (206). In production the CDN may answer from its cached copy
-  // with the whole clip (200) — the production baseline measured 200 before SEC-05.
-  check(`N3 a free clip still answers a Range request (${range && range.status}${REMOTE ? ", 200 or 206 in production" : ", 206 locally"}), a locked one 403 (${record.n3["/audio locked clip"] && record.n3["/audio locked clip"].status})`, range && (range.status === 206 || (REMOTE && range.status === 200)) && record.n3["/audio locked clip"].status === 403, JSON.stringify(range));
+  // bytes=0-1 right after a plain GET of the same clip: the order that made the CDN answer 200 with 2 bytes before
+  // MEDIA-02. It must be a real 206 with exactly 2 bytes, locally and in production.
+  check(`N3 a free clip answers a Range request right after a full GET with 206 and exactly the 2 bytes asked for (${range && range.status}, ${range && range.received} bytes), a locked one 403 (${record.n3["/audio locked clip"] && record.n3["/audio locked clip"].status})`, range && range.status === 206 && range.received === 2 && record.n3["/audio locked clip"].status === 403, JSON.stringify(range));
 }
 
 // ── N4 browser walk ────────────────────────────────────────────────────────────────────────────

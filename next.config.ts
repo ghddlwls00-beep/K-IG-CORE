@@ -116,7 +116,9 @@ const nextConfig: NextConfig = {
       })),
       // No blanket Cache-Control for /audio/* any more: a licensed clip must not
       // be stored by a shared cache and replayed to the next anonymous visitor.
-      // The route handler sets public-immutable or private per object instead.
+      // The route handler sets the cache per object instead, and since MEDIA-02
+      // every clip is `private` (a long browser cache for free ones), because the
+      // CDN answered Range requests for a stored clip with a wrong 200.
       {
         source: "/images/:path*",
         headers: [

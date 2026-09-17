@@ -77,7 +77,8 @@ export async function resolveMediaAccess(
   const file = parts[parts.length - 1] ?? "";
 
   // audio/azure-ava/v1/<hash>.mp3 — see the note above. A clip on the free
-  // list is public (and publicly cacheable); anything else is served only to a
+  // list is open to everyone (kept a year by the browser; since MEDIA-02 no
+  // shared cache stores any clip — see mediaRoute.ts); anything else is served only to a
   // licence session, and privately, like the course folders below. The session
   // is not narrowed by course here because a hash carries no course — a
   // STUDENT-only pass can therefore fetch a GRAMMAR clip, but only after paying
