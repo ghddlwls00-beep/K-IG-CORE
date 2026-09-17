@@ -4,16 +4,14 @@
  * browser against an ISOLATED `next dev` (port 3217): durable storage blanked, random LICENSE_* /
  * ADMIN_SESSION_SECRET, no PIN; stops before any write unless the admin list starts empty.
  *
- *  gh1-020
- *   - shown as "문법 확인 문제" with 8 questions (was 16 composition items) and no composition /
- *     cloze / shadowing / exam modes, no answer boxes
- *   - an answer is not on screen until its "답 보기" is pressed; "전체 답 보기" shows all 8 answers
- *     and all 17 English examples
- *   - the page player and an example's 🔊 request the English clip ("I am a boy.",
- *     "I am a doctor."), never a clip of the Korean question text
- *  gh1-022 (next lesson) still the normal composition view
+ *  gh1-020 (07강) — owner: must teach like the other GRAMMAR lessons
+ *   - exactly the same four study steps as its neighbour gh1-022 (08강)
+ *   - 24 Korean prompts with one answer box each (was 16 Korean Q&A items); 전체 정답 보기 shows the
+ *     24 English answers; Step 2 has blanks; the page player requests the English clip
+ *     "I am a boy." and never a Korean one
+ *   - the 8 be-verb rule Q&A are a folded summary (closed at first), not offered as answers
  *  pr012, pr251 (new passages): every English sentence and the 14 cards of the data on screen
- *  screenshot: docs/qa-2026-09-17/out/gh1-020-theory.png
+ *  screenshot: docs/qa-2026-09-17/out/gh1-020-steps.png
  *
  *   node verify-gh1-020-ui.cjs     exit 0 = every check as expected
  */
@@ -93,48 +91,52 @@ async function open(tab, url, readyText, state) {
     await tab.viewport("desktop");
     const state = { registered: false };
 
-    // ── gh1-020 ──
-    const s1 = await open(tab, `${BASE}/grammar1/gh1-020`, "문법 확인 문제", state);
-    check("gh1-020 opens with the test licence", s1 === "open", s1 || "timeout");
+    // ── gh1-022 (08강), the neighbour: which steps does a GRAMMAR I lesson have? ──
+    const steps = () => tab.eval(`[...document.querySelectorAll('nav[aria-label="문법 4단계 학습 모드"] button')].map((b) => b.innerText.replace(/\\s+/g, " ").trim())`);
+    const s2 = await open(tab, `${BASE}/grammar1/gh1-022`, "Step 1 · 영작 훈련", state);
+    check("gh1-022 (08강) opens", s2 === "open");
+    const neighbourSteps = await steps();
+
+    // ── gh1-020 (07강) ──
+    const s1 = await open(tab, `${BASE}/grammar1/gh1-020`, "Step 1 · 영작 훈련", state);
+    check("gh1-020 (07강) opens with the test licence", s1 === "open", s1 || "timeout");
+    const ownSteps = await steps();
+    check(`gh1-020: the same four study steps as 08강 (${neighbourSteps.join(" / ")})`, neighbourSteps.length === 4 && JSON.stringify(ownSteps) === JSON.stringify(neighbourSteps), JSON.stringify(ownSteps));
     let text = squash(await tab.eval("document.body.innerText"));
-    const shape = await tab.eval(`({ items: document.querySelectorAll('main ol > li').length, textareas: document.querySelectorAll('main textarea').length, inputs: document.querySelectorAll('main input[type=text]').length })`);
-    check("gh1-020: 'Grammar 1 : 문법 확인 문제', 총 8개 문항, 8 questions (was 16)", text.includes("Grammar 1 : 문법 확인 문제") && text.includes("총 8개 문항") && shape.items === 8, JSON.stringify(shape));
-    check("gh1-020: no composition / cloze / shadowing / exam modes and no answer boxes", !/Step 1 · 영작 훈련|Step 2 · 빈칸 완성|Step 4 · 종합 평가|영어 정답 발음/.test(text) && shape.textareas === 0 && shape.inputs === 0, JSON.stringify(shape));
-    check("gh1-020: answers not on screen before pressing", !text.includes(answers[2]) && !text.includes(examplesEn[4]), answers[2]);
-    await tab.eval(`document.querySelectorAll('main ol > li')[2].querySelector('button').click()`);
-    await sleep(400);
-    text = squash(await tab.eval("document.body.innerText"));
-    check("gh1-020: 답 보기 on question 3 shows its answer and its English examples only", text.includes(answers[2]) && text.includes("I am a doctor.") && text.includes("I am in my room.") && !text.includes(answers[3]), answers[2]);
+    check(`gh1-020: 총 ${examplesEn.length}개 문항 (was 16 Korean Q&A items), first prompt 나는 소년이다.`, text.includes(`총 ${examplesEn.length}개 문항`) && text.includes("나는 소년이다.") && text.includes("우리는 학생이다."), "");
+    const composeBoxes = await tab.eval(`document.querySelectorAll('main input[type=text]').length`);
+    check(`gh1-020: one answer box per sentence (${examplesEn.length})`, composeBoxes === examplesEn.length, String(composeBoxes));
 
-    tab.resetEvents();
-    await tab.eval(`[...document.querySelectorAll('main ol > li')][2].querySelector('button[aria-label^="예문 듣기"]').click()`);
-    await sleep(2500);
-    const exKey = unifiedSpeechKey("I am a doctor.");
-    check("gh1-020: an example's 🔊 requests the English clip", tab.events.requests.some((u) => u.includes(`${exKey}.mp3`)), tab.events.requests.filter((u) => u.includes("azure-ava")).join(" | "));
+    const rules = await tab.eval(`(() => { const d = [...document.querySelectorAll('main details')].find((x) => x.innerText.includes('문법 확인')); return d ? { open: d.open, items: d.querySelectorAll('li').length } : null; })()`);
+    check("gh1-020: the 8 be-verb rule Q&A kept as a folded summary (closed at first)", rules && rules.items === 8 && rules.open === false, JSON.stringify(rules));
+    check("gh1-020: no Korean rule answer is offered as an English answer", !text.includes(answers[0]), answers[0]);
 
-    await clickText(tab, "main button", "전체 답 보기");
+    await clickText(tab, "main button", "전체 정답 보기");
     await sleep(500);
     text = squash(await tab.eval("document.body.innerText"));
-    const enCount = await tab.eval(`document.querySelectorAll('main span[lang="en"]').length`);
-    check("gh1-020: 전체 답 보기 shows all 8 answers and all 17 English examples", answers.every((a) => text.includes(squash(a))) && enCount === examplesEn.length && examplesEn.every((e) => text.includes(e)), `${enCount} examples`);
-    await tab.eval(`document.querySelector('main ol')?.scrollIntoView({ block: 'start' })`);
+    check("gh1-020: 전체 정답 보기 shows the English answers (I am a boy. … Aren't I your friend?)", examplesEn.every((e) => text.includes(e)), examplesEn.filter((e) => !text.includes(e)).join(" | "));
+    await tab.eval(`[...document.querySelectorAll('main details')].find((x) => x.innerText.includes('문법 확인')).open = true`);
+    await sleep(300);
+    text = squash(await tab.eval("document.body.innerText"));
+    check("gh1-020: opening the summary shows all 8 rule answers", answers.every((a) => text.includes(squash(a))), "");
+    await tab.eval(`window.scrollTo(0, 0)`);
     await sleep(300);
     const shot = await tab.send("Page.captureScreenshot", { format: "png" });
-    fs.writeFileSync(path.join(OUT, "gh1-020-theory.png"), Buffer.from(shot.data, "base64"));
+    fs.writeFileSync(path.join(OUT, "gh1-020-steps.png"), Buffer.from(shot.data, "base64"));
+
+    await clickText(tab, "nav button", "Step 2 · 빈칸 완성");
+    await sleep(600);
+    const blanks = await tab.eval(`document.querySelectorAll('main input').length`);
+    check("gh1-020: Step 2 빈칸 완성 has blanks to fill (am / is / are …)", blanks >= examplesEn.length, String(blanks));
 
     tab.resetEvents();
-    await tab.eval(`window.scrollTo(0, 0)`);
     await tab.eval(`document.querySelector('button[aria-label="재생"]')?.click()`);
     await sleep(3000);
     const firstKey = unifiedSpeechKey("I am a boy.");
-    const koKeys = ["문법 확인 문제", "(1)평서문(나는 소년이다 등등)일 때 영어의 문장순서는?"].map(unifiedSpeechKey);
+    const koKeys = ["문법 확인 문제", "(1)평서문(나는 소년이다 등등)일 때 영어의 문장순서는?", "나는 소년이다."].map(unifiedSpeechKey);
     const clipReqs = tab.events.requests.filter((u) => u.includes("azure-ava"));
-    check("gh1-020: the page player reads the English examples (first clip 'I am a boy.'), no Korean question clip", clipReqs.some((u) => u.includes(`${firstKey}.mp3`)) && !clipReqs.some((u) => koKeys.some((k) => u.includes(`${k}.mp3`))), clipReqs.join(" | "));
+    check("gh1-020: the page player reads the English sentences (first clip 'I am a boy.'), no Korean clip", clipReqs.some((u) => u.includes(`${firstKey}.mp3`)) && !clipReqs.some((u) => koKeys.some((k) => u.includes(`${k}.mp3`))), clipReqs.join(" | "));
     await tab.eval(`document.querySelector('button[aria-label="정지"]')?.click()`).catch(() => {});
-
-    // ── gh1-022 still normal ──
-    const s2 = await open(tab, `${BASE}/grammar1/gh1-022`, "Step 1 · 영작 훈련", state);
-    check("gh1-022 (08강) still shows the composition view", s2 === "open");
 
     // ── new READING passages ──
     for (const id of ["pr012", "pr251"]) {
