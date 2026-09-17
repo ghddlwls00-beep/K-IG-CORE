@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "An eighteenth-century scholar said, \"Water, which is essential for life, cost nothing. On the other hand, diamonds, which are essential for nothing, cost a lot.\" Unfortunately, the world has changed considerably since that remark was made. What was true over two hundred years ago is certainly no longer the case. What is still true, however, is a writer's comment, \"When the well's dry, we know the worth of it.\" That is, we ignore it when we have it - unless we have too much of it, of course. Once there is a threat to its supply, however, water can quickly become the only thing that matter. We know only too well that, without it, there can be no life."
+   "text": "An eighteenth-century scholar said, \"Water, which is essential for life, costs nothing. On the other hand, diamonds, which are essential for nothing, cost a lot.\" Unfortunately, the world has changed considerably since that remark was made. What was true over two hundred years ago is certainly no longer the case. What is still true, however, is a writer's comment, \"When the well's dry, we know the worth of it.\" That is, we ignore it when we have it - unless we have too much of it, of course. Once there is a threat to its supply, however, water can quickly become the only thing that matters. We know only too well that, without it, there can be no life."
   },
   {
    "type": "choice",
@@ -47,43 +47,43 @@
  "readingSentences": [
   {
    "id": "reading-099-s001",
-   "english": "An eighteenth-century scholar said, \"Water, which is essential for life, cost nothing.",
-   "korean": "18세기의 한 학자는 \"물이란, 삶을 위해 필수적인 것이, 공짜이다."
+   "english": "An eighteenth-century scholar said, \"Water, which is essential for life, costs nothing.",
+   "korean": "18세기의 한 학자는 이렇게 말했다. \"생명에 꼭 필요한 물은 값이 들지 않는다."
   },
   {
    "id": "reading-099-s002",
    "english": "On the other hand, diamonds, which are essential for nothing, cost a lot.\"",
-   "korean": "반면에, 다이아몬드는, 무엇을 위해서도 필수적이지 않은 것이, 비싸다\" 고 말했다."
+   "korean": "반면 아무 데도 꼭 필요하지 않은 다이아몬드는 값이 매우 비싸다.\""
   },
   {
    "id": "reading-099-s003",
    "english": "Unfortunately, the world has changed considerably since that remark was made.",
-   "korean": "유감스럽게도, 그러한 논평이 행해진 이후 세상은 많이 변했다."
+   "korean": "유감스럽게도 그 말이 나온 이후 세상은 많이 변했다."
   },
   {
    "id": "reading-099-s004",
    "english": "What was true over two hundred years ago is certainly no longer the case.",
-   "korean": "200년 전에 사실이었던 것이 더 이상 사실이 아니다."
+   "korean": "200여 년 전에 사실이었던 것이 이제는 분명 더 이상 사실이 아니다."
   },
   {
    "id": "reading-099-s005",
    "english": "What is still true, however, is a writer's comment, \"When the well's dry, we know the worth of it.\"",
-   "korean": "그러나 여전히 진실인 것은 \"우물이 마르면 그것의 가치를 안다\"는 필자의 언급이다."
+   "korean": "그러나 여전히 맞는 것은 \"우물이 말라야 물의 가치를 안다\"는 한 작가의 말이다."
   },
   {
    "id": "reading-099-s006",
    "english": "That is, we ignore it when we have it - unless we have too much of it, of course.",
-   "korean": "즉, 물론 우리가 그 것을 너무 많이 갖고 있지 않다해도, 우리가 그것을 갖고 있을 땐 그것을 무시한다는 것이다."
+   "korean": "즉 우리는 물이 있을 때는 그것을 무시한다. 물론 물이 너무 많을 때는 예외지만."
   },
   {
    "id": "reading-099-s007",
-   "english": "Once there is a threat to its supply, however, water can quickly become the only thing that matter.",
-   "korean": "그러나 일단 물 공급에 대한 위협이 있게 되면, 물은 즉시 문제가 되는 유일한 것이 될 수 있다."
+   "english": "Once there is a threat to its supply, however, water can quickly become the only thing that matters.",
+   "korean": "그러나 일단 물 공급이 위협받으면 물은 금세 유일하게 중요한 것이 될 수 있다."
   },
   {
    "id": "reading-099-s008",
    "english": "We know only too well that, without it, there can be no life.",
-   "korean": "우리는, 그 것이 없다면 생명이 존재할 수 없다는 것을 너무도 잘 안다."
+   "korean": "물이 없으면 생명도 있을 수 없다는 것을 우리는 너무도 잘 안다."
   }
  ],
  "readingVocabulary": [
@@ -91,7 +91,7 @@
    "word": "hand",
    "lemma": "hand",
    "partOfSpeech": "n.",
-   "korean": "손",
+   "korean": "(on the other hand) 반면에",
    "score": 88,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
    "examTags": [
@@ -103,7 +103,7 @@
    "word": "essential",
    "lemma": "essential",
    "partOfSpeech": "adj.",
-   "korean": "본질적인",
+   "korean": "꼭 필요한",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
    "examTags": [
@@ -127,7 +127,7 @@
    "word": "changed",
    "lemma": "change",
    "partOfSpeech": "v.",
-   "korean": "변화",
+   "korean": "변하다",
    "score": 82,
    "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
@@ -162,44 +162,20 @@
   {
    "word": "cost",
    "lemma": "cost",
-   "partOfSpeech": "n.",
-   "korean": "비용",
+   "partOfSpeech": "v.",
+   "korean": "값이 ~이다 (cost nothing 공짜다)",
    "score": 78,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 2
+   "freq": 1
   },
   {
    "word": "well",
    "lemma": "well",
    "partOfSpeech": "n.",
-   "korean": "잘; 건강한; 우물",
-   "score": 76,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 2
-  },
-  {
-   "word": "hundred",
-   "lemma": "hundred",
-   "partOfSpeech": "v.",
-   "korean": "100, 백",
-   "score": 76,
-   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "without",
-   "lemma": "without",
-   "partOfSpeech": "n.",
-   "korean": "없이",
+   "korean": "우물",
    "score": 76,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
    "examTags": [
@@ -208,22 +184,46 @@
    "freq": 1
   },
   {
-   "word": "world",
-   "lemma": "world",
+   "word": "supply",
+   "lemma": "supply",
    "partOfSpeech": "n.",
-   "korean": "세계",
-   "score": 74,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 74점)",
+   "korean": "공급",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "threat",
+   "lemma": "threat",
+   "partOfSpeech": "n.",
+   "korean": "위협",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "considerably",
+   "lemma": "considerably",
+   "partOfSpeech": "adv.",
+   "korean": "상당히, 많이",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
    ],
    "freq": 1
   },
   {
    "word": "diamonds",
-   "lemma": "diamonds",
+   "lemma": "diamond",
    "partOfSpeech": "n.",
-   "korean": "다이아몬드, 금강석들",
+   "korean": "다이아몬드",
    "score": 69,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
    "examTags": [
@@ -235,7 +235,7 @@
    "word": "comment",
    "lemma": "comment",
    "partOfSpeech": "n.",
-   "korean": "논평",
+   "korean": "말, 논평",
    "score": 69,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
    "examTags": [
@@ -244,16 +244,16 @@
    "freq": 1
   },
   {
-   "word": "true",
-   "lemma": "true",
+   "word": "worth",
+   "lemma": "worth",
    "partOfSpeech": "n.",
-   "korean": "사실인, 진실한",
-   "score": 68,
-   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 68점)",
+   "korean": "가치 (the worth of ~의 가치)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 2
+   "freq": 1
   }
  ]
 }

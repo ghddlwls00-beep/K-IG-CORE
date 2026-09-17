@@ -25,19 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Darwin was the first to propose that long necks evolved in giraffes because they enabled the animals to eat the treetop leaves."
-    },
-    {
-      "type": "hints",
-      "text": "(A)So Simmons became convinced that this competition for mates, not stretching for treetop food, was what drove the evolution of the neck."
-    },
-    {
-      "type": "instruction",
-      "text": "(B)This seemingly reasonable explanation has held up for over a century, but it is probably wrong, says Robert Simmons, a behavioral ecologist. Simmons was studying eagles in Africa when he came across a pair of male giraffes locked in combat."
-    },
-    {
-      "type": "instruction",
-      "text": "(C)He saw the male giraffes battling for mates by swinging their powerful necks, which were over six feet long and weighed more than 200 pounds. He observed that in contests of this type, males with the longest, thickest necks usually won."
+      "text": "Charles Darwin suggested that long necks evolved in giraffes because they enabled the animals to eat the treetop leaves. This seemingly reasonable explanation has held up for over a century, but it is probably wrong, says Robert Simmons, a behavioral ecologist. Simmons was studying eagles in Africa when he came across a pair of male giraffes locked in combat. He saw the male giraffes battling for mates by swinging their powerful necks, which were over six feet long and weighed more than 200 pounds. He observed that in contests of this type, males with the longest, thickest necks usually won. So Simmons became convinced that this competition for mates, not stretching for treetop food, was what drove the evolution of the neck."
     },
     {
       "type": "choice",
@@ -59,28 +47,33 @@
   "readingSentences": [
     {
       "id": "reading-246-s001",
-      "english": "Darwin was the first to propose that long necks evolved in giraffes because they enabled the animals to eat the treetop leaves.",
-      "korean": "다윈은 기린이 높은 나뭇잎을 먹을 수 있게 해주었기 때문에 긴 목이 진화했다고 최초로 제안했다."
+      "english": "Charles Darwin suggested that long necks evolved in giraffes because they enabled the animals to eat the treetop leaves.",
+      "korean": "찰스 다윈은 기린의 긴 목이 높은 나뭇잎을 먹을 수 있게 해 주었기 때문에 진화했다고 보았다."
     },
     {
       "id": "reading-246-s002",
-      "english": "So Simmons became convinced that this competition for mates, not stretching for treetop food, was what drove the evolution of the neck.",
-      "korean": "겉보기에 타당해 보이는 이 설명은 1세기 이상 유지되어 왔지만, 행동 생태학자인 로버트 시몬스에 따르면 아마도 틀렸을 것이라고 한다."
+      "english": "This seemingly reasonable explanation has held up for over a century, but it is probably wrong, says Robert Simmons, a behavioral ecologist.",
+      "korean": "그럴듯해 보이는 이 설명은 한 세기 넘게 받아들여져 왔지만, 행동 생태학자 로버트 시먼스는 아마 틀렸을 것이라고 말한다."
     },
     {
       "id": "reading-246-s003",
-      "english": "This seemingly reasonable explanation has held up for over a century, but it is probably wrong, says Robert Simmons, a behavioral ecologist.",
-      "korean": "시몬스는 아프리카에서 독수리를 연구하던 중 격투를 벌이고 있는 수컷 기린 한 쌍을 우연히 목격했다."
+      "english": "Simmons was studying eagles in Africa when he came across a pair of male giraffes locked in combat.",
+      "korean": "시먼스는 아프리카에서 독수리를 연구하다가 서로 맞붙어 싸우는 수컷 기린 두 마리를 우연히 보았다."
     },
     {
       "id": "reading-246-s004",
-      "english": "Simmons was studying eagles in Africa when he came across a pair of male giraffes locked in combat. He saw the male giraffes battling for mates by swinging their powerful necks, which were over six feet long and weighed more than 200 pounds.",
-      "korean": "그는 6피트가 넘고 무게가 200파운드가 넘는 강력한 목을 휘두르며 짝을 차지하기 위해 싸우는 수컷 기린들을 보았다."
+      "english": "He saw the male giraffes battling for mates by swinging their powerful necks, which were over six feet long and weighed more than 200 pounds.",
+      "korean": "그는 수컷 기린들이 길이가 6피트가 넘고 무게가 200파운드가 넘는 강력한 목을 휘두르며 짝을 차지하려고 싸우는 것을 보았다."
     },
     {
       "id": "reading-246-s005",
       "english": "He observed that in contests of this type, males with the longest, thickest necks usually won.",
-      "korean": "그는 이러한 유형의 경쟁에서는 가장 길고 굵은 목을 가진 수컷이 대개 승리한다는 것을 관찰했다."
+      "korean": "그는 이런 싸움에서는 대개 목이 가장 길고 굵은 수컷이 이긴다는 것을 관찰했다."
+    },
+    {
+      "id": "reading-246-s006",
+      "english": "So Simmons became convinced that this competition for mates, not stretching for treetop food, was what drove the evolution of the neck.",
+      "korean": "그래서 시먼스는 목의 진화를 이끈 것이 높은 곳의 먹이를 향해 목을 뻗는 일이 아니라 바로 이 짝짓기 경쟁이라고 확신하게 되었다."
     }
   ],
   "readingVocabulary": [
@@ -88,7 +81,7 @@
       "word": "evolved",
       "lemma": "evolve",
       "partOfSpeech": "v.",
-      "korean": "진화하다, 발전하다",
+      "korean": "진화하다",
       "score": 126,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능/TOEFL 학술 독해 최빈출 고득점 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 126점)",
       "examTags": [
@@ -101,25 +94,13 @@
       "word": "observed",
       "lemma": "observe",
       "partOfSpeech": "v.",
-      "korean": "관찰하다, 준수하다",
+      "korean": "관찰하다",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
         "중학기초",
         "수능",
         "TOEFL"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "animals",
-      "lemma": "animal",
-      "partOfSpeech": "n.",
-      "korean": "동물",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
-      "examTags": [
-        "중학기초"
       ],
       "freq": 1
     },
@@ -138,8 +119,8 @@
     {
       "word": "battling",
       "lemma": "battle",
-      "partOfSpeech": "n.",
-      "korean": "전투, 투쟁, 싸움",
+      "partOfSpeech": "v.",
+      "korean": "싸우다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -164,7 +145,7 @@
       "word": "evolution",
       "lemma": "evolution",
       "partOfSpeech": "n.",
-      "korean": "진화, 발전",
+      "korean": "진화",
       "score": 89,
       "reason": "대학 학술 독해 필수 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -174,22 +155,10 @@
       "freq": 1
     },
     {
-      "word": "feet",
-      "lemma": "foot",
-      "partOfSpeech": "n.",
-      "korean": "발",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "enabled",
       "lemma": "enable",
       "partOfSpeech": "v.",
-      "korean": "가능하게 하다",
+      "korean": "(enable A to do) A가 ~할 수 있게 하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -201,7 +170,7 @@
       "word": "treetop",
       "lemma": "treetop",
       "partOfSpeech": "n.",
-      "korean": "나무 꼭대기",
+      "korean": "나무 꼭대기 (treetop leaves 나무 꼭대기의 잎)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -210,36 +179,12 @@
       "freq": 2
     },
     {
-      "word": "simmons",
-      "lemma": "simmons",
+      "word": "competition",
+      "lemma": "competition",
       "partOfSpeech": "n.",
-      "korean": "시몬스 (인명)",
-      "score": 79,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "propose",
-      "lemma": "propose",
-      "partOfSpeech": "n.",
-      "korean": "제안하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "leaves",
-      "lemma": "leaf",
-      "partOfSpeech": "n.",
-      "korean": "잎",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "경쟁",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -249,9 +194,57 @@
       "word": "contests",
       "lemma": "contest",
       "partOfSpeech": "n.",
-      "korean": "콘테스트",
+      "korean": "겨루기, 싸움",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "ecologist",
+      "lemma": "ecologist",
+      "partOfSpeech": "n.",
+      "korean": "생태학자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "combat",
+      "lemma": "combat",
+      "partOfSpeech": "n.",
+      "korean": "싸움 (locked in combat 맞붙어 싸우는)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "mates",
+      "lemma": "mate",
+      "partOfSpeech": "n.",
+      "korean": "짝",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "convinced",
+      "lemma": "convinced",
+      "partOfSpeech": "adj.",
+      "korean": "확신하는 (become convinced that ~라고 확신하게 되다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

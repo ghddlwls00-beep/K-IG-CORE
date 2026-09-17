@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "정부의 1차 목표는 세 가지: 안전, 정의, 보존이어야 한다. 이것들은 인간의 행복에 최대로 중요한 것들이며, 정부만이 만들어낼 수 있는 것이다. 동시에 그것들 중 어느 것도 절대적이지는 않다. 각각의 것들은 어떤 경우에는 더 큰 것의 이익을 위해 어느 정도 희생되어야만 할 수도 있다. 난 차례로 그것에 대해 말하려 한다."
+      "text": "정부의 주된 목표는 안전, 정의, 보전의 세 가지여야 한다. 이것들은 인간의 행복에 더없이 중요한 것들이며, 정부만이 이룰 수 있는 것들이다. 동시에 그중 어느 것도 절대적이지 않다. 어떤 상황에서는 다른 좋은 것을 더 많이 얻기 위해 각각을 어느 정도 희생해야 할 수도 있다. 각각에 대해 차례로 이야기하겠다."
     },
     {
       "type": "choice",
@@ -48,27 +48,22 @@
     {
       "id": "reading-105-s001",
       "english": "The primary aims of government should be three: security, justice, and conservation.",
-      "korean": "정부의 1차 목표는 세 가지: 안전, 정의, 보존이어야 한다."
+      "korean": "정부의 주된 목표는 안전, 정의, 보전의 세 가지여야 한다."
     },
     {
       "id": "reading-105-s002",
       "english": "These are things of the utmost importance to human happiness, and they are things that only government can bring about.",
-      "korean": "이것들은 인간의 행복에 최대로 중요한 것들이며, 정부만이 만들어낼 수 있는 것이다."
+      "korean": "이것들은 인간의 행복에 더없이 중요한 것들이며, 정부만이 이룰 수 있는 것들이다."
     },
     {
       "id": "reading-105-s003",
-      "english": "At the same time, no one of them is absolute",
-      "korean": "동시에 그것들 중 어느 것도 절대적이지는 않다."
+      "english": "At the same time, no one of them is absolute; each may, in some circumstances, have to be sacrificed in some degree for the sake of a greater degree of some other good.",
+      "korean": "동시에 그중 어느 것도 절대적이지 않다. 어떤 상황에서는 다른 좋은 것을 더 많이 얻기 위해 각각을 어느 정도 희생해야 할 수도 있다."
     },
     {
       "id": "reading-105-s004",
-      "english": "each may, in some circumstances, have to be sacrificed in some degree for the sake of a greater degree of some other good.",
-      "korean": "각각의 것들은 어떤 경우에는 더 큰 것의 이익을 위해 어느 정도 희생되어야만 할 수도 있다."
-    },
-    {
-      "id": "reading-105-s005",
       "english": "I shall say something about each in turn.",
-      "korean": "난 차례로 그것에 대해 말하려 한다."
+      "korean": "각각에 대해 차례로 이야기하겠다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +71,7 @@
       "word": "conservation",
       "lemma": "conservation",
       "partOfSpeech": "n.",
-      "korean": "보존",
+      "korean": "보전, 보존",
       "score": 99,
       "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -111,8 +106,8 @@
     {
       "word": "primary",
       "lemma": "primary",
-      "partOfSpeech": "n.",
-      "korean": "기본",
+      "partOfSpeech": "adj.",
+      "korean": "주된, 주요한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -124,7 +119,7 @@
       "word": "security",
       "lemma": "security",
       "partOfSpeech": "n.",
-      "korean": "보안",
+      "korean": "안전",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -148,7 +143,7 @@
       "word": "sacrificed",
       "lemma": "sacrifice",
       "partOfSpeech": "v.",
-      "korean": "희생",
+      "korean": "희생하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -160,7 +155,7 @@
       "word": "bring",
       "lemma": "bring",
       "partOfSpeech": "v.",
-      "korean": "가져오다",
+      "korean": "(bring about) 이루다",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -184,7 +179,7 @@
       "word": "degree",
       "lemma": "degree",
       "partOfSpeech": "n.",
-      "korean": "정도",
+      "korean": "정도 (in some degree 어느 정도)",
       "score": 72,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
       "examTags": [
@@ -196,7 +191,7 @@
       "word": "turn",
       "lemma": "turn",
       "partOfSpeech": "n.",
-      "korean": "회전",
+      "korean": "(in turn) 차례로",
       "score": 71,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
       "examTags": [
@@ -208,7 +203,7 @@
       "word": "importance",
       "lemma": "importance",
       "partOfSpeech": "n.",
-      "korean": "중요성, 중대함",
+      "korean": "중요성 (of the utmost importance 더없이 중요한)",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -220,8 +215,8 @@
     {
       "word": "absolute",
       "lemma": "absolute",
-      "partOfSpeech": "n.",
-      "korean": "절대",
+      "partOfSpeech": "adj.",
+      "korean": "절대적인",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -233,7 +228,7 @@
       "word": "circumstances",
       "lemma": "circumstance",
       "partOfSpeech": "n.",
-      "korean": "상황",
+      "korean": "상황, 사정",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [

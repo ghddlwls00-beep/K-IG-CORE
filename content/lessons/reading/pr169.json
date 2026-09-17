@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "The old Sumerian cuneiform could not be used to write normal prose but was a mere telegraphic shorthand, whose vocabulary was restricted to names, numerals and units of measure. A related limitation was that few people ever learned to write this early script. Knowledge of writing was confined to professionals who worked for the king or temple. On the contrary, Greek alphabetic writing was a vehicle of poetry and humor, to be read in private homes. The first preserved example of Greek alphabetic writing, scratched onto an Athenian wine jar of about 740 B.C., is a line of poetry announcing a dancing contest: “Whoever of all dancers performs most gracefully will win this vase as a prize.”"
+   "text": "The old Sumerian cuneiform could not be used to write normal prose but was a mere telegraphic shorthand, whose vocabulary was restricted to names, numerals and units of measure. A related limitation was that few people ever learned to write this early script. Knowledge of writing was confined to professionals who worked for the king or temple. In contrast, Greek alphabetic writing was a vehicle of poetry and humor, to be read in private homes. The first preserved example of Greek alphabetic writing, scratched onto an Athenian wine jar of about 740 B.C., is a line of poetry announcing a dancing contest: “Whoever of all dancers performs most gracefully will win this vase as a prize.”"
   },
   {
    "type": "choice",
@@ -48,35 +48,35 @@
   {
    "id": "reading-169-s001",
    "english": "The old Sumerian cuneiform could not be used to write normal prose but was a mere telegraphic shorthand, whose vocabulary was restricted to names, numerals and units of measure.",
-   "korean": "고대 수메리아의 쐐기 문자는 보통의 산문을 쓰는 데 사용될 수가 없었고, 단순한 전보를 보내기 위한 속기였는데, 그것의 어휘는 이름과 수와 측정의 단위로 제한되었다."
+   "korean": "옛 수메르 쐐기 문자로는 보통의 산문을 쓸 수 없었다. 그것은 이름과 숫자와 측정 단위만 담을 수 있는, 전보문 같은 속기에 불과했다."
   },
   {
    "id": "reading-169-s002",
    "english": "A related limitation was that few people ever learned to write this early script.",
-   "korean": "관련된 제한은 사람들이 거의 이러한 초기의 문자를 쓰는 것을 배우지 못했다는 것이다."
+   "korean": "이와 관련된 또 하나의 한계는 이 초기 문자를 쓸 줄 알게 된 사람이 거의 없었다는 것이다."
   },
   {
    "id": "reading-169-s003",
    "english": "Knowledge of writing was confined to professionals who worked for the king or temple.",
-   "korean": "쓰는 것을 아는 것은 왕이나 사원에서 일하는 전문가에게 한정되었다."
+   "korean": "문자에 관한 지식은 왕이나 신전을 위해 일하는 전문가들에게만 한정되었다."
   },
   {
    "id": "reading-169-s004",
-   "english": "On the contrary, Greek alphabetic writing was a vehicle of poetry and humor, to be read in private homes.",
-   "korean": "반면에 그리스의 알파벳 쓰기는 시와 유머의 수단이었고 개인 가정에서 읽혔다."
+   "english": "In contrast, Greek alphabetic writing was a vehicle of poetry and humor, to be read in private homes.",
+   "korean": "이와 달리 그리스 알파벳 문자는 개인 가정에서 읽히는 시와 유머의 수단이었다."
   },
   {
    "id": "reading-169-s005",
    "english": "The first preserved example of Greek alphabetic writing, scratched onto an Athenian wine jar of about 740 B.C., is a line of poetry announcing a dancing contest: “Whoever of all dancers performs most gracefully will win this vase as a prize.”",
-   "korean": "그리스 알파벳 쓰기의 최초로 보존된 예는 기원전 740년 경의 아테네 술병에 새겨진 것으로 무용 경연 대회에서 발표한 “무용가 중에 누구든지 가장 우아하게 춤추는 자가 꽃병을 상으로 얻을 것이다“라는 시의 한 구절이었다"
+   "korean": "그리스 알파벳 문자의 가장 오래 보존된 예는 기원전 740년경 아테네의 포도주 항아리에 새겨진 것으로, 춤 경연을 알리는 시 한 줄이다. “모든 무용수 가운데 가장 우아하게 춤추는 사람이 이 항아리를 상으로 받으리라.”"
   }
  ],
  "readingVocabulary": [
   {
    "word": "performs",
    "lemma": "perform",
-   "partOfSpeech": "n.",
-   "korean": "수행하다",
+   "partOfSpeech": "v.",
+   "korean": "(춤을) 추다, 공연하다",
    "score": 102,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
    "examTags": [
@@ -85,24 +85,22 @@
    "freq": 1
   },
   {
-   "word": "knowledge",
-   "lemma": "knowledge",
+   "word": "prose",
+   "lemma": "prose",
    "partOfSpeech": "n.",
-   "korean": "지식, 앎",
-   "score": 94,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+   "korean": "산문",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초",
-    "수능",
-    "TOEFL"
+    "독해필수"
    ],
    "freq": 1
   },
   {
    "word": "early",
    "lemma": "early",
-   "partOfSpeech": "adv.",
-   "korean": "일찍",
+   "partOfSpeech": "adj.",
+   "korean": "초기의 (early script 초기 문자)",
    "score": 90,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
    "examTags": [
@@ -112,9 +110,9 @@
   },
   {
    "word": "writing",
-   "lemma": "write",
+   "lemma": "writing",
    "partOfSpeech": "n.",
-   "korean": "글, 저작물",
+   "korean": "문자, 글쓰기",
    "score": 87,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
    "examTags": [
@@ -126,7 +124,7 @@
    "word": "restricted",
    "lemma": "restrict",
    "partOfSpeech": "v.",
-   "korean": "제한하다",
+   "korean": "제한하다 (be restricted to ~으로 한정되다)",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -162,7 +160,7 @@
    "word": "scratched",
    "lemma": "scratch",
    "partOfSpeech": "v.",
-   "korean": "긁다",
+   "korean": "긁어 새기다",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [
@@ -174,7 +172,7 @@
    "word": "announcing",
    "lemma": "announce",
    "partOfSpeech": "v.",
-   "korean": "발표하다",
+   "korean": "알리다",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [
@@ -185,8 +183,8 @@
   {
    "word": "dancing",
    "lemma": "dance",
-   "partOfSpeech": "v.",
-   "korean": "춤추다",
+   "partOfSpeech": "n.",
+   "korean": "춤 (dancing contest 춤 경연)",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [
@@ -197,8 +195,8 @@
   {
    "word": "prize",
    "lemma": "prize",
-   "partOfSpeech": "v.",
-   "korean": "상",
+   "partOfSpeech": "n.",
+   "korean": "상, 상품",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
@@ -210,7 +208,7 @@
    "word": "telegraphic",
    "lemma": "telegraphic",
    "partOfSpeech": "adj.",
-   "korean": "전신의, 극도로 간결한",
+   "korean": "전보 같은, 극도로 간결한",
    "score": 81,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
    "examTags": [
@@ -222,7 +220,7 @@
    "word": "poetry",
    "lemma": "poetry",
    "partOfSpeech": "n.",
-   "korean": "시, 시가",
+   "korean": "시",
    "score": 80,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
@@ -232,12 +230,12 @@
    "freq": 2
   },
   {
-   "word": "used",
-   "lemma": "used",
+   "word": "confined",
+   "lemma": "confine",
    "partOfSpeech": "v.",
-   "korean": "익숙한; 중고의",
+   "korean": "한정하다 (be confined to ~에 국한되다)",
    "score": 80,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 80점)",
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],

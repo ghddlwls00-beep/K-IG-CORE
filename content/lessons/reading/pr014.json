@@ -48,25 +48,25 @@
   {
    "id": "reading-014-s001",
    "english": "I abandoned the medical profession with relief but I do not regret the five years I spent at the hospital - far from it.",
-   "korean": "나는 어렵지 않게 의학 직업을 포기했지만 병원에서 보낸 5년을 후회하지는\n\n않는다. - 후회와는 거리가 멀다."
+   "korean": "나는 안도하며 의사라는 직업을 그만두었지만 병원에서 보낸 5년을 후회하지는 않는다. 후회하기는커녕 그 반대다."
   },
   {
    "id": "reading-014-s002",
    "english": "They taught me pretty well all I know about human nature, for in a hospital you see it naked and raw.",
-   "korean": "(왜냐하면) 그 5년은 병원에서 나는 인간 본성에 대해 내가 아는 모든 것을 나에게 매우 잘 가르쳤다, 왜냐하면 병원에서는 당신은 인간 본성이 적나라하게 있는 그대로 인것을 보기 때문이다."
+   "korean": "그 5년은 인간 본성에 대해 내가 아는 거의 모든 것을 가르쳐 주었다. 병원에서는 인간 본성을 꾸밈없이 있는 그대로 보게 되기 때문이다."
   },
   {
    "id": "reading-014-s003",
    "english": "People in pain, people in fear of death do not try to hide anything from their doctor, and if they do, he can generally guess what they are hiding.",
-   "korean": "고통중의 사람들, 죽음을 두려워하는 사람들은 그 어떤것도 그들의 의사에게 숨기려 하질 않는다, 만약 숨기려 한다 해도 의사는 대개 그들이 무엇을 숨기려하는지 알 수 있다."
+   "korean": "고통 속에 있는 사람들, 죽음을 두려워하는 사람들은 의사에게 아무것도 숨기려 하지 않으며, 숨기려 해도 의사는 대개 그들이 무엇을 숨기는지 짐작할 수 있다."
   }
  ],
  "readingVocabulary": [
   {
    "word": "spent",
    "lemma": "spend",
-   "partOfSpeech": "n.",
-   "korean": "지출하다",
+   "partOfSpeech": "v.",
+   "korean": "(시간을) 보내다",
    "score": 102,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
    "examTags": [
@@ -77,8 +77,8 @@
   {
    "word": "far",
    "lemma": "far",
-   "partOfSpeech": "n.",
-   "korean": "멀리",
+   "partOfSpeech": "adv.",
+   "korean": "(far from it) 전혀 그렇지 않다, 오히려 그 반대다",
    "score": 98,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
    "examTags": [
@@ -90,7 +90,7 @@
    "word": "fear",
    "lemma": "fear",
    "partOfSpeech": "n.",
-   "korean": "두려움, 공포",
+   "korean": "두려움",
    "score": 96,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
    "examTags": [
@@ -102,7 +102,7 @@
    "word": "nature",
    "lemma": "nature",
    "partOfSpeech": "n.",
-   "korean": "자연",
+   "korean": "본성 (human nature 인간 본성)",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -113,7 +113,7 @@
   {
    "word": "hospital",
    "lemma": "hospital",
-   "partOfSpeech": "adj.",
+   "partOfSpeech": "n.",
    "korean": "병원",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
@@ -126,7 +126,7 @@
    "word": "abandoned",
    "lemma": "abandon",
    "partOfSpeech": "v.",
-   "korean": "버리다",
+   "korean": "그만두다, 버리다",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -138,7 +138,7 @@
    "word": "regret",
    "lemma": "regret",
    "partOfSpeech": "v.",
-   "korean": "후회하다, 유감으로 생각하다",
+   "korean": "후회하다",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [
@@ -175,7 +175,7 @@
    "word": "profession",
    "lemma": "profession",
    "partOfSpeech": "n.",
-   "korean": "직업",
+   "korean": "직업, 전문직",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -187,7 +187,7 @@
    "word": "relief",
    "lemma": "relief",
    "partOfSpeech": "n.",
-   "korean": "안도",
+   "korean": "안도 (with relief 안도하며)",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -208,12 +208,12 @@
    "freq": 1
   },
   {
-   "word": "doctor",
-   "lemma": "doctor",
-   "partOfSpeech": "n.",
-   "korean": "의사",
-   "score": 75,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+   "word": "naked",
+   "lemma": "naked",
+   "partOfSpeech": "adj.",
+   "korean": "꾸밈없는, 적나라한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -223,7 +223,7 @@
    "word": "generally",
    "lemma": "generally",
    "partOfSpeech": "adv.",
-   "korean": "일반적으로",
+   "korean": "대개",
    "score": 75,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
    "examTags": [

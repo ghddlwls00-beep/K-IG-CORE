@@ -53,12 +53,12 @@
   {
    "id": "reading-230-s002",
    "english": "They found rare comfort in the simple songs that they sang aboard their ships.",
-   "korean": "그들은 그들의 배에서 부른 단순한 노래에서도 편안함은 거의 찾을 수 없었다."
+   "korean": "그들은 배 위에서 부르던 소박한 노래에서 흔치 않은 위안을 얻었다."
   },
   {
    "id": "reading-230-s003",
    "english": "The songs are called sea shanties.",
-   "korean": "그 노래는 sea shanties라고 불린다."
+   "korean": "그 노래들은 뱃노래(sea shanty)라고 불린다."
   },
   {
    "id": "reading-230-s004",
@@ -95,8 +95,8 @@
   {
    "word": "hard",
    "lemma": "hard",
-   "partOfSpeech": "n.",
-   "korean": "어려운; 열심히",
+   "partOfSpeech": "adj.",
+   "korean": "힘든",
    "score": 103,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 103점)",
    "examTags": [
@@ -105,34 +105,10 @@
    "freq": 2
   },
   {
-   "word": "difficult",
-   "lemma": "difficult",
-   "partOfSpeech": "n.",
-   "korean": "어려운",
-   "score": 102,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
    "word": "comfort",
    "lemma": "comfort",
    "partOfSpeech": "n.",
-   "korean": "위로",
-   "score": 94,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "friends",
-   "lemma": "friend",
-   "partOfSpeech": "n.",
-   "korean": "친구",
+   "korean": "위안",
    "score": 94,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
    "examTags": [
@@ -143,7 +119,7 @@
   {
    "word": "express",
    "lemma": "express",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "표현하다",
    "score": 94,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -155,8 +131,8 @@
   {
    "word": "simple",
    "lemma": "simple",
-   "partOfSpeech": "n.",
-   "korean": "단순한",
+   "partOfSpeech": "adj.",
+   "korean": "소박한, 단순한",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -178,9 +154,9 @@
   },
   {
    "word": "shanties",
-   "lemma": "shanties",
+   "lemma": "shanty",
    "partOfSpeech": "n.",
-   "korean": "판잣집들",
+   "korean": "뱃노래 (sea shanty 선원들의 노동요)",
    "score": 87,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
    "examTags": [
@@ -189,22 +165,10 @@
    "freq": 5
   },
   {
-   "word": "sea",
-   "lemma": "sea",
-   "partOfSpeech": "n.",
-   "korean": "바다",
-   "score": 81,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 3
-  },
-  {
    "word": "aboard",
    "lemma": "aboard",
-   "partOfSpeech": "n.",
-   "korean": "(탈것에) 타고",
+   "partOfSpeech": "adv.",
+   "korean": "(배에) 타고",
    "score": 80,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
@@ -225,22 +189,10 @@
    "freq": 3
   },
   {
-   "word": "helping",
-   "lemma": "help",
-   "partOfSpeech": "v.",
-   "korean": "도움",
-   "score": 76,
-   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
    "word": "longing",
    "lemma": "longing",
-   "partOfSpeech": "v.",
-   "korean": "그리움",
+   "partOfSpeech": "n.",
+   "korean": "그리움, 갈망",
    "score": 76,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
    "examTags": [
@@ -249,12 +201,60 @@
    "freq": 1
   },
   {
-   "word": "called",
-   "lemma": "call",
+   "word": "valuable",
+   "lemma": "valuable",
+   "partOfSpeech": "adj.",
+   "korean": "소중한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "lasted",
+   "lemma": "last",
    "partOfSpeech": "v.",
-   "korean": "전화",
-   "score": 74,
-   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+   "korean": "계속되다, 살아남다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "boredom",
+   "lemma": "boredom",
+   "partOfSpeech": "n.",
+   "korean": "지루함",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "loneliness",
+   "lemma": "loneliness",
+   "partOfSpeech": "n.",
+   "korean": "외로움",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "complain",
+   "lemma": "complain",
+   "partOfSpeech": "v.",
+   "korean": "불평하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],

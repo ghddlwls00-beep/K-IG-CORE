@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Plants are known to react to environmental pressures such as wind, rain, and even human touch. Coastal trees, for example, become shorter and stronger in response to strong winds and heavy rainfall. In a laboratory study conducted at Stanford University, the same changes in plant growth patterns were brought about by touching plants twice a day. The researchers also found that these growth changes resulted from gene activation. Their findings indicate that this gene actuation did not occur unless there was direct stimulation."
+      "text": "Plants are known to react to environmental pressures such as wind, rain, and even human touch. Coastal trees, for example, become shorter and stronger in response to strong winds and heavy rainfall. In a laboratory study conducted at Stanford University, the same changes in plant growth patterns were brought about by touching plants twice a day. The researchers also found that these growth changes resulted from gene activation. Their findings indicate that this gene activation did not occur unless there was direct stimulation."
     },
     {
       "type": "choice",
@@ -48,27 +48,27 @@
     {
       "id": "reading-096-s001",
       "english": "Plants are known to react to environmental pressures such as wind, rain, and even human touch.",
-      "korean": "식물은 바람, 비, 심지어 인간의 접촉과 같은 환경적인 영향에 반응한다고 알려져 있다."
+      "korean": "식물은 바람, 비, 심지어 사람의 손길 같은 환경의 압력에 반응한다고 알려져 있다."
     },
     {
       "id": "reading-096-s002",
       "english": "Coastal trees, for example, become shorter and stronger in response to strong winds and heavy rainfall.",
-      "korean": "예를 들어, 해안의 나무는 강풍과 폭우에 반응하여 더 짧고 강해진다."
+      "korean": "예를 들어 해안의 나무들은 강한 바람과 많은 비에 반응해 키가 더 작고 튼튼해진다."
     },
     {
       "id": "reading-096-s003",
       "english": "In a laboratory study conducted at Stanford University, the same changes in plant growth patterns were brought about by touching plants twice a day.",
-      "korean": "스탠포드대학에서 행해진 실험실 연구에서, 1일 2회 식물을 만짐으로서 식물성장 패턴에 있어 동일한 변화가 발생했다."
+      "korean": "스탠퍼드 대학교의 실험실 연구에서는 하루에 두 번 식물을 만지는 것만으로 식물의 성장 방식에 같은 변화가 일어났다."
     },
     {
       "id": "reading-096-s004",
       "english": "The researchers also found that these growth changes resulted from gene activation.",
-      "korean": "또한 연구원들은 이런 성장의 변화는 유전자 활동에서 기인한다는 걸 알아냈다."
+      "korean": "연구자들은 이런 성장 변화가 유전자 활성화 때문이라는 것도 알아냈다."
     },
     {
       "id": "reading-096-s005",
-      "english": "Their findings indicate that this gene actuation did not occur unless there was direct stimulation.",
-      "korean": "그들의 발견은 만약 직접적인 자극이 없었다면 이런 유전자 활동은 일어나지 않았을 거라는 걸 나타낸다."
+      "english": "Their findings indicate that this gene activation did not occur unless there was direct stimulation.",
+      "korean": "그들의 연구 결과는 직접적인 자극이 없으면 이런 유전자 활성화가 일어나지 않았다는 것을 보여 준다."
     }
   ],
   "readingVocabulary": [
@@ -88,7 +88,7 @@
       "word": "resulted",
       "lemma": "result",
       "partOfSpeech": "v.",
-      "korean": "결과",
+      "korean": "(result from) ~에서 생기다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -99,8 +99,8 @@
     {
       "word": "direct",
       "lemma": "direct",
-      "partOfSpeech": "n.",
-      "korean": "직접",
+      "partOfSpeech": "adj.",
+      "korean": "직접적인",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -111,8 +111,8 @@
     {
       "word": "stronger",
       "lemma": "strong",
-      "partOfSpeech": "n.",
-      "korean": "강한",
+      "partOfSpeech": "adj.",
+      "korean": "더 튼튼한 (strong의 비교급)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -123,8 +123,8 @@
     {
       "word": "heavy",
       "lemma": "heavy",
-      "partOfSpeech": "n.",
-      "korean": "무거운",
+      "partOfSpeech": "adj.",
+      "korean": "많은 (heavy rainfall 많은 비)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -136,7 +136,7 @@
       "word": "indicate",
       "lemma": "indicate",
       "partOfSpeech": "v.",
-      "korean": "나타내다",
+      "korean": "보여 주다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "environmental",
       "lemma": "environmental",
       "partOfSpeech": "adj.",
-      "korean": "환경의, 환경 보호의",
+      "korean": "환경의",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -185,7 +185,7 @@
     {
       "word": "react",
       "lemma": "react",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "반응하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -198,7 +198,7 @@
       "word": "touch",
       "lemma": "touch",
       "partOfSpeech": "n.",
-      "korean": "만지다; 접촉",
+      "korean": "손길, 접촉",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -210,7 +210,7 @@
       "word": "findings",
       "lemma": "findings",
       "partOfSpeech": "n.",
-      "korean": "연구 결과, 조사 결과",
+      "korean": "연구 결과",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -219,22 +219,22 @@
       "freq": 1
     },
     {
-      "word": "actuation",
-      "lemma": "actuation",
+      "word": "activation",
+      "lemma": "activation",
       "partOfSpeech": "n.",
-      "korean": "작동, 발동, 촉진",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "활성화 (gene activation 유전자 활성화)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "stimulation",
       "lemma": "stimulation",
       "partOfSpeech": "n.",
-      "korean": "자극, 고무",
+      "korean": "자극",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

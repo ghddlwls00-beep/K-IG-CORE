@@ -28,10 +28,6 @@
       "text": "Consumer advocates call for additional testing of crops and mandatory labeling of genetically engineered products. Administration officials say that it is unnecessary, and the food industry has argued that it would unfairly stigmatize bio-tech food."
     },
     {
-      "type": "hints",
-      "text": "Who take the strictest stand to the genetically engineered products in the passage ?"
-    },
-    {
       "type": "choice",
       "options": [
         "1 번",
@@ -56,7 +52,7 @@
     },
     {
       "id": "reading-164-s002",
-      "english": "Administration officials say that it is unnecessary, and the food industry has argued that it would unfairly stigmatize bio-tech food. Who take the strictest stand to the genetically engineered products in the passage ?",
+      "english": "Administration officials say that it is unnecessary, and the food industry has argued that it would unfairly stigmatize bio-tech food.",
       "korean": "행정부 관계자들은 그것이 불필요하다고 말하며, 식품업계는 그것이 생명공학 식품에 부당하게 오명을 씌울 것이라고 주장해 왔다."
     }
   ],
@@ -65,19 +61,19 @@
       "word": "engineered",
       "lemma": "engineer",
       "partOfSpeech": "v.",
-      "korean": "엔지니어",
+      "korean": "(유전자를) 조작하다 (genetically engineered 유전자 조작된)",
       "score": 99,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "advocates",
       "lemma": "advocate",
       "partOfSpeech": "n.",
-      "korean": "옹호자",
+      "korean": "옹호자 (consumer advocates 소비자 운동가)",
       "score": 99,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -95,7 +91,7 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "genetically",
@@ -107,13 +103,13 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "testing",
       "lemma": "test",
-      "partOfSpeech": "v.",
-      "korean": "테스트",
+      "partOfSpeech": "n.",
+      "korean": "검사",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -124,8 +120,8 @@
     {
       "word": "labeling",
       "lemma": "label",
-      "partOfSpeech": "v.",
-      "korean": "표시(하기), 라벨 붙이기",
+      "partOfSpeech": "n.",
+      "korean": "표시, 라벨 부착",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -149,7 +145,7 @@
       "word": "argued",
       "lemma": "argue",
       "partOfSpeech": "v.",
-      "korean": "주장하다, 논쟁하다",
+      "korean": "주장하다",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -162,7 +158,7 @@
       "word": "additional",
       "lemma": "additional",
       "partOfSpeech": "adj.",
-      "korean": "추가적인",
+      "korean": "추가의",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -174,7 +170,7 @@
       "word": "mandatory",
       "lemma": "mandatory",
       "partOfSpeech": "adj.",
-      "korean": "의무적인, 강제적인",
+      "korean": "의무적인",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -183,12 +179,12 @@
       "freq": 1
     },
     {
-      "word": "consumer",
-      "lemma": "consumer",
-      "partOfSpeech": "n.",
-      "korean": "소비자",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "unfairly",
+      "lemma": "unfairly",
+      "partOfSpeech": "adv.",
+      "korean": "부당하게",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -197,8 +193,8 @@
     {
       "word": "officials",
       "lemma": "official",
-      "partOfSpeech": "adj.",
-      "korean": "공식적인, 공인의",
+      "partOfSpeech": "n.",
+      "korean": "관리, 당국자 (administration officials 정부 관리들)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -223,7 +219,7 @@
       "word": "administration",
       "lemma": "administration",
       "partOfSpeech": "n.",
-      "korean": "행정",
+      "korean": "(미국) 행정부, 정부",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

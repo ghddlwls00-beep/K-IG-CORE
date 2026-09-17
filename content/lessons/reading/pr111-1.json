@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "그러나 깨끗한 공기가 유일한 이유는 아니다. 사람들은 야생화와 나무들 냄새의 한 가운데에 텐트를 칠 수 있다. 그들은 속세의 일상적 걱정거리를 완전히 망각한 체, 산 속에 홀로 있기를 즐길 수 있다. 때론 나무와 작은 동물들의 즐거운 소리를 즐기면서, 그들은 자기들끼리 완전히 자유롭게 얘기 나눌 수 있다. 그들은 마음의 평화를 방해하는 시끄러운 군중에 의해서 짜증나 질 필요가 없다. 이런 것들이 사람들이 산을 찾는 다른 이유들이다."
+      "text": "그러나 깨끗한 공기가 유일한 이유는 아니다. 사람들은 야생화와 나무들 냄새의 한 가운데에 텐트를 칠 수 있다. 그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산 속에 홀로 있기를 즐길 수 있다. 때론 나무와 작은 동물들의 즐거운 소리를 즐기면서, 그들은 자기들끼리 완전히 자유롭게 얘기 나눌 수 있다. 그들은 마음의 평화를 방해하는 시끄러운 군중에 의해서 방해받을 필요가 없다. 이런 것들이 사람들이 산을 찾는 다른 이유들이다."
     },
     {
       "type": "choice",
@@ -58,7 +58,7 @@
     {
       "id": "reading-111-s003",
       "english": "They can enjoy being alone in the mountains, forgetting completely about the everyday cares of the world.",
-      "korean": "그들은 속세의 일상적 걱정거리를 완전히 망각한 체, 산 속에 홀로 있기를 즐길 수 있다."
+      "korean": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산 속에 홀로 있기를 즐길 수 있다."
     },
     {
       "id": "reading-111-s004",
@@ -68,7 +68,7 @@
     {
       "id": "reading-111-s005",
       "english": "They don't have to be bothered by noisy crowds that disturb their peace of mind.",
-      "korean": "그들은 마음의 평화를 방해하는 시끄러운 군중에 의해서 짜증나 질 필요가 없다."
+      "korean": "그들은 마음의 평화를 방해하는 시끄러운 군중에 의해서 방해받을 필요가 없다."
     },
     {
       "id": "reading-111-s006",
@@ -80,7 +80,7 @@
     {
       "word": "clean",
       "lemma": "clean",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "깨끗한",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -115,9 +115,9 @@
     },
     {
       "word": "completely",
-      "lemma": "complete",
+      "lemma": "completely",
       "partOfSpeech": "adv.",
-      "korean": "완료",
+      "korean": "완전히",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -128,8 +128,8 @@
     {
       "word": "sweet",
       "lemma": "sweet",
-      "partOfSpeech": "n.",
-      "korean": "달콤한",
+      "partOfSpeech": "adj.",
+      "korean": "감미로운, 듣기 좋은",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -152,7 +152,7 @@
     {
       "word": "noisy",
       "lemma": "noisy",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "시끄러운",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -165,7 +165,7 @@
       "word": "peace",
       "lemma": "peace",
       "partOfSpeech": "n.",
-      "korean": "평화",
+      "korean": "평화 (peace of mind 마음의 평화)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -176,8 +176,8 @@
     {
       "word": "wild",
       "lemma": "wild",
-      "partOfSpeech": "n.",
-      "korean": "야생",
+      "partOfSpeech": "adj.",
+      "korean": "야생의",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -186,14 +186,14 @@
       "freq": 1
     },
     {
-      "word": "mind",
-      "lemma": "mind",
-      "partOfSpeech": "n.",
-      "korean": "마음",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "disturb",
+      "lemma": "disturb",
+      "partOfSpeech": "v.",
+      "korean": "방해하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -213,7 +213,7 @@
       "word": "forgetting",
       "lemma": "forget",
       "partOfSpeech": "v.",
-      "korean": "잊어버리다",
+      "korean": "잊다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -225,7 +225,7 @@
       "word": "entertained",
       "lemma": "entertain",
       "partOfSpeech": "v.",
-      "korean": "즐겁게 하다",
+      "korean": "즐겁게 하다 (be entertained by)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -237,7 +237,7 @@
       "word": "bothered",
       "lemma": "bother",
       "partOfSpeech": "v.",
-      "korean": "귀찮게 하다",
+      "korean": "귀찮게 하다 (be bothered by ~에 방해받다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [

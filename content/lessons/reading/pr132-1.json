@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "언어 순수학자는 일부 언어가 다른 언어보다 낫거나 변화가 오염이 된다는 거릇된 믿음 때문에 언어의 변화나 방언의 차이를 저지하기를 원한다."
+      "text": "언어 순수주의자들은 어떤 언어가 다른 언어보다 낫다거나 변화는 타락을 부른다는 그릇된 믿음 때문에 언어의 변화나 방언의 분화를 막고 싶어 한다."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-132-s001",
       "english": "Language purists wish to stem change in language or dialect differentiation because of their false belief that some languages are better than others, or that change leads to corruption.",
-      "korean": "언어 순수학자는 일부 언어가 다른 언어보다 낫거나 변화가 오염이 된다는 거릇된 믿음 때문에 언어의 변화나 방언의 차이를 저지하기를 원한다."
+      "korean": "언어 순수주의자들은 어떤 언어가 다른 언어보다 낫다거나 변화는 타락을 부른다는 그릇된 믿음 때문에 언어의 변화나 방언의 분화를 막고 싶어 한다."
     }
   ],
   "readingVocabulary": [
@@ -68,7 +68,7 @@
       "word": "leads",
       "lemma": "lead",
       "partOfSpeech": "v.",
-      "korean": "이끌다, 초래하다",
+      "korean": "(lead to) ~로 이어지다",
       "score": 117,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 117점)",
       "examTags": [
@@ -81,7 +81,7 @@
       "word": "wish",
       "lemma": "wish",
       "partOfSpeech": "v.",
-      "korean": "바라다, 원하다",
+      "korean": "~하고 싶어 하다 (wish to do)",
       "score": 113,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 113점)",
       "examTags": [
@@ -93,7 +93,7 @@
       "word": "dialect",
       "lemma": "dialect",
       "partOfSpeech": "n.",
-      "korean": "방언, 사투리",
+      "korean": "방언",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 대학 학술 독해 필수 어휘 (평가 점수: 107점)",
       "examTags": [
@@ -118,7 +118,7 @@
       "word": "stem",
       "lemma": "stem",
       "partOfSpeech": "v.",
-      "korean": "저지하다, 막다",
+      "korean": "막다, 저지하다",
       "score": 88,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 88점)",
       "examTags": [
@@ -144,7 +144,7 @@
       "word": "differentiation",
       "lemma": "differentiation",
       "partOfSpeech": "n.",
-      "korean": "차별화, 분화",
+      "korean": "분화",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -158,7 +158,7 @@
       "word": "corruption",
       "lemma": "corruption",
       "partOfSpeech": "n.",
-      "korean": "부패, 변질, 오염",
+      "korean": "타락, 변질",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -170,8 +170,8 @@
     {
       "word": "false",
       "lemma": "false",
-      "partOfSpeech": "n.",
-      "korean": "거짓",
+      "partOfSpeech": "adj.",
+      "korean": "그릇된",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -183,7 +183,7 @@
       "word": "belief",
       "lemma": "belief",
       "partOfSpeech": "n.",
-      "korean": "신념, 믿음",
+      "korean": "믿음",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -195,8 +195,8 @@
     {
       "word": "because",
       "lemma": "because",
-      "partOfSpeech": "n.",
-      "korean": "왜냐하면",
+      "partOfSpeech": "adv.",
+      "korean": "(because of) ~ 때문에",
       "score": 69,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -207,8 +207,8 @@
     {
       "word": "better",
       "lemma": "good",
-      "partOfSpeech": "n.",
-      "korean": "좋은, 훌륭한",
+      "partOfSpeech": "adj.",
+      "korean": "더 나은 (good의 비교급)",
       "score": 60,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 60점)",
       "examTags": [
@@ -219,8 +219,8 @@
     {
       "word": "others",
       "lemma": "other",
-      "partOfSpeech": "n.",
-      "korean": "다른",
+      "partOfSpeech": "pron.",
+      "korean": "다른 것들",
       "score": 60,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 60점)",
       "examTags": [

@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "As you become a teenager, however, you may sometimes begin to question adults' idea, instead of blindly accepting their ideas as you did when you were a small child. You gradually become aware that you are a unique person with your own ideas and attitudes. For example, you begin to make choices of your own about your lifestyle. To put it another way, you will find that you want to put your life together in the way that you think is best for you."
+   "text": "As you become a teenager, however, you may sometimes begin to question adults' ideas, instead of blindly accepting their ideas as you did when you were a small child. You gradually become aware that you are a unique person with your own ideas and attitudes. For example, you begin to make choices of your own about your lifestyle. To put it another way, you will find that you want to put your life together in the way that you think is best for you."
   },
   {
    "type": "choice",
@@ -47,7 +47,7 @@
  "readingSentences": [
   {
    "id": "reading-005-s001",
-   "english": "As you become a teenager, however, you may sometimes begin to question adults' idea, instead of blindly accepting their ideas as you did when you were a small child.",
+   "english": "As you become a teenager, however, you may sometimes begin to question adults' ideas, instead of blindly accepting their ideas as you did when you were a small child.",
    "korean": "그러나, 당신이 10대가 됨에 따라, 어린애였을 때 그랬던 것처럼 그들의 생각을 맹목적으로 받아들이는 대신, 때때로 어른들의 생각에 의문을 갖기 시작할 지도 모른다."
   },
   {
@@ -83,18 +83,18 @@
    "word": "ideas",
    "lemma": "idea",
    "partOfSpeech": "n.",
-   "korean": "아이디어",
+   "korean": "생각, 의견",
    "score": 107,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
    "examTags": [
     "중학기초"
    ],
-   "freq": 2
+   "freq": 3
   },
   {
    "word": "begin",
    "lemma": "begin",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "시작하다",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
@@ -118,8 +118,8 @@
   {
    "word": "sometimes",
    "lemma": "sometimes",
-   "partOfSpeech": "n.",
-   "korean": "가끔",
+   "partOfSpeech": "adv.",
+   "korean": "때때로",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -130,8 +130,8 @@
   {
    "word": "question",
    "lemma": "question",
-   "partOfSpeech": "n.",
-   "korean": "질문",
+   "partOfSpeech": "v.",
+   "korean": "의문을 제기하다, 의심하다",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -142,8 +142,8 @@
   {
    "word": "instead",
    "lemma": "instead",
-   "partOfSpeech": "n.",
-   "korean": "대신",
+   "partOfSpeech": "adv.",
+   "korean": "대신에 (instead of ~ 대신에)",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -155,7 +155,7 @@
    "word": "adults",
    "lemma": "adult",
    "partOfSpeech": "n.",
-   "korean": "성인",
+   "korean": "어른",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -165,9 +165,9 @@
   },
   {
    "word": "blindly",
-   "lemma": "blind",
+   "lemma": "blindly",
    "partOfSpeech": "adv.",
-   "korean": "블라인드",
+   "korean": "맹목적으로, 무턱대고",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -176,48 +176,48 @@
    "freq": 1
   },
   {
-   "word": "small",
-   "lemma": "small",
-   "partOfSpeech": "n.",
-   "korean": "작은",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "word": "gradually",
+   "lemma": "gradually",
+   "partOfSpeech": "adv.",
+   "korean": "점차",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
    "freq": 1
   },
   {
-   "word": "child",
-   "lemma": "child",
-   "partOfSpeech": "n.",
-   "korean": "아이",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "word": "unique",
+   "lemma": "unique",
+   "partOfSpeech": "adj.",
+   "korean": "독특한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
    "freq": 1
   },
   {
-   "word": "another",
-   "lemma": "another",
+   "word": "attitudes",
+   "lemma": "attitude",
    "partOfSpeech": "n.",
-   "korean": "또 다른",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "korean": "태도",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
    "freq": 1
   },
   {
-   "word": "together",
-   "lemma": "together",
+   "word": "lifestyle",
+   "lemma": "lifestyle",
    "partOfSpeech": "n.",
-   "korean": "함께",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "korean": "생활 방식",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -226,8 +226,8 @@
   {
    "word": "put",
    "lemma": "put",
-   "partOfSpeech": "n.",
-   "korean": "놓다, 두다",
+   "partOfSpeech": "v.",
+   "korean": "말하다 (to put it another way 다시 말하면); (put together) 꾸리다",
    "score": 76,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
    "examTags": [

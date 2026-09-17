@@ -25,11 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "A farmer needs to be very careful about changing the food of his cows."
-    },
-    {
-      "type": "hints",
-      "text": "If the farmer makes a sudden change in food for cow, the cow may first lose weight. In addition, the cow that suddenly eats lots of a new food may give less milk. For these reasons, the farmer changes the cow's food slowly so that the cow can adapt to the new food."
+      "text": "A farmer needs to be very careful about changing the food of his cows. If the farmer makes a sudden change in a cow's food, the cow may first lose weight. In addition, the cow that suddenly eats lots of a new food may give less milk. For these reasons, the farmer changes the cow's food slowly so that the cow can adapt to the new food."
     },
     {
       "type": "choice",
@@ -56,7 +52,7 @@
     },
     {
       "id": "reading-253-s002",
-      "english": "If the farmer makes a sudden change in food for cow, the cow may first lose weight.",
+      "english": "If the farmer makes a sudden change in a cow's food, the cow may first lose weight.",
       "korean": "만약 농부가 젖소의 먹이를 갑자기 바꾸면, 먼저 젖소의 체중이 감소할 것이다."
     },
     {
@@ -87,7 +83,7 @@
       "word": "adapt",
       "lemma": "adapt",
       "partOfSpeech": "v.",
-      "korean": "적응하다, 맞추다",
+      "korean": "(adapt to) ~에 적응하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 102점)",
       "examTags": [
@@ -98,7 +94,7 @@
     },
     {
       "word": "slowly",
-      "lemma": "slow",
+      "lemma": "slowly",
       "partOfSpeech": "adv.",
       "korean": "천천히",
       "score": 98,
@@ -124,7 +120,7 @@
       "word": "changing",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "바꾸다",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 92점)",
       "examTags": [
@@ -136,7 +132,7 @@
       "word": "food",
       "lemma": "food",
       "partOfSpeech": "n.",
-      "korean": "음식",
+      "korean": "먹이, 음식",
       "score": 91,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 91점)",
       "examTags": [
@@ -154,13 +150,13 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 5
+      "freq": 3
     },
     {
       "word": "careful",
       "lemma": "careful",
-      "partOfSpeech": "n.",
-      "korean": "조심스러운, 주의 깊은",
+      "partOfSpeech": "adj.",
+      "korean": "조심하는",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -171,8 +167,8 @@
     {
       "word": "needs",
       "lemma": "need",
-      "partOfSpeech": "n.",
-      "korean": "필요",
+      "partOfSpeech": "v.",
+      "korean": "(need to) ~할 필요가 있다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -181,22 +177,22 @@
       "freq": 1
     },
     {
-      "word": "new",
-      "lemma": "new",
+      "word": "milk",
+      "lemma": "milk",
       "partOfSpeech": "n.",
-      "korean": "새로운",
-      "score": 72,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
+      "korean": "우유 (give milk 젖을 내다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "addition",
       "lemma": "addition",
       "partOfSpeech": "n.",
-      "korean": "추가",
+      "korean": "(in addition) 게다가",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -207,7 +203,7 @@
     {
       "word": "sudden",
       "lemma": "sudden",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "갑작스러운",
       "score": 67,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
@@ -220,7 +216,7 @@
       "word": "weight",
       "lemma": "weight",
       "partOfSpeech": "n.",
-      "korean": "무게",
+      "korean": "체중 (lose weight 살이 빠지다)",
       "score": 67,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
       "examTags": [

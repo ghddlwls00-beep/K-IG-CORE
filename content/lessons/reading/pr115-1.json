@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "가장 만족스럽고 표현이 풍부한 그림은 몸 전체의 능동적 참여시켜서 이루어 진다. 당신의 손은 바닥에 서 있는 발에 의해 떠받쳐져서 당신의 팔 전체, 팔에서 몸통까지 연결되어 있다. 그림을 그릴 때 몸 전체를 능동적으로 참여시키기 위해 다음과 같이 시도해 보라. 당신의 손가락을 가지고 공간에 작은 원을 그리며 시작하라. 그리고 손목 주위를 원을 그리며 움직여라. 다음에 팔뚝을 가지고 좀 더 큰 원을 그려라. 그리고, 마지막으로 거대한 원을 팔을 돌려 만들어라. 지금 당신은 당신의 전체 몸이 그림을 그리는 일에 어떻게 사용되는가를 볼 수가 있다."
+      "text": "가장 만족스럽고 표현력이 풍부한 그림은 온몸을 적극적으로 쓰면서 그려진다. 손은 팔 전체와, 팔은 몸통과 이어져 있고, 몸통은 바닥을 딛은 발이 받쳐 준다. 그림을 그릴 때 온몸을 적극적으로 쓰는 감각을 깨우려면 다음과 같이 해 보라. 먼저 손가락 하나하나로 허공에 작은 원을 그린다. 그다음 손목을 중심으로 손을 원을 그리며 돌린다. 이어서 팔뚝으로 더 큰 원을 그린다. 마지막으로 팔을 크게 휘둘러 커다란 원을 그린다. 이제 그림 그리기에 온몸이 어떻게 쓰일 수 있는지 알게 되었을 것이다."
     },
     {
       "type": "choice",
@@ -48,42 +48,37 @@
     {
       "id": "reading-115-s001",
       "english": "The most satisfying and expressive drawing is done with the active engagement of the entire body.",
-      "korean": "가장 만족스럽고 표현이 풍부한 그림은 몸 전체의 능동적 참여시켜서 이루어 진다."
+      "korean": "가장 만족스럽고 표현력이 풍부한 그림은 온몸을 적극적으로 쓰면서 그려진다."
     },
     {
       "id": "reading-115-s002",
       "english": "Your hand is connected to your whole arm, the arm to the torso, supported by your feet on the floor.",
-      "korean": "당신의 손은 바닥에 서 있는 발에 의해 떠받쳐져서 당신의 팔 전체, 팔에서 몸통까지 연결되어 있다."
+      "korean": "손은 팔 전체와, 팔은 몸통과 이어져 있고, 몸통은 바닥을 딛은 발이 받쳐 준다."
     },
     {
       "id": "reading-115-s003",
       "english": "To awaken the active engagement of your whole body in drawing, try the following: Begin by drawing small circles in space with each of your fingers.",
-      "korean": "그림을 그릴 때 몸 전체를 능동적으로 참여시키기 위해 다음과 같이 시도해 보라."
+      "korean": "그림을 그릴 때 온몸을 적극적으로 쓰는 감각을 깨우려면 다음과 같이 해 보라. 먼저 손가락 하나하나로 허공에 작은 원을 그린다."
     },
     {
       "id": "reading-115-s004",
       "english": "Then move your hands in circles around the wrist.",
-      "korean": "당신의 손가락을 가지고 공간에 작은 원을 그리며 시작하라."
+      "korean": "그다음 손목을 중심으로 손을 원을 그리며 돌린다."
     },
     {
       "id": "reading-115-s005",
       "english": "Next, make bigger circles with your forearms.",
-      "korean": "그리고 손목 주위를 원을 그리며 움직여라."
+      "korean": "이어서 팔뚝으로 더 큰 원을 그린다."
     },
     {
       "id": "reading-115-s006",
       "english": "And finally, make giant swinging arm circles.",
-      "korean": "다음에 팔뚝을 가지고 좀 더 큰 원을 그려라."
+      "korean": "마지막으로 팔을 크게 휘둘러 커다란 원을 그린다."
     },
     {
       "id": "reading-115-s007",
       "english": "Now you see how your entire body can be used in the activity of drawing.",
-      "korean": "그리고, 마지막으로 거대한 원을 팔을 돌려 만들어라."
-    },
-    {
-      "id": "reading-115-s008",
-      "english": "*torso: 몸통",
-      "korean": "지금 당신은 당신의 전체 몸이 그림을 그리는 일에 어떻게 사용되는가를 볼 수가 있다."
+      "korean": "이제 그림 그리기에 온몸이 어떻게 쓰일 수 있는지 알게 되었을 것이다."
     }
   ],
   "readingVocabulary": [
@@ -103,7 +98,7 @@
       "word": "connected",
       "lemma": "connect",
       "partOfSpeech": "v.",
-      "korean": "연결하다",
+      "korean": "연결하다 (be connected to ~에 이어져 있다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -115,7 +110,7 @@
       "word": "supported",
       "lemma": "support",
       "partOfSpeech": "v.",
-      "korean": "지원하다",
+      "korean": "받치다, 지탱하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -125,9 +120,9 @@
     },
     {
       "word": "following",
-      "lemma": "follow",
-      "partOfSpeech": "v.",
-      "korean": "팔로우",
+      "lemma": "following",
+      "partOfSpeech": "n.",
+      "korean": "(the following) 다음 것",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -137,9 +132,9 @@
     },
     {
       "word": "drawing",
-      "lemma": "draw",
-      "partOfSpeech": "v.",
-      "korean": "무승부",
+      "lemma": "drawing",
+      "partOfSpeech": "n.",
+      "korean": "그림 그리기",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
       "examTags": [
@@ -173,9 +168,9 @@
     },
     {
       "word": "satisfying",
-      "lemma": "satisfy",
-      "partOfSpeech": "v.",
-      "korean": "만족시키다",
+      "lemma": "satisfying",
+      "partOfSpeech": "adj.",
+      "korean": "만족스러운",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -187,7 +182,7 @@
       "word": "active",
       "lemma": "active",
       "partOfSpeech": "adj.",
-      "korean": "활성",
+      "korean": "적극적인",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
       "examTags": [
@@ -199,7 +194,7 @@
       "word": "engagement",
       "lemma": "engagement",
       "partOfSpeech": "n.",
-      "korean": "몰입, 참여, 약혼",
+      "korean": "참여, 몰입",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -210,8 +205,8 @@
     {
       "word": "entire",
       "lemma": "entire",
-      "partOfSpeech": "n.",
-      "korean": "전체",
+      "partOfSpeech": "adj.",
+      "korean": "전체의",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -236,13 +231,13 @@
       "word": "torso",
       "lemma": "torso",
       "partOfSpeech": "n.",
-      "korean": "torso (핵심 어휘)",
+      "korean": "몸통",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "circles",

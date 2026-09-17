@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "매일 우리들 각자는 많은 형태의 복잡한 활동에 참가한다. 우리는 학교에도 가고, 운동에도 참가하고, 자동차도 몰고, 종종 갈등에 연루되기도 한다. (B)우리는 또한 먹거나 잠을 자는 것과 같은 덜 복잡한 활동도 수행한다. 우리의 신경계가 우리가 수행할 수 있는 활동들의 복잡성을 결정한다. 벌레와 유사한 신경계를 가진 동물들은 축구를 할 수 없고 하물며 체스는 더더욱 할 수 없다. (A)왜 먹거나 번식하는 것과 같은 일부 활동들은 모든 유기체에 공통이지만, 둥지를 짓는 것과 같은 다른 활동들은 특정한 종들에만 제한될까? 왜 일부 동물들은 무리를 지어서 살고 다른 동물들은 혼자 살까? (C)이러한 질문들이 행동 연구의 초점이다. 가장 간단한 형태로 보면, 행동은 한 유기체의 행위, 즉 그것이 활동하는 방식이다."
+      "text": "매일 우리들 각자는 많은 형태의 복잡한 활동에 참가한다. 우리는 학교에도 가고, 운동에도 참가하고, 자동차도 몰고, 종종 갈등에 연루되기도 한다. 우리는 또한 먹거나 잠을 자는 것과 같은 덜 복잡한 활동도 수행한다. 우리의 신경계가 우리가 수행할 수 있는 활동들의 복잡성을 결정한다. 벌레와 유사한 신경계를 가진 동물들은 축구를 할 수 없고 하물며 체스는 더더욱 할 수 없다. 왜 먹거나 번식하는 것과 같은 일부 활동들은 모든 유기체에 공통이지만, 둥지를 짓는 것과 같은 다른 활동들은 특정한 종들에만 제한될까? 왜 일부 동물들은 무리를 지어서 살고 다른 동물들은 혼자 살까? 이러한 질문들이 행동 연구의 초점이다. 가장 간단한 형태로 보면, 행동은 한 유기체의 행위, 즉 그것이 활동하는 방식이다."
     },
     {
       "type": "choice",
@@ -96,7 +96,7 @@
       "word": "reproducing",
       "lemma": "reproduce",
       "partOfSpeech": "v.",
-      "korean": "재현하다",
+      "korean": "번식하다",
       "score": 116,
       "reason": "수능/TOEFL 학술 독해 최빈출 고득점 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 116점)",
       "examTags": [
@@ -108,7 +108,7 @@
     {
       "word": "complex",
       "lemma": "complex",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "복잡한",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 109점)",
@@ -121,7 +121,7 @@
       "word": "species",
       "lemma": "species",
       "partOfSpeech": "n.",
-      "korean": "종",
+      "korean": "(생물의) 종",
       "score": 109,
       "reason": "수능/TOEFL 학술 독해 최빈출 고득점 어휘 (평가 점수: 109점)",
       "examTags": [
@@ -131,22 +131,10 @@
       "freq": 1
     },
     {
-      "word": "simplest",
-      "lemma": "simple",
-      "partOfSpeech": "n.",
-      "korean": "단순한",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "perform",
       "lemma": "perform",
-      "partOfSpeech": "n.",
-      "korean": "수행하다",
+      "partOfSpeech": "v.",
+      "korean": "하다, 수행하다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -155,46 +143,82 @@
       "freq": 2
     },
     {
-      "word": "animals",
-      "lemma": "animal",
-      "partOfSpeech": "n.",
-      "korean": "동물",
-      "score": 99,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "school",
-      "lemma": "school",
-      "partOfSpeech": "n.",
-      "korean": "학교",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "activities",
-      "lemma": "activity",
-      "partOfSpeech": "n.",
-      "korean": "활동",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
+      "word": "engages",
+      "lemma": "engage",
+      "partOfSpeech": "v.",
+      "korean": "(engage in) ~을 하다, ~에 참여하다",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 5
+      "freq": 1
+    },
+    {
+      "word": "participate",
+      "lemma": "participate",
+      "partOfSpeech": "v.",
+      "korean": "(participate in) ~에 참가하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "involved",
+      "lemma": "involve",
+      "partOfSpeech": "v.",
+      "korean": "(be involved in) ~에 휘말리다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "conflicts",
+      "lemma": "conflict",
+      "partOfSpeech": "n.",
+      "korean": "갈등, 충돌",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "nervous",
+      "lemma": "nervous",
+      "partOfSpeech": "adj.",
+      "korean": "신경의 (nervous system 신경계)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "determines",
+      "lemma": "determine",
+      "partOfSpeech": "v.",
+      "korean": "결정하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     },
     {
       "word": "complexity",
       "lemma": "complexity",
       "partOfSpeech": "n.",
-      "korean": "복잡성, 복잡함",
+      "korean": "복잡성",
       "score": 89,
       "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -206,7 +230,7 @@
       "word": "organisms",
       "lemma": "organism",
       "partOfSpeech": "n.",
-      "korean": "유기체, 생물",
+      "korean": "생물, 유기체",
       "score": 89,
       "reason": "대학 학술 독해 필수 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -228,36 +252,12 @@
       "freq": 2
     },
     {
-      "word": "eating",
-      "lemma": "eat",
-      "partOfSpeech": "v.",
-      "korean": "먹다",
-      "score": 79,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "engages",
-      "lemma": "engage",
+      "word": "conduct",
+      "lemma": "conduct",
       "partOfSpeech": "n.",
-      "korean": "참여하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "every",
-      "lemma": "every",
-      "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "행위, 행동 방식",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

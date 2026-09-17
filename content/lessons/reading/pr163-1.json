@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "당신이 즐거움을 위해 익는 책은 편안한 상태에서 읽어도 잃는 것도 아무것도 없다. 그러나 위대한 책, 즉 진지하고 근본적인 문제들은 제기하고 해결하려고 하는 책은 당신이 할 수 있는 한의 능동적인 독서를 요구한다. 당신은 대중가요를 콧노래 부르듯이 책을 읽는 방식으로는 위대한 사상가의 생각을 흡수할 수 없다. 그 책을 이해하려고 노력해야만 한다. 또 당신이 잠자고 있는 동안에도 그 것을 할 수 없다(항상 정신을 집중해서 읽어야 한다)"
+      "text": "즐거움을 위해 읽는 책은 편안한 상태에서 읽어도 잃는 것이 없다. 그러나 위대한 책, 즉 중대하고 근본적인 질문을 던지고 그에 답하려는 책은 당신이 할 수 있는 가장 능동적인 독서를 요구한다. 대중 가수의 감미로운 노래를 받아들이듯 위대한 사상가의 생각을 받아들일 수는 없다. 그 생각에 닿으려고 손을 뻗어야 한다. 잠든 채로는 그렇게 할 수 없다."
     },
     {
       "type": "choice",
@@ -48,47 +48,47 @@
     {
       "id": "reading-163-s001",
       "english": "The books you read for pleasure can be read in a state of relaxation, and nothing is lost.",
-      "korean": "당신이 즐거움을 위해 익는 책은 편안한 상태에서 읽어도 잃는 것도 아무것도 없다."
+      "korean": "즐거움을 위해 읽는 책은 편안한 상태에서 읽어도 잃는 것이 없다."
     },
     {
       "id": "reading-163-s002",
       "english": "But a great book, a book that raises and tries to answer great fundamental questions, demands the most active reading of which you are capable.",
-      "korean": "그러나 위대한 책, 즉 진지하고 근본적인 문제들은 제기하고 해결하려고 하는 책은 당신이 할 수 있는 한의 능동적인 독서를 요구한다."
+      "korean": "그러나 위대한 책, 즉 중대하고 근본적인 질문을 던지고 그에 답하려는 책은 당신이 할 수 있는 가장 능동적인 독서를 요구한다."
     },
     {
       "id": "reading-163-s003",
       "english": "You don’t absorb the ideas of a great thinker the way you absorb the crooning of a popular singer.",
-      "korean": "당신은 대중가요를 콧노래 부르듯이 책을 읽는 방식으로는 위대한 사상가의 생각을 흡수할 수 없다."
+      "korean": "대중 가수의 감미로운 노래를 받아들이듯 위대한 사상가의 생각을 받아들일 수는 없다."
     },
     {
       "id": "reading-163-s004",
       "english": "You have to reach for them.",
-      "korean": "그 책을 이해하려고 노력해야만 한다."
+      "korean": "그 생각에 닿으려고 손을 뻗어야 한다."
     },
     {
       "id": "reading-163-s005",
       "english": "You cannot do that while you are asleep.",
-      "korean": "또 당신이 잠자고 있는 동안에도 그 것을 할 수 없다(항상 정신을 집중해서 읽어야 한다)"
+      "korean": "잠든 채로는 그렇게 할 수 없다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "books",
-      "lemma": "book",
-      "partOfSpeech": "n.",
-      "korean": "책",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "active",
+      "lemma": "active",
+      "partOfSpeech": "adj.",
+      "korean": "능동적인, 적극적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "demands",
       "lemma": "demand",
-      "partOfSpeech": "n.",
-      "korean": "수요",
+      "partOfSpeech": "v.",
+      "korean": "요구하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -100,7 +100,7 @@
       "word": "ideas",
       "lemma": "idea",
       "partOfSpeech": "n.",
-      "korean": "아이디어",
+      "korean": "생각, 사상",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -112,7 +112,7 @@
       "word": "fundamental",
       "lemma": "fundamental",
       "partOfSpeech": "adj.",
-      "korean": "근본적인, 핵심적인",
+      "korean": "근본적인",
       "score": 91,
       "reason": "수능 독해 논리 전개 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 91점)",
       "examTags": [
@@ -124,8 +124,8 @@
     {
       "word": "state",
       "lemma": "state",
-      "partOfSpeech": "v.",
-      "korean": "상태",
+      "partOfSpeech": "n.",
+      "korean": "상태 (in a state of relaxation 긴장을 푼 상태로)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -137,7 +137,7 @@
       "word": "pleasure",
       "lemma": "pleasure",
       "partOfSpeech": "n.",
-      "korean": "즐거움",
+      "korean": "즐거움 (for pleasure 재미로)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -149,7 +149,7 @@
       "word": "relaxation",
       "lemma": "relaxation",
       "partOfSpeech": "n.",
-      "korean": "휴식, 이완, 긴장 완화",
+      "korean": "긴장 완화, 휴식",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -158,34 +158,34 @@
       "freq": 1
     },
     {
-      "word": "read",
-      "lemma": "read",
-      "partOfSpeech": "n.",
-      "korean": "읽다",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "word": "raises",
+      "lemma": "raise",
+      "partOfSpeech": "v.",
+      "korean": "(질문을) 제기하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "great",
-      "lemma": "great",
+      "word": "thinker",
+      "lemma": "thinker",
       "partOfSpeech": "n.",
-      "korean": "대단해",
-      "score": 77,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "사상가",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
       "word": "crooning",
       "lemma": "crooning",
-      "partOfSpeech": "v.",
-      "korean": "나지막이 노래하는, 감미롭게 부르는",
+      "partOfSpeech": "n.",
+      "korean": "감미롭게 부르는 노래",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -196,8 +196,8 @@
     {
       "word": "asleep",
       "lemma": "asleep",
-      "partOfSpeech": "n.",
-      "korean": "자고",
+      "partOfSpeech": "adj.",
+      "korean": "잠든",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -208,8 +208,8 @@
     {
       "word": "lost",
       "lemma": "lose",
-      "partOfSpeech": "n.",
-      "korean": "잃다",
+      "partOfSpeech": "v.",
+      "korean": "잃다 (nothing is lost 잃는 것이 없다)",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [
@@ -220,8 +220,8 @@
     {
       "word": "absorb",
       "lemma": "absorb",
-      "partOfSpeech": "n.",
-      "korean": "흡수하다",
+      "partOfSpeech": "v.",
+      "korean": "흡수하다, 받아들이다",
       "score": 72,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
       "examTags": [
@@ -233,7 +233,7 @@
       "word": "capable",
       "lemma": "capable",
       "partOfSpeech": "adj.",
-      "korean": "능력 있는, 할 수 있는",
+      "korean": "(be capable of) ~할 수 있는",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [

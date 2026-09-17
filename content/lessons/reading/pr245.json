@@ -25,11 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "You are a member of your family, a player on the community baseball team, and a student in your school. You are also a citizen of your country. In short, you occupy several different positions in the complex structure of society. This means you should play many roles in different situations. Generally, you have little difficulty performing each of your roles because you know what is expected of you. This knowledge guides you through your daily interactions."
-    },
-    {
-      "type": "hints",
-      "text": "But sometimes you will get caught in a conflict. Each role of yours makes demands on you, and you may be asked to play two or more roles at the same time. When many roles make conflicting demands on you, you may feel quite uncomfortable and at times frustrated. For example, your family is going on a picnic this coming Sunday. But your best friend wants you to join his or her birthday party on the same day. When such role conflicts occur, you need to do more important things first. Thus, the ability to decide what to do in what order is an essential skill to fulfill multiple social roles"
+      "text": "You are a member of your family, a player on the community baseball team, and a student in your school. You are also a citizen of your country. In short, you occupy several different positions in the complex structure of society. This means you should play many roles in different situations. Generally, you have little difficulty performing each of your roles because you know what is expected of you. This knowledge guides you through your daily interactions. But sometimes you will get caught in a conflict. Each role of yours makes demands on you, and you may be asked to play two or more roles at the same time. When many roles make conflicting demands on you, you may feel quite uncomfortable and at times frustrated. For example, your family is going on a picnic this coming Sunday. But your best friend wants you to join his or her birthday party on the same day. When such role conflicts occur, you need to do more important things first. Thus, the ability to decide what to do in what order is an essential skill to fulfill multiple social roles."
     },
     {
       "type": "choice",
@@ -77,7 +73,7 @@
     {
       "id": "reading-245-s006",
       "english": "This knowledge guides you through your daily interactions.",
-      "korean": "이러한 지식은 당신의 일상적인 상호 작용을 통해 당신을 지도한다."
+      "korean": "이런 지식은 일상의 여러 관계 속에서 당신을 이끌어 준다."
     },
     {
       "id": "reading-245-s007",
@@ -111,7 +107,7 @@
     },
     {
       "id": "reading-245-s013",
-      "english": "Thus, the ability to decide what to do in what order is an essential skill to fulfill multiple social roles",
+      "english": "Thus, the ability to decide what to do in what order is an essential skill to fulfill multiple social roles.",
       "korean": "그래서, 어떤 순서로 무엇을 할 것인지 결정할 능력은 여러 개의 사회적 역할을 수행하기 위한 중요한 기술이다."
     }
   ],
@@ -119,7 +115,7 @@
     {
       "word": "family",
       "lemma": "family",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "n.",
       "korean": "가족",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
@@ -129,38 +125,50 @@
       "freq": 2
     },
     {
-      "word": "student",
-      "lemma": "student",
+      "word": "citizen",
+      "lemma": "citizen",
       "partOfSpeech": "n.",
-      "korean": "학생",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+      "korean": "시민",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "school",
-      "lemma": "school",
-      "partOfSpeech": "n.",
-      "korean": "학교",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "occupy",
+      "lemma": "occupy",
+      "partOfSpeech": "v.",
+      "korean": "차지하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "social",
-      "lemma": "social",
-      "partOfSpeech": "adj.",
-      "korean": "사회의, 사회적인",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 102점)",
+      "word": "positions",
+      "lemma": "position",
+      "partOfSpeech": "n.",
+      "korean": "위치, 지위",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "structure",
+      "lemma": "structure",
+      "partOfSpeech": "n.",
+      "korean": "구조",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
@@ -180,7 +188,7 @@
       "word": "expected",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "기대하다 (be expected of ~에게 기대되다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -191,7 +199,7 @@
     {
       "word": "decide",
       "lemma": "decide",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "결정하다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
@@ -204,7 +212,7 @@
       "word": "demands",
       "lemma": "demand",
       "partOfSpeech": "n.",
-      "korean": "수요",
+      "korean": "요구 (make demands on ~에게 요구하다)",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -213,21 +221,9 @@
       "freq": 2
     },
     {
-      "word": "country",
-      "lemma": "country",
-      "partOfSpeech": "n.",
-      "korean": "국가",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "complex",
       "lemma": "complex",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "복잡한",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -237,53 +233,50 @@
       "freq": 1
     },
     {
-      "word": "society",
-      "lemma": "society",
+      "word": "interactions",
+      "lemma": "interaction",
       "partOfSpeech": "n.",
-      "korean": "사회",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "상호 작용, 교류",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "difficulty",
-      "lemma": "difficulty",
-      "partOfSpeech": "n.",
-      "korean": "어려움, 곤경",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "conflicting",
+      "lemma": "conflicting",
+      "partOfSpeech": "adj.",
+      "korean": "상충하는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초",
-        "수능"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "knowledge",
-      "lemma": "knowledge",
-      "partOfSpeech": "n.",
-      "korean": "지식, 앎",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "frustrated",
+      "lemma": "frustrated",
+      "partOfSpeech": "adj.",
+      "korean": "좌절한, 답답한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초",
-        "수능",
-        "TOEFL"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "friend",
-      "lemma": "friend",
-      "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "fulfill",
+      "lemma": "fulfill",
+      "partOfSpeech": "v.",
+      "korean": "수행하다, 다하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     }

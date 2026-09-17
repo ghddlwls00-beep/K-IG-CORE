@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "The International Monetary Fund (IMF) said that economic trouble affecting Asian countries will begin to get better by the first half of 1999. It warned, however, that they have to give up the high economic growth rates of the past. An officer of the IMF said the troubled economies would recover from the present economic hardships by the second half of 1999. He added the IMF could not be exact about the timing of a recovery. That would, according to him, depend on how effective governments were in dealing with their economic problems."
+      "text": "In 1998, the International Monetary Fund (IMF) said that economic trouble affecting Asian countries would begin to get better by the first half of 1999. It warned, however, that they would have to give up the high economic growth rates of the past. An officer of the IMF said the troubled economies would recover from their economic hardships by the second half of 1999. He added the IMF could not be exact about the timing of a recovery. That would, according to him, depend on how effective governments were in dealing with their economic problems."
     },
     {
       "type": "choice",
@@ -47,18 +47,18 @@
   "readingSentences": [
     {
       "id": "reading-095-s001",
-      "english": "The International Monetary Fund (IMF) said that economic trouble affecting Asian countries will begin to get better by the first half of 1999.",
-      "korean": "국제 통화 기금(IMF)은 아시아 국가들에게 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다."
+      "english": "In 1998, the International Monetary Fund (IMF) said that economic trouble affecting Asian countries would begin to get better by the first half of 1999.",
+      "korean": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에게 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다."
     },
     {
       "id": "reading-095-s002",
-      "english": "It warned, however, that they have to give up the high economic growth rates of the past.",
-      "korean": "그렇지만 그들은 과거의 높은 경제 성장률을 포기해야 한다고 경고했다."
+      "english": "It warned, however, that they would have to give up the high economic growth rates of the past.",
+      "korean": "그러나 IMF는 그 나라들이 과거의 높은 경제 성장률은 포기해야 한다고 경고했다."
     },
     {
       "id": "reading-095-s003",
-      "english": "An officer of the IMF said the troubled economies would recover from the present economic hardships by the second half of 1999.",
-      "korean": "한 IMF 관리는 1999년 하반기까지는 현재의 경제적 곤경으로부터 어려운 경제가 회복될 것이라고 말했다."
+      "english": "An officer of the IMF said the troubled economies would recover from their economic hardships by the second half of 1999.",
+      "korean": "한 IMF 관리는 1999년 하반기까지는 어려움을 겪는 경제들이 당시의 경제적 곤경에서 회복될 것이라고 말했다."
     },
     {
       "id": "reading-095-s004",
@@ -68,7 +68,7 @@
     {
       "id": "reading-095-s005",
       "english": "That would, according to him, depend on how effective governments were in dealing with their economic problems.",
-      "korean": "그에 의하면, 그것은 정부가 그들의 경제적 문제들을 얼마나 효율적으로 다루느냐에 달려 있다고 한다"
+      "korean": "그에 의하면, 그것은 정부가 그들의 경제적 문제들을 얼마나 효율적으로 다루느냐에 달려 있다고 한다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +76,7 @@
       "word": "affecting",
       "lemma": "affect",
       "partOfSpeech": "v.",
-      "korean": "영향을 미치다",
+      "korean": "영향을 주다",
       "score": 111,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
@@ -88,7 +88,7 @@
       "word": "countries",
       "lemma": "country",
       "partOfSpeech": "n.",
-      "korean": "국가",
+      "korean": "나라",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -99,8 +99,8 @@
     {
       "word": "depend",
       "lemma": "depend",
-      "partOfSpeech": "n.",
-      "korean": "의존하다",
+      "partOfSpeech": "v.",
+      "korean": "(depend on) ~에 달려 있다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -112,7 +112,7 @@
       "word": "economic",
       "lemma": "economic",
       "partOfSpeech": "adj.",
-      "korean": "경제의, 경제적인",
+      "korean": "경제의",
       "score": 99,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 99점)",
       "examTags": [
@@ -121,24 +121,24 @@
       "freq": 4
     },
     {
-      "word": "high",
-      "lemma": "high",
-      "partOfSpeech": "n.",
-      "korean": "높은",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "recover",
+      "lemma": "recover",
+      "partOfSpeech": "v.",
+      "korean": "회복하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "according",
-      "lemma": "according",
-      "partOfSpeech": "v.",
-      "korean": "~에 따르면",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "hardships",
+      "lemma": "hardship",
+      "partOfSpeech": "n.",
+      "korean": "어려움, 곤경",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -148,7 +148,7 @@
       "word": "dealing",
       "lemma": "deal",
       "partOfSpeech": "v.",
-      "korean": "거래",
+      "korean": "(deal with) 다루다, 대처하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -157,22 +157,22 @@
       "freq": 1
     },
     {
-      "word": "imf",
-      "lemma": "imf",
+      "word": "fund",
+      "lemma": "fund",
       "partOfSpeech": "n.",
-      "korean": "국제통화기금 (IMF)",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
+      "korean": "기금 (International Monetary Fund 국제 통화 기금)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
       "word": "international",
       "lemma": "international",
       "partOfSpeech": "adj.",
-      "korean": "국제적인",
+      "korean": "국제의",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -184,7 +184,7 @@
       "word": "monetary",
       "lemma": "monetary",
       "partOfSpeech": "adj.",
-      "korean": "금융의, 통화의",
+      "korean": "통화의, 금융의",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -196,7 +196,7 @@
       "word": "trouble",
       "lemma": "trouble",
       "partOfSpeech": "n.",
-      "korean": "문제",
+      "korean": "어려움",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -218,24 +218,24 @@
       "freq": 1
     },
     {
-      "word": "half",
-      "lemma": "half",
+      "word": "growth",
+      "lemma": "growth",
       "partOfSpeech": "n.",
-      "korean": "절반",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "korean": "성장 (economic growth rates 경제 성장률)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "begin",
-      "lemma": "begin",
-      "partOfSpeech": "n.",
-      "korean": "시작하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "warned",
+      "lemma": "warn",
+      "partOfSpeech": "v.",
+      "korean": "경고하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

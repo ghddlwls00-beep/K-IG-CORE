@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Many popular sayings are correct, even insightful, when applied to life's circumstances. But when proverbs are viewed without qualifications: they can cancel each other out. For instance, while it's often true that \" too many cooks spoil the broth ,\" there are times when \" two heads are better than one."
+   "text": "Many popular sayings are correct, even insightful, when applied to life's circumstances. But when proverbs are viewed without qualifications, they can cancel each other out. For instance, while it's often true that \"too many cooks spoil the broth,\" there are times when \"two heads are better than one.\""
   },
   {
    "type": "choice",
@@ -48,17 +48,17 @@
   {
    "id": "reading-204-s001",
    "english": "Many popular sayings are correct, even insightful, when applied to life's circumstances.",
-   "korean": "사람들 입에 오르내리는 많은 속담들은 딱 들어맞거나 통찰력이 넘치기조차 한다 삶의 상황에 적용이 될 때."
+   "korean": "많은 속담은 삶의 상황에 적용하면 옳고, 심지어 통찰력이 있기도 하다."
   },
   {
    "id": "reading-204-s002",
-   "english": "But when proverbs are viewed without qualifications: they can cancel each other out.",
-   "korean": "그러나 속담들을 살필 때 제한을 두지 않으면, 그것들은 각각의 효과를 상쇄할 수 있다."
+   "english": "But when proverbs are viewed without qualifications, they can cancel each other out.",
+   "korean": "그러나 단서를 달지 않고 속담을 보면 서로를 상쇄할 수 있다."
   },
   {
    "id": "reading-204-s003",
-   "english": "For instance, while it's often true that \" too many cooks spoil the broth ,\" there are times when \" two heads are better than one.",
-   "korean": "예를 들어, “사공이 많으면 배가 산으로 올라간다”는 것이 종종 맞는 말이지만 “백지장도 맞들면 나은” 경우가 있다."
+   "english": "For instance, while it's often true that \"too many cooks spoil the broth,\" there are times when \"two heads are better than one.\"",
+   "korean": "예를 들어 \"사공이 많으면 배가 산으로 간다\"는 말이 맞을 때가 많지만, \"백지장도 맞들면 낫다\"는 말이 맞을 때도 있다."
   }
  ],
  "readingVocabulary": [
@@ -66,7 +66,7 @@
    "word": "heads",
    "lemma": "head",
    "partOfSpeech": "n.",
-   "korean": "머리",
+   "korean": "머리 (two heads are better than one 백지장도 맞들면 낫다)",
    "score": 100,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
    "examTags": [
@@ -78,7 +78,7 @@
    "word": "cancel",
    "lemma": "cancel",
    "partOfSpeech": "v.",
-   "korean": "취소하다, 무효로 하다",
+   "korean": "(cancel out) 상쇄하다",
    "score": 89,
    "reason": "실무/비즈니스 실용 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
    "examTags": [
@@ -102,7 +102,7 @@
    "word": "qualifications",
    "lemma": "qualification",
    "partOfSpeech": "n.",
-   "korean": "자격",
+   "korean": "단서, 조건 (without qualifications 무조건)",
    "score": 84,
    "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
    "examTags": [
@@ -114,7 +114,7 @@
    "word": "spoil",
    "lemma": "spoil",
    "partOfSpeech": "v.",
-   "korean": "망치다, 상하다",
+   "korean": "망치다",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
@@ -137,8 +137,8 @@
   {
    "word": "popular",
    "lemma": "popular",
-   "partOfSpeech": "n.",
-   "korean": "인기있는",
+   "partOfSpeech": "adj.",
+   "korean": "널리 알려진",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -161,8 +161,8 @@
   {
    "word": "correct",
    "lemma": "correct",
-   "partOfSpeech": "n.",
-   "korean": "정확한; 고치다",
+   "partOfSpeech": "adj.",
+   "korean": "옳은",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -174,7 +174,7 @@
    "word": "circumstances",
    "lemma": "circumstance",
    "partOfSpeech": "n.",
-   "korean": "상황",
+   "korean": "상황, 처지",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -186,7 +186,7 @@
    "word": "instance",
    "lemma": "instance",
    "partOfSpeech": "n.",
-   "korean": "사례, 경우",
+   "korean": "(for instance) 예를 들어",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -210,7 +210,7 @@
    "word": "broth",
    "lemma": "broth",
    "partOfSpeech": "n.",
-   "korean": "국물, 수프",
+   "korean": "수프, 국",
    "score": 75,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
    "examTags": [

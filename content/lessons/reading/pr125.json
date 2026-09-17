@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Since it manufactured its first car in 1955, Korea has grown to be the sixth largest automobile producer in the world. It is expected to be among the world’s top four auto-making countries by 2010 after the U.S., Japan, and Germany, in spite of its competitiveness in small car manufacturing, skilled human workforce, and leading information technology, an expected production of 6.5 million units in 2010, Korea will hold 10 percent of the global auto market."
+      "text": "Since it manufactured its first car in 1955, Korea has grown to be one of the largest automobile producers in the world. In the early 2000s, it was expected to be among the world’s top four auto-making countries by 2010, because of its competitiveness in small car manufacturing, its skilled workforce, and its leading information technology. Forecasters said that, with a production of 6.5 million units in 2010, Korea would hold 10 percent of the global auto market."
     },
     {
       "type": "choice",
@@ -47,13 +47,18 @@
   "readingSentences": [
     {
       "id": "reading-125-s001",
-      "english": "Since it manufactured its first car in 1955, Korea has grown to be the sixth largest automobile producer in the world.",
-      "korean": "1955년에 최초의 자동차를 제조한 이후로 한국은 성장해서 세계에서 여섯 번째로 가장 큰 자동차 생산국이 되었다."
+      "english": "Since it manufactured its first car in 1955, Korea has grown to be one of the largest automobile producers in the world.",
+      "korean": "1955년 첫 자동차를 만든 이후 한국은 세계에서 손꼽히는 자동차 생산국으로 성장했다."
     },
     {
       "id": "reading-125-s002",
-      "english": "It is expected to be among the world’s top four auto-making countries by 2010 after the U.S., Japan, and Germany, in spite of its competitiveness in small car manufacturing, skilled human workforce, and leading information technology, an expected production of 6.5 million units in 2010, Korea will hold 10 percent of the global auto market.",
-      "korean": "소형 자동차 생산에서의 경쟁성, 숙련된 노동력 그리고 선도하는 정보 과학 기술 때문에 한국은 2010년경에 미국, 일본 그리고 독일 다음에 세계에서 4대 최고 자동차 생산국에 속할 것으로 예상된다. 2010년에 6백 5십만 대를 생산할 것이 예상되는 가운데 한국은 세계 자동차 시장의 10 퍼센트를 차지할 것이다."
+      "english": "In the early 2000s, it was expected to be among the world’s top four auto-making countries by 2010, because of its competitiveness in small car manufacturing, its skilled workforce, and its leading information technology.",
+      "korean": "2000년대 초에는 소형차 생산의 경쟁력, 숙련된 인력, 앞선 정보 기술 덕분에 한국이 2010년까지 세계 4대 자동차 생산국에 들 것으로 예상되었다."
+    },
+    {
+      "id": "reading-125-s003",
+      "english": "Forecasters said that, with a production of 6.5 million units in 2010, Korea would hold 10 percent of the global auto market.",
+      "korean": "전문가들은 한국이 2010년에 650만 대를 생산해 세계 자동차 시장의 10퍼센트를 차지할 것이라고 내다보았다."
     }
   ],
   "readingVocabulary": [
@@ -61,19 +66,19 @@
       "word": "expected",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "예상하다 (be expected to ~할 것으로 예상되다)",
       "score": 114,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 114점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "leading",
-      "lemma": "lead",
-      "partOfSpeech": "v.",
-      "korean": "이끌다, 초래하다",
+      "lemma": "leading",
+      "partOfSpeech": "adj.",
+      "korean": "앞선, 선도하는",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -86,7 +91,7 @@
       "word": "countries",
       "lemma": "country",
       "partOfSpeech": "n.",
-      "korean": "국가",
+      "korean": "나라",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -95,16 +100,16 @@
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
+      "word": "competitiveness",
+      "lemma": "competitiveness",
       "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 94,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "경쟁력",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "car",
@@ -122,7 +127,7 @@
       "word": "manufactured",
       "lemma": "manufacture",
       "partOfSpeech": "v.",
-      "korean": "제조",
+      "korean": "제조하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -132,9 +137,9 @@
     },
     {
       "word": "skilled",
-      "lemma": "skill",
-      "partOfSpeech": "v.",
-      "korean": "기술",
+      "lemma": "skilled",
+      "partOfSpeech": "adj.",
+      "korean": "숙련된",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -144,9 +149,9 @@
     },
     {
       "word": "largest",
-      "lemma": "largest",
+      "lemma": "large",
       "partOfSpeech": "adj.",
-      "korean": "가장 큰, 최대의",
+      "korean": "가장 큰 (large의 최상급)",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -155,12 +160,12 @@
       "freq": 1
     },
     {
-      "word": "sixth",
-      "lemma": "sixth",
-      "partOfSpeech": "adj.",
-      "korean": "여섯 번째의, 6번째",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "word": "forecasters",
+      "lemma": "forecaster",
+      "partOfSpeech": "n.",
+      "korean": "예측하는 전문가",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -179,24 +184,24 @@
       "freq": 1
     },
     {
-      "word": "producer",
+      "word": "producers",
       "lemma": "producer",
       "partOfSpeech": "n.",
-      "korean": "생산자",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "생산국, 생산자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "since",
-      "lemma": "since",
+      "word": "workforce",
+      "lemma": "workforce",
       "partOfSpeech": "n.",
-      "korean": "이후",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "노동력, 인력",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -205,7 +210,7 @@
     {
       "word": "grown",
       "lemma": "grow",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "성장하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -217,8 +222,8 @@
     {
       "word": "auto-making",
       "lemma": "auto-making",
-      "partOfSpeech": "n.",
-      "korean": "자동차 제조, 자동차 산업",
+      "partOfSpeech": "adj.",
+      "korean": "자동차를 만드는",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

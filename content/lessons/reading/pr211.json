@@ -25,15 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "When we think of the public face of scientific genius, we often remember someone with old and graying appearances. For example, we think of Albert Einstein's disheveled hair. Charles Darwin's majestic beard. Isaac Newton's wrinkled visage."
-    },
-    {
-      "type": "hints",
-      "text": "Yet the truth is that most of the scientific breakthroughs that have changed our lives are usually made by people who are still in their 30s--and that includes Einstein, Newton and Darwin. Indeed, not surprisingly, younger scientists are less affected by (the intellectual dogma of the day) than their elders."
-    },
-    {
-      "type": "instruction",
-      "text": "They question authority instinctively. They do not believe it when they are told that a new idea is crazy, so they are free to do the impossible."
+      "text": "When we think of the public face of scientific genius, we often remember someone with an old and graying appearance. For example, we think of Albert Einstein's disheveled hair, Charles Darwin's majestic beard, and Isaac Newton's wrinkled face. Yet the truth is that many of the scientific breakthroughs that have changed our lives were made by people in their 20s and 30s—and that includes Einstein, Newton and Darwin. Indeed, not surprisingly, younger scientists are less affected by the intellectual dogma of the day than their elders. They question authority instinctively. They do not believe it when they are told that a new idea is crazy, so they are free to do the impossible."
     },
     {
       "type": "choice",
@@ -55,41 +47,41 @@
   "readingSentences": [
     {
       "id": "reading-211-s001",
-      "english": "When we think of the public face of scientific genius, we often remember someone with old and graying appearances.",
-      "korean": "우리가 과학의 천재들의 대중적인 얼굴을 생각하며, 종종 나이가 들었던지, 반백이 다 된 외모를 생각한다."
+      "english": "When we think of the public face of scientific genius, we often remember someone with an old and graying appearance.",
+      "korean": "과학 천재의 대중적인 모습을 떠올리면 우리는 흔히 나이 들고 머리가 희끗한 사람을 기억한다."
     },
     {
       "id": "reading-211-s002",
-      "english": "For example, we think of Albert Einstein's disheveled hair. Charles Darwin's majestic beard.",
-      "korean": "예를 들어서, 우리는 아인슈타인의 헝클러진 머리칼, 다윈의 장엄한 수염, 그리고 뉴튼의 주름진 얼굴을 생각한다."
+      "english": "For example, we think of Albert Einstein's disheveled hair, Charles Darwin's majestic beard, and Isaac Newton's wrinkled face.",
+      "korean": "예를 들어 아인슈타인의 헝클어진 머리, 다윈의 위엄 있는 수염, 뉴턴의 주름진 얼굴을 떠올린다."
     },
     {
       "id": "reading-211-s003",
-      "english": "Isaac Newton's wrinkled visage. Yet the truth is that most of the scientific breakthroughs that have changed our lives are usually made by people who are still in their 30s--and that includes Einstein, Newton and Darwin.",
-      "korean": "그러나, 사실은 우리의 삶을 바꾼 과학의 대 발견은 30대의 사람들에 의해 되어졌고, 그리고 아인슈타인, 뉴튼 그리고 다윈도 포함된다."
+      "english": "Yet the truth is that many of the scientific breakthroughs that have changed our lives were made by people in their 20s and 30s—and that includes Einstein, Newton and Darwin.",
+      "korean": "그러나 사실 우리의 삶을 바꾼 과학의 획기적 발견 가운데 상당수는 20~30대의 사람들이 이루었고, 아인슈타인과 뉴턴과 다윈도 그랬다."
     },
     {
       "id": "reading-211-s004",
-      "english": "Indeed, not surprisingly, younger scientists are less affected by (the intellectual dogma of the day) than their elders.",
-      "korean": "참으로 그들보다 나이든 사람보다 그들의 시대의 지적 원리에 영향을 들 받았다는 것은 별로 놀랄 일은 아니다."
+      "english": "Indeed, not surprisingly, younger scientists are less affected by the intellectual dogma of the day than their elders.",
+      "korean": "그러니 젊은 과학자들이 나이 든 과학자들보다 그 시대의 지적 통념에 덜 얽매이는 것은 놀랄 일이 아니다."
     },
     {
       "id": "reading-211-s005",
       "english": "They question authority instinctively.",
-      "korean": "그들은 본능적으로 기존의 원리에 의문을 품었다."
+      "korean": "그들은 본능적으로 권위에 의문을 품는다."
     },
     {
       "id": "reading-211-s006",
       "english": "They do not believe it when they are told that a new idea is crazy, so they are free to do the impossible.",
-      "korean": "그들은 새로운 생각은 미친 짓이라는 이야기를 들어도 믿지 않고, 불가능한 일에 자유롭게 도전했다."
+      "korean": "새로운 생각이 터무니없다는 말을 들어도 믿지 않기에, 그들은 불가능한 일에 자유롭게 도전할 수 있다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "remember",
       "lemma": "remember",
-      "partOfSpeech": "n.",
-      "korean": "기억하다",
+      "partOfSpeech": "v.",
+      "korean": "떠올리다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -101,7 +93,7 @@
       "word": "affected",
       "lemma": "affect",
       "partOfSpeech": "v.",
-      "korean": "영향을 미치다",
+      "korean": "영향을 미치다 (be affected by ~의 영향을 받다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -110,48 +102,12 @@
       "freq": 1
     },
     {
-      "word": "believe",
-      "lemma": "believe",
-      "partOfSpeech": "n.",
-      "korean": "믿다",
-      "score": 101,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "idea",
-      "lemma": "idea",
-      "partOfSpeech": "n.",
-      "korean": "생각, 아이디어",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "younger",
       "lemma": "young",
-      "partOfSpeech": "n.",
-      "korean": "젊은",
+      "partOfSpeech": "adj.",
+      "korean": "더 젊은",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "truth",
-      "lemma": "truth",
-      "partOfSpeech": "n.",
-      "korean": "진실",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
@@ -161,7 +117,7 @@
       "word": "scientific",
       "lemma": "scientific",
       "partOfSpeech": "adj.",
-      "korean": "과학적인",
+      "korean": "과학의",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
       "examTags": [
@@ -171,9 +127,9 @@
     },
     {
       "word": "graying",
-      "lemma": "graye",
-      "partOfSpeech": "v.",
-      "korean": "graying (핵심 어휘)",
+      "lemma": "gray",
+      "partOfSpeech": "adj.",
+      "korean": "머리가 희끗희끗해지는",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -185,7 +141,7 @@
       "word": "public",
       "lemma": "public",
       "partOfSpeech": "adj.",
-      "korean": "공공의; 대중",
+      "korean": "대중에게 보이는 (public face 대중적 이미지)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -194,12 +150,12 @@
       "freq": 1
     },
     {
-      "word": "appearances",
+      "word": "appearance",
       "lemma": "appearance",
       "partOfSpeech": "n.",
-      "korean": "외관",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "외모",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -218,14 +174,14 @@
       "freq": 1
     },
     {
-      "word": "changed",
-      "lemma": "change",
-      "partOfSpeech": "v.",
-      "korean": "변화",
-      "score": 77,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 77점)",
+      "word": "breakthroughs",
+      "lemma": "breakthrough",
+      "partOfSpeech": "n.",
+      "korean": "획기적 발견",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -233,7 +189,7 @@
       "word": "impossible",
       "lemma": "impossible",
       "partOfSpeech": "n.",
-      "korean": "불가능한",
+      "korean": "(the impossible) 불가능한 일",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -243,11 +199,47 @@
     },
     {
       "word": "disheveled",
-      "lemma": "dishevele",
-      "partOfSpeech": "v.",
-      "korean": "disheveled (핵심 어휘)",
+      "lemma": "disheveled",
+      "partOfSpeech": "adj.",
+      "korean": "헝클어진",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "dogma",
+      "lemma": "dogma",
+      "partOfSpeech": "n.",
+      "korean": "정설, 교리",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "instinctively",
+      "lemma": "instinctively",
+      "partOfSpeech": "adv.",
+      "korean": "본능적으로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "authority",
+      "lemma": "authority",
+      "partOfSpeech": "n.",
+      "korean": "권위",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

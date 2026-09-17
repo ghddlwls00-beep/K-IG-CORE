@@ -25,19 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "The claim that we have recently entered the information age is misleading. Flooded by cellphones, the Internet, and television, we incorrectly imagine that our ancestors inhabited an innocent world where the news did not travel far beyond the village. It may not be valid to assume that the media make our time distinct from the past, because we know relatively little about how information was shared in the past."
-    },
-    {
-      "type": "hints",
-      "text": "In fact, the Olympics celebrate the memory of the Greek soldier who brought the news of the Athenian victory over the Persians. Most of us could come up with many other examples―message drums, smoke signals, church bells, ship flags. But their primitiveness would only confirm our sense that we live in a fundamentally different world, one of constant, instant access to information."
-    },
-    {
-      "type": "instruction",
-      "text": "All ages have had a means of sharing information."
-    },
-    {
-      "type": "instruction",
-      "text": "What makes our time distinct is not the density of the data we take in. It is the technology that does the transmitting. Thanks to satellites, we can find out instantly about events that occur on the other side of the world. It usually took five weeks for Benjamin Franklin in Paris to receive a letter sent from Philadelphia. But the news was still new and surprising to people there."
+      "text": "The claim that we have recently entered the information age is misleading. Flooded by cellphones, the Internet, and television, we incorrectly imagine that our ancestors inhabited an innocent world where the news did not travel far beyond the village. It may not be valid to assume that the media make our time distinct from the past, because we know relatively little about how information was shared in the past. In fact, the marathon race celebrates the memory of the Greek soldier who brought the news of the Athenian victory over the Persians. Most of us could come up with many other examples―message drums, smoke signals, church bells, ship flags. But their primitiveness would only confirm our sense that we live in a fundamentally different world, one of constant, instant access to information. All ages have had a means of sharing information. What makes our time distinct is not the density of the data we take in. It is the technology that does the transmitting. Thanks to satellites, we can find out instantly about events that occur on the other side of the world. It usually took five weeks for Benjamin Franklin in Paris to receive a letter sent from Philadelphia. But the news was still new and surprising to people there."
     },
     {
       "type": "choice",
@@ -74,8 +62,8 @@
     },
     {
       "id": "reading-222-s004",
-      "english": "In fact, the Olympics celebrate the memory of the Greek soldier who brought the news of the Athenian victory over the Persians.",
-      "korean": "사실 올림픽은 페르시아인에 대한 아테네의 승리의 소식을 가져온 그리스 병사를 기념하여 행해진다."
+      "english": "In fact, the marathon race celebrates the memory of the Greek soldier who brought the news of the Athenian victory over the Persians.",
+      "korean": "사실 마라톤 경주는 아테네가 페르시아를 이겼다는 소식을 전한 그리스 병사를 기리는 것이다."
     },
     {
       "id": "reading-222-s005",
@@ -127,34 +115,34 @@
       "freq": 1
     },
     {
-      "word": "receive",
-      "lemma": "receive",
-      "partOfSpeech": "adj.",
-      "korean": "받다",
-      "score": 96,
-      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
+      "word": "assume",
+      "lemma": "assume",
+      "partOfSpeech": "v.",
+      "korean": "가정하다, 전제하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "letter",
-      "lemma": "letter",
-      "partOfSpeech": "n.",
-      "korean": "편지",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "transmitting",
+      "lemma": "transmit",
+      "partOfSpeech": "v.",
+      "korean": "전송하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "fundamentally",
-      "lemma": "fundamental",
-      "partOfSpeech": "adj.",
-      "korean": "근본적인, 핵심적인",
+      "lemma": "fundamentally",
+      "partOfSpeech": "adv.",
+      "korean": "근본적으로",
       "score": 91,
       "reason": "수능 독해 논리 전개 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 91점)",
       "examTags": [
@@ -179,7 +167,7 @@
       "word": "density",
       "lemma": "density",
       "partOfSpeech": "n.",
-      "korean": "밀도, 농도",
+      "korean": "밀도, 양",
       "score": 89,
       "reason": "대학 학술 독해 필수 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -188,46 +176,10 @@
       "freq": 1
     },
     {
-      "word": "far",
-      "lemma": "far",
-      "partOfSpeech": "n.",
-      "korean": "멀리",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 87,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "entered",
-      "lemma": "enter",
-      "partOfSpeech": "v.",
-      "korean": "들어가다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "misleading",
-      "lemma": "mislead",
-      "partOfSpeech": "v.",
-      "korean": "오도하다, 잘못 인도하다",
+      "lemma": "misleading",
+      "partOfSpeech": "adj.",
+      "korean": "오해를 부르는",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -236,22 +188,10 @@
       "freq": 1
     },
     {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 85,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "confirm",
       "lemma": "confirm",
-      "partOfSpeech": "n.",
-      "korean": "확인하다",
+      "partOfSpeech": "v.",
+      "korean": "굳혀 주다, 확인해 주다",
       "score": 84,
       "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -262,7 +202,7 @@
     {
       "word": "surprising",
       "lemma": "surprising",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "adj.",
       "korean": "놀라운",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
@@ -272,16 +212,64 @@
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 81,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 81점)",
+      "word": "inhabited",
+      "lemma": "inhabit",
+      "partOfSpeech": "v.",
+      "korean": "~에 살다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 3
+      "freq": 1
+    },
+    {
+      "word": "ancestors",
+      "lemma": "ancestor",
+      "partOfSpeech": "n.",
+      "korean": "조상",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "valid",
+      "lemma": "valid",
+      "partOfSpeech": "adj.",
+      "korean": "타당한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "primitiveness",
+      "lemma": "primitiveness",
+      "partOfSpeech": "n.",
+      "korean": "원시성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "satellites",
+      "lemma": "satellite",
+      "partOfSpeech": "n.",
+      "korean": "인공위성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     }
   ]
 }

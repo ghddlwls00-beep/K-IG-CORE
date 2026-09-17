@@ -25,27 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Many groups of young people volunteer to teach, without pay, the"
-    },
-    {
-      "type": "hints",
-      "text": "people of the poor communities how to read and write, how to take"
-    },
-    {
-      "type": "instruction",
-      "text": "care of their water supply and how to better care for their farms and"
-    },
-    {
-      "type": "instruction",
-      "text": "animals. Thus the formerly hopeless members of the communities see"
-    },
-    {
-      "type": "instruction",
-      "text": "that all is not lost. They become less discouraged when they realize"
-    },
-    {
-      "type": "instruction",
-      "text": "that they themselves can help make a better future."
+      "text": "Many groups of young people volunteer to teach, without pay, the people of the poor communities how to read and write, how to take care of their water supply and how to better care for their farms and animals. Thus the formerly hopeless members of the communities see that all is not lost. They become less discouraged when they realize that they themselves can help make a better future."
     },
     {
       "type": "choice",
@@ -68,17 +48,17 @@
     {
       "id": "reading-137-s001",
       "english": "Many groups of young people volunteer to teach, without pay, the people of the poor communities how to read and write, how to take care of their water supply and how to better care for their farms and animals.",
-      "korean": "많은 젊은이들이 돈을 받지 않고 가난한 지역 사회의 사람들에게 읽고 쓰 는 방법과 그들의 물공급원을 돌보는 방법과 그들의 농장과 동물을 위하여 더 잘 돌보는 방법을 자원하여 가르친다."
+      "korean": "많은 청년 단체가 보수 없이 자원하여 가난한 지역 사람들에게 읽고 쓰는 법, 식수원을 관리하는 법, 농장과 가축을 더 잘 돌보는 법을 가르친다."
     },
     {
       "id": "reading-137-s002",
       "english": "Thus the formerly hopeless members of the communities see that all is not lost.",
-      "korean": "그러므로 이전의 희망없는 지역사 회 회원들은 모든 것이 사라지지 않았다고 안다."
+      "korean": "그래서 희망을 잃었던 지역 주민들은 모든 것을 잃은 것은 아니라는 것을 알게 된다."
     },
     {
       "id": "reading-137-s003",
       "english": "They become less discouraged when they realize that they themselves can help make a better future.",
-      "korean": "그들은 그들 스스로가 더 나은 미래를 만드는 것을 도울수 있다는 것을 깨달을 때 그들은 덜 낙담하 게된다."
+      "korean": "자신들도 더 나은 미래를 만드는 데 힘을 보탤 수 있다는 것을 깨달으면 그들은 덜 낙담하게 된다."
     }
   ],
   "readingVocabulary": [
@@ -98,7 +78,7 @@
       "word": "animals",
       "lemma": "animal",
       "partOfSpeech": "n.",
-      "korean": "동물",
+      "korean": "가축, 동물",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -109,7 +89,7 @@
     {
       "word": "young",
       "lemma": "young",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "젊은",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -121,7 +101,7 @@
     {
       "word": "poor",
       "lemma": "poor",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "가난한",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
@@ -134,7 +114,7 @@
       "word": "communities",
       "lemma": "community",
       "partOfSpeech": "n.",
-      "korean": "공동체",
+      "korean": "지역 사회",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -144,9 +124,9 @@
     },
     {
       "word": "discouraged",
-      "lemma": "discourage",
-      "partOfSpeech": "v.",
-      "korean": "낙담시키다",
+      "lemma": "discouraged",
+      "partOfSpeech": "adj.",
+      "korean": "낙담한",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -157,8 +137,8 @@
     {
       "word": "volunteer",
       "lemma": "volunteer",
-      "partOfSpeech": "n.",
-      "korean": "자원봉사자; 자원하다",
+      "partOfSpeech": "v.",
+      "korean": "자원하다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -169,8 +149,8 @@
     {
       "word": "care",
       "lemma": "care",
-      "partOfSpeech": "n.",
-      "korean": "배려",
+      "partOfSpeech": "v.",
+      "korean": "(care for) 돌보다",
       "score": 78,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
       "examTags": [
@@ -179,24 +159,24 @@
       "freq": 2
     },
     {
-      "word": "without",
-      "lemma": "without",
-      "partOfSpeech": "n.",
-      "korean": "없이",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "word": "formerly",
+      "lemma": "formerly",
+      "partOfSpeech": "adv.",
+      "korean": "이전에",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "groups",
-      "lemma": "group",
-      "partOfSpeech": "n.",
-      "korean": "그룹",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "hopeless",
+      "lemma": "hopeless",
+      "partOfSpeech": "adj.",
+      "korean": "희망이 없는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -205,7 +185,7 @@
     {
       "word": "teach",
       "lemma": "teach",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "가르치다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -215,12 +195,12 @@
       "freq": 1
     },
     {
-      "word": "write",
-      "lemma": "write",
+      "word": "supply",
+      "lemma": "supply",
       "partOfSpeech": "n.",
-      "korean": "쓰다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "공급 (water supply 식수원)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

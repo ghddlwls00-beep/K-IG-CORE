@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "The aged live with enforced leisure, on fixed income, subject to many continual illnesses. They also live in a culture that worships youth. They are often treated like outcasts by a kind of culturally prejudiced attitude. However, when I we growing up, there were rules of courtesy towards all adults. I still believe old people deserve respect for their experience and wisdom. I sometimes fear that mine will be the last generation to have a sense of what growing old means."
+      "text": "The aged live with enforced leisure, on fixed income, subject to many continual illnesses. They also live in a culture that worships youth. They are often treated like outcasts by a kind of culturally prejudiced attitude. However, when I was growing up, there were rules of courtesy towards all adults. I still believe old people deserve respect for their experience and wisdom. I sometimes fear that mine will be the last generation to have a sense of what growing old means."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-180-s001",
       "english": "The aged live with enforced leisure, on fixed income, subject to many continual illnesses.",
-      "korean": "나이든 사람들은 어쩔 수 없이 한가하게 고정 수입으로 살며, 계속되는 많은 질병에 영향을 받으며 산다."
+      "korean": "노인들은 어쩔 수 없는 여가 속에서 고정된 수입으로 살며, 끊이지 않는 여러 질병에 시달린다."
     },
     {
       "id": "reading-180-s002",
@@ -58,11 +58,11 @@
     {
       "id": "reading-180-s003",
       "english": "They are often treated like outcasts by a kind of culturally prejudiced attitude.",
-      "korean": "그들은 때때로 일종의 문화적 편견을 지닌 태도에 의해 폐물처럼 다루어진다."
+      "korean": "그들은 때때로 일종의 문화적 편견을 지닌 태도에 의해 버림받은 사람처럼 다루어진다."
     },
     {
       "id": "reading-180-s004",
-      "english": "However, when I we growing up, there were rules of courtesy towards all adults.",
+      "english": "However, when I was growing up, there were rules of courtesy towards all adults.",
       "korean": "그러나 내가 자랄 때는 모든 어른들에 대한 예의범절이 있었다."
     },
     {
@@ -73,7 +73,7 @@
     {
       "id": "reading-180-s006",
       "english": "I sometimes fear that mine will be the last generation to have a sense of what growing old means.",
-      "korean": "나는 이따금 나의 세대가 나이를 먹는다는 것이 무엇인지를 아는 마지막 세대가 될까 두려워한다."
+      "korean": "나는 가끔 우리 세대가 나이 든다는 것이 무엇을 뜻하는지 아는 마지막 세대가 될까 봐 두렵다."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "illnesses",
       "lemma": "illness",
       "partOfSpeech": "n.",
-      "korean": "질병, 아픔",
+      "korean": "질병",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -91,9 +91,9 @@
     },
     {
       "word": "prejudiced",
-      "lemma": "prejudice",
-      "partOfSpeech": "v.",
-      "korean": "편견",
+      "lemma": "prejudiced",
+      "partOfSpeech": "adj.",
+      "korean": "편견을 가진",
       "score": 96,
       "reason": "수능 독해 논리 전개 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
       "examTags": [
@@ -104,8 +104,8 @@
     {
       "word": "fear",
       "lemma": "fear",
-      "partOfSpeech": "n.",
-      "korean": "두려움, 공포",
+      "partOfSpeech": "v.",
+      "korean": "두려워하다, 걱정하다",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -114,26 +114,26 @@
       "freq": 1
     },
     {
-      "word": "culture",
-      "lemma": "culture",
+      "word": "outcasts",
+      "lemma": "outcast",
       "partOfSpeech": "n.",
-      "korean": "문화",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "버림받은 사람",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "believe",
-      "lemma": "believe",
-      "partOfSpeech": "n.",
-      "korean": "믿다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "worships",
+      "lemma": "worship",
+      "partOfSpeech": "v.",
+      "korean": "숭배하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -150,14 +150,14 @@
       "freq": 1
     },
     {
-      "word": "rules",
-      "lemma": "rule",
+      "word": "courtesy",
+      "lemma": "courtesy",
       "partOfSpeech": "n.",
-      "korean": "규칙",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "예의",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -165,7 +165,7 @@
       "word": "wisdom",
       "lemma": "wisdom",
       "partOfSpeech": "n.",
-      "korean": "지혜, 현명함",
+      "korean": "지혜",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -175,22 +175,22 @@
       "freq": 1
     },
     {
-      "word": "growing",
-      "lemma": "grow",
+      "word": "deserve",
+      "lemma": "deserve",
       "partOfSpeech": "v.",
-      "korean": "성장하다",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
+      "korean": "~을 받을 만하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "enforced",
-      "lemma": "enforce",
-      "partOfSpeech": "v.",
-      "korean": "집행하다",
+      "lemma": "enforced",
+      "partOfSpeech": "adj.",
+      "korean": "강요된 (enforced leisure 어쩔 수 없이 주어진 여가)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -200,9 +200,9 @@
     },
     {
       "word": "fixed",
-      "lemma": "fix",
-      "partOfSpeech": "v.",
-      "korean": "고치다",
+      "lemma": "fixed",
+      "partOfSpeech": "adj.",
+      "korean": "고정된 (fixed income 고정 수입)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -214,7 +214,7 @@
       "word": "continual",
       "lemma": "continual",
       "partOfSpeech": "adj.",
-      "korean": "지속적인",
+      "korean": "계속되는",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -237,8 +237,8 @@
     {
       "word": "subject",
       "lemma": "subject",
-      "partOfSpeech": "n.",
-      "korean": "주제; 과목",
+      "partOfSpeech": "adj.",
+      "korean": "(subject to) ~을 겪기 쉬운",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "아마추어 사진작가들이 저지르는 가장 흔한 실수는 그들이 그들의 대상에 물리적으로 충분히 가까이 가지 않는다는 것이다. 이것은 관심의 중심, 즉 대상이 너무나 작아서 어떤 영향력도 가질 수 없는 하나의 점일 뿐이라는 것을 의미한다. 그것이 인지될 만큼 충분히 클 때조차도 그것은 일반적으로 거의 의미를 지니지 못한다. 보는 사람들은 대상이란 작아야 하는 것이기 때문에 작은 것이라고 생각할지 모른다. 다른 사진작가들의 작품을 볼 때, 그들이 어떻게 구도를 채우는지 주목하라. 그 안에 있는 모든 것들은 그 이미지의 전달에 기여한다. 만일 카메라의 렌즈를 통하여 표현하고자 하는 것에서 벗어나 있는 것들을 본다면, 그것들을 제거하라. 그래서 사람의 사진을 찍을 때, 원치 않는 사물들을 제외시키기 위해 잊지 말고 더 가까이 다가가도록 하라."
+      "text": "아마추어 사진작가들이 저지르는 가장 흔한 실수는 그들이 그들의 대상에 물리적으로 충분히 가까이 가지 않는다는 것이다. 이것은 관심의 중심, 즉 대상이 너무나 작아서 어떤 영향력도 가질 수 없는 하나의 점일 뿐이라는 것을 의미한다. 그것이 인지될 만큼 충분히 클 때조차도 그것은 일반적으로 거의 의미를 지니지 못한다. 보는 사람은 대상이 원래 작게 찍혀야 해서 작은 것이라고 생각할 수도 있다. 다른 사진작가들의 작품을 볼 때, 그들이 어떻게 구도를 채우는지 주목하라. 그 안에 있는 모든 것들은 그 이미지가 전하려는 메시지에 기여해야 한다. 만일 카메라의 렌즈를 통하여 표현하고자 하는 것에서 벗어나 있는 것들을 본다면, 그것들을 제거하라. 그래서 사람의 사진을 찍을 때, 원치 않는 사물들을 제외시키기 위해 잊지 말고 더 가까이 다가가도록 하라."
     },
     {
       "type": "choice",
@@ -63,7 +63,7 @@
     {
       "id": "reading-235-s004",
       "english": "Viewers may think that a subject is small because it is supposed to be.",
-      "korean": "보는 사람들은 대상이란 작아야 하는 것이기 때문에 작은 것이라고 생각할지 모른다."
+      "korean": "보는 사람은 대상이 원래 작게 찍혀야 해서 작은 것이라고 생각할 수도 있다."
     },
     {
       "id": "reading-235-s005",
@@ -73,7 +73,7 @@
     {
       "id": "reading-235-s006",
       "english": "Everything in it should serve the message of the image.",
-      "korean": "그 안에 있는 모든 것들은 그 이미지의 전달에 기여한다."
+      "korean": "그 안에 있는 모든 것들은 그 이미지가 전하려는 메시지에 기여해야 한다."
     },
     {
       "id": "reading-235-s007",
@@ -90,8 +90,8 @@
     {
       "word": "remember",
       "lemma": "remember",
-      "partOfSpeech": "n.",
-      "korean": "기억하다",
+      "partOfSpeech": "v.",
+      "korean": "(remember to) 잊지 말고 ~하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -103,7 +103,7 @@
       "word": "recognized",
       "lemma": "recognize",
       "partOfSpeech": "v.",
-      "korean": "인식하다",
+      "korean": "알아보다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -115,7 +115,7 @@
       "word": "photographers",
       "lemma": "photographer",
       "partOfSpeech": "n.",
-      "korean": "사진작가",
+      "korean": "사진가",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -126,8 +126,8 @@
     {
       "word": "enough",
       "lemma": "enough",
-      "partOfSpeech": "n.",
-      "korean": "충분히",
+      "partOfSpeech": "adv.",
+      "korean": "충분히 (close enough 충분히 가까운)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -150,8 +150,8 @@
     {
       "word": "amateur",
       "lemma": "amateur",
-      "partOfSpeech": "n.",
-      "korean": "아마추어",
+      "partOfSpeech": "adj.",
+      "korean": "아마추어의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -163,7 +163,7 @@
       "word": "subjects",
       "lemma": "subject",
       "partOfSpeech": "n.",
-      "korean": "주제",
+      "korean": "(사진의) 피사체",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -175,7 +175,7 @@
       "word": "unwanted",
       "lemma": "unwanted",
       "partOfSpeech": "adj.",
-      "korean": "원치 않는, 불필요한",
+      "korean": "원치 않는",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -184,22 +184,10 @@
       "freq": 1
     },
     {
-      "word": "common",
-      "lemma": "common",
-      "partOfSpeech": "n.",
-      "korean": "공통의",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "physically",
-      "lemma": "physical",
+      "lemma": "physically",
       "partOfSpeech": "adv.",
-      "korean": "물리적",
+      "korean": "물리적으로",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -210,8 +198,8 @@
     {
       "word": "close",
       "lemma": "close",
-      "partOfSpeech": "n.",
-      "korean": "닫기",
+      "partOfSpeech": "adj.",
+      "korean": "가까운",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -222,8 +210,8 @@
     {
       "word": "photograph",
       "lemma": "photograph",
-      "partOfSpeech": "n.",
-      "korean": "사진",
+      "partOfSpeech": "v.",
+      "korean": "사진을 찍다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -234,8 +222,8 @@
     {
       "word": "exclude",
       "lemma": "exclude",
-      "partOfSpeech": "n.",
-      "korean": "제외하다",
+      "partOfSpeech": "v.",
+      "korean": "빼다, 배제하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -247,9 +235,21 @@
       "word": "objects",
       "lemma": "object",
       "partOfSpeech": "n.",
-      "korean": "물체",
+      "korean": "물체, 사물",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "frame",
+      "lemma": "frame",
+      "partOfSpeech": "n.",
+      "korean": "(사진의) 화면, 프레임",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

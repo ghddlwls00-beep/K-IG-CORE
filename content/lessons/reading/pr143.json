@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "We need more effective ways to ensure that every citizen can fully exercise the right to secure private information. We must protect citizens against the compiling of personal data and the unrestricted use and distribution of such data. The capacity to store and distribute information has increased through the use of computers and other devices, Thus, personal information has been collected and distributed without control, causing harm to the right to privacy."
+   "text": "We need more effective ways to ensure that every citizen can fully exercise the right to secure private information. We must protect citizens against the compiling of personal data and the unrestricted use and distribution of such data. The capacity to store and distribute information has increased through the use of computers and other devices. Thus, personal information has been collected and distributed without control, causing harm to the right to privacy."
   },
   {
    "type": "choice",
@@ -48,17 +48,17 @@
   {
    "id": "reading-143-s001",
    "english": "We need more effective ways to ensure that every citizen can fully exercise the right to secure private information.",
-   "korean": "모든 시민이 사적 정보를 지키는 권리를 완전히 행사하는 것을 보장하기\n\n위한 보다 효과적인 방법이 필요하다."
+   "korean": "모든 시민이 사적 정보를 지키는 권리를 완전히 행사하는 것을 보장하기 위한 보다 효과적인 방법이 필요하다."
   },
   {
    "id": "reading-143-s002",
    "english": "We must protect citizens against the compiling of personal data and the unrestricted use and distribution of such data.",
-   "korean": "개인 자료의 수집과 그런 자료의 무\n\n제한적 사용 및 배포에 맞서 시민을 보호해야 한다."
+   "korean": "개인 자료의 수집과 그런 자료의 무제한적 사용 및 배포에 맞서 시민을 보호해야 한다."
   },
   {
    "id": "reading-143-s003",
-   "english": "The capacity to store and distribute information has increased through the use of computers and other devices, Thus, personal information has been collected and distributed without control, causing harm to the right to privacy.",
-   "korean": "정보의 축적과 배포\n\n능력은 컴퓨터와 다른 장비의 사용을 통해 증대됬다. 그 결과, 사적 정보는\n\n통제되지 않고 수집 및 배포되어, 개인의 사생활에 해를 끼치고 있다."
+   "english": "The capacity to store and distribute information has increased through the use of computers and other devices. Thus, personal information has been collected and distributed without control, causing harm to the right to privacy.",
+   "korean": "정보의 축적과 배포 능력은 컴퓨터와 다른 장비의 사용을 통해 커졌다. 그 결과, 사적 정보는 통제되지 않고 수집 및 배포되어, 개인의 사생활에 해를 끼치고 있다."
   }
  ],
  "readingVocabulary": [
@@ -66,7 +66,7 @@
    "word": "causing",
    "lemma": "cause",
    "partOfSpeech": "v.",
-   "korean": "원인",
+   "korean": "일으키다 (cause harm 해를 끼치다)",
    "score": 109,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
    "examTags": [
@@ -78,7 +78,7 @@
    "word": "increased",
    "lemma": "increase",
    "partOfSpeech": "v.",
-   "korean": "증가하다",
+   "korean": "커지다, 늘다",
    "score": 105,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
    "examTags": [
@@ -89,8 +89,8 @@
   {
    "word": "exercise",
    "lemma": "exercise",
-   "partOfSpeech": "n.",
-   "korean": "운동하다; 연습",
+   "partOfSpeech": "v.",
+   "korean": "(권리를) 행사하다",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
    "examTags": [
@@ -102,7 +102,7 @@
    "word": "control",
    "lemma": "control",
    "partOfSpeech": "n.",
-   "korean": "통제(하다)",
+   "korean": "통제",
    "score": 102,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
    "examTags": [
@@ -126,7 +126,7 @@
    "word": "capacity",
    "lemma": "capacity",
    "partOfSpeech": "n.",
-   "korean": "용량",
+   "korean": "능력",
    "score": 97,
    "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 97점)",
    "examTags": [
@@ -137,7 +137,7 @@
   {
    "word": "protect",
    "lemma": "protect",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "보호하다",
    "score": 94,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -150,7 +150,7 @@
    "word": "right",
    "lemma": "right",
    "partOfSpeech": "n.",
-   "korean": "옳은; 오른쪽",
+   "korean": "권리",
    "score": 90,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 90점)",
    "examTags": [
@@ -161,8 +161,8 @@
   {
    "word": "private",
    "lemma": "private",
-   "partOfSpeech": "v.",
-   "korean": "사적인, 개인의",
+   "partOfSpeech": "adj.",
+   "korean": "사적인",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -174,7 +174,7 @@
    "word": "personal",
    "lemma": "personal",
    "partOfSpeech": "adj.",
-   "korean": "개인의, 개인적인",
+   "korean": "개인의",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
    "examTags": [
@@ -186,7 +186,7 @@
    "word": "ensure",
    "lemma": "ensure",
    "partOfSpeech": "v.",
-   "korean": "보장하다, 확실하게 하다",
+   "korean": "보장하다",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [
@@ -198,7 +198,7 @@
    "word": "distribution",
    "lemma": "distribution",
    "partOfSpeech": "n.",
-   "korean": "유통",
+   "korean": "유포, 배포",
    "score": 84,
    "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
    "examTags": [
@@ -222,7 +222,7 @@
    "word": "distributed",
    "lemma": "distribute",
    "partOfSpeech": "v.",
-   "korean": "배포하다",
+   "korean": "유포하다, 배포하다",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [

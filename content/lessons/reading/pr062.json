@@ -48,40 +48,40 @@
     {
       "id": "reading-062-s001",
       "english": "No one has to let errors of the past destroy his present or cloud his future.",
-      "korean": "누구도 과거의 실수가 자신의 현재를 파괴하거나 미래에 먹구름을 끼게 해서는 안된다."
+      "korean": "누구도 과거의 잘못이 자신의 현재를 망치거나 미래를 흐리게 내버려 둘 필요는 없다."
     },
     {
       "id": "reading-062-s002",
       "english": "The glorious fact is that we can always have a new beginning.",
-      "korean": "다행인 것은 항상 새로운 시작을 할 수 있다는 거다."
+      "korean": "멋진 사실은 우리가 언제든 새로 시작할 수 있다는 것이다."
     },
     {
       "id": "reading-062-s003",
       "english": "Naturally, a wise person will try to avoid feelings of guilt by avoiding the acts that cause them.",
-      "korean": "당연히 현명한 사람은 죄의식을 야기시키는 행동을 피함으로써 죄의식을 피하려 할 것이다."
+      "korean": "당연히 현명한 사람은 죄책감을 일으키는 행동을 피함으로써 죄책감을 피하려 할 것이다."
     },
     {
       "id": "reading-062-s004",
       "english": "He will look and exercise his moral judgment before he leaps.",
-      "korean": "그는 뛰기 전에 살피고 도덕적 판단력을 행할 것이다."
+      "korean": "그는 뛰어들기 전에 잘 살펴보고 도덕적 판단력을 발휘할 것이다."
     },
     {
       "id": "reading-062-s005",
       "english": "But if he does something wrong, he must accept his errors frankly, make an effort to obtain forgiveness, and make compensation if that is possible.",
-      "korean": "그러나 만약 그가 정말 잘못을 하면, 그는 당연히 자신의 과오를 솔직히 받아들이고 용서를 구하려고 노력하며, 가능하다면 보상을 하려 한다."
+      "korean": "그러나 잘못을 저질렀다면 자기 잘못을 솔직히 인정하고, 용서를 구하려고 애쓰며, 가능하다면 보상해야 한다."
     },
     {
       "id": "reading-062-s006",
       "english": "Then he can go his way with an untroubled mind.",
-      "korean": "그러면 말끔한 마음으로 길을 갈 수 있다."
+      "korean": "그러면 그는 거리낌 없는 마음으로 제 갈 길을 갈 수 있다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "destroy",
       "lemma": "destroy",
-      "partOfSpeech": "n.",
-      "korean": "파괴하다",
+      "partOfSpeech": "v.",
+      "korean": "망치다, 파괴하다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -104,8 +104,8 @@
     {
       "word": "exercise",
       "lemma": "exercise",
-      "partOfSpeech": "n.",
-      "korean": "운동하다; 연습",
+      "partOfSpeech": "v.",
+      "korean": "(판단력을) 발휘하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -115,9 +115,9 @@
     },
     {
       "word": "naturally",
-      "lemma": "natural",
+      "lemma": "naturally",
       "partOfSpeech": "adv.",
-      "korean": "자연스러운",
+      "korean": "당연히",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -128,8 +128,8 @@
     {
       "word": "cause",
       "lemma": "cause",
-      "partOfSpeech": "n.",
-      "korean": "원인",
+      "partOfSpeech": "v.",
+      "korean": "일으키다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -140,8 +140,8 @@
     {
       "word": "accept",
       "lemma": "accept",
-      "partOfSpeech": "n.",
-      "korean": "받아들이다",
+      "partOfSpeech": "v.",
+      "korean": "인정하다, 받아들이다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -150,21 +150,21 @@
       "freq": 1
     },
     {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "glorious",
+      "lemma": "glorious",
+      "partOfSpeech": "adj.",
+      "korean": "멋진, 영광스러운",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "wise",
       "lemma": "wise",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "현명한",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
@@ -177,7 +177,7 @@
       "word": "errors",
       "lemma": "error",
       "partOfSpeech": "n.",
-      "korean": "오류",
+      "korean": "잘못, 실수",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -186,12 +186,12 @@
       "freq": 2
     },
     {
-      "word": "present",
-      "lemma": "present",
+      "word": "guilt",
+      "lemma": "guilt",
       "partOfSpeech": "n.",
-      "korean": "현재의; 선물; 발표하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "죄책감",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -201,7 +201,7 @@
       "word": "untroubled",
       "lemma": "untroubled",
       "partOfSpeech": "adj.",
-      "korean": "걱정 없는, 평온한",
+      "korean": "거리낌 없는, 평온한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -212,8 +212,8 @@
     {
       "word": "cloud",
       "lemma": "cloud",
-      "partOfSpeech": "n.",
-      "korean": "구름",
+      "partOfSpeech": "v.",
+      "korean": "흐리게 하다, 어둡게 하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -222,12 +222,12 @@
       "freq": 1
     },
     {
-      "word": "future",
-      "lemma": "future",
+      "word": "compensation",
+      "lemma": "compensation",
       "partOfSpeech": "n.",
-      "korean": "미래",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "보상",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -235,8 +235,8 @@
     },
     {
       "word": "beginning",
-      "lemma": "begin",
-      "partOfSpeech": "v.",
+      "lemma": "beginning",
+      "partOfSpeech": "n.",
       "korean": "시작",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",

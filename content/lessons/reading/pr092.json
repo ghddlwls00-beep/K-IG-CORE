@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Many teenagers dread and fear warts and pimples. A dermatologist, or skin doctor, says that a lot of these skin diseases may actually be caused by fear. Dr. Hilton Kline has done studies indicating that, in some cases, warts and pimples are caused by anxiety. According to one of his studies, college students are more likely to break out in pimples just before a big exam. He's also shown that warts can be cured through hypnosis, by having the patient imagine that the warts are falling off. In other words, the key to clear skin may all be in your mind."
+      "text": "Many teenagers dread and fear warts and pimples. A dermatologist, or skin doctor, says that stress and fear may actually make a lot of these skin problems worse. Dr. Hilton Kline has done studies indicating that, in some cases, warts and pimples get worse with anxiety. According to one of his studies, college students are more likely to break out in pimples just before a big exam. He's also shown that warts can be cured through hypnosis, by having the patient imagine that the warts are falling off. In other words, the mind may play a bigger part in clear skin than we think."
     },
     {
       "type": "choice",
@@ -48,44 +48,44 @@
     {
       "id": "reading-092-s001",
       "english": "Many teenagers dread and fear warts and pimples.",
-      "korean": "많은 10대들은 사마귀와 여드름을 두려워한다."
+      "korean": "많은 십대들이 사마귀와 여드름을 몹시 두려워한다."
     },
     {
       "id": "reading-092-s002",
-      "english": "A dermatologist, or skin doctor, says that a lot of these skin diseases may actually be caused by fear.",
-      "korean": "피부과학자 또는 피부과 의사는 많은 이러한 피부 질병은 실제로 두려움에 의해 생겨난다."
+      "english": "A dermatologist, or skin doctor, says that stress and fear may actually make a lot of these skin problems worse.",
+      "korean": "피부과 의사는 스트레스와 두려움이 실제로 이런 피부 문제의 상당수를 악화시킬 수 있다고 말한다."
     },
     {
       "id": "reading-092-s003",
-      "english": "Dr. Hilton Kline has done studies indicating that, in some cases, warts and pimples are caused by anxiety.",
-      "korean": "Hilton Kline 박사는 어떤 경우에 사마귀와 여드름이 근심에 의해 생겨나는지를 보여주는 실험을 수행했다."
+      "english": "Dr. Hilton Kline has done studies indicating that, in some cases, warts and pimples get worse with anxiety.",
+      "korean": "Hilton Kline 박사는 어떤 경우에는 불안하면 사마귀와 여드름이 심해진다는 것을 보여 주는 연구를 했다."
     },
     {
       "id": "reading-092-s004",
       "english": "According to one of his studies, college students are more likely to break out in pimples just before a big exam.",
-      "korean": "그의 연구 중의 하나에 의하면 대학생들이 큰 시험전에 막 여드름이 더 잘 생기는 경향이 있다."
+      "korean": "그의 한 연구에 따르면 대학생들은 중요한 시험 직전에 여드름이 더 잘 난다."
     },
     {
       "id": "reading-092-s005",
       "english": "He's also shown that warts can be cured through hypnosis, by having the patient imagine that the warts are falling off.",
-      "korean": "그는 또한 사마귀는 환자가 사마귀가 떨어졌는다고 상사함으로써 최면을 통해 치료될 수 있음을 보였다."
+      "korean": "그는 또 환자가 사마귀가 떨어져 나가는 것을 상상하게 하는 최면으로 사마귀를 치료할 수 있다는 것도 보여 주었다."
     },
     {
       "id": "reading-092-s006",
-      "english": "In other words, the key to clear skin may all be in your mind.",
-      "korean": "다른 말로 하면 피부를 깨끗이 하는 열쇠는 모두 당신의 마음속에 달려있다."
+      "english": "In other words, the mind may play a bigger part in clear skin than we think.",
+      "korean": "다시 말해, 깨끗한 피부에는 우리가 생각하는 것보다 마음이 더 큰 역할을 할지도 모른다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "caused",
-      "lemma": "cause",
-      "partOfSpeech": "v.",
-      "korean": "원인",
-      "score": 104,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 104점)",
+      "word": "worse",
+      "lemma": "worse",
+      "partOfSpeech": "adj.",
+      "korean": "더 나쁜 (make ~ worse 악화시키다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 2
     },
@@ -93,7 +93,7 @@
       "word": "fear",
       "lemma": "fear",
       "partOfSpeech": "n.",
-      "korean": "두려움, 공포",
+      "korean": "두려움",
       "score": 103,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 103점)",
       "examTags": [
@@ -102,14 +102,14 @@
       "freq": 2
     },
     {
-      "word": "words",
-      "lemma": "word",
+      "word": "anxiety",
+      "lemma": "anxiety",
       "partOfSpeech": "n.",
-      "korean": "단어",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "korean": "불안",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -126,14 +126,14 @@
       "freq": 1
     },
     {
-      "word": "diseases",
-      "lemma": "disease",
+      "word": "hypnosis",
+      "lemma": "hypnosis",
       "partOfSpeech": "n.",
-      "korean": "질병",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "최면",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -151,9 +151,9 @@
     },
     {
       "word": "pimples",
-      "lemma": "pimples",
+      "lemma": "pimple",
       "partOfSpeech": "n.",
-      "korean": "여드름들, 뾰루지들",
+      "korean": "여드름",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -163,9 +163,9 @@
     },
     {
       "word": "warts",
-      "lemma": "warts",
+      "lemma": "wart",
       "partOfSpeech": "n.",
-      "korean": "사마귀들; 결점들",
+      "korean": "사마귀",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -200,8 +200,8 @@
     {
       "word": "dread",
       "lemma": "dread",
-      "partOfSpeech": "n.",
-      "korean": "공포",
+      "partOfSpeech": "v.",
+      "korean": "몹시 두려워하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -213,7 +213,7 @@
       "word": "indicating",
       "lemma": "indicate",
       "partOfSpeech": "v.",
-      "korean": "나타내다",
+      "korean": "보여 주다, 나타내다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -222,12 +222,12 @@
       "freq": 1
     },
     {
-      "word": "according",
-      "lemma": "according",
-      "partOfSpeech": "v.",
-      "korean": "~에 따르면",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "dermatologist",
+      "lemma": "dermatologist",
+      "partOfSpeech": "n.",
+      "korean": "피부과 의사",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -237,7 +237,7 @@
       "word": "falling",
       "lemma": "fall",
       "partOfSpeech": "v.",
-      "korean": "가을",
+      "korean": "(fall off) 떨어져 나가다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [

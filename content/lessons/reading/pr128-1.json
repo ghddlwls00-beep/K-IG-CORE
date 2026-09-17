@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "전자 상거래 산업은 인력 부족에 직면해 있다. 전문가들은 이것이 경제 발전을 느리게 할 수도 있는 심각한 문제라고 지적한다. 산업체들은 경쟁적으로 그들의 사업을 전자 상거래로 전환시키고 있으며, 따라서 필요한 인력에 대한 수요는 증가할 것으로 예상된다. 최근의 한 조사는 전자 상거래 산업에서 인력 공급과 수요 사이에 격차가 있음을 보여주고 있다. 이것은 2005년 이전에 바뀔 것 같지는 않다."
+      "text": "2000년 무렵 전자 상거래 산업은 인력 부족에 직면해 있었다. 전문가들은 이것이 경제 발전을 늦출 수 있는 심각한 문제라고 지적했다. 기업들은 앞다투어 사업을 전자 상거래로 바꾸고 있었고, 그에 따라 필요한 인력에 대한 수요는 늘어날 것으로 예상되었다. 당시의 한 조사는 전자 상거래 산업에서 인력의 공급과 수요 사이에 격차가 있음을 보여 주었다. 이 격차는 2005년 이전에는 좁혀지지 않을 것으로 예상되었다."
     },
     {
       "type": "choice",
@@ -47,36 +47,36 @@
   "readingSentences": [
     {
       "id": "reading-128-s001",
-      "english": "The e-business industry is faced with a labor shortage.",
-      "korean": "전자 상거래 산업은 인력 부족에 직면해 있다."
+      "english": "Around the year 2000, the e-business industry was faced with a labor shortage.",
+      "korean": "2000년 무렵 전자 상거래 산업은 인력 부족에 직면해 있었다."
     },
     {
       "id": "reading-128-s002",
-      "english": "Experts point out that this is a serious problem that could slow down the development of our economy.",
-      "korean": "전문가들은 이것이 경제 발전을 느리게 할 수도 있는 심각한 문제라고 지적한다."
+      "english": "Experts pointed out that this was a serious problem that could slow down the development of the economy.",
+      "korean": "전문가들은 이것이 경제 발전을 늦출 수 있는 심각한 문제라고 지적했다."
     },
     {
       "id": "reading-128-s003",
-      "english": "Industries are competitively changing their businesses into e-businesses, and thus the demand for the required workforce is expected to grow.",
-      "korean": "산업체들은 경쟁적으로 그들의 사업을 전자 상거래로 전환시키고 있으며, 따라서 필요한 인력에 대한 수요는 증가할 것으로 예상된다."
+      "english": "Industries were competitively changing their businesses into e-businesses, and thus the demand for the required workforce was expected to grow.",
+      "korean": "기업들은 앞다투어 사업을 전자 상거래로 바꾸고 있었고, 그에 따라 필요한 인력에 대한 수요는 늘어날 것으로 예상되었다."
     },
     {
       "id": "reading-128-s004",
-      "english": "A recent survey shows that there is a gap between the labor supply and demand in the e-business industry.",
-      "korean": "최근의 한 조사는 전자 상거래 산업에서 인력 공급과 수요 사이에 격차가 있음을 보여주고 있다."
+      "english": "A survey at the time showed that there was a gap between the labor supply and demand in the e-business industry.",
+      "korean": "당시의 한 조사는 전자 상거래 산업에서 인력의 공급과 수요 사이에 격차가 있음을 보여 주었다."
     },
     {
       "id": "reading-128-s005",
-      "english": "This is not likely to change before 2005.",
-      "korean": "이것은 2005년 이전에 바뀔 것 같지는 않다."
+      "english": "This gap was not expected to close before 2005.",
+      "korean": "이 격차는 2005년 이전에는 좁혀지지 않을 것으로 예상되었다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "required",
-      "lemma": "require",
-      "partOfSpeech": "v.",
-      "korean": "요구하다",
+      "lemma": "required",
+      "partOfSpeech": "adj.",
+      "korean": "필요한",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -88,13 +88,13 @@
       "word": "expected",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "예상하다 (be expected to)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "demand",
@@ -111,8 +111,8 @@
     {
       "word": "slow",
       "lemma": "slow",
-      "partOfSpeech": "n.",
-      "korean": "천천히",
+      "partOfSpeech": "v.",
+      "korean": "(slow down) 늦추다",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -124,7 +124,7 @@
       "word": "e-business",
       "lemma": "e-business",
       "partOfSpeech": "n.",
-      "korean": "전자상거래, 인터넷 비즈니스",
+      "korean": "전자 상거래",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "faced",
       "lemma": "face",
       "partOfSpeech": "v.",
-      "korean": "얼굴",
+      "korean": "(be faced with) ~에 직면하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -160,7 +160,7 @@
       "word": "labor",
       "lemma": "labor",
       "partOfSpeech": "n.",
-      "korean": "노동",
+      "korean": "노동력, 인력",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -172,7 +172,7 @@
       "word": "changing",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "바꾸다 (change A into B)",
       "score": 82,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -184,7 +184,7 @@
       "word": "shortage",
       "lemma": "shortage",
       "partOfSpeech": "n.",
-      "korean": "부족, 결핍",
+      "korean": "부족",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -217,24 +217,24 @@
       "freq": 1
     },
     {
-      "word": "development",
-      "lemma": "development",
-      "partOfSpeech": "n.",
-      "korean": "발전, 개발, 발달",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+      "word": "competitively",
+      "lemma": "competitively",
+      "partOfSpeech": "adv.",
+      "korean": "앞다투어, 경쟁적으로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "economy",
-      "lemma": "economy",
+      "word": "supply",
+      "lemma": "supply",
       "partOfSpeech": "n.",
-      "korean": "경제",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+      "korean": "공급",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "만약에 직업을 유지하고 싶으면 이러한 것들을 기억하십시오. 당신은 커피를 위해 매시간 멈추지 마십시오. 그리고 당신은 너무 자주 떠나서는 안된다. 당신 일의 중요한 부분은 다른 사람과 일하는 전쟁일지도 모른다. 만약에 함께 일하는 것이 어렵다면 당신은 문제를 가지고 있을지도 모른다. 그렇지 않으면 당신은 당신의 일에 다른 사람과 친구를 만들지 않으면 문제를 가질지도 모른다."
+      "text": "직장을 계속 다니고 싶다면 다음을 기억하라. 커피를 마시려고 매시간 일을 멈춰서는 안 된다. 그리고 너무 자주 일찍 퇴근해서도 안 된다. 일에서 중요한 부분은 다른 사람들과 함께 일하는 방식일 수 있다. 함께 일하기 어려운 사람이라면 곤란을 겪을 수 있다. 또는 직장에서 다른 사람들과 친해지지 않으면 곤란을 겪을 수 있다."
     },
     {
       "type": "choice",
@@ -48,39 +48,39 @@
     {
       "id": "reading-064-s001",
       "english": "If you want to keep your job, remember these things.",
-      "korean": "만약에 직업을 유지하고 싶으면 이러한 것들을 기억하십시오."
+      "korean": "직장을 계속 다니고 싶다면 다음을 기억하라."
     },
     {
       "id": "reading-064-s002",
       "english": "You should not stop every hour for coffee.",
-      "korean": "당신은 커피를 위해 매시간 멈추지 마십시오."
+      "korean": "커피를 마시려고 매시간 일을 멈춰서는 안 된다."
     },
     {
       "id": "reading-064-s003",
       "english": "And you should not leave early too often.",
-      "korean": "그리고 당신은 너무 자주 떠나서는 안된다."
+      "korean": "그리고 너무 자주 일찍 퇴근해서도 안 된다."
     },
     {
       "id": "reading-064-s004",
-      "english": "An important part of your job may be the war you work with other people.",
-      "korean": "당신 일의 중요한 부분은 다른 사람과 일하는 전쟁일지도 모른다."
+      "english": "An important part of your job may be the way you work with other people.",
+      "korean": "일에서 중요한 부분은 다른 사람들과 함께 일하는 방식일 수 있다."
     },
     {
       "id": "reading-064-s005",
       "english": "If you are difficult to work with, you may have trouble.",
-      "korean": "만약에 함께 일하는 것이 어렵다면 당신은 문제를 가지고 있을지도 모른다."
+      "korean": "함께 일하기 어려운 사람이라면 곤란을 겪을 수 있다."
     },
     {
       "id": "reading-064-s006",
       "english": "Or you may have trouble if you do not make friends with the other people at your job.",
-      "korean": "그렇지 않으면 당신은 당신의 일에 다른 사람과 친구를 만들지 않으면 문제를 가질지도 모른다."
+      "korean": "또는 직장에서 다른 사람들과 친해지지 않으면 곤란을 겪을 수 있다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "remember",
       "lemma": "remember",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "기억하다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
@@ -93,7 +93,7 @@
       "word": "friends",
       "lemma": "friend",
       "partOfSpeech": "n.",
-      "korean": "친구",
+      "korean": "친구 (make friends with ~와 친해지다)",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -104,8 +104,8 @@
     {
       "word": "difficult",
       "lemma": "difficult",
-      "partOfSpeech": "n.",
-      "korean": "어려운",
+      "partOfSpeech": "adj.",
+      "korean": "까다로운 (difficult to work with 함께 일하기 어려운)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -117,7 +117,7 @@
       "word": "job",
       "lemma": "job",
       "partOfSpeech": "n.",
-      "korean": "직업",
+      "korean": "직장, 일자리",
       "score": 91,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 91점)",
       "examTags": [
@@ -138,14 +138,14 @@
       "freq": 1
     },
     {
-      "word": "war",
-      "lemma": "war",
+      "word": "way",
+      "lemma": "way",
       "partOfSpeech": "n.",
-      "korean": "전쟁",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "방식 (the way you work 일하는 방식)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -153,7 +153,7 @@
       "word": "trouble",
       "lemma": "trouble",
       "partOfSpeech": "n.",
-      "korean": "문제",
+      "korean": "곤란, 문제",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -164,7 +164,7 @@
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 82,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
@@ -176,7 +176,7 @@
     {
       "word": "want",
       "lemma": "want",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "원하다",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
@@ -188,8 +188,8 @@
     {
       "word": "keep",
       "lemma": "keep",
-      "partOfSpeech": "n.",
-      "korean": "유지하다",
+      "partOfSpeech": "v.",
+      "korean": "(직장을) 계속 다니다",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [
@@ -198,12 +198,12 @@
       "freq": 1
     },
     {
-      "word": "every",
-      "lemma": "every",
-      "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
+      "word": "often",
+      "lemma": "often",
+      "partOfSpeech": "adv.",
+      "korean": "자주",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -224,8 +224,8 @@
     {
       "word": "leave",
       "lemma": "leave",
-      "partOfSpeech": "n.",
-      "korean": "떠나다",
+      "partOfSpeech": "v.",
+      "korean": "(직장을) 나서다, 퇴근하다",
       "score": 67,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
       "examTags": [
@@ -236,8 +236,8 @@
     {
       "word": "stop",
       "lemma": "stop",
-      "partOfSpeech": "n.",
-      "korean": "중지",
+      "partOfSpeech": "v.",
+      "korean": "멈추다",
       "score": 63,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 63점)",
       "examTags": [

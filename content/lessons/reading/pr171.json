@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Like many other reformers, Alice Paul, author of the Equal Right Amendment introduced in Congress in 1923, received little honor in her lifetime but has gained considerable fame posthumously."
+      "text": "Like many other reformers, Alice Paul, author of the Equal Rights Amendment introduced in Congress in 1923, received little honor in her lifetime but has gained considerable fame posthumously."
     },
     {
       "type": "choice",
@@ -47,11 +47,95 @@
   "readingSentences": [
     {
       "id": "reading-171-s001",
-      "english": "Like many other reformers, Alice Paul, author of the Equal Right Amendment introduced in Congress in 1923, received little honor in her lifetime but has gained considerable fame posthumously.",
-      "korean": "많은 다른 개혁가처럼, 1923년 의회에 제출된 동등권리 수정안 입법의 저작자였던 앨랜 폴은 살아생전에는 명성을 거의 얻지 못했다. 그러나 사후에 상당한 명성을 얻었다."
+      "english": "Like many other reformers, Alice Paul, author of the Equal Rights Amendment introduced in Congress in 1923, received little honor in her lifetime but has gained considerable fame posthumously.",
+      "korean": "1923년 의회에 제출된 남녀평등 헌법 수정안(Equal Rights Amendment)을 작성한 앨리스 폴은, 다른 많은 개혁가처럼 생전에는 영예를 거의 얻지 못했지만 사후에 상당한 명성을 얻었다."
     }
   ],
   "readingVocabulary": [
+    {
+      "word": "reformers",
+      "lemma": "reformer",
+      "partOfSpeech": "n.",
+      "korean": "개혁가",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "author",
+      "lemma": "author",
+      "partOfSpeech": "n.",
+      "korean": "발의자, 작성자 (author of the amendment 개정안 발의자)",
+      "score": 85,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "equal",
+      "lemma": "equal",
+      "partOfSpeech": "adj.",
+      "korean": "평등한, 동등한",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 87점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "rights",
+      "lemma": "right",
+      "partOfSpeech": "n.",
+      "korean": "권리 (Equal Rights 평등권)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "amendment",
+      "lemma": "amendment",
+      "partOfSpeech": "n.",
+      "korean": "(헌법) 수정안, 개정안",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "introduced",
+      "lemma": "introduce",
+      "partOfSpeech": "v.",
+      "korean": "(법안을) 발의하다, 제출하다",
+      "score": 94,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 94점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "congress",
+      "lemma": "congress",
+      "partOfSpeech": "n.",
+      "korean": "(미국) 의회",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
     {
       "word": "received",
       "lemma": "receive",
@@ -65,12 +149,36 @@
       "freq": 1
     },
     {
-      "word": "introduced",
-      "lemma": "introduce",
-      "partOfSpeech": "v.",
-      "korean": "소개하다",
-      "score": 94,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 94점)",
+      "word": "fame",
+      "lemma": "fame",
+      "partOfSpeech": "n.",
+      "korean": "명성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "honor",
+      "lemma": "honor",
+      "partOfSpeech": "n.",
+      "korean": "명예, 영예",
+      "score": 85,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "lifetime",
+      "lemma": "lifetime",
+      "partOfSpeech": "n.",
+      "korean": "생애, 평생",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
         "독해필수"
       ],
@@ -80,7 +188,7 @@
       "word": "gained",
       "lemma": "gain",
       "partOfSpeech": "v.",
-      "korean": "이득",
+      "korean": "얻다",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 92점)",
       "examTags": [
@@ -101,118 +209,10 @@
       "freq": 1
     },
     {
-      "word": "reformers",
-      "lemma": "reformer",
-      "partOfSpeech": "n.",
-      "korean": "개혁가",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "equal",
-      "lemma": "equal",
-      "partOfSpeech": "adj.",
-      "korean": "동등한",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "amendment",
-      "lemma": "amendment",
-      "partOfSpeech": "n.",
-      "korean": "amendment (핵심 어휘)",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "congress",
-      "lemma": "congress",
-      "partOfSpeech": "n.",
-      "korean": "의회",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "lifetime",
-      "lemma": "lifetime",
-      "partOfSpeech": "n.",
-      "korean": "평생",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "alice",
-      "lemma": "alice",
-      "partOfSpeech": "n.",
-      "korean": "alice (핵심 어휘)",
-      "score": 85,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "author",
-      "lemma": "author",
-      "partOfSpeech": "n.",
-      "korean": "저자",
-      "score": 85,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "right",
-      "lemma": "right",
-      "partOfSpeech": "n.",
-      "korean": "옳은; 오른쪽",
-      "score": 85,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "honor",
-      "lemma": "honor",
-      "partOfSpeech": "n.",
-      "korean": "명예",
-      "score": 85,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "posthumously",
-      "lemma": "posthumous",
+      "lemma": "posthumously",
       "partOfSpeech": "adv.",
-      "korean": "posthumously (핵심 어휘)",
+      "korean": "사후에",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [

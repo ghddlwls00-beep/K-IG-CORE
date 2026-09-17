@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "If you are not positive, you cannot be productive on your job. \"Life is 90% attitude and 10% ability. It's all in your attitude, how you present yourself and what you have to offer,\" says Edward Simpson, a sales representative. \"A company may be able to teach you what you need to know to succeed, but it cannot teach attitude. When choosing between a purely competent person without interest and a less competent person with zeal, I always choose zeal over ability ,\" he adds."
+      "text": "If you are not positive, you cannot be productive on your job. \"Life is 90% attitude and 10% ability. It's all in your attitude, how you present yourself and what you have to offer,\" says Edward Simpson, a sales representative. \"A company may be able to teach you what you need to know to succeed, but it cannot teach attitude. When choosing between a purely competent person without interest and a less competent person with zeal, I always choose zeal over ability,\" he adds."
     },
     {
       "type": "choice",
@@ -58,17 +58,17 @@
     {
       "id": "reading-072-s003",
       "english": "It's all in your attitude, how you present yourself and what you have to offer,\" says Edward Simpson, a sales representative.",
-      "korean": "자신을 어떻게 나타내고 당신이 무엇을 제공할 것인가는 모두 당신의 자세에 있다.\"고 판매 책임자인 Edward Simpson은 말한다."
+      "korean": "자신을 어떻게 나타내고 당신이 무엇을 제공할 것인가는 모두 당신의 자세에 있다.\"고 영업 사원인 Edward Simpson은 말한다."
     },
     {
       "id": "reading-072-s004",
       "english": "\"A company may be able to teach you what you need to know to succeed, but it cannot teach attitude.",
-      "korean": "\"성공하기 위해 당신이 알 필요가 있는게 뭔지는 회사가 가르켜 줄 수 있지만, 회사가 자세까지 가르켜 주진 못한다."
+      "korean": "\"회사는 성공하는 데 필요한 지식은 가르쳐 줄 수 있지만, 태도까지 가르쳐 줄 수는 없습니다."
     },
     {
       "id": "reading-072-s005",
-      "english": "When choosing between a purely competent person without interest and a less competent person with zeal, I always choose zeal over ability ,\" he adds.",
-      "korean": "흥미를 느끼지 않는 아주 유능한 사람과 열정을 갖은 덜 유능한 사람 중에서 선택할 때, 난 항상 능력보다 열성을 선택한다\"고 그는 덧붙인다."
+      "english": "When choosing between a purely competent person without interest and a less competent person with zeal, I always choose zeal over ability,\" he adds.",
+      "korean": "흥미를 느끼지 않는 아주 유능한 사람과 열정을 가진 덜 유능한 사람 중에서 선택할 때, 난 항상 능력보다 열성을 선택한다\"고 그는 덧붙인다."
     }
   ],
   "readingVocabulary": [
@@ -99,8 +99,8 @@
     {
       "word": "offer",
       "lemma": "offer",
-      "partOfSpeech": "n.",
-      "korean": "제공하다; 제안",
+      "partOfSpeech": "v.",
+      "korean": "제공하다, 내놓다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -111,8 +111,8 @@
     {
       "word": "representative",
       "lemma": "representative",
-      "partOfSpeech": "adj.",
-      "korean": "대표",
+      "partOfSpeech": "n.",
+      "korean": "직원 (sales representative 영업 사원)",
       "score": 86,
       "reason": "실무/비즈니스 실용 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
       "examTags": [
@@ -124,7 +124,7 @@
       "word": "choosing",
       "lemma": "choose",
       "partOfSpeech": "v.",
-      "korean": "선택하다",
+      "korean": "고르다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -147,7 +147,7 @@
     {
       "word": "competent",
       "lemma": "competent",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "유능한",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
@@ -181,12 +181,12 @@
       "freq": 3
     },
     {
-      "word": "between",
-      "lemma": "between",
-      "partOfSpeech": "n.",
-      "korean": "사이에",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "purely",
+      "lemma": "purely",
+      "partOfSpeech": "adv.",
+      "korean": "순전히",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -196,7 +196,7 @@
       "word": "interest",
       "lemma": "interest",
       "partOfSpeech": "n.",
-      "korean": "관심; 이자",
+      "korean": "관심, 흥미",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -217,24 +217,24 @@
       "freq": 2
     },
     {
-      "word": "without",
-      "lemma": "without",
-      "partOfSpeech": "n.",
-      "korean": "없이",
-      "score": 76,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
+      "word": "present",
+      "lemma": "present",
+      "partOfSpeech": "v.",
+      "korean": "(present oneself) 자신을 드러내 보이다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "always",
-      "lemma": "always",
-      "partOfSpeech": "n.",
-      "korean": "항상",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "word": "adds",
+      "lemma": "add",
+      "partOfSpeech": "v.",
+      "korean": "덧붙여 말하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

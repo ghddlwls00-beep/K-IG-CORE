@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "시간은 공간 보다 훨씬 일반적이다. 왜냐하면 시간은 어떤 공간적인 순서가 주어지지 않는 감동과 감명,그리고 사상의 세계로 적용되기 때문이다."
+      "text": "시간은 공간보다 더 일반적이다. 공간적 질서를 부여할 수 없는 인상과 감정과 생각이라는 내면 세계에도 적용되기 때문이다."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-131-s001",
       "english": "Time is more general than space, because it applies to the inner world of impressions, emotions, and ideas for which no spatial order can be given.",
-      "korean": "시간은 공간 보다 훨씬 일반적이다. 왜냐하면 시간은 어떤 공간적인 순서가 주어지지 않는 감동과 감명,그리고 사상의 세계로 적용되기 때문이다."
+      "korean": "시간은 공간보다 더 일반적이다. 공간적 질서를 부여할 수 없는 인상과 감정과 생각이라는 내면 세계에도 적용되기 때문이다."
     }
   ],
   "readingVocabulary": [
@@ -56,7 +56,7 @@
       "word": "ideas",
       "lemma": "idea",
       "partOfSpeech": "n.",
-      "korean": "아이디어",
+      "korean": "생각",
       "score": 110,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 110점)",
       "examTags": [
@@ -68,7 +68,7 @@
       "word": "general",
       "lemma": "general",
       "partOfSpeech": "adj.",
-      "korean": "일반적인, 종합적인",
+      "korean": "일반적인",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 89점)",
       "examTags": [
@@ -81,7 +81,7 @@
       "word": "world",
       "lemma": "world",
       "partOfSpeech": "n.",
-      "korean": "세계",
+      "korean": "세계 (inner world 내면 세계)",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -93,7 +93,7 @@
       "word": "spatial",
       "lemma": "spatial",
       "partOfSpeech": "adj.",
-      "korean": "spatial (핵심 어휘)",
+      "korean": "공간의",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 89점)",
       "examTags": [
@@ -104,8 +104,8 @@
     {
       "word": "applies",
       "lemma": "apply",
-      "partOfSpeech": "n.",
-      "korean": "적용하다",
+      "partOfSpeech": "v.",
+      "korean": "적용되다 (apply to ~에 적용되다)",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -141,7 +141,7 @@
       "word": "space",
       "lemma": "space",
       "partOfSpeech": "n.",
-      "korean": "공간, 우주",
+      "korean": "공간",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -152,8 +152,8 @@
     {
       "word": "inner",
       "lemma": "inner",
-      "partOfSpeech": "n.",
-      "korean": "내부",
+      "partOfSpeech": "adj.",
+      "korean": "내면의",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -165,7 +165,7 @@
       "word": "order",
       "lemma": "order",
       "partOfSpeech": "n.",
-      "korean": "주문",
+      "korean": "질서, 순서",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -176,8 +176,8 @@
     {
       "word": "given",
       "lemma": "give",
-      "partOfSpeech": "n.",
-      "korean": "주다",
+      "partOfSpeech": "v.",
+      "korean": "주다 (be given 부여되다)",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -188,8 +188,8 @@
     {
       "word": "because",
       "lemma": "because",
-      "partOfSpeech": "n.",
-      "korean": "왜냐하면",
+      "partOfSpeech": "conj.",
+      "korean": "~ 때문에",
       "score": 62,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 62점)",
       "examTags": [
@@ -199,8 +199,8 @@
     },
     {
       "word": "more",
-      "lemma": "much",
-      "partOfSpeech": "n.",
+      "lemma": "more",
+      "partOfSpeech": "adv.",
       "korean": "더",
       "score": 56,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 56점)",

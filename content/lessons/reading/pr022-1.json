@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "사랑은 특정 사람과의 관계가 아니다. 의지할 때 없는 사람에 대한 사랑은 형제애의 시작이다. 자신의 몸을 사랑하는 것은 업적이 아니다. 목적을 가지고 봉사하지 않는 사람들의 사랑 안에서만이 사랑은 펼쳐지기 시작한다. 무기력한 사람에 대한 동정을 가지고 사람은 형제에 대한 사랑을 전개하기 시작한다."
+      "text": "사랑은 특정한 사람과의 관계가 아니다. 의지할 데 없는 사람에 대한 사랑이 형제애의 시작이다. 자기 혈육을 사랑하는 것은 대단한 일이 아니다. 아무 쓸모도 없는 사람들을 사랑할 때에야 비로소 사랑이 피어나기 시작한다. 무력한 사람에게 연민을 가짐으로써 사람은 형제를 향한 사랑을 키우기 시작한다."
     },
     {
       "type": "choice",
@@ -48,27 +48,27 @@
     {
       "id": "reading-022-s001",
       "english": "Love is not a relationship with a specific person.",
-      "korean": "사랑은 특정 사람과의 관계가 아니다."
+      "korean": "사랑은 특정한 사람과의 관계가 아니다."
     },
     {
       "id": "reading-022-s002",
       "english": "Love of the helpless one is the beginning of brotherly love.",
-      "korean": "의지할 때 없는 사람에 대한 사랑은 형제애의 시작이다."
+      "korean": "의지할 데 없는 사람에 대한 사랑이 형제애의 시작이다."
     },
     {
       "id": "reading-022-s003",
       "english": "To love one's own flesh and blood is no achievement.",
-      "korean": "자신의 몸을 사랑하는 것은 업적이 아니다."
+      "korean": "자기 혈육을 사랑하는 것은 대단한 일이 아니다."
     },
     {
       "id": "reading-022-s004",
-      "english": "Only in the love of those who do not serve a purpose, does love begin to unfold.",
-      "korean": "목적을 가지고 봉사하지 않는 사람들의 사랑 안에서만이 사랑은 펼쳐지기 시작한다."
+      "english": "Only in the love of those who do not serve a purpose does love begin to unfold.",
+      "korean": "아무 쓸모도 없는 사람들을 사랑할 때에야 비로소 사랑이 피어나기 시작한다."
     },
     {
       "id": "reading-022-s005",
       "english": "By having compassion for the helpless one, man begins to develop love for his brother.",
-      "korean": "무기력한 사람에 대한 동정을 가지고 사람은 형제에 대한 사랑을 전개하기 시작한다."
+      "korean": "무력한 사람에게 연민을 가짐으로써 사람은 형제를 향한 사랑을 키우기 시작한다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +76,7 @@
       "word": "develop",
       "lemma": "develop",
       "partOfSpeech": "v.",
-      "korean": "발전시키다, 개발하다",
+      "korean": "키우다, 발전시키다",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -90,7 +90,7 @@
       "word": "brother",
       "lemma": "brother",
       "partOfSpeech": "n.",
-      "korean": "형제, 오빠, 남동생",
+      "korean": "형제 (여기서는 같은 인간, 이웃)",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -102,7 +102,7 @@
       "word": "purpose",
       "lemma": "purpose",
       "partOfSpeech": "n.",
-      "korean": "목적",
+      "korean": "목적, 쓸모 (serve a purpose 쓸모가 있다)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -126,7 +126,7 @@
       "word": "helpless",
       "lemma": "helpless",
       "partOfSpeech": "adj.",
-      "korean": "무력한, 속수무책의",
+      "korean": "무력한, 의지할 데 없는",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
       "examTags": [
@@ -173,8 +173,8 @@
     },
     {
       "word": "beginning",
-      "lemma": "begin",
-      "partOfSpeech": "v.",
+      "lemma": "beginning",
+      "partOfSpeech": "n.",
       "korean": "시작",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
@@ -187,7 +187,7 @@
       "word": "unfold",
       "lemma": "unfold",
       "partOfSpeech": "v.",
-      "korean": "펼쳐지다, 밝히다",
+      "korean": "펼쳐지다, 피어나다",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -199,7 +199,7 @@
       "word": "achievement",
       "lemma": "achievement",
       "partOfSpeech": "n.",
-      "korean": "성취",
+      "korean": "성취, 대단한 일",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -211,7 +211,7 @@
       "word": "flesh",
       "lemma": "flesh",
       "partOfSpeech": "n.",
-      "korean": "육체",
+      "korean": "살 (one's own flesh and blood 자기 혈육)",
       "score": 67,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
       "examTags": [
@@ -220,12 +220,12 @@
       "freq": 1
     },
     {
-      "word": "blood",
-      "lemma": "blood",
-      "partOfSpeech": "n.",
-      "korean": "피",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
+      "word": "brotherly",
+      "lemma": "brotherly",
+      "partOfSpeech": "adj.",
+      "korean": "형제 같은 (brotherly love 형제애)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -234,8 +234,8 @@
     {
       "word": "serve",
       "lemma": "serve",
-      "partOfSpeech": "n.",
-      "korean": "봉사하다",
+      "partOfSpeech": "v.",
+      "korean": "(목적에) 쓸모가 있다 (serve a purpose)",
       "score": 67,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
       "examTags": [

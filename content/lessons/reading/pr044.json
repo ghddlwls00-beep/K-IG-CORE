@@ -48,7 +48,7 @@
   {
    "id": "reading-044-s001",
    "english": "A healthy diet is important for children as well as adults.",
-   "korean": "성인뿐만 아니라 어린이에게도 건강 식품은 중요하다."
+   "korean": "건강한 식단은 어른뿐 아니라 아이들에게도 중요하다."
   },
   {
    "id": "reading-044-s002",
@@ -63,15 +63,15 @@
   {
    "id": "reading-044-s004",
    "english": "When parents eat healthy food, the children will think it tastes good.",
-   "korean": "부모들이 건강 식품을 먹을 때 아이들은 그것이 맛있을 것이라고 생각할 것이다"
+   "korean": "부모가 건강한 음식을 먹으면 아이들도 그 음식이 맛있다고 생각할 것이다."
   }
  ],
  "readingVocabulary": [
   {
    "word": "healthy",
    "lemma": "healthy",
-   "partOfSpeech": "n.",
-   "korean": "건강한",
+   "partOfSpeech": "adj.",
+   "korean": "건강에 좋은",
    "score": 117,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 117점)",
    "examTags": [
@@ -94,7 +94,7 @@
   {
    "word": "important",
    "lemma": "important",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "adj.",
    "korean": "중요한",
    "score": 92,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -107,7 +107,7 @@
    "word": "habits",
    "lemma": "habit",
    "partOfSpeech": "n.",
-   "korean": "습관, 버릇",
+   "korean": "습관 (eating habits 식습관)",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -119,8 +119,8 @@
   {
    "word": "poor",
    "lemma": "poor",
-   "partOfSpeech": "n.",
-   "korean": "가난한",
+   "partOfSpeech": "adj.",
+   "korean": "나쁜 (poor eating habits 나쁜 식습관)",
    "score": 88,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
    "examTags": [
@@ -132,7 +132,7 @@
    "word": "adults",
    "lemma": "adult",
    "partOfSpeech": "n.",
-   "korean": "성인",
+   "korean": "어른",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
    "examTags": [
@@ -142,9 +142,9 @@
   },
   {
    "word": "parents",
-   "lemma": "parents",
+   "lemma": "parent",
    "partOfSpeech": "n.",
-   "korean": "부모님",
+   "korean": "부모",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
    "examTags": [
@@ -156,7 +156,7 @@
    "word": "tastes",
    "lemma": "taste",
    "partOfSpeech": "v.",
-   "korean": "맛이 나다, 맛보다",
+   "korean": "~한 맛이 나다",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
@@ -167,7 +167,7 @@
   {
    "word": "eat",
    "lemma": "eat",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "먹다",
    "score": 76,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
@@ -180,7 +180,7 @@
    "word": "diet",
    "lemma": "diet",
    "partOfSpeech": "n.",
-   "korean": "식단, 식습관",
+   "korean": "식단, 식사",
    "score": 73,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
    "examTags": [
@@ -191,8 +191,8 @@
   {
    "word": "well",
    "lemma": "well",
-   "partOfSpeech": "n.",
-   "korean": "잘; 건강한; 우물",
+   "partOfSpeech": "adv.",
+   "korean": "(as well as) ~뿐만 아니라",
    "score": 73,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
    "examTags": [
@@ -216,7 +216,7 @@
    "word": "usually",
    "lemma": "usually",
    "partOfSpeech": "adv.",
-   "korean": "보통",
+   "korean": "대개",
    "score": 67,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
    "examTags": [
@@ -227,7 +227,7 @@
   {
    "word": "same",
    "lemma": "same",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "adj.",
    "korean": "같은",
    "score": 63,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 63점)",

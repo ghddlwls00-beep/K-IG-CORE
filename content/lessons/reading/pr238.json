@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Abundant energy is essential to modern civilization. Energy beyond that provided by human or animal muscles is needed for operating our factories, for heating and cooking our homes, for powering most forms of transportation, and for hundreds of other purposes, Presently coal and oil supply the majority of our energy needs. But coal, when burned, tends to pollute the air, and oil is becoming scarcer. Other sources, therefore, must be developed."
+      "text": "Abundant energy is essential to modern civilization. Energy beyond that provided by human or animal muscles is needed for operating our factories, for heating and cooking our homes, for powering most forms of transportation, and for hundreds of other purposes. Presently coal and oil supply the majority of our energy needs. But coal, when burned, tends to pollute the air, and oil is becoming scarcer. Other sources, therefore, must be developed."
     },
     {
       "type": "choice",
@@ -52,7 +52,7 @@
     },
     {
       "id": "reading-238-s002",
-      "english": "Energy beyond that provided by human or animal muscles is needed for operating our factories, for heating and cooking our homes, for powering most forms of transportation, and for hundreds of other purposes, Presently coal and oil supply the majority of our energy needs.",
+      "english": "Energy beyond that provided by human or animal muscles is needed for operating our factories, for heating and cooking our homes, for powering most forms of transportation, and for hundreds of other purposes. Presently coal and oil supply the majority of our energy needs.",
       "korean": "우리의 공장을 가동하고, 가정에 난방을 하고 요리를 하며, 대부분의 운송 수단에 동력을 공급하고, 수백 가지 다른 목적을 위해 인간이나 동물의 근육이 제공하는 것 이상의 에너지가 필요하다. 현재는 석탄과 석유가 우리 에너지 수요의 대부분을 공급하고 있다."
     },
     {
@@ -71,7 +71,7 @@
       "word": "developed",
       "lemma": "develop",
       "partOfSpeech": "v.",
-      "korean": "발전시키다, 개발하다",
+      "korean": "개발하다",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -94,14 +94,14 @@
       "freq": 1
     },
     {
-      "word": "animal",
-      "lemma": "animal",
-      "partOfSpeech": "adj.",
-      "korean": "동물",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
+      "word": "muscles",
+      "lemma": "muscle",
+      "partOfSpeech": "n.",
+      "korean": "근육",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -109,7 +109,7 @@
       "word": "purposes",
       "lemma": "purpose",
       "partOfSpeech": "n.",
-      "korean": "목적",
+      "korean": "목적, 용도",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -133,7 +133,7 @@
       "word": "essential",
       "lemma": "essential",
       "partOfSpeech": "adj.",
-      "korean": "본질적인",
+      "korean": "필수적인",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -144,7 +144,7 @@
     {
       "word": "abundant",
       "lemma": "abundant",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "풍부한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -154,22 +154,10 @@
       "freq": 1
     },
     {
-      "word": "modern",
-      "lemma": "modern",
-      "partOfSpeech": "n.",
-      "korean": "현대의, 현대적인",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "sources",
       "lemma": "source",
       "partOfSpeech": "n.",
-      "korean": "출처",
+      "korean": "원천, 공급원",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -179,9 +167,9 @@
     },
     {
       "word": "provided",
-      "lemma": "provided",
+      "lemma": "provide",
       "partOfSpeech": "v.",
-      "korean": "만약 ~라면",
+      "korean": "제공하다 (provided by ~이 제공하는)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -193,7 +181,7 @@
       "word": "operating",
       "lemma": "operate",
       "partOfSpeech": "v.",
-      "korean": "운영하다",
+      "korean": "가동하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -205,19 +193,7 @@
       "word": "heating",
       "lemma": "heat",
       "partOfSpeech": "v.",
-      "korean": "열",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "cooking",
-      "lemma": "cook",
-      "partOfSpeech": "v.",
-      "korean": "요리하다",
+      "korean": "난방하다, 데우다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -229,9 +205,33 @@
       "word": "powering",
       "lemma": "power",
       "partOfSpeech": "v.",
-      "korean": "힘",
+      "korean": "동력을 공급하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "scarcer",
+      "lemma": "scarce",
+      "partOfSpeech": "adj.",
+      "korean": "더 부족한, 더 귀한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "pollute",
+      "lemma": "pollute",
+      "partOfSpeech": "v.",
+      "korean": "오염시키다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

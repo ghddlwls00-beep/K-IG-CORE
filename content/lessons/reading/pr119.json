@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Babies experience anxiety when they see strangers. Children aged 2 through 6 show anxiety about things not based in reality such as ghosts. Kids aged 7 through 12 often fear real situation that may happen to them, such as injuries or accidents. As a child grows, fears my disappear. For example, a child who couldn't sleep with the light off at age 5 may enjoy ghost story years later. And some fears may extend only to one kind, as in the example of the child who wants to pet a lion at the zoo but wouldn't dream of putting the neighbor's dog."
+      "text": "Babies experience anxiety when they see strangers. Children aged 2 through 6 show anxiety about things not based in reality such as ghosts. Kids aged 7 through 12 often fear real situations that may happen to them, such as injuries or accidents. As a child grows, fears may disappear. For example, a child who couldn't sleep with the light off at age 5 may enjoy ghost stories years later. And some fears may extend only to one kind, as in the example of the child who wants to pet a lion at the zoo but wouldn't dream of petting the neighbor's dog."
     },
     {
       "type": "choice",
@@ -48,32 +48,32 @@
     {
       "id": "reading-119-s001",
       "english": "Babies experience anxiety when they see strangers.",
-      "korean": "애들은 낯선이들을 보면 걱정을 경험한다."
+      "korean": "아기들은 낯선 사람을 보면 불안을 느낀다."
     },
     {
       "id": "reading-119-s002",
       "english": "Children aged 2 through 6 show anxiety about things not based in reality such as ghosts.",
-      "korean": "2~6세의 애들은 귀신과 같은 현실에 근거하지 않은 것들에 대해 걱정을 한다."
+      "korean": "2~6세 아이들은 유령처럼 현실에 근거하지 않은 것에 불안을 보인다."
     },
     {
       "id": "reading-119-s003",
-      "english": "Kids aged 7 through 12 often fear real situation that may happen to them, such as injuries or accidents.",
-      "korean": "7~12세의 애들은 부상이나 사고와 같은 그들에게 일어날 수 있는 실재적인 상황들에 대해 종종 두려워한다."
+      "english": "Kids aged 7 through 12 often fear real situations that may happen to them, such as injuries or accidents.",
+      "korean": "7~12세 아이들은 다치거나 사고를 당하는 것처럼 실제로 일어날 수 있는 상황을 자주 두려워한다."
     },
     {
       "id": "reading-119-s004",
-      "english": "As a child grows, fears my disappear.",
-      "korean": "애들이 성장함에 따라, 두려움이 사라진다."
+      "english": "As a child grows, fears may disappear.",
+      "korean": "아이가 자라면서 두려움은 사라질 수 있다."
     },
     {
       "id": "reading-119-s005",
-      "english": "For example, a child who couldn't sleep with the light off at age 5 may enjoy ghost story years later.",
-      "korean": "예를 들면, 5세 때에 불을 끄고는 잠을 자지 못하던 애가 1년 후면 귀신 예기를 즐길 수도 있다."
+      "english": "For example, a child who couldn't sleep with the light off at age 5 may enjoy ghost stories years later.",
+      "korean": "예를 들어 다섯 살 때 불을 끄고는 잠들지 못하던 아이가 몇 년 뒤에는 귀신 이야기를 즐길 수도 있다."
     },
     {
       "id": "reading-119-s006",
-      "english": "And some fears may extend only to one kind, as in the example of the child who wants to pet a lion at the zoo but wouldn't dream of putting the neighbor's dog.",
-      "korean": "그리고 어떤 공포는, 동물원의 사자를 또닥거리길 원하지만 옆집 개를 만져 볼 엄두도 내지 못하는 어린애의 예에서처럼, 한가지 종류에 연장되기도 한다."
+      "english": "And some fears may extend only to one kind, as in the example of the child who wants to pet a lion at the zoo but wouldn't dream of petting the neighbor's dog.",
+      "korean": "또 어떤 두려움은 한 종류에만 해당하기도 한다. 동물원의 사자는 쓰다듬고 싶어 하면서 옆집 개를 쓰다듬는 것은 꿈도 꾸지 못하는 아이가 그런 예다."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "fears",
       "lemma": "fear",
       "partOfSpeech": "n.",
-      "korean": "무서움",
+      "korean": "두려움",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
       "examTags": [
@@ -92,8 +92,8 @@
     {
       "word": "experience",
       "lemma": "experience",
-      "partOfSpeech": "n.",
-      "korean": "경험",
+      "partOfSpeech": "v.",
+      "korean": "느끼다, 겪다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -104,8 +104,8 @@
     {
       "word": "dream",
       "lemma": "dream",
-      "partOfSpeech": "n.",
-      "korean": "꿈",
+      "partOfSpeech": "v.",
+      "korean": "(wouldn't dream of ~ing) ~할 생각은 꿈에도 못 하다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -116,7 +116,7 @@
     {
       "word": "disappear",
       "lemma": "disappear",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "사라지다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -128,7 +128,7 @@
     {
       "word": "happen",
       "lemma": "happen",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "일어나다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -138,34 +138,34 @@
       "freq": 1
     },
     {
-      "word": "light",
-      "lemma": "light",
+      "word": "ghost",
+      "lemma": "ghost",
       "partOfSpeech": "n.",
-      "korean": "빛",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "유령, 귀신",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "story",
-      "lemma": "story",
+      "word": "injuries",
+      "lemma": "injury",
       "partOfSpeech": "n.",
-      "korean": "이야기",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "부상",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "later",
-      "lemma": "late",
-      "partOfSpeech": "n.",
-      "korean": "나중에",
+      "lemma": "later",
+      "partOfSpeech": "adv.",
+      "korean": "나중에 (years later 몇 년 뒤)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -198,12 +198,12 @@
       "freq": 2
     },
     {
-      "word": "putting",
-      "lemma": "put",
+      "word": "petting",
+      "lemma": "pet",
       "partOfSpeech": "v.",
-      "korean": "넣어",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "korean": "쓰다듬다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -234,12 +234,12 @@
       "freq": 1
     },
     {
-      "word": "neighbor",
-      "lemma": "neighbor",
+      "word": "reality",
+      "lemma": "reality",
       "partOfSpeech": "n.",
-      "korean": "이웃",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "현실",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

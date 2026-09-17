@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "\"2살된 어린이가 필요로 하지만, 기 스스로를 위하여 만들지 않은, 조용하고 평화스러운 분위기에 가장 도움이 되는것은 마음의 위로가 되는 음악이다. 어떤 형태로 되어 있던 간에. 엄마의 노래가 도움이 될 수도 있다. 가령, \"아침 먹을 시간\"과 같은 말을 노래로 읊조리는 것이 단순한 말보다 더 효과적일 수도 있다. 특히 동요 같은, 녹음 곡이 어린들이 짜증스러운 아침이나 오후 늦은 시간에 딱 좋다. 특히 어떤 남자아이들은 자기 자신만의 음악을 갖는 것을 좋아하고, 아주 오랜 시간 동안을 이것을 들으며 놀 수도 있다.\""
+      "text": "두 살배기 아이에게 필요하지만 스스로 만들어 내지 못하는 차분하고 평화로운 분위기에 가장 도움이 되는 것은, 거의 어떤 형태든 마음을 달래 주는 음악이다. 엄마의 노래가 도움이 될 수 있다. “아침 먹을 시간이야” 같은 부탁을 노래하듯 말하는 것이 그냥 말하는 것보다 더 효과적일 수 있다. 녹음된 음악, 특히 동요는 아이들이 쉽게 짜증을 내는 오전이나 오후가 끝나 갈 무렵에 딱 알맞다. 어떤 아이들, 특히 남자아이들은 자기만의 음악 플레이어를 갖고 싶어 하며, 아주 오랫동안 틀어 놓기도 한다."
     },
     {
       "type": "choice",
@@ -47,35 +47,35 @@
   "readingSentences": [
     {
       "id": "reading-098-s001",
-      "english": "Most helpful to the calm and peaceful atmosphere that the two-year-old child needs but cannot produce for himself herself is the presence of comforting music, in almost any form.",
-      "korean": "\"2살된 어린이가 필요로 하지만, 기 스스로를 위하여 만들지 않은, 조용하고 평화스러운 분위기에 가장 도움이 되는것은 마음의 위로가 되는 음악이다. 어떤 형태로 되어 있던 간에."
+      "english": "Most helpful to the calm and peaceful atmosphere that the two-year-old child needs but cannot produce for himself or herself is the presence of comforting music, in almost any form.",
+      "korean": "두 살배기 아이에게 필요하지만 스스로 만들어 내지 못하는 차분하고 평화로운 분위기에 가장 도움이 되는 것은, 거의 어떤 형태든 마음을 달래 주는 음악이다."
     },
     {
       "id": "reading-098-s002",
       "english": "Mother’s singing can help.",
-      "korean": "엄마의 노래가 도움이 될 수도 있다."
+      "korean": "엄마의 노래가 도움이 될 수 있다."
     },
     {
       "id": "reading-098-s003",
       "english": "Chanting a request, such as “Time to come to breakfast,” may be more effective than simply saying the request.",
-      "korean": "가령, \"아침 먹을 시간\"과 같은 말을 노래로 읊조리는 것이 단순한 말보다 더 효과적일 수도 있다."
+      "korean": "“아침 먹을 시간이야” 같은 부탁을 노래하듯 말하는 것이 그냥 말하는 것보다 더 효과적일 수 있다."
     },
     {
       "id": "reading-098-s004",
-      "english": "Records, especially nursery rhymes, are just the thing for those periods at the end of the morning or afternoon when children are often easily irritated.",
-      "korean": "특히 동요 같은, 녹음 곡이 어린들이 짜증스러운 아침이나 오후 늦은 시간에 딱 좋다."
+      "english": "Recordings, especially of nursery rhymes, are just the thing for those periods at the end of the morning or afternoon when children are often easily irritated.",
+      "korean": "녹음된 음악, 특히 동요는 아이들이 쉽게 짜증을 내는 오전이나 오후가 끝나 갈 무렵에 딱 알맞다."
     },
     {
       "id": "reading-098-s005",
       "english": "Some children, especially boys, like to have their own music players and may play these for very long periods of time.",
-      "korean": "특히 어떤 남자아이들은 자기 자신만의 음악을 갖는 것을 좋아하고, 아주 오랜 시간 동안을 이것을 들으며 놀 수도 있다.\""
+      "korean": "어떤 아이들, 특히 남자아이들은 자기만의 음악 플레이어를 갖고 싶어 하며, 아주 오랫동안 틀어 놓기도 한다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "music",
       "lemma": "music",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "음악",
       "score": 117,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 117점)",
@@ -86,9 +86,9 @@
     },
     {
       "word": "comforting",
-      "lemma": "comfort",
-      "partOfSpeech": "v.",
-      "korean": "위로",
+      "lemma": "comforting",
+      "partOfSpeech": "adj.",
+      "korean": "마음을 달래 주는",
       "score": 111,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
@@ -99,8 +99,8 @@
     {
       "word": "produce",
       "lemma": "produce",
-      "partOfSpeech": "n.",
-      "korean": "생산하다",
+      "partOfSpeech": "v.",
+      "korean": "만들어 내다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -123,8 +123,8 @@
     {
       "word": "calm",
       "lemma": "calm",
-      "partOfSpeech": "n.",
-      "korean": "진정",
+      "partOfSpeech": "adj.",
+      "korean": "차분한",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
       "examTags": [
@@ -133,14 +133,14 @@
       "freq": 1
     },
     {
-      "word": "mother",
-      "lemma": "mother",
-      "partOfSpeech": "n.",
-      "korean": "어머니",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "chanting",
+      "lemma": "chant",
+      "partOfSpeech": "v.",
+      "korean": "노래하듯 읊다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -148,7 +148,7 @@
       "word": "periods",
       "lemma": "period",
       "partOfSpeech": "n.",
-      "korean": "기간, 시기, 시대",
+      "korean": "시간, 시기",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -172,7 +172,7 @@
     {
       "word": "helpful",
       "lemma": "helpful",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "도움이 되는",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -184,7 +184,7 @@
     {
       "word": "peaceful",
       "lemma": "peaceful",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "평화로운",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -196,8 +196,8 @@
     {
       "word": "two-year-old",
       "lemma": "two-year-old",
-      "partOfSpeech": "n.",
-      "korean": "two-year-old (핵심 어휘)",
+      "partOfSpeech": "adj.",
+      "korean": "두 살의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -209,7 +209,7 @@
       "word": "presence",
       "lemma": "presence",
       "partOfSpeech": "n.",
-      "korean": "존재",
+      "korean": "있음, 존재",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -218,24 +218,24 @@
       "freq": 1
     },
     {
-      "word": "children",
-      "lemma": "child",
-      "partOfSpeech": "n.",
-      "korean": "아이",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "word": "irritated",
+      "lemma": "irritated",
+      "partOfSpeech": "adj.",
+      "korean": "짜증이 난",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "almost",
-      "lemma": "almost",
+      "word": "rhymes",
+      "lemma": "rhyme",
       "partOfSpeech": "n.",
-      "korean": "거의",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "동요 (nursery rhymes)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

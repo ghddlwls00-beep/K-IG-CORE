@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "자연 그대로의 조건에서 일어나는 심지어 가장 작은 변화에 의하여 깨어질 수 있는 자연의 균형이 존재한다.. 예를 들자면, 건강한 환경 속에서는 식물 식량의 양이 강의 물고기에게 딱 적당하다. 그러나 그 강을 댐으로 막으면, 균형에 변화가 생긴다. 물고기가 너무 많거나, (식량이 되는) 식물이 너무 많으면 그로 인해 강에는 아무것도 살 수 없게 된다."
+      "text": "자연에는 생활 조건의 아주 작은 변화로도 깨질 수 있는 균형이 있다. 예를 들어, 건강한 환경에서는 식물성 먹이의 양이 강에 사는 물고기의 수에 딱 알맞다. 그러나 강에 댐을 막으면 그 균형이 바뀐다. 물고기가 너무 많거나 식물이 너무 많으면 강은 생물이 살 수 없는 곳이 될 수 있다."
     },
     {
       "type": "choice",
@@ -48,22 +48,22 @@
     {
       "id": "reading-003-s001",
       "english": "There is a balance in nature that can be hurt by the smallest change in living conditions.",
-      "korean": "자연 그대로의 조건에서 일어나는 심지어 가장 작은 변화에 의하여 깨어질 수 있는 자연의 균형이 존재한다.."
+      "korean": "자연에는 생활 조건의 아주 작은 변화로도 깨질 수 있는 균형이 있다."
     },
     {
       "id": "reading-003-s002",
-      "english": "For example , in a healthy environment, the amount of plant food is just right for the number of fish in a river",
-      "korean": "예를 들자면, 건강한 환경 속에서는 식물 식량의 양이 강의 물고기에게 딱 적당하다."
+      "english": "For example, in a healthy environment, the amount of plant food is just right for the number of fish in a river.",
+      "korean": "예를 들어, 건강한 환경에서는 식물성 먹이의 양이 강에 사는 물고기의 수에 딱 알맞다."
     },
     {
       "id": "reading-003-s003",
-      "english": "however, when the river is dammed, the balance changes.",
-      "korean": "그러나 그 강을 댐으로 막으면, 균형에 변화가 생긴다."
+      "english": "However, when the river is dammed, the balance changes.",
+      "korean": "그러나 강에 댐을 막으면 그 균형이 바뀐다."
     },
     {
       "id": "reading-003-s004",
-      "english": "Too many fish or too much plant life can make the river unliveable.",
-      "korean": "물고기가 너무 많거나, (식량이 되는) 식물이 너무 많으면 그로 인해 강에는 아무것도 살 수 없게 된다."
+      "english": "Too many fish or too much plant life can make the river unlivable.",
+      "korean": "물고기가 너무 많거나 식물이 너무 많으면 강은 생물이 살 수 없는 곳이 될 수 있다."
     }
   ],
   "readingVocabulary": [
@@ -94,7 +94,7 @@
     {
       "word": "healthy",
       "lemma": "healthy",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "건강한",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -142,8 +142,8 @@
     {
       "word": "smallest",
       "lemma": "small",
-      "partOfSpeech": "n.",
-      "korean": "작은",
+      "partOfSpeech": "adj.",
+      "korean": "가장 작은 (small의 최상급)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -155,7 +155,7 @@
       "word": "conditions",
       "lemma": "condition",
       "partOfSpeech": "n.",
-      "korean": "상태",
+      "korean": "조건, 환경 (living conditions 생활 조건)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -164,14 +164,14 @@
       "freq": 1
     },
     {
-      "word": "unliveable",
-      "lemma": "unliveable",
+      "word": "unlivable",
+      "lemma": "unlivable",
       "partOfSpeech": "adj.",
-      "korean": "살 수 없는, 거주에 부적합한",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "korean": "생물이 살 수 없는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "수능"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -189,9 +189,9 @@
     },
     {
       "word": "living",
-      "lemma": "live",
-      "partOfSpeech": "v.",
-      "korean": "살다, 거주하다",
+      "lemma": "living",
+      "partOfSpeech": "adj.",
+      "korean": "생활의, 살아가는",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 77점)",
       "examTags": [
@@ -213,9 +213,9 @@
     },
     {
       "word": "dammed",
-      "lemma": "dammed",
+      "lemma": "dam",
       "partOfSpeech": "v.",
-      "korean": "댐으로 막힌, 둑을 쌓은",
+      "korean": "댐으로 막다 (be dammed 댐으로 막히다)",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -226,8 +226,8 @@
     {
       "word": "hurt",
       "lemma": "hurt",
-      "partOfSpeech": "n.",
-      "korean": "상처를 입다",
+      "partOfSpeech": "v.",
+      "korean": "해치다, 손상시키다",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [

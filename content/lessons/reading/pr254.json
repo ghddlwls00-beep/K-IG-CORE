@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "There is no doubt that our education does not meet high standards in such basic skills as mathematics and language. And we realize that our youngsters are ignorant of Latin, put Mussolini in the same category as Dostoevski and cannot recite the Periodic Table by heart. Would we, however, prefer to fill the developing minds of our children with hundreds of geometry problems or the names of all the rivers in the world? Do we really want to frustrate their opportunities for self-expression?"
+      "text": "There is no doubt that our education does not meet high standards in such basic skills as mathematics and language. And we realize that our youngsters are ignorant of Latin, put Mussolini in the same category as Dostoevsky and cannot recite the Periodic Table by heart. Would we, however, prefer to fill the developing minds of our children with hundreds of geometry problems or the names of all the rivers in the world? Do we really want to frustrate their opportunities for self-expression?"
     },
     {
       "type": "choice",
@@ -52,13 +52,13 @@
     },
     {
       "id": "reading-254-s002",
-      "english": "And we realize that our youngsters are ignorant of Latin, put Mussolini in the same category as Dostoevski and cannot recite the Periodic Table by heart.",
-      "korean": "또한 우리는 어린이들이 라틴어에 무지하고, 뭇솔리니와 도스토에프스키를 같은 범주로 여기며, 주기율표를 외우지 못한다는 것을 알고 있다."
+      "english": "And we realize that our youngsters are ignorant of Latin, put Mussolini in the same category as Dostoevsky and cannot recite the Periodic Table by heart.",
+      "korean": "또한 우리는 어린이들이 라틴어에 무지하고, 무솔리니와 도스토옙스키를 같은 범주로 여기며, 주기율표를 외우지 못한다는 것을 알고 있다."
     },
     {
       "id": "reading-254-s003",
       "english": "Would we, however, prefer to fill the developing minds of our children with hundreds of geometry problems or the names of all the rivers in the world?",
-      "korean": "그렇지만 애들의 성장하는 머리 속에 수많은 기하학 문제와 세계의 강 이름으로 채우기를 더 원할 건가?"
+      "korean": "그렇다고 자라나는 아이들의 머릿속을 수백 개의 기하학 문제나 세계의 모든 강 이름으로 채우고 싶은가?"
     },
     {
       "id": "reading-254-s004",
@@ -95,7 +95,7 @@
       "word": "doubt",
       "lemma": "doubt",
       "partOfSpeech": "n.",
-      "korean": "의심",
+      "korean": "의심 (There is no doubt that ~은 틀림없다)",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -118,8 +118,8 @@
     {
       "word": "developing",
       "lemma": "develop",
-      "partOfSpeech": "v.",
-      "korean": "발전시키다, 개발하다",
+      "partOfSpeech": "adj.",
+      "korean": "성장하는, 발달 중인",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -130,22 +130,10 @@
       "freq": 1
     },
     {
-      "word": "high",
-      "lemma": "high",
-      "partOfSpeech": "n.",
-      "korean": "높은",
-      "score": 98,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "heart",
       "lemma": "heart",
       "partOfSpeech": "n.",
-      "korean": "심장",
+      "korean": "(by heart) 외워서",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -156,8 +144,8 @@
     {
       "word": "prefer",
       "lemma": "prefer",
-      "partOfSpeech": "n.",
-      "korean": "선호하다",
+      "partOfSpeech": "v.",
+      "korean": "더 좋아하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -169,7 +157,7 @@
       "word": "minds",
       "lemma": "mind",
       "partOfSpeech": "n.",
-      "korean": "마음",
+      "korean": "정신, 마음",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -181,7 +169,7 @@
       "word": "frustrate",
       "lemma": "frustrate",
       "partOfSpeech": "v.",
-      "korean": "좌절시키다, 방해하다",
+      "korean": "좌절시키다, 가로막다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -193,7 +181,7 @@
       "word": "standards",
       "lemma": "standard",
       "partOfSpeech": "n.",
-      "korean": "표준",
+      "korean": "기준, 수준",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -214,24 +202,36 @@
       "freq": 1
     },
     {
-      "word": "mathematics",
-      "lemma": "mathematics",
-      "partOfSpeech": "n.",
-      "korean": "수학",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "ignorant",
+      "lemma": "ignorant",
+      "partOfSpeech": "adj.",
+      "korean": "(be ignorant of) ~을 모르는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "skills",
-      "lemma": "skill",
+      "word": "recite",
+      "lemma": "recite",
+      "partOfSpeech": "v.",
+      "korean": "암송하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "category",
+      "lemma": "category",
       "partOfSpeech": "n.",
-      "korean": "기술",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "범주",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

@@ -25,27 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "한 집단은 예술가로 구성되어 있다. 멕시코 문화를 찬양하는 사람들로 그"
-    },
-    {
-      "type": "instruction",
-      "text": "들은 자신들이 쓰거나 그리는 주제에 더 가까이 접근하기를 바란다. 또 다"
-    },
-    {
-      "type": "instruction",
-      "text": "른 집단은 줄어든 수입으로 살 수밖에 없는 퇴직자들로 이루어져 있다. 그"
-    },
-    {
-      "type": "instruction",
-      "text": "들은 서두르지 않고 오후의 긴 낮잠을 좋아한다. 세 번째 집단은 화려한"
-    },
-    {
-      "type": "instruction",
-      "text": "밤 생활이 있는 휴양지의 매력에 이끌린 사람들이다. 아카폴코에서 그들은"
-    },
-    {
-      "type": "instruction",
-      "text": "밤새껏 놀 수 있고 따뜻한 바다에서 수영할 수 있다."
+      "text": "멕시코에는 여러 부류의 방문객이 모여든다. 한 부류는 예술가들이다. 멕시코 문화를 동경하는 그들은 자신이 글로 쓰거나 그리는 대상 가까이에 있고 싶어 한다. 또 한 부류는 줄어든 수입으로 살아야 하는 은퇴자들이다. 그들은 긴 낮잠을 즐기는 느긋한 생활 방식을 좋아하고 온화한 기후를 즐긴다. 세 번째 부류는 화려한 밤 문화가 있는 휴양지에 끌린다. 아카풀코에서 그들은 밤새 놀고 따뜻한 바닷물에서 수영할 수 있다."
     },
     {
       "type": "choice",
@@ -68,40 +48,40 @@
     {
       "id": "reading-104-s001",
       "english": "Mexico attracts different types of visitors.",
-      "korean": "한 집단은 예술가로 구성되어 있다."
+      "korean": "멕시코에는 여러 부류의 방문객이 모여든다."
     },
     {
       "id": "reading-104-s002",
-      "english": "One group is composed of artists. As admirers of the Mexican culture,\n\nthey want to be close to the subjects they are writing about or\n\npainting.",
-      "korean": "멕시코 문화를 찬양하는 사람들로 그\n\n들은 자신들이 쓰거나 그리는 주제에 더 가까이 접근하기를 바란다."
+      "english": "One group is composed of artists. As admirers of the Mexican culture, they want to be close to the subjects they are writing about or painting.",
+      "korean": "한 부류는 예술가들이다. 멕시코 문화를 동경하는 그들은 자신이 글로 쓰거나 그리는 대상 가까이에 있고 싶어 한다."
     },
     {
       "id": "reading-104-s003",
-      "english": "Another group consists of retirees who also need to live on\n\nreduced incomes.",
-      "korean": "또 다\n\n른 집단은 줄어든 수입으로 살 수밖에 없는 퇴직자들로 이루어져 있다."
+      "english": "Another group consists of retirees who also need to live on reduced incomes.",
+      "korean": "또 한 부류는 줄어든 수입으로 살아야 하는 은퇴자들이다."
     },
     {
       "id": "reading-104-s004",
-      "english": "They like the unhurried way of life with its long\n\nafternoon nap and they enjoy the temperate climate.",
-      "korean": "그\n\n들은 서두르지 않고 오후의 긴 낮잠을 좋아한다."
+      "english": "They like the unhurried way of life with its long afternoon nap and they enjoy the temperate climate.",
+      "korean": "그들은 긴 낮잠을 즐기는 느긋한 생활 방식을 좋아하고 온화한 기후를 즐긴다."
     },
     {
       "id": "reading-104-s005",
-      "english": "The third group is\n\nattracted by the resort with its colorful night life.",
-      "korean": "세 번째 집단은 화려한\n\n밤 생활이 있는 휴양지의 매력에 이끌린 사람들이다."
+      "english": "The third group is attracted by the resort with its colorful night life.",
+      "korean": "세 번째 부류는 화려한 밤 문화가 있는 휴양지에 끌린다."
     },
     {
       "id": "reading-104-s006",
-      "english": "In Acapulco, they can\n\nplay all night, and swim in the warm ocean water.",
-      "korean": "아카폴코에서 그들은\n\n밤새껏 놀 수 있고 따뜻한 바다에서 수영할 수 있다."
+      "english": "In Acapulco, they can play all night, and swim in the warm ocean water.",
+      "korean": "아카풀코에서 그들은 밤새 놀고 따뜻한 바닷물에서 수영할 수 있다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "attracts",
       "lemma": "attract",
-      "partOfSpeech": "n.",
-      "korean": "유치하다",
+      "partOfSpeech": "v.",
+      "korean": "끌어들이다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -111,9 +91,9 @@
     },
     {
       "word": "reduced",
-      "lemma": "reduce",
-      "partOfSpeech": "v.",
-      "korean": "감소시키다",
+      "lemma": "reduced",
+      "partOfSpeech": "adj.",
+      "korean": "줄어든 (reduced incomes 줄어든 수입)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -124,7 +104,7 @@
     {
       "word": "climate",
       "lemma": "climate",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "n.",
       "korean": "기후",
       "score": 96,
       "reason": "대학 학술 독해 필수 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
@@ -136,7 +116,7 @@
     {
       "word": "different",
       "lemma": "different",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "다른",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
@@ -158,16 +138,16 @@
       "freq": 1
     },
     {
-      "word": "night",
-      "lemma": "night",
+      "word": "admirers",
+      "lemma": "admirer",
       "partOfSpeech": "n.",
-      "korean": "밤",
+      "korean": "애호가, 동경하는 사람",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "visitors",
@@ -182,22 +162,22 @@
       "freq": 1
     },
     {
-      "word": "group",
-      "lemma": "group",
+      "word": "retirees",
+      "lemma": "retiree",
       "partOfSpeech": "n.",
-      "korean": "그룹",
-      "score": 77,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "은퇴자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
       "word": "types",
       "lemma": "type",
       "partOfSpeech": "n.",
-      "korean": "유형",
+      "korean": "유형, 종류",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -209,7 +189,7 @@
       "word": "composed",
       "lemma": "compose",
       "partOfSpeech": "v.",
-      "korean": "작곡하다",
+      "korean": "(be composed of) ~로 이루어지다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -219,9 +199,9 @@
     },
     {
       "word": "painting",
-      "lemma": "painting",
+      "lemma": "paint",
       "partOfSpeech": "v.",
-      "korean": "그림",
+      "korean": "그리다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -231,9 +211,9 @@
     },
     {
       "word": "unhurried",
-      "lemma": "unhurry",
-      "partOfSpeech": "v.",
-      "korean": "unhurried (핵심 어휘)",
+      "lemma": "unhurried",
+      "partOfSpeech": "adj.",
+      "korean": "느긋한",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -244,8 +224,8 @@
     {
       "word": "temperate",
       "lemma": "temperate",
-      "partOfSpeech": "v.",
-      "korean": "온대",
+      "partOfSpeech": "adj.",
+      "korean": "온화한",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -254,12 +234,12 @@
       "freq": 1
     },
     {
-      "word": "ocean",
-      "lemma": "ocean",
+      "word": "resort",
+      "lemma": "resort",
       "partOfSpeech": "n.",
-      "korean": "바다",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "korean": "휴양지",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

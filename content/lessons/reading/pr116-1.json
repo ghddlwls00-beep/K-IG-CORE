@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "버스나 다른 대중 운송수단을 탈 경우, 조용히 그리고 정상적인 대화의 어조로 말하고, 또한 긴 전화 통화는 피하라. 큰 목소리로 활기차게 전화 통화를 하면 다른 사람들을 짜증나게 만들 수 있다. 당신의 무선 울림 장치를 남들을 혼란하게 만드는 일을 피할 수 있기에 실질적일 정도로 낮게 유지하라. 중요한 통화를 기대한다면, 당신의 전화를 가까이에 그리고 쉽게 접근할 수 있게 두라. 당신이 중요한 통화를 해야 하면서도 그러나 강의를 듣거나 및 콘서트 장에 가 있는 경우와 같이 부적당한 환경에 놓여 있다면, 전화를 진동 모드로 놓고 그 방을 떠난 후에 응답하라."
+      "text": "버스나 기차 같은 대중교통을 탈 때는 조용하거나 보통의 대화 목소리로 말하고, 긴 통화는 피하도록 하라. 크고 들뜬 대화는 다른 사람들을 짜증 나게 할 수 있다. 다른 사람을 방해하지 않도록 휴대 전화 벨소리를 가능한 한 작게 해 두라. 중요한 전화를 기다리고 있다면 전화기를 가까이, 쉽게 꺼낼 수 있는 곳에 두라. 중요한 전화를 받아야 하는데 강의나 공연 중처럼 적절하지 않은 곳에 있다면, 전화기를 진동으로 해 두었다가 밖으로 나간 뒤에 받으라."
     },
     {
       "type": "choice",
@@ -48,34 +48,34 @@
     {
       "id": "reading-116-s001",
       "english": "When riding on buses, trains, and other public transportation, speak in a quiet or normal conversational tone, and try to avoid extended phone conversations.",
-      "korean": "버스나 다른 대중 운송수단을 탈 경우, 조용히 그리고 정상적인 대화의 어조로 말하고, 또한 긴 전화 통화는 피하라."
+      "korean": "버스나 기차 같은 대중교통을 탈 때는 조용하거나 보통의 대화 목소리로 말하고, 긴 통화는 피하도록 하라."
     },
     {
       "id": "reading-116-s002",
       "english": "Loud, animated conversations can annoy others.",
-      "korean": "큰 목소리로 활기차게 전화 통화를 하면 다른 사람들을 짜증나게 만들 수 있다."
+      "korean": "크고 들뜬 대화는 다른 사람들을 짜증 나게 할 수 있다."
     },
     {
       "id": "reading-116-s003",
       "english": "Keep your wireless ringer as low as practical to avoid disturbing others.",
-      "korean": "당신의 무선 울림 장치를 남들을 혼란하게 만드는 일을 피할 수 있기에 실질적일 정도로 낮게 유지하라."
+      "korean": "다른 사람을 방해하지 않도록 휴대 전화 벨소리를 가능한 한 작게 해 두라."
     },
     {
       "id": "reading-116-s004",
       "english": "Keep your phone close and easily accessible if you're expecting an important call.",
-      "korean": "중요한 통화를 기대한다면, 당신의 전화를 가까이에 그리고 쉽게 접근할 수 있게 두라."
+      "korean": "중요한 전화를 기다리고 있다면 전화기를 가까이, 쉽게 꺼낼 수 있는 곳에 두라."
     },
     {
       "id": "reading-116-s005",
-      "english": "If you must take an important phone call but are in a(n) inappropriate surrounding, such as during lectures, and concerts, set the phone to vibrate mode and answer the phone only after leaving the room.",
-      "korean": "당신이 중요한 통화를 해야 하면서도 그러나 강의를 듣거나 및 콘서트 장에 가 있는 경우와 같이 부적당한 환경에 놓여 있다면, 전화를 진동 모드로 놓고 그 방을 떠난 후에 응답하라."
+      "english": "If you must take an important phone call but are in an inappropriate setting, such as during lectures and concerts, set the phone to vibrate mode and answer the phone only after leaving the room.",
+      "korean": "중요한 전화를 받아야 하는데 강의나 공연 중처럼 적절하지 않은 곳에 있다면, 전화기를 진동으로 해 두었다가 밖으로 나간 뒤에 받으라."
     }
   ],
   "readingVocabulary": [
     {
       "word": "quiet",
       "lemma": "quiet",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "조용한",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -88,7 +88,7 @@
       "word": "expecting",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "(전화 등을) 기다리다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -111,7 +111,7 @@
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
@@ -123,8 +123,8 @@
     {
       "word": "low",
       "lemma": "low",
-      "partOfSpeech": "n.",
-      "korean": "낮음",
+      "partOfSpeech": "adv.",
+      "korean": "작게 (as low as practical 가능한 한 작게)",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -134,9 +134,9 @@
     },
     {
       "word": "extended",
-      "lemma": "extend",
-      "partOfSpeech": "v.",
-      "korean": "연장하다",
+      "lemma": "extended",
+      "partOfSpeech": "adj.",
+      "korean": "긴, 오래 계속되는",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "conversations",
       "lemma": "conversation",
       "partOfSpeech": "n.",
-      "korean": "대화",
+      "korean": "대화, 통화",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -160,7 +160,7 @@
       "word": "riding",
       "lemma": "ride",
       "partOfSpeech": "v.",
-      "korean": "타고",
+      "korean": "타다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -169,12 +169,12 @@
       "freq": 1
     },
     {
-      "word": "surrounding",
-      "lemma": "surrounding",
-      "partOfSpeech": "v.",
-      "korean": "주변",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "inappropriate",
+      "lemma": "inappropriate",
+      "partOfSpeech": "adj.",
+      "korean": "적절하지 않은",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -184,7 +184,7 @@
       "word": "vibrate",
       "lemma": "vibrate",
       "partOfSpeech": "v.",
-      "korean": "진동하다, 떨리다",
+      "korean": "진동하다 (vibrate mode 진동 모드)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -196,7 +196,7 @@
       "word": "leaving",
       "lemma": "leave",
       "partOfSpeech": "v.",
-      "korean": "떠나다",
+      "korean": "나가다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -207,7 +207,7 @@
     {
       "word": "avoid",
       "lemma": "avoid",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "피하다",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
@@ -217,12 +217,12 @@
       "freq": 2
     },
     {
-      "word": "conversational",
-      "lemma": "conversational",
-      "partOfSpeech": "adj.",
-      "korean": "대화의, 구어체의",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "word": "annoy",
+      "lemma": "annoy",
+      "partOfSpeech": "v.",
+      "korean": "짜증 나게 하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -232,7 +232,7 @@
       "word": "public",
       "lemma": "public",
       "partOfSpeech": "adj.",
-      "korean": "대중",
+      "korean": "공공의 (public transportation 대중교통)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [

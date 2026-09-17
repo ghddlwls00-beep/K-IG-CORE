@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "A professor of business studied employment patterns in Korea and the United States. She described in her book some important differences. Among them, she paid particular attention to the number of years a person stay with a job. Koreans tend to have one job for their whole life. When they are young, they go to work for a company, and they stay with that company. In the United States, people move from one company to another. They change jobs very frequently."
+      "text": "A professor of business studied employment patterns in Korea and the United States. She described in her book some important differences. Among them, she paid particular attention to the number of years a person stays with a job. In the past, Koreans tended to have one job for their whole life. When they were young, they went to work for a company, and they stayed with that company. In the United States, people move from one company to another. They change jobs very frequently."
     },
     {
       "type": "choice",
@@ -48,37 +48,37 @@
     {
       "id": "reading-184-s001",
       "english": "A professor of business studied employment patterns in Korea and the United States.",
-      "korean": "한 경영학 교수가 한국과 미국의 고용 패턴을 연구했다."
+      "korean": "한 경영학 교수가 한국과 미국의 고용 형태를 연구했다."
     },
     {
       "id": "reading-184-s002",
       "english": "She described in her book some important differences.",
-      "korean": "그녀는 자신의 책 속에 몇 가지 중요한 차이점들을 기술했다."
+      "korean": "그녀는 책에서 몇 가지 중요한 차이점을 설명했다."
     },
     {
       "id": "reading-184-s003",
-      "english": "Among them, she paid particular attention to the number of years a person stay with a job.",
-      "korean": "그 것들 중에서, 그녀는 어떤 사람이 한 가지 직업에 종사하는 해의 수에 특별한 관심을 기울였다."
+      "english": "Among them, she paid particular attention to the number of years a person stays with a job.",
+      "korean": "그중에서도 그녀는 한 사람이 한 직장에 머무는 햇수에 특히 주목했다."
     },
     {
       "id": "reading-184-s004",
-      "english": "Koreans tend to have one job for their whole life.",
-      "korean": "젊었을 때, 그들은 한 회사를 위해 일하러 가서 그 회사에서 머문다."
+      "english": "In the past, Koreans tended to have one job for their whole life.",
+      "korean": "예전에 한국인들은 평생 한 직장에 다니는 경향이 있었다."
     },
     {
       "id": "reading-184-s005",
-      "english": "When they are young, they go to work for a company, and they stay with that company.",
-      "korean": "한국인들은 평생동안 한 직업을 갖는 경향이 있다."
+      "english": "When they were young, they went to work for a company, and they stayed with that company.",
+      "korean": "젊을 때 한 회사에 들어가면 그 회사에 계속 머물렀다."
     },
     {
       "id": "reading-184-s006",
       "english": "In the United States, people move from one company to another.",
-      "korean": "미국에서는 사람들이 한 회사에서 다른 회사로 이동을 한다."
+      "korean": "미국에서는 사람들이 이 회사에서 저 회사로 옮겨 다닌다."
     },
     {
       "id": "reading-184-s007",
       "english": "They change jobs very frequently.",
-      "korean": "그들은 직업(회사)을 매우 자주 바꾼다."
+      "korean": "그들은 직장을 매우 자주 바꾼다."
     }
   ],
   "readingVocabulary": [
@@ -86,7 +86,7 @@
       "word": "described",
       "lemma": "describe",
       "partOfSpeech": "v.",
-      "korean": "묘사하다",
+      "korean": "설명하다, 서술하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -97,7 +97,7 @@
     {
       "word": "young",
       "lemma": "young",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "젊은",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -107,34 +107,10 @@
       "freq": 1
     },
     {
-      "word": "united",
-      "lemma": "unite",
-      "partOfSpeech": "v.",
-      "korean": "단결하다",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "book",
-      "lemma": "book",
-      "partOfSpeech": "n.",
-      "korean": "책",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "studied",
       "lemma": "study",
       "partOfSpeech": "v.",
-      "korean": "공부하다",
+      "korean": "연구하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -143,21 +119,9 @@
       "freq": 1
     },
     {
-      "word": "states",
-      "lemma": "state",
-      "partOfSpeech": "n.",
-      "korean": "상태",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 82,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
@@ -169,8 +133,8 @@
     {
       "word": "change",
       "lemma": "change",
-      "partOfSpeech": "n.",
-      "korean": "변화",
+      "partOfSpeech": "v.",
+      "korean": "바꾸다",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 81점)",
       "examTags": [
@@ -206,7 +170,7 @@
       "word": "business",
       "lemma": "business",
       "partOfSpeech": "n.",
-      "korean": "사업",
+      "korean": "경영(학) (professor of business 경영학 교수)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -218,7 +182,7 @@
       "word": "employment",
       "lemma": "employment",
       "partOfSpeech": "n.",
-      "korean": "취업",
+      "korean": "고용, 취업",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -242,9 +206,45 @@
       "word": "frequently",
       "lemma": "frequently",
       "partOfSpeech": "adv.",
-      "korean": "자주, 빈번하게",
+      "korean": "자주",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "differences",
+      "lemma": "difference",
+      "partOfSpeech": "n.",
+      "korean": "차이",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "particular",
+      "lemma": "particular",
+      "partOfSpeech": "adj.",
+      "korean": "특별한 (pay particular attention 특히 주목하다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "tended",
+      "lemma": "tend",
+      "partOfSpeech": "v.",
+      "korean": "(tend to) ~하는 경향이 있다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

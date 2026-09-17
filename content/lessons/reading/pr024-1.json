@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "한국어에 관심이 있는 외국인의 숫자는 한국 회사들의 해외에서의 성공과 한국 문화에 대한 점점 증가하는 관심 때문에 지난 몇 년에 걸쳐 극적으로 증가해왔다. 예를 들어, 많은 중국 학생들은 더 좋은 기회와 봉급을 주는 한국 회사를 위해 일할 것을 계획함에 따라 한국에 관심을 갖게 되었다. 한국어 프로그램에 다니는 외국인 학생들의 총 숫자는 지난 해 말에 약 4,700명에서 금년에 서울에서만도 30,000명 이상으로 증가했다. 한국어를 말하는 사람들은 오랫동안 주로 한반도 출신에 한정되었었다. 한국어가 어느 날 세계 사회에서 인기를 얻게 될 것이라는 것을 상상했던 사람이 거의 없었다는 것은 당연하다"
+      "text": "한국어에 관심이 있는 외국인의 숫자는 한국 회사들의 해외에서의 성공과 한국 문화에 대한 점점 증가하는 관심 때문에 지난 몇 년에 걸쳐 극적으로 증가해왔다. 예를 들어, 많은 중국 학생들은 더 좋은 기회와 봉급을 주는 한국 회사를 위해 일할 것을 계획함에 따라 한국에 관심을 갖게 되었다. 한국어 프로그램에 다니는 외국인 학생들의 총 숫자는 지난 해 말에 약 4,700명에서 금년에 서울에서만도 30,000명 이상으로 증가했다. 한국어를 말하는 사람들은 오랫동안 주로 한반도 출신에 한정되었었다. 한국어가 어느 날 세계 사회에서 인기를 얻게 될 것이라는 것을 상상했던 사람이 거의 없었다는 것은 당연하다."
     },
     {
       "type": "choice",
@@ -68,7 +68,7 @@
     {
       "id": "reading-024-s005",
       "english": "It is no wonder few people ever imagined that the country’s language might one day become popular in the international community.",
-      "korean": "한국어가 어느 날 세계 사회에서 인기를 얻게 될 것이라는 것을 상상했던 사람이 거의 없었다는 것은 당연하다"
+      "korean": "한국어가 어느 날 세계 사회에서 인기를 얻게 될 것이라는 것을 상상했던 사람이 거의 없었다는 것은 당연하다."
     }
   ],
   "readingVocabulary": [
@@ -88,7 +88,7 @@
       "word": "increased",
       "lemma": "increase",
       "partOfSpeech": "v.",
-      "korean": "증가하다",
+      "korean": "늘다, 증가하다",
       "score": 116,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 116점)",
       "examTags": [
@@ -109,14 +109,14 @@
       "freq": 1
     },
     {
-      "word": "country",
-      "lemma": "country",
-      "partOfSpeech": "n.",
-      "korean": "국가",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "dramatically",
+      "lemma": "dramatically",
+      "partOfSpeech": "adv.",
+      "korean": "극적으로, 크게",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -135,8 +135,8 @@
     {
       "word": "offer",
       "lemma": "offer",
-      "partOfSpeech": "n.",
-      "korean": "제안",
+      "partOfSpeech": "v.",
+      "korean": "제공하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -147,8 +147,8 @@
     {
       "word": "interested",
       "lemma": "interested",
-      "partOfSpeech": "v.",
-      "korean": "관심이 있다",
+      "partOfSpeech": "adj.",
+      "korean": "관심 있는",
       "score": 91,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 91점)",
       "examTags": [
@@ -158,9 +158,9 @@
     },
     {
       "word": "growing",
-      "lemma": "grow",
-      "partOfSpeech": "v.",
-      "korean": "성장하다",
+      "lemma": "growing",
+      "partOfSpeech": "adj.",
+      "korean": "커지는, 늘어나는",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -184,7 +184,7 @@
       "word": "number",
       "lemma": "number",
       "partOfSpeech": "n.",
-      "korean": "번호",
+      "korean": "수 (the number of ~의 수)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -196,7 +196,7 @@
       "word": "firms",
       "lemma": "firm",
       "partOfSpeech": "n.",
-      "korean": "확고한",
+      "korean": "회사",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -231,8 +231,8 @@
     {
       "word": "overseas",
       "lemma": "overseas",
-      "partOfSpeech": "n.",
-      "korean": "해외",
+      "partOfSpeech": "adv.",
+      "korean": "해외에서",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [

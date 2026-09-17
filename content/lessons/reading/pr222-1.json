@@ -25,15 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "우리가 최근에 정보시대로 들어섰다는 주장은 잘못된 것이다. 휴대전화와 인터넷과 텔레비전의 범람으로 우리는 우리 조상이 소식이 먼 마을로 전해지지 않는 단순한 세상에 살았다고 잘못 생각한다. 우리가 과거에 어떻게 정보가 공유되었는지에 대해 상대적으로 거의 알지 못하기 때문에 매스미디어가 우리 시대를 과거와 다르게 만든다고 추정하는 것은 타당하지 않을 수도 있다."
-    },
-    {
-      "type": "instruction",
-      "text": "사실 올림픽은 페르시아인에 대한 아테네의 승리의 소식을 가져온 그리스 병사를 기념하여 행해진다. 우리 대부분은 통신용 북, 연기 신호, 교회 종, 배의 깃발 같은 다른 많은 예들을 떠올릴 수 있다. 그러나 그것들의 원시성은 우리가 정보에 대한 지속적이고 즉각적으로 접근할 수 있는 세계, 즉 근본적으로 다른 세계에 살고 있다는 우리의 느낌만을 확인할 뿐일 것이다."
-    },
-    {
-      "type": "instruction",
-      "text": "모든 시대는 정보를 공유하는 수단을 갖고 있었다. 우리 시대를 (과거와) 다르게 해주는 것은 우리가 얻는 정보의 밀도가 아니라, 그것을 전해주는 과학 기술이다. 인공위성 덕택에 우리는 세계의 다른 쪽에서 일어나는 사건에 대해 즉각적으로 알 수 있다. 파리에 있는 Benjamin Franklin이 필라델피아에서 보내진 편지를 받는 데는 보통 다섯 주가 걸렸다. 그러나 거기 사람들에게 소식은 여전히 새로웠고 놀라웠다."
+      "text": "우리가 최근에 정보시대로 들어섰다는 주장은 잘못된 것이다. 휴대전화와 인터넷과 텔레비전의 범람으로 우리는 우리 조상이 소식이 먼 마을로 전해지지 않는 단순한 세상에 살았다고 잘못 생각한다. 우리가 과거에 어떻게 정보가 공유되었는지에 대해 상대적으로 거의 알지 못하기 때문에 매스미디어가 우리 시대를 과거와 다르게 만든다고 추정하는 것은 타당하지 않을 수도 있다. 사실 마라톤 경주는 아테네가 페르시아를 이겼다는 소식을 전한 그리스 병사를 기리는 것이다. 우리 대부분은 통신용 북, 연기 신호, 교회 종, 배의 깃발 같은 다른 많은 예들을 떠올릴 수 있다. 그러나 그것들의 원시성은 우리가 정보에 대한 지속적이고 즉각적으로 접근할 수 있는 세계, 즉 근본적으로 다른 세계에 살고 있다는 우리의 느낌만을 확인할 뿐일 것이다. 모든 시대는 정보를 공유하는 수단을 갖고 있었다. 우리 시대를 (과거와) 다르게 해주는 것은 우리가 얻는 정보의 밀도가 아니라, 그것을 전해주는 과학 기술이다. 인공위성 덕택에 우리는 세계의 다른 쪽에서 일어나는 사건에 대해 즉각적으로 알 수 있다. 파리에 있는 Benjamin Franklin이 필라델피아에서 보내진 편지를 받는 데는 보통 다섯 주가 걸렸다. 그러나 거기 사람들에게 소식은 여전히 새로웠고 놀라웠다."
     },
     {
       "type": "choice",
@@ -70,8 +62,8 @@
     },
     {
       "id": "reading-222-s004",
-      "english": "In fact, the Olympics celebrate the memory of the Greek soldier who brought the news of the Athenian victory over the Persians.",
-      "korean": "사실 올림픽은 페르시아인에 대한 아테네의 승리의 소식을 가져온 그리스 병사를 기념하여 행해진다."
+      "english": "In fact, the marathon race celebrates the memory of the Greek soldier who brought the news of the Athenian victory over the Persians.",
+      "korean": "사실 마라톤 경주는 아테네가 페르시아를 이겼다는 소식을 전한 그리스 병사를 기리는 것이다."
     },
     {
       "id": "reading-222-s005",
@@ -123,34 +115,34 @@
       "freq": 1
     },
     {
-      "word": "receive",
-      "lemma": "receive",
-      "partOfSpeech": "adj.",
-      "korean": "받다",
-      "score": 96,
-      "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
+      "word": "assume",
+      "lemma": "assume",
+      "partOfSpeech": "v.",
+      "korean": "가정하다, 전제하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "letter",
-      "lemma": "letter",
-      "partOfSpeech": "n.",
-      "korean": "편지",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "transmitting",
+      "lemma": "transmit",
+      "partOfSpeech": "v.",
+      "korean": "전송하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "fundamentally",
-      "lemma": "fundamental",
-      "partOfSpeech": "adj.",
-      "korean": "근본적인, 핵심적인",
+      "lemma": "fundamentally",
+      "partOfSpeech": "adv.",
+      "korean": "근본적으로",
       "score": 91,
       "reason": "수능 독해 논리 전개 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 91점)",
       "examTags": [
@@ -175,7 +167,7 @@
       "word": "density",
       "lemma": "density",
       "partOfSpeech": "n.",
-      "korean": "밀도, 농도",
+      "korean": "밀도, 양",
       "score": 89,
       "reason": "대학 학술 독해 필수 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -184,46 +176,10 @@
       "freq": 1
     },
     {
-      "word": "far",
-      "lemma": "far",
-      "partOfSpeech": "n.",
-      "korean": "멀리",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 87,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "entered",
-      "lemma": "enter",
-      "partOfSpeech": "v.",
-      "korean": "입력하다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "misleading",
-      "lemma": "mislead",
-      "partOfSpeech": "v.",
-      "korean": "오도하다, 잘못 인도하다",
+      "lemma": "misleading",
+      "partOfSpeech": "adj.",
+      "korean": "오해를 부르는",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -232,22 +188,10 @@
       "freq": 1
     },
     {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 85,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 85점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "confirm",
       "lemma": "confirm",
-      "partOfSpeech": "n.",
-      "korean": "확인하다",
+      "partOfSpeech": "v.",
+      "korean": "굳혀 주다, 확인해 주다",
       "score": 84,
       "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -258,7 +202,7 @@
     {
       "word": "surprising",
       "lemma": "surprising",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "adj.",
       "korean": "놀라운",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
@@ -268,16 +212,64 @@
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 81,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 81점)",
+      "word": "inhabited",
+      "lemma": "inhabit",
+      "partOfSpeech": "v.",
+      "korean": "~에 살다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 3
+      "freq": 1
+    },
+    {
+      "word": "ancestors",
+      "lemma": "ancestor",
+      "partOfSpeech": "n.",
+      "korean": "조상",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "valid",
+      "lemma": "valid",
+      "partOfSpeech": "adj.",
+      "korean": "타당한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "primitiveness",
+      "lemma": "primitiveness",
+      "partOfSpeech": "n.",
+      "korean": "원시성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "satellites",
+      "lemma": "satellite",
+      "partOfSpeech": "n.",
+      "korean": "인공위성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     }
   ]
 }

@@ -48,55 +48,55 @@
     {
       "id": "reading-085-s001",
       "english": "Moles are dark spots on human skin.",
-      "korean": "점은 인간의 피부에 있는 검은 반점이다."
+      "korean": "점은 사람 피부에 있는 짙은 반점이다."
     },
     {
       "id": "reading-085-s002",
       "english": "They can vary in color from light to dark brown or black.",
-      "korean": "그것들은 밝은 갈색에서부터 어두운 갈색이나 검정 색까지 다양하다."
+      "korean": "점의 색은 옅은 갈색에서 짙은 갈색이나 검은색까지 다양하다."
     },
     {
       "id": "reading-085-s003",
       "english": "Almost everyone has at least one mole.",
-      "korean": "거의 모든 사람들은 적어도 한 개의 점을 갖고 있다."
+      "korean": "거의 모든 사람이 적어도 점 하나는 갖고 있다."
     },
     {
       "id": "reading-085-s004",
       "english": "According to ancient superstitions, moles reveal a person’s character.",
-      "korean": "고대의 미신에 따르면 점은 사람의 성격을 나타낸다."
+      "korean": "옛 미신에 따르면 점은 사람의 성격을 드러낸다."
     },
     {
       "id": "reading-085-s005",
       "english": "For example, a mole on one’s nose means that he or she is strong-willed and trustworthy.",
-      "korean": "예를 들어, 코에 있는 점은 그가 의지가 강하고 믿을 수 있다는 것을 의미한다."
+      "korean": "예를 들어 코에 있는 점은 그 사람이 의지가 강하고 믿을 만하다는 뜻이다."
     },
     {
       "id": "reading-085-s006",
       "english": "Moles are also believed to foretell the future.",
-      "korean": "점들은 또한 미래를 예언해준다고 믿어진다."
+      "korean": "점은 미래를 예언한다고도 여겨진다."
     },
     {
       "id": "reading-085-s007",
       "english": "Having a mole over one’s right eyebrow means he or she will be lucky with money and have a successful career.",
-      "korean": "오른쪽 눈썹 위의 점은 그가 금전 운이 있을 것이고 성공적인 직업을 가질 것임을 의미한다."
+      "korean": "오른쪽 눈썹 위에 점이 있으면 돈복이 있고 직업에서 성공한다는 뜻이다."
     },
     {
       "id": "reading-085-s008",
       "english": "A mole on the hand, however, is the most desired.",
-      "korean": "그러나 손에 있는 점이 가장 좋다."
+      "korean": "그러나 사람들이 가장 바라는 것은 손에 있는 점이다."
     },
     {
       "id": "reading-085-s009",
       "english": "It forecasts talent, health, and happiness.",
-      "korean": "그것은 재능과 건강과 행복을 예측해준다."
+      "korean": "그것은 재능과 건강과 행복을 예고한다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "dark",
       "lemma": "dark",
-      "partOfSpeech": "n.",
-      "korean": "어두운",
+      "partOfSpeech": "adj.",
+      "korean": "짙은, 어두운 (dark brown 짙은 갈색)",
       "score": 103,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 103점)",
       "examTags": [
@@ -120,7 +120,7 @@
       "word": "believed",
       "lemma": "believe",
       "partOfSpeech": "v.",
-      "korean": "믿다",
+      "korean": "믿다 (be believed to ~한다고 여겨지다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -143,8 +143,8 @@
     {
       "word": "light",
       "lemma": "light",
-      "partOfSpeech": "n.",
-      "korean": "빛",
+      "partOfSpeech": "adj.",
+      "korean": "옅은 (light brown 옅은 갈색)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -166,9 +166,9 @@
     },
     {
       "word": "moles",
-      "lemma": "moles",
+      "lemma": "mole",
       "partOfSpeech": "n.",
-      "korean": "두더지들; 점들",
+      "korean": "(피부의) 점",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -180,7 +180,7 @@
       "word": "spots",
       "lemma": "spot",
       "partOfSpeech": "n.",
-      "korean": "점, 반점",
+      "korean": "반점",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -191,8 +191,8 @@
     {
       "word": "forecasts",
       "lemma": "forecast",
-      "partOfSpeech": "n.",
-      "korean": "예측",
+      "partOfSpeech": "v.",
+      "korean": "예고하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -203,8 +203,8 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "v.",
-      "korean": "~에 따르면",
+      "partOfSpeech": "adv.",
+      "korean": "(according to) ~에 따르면",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -216,7 +216,7 @@
       "word": "foretell",
       "lemma": "foretell",
       "partOfSpeech": "v.",
-      "korean": "예언하다, 예견하다",
+      "korean": "예언하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -240,7 +240,7 @@
       "word": "reveal",
       "lemma": "reveal",
       "partOfSpeech": "v.",
-      "korean": "밝히다, 드러내다",
+      "korean": "드러내다",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -250,16 +250,16 @@
       "freq": 1
     },
     {
-      "word": "mole",
-      "lemma": "mole",
+      "word": "superstitions",
+      "lemma": "superstition",
       "partOfSpeech": "n.",
-      "korean": "두더지; 점, 사마귀",
-      "score": 73,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "korean": "미신",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 4
+      "freq": 1
     }
   ]
 }

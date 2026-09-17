@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "The booming cities of the late nineteenth century had their share of problems : crime, fires, garbage, disease. But cities also had their share of pleasures. Cities-dwellers were less isolated than people living in the country. City people were able to get together to share ideas, entertainments, and common creative interests. Because the large populations were necessary to support libraries, theaters, museums, and art galleries, these cultural institutions first developed as part of the trend toward urbanization."
+      "text": "The booming cities of the late nineteenth century had their share of problems: crime, fires, garbage, disease. But cities also had their share of pleasures. City dwellers were less isolated than people living in the country. City people were able to get together to share ideas, entertainments, and common creative interests. Because the large populations were necessary to support libraries, theaters, museums, and art galleries, these cultural institutions first developed as part of the trend toward urbanization."
     },
     {
       "type": "choice",
@@ -47,8 +47,8 @@
   "readingSentences": [
     {
       "id": "reading-206-s001",
-      "english": "The booming cities of the late nineteenth century had their share of problems : crime, fires, garbage, disease.",
-      "korean": "19C 후반에 떠오른 도시들은 범죄, 화재, 쓰레기, 질병 등과 같은 나름대로의 문제들이 있었다."
+      "english": "The booming cities of the late nineteenth century had their share of problems: crime, fires, garbage, disease.",
+      "korean": "19세기 후반 급성장한 도시들에는 범죄, 화재, 쓰레기, 질병 같은 나름의 문제가 있었다."
     },
     {
       "id": "reading-206-s002",
@@ -57,7 +57,7 @@
     },
     {
       "id": "reading-206-s003",
-      "english": "Cities-dwellers were less isolated than people living in the country.",
+      "english": "City dwellers were less isolated than people living in the country.",
       "korean": "도시 거주자들은 시골에 사는 사람들보다 덜 고립되었다."
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "reading-206-s005",
       "english": "Because the large populations were necessary to support libraries, theaters, museums, and art galleries, these cultural institutions first developed as part of the trend toward urbanization.",
-      "korean": "많은 인구가 도서관, 극장, 박물관 그리고 미술관들의 유지를 위해 필요했기 때문에 이러한 문화적 공공시설들이 도시화의 일부로 먼저 개발되었다."
+      "korean": "많은 인구가 도서관, 극장, 박물관 그리고 미술관들의 유지를 위해 필요했기 때문에 이런 문화 시설들은 도시화의 흐름 속에서 처음 발달했다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +76,7 @@
       "word": "share",
       "lemma": "share",
       "partOfSpeech": "n.",
-      "korean": "공유하다",
+      "korean": "몫 (have one's share of ~을 적잖이 겪다)",
       "score": 112,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 112점)",
       "examTags": [
@@ -88,25 +88,13 @@
       "word": "developed",
       "lemma": "develop",
       "partOfSpeech": "v.",
-      "korean": "발전시키다, 개발하다",
+      "korean": "발달하다, 생겨나다",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
         "중학기초",
         "수능",
         "TOEIC"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "late",
-      "lemma": "late",
-      "partOfSpeech": "v.",
-      "korean": "늦은; 늦게",
-      "score": 105,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
-      "examTags": [
-        "중학기초"
       ],
       "freq": 1
     },
@@ -125,8 +113,8 @@
     {
       "word": "support",
       "lemma": "support",
-      "partOfSpeech": "n.",
-      "korean": "지원하다",
+      "partOfSpeech": "v.",
+      "korean": "유지하다, 떠받치다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -135,70 +123,10 @@
       "freq": 1
     },
     {
-      "word": "art",
-      "lemma": "art",
-      "partOfSpeech": "n.",
-      "korean": "예술",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "country",
-      "lemma": "country",
-      "partOfSpeech": "n.",
-      "korean": "국가",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "ideas",
-      "lemma": "idea",
-      "partOfSpeech": "n.",
-      "korean": "아이디어",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "cities",
-      "lemma": "city",
-      "partOfSpeech": "n.",
-      "korean": "도시",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
       "word": "booming",
       "lemma": "booming",
       "partOfSpeech": "adj.",
-      "korean": "호황을 누리는, 급성장하는",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "nineteenth",
-      "lemma": "nineteenth",
-      "partOfSpeech": "adj.",
-      "korean": "열아홉 번째의, 19번째",
+      "korean": "급성장하는",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -234,9 +162,81 @@
       "word": "cultural",
       "lemma": "cultural",
       "partOfSpeech": "adj.",
-      "korean": "문화적인",
+      "korean": "문화의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "dwellers",
+      "lemma": "dweller",
+      "partOfSpeech": "n.",
+      "korean": "거주자 (city dwellers 도시 거주자)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "isolated",
+      "lemma": "isolated",
+      "partOfSpeech": "adj.",
+      "korean": "고립된",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "entertainments",
+      "lemma": "entertainment",
+      "partOfSpeech": "n.",
+      "korean": "오락",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "populations",
+      "lemma": "population",
+      "partOfSpeech": "n.",
+      "korean": "인구",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "institutions",
+      "lemma": "institution",
+      "partOfSpeech": "n.",
+      "korean": "기관, 시설",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "urbanization",
+      "lemma": "urbanization",
+      "partOfSpeech": "n.",
+      "korean": "도시화",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

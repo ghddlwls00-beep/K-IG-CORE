@@ -25,27 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "부모들은 친구 선택이 모든 아이들에게 얼마나 중요한지를 안다. 소시적 친구관계"
-    },
-    {
-      "type": "instruction",
-      "text": "로부터 부모들은 아이들이 어떤 경향으로 흐르고 있는지를 알 수 있다. 훌륭한 우"
-    },
-    {
-      "type": "instruction",
-      "text": "정은 여러분을 성장하게 하고 잘못된 우정은 여러분을 저하시키기 때문에 우정은"
-    },
-    {
-      "type": "instruction",
-      "text": "중요하다. 그래서 누가 우리 애들의 친구인가는 중요하다. 애들에 대한 본보기로,"
-    },
-    {
-      "type": "instruction",
-      "text": "우리의 친구가 누구냐 하는 것도 중요하다. 친구란 보다 나은 부리의 본성의 연합"
-    },
-    {
-      "type": "instruction",
-      "text": "체 여야 한다."
+      "text": "부모라면 누구나 친구 선택이 아이에게 얼마나 중요한지 안다. 어린 시절의 친구 관계를 보면 부모는 아이가 어느 쪽으로 기울고 있는지 알 수 있다. 좋은 우정은 사람을 끌어올리고 나쁜 우정은 끌어내리기 때문에 친구 관계는 중요하다. 그러니 우리 아이들의 친구가 누구인지는 중요하다. 그리고 아이들에게 본보기가 된다는 점에서 우리의 친구가 누구인지도 중요하다. 친구는 우리의 더 나은 본성의 편이 되어야 한다."
     },
     {
       "type": "choice",
@@ -67,33 +47,33 @@
   "readingSentences": [
     {
       "id": "reading-141-s001",
-      "english": "Every parent know how crucial the choice of friends is for every child.",
-      "korean": "부모들은 친구 선택이 모든 아이들에게 얼마나 중요한지를 안다."
+      "english": "Every parent knows how crucial the choice of friends is for every child.",
+      "korean": "부모라면 누구나 친구 선택이 아이에게 얼마나 중요한지 안다."
     },
     {
       "id": "reading-141-s002",
       "english": "Childhood friendships tell parents which ways their children are tending.",
-      "korean": "소시적 친구관계 로부터 부모들은 아이들이 어떤 경향으로 흐르고 있는지를 알 수 있다."
+      "korean": "어린 시절의 친구 관계를 보면 부모는 아이가 어느 쪽으로 기울고 있는지 알 수 있다."
     },
     {
       "id": "reading-141-s003",
       "english": "They are important because good friendships bring you up, and bad friendships bring you down.",
-      "korean": "훌륭한 우 정은 여러분을 성장하게 하고 잘못된 우정은 여러분을 저하시키기 때문에 우정은 중요하다."
+      "korean": "좋은 우정은 사람을 끌어올리고 나쁜 우정은 끌어내리기 때문에 친구 관계는 중요하다."
     },
     {
       "id": "reading-141-s004",
       "english": "So it matters who our children's friends are.",
-      "korean": "그래서 누가 우리 애들의 친구인가는 중요하다."
+      "korean": "그러니 우리 아이들의 친구가 누구인지는 중요하다."
     },
     {
       "id": "reading-141-s005",
-      "english": "And it matters, as example to our children, who our friends are.",
-      "korean": "애들에 대한 본보기로, 우리의 친구가 누구냐 하는 것도 중요하다."
+      "english": "And it matters, as an example to our children, who our friends are.",
+      "korean": "그리고 아이들에게 본보기가 된다는 점에서 우리의 친구가 누구인지도 중요하다."
     },
     {
       "id": "reading-141-s006",
       "english": "Friends should be allies of our better nature.",
-      "korean": "친구란 보다 나은 부리의 본성의 연합 체 여야 한다."
+      "korean": "친구는 우리의 더 나은 본성의 편이 되어야 한다."
     }
   ],
   "readingVocabulary": [
@@ -113,7 +93,7 @@
       "word": "friendships",
       "lemma": "friendship",
       "partOfSpeech": "n.",
-      "korean": "우정, 친선",
+      "korean": "우정, 친구 관계",
       "score": 104,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -125,7 +105,7 @@
       "word": "parent",
       "lemma": "parent",
       "partOfSpeech": "n.",
-      "korean": "부모, 어버이",
+      "korean": "부모",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -138,7 +118,7 @@
       "word": "nature",
       "lemma": "nature",
       "partOfSpeech": "n.",
-      "korean": "자연",
+      "korean": "본성 (our better nature 우리의 더 나은 본성)",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -147,21 +127,21 @@
       "freq": 1
     },
     {
-      "word": "every",
-      "lemma": "every",
+      "word": "example",
+      "lemma": "example",
       "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+      "korean": "본보기",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 82,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
@@ -174,7 +154,7 @@
       "word": "crucial",
       "lemma": "crucial",
       "partOfSpeech": "adj.",
-      "korean": "중대한, 결정적인",
+      "korean": "매우 중요한",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -192,13 +172,13 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 2
     },
     {
       "word": "bring",
       "lemma": "bring",
       "partOfSpeech": "v.",
-      "korean": "가져오다",
+      "korean": "(bring up) 끌어올리다, (bring down) 끌어내리다",
       "score": 79,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 79점)",
       "examTags": [
@@ -210,7 +190,7 @@
       "word": "choice",
       "lemma": "choice",
       "partOfSpeech": "n.",
-      "korean": "선택, 선택권",
+      "korean": "선택",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -222,7 +202,7 @@
       "word": "tending",
       "lemma": "tend",
       "partOfSpeech": "v.",
-      "korean": "경향",
+      "korean": "(어떤 방향으로) 기울다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -234,7 +214,7 @@
       "word": "allies",
       "lemma": "ally",
       "partOfSpeech": "n.",
-      "korean": "동맹",
+      "korean": "편, 협력자",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -245,8 +225,8 @@
     {
       "word": "matters",
       "lemma": "matter",
-      "partOfSpeech": "n.",
-      "korean": "문제",
+      "partOfSpeech": "v.",
+      "korean": "중요하다",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 74점)",
       "examTags": [
@@ -258,7 +238,7 @@
       "word": "childhood",
       "lemma": "childhood",
       "partOfSpeech": "n.",
-      "korean": "어린 시절, 유년기",
+      "korean": "어린 시절",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [

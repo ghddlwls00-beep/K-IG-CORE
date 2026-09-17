@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "물, 토양, 그리고 식물을 덮고 있는 녹색지대가 지구의 동물의 생명을 지지하고 있는 세계를 구성하고 있다. 비록 현대 인간은 그 사실을 거의 기억하고 있지 않지만, 인간은 태양에너지를 동력화 시키고, 생명을 위해 인간이 의지하는 기본적인 음식을 만드는 식물군이 없으면 존재할 수 없다. 우리의 식물에 대한 태도는 너무 단순하고 편협하다. 왜냐하면, 만약 식물에게서 즉각적인 이용이 된다고 생각하면 식물 성장을 촉진시킨다. 그리고 어떤 이유가 있어 식물의 존재가 바람직하지 않다거나, 단지 무관심한 문제가 되면, 우리는 곧바로 식물을 파괴하는 그런 바보 같은 짓을 한다."
+      "text": "물과 흙, 그리고 식물이라는 지구의 녹색 외투가 지구의 동물들을 부양하는 세계를 이룬다. 현대인은 그 사실을 좀처럼 기억하지 못하지만, 태양 에너지를 이용해 인간이 생명을 의지하는 기본 식량을 만들어 내는 식물이 없다면 인간은 존재할 수 없을 것이다. 식물에 대한 우리의 태도는 유난히 편협하다. 어떤 식물에서 당장의 쓸모를 발견하면 우리는 그것을 기른다. 어떤 이유로든 그 존재가 바람직하지 않거나 그저 관심 밖의 일이라고 여기면, 우리는 곧바로 그것을 없애 버리도록 선고할지도 모른다."
     },
     {
       "type": "choice",
@@ -48,27 +48,27 @@
     {
       "id": "reading-020-s001",
       "english": "Water, soil, and the earth's green mantle of plants make up the world that supports the animal life of the earth.",
-      "korean": "물, 토양, 그리고 식물을 덮고 있는 녹색지대가 지구의 동물의 생명을 지지하고 있는 세계를 구성하고 있다."
+      "korean": "물과 흙, 그리고 식물이라는 지구의 녹색 외투가 지구의 동물들을 부양하는 세계를 이룬다."
     },
     {
       "id": "reading-020-s002",
       "english": "Although modern man seldom remembers the fact, he could not exist without the plants that harness the sun's energy and manufacture the basic foodstuff he depends upon for life.",
-      "korean": "비록 현대 인간은 그 사실을 거의 기억하고 있지 않지만, 인간은 태양에너지를 동력화 시키고, 생명을 위해 인간이 의지하는 기본적인 음식을 만드는 식물군이 없으면 존재할 수 없다."
+      "korean": "현대인은 그 사실을 좀처럼 기억하지 못하지만, 태양 에너지를 이용해 인간이 생명을 의지하는 기본 식량을 만들어 내는 식물이 없다면 인간은 존재할 수 없을 것이다."
     },
     {
       "id": "reading-020-s003",
       "english": "Our attitude toward plants is a singularly narrow one.",
-      "korean": "우리의 식물에 대한 태도는 너무 단순하고 편협하다."
+      "korean": "식물에 대한 우리의 태도는 유난히 편협하다."
     },
     {
       "id": "reading-020-s004",
       "english": "If we see any immediate utility in a plant we foster it.",
-      "korean": "왜냐하면, 만약 식물에게서 즉각적인 이용이 된다고 생각하면 식물 성장을 촉진시킨다."
+      "korean": "어떤 식물에서 당장의 쓸모를 발견하면 우리는 그것을 기른다."
     },
     {
       "id": "reading-020-s005",
       "english": "If for any reason we find its presence undesirable or merely a matter of indifference, we may condemn it to destruction forthwith.",
-      "korean": "그리고 어떤 이유가 있어 식물의 존재가 바람직하지 않다거나, 단지 무관심한 문제가 되면, 우리는 곧바로 식물을 파괴하는 그런 바보 같은 짓을 한다."
+      "korean": "어떤 이유로든 그 존재가 바람직하지 않거나 그저 관심 밖의 일이라고 여기면, 우리는 곧바로 그것을 없애 버리도록 선고할지도 모른다."
     }
   ],
   "readingVocabulary": [
@@ -94,13 +94,13 @@
       "examTags": [
         "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "supports",
       "lemma": "support",
-      "partOfSpeech": "n.",
-      "korean": "지원하다",
+      "partOfSpeech": "v.",
+      "korean": "부양하다, 살아가게 하다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -112,7 +112,7 @@
       "word": "animal",
       "lemma": "animal",
       "partOfSpeech": "adj.",
-      "korean": "동물",
+      "korean": "동물의 (animal life 동물들)",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 104점)",
       "examTags": [
@@ -121,21 +121,21 @@
       "freq": 1
     },
     {
-      "word": "reason",
-      "lemma": "reason",
-      "partOfSpeech": "n.",
-      "korean": "이유",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "word": "harness",
+      "lemma": "harness",
+      "partOfSpeech": "v.",
+      "korean": "(에너지를) 이용하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "remembers",
       "lemma": "remember",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "기억하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -147,8 +147,8 @@
     {
       "word": "depends",
       "lemma": "depend",
-      "partOfSpeech": "n.",
-      "korean": "의존하다",
+      "partOfSpeech": "v.",
+      "korean": "의지하다 (depend upon ~에 의지하다)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -159,7 +159,7 @@
     {
       "word": "exist",
       "lemma": "exist",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "존재하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -171,8 +171,8 @@
     {
       "word": "narrow",
       "lemma": "narrow",
-      "partOfSpeech": "n.",
-      "korean": "좁은",
+      "partOfSpeech": "adj.",
+      "korean": "편협한, 좁은",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -181,26 +181,26 @@
       "freq": 1
     },
     {
-      "word": "fact",
-      "lemma": "fact",
+      "word": "utility",
+      "lemma": "utility",
       "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "쓸모, 유용성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
+      "word": "mantle",
+      "lemma": "mantle",
       "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
+      "korean": "덮개, 외투 (green mantle of plants 식물이라는 녹색 외투)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -208,7 +208,7 @@
       "word": "green",
       "lemma": "green",
       "partOfSpeech": "adj.",
-      "korean": "친환경의, 녹색의",
+      "korean": "녹색의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -220,7 +220,7 @@
       "word": "undesirable",
       "lemma": "undesirable",
       "partOfSpeech": "adj.",
-      "korean": "바람직하지 않은, 달갑지 않은",
+      "korean": "바람직하지 않은",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -229,12 +229,12 @@
       "freq": 1
     },
     {
-      "word": "water",
-      "lemma": "water",
+      "word": "destruction",
+      "lemma": "destruction",
       "partOfSpeech": "n.",
-      "korean": "물",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "파괴",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

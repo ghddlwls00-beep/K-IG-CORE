@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "There is a difference between being an onlooker and being a true observer of art. Onlookers just walk by a work of art, letting their eyes record it while their minds are elsewhere. They have no true appreciation of art. Observers, on the other hand, are informed and appreciative They have spent the time and energy to make art meaningful to themselves. They don't simply exist side by side with art They are aware of its existence in even the smallest part of their daily life."
+      "text": "There is a difference between being an onlooker and being a true observer of art. Onlookers just walk by a work of art, letting their eyes record it while their minds are elsewhere. They have no true appreciation of art. Observers, on the other hand, are informed and appreciative. They have spent the time and energy to make art meaningful to themselves. They don't simply exist side by side with art. They are aware of its existence in even the smallest part of their daily life."
     },
     {
       "type": "choice",
@@ -48,27 +48,27 @@
     {
       "id": "reading-186-s001",
       "english": "There is a difference between being an onlooker and being a true observer of art.",
-      "korean": "구경꾼과 진정한 예술 감상자 사이에는 차이가 있다."
+      "korean": "그냥 구경하는 사람과 진정으로 예술을 감상하는 사람 사이에는 차이가 있다."
     },
     {
       "id": "reading-186-s002",
       "english": "Onlookers just walk by a work of art, letting their eyes record it while their minds are elsewhere.",
-      "korean": "구경꾼은, 마음은 딴 곳에 있는 체로 눈은 그 것을 보면서, 예술품의 옆을 자나 간다."
+      "korean": "구경꾼은 마음은 딴 데 둔 채 눈으로만 작품을 훑으며 그 옆을 지나간다."
     },
     {
       "id": "reading-186-s003",
       "english": "They have no true appreciation of art.",
-      "korean": "그들은 예술품을 진정으로 감상하지 않는다."
+      "korean": "그들은 예술을 진정으로 감상하지 않는다."
     },
     {
       "id": "reading-186-s004",
-      "english": "Observers, on the other hand, are informed and appreciative They have spent the time and energy to make art meaningful to themselves.",
-      "korean": "반면에, 감상자는 충분한 지식과 감상력이 있다. 그들은 예술품이 자신에게 의미있는 것이 되도록 시간과 정력을 쏟는다."
+      "english": "Observers, on the other hand, are informed and appreciative. They have spent the time and energy to make art meaningful to themselves.",
+      "korean": "반면 감상자는 아는 것이 많고 감상할 줄 안다. 그들은 예술이 자신에게 의미 있게 되도록 시간과 힘을 들였다."
     },
     {
       "id": "reading-186-s005",
-      "english": "They don't simply exist side by side with art They are aware of its existence in even the smallest part of their daily life.",
-      "korean": "그들은 단순히 예술품 곁에 존재하는게 아니다. 그들은 일상의 사소한 부분에서도 예술이 존재함을 인식한다."
+      "english": "They don't simply exist side by side with art. They are aware of its existence in even the smallest part of their daily life.",
+      "korean": "그들은 그저 예술 곁에 있는 것이 아니다. 일상의 아주 작은 부분에서도 예술이 있다는 것을 알아차린다."
     }
   ],
   "readingVocabulary": [
@@ -87,7 +87,7 @@
     {
       "word": "exist",
       "lemma": "exist",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "존재하다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
@@ -97,74 +97,26 @@
       "freq": 1
     },
     {
-      "word": "minds",
-      "lemma": "mind",
+      "word": "side",
+      "lemma": "side",
       "partOfSpeech": "n.",
-      "korean": "마음",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "(side by side) 나란히",
+      "score": 76,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "spent",
       "lemma": "spend",
-      "partOfSpeech": "n.",
-      "korean": "지출하다",
+      "partOfSpeech": "v.",
+      "korean": "(시간을) 들이다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "eyes",
-      "lemma": "eye",
-      "partOfSpeech": "n.",
-      "korean": "눈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "hand",
-      "lemma": "hand",
-      "partOfSpeech": "n.",
-      "korean": "손",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "difference",
-      "lemma": "difference",
-      "partOfSpeech": "n.",
-      "korean": "차이",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "between",
-      "lemma": "between",
-      "partOfSpeech": "n.",
-      "korean": "사이에",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
       ],
       "freq": 1
     },
@@ -172,7 +124,7 @@
       "word": "onlooker",
       "lemma": "onlooker",
       "partOfSpeech": "n.",
-      "korean": "구경꾼, 목격자",
+      "korean": "구경꾼",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -193,16 +145,64 @@
       "freq": 1
     },
     {
-      "word": "true",
-      "lemma": "true",
+      "word": "appreciation",
+      "lemma": "appreciation",
       "partOfSpeech": "n.",
-      "korean": "사실인, 진실한",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "korean": "감상, 진가를 알아봄",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
+    },
+    {
+      "word": "appreciative",
+      "lemma": "appreciative",
+      "partOfSpeech": "adj.",
+      "korean": "감상할 줄 아는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "informed",
+      "lemma": "informed",
+      "partOfSpeech": "adj.",
+      "korean": "잘 아는, 식견 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "meaningful",
+      "lemma": "meaningful",
+      "partOfSpeech": "adj.",
+      "korean": "의미 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "aware",
+      "lemma": "aware",
+      "partOfSpeech": "adj.",
+      "korean": "(be aware of) ~을 알고 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     },
     {
       "word": "existence",
@@ -217,28 +217,28 @@
       "freq": 1
     },
     {
-      "word": "smallest",
-      "lemma": "small",
-      "partOfSpeech": "n.",
-      "korean": "작은",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "elsewhere",
+      "lemma": "elsewhere",
+      "partOfSpeech": "adv.",
+      "korean": "다른 곳에",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "side",
-      "lemma": "side",
+      "word": "difference",
+      "lemma": "difference",
       "partOfSpeech": "n.",
-      "korean": "측면",
-      "score": 76,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
+      "korean": "차이",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     }
   ]
 }

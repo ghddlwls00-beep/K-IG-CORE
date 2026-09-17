@@ -25,31 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "전역의 사람들은 1.1시간을 매일 도로상에서 보낸다. 수 천 명이 죽고, 수 십만"
-    },
-    {
-      "type": "instruction",
-      "text": "명이 매일 차 사고로 부상당한다. 우리는 대기중에 엄청난 양의 CO2를 방출하고"
-    },
-    {
-      "type": "instruction",
-      "text": "있는데, 이의 1/3은 자동차에서 나온다. 우리는 이 기체가 온실 효과를 야기시킨"
-    },
-    {
-      "type": "instruction",
-      "text": "다는 것을 안다. 아무리 우리가 많은 도로를 건설한다 할지라도 도로는 북적이고,"
-    },
-    {
-      "type": "instruction",
-      "text": "도로를 건설하는 것은 자연을 파괴시킨다. 엄청난 양의 공간이 나무나 새들에게"
-    },
-    {
-      "type": "instruction",
-      "text": "보다는 주차장을 위해서 양도되어진다. 따라서, 차이용이 값비싸고 해로운 많은"
-    },
-    {
-      "type": "instruction",
-      "text": "경우들에 대해 알고 있다."
+      "text": "전 세계 사람들은 하루 평균 1.1시간을 도로에서 보낸다. 날마다 수천 명이 교통사고로 죽고 수만 명이 다친다. 우리는 대기 중에 엄청난 양의 이산화탄소를 내뿜고 있으며, 그 상당 부분이 자동차에서 나온다. 우리는 이 기체가 온실 효과를 일으킨다는 것을 안다. 도로를 아무리 많이 지어도 붐비고, 도로를 짓는 일은 자연을 파괴한다. 엄청난 공간이 나무와 새가 아니라 주차장에 내주어진다. 이처럼 우리는 자동차 이용이 비용이 많이 들고 해로운 점을 여러 가지 알고 있다."
     },
     {
       "type": "choice",
@@ -72,45 +48,45 @@
     {
       "id": "reading-232-s001",
       "english": "People all around the world spend an average of 1.1 hours on the road each day.",
-      "korean": "전역의 사람들은 1.1시간을 매일 도로상에서 보낸다."
+      "korean": "전 세계 사람들은 하루 평균 1.1시간을 도로에서 보낸다."
     },
     {
       "id": "reading-232-s002",
-      "english": "Thousands of people are killed, and hundreds of thousands injured each day in car accidents.",
-      "korean": "수 천 명이 죽고, 수 십만 명이 매일 차 사고로 부상당한다."
+      "english": "Thousands of people are killed, and tens of thousands injured each day in car accidents.",
+      "korean": "날마다 수천 명이 교통사고로 죽고 수만 명이 다친다."
     },
     {
       "id": "reading-232-s003",
-      "english": "We are pumping huge quantities of CO2 into the atmosphere, almost one-third of which comes from cars.",
-      "korean": "우리는 대기중에 엄청난 양의 CO2를 방출하고 있는데, 이의 1 3은 자동차에서 나온다."
+      "english": "We are pumping huge quantities of CO2 into the atmosphere, and a large share of it comes from cars.",
+      "korean": "우리는 대기 중에 엄청난 양의 이산화탄소를 내뿜고 있으며, 그 상당 부분이 자동차에서 나온다."
     },
     {
       "id": "reading-232-s004",
       "english": "We know that this gas causes a greenhouse effect.",
-      "korean": "우리는 이 기체가 온실 효과를 야기시킨 다는 것을 안다."
+      "korean": "우리는 이 기체가 온실 효과를 일으킨다는 것을 안다."
     },
     {
       "id": "reading-232-s005",
       "english": "Our roads are crowded no matter how many we build, and building them destroys nature.",
-      "korean": "아무리 우리가 많은 도로를 건설한다 할지라도 도로는 북적이고, 도로를 건설하는 것은 자연을 파괴시킨다."
+      "korean": "도로를 아무리 많이 지어도 붐비고, 도로를 짓는 일은 자연을 파괴한다."
     },
     {
       "id": "reading-232-s006",
       "english": "Huge amounts of space are given over to parking lots rather than to trees and birds.",
-      "korean": "엄청난 양의 공간이 나무나 새들에게 보다는 주차장을 위해서 양도되어진다."
+      "korean": "엄청난 공간이 나무와 새가 아니라 주차장에 내주어진다."
     },
     {
       "id": "reading-232-s007",
       "english": "Thus, we know of many ways in which car use is costly and harmful.",
-      "korean": "따라서, 차이용이 값비싸고 해로운 많은 경우들에 대해 알고 있다."
+      "korean": "이처럼 우리는 자동차 이용이 비용이 많이 들고 해로운 점을 여러 가지 알고 있다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "spend",
       "lemma": "spend",
-      "partOfSpeech": "n.",
-      "korean": "지출하다",
+      "partOfSpeech": "v.",
+      "korean": "(시간을) 보내다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -121,7 +97,7 @@
     {
       "word": "destroys",
       "lemma": "destroy",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "파괴하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -133,8 +109,8 @@
     {
       "word": "causes",
       "lemma": "cause",
-      "partOfSpeech": "n.",
-      "korean": "원인",
+      "partOfSpeech": "v.",
+      "korean": "일으키다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -158,7 +134,7 @@
       "word": "atmosphere",
       "lemma": "atmosphere",
       "partOfSpeech": "n.",
-      "korean": "분위기",
+      "korean": "대기",
       "score": 89,
       "reason": "대학 학술 독해 필수 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -167,22 +143,10 @@
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "average",
       "lemma": "average",
-      "partOfSpeech": "adj.",
-      "korean": "평균의, 보통의",
+      "partOfSpeech": "n.",
+      "korean": "평균 (an average of 평균 ~)",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -191,33 +155,9 @@
       "freq": 1
     },
     {
-      "word": "around",
-      "lemma": "around",
-      "partOfSpeech": "n.",
-      "korean": "주위에",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "hours",
-      "lemma": "hour",
-      "partOfSpeech": "n.",
-      "korean": "시간",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "harmful",
       "lemma": "harmful",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "해로운",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -227,22 +167,10 @@
       "freq": 1
     },
     {
-      "word": "car",
-      "lemma": "car",
-      "partOfSpeech": "n.",
-      "korean": "자동차",
-      "score": 76,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
       "word": "injured",
       "lemma": "injure",
       "partOfSpeech": "v.",
-      "korean": "부상을 입히다",
+      "korean": "다치게 하다 (be injured 부상을 입다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -252,9 +180,9 @@
     },
     {
       "word": "pumping",
-      "lemma": "pumping",
+      "lemma": "pump",
       "partOfSpeech": "v.",
-      "korean": "퍼올리는, 뿜어내는",
+      "korean": "(펌프로) 뿜어 넣다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -264,11 +192,59 @@
     },
     {
       "word": "crowded",
-      "lemma": "crowd",
-      "partOfSpeech": "v.",
-      "korean": "군중",
+      "lemma": "crowded",
+      "partOfSpeech": "adj.",
+      "korean": "붐비는",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "quantities",
+      "lemma": "quantity",
+      "partOfSpeech": "n.",
+      "korean": "양 (huge quantities of 엄청난 양의)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "greenhouse",
+      "lemma": "greenhouse",
+      "partOfSpeech": "n.",
+      "korean": "온실 (greenhouse effect 온실 효과)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "costly",
+      "lemma": "costly",
+      "partOfSpeech": "adj.",
+      "korean": "대가가 큰",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "lots",
+      "lemma": "lot",
+      "partOfSpeech": "n.",
+      "korean": "(parking lot) 주차장",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

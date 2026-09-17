@@ -63,7 +63,7 @@
     {
       "id": "reading-198-s004",
       "english": "He slips and slips, falls down, has trouble getting up, gets his skis crossed, tumbles again, and generally looks and feels like a fool.",
-      "korean": "그는 계속 미끄러지고, 넘어지고, 일어서는데 어려움을 겪고, 스키를 엇갈리게 하고, 다시 넘어지며, 그리하여 보통 바보처럼 보이고 느끼게 된다."
+      "korean": "그는 계속 미끄러지고, 넘어지고, 일어서는데 어려움을 겪고, 스키를 엇갈리게 하고, 다시 넘어지며, 대체로 바보처럼 보이고 스스로도 바보가 된 것처럼 느낀다."
     }
   ],
   "readingVocabulary": [
@@ -94,8 +94,8 @@
     {
       "word": "young",
       "lemma": "young",
-      "partOfSpeech": "n.",
-      "korean": "젊은",
+      "partOfSpeech": "adj.",
+      "korean": "어린 (start young 어릴 때 시작하다)",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -117,9 +117,9 @@
     },
     {
       "word": "humbling",
-      "lemma": "humble",
-      "partOfSpeech": "v.",
-      "korean": "겸손한",
+      "lemma": "humbling",
+      "partOfSpeech": "adj.",
+      "korean": "자존심이 꺾이는",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -131,21 +131,9 @@
       "word": "crossed",
       "lemma": "cross",
       "partOfSpeech": "v.",
-      "korean": "건너다",
+      "korean": "엇갈리게 하다 (get skis crossed 스키가 꼬이다)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "learning",
-      "lemma": "learn",
-      "partOfSpeech": "v.",
-      "korean": "배우다",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 83점)",
       "examTags": [
         "독해필수"
       ],
@@ -155,7 +143,7 @@
       "word": "adult",
       "lemma": "adult",
       "partOfSpeech": "n.",
-      "korean": "성인",
+      "korean": "어른",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -166,8 +154,8 @@
     {
       "word": "slips",
       "lemma": "slip",
-      "partOfSpeech": "n.",
-      "korean": "미끄러짐",
+      "partOfSpeech": "v.",
+      "korean": "미끄러지다",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -176,21 +164,9 @@
       "freq": 2
     },
     {
-      "word": "looks",
-      "lemma": "look",
-      "partOfSpeech": "n.",
-      "korean": "봐",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
       "word": "undergo",
       "lemma": "undergo",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "겪다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -200,22 +176,10 @@
       "freq": 1
     },
     {
-      "word": "start",
-      "lemma": "start",
-      "partOfSpeech": "n.",
-      "korean": "시작하다; 시작",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "trouble",
       "lemma": "trouble",
       "partOfSpeech": "n.",
-      "korean": "문제",
+      "korean": "어려움 (have trouble -ing ~하는 데 애를 먹다)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -226,10 +190,46 @@
     {
       "word": "tumbles",
       "lemma": "tumble",
-      "partOfSpeech": "n.",
-      "korean": "tumbles (핵심 어휘)",
+      "partOfSpeech": "v.",
+      "korean": "넘어지다, 구르다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "fool",
+      "lemma": "fool",
+      "partOfSpeech": "n.",
+      "korean": "바보",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "skis",
+      "lemma": "ski",
+      "partOfSpeech": "n.",
+      "korean": "스키 (장비)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "somewhere",
+      "lemma": "somewhere",
+      "partOfSpeech": "adv.",
+      "korean": "어딘가로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

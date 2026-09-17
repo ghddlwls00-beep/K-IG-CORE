@@ -47,7 +47,7 @@
   "readingSentences": [
     {
       "id": "reading-148-s001",
-      "english": "In the United States, about 10 million computers are thrown away every year !",
+      "english": "In the United States, about 10 million computers are thrown away every year!",
       "korean": "미국에서는 매년 약 1,000만 대의 컴퓨터가 버려지고 있다!"
     },
     {
@@ -75,8 +75,8 @@
     {
       "word": "allow",
       "lemma": "allow",
-      "partOfSpeech": "n.",
-      "korean": "허용하다",
+      "partOfSpeech": "v.",
+      "korean": "~할 수 있게 하다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -88,7 +88,7 @@
       "word": "caused",
       "lemma": "cause",
       "partOfSpeech": "v.",
-      "korean": "원인",
+      "korean": "일으키다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
@@ -99,7 +99,7 @@
     {
       "word": "solve",
       "lemma": "solve",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "해결하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -121,12 +121,12 @@
       "freq": 3
     },
     {
-      "word": "united",
-      "lemma": "unite",
-      "partOfSpeech": "v.",
-      "korean": "단결하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "unwanted",
+      "lemma": "unwanted",
+      "partOfSpeech": "adj.",
+      "korean": "쓸모없어진, 원치 않는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -134,9 +134,9 @@
     },
     {
       "word": "thrown",
-      "lemma": "thrown",
+      "lemma": "throw",
       "partOfSpeech": "v.",
-      "korean": "던져진, 내던져진",
+      "korean": "(throw away) 버리다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "recycled",
       "lemma": "recycle",
       "partOfSpeech": "v.",
-      "korean": "재활용",
+      "korean": "재활용하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -169,24 +169,24 @@
       "freq": 1
     },
     {
-      "word": "states",
-      "lemma": "state",
+      "word": "dump",
+      "lemma": "dump",
       "partOfSpeech": "n.",
-      "korean": "상태",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "쓰레기 매립장",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "every",
-      "lemma": "every",
+      "word": "industry",
+      "lemma": "industry",
       "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "산업",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -220,7 +220,7 @@
       "word": "parts",
       "lemma": "part",
       "partOfSpeech": "n.",
-      "korean": "부분",
+      "korean": "부품",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -229,12 +229,12 @@
       "freq": 1
     },
     {
-      "word": "away",
-      "lemma": "away",
-      "partOfSpeech": "n.",
-      "korean": "떨어져",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "word": "built",
+      "lemma": "build",
+      "partOfSpeech": "v.",
+      "korean": "만들다, 조립하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

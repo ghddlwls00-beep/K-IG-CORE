@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "성공적인 데이터베이스 마케팅 솔루션을 수행하기 위해, 여러분은 고객과 잠재 고객에 대한 적절한 데이터를 구별하고 수집하는 방법을 알고 원자료를 강력한 마케팅 정보로 바꾸기 위하여 데이터 창고 기술을 사용해서 행동을 분석하기 위해 통계 기술을 고객과 잠재 고객 데이터베이스 적용하고 그들의 반응의 가능성의 각도에서 개인을 점수를 매기는 것이 필요하다. 우리가 여러분에게 데이터베이스 마케팅을 위한 유일한 끝과 끝을 잇는 소프트웨어 솔류션을 여러분에게 소개함으로써 데이터베이스 마케팅 세미나에서 우리는 이러한 주제와 그 이상을 발표할 것이다. 데이터 베이스 마케팅 능력을 적용함으로써 여러분은 비용을 감소하면서 이윤을 증가할 수 있다. 여러분은 또한 고객 마찰을 줄이면서 고객의 수를 증가시킬수 있다. 응용 분석의 선구자인 SAS 연구소와 깊이있는 중요한 주제를 와서 체험하십시오."
+      "text": "성공적인 데이터베이스 마케팅 솔루션을 수행하기 위해, 여러분은 고객과 잠재 고객에 대한 적절한 데이터를 구별하고 수집하는 방법을 알고 원자료를 강력한 마케팅 정보로 바꾸기 위하여 데이터 창고 기술을 사용해서 행동을 분석하기 위해 통계 기술을 고객과 잠재 고객 데이터베이스 적용하고 그들의 반응의 가능성의 각도에서 개인을 점수를 매기는 것이 필요하다. 우리가 여러분에게 데이터베이스 마케팅을 위한 유일한 끝과 끝을 잇는 소프트웨어 솔류션을 여러분에게 소개함으로써 데이터베이스 마케팅 세미나에서 우리는 이러한 주제와 그 이상을 발표할 것이다. 데이터 베이스 마케팅 능력을 적용함으로써 여러분은 비용을 감소하면서 이윤을 증가할 수 있다. 여러분은 또한 고객 이탈을 줄이면서 고객 수를 늘릴 수 있다. 응용 분석의 선구자인 SAS 연구소와 깊이있는 중요한 주제를 와서 체험하십시오."
     },
     {
       "type": "choice",
@@ -63,7 +63,7 @@
     {
       "id": "reading-054-s004",
       "english": "You can also increase your number of customers while reducing customer attrition.",
-      "korean": "여러분은 또한 고객 마찰을 줄이면서 고객의 수를 증가시킬수 있다."
+      "korean": "여러분은 또한 고객 이탈을 줄이면서 고객 수를 늘릴 수 있다."
     },
     {
       "id": "reading-054-s005",
@@ -75,8 +75,8 @@
     {
       "word": "explore",
       "lemma": "explore",
-      "partOfSpeech": "n.",
-      "korean": "탐험하다",
+      "partOfSpeech": "v.",
+      "korean": "탐구하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -88,7 +88,7 @@
       "word": "reducing",
       "lemma": "reduce",
       "partOfSpeech": "v.",
-      "korean": "감소시키다",
+      "korean": "줄이다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -100,7 +100,7 @@
       "word": "customers",
       "lemma": "customer",
       "partOfSpeech": "n.",
-      "korean": "고객, 손님",
+      "korean": "고객",
       "score": 99,
       "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -112,8 +112,8 @@
     {
       "word": "increase",
       "lemma": "increase",
-      "partOfSpeech": "n.",
-      "korean": "증가하다",
+      "partOfSpeech": "v.",
+      "korean": "늘리다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -124,8 +124,8 @@
     {
       "word": "transform",
       "lemma": "transform",
-      "partOfSpeech": "n.",
-      "korean": "변환",
+      "partOfSpeech": "v.",
+      "korean": "바꾸다, 변환하다",
       "score": 99,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -135,9 +135,9 @@
     },
     {
       "word": "marketing",
-      "lemma": "market",
-      "partOfSpeech": "v.",
-      "korean": "시장",
+      "lemma": "marketing",
+      "partOfSpeech": "n.",
+      "korean": "마케팅",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
       "examTags": [
@@ -146,14 +146,14 @@
       "freq": 5
     },
     {
-      "word": "important",
-      "lemma": "important",
+      "word": "attrition",
+      "lemma": "attrition",
       "partOfSpeech": "n.",
-      "korean": "중요한",
-      "score": 90,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "korean": "(고객의) 이탈, 감소",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -161,7 +161,7 @@
       "word": "database",
       "lemma": "database",
       "partOfSpeech": "n.",
-      "korean": "데이터베이스, 자료 기지",
+      "korean": "데이터베이스",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -171,9 +171,9 @@
     },
     {
       "word": "warehousing",
-      "lemma": "warehouse",
-      "partOfSpeech": "v.",
-      "korean": "창고",
+      "lemma": "warehousing",
+      "partOfSpeech": "n.",
+      "korean": "저장 (data warehousing 데이터 웨어하우징)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -185,7 +185,7 @@
       "word": "techniques",
       "lemma": "technique",
       "partOfSpeech": "n.",
-      "korean": "기술",
+      "korean": "기법",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -195,9 +195,9 @@
     },
     {
       "word": "applied",
-      "lemma": "apply",
-      "partOfSpeech": "v.",
-      "korean": "적용하다",
+      "lemma": "applied",
+      "partOfSpeech": "adj.",
+      "korean": "응용의 (applied analysis 응용 분석)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -209,7 +209,7 @@
       "word": "data",
       "lemma": "data",
       "partOfSpeech": "n.",
-      "korean": "데이터",
+      "korean": "데이터, 자료",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
@@ -221,7 +221,7 @@
       "word": "statistical",
       "lemma": "statistical",
       "partOfSpeech": "adj.",
-      "korean": "통계적",
+      "korean": "통계의",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -230,12 +230,12 @@
       "freq": 1
     },
     {
-      "word": "need",
-      "lemma": "need",
-      "partOfSpeech": "v.",
-      "korean": "필요",
+      "word": "profits",
+      "lemma": "profit",
+      "partOfSpeech": "n.",
+      "korean": "이익, 수익",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

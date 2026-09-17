@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Tests were carried out to study the effects of laughter on the body. People watched funny movie, while doctors checked their heart rate, blood pressure, breathing, and muscle. It was found that laughter has similar effects to physical exercise. It increases blood pressure and the rate of breathing; it also works several groups of muscles in the face, the stomach, and even the feet."
+      "text": "Tests were carried out to study the effects of laughter on the body. People watched funny movies, while doctors checked their heart rate, blood pressure, breathing, and muscles. It was found that laughter has similar effects to physical exercise. It increases blood pressure and the rate of breathing, and it also works several groups of muscles in the face, the stomach, and even the feet."
     },
     {
       "type": "choice",
@@ -48,27 +48,22 @@
     {
       "id": "reading-071-s001",
       "english": "Tests were carried out to study the effects of laughter on the body.",
-      "korean": "몸에 끼치는 웃음의 영향을 연구하기 위하여 실험이 수행되었다."
+      "korean": "웃음이 몸에 미치는 영향을 연구하기 위해 실험이 이루어졌다."
     },
     {
       "id": "reading-071-s002",
-      "english": "People watched funny movie, while doctors checked their heart rate, blood pressure, breathing, and muscle.",
-      "korean": "의사가 심장박동률과 혈압, 호흡 그리고 근육을 확인하는 동안 사람들은 웃긴 영화를 본다."
+      "english": "People watched funny movies, while doctors checked their heart rate, blood pressure, breathing, and muscles.",
+      "korean": "사람들이 재미있는 영화를 보는 동안 의사들은 그들의 심박수, 혈압, 호흡, 근육을 확인했다."
     },
     {
       "id": "reading-071-s003",
       "english": "It was found that laughter has similar effects to physical exercise.",
-      "korean": "웃음이 육체적인 운동과 비슷한 효과를 가진다는 것이 발견되었다."
+      "korean": "웃음이 신체 운동과 비슷한 효과를 낸다는 것이 밝혀졌다."
     },
     {
       "id": "reading-071-s004",
-      "english": "It increases blood pressure and the rate of breathing",
-      "korean": "웃음은 혈압과 호흡률을 증가시킨다."
-    },
-    {
-      "id": "reading-071-s005",
-      "english": "it also works several groups of muscles in the face, the stomach, and even the feet.",
-      "korean": "또한 얼굴과 위 심지어 발의 근육의 몇 부분에 영향을 끼친다."
+      "english": "It increases blood pressure and the rate of breathing, and it also works several groups of muscles in the face, the stomach, and even the feet.",
+      "korean": "웃음은 혈압과 호흡수를 높이고, 얼굴과 배, 심지어 발의 여러 근육도 움직이게 한다."
     }
   ],
   "readingVocabulary": [
@@ -100,7 +95,7 @@
       "word": "exercise",
       "lemma": "exercise",
       "partOfSpeech": "n.",
-      "korean": "운동하다; 연습",
+      "korean": "운동 (physical exercise 신체 운동)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -112,7 +107,7 @@
       "word": "heart",
       "lemma": "heart",
       "partOfSpeech": "n.",
-      "korean": "심장",
+      "korean": "심장 (heart rate 심박수)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -123,8 +118,8 @@
     {
       "word": "increases",
       "lemma": "increase",
-      "partOfSpeech": "n.",
-      "korean": "증가하다",
+      "partOfSpeech": "v.",
+      "korean": "높이다, 늘리다",
       "score": 90,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
       "examTags": [
@@ -136,7 +131,7 @@
       "word": "carried",
       "lemma": "carry",
       "partOfSpeech": "v.",
-      "korean": "나르다",
+      "korean": "(carry out) 실시하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -148,7 +143,7 @@
       "word": "effects",
       "lemma": "effect",
       "partOfSpeech": "n.",
-      "korean": "효과",
+      "korean": "영향, 효과",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -160,7 +155,7 @@
       "word": "laughter",
       "lemma": "laughter",
       "partOfSpeech": "n.",
-      "korean": "웃음, 웃음소리",
+      "korean": "웃음",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -170,9 +165,9 @@
     },
     {
       "word": "breathing",
-      "lemma": "breathe",
-      "partOfSpeech": "v.",
-      "korean": "숨을 쉬다",
+      "lemma": "breathing",
+      "partOfSpeech": "n.",
+      "korean": "호흡",
       "score": 81,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
       "examTags": [
@@ -196,7 +191,7 @@
       "word": "tests",
       "lemma": "test",
       "partOfSpeech": "n.",
-      "korean": "테스트",
+      "korean": "실험, 검사",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -207,8 +202,8 @@
     {
       "word": "study",
       "lemma": "study",
-      "partOfSpeech": "n.",
-      "korean": "공부하다",
+      "partOfSpeech": "v.",
+      "korean": "연구하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -226,13 +221,13 @@
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "stomach",
       "lemma": "stomach",
       "partOfSpeech": "n.",
-      "korean": "위, 배",
+      "korean": "배",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

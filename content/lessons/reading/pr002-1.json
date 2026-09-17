@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "공기의 질이 점점 나빠짐에 따라 민간단체에서 공기를 더 깨끗하게 만들려고 노력하고 있다. (그러나) 계속된 그들의 노력에도 불구하고, 공장과 자동차들은 여전히 너무도 많은 더러운 연기를 만들어 내고 공기 중으로 너무 많은 화학 물질을 내뿜고 있다. 아마도 우리가 어딜 가나 산소 공급통을 가지고 다녀야 할 때가 곧 오게 될 것이다."
+      "text": "공기의 질이 점점 나빠짐에 따라 민간단체에서 공기를 더 깨끗하게 만들려고 노력하고 있다. 계속된 그들의 노력에도 불구하고, 공장과 자동차들은 여전히 너무도 많은 더러운 연기를 만들어 내고 공기 중으로 너무 많은 화학 물질을 내뿜고 있다. 아마도 우리가 어딜 가나 산소 공급통을 가지고 다녀야 할 때가 곧 오게 될 것이다."
     },
     {
       "type": "choice",
@@ -52,8 +52,8 @@
     },
     {
       "id": "reading-002-s002",
-      "english": "In spite of their continued efforts, factories and cars are still producing too much dirty smoke of putting too chemicals into the air.",
-      "korean": "(그러나) 계속된 그들의 노력에도 불구하고, 공장과 자동차들은 여전히 너무도 많은 더러운 연기를 만들어 내고 공기 중으로 너무 많은 화학 물질을 내뿜고 있다."
+      "english": "In spite of their continued efforts, factories and cars are still producing too much dirty smoke and putting too many chemicals into the air.",
+      "korean": "계속된 그들의 노력에도 불구하고, 공장과 자동차들은 여전히 너무도 많은 더러운 연기를 만들어 내고 공기 중으로 너무 많은 화학 물질을 내뿜고 있다."
     },
     {
       "id": "reading-002-s003",
@@ -102,7 +102,7 @@
       "word": "producing",
       "lemma": "produce",
       "partOfSpeech": "v.",
-      "korean": "만들어 내다, 배출하다 (produce의 -ing)",
+      "korean": "(연기 등을) 내뿜다, 만들어 내다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -126,7 +126,7 @@
       "word": "private",
       "lemma": "private",
       "partOfSpeech": "adj.",
-      "korean": "민간의, 사적인",
+      "korean": "민간의 (private organizations 민간단체)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -150,7 +150,7 @@
       "word": "trying",
       "lemma": "try",
       "partOfSpeech": "v.",
-      "korean": "노력하다, 시도하다 (try의 -ing)",
+      "korean": "애쓰다, 노력하다",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
       "examTags": [
@@ -162,7 +162,7 @@
       "word": "quality",
       "lemma": "quality",
       "partOfSpeech": "n.",
-      "korean": "품질",
+      "korean": "질 (the quality of air 공기의 질)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -186,7 +186,7 @@
       "word": "putting",
       "lemma": "put",
       "partOfSpeech": "v.",
-      "korean": "넣다, 내보내다 (put의 -ing)",
+      "korean": "(~ 속으로) 내보내다, 넣다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -207,12 +207,12 @@
       "freq": 1
     },
     {
-      "word": "soon",
-      "lemma": "soon",
-      "partOfSpeech": "adv.",
-      "korean": "곧",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+      "word": "chemicals",
+      "lemma": "chemical",
+      "partOfSpeech": "n.",
+      "korean": "화학 물질",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -222,7 +222,7 @@
       "word": "tank",
       "lemma": "tank",
       "partOfSpeech": "n.",
-      "korean": "수조, 물탱크, 저장통",
+      "korean": "(산소 등을 담는) 통, 탱크",
       "score": 71,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
       "examTags": [

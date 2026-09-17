@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Recognizing the healing power of humor, many hospitals are starting to take laughing matter seriously. For example, some doctors wheel around a ‘laughmobile' cart. It is stocked with a variety of humorous books and monologues recorded by famous comedians. This idea has met with considerable success. So it seems that at least to the health profession, laughter is no joke."
+      "text": "Recognizing the healing power of humor, many hospitals are starting to take laughing matter seriously. For example, some doctors wheel around a 'laughmobile' cart. It is stocked with a variety of humorous books and monologues recorded by famous comedians. This idea has met with considerable success. So it seems that at least to the health profession, laughter is no joke."
     },
     {
       "type": "choice",
@@ -48,27 +48,27 @@
     {
       "id": "reading-140-s001",
       "english": "Recognizing the healing power of humor, many hospitals are starting to take laughing matter seriously.",
-      "korean": "많은 병원들이 유머의 병을 치유하는데 도움이 된다는 것을 인식하고, 웃 음을 유발하는 것을 진지하게 생각하기 시작하였다."
+      "korean": "유머의 치유력을 인정한 많은 병원이 웃음을 진지하게 받아들이기 시작했다."
     },
     {
       "id": "reading-140-s002",
-      "english": "For example, some doctors wheel around a ‘laughmobile' cart.",
-      "korean": "예를 들면, 일부 의사 들은 ‘움직이는 웃음’수레(웃음을 유발할 수 있는 자료를 담은 수레)를 몰 고 다닌다."
+      "english": "For example, some doctors wheel around a 'laughmobile' cart.",
+      "korean": "예를 들어 어떤 의사들은 ‘웃음 수레’를 끌고 병원을 돈다."
     },
     {
       "id": "reading-140-s003",
       "english": "It is stocked with a variety of humorous books and monologues recorded by famous comedians.",
-      "korean": "수레에는 다양한 종류의 웃음을 유발할 수 있는 책과 유명 코 미디언들이 떠들어대는 (우스꽝스러운) 이야기가 녹음된 것이 빼곡하게 채 워져 있다."
+      "korean": "그 수레에는 여러 가지 유머 책과 유명 코미디언들의 독백을 녹음한 것이 가득 실려 있다."
     },
     {
       "id": "reading-140-s004",
       "english": "This idea has met with considerable success.",
-      "korean": "이런 발상은 상당한 성공을 거두었다."
+      "korean": "이 아이디어는 상당한 성공을 거두었다."
     },
     {
       "id": "reading-140-s005",
       "english": "So it seems that at least to the health profession, laughter is no joke.",
-      "korean": "그래서 최소한 건강에 관 련되는 직업에 종사하는 사람에게는 웃음이란 (단순하게) 웃고 넘어갈 수 있는 것이 아니다."
+      "korean": "그러니 적어도 의료계에서는 웃음이 농담이 아닌 것 같다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +76,7 @@
       "word": "recognizing",
       "lemma": "recognize",
       "partOfSpeech": "v.",
-      "korean": "인식하다",
+      "korean": "인정하다",
       "score": 111,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
@@ -112,7 +112,7 @@
       "word": "idea",
       "lemma": "idea",
       "partOfSpeech": "n.",
-      "korean": "생각, 아이디어",
+      "korean": "아이디어",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -124,7 +124,7 @@
       "word": "starting",
       "lemma": "start",
       "partOfSpeech": "v.",
-      "korean": "시작",
+      "korean": "시작하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -134,9 +134,9 @@
     },
     {
       "word": "laughing",
-      "lemma": "laugh",
-      "partOfSpeech": "v.",
-      "korean": "웃다",
+      "lemma": "laughing",
+      "partOfSpeech": "adj.",
+      "korean": "웃기는 (laughing matter 웃을 일)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -147,8 +147,8 @@
     {
       "word": "healing",
       "lemma": "healing",
-      "partOfSpeech": "n.",
-      "korean": "치유, 치료",
+      "partOfSpeech": "adj.",
+      "korean": "치유의 (healing power 치유력)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -169,12 +169,12 @@
       "freq": 1
     },
     {
-      "word": "power",
-      "lemma": "power",
+      "word": "comedians",
+      "lemma": "comedian",
       "partOfSpeech": "n.",
-      "korean": "힘",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "코미디언",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -196,7 +196,7 @@
       "word": "matter",
       "lemma": "matter",
       "partOfSpeech": "n.",
-      "korean": "문제",
+      "korean": "일, 문제 (laughing matter 웃을 일)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -206,9 +206,9 @@
     },
     {
       "word": "seriously",
-      "lemma": "serious",
+      "lemma": "seriously",
       "partOfSpeech": "adv.",
-      "korean": "심각한",
+      "korean": "진지하게",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -220,7 +220,7 @@
       "word": "profession",
       "lemma": "profession",
       "partOfSpeech": "n.",
-      "korean": "직업",
+      "korean": "직업 (health profession 의료계)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -232,7 +232,7 @@
       "word": "laughter",
       "lemma": "laughter",
       "partOfSpeech": "n.",
-      "korean": "웃음, 웃음소리",
+      "korean": "웃음",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

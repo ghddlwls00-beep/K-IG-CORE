@@ -28,14 +28,6 @@
       "text": "The young should learn that no one can win all the time and that it's possible to enjoy a game even when they don't win. A child who doesn't make the baseball team feels terrible. But parents should not offer a quick prize or say, \"It doesn't matter,\" because it does. The youngster should be allowed to experience disappointment."
     },
     {
-      "type": "hints",
-      "text": "① disappointment ② misdeeds"
-    },
-    {
-      "type": "instruction",
-      "text": "③ delight ③ praises ⑤ patriotism"
-    },
-    {
       "type": "choice",
       "options": [
         "1 번",
@@ -56,35 +48,30 @@
     {
       "id": "reading-056-s001",
       "english": "The young should learn that no one can win all the time and that it's possible to enjoy a game even when they don't win.",
-      "korean": "젊은이들은 누구도 늘 승리할 수는 없으며, 졌을 때조차도 게임을 즐길 수 있다는 것을 배워야 한다."
+      "korean": "젊은이들은 누구도 늘 이길 수는 없으며, 이기지 못할 때에도 경기를 즐길 수 있다는 것을 배워야 한다."
     },
     {
       "id": "reading-056-s002",
       "english": "A child who doesn't make the baseball team feels terrible.",
-      "korean": "야구부에 들지 못한 아이는 실망감을 느낀다."
+      "korean": "야구팀에 뽑히지 못한 아이는 몹시 속상해한다."
     },
     {
       "id": "reading-056-s003",
       "english": "But parents should not offer a quick prize or say, \"It doesn't matter,\" because it does.",
-      "korean": "그러나 부모는 너무 빨리 보상을 해 주거나 “그것은 중요하지 않다”라고 말해서는 안 된다."
+      "korean": "그러나 부모는 서둘러 상을 주거나 \"그건 중요하지 않아\"라고 말해서는 안 된다. 실제로는 중요하기 때문이다."
     },
     {
       "id": "reading-056-s004",
       "english": "The youngster should be allowed to experience disappointment.",
-      "korean": "왜냐 하면 그것은 중요하지 않기 때문이다."
-    },
-    {
-      "id": "reading-056-s005",
-      "english": "① disappointment ② misdeeds\n\n③ delight ③ praises ⑤ patriotism",
-      "korean": "젊은이는 실망을 경험하도록 허락되어져야 한다."
+      "korean": "아이가 실망을 경험하도록 해 주어야 한다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "young",
       "lemma": "young",
-      "partOfSpeech": "n.",
-      "korean": "젊은",
+      "partOfSpeech": "adj.",
+      "korean": "젊은 (the young 젊은이들)",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -96,7 +83,7 @@
       "word": "allowed",
       "lemma": "allow",
       "partOfSpeech": "v.",
-      "korean": "허용하다",
+      "korean": "허락하다 (be allowed to ~하도록 허락되다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -107,8 +94,8 @@
     {
       "word": "experience",
       "lemma": "experience",
-      "partOfSpeech": "n.",
-      "korean": "경험",
+      "partOfSpeech": "v.",
+      "korean": "겪다, 경험하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -119,8 +106,8 @@
     {
       "word": "offer",
       "lemma": "offer",
-      "partOfSpeech": "n.",
-      "korean": "제공하다; 제안",
+      "partOfSpeech": "v.",
+      "korean": "주다, 제공하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -138,12 +125,12 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "possible",
       "lemma": "possible",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "가능한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -155,8 +142,8 @@
     {
       "word": "win",
       "lemma": "win",
-      "partOfSpeech": "n.",
-      "korean": "승리하다",
+      "partOfSpeech": "v.",
+      "korean": "이기다",
       "score": 78,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
       "examTags": [
@@ -167,7 +154,7 @@
     {
       "word": "enjoy",
       "lemma": "enjoy",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "즐기다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -177,48 +164,48 @@
       "freq": 1
     },
     {
-      "word": "misdeeds",
-      "lemma": "misdeed",
+      "word": "youngster",
+      "lemma": "youngster",
       "partOfSpeech": "n.",
-      "korean": "misdeeds (핵심 어휘)",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "아이, 청소년",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "delight",
-      "lemma": "delight",
-      "partOfSpeech": "n.",
-      "korean": "기쁨",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "terrible",
+      "lemma": "terrible",
+      "partOfSpeech": "adj.",
+      "korean": "몹시 기분이 나쁜 (feel terrible 몹시 속상하다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "praises",
-      "lemma": "praise",
-      "partOfSpeech": "n.",
-      "korean": "칭찬하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "matter",
+      "lemma": "matter",
+      "partOfSpeech": "v.",
+      "korean": "중요하다 (It doesn't matter 상관없다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "patriotism",
-      "lemma": "patriotism",
+      "word": "team",
+      "lemma": "team",
       "partOfSpeech": "n.",
-      "korean": "애국심",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "팀 (make the team 팀에 뽑히다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -227,7 +214,7 @@
     {
       "word": "learn",
       "lemma": "learn",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "배우다",
       "score": 74,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 74점)",
@@ -239,7 +226,7 @@
     {
       "word": "prize",
       "lemma": "prize",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "n.",
       "korean": "상",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",

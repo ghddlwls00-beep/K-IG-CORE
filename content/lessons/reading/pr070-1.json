@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "심리학자에 따르면, 신체적인 외모가 첫인상의 55%를 구성한다. 신체적 외모는 표정, 눈 맞춤, 그리고 전반적 용모를 포함한다. 말하는 태도는 첫 인상의 35%를 이룬다. 이는 얼마나 빨리 또는 느리게, 혹은 크게 또는 부드럽게 말하는가, 그리고 목소리의 톤을 포함한다. 여러분이 사용하는 실제 어휘는 단지 10%만 차지한다. 그러므로 사람들의 첫인상은 외모가 어떠한가에 주로 근거하고, 다음으로 어떻게 말하는가에, 그리고 무엇을 말하는가에 가장 약한 근거들 두고 있다고 결론 내려도 될 것 같다."
+      "text": "유명한 심리학 실험 하나가 외모가 첫인상의 55%를 차지한다는 것을 보여 준다고 흔히들 말한다. 그러나 그 실험은 첫인상에 관한 것이 아니었다. 그 실험은 말의 내용, 목소리 톤, 얼굴 표정이 서로 맞지 않을 때 듣는 사람이 말하는 사람의 감정을 어떻게 판단하는지를 살펴보았다. 그런 특수한 경우에는 얼굴 표정이 55%, 목소리 톤이 38%, 실제 말의 내용은 7%만 차지했다. 그러므로 무슨 말을 하는지는 거의 중요하지 않다고 결론 내리는 것은 옳지 않다. 어떻게 보이는지, 어떻게 들리는지, 무슨 말을 하는지가 모두 함께 작용한다."
     },
     {
       "type": "choice",
@@ -47,36 +47,36 @@
   "readingSentences": [
     {
       "id": "reading-070-s001",
-      "english": "According to experimental psychology, your physical appearance makes up 55% of a first impression.",
-      "korean": "심리학자에 따르면, 신체적인 외모가 첫인상의 55%를 구성한다."
+      "english": "A famous psychology experiment is often said to show that your appearance makes up 55% of a first impression.",
+      "korean": "유명한 심리학 실험 하나가 외모가 첫인상의 55%를 차지한다는 것을 보여 준다고 흔히들 말한다."
     },
     {
       "id": "reading-070-s002",
-      "english": "The physical appearance includes facial expressions, eye contact, and general appearance.",
-      "korean": "신체적 외모는 표정, 눈 맞춤, 그리고 전반적 용모를 포함한다."
+      "english": "The experiment, however, was not about first impressions.",
+      "korean": "그러나 그 실험은 첫인상에 관한 것이 아니었다."
     },
     {
       "id": "reading-070-s003",
-      "english": "The way you sound makes up 35% of the first impression This includes how fast or slowly, loudly or softly you speak, and your tone of voice.",
-      "korean": "말하는 태도는 첫 인상의 35%를 이룬다. 이는 얼마나 빨리 또는 느리게, 혹은 크게 또는 부드럽게 말하는가, 그리고 목소리의 톤을 포함한다."
+      "english": "It looked at how listeners judge a speaker's feelings when the words, the tone of voice, and the facial expression do not match.",
+      "korean": "그 실험은 말의 내용, 목소리 톤, 얼굴 표정이 서로 맞지 않을 때 듣는 사람이 말하는 사람의 감정을 어떻게 판단하는지를 살펴보았다."
     },
     {
       "id": "reading-070-s004",
-      "english": "The actual words you use count for only 10% .",
-      "korean": "여러분이 사용하는 실제 어휘는 단지 10%만 차지한다."
+      "english": "In that special case, facial expression counted for 55%, tone of voice for 38%, and the actual words for only 7%.",
+      "korean": "그런 특수한 경우에는 얼굴 표정이 55%, 목소리 톤이 38%, 실제 말의 내용은 7%만 차지했다."
     },
     {
       "id": "reading-070-s005",
-      "english": "Therefore, it is safe to conclude that people form their first impressions based mostly on how you look , then on how you speak and least of all on what you say.",
-      "korean": "그러므로 사람들의 첫인상은 외모가 어떠한가에 주로 근거하고, 다음으로 어떻게 말하는가에, 그리고 무엇을 말하는가에 가장 약한 근거들 두고 있다고 결론 내려도 될 것 같다."
+      "english": "So it is not safe to conclude that what you say hardly matters; how you look, how you sound, and what you say all work together.",
+      "korean": "그러므로 무슨 말을 하는지는 거의 중요하지 않다고 결론 내리는 것은 옳지 않다. 어떻게 보이는지, 어떻게 들리는지, 무슨 말을 하는지가 모두 함께 작용한다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "safe",
       "lemma": "safe",
-      "partOfSpeech": "n.",
-      "korean": "안전하다",
+      "partOfSpeech": "adj.",
+      "korean": "(it is not safe to conclude) 섣불리 ~라고 결론 내릴 수 없다",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -87,8 +87,8 @@
     {
       "word": "sound",
       "lemma": "sound",
-      "partOfSpeech": "n.",
-      "korean": "소리",
+      "partOfSpeech": "v.",
+      "korean": "~하게 들리다 (how you sound 목소리가 어떻게 들리는지)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -100,47 +100,47 @@
       "word": "voice",
       "lemma": "voice",
       "partOfSpeech": "n.",
-      "korean": "목소리",
+      "korean": "목소리 (tone of voice 목소리 톤)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "words",
       "lemma": "word",
       "partOfSpeech": "n.",
-      "korean": "단어",
+      "korean": "말, 단어",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
         "중학기초"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "slowly",
-      "lemma": "slow",
-      "partOfSpeech": "adv.",
-      "korean": "천천히",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "word": "experiment",
+      "lemma": "experiment",
+      "partOfSpeech": "n.",
+      "korean": "실험",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "softly",
-      "lemma": "soft",
-      "partOfSpeech": "adv.",
-      "korean": "부드러운",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "word": "psychology",
+      "lemma": "psychology",
+      "partOfSpeech": "n.",
+      "korean": "심리학",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -148,97 +148,97 @@
       "word": "appearance",
       "lemma": "appearance",
       "partOfSpeech": "n.",
-      "korean": "외관",
+      "korean": "외모",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
-    },
-    {
-      "word": "eye",
-      "lemma": "eye",
-      "partOfSpeech": "n.",
-      "korean": "눈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
       "freq": 1
     },
     {
-      "word": "fast",
-      "lemma": "fast",
+      "word": "expression",
+      "lemma": "expression",
       "partOfSpeech": "n.",
-      "korean": "빨리",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "physical",
-      "lemma": "physical",
-      "partOfSpeech": "adj.",
-      "korean": "물리적",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
+      "korean": "표정 (facial expression 얼굴 표정)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "according",
-      "lemma": "according",
-      "partOfSpeech": "v.",
-      "korean": "따라",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "facial",
+      "lemma": "facial",
+      "partOfSpeech": "adj.",
+      "korean": "얼굴의",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "impression",
       "lemma": "impression",
       "partOfSpeech": "n.",
-      "korean": "인상",
+      "korean": "인상 (first impression 첫인상)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "based",
-      "lemma": "base",
+      "word": "judge",
+      "lemma": "judge",
       "partOfSpeech": "v.",
-      "korean": "베이스",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+      "korean": "판단하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "experimental",
-      "lemma": "experimental",
-      "partOfSpeech": "adj.",
-      "korean": "실험적인",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+      "word": "match",
+      "lemma": "match",
+      "partOfSpeech": "v.",
+      "korean": "서로 맞다, 일치하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
+    },
+    {
+      "word": "conclude",
+      "lemma": "conclude",
+      "partOfSpeech": "v.",
+      "korean": "결론 내리다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "tone",
+      "lemma": "tone",
+      "partOfSpeech": "n.",
+      "korean": "어조, 톤",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
     }
   ]
 }

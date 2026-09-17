@@ -52,12 +52,12 @@
     },
     {
       "id": "reading-210-s002",
-      "english": "None of us has had enough personal experience to know other people - or, indeed, himself -thoroughly.",
+      "english": "None of us has had enough personal experience to know other people—or, indeed, himself—thoroughly.",
       "korean": "우리 중 누구도 다른 사람, 혹은 참으로 자기 자신조차도 철저하게 알 만큼 충분한 개인적 경험을 갖지 못했다."
     },
     {
       "id": "reading-210-s003",
-      "english": "We all fell lonely in this vast, irresponsive world.",
+      "english": "We all feel lonely in this vast, irresponsive world.",
       "korean": "우리 모두는 이 거대하고 무반응한 세상에서 외로움을 느낀다."
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "id": "reading-210-s005",
-      "english": "But from books we learn that others-greater men than we - have suffered and have sought as we have.",
+      "english": "But from books we learn that others—greater men than we—have suffered and have sought as we have.",
       "korean": "그러나 책을 통해 우리는 다른 사람들, 즉 우리보다 더 위대한 사람들도 우리처럼 고통받고 갈구해 왔다는 것을 배운다."
     }
   ],
@@ -110,35 +110,11 @@
     },
     {
       "word": "sought",
-      "lemma": "sought",
+      "lemma": "seek",
       "partOfSpeech": "v.",
-      "korean": "추구했다, 찾았다",
+      "korean": "찾다, 추구하다",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 79,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 79점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "others-greater",
-      "lemma": "others-greater",
-      "partOfSpeech": "n.",
-      "korean": "타인의 더 큰 장점들",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
         "독해필수"
       ],
@@ -148,7 +124,7 @@
       "word": "shocked",
       "lemma": "shock",
       "partOfSpeech": "v.",
-      "korean": "충격",
+      "korean": "충격을 주다 (be shocked 충격을 받다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -159,8 +135,8 @@
     {
       "word": "indeed",
       "lemma": "indeed",
-      "partOfSpeech": "v.",
-      "korean": "과연",
+      "partOfSpeech": "adv.",
+      "korean": "정말로, 실은",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -172,7 +148,7 @@
       "word": "personal",
       "lemma": "personal",
       "partOfSpeech": "adj.",
-      "korean": "개인",
+      "korean": "개인적인",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
@@ -184,25 +160,13 @@
       "word": "irresponsive",
       "lemma": "irresponsive",
       "partOfSpeech": "adj.",
-      "korean": "무반응의, 응답하지 않는",
+      "korean": "무반응의, 냉담한",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
-    },
-    {
-      "word": "us",
-      "lemma": "us",
-      "partOfSpeech": "pron.",
-      "korean": "우리를, 우리에게",
-      "score": 70,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 70점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
     },
     {
       "word": "injustice",
@@ -229,10 +193,46 @@
       "freq": 1
     },
     {
+      "word": "thoroughly",
+      "lemma": "thoroughly",
+      "partOfSpeech": "adv.",
+      "korean": "철저히, 완전히",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "lonely",
+      "lemma": "lonely",
+      "partOfSpeech": "adj.",
+      "korean": "외로운",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "vast",
+      "lemma": "vast",
+      "partOfSpeech": "adj.",
+      "korean": "광대한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
       "word": "learn",
       "lemma": "learn",
-      "partOfSpeech": "n.",
-      "korean": "배우다",
+      "partOfSpeech": "v.",
+      "korean": "배우다, 알게 되다",
       "score": 69,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [

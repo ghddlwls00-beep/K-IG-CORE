@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "그러나 모든 프러스 요인에 비해 마이너스 요인도 있다. 한가지 예로 직업을 가질 수도 있지만, 도시 생활은 흔히 돈이 많이 들기에, 급료가 높은 직업이 아니면 많은 것을 향유할 여유가 없을 것이다. 더구나 대중 교통은 대게는 혼잡하고 지저분한데, 특히 출퇴근 시간에 그러하다. 마지막으로, 많은 군중에도 불구하고 도시에서는 심한 고독감을 느낄 수도 있다."
+      "text": "그러나 모든 장점에는 단점이 따른다. 한가지 예로 직업을 가질 수도 있지만, 도시 생활은 흔히 돈이 많이 들기에, 급료가 높은 직업이 아니면 많은 것을 향유할 여유가 없을 것이다. 더구나 대중 교통은 때때로 혼잡하고 지저분한데, 특히 출퇴근 시간에 그러하다. 마지막으로, 많은 군중에도 불구하고 도시에서는 심한 고독감을 느낄 수도 있다."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-109-s001",
       "english": "For every plus, however, there is a minus.",
-      "korean": "그러나 모든 프러스 요인에 비해 마이너스 요인도 있다."
+      "korean": "그러나 모든 장점에는 단점이 따른다."
     },
     {
       "id": "reading-109-s002",
@@ -58,31 +58,31 @@
     {
       "id": "reading-109-s003",
       "english": "What is more, public transportation is sometimes crowded and dirty, particularly in the rush hour.",
-      "korean": "더구나 대중 교통은 대게는 혼잡하고 지저분한데, 특히 출퇴근 시간에 그러하다."
+      "korean": "더구나 대중 교통은 때때로 혼잡하고 지저분한데, 특히 출퇴근 시간에 그러하다."
     },
     {
       "id": "reading-109-s004",
-      "english": "Last of all, despite all the crowds, it is still possible to feet very lonely in a city.",
+      "english": "Last of all, despite all the crowds, it is still possible to feel very lonely in a city.",
       "korean": "마지막으로, 많은 군중에도 불구하고 도시에서는 심한 고독감을 느낄 수도 있다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "feet",
-      "lemma": "foot",
-      "partOfSpeech": "n.",
-      "korean": "발",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "word": "afford",
+      "lemma": "afford",
+      "partOfSpeech": "v.",
+      "korean": "(~을 살) 여유가 있다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "dirty",
       "lemma": "dirty",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "더러운",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -92,12 +92,12 @@
       "freq": 1
     },
     {
-      "word": "every",
-      "lemma": "every",
+      "word": "transportation",
+      "lemma": "transportation",
       "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "교통 (public transportation 대중교통)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -106,8 +106,8 @@
     {
       "word": "despite",
       "lemma": "despite",
-      "partOfSpeech": "n.",
-      "korean": "그럼에도 불구하고",
+      "partOfSpeech": "prep.",
+      "korean": "~에도 불구하고",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -118,8 +118,8 @@
     {
       "word": "possible",
       "lemma": "possible",
-      "partOfSpeech": "n.",
-      "korean": "가능",
+      "partOfSpeech": "adj.",
+      "korean": "가능한",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -141,9 +141,9 @@
     },
     {
       "word": "crowded",
-      "lemma": "crowd",
-      "partOfSpeech": "v.",
-      "korean": "군중",
+      "lemma": "crowded",
+      "partOfSpeech": "adj.",
+      "korean": "붐비는",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -154,8 +154,8 @@
     {
       "word": "still",
       "lemma": "still",
-      "partOfSpeech": "n.",
-      "korean": "아직도",
+      "partOfSpeech": "adv.",
+      "korean": "그래도, 여전히",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -166,7 +166,7 @@
     {
       "word": "lonely",
       "lemma": "lonely",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "adj.",
       "korean": "외로운",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
@@ -179,7 +179,7 @@
       "word": "well-paid",
       "lemma": "well-paid",
       "partOfSpeech": "adj.",
-      "korean": "보수가 좋은, 고수익의",
+      "korean": "보수가 좋은",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
@@ -189,9 +189,9 @@
     },
     {
       "word": "living",
-      "lemma": "live",
-      "partOfSpeech": "v.",
-      "korean": "살다, 거주하다",
+      "lemma": "living",
+      "partOfSpeech": "n.",
+      "korean": "생활 (living in a city 도시 생활)",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 71점)",
       "examTags": [
@@ -203,7 +203,7 @@
       "word": "expensive",
       "lemma": "expensive",
       "partOfSpeech": "adj.",
-      "korean": "비싸다",
+      "korean": "비싼",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
@@ -212,12 +212,12 @@
       "freq": 1
     },
     {
-      "word": "last",
-      "lemma": "last",
+      "word": "crowds",
+      "lemma": "crowd",
       "partOfSpeech": "n.",
-      "korean": "마지막",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+      "korean": "인파, 군중",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -226,8 +226,8 @@
     {
       "word": "minus",
       "lemma": "minus",
-      "partOfSpeech": "prep.",
-      "korean": "~을 제외한, 마이너스의",
+      "partOfSpeech": "n.",
+      "korean": "단점, 불리한 점 (plus 장점)",
       "score": 69,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [

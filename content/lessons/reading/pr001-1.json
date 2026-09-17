@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "남녀는 다르게 말한다. 과학자들은 모친이 아들에게, 부친이 딸에게 말할 때, 그들의 차이점이 문제를 야기시킨다고 말한다. 예를 들어, 모친의의 훌륭한 상담은 아들에게 효과를 발휘하지 못하고, 아버지가 종종 아들의 편을 든다. 하지만 그것은 부모들과 이성인 자녀들이 서로 의사가 안 통하도록 운명지워져 있음을 의미하지 않는다. 결과적으로 아이들은 다른 성의 부모와 말하기를 더 좋아한다. 만약 부모들이 그들과 이성인 자녀들의 말하는 다른 방식을 존중한다면, 그들의 대화는 훨씬 성공적일 것이다"
+      "text": "남자아이와 여자아이는 말하는 방식이 다르다. 과학자들은 어머니가 아들에게, 아버지가 딸에게 말할 때 이 차이 때문에 문제가 생긴다고 말한다. 예를 들어, 어머니의 좋은 조언이 아들에게는 통하지 않고, 아버지의 조언이 딸에게는 통하지 않을 수 있다. 하지만 그렇다고 해서 부모와 성별이 다른 자녀가 서로 의사소통에 실패할 운명이라는 뜻은 아니다. 부모가 성별이 다른 자녀의 다른 말하기 방식을 존중한다면 그들의 대화는 더 성공적일 것이다."
     },
     {
       "type": "choice",
@@ -48,32 +48,27 @@
     {
       "id": "reading-001-s001",
       "english": "Boys and girls speak differently.",
-      "korean": "남녀는 다르게 말한다."
+      "korean": "남자아이와 여자아이는 말하는 방식이 다르다."
     },
     {
       "id": "reading-001-s002",
       "english": "Scientists say that their differences create problems when mothers talk to sons and fathers talk to daughters.",
-      "korean": "과학자들은 모친이 아들에게, 부친이 딸에게 말할 때, 그들의 차이점이 문제를 야기시킨다고 말한다."
+      "korean": "과학자들은 어머니가 아들에게, 아버지가 딸에게 말할 때 이 차이 때문에 문제가 생긴다고 말한다."
     },
     {
       "id": "reading-001-s003",
-      "english": "For instance, a mother's good counsel cannot work on her son and fathers often side with their sons.",
-      "korean": "예를 들어, 모친의의 훌륭한 상담은 아들에게 효과를 발휘하지 못하고, 아버지가 종종 아들의 편을 든다."
+      "english": "For instance, a mother's good counsel may not work on her son, and a father's may not work on his daughter.",
+      "korean": "예를 들어, 어머니의 좋은 조언이 아들에게는 통하지 않고, 아버지의 조언이 딸에게는 통하지 않을 수 있다."
     },
     {
       "id": "reading-001-s004",
-      "english": "That doesn't mean, though, that parents and their other-sex child are doomed to miscommunicate with each other.",
-      "korean": "하지만 그것은 부모들과 이성인 자녀들이 서로 의사가 안 통하도록 운명지워져 있음을 의미하지 않는다."
+      "english": "That doesn't mean, though, that parents and their other-sex children are doomed to miscommunicate with each other.",
+      "korean": "하지만 그렇다고 해서 부모와 성별이 다른 자녀가 서로 의사소통에 실패할 운명이라는 뜻은 아니다."
     },
     {
       "id": "reading-001-s005",
-      "english": "As a result, children prefer to talk to their other-sex parent.",
-      "korean": "결과적으로 아이들은 다른 성의 부모와 말하기를 더 좋아한다."
-    },
-    {
-      "id": "reading-001-s006",
       "english": "Their communication will be more successful if parents respect their other-sex child's different way of speaking.",
-      "korean": "만약 부모들이 그들과 이성인 자녀들의 말하는 다른 방식을 존중한다면, 그들의 대화는 훨씬 성공적일 것이다"
+      "korean": "부모가 성별이 다른 자녀의 다른 말하기 방식을 존중한다면 그들의 대화는 더 성공적일 것이다."
     }
   ],
   "readingVocabulary": [
@@ -87,13 +82,13 @@
       "examTags": [
         "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "create",
       "lemma": "create",
       "partOfSpeech": "v.",
-      "korean": "만들어 내다, (문제를) 일으키다",
+      "korean": "(문제를) 일으키다, 만들어 내다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
@@ -126,39 +121,38 @@
       "freq": 1
     },
     {
-      "word": "result",
-      "lemma": "result",
+      "word": "counsel",
+      "lemma": "counsel",
       "partOfSpeech": "n.",
-      "korean": "결과",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "조언, 충고",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "prefer",
-      "lemma": "prefer",
+      "word": "doomed",
+      "lemma": "doomed",
+      "partOfSpeech": "adj.",
+      "korean": "~할 운명인 (be doomed to)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "miscommunicate",
+      "lemma": "miscommunicate",
       "partOfSpeech": "v.",
-      "korean": "더 좋아하다, 선호하다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "서로 뜻이 잘못 전해지다, 오해하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "parent",
-      "lemma": "parent",
-      "partOfSpeech": "n.",
-      "korean": "부모, 어버이",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초",
-        "수능"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -166,19 +160,19 @@
       "word": "other-sex",
       "lemma": "other-sex",
       "partOfSpeech": "adj.",
-      "korean": "이성의, 다른 성별의",
+      "korean": "성별이 다른",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 89점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 2
     },
     {
       "word": "speaking",
-      "lemma": "speak",
+      "lemma": "speaking",
       "partOfSpeech": "n.",
-      "korean": "말하기, 말하는 방식 (speak의 동명사)",
+      "korean": "말하기 (way of speaking 말하는 방식)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -188,9 +182,9 @@
     },
     {
       "word": "parents",
-      "lemma": "parents",
+      "lemma": "parent",
       "partOfSpeech": "n.",
-      "korean": "부모님",
+      "korean": "부모",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -199,22 +193,22 @@
       "freq": 2
     },
     {
-      "word": "child",
-      "lemma": "child",
-      "partOfSpeech": "n.",
-      "korean": "아이",
+      "word": "respect",
+      "lemma": "respect",
+      "partOfSpeech": "v.",
+      "korean": "존중하다",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "girls",
       "lemma": "girl",
       "partOfSpeech": "n.",
-      "korean": "소녀",
+      "korean": "여자아이",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -226,7 +220,7 @@
       "word": "communication",
       "lemma": "communication",
       "partOfSpeech": "n.",
-      "korean": "의사소통",
+      "korean": "의사소통, 대화",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

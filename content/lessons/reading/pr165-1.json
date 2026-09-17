@@ -63,7 +63,7 @@
     {
       "id": "reading-165-s004",
       "english": "Since the questions on the objective test are presented in true―false or multiple choice form, the student may be encouraged to guess answers for which he has no accurate knowledge.",
-      "korean": "객관식 시험의 질문들이 참 거짓이나 선다형 형식으로 제시되기 때문에, 학생은 정확한 지식이 없는 답을 추측하도록 유도될 수 있다."
+      "korean": "객관식 시험의 질문들이 참/거짓이나 선다형 형식으로 제시되기 때문에, 학생은 정확한 지식이 없는 답을 추측하도록 유도될 수 있다."
     },
     {
       "id": "reading-165-s005",
@@ -88,45 +88,69 @@
   ],
   "readingVocabulary": [
     {
-      "word": "student",
-      "lemma": "student",
-      "partOfSpeech": "n.",
-      "korean": "학생",
-      "score": 114,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 114점)",
+      "word": "objective",
+      "lemma": "objective",
+      "partOfSpeech": "adj.",
+      "korean": "객관적인 (objective test 객관식 시험)",
+      "score": 91,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 91점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 6
+      "freq": 3
     },
     {
-      "word": "reduced",
-      "lemma": "reduce",
-      "partOfSpeech": "v.",
-      "korean": "감소시키다",
-      "score": 109,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
+      "word": "essay",
+      "lemma": "essay",
+      "partOfSpeech": "n.",
+      "korean": "논술 (essay exam 논술형 시험)",
+      "score": 87,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "contrasting",
+      "lemma": "contrasting",
+      "partOfSpeech": "adj.",
+      "korean": "대조적인",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "encouraged",
-      "lemma": "encourage",
-      "partOfSpeech": "v.",
-      "korean": "격려하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "word": "evaluation",
+      "lemma": "evaluation",
+      "partOfSpeech": "n.",
+      "korean": "평가",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "grasp",
+      "lemma": "grasp",
+      "partOfSpeech": "n.",
+      "korean": "이해, 파악",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "require",
       "lemma": "require",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "요구하다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
@@ -136,10 +160,34 @@
       "freq": 2
     },
     {
+      "word": "demonstrate",
+      "lemma": "demonstrate",
+      "partOfSpeech": "v.",
+      "korean": "보여 주다, 입증하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 2
+    },
+    {
+      "word": "mastery",
+      "lemma": "mastery",
+      "partOfSpeech": "n.",
+      "korean": "숙달, 완전한 이해",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
       "word": "leads",
       "lemma": "lead",
       "partOfSpeech": "v.",
-      "korean": "이끌다, 초래하다",
+      "korean": "(lead to) ~으로 이어지다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
@@ -149,10 +197,34 @@
       "freq": 1
     },
     {
+      "word": "memorization",
+      "lemma": "memorization",
+      "partOfSpeech": "n.",
+      "korean": "암기 (rote memorization 기계적 암기)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "encouraged",
+      "lemma": "encourage",
+      "partOfSpeech": "v.",
+      "korean": "부추기다 (be encouraged to ~하도록 부추겨지다)",
+      "score": 101,
+      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
       "word": "knowledge",
       "lemma": "knowledge",
       "partOfSpeech": "n.",
-      "korean": "지식, 앎",
+      "korean": "지식",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -163,100 +235,28 @@
       "freq": 1
     },
     {
-      "word": "facts",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "objective",
-      "lemma": "objective",
+      "word": "analytical",
+      "lemma": "analytical",
       "partOfSpeech": "adj.",
-      "korean": "목표",
-      "score": 91,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 91점)",
+      "korean": "분석적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
-      "word": "hand",
-      "lemma": "hand",
-      "partOfSpeech": "n.",
-      "korean": "손",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "reduced",
+      "lemma": "reduce",
+      "partOfSpeech": "v.",
+      "korean": "줄이다 (be reduced to a minimum 최소한으로 줄다)",
+      "score": 109,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
         "중학기초"
       ],
       "freq": 1
-    },
-    {
-      "word": "far",
-      "lemma": "far",
-      "partOfSpeech": "n.",
-      "korean": "멀리",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "essay",
-      "lemma": "essay",
-      "partOfSpeech": "n.",
-      "korean": "에세이, 수필",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
-      "word": "contrasting",
-      "lemma": "contrast",
-      "partOfSpeech": "v.",
-      "korean": "대비",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "guessing",
-      "lemma": "guess",
-      "partOfSpeech": "v.",
-      "korean": "추측하다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "test",
-      "lemma": "test",
-      "partOfSpeech": "n.",
-      "korean": "테스트",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
     }
   ]
 }

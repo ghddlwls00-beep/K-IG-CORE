@@ -25,35 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "미래에 대한 불가능한 계획을 세우며 삶을 헛되이 흘러가도록 바라지"
-    },
-    {
-      "type": "instruction",
-      "text": "마십시오. 웅대한 계획은 즐겁지만 이룰 수 없으면 실제 도움이 되지"
-    },
-    {
-      "type": "instruction",
-      "text": "않습니다. 또한 다른 사람이, 당신이 불가능 하다고 생각하는 것을"
-    },
-    {
-      "type": "instruction",
-      "text": "성취하도록 압력을 가하도록 놔두지 마십시오. 당신은 그것을 성취하는"
-    },
-    {
-      "type": "instruction",
-      "text": "것에 대해 걱정하게 될 뿐, 그것은 새로운 근심 거리만 촉발시킵니다."
-    },
-    {
-      "type": "instruction",
-      "text": "현실적인 목표를 세워 한번에 한 하나씩 달성하려는 목표하라. 인생은"
-    },
-    {
-      "type": "instruction",
-      "text": "귀중하며 미래에 대한 꿈을 간직하는 것 뿐 아니라 현재에 살 필요가"
-    },
-    {
-      "type": "instruction",
-      "text": "있다는 것을 기억해라."
+      "text": "미래를 위한 불가능한 계획을 세우며 인생을 헛되이 보내지 마라. 원대한 계획은 재미있지만, 이룰 수 없다면 실제로는 도움이 되지 않는다. 또한 불가능하다고 알고 있는 일을 이루도록 다른 사람들이 당신에게 압력을 가하게 두지 마라. 그것을 이루는 일을 걱정하게 될 뿐이고, 그 걱정은 수많은 새로운 불안을 불러일으킬 것이다. 현실적인 목표를 세우고, 한 번에 한 걸음씩 그것을 이루도록 하라. 인생은 소중하며, 미래에 대한 꿈을 간직하는 것과 함께 현재를 살아야 한다는 것을 기억하라."
     },
     {
       "type": "choice",
@@ -76,32 +48,32 @@
     {
       "id": "reading-027-s001",
       "english": "Don't wish your life away making impossible plans for your future.",
-      "korean": "미래에 대한 불가능한 계획을 세우며 삶을 헛되이 흘러가도록 바라지 마십시오."
+      "korean": "미래를 위한 불가능한 계획을 세우며 인생을 헛되이 보내지 마라."
     },
     {
       "id": "reading-027-s002",
       "english": "Grand plans are fun, but not really helpful if you can't achieve them.",
-      "korean": "웅대한 계획은 즐겁지만 이룰 수 없으면 실제 도움이 되지 않습니다."
+      "korean": "원대한 계획은 재미있지만, 이룰 수 없다면 실제로는 도움이 되지 않는다."
     },
     {
       "id": "reading-027-s003",
       "english": "And don't let other people pressure you into trying to achieve things that you know are not possible.",
-      "korean": "또한 다른 사람이, 당신이 불가능 하다고 생각하는 것을 성취하도록 압력을 가하도록 놔두지 마십시오."
+      "korean": "또한 불가능하다고 알고 있는 일을 이루도록 다른 사람들이 당신에게 압력을 가하게 두지 마라."
     },
     {
       "id": "reading-027-s004",
       "english": "You'll only worry about achieving them, and that will trigger a whole host of new anxieties.",
-      "korean": "당신은 그것을 성취하는 것에 대해 걱정하게 될 뿐, 그것은 새로운 근심 거리만 촉발시킵니다."
+      "korean": "그것을 이루는 일을 걱정하게 될 뿐이고, 그 걱정은 수많은 새로운 불안을 불러일으킬 것이다."
     },
     {
       "id": "reading-027-s005",
       "english": "Set yourself realistic goals, and aim to achieve them one step at a time.",
-      "korean": "현실적인 목표를 세워 한번에 한 하나씩 달성하려는 목표하라."
+      "korean": "현실적인 목표를 세우고, 한 번에 한 걸음씩 그것을 이루도록 하라."
     },
     {
       "id": "reading-027-s006",
       "english": "Remember that life is precious and you need to live in the present as well as hold on to your dreams for the future.",
-      "korean": "인생은 귀중하며 미래에 대한 꿈을 간직하는 것 뿐 아니라 현재에 살 필요가 있다는 것을 기억해라."
+      "korean": "인생은 소중하며, 미래에 대한 꿈을 간직하는 것과 함께 현재를 살아야 한다는 것을 기억하라."
     }
   ],
   "readingVocabulary": [
@@ -109,7 +81,7 @@
       "word": "wish",
       "lemma": "wish",
       "partOfSpeech": "v.",
-      "korean": "바라다, 원하다",
+      "korean": "(wish ~ away) 헛되이 보내다",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
       "examTags": [
@@ -120,8 +92,8 @@
     {
       "word": "achieve",
       "lemma": "achieve",
-      "partOfSpeech": "n.",
-      "korean": "달성하다",
+      "partOfSpeech": "v.",
+      "korean": "이루다, 달성하다",
       "score": 104,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -132,7 +104,7 @@
     {
       "word": "remember",
       "lemma": "remember",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "기억하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -156,7 +128,7 @@
     {
       "word": "worry",
       "lemma": "worry",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "걱정하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -204,8 +176,8 @@
     {
       "word": "impossible",
       "lemma": "impossible",
-      "partOfSpeech": "n.",
-      "korean": "불가능하다",
+      "partOfSpeech": "adj.",
+      "korean": "불가능한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -226,12 +198,12 @@
       "freq": 1
     },
     {
-      "word": "need",
-      "lemma": "need",
-      "partOfSpeech": "v.",
-      "korean": "필요",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 78점)",
+      "word": "realistic",
+      "lemma": "realistic",
+      "partOfSpeech": "adj.",
+      "korean": "현실적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -241,7 +213,7 @@
       "word": "present",
       "lemma": "present",
       "partOfSpeech": "n.",
-      "korean": "현재",
+      "korean": "현재 (the present)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -250,24 +222,24 @@
       "freq": 1
     },
     {
-      "word": "away",
-      "lemma": "away",
+      "word": "anxieties",
+      "lemma": "anxiety",
       "partOfSpeech": "n.",
-      "korean": "떨어져",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "korean": "불안, 걱정",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "trying",
-      "lemma": "try",
+      "word": "pressure",
+      "lemma": "pressure",
       "partOfSpeech": "v.",
-      "korean": "시도하다",
-      "score": 71,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 71점)",
+      "korean": "압력을 가하다 (pressure A into ~ing)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Some people believe that if they have much money, they will be happy. They believe that if they are wealthy, they will be able to do everything they want, and so they will be happy. On the other hand, some people value their religion, or their intelligence, or their health ; these make them happy. For me , happiness is closely tied to my family. I am happy if my wife and children live in harmony. When all members of my family share good and sad times, and communicate with each other, I am happy."
+      "text": "Some people believe that if they have much money, they will be happy. They believe that if they are wealthy, they will be able to do everything they want, and so they will be happy. On the other hand, some people value their religion, or their intelligence, or their health; these make them happy. For me, happiness is closely tied to my family. I am happy if my wife and children live in harmony. When all members of my family share good and sad times, and communicate with each other, I am happy."
     },
     {
       "type": "choice",
@@ -57,12 +57,12 @@
     },
     {
       "id": "reading-223-s003",
-      "english": "On the other hand, some people value their religion, or their intelligence, or their health ; these make them happy.",
-      "korean": "반면에 어떤 사람들은 그들의 종교나 지식, 건강에 가치를 두고, 이러한 것들은 그들을 행복하게 만든다."
+      "english": "On the other hand, some people value their religion, or their intelligence, or their health; these make them happy.",
+      "korean": "반면에 어떤 사람들은 그들의 종교나 지성, 건강에 가치를 두고, 이러한 것들은 그들을 행복하게 만든다."
     },
     {
       "id": "reading-223-s004",
-      "english": "For me , happiness is closely tied to my family.",
+      "english": "For me, happiness is closely tied to my family.",
       "korean": "나의 경우 행복이란 나의 가족과 밀접하게 연결되어 있다."
     },
     {
@@ -80,7 +80,7 @@
     {
       "word": "happy",
       "lemma": "happy",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "행복한",
       "score": 120,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 120점)",
@@ -90,21 +90,21 @@
       "freq": 5
     },
     {
-      "word": "believe",
-      "lemma": "believe",
-      "partOfSpeech": "n.",
-      "korean": "믿다",
-      "score": 109,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 109점)",
+      "word": "value",
+      "lemma": "value",
+      "partOfSpeech": "v.",
+      "korean": "소중히 여기다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "family",
       "lemma": "family",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "n.",
       "korean": "가족",
       "score": 103,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 103점)",
@@ -116,8 +116,8 @@
     {
       "word": "share",
       "lemma": "share",
-      "partOfSpeech": "n.",
-      "korean": "공유하다",
+      "partOfSpeech": "v.",
+      "korean": "함께 나누다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -128,7 +128,7 @@
     {
       "word": "sad",
       "lemma": "sad",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "슬픈",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
@@ -165,7 +165,7 @@
       "word": "hand",
       "lemma": "hand",
       "partOfSpeech": "n.",
-      "korean": "손",
+      "korean": "(on the other hand) 반면에",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -177,21 +177,9 @@
       "word": "communicate",
       "lemma": "communicate",
       "partOfSpeech": "v.",
-      "korean": "의사소통하다",
+      "korean": "소통하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "money",
-      "lemma": "money",
-      "partOfSpeech": "n.",
-      "korean": "돈",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
         "독해필수"
       ],
@@ -201,21 +189,9 @@
       "word": "members",
       "lemma": "member",
       "partOfSpeech": "n.",
-      "korean": "회원",
+      "korean": "구성원",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "everything",
-      "lemma": "everything",
-      "partOfSpeech": "v.",
-      "korean": "모든 것",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
         "독해필수"
       ],
@@ -225,7 +201,7 @@
       "word": "wealthy",
       "lemma": "wealthy",
       "partOfSpeech": "adj.",
-      "korean": "부유한, 재산이 많은",
+      "korean": "부유한",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
@@ -235,11 +211,35 @@
     },
     {
       "word": "tied",
-      "lemma": "tied",
+      "lemma": "tie",
       "partOfSpeech": "v.",
-      "korean": "묶인, 얽힌",
+      "korean": "(be tied to) ~과 밀접하게 연결되다",
       "score": 70,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 70점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "religion",
+      "lemma": "religion",
+      "partOfSpeech": "n.",
+      "korean": "종교",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "intelligence",
+      "lemma": "intelligence",
+      "partOfSpeech": "n.",
+      "korean": "지성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

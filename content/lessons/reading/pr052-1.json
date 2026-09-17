@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "모든 부모들은 자녀를 도덕성을 잘 갖춘 아이로 양육하기를 바란다. 우리들은 자녀들이 선과 악, 그리고 옮은 것과 잘못된 것을 구별하기를 바란다. 우리들은 자녀들이 도덕적이고 윤리적으로 행동하는 방식을 배워서 정직하고 사려 깊은 사람으로 성장하기를 희망한다. 간단히 말해, 우리들은 자녀들이 양심, 즉 그들이 올바른 길을 걷게 할 확고한 내적인 목소리를 계발하기를 바란다. 그러나 양심은 저절로 계발되는 것이 아니어서, 양심을 축적시키는 일은 우리들의 몫이 된다. 그 일은 부모들이 매일 그리고 매년 염두에 두고 노력할 필요가 있는 과정이다. 우리들은 끊임없이 옳은 것과 잘못된 것을 구별하고 적절한 행동을 본보기로 제시할 필요가 있다. 그러면 결국 우리 자녀들은 우리들이 의도하는 뜻을 완전히 받아들이게 될 것이고, 그러한 뜻은 그들의 성격의 바탕이 될 것이다."
+      "text": "모든 부모들은 자녀를 도덕성을 잘 갖춘 아이로 양육하기를 바란다. 우리들은 자녀들이 선과 악, 그리고 옳은 것과 잘못된 것을 구별하기를 바란다. 우리들은 자녀들이 도덕적이고 윤리적으로 행동하는 방식을 배워서 정직하고 사려 깊은 사람으로 성장하기를 희망한다. 간단히 말해, 우리들은 자녀들이 양심, 즉 그들이 올바른 길을 걷게 할 확고한 내적인 목소리를 계발하기를 바란다. 그러나 양심은 저절로 계발되는 것이 아니어서, 양심을 키우는 일은 우리 몫이다. 그 일은 부모들이 매일 그리고 매년 염두에 두고 노력할 필요가 있는 과정이다. 우리들은 끊임없이 옳은 것과 잘못된 것을 구별하고 적절한 행동을 본보기로 제시할 필요가 있다. 그러면 결국 우리 자녀들은 우리들이 의도하는 뜻을 완전히 받아들이게 될 것이고, 그러한 뜻은 그들의 성격의 바탕이 될 것이다."
     },
     {
       "type": "choice",
@@ -53,7 +53,7 @@
     {
       "id": "reading-052-s002",
       "english": "We want our children to know good from bad, and right from wrong.",
-      "korean": "우리들은 자녀들이 선과 악, 그리고 옮은 것과 잘못된 것을 구별하기를 바란다."
+      "korean": "우리들은 자녀들이 선과 악, 그리고 옳은 것과 잘못된 것을 구별하기를 바란다."
     },
     {
       "id": "reading-052-s003",
@@ -68,7 +68,7 @@
     {
       "id": "reading-052-s005",
       "english": "But a conscience does not develop by itself, so the job of building one is ours.",
-      "korean": "그러나 양심은 저절로 계발되는 것이 아니어서, 양심을 축적시키는 일은 우리들의 몫이 된다."
+      "korean": "그러나 양심은 저절로 계발되는 것이 아니어서, 양심을 키우는 일은 우리 몫이다."
     },
     {
       "id": "reading-052-s006",
@@ -91,7 +91,7 @@
       "word": "develop",
       "lemma": "develop",
       "partOfSpeech": "v.",
-      "korean": "발전시키다, 개발하다",
+      "korean": "기르다, 발달시키다",
       "score": 106,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 106점)",
       "examTags": [
@@ -102,34 +102,34 @@
       "freq": 2
     },
     {
-      "word": "mother",
-      "lemma": "mother",
-      "partOfSpeech": "n.",
-      "korean": "어머니",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "raise",
+      "lemma": "raise",
+      "partOfSpeech": "v.",
+      "korean": "(아이를) 키우다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "father",
-      "lemma": "father",
-      "partOfSpeech": "n.",
-      "korean": "아버지",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "considerate",
+      "lemma": "considerate",
+      "partOfSpeech": "adj.",
+      "korean": "사려 깊은",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "strong",
       "lemma": "strong",
-      "partOfSpeech": "n.",
-      "korean": "강한",
+      "partOfSpeech": "adj.",
+      "korean": "강한, 확고한",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -140,7 +140,7 @@
     {
       "word": "accept",
       "lemma": "accept",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "받아들이다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
@@ -153,7 +153,7 @@
       "word": "character",
       "lemma": "character",
       "partOfSpeech": "n.",
-      "korean": "성격",
+      "korean": "인격, 성품",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -164,7 +164,7 @@
     {
       "word": "honest",
       "lemma": "honest",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "정직한",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -177,7 +177,7 @@
       "word": "voice",
       "lemma": "voice",
       "partOfSpeech": "n.",
-      "korean": "목소리",
+      "korean": "목소리 (inner voice 내면의 목소리)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -188,8 +188,8 @@
     {
       "word": "distinguish",
       "lemma": "distinguish",
-      "partOfSpeech": "n.",
-      "korean": "구별하다",
+      "partOfSpeech": "v.",
+      "korean": "구별하다 (distinguish A from B)",
       "score": 89,
       "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -198,34 +198,34 @@
       "freq": 1
     },
     {
-      "word": "hope",
-      "lemma": "hope",
+      "word": "conscience",
+      "lemma": "conscience",
       "partOfSpeech": "n.",
-      "korean": "희망",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "children",
-      "lemma": "child",
-      "partOfSpeech": "n.",
-      "korean": "아이",
-      "score": 87,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
+      "korean": "양심",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 2
+    },
+    {
+      "word": "ethically",
+      "lemma": "ethically",
+      "partOfSpeech": "adv.",
+      "korean": "윤리적으로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     },
     {
       "word": "moral",
       "lemma": "moral",
       "partOfSpeech": "adj.",
-      "korean": "도덕적인, 윤리적인",
+      "korean": "도덕적인",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -236,8 +236,8 @@
     {
       "word": "right",
       "lemma": "right",
-      "partOfSpeech": "n.",
-      "korean": "맞아",
+      "partOfSpeech": "adj.",
+      "korean": "옳은 (right from wrong 옳고 그름)",
       "score": 77,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -246,12 +246,12 @@
       "freq": 3
     },
     {
-      "word": "every",
-      "lemma": "every",
+      "word": "essence",
+      "lemma": "essence",
       "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "본질, 핵심",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

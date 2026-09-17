@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "언어가 결핍된 사회는 가장 단순한 협업이외의 어떤 일에 종사하는 것이 불가능할 것이다. 개인이나 개인의 집단은 그런 활동을 계획하거나 다른 이에게 그런 활동을 설명하거나 또는 공통의 목표를 향해 협업에 참가자들의 행위를 지도하는 어떤 방법을 가지지 않을 것이다. 왜냐하면 각 개인은 다른 사람의 도움을 확보하는 방법이 없을 것이기 때문에 상당한 정도까지 자신의 힘과 능력에 의존적일 것이다."
+      "text": "언어가 없는 사회는 가장 단순한 협동 작업 말고는 어떤 일도 할 수 없을 것이다. 개인이든 집단이든 그런 활동을 계획하거나, 다른 사람에게 설명하거나, 협동 작업 참가자들의 행동을 공동 목표로 이끌 방법이 없을 것이다. 각 개인은 다른 사람의 도움을 얻을 수단이 없으므로 상당 부분 자신의 힘과 능력에 의지해야 할 것이다."
     },
     {
       "type": "choice",
@@ -48,17 +48,17 @@
     {
       "id": "reading-050-s001",
       "english": "A society lacking language would be incapable of engaging in any but the simplest of cooperative enterprises.",
-      "korean": "언어가 결핍된 사회는 가장 단순한 협업이외의 어떤 일에 종사하는 것이 불가능할 것이다."
+      "korean": "언어가 없는 사회는 가장 단순한 협동 작업 말고는 어떤 일도 할 수 없을 것이다."
     },
     {
       "id": "reading-050-s002",
-      "english": "An individual or group of individuals would have no way of planning such activities , of explaining them to others, or of directing the actions of the participants in cooperative enterprises toward the common goal.",
-      "korean": "개인이나 개인의 집단은 그런 활동을 계획하거나 다른 이에게 그런 활동을 설명하거나 또는 공통의 목표를 향해 협업에 참가자들의 행위를 지도하는 어떤 방법을 가지지 않을 것이다."
+      "english": "An individual or group of individuals would have no way of planning such activities, of explaining them to others, or of directing the actions of the participants in cooperative enterprises toward the common goal.",
+      "korean": "개인이든 집단이든 그런 활동을 계획하거나, 다른 사람에게 설명하거나, 협동 작업 참가자들의 행동을 공동 목표로 이끌 방법이 없을 것이다."
     },
     {
       "id": "reading-050-s003",
       "english": "Each individual would be to a large extent dependent on his own strength and ability since he would lack the means of securing the help of others.",
-      "korean": "왜냐하면 각 개인은 다른 사람의 도움을 확보하는 방법이 없을 것이기 때문에 상당한 정도까지 자신의 힘과 능력에 의존적일 것이다."
+      "korean": "각 개인은 다른 사람의 도움을 얻을 수단이 없으므로 상당 부분 자신의 힘과 능력에 의지해야 할 것이다."
     }
   ],
   "readingVocabulary": [
@@ -89,8 +89,8 @@
     {
       "word": "simplest",
       "lemma": "simple",
-      "partOfSpeech": "n.",
-      "korean": "단순한",
+      "partOfSpeech": "adj.",
+      "korean": "가장 단순한 (simple의 최상급)",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -114,7 +114,7 @@
       "word": "directing",
       "lemma": "direct",
       "partOfSpeech": "v.",
-      "korean": "직접",
+      "korean": "지휘하다, 이끌다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -125,7 +125,7 @@
     {
       "word": "goal",
       "lemma": "goal",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "목표",
       "score": 90,
       "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 90점)",
@@ -138,7 +138,7 @@
       "word": "cooperative",
       "lemma": "cooperative",
       "partOfSpeech": "adj.",
-      "korean": "협동조합",
+      "korean": "협동의",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
       "examTags": [
@@ -150,7 +150,7 @@
       "word": "engaging",
       "lemma": "engage",
       "partOfSpeech": "v.",
-      "korean": "참여하다",
+      "korean": "(engage in) ~에 참여하다, 종사하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -162,7 +162,7 @@
       "word": "enterprises",
       "lemma": "enterprise",
       "partOfSpeech": "n.",
-      "korean": "기업",
+      "korean": "사업, 일 (cooperative enterprises 협동 작업)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -173,7 +173,7 @@
     {
       "word": "individual",
       "lemma": "individual",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "개인",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 84점)",
@@ -186,7 +186,7 @@
       "word": "securing",
       "lemma": "secure",
       "partOfSpeech": "v.",
-      "korean": "안전한",
+      "korean": "확보하다, 얻다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -198,7 +198,7 @@
       "word": "incapable",
       "lemma": "incapable",
       "partOfSpeech": "adj.",
-      "korean": "~할 수 없는, 무능한",
+      "korean": "~할 수 없는 (be incapable of)",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -209,8 +209,8 @@
     {
       "word": "lacking",
       "lemma": "lack",
-      "partOfSpeech": "n.",
-      "korean": "부족, 결핍",
+      "partOfSpeech": "v.",
+      "korean": "~이 없다 (a society lacking language 언어가 없는 사회)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -222,8 +222,8 @@
     {
       "word": "dependent",
       "lemma": "dependent",
-      "partOfSpeech": "n.",
-      "korean": "종속",
+      "partOfSpeech": "adj.",
+      "korean": "의존하는 (dependent on)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

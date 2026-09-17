@@ -48,7 +48,7 @@
     {
       "id": "reading-043-s001",
       "english": "Painting restorers are highly trained in their techniques, but they would have to be the original painter to know exactly what to do with the work at hand.",
-      "korean": "그림을 원상으로 복귀시키는 사람들은 그들의 기술이 고도로 훈련되어 있지만 그 작품을 갖고 어떻게 해야하는 가를 정확하게 알기 위해서는 원래의 화가가 되어야 할 것이다."
+      "korean": "그림 복원 전문가들은 고도로 훈련된 기술을 갖고 있지만, 맡은 작품을 어떻게 다뤄야 할지 정확히 알려면 그 그림을 그린 화가 본인이어야 할 것이다."
     },
     {
       "id": "reading-043-s002",
@@ -58,7 +58,7 @@
     {
       "id": "reading-043-s003",
       "english": "What is important is to bring a painting back to an artist’s original intent.",
-      "korean": "중요한 것은 어떤 그림을 한 예술가의 원래 의도대로 복귀시키는 것이다."
+      "korean": "중요한 것은 그림을 화가의 원래 의도대로 되돌리는 것이다."
     },
     {
       "id": "reading-043-s004",
@@ -73,7 +73,7 @@
     {
       "id": "reading-043-s006",
       "english": "“Our goal is to respect the artist’s intent, but at the same time to make it a visually coherent work of art,” says Michael Duffy of the Museum of Modern Art in New York.",
-      "korean": "“우리의 목표는 예술가의 의도를 존중하는 것이지만 동시에 그것을 시각적으로 긴밀히 결부된 예술 작품으로 만드는 것이지요”라고 뉴욕의 현대 미술관의 Michael Duffy는 말한다."
+      "korean": "“우리의 목표는 예술가의 의도를 존중하는 것이지만 동시에 그것을 시각적으로 조화로운 예술 작품으로 만드는 것이지요”라고 뉴욕의 현대 미술관의 Michael Duffy는 말한다."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "art",
       "lemma": "art",
       "partOfSpeech": "n.",
-      "korean": "예술",
+      "korean": "예술 (work of art 예술 작품)",
       "score": 101,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 101점)",
       "examTags": [
@@ -91,9 +91,9 @@
     },
     {
       "word": "highly",
-      "lemma": "high",
+      "lemma": "highly",
       "partOfSpeech": "adv.",
-      "korean": "높다",
+      "korean": "고도로, 매우",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -105,7 +105,7 @@
       "word": "hand",
       "lemma": "hand",
       "partOfSpeech": "n.",
-      "korean": "손",
+      "korean": "(at hand) 맡은, 당면한",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
       "examTags": [
@@ -116,7 +116,7 @@
     {
       "word": "goal",
       "lemma": "goal",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "목표",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 98점)",
@@ -128,7 +128,7 @@
     {
       "word": "painting",
       "lemma": "painting",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "n.",
       "korean": "그림",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
@@ -140,7 +140,7 @@
     {
       "word": "difficult",
       "lemma": "difficult",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "어려운",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -152,7 +152,7 @@
     {
       "word": "decide",
       "lemma": "decide",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "결정하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -165,7 +165,7 @@
       "word": "original",
       "lemma": "original",
       "partOfSpeech": "adj.",
-      "korean": "원래의, 독창적인",
+      "korean": "원래의",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
       "examTags": [
@@ -175,9 +175,9 @@
     },
     {
       "word": "trained",
-      "lemma": "train",
-      "partOfSpeech": "v.",
-      "korean": "기차",
+      "lemma": "trained",
+      "partOfSpeech": "adj.",
+      "korean": "훈련된",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -186,16 +186,16 @@
       "freq": 1
     },
     {
-      "word": "artist",
-      "lemma": "artist",
-      "partOfSpeech": "n.",
-      "korean": "예술가",
+      "word": "retouched",
+      "lemma": "retouch",
+      "partOfSpeech": "v.",
+      "korean": "손질하다, 덧칠하다",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "intent",
@@ -211,9 +211,9 @@
     },
     {
       "word": "restorers",
-      "lemma": "restorers",
+      "lemma": "restorer",
       "partOfSpeech": "n.",
-      "korean": "복원 전문가들, 수리공들",
+      "korean": "복원 전문가",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -225,7 +225,7 @@
       "word": "techniques",
       "lemma": "technique",
       "partOfSpeech": "n.",
-      "korean": "기술",
+      "korean": "기법, 기술",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -234,12 +234,12 @@
       "freq": 1
     },
     {
-      "word": "painter",
-      "lemma": "painter",
-      "partOfSpeech": "n.",
-      "korean": "화가",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "coherent",
+      "lemma": "coherent",
+      "partOfSpeech": "adj.",
+      "korean": "조화로운, 일관성 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

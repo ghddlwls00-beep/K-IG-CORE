@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "당신은 한 가족의 구성원이고 지역 야구팀의 선수이며 그리고 당신 학교의 학생이다. 당신은 또한 당신의 나라의 한 시민이다. 요컨대, 당신은 복잡한 사회 구조에서 몇 가지 다른 지위를 차지하고 있다. 이것은 당신이 다양한 상황에서 많은 역할을 해야 한다는 것을 의미한다. 일반적으로, 당신은 자신에게 기대되는 것이 무엇인지 알기 때문에 당신의 각각의 역할을 수행하는 데 어려움을 거의 갖지 않는다. 이러한 지식은 당신의 일상적인 상호 작용을 통해 당신을 지도한다. 그러나 때때로 당신은 어떤 갈등에 휘말리게 된다. 당신의 각각의 역할은 당신에게 몇 가지 요구를 한다. 그리고 당신은 동시에 두 개나 그 이상의 역할을 하도록 요청 받을 수 있다. 당신이 상충하는 여러 역할들을 요구받을 때, 당신은 아주 불편하게 느끼고 때때로 좌절감을 느낄 수 있다. 예를 들어, 당신의 가족이 이번 일요일에 소풍 갈 예정이라고 하자. 하지만 당신의 가장 친한 친구는 당신이 같은 날 그의 생일 파티에 와 주기를 원한다. 그러한 역할 갈등이 일어날 때, 당신은 더 중요한 것들을 먼저 할 필요가 있다. 그래서, 어떤 순서로 무엇을 할 것인지 결정할 능력은 여러 개의 사회적 역할을 수행하기 위한 중요한 기술이다."
+      "text": "당신은 한 가족의 구성원이고 지역 야구팀의 선수이며 그리고 당신 학교의 학생이다. 당신은 또한 당신의 나라의 한 시민이다. 요컨대, 당신은 복잡한 사회 구조에서 몇 가지 다른 지위를 차지하고 있다. 이것은 당신이 다양한 상황에서 많은 역할을 해야 한다는 것을 의미한다. 일반적으로, 당신은 자신에게 기대되는 것이 무엇인지 알기 때문에 당신의 각각의 역할을 수행하는 데 어려움을 거의 갖지 않는다. 이런 지식은 일상의 여러 관계 속에서 당신을 이끌어 준다. 그러나 때때로 당신은 어떤 갈등에 휘말리게 된다. 당신의 각각의 역할은 당신에게 몇 가지 요구를 한다. 그리고 당신은 동시에 두 개나 그 이상의 역할을 하도록 요청 받을 수 있다. 당신이 상충하는 여러 역할들을 요구받을 때, 당신은 아주 불편하게 느끼고 때때로 좌절감을 느낄 수 있다. 예를 들어, 당신의 가족이 이번 일요일에 소풍 갈 예정이라고 하자. 하지만 당신의 가장 친한 친구는 당신이 같은 날 그의 생일 파티에 와 주기를 원한다. 그러한 역할 갈등이 일어날 때, 당신은 더 중요한 것들을 먼저 할 필요가 있다. 그래서, 어떤 순서로 무엇을 할 것인지 결정할 능력은 여러 개의 사회적 역할을 수행하기 위한 중요한 기술이다."
     },
     {
       "type": "choice",
@@ -73,7 +73,7 @@
     {
       "id": "reading-245-s006",
       "english": "This knowledge guides you through your daily interactions.",
-      "korean": "이러한 지식은 당신의 일상적인 상호 작용을 통해 당신을 지도한다."
+      "korean": "이런 지식은 일상의 여러 관계 속에서 당신을 이끌어 준다."
     },
     {
       "id": "reading-245-s007",
@@ -107,7 +107,7 @@
     },
     {
       "id": "reading-245-s013",
-      "english": "Thus, the ability to decide what to do in what order is an essential skill to fulfill multiple social roles",
+      "english": "Thus, the ability to decide what to do in what order is an essential skill to fulfill multiple social roles.",
       "korean": "그래서, 어떤 순서로 무엇을 할 것인지 결정할 능력은 여러 개의 사회적 역할을 수행하기 위한 중요한 기술이다."
     }
   ],
@@ -115,7 +115,7 @@
     {
       "word": "family",
       "lemma": "family",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "n.",
       "korean": "가족",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
@@ -125,38 +125,50 @@
       "freq": 2
     },
     {
-      "word": "student",
-      "lemma": "student",
+      "word": "citizen",
+      "lemma": "citizen",
       "partOfSpeech": "n.",
-      "korean": "학생",
-      "score": 104,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
+      "korean": "시민",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "school",
-      "lemma": "school",
-      "partOfSpeech": "n.",
-      "korean": "학교",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "occupy",
+      "lemma": "occupy",
+      "partOfSpeech": "v.",
+      "korean": "차지하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "social",
-      "lemma": "social",
-      "partOfSpeech": "adj.",
-      "korean": "사회적",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 102점)",
+      "word": "positions",
+      "lemma": "position",
+      "partOfSpeech": "n.",
+      "korean": "위치, 지위",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "structure",
+      "lemma": "structure",
+      "partOfSpeech": "n.",
+      "korean": "구조",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
@@ -176,7 +188,7 @@
       "word": "expected",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "기대하다 (be expected of ~에게 기대되다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -187,7 +199,7 @@
     {
       "word": "decide",
       "lemma": "decide",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "결정하다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
@@ -200,7 +212,7 @@
       "word": "demands",
       "lemma": "demand",
       "partOfSpeech": "n.",
-      "korean": "수요",
+      "korean": "요구 (make demands on ~에게 요구하다)",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -209,21 +221,9 @@
       "freq": 2
     },
     {
-      "word": "country",
-      "lemma": "country",
-      "partOfSpeech": "n.",
-      "korean": "국가",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "complex",
       "lemma": "complex",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "복잡한",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -233,53 +233,50 @@
       "freq": 1
     },
     {
-      "word": "society",
-      "lemma": "society",
+      "word": "interactions",
+      "lemma": "interaction",
       "partOfSpeech": "n.",
-      "korean": "사회",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "상호 작용, 교류",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "difficulty",
-      "lemma": "difficulty",
-      "partOfSpeech": "n.",
-      "korean": "어려움, 곤경",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "conflicting",
+      "lemma": "conflicting",
+      "partOfSpeech": "adj.",
+      "korean": "상충하는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초",
-        "수능"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "knowledge",
-      "lemma": "knowledge",
-      "partOfSpeech": "n.",
-      "korean": "지식, 앎",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "frustrated",
+      "lemma": "frustrated",
+      "partOfSpeech": "adj.",
+      "korean": "좌절한, 답답한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초",
-        "수능",
-        "TOEFL"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "friend",
-      "lemma": "friend",
-      "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "fulfill",
+      "lemma": "fulfill",
+      "partOfSpeech": "v.",
+      "korean": "수행하다, 다하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     }

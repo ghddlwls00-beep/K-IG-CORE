@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "사업이나 직업에서 성공을 못하는 사람들은 집중을 못하는 사람들이다. 인생에서 성공한 사람들 중 많은 수는 그들의 집중력이 우수하다는 사실의 덕을 보고 있다. 예술가라면 집중력의 도움을 받아 훌륭한 작품을 만들 수 있다. 과학자라면 과학에서 우수한 성과를 거둘 수 있다. 시인이라면 시도 잘 쓸 것이다. 그러나 아무리 자질이 있더라도 집중을 못하면 자신의 자질을 최대한 이용하지 못할 것이다. 그는 결코 자질이 있는 사람이라고 불릴 수 없다."
+      "text": "사업이나 직업에서 성공을 못하는 사람들은 집중을 못하는 사람들이다. 인생에서 성공한 사람들 중 많은 수는 그들의 집중력이 우수하다는 사실의 덕을 보고 있다. 예술가라면 집중력의 도움을 받아 훌륭한 작품을 만들 수 있다. 과학자라면 과학에서 우수한 성과를 거둘 수 있다. 시인이라면 시도 잘 쓸 것이다. 아무리 자격을 갖춘 사람이라도 집중하지 못하면 자신의 자격을 최대한 활용하지 못할 것이다. 그런 사람은 자격을 갖추었다고 하기 어렵다."
     },
     {
       "type": "choice",
@@ -73,12 +73,12 @@
     {
       "id": "reading-049-s006",
       "english": "However qualified a person may be, he will not be able to make the best use of his qualifications without concentration.",
-      "korean": "그러나 아무리 자질이 있더라도 집중을 못하면 자신의 자질을 최대한 이용하지 못할 것이다."
+      "korean": "아무리 자격을 갖춘 사람이라도 집중하지 못하면 자신의 자격을 최대한 활용하지 못할 것이다."
     },
     {
       "id": "reading-049-s007",
       "english": "He can hardly be called qualified at all.",
-      "korean": "그는 결코 자질이 있는 사람이라고 불릴 수 없다."
+      "korean": "그런 사람은 자격을 갖추었다고 하기 어렵다."
     }
   ],
   "readingVocabulary": [
@@ -97,8 +97,8 @@
     {
       "word": "poor",
       "lemma": "poor",
-      "partOfSpeech": "n.",
-      "korean": "가난한",
+      "partOfSpeech": "adj.",
+      "korean": "부족한 (concentration is poor 집중력이 부족하다)",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
       "examTags": [
@@ -109,8 +109,8 @@
     {
       "word": "produce",
       "lemma": "produce",
-      "partOfSpeech": "n.",
-      "korean": "생산하다",
+      "partOfSpeech": "v.",
+      "korean": "만들어 내다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -121,8 +121,8 @@
     {
       "word": "achieve",
       "lemma": "achieve",
-      "partOfSpeech": "n.",
-      "korean": "달성하다",
+      "partOfSpeech": "v.",
+      "korean": "이루다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -134,7 +134,7 @@
       "word": "results",
       "lemma": "result",
       "partOfSpeech": "n.",
-      "korean": "결과",
+      "korean": "성과, 결과",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -146,7 +146,7 @@
       "word": "concentration",
       "lemma": "concentration",
       "partOfSpeech": "n.",
-      "korean": "집중",
+      "korean": "집중력",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -156,9 +156,9 @@
     },
     {
       "word": "qualified",
-      "lemma": "qualify",
-      "partOfSpeech": "v.",
-      "korean": "자격을 갖추다",
+      "lemma": "qualified",
+      "partOfSpeech": "adj.",
+      "korean": "자격을 갖춘",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 89점)",
       "examTags": [
@@ -167,21 +167,21 @@
       "freq": 2
     },
     {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "owe",
+      "lemma": "owe",
+      "partOfSpeech": "v.",
+      "korean": "(owe A to B) A를 B 덕분으로 여기다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "easy",
       "lemma": "easy",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "쉬운",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
@@ -194,7 +194,7 @@
       "word": "qualifications",
       "lemma": "qualification",
       "partOfSpeech": "n.",
-      "korean": "자격",
+      "korean": "자격, 능력",
       "score": 84,
       "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -206,7 +206,7 @@
       "word": "called",
       "lemma": "call",
       "partOfSpeech": "v.",
-      "korean": "전화",
+      "korean": "~라고 부르다 (be called ~라고 불리다)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -218,7 +218,7 @@
       "word": "success",
       "lemma": "success",
       "partOfSpeech": "n.",
-      "korean": "성공",
+      "korean": "성공 (make a success 성공하다)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -227,12 +227,12 @@
       "freq": 1
     },
     {
-      "word": "business",
-      "lemma": "business",
+      "word": "poetry",
+      "lemma": "poetry",
       "partOfSpeech": "n.",
-      "korean": "사업",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "시",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -242,7 +242,7 @@
       "word": "profession",
       "lemma": "profession",
       "partOfSpeech": "n.",
-      "korean": "직업",
+      "korean": "직업, 전문직",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [

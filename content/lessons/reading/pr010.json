@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "The use of the Internet is on the rise every year, and this creates many challenges. One of the biggest challenges in the Internet world is security or safety. Businesses, for example, need to make sure that their sites on the Internet are safe for their users. They need to know who e-mail senders are and whether information coming and going is correct. Most important, they should take measures to be certain that company secrets remain protected. Below are presented some methods that one business is using to meet this challenge."
+      "text": "The use of the Internet is on the rise every year, and this creates many challenges. One of the biggest challenges in the Internet world is security or safety. Businesses, for example, need to make sure that their sites on the Internet are safe for their users. They need to know who e-mail senders are and whether information coming and going is correct. Most important, they should take measures to be certain that company secrets remain protected."
     },
     {
       "type": "choice",
@@ -48,40 +48,35 @@
     {
       "id": "reading-010-s001",
       "english": "The use of the Internet is on the rise every year, and this creates many challenges.",
-      "korean": "인터넷의 사용이 매년 증가하고 있지만 이것이 많은 문제를 일으키고 있다."
+      "korean": "인터넷 사용은 해마다 늘고 있으며, 이로 인해 많은 과제가 생기고 있다."
     },
     {
       "id": "reading-010-s002",
       "english": "One of the biggest challenges in the Internet world is security or safety.",
-      "korean": "인터넷 세 계에서 가장 큰 문제 중의 하나는 보안과 안전의 문제이다."
+      "korean": "인터넷 세계에서 가장 큰 과제 중 하나는 보안, 즉 안전이다."
     },
     {
       "id": "reading-010-s003",
       "english": "Businesses, for example, need to make sure that their sites on the Internet are safe for their users.",
-      "korean": "예를 들어, 사업가들은 인 터넷에 있는 자신들의 사이트가 사용자들에게 안전한지 확인할 필요가 있다."
+      "korean": "예를 들어, 기업들은 인터넷에 있는 자사 사이트가 사용자에게 안전한지 확인해야 한다."
     },
     {
       "id": "reading-010-s004",
       "english": "They need to know who e-mail senders are and whether information coming and going is correct.",
-      "korean": "그들은 e-mail을 보내는 사람이 누구인지 오고 가는 정보가 정확한지를 알 필요가 있다."
+      "korean": "그들은 이메일을 보내는 사람이 누구인지, 오가는 정보가 정확한지 알아야 한다."
     },
     {
       "id": "reading-010-s005",
       "english": "Most important, they should take measures to be certain that company secrets remain protected.",
-      "korean": "가장 중요한 것은 회사의 비밀이 보호되고 있는지를 확인해 줄 수단을 가지고 있어야 한다."
-    },
-    {
-      "id": "reading-010-s006",
-      "english": "Below are presented some methods that one business is using to meet this challenge.",
-      "korean": "다음은 이런 문제를 충족시키기 위한 몇 가지 수단을 보여주고 있다."
+      "korean": "가장 중요한 것은, 회사의 비밀이 계속 보호되도록 확실한 조치를 취해야 한다는 것이다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "creates",
       "lemma": "create",
-      "partOfSpeech": "n.",
-      "korean": "창조하다",
+      "partOfSpeech": "v.",
+      "korean": "일으키다, 만들어 내다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -93,7 +88,7 @@
       "word": "protected",
       "lemma": "protect",
       "partOfSpeech": "v.",
-      "korean": "보호하다",
+      "korean": "보호하다 (remain protected 계속 보호되다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -116,8 +111,8 @@
     {
       "word": "remain",
       "lemma": "remain",
-      "partOfSpeech": "n.",
-      "korean": "남아있다",
+      "partOfSpeech": "v.",
+      "korean": "계속 ~인 채로 있다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -129,7 +124,7 @@
       "word": "internet",
       "lemma": "internet",
       "partOfSpeech": "n.",
-      "korean": "인터넷, 온라인 통신망",
+      "korean": "인터넷",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -140,7 +135,7 @@
     {
       "word": "safe",
       "lemma": "safe",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "안전한",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
@@ -153,7 +148,7 @@
       "word": "challenges",
       "lemma": "challenge",
       "partOfSpeech": "n.",
-      "korean": "도전",
+      "korean": "과제, 어려운 문제",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -162,12 +157,12 @@
       "freq": 2
     },
     {
-      "word": "presented",
-      "lemma": "present",
-      "partOfSpeech": "v.",
-      "korean": "제시하다, 보여주다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "security",
+      "lemma": "security",
+      "partOfSpeech": "n.",
+      "korean": "보안",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -176,7 +171,7 @@
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 82,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 82점)",
@@ -186,48 +181,48 @@
       "freq": 1
     },
     {
-      "word": "using",
-      "lemma": "using",
-      "partOfSpeech": "v.",
-      "korean": "사용하는, 활용하는",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "every",
-      "lemma": "every",
+      "word": "secrets",
+      "lemma": "secret",
       "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "비밀",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "methods",
-      "lemma": "method",
+      "word": "rise",
+      "lemma": "rise",
       "partOfSpeech": "n.",
-      "korean": "방법",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "증가 (on the rise 늘고 있는)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "business",
+      "word": "measures",
+      "lemma": "measure",
+      "partOfSpeech": "n.",
+      "korean": "조치 (take measures 조치를 취하다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "businesses",
       "lemma": "business",
       "partOfSpeech": "n.",
-      "korean": "사업",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "기업, 회사",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -237,7 +232,7 @@
       "word": "need",
       "lemma": "need",
       "partOfSpeech": "v.",
-      "korean": "필요하다; 필요",
+      "korean": "~할 필요가 있다",
       "score": 75,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 75점)",
       "examTags": [

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Consider the relationships within a family unit made up of a husband, a wife, and a child. The husband influences his wife and child. The wife influences both mother and father. Add another child. A grandparent. Add an aunt. And an uncle. Add a cousin. A neighbor. Friends. If we were to make this list longer, we would end up with an entire society. A society is a network of relationships among individuals. Each will influence the others, and each will be influenced by the others."
+      "text": "Consider the relationships within a family unit made up of a husband, a wife, and a child. The husband influences his wife and child. The wife influences her husband and child. The child influences both mother and father. Add another child, a grandparent, an aunt, and an uncle. Add a cousin, a neighbor, and friends. If we were to make this list longer, we would end up with an entire society. A society is a network of relationships among individuals. Each will influence the others, and each will be influenced by the others."
     },
     {
       "type": "choice",
@@ -48,47 +48,47 @@
     {
       "id": "reading-090-s001",
       "english": "Consider the relationships within a family unit made up of a husband, a wife, and a child.",
-      "korean": "남편과 아내 그리고 한 자녀로 일어진 가족 내에서의 관계를 생각해 보자."
+      "korean": "남편, 아내, 자녀 한 명으로 이루어진 가족 안의 관계를 생각해 보자."
     },
     {
       "id": "reading-090-s002",
       "english": "The husband influences his wife and child.",
-      "korean": "남편은 그의 아내와 자녀에게 영향을 미친다."
+      "korean": "남편은 아내와 자녀에게 영향을 준다."
     },
     {
       "id": "reading-090-s003",
-      "english": "The wife influences both mother and father. Add another child.",
-      "korean": "아내는 그의 남편과 자녀에게 영향을 주며, 자녀는 어머니, 아버지 모두에게 영향을 준다."
+      "english": "The wife influences her husband and child.",
+      "korean": "아내는 남편과 자녀에게 영향을 준다."
     },
     {
       "id": "reading-090-s004",
-      "english": "A grandparent.",
-      "korean": "한 자녀를 더해 보자."
+      "english": "The child influences both mother and father.",
+      "korean": "자녀는 어머니와 아버지 모두에게 영향을 준다."
     },
     {
       "id": "reading-090-s005",
-      "english": "Add an aunt. And an uncle.",
-      "korean": "조부모님을, 이모를, 삼촌을 추가해보자."
+      "english": "Add another child, a grandparent, an aunt, and an uncle.",
+      "korean": "여기에 자녀 한 명, 조부모, 이모와 삼촌을 더해 보자."
     },
     {
       "id": "reading-090-s006",
-      "english": "Add a cousin. A neighbor.",
-      "korean": "사촌을, 이웃을, 친구들을 추가해 보자."
+      "english": "Add a cousin, a neighbor, and friends.",
+      "korean": "사촌, 이웃, 친구들도 더해 보자."
     },
     {
       "id": "reading-090-s007",
-      "english": "Friends. If we were to make this list longer, we would end up with an entire society.",
-      "korean": "만약 우리가 이 명단을 더 늘려간다면 우리는 결국 하나의 전체 사회로 귀결될 것이다."
+      "english": "If we were to make this list longer, we would end up with an entire society.",
+      "korean": "이 목록을 더 늘려 나간다면 결국 사회 전체가 될 것이다."
     },
     {
       "id": "reading-090-s008",
       "english": "A society is a network of relationships among individuals.",
-      "korean": "한 사회란 개인들 간의 관계로 엮어진 하나의 네트워크인 것이다."
+      "korean": "사회란 개인들 사이의 관계로 이루어진 그물망이다."
     },
     {
       "id": "reading-090-s009",
       "english": "Each will influence the others, and each will be influenced by the others.",
-      "korean": "각자가 다른 사람들에게 영향을 주며 그들로부터 영향을 받는 것이다."
+      "korean": "각자가 다른 사람들에게 영향을 주고, 또 다른 사람들에게서 영향을 받는다."
     }
   ],
   "readingVocabulary": [
@@ -96,7 +96,7 @@
       "word": "influenced",
       "lemma": "influence",
       "partOfSpeech": "v.",
-      "korean": "영향",
+      "korean": "영향을 주다 (be influenced by ~의 영향을 받다)",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -107,8 +107,8 @@
     {
       "word": "consider",
       "lemma": "consider",
-      "partOfSpeech": "n.",
-      "korean": "고려하다",
+      "partOfSpeech": "v.",
+      "korean": "생각해 보다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -119,7 +119,7 @@
     {
       "word": "family",
       "lemma": "family",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "n.",
       "korean": "가족",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
@@ -153,26 +153,26 @@
       "freq": 1
     },
     {
-      "word": "mother",
-      "lemma": "mother",
+      "word": "grandparent",
+      "lemma": "grandparent",
       "partOfSpeech": "n.",
-      "korean": "어머니",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "조부모",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "father",
-      "lemma": "father",
+      "word": "cousin",
+      "lemma": "cousin",
       "partOfSpeech": "n.",
-      "korean": "아버지",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "사촌",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -198,7 +198,7 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 3
     },
     {
       "word": "wife",
@@ -213,22 +213,22 @@
       "freq": 3
     },
     {
-      "word": "child",
-      "lemma": "child",
+      "word": "network",
+      "lemma": "network",
       "partOfSpeech": "n.",
-      "korean": "아이",
-      "score": 83,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
+      "korean": "그물망, 관계망",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
       "word": "within",
       "lemma": "within",
-      "partOfSpeech": "n.",
-      "korean": "within (핵심 어휘)",
+      "partOfSpeech": "prep.",
+      "korean": "~ 안의",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -239,20 +239,20 @@
     {
       "word": "add",
       "lemma": "add",
-      "partOfSpeech": "n.",
-      "korean": "추가하다",
+      "partOfSpeech": "v.",
+      "korean": "더하다",
       "score": 73,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 2
     },
     {
       "word": "unit",
       "lemma": "unit",
       "partOfSpeech": "n.",
-      "korean": "단위",
+      "korean": "단위 (family unit 가족 단위)",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
       "examTags": [

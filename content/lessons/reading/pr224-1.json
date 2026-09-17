@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "오늘날 많은 주에서 법정 재판의 TV 뉴스 보도를 허용하고 있다. 그들은 TV로 중계하는 것이 법원 시스템에 대해 대중에게 알리는 가장 좋은 방법이라고 생각하는 것 같다. 하지만 나는 그들에게 동의하지 않는다. TV 카메라가 돌아가고 있을 때는 공정한 재판이 불가능하다. 판사, 배심원, 증인들은 자신들이 지역 저녁 뉴스에 녹화되고 있다는 사실을 알고 주의가 산만해질 것이다. 많은 증인들이 TV 재판에 출석하기를 원하지 않을 것이다. TV 카메라는 실제 재판이 아닌 가상의 재판을 위해 사용하도록 하자."
+      "text": "오늘날 많은 주에서 재판을 TV 뉴스로 보도하는 것을 허용한다. 그들은 TV 보도가 사법 제도를 대중에게 알리는 가장 좋은 방법이라고 생각하는 것 같다. 그러나 나는 그들에게 동의하지 않는다. TV 카메라가 돌아가는 동안에는 공정한 재판이 불가능하다. 판사, 배심원, 증인은 자신이 지역 저녁 뉴스에 나갈 녹화를 하고 있다는 것을 알면 집중하지 못할 것이다. 많은 증인이 TV로 방송되는 재판에 나오고 싶어 하지 않을 것이다. TV 카메라는 실제 재판이 아니라 드라마 속 재판에 쓰자."
     },
     {
       "type": "choice",
@@ -47,45 +47,45 @@
   "readingSentences": [
     {
       "id": "reading-224-s001",
-      "english": "Today, many states allow television news report of court trials.",
-      "korean": "오늘날 많은 주에서 법정 재판의 TV 뉴스 보도를 허용하고 있다."
+      "english": "Today, many states allow television news reports of court trials.",
+      "korean": "오늘날 많은 주에서 재판을 TV 뉴스로 보도하는 것을 허용한다."
     },
     {
       "id": "reading-224-s002",
-      "english": "They seem to think that covering on television is the best way to inform the public about the court system.",
-      "korean": "그들은 TV로 중계하는 것이 법원 시스템에 대해 대중에게 알리는 가장 좋은 방법이라고 생각하는 것 같다."
+      "english": "They seem to think that television coverage is the best way to inform the public about the court system.",
+      "korean": "그들은 TV 보도가 사법 제도를 대중에게 알리는 가장 좋은 방법이라고 생각하는 것 같다."
     },
     {
       "id": "reading-224-s003",
       "english": "But I don't agree with them.",
-      "korean": "하지만 나는 그들에게 동의하지 않는다."
+      "korean": "그러나 나는 그들에게 동의하지 않는다."
     },
     {
       "id": "reading-224-s004",
-      "english": "A fair trials isn't possible when TV cameras are rolling.",
-      "korean": "TV 카메라가 돌아가고 있을 때는 공정한 재판이 불가능하다."
+      "english": "A fair trial isn't possible when TV cameras are rolling.",
+      "korean": "TV 카메라가 돌아가는 동안에는 공정한 재판이 불가능하다."
     },
     {
       "id": "reading-224-s005",
-      "english": "Judges, juniors, and witnesses will be distracted by knowing that they are being taped on the local evening news.",
-      "korean": "판사, 배심원, 증인들은 자신들이 지역 저녁 뉴스에 녹화되고 있다는 사실을 알고 주의가 산만해질 것이다."
+      "english": "Judges, jurors, and witnesses will be distracted by knowing that they are being taped for the local evening news.",
+      "korean": "판사, 배심원, 증인은 자신이 지역 저녁 뉴스에 나갈 녹화를 하고 있다는 것을 알면 집중하지 못할 것이다."
     },
     {
       "id": "reading-224-s006",
-      "english": "Many witnesses will not want to appears in a trial on TV.",
-      "korean": "많은 증인들이 TV 재판에 출석하기를 원하지 않을 것이다."
+      "english": "Many witnesses will not want to appear in a trial on TV.",
+      "korean": "많은 증인이 TV로 방송되는 재판에 나오고 싶어 하지 않을 것이다."
     },
     {
       "id": "reading-224-s007",
       "english": "Let's use TV cameras for fictional trials, not real ones.",
-      "korean": "TV 카메라는 실제 재판이 아닌 가상의 재판을 위해 사용하도록 하자."
+      "korean": "TV 카메라는 실제 재판이 아니라 드라마 속 재판에 쓰자."
     }
   ],
   "readingVocabulary": [
     {
       "word": "allow",
       "lemma": "allow",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "허용하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -98,31 +98,31 @@
       "word": "trials",
       "lemma": "trial",
       "partOfSpeech": "n.",
-      "korean": "재판, 시도, 시련",
+      "korean": "재판",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
       "examTags": [
         "수능",
         "TOEIC"
       ],
-      "freq": 3
+      "freq": 2
     },
     {
-      "word": "appears",
+      "word": "appear",
       "lemma": "appear",
-      "partOfSpeech": "n.",
-      "korean": "나타나다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "partOfSpeech": "v.",
+      "korean": "출석하다, 나오다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "agree",
       "lemma": "agree",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "동의하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -132,12 +132,12 @@
       "freq": 1
     },
     {
-      "word": "television",
-      "lemma": "television",
+      "word": "witnesses",
+      "lemma": "witness",
       "partOfSpeech": "n.",
-      "korean": "텔레비전",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
+      "korean": "증인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -147,7 +147,7 @@
       "word": "court",
       "lemma": "court",
       "partOfSpeech": "n.",
-      "korean": "법정, 코트, 대궐",
+      "korean": "법정 (court trial 법정 재판)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -169,22 +169,10 @@
       "freq": 2
     },
     {
-      "word": "tv",
-      "lemma": "tv",
-      "partOfSpeech": "n.",
-      "korean": "텔레비전, TV",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 3
-    },
-    {
       "word": "fictional",
       "lemma": "fictional",
       "partOfSpeech": "adj.",
-      "korean": "허구의, 소설의",
+      "korean": "허구의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -193,24 +181,12 @@
       "freq": 1
     },
     {
-      "word": "news",
-      "lemma": "news",
-      "partOfSpeech": "n.",
-      "korean": "뉴스",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "today",
-      "lemma": "today",
-      "partOfSpeech": "n.",
-      "korean": "오늘",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "inform",
+      "lemma": "inform",
+      "partOfSpeech": "v.",
+      "korean": "알리다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -220,7 +196,7 @@
       "word": "states",
       "lemma": "state",
       "partOfSpeech": "n.",
-      "korean": "상태",
+      "korean": "(미국의) 주",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -229,24 +205,48 @@
       "freq": 1
     },
     {
-      "word": "report",
+      "word": "reports",
       "lemma": "report",
       "partOfSpeech": "n.",
-      "korean": "보고하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "보도",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "covering",
-      "lemma": "cover",
+      "word": "coverage",
+      "lemma": "coverage",
+      "partOfSpeech": "n.",
+      "korean": "보도, 중계",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "jurors",
+      "lemma": "juror",
+      "partOfSpeech": "n.",
+      "korean": "배심원",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "distracted",
+      "lemma": "distract",
       "partOfSpeech": "v.",
-      "korean": "커버",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "korean": "주의를 흩뜨리다 (be distracted 산만해지다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

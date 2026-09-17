@@ -25,19 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "(A)"
-    },
-    {
-      "type": "instruction",
-      "text": "Sue는 그녀의 이웃에서 신문을 돌렸었다. 그녀는 그녀의 고객들을 위해 매일 아침 5시 30분에 신문을 배달하기 위해 일어났다. 그녀는 일 년간 그 일을 했으며 하루도 빼먹지 않았다. 눈이 오든 비가 오든 상관이 없었다. 그녀의 고객들은 그들이 아침 일찍이 신문을 받을 것을 확신했었기 때문에 모두 만족했다. 때로는 Sue는 아프다고 느끼면서 일어났다. 그러나 그녀는 그녀의 고객들을 실망시키지 않기 위해서 신문을 배달했다."
-    },
-    {
-      "type": "hints",
-      "text": "(B)"
-    },
-    {
-      "type": "instruction",
-      "text": "Robert의 친구들은 그가 자전거를 탈줄 몰랐기 때문에 그를 놀렸다. 그래서 Robert는 자전거 타는 법을 배우기 원했다. 어느 오후에 그는 그의 큰형에게 가르쳐 달라고 부탁했다. 그의 형은 자전거를 뒤에서 붙들었고 Robert는 곧 자신감이 생겼다. 그러나 그의 형이 자전거에서 손을 놓자마자 Robert는 중심을 잃고 넘어졌다. 같은 일은 자꾸자꾸 일어났으며 그리고 그 일들은 그를 다치게 했다. 그러나 Robert는 계속 노력했으며 결국 자전거 타기를 배웠다."
+      "text": "Sue는 동네에서 신문 배달을 했다. 그녀는 그녀의 고객들을 위해 매일 아침 5시 30분에 신문을 배달하기 위해 일어났다. 그녀는 일 년간 그 일을 했으며 하루도 빼먹지 않았다. 눈이 오든 비가 오든 상관이 없었다. 그녀의 고객들은 그들이 아침 일찍이 신문을 받을 것을 확신했었기 때문에 모두 만족했다. 때로는 Sue는 아프다고 느끼면서 일어났다. 그러나 그녀는 그녀의 고객들을 실망시키지 않기 위해서 신문을 배달했다. Robert의 친구들은 그가 자전거를 탈줄 몰랐기 때문에 그를 놀렸다. 그래서 Robert는 자전거 타는 법을 배우기 원했다. 어느 오후에 그는 그의 큰형에게 가르쳐 달라고 부탁했다. 그의 형은 자전거를 뒤에서 붙들었고 Robert는 곧 자신감이 생겼다. 그러나 그의 형이 자전거에서 손을 놓자마자 Robert는 중심을 잃고 넘어졌다. 넘어진 후, Robert는 일어나서 다시 시도했다. 같은 일은 자꾸자꾸 일어났으며 그리고 그 일들은 그를 다치게 했다. 그러나 Robert는 계속 노력했으며 결국 자전거 타기를 배웠다."
     },
     {
       "type": "choice",
@@ -60,7 +48,7 @@
     {
       "id": "reading-213-s001",
       "english": "Sue had a newspaper route in her neighborhood.",
-      "korean": "Sue는 그녀의 이웃에서 신문을 돌렸었다."
+      "korean": "Sue는 동네에서 신문 배달을 했다."
     },
     {
       "id": "reading-213-s002",
@@ -79,7 +67,7 @@
     },
     {
       "id": "reading-213-s005",
-      "english": "Her customs were all satisfied because they were always sure they would get the news early in the morning.",
+      "english": "Her customers were all satisfied because they were always sure they would get the news early in the morning.",
       "korean": "그녀의 고객들은 그들이 아침 일찍이 신문을 받을 것을 확신했었기 때문에 모두 만족했다."
     },
     {
@@ -89,17 +77,17 @@
     },
     {
       "id": "reading-213-s007",
-      "english": "Howeve, she delivered the newspapers not to disappoint her customers.",
+      "english": "However, she delivered the newspapers not to disappoint her customers.",
       "korean": "그러나 그녀는 그녀의 고객들을 실망시키지 않기 위해서 신문을 배달했다."
     },
     {
       "id": "reading-213-s008",
-      "english": "Robert's friends made fun of him because he could not ride a bicycle,",
+      "english": "Robert's friends made fun of him because he could not ride a bicycle.",
       "korean": "Robert의 친구들은 그가 자전거를 탈줄 몰랐기 때문에 그를 놀렸다."
     },
     {
       "id": "reading-213-s009",
-      "english": "So, Robert wanted to learn how to do it.",
+      "english": "So Robert wanted to learn how to do it.",
       "korean": "그래서 Robert는 자전거 타는 법을 배우기 원했다."
     },
     {
@@ -129,7 +117,7 @@
     },
     {
       "id": "reading-213-s015",
-      "english": "Howeve, Robert kept trying and finally learned to ride a bike.",
+      "english": "However, Robert kept trying and finally learned to ride a bike.",
       "korean": "그러나 Robert는 계속 노력했으며 결국 자전거 타기를 배웠다."
     }
   ],
@@ -138,7 +126,7 @@
       "word": "brother",
       "lemma": "brother",
       "partOfSpeech": "n.",
-      "korean": "형제, 오빠, 남동생",
+      "korean": "형제 (big brother 형)",
       "score": 104,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -159,38 +147,38 @@
       "freq": 1
     },
     {
-      "word": "happened",
-      "lemma": "happen",
+      "word": "missed",
+      "lemma": "miss",
       "partOfSpeech": "v.",
-      "korean": "일어나다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
+      "korean": "거르다 (never missed a day 하루도 거르지 않았다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "customs",
-      "lemma": "custom",
+      "word": "route",
+      "lemma": "route",
       "partOfSpeech": "n.",
-      "korean": "관습",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "배달 구역 (newspaper route 신문 배달 구역)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "friends",
-      "lemma": "friend",
-      "partOfSpeech": "n.",
-      "korean": "친구",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "confident",
+      "lemma": "confident",
+      "partOfSpeech": "adj.",
+      "korean": "자신감 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -198,7 +186,7 @@
       "word": "hands",
       "lemma": "hand",
       "partOfSpeech": "n.",
-      "korean": "손",
+      "korean": "손 (take one's hands off ~에서 손을 떼다)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -207,14 +195,14 @@
       "freq": 1
     },
     {
-      "word": "early",
-      "lemma": "early",
-      "partOfSpeech": "adv.",
-      "korean": "일찍",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "word": "balance",
+      "lemma": "balance",
+      "partOfSpeech": "v.",
+      "korean": "균형을 잡다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -222,14 +210,14 @@
       "word": "customers",
       "lemma": "customer",
       "partOfSpeech": "n.",
-      "korean": "고객, 손님",
+      "korean": "고객",
       "score": 89,
       "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
         "중학기초",
         "TOEIC"
       ],
-      "freq": 2
+      "freq": 3
     },
     {
       "word": "bike",
@@ -244,16 +232,16 @@
       "freq": 3
     },
     {
-      "word": "morning",
-      "lemma": "morning",
-      "partOfSpeech": "v.",
-      "korean": "아침",
-      "score": 81,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
+      "word": "satisfied",
+      "lemma": "satisfied",
+      "partOfSpeech": "adj.",
+      "korean": "만족한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "newspaper",
@@ -271,7 +259,7 @@
       "word": "neighborhood",
       "lemma": "neighborhood",
       "partOfSpeech": "n.",
-      "korean": "이웃",
+      "korean": "동네",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -280,28 +268,28 @@
       "freq": 1
     },
     {
-      "word": "trying",
-      "lemma": "try",
+      "word": "disappoint",
+      "lemma": "disappoint",
       "partOfSpeech": "v.",
-      "korean": "시도하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 79점)",
+      "korean": "실망시키다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "howeve",
-      "lemma": "howeve",
-      "partOfSpeech": "adv.",
-      "korean": "그러나, 하지만 (however)",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "word": "fun",
+      "lemma": "fun",
+      "partOfSpeech": "n.",
+      "korean": "재미, 장난 (make fun of ~을 놀리다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     }
   ]
 }

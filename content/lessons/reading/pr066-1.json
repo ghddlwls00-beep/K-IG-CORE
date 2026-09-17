@@ -25,11 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "고대 미신에 따르면 점은 사람의 성격을 드러낸다. 예를 들면 자신의 코위의 점은 그가 강한 의지의 소요자이거나 믿을만하다는 것을 의미한다."
-    },
-    {
-      "type": "instruction",
-      "text": "점은 또한 미래를 예언한다고 믿어진다. 이러한 것중의 중요하"
+      "text": "옛 미신에 따르면 점은 사람의 성격을 드러낸다. 예를 들어 코에 있는 점은 그 사람이 의지가 강하고 믿을 만하다는 뜻이다. 점은 미래를 예언한다고도 여겨진다. 오른쪽 눈썹 위에 점이 있으면 돈복이 있고 직업에서 성공한다는 뜻이다. 그러나 사람들이 가장 바라는 것은 손에 있는 점이다. 그것은 재능과 건강과 행복을 예고한다."
     },
     {
       "type": "choice",
@@ -52,22 +48,32 @@
     {
       "id": "reading-066-s001",
       "english": "According to ancient superstitions, moles reveal a person’s character.",
-      "korean": "고대 미신에 따르면 점은 사람의 성격을 드러낸다."
+      "korean": "옛 미신에 따르면 점은 사람의 성격을 드러낸다."
     },
     {
       "id": "reading-066-s002",
       "english": "For example, a mole on one’s nose means that he or she is strong-willed and trustworthy.",
-      "korean": "예를 들면 자신의 코위의 점은 그가 강한 의지의 소요자이거나 믿을만하다는 것을 의미한다."
+      "korean": "예를 들어 코에 있는 점은 그 사람이 의지가 강하고 믿을 만하다는 뜻이다."
     },
     {
       "id": "reading-066-s003",
       "english": "Moles are also believed to foretell the future.",
-      "korean": "점은 또한 미래를 예언한다고 믿어진다."
+      "korean": "점은 미래를 예언한다고도 여겨진다."
     },
     {
       "id": "reading-066-s004",
-      "english": "A good illustration of these is that Having a mole over one’s right eyebrow means he or she will be lucky with money and have a successful career. Other instance in this category include a mole on the hand, the most desired, forecasting talent, health, and happiness.",
-      "korean": "이러한 것중의 중요하"
+      "english": "Having a mole over one’s right eyebrow means he or she will be lucky with money and have a successful career.",
+      "korean": "오른쪽 눈썹 위에 점이 있으면 돈복이 있고 직업에서 성공한다는 뜻이다."
+    },
+    {
+      "id": "reading-066-s005",
+      "english": "A mole on the hand, however, is the most desired.",
+      "korean": "그러나 사람들이 가장 바라는 것은 손에 있는 점이다."
+    },
+    {
+      "id": "reading-066-s006",
+      "english": "It forecasts talent, health, and happiness.",
+      "korean": "그것은 재능과 건강과 행복을 예고한다."
     }
   ],
   "readingVocabulary": [
@@ -87,7 +93,7 @@
       "word": "believed",
       "lemma": "believe",
       "partOfSpeech": "v.",
-      "korean": "믿다",
+      "korean": "믿다 (be believed to ~한다고 여겨지다)",
       "score": 100,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 100점)",
       "examTags": [
@@ -122,8 +128,8 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "v.",
-      "korean": "따라",
+      "partOfSpeech": "adv.",
+      "korean": "(according to) ~에 따르면",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -135,7 +141,7 @@
       "word": "reveal",
       "lemma": "reveal",
       "partOfSpeech": "v.",
-      "korean": "밝히다, 드러내다",
+      "korean": "드러내다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -145,12 +151,12 @@
       "freq": 1
     },
     {
-      "word": "forecasting",
+      "word": "forecasts",
       "lemma": "forecast",
       "partOfSpeech": "v.",
-      "korean": "예측",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "korean": "예고하다, 예측하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -158,9 +164,9 @@
     },
     {
       "word": "moles",
-      "lemma": "moles",
+      "lemma": "mole",
       "partOfSpeech": "n.",
-      "korean": "두더지들; 점들",
+      "korean": "(피부의) 점",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -169,22 +175,22 @@
       "freq": 2
     },
     {
-      "word": "mole",
-      "lemma": "mole",
-      "partOfSpeech": "n.",
-      "korean": "두더지; 점, 사마귀",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
+      "word": "trustworthy",
+      "lemma": "trustworthy",
+      "partOfSpeech": "adj.",
+      "korean": "믿을 만한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
       "word": "ancient",
       "lemma": "ancient",
-      "partOfSpeech": "n.",
-      "korean": "고대의",
+      "partOfSpeech": "adj.",
+      "korean": "옛, 고대의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -217,12 +223,12 @@
       "freq": 1
     },
     {
-      "word": "illustration",
-      "lemma": "illustration",
-      "partOfSpeech": "n.",
-      "korean": "illustration (핵심 어휘)",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "desired",
+      "lemma": "desired",
+      "partOfSpeech": "adj.",
+      "korean": "바라는 (the most desired 가장 바라는 것)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

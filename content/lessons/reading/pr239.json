@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses. The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases. Of course, patients have the right to refuse medical treatment at any time ; requesting lethal injections, however, is another matter. Therefore, although it officially endorsed euthanasia in 1984, the Netherlands issued strict guidelines on how to perform it, and proclaimed that doctors who don't follow the guidelines can be imprisoned for up to 12 years."
+   "text": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses. The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases. Of course, patients have the right to refuse medical treatment at any time; requesting lethal injections, however, is another matter. The Netherlands, for example, began to tolerate euthanasia under strict guidelines in the 1980s and made it legal in 2002, but doctors who do not follow the rules can still be imprisoned for up to 12 years."
   },
   {
    "type": "choice",
@@ -48,22 +48,22 @@
   {
    "id": "reading-239-s001",
    "english": "Around the world, people are wrestling with the question of humane death - especially in the face of painful terminal illnesses.",
-   "korean": "전세계적으로 사람들은 특히 고통스런 말기의 죽음에 직면해서 인간적인 죽음(안락사)에 대한 문제(주제)로 씨름해 왔다."
+   "korean": "전 세계에서 사람들은 특히 고통스러운 불치병 앞에서 인간다운 죽음이라는 문제와 씨름하고 있다."
   },
   {
    "id": "reading-239-s002",
    "english": "The dilemma has become more complicated in recent years, as advanced medical technology has enabled doctors to keep patients alive much longer in even the most extreme cases.",
-   "korean": "이 딜레마는 진보된 의학 기술이 대부분의 극단적인 경우의 수술에서도 환자를 더 오래 살도록 해 주는 시대이기 때문에, 최근에 더 복잡한 문제가 되었다."
+   "korean": "첨단 의료 기술 덕분에 의사들이 가장 극단적인 경우에도 환자를 훨씬 더 오래 살려 둘 수 있게 되면서, 최근 이 딜레마는 더 복잡해졌다."
   },
   {
    "id": "reading-239-s003",
-   "english": "Of course, patients have the right to refuse medical treatment at any time ; requesting lethal injections, however, is another matter.",
-   "korean": "물론 환자가 어느 때라도 의학의 치료를 거절할 권리는 있지만; 치명적인 주사를 요구하는 것은 그러나, (치료를 거부하는 것과는) 다른 문제이다."
+   "english": "Of course, patients have the right to refuse medical treatment at any time; requesting lethal injections, however, is another matter.",
+   "korean": "물론 환자에게는 언제든 치료를 거부할 권리가 있다. 그러나 목숨을 끊는 주사를 요청하는 것은 다른 문제다."
   },
   {
    "id": "reading-239-s004",
-   "english": "Therefore, although it officially endorsed euthanasia in 1984, the Netherlands issued strict guidelines on how to perform it, and proclaimed that doctors who don't follow the guidelines can be imprisoned for up to 12 years.",
-   "korean": "그런고로, 비록 네델란드에서는 1984년 안락사(euthanasia)를 승인은 했지만, 그 것을 실행하는 방법에서는 엄격한 기준을 설정해왔고, 이 규정을 따르지 않는 의사는 12년간의 형을 실행하였다."
+   "english": "The Netherlands, for example, began to tolerate euthanasia under strict guidelines in the 1980s and made it legal in 2002, but doctors who do not follow the rules can still be imprisoned for up to 12 years.",
+   "korean": "예를 들어 네덜란드는 1980년대부터 엄격한 지침 아래 안락사를 묵인하다가 2002년에 합법화했지만, 규정을 지키지 않은 의사는 지금도 최대 12년의 징역형을 받을 수 있다."
   }
  ],
  "readingVocabulary": [
@@ -71,7 +71,7 @@
    "word": "illnesses",
    "lemma": "illness",
    "partOfSpeech": "n.",
-   "korean": "질병, 아픔",
+   "korean": "질병 (terminal illness 말기 질환)",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
    "examTags": [
@@ -80,22 +80,10 @@
    "freq": 1
   },
   {
-   "word": "perform",
-   "lemma": "perform",
-   "partOfSpeech": "n.",
-   "korean": "수행하다",
-   "score": 102,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
    "word": "follow",
    "lemma": "follow",
-   "partOfSpeech": "n.",
-   "korean": "따르다, 따라가다",
+   "partOfSpeech": "v.",
+   "korean": "따르다, 지키다",
    "score": 100,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
    "examTags": [
@@ -106,48 +94,12 @@
   {
    "word": "refuse",
    "lemma": "refuse",
-   "partOfSpeech": "n.",
-   "korean": "거절하다",
+   "partOfSpeech": "v.",
+   "korean": "거부하다",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
     "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "world",
-   "lemma": "world",
-   "partOfSpeech": "n.",
-   "korean": "세계",
-   "score": 84,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "endorsed",
-   "lemma": "endorsed",
-   "partOfSpeech": "v.",
-   "korean": "지지된, 승인받은",
-   "score": 84,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "proclaimed",
-   "lemma": "proclaim",
-   "partOfSpeech": "v.",
-   "korean": "선포하다",
-   "score": 84,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-   "examTags": [
-    "독해필수"
    ],
    "freq": 1
   },
@@ -177,23 +129,11 @@
   },
   {
    "word": "guidelines",
-   "lemma": "guidelines",
+   "lemma": "guideline",
    "partOfSpeech": "n.",
-   "korean": "지침들, 가이드라인",
+   "korean": "지침",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 2
-  },
-  {
-   "word": "issued",
-   "lemma": "issue",
-   "partOfSpeech": "v.",
-   "korean": "문제",
-   "score": 82,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
     "독해필수"
    ],
@@ -203,7 +143,7 @@
    "word": "terminal",
    "lemma": "terminal",
    "partOfSpeech": "adj.",
-   "korean": "말기의; 종착역",
+   "korean": "말기의",
    "score": 81,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
    "examTags": [
@@ -213,9 +153,9 @@
   },
   {
    "word": "wrestling",
-   "lemma": "wrestling",
-   "partOfSpeech": "n.",
-   "korean": "레슬링, 씨름",
+   "lemma": "wrestle",
+   "partOfSpeech": "v.",
+   "korean": "(wrestle with) ~과 씨름하다",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -227,9 +167,69 @@
    "word": "question",
    "lemma": "question",
    "partOfSpeech": "n.",
-   "korean": "질문",
+   "korean": "문제",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "humane",
+   "lemma": "humane",
+   "partOfSpeech": "adj.",
+   "korean": "인간다운, 인도적인",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "dilemma",
+   "lemma": "dilemma",
+   "partOfSpeech": "n.",
+   "korean": "딜레마",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "lethal",
+   "lemma": "lethal",
+   "partOfSpeech": "adj.",
+   "korean": "치사의 (lethal injection 치사 주사)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "tolerate",
+   "lemma": "tolerate",
+   "partOfSpeech": "v.",
+   "korean": "용인하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "euthanasia",
+   "lemma": "euthanasia",
+   "partOfSpeech": "n.",
+   "korean": "안락사",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],

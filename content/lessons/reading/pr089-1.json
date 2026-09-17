@@ -25,23 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "경쟁은 상대편의 행동을 지배하는 법칙들을 함축하고 있다. 모든 경우에"
-    },
-    {
-      "type": "instruction",
-      "text": "속임 수와 신체적 위협은 금지된다. 예를 들어, 두 개의 축구팀이 경기를"
-    },
-    {
-      "type": "instruction",
-      "text": "할 때 각 팀은 상대편보다 더 많은 점수를 얻기 위해 노력한다. 그러나 점"
-    },
-    {
-      "type": "instruction",
-      "text": "수는 제한된 수의 정당한 방법으로만 얻을 수 있고, 그 경기는 일련의 규"
-    },
-    {
-      "type": "instruction",
-      "text": "칙들에 의해 지배된다."
+      "text": "경쟁에는 맞서는 양쪽의 행동을 규율하는 일련의 규칙이 전제되어 있다. 어떤 경우든 속임수와 신체적 위협은 금지된다. 예를 들어 두 축구팀이 경기를 하면, 각 팀은 상대보다 더 많은 골을 넣으려고 한다. 그러나 골은 정해진 몇 가지 올바른 방법으로만 넣을 수 있고, 경기는 일련의 규칙에 따라 진행된다."
     },
     {
       "type": "choice",
@@ -64,22 +48,22 @@
     {
       "id": "reading-089-s001",
       "english": "Competition implies a set of rules that govern the conduct of the opposed parties.",
-      "korean": "경쟁은 상대편의 행동을 지배하는 법칙들을 함축하고 있다."
+      "korean": "경쟁에는 맞서는 양쪽의 행동을 규율하는 일련의 규칙이 전제되어 있다."
     },
     {
       "id": "reading-089-s002",
       "english": "In all cases, tricks and physical threats are prohibited.",
-      "korean": "모든 경우에 속임 수와 신체적 위협은 금지된다."
+      "korean": "어떤 경우든 속임수와 신체적 위협은 금지된다."
     },
     {
       "id": "reading-089-s003",
-      "english": "For instance, when two soccer teams play against one another, each team tries to score more points than the other.",
-      "korean": "예를 들어, 두 개의 축구팀이 경기를 할 때 각 팀은 상대편보다 더 많은 점수를 얻기 위해 노력한다."
+      "english": "For instance, when two soccer teams play against one another, each team tries to score more goals than the other.",
+      "korean": "예를 들어 두 축구팀이 경기를 하면, 각 팀은 상대보다 더 많은 골을 넣으려고 한다."
     },
     {
       "id": "reading-089-s004",
-      "english": "But points can be scored only in a limited number of right ways, and the game is governed by a set of rules.",
-      "korean": "그러나 점 수는 제한된 수의 정당한 방법으로만 얻을 수 있고, 그 경기는 일련의 규 칙들에 의해 지배된다."
+      "english": "But goals can be scored only in a limited number of right ways, and the game is governed by a set of rules.",
+      "korean": "그러나 골은 정해진 몇 가지 올바른 방법으로만 넣을 수 있고, 경기는 일련의 규칙에 따라 진행된다."
     }
   ],
   "readingVocabulary": [
@@ -99,7 +83,7 @@
       "word": "set",
       "lemma": "set",
       "partOfSpeech": "n.",
-      "korean": "세트",
+      "korean": "(a set of) 일련의",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 86점)",
       "examTags": [
@@ -109,9 +93,9 @@
     },
     {
       "word": "opposed",
-      "lemma": "oppose",
-      "partOfSpeech": "v.",
-      "korean": "반대하다",
+      "lemma": "opposed",
+      "partOfSpeech": "adj.",
+      "korean": "맞서는 (opposed parties 맞서는 양측)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -123,7 +107,7 @@
       "word": "govern",
       "lemma": "govern",
       "partOfSpeech": "v.",
-      "korean": "통치하다, 지배하다",
+      "korean": "규율하다, 지배하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -134,8 +118,8 @@
     {
       "word": "limited",
       "lemma": "limited",
-      "partOfSpeech": "v.",
-      "korean": "제한된",
+      "partOfSpeech": "adj.",
+      "korean": "제한된, 정해진",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -144,12 +128,12 @@
       "freq": 1
     },
     {
-      "word": "governed",
-      "lemma": "governed",
-      "partOfSpeech": "v.",
-      "korean": "지배받는, 통치된",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "threats",
+      "lemma": "threat",
+      "partOfSpeech": "n.",
+      "korean": "위협",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -159,7 +143,7 @@
       "word": "scored",
       "lemma": "score",
       "partOfSpeech": "v.",
-      "korean": "점수",
+      "korean": "(골을) 넣다, 득점하다",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -168,12 +152,12 @@
       "freq": 1
     },
     {
-      "word": "points",
-      "lemma": "point",
+      "word": "goals",
+      "lemma": "goal",
       "partOfSpeech": "n.",
-      "korean": "포인트",
+      "korean": "골",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -194,8 +178,8 @@
     {
       "word": "implies",
       "lemma": "imply",
-      "partOfSpeech": "n.",
-      "korean": "암시하다",
+      "partOfSpeech": "v.",
+      "korean": "내포하다, 전제로 하다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -207,7 +191,7 @@
       "word": "conduct",
       "lemma": "conduct",
       "partOfSpeech": "n.",
-      "korean": "행위",
+      "korean": "행동, 처신",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -219,7 +203,7 @@
       "word": "parties",
       "lemma": "party",
       "partOfSpeech": "n.",
-      "korean": "파티",
+      "korean": "당사자, 편",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -240,12 +224,12 @@
       "freq": 1
     },
     {
-      "word": "number",
-      "lemma": "number",
+      "word": "tricks",
+      "lemma": "trick",
       "partOfSpeech": "n.",
-      "korean": "번호",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "korean": "속임수",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

@@ -25,27 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "(A)"
-    },
-    {
-      "type": "hints",
-      "text": "Imagine that it’s Saturday and you are to meet your friends at the mall at 12:00. You’ve been busy all morning, and suddenly you notice it is 11:45. You hurry to get ready and then jump in the car. What route is probably the fastest? You know where the mall is, and you choose the best route based on what you know about the distance, the number of stop lights, and the amount of traffic. In short, you make observations and make your best guesses based on what you know and have observed."
-    },
-    {
-      "type": "instruction",
-      "text": "(B)"
-    },
-    {
-      "type": "instruction",
-      "text": "True problem solving, however, goes beyond feelings. To solve a problem, you must look beyond how you feel and combine information that you already know with new observations. Then, on the basis of your knowledge of the situation, you can evaluate the problem and come up with the best way to solve it. An example will make this point clear."
-    },
-    {
-      "type": "instruction",
-      "text": "(C)"
-    },
-    {
-      "type": "instruction",
-      "text": "Everyone makes decisions every day. What clothes should you wear? Should you go out tonight or stay home and study? Most of the decisions people make are based on what they feel will be the best solution. Feelings and judgments of how others feel toward you play a major role in how you choose to solve your day-to-day problems."
+      "text": "Everyone makes decisions every day. What clothes should you wear? Should you go out tonight or stay home and study? Most of the decisions people make are based on what they feel will be the best solution. Feelings and judgments of how others feel toward you play a major role in how you choose to solve your day-to-day problems. True problem solving, however, goes beyond feelings. To solve a problem, you must look beyond how you feel and combine information that you already know with new observations. Then, on the basis of your knowledge of the situation, you can evaluate the problem and come up with the best way to solve it. An example will make this point clear. Imagine that it’s Saturday and you are to meet your friends at the mall at 12:00. You’ve been busy all morning, and suddenly you notice it is 11:45. You hurry to get ready and then jump in the car. What route is probably the fastest? You know where the mall is, and you choose the best route based on what you know about the distance, the number of stop lights, and the amount of traffic. In short, you make observations and make your best guesses based on what you know and have observed."
     },
     {
       "type": "choice",
@@ -67,85 +47,85 @@
   "readingSentences": [
     {
       "id": "reading-081-s001",
-      "english": "Imagine that it’s Saturday and you are to meet your friends at the mall at 12:00.",
-      "korean": "토요일이고 12시에 쇼핑가에서 친구를 만난다고 상상해 보아라."
+      "english": "Everyone makes decisions every day.",
+      "korean": "누구나 매일 결정을 내린다."
     },
     {
       "id": "reading-081-s002",
-      "english": "You’ve been busy all morning, and suddenly you notice it is 11:45.",
-      "korean": "아침 내내 분주한 당신이 갑자기 11시 45분임을 알아챈다."
-    },
-    {
-      "id": "reading-081-s003",
-      "english": "You hurry to get ready and then jump in the car.",
-      "korean": "당신은 급하게 준비하고 차에 올라탄다."
-    },
-    {
-      "id": "reading-081-s004",
-      "english": "What route is probably the fastest?",
-      "korean": "어떤 길이 가장 빠를까?"
-    },
-    {
-      "id": "reading-081-s005",
-      "english": "You know where the mall is, and you choose the best route based on what you know about the distance, the number of stop lights, and the amount of traffic.",
-      "korean": "당신은 상가가 어디인지를 알고, 거리, 신호등 수, 교통량 등에 대해 당신이 인지하고 있는 것에 기초하여 최상의 길을 선택한다."
-    },
-    {
-      "id": "reading-081-s006",
-      "english": "In short, you make observations and make your best guesses based on what you know and have observed.",
-      "korean": "간단히 말해, 당신은 자신이 인지하고 관찰하는 것에 기초해서 인지하고 최고의 추측을 한다."
-    },
-    {
-      "id": "reading-081-s007",
-      "english": "True problem solving, however, goes beyond feelings.",
-      "korean": "그러나 진정한 문제 해결은 감정의 영역 밖이다."
-    },
-    {
-      "id": "reading-081-s008",
-      "english": "To solve a problem, you must look beyond how you feel and combine information that you already know with new observations.",
-      "korean": "문제를 해결하기 위해서는 여러분이 어떻게 느끼는가 하는 것을 뛰어 넘어야 하고 새로운 관찰로 이미 인지하고 있는 정보를 연결시켜야 한다."
-    },
-    {
-      "id": "reading-081-s009",
-      "english": "Then, on the basis of your knowledge of the situation, you can evaluate the problem and come up with the best way to solve it.",
-      "korean": "그 다음, 그 상황에 대한 당신의 지식에 기초하여, 당신은 그 문제를 평가할 수 있고, 그것을 해결할 수 있는 최선의 방법에 근접할 수 있다."
-    },
-    {
-      "id": "reading-081-s010",
-      "english": "An example will make this point clear.",
-      "korean": "이러한 점을 명백히 해 줄 하나의 예를 들어보자."
-    },
-    {
-      "id": "reading-081-s011",
-      "english": "Everyone makes decisions every day.",
-      "korean": "모든 사람들은 매일매일 결정을 내린다."
-    },
-    {
-      "id": "reading-081-s012",
       "english": "What clothes should you wear?",
       "korean": "어떤 옷을 입어야 할까?"
     },
     {
-      "id": "reading-081-s013",
+      "id": "reading-081-s003",
       "english": "Should you go out tonight or stay home and study?",
-      "korean": "오늘밤 외출을 할 것인가? 집에서 공부를 할 것인가?"
+      "korean": "오늘 밤 외출할까, 아니면 집에서 공부할까?"
+    },
+    {
+      "id": "reading-081-s004",
+      "english": "Most of the decisions people make are based on what they feel will be the best solution.",
+      "korean": "사람들이 내리는 결정 대부분은 무엇이 최선의 해결책일 것 같다는 느낌에 바탕을 둔다."
+    },
+    {
+      "id": "reading-081-s005",
+      "english": "Feelings and judgments of how others feel toward you play a major role in how you choose to solve your day-to-day problems.",
+      "korean": "다른 사람들이 당신을 어떻게 느끼는지에 대한 느낌과 판단은 당신이 일상의 문제를 어떻게 해결할지 정하는 데 큰 역할을 한다."
+    },
+    {
+      "id": "reading-081-s006",
+      "english": "True problem solving, however, goes beyond feelings.",
+      "korean": "그러나 진정한 문제 해결은 느낌을 넘어선다."
+    },
+    {
+      "id": "reading-081-s007",
+      "english": "To solve a problem, you must look beyond how you feel and combine information that you already know with new observations.",
+      "korean": "문제를 해결하려면 자신의 느낌 너머를 보고, 이미 알고 있는 정보를 새로 관찰한 것과 결합해야 한다."
+    },
+    {
+      "id": "reading-081-s008",
+      "english": "Then, on the basis of your knowledge of the situation, you can evaluate the problem and come up with the best way to solve it.",
+      "korean": "그런 다음 상황에 대해 아는 것을 바탕으로 문제를 평가하고 가장 좋은 해결 방법을 찾아낼 수 있다."
+    },
+    {
+      "id": "reading-081-s009",
+      "english": "An example will make this point clear.",
+      "korean": "예를 하나 들면 이 점이 분명해질 것이다."
+    },
+    {
+      "id": "reading-081-s010",
+      "english": "Imagine that it’s Saturday and you are to meet your friends at the mall at 12:00.",
+      "korean": "토요일이고, 12시에 쇼핑몰에서 친구들을 만나기로 했다고 상상해 보라."
+    },
+    {
+      "id": "reading-081-s011",
+      "english": "You’ve been busy all morning, and suddenly you notice it is 11:45.",
+      "korean": "아침 내내 바빴는데, 문득 보니 11시 45분이다."
+    },
+    {
+      "id": "reading-081-s012",
+      "english": "You hurry to get ready and then jump in the car.",
+      "korean": "서둘러 준비를 하고 차에 올라탄다."
+    },
+    {
+      "id": "reading-081-s013",
+      "english": "What route is probably the fastest?",
+      "korean": "어느 길이 가장 빠를까?"
     },
     {
       "id": "reading-081-s014",
-      "english": "Most of the decisions people make are based on what they feel will be the best solution.",
-      "korean": "사람들이 내리는 결정의 대부분은 그들이 느끼기에 것이 최상의 해결책일 것이라는 것에 기초한다."
+      "english": "You know where the mall is, and you choose the best route based on what you know about the distance, the number of stop lights, and the amount of traffic.",
+      "korean": "당신은 쇼핑몰이 어디 있는지 알고, 거리와 신호등 수와 교통량에 대해 아는 것을 바탕으로 가장 좋은 길을 고른다."
     },
     {
       "id": "reading-081-s015",
-      "english": "Feelings and judgments of how others feel toward you play a major role in how you choose to solve your day-to-day problems.",
-      "korean": "다른 사람들이 당신에 대해 어떻게 느낄 것인가에 대한 감정과 판단은 당신이 자신의 일상적인 문제들을 어떻게 선택할 것인가 하는 데에 있어 중요한 역할을 한다."
+      "english": "In short, you make observations and make your best guesses based on what you know and have observed.",
+      "korean": "요컨대 당신은 관찰을 하고, 알고 있는 것과 관찰한 것을 바탕으로 최선의 추측을 한다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "solve",
       "lemma": "solve",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "해결하다",
       "score": 110,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 110점)",
@@ -170,7 +150,7 @@
       "word": "observed",
       "lemma": "observe",
       "partOfSpeech": "v.",
-      "korean": "관찰하다, 준수하다",
+      "korean": "관찰하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -195,8 +175,8 @@
     {
       "word": "fastest",
       "lemma": "fast",
-      "partOfSpeech": "n.",
-      "korean": "빨리",
+      "partOfSpeech": "adj.",
+      "korean": "가장 빠른 (fast의 최상급)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -222,7 +202,7 @@
       "word": "lights",
       "lemma": "light",
       "partOfSpeech": "n.",
-      "korean": "빛",
+      "korean": "신호등 (stop lights)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -234,7 +214,7 @@
       "word": "based",
       "lemma": "base",
       "partOfSpeech": "v.",
-      "korean": "~에 근거한, ~을 바탕으로 한",
+      "korean": "~에 바탕을 두다 (based on ~을 바탕으로)",
       "score": 84,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -246,7 +226,7 @@
       "word": "feelings",
       "lemma": "feeling",
       "partOfSpeech": "n.",
-      "korean": "감정, 느낌",
+      "korean": "느낌, 감정",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -257,8 +237,8 @@
     {
       "word": "choose",
       "lemma": "choose",
-      "partOfSpeech": "n.",
-      "korean": "선택하다",
+      "partOfSpeech": "v.",
+      "korean": "정하다, 선택하다",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -267,34 +247,34 @@
       "freq": 2
     },
     {
-      "word": "imagine",
-      "lemma": "imagine",
+      "word": "observations",
+      "lemma": "observation",
       "partOfSpeech": "n.",
-      "korean": "상상하다",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "관찰",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
-      "word": "saturday",
-      "lemma": "saturday",
+      "word": "decisions",
+      "lemma": "decision",
       "partOfSpeech": "n.",
-      "korean": "saturday (핵심 어휘)",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "결정",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "day-to-day",
       "lemma": "day-to-day",
       "partOfSpeech": "adj.",
-      "korean": "매일매일의, 일상의",
+      "korean": "일상의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -303,16 +283,16 @@
       "freq": 1
     },
     {
-      "word": "mall",
-      "lemma": "mall",
+      "word": "traffic",
+      "lemma": "traffic",
       "partOfSpeech": "n.",
-      "korean": "mall (핵심 어휘)",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
+      "korean": "교통량",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     }
   ]
 }

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "As the snow piles up higher in a woodland over the course of winter, it creates advantages and problems for animals. For the rabbit, deep snow may provide food. Since it feeds on the winter buds of young trees, the deeper icy snow helps the animal to reach more buds. What's more, sometimes the weight of the snow causes some trees to bend to the ground. This means their tender tops are easier to reach for the rabbit. On the other hand, the situation is the opposite for deer."
+      "text": "As the snow piles up higher in a woodland over the course of winter, it creates advantages and problems for animals. For the rabbit, deep snow may provide food. Since it feeds on the winter buds of young trees, the deeper icy snow helps the animal to reach more buds. What's more, sometimes the weight of the snow causes some trees to bend to the ground. This means their tender tops are easier to reach for the rabbit. On the other hand, the situation is the opposite for deer. Deep snow makes it hard for deer to walk and to find food, so many of them go hungry."
     },
     {
       "type": "choice",
@@ -48,40 +48,45 @@
     {
       "id": "reading-160-s001",
       "english": "As the snow piles up higher in a woodland over the course of winter, it creates advantages and problems for animals.",
-      "korean": "겨우내 숲속에 더 높이 쌓임에 따라, 눈은 동물들에게 이점이 되기도 문제점이 되기도 한다."
+      "korean": "겨울 동안 숲에 눈이 점점 높이 쌓이면 동물들에게 좋은 점과 문제가 함께 생긴다."
     },
     {
       "id": "reading-160-s002",
       "english": "For the rabbit, deep snow may provide food.",
-      "korean": "토끼의 경우 깊게 쌓인 눈은 식량을 제공하기도 한다."
+      "korean": "토끼에게는 깊이 쌓인 눈이 먹이를 주기도 한다."
     },
     {
       "id": "reading-160-s003",
       "english": "Since it feeds on the winter buds of young trees, the deeper icy snow helps the animal to reach more buds.",
-      "korean": "토끼는 어린 나무의 겨울 새싹을 먹고 살기에, 높게 쌓여 언 눈은 토끼가 보다 많은 새싹에 닿을 수 있게 해준다."
+      "korean": "토끼는 어린나무의 겨울눈을 먹고 사는데, 더 깊이 얼어붙은 눈을 밟고 올라서면 더 많은 눈에 닿을 수 있다."
     },
     {
       "id": "reading-160-s004",
       "english": "What's more, sometimes the weight of the snow causes some trees to bend to the ground.",
-      "korean": "게다가 때론 눈의 무게가 나무들을 땅 쪽으로 휘게 한다."
+      "korean": "게다가 때로는 눈의 무게 때문에 나무가 땅까지 휘기도 한다."
     },
     {
       "id": "reading-160-s005",
       "english": "This means their tender tops are easier to reach for the rabbit.",
-      "korean": "이는 토끼가 나무의 부드러운 가지 끝에 이르기 쉽게 해 줌을 의미한다."
+      "korean": "그러면 토끼가 나무의 연한 꼭대기에 더 쉽게 닿을 수 있다."
     },
     {
       "id": "reading-160-s006",
       "english": "On the other hand, the situation is the opposite for deer.",
-      "korean": "반면, 그런 상황이 사슴에게는 정반대이다."
+      "korean": "반면 사슴에게는 상황이 정반대다."
+    },
+    {
+      "id": "reading-160-s007",
+      "english": "Deep snow makes it hard for deer to walk and to find food, so many of them go hungry.",
+      "korean": "깊은 눈 때문에 사슴은 걷기도 먹이를 찾기도 어려워, 많은 사슴이 굶주린다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "creates",
       "lemma": "create",
-      "partOfSpeech": "n.",
-      "korean": "창조하다",
+      "partOfSpeech": "v.",
+      "korean": "만들어 내다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -104,8 +109,8 @@
     {
       "word": "higher",
       "lemma": "high",
-      "partOfSpeech": "n.",
-      "korean": "높다",
+      "partOfSpeech": "adv.",
+      "korean": "더 높이",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -117,7 +122,7 @@
       "word": "provide",
       "lemma": "provide",
       "partOfSpeech": "v.",
-      "korean": "제공하다, 공급하다",
+      "korean": "주다, 제공하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -131,7 +136,7 @@
       "word": "hand",
       "lemma": "hand",
       "partOfSpeech": "n.",
-      "korean": "손",
+      "korean": "(on the other hand) 반면에",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -142,8 +147,8 @@
     {
       "word": "young",
       "lemma": "young",
-      "partOfSpeech": "n.",
-      "korean": "젊은",
+      "partOfSpeech": "adj.",
+      "korean": "어린 (young trees 어린나무)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -154,8 +159,8 @@
     {
       "word": "deeper",
       "lemma": "deep",
-      "partOfSpeech": "n.",
-      "korean": "깊은",
+      "partOfSpeech": "adj.",
+      "korean": "더 깊은",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -166,8 +171,8 @@
     {
       "word": "causes",
       "lemma": "cause",
-      "partOfSpeech": "n.",
-      "korean": "원인",
+      "partOfSpeech": "v.",
+      "korean": "~하게 하다 (cause A to do)",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -178,8 +183,8 @@
     {
       "word": "easier",
       "lemma": "easy",
-      "partOfSpeech": "n.",
-      "korean": "쉬운",
+      "partOfSpeech": "adj.",
+      "korean": "더 쉬운",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -197,7 +202,7 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 4
+      "freq": 5
     },
     {
       "word": "winter",
@@ -215,7 +220,7 @@
       "word": "woodland",
       "lemma": "woodland",
       "partOfSpeech": "n.",
-      "korean": "삼림 지대, 숲",
+      "korean": "숲, 삼림 지대",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -227,7 +232,7 @@
       "word": "advantages",
       "lemma": "advantage",
       "partOfSpeech": "n.",
-      "korean": "장점",
+      "korean": "이점",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -237,9 +242,9 @@
     },
     {
       "word": "piles",
-      "lemma": "piles",
-      "partOfSpeech": "n.",
-      "korean": "더미들, 쌓아 올린 것",
+      "lemma": "pile",
+      "partOfSpeech": "v.",
+      "korean": "(pile up) 쌓이다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

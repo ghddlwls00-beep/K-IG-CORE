@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "옛날에 불만족한 말 한 마리가 더 길고 더 날씬한 다리와 백조 같은 목과 그의 위에서 자라는 안장을 달라고 신들에게 빌었다. 자비로운 신들이 즉시 그를 그 모든 새로운 특징들을 가진 동물로 바꾸었다. 그러나 그것들이 개별적으로는 매력적으로 보였지만 전체를 모아놓은 것은 그 말을 놀라게 했다. 왜냐하면 그 말은 자신이 못생긴 낙타로 변했다는 것을 발견했기 때문이었다. 신들이 말했다. “자, 이제 네 모든 소원을 들어주었고 너는 이제 네가 평생동안 소원했던 대로 살 것이다.” 기억하라! 모든 변화가 좋은 것은 아니다. 당신은 당신이 갖고 있는 것에 만족해야 한다."
+      "text": "옛날에 불만이 많은 말 한 마리가 신들에게 더 길고 가는 다리, 백조 같은 목, 그리고 몸에서 자라나는 안장을 달라고 빌었다. 자비로운 신들은 곧바로 그를 그 새로운 특징을 모두 가진 동물로 바꾸어 주었다. 그러나 하나하나는 멋져 보였던 것들이 모두 합쳐지자 그는 충격을 받았다. 자신이 못생긴 낙타로 변해 버렸기 때문이다. “자, 이제 네 소원은 모두 이루어졌으니, 평생 바라던 대로 살게 될 것이다.”라고 신들이 말했다. 기억하라! 모든 변화가 좋은 것은 아니다. 가진 것에 만족해야 한다."
     },
     {
       "type": "choice",
@@ -48,40 +48,40 @@
     {
       "id": "reading-079-s001",
       "english": "A long time ago, a dissatisfied horse asked the gods for longer, thinner legs, a neck like a swan, and a saddle that would grow upon him.",
-      "korean": "옛날에 불만족한 말 한 마리가 더 길고 더 날씬한 다리와 백조 같은 목과 그의 위에서 자라는 안장을 달라고 신들에게 빌었다."
+      "korean": "옛날에 불만이 많은 말 한 마리가 신들에게 더 길고 가는 다리, 백조 같은 목, 그리고 몸에서 자라나는 안장을 달라고 빌었다."
     },
     {
       "id": "reading-079-s002",
       "english": "Right away, the merciful gods changed him into a creature having all the new features.",
-      "korean": "자비로운 신들이 즉시 그를 그 모든 새로운 특징들을 가진 동물로 바꾸었다."
+      "korean": "자비로운 신들은 곧바로 그를 그 새로운 특징을 모두 가진 동물로 바꾸어 주었다."
     },
     {
       "id": "reading-079-s003",
       "english": "But although they had looked attractive separately, the entire assembly shocked him, for he found that he had been changed into an ugly camel.",
-      "korean": "그러나 그것들이 개별적으로는 매력적으로 보였지만 전체를 모아놓은 것은 그 말을 놀라게 했다. 왜냐하면 그 말은 자신이 못생긴 낙타로 변했다는 것을 발견했기 때문이었다."
+      "korean": "그러나 하나하나는 멋져 보였던 것들이 모두 합쳐지자 그는 충격을 받았다. 자신이 못생긴 낙타로 변해 버렸기 때문이다."
     },
     {
       "id": "reading-079-s004",
-      "english": "“There now,” said the gods, “all your wishes are granted, and you will now live as you’ve wished all your life.” Remember!",
-      "korean": "신들이 말했다. “자, 이제 네 모든 소원을 들어주었고 너는 이제 네가 평생동안 소원했던 대로 살 것이다.” 기억하라!"
+      "english": "“There now,” said the gods, “all your wishes are granted, and you will now live as you’ve wished all your life.”",
+      "korean": "“자, 이제 네 소원은 모두 이루어졌으니, 평생 바라던 대로 살게 될 것이다.”라고 신들이 말했다."
     },
     {
       "id": "reading-079-s005",
-      "english": "Not all change is good.",
-      "korean": "모든 변화가 좋은 것은 아니다."
+      "english": "Remember! Not all change is good.",
+      "korean": "기억하라! 모든 변화가 좋은 것은 아니다."
     },
     {
       "id": "reading-079-s006",
       "english": "You should be satisfied with what you have.",
-      "korean": "당신은 당신이 갖고 있는 것에 만족해야 한다."
+      "korean": "가진 것에 만족해야 한다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "wishes",
       "lemma": "wish",
-      "partOfSpeech": "v.",
-      "korean": "바라다, 원하다",
+      "partOfSpeech": "n.",
+      "korean": "소원",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
@@ -92,7 +92,7 @@
     {
       "word": "remember",
       "lemma": "remember",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "기억하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -103,9 +103,9 @@
     },
     {
       "word": "dissatisfied",
-      "lemma": "dissatisfy",
-      "partOfSpeech": "v.",
-      "korean": "dissatisfied (핵심 어휘)",
+      "lemma": "dissatisfied",
+      "partOfSpeech": "adj.",
+      "korean": "불만스러운",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -114,12 +114,12 @@
       "freq": 1
     },
     {
-      "word": "asked",
-      "lemma": "ask",
-      "partOfSpeech": "v.",
-      "korean": "묻다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "merciful",
+      "lemma": "merciful",
+      "partOfSpeech": "adj.",
+      "korean": "자비로운",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -127,9 +127,9 @@
     },
     {
       "word": "satisfied",
-      "lemma": "satisfy",
-      "partOfSpeech": "v.",
-      "korean": "만족시키다",
+      "lemma": "satisfied",
+      "partOfSpeech": "adj.",
+      "korean": "만족한 (be satisfied with ~에 만족하다)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -141,7 +141,7 @@
       "word": "gods",
       "lemma": "god",
       "partOfSpeech": "n.",
-      "korean": "gods (핵심 어휘)",
+      "korean": "신",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
@@ -153,7 +153,7 @@
       "word": "changed",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "바꾸다 (change A into B)",
       "score": 82,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -163,9 +163,9 @@
     },
     {
       "word": "thinner",
-      "lemma": "thinner",
-      "partOfSpeech": "n.",
-      "korean": "thinner (핵심 어휘)",
+      "lemma": "thin",
+      "partOfSpeech": "adj.",
+      "korean": "더 가는 (thin의 비교급)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -189,7 +189,7 @@
       "word": "saddle",
       "lemma": "saddle",
       "partOfSpeech": "n.",
-      "korean": "saddle (핵심 어휘)",
+      "korean": "안장",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -201,7 +201,7 @@
       "word": "shocked",
       "lemma": "shock",
       "partOfSpeech": "v.",
-      "korean": "충격",
+      "korean": "충격을 주다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -211,9 +211,9 @@
     },
     {
       "word": "granted",
-      "lemma": "grante",
+      "lemma": "grant",
       "partOfSpeech": "v.",
-      "korean": "granted (핵심 어휘)",
+      "korean": "(소원을) 들어주다 (be granted 이루어지다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -222,24 +222,24 @@
       "freq": 1
     },
     {
-      "word": "ago",
-      "lemma": "ago",
+      "word": "features",
+      "lemma": "feature",
       "partOfSpeech": "n.",
-      "korean": "전",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "korean": "특징",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "legs",
-      "lemma": "leg",
+      "word": "creature",
+      "lemma": "creature",
       "partOfSpeech": "n.",
-      "korean": "다리",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "korean": "동물, 생물",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

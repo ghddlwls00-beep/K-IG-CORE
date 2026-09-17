@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "The school yearbook will be published soon. It is filled with pictures of people and events from your high school years. As a student at Westport High, you have been in the very center of many of these events. You have seen your school team win the soccer championships. You have been on the trips to many interesting places. You have attended the school music festivals. All these big events are recorded for you in this yearbook. To reserve a copy of the book, you must go to Room 212 by November 30, and tell the secretary that you want to one."
+      "text": "The school yearbook will be published soon. It is filled with pictures of people and events from your high school years. As a student at Westport High, you have been in the very center of many of these events. You have seen your school team win the soccer championships. You have been on the trips to many interesting places. You have attended the school music festivals. All these big events are recorded for you in this yearbook. To reserve a copy of the book, you must go to Room 212 by November 30, and tell the secretary that you want one."
     },
     {
       "type": "choice",
@@ -82,8 +82,8 @@
     },
     {
       "id": "reading-061-s008",
-      "english": "To reserve a copy of the book, you must go to Room 212 by November 30, and tell the secretary that you want to one.",
-      "korean": "앨범 한 권을 예약하기 위해서는 11월 30일 까지 212호실로 가셔서, 비서에게 한 권 사기를 원한다는 것을 말씀하셔야 합니다."
+      "english": "To reserve a copy of the book, you must go to Room 212 by November 30, and tell the secretary that you want one.",
+      "korean": "앨범 한 권을 예약하기 위해서는 11월 30일 까지 212호실로 가셔서, 비서에게 한 권을 원한다고 말씀하셔야 합니다."
     }
   ],
   "readingVocabulary": [
@@ -103,7 +103,7 @@
       "word": "book",
       "lemma": "book",
       "partOfSpeech": "n.",
-      "korean": "책",
+      "korean": "책 (여기서는 졸업 앨범)",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -115,7 +115,7 @@
       "word": "pictures",
       "lemma": "picture",
       "partOfSpeech": "n.",
-      "korean": "그림",
+      "korean": "사진",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -138,8 +138,8 @@
     {
       "word": "music",
       "lemma": "music",
-      "partOfSpeech": "adj.",
-      "korean": "음악",
+      "partOfSpeech": "n.",
+      "korean": "음악 (music festivals 음악 축제)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
       "examTags": [
@@ -148,22 +148,22 @@
       "freq": 1
     },
     {
-      "word": "high",
-      "lemma": "high",
+      "word": "championships",
+      "lemma": "championship",
       "partOfSpeech": "n.",
-      "korean": "높은",
-      "score": 93,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 93점)",
+      "korean": "선수권 대회",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "reserve",
       "lemma": "reserve",
-      "partOfSpeech": "n.",
-      "korean": "예약하다; 비축",
+      "partOfSpeech": "v.",
+      "korean": "예약하다",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 실무/비즈니스 실용 핵심 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -175,7 +175,7 @@
       "word": "published",
       "lemma": "publish",
       "partOfSpeech": "v.",
-      "korean": "출판하다",
+      "korean": "발행하다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -187,7 +187,7 @@
       "word": "yearbook",
       "lemma": "yearbook",
       "partOfSpeech": "n.",
-      "korean": "졸업 앨범, 연감",
+      "korean": "졸업 앨범",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -199,7 +199,7 @@
       "word": "events",
       "lemma": "event",
       "partOfSpeech": "n.",
-      "korean": "사건, 행사",
+      "korean": "행사",
       "score": 77,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -208,12 +208,12 @@
       "freq": 3
     },
     {
-      "word": "november",
-      "lemma": "november",
-      "partOfSpeech": "n.",
-      "korean": "11월",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "recorded",
+      "lemma": "record",
+      "partOfSpeech": "v.",
+      "korean": "기록하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -223,7 +223,7 @@
       "word": "secretary",
       "lemma": "secretary",
       "partOfSpeech": "n.",
-      "korean": "비서",
+      "korean": "비서, 사무 직원",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -234,7 +234,7 @@
     {
       "word": "interesting",
       "lemma": "interesting",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "adj.",
       "korean": "흥미로운",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",

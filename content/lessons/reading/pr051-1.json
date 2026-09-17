@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "부의 길, 당신이 그것을 원한다면, 그것은 시장으로 가는 길만치 쉽다. 그것은 두 단어에 집약적으로 함축된다. 근면과 절약이다. 즉, 시간과 돈을 낭비하지 말고 그 둘을 최대로 사용하라. 근면과 절약이 없다면 아무것도 일어나지 않고, 그것들이 있다면 모든 것이 가능하다. 얻을 수 있는 모든 것을 정직하게 얻고, 얻은 모든 것을 저축한다면 반드시 자신의 목표를 이룰 것이다."
+      "text": "부자가 되는 길은, 당신이 원한다면, 시장으로 가는 길만큼이나 분명하다. 그것은 주로 두 단어, 곧 근면과 절약에 달려 있다. 즉, 시간도 돈도 낭비하지 말고 둘 다 가장 잘 활용하라는 것이다. 근면과 절약이 없으면 아무것도 이루어지지 않고, 그것들이 있으면 모든 것이 이루어진다. 정직하게 얻을 수 있는 것을 모두 얻고 얻은 것을 모두 모으는 사람은 틀림없이 목표를 이룰 것이다."
     },
     {
       "type": "choice",
@@ -48,35 +48,30 @@
     {
       "id": "reading-051-s001",
       "english": "The way to wealth, if you desire it, is as plain as the way to market.",
-      "korean": "부의 길, 당신이 그것을 원한다면, 그것은 시장으로 가는 길만치 쉽다."
+      "korean": "부자가 되는 길은, 당신이 원한다면, 시장으로 가는 길만큼이나 분명하다."
     },
     {
       "id": "reading-051-s002",
-      "english": "It depends chiefly on two words, diligence and thrift",
-      "korean": "그것은 두 단어에 집약적으로 함축된다. 근면과 절약이다."
+      "english": "It depends chiefly on two words, diligence and thrift; that is, waste neither time nor money, but make the best use of both.",
+      "korean": "그것은 주로 두 단어, 곧 근면과 절약에 달려 있다. 즉, 시간도 돈도 낭비하지 말고 둘 다 가장 잘 활용하라는 것이다."
     },
     {
       "id": "reading-051-s003",
-      "english": "that is, waste neither time nor money, but make the best use of both.",
-      "korean": "즉, 시간과 돈을 낭비하지 말고 그 둘을 최대로 사용하라."
+      "english": "Without diligence and thrift nothing will happen, and with them everything.",
+      "korean": "근면과 절약이 없으면 아무것도 이루어지지 않고, 그것들이 있으면 모든 것이 이루어진다."
     },
     {
       "id": "reading-051-s004",
-      "english": "Without diligence and thrift nothing will happen, and with them everything.",
-      "korean": "근면과 절약이 없다면 아무것도 일어나지 않고, 그것들이 있다면 모든 것이 가능하다."
-    },
-    {
-      "id": "reading-051-s005",
       "english": "He who gets all he can honestly, and saves all he gets will certainly obtain his goal.",
-      "korean": "얻을 수 있는 모든 것을 정직하게 얻고, 얻은 모든 것을 저축한다면 반드시 자신의 목표를 이룰 것이다."
+      "korean": "정직하게 얻을 수 있는 것을 모두 얻고 얻은 것을 모두 모으는 사람은 틀림없이 목표를 이룰 것이다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "honestly",
-      "lemma": "honest",
+      "lemma": "honestly",
       "partOfSpeech": "adv.",
-      "korean": "정직한",
+      "korean": "정직하게",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -87,8 +82,8 @@
     {
       "word": "saves",
       "lemma": "save",
-      "partOfSpeech": "n.",
-      "korean": "저장",
+      "partOfSpeech": "v.",
+      "korean": "모으다, 저축하다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -99,7 +94,7 @@
     {
       "word": "goal",
       "lemma": "goal",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "목표",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 98점)",
@@ -111,8 +106,8 @@
     {
       "word": "depends",
       "lemma": "depend",
-      "partOfSpeech": "n.",
-      "korean": "의존하다",
+      "partOfSpeech": "v.",
+      "korean": "(depend on) ~에 달려 있다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -121,22 +116,22 @@
       "freq": 1
     },
     {
-      "word": "words",
-      "lemma": "word",
+      "word": "diligence",
+      "lemma": "diligence",
       "partOfSpeech": "n.",
-      "korean": "단어",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "근면",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "waste",
       "lemma": "waste",
-      "partOfSpeech": "n.",
-      "korean": "낭비",
+      "partOfSpeech": "v.",
+      "korean": "낭비하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -145,22 +140,22 @@
       "freq": 1
     },
     {
-      "word": "happen",
-      "lemma": "happen",
+      "word": "thrift",
+      "lemma": "thrift",
       "partOfSpeech": "n.",
-      "korean": "일어나다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "절약",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "plain",
       "lemma": "plain",
       "partOfSpeech": "adj.",
-      "korean": "명백한, 분명한; 평원",
+      "korean": "분명한, 명백한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -172,7 +167,7 @@
       "word": "wealth",
       "lemma": "wealth",
       "partOfSpeech": "n.",
-      "korean": "부",
+      "korean": "부, 재산",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -183,8 +178,8 @@
     {
       "word": "desire",
       "lemma": "desire",
-      "partOfSpeech": "n.",
-      "korean": "욕구, 갈망",
+      "partOfSpeech": "v.",
+      "korean": "바라다, 원하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -206,12 +201,12 @@
       "freq": 1
     },
     {
-      "word": "everything",
-      "lemma": "everything",
-      "partOfSpeech": "v.",
-      "korean": "모든 것",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "chiefly",
+      "lemma": "chiefly",
+      "partOfSpeech": "adv.",
+      "korean": "주로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -221,7 +216,7 @@
       "word": "certainly",
       "lemma": "certainly",
       "partOfSpeech": "adv.",
-      "korean": "확실히",
+      "korean": "틀림없이",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -232,8 +227,8 @@
     {
       "word": "obtain",
       "lemma": "obtain",
-      "partOfSpeech": "n.",
-      "korean": "얻다",
+      "partOfSpeech": "v.",
+      "korean": "얻다, 이루다",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [

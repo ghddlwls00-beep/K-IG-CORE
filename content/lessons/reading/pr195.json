@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Suppose a football game begins at 1:00 p.m. in New York. It is then 6:00 p.m. in London. Which time is correct? if an explosion occurred on a star, scientists on the earth would record th time it happened. But anyone traveling in another part of the universe in a different direction would identify the time differently. Thus there is no absolute time."
+   "text": "Suppose a football game begins at 1:00 p.m. in New York. It is then 6:00 p.m. in London. Which time is correct? Both are, because the time on a clock depends on where you are. Something similar happens in space. If an explosion occurred on a star, scientists on the earth would record the time it happened. But someone traveling through another part of the universe at a very different speed would record the time differently. According to Einstein's theory of relativity, there is no single absolute time for everyone."
   },
   {
    "type": "choice",
@@ -48,32 +48,32 @@
   {
    "id": "reading-195-s001",
    "english": "Suppose a football game begins at 1:00 p.m. in New York.",
-   "korean": "축구 경기가 오후 1시에 뉴욕에서 시작된다고 가정해 보자."
+   "korean": "뉴욕에서 미식축구 경기가 오후 1시에 시작한다고 해 보자."
   },
   {
    "id": "reading-195-s002",
    "english": "It is then 6:00 p.m. in London.",
-   "korean": "그 때 런던은 오후 6시이다."
+   "korean": "그때 런던은 오후 6시다."
   },
   {
    "id": "reading-195-s003",
-   "english": "Which time is correct?",
-   "korean": "어느 시각이 맞는 것일까?"
+   "english": "Which time is correct? Both are, because the time on a clock depends on where you are.",
+   "korean": "어느 시각이 맞을까? 둘 다 맞다. 시계의 시각은 어디에 있느냐에 따라 달라지기 때문이다."
   },
   {
    "id": "reading-195-s004",
-   "english": "if an explosion occurred on a star, scientists on the earth would record th time it happened.",
-   "korean": "어느 별에서 폭발이 발생했다면 지구에 있는 과학자들은 그것이 발생한 시간을 기록할 것이다."
+   "english": "Something similar happens in space. If an explosion occurred on a star, scientists on the earth would record the time it happened.",
+   "korean": "우주에서도 비슷한 일이 일어난다. 어느 별에서 폭발이 일어나면 지구의 과학자들은 그것이 일어난 시각을 기록할 것이다."
   },
   {
    "id": "reading-195-s005",
-   "english": "But anyone traveling in another part of the universe in a different direction would identify the time differently.",
-   "korean": "그러나 다른 방향으로 우주의 다른 지역을 여행하고 있는 사람들은 그 시각을 다르게 볼 것이다."
+   "english": "But someone traveling through another part of the universe at a very different speed would record the time differently.",
+   "korean": "그러나 우주의 다른 곳을 아주 다른 속도로 여행하는 사람은 그 시각을 다르게 기록할 것이다."
   },
   {
    "id": "reading-195-s006",
-   "english": "Thus there is no absolute time.",
-   "korean": "그러므로 절대적인 시간은 존재하지 않는다."
+   "english": "According to Einstein's theory of relativity, there is no single absolute time for everyone.",
+   "korean": "아인슈타인의 상대성 이론에 따르면 모두에게 똑같은 절대적인 시간은 없다."
   }
  ],
  "readingVocabulary": [
@@ -102,22 +102,22 @@
    "freq": 1
   },
   {
-   "word": "different",
-   "lemma": "different",
-   "partOfSpeech": "n.",
-   "korean": "다른",
-   "score": 85,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 85점)",
+   "word": "record",
+   "lemma": "record",
+   "partOfSpeech": "v.",
+   "korean": "기록하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
-   "freq": 1
+   "freq": 2
   },
   {
    "word": "suppose",
    "lemma": "suppose",
-   "partOfSpeech": "n.",
-   "korean": "가정하다",
+   "partOfSpeech": "v.",
+   "korean": "가정하다 (Suppose ~ ~라고 해 보자)",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -129,7 +129,7 @@
    "word": "football",
    "lemma": "football",
    "partOfSpeech": "n.",
-   "korean": "축구",
+   "korean": "(미식)축구",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -138,33 +138,9 @@
    "freq": 1
   },
   {
-   "word": "p.m",
-   "lemma": "p.m",
-   "partOfSpeech": "n.",
-   "korean": "p.m (핵심 어휘)",
-   "score": 78,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 2
-  },
-  {
-   "word": "begins",
-   "lemma": "begin",
-   "partOfSpeech": "n.",
-   "korean": "시작하다",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
    "word": "absolute",
    "lemma": "absolute",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "adj.",
    "korean": "절대적인",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -189,7 +165,7 @@
    "word": "traveling",
    "lemma": "travel",
    "partOfSpeech": "v.",
-   "korean": "여행",
+   "korean": "이동하다, 여행하다",
    "score": 76,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
    "examTags": [
@@ -198,48 +174,72 @@
    "freq": 1
   },
   {
-   "word": "game",
-   "lemma": "game",
-   "partOfSpeech": "n.",
-   "korean": "게임",
-   "score": 73,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "york",
-   "lemma": "york",
-   "partOfSpeech": "n.",
-   "korean": "york (핵심 어휘)",
-   "score": 73,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "thus",
-   "lemma": "thus",
-   "partOfSpeech": "n.",
-   "korean": "thus (핵심 어휘)",
-   "score": 71,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
    "word": "correct",
    "lemma": "correct",
-   "partOfSpeech": "n.",
-   "korean": "정확한; 고치다",
+   "partOfSpeech": "adj.",
+   "korean": "옳은, 정확한",
    "score": 69,
    "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "depends",
+   "lemma": "depend",
+   "partOfSpeech": "v.",
+   "korean": "(depend on) ~에 달려 있다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "explosion",
+   "lemma": "explosion",
+   "partOfSpeech": "n.",
+   "korean": "폭발",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "universe",
+   "lemma": "universe",
+   "partOfSpeech": "n.",
+   "korean": "우주",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "speed",
+   "lemma": "speed",
+   "partOfSpeech": "n.",
+   "korean": "속도",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "relativity",
+   "lemma": "relativity",
+   "partOfSpeech": "n.",
+   "korean": "상대성 (theory of relativity 상대성 이론)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],

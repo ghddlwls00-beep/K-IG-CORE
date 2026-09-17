@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "People who are happy don't get everything they want, but they want most of what they can get. In other words, they equip the game in their favor by choosing to value things that are within their grasp. People who find themselves dissatisfied in life often set unreachable goals for themselves, setting themselves up to fail. People who set high goals for themselves and try to reach them are no longer happier than people who set and reach more modest goals.Stay within reality and strive to make things better."
+   "text": "People who are happy don't get everything they want, but they want most of what they can get. In other words, they rig the game in their favor by choosing to value things that are within their grasp. People who find themselves dissatisfied in life often set unreachable goals for themselves, setting themselves up to fail. People who set high goals for themselves and try to reach them are no happier than people who set and reach more modest goals. Stay within reality and strive to make things better."
   },
   {
    "type": "choice",
@@ -48,22 +48,27 @@
   {
    "id": "reading-076-s001",
    "english": "People who are happy don't get everything they want, but they want most of what they can get.",
-   "korean": "행복한 사람들은 자신들이 원하는 모든 것을 얻지는 못하지만, 자신들이\n\n얻을 수 있는 것의 대부분은 원한다."
+   "korean": "행복한 사람들은 원하는 것을 다 얻지는 못하지만, 얻을 수 있는 것 대부분을 원한다."
   },
   {
    "id": "reading-076-s002",
-   "english": "In other words, they equip the game in their favor by choosing to value things that are within their grasp.",
-   "korean": "다시 말해서, 그들은 자신의 능력이\n\n미치는 범위 내에 있는 것들을 높이 평가하기로 마음먹음 에 의해서\n\n인생이라는 게임을 자신들에게 이롭게 채비한다."
+   "english": "In other words, they rig the game in their favor by choosing to value things that are within their grasp.",
+   "korean": "다시 말해, 그들은 손이 닿는 범위 안에 있는 것을 소중히 여기기로 함으로써 게임을 자기에게 유리하게 만든다."
   },
   {
    "id": "reading-076-s003",
    "english": "People who find themselves dissatisfied in life often set unreachable goals for themselves, setting themselves up to fail.",
-   "korean": "스스로 삶에 불만을 품은\n\n사람들(행복하지 못한 사람들)은 자주 스스로에게 도달할 수 없는(자신의\n\n능력이 미치니 못하는) 목표들을 설정하는데, 그리하여 스스로를 실패할\n\n수밖에 없는 처지로 만든다."
+   "korean": "삶에 불만을 느끼는 사람들은 흔히 이룰 수 없는 목표를 세워 스스로 실패할 수밖에 없게 만든다."
   },
   {
    "id": "reading-076-s004",
-   "english": "People who set high goals for themselves and try to reach them are no longer happier than people who set and reach more modest goals.Stay within reality and strive to make things better.",
-   "korean": "그러나 스스로에게 높은 목표를 설정하고는 그\n\n목표들에 이르고자 노력하는 사람들은 적당한 정도의 목표를 설정하고서\n\n이에 이르고자 노력하는 사람들보다 행복한 것이 아니다. 현실성이라는 한계\n\n내에 머물면서(현실적 한계를 넘지 않으면서) 그리고 사정을 더 좋게\n\n개선하려고 열심히 노력하라."
+   "english": "People who set high goals for themselves and try to reach them are no happier than people who set and reach more modest goals.",
+   "korean": "스스로 높은 목표를 세우고 그것을 이루려고 애쓰는 사람들이, 더 적당한 목표를 세우고 이루는 사람들보다 더 행복한 것은 아니다."
+  },
+  {
+   "id": "reading-076-s005",
+   "english": "Stay within reality and strive to make things better.",
+   "korean": "현실의 테두리 안에 머물면서 상황을 더 낫게 만들려고 노력하라."
   }
  ],
  "readingVocabulary": [
@@ -77,24 +82,24 @@
    "examTags": [
     "중학기초"
    ],
-   "freq": 2
+   "freq": 3
   },
   {
-   "word": "happy",
-   "lemma": "happy",
-   "partOfSpeech": "n.",
-   "korean": "행복한",
-   "score": 102,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+   "word": "rig",
+   "lemma": "rig",
+   "partOfSpeech": "v.",
+   "korean": "(자기에게 유리하게) 조작하다 (rig the game)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
    "freq": 1
   },
   {
    "word": "high",
    "lemma": "high",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "adj.",
    "korean": "높은",
    "score": 96,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
@@ -104,21 +109,21 @@
    "freq": 1
   },
   {
-   "word": "words",
-   "lemma": "word",
-   "partOfSpeech": "n.",
-   "korean": "단어",
-   "score": 92,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "word": "modest",
+   "lemma": "modest",
+   "partOfSpeech": "adj.",
+   "korean": "적당한, 소박한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
    "freq": 1
   },
   {
    "word": "fail",
    "lemma": "fail",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "실패하다",
    "score": 88,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
@@ -128,12 +133,12 @@
    "freq": 1
   },
   {
-   "word": "everything",
-   "lemma": "everything",
-   "partOfSpeech": "v.",
-   "korean": "모든 것",
-   "score": 86,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+   "word": "grasp",
+   "lemma": "grasp",
+   "partOfSpeech": "n.",
+   "korean": "손이 닿는 범위 (within one's grasp 손이 닿는 곳에)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -142,8 +147,8 @@
   {
    "word": "set",
    "lemma": "set",
-   "partOfSpeech": "n.",
-   "korean": "놓다; 한 벌",
+   "partOfSpeech": "v.",
+   "korean": "(목표를) 세우다",
    "score": 81,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
    "examTags": [
@@ -154,8 +159,8 @@
   {
    "word": "within",
    "lemma": "within",
-   "partOfSpeech": "n.",
-   "korean": "within (핵심 어휘)",
+   "partOfSpeech": "prep.",
+   "korean": "~ 안에",
    "score": 80,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
@@ -166,8 +171,8 @@
   {
    "word": "reach",
    "lemma": "reach",
-   "partOfSpeech": "n.",
-   "korean": "도달하다",
+   "partOfSpeech": "v.",
+   "korean": "이루다, 도달하다",
    "score": 80,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
@@ -177,9 +182,9 @@
   },
   {
    "word": "happier",
-   "lemma": "happier",
-   "partOfSpeech": "n.",
-   "korean": "happier (핵심 어휘)",
+   "lemma": "happy",
+   "partOfSpeech": "adj.",
+   "korean": "더 행복한 (happy의 비교급)",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -188,12 +193,12 @@
    "freq": 1
   },
   {
-   "word": "goals.stay",
-   "lemma": "goals.stay",
-   "partOfSpeech": "n.",
-   "korean": "goals.stay (핵심 어휘)",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "word": "unreachable",
+   "lemma": "unreachable",
+   "partOfSpeech": "adj.",
+   "korean": "이룰 수 없는",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -203,7 +208,7 @@
    "word": "reality",
    "lemma": "reality",
    "partOfSpeech": "n.",
-   "korean": "reality (핵심 어휘)",
+   "korean": "현실",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -214,8 +219,8 @@
   {
    "word": "strive",
    "lemma": "strive",
-   "partOfSpeech": "adj.",
-   "korean": "strive (핵심 어휘)",
+   "partOfSpeech": "v.",
+   "korean": "애쓰다, 노력하다",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 77점)",
    "examTags": [
@@ -227,7 +232,7 @@
    "word": "choosing",
    "lemma": "choose",
    "partOfSpeech": "v.",
-   "korean": "선택하다",
+   "korean": "~하기로 하다 (choose to do)",
    "score": 76,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
    "examTags": [

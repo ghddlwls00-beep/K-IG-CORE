@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "만약 당신이 대부분의 아이들에게 가장 좋은 대접이 무엇이냐고 물으면 그들은 아이스크림이라고 답할 것이다. 더운 여름날 맛있는 아이스크림 콘 같은 것은 없다. 매년 미국인은 40억 이상의 콘을 먹는다. 아이스크림 콘이 우연히 발명되었다는 사실을 아느냐? 세인트 루이스는 7904년에 세게 박람회를 개최하고 있었다. 아이스크림을 판매하는 어떤 사람이 접시가 다떨어져 무엇을 해야할 지 몰랐다. 운좋게도 근처에 와플을 파는 한 사람이 와플을 감아서 그 안에 아이스크림을 넣을 것을 제안했다. 그것은 즉각적인 성공이었다."
+      "text": "대부분의 아이들에게 가장 좋아하는 간식이 무엇이냐고 물으면 “아이스크림!”이라고 대답할 것이다. 더운 여름날 맛있는 아이스크림콘만 한 것은 없다. 미국인들은 해마다 40억 개가 넘는 아이스크림콘을 먹는다. 널리 알려진 이야기에 따르면 아이스크림콘이 우연히 유명해졌다는 것을 알고 있는가? 1904년 세인트루이스에서 세계 박람회가 열리고 있었다. 아이스크림이 아주 잘 팔렸다. 아이스크림을 팔던 한 사람이 접시가 다 떨어져 어찌할 바를 몰랐다. 다행히 근처에서 와플을 팔던 사람이 와플을 말아 그 안에 아이스크림을 넣자고 제안했다. 그것은 곧바로 큰 인기를 끌었다."
     },
     {
       "type": "choice",
@@ -47,58 +47,46 @@
   "readingSentences": [
     {
       "id": "reading-193-s001",
-      "english": "If you ask most children what their favorite treat is, they will answer “Ice cream!” There is nothing like delicious ice-cream cone on a hot, summer day.",
-      "korean": "만약 당신이 대부분의 아이들에게 가장 좋은 대접이 무엇이냐고 물으면 그들은 아이스크림이라고 답할 것이다."
+      "english": "If you ask most children what their favorite treat is, they will answer “Ice cream!” There is nothing like a delicious ice-cream cone on a hot summer day.",
+      "korean": "대부분의 아이들에게 가장 좋아하는 간식이 무엇이냐고 물으면 “아이스크림!”이라고 대답할 것이다. 더운 여름날 맛있는 아이스크림콘만 한 것은 없다."
     },
     {
       "id": "reading-193-s002",
       "english": "Every year Americans eat more than four billion ice-cream cones.",
-      "korean": "더운 여름날 맛있는 아이스크림 콘 같은 것은 없다."
+      "korean": "미국인들은 해마다 40억 개가 넘는 아이스크림콘을 먹는다."
     },
     {
       "id": "reading-193-s003",
-      "english": "Did you know that the ice-cream cone was invented by accident?",
-      "korean": "매년 미국인은 40억 이상의 콘을 먹는다."
+      "english": "Did you know that, according to a popular story, the ice-cream cone became famous by accident?",
+      "korean": "널리 알려진 이야기에 따르면 아이스크림콘이 우연히 유명해졌다는 것을 알고 있는가?"
     },
     {
       "id": "reading-193-s004",
       "english": "St. Louis was having a world’s fair in 1904.",
-      "korean": "아이스크림 콘이 우연히 발명되었다는 사실을 아느냐?"
+      "korean": "1904년 세인트루이스에서 세계 박람회가 열리고 있었다."
     },
     {
       "id": "reading-193-s005",
       "english": "Ice cream was a big seller.",
-      "korean": "세인트 루이스는 7904년에 세게 박람회를 개최하고 있었다."
+      "korean": "아이스크림이 아주 잘 팔렸다."
     },
     {
       "id": "reading-193-s006",
-      "english": "One person selling ice-cream ran out of dishes and did’t know what to do.",
-      "korean": "아이스크림을 판매하는 어떤 사람이 접시가 다떨어져 무엇을 해야할 지 몰랐다."
+      "english": "One person selling ice cream ran out of dishes and didn't know what to do.",
+      "korean": "아이스크림을 팔던 한 사람이 접시가 다 떨어져 어찌할 바를 몰랐다."
     },
     {
       "id": "reading-193-s007",
-      "english": "Luckily, a person nearby, who was selling waffles, suggested rolling a waffle and putting the ice-cream inside.",
-      "korean": "운좋게도 근처에 와플을 파는 한 사람이 와플을 감아서 그 안에 아이스크림을 넣을 것을 제안했다."
+      "english": "Luckily, a person nearby, who was selling waffles, suggested rolling a waffle and putting the ice cream inside.",
+      "korean": "다행히 근처에서 와플을 팔던 사람이 와플을 말아 그 안에 아이스크림을 넣자고 제안했다."
     },
     {
       "id": "reading-193-s008",
       "english": "It was an instant success.",
-      "korean": "그것은 즉각적인 성공이었다."
+      "korean": "그것은 곧바로 큰 인기를 끌었다."
     }
   ],
   "readingVocabulary": [
-    {
-      "word": "invented",
-      "lemma": "invent",
-      "partOfSpeech": "v.",
-      "korean": "발명하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
     {
       "word": "suggested",
       "lemma": "suggest",
@@ -110,30 +98,6 @@
         "중학기초"
       ],
       "freq": 1
-    },
-    {
-      "word": "ice-cream",
-      "lemma": "ice-cream",
-      "partOfSpeech": "n.",
-      "korean": "ice-cream (핵심 어휘)",
-      "score": 89,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 5
-    },
-    {
-      "word": "cream",
-      "lemma": "cream",
-      "partOfSpeech": "n.",
-      "korean": "크림",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
     },
     {
       "word": "selling",
@@ -151,7 +115,7 @@
       "word": "delicious",
       "lemma": "delicious",
       "partOfSpeech": "adj.",
-      "korean": "맛있다",
+      "korean": "맛있는",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -162,8 +126,8 @@
     {
       "word": "favorite",
       "lemma": "favorite",
-      "partOfSpeech": "n.",
-      "korean": "좋아하는",
+      "partOfSpeech": "adj.",
+      "korean": "가장 좋아하는",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -172,22 +136,10 @@
       "freq": 1
     },
     {
-      "word": "ice",
-      "lemma": "ice",
-      "partOfSpeech": "n.",
-      "korean": "얼음",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
       "word": "cone",
       "lemma": "cone",
       "partOfSpeech": "n.",
-      "korean": "cone (핵심 어휘)",
+      "korean": "(아이스크림) 콘",
       "score": 78,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
       "examTags": [
@@ -199,19 +151,7 @@
       "word": "treat",
       "lemma": "treat",
       "partOfSpeech": "n.",
-      "korean": "치료하다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "answer",
-      "lemma": "answer",
-      "partOfSpeech": "n.",
-      "korean": "대답하다",
+      "korean": "간식, 특별히 즐기는 먹을거리",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -234,8 +174,8 @@
     {
       "word": "instant",
       "lemma": "instant",
-      "partOfSpeech": "n.",
-      "korean": "인스턴트",
+      "partOfSpeech": "adj.",
+      "korean": "즉각적인 (instant success 곧바로 거둔 성공)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -250,6 +190,66 @@
       "korean": "성공",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "accident",
+      "lemma": "accident",
+      "partOfSpeech": "n.",
+      "korean": "(by accident) 우연히",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "famous",
+      "lemma": "famous",
+      "partOfSpeech": "adj.",
+      "korean": "유명한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "seller",
+      "lemma": "seller",
+      "partOfSpeech": "n.",
+      "korean": "팔리는 상품 (big seller 잘 팔리는 상품)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "fair",
+      "lemma": "fair",
+      "partOfSpeech": "n.",
+      "korean": "박람회 (world's fair 세계 박람회)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "rolling",
+      "lemma": "roll",
+      "partOfSpeech": "v.",
+      "korean": "둥글게 말다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

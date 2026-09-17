@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Since so many of our conversations are held on the telephone, telephone calls are situations worthy of special consideration. Good manners on the telephone, of course, are the same as good manners elsewhere. What is more important is thoughtfulness for others. But thoughtfulness for others in the use of telephone is based on one important point. Do not keep the telephone call to yourself. Remember that it is shared by several people who have an equal right to its use."
+      "text": "Since so many of our conversations are held on the telephone, telephone calls are situations worthy of special consideration. Good manners on the telephone, of course, are the same as good manners elsewhere. What is more important is thoughtfulness for others. But thoughtfulness for others in the use of the telephone is based on one important point. Do not keep the telephone to yourself. Remember that it is shared by several people who have an equal right to its use."
     },
     {
       "type": "choice",
@@ -48,32 +48,32 @@
     {
       "id": "reading-045-s001",
       "english": "Since so many of our conversations are held on the telephone, telephone calls are situations worthy of special consideration.",
-      "korean": "그렇게 많은 우리 대화가 전화상에서 이루어지므로, 전화 호출은 특별한 고려의 가치가 있는 상황이다."
+      "korean": "우리 대화의 상당수가 전화로 이루어지므로, 전화 통화는 특별히 신경 쓸 만한 상황이다."
     },
     {
       "id": "reading-045-s002",
       "english": "Good manners on the telephone, of course, are the same as good manners elsewhere.",
-      "korean": "물론 전화상의 좋은 예절은 다른 분야의 좋은 예절과 같다."
+      "korean": "물론 전화 예절도 다른 곳에서의 예절과 같다."
     },
     {
       "id": "reading-045-s003",
       "english": "What is more important is thoughtfulness for others.",
-      "korean": "더 중요한 것은 다른 이를 위한 배려이다."
+      "korean": "더 중요한 것은 다른 사람에 대한 배려이다."
     },
     {
       "id": "reading-045-s004",
-      "english": "But thoughtfulness for others in the use of telephone is based on one important point.",
-      "korean": "그러나 전화의 사용에서 다른이를 위한 배려는 한 가지 중요점에 근간을 둔다."
+      "english": "But thoughtfulness for others in the use of the telephone is based on one important point.",
+      "korean": "그러나 전화를 쓸 때 다른 사람을 배려하는 것은 한 가지 중요한 점에 바탕을 둔다."
     },
     {
       "id": "reading-045-s005",
-      "english": "Do not keep the telephone call to yourself.",
-      "korean": "전화 호출을 자신에게 두지 마라."
+      "english": "Do not keep the telephone to yourself.",
+      "korean": "전화를 혼자 독차지하지 마라."
     },
     {
       "id": "reading-045-s006",
       "english": "Remember that it is shared by several people who have an equal right to its use.",
-      "korean": "전화기는 사용자의 동등한 권리를 가진 수명의 사람들에 의해 공유된다는 것을 기억해라."
+      "korean": "전화는 그것을 쓸 동등한 권리를 가진 여러 사람이 함께 쓴다는 것을 기억하라."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "shared",
       "lemma": "share",
       "partOfSpeech": "v.",
-      "korean": "공유하다",
+      "korean": "함께 쓰다, 공유하다",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 107점)",
       "examTags": [
@@ -92,7 +92,7 @@
     {
       "word": "remember",
       "lemma": "remember",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "기억하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -116,7 +116,7 @@
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 87,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 87점)",
@@ -165,7 +165,7 @@
       "word": "worthy",
       "lemma": "worthy",
       "partOfSpeech": "adj.",
-      "korean": "가치 있는, 자격 있는",
+      "korean": "~할 만한 (worthy of ~할 가치가 있는)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -177,7 +177,7 @@
       "word": "consideration",
       "lemma": "consideration",
       "partOfSpeech": "n.",
-      "korean": "배려",
+      "korean": "고려, 신경 씀",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -198,22 +198,22 @@
       "freq": 1
     },
     {
-      "word": "since",
-      "lemma": "since",
+      "word": "manners",
+      "lemma": "manners",
       "partOfSpeech": "n.",
-      "korean": "이후",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "예절 (good manners)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "calls",
       "lemma": "call",
       "partOfSpeech": "n.",
-      "korean": "전화",
+      "korean": "통화",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -234,12 +234,12 @@
       "freq": 1
     },
     {
-      "word": "use",
-      "lemma": "use",
+      "word": "thoughtfulness",
+      "lemma": "thoughtfulness",
       "partOfSpeech": "n.",
-      "korean": "사용하다",
-      "score": 76,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
+      "korean": "배려",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

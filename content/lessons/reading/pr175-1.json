@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "어떤 사람들은 다양한 상황의 필요를 충족시키기 위해 그들의 식사 패턴을 바꾼다. 그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다. 예를 들어, 이러한 사람들은 육체적 활동을 위한 근력을 얻기 위해 과일과 야채를 선택한다. 그들은 아침 식사로 섬유질이 풍부한 빵과 곡류와 같은 음식을 선택하며, 사업상의 약속을 준비하기 위해 점심으로 샐러드를 선택한다. 그러나, 낭만적인 저녁을 위해, 새우나 바다가재를 선택한다."
+      "text": "어떤 사람들은 다양한 상황의 필요를 충족시키기 위해 그들의 식사 패턴을 바꾼다. 그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다. 예를 들어, 이러한 사람들은 신체 활동에 필요한 힘을 얻으려고 과일과 야채를 선택한다. 그들은 아침 식사로 섬유질이 풍부한 빵과 곡류와 같은 음식을 선택하며, 사업상의 약속을 준비하기 위해 점심으로 샐러드를 선택한다. 그러나, 낭만적인 저녁을 위해, 새우나 바다가재를 선택한다."
     },
     {
       "type": "choice",
@@ -58,7 +58,7 @@
     {
       "id": "reading-175-s003",
       "english": "For example, these people choose fruit and vegetables to give them strength for physical activity.",
-      "korean": "예를 들어, 이러한 사람들은 육체적 활동을 위한 근력을 얻기 위해 과일과 야채를 선택한다."
+      "korean": "예를 들어, 이러한 사람들은 신체 활동에 필요한 힘을 얻으려고 과일과 야채를 선택한다."
     },
     {
       "id": "reading-175-s004",
@@ -67,28 +67,28 @@
     },
     {
       "id": "reading-175-s005",
-      "english": "For romantic dinners , however, they choose shrimp and lobster.",
+      "english": "For romantic dinners, however, they choose shrimp and lobster.",
       "korean": "그러나, 낭만적인 저녁을 위해, 새우나 바다가재를 선택한다."
     }
   ],
   "readingVocabulary": [
     {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "word": "athletic",
+      "lemma": "athletic",
+      "partOfSpeech": "adj.",
+      "korean": "운동의 (athletic ability 운동 능력)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "increase",
       "lemma": "increase",
-      "partOfSpeech": "n.",
-      "korean": "증가하다",
+      "partOfSpeech": "v.",
+      "korean": "높이다, 늘리다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -99,8 +99,8 @@
     {
       "word": "prepare",
       "lemma": "prepare",
-      "partOfSpeech": "n.",
-      "korean": "준비하다",
+      "partOfSpeech": "v.",
+      "korean": "(prepare A for B) A가 B에 대비하게 하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -109,22 +109,22 @@
       "freq": 1
     },
     {
-      "word": "ideas",
-      "lemma": "idea",
+      "word": "appointments",
+      "lemma": "appointment",
       "partOfSpeech": "n.",
-      "korean": "아이디어",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "약속, 만남 (business appointment 업무 약속)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "rich",
       "lemma": "rich",
-      "partOfSpeech": "n.",
-      "korean": "부자",
+      "partOfSpeech": "adj.",
+      "korean": "(rich in) ~이 풍부한",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -135,8 +135,8 @@
     {
       "word": "choose",
       "lemma": "choose",
-      "partOfSpeech": "n.",
-      "korean": "선택하다",
+      "partOfSpeech": "v.",
+      "korean": "고르다",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -147,8 +147,8 @@
     {
       "word": "eating",
       "lemma": "eat",
-      "partOfSpeech": "v.",
-      "korean": "먹다",
+      "partOfSpeech": "n.",
+      "korean": "식사 (eating patterns 식습관)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -159,8 +159,8 @@
     {
       "word": "change",
       "lemma": "change",
-      "partOfSpeech": "n.",
-      "korean": "변화",
+      "partOfSpeech": "v.",
+      "korean": "바꾸다",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 83점)",
       "examTags": [
@@ -172,7 +172,7 @@
       "word": "patterns",
       "lemma": "pattern",
       "partOfSpeech": "n.",
-      "korean": "패턴",
+      "korean": "양식, 패턴",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -196,7 +196,7 @@
       "word": "romantic",
       "lemma": "romantic",
       "partOfSpeech": "adj.",
-      "korean": "낭만적인, 로맨틱한",
+      "korean": "낭만적인",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -208,7 +208,7 @@
       "word": "needs",
       "lemma": "need",
       "partOfSpeech": "n.",
-      "korean": "필요",
+      "korean": "필요, 요구 (meet the needs 요구를 충족하다)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -217,24 +217,24 @@
       "freq": 1
     },
     {
-      "word": "dinners",
-      "lemma": "dinner",
+      "word": "fiber",
+      "lemma": "fiber",
       "partOfSpeech": "n.",
-      "korean": "저녁 식사",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "섬유질",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "lobster",
-      "lemma": "lobster",
+      "word": "mood",
+      "lemma": "mood",
       "partOfSpeech": "n.",
-      "korean": "바닷가재, 랍스터",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "기분 (in the mood for ~할 기분이 드는)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

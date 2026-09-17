@@ -25,31 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Would a modern music composer be your first choice for a hero? Or would you"
-  },
-  {
-   "type": "hints",
-   "text": "think of the painter of a contemporary masterpiece? If you are like most people,"
-  },
-  {
-   "type": "instruction",
-   "text": "the answer to both questions is “no.” More likely, a sports hero or a movie"
-  },
-  {
-   "type": "instruction",
-   "text": "star would be your first choice. It seems that the worlds of contemporary art"
-  },
-  {
-   "type": "instruction",
-   "text": "and music have failed to offer people works that reflect human achievements."
-  },
-  {
-   "type": "instruction",
-   "text": "People, therefore, have lost interest in modern arts and have turned to sports"
-  },
-  {
-   "type": "instruction",
-   "text": "stars and other popular figures to find their role models."
+   "text": "Would a modern music composer be your first choice for a hero? Or would you think of the painter of a contemporary masterpiece? If you are like most people, the answer to both questions is “no.” More likely, a sports hero or a movie star would be your first choice. It seems that the worlds of contemporary art and music have failed to offer people works that reflect human achievements. People, therefore, have lost interest in modern arts and have turned to sports stars and other popular figures to find their role models."
   },
   {
    "type": "choice",
@@ -76,30 +52,30 @@
   },
   {
    "id": "reading-231-s002",
-   "english": "Or would you\n\nthink of the painter of a contemporary masterpiece?",
+   "english": "Or would you think of the painter of a contemporary masterpiece?",
    "korean": "혹은 동시대 걸작을 만들어 낸 화가를 선택할 수 있는가?"
   },
   {
    "id": "reading-231-s003",
-   "english": "If you are like most people,\n\nthe answer to both questions is “no.” More likely, a sports hero or a movie\n\nstar would be your first choice.",
+   "english": "If you are like most people, the answer to both questions is “no.” More likely, a sports hero or a movie star would be your first choice.",
    "korean": "당신이 대부분의 일반 사람이라면 두 질문에 대한 대답은 “아니요”이다. 스포츠 영웅 혹은 스타 영화배우가 첫 번째 선택일 것이다."
   },
   {
    "id": "reading-231-s004",
-   "english": "It seems that the worlds of contemporary art\n\nand music have failed to offer people works that reflect human achievements.",
-   "korean": "동시대의 예술 음악 세계가 인간의 업적에 영향을 끼칠 수 있는 작품들을 제시하지 못하는 것 같다."
+   "english": "It seems that the worlds of contemporary art and music have failed to offer people works that reflect human achievements.",
+   "korean": "현대 미술과 음악계는 인간의 성취를 반영하는 작품을 사람들에게 내놓지 못한 것 같다."
   },
   {
    "id": "reading-231-s005",
-   "english": "People, therefore, have lost interest in modern arts and have turned to sports\n\nstars and other popular figures to find their role models.",
-   "korean": "그래서 사람들은 현대 예술에 대한 관심을 잃어버리고 자신의 역할 대상이 될 수 있는 스포츠 스타나 다른 유명한 인사들에게 관심을 돌린다."
+   "english": "People, therefore, have lost interest in modern arts and have turned to sports stars and other popular figures to find their role models.",
+   "korean": "그래서 사람들은 현대 예술에 대한 관심을 잃어버리고 자신의 본보기가 될 스포츠 스타나 다른 유명한 인사들에게 관심을 돌린다."
   }
  ],
  "readingVocabulary": [
   {
    "word": "music",
    "lemma": "music",
-   "partOfSpeech": "adj.",
+   "partOfSpeech": "n.",
    "korean": "음악",
    "score": 109,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 109점)",
@@ -112,7 +88,7 @@
    "word": "failed",
    "lemma": "fail",
    "partOfSpeech": "v.",
-   "korean": "실패하다",
+   "korean": "(fail to) ~하지 못하다",
    "score": 99,
    "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
    "examTags": [
@@ -135,8 +111,8 @@
   {
    "word": "contemporary",
    "lemma": "contemporary",
-   "partOfSpeech": "n.",
-   "korean": "현대의",
+   "partOfSpeech": "adj.",
+   "korean": "현대의, 동시대의",
    "score": 94,
    "reason": "대학 학술 독해 필수 어휘 (평가 점수: 94점)",
    "examTags": [
@@ -147,8 +123,8 @@
   {
    "word": "offer",
    "lemma": "offer",
-   "partOfSpeech": "n.",
-   "korean": "제공하다; 제안",
+   "partOfSpeech": "v.",
+   "korean": "제공하다",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -157,22 +133,22 @@
    "freq": 1
   },
   {
-   "word": "modern",
-   "lemma": "modern",
-   "partOfSpeech": "n.",
-   "korean": "현대의, 현대적인",
-   "score": 90,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 90점)",
+   "word": "reflect",
+   "lemma": "reflect",
+   "partOfSpeech": "v.",
+   "korean": "반영하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 2
+   "freq": 1
   },
   {
    "word": "choice",
    "lemma": "choice",
    "partOfSpeech": "n.",
-   "korean": "선택, 선택권",
+   "korean": "선택 (first choice 첫 번째 선택)",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
    "examTags": [
@@ -184,25 +160,13 @@
    "word": "turned",
    "lemma": "turn",
    "partOfSpeech": "v.",
-   "korean": "돌다; 변하다, ~하게 되다",
+   "korean": "(turn to) ~으로 눈을 돌리다",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
     "독해필수"
    ],
    "freq": 1
-  },
-  {
-   "word": "sports",
-   "lemma": "sport",
-   "partOfSpeech": "n.",
-   "korean": "스포츠",
-   "score": 80,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 2
   },
   {
    "word": "composer",
@@ -232,7 +196,7 @@
    "word": "interest",
    "lemma": "interest",
    "partOfSpeech": "n.",
-   "korean": "관심; 이자",
+   "korean": "관심 (lose interest in ~에 흥미를 잃다)",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -243,8 +207,8 @@
   {
    "word": "popular",
    "lemma": "popular",
-   "partOfSpeech": "n.",
-   "korean": "인기있는",
+   "partOfSpeech": "adj.",
+   "korean": "대중적인, 인기 있는",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -256,9 +220,21 @@
    "word": "figures",
    "lemma": "figure",
    "partOfSpeech": "n.",
-   "korean": "그림",
+   "korean": "인물 (popular figures 인기 있는 인물)",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "masterpiece",
+   "lemma": "masterpiece",
+   "partOfSpeech": "n.",
+   "korean": "걸작",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],

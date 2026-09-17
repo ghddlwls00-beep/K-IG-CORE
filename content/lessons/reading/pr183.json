@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Today, people run much faster than they did in the past. Before 1954, the record time for running a mile was over four minutes. After that, many other runners also ran at least four minutes a day ."
+      "text": "Today, people run much faster than they did in the past. Before 1954, no one had ever run a mile in under four minutes. In 1954, Roger Bannister ran a mile in under four minutes. After that, many other runners also ran a mile in under four minutes."
     },
     {
       "type": "choice",
@@ -48,25 +48,30 @@
     {
       "id": "reading-183-s001",
       "english": "Today, people run much faster than they did in the past.",
-      "korean": "오늘날 사람들은 과거보다 훨씬 더 빨리 달린다."
+      "korean": "오늘날 사람들은 예전보다 훨씬 빨리 달린다."
     },
     {
       "id": "reading-183-s002",
-      "english": "Before 1954, the record time for running a mile was over four minutes.",
-      "korean": "1954년 이전에는 1마일을 달리는 기록 시간이 4분을 넘었다."
+      "english": "Before 1954, no one had ever run a mile in under four minutes.",
+      "korean": "1954년 이전에는 1마일을 4분 안에 달린 사람이 아무도 없었다."
     },
     {
       "id": "reading-183-s003",
-      "english": "After that, many other runners also ran at least four minutes a day .",
-      "korean": "그 이후로 많은 다른 주자들도 하루에 최소 4분씩 달렸다."
+      "english": "In 1954, Roger Bannister ran a mile in under four minutes.",
+      "korean": "1954년에 로저 배니스터가 1마일을 4분 안에 달렸다."
+    },
+    {
+      "id": "reading-183-s004",
+      "english": "After that, many other runners also ran a mile in under four minutes.",
+      "korean": "그 뒤로 다른 많은 선수들도 1마일을 4분 안에 달렸다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "faster",
       "lemma": "fast",
-      "partOfSpeech": "n.",
-      "korean": "빨리",
+      "partOfSpeech": "adv.",
+      "korean": "더 빨리",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -76,33 +81,33 @@
     },
     {
       "word": "minutes",
-      "lemma": "minutes",
+      "lemma": "minute",
       "partOfSpeech": "n.",
-      "korean": "분(시간); 회의록",
+      "korean": "분",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "ran",
+      "lemma": "run",
+      "partOfSpeech": "v.",
+      "korean": "달리다",
+      "score": 78,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 78점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 2
     },
     {
-      "word": "ran",
-      "lemma": "ran",
-      "partOfSpeech": "v.",
-      "korean": "달렸다, 운영했다",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "today",
       "lemma": "today",
-      "partOfSpeech": "n.",
-      "korean": "오늘",
+      "partOfSpeech": "adv.",
+      "korean": "오늘날",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -114,21 +119,9 @@
       "word": "runners",
       "lemma": "runner",
       "partOfSpeech": "n.",
-      "korean": "주자",
+      "korean": "달리는 사람, 주자",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "running",
-      "lemma": "run",
-      "partOfSpeech": "v.",
-      "korean": "달리다",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
         "독해필수"
       ],
@@ -138,21 +131,9 @@
       "word": "past",
       "lemma": "past",
       "partOfSpeech": "n.",
-      "korean": "과거",
+      "korean": "과거 (in the past 과거에)",
       "score": 73,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "record",
-      "lemma": "record",
-      "partOfSpeech": "n.",
-      "korean": "기록",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
       "examTags": [
         "독해필수"
       ],
@@ -162,21 +143,33 @@
       "word": "mile",
       "lemma": "mile",
       "partOfSpeech": "n.",
-      "korean": "마일",
+      "korean": "마일 (약 1.6km)",
       "score": 63,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 63점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
-      "word": "least",
-      "lemma": "little",
-      "partOfSpeech": "n.",
-      "korean": "가장 적은; 최소한",
-      "score": 56,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 56점)",
+      "word": "under",
+      "lemma": "under",
+      "partOfSpeech": "prep.",
+      "korean": "~ 미만으로 (under four minutes 4분 안에)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "before",
+      "lemma": "before",
+      "partOfSpeech": "prep.",
+      "korean": "~ 이전에",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -185,7 +178,7 @@
     {
       "word": "other",
       "lemma": "other",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "다른",
       "score": 50,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 50점)",
@@ -197,7 +190,7 @@
     {
       "word": "also",
       "lemma": "also",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adv.",
       "korean": "또한",
       "score": 50,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 50점)",
@@ -209,8 +202,8 @@
     {
       "word": "much",
       "lemma": "much",
-      "partOfSpeech": "n.",
-      "korean": "많이",
+      "partOfSpeech": "adv.",
+      "korean": "훨씬 (much faster 훨씬 더 빨리)",
       "score": 48,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 48점)",
       "examTags": [
@@ -221,10 +214,22 @@
     {
       "word": "many",
       "lemma": "many",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "많은",
       "score": 46,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 46점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "ever",
+      "lemma": "ever",
+      "partOfSpeech": "adv.",
+      "korean": "(no one had ever) 지금까지 아무도",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

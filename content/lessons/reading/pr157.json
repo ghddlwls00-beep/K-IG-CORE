@@ -25,31 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "“Liberty is to faction what air is to fire.\" When he wrote these words, James"
-    },
-    {
-      "type": "hints",
-      "text": "Madison clearly expected the faction-ridden nation to produce special-interest"
-    },
-    {
-      "type": "instruction",
-      "text": "groups constantly pressing for advantage. But even the prescient coauthor of"
-    },
-    {
-      "type": "instruction",
-      "text": "the Federalist Papers might be amazed at the abundant fulfillment of his"
-    },
-    {
-      "type": "instruction",
-      "text": "vision by Americans of the present day. The nation has entered a period of"
-    },
-    {
-      "type": "instruction",
-      "text": "factionalism, a time when the larger desires of society can scarcely be heard"
-    },
-    {
-      "type": "instruction",
-      "text": "for the insistent clamor of its numberless pieces."
+      "text": "“Liberty is to faction what air is to fire.” When he wrote these words, James Madison clearly expected the faction-ridden nation to produce special-interest groups constantly pressing for advantage. But even the prescient coauthor of the Federalist Papers might be amazed at the abundant fulfillment of his vision by Americans of the present day. The nation has entered a period of factionalism, a time when the larger desires of society can scarcely be heard for the insistent clamor of its numberless pieces."
     },
     {
       "type": "choice",
@@ -71,13 +47,13 @@
   "readingSentences": [
     {
       "id": "reading-157-s001",
-      "english": "“Liberty is to faction what air is to fire.\"",
-      "korean": "자유와 당파의 관계는 공기와 불의 관계이다."
+      "english": "“Liberty is to faction what air is to fire.”",
+      "korean": "“자유와 당파의 관계는 공기와 불의 관계와 같다.”"
     },
     {
       "id": "reading-157-s002",
       "english": "When he wrote these words, James Madison clearly expected the faction-ridden nation to produce special-interest groups constantly pressing for advantage.",
-      "korean": "제임스 매디선이 이러한 말을 했을 때 그는 분명히 당파가 무성한 국가가 이익을 위해서 끊임없이 압력을 가하는 특별 이익 단체를 만들어 낼 것을 분명히 예상했다."
+      "korean": "제임스 매디슨은 이 말을 쓸 때, 당파로 가득한 이 나라가 자기 이익을 위해 끊임없이 압력을 가하는 이익 단체들을 만들어 낼 것을 분명히 예상했다."
     },
     {
       "id": "reading-157-s003",
@@ -87,7 +63,7 @@
     {
       "id": "reading-157-s004",
       "english": "The nation has entered a period of factionalism, a time when the larger desires of society can scarcely be heard for the insistent clamor of its numberless pieces.",
-      "korean": "그 나라는 수많은 부분들의 끊임없는 요구로 사회의 더 큰 바램들을 들을수 없는 당파주의의 시기로 접어들었다."
+      "korean": "그 나라는 수많은 부분들의 끊임없는 요구로 사회의 더 큰 바람들을 들을수 없는 당파주의의 시기로 접어들었다."
     }
   ],
   "readingVocabulary": [
@@ -107,7 +83,7 @@
       "word": "expected",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "예상하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -118,8 +94,8 @@
     {
       "word": "produce",
       "lemma": "produce",
-      "partOfSpeech": "n.",
-      "korean": "생산하다",
+      "partOfSpeech": "v.",
+      "korean": "만들어 내다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -128,36 +104,36 @@
       "freq": 1
     },
     {
-      "word": "words",
-      "lemma": "word",
-      "partOfSpeech": "n.",
-      "korean": "단어",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "entered",
-      "lemma": "enter",
-      "partOfSpeech": "v.",
-      "korean": "들어가다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "prescient",
+      "lemma": "prescient",
+      "partOfSpeech": "adj.",
+      "korean": "선견지명이 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "heard",
-      "lemma": "heard",
-      "partOfSpeech": "v.",
-      "korean": "들었다 (hear의 과거)",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+      "word": "fulfillment",
+      "lemma": "fulfillment",
+      "partOfSpeech": "n.",
+      "korean": "실현",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "clamor",
+      "lemma": "clamor",
+      "partOfSpeech": "n.",
+      "korean": "아우성, 떠들썩한 요구",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -167,7 +143,7 @@
       "word": "nation",
       "lemma": "nation",
       "partOfSpeech": "n.",
-      "korean": "국가; 국민",
+      "korean": "국가",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -203,7 +179,7 @@
       "word": "numberless",
       "lemma": "numberless",
       "partOfSpeech": "adj.",
-      "korean": "셀 수 없이 많은, 무수한",
+      "korean": "무수한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -215,7 +191,7 @@
       "word": "factionalism",
       "lemma": "factionalism",
       "partOfSpeech": "n.",
-      "korean": "파벌주의, 당파 싸움",
+      "korean": "파벌주의",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -227,7 +203,7 @@
       "word": "desires",
       "lemma": "desire",
       "partOfSpeech": "n.",
-      "korean": "욕구, 갈망",
+      "korean": "바람, 욕구",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -239,8 +215,8 @@
     {
       "word": "insistent",
       "lemma": "insistent",
-      "partOfSpeech": "n.",
-      "korean": "끈질긴",
+      "partOfSpeech": "adj.",
+      "korean": "끈질긴, 집요한",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -252,7 +228,7 @@
       "word": "pressing",
       "lemma": "press",
       "partOfSpeech": "v.",
-      "korean": "압박하다, 밀어붙이다",
+      "korean": "(press for) ~을 강하게 요구하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [

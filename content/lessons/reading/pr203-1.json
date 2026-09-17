@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "'English'와 'Korean' 같은 단어는 두 가지 다른 의미를 지닌다. 우리는 어떤 사람이 영국인이라면 영어를 말한다고 할 수 있다. 그가 한국인이라면 한국어를 말한다. 기타 등등도 마찬가지이다. 그러나 예외가 있기 때문에 항상 이렇게 할 수는 없다. 예를 들어 멕시코인이라면 스페인어를 쓰고, 벨기에인이라면 플랑드르어(네덜란드어)나 프랑스어를 쓰며, 브라질인이라면 포르투갈어를 쓴다. 더 중요한 것은 논의를 바꾸어 \"독일어를 쓰면 독일인이다\"라고 말할 수 없다는 점이다. 그는 스위스인일 가능성도 충분히 있다. 이것은 영어의 경우에 특히 그러하다."
+      "text": "'English'와 'Korean' 같은 단어는 두 가지 다른 의미를 지닌다. 우리는 어떤 사람이 영국인이라면 영어를 말한다고 할 수 있다. 그가 한국인이라면 한국어를 말한다. 기타 등등도 마찬가지이다. 그러나 예외가 있기 때문에 항상 이렇게 할 수는 없다. 예를 들어 멕시코인이라면 스페인어를 쓰고, 벨기에인이라면 네덜란드어나 프랑스어나 독일어를 쓰며, 브라질인이라면 포르투갈어를 쓴다. 더 중요한 것은 논의를 바꾸어 \"독일어를 쓰면 독일인이다\"라고 말할 수 없다는 점이다. 그는 스위스인일 가능성도 충분히 있다. 이것은 영어의 경우에 특히 그러하다."
     },
     {
       "type": "choice",
@@ -72,12 +72,12 @@
     },
     {
       "id": "reading-203-s006",
-      "english": "For example, if a person is Mexican , he speaks Spanish ; if he is Belgian, he speaks Flemish or French ; if he is Brazilian, he speaks Portuguese.",
-      "korean": "예를 들어 멕시코인이라면 스페인어를 쓰고, 벨기에인이라면 플랑드르어(네덜란드어)나 프랑스어를 쓰며, 브라질인이라면 포르투갈어를 쓴다."
+      "english": "For example, if a person is Mexican, he speaks Spanish; if he is Belgian, he speaks Dutch, French, or German; if he is Brazilian, he speaks Portuguese.",
+      "korean": "예를 들어 멕시코인이라면 스페인어를 쓰고, 벨기에인이라면 네덜란드어나 프랑스어나 독일어를 쓰며, 브라질인이라면 포르투갈어를 쓴다."
     },
     {
       "id": "reading-203-s007",
-      "english": "more importantly, we cannot switch the argument and say, \" If he speaks German, he is German.\" He may quite well be a Swiss.",
+      "english": "More importantly, we cannot switch the argument and say, \"If he speaks German, he is German.\" He may quite well be Swiss.",
       "korean": "더 중요한 것은 논의를 바꾸어 \"독일어를 쓰면 독일인이다\"라고 말할 수 없다는 점이다. 그는 스위스인일 가능성도 충분히 있다."
     },
     {
@@ -91,7 +91,7 @@
       "word": "words",
       "lemma": "word",
       "partOfSpeech": "n.",
-      "korean": "단어",
+      "korean": "단어, 말",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -112,21 +112,9 @@
       "freq": 1
     },
     {
-      "word": "english",
-      "lemma": "english",
-      "partOfSpeech": "n.",
-      "korean": "영어, 영국의",
-      "score": 97,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 4
-    },
-    {
       "word": "different",
       "lemma": "different",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "다른",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
@@ -150,8 +138,8 @@
     {
       "word": "speaks",
       "lemma": "speak",
-      "partOfSpeech": "n.",
-      "korean": "말하다",
+      "partOfSpeech": "v.",
+      "korean": "(언어를) 말하다",
       "score": 77,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -161,9 +149,9 @@
     },
     {
       "word": "importantly",
-      "lemma": "important",
+      "lemma": "importantly",
       "partOfSpeech": "adv.",
-      "korean": "중요한",
+      "korean": "중요하게 (more importantly 더 중요한 것은)",
       "score": 77,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -184,30 +172,6 @@
       "freq": 1
     },
     {
-      "word": "flemish",
-      "lemma": "flemish",
-      "partOfSpeech": "adj.",
-      "korean": "플랑드르의, 플라망어",
-      "score": 71,
-      "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "true",
-      "lemma": "true",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 71,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "exceptions",
       "lemma": "exception",
       "partOfSpeech": "n.",
@@ -220,22 +184,10 @@
       "freq": 1
     },
     {
-      "word": "portuguese",
-      "lemma": "portuguese",
-      "partOfSpeech": "n.",
-      "korean": "포르투갈어, 포르투갈의",
-      "score": 69,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "argument",
       "lemma": "argument",
       "partOfSpeech": "n.",
-      "korean": "주장, 논거, 언쟁",
+      "korean": "논리, 주장",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -245,12 +197,60 @@
       "freq": 1
     },
     {
-      "word": "always",
-      "lemma": "always",
+      "word": "switch",
+      "lemma": "switch",
+      "partOfSpeech": "v.",
+      "korean": "뒤바꾸다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "forth",
+      "lemma": "forth",
+      "partOfSpeech": "adv.",
+      "korean": "(and so forth) 기타 등등",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "true",
+      "lemma": "true",
+      "partOfSpeech": "adj.",
+      "korean": "(be true of) ~에 해당하는",
+      "score": 71,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 71점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "quite",
+      "lemma": "quite",
+      "partOfSpeech": "adv.",
+      "korean": "(may quite well) 충분히 ~일 수 있다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "example",
+      "lemma": "example",
       "partOfSpeech": "n.",
-      "korean": "항상",
-      "score": 67,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 67점)",
+      "korean": "예 (for example 예를 들어)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

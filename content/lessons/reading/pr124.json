@@ -48,7 +48,7 @@
     {
       "id": "reading-124-s001",
       "english": "Walking down the street, you may not even notice the trees, but, according to a new study, they do a lot more than give shade.",
-      "korean": "거리를 따라 걸어갈 때 나무을 인식하지 못할 수도 있지만, 한 새로운 연구에 따르면, 나무는 그늘을 제공하는 것보다 더 많은 일을 한다."
+      "korean": "거리를 따라 걸어갈 때 나무를 인식하지 못할 수도 있지만, 한 새로운 연구에 따르면, 나무는 그늘을 제공하는 것보다 더 많은 일을 한다."
     },
     {
       "id": "reading-124-s002",
@@ -73,7 +73,7 @@
     {
       "id": "reading-124-s006",
       "english": "This can also create an atmosphere where children are better supervised, and buildings better watched.",
-      "korean": "이것은 또한 아이들을 보다 잘 감시하고 건물들을 더 잘 살펴볼 수 있는 분위기를 만들어 낼 수 있다."
+      "korean": "이것은 또한 아이들이 더 잘 보살펴지고 건물이 더 잘 지켜지는 분위기를 만들어 낼 수 있다."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "create",
       "lemma": "create",
       "partOfSpeech": "v.",
-      "korean": "창조하다",
+      "korean": "만들어 내다",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 107점)",
       "examTags": [
@@ -93,7 +93,7 @@
       "word": "compared",
       "lemma": "compare",
       "partOfSpeech": "v.",
-      "korean": "비교하다",
+      "korean": "비교하다 (compared with ~와 비교해)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -117,7 +117,7 @@
       "word": "natural",
       "lemma": "natural",
       "partOfSpeech": "adj.",
-      "korean": "자연의; 자연스러운",
+      "korean": "자연스러운",
       "score": 96,
       "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
       "examTags": [
@@ -128,8 +128,8 @@
     {
       "word": "stronger",
       "lemma": "strong",
-      "partOfSpeech": "n.",
-      "korean": "강한",
+      "partOfSpeech": "adj.",
+      "korean": "더 강한 (strong의 비교급)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -138,22 +138,22 @@
       "freq": 1
     },
     {
-      "word": "high",
-      "lemma": "high",
+      "word": "vegetation",
+      "lemma": "vegetation",
       "partOfSpeech": "n.",
-      "korean": "높은",
-      "score": 93,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 93점)",
+      "korean": "초목, 식물",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 2
     },
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "v.",
-      "korean": "~에 따르면",
+      "partOfSpeech": "adv.",
+      "korean": "(according to) ~에 따르면",
       "score": 91,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 91점)",
       "examTags": [
@@ -162,14 +162,14 @@
       "freq": 2
     },
     {
-      "word": "low",
-      "lemma": "low",
+      "word": "violence",
+      "lemma": "violence",
       "partOfSpeech": "n.",
-      "korean": "낮은",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "폭력",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -186,12 +186,12 @@
       "freq": 3
     },
     {
-      "word": "walking",
-      "lemma": "walk",
-      "partOfSpeech": "v.",
-      "korean": "걷다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "shade",
+      "lemma": "shade",
+      "partOfSpeech": "n.",
+      "korean": "그늘",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -201,7 +201,7 @@
       "word": "supervised",
       "lemma": "supervise",
       "partOfSpeech": "v.",
-      "korean": "감독하다",
+      "korean": "보살피다, 감독하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -213,7 +213,7 @@
       "word": "watched",
       "lemma": "watch",
       "partOfSpeech": "v.",
-      "korean": "시계",
+      "korean": "지키다, 감시하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -237,7 +237,7 @@
       "word": "study",
       "lemma": "study",
       "partOfSpeech": "n.",
-      "korean": "공부하다",
+      "korean": "연구",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [

@@ -25,31 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "과학과 기술은 19세기 후반 이후 엄청 변화됬다. 세상도 역시"
-    },
-    {
-      "type": "instruction",
-      "text": "변했다. 세계는 더 복잡해지고 점차 전문화되었다. 모든 분야에서"
-    },
-    {
-      "type": "instruction",
-      "text": "알아야 할 것들이 더 많게 됬다. 이제 특별한 훈련을 필요로"
-    },
-    {
-      "type": "instruction",
-      "text": "하는 사람들은 과학자와 컴퓨터 전문가뿐만 아니라 정부 관리와"
-    },
-    {
-      "type": "instruction",
-      "text": "사업가들이다. 게다가, 대 졸자 수의 급증은 과거에 그랬던"
-    },
-    {
-      "type": "instruction",
-      "text": "것보다 훨씬 더 치열한 취업 경쟁을 야기했다. 최고의 자질을"
-    },
-    {
-      "type": "instruction",
-      "text": "소유자, 즉 전문가가 승리한다., 즉 전문가가 승리한다."
+      "text": "과학과 기술은 19세기 후반 이후로 크게 변했다. 세상도 변했다. 세상은 더 복잡해지고 점점 더 전문화되었다. 모든 분야에서 알아야 할 것이 훨씬 더 많아졌다. 이제 특별한 훈련이 필요한 사람은 과학자와 컴퓨터 전문가만이 아니라 정부 관리와 기업 경영자이기도 하다. 게다가 대학 졸업자 수가 급격히 늘어 일자리 경쟁이 예전보다 훨씬 치열해졌다. 가장 자격을 잘 갖춘 사람, 즉 전문가가 이긴다."
     },
     {
       "type": "choice",
@@ -72,37 +48,37 @@
     {
       "id": "reading-035-s001",
       "english": "Science and technology have changed a great deal since the latter part of the nineteenth century.",
-      "korean": "과학과 기술은 19세기 후반 이후 엄청 변화됬다."
+      "korean": "과학과 기술은 19세기 후반 이후로 크게 변했다."
     },
     {
       "id": "reading-035-s002",
       "english": "The world has changed, too.",
-      "korean": "세상도 역시 변했다."
+      "korean": "세상도 변했다."
     },
     {
       "id": "reading-035-s003",
       "english": "It has become more complex and increasingly specialized.",
-      "korean": "세계는 더 복잡해지고 점차 전문화되었다."
+      "korean": "세상은 더 복잡해지고 점점 더 전문화되었다."
     },
     {
       "id": "reading-035-s004",
       "english": "There is much more to know in every field.",
-      "korean": "모든 분야에서 알아야 할 것들이 더 많게 됬다."
+      "korean": "모든 분야에서 알아야 할 것이 훨씬 더 많아졌다."
     },
     {
       "id": "reading-035-s005",
       "english": "It is not only the scientist and the computer expert who need special training now, but also the government official and the business manager.",
-      "korean": "이제 특별한 훈련을 필요로 하는 사람들은 과학자와 컴퓨터 전문가뿐만 아니라 정부 관리와 사업가들이다."
+      "korean": "이제 특별한 훈련이 필요한 사람은 과학자와 컴퓨터 전문가만이 아니라 정부 관리와 기업 경영자이기도 하다."
     },
     {
       "id": "reading-035-s006",
       "english": "Besides, a rapid increase in the number of college graduates has made the competition for jobs much greater than it used to be.",
-      "korean": "게다가, 대 졸자 수의 급증은 과거에 그랬던 것보다 훨씬 더 치열한 취업 경쟁을 야기했다."
+      "korean": "게다가 대학 졸업자 수가 급격히 늘어 일자리 경쟁이 예전보다 훨씬 치열해졌다."
     },
     {
       "id": "reading-035-s007",
       "english": "The one best qualified, the expert, wins.",
-      "korean": "최고의 자질을 소유자, 즉 전문가가 승리한다., 즉 전문가가 승리한다."
+      "korean": "가장 자격을 잘 갖춘 사람, 즉 전문가가 이긴다."
     }
   ],
   "readingVocabulary": [
@@ -110,7 +86,7 @@
       "word": "changed",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "변하다",
       "score": 97,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 97점)",
       "examTags": [
@@ -121,7 +97,7 @@
     {
       "word": "complex",
       "lemma": "complex",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "복잡한",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -134,7 +110,7 @@
       "word": "increase",
       "lemma": "increase",
       "partOfSpeech": "n.",
-      "korean": "증가하다",
+      "korean": "증가",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -144,9 +120,9 @@
     },
     {
       "word": "qualified",
-      "lemma": "qualify",
-      "partOfSpeech": "v.",
-      "korean": "자격을 갖추다",
+      "lemma": "qualified",
+      "partOfSpeech": "adj.",
+      "korean": "자격을 갖춘 (the best qualified 가장 적임자)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -158,7 +134,7 @@
       "word": "nineteenth",
       "lemma": "nineteenth",
       "partOfSpeech": "adj.",
-      "korean": "열아홉 번째의, 19번째",
+      "korean": "19번째의 (the nineteenth century 19세기)",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -206,7 +182,7 @@
       "word": "latter",
       "lemma": "latter",
       "partOfSpeech": "adj.",
-      "korean": "후자의, 나중의",
+      "korean": "후반의 (the latter part 후반부)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
       "examTags": [
@@ -227,24 +203,24 @@
       "freq": 1
     },
     {
-      "word": "great",
-      "lemma": "great",
+      "word": "graduates",
+      "lemma": "graduate",
       "partOfSpeech": "n.",
-      "korean": "대단해",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "졸업생",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "since",
-      "lemma": "since",
+      "word": "competition",
+      "lemma": "competition",
       "partOfSpeech": "n.",
-      "korean": "이후",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "경쟁",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -252,9 +228,9 @@
     },
     {
       "word": "specialized",
-      "lemma": "specialize",
-      "partOfSpeech": "v.",
-      "korean": "전문화하다",
+      "lemma": "specialized",
+      "partOfSpeech": "adj.",
+      "korean": "전문화된",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -264,9 +240,9 @@
     },
     {
       "word": "training",
-      "lemma": "train",
-      "partOfSpeech": "v.",
-      "korean": "기차",
+      "lemma": "training",
+      "partOfSpeech": "n.",
+      "korean": "훈련, 교육",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [

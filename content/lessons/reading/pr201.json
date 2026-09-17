@@ -58,7 +58,7 @@
     {
       "id": "reading-201-s003",
       "english": "However, we must realize that no one is obligated to change just to meet our expectations of how we feel they should act.",
-      "korean": "그러나 우리는 어느 누구도 단지 우리가 그들이 행동해야한다고 생각하는 방식의 기대를 충족시키기 위해서 (가치관을) 바꿀 의무는 없다는 것을 깨달아야 한다."
+      "korean": "그러나 우리는 어느 누구도 단지 우리가 그들이 행동해야한다고 생각하는 방식의 기대를 충족시키기 위해서 행동을 바꿀 의무는 없다는 것을 깨달아야 한다."
     },
     {
       "id": "reading-201-s004",
@@ -87,7 +87,7 @@
     {
       "word": "accept",
       "lemma": "accept",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "받아들이다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -97,22 +97,22 @@
       "freq": 1
     },
     {
-      "word": "angry",
-      "lemma": "angry",
-      "partOfSpeech": "n.",
-      "korean": "화난",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "annoyed",
+      "lemma": "annoyed",
+      "partOfSpeech": "adj.",
+      "korean": "짜증이 난",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "anger",
       "lemma": "anger",
-      "partOfSpeech": "n.",
-      "korean": "분노, 화",
+      "partOfSpeech": "v.",
+      "korean": "화나게 하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -121,24 +121,12 @@
       "freq": 1
     },
     {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "wanting",
-      "lemma": "want",
+      "word": "disturb",
+      "lemma": "disturb",
       "partOfSpeech": "v.",
-      "korean": "원하다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "korean": "불쾌하게 하다, 방해하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -148,7 +136,7 @@
       "word": "values",
       "lemma": "value",
       "partOfSpeech": "n.",
-      "korean": "가치",
+      "korean": "가치관",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -160,7 +148,7 @@
       "word": "disharmony",
       "lemma": "disharmony",
       "partOfSpeech": "n.",
-      "korean": "불협화음, 부조화",
+      "korean": "불화, 부조화",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -181,36 +169,48 @@
       "freq": 1
     },
     {
-      "word": "feel",
-      "lemma": "feel",
-      "partOfSpeech": "n.",
-      "korean": "느끼다",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "need",
-      "lemma": "need",
+      "word": "obligated",
+      "lemma": "obligate",
       "partOfSpeech": "v.",
-      "korean": "필요하다; 필요",
-      "score": 78,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 78점)",
+      "korean": "(be obligated to) ~할 의무가 있다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "enters",
-      "lemma": "enter",
+      "word": "expectations",
+      "lemma": "expectation",
       "partOfSpeech": "n.",
-      "korean": "들어가다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "기대",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "objects",
+      "lemma": "object",
+      "partOfSpeech": "v.",
+      "korean": "(object to) ~에 반대하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "indicates",
+      "lemma": "indicate",
+      "partOfSpeech": "v.",
+      "korean": "보여 주다, 나타내다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -219,8 +219,8 @@
     {
       "word": "impose",
       "lemma": "impose",
-      "partOfSpeech": "n.",
-      "korean": "부과하다",
+      "partOfSpeech": "v.",
+      "korean": "(impose A on B) A를 B에게 강요하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -229,10 +229,10 @@
       "freq": 1
     },
     {
-      "word": "right",
-      "lemma": "right",
-      "partOfSpeech": "n.",
-      "korean": "옳은; 오른쪽",
+      "word": "enters",
+      "lemma": "enter",
+      "partOfSpeech": "v.",
+      "korean": "들어오다, 생기다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

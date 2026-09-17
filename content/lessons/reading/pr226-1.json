@@ -57,7 +57,7 @@
     },
     {
       "id": "reading-226-s003",
-      "english": "Science does not always have the answer at the precise time if it is needed.",
+      "english": "Science does not always have the answer at the precise time when it is needed.",
       "korean": "과학이 항상 필요할 때 정확한 시점에 답을 내놓는 것은 아니다."
     }
   ],
@@ -77,8 +77,8 @@
     {
       "word": "cause",
       "lemma": "cause",
-      "partOfSpeech": "n.",
-      "korean": "원인",
+      "partOfSpeech": "v.",
+      "korean": "일으키다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -89,7 +89,7 @@
     {
       "word": "solve",
       "lemma": "solve",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "해결하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -102,7 +102,7 @@
       "word": "boast",
       "lemma": "boast",
       "partOfSpeech": "v.",
-      "korean": "자랑하다, 뽐내다",
+      "korean": "자랑하다, 큰소리치다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -112,9 +112,9 @@
     },
     {
       "word": "using",
-      "lemma": "using",
+      "lemma": "use",
       "partOfSpeech": "v.",
-      "korean": "사용하는, 활용하는",
+      "korean": "사용하다, 활용하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -126,7 +126,7 @@
       "word": "needed",
       "lemma": "need",
       "partOfSpeech": "v.",
-      "korean": "필요",
+      "korean": "필요로 하다 (be needed 필요하다)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -136,9 +136,9 @@
     },
     {
       "word": "fullest",
-      "lemma": "fullest",
-      "partOfSpeech": "adj.",
-      "korean": "가장 완전한, 최고의",
+      "lemma": "full",
+      "partOfSpeech": "n.",
+      "korean": "(to the fullest) 최대한",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -148,9 +148,9 @@
     },
     {
       "word": "admirers",
-      "lemma": "admirers",
+      "lemma": "admirer",
       "partOfSpeech": "n.",
-      "korean": "찬미자들, 흠모하는 사람들",
+      "korean": "찬미자",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -162,7 +162,7 @@
       "word": "cleverness",
       "lemma": "cleverness",
       "partOfSpeech": "n.",
-      "korean": "영리함, 기발함",
+      "korean": "영리함",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -173,8 +173,8 @@
     {
       "word": "sustain",
       "lemma": "sustain",
-      "partOfSpeech": "n.",
-      "korean": "유지하다",
+      "partOfSpeech": "v.",
+      "korean": "부양하다, 지탱하다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -185,8 +185,8 @@
     {
       "word": "modern",
       "lemma": "modern",
-      "partOfSpeech": "n.",
-      "korean": "현대",
+      "partOfSpeech": "adj.",
+      "korean": "현대의",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -195,38 +195,38 @@
       "freq": 1
     },
     {
-      "word": "number",
-      "lemma": "number",
+      "word": "victims",
+      "lemma": "victim",
       "partOfSpeech": "n.",
-      "korean": "번호",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "희생자, 피해자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "every",
-      "lemma": "every",
-      "partOfSpeech": "n.",
-      "korean": "모든",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "precise",
+      "lemma": "precise",
+      "partOfSpeech": "adj.",
+      "korean": "정확한 (at the precise time 딱 필요한 때에)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "space",
-      "lemma": "space",
+      "word": "solutions",
+      "lemma": "solution",
       "partOfSpeech": "n.",
-      "korean": "공간, 우주",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "해결책",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     }

@@ -25,15 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "과거와 과거의 저작물에 대한 연구를 경멸하는 사람들의 일반적인"
-    },
-    {
-      "type": "instruction",
-      "text": "생각은 과거는 현재와 전혀 다르며, 따라서 우리는 과거로부터 아무 것도"
-    },
-    {
-      "type": "instruction",
-      "text": "값어치 있는 것을 배울 수 없다는 것이다."
+      "text": "과거와 과거의 저작물에 대한 연구를 경멸하는 사람들의 일반적인 생각은 과거는 현재와 전혀 다르며, 따라서 우리는 과거로부터 아무 것도 값어치 있는 것을 배울 수 없다는 것이다."
     },
     {
       "type": "choice",
@@ -63,7 +55,7 @@
     {
       "word": "different",
       "lemma": "different",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "다른",
       "score": 108,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 108점)",
@@ -76,7 +68,7 @@
       "word": "scorn",
       "lemma": "scorn",
       "partOfSpeech": "v.",
-      "korean": "경멸하다, 멸시하다",
+      "korean": "경멸하다",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 92점)",
       "examTags": [
@@ -89,7 +81,7 @@
       "word": "assume",
       "lemma": "assume",
       "partOfSpeech": "v.",
-      "korean": "가정하다, 추정하다",
+      "korean": "당연하게 여기다, 가정하다",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 92점)",
       "examTags": [
@@ -114,7 +106,7 @@
       "word": "worthwhile",
       "lemma": "worthwhile",
       "partOfSpeech": "adj.",
-      "korean": "가치 있는, 보람 있는",
+      "korean": "가치 있는",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 89점)",
       "examTags": [
@@ -139,7 +131,7 @@
       "word": "study",
       "lemma": "study",
       "partOfSpeech": "n.",
-      "korean": "공부하다",
+      "korean": "연구",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -151,7 +143,7 @@
       "word": "usually",
       "lemma": "usually",
       "partOfSpeech": "adv.",
-      "korean": "보통",
+      "korean": "대개",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -161,9 +153,9 @@
     },
     {
       "word": "entirely",
-      "lemma": "entire",
+      "lemma": "entirely",
       "partOfSpeech": "adv.",
-      "korean": "전체",
+      "korean": "완전히",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -175,7 +167,7 @@
       "word": "hence",
       "lemma": "hence",
       "partOfSpeech": "adv.",
-      "korean": "그러므로, 이런 이유로",
+      "korean": "그러므로",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
@@ -186,7 +178,7 @@
     {
       "word": "learn",
       "lemma": "learn",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "배우다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -199,7 +191,7 @@
       "word": "works",
       "lemma": "work",
       "partOfSpeech": "n.",
-      "korean": "일",
+      "korean": "업적, 작품 (the past and its works 과거와 그 업적)",
       "score": 61,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 61점)",
       "examTags": [
@@ -210,8 +202,8 @@
     {
       "word": "nothing",
       "lemma": "nothing",
-      "partOfSpeech": "v.",
-      "korean": "아무것도",
+      "partOfSpeech": "pron.",
+      "korean": "아무것도 ~않다",
       "score": 59,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 59점)",
       "examTags": [
@@ -221,7 +213,7 @@
     },
     {
       "word": "people",
-      "lemma": "person",
+      "lemma": "people",
       "partOfSpeech": "n.",
       "korean": "사람들",
       "score": 35,

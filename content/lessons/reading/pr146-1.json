@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "제조업자는 \"새로운 것이 더 좋다\"라는 자세를 조장한다. 구 모델이 고장나자마자 새 모델을 산다면 그들은 돈을 더 많이 벌 것이다. 그들은 심지어 1회 사용하고 버려지도록 의도된 품목도 발명하고 있다. 종이 접시와 앞치마 뿐아니라 심지어 1회용 면도기와 카메라도 있다. 또한 수리점도 점점 드물어지고 있다. 새 것을 살 수 있는데 왜 헌 것을 수리해야 하는가? 그 결과, 쓰레기장은 여전히 사용할 수 있는 물품으로 가득하다. 우리는 돈을 절약해주는 재사용이나 재활용을 하지 않는다."
+      "text": "제조업자는 \"새로운 것이 더 좋다\"라는 태도를 부추긴다. 구 모델이 고장나자마자 새 모델을 산다면 그들은 돈을 더 많이 벌 것이다. 그들은 심지어 1회 사용하고 버려지도록 의도된 품목도 발명하고 있다. 종이 접시와 냅킨뿐 아니라 심지어 1회용 면도기와 카메라도 있다. 또한 수리점도 점점 드물어지고 있다. 새 것을 살 수 있는데 왜 헌 것을 수리해야 하는가? 그 결과, 쓰레기장은 여전히 사용할 수 있는 물품으로 가득하다. 우리는 돈을 절약해주는 재사용이나 재활용을 하지 않는다."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-146-s001",
       "english": "Manufacturers encourage the \"new is better\" attitude.",
-      "korean": "제조업자는 \"새로운 것이 더 좋다\"라는 자세를 조장한다."
+      "korean": "제조업자는 \"새로운 것이 더 좋다\"라는 태도를 부추긴다."
     },
     {
       "id": "reading-146-s002",
@@ -62,8 +62,8 @@
     },
     {
       "id": "reading-146-s004",
-      "english": "There are not only Paper Plates and napkins, but even disposable razors and cameras.",
-      "korean": "종이 접시와 앞치마 뿐아니라 심지어 1회용 면도기와 카메라도 있다."
+      "english": "There are not only paper plates and napkins, but even disposable razors and cameras.",
+      "korean": "종이 접시와 냅킨뿐 아니라 심지어 1회용 면도기와 카메라도 있다."
     },
     {
       "id": "reading-146-s005",
@@ -82,7 +82,7 @@
     },
     {
       "id": "reading-146-s008",
-      "english": "We don't reuse or recycle which would save us money.",
+      "english": "We don't reuse or recycle, which would save us money.",
       "korean": "우리는 돈을 절약해주는 재사용이나 재활용을 하지 않는다."
     }
   ],
@@ -90,8 +90,8 @@
     {
       "word": "encourage",
       "lemma": "encourage",
-      "partOfSpeech": "n.",
-      "korean": "격려하다",
+      "partOfSpeech": "v.",
+      "korean": "부추기다",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -114,8 +114,8 @@
     {
       "word": "save",
       "lemma": "save",
-      "partOfSpeech": "n.",
-      "korean": "저장",
+      "partOfSpeech": "v.",
+      "korean": "(돈을) 아껴 주다",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -126,8 +126,8 @@
     {
       "word": "fails",
       "lemma": "fail",
-      "partOfSpeech": "n.",
-      "korean": "실패하다",
+      "partOfSpeech": "v.",
+      "korean": "고장 나다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -136,14 +136,14 @@
       "freq": 1
     },
     {
-      "word": "result",
-      "lemma": "result",
-      "partOfSpeech": "n.",
-      "korean": "결과",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "disposable",
+      "lemma": "disposable",
+      "partOfSpeech": "adj.",
+      "korean": "일회용의",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -151,7 +151,7 @@
       "word": "reuse",
       "lemma": "reuse",
       "partOfSpeech": "v.",
-      "korean": "재사용하다, 재활용하다",
+      "korean": "재사용하다",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -160,28 +160,28 @@
       "freq": 1
     },
     {
-      "word": "money",
-      "lemma": "money",
+      "word": "razors",
+      "lemma": "razor",
       "partOfSpeech": "n.",
-      "korean": "돈",
+      "korean": "면도기",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
-      "word": "new",
-      "lemma": "new",
-      "partOfSpeech": "n.",
-      "korean": "새로운",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "repair",
+      "lemma": "repair",
+      "partOfSpeech": "v.",
+      "korean": "수리하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
     },
     {
       "word": "manufacturers",
@@ -210,8 +210,8 @@
     {
       "word": "recycle",
       "lemma": "recycle",
-      "partOfSpeech": "n.",
-      "korean": "재활용",
+      "partOfSpeech": "v.",
+      "korean": "재활용하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -221,9 +221,9 @@
     },
     {
       "word": "discarded",
-      "lemma": "discarded",
+      "lemma": "discard",
       "partOfSpeech": "v.",
-      "korean": "버려진, 폐기된",
+      "korean": "버리다 (be discarded 버려지다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -235,7 +235,7 @@
       "word": "filled",
       "lemma": "fill",
       "partOfSpeech": "v.",
-      "korean": "채우다",
+      "korean": "(be filled with) ~로 가득하다",
       "score": 74,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -247,7 +247,7 @@
       "word": "items",
       "lemma": "item",
       "partOfSpeech": "n.",
-      "korean": "아이템",
+      "korean": "물품",
       "score": 72,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
       "examTags": [

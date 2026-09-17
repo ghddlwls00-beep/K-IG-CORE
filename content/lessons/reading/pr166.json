@@ -63,7 +63,7 @@
     {
       "id": "reading-166-s004",
       "english": "Artists during the Renaissance reformed painting.",
-      "korean": "르네상스 시대의 예술가들은 그림을 다시 만들었다."
+      "korean": "르네상스 시대의 예술가들은 회화를 개혁했다."
     },
     {
       "id": "reading-166-s005",
@@ -88,22 +88,22 @@
   ],
   "readingVocabulary": [
     {
-      "word": "art",
-      "lemma": "art",
-      "partOfSpeech": "n.",
-      "korean": "예술",
-      "score": 116,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 116점)",
+      "word": "portray",
+      "lemma": "portray",
+      "partOfSpeech": "v.",
+      "korean": "묘사하다, 그리다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 5
+      "freq": 1
     },
     {
       "word": "influenced",
       "lemma": "influence",
       "partOfSpeech": "v.",
-      "korean": "영향",
+      "korean": "영향을 주다",
       "score": 111,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
@@ -115,7 +115,7 @@
       "word": "appeared",
       "lemma": "appear",
       "partOfSpeech": "v.",
-      "korean": "나타나다",
+      "korean": "~으로 보이다 (as they appeared to the eye 눈에 보이는 대로)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -127,7 +127,7 @@
       "word": "achieved",
       "lemma": "achieve",
       "partOfSpeech": "v.",
-      "korean": "달성하다",
+      "korean": "이루어 내다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -139,7 +139,7 @@
       "word": "resulted",
       "lemma": "result",
       "partOfSpeech": "v.",
-      "korean": "결과",
+      "korean": "(result in) ~을 낳다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -148,17 +148,16 @@
       "freq": 1
     },
     {
-      "word": "renaissance",
-      "lemma": "renaissance",
+      "word": "accuracy",
+      "lemma": "accuracy",
       "partOfSpeech": "n.",
-      "korean": "르네상스, 문예부흥",
-      "score": 97,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
+      "korean": "정확성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "수능",
-        "TOEFL"
+        "독해필수"
       ],
-      "freq": 6
+      "freq": 1
     },
     {
       "word": "mathematics",
@@ -176,7 +175,7 @@
       "word": "perspective",
       "lemma": "perspective",
       "partOfSpeech": "n.",
-      "korean": "관점, 시각, 원근법",
+      "korean": "원근법",
       "score": 94,
       "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -187,26 +186,26 @@
       "freq": 2
     },
     {
-      "word": "different",
-      "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "word": "symbolic",
+      "lemma": "symbolic",
+      "partOfSpeech": "adj.",
+      "korean": "상징적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "eye",
-      "lemma": "eye",
+      "word": "geometry",
+      "lemma": "geometry",
       "partOfSpeech": "n.",
-      "korean": "눈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "기하학",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -214,7 +213,7 @@
       "word": "paintings",
       "lemma": "painting",
       "partOfSpeech": "n.",
-      "korean": "그림",
+      "korean": "그림, 회화",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -226,7 +225,7 @@
       "word": "objects",
       "lemma": "object",
       "partOfSpeech": "n.",
-      "korean": "물체",
+      "korean": "사물, 대상",
       "score": 79,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -238,7 +237,7 @@
       "word": "definitely",
       "lemma": "definitely",
       "partOfSpeech": "adv.",
-      "korean": "확실히",
+      "korean": "분명히",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -250,7 +249,7 @@
       "word": "application",
       "lemma": "application",
       "partOfSpeech": "n.",
-      "korean": "신청",
+      "korean": "적용",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

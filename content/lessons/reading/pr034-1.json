@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "상식은 별도로 하더라도 , 사업에 있어서 가장 중요한 자산은, 자신이나 상황에 대해 웃을 수 있는 능력인, 유머감각이다. 웃음은 긴장을 완화시켜 주는 가장 강력하고 건설적인 힘이다. 만약 어떤 상황에 대해 우스꽝스럽거나 어리석은 점을 지적하고, 상대방에게 당신의 감정을 공유하게 해서 긴장을 완화할 수 있다면, 당신은 주도권을 잡게 될 것이다. 사업에 있어서 절대적인 것들은 거의 없다. 이것이 그중 하나이며 나는 그것이 실패하는 것을 본적이 없다."
+      "text": "상식을 제외하면 사업에서 가장 중요한 자산은 유머 감각, 즉 자기 자신이나 상황을 보고 웃을 줄 아는 능력이다. 웃음은 긴장을 완화시켜 주는 가장 강력하고 건설적인 힘이다. 만약 어떤 상황에 대해 우스꽝스럽거나 어리석은 점을 지적하고, 상대방에게 당신의 감정을 공유하게 해서 긴장을 완화할 수 있다면, 당신은 주도권을 잡게 될 것이다. 사업에 있어서 절대적인 것들은 거의 없다. 이것이 그중 하나이며 나는 그것이 실패하는 것을 본 적이 없다."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-034-s001",
       "english": "Common sense aside, the most important asset in business is a sense of humor, an ability to laugh at yourself or the situation.",
-      "korean": "상식은 별도로 하더라도 , 사업에 있어서 가장 중요한 자산은, 자신이나 상황에 대해 웃을 수 있는 능력인, 유머감각이다."
+      "korean": "상식을 제외하면 사업에서 가장 중요한 자산은 유머 감각, 즉 자기 자신이나 상황을 보고 웃을 줄 아는 능력이다."
     },
     {
       "id": "reading-034-s002",
@@ -68,7 +68,7 @@
     {
       "id": "reading-034-s005",
       "english": "This is one of them, and I've never seen it fail.",
-      "korean": "이것이 그중 하나이며 나는 그것이 실패하는 것을 본적이 없다."
+      "korean": "이것이 그중 하나이며 나는 그것이 실패하는 것을 본 적이 없다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +76,7 @@
       "word": "calming",
       "lemma": "calm",
       "partOfSpeech": "v.",
-      "korean": "진정",
+      "korean": "가라앉히다, 진정시키다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -87,8 +87,8 @@
     {
       "word": "fail",
       "lemma": "fail",
-      "partOfSpeech": "n.",
-      "korean": "실패하다",
+      "partOfSpeech": "v.",
+      "korean": "실패하다, 효과가 없다",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -99,7 +99,7 @@
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 92,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -111,8 +111,8 @@
     {
       "word": "share",
       "lemma": "share",
-      "partOfSpeech": "n.",
-      "korean": "공유하다",
+      "partOfSpeech": "v.",
+      "korean": "함께 느끼다, 나누다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -124,7 +124,7 @@
       "word": "hand",
       "lemma": "hand",
       "partOfSpeech": "n.",
-      "korean": "손",
+      "korean": "(the upper hand) 우위, 주도권",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -136,7 +136,7 @@
       "word": "business",
       "lemma": "business",
       "partOfSpeech": "n.",
-      "korean": "사업",
+      "korean": "사업, 비즈니스",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -160,7 +160,7 @@
       "word": "sense",
       "lemma": "sense",
       "partOfSpeech": "n.",
-      "korean": "감각",
+      "korean": "감각 (sense of humor 유머 감각, common sense 상식)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -181,12 +181,12 @@
       "freq": 1
     },
     {
-      "word": "common",
-      "lemma": "common",
-      "partOfSpeech": "n.",
-      "korean": "공통의",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "absurd",
+      "lemma": "absurd",
+      "partOfSpeech": "adj.",
+      "korean": "터무니없는, 우스꽝스러운",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -195,8 +195,8 @@
     {
       "word": "aside",
       "lemma": "aside",
-      "partOfSpeech": "n.",
-      "korean": "제쳐두고",
+      "partOfSpeech": "adv.",
+      "korean": "~은 제쳐 두고 (common sense aside 상식을 빼면)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -230,12 +230,12 @@
       "freq": 1
     },
     {
-      "word": "laugh",
-      "lemma": "laugh",
-      "partOfSpeech": "n.",
-      "korean": "웃다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "constructive",
+      "lemma": "constructive",
+      "partOfSpeech": "adj.",
+      "korean": "건설적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

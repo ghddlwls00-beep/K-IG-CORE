@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Design and styling cannot be fully understood outside of their social, economic, political, cultural, and technological contexts. For example, the cycles of Western economies during the 20th century had a significant impact on the prevalence of objects that emphasized design over styling― and the other way round. While design and styling are interrelated, they are completely distinct fields. Styling is concerned with surface treatment and appearance, the expressive qualities of a product. Design, On the other hand, is primarily concerned with problem solving, the function of a product. It generally seeks simplification and essentiality."
+   "text": "Design and styling cannot be fully understood outside of their social, economic, political, cultural, and technological contexts. For example, the cycles of Western economies during the 20th century had a significant impact on the prevalence of objects that emphasized design over styling― and the other way round. While design and styling are interrelated, they are completely distinct fields. Styling is concerned with surface treatment and appearance, the expressive qualities of a product. Design, on the other hand, is primarily concerned with problem solving, the function of a product. It generally seeks simplification and essentiality."
   },
   {
    "type": "choice",
@@ -67,7 +67,7 @@
   },
   {
    "id": "reading-168-s005",
-   "english": "Design, On the other hand, is primarily concerned with problem solving, the function of a product.",
+   "english": "Design, on the other hand, is primarily concerned with problem solving, the function of a product.",
    "korean": "반면에 디자인은 주로 문제 해결, 즉 제품의 기능에 관심을 둔다."
   },
   {
@@ -80,7 +80,7 @@
   {
    "word": "understood",
    "lemma": "understand",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "이해하다",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
@@ -93,7 +93,7 @@
    "word": "social",
    "lemma": "social",
    "partOfSpeech": "adj.",
-   "korean": "사회의, 사회적인",
+   "korean": "사회적인",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 104점)",
    "examTags": [
@@ -104,8 +104,8 @@
   {
    "word": "solving",
    "lemma": "solve",
-   "partOfSpeech": "v.",
-   "korean": "해결하다",
+   "partOfSpeech": "n.",
+   "korean": "해결 (problem solving 문제 해결)",
    "score": 101,
    "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
    "examTags": [
@@ -114,22 +114,10 @@
    "freq": 1
   },
   {
-   "word": "completely",
-   "lemma": "complete",
-   "partOfSpeech": "adv.",
-   "korean": "완료",
-   "score": 92,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-   "examTags": [
-    "중학기초"
-   ],
-   "freq": 1
-  },
-  {
    "word": "styling",
-   "lemma": "style",
+   "lemma": "styling",
    "partOfSpeech": "n.",
-   "korean": "방식, 스타일, 양식",
+   "korean": "스타일링, 겉모양 꾸미기",
    "score": 89,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
    "examTags": [
@@ -138,14 +126,14 @@
    "freq": 4
   },
   {
-   "word": "hand",
-   "lemma": "hand",
-   "partOfSpeech": "n.",
-   "korean": "손",
-   "score": 88,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+   "word": "distinct",
+   "lemma": "distinct",
+   "partOfSpeech": "adj.",
+   "korean": "별개의, 뚜렷이 다른",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
    "freq": 1
   },
@@ -153,7 +141,7 @@
    "word": "design",
    "lemma": "design",
    "partOfSpeech": "n.",
-   "korean": "설계(하다)",
+   "korean": "디자인, 설계",
    "score": 87,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
    "examTags": [
@@ -164,8 +152,8 @@
   {
    "word": "concerned",
    "lemma": "concerned",
-   "partOfSpeech": "v.",
-   "korean": "우려되는",
+   "partOfSpeech": "adj.",
+   "korean": "(be concerned with) ~을 다루다, ~과 관련이 있다",
    "score": 81,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
    "examTags": [
@@ -177,7 +165,7 @@
    "word": "economic",
    "lemma": "economic",
    "partOfSpeech": "adj.",
-   "korean": "경제의, 경제적인",
+   "korean": "경제의",
    "score": 81,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
    "examTags": [
@@ -186,24 +174,12 @@
    "freq": 1
   },
   {
-   "word": "political",
-   "lemma": "political",
-   "partOfSpeech": "adj.",
-   "korean": "정치의, 정치적인",
-   "score": 81,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
-   "word": "cultural",
-   "lemma": "cultural",
-   "partOfSpeech": "adj.",
-   "korean": "문화적인",
-   "score": 81,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
+   "word": "prevalence",
+   "lemma": "prevalence",
+   "partOfSpeech": "n.",
+   "korean": "널리 퍼짐, 유행",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -213,7 +189,7 @@
    "word": "technological",
    "lemma": "technological",
    "partOfSpeech": "adj.",
-   "korean": "과학기술의, 기술적인",
+   "korean": "기술의",
    "score": 81,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
    "examTags": [
@@ -237,9 +213,33 @@
    "word": "simplification",
    "lemma": "simplification",
    "partOfSpeech": "n.",
-   "korean": "단순화, 간소화",
+   "korean": "단순화",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "interrelated",
+   "lemma": "interrelated",
+   "partOfSpeech": "adj.",
+   "korean": "서로 관련된",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "emphasized",
+   "lemma": "emphasize",
+   "partOfSpeech": "v.",
+   "korean": "강조하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "단풍이 드는 나무를 볼 수 있었다. 일주일전에 이 여행을 시작했더라면 이 모든 것이 내 시야를 즐겁게 했을 텐데. 그러나 지금은 그것을 즐길 수 없다. 너무나 많은 생각이 내 머릿속에 들끓고 있었다. 나를 20년 동안 길러 준 Uncle Joe에게 난 무엇을 해 주었나? 지난 5년간 그를 방문하지 못한 것에 대해 나는 부끄러움을 느꼈다. 아버지처럼 나를 사랑해 주었던 그를 나는 실망시켜 드렸던 것이다. 지난주에 그가 자신의 60번째 생일을 홀로 보내셨다는 것을 알았을 때 나는 스스로 마음이 편치 못했다."
+      "text": "기차 창밖으로 들판에서 곡식이 익어 가고 나무들이 붉고 노랗게 물드는 것이 보였다. 이 여행이 일주일만 일찍이었더라면 이 모든 풍경이 내 눈을 즐겁게 했을 것이다. 그러나 지금은 그것을 즐길 수 없었다. 너무나 많은 생각이 내 머릿속에 들끓고 있었다. 나를 20년 동안 키워 주신 조 삼촌에게 나는 무슨 짓을 한 걸까? 지난 5년간 그를 방문하지 못한 것에 대해 나는 부끄러움을 느꼈다. 아버지처럼 나를 사랑해 주었던 그를 나는 실망시켜 드렸던 것이다. 지난주에 그가 자신의 60번째 생일을 홀로 보내셨다는 것을 알았을 때 나는 스스로 마음이 편치 못했다."
     },
     {
       "type": "choice",
@@ -48,17 +48,17 @@
     {
       "id": "reading-194-s001",
       "english": "Through the train window, I could see crops ripening in the fields and trees turning red and yellow.",
-      "korean": "단풍이 드는 나무를 볼 수 있었다."
+      "korean": "기차 창밖으로 들판에서 곡식이 익어 가고 나무들이 붉고 노랗게 물드는 것이 보였다."
     },
     {
       "id": "reading-194-s002",
       "english": "If this journey had taken place a week earlier, all this would have pleased my eyes.",
-      "korean": "일주일전에 이 여행을 시작했더라면 이 모든 것이 내 시야를 즐겁게 했을 텐데."
+      "korean": "이 여행이 일주일만 일찍이었더라면 이 모든 풍경이 내 눈을 즐겁게 했을 것이다."
     },
     {
       "id": "reading-194-s003",
       "english": "But now I could not enjoy it.",
-      "korean": "그러나 지금은 그것을 즐길 수 없다."
+      "korean": "그러나 지금은 그것을 즐길 수 없었다."
     },
     {
       "id": "reading-194-s004",
@@ -68,7 +68,7 @@
     {
       "id": "reading-194-s005",
       "english": "What had I done to Uncle Joe, the man who had raised me for twenty years?",
-      "korean": "나를 20년 동안 길러 준 Uncle Joe에게 난 무엇을 해 주었나?"
+      "korean": "나를 20년 동안 키워 주신 조 삼촌에게 나는 무슨 짓을 한 걸까?"
     },
     {
       "id": "reading-194-s006",
@@ -88,38 +88,62 @@
   ],
   "readingVocabulary": [
     {
-      "word": "happy",
-      "lemma": "happy",
-      "partOfSpeech": "n.",
-      "korean": "행복하다",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "word": "ripening",
+      "lemma": "ripen",
+      "partOfSpeech": "v.",
+      "korean": "익다",
+      "score": 79,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "spent",
-      "lemma": "spend",
+      "word": "crops",
+      "lemma": "crop",
       "partOfSpeech": "n.",
-      "korean": "지출하다",
-      "score": 100,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "korean": "농작물",
+      "score": 77,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "earlier",
-      "lemma": "early",
-      "partOfSpeech": "n.",
-      "korean": "일찍",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "turning",
+      "lemma": "turn",
+      "partOfSpeech": "v.",
+      "korean": "(색이) ~으로 변하다",
+      "score": 86,
+      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "journey",
+      "lemma": "journey",
+      "partOfSpeech": "n.",
+      "korean": "여행",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "pleased",
+      "lemma": "please",
+      "partOfSpeech": "v.",
+      "korean": "기쁘게 하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
@@ -136,122 +160,98 @@
       "freq": 1
     },
     {
-      "word": "father",
-      "lemma": "father",
-      "partOfSpeech": "n.",
-      "korean": "아버지",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "eyes",
-      "lemma": "eye",
-      "partOfSpeech": "n.",
-      "korean": "눈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "head",
-      "lemma": "head",
-      "partOfSpeech": "n.",
-      "korean": "머리",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "turning",
-      "lemma": "turn",
+      "word": "raised",
+      "lemma": "raise",
       "partOfSpeech": "v.",
-      "korean": "회전",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "through",
-      "lemma": "through",
-      "partOfSpeech": "n.",
-      "korean": "통해",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 2
-    },
-    {
-      "word": "red",
-      "lemma": "red",
-      "partOfSpeech": "v.",
-      "korean": "빨간색",
+      "korean": "기르다",
       "score": 80,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 80점)",
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "ripening",
-      "lemma": "ripening",
-      "partOfSpeech": "n.",
-      "korean": "숙성, 익어감",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "word": "ashamed",
+      "lemma": "ashamed",
+      "partOfSpeech": "adj.",
+      "korean": "부끄러운",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "train",
-      "lemma": "train",
-      "partOfSpeech": "n.",
-      "korean": "기차",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "visited",
+      "lemma": "visit",
+      "partOfSpeech": "v.",
+      "korean": "찾아가다, 방문하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "window",
-      "lemma": "window",
-      "partOfSpeech": "n.",
-      "korean": "창문",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "disappointed",
+      "lemma": "disappoint",
+      "partOfSpeech": "v.",
+      "korean": "실망시키다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "crops",
-      "lemma": "crop",
-      "partOfSpeech": "n.",
-      "korean": "자르기",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "spent",
+      "lemma": "spend",
+      "partOfSpeech": "v.",
+      "korean": "(시간을) 보내다",
+      "score": 100,
+      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
+      "examTags": [
+        "중학기초"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "sixtieth",
+      "lemma": "sixtieth",
+      "partOfSpeech": "adj.",
+      "korean": "60번째의 (sixtieth birthday 환갑)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "alone",
+      "lemma": "alone",
+      "partOfSpeech": "adv.",
+      "korean": "혼자",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "earlier",
+      "lemma": "early",
+      "partOfSpeech": "adv.",
+      "korean": "더 일찍 (a week earlier 일주일 전에)",
+      "score": 94,
+      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "examTags": [
+        "중학기초"
       ],
       "freq": 1
     }

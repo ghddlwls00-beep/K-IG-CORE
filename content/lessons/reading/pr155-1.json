@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "자연은 끊임없이 변하는 것 같다. 그러나 자연을 자세히 관찰하면 변화와 균형은 꾸준히 균형을 이룬다. 인간의 경우, 신체의 세포는 계속해서 교체되지만 신체의 일반적인 형태와 크기는 비교적 일정하다. 마찬가지로 숲의 경우에도, 나무들과 풀은 죽어서 없어지거나 새롭게 자라나지만, 숲은 숲으로 남아있다. 숲 속에 있는 개체의 죽은 본체는 쓰러지고 토양이 되지만 다른 개체에게 영양을 공급해 준다. 자연의 구성 요소는 계속해서 변하지만 자연 그 자체는 꾸준히 유지된다."
+      "text": "자연은 끊임없이 변하는 것 같다. 그러나 자연을 자세히 관찰하면 변화와 균형 사이에 끊임없는 긴장이 있음을 알게 된다. 인간의 경우, 신체의 세포는 계속해서 교체되지만 신체의 일반적인 형태와 크기는 비교적 일정하다. 마찬가지로 숲의 경우에도, 나무들과 풀은 죽어서 없어지거나 새롭게 자라나지만, 숲은 숲으로 남아있다. 숲속 생물의 사체는 분해되어 흙이 되고, 그 흙은 다시 다른 생물에게 양분을 준다. 자연의 구성 요소는 계속해서 변하지만 자연 그 자체는 꾸준히 유지된다."
     },
     {
       "type": "choice",
@@ -53,7 +53,7 @@
     {
       "id": "reading-155-s002",
       "english": "If we observe nature closely, however, we discover that there is a constant tension between change and balance.",
-      "korean": "그러나 자연을 자세히 관찰하면 변화와 균형은 꾸준히 균형을 이룬다."
+      "korean": "그러나 자연을 자세히 관찰하면 변화와 균형 사이에 끊임없는 긴장이 있음을 알게 된다."
     },
     {
       "id": "reading-155-s003",
@@ -68,7 +68,7 @@
     {
       "id": "reading-155-s005",
       "english": "The dead bodies of organisms in the forest are broken down and turned into soil, which in turn nourishes other organisms.",
-      "korean": "숲 속에 있는 개체의 죽은 본체는 쓰러지고 토양이 되지만 다른 개체에게 영양을 공급해 준다."
+      "korean": "숲속 생물의 사체는 분해되어 흙이 되고, 그 흙은 다시 다른 생물에게 양분을 준다."
     },
     {
       "id": "reading-155-s006",
@@ -92,8 +92,8 @@
     {
       "word": "remains",
       "lemma": "remain",
-      "partOfSpeech": "n.",
-      "korean": "남아있다",
+      "partOfSpeech": "v.",
+      "korean": "~인 채로 남다 (remain constant 일정하게 유지되다)",
       "score": 112,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 112점)",
       "examTags": [
@@ -105,7 +105,7 @@
       "word": "changing",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "변하다",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
       "examTags": [
@@ -117,7 +117,7 @@
       "word": "observe",
       "lemma": "observe",
       "partOfSpeech": "v.",
-      "korean": "관찰하다, 준수하다",
+      "korean": "관찰하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -131,7 +131,7 @@
       "word": "organisms",
       "lemma": "organism",
       "partOfSpeech": "n.",
-      "korean": "유기체, 생물",
+      "korean": "생물, 유기체",
       "score": 94,
       "reason": "대학 학술 독해 필수 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -143,8 +143,8 @@
     {
       "word": "discover",
       "lemma": "discover",
-      "partOfSpeech": "n.",
-      "korean": "발견하다",
+      "partOfSpeech": "v.",
+      "korean": "알게 되다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -153,22 +153,22 @@
       "freq": 1
     },
     {
-      "word": "bodies",
-      "lemma": "body",
+      "word": "tension",
+      "lemma": "tension",
       "partOfSpeech": "n.",
-      "korean": "몸",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "긴장",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "constant",
       "lemma": "constant",
-      "partOfSpeech": "n.",
-      "korean": "상수",
+      "partOfSpeech": "adj.",
+      "korean": "끊임없는; 일정한",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -180,7 +180,7 @@
       "word": "replaced",
       "lemma": "replace",
       "partOfSpeech": "v.",
-      "korean": "교체하다",
+      "korean": "대체하다 (be replaced 새것으로 바뀌다)",
       "score": 81,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 81점)",
       "examTags": [
@@ -190,9 +190,9 @@
     },
     {
       "word": "continually",
-      "lemma": "continual",
+      "lemma": "continually",
       "partOfSpeech": "adv.",
-      "korean": "지속적인",
+      "korean": "계속해서",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -213,12 +213,12 @@
       "freq": 3
     },
     {
-      "word": "seems",
-      "lemma": "seem",
-      "partOfSpeech": "n.",
-      "korean": "것 같다",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "nourishes",
+      "lemma": "nourish",
+      "partOfSpeech": "v.",
+      "korean": "영양분을 주다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -238,9 +238,9 @@
     },
     {
       "word": "elements",
-      "lemma": "elements",
+      "lemma": "element",
       "partOfSpeech": "n.",
-      "korean": "요소들, 성분들",
+      "korean": "요소",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [

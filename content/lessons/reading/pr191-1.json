@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "\"네가 할 수 있다고 믿기만 하면 너는 할 수 있어!\"라는 말을 얼마나 많이 들어보았는가? 위대한 남녀들을 성취로 이끄는 시작의 힘이자 행동을 낳는 힘은 바로 '믿는 행위'이다. \"힘내자, 얘들아, 우리가 그들을 이길 수 있어!\"라고 지휘관이 외친다. 경기에서든 전쟁터에서든, 그 갑작스러운 신념의 목소리는 흐름을 바꾼다. \"나는 할 수 있다... 나는 할 수 있다... 나는 할 수 있다!\""
+      "text": "\"할 수 있다고 믿기만 하면 할 수 있어!\"라는 말을 얼마나 많이 들어 보았는가? 위대한 사람들을 성취로 이끄는 출발의 힘, 행동을 낳는 힘은 바로 믿는 행위다. \"힘내라, 제군들, 우리는 이길 수 있다!\" 지휘하는 사람이 외친다. 경기에서든 전쟁터에서든, 갑자기 소리 내어 외친 그 믿음이 흐름을 뒤집는다. \"나는 할 수 있다... 나는 할 수 있다... 나는 할 수 있다!\""
     },
     {
       "type": "choice",
@@ -48,32 +48,22 @@
     {
       "id": "reading-191-s001",
       "english": "How many times have you heard it said, \"Just believe you can do it and you can!\" It's the act of believing that is the starting force or generating action that leads great men and women to accomplishment.",
-      "korean": "\"네가 할 수 있다고 믿기만 하면 너는 할 수 있어!\"라는 말을 얼마나 많이 들어보았는가? 위대한 남녀들을 성취로 이끄는 시작의 힘이자 행동을 낳는 힘은 바로 '믿는 행위'이다."
+      "korean": "\"할 수 있다고 믿기만 하면 할 수 있어!\"라는 말을 얼마나 많이 들어 보았는가? 위대한 사람들을 성취로 이끄는 출발의 힘, 행동을 낳는 힘은 바로 믿는 행위다."
     },
     {
       "id": "reading-191-s002",
       "english": "\"Come on, men, we can beat them,\" shouts someone in command.",
-      "korean": "\"힘내자, 얘들아, 우리가 그들을 이길 수 있어!\"라고 지휘관이 외친다."
+      "korean": "\"힘내라, 제군들, 우리는 이길 수 있다!\" 지휘하는 사람이 외친다."
     },
     {
       "id": "reading-191-s003",
       "english": "Whether in a game, or on a battlefield, that sudden voicing of belief reverses the tide.",
-      "korean": "경기에서든 전쟁터에서든, 그 갑작스러운 신념의 목소리는 흐름을 바꾼다."
+      "korean": "경기에서든 전쟁터에서든, 갑자기 소리 내어 외친 그 믿음이 흐름을 뒤집는다."
     },
     {
       "id": "reading-191-s004",
-      "english": "\"I can do it....",
-      "korean": "\"나는 할 수 있다..."
-    },
-    {
-      "id": "reading-191-s005",
-      "english": "I can do it....",
-      "korean": "나는 할 수 있다..."
-    },
-    {
-      "id": "reading-191-s006",
-      "english": "I can do it!\"",
-      "korean": "나는 할 수 있다!\""
+      "english": "\"I can do it... I can do it... I can do it!\"",
+      "korean": "\"나는 할 수 있다... 나는 할 수 있다... 나는 할 수 있다!\""
     }
   ],
   "readingVocabulary": [
@@ -81,7 +71,7 @@
       "word": "believing",
       "lemma": "believe",
       "partOfSpeech": "v.",
-      "korean": "믿다",
+      "korean": "믿다 (the act of believing 믿는 행위)",
       "score": 110,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 110점)",
       "examTags": [
@@ -93,7 +83,7 @@
       "word": "leads",
       "lemma": "lead",
       "partOfSpeech": "v.",
-      "korean": "이끌다, 초래하다",
+      "korean": "이끌다",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -106,7 +96,7 @@
       "word": "generating",
       "lemma": "generate",
       "partOfSpeech": "v.",
-      "korean": "생성하다",
+      "korean": "일으키다, 만들어 내다",
       "score": 106,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 106점)",
       "examTags": [
@@ -117,8 +107,8 @@
     {
       "word": "voicing",
       "lemma": "voice",
-      "partOfSpeech": "v.",
-      "korean": "목소리",
+      "partOfSpeech": "n.",
+      "korean": "(소리 내어) 말함, 외침",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -129,22 +119,10 @@
     {
       "word": "starting",
       "lemma": "start",
-      "partOfSpeech": "v.",
-      "korean": "시작",
+      "partOfSpeech": "adj.",
+      "korean": "시작하게 하는 (starting force 원동력)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "heard",
-      "lemma": "heard",
-      "partOfSpeech": "v.",
-      "korean": "들었다 (hear의 과거)",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
         "독해필수"
       ],
@@ -187,36 +165,12 @@
       "freq": 1
     },
     {
-      "word": "great",
-      "lemma": "great",
-      "partOfSpeech": "n.",
-      "korean": "대단해",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "just",
-      "lemma": "just",
-      "partOfSpeech": "n.",
-      "korean": "그냥",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "act",
-      "lemma": "act",
-      "partOfSpeech": "n.",
-      "korean": "행위",
-      "score": 73,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "word": "beat",
+      "lemma": "beat",
+      "partOfSpeech": "v.",
+      "korean": "이기다, 물리치다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -226,7 +180,7 @@
       "word": "command",
       "lemma": "command",
       "partOfSpeech": "n.",
-      "korean": "명령",
+      "korean": "지휘 (in command 지휘하는)",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -237,10 +191,46 @@
     {
       "word": "whether",
       "lemma": "whether",
-      "partOfSpeech": "n.",
-      "korean": "여부",
+      "partOfSpeech": "conj.",
+      "korean": "(whether A or B) A이든 B이든",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "battlefield",
+      "lemma": "battlefield",
+      "partOfSpeech": "n.",
+      "korean": "전쟁터",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "reverses",
+      "lemma": "reverse",
+      "partOfSpeech": "v.",
+      "korean": "뒤집다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "tide",
+      "lemma": "tide",
+      "partOfSpeech": "n.",
+      "korean": "흐름, 형세 (reverse the tide 형세를 뒤집다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

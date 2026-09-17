@@ -49,7 +49,9 @@ const req = (spec) => {
 new Function("require", "module", "exports", js)(req, mod, mod.exports);
 const { resolveMediaAccess } = mod.exports;
 
-const lockedSentence = "In spite of their continued efforts, factories and cars are still producing too much dirty smoke of putting too chemicals into the air.";
+// Read from the lesson, not typed here: R-04 corrected this sentence (2026-09-17), and a copied
+// string would test a clip the free list rightly no longer carries.
+const lockedSentence = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/reading/pr002.json"), "utf8")).readingSentences[1].english;
 const freeKey = freeList.keys[0];
 const lockedStudent = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/student/s20-5.json"), "utf8"));
 const lockedStudentSentence = lockedStudent.blocks.find((b) => b.type === "sentences").items[0].text;

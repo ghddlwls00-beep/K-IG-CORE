@@ -25,31 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "People are accustomed to using blankets to make themselves warm. So they"
-    },
-    {
-      "type": "hints",
-      "text": "are surprised to see blankets used to keep ice cold and to prevent it from"
-    },
-    {
-      "type": "instruction",
-      "text": "melting. Expecting that a blanket will always make something warm, they"
-    },
-    {
-      "type": "instruction",
-      "text": "think that it must warm ice, too. But what a blanket always does is to"
-    },
-    {
-      "type": "instruction",
-      "text": "prevent heat from passing through one side of it to the other. Thus, it keeps"
-    },
-    {
-      "type": "instruction",
-      "text": "the heat of the body from passing into the colder air surrounding it, and"
-    },
-    {
-      "type": "instruction",
-      "text": "it keeps the heat of the air from passing into the colder ice."
+      "text": "People are accustomed to using blankets to make themselves warm. So they are surprised to see blankets used to keep ice cold and to prevent it from melting. Expecting that a blanket will always make something warm, they think that it must warm ice, too. But what a blanket always does is to prevent heat from passing through one side of it to the other. Thus, it keeps the heat of the body from passing into the colder air surrounding it, and it keeps the heat of the air from passing into the colder ice."
     },
     {
       "type": "choice",
@@ -77,7 +53,7 @@
     {
       "id": "reading-227-s002",
       "english": "So they are surprised to see blankets used to keep ice cold and to prevent it from melting.",
-      "korean": "그래서 그들은 어름을 차갑게 유지시키고 어름이 녹는 것을 방지하기 위해 사용되어지는 담요들을 보고 놀란다."
+      "korean": "그래서 담요가 얼음을 차갑게 유지하고 녹지 않게 하는 데 쓰이는 것을 보면 놀란다."
     },
     {
       "id": "reading-227-s003",
@@ -92,7 +68,7 @@
     {
       "id": "reading-227-s005",
       "english": "Thus, it keeps the heat of the body from passing into the colder air surrounding it, and it keeps the heat of the air from passing into the colder ice.",
-      "korean": "따라서, 담요는 몸(물체)의 열이 그 것(그 물체)를 둘러싸고 있는 차가운 공기 안으로 흘러 들어가지 못하게 하고, 담요가 공기의 열이 차가운 얼음 속으로 들어오지 못하게 하는 것이다."
+      "korean": "그래서 담요는 몸의 열이 주변의 더 차가운 공기로 빠져나가지 못하게 하고, 공기의 열이 더 차가운 얼음으로 들어가지 못하게 한다."
     }
   ],
   "readingVocabulary": [
@@ -100,7 +76,7 @@
       "word": "expecting",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "예상하다, 기대하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -111,8 +87,8 @@
     {
       "word": "prevent",
       "lemma": "prevent",
-      "partOfSpeech": "n.",
-      "korean": "예방하다",
+      "partOfSpeech": "v.",
+      "korean": "(prevent A from -ing) A가 ~하지 못하게 막다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -136,7 +112,7 @@
       "word": "passing",
       "lemma": "pass",
       "partOfSpeech": "v.",
-      "korean": "지나가다; 합격하다",
+      "korean": "지나가다, 통과하다",
       "score": 94,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 94점)",
       "examTags": [
@@ -146,9 +122,9 @@
     },
     {
       "word": "accustomed",
-      "lemma": "accustom",
-      "partOfSpeech": "v.",
-      "korean": "익숙해지다",
+      "lemma": "accustomed",
+      "partOfSpeech": "adj.",
+      "korean": "(be accustomed to -ing) ~에 익숙한",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -169,22 +145,10 @@
       "freq": 2
     },
     {
-      "word": "using",
-      "lemma": "using",
-      "partOfSpeech": "v.",
-      "korean": "사용하는, 활용하는",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "surrounding",
-      "lemma": "surrounding",
-      "partOfSpeech": "v.",
-      "korean": "주위의; (복수) 환경",
+      "lemma": "surround",
+      "partOfSpeech": "adj.",
+      "korean": "주위의, 둘러싼",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -195,7 +159,7 @@
     {
       "word": "warm",
       "lemma": "warm",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "따뜻한",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
@@ -231,8 +195,8 @@
     {
       "word": "keeps",
       "lemma": "keep",
-      "partOfSpeech": "n.",
-      "korean": "유지하다",
+      "partOfSpeech": "v.",
+      "korean": "(keep A from -ing) A가 ~하지 못하게 하다",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -243,8 +207,8 @@
     {
       "word": "colder",
       "lemma": "cold",
-      "partOfSpeech": "n.",
-      "korean": "더 추운, 더 차가운",
+      "partOfSpeech": "adj.",
+      "korean": "더 차가운",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -253,16 +217,28 @@
       "freq": 2
     },
     {
-      "word": "air",
-      "lemma": "air",
-      "partOfSpeech": "n.",
-      "korean": "공기",
-      "score": 76,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 76점)",
+      "word": "melting",
+      "lemma": "melt",
+      "partOfSpeech": "v.",
+      "korean": "녹다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
+    },
+    {
+      "word": "surprised",
+      "lemma": "surprised",
+      "partOfSpeech": "adj.",
+      "korean": "놀란",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     }
   ]
 }

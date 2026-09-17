@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "In many countries around the world, narrow - mindedness, religious impatience, greed, and fear have turned into crises that have taken the lives of millions. Many struggles such as rich versus poor are fought under deeply held beliefs. But given the destructive results, do these beliefs make sense? How often, in fact, do we stop to think about what we believe? One of the major problems we face both as individuals and as a society is simplistic thinking―or the failure to think at all. It isn’t just a problem; perhaps, it is the problem."
+      "text": "In many countries around the world, narrow-mindedness, religious intolerance, greed, and fear have turned into crises that have taken the lives of millions. Many struggles such as rich versus poor are fought under deeply held beliefs. But given the destructive results, do these beliefs make sense? How often, in fact, do we stop to think about what we believe? One of the major problems we face both as individuals and as a society is simplistic thinking―or the failure to think at all. It isn’t just a problem; perhaps, it is the problem."
     },
     {
       "type": "choice",
@@ -47,8 +47,8 @@
   "readingSentences": [
     {
       "id": "reading-149-s001",
-      "english": "In many countries around the world, narrow - mindedness, religious impatience, greed, and fear have turned into crises that have taken the lives of millions.",
-      "korean": "전 세계 많은 국가에서 편협함, 종교적 편협, 탐욕, 그리고 두려움이 수백만 명의 목숨을 앗아간 위기로 변했다."
+      "english": "In many countries around the world, narrow-mindedness, religious intolerance, greed, and fear have turned into crises that have taken the lives of millions.",
+      "korean": "전 세계 많은 국가에서 편협함, 종교적 불관용, 탐욕, 그리고 두려움이 수백만 명의 목숨을 앗아간 위기로 변했다."
     },
     {
       "id": "reading-149-s002",
@@ -81,7 +81,7 @@
       "word": "countries",
       "lemma": "country",
       "partOfSpeech": "n.",
-      "korean": "국가",
+      "korean": "나라",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -90,14 +90,14 @@
       "freq": 1
     },
     {
-      "word": "narrow",
-      "lemma": "narrow",
+      "word": "narrow-mindedness",
+      "lemma": "narrow-mindedness",
       "partOfSpeech": "n.",
-      "korean": "좁은",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "korean": "편협함",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -105,7 +105,7 @@
       "word": "fear",
       "lemma": "fear",
       "partOfSpeech": "n.",
-      "korean": "두려움, 공포",
+      "korean": "두려움",
       "score": 98,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 98점)",
       "examTags": [
@@ -128,7 +128,7 @@
     {
       "word": "believe",
       "lemma": "believe",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "믿다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -151,9 +151,9 @@
     },
     {
       "word": "deeply",
-      "lemma": "deep",
+      "lemma": "deeply",
       "partOfSpeech": "adv.",
-      "korean": "깊은",
+      "korean": "깊이 (deeply held beliefs 깊이 뿌리박힌 신념)",
       "score": 90,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
       "examTags": [
@@ -162,50 +162,50 @@
       "freq": 1
     },
     {
-      "word": "rich",
-      "lemma": "rich",
+      "word": "greed",
+      "lemma": "greed",
       "partOfSpeech": "n.",
-      "korean": "부유한",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "탐욕",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "poor",
-      "lemma": "poor",
+      "word": "intolerance",
+      "lemma": "intolerance",
       "partOfSpeech": "n.",
-      "korean": "가난한",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "불관용 (religious intolerance 종교적 불관용)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "destructive",
+      "lemma": "destructive",
+      "partOfSpeech": "adj.",
+      "korean": "파괴적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
-      "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 84점)",
+      "word": "simplistic",
+      "lemma": "simplistic",
+      "partOfSpeech": "adj.",
+      "korean": "지나치게 단순한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -213,7 +213,7 @@
       "word": "turned",
       "lemma": "turn",
       "partOfSpeech": "v.",
-      "korean": "돌다; 변하다, ~하게 되다",
+      "korean": "(turn into) ~으로 변하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -225,7 +225,7 @@
       "word": "religious",
       "lemma": "religious",
       "partOfSpeech": "adj.",
-      "korean": "종교적인, 신앙심 깊은",
+      "korean": "종교적인",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -234,16 +234,16 @@
       "freq": 1
     },
     {
-      "word": "problem",
-      "lemma": "problem",
+      "word": "crises",
+      "lemma": "crisis",
       "partOfSpeech": "n.",
-      "korean": "문제",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "위기",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     }
   ]
 }

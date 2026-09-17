@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Smith 씨의 의견을 전적으로 수용하지 않는 바는 아니지만, 그의 논지는 그리 설득력 있지 않다. Smith 씨가 믿는 바와는 반대로 음악과 공연 예술에서의 컴퓨터 기술의 역할은 상당히 주목할 만하다. 컴퓨터 기술은 예술 작품이 만들어지고, 알려지고, 경험을 통해 노련해지는 데 기여할 수 있다. 구성하는 사람들이나, 수행하는 사람들 그리고 청중들 모두 그들 음악의 디지털적 통제권을 갖는다. 만약 현대의 최고의 록 가수가 그 혹은 그녀의 다음 음악을 인터넷상에 올리면, 그 음악은 2천만 객석을 갖춘 극장에서 연주되는 것처럼 연주될 수 있을 뿐만 아니라, 각각의 청자가 또한 그 음악을 각자의 취향에 맞게 변화를 줄 수 있다."
+      "text": "Smith 씨의 의견을 완전히 무시할 수는 없지만, 그의 주장은 설득력이 없다. Smith 씨가 믿는 바와는 반대로 음악과 공연 예술에서의 컴퓨터 기술의 역할은 상당히 주목할 만하다. 컴퓨터 기술은 작품이 공연되고, 방송되고, 감상되는 방식을 개선할 수 있다. 작곡가, 연주자, 청중 모두 음악을 디지털로 다룰 수 있다. 만약 현대의 최고의 록 가수가 그 혹은 그녀의 다음 음악을 인터넷상에 올리면, 그 음악은 2천만 객석을 갖춘 극장에서 연주되는 것처럼 연주될 수 있을 뿐만 아니라, 각각의 청자가 또한 그 음악을 각자의 취향에 맞게 변화를 줄 수 있다."
     },
     {
       "type": "choice",
@@ -48,7 +48,7 @@
     {
       "id": "reading-214-s001",
       "english": "Though we cannot dismiss Mr. Smith’s opinion completely, his argument is not persuasive.",
-      "korean": "Smith 씨의 의견을 전적으로 수용하지 않는 바는 아니지만, 그의 논지는 그리 설득력 있지 않다."
+      "korean": "Smith 씨의 의견을 완전히 무시할 수는 없지만, 그의 주장은 설득력이 없다."
     },
     {
       "id": "reading-214-s002",
@@ -58,12 +58,12 @@
     {
       "id": "reading-214-s003",
       "english": "Computer technology can improve how a work is performed, broadcast, and experienced.",
-      "korean": "컴퓨터 기술은 예술 작품이 만들어지고, 알려지고, 경험을 통해 노련해지는 데 기여할 수 있다."
+      "korean": "컴퓨터 기술은 작품이 공연되고, 방송되고, 감상되는 방식을 개선할 수 있다."
     },
     {
       "id": "reading-214-s004",
       "english": "Composers, performers, and audience can all have digital control of their music.",
-      "korean": "구성하는 사람들이나, 수행하는 사람들 그리고 청중들 모두 그들 음악의 디지털적 통제권을 갖는다."
+      "korean": "작곡가, 연주자, 청중 모두 음악을 디지털로 다룰 수 있다."
     },
     {
       "id": "reading-214-s005",
@@ -75,7 +75,7 @@
     {
       "word": "music",
       "lemma": "music",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "음악",
       "score": 112,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 112점)",
@@ -88,7 +88,7 @@
       "word": "depending",
       "lemma": "depend",
       "partOfSpeech": "v.",
-      "korean": "의존하다",
+      "korean": "(depending upon) ~에 따라",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -110,9 +110,9 @@
     },
     {
       "word": "completely",
-      "lemma": "complete",
+      "lemma": "completely",
       "partOfSpeech": "adv.",
-      "korean": "완료",
+      "korean": "완전히",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -123,8 +123,8 @@
     {
       "word": "performing",
       "lemma": "perform",
-      "partOfSpeech": "v.",
-      "korean": "수행하다",
+      "partOfSpeech": "adj.",
+      "korean": "공연하는 (performing arts 공연 예술)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -136,7 +136,7 @@
       "word": "improve",
       "lemma": "improve",
       "partOfSpeech": "v.",
-      "korean": "향상시키다, 개선하다",
+      "korean": "개선하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -149,8 +149,8 @@
     {
       "word": "transform",
       "lemma": "transform",
-      "partOfSpeech": "n.",
-      "korean": "변환",
+      "partOfSpeech": "v.",
+      "korean": "바꾸다, 변형하다",
       "score": 97,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 (평가 점수: 97점)",
       "examTags": [
@@ -159,14 +159,14 @@
       "freq": 1
     },
     {
-      "word": "believe",
-      "lemma": "believe",
-      "partOfSpeech": "n.",
-      "korean": "믿다",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "dismiss",
+      "lemma": "dismiss",
+      "partOfSpeech": "v.",
+      "korean": "무시하다, 일축하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -174,7 +174,7 @@
       "word": "control",
       "lemma": "control",
       "partOfSpeech": "n.",
-      "korean": "제어",
+      "korean": "통제, 조작",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -183,14 +183,14 @@
       "freq": 1
     },
     {
-      "word": "arts",
-      "lemma": "art",
-      "partOfSpeech": "n.",
-      "korean": "예술",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "persuasive",
+      "lemma": "persuasive",
+      "partOfSpeech": "adj.",
+      "korean": "설득력 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -198,7 +198,7 @@
       "word": "released",
       "lemma": "release",
       "partOfSpeech": "v.",
-      "korean": "릴리스",
+      "korean": "발표하다, 공개하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -207,34 +207,34 @@
       "freq": 1
     },
     {
-      "word": "playing",
-      "lemma": "play",
-      "partOfSpeech": "v.",
-      "korean": "놀이",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "contrary",
+      "lemma": "contrary",
+      "partOfSpeech": "adj.",
+      "korean": "(contrary to) ~과 반대로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "smith",
-      "lemma": "smith",
-      "partOfSpeech": "n.",
-      "korean": "대장장이; 스미스",
-      "score": 82,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
+      "word": "considerable",
+      "lemma": "considerable",
+      "partOfSpeech": "adj.",
+      "korean": "상당한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "tastes",
       "lemma": "taste",
-      "partOfSpeech": "v.",
-      "korean": "맛이 나다, 맛보다",
+      "partOfSpeech": "n.",
+      "korean": "취향",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [

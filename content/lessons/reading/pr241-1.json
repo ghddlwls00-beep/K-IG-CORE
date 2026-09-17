@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "교육의 목적은 무엇인가? 교육의 목적은 개인으로 하여금 개인이 살아가야 하는 사회에 적응하도록 준비시키는 것이고, 개인에게 사회를 변화시킬 수 있는 능력을 부여하기 위한 것이다. 우리는 처음 부분의 가치에 지나치게 강조해서는 안됩니다. 그것은 사회에 필요한 모든 본질적인 가치를 유지시키기 위한 교육의 기능 중에 하나가 되어야 한다. 그러나 새로운 사회에 해가 될 진부한 가치를 제거하는 것이 더 중요하다. 그러므로 학교는 사회변화에 대한 영감을 불어넣어야 한다. 교육은 전통을 유지하기 보다 사회를 변화시키는 기능을 수행해야 한다."
+      "text": "교육의 목적은 무엇인가? 그것은 개인이 살아가야 할 사회에 대비하게 하고, 그 사회를 바꿀 힘을 주는 것이다. 우리는 앞부분의 가치를 지나치게 강조해서는 안 된다. 사회에 꼭 필요한 가치를 모두 지키는 것도 교육의 기능 가운데 하나여야 하지만, 새로운 사회에 해가 될 낡은 가치를 잘라 내는 것이 더 중요한 기능이다. 그러므로 학교는 사회 변화에 영감을 주는 곳이어야 한다. 교육은 사회의 전통을 지키기보다 사회를 바꾸는 역할을 해야 한다."
     },
     {
       "type": "choice",
@@ -53,27 +53,27 @@
     {
       "id": "reading-241-s002",
       "english": "It is to prepare the individual for the society in which he must live and to give him the power to change the society.",
-      "korean": "교육의 목적은 개인으로 하여금 개인이 살아가야 하는 사회에 적응하도록 준비시키는 것이고, 개인에게 사회를 변화시킬 수 있는 능력을 부여하기 위한 것이다."
+      "korean": "그것은 개인이 살아가야 할 사회에 대비하게 하고, 그 사회를 바꿀 힘을 주는 것이다."
     },
     {
       "id": "reading-241-s003",
       "english": "We should not overemphasize the value of the first part.",
-      "korean": "우리는 처음 부분의 가치에 지나치게 강조해서는 안됩니다."
+      "korean": "우리는 앞부분의 가치를 지나치게 강조해서는 안 된다."
     },
     {
       "id": "reading-241-s004",
-      "english": "It should be one of the functions of education to preserve for the society all the values essential to it, but it is more important one to cut out the decayed values which would be harmful to a new society.",
-      "korean": "그것은 사회에 필요한 모든 본질적인 가치를 유지시키기 위한 교육의 기능 중에 하나가 되어야 한다. 그러나 새로운 사회에 해가 될 진부한 가치를 제거하는 것이 더 중요하다."
+      "english": "It should be one of the functions of education to preserve for the society all the values essential to it, but a more important one is to cut out the decayed values which would be harmful to a new society.",
+      "korean": "사회에 꼭 필요한 가치를 모두 지키는 것도 교육의 기능 가운데 하나여야 하지만, 새로운 사회에 해가 될 낡은 가치를 잘라 내는 것이 더 중요한 기능이다."
     },
     {
       "id": "reading-241-s005",
-      "english": "Thus the school should be the inspiration to social change.",
-      "korean": "그러므로 학교는 사회변화에 대한 영감을 불어넣어야 한다."
+      "english": "Thus the school should be the inspiration for social change.",
+      "korean": "그러므로 학교는 사회 변화에 영감을 주는 곳이어야 한다."
     },
     {
       "id": "reading-241-s006",
-      "english": "Education should play the role in changing the society rather than in preserving its tradition .",
-      "korean": "교육은 전통을 유지하기 보다 사회를 변화시키는 기능을 수행해야 한다."
+      "english": "Education should play a role in changing society rather than in preserving its traditions.",
+      "korean": "교육은 사회의 전통을 지키기보다 사회를 바꾸는 역할을 해야 한다."
     }
   ],
   "readingVocabulary": [
@@ -114,22 +114,22 @@
       "freq": 1
     },
     {
-      "word": "tradition",
+      "word": "traditions",
       "lemma": "tradition",
       "partOfSpeech": "n.",
       "korean": "전통",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "prepare",
       "lemma": "prepare",
-      "partOfSpeech": "n.",
-      "korean": "준비하다",
+      "partOfSpeech": "v.",
+      "korean": "(prepare A for B) A가 B에 대비하게 하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -141,7 +141,7 @@
       "word": "social",
       "lemma": "social",
       "partOfSpeech": "adj.",
-      "korean": "사회적",
+      "korean": "사회의 (social change 사회 변화)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 94점)",
       "examTags": [
@@ -150,14 +150,14 @@
       "freq": 1
     },
     {
-      "word": "school",
-      "lemma": "school",
+      "word": "inspiration",
+      "lemma": "inspiration",
       "partOfSpeech": "n.",
-      "korean": "학교",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "원동력, 영감을 주는 것",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -165,7 +165,7 @@
       "word": "changing",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "바꾸다",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 85점)",
       "examTags": [
@@ -186,14 +186,14 @@
       "freq": 1
     },
     {
-      "word": "important",
-      "lemma": "important",
+      "word": "functions",
+      "lemma": "function",
       "partOfSpeech": "n.",
-      "korean": "중요한",
-      "score": 79,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 79점)",
+      "korean": "기능, 역할",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -201,7 +201,7 @@
       "word": "overemphasize",
       "lemma": "overemphasize",
       "partOfSpeech": "v.",
-      "korean": "overemphasize (핵심 어휘)",
+      "korean": "지나치게 강조하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -211,9 +211,9 @@
     },
     {
       "word": "decayed",
-      "lemma": "decay",
-      "partOfSpeech": "v.",
-      "korean": "부패",
+      "lemma": "decayed",
+      "partOfSpeech": "adj.",
+      "korean": "낡은, 썩은",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -224,8 +224,8 @@
     {
       "word": "rather",
       "lemma": "rather",
-      "partOfSpeech": "n.",
-      "korean": "오히려",
+      "partOfSpeech": "adv.",
+      "korean": "(rather than) ~라기보다는",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -237,7 +237,7 @@
       "word": "values",
       "lemma": "value",
       "partOfSpeech": "n.",
-      "korean": "가치",
+      "korean": "가치, 가치관",
       "score": 72,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
       "examTags": [

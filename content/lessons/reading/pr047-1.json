@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "정부는 기업의 우수성을 강조해 왔다. 정부는 경제가 강하게 유지되어야 한다는 점을 인식하고 이러한 우수성을 성취하기 위해 필요로 하는 것은 무엇이든지 기꺼이 제공하고 있다. 그러나 예술의 중요성, 특히 공연 예술의 중요성을 충분히 인식하지는 못하고 있다. 공연 예술 또한 우수성을 바란다. 그러나 그것을 성취하기 위해서는 재정적 도움이 필요하다. 정부의 지원이 없다면 공연 예술은 생존할 수 없다. 이것은 영화를 포함한 다른 문화 분야에도 영향을 주게 될 것이다. 만약 정부가 공연 예술을 후원하지 않는다면 이 나라는 국민들의 많은 마음과 영혼을 잃게 될 것이다."
+      "text": "정부는 기업의 우수성을 강조해 왔다. 정부는 경제가 강하게 유지되어야 한다는 점을 인식하고 이러한 우수성을 성취하기 위해 필요로 하는 것은 무엇이든지 기꺼이 제공하고 있다. 그러나 예술의 중요성, 특히 공연 예술의 중요성을 충분히 인식하지는 못하고 있다. 공연 예술 또한 우수성을 바란다. 그러나 그것을 성취하기 위해서는 재정적 도움이 필요하다. 정부의 지원이 없다면 공연 예술은 생존할 수 없다. 이것은 영화를 포함한 다른 문화 분야에도 영향을 주게 될 것이다. 만약 정부가 공연 예술을 후원하지 않는다면 이 나라는 국민의 마음과 영혼의 많은 부분을 잃게 될 것이다."
     },
     {
       "type": "choice",
@@ -78,15 +78,15 @@
     {
       "id": "reading-047-s007",
       "english": "If the government doesn’t support the performing arts, this country will lose much of the heart and soul of its people.",
-      "korean": "만약 정부가 공연 예술을 후원하지 않는다면 이 나라는 국민들의 많은 마음과 영혼을 잃게 될 것이다."
+      "korean": "만약 정부가 공연 예술을 후원하지 않는다면 이 나라는 국민의 마음과 영혼의 많은 부분을 잃게 될 것이다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "performing",
-      "lemma": "perform",
-      "partOfSpeech": "v.",
-      "korean": "수행하다",
+      "lemma": "performing",
+      "partOfSpeech": "adj.",
+      "korean": "공연하는 (the performing arts 공연 예술)",
       "score": 119,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 119점)",
       "examTags": [
@@ -98,7 +98,7 @@
       "word": "support",
       "lemma": "support",
       "partOfSpeech": "n.",
-      "korean": "지원하다",
+      "korean": "지원",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
       "examTags": [
@@ -119,14 +119,14 @@
       "freq": 5
     },
     {
-      "word": "country",
-      "lemma": "country",
-      "partOfSpeech": "n.",
-      "korean": "국가",
-      "score": 102,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
+      "word": "emphasized",
+      "lemma": "emphasize",
+      "partOfSpeech": "v.",
+      "korean": "강조하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -134,7 +134,7 @@
       "word": "provide",
       "lemma": "provide",
       "partOfSpeech": "v.",
-      "korean": "제공하다, 공급하다",
+      "korean": "제공하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "recognized",
       "lemma": "recognize",
       "partOfSpeech": "v.",
-      "korean": "인식하다",
+      "korean": "인정하다, 인식하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -160,7 +160,7 @@
       "word": "heart",
       "lemma": "heart",
       "partOfSpeech": "n.",
-      "korean": "심장",
+      "korean": "마음 (heart and soul 마음과 영혼)",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -171,8 +171,8 @@
     {
       "word": "achieve",
       "lemma": "achieve",
-      "partOfSpeech": "n.",
-      "korean": "달성하다",
+      "partOfSpeech": "v.",
+      "korean": "이루다",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 99점)",
       "examTags": [
@@ -190,12 +190,12 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 2
     },
     {
       "word": "survive",
       "lemma": "survive",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "v.",
       "korean": "살아남다",
       "score": 96,
       "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
@@ -217,38 +217,38 @@
       "freq": 1
     },
     {
-      "word": "culture",
-      "lemma": "culture",
+      "word": "excellence",
+      "lemma": "excellence",
       "partOfSpeech": "n.",
-      "korean": "문화",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "korean": "우수성, 탁월함",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
+      ],
+      "freq": 3
+    },
+    {
+      "word": "financial",
+      "lemma": "financial",
+      "partOfSpeech": "adj.",
+      "korean": "재정의, 금전적인",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "remain",
-      "lemma": "remain",
-      "partOfSpeech": "n.",
-      "korean": "남아있다",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "affect",
+      "lemma": "affect",
+      "partOfSpeech": "v.",
+      "korean": "영향을 주다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "strong",
-      "lemma": "strong",
-      "partOfSpeech": "n.",
-      "korean": "강한",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
-      "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     }

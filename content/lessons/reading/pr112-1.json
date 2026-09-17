@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "경제(문제)결과로, 당장 얻을 수 있는 일자리가 많지 않다. 그러나 당신이 시도할 수 있는 것들이 있으니 낙심하지 마라. 다른 종류의 일거리를 위해 훈련하기 위해 야간 과정을 취하려고 고려해 본적이 있는가? 많은 근로자들이 그들의 정규적인 직업을 유지하면서 새로운 기술을 배운다. 또 다른 방법은 현재의 회사에서 다른 형태의 일거리를 찾아보는 것이다. 마지막으로, 주변에 다른 일자리가 없다 하더라도, 마음을 편히 먹어라. 일하는 날 동안에 경험한 스트래스를 감소시키기 위해서 일 후에 즐길 수 있는 것들을 위해 시간을 때어 둬라."
+      "text": "경제 사정 때문에 지금 당장은 구할 수 있는 일자리가 많지 않다. 그러나 해 볼 수 있는 일들이 있으니 낙심하지 마라. 다른 직종을 준비하기 위해 야간 강좌를 듣는 것을 생각해 본 적이 있는가? 많은 근로자들이 원래 일을 계속하면서 새로운 기술을 배운다. 또 다른 방법은 지금 다니는 회사에서 다른 종류의 일을 찾아보는 것이다. 마지막으로, 주변에 다른 일자리가 없더라도 꼭 마음을 편히 가져라. 일하는 동안 받은 스트레스를 줄이기 위해 퇴근 후에 즐기는 일을 할 시간을 내라."
     },
     {
       "type": "choice",
@@ -48,37 +48,37 @@
     {
       "id": "reading-112-s001",
       "english": "As a result of the economy, there aren't many jobs available right now.",
-      "korean": "경제(문제)결과로, 당장 얻을 수 있는 일자리가 많지 않다."
+      "korean": "경제 사정 때문에 지금 당장은 구할 수 있는 일자리가 많지 않다."
     },
     {
       "id": "reading-112-s002",
-      "english": "But don't be discouraged because there are somethings you can try.",
-      "korean": "그러나 당신이 시도할 수 있는 것들이 있으니 낙심하지 마라."
+      "english": "But don't be discouraged because there are some things you can try.",
+      "korean": "그러나 해 볼 수 있는 일들이 있으니 낙심하지 마라."
     },
     {
       "id": "reading-112-s003",
       "english": "Have you considered taking night classes to train for another kind of job?",
-      "korean": "다른 종류의 일거리를 위해 훈련하기 위해 야간 과정을 취하려고 고려해 본적이 있는가?"
+      "korean": "다른 직종을 준비하기 위해 야간 강좌를 듣는 것을 생각해 본 적이 있는가?"
     },
     {
       "id": "reading-112-s004",
       "english": "Many workers learn new skills while keeping their regular jobs.",
-      "korean": "많은 근로자들이 그들의 정규적인 직업을 유지하면서 새로운 기술을 배운다."
+      "korean": "많은 근로자들이 원래 일을 계속하면서 새로운 기술을 배운다."
     },
     {
       "id": "reading-112-s005",
       "english": "Another possibility is looking for a different type of job in your present company.",
-      "korean": "또 다른 방법은 현재의 회사에서 다른 형태의 일거리를 찾아보는 것이다."
+      "korean": "또 다른 방법은 지금 다니는 회사에서 다른 종류의 일을 찾아보는 것이다."
     },
     {
       "id": "reading-112-s006",
       "english": "Finally, even if there are no other jobs around, be sure to relax.",
-      "korean": "마지막으로, 주변에 다른 일자리가 없다 하더라도, 마음을 편히 먹어라."
+      "korean": "마지막으로, 주변에 다른 일자리가 없더라도 꼭 마음을 편히 가져라."
     },
     {
       "id": "reading-112-s007",
       "english": "Take time out to do things you enjoy after work in order to reduce the stress you experience during your workday.",
-      "korean": "일하는 날 동안에 경험한 스트래스를 감소시키기 위해서 일 후에 즐길 수 있는 것들을 위해 시간을 때어 둬라."
+      "korean": "일하는 동안 받은 스트레스를 줄이기 위해 퇴근 후에 즐기는 일을 할 시간을 내라."
     }
   ],
   "readingVocabulary": [
@@ -86,7 +86,7 @@
       "word": "result",
       "lemma": "result",
       "partOfSpeech": "n.",
-      "korean": "결과",
+      "korean": "(as a result of) ~ 때문에",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -97,8 +97,8 @@
     {
       "word": "experience",
       "lemma": "experience",
-      "partOfSpeech": "n.",
-      "korean": "경험",
+      "partOfSpeech": "v.",
+      "korean": "겪다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -110,7 +110,7 @@
       "word": "considered",
       "lemma": "consider",
       "partOfSpeech": "v.",
-      "korean": "고려하다",
+      "korean": "생각해 보다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -121,8 +121,8 @@
     {
       "word": "reduce",
       "lemma": "reduce",
-      "partOfSpeech": "n.",
-      "korean": "감소시키다",
+      "partOfSpeech": "v.",
+      "korean": "줄이다",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -133,7 +133,7 @@
     {
       "word": "different",
       "lemma": "different",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "다른",
       "score": 90,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
@@ -143,12 +143,12 @@
       "freq": 1
     },
     {
-      "word": "aren't",
-      "lemma": "aren't",
-      "partOfSpeech": "v.",
-      "korean": "~가 아니다",
-      "score": 84,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
+      "word": "stress",
+      "lemma": "stress",
+      "partOfSpeech": "n.",
+      "korean": "스트레스",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -158,7 +158,7 @@
       "word": "jobs",
       "lemma": "job",
       "partOfSpeech": "n.",
-      "korean": "직업",
+      "korean": "일자리",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
@@ -170,7 +170,7 @@
       "word": "available",
       "lemma": "available",
       "partOfSpeech": "adj.",
-      "korean": "이용 가능한, 구할 수 있는",
+      "korean": "구할 수 있는",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -193,12 +193,12 @@
       "freq": 1
     },
     {
-      "word": "right",
-      "lemma": "right",
-      "partOfSpeech": "n.",
-      "korean": "맞아",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "regular",
+      "lemma": "regular",
+      "partOfSpeech": "adj.",
+      "korean": "원래의, 정규의 (regular jobs 원래 하던 일)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -208,7 +208,7 @@
       "word": "workday",
       "lemma": "workday",
       "partOfSpeech": "n.",
-      "korean": "근무일, 평일",
+      "korean": "근무일",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -218,9 +218,9 @@
     },
     {
       "word": "discouraged",
-      "lemma": "discourage",
-      "partOfSpeech": "v.",
-      "korean": "낙담시키다",
+      "lemma": "discouraged",
+      "partOfSpeech": "adj.",
+      "korean": "낙심한",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -232,7 +232,7 @@
       "word": "keeping",
       "lemma": "keep",
       "partOfSpeech": "v.",
-      "korean": "유지하다",
+      "korean": "계속 유지하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -244,7 +244,7 @@
       "word": "looking",
       "lemma": "look",
       "partOfSpeech": "v.",
-      "korean": "봐",
+      "korean": "(look for) 찾다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [

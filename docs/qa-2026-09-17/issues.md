@@ -105,14 +105,16 @@
 - **정정 (2026-09-17 09:xx):** 처음엔 L-64(원본 녹음에 있는 문장 34개가 대본에 없음)도 이 이슈에 묶어 "들리는 문장을 쓸 칸이 없다"고 적었으나, 운영 플레이어는 CNN 외 모든 과정에서 **원본 녹음을 틀지 않고 대본을 Azure 음성으로 읽음** (`src/lib/unifiedSpeech.ts:42-47`, `out/player-probe.json`). 그래서 L-64 는 **Medium (지문이 원문 일부를 잃어 앞뒤가 안 맞음)** 으로 낮춰 MED-L 묶음에 둠.
 - **L-64 처리 (2026-09-17, 소유자 결정):** 회차별 대본 대조로 실제 누락은 26문장 (자동 34건 중 STT 오탐 2·표현만 다름 6). 녹음대로 넣음 — 칸 번호 유지, 27회차 30칸, 음성 37개. 배포·운영 확인 (c3a44d3, 페이지 54/54·음성 30/30). 상세 `content-review/listening.md` L-64.
 
-### ISS-09 READING 지문 데이터 손상 (주석·보기·발문 혼입, 순서 뒤섞임, 잘림) + 뜻 없는 문장
+### ISS-09 READING 지문 데이터 손상 (주석·보기·발문 혼입, 순서 뒤섞임, 잘림) + 뜻 없는 문장 — ✅ 로컬 수정·검증, 배포 대기 (`apply-reading-passages-*.cjs`, `verify-reading-fixes.cjs` 110/110)
+- **처리 (2026-09-17):** 256지문 전부 — 감사 R-02~R-79 (소유자/변호사 대기 R-01 교체·R-29·R-30·R-32 pr078·R-43·R-75 제외) + 읽으며 찾은 같은 종류. 문장 1,446 → 1,431, 시험 잔재·한글 주석 0 (페이지 데이터로 가던 옛 PDF 블록 포함), 사실 오류는 문장 정정. 수정 전 데이터에선 같은 검증 8/106. 실제 브라우저 `verify-reading-ui.cjs` 44/44, 음성 3,914개·pending 0, speech gate 13/13, build 통과. 상세 `content-review/reading.md` "처리 결과"
 - **분류** 데이터 손상·사실 · **심각도** High · **접근** 유료 (pr001·pr002 제외)
 - **위치** R-14 pr048 · R-21 pr056 · R-22 pr066 · R-23 pr067 · R-34 pr115 · R-47 pr164 · R-48 pr237 · R-49 pr246 · R-51 pr193 (연도 7904) · R-04 pr002 비문 · R-50 pr183 "하루 4분 달렸다"
 - **재현** 이용권 → `/reading/pr237` → 본문·대조·음성 · **기대** 읽히는 순서의 완결 지문 · **실제** `*ligament: 인대`, `(a)`~`(e)`, 결론이 첫 문장
 - **영향** 지문을 이해할 수 없고 영한 대조가 전부 어긋남, 음성이 주석·보기를 읽음
 - **증거** `scripts/dump-reading.cjs` 덤프 원문 인용 · **원인** 시험지 PDF 그대로 변환 · **해결** 상세 표 · **검증** 재덤프 후 주석·보기 기호 검색 0건, 행 수 EN=KO · **확신도** 높음
 
-### ISS-10 READING 어휘 카드: 문맥과 다른 뜻 213장, 뜻 없는 카드 69장, 스크립트 페이지 옛 뜻 510장, 품사 모순 1,020장+
+### ISS-10 READING 어휘 카드: 문맥과 다른 뜻 213장, 뜻 없는 카드 69장, 스크립트 페이지 옛 뜻 510장, 품사 모순 1,020장+ — ✅ 로컬 수정·검증, 배포 대기 (`apply-reading-cards-*.cjs`, `verify-reading-fixes.cjs` 110/110)
+- **처리 (2026-09-17):** 3,584장 전부 지문 문장과 한 장씩 대조해 다시 씀 — 그대로 718 · 뜻/품사 수정 2,131 · 교체 735 (+ 후속 수정 4, pr122 교체 9). 감사가 적은 틀린 뜻 217건 0 (수정 177·교체 40), 자리표시 0, 지문에 없는 단어 0, 품사-뜻 모순 0, 세 사본 일치. 같은 지문 7쌍은 카드도 동일
 - **분류** 교육 내용 · **심각도** High · **접근** 유료
 - **위치** RV-01~RV-27, R-00 (`content-review/reading.md`)
 - **재현** 이용권 → `/reading/pr024` 어휘 카드 → `firms` 뜻 보기 · **기대** 회사 · **실제** `확고한`; `/reading/pr087` `watching` → `시계`; `/reading/pr130` `boredom` → `boredom (핵심 어휘)`
@@ -188,8 +190,8 @@
 | MED-G2 GRAMMAR II | 23 / 14 | Dallas 남부(G2-02), 로써/로서(G2-03), would/shall(G2-04·05) | `content-review/grammar2.md` |
 | MED-S STUDENT | 21 / 3 | 이순신 사실(S-08), 개요 페이지 s1–s5 목록 미노출·제목 불일치 | `content-review/student.md` |
 | MED-L LISTENING | 56 / 38 | 전사 오류(Lite·Wilbur·Iditarod 등), 숫자 표기, 낡은 사실(L-27·49), **불쾌 표현**(L-74·84 freaks·minstrel·primitive tribes), 힌트-답 이름 불일치(L-00a) — **✅ L-74·L-84 외 전부 로컬 수정·검증, 배포 대기** (`listening.md` "처리 결과"; L-74·L-84 는 소유자 결정 대기) | `content-review/listening.md`, `listening-status.md` (PASS 64/FAIL 212) |
-| MED-R READING 지문 | 64 / 32 | 영한 정렬 어긋남 다수, 오역(뜻 반대), 낡은 전망(2010·2025), 정치·고정관념 지문(R-64 노무현·차베스, R-65 식사법), 중복 지문 8쌍(R-01), 사실(재향군인병·마라톤·Purloined Letter·안락사법) | `content-review/reading.md` |
-| MED-RV READING 어휘 | (ISS-10 에 포함) | | `content-review/reading.md` §어휘 카드 |
+| MED-R READING 지문 | 64 / 32 | 영한 정렬 어긋남 다수, 오역(뜻 반대), 낡은 전망(2010·2025), 정치·고정관념 지문(R-64 노무현·차베스, R-65 식사법), 중복 지문 8쌍(R-01), 사실(재향군인병·마라톤·Purloined Letter·안락사법) — **✅ 소유자/변호사 대기 항목(R-01 한쪽 교체·R-30 pr054·R-32 pr078·저작권) 외 전부 로컬 수정·검증, 배포 대기** (`reading.md` "처리 결과") | `content-review/reading.md` |
+| MED-RV READING 어휘 | (ISS-10 에 포함) | ✅ 3,584장 전부 재작성·검증, 배포 대기 | `content-review/reading.md` §어휘 카드 |
 | MED-V VOCA | 6 / 6 | mv2-12 달 이름 반복(V-03), 같은 뜻 짝 드릴 채점(V-04), 철자 오류 6(V-05), `apparently` 분명히(V-06), 다의어 첫 뜻 누락(V-07) | `content-review/voca.md`, `voca-status.md` (PASS 102 · NOTE 42 · FAIL 51) |
 | MED-ADM 관리자 | 3 / 3 | 테스트 등록이 고객 칸 차지(ADM-02), 한도·해금 드롭다운 즉시 저장(ADM-03·04), 81강 표기(ADM-05) | `phase2-admin.md` |
 | MED-SEC 보안 | 2 / 4 | 기기 초기화 후 verify 불일치(SEC-03), CSP unsafe-inline(SEC-05), 메모리 요청 제한(SEC-07), 토큰 없이 기기 해제(SEC-04) | `phase8-security.md` |

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "회사들은 이익을 내기 위하여 다양한 방법으로 가격을 낮추고 있다. 그 중의 한 가지는 도매할인이다. 그것은 대규모로 상품을 구입하고 판매하는 상점이나 사업체에 제공한다. 양적 할인도 있는데 그것은 다량으로 물건을 구매할 때에 개인에게 제공된다. 회사들이 가격 할인을 이런 구매자들에게 제공하는 이유는 그들이 판매, 보관, 선적, 청구서 작성 등의 비용을 줄일 수 있기 때문이다. 마지막으로 현금 할인이란 구매하는 사람들에게 저렴한 가격으로 제공되는 것이다."
+      "text": "회사들은 자사의 이익을 위해 여러 방법으로 더 낮은 가격을 제시한다. 그 한 가지 방법이 거래 할인이다. 거래 할인은 상품을 대량으로 사서 되파는 상점이나 업체에 제공된다. 수량 할인도 있는데, 이는 한 제품을 대량으로 주문하는 개인에게 제공된다. 회사가 이런 구매자에게 값을 깎아 주는 것은 그들 덕분에 판매, 보관, 배송, 청구에 드는 비용이 줄기 때문이다. 마지막으로 현금 할인은 현금으로 지불하는 사람에게 제공되는 낮은 가격이다."
     },
     {
       "type": "choice",
@@ -48,32 +48,32 @@
     {
       "id": "reading-106-s001",
       "english": "For their own benefit, companies have various ways of offering lower prices.",
-      "korean": "회사들은 이익을 내기 위하여 다양한 방법으로 가격을 낮추고 있다."
+      "korean": "회사들은 자사의 이익을 위해 여러 방법으로 더 낮은 가격을 제시한다."
     },
     {
       "id": "reading-106-s002",
       "english": "One way of doing this is a trade discount.",
-      "korean": "그 중의 한 가지는 도매할인이다."
+      "korean": "그 한 가지 방법이 거래 할인이다."
     },
     {
       "id": "reading-106-s003",
-      "english": "It is offered to the shops or business that buy goods on a large scale and sell them.",
-      "korean": "그것은 대규모로 상품을 구입하고 판매하는 상점이나 사업체에 제공한다."
+      "english": "It is offered to the shops or businesses that buy goods on a large scale and sell them.",
+      "korean": "거래 할인은 상품을 대량으로 사서 되파는 상점이나 업체에 제공된다."
     },
     {
       "id": "reading-106-s004",
       "english": "There is also a quantity discount, which is offered to individuals who order large quantities of a product.",
-      "korean": "양적 할인도 있는데 그것은 다량으로 물건을 구매할 때에 개인에게 제공된다."
+      "korean": "수량 할인도 있는데, 이는 한 제품을 대량으로 주문하는 개인에게 제공된다."
     },
     {
       "id": "reading-106-s005",
       "english": "The company gives a price break to these buyers because they help cut the costs of selling, storing, shipping, and billing.",
-      "korean": "회사들이 가격 할인을 이런 구매자들에게 제공하는 이유는 그들이 판매, 보관, 선적, 청구서 작성 등의 비용을 줄일 수 있기 때문이다."
+      "korean": "회사가 이런 구매자에게 값을 깎아 주는 것은 그들 덕분에 판매, 보관, 배송, 청구에 드는 비용이 줄기 때문이다."
     },
     {
       "id": "reading-106-s006",
       "english": "Finally, a cash discount is a lower price offered to people who pay in cash.",
-      "korean": "마지막으로 현금 할인이란 구매하는 사람들에게 저렴한 가격으로 제공되는 것이다."
+      "korean": "마지막으로 현금 할인은 현금으로 지불하는 사람에게 제공되는 낮은 가격이다."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "offered",
       "lemma": "offer",
       "partOfSpeech": "v.",
-      "korean": "제안",
+      "korean": "제공하다, 제시하다",
       "score": 119,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 119점)",
       "examTags": [
@@ -92,8 +92,8 @@
     {
       "word": "lower",
       "lemma": "low",
-      "partOfSpeech": "n.",
-      "korean": "낮음",
+      "partOfSpeech": "adj.",
+      "korean": "더 낮은 (low의 비교급)",
       "score": 115,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 115점)",
       "examTags": [
@@ -105,7 +105,7 @@
       "word": "discount",
       "lemma": "discount",
       "partOfSpeech": "n.",
-      "korean": "할인, 에누리; 경시하다",
+      "korean": "할인",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -117,7 +117,7 @@
       "word": "various",
       "lemma": "various",
       "partOfSpeech": "adj.",
-      "korean": "다양한",
+      "korean": "여러 가지의",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -129,7 +129,7 @@
       "word": "price",
       "lemma": "price",
       "partOfSpeech": "n.",
-      "korean": "가격",
+      "korean": "가격 (price break 가격 할인)",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -141,7 +141,7 @@
       "word": "benefit",
       "lemma": "benefit",
       "partOfSpeech": "n.",
-      "korean": "혜택",
+      "korean": "이익 (for one's own benefit 자기 이익을 위해)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -189,7 +189,7 @@
       "word": "storing",
       "lemma": "store",
       "partOfSpeech": "v.",
-      "korean": "저장",
+      "korean": "보관하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -199,9 +199,9 @@
     },
     {
       "word": "shipping",
-      "lemma": "ship",
-      "partOfSpeech": "v.",
-      "korean": "배",
+      "lemma": "shipping",
+      "partOfSpeech": "n.",
+      "korean": "배송, 운송",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -211,9 +211,9 @@
     },
     {
       "word": "billing",
-      "lemma": "bill",
-      "partOfSpeech": "v.",
-      "korean": "계산서",
+      "lemma": "billing",
+      "partOfSpeech": "n.",
+      "korean": "대금 청구",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -222,24 +222,24 @@
       "freq": 1
     },
     {
-      "word": "own",
-      "lemma": "own",
-      "partOfSpeech": "adj.",
-      "korean": "자신의, 고유의",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 75점)",
+      "word": "quantity",
+      "lemma": "quantity",
+      "partOfSpeech": "n.",
+      "korean": "수량 (quantity discount 수량 할인)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "finally",
-      "lemma": "finally",
-      "partOfSpeech": "adv.",
-      "korean": "마침내",
-      "score": 75,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+      "word": "trade",
+      "lemma": "trade",
+      "partOfSpeech": "n.",
+      "korean": "거래 (trade discount 거래 할인)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "보통의 소금 양과 덜 들어간 소금의 양을 한 빵 간의 맛에 있어 차이를 조사하기 위한 연구가 행해졌다. 세 종류의 빵이 준비되어졌는데, 소금의 내용물을 제외하고는 모든 면에 있어서 같은 것이었다. 한 덩어리는 보통의 양을 포함했고, 하나는 10%를 덜 포함했고, 하나는 20%를 덜 포함했다. 60 명이 그들이 맛에 있어 어떤 차이를 구별할 수 있는지를 질문 받았다. 그들은 어떤 빵이 보통 양의 소금을, 10% 덜, 20% 덜 포함하고 있는지를 추측해야 했다. 그 결과는 추측의 30%만이 맞다는 결과를 보여 줬는데, 이는 우연히 예상됐던 것과 같은 것이었다. 빵의 맛은 반드시 빵에 포함된 소금의 양에 달린 것이 아니다."
+      "text": "소금 함량이 보통인 빵과 줄인 빵의 맛 차이를 알아보는 연구가 이루어졌다. 소금 함량만 빼고 모든 면에서 똑같은 세 종류의 빵을 준비했다. 한 덩어리에는 보통 양의 소금을, 한 덩어리에는 10% 적게, 한 덩어리에는 20% 적게 넣었다. 60명에게 맛의 차이를 구별할 수 있는지 물었다. 그들은 어느 빵에 보통 양의 소금이 들었고, 어느 빵이 10%, 20% 적은지 추측해야 했다. 결과는 추측의 30%만 맞았다는 것을 보여 주었는데, 이는 우연히 맞힐 때와 다르지 않은 수준이다. 빵의 맛이 반드시 빵에 든 소금의 양에 좌우되는 것은 아니다."
     },
     {
       "type": "choice",
@@ -47,46 +47,46 @@
   "readingSentences": [
     {
       "id": "reading-094-s001",
-      "english": "Research was done to examine the difference in taste between bread with standard and reduced slat content.",
-      "korean": "보통의 소금 양과 덜 들어간 소금의 양을 한 빵 간의 맛에 있어 차이를 조사하기 위한 연구가 행해졌다."
+      "english": "Research was done to examine the difference in taste between bread with standard and reduced salt content.",
+      "korean": "소금 함량이 보통인 빵과 줄인 빵의 맛 차이를 알아보는 연구가 이루어졌다."
     },
     {
       "id": "reading-094-s002",
       "english": "Three types of bread were prepared, the same in all respects except for salt content.",
-      "korean": "세 종류의 빵이 준비되어졌는데, 소금의 내용물을 제외하고는 모든 면에 있어서 같은 것이었다."
+      "korean": "소금 함량만 빼고 모든 면에서 똑같은 세 종류의 빵을 준비했다."
     },
     {
       "id": "reading-094-s003",
       "english": "One loaf contained the usual amount, one loaf 10% less, one 20% less.",
-      "korean": "한 덩어리는 보통의 양을 포함했고, 하나는 10%를 덜 포함했고, 하나는 20%를 덜 포함했다."
+      "korean": "한 덩어리에는 보통 양의 소금을, 한 덩어리에는 10% 적게, 한 덩어리에는 20% 적게 넣었다."
     },
     {
       "id": "reading-094-s004",
       "english": "Sixty people were asked if they could tell any difference in taste.",
-      "korean": "60 명이 그들이 맛에 있어 어떤 차이를 구별할 수 있는지를 질문 받았다."
+      "korean": "60명에게 맛의 차이를 구별할 수 있는지 물었다."
     },
     {
       "id": "reading-094-s005",
-      "english": "They had to guess which loaf contains the usual amount of salt, 10% less, or 20% less.",
-      "korean": "그들은 어떤 빵이 보통 양의 소금을, 10% 덜, 20% 덜 포함하고 있는지를 추측해야 했다."
+      "english": "They had to guess which loaf contained the usual amount of salt, 10% less, or 20% less.",
+      "korean": "그들은 어느 빵에 보통 양의 소금이 들었고, 어느 빵이 10%, 20% 적은지 추측해야 했다."
     },
     {
       "id": "reading-094-s006",
       "english": "The result showed that only 30% of the guesses were correct, which is not different from what would be expected by chance.",
-      "korean": "그 결과는 추측의 30%만이 맞다는 결과를 보여 줬는데, 이는 우연히 예상됐던 것과 같은 것이었다."
+      "korean": "결과는 추측의 30%만 맞았다는 것을 보여 주었는데, 이는 우연히 맞힐 때와 다르지 않은 수준이다."
     },
     {
       "id": "reading-094-s007",
       "english": "The taste of bread is not necessarily dependent upon the salt content in the bread.",
-      "korean": "빵의 맛은 반드시 빵에 포함된 소금의 양에 달린 것이 아니다."
+      "korean": "빵의 맛이 반드시 빵에 든 소금의 양에 좌우되는 것은 아니다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "reduced",
-      "lemma": "reduce",
-      "partOfSpeech": "v.",
-      "korean": "감소시키다",
+      "lemma": "reduced",
+      "partOfSpeech": "adj.",
+      "korean": "줄인 (reduced salt content 소금 함량을 줄인)",
       "score": 111,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
@@ -97,8 +97,8 @@
     {
       "word": "taste",
       "lemma": "taste",
-      "partOfSpeech": "v.",
-      "korean": "맛이 나다, 맛보다",
+      "partOfSpeech": "n.",
+      "korean": "맛",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 102점)",
       "examTags": [
@@ -122,7 +122,7 @@
       "word": "expected",
       "lemma": "expect",
       "partOfSpeech": "v.",
-      "korean": "기대하다",
+      "korean": "예상하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -134,7 +134,7 @@
       "word": "content",
       "lemma": "content",
       "partOfSpeech": "n.",
-      "korean": "내용",
+      "korean": "함량 (salt content 소금 함량)",
       "score": 97,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 97점)",
       "examTags": [
@@ -167,14 +167,14 @@
       "freq": 1
     },
     {
-      "word": "different",
-      "lemma": "different",
+      "word": "chance",
+      "lemma": "chance",
       "partOfSpeech": "n.",
-      "korean": "다른",
-      "score": 90,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 90점)",
+      "korean": "(by chance) 우연히",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -200,13 +200,13 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 4
     },
     {
       "word": "research",
       "lemma": "research",
       "partOfSpeech": "n.",
-      "korean": "연구, 조사",
+      "korean": "연구",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -220,7 +220,7 @@
     {
       "word": "examine",
       "lemma": "examine",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "조사하다",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -230,22 +230,22 @@
       "freq": 1
     },
     {
-      "word": "between",
-      "lemma": "between",
+      "word": "loaf",
+      "lemma": "loaf",
       "partOfSpeech": "n.",
-      "korean": "사이에",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+      "korean": "(빵) 한 덩어리",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 1
+      "freq": 3
     },
     {
       "word": "standard",
       "lemma": "standard",
-      "partOfSpeech": "n.",
-      "korean": "표준",
+      "partOfSpeech": "adj.",
+      "korean": "보통의, 표준의",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [

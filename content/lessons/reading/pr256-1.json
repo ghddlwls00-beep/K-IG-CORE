@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "20세기에 기술이 많이 발전해 왔다. 과학자들은 우주와 심지어 달에까지 사람들을 보냈다. TV, 자동차, 컴퓨터가 우리의 삶을 엄청나게 변화시켰다. 새로운 의료기술이 중병에 걸린 사람에게 희망과 심지어 생명조차 제공해 준다. 우리는 기술 덕분에 잘 살아가고 있다. 그러나 기술의 엄청난 가능성이 똑같이 골치 아픈 도덕적 문제를 야기하고 있다. 예를 들어, 이런 문제들이 논의 되야 할 것 같다. 기술 발달에 대해 윤리적 한계가 있어야 하는가? 그렇다면, 어디에 한계선을 그어야 하는가? 그리고 누가 결정하는가?"
+      "text": "20세기에 기술이 많이 발전해 왔다. 과학자들은 우주와 심지어 달에까지 사람들을 보냈다. TV, 자동차, 컴퓨터가 우리의 삶을 엄청나게 변화시켰다. 새로운 의료기술이 중병에 걸린 사람에게 희망과 심지어 생명조차 제공해 준다. 우리는 기술 덕분에 크게 발전했다. 그러나 기술의 엄청난 가능성이 똑같이 골치 아픈 도덕적 문제를 야기하고 있다. 예를 들어, 이런 문제들이 논의되어야 할 것이다. 기술 발달에 대해 윤리적 한계가 있어야 하는가? 그렇다면, 어디에 한계선을 그어야 하는가? 그리고 누가 결정하는가?"
     },
     {
       "type": "choice",
@@ -47,7 +47,7 @@
   "readingSentences": [
     {
       "id": "reading-256-s001",
-      "english": "In the twentieth century, there have been many advances in technology.",
+      "english": "In the twentieth century, there were many advances in technology.",
       "korean": "20세기에 기술이 많이 발전해 왔다."
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "reading-256-s005",
       "english": "We have come a long way because of technology.",
-      "korean": "우리는 기술 덕분에 잘 살아가고 있다."
+      "korean": "우리는 기술 덕분에 크게 발전했다."
     },
     {
       "id": "reading-256-s006",
@@ -77,8 +77,8 @@
     },
     {
       "id": "reading-256-s007",
-      "english": "These questions, for instance, should be asked : Should there be ethical limits to technological development?",
-      "korean": "예를 들어, 이런 문제들이 논의 되야 할 것 같다. 기술 발달에 대해 윤리적 한계가 있어야 하는가?"
+      "english": "These questions, for instance, should be asked: Should there be ethical limits to technological development?",
+      "korean": "예를 들어, 이런 문제들이 논의되어야 할 것이다. 기술 발달에 대해 윤리적 한계가 있어야 하는가?"
     },
     {
       "id": "reading-256-s008",
@@ -95,7 +95,7 @@
     {
       "word": "decide",
       "lemma": "decide",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "결정하다",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 105점)",
@@ -108,7 +108,7 @@
       "word": "offered",
       "lemma": "offer",
       "partOfSpeech": "v.",
-      "korean": "제안",
+      "korean": "주다, 제공하다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -120,7 +120,7 @@
       "word": "created",
       "lemma": "create",
       "partOfSpeech": "v.",
-      "korean": "창조하다",
+      "korean": "낳다, 만들어 내다",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -132,7 +132,7 @@
       "word": "technology",
       "lemma": "technology",
       "partOfSpeech": "n.",
-      "korean": "기술",
+      "korean": "과학 기술",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -153,18 +153,6 @@
       "freq": 1
     },
     {
-      "word": "twentieth",
-      "lemma": "twentieth",
-      "partOfSpeech": "adj.",
-      "korean": "스무 번째의, 20번째",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
       "word": "century",
       "lemma": "century",
       "partOfSpeech": "n.",
@@ -180,7 +168,7 @@
       "word": "advances",
       "lemma": "advance",
       "partOfSpeech": "n.",
-      "korean": "사전",
+      "korean": "발전, 진보",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -189,14 +177,14 @@
       "freq": 1
     },
     {
-      "word": "changed",
-      "lemma": "change",
-      "partOfSpeech": "v.",
-      "korean": "변화",
-      "score": 77,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 77점)",
+      "word": "profoundly",
+      "lemma": "profoundly",
+      "partOfSpeech": "adv.",
+      "korean": "깊이, 크게",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -204,7 +192,7 @@
       "word": "ethical",
       "lemma": "ethical",
       "partOfSpeech": "adj.",
-      "korean": "윤리적인, 도덕적인",
+      "korean": "윤리적인",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 76점)",
       "examTags": [
@@ -215,9 +203,9 @@
     },
     {
       "word": "troubling",
-      "lemma": "trouble",
-      "partOfSpeech": "v.",
-      "korean": "문제",
+      "lemma": "troubling",
+      "partOfSpeech": "adj.",
+      "korean": "골치 아픈, 곤란한",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -226,12 +214,12 @@
       "freq": 1
     },
     {
-      "word": "asked",
-      "lemma": "ask",
-      "partOfSpeech": "v.",
-      "korean": "묻다",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+      "word": "severely",
+      "lemma": "severely",
+      "partOfSpeech": "adv.",
+      "korean": "심하게 (severely ill 중병을 앓는)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -241,7 +229,7 @@
       "word": "medical",
       "lemma": "medical",
       "partOfSpeech": "adj.",
-      "korean": "의료",
+      "korean": "의학의 (medical treatments 치료법)",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
       "examTags": [
@@ -253,9 +241,21 @@
       "word": "technological",
       "lemma": "technological",
       "partOfSpeech": "adj.",
-      "korean": "과학기술의, 기술적인",
+      "korean": "과학 기술의",
       "score": 71,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "limits",
+      "lemma": "limit",
+      "partOfSpeech": "n.",
+      "korean": "한계, 제한",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

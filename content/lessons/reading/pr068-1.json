@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "한 끔찍한 사고가 나의 인생을 바꾸어 놓았다. 한 친구와 나는 심야 영화를 보고 집으로 차를 타고 오고 있었다. 우리가 교차로에 이르렀을 때, 우리는 정지 신호 앞에서 멈추었다. 어떤 차도 오는 것 같지 않았다. 그래서 나는 정지 신호를 무시하고 가기로 결정했다. 우리가 출발한 직후 나는 의식을 잃었다. 나중에야 나는 우리가 다른 방향에서 오고 있는 어떤 차와 추돌 했다는 것을 알았다. 그 사고는 내 친구를 평생동안 휠체어에서 보내게 만들었고 나는 아주 값비싼 교훈을 얻었다."
+      "text": "한 끔찍한 사고가 나의 인생을 바꾸어 놓았다. 한 친구와 나는 심야 영화를 보고 집으로 차를 타고 오고 있었다. 우리가 교차로에 이르렀을 때, 우리는 정지 신호 앞에서 멈추었다. 어떤 차도 오는 것 같지 않았다. 그래서 나는 정지 신호를 무시하고 가기로 결정했다. 우리가 출발한 직후 나는 의식을 잃었다. 나중에야 나는 우리가 다른 방향에서 오고 있는 어떤 차와 충돌했다는 것을 알았다. 그 사고는 내 친구를 평생동안 휠체어에서 보내게 만들었고 나는 아주 값비싼 교훈을 얻었다."
     },
     {
       "type": "choice",
@@ -73,7 +73,7 @@
     {
       "id": "reading-068-s006",
       "english": "Later I learned that we had hit a car coming from the other direction.",
-      "korean": "나중에야 나는 우리가 다른 방향에서 오고 있는 어떤 차와 추돌 했다는 것을 알았다."
+      "korean": "나중에야 나는 우리가 다른 방향에서 오고 있는 어떤 차와 충돌했다는 것을 알았다."
     },
     {
       "id": "reading-068-s007",
@@ -109,8 +109,8 @@
     {
       "word": "spend",
       "lemma": "spend",
-      "partOfSpeech": "n.",
-      "korean": "지출하다",
+      "partOfSpeech": "v.",
+      "korean": "(시간을) 보내다 (spend the rest of one's life 평생을 보내다)",
       "score": 100,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
       "examTags": [
@@ -122,7 +122,7 @@
       "word": "light",
       "lemma": "light",
       "partOfSpeech": "n.",
-      "korean": "빛",
+      "korean": "신호등 (red light 빨간불)",
       "score": 97,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 97점)",
       "examTags": [
@@ -144,8 +144,8 @@
     },
     {
       "word": "later",
-      "lemma": "late",
-      "partOfSpeech": "n.",
+      "lemma": "later",
+      "partOfSpeech": "adv.",
       "korean": "나중에",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -158,7 +158,7 @@
       "word": "changed",
       "lemma": "change",
       "partOfSpeech": "v.",
-      "korean": "변화",
+      "korean": "바꾸다",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 87점)",
       "examTags": [
@@ -170,7 +170,7 @@
       "word": "learned",
       "lemma": "learn",
       "partOfSpeech": "v.",
-      "korean": "배우다",
+      "korean": "알게 되다; 배우다",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -181,7 +181,7 @@
     {
       "word": "terrible",
       "lemma": "terrible",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "끔찍한",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
@@ -203,12 +203,12 @@
       "freq": 1
     },
     {
-      "word": "driving",
-      "lemma": "drive",
-      "partOfSpeech": "v.",
-      "korean": "드라이브",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "consciousness",
+      "lemma": "consciousness",
+      "partOfSpeech": "n.",
+      "korean": "의식 (lose consciousness 의식을 잃다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -218,7 +218,7 @@
       "word": "approached",
       "lemma": "approach",
       "partOfSpeech": "v.",
-      "korean": "접근하다",
+      "korean": "다가가다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -227,24 +227,24 @@
       "freq": 1
     },
     {
-      "word": "stopped",
-      "lemma": "stop",
-      "partOfSpeech": "v.",
-      "korean": "중지",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "intersection",
+      "lemma": "intersection",
+      "partOfSpeech": "n.",
+      "korean": "교차로",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "started",
-      "lemma": "start",
-      "partOfSpeech": "v.",
-      "korean": "시작",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "costly",
+      "lemma": "costly",
+      "partOfSpeech": "adj.",
+      "korean": "대가가 큰, 값비싼",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

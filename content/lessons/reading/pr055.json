@@ -25,15 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "In making a successful school, we must consider the relationships among the people involved in the school community. Teachers need to know their students well in order to be able to teach them effectively. In addition, teachers must maintain a good relationship with the parents, who are also an important part of the total community."
-  },
-  {
-   "type": "hints",
-   "text": "In a community built on trust and openness, where teachers, students, and parents show respect for each other, students feel secure and can develop the self-confidence which makes learning and personal growth possible. When students are drawn into meaningful relationships with their teachers and other adults, they are better able to see them as real people. This affects their whole attitude toward school and learning."
-  },
-  {
-   "type": "instruction",
-   "text": "In such an environment, teachers feel valued and supported. Parents feel included. As a result, they are more likely to contribute to the improvement of the school and the learning of the students. All members of the school community feel as though they belong and can make a positive contribution to the school."
+   "text": "In making a successful school, we must consider the relationships among the people involved in the school community. Teachers need to know their students well in order to be able to teach them effectively. In addition, teachers must maintain a good relationship with the parents, who are also an important part of the total community. In a community built on trust and openness, where teachers, students, and parents show respect for each other, students feel secure and can develop the self-confidence which makes learning and personal growth possible. When students are drawn into meaningful relationships with their teachers and other adults, they are better able to see them as real people. This affects their whole attitude toward school and learning. In such an environment, teachers feel valued and supported. Parents feel included. As a result, they are more likely to contribute to the improvement of the school and the learning of the students. All members of the school community feel as though they belong and can make a positive contribution to the school."
   },
   {
    "type": "choice",
@@ -86,7 +78,7 @@
   {
    "id": "reading-055-s007",
    "english": "In such an environment, teachers feel valued and supported.",
-   "korean": "이런 환경 속에서, 교사들은 존경을 받고 지지받는다고 느낀다."
+   "korean": "이런 환경 속에서, 교사들은 존중받고 지지받는다고 느낀다."
   },
   {
    "id": "reading-055-s008",
@@ -121,7 +113,7 @@
    "word": "teachers",
    "lemma": "teacher",
    "partOfSpeech": "n.",
-   "korean": "선생님",
+   "korean": "교사",
    "score": 104,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 104점)",
    "examTags": [
@@ -144,7 +136,7 @@
   {
    "word": "consider",
    "lemma": "consider",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "고려하다",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
@@ -157,7 +149,7 @@
    "word": "develop",
    "lemma": "develop",
    "partOfSpeech": "v.",
-   "korean": "발전시키다, 개발하다",
+   "korean": "키우다",
    "score": 101,
    "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
    "examTags": [
@@ -169,9 +161,9 @@
   },
   {
    "word": "supported",
-   "lemma": "support",
-   "partOfSpeech": "v.",
-   "korean": "지원하다",
+   "lemma": "supported",
+   "partOfSpeech": "adj.",
+   "korean": "지지받는",
    "score": 101,
    "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
    "examTags": [
@@ -182,8 +174,8 @@
   {
    "word": "belong",
    "lemma": "belong",
-   "partOfSpeech": "n.",
-   "korean": "속하다",
+   "partOfSpeech": "v.",
+   "korean": "소속되다, 소속감을 느끼다",
    "score": 100,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
    "examTags": [
@@ -206,8 +198,8 @@
   {
    "word": "affects",
    "lemma": "affect",
-   "partOfSpeech": "n.",
-   "korean": "영향을 미치다",
+   "partOfSpeech": "v.",
+   "korean": "영향을 주다",
    "score": 94,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
    "examTags": [
@@ -231,7 +223,7 @@
    "word": "trust",
    "lemma": "trust",
    "partOfSpeech": "n.",
-   "korean": "신뢰하다; 신뢰",
+   "korean": "신뢰",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -240,21 +232,21 @@
    "freq": 1
   },
   {
-   "word": "result",
-   "lemma": "result",
+   "word": "openness",
+   "lemma": "openness",
    "partOfSpeech": "n.",
-   "korean": "결과",
-   "score": 92,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "korean": "솔직함, 개방성",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
    "freq": 1
   },
   {
    "word": "contribute",
    "lemma": "contribute",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "기여하다",
    "score": 89,
    "reason": "수능 독해 논리 전개 핵심 어휘 (평가 점수: 89점)",
@@ -265,9 +257,9 @@
   },
   {
    "word": "involved",
-   "lemma": "involve",
-   "partOfSpeech": "v.",
-   "korean": "포함하다",
+   "lemma": "involved",
+   "partOfSpeech": "adj.",
+   "korean": "관련된, 참여하는 (the people involved in ~에 관련된 사람들)",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [

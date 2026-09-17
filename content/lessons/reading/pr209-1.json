@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "좋은 평판을 얻는 것은 바람직한 일이다. 동료와 지인들의 좋은 평가는 경시되어서는 안 된다. 인격과 평판 사이에는 흔히 큰 차이가 있다. 평판은 세상이 당분간 우리를 어떻게 믿는가에 대한 것이고, 인격은 진정한 우리의 본모습이다. 평판과 인격은 조화를 이룰 수도 있지만, 종종 빛과 어둠처럼 정반대이기도 하다."
+      "text": "좋은 평판을 얻는 것은 바람직하다. 동료와 지인들의 좋은 평가를 가볍게 여겨서는 안 된다. 그러나 인격과 평판 사이에는 흔히 큰 차이가 있다. 평판은 세상이 한동안 우리를 어떤 사람이라고 믿는 것이고, 인격은 우리의 진짜 모습이다. 평판과 인격은 일치할 수도 있지만, 빛과 어둠처럼 정반대인 경우도 많다."
     },
     {
       "type": "choice",
@@ -48,27 +48,27 @@
     {
       "id": "reading-209-s001",
       "english": "It is desirable to have a good reputation.",
-      "korean": "좋은 평판을 얻는 것은 바람직한 일이다."
+      "korean": "좋은 평판을 얻는 것은 바람직하다."
     },
     {
       "id": "reading-209-s002",
       "english": "The good opinion of our associates and acquaintances is not to be despised.",
-      "korean": "동료와 지인들의 좋은 평가는 경시되어서는 안 된다."
+      "korean": "동료와 지인들의 좋은 평가를 가볍게 여겨서는 안 된다."
     },
     {
       "id": "reading-209-s003",
-      "english": "There is often a great distinction between character and reputation.",
-      "korean": "인격과 평판 사이에는 흔히 큰 차이가 있다."
+      "english": "But there is often a great distinction between character and reputation.",
+      "korean": "그러나 인격과 평판 사이에는 흔히 큰 차이가 있다."
     },
     {
       "id": "reading-209-s004",
-      "english": "Reputation is what the world believes us for the time: character is what we truly are.",
-      "korean": "평판은 세상이 당분간 우리를 어떻게 믿는가에 대한 것이고, 인격은 진정한 우리의 본모습이다."
+      "english": "Reputation is what the world believes us to be for the time; character is what we truly are.",
+      "korean": "평판은 세상이 한동안 우리를 어떤 사람이라고 믿는 것이고, 인격은 우리의 진짜 모습이다."
     },
     {
       "id": "reading-209-s005",
       "english": "Reputation and character may be in harmony, but they frequently are as opposite as light and darkness.",
-      "korean": "평판과 인격은 조화를 이룰 수도 있지만, 종종 빛과 어둠처럼 정반대이기도 하다."
+      "korean": "평판과 인격은 일치할 수도 있지만, 빛과 어둠처럼 정반대인 경우도 많다."
     }
   ],
   "readingVocabulary": [
@@ -100,7 +100,7 @@
       "word": "opinion",
       "lemma": "opinion",
       "partOfSpeech": "n.",
-      "korean": "의견",
+      "korean": "의견, 평가 (good opinion 좋은 평가)",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -111,8 +111,8 @@
     {
       "word": "believes",
       "lemma": "believe",
-      "partOfSpeech": "n.",
-      "korean": "믿다",
+      "partOfSpeech": "v.",
+      "korean": "믿다, 여기다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -124,7 +124,7 @@
       "word": "character",
       "lemma": "character",
       "partOfSpeech": "n.",
-      "korean": "성격",
+      "korean": "인격, 됨됨이",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "harmony",
       "lemma": "harmony",
       "partOfSpeech": "n.",
-      "korean": "조화",
+      "korean": "조화 (in harmony 조화를 이루는)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -159,8 +159,8 @@
     {
       "word": "opposite",
       "lemma": "opposite",
-      "partOfSpeech": "n.",
-      "korean": "반대편",
+      "partOfSpeech": "adj.",
+      "korean": "정반대의",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -172,7 +172,7 @@
       "word": "darkness",
       "lemma": "darkness",
       "partOfSpeech": "n.",
-      "korean": "어둠, 암흑",
+      "korean": "어둠",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -184,7 +184,7 @@
       "word": "despised",
       "lemma": "despise",
       "partOfSpeech": "v.",
-      "korean": "경멸하다",
+      "korean": "경멸하다, 업신여기다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -196,7 +196,7 @@
       "word": "frequently",
       "lemma": "frequently",
       "partOfSpeech": "adv.",
-      "korean": "자주, 빈번하게",
+      "korean": "자주",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -205,14 +205,14 @@
       "freq": 1
     },
     {
-      "word": "world",
-      "lemma": "world",
+      "word": "distinction",
+      "lemma": "distinction",
       "partOfSpeech": "n.",
-      "korean": "세계",
-      "score": 74,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 74점)",
+      "korean": "차이, 구별",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -232,7 +232,7 @@
       "word": "acquaintances",
       "lemma": "acquaintance",
       "partOfSpeech": "n.",
-      "korean": "지인",
+      "korean": "아는 사람, 지인",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [

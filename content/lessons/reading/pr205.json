@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Many people are superstitious about black cats, Friday the thirteenth, or walking under ladders. But few people have ever heard about a strange superstition regarding eggs. It seems that many years ago, in the northen parts of Germany, people believed that you could beautify your complexion by simply making the sign of a cross in front of your face with an egg. But it couldn't be just any egg. It had to be the first egg laid by a chicken that had been hatched during the spring and that had laid its first egg shortly before Christmas of the same year."
+      "text": "Many people are superstitious about black cats, Friday the thirteenth, or walking under ladders. But few people have ever heard about a strange superstition regarding eggs. It seems that many years ago, in the northern parts of Germany, people believed that you could beautify your complexion by simply making the sign of a cross in front of your face with an egg. But it couldn't be just any egg. It had to be the first egg laid by a chicken that had been hatched during the spring and that had laid its first egg shortly before Christmas of the same year."
     },
     {
       "type": "choice",
@@ -57,7 +57,7 @@
     },
     {
       "id": "reading-205-s003",
-      "english": "It seems that many years ago, in the northen parts of Germany, people believed that you could beautify your complexion by simply making the sign of a cross in front of your face with an egg.",
+      "english": "It seems that many years ago, in the northern parts of Germany, people believed that you could beautify your complexion by simply making the sign of a cross in front of your face with an egg.",
       "korean": "여러 해 전 독일 북부 지역에서 사람들은 달걀로 얼굴 앞에서 십자가 표시를 하기만 하면 안색을 아름답게 할 수 있다고 믿었던 것 같다."
     },
     {
@@ -85,12 +85,12 @@
       "freq": 1
     },
     {
-      "word": "walking",
-      "lemma": "walk",
-      "partOfSpeech": "v.",
-      "korean": "걷다",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "cross",
+      "lemma": "cross",
+      "partOfSpeech": "n.",
+      "korean": "십자 (make the sign of a cross 십자를 긋다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -110,9 +110,9 @@
     },
     {
       "word": "laid",
-      "lemma": "laid",
+      "lemma": "lay",
       "partOfSpeech": "v.",
-      "korean": "놓았다, 낳았다",
+      "korean": "(알을) 낳다",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 83점)",
       "examTags": [
@@ -123,8 +123,8 @@
     {
       "word": "spring",
       "lemma": "spring",
-      "partOfSpeech": "v.",
-      "korean": "봄; 샘; 용수철",
+      "partOfSpeech": "n.",
+      "korean": "봄",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -136,7 +136,7 @@
       "word": "egg",
       "lemma": "egg",
       "partOfSpeech": "n.",
-      "korean": "계란",
+      "korean": "달걀",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 81점)",
       "examTags": [
@@ -148,7 +148,7 @@
       "word": "superstitious",
       "lemma": "superstitious",
       "partOfSpeech": "adj.",
-      "korean": "미신적인",
+      "korean": "미신을 믿는",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -157,24 +157,12 @@
       "freq": 1
     },
     {
-      "word": "thirteenth",
-      "lemma": "thirteenth",
-      "partOfSpeech": "adj.",
-      "korean": "13번째의, 열세 번째",
-      "score": 81,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "black",
-      "lemma": "black",
-      "partOfSpeech": "adj.",
-      "korean": "검은, 흑색의",
-      "score": 79,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+      "word": "superstition",
+      "lemma": "superstition",
+      "partOfSpeech": "n.",
+      "korean": "미신",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -182,9 +170,9 @@
     },
     {
       "word": "ladders",
-      "lemma": "ladders",
+      "lemma": "ladder",
       "partOfSpeech": "n.",
-      "korean": "사다리들",
+      "korean": "사다리",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -193,36 +181,24 @@
       "freq": 1
     },
     {
-      "word": "friday",
-      "lemma": "friday",
+      "word": "complexion",
+      "lemma": "complexion",
       "partOfSpeech": "n.",
-      "korean": "금요일",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "안색, 피부",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "chicken",
-      "lemma": "chicken",
-      "partOfSpeech": "n.",
-      "korean": "닭; 닭고기",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
-      "examTags": [
-        "독해필수"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "christmas",
-      "lemma": "christmas",
-      "partOfSpeech": "n.",
-      "korean": "크리스마스, 성탄절",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "beautify",
+      "lemma": "beautify",
+      "partOfSpeech": "v.",
+      "korean": "아름답게 하다",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -230,11 +206,35 @@
     },
     {
       "word": "regarding",
-      "lemma": "regard",
-      "partOfSpeech": "v.",
-      "korean": "존경하다",
+      "lemma": "regarding",
+      "partOfSpeech": "prep.",
+      "korean": "~에 관한",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "northern",
+      "lemma": "northern",
+      "partOfSpeech": "adj.",
+      "korean": "북쪽의",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "shortly",
+      "lemma": "shortly",
+      "partOfSpeech": "adv.",
+      "korean": "(shortly before) 직전에",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

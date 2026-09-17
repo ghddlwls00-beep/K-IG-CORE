@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "I believe that only one person in a thousand knows the trick of really living in the present. Most of us spend 59 minutes an hour living in the past with regret for lost joys, or shame for things badly done or in a future which we either long for or dread. The only way to live is to accept each minute as unrepeatable miracle"
+   "text": "I believe that only one person in a thousand knows the trick of really living in the present. Most of us spend 59 minutes an hour living in the past with regret for lost joys, or shame for things badly done or in a future which we either long for or dread. The only way to live is to accept each minute as an unrepeatable miracle."
   },
   {
    "type": "choice",
@@ -48,24 +48,24 @@
   {
    "id": "reading-016-s001",
    "english": "I believe that only one person in a thousand knows the trick of really living in the present.",
-   "korean": "나는 천명중의 단 한사람만이 현재에 정말로 살아가는 묘미를 안다고 믿는다."
+   "korean": "나는 천 명 중 단 한 명만이 진정으로 현재를 사는 비결을 안다고 믿는다."
   },
   {
    "id": "reading-016-s002",
    "english": "Most of us spend 59 minutes an hour living in the past with regret for lost joys, or shame for things badly done or in a future which we either long for or dread.",
-   "korean": "대부분의 우리는 잃어버린 기쁨이나 잘못 행한 일들에 대한 수치심 에 대한 후회를 가지고 과거에 살거나 또는 갈망하거나 두려운 미래 안에서 사는데 시간당 59분을 쓴다."
+   "korean": "우리 대부분은 한 시간 중 59분을, 잃어버린 기쁨에 대한 후회나 잘못한 일에 대한 부끄러움 속에서 과거를 살거나, 갈망하거나 두려워하는 미래 속에서 산다."
   },
   {
    "id": "reading-016-s003",
-   "english": "The only way to live is to accept each minute as unrepeatable miracle",
-   "korean": "생활하는 유일한 방법은 매분을 반복될수 없는 기적으로 받아들이는 것이다."
+   "english": "The only way to live is to accept each minute as an unrepeatable miracle.",
+   "korean": "살아가는 유일한 방법은 매 순간을 다시 오지 않을 기적으로 받아들이는 것이다."
   }
  ],
  "readingVocabulary": [
   {
    "word": "believe",
    "lemma": "believe",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "믿다",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
@@ -77,7 +77,7 @@
   {
    "word": "accept",
    "lemma": "accept",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "v.",
    "korean": "받아들이다",
    "score": 100,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
@@ -89,8 +89,8 @@
   {
    "word": "spend",
    "lemma": "spend",
-   "partOfSpeech": "n.",
-   "korean": "쓰다; (시간을) 보내다",
+   "partOfSpeech": "v.",
+   "korean": "(시간을) 보내다",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -102,7 +102,7 @@
    "word": "shame",
    "lemma": "shame",
    "partOfSpeech": "n.",
-   "korean": "수치심",
+   "korean": "부끄러움",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -126,7 +126,7 @@
    "word": "living",
    "lemma": "live",
    "partOfSpeech": "v.",
-   "korean": "살다, 거주하다",
+   "korean": "살다",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -135,12 +135,12 @@
    "freq": 2
   },
   {
-   "word": "thousand",
-   "lemma": "thousand",
-   "partOfSpeech": "n.",
-   "korean": "1000, 천",
-   "score": 79,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
+   "word": "dread",
+   "lemma": "dread",
+   "partOfSpeech": "v.",
+   "korean": "몹시 두려워하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -150,7 +150,7 @@
    "word": "present",
    "lemma": "present",
    "partOfSpeech": "n.",
-   "korean": "현재의; 선물; 발표하다",
+   "korean": "현재 (the present)",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -162,7 +162,7 @@
    "word": "unrepeatable",
    "lemma": "unrepeatable",
    "partOfSpeech": "adj.",
-   "korean": "반복할 수 없는, 되풀이할 수 없는",
+   "korean": "되풀이할 수 없는",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
    "examTags": [
@@ -174,7 +174,7 @@
    "word": "trick",
    "lemma": "trick",
    "partOfSpeech": "n.",
-   "korean": "속임수",
+   "korean": "비결, 요령",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -185,8 +185,8 @@
   {
    "word": "minute",
    "lemma": "minute",
-   "partOfSpeech": "adj.",
-   "korean": "미세한, 극소의; 분",
+   "partOfSpeech": "n.",
+   "korean": "분, 순간",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 77점)",
    "examTags": [
@@ -207,27 +207,27 @@
    "freq": 1
   },
   {
-   "word": "really",
-   "lemma": "really",
-   "partOfSpeech": "adv.",
-   "korean": "정말",
-   "score": 75,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
-   "examTags": [
-    "독해필수"
-   ],
-   "freq": 1
-  },
-  {
    "word": "regret",
    "lemma": "regret",
-   "partOfSpeech": "v.",
-   "korean": "후회하다, 유감으로 생각하다",
+   "partOfSpeech": "n.",
+   "korean": "후회",
    "score": 74,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
    "examTags": [
     "중학기초",
     "수능"
+   ],
+   "freq": 1
+  },
+  {
+   "word": "long",
+   "lemma": "long",
+   "partOfSpeech": "v.",
+   "korean": "갈망하다 (long for)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+   "examTags": [
+    "독해필수"
    ],
    "freq": 1
   }

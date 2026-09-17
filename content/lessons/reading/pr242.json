@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "A child will often ask for approval openly. \"Look at my painting! Isn't it pretty?\" But adults are generally less honest about their need for support. A grown-up who tried his or her best at something isn't like to ask, \"Didn't I do a good job!\" But the adult needs to hear it all the same. In other words, children and adults alike want to hear positive remarks. Therefore, don't forget to praise others when they need support."
+      "text": "A child will often ask for approval openly: \"Look at my painting! Isn't it pretty?\" But adults are generally less honest about their need for support. A grown-up who tried his or her best at something isn't likely to ask, \"Didn't I do a good job?\" But the adult needs to hear it all the same. In other words, children and adults alike want to hear positive remarks. Therefore, don't forget to praise others when they need support."
     },
     {
       "type": "choice",
@@ -47,33 +47,28 @@
   "readingSentences": [
     {
       "id": "reading-242-s001",
-      "english": "A child will often ask for approval openly.",
-      "korean": "아이는 종종 공개적으로 승인을 요청하는 경향이 있다."
+      "english": "A child will often ask for approval openly: \"Look at my painting! Isn't it pretty?\"",
+      "korean": "아이는 흔히 드러내 놓고 인정을 구한다. \"내 그림 좀 보세요! 예쁘지 않아요?\""
     },
     {
       "id": "reading-242-s002",
-      "english": "\"Look at my painting!",
-      "korean": "\"내 그림을 보세요."
+      "english": "But adults are generally less honest about their need for support.",
+      "korean": "그러나 어른은 대개 지지받고 싶은 마음을 덜 솔직하게 드러낸다."
     },
     {
       "id": "reading-242-s003",
-      "english": "Isn't it pretty?\" But adults are generally less honest about their need for support.",
-      "korean": "예쁘지 않아요?\" 그러나 어른들은 지지를 받고 싶은 욕구에 대해 일반적으로 (아이들보다) 덜 솔직하다."
+      "english": "A grown-up who tried his or her best at something isn't likely to ask, \"Didn't I do a good job?\" But the adult needs to hear it all the same.",
+      "korean": "무언가에 최선을 다한 어른이 \"나 잘하지 않았어요?\"라고 묻지는 않겠지만, 그래도 어른 역시 그 말을 들을 필요가 있다."
     },
     {
       "id": "reading-242-s004",
-      "english": "A grown-up who tried his or her best at something isn't like to ask, \"Didn't I do a good job!\" But the adult needs to hear it all the same.",
-      "korean": "어떤 일에 최선을 다한 어떤 어른이 \"내가 일을 잘 하지 않았나요?\" 라는 질문을 할 것 같지는 않다. 그러나 그는 그럼에도 불구하고 그 말을 들을 필요가 있다."
+      "english": "In other words, children and adults alike want to hear positive remarks.",
+      "korean": "다시 말해 아이든 어른이든 긍정적인 말을 듣고 싶어 한다."
     },
     {
       "id": "reading-242-s005",
-      "english": "In other words, children and adults alike want to hear positive remarks.",
-      "korean": "즉, 아이들과 어른들 똑같이 긍정적인 말을 듣기 원한다."
-    },
-    {
-      "id": "reading-242-s006",
       "english": "Therefore, don't forget to praise others when they need support.",
-      "korean": "그러므로 다른 사람들이 지원을 필요로 할 때 그들을 칭찬하는 것을 잊지 말아라."
+      "korean": "그러니 다른 사람이 지지를 필요로 할 때 칭찬하는 것을 잊지 마라."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +76,7 @@
       "word": "support",
       "lemma": "support",
       "partOfSpeech": "n.",
-      "korean": "지원하다",
+      "korean": "지지, 응원",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
       "examTags": [
@@ -92,8 +87,8 @@
     {
       "word": "honest",
       "lemma": "honest",
-      "partOfSpeech": "n.",
-      "korean": "정직한",
+      "partOfSpeech": "adj.",
+      "korean": "솔직한",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -102,22 +97,22 @@
       "freq": 1
     },
     {
-      "word": "words",
-      "lemma": "word",
+      "word": "remarks",
+      "lemma": "remark",
       "partOfSpeech": "n.",
-      "korean": "단어",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "말 (positive remarks 긍정적인 말)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "approval",
       "lemma": "approval",
-      "partOfSpeech": "adj.",
-      "korean": "승인",
+      "partOfSpeech": "n.",
+      "korean": "인정, 칭찬",
       "score": 81,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
       "examTags": [
@@ -128,8 +123,8 @@
     {
       "word": "ask",
       "lemma": "ask",
-      "partOfSpeech": "n.",
-      "korean": "묻다",
+      "partOfSpeech": "v.",
+      "korean": "(ask for) 구하다",
       "score": 78,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
       "examTags": [
@@ -140,7 +135,7 @@
     {
       "word": "painting",
       "lemma": "painting",
-      "partOfSpeech": "v.",
+      "partOfSpeech": "n.",
       "korean": "그림",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
@@ -151,9 +146,9 @@
     },
     {
       "word": "openly",
-      "lemma": "open",
+      "lemma": "openly",
       "partOfSpeech": "adv.",
-      "korean": "열다",
+      "korean": "드러내 놓고",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -165,7 +160,7 @@
       "word": "therefore",
       "lemma": "therefore",
       "partOfSpeech": "adv.",
-      "korean": "그러므로, 따라서",
+      "korean": "그러므로",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -177,8 +172,8 @@
     {
       "word": "forget",
       "lemma": "forget",
-      "partOfSpeech": "n.",
-      "korean": "잊어버리다",
+      "partOfSpeech": "v.",
+      "korean": "잊다",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -189,7 +184,7 @@
     {
       "word": "praise",
       "lemma": "praise",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "칭찬하다",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
@@ -201,8 +196,8 @@
     {
       "word": "need",
       "lemma": "need",
-      "partOfSpeech": "v.",
-      "korean": "필요하다; 필요",
+      "partOfSpeech": "n.",
+      "korean": "필요, 욕구 (need for support 지지받고 싶은 마음)",
       "score": 74,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
       "examTags": [
@@ -223,16 +218,16 @@
       "freq": 1
     },
     {
-      "word": "isn't",
-      "lemma": "isn't",
+      "word": "grown-up",
+      "lemma": "grown-up",
       "partOfSpeech": "n.",
-      "korean": "isn't (핵심 어휘)",
-      "score": 72,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 72점)",
+      "korean": "어른",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "adults",

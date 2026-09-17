@@ -25,35 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Work is desirable, first and foremost, as a preventive of boredom, for"
-  },
-  {
-   "type": "hints",
-   "text": "the boredom that a man feels when he is doing uninteresting work is"
-  },
-  {
-   "type": "instruction",
-   "text": "regarded as nothing in comparison with the boredom that he feels"
-  },
-  {
-   "type": "instruction",
-   "text": "when he has nothing to do with his days. With this advantage of"
-  },
-  {
-   "type": "instruction",
-   "text": "work another is associated, namely that it makes holidays more"
-  },
-  {
-   "type": "instruction",
-   "text": "delicious when they come. Provided a man does not have to work so"
-  },
-  {
-   "type": "instruction",
-   "text": "hard as to impair his vigor, he is likely to find more zest in his free"
-  },
-  {
-   "type": "instruction",
-   "text": "time than an idle man could find."
+   "text": "Work is desirable, first and foremost, as a preventive of boredom, for the boredom that a man feels when he is doing uninteresting work is regarded as nothing in comparison with the boredom that he feels when he has nothing to do with his days. With this advantage of work another is associated, namely that it makes holidays more delicious when they come. Provided a man does not have to work so hard as to impair his vigor, he is likely to find more zest in his free time than an idle man could find."
   },
   {
    "type": "choice",
@@ -75,26 +47,26 @@
  "readingSentences": [
   {
    "id": "reading-130-s001",
-   "english": "Work is desirable, first and foremost, as a preventive of boredom, for\n\nthe boredom that a man feels when he is doing uninteresting work is\n\nregarded as nothing in comparison with the boredom that he feels\n\nwhen he has nothing to do with his days.",
-   "korean": "일은 무엇보다도 지루함의 예방책으로써 바람직하다, 왜냐하면 사람이 흥미없는 일을 하고 있을 때 그 사람이 느끼는 지루함은 자신의 하루와 아무 관련이 없을 때 그가 느끼는 지루함에 비교하여 아무것도 아닌 것으로 간주되기 때문이다."
+   "english": "Work is desirable, first and foremost, as a preventive of boredom, for the boredom that a man feels when he is doing uninteresting work is regarded as nothing in comparison with the boredom that he feels when he has nothing to do with his days.",
+   "korean": "일이 바람직한 것은 무엇보다 지루함을 막아 주기 때문이다. 재미없는 일을 할 때 느끼는 지루함은 하루하루 할 일이 없을 때 느끼는 지루함에 비하면 아무것도 아니기 때문이다."
   },
   {
    "id": "reading-130-s002",
-   "english": "With this advantage of\n\nwork another is associated, namely that it makes holidays more\n\ndelicious when they come.",
-   "korean": "또 다른 장점이 이러한 장점에 연결된다. 즉 일은 휴일이 올 때 휴일을 더욱 달콤하게 만든다."
+   "english": "With this advantage of work another is associated, namely that it makes holidays more delicious when they come.",
+   "korean": "일의 이 장점에는 또 다른 장점이 따르는데, 일을 하면 휴일이 왔을 때 그 휴일이 훨씬 더 즐겁다는 것이다."
   },
   {
    "id": "reading-130-s003",
-   "english": "Provided a man does not have to work so\n\nhard as to impair his vigor, he is likely to find more zest in his free\n\ntime than an idle man could find.",
-   "korean": "만약에 한 사람이 자신의 정력을 손상시킬 만큼 열심히 일해야만 하지 않는다면 그는 게으른 사람이 찾을 수 있는 여가 시간에 더욱 큰 열정을 찾을 것 같다."
+   "english": "Provided a man does not have to work so hard as to impair his vigor, he is likely to find more zest in his free time than an idle man could find.",
+   "korean": "활력을 해칠 만큼 고되게 일할 필요만 없다면, 사람은 게으른 사람보다 여가에서 더 큰 즐거움을 찾을 것이다."
   }
  ],
  "readingVocabulary": [
   {
    "word": "hard",
    "lemma": "hard",
-   "partOfSpeech": "n.",
-   "korean": "어려운; 열심히",
+   "partOfSpeech": "adv.",
+   "korean": "고되게, 열심히",
    "score": 96,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
    "examTags": [
@@ -106,7 +78,7 @@
    "word": "boredom",
    "lemma": "boredom",
    "partOfSpeech": "n.",
-   "korean": "boredom (핵심 어휘)",
+   "korean": "지루함, 권태",
    "score": 89,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
    "examTags": [
@@ -116,9 +88,9 @@
   },
   {
    "word": "uninteresting",
-   "lemma": "unintereste",
-   "partOfSpeech": "v.",
-   "korean": "uninteresting (핵심 어휘)",
+   "lemma": "uninteresting",
+   "partOfSpeech": "adj.",
+   "korean": "재미없는",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -130,7 +102,7 @@
    "word": "regarded",
    "lemma": "regard",
    "partOfSpeech": "v.",
-   "korean": "존경하다",
+   "korean": "여기다 (be regarded as ~로 여겨지다)",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -141,8 +113,8 @@
   {
    "word": "provided",
    "lemma": "provided",
-   "partOfSpeech": "v.",
-   "korean": "만약 ~라면",
+   "partOfSpeech": "conj.",
+   "korean": "~라면 (= if)",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
    "examTags": [
@@ -165,8 +137,8 @@
   {
    "word": "preventive",
    "lemma": "preventive",
-   "partOfSpeech": "adj.",
-   "korean": "예방의, 방지하는",
+   "partOfSpeech": "n.",
+   "korean": "예방책 (a preventive of ~을 막는 것)",
    "score": 81,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 81점)",
    "examTags": [
@@ -177,8 +149,8 @@
   {
    "word": "foremost",
    "lemma": "foremost",
-   "partOfSpeech": "n.",
-   "korean": "가장 중요한, 맨 앞의",
+   "partOfSpeech": "adv.",
+   "korean": "(first and foremost) 무엇보다도",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -190,7 +162,7 @@
    "word": "comparison",
    "lemma": "comparison",
    "partOfSpeech": "n.",
-   "korean": "비교",
+   "korean": "비교 (in comparison with ~와 비교하면)",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -202,7 +174,7 @@
    "word": "associated",
    "lemma": "associate",
    "partOfSpeech": "v.",
-   "korean": "동료",
+   "korean": "연관 짓다 (be associated with ~와 연관되다)",
    "score": 76,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
    "examTags": [
@@ -211,22 +183,22 @@
    "freq": 1
   },
   {
-   "word": "feels",
-   "lemma": "feel",
+   "word": "zest",
+   "lemma": "zest",
    "partOfSpeech": "n.",
-   "korean": "느낌",
-   "score": 75,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
+   "korean": "즐거움, 열의",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 2
+   "freq": 1
   },
   {
    "word": "impair",
    "lemma": "impair",
-   "partOfSpeech": "n.",
-   "korean": "impair (핵심 어휘)",
+   "partOfSpeech": "v.",
+   "korean": "해치다, 손상시키다",
    "score": 75,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
    "examTags": [
@@ -250,7 +222,7 @@
    "word": "delicious",
    "lemma": "delicious",
    "partOfSpeech": "adj.",
-   "korean": "맛있는",
+   "korean": "즐거운, 달콤한",
    "score": 71,
    "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 71점)",
    "examTags": [

@@ -25,39 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "Poetry moves us to sympathize with the emotions of the poet himself"
-    },
-    {
-      "type": "hints",
-      "text": "or with those of the persons whom his imagination has created. We"
-    },
-    {
-      "type": "instruction",
-      "text": "witness their struggles, triumphs and failures. We feel their loves and"
-    },
-    {
-      "type": "instruction",
-      "text": "losses, joys and sorrows, hopes and fears, somewhat as if they were"
-    },
-    {
-      "type": "instruction",
-      "text": "our own. Though we sometimes suffer along with their anxieties and"
-    },
-    {
-      "type": "instruction",
-      "text": "sorrows, we receive a pleasure from the experience. Poetry provides"
-    },
-    {
-      "type": "instruction",
-      "text": "us with what is missing in our own lives - the experience of"
-    },
-    {
-      "type": "instruction",
-      "text": "imaginative pleasure. That is why we appreciate poetry in everyday"
-    },
-    {
-      "type": "instruction",
-      "text": "life."
+      "text": "Poetry moves us to sympathize with the emotions of the poet himself or with those of the persons whom his imagination has created. We witness their struggles, triumphs and failures. We feel their loves and losses, joys and sorrows, hopes and fears, somewhat as if they were our own. Though we sometimes suffer along with their anxieties and sorrows, we receive a pleasure from the experience. Poetry provides us with what is missing in our own lives - the experience of imaginative pleasure. That is why we appreciate poetry in everyday life."
     },
     {
       "type": "choice",
@@ -90,7 +58,7 @@
     {
       "id": "reading-136-s003",
       "english": "We feel their loves and losses, joys and sorrows, hopes and fears, somewhat as if they were our own.",
-      "korean": "우리는 그들의 사랑과 상실, 기쁨과 슬픔, 희망과 공포들을, 그 것들이 마치 우리들의 것인냥 느낀다."
+      "korean": "우리는 그들의 사랑과 상실, 기쁨과 슬픔, 희망과 공포들을, 마치 우리 자신의 것인 양 느낀다."
     },
     {
       "id": "reading-136-s004",
@@ -100,7 +68,7 @@
     {
       "id": "reading-136-s005",
       "english": "Poetry provides us with what is missing in our own lives - the experience of imaginative pleasure.",
-      "korean": "시란 우리의 삶에서 우리가 놓치고 있는 것을 우리에게 제공한다."
+      "korean": "시는 우리 삶에 없는 것, 즉 상상의 즐거움이라는 경험을 준다."
     },
     {
       "id": "reading-136-s006",
@@ -113,7 +81,7 @@
       "word": "created",
       "lemma": "create",
       "partOfSpeech": "v.",
-      "korean": "창조하다",
+      "korean": "만들어 내다, 창조하다",
       "score": 111,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 111점)",
       "examTags": [
@@ -125,7 +93,7 @@
       "word": "provides",
       "lemma": "provide",
       "partOfSpeech": "v.",
-      "korean": "제공하다, 공급하다",
+      "korean": "주다 (provide A with B A에게 B를 주다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -150,8 +118,8 @@
     {
       "word": "receive",
       "lemma": "receive",
-      "partOfSpeech": "adj.",
-      "korean": "받다",
+      "partOfSpeech": "v.",
+      "korean": "얻다, 받다",
       "score": 96,
       "reason": "중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 96점)",
       "examTags": [
@@ -163,7 +131,7 @@
       "word": "poetry",
       "lemma": "poetry",
       "partOfSpeech": "n.",
-      "korean": "시, 시가",
+      "korean": "시",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
       "examTags": [
@@ -173,14 +141,14 @@
       "freq": 3
     },
     {
-      "word": "hopes",
-      "lemma": "hope",
+      "word": "triumphs",
+      "lemma": "triumph",
       "partOfSpeech": "n.",
-      "korean": "희망",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "승리",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -188,7 +156,7 @@
       "word": "fears",
       "lemma": "fear",
       "partOfSpeech": "n.",
-      "korean": "무서움",
+      "korean": "두려움",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -197,14 +165,14 @@
       "freq": 1
     },
     {
-      "word": "joys",
-      "lemma": "joy",
+      "word": "struggles",
+      "lemma": "struggle",
       "partOfSpeech": "n.",
-      "korean": "기쁨",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "분투, 투쟁",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -212,7 +180,7 @@
       "word": "sympathize",
       "lemma": "sympathize",
       "partOfSpeech": "v.",
-      "korean": "동정하다",
+      "korean": "공감하다 (sympathize with)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -224,7 +192,7 @@
       "word": "appreciate",
       "lemma": "appreciate",
       "partOfSpeech": "v.",
-      "korean": "감사하다",
+      "korean": "감상하다, 즐기다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -248,7 +216,7 @@
       "word": "imagination",
       "lemma": "imagination",
       "partOfSpeech": "n.",
-      "korean": "상상력, 창의력",
+      "korean": "상상력",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -259,8 +227,8 @@
     {
       "word": "moves",
       "lemma": "move",
-      "partOfSpeech": "n.",
-      "korean": "움직이다",
+      "partOfSpeech": "v.",
+      "korean": "(마음을) 움직이다 (move A to do A가 ~하게 하다)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -269,12 +237,12 @@
       "freq": 1
     },
     {
-      "word": "everyday",
-      "lemma": "everyday",
-      "partOfSpeech": "n.",
-      "korean": "매일의, 일상의",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "word": "imaginative",
+      "lemma": "imaginative",
+      "partOfSpeech": "adj.",
+      "korean": "상상의",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

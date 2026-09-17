@@ -53,7 +53,7 @@
     {
       "id": "reading-108-s002",
       "english": "The first is the material culture, which is made up of all the physical objects that people make and give meaning to.",
-      "korean": "첫 째는 물질적 문화인데, 그것 은 사람들이 만들서 의미를 부여한 모든 가시적 물체들로 이루어져 있다."
+      "korean": "첫째는 물질문화로, 사람들이 만들고 의미를 부여한 모든 물리적 사물로 이루어져 있다."
     },
     {
       "id": "reading-108-s003",
@@ -63,7 +63,7 @@
     {
       "id": "reading-108-s004",
       "english": "We have a shared understanding of their purposes and meanings.",
-      "korean": "우리는 그 것들의 목적과와 의미에 대한 공감적 이해를 하고 있다."
+      "korean": "우리는 그것들의 목적과 의미를 함께 이해하고 있다."
     },
     {
       "id": "reading-108-s005",
@@ -73,7 +73,7 @@
     {
       "id": "reading-108-s006",
       "english": "Examples of nonmaterial culture are values and customs.",
-      "korean": "비물질적인 문화의 예로는 가치관과 관습이 있 다."
+      "korean": "비물질적인 문화의 예로는 가치관과 관습이 있다."
     },
     {
       "id": "reading-108-s007",
@@ -108,9 +108,9 @@
     },
     {
       "word": "understanding",
-      "lemma": "understand",
-      "partOfSpeech": "v.",
-      "korean": "이해하다",
+      "lemma": "understanding",
+      "partOfSpeech": "n.",
+      "korean": "이해",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -120,9 +120,9 @@
     },
     {
       "word": "shared",
-      "lemma": "share",
-      "partOfSpeech": "v.",
-      "korean": "공유하다",
+      "lemma": "shared",
+      "partOfSpeech": "adj.",
+      "korean": "공유된",
       "score": 99,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 99점)",
       "examTags": [
@@ -134,7 +134,7 @@
       "word": "purposes",
       "lemma": "purpose",
       "partOfSpeech": "n.",
-      "korean": "목적",
+      "korean": "목적, 용도",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -155,14 +155,14 @@
       "freq": 1
     },
     {
-      "word": "books",
-      "lemma": "book",
+      "word": "objects",
+      "lemma": "object",
       "partOfSpeech": "n.",
-      "korean": "책",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "korean": "사물",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -170,7 +170,7 @@
       "word": "nonmaterial",
       "lemma": "nonmaterial",
       "partOfSpeech": "adj.",
-      "korean": "비물질적인, 정신적인",
+      "korean": "비물질적인",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 89점)",
       "examTags": [
@@ -192,9 +192,9 @@
     },
     {
       "word": "elements",
-      "lemma": "elements",
+      "lemma": "element",
       "partOfSpeech": "n.",
-      "korean": "요소들, 성분들",
+      "korean": "요소",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -206,7 +206,7 @@
       "word": "categories",
       "lemma": "category",
       "partOfSpeech": "n.",
-      "korean": "범주, 부문",
+      "korean": "범주",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -220,7 +220,7 @@
       "word": "beliefs",
       "lemma": "belief",
       "partOfSpeech": "n.",
-      "korean": "신념, 믿음",
+      "korean": "믿음",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -233,7 +233,7 @@
       "word": "physical",
       "lemma": "physical",
       "partOfSpeech": "adj.",
-      "korean": "신체의; 물리적인",
+      "korean": "형태가 있는, 물질적인",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 76점)",
       "examTags": [
@@ -242,12 +242,12 @@
       "freq": 2
     },
     {
-      "word": "meaning",
-      "lemma": "meaning",
-      "partOfSpeech": "v.",
-      "korean": "의미",
-      "score": 76,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+      "word": "creations",
+      "lemma": "creation",
+      "partOfSpeech": "n.",
+      "korean": "창조물",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

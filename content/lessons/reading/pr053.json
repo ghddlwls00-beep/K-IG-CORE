@@ -48,7 +48,7 @@
   {
    "id": "reading-053-s001",
    "english": "Even our most highly educated guesses often go disastrously wrong.",
-   "korean": "우리의 가장 많이 교육받은 사람들의 추측도 종종 비참하게 잘못될 수 있다."
+   "korean": "충분히 알고서 하는 추측조차 종종 크게 빗나간다."
   },
   {
    "id": "reading-053-s002",
@@ -78,25 +78,25 @@
   {
    "id": "reading-053-s007",
    "english": "They help us narrow the infinity of possible futures down to one or, at least, a few.",
-   "korean": "그들은 우리를 무한히 가능한 미래를 하나, 혹은 적어도 몇 개로 좁히게 해주는데 도움을 준다."
+   "korean": "그들은 무한히 많은 가능한 미래를 하나, 또는 적어도 몇 개로 좁히도록 도와준다."
   },
   {
    "id": "reading-053-s008",
    "english": "We look at the present and see the present; they see the seeds of the future.",
-   "korean": "우리는 현재를 살펴보면서 미래를 보지만 그들은 미래의 씨앗들을 본다."
+   "korean": "우리는 현재를 보고 현재만 보지만, 그들은 미래의 씨앗을 본다."
   },
   {
    "id": "reading-053-s009",
    "english": "They are our advance scouts, going secretly over the border to bring back priceless information to help the world to come.",
-   "korean": "그들은 앞으로의 세상을 돕기 위한 귀중한 정보를 가져오기 위해 비밀스럽게 경계선을 넘어 가는 우리의 정찰대이다."
+   "korean": "그들은 다가올 세상에 도움이 될 귀중한 정보를 가져오려고 몰래 국경을 넘는 우리의 선발 정찰대이다."
   }
  ],
  "readingVocabulary": [
   {
    "word": "highly",
-   "lemma": "high",
+   "lemma": "highly",
    "partOfSpeech": "adv.",
-   "korean": "높다",
+   "korean": "매우, 고도로",
    "score": 100,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 100점)",
    "examTags": [
@@ -107,7 +107,7 @@
   {
    "word": "difficult",
    "lemma": "difficult",
-   "partOfSpeech": "n.",
+   "partOfSpeech": "adj.",
    "korean": "어려운",
    "score": 94,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -119,8 +119,8 @@
   {
    "word": "narrow",
    "lemma": "narrow",
-   "partOfSpeech": "n.",
-   "korean": "좁은",
+   "partOfSpeech": "v.",
+   "korean": "좁히다 (narrow down)",
    "score": 92,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
    "examTags": [
@@ -131,8 +131,8 @@
   {
    "word": "educated",
    "lemma": "educated",
-   "partOfSpeech": "v.",
-   "korean": "교육받은",
+   "partOfSpeech": "adj.",
+   "korean": "근거 있는 (educated guess 지식에 근거한 추측)",
    "score": 86,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
    "examTags": [
@@ -141,12 +141,12 @@
    "freq": 1
   },
   {
-   "word": "going",
-   "lemma": "go",
+   "word": "foretell",
+   "lemma": "foretell",
    "partOfSpeech": "v.",
-   "korean": "가다",
-   "score": 82,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
+   "korean": "예언하다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -156,7 +156,7 @@
    "word": "bring",
    "lemma": "bring",
    "partOfSpeech": "v.",
-   "korean": "가져오다",
+   "korean": "가져오다 (bring back 가지고 돌아오다)",
    "score": 82,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
    "examTags": [
@@ -165,14 +165,14 @@
    "freq": 1
   },
   {
-   "word": "world",
-   "lemma": "world",
+   "word": "infinity",
+   "lemma": "infinity",
    "partOfSpeech": "n.",
-   "korean": "세계",
-   "score": 82,
-   "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 82점)",
+   "korean": "무한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
    "freq": 1
   },
@@ -192,7 +192,7 @@
    "word": "guesses",
    "lemma": "guess",
    "partOfSpeech": "n.",
-   "korean": "추측하다",
+   "korean": "추측",
    "score": 79,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
    "examTags": [
@@ -214,9 +214,9 @@
   },
   {
    "word": "disastrously",
-   "lemma": "disastrous",
+   "lemma": "disastrously",
    "partOfSpeech": "adv.",
-   "korean": "비참한",
+   "korean": "처참하게, 크게",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -227,8 +227,8 @@
   {
    "word": "wrong",
    "lemma": "wrong",
-   "partOfSpeech": "n.",
-   "korean": "잘못된, 틀린",
+   "partOfSpeech": "adv.",
+   "korean": "(go wrong) 빗나가다, 잘못되다",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -239,8 +239,8 @@
   {
    "word": "advance",
    "lemma": "advance",
-   "partOfSpeech": "n.",
-   "korean": "전진하다",
+   "partOfSpeech": "adj.",
+   "korean": "앞서 가는, 선발의 (advance scouts 선발 정찰대)",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -251,8 +251,8 @@
   {
    "word": "priceless",
    "lemma": "priceless",
-   "partOfSpeech": "n.",
-   "korean": "귀중한",
+   "partOfSpeech": "adj.",
+   "korean": "매우 귀중한",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [

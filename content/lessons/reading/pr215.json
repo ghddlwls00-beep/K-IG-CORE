@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "People are happy with developments in medicine. Then they worry about the increased number of births. Scientists make great advances in agricultural chemistry, greatly increasing our food supply. Then our rivers become so polluted that we cannot even swim in them. We are happy with the developments in air transportation and impressed by the great airplanes. Then we are frightened by the horrors of air crash or air war. We are excited by the fact that space can now be entered. But we will undoubtedly see the other side there, too."
+      "text": "People are happy with developments in medicine. Then they worry about the rapid growth of the population. Scientists make great advances in agricultural chemistry, greatly increasing our food supply. Then our rivers become so polluted that we cannot even swim in them. We are happy with the developments in air transportation and impressed by the great airplanes. Then we are frightened by the horrors of air crashes or air war. We are excited by the fact that space can now be entered. But we will undoubtedly see the other side there, too."
     },
     {
       "type": "choice",
@@ -48,50 +48,50 @@
     {
       "id": "reading-215-s001",
       "english": "People are happy with developments in medicine.",
-      "korean": "사람들은 의학의 발전에 행복해 한다."
+      "korean": "사람들은 의학의 발전을 반긴다."
     },
     {
       "id": "reading-215-s002",
-      "english": "Then they worry about the increased number of births.",
-      "korean": "그러나 출산증가에 대해서는 염려한다."
+      "english": "Then they worry about the rapid growth of the population.",
+      "korean": "그러다가 빠르게 늘어나는 인구를 걱정한다."
     },
     {
       "id": "reading-215-s003",
       "english": "Scientists make great advances in agricultural chemistry, greatly increasing our food supply.",
-      "korean": "과학자들이 농화학 분야에서 거대한 진보를 이루어, 식량공급을 크게 증가시켰다."
+      "korean": "과학자들은 농화학에서 큰 진보를 이루어 식량 공급을 크게 늘린다."
     },
     {
       "id": "reading-215-s004",
       "english": "Then our rivers become so polluted that we cannot even swim in them.",
-      "korean": "그러나 우리의 강은 너무 오염되 수영도 할 수 없다."
+      "korean": "그러다가 강이 너무 오염되어 수영조차 할 수 없게 된다."
     },
     {
       "id": "reading-215-s005",
       "english": "We are happy with the developments in air transportation and impressed by the great airplanes.",
-      "korean": "우리는 항공교통의 발전에 기뻐하고 거대한 비행기에 감동 받는다."
+      "korean": "우리는 항공 교통의 발전을 반기고 거대한 비행기에 감탄한다."
     },
     {
       "id": "reading-215-s006",
-      "english": "Then we are frightened by the horrors of air crash or air war.",
-      "korean": "그러나 비행기의 추락이나 공중전의 공포에 겁먹는다."
+      "english": "Then we are frightened by the horrors of air crashes or air war.",
+      "korean": "그러다가 비행기 추락이나 공중전의 참상에 겁을 먹는다."
     },
     {
       "id": "reading-215-s007",
       "english": "We are excited by the fact that space can now be entered.",
-      "korean": "우리는 지금 우주에 들어갈 수 있다는 사실에 흥분한다."
+      "korean": "이제 우주에 들어갈 수 있다는 사실에 우리는 들뜬다."
     },
     {
       "id": "reading-215-s008",
       "english": "But we will undoubtedly see the other side there, too.",
-      "korean": "그러나 우리는 또한 분명히 그에 있어 다른 측면을 보게 될 것이다."
+      "korean": "그러나 분명 그곳에서도 우리는 다른 면을 보게 될 것이다."
     }
   ],
   "readingVocabulary": [
     {
       "word": "happy",
       "lemma": "happy",
-      "partOfSpeech": "n.",
-      "korean": "행복한",
+      "partOfSpeech": "adj.",
+      "korean": "기쁜 (be happy with ~에 만족하다)",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
       "examTags": [
@@ -103,7 +103,7 @@
       "word": "medicine",
       "lemma": "medicine",
       "partOfSpeech": "n.",
-      "korean": "약; 의학",
+      "korean": "의학",
       "score": 104,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
       "examTags": [
@@ -112,21 +112,9 @@
       "freq": 1
     },
     {
-      "word": "increased",
-      "lemma": "increase",
-      "partOfSpeech": "v.",
-      "korean": "증가하다",
-      "score": 101,
-      "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
-      "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
       "word": "worry",
       "lemma": "worry",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "걱정하다",
       "score": 92,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
@@ -136,34 +124,22 @@
       "freq": 1
     },
     {
-      "word": "war",
-      "lemma": "war",
+      "word": "advances",
+      "lemma": "advance",
       "partOfSpeech": "n.",
-      "korean": "전쟁",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "발전, 진보",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
-      ],
-      "freq": 1
-    },
-    {
-      "word": "fact",
-      "lemma": "fact",
-      "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
-      "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "developments",
-      "lemma": "developments",
+      "lemma": "development",
       "partOfSpeech": "n.",
-      "korean": "발전들, 새로운 전개",
+      "korean": "발전",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -173,9 +149,9 @@
     },
     {
       "word": "polluted",
-      "lemma": "pollute",
-      "partOfSpeech": "v.",
-      "korean": "오염시키다",
+      "lemma": "polluted",
+      "partOfSpeech": "adj.",
+      "korean": "오염된",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -187,7 +163,7 @@
       "word": "impressed",
       "lemma": "impress",
       "partOfSpeech": "v.",
-      "korean": "감동을 주다",
+      "korean": "감명을 주다 (be impressed by ~에 감명받다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -199,7 +175,7 @@
       "word": "frightened",
       "lemma": "frighten",
       "partOfSpeech": "v.",
-      "korean": "겁을 주다",
+      "korean": "겁주다 (be frightened by ~에 겁을 먹다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -211,7 +187,7 @@
       "word": "excited",
       "lemma": "excite",
       "partOfSpeech": "v.",
-      "korean": "흥분시키다",
+      "korean": "흥분시키다 (be excited by ~에 들뜨다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -235,7 +211,7 @@
       "word": "undoubtedly",
       "lemma": "undoubtedly",
       "partOfSpeech": "adv.",
-      "korean": "의심할 여지 없이, 확실히",
+      "korean": "의심할 여지 없이",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -244,16 +220,40 @@
       "freq": 1
     },
     {
-      "word": "air",
-      "lemma": "air",
-      "partOfSpeech": "n.",
-      "korean": "공기",
-      "score": 73,
-      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 73점)",
+      "word": "rapid",
+      "lemma": "rapid",
+      "partOfSpeech": "adj.",
+      "korean": "빠른",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
-      "freq": 3
+      "freq": 1
+    },
+    {
+      "word": "agricultural",
+      "lemma": "agricultural",
+      "partOfSpeech": "adj.",
+      "korean": "농업의",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
+    },
+    {
+      "word": "horrors",
+      "lemma": "horror",
+      "partOfSpeech": "n.",
+      "korean": "공포, 참상",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
+      "examTags": [
+        "독해필수"
+      ],
+      "freq": 1
     }
   ]
 }

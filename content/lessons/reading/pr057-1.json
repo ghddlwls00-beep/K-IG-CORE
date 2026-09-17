@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "모든 여행자들은 출발하기 전에 그들이 적절한 여행 보험에 들었는지 확실히 해야 한다. 적당한 보험 증권은 휴가 전이나 휴가 동안 질병이나 사고로부터 발생하는 의료비용과 휴가비의 손해, 그리고 휴일의 취소에 대한 보상을 제공해야 한다. 당신의 보험 증권과 비상 연락 설명서를 항상 휴대하라. 출발하기 전에, 당신은 당신의 관광 담당자에게 여행 기간을 포함하는 보험 증권의 사본을 제출하도록 요구받을 것이다. 이러한 통지를 하지 않으면, 당신은 그 그룹과 함께 여행하지 못하게 될 것이다."
+      "text": "모든 여행자들은 출발하기 전에 그들이 적절한 여행 보험에 들었는지 확실히 해야 한다. 적당한 보험 증권은 휴가 전이나 휴가 동안 질병이나 사고로부터 발생하는 의료비용과 휴가비의 손해, 그리고 휴일의 취소에 대한 보상을 제공해야 한다. 당신의 보험 증권과 비상 연락처를 항상 휴대하라. 출발하기 전에, 당신은 당신의 관광 담당자에게 여행 기간을 포함하는 보험 증권의 사본을 제출하도록 요구받을 것이다. 이 정보가 없으면, 당신은 그 그룹과 함께 여행하지 못하게 될 것이다."
     },
     {
       "type": "choice",
@@ -58,7 +58,7 @@
     {
       "id": "reading-057-s003",
       "english": "Please keep your insurance policy and emergency contact details with you at all times.",
-      "korean": "당신의 보험 증권과 비상 연락 설명서를 항상 휴대하라."
+      "korean": "당신의 보험 증권과 비상 연락처를 항상 휴대하라."
     },
     {
       "id": "reading-057-s004",
@@ -68,7 +68,7 @@
     {
       "id": "reading-057-s005",
       "english": "Without this information, you will not be allowed to travel with the group.",
-      "korean": "이러한 통지를 하지 않으면, 당신은 그 그룹과 함께 여행하지 못하게 될 것이다."
+      "korean": "이 정보가 없으면, 당신은 그 그룹과 함께 여행하지 못하게 될 것이다."
     }
   ],
   "readingVocabulary": [
@@ -76,7 +76,7 @@
       "word": "allowed",
       "lemma": "allow",
       "partOfSpeech": "v.",
-      "korean": "허용하다",
+      "korean": "허락하다 (be allowed to)",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [
@@ -88,7 +88,7 @@
       "word": "provide",
       "lemma": "provide",
       "partOfSpeech": "v.",
-      "korean": "제공하다, 공급하다",
+      "korean": "제공하다 (provide A with B A에게 B를 주다)",
       "score": 106,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 106점)",
       "examTags": [
@@ -102,7 +102,7 @@
       "word": "required",
       "lemma": "require",
       "partOfSpeech": "v.",
-      "korean": "요구하다",
+      "korean": "요구하다 (be required to ~해야 한다)",
       "score": 101,
       "reason": "중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 101점)",
       "examTags": [
@@ -126,7 +126,7 @@
       "word": "illness",
       "lemma": "illness",
       "partOfSpeech": "n.",
-      "korean": "질병, 아픔",
+      "korean": "질병",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -138,7 +138,7 @@
       "word": "policy",
       "lemma": "policy",
       "partOfSpeech": "n.",
-      "korean": "정책",
+      "korean": "보험 증권 (insurance policy)",
       "score": 92,
       "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 92점)",
       "examTags": [
@@ -161,8 +161,8 @@
     {
       "word": "adequate",
       "lemma": "adequate",
-      "partOfSpeech": "v.",
-      "korean": "적절한",
+      "partOfSpeech": "adj.",
+      "korean": "적절한, 충분한",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -174,7 +174,7 @@
       "word": "ensure",
       "lemma": "ensure",
       "partOfSpeech": "v.",
-      "korean": "보장하다, 확실하게 하다",
+      "korean": "확실히 하다",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -184,9 +184,9 @@
     },
     {
       "word": "travellers",
-      "lemma": "travellers",
+      "lemma": "traveller",
       "partOfSpeech": "n.",
-      "korean": "여행자들, 행인들",
+      "korean": "여행자 (영국식 철자)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -197,7 +197,7 @@
     {
       "word": "depart",
       "lemma": "depart",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "출발하다",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
@@ -207,12 +207,12 @@
       "freq": 1
     },
     {
-      "word": "information",
-      "lemma": "information",
+      "word": "coverage",
+      "lemma": "coverage",
       "partOfSpeech": "n.",
-      "korean": "정보",
-      "score": 77,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+      "korean": "(보험의) 보장",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -222,7 +222,7 @@
       "word": "arising",
       "lemma": "arise",
       "partOfSpeech": "v.",
-      "korean": "일어나다",
+      "korean": "생기다 (arising from ~에서 생기는)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -234,7 +234,7 @@
       "word": "covering",
       "lemma": "cover",
       "partOfSpeech": "v.",
-      "korean": "커버",
+      "korean": "(보험이 기간을) 보장하다",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [

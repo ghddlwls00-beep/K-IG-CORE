@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Changes in heating systems of buildings can also lead to disease. In the 1970s, there was a worldwide shortage of heating oil. To save fuel, hotels in the United States lowered the temperature in their heating systems. This lower temperature was just perfect for a deadly germ which grows in heating pipes. When the heated air was blown into the rooms of a hotel, it carried. Many visitors became ill and several died."
+   "text": "Changes in the water systems of buildings can also lead to disease. In the 1970s, there was a worldwide shortage of oil. To save energy, many buildings lowered the temperature of their hot water. Water that is warm but not hot is just right for a deadly germ called Legionella. The germ also grows in the water of air-conditioning cooling towers, and people become infected when they breathe in tiny drops of that water in mist or spray. In 1976, more than 180 people who had stayed at or visited a hotel in Philadelphia became ill, and 29 of them died."
   },
   {
    "type": "choice",
@@ -47,33 +47,33 @@
  "readingSentences": [
   {
    "id": "reading-129-s001",
-   "english": "Changes in heating systems of buildings can also lead to disease.",
-   "korean": "건물의 난방 시스템의 변화가 또한 질병을 일으킨다."
+   "english": "Changes in the water systems of buildings can also lead to disease.",
+   "korean": "건물의 물 관련 설비가 바뀌어도 병이 생길 수 있다."
   },
   {
    "id": "reading-129-s002",
-   "english": "In the 1970s, there was a worldwide shortage of heating oil.",
-   "korean": "1970년대에 세계적인 난방 오일 부족이 있었다."
+   "english": "In the 1970s, there was a worldwide shortage of oil.",
+   "korean": "1970년대에 전 세계적으로 석유가 부족했다."
   },
   {
    "id": "reading-129-s003",
-   "english": "To save fuel, hotels in the United States lowered the temperature in their heating systems.",
-   "korean": "연료를 절약하기 위해 미국의 호텔은 난방 시스템의 온도를 낮추었다."
+   "english": "To save energy, many buildings lowered the temperature of their hot water.",
+   "korean": "에너지를 아끼려고 많은 건물이 온수의 온도를 낮추었다."
   },
   {
    "id": "reading-129-s004",
-   "english": "This lower temperature was just perfect for a deadly germ which grows in heating pipes.",
-   "korean": "이러한 낮은 온도는 난방 파이프에 자라는 치명적인 세균에 대해 완벽했다."
+   "english": "Water that is warm but not hot is just right for a deadly germ called Legionella.",
+   "korean": "따뜻하지만 뜨겁지 않은 물은 레지오넬라라는 치명적인 세균이 자라기에 딱 알맞다."
   },
   {
    "id": "reading-129-s005",
-   "english": "When the heated air was blown into the rooms of a hotel, it carried.",
-   "korean": "가열된 공기가 호텔의 방으로 날려갈 때 가열된 공기는 세균을 운반한다."
+   "english": "The germ also grows in the water of air-conditioning cooling towers, and people become infected when they breathe in tiny drops of that water in mist or spray.",
+   "korean": "이 세균은 에어컨 냉각탑의 물에서도 자라며, 사람은 그 물이 안개나 물보라가 되어 흩어진 작은 물방울을 들이마셔 감염된다."
   },
   {
    "id": "reading-129-s006",
-   "english": "Many visitors became ill and several died.",
-   "korean": "많은 방문자들은 아프게 되고 몇몇은 죽었다."
+   "english": "In 1976, more than 180 people who had stayed at or visited a hotel in Philadelphia became ill, and 29 of them died.",
+   "korean": "1976년 필라델피아의 한 호텔에 묵거나 그곳을 찾은 180여 명이 병에 걸렸고, 그중 29명이 목숨을 잃었다."
   }
  ],
  "readingVocabulary": [
@@ -81,7 +81,7 @@
    "word": "lead",
    "lemma": "lead",
    "partOfSpeech": "v.",
-   "korean": "이끌다, 초래하다",
+   "korean": "(lead to) ~을 일으키다",
    "score": 105,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
    "examTags": [
@@ -103,34 +103,34 @@
    "freq": 1
   },
   {
-   "word": "heating",
-   "lemma": "heat",
-   "partOfSpeech": "v.",
-   "korean": "열",
-   "score": 96,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 96점)",
+   "word": "hot",
+   "lemma": "hot",
+   "partOfSpeech": "adj.",
+   "korean": "뜨거운",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 4
+   "freq": 2
   },
   {
-   "word": "lower",
-   "lemma": "low",
-   "partOfSpeech": "n.",
-   "korean": "낮음",
-   "score": 92,
-   "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+   "word": "warm",
+   "lemma": "warm",
+   "partOfSpeech": "adj.",
+   "korean": "따뜻한",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
-    "중학기초"
+    "독해필수"
    ],
    "freq": 1
   },
   {
    "word": "save",
    "lemma": "save",
-   "partOfSpeech": "n.",
-   "korean": "구하다; 저축하다",
+   "partOfSpeech": "v.",
+   "korean": "절약하다 (save energy 에너지를 아끼다)",
    "score": 88,
    "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
    "examTags": [
@@ -154,13 +154,13 @@
    "word": "systems",
    "lemma": "system",
    "partOfSpeech": "n.",
-   "korean": "시스템",
+   "korean": "설비 (water systems 급수 설비)",
    "score": 84,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 2
+   "freq": 1
   },
   {
    "word": "buildings",
@@ -172,25 +172,25 @@
    "examTags": [
     "독해필수"
    ],
-   "freq": 1
+   "freq": 2
   },
   {
-   "word": "several",
-   "lemma": "several",
-   "partOfSpeech": "adj.",
-   "korean": "여러",
-   "score": 79,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 79점)",
+   "word": "germ",
+   "lemma": "germ",
+   "partOfSpeech": "n.",
+   "korean": "세균",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
-   "freq": 1
+   "freq": 2
   },
   {
    "word": "died",
-   "lemma": "died",
+   "lemma": "die",
    "partOfSpeech": "v.",
-   "korean": "사망했다, 숨졌다",
+   "korean": "죽다",
    "score": 78,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 78점)",
    "examTags": [
@@ -199,12 +199,12 @@
    "freq": 1
   },
   {
-   "word": "visitors",
-   "lemma": "visitor",
-   "partOfSpeech": "n.",
-   "korean": "방문객",
-   "score": 77,
-   "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
+   "word": "infected",
+   "lemma": "infected",
+   "partOfSpeech": "adj.",
+   "korean": "감염된 (become infected 감염되다)",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -212,9 +212,9 @@
   },
   {
    "word": "lowered",
-   "lemma": "lowered",
+   "lemma": "lower",
    "partOfSpeech": "v.",
-   "korean": "낮아진, 인하된",
+   "korean": "낮추다",
    "score": 76,
    "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
    "examTags": [
@@ -223,12 +223,12 @@
    "freq": 1
   },
   {
-   "word": "carried",
-   "lemma": "carry",
+   "word": "breathe",
+   "lemma": "breathe",
    "partOfSpeech": "v.",
-   "korean": "나르다",
-   "score": 76,
-   "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
+   "korean": "(breathe in) 들이마시다",
+   "score": 80,
+   "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
    "examTags": [
     "독해필수"
    ],
@@ -244,7 +244,7 @@
    "examTags": [
     "독해필수"
    ],
-   "freq": 2
+   "freq": 1
   }
  ]
 }

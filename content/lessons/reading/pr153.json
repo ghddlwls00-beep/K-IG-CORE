@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "A symphony orchestra can fill a whole building and make it ring with music. But this beautiful sound, which can be joyful or sad, exciting or relaxing, is the result of planning and working together. Just as painters choose different color for their works of art, composers choose the sound of different instruments to produce their music. The purpose of a symphony orchestra is not to play section by section. The word \"symphony\" means \"sounding together.\" This sounding together is what creates the wonderful music we all love."
+      "text": "A symphony orchestra can fill a whole building and make it ring with music. But this beautiful sound, which can be joyful or sad, exciting or relaxing, is the result of planning and working together. Just as painters choose different colors for their works of art, composers choose the sound of different instruments to produce their music. The purpose of a symphony orchestra is not to play section by section. The word \"symphony\" means \"sounding together.\" This sounding together is what creates the wonderful music we all love."
     },
     {
       "type": "choice",
@@ -57,18 +57,18 @@
     },
     {
       "id": "reading-153-s003",
-      "english": "Just as painters choose different color for their works of art, composers choose the sound of different instruments to produce their music.",
+      "english": "Just as painters choose different colors for their works of art, composers choose the sound of different instruments to produce their music.",
       "korean": "화가가 자기 미술 작품을 위해서 다양한 색을 선택하는 것처럼 작곡가들은 음악을 만들기 위해서 여러 가지 악기의 소리를 선택한다."
     },
     {
       "id": "reading-153-s004",
       "english": "The purpose of a symphony orchestra is not to play section by section.",
-      "korean": "교향악단의 목적은 한 악절 한 악절을 연주하는 것이 아니다."
+      "korean": "교향악단의 목적은 파트별로 따로 연주하는 것이 아니다."
     },
     {
       "id": "reading-153-s005",
       "english": "The word \"symphony\" means \"sounding together.\"",
-      "korean": "'교향곡'이이란 단어는 '함께 소리를 내는 것'을 의미한다."
+      "korean": "'교향곡(symphony)'이라는 말은 '함께 울림'을 뜻한다."
     },
     {
       "id": "reading-153-s006",
@@ -80,7 +80,7 @@
     {
       "word": "music",
       "lemma": "music",
-      "partOfSpeech": "adj.",
+      "partOfSpeech": "n.",
       "korean": "음악",
       "score": 122,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 122점)",
@@ -93,7 +93,7 @@
       "word": "sounding",
       "lemma": "sound",
       "partOfSpeech": "v.",
-      "korean": "소리",
+      "korean": "울리다 (sounding together 함께 울림)",
       "score": 114,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 114점)",
       "examTags": [
@@ -104,8 +104,8 @@
     {
       "word": "creates",
       "lemma": "create",
-      "partOfSpeech": "n.",
-      "korean": "창조하다",
+      "partOfSpeech": "v.",
+      "korean": "만들어 내다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -116,8 +116,8 @@
     {
       "word": "different",
       "lemma": "different",
-      "partOfSpeech": "n.",
-      "korean": "다른",
+      "partOfSpeech": "adj.",
+      "korean": "여러, 다른",
       "score": 95,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 95점)",
       "examTags": [
@@ -128,8 +128,8 @@
     {
       "word": "produce",
       "lemma": "produce",
-      "partOfSpeech": "n.",
-      "korean": "생산하다",
+      "partOfSpeech": "v.",
+      "korean": "만들어 내다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -165,7 +165,7 @@
       "word": "symphony",
       "lemma": "symphony",
       "partOfSpeech": "n.",
-      "korean": "교향곡",
+      "korean": "교향곡 (symphony orchestra 교향악단)",
       "score": 89,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 89점)",
       "examTags": [
@@ -174,14 +174,14 @@
       "freq": 3
     },
     {
-      "word": "sad",
-      "lemma": "sad",
+      "word": "composers",
+      "lemma": "composer",
       "partOfSpeech": "n.",
-      "korean": "슬픈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "작곡가",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -189,7 +189,7 @@
       "word": "art",
       "lemma": "art",
       "partOfSpeech": "n.",
-      "korean": "예술",
+      "korean": "예술 (works of art 예술 작품)",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -198,21 +198,21 @@
       "freq": 1
     },
     {
-      "word": "word",
-      "lemma": "word",
+      "word": "section",
+      "lemma": "section",
       "partOfSpeech": "n.",
-      "korean": "단어",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "korean": "(악단의) 파트 (section by section 파트별로)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
-      "freq": 1
+      "freq": 2
     },
     {
       "word": "together",
       "lemma": "together",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adv.",
       "korean": "함께",
       "score": 87,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 87점)",
@@ -222,12 +222,12 @@
       "freq": 3
     },
     {
-      "word": "building",
-      "lemma": "build",
-      "partOfSpeech": "v.",
-      "korean": "건물",
-      "score": 86,
-      "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
+      "word": "instruments",
+      "lemma": "instrument",
+      "partOfSpeech": "n.",
+      "korean": "악기",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -237,7 +237,7 @@
       "word": "orchestra",
       "lemma": "orchestra",
       "partOfSpeech": "n.",
-      "korean": "관현악단, 오케스트라",
+      "korean": "오케스트라, 관현악단",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [

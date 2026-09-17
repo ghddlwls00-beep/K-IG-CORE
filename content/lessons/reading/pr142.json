@@ -48,32 +48,32 @@
     {
       "id": "reading-142-s001",
       "english": "To keep a pleasant working environment, employers cannot allow certain kinds of behaviors such as arriving late or bothering others.",
-      "korean": "즐거운 근로환경 유지를 위해, 업주들은 지각이나 남을 짜증나게하는 등의 행동위를 용납하지 않는다."
+      "korean": "쾌적한 근무 환경을 유지하기 위해 고용주는 지각이나 남을 귀찮게 하는 것 같은 행동을 용납할 수 없다."
     },
     {
       "id": "reading-142-s002",
       "english": "These behaviors may weaken the group work environment and decrease productivity.",
-      "korean": "이런 행위는 집단의 근로환경을 약화시키고 생산성을 떨어뜨릴 수 있다."
+      "korean": "이런 행동은 함께 일하는 환경을 해치고 생산성을 떨어뜨릴 수 있다."
     },
     {
       "id": "reading-142-s003",
       "english": "So employers always consider teamwork when they judge a worker's performance.",
-      "korean": "그래서 업주들은 근로자의 수행 능력을 판단할 때 언제나 팀웍을 고려한다."
+      "korean": "그래서 고용주는 직원의 성과를 평가할 때 늘 팀워크를 고려한다."
     },
     {
       "id": "reading-142-s004",
       "english": "They look for employees who support each other, take pride in their work, and encourage a pleasant working environment.",
-      "korean": "그들은 서로 돕고, 일에 자부심을 느끼며, 즐거운 작업환경을 고무시키는 고용자들을 찾는다."
+      "korean": "그들은 서로 돕고, 자기 일에 자부심을 갖고, 쾌적한 근무 환경을 만드는 직원을 찾는다."
     },
     {
       "id": "reading-142-s005",
       "english": "Respect, good manners, and thoughtful behaviors are keys to successful teamwork.",
-      "korean": "존중, 좋은 메너, 신중한 행위등이 성공적인 팀워크의 핵심이다."
+      "korean": "존중, 좋은 매너, 사려 깊은 행동이 성공적인 팀워크의 열쇠다."
     },
     {
       "id": "reading-142-s006",
       "english": "In fact, working well with others is one of the most important job skills.",
-      "korean": "사실, 다른 사람들과 일을 잘 하는 것이 가장 중요한 작업 기술 중의 하나이다."
+      "korean": "사실 다른 사람들과 잘 일하는 것은 가장 중요한 직무 능력 가운데 하나다."
     }
   ],
   "readingVocabulary": [
@@ -81,7 +81,7 @@
       "word": "environment",
       "lemma": "environment",
       "partOfSpeech": "n.",
-      "korean": "환경",
+      "korean": "환경 (working environment 근무 환경)",
       "score": 114,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 114점)",
       "examTags": [
@@ -92,8 +92,8 @@
     {
       "word": "late",
       "lemma": "late",
-      "partOfSpeech": "v.",
-      "korean": "늦은; 늦게",
+      "partOfSpeech": "adv.",
+      "korean": "늦게",
       "score": 105,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 105점)",
       "examTags": [
@@ -104,7 +104,7 @@
     {
       "word": "allow",
       "lemma": "allow",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "허용하다",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
@@ -126,21 +126,21 @@
       "freq": 2
     },
     {
-      "word": "fact",
-      "lemma": "fact",
+      "word": "productivity",
+      "lemma": "productivity",
       "partOfSpeech": "n.",
-      "korean": "사실",
-      "score": 96,
-      "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
+      "korean": "생산성",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
       "word": "consider",
       "lemma": "consider",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "v.",
       "korean": "고려하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
@@ -152,8 +152,8 @@
     {
       "word": "support",
       "lemma": "support",
-      "partOfSpeech": "n.",
-      "korean": "지원하다",
+      "partOfSpeech": "v.",
+      "korean": "돕다, 지지하다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -164,8 +164,8 @@
     {
       "word": "encourage",
       "lemma": "encourage",
-      "partOfSpeech": "n.",
-      "korean": "격려하다",
+      "partOfSpeech": "v.",
+      "korean": "장려하다, 북돋우다",
       "score": 94,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
       "examTags": [
@@ -176,7 +176,7 @@
     {
       "word": "important",
       "lemma": "important",
-      "partOfSpeech": "n.",
+      "partOfSpeech": "adj.",
       "korean": "중요한",
       "score": 90,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 90점)",
@@ -201,7 +201,7 @@
       "word": "arriving",
       "lemma": "arrive",
       "partOfSpeech": "v.",
-      "korean": "도착하다",
+      "korean": "도착하다 (arrive late 지각하다)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -224,8 +224,8 @@
     {
       "word": "pleasant",
       "lemma": "pleasant",
-      "partOfSpeech": "n.",
-      "korean": "즐거운",
+      "partOfSpeech": "adj.",
+      "korean": "쾌적한",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -237,7 +237,7 @@
       "word": "performance",
       "lemma": "performance",
       "partOfSpeech": "n.",
-      "korean": "수행, 공연, 성과",
+      "korean": "업무 성과",
       "score": 84,
       "reason": "실무/비즈니스 실용 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
