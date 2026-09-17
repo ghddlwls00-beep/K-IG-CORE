@@ -515,7 +515,7 @@ export function LdLearningView({
                   className={
                     "rounded-lg px-2.5 py-1 font-mono text-[11.5px] font-medium transition-colors cursor-pointer " +
                     (speedRate === r
-                      ? "bg-primary text-white font-bold"
+                      ? "bg-primary text-on-primary font-bold"
                       : "border border-line bg-surface hover:bg-raised")
                   }
                 >
@@ -583,7 +583,7 @@ export function LdLearningView({
                           >
                             <span>{opt}</span>
                             {isSubmitted && oIdx === quiz.answerIndex && (
-                              <span className="text-emerald-600 font-bold ml-2">✓ 정답</span>
+                              <span className="text-emerald-700 dark:text-emerald-400 font-bold ml-2">✓ 정답</span>
                             )}
                           </button>
                         );
@@ -659,21 +659,31 @@ export function LdLearningView({
                 <span>← 이전 문장</span>
               </button>
 
-              <div className="flex items-center gap-1">
+              {/* The dot is only the picture; the button around it is 24 px so each sentence
+                  can be tapped (8 px dots touching each other could not be — UX-05/06). Up to 16
+                  sentences a round, so the row wraps on a phone. */}
+              <div className="flex min-w-0 flex-1 flex-wrap items-center justify-center">
                 {sentences.map((_, i) => (
                   <button
                     key={i}
                     type="button"
                     onClick={() => setDictationIndex(i)}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${
-                      i === dictationIndex
-                        ? "w-6 bg-primary"
-                        : dictationProgress[i]
-                        ? "w-2 bg-emerald-500"
-                        : "w-2 bg-line-strong/20"
-                    }`}
+                    className="flex h-6 min-w-6 items-center justify-center cursor-pointer"
                     title={`문장 ${i + 1}`}
-                  />
+                    aria-label={`문장 ${i + 1}${dictationProgress[i] ? " (완료)" : ""}`}
+                    aria-current={i === dictationIndex ? "step" : undefined}
+                  >
+                    <span
+                      aria-hidden
+                      className={`h-2 rounded-full transition-all ${
+                        i === dictationIndex
+                          ? "w-5 bg-primary"
+                          : dictationProgress[i]
+                          ? "w-2 bg-emerald-500"
+                          : "w-2 bg-line-strong/20"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 
@@ -779,7 +789,7 @@ export function LdLearningView({
                   <button
                     type="button"
                     onClick={handleResetDictation}
-                    className="text-[11px] font-mono text-ink-faint hover:text-ink transition-colors cursor-pointer"
+                    className="inline-flex min-h-6 items-center text-[11px] font-mono text-ink-faint hover:text-ink transition-colors cursor-pointer"
                   >
                     ↺ 전체 초기화
                   </button>
@@ -846,7 +856,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={() => playText(currentDictationItem.en, 1.0)}
-                className="text-[12.5px] text-ink-soft hover:text-ink cursor-pointer"
+                className="inline-flex min-h-6 items-center text-[12.5px] text-ink-soft hover:text-ink cursor-pointer"
               >
                 🔊 문장 다시 듣기
               </button>
@@ -854,7 +864,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={handleCheckDictation}
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-[13.5px] font-bold text-white shadow-xs hover:bg-[#967440] active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-[13.5px] font-bold text-on-primary shadow-xs hover:bg-[#967440] active:scale-95 transition-all cursor-pointer"
               >
                 <span>✓ 정답 채점하기</span>
               </button>
@@ -1096,7 +1106,7 @@ export function LdLearningView({
             {/* Speaking Step 2 with AI Evaluation */}
             <div className="rounded-2xl border border-primary/30 bg-primary/[0.04] p-4 flex flex-col gap-3">
               <div className="flex items-center gap-3">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white text-xs font-bold">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-on-primary text-xs font-bold">
                   2
                 </span>
                 <div>
@@ -1168,7 +1178,7 @@ export function LdLearningView({
               <button
                 type="button"
                 onClick={() => toggleWholePassage(speedRate)}
-                className="inline-flex items-center gap-2.5 rounded-full bg-primary px-6 py-3 text-[14.5px] font-bold text-white shadow-md hover:bg-[#967440] active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2.5 rounded-full bg-primary px-6 py-3 text-[14.5px] font-bold text-on-primary shadow-md hover:bg-[#967440] active:scale-95 transition-all cursor-pointer"
               >
                 <span>{speedPlaying ? "⏹️ 정지" : `⚡ ${speedRate}x 배속 연속 청취`}</span>
               </button>

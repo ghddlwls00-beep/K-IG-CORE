@@ -597,7 +597,8 @@ export function GrammarLearningView({
               <button
                 type="button"
                 onClick={() => setAudioSpeed(1.0)}
-                className={`px-2 py-0.5 rounded cursor-pointer ${audioSpeed === 1.0 ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={audioSpeed === 1.0}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${audioSpeed === 1.0 ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
                 title="음성 속도 1.0x"
               >
                 1.0x
@@ -605,7 +606,8 @@ export function GrammarLearningView({
               <button
                 type="button"
                 onClick={() => setAudioSpeed(0.85)}
-                className={`px-2 py-0.5 rounded cursor-pointer ${audioSpeed === 0.85 ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={audioSpeed === 0.85}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${audioSpeed === 0.85 ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
                 title="음성 속도 0.85x (천천히)"
               >
                 0.85x
@@ -616,21 +618,24 @@ export function GrammarLearningView({
               <button
                 type="button"
                 onClick={() => setFontSize("normal")}
-                className={`px-2 py-0.5 rounded cursor-pointer ${fontSize === "normal" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={fontSize === "normal"}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${fontSize === "normal" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
               >
                 기본
               </button>
               <button
                 type="button"
                 onClick={() => setFontSize("large")}
-                className={`px-2 py-0.5 rounded cursor-pointer ${fontSize === "large" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={fontSize === "large"}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${fontSize === "large" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
               >
                 크게
               </button>
               <button
                 type="button"
                 onClick={() => setFontSize("xlarge")}
-                className={`px-2 py-0.5 rounded cursor-pointer ${fontSize === "xlarge" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={fontSize === "xlarge"}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${fontSize === "xlarge" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
               >
                 특대
               </button>
@@ -667,10 +672,10 @@ export function GrammarLearningView({
             <div className="flex flex-col justify-between rounded-xl border border-line bg-surface p-4 shadow-2xs">
               <span className="text-[12px] font-medium text-ink-soft">자가 채점 정답률</span>
               <div className="mt-2 flex items-baseline justify-between">
-                <span className="text-[22px] font-bold text-emerald-600">
+                <span className="text-[22px] font-bold text-emerald-700 dark:text-emerald-400">
                   {correctCount} <span className="text-[14px] font-normal text-ink-faint">개 맞음</span>
                 </span>
-                <span className="font-mono text-[13px] font-semibold text-emerald-600">
+                <span className="font-mono text-[13px] font-semibold text-emerald-700 dark:text-emerald-400">
                   {accuracyPercent}%
                 </span>
               </div>
@@ -703,7 +708,7 @@ export function GrammarLearningView({
               <button
                 type="button"
                 onClick={handleResetAll}
-                className="w-full text-center text-[11px] text-ink-faint hover:text-red-500 transition-colors cursor-pointer py-0.5"
+                className="w-full min-h-6 text-center text-[11px] text-ink-faint hover:text-red-500 transition-colors cursor-pointer py-0.5"
               >
                 ↺ 모든 작성 내용 초기화
               </button>
@@ -739,12 +744,12 @@ export function GrammarLearningView({
                         {item.numberLabel}
                       </span>
                       {isExact && (
-                        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
+                        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
                           🎯 정답 일치!
                         </span>
                       )}
                       {grade === true && (
-                        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-600">
+                        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400">
                           ✓ 학습 완료
                         </span>
                       )}
@@ -844,7 +849,7 @@ export function GrammarLearningView({
                           "flex items-center gap-1 rounded-lg border px-2.5 py-1 text-[12px] font-medium transition-all cursor-pointer " +
                           (grade === true
                             ? "border-emerald-500 bg-emerald-500 text-surface font-semibold shadow-xs"
-                            : "border-line bg-surface text-ink-soft hover:border-emerald-500/50 hover:text-emerald-600")
+                            : "border-line bg-surface text-ink-soft hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-400")
                         }
                       >
                         <span>✓</span>
@@ -998,7 +1003,7 @@ export function GrammarLearningView({
                               }
                             />
                             {isCorrect && (
-                              <span className="text-emerald-600 font-bold text-xs" role="status">✓</span>
+                              <span className="text-emerald-700 dark:text-emerald-400 font-bold text-xs" role="status">✓</span>
                             )}
                             {isWrong && (
                               <span className="text-red-600 font-bold text-xs" role="status" title="다시 확인해 보세요">✗</span>
@@ -1083,8 +1088,9 @@ export function GrammarLearningView({
                           e.stopPropagation();
                           handleCopy(item.englishText, item.id);
                         }}
-                        className="rounded p-1 text-[11px] text-ink-faint hover:text-ink hover:bg-raised transition-colors"
+                        className="inline-flex min-h-6 min-w-6 items-center justify-center rounded p-1 text-[11px] text-ink-faint hover:text-ink hover:bg-raised transition-colors"
                         title="문장 복사"
+                        aria-label={copiedId === item.id ? "복사됨" : "문장 복사"}
                       >
                         {copiedId === item.id ? "✓" : "📋"}
                       </button>
@@ -1165,7 +1171,7 @@ export function GrammarLearningView({
                   </div>
                   <div className="h-8 w-px bg-line" />
                   <div className="text-[11.5px] text-ink-soft">
-                    <div>정답 일치: <span className="font-semibold text-emerald-600">{examResults.exactMatches}</span>개</div>
+                    <div>정답 일치: <span className="font-semibold text-emerald-700 dark:text-emerald-400">{examResults.exactMatches}</span>개</div>
                     <div>부분 일치: <span className="font-semibold text-amber-600">{examResults.partialMatches}</span>개</div>
                   </div>
                 </div>

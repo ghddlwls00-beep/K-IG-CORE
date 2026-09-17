@@ -9,8 +9,23 @@ import {
 
 const requestWindows = new Map<string, { startedAt: number; count: number }>();
 
+/**
+ * SEC-07: finished windows were never removed, so every device that ever saved
+ * progress stayed in this instance's memory. They are dropped once the map
+ * passes a few hundred entries. The limit is still per server instance — a
+ * shared counter needs a store this project does not have; writes already
+ * require a valid licence session, so only licence holders can reach it.
+ */
+function pruneFinishedWindows(now: number) {
+  if (requestWindows.size < 500) return;
+  for (const [identity, window] of requestWindows) {
+    if (now - window.startedAt >= 60_000) requestWindows.delete(identity);
+  }
+}
+
 function allowProgressWrite(identity: string): boolean {
   const now = Date.now();
+  pruneFinishedWindows(now);
   const current = requestWindows.get(identity);
   if (!current || now - current.startedAt >= 60_000) {
     requestWindows.set(identity, { startedAt: now, count: 1 });

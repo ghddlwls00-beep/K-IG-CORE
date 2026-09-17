@@ -1,3 +1,4 @@
+import { verifyAdminSession } from "@/lib/adminAuth";
 import { HAS_S3_CREDENTIALS, fetchMediaObject, getLastS3Error } from "@/lib/mediaOrigin";
 
 /**
@@ -10,15 +11,23 @@ import { HAS_S3_CREDENTIALS, fetchMediaObject, getLastS3Error } from "@/lib/medi
  * object and reports which path answered.
  *
  * It returns booleans and an error *name* — never a key, bucket, account id or
- * credential. Knowing that credentials are configured tells an attacker nothing
- * they could not infer from the site working at all.
+ * credential.
+ *
+ * SEC-06: anyone could read which storage path answers, whether credentials are
+ * configured and the last S3 error name, and every anonymous call made the
+ * server fetch from R2. Now an anonymous caller gets only `{ ok }` — enough for
+ * an uptime check — and the detail needs the admin session. The R2 probe runs at
+ * most once a minute per server instance, whoever asks.
  */
 export const dynamic = "force-dynamic";
 
 // A free-preview object, so the probe never depends on a licence.
 const PROBE_KEY = "audio/ld/d001.mp3";
+const PROBE_TTL_MS = 60_000;
+let lastProbe: { at: number; probe: "ok" | "failed"; probeStatus: number } | null = null;
 
-export async function GET() {
+async function runProbe() {
+  if (lastProbe && Date.now() - lastProbe.at < PROBE_TTL_MS) return lastProbe;
   let probe: "ok" | "failed" = "failed";
   let probeStatus = 0;
   try {
@@ -31,11 +40,23 @@ export async function GET() {
   } catch {
     probe = "failed";
   }
+  lastProbe = { at: Date.now(), probe, probeStatus };
+  return lastProbe;
+}
 
+export async function GET(request: Request) {
+  const { probe, probeStatus } = await runProbe();
   const s3Error = getLastS3Error();
+  const readyForPrivateBucket = HAS_S3_CREDENTIALS && probe === "ok" && s3Error === null;
+  const headers = { "Cache-Control": "no-store" };
+
+  if (!verifyAdminSession(request)) {
+    return Response.json({ ok: readyForPrivateBucket }, { headers });
+  }
 
   return Response.json(
     {
+      ok: readyForPrivateBucket,
       credentialsConfigured: HAS_S3_CREDENTIALS,
       probe,
       probeStatus,
@@ -43,8 +64,8 @@ export async function GET() {
       // started. While the bucket is still public the request then falls back,
       // so the site keeps working and this is the only sign anything is wrong.
       s3Error,
-      readyForPrivateBucket: HAS_S3_CREDENTIALS && probe === "ok" && s3Error === null,
+      readyForPrivateBucket,
     },
-    { headers: { "Cache-Control": "no-store" } },
+    { headers },
   );
 }

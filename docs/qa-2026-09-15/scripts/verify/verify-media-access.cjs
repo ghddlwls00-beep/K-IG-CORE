@@ -394,17 +394,13 @@ async function probeMediaHealth() {
   try {
     const res = await fetch(`${BASE}/api/media-health`);
     const body = await res.json();
-    if (body.probe !== "ok") problems.push(`probe is "${body.probe}" (status ${body.probeStatus})`);
-    if (body.s3Error !== null) problems.push(`s3Error is "${body.s3Error}"`);
-    if (body.readyForPrivateBucket !== true) {
-      problems.push(`readyForPrivateBucket is ${body.readyForPrivateBucket}`);
+    // SEC-06 (2026-09-17): an anonymous caller now gets only { ok } — the same
+    // readyForPrivateBucket value; credentials/probe/s3Error need the admin session.
+    if ("credentialsConfigured" in body || "s3Error" in body) {
+      problems.push("anonymous response still carries storage details");
     }
-    record(
-      "F origin reader",
-      problems.length === 0,
-      [`credentialsConfigured=${body.credentialsConfigured} probe=${body.probe} status=${body.probeStatus}`],
-      problems,
-    );
+    if (body.ok !== true) problems.push(`ok is ${body.ok}`);
+    record("F origin reader", problems.length === 0, [`ok=${body.ok}`], problems);
   } catch (err) {
     record("F origin reader", false, [], [`/api/media-health failed — ${err.message}`]);
   }

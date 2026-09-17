@@ -238,7 +238,7 @@ export function LicenseModal() {
                   <span
                     role="alert"
                     className={`text-[11.5px] font-medium ${
-                      feedback.type === "success" ? "text-emerald-600" : "text-red-500"
+                      feedback.type === "success" ? "text-emerald-700 dark:text-emerald-400" : "text-red-500"
                     }`}
                   >
                     {feedback.text}

@@ -10,7 +10,9 @@
 const fs = require("fs");
 const path = require("path");
 const { launch, Tab, sleep } = require("../../qa-2026-09-15/scripts/verify/cdp.cjs");
-const BASE = "https://k-ig-core.vercel.app";
+// BASE / OUT_SUFFIX let verify-ux-fixes.cjs run the same measurement on a local build.
+const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
+const OUT_SUFFIX = process.env.OUT_SUFFIX || "";
 const PAGES = ["/student/s1-1", "/phonics/mv1-01", "/grammar1/gh1-006", "/grammar2/gh2-007", "/ld/d001", "/reading/pr001"];
 
 const LIST = `(() => {
@@ -52,7 +54,7 @@ const LIST = `(() => {
     console.log(`\n${url}: ${all.length} small (crowded ${all.filter((i) => i.crowded).length})`);
     for (const [k, n] of Object.entries(groups).sort((a, b) => b[1] - a[1]).slice(0, 12)) console.log(`   ${String(n).padStart(3)} × ${k}`);
   }
-  fs.writeFileSync(path.join(__dirname, "../out/small-targets.json"), JSON.stringify({ at: new Date().toISOString(), result }, null, 1));
+  fs.writeFileSync(path.join(__dirname, `../out/small-targets${OUT_SUFFIX}.json`), JSON.stringify({ at: new Date().toISOString(), result }, null, 1));
   await tab.close();
   browser.proc.kill();
 })();

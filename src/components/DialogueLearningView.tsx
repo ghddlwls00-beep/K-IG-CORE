@@ -579,7 +579,7 @@ export function DialogueLearningView({
           <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-surface to-raised/60 p-8 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-5">
               <div className="flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white text-2xl shadow-sm">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-on-primary text-2xl shadow-sm">
                   📚
                 </span>
                 <div>
@@ -599,7 +599,7 @@ export function DialogueLearningView({
 
               <Link
                 href={`/${course}/${info.subLessons[0].id}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-on-primary shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
               >
                 <span>🚀 1강 바로 시작하기</span>
                 <span>→</span>
@@ -624,7 +624,7 @@ export function DialogueLearningView({
                   className="group flex items-center justify-between rounded-2xl border border-line bg-surface p-4 transition-all hover:border-primary/50 hover:bg-primary/5 hover:shadow-xs cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-raised text-[13px] font-bold text-ink-soft group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-raised text-[13px] font-bold text-ink-soft group-hover:bg-primary group-hover:text-on-primary transition-colors">
                       {idx + 1}
                     </span>
                     <div>
@@ -650,7 +650,7 @@ export function DialogueLearningView({
         <p className="text-ink-soft">이 레슨에는 직접 발화할 대화 문장이 포함되어 있지 않습니다.</p>
         <Link
           href={`/${course}`}
-          className="mt-4 inline-block rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white"
+          className="mt-4 inline-block rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-on-primary"
         >
           코스 전체 목록으로 돌아가기
         </Link>
@@ -795,21 +795,24 @@ export function DialogueLearningView({
               <button
                 type="button"
                 onClick={() => setFontSize("normal")}
-                className={`px-2 py-0.5 rounded cursor-pointer ${fontSize === "normal" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={fontSize === "normal"}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${fontSize === "normal" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
               >
                 기본
               </button>
               <button
                 type="button"
                 onClick={() => setFontSize("large")}
-                className={`px-2 py-0.5 rounded cursor-pointer ${fontSize === "large" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={fontSize === "large"}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${fontSize === "large" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
               >
                 크게
               </button>
               <button
                 type="button"
                 onClick={() => setFontSize("xlarge")}
-                className={`px-2 py-0.5 rounded cursor-pointer ${fontSize === "xlarge" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
+                aria-pressed={fontSize === "xlarge"}
+                className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${fontSize === "xlarge" ? "bg-surface text-ink font-semibold shadow-2xs" : ""}`}
               >
                 특대
               </button>
@@ -1209,7 +1212,7 @@ export function DialogueLearningView({
                           "rounded-lg border px-2.5 py-1 text-[12px] font-medium transition-all cursor-pointer " +
                           (grade === true
                             ? "border-emerald-500 bg-emerald-500 text-surface font-semibold"
-                            : "border-line bg-surface text-ink-soft hover:border-emerald-500/50 hover:text-emerald-600")
+                            : "border-line bg-surface text-ink-soft hover:border-emerald-500/50 hover:text-emerald-700 dark:hover:text-emerald-400")
                         }
                       >
                         ✓ 유창함

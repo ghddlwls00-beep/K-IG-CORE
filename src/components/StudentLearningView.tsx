@@ -496,7 +496,7 @@ export function StudentLearningView({
               className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12.5px] font-bold transition-all cursor-pointer shadow-2xs select-none ${
                 isPlayingFull
                   ? "bg-red-500 text-white ring-2 ring-red-500/30"
-                  : "bg-primary text-white hover:bg-primary/90 active:scale-[0.98]"
+                  : "bg-primary text-on-primary hover:bg-primary/90 active:scale-[0.98]"
               }`}
             >
               <span>{isPlayingFull ? "⏹️" : "▶️"}</span>
@@ -636,7 +636,7 @@ export function StudentLearningView({
                   onClick={() => setScriptFilter(value)}
                   className={`px-2.5 py-1 rounded-lg text-[11.5px] font-semibold transition-all cursor-pointer ${
                     scriptFilter === value
-                      ? "bg-primary text-white shadow-2xs"
+                      ? "bg-primary text-on-primary shadow-2xs"
                       : "text-ink-soft hover:text-ink"
                   }`}
                 >
@@ -700,12 +700,13 @@ export function StudentLearningView({
                         onClick={() => toggleLoop(item.text, idx, "en")}
                         className={`flex items-center gap-1 rounded-xl border px-2.5 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${
                           isLoopActive
-                            ? "border-primary bg-primary text-white shadow-2xs"
+                            ? "border-primary bg-primary text-on-primary shadow-2xs"
                             : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
                         }`}
                         title={isLoopActive ? "반복 정지" : "한 문장 무한 반복 듣기"}
+                        aria-label={isLoopActive ? "반복 정지" : "한 문장 반복 듣기"}
                       >
-                        <span>{isLoopActive ? "⏹️" : "🔁"}</span>
+                        <span aria-hidden>{isLoopActive ? "⏹️" : "🔁"}</span>
                         <span className="hidden sm:inline">{isLoopActive ? "정지" : "반복"}</span>
                       </button>
 
@@ -783,7 +784,7 @@ export function StudentLearningView({
                 <span className="text-[14px] font-bold text-ink">
                   문장 {dictationIdx + 1} / {sentenceItems.length}
                 </span>
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-400">
                   완료: {solvedCount}개
                 </span>
               </div>
@@ -858,7 +859,7 @@ export function StudentLearningView({
                   className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-[13px] font-bold shadow-2xs active:scale-95 transition-all cursor-pointer ${
                     isTargetPlaying(dictationIdx, "en", false)
                       ? "bg-red-500 text-white hover:bg-red-500/90"
-                      : "bg-primary text-white hover:bg-primary/90"
+                      : "bg-primary text-on-primary hover:bg-primary/90"
                   }`}
                 >
                   <span>{isTargetPlaying(dictationIdx, "en", false) ? "⏹️" : "🔊"}</span>
@@ -1009,7 +1010,7 @@ export function StudentLearningView({
               <button
                 type="button"
                 onClick={handleCheckDictation}
-                className="flex items-center gap-1.5 rounded-xl bg-primary px-5 py-2 text-[13px] font-bold text-white shadow-xs hover:bg-primary/90 active:scale-95 transition-all cursor-pointer"
+                className="flex items-center gap-1.5 rounded-xl bg-primary px-5 py-2 text-[13px] font-bold text-on-primary shadow-xs hover:bg-primary/90 active:scale-95 transition-all cursor-pointer"
               >
                 <span>✅</span>
                 <span>정답 확인</span>
@@ -1029,7 +1030,7 @@ export function StudentLearningView({
                   onClick={() => goToDictation(idx)}
                   className={`flex h-8 w-8 items-center justify-center rounded-xl text-[12px] font-bold transition-all cursor-pointer ${
                     isCurrent
-                      ? "bg-primary text-white ring-2 ring-primary/40 shadow-xs scale-105"
+                      ? "bg-primary text-on-primary ring-2 ring-primary/40 shadow-xs scale-105"
                       : isSolved
                       ? "bg-emerald-500/15 border border-emerald-500/40 text-emerald-700 dark:text-emerald-300"
                       : "bg-raised border border-line text-ink-soft hover:text-ink hover:bg-surface"
@@ -1104,7 +1105,7 @@ export function StudentLearningView({
                         onClick={() =>
                           setCompletedSentences((prev) => ({ ...prev, [idx]: !prev[idx] }))
                         }
-                        className={`flex h-6 w-6 items-center justify-center rounded-lg border text-[12px] font-bold transition-all cursor-pointer ${
+                        className={`flex h-7 w-7 items-center justify-center rounded-lg border text-[12px] font-bold transition-all cursor-pointer ${
                           isDone
                             ? "bg-emerald-600 border-emerald-600 text-white shadow-2xs"
                             : "border-line bg-surface text-ink-faint hover:border-primary"
@@ -1138,12 +1139,13 @@ export function StudentLearningView({
                         onClick={() => toggleLoop(item.text, idx, "en")}
                         className={`flex items-center gap-1 rounded-xl border px-2.5 py-1.5 text-[12px] font-medium transition-all cursor-pointer ${
                           isLoopActive
-                            ? "border-primary bg-primary text-white shadow-2xs"
+                            ? "border-primary bg-primary text-on-primary shadow-2xs"
                             : "border-line bg-surface text-ink-soft hover:text-ink hover:bg-raised"
                         }`}
                         title={isLoopActive ? "반복 정지" : "반복 루프 섀도잉"}
+                        aria-label={isLoopActive ? "반복 정지" : "반복 루프 섀도잉"}
                       >
-                        <span>{isLoopActive ? "⏹️" : "🔁"}</span>
+                        <span aria-hidden>{isLoopActive ? "⏹️" : "🔁"}</span>
                         <span className="hidden sm:inline">{isLoopActive ? "정지" : "반복"}</span>
                       </button>
 

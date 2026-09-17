@@ -69,7 +69,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
             </span>
             <div className="flex items-center gap-1.5">
               {isDone && (
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
+                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
                   ✓ 완료
                 </span>
               )}
@@ -258,7 +258,7 @@ export function CourseDashboard({
   return (
     <div className="flex flex-col gap-8">
       {unlockNotice && (
-        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-emerald-500/30 bg-raised px-5 py-4 text-center text-[14px] font-bold text-emerald-600 shadow-xl dark:text-emerald-300" role="status">
+        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-emerald-500/30 bg-raised px-5 py-4 text-center text-[14px] font-bold text-emerald-700 dark:text-emerald-400 shadow-xl dark:text-emerald-300" role="status">
           🎉 챕터 {unlockNotice}가 열렸습니다.
         </div>
       )}
@@ -271,7 +271,7 @@ export function CourseDashboard({
               Course Progress & Analytics
             </div>
             <h2 className="text-[17px] sm:text-[20px] font-bold text-ink tracking-tight mt-1">
-              학습 진도율: <span className="text-emerald-600">{completedCount}</span> / {totalLessons}개 완료 <span className="text-ink-faint text-[14px] sm:text-[16px] font-normal">({progressPercent}%)</span>
+              학습 진도율: <span className="text-emerald-700 dark:text-emerald-400">{completedCount}</span> / {totalLessons}개 완료 <span className="text-ink-faint text-[14px] sm:text-[16px] font-normal">({progressPercent}%)</span>
             </h2>
             {courseSlug === "student" && hasActiveLicense && (
               <p className="mt-1 text-[11.5px] text-ink-faint" aria-live="polite">
@@ -407,7 +407,7 @@ export function CourseDashboard({
                         <span className="font-mono text-[11.5px] text-ink-faint mt-0.5">
                           총 {section.lessons.length}개 레슨
                           {completedInSection > 0 && (
-                            <span className="text-emerald-600 font-semibold ml-2">
+                            <span className="text-emerald-700 dark:text-emerald-400 font-semibold ml-2">
                               · {completedInSection}개 완료
                             </span>
                           )}

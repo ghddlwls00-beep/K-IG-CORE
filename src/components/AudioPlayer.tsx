@@ -86,6 +86,16 @@ export function AudioPlayer({
     });
   }
 
+  // Sentence slider (UX-05): the index being chosen while the finger or key is down.
+  const [scrubIndex, setScrubIndex] = useState<number | null>(null);
+  function commitScrub() {
+    if (scrubIndex === null) return;
+    const index = scrubIndex;
+    setScrubIndex(null);
+    if (speech.speaking) jumpToQueueIndex(index);
+    else startQueue(index);
+  }
+
   function toggle() {
     unlockMobileAudio();
 
@@ -262,11 +272,13 @@ export function AudioPlayer({
           </svg>
         </button>
 
+        {/* In sentence mode these move a whole sentence, so they must not be read
+            out as "5초 이동". min-h-6: 24px targets (UX-06). */}
         <button
           type="button"
           onClick={() => seek(-5)}
-          aria-label={t("player.back5")}
-          className="px-2 sm:px-2.5 py-1 font-mono text-[10.5px] sm:text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer shrink-0"
+          aria-label={isTtsMode ? "이전 문장" : t("player.back5")}
+          className="inline-flex min-h-6 items-center px-2 sm:px-2.5 py-1 font-mono text-[10.5px] sm:text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer shrink-0"
         >
           {isTtsMode ? "이전" : "−5s"}
         </button>
@@ -274,32 +286,46 @@ export function AudioPlayer({
         <button
           type="button"
           onClick={() => seek(5)}
-          aria-label="앞으로 5초 이동"
-          className="px-2 sm:px-2.5 py-1 font-mono text-[10.5px] sm:text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer shrink-0"
+          aria-label={isTtsMode ? "다음 문장" : "앞으로 5초 이동"}
+          className="inline-flex min-h-6 items-center px-2 sm:px-2.5 py-1 font-mono text-[10.5px] sm:text-[11px] font-medium text-ink-soft hover:bg-black/[0.04] hover:text-ink rounded-full transition-colors cursor-pointer shrink-0"
         >
           {isTtsMode ? "다음" : "+5s"}
         </button>
 
         {isTtsMode ? (
-          <div className="flex-1 px-1 sm:px-2 min-w-[50px]">
-            <div className="flex h-3 w-full items-center gap-[2px]">
+          // UX-05: one button per sentence made targets 1-5px wide on a phone (a
+          // 40-sentence lesson in a 200px bar), so no single sentence could be hit.
+          // The segments are now only a picture; one range input laid over the whole
+          // bar (24px tall) picks the sentence by position, by drag or by arrow keys.
+          // The jump happens when the finger or key is released, so dragging across
+          // the bar does not restart the voice at every sentence on the way.
+          <div className="relative flex-1 px-1 sm:px-2 min-w-[50px]">
+            <div aria-hidden className="flex h-6 w-full items-center gap-[2px]">
               {fallbackSentences.map((_, i) => (
-                <button
+                <span
                   key={i}
-                  type="button"
-                  onClick={() => {
-                    if (speech.speaking) jumpToQueueIndex(i);
-                    else startQueue(i);
-                  }}
-                  aria-label={`${i + 1}번째 문장으로 이동`}
-                  className={`h-1.5 flex-1 rounded-full transition-colors cursor-pointer ${
-                    i <= ttsIndex && ttsActive
+                  className={`h-1.5 flex-1 rounded-full transition-colors ${
+                    i <= (scrubIndex ?? (ttsActive ? ttsIndex : -1))
                       ? "bg-primary"
-                      : "bg-black/[0.08] dark:bg-white/[0.10] hover:bg-primary/40"
+                      : "bg-black/[0.08] dark:bg-white/[0.10]"
                   }`}
                 />
               ))}
             </div>
+            <input
+              type="range"
+              min={0}
+              max={Math.max(0, fallbackSentences.length - 1)}
+              step={1}
+              value={scrubIndex ?? ttsIndex}
+              onChange={(e) => setScrubIndex(Number(e.target.value))}
+              onPointerUp={commitScrub}
+              onKeyUp={commitScrub}
+              onBlur={commitScrub}
+              aria-label="문장 이동"
+              aria-valuetext={`${(scrubIndex ?? ttsIndex) + 1}번째 문장 / 전체 ${fallbackSentences.length}문장`}
+              className="absolute inset-0 h-6 w-full cursor-pointer opacity-0"
+            />
           </div>
         ) : (
           <input
@@ -333,7 +359,7 @@ export function AudioPlayer({
               onClick={() => changeRate(r)}
               aria-pressed={rate === r}
               className={
-                "rounded px-2 py-0.5 font-mono text-[11px] transition-colors cursor-pointer " +
+                "inline-flex min-h-6 items-center rounded px-2 py-0.5 font-mono text-[11px] transition-colors cursor-pointer " +
                 (rate === r
                   ? "bg-ink text-surface font-medium"
                   : "text-ink-soft hover:bg-raised hover:text-ink")

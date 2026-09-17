@@ -439,7 +439,7 @@ export function PhonicsLearningView({
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
             <div className="flex flex-wrap items-center gap-2.5">
-              <span className="font-mono text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#D4AF37] dark:text-[#E6C665]">
+              <span className="font-mono text-[11px] font-extrabold uppercase tracking-[0.2em] text-primary dark:text-[#E6C665]">
                 K-IG VOCA COGNITIVE MASTERY
               </span>
               <span className="rounded-full bg-[#D4AF37]/10 px-3 py-0.5 text-[11px] font-bold text-amber-900 dark:text-amber-200 border border-[#D4AF37]/25">
@@ -524,7 +524,7 @@ export function PhonicsLearningView({
                     : "border-line bg-surface hover:bg-raised/60 text-ink-soft hover:text-ink"
                 }`}
               >
-                <span className="font-mono text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">
+                <span className="font-mono text-[10px] font-bold text-primary uppercase tracking-wider">
                   {tab.step}
                 </span>
                 <span className="text-[12.5px] sm:text-[13.5px] font-bold leading-snug">
@@ -612,7 +612,7 @@ export function PhonicsLearningView({
               {selectedEtymology ? (
                 <div className="rounded-2xl border border-[#D4AF37]/25 bg-amber-500/[0.04] p-4 flex flex-col gap-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-[10.5px] font-bold tracking-wider text-[#D4AF37] uppercase">
+                    <span className="font-mono text-[10.5px] font-bold tracking-wider text-primary uppercase">
                       🧬 어원 분해 (Etymology Decoding)
                     </span>
                   </div>
@@ -643,7 +643,7 @@ export function PhonicsLearningView({
                           rate: speed,
                         })
                       }
-                      className="text-[11.5px] font-semibold text-[#D4AF37] hover:underline cursor-pointer flex items-center gap-1"
+                      className="text-[11.5px] font-semibold text-primary hover:underline cursor-pointer flex items-center gap-1"
                     >
                       <span>청취 🔊</span>
                     </button>
@@ -669,7 +669,7 @@ export function PhonicsLearningView({
                 <button
                   type="button"
                   onClick={() => startRecallAt(selectedWord)}
-                  className="inline-flex items-center gap-2 text-[13px] font-bold text-[#D4AF37] hover:underline cursor-pointer"
+                  className="inline-flex min-h-6 items-center gap-2 text-[13px] font-bold text-primary hover:underline cursor-pointer"
                 >
                   <span>이 단어로 Step 2 액티브 인출 퀴즈 풀기</span>
                   <span>→</span>
@@ -733,7 +733,7 @@ export function PhonicsLearningView({
                   >
                     <div className="flex items-center justify-between border-b border-line/60 pb-2.5">
                       <div className="flex items-center gap-2.5">
-                        <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-[#D4AF37]">
+                        <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-primary">
                           Word Cluster #{rIdx + 1}
                         </span>
                         <span className="font-mono text-[11px] text-ink-faint">
@@ -860,7 +860,7 @@ export function PhonicsLearningView({
             <div className="grid grid-cols-2 gap-4 w-full max-w-md">
               <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
                 <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">최종 점수</span>
-                <span className="font-mono text-[24px] font-black text-[#D4AF37]">{recallScore}</span>
+                <span className="font-mono text-[24px] font-black text-primary">{recallScore}</span>
               </div>
               <div className="rounded-2xl border border-line bg-raised/70 p-4 flex flex-col">
                 <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">정답 / 푼 문항</span>
@@ -921,7 +921,7 @@ export function PhonicsLearningView({
                 {/* Quiz Header & Streak */}
                 <div className="flex items-center justify-between border-b border-line pb-4">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-[12px] font-bold text-[#D4AF37] uppercase tracking-wider">
+                    <span className="font-mono text-[12px] font-bold text-primary uppercase tracking-wider">
                       Question #{recallIdx + 1} / {activeRecallQuizzes.length}
                     </span>
                     {recallStreak >= 2 && (
@@ -1009,7 +1009,7 @@ export function PhonicsLearningView({
                 {isRecallAnswered && (
                   <div className="rounded-2xl border border-line bg-raised/40 p-4 flex flex-col gap-3 animate-in fade-in">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#D4AF37]">
+                      <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-primary">
                         {q.etymologyHint ? "💡 기억 각인 힌트 & 어원 풀이" : "✅ 정답 확인"}
                       </span>
                       <button
@@ -1040,7 +1040,7 @@ export function PhonicsLearningView({
           <div className="rounded-3xl border border-line bg-surface p-6 shadow-xs flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-col">
-                <span className="font-mono text-[10.5px] font-bold tracking-wider text-[#D4AF37] uppercase">
+                <span className="font-mono text-[10.5px] font-bold tracking-wider text-primary uppercase">
                   Step 3 · Speaking & Pronunciation Tester
                 </span>
                 <h3 className="text-[17px] font-bold text-ink">
@@ -1192,7 +1192,7 @@ export function PhonicsLearningView({
                           e.stopPropagation();
                           playWord(card.word);
                         }}
-                        className="text-ink-soft hover:text-ink font-semibold flex items-center gap-1 cursor-pointer"
+                        className="min-h-6 text-ink-soft hover:text-ink font-semibold flex items-center gap-1 cursor-pointer"
                       >
                         <span>🔊 발음</span>
                       </button>
@@ -1210,7 +1210,7 @@ export function PhonicsLearningView({
                           };
                           saveLeitnerCards(next);
                         }}
-                        className="text-[#D4AF37] font-bold hover:underline cursor-pointer"
+                        className="inline-flex min-h-6 items-center text-primary font-bold hover:underline cursor-pointer"
                       >
                         {card.box === 3 ? "Box 1로 내리기" : "다음 Box로 승급 ↑"}
                       </button>
@@ -1234,7 +1234,7 @@ export function PhonicsLearningView({
                 ⏱️
               </div>
               <div className="flex flex-col gap-1.5">
-                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-[#D4AF37]">
+                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-primary">
                   Step 4 · Speed Reflex Drill
                 </span>
                 <h3 className="text-[22px] font-bold text-ink">
@@ -1275,7 +1275,7 @@ export function PhonicsLearningView({
                   <span className="font-mono text-[10.5px] text-ink-faint uppercase font-bold">
                     최종 점수
                   </span>
-                  <span className="font-mono text-[24px] font-black text-[#D4AF37]">
+                  <span className="font-mono text-[24px] font-black text-primary">
                     {speedScore}
                   </span>
                 </div>

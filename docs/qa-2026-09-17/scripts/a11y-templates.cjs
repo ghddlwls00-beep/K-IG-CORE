@@ -23,7 +23,9 @@
 const fs = require("fs");
 const path = require("path");
 const { launch, Tab, sleep } = require("../../qa-2026-09-15/scripts/verify/cdp.cjs");
-const BASE = "https://k-ig-core.vercel.app";
+// BASE / OUT_SUFFIX let verify-ux-fixes.cjs run the same measurement on a local build.
+const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
+const OUT_SUFFIX = process.env.OUT_SUFFIX || "";
 
 const PAGES = ["/", "/reading", "/student/s1-1", "/phonics/mv1-01", "/grammar1/gh1-006", "/grammar2/gh2-007", "/ld/d001", "/reading/pr001", "/cnn/cnn001"];
 
@@ -91,7 +93,7 @@ const FOCUS = `(() => { const el = document.activeElement; if (!el || el === doc
       }
     }
   }
-  fs.writeFileSync(path.join(__dirname, "../out/a11y-templates.json"), JSON.stringify({ at: new Date().toISOString(), results }, null, 1));
+  fs.writeFileSync(path.join(__dirname, `../out/a11y-templates${OUT_SUFFIX}.json`), JSON.stringify({ at: new Date().toISOString(), results }, null, 1));
   await tab.close();
   browser.proc.kill();
 })();

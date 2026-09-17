@@ -193,11 +193,11 @@
 | MED-R READING 지문 | 64 / 32 | 영한 정렬 어긋남 다수, 오역(뜻 반대), 낡은 전망(2010·2025), 정치·고정관념 지문(R-64 노무현·차베스, R-65 식사법), 중복 지문 8쌍(R-01), 사실(재향군인병·마라톤·Purloined Letter·안락사법) — **✅ 소유자/변호사 대기 항목(R-01 한쪽 교체·R-30 pr054·R-32 pr078·저작권) 외 전부 로컬 수정·검증, 배포 대기** (`reading.md` "처리 결과") | `content-review/reading.md` |
 | MED-RV READING 어휘 | (ISS-10 에 포함) | ✅ 3,584장 전부 재작성·검증, 배포 대기 | `content-review/reading.md` §어휘 카드 |
 | MED-V VOCA | 6 / 6 | mv2-12 달 이름 반복(V-03), 같은 뜻 짝 드릴 채점(V-04), 철자 오류 6(V-05), `apparently` 분명히(V-06), 다의어 첫 뜻 누락(V-07) — **✅ V-03~V-11 로컬 수정·검증, 배포 대기** (`voca.md` "처리 결과"; 수정 중 발견한 라이트너 오답노트 옛 뜻 고정 문제 포함) | `content-review/voca.md`, `voca-status.md` (PASS 102 · NOTE 42 · FAIL 51) |
-| MED-ADM 관리자 | 3 / 3 | 테스트 등록이 고객 칸 차지(ADM-02), 한도·해금 드롭다운 즉시 저장(ADM-03·04), 81강 표기(ADM-05) | `phase2-admin.md` |
-| MED-SEC 보안 | 2 / 4 | 기기 초기화 후 verify 불일치(SEC-03), CSP unsafe-inline(SEC-05), 메모리 요청 제한(SEC-07), 토큰 없이 기기 해제(SEC-04) | `phase8-security.md` |
-| MED-UX 접근성 | 1 / 4 | 음성 플레이어 문장 점 버튼 1~5px 누를 수 없음(UX-05), 금색 작은 글자(UX-02), `🔁` 이름(UX-03), 17~21px 칩(UX-06) | `phase6-ux-a11y.md` |
-| MED-PERF 성능 | 1 / 2 | 이용권 학습자 탭마다 자동 새로고침 — 4G 최종 화면 4.4~4.9 s(무이용권 2.0~3.0 s), 느린 3G 8.6~10.4 s(PERF-01, 원인 SEC-08) / READING JS 2배(PERF-02), 목록 TBT 434 ms(PERF-03) | `phase7-performance.md` |
-| MED-F 기능 | 0 / 2 | 죽은 음성 주소 5건(F-01, 화면 영향 없음), 재생 안 되는 원본 녹음 3,187개 저장(F-02) | `phase4-functional.md` |
+| MED-ADM 관리자 | 3 / 3 | 테스트 등록이 고객 칸 차지(ADM-02), 한도·해금 드롭다운 즉시 저장(ADM-03·04), 81강 표기(ADM-05) — **✅ ADM-02~07 전부 로컬 수정, 배포 대기** (ADM-07 새로고침 때 바뀐 기록만 내려받기) | `phase2-admin.md` |
+| MED-SEC 보안 | 2 / 4 | 기기 초기화 후 verify 불일치(SEC-03), CSP unsafe-inline(SEC-05), 메모리 요청 제한(SEC-07), 토큰 없이 기기 해제(SEC-04) — **✅ SEC-03·04·06 수정, SEC-07 진도 저장 부분 수정 (관리자 로그인 제한은 소유자 지시로 보고만), ⏸ SEC-05 는 모든 페이지를 요청마다 서버 렌더링해야 해서 판단 보류(소유자 결정 가능)** | `phase8-security.md` |
+| MED-UX 접근성 | 1 / 4 | 음성 플레이어 문장 점 버튼 1~5px 누를 수 없음(UX-05), 금색 작은 글자(UX-02), `🔁` 이름(UX-03), 17~21px 칩(UX-06) — **✅ UX-02·03·05·06 로컬 수정·측정, 배포 대기** (24px 미만 운영 483 → 0, 라이트 대비 실패 70 → 2·다크 32 → 2 남은 것 CNN; 다크 금색 버튼 흰 글자·LISTENING 받아쓰기 점도 함께). UX-04 는 CNN(폐지)이라 기록만 | `phase6-ux-a11y.md` |
+| MED-PERF 성능 | 1 / 2 | 이용권 학습자 탭마다 자동 새로고침 — 4G 최종 화면 4.4~4.9 s(무이용권 2.0~3.0 s), 느린 3G 8.6~10.4 s(PERF-01, 원인 SEC-08) / READING JS 2배(PERF-02), 목록 TBT 434 ms(PERF-03) — **PERF-02 운영에서 해소 확인 (READING JS 215 KB), ⏸ PERF-03 은 구조 변경이 필요해 별도 작업 (측정 흔들림 큼)** | `phase7-performance.md` |
+| MED-F 기능 | 0 / 2 | 죽은 음성 주소 5건(F-01, 화면 영향 없음), 재생 안 되는 원본 녹음 3,187개 저장(F-02) — **✅ F-01 수정 (음성 주소 3,228개 전부 존재 확인), F-02 는 소유자 결정대로 보관** | `phase4-functional.md` |
 | 저작권 (현대 저작물 발췌: Russell·Auster·Adler·Diamond·Fulghum) | — | R-29·R-43·R-75 | **DEFERRED — OWNER/LAWYER** |
 
 ## DEFERRED — OWNER/LAWYER (소유자 지시로 이번 작업에서 수정 안 함)

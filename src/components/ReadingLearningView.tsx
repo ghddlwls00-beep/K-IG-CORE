@@ -501,21 +501,24 @@ export function ReadingLearningView({
             <button
               type="button"
               onClick={() => setFontSize("normal")}
-              className={`px-2 py-1 transition-colors cursor-pointer ${fontSize === "normal" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
+              aria-pressed={fontSize === "normal"}
+              className={`min-h-6 px-2 py-1 transition-colors cursor-pointer ${fontSize === "normal" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
             >
               보통
             </button>
             <button
               type="button"
               onClick={() => setFontSize("large")}
-              className={`border-x border-line px-2 py-1 transition-colors cursor-pointer ${fontSize === "large" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
+              aria-pressed={fontSize === "large"}
+              className={`min-h-6 border-x border-line px-2 py-1 transition-colors cursor-pointer ${fontSize === "large" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
             >
               크게
             </button>
             <button
               type="button"
               onClick={() => setFontSize("xlarge")}
-              className={`px-2 py-1 transition-colors cursor-pointer ${fontSize === "xlarge" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
+              aria-pressed={fontSize === "xlarge"}
+              className={`min-h-6 px-2 py-1 transition-colors cursor-pointer ${fontSize === "xlarge" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
             >
               특대
             </button>
@@ -828,7 +831,7 @@ export function ReadingLearningView({
                           e.stopPropagation();
                           setRevealedVocaMeaning((prev) => ({ ...prev, [kw.word]: true }));
                         }}
-                        className="text-[12px] text-ink-faint hover:text-ink cursor-pointer underline decoration-dotted"
+                        className="inline-flex min-h-6 items-center text-[12px] text-ink-faint hover:text-ink cursor-pointer underline decoration-dotted"
                       >
                         💡 뜻 확인하기
                       </button>
@@ -1074,21 +1077,24 @@ export function ReadingLearningView({
                 <button
                   type="button"
                   onClick={() => setDualMobileView("both")}
-                  className={`px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "both" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
+                  aria-pressed={dualMobileView === "both"}
+                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "both" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
                 >
                   양방향
                 </button>
                 <button
                   type="button"
                   onClick={() => setDualMobileView("en")}
-                  className={`px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "en" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
+                  aria-pressed={dualMobileView === "en"}
+                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "en" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
                 >
                   영어만
                 </button>
                 <button
                   type="button"
                   onClick={() => setDualMobileView("ko")}
-                  className={`px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "ko" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
+                  aria-pressed={dualMobileView === "ko"}
+                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "ko" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
                 >
                   한글만
                 </button>

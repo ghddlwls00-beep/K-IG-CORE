@@ -30,6 +30,7 @@
 
   --color-primary: var(--primary);
   --color-primary-soft: var(--primary-soft);
+  --color-on-primary: var(--on-primary);
   --color-champagne: var(--champagne);
   --color-champagne-soft: var(--champagne-soft);
   --color-champagne-gold: var(--champagne-gold);
@@ -50,9 +51,13 @@
   --line-strong: #121316;
 
   /* Signature Burnished Champagne Gold Accent */
-  --primary: #A8824B;              /* Burnished Warm Champagne Gold */
+  /* UX-02: #A8824B was 3.32:1 as small text on the canvas and 3.52:1 under white
+     button text; #8C6A38 is the same hue a step darker — 4.68:1 and 4.96:1. */
+  --primary: #8C6A38;              /* Burnished Warm Champagne Gold */
   --primary-soft: #F7F2EA;         /* Very Soft Champagne Cream */
-  --champagne: #A8824B;
+  /* Text and icons ON a gold fill: white on #8C6A38 is 4.96:1. */
+  --on-primary: #FFFFFF;
+  --champagne: #8C6A38;
   --champagne-soft: #F7F2EA;
   --champagne-gold: #C5A46D;
 
@@ -77,6 +82,8 @@
 
   --primary: #D4AF37;
   --primary-soft: rgba(212, 175, 55, 0.12);
+  /* White on #D4AF37 was 2.1:1 (STUDENT 전체 본문 듣기, LISTENING step badges); obsidian ink is 9.1:1. */
+  --on-primary: #121316;
   --champagne: #D4AF37;
   --champagne-soft: rgba(212, 175, 55, 0.12);
   --champagne-gold: #E5C358;

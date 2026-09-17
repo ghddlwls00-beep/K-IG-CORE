@@ -262,11 +262,41 @@ async function saveRecord(record: LicenseDeviceRecord): Promise<void> {
   saveLocalRecords(records);
 }
 
+/**
+ * ADM-07 — the admin "기기 현황 새로고침" lists every licence record, and it used
+ * to download every one of them on every refresh, all at the same moment
+ * (1,000 customers = 1,000 GETs fired together, again on the next refresh).
+ *
+ * The listing already carries each object's ETag, and every save re-encrypts the
+ * record with a fresh IV, so a changed record always has a new ETag. A record
+ * this server instance has already read under the same ETag is not downloaded
+ * again, and the downloads that are needed run at most READ_CONCURRENCY at a
+ * time. The cache keeps the ENCRYPTED text and decrypts on every call, so no two
+ * callers ever share a record object; entries for objects no longer listed are
+ * dropped. A cold instance simply starts empty and reads everything once.
+ */
+const READ_CONCURRENCY = 16;
+const encryptedRecordCache = new Map<string, { etag: string; raw: string }>();
+
+async function mapWithLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let next = 0;
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (next < items.length) {
+      const index = next++;
+      results[index] = await fn(items[index]);
+    }
+  });
+  await Promise.all(workers);
+  return results;
+}
+
 export async function loadDeviceRecords(): Promise<Record<string, LicenseDeviceRecord>> {
   const config = getR2Config();
   if (!config) return loadLocalRecords();
 
   const records: Record<string, LicenseDeviceRecord> = {};
+  const listed = new Set<string>();
   let continuationToken: string | undefined;
   do {
     const page = await config.client.send(
@@ -276,28 +306,36 @@ export async function loadDeviceRecords(): Promise<Record<string, LicenseDeviceR
         ContinuationToken: continuationToken,
       }),
     );
-    const pageRecords = await Promise.all(
-      (page.Contents ?? [])
-        .filter((item) => item.Key?.endsWith(".json"))
-        .map(async (item) => {
-          try {
-            const response = await config.client.send(
-              new GetObjectCommand({ Bucket: config.bucket, Key: item.Key! }),
-            );
-            const raw = await response.Body?.transformToString();
-            return raw ? decryptRecord(raw, config.encryptionKey) : null;
-          } catch (error) {
-            console.error("Unable to read a license record from durable storage:", error);
-            return null;
-          }
-        }),
-    );
+    const items = (page.Contents ?? []).filter((item) => item.Key?.endsWith(".json"));
+    const pageRecords = await mapWithLimit(items, READ_CONCURRENCY, async (item) => {
+      const name = item.Key!;
+      listed.add(name);
+      try {
+        const cached = encryptedRecordCache.get(name);
+        let raw = cached && item.ETag && cached.etag === item.ETag ? cached.raw : null;
+        if (raw === null) {
+          const response = await config.client.send(
+            new GetObjectCommand({ Bucket: config.bucket, Key: name }),
+          );
+          raw = (await response.Body?.transformToString()) ?? "";
+          const etag = response.ETag ?? item.ETag;
+          if (raw && etag) encryptedRecordCache.set(name, { etag, raw });
+        }
+        return raw ? decryptRecord(raw, config.encryptionKey) : null;
+      } catch (error) {
+        console.error("Unable to read a license record from durable storage:", error);
+        return null;
+      }
+    });
     for (const record of pageRecords) {
       if (record?.key) records[normalizeKey(record.key)] = record;
     }
     continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
   } while (continuationToken);
 
+  for (const name of encryptedRecordCache.keys()) {
+    if (!listed.has(name)) encryptedRecordCache.delete(name);
+  }
   return records;
 }
 

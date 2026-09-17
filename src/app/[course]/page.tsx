@@ -146,7 +146,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
             CORE TRACK
           </span>
           <span className="text-ink-faint">·</span>
-          <span className="font-mono text-[12px] font-semibold text-emerald-600">
+          <span className="font-mono text-[12px] font-semibold text-emerald-700 dark:text-emerald-400">
             총 {listed.length}개 정규 레슨
           </span>
           {sections.length > 0 && (

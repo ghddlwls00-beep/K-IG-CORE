@@ -42,7 +42,7 @@ export default function GlobalError({
           dangerouslySetInnerHTML={{
             __html: `
               :root { --kig-surface:#FAF8F5; --kig-ink:#121316; --kig-ink-soft:#4E4B46;
-                      --kig-line:rgba(34,30,26,.08); --kig-primary:#A8824B; }
+                      --kig-line:rgba(34,30,26,.08); --kig-primary:#8C6A38; }
               @media (prefers-color-scheme: dark) {
                 :root { --kig-surface:#0E0E11; --kig-ink:#F5F3EF; --kig-ink-soft:#A8A39D;
                         --kig-line:rgba(255,255,255,.08); --kig-primary:#D4AF37; }
