@@ -1,0 +1,372 @@
+# 교육 내용 지적 요약 (검증 통과분) — 2026-09-22 12:53
+
+검토자 보고 2075건 · 검증 통과 **1865건** · 기각 210건 · **미검증 0건** (검증 에이전트가 사용량 한도로 실행되지 못한 건 포함; 미검증 목록은 out/content-findings-unverified.json) (입력 파일: content-review-deep.json, content-review-pass1.json, content-review-vocadict.json)
+
+미검증 내역: {}
+
+| 과정 | 심각 | 높음 | 중간 | 낮음 | 합계 |
+|---|---|---|---|---|---|
+| LISTENING | 3 | 17 | 100 | 486 | 606 |
+| VOCA | 0 | 37 | 263 | 190 | 490 |
+| READING | 0 | 7 | 65 | 239 | 311 |
+| GRAMMAR I | 0 | 15 | 96 | 97 | 208 |
+| STUDENT | 0 | 3 | 19 | 119 | 141 |
+| GRAMMAR II | 0 | 6 | 30 | 72 | 108 |
+| 기타 | 0 | 0 | 1 | 0 | 1 |
+
+**유형별:** translation 457 · missing-sense 286 · missing-alternative 176 · english-grammar-spelling 123 · corruption 116 · factual 96 · data-structure 90 · other 70 · part-of-speech 63 · pedagogy 56 · outdated 51 · duplicate 50 · misalignment 49 · wrong-meaning 45 · model-answer 37 · context-mismatch 24 · offensive-bias 24 · copyright 18 · explanation 11 · spelling 9 · variant-form 7 · lemma 4 · level-mismatch 3
+
+## Critical/High 지적 (검증 통과, 최대 200건)
+
+- **[High] VOCA mv1-12** (grid row 3 col 4 'few'; content/voca_dictionary.json line 9918-9919; dump voca-lessons.tsv line 2578)
+  - 원문: few (수가) 적은, 몇몇의
+  - 문제: '몇몇의' is the meaning of 'a few', not of 'few' on its own. Bare 'few' means '거의 없는': it is negative and says there is not enough. Longman English-Korean glosses 'a few' as 몇몇의, 소수의 and bare 'few' as 거의 없는. The card merges the two, and few vs a few is a standard contrast in Korean middle-school gramma
+  - 수정안: (수가) 거의 없는, 적은 (a few: 몇몇의, 약간의)
+- **[High] VOCA mv2-09** (content/lessons/phonics/mv2-09.json wordgrid row 2 col 3 'hard' and row 2 col 6 'difficult'; voca_dictionary.json line 9106 (hard) and line 10298 (difficult); voca-lessons.tsv lines 3681, 3684)
+  - 원문: hard 어려운; 열심히 / difficult 어려운
+  - 문제: Two words in the same lesson share the sense '어려운'. Distractors are excluded only when the whole meaning string is identical (src/lib/vocaUtils.ts:282, 330, 434), and here the strings differ. Step 2 ko-to-en '[ 어려운 ]' can offer 'hard' as a wrong option, although hard does mean difficult (Wiktionary 
+  - 수정안: Fix at the generator: exclude a distractor (quiz and speed drill) that shares any ','/';' sense segment with the correct meaning. Alternatively, move 'difficult' or 'hard' to another lesson. Changing 
+- **[High] VOCA mv2-01** (content/lessons/phonics/mv2-01.json wordgrid row 1 col 1; voca_dictionary.json line 12774; voca-lessons.tsv line 3433)
+  - 원문: dumb 어리석은; 말을 못 하는
+  - 문제: The sense '말을 못 하는' (unable to speak) is taught with no label. Dictionaries mark it as insulting when applied to people. Dictionary.com lists it as 'offensive when applied to humans', and Wiktionary labels it 'dated'. 'mute' is the accepted word. The first sense, '어리석은', is also informal and derogat
+  - 수정안: '멍청한, 어리석은 (구어·낮춤)'. Either drop '말을 못 하는' or mark it as old-fashioned and offensive: '(옛·모욕적) 말을 못 하는 → mute를 씀'. The same entry is also shown in mv3-01.
+- **[High] VOCA mv2-36** (mv2-36 row 4 col 5 'handicap' (dictionary key 'handicap'; also shown in mv3-35 r4c4))
+  - 원문: handicap 장애
+  - 문제: The card teaches 'handicap' only as the word for a disability (장애), with no warning. Cambridge, Oxford and Collins now label that sense old-fashioned and offensive, and Wiktionary marks it 'sometimes considered offensive'. The neutral, current senses (a disadvantage or obstacle; a golf or racing han
+  - 수정안: 불리한 조건, 핸디캡 (※ '장애'의 뜻으로는 모욕적으로 들릴 수 있어 disability를 씀)
+- **[High] VOCA mv3-08** (mv3-08 r3c1 'almost' (quiz #13, en-to-ko) and r5c6 'nearly' (quiz #30, ko-to-en))
+  - 원문: almost = "거의" ; nearly = "거의, 하마터면"
+  - 문제: almost and nearly are true synonyms, and their glosses share the segment 거의. The quiz and the speed drill only exclude a distractor when the full meaning string is identical. So '거의, 하마터면' can appear as a wrong option for almost (about 3 in 29 runs). On the ko-to-en question '[ 거의, 하마터면 ]', 'almost'
+  - 수정안: Make the distractor filter treat two words as equivalent when they share any sense segment (split on , and ;), and add a small manual synonym list for this lesson (almost~nearly). Changing the diction
+- **[High] VOCA mv3-08** (mv3-08 r3c6 'maybe' (quiz #18, ko-to-en), r4c1 'perhaps' (#19, en-to-ko), r4c2 'probably' (#20, ko-to-en))
+  - 원문: maybe = "어쩌면" ; perhaps = "어쩌면, 아마" ; probably = "아마 (십중팔구)"
+  - 문제: maybe and perhaps are exact synonyms, and all three glosses overlap. On the ko-to-en question '[ 어쩌면 ]', 'perhaps' and 'probably' are allowed as wrong options: there is about a 20% chance that at least one of them appears. On the en-to-ko question 'perhaps', both '어쩌면' and '아마 (십중팔구)' can appear as 
+  - 수정안: Use the same code fix as for almost/nearly (treat words that share a sense segment, or are on a synonym list, as equivalent). If the glosses are kept, make the degree of certainty explicit and do not 
+- **[High] VOCA mv3-02** (mv3-02 r4c1 'wonderful' (quiz #19, en-to-ko) and r5c1 'fancy' (quiz #25, en-to-ko))
+  - 원문: fancy = "멋진" ; wonderful = "훌륭한, 멋진"
+  - 문제: The two glosses share 멋진, so '훌륭한, 멋진' can be a 'wrong' option for fancy and '멋진' a 'wrong' option for wonderful. The speed drill can show 'fancy = 훌륭한, 멋진' and expect 불일치. Separately, 멋진 is a weak primary sense for fancy. Its core adjective meaning is 'elaborate, decorated, expensive' (a fancy rest
+  - 수정안: fancy → "고급의, 장식이 많은". Do not use 화려한 (clashes with colorful '화려한' in the same lesson) and do not use 공상 (clashes with fantasy '공상' in hv-50, which also contains fancy). Recheck hv-50 after the change
+- **[High] VOCA mv3-16** (row 5 col 4 'stare' and row 5 col 5 'gaze'; content/voca_dictionary.json keys 'stare' (line 13062) and 'gaze' (line 14758); quiz logic in src/lib/vocaUtils.ts lines 280-333)
+  - 원문: stare 응시하다 / gaze 응시하다; 시선
+  - 문제: Two words in the same lesson are glossed with the same Korean sense, 응시하다. The Step 2 quiz (generateActiveRecallQuizzes) only drops a distractor when its meaning string matches the answer's exactly (the KIG-019 check). '응시하다' and '응시하다; 시선' are different strings, so the check does not catch them. Qu
+  - 수정안: Give the two words glosses that do not overlap, e.g. stare = '빤히 쳐다보다' and gaze = '가만히 바라보다; 시선'. Separately, widen the KIG-019 check in src/lib/vocaUtils.ts: split each meaning on ';' and ',' and dro
+- **[High] VOCA mv3-28** (row 2 col 1 'firm' (quiz Q7, en-to-ko) and row 2 col 4 'company' (quiz Q10, ko-to-en); dictionary keys 'firm' and 'company')
+  - 원문: firm | 확고한; 회사 / company | 회사
+  - 문제: Both words carry the sense 회사. The quiz only excludes distractors whose whole meaning string is identical, and 확고한; 회사 is not identical to 회사. This makes graded items unfair in three ways. (1) Q10 asks '[ 회사 ] 에 해당하는 올바른 영단어를 고르세요.' and can offer 'firm' as a wrong option (3 of 29 chance per run), al
+  - 수정안: Fix the code so the quiz and speed drill never pair two words that share any sense segment (split the meaning on , and ;). Do this at vocaUtils.ts:282, 330 and 434, which also clears the other 16 R-7 
+- **[High] VOCA hv-04** (hv-04 row 3 col 6 (quiz Q18, Korean-to-English); dictionary key "exclamation" (content/voca_dictionary.json line 426))
+  - 원문: exclamation | 느낌표
+  - 문제: The bare noun 'exclamation' means a sudden cry or remark (외침, 감탄), or an outcry or protest. '느낌표' translates 'exclamation mark/point'. Wiktionary lists that sense for bare 'exclamation' but marks it archaic. The gloss also breaks the family link with 'exclaim 외치다' in the same row. The error is activ
+  - 수정안: 외침, 감탄 (exclamation mark: 느낌표). Korean meanings are never spoken, so no audio clip has to be regenerated. The word appears only in hv-04.
+- **[High] VOCA hv-01** (hv-01 row 1 col 1 ancestor (Q1), row 3 col 3 forefather (Q15), row 1 col 3 anticipate (Q3), row 2 col 3 predict (Q9), row 3 col 5 foresee (Q17), all English-to-Korean; distractor code src/lib/vocaUtils.ts:280-291; speed drill vocaUtils.ts:408-452)
+  - 원문: ancestor | 조상 / forefather | 선조 ; anticipate | 예상하다 / predict | 예측하다 / foresee | 예견하다
+  - 문제: forefather and ancestor are true synonyms (Wiktionary: forefather = 'an ancestor'), and 조상/선조 are synonyms in Korean. anticipate, predict and foresee are near-synonyms glossed 예상하다/예측하다/예견하다. All five are English-to-Korean questions whose three distractors are drawn from the other 29 lesson meanings
+  - 수정안: Add a same-meaning group list (the same idea as the KIG-019 exact-meaning rule), e.g. {ancestor, forefather} and {anticipate, predict, foresee}, and never use members of a group as each other's distra
+- **[High] VOCA hv-23** (hv-23 row2 col2 'critical' + row4 col6 'decisive'; voca_dictionary.json keys "critical", "decisive")
+  - 원문: critical = "비판적인; 결정적인"; decisive = "결정적인"
+  - 문제: Both words share the sense 결정적인. In the speed drill, 'decisive = 비판적인; 결정적인' expects 불일치. In the en-to-ko quiz for decisive, the critical option contains the correct sense. The same thing happens the other way round. Already listed as R-7 but unfixed.
+  - 수정안: critical → "비판적인; 중대한, 위태로운" and decisive → "결정적인; 단호한".
+- **[High] VOCA hv-23** (hv-23 row3 col2 'accidental' + row4 col1 'casual'; voca_dictionary.json keys "accidental", "casual")
+  - 원문: accidental = "우연한"; casual = "우연한, 격식 없는"
+  - 문제: Both words share the sense 우연한. In the speed drill, 'accidental = 우연한, 격식 없는' expects 불일치. In the quiz, casual's option contains accidental's full answer. 'By chance' is a real sense of casual (dictionary.com lists it first), so the fix is to separate the two glosses, not to call either one wrong. A
+  - 수정안: casual → "격식 없는, 평상시의; 무심한" and accidental → "우연한, 우발적인".
+- **[High] VOCA hv-23** (hv-23 row1 col1 'concerned'; voca_dictionary.json key "concerned")
+  - 원문: concerned = "우려되는"
+  - 문제: In Korean, 우려되는 describes the thing that is feared or worrying. The Standard Korean Dictionary defines 우려되다 as 근심되거나 걱정되다, with the example '여름철에는 전염병의 발병이 우려된다'. So 우려되는 matches English 'concerning/worrying', not 'concerned'. The adjective concerned describes the person who worries (걱정하는, 염려하는). It
+  - 수정안: concerned → "걱정하는, 염려하는; 관련된".
+- **[High] VOCA hv-45** (hv-45 row 4 col 5 (voca_dictionary key "nursery"))
+  - 원문: nursery 보육원 (dictionary: "nursery": {"meaning":"보육원","searchWord":"nursery"})
+  - 문제: In current standard Korean, 보육원 means an institution that takes in and raises children who have no parents or guardians, i.e. an orphanage-type facility. The Standard Korean Language Dictionary defines it as '부모나 보호자가 없는 아이들을 받아들여 기르고 가르치는 곳'. English 'nursery' means a daycare or nursery school (어린이
+  - 수정안: 어린이집, 탁아소; 아기 방; 묘목장
+- **[High] VOCA hv-41** (hv-41 row 4 col 6 intermediate vs row 5 col 6 medium)
+  - 원문: intermediate 중간의 / medium 중간의; 매체
+  - 문제: Two words in the same lesson share the gloss 중간의. The Step 2 quiz removes a distractor only when its whole meaning string is exactly equal to the answer's (vocaUtils.ts:330, the KIG-019 check), so '중간의' and '중간의; 매체' both pass as different meanings. intermediate is question #24 (index 23, odd), so i
+  - 수정안: Make the glosses distinct, for example intermediate '중급의, 중간 단계의' and medium '매체, 수단; (크기가) 중간의'. Separately, the quiz distractor filter could also exclude options whose gloss shares any ';' or ',' to
+- **[High] VOCA hv-43** (hv-43 row 2 col 3 eminent vs row 2 col 5 prominent)
+  - 원문: eminent 저명한 / prominent 저명한; 눈에 띄는
+  - 문제: Both words carry 저명한, but the gloss strings differ, so the quiz filter does not recognise them as the same meaning. prominent is question index 10 (even), asked English-to-Korean: 'prominent'. When the option '저명한' (eminent's gloss) is drawn as a distractor, it is also a correct meaning of prominent
+  - 수정안: eminent '(분야에서) 저명한, 탁월한'; prominent '눈에 띄는, 두드러진; 중요한, 유명한'. Put the distinguishing sense first for prominent, and make sure the two glosses share no identical token (or extend the quiz filter to tok
+- **[High] VOCA hv-43** (hv-43 row 5 col 2 committee vs row 5 col 4 commission)
+  - 원문: committee 위원회 / commission 위원회; 위임
+  - 문제: committee is question index 25 (odd), asked Korean-to-English: '[ 위원회 ]'. The distractor filter lets 'commission' through because its gloss string is '위원회; 위임', not exactly '위원회'. commission is itself glossed 위원회, so a learner who picks it is marked wrong.
+  - 수정안: commission '(정부 등의) 위원회; 수수료; 위임, 의뢰' and committee '(조직 내) 위원회'. At minimum, the quiz should not offer commission as a wrong answer to '위원회'.
+- **[High] VOCA hv-54** (row 2 col 6 'prime' (quiz idx 11, ko-to-en) and row 3 col 1 'primary' (idx 12, en-to-ko); dictionary lines 6146-6151)
+  - 원문: prime = 주요한 / primary = 주요한; 초등의
+  - 문제: Two words in the same lesson carry the identical sense 주요한. The quiz excludes distractors only when the full meaning strings are identical (src/lib/vocaUtils.ts:282 and :330), so 'primary' can be offered as a WRONG option on the ko-to-en item "[ 주요한 ] 에 해당하는 올바른 영단어를 고르세요." (prime's question), altho
+  - 수정안: Give prime its distinctive senses, e.g. prime = '최고의, 최상의; 전성기' and primary = '초등의; 1차적인, 주요한'. Also make the distractor filter exclude any word whose meaning shares a segment after splitting on , and
+- **[High] VOCA hv-57** (row 3 col 5 'sense' (idx 16, en-to-ko) and row 4 col 4 'sensation' (idx 21, ko-to-en); dictionary lines 6526-6539)
+  - 원문: sense = 감각; 의미 / sensation = 감각
+  - 문제: Identical sense 감각 within one lesson. sensation's item is ko-to-en with the prompt "[ 감각 ]", and 'sense' (the basic word for 감각, e.g. the five senses = 오감) can be drawn as a 'wrong' option. The speed drill can also show 'sense = 감각' with 불일치 as the expected answer. Already recorded as R-7 in maps/vo
+  - 수정안: sensation = '(몸으로 느끼는) 느낌, 지각; 센세이션, 대소동', sense = '감각; 의미; 분별력'. Also apply the segment-level distractor exclusion.
+- **[High] VOCA hv-52** (row 5 col 2 'transport' (idx 25, ko-to-en) and row 5 col 3 'transportation' (idx 26, en-to-ko); dictionary lines 5966-5971; collocation card src/lib/vocaUtils.ts:204-208; etymology box vocaUtils.ts:111)
+  - 원문: transport = 수송 / transportation = 교통
+  - 문제: (1) transport is glossed as a noun only ('수송'), but the same screen's collocation card teaches it as a verb ('transport goods across borders' = '국경을 넘어 화물을 수송하다', 'Ships transport huge amounts of cargo…'), and the etymology box ends in '…수송하다'. (2) transportation's standard sense is exactly 수송/운송: W
+  - 수정안: transport = '수송하다, 실어 나르다; 수송' with the verb first, matching the card, and transportation = '교통(수단), 수송'. Also exclude same-sense words as distractors (or give transport a verb-only gloss so the POS s
+- **[High] VOCA hv-53** (row 3 col 3 'precious' (idx 14, en-to-ko) and row 5 col 3 'priceless' (idx 26, en-to-ko); dictionary lines 6042, 6086)
+  - 원문: precious = 소중한 / priceless = 귀중한
+  - 문제: The two glosses are interchangeable synonyms. 귀중한 is the textbook gloss for precious, and priceless means 'so precious as not to be obtainable at any price' (Wiktionary). Because the strings differ, the quiz can list '귀중한' as a wrong option for 'precious' and '소중한' as a wrong option for 'priceless',
+  - 수정안: Differentiate the glosses, e.g. priceless = '(값을 매길 수 없을 만큼) 대단히 귀중한' and precious = '소중한, 귀한'. Or add the pair to a per-lesson synonym exclusion list so neither is offered as the other's distractor.
+- **[High] VOCA hv-65** (grid r1c6 (voca-lessons.tsv line 1927); content/voca_dictionary.json key "assure")
+  - 원문: assure 확신하다
+  - 문제: '확신하다' means the subject itself is convinced (= be sure). 'assure' means telling someone firmly, or making something certain for someone (장담하다/확언하다/보장하다; 확신시키다). The gloss reverses who is convinced and drops the required object (assure + person + that/of). It also breaks the family link with the nex
+  - 수정안: "assure": { "meaning": "장담하다, 확언하다; 보장하다" } (or "확신시키다, 장담하다")
+- **[High] VOCA hv-64** (grid r2c1 (voca-lessons.tsv line 1898); content/voca_dictionary.json key "distress")
+  - 원문: distress 고민
+  - 문제: In modern Korean '고민' means worrying over or deliberating about something (진로 고민). 'distress' is acute suffering or anguish (심한 고통, 괴로움) or being in danger or hardship (곤경, 조난, e.g. 'a ship in distress'). The gloss understates the meaning and puts it in the wrong register.
+  - 수정안: "distress": { "meaning": "(심한) 고통, 괴로움; 곤경" }
+- **[High] VOCA hv-66** (grid r3c3 continual (voca-lessons.tsv line 1966) and r2c3 continuous (line 1960); content/voca_dictionary.json keys "continual", "continuous" (same pair also in hv-15))
+  - 원문: continual 지속적인 / continuous 연속적인
+  - 문제: The pair exists to teach the contrast between continual (repeated, recurring with breaks) and continuous (uninterrupted). '지속적인' actually suggests unbroken duration, which is continuous's meaning, and neither gloss tells the two apart. The quizzes (vocaUtils.ts lines 280-300: En→Ko distractors drawn
+  - 수정안: "continual": { "meaning": "거듭되는, 빈번한 (끊겼다 이어지며 반복되는)" }, "continuous": { "meaning": "끊임없는, 연속적인 (중단 없이 이어지는)" }
+- **[High] VOCA hv-66** (grid r3c2 technique (voca-lessons.tsv line 1965) and r2c5 technology (line 1962); content/voca_dictionary.json key "technique")
+  - 원문: technique 기술 / technology 과학 기술
+  - 문제: technique is item index 13, so it is a Ko→En recall question: the prompt is '[ 기술 ]' and the answer is a word. vocaUtils.ts lines 323-331 exclude only words whose gloss is the identical string, so 'technology' (과학 기술), which everyday Korean also calls 기술, can appear as a 'wrong' option.
+  - 수정안: "technique": { "meaning": "기법, 기교" }
+- **[High] GRAMMAR I gh1-020** (gh1-021.json sentences n=24 (also n=22, n=23); no alternatives on any of the three)
+  - 원문: Aren't I your friend?
+  - 문제: These negative questions accept only the contracted form. The lesson's own rule summary (gh1-021 (8)) teaches the uncontracted order as the first option: "동사 + 주어 + not + 주격 보어, 혹은 ... 축약어". Lessons gh1-025 and gh1-029 (n 41-50) also accept both forms. The real grader gives "Am I not your friend?" I
+  - 수정안: Add alternatives: n=22 "Is he not a teacher?"; n=23 "Are they not your friends?"; n=24 "Am I not your friend?". This matches gh1-025 n=41 "Am I not a boy?" / "Aren't I a boy?".
+- **[High] GRAMMAR I gh1-050** (gh1-051 items n38 and n39 (prompts in gh1-050 n38 '지금 여덟시냐?' and n39 '지금은 아홉시다.'); same items in gh1-051-1 (n38 is not there; it is in gh1-051-2) and gh1-051-2)
+  - 원문: "n": "38", "text": "Is it eight o'clock?" / "n": "39", "text": "It is nine o'clock." (no alternatives)
+  - 문제: Both Korean prompts contain 지금 (now), but the model answers leave it out and no alternative keeps it. I ran the real grader: 'Is it eight o'clock now?' and 'It is nine o'clock now.' both score INCORRECT, because 5 words exceed the 4-word model times 1.15. A learner who translates every word of the p
+  - 수정안: Add alternatives: n38 "Is it eight o'clock now?"; n39 "It is nine o'clock now." and "It's nine o'clock now.". Make the same change in gh1-051-2. A sentence-final 'now' is the most literal rendering. A
+- **[High] GRAMMAR I gh1-054** (gh1-055 items n42 and n43 (prompts gh1-054 n42 '그는 점심을 먹지 않았나?', n43 '그들은 저녁을 먹지 않았나?'); also gh1-055-2)
+  - 원문: "n": "42", "text": "Didn't he have lunch?" / "n": "43", "text": "Didn't they have dinner?" (no alternatives)
+  - 문제: The prompts say 먹다 (eat), but only the 'have lunch/dinner' idiom is accepted. The real grader scores "Didn't he eat lunch?" and "Didn't they eat dinner?" INCORRECT, because 'eat' and 'have' are not treated as matching words. The course accepts this elsewhere: gh1-015 n15 lists "You didn't eat lunch,
+  - 수정안: Add alternatives: n42 "Didn't he eat lunch?", "Did he not have lunch?", "Did he not eat lunch?"; n43 "Didn't they eat dinner?", "Did they not have dinner?", "Did they not eat dinner?". Make the same c
+- **[High] GRAMMAR I gh1-068** (gh1-068 #80 prompt / gh1-069 #80 model + alternatives)
+  - 원문: KO: "각(each) 소년이 한 상을 받지는 않았죠?" | EN: "Not every boy received a prize, did he?" | alternatives: "Not every boy received a prize, did they?", "Each boy didn't re
+  - 문제: The prompt asks for partial negation ('not every boy got a prize') using 'each', but 'each' cannot express partial negation in English. So the model quietly switches to 'every' and becomes word-for-word identical to #79, a duplicate. The alternative 'Each boy didn't receive a prize, did he?' grades 
+  - 수정안: Remove #80, or rewrite it so it no longer asks for 'each' with partial negation. For example, make it a none-of-them drill: '그 소년들 중 아무도 상을 받지 않았죠? (none)' → 'None of the boys received a prize, did th
+- **[High] GRAMMAR I gh1-068** (gh1-068 #84, #85 prompts / gh1-069 #84, #85 models)
+  - 원문: #84 KO: "아무도(그들의 아무도) 오지 않았다." EN: "Nobody came." | #85 KO: "아무도(그들 중의 아무도) 오지 않는다." EN: "Nobody comes."
+  - 문제: The prompt's own hints, (그들의 아무도) and (그들 중의 아무도), literally ask for 'none of them', but the grader has no such alternative. 'None of them came.' and 'None of them come(s).' grade as incorrect (0 points), and so do 'No one came.' and 'No one comes.'. The same course accepts 'None of them came.' as t
+  - 수정안: #84: add the alternatives 'None of them came.' and 'No one came.'. #85: add 'None of them come.', 'None of them comes.' and 'No one comes.'. Change the #84 hint to '(그들 중 아무도)'.
+- **[High] GRAMMAR I gh1-066 / gh1-068** (gh1-067 #68, #69; gh1-069 #86, #87)
+  - 원문: gh1-067 #68 "Nobody likes it, do they?" | #69 "Nobody liked it, did they?" | gh1-069 #86 "Nobody comes, do they?" | #87 "Nobody came, did they?"
+  - 문제: 'No one' means exactly the same as 'nobody', and the Korean prompt (아무도) does not favour either. The grader gives 0 to 'No one likes it, do they?', 'No one liked it, did they?', 'No one comes, do they?' and 'No one came, did they?', because the extra word goes over the length cap. The same course ac
+  - 수정안: Add a 'No one …' alternative to each item: 'No one likes it, do they?', 'No one liked it, did they?', 'No one comes, do they?', 'No one came, did they?'.
+- **[High] GRAMMAR I gh1-058** (gh1-059 #14, #15 (split copy in gh1-059-1))
+  - 원문: KO #14 "그는 아침을 안 먹지?" EN "He doesn't have breakfast, does he?" | KO #15 "그녀는 저녁을 안 먹었지?" EN "She didn't have dinner, did she?"
+  - 문제: 먹다 is 'eat', and 'eat breakfast' / 'eat dinner' are fully natural. The grader nevertheless gives 0 to 'He doesn't eat breakfast, does he?' and 'She didn't eat dinner, did she?'. The course is inconsistent here: gh1-014 #15 accepts 'You didn't eat lunch, did you?' as an alternative.
+  - 수정안: Add the alternatives 'He doesn't eat breakfast, does he?' (#14) and 'She didn't eat dinner, did she?' (#15), in gh1-059 and in gh1-059-1. The same gap exists outside this scope at gh1-054 #42/#43.
+- **[High] GRAMMAR I gh1-058** (gh1-059 #16, #17 (split copy in gh1-059-1))
+  - 원문: KO #16 "그는 많은 물이 필요하지?" EN "He needs much water, doesn't he?" | KO #17 "그 병원은 많은 피를 원하지?" EN "The hospital wants much blood, doesn't it?"
+  - 문제: 'much' before a noun in an affirmative statement is unusual and sounds archaic or overly formal. The natural form is 'a lot of' / 'lots of'. The model teaches the unnatural form, and the grader gives 0 to 'He needs a lot of water, doesn't he?', 'He needs lots of water, doesn't he?' and 'The hospital
+  - 수정안: Make 'He needs a lot of water, doesn't he?' and 'The hospital needs a lot of blood, doesn't it?' the models, or at least add the alternatives 'a lot of' and 'lots of' ('wants' / 'needs') to both items
+- **[High] GRAMMAR I gh1-058** (gh1-059 #11 (split copy in gh1-059-1))
+  - 원문: KO "그의 어머니는 어느 것을 원하나?" EN "Which does his mother want?"
+  - 문제: '어느 것' is literally 'which one', and 'Which one does his mother want?' is the most natural answer. The grader gives it 0, because one extra word goes over the length cap. The course's own gh1-122 #52 uses 'Which one did you take?' for '너는 어느 것을 취했니?'.
+  - 수정안: Add the alternative 'Which one does his mother want?'.
+- **[High] GRAMMAR I gh1-060** (gh1-061 #19)
+  - 원문: KO "당신은 좋은 저녁 식사를 했습니까?" EN "Did you have a nice dinner?"
+  - 문제: 좋은 is literally 'good', and 'Did you have a good dinner?' is natural and correct. The grader gives it 0, because good/nice are neither function words nor near-spellings.
+  - 수정안: Add the alternative 'Did you have a good dinner?'.
+- **[High] GRAMMAR I gh1-062** (gh1-063 #17)
+  - 원문: KO "너의 할머니는 예쁘셨니?" EN "Was your grandmother beautiful?"
+  - 문제: 예쁘다 is 'pretty' (the course itself uses 아름답다 for 'beautiful', e.g. gh1-006 #29 '그녀는 아름답니?' → 'Is she beautiful?'). 'Was your grandmother pretty?' grades as incorrect (0).
+  - 수정안: Add the alternative 'Was your grandmother pretty?'.
+- **[High] GRAMMAR I gh1-080** (gh1-080 #27 / #28 prompts; gh1-081 #27 / #28 models (mirrored in gh1-080-2 / gh1-081-2))
+  - 원문: KO #27 "당신은 어디 출신인가?(두 가지로)" -> EN "Where are you from?" (no alternatives); KO #28 "너는 어디 출신이니?" -> EN "Where do you come from?" (no alternatives)
+  - 문제: #27 tells the learner to answer in two ways, but each item accepts only one form. The two prompts mean the same thing and differ only in politeness. Real grader results: "Where do you come from?" on #27 = incorrect (0 points). "Where are you from?" on #28 = incorrect. Typing both forms into the #27 
+  - 수정안: In gh1-081.json and gh1-081-2.json, add alternative "Where do you come from?" to #27 and "Where are you from?" to #28. In gh1-080.json and gh1-080-2.json, remove '(두 가지로)' from #27 or reword it, e.g. 
+- **[High] GRAMMAR I gh1-096 (answer in gh1-097)** (item 80 (gh1-097 items[].text); prompt gh1-096 item 80)
+  - 원문: Each boy didn't wear glasses, did he?
+  - 문제: The prompt "각 소년이 안경을 쓰지는 않았지?(Each)" asks for partial negation ('not every boy wore glasses') and forces the word 'each'. English 'each' is strongly distributive and takes wide scope over negation, so "Each boy didn't wear glasses" is read as 'for each boy, he did not wear glasses' = nobody wore gl
+  - 수정안: Drop the (Each) constraint on this item and use "Not every boy wore glasses, did he?" (prompt: 모든 소년이 안경을 쓰지는 않았지?), or move 'each' to a total-negation item such as "각 소년이 안경을 쓰지 않았다. -> No boy wore g
+- **[High] GRAMMAR I gh1-094 (answer in gh1-095)** (item 66 (prompt gh1-094; answer + alternatives gh1-095))
+  - 원문: 모든 사람이 그 해결책을 좋아하지? (everybody. everyone, all)
+  - 문제: The prompt tells the learner three words are acceptable (everybody / everyone / all), but gh1-095 item 66 lists only "Everybody likes the solution, don't they?" and the alternative "Everyone likes the solution, don't they?". Every 'all' rendering I graded with the repo's grader is 0점: "All like the 
+  - 수정안: Fix the hint to "(everybody, everyone, all)" and add the 'all' form to alternatives, e.g. "All of them like the solution, don't they?" and "They all like the solution, don't they?". (Note that bare "A
+- **[High] GRAMMAR I gh1-110** (item n=92 (English in gh1-111.json), compare item n=89)
+  - 원문: Oral tobacco carries its own health risks, doesn't it?
+  - 문제: The Korean prompt is "씹는담배는 그 자체의 건강상의 위험을 수반하지?" and item n=89 of the SAME lesson teaches 씹는담배 = "chewing tobacco" ("Which company makes chewing tobacco?"). Three items later the same Korean word must be rendered "Oral tobacco", which no learner can guess. Graded with the shipped grader, "Chewing t
+  - 수정안: Either change the model answer to "Chewing tobacco carries its own health risks, doesn't it?" (then regenerate the Azure clip for the new text) or add "Chewing tobacco carries its own health risks, do
+- **[High] GRAMMAR II gh2-007** (gh2-007-1 items[] n="16" (Korean prompt for gh2-007 item 16 "Young as I am, I know it."))
+  - 원문: 나는 젊지만(어리지만) 그것을 안다.
+  - 문제: Item 8 of the same lesson is "Though he is young, he is very wise." and its Korean prompt is '그는 어리지만(젊지만) 매우 현명합니다.' — the identical '~지만(…)' pattern with the identical 젊다/어리다 parenthetical pair. Item 16's prompt therefore contains nothing that tells the learner this one must use the inverted conce
+  - 수정안: Either (a) add alternatives to gh2-007.json item 16: ["Though I am young, I know it.", "Although I am young, I know it."], or (b) keep the inversion as the only answer but make the prompt demand it, e
+- **[High] GRAMMAR II gh2-014** (gh2-014-1 items[] n="9" vs gh2-014 items[] n="9")
+  - 원문: 그는 그 입학시험에 통과하기를 희망하면서 열심히 공부했다.
+  - 문제: The Korean says '열심히 공부했다' (studied hard) but the model answer is "He worked hard, hoping to pass the entrance examination." '열심히 공부하다' is 'study hard'; 'work hard' is '열심히 일하다/노력하다'. The item has no alternatives, and the repo's own grader (src/lib/grammarGrading.ts) scores the faithful answer 'He s
+  - 수정안: Change the Korean to match: '그는 그 입학시험에 통과하기를 희망하면서 열심히 노력했다.' Fixing the Korean side is preferable to editing the English, because changing the English text invalidates that sentence's Azure voice cl
+- **[High] GRAMMAR II gh2-021** (item 12 (items[].text, English page))
+  - 원문: "n": "12", "text": "I must make you an apology.", "alternatives": ["I owe you an apology."]
+  - 문제: The Korean prompt is plain "나는 너에게 사과해야 한다." (gh2-021-1 #12). The obvious and correct English for it — "I must apologize to you." — is not among the accepted answers, and the ditransitive "make someone an apology" is archaic and not derivable from the prompt. I ran the shipped grader (src/lib/gramma
+  - 수정안: Add alternatives "I must apologize to you." and "I have to apologize to you." (and ideally make the first of these the model answer, keeping "I must make you an apology." as the 4형식 alternative, since
+- **[High] GRAMMAR II gh2-028** (gh2-028-1 items[].n = "25" and "26" (Korean prompts); English gh2-028 items 25 = "Don't sir me.", 26 = "Don't mister me.")
+  - 원문: { "n": "25", "text": "나에게 존칭을 쓰지 말아라." } … { "n": "26", "text": "나에게 존칭을 쓰지 말아라." }
+  - 문제: Items 25 and 26 have byte-identical Korean prompts, but the two graded English answers are different sentences ("Don't sir me." vs "Don't mister me.") and neither item lists the other as an alternative. The learner is asked to write two different English sentences from the same Korean sentence, with
+  - 수정안: Differentiate the two prompts, e.g. #25 → "나에게 '서(sir)'라고 부르지 말아라. (깍듯한 존칭 쓰지 마.)" and #26 → "나에게 '미스터(Mr.)'라고 부르지 말아라." Alternatively keep one prompt and add the other English sentence to that item's
+- **[High] GRAMMAR II gh2-034** (items[3] (n="3"), paired with gh2-034-1 items[3])
+  - 원문: "He promised me to come again." / KO: "그는 나에게 다시 오겠다고 약속했다."
+  - 문제: "promise + indirect object + to-infinitive" is not an accepted pattern of English. Longman (LDOCE) lists promise to do sth / promise (that) / promise sb (that) / promise sb sth, and explicitly warns against the object + to-infinitive form ("Don't say: My parents promised me to buy a new car"). The i
+  - 수정안: Change the model answer to "He promised me that he would come again." and add alternatives "He promised me he would come again." and "He promised to come again." (Regenerate the Azure Ava clip with no
+- **[High] GRAMMAR II gh2-046 / gh2-046-1 (Lesson 46)** (gh2-046-1 blocks[1].items[5] and items[6] — Korean prompts #6 and #7)
+  - 원문: #6: "아무리 열심히 노력하더라도 일 년 내에 결코 영어를 마스터하지 못할 것이다." / #7: "아무리 열심히 노력하더라도 일 년 내에 결코 영어를 마스터하지 못할 것이다."
+  - 문제: The two Korean prompts are byte-identical, but they demand two different English answers: #6 = "However hard you may try, you could never master English in a year." and #7 = "No matter how hard you may try, you could never master English in a year." Neither item has an `alternatives` entry. I ran th
+  - 수정안: Either (a) add the other form as an `alternatives` entry on both items in gh2-046.json — #6 gets "No matter how hard you may try, you could never master English in a year." and #7 gets "However hard y
+- **[High] STUDENT s6-3** (blocks[1].items[4] (English sentence #5))
+  - 원문: He/She has a habit of touching his/her nose (biting his/her nails, scratching his/her nails, cracking his/her knuckles, rubbing his/her eyes, etc.) when he/she 
+  - 문제: The parenthesis is not a fill-in blank for the learner's own details — it is a list of alternative habits that the writer meant the learner to choose ONE of. Because it sits inside the model sentence, it is treated as part of the sentence everywhere. In Step 2 (탭 딕테이션) the accepted answer is the who
+  - 수정안: Keep only one habit in the sentence and move the alternatives out of it, e.g. sentence: 'He/She has a habit of touching his/her nose when he/she teaches.' and put the options in the Korean context lin
+- **[High] STUDENT s6-3** (blocks[1].items[5] (English sentence #6))
+  - 원문: I think he/she likes the color blue (green, red, black, purple, etc.) because he/she always wears a (red tie, black suit, purple dress).
+  - 문제: Same defect as #5: two inline option lists inside the model sentence. The Step 2 accepted answer is 'I think he likes the color blue green red black purple etc because he always wears a red tie black suit purple dress' — 23 required words from 27 tiles, again including the literal token 'etc'. Ava r
+  - 수정안: Reduce the sentence to one colour and one garment, e.g. 'I think he/she likes the color blue because he/she always wears a blue tie.' and list the other colours/garments outside the sentence as choice
+- **[High] STUDENT s8-4** (blocks[1].items[2] (English sentence #3) and the 3rd Korean paragraph)
+  - 원문: I like the entertainment (sports) programs because I can see famous actors and musicians (sports players).
+  - 문제: The parentheses here are not a fill-in blank for the learner's own details (unlike '(bulgogi)' or '(Happy)'); they are a second version of the sentence written inline. Every engine in the STUDENT view treats the parenthesised words as ordinary words: normalizeUnifiedSpeechText (src/lib/unifiedSpeech
+  - 수정안: Make it one grammatical sentence that keeps all of the content: 'I like the entertainment and sports programs because I can see famous actors, musicians, and sports players.' with the Korean '나는 연예 프로
+- **[High] LISTENING LISTENING d008** (content/ld_english_scripts.json -> d008 rows n=3, n=7, n=12 (and the hints/instruction blocks of content/lessons/ld/d008.json))
+  - 원문: And we want you to stay with us for a few days. It's a very nice small farm, about 20 acres only 5 miles from town.
+  - 문제: The answer key writes in digits numbers that the narrator speaks as words: "5 miles" (row 3), "4 bedrooms" (row 7), "10 cows, about 100 chickens" (row 12). The synthesized audio says five / four / ten / a hundred, and this lesson's own hints block spells them out that way too: "20 acres five miles f
+  - 수정안: Write the spoken form in `en`: "...about 20 acres, only five miles from town." / "...four bedrooms and a bathroom." / "We want to keep ten cows, about a hundred chickens, ...", and apply the same rule
+- **[Critical] LISTENING d024** (content/ld_english_scripts.json → key "d024", row n="9" (EN and KO); same sentence in content/lessons/ld/d024-1.json, last Korean instruction block)
+  - 원문: EN: "The crowd waiting for them in England was very surprised when the balloon landed." KO: "잉글랜드에서 그들을 기다리던 군중은 그 기구가 착륙했을 때 매우 놀랬다."
+  - 문제: The passage is about the first balloon crossing of the English Channel, which rows 3-8 describe (an American and a Frenchman, the hole in the balloon, throwing out their belongings and finally their clothes). That flight was made by Jean-Pierre Blanchard (French) and Dr John Jeffries (American) on 7
+  - 수정안: EN: "The crowd waiting for them in France was very surprised when the balloon landed." KO: "프랑스에서 그들을 기다리던 군중은 그 기구가 착륙했을 때 매우 놀랐다." For full accuracy row 3 is better as "...decided to cross the chann
+- **[High] LISTENING d018** (content/ld_english_scripts.json → key "d018", rows n="6" and n="7", KO field of both)
+  - 원문: row 6 KO: "그의 친구는 “나는 그것을 믿지 않는다.”라고 대답했다. 그 백만장자는 ”나는 너와 내기를 걸겠다." row 7 KO: "누가 옳은지 알아내는 것은 너에게 500불의 비용이 들거야.“라고 응수했다."
+  - 문제: Three problems in one place. (1) Wrong speaker: the English of row 6 is "I don't believe it, his friend answered. I will make a bet with you." — both sentences are the FRIEND speaking. The Korean gives "나는 너와 내기를 걸겠다" to 그 백만장자 (the millionaire), inverting who challenges whom. (2) Row misalignment: 
+  - 수정안: row 6 KO: "그의 친구는 “나는 그것을 믿지 않는다. 나는 너와 내기를 걸겠다.”라고 대답했다." row 7 KO: "그 백만장자는 “누가 옳은지 알아내는 데 너는 500달러를 내야 할 거야.”라고 응수했다."
+- **[High] LISTENING d019** (content/ld_english_scripts.json → key "d019", row n="7" (EN and KO); same sentence in content/lessons/ld/d019-1.json)
+  - 원문: EN: "When they landed on the moon, they made a mistake and couldn't leave the spaceship." KO: "그들은 달에 착륙했을 때 한 실수를 해서 그 우주선을 떠날 수 없었다."
+  - 문제: In Jules Verne's story the travellers never land on the Moon. In 'From the Earth to the Moon' (1865) and its sequel 'Around the Moon' (1870) the projectile is deflected by a near-miss with an asteroid, swings into orbit around the Moon without ever touching it, and then falls back to Earth, where th
+  - 수정안: EN: "They never landed on the moon. Their spaceship passed around it and came back to the Earth." KO: "그들은 달에 착륙하지 못했다. 그들의 우주선은 달을 돌아 지구로 되돌아왔다." Row 6 should then read "They reached the moon 97 hour
+- **[Critical] LISTENING d058** (content/ld_english_scripts.json → "d058" row n=1 (EN); the same year is repeated in content/lessons/ld/d058.json hints block)
+  - 원문: One day in 1893, the citizens of Detroit, Michigan were amazed to see a motor vehicle coming down the street.
+  - 문제: Henry Ford did not drive a motor vehicle on the streets of Detroit in 1893. His first car, the Quadricycle, was completed and test-driven down Detroit's Grand River Avenue at about 4 a.m. on 4 June 1896. In 1893 Ford had only built a small stationary gasoline engine at home (and the first American g
+  - 수정안: Change the year to 1896 in both places: "One day in 1896, the citizens of Detroit, Michigan, were amazed to see a motor vehicle coming down the street." and hints "1896, Detroit, Michigan amazed motor
+- **[High] LISTENING d058** (content/lessons/ld/d058-1.json → blocks[8] (7th Korean script line))
+  - 원문: 포드는 1908년부터 1925년 사이에 1500만대를 팔았다.
+  - 문제: The -1 script page ends the Model T period at 1925. ld_english_scripts.json d058 row 7 says "which sold 15 million between 1908 and 1927" and the d058 hints block says "15 million 1908 1927". Model T production ran 1908–1927, so 1925 is wrong as well as inconsistent.
+  - 수정안: 포드는 1908년부터 1927년 사이에 1500만대를 팔았다.
+- **[High] LISTENING LISTENING d092** (content/ld_english_scripts.json, key d092, row n=8 (ko))
+  - 원문: 이것들은 문학사나 이학사 학위로 이어진다. 대부분의 종합대학은 또 직업학교들도 있다.
+  - 문제: Two problems in the second sentence. (1) "professional schools" (law, medicine, business - graduate-level) is rendered as "직업학교", which in Korean means a vocational/trade school. The very next line lists law and medicine as what these schools train for, so the translation contradicts its own context
+  - 수정안: 대부분의 종합대학에는 전문 대학원(professional school)도 있다.
+- **[High] LISTENING d125** (ld_english_scripts.json key "d125", row n=5 (en))
+  - 원문: The main source of our daily water supply are lakes, rivers, and the water vapor in the air.
+  - 문제: Subject–verb disagreement: the singular subject "The main source" takes the plural verb "are". The three-item list that follows shows the subject was meant to be plural. This line is not just read — it is the answer key for Step 2 dictation (exact word-sequence match), the shadowing target in Step 4
+  - 수정안: "The main sources of our daily water supply are lakes, rivers, and the water vapor in the air." (Korean row 5 already reads 주요 원천은 … 이다 and needs no change.) Changing `en` invalidates the clip key, so
+- **[High] LISTENING d125** (ld_english_scripts.json key "d125", row n=7 (en and ko))
+  - 원문: Most of that water is deep underground.
+  - 문제: Factually wrong. "That water" is the world's total supply of fresh water (row 6). Per USGS, over 68% of Earth's fresh water is locked in glaciers and ice caps and about 30% is groundwater — so the largest store is ice, not underground water. The passage then demotes ice to "another large amount" in 
+  - 수정안: "Most of that water is frozen in glaciers and ice caps, and most of the rest is deep underground." Korean: "그 물의 대부분은 빙하와 만년설에 얼어 있고, 나머지의 대부분은 지하 깊숙이 있다." Row 8 then has to be rewritten so it no long
+- **[High] LISTENING d128** (ld_english_scripts.json key "d128", row n=3 (ko))
+  - 원문: 그는 하루의 시간을 보내기 위하여 가끔 한번씩 그 여행사에 들어온다.
+  - 문제: "to pass the time of day" is an idiom meaning to have a short, friendly chat / exchange pleasantries. The Korean translates it literally as "하루의 시간을 보내기 위하여" ("in order to spend the hours of the day"), which is the meaning of the unrelated phrase "to pass the time". The same mistranslation is repeat
+  - 수정안: "그는 잠깐 담소를 나누려고 가끔 한번씩 그 여행사에 들어온다." (Korean only — the English is correct and its clip is unaffected.)
+- **[High] LISTENING d151** (round d151, row n=4 (EN))
+  - 원문: Transportation of water is still necessary and important.
+  - 문제: "Transportation of water" means moving water around (a water utility). The passage means transport BY water, which is what the row's own Korean says ("물에 의한 수송은 여전히 필요하고 중요하다") and what the next row confirms ("trains, automobiles, trucks, and airplanes are doing much of the work which was formerly d
+  - 수정안: Transportation by water is still necessary and important. (The Korean row needs no change. If the owner wants the original recording checked first, the recording for d151 is the reference — but the Ko
+- **[High] LISTENING d156** (round d156, row n=6 (EN))
+  - 원문: The daughters, Inga and Sigrid, help their mother with the housework.
+  - 문제: Present tense in the middle of a past-tense narrative. Rows 4, 5 and 7 around it are all past ("helped their father", "plowed and planted", "There was always a lot to do"), and this row's own Korean is past ("도왔다"). Row 8 then switches to the present with an explicit "Today, ...", which is where the
+  - 수정안: The daughters, Inga and Sigrid, helped their mother with the housework.
+- **[High] LISTENING LISTENING d178** (content/ld_english_scripts.json → d178 row n="4" (en); the surrounding passage is rows 3–10)
+  - 원문: Scientists think that about one person in 5,000 has this remarkable power to remember.
+  - 문제: This states as settled science a claim that no research supports. True "photographic memory" (reading a page and recalling it perfectly and permanently) has never been demonstrated in an adult under controlled conditions, and there is no published incidence figure of 1 in 5,000. Eidetic imagery is f
+  - 수정안: Either drop the statistic and reframe the passage as an old story rather than science (e.g. "People used to believe that about one person in 5,000 had this remarkable power to remember." plus a closin
+- **[Critical] LISTENING d192** (content/ld_english_scripts.json → "d192" row n=2 (en + ko))
+  - 원문: Most of them live in the desert areas of Australia. / 그들의 대부분은 오스트레일리아의 사막지역에서 산다.
+  - 문제: Stated in the present tense as a current fact, this is demonstrably false. ABS 2021 figures show 84.6% of Aboriginal and Torres Strait Islander people live in non-remote areas (40.8% in major cities, 24.8% inner regional, 19.0% outer regional); only about 15% live in remote/very remote Australia, an
+  - 수정안: Rewrite with a past/qualified frame, e.g. "Traditionally, many of them lived in the desert areas of Australia." (KO: "전통적으로 그들 중 다수는 오스트레일리아의 사막 지역에서 살았다.") or state the fact: "Today most Aboriginal A
+- **[High] LISTENING d192** (content/ld_english_scripts.json → "d192" rows n=3, n=4, n=5)
+  - 원문: These people do not plant crops and they don't keep any domesticated animals.
+  - 문제: Together with rows 4 ('They wander through the deserts in search of food and water.') and 5 ('They must depend on their ability to track down wild animals to stay alive.'), the passage describes all Aboriginal Australians in the present tense as present-day nomadic hunter-gatherers. That has not bee
+  - 수정안: Shift the whole block to the historical past ('did not plant crops', 'wandered', 'had to depend'), or add a framing sentence such as 'In the past, ...' / KO '과거에는 ...'.
+- **[High] LISTENING d189** (content/ld_english_scripts.json → "d189" row n=13 (en))
+  - 원문: The end of the trail was also the end of the Great Cherokee Nation.
+  - 문제: The Cherokee Nation was not ended by the Trail of Tears. It re-established itself in Indian Territory and today is a federally recognised sovereign nation headquartered in Tahlequah, Oklahoma, with roughly 477,000 enrolled citizens — the largest tribal nation in the United States. The closing senten
+  - 수정안: Rewrite, e.g. "The end of the trail was the end of the Cherokee homeland in the East, but the Cherokee Nation rebuilt itself in the West and still exists today." (KO: "그 길의 끝은 동부 체로키 고향 땅의 끝이었지만, 체로키 
+- **[High] LISTENING d188** (content/ld_english_scripts.json → "d188" rows n=4 and n=5 (en + ko))
+  - 원문: They built homes and public buildings of brick and stone. / They had fine plantations.
+  - 문제: Both sentences sit inside the pre-contact description (row 1 'Long before the white man came…', row 6 'When the first white men came…'), so they assert that the Cherokee built brick-and-stone buildings and ran plantations before European contact. Neither is true. Traditional Cherokee dwellings were 
+  - 수정안: Move both facts after row 6, or reword: "They built homes and council houses of river cane and clay." and "Later, after the first white men came, some Cherokee built brick houses and ran large farms."
+- **[High] LISTENING LISTENING d211** (round d211, script row #5 (key "d211", n="5"))
+  - 원문: He was also instrumental in developing a medicine for fighting cancer.
+  - 문제: This is an invented biographical claim about a named real person. Raymond Lee Ditmars (1876–1942) was a herpetologist and Curator of Reptiles at the Bronx Zoo; his documented medical contribution is snakebite antivenom (he supplied venom to the Instituto Butantan and helped set up antivenom centres 
+  - 수정안: Delete the sentence, or replace it with a claim that is true of Ditmars, e.g. "He also helped establish the first antivenom centers in the United States." (Korean: "그는 또 미국 최초의 항독소(혈청) 센터를 설립하는 데 중요한 
+- **[High] LISTENING LISTENING d255** (d255 row n=7 (en + ko))
+  - 원문: This custom persists even today in some of the primitive tribes of Africa and among the American Indians. || 이 관습은 아프리카의 원시종족의 일부와 아메리카인디언 사이에서 심지어 오늘날에도 존속하고 있
+  - 문제: The sentence states as a present-day fact ('even today') that medicine is reserved to a priest caste 'among the American Indians' (all Native Americans) and in 'primitive tribes of Africa'. It is a sweeping, outdated generalization about whole peoples, and 'primitive tribes' is a derogatory label. A
+  - 수정안: Rewrite, for example: EN 'In some traditional communities, healing is still closely linked to religion today.' / KO '오늘날에도 일부 전통 사회에서는 치유가 종교와 밀접하게 연결되어 있다.' Or cut the sentence. Changing the English 
+- **[High] LISTENING LISTENING d256** (d256 rows n=1-5 (whole round), especially n=2 and n=5)
+  - 원문: His face is painted in vivid colors and his costume is weird and outlandish in order to frighten the evil spirits that are supposedly causing the sick man's ill
+  - 문제: The whole round is a caricature of a Native American ('Indian') healer: his costume is called 'weird and outlandish', 'his eyes roll' while he 'shouts and wails', and the final line is a punchline mocking the practice (the villagers are more frightened than the spirits). It follows d255 #7 and leads
+  - 수정안: Replace the round with a neutral passage (for example on the history of medicine), or rewrite it neutrally: remove 'weird and outlandish', remove the mocking last line, and use 'a traditional healer' 
+- **[High] READING pr006 (and pr006-1)** (readingSentences reading-006-s001 korean, and reading-006-s004 korean)
+  - 원문: S1 KO: "인간의 법"이나 "자연법"이라는 어구에서 사용된, "법"이라는 용어는 다른 두 의미를 갖고 있다. / S4 KO: 그러나, 자연의 규칙성을 설명하는데 사용될 때 "법"이라는 용어는 다른 의미를 가진다.
+  - 문제: The whole passage is about the two meanings of 'law': a man-made rule, and a law of nature, meaning a regularity of nature (법칙). The translation renders 'a law of nature' as 자연법. In Korean, 자연법 is the legal and philosophical concept of natural law (jus naturale), not 자연법칙. The Korean side therefore 
+  - 수정안: S1: "인간의 법(a human law)"과 "자연 법칙(a law of nature)"이라는 어구에서 쓰인 "law"라는 용어에는 서로 다른 두 가지 의미가 있다. / S4: 그러나 자연의 규칙성을 설명하는 데 쓰일 때 "law"라는 용어는 다른 의미(법칙)를 가진다.
+- **[High] READING pr007 (and pr007-1)** (Step 3 cloze item 2 (generated from reading-007-s002))
+  - 원문: That meaning constitutes what the _______ is saying. (only accepted answer: piece)
+  - 문제: Distractors are passage words closest in length to the answer. 'music' has the same length as 'piece', so it appears as an option in 42.9% of page loads (measured over 20,000 runs of the real function). 'That meaning constitutes what the music is saying.' is fully grammatical and matches the passage
+  - 수정안: Exclude words that fit the slot equally well (here 'music') from the distractors, or blank a different word in S2 (e.g. 'constitutes'), or add a per-item distractor blocklist in the data.
+- **[High] READING pr055** (Step 3 cloze item 1 (generated from readingSentences[0] reading-055-s001); generator src/lib/readingUtils.ts:731-744)
+  - 원문: In making a successful school, we must consider the relationships among the people involved in the school community.
+  - 문제: The cloze blanks 'relationships' (13 letters). Distractors are the passage words closest in length. Only two passage words are within one letter: 'relationship' (12) and 'contribution' (12). Every other word is at least two letters away, so 'relationship' is shown as an option on EVERY visit, not at
+  - 수정안: In generateClozeItems, drop distractors that are inflections of the target (same stem ± s/es/ed/ing, e.g. reject w when w.startsWith(target.slice(0,-2)) or target.startsWith(w.slice(0,-2))). Otherwise
+- **[High] READING pr059** (Step 3 cloze item 3 (generated from readingSentences[3] reading-059-s004); generator src/lib/readingUtils.ts:724-744)
+  - 원문: The blind must get the corneas from people with healthy eyes—people who agree to let blind people use their eyes after they die.
+  - 문제: The generator splits only on whitespace, so the unspaced em dash makes 'eyes—people' one token, and that token becomes the blank. The learner sees 'people with healthy _______ who agree…', and the 'correct' option is the malformed string 'eyes—people'. The other options are the passage's 7-letter wo
+  - 수정안: In generateClozeItems split on /[\s–—―]+/ (whitespace and dashes) for both the target words and the distractor pool. With that change, the target for this sentence becomes 'healthy' ('people with ____
+- **[High] READING reading/pr091** (readingSentences reading-091-s002 and reading-091-s003 (same text in blocks[instruction] of pr091.json and the Korean in pr091-1.json); generated cloze item 3)
+  - 원문: he is considered innocent until the court proves that the person is guilty. / In other words, it is the responsibility of the court to prove that a person is gu
+  - 문제: Under US law the burden of proof is on the prosecution (the state), not on the court. The court (judge and jury) decides whether guilt has been proven; it does not prove anything. The passage's concluding 'In other words' sentence, which learners take as the main idea, gives the wrong party. The Kor
+  - 수정안: s002: '...he is considered innocent until he is proven guilty in court.' s003: 'In other words, it is the responsibility of the prosecution to prove that a person is guilty.' KO s002: '...법정에서 유죄가 입증될
+- **[High] READING reading/pr095** (generated cloze item 3 (built from readingSentences reading-095-s003))
+  - 원문: An officer of the IMF said the troubled economies would recover from their economic hardships by the second half of 1999.
+  - 문제: The cloze generator (src/lib/readingUtils.ts generateClozeItems) blanks 'would': 'the troubled economies _______ recover...'. The 3 distractors are drawn at random from the passage words with the same length: asian, rates, added, could, exact. So 'could' appears as an option on 60% of page loads. 'T
+  - 수정안: Make this item unambiguous. Either exclude modal or auxiliary words (would/could/might/must...) from the targets and distractors in generateClozeItems, or add 'would' to STOP_WORDS so the blank moves 
+- **[High] READING pr248** (Step 3 cloze item #2, generated from readingSentences reading-248-s002 (missingWord 'conserve'))
+  - 원문: They are fascinated by the beauty of these plants and have been motivated to conserve them after discovering the tragic realities these plants face.
+  - 문제: The cloze blanks 'conserve', which has 8 letters. The distractors are drawn at random from the passage words with the closest length. That group contains exactly 5 eight-letter words: habitats, confront, launched, preserve and precious. 'preserve' comes from s005 'launched efforts to preserve wild p
+  - 수정안: This needs a code or data fix, because the item is generated. Options: (a) add a per-lesson distractor exclusion (e.g. clozeExclude: {"conserve": ["preserve"]}) and filter the pool with it; or (b) cho
+- **[High] VOCA assure** (voca-dictionary.tsv line 271; voca_dictionary.json line 7394, key "assure"; used by lesson hv-65)
+  - 원문: "assure": { "meaning": "확신하다", "searchWord": "assure" }
+  - 문제: assure is transitive and always takes a person as its object - you assure SOMEONE of something. 확신하다 means to be sure oneself, which is the meaning of 'be sure / be convinced', not of assure; it puts the confidence in the wrong person. Wiktionary's senses are all transitive: 'to give (someone) confi
+  - 수정안: "확신시키다, 장담하다; 보장하다"
+- **[High] VOCA ascribe** (voca-dictionary.tsv line 250; voca_dictionary.json line 6510, key "ascribe"; used by lesson hv-57)
+  - 원문: "ascribe": { "meaning": "귀속하다", "searchWord": "ascribe" }
+  - 문제: ascribe is used as 'ascribe X to Y' - to regard X as arising from cause Y, or to credit a work to its creator. Korean 귀속하다 is intransitive ('~에 귀속하다' = belongs to, reverts to) and is a property/legal term; it reverses the structure and cannot render the pattern the word is always met in. The standar
+  - 수정안: "(~의) 탓으로 돌리다, ~에 기인한 것으로 보다; (작품을) ~의 것으로 보다"
+- **[High] VOCA award** (voca-dictionary.tsv line 316; voca_dictionary.json line 8546, key "award"; used by lesson hv-74)
+  - 원문: "award": { "meaning": "수상", "searchWord": "award" }
+  - 문제: The noun award is the prize itself (상, 상금, 트로피) and the verb is 수여하다. Korean 수상(受賞) means receiving a prize - the winner's act - and 수상(授賞) means conferring one; neither is the thing called an award, and the written form 수상 is ambiguous between the two opposite readings. The same dictionary glosses 
+  - 수정안: "상, 상금; 수여하다"
+- **[High] VOCA common** (voca-dictionary.tsv line 660; JSON key "common" (lessons hv-45, mv2-25, mv3-15))
+  - 원문: "common": { "meaning": "공통의", "searchWord": "common" }
+  - 문제: The most frequent sense is missing, and the file contradicts itself as a result. OALD sense 1 of common is "happening often; existing in large numbers or in many places" (흔한, 보통의); 공통의 is the later shared-by-two-parties sense. In content/lessons/phonics/hv-45.json the wordgrid runs ... | common | un
+  - 수정안: "common": "흔한, 보통의; 공통의"
+- **[High] VOCA devour** (voca-dictionary.tsv line 1013; JSON key "devour" (lesson mv3-05))
+  - 원문: "devour": { "meaning": "삼키다", "searchWord": "devour" }
+  - 문제: 삼키다 is the gloss of swallow/gulp, not of devour. The defining element of devour - eating quickly, greedily, ravenously - is entirely absent, as is the very common figurative 탐독하다 (devour a book). Wiktionary's first sense is "To eat quickly, greedily, hungrily, or ravenously"; Korean dictionaries lea
+  - 수정안: "게걸스럽게 먹다, 먹어 치우다; 탐독하다"
+- **[High] VOCA establish** (key "establish" (voca-dictionary.tsv 1279행) / 레슨 hv-62)
+  - 원문: establish establish 확립하다 hv-62
+  - 문제: 롱맨에서 가장 빈도가 높은 1번 뜻(●●● S2 W1)은 '회사·기관·제도를 세우다(to start a company, organization, system)' 즉 '설립하다'인데 이 뜻이 빠졌습니다. '확립하다'는 뒤쪽 뜻입니다. 더구나 같은 hv-62 격자 안에 있는 파생어 establishment 는 '설립'으로 풀어 두어, 동사와 명사의 뜻이 서로 이어지지 않습니다(확립하다 ↔ 설립).
+  - 수정안: 설립하다, 세우다; 확립하다
+- **[High] VOCA exclamation** (content/voca_dictionary.json lines 426-428 (key "exclamation", meaning on line 427); voca-dictionary.tsv line 1326; lesson hv-04)
+  - 원문: "exclamation": { "meaning": "느낌표", "searchWord": "exclamation" }
+  - 문제: 느낌표 is the Korean for "exclamation mark / exclamation point", not for the bare word "exclamation". The living senses are "the act of loudly calling or crying out... as in anger, grief or pain, joy, surprise" and "a complaint, an outcry, a protest"; the punctuation reading is listed only as an archai
+  - 수정안: 감탄, 외침 (느낌표는 exclamation mark)
+- **[High] VOCA matter** (voca-dictionary.tsv line 2156; content/voca_dictionary.json lines 11330-11333)
+  - 원문: "matter": { "meaning": "문제", "searchWord": "matter" },
+  - 문제: 문제 is the right first sense ("What's the matter?"), but two senses a Korean middle-schooler certainly meets are absent: the verb 중요하다 ("It doesn't matter", "Does it matter?") and the science noun 물질. The word appears in three separate lessons — mv1-25, mv2-29, mv3-33 — and I confirmed all three are 
+  - 수정안: "문제; 물질 / 중요하다" — same punctuation pattern already used elsewhere in this slice for noun/verb splits (cf. "manufacture → 제조하다; 제조", "march → 행진하다; 행진", "master → 주인; 숙달하다").
+- **[High] VOCA nursery** (TSV line 2376; JSON key "nursery")
+  - 원문: nursery nursery 보육원 hv-45
+  - 문제: 보육원 does not mean 'nursery'. The 표준국어대사전 defines 보육원 as "부모나 보호자가 없는 아이들을 받아들여 기르고 가르치는 곳" - a residential institution for children with no parents or guardians, i.e. an orphanage (the modern replacement term for 고아원). English 'nursery' means a daycare/pre-school for young children who go home to th
+  - 수정안: 어린이집, 탁아소; 아기방; (식물) 묘목장
+- **[High] VOCA plea** (key "plea"; voca-dictionary.tsv line 2627; lesson hv-51)
+  - 원문: "plea": {"meaning":"항변","searchWord":"plea"}
+  - 문제: 항변 renders only the narrow courtroom sense (a defendant's answer/counter-plea). The ordinary and by far most frequent sense of the noun is an urgent request or appeal — Wiktionary lists "An appeal, petition, urgent prayer or entreaty" (a plea for mercy) as sense 1, with the legal senses at 4-7. This
+  - 수정안: 간청, 탄원, 호소; (법) 답변, 항변
+- **[High] VOCA respectful** (key "respectful" — docs/qa-2026-09-18/out/content/voca-dictionary.tsv line 3005 (lessons hv-16, hv-60))
+  - 원문: 존경하는
+  - 문제: hv-16 is the confusable-adjective lesson: its second grid row is literally "respectable respectful respective sensible sensitive sensual", and hv-60 repeats "respect respectable respectful" in one row. The whole point of the row is to separate the three. But the cards give respectable = 존경할 만한 (line
+  - 수정안: 공손한, 예의 바른, 경의를 표하는
