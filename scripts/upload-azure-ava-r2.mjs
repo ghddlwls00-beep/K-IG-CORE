@@ -11,6 +11,30 @@ const SOURCE = path.join(PUBLIC, "audio", "azure-ava", "v1");
 const CHECKPOINT = path.join(SOURCE, ".r2-uploaded.json");
 const CONCURRENCY = Math.max(1, Math.min(32, Number(process.env.R2_UPLOAD_CONCURRENCY) || 16));
 
+/**
+ * Falls back to .env.local for anything the environment did not supply — the same
+ * reader as scripts/backup-license-data.mjs and
+ * scripts/migrate-license-key-whitespace.mjs. A real environment variable wins.
+ *
+ * AGENTS.md documents the release order as "① upload the clips → ② push", and step
+ * ① failed at the credential check below for anyone who had not exported the four
+ * R2 variables by hand, even though they are already in .env.local for local work.
+ * This must run BEFORE the constants below are read, since they are evaluated once
+ * at module load. Values are never printed.
+ */
+function loadEnvLocal() {
+  const file = path.join(ROOT, ".env.local");
+  if (!fs.existsSync(file)) return;
+  for (const line of fs.readFileSync(file, "utf8").split(/\r?\n/)) {
+    const match = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+    if (!match) continue;
+    const [, key, raw] = match;
+    if (process.env[key]) continue;
+    process.env[key] = raw.trim().replace(/^["']|["']$/g, "");
+  }
+}
+loadEnvLocal();
+
 const accountId = process.env.R2_ACCOUNT_ID;
 const bucket = process.env.R2_BUCKET_NAME;
 const accessKeyId = process.env.R2_ACCESS_KEY_ID;
