@@ -5,6 +5,7 @@ import {
   getPlanLabel,
   isFreePreviewLesson,
   isStudentOnlyPlan,
+  normalizeLicenseKey,
   type LicenseInfo,
   type LicensePlan,
 } from "@/lib/license";
@@ -322,7 +323,10 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          key: rawKey.trim().toUpperCase(),
+          // SEC-KEY-01: the client used to send `trim().toUpperCase()`, which
+          // kept a space typed inside the code and made the server file the
+          // registration under a record of its own.
+          key: normalizeLicenseKey(rawKey),
           deviceId: dev.id,
           deviceName: dev.name,
         }),
@@ -340,7 +344,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       }
 
       const newStored: StoredLicense = {
-        key: rawKey.trim().toUpperCase(),
+        key: normalizeLicenseKey(rawKey),
         plan: data.plan,
         activatedAt: data.activatedAt || Date.now(),
         expiresAt: data.expiresAt,

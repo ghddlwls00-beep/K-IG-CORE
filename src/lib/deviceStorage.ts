@@ -3,12 +3,14 @@ import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import {
+  DeleteObjectCommand,
   GetObjectCommand,
   ListObjectsV2Command,
   PutObjectCommand,
   S3Client,
 } from "@aws-sdk/client-s3";
 import { calculateExpiry } from "./serverLicense";
+import { normalizeLicenseKey } from "./license";
 
 export interface RegisteredDevice {
   deviceId: string;
@@ -83,6 +85,74 @@ export function effectiveLicenseExpiry(
   const fixed = startedAt === null ? null : calculateExpiry(plan, startedAt);
   if (fixed === null) return startedAt === null ? tokenExpiresAt : null;
   return tokenExpiresAt === null ? fixed : Math.min(fixed, tokenExpiresAt);
+}
+
+/**
+ * SEC-KEY-01 — fold two records of the SAME code into one.
+ *
+ * Before the fix, "KIG-1Y-AAAA BBBB-CCCC" was filed separately from the code it
+ * actually is, so a bucket can still hold a second record for a code already
+ * sold. Now that both spell the same key, a plain `records[key] = record` would
+ * let whichever loaded last hide the other — the devices on the hidden one would
+ * vanish from the admin list while still being registered, and a refund block
+ * written on one could be hidden by the other.
+ *
+ * So the rules are all "the safer of the two": every device is kept (the limit
+ * applies to the NEXT registration, so nobody's paid device is evicted behind
+ * their back), a revoke on either side survives, and the paid period keeps the
+ * earliest start it can prove, so merging can never hand out a fresh period.
+ */
+export function mergeDeviceRecords(
+  primary: LicenseDeviceRecord,
+  other: LicenseDeviceRecord,
+): LicenseDeviceRecord {
+  const devices = new Map<string, RegisteredDevice>();
+  for (const device of [...(primary.devices || []), ...(other.devices || [])]) {
+    if (!device?.deviceId) continue;
+    const existing = devices.get(device.deviceId);
+    devices.set(
+      device.deviceId,
+      existing
+        ? {
+            ...existing,
+            deviceName: existing.deviceName || device.deviceName,
+            registeredAt: Math.min(existing.registeredAt, device.registeredAt),
+            lastSeenAt: Math.max(existing.lastSeenAt, device.lastSeenAt),
+          }
+        : device,
+    );
+  }
+
+  const earliest = (a?: number, b?: number): number | undefined => {
+    const times = [a, b].filter((t): t is number => typeof t === "number" && Number.isFinite(t));
+    return times.length ? Math.min(...times) : undefined;
+  };
+  const fewest = (a?: number, b?: number): number | undefined => {
+    const limits = [a, b].filter((n): n is number => typeof n === "number" && Number.isFinite(n));
+    return limits.length ? Math.min(...limits) : undefined;
+  };
+  const startedAt = earliest(
+    licenseStartedAt(primary) ?? undefined,
+    licenseStartedAt(other) ?? undefined,
+  );
+  const revoking = primary.isRevoked ? primary : other.isRevoked ? other : null;
+
+  return {
+    ...primary,
+    key: normalizeKey(primary.key),
+    plan: primary.plan || other.plan,
+    // The LOWER limit wins, like every other rule here. Taking the first record's
+    // made the result depend on the order R2 happens to list objects in, so the
+    // same two records could merge to a limit of 1 or of 3 on different reads.
+    maxDevices: fewest(primary.maxDevices, other.maxDevices),
+    devices: [...devices.values()].sort((a, b) => a.registeredAt - b.registeredAt),
+    isRevoked: Boolean(primary.isRevoked || other.isRevoked),
+    revokedAt: revoking ? earliest(primary.revokedAt, other.revokedAt) : undefined,
+    revokeReason: revoking?.revokeReason,
+    firstActivatedAt: startedAt,
+    createdAt: earliest(primary.createdAt, other.createdAt),
+    memo: primary.memo || other.memo,
+  };
 }
 
 function keepStartDate(record: LicenseDeviceRecord): void {
@@ -181,8 +251,15 @@ function decryptRecord(raw: string, encryptionKey: Buffer): LicenseDeviceRecord 
   return JSON.parse(plaintext) as LicenseDeviceRecord;
 }
 
+/**
+ * SEC-KEY-01 (BUG-002) — this used to be `key.trim().toUpperCase()`, which kept
+ * inner spaces while `validateLicenseKey` removed them. Every function in this
+ * module routes through here (objectKey, the record map, register, revoke, reset,
+ * limit), so one spelling here is one spelling everywhere a record is filed,
+ * found or compared.
+ */
 function normalizeKey(key: string): string {
-  return key.trim().toUpperCase();
+  return normalizeLicenseKey(key);
 }
 
 function objectKey(key: string): string {
@@ -199,7 +276,17 @@ function getLocalStorageFilePath(): string {
 function loadLocalRecords(): Record<string, LicenseDeviceRecord> {
   const filePath = getLocalStorageFilePath();
   if (!fs.existsSync(filePath)) return {};
-  return JSON.parse(fs.readFileSync(filePath, "utf-8")) as Record<string, LicenseDeviceRecord>;
+  const stored = JSON.parse(fs.readFileSync(filePath, "utf-8")) as Record<string, LicenseDeviceRecord>;
+  // SEC-KEY-01: same folding as the R2 path — a file written before the fix can
+  // hold a spaced variant under its own entry.
+  const records: Record<string, LicenseDeviceRecord> = {};
+  for (const record of Object.values(stored)) {
+    if (!record?.key) continue;
+    const id = normalizeKey(record.key);
+    const seen = records[id];
+    records[id] = seen ? mergeDeviceRecords(seen, record) : record;
+  }
+  return records;
 }
 
 function saveLocalRecords(records: Record<string, LicenseDeviceRecord>): void {
@@ -328,7 +415,12 @@ export async function loadDeviceRecords(): Promise<Record<string, LicenseDeviceR
       }
     });
     for (const record of pageRecords) {
-      if (record?.key) records[normalizeKey(record.key)] = record;
+      if (!record?.key) continue;
+      // SEC-KEY-01: a bucket written before the fix can hold a spaced variant of a
+      // code that now spells the same. Fold it in rather than letting it overwrite.
+      const id = normalizeKey(record.key);
+      const seen = records[id];
+      records[id] = seen ? mergeDeviceRecords(seen, record) : record;
     }
     continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
   } while (continuationToken);
@@ -559,4 +651,110 @@ export async function unrevokeLicenseKey(
 
 export async function isLicenseRevoked(key: string): Promise<boolean> {
   return Boolean((await loadRecord(key))?.isRevoked);
+}
+
+export interface WhitespaceKeyMigrationEntry {
+  /** the code exactly as the stale record spelled it, with the middle masked */
+  staleKeyMasked: string;
+  canonicalKeyMasked: string;
+  devicesBefore: { canonical: number; stale: number };
+  devicesAfter: number;
+  maxDevices: number;
+  /** true when the merged record now holds more devices than the licence allows */
+  overLimit: boolean;
+  revokedBefore: { canonical: boolean; stale: boolean };
+  revokedAfter: boolean;
+}
+
+/** Never print a whole licence code in a log: it is the credential itself. */
+function maskKey(key: string): string {
+  const parts = normalizeKey(key).split("-");
+  if (parts.length !== 4) return `${key.slice(0, 6)}…`;
+  const short = (part: string) => (part.length > 4 ? `${part.slice(0, 3)}…${part.slice(-2)}` : part);
+  return `${parts[0]}-${parts[1]}-${short(parts[2])}-${short(parts[3])}`;
+}
+
+/**
+ * SEC-KEY-01 one-off cleanup — fold every record that was filed under a spaced
+ * variant into the record for the code it really is, and remove the stale object.
+ *
+ * Reading already merges (see `loadDeviceRecords`), so this is not what makes the
+ * data correct; it is what stops a stale object from resurrecting devices after
+ * an admin clears them, and what makes the bucket say the same thing the app does.
+ *
+ * DEFAULTS TO A DRY RUN. `apply: true` writes and deletes. A code with nothing to
+ * strip keeps the same object name, so a healthy bucket reports zero entries and
+ * nothing is touched.
+ */
+export async function migrateWhitespaceKeyRecords(
+  options: { apply?: boolean } = {},
+): Promise<{ scanned: number; applied: boolean; entries: WhitespaceKeyMigrationEntry[] }> {
+  const apply = options.apply === true;
+  const config = getR2Config();
+  const entries: WhitespaceKeyMigrationEntry[] = [];
+
+  /** [objectName | map key, record] for every record as it is actually stored */
+  const stored: { name: string; record: LicenseDeviceRecord }[] = [];
+  if (config) {
+    let continuationToken: string | undefined;
+    do {
+      const page = await config.client.send(
+        new ListObjectsV2Command({ Bucket: config.bucket, Prefix: RECORD_PREFIX, ContinuationToken: continuationToken }),
+      );
+      for (const item of page.Contents ?? []) {
+        if (!item.Key?.endsWith(".json")) continue;
+        const response = await config.client.send(new GetObjectCommand({ Bucket: config.bucket, Key: item.Key }));
+        const raw = await response.Body?.transformToString();
+        if (raw) stored.push({ name: item.Key, record: decryptRecord(raw, config.encryptionKey) });
+      }
+      continuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
+    } while (continuationToken);
+  } else {
+    const filePath = getLocalStorageFilePath();
+    const raw = fs.existsSync(filePath)
+      ? (JSON.parse(fs.readFileSync(filePath, "utf-8")) as Record<string, LicenseDeviceRecord>)
+      : {};
+    for (const [name, record] of Object.entries(raw)) stored.push({ name, record });
+  }
+
+  const stale = stored.filter(({ record }) => record?.key && normalizeKey(record.key) !== record.key);
+  const byCanonical = new Map<string, LicenseDeviceRecord>();
+  for (const { record } of stored) {
+    if (!record?.key) continue;
+    const id = normalizeKey(record.key);
+    if (normalizeKey(record.key) === record.key) byCanonical.set(id, record);
+  }
+
+  for (const { name, record } of stale) {
+    const id = normalizeKey(record.key);
+    const canonical = byCanonical.get(id) ?? null;
+    const merged = canonical ? mergeDeviceRecords(canonical, record) : mergeDeviceRecords({ ...record, key: id }, record);
+    const maxDevices = merged.maxDevices ?? MAX_DEVICES_PER_KEY;
+    entries.push({
+      staleKeyMasked: maskKey(record.key),
+      canonicalKeyMasked: maskKey(id),
+      devicesBefore: { canonical: canonical?.devices?.length ?? 0, stale: record.devices?.length ?? 0 },
+      devicesAfter: merged.devices.length,
+      maxDevices,
+      overLimit: merged.devices.length > maxDevices,
+      revokedBefore: { canonical: Boolean(canonical?.isRevoked), stale: Boolean(record.isRevoked) },
+      revokedAfter: Boolean(merged.isRevoked),
+    });
+
+    if (!apply) continue;
+    await saveRecord(merged);
+    byCanonical.set(id, merged);
+    if (config) {
+      await config.client.send(new DeleteObjectCommand({ Bucket: config.bucket, Key: name }));
+      encryptedRecordCache.delete(name);
+    } else {
+      const filePath = getLocalStorageFilePath();
+      const raw = JSON.parse(fs.readFileSync(filePath, "utf-8")) as Record<string, LicenseDeviceRecord>;
+      delete raw[name];
+      raw[id] = merged;
+      saveLocalRecords(raw);
+    }
+  }
+
+  return { scanned: stored.length, applied: apply, entries };
 }

@@ -80,11 +80,22 @@ const FUNCTION_WORDS = new Set([
   "there", "here", "very", "too", "also", "just", "only",
 ]);
 
-/** Lower-case, punctuation and apostrophes removed — contractions left as written. */
+/**
+ * Lower-case, punctuation and apostrophes removed — contractions left as written.
+ *
+ * GRADE-01 — the curly double quotes are normalised to the straight one before
+ * punctuation is stripped. Only `’‘` were, so an answer typed on an iPhone or a
+ * Mac, where the keyboard turns `"` into `“ ”` by itself, kept a character the
+ * model answer did not have: measured over every item, 12 answers containing a
+ * double quote came back 11 partial and 1 wrong (gh2-027 #12) for a difference
+ * the learner cannot see and did not choose. `„` is the opening form some
+ * keyboards produce.
+ */
 function normalizeLiteral(text: string): string {
   return text
     .toLowerCase()
     .replace(/[’‘]/g, "'")
+    .replace(/[“”„]/g, '"')
     .replace(/[.,?!;:"'()]/g, "")
     .replace(/\s+/g, " ")
     .trim();

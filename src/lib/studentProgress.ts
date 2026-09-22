@@ -9,6 +9,7 @@ import {
   S3Client,
 } from "@aws-sdk/client-s3";
 import { getCourseGroups } from "@/lib/content";
+import { normalizeLicenseKey } from "@/lib/license";
 
 export const STUDENT_PROGRESS_VERSION = 1;
 export const STUDENT_REQUIRED_RATIO = 0.8;
@@ -57,8 +58,14 @@ interface EncryptedEnvelope {
 let cachedClient: S3Client | null = null;
 const writeQueues = new Map<string, Promise<StudentProgressRecord>>();
 
+/**
+ * SEC-KEY-01 (BUG-002) — STUDENT progress is filed under the licence code too,
+ * so the same spaced variant that forked the device record also forked the
+ * unlock progress: a learner could restart the course on a "new" code that was
+ * the code they already owned. Same one spelling as everywhere else.
+ */
 function normalizeKey(key: string): string {
-  return key.trim().toUpperCase();
+  return normalizeLicenseKey(key);
 }
 
 function progressObjectKey(key: string): string {

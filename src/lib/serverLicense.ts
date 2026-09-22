@@ -1,6 +1,6 @@
 import "server-only";
 import crypto from "crypto";
-import type { LicensePlan } from "./license";
+import { normalizeLicenseKey, type LicensePlan } from "./license";
 
 const COMPROMISED_LICENSE_SALT = "KIG_EDU_KEY_SALT_v1_2026";
 const COMPROMISED_LICENSE_SECRET = "KIG_SERVER_LICENSE_SIGNING_SECRET_2026_KEY";
@@ -50,7 +50,7 @@ export function validateLicenseKey(
 ): { valid: boolean; plan?: LicensePlan; error?: string } {
   if (!rawKey) return { valid: false, error: "이용권 코드를 입력해 주세요." };
 
-  const cleaned = rawKey.trim().toUpperCase().replace(/\s+/g, "");
+  const cleaned = normalizeLicenseKey(rawKey);
   const parts = cleaned.split("-");
 
   if (parts.length !== 4 || parts[0] !== "KIG") {
@@ -118,7 +118,9 @@ export function issueLicenseToken(
   expiresAt: number | null,
 ): string {
   const payload: LicenseTokenPayload = {
-    key: key.trim().toUpperCase(),
+    // SEC-KEY-01: the token must carry the same spelling the records are filed
+    // under, or a spaced variant would mint a token of its own.
+    key: normalizeLicenseKey(key),
     plan,
     deviceId,
     expiresAt,

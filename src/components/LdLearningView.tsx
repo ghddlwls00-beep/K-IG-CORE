@@ -66,6 +66,76 @@ export function LdLearningView({
       : [];
   }, [hintsBlock]);
 
+  /**
+   * LD-HINTS-01 — the dictation instruction says "다음에 나오는 고유 명사, 숫자,
+   * 어려운 단어를 참조하면서", and nothing was ever rendered. Dictating a proper
+   * noun was therefore guesswork: d001 asks for "Mrs. Watson" and "Barbara"
+   * with no way to know how they are spelled.
+   *
+   * The hints are stored per LESSON, so showing them all would hand over every
+   * name in the lesson at sentence one. These are matched to the sentence on
+   * screen instead. The stored line is not cleanly delimited — "John Wenger
+   * Philadelphia · state of Pennsylvania" packs two hints into one chunk — so a
+   * chunk counts as relevant when the whole chunk appears in the sentence OR
+   * one of its capitalised words or multi-digit numbers does. Ordinary words
+   * ("office", "state") are not matched, or a chunk would stick to any sentence.
+   */
+  const hintChunks = useMemo(() => {
+    if (!hintsBlock?.text) return [];
+    return hintsBlock.text
+      .split(/,|\.\s+|\.$|\s{2,}/)
+      .map((chunk) => chunk.trim().replace(/[.,]+$/, "").trim())
+      .filter(Boolean);
+  }, [hintsBlock]);
+
+  const squash = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  /** The sentence argument is passed in: `currentDictationItem` is declared further down. */
+  const pickHintsFor = (sentence: string): string[] => {
+    if (!sentence || hintChunks.length === 0) return [];
+
+    const squashedSentence = squash(sentence);
+    const relevant = hintChunks.filter((chunk) => {
+      const whole = squash(chunk);
+      if (whole.length >= 3 && squashedSentence.includes(whole)) return true;
+      return chunk.split(/\s+/).some((token) => {
+        const bare = token.replace(/[^A-Za-z0-9'’.]/g, "").replace(/[.'’]+$/, "");
+        if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentence);
+        // A proper noun counts from 3 letters; a lower-case "어려운 단어" only from
+        // 5, so that a short everyday word in the chunk cannot stick to every
+        // sentence. Without the lower-case case at all, the 13 lessons whose
+        // hints are ordinary hard words ("farmhouse sixty") never showed a box.
+        const letters = bare.replace(/[^A-Za-z]/g, "");
+        if (letters.length < (/^[A-Z]/.test(bare) ? 3 : 5)) return false;
+        return squashedSentence.includes(squash(bare));
+      });
+    });
+    if (relevant.length > 0) return relevant;
+
+    /**
+     * The safety net the owner asked for: when the match finds nothing but the
+     * sentence plainly holds a name or a number, show the lesson's whole hint
+     * list rather than an empty box — the instruction must never point at
+     * nothing. A row holds two or three sentences, so the first word of each
+     * inner sentence is skipped (it is capitalised for being first, not for
+     * being a name), as is the pronoun "I".
+     */
+    if (/\d/.test(sentence)) return hintChunks;
+    const pronounI = /^I(?:'m|'ve|'ll|'d)?$/;
+    const hasName = sentence.split(/(?<=[.?!])\s+/).some((part) =>
+      part
+        .trim()
+        .split(/\s+/)
+        .slice(1)
+        .some((word) => {
+          const bare = word.replace(/[^A-Za-z'’]/g, "");
+          if (pronounI.test(bare)) return false;
+          return /^[A-Z]/.test(bare) && bare.replace(/[^A-Za-z]/g, "").length > 1;
+        }),
+    );
+    return hasName ? hintChunks : [];
+  };
+
   // Extract Korean sentences fallback
   const koSentences: string[] = useMemo(() => {
     const list: string[] = [];
@@ -138,6 +208,7 @@ export function LdLearningView({
   // Step 2: Interactive Word-Block Tap Dictation State
   const [dictationIndex, setDictationIndex] = useState(0);
   const currentDictationItem = sentences[dictationIndex] || sentences[0];
+  const hintsForSentence = pickHintsFor(currentDictationItem?.en ?? "");
   const [wordBank, setWordBank] = useState<{ correctWords: string[]; allTiles: WordTile[] }>({
     correctWords: [],
     allTiles: [],
@@ -714,6 +785,27 @@ export function LdLearningView({
                   <RiddleAnswer key={dictationIndex} answer={currentDictationItem.answer} />
                 </div>
               </div>
+
+              {/*
+                LD-HINTS-01 — the proper nouns and numbers the instruction tells
+                the learner to refer to. Text only: the clip for a sentence is
+                keyed on the sentence, and these are a spelling aid, not
+                something to listen to.
+              */}
+              {hintsForSentence.length > 0 && (
+                <div className="w-full rounded-xl border border-line bg-sunken px-3.5 py-2.5">
+                  <span className="font-mono text-[10.5px] font-semibold uppercase tracking-wider text-ink-faint">
+                    ✍️ 고유 명사 · 숫자 참조
+                  </span>
+                  <p className="mt-1 flex flex-wrap gap-x-2.5 gap-y-1 text-[13px] font-medium text-ink">
+                    {hintsForSentence.map((hint, index) => (
+                      <span key={`${hint}-${index}`} className="rounded-md bg-raised px-1.5 py-0.5 shadow-2xs">
+                        {hint}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              )}
 
               <div className="flex items-center gap-2">
                 <button

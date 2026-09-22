@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/adminAuth";
 import { validateLicenseKey } from "@/lib/serverLicense";
+import { normalizeLicenseKey } from "@/lib/license";
 import {
   getStudentChapters,
   getStudentProgress,
@@ -29,7 +30,7 @@ export async function POST(request: Request) {
       );
     }
     const body = await request.json();
-    const key = typeof body.key === "string" ? body.key.trim().toUpperCase() : "";
+    const key = normalizeLicenseKey(typeof body.key === "string" ? body.key : "");
     if (!validateLicenseKey(key).valid) {
       return NextResponse.json(
         { success: false, error: "유효한 이용권 번호가 아닙니다." },

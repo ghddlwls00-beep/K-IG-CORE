@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs",
+    "predev": "node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs && node scripts/buildSearchIndex.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs",
+    "prebuild": "node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs && node scripts/buildSearchIndex.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

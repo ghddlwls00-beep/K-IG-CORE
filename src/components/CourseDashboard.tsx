@@ -210,13 +210,41 @@ export function CourseDashboard({
 
   // Calculate stats for this course
   const prefix = `${courseSlug}:`;
-  const completedCount = useMemo(() => {
-    return Object.keys(completed).filter((k) => k.startsWith(prefix) && completed[k]).length;
-  }, [completed, prefix]);
 
+  /**
+   * COUNT-01 — only the lessons this page LISTS count towards the progress.
+   *
+   * This used to count every completed key whose course prefix matched, but a
+   * course stores more lessons than it lists: each English lesson has a Korean
+   * script page (`d006` → `d006-1`) that is reached from inside the lesson and
+   * is deliberately not listed (see `listed` in app/[course]/page.tsx). Marking
+   * those complete pushed the numerator past the denominator — measured on
+   * production, 3 lessons plus 5 script pages read "8 / 53개 완료 (15%)", and
+   * because there is roughly one script page per lesson the bar could reach
+   * 200%. The "미완료" count was wrong by the same amount.
+   *
+   * `sections` is built from exactly that listed set (checked: all six courses
+   * list every id they count — student 82, phonics 195, grammar1 53,
+   * grammar2 44, ld 276, reading 256), so it is the right thing to count.
+   */
+  const listedIds = useMemo(
+    () => new Set(sections.flatMap((section) => section.lessons.map((lesson) => lesson.id))),
+    [sections],
+  );
+  const completedCount = useMemo(() => {
+    let count = 0;
+    for (const id of listedIds) if (completed[`${prefix}${id}`]) count++;
+    return count;
+  }, [completed, listedIds, prefix]);
+
+  // Same rule as the progress count: the chip says "북마크 (N)" and clicking it
+  // filters THIS list, so counting an unlisted script page would promise rows
+  // the filter cannot show.
   const bookmarkCount = useMemo(() => {
-    return Object.keys(bookmarks).filter((k) => k.startsWith(prefix) && bookmarks[k]).length;
-  }, [bookmarks, prefix]);
+    let count = 0;
+    for (const id of listedIds) if (bookmarks[`${prefix}${id}`]) count++;
+    return count;
+  }, [bookmarks, listedIds, prefix]);
 
   const progressPercent = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
 

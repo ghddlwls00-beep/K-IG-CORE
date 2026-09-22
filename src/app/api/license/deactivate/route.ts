@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { unregisterDeviceFromKey } from "@/lib/deviceStorage";
 import { verifyLicenseToken } from "@/lib/serverLicense";
 import { LICENSE_SESSION_COOKIE_NAME, readCookie } from "@/lib/licenseSession";
+import { normalizeLicenseKey } from "@/lib/license";
 
 export async function POST(request: Request) {
   try {
@@ -19,7 +20,7 @@ export async function POST(request: Request) {
     // ID. It now needs a token this server signed for that code AND that device —
     // the session cookie, or the copy the page keeps. An expired token still counts
     // (its signature is genuine), so a learner whose period ended can free the slot.
-    const normalizedKey = key.trim().toUpperCase();
+    const normalizedKey = normalizeLicenseKey(key);
     const candidates = [readCookie(request, LICENSE_SESSION_COOKIE_NAME), typeof token === "string" ? token : null];
     const authorised = candidates.some((candidate) => {
       if (!candidate) return false;

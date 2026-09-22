@@ -1,4 +1,4 @@
-import { getPlanLabel, type LicensePlan } from "./license";
+import { getPlanLabel, normalizeLicenseKey, type LicensePlan } from "./license";
 
 /**
  * ISS-14 — the admin licence list, built from the server records instead of the
@@ -70,11 +70,13 @@ export function buildAdminLicenseRows(
   records: Record<string, AdminLicenseRecord>,
   legacyHistory: LegacyHistoryItem[],
 ): AdminLicenseRow[] {
+  // SEC-KEY-01: the same spelling the records are filed under, so an old history
+  // entry written with a stray space still finds its record.
   const legacyByKey = new Map<string, LegacyHistoryItem>();
-  for (const item of legacyHistory) legacyByKey.set(item.key.trim().toUpperCase(), item);
+  for (const item of legacyHistory) legacyByKey.set(normalizeLicenseKey(item.key), item);
 
   const rows = Object.values(records).map((record) => {
-    const legacy = legacyByKey.get(record.key.trim().toUpperCase());
+    const legacy = legacyByKey.get(normalizeLicenseKey(record.key));
     const createdAt = record.createdAt ?? parseKoreanDateTime(legacy?.createdAt);
     const devices = record.devices || [];
     return {
@@ -113,7 +115,7 @@ export function countLegacyToImport(
   legacyHistory: LegacyHistoryItem[],
 ): number {
   return legacyHistory.filter((item) => {
-    const record = records[item.key.trim().toUpperCase()];
+    const record = records[normalizeLicenseKey(item.key)];
     return Boolean(record && ((item.memo && !record.memo) || (item.createdAt && !record.createdAt)));
   }).length;
 }

@@ -27,6 +27,34 @@ export interface LicenseInfo {
   isStudentOnly: boolean;
 }
 
+/**
+ * THE ONE SPELLING OF A LICENCE CODE. Every path that stores, looks up, compares
+ * or records a code must go through this, on the client and on the server alike.
+ *
+ * SEC-KEY-01 (BUG-002) — validation already removed inner spaces
+ * (`serverLicense.validateLicenseKey`) while storage kept them
+ * (`deviceStorage.normalizeKey` was `trim().toUpperCase()`). So
+ * "KIG-1Y-AAAA BBBB-CCCC" passed validation as the real code but was filed under
+ * a record of its own: a second, third and fourth device on a two-device pass, a
+ * refunded code usable again, and a fresh paid period on every new variant. The
+ * gap was not a missing check — it was two different answers to "is this the same
+ * code?", so the fix is to have only one.
+ *
+ * It removes ALL whitespace, not just the ends, plus the zero-width characters a
+ * paste can carry. None of them can belong to a code: the alphabet is
+ * `KIG-<plan>-<16 hex>-<16 hex>`. Uppercasing keeps a lower-case paste working,
+ * as it always has.
+ *
+ * For a code with nothing to strip this returns exactly what `trim().toUpperCase()`
+ * returned, so every record already stored keeps the same identity and the same
+ * object name in R2.
+ */
+export function normalizeLicenseKey(rawKey: string | null | undefined): string {
+  return String(rawKey ?? "")
+    .replace(/[\s​‌‍]/g, "")
+    .toUpperCase();
+}
+
 /** Returns whether a given plan grants access exclusively to the STUDENT section. */
 export function isStudentOnlyPlan(plan?: string | null): boolean {
   if (!plan) return false;

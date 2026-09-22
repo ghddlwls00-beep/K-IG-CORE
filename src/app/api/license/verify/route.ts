@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { verifyLicenseToken } from "@/lib/serverLicense";
 import { effectiveLicenseExpiry, getDeviceRecordForKey } from "@/lib/deviceStorage";
 import { LICENSE_SESSION_COOKIE_NAME, deviceCookie, isValidDeviceId } from "@/lib/licenseSession";
+import { normalizeLicenseKey } from "@/lib/license";
 
 export async function POST(request: Request) {
   try {
@@ -45,7 +46,9 @@ export async function POST(request: Request) {
     const { plan, expiresAt } = tokenResult.payload;
 
     // 2. Check if key in token matches provided key
-    if (tokenResult.payload.key !== key.trim().toUpperCase()) {
+    // SEC-KEY-01: compare the normalized spelling on both sides, so a spaced
+    // variant cannot present itself as a different code.
+    if (tokenResult.payload.key !== normalizeLicenseKey(key)) {
       return NextResponse.json(
         {
           valid: false,
@@ -57,7 +60,7 @@ export async function POST(request: Request) {
     }
 
     // 3. Database registration check: Is this device still registered in deviceStorage?
-    const normalizedKey = key.trim().toUpperCase();
+    const normalizedKey = normalizeLicenseKey(key);
     const record = await getDeviceRecordForKey(normalizedKey);
 
     // 4. Check if license has been revoked (e.g. customer refund)
