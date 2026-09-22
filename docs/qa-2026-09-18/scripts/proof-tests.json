@@ -1,0 +1,115 @@
+[
+ {
+  "name": "VOCA",
+  "course": "phonics",
+  "id": "mv1-01",
+  "site": "PhonicsLearningView.tsx:766 STEP 1 낱말표 — 마지막 줄의 마지막 낱말 카드",
+  "texts": [
+   "about"
+  ]
+ },
+ {
+  "name": "GRAMMAR I · 영어 기대값 (gh1-007 → gh1-006 으로 넘어감, 짝=gh1-006)",
+  "course": "grammar1",
+  "id": "gh1-007",
+  "site": "GrammarLearningView.tsx:1131 Step 3 구문 각인 — 마지막 문항의 영어 줄 (영어 문장이 버튼 없이 보이는 유일한 곳. Step 1 에는 정답 보기를 눌러야만 나옴)",
+  "texts": [
+   "It is warm."
+  ]
+ },
+ {
+  "name": "GRAMMAR I · 한국어 기대값 (gh1-006, 짝=gh1-007)",
+  "course": "grammar1",
+  "id": "gh1-006",
+  "site": "GrammarLearningView.tsx:734 STEP 1 문항 카드 — 마지막 문항 카드",
+  "texts": [
+   "따뜻해."
+  ]
+ },
+ {
+  "name": "GRAMMAR II · 영어 기대값 (gh2-007, 짝=gh2-007-1)",
+  "course": "grammar2",
+  "id": "gh2-007",
+  "site": "GrammarLearningView.tsx:1131 Step 3 구문 각인 — 마지막 문항의 영어 줄 (영어 문장이 버튼 없이 보이는 유일한 곳. Step 1 에는 정답 보기를 눌러야만 나옴)",
+  "texts": [
+   "Young as I am, I know it."
+  ]
+ },
+ {
+  "name": "GRAMMAR II · 한국어 기대값 (gh2-007-1, 짝=gh2-007)",
+  "course": "grammar2",
+  "id": "gh2-007-1",
+  "site": "GrammarLearningView.tsx:734 STEP 1 문항 카드 — 마지막 문항 카드",
+  "texts": [
+   "나는 젊지만(어리지만) 그것을 안다."
+  ]
+ },
+ {
+  "name": "STUDENT",
+  "course": "student",
+  "id": "s1-1",
+  "site": "StudentLearningView.tsx:651 STEP 1 문장 카드 — 마지막 문장 카드",
+  "texts": [
+   "First of all, thank you for giving me a chance to introduce myself.",
+   "무엇보다도 내 자신을 소개할 수 있는 기회를 주셔서 감사합니다."
+  ]
+ },
+ {
+  "name": "READING",
+  "course": "reading",
+  "id": "pr001",
+  "site": "ReadingLearningView.tsx:683 STEP 1 지문 — 마지막 문장",
+  "texts": [
+   "Their communication will be more successful if parents respect their other-sex child's different way of speaking."
+  ]
+ },
+ {
+  "name": "LISTENING 대본",
+  "course": "ld",
+  "id": "d001-1",
+  "site": "LdLearningView.tsx:1342 1:1 대역 스크립트 — 마지막 문장의 한국어 줄",
+  "texts": [
+   "그것은 크지 않지만 매우 좋습니다. 우리는 또 한 어린 아들이 있습니다. 그의 이름은 톰입니다."
+  ]
+ },
+ {
+  "name": "LISTENING 대본 · 1번 문장",
+  "course": "ld",
+  "id": "d001-1",
+  "phaseOverride": "s1",
+  "site": "LdLearningView.tsx:1342 1:1 대역 스크립트 — 1번 문장의 한국어 줄 (STEP 2~4 가 기본으로 보여주는 문장)",
+  "texts": [
+   "나는 왓슨 부인입니다. 나의 이름은 바바라입니다. 나는 간호사이고 병원에서 일합니다."
+  ]
+ },
+ {
+  "name": "READING 핵심 어휘 · 낱말 (2026-09-23 추가, 클립 생성 전)",
+  "course": "reading",
+  "id": "pr001",
+  "phasePrefix": "r2-",
+  "site": "ReadingLearningView.tsx:800 STEP 2 핵심 어휘 — 마지막 카드의 낱말",
+  "texts": [
+   "successful"
+  ]
+ },
+ {
+  "name": "READING 핵심 어휘 · 뜻 (2026-09-23 추가, 클립 생성 전)",
+  "course": "reading",
+  "id": "pr001",
+  "phasePrefix": "r2-",
+  "site": "ReadingLearningView.tsx:825 STEP 2 핵심 어휘 — 마지막 카드의 뜻 (전체 뜻 보기 뒤)",
+  "texts": [
+   "성공적인"
+  ]
+ },
+ {
+  "name": "READING 한글 지문 (2026-09-23 추가, 클립 생성 전)",
+  "course": "reading",
+  "id": "pr001-1",
+  "phasePrefix": "r2-",
+  "site": "ReadingLearningView.tsx:1193 STEP 4 원문 대조 — 한글 완역의 마지막 문장",
+  "texts": [
+   "부모가 성별이 다른 자녀의 다른 말하기 방식을 존중한다면 그들의 대화는 더 성공적일 것이다."
+  ]
+ }
+]

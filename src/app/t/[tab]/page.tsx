@@ -28,7 +28,7 @@ export const dynamicParams = false;
 
 /** Used when a tab has no blurb of its own, so a share card is never blank. */
 const TAB_FALLBACK_DESCRIPTION =
-  "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.";
+  "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩을 한 곳에서.";
 
 export async function generateMetadata({
   params,

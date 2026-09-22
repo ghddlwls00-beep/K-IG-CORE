@@ -174,15 +174,24 @@
         },
         {
           "n": "22",
-          "text": "Isn't he a teacher?"
+          "text": "Isn't he a teacher?",
+          "alternatives": [
+            "Is he not a teacher?"
+          ]
         },
         {
           "n": "23",
-          "text": "Aren't they your friends?"
+          "text": "Aren't they your friends?",
+          "alternatives": [
+            "Are they not your friends?"
+          ]
         },
         {
           "n": "24",
-          "text": "Aren't I your friend?"
+          "text": "Aren't I your friend?",
+          "alternatives": [
+            "Am I not your friend?"
+          ]
         }
       ]
     },

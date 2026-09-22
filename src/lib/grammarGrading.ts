@@ -40,8 +40,8 @@ export const MAX_ANSWER_LEN_RATIO = 1.15;
 
 /**
  * Standard contractions and their full forms, applied after lower-casing and
- * before punctuation is removed. `'d` is left alone: it is "would" or "had"
- * and guessing wrong would turn a right answer into a wrong one.
+ * before punctuation is removed. `'d` is handled separately by `expandWouldHad`,
+ * because it is "would" or "had" and only the next word says which.
  */
 const CONTRACTIONS: [RegExp, string][] = [
   [/\bcan't\b/g, "can not"],
@@ -56,6 +56,80 @@ const CONTRACTIONS: [RegExp, string][] = [
   [/\b(he|she|it|that|this|there|what|who|where|here|how|when)'s\b/g, "$1 is"],
   [/\blet's\b/g, "let us"],
 ];
+
+/**
+ * BUG-010 — `'d` stands for "would" or "had", and the word after it says which:
+ * "I'd like", "I'd have called", "I'd rather" can only be "would"; "I'd been",
+ * "I'd known", "You'd better" can only be "had". Leaving every `'d` alone (the
+ * old rule) failed both directions: "I would like" against the model's "I'd
+ * like" (4 answers) and "I'd like" against a model that spells it out (68).
+ *
+ * The rule never guesses:
+ *   - only after a pronoun subject (`what'd` is usually "what did");
+ *   - a verb whose past participle is spelled like its base ("read", "come",
+ *     "put") leaves the model's `'d` as written. A learner's `'d` there is a
+ *     correct contraction of both, so `gradeAnswer` tries each for the learner;
+ *   - main-verb "had" ("I had a dream") has no standard contraction, so "I'd a
+ *     dream" expands to "would" and stays below full marks.
+ */
+const D_SUBJECT = /\b(i|you|he|she|it|we|they|who|that|there)'d\b/g;
+const D_SKIP = new Set([
+  "not", "never", "just", "already", "really", "also", "always", "ever", "once", "much",
+  "probably", "certainly", "surely", "still", "often", "soon", "sometimes", "usually",
+  "definitely", "only", "all", "both", "hardly", "actually",
+]);
+/** Base form spelled like the past participle — the model's `'d` cannot be resolved. */
+const D_EITHER = new Set([
+  "come", "become", "overcome", "run", "read", "put", "cut", "let", "set", "hit", "hurt",
+  "shut", "cost", "quit", "spread", "bet", "burst", "cast", "broadcast", "forecast", "upset",
+  "shed", "wed", "split", "thrust", "bid", "rid", "slit", "beat", "wound", "fit",
+]);
+/** Words that only follow "had": better/best/been and irregular past participles. */
+const D_HAD = new Set([
+  "better", "best", "been", "arisen", "awoken", "beaten", "begun", "bent", "bitten", "bled",
+  "blown", "borne", "broken", "bred", "brought", "built", "burnt", "bought", "caught", "chosen",
+  "clung", "crept", "dealt", "done", "drawn", "dreamt", "driven", "drunk", "dug", "eaten",
+  "fallen", "fed", "felt", "fled", "flown", "flung", "forbidden", "forgiven", "forgotten",
+  "fought", "found", "frozen", "given", "gone", "got", "gotten", "grown", "had", "heard",
+  "held", "hidden", "hung", "kept", "knelt", "known", "laid", "lain", "learnt", "led", "left",
+  "lent", "lit", "lost", "made", "meant", "met", "mistaken", "paid", "proven", "ridden",
+  "risen", "rung", "said", "sat", "seen", "sent", "sewn", "shaken", "shone", "shot", "shown",
+  "shrunk", "slept", "slid", "sold", "sought", "spent", "spilt", "spoken", "sped", "spun",
+  "sprung", "stolen", "stood", "struck", "stuck", "stung", "sung", "sunk", "sworn", "swept",
+  "swum", "swung", "taken", "taught", "thought", "thrown", "told", "torn", "understood",
+  "withdrawn", "woken", "won", "worn", "woven", "wept", "written",
+]);
+/** Base forms that end in "ed", so the ending does not mark a past participle. */
+const D_ED_BASE = new Set([
+  "need", "feed", "succeed", "proceed", "exceed", "breed", "bleed", "speed", "heed", "seed",
+  "weed", "embed", "shred", "bed",
+]);
+
+function auxiliaryFor(word: string): "would" | "had" | "either" {
+  if (D_EITHER.has(word)) return "either";
+  if (D_HAD.has(word)) return "had";
+  if (word.length > 3 && word.endsWith("ed") && !D_ED_BASE.has(word)) return "had";
+  return "would";
+}
+
+/**
+ * Expands a pronoun's `'d` by the next word (after adverbs such as "never").
+ * `either` says what an unresolvable `'d` becomes; undefined keeps it as written.
+ * A `'d` at the end of the text or before punctuation is kept as written.
+ */
+function expandWouldHad(text: string, either?: "would" | "had"): string {
+  return text.replace(D_SUBJECT, (match: string, subject: string, offset: number, whole: string) => {
+    const rest = whole.slice(offset + match.length);
+    if (!/^\s+[a-z]/.test(rest)) return match;
+    const words = rest.trim().split(/\s+/).map((w) => w.replace(/[^a-z]/g, ""));
+    let k = 0;
+    while (k < words.length && D_SKIP.has(words[k])) k++;
+    if (!words[k]) return match;
+    const aux = auxiliaryFor(words[k]);
+    if (aux === "either") return either ? `${subject} ${either}` : match;
+    return `${subject} ${aux}`;
+  });
+}
 
 /**
  * Words whose substitution is a grammar slip rather than a different sentence.
@@ -101,8 +175,8 @@ function normalizeLiteral(text: string): string {
     .trim();
 }
 
-export function normalizeForComparison(text: string): string {
-  let normalized = text.toLowerCase().replace(/[’‘]/g, "'");
+export function normalizeForComparison(text: string, eitherDAs?: "would" | "had"): string {
+  let normalized = expandWouldHad(text.toLowerCase().replace(/[’‘]/g, "'"), eitherDAs);
   for (const [pattern, replacement] of CONTRACTIONS) {
     normalized = normalized.replace(pattern, replacement);
   }
@@ -194,7 +268,19 @@ function align(userWords: string[], modelWords: string[]) {
  * typos from partial into incorrect.
  */
 export function gradeAnswer(userRaw: string, modelRaw: string): AnswerGrade {
-  const expanded = gradeNormalized(normalizeForComparison(userRaw), normalizeForComparison(modelRaw));
+  const model = normalizeForComparison(modelRaw);
+  // BUG-010: a learner's "I'd read" is a correct contraction of both "I had read"
+  // and "I would read", so both readings are tried (the Set drops duplicates).
+  let expanded: AnswerGrade = "incorrect";
+  const userForms = new Set([
+    normalizeForComparison(userRaw),
+    normalizeForComparison(userRaw, "would"),
+    normalizeForComparison(userRaw, "had"),
+  ]);
+  for (const user of userForms) {
+    const grade = gradeNormalized(user, model);
+    if (GRADE_RANK[grade] > GRADE_RANK[expanded]) expanded = grade;
+  }
   if (expanded === "exact") return expanded;
   const literal = gradeNormalized(normalizeLiteral(userRaw), normalizeLiteral(modelRaw));
   return GRADE_RANK[literal] > GRADE_RANK[expanded] ? literal : expanded;

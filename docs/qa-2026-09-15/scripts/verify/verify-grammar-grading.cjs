@@ -37,6 +37,12 @@ function expect(label, input, references, want) {
   const got = gradeAgainstReferences(input, refs);
   cases.push({ label, input, references: refs, want, got, ok: got === want });
 }
+/** A guard: the only requirement is that a wrong form never reaches full marks. */
+function expectBelowExact(label, input, references) {
+  const refs = Array.isArray(references) ? references : [references];
+  const got = gradeAgainstReferences(input, refs);
+  cases.push({ label, input, references: refs, want: "partial or incorrect", got, ok: got !== "exact" });
+}
 
 // --- the audit's inputs (CNT-02) ---------------------------------------------
 expect("contraction I'm", "I'm Korean.", "I am Korean.", "exact");
@@ -69,6 +75,39 @@ expect("gh2-008 Q2 'will' (key changed by owner)", "Even though I failed, I will
 const gh2007q3 = lessonSentence("grammar2", "gh2-007", 3);
 expect("gh2-007 Q3 'study' (key changed by owner)", "Unless you study harder, you will never pass the examination.", [gh2007q3.text, ...gh2007q3.alternatives], "exact");
 
+// --- BUG-010 (2026-09-23): 'd is "would" or "had"; the next word decides ------
+// The four items the 09-18 audit found (learner spells out the model's I'd like).
+for (const [id, n, typed] of [
+  ["gh2-022", 20, "I would like to open a savings account."],
+  ["gh2-029", 7, "Operator, I would like to call New York, collect."],
+  ["gh2-029", 8, "I would like to know a phone number in Seoul, Korea."],
+  ["gh2-037", 13, "I would like to have a phone installed in my apartment."],
+]) {
+  const s = lessonSentence("grammar2", id, n);
+  expect(`BUG-010 ${id} #${n} spelled out 'I would like'`, typed, [s.text, ...s.alternatives], "exact");
+}
+// The other direction: the model spells it out, the learner contracts it (68 answers had this).
+const gh2023q10 = lessonSentence("grammar2", "gh2-023", 10);
+expect("BUG-010 gh2-023 #10 I'd like for 'I would like'", "I'd like to take your measurements.", [gh2023q10.text, ...gh2023q10.alternatives], "exact");
+const gh2048q3 = lessonSentence("grammar2", "gh2-048", 3);
+expect("BUG-010 gh2-048 #3 If I'd known ... I'd have", "If I'd known your phone number, I'd have called you.", [gh2048q3.text, ...gh2048q3.alternatives], "exact");
+const gh2015q17 = lessonSentence("grammar2", "gh2-015", 17);
+expect("BUG-010 gh2-015 #17 I'd been (had)", "I'd been studying English.", [gh2015q17.text, ...gh2015q17.alternatives], "exact");
+expect("BUG-010 You'd better (had)", "You'd better hurry.", "You had better hurry.", "exact");
+expect("BUG-010 I'd rather (would)", "I would rather stay home.", "I'd rather stay home.", "exact");
+expect("BUG-010 I'd read: learner's ambiguous 'd matches 'had'", "I'd read the book before.", "I had read the book before.", "exact");
+expect("BUG-010 I'd read: learner's ambiguous 'd matches 'would'", "I'd read the book if I could.", "I would read the book if I could.", "exact");
+// Guards: the rule must not turn a wrong form into a right one. They pass on the old grader
+// too (it expanded nothing); what they catch is a rule that expands 'd too freely — shown
+// in the work log by running them against the naive "try both everywhere" rule.
+const gh1011q9 = lessonSentence("grammar1", "gh1-011", 9);
+expectBelowExact("BUG-010 guard: main-verb had has no contraction ('I'd a dream')", "I'd a dream.", [gh1011q9.text, ...gh1011q9.alternatives]);
+const gh2009q5 = lessonSentence("grammar2", "gh2-009", 5);
+expectBelowExact("BUG-010 guard: 'He'd lunch' for 'He had lunch'", "He'd lunch on the plane.", [gh2009q5.text, ...gh2009q5.alternatives]);
+expectBelowExact("BUG-010 guard: I had like (model I'd like = would)", "I had like to open a savings account.", [lessonSentence("grammar2", "gh2-022", 20).text]);
+expectBelowExact("BUG-010 guard: I would gone (model I'd gone = had)", "I would gone home.", "I'd gone home.");
+expectBelowExact("BUG-010 guard: model's ambiguous 'd is not guessed", "I would read the book.", "I'd read the book.");
+
 // --- spacing-only differences --------------------------------------------------
 expect("closed compound = open compound", "Was she your girlfriend?", "Was she your girl friend?", "exact");
 expect("open compound = closed compound", "Was she your girl friend?", "Was she your girlfriend?", "exact");
@@ -97,6 +136,10 @@ const norm = [
   ["I’ll", "i will"],
   ["let's go", "let us go"],
   ["mother's counsel", "mothers counsel"],
+  ["I'd like it", "i would like it"],
+  ["She'd never seen it", "she had never seen it"],
+  ["I'd", "id"],
+  ["What'd you say", "whatd you say"],
 ];
 for (const [input, want] of norm) {
   const got = normalizeForComparison(input);

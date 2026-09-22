@@ -48,7 +48,7 @@ export async function generateMetadata({
   const canonical = `/${course}`;
   const description =
     index?.course.description ||
-    "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.";
+    "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩을 한 곳에서.";
   // RE-012: the representative image for a course is its own section banner.
   const image = COURSE_OG_IMAGE[course] || "/images/og/students.jpg";
   return {

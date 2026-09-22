@@ -100,11 +100,21 @@
         },
         {
           "n": "42",
-          "text": "Didn't he have lunch?"
+          "text": "Didn't he have lunch?",
+          "alternatives": [
+            "Didn't he eat lunch?",
+            "Did he not have lunch?",
+            "Did he not eat lunch?"
+          ]
         },
         {
           "n": "43",
-          "text": "Didn't they have dinner?"
+          "text": "Didn't they have dinner?",
+          "alternatives": [
+            "Didn't they eat dinner?",
+            "Did they not have dinner?",
+            "Did they not eat dinner?"
+          ]
         },
         {
           "n": "44",

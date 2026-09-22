@@ -82,7 +82,10 @@
         },
         {
           "n": "11",
-          "text": "Which does his mother want?"
+          "text": "Which does his mother want?",
+          "alternatives": [
+            "Which one does his mother want?"
+          ]
         },
         {
           "n": "12",
@@ -97,19 +100,33 @@
         },
         {
           "n": "14",
-          "text": "He doesn't have breakfast, does he?"
+          "text": "He doesn't have breakfast, does he?",
+          "alternatives": [
+            "He doesn't eat breakfast, does he?"
+          ]
         },
         {
           "n": "15",
-          "text": "She didn't have dinner, did she?"
+          "text": "She didn't have dinner, did she?",
+          "alternatives": [
+            "She didn't eat dinner, did she?"
+          ]
         },
         {
           "n": "16",
-          "text": "He needs much water, doesn't he?"
+          "text": "He needs much water, doesn't he?",
+          "alternatives": [
+            "He needs a lot of water, doesn't he?",
+            "He needs lots of water, doesn't he?"
+          ]
         },
         {
           "n": "17",
-          "text": "The hospital wants much blood, doesn't it?"
+          "text": "The hospital wants much blood, doesn't it?",
+          "alternatives": [
+            "The hospital wants a lot of blood, doesn't it?",
+            "The hospital wants lots of blood, doesn't it?"
+          ]
         },
         {
           "n": "18",

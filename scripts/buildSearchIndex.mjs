@@ -22,6 +22,7 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { createRequire } from "node:module";
+import { findPaidLeaks } from "./paidLeakCheck.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT_FILE = path.join(ROOT, "public", "search-index.json");
@@ -75,11 +76,30 @@ function loadTs(file) {
 
 const before = fs.existsSync(OUT_FILE) ? fs.readFileSync(OUT_FILE, "utf8") : "";
 
+/**
+ * BUG-011 — the index is public, so it may not carry one line of a paid lesson
+ * ("공개 파일에 유료 본문 0건"). The rule is the audit's (scripts/paidLeakCheck.mjs).
+ * On a hit the previous file is put back, so a leaking index is never left on
+ * disk to be committed, and the build stops.
+ */
+function refuseLeaks(written, restore) {
+  const leak = findPaidLeaks(written);
+  if (!leak.rows) return;
+  fs.writeFileSync(OUT_FILE, restore);
+  const sample = leak.hits.slice(0, 5).map((h) => `  ${h.course}/${h.id} ${h.kind}: ${h.text}`).join("\n");
+  console.error(
+    `public/search-index.json would publish paid lesson content: ${leak.rows} line(s) from ${leak.lessons} paid lesson(s) ${JSON.stringify(leak.byCourse)}\n${sample}\n` +
+      "The previous file was restored. Remove the paid text from scripts/buildSearchIndex.ts — do not reorder it to get past this check.",
+  );
+  process.exit(1);
+}
+
 if (CHECK) {
   // Build into a scratch copy so --check never rewrites the committed file.
   const backup = before;
   loadTs(path.join(ROOT, "scripts", "buildSearchIndex.ts"));
   const after = fs.readFileSync(OUT_FILE, "utf8");
+  refuseLeaks(after, backup);
   if (after !== backup) {
     fs.writeFileSync(OUT_FILE, backup);
     console.error("public/search-index.json is stale — run: node scripts/buildSearchIndex.mjs");
@@ -89,6 +109,7 @@ if (CHECK) {
 } else {
   loadTs(path.join(ROOT, "scripts", "buildSearchIndex.ts"));
   const after = fs.readFileSync(OUT_FILE, "utf8");
+  refuseLeaks(after, before);
   const count = (text) => { try { return JSON.parse(text).length; } catch { return 0; } };
   // A build must never silently produce an empty or truncated index.
   if (count(after) < 500) throw new Error(`search-index.json has only ${count(after)} entries — the walk collected almost nothing`);

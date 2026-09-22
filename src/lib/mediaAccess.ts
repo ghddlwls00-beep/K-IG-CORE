@@ -36,12 +36,13 @@
  * below is now the allow list.
  */
 
-import { isFreePreviewLesson, isStudentOnlyPlan } from "./license";
+import { isStudentOnlyPlan } from "./license";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
 } from "./licenseSession";
 import freeSpeech from "./generated/freeSpeechKeys.json";
+import { isFreeMediaKey } from "./freeMedia";
 
 /**
  * Clip keys a free preview lesson can request. Built from `content/` by
@@ -100,7 +101,9 @@ export async function resolveMediaAccess(
   // references is "/audio/<course>/<file>" or "/video/cnn/<file>".
   if (!course || !lessonId) return { allowed: false, reason: "unclaimed" };
 
-  if (isFreePreviewLesson(course, lessonId)) {
+  // BUG-019: the exact object keys the free lessons list, not "a name that
+  // reduces to a free id" — see freeMedia.ts.
+  if (isFreeMediaKey(key)) {
     return { allowed: true, reason: "free-preview" };
   }
 

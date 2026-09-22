@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s · K-IG 핵심 어학 마스터",
   },
   description:
-    "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
+    "K-IG 핵심 6개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING.",
   // RE-011: a GLOBAL `canonical: "/"` used to live here. Because no page
   // overrode it, EVERY page declared itself a duplicate of the home page, so
   // search engines indexed only "/" and the rest of the site dropped out.
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
     description:
-      "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
+      "K-IG 핵심 6개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING.",
     // RE-012: without these, a KakaoTalk / SNS share renders as a bare link
     // with no thumbnail and no description. SEO-01: the image is the 1000×525
     // landscape crop in public/images/og, declared at its real size — the
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
     description:
-      "K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.",
+      "K-IG 핵심 6개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING.",
     images: ["/images/og/students.jpg"],
   },
   other: {

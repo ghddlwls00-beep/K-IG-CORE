@@ -29,8 +29,16 @@
  * has a list. No timestamp is written: an unchanged `content/` must yield a
  * byte-identical file.
  *
+ * BUG-019 (2026-09-23) — the same walk also writes
+ * `src/lib/generated/freeMediaKeys.json`: the EXACT media objects the free
+ * lessons list in `audio[]` / `video[]` ("audio/student/s1-1-1.mp3" …). The
+ * media gate used to call a lesson free when its file name, with trailing
+ * "-<number>" parts removed, was a free id — so "audio/ld/d001-999.mp3" counted
+ * as d001. Matching the object key against this list closes that without
+ * locking the free lessons' own files, whose names carry such suffixes.
+ *
  *   node scripts/buildFreeSpeechKeys.mjs            # regenerate
- *   node scripts/buildFreeSpeechKeys.mjs --check    # exit 1 if the file is stale
+ *   node scripts/buildFreeSpeechKeys.mjs --check    # exit 1 if a file is stale
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -183,16 +191,47 @@ if (lessonsSeen < 20) throw new Error(`only ${lessonsSeen} free lessons collecte
 if (keys.size < 300) throw new Error(`only ${keys.size} free clip keys — the walk collected almost nothing`);
 if (keys.size > 5000) throw new Error(`${keys.size} free clip keys — that is not a preview, something paid leaked in`);
 
-const json = JSON.stringify(output, null, 2) + "\n";
-if (CHECK) {
-  const current = fs.existsSync(OUT_FILE) ? fs.readFileSync(OUT_FILE, "utf8") : "";
-  if (current !== json) {
-    console.error(`${path.relative(ROOT, OUT_FILE)} is stale — run: node scripts/buildFreeSpeechKeys.mjs`);
-    process.exit(1);
+// --- BUG-019: the media objects the free lessons list, for an exact match ---
+const MEDIA_OUT_FILE = path.join(ROOT, "src", "lib", "generated", "freeMediaKeys.json");
+const mediaKeys = new Set();
+let mediaLessons = 0;
+for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {
+  // CNN is included here: its two free clips are videos, and the course is
+  // left working exactly as it is.
+  for (const id of ids) {
+    const lesson = readJson(path.join(LESSONS, course, `${id}.json`));
+    if (!lesson) throw new Error(`free preview lesson ${course}/${id} has no file — FREE_PREVIEW_LESSON_IDS is stale`);
+    mediaLessons += 1;
+    for (const media of [...(lesson.audio || []), ...(lesson.video || [])]) {
+      const src = String(media?.src || "");
+      if (/^\/(audio|video)\//.test(src)) mediaKeys.add(src.slice(1));
+    }
   }
-  console.log(`${path.relative(ROOT, OUT_FILE)} is current (${keys.size} keys)`);
+}
+if (mediaKeys.size < 20) throw new Error(`only ${mediaKeys.size} free media keys — a free lesson would lose its audio`);
+if (mediaKeys.size > 200) throw new Error(`${mediaKeys.size} free media keys — that is not a preview, something paid leaked in`);
+const mediaOutput = { lessons: mediaLessons, count: mediaKeys.size, keys: [...mediaKeys].sort() };
+
+const outputs = [
+  [OUT_FILE, JSON.stringify(output, null, 2) + "\n", `${lessonsSeen} free lessons, ${keys.size} clip keys`],
+  [MEDIA_OUT_FILE, JSON.stringify(mediaOutput, null, 2) + "\n", `${mediaLessons} free lessons, ${mediaKeys.size} media keys`],
+];
+if (CHECK) {
+  let stale = false;
+  for (const [file, json, what] of outputs) {
+    const current = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+    if (current !== json) {
+      console.error(`${path.relative(ROOT, file)} is stale — run: node scripts/buildFreeSpeechKeys.mjs`);
+      stale = true;
+    } else {
+      console.log(`${path.relative(ROOT, file)} is current (${what})`);
+    }
+  }
+  if (stale) process.exit(1);
 } else {
-  fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
-  fs.writeFileSync(OUT_FILE, json);
-  console.log(`wrote ${path.relative(ROOT, OUT_FILE)}: ${lessonsSeen} free lessons, ${keys.size} clip keys`);
+  for (const [file, json, what] of outputs) {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, json);
+    console.log(`wrote ${path.relative(ROOT, file)}: ${what}`);
+  }
 }

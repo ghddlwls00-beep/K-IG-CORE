@@ -12,7 +12,9 @@ const courses = [
   { slug: "grammar2", title: "GRAMMAR II" },
   { slug: "ld", title: "LISTENING" },
   { slug: "reading", title: "READING" },
-  { slug: "cnn", title: "CNN NEWS" },
+  // BUG-017 (2026-09-23): CNN NEWS is a discontinued course, so it is no longer
+  // indexed — 120 search results led to a course that is not sold. The course
+  // itself is untouched; only the index stops listing it.
 ];
 
 export interface SearchIndexItem {
@@ -26,6 +28,15 @@ export interface SearchIndexItem {
   searchText: string;
 }
 
+/**
+ * BUG-011 — searching an English word ("hospital") finds no VOCA lesson, and this
+ * public file must NOT be how that gets fixed. A VOCA lesson's word list is paid
+ * content: putting it here (2026-09-23) published 934 word-grid rows of 193 paid
+ * lessons to anyone who fetches /search-index.json. It was taken out again the
+ * same day; English-word search is deferred to a server-side search for signed-in
+ * learners. `scripts/buildSearchIndex.mjs` runs the paid-content check
+ * (`scripts/paidLeakCheck.mjs`) on every index it writes and fails on one hit.
+ */
 const items: SearchIndexItem[] = [];
 
 for (const { slug, title: courseTitle } of courses) {
@@ -52,7 +63,6 @@ for (const { slug, title: courseTitle } of courses) {
       slug === "grammar2" ? "문법 패턴 구문 영작 grammar2" : "",
       slug === "ld" ? "듣기 청취 수능 토익 받아쓰기 dictation listening ld" : "",
       slug === "reading" ? "독해 리딩 지문 본문 해석 직독직해 reading" : "",
-      slug === "cnn" ? "cnn 뉴스 방송 current news 영어뉴스" : "",
     ]
       .filter(Boolean)
       .join(" ")

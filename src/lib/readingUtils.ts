@@ -180,7 +180,10 @@ const STOP_WORDS = new Set([
   "small", "big", "time", "year", "years", "day", "days", "way", "ways", "first",
   "second", "good", "better", "best", "new", "little", "put", "another", "instead",
   "really", "almost", "quite", "rather", "perhaps", "maybe", "probably", "actually",
-  "already", "still", "yet", "what", "which", "who", "whom", "whose"
+  "already", "still", "yet", "what", "which", "who", "whom", "whose",
+  // Modal verbs: in a blank they are interchangeable ("the economies ___ recover" takes
+  // would, could or might), so none of them can be the one right answer (4단계 #76).
+  "would", "could", "might", "must", "shall", "ought"
 ]);
 
 function getWordCandidates(w: string): string[] {
@@ -688,9 +691,42 @@ export interface ClozeItem {
   answerIndex: number;
 }
 
+/**
+ * Words split on spaces AND on dashes. An unspaced em dash ("healthy eyes—people who")
+ * used to make "eyes—people" one word, and it became the blank (4단계 #74). A hyphen is
+ * not a separator: "well-known" stays one word.
+ */
+const CLOZE_TOKEN_SPLIT = /[\s–—―]+/;
+
+/**
+ * Two spellings of one word — relationship/relationships, influence/influenced. Offering
+ * one as a wrong option for the other marks a learner wrong for knowing the word (#73).
+ * Measured as a shared stem: the shorter word, minus at most two letters, starts the longer.
+ */
+function sameWordFamily(a: string, b: string): boolean {
+  const x = a.toLowerCase();
+  const y = b.toLowerCase();
+  if (x === y) return true;
+  const [short, long] = x.length <= y.length ? [x, y] : [y, x];
+  if (long.length - short.length > 3) return false;
+  let common = 0;
+  while (common < short.length && short[common] === long[common]) common++;
+  return common >= Math.max(4, short.length - 2);
+}
+
+/**
+ * Words that fill the same blank as the answer in their passage, found by the 2026-09
+ * audit. No general rule can see these — "what the music is saying" is as right as "what
+ * the piece is saying" — so they are listed, each with the lesson that needed it.
+ */
+const CLOZE_SAME_SLOT: string[][] = [
+  ["piece", "music"], // pr007 (#72)
+  ["conserve", "preserve"], // pr248 (#77)
+];
+
 export function generateClozeItems(sentences: { en: string; ko: string }[]): ClozeItem[] {
   const result: ClozeItem[] = [];
-  const candidates = sentences.filter((s) => s.en.split(/\s+/).length >= 6);
+  const candidates = sentences.filter((s) => s.en.split(CLOZE_TOKEN_SPLIT).length >= 6);
 
   // KIG-018: the target word is interpolated into a RegExp, so it must be clean
   // and escaped. Quotes, semicolons and colons used to survive into the pattern
@@ -713,31 +749,46 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
   const passagePool = Array.from(
     new Set(
       sentences
-        .flatMap((s) => s.en.split(/\s+/))
+        .flatMap((s) => s.en.split(CLOZE_TOKEN_SPLIT))
         .map(stripEdgePunctuation)
         .filter((w) => w.length >= 4 && !STOP_WORDS.has(w.toLowerCase()))
         .map((w) => w.toLowerCase()),
     ),
   );
 
-  candidates.slice(0, 3).forEach((s, idx) => {
+  // Up to three items, taking the next sentence when one yields no blank (for example when its
+  // only candidate words are capitalised) instead of showing the learner fewer questions.
+  for (const s of candidates) {
+    if (result.length >= 3) break;
     const words = s.en
-      .split(/\s+/)
+      .split(CLOZE_TOKEN_SPLIT)
       .map(stripEdgePunctuation)
       .filter(Boolean);
     const validTargetWords = words.filter((w) => w.length >= 5 && !STOP_WORDS.has(w.toLowerCase()));
 
-    if (validTargetWords.length > 0) {
-      const target = validTargetWords[Math.floor(validTargetWords.length / 2)];
+    // The middle candidate, as before — but never a capitalised word. The wrong options are
+    // lower-cased passage words, so a "February" or "Shakespeare" answer was the only
+    // capitalised option on screen and gave itself away (21 items before 2026-09-23). Stepping
+    // to the nearest lower-case candidate, rather than dropping capitalised words from the
+    // list, leaves every other sentence's blank exactly where it was.
+    const middle = Math.floor(validTargetWords.length / 2);
+    const target = validTargetWords
+      .map((w, i) => ({ w, distance: Math.abs(i - middle) + (i < middle ? 0.5 : 0) }))
+      .sort((a, b) => a.distance - b.distance)
+      .find((c) => !/^[A-Z]/.test(c.w))?.w;
+
+    if (target) {
       const regex = new RegExp(`\\b${escapeRegExp(target)}\\b`, "i");
       const masked = s.en.replace(regex, "_______");
 
       // Never emit an item whose blank was not actually applied — that would show
       // the learner the answer instead of a gap.
-      if (masked === s.en) return;
+      if (masked === s.en) continue;
 
+      const answer = target.toLowerCase();
       const distractors = passagePool
-        .filter((w) => w !== target.toLowerCase())
+        .filter((w) => !sameWordFamily(w, answer))
+        .filter((w) => !CLOZE_SAME_SLOT.some((g) => g.includes(w) && g.includes(answer)))
         .map((w) => ({ w, spread: Math.abs(w.length - target.length) + Math.random() }))
         .sort((a, b) => a.spread - b.spread)
         .slice(0, 3)
@@ -747,7 +798,7 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
       const answerIndex = allOptions.indexOf(target);
 
       result.push({
-        id: idx + 1,
+        id: result.length + 1,
         originalSentence: s.en,
         maskedSentence: masked,
         missingWord: target,
@@ -755,7 +806,7 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
         answerIndex,
       });
     }
-  });
+  }
 
   return result;
 }

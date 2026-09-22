@@ -125,8 +125,16 @@ for (const course of ["ld", "student"]) {
 }
 
 // ---------- VOCA quiz distractors ----------
+/**
+ * GRADE-PASS-VOCA-VOID (findings-log, 2026-09-23). This block used to read the answer as
+ * `q.answer ?? q.correct ?? q.meaning` — fields ActiveRecallQuestion does not have — so the
+ * answer was `undefined` for all 5,797 questions and both counters could only ever be 0.
+ * It now reads the real fields, and the distractor check is delegated to
+ * check-voca-distractors.cjs, whose `--old` control shows it catching 270 bad items under the
+ * old rule — a check with a recorded failure, not an assumed one.
+ */
 {
-  const stat = { lessons: 0, questions: 0, distractorSharesMeaning: 0, answerNotInOptions: 0, examples: [] };
+  const stat = { lessons: 0, questions: 0, answerNotInOptions: 0, examples: [] };
   const dict = JSON.parse(fs.readFileSync(path.join(REPO, "content/voca_dictionary.json"), "utf8"));
   for (const p of E.pages("phonics")) {
     const words = E.gridWords(E.lesson("phonics", p.id));
@@ -136,19 +144,20 @@ for (const course of ["ld", "student"]) {
     try { quizzes = voca.generateActiveRecallQuizzes(words, dict) || []; } catch (e) { stat.error = String(e.message).slice(0, 120); break; }
     for (const q of quizzes) {
       stat.questions++;
-      const answer = q.answer ?? q.correct ?? q.meaning;
-      const options = q.options || q.choices || [];
-      if (answer && options.length && !options.includes(answer)) {
+      const answer = q.questionType === "en-to-ko" ? q.correctMeaning : q.word;
+      const options = q.options || [];
+      if (!answer || options[q.correctIndex] !== answer) {
         stat.answerNotInOptions++;
         if (stat.examples.length < 6) stat.examples.push({ lesson: p.id, word: q.word, answer, options: options.slice(0, 4) });
       }
-      const dups = options.filter((o) => o !== answer && String(o).trim() === String(answer).trim());
-      if (dups.length) {
-        stat.distractorSharesMeaning++;
-        if (stat.examples.length < 12) stat.examples.push({ lesson: p.id, word: q.word, answer, duplicate: dups[0] });
-      }
     }
   }
+  const { spawnSync } = require("child_process");
+  const run = spawnSync(process.execPath, [path.join(__dirname, "check-voca-distractors.cjs"), "--runs", "1", "--seed", "1"], { encoding: "utf8" });
+  const n = (re) => Number(((run.stdout || "").match(re) || [])[1] ?? NaN);
+  stat.distractorSharesMeaning = n(/오답을 내놓은 문항 (\d+)/);
+  stat.speedDrillWrongMismatch = n(/"불일치" 를 기대한 문항 (\d+)/);
+  stat.distractorCheckExit = run.status;
   report.voca = stat;
 }
 

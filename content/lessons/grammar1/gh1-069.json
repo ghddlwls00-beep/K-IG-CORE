@@ -57,10 +57,9 @@
       "items": [
         {
           "n": "80",
-          "text": "Not every boy received a prize, did he?",
+          "text": "Not everybody received a prize, did they?",
           "alternatives": [
-            "Not every boy received a prize, did they?",
-            "Each boy didn't receive a prize, did he?"
+            "Everybody didn't receive a prize, did they?"
           ]
         }
       ]
@@ -104,19 +103,34 @@
         },
         {
           "n": "84",
-          "text": "Nobody came."
+          "text": "Nobody came.",
+          "alternatives": [
+            "None of them came.",
+            "No one came."
+          ]
         },
         {
           "n": "85",
-          "text": "Nobody comes."
+          "text": "Nobody comes.",
+          "alternatives": [
+            "None of them come.",
+            "None of them comes.",
+            "No one comes."
+          ]
         },
         {
           "n": "86",
-          "text": "Nobody comes, do they?"
+          "text": "Nobody comes, do they?",
+          "alternatives": [
+            "No one comes, do they?"
+          ]
         },
         {
           "n": "87",
-          "text": "Nobody came, did they?"
+          "text": "Nobody came, did they?",
+          "alternatives": [
+            "No one came, did they?"
+          ]
         },
         {
           "n": "88",

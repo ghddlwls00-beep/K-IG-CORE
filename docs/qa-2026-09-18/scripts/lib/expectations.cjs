@@ -88,6 +88,50 @@ const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
 const isKo = (s) => /[가-힣]/.test(s);
 
 /**
+ * LISTENING 받아쓰기 힌트 — src/components/LdLearningView.tsx 의 `hintChunks` ·
+ * `pickHintsFor` 와 같은 규칙. 앱이 화면에 그리는 칩을 그대로 계산한다.
+ *
+ * 앱 쪽 코드는 컴포넌트 안에 있어 (React 훅을 쓰므로) 여기서 불러올 수 없다. 그래서
+ * 규칙을 옮겨 적었고, 둘이 어긋나면 스윕에서 "hint-chip 이 화면에 없다" 로 바로 드러난다.
+ * 앱을 고치면 이 세 함수도 같이 고쳐야 한다.
+ */
+const hintChunks = (text) =>
+  String(text || "")
+    .split(/,|\.\s+|\.$|\s{2,}/)
+    .map((chunk) => chunk.trim().replace(/[.,]+$/, "").trim())
+    .filter(Boolean);
+
+const squashHint = (value) => String(value).toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const PRONOUN_I = /^I(?:'m|'ve|'ll|'d)?$/;
+
+function hintsForSentence(sentence, chunks) {
+  if (!sentence || !chunks.length) return [];
+  const squashed = squashHint(sentence);
+  const relevant = chunks.filter((chunk) => {
+    const whole = squashHint(chunk);
+    if (whole.length >= 3 && squashed.includes(whole)) return true;
+    return chunk.split(/\s+/).some((token) => {
+      const bare = token.replace(/[^A-Za-z0-9'’.]/g, "").replace(/[.'’]+$/, "");
+      if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentence);
+      const letters = bare.replace(/[^A-Za-z]/g, "");
+      if (letters.length < (/^[A-Z]/.test(bare) ? 3 : 5)) return false;
+      return squashed.includes(squashHint(bare));
+    });
+  });
+  if (relevant.length) return relevant;
+  // 안전장치: 이름이나 숫자가 있는데 짝지은 것이 없으면 강의 힌트 전체가 나오는 것이 정상
+  if (/\d/.test(sentence)) return chunks;
+  const hasName = sentence.split(/(?<=[.?!])\s+/).some((part) =>
+    part.trim().split(/\s+/).slice(1).some((word) => {
+      const bare = word.replace(/[^A-Za-z'’]/g, "");
+      if (PRONOUN_I.test(bare)) return false;
+      return /^[A-Z]/.test(bare) && bare.replace(/[^A-Za-z]/g, "").length > 1;
+    }));
+  return hasName ? chunks : [];
+}
+
+/**
  * The app's own cleanText (src/components/GrammarLearningView.tsx:54-60): it strips a leading
  * item number and collapses slash alternatives BEFORE the sentence is displayed, spoken or
  * graded. Reading the raw data instead made the audit type "1. I was poor." into the exam,
@@ -119,6 +163,9 @@ function expected(course, id) {
   const texts = [];
   const answers = [];
   const clipTexts = new Set();
+  // LISTENING only: which dictation sentence shows the biggest hint box, and how many chips
+  let hintWorstSentence = -1;
+  let hintWorstSize = 0;
   // a text whose speech form normalises to nothing (e.g. the label "[ hv-01 ]") has no clip
   const addClip = (t) => { const c = clean(t); if (c && unified.normalizeUnifiedSpeechText && unified.normalizeUnifiedSpeechText(c)) clipTexts.add(c); else if (c && !unified.normalizeUnifiedSpeechText) clipTexts.add(c); };
 
@@ -170,12 +217,56 @@ function expected(course, id) {
       const guide = (d.blocks || []).find((b) => b.type === "instruction" && /대본을 보면서|영작해보세요/.test(String(b.text)));
       if (guide) texts.push({ kind: "ko-guide", text: clean(guide.text) });
     }
-    else for (const b of d.blocks || []) if (b.type === "hints") texts.push({ kind: "hints", text: clean(b.text) });
+    /**
+     * LD-HINTS-01 — the dictation hints are no longer shown as one block of text.
+     *
+     * `LdLearningView` splits the stored line into chunks and shows only the chunks that
+     * belong to the sentence on screen, falling back to the whole list when the sentence
+     * plainly holds a name or a number and nothing matched. Expecting the stored string
+     * verbatim therefore failed on 221 main pages for a difference that is the design:
+     * "Mrs.Watson. Barbara. Robert Watson. …" is never printed as one run.
+     *
+     * So expect what the view computes, sentence by sentence — the driver walks the
+     * dictation through every sentence (drive-generic, ld dictation walk). The check is
+     * not removed: a lesson whose hints produce no chip at all still expects the raw line,
+     * so "the hints vanished" would fail loudly.
+     */
+    else {
+      const hintsBlock = (d.blocks || []).find((b) => b.type === "hints" && String(b.text || "").trim());
+      if (hintsBlock) {
+        const chunks = hintChunks(hintsBlock.text);
+        const wanted = new Set();
+        let worst = -1, worstSize = 0;
+        rows.forEach((r, index) => {
+          const chips = hintsForSentence(String(r.en || ""), chunks);
+          for (const chip of chips) wanted.add(chip);
+          // The sentence with the most chips is the biggest box on screen — the fallback
+          // sentences show the whole list — so that is the one worth measuring for layout.
+          if (chips.length > worstSize) { worstSize = chips.length; worst = index; }
+        });
+        hintWorstSentence = worst;
+        hintWorstSize = worstSize;
+        if (wanted.size) for (const chip of wanted) texts.push({ kind: "hint-chip", text: chip });
+        else texts.push({ kind: "hints", text: clean(hintsBlock.text) });
+      }
+    }
     for (const r of rows) answers.push({ n: r.n, text: clean(r.en), alternatives: [] });
   } else if (course === "reading") {
     for (const s of d.readingSentences || []) { texts.push({ kind: "en", text: clean(s.english) }); addClip(s.english); addClip(s.korean); }
     for (const v of d.readingVocabulary || []) { texts.push({ kind: "word", text: clean(v.word) }); texts.push({ kind: "meaning", text: clean(v.korean) }); addClip(v.word); addClip(v.lemma); }
-    for (const b of d.blocks || []) if (b.type === "instruction" && isKo(b.text)) texts.push({ kind: "ko-passage", text: clean(b.text) });
+    /**
+     * The Korean passage (2026-09-23): one expected text PER SENTENCE ("ko-sentence") instead of
+     * the whole instruction block ("ko-passage"). STEP 4 draws readingSentences[].korean sentence
+     * by sentence; across all 256 script pages the instruction block and those sentences joined
+     * are the same text once spacing and punctuation are ignored — it is not a stale copy, as
+     * LISTENING's was. Checked per sentence, a single missing sentence is caught; the old check
+     * compared the paragraph's first 60 characters and could not see the last one go.
+     * Same pages as before: only those whose file carries the Korean passage (the -1 pages).
+     */
+    if ((d.blocks || []).some((b) => b.type === "instruction" && isKo(b.text))) {
+      const shown = (d.readingSentences && d.readingSentences.length) ? d.readingSentences : ((pair && pair.readingSentences) || []);
+      for (const s of shown) if (s && s.korean) texts.push({ kind: "ko-sentence", text: clean(s.korean) });
+    }
   } else if (course === "phonics") {
     for (const w of gridWords(d)) {
       texts.push({ kind: "word", text: w });
@@ -239,6 +330,8 @@ function expected(course, id) {
       // so meanings that need a click are not expected to be on screen there
       .filter((t) => !(d.variant === "script" && t.kind === "meaning")),
     answers,
+    hintWorstSentence,
+    hintWorstSize,
     clipTexts: [...clipTexts],
     clipPaths: new Set([...clipTexts].map((t) => unified.unifiedSpeechPath(t))),
     legacyAudio: (d.audio || []).map((a) => a.src).filter(Boolean),
@@ -249,4 +342,4 @@ function expected(course, id) {
   };
 }
 
-module.exports = { COURSES, pages, neighbours, lesson, hasLesson, courseIndex, expected, itemsOf, gridWords, ldScripts, clean, isKo, unified, pairOf };
+module.exports = { COURSES, pages, neighbours, lesson, hasLesson, courseIndex, expected, itemsOf, gridWords, ldScripts, clean, isKo, unified, pairOf, hintChunks, hintsForSentence };

@@ -69,6 +69,19 @@ const { isFreePreviewLesson } = loadTs(path.join(REPO, "src/lib/license.ts"));
 
 const COURSES = Object.keys(validRoutes.lessons);
 const TABS = validRoutes.tabs;
+/**
+ * BUG-016 (2026-09-23): discontinued courses (CNN) are left out of the sitemap,
+ * read from the same list the sitemap uses. The count and the tab axis leave
+ * them out too; axis D still visits their pages (they are live, just unlisted).
+ */
+const { DISCONTINUED_COURSES } = loadTs(path.join(REPO, "src/lib/discontinued.ts"));
+const { TABS: TAB_DEFS } = loadTs(path.join(REPO, "src/lib/tabs.ts"));
+const TAB_COURSES = new Map(TAB_DEFS.map((t) => [t.slug, t.courses]));
+const LISTED_COURSES = COURSES.filter((c) => !DISCONTINUED_COURSES.has(c));
+const LISTED_TABS = TABS.filter((t) => {
+  const courses = TAB_COURSES.get(t);
+  return !(courses && courses.length && courses.every((c) => DISCONTINUED_COURSES.has(c)));
+});
 const ALL_LESSONS = [];
 for (const [course, ids] of Object.entries(validRoutes.lessons)) {
   for (const id of ids) ALL_LESSONS.push({ course, lesson: id });
@@ -98,12 +111,13 @@ function isRedirectedLesson(course, id) {
 }
 const FREE = ALL_LESSONS.filter(
   (l) =>
+    !DISCONTINUED_COURSES.has(l.course) &&
     isFreePreviewLesson(l.course, l.lesson) &&
     !isScriptVariant(l.course, l.lesson) &&
     !isRedirectedLesson(l.course, l.lesson),
 );
 const LOCKED = ALL_LESSONS.filter((l) => !isFreePreviewLesson(l.course, l.lesson));
-const EXPECTED_COUNT = 1 + COURSES.length + TABS.length + FREE.length;
+const EXPECTED_COUNT = 1 + LISTED_COURSES.length + LISTED_TABS.length + FREE.length;
 
 const rows = [];
 function check(name, ok, notes = [], problems = []) {
@@ -144,7 +158,7 @@ async function get(url) {
 
   if (urls.length) {
     console.log(`sitemap: ${urls.length} URLs`);
-    console.log(`repo implies: 1 home + ${COURSES.length} courses + ${TABS.length} tabs + ${FREE.length} free lessons = ${EXPECTED_COUNT}\n`);
+    console.log(`repo implies: 1 home + ${LISTED_COURSES.length} courses + ${LISTED_TABS.length} tabs + ${FREE.length} free lessons = ${EXPECTED_COUNT} (discontinued, unlisted: ${[...DISCONTINUED_COURSES].join(", ")})\n`);
 
     // A — every URL is served with a body.
     const results = [];
@@ -210,12 +224,23 @@ async function get(url) {
     );
 
     // E — the tab pages are listed.
-    const listedTabs = TABS.filter((t) => urls.some((u) => new URL(u).pathname === `/t/${t}`));
+    const listedTabs = LISTED_TABS.filter((t) => urls.some((u) => new URL(u).pathname === `/t/${t}`));
     check(
       "E tab pages are listed",
-      listedTabs.length === TABS.length,
-      [`${listedTabs.length}/${TABS.length} tab pages present`],
-      TABS.filter((t) => !listedTabs.includes(t)).map((t) => `/t/${t} is missing`),
+      listedTabs.length === LISTED_TABS.length,
+      [`${listedTabs.length}/${LISTED_TABS.length} tab pages present (discontinued tabs are not expected)`],
+      LISTED_TABS.filter((t) => !listedTabs.includes(t)).map((t) => `/t/${t} is missing`),
+    );
+    // BUG-016: a discontinued course must NOT be advertised — fail if it creeps back in.
+    const discontinuedListed = urls.filter((u) => {
+      const seg = new URL(u).pathname.split("/").filter(Boolean);
+      return DISCONTINUED_COURSES.has(seg[0]) || (seg[0] === "t" && !LISTED_TABS.includes(seg[1]));
+    });
+    check(
+      "E2 discontinued courses are not listed",
+      discontinuedListed.length === 0,
+      [`${discontinuedListed.length} URL(s) of ${[...DISCONTINUED_COURSES].join(", ")} listed`],
+      discontinuedListed.map((u) => `${u} should not be listed`),
     );
   }
 

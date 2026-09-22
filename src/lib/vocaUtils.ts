@@ -261,6 +261,62 @@ export function getCollocation(
 // 3. Active Recall 4-Choice Quiz Generator (Testing Effect)
 // -----------------------------------------------------------------------------
 
+/**
+ * A gloss is a list of senses: "확고한; 회사" is two, "거의" is one. Bracketed
+ * text is an annotation on the sense next to it ("아마 (십중팔구)"), not a sense
+ * of its own, so it is dropped before splitting.
+ */
+function senseSegments(meaning: string): string[] {
+  return String(meaning || "")
+    .replace(/\([^)]*\)|（[^）]*）|\[[^\]]*\]/g, " ")
+    .split(/[;,/·]|\s+또는\s+/)
+    .map((s) => s.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+/**
+ * True when two words of a lesson teach a sense in common, so neither can be
+ * the "wrong" one in a graded item. The rule used to compare the whole gloss
+ * string, which never once fired across the 195 lessons: `firm 확고한; 회사`
+ * and `company 회사` are different strings, so the quiz was free to offer
+ * `firm` as a wrong answer to "[ 회사 ] 에 해당하는 올바른 영단어를 고르세요."
+ * Comparing sense by sense catches 27 such pairs (hard/difficult, almost/nearly,
+ * gaze/stare, company/firm …) and leaves every item with at least three
+ * distractors to choose from.
+ */
+function sharesSense(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  if (a === b) return true;
+  const first = new Set(senseSegments(a));
+  return senseSegments(b).some((s) => first.has(s));
+}
+
+/**
+ * Words a lesson teaches side by side as synonyms whose glosses share no
+ * segment: `ancestor 조상` and `forefather 선조` are one word in Korean too, but
+ * not one string, so `sharesSense` cannot see it. hv-01 lists both, and asks
+ * "ancestor" with 선조 among the wrong answers. Kept as an explicit list rather
+ * than a Korean thesaurus; each group names the lesson that needed it.
+ */
+const SYNONYM_GROUPS: string[][] = [
+  ["ancestor", "forefather"], // hv-01
+  ["anticipate", "predict", "foresee"], // hv-01
+  ["precious", "priceless"], // hv-53 — "[ 소중한 ]" cannot fairly count priceless as wrong
+];
+
+/** Whether two words of one lesson can stand as each other's wrong answer. */
+function conflicts(
+  wordA: string,
+  wordB: string,
+  vocaDict: Record<string, { meaning: string }>,
+): boolean {
+  const a = wordA.toLowerCase().trim();
+  const b = wordB.toLowerCase().trim();
+  if (a === b) return true;
+  if (sharesSense(vocaDict[a]?.meaning || "", vocaDict[b]?.meaning || "")) return true;
+  return SYNONYM_GROUPS.some((group) => group.includes(a) && group.includes(b));
+}
+
 export function generateActiveRecallQuizzes(
   words: string[],
   vocaDict: Record<string, { meaning: string }>,
@@ -278,8 +334,9 @@ export function generateActiveRecallQuizzes(
     const isEnToKo = idx % 2 === 0;
 
     const poolMeanings = validWords
+      .filter((w) => !conflicts(w, clean, vocaDict))
       .map((w) => vocaDict[w.toLowerCase().trim()]?.meaning)
-      .filter((m) => m && m !== correctMeaning);
+      .filter((m): m is string => Boolean(m));
 
     const shuffledPool = [...poolMeanings].sort(() => Math.random() - 0.5);
     const distractors: string[] = [];
@@ -291,9 +348,18 @@ export function generateActiveRecallQuizzes(
     }
 
     if (distractors.length < 3) {
+      // The whole-dictionary fallback holds meanings, not words, so a synonym-group mate
+      // (precious ~ priceless) is excluded by its meaning here — `conflicts` cannot see it.
+      const mateMeanings = new Set(
+        SYNONYM_GROUPS.filter((g) => g.includes(clean))
+          .flat()
+          .filter((w) => w !== clean)
+          .map((w) => vocaDict[w]?.meaning)
+          .filter(Boolean),
+      );
       const shuffledGlobal = [...allMeanings].sort(() => Math.random() - 0.5);
       for (const m of shuffledGlobal) {
-        if (distractors.length < 3 && m !== correctMeaning && !distractors.includes(m)) {
+        if (distractors.length < 3 && !sharesSense(m, correctMeaning) && !mateMeanings.has(m) && !distractors.includes(m)) {
           distractors.push(m);
         }
       }
@@ -327,7 +393,7 @@ export function generateActiveRecallQuizzes(
           // KIG-019: a word that carries the same Korean meaning as the answer is
           // also correct, so it must never be offered as a wrong option.
           // e.g. hv-15 "운이 좋은" would otherwise list both `lucky` and `fortunate`.
-          return (vocaDict[other]?.meaning || "") !== correctMeaning;
+          return !conflicts(other, clean, vocaDict);
         })
         .sort(() => Math.random() - 0.5)
         .slice(0, 3);
@@ -429,9 +495,9 @@ export function generateSpeedDrillItems(
       // "불일치". With no different meaning left, the item is a match instead of
       // showing a made-up "다른 뜻".
       const otherMeanings = validWords
-        .filter((w) => w.toLowerCase().trim() !== clean)
+        .filter((w) => !conflicts(w, clean, vocaDict))
         .map((w) => vocaDict[w.toLowerCase().trim()]?.meaning || "")
-        .filter((m) => m && m !== actualMeaning);
+        .filter(Boolean);
       if (otherMeanings.length > 0) {
         displayedMeaning = otherMeanings[Math.floor(Math.random() * otherMeanings.length)];
       } else {

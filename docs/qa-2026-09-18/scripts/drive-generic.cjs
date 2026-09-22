@@ -28,6 +28,7 @@ const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
+const C = require("./lib/containers.cjs");
 
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const COURSE = arg("--course", null);
@@ -45,6 +46,8 @@ const TABS = Number(arg("--tabs", 1));
 // VOCA lessons carry 30 word players; pressing all of them on all 195 lessons would add
 // hours, so the cap is per step and the rest of the clips are covered by audio-check.cjs.
 const MAX_PLAY = Number(arg("--max-play", 60));
+/** 문장별 훑기에서 재생 버튼을 누를 범위: all(전 문장) · first(1번 문장만) · none */
+const WALK_AUDIO = arg("--walk-audio", "all");
 if (!COURSE) throw new Error("--course is required");
 
 const OUT = path.join(__dirname, "../out");
@@ -413,6 +416,107 @@ async function solveTiles(tab, exp, checks, stepLabel) {
   });
 }
 
+/**
+ * LD-HINTS-01 — walk the tap-dictation through EVERY sentence, recording what is on
+ * screen at each one.
+ *
+ * The generic control pass presses each control ONCE (`__kigClicked`), so "다음 문장" moved
+ * the drill by a single step and the snapshot was taken before even that: only sentence 1
+ * was ever compared. The hints are computed per sentence, so checking one sentence per
+ * lesson would be a sample, and this audit does not sample. Nothing is typed and nothing
+ * is graded here — it only advances and reads.
+ */
+/**
+ * The chips INSIDE the hint box, not the page's text.
+ *
+ * WHY THIS EXISTS. The content check concatenates the innerText of every step and
+ * every sentence and asks whether the expected string is somewhere in it. For a
+ * hint chip that is worthless: the driver types the correct answer into the
+ * dictation, so the sentence's own words — which is what the chips are — land in
+ * the snapshot no matter what the hint box renders. Measured on 2026-09-23: with
+ * `hintsForSentence.slice(0, -1)` deliberately dropping the last chip, "Tom"
+ * rendered nowhere on d001 and the sweep still reported content 6/6. Reading the
+ * box itself is the difference between checking the screen and checking the data.
+ */
+const HINT_CHIPS = `(() => {
+  const box = [...document.querySelectorAll('main div')].find((d) =>
+    /고유 명사 · 숫자 참조/.test(d.innerText || '') && d.querySelectorAll('p span').length);
+  return box ? [...box.querySelectorAll('p span')].map((s) => s.innerText.trim()).filter(Boolean) : [];
+})()`;
+
+async function walkDictation(tab, exp, texts, rec, stepLabel, depth) {
+  if (depth === "light") return 0;
+  const sentences = (exp.answers || []).length;
+  if (!sentences) return 0;
+  const button = (label) =>
+    `[...document.querySelectorAll('main button')].find((b) => /${label}/.test(b.innerText || '') && !b.disabled && (b.offsetParent || b.getClientRects().length))`;
+  const exists = async (label) =>
+    Boolean(await tab.eval(`Boolean(${button(label)})`).catch(() => false));
+
+  // Only the tap-dictation step has a sentence walk. Running this on STEP 1/3/4 pressed a
+  // "표준 속도" button that is not on those screens and recorded the miss as an audio
+  // failure — noise of the driver's own making.
+  if (!(await exists("다음 문장")) && !(await exists("이전 문장"))) return 0;
+  const hasPlay = await exists("표준 속도");
+
+  // REWIND FIRST. solveTiles has already answered several sentences by the time the step
+  // loop opens this tab, so the drill sits near the END and "다음 문장" is disabled — the
+  // first attempt at this walk recorded nothing for exactly that reason.
+  for (let i = 0; i < sentences + 1; i++) {
+    const back = await H.click(tab, button("이전 문장"), { settle: 200 });
+    if (!back.ok) break;
+  }
+
+  let seen = 0;
+  for (let i = 0; i < sentences; i++) {
+    const where = `${stepLabel} · 문장 ${i + 1}`;
+    tab.resetEvents();
+    /**
+     * Text on every sentence, the FULL snapshot on one.
+     *
+     * Running the whole snapshot on every sentence took the page from 30 s to 114 s, and
+     * what it bought was a per-sentence layout check — for a box of chips that wraps, on
+     * screens where the step-level check, the 552-page sweep and 170 hand-checked sentences
+     * all reported zero layout problems. So the layout pass runs on the sentence with the
+     * BIGGEST hint box (the fallback sentences show the entire list), which is the worst
+     * case, and the rest are read as text. Console errors, 4xx and audio failures are
+     * unaffected: they accumulate on the page, not on the snapshot.
+     */
+    const measureLayout = i === exp.hintWorstSentence;
+    const shot = measureLayout
+      ? await tab.eval(H.SNAPSHOT).catch(() => null)
+      : await tab.eval(`(() => { const m = document.querySelector('main'); return m ? { text: m.innerText } : null; })()`).catch(() => null);
+    // Read the hint box before anything else touches the sentence.
+    const chips = await tab.eval(HINT_CHIPS).catch(() => []);
+    rec.hintChips = [...new Set([...(rec.hintChips || []), ...chips])];
+    if (shot) {
+      texts.push({ step: where, text: shot.text });
+      seen++;
+      if (measureLayout) {
+        rec.hintLayout = { sentence: i + 1, chips: exp.hintWorstSize, overflowX: Boolean(shot.overflowX), scrollWidth: shot.scrollWidth, clipped: (shot.clippedText || []).length, offscreen: (shot.offscreenControls || []).length };
+        if (shot.overflowX) rec.problems.push(`horizontal overflow on ${where} (${shot.scrollWidth}px)`);
+        if (shot.clippedText && shot.clippedText.length) rec.problems.push(`clipped text on ${where}: ${shot.clippedText[0]}`);
+        if (shot.offscreenControls && shot.offscreenControls.length) rec.problems.push(`offscreen control on ${where}: ${shot.offscreenControls[0]}`);
+        if (shot.errorScreen) rec.problems.push(`error screen on ${where}`);
+      }
+    }
+    // The sentence's own speaker button, pressed directly (not through NEXT_CONTROL, which
+    // would skip it after the first sentence because the element is marked as clicked).
+    const pressThis = WALK_AUDIO === "all" || (WALK_AUDIO === "first" && i === 0);
+    if (hasPlay && pressThis) await pressAudio(tab, button("표준 속도"), where, exp, rec.audio);
+    const ev = H.events(tab);
+    if (ev.exceptions.length || ev.console.length || ev.badResponses.length) {
+      rec.problems.push(
+        `${where}: ${(ev.exceptions[0] || ev.console[0] || `HTTP ${ev.badResponses[0].status} ${ev.badResponses[0].url}`)}`.slice(0, 200),
+      );
+    }
+    if (i === sentences - 1) break;
+    const next = await H.click(tab, button("다음 문장"), { settle: 240 });
+    if (!next.ok) break;
+  }
+  return seen;
+}
+
 async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
   if (depth === "light") return true;
   // Script pages (-1/-2) duplicate their main lesson, so they get a lighter pass; the
@@ -455,7 +559,7 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
   const rec = {
     course: page.course, id: page.id, url: page.url, viewport, at: new Date().toISOString(),
     redirect: red.chain.length ? { chain: red.chain, finalPath: red.finalPath } : null,
-    finalPath: red.finalPath, steps: [], checks: [], audio: [], problems: [], content: null, layout: null, events: null,
+    finalPath: red.finalPath, steps: [], checks: [], audio: [], problems: [], content: null, layout: null, events: null, hintChips: null, containers: null,
   };
   await H.setViewport(tab, viewport);
   const loaded = await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
@@ -494,6 +598,15 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       if (snap.clippedText && snap.clippedText.length) rec.problems.push(`clipped text on ${label}: ${snap.clippedText[0]}`);
       rec.checks.push({ feature: "step", item: label, status: snap.textLength > 100 ? "PASS" : "FAIL", note: `${snap.textLength} chars` });
     }
+    // The places this step owns (lib/containers.cjs), read before the driver presses anything
+    // here — so neither its own answers nor another step's copy of a sentence can stand in.
+    for (const c of (C.CONTAINERS[page.course] || []).filter((x) => x.step.test(label))) {
+      const got = await tab.eval(C.READERS[c.id]).catch(() => null);
+      rec.containers = rec.containers || {};
+      rec.containers[c.id] = [...new Set([...(rec.containers[c.id] || []), ...(Array.isArray(got) ? got : [])])];
+    }
+    // AFTER the snapshot above, so sentence 1 is recorded before the drill moves on.
+    await walkDictation(tab, exp, texts, rec, label, depth);
     alive = await visitStepControls(tab, exp, rec, label, depth);
   }
 
@@ -550,8 +663,33 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
   // content comparison against the lesson's own data
   const all = texts.map((t) => t.text).join("\n");
   const flat = norm(all);
-  const missing = exp.texts.filter((t) => !flat.includes(norm(t.text).slice(0, 60)));
-  rec.content = { expected: exp.texts.length, found: exp.texts.length - missing.length, missing: missing.slice(0, 25).map((m) => `${m.kind}: ${m.text.slice(0, 60)}`), missingCount: missing.length };
+  /**
+   * A hint chip is checked against the hint box (see HINT_CHIPS), everything else
+   * against the page's text. If the sentence walk never ran there is no box to
+   * check, so the chip falls back to the page text and the record says so —
+   * silently skipping it would turn a missing walk into a clean PASS.
+   */
+  const seenChips = rec.hintChips ? new Set(rec.hintChips.map(norm)) : null;
+  /**
+   * A kind with a container (lib/containers.cjs) is looked for in that container only, by
+   * whole-text match. The step that owns it never opening means nothing was read, and the
+   * text counts as missing — never as found in some other step. Kinds without a reader yet
+   * still use the page text, and `viaPageText` says how many did, so a record never passes
+   * them off as checked in place.
+   */
+  const via = { container: 0, pageText: 0 };
+  const missing = exp.texts.filter((t) => {
+    if (t.kind === "hint-chip" && seenChips) return !seenChips.has(norm(t.text));
+    const c = C.containerFor(page.course, t);
+    if (c) {
+      via.container++;
+      const got = (rec.containers || {})[c.id];
+      return !got || !got.some((g) => C.key(g) === C.key(t.text));
+    }
+    via.pageText++;
+    return !flat.includes(norm(t.text).slice(0, 60));
+  });
+  rec.content = { expected: exp.texts.length, found: exp.texts.length - missing.length, missing: missing.slice(0, 25).map((m) => `${m.kind}: ${m.text.slice(0, 60)}`), missingCount: missing.length, chipsFromBox: seenChips ? seenChips.size : null, viaContainer: via.container, viaPageText: via.pageText, containersRead: rec.containers ? Object.fromEntries(Object.entries(rec.containers).map(([k, v]) => [k, v.length])) : null };
   rec.events = H.events(tab);
   fs.mkdirSync(RENDERED, { recursive: true });
   fs.writeFileSync(path.join(RENDERED, `${page.id}.${viewport}.json`), JSON.stringify(texts, null, 1));

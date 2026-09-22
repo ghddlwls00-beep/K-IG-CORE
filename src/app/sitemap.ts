@@ -7,6 +7,7 @@ import {
   isRedirectedLesson,
 } from "@/lib/content";
 import { isFreePreviewLesson } from "@/lib/license";
+import { DISCONTINUED_COURSES } from "@/lib/discontinued";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.app";
 
@@ -37,26 +38,37 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.a
  * A sitemap lists canonical, 200-answering pages only, so a lesson is listed
  * when it is free, is not a redirect, and is its own canonical.
  *
- * Result: 29 URLs — home, 7 courses, 7 tabs, 14 free preview lessons.
+ * BUG-016 (2026-09-23) — CNN NEWS is a discontinued course, so its course
+ * page, tab page and two free lessons are no longer offered for indexing. The
+ * course itself is left exactly as it is; only the sitemap stops listing it.
+ * The list lives in `src/lib/discontinued.ts`, which the sitemap probe reads too.
+ *
+ * Result: 25 URLs — home, 6 courses, 6 tabs, 12 free preview lessons.
  */
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap = [{ url: SITE_URL, changeFrequency: "monthly", priority: 1 }];
 
-  const coursePages: MetadataRoute.Sitemap = getCourses().map((course) => ({
-    url: `${SITE_URL}/${course.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const coursePages: MetadataRoute.Sitemap = getCourses()
+    .filter((course) => !DISCONTINUED_COURSES.has(course.slug))
+    .map((course) => ({
+      url: `${SITE_URL}/${course.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }));
 
-  const tabPages: MetadataRoute.Sitemap = getTabs().map((tab) => ({
-    url: `${SITE_URL}/t/${tab.slug}`,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const tabPages: MetadataRoute.Sitemap = getTabs()
+    .filter((tab) => !tab.courses.every((course) => DISCONTINUED_COURSES.has(course)))
+    .map((tab) => ({
+      url: `${SITE_URL}/t/${tab.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }));
 
   const lessonPages: MetadataRoute.Sitemap = getAllLessonParams()
     .filter(
       ({ course, lesson }) =>
+        !DISCONTINUED_COURSES.has(course) &&
         isFreePreviewLesson(course, lesson) &&
         !isRedirectedLesson(course, lesson) &&
         canonicalLessonId(course, lesson) === lesson,

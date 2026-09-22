@@ -3,21 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLicense } from "./LicenseProvider";
-
-/**
- * FUN-09: a numeric token matches a lesson NUMBER, not a substring. "1강" used
- * to match 01강, 11강 and 21강 alike, because the index text contains all
- * three as substrings. A token that starts with digits is now matched at a
- * number boundary — "1강" is 01강 only; "150" is d150 but not d1500.
- */
-function tokenMatches(text: string, token: string): boolean {
-  const numeric = token.match(/^(\d+)(\D*)$/);
-  if (!numeric) return text.includes(token);
-  const number = String(parseInt(numeric[1], 10));
-  const suffix = numeric[2].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const pattern = new RegExp(`(?:^|\\D)0*${number}${suffix ? suffix : "(?!\\d)"}`);
-  return pattern.test(text);
-}
+import { searchItems } from "@/lib/searchMatch";
 
 export interface SearchItem {
   id: string;
@@ -95,19 +81,7 @@ export function SearchDialog() {
   }, [open]);
 
   // Filtered results by multiple words and curriculum titles
-  const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return items.slice(0, 10);
-
-    const tokens = q.split(/\s+/).filter(Boolean);
-
-    return items
-      .filter((it) => {
-        const text = it.searchText;
-        return tokens.every((tok) => tokenMatches(text, tok));
-      })
-      .slice(0, 20);
-  }, [items, query]);
+  const results = useMemo(() => searchItems(items, query), [items, query]);
 
   // Reset selected index when query changes
   useEffect(() => {

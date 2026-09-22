@@ -149,11 +149,17 @@
         },
         {
           "n": "27",
-          "text": "Where are you from?"
+          "text": "Where are you from?",
+          "alternatives": [
+            "Where do you come from?"
+          ]
         },
         {
           "n": "28",
-          "text": "Where do you come from?"
+          "text": "Where do you come from?",
+          "alternatives": [
+            "Where are you from?"
+          ]
         },
         {
           "n": "29",

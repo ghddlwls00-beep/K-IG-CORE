@@ -488,7 +488,9 @@ export function PhonicsLearningView({
               id: "matrix",
               step: "Step 1",
               label: "💡 덩어리 매트릭스",
-              sub: "소리·어원·콜로케이션",
+              // BUG-021 (owner, 2026-09-23): only what every word has. The etymology and
+              // collocation boxes exist for 43 and 9 words of 3,901, so they are not promised here.
+              sub: "소리·뜻",
             },
             {
               id: "recall",
@@ -811,8 +813,12 @@ export function PhonicsLearningView({
                               {w}
                             </span>
 
+                            {/* BUG-012: the meaning wraps instead of being cut to one line
+                                (line-clamp-1 hid the end of 16 glosses such as "(행사를 열어)
+                                기념하다, 축하하다"). keep-all breaks Korean between words; a row
+                                of cards grows to its tallest card, since the grid stretches rows. */}
                             <span
-                              className={`text-[11.5px] font-semibold line-clamp-1 ${
+                              className={`text-[11.5px] font-semibold leading-snug break-keep [overflow-wrap:anywhere] ${
                                 isSpeaking
                                   ? "text-white"
                                   : isSelected
