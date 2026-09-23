@@ -1,0 +1,555 @@
+[
+ {
+  "lesson": "s1-2",
+  "kind": "고침",
+  "text": "I live in (apartment name) Apartments.",
+  "original": "I live at (apartment name).",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "고침",
+  "text": "I am a 4th grade student at (school name) Elementary School.",
+  "original": "I am a (1st 2nd,3rd) grade student at (name of school) Elementary School.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "고침",
+  "text": "I am (10) years old.",
+  "original": "I am (age) years old.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
+ },
+ {
+  "lesson": "s1-5",
+  "kind": "고침",
+  "text": "I have been studying English for 3 years so far.",
+  "original": "I have been studying English for (3, 4 or 5) years so far.",
+  "why": "4·5단계 기준 9(소유자 승인 2026-09-23): 원본 빈칸 (3, 4 or 5) 를 3 으로, 한국어에 (다른 예: 4년, 5년) — 커밋 f35e8be · 계획 student-criterion9-0923.json (당시 s1-6, 되살리기로 s1-5 로 옮김)"
+ },
+ {
+  "lesson": "s2-3",
+  "kind": "고침",
+  "text": "She worked at a department store for several years.",
+  "original": "She had worked at a department store for several years.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "고침",
+  "text": "My parents always make my sister and me feel important and special.",
+  "original": "My parents always make my sister and I feel important and special.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — grammar (S-15, S-16)"
+ },
+ {
+  "lesson": "s3-3",
+  "kind": "고침",
+  "text": "He/She is an excellent piano player and a very strong athlete.",
+  "original": "He/She is an excellent piano player and very strong athlete.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — grammar (S-15, S-16)"
+ },
+ {
+  "lesson": "s3-3",
+  "kind": "고침",
+  "text": "In addition, he/she is good at playing soccer and computer games, and he/she speaks English well.",
+  "original": "In addition, he/she is good at playing the piano, soccer, computer games, and she is good at speaking English.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1647 s3-3 #3 영어 — In addition 뒤에 앞 문장의 피아노를 되풀이 · 끝나지 않은 목록'"
+ },
+ {
+  "lesson": "s3-3",
+  "kind": "고침",
+  "text": "He/She is a very talented artist, too.",
+  "original": "He/She a very talented artist, too.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — grammar (S-15, S-16)"
+ },
+ {
+  "lesson": "s3-3",
+  "kind": "고침",
+  "text": "His/Her drawings are very bright and colorful.",
+  "original": "Her drawings are very bright and colorful.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — grammar (S-15, S-16)"
+ },
+ {
+  "lesson": "s3-4",
+  "kind": "고침",
+  "text": "He/She sometimes tells me that he/she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he/she wants to serve the community.",
+  "original": "He/She sometimes tells me that he/she wants to be a police officer, firefighter, teacher, doctor, interpreter, and he/she wants to serve the community.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1649 s3-4 #1 영어 — 목록 끝 접속사 · 관사(한 문장 30낱말)'"
+ },
+ {
+  "lesson": "s4-1",
+  "kind": "고침",
+  "text": "Let me tell you about my relatives.",
+  "original": "Let/Allow me tell you about my relatives.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "고침",
+  "text": "She has (two) older brothers and (two) older sisters.",
+  "original": "She has two older brothers and two sisters.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1652 s4-4 #2 영어 — 앞 과에서 학습자가 바꾼 수와 어긋나지 않게 빈칸'"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "고침",
+  "text": "Because my grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother.",
+  "original": "Because grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s5-2",
+  "kind": "고침",
+  "text": "On my way to school, I stop by the stationery store and go in to buy the supplies I need for class.",
+  "original": "On my way to school, I stop by the stationary store and go in to buy the supplies I need for class.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s5-3",
+  "kind": "고침",
+  "text": "At 8:30 in the morning, we meet before class with our teacher for the morning session.",
+  "original": "At 8:30 in the morning, we meet before class with our teacher for morning session.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1661 s5-3 #1 영어 — session 은 셀 수 있는 명사(관사) · 같은 과 #3 'the morning session' 처럼'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "고침",
+  "text": "My teacher is from (Name).",
+  "original": "My teacher is from (Name) province.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-factual-student-a.json '6-1670 s6-3 #1 — 서울·광역시 출신이면 province 가 틀림. 한국어 '(지역)' 과 맞춤'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "고침",
+  "text": "Sometimes, he/she speaks with a regional accent!",
+  "original": "Sometimes, He/She speaks with a funny accent!",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1671 s6-3 #2 영어 — 선생님의 지방 말씨를 'funny' 로(놀림으로 들림)'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "고침",
+  "text": "His/Her hair is gray.",
+  "original": "His/Her hair is (gray, black, white).",
+  "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '48-50 (기준 9) s6-3 EN4'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "고침",
+  "text": "He/She has a habit of touching his/her nose when he/she teaches.",
+  "original": "He/She has a habit of touching his/her nose (biting his/her nails, scratching his/her nails, cracking his/her knuckles, rubbing his/her eyes, etc.) when he/she teaches.",
+  "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '48 (기준 9) s6-3 EN5'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "고침",
+  "text": "I think he/she likes the color black because he/she always wears a black suit.",
+  "original": "I think he/she likes the color blue (green, red, black, purple, etc.) because he/she always wears a (red tie, black suit, purple dress).",
+  "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '49 (기준 9) s6-3 EN6'"
+ },
+ {
+  "lesson": "s7-1",
+  "kind": "고침",
+  "text": "I go to a piano academy, an English academy, and an art academy near my home.",
+  "original": "I go to a piano academy, English academy, and art academy near my home.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1676 s7-1 #3 영어 — a 를 English academy 에 함께 쓸 수 없음(an)'"
+ },
+ {
+  "lesson": "s8-3",
+  "kind": "고침",
+  "text": "Sometimes my father comes home late, so we can’t all be together at suppertime.",
+  "original": "Usually, my father comes home late, so we can’t be together at suppertime.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s8-4",
+  "kind": "고침",
+  "text": "I like the entertainment and sports programs because I can see famous actors, musicians, and sports players.",
+  "original": "I like the entertainment (sports) programs because I can see famous actors and musicians (sports players).",
+  "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '50 (기준 9) s8-4 EN3'"
+ },
+ {
+  "lesson": "s9-3",
+  "kind": "고침",
+  "text": "It is my favorite because it is easier than my homework for other subjects.",
+  "original": "It is my favorite because it is easier than my other subjects.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1689 s9-3 #7 영어 — 숙제와 과목을 견줌 → 숙제끼리(드릴의 같은 조각은 보류 G12 라 문항 글 자리만 짚음)'"
+ },
+ {
+  "lesson": "s10-2",
+  "kind": "고침",
+  "text": "After I get up and prepare for school, the first day of my new week begins this way.",
+  "original": "After I get up and prepare for school, the first day of my new week has started on this note.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s10-3",
+  "kind": "고침",
+  "text": "My weekdays are similar to those of the other students in my class.",
+  "original": "My weekday is similar to the other students in my class.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s10-5",
+  "kind": "고침",
+  "text": "It is the end of the normal schedule of school and academies.",
+  "original": "It is the end of normal schedule of school and academies.",
+  "why": "원본 'the end of normal schedule' 은 관사가 빠진 문법 오류 — 9/7 08b77af 가 the 를 넣음(기록 없는 고침). 틀린 것을 고친 것이라 되돌리지 않음(9/17 · 6단계가 같은 종류 관사 빠짐을 고친 기준: 6-1661 · 6-1676). 원본은 본사 사본이 망가져 학생용 Lab v1.01 사본으로 대조"
+ },
+ {
+  "lesson": "s11-1",
+  "kind": "고침",
+  "text": "I also spend a lot of time on the computer on Saturdays.",
+  "original": "I also spend a lot of time on the computer on Saturdays, too.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage6-student-r1.json '되살림 교정 s11-1 #8 영어 — also … too 겹침'"
+ },
+ {
+  "lesson": "s11-2",
+  "kind": "고침",
+  "text": "On Saturdays, my father usually finishes work early.",
+  "original": "On Saturdays, my father also finishes his day early.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-11 no Saturday classes since 2012"
+ },
+ {
+  "lesson": "s12-2",
+  "kind": "고침",
+  "text": "I spend my summer vacation a bit differently from the winter one.",
+  "original": "I spend my summer vacation a bit different from the winter one.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s12-2",
+  "kind": "고침",
+  "text": "Even if it is terribly hot during the summer, I am happy to travel with my family anyway.",
+  "original": "Even if it is terribly hot during the summer, I am happy to travel with my family anyways.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s12-3",
+  "kind": "고침",
+  "text": "However, last year we went on a short skiing trip to Gangwon Province.",
+  "original": "However, last year we went on a short skiing trip to KangWon Province.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage6-student-r1.json '되살림 교정 s12-3 #2 영어 — 로마자 Gangwon(2000년 표기법 — 같은 과정의 Shilla → Silla · 이순신 표기와 같은 종류)'"
+ },
+ {
+  "lesson": "s13-1",
+  "kind": "고침",
+  "text": "When I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
+  "original": "Since I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-h.json '6-1709 s13-1 #1 영어 — since + 과거 절에 단순 과거 주절 → 수정안의 둘째 안 When(한 낱말; #3 'I learned to respect' 와 나란함 · because I could read 와 시제 맞음)'"
+ },
+ {
+  "lesson": "s13-2",
+  "kind": "더함",
+  "text": "The person I respect the most is Admiral Yi Sun-sin.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin",
+  "original": "The person I respect the most is General Soon-Shin Lee (이순신)."
+ },
+ {
+  "lesson": "s13-2",
+  "kind": "고침",
+  "text": "Admiral Yi lived more than 400 years ago, and he defeated the Japanese navy over and over again.",
+  "original": "General Lee lived 500 years ago, and he defeated the Japanese over and over again.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
+ },
+ {
+  "lesson": "s13-2",
+  "kind": "고침",
+  "text": "He built improved turtle ships, used them against the Japanese, and defeated them many times.",
+  "original": "He created the turtle ship that he had used against the Japanese and conquered them many times.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
+ },
+ {
+  "lesson": "s13-3",
+  "kind": "고침",
+  "text": "I respect Admiral Yi because he prepared well and won great military victories.",
+  "original": "I respect General Lee because he was able to prepare and execute great military victories.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
+ },
+ {
+  "lesson": "s13-3",
+  "kind": "고침",
+  "text": "To Admiral Yi, duty and responsibility were very important.",
+  "original": "To General Lee, duty and responsibility were very important.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
+ },
+ {
+  "lesson": "s13-3",
+  "kind": "고침",
+  "text": "One day, I hope to grow up to be as brave and confident as Admiral Yi Sun-sin.",
+  "original": "One day, I hope to grow up to be as brave and confident as General Soon-Shin Lee.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
+ },
+ {
+  "lesson": "s14-1",
+  "kind": "고침",
+  "text": "How can I choose among all of the great jobs like being a doctor, a movie star, and a lawyer?",
+  "original": "How can I choose among all of the great jobs like being a doctor, movie star, and a lawyer?",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-h.json '6-1712 s14-1 #3 영어 — 목록 관사 나란히(a doctor, a movie star, and a lawyer)'"
+ },
+ {
+  "lesson": "s14-3",
+  "kind": "고침",
+  "text": "I think teaching children is fun and rewarding, and that I must have a lot of patience in order to teach them.",
+  "original": "I think teaching children is fun, and rewarding, and that you must have a lot of patience in order to teach them.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s15-1",
+  "kind": "바꿈",
+  "text": "In 2002, Korea and Japan co-hosted the World Cup.",
+  "original": "A few years ago our country hosted the 2002 World Cup.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
+ },
+ {
+  "lesson": "s15-1",
+  "kind": "고침",
+  "text": "At that time, our national soccer team was not one of the best teams in the world.",
+  "original": "Our country’s soccer players are not one of the best teams.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
+ },
+ {
+  "lesson": "s15-1",
+  "kind": "바꿈",
+  "text": "Before 2002, Korea had never won a World Cup match.",
+  "original": "Before the World Cup, soccer was not famous in our country.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
+ },
+ {
+  "lesson": "s15-2",
+  "kind": "더함",
+  "text": "The person I admire the most is Guus Hiddink, the Dutch coach who led the Korean national soccer team in 2002.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1719 s15-2 #1 영어 — 지금 감독처럼 쓴 현재형 · from Holland 수식 · Korean Republic → 2002년에 이끈 네덜란드 감독'",
+  "original": "The person I admire the most is Guus Hiddink (히딩크), coach of the Korean Republic national soccer team from Holland."
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "바꿈",
+  "text": "In 1999, Queen Elizabeth II visited Korea.",
+  "original": "A few years ago, Queen Elizabeth II came to Korea.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "고침",
+  "text": "Her ability to interpret so well had a great effect on me.",
+  "original": "Her ability to interpret so well had a great affect on me.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
+ },
+ {
+  "lesson": "s17-1",
+  "kind": "고침",
+  "text": "According to legend, our country’s history started more than 4,000 years ago.",
+  "original": "Our country’s history started about 5,000 years ago.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-factual-student-a.json '6-1731 s17-1 #2 EN — 삼국유사 기준으로도 기원전 2333년(약 4,360년 전), 전설임을 밝힘'"
+ },
+ {
+  "lesson": "s17-1",
+  "kind": "고침",
+  "text": "While living on Earth, he married Ungnyeo who had changed from a bear into a woman.",
+  "original": "While living on Earth, he married Ung-nyo who had changed from a bear into a woman.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s17-1",
+  "kind": "고침",
+  "text": "She gave birth to a son and named him Dangun.",
+  "original": "She gave birth to a son and named him Dan-goon.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s17-1",
+  "kind": "고침",
+  "text": "The country's ancient name was Gojoseon.",
+  "original": "The country's ancient name was Gojoson.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s17-2",
+  "kind": "고침",
+  "text": "After Gojoseon fell, the Korean Peninsula was divided into three kingdoms: Goguryeo, Baekje, and Silla.",
+  "original": "After Gojoson fell, the Korean Peninsula was divided into three kingdoms: Goguryo, Baekje, and Shilla.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-2",
+  "kind": "바꿈",
+  "text": "Later, Silla conquered the other two kingdoms and unified most of the peninsula.",
+  "original": "Later these three kingdoms united as a single nation and referred to it as the Shilla Kingdom.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-2",
+  "kind": "고침",
+  "text": "Silla was at its most powerful during the 8th century.",
+  "original": "The Shilla Kingdom was the most powerful in the middle of the 8th century.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "바꿈",
+  "text": "After Silla, the Goryeo and Joseon dynasties ruled Korea for about 1,000 years.",
+  "original": "After Shilla fell, many other countries tried to gain power over Korea.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "고침",
+  "text": "Later, Korea was ruled by Japan from 1910 to 1945.",
+  "original": "For a while, Korea was ruled by Japan.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "고침",
+  "text": "In 1945, Korea was liberated from Japan.",
+  "original": "In 1945, Korea was librated from Japan.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "고침",
+  "text": "The Korean War broke out in 1950 when armies from the North invaded the South.",
+  "original": "A civil war broke out in 1950 when armies from the North invaded the South.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "고침",
+  "text": "After the war ended in 1953, the Korean Peninsula remained divided into North and South Korea.",
+  "original": "As a result, the Korean peninsula became divided into North and South Korea.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1754 같은 종류(고유 지명 소문자) — s17-3 #6 영어 Korean Peninsula(s17-2 #1 과 같게)'"
+ },
+ {
+  "lesson": "s17-4",
+  "kind": "고침",
+  "text": "Since the end of the war in 1953, the country has developed very quickly, especially during the 1970s.",
+  "original": "Since the end of the war in 1953, the country began to develop very quickly, especially during the 1970’s.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s17-4",
+  "kind": "고침",
+  "text": "From then until now, the country has continued to grow.",
+  "original": "From then until now, the country has continued to grow rapidly.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1735 s17-4 #2 영어 — 지금도 급성장하는 것처럼 말한 rapidly 를 뺌(최소)'"
+ },
+ {
+  "lesson": "s18-1",
+  "kind": "고침",
+  "text": "My country has many holidays.",
+  "original": "My country has many traditional holidays.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-10 holidays"
+ },
+ {
+  "lesson": "s18-1",
+  "kind": "고침",
+  "text": "We celebrate Seollal, Liberation Day, Children’s Day, Buddha’s Birthday, Chuseok, and many more.",
+  "original": "We celebrate Lunar New Year’s, Independence Day, Arbor Day, Buddha’s Birthday and many more.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-10 holidays"
+ },
+ {
+  "lesson": "s18-2",
+  "kind": "고침",
+  "text": "The first big holiday is Seollal, Lunar New Year’s Day.",
+  "original": "The first big holiday is Lunar New Year’s also known as seol-lal.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s18-3",
+  "kind": "고침",
+  "text": "During Chuseok, people visit their ancestral tombs and make an offering of food to their ancestors.",
+  "original": "During Chu-seok, People visit their ancestrial tombs and make an offering of food to their ancestors.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28 · S-32 notation"
+ },
+ {
+  "lesson": "s18-3",
+  "kind": "고침",
+  "text": "In addition, most people play games with their relatives and make songpyeon, which is a Korean traditional rice cake.",
+  "original": "In addition, most people play games with their relatives and make song-pyeun, which is a Korean traditional rice cake.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s19-1",
+  "kind": "고침",
+  "text": "It has many unique aspects.",
+  "original": "It has many unique aspects about it.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1742 s19-1 #2 영어 — aspects … about it 겹침'"
+ },
+ {
+  "lesson": "s19-1",
+  "kind": "고침",
+  "text": "Our clothes, housing, names, and language are not like those of any other country.",
+  "original": "Our clothes, housing, names, and language are not like any other countries.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s19-4",
+  "kind": "고침",
+  "text": "Instead, Chinese characters were used for writing.",
+  "original": "Instead, they Chinese characters were used in order to write.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s19-4",
+  "kind": "바꿈",
+  "text": "However, in 1443, King Sejong created a unique Korean alphabet, and it was proclaimed in 1446.",
+  "original": "However, in 1420, the current King at that time, Se-jong, asked his royal scholars to create a unique Korean alphabet.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s19-4",
+  "kind": "고침",
+  "text": "This writing system is known as Hangul.",
+  "original": "Soon a writing system known as hangul was created.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s20-2",
+  "kind": "고침",
+  "text": "Such places include Bulguksa Temple, Songnisan National Park, and the Independence Hall of Korea.",
+  "original": "Such places include the Bulguk-Temple, Soungni-San National Park, and Independence-Hall.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-14 place names"
+ },
+ {
+  "lesson": "s20-3",
+  "kind": "고침",
+  "text": "One very interesting place to visit is the Korean Folk Village, located in Yongin, near Suwon, in Gyeonggi Province, not far from the capital, Seoul.",
+  "original": "One very interesting place to visit is the Korean Folk Village located near the city of Suwon in Gyoung-gi Province, not far from the capital of Seoul.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-13 Korean Folk Village is in Yongin"
+ },
+ {
+  "lesson": "s20-3",
+  "kind": "고침",
+  "text": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and observe how Koreans lived in the past.",
+  "original": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and you can observe how Koreans lived during ancient times.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1748 s20-3 #2 영어 — 목록 셋째에만 you can 되풀이(나란히)'"
+ },
+ {
+  "lesson": "s20-4",
+  "kind": "고침",
+  "text": "Gyeongju is the old capital of the Silla Kingdom.",
+  "original": "Gyeong-ju is the old capital of the Shilla Kingdom.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s20-4",
+  "kind": "고침",
+  "text": "The Silla Kingdom was at its most powerful during the 8th century.",
+  "original": "The Shilla Kingdom was its most powerful during the 8th century.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s20-4",
+  "kind": "고침",
+  "text": "Koreans refer to it as this because it contains many of the old remains of the Silla Dynasty.",
+  "original": "Koreans refer to it as this because it contains many of the old remains of the Shilla Dynasty.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s20-5",
+  "kind": "고침",
+  "text": "Mt. Halla is the highest mountain in South Korea; it’s almost 2,000 meters high (about 6,400 feet).",
+  "original": "Mt. Halla is the highest mountain in South Korea; it’s almost 2,000 meters high (about 6500 feet).",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-31 Korean"
+ }
+]

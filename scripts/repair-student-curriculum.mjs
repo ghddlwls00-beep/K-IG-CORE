@@ -116,7 +116,7 @@ const CURRICULUM = {
     chapterKo: '주말 일과',
     chapterEn: 'What Do I Do during the Weekends?',
     parts: {
-      1: { en: 'Saturday Morning & Afternoon', ko: '토요일 오전과 오후' },
+      1: { en: 'Saturday Afternoon', ko: '토요일 오후' },
       2: { en: 'Saturday Night & Family Outing', ko: '토요일 밤과 가족 외식' },
       3: { en: 'Sunday Morning & Church', ko: '일요일 아침과 교회' },
       4: { en: 'Sunday Afternoon Leisure', ko: '일요일 오후의 여가' }

@@ -15154,7 +15154,8 @@
     "content/lessons/student/s1-4.json"
    ],
    "clip": "필요",
-   "batch": 33
+   "batch": 33,
+   "restore0923": "원본 되살리기(2026-09-23 밤): 이 지적이 고친 s1-4 글(Shy Person — 9/7 08b77af 가 다른 과정에서 끼운 글)이 사라짐 → s1-4 는 원본 Hobby. 이 고침의 대상 없음(계획 줄 supersededBy)."
   },
   "6-1626": {
    "status": "고침",
@@ -15163,7 +15164,8 @@
     "content/lessons/student/s1-5.json"
    ],
    "clip": "필요",
-   "batch": 33
+   "batch": 33,
+   "restore0923": "원본 되살리기: 이 과(Hobby)가 원본 자리 s1-4 로 옮겨감 — 고침은 그대로 따라감(계획 줄 movedTo s1-4)."
   },
   "6-1627": {
    "status": "이미 해결",
@@ -15201,7 +15203,8 @@
     "content/lessons/student/s20-4.json"
    ],
    "clip": "필요",
-   "batch": 33
+   "batch": 33,
+   "restore0923": "원본 되살리기: s5-5 부분은 9/7 에 바뀐 글이라 원본 글로 바뀜 — 되살린 글은 같은 기준으로 다시 봄(plans/stage6-student-r1.json). 다른 과의 고침은 그대로."
   },
   "6-1630": {
    "status": "보류",
@@ -15224,7 +15227,8 @@
     "content/lessons/student/s2-3.json"
    ],
    "clip": "필요",
-   "batch": 33
+   "batch": 33,
+   "restore0923": "원본 되살리기: 같은 종류 전수 중 s5-5 부분만 원본 글로 바뀜(6-1629 와 같음). 이 번호의 s2-3 고침은 그대로."
   },
   "6-1633": {
    "status": "고침",
@@ -15233,7 +15237,8 @@
     "content/lessons/student/s2-4.json"
    ],
    "clip": "필요",
-   "batch": 33
+   "batch": 33,
+   "restore0923": "원본 되살리기: 같은 종류 전수 중 s5-5 부분만 원본 글로 바뀜(6-1629 와 같음). 이 번호의 s2-4 고침은 그대로."
   },
   "6-1634": {
    "status": "보류",
@@ -15412,7 +15417,8 @@
     "content/courses/student.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s4-6 #3 은 원본 글로 바뀜 — 큰아버지 통일은 되살린 글에도 적용(r1 · 제목 · 과정 목록). s4-5 #1 고침은 그대로."
   },
   "6-1654": {
    "status": "고침",
@@ -15446,7 +15452,8 @@
     "content/lessons/student/s4-6.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s4-6 #1 이 원본 글로 바뀌어 이 고침의 대상이 사라짐(계획 줄 supersededBy)."
   },
   "6-1658": {
    "status": "고침",
@@ -15463,7 +15470,8 @@
     "content/lessons/student/s14-2.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s1-6 부분(과목 과)은 s1-5 로 옮겨감(고침 그대로) · s14-2 부분은 원본 He/She 로 되살려 '그는/그녀는 … 나를 항상 도와주십니다'(나/저 고침은 남음, plans/stage6-student-r2.json)."
   },
   "6-1659": {
    "status": "이미 해결",
@@ -15536,7 +15544,8 @@
     "content/lessons/student/s5-5.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s5-5 #4 가 원본 글로 바뀌어 대상이 사라짐(원본 s5-5 에는 football 없음)."
   },
   "6-1668": {
    "status": "고침",
@@ -15634,7 +15643,8 @@
     "content/lessons/student/s7-3.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s7-3 #5 가 원본 글로 바뀌어 대상이 사라짐 — 되살린 s7-3 은 r1 에서 선생님 높임을 다시 고침."
   },
   "6-1680": {
    "status": "이미 해결",
@@ -15660,7 +15670,8 @@
     "content/lessons/student/s4-4.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s8-2 #4 가 원본 글로 바뀌어 대상이 사라짐. 같은 종류 전수의 다른 과(s2-3 · s2-4 등) 고침은 그대로."
   },
   "6-1683": {
    "status": "고침",
@@ -15681,7 +15692,8 @@
     "content/lessons/student/s6-3.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "restore0923": "원본 되살리기: s4-6 #4 · #5 부분은 원본 글로 바뀜(r1 에서 큰아버지 높임을 다시 고침) · (1) s14-2 #6 은 원본 his/her 로 되살려 '그의/그녀의 지식을 공유하십니다'(높임 고침은 남음). 다른 부분은 그대로."
   },
   "6-1684": {
    "status": "고침",
@@ -15827,7 +15839,8 @@
     "content/lessons/student/s11-1.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "restore0923": "원본 되살리기: s11-1 #2 가 원본 글로 바뀌어 대상이 사라짐."
   },
   "6-1701": {
    "status": "고침",
@@ -15837,7 +15850,8 @@
     "content/courses/student.json"
    ],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "restore0923": "원본 되살리기: 되돌림 — 원본 s11-1 은 토요일 오후 이야기라 제목 · 메뉴를 원래 'Saturday Afternoon (토요일 오후)' 로(이 고침은 9/7 에 바뀐 글을 보고 한 것, 계획 줄 revertedBy)."
   },
   "6-1702": {
    "status": "고침",
@@ -15940,7 +15954,8 @@
     "content/lessons/student/s14-2.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "restore0923": "원본 되살리기: s14-2 #5 를 원본 He/She 로 되살려 '그는/그녀는 우리가 알아야 하는 것을 … 잘하십니다'(이 고침은 남음)."
   },
   "6-1715": {
    "status": "보류",

@@ -31,7 +31,7 @@ function text(f) {
 }
 const count = (files, s) => files.reduce((n, f) => n + text(f).split(s).length - 1, 0);
 
-let lines = 0, bad = 0;
+let lines = 0, bad = 0, reverted = 0;
 for (const p of plans) {
   const plan = JSON.parse(fs.readFileSync(path.resolve(p), "utf8"));
   if (!Array.isArray(plan) || !plan.every((l) => l && typeof l.from === "string" && typeof l.to === "string" && Array.isArray(l.files))) {
@@ -41,6 +41,9 @@ for (const p of plans) {
   let pb = 0;
   for (const l of plan) {
     lines++;
+    // "revertedBy": 소유자 결정으로 일부러 되돌린 줄(예: STUDENT 원본 되살리기 2026-09-23 — 바뀐 글을 보고 고친 제목을 원래대로).
+    // from 이 다시 나타나는 것이 맞으므로 세지 않고, 되돌린 줄 수를 따로 보인다.
+    if (l.revertedBy) { reverted++; continue; }
     const from = l.raw ? l.from : esc(l.from), to = l.raw ? l.to : esc(l.to); // raw: replace-in-lessons 와 같게 파일 글자 그대로
     const nTo = count(l.files, to);
     const nFrom = to.includes(from) ? 0 : count(l.files, from);
@@ -49,5 +52,5 @@ for (const p of plans) {
   }
   console.log(`${path.basename(p)}: ${plan.length}줄 중 어긋남 ${pb}`);
 }
-console.log(`${REV ? `[${REV} 기준] ` : ""}계획 ${plans.length}개 · ${lines}줄 · 어긋남 ${bad}`);
+console.log(`${REV ? `[${REV} 기준] ` : ""}계획 ${plans.length}개 · ${lines}줄 · 어긋남 ${bad}${reverted ? ` (되돌린 줄 ${reverted} 은 세지 않음)` : ""}`);
 process.exit(bad ? 1 : 0);

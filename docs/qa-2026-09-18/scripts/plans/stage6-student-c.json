@@ -83,7 +83,8 @@
   ],
   "from": "나의 큰삼촌은 훌륭한 이야기꾼이십니다.",
   "to": "나의 큰아버지는 훌륭한 이야기꾼이십니다.",
-  "expect": 1
+  "expect": 1,
+  "supersededBy": "student-restore-0923"
  },
  {
   "item": "6-1653 s4-6 제목 · 머리",
@@ -120,7 +121,7 @@
   ],
   "from": "\"text\": \"My other uncles are very successful, too.\"",
   "to": "\"text\": \"My other uncles are very successful.\"",
-  "expect": 1,
+  "expect": 1, "supersededBy": "student-restore-0923",
   "raw": true
  },
  {
@@ -130,7 +131,8 @@
   ],
   "from": "나의 다른 삼촌들 또한 매우 성공했습니다.",
   "to": "나의 다른 삼촌들은 매우 성공하셨습니다.",
-  "expect": 1
+  "expect": 1,
+  "supersededBy": "student-restore-0923"
  },
  {
   "item": "6-1661 s5-3 #1 영어 — session 은 셀 수 있는 명사(관사) · 같은 과 #3 'the morning session' 처럼",
@@ -176,7 +178,9 @@
   ],
   "from": "나는 학교에서 많은 다른 과목들을 공부하지만, 제가 가장 좋아하는 과목은 영어입니다.",
   "to": "나는 학교에서 많은 다른 과목들을 공부하지만, 내가 가장 좋아하는 과목은 영어입니다.",
-  "expect": 1
+  "expect": 1,
+  "supersededBy": "student-restore-0923",
+  "movedTo": "content/lessons/student/s1-5.json"
  },
  {
   "item": "6-1658 같은 종류 — s2-6 #5 (이해하는 데 띄어쓰기도)",
@@ -250,6 +254,8 @@
   ],
   "from": "그는 아이들을 사랑하시고, 내가 그로부터 도움이 필요할 때에 그는 저를 항상 도와주십니다.",
   "to": "그는 아이들을 사랑하시고, 내가 그로부터 도움이 필요할 때에 그는 나를 항상 도와주십니다.",
-  "expect": 1
+  "expect": 1,
+  "supersededBy": "stage6-student-r2",
+  "note": "원본 되살리기 둘째 묶음이 s14-2 를 원본 He/She 로 — 같은 줄이 '그는/그녀는 … 나를' 로(이 줄의 '나를' 은 남음)"
  }
 ]
