@@ -68,7 +68,10 @@
         },
         {
           "n": "9",
-          "text": "Those were their pens."
+          "text": "Those were their pens.",
+          "alternatives": [
+            "They were their pens."
+          ]
         },
         {
           "n": "10",
@@ -76,7 +79,10 @@
         },
         {
           "n": "11",
-          "text": "It was yours."
+          "text": "It was yours.",
+          "alternatives": [
+            "That was yours."
+          ]
         },
         {
           "n": "12",
@@ -108,7 +114,11 @@
         },
         {
           "n": "19",
-          "text": "What was her maiden name?"
+          "text": "What was her maiden name?",
+          "alternatives": [
+            "What was her last name before she got married?",
+            "What was her family name before marriage?"
+          ]
         },
         {
           "n": "20",

@@ -45,48 +45,22 @@
             "Not every boy received a prize, did they?",
             "Every boy didn't receive a prize, did he?"
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "Not every boy received a prize, did he?"
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "80",
           "text": "Not everybody received a prize, did they?",
           "alternatives": [
             "Everybody didn't receive a prize, did they?"
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "received a prize, did he?"
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "81",
           "text": "Not all the boys received a prize, did they?",
           "alternatives": [
-            "All the boys didn't receive a prize, did they?"
+            "All the boys didn't receive a prize, did they?",
+            "Not all of the boys received a prize, did they?"
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "Not all the boys received a prize, did they?"
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "82",
           "text": "Not all of them come.",
@@ -134,15 +108,24 @@
         },
         {
           "n": "88",
-          "text": "Were there 60 girls in the classroom?"
+          "text": "Were there 60 girls in the classroom?",
+          "alternatives": [
+            "Were there sixty girls in the classroom?"
+          ]
         },
         {
           "n": "89",
-          "text": "There were 60 girls in the classroom, weren't there?"
+          "text": "There were 60 girls in the classroom, weren't there?",
+          "alternatives": [
+            "There were sixty girls in the classroom, weren't there?"
+          ]
         },
         {
           "n": "90",
-          "text": "There weren't 60 girls in the classroom, were there?"
+          "text": "There weren't 60 girls in the classroom, were there?",
+          "alternatives": [
+            "There weren't sixty girls in the classroom, were there?"
+          ]
         },
         {
           "n": "91",
@@ -150,7 +133,10 @@
         },
         {
           "n": "92",
-          "text": "Didn't many girls go there?"
+          "text": "Didn't many girls go there?",
+          "alternatives": [
+            "Did many girls not go there?"
+          ]
         },
         {
           "n": "93",
@@ -182,11 +168,17 @@
         },
         {
           "n": "100",
-          "text": "Doesn't he pay for dinner?"
+          "text": "Doesn't he pay for dinner?",
+          "alternatives": [
+            "Does he not pay for dinner?"
+          ]
         },
         {
           "n": "101",
-          "text": "Didn't he pay for dinner?"
+          "text": "Didn't he pay for dinner?",
+          "alternatives": [
+            "Did he not pay for dinner?"
+          ]
         },
         {
           "n": "102",
@@ -202,7 +194,10 @@
         },
         {
           "n": "105",
-          "text": "You study English more than ten hours every day, don't you?"
+          "text": "You study English more than ten hours every day, don't you?",
+          "alternatives": [
+            "You study English more than 10 hours every day, don't you?"
+          ]
         }
       ]
     },

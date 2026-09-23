@@ -1,0 +1,158 @@
+[
+ {
+  "item": "6-1398 gh1-066 #70 — '한 상' 은 a prize 를 옮긴 번역투 → '상을 하나' ((a prize) 힌트는 둠)",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "70",
+  "text": {
+   "from": "모든(Every) 소년이 한 상(a prize)을 받는다.",
+   "to": "모든(Every) 소년이 상을 하나(a prize) 받는다."
+  }
+ },
+ {
+  "item": "6-1398 #71",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "71",
+  "text": {
+   "from": "그 모든(all) 소년이 한 상을 받는다.",
+   "to": "그 모든(all) 소년이 상을 하나 받는다."
+  }
+ },
+ {
+  "item": "6-1398 #72",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "72",
+  "text": {
+   "from": "각(each) 소년이 한 상을 받는다.",
+   "to": "각(each) 소년이 상을 하나 받는다."
+  }
+ },
+ {
+  "item": "6-1398 #73",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "73",
+  "text": {
+   "from": "모든(every) 소년이 한 상을 받았다.",
+   "to": "모든(every) 소년이 상을 하나 받았다."
+  }
+ },
+ {
+  "item": "6-1398 #74",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "74",
+  "text": {
+   "from": "그 모든(all) 소년이 한 상을 받았다.",
+   "to": "그 모든(all) 소년이 상을 하나 받았다."
+  }
+ },
+ {
+  "item": "6-1398 #75",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "75",
+  "text": {
+   "from": "각(each) 소년이 한 상을 받았다.",
+   "to": "각(each) 소년이 상을 하나 받았다."
+  }
+ },
+ {
+  "item": "6-1398 #76",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "76",
+  "text": {
+   "from": "모든(every) 소년이 한 상을 받았죠?",
+   "to": "모든(every) 소년이 상을 하나 받았죠?"
+  }
+ },
+ {
+  "item": "6-1398 #77",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "77",
+  "text": {
+   "from": "각(each) 소년이 한 상을 받았죠?",
+   "to": "각(each) 소년이 상을 하나 받았죠?"
+  }
+ },
+ {
+  "item": "6-1398 #78",
+  "file": "content/lessons/grammar1/gh1-066.json",
+  "n": "78",
+  "text": {
+   "from": "그 모든(all) 소년들이 한 상을 받았죠?",
+   "to": "그 모든(all) 소년들이 상을 하나 받았죠?"
+  }
+ },
+ {
+  "item": "6-1398 gh1-068 #79 — 부정문은 '하나' 없이(‘하나를 받지는 않았다’ 로 읽히지 않게)",
+  "file": "content/lessons/grammar1/gh1-068.json",
+  "n": "79",
+  "text": {
+   "from": "모든(every) 소년이 한 상을 받지는 않았죠?",
+   "to": "모든(every) 소년이 상을 받지는 않았죠?"
+  },
+  "supersededBy": "stage6-grammar-items-g.json — 부정문에서 하나를 뺐더니 복수 답이 0점이 되어 긍정문과 같은 상을 하나로 다시 씀"
+ },
+ {
+  "item": "6-1398 #80",
+  "file": "content/lessons/grammar1/gh1-068.json",
+  "n": "80",
+  "text": {
+   "from": "모든 사람이(everybody) 한 상을 받지는 않았죠?",
+   "to": "모든 사람이(everybody) 상을 받지는 않았죠?"
+  },
+  "supersededBy": "stage6-grammar-items-g.json — 부정문에서 하나를 뺐더니 복수 답이 0점이 되어 긍정문과 같은 상을 하나로 다시 씀"
+ },
+ {
+  "item": "6-1398 #81",
+  "file": "content/lessons/grammar1/gh1-068.json",
+  "n": "81",
+  "text": {
+   "from": "그 모든(all) 소년이 한 상을 받지는 않았죠?",
+   "to": "그 모든(all) 소년이 상을 받지는 않았죠?"
+  },
+  "supersededBy": "stage6-grammar-items-g.json — 부정문에서 하나를 뺐더니 복수 답이 0점이 되어 긍정문과 같은 상을 하나로 다시 씀"
+ },
+ {
+  "item": "6-1398 같은 종류 전수 — gh1-094 #73",
+  "file": "content/lessons/grammar1/gh1-094.json",
+  "n": "73",
+  "text": {
+   "from": "모든 소년이 한 상을 받았다(3가지로).",
+   "to": "모든 소년이 상을 하나 받았다(3가지로)."
+  }
+ },
+ {
+  "item": "6-1407 gh1-078 #36 — '이 주말에' → '이번 주말에'(진행형 신호 '-고 있지' 는 둠)",
+  "file": "content/lessons/grammar1/gh1-078.json",
+  "n": "36",
+  "text": {
+   "from": "너는 이 주말에 일하고 있지 않니?",
+   "to": "너는 이번 주말에 일하고 있지 않니?"
+  }
+ },
+ {
+  "item": "6-1407 같음 — 분할본",
+  "file": "content/lessons/grammar1/gh1-078-2.json",
+  "n": "36",
+  "text": {
+   "from": "너는 이 주말에 일하고 있지 않니?",
+   "to": "너는 이번 주말에 일하고 있지 않니?"
+  }
+ },
+ {
+  "item": "6-1408 gh1-078 #42 — '누이' 는 남자의 여자 형제라 어머니에게 쓸 수 없음 → '여자 형제'(6-1360 과 같은 결)",
+  "file": "content/lessons/grammar1/gh1-078.json",
+  "n": "42",
+  "text": {
+   "from": "너의 어머니는 얼마나 많은 누이가 있니?",
+   "to": "너의 어머니는 여자 형제가 몇 명 있으시니?"
+  }
+ },
+ {
+  "item": "6-1408 같음 — 분할본",
+  "file": "content/lessons/grammar1/gh1-078-2.json",
+  "n": "42",
+  "text": {
+   "from": "너의 어머니는 얼마나 많은 누이가 있니?",
+   "to": "너의 어머니는 여자 형제가 몇 명 있으시니?"
+  }
+ }
+]

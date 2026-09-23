@@ -724,6 +724,40 @@ const CLOZE_SAME_SLOT: string[][] = [
   ["conserve", "preserve"], // pr248 (#77)
 ];
 
+/**
+ * The same kind of list, one way only: when the answer is the key, these passage words would
+ * also complete that blank, so they are never offered as wrong (6단계 READING, 2026-09-23 —
+ * each measured with docs/qa-2026-09-18/scripts/reading-cloze-probe.cjs). One way, so that a
+ * pair found in one lesson does not thin the options of another lesson whose answer is the
+ * second word.
+ */
+const CLOZE_ALSO_FITS: Record<string, string[]> = {
+  plant: ["fish", "river"], // pr003 "the amount of ___ food" (6-1040)
+  asking: ["saying"], // pr007 "stated quite simply by ___" (6-1048)
+  children: ["students"], // pr013 "I propose that our ___ focus on" (6-1056)
+  force: ["asset"], // pr034 "the most powerful and constructive ___" (6-1071)
+  touch: ["leave", "carry", "teach", "learn"], // pr040 "“Don’t ___”" (6-1073)
+  yearbook: ["pictures"], // pr061 "The school ___ will be published" (6-1103)
+  events: ["places"], // pr061 "pictures of people and ___" (6-1103)
+  early: ["work"], // pr064 "leave ___ too often" (6-1107)
+  solar: ["clean"], // pr065 "one such source is ___ energy" (6-1109)
+  midnight: ["terrible"], // pr068 "driving home from a ___ movie" (6-1111)
+  appearance: ["expression"], // pr070 "your ___ makes up 55%" (6-1116)
+  checked: ["watched"], // pr071 "doctors ___ their heart rate" (6-1117)
+  conception: ["conceiving"], // pr075 "caffeine and ___ conflict" (6-1124)
+  value: ["favor", "reach", "beauty"], // pr076 "choosing to ___ things" (6-1126) · pr248 "recognized the ___ of" (6-1286)
+  assembly: ["creature"], // pr079 "the entire ___ shocked him" (6-1129)
+  mandatory: ["additional"], // pr164 "crops and ___ labeling" (6-1195)
+  automatic: ["necessary", "inherited"], // pr167 "a more or less ___ and natural act" (6-1200)
+  develop: ["produce"], // pr173 "Different groups ___ ideas" (6-1207)
+  athletic: ["physical"], // pr175 "increase their ___ ability" (6-1210)
+  "ice-cream": ["delicious"], // pr193 "four billion ___ cones" (6-1221)
+  farming: ["poverty"], // pr147 "the traditional life of ___" (6-1219)
+  individual: ["productive", "successful"], // pr173 "In unsuccessful groups, ___ members" (6-1219)
+  computers: ["audiences"], // pr214 "the role of ___ in music and the performing arts" (6-1245)
+  behavioral: ["reasonable"], // pr246 "Robert Simmons, a ___ ecologist" (6-1284)
+};
+
 export function generateClozeItems(sentences: { en: string; ko: string }[]): ClozeItem[] {
   const result: ClozeItem[] = [];
   const candidates = sentences.filter((s) => s.en.split(CLOZE_TOKEN_SPLIT).length >= 6);
@@ -741,20 +775,38 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
     word.replace(/^[^A-Za-z0-9]+/, "").replace(/[^A-Za-z0-9]+$/, "");
   const escapeRegExp = (word: string) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+  // Numbers (1800s, 175cm, 1,909) are not vocabulary: never the blank, never an option.
+  const hasDigit = (word: string) => /\d/.test(word);
+
   // CNT-10: the wrong options come from THIS passage. They used to be one fixed
   // list of six words lifted from the first two lessons, so on an air-pollution
   // passage every blank offered "communication / respect / problems" and the
   // answer was the only option on topic. Now every content word of the passage
   // (other than the answer) is a candidate, nearest in length first.
+  //
+  // Except names: a word the passage only ever writes with a capital (Spanish, Latin,
+  // Dewey, Korea) was lower-cased into a misspelled option ("spanish"), and a name is no
+  // fair wrong answer for a common-word blank. A word also written in lower case
+  // somewhere ("Music …" / "… music") stays.
+  const passageWords = sentences
+    .flatMap((s) => s.en.split(CLOZE_TOKEN_SPLIT))
+    .map(stripEdgePunctuation)
+    .filter(Boolean);
+  const writtenLowerCase = new Set(
+    passageWords.filter((w) => !/^[A-Z]/.test(w)).map((w) => w.toLowerCase()),
+  );
   const passagePool = Array.from(
     new Set(
-      sentences
-        .flatMap((s) => s.en.split(CLOZE_TOKEN_SPLIT))
-        .map(stripEdgePunctuation)
-        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w.toLowerCase()))
-        .map((w) => w.toLowerCase()),
+      passageWords
+        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w.toLowerCase()) && !hasDigit(w))
+        .map((w) => w.toLowerCase())
+        .filter((w) => writtenLowerCase.has(w)),
     ),
   );
+
+  // A word already blanked earlier in the lesson is not blanked again — pr020 asked
+  // "plants" three times and pr099 "essential" twice. The next candidate is taken instead.
+  const usedTargets = new Set<string>();
 
   // Up to three items, taking the next sentence when one yields no blank (for example when its
   // only candidate words are capitalised) instead of showing the learner fewer questions.
@@ -764,7 +816,9 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
       .split(CLOZE_TOKEN_SPLIT)
       .map(stripEdgePunctuation)
       .filter(Boolean);
-    const validTargetWords = words.filter((w) => w.length >= 5 && !STOP_WORDS.has(w.toLowerCase()));
+    const validTargetWords = words.filter(
+      (w) => w.length >= 5 && !STOP_WORDS.has(w.toLowerCase()) && !hasDigit(w),
+    );
 
     // The middle candidate, as before — but never a capitalised word. The wrong options are
     // lower-cased passage words, so a "February" or "Shakespeare" answer was the only
@@ -775,20 +829,32 @@ export function generateClozeItems(sentences: { en: string; ko: string }[]): Clo
     const target = validTargetWords
       .map((w, i) => ({ w, distance: Math.abs(i - middle) + (i < middle ? 0.5 : 0) }))
       .sort((a, b) => a.distance - b.distance)
-      .find((c) => !/^[A-Z]/.test(c.w))?.w;
+      .find((c) => !/^[A-Z]/.test(c.w) && !usedTargets.has(c.w.toLowerCase()))?.w;
 
     if (target) {
-      const regex = new RegExp(`\\b${escapeRegExp(target)}\\b`, "i");
-      const masked = s.en.replace(regex, "_______");
+      // Every occurrence is blanked. Only the first used to be, so the answer stayed on
+      // screen later in the same sentence ("all _______ has … but that all music has").
+      const regex = new RegExp(`\\b${escapeRegExp(target)}\\b`, "gi");
+      let masked = s.en.replace(regex, "_______");
 
       // Never emit an item whose blank was not actually applied — that would show
       // the learner the answer instead of a gap.
       if (masked === s.en) continue;
 
+      // "a" / "an" right before the blank told which options could fit ("as an _______
+      // miracle" had one vowel-initial option). Shown as "a(n)", the usual test convention.
+      masked = masked.replace(
+        /\b(a|an)(\s+_______)/gi,
+        (_m, article: string, rest: string) => `${article[0] === "A" ? "A" : "a"}(n)${rest}`,
+      );
+
       const answer = target.toLowerCase();
+      usedTargets.add(answer);
+      const alsoFits = CLOZE_ALSO_FITS[answer] || [];
       const distractors = passagePool
         .filter((w) => !sameWordFamily(w, answer))
         .filter((w) => !CLOZE_SAME_SLOT.some((g) => g.includes(w) && g.includes(answer)))
+        .filter((w) => !alsoFits.includes(w))
         .map((w) => ({ w, spread: Math.abs(w.length - target.length) + Math.random() }))
         .sort((a, b) => a.spread - b.spread)
         .slice(0, 3)

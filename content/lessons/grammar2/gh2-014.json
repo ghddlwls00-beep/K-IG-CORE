@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "1",
-          "text": "He has studied English for ten years."
+          "text": "He has studied English for ten years.",
+          "alternatives": [
+            "He has studied English for 10 years."
+          ]
         },
         {
           "n": "2",
@@ -56,13 +59,17 @@
         },
         {
           "n": "8",
-          "text": "Three bombs exploded, one injuring 25 people."
+          "text": "Three bombs exploded, one injuring 25 people.",
+          "alternatives": [
+            "Three bombs exploded, one injuring twenty-five people."
+          ]
         },
         {
           "n": "9",
           "text": "He worked hard, hoping to pass the entrance examination.",
           "alternatives": [
-            "He studied hard, hoping to pass the entrance examination."
+            "He studied hard, hoping to pass the entrance examination.",
+            "He worked hard, hoping to pass the entrance exam."
           ]
         },
         {

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "지구가 태양 둘레를 한 바퀴 도는 데는 365와 4분의 1일보다 조금 짧은 시간이 걸린다. 그러나 달력의 1년은 365일뿐이라서 달력과 계절이 조금씩 어긋나게 된다. 이를 바로잡기 위해 4년마다 2월 29일이라는 하루를 더한다. 이런 해를 윤년이라고 한다. 하지만 실제 차이는 1년에 6시간보다 조금 적기 때문에 4년마다 하루를 더하면 약간 지나치게 된다. 그래서 00으로 끝나는 해는 400으로 나누어떨어질 때만 윤년이다. 그래서 2000년은 윤년이었지만 1900년은 윤년이 아니었다."
+      "text": "지구가 태양 둘레를 한 바퀴 도는 데는 약 365와 4분의 1일이 걸린다. 그러나 달력의 1년은 365일뿐이라서 달력과 계절이 조금씩 어긋나게 된다. 이를 바로잡기 위해 4년마다 2월 29일이라는 하루를 더한다. 이런 해를 윤년이라고 한다. 하지만 실제 차이는 1년에 6시간보다 조금 적기 때문에 4년마다 하루를 더하면 약간 지나치게 된다. 그래서 00으로 끝나는 해는 400으로 나누어떨어질 때만 윤년이다. 그래서 2000년은 윤년이었지만 1900년은 윤년이 아니었다."
     },
     {
       "type": "choice",
@@ -47,8 +47,8 @@
   "readingSentences": [
     {
       "id": "reading-008-s001",
-      "english": "It takes the Earth a little less than 365 and a quarter days to travel once around the Sun.",
-      "korean": "지구가 태양 둘레를 한 바퀴 도는 데는 365와 4분의 1일보다 조금 짧은 시간이 걸린다."
+      "english": "It takes the Earth about 365 and a quarter days to travel once around the Sun.",
+      "korean": "지구가 태양 둘레를 한 바퀴 도는 데는 약 365와 4분의 1일이 걸린다."
     },
     {
       "id": "reading-008-s002",
@@ -242,7 +242,7 @@
       "word": "divided",
       "lemma": "divide",
       "partOfSpeech": "v.",
-      "korean": "나누다 (be divided by ~으로 나누어떨어지다)",
+      "korean": "나누다 (can be divided by 400: 400으로 나누어떨어지다)",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [

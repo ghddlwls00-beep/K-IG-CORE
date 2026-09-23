@@ -1,0 +1,14 @@
+[
+ {"item": "6-1426 gh1-082 #12 — 새 표시 '(부정문에서는 some → any)' 를 따라 any 로 쓴 부정 의문문도 맞음", "course": "grammar1", "base": "gh1-083", "n": "12", "add": ["Didn't he spend any time on an island?"], "wrong": ["Didn't he spend any money on an island?"]},
+ {"item": "6-1427 gh1-084 #3 — There isn't any (같은 과 #17 처럼)", "course": "grammar1", "base": "gh1-085", "n": "3", "add": ["There isn't any evidence."], "wrong": ["There isn't any money."]},
+ {"item": "6-1427 같은 종류 전수 — gh1-098 #108", "course": "grammar1", "base": "gh1-099", "n": "108", "add": ["There wasn't any attempt to negotiate, was there?"], "wrong": ["There wasn't any attempt to escape, was there?"]},
+ {"item": "6-1427 같은 종류 전수 — gh2-029-1 #13", "course": "grammar2", "base": "gh2-029", "n": "13", "add": ["There isn't anyone here by that name."], "wrong": ["There isn't anyone here by that door."]},
+ {"item": "6-1428 gh1-084 #7 — 발견하다 = discover", "course": "grammar1", "base": "gh1-085", "n": "7", "add": ["The navy discovered his body."], "wrong": ["The army discovered his body."]},
+ {"item": "6-1428 같은 종류 전수 — gh2-016-1 #33 (발견된 = discovered — '생각하다' 뜻의 find 문항과 find a way · find others 는 뺌)", "course": "grammar2", "base": "gh2-016", "n": "33", "add": ["It is the largest diamond yet discovered."], "wrong": ["It is the largest ruby yet discovered."]},
+ {"item": "6-1429 gh1-084 #30 — 부정 의문문의 the · any", "course": "grammar1", "base": "gh1-085", "n": "30", "add": ["Didn't the soldiers leave the city?", "Didn't any soldiers leave the city?"], "wrong": ["Didn't the soldiers leave the country?"]},
+ {"item": "6-1430 gh1-088 #15 — mic", "course": "grammar1", "base": "gh1-089", "n": "15", "add": ["The mic is still on."], "wrong": ["The mic is still off."]},
+ {"item": "6-1430 같은 종류 전수 — gh1-100 #120 (지적 6-1454)", "course": "grammar1", "base": "gh1-101", "n": "120", "add": ["Didn't he turn the mic off?"], "wrong": ["Didn't he turn the mic on?"]},
+ {"item": "6-1431 gh1-088 #17 — 국회의원 = lawmaker · 성 중립", "course": "grammar1", "base": "gh1-089", "n": "17", "add": ["Was the lawmaker unhappy?", "Was the congresswoman unhappy?", "Was the legislator unhappy?"], "wrong": ["Was the lawmaker happy?"]},
+ {"item": "6-1431 같은 종류 전수 — gh1-090 #29 하원의원(성 없음)", "course": "grammar1", "base": "gh1-091", "n": "29", "add": ["Doesn't the congresswoman wake your mother up?"], "wrong": ["Doesn't the congresswoman wake your father up?"]},
+ {"item": "6-1432 gh1-090 #22 — 권총 = pistol · gun", "course": "grammar1", "base": "gh1-091", "n": "22", "add": ["Was this pistol yours?", "Was this gun yours?"], "wrong": ["Was this rifle yours?"]}
+]

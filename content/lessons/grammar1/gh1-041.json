@@ -68,7 +68,10 @@
         },
         {
           "n": "34",
-          "text": "It is not a book, is it?"
+          "text": "It is not a book, is it?",
+          "alternatives": [
+            "That is not a book, is it?"
+          ]
         },
         {
           "n": "35",
@@ -76,7 +79,10 @@
         },
         {
           "n": "36",
-          "text": "Those are not books, are they?"
+          "text": "Those are not books, are they?",
+          "alternatives": [
+            "They are not books, are they?"
+          ]
         },
         {
           "n": "37",
@@ -96,7 +102,10 @@
         },
         {
           "n": "41",
-          "text": "She loves your brother, doesn't she?"
+          "text": "She loves your brother, doesn't she?",
+          "alternatives": [
+            "She loves your brothers, doesn't she?"
+          ]
         },
         {
           "n": "42",
@@ -104,11 +113,17 @@
         },
         {
           "n": "43",
-          "text": "She loves his brother, doesn't she?"
+          "text": "She loves his brother, doesn't she?",
+          "alternatives": [
+            "She loves his brothers, doesn't she?"
+          ]
         },
         {
           "n": "44",
-          "text": "He loves her sister, doesn't he?"
+          "text": "He loves her sister, doesn't he?",
+          "alternatives": [
+            "He loves her younger sister, doesn't he?"
+          ]
         },
         {
           "n": "45",
@@ -120,7 +135,10 @@
         },
         {
           "n": "47",
-          "text": "She doesn't love your brother, does she?"
+          "text": "She doesn't love your brother, does she?",
+          "alternatives": [
+            "She doesn't love your brothers, does she?"
+          ]
         },
         {
           "n": "48",
@@ -128,11 +146,17 @@
         },
         {
           "n": "49",
-          "text": "She doesn't love his brother, does she?"
+          "text": "She doesn't love his brother, does she?",
+          "alternatives": [
+            "She doesn't love his brothers, does she?"
+          ]
         },
         {
           "n": "50",
-          "text": "Your sister doesn't love my brother, does she?"
+          "text": "Your sister doesn't love my brother, does she?",
+          "alternatives": [
+            "Your sister doesn't love my brothers, does she?"
+          ]
         }
       ]
     },

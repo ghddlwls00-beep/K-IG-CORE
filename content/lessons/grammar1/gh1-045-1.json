@@ -36,7 +36,10 @@
       "items": [
         {
           "n": "41",
-          "text": "Is it hers?"
+          "text": "Is it hers?",
+          "alternatives": [
+            "Is that hers?"
+          ]
         },
         {
           "n": "42",
@@ -49,14 +52,18 @@
           "n": "43",
           "text": "Isn't it yours?",
           "alternatives": [
-            "Is it not yours?"
+            "Is it not yours?",
+            "Isn't that yours?",
+            "Is that not yours?"
           ]
         },
         {
           "n": "44",
           "text": "Aren't they yours?",
           "alternatives": [
-            "Are they not yours?"
+            "Are they not yours?",
+            "Aren't those yours?",
+            "Are those not yours?"
           ]
         },
         {

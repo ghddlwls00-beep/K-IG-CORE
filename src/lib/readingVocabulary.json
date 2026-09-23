@@ -520,7 +520,7 @@
       "examTags": [
         "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "express",
@@ -547,26 +547,26 @@
       "freq": 1
     },
     {
-      "word": "families",
-      "lemma": "family",
-      "partOfSpeech": "n.",
-      "korean": "가족",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "mixed",
+      "lemma": "mix",
+      "partOfSpeech": "v.",
+      "korean": "섞이다 (mix with ~와 섞이다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "sad",
-      "lemma": "sad",
-      "partOfSpeech": "adj.",
-      "korean": "슬픈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "courtship",
+      "lemma": "courtship",
+      "partOfSpeech": "n.",
+      "korean": "구애 (courtship dance 구애의 춤)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -580,7 +580,7 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "wanted",
@@ -667,12 +667,12 @@
       "freq": 1
     },
     {
-      "word": "missed",
-      "lemma": "miss",
-      "partOfSpeech": "v.",
-      "korean": "그리워하다",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+      "word": "popular",
+      "lemma": "popular",
+      "partOfSpeech": "adj.",
+      "korean": "인기 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],
@@ -1353,7 +1353,7 @@
       "word": "divided",
       "lemma": "divide",
       "partOfSpeech": "v.",
-      "korean": "나누다 (be divided by ~으로 나누어떨어지다)",
+      "korean": "나누다 (can be divided by 400: 400으로 나누어떨어지다)",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -1853,7 +1853,7 @@
       "word": "station",
       "lemma": "station",
       "partOfSpeech": "n.",
-      "korean": "발전소 (solar power station 태양광 발전소)",
+      "korean": "시설, 기지, ~소 (solar power station 태양광 발전소)",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -3517,7 +3517,7 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "prep.",
       "korean": "(according to) ~에 따라",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
@@ -5448,8 +5448,8 @@
       "freq": 1
     },
     {
-      "word": "western",
-      "lemma": "western",
+      "word": "Western",
+      "lemma": "Western",
       "partOfSpeech": "adj.",
       "korean": "서양의",
       "score": 69,
@@ -8709,10 +8709,10 @@
       "freq": 1
     },
     {
-      "word": "obtain",
-      "lemma": "obtain",
+      "word": "achieve",
+      "lemma": "achieve",
       "partOfSpeech": "v.",
-      "korean": "얻다, 이루다",
+      "korean": "이루다, 달성하다",
       "score": 75,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 75점)",
       "examTags": [
@@ -8871,8 +8871,8 @@
     {
       "word": "right",
       "lemma": "right",
-      "partOfSpeech": "adj.",
-      "korean": "옳은 (right from wrong 옳고 그름)",
+      "partOfSpeech": "n.",
+      "korean": "옳은 것, 옳음 (right from wrong 옳고 그름)",
       "score": 77,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -9411,7 +9411,7 @@
       "word": "young",
       "lemma": "young",
       "partOfSpeech": "adj.",
-      "korean": "젊은 (the young 젊은이들)",
+      "korean": "어린, 젊은 (the young 어린 사람들, 젊은이들)",
       "score": 102,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 102점)",
       "examTags": [
@@ -10154,8 +10154,8 @@
     {
       "word": "hurt",
       "lemma": "hurt",
-      "partOfSpeech": "n.",
-      "korean": "상처, 해",
+      "partOfSpeech": "v.",
+      "korean": "상처를 주다, 해치다 (n. 상처, 아픔)",
       "score": 78,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
       "examTags": [
@@ -10743,8 +10743,8 @@
     {
       "word": "more",
       "lemma": "more",
-      "partOfSpeech": "adv.",
-      "korean": "더 (do more than ~ 이상을 하다)",
+      "partOfSpeech": "pron.",
+      "korean": "더 많은 것 (do more than ~ ~ 이상의 것을 하다)",
       "score": 48,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 48점)",
       "examTags": [
@@ -11726,7 +11726,7 @@
     },
     {
       "word": "Buddhist",
-      "lemma": "buddhist",
+      "lemma": "Buddhist",
       "partOfSpeech": "adj.",
       "korean": "불교의",
       "score": 80,
@@ -11802,7 +11802,7 @@
       "word": "safe",
       "lemma": "safe",
       "partOfSpeech": "adj.",
-      "korean": "(it is not safe to conclude) 섣불리 ~라고 결론 내릴 수 없다",
+      "korean": "(판단이) 틀릴 염려가 없는, 무방한 (it is not safe to conclude ~ 섣불리 ~라고 결론 내릴 수 없다)",
       "score": 96,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 96점)",
       "examTags": [
@@ -12178,7 +12178,7 @@
       "word": "representative",
       "lemma": "representative",
       "partOfSpeech": "n.",
-      "korean": "직원 (sales representative 영업 사원)",
+      "korean": "대표(자), 대리인; (회사의) 판매 담당자 (sales representative 영업 사원)",
       "score": 86,
       "reason": "실무/비즈니스 실용 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 86점)",
       "examTags": [
@@ -13057,7 +13057,7 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "prep.",
       "korean": "(according to) ~에 따르면",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
@@ -14472,7 +14472,7 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "prep.",
       "korean": "(according to) ~에 따르면",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
@@ -15508,7 +15508,7 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "prep.",
       "korean": "(according to) ~에 따르면",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
@@ -16744,7 +16744,7 @@
       "word": "rhymes",
       "lemma": "rhyme",
       "partOfSpeech": "n.",
-      "korean": "동요 (nursery rhymes)",
+      "korean": "운, 운문 (nursery rhymes 동요)",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -17650,7 +17650,7 @@
       "word": "different",
       "lemma": "different",
       "partOfSpeech": "adj.",
-      "korean": "다른",
+      "korean": "여러 가지의, 다양한 (different types of ~ 여러 부류의 ~)",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
       "examTags": [
@@ -18683,14 +18683,14 @@
       "freq": 1
     },
     {
-      "word": "naturally",
-      "lemma": "naturally",
-      "partOfSpeech": "adv.",
-      "korean": "자연스럽게, 저절로",
-      "score": 92,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 92점)",
+      "word": "disease",
+      "lemma": "disease",
+      "partOfSpeech": "n.",
+      "korean": "질병, 질환",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -19100,7 +19100,7 @@
       "word": "workday",
       "lemma": "workday",
       "partOfSpeech": "n.",
-      "korean": "근무일",
+      "korean": "근무 시간, 하루 일과 (during your workday 일하는 동안)",
       "score": 77,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
       "examTags": [
@@ -19709,8 +19709,8 @@
     {
       "word": "low",
       "lemma": "low",
-      "partOfSpeech": "adv.",
-      "korean": "작게 (as low as practical 가능한 한 작게)",
+      "partOfSpeech": "adj.",
+      "korean": "(소리가) 작은, 낮은 (keep ~ as low as practical ~을 가능한 한 작게 해 두다)",
       "score": 88,
       "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
       "examTags": [
@@ -19903,7 +19903,7 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "prep.",
       "korean": "(according to) ~에 따라",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
@@ -20088,8 +20088,8 @@
     {
       "word": "damage",
       "lemma": "damage",
-      "partOfSpeech": "n.",
-      "korean": "손상, 해",
+      "partOfSpeech": "v.",
+      "korean": "손상시키다, 해치다 (n. 손상, 해)",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -21096,7 +21096,7 @@
     {
       "word": "according",
       "lemma": "according",
-      "partOfSpeech": "adv.",
+      "partOfSpeech": "prep.",
       "korean": "(according to) ~에 따르면",
       "score": 91,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 91점)",
@@ -22537,8 +22537,8 @@
     {
       "word": "because",
       "lemma": "because",
-      "partOfSpeech": "adv.",
-      "korean": "(because of) ~ 때문에",
+      "partOfSpeech": "prep.",
+      "korean": "(because of + 명사) ~ 때문에",
       "score": 69,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
       "examTags": [
@@ -23349,7 +23349,7 @@
       "word": "care",
       "lemma": "care",
       "partOfSpeech": "v.",
-      "korean": "(care for) 돌보다",
+      "korean": "(care for) 돌보다; (take care of) ~을 관리하다",
       "score": 78,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 78점)",
       "examTags": [
@@ -23579,8 +23579,8 @@
     {
       "word": "hiding",
       "lemma": "hiding",
-      "partOfSpeech": "adj.",
-      "korean": "숨는 (hiding place 숨는 곳)",
+      "partOfSpeech": "n.",
+      "korean": "숨기, 숨는 것 (hiding place 숨을 곳, 은신처)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 82점)",
       "examTags": [
@@ -23605,8 +23605,8 @@
     {
       "word": "demands",
       "lemma": "demand",
-      "partOfSpeech": "n.",
-      "korean": "요구",
+      "partOfSpeech": "v.",
+      "korean": "요구하다 (n. 요구)",
       "score": 107,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 107점)",
       "examTags": [
@@ -23837,7 +23837,7 @@
       "word": "laughing",
       "lemma": "laughing",
       "partOfSpeech": "adj.",
-      "korean": "웃기는 (laughing matter 웃을 일)",
+      "korean": "웃는, 웃음의 (laughing matter 웃을 일)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -23894,7 +23894,7 @@
       "freq": 1
     },
     {
-      "word": "matter",
+      "word": "matters",
       "lemma": "matter",
       "partOfSpeech": "n.",
       "korean": "일, 문제 (laughing matter 웃을 일)",
@@ -24692,7 +24692,7 @@
       "word": "consumer-driven",
       "lemma": "consumer-driven",
       "partOfSpeech": "adj.",
-      "korean": "소비가 이끄는",
+      "korean": "소비자가 주도하는, 소비자 중심의",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -25230,10 +25230,10 @@
       "freq": 1
     },
     {
-      "word": "million",
+      "word": "millions",
       "lemma": "million",
       "partOfSpeech": "n.",
-      "korean": "백만",
+      "korean": "백만 (tens of millions 수천만)",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -25793,7 +25793,7 @@
       "word": "easier",
       "lemma": "easy",
       "partOfSpeech": "adj.",
-      "korean": "더 쉬운 (easy 의 비교급)",
+      "korean": "더 쉬운 (easy의 비교급)",
       "score": 84,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 84점)",
       "examTags": [
@@ -26674,7 +26674,7 @@
       "word": "formal",
       "lemma": "formal",
       "partOfSpeech": "adj.",
-      "korean": "형식적인, 체계적인",
+      "korean": "체계적인, 정규의 (formal skills 정규 교육으로 배우는 기술)",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 69점)",
       "examTags": [
@@ -28909,7 +28909,7 @@
   "pr170": [
     {
       "word": "Western",
-      "lemma": "western",
+      "lemma": "Western",
       "partOfSpeech": "adj.",
       "korean": "서양의",
       "score": 97,
@@ -28923,7 +28923,7 @@
       "word": "knives",
       "lemma": "knife",
       "partOfSpeech": "n.",
-      "korean": "나이프, 칼 (knife 의 복수형)",
+      "korean": "나이프, 칼 (knife의 복수형)",
       "score": 95,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 95점)",
       "examTags": [
@@ -29031,7 +29031,7 @@
       "word": "cleaner",
       "lemma": "clean",
       "partOfSpeech": "adj.",
-      "korean": "더 깨끗한 (clean 의 비교급)",
+      "korean": "더 깨끗한 (clean의 비교급)",
       "score": 85,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -29093,7 +29093,7 @@
       "word": "author",
       "lemma": "author",
       "partOfSpeech": "n.",
-      "korean": "발의자, 작성자 (author of the amendment 개정안 발의자)",
+      "korean": "작성자, 입안자 (author of the amendment 수정안을 작성한 사람)",
       "score": 85,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 85점)",
       "examTags": [
@@ -29150,8 +29150,8 @@
       "freq": 1
     },
     {
-      "word": "congress",
-      "lemma": "congress",
+      "word": "Congress",
+      "lemma": "Congress",
       "partOfSpeech": "n.",
       "korean": "(미국) 의회",
       "score": 87,
@@ -35239,8 +35239,8 @@
       "freq": 2
     },
     {
-      "word": "congress",
-      "lemma": "congress",
+      "word": "Congress",
+      "lemma": "Congress",
       "partOfSpeech": "n.",
       "korean": "(미국) 의회",
       "score": 97,
@@ -35263,10 +35263,10 @@
       "freq": 2
     },
     {
-      "word": "overpowered",
-      "lemma": "overpower",
+      "word": "overridden",
+      "lemma": "override",
       "partOfSpeech": "v.",
-      "korean": "압도하다, 뒤집다 (be overpowered 뒤집히다)",
+      "korean": "(결정 · 거부를) 무효화하다, 뒤집다 (be overridden 무효화되다)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -37413,10 +37413,10 @@
       "freq": 1
     },
     {
-      "word": "normal",
-      "lemma": "normal",
-      "partOfSpeech": "adj.",
-      "korean": "정상적인",
+      "word": "normally",
+      "lemma": "normally",
+      "partOfSpeech": "adv.",
+      "korean": "정상적으로",
       "score": 69,
       "reason": "지문 문맥 독해 핵심 어휘 · 지문의 성격을 수식하는 핵심 형용사 (평가 점수: 69점)",
       "examTags": [
@@ -37742,8 +37742,8 @@
       "freq": 2
     },
     {
-      "word": "latin",
-      "lemma": "latin",
+      "word": "Latin",
+      "lemma": "Latin",
       "partOfSpeech": "adj.",
       "korean": "라틴어의",
       "score": 67,
@@ -37769,7 +37769,7 @@
       "word": "isle",
       "lemma": "isle",
       "partOfSpeech": "n.",
-      "korean": "섬",
+      "korean": "섬 (주로 섬 이름 · 시에 쓰는 말 — Isle of Dogs 개의 섬)",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -38122,7 +38122,7 @@
       "word": "intelligence",
       "lemma": "intelligence",
       "partOfSpeech": "n.",
-      "korean": "지성",
+      "korean": "지능, 지성",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -38368,7 +38368,7 @@
       "word": "sight",
       "lemma": "sight",
       "partOfSpeech": "n.",
-      "korean": "봄 (at first sight 첫눈에)",
+      "korean": "보기, 봄(보는 것) (at first sight 첫눈에)",
       "score": 82,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 82점)",
       "examTags": [
@@ -38719,8 +38719,8 @@
     {
       "word": "surrounding",
       "lemma": "surround",
-      "partOfSpeech": "adj.",
-      "korean": "주위의, 둘러싼",
+      "partOfSpeech": "v.",
+      "korean": "둘러싸다 (the air surrounding it 그것을 둘러싼 공기)",
       "score": 84,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 84점)",
       "examTags": [
@@ -38732,7 +38732,7 @@
       "word": "warm",
       "lemma": "warm",
       "partOfSpeech": "adj.",
-      "korean": "따뜻한",
+      "korean": "따뜻한 (v. 따뜻하게 하다 — must warm ice 얼음을 따뜻하게 하다)",
       "score": 83,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 83점)",
       "examTags": [
@@ -39229,8 +39229,8 @@
     {
       "word": "aboard",
       "lemma": "aboard",
-      "partOfSpeech": "adv.",
-      "korean": "(배에) 타고",
+      "partOfSpeech": "prep.",
+      "korean": "(배 등에) 타고 (aboard their ships 배를 타고 · stay aboard 배에서 지내다)",
       "score": 80,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -39594,7 +39594,7 @@
       "word": "pumping",
       "lemma": "pump",
       "partOfSpeech": "v.",
-      "korean": "(펌프로) 뿜어 넣다",
+      "korean": "(대량으로) 뿜어내다, 쏟아붓다 (pump A into B A를 B에 쏟아붓다)",
       "score": 76,
       "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 76점)",
       "examTags": [
@@ -39972,7 +39972,7 @@
       "word": "involving",
       "lemma": "involve",
       "partOfSpeech": "v.",
-      "korean": "관련시키다, 끌어들이다",
+      "korean": "포함하다, 수반하다",
       "score": 80,
       "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
@@ -40919,10 +40919,10 @@
       "freq": 1
     },
     {
-      "word": "evidenced",
+      "word": "evidence",
       "lemma": "evidence",
-      "partOfSpeech": "v.",
-      "korean": "입증하다 (be evidenced 입증되다)",
+      "partOfSpeech": "n.",
+      "korean": "증거 (there is evidence that ~라는 증거가 있다)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [
@@ -42667,7 +42667,7 @@
       "word": "objectives",
       "lemma": "objective",
       "partOfSpeech": "n.",
-      "korean": "목표",
+      "korean": "목적",
       "score": 79,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 79점)",
       "examTags": [
@@ -42911,8 +42911,8 @@
     {
       "word": "perceived",
       "lemma": "perceive",
-      "partOfSpeech": "v.",
-      "korean": "인식하다 (perceived age 스스로 느끼는 나이)",
+      "partOfSpeech": "adj.",
+      "korean": "인식된, 스스로 느끼는 (perceived age 스스로 느끼는 나이)",
       "score": 109,
       "reason": "지문 핵심 주제문 구성 어휘 · 수능 독해 논리 전개 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 109점)",
       "examTags": [

@@ -793,13 +793,24 @@ export function ReadingLearningView({
                   className="rounded-2xl border border-line bg-surface p-4 shadow-2xs hover:border-line-strong hover:shadow-xs transition-all cursor-pointer flex flex-col justify-between gap-3 group select-none"
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
                       <span className="font-mono text-[11px] font-bold text-emerald-700 bg-emerald-500/10 px-1.5 py-0.5 rounded">
                         {kw.pos}
                       </span>
                       <span className="text-[17px] font-bold text-ink group-hover:text-primary transition-colors">
                         {kw.word}
                       </span>
+                      {/*
+                        The card names the word as the passage writes it ("spent", "setting"),
+                        but the gloss is a dictionary form ("(시간을) 보내다"). 1,121 of the 3,584
+                        cards are inflected; without the base form, "setting v. 두다" reads like a
+                        wrong part of speech. The base form stands beside it, small.
+                      */}
+                      {kw.lemma && kw.lemma.toLowerCase() !== kw.word.toLowerCase() && (
+                        <span className="whitespace-nowrap text-[12px] font-medium text-ink-faint" title="기본형">
+                          ← {kw.lemma}
+                        </span>
+                      )}
                     </div>
 
                     <button

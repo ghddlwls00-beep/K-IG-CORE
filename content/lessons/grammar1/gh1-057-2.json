@@ -56,7 +56,10 @@
         },
         {
           "n": "26",
-          "text": "Whom does she know?"
+          "text": "Whom does she know?",
+          "alternatives": [
+            "Who does she know?"
+          ]
         },
         {
           "n": "27",
@@ -72,7 +75,10 @@
         },
         {
           "n": "30",
-          "text": "Where does he go?"
+          "text": "Where does he go?",
+          "alternatives": [
+            "Where is he going?"
+          ]
         },
         {
           "n": "31",
@@ -80,15 +86,25 @@
         },
         {
           "n": "32",
-          "text": "Why does he look at her?"
+          "text": "Why does he look at her?",
+          "alternatives": [
+            "Why does he watch her?",
+            "Why is he looking at her?"
+          ]
         },
         {
           "n": "33",
-          "text": "Who likes it?"
+          "text": "Who likes it?",
+          "alternatives": [
+            "Who likes that?"
+          ]
         },
         {
           "n": "34",
-          "text": "Who wants it?"
+          "text": "Who wants it?",
+          "alternatives": [
+            "Who wants that?"
+          ]
         },
         {
           "n": "35",

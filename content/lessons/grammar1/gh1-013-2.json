@@ -60,11 +60,17 @@
         },
         {
           "n": "27",
-          "text": "Whom does he know?"
+          "text": "Whom does he know?",
+          "alternatives": [
+            "Who does he know?"
+          ]
         },
         {
           "n": "28",
-          "text": "Whom do they know?"
+          "text": "Whom do they know?",
+          "alternatives": [
+            "Who do they know?"
+          ]
         },
         {
           "n": "29",
@@ -72,7 +78,10 @@
         },
         {
           "n": "30",
-          "text": "Where do they go?"
+          "text": "Where do they go?",
+          "alternatives": [
+            "Where are they going?"
+          ]
         },
         {
           "n": "31",
@@ -80,7 +89,10 @@
         },
         {
           "n": "32",
-          "text": "Why do you look at me?"
+          "text": "Why do you look at me?",
+          "alternatives": [
+            "Why are you looking at me?"
+          ]
         },
         {
           "n": "33",
@@ -92,7 +104,12 @@
         },
         {
           "n": "35",
-          "text": "What was he?"
+          "text": "What was he?",
+          "alternatives": [
+            "What did he do?",
+            "What did he do for a living?",
+            "What was his job?"
+          ]
         }
       ]
     },

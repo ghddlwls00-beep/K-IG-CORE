@@ -121,13 +121,17 @@ export function formatLessonPresentation(
 
     const m = id.match(/^gh1-(\d+)/);
     const num = m ? parseInt(m[1], 10) : 0;
+    // An English answer page (odd number) belongs to the stage of its Korean question page, the even
+    // number before it — the course index groups stages by those. By their own numbers gh1-017 · 043 ·
+    // 055 · 079 · 109 showed the next stage while their question pages showed this one (6-1372).
+    const stageBase = num % 2 === 1 ? num - 1 : num;
     let stageName = "기초 영작";
     let stageNum = 1;
-    if (num <= 16) { stageNum = 1; stageName = "기본 문장 구조"; }
-    else if (num <= 42) { stageNum = 2; stageName = "어순 및 시제"; }
-    else if (num <= 54) { stageNum = 3; stageName = "조동사 & 수동태"; }
-    else if (num <= 78) { stageNum = 4; stageName = "의문사 & 부정문"; }
-    else if (num <= 108) { stageNum = 5; stageName = "접속사 & 복문"; }
+    if (stageBase <= 16) { stageNum = 1; stageName = "기본 문장 구조"; }
+    else if (stageBase <= 42) { stageNum = 2; stageName = "어순 및 시제"; }
+    else if (stageBase <= 54) { stageNum = 3; stageName = "조동사 & 수동태"; }
+    else if (stageBase <= 78) { stageNum = 4; stageName = "의문사 & 부정문"; }
+    else if (stageBase <= 108) { stageNum = 5; stageName = "접속사 & 복문"; }
     else { stageNum = 6; stageName = "고급 복합 구문"; }
 
     return {

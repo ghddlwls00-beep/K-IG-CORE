@@ -72,9 +72,9 @@
         },
         {
           "n": "12",
-          "text": "You've changed much since I saw you last.",
+          "text": "You've changed a lot since I saw you last.",
           "alternatives": [
-            "You've changed a lot since I saw you last."
+            "You've changed much since I saw you last."
           ]
         },
         {
@@ -82,18 +82,10 @@
           "text": "The members opposed the plan.",
           "alternatives": [
             "The members objected to the plan.",
-            "The members were opposed to the plan."
+            "The members were opposed to the plan.",
+            "The plan was opposed by the members."
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "The plan was opposed by the members."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "14",
           "text": "The plant grows fast.",
@@ -111,7 +103,10 @@
         },
         {
           "n": "17",
-          "text": "I took her by the arms."
+          "text": "I took her by the arm.",
+          "alternatives": [
+            "I took her by the arms."
+          ]
         },
         {
           "n": "18",
@@ -135,7 +130,10 @@
         },
         {
           "n": "23",
-          "text": "A conference was held."
+          "text": "A conference was held.",
+          "alternatives": [
+            "A meeting was held."
+          ]
         },
         {
           "n": "24",

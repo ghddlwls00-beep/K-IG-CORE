@@ -1,0 +1,11 @@
+[
+ {"item": "6-1689 s9-3 #7 영어 — 숙제와 과목을 견줌 → 숙제끼리(드릴의 같은 조각은 보류 G12 라 문항 글 자리만 짚음)", "files": ["content/lessons/student/s9-3.json"], "from": "\"text\": \"It is my favorite because it is easier than my other subjects.\"", "to": "\"text\": \"It is my favorite because it is easier than my homework for other subjects.\"", "expect": 1, "raw": true},
+ {"item": "6-1689 s9-3 #7 한국어", "files": ["content/lessons/student/s9-3.json"], "from": "그것이 나의 다른 과목들보다 쉽기 때문에 내가 가장 좋아하는 것입니다.", "to": "그것이 다른 과목들의 숙제보다 쉽기 때문에 내가 가장 좋아하는 것입니다.", "expect": 1},
+ {"item": "6-1690 s10-1 #2 한국어 — weekly ↔ daily 대비(9장 하루 일과 · 10장 한 주)라 수정안의 둘째 안: 한국어를 '한 주' 로", "files": ["content/lessons/student/s10-1.json"], "from": "나의 평일 계획은 나의 하루 계획과 마찬가지로 바쁩니다.", "to": "나의 한 주 계획은 나의 하루 계획과 마찬가지로 바쁩니다.", "expect": 1},
+ {"item": "6-1691 s10-2 #4 — 영어에 없는 '다시 한번'", "files": ["content/lessons/student/s10-2.json"], "from": "내가 일어나서 학교 갈 준비를 한 후, 나의 새로운 주의 첫날이 다시 한번 이렇게 시작됩니다.", "to": "내가 일어나서 학교 갈 준비를 한 후, 나의 새로운 주의 첫날이 이렇게 시작됩니다.", "expect": 1},
+ {"item": "6-1693 s10-3 #1 — those of = 다른 학생들의 평일", "files": ["content/lessons/student/s10-3.json"], "from": "나의 평일은 나의 반에 있는 다른 학생들과 비슷합니다.", "to": "나의 평일은 나의 반에 있는 다른 학생들의 평일과 비슷합니다.", "expect": 1},
+ {"item": "6-1694 s10-3 #2 — several more hours 의 '더' · 학원에 갑니다", "files": ["content/lessons/student/s10-3.json"], "from": "월요일부터 금요일까지, 나는 약 7시간 동안 학교에 가고 방과 후에 나는 몇 시간 학원들로 갑니다.", "to": "월요일부터 금요일까지, 나는 약 7시간 동안 학교에 가고 방과 후에 나는 몇 시간 더 학원에 갑니다.", "expect": 1},
+ {"item": "6-1698 s10-5 #1 — time = 시간(날 아님; '내가' 는 6-1686 같은 종류에서 이미)", "files": ["content/lessons/student/s10-5.json"], "from": "내가 가장 좋아하는 날은 금요일 밤입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.", "to": "내가 가장 좋아하는 시간은 금요일 밤입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.", "expect": 1},
+ {"item": "6-1698 같은 과 같은 종류 — s10-5 #2 금요일 밤을 '그날 … 날' 로", "files": ["content/lessons/student/s10-5.json"], "from": "그날은 학교와 학원의 정규 일정이 끝나는 날입니다.", "to": "그것은 학교와 학원의 정규 일정이 끝나는 시간입니다.", "expect": 1},
+ {"item": "6-1700 s11-1 #2 — 영어 빈칸 (Happy) 를 한국어도 (해피) 로(같은 종류 전수: 영어 · 한국어 괄호 수가 다른 짝 3 중 빈칸은 이 하나)", "files": ["content/lessons/student/s11-1.json"], "from": "나는 내 방을 청소하고 그 다음에 해피라는 이름의 나의 개와 함께 조깅을 갑니다.", "to": "나는 내 방을 청소하고 그 다음에 (해피)라는 이름의 나의 개와 함께 조깅을 갑니다.", "expect": 1}
+]

@@ -32,7 +32,10 @@
       "items": [
         {
           "n": "1",
-          "text": "I am Korean."
+          "text": "I am Korean.",
+          "alternatives": [
+            "I am a Korean."
+          ]
         },
         {
           "n": "2",
@@ -40,11 +43,18 @@
         },
         {
           "n": "3",
-          "text": "You are American."
+          "text": "You are American.",
+          "alternatives": [
+            "You are an American."
+          ]
         },
         {
           "n": "4",
-          "text": "She is Filipino."
+          "text": "She is Filipino.",
+          "alternatives": [
+            "She is Filipina.",
+            "She is a Filipina."
+          ]
         },
         {
           "n": "5",
@@ -75,7 +85,10 @@
         },
         {
           "n": "11",
-          "text": "It is yours."
+          "text": "It is yours.",
+          "alternatives": [
+            "That is yours."
+          ]
         },
         {
           "n": "12",

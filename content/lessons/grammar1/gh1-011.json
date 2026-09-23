@@ -87,7 +87,10 @@
         },
         {
           "n": "13",
-          "text": "Were there boys?"
+          "text": "Were there boys?",
+          "alternatives": [
+            "Were there any boys?"
+          ]
         },
         {
           "n": "14",
@@ -95,7 +98,10 @@
         },
         {
           "n": "15",
-          "text": "Are there boys?"
+          "text": "Are there boys?",
+          "alternatives": [
+            "Are there any boys?"
+          ]
         },
         {
           "n": "16",
@@ -113,7 +119,8 @@
           "n": "19",
           "text": "Do they have dreams?",
           "alternatives": [
-            "Do they have a dream?"
+            "Do they have a dream?",
+            "Do they have any dreams?"
           ]
         },
         {
@@ -205,47 +212,63 @@
           "n": "39",
           "text": "Weren't there boys?",
           "alternatives": [
-            "Were there not boys?"
+            "Were there not boys?",
+            "Weren't there any boys?"
           ]
         },
         {
           "n": "40",
-          "text": "Didn't I have a dream?"
+          "text": "Didn't I have a dream?",
+          "alternatives": [
+            "Did I not have a dream?"
+          ]
         },
         {
           "n": "41",
-          "text": "Didn't you have a dream?"
+          "text": "Didn't you have a dream?",
+          "alternatives": [
+            "Did you not have a dream?"
+          ]
         },
         {
           "n": "42",
-          "text": "Didn't he have a dream?"
+          "text": "Didn't he have a dream?",
+          "alternatives": [
+            "Did he not have a dream?"
+          ]
         },
         {
           "n": "43",
           "text": "Didn't they have dreams?",
           "alternatives": [
-            "Didn't they have a dream?"
+            "Didn't they have a dream?",
+            "Did they not have dreams?",
+            "Did they not have a dream?",
+            "Didn't they have any dreams?"
           ]
         },
         {
           "n": "44",
           "text": "Didn't you like it?",
           "alternatives": [
-            "Didn't you like that?"
+            "Didn't you like that?",
+            "Did you not like it?"
           ]
         },
         {
           "n": "45",
           "text": "Didn't he like it?",
           "alternatives": [
-            "Didn't he like that?"
+            "Didn't he like that?",
+            "Did he not like it?"
           ]
         },
         {
           "n": "46",
           "text": "Didn't they like it?",
           "alternatives": [
-            "Didn't they like that?"
+            "Didn't they like that?",
+            "Did they not like it?"
           ]
         }
       ]

@@ -87,7 +87,10 @@
         },
         {
           "n": "13",
-          "text": "Were there boys?"
+          "text": "Were there boys?",
+          "alternatives": [
+            "Were there any boys?"
+          ]
         },
         {
           "n": "14",
@@ -95,7 +98,10 @@
         },
         {
           "n": "15",
-          "text": "Are there boys?"
+          "text": "Are there boys?",
+          "alternatives": [
+            "Are there any boys?"
+          ]
         },
         {
           "n": "16",
@@ -113,7 +119,8 @@
           "n": "19",
           "text": "Do they have dreams?",
           "alternatives": [
-            "Do they have a dream?"
+            "Do they have a dream?",
+            "Do they have any dreams?"
           ]
         },
         {

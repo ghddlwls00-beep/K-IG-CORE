@@ -36,7 +36,12 @@
         },
         {
           "n": "24",
-          "text": "Where was she?"
+          "text": "What was he?",
+          "alternatives": [
+            "What did he do?",
+            "What was his job?",
+            "What did he do for a living?"
+          ]
         },
         {
           "n": "25",
@@ -96,7 +101,12 @@
         },
         {
           "n": "39",
-          "text": "It was seven o'clock."
+          "text": "It was seven o'clock.",
+          "alternatives": [
+            "It was 7 o'clock.",
+            "It was seven o'clock then.",
+            "It was 7 o'clock then."
+          ]
         },
         {
           "n": "40",

@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "하나의 기억처럼 보이는 것이 실제로는 복잡한 구성물이라는 것이 이제 밝혀졌다. 예를 들어 망치를 떠올리면 뇌는 그 도구의 이름, 생김새, 쓰임, 쾅 하는 소리를 재빨리 불러오는데, 이것들은 저마다 뇌의 다른 영역에서 꺼내 온 것이다. 그러므로 기억력이 약해지는 것은 사실 뇌에 따로 저장된 정보의 조각들을 한데 모으지 못하는 것이다. 많은 사람이 이르면 20대부터 그 조립 과정이 무너지는 것을 경험하기 시작한다."
+      "text": "이제는 하나의 기억처럼 보이는 것이 실제로는 복잡한 구성물이라는 증거가 있다. 예를 들어 망치를 떠올리면 뇌는 그 도구의 이름, 생김새, 쓰임, 쾅 하는 소리를 재빨리 불러오는데, 이것들은 저마다 뇌의 다른 영역에서 꺼내 온 것이다. 그러므로 기억력이 약해지는 것은 사실 뇌에 따로 저장된 정보의 조각들을 한데 모으지 못하는 것이다. 많은 사람이 이르면 20대부터 그 조립 과정이 무너지는 것을 경험하기 시작한다."
     },
     {
       "type": "choice",
@@ -47,8 +47,8 @@
   "readingSentences": [
     {
       "id": "reading-240-s001",
-      "english": "It is now evidenced that what seems to be a single memory is actually a complex construction.",
-      "korean": "하나의 기억처럼 보이는 것이 실제로는 복잡한 구성물이라는 것이 이제 밝혀졌다."
+      "english": "There is now evidence that what seems to be a single memory is actually a complex construction.",
+      "korean": "이제는 하나의 기억처럼 보이는 것이 실제로는 복잡한 구성물이라는 증거가 있다."
     },
     {
       "id": "reading-240-s002",
@@ -128,10 +128,10 @@
       "freq": 1
     },
     {
-      "word": "evidenced",
+      "word": "evidence",
       "lemma": "evidence",
-      "partOfSpeech": "v.",
-      "korean": "입증하다 (be evidenced 입증되다)",
+      "partOfSpeech": "n.",
+      "korean": "증거 (there is evidence that ~라는 증거가 있다)",
       "score": 86,
       "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 86점)",
       "examTags": [

@@ -32,7 +32,10 @@
         },
         {
           "n": "2",
-          "text": "The mercury dropped to 6 degrees below zero."
+          "text": "The mercury dropped to 6 degrees below zero.",
+          "alternatives": [
+            "The mercury dropped to six degrees below zero."
+          ]
         },
         {
           "n": "3",
@@ -79,7 +82,10 @@
         },
         {
           "n": "13",
-          "text": "There is no one here by that name."
+          "text": "There is no one here by that name.",
+          "alternatives": [
+            "There isn't anyone here by that name."
+          ]
         },
         {
           "n": "14",

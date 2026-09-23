@@ -1,0 +1,6 @@
+[
+ {"item": "6-0647 mv3-06 단어판 — 드문 옛 변이형 'cooky' → 표준 철자 'cookie' (같은 판의 gift · candle · pet 처럼 일상어)", "files": ["content/lessons/phonics/mv3-06.json"],
+  "from": "cooky", "to": "cookie", "expect": 1},
+ {"item": "6-0647 사전 항목 표제어·searchWord 'cooky' → 'cookie' (사전에 cookie 항목 없음 — 겹치는 키 없음)", "files": ["content/voca_dictionary.json"],
+  "from": "cooky", "to": "cookie", "expect": 2}
+]

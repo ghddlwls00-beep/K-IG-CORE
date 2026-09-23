@@ -1,0 +1,8 @@
+[
+ {"item": "6-0911 mv3-04 단어판 — 괄호 없는 영국식 철자는 labour 하나뿐(강의 낱말 3,901 중, dialogue · monologue 는 미국에서도 표준) → 과정의 관례 colo(u)r · hono(u)r 처럼 'labo(u)r'", "files": ["content/lessons/phonics/mv3-04.json"],
+  "from": "labour", "to": "labo(u)r", "expect": 1},
+ {"item": "6-0911 사전 키 'labour' → 'labo(u)r' (사전에 labo(u)r 항목 없음 — 겹치는 키 없음)", "files": ["content/voca_dictionary.json"], "raw": true,
+  "from": "\"labour\": {", "to": "\"labo(u)r\": {", "expect": 1},
+ {"item": "6-0911 searchWord = 앱이 말하는 꼴 'labor' (6-0633 규칙 — 괄호 표제어의 searchWord 는 VOCA_SPEECH_FORMS 값)", "files": ["content/voca_dictionary.json"], "raw": true,
+  "from": "\"searchWord\": \"labour\"", "to": "\"searchWord\": \"labor\"", "expect": 1}
+]

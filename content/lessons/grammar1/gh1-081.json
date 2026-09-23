@@ -47,11 +47,17 @@
         },
         {
           "n": "3",
-          "text": "Does he get up early?"
+          "text": "Does he get up early?",
+          "alternatives": [
+            "Does he wake up early?"
+          ]
         },
         {
           "n": "4",
-          "text": "Does your sister go to bed early?"
+          "text": "Does your sister go to bed early?",
+          "alternatives": [
+            "Does your sister go to sleep early?"
+          ]
         },
         {
           "n": "5",
@@ -59,11 +65,17 @@
         },
         {
           "n": "6",
-          "text": "The police arrested 15 people, didn't they?"
+          "text": "The police arrested 15 people, didn't they?",
+          "alternatives": [
+            "The police arrested fifteen people, didn't they?"
+          ]
         },
         {
           "n": "7",
-          "text": "Where did the police arrest 15 people?"
+          "text": "Where did the police arrest 15 people?",
+          "alternatives": [
+            "Where did the police arrest fifteen people?"
+          ]
         },
         {
           "n": "8",
@@ -87,19 +99,31 @@
         },
         {
           "n": "13",
-          "text": "What time did you go to bed last night?"
+          "text": "What time did you go to bed last night?",
+          "alternatives": [
+            "What time did you go to sleep last night?"
+          ]
         },
         {
           "n": "14",
-          "text": "What time did you get up?"
+          "text": "What time did you get up?",
+          "alternatives": [
+            "What time did you wake up?"
+          ]
         },
         {
           "n": "15",
-          "text": "What time did you get to work?"
+          "text": "What time did you get to work?",
+          "alternatives": [
+            "What time did you go to work?"
+          ]
         },
         {
           "n": "16",
-          "text": "Why did you get home late?"
+          "text": "Why did you get home late?",
+          "alternatives": [
+            "Why did you come home late?"
+          ]
         },
         {
           "n": "17",
@@ -118,19 +142,31 @@
         },
         {
           "n": "20",
-          "text": "Do you have breakfast?"
+          "text": "Do you have breakfast?",
+          "alternatives": [
+            "Do you eat breakfast?"
+          ]
         },
         {
           "n": "21",
-          "text": "What did you have for breakfast?"
+          "text": "What did you have for breakfast?",
+          "alternatives": [
+            "What did you eat for breakfast?"
+          ]
         },
         {
           "n": "22",
-          "text": "What time do you have lunch?"
+          "text": "What time do you have lunch?",
+          "alternatives": [
+            "What time do you eat lunch?"
+          ]
         },
         {
           "n": "23",
-          "text": "Where does he have lunch?"
+          "text": "Where does he have lunch?",
+          "alternatives": [
+            "Where does he eat lunch?"
+          ]
         },
         {
           "n": "24",
@@ -144,7 +180,12 @@
           "n": "26",
           "text": "When does he return to the U.S.?",
           "alternatives": [
-            "When does he go back to the U.S.?"
+            "When does he go back to the U.S.?",
+            "When does he return to the United States?",
+            "When does he return to America?",
+            "When does he go back to the United States?",
+            "When does he go back to America?",
+            "When is he going back to the U.S.?"
           ]
         },
         {
@@ -163,19 +204,32 @@
         },
         {
           "n": "29",
-          "text": "Aren't you happy in Korea?"
+          "text": "Aren't you happy in Korea?",
+          "alternatives": [
+            "Are you not happy in Korea?"
+          ]
         },
         {
           "n": "30",
-          "text": "Who shouts?"
+          "text": "Who shouts?",
+          "alternatives": [
+            "Who yells?",
+            "Who is shouting?"
+          ]
         },
         {
           "n": "31",
-          "text": "Who cries?"
+          "text": "Who cries?",
+          "alternatives": [
+            "Who is crying?"
+          ]
         },
         {
           "n": "32",
-          "text": "Do your children cry often?"
+          "text": "Do your children cry often?",
+          "alternatives": [
+            "Do your children often cry?"
+          ]
         },
         {
           "n": "33",
@@ -187,18 +241,23 @@
         },
         {
           "n": "35",
-          "text": "Your girlfriend whispers but your wife shouts."
+          "text": "The child whispers, but his brother shouts."
         },
         {
           "n": "36",
           "text": "Are you mad?",
           "alternatives": [
-            "Were you mad?"
+            "Were you mad?",
+            "Are you angry?",
+            "Were you angry?"
           ]
         },
         {
           "n": "37",
-          "text": "Who looked for me?"
+          "text": "Who looked for me?",
+          "alternatives": [
+            "Who was looking for me?"
+          ]
         },
         {
           "n": "38",

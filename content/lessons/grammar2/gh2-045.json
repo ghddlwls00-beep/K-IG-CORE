@@ -28,20 +28,18 @@
       "items": [
         {
           "n": "1",
-          "text": "The exact time when the murder had been committed was never discovered."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "never found out."
-    },
-    {
-      "type": "sentences",
-      "items": [
+          "text": "The exact time when the murder had been committed was never discovered.",
+          "alternatives": [
+            "The exact time when the murder had been committed was never found out."
+          ]
+        },
         {
           "n": "2",
-          "text": "I don't know why he cut the class."
+          "text": "I don't know why he cut the class.",
+          "alternatives": [
+            "I don't know why he skipped the class.",
+            "I don't know why he skipped class."
+          ]
         },
         {
           "n": "3",

@@ -40,7 +40,10 @@
         },
         {
           "n": "2",
-          "text": "This is my friend."
+          "text": "This is my friend.",
+          "alternatives": [
+            "This person is my friend."
+          ]
         },
         {
           "n": "3",
@@ -67,7 +70,10 @@
         },
         {
           "n": "8",
-          "text": "It is his book."
+          "text": "It is his book.",
+          "alternatives": [
+            "That is his book."
+          ]
         },
         {
           "n": "9",

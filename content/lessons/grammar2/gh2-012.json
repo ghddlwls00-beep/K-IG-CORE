@@ -64,7 +64,11 @@
         },
         {
           "n": "10",
-          "text": "He has about one hundred dollars."
+          "text": "He has about one hundred dollars.",
+          "alternatives": [
+            "He has about 100 dollars.",
+            "He has about a hundred dollars."
+          ]
         },
         {
           "n": "11",
@@ -72,7 +76,10 @@
         },
         {
           "n": "12",
-          "text": "All the people across the town know him."
+          "text": "All the people across the town know him.",
+          "alternatives": [
+            "All of the people across the town know him."
+          ]
         },
         {
           "n": "13",
@@ -88,11 +95,17 @@
         },
         {
           "n": "16",
-          "text": "He left three hours later."
+          "text": "He left three hours later.",
+          "alternatives": [
+            "He left 3 hours later."
+          ]
         },
         {
           "n": "17",
-          "text": "He returned after three hours."
+          "text": "He returned after three hours.",
+          "alternatives": [
+            "He returned after 3 hours."
+          ]
         },
         {
           "n": "18",

@@ -1,0 +1,253 @@
+[
+ {
+  "item": "6-1583 gh2-037-1 #13 — 두 뜻(설치 · 끊김)을 함께 준 문제 → 설치만",
+  "file": "content/lessons/grammar2/gh2-037-1.json",
+  "n": "13",
+  "text": {
+   "from": "나는 나의 아파트에 전화가 설치되게(끊어지게) 하고 싶다.",
+   "to": "나는 나의 아파트에 전화가 설치되게 하고 싶다."
+  }
+ },
+ {
+  "item": "6-1583 gh2-037 #13 — 반대 뜻 대체 답안(disconnected) 뺌",
+  "file": "content/lessons/grammar2/gh2-037.json",
+  "n": "13",
+  "alternatives": {
+   "from": [
+    "I'd like to have my phone disconnected in my apartment."
+   ],
+   "to": []
+  },
+  "right": [
+   "I would like to have a phone installed in my apartment."
+  ],
+  "wrong": [
+   "I'd like to have my phone disconnected in my apartment."
+  ]
+ },
+ {
+  "item": "6-1583 같은 종류 전수 — gh2-040-1 #10 켜지기를(꺼지기를) + 6-1595 개스 → 가스",
+  "file": "content/lessons/grammar2/gh2-040-1.json",
+  "n": "10",
+  "text": {
+   "from": "나는 전기와 개스가 켜지기를(꺼지기를) 원한다.",
+   "to": "나는 전기와 가스가 켜지기를 원한다."
+  },
+  "supersededBy": "stage6-grammar-items-y.json — 3차 점검 #12: 바꿔 넣기 연습이라 (꺼지기를) · turned off 를 되살림(개스 → 가스 만 남김)"
+ },
+ {
+  "item": "6-1583 같은 종류 전수 — gh2-040 #10 반대 뜻 대체 답안(turned off) 뺌",
+  "file": "content/lessons/grammar2/gh2-040.json",
+  "n": "10",
+  "alternatives": {
+   "from": [
+    "I want my lights and gas turned off."
+   ],
+   "to": []
+  },
+  "right": [
+   "I want my lights and gas turned on."
+  ],
+  "wrong": [
+   "I want my lights and gas turned off."
+  ],
+  "supersededBy": "stage6-grammar-items-y.json — 3차 점검 #12: 바꿔 넣기 연습이라 (꺼지기를) · turned off 를 되살림(개스 → 가스 만 남김)"
+ },
+ {
+  "item": "6-1584 gh2-037-1 #16 — 옷 = 수선(수정은 글 · 계획)",
+  "file": "content/lessons/grammar2/gh2-037-1.json",
+  "n": "16",
+  "text": {
+   "from": "나는 약간의 수정이 만들어지게 했다. (고치게 했다.)",
+   "to": "나는 약간의 수선을 맡겼다. (옷을 조금 고치게 했다.)"
+  }
+ },
+ {
+  "item": "6-1585 gh2-037 #17 — 'the girl to sing' 은 목적으로 읽힘 → be to(과의 to 부정사 그대로) 모범 · 관계절 꼴 대체",
+  "file": "content/lessons/grammar2/gh2-037.json",
+  "n": "17",
+  "text": {
+   "from": "Who is the girl to sing?",
+   "to": "Who is the girl that is to sing?"
+  },
+  "alternatives": {
+   "from": [],
+   "to": [
+    "Who is the girl who is to sing?",
+    "Who is the girl who is going to sing?",
+    "Who is the girl that is going to sing?"
+   ]
+  },
+  "right": [
+   "Who is the girl who is going to sing?"
+  ],
+  "wrong": [
+   "Who is the girl that is to dance?"
+  ]
+ },
+ {
+  "item": "6-1586 gh2-038 #15 — 2000년부터 공식 표기 Busan(옛 Pusan 은 대체 답안)",
+  "file": "content/lessons/grammar2/gh2-038.json",
+  "n": "15",
+  "text": {
+   "from": "He put off going to Pusan.",
+   "to": "He put off going to Busan."
+  },
+  "alternatives": {
+   "from": [],
+   "to": [
+    "He put off going to Pusan."
+   ]
+  },
+  "right": [
+   "He put off going to Pusan."
+  ],
+  "wrong": [
+   "He put off going to Seoul."
+  ]
+ },
+ {
+  "item": "6-1586 같은 종류 전수 — gh2-033 #7 Pusan",
+  "file": "content/lessons/grammar2/gh2-033.json",
+  "n": "7",
+  "text": {
+   "from": "He went to Pusan on business.",
+   "to": "He went to Busan on business."
+  },
+  "alternatives": {
+   "from": [],
+   "to": [
+    "He went to Pusan on business."
+   ]
+  },
+  "right": [
+   "He went to Pusan on business."
+  ],
+  "wrong": [
+   "He went to Seoul on business."
+  ]
+ },
+ {
+  "item": "6-1587 gh2-038-1 #13 — over there = 저쪽에 · 서 있는",
+  "file": "content/lessons/grammar2/gh2-038-1.json",
+  "n": "13",
+  "text": {
+   "from": "당신은 저 너머에 서있는 그 숙녀를 압니까?",
+   "to": "당신은 저쪽에 서 있는 그 숙녀를 압니까?"
+  }
+ },
+ {
+  "item": "6-1587 #14",
+  "file": "content/lessons/grammar2/gh2-038-1.json",
+  "n": "14",
+  "text": {
+   "from": "당신은 그 소년이 저 너머에 서있는 것을 보았습니까?",
+   "to": "당신은 그 소년이 저쪽에 서 있는 것을 보았습니까?"
+  }
+ },
+ {
+  "item": "6-1587 gh2-040-1 #5 (지적이 함께 짚음)",
+  "file": "content/lessons/grammar2/gh2-040-1.json",
+  "n": "5",
+  "text": {
+   "from": "당신은 우리가 저 너머에서 그것의 입구를 보는 그 터널의 이름을 압니까?",
+   "to": "당신은 우리가 저쪽에서 그것의 입구를 보는 그 터널의 이름을 압니까?"
+  }
+ },
+ {
+  "item": "6-1588 gh2-039-1 #4 — '그것에게'(사물에 여격) · 시식(맛보기) → 한번 가 보자",
+  "file": "content/lessons/grammar2/gh2-039-1.json",
+  "n": "4",
+  "text": {
+   "from": "그것에게 시식을 주자(그것을 시식해보자).",
+   "to": "한번 가 보자(한번 시도해 보자)."
+  }
+ },
+ {
+  "item": "6-1589 gh2-039-1 #5 — I'm buying = 내가 낼게",
+  "file": "content/lessons/grammar2/gh2-039-1.json",
+  "n": "5",
+  "text": {
+   "from": "내가 사고 있다(내가 산다).",
+   "to": "내가 낼게(내가 살게)."
+  }
+ },
+ {
+  "item": "6-1590 gh2-039-1 #7 — 어머니 = 자기(그의 는 남자)",
+  "file": "content/lessons/grammar2/gh2-039-1.json",
+  "n": "7",
+  "text": {
+   "from": "그의 자녀들이 열심히 공부하는(일하는) 어머니는 행복하다.",
+   "to": "자기 자녀들이 열심히 공부하는(일하는) 어머니는 행복하다."
+  }
+ },
+ {
+  "item": "6-1591 gh2-039-1 #13 — 걸작품들이다(띄어쓰기)",
+  "file": "content/lessons/grammar2/gh2-039-1.json",
+  "n": "13",
+  "text": {
+   "from": "당신이 보고 있는 그 조각들은 걸작품 들이다.",
+   "to": "당신이 보고 있는 그 조각들은 걸작품들이다."
+  }
+ },
+ {
+  "item": "6-1592 gh2-040 #8 — 미국식 과정 · rumors(영국식은 대체 답안)",
+  "file": "content/lessons/grammar2/gh2-040.json",
+  "n": "8",
+  "text": {
+   "from": "There are rumours that this government is collapsing.",
+   "to": "There are rumors that this government is collapsing."
+  },
+  "alternatives": {
+   "from": [],
+   "to": [
+    "There are rumours that this government is collapsing."
+   ]
+  },
+  "right": [
+   "There are rumours that this government is collapsing."
+  ],
+  "wrong": [
+   "There are rumors that this government is growing."
+  ]
+ },
+ {
+  "item": "6-1592 같은 종류 전수 — gh2-047 #4 spelt → spelled(영국식은 대체 답안)",
+  "file": "content/lessons/grammar2/gh2-047.json",
+  "n": "4",
+  "text": {
+   "from": "How is the word spelt?",
+   "to": "How is the word spelled?"
+  },
+  "alternatives": {
+   "from": [],
+   "to": [
+    "How is the word spelt?"
+   ]
+  },
+  "right": [
+   "How is the word spelt?"
+  ],
+  "wrong": [
+   "How is the word pronounced?"
+  ]
+ },
+ {
+  "item": "6-1593 gh2-040-1 #2 — '동전으로 작동하는' 두 번 · 셀프 빨래방",
+  "file": "content/lessons/grammar2/gh2-040-1.json",
+  "n": "2",
+  "text": {
+   "from": "미국에는 동전으로 작동하는 세탁기와 드라이어가 있는 많은 동전으로 작동하는 세탁소들이 있다.",
+   "to": "미국에는 동전으로 작동하는 세탁기와 건조기를 갖춘 빨래방이 많이 있다."
+  }
+ },
+ {
+  "item": "6-1594 gh2-040-1 #6 — 규칙들이 있다(띄어쓰기)",
+  "file": "content/lessons/grammar2/gh2-040-1.json",
+  "n": "6",
+  "text": {
+   "from": "그 게임에는 그것이 없으면 그것을 할 수 없는 몇 가지 기본 규칙들이있다.",
+   "to": "그 게임에는 그것이 없으면 그것을 할 수 없는 몇 가지 기본 규칙들이 있다."
+  }
+ }
+]

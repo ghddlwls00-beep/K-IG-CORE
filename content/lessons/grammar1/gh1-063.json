@@ -48,7 +48,10 @@
         },
         {
           "n": "3",
-          "text": "Is your son healthy?"
+          "text": "Is your son healthy?",
+          "alternatives": [
+            "Is your son well?"
+          ]
         },
         {
           "n": "4",
@@ -60,11 +63,17 @@
         },
         {
           "n": "6",
-          "text": "Is my son healthy?"
+          "text": "Is my son healthy?",
+          "alternatives": [
+            "Is my son well?"
+          ]
         },
         {
           "n": "7",
-          "text": "Is that car yours?"
+          "text": "Is that car yours?",
+          "alternatives": [
+            "Is the car yours?"
+          ]
         },
         {
           "n": "8",
@@ -84,7 +93,10 @@
         },
         {
           "n": "12",
-          "text": "Is your mother healthy?"
+          "text": "Is your mother healthy?",
+          "alternatives": [
+            "Is your mother well?"
+          ]
         },
         {
           "n": "13",
@@ -147,7 +159,8 @@
           "alternatives": [
             "Do your sons and daughter have a dream?",
             "Do your son and daughters have a dream?",
-            "Do your sons and daughters have a dream?"
+            "Do your sons and daughters have a dream?",
+            "Do your son and daughter have dreams?"
           ]
         }
       ]

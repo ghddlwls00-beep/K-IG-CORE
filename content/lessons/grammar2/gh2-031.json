@@ -64,7 +64,11 @@
         },
         {
           "n": "10",
-          "text": "I didn't know with whom to go."
+          "text": "I didn't know with whom to go.",
+          "alternatives": [
+            "I didn't know who to go with.",
+            "I didn't know whom to go with."
+          ]
         },
         {
           "n": "11",
@@ -92,7 +96,10 @@
         },
         {
           "n": "16",
-          "text": "I think it easy for you to pass the examination."
+          "text": "I think it easy for you to pass the examination.",
+          "alternatives": [
+            "I think it easy for you to pass the exam."
+          ]
         }
       ]
     },

@@ -26,8 +26,8 @@ const CURRICULUM = {
       2: { en: 'Family Unit', ko: '가족 구성' },
       3: { en: "Father and Mother's Job", ko: '부모님의 직업' },
       4: { en: 'Life at My House', ko: '우리 집의 일상' },
-      5: { en: "Sister's School & Talents", ko: '자매의 학교와 재능' },
-      6: { en: "Sister's Hobby", ko: '자매의 취미' }
+      5: { en: "Sister's School & Talents", ko: '여동생의 학교와 재능' },
+      6: { en: "Sister's Hobby", ko: '여동생의 취미' }
     }
   },
   3: {
@@ -49,7 +49,7 @@ const CURRICULUM = {
       3: { en: "Father's Brother and Sister", ko: '친가 친척' },
       4: { en: "Mother's Brother and Sister", ko: '외가 친척' },
       5: { en: 'My Favorite Relative', ko: '가장 좋아하는 친척' },
-      6: { en: "Oldest Uncle's Talents", ko: '큰삼촌의 재능' }
+      6: { en: "Oldest Uncle's Talents", ko: '큰아버지의 재능' }
     }
   },
   5: {
@@ -116,7 +116,7 @@ const CURRICULUM = {
     chapterKo: '주말 일과',
     chapterEn: 'What Do I Do during the Weekends?',
     parts: {
-      1: { en: 'Saturday Afternoon', ko: '토요일 오후' },
+      1: { en: 'Saturday Morning & Afternoon', ko: '토요일 오전과 오후' },
       2: { en: 'Saturday Night & Family Outing', ko: '토요일 밤과 가족 외식' },
       3: { en: 'Sunday Morning & Church', ko: '일요일 아침과 교회' },
       4: { en: 'Sunday Afternoon Leisure', ko: '일요일 오후의 여가' }
@@ -174,7 +174,7 @@ const CURRICULUM = {
     parts: {
       1: { en: 'How Korea Was Founded', ko: '고조선의 건국' },
       2: { en: 'The Three Kingdoms Era', ko: '삼국 시대' },
-      3: { en: 'Independence of Korea & Civil War', ko: '광복과 6.25 전쟁' },
+      3: { en: 'Independence of Korea & the Korean War', ko: '광복과 한국 전쟁' },
       4: { en: 'Development and Prosperity of Korea', ko: '대한민국의 발전과 번영' }
     }
   },

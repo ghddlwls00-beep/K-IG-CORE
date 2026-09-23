@@ -67,7 +67,11 @@
         },
         {
           "n": "78",
-          "text": "It is high noon in Los Angeles, isn't it?"
+          "text": "It is high noon in Los Angeles, isn't it?",
+          "alternatives": [
+            "It is noon in Los Angeles now, isn't it?",
+            "It is noon in Los Angeles, isn't it?"
+          ]
         },
         {
           "n": "79",
@@ -75,7 +79,12 @@
         },
         {
           "n": "80",
-          "text": "They are probably up."
+          "text": "They are probably up.",
+          "alternatives": [
+            "They are probably awake.",
+            "They are probably still up.",
+            "They are probably still awake."
+          ]
         },
         {
           "n": "81",
@@ -103,7 +112,11 @@
         },
         {
           "n": "87",
-          "text": "That could reduce the fear of suspects."
+          "text": "That could reduce suspects' fear.",
+          "alternatives": [
+            "That could reduce the suspects' fear.",
+            "That could reduce the fear of the suspects."
+          ]
         },
         {
           "n": "88",
@@ -121,7 +134,11 @@
         },
         {
           "n": "90",
-          "text": "How did the government boost its sales?"
+          "text": "How did the government boost its sales?",
+          "alternatives": [
+            "How did the government increase its sales?",
+            "How did the government raise its sales?"
+          ]
         }
       ]
     },

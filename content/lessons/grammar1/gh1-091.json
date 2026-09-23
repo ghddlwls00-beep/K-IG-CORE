@@ -44,7 +44,11 @@
         },
         {
           "n": "22",
-          "text": "Was this handgun yours?"
+          "text": "Was this handgun yours?",
+          "alternatives": [
+            "Was this pistol yours?",
+            "Was this gun yours?"
+          ]
         },
         {
           "n": "23",
@@ -52,7 +56,11 @@
         },
         {
           "n": "24",
-          "text": "Were Democrats and Republicans cooperative?"
+          "text": "Were Democrats and Republicans cooperative?",
+          "alternatives": [
+            "Were the Democrats and Republicans cooperative?",
+            "Were the Democrats and the Republicans cooperative?"
+          ]
         },
         {
           "n": "25",
@@ -73,15 +81,25 @@
         },
         {
           "n": "27",
-          "text": "Don't your parents have a problem?"
+          "text": "Don't your parents have a problem?",
+          "alternatives": [
+            "Do your parents not have a problem?"
+          ]
         },
         {
           "n": "28",
-          "text": "Doesn't the senator have an option?"
+          "text": "Doesn't the senator have an option?",
+          "alternatives": [
+            "Does the senator not have an option?"
+          ]
         },
         {
           "n": "29",
-          "text": "Doesn't the congressman wake your mother up?"
+          "text": "Doesn't the congressman wake your mother up?",
+          "alternatives": [
+            "Does the congressman not wake your mother up?",
+            "Doesn't the congresswoman wake your mother up?"
+          ]
         },
         {
           "n": "30",
@@ -89,7 +107,11 @@
         },
         {
           "n": "31",
-          "text": "Didn't the financial district face a major rebuilding job?"
+          "text": "Didn't the financial district face a major rebuilding job?",
+          "alternatives": [
+            "Did the financial district not face a major rebuilding job?",
+            "Didn't the financial district face a big rebuilding job?"
+          ]
         },
         {
           "n": "32",
@@ -105,7 +127,10 @@
         },
         {
           "n": "35",
-          "text": "Doesn't your commander show proper respect for the dead?"
+          "text": "Doesn't your commander show proper respect for the dead?",
+          "alternatives": [
+            "Does your commander not show proper respect for the dead?"
+          ]
         },
         {
           "n": "36",
@@ -113,14 +138,22 @@
         },
         {
           "n": "37",
-          "text": "Do they take airplanes frequently?",
+          "text": "Do they fly often?",
           "alternatives": [
-            "Do they take airplanes often?"
+            "Do they often fly?",
+            "Do they fly frequently?",
+            "Do they take planes often?",
+            "Do they often take planes?",
+            "Do they take airplanes often?",
+            "Do they take airplanes frequently?"
           ]
         },
         {
           "n": "38",
-          "text": "Didn't the terrorist plant a bomb in the car?"
+          "text": "Didn't the terrorist plant a bomb in the car?",
+          "alternatives": [
+            "Did the terrorist not plant a bomb in the car?"
+          ]
         },
         {
           "n": "39",

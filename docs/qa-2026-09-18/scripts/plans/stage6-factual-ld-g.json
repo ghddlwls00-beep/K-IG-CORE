@@ -1,0 +1,32 @@
+[
+ {"item": "6-0575 d268 n7 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "Consequently, Picasso's art is called Cubism.", "to": "Consequently, the style he developed with Georges Braque is called Cubism.", "expect": 1},
+ {"item": "6-0575 d268 n7 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "결과적으로 피카소의 미술은 입체파라고 불린다.", "to": "결과적으로 그가 조르주 브라크와 함께 만든 양식은 입체파라고 불린다.", "expect": 1},
+ {"item": "6-0575 d268 hints (새 고유명사 Georges Braque)", "files": ["content/lessons/ld/d268.json"],
+  "from": "abstractions. essentials Picasso", "to": "abstractions. essentials Picasso Georges Braque", "expect": 1},
+
+ {"item": "6-0579 d271 n3 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "The New Thought and Romanticism of the 19th century", "to": "The new thinking and Romanticism of the 19th century", "expect": 1},
+
+ {"item": "6-0583 d273 n2 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "In an attempt to understand the mysteries of God, man tried to build a tower that would reach to heaven.",
+  "to": "In an attempt to make a name for themselves, people tried to build a tower that would reach to heaven.", "expect": 1},
+ {"item": "6-0583 d273 n2 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "하나님의 신비를 이해하기 위한 시도에서 인간은 하늘에 도달할 한 탑을 지으려고 했다.",
+  "to": "자신들의 이름을 떨치려고 사람들은 하늘에 닿을 탑을 지으려고 했다.", "expect": 1},
+
+ {"item": "6-0584 d273 n7 KO — -1 사본은 8114912 에서 지워졌고 화면용 대본 파일에 남은 비표준어 하나", "files": ["content/ld_english_scripts.json"],
+  "from": "이탈리아어 같은 로망스말은", "to": "이탈리아어 같은 로망스어는", "expect": 1},
+
+ {"item": "6-0585 d274 n1 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "In the Middle Ages, Latin was the universal language.", "to": "In the Middle Ages, Latin was the common language of learning in Western Europe.", "expect": 1},
+ {"item": "6-0585 d274 n1 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "중세에는 라틴어가 범세계적인 언어였다.", "to": "중세 서유럽에서는 라틴어가 학문의 공통어였다.", "expect": 1},
+ {"item": "6-0585 d274 n2 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "Most university classes were conducted in Latin and all important documents were written in that language.",
+  "to": "Most university classes were conducted in Latin and most important documents were written in that language.", "expect": 1},
+ {"item": "6-0585 d274 n2 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "대부분의 대학 수업은 라틴어로 했고 모든 중요한 문서들은 그 언어로 씌어졌다.",
+  "to": "대부분의 대학 수업은 라틴어로 했고 대부분의 중요한 문서들은 그 언어로 씌어졌다.", "expect": 1}
+]

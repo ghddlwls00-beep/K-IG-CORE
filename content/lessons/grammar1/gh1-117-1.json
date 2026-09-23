@@ -48,7 +48,10 @@
         },
         {
           "n": "4",
-          "text": "Isn't Sophia off duty today?"
+          "text": "Isn't Sophia off duty today?",
+          "alternatives": [
+            "Is Sophia not off duty today?"
+          ]
         },
         {
           "n": "5",
@@ -85,7 +88,13 @@
         },
         {
           "n": "11",
-          "text": "Don't officials have evidence?"
+          "text": "Don't officials have evidence?",
+          "alternatives": [
+            "Do officials not have evidence?",
+            "Don't officials have any evidence?",
+            "Don't the officials have evidence?",
+            "Don't the officials have any evidence?"
+          ]
         },
         {
           "n": "12",
@@ -97,29 +106,47 @@
         },
         {
           "n": "14",
-          "text": "The operation would last 24 to 72 hours."
+          "text": "The operation would last 24 to 72 hours.",
+          "alternatives": [
+            "The operation would last twenty-four to seventy-two hours.",
+            "The operation will last 24 to 72 hours.",
+            "The operation will last twenty-four to seventy-two hours."
+          ]
         },
         {
           "n": "15",
-          "text": "It could take up to ten days to complete."
+          "text": "It could take up to ten days to complete.",
+          "alternatives": [
+            "It could take up to 10 days to complete."
+          ]
         },
         {
           "n": "16",
-          "text": "Don't you have to go after them?"
+          "text": "Don't you have to go after them?",
+          "alternatives": [
+            "Do you not have to go after them?"
+          ]
         },
         {
           "n": "17",
-          "text": "Isn't the only proper defense an offense?"
+          "text": "Isn't the only proper defense an offense?",
+          "alternatives": [
+            "Is the only proper defense not an offense?"
+          ]
         },
         {
           "n": "18",
-          "text": "Where were five international peace keepers killed?"
+          "text": "Where were five international peacekeepers killed?",
+          "alternatives": [
+            "Where were 5 international peacekeepers killed?"
+          ]
         },
         {
           "n": "19",
           "text": "Weren't the other two Germans?",
           "alternatives": [
-            "Weren't the other two German?"
+            "Weren't the other two German?",
+            "Were the other two not Germans?"
           ]
         }
       ]

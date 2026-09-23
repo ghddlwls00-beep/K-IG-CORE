@@ -36,7 +36,10 @@
         },
         {
           "n": "3",
-          "text": "He is over fifty."
+          "text": "He is over fifty.",
+          "alternatives": [
+            "He is over 50."
+          ]
         },
         {
           "n": "4",
@@ -51,11 +54,18 @@
         },
         {
           "n": "6",
-          "text": "They had a disagreement over the best way to do it."
+          "text": "They had a disagreement over the best way to do it.",
+          "alternatives": [
+            "They had a difference of opinion over the best way to do it."
+          ]
         },
         {
           "n": "7",
-          "text": "All the presents are for you."
+          "text": "All the presents are for you.",
+          "alternatives": [
+            "All of the presents are for you.",
+            "The presents are all for you."
+          ]
         },
         {
           "n": "8",
@@ -79,7 +89,10 @@
         },
         {
           "n": "13",
-          "text": "He was in prison for 5 years."
+          "text": "He was in prison for 5 years.",
+          "alternatives": [
+            "He was in prison for five years."
+          ]
         },
         {
           "n": "14",

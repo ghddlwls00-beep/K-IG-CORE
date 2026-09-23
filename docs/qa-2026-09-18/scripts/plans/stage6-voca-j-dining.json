@@ -1,0 +1,6 @@
+[
+ {"item": "6-0659 mv3-31 단어판 — 옛 영국식 붙임표 'dining-room' → 표준 'dining room'", "files": ["content/lessons/phonics/mv3-31.json"],
+  "from": "dining-room", "to": "dining room", "expect": 1},
+ {"item": "6-0659 사전 항목 표제어·searchWord 'dining-room' → 'dining room' (사전에 'dining room' 항목 없음)", "files": ["content/voca_dictionary.json"],
+  "from": "dining-room", "to": "dining room", "expect": 2}
+]

@@ -61,34 +61,79 @@ export interface EvaluationResult {
   totalWords: number;
 }
 
+/** Figure/en/em dashes, the horizontal bar and the ellipsis: a break between words. */
+const WORD_BREAKS = /[‒-―…]/g;
+/** A hyphen standing alone between spaces (" - ", " -- ") is a dash, not part of a word. */
+const LONE_HYPHENS = /(^|\s)-{1,2}(?=\s|$)/g;
+
 /**
- * Normalizes contractions and punctuation for fair comparison.
- * e.g. "I'm" <-> "i am", "don't" <-> "do not", "it's" <-> "it is"
+ * Normalizes case and punctuation for fair comparison. Apostrophes inside a word stay (don't,
+ * i'm, o'clock) so that contractions can still be told apart; quote-like ones at a word's edge go.
  */
 function normalizeText(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[.,?!;:"'()]/g, "")
-    .replace(/\bi'm\b/g, "i am")
-    .replace(/\byou're\b/g, "you are")
-    .replace(/\bhe's\b/g, "he is")
-    .replace(/\bshe's\b/g, "she is")
-    .replace(/\bit's\b/g, "it is")
-    .replace(/\bwe're\b/g, "we are")
-    .replace(/\bthey're\b/g, "they are")
-    .replace(/\bdon't\b/g, "do not")
-    .replace(/\bdoesn't\b/g, "does not")
-    .replace(/\bdidn't\b/g, "did not")
-    .replace(/\bcan't\b/g, "cannot")
-    .replace(/\bcouldn't\b/g, "could not")
-    .replace(/\bwon't\b/g, "will not")
-    .replace(/\bwouldn't\b/g, "would not")
-    .replace(/\bshouldn't\b/g, "should not")
-    .replace(/\bhasn't\b/g, "has not")
-    .replace(/\bhaven't\b/g, "have not")
-    .replace(/\bhadn't\b/g, "had not")
+    // Curly quotes and apostrophes as the recogniser's straight ones (“junk” → junk, don’t → don't),
+    // and a dash or an ellipsis as a word break: "interest—the subject—is" is three words, not one
+    // that no recogniser returns. A perfect reading of 13 READING sentences scored 55-99 (6-1274).
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(WORD_BREAKS, " ")
+    .replace(LONE_HYPHENS, " ")
+    .replace(/[.,?!;:"()]/g, "")
+    .replace(/(^|\s)'+|'+(?=\s|$)/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/**
+ * A contraction and its full form. The eighteen rules that used to sit in normalizeText never
+ * fired — they ran after every apostrophe had been stripped, so "i'm" was already "im" — and
+ * "I am happy to see you" scored 31 against "I'm happy to see you" (6N-001, 3차 점검 #10).
+ */
+const CONTRACTIONS: [string, string[]][] = [
+  ["i'm", ["i", "am"]], ["you're", ["you", "are"]], ["he's", ["he", "is"]], ["she's", ["she", "is"]],
+  ["it's", ["it", "is"]], ["we're", ["we", "are"]], ["they're", ["they", "are"]],
+  ["don't", ["do", "not"]], ["doesn't", ["does", "not"]], ["didn't", ["did", "not"]],
+  ["can't", ["cannot"]], ["couldn't", ["could", "not"]], ["won't", ["will", "not"]],
+  ["wouldn't", ["would", "not"]], ["shouldn't", ["should", "not"]], ["hasn't", ["has", "not"]],
+  ["haven't", ["have", "not"]], ["hadn't", ["had", "not"]], ["isn't", ["is", "not"]],
+  ["aren't", ["are", "not"]], ["wasn't", ["was", "not"]], ["weren't", ["were", "not"]],
+];
+
+const hasRun = (words: string[], run: string[]) =>
+  words.some((_, i) => run.every((w, k) => words[i + k] === w));
+
+function replaceRun(words: string[], from: string[], to: string[]): string[] {
+  const out: string[] = [];
+  for (let i = 0; i < words.length; ) {
+    if (from.every((w, k) => words[i + k] === w)) {
+      out.push(...to);
+      i += from.length;
+    } else {
+      out.push(words[i]);
+      i++;
+    }
+  }
+  return out;
+}
+
+/**
+ * Brings the spoken words to the form the target uses — "i am" when the target says "I am",
+ * "i'm" when it says "I'm" — so either way of saying it matches. Only the spoken side changes:
+ * the target's words are also the words shown under the result and must keep their count.
+ * A target that uses both forms ("It is located … it's almost") is left alone: which spoken
+ * "it is" meant which cannot be told, and changing them all marked a perfect reading down.
+ */
+function matchContractions(spoken: string[], target: string[]): string[] {
+  let out = spoken;
+  for (const [short, full] of CONTRACTIONS) {
+    const targetShort = target.includes(short);
+    const targetFull = hasRun(target, full);
+    if (targetShort && !targetFull && hasRun(out, full)) out = replaceRun(out, full, [short]);
+    else if (targetFull && !targetShort && out.includes(short)) out = replaceRun(out, [short], full);
+  }
+  return out;
 }
 
 /**
@@ -118,8 +163,18 @@ function levenshteinDistance(s1: string, s2: string): number {
  * Evaluates spoken transcript against the target model sentence.
  */
 export function evaluatePronunciation(spoken: string, target: string): EvaluationResult {
-  const normSpoken = normalizeText(spoken);
-  const normTarget = normalizeText(target);
+  const targetTokens = normalizeText(target).split(/\s+/).filter(Boolean);
+  const spokenTokens = matchContractions(normalizeText(spoken).split(/\s+/).filter(Boolean), targetTokens);
+  // Compared without apostrophes, as before: "dont" from a recogniser still matches "don't".
+  const bare = (w: string) => w.replace(/'/g, "");
+  const normTarget = targetTokens.map(bare).join(" ");
+  const normSpoken = spokenTokens.map(bare).join(" ");
+  // The words shown under the result, split where normalizeText splits (after a dash) and without
+  // tokens that are only punctuation, so each shown word lines up with the word it was scored as.
+  const originalTargetWords = target
+    .replace(WORD_BREAKS, "$& ")
+    .split(/\s+/)
+    .filter((w) => normalizeText(w) !== "");
 
   if (!normSpoken) {
     return {
@@ -129,15 +184,14 @@ export function evaluatePronunciation(spoken: string, target: string): Evaluatio
       feedback: "목소리가 인식되지 않았습니다. 마이크를 확인하고 다시 말해보세요.",
       transcript: "",
       targetText: target,
-      wordAnalysis: target.split(/\s+/).map((w) => ({ word: w, matched: false })),
+      wordAnalysis: originalTargetWords.map((w) => ({ word: w, matched: false })),
       matchedCount: 0,
-      totalWords: target.split(/\s+/).length,
+      totalWords: originalTargetWords.length,
     };
   }
 
-  const targetWords = normTarget.split(/\s+/).filter(Boolean);
-  const spokenWords = normSpoken.split(/\s+/).filter(Boolean);
-  const originalTargetWords = target.split(/\s+/).filter(Boolean);
+  const targetWords = targetTokens.map(bare);
+  const spokenWords = spokenTokens.map(bare);
 
   // 1. Strict Sequential Alignment (어순 및 단어 일치도 정밀 추적)
   let spokenPtr = 0;

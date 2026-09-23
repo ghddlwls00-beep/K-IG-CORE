@@ -1,7 +1,7 @@
 /**
  * What to SAY for a VOCA headword that is written with a bracket (RE-005).
  *
- * Thirteen headwords carry a parenthetical so the card can teach two spellings
+ * Fourteen headwords carry a parenthetical so the card can teach two spellings
  * at once — `colo(u)r`, `gray(grey)`, `autumn(=fall)`. The bracket belongs on
  * the screen: it is the thing being taught. It does not belong in the audio,
  * where Ava reads the punctuation out loud.
@@ -17,8 +17,8 @@
  *   autumn(=fall)   not a spelling at all, but a synonym gloss
  *
  * "Delete the parenthetical" would give `enrol`, and "keep it" would give
- * `autumn=fall`. Either rule is wrong somewhere, so each of the thirteen is
- * written out and was checked against how the word is actually said. Eleven of
+ * `autumn=fall`. Either rule is wrong somewhere, so each of the fourteen is
+ * written out and was checked against how the word is actually said. Twelve of
  * the pairs are homophones, so the choice between them is only about which
  * spelling is standard; `afterward(s)` and `autumn(=fall)` are the two where
  * the reading genuinely had to be decided.
@@ -43,6 +43,7 @@ export const VOCA_SPEECH_FORMS: Record<string, string> = {
   "autumn(=fall)": "autumn",
   "hono(u)r": "honor",
   "dialog(ue)": "dialogue",
+  "labo(u)r": "labor",
 };
 
 /**

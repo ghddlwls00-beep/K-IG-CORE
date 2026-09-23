@@ -48,11 +48,17 @@
         },
         {
           "n": "26",
-          "text": "Neither do I."
+          "text": "Neither do I.",
+          "alternatives": [
+            "I don't either."
+          ]
         },
         {
           "n": "27",
-          "text": "Nobody likes it."
+          "text": "Nobody likes it.",
+          "alternatives": [
+            "No one likes it."
+          ]
         },
         {
           "n": "28",
@@ -68,7 +74,10 @@
         },
         {
           "n": "31",
-          "text": "I am home."
+          "text": "I am home.",
+          "alternatives": [
+            "I am at home."
+          ]
         },
         {
           "n": "32",
@@ -98,11 +107,19 @@
         },
         {
           "n": "37",
-          "text": "Who does?"
+          "text": "Who does?",
+          "alternatives": [
+            "Who likes it?",
+            "Who does like it?"
+          ]
         },
         {
           "n": "38",
-          "text": "Each student has his own room."
+          "text": "Each student has their own room.",
+          "alternatives": [
+            "Each student has his or her own room.",
+            "Each student has his own room."
+          ]
         },
         {
           "n": "39",
@@ -114,11 +131,17 @@
         },
         {
           "n": "41",
-          "text": "Each hated the other."
+          "text": "Each hated the other.",
+          "alternatives": [
+            "They hated each other."
+          ]
         },
         {
           "n": "42",
-          "text": "They loved each other."
+          "text": "They loved each other.",
+          "alternatives": [
+            "They loved one another."
+          ]
         },
         {
           "n": "43",

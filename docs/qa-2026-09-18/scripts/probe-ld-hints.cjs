@@ -35,8 +35,8 @@ const lessonOf = (id) => JSON.parse(fs.readFileSync(path.join(REPO, "content/les
 const scripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
 
 /** 화면에서 읽은 힌트 조각들이 강의 힌트 '전체' 인지(=안전장치) 판단하려면 전체 목록이 필요하다 */
-const chunksOf = (text) =>
-  String(text || "").split(/,|\.\s+|\.$|\s{2,}/).map((c) => c.trim().replace(/[.,]+$/, "").trim()).filter(Boolean);
+// 앱과 같은 쪼개기 — 6단계에서 앱이 같은 청크를 한 번만 남기고 천 단위 쉼표에서 자르지 않게 바뀌어 검사 복제를 그대로 씀
+const chunksOf = (text) => require("./lib/expectations.cjs").hintChunks(text);
 
 const READ_STEP2 = `(() => {
   const main = document.querySelector('main');

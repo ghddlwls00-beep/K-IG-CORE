@@ -97,9 +97,9 @@ const isKo = (s) => /[가-힣]/.test(s);
  */
 const hintChunks = (text) =>
   String(text || "")
-    .split(/,|\.\s+|\.$|\s{2,}/)
+    .split(/,(?!\d{3}(?!\d))|\.\s+|\.$|\s{2,}/) // 천 단위 쉼표("4,000")에서는 자르지 않음 (앱과 같음, 6단계 3차 점검 #4 N1)
     .map((chunk) => chunk.trim().replace(/[.,]+$/, "").trim())
-    .filter(Boolean);
+    .filter((chunk, index, all) => chunk && all.indexOf(chunk) === index); // 같은 청크는 한 번 (앱과 같음, 6단계)
 
 const squashHint = (value) => String(value).toLowerCase().replace(/[^a-z0-9]/g, "");
 
@@ -108,12 +108,13 @@ const PRONOUN_I = /^I(?:'m|'ve|'ll|'d)?$/;
 function hintsForSentence(sentence, chunks) {
   if (!sentence || !chunks.length) return [];
   const squashed = squashHint(sentence);
+  const sentenceNumbers = String(sentence).replace(/(\d),(?=\d{3}(?!\d))/g, "$1"); // 문장의 "4,000" 도 "4000" 으로 (앱과 같음)
   const relevant = chunks.filter((chunk) => {
     const whole = squashHint(chunk);
     if (whole.length >= 3 && squashed.includes(whole)) return true;
     return chunk.split(/\s+/).some((token) => {
       const bare = token.replace(/[^A-Za-z0-9'’.]/g, "").replace(/[.'’]+$/, "");
-      if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentence);
+      if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentenceNumbers);
       const letters = bare.replace(/[^A-Za-z]/g, "");
       if (letters.length < (/^[A-Z]/.test(bare) ? 3 : 5)) return false;
       return squashed.includes(squashHint(bare));
@@ -270,8 +271,14 @@ function expected(course, id) {
   } else if (course === "phonics") {
     for (const w of gridWords(d)) {
       texts.push({ kind: "word", text: w });
-      addClip(w);
-      if (vocaSpeech && typeof vocaSpeech.vocaSpeechForm === "function") addClip(vocaSpeech.vocaSpeechForm(w));
+      // Every speaker button for a grid word speaks vocaSpeechForm(word) — LessonBody.tsx:291,
+      // PhonicsLearningView.tsx:143 · 183 — and the generator keys every text through the same
+      // table (generate-azure-ava.mjs:315, RE-005), so a bracketed headword such as "labo(u)r" is
+      // never requested and never generated as itself. Expect the raw word's clip only when the
+      // table leaves it unchanged; otherwise the spoken form is the one clip (6단계 끝: mv3-04
+      // labour → labo(u)r showed as a new missing-clip for a file nothing asks for).
+      const spoken = vocaSpeech && typeof vocaSpeech.vocaSpeechForm === "function" ? vocaSpeech.vocaSpeechForm(w) : w;
+      addClip(spoken);
       // STEP 1's collocation card has its own 청취 button, and it speaks the PRESET phrase from
       // vocaUtils COLLOCATION_PRESETS — not the grid word — so its clip is legitimate even though
       // no word of this lesson hashes to it (same shape as the LISTENING liaison presets).

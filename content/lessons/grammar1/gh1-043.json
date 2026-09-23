@@ -48,7 +48,10 @@
         },
         {
           "n": "4",
-          "text": "Is it a book?"
+          "text": "Is it a book?",
+          "alternatives": [
+            "Is that a book?"
+          ]
         },
         {
           "n": "5",
@@ -102,7 +105,9 @@
           "n": "14",
           "text": "Isn't it a book?",
           "alternatives": [
-            "Is it not a book?"
+            "Is it not a book?",
+            "Isn't that a book?",
+            "Is that not a book?"
           ]
         },
         {
@@ -116,7 +121,9 @@
           "n": "16",
           "text": "Aren't those books?",
           "alternatives": [
-            "Are those not books?"
+            "Are those not books?",
+            "Aren't they books?",
+            "Are they not books?"
           ]
         },
         {
@@ -130,7 +137,9 @@
           "n": "18",
           "text": "Wasn't it a book?",
           "alternatives": [
-            "Was it not a book?"
+            "Was it not a book?",
+            "Wasn't that a book?",
+            "Was that not a book?"
           ]
         },
         {
@@ -144,7 +153,9 @@
           "n": "20",
           "text": "Weren't those books?",
           "alternatives": [
-            "Were those not books?"
+            "Were those not books?",
+            "Weren't they books?",
+            "Were they not books?"
           ]
         },
         {
@@ -167,7 +178,10 @@
         },
         {
           "n": "24",
-          "text": "Does she love your brother?"
+          "text": "Does she love your brother?",
+          "alternatives": [
+            "Does she love your brothers?"
+          ]
         },
         {
           "n": "25",
@@ -175,7 +189,10 @@
         },
         {
           "n": "26",
-          "text": "Does she love his brother?"
+          "text": "Does she love his brother?",
+          "alternatives": [
+            "Does she love his brothers?"
+          ]
         },
         {
           "n": "27",
@@ -188,7 +205,9 @@
           "n": "28",
           "text": "Doesn't she love your brother?",
           "alternatives": [
-            "Does she not love your brother?"
+            "Does she not love your brother?",
+            "Doesn't she love your brothers?",
+            "Does she not love your brothers?"
           ]
         },
         {
@@ -202,14 +221,18 @@
           "n": "30",
           "text": "Doesn't she love his brother?",
           "alternatives": [
-            "Does she not love his brother?"
+            "Does she not love his brother?",
+            "Doesn't she love his brothers?",
+            "Does she not love his brothers?"
           ]
         },
         {
           "n": "31",
           "text": "Doesn't he love her sister?",
           "alternatives": [
-            "Does he not love her sister?"
+            "Does he not love her sister?",
+            "Doesn't he love her younger sister?",
+            "Does he not love her younger sister?"
           ]
         },
         {
@@ -218,7 +241,10 @@
         },
         {
           "n": "33",
-          "text": "It is yours."
+          "text": "It is yours.",
+          "alternatives": [
+            "That is yours."
+          ]
         },
         {
           "n": "34",
@@ -233,7 +259,10 @@
         },
         {
           "n": "36",
-          "text": "It is hers."
+          "text": "It is hers.",
+          "alternatives": [
+            "That is hers."
+          ]
         },
         {
           "n": "37",
@@ -241,7 +270,10 @@
         },
         {
           "n": "38",
-          "text": "Is it yours?"
+          "text": "Is it yours?",
+          "alternatives": [
+            "Is that yours?"
+          ]
         },
         {
           "n": "39",

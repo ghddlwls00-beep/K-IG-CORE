@@ -60,7 +60,10 @@
         },
         {
           "n": "7",
-          "text": "He has a bicycle."
+          "text": "He has a bicycle.",
+          "alternatives": [
+            "He has a bike."
+          ]
         },
         {
           "n": "8",
@@ -84,7 +87,10 @@
         },
         {
           "n": "13",
-          "text": "Were there houses?"
+          "text": "Were there houses?",
+          "alternatives": [
+            "Were there any houses?"
+          ]
         },
         {
           "n": "14",
@@ -92,7 +98,10 @@
         },
         {
           "n": "15",
-          "text": "Are there dreams?"
+          "text": "Are there dreams?",
+          "alternatives": [
+            "Are there any dreams?"
+          ]
         },
         {
           "n": "16",
@@ -108,7 +117,10 @@
         },
         {
           "n": "19",
-          "text": "Do they have friends?"
+          "text": "Do they have friends?",
+          "alternatives": [
+            "Do they have any friends?"
+          ]
         },
         {
           "n": "20",
@@ -128,7 +140,10 @@
         },
         {
           "n": "24",
-          "text": "He knows it."
+          "text": "He knows it.",
+          "alternatives": [
+            "He knows that."
+          ]
         },
         {
           "n": "25",
@@ -144,15 +159,24 @@
         },
         {
           "n": "28",
-          "text": "Does he want it?"
+          "text": "Does he want it?",
+          "alternatives": [
+            "Does he want that?"
+          ]
         },
         {
           "n": "29",
-          "text": "Do you want it?"
+          "text": "Do you want it?",
+          "alternatives": [
+            "Do you want that?"
+          ]
         },
         {
           "n": "30",
-          "text": "I wanted it."
+          "text": "I wanted it.",
+          "alternatives": [
+            "I wanted that."
+          ]
         },
         {
           "n": "31",
@@ -160,11 +184,17 @@
         },
         {
           "n": "32",
-          "text": "He knew it."
+          "text": "He knew it.",
+          "alternatives": [
+            "He knew that."
+          ]
         },
         {
           "n": "33",
-          "text": "They wanted it."
+          "text": "They wanted it.",
+          "alternatives": [
+            "They wanted that."
+          ]
         },
         {
           "n": "34",
@@ -172,7 +202,10 @@
         },
         {
           "n": "35",
-          "text": "Did I want it?"
+          "text": "Did I want it?",
+          "alternatives": [
+            "Did I want that?"
+          ]
         },
         {
           "n": "36",
@@ -184,19 +217,34 @@
         },
         {
           "n": "38",
-          "text": "Wasn't there water?"
+          "text": "Wasn't there water?",
+          "alternatives": [
+            "Was there not water?",
+            "Wasn't there any water?"
+          ]
         },
         {
           "n": "39",
-          "text": "Weren't there girls?"
+          "text": "Weren't there girls?",
+          "alternatives": [
+            "Were there not girls?",
+            "Weren't there any girls?"
+          ]
         },
         {
           "n": "40",
-          "text": "Didn't I have money?"
+          "text": "Didn't I have money?",
+          "alternatives": [
+            "Did I not have money?",
+            "Didn't I have any money?"
+          ]
         },
         {
           "n": "41",
-          "text": "Didn't you have a vision?"
+          "text": "Didn't you have a vision?",
+          "alternatives": [
+            "Did you not have a vision?"
+          ]
         },
         {
           "n": "42",
@@ -218,15 +266,24 @@
         },
         {
           "n": "44",
-          "text": "Didn't you love her?"
+          "text": "Didn't you love her?",
+          "alternatives": [
+            "Did you not love her?"
+          ]
         },
         {
           "n": "45",
-          "text": "Didn't he know her?"
+          "text": "Didn't he know her?",
+          "alternatives": [
+            "Did he not know her?"
+          ]
         },
         {
           "n": "46",
-          "text": "Didn't they know me?"
+          "text": "Didn't they know me?",
+          "alternatives": [
+            "Did they not know me?"
+          ]
         }
       ]
     },

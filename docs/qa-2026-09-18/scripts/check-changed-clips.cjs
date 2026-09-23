@@ -6,6 +6,11 @@
  * 대상 = ld-en-changes.cjs 가 커밋된 판과 비교해 뽑은 "영어가 바뀐 문장"(LISTENING 대본 + READING readingSentences)
  *      + 그 LISTENING 문장에서 STEP 3 연음 클리닉이 소리 내는 조각(generateLiaisonPoints — 앱이 부르는 그 함수)
  *      + GRAMMAR 의 바뀐 영어 모범 답안, STUDENT 의 바뀐 영어 문장과 한국어 줄(STUDENT 는 한국어도 소리 냄)
+ *      + (6단계에서 넓힘) READING 핵심 어휘 낱말 — ReadingLearningView playWordAudio(kw.word), kw 는 강의 파일의
+ *        readingVocabulary[].word(14개일 때). 커밋된 판에 없던 낱말만.
+ *      + (6단계에서 넓힘) VOCA 단어판 낱말 — PhonicsLearningView speakText(vocaSpeechForm(word)) 가 말하는 꼴.
+ *        wordgrid rows 에서 커밋된 판에 없던 낱말만(예: cooky → cookie, labour → labo(u)r 는 'labor' 로 말함).
+ *        VOCA 한국어 뜻 · searchWord · 어원 풀이는 소리 내지 않아 뺌(6-0633 · 6-0605 기록).
  * 확인하는 곳 = public/audio/azure-ava/v1/<키>.mp3 (생성기가 쓰는 곳). R2 에 올리는 것은 소유자가 한다.
  * 운영 주소로 확인하는 방법은 넣지 않았다: 미디어 문지기가 이용권 없는 요청에 파일이 있든 없든 403 을
  * 먼저 돌려주므로(mediaAccess.ts), 운영의 403 은 "있음" 의 증거가 못 된다.
@@ -58,6 +63,36 @@ for (const f of changedFiles) {
 }
 
 /**
+ * 6단계에서 넓힘 — READING 핵심 어휘 낱말과 VOCA 단어판 낱말. 둘 다 "커밋된 판에 없던 글" 만 넣는다(자리 이동은 클립과 무관).
+ * 같은 글이 여러 파일에 있으면(prNNN · prNNN-1) 한 번만 센다 — 같은 글 = 같은 클립.
+ */
+const { vocaSpeechForm } = loadTs(path.join(REPO, "src/lib/vocaSpeech.ts"));
+const gitShow = (f) => { try { return JSON.parse(execFileSync("git", ["show", `HEAD:${f}`], { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 }).replace(/^﻿/, "")); } catch { return null; } };
+const seenNew = new Set();
+let readingWords = 0, vocaWords = 0;
+for (const f of execFileSync("git", ["diff", "--name-only", "--", "content/lessons/reading"], { cwd: REPO, encoding: "utf8" }).trim().split(/\r?\n/).filter((x) => /\/pr\d+(-1)?\.json$/.test(x))) {
+  const words = (d) => ((d && d.readingVocabulary) || []).map((v) => v && v.word).filter(Boolean);
+  const was = new Set(words(gitShow(f)));
+  for (const w of words(JSON.parse(fs.readFileSync(path.join(REPO, f), "utf8")))) {
+    if (was.has(w) || seenNew.has(`r:${w}`)) continue;
+    seenNew.add(`r:${w}`);
+    targets.push({ where: `${path.basename(f, ".json")} 낱말`, text: w });
+    readingWords++;
+  }
+}
+for (const f of execFileSync("git", ["diff", "--name-only", "--", "content/lessons/phonics"], { cwd: REPO, encoding: "utf8" }).trim().split(/\r?\n/).filter((x) => x.endsWith(".json"))) {
+  const gridWords = (d) => ((d && d.blocks) || []).filter((b) => b.type === "wordgrid").flatMap((b) => (b.rows || []).flat()).filter((w) => typeof w === "string" && w.trim());
+  const was = new Set(gridWords(gitShow(f)));
+  for (const w of gridWords(JSON.parse(fs.readFileSync(path.join(REPO, f), "utf8")))) {
+    const spoken = vocaSpeechForm(w);
+    if (was.has(w) || seenNew.has(`v:${spoken}`)) continue;
+    seenNew.add(`v:${spoken}`);
+    targets.push({ where: `${path.basename(f, ".json")} 단어 ${w}`, text: spoken });
+    vocaWords++;
+  }
+}
+
+/**
  * 있는 곳: 로컬 public/audio(새로 만든 것 — 소유자가 R2 에 올려야 함) 또는 R2 버킷(이미 올라가 있음).
  * 버킷 목록은 generate-azure-ava.mjs 의 listUploadedKeys 와 같은 방식으로 읽기만 한다(ListObjectsV2).
  * 자격 증명이 없으면 로컬만 보고, 그렇다고 크게 알린다. 실행: node --env-file=.env.local check-changed-clips.cjs
@@ -95,8 +130,8 @@ async function bucketKeys() {
     console.log(`${where.padEnd(10)} ${t.where.padEnd(22)} ${key}  ${JSON.stringify(normalizeUnifiedSpeechText(t.text).slice(0, 60))}`);
   }
   const sentences = changes.en.length;
-  const liaison = targets.length - sentences - grammarChanged - studentChanged;
-  console.log(`\nLISTENING·READING 영어 ${sentences}개 + 연음 조각 ${liaison}개 + GRAMMAR 모범 답안 ${grammarChanged}개 + STUDENT 영어·한국어 ${studentChanged}개 = 확인 ${targets.length}개`);
+  const liaison = targets.length - sentences - grammarChanged - studentChanged - readingWords - vocaWords;
+  console.log(`\nLISTENING·READING 영어 ${sentences}개 + 연음 조각 ${liaison}개 + GRAMMAR 모범 답안 ${grammarChanged}개 + STUDENT 영어·한국어 ${studentChanged}개 + READING 낱말 ${readingWords}개 + VOCA 단어판 ${vocaWords}개 = 확인 ${targets.length}개`);
   console.log(`  R2 에 이미 있음 ${bucket} · 로컬에만 있음(업로드 필요) ${local} · 클립이 없는 것: ${missing}건${inBucket ? ` (버킷 ${inBucket.size}개 확인)` : " (로컬만 봄)"}`);
   process.exit(missing ? 1 : 0);
 })();

@@ -237,9 +237,21 @@ export function generateLiaisonPoints(sentence: string): LiaisonCard[] {
 /**
  * The words of a sentence as dictation tokens: trailing punctuation dropped,
  * apostrophes inside words kept ("I'm", "don't").
+ *
+ * A clock time ("12:30") and "a.m." / "p.m." are one spoken word each and one
+ * tile each. The plain word pattern cut them at the colon and the dots, so
+ * "Lunchtime starts at 12:30 p.m. and ends at 1:30 p.m." became 14 tiles of
+ * which 8 were "12", "30", "p", "m" fragments the learner had to tap in order
+ * (6-1688 — 10 STUDENT sentences and 19 LISTENING rows carry a time).
+ *
+ * A number with thousands separators ("2,000", "$65,000") is one tile for the
+ * same reason: the comma split it into "2" and "000", and nobody hears "000"
+ * (6-1755 — 3 STUDENT sentences and 21 LISTENING rows).
  */
+const DICTATION_TOKEN = /\d{1,2}:\d{2}|\d{1,3}(?:,\d{3})+|[AaPp]\.[Mm]\.|[a-zA-Z0-9'’\-]+/g;
+
 function dictationWords(sentence: string): string[] {
-  return (sentence.match(/[a-zA-Z0-9'’\-]+/g) || []).map((w) => w.trim()).filter(Boolean);
+  return (sentence.match(DICTATION_TOKEN) || []).map((w) => w.trim()).filter(Boolean);
 }
 
 /**

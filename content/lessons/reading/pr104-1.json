@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "멕시코에는 여러 부류의 방문객이 모여든다. 한 부류는 예술가들이다. 멕시코 문화를 동경하는 그들은 자신이 글로 쓰거나 그리는 대상 가까이에 있고 싶어 한다. 또 한 부류는 줄어든 수입으로 살아야 하는 은퇴자들이다. 그들은 긴 낮잠을 즐기는 느긋한 생활 방식을 좋아하고 온화한 기후를 즐긴다. 세 번째 부류는 화려한 밤 문화가 있는 휴양지에 끌린다. 아카풀코에서 그들은 밤새 놀고 따뜻한 바닷물에서 수영할 수 있다."
+      "text": "멕시코에는 여러 부류의 방문객이 모여든다. 한 부류는 예술가들이다. 멕시코 문화를 동경하는 그들은 자신이 글로 쓰거나 그리는 대상 가까이에 있고 싶어 한다. 또 한 부류는 줄어든 수입으로 살아야 하는 은퇴자들이다. 그들은 느긋한 생활 방식을 좋아하고 온화한 기후를 즐긴다. 세 번째 부류는 화려한 밤 문화가 있는 휴양지에 끌린다. 아카풀코에서 그들은 밤새 놀고 따뜻한 바닷물에서 수영할 수 있다."
     },
     {
       "type": "choice",
@@ -52,26 +52,31 @@
     },
     {
       "id": "reading-104-s002",
-      "english": "One group is composed of artists. As admirers of the Mexican culture, they want to be close to the subjects they are writing about or painting.",
-      "korean": "한 부류는 예술가들이다. 멕시코 문화를 동경하는 그들은 자신이 글로 쓰거나 그리는 대상 가까이에 있고 싶어 한다."
+      "english": "One group is composed of artists.",
+      "korean": "한 부류는 예술가들이다."
     },
     {
       "id": "reading-104-s003",
+      "english": "As admirers of the Mexican culture, they want to be close to the subjects they are writing about or painting.",
+      "korean": "멕시코 문화를 동경하는 그들은 자신이 글로 쓰거나 그리는 대상 가까이에 있고 싶어 한다."
+    },
+    {
+      "id": "reading-104-s004",
       "english": "Another group consists of retirees who also need to live on reduced incomes.",
       "korean": "또 한 부류는 줄어든 수입으로 살아야 하는 은퇴자들이다."
     },
     {
-      "id": "reading-104-s004",
-      "english": "They like the unhurried way of life with its long afternoon nap and they enjoy the temperate climate.",
-      "korean": "그들은 긴 낮잠을 즐기는 느긋한 생활 방식을 좋아하고 온화한 기후를 즐긴다."
+      "id": "reading-104-s005",
+      "english": "They like the unhurried way of life and they enjoy the temperate climate.",
+      "korean": "그들은 느긋한 생활 방식을 좋아하고 온화한 기후를 즐긴다."
     },
     {
-      "id": "reading-104-s005",
+      "id": "reading-104-s006",
       "english": "The third group is attracted by the resort with its colorful night life.",
       "korean": "세 번째 부류는 화려한 밤 문화가 있는 휴양지에 끌린다."
     },
     {
-      "id": "reading-104-s006",
+      "id": "reading-104-s007",
       "english": "In Acapulco, they can play all night, and swim in the warm ocean water.",
       "korean": "아카풀코에서 그들은 밤새 놀고 따뜻한 바닷물에서 수영할 수 있다."
     }
@@ -117,7 +122,7 @@
       "word": "different",
       "lemma": "different",
       "partOfSpeech": "adj.",
-      "korean": "다른",
+      "korean": "여러 가지의, 다양한 (different types of ~ 여러 부류의 ~)",
       "score": 95,
       "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 95점)",
       "examTags": [

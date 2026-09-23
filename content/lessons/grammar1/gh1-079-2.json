@@ -32,7 +32,11 @@
         },
         {
           "n": "24",
-          "text": "My dog ate all the bones, didn't it?"
+          "text": "My dog ate all the bones, didn't it?",
+          "alternatives": [
+            "My dog ate all the bones, didn't he?",
+            "My dog ate all the bones, didn't she?"
+          ]
         },
         {
           "n": "25",
@@ -44,7 +48,10 @@
         },
         {
           "n": "27",
-          "text": "Are you kidding?"
+          "text": "Are you kidding?",
+          "alternatives": [
+            "Are you kidding me?"
+          ]
         },
         {
           "n": "28",
@@ -52,15 +59,24 @@
         },
         {
           "n": "29",
-          "text": "When do you think about that night?"
+          "text": "When do you think about that night?",
+          "alternatives": [
+            "When do you think about the night?"
+          ]
         },
         {
           "n": "30",
-          "text": "You met someone, didn't you?"
+          "text": "You met someone, didn't you?",
+          "alternatives": [
+            "You have met someone, haven't you?"
+          ]
         },
         {
           "n": "31",
-          "text": "He meets someone, doesn't he?"
+          "text": "He meets someone, doesn't he?",
+          "alternatives": [
+            "He is seeing someone, isn't he?"
+          ]
         },
         {
           "n": "32",
@@ -80,11 +96,17 @@
         },
         {
           "n": "35",
-          "text": "Did you meet her parents?"
+          "text": "Did you meet her parents?",
+          "alternatives": [
+            "Have you met her parents?"
+          ]
         },
         {
           "n": "36",
-          "text": "Aren't you working this weekend?"
+          "text": "Aren't you working this weekend?",
+          "alternatives": [
+            "Are you not working this weekend?"
+          ]
         },
         {
           "n": "37",
@@ -96,7 +118,10 @@
         },
         {
           "n": "39",
-          "text": "Who talks about this?"
+          "text": "Who talks about this?",
+          "alternatives": [
+            "Who is talking about this?"
+          ]
         },
         {
           "n": "40",

@@ -62,7 +62,8 @@
           "n": "9",
           "text": "You should come here by ten o'clock.",
           "alternatives": [
-            "You must come here by ten o'clock."
+            "You must come here by ten o'clock.",
+            "You should come here by 10 o'clock."
           ]
         },
         {
@@ -86,13 +87,17 @@
         },
         {
           "n": "14",
-          "text": "He would go to the library when he prepared for the examination."
+          "text": "He would go to the library when he prepared for the examination.",
+          "alternatives": [
+            "He would go to the library when he prepared for the exam."
+          ]
         },
         {
           "n": "15",
           "text": "He will be fifteen tomorrow.",
           "alternatives": [
-            "He will turn fifteen tomorrow."
+            "He will turn fifteen tomorrow.",
+            "He will be 15 tomorrow."
           ]
         },
         {
@@ -113,10 +118,7 @@
         },
         {
           "n": "20",
-          "text": "He will solve the problem.",
-          "alternatives": [
-            "He would solve the problem."
-          ]
+          "text": "He will solve the problem."
         },
         {
           "n": "21",

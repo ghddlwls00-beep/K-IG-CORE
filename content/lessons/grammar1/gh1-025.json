@@ -5,7 +5,7 @@
   "variant": "script",
   "pairId": "gh1-024",
   "title": "::: K-IG 교육 영어듣기훈련프로그램 | 기초2 | 제 001 회 강의 :::",
-  "label": "[ Page 024 ]",
+  "label": "[ Page 025 ]",
   "menuLabel": "[ gh1-025 ]",
   "unit": 25,
   "part": null,
@@ -21,7 +21,7 @@
   "blocks": [
     {
       "type": "heading",
-      "text": "[ Page 024 ]"
+      "text": "[ Page 025 ]"
     },
     {
       "type": "instruction",
@@ -52,7 +52,10 @@
         },
         {
           "n": "30",
-          "text": "Is it a book?"
+          "text": "Is it a book?",
+          "alternatives": [
+            "Is that a book?"
+          ]
         },
         {
           "n": "31",
@@ -136,7 +139,9 @@
           "n": "46",
           "text": "Isn't it a book?",
           "alternatives": [
-            "Is it not a book?"
+            "Is it not a book?",
+            "Isn't that a book?",
+            "Is that not a book?"
           ]
         },
         {
@@ -150,7 +155,9 @@
           "n": "48",
           "text": "Aren't those books?",
           "alternatives": [
-            "Are those not books?"
+            "Are those not books?",
+            "Aren't they books?",
+            "Are they not books?"
           ]
         },
         {

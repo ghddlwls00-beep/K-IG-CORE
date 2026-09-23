@@ -67,7 +67,11 @@
         },
         {
           "n": "78",
-          "text": "It is high noon in Los Angeles, isn't it?"
+          "text": "It is high noon in Los Angeles, isn't it?",
+          "alternatives": [
+            "It is noon in Los Angeles now, isn't it?",
+            "It is noon in Los Angeles, isn't it?"
+          ]
         },
         {
           "n": "79",
@@ -75,7 +79,12 @@
         },
         {
           "n": "80",
-          "text": "They are probably up."
+          "text": "They are probably up.",
+          "alternatives": [
+            "They are probably awake.",
+            "They are probably still up.",
+            "They are probably still awake."
+          ]
         },
         {
           "n": "81",
@@ -103,7 +112,11 @@
         },
         {
           "n": "87",
-          "text": "That could reduce the fear of suspects."
+          "text": "That could reduce suspects' fear.",
+          "alternatives": [
+            "That could reduce the suspects' fear.",
+            "That could reduce the fear of the suspects."
+          ]
         },
         {
           "n": "88",
@@ -121,7 +134,11 @@
         },
         {
           "n": "90",
-          "text": "How did the government boost its sales?"
+          "text": "How did the government boost its sales?",
+          "alternatives": [
+            "How did the government increase its sales?",
+            "How did the government raise its sales?"
+          ]
         },
         {
           "n": "91",
@@ -144,7 +161,10 @@
         },
         {
           "n": "95",
-          "text": "I totally won the bet."
+          "text": "I totally won the bet.",
+          "alternatives": [
+            "I completely won the bet."
+          ]
         },
         {
           "n": "96",
@@ -156,11 +176,18 @@
         },
         {
           "n": "98",
-          "text": "Who offered a better deal?"
+          "text": "Who offered a better deal?",
+          "alternatives": [
+            "Who made a better offer?",
+            "Who made a better proposal?"
+          ]
         },
         {
           "n": "99",
-          "text": "All 1900 Olympia outlets will be serving it within 60 days, won't they?"
+          "text": "All 1,900 Olympia outlets will be serving it within 60 days, won't they?",
+          "alternatives": [
+            "All 1,900 Olympia outlets will be serving it within sixty days, won't they?"
+          ]
         },
         {
           "n": "100",
@@ -168,7 +195,10 @@
         },
         {
           "n": "101",
-          "text": "Didn't it try to get a temporary restraining order?"
+          "text": "Didn't it try to get a temporary restraining order?",
+          "alternatives": [
+            "Did it not try to get a temporary restraining order?"
+          ]
         },
         {
           "n": "102",
@@ -192,7 +222,11 @@
         },
         {
           "n": "106",
-          "text": "You can't attend the party because you have a previous engagement, can you?"
+          "text": "You can't attend the party because you have a previous engagement, can you?",
+          "alternatives": [
+            "You can't attend the party because you have a prior engagement, can you?",
+            "You can't attend the party because you have a previous appointment, can you?"
+          ]
         },
         {
           "n": "107",
@@ -203,7 +237,10 @@
         },
         {
           "n": "108",
-          "text": "Didn't you drop your handkerchief?"
+          "text": "Didn't you drop your handkerchief?",
+          "alternatives": [
+            "Did you not drop your handkerchief?"
+          ]
         }
       ]
     },

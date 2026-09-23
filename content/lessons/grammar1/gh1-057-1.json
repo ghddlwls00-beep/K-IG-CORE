@@ -36,7 +36,10 @@
       "items": [
         {
           "n": "1",
-          "text": "Why does she go there?"
+          "text": "Why does she go there?",
+          "alternatives": [
+            "Why is she going there?"
+          ]
         },
         {
           "n": "2",
@@ -91,7 +94,10 @@
         },
         {
           "n": "11",
-          "text": "This lady did it."
+          "text": "This lady did it.",
+          "alternatives": [
+            "This lady did that."
+          ]
         },
         {
           "n": "12",
@@ -102,7 +108,10 @@
         },
         {
           "n": "13",
-          "text": "Why are you studying it?"
+          "text": "Why are you studying it?",
+          "alternatives": [
+            "Why are you studying that?"
+          ]
         },
         {
           "n": "14",

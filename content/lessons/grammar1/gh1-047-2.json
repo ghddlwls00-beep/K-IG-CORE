@@ -32,7 +32,10 @@
         },
         {
           "n": "101",
-          "text": "It isn't a book, is it?"
+          "text": "It isn't a book, is it?",
+          "alternatives": [
+            "That isn't a book, is it?"
+          ]
         },
         {
           "n": "102",
@@ -40,7 +43,10 @@
         },
         {
           "n": "103",
-          "text": "Those are not books, are they?"
+          "text": "Those are not books, are they?",
+          "alternatives": [
+            "They are not books, are they?"
+          ]
         },
         {
           "n": "104",
@@ -60,7 +66,10 @@
         },
         {
           "n": "108",
-          "text": "She loves your brother, doesn't she?"
+          "text": "She loves your brother, doesn't she?",
+          "alternatives": [
+            "She loves your brothers, doesn't she?"
+          ]
         },
         {
           "n": "109",
@@ -68,11 +77,17 @@
         },
         {
           "n": "110",
-          "text": "She loves his brother, doesn't she?"
+          "text": "She loves his brother, doesn't she?",
+          "alternatives": [
+            "She loves his brothers, doesn't she?"
+          ]
         },
         {
           "n": "111",
-          "text": "He loves her sister, doesn't he?"
+          "text": "He loves her sister, doesn't he?",
+          "alternatives": [
+            "He loves her younger sister, doesn't he?"
+          ]
         },
         {
           "n": "112",
@@ -81,19 +96,13 @@
         {
           "n": "113",
           "text": "He doesn't love me, does he?"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "113He doesn't love me, does he?."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "114",
-          "text": "She doesn't love your brother, does she?"
+          "text": "She doesn't love your brother, does she?",
+          "alternatives": [
+            "She doesn't love your brothers, does she?"
+          ]
         },
         {
           "n": "115",
@@ -101,11 +110,17 @@
         },
         {
           "n": "116",
-          "text": "She doesn't love his brother, does she?"
+          "text": "She doesn't love his brother, does she?",
+          "alternatives": [
+            "She doesn't love his brothers, does she?"
+          ]
         },
         {
           "n": "117",
-          "text": "Your sister doesn't love my brother, does she?"
+          "text": "Your sister doesn't love my brother, does she?",
+          "alternatives": [
+            "Your sister doesn't love my brothers, does she?"
+          ]
         }
       ]
     },

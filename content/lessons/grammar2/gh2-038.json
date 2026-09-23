@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "1",
-          "text": "He finished it working 15 hours a day."
+          "text": "He finished it working 15 hours a day.",
+          "alternatives": [
+            "He finished it working fifteen hours a day."
+          ]
         },
         {
           "n": "2",
@@ -91,7 +94,10 @@
         },
         {
           "n": "15",
-          "text": "He put off going to Pusan."
+          "text": "He put off going to Busan.",
+          "alternatives": [
+            "He put off going to Pusan."
+          ]
         },
         {
           "n": "16",

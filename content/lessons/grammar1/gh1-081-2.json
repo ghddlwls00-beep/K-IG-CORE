@@ -28,15 +28,24 @@
       "items": [
         {
           "n": "21",
-          "text": "What did you have for breakfast?"
+          "text": "What did you have for breakfast?",
+          "alternatives": [
+            "What did you eat for breakfast?"
+          ]
         },
         {
           "n": "22",
-          "text": "What time do you have lunch?"
+          "text": "What time do you have lunch?",
+          "alternatives": [
+            "What time do you eat lunch?"
+          ]
         },
         {
           "n": "23",
-          "text": "Where does he have lunch?"
+          "text": "Where does he have lunch?",
+          "alternatives": [
+            "Where does he eat lunch?"
+          ]
         },
         {
           "n": "24",
@@ -50,7 +59,12 @@
           "n": "26",
           "text": "When does he return to the U.S.?",
           "alternatives": [
-            "When does he go back to the U.S.?"
+            "When does he go back to the U.S.?",
+            "When does he return to the United States?",
+            "When does he return to America?",
+            "When does he go back to the United States?",
+            "When does he go back to America?",
+            "When is he going back to the U.S.?"
           ]
         },
         {
@@ -69,19 +83,32 @@
         },
         {
           "n": "29",
-          "text": "Aren't you happy in Korea?"
+          "text": "Aren't you happy in Korea?",
+          "alternatives": [
+            "Are you not happy in Korea?"
+          ]
         },
         {
           "n": "30",
-          "text": "Who shouts?"
+          "text": "Who shouts?",
+          "alternatives": [
+            "Who yells?",
+            "Who is shouting?"
+          ]
         },
         {
           "n": "31",
-          "text": "Who cries?"
+          "text": "Who cries?",
+          "alternatives": [
+            "Who is crying?"
+          ]
         },
         {
           "n": "32",
-          "text": "Do your children cry often?"
+          "text": "Do your children cry often?",
+          "alternatives": [
+            "Do your children often cry?"
+          ]
         },
         {
           "n": "33",
@@ -93,18 +120,23 @@
         },
         {
           "n": "35",
-          "text": "Your girlfriend whispers but your wife shouts."
+          "text": "The child whispers, but his brother shouts."
         },
         {
           "n": "36",
           "text": "Are you mad?",
           "alternatives": [
-            "Were you mad?"
+            "Were you mad?",
+            "Are you angry?",
+            "Were you angry?"
           ]
         },
         {
           "n": "37",
-          "text": "Who looked for me?"
+          "text": "Who looked for me?",
+          "alternatives": [
+            "Who was looking for me?"
+          ]
         },
         {
           "n": "38",

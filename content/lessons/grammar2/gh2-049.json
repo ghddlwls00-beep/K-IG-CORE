@@ -36,11 +36,19 @@
         },
         {
           "n": "3",
-          "text": "He will ask, \"Do you take a 100 dollar bill?\""
+          "text": "He will ask, \"Do you take a 100 dollar bill?\"",
+          "alternatives": [
+            "He will ask, \"Do you take a hundred-dollar bill?\"",
+            "He will ask, \"Do you take a hundred dollar bill?\""
+          ]
         },
         {
           "n": "4",
-          "text": "He will ask if they take a 100 dollar bill."
+          "text": "He will ask if they take a 100 dollar bill.",
+          "alternatives": [
+            "He will ask if they take a hundred-dollar bill.",
+            "He will ask if they take a hundred dollar bill."
+          ]
         },
         {
           "n": "5",
@@ -66,7 +74,8 @@
           "n": "10",
           "text": "She said that it was a little something for me for my graduation.",
           "alternatives": [
-            "She said that was a little something for me on my graduation."
+            "She said that was a little something for me on my graduation.",
+            "She said that it was a little something for me on my graduation."
           ]
         },
         {
@@ -79,11 +88,11 @@
         },
         {
           "n": "13",
-          "text": "Lincoln said, \"Honesty is the best policy.\""
+          "text": "He said, \"Honesty is the best policy.\""
         },
         {
           "n": "14",
-          "text": "Lincoln said that honesty is the best policy."
+          "text": "He said that honesty is the best policy."
         }
       ]
     },

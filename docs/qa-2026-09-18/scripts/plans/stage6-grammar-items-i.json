@@ -1,0 +1,111 @@
+[
+ {
+  "item": "6-1423 gh1-082 #1 — '그것의 스스로의 눈' 은 its own snow 를 옮긴 틀린 한국어 · 괄호 뒤 띄어쓰기",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "1",
+  "text": {
+   "from": "그 스키 리조트는(resort)그것의 스스로의 눈을 만든다.(its own)",
+   "to": "그 스키 리조트는(resort) 자체적으로 눈을 만든다.(its own)"
+  }
+ },
+ {
+  "item": "6-1424 gh1-082 #2 — 쏟아붓다(한 낱말) · 괄호 뒤 띄어쓰기",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "2",
+  "text": {
+   "from": "그 폭풍(storm)은 3피트의(three feet of)눈을 쏟아 붓는다.(dump)",
+   "to": "그 폭풍(storm)은 3피트의(three feet of) 눈을 쏟아붓는다.(dump)"
+  }
+ },
+ {
+  "item": "6-1425 gh1-082 #10 — 어머니가 기다리는 test results 는 '검사 결과'",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "10",
+  "text": {
+   "from": "나의 어머니는 실험 결과를 기다린다.(wait for, test results)",
+   "to": "나의 어머니는 검사 결과를 기다린다.(wait for, test results)"
+  }
+ },
+ {
+  "item": "6-1425 #17",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "17",
+  "text": {
+   "from": "그들은 실험 결과를 기다리고 있나?",
+   "to": "그들은 검사 결과를 기다리고 있나?"
+  }
+ },
+ {
+  "item": "6-1425 #18",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "18",
+  "text": {
+   "from": "그는 실험 결과를 기다리고 있지 않니?",
+   "to": "그는 검사 결과를 기다리고 있지 않니?"
+  }
+ },
+ {
+  "item": "6-1425 #19",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "19",
+  "text": {
+   "from": "그들은 실험 결과를 기다리지 않았니?",
+   "to": "그들은 검사 결과를 기다리지 않았니?"
+  }
+ },
+ {
+  "item": "6-1426 gh1-082 #15 — 모범 답안 any 에 맞게 '조금도' + 까닭 표시",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "15",
+  "text": {
+   "from": "그들은 섬에서 약간의 시간을 보내지 않았지?",
+   "to": "그들은 섬에서 시간을 조금도 보내지 않았지? (부정문에서는 some → any)"
+  }
+ },
+ {
+  "item": "6-1426 #16",
+  "file": "content/lessons/grammar1/gh1-082.json",
+  "n": "16",
+  "text": {
+   "from": "그들은 섬에서 약간의 시간을 보내고 있지 않았다.",
+   "to": "그들은 섬에서 시간을 조금도 보내고 있지 않았다. (부정문에서는 some → any)"
+  }
+ },
+ {
+  "item": "6-1424 같은 종류 전수 — 닫는 괄호 뒤 새 낱말인데 붙어 있음(지적 없는 GRAMMAR II 문항): gh2-010-1 #8",
+  "file": "content/lessons/grammar2/gh2-010-1.json",
+  "n": "8",
+  "text": {
+   "from": "그는 두통 때문에 (두통에 대하여)약간의 아스피린을 먹었다.",
+   "to": "그는 두통 때문에 (두통에 대하여) 약간의 아스피린을 먹었다."
+  }
+ },
+ {
+  "item": "6-1424 같은 종류 전수 — gh2-019-1 #2 (젊어 보인다)",
+  "file": "content/lessons/grammar2/gh2-019-1.json",
+  "n": "2",
+  "text": {
+   "from": "너는 너의 나이에 비해 젊어(어려)보인다.",
+   "to": "너는 너의 나이에 비해 젊어(어려) 보인다."
+  }
+ },
+ {
+  "item": "6-1424 같은 종류 전수 — gh2-028-1 #10 (두 곳)",
+  "file": "content/lessons/grammar2/gh2-028-1.json",
+  "n": "10",
+  "text": {
+   "from": "그는 출생에 의해서는 (태생은)한국인이지만 시민권에 의해서는 (국적은)미국인이다.",
+   "to": "그는 출생에 의해서는 (태생은) 한국인이지만 시민권에 의해서는 (국적은) 미국인이다."
+  }
+ },
+ {
+  "item": "6-1424 같은 종류 전수 — gh2-032-1 #12",
+  "file": "content/lessons/grammar2/gh2-032-1.json",
+  "n": "12",
+  "text": {
+   "from": "내가 밖에 있는 동안 누가 나를 찾는 (나에 대한)전화를 하면 제발 그가 725-1081로 걸게 해라.",
+   "to": "내가 밖에 있는 동안 누가 나를 찾는 (나에 대한) 전화를 하면 제발 그가 725-1081로 걸게 해라."
+  },
+  "supersededBy": "stage6-grammar-items-u.json — 6-1571 이 같은 문항의 제발을 고치며 문장 뒤를 다시 씀(괄호 뒤 띄어쓰기는 그대로 둠)"
+ }
+]

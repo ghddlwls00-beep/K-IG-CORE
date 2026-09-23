@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "1",
-          "text": "He cannot be poor to buy the car."
+          "text": "He cannot be poor to have bought the car.",
+          "alternatives": [
+            "He cannot be poor if he bought the car."
+          ]
         },
         {
           "n": "2",
@@ -56,7 +59,11 @@
         },
         {
           "n": "7",
-          "text": "A man to raise the fund must be employed."
+          "text": "Someone to raise the funds must be hired.",
+          "alternatives": [
+            "Someone to raise the funds must be employed.",
+            "A man to raise the fund must be employed."
+          ]
         },
         {
           "n": "8",
@@ -72,11 +79,17 @@
         },
         {
           "n": "11",
-          "text": "She rose to deliver a 40-minute speech."
+          "text": "She rose to deliver a 40-minute speech.",
+          "alternatives": [
+            "She rose to deliver a forty-minute speech."
+          ]
         },
         {
           "n": "12",
-          "text": "The president might use his constitutional power to dismiss the parliament."
+          "text": "The president might use his constitutional power to dissolve the parliament.",
+          "alternatives": [
+            "The president might use his constitutional power to dissolve parliament."
+          ]
         },
         {
           "n": "13",

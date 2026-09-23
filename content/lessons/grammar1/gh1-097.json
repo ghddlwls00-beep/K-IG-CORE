@@ -36,11 +36,17 @@
       "items": [
         {
           "n": "77",
-          "text": "Each mayor received a warning, didn't he?"
+          "text": "Each mayor received a warning, didn't he?",
+          "alternatives": [
+            "Each mayor received a warning, didn't they?"
+          ]
         },
         {
           "n": "78",
-          "text": "All the governors had a hard time, didn't they?"
+          "text": "All the governors had a hard time, didn't they?",
+          "alternatives": [
+            "All of the governors had a hard time, didn't they?"
+          ]
         },
         {
           "n": "79",
@@ -59,7 +65,12 @@
         },
         {
           "n": "82",
-          "text": "All of them face a cleaning job."
+          "text": "All of them face a cleaning job.",
+          "alternatives": [
+            "All of them face a cleanup job.",
+            "They all face a cleanup job.",
+            "They all face a cleaning job."
+          ]
         },
         {
           "n": "83",
@@ -95,23 +106,38 @@
         },
         {
           "n": "88",
-          "text": "Were there many researchers in the lab?"
+          "text": "Were there many researchers in the lab?",
+          "alternatives": [
+            "Were there many researchers in the laboratory?"
+          ]
         },
         {
           "n": "89",
-          "text": "There were 60 officers in the police station, weren't there?"
+          "text": "There were 60 officers in the police station, weren't there?",
+          "alternatives": [
+            "There were sixty officers in the police station, weren't there?"
+          ]
         },
         {
           "n": "90",
-          "text": "There weren't 60 officials in the office, were there?"
+          "text": "There weren't 60 officials in the office, were there?",
+          "alternatives": [
+            "There weren't sixty officials in the office, were there?"
+          ]
         },
         {
           "n": "91",
-          "text": "Did many ministers go there?"
+          "text": "Did many ministers go there?",
+          "alternatives": [
+            "Did many pastors go there?"
+          ]
         },
         {
           "n": "92",
-          "text": "Didn't many monks go to the temple?"
+          "text": "Didn't many monks go to the temple?",
+          "alternatives": [
+            "Did many monks not go to the temple?"
+          ]
         },
         {
           "n": "93",
@@ -123,7 +149,11 @@
         },
         {
           "n": "95",
-          "text": "The surgeon paid for the medicine, didn't he?"
+          "text": "The surgeon paid for the medicine, didn't he?",
+          "alternatives": [
+            "The surgeon paid for the medicine, didn't she?",
+            "The surgeon paid for the medicine, didn't they?"
+          ]
         }
       ]
     },

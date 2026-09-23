@@ -47,7 +47,10 @@
         },
         {
           "n": "5",
-          "text": "It's just two o'clock."
+          "text": "It's just two o'clock.",
+          "alternatives": [
+            "It's just 2 o'clock."
+          ]
         },
         {
           "n": "6",
@@ -55,13 +58,17 @@
         },
         {
           "n": "7",
-          "text": "She talked on for two hours."
+          "text": "She talked on for two hours.",
+          "alternatives": [
+            "She talked on for 2 hours."
+          ]
         },
         {
           "n": "8",
           "text": "The lights were all on.",
           "alternatives": [
-            "All the lights were on."
+            "All the lights were on.",
+            "All of the lights were on."
           ]
         },
         {
@@ -96,13 +103,16 @@
           "n": "15",
           "text": "Either is good.",
           "alternatives": [
-            "Either one is good.",
-            "Anything is good."
+            "Either one is good."
           ]
         },
         {
           "n": "16",
-          "text": "Nothing is good."
+          "text": "Nothing is good.",
+          "alternatives": [
+            "None is good.",
+            "None of them is good."
+          ]
         },
         {
           "n": "17",
@@ -142,7 +152,10 @@
         },
         {
           "n": "26",
-          "text": "He studied English to pass the examination."
+          "text": "He studied English to pass the examination.",
+          "alternatives": [
+            "He studied English to pass the exam."
+          ]
         },
         {
           "n": "27",

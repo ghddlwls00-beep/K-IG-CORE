@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "창고를 청소할 때, 수집할 만한 물건으로서 그것의 가능성을 결정할 때까지는 어떤 “쓰레기”도 버리지 말라. 사실, 가치 없는 낡은 쓰레기 조각이 귀중한 것일 수도 충분히 있다. 예를 들어 사람들은 종종 오래된 레코드판, 병, 책을 값싸게 팔고 그것들이 나중에 더 큰 수집품의 일부로 수십, 수백 달러에 다시 팔리는 것을 본다. 드문 경우이지만, 유명한 화가가 그린 그림을 파는 사람이 있다. 그러므로, 차고 세일을 하기 전에 귀중품과 쓸모없는 폐물을 구별하는 것을 도와달라고 골동품 판매상에게 전화를 하라."
+      "text": "창고를 청소할 때, 수집품으로서 가치가 있는지 알아내기 전까지는 어떤 “잡동사니”도 버리지 마라. 사실, 흔히 가치 없는 낡은 잡동사니로 보이는 것이 꽤 값진 물건일 수도 충분히 있다. 예를 들어 사람들은 종종 오래된 레코드판, 병, 책을 값싸게 팔고 그것들이 나중에 더 큰 수집품의 일부로 수십, 수백 달러에 다시 팔리는 것을 본다. 드문 경우이지만, 유명한 화가가 그린 그림을 파는 사람이 있다. 그러므로, 차고 세일을 하기 전에 귀중품과 쓸모없는 폐물을 구별하는 것을 도와달라고 골동품 판매상에게 전화를 하라."
     },
     {
       "type": "choice",
@@ -47,18 +47,28 @@
   "readingSentences": [
     {
       "id": "reading-236-s001",
-      "english": "When you clean out your storage room, don’t throw out any “junk” until you determine its potential as a collectible. In fact, what often appears to be a piece of worthless old junk may very well be quite valuable.",
-      "korean": "창고를 청소할 때, 수집할 만한 물건으로서 그것의 가능성을 결정할 때까지는 어떤 “쓰레기”도 버리지 말라. 사실, 가치 없는 낡은 쓰레기 조각이 귀중한 것일 수도 충분히 있다."
+      "english": "When you clean out your storage room, don’t throw out any “junk” until you determine its potential as a collectible.",
+      "korean": "창고를 청소할 때, 수집품으로서 가치가 있는지 알아내기 전까지는 어떤 “잡동사니”도 버리지 마라."
     },
     {
       "id": "reading-236-s002",
+      "english": "In fact, what often appears to be a piece of worthless old junk may very well be quite valuable.",
+      "korean": "사실, 흔히 가치 없는 낡은 잡동사니로 보이는 것이 꽤 값진 물건일 수도 충분히 있다."
+    },
+    {
+      "id": "reading-236-s003",
       "english": "For instance, people often sell old record albums, bottles and books for pennies only to see them resold for tens or hundreds of dollars as parts of larger collections.",
       "korean": "예를 들어 사람들은 종종 오래된 레코드판, 병, 책을 값싸게 팔고 그것들이 나중에 더 큰 수집품의 일부로 수십, 수백 달러에 다시 팔리는 것을 본다."
     },
     {
-      "id": "reading-236-s003",
-      "english": "Rarer cases involve people selling paintings that were actually painted by famous painters. Therefore, before you have a garage sale, call an antique dealer to help you separate the valuable from the worthless junk.",
-      "korean": "드문 경우이지만, 유명한 화가가 그린 그림을 파는 사람이 있다. 그러므로, 차고 세일을 하기 전에 귀중품과 쓸모없는 폐물을 구별하는 것을 도와달라고 골동품 판매상에게 전화를 하라."
+      "id": "reading-236-s004",
+      "english": "Rarer cases involve people selling paintings that were actually painted by famous painters.",
+      "korean": "드문 경우이지만, 유명한 화가가 그린 그림을 파는 사람이 있다."
+    },
+    {
+      "id": "reading-236-s005",
+      "english": "Therefore, before you have a garage sale, call an antique dealer to help you separate the valuable from the worthless junk.",
+      "korean": "그러므로, 차고 세일을 하기 전에 귀중품과 쓸모없는 폐물을 구별하는 것을 도와달라고 골동품 판매상에게 전화를 하라."
     }
   ],
   "readingVocabulary": [

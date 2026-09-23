@@ -71,7 +71,10 @@
         },
         {
           "n": "9",
-          "text": "Whom do you love?"
+          "text": "Whom do you love?",
+          "alternatives": [
+            "Who do you love?"
+          ]
         },
         {
           "n": "10",
@@ -88,7 +91,8 @@
           "n": "12",
           "text": "Which do you want?",
           "alternatives": [
-            "What do you want?"
+            "What do you want?",
+            "Which one do you want?"
           ]
         },
         {
@@ -108,14 +112,17 @@
         },
         {
           "n": "16",
-          "text": "He wants much money, doesn't he?",
+          "text": "He wants a lot of money, doesn't he?",
           "alternatives": [
-            "He wants a lot of money, doesn't he?"
+            "He wants much money, doesn't he?"
           ]
         },
         {
           "n": "17",
-          "text": "She needs a little money, doesn't she?"
+          "text": "She needs a little money, doesn't she?",
+          "alternatives": [
+            "She needs some money, doesn't she?"
+          ]
         },
         {
           "n": "18",
@@ -125,12 +132,16 @@
           "n": "19",
           "text": "I want apples.",
           "alternatives": [
-            "I want an apple."
+            "I want an apple.",
+            "I want some apples."
           ]
         },
         {
           "n": "20",
-          "text": "So does he."
+          "text": "So does he.",
+          "alternatives": [
+            "He does, too."
+          ]
         },
         {
           "n": "21",
@@ -138,7 +149,10 @@
         },
         {
           "n": "22",
-          "text": "So is she."
+          "text": "So is she.",
+          "alternatives": [
+            "She is, too."
+          ]
         },
         {
           "n": "23",
@@ -162,11 +176,17 @@
         },
         {
           "n": "26",
-          "text": "Neither do I."
+          "text": "Neither do I.",
+          "alternatives": [
+            "I don't either."
+          ]
         },
         {
           "n": "27",
-          "text": "Nobody likes it."
+          "text": "Nobody likes it.",
+          "alternatives": [
+            "No one likes it."
+          ]
         },
         {
           "n": "28",
@@ -182,7 +202,10 @@
         },
         {
           "n": "31",
-          "text": "I am home."
+          "text": "I am home.",
+          "alternatives": [
+            "I am at home."
+          ]
         },
         {
           "n": "32",
@@ -212,11 +235,19 @@
         },
         {
           "n": "37",
-          "text": "Who does?"
+          "text": "Who does?",
+          "alternatives": [
+            "Who likes it?",
+            "Who does like it?"
+          ]
         },
         {
           "n": "38",
-          "text": "Each student has his own room."
+          "text": "Each student has their own room.",
+          "alternatives": [
+            "Each student has his or her own room.",
+            "Each student has his own room."
+          ]
         },
         {
           "n": "39",
@@ -228,11 +259,17 @@
         },
         {
           "n": "41",
-          "text": "Each hated the other."
+          "text": "Each hated the other.",
+          "alternatives": [
+            "They hated each other."
+          ]
         },
         {
           "n": "42",
-          "text": "They loved each other."
+          "text": "They loved each other.",
+          "alternatives": [
+            "They loved one another."
+          ]
         },
         {
           "n": "43",

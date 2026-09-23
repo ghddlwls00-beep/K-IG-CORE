@@ -1,0 +1,30 @@
+[
+ {"item": "6-1149 pr106 s4 EN", "files": ["content/lessons/reading/pr106.json", "content/lessons/reading/pr106-1.json"],
+  "from": "There is also a quantity discount, which is offered to individuals who order large quantities of a product.",
+  "to": "There is also a quantity discount, which is offered to buyers who order large quantities of a product.", "expect": 3},
+ {"item": "6-1149 pr106 s4 KO", "files": ["content/lessons/reading/pr106.json", "content/lessons/reading/pr106-1.json"],
+  "from": "수량 할인도 있는데, 이는 한 제품을 대량으로 주문하는 개인에게 제공된다.",
+  "to": "수량 할인도 있는데, 이는 한 제품을 대량으로 주문하는 구매자에게 제공된다.", "expect": 3},
+ {"item": "6-1150 pr106 s6 EN", "files": ["content/lessons/reading/pr106.json", "content/lessons/reading/pr106-1.json"],
+  "from": "Finally, a cash discount is a lower price offered to people who pay in cash.",
+  "to": "Finally, a cash discount is a lower price offered to buyers who pay quickly, for example in cash or before the bill is due.", "expect": 3},
+ {"item": "6-1150 pr106 s6 KO", "files": ["content/lessons/reading/pr106.json", "content/lessons/reading/pr106-1.json"],
+  "from": "마지막으로 현금 할인은 현금으로 지불하는 사람에게 제공되는 낮은 가격이다.",
+  "to": "마지막으로 현금 할인은 현금 결제나 기한 전 결제처럼 대금을 빨리 치르는 구매자에게 제공되는 낮은 가격이다.", "expect": 3},
+
+ {"item": "6-1154 pr110 s2 EN", "files": ["content/lessons/reading/pr110.json", "content/lessons/reading/pr110-1.json"],
+  "from": "exercise can help prevent osteoporosis, a gradual process of bone loss that occurs naturally as people age.",
+  "to": "exercise can help prevent osteoporosis, a disease of gradual bone loss that becomes more common as people age.", "expect": 3},
+ {"item": "6-1154 pr110 s2 KO", "files": ["content/lessons/reading/pr110.json", "content/lessons/reading/pr110-1.json"],
+  "from": "규칙적으로 오랫동안 꾸준히 하면, 운동은 나이가 들어감에 따라 자연적으로 발생되는 뼈의 점진적인 손상인 골다공증을 예방할 수 있다.",
+  "to": "규칙적으로 오랫동안 꾸준히 하면, 운동은 나이가 들수록 흔해지는, 뼈가 점차 소실되는 질환인 골다공증을 예방하는 데 도움이 될 수 있다.", "expect": 3},
+ {"item": "6-1154 pr110 s3 EN — 'This'(옛 s2 의 '과정')가 가리킬 것이 없어져서", "files": ["content/lessons/reading/pr110.json", "content/lessons/reading/pr110-1.json"],
+  "from": "This can be slowed by regular exercise.", "to": "Bone loss can be slowed by regular exercise.", "expect": 3},
+ {"item": "6-1154 pr110 s3 KO", "files": ["content/lessons/reading/pr110.json", "content/lessons/reading/pr110-1.json"],
+  "from": "이 과정은 규칙적인 운동으로 늦출 수 있다.", "to": "뼈 소실은 규칙적인 운동으로 늦출 수 있다.", "expect": 3},
+
+ {"item": "6-1165 pr123 s2 EN", "files": ["content/lessons/reading/pr123.json", "content/lessons/reading/pr123-1.json"],
+  "from": "and from 503 to 466 in mathematics.", "to": "and from 502 to 466 in mathematics.", "expect": 3},
+ {"item": "6-1165 pr123 s2 KO", "files": ["content/lessons/reading/pr123.json", "content/lessons/reading/pr123-1.json"],
+  "from": "수학에서 503점에서 466점으로 떨어졌다.", "to": "수학에서 502점에서 466점으로 떨어졌다.", "expect": 3}
+]

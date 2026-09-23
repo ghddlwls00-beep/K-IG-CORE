@@ -40,7 +40,10 @@
         },
         {
           "n": "2",
-          "text": "The storm dumps three feet of snow."
+          "text": "The storm dumps three feet of snow.",
+          "alternatives": [
+            "The storm dumps 3 feet of snow."
+          ]
         },
         {
           "n": "3",
@@ -80,7 +83,11 @@
         },
         {
           "n": "12",
-          "text": "Didn't he spend some time on an island?"
+          "text": "Didn't he spend some time on an island?",
+          "alternatives": [
+            "Did he not spend some time on an island?",
+            "Didn't he spend any time on an island?"
+          ]
         },
         {
           "n": "13",
@@ -104,11 +111,17 @@
         },
         {
           "n": "18",
-          "text": "Isn't he waiting for test results?"
+          "text": "Isn't he waiting for test results?",
+          "alternatives": [
+            "Is he not waiting for test results?"
+          ]
         },
         {
           "n": "19",
-          "text": "Didn't they wait for test results?"
+          "text": "Didn't they wait for test results?",
+          "alternatives": [
+            "Did they not wait for test results?"
+          ]
         },
         {
           "n": "20",

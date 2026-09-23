@@ -49,7 +49,7 @@
           "n": "98",
           "text": "He isn't going on a date today, is he?",
           "alternatives": [
-            "He doesn't go on a date today, does he?"
+            "He isn't going out on a date today, is he?"
           ]
         },
         {
@@ -58,11 +58,17 @@
         },
         {
           "n": "100",
-          "text": "Doesn't he lend some money?"
+          "text": "Doesn't he lend some money?",
+          "alternatives": [
+            "Does he not lend some money?"
+          ]
         },
         {
           "n": "101",
-          "text": "Didn't the staff support the ambassador?"
+          "text": "Didn't the staff support the ambassador?",
+          "alternatives": [
+            "Did the staff not support the ambassador?"
+          ]
         },
         {
           "n": "102",
@@ -96,11 +102,18 @@
         },
         {
           "n": "107",
-          "text": "Why didn't North and South Korea reach a compromise?"
+          "text": "Why didn't North and South Korea reach a compromise?",
+          "alternatives": [
+            "Why didn't South and North Korea reach a compromise?",
+            "Why didn't the two Koreas reach a compromise?"
+          ]
         },
         {
           "n": "108",
-          "text": "There was no attempt to negotiate, was there?"
+          "text": "There was no attempt to negotiate, was there?",
+          "alternatives": [
+            "There wasn't any attempt to negotiate, was there?"
+          ]
         },
         {
           "n": "109",
@@ -117,19 +130,27 @@
           "n": "111",
           "text": "She was American, wasn't she?",
           "alternatives": [
-            "She was an American, wasn't she?"
+            "She was an American, wasn't she?",
+            "The woman was American, wasn't she?",
+            "The woman was an American, wasn't she?"
           ]
         },
         {
           "n": "112",
           "text": "She was not Filipino, was she?",
           "alternatives": [
-            "She was not a Filipino, was she?"
+            "She was not a Filipino, was she?",
+            "The woman was not Filipino, was she?",
+            "The woman was not Filipina, was she?",
+            "She was not Filipina, was she?"
           ]
         },
         {
           "n": "113",
-          "text": "Wasn't the ambassador in Germany?"
+          "text": "Wasn't the ambassador in Germany?",
+          "alternatives": [
+            "Was the ambassador not in Germany?"
+          ]
         },
         {
           "n": "114",

@@ -54,7 +54,10 @@
         },
         {
           "n": "4",
-          "text": "Why does your sister look at me?"
+          "text": "Why does your sister look at me?",
+          "alternatives": [
+            "Why is your sister looking at me?"
+          ]
         },
         {
           "n": "5",
@@ -105,7 +108,10 @@
         },
         {
           "n": "16",
-          "text": "Isn't this a real interview?"
+          "text": "Isn't this a real interview?",
+          "alternatives": [
+            "Is this not a real interview?"
+          ]
         },
         {
           "n": "17",
@@ -113,7 +119,10 @@
         },
         {
           "n": "18",
-          "text": "Why don't you feel the same?"
+          "text": "Why don't you feel the same?",
+          "alternatives": [
+            "Why don't you feel the same way?"
+          ]
         },
         {
           "n": "19",
@@ -124,7 +133,10 @@
         },
         {
           "n": "20",
-          "text": "You don't remember the night, do you?"
+          "text": "You don't remember the night, do you?",
+          "alternatives": [
+            "You don't remember that night, do you?"
+          ]
         },
         {
           "n": "21",
@@ -140,7 +152,11 @@
         },
         {
           "n": "24",
-          "text": "My dog ate all the bones, didn't it?"
+          "text": "My dog ate all the bones, didn't it?",
+          "alternatives": [
+            "My dog ate all the bones, didn't he?",
+            "My dog ate all the bones, didn't she?"
+          ]
         },
         {
           "n": "25",
@@ -152,7 +168,10 @@
         },
         {
           "n": "27",
-          "text": "Are you kidding?"
+          "text": "Are you kidding?",
+          "alternatives": [
+            "Are you kidding me?"
+          ]
         },
         {
           "n": "28",
@@ -160,15 +179,24 @@
         },
         {
           "n": "29",
-          "text": "When do you think about that night?"
+          "text": "When do you think about that night?",
+          "alternatives": [
+            "When do you think about the night?"
+          ]
         },
         {
           "n": "30",
-          "text": "You met someone, didn't you?"
+          "text": "You met someone, didn't you?",
+          "alternatives": [
+            "You have met someone, haven't you?"
+          ]
         },
         {
           "n": "31",
-          "text": "He meets someone, doesn't he?"
+          "text": "He meets someone, doesn't he?",
+          "alternatives": [
+            "He is seeing someone, isn't he?"
+          ]
         },
         {
           "n": "32",
@@ -188,11 +216,17 @@
         },
         {
           "n": "35",
-          "text": "Did you meet her parents?"
+          "text": "Did you meet her parents?",
+          "alternatives": [
+            "Have you met her parents?"
+          ]
         },
         {
           "n": "36",
-          "text": "Aren't you working this weekend?"
+          "text": "Aren't you working this weekend?",
+          "alternatives": [
+            "Are you not working this weekend?"
+          ]
         },
         {
           "n": "37",
@@ -204,7 +238,10 @@
         },
         {
           "n": "39",
-          "text": "Who talks about this?"
+          "text": "Who talks about this?",
+          "alternatives": [
+            "Who is talking about this?"
+          ]
         },
         {
           "n": "40",

@@ -1,0 +1,8 @@
+[
+ {"item": "6-0126 d107 n5 EN — 'A few years later' 가 3행용 힌트 칩 'two years' 를 끌어와서 'Later,' 로", "files": ["content/ld_english_scripts.json"],
+  "from": "Franklin went to Philadelphia. A few years later, he started his own printing business.",
+  "to": "Franklin went to Philadelphia. Later, he started his own printing business.", "expect": 1},
+ {"item": "6-0126 d107 n5 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "Franklin은 필라델피아로 갔다. 몇 년 뒤 그는 자기 자신의 인쇄업을 시작했다.",
+  "to": "Franklin은 필라델피아로 갔다. 나중에 그는 자기 자신의 인쇄업을 시작했다.", "expect": 1}
+]

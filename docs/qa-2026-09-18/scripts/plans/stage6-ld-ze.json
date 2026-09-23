@@ -1,0 +1,14 @@
+[
+ {"item": "6E-010 d004 n7 KO — 끝 마침표", "files": ["content/ld_english_scripts.json"],
+  "from": "그것은 매우 큰 도시는 아니지만 그것은 작은 것도 아니다", "to": "그것은 매우 큰 도시는 아니지만 그것은 작은 것도 아니다.", "expect": 1},
+ {"item": "6E-011 d004 n10 KO — 끝 마침표", "files": ["content/ld_english_scripts.json"],
+  "from": "나는 한 대학에 다닌다. 그것은 탁월하다", "to": "나는 한 대학에 다닌다. 그것은 탁월하다.", "expect": 1},
+ {"item": "6E-012 d068 n5 KO — 끝 마침표", "files": ["content/ld_english_scripts.json"],
+  "from": "어머니는 내가 시내로 차를 몰고 가는 것을 원하지 않으셨다", "to": "어머니는 내가 시내로 차를 몰고 가는 것을 원하지 않으셨다.", "expect": 1},
+ {"item": "6E-018 d071 n3 EN — 1963 열차의 우체국 직원 모두 72명 · 둘째 차량(HVP) 5명 → 나머지 67명 (대본 71 + 5 = 76)", "files": ["content/ld_english_scripts.json"],
+  "from": "At the end of the train, 71 mailmen sat sorting the mail.", "to": "At the end of the train, 67 mailmen sat sorting the mail.", "expect": 1},
+ {"item": "6E-018 d071 n3 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "그 열차의 끝에는 71명의 우체부가", "to": "그 열차의 끝에는 67명의 우체부가", "expect": 1},
+ {"item": "6E-018 d071 hints", "files": ["content/lessons/ld/d071.json"],
+  "from": "71 mailmen sort mail.", "to": "67 mailmen sort mail.", "expect": 1}
+]

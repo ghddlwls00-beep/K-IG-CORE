@@ -1,0 +1,44 @@
+[
+ {"item": "6-0430 d083 n11 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "Griffith continued to make movies until 1930.", "to": "Griffith continued to make movies until 1931.", "expect": 1},
+ {"item": "6-0430 d083 n11 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "Griffith는 1930년까지 영화를 만드는 것을 계속했다.", "to": "Griffith는 1931년까지 영화를 만드는 것을 계속했다.", "expect": 1},
+ {"item": "6-0430 d083 hints", "files": ["content/lessons/ld/d083.json"],
+  "from": "American civil war 1930.", "to": "American civil war 1931.", "supersededBy": "stage6-ld-v.json", "expect": 1},
+
+ {"item": "6-0439 d088 n6 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "They first became interested in mechanical flight in 1899.", "to": "They began serious work on mechanical flight in 1899.", "expect": 1},
+ {"item": "6-0439 d088 n6 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "그들은 1899년에 기계적인 비행에 처음으로 흥미를 느끼게 되었다.", "to": "그들은 1899년에 기계적인 비행에 대한 본격적인 연구를 시작했다.", "expect": 1},
+
+ {"item": "6-0440 d088 n9 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "Wilbur built a wind tunnel and used it to test more than 200 different wing surfaces.",
+  "to": "The brothers built a wind tunnel and used it to test about 200 different wing surfaces.", "expect": 1},
+ {"item": "6-0440 d088 n9 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "Wilbur는 하나의 바람 터널을 만들고 200개 이상의 다른 날개 표면을 테스트하기 위하여 그것을 사용했다.",
+  "to": "그 형제는 하나의 바람 터널을 만들고 약 200개의 다른 날개 표면을 테스트하기 위하여 그것을 사용했다.", "expect": 1},
+ {"item": "6-0440 d088 n10 EN — 9행 주어가 '그 형제' 로 바뀌어 'He' 가 누구인지 흐려지므로 Wilbur 로(날개 비틀기는 지적대로 Wilbur 의 것)", "files": ["content/ld_english_scripts.json"],
+  "from": "He developed a way to turn the wings to different positions so that the plane could be controlled.",
+  "to": "Wilbur developed a way to turn the wings to different positions so that the plane could be controlled.", "expect": 1},
+ {"item": "6-0440 d088 n10 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "그는 그 비행기가 제어될 수 있도록 날개들을 다른 위치로 전환하기 위한 방법을 개발했다.",
+  "to": "Wilbur는 그 비행기가 제어될 수 있도록 날개들을 다른 위치로 전환하기 위한 방법을 개발했다.", "expect": 1},
+
+ {"item": "6-0469 d096 n5 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "The fire that followed the explosion burned for two days.", "to": "The fire that followed the explosion burned for several days.", "expect": 1},
+ {"item": "6-0469 d096 n5 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "그 폭발에 뒤이은 화재가 이틀 동안 탔다.", "to": "그 폭발에 뒤이은 화재가 며칠 동안 탔다.", "expect": 1},
+ {"item": "6-0469 d096 hints", "files": ["content/lessons/ld/d096.json"],
+  "from": "tear off. two days.", "to": "tear off. several days.", "expect": 1},
+
+ {"item": "6-0479 d172 n1 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "In the 1840s, California was almost uninhabited.", "to": "In the 1840s, few settlers lived in California, although many Native Americans did.", "expect": 1},
+ {"item": "6-0479 d172 n1 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "1840년대에 캘리포니아에는 사람이 거의 살지 않았다.", "to": "1840년대에 캘리포니아에는 정착민이 거의 살지 않았지만 많은 미국 원주민들이 살고 있었다.", "expect": 1},
+
+ {"item": "6-0486 d174 n1 EN", "files": ["content/ld_english_scripts.json"],
+  "from": "He worked on the construction of the Chesapeake and Ohio railroad toward the end of the 19th century.",
+  "to": "He worked on the construction of the Chesapeake and Ohio railroad in the early 1870s.", "expect": 1},
+ {"item": "6-0486 d174 n1 KO", "files": ["content/ld_english_scripts.json"],
+  "from": "그는 19세기 말 경에 Chesapeake와 Ohio 철도의 건설에서 일했다.", "to": "그는 1870년대 초에 Chesapeake와 Ohio 철도의 건설에서 일했다.", "expect": 1}
+]

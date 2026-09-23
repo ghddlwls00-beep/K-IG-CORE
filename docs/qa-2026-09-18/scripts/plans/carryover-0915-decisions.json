@@ -1,0 +1,4046 @@
+{
+ "made": "2026-09-23",
+ "about": "9/15 이월 대조 판정 — 증거는 out/carryover-0915.json (scripts/carryover-0915.cjs 로 다시 만든다). --finalize 가 빠짐없는지 세고 6단계-이월.json 을 만든다.",
+ "rules": [
+  "행마다 결과 하나: 이미 해결(커밋) · 6단계 같은 항목(6-xxxx) · 4단계 같음(#) · 아직 열림(→6E) · 보류.",
+  "VOCA 뜻 행: 같은 낱말의 **뜻 칸**을 다루는 6단계 항목이 있으면 '6단계 같은 항목' — 지금 뜻이 아직 검토 중이므로 해결이라 부르지 않고, 최종 뜻은 그 항목에서 9/15 지적과 함께 정한다. 뜻 칸이 아닌 항목(다른 강의 중복·검색어 칸·짝 낱말·오답 규칙: 6-0845·6-0697·6-0605·6-0700·6-0702·6-0792)은 이 규칙에 넣지 않는다.",
+  "그런 항목이 없고 4단계 항목이 같은 낱말 뜻을 f35e8be 에서 고쳤으면 '4단계 같음'. 둘 다 없고 9/15 뜻이 사라졌으면 '이미 해결(처음 바뀐 커밋)'. 9/15 뜻이 그대로면 '아직 열림'.",
+  "괄호 철자 표제어(WORD_MALFORMED): 같은 표제어를 다루는 6단계 항목(6-0633·6-0959·6-0701·6-0697·6-0605·6-0658)이 있으면 '6단계 같은 항목', 없으면 '아직 열림' — 같은 무리의 결정과 똑같이 처리한다.",
+  "LISTENING 잘린 문장: 지금 영어 끝 부호 없음 0 이고 녹음보다 짧게 끝나는 문장 0 이면 '이미 해결'. 커밋은 9/15 규칙이 켜졌던 강의는 그 수가 0 이 된 커밋, 안 켜졌던 강의는 영어를 처음 다시 쓴 커밋.",
+  "다른 행이 같은 행의 다른 문제를 다루는 6단계 항목만 가진 경우(예: 잘린 영어 ↔ 한국어 쪽 결함)는 결과에 넣지 않고 note 에 적는다."
+ ],
+ "rows": [
+  {
+   "key": "A-000",
+   "result": "이미 해결",
+   "commit": "1a64d41",
+   "reason": "pr231-1 의 깨진 문자(U+FFFD): 9/15 상태(37d2a26) 341개 = 9/15 기록 341 → 1a64d41 에서 0 · 지금 0, 짝 파일 pr231.json 도 0"
+  },
+  {
+   "key": "A-001",
+   "result": "이미 해결",
+   "commit": "f3f6cb6",
+   "reason": "결번 7 은 옛 개요 파일 s1.json(교재 목차 통번호 01~23, 07 없음)의 번호 · 개요 파일은 f3f6cb6 에서 지워져 주소 없음(validRoutes 에 s1 없음) · 지금 s1 단원은 s1-1~s1-6 이 끊김 없이 이어짐"
+  },
+  {
+   "key": "A-002",
+   "result": "이미 해결",
+   "commit": "f3f6cb6",
+   "reason": "결번 66 은 옛 개요 파일 s4.json(제목은 친척 소개인데 목차 56~68 을 담은 파일)의 번호 · f3f6cb6 에서 지워져 주소 없음 · 지금 s4 단원은 s4-1~s4-6 이 끊김 없이 이어짐"
+  },
+  {
+   "key": "A-003",
+   "result": "이미 해결",
+   "commit": "d6da0a4",
+   "reason": "gh1-040↔041: 9/15 상태에서 #26~#31 등 영어가 다른 문항의 것(예: #26 너는 한국에 있지 않지? | I love you, don't I?) → d6da0a4 에서 번호마다 맞춤 · 지금 25쌍을 한 줄씩 읽어 25/25 가 같은 문장"
+  },
+  {
+   "key": "A-004",
+   "result": "이미 해결",
+   "commit": "1a696f3",
+   "reason": "pr037 어휘 카드 arrogant(지문에 없음): 4502e71 부터 있었고 1a696f3 에서 빠짐 · 지금 pr037·pr037-1 카드 14개 중 지문에 없는 카드 0 (지문의 낱말은 arrogance)"
+  },
+  {
+   "key": "A-005",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-006",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-007",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-008",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-009",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-010",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 3행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-011",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-012",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-013",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-014",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-015",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-016",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-017",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-018",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-019",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 4개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-020",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 4개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-021",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 4개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-022",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 7df60ea 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-023",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-024",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-025",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-026",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-027",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-028",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-029",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-030",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-031",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-032",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-033",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-034",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-035",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-036",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-037",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-038",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 4개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 3행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-039",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-040",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-041",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-042",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 3행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-043",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-044",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-045",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-046",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-047",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-048",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-049",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-050",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-051",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-052",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-053",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "note": "같은 강의의 다른 결함은 6-0248 가 따로 다룸 (한국어 쪽·힌트)",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-054",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-055",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-056",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "note": "같은 강의의 다른 결함은 6-0262 가 따로 다룸 (한국어 쪽·힌트)",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-057",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-058",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-059",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 3행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-060",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-061",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-062",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-063",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 7df60ea 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-064",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-065",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 7df60ea 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-066",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-067",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-068",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-069",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-070",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 4개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-071",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 7df60ea 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-072",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 7df60ea 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-073",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 5개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 3행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-074",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-075",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 5ac7caf 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-076",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-077",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-078",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-079",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "note": "같은 강의의 다른 결함은 6-0304 가 따로 다룸 (한국어 쪽·힌트)",
+   "reason": "9/15 잘린 문장 4개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 4행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-080",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-081",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-082",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-083",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-084",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-085",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 — 이 규칙으로는 9/15 상태에서도 0 이라 재현 못 함 · 7df60ea 에서 영어를 녹음 그대로 다시 씀 · 지금 끝 부호 없음 0, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-086",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-087",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-088",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-089",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-090",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-091",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-092",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-093",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-094",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-095",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "note": "같은 강의의 다른 결함은 6-0339 가 따로 다룸 (한국어 쪽·힌트)",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-096",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-097",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-098",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-099",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-100",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-101",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-102",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-103",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-104",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-105",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-106",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-107",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-108",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-109",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 3개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-110",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-111",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-112",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-113",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 2개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 2행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-114",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-115",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-116",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-117",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-118",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-119",
+   "result": "이미 해결",
+   "commit": "7df60ea",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 7df60ea 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-120",
+   "result": "이미 해결",
+   "commit": "5ac7caf",
+   "reason": "9/15 잘린 문장 1개 · 같은 규칙(영어 끝 부호 없음)으로 9/15 상태 1행 → 5ac7caf 에서 0 · 지금 0행, 녹음보다 짧게 끝나는 문장 0"
+  },
+  {
+   "key": "A-121",
+   "result": "아직 열림",
+   "group": "voca-billion",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json key \"billion\" (lessons hv-10)",
+   "original": "\"billion\": \"10억\"",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"billion\" → \"10억\" (한글 아님))",
+   "reason": "9/15 뜻 \"10억\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-122",
+   "result": "아직 열림",
+   "group": "word-judg(e)ment",
+   "course": "VOCA",
+   "file": "content/lessons/phonics/hv-38.json · content/voca_dictionary.json",
+   "locator": "hv-38 wordgrid \"judg(e)ment\" · voca_dictionary.json key \"judg(e)ment\"",
+   "original": "\"judg(e)ment\" (뜻 \"판단\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "reason": "격자에 \"judg(e)ment\" 그대로, 이 표제어의 모양을 다루는 6단계 항목 없음"
+  },
+  {
+   "key": "A-123",
+   "result": "아직 열림",
+   "group": "word-medi(a)eval",
+   "course": "VOCA",
+   "file": "content/lessons/phonics/hv-41.json · content/voca_dictionary.json",
+   "locator": "hv-41 wordgrid \"medi(a)eval\" · voca_dictionary.json key \"medi(a)eval\"",
+   "original": "\"medi(a)eval\" (뜻 \"중세의\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "reason": "격자에 \"medi(a)eval\" 그대로, 이 표제어의 모양을 다루는 6단계 항목 없음"
+  },
+  {
+   "key": "A-124",
+   "result": "아직 열림",
+   "group": "word-marvel(l)ous",
+   "course": "VOCA",
+   "file": "content/lessons/phonics/hv-44.json · content/voca_dictionary.json",
+   "locator": "hv-44 wordgrid \"marvel(l)ous\" · voca_dictionary.json key \"marvel(l)ous\"",
+   "original": "\"marvel(l)ous\" (뜻 \"놀라운\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "reason": "격자에 \"marvel(l)ous\" 그대로, 이 표제어의 모양을 다루는 6단계 항목 없음"
+  },
+  {
+   "key": "A-125",
+   "result": "아직 열림",
+   "group": "word-enrol(l)",
+   "course": "VOCA",
+   "file": "content/lessons/phonics/hv-56.json · content/voca_dictionary.json",
+   "locator": "hv-56 wordgrid \"enrol(l)\" · voca_dictionary.json key \"enrol(l)\"",
+   "original": "\"enrol(l)\" (뜻 \"등록하다\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "reason": "격자에 \"enrol(l)\" 그대로, 이 표제어의 모양을 다루는 6단계 항목 없음"
+  },
+  {
+   "key": "A-126",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0929"
+   ],
+   "reason": "9/15 뜻 \"2학년\" 그대로 · 6-0929 가 같은 뜻 칸을 다룸 (9/15 지적은 숫자 표기 '2학년')"
+  },
+  {
+   "key": "A-127",
+   "result": "이미 해결",
+   "commit": "fa6c273",
+   "reason": "격자 낱말 \"\"insistence,-cy\"\" 이 fa6c273 에서 빠짐 — 커밋별 [[\"2cce53a\",1],[\"fa6c273\",0],[\"now\",0]]"
+  },
+  {
+   "key": "A-128",
+   "result": "이미 해결",
+   "commit": "a49144a",
+   "reason": "9/15 \"씨.\" → 3705523 \"씨.\" → a49144a \"~씨 (남성의 경칭)\" · 9/15 제안 \"null\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-129",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0633"
+   ],
+   "reason": "격자에 \"colo(u)r\" 그대로(mv1-10) · 같은 표제어를 6-0633 가 다룸"
+  },
+  {
+   "key": "A-130",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0959"
+   ],
+   "reason": "격자에 \"neighbo(u)r\" 그대로(mv1-23) · 같은 표제어를 6-0959 가 다룸"
+  },
+  {
+   "key": "A-131",
+   "result": "아직 열림",
+   "group": "word-favo(u)r",
+   "course": "VOCA",
+   "file": "content/lessons/phonics/mv1-34.json · content/voca_dictionary.json",
+   "locator": "mv1-34 wordgrid \"favo(u)r\" · voca_dictionary.json key \"favo(u)r\"",
+   "original": "\"favo(u)r\" (뜻 \"호의\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "reason": "격자에 \"favo(u)r\" 그대로, 이 표제어의 모양을 다루는 6단계 항목 없음 (6-0684 는 뜻 칸)"
+  },
+  {
+   "key": "A-132",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0701"
+   ],
+   "reason": "격자에 \"humo(u)r\" 그대로(mv1-37) · 같은 표제어를 6-0701 가 다룸"
+  },
+  {
+   "key": "A-133",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"January\" → \"1월\" (한글 아님))",
+   "reason": "9/15 뜻 \"1월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-134",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"February\" → \"2월\" (한글 아님))",
+   "reason": "9/15 뜻 \"2월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-135",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"March\" → \"3월\" (한글 아님))",
+   "reason": "9/15 뜻 \"3월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-136",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"April\" → \"4월\" (한글 아님))",
+   "reason": "9/15 뜻 \"4월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-137",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"May\" → \"5월\" (한글 아님))",
+   "reason": "9/15 뜻 \"5월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-138",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"June\" → \"6월\" (한글 아님))",
+   "reason": "9/15 뜻 \"6월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-139",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"July\" → \"7월\" (한글 아님))",
+   "reason": "9/15 뜻 \"7월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-140",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"August\" → \"8월\" (한글 아님))",
+   "reason": "9/15 뜻 \"8월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-141",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"September\" → \"9월\" (한글 아님))",
+   "reason": "9/15 뜻 \"9월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-142",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"October\" → \"10월\" (한글 아님))",
+   "reason": "9/15 뜻 \"10월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-143",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"November\" → \"11월\" (한글 아님))",
+   "reason": "9/15 뜻 \"11월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-144",
+   "result": "아직 열림",
+   "group": "month-names",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"December\" → \"12월\" (한글 아님))",
+   "reason": "9/15 뜻 \"12월\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-145",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0697"
+   ],
+   "reason": "격자에 \"gray(grey)\" 그대로(mv3-01) · 같은 표제어를 6-0697 가 다룸"
+  },
+  {
+   "key": "A-146",
+   "result": "아직 열림",
+   "group": "word-afterward(s)",
+   "course": "VOCA",
+   "file": "content/lessons/phonics/mv3-08.json · content/voca_dictionary.json",
+   "locator": "mv3-08 wordgrid \"afterward(s)\" · voca_dictionary.json key \"afterward(s)\"",
+   "original": "\"afterward(s)\" (뜻 \"그 후에\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "reason": "격자에 \"afterward(s)\" 그대로, 이 표제어의 모양을 다루는 6단계 항목 없음"
+  },
+  {
+   "key": "A-147",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0605"
+   ],
+   "reason": "격자에 \"autumn(=fall)\" 그대로(mv3-12) · 같은 표제어를 6-0605 가 다룸"
+  },
+  {
+   "key": "A-148",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0701"
+   ],
+   "reason": "격자에 \"hono(u)r\" 그대로(mv3-13) · 같은 표제어를 6-0701 가 다룸"
+  },
+  {
+   "key": "A-149",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0658"
+   ],
+   "reason": "격자에 \"dialog(ue)\" 그대로(mv3-14) · 같은 표제어를 6-0658 가 다룸"
+  },
+  {
+   "key": "A-150",
+   "result": "아직 열림",
+   "group": "voca-decade",
+   "course": "VOCA",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json key \"decade\" (lessons mv3-21)",
+   "original": "\"decade\": \"10년\"",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"decade\" → \"10년\" (한글 아님))",
+   "reason": "9/15 뜻 \"10년\" 가 지금도 그대로, 이 뜻 칸을 다루는 6단계·4단계 항목 없음"
+  },
+  {
+   "key": "A-151",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"참조\" → 3705523 \"참조\" → d7ad97e \"보다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-152",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"음\" → 3705523 \"음\" → d7ad97e \"잘; 건강한\" → a49144a \"잘; 건강한; 우물\" · 9/15 제안 \"잘; 건강한\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-153",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"라이브\" → 3705523 \"라이브\" → d7ad97e \"살다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-154",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"넣어\" → 3705523 \"넣어\" → d7ad97e \"놓다, 두다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-155",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"하자\" → 3705523 \"하자\" → d7ad97e \"~하게 하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-156",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0835"
+   ],
+   "reason": "9/15 \"한다\" 은 d7ad97e 에서 바뀜(3705523 \"한다\" → d7ad97e \"~할 것이다\") · 지금 뜻 \"~할 것이다\" 을 6-0835 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-157",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"적\" → 3705523 \"적\" → d7ad97e \"언젠가, 한 번이라도\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-158",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"히트\" → 3705523 \"히트\" → d7ad97e \"치다, 때리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-159",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"틀렸어\" → 3705523 \"틀렸어\" → d7ad97e \"잘못된, 틀린\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-160",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"팔로우\" → 3705523 \"팔로우\" → d7ad97e \"따르다, 따라가다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-161",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"록\" → 3705523 \"록\" → d7ad97e \"바위\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-162",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0686"
+   ],
+   "reason": "9/15 \"거의\" 은 d7ad97e 에서 바뀜(3705523 \"거의\" → d7ad97e \"(수가) 적은, 몇몇의\" → f35e8be \"(수가) 거의 없는 (a few: 몇몇의)\") · 지금 뜻 \"(수가) 거의 없는 (a few: 몇몇의)\" 을 6-0686 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함 · 4단계 #1 도 이 낱말을 고쳤음"
+  },
+  {
+   "key": "A-163",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"쇼\" → 3705523 \"쇼\" → d7ad97e \"보여주다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-164",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"잠깐\" → 3705523 \"잠깐\" → d7ad97e \"기다리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-165",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"파리\" → 3705523 \"파리\" → d7ad97e \"날다; 파리\" · 9/15 제안 \"날다 (파리)\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-166",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0815"
+   ],
+   "reason": "9/15 \"들어봐\" 은 d7ad97e 에서 바뀜(3705523 \"들어봐\" → d7ad97e \"듣다\") · 지금 뜻 \"듣다\" 을 6-0815 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-167",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"감기\" → 3705523 \"감기\" → d7ad97e \"추운; 감기\" · 9/15 제안 \"추운 (감기)\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-168",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"노트북\" → 3705523 \"노트북\" → d7ad97e \"공책\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-169",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"저장\" → 3705523 \"저장\" → d7ad97e \"가게; 저장하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-170",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"보류\" → 3705523 \"보류\" → d7ad97e \"잡다, 들다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-171",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"빌드\" → 3705523 \"빌드\" → d7ad97e \"짓다, 세우다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-172",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"타고\" → 3705523 \"타고\" → d7ad97e \"타다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-173",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"멋지다\" → 3705523 \"멋지다\" → d7ad97e \"시원한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-174",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"유휴\" → 3705523 \"유휴\" → d7ad97e \"게으른, 한가한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-175",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "같은 낱말의 다른 칸(뜻 아님)은 6-0845 가 따로 다룸",
+   "reason": "9/15 \"저장\" → 3705523 \"저장\" → d7ad97e \"구하다; 저축하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-176",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0963"
+   ],
+   "reason": "9/15 \"참고\" 은 d7ad97e 에서 바뀜(3705523 \"참고\" → d7ad97e \"메모, 쪽지\") · 지금 뜻 \"메모, 쪽지\" 을 6-0963 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-177",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"푸시\" → 3705523 \"푸시\" → d7ad97e \"밀다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-178",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"리드\" → 3705523 \"리드\" → d7ad97e \"이끌다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-179",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"블라인드\" → 3705523 \"블라인드\" → d7ad97e \"눈이 먼\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-180",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"화상\" → 3705523 \"화상\" → d7ad97e \"타다, 태우다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-181",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"무승부\" → 3705523 \"무승부\" → d7ad97e \"그리다; 끌다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-182",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"드롭\" → 3705523 \"드롭\" → d7ad97e \"떨어뜨리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-183",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인종\" → 3705523 \"인종\" → d7ad97e \"경주; 인종\" · 9/15 제안 \"경주 (인종)\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-184",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"반대하다\" → 3705523 \"반대하다\" → d7ad97e \"~에 반대하여\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-185",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"타격\" → 3705523 \"타격\" → d7ad97e \"불다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-186",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"비트\" → 3705523 \"비트\" → d7ad97e \"조금\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-187",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"리프트\" → 3705523 \"리프트\" → d7ad97e \"들어 올리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-188",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0609"
+   ],
+   "reason": "9/15 \"나무껍질\" 은 d7ad97e 에서 바뀜(3705523 \"나무껍질\" → d7ad97e \"짖다\") · 지금 뜻 \"짖다\" 을 6-0609 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-189",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인상\" → 3705523 \"인상\" → d7ad97e \"올리다, 기르다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-190",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"그래도\" → 3705523 \"그래도\" → d7ad97e \"비록 ~이지만\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-191",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"끊다\" → 3705523 \"끊다\" → d7ad97e \"걸다, 매달다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-192",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"피드\" → 3705523 \"피드\" → d7ad97e \"먹이를 주다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-193",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"행운을 빌어요\" → 3705523 \"행운을 빌어요\" → d7ad97e \"운, 행운\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-194",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"카운트\" → 3705523 \"카운트\" → d7ad97e \"세다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-195",
+   "result": "이미 해결",
+   "commit": "fa6c273",
+   "reason": "철자가 틀린 표제어 \"calender\"(9/15 뜻 \"캘린더\") 가 fa6c273 에서 격자에서 빠짐 — 지금 격자·사전 모두 0곳 ([[\"2cce53a\",1],[\"fa6c273\",0],[\"now\",0]])"
+  },
+  {
+   "key": "A-196",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"잘했어\" → 3705523 \"잘했어\" → d7ad97e \"잘 익힌\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-197",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"익스프레스\" → 3705523 \"익스프레스\" → d7ad97e \"표현하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-198",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스트림\" → 3705523 \"스트림\" → d7ad97e \"개울, 시내\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-199",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"입력하다\" → 3705523 \"입력하다\" → d7ad97e \"들어가다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-200",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"메리\" → 3705523 \"메리\" → d7ad97e \"즐거운\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-201",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"누워\" → 3705523 \"누워\" → d7ad97e \"놓다; 낳다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-202",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"보어\" → 3705523 \"보어\" → d7ad97e \"지루하게 하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-203",
+   "result": "이미 해결",
+   "commit": "c14c03d",
+   "reason": "9/15 \"행진\" → 3705523 \"행진\" → d7ad97e \"3월; 행진하다\" → a49144a \"행진하다; 행진\" · 9/15 제안 \"3월 (월 이름 목록 안)\" 을 뒤 커밋이 다듬음 · 월 이름 격자(mv2-11)는 대문자 March 인데 9/15 에는 앱이 소문자 먼저 찾아 '행진' 을 보였음 → c14c03d(CNT-04, 쓴 그대로 먼저 찾기) 뒤 March = 3월, 소문자 march(mv3-30) 는 행진하다"
+  },
+  {
+   "key": "A-204",
+   "result": "이미 해결",
+   "commit": "a49144a",
+   "reason": "9/15 \"할 수 있다\" → 3705523 \"할 수 있다\" → d7ad97e \"5월; ~해도 된다\" → a49144a \"~해도 된다; ~일지도 모른다\" · 9/15 제안 \"5월 (월 이름 목록 안) / ~해도 된다\" 을 뒤 커밋이 다듬음 · 월 이름 격자의 대문자 May 는 c14c03d(쓴 그대로 먼저 찾기) 뒤 5월; 조동사 may(mv1-05) 는 a49144a 에서 지금 뜻"
+  },
+  {
+   "key": "A-205",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"자르기\" → 3705523 \"자르기\" → d7ad97e \"농작물\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-206",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"보았다\" → 3705523 \"보았다\" → d7ad97e \"톱; see의 과거형\" · 9/15 제안 \"톱 / see의 과거\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-207",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-1016"
+   ],
+   "reason": "9/15 \"스탠드\" 은 d7ad97e 에서 바뀜(3705523 \"스탠드\" → d7ad97e \"서다\") · 지금 뜻 \"서다\" 을 6-1016 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-208",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"네일\" → 3705523 \"네일\" → d7ad97e \"손톱; 못\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-209",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"그랜드\" → 3705523 \"그랜드\" → d7ad97e \"웅장한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-210",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "같은 낱말의 다른 칸(뜻 아님)은 6-0697 가 따로 다룸",
+   "reason": "9/15 \"회색회색\" → 3705523 \"회색회색\" → d7ad97e \"회색\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-211",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "같은 낱말의 다른 칸(뜻 아님)은 6-0605 가 따로 다룸",
+   "reason": "9/15 \"가을=가을\" → 3705523 \"가을=가을\" → d7ad97e \"가을\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-212",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"게이\" → 3705523 \"게이\" → d7ad97e \"명랑한, 쾌활한\" → a49144a \"동성애의; (옛 뜻) 명랑한\" · 9/15 제안 \"명랑한, 쾌활한\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-213",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"불륜\" → 3705523 \"불륜\" → d7ad97e \"일, 사건\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-214",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스위프트\" → 3705523 \"스위프트\" → d7ad97e \"빠른\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-215",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"부시\" → 3705523 \"부시\" → d7ad97e \"덤불\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-216",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"로그\" → 3705523 \"로그\" → d7ad97e \"통나무\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-217",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인터럽트\" → 3705523 \"인터럽트\" → d7ad97e \"방해하다\" → fa6c273 \"(말·일을) 가로막다, 중단시키다\" · 9/15 제안 \"방해하다\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-218",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"컴파일하다\" → 3705523 \"컴파일하다\" → d7ad97e \"편집하다, 모으다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-219",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"디스플레이\" → 3705523 \"디스플레이\" → d7ad97e \"전시하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-220",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"듀얼\" → 3705523 \"듀얼\" → d7ad97e \"이중의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-221",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"트위스트\" → 3705523 \"트위스트\" → d7ad97e \"비틀다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-222",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"트리플\" → 3705523 \"트리플\" → d7ad97e \"3배의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-223",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"계정\" → 3705523 \"계정\" → d7ad97e \"계좌; 설명\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-224",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"콘센트\" → 3705523 \"콘센트\" → d7ad97e \"배출구, 판로\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-225",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"노동조합\" → 3705523 \"노동조합\" → d7ad97e \"결합, 연합\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-226",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"별거\" → 3705523 \"별거\" → d7ad97e \"분리\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-227",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"처분하다\" → 3705523 \"처분하다\" → d7ad97e \"~하는 경향이 있는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-228",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"처분\" → 3705523 \"처분\" → d7ad97e \"기질, 성향\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-229",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"거꾸로\" → 3705523 \"거꾸로\" → d7ad97e \"위쪽, 윗면\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-230",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"상수\" → 3705523 \"상수\" → d7ad97e \"끊임없는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-231",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0637",
+    "6-0909"
+   ],
+   "reason": "9/15 \"확인됨\" 은 d7ad97e 에서 바뀜(3705523 \"확인됨\" → d7ad97e \"확고한, 상습적인\") · 지금 뜻 \"확고한, 상습적인\" 을 6-0637,6-0909 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-232",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"결정됨\" → 3705523 \"결정됨\" → d7ad97e \"단호한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-233",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0908"
+   ],
+   "reason": "9/15 \"성공하다\" 은 d7ad97e 에서 바뀜(3705523 \"성공하다\" → d7ad97e \"다음의, 계속되는\") · 지금 뜻 \"다음의, 계속되는\" 을 6-0908 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-234",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"사전\" → 3705523 \"사전\" → d7ad97e \"전진하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-235",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"캐스트\" → 3705523 \"캐스트\" → d7ad97e \"던지다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-236",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"플로트\" → 3705523 \"플로트\" → d7ad97e \"뜨다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-237",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"가드\" → 3705523 \"가드\" → d7ad97e \"지키다; 경비원\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-238",
+   "result": "4단계 같음",
+   "four": [
+    19
+   ],
+   "reason": "9/15 \"프라임\" → 3705523 \"프라임\" → d7ad97e \"주요한\" → f35e8be \"주요한, 최고의; 전성기\" · 마지막 뜻은 4단계 #19 가 f35e8be 에서 고침"
+  },
+  {
+   "key": "A-239",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"링크\" → 3705523 \"링크\" → d7ad97e \"연결하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-240",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스플래시\" → 3705523 \"스플래시\" → d7ad97e \"튀기다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-241",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"탭\" → 3705523 \"탭\" → d7ad97e \"가볍게 두드리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-242",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스핀\" → 3705523 \"스핀\" → d7ad97e \"돌다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-243",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"크리프\" → 3705523 \"크리프\" → d7ad97e \"기다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-244",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"그립\" → 3705523 \"그립\" → d7ad97e \"꽉 잡다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-245",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인스턴스\" → 3705523 \"인스턴스\" → d7ad97e \"사례, 경우\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-246",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"모션\" → 3705523 \"모션\" → d7ad97e \"움직임\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-247",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"해치\" → 3705523 \"해치\" → d7ad97e \"부화하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-248",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"피크\" → 3705523 \"피크\" → d7ad97e \"정상, 절정\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-249",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"이길\" → 3705523 \"이길\" → d7ad97e \"이기다; 치다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-250",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"의미한다\" → 3705523 \"의미한다\" → d7ad97e \"수단\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-251",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"초등학교\" → 3705523 \"초등학교\" → d7ad97e \"기초의, 초보의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-252",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0689"
+   ],
+   "reason": "9/15 \"발견\" 은 d7ad97e 에서 바뀜(3705523 \"발견\" → d7ad97e \"설립하다\") · 지금 뜻 \"설립하다\" 을 6-0689 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-253",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"말하는\" → 3705523 \"말하는\" → d7ad97e \"속담, 격언\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-254",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"새로 고침\" → 3705523 \"새로 고침\" → d7ad97e \"상쾌하게 하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-255",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"드래그\" → 3705523 \"드래그\" → d7ad97e \"끌다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-256",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"슬라이드\" → 3705523 \"슬라이드\" → d7ad97e \"미끄러지다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-257",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"바\" → 3705523 \"바\" → d7ad97e \"막대; 술집\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-258",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0794",
+    "6-1032"
+   ],
+   "reason": "9/15 \"볼륨\" 은 d7ad97e 에서 바뀜(3705523 \"볼륨\" → d7ad97e \"책, 권; 음량\") · 지금 뜻 \"책, 권; 음량\" 을 6-0794,6-1032 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-259",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"라벨\" → 3705523 \"라벨\" → d7ad97e \"꼬리표\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-260",
+   "result": "이미 해결",
+   "commit": "fa6c273",
+   "reason": "철자가 틀린 표제어 \"ancesto\"(9/15 뜻 \"조상\") 가 fa6c273 에서 격자에서 빠짐 — 지금 격자·사전 모두 0곳 ([[\"2cce53a\",1],[\"fa6c273\",0],[\"now\",0]])"
+  },
+  {
+   "key": "A-261",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"선점하다\" → 3705523 \"선점하다\" → d7ad97e \"몰두하게 하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-262",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"포스트스크립트\" → 3705523 \"포스트스크립트\" → d7ad97e \"추신\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-263",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"자라다\" → 3705523 \"자라다\" → d7ad97e \"~보다 커지다, 벗어나다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-264",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"해변\" → 3705523 \"해변\" → d7ad97e \"해안으로, 물가에\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-265",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"활성화\" → 3705523 \"활성화\" → d7ad97e \"가능하게 하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-266",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"동의어\" → 3705523 \"동의어\" → d7ad97e \"같은 뜻의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-267",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"경제적\" → 3705523 \"경제적\" → d7ad97e \"절약하는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-268",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"무관심한\" → 3705523 \"무관심한\" → d7ad97e \"사심 없는, 공평한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-269",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"유익한\" → 3705523 \"유익한\" → d7ad97e \"자선을 베푸는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-270",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "같은 낱말의 다른 칸(뜻 아님)은 6-0700 가 따로 다룸",
+   "reason": "9/15 \"역사적인\" → 3705523 \"역사적인\" → d7ad97e \"역사적으로 중요한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-271",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"유감스럽다\" → 3705523 \"유감스럽다\" → d7ad97e \"후회하는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-272",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"해상도\" → 3705523 \"해상도\" → d7ad97e \"결심, 결의; 해결\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-273",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"커밋하다\" → 3705523 \"커밋하다\" → d7ad97e \"저지르다; 약속하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-274",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"에스컬레이션\" → 3705523 \"에스컬레이션\" → d7ad97e \"확대되다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-275",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인스턴트\" → 3705523 \"인스턴트\" → d7ad97e \"즉각적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-276",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"엑스터시\" → 3705523 \"엑스터시\" → d7ad97e \"황홀경\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-277",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"다이제스트\" → 3705523 \"다이제스트\" → d7ad97e \"소화하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-278",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"정품\" → 3705523 \"정품\" → d7ad97e \"진짜의, 진실한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-279",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"무결성\" → 3705523 \"무결성\" → d7ad97e \"정직, 성실\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-280",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"첨부 파일\" → 3705523 \"첨부 파일\" → d7ad97e \"애착; 부착\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-281",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"릴리스\" → 3705523 \"릴리스\" → d7ad97e \"풀어주다, 발표하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-282",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"릴레이\" → 3705523 \"릴레이\" → d7ad97e \"중계하다, 전달하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-283",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"디렉토리\" → 3705523 \"디렉토리\" → d7ad97e \"명부\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-284",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"프로브\" → 3705523 \"프로브\" → d7ad97e \"조사하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-285",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"구현하다\" → 3705523 \"구현하다\" → d7ad97e \"실행하다; 도구\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-286",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"유틸리티\" → 3705523 \"유틸리티\" → d7ad97e \"유용성; 공공시설\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-287",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"보컬\" → 3705523 \"보컬\" → d7ad97e \"목소리의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-288",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"뷰어\" → 3705523 \"뷰어\" → d7ad97e \"시청자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-289",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"벤처\" → 3705523 \"벤처\" → d7ad97e \"모험(하다)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-290",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"컨벤션\" → 3705523 \"컨벤션\" → d7ad97e \"관습; 대회\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-291",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"서스펜션\" → 3705523 \"서스펜션\" → d7ad97e \"정지, 보류\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-292",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"이사\" → 3705523 \"이사\" → d7ad97e \"감동적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-293",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"미성년자\" → 3705523 \"미성년자\" → d7ad97e \"작은, 중요하지 않은\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-294",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"사역\" → 3705523 \"사역\" → d7ad97e \"(정부의) 부처\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-295",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"임신하다\" → 3705523 \"임신하다\" → d7ad97e \"생각해 내다, 품다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-296",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0719"
+   ],
+   "reason": "9/15 \"임신\" 은 d7ad97e 에서 바뀜(3705523 \"임신\" → d7ad97e \"개념, 구상\") · 지금 뜻 \"개념, 구상\" 을 6-0719 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-297",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"채권\" → 3705523 \"채권\" → d7ad97e \"유대, 결속\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-298",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"바인딩\" → 3705523 \"바인딩\" → d7ad97e \"묶다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-299",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"배럴\" → 3705523 \"배럴\" → d7ad97e \"통\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-300",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"외계인\" → 3705523 \"외계인\" → d7ad97e \"외국의, 이질적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-301",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"콘크리트\" → 3705523 \"콘크리트\" → d7ad97e \"구체적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-302",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"세우다\" → 3705523 \"세우다\" → d7ad97e \"~하게 만들다; 제공하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-303",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0669",
+    "6-0732"
+   ],
+   "reason": "9/15 \"기한\" 은 d7ad97e 에서 바뀜(3705523 \"기한\" → d7ad97e \"~하기로 되어 있는; ~때문에\") · 지금 뜻 \"~하기로 되어 있는; ~때문에\" 을 6-0669,6-0732 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-304",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시제\" → 3705523 \"시제\" → d7ad97e \"긴장한\" → a49144a \"긴장한; 시제\" · 9/15 제안 \"긴장한\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-305",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"경향\" → 3705523 \"경향\" → d7ad97e \"~하는 경향이 있다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-306",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"바지\" → 3705523 \"바지\" → d7ad97e \"헐떡이다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-307",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"항소\" → 3705523 \"항소\" → d7ad97e \"호소하다; 매력\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-308",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"도자기\" → 3705523 \"도자기\" → d7ad97e \"제품, 상품\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-309",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"캡처\" → 3705523 \"캡처\" → d7ad97e \"붙잡다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-310",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"캐리어\" → 3705523 \"캐리어\" → d7ad97e \"운반인, 매개체\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-311",
+   "result": "4단계 같음",
+   "four": [
+    13
+   ],
+   "reason": "9/15 \"캐주얼\" → 3705523 \"캐주얼\" → d7ad97e \"우연한, 격식 없는\" → f35e8be \"격식 없는, 평상시의; 우연한\" · 마지막 뜻은 4단계 #13 가 f35e8be 에서 고침"
+  },
+  {
+   "key": "A-312",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"프로세스\" → 3705523 \"프로세스\" → d7ad97e \"과정\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-313",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"에디션\" → 3705523 \"에디션\" → d7ad97e \"판(版)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-314",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"코멘트\" → 3705523 \"코멘트\" → d7ad97e \"논평\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-315",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"매뉴얼\" → 3705523 \"매뉴얼\" → d7ad97e \"손으로 하는; 설명서\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-316",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0820"
+   ],
+   "reason": "9/15 \"메커니즘\" 은 d7ad97e 에서 바뀜(3705523 \"메커니즘\" → d7ad97e \"구조, 기제\") · 지금 뜻 \"구조, 기제\" 을 6-0820 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-317",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"프로모션\" → 3705523 \"프로모션\" → d7ad97e \"승진; 촉진\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-318",
+   "result": "4단계 같음",
+   "four": [
+    18
+   ],
+   "reason": "9/15 \"커미션\" → 3705523 \"커미션\" → d7ad97e \"위원회; 위임\" → f35e8be \"(정부 등의) 위원회; 수수료\" · 마지막 뜻은 4단계 #18 가 f35e8be 에서 고침"
+  },
+  {
+   "key": "A-319",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"옵션\" → 3705523 \"옵션\" → d7ad97e \"선택권\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-320",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"오리엔테이션\" → 3705523 \"오리엔테이션\" → d7ad97e \"방향, 성향\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-321",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0759"
+   ],
+   "reason": "9/15 \"페널티\" 은 d7ad97e 에서 바뀜(3705523 \"페널티\" → d7ad97e \"처벌, 벌금\") · 지금 뜻 \"처벌, 벌금\" 을 6-0759 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-322",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"세그먼트\" → 3705523 \"세그먼트\" → d7ad97e \"부분\" → a49144a \"구간, 조각\" · 9/15 제안 \"부분\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-323",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"루틴\" → 3705523 \"루틴\" → d7ad97e \"일상적인 일\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-324",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"텍스트\" → 3705523 \"텍스트\" → d7ad97e \"본문\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-325",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"톤\" → 3705523 \"톤\" → d7ad97e \"어조\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-326",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"터미널\" → 3705523 \"터미널\" → d7ad97e \"말기의; 종착역\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-327",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"포즈\" → 3705523 \"포즈\" → d7ad97e \"제기하다; 자세\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-328",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"네비게이션\" → 3705523 \"네비게이션\" → d7ad97e \"항해, 항법\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-329",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"메신저\" → 3705523 \"메신저\" → d7ad97e \"전달자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-330",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스폰서\" → 3705523 \"스폰서\" → d7ad97e \"후원자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-331",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"세션\" → 3705523 \"세션\" → d7ad97e \"회기, 시간\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-332",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"이니셔티브\" → 3705523 \"이니셔티브\" → d7ad97e \"주도권, 계획\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-333",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"커리큘럼\" → 3705523 \"커리큘럼\" → d7ad97e \"교육과정\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-334",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"레크리에이션\" → 3705523 \"레크리에이션\" → d7ad97e \"휴양, 오락\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-335",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"그래픽\" → 3705523 \"그래픽\" → d7ad97e \"생생한; 도표의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-336",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"멜로디\" → 3705523 \"멜로디\" → d7ad97e \"선율\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-337",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"컬렉션\" → 3705523 \"컬렉션\" → d7ad97e \"수집(품)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-338",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"맨션\" → 3705523 \"맨션\" → d7ad97e \"대저택\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-339",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"레버\" → 3705523 \"레버\" → d7ad97e \"지렛대\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-340",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"컨테이너\" → 3705523 \"컨테이너\" → d7ad97e \"용기, 그릇\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-341",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"엔터테인먼트\" → 3705523 \"엔터테인먼트\" → d7ad97e \"오락, 대접\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-342",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"판타지\" → 3705523 \"판타지\" → d7ad97e \"공상\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-343",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"패턴\" → 3705523 \"패턴\" → d7ad97e \"양식, 무늬\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-344",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"페리\" → 3705523 \"페리\" → d7ad97e \"연락선\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-345",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"팩시밀리\" → 3705523 \"팩시밀리\" → d7ad97e \"복제, 팩스\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-346",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인플루엔자\" → 3705523 \"인플루엔자\" → d7ad97e \"독감\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-347",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"리셉션\" → 3705523 \"리셉션\" → d7ad97e \"환영회; 접수\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-348",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"퇴원\" → 3705523 \"퇴원\" → d7ad97e \"방출하다; 해고하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-349",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"원격\" → 3705523 \"원격\" → d7ad97e \"먼, 외딴\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-350",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"보통\" → 3705523 \"보통\" → d7ad97e \"적당한, 온건한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-351",
+   "result": "4단계 같음",
+   "four": [
+    16
+   ],
+   "reason": "9/15 \"중급\" → 3705523 \"중급\" → d7ad97e \"중간의\" → f35e8be \"중간의, 중급의\" · 마지막 뜻은 4단계 #16 가 f35e8be 에서 고침"
+  },
+  {
+   "key": "A-352",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"이력서\" → 3705523 \"이력서\" → d7ad97e \"재개하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-353",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"견적\" → 3705523 \"견적\" → d7ad97e \"추정(하다)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-354",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"전공\" → 3705523 \"전공\" → d7ad97e \"주요한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-355",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "4단계 #12 는 같은 낱말의 퀴즈 오답 겹침을 다뤘고 뜻은 바꾸지 않음",
+   "reason": "9/15 \"중요한\" → 3705523 \"중요한\" → d7ad97e \"비판적인; 결정적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-356",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"추상\" → 3705523 \"추상\" → d7ad97e \"추상적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-357",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"추출물\" → 3705523 \"추출물\" → d7ad97e \"추출하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-358",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"화합물\" → 3705523 \"화합물\" → d7ad97e \"합성의; 복합체\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-359",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"예금\" → 3705523 \"예금\" → d7ad97e \"맡기다; 퇴적물\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-360",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"사용됨\" → 3705523 \"사용됨\" → d7ad97e \"익숙한; 중고의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-361",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"자신감\" → 3705523 \"자신감\" → d7ad97e \"자신 있는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-362",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"정교하게\" → 3705523 \"정교하게\" → d7ad97e \"정교한; 자세히 말하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-363",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"감사하다\" → 3705523 \"감사하다\" → d7ad97e \"감사하는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-364",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"잘 믿다\" → 3705523 \"잘 믿다\" → d7ad97e \"잘 믿는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-365",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"중지\" → 3705523 \"중지\" → d7ad97e \"멈추다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-366",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"절단\" → 3705523 \"절단\" → d7ad97e \"자르다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-367",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"요리사\" → 3705523 \"요리사\" → d7ad97e \"요리하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-368",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"커버\" → 3705523 \"커버\" → d7ad97e \"덮다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-369",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"댄스\" → 3705523 \"댄스\" → d7ad97e \"춤추다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-370",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"코너\" → 3705523 \"코너\" → d7ad97e \"모퉁이\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-371",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"코스\" → 3705523 \"코스\" → d7ad97e \"과정, 강좌\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-372",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"회전\" → 3705523 \"회전\" → d7ad97e \"돌다, 돌리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-373",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"잡기\" → 3705523 \"잡기\" → d7ad97e \"잡다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-374",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"마무리\" → 3705523 \"마무리\" → d7ad97e \"끝내다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-375",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"상단\" → 3705523 \"상단\" → d7ad97e \"꼭대기\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-376",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"닫기\" → 3705523 \"닫기\" → d7ad97e \"닫다; 가까운\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-377",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"인쇄\" → 3705523 \"인쇄\" → d7ad97e \"인쇄하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-378",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"필드\" → 3705523 \"필드\" → d7ad97e \"들판; 분야\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-379",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0997"
+   ],
+   "reason": "9/15 \"반환\" 은 d7ad97e 에서 바뀜(3705523 \"반환\" → d7ad97e \"돌아오다\") · 지금 뜻 \"돌아오다\" 을 6-0997 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-380",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"준비\" → 3705523 \"준비\" → d7ad97e \"준비된\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-381",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"당겨\" → 3705523 \"당겨\" → d7ad97e \"당기다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-382",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"통과\" → 3705523 \"통과\" → d7ad97e \"지나가다; 합격하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-383",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0805"
+   ],
+   "reason": "9/15 \"점프\" 은 d7ad97e 에서 바뀜(3705523 \"점프\" → d7ad97e \"뛰다\") · 지금 뜻 \"뛰다\" 을 6-0805 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-384",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"페인트\" → 3705523 \"페인트\" → d7ad97e \"칠하다; 그리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-385",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"흔들어\" → 3705523 \"흔들어\" → d7ad97e \"흔들다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-386",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"라인\" → 3705523 \"라인\" → d7ad97e \"선, 줄\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-387",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"기호\" → 3705523 \"기호\" → d7ad97e \"표지판; 서명하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-388",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"치료하다\" → 3705523 \"치료하다\" → d7ad97e \"대하다; 치료하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-389",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"주문\" → 3705523 \"주문\" → d7ad97e \"명령; 순서; 주문\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-390",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"공지\" → 3705523 \"공지\" → d7ad97e \"알아차리다; 공고\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-391",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"천천히\" → 3705523 \"천천히\" → d7ad97e \"느린\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-392",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"마크\" → 3705523 \"마크\" → d7ad97e \"표시\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-393",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"포인트\" → 3705523 \"포인트\" → d7ad97e \"요점; 가리키다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-394",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"던져\" → 3705523 \"던져\" → d7ad97e \"던지다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-395",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스피커\" → 3705523 \"스피커\" → d7ad97e \"연설자, 화자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-396",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"센터\" → 3705523 \"센터\" → d7ad97e \"중심\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-397",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"십자가\" → 3705523 \"십자가\" → d7ad97e \"건너다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-398",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"상승\" → 3705523 \"상승\" → d7ad97e \"오르다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-399",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"세트\" → 3705523 \"세트\" → d7ad97e \"놓다; 한 벌\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-400",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"케이스\" → 3705523 \"케이스\" → d7ad97e \"경우; 상자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-401",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"마스터\" → 3705523 \"마스터\" → d7ad97e \"주인; 숙달하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-402",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시즌\" → 3705523 \"시즌\" → d7ad97e \"계절\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-403",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"제어\" → 3705523 \"제어\" → d7ad97e \"통제(하다)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-404",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스탬프\" → 3705523 \"스탬프\" → d7ad97e \"우표\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-405",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"홀\" → 3705523 \"홀\" → d7ad97e \"회관, 복도\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-406",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"게이트\" → 3705523 \"게이트\" → d7ad97e \"문\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-407",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스틱\" → 3705523 \"스틱\" → d7ad97e \"막대기; 붙이다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-408",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "같은 낱말의 다른 칸(뜻 아님)은 6-0702 가 따로 다룸",
+   "reason": "9/15 \"호스트\" → 3705523 \"호스트\" → d7ad97e \"주인, 주최자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-409",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"이벤트\" → 3705523 \"이벤트\" → d7ad97e \"사건, 행사\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-410",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0982"
+   ],
+   "reason": "9/15 \"포스트\" 은 d7ad97e 에서 바뀜(3705523 \"포스트\" → d7ad97e \"우편; 기둥\") · 지금 뜻 \"우편; 기둥\" 을 6-0982 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-411",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"더블\" → 3705523 \"더블\" → d7ad97e \"두 배의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-412",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"노크\" → 3705523 \"노크\" → d7ad97e \"두드리다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-413",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"레코더\" → 3705523 \"레코더\" → d7ad97e \"녹음기; 리코더(악기)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-414",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"케이지\" → 3705523 \"케이지\" → d7ad97e \"새장, 우리\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-415",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"밴드\" → 3705523 \"밴드\" → d7ad97e \"악단; 띠\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-416",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"메일\" → 3705523 \"메일\" → d7ad97e \"우편\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-417",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"커플\" → 3705523 \"커플\" → d7ad97e \"한 쌍, 부부\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-418",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"트릭\" → 3705523 \"트릭\" → d7ad97e \"속임수\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-419",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"가이드\" → 3705523 \"가이드\" → d7ad97e \"안내하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-420",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"트랙\" → 3705523 \"트랙\" → d7ad97e \"자국; 경주로\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-421",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"매니저\" → 3705523 \"매니저\" → d7ad97e \"관리자\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-422",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"메인\" → 3705523 \"메인\" → d7ad97e \"주요한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-423",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"커뮤니티\" → 3705523 \"커뮤니티\" → d7ad97e \"공동체\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-424",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"베이스\" → 3705523 \"베이스\" → d7ad97e \"기초\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-425",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0621"
+   ],
+   "reason": "9/15 \"보드\" 은 d7ad97e 에서 바뀜(3705523 \"보드\" → d7ad97e \"판자; 게시판\") · 지금 뜻 \"판자; 게시판\" 을 6-0621 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-426",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"킥\" → 3705523 \"킥\" → d7ad97e \"차다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-427",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"롤\" → 3705523 \"롤\" → d7ad97e \"구르다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-428",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"플랫\" → 3705523 \"플랫\" → d7ad97e \"평평한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-429",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"레벨\" → 3705523 \"레벨\" → d7ad97e \"수준\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-430",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"아이템\" → 3705523 \"아이템\" → d7ad97e \"항목, 품목\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-431",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"대시\" → 3705523 \"대시\" → d7ad97e \"돌진하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-432",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"섹션\" → 3705523 \"섹션\" → d7ad97e \"부분, 구역\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-433",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"부스\" → 3705523 \"부스\" → d7ad97e \"칸막이 공간\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-434",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"유니폼\" → 3705523 \"유니폼\" → d7ad97e \"제복; 균일한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-435",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"싱글\" → 3705523 \"싱글\" → d7ad97e \"단 하나의; 독신의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-436",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시리즈\" → 3705523 \"시리즈\" → d7ad97e \"연속\" → a49144a \"연속; 시리즈\" · 9/15 제안 \"연속\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-437",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0984"
+   ],
+   "reason": "9/15 \"프리미엄\" 은 d7ad97e 에서 바뀜(3705523 \"프리미엄\" → d7ad97e \"보험료; 할증금\") · 지금 뜻 \"보험료; 할증금\" 을 6-0984 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-438",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"디자인\" → 3705523 \"디자인\" → d7ad97e \"설계(하다)\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-439",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"다트\" → 3705523 \"다트\" → d7ad97e \"화살; 돌진하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-440",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스트레스\" → 3705523 \"스트레스\" → d7ad97e \"압박; 강조\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-441",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"미니어처\" → 3705523 \"미니어처\" → d7ad97e \"축소 모형\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-442",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"이닝\" → 3705523 \"이닝\" → d7ad97e \"(야구) 회\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-443",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"사이트\" → 3705523 \"사이트\" → d7ad97e \"장소, 부지\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-444",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"토치\" → 3705523 \"토치\" → d7ad97e \"횃불\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-445",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"팝\" → 3705523 \"팝\" → d7ad97e \"펑 터지다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-446",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"피치\" → 3705523 \"피치\" → d7ad97e \"던지다; 음높이\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-447",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"솔루션\" → 3705523 \"솔루션\" → d7ad97e \"해결책; 용액\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-448",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"랜턴\" → 3705523 \"랜턴\" → d7ad97e \"등불\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-449",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-1033"
+   ],
+   "reason": "9/15 \"왜건\" 은 d7ad97e 에서 바뀜(3705523 \"왜건\" → d7ad97e \"마차\") · 지금 뜻 \"마차\" 을 6-1033 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-450",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"스크래치\" → 3705523 \"스크래치\" → d7ad97e \"긁다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-451",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"코일\" → 3705523 \"코일\" → d7ad97e \"고리; 감다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-452",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"아이비\" → 3705523 \"아이비\" → d7ad97e \"담쟁이덩굴\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-453",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시트\" → 3705523 \"시트\" → d7ad97e \"(종이) 한 장\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-454",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"번들\" → 3705523 \"번들\" → d7ad97e \"묶음\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-455",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"샘플\" → 3705523 \"샘플\" → d7ad97e \"견본\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-456",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"버전\" → 3705523 \"버전\" → d7ad97e \"판, 변형\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-457",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"갤러리\" → 3705523 \"갤러리\" → d7ad97e \"화랑\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-458",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"체인\" → 3705523 \"체인\" → d7ad97e \"사슬\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-459",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"프라이버시\" → 3705523 \"프라이버시\" → d7ad97e \"사생활\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-460",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"군사\" → 3705523 \"군사\" → d7ad97e \"군사의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-461",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"타이어\" → 3705523 \"타이어\" → d7ad97e \"지치게 하다; 타이어\" · 9/15 제안 \"지치게 하다 (타이어)\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-462",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0931"
+   ],
+   "reason": "9/15 \"후배\" 은 d7ad97e 에서 바뀜(3705523 \"후배\" → d7ad97e \"손아래의\") · 지금 뜻 \"손아래의\" 을 6-0931 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-463",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-1007"
+   ],
+   "reason": "9/15 \"싱크대\" 은 d7ad97e 에서 바뀜(3705523 \"싱크대\" → d7ad97e \"가라앉다\") · 지금 뜻 \"가라앉다\" 을 6-1007 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-464",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"언론\" → 3705523 \"언론\" → d7ad97e \"누르다\" → a49144a \"누르다; 언론\" · 9/15 제안 \"누르다\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-465",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"비공개\" → 3705523 \"비공개\" → d7ad97e \"사적인, 개인의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-466",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"일반\" → 3705523 \"일반\" → d7ad97e \"규칙적인, 정기적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-467",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"맞다\" → 3705523 \"맞다\" → d7ad97e \"정확한; 고치다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-468",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"현재\" → 3705523 \"현재\" → d7ad97e \"현재의; 흐름\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-469",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"자리\" → 3705523 \"자리\" → d7ad97e \"장소; 발견하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-470",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"자본\" → 3705523 \"자본\" → d7ad97e \"수도; 자본\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-471",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시력\" → 3705523 \"시력\" → d7ad97e \"시야, 광경\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-472",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"추가\" → 3705523 \"추가\" → d7ad97e \"여분의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-473",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"맹렬한\" → 3705523 \"맹렬한\" → d7ad97e \"격노한\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-474",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0935",
+    "6-1028"
+   ],
+   "reason": "9/15 \"유형\" 은 d7ad97e 에서 바뀜(3705523 \"유형\" → d7ad97e \"유형; 타자치다\") · 지금 뜻 \"유형; 타자치다\" 을 6-0935,6-1028 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-475",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"구호\" → 3705523 \"구호\" → d7ad97e \"안도\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-476",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "note": "같은 낱말의 다른 칸(뜻 아님)은 6-0792 가 따로 다룸",
+   "reason": "9/15 \"보기\" → 3705523 \"보기\" → d7ad97e \"경치; 견해\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-477",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"작동\" → 3705523 \"작동\" → d7ad97e \"수술; 작전; 운영\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-478",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"역방향\" → 3705523 \"역방향\" → d7ad97e \"뒤집다; 반대의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-479",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"경도\" → 3705523 \"경도\" → d7ad97e \"단단함\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-480",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0616"
+   ],
+   "reason": "9/15 \"입찰\" 은 d7ad97e 에서 바뀜(3705523 \"입찰\" → d7ad97e \"명령하다; 입찰\") · 지금 뜻 \"명령하다; 입찰\" 을 6-0616 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-481",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0990"
+   ],
+   "reason": "9/15 \"후방\" 은 d7ad97e 에서 바뀜(3705523 \"후방\" → d7ad97e \"기르다; 뒤쪽\") · 지금 뜻 \"기르다; 뒤쪽\" 을 6-0990 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-482",
+   "result": "4단계 같음",
+   "four": [
+    19
+   ],
+   "reason": "9/15 \"기본\" → 3705523 \"기본\" → d7ad97e \"주요한; 초등의\" → f35e8be \"주요한, 1차의; 초등의\" · 마지막 뜻은 4단계 #19 가 f35e8be 에서 고침"
+  },
+  {
+   "key": "A-483",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시골\" → 3705523 \"시골\" → d7ad97e \"시골의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-484",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"독립\" → 3705523 \"독립\" → d7ad97e \"독립적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-485",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"중립\" → 3705523 \"중립\" → d7ad97e \"중립의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-486",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"시민\" → 3705523 \"시민\" → d7ad97e \"시민의; 예의 바른\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-487",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"분기\" → 3705523 \"분기\" → d7ad97e \"4분의 1\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-488",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"못된\" → 3705523 \"못된\" → d7ad97e \"비열하게; 초라하게\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-489",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"얼음\" → 3705523 \"얼음\" → d7ad97e \"얼음같이 찬\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-490",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"테러\" → 3705523 \"테러\" → d7ad97e \"공포\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-491",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"추적\" → 3705523 \"추적\" → d7ad97e \"흔적\" → fa6c273 \"흔적; 추적하다\" · 9/15 제안 \"흔적\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-492",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"상업\" → 3705523 \"상업\" → d7ad97e \"상업의; 광고\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-493",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"고급\" → 3705523 \"고급\" → d7ad97e \"진보한; 고급의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-494",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"무엇보다도\" → 3705523 \"무엇보다도\" → d7ad97e \"가장 중요한, 맨 앞의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-495",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"변환\" → 3705523 \"변환\" → d7ad97e \"변형시키다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-496",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"환승\" → 3705523 \"환승\" → d7ad97e \"옮기다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-497",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"탑승\" → 3705523 \"탑승\" → d7ad97e \"(탈것에) 타고\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-498",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"가끔\" → 3705523 \"가끔\" → d7ad97e \"가끔의\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-499",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0613"
+   ],
+   "reason": "9/15 \"보라\" 은 d7ad97e 에서 바뀜(3705523 \"보라\" → d7ad97e \"보다\") · 지금 뜻 \"보다\" 을 6-0613 가 다시 다룸 — 최종 뜻은 그 항목에서 9/15 지적과 같이 정함"
+  },
+  {
+   "key": "A-500",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"머무르다\" → 3705523 \"머무르다\" → d7ad97e \"참다; 준수하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-501",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"비교\" → 3705523 \"비교\" → d7ad97e \"비교의, 상대적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-502",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"해당\" → 3705523 \"해당\" → d7ad97e \"상응하는\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-503",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"협동조합\" → 3705523 \"협동조합\" → d7ad97e \"협력적인\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-504",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"당황하다\" → 3705523 \"당황하다\" → d7ad97e \"속상한\" → fa6c273 \"속상한; 뒤엎다\" · 9/15 제안 \"속상한\" 을 뒤 커밋이 다듬음"
+  },
+  {
+   "key": "A-505",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"빚진\" → 3705523 \"빚진\" → d7ad97e \"빚지다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-506",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"속삭임\" → 3705523 \"속삭임\" → d7ad97e \"속삭이다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-507",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"서라운드\" → 3705523 \"서라운드\" → d7ad97e \"둘러싸다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-508",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"검토\" → 3705523 \"검토\" → d7ad97e \"복습; 검토\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-509",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"행\" → 3705523 \"행\" → d7ad97e \"줄, 열\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-510",
+   "result": "이미 해결",
+   "commit": "d7ad97e",
+   "reason": "9/15 \"도박\" → 3705523 \"도박\" → d7ad97e \"도박하다\" · 지금 뜻 = 9/15 제안"
+  },
+  {
+   "key": "A-511",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-011 #8 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-512",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-011 #19 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-513",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-011 #43 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-514",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-015 #19 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-515",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-017 #2 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-516",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-017 #3 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-517",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-017 #4 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-518",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-017 #5 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-519",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #41 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-520",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #42 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-521",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #43 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-522",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #44 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-523",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #45 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-524",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #46 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-525",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #47 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-526",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #48 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-527",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #49 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-528",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-025 #50 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-529",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #41 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-530",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #42 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-531",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #43 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-532",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #44 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-533",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #45 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-534",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #46 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-535",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #47 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-536",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #48 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-537",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #49 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-538",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-029 #50 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-539",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #43 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-540",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #44 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-541",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #45 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-542",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #46 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-543",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #47 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-544",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #48 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-545",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #49 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-546",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #50 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-547",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #51 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-548",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-037 #52 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-549",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #1 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-550",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #2 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-551",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #3 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-552",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #4 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-553",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #5 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-554",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #6 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-555",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #7 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-556",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #8 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-557",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-039 #9 영어 답안의 한글: 9/15 상태 1곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 1개에서 이 번호 1곳, 한글 0"
+  },
+  {
+   "key": "A-558",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #11 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-559",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #12 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-560",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #13 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-561",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #14 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-562",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #15 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-563",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #16 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-564",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #17 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-565",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #18 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-566",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #19 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-567",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #20 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-568",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #21 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-569",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #22 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-570",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #27 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-571",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #28 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-572",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #29 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-573",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #30 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-574",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-043 #31 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-575",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #42 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-576",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #43 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-577",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #70 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-578",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #71 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-579",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #72 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-580",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #73 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-581",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #74 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-582",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #75 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-583",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #76 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-584",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #77 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-585",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #78 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-586",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #79 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-587",
+   "result": "이미 해결",
+   "commit": "f0d8475",
+   "reason": "gh1-045 #80 영어 답안의 한글: 9/15 상태 2곳 → f0d8475 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "A-588",
+   "result": "이미 해결",
+   "commit": "d6da0a4",
+   "reason": "gh1-081 #6 영어 답안의 한글: 9/15 상태 2곳 → d6da0a4 에서 0 · 지금 본 파일과 분할 파일 3개에서 이 번호 2곳, 한글 0"
+  },
+  {
+   "key": "B-_unfixable-d064#6",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "이 영어(The important thing to remember about social customs …)는 9/15 상태(3705523)에도 이미 d065 #1 에 한국어와 함께 있었다 — 옮겨진 것이 아님. 9/16 재정렬 7df60ea 가 녹음(d064 녹음이 d065 첫 문장까지 읽음)을 따라 d064 #6 끝에 붙였고 목록은 그 상태에서 적혔다. 1adc2f5 가 d064 에서 뺐고 d065 #1 은 처음부터 그대로 · 사이트는 녹음이 아니라 글에서 만든 음성을 쓰므로 d065 첫 줄로 두는 것이 맞다 · 지금 d064 6행 모두 한국어 있음 (3차 점검 #1 이 근거 문장을 바로잡음)"
+  },
+  {
+   "key": "B-_unfixable-d109#6",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "이 Franklin 전기 문단(Franklin was a leader in his community …)은 9/15 상태(3705523)에도 이미 d110 #1~ 에 한국어와 함께 있었다 — 옮겨진 것이 아님. 9/16 재정렬 7df60ea 가 녹음을 따라 d109 #6 끝에 붙였고, 1adc2f5(ISS-08/L-42 'd109 #6 keeps only its own sentence')가 뺐다 · 지금 d109 #6 은 자기 문장만, d110 은 처음부터 그대로"
+  },
+  {
+   "key": "B-_unfixable-d181#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "빠졌던 첫 문장 한국어('태초부터 많은 사람들은 …')가 1adc2f5 에서 생김 · 지금 d181 13행 모두 한국어 있음"
+  },
+  {
+   "key": "B-_unfixable-d166#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "빠졌던 첫 문장 한국어('미국 문학에서 … 작가는 없다')가 1adc2f5 에서 생김 · 지금 d166 7행 모두 한국어 있음"
+  },
+  {
+   "key": "B-_unfixable-d171#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "빠졌던 첫 문장 한국어('나의 사촌은 매우 당황했지만 …')가 1adc2f5 에서 생김 · 지금 d171 8행 모두 한국어 있음"
+  },
+  {
+   "key": "B-_unfixable-d183#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "빠졌던 첫 문장 한국어('그 백만장자는 …')가 1adc2f5 에서 생김 · 지금 d183 9행 모두 한국어 있음"
+  },
+  {
+   "key": "B-_unfixable-d164#1",
+   "result": "이미 해결",
+   "commit": "c3a44d3",
+   "reason": "헛시작 영어(They have both become …)가 c3a44d3 에서 빠짐 · 지금 d164 6행, 번호 1~6 이어짐, 한국어 없는 영어 0 · 받아쓰기 칸 10"
+  },
+  {
+   "key": "B-_unfixable-d177#1",
+   "result": "이미 해결",
+   "commit": "c3a44d3",
+   "reason": "헛시작 영어(… Rudd gets to the train stop …)가 c3a44d3 에서 빠짐 · 지금 d177 9행, 번호 이어짐, 한국어 없는 영어 0"
+  },
+  {
+   "key": "B-_unfixable-d221#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "note": "같은 행의 다른 문제는 6-0341 가 따로 다룸",
+   "reason": "헛시작 영어(You just want to camp along the way …)가 1adc2f5 에서 빠짐 · 지금 d221 6행, 번호 이어짐, 한국어 없는 영어 0"
+  },
+  {
+   "key": "B-_korean_only-d091#5",
+   "result": "이미 해결",
+   "commit": "c3a44d3",
+   "reason": "영어 It is for junior and senior high school students. 가 c3a44d3(녹음이 말하는데 대본에서 빠진 문장 복원)에서 #5 에 들어옴 · 지금 영어 없는 한국어 0"
+  },
+  {
+   "key": "B-_korean_only-d123#5",
+   "result": "이미 해결",
+   "commit": "c3a44d3",
+   "reason": "영어 The result is that 40,000 cubic kilometers … 가 c3a44d3 에서 #5 에 들어옴 · 지금 영어 없는 한국어 0"
+  },
+  {
+   "key": "B-_korean_only-d272#6",
+   "result": "이미 해결",
+   "commit": "2bcde03",
+   "note": "1adc2f5 가 이 행 영어·한국어를 함께 고침(maiden aunt → older relative)",
+   "reason": "이 한국어 문장의 영어는 목록이 적힐 때(ad592a6)에도 대본 #6 에 있었음 — 9/15 가 말한 것은 녹음에 없다는 것 · 사이트는 2bcde03(9/8)부터 녹음 대신 글에서 만든 음성을 재생 · 지금 #6 영어·한국어 짝 있음"
+  },
+  {
+   "key": "B-_korean_typos-d112#6",
+   "result": "6단계 같은 항목",
+   "six": [
+    "6-0143"
+   ],
+   "reason": "'조심스럽게 하고' 그대로 (dig 빠짐) · 6-0143 이 같은 행의 같은 빠짐을 다룸"
+  },
+  {
+   "key": "B-_korean_typos-d127#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '태양은 또 중요한 석유의 원천이' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #5 한국어: 대양은 또 중요한 석유의 원천이 되고 있다."
+  },
+  {
+   "key": "B-_korean_typos-d156#6",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 'Knga' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #6 한국어: 그 딸들인 Inga와 Sigrid는 그녀들의 어머니의 집안일을 도왔다."
+  },
+  {
+   "key": "B-_korean_typos-d161#2",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '관객이 되는 것은 것을 선호한다' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #2 한국어: 많은 사람들은 직접 게임에 참석하든지, 텔레비전으로 보든지 라디오로 듣든지 관객이 되는 것을 선호한다."
+  },
+  {
+   "key": "B-_korean_typos-d162#9",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '더 작은 신문들이 있고' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #9 한국어: 작은 마을들에서는 신문이 더 적고 어쩌면 매일 한 판 밖에 없다."
+  },
+  {
+   "key": "B-_korean_typos-d181#12",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "note": "같은 행의 다른 문제는 6-0268 가 따로 다룸",
+   "reason": "오자 '이 기계는 왼쪽에 태엽이 있는' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #12 한국어: 이 가게에는 왼쪽에 태엽이 있는 시계로부터 왼손잡이 가위, 손톱깎이, 감자깎이, 펜, 골프채까지 모든 것이 "
+  },
+  {
+   "key": "B-_korean_typos-d188#7",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "note": "같은 행의 다른 문제는 6-0289 가 따로 다룸",
+   "reason": "오자 '한 체로키 과학자인 Sequoyah' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #7 한국어: 한 체로키 학자인 Sequoyah는 읽기와 쓰기가 백인에게 얼마나 중요한지 보았다."
+  },
+  {
+   "key": "B-_korean_typos-d194#4",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '곧 전에서는 공지였던 것이' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #4 한국어: 곧 전에는 공지였던 것이 작은 천막 도시가 된다."
+  },
+  {
+   "key": "B-_korean_typos-d200#6",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "note": "같은 행의 다른 문제는 6-0318 가 따로 다룸",
+   "reason": "오자 '자극햇다' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #6 한국어: 한 네덜란드 과학자의 호기심은 그가 일련의 렌즈를 통하여 한 방울의 물의 세계를 조사하도록 자극했다."
+  },
+  {
+   "key": "B-_korean_typos-d206#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '실질적인 농답(짖궂은 장난)' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #1 한국어: 미국 학생들은 짓궂은 장난을 하는 것으로 악명이 높다."
+  },
+  {
+   "key": "B-_korean_typos-d245#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 'All Sants 축제' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #1 한국어: 할로윈은 기독교의 All Saints 축제로부터 연유한다."
+  },
+  {
+   "key": "B-_korean_typos-d246#2",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '행동해야 하는 것첨럼' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #2 한국어: 예절은 단지 잘 양육된 인간이 행동해야 하는 것처럼 행동하는 것이다."
+  },
+  {
+   "key": "B-_korean_typos-d252#3",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '자신을 내놓을 때봐다' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #3 한국어: 면접을 보러 갈 때만큼 기본 예절이 중요한 때는 없다."
+  },
+  {
+   "key": "B-_korean_typos-d254#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '면접관이의 성격을' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #1 한국어: 한 직장에 지원하는데 있어서 면접관의 성격을 고려하여 자신을 그에게 맞추는 것이 현명하다."
+  },
+  {
+   "key": "B-_korean_typos-d258#7",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '그들은 병에 대한 가장 명백한 치료제는 단지 음식을 주이는 것이다' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #7 한국어: 그들의 병에 대한 가장 명백한 치료법은 그저 음식을 줄이는 것이다. 그러나 일부 사람들은 식이요법의 치료제보"
+  },
+  {
+   "key": "B-_korean_typos-d260#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '썰매타는 이린이들의 모습' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #5 한국어: 그 눈이 충분히 단단하면 이웃의 언덕들은 곧 썰매타는 어린이들의 모습으로 가득 차게 될 것이다."
+  },
+  {
+   "key": "B-_korean_typos-d270#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "오자 '도시의 마을들은' 가 1adc2f5 에서 사라짐 — 커밋별 [[\"ad592a6\",1],[\"9f1e47f\",1],[\"c3a44d3\",1],[\"1adc2f5\",0],[\"8114912\",0],[\"f35e8be\",0],[\"now\",0]] · 지금 #5 한국어: 도시와 마을들은 그 지역의 역사와 민속을 보존하는 다채로운 민속노래와 발라드를 갖고 있다."
+  },
+  {
+   "key": "B-_one_off-d131#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "앞 7 단어 반복이 1adc2f5 에서 빠짐 — 지금 'All the guests are served in the lodge dining room.'"
+  },
+  {
+   "key": "B-_one_off-d215#1",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "문장 앞 회차 번호 215 가 1adc2f5 에서 빠짐 — 지금 'In addition to the intercession of the priests, …'"
+  },
+  {
+   "key": "B-_one_off-d132#4",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "빠진 'I know' 가 1adc2f5 에서 들어감 — 지금 'I don't know. I know some people who make up their minds right away.' (한국어와 맞음)"
+  },
+  {
+   "key": "B-_one_off-d229#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "reason": "'for miniature cities' 가 1adc2f5 에서 'to form miniature cities' 로 — 한국어 '작은 도시를 형성한다' 와 맞음"
+  },
+  {
+   "key": "B-_entry_removals-d164#1",
+   "result": "이미 해결",
+   "commit": "c3a44d3",
+   "reason": "헛시작 항목을 9/17 LISTENING L 시리즈 수정 커밋 c3a44d3(2026-09-17 11:35, L-64 'restore the sentences the recordings say but the scripts lost')이 지웠고 배포됨 — 명령서는 '번호가 밀리는 삭제는 보류' 를 예로 들었지만 이미 지워져 있다. 지금 번호 1~6 이어짐, 한국어가 다음 항목에 제대로 붙음, 한국어 없는 영어 0"
+  },
+  {
+   "key": "B-_entry_removals-d177#1",
+   "result": "이미 해결",
+   "commit": "c3a44d3",
+   "reason": "헛시작 항목을 9/17 L 시리즈 수정 커밋 c3a44d3(2026-09-17 11:35, L-64)이 지웠고 배포됨. 지금 번호 1~9 이어짐, 한국어 없는 영어 0"
+  },
+  {
+   "key": "B-_entry_removals-d221#5",
+   "result": "이미 해결",
+   "commit": "1adc2f5",
+   "note": "같은 행의 다른 문제는 6-0341 가 따로 다룸",
+   "reason": "헛시작 항목을 9/17 L 시리즈 수정 커밋 1adc2f5(2026-09-17 13:25, 'correct every LISTENING finding except L-74/L-84', L-00..L-92)가 지웠고 배포됨. 지금 번호 1~6 이어짐, 한국어 없는 영어 0"
+  },
+  {
+   "key": "C-d058",
+   "result": "이미 해결",
+   "commit": "2bcde03",
+   "note": "같은 회차 #3 의 사실 오류(어머니가 돌아가실 때 나이)는 6-0062·6-0063 이 따로 다룸",
+   "reason": "녹음이 먼저 끝나는 문제: 사이트는 2bcde03(2026-09-08)부터 LISTENING 도 녹음 대신 글에서 만든 음성을 재생(AudioPlayer isTtsMode · shouldUseUnifiedSpeech 는 CNN 만 뺌) — 녹음과 글이 어긋날 곳이 없음. '3행의 옛 영어' = 녹음이 끝난 뒤의 #10 네 문장(He had his own mine. He even built his own ships and airplanes. Ford paid his workers high wages. They all received at least $5 a day, which was a lot of money at the time.) — 문법·뜻 이상 없음, 한국어와 문장마다 맞음"
+  }
+ ],
+ "extras": [
+  {
+   "key": "X-d004#7",
+   "course": "LISTENING",
+   "lesson": "d004",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d004\", row n=\"7\", KO field",
+   "problem": "한국어 끝에 마침표 없음 ('…작은 것도 아니다'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d004#10",
+   "course": "LISTENING",
+   "lesson": "d004",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d004\", row n=\"10\", KO field",
+   "problem": "한국어 끝에 마침표 없음 ('…그것은 탁월하다'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d068#5",
+   "course": "LISTENING",
+   "lesson": "d068",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d068\", row n=\"5\", KO field",
+   "problem": "한국어 끝에 마침표 없음 ('…원하지 않으셨다'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d170#2",
+   "course": "LISTENING",
+   "lesson": "d170",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d170\", row n=\"2\", KO field",
+   "problem": "한국어가 쉼표로 끝남 ('…와인을,') — 문장이 행에서 끊김. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d173#1",
+   "course": "LISTENING",
+   "lesson": "d173",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d173\", row n=\"1\", KO field",
+   "problem": "한국어가 '…같은' 에서 끊김. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d178#1",
+   "course": "LISTENING",
+   "lesson": "d178",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d178\", row n=\"1\", KO field",
+   "problem": "한국어가 쉼표로 끝남 ('…않을 것이다,'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d180#4",
+   "course": "LISTENING",
+   "lesson": "d180",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d180\", row n=\"4\", KO field",
+   "problem": "한국어가 '…끌었을 때' 에서 끊김. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  },
+  {
+   "key": "X-d245#2",
+   "course": "LISTENING",
+   "lesson": "d245",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d245\", row n=\"2\", KO field",
+   "problem": "한국어 속 고유명사 'All saints Day' — All Saints' Day. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "reason": "9/15 행이 아니라 대조 중 새로 찾은 것 — 6단계 목록에 이 행 항목 없음"
+  }
+ ]
+}

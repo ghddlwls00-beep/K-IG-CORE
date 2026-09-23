@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "영작문제 2"
+      "text": "영작문제 2 답안"
     },
     {
       "type": "instruction",
@@ -51,11 +51,17 @@
         },
         {
           "n": "137",
-          "text": "Weren't we really having a good time?"
+          "text": "Weren't we really having a good time?",
+          "alternatives": [
+            "Were we not really having a good time?"
+          ]
         },
         {
           "n": "138",
-          "text": "You will take me out some other time, won't you?"
+          "text": "You will take me out some other time, won't you?",
+          "alternatives": [
+            "You will take me out next time, won't you?"
+          ]
         },
         {
           "n": "139",
@@ -63,7 +69,10 @@
         },
         {
           "n": "140",
-          "text": "Why can't you wait till tomorrow?"
+          "text": "Why can't you wait till tomorrow?",
+          "alternatives": [
+            "Why can't you wait until tomorrow?"
+          ]
         },
         {
           "n": "141",
@@ -79,9 +88,11 @@
         },
         {
           "n": "144",
-          "text": "Will the United States undoubtedly face future terrorist threats?",
+          "text": "The United States will undoubtedly face future terrorist threats.",
           "alternatives": [
-            "Will the United States without a doubt face future terrorist threats?"
+            "The United States will without a doubt face future terrorist threats.",
+            "The U.S. will undoubtedly face future terrorist threats.",
+            "America will undoubtedly face future terrorist threats."
           ]
         },
         {
@@ -89,14 +100,18 @@
           "text": "When did our forces defeat the enemy?",
           "alternatives": [
             "When did our forces defeat their enemies?",
-            "When did our forces defeat enemies?"
+            "When did our army defeat the enemy?",
+            "When did our troops defeat the enemy?"
           ]
         },
         {
           "n": "146",
           "text": "Haven't they emerged yet?",
           "alternatives": [
-            "Haven't they yet emerged?"
+            "Haven't they yet emerged?",
+            "Have they not emerged yet?",
+            "Haven't they appeared yet?",
+            "Haven't they shown up yet?"
           ]
         },
         {
@@ -111,7 +126,9 @@
           "n": "149",
           "text": "What was that like then?",
           "alternatives": [
-            "What was it like then?"
+            "What was it like then?",
+            "What was it like back then?",
+            "What was that like back then?"
           ]
         },
         {

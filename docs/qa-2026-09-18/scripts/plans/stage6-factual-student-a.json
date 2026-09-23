@@ -1,0 +1,38 @@
+[
+ {"item": "6-1617 gh2-049 #13 EN — 링컨이 한 말이라는 기록 없음(속담). 같은 과 다른 문항처럼 He 로", "files": ["content/lessons/grammar2/gh2-049.json"],
+  "from": "Lincoln said, \"Honesty is the best policy.\"", "to": "He said, \"Honesty is the best policy.\"", "expect": 1},
+ {"item": "6-1617 gh2-049 #14 EN", "files": ["content/lessons/grammar2/gh2-049.json"],
+  "from": "Lincoln said that honesty is the best policy.", "to": "He said that honesty is the best policy.", "expect": 1},
+ {"item": "6-1617 gh2-049-1 #13 KO", "files": ["content/lessons/grammar2/gh2-049-1.json"],
+  "from": "링컨은 “정직이 최선의 정책이다”라고 말했다.", "to": "그는 “정직이 최선의 정책이다”라고 말했다.", "expect": 1},
+ {"item": "6-1617 gh2-049-1 #14 KO", "files": ["content/lessons/grammar2/gh2-049-1.json"],
+  "from": "링컨은 정직이 최선의 정책이라고 말했다.", "to": "그는 정직이 최선의 정책이라고 말했다.", "expect": 1},
+
+ {"item": "6-1651 s4-4 한국어 4 — 외가 과에서 '외' 없는 할아버지/할머니", "files": ["content/lessons/student/s4-4.json"],
+  "from": "할아버지께서 몇 년 전에 돌아가셨기 때문에 나의 할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.",
+  "to": "외할아버지께서 몇 년 전에 돌아가셨기 때문에 나의 외할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.", "expect": 1, "supersededBy": "stage6-student-c"},
+ {"item": "6-1651 s4-4 청크(화면에 안 쓰임, 자료 맞춤)", "files": ["content/lessons/student/s4-4.json"],
+  "from": "나의 할아버지가 돌아가셨기 때문에", "to": "나의 외할아버지가 돌아가셨기 때문에", "expect": 1},
+ {"item": "6-1651 s4-4 청크", "files": ["content/lessons/student/s4-4.json"],
+  "from": "나의 할머니는 사십니다", "to": "나의 외할머니는 사십니다", "expect": 1},
+
+ {"item": "6-1670 s6-3 #1 — 서울·광역시 출신이면 province 가 틀림. 한국어 '(지역)' 과 맞춤", "files": ["content/lessons/student/s6-3.json"],
+  "from": "My teacher is from (Name) province.", "to": "My teacher is from (Name).", "expect": 1},
+
+ {"item": "6-1731 s17-1 #2 EN — 삼국유사 기준으로도 기원전 2333년(약 4,360년 전), 전설임을 밝힘", "files": ["content/lessons/student/s17-1.json"],
+  "from": "Our country’s history started about 5,000 years ago.",
+  "to": "According to legend, our country’s history started more than 4,000 years ago.", "expect": 1},
+ {"item": "6-1731 s17-1 한국어 2 (띄어쓰기 우리나라 포함)", "files": ["content/lessons/student/s17-1.json"],
+  "from": "우리 나라의 역사는 약 5,000년 전에 시작되었습니다.",
+  "to": "전설에 따르면 우리나라의 역사는 4,000여 년 전에 시작되었습니다.", "expect": 1},
+
+ {"item": "6-1734 s17-3 제목·메뉴·안내문 + 과정 목록 — 본문(#5)과 같은 the Korean War 로", "files": ["content/lessons/student/s17-3.json", "content/courses/student.json"],
+  "from": "Independence of Korea & Civil War", "to": "Independence of Korea & the Korean War", "expect": 5},
+
+ {"item": "6-1749 s20-3 #2 EN — 한국민속촌은 조선 후기 생활을 재현(고대 아님)", "files": ["content/lessons/student/s20-3.json"],
+  "from": "and you can observe how Koreans lived during ancient times.", "to": "and you can observe how Koreans lived in the past.", "expect": 1, "supersededBy": "stage6-student-k"},
+ {"item": "6-1749 s20-3 청크(화면에 안 쓰임, 자료 맞춤)", "files": ["content/lessons/student/s20-3.json"],
+  "from": "how Koreans lived during ancient times.", "to": "how Koreans lived in the past.", "expect": 1},
+ {"item": "6-1749 s20-3 한국어 2 — 청크의 '옛날에' 와 맞춤", "files": ["content/lessons/student/s20-3.json"],
+  "from": "한국인들이 고대시대 동안 어떻게 살았는지도", "to": "한국인들이 옛날에 어떻게 살았는지도", "expect": 1}
+]

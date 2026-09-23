@@ -48,7 +48,10 @@
         },
         {
           "n": "4",
-          "text": "Isn't Sophia off duty today?"
+          "text": "Isn't Sophia off duty today?",
+          "alternatives": [
+            "Is Sophia not off duty today?"
+          ]
         },
         {
           "n": "5",
@@ -85,7 +88,13 @@
         },
         {
           "n": "11",
-          "text": "Don't officials have evidence?"
+          "text": "Don't officials have evidence?",
+          "alternatives": [
+            "Do officials not have evidence?",
+            "Don't officials have any evidence?",
+            "Don't the officials have evidence?",
+            "Don't the officials have any evidence?"
+          ]
         },
         {
           "n": "12",
@@ -97,29 +106,47 @@
         },
         {
           "n": "14",
-          "text": "The operation would last 24 to 72 hours."
+          "text": "The operation would last 24 to 72 hours.",
+          "alternatives": [
+            "The operation would last twenty-four to seventy-two hours.",
+            "The operation will last 24 to 72 hours.",
+            "The operation will last twenty-four to seventy-two hours."
+          ]
         },
         {
           "n": "15",
-          "text": "It could take up to ten days to complete."
+          "text": "It could take up to ten days to complete.",
+          "alternatives": [
+            "It could take up to 10 days to complete."
+          ]
         },
         {
           "n": "16",
-          "text": "Don't you have to go after them?"
+          "text": "Don't you have to go after them?",
+          "alternatives": [
+            "Do you not have to go after them?"
+          ]
         },
         {
           "n": "17",
-          "text": "Isn't the only proper defense an offense?"
+          "text": "Isn't the only proper defense an offense?",
+          "alternatives": [
+            "Is the only proper defense not an offense?"
+          ]
         },
         {
           "n": "18",
-          "text": "Where were five international peace keepers killed?"
+          "text": "Where were five international peacekeepers killed?",
+          "alternatives": [
+            "Where were 5 international peacekeepers killed?"
+          ]
         },
         {
           "n": "19",
           "text": "Weren't the other two Germans?",
           "alternatives": [
-            "Weren't the other two German?"
+            "Weren't the other two German?",
+            "Were the other two not Germans?"
           ]
         },
         {
@@ -128,11 +155,17 @@
         },
         {
           "n": "21",
-          "text": "Aren't you seeing a clearer picture?"
+          "text": "Aren't you seeing a clearer picture?",
+          "alternatives": [
+            "Are you not seeing a clearer picture?"
+          ]
         },
         {
           "n": "22",
-          "text": "More than forty more were wounded, weren't they?"
+          "text": "More than forty more were wounded, weren't they?",
+          "alternatives": [
+            "More than 40 more were wounded, weren't they?"
+          ]
         },
         {
           "n": "23",
@@ -140,7 +173,10 @@
         },
         {
           "n": "24",
-          "text": "Didn't they receive a credible threat?"
+          "text": "Didn't they receive a credible threat?",
+          "alternatives": [
+            "Did they not receive a credible threat?"
+          ]
         },
         {
           "n": "25",
@@ -158,22 +194,32 @@
           "n": "28",
           "text": "Isn't the threat their way of retaliating?",
           "alternatives": [
-            "Isn't the threat their way of retaliation?"
+            "Isn't the threat their way of retaliation?",
+            "Is the threat not their way of retaliating?"
           ]
         },
         {
           "n": "29",
-          "text": "When did the remains of seven servicemen return home?"
+          "text": "When did the remains of seven servicemen return home?",
+          "alternatives": [
+            "When did the remains of 7 servicemen return home?",
+            "When did the remains of seven soldiers return home?",
+            "When did the remains of 7 soldiers return home?"
+          ]
         },
         {
           "n": "30",
-          "text": "Didn't they arrive at the air force base?"
+          "text": "Didn't they arrive at the air force base?",
+          "alternatives": [
+            "Did they not arrive at the air force base?"
+          ]
         },
         {
           "n": "31",
           "text": "The servicemen died in two separate incidents, didn't they?",
           "alternatives": [
-            "The soldiers died in two separate incidents, didn't they?"
+            "The soldiers died in two separate incidents, didn't they?",
+            "The servicemen died in 2 separate incidents, didn't they?"
           ]
         },
         {
@@ -186,7 +232,10 @@
         },
         {
           "n": "34",
-          "text": "Wasn't he then dragged away by Al Qaeda fighters?"
+          "text": "Wasn't he then dragged away by Al Qaeda fighters?",
+          "alternatives": [
+            "Was he not then dragged away by Al Qaeda fighters?"
+          ]
         },
         {
           "n": "35",
@@ -194,7 +243,10 @@
         },
         {
           "n": "36",
-          "text": "Isn't it looking for answers?"
+          "text": "Isn't it looking for answers?",
+          "alternatives": [
+            "Is it not looking for answers?"
+          ]
         },
         {
           "n": "37",

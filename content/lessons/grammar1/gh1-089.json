@@ -106,7 +106,8 @@
           "n": "15",
           "text": "The microphone is still on.",
           "alternatives": [
-            "The mike is still on."
+            "The mike is still on.",
+            "The mic is still on."
           ]
         },
         {
@@ -115,7 +116,12 @@
         },
         {
           "n": "17",
-          "text": "Was the congressman unhappy?"
+          "text": "Was the congressman unhappy?",
+          "alternatives": [
+            "Was the lawmaker unhappy?",
+            "Was the congresswoman unhappy?",
+            "Was the legislator unhappy?"
+          ]
         },
         {
           "n": "18",

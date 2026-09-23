@@ -54,7 +54,9 @@
           "n": "62",
           "text": "Why was the vice president taking part in that project?",
           "alternatives": [
-            "Why was the vice president participating in that project?"
+            "Why was the vice president participating in that project?",
+            "Why was the vice president taking part in the project?",
+            "Why was the vice president participating in the project?"
           ]
         },
         {
@@ -69,7 +71,9 @@
           "n": "65",
           "text": "She was different from most girls, wasn't she?",
           "alternatives": [
-            "She was different from most of the girls, wasn't she?"
+            "She was different from most of the girls, wasn't she?",
+            "She was different from most women, wasn't she?",
+            "She was different from most of the women, wasn't she?"
           ]
         },
         {
@@ -80,16 +84,7 @@
             "All of them like the solution, don't they?",
             "They all like the solution, don't they?"
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All like the solution, don't they?"
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "67",
           "text": "Everybody liked the contract, didn't they?",
@@ -97,23 +92,22 @@
             "Everyone liked the contract, didn't they?",
             "All of them liked the contract, didn't they?"
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All liked the contract, didn't they?"
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "68",
-          "text": "Nobody likes the terms, do they?"
+          "text": "Nobody likes the terms, do they?",
+          "alternatives": [
+            "No one likes the terms, do they?",
+            "Nobody likes the conditions, do they?",
+            "No one likes the conditions, do they?"
+          ]
         },
         {
           "n": "69",
-          "text": "Nobody hated her, did they?"
+          "text": "Nobody hated her, did they?",
+          "alternatives": [
+            "No one hated her, did they?"
+          ]
         },
         {
           "n": "70",
@@ -121,107 +115,79 @@
           "alternatives": [
             "Each agency increases security.",
             "All agencies increase security.",
-            "All the agencies increase security."
+            "All the agencies increase security.",
+            "All of the agencies increase security.",
+            "Every agency strengthens security.",
+            "Every agency tightens security.",
+            "Each agency strengthens security.",
+            "Each agency tightens security.",
+            "All agencies strengthen security.",
+            "All agencies tighten security.",
+            "All the agencies strengthen security.",
+            "All the agencies tighten security."
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All agencies increase security."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "71",
           "text": "All the boys get a tour of the center.",
           "alternatives": [
             "Every boy gets a tour of the center.",
-            "Each boy gets a tour of the center."
+            "Each boy gets a tour of the center.",
+            "All of the boys get a tour of the center."
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "Each(Every) boy gets a tour of the center."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "72",
           "text": "Each boy worries about his future.",
           "alternatives": [
             "Every boy worries about his future.",
             "All the boys worry about their future.",
-            "All the boys worry about their futures."
+            "All the boys worry about their futures.",
+            "All of the boys worry about their future.",
+            "All of the boys worry about their futures."
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All the boys worry about their future."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "73",
           "text": "Every boy received a prize.",
           "alternatives": [
             "Each boy received a prize.",
             "All the boys received a prize.",
-            "All the boys received prizes."
+            "All the boys received prizes.",
+            "All of the boys received a prize.",
+            "All of the boys received prizes."
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All the boys received a prize."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "74",
           "text": "All the boys ignored the advice.",
           "alternatives": [
             "Each boy ignored the advice.",
-            "Every boy ignored the advice."
+            "Every boy ignored the advice.",
+            "All of the boys ignored the advice."
           ]
         },
         {
           "n": "75",
           "text": "Each boy did his homework.",
           "alternatives": [
-            "Every boy did his homework."
+            "Every boy did his homework.",
+            "All the boys did their homework.",
+            "All of the boys did their homework."
           ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All the boys did their homework."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "76",
           "text": "Every priest attended the fundraiser, didn't he?",
           "alternatives": [
-            "Each priest attended the fundraiser, didn't he?"
+            "Each priest attended the fundraiser, didn't he?",
+            "Every priest attended the fundraiser, didn't they?",
+            "Each priest attended the fundraiser, didn't they?",
+            "All the priests attended the fundraiser, didn't they?",
+            "All of the priests attended the fundraiser, didn't they?"
           ]
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "text": "All the priests attended the fundraiser, didn't they?"
     },
     {
       "type": "choice",

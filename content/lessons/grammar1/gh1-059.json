@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "영작문제 5"
+      "text": "영작문제 5 답안"
     },
     {
       "type": "instruction",
@@ -70,7 +70,10 @@
         },
         {
           "n": "8",
-          "text": "Whom does he love?"
+          "text": "Whom does he love?",
+          "alternatives": [
+            "Who does he love?"
+          ]
         },
         {
           "n": "9",
@@ -134,15 +137,28 @@
         },
         {
           "n": "19",
-          "text": "He wants apples."
+          "text": "He wants apples.",
+          "alternatives": [
+            "He wants an apple.",
+            "He wants some apples."
+          ]
         },
         {
           "n": "20",
-          "text": "So do I."
+          "text": "So do I.",
+          "alternatives": [
+            "I do too.",
+            "I do, too.",
+            "Me too."
+          ]
         },
         {
           "n": "21",
-          "text": "So does my mother."
+          "text": "So does my mother.",
+          "alternatives": [
+            "My mother does too.",
+            "My mother does, too."
+          ]
         },
         {
           "n": "22",
@@ -179,14 +195,22 @@
           "n": "29",
           "text": "Each student has his own idea.",
           "alternatives": [
-            "Every student has his own idea."
+            "Every student has his own idea.",
+            "Each student has their own idea.",
+            "Each student has his or her own idea.",
+            "Every student has their own idea.",
+            "Every student has his or her own idea."
           ]
         },
         {
           "n": "30",
           "text": "Does each student have his own plan?",
           "alternatives": [
-            "Does every student have his own plan?"
+            "Does every student have his own plan?",
+            "Does each student have their own plan?",
+            "Does each student have his or her own plan?",
+            "Does every student have their own plan?",
+            "Does every student have his or her own plan?"
           ]
         },
         {

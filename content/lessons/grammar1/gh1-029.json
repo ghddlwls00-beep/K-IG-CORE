@@ -52,7 +52,10 @@
         },
         {
           "n": "30",
-          "text": "Was it a book?"
+          "text": "Was it a book?",
+          "alternatives": [
+            "Was that a book?"
+          ]
         },
         {
           "n": "31",
@@ -136,7 +139,9 @@
           "n": "46",
           "text": "Wasn't it a book?",
           "alternatives": [
-            "Was it not a book?"
+            "Was it not a book?",
+            "Wasn't that a book?",
+            "Was that not a book?"
           ]
         },
         {
@@ -150,7 +155,9 @@
           "n": "48",
           "text": "Weren't those books?",
           "alternatives": [
-            "Were those not books?"
+            "Were those not books?",
+            "Weren't they books?",
+            "Were they not books?"
           ]
         },
         {

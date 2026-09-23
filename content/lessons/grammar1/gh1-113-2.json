@@ -32,11 +32,17 @@
         },
         {
           "n": "128",
-          "text": "Weren't they crossing the street here?"
+          "text": "Weren't they crossing the street here?",
+          "alternatives": [
+            "Were they not crossing the street here?"
+          ]
         },
         {
           "n": "129",
-          "text": "Won't you drop in on me?"
+          "text": "Won't you drop in on me?",
+          "alternatives": [
+            "Will you not drop in on me?"
+          ]
         },
         {
           "n": "130",
@@ -91,13 +97,17 @@
         },
         {
           "n": "142",
-          "text": "Isn't this your first visit to Canada?"
+          "text": "Isn't this your first visit to Canada?",
+          "alternatives": [
+            "Is this not your first visit to Canada?"
+          ]
         },
         {
           "n": "143",
           "text": "Isn't he working for a bank?",
           "alternatives": [
-            "Isn't he working at a bank?"
+            "Isn't he working at a bank?",
+            "Is he not working for a bank?"
           ]
         },
         {

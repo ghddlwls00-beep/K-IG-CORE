@@ -63,7 +63,10 @@
         },
         {
           "n": "9",
-          "text": "Nobody made her study English."
+          "text": "Nobody made her study English.",
+          "alternatives": [
+            "No one made her study English."
+          ]
         },
         {
           "n": "10",
@@ -79,10 +82,7 @@
         },
         {
           "n": "13",
-          "text": "I'd like to have a phone installed in my apartment.",
-          "alternatives": [
-            "I'd like to have my phone disconnected in my apartment."
-          ]
+          "text": "I'd like to have a phone installed in my apartment."
         },
         {
           "n": "14",
@@ -101,7 +101,12 @@
         },
         {
           "n": "17",
-          "text": "Who is the girl to sing?"
+          "text": "Who is the girl that is to sing?",
+          "alternatives": [
+            "Who is the girl who is to sing?",
+            "Who is the girl who is going to sing?",
+            "Who is the girl that is going to sing?"
+          ]
         },
         {
           "n": "18",

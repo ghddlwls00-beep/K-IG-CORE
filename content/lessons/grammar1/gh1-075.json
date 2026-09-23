@@ -70,7 +70,10 @@
         },
         {
           "n": "8",
-          "text": "The car was his."
+          "text": "The car was his.",
+          "alternatives": [
+            "That car was his."
+          ]
         },
         {
           "n": "9",
@@ -132,11 +135,17 @@
         },
         {
           "n": "22",
-          "text": "Was that land yours?"
+          "text": "Was that land yours?",
+          "alternatives": [
+            "Was the land yours?"
+          ]
         },
         {
           "n": "23",
-          "text": "Were those yours?"
+          "text": "Were those yours?",
+          "alternatives": [
+            "Were they yours?"
+          ]
         },
         {
           "n": "24",

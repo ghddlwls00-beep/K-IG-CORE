@@ -37,16 +37,7 @@
         {
           "n": "3",
           "text": "Let me know the time of your arrival so that I can meet you at the station."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "you at the station."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "4",
           "text": "I took every precaution lest I should fail again."
@@ -75,8 +66,7 @@
           "n": "10",
           "text": "He often came here last year.",
           "alternatives": [
-            "He would often come here last year.",
-            "He used to come here last year."
+            "He would often come here last year."
           ]
         },
         {
@@ -89,11 +79,17 @@
         },
         {
           "n": "13",
-          "text": "The professor is preparing an entrance examination."
+          "text": "The professor is preparing an entrance examination.",
+          "alternatives": [
+            "The professor is preparing an entrance exam."
+          ]
         },
         {
           "n": "14",
-          "text": "The student is preparing for an entrance examination."
+          "text": "The student is preparing for an entrance examination.",
+          "alternatives": [
+            "The student is preparing for an entrance exam."
+          ]
         }
       ]
     },

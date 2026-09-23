@@ -1,0 +1,15 @@
+[
+ {"item": "6-1635 s2-5 #1 — 학습자 빈칸 자리표시를 과정 꼴 (학교 이름) 으로", "files": ["content/lessons/student/s2-5.json"], "from": "나의 여동생은 (한국)초등학교에 다닙니다.", "to": "나의 여동생은 (학교 이름) 초등학교에 다닙니다.", "expect": 1},
+ {"item": "6-1636 s2-5 #2 문단 — 잘합니다(한 낱말)", "files": ["content/lessons/student/s2-5.json"], "from": "그녀는 피아노 치기를 잘하고 모든 과목 공부를 잘 합니다.", "to": "그녀는 피아노 치기를 잘하고 모든 과목 공부를 잘합니다.", "expect": 1},
+ {"item": "6-1637 s2-5 제목 · 머리 — 자매(여자 형제들) → 여동생", "files": ["content/lessons/student/s2-5.json", "content/courses/student.json"], "from": "Sister's School & Talents (자매의 학교와 재능)", "to": "Sister's School & Talents (여동생의 학교와 재능)", "expect": 3},
+ {"item": "6-1640 s2-6 제목 · 머리", "files": ["content/lessons/student/s2-6.json", "content/courses/student.json"], "from": "Sister's Hobby (자매의 취미)", "to": "Sister's Hobby (여동생의 취미)", "expect": 3},
+ {"item": "6-1638 s2-6 #2 — 사실상(= 사실상 · 거의) → 사실 · 반려동물은 키우다", "files": ["content/lessons/student/s2-6.json"], "from": "사실상 그녀는 개를 한 마리 가지고 있습니다.", "to": "사실 그녀는 개를 한 마리 키웁니다.", "expect": 1},
+ {"item": "6-1639 s2-6 #3 문단 — 음악 듣기 · 친구들과 이야기하기", "files": ["content/lessons/student/s2-6.json"], "from": "또한 그녀는 음악듣기를 좋아하고 전화로 그녀의 친구들에게 이야기 하기를 좋아합니다.", "to": "또한 그녀는 음악 듣기를 좋아하고 전화로 친구들과 이야기하기를 좋아합니다.", "expect": 1},
+ {"item": "6-1641 s3-1 #3 — best friend = 가장 친한 친구(다음 과 s3-2 처럼)", "files": ["content/lessons/student/s3-1.json"], "from": "그는/그녀는 나의 가장 좋은 친구 중 한 명입니다.", "to": "그는/그녀는 나의 가장 친한 친구 중 한 명입니다.", "expect": 1},
+ {"item": "6-1645 s3-2 #4 — 친구일까요(서술격 조사 붙여 씀)", "files": ["content/lessons/student/s3-2.json"], "from": "누가 나의 가장 친한 친구 일까요?", "to": "누가 나의 가장 친한 친구일까요?", "expect": 1},
+ {"item": "6-1642 s3-2 #8 — sometimes 빠짐 · like me 는 전체를 꾸밈", "files": ["content/lessons/student/s3-2.json"], "from": "그는/그녀는 외향적이지만 나와 같이 부끄러움을 타는 사람입니다.", "to": "그는/그녀는 나처럼 외향적이지만 때때로 수줍음을 타는 사람입니다.", "expect": 1},
+ {"item": "6-1646 s3-3 #8 — is always there = 늘 곁에 있다(자리 아님) · 내 고민", "files": ["content/lessons/student/s3-3.json"], "from": "그는/그녀는 항상 나의 문제들을 이해해 주고 내가 도움을 필요로 할 때 그는/그녀는 항상 거기에 있습니다.", "to": "그는/그녀는 항상 내 고민을 이해해 주고, 내가 도움이 필요할 때면 늘 곁에 있어 줍니다.", "expect": 1},
+ {"item": "6-1647 s3-3 #3 영어 — In addition 뒤에 앞 문장의 피아노를 되풀이 · 끝나지 않은 목록", "files": ["content/lessons/student/s3-3.json"], "from": "In addition, he/she is good at playing the piano, soccer, computer games, and he/she is good at speaking English.", "to": "In addition, he/she is good at playing soccer and computer games, and he/she speaks English well.", "expect": 1},
+ {"item": "6-1647 s3-3 #3 한국어", "files": ["content/lessons/student/s3-3.json"], "from": "게다가 그는/그녀는 피아노, 축구, 컴퓨터 게임 하기를 잘하고 영어 말하기를 잘합니다.", "to": "게다가 그는/그녀는 축구와 컴퓨터 게임을 잘하고 영어도 잘합니다.", "expect": 1},
+ {"item": "6-1648 s3-4 #1 — 통역사(과정의 16장처럼) · 지역 사회에 봉사(섬기다는 모심)", "files": ["content/lessons/student/s3-4.json"], "from": "그는/그녀는 때때로 경찰관, 소방관, 선생님, 의사, 통역관이 되기를 원하고 지역 사회를 섬기기를 원한다고 나에게 말합니다.", "to": "그는/그녀는 때때로 경찰관, 소방관, 선생님, 의사, 통역사가 되어 지역 사회에 봉사하고 싶다고 나에게 말합니다.", "expect": 1}
+]

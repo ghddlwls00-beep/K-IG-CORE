@@ -1,0 +1,19 @@
+[
+ {"course": "grammar2", "lesson": "gh2-049", "n": 13, "expect": "exact", "answers": [
+   "He said, \"Honesty is the best policy.\"",
+   "He said, “Honesty is the best policy.”",
+   "He said \"Honesty is the best policy.\""]},
+ {"course": "grammar2", "lesson": "gh2-049", "n": 13, "expect": "incorrect", "answers": [
+   "Lincoln said, \"Honesty is the best policy.\"",
+   "Lincoln said, “Honesty is the best policy.”",
+   "Lincoln said \"Honesty is the best policy.\""]},
+ {"course": "grammar2", "lesson": "gh2-049", "n": 13, "answers": [
+   "He said, \"Honesty was the best policy.\""]},
+ {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "exact", "answers": [
+   "He said that honesty is the best policy."]},
+ {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "partial", "answers": [
+   "He said that honesty was the best policy.",
+   "He said honesty is the best policy."]},
+ {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "incorrect", "answers": [
+   "Lincoln said that honesty is the best policy."]}
+]

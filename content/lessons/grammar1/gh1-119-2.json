@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "56",
-          "text": "Won't you give it to me?"
+          "text": "Won't you give it to me?",
+          "alternatives": [
+            "Will you not give it to me?"
+          ]
         },
         {
           "n": "57",
@@ -39,7 +42,13 @@
         },
         {
           "n": "58",
-          "text": "Weren't three of the victims Danes?"
+          "text": "Weren't three of the victims Danes?",
+          "alternatives": [
+            "Were three of the victims not Danes?",
+            "Weren't 3 of the victims Danes?",
+            "Weren't three of the victims Danish?",
+            "Weren't 3 of the victims Danish?"
+          ]
         },
         {
           "n": "59",
@@ -66,7 +75,10 @@
         },
         {
           "n": "64",
-          "text": "Weren't they going to see your place?"
+          "text": "Weren't they going to see your place?",
+          "alternatives": [
+            "Were they not going to see your place?"
+          ]
         },
         {
           "n": "65",

@@ -478,10 +478,14 @@ function extractSentencesForAudio(
     }
   }
 
-  // 1. Sentences block
-  const sentBlock = targetBlocks.find((b) => b.type === "sentences") as { type: "sentences"; items: { text: string }[] } | undefined;
-  if (sentBlock?.items && sentBlock.items.length > 0) {
-    return sentBlock.items.map((it) => cleanText(it.text)).filter(Boolean);
+  // 1. Sentences blocks — every one, in order. Only the first used to be read, so a lesson whose
+  // items sit in two blocks (gh1-015: #1–#23 + #24–#43) played 23 of its 43 answers; 24 GRAMMAR
+  // pages were split like this (6-1347). The step views already flatten the blocks.
+  const sentItems = targetBlocks
+    .filter((b) => b.type === "sentences")
+    .flatMap((b) => (b as { type: "sentences"; items?: { text: string }[] }).items || []);
+  if (sentItems.length > 0) {
+    return sentItems.map((it) => cleanText(it.text)).filter(Boolean);
   }
 
   // 2. Dialogue / conversation courses (man, woman, student)

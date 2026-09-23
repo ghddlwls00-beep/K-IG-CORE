@@ -55,7 +55,14 @@
         },
         {
           "n": "6",
-          "text": "Can you speak up, please?"
+          "text": "Can you speak up, please?",
+          "alternatives": [
+            "Can you speak up?",
+            "Could you speak up?",
+            "Could you speak up, please?",
+            "Could you speak louder, please?",
+            "Can you speak louder, please?"
+          ]
         },
         {
           "n": "7",
@@ -71,7 +78,10 @@
         },
         {
           "n": "10",
-          "text": "Do you have time?"
+          "text": "Do you have time?",
+          "alternatives": [
+            "Do you have any time?"
+          ]
         },
         {
           "n": "11",
@@ -122,7 +132,8 @@
           "text": "We are going to have a three-day weekend.",
           "alternatives": [
             "We're going to have a three-day weekend.",
-            "We are gonna have a three-day weekend."
+            "We are gonna have a three-day weekend.",
+            "We are going to have a 3-day weekend."
           ]
         }
       ]

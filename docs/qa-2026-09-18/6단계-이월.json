@@ -1,0 +1,263 @@
+{
+ "generated": "2026-09-22",
+ "about": "9/15 감사에서 넘어온 판단 대기 항목 중 아직 열린 것 + 대조 중 새로 찾은 것 — 6단계와 같은 기준으로 처리한다. 만든 도구: scripts/carryover-0915.cjs --finalize",
+ "source": "scripts/plans/carryover-0915-decisions.json",
+ "count": 18,
+ "items": [
+  {
+   "id": "6E-001",
+   "source": "9/15 이월",
+   "from": [
+    "A-121"
+   ],
+   "course": "VOCA",
+   "lesson": "hv-10",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json key \"billion\" (lessons hv-10)",
+   "original": "\"billion\": \"10억\"",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"billion\" → \"10억\" (한글 아님))",
+   "group": "voca-billion"
+  },
+  {
+   "id": "6E-002",
+   "source": "9/15 이월",
+   "from": [
+    "A-122"
+   ],
+   "course": "VOCA",
+   "lesson": "hv-38",
+   "file": "content/lessons/phonics/hv-38.json · content/voca_dictionary.json",
+   "locator": "hv-38 wordgrid \"judg(e)ment\" · voca_dictionary.json key \"judg(e)ment\"",
+   "original": "\"judg(e)ment\" (뜻 \"판단\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "group": "word-judg(e)ment"
+  },
+  {
+   "id": "6E-003",
+   "source": "9/15 이월",
+   "from": [
+    "A-123"
+   ],
+   "course": "VOCA",
+   "lesson": "hv-41",
+   "file": "content/lessons/phonics/hv-41.json · content/voca_dictionary.json",
+   "locator": "hv-41 wordgrid \"medi(a)eval\" · voca_dictionary.json key \"medi(a)eval\"",
+   "original": "\"medi(a)eval\" (뜻 \"중세의\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "group": "word-medi(a)eval"
+  },
+  {
+   "id": "6E-004",
+   "source": "9/15 이월",
+   "from": [
+    "A-124"
+   ],
+   "course": "VOCA",
+   "lesson": "hv-44",
+   "file": "content/lessons/phonics/hv-44.json · content/voca_dictionary.json",
+   "locator": "hv-44 wordgrid \"marvel(l)ous\" · voca_dictionary.json key \"marvel(l)ous\"",
+   "original": "\"marvel(l)ous\" (뜻 \"놀라운\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "group": "word-marvel(l)ous"
+  },
+  {
+   "id": "6E-005",
+   "source": "9/15 이월",
+   "from": [
+    "A-125"
+   ],
+   "course": "VOCA",
+   "lesson": "hv-56",
+   "file": "content/lessons/phonics/hv-56.json · content/voca_dictionary.json",
+   "locator": "hv-56 wordgrid \"enrol(l)\" · voca_dictionary.json key \"enrol(l)\"",
+   "original": "\"enrol(l)\" (뜻 \"등록하다\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "group": "word-enrol(l)"
+  },
+  {
+   "id": "6E-006",
+   "source": "9/15 이월",
+   "from": [
+    "A-131"
+   ],
+   "course": "VOCA",
+   "lesson": "mv1-34",
+   "file": "content/lessons/phonics/mv1-34.json · content/voca_dictionary.json",
+   "locator": "mv1-34 wordgrid \"favo(u)r\" · voca_dictionary.json key \"favo(u)r\"",
+   "original": "\"favo(u)r\" (뜻 \"호의\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "group": "word-favo(u)r"
+  },
+  {
+   "id": "6E-007",
+   "source": "9/15 이월",
+   "from": [
+    "A-133",
+    "A-134",
+    "A-135",
+    "A-136",
+    "A-137",
+    "A-138",
+    "A-139",
+    "A-140",
+    "A-141",
+    "A-142",
+    "A-143",
+    "A-144"
+   ],
+   "course": "VOCA",
+   "lesson": "mv2-11",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json keys January..December (mv2-11 · mv2-12 월 이름 격자)",
+   "original": "January 1월 · February 2월 · … · December 12월",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"January\" → \"1월\" (한글 아님))",
+   "group": "month-names"
+  },
+  {
+   "id": "6E-008",
+   "source": "9/15 이월",
+   "from": [
+    "A-146"
+   ],
+   "course": "VOCA",
+   "lesson": "mv3-08",
+   "file": "content/lessons/phonics/mv3-08.json · content/voca_dictionary.json",
+   "locator": "mv3-08 wordgrid \"afterward(s)\" · voca_dictionary.json key \"afterward(s)\"",
+   "original": "\"afterward(s)\" (뜻 \"그 후에\")",
+   "problem": "9/15 WORD_MALFORMED — 괄호로 두 철자를 한 칸에 적은 표제어. 같은 무리(colo(u)r 6-0633 · neighbo(u)r 6-0959 · hono(u)r/humo(u)r 6-0701 · dialog(ue) 6-0658 · gray(grey) 6-0697 · autumn(=fall) 6-0605)와 같은 결정으로 처리",
+   "group": "word-afterward(s)"
+  },
+  {
+   "id": "6E-009",
+   "source": "9/15 이월",
+   "from": [
+    "A-150"
+   ],
+   "course": "VOCA",
+   "lesson": "mv3-21",
+   "file": "content/voca_dictionary.json",
+   "locator": "voca_dictionary.json key \"decade\" (lessons mv3-21)",
+   "original": "\"decade\": \"10년\"",
+   "problem": "9/15 MEANING_NOT_KOREAN — 뜻에 숫자가 들어 있어 '한글 아님' 으로 잡힘 (\"decade\" → \"10년\" (한글 아님))",
+   "group": "voca-decade"
+  },
+  {
+   "id": "6E-010",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d004#7"
+   ],
+   "course": "LISTENING",
+   "lesson": "d004",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d004\", row n=\"7\", KO field",
+   "problem": "한국어 끝에 마침표 없음 ('…작은 것도 아니다'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리"
+  },
+  {
+   "id": "6E-011",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d004#10"
+   ],
+   "course": "LISTENING",
+   "lesson": "d004",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d004\", row n=\"10\", KO field",
+   "problem": "한국어 끝에 마침표 없음 ('…그것은 탁월하다'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리"
+  },
+  {
+   "id": "6E-012",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d068#5"
+   ],
+   "course": "LISTENING",
+   "lesson": "d068",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d068\", row n=\"5\", KO field",
+   "problem": "한국어 끝에 마침표 없음 ('…원하지 않으셨다'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리"
+  },
+  {
+   "id": "6E-013",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d170#2"
+   ],
+   "course": "LISTENING",
+   "lesson": "d170",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d170\", row n=\"2\", KO field",
+   "problem": "한국어가 쉼표로 끝남 ('…와인을,') — 문장이 행에서 끊김. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "dupOf": "6-0476",
+   "dupNote": "처음 대조 때 6단계 목록을 위치 표기 'n=K' 로만 찾아 놓쳤다(목록에는 'row #K' · 'rows …' 모양도 있음). 같은 행·같은 문제이므로 dupOf 항목을 고칠 때 같이 적는다."
+  },
+  {
+   "id": "6E-014",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d173#1"
+   ],
+   "course": "LISTENING",
+   "lesson": "d173",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d173\", row n=\"1\", KO field",
+   "problem": "한국어가 '…같은' 에서 끊김. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "dupOf": "6-0483",
+   "dupNote": "처음 대조 때 6단계 목록을 위치 표기 'n=K' 로만 찾아 놓쳤다(목록에는 'row #K' · 'rows …' 모양도 있음). 같은 행·같은 문제이므로 dupOf 항목을 고칠 때 같이 적는다."
+  },
+  {
+   "id": "6E-015",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d178#1"
+   ],
+   "course": "LISTENING",
+   "lesson": "d178",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d178\", row n=\"1\", KO field",
+   "problem": "한국어가 쉼표로 끝남 ('…않을 것이다,'). 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "dupOf": "6-0494",
+   "dupNote": "처음 대조 때 6단계 목록을 위치 표기 'n=K' 로만 찾아 놓쳤다(목록에는 'row #K' · 'rows …' 모양도 있음). 같은 행·같은 문제이므로 dupOf 항목을 고칠 때 같이 적는다."
+  },
+  {
+   "id": "6E-016",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d180#4"
+   ],
+   "course": "LISTENING",
+   "lesson": "d180",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d180\", row n=\"4\", KO field",
+   "problem": "한국어가 '…끌었을 때' 에서 끊김. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "dupOf": "6-0497",
+   "dupNote": "처음 대조 때 6단계 목록을 위치 표기 'n=K' 로만 찾아 놓쳤다(목록에는 'row #K' · 'rows …' 모양도 있음). 같은 행·같은 문제이므로 dupOf 항목을 고칠 때 같이 적는다."
+  },
+  {
+   "id": "6E-017",
+   "source": "대조 중 발견",
+   "from": [
+    "X-d245#2"
+   ],
+   "course": "LISTENING",
+   "lesson": "d245",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d245\", row n=\"2\", KO field",
+   "problem": "한국어 속 고유명사 'All saints Day' — All Saints' Day. 이월 대조 중 9/15 잘림 신호를 한국어에 돌려 찾음 — 같은 종류가 6-0068(d060 #3) · 6-0168(d121 #2) · 6-0312(d197 #5) · 6-0083(d065 #1) 로 6단계 목록에 있으므로 같은 기준으로 처리",
+   "dupOf": "6-0361",
+   "dupNote": "처음 대조 때 6단계 목록을 위치 표기 'n=K' 로만 찾아 놓쳤다(목록에는 'row #K' · 'rows …' 모양도 있음). 같은 행·같은 문제이므로 dupOf 항목을 고칠 때 같이 적는다."
+  },
+  {
+   "id": "6E-018",
+   "source": "6단계 중 발견",
+   "from": [],
+   "course": "LISTENING",
+   "lesson": "d071",
+   "file": "content/ld_english_scripts.json",
+   "locator": "content/ld_english_scripts.json → key \"d071\", row n=\"3\" (EN·KO) + content/lessons/ld/d071.json 넘친 힌트 줄 '71 mailmen sort mail.'",
+   "original": "At the end of the train, 71 mailmen sat sorting the mail. (#4: Inside the second coach, there were only 5 mailmen …)",
+   "problem": "6-0098(13 → 12량)을 고치며 같은 회차를 대조하다 찾음. 1963 Great Train Robbery 열차의 우체국 직원은 모두 72명이고 두 번째 차량(HVP)에 5명(Dewhurst 와 우편 직원 3명, 감독관 Kett)이었다 — 뒤쪽은 67명. 대본은 뒤쪽 71명 + 둘째 차량 5명 = 76명이라 전체 수와 맞지 않는다.",
+   "evidence": "Wikipedia 'Great Train Robbery (1963)': 'The train consisted of 12 carriages and carried 72 Post Office staff…' · 'Frank Dewhurst was in charge of the three other postal workers … in the HVP carriage. Thomas Kett … was also in the carriage.'"
+  }
+ ]
+}

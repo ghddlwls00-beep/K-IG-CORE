@@ -40,11 +40,17 @@
         },
         {
           "n": "2",
-          "text": "There are thirty thousand troops."
+          "text": "There are thirty thousand troops.",
+          "alternatives": [
+            "There are 30,000 troops."
+          ]
         },
         {
           "n": "3",
-          "text": "There is no evidence."
+          "text": "There is no evidence.",
+          "alternatives": [
+            "There isn't any evidence."
+          ]
         },
         {
           "n": "4",
@@ -60,7 +66,10 @@
         },
         {
           "n": "7",
-          "text": "The navy found his body."
+          "text": "The navy found his body.",
+          "alternatives": [
+            "The navy discovered his body."
+          ]
         },
         {
           "n": "8",
@@ -99,7 +108,10 @@
         },
         {
           "n": "16",
-          "text": "There are thirty thousand troops, aren't there?"
+          "text": "There are thirty thousand troops, aren't there?",
+          "alternatives": [
+            "There are 30,000 troops, aren't there?"
+          ]
         },
         {
           "n": "17",
@@ -150,19 +162,33 @@
         },
         {
           "n": "28",
-          "text": "Didn't she receive a letter?"
+          "text": "Didn't she receive a letter?",
+          "alternatives": [
+            "Did she not receive a letter?"
+          ]
         },
         {
           "n": "29",
-          "text": "Didn't he drive a tractor?"
+          "text": "Didn't he drive a tractor?",
+          "alternatives": [
+            "Did he not drive a tractor?"
+          ]
         },
         {
           "n": "30",
-          "text": "Didn't soldiers leave the city?"
+          "text": "Didn't soldiers leave the city?",
+          "alternatives": [
+            "Did soldiers not leave the city?",
+            "Didn't the soldiers leave the city?",
+            "Didn't any soldiers leave the city?"
+          ]
         },
         {
           "n": "31",
-          "text": "Are there thirty thousand troops?"
+          "text": "Are there thirty thousand troops?",
+          "alternatives": [
+            "Are there 30,000 troops?"
+          ]
         }
       ]
     },

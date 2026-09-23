@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "콜롬비아의 두 리듬은 외국에서 유래했다. 'cumbia'는 금광에서 일하도록 그 나라의 더운 지역으로 끌려온 아프리카 노예들이 만들었다. 그것은 가족을 그리워한 이 사람들의 슬픈 노래였다. 이와 대조적으로 'bambuco'는 흔히 스페인에서 유래했다고 한다. 그것은 더 추운 지역에서 만들어졌고, 스페인 사람들이 여자 친구에게 사랑을 표현하고 싶을 때 쓰였다."
+      "text": "콜롬비아의 두 리듬은 부분적으로 외국에서 유래했다. 'cumbia'는 그 나라의 더운 카리브 해 지역에서 생겨났는데, 그곳에서 아프리카 노예들의 북소리가 원주민의 피리 소리, 스페인 노래와 섞였다. 전통적으로 그것은 구애의 춤이며, 오늘날에는 라틴 아메리카 전역에서 인기가 있다. 이와 대조적으로 'bambuco'는 흔히 스페인에서 유래했다고 한다. 그것은 더 추운 지역에서 만들어졌고, 스페인 사람들이 여자 친구에게 사랑을 표현하고 싶을 때 쓰였다."
     },
     {
       "type": "choice",
@@ -47,18 +47,18 @@
   "readingSentences": [
     {
       "id": "reading-004-s001",
-      "english": "Two Colombian rhythms have a foreign origin.",
-      "korean": "콜롬비아의 두 리듬은 외국에서 유래했다."
+      "english": "Two Colombian rhythms have partly foreign origins.",
+      "korean": "콜롬비아의 두 리듬은 부분적으로 외국에서 유래했다."
     },
     {
       "id": "reading-004-s002",
-      "english": "The 'cumbia' was created by African slaves who were brought to the hot regions of the country to work in the gold mines.",
-      "korean": "'cumbia'는 금광에서 일하도록 그 나라의 더운 지역으로 끌려온 아프리카 노예들이 만들었다."
+      "english": "The 'cumbia' grew up in the hot Caribbean region of the country, where the drums of African slaves mixed with native flutes and Spanish songs.",
+      "korean": "'cumbia'는 그 나라의 더운 카리브 해 지역에서 생겨났는데, 그곳에서 아프리카 노예들의 북소리가 원주민의 피리 소리, 스페인 노래와 섞였다."
     },
     {
       "id": "reading-004-s003",
-      "english": "It was a sad song of these people who missed their families.",
-      "korean": "그것은 가족을 그리워한 이 사람들의 슬픈 노래였다."
+      "english": "Traditionally, it is a courtship dance, and today it is popular all over Latin America.",
+      "korean": "전통적으로 그것은 구애의 춤이며, 오늘날에는 라틴 아메리카 전역에서 인기가 있다."
     },
     {
       "id": "reading-004-s004",
@@ -82,7 +82,7 @@
       "examTags": [
         "중학기초"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "express",
@@ -109,26 +109,26 @@
       "freq": 1
     },
     {
-      "word": "families",
-      "lemma": "family",
-      "partOfSpeech": "n.",
-      "korean": "가족",
-      "score": 94,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 94점)",
+      "word": "mixed",
+      "lemma": "mix",
+      "partOfSpeech": "v.",
+      "korean": "섞이다 (mix with ~와 섞이다)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
     {
-      "word": "sad",
-      "lemma": "sad",
-      "partOfSpeech": "adj.",
-      "korean": "슬픈",
-      "score": 88,
-      "reason": "중학 필수 독해 기본 어휘 (평가 점수: 88점)",
+      "word": "courtship",
+      "lemma": "courtship",
+      "partOfSpeech": "n.",
+      "korean": "구애 (courtship dance 구애의 춤)",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
-        "중학기초"
+        "독해필수"
       ],
       "freq": 1
     },
@@ -142,7 +142,7 @@
       "examTags": [
         "독해필수"
       ],
-      "freq": 2
+      "freq": 1
     },
     {
       "word": "wanted",
@@ -229,12 +229,12 @@
       "freq": 1
     },
     {
-      "word": "missed",
-      "lemma": "miss",
-      "partOfSpeech": "v.",
-      "korean": "그리워하다",
-      "score": 74,
-      "reason": "지문 문맥 독해 핵심 어휘 · 문장 구조를 결정하는 핵심 동사 (평가 점수: 74점)",
+      "word": "popular",
+      "lemma": "popular",
+      "partOfSpeech": "adj.",
+      "korean": "인기 있는",
+      "score": 80,
+      "reason": "지문 문맥 독해 핵심 어휘 (평가 점수: 80점)",
       "examTags": [
         "독해필수"
       ],

@@ -44,21 +44,34 @@
         },
         {
           "n": "111",
-          "text": "Can't you stay here during the vacation?"
+          "text": "Can't you stay here during the vacation?",
+          "alternatives": [
+            "Can you not stay here during the vacation?"
+          ]
         },
         {
           "n": "112",
-          "text": "Don't you know the name of the poet?"
+          "text": "Don't you know the name of the poet?",
+          "alternatives": [
+            "Do you not know the name of the poet?"
+          ]
         },
         {
           "n": "113",
-          "text": "Oh, it's on the tip of my tongue."
+          "text": "Oh, it's on the tip of my tongue.",
+          "alternatives": [
+            "It's on the tip of my tongue."
+          ]
         },
         {
           "n": "114",
           "text": "The novelist won the Nobel Prize, didn't he?",
           "alternatives": [
-            "The novelist received the Nobel Prize, didn't he?"
+            "The novelist received the Nobel Prize, didn't he?",
+            "The novelist won the Nobel Prize, didn't she?",
+            "The novelist won the Nobel Prize, didn't they?",
+            "The novelist received the Nobel Prize, didn't she?",
+            "The novelist received the Nobel Prize, didn't they?"
           ]
         },
         {
@@ -67,11 +80,17 @@
         },
         {
           "n": "116",
-          "text": "Wasn't this measure much more effective?"
+          "text": "Wasn't this measure much more effective?",
+          "alternatives": [
+            "Was this measure not much more effective?"
+          ]
         },
         {
           "n": "117",
-          "text": "Isn't New York a fascinating city?"
+          "text": "Isn't New York a fascinating city?",
+          "alternatives": [
+            "Is New York not a fascinating city?"
+          ]
         },
         {
           "n": "118",
@@ -79,7 +98,10 @@
         },
         {
           "n": "119",
-          "text": "Didn't the clerk get a 50% pay raise?"
+          "text": "Didn't the clerk get a 50% pay raise?",
+          "alternatives": [
+            "Did the clerk not get a 50% pay raise?"
+          ]
         },
         {
           "n": "120",
@@ -87,7 +109,11 @@
         },
         {
           "n": "121",
-          "text": "The murder suspect wasn't innocent, was he?"
+          "text": "The murder suspect wasn't innocent, was he?",
+          "alternatives": [
+            "The murder suspect wasn't innocent, was she?",
+            "The murder suspect wasn't innocent, were they?"
+          ]
         },
         {
           "n": "122",
@@ -115,11 +141,17 @@
         },
         {
           "n": "128",
-          "text": "Weren't they crossing the street here?"
+          "text": "Weren't they crossing the street here?",
+          "alternatives": [
+            "Were they not crossing the street here?"
+          ]
         },
         {
           "n": "129",
-          "text": "Won't you drop in on me?"
+          "text": "Won't you drop in on me?",
+          "alternatives": [
+            "Will you not drop in on me?"
+          ]
         },
         {
           "n": "130",
@@ -174,13 +206,17 @@
         },
         {
           "n": "142",
-          "text": "Isn't this your first visit to Canada?"
+          "text": "Isn't this your first visit to Canada?",
+          "alternatives": [
+            "Is this not your first visit to Canada?"
+          ]
         },
         {
           "n": "143",
           "text": "Isn't he working for a bank?",
           "alternatives": [
-            "Isn't he working at a bank?"
+            "Isn't he working at a bank?",
+            "Is he not working for a bank?"
           ]
         },
         {

@@ -110,7 +110,11 @@
         },
         {
           "n": "6",
-          "text": "My parents are at home."
+          "text": "My parents are at home.",
+          "alternatives": [
+            "Our parents are at home.",
+            "My parents are home."
+          ]
         },
         {
           "n": "7",
@@ -122,7 +126,10 @@
         },
         {
           "n": "9",
-          "text": "I am from Korea."
+          "text": "I am from Korea.",
+          "alternatives": [
+            "I come from Korea."
+          ]
         },
         {
           "n": "10",
@@ -134,7 +141,10 @@
         },
         {
           "n": "12",
-          "text": "It is a cat."
+          "text": "It is a cat.",
+          "alternatives": [
+            "That is a cat."
+          ]
         },
         {
           "n": "13",

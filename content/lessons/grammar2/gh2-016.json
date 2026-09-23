@@ -112,7 +112,10 @@
         },
         {
           "n": "22",
-          "text": "I have some 50 dollars."
+          "text": "I have some 50 dollars.",
+          "alternatives": [
+            "I have some fifty dollars."
+          ]
         },
         {
           "n": "23",
@@ -126,7 +129,10 @@
           "n": "25",
           "text": "I didn't see any person.",
           "alternatives": [
-            "I didn't see anyone."
+            "I didn't see anyone.",
+            "I didn't see anybody.",
+            "I saw no one.",
+            "I saw nobody."
           ]
         },
         {
@@ -159,7 +165,10 @@
         },
         {
           "n": "33",
-          "text": "It is the largest diamond yet found."
+          "text": "It is the largest diamond yet found.",
+          "alternatives": [
+            "It is the largest diamond yet discovered."
+          ]
         },
         {
           "n": "34",

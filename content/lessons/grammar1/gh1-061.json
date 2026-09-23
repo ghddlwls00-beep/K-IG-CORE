@@ -36,15 +36,27 @@
       "items": [
         {
           "n": "1",
-          "text": "How did he go there?"
+          "text": "How did he go there?",
+          "alternatives": [
+            "How did he get there?"
+          ]
         },
         {
           "n": "2",
-          "text": "How fast does he go there?"
+          "text": "How fast does he go there?",
+          "alternatives": [
+            "How fast does he get there?",
+            "How quickly does he go there?"
+          ]
         },
         {
           "n": "3",
-          "text": "How fast does the girl come here?"
+          "text": "How fast does the girl come here?",
+          "alternatives": [
+            "How fast does the girl get here?",
+            "How quickly does the girl come here?",
+            "How soon does the girl come here?"
+          ]
         },
         {
           "n": "4",
@@ -72,7 +84,12 @@
         },
         {
           "n": "9",
-          "text": "He came here as soon as possible."
+          "text": "He came here as soon as possible.",
+          "alternatives": [
+            "He came here as quickly as possible.",
+            "He came here as fast as possible.",
+            "He came here as soon as he could."
+          ]
         },
         {
           "n": "10",
@@ -108,7 +125,10 @@
         },
         {
           "n": "18",
-          "text": "How do all the boys go there?"
+          "text": "How do all the boys go there?",
+          "alternatives": [
+            "How do all the boys get there?"
+          ]
         },
         {
           "n": "19",
@@ -130,11 +150,17 @@
         },
         {
           "n": "22",
-          "text": "How does she go there?"
+          "text": "How does she go there?",
+          "alternatives": [
+            "How does she get there?"
+          ]
         },
         {
           "n": "23",
-          "text": "Where does he go?"
+          "text": "Where does he go?",
+          "alternatives": [
+            "Where is he going?"
+          ]
         },
         {
           "n": "24",
@@ -148,7 +174,8 @@
           "n": "26",
           "text": "Who loves you more than I?",
           "alternatives": [
-            "Who loves you more than I do?"
+            "Who loves you more than I do?",
+            "Who loves you more than me?"
           ]
         },
         {

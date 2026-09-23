@@ -56,7 +56,10 @@
         },
         {
           "n": "6",
-          "text": "It is a book, isn't it?"
+          "text": "It is a book, isn't it?",
+          "alternatives": [
+            "That is a book, isn't it?"
+          ]
         },
         {
           "n": "7",
@@ -112,17 +115,25 @@
         },
         {
           "n": "18",
-          "text": "It is a book, isn't it?"
+          "text": "It is a book, isn't it?",
+          "alternatives": [
+            "That is a book, isn't it?"
+          ]
         },
         {
           "n": "19",
-          "text": "These are pens, aren't they?"
+          "text": "These are pens, aren't they?",
+          "alternatives": [
+            "These are pens, are they not?"
+          ]
         },
         {
           "n": "20",
           "text": "They are books, aren't they?",
           "alternatives": [
-            "Those are books, aren't they?"
+            "Those are books, aren't they?",
+            "Those are books, are they not?",
+            "They are books, are they not?"
           ]
         },
         {

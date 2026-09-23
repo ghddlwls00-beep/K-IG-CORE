@@ -36,17 +36,24 @@
       "items": [
         {
           "n": "1",
-          "text": "Isn't he a flight risk?"
+          "text": "Isn't he a flight risk?",
+          "alternatives": [
+            "Is he not a flight risk?"
+          ]
         },
         {
           "n": "2",
-          "text": "Isn't her next-door neighbor now a potential suspect?"
+          "text": "Isn't her next-door neighbor now a potential suspect?",
+          "alternatives": [
+            "Is her next-door neighbor not now a potential suspect?"
+          ]
         },
         {
           "n": "3",
           "text": "Isn't that strange?",
           "alternatives": [
-            "Isn't it strange?"
+            "Isn't it strange?",
+            "Is that not strange?"
           ]
         },
         {
@@ -55,15 +62,25 @@
         },
         {
           "n": "5",
-          "text": "Where did they seize the two vehicles?"
+          "text": "Where did they seize the two vehicles?",
+          "alternatives": [
+            "Where did they seize the 2 vehicles?",
+            "Where did they confiscate the two vehicles?"
+          ]
         },
         {
           "n": "6",
-          "text": "Are the police cooperating?"
+          "text": "Are the police cooperating?",
+          "alternatives": [
+            "Is the police officer cooperating?"
+          ]
         },
         {
           "n": "7",
-          "text": "The police were not questioning the man."
+          "text": "The police were not questioning the man.",
+          "alternatives": [
+            "The police were not interrogating the man."
+          ]
         },
         {
           "n": "8",
@@ -90,13 +107,18 @@
         },
         {
           "n": "13",
-          "text": "The CIA confirmed the report, didn't it?"
+          "text": "The CIA confirmed the report, didn't it?",
+          "alternatives": [
+            "The CIA confirmed that the report was true, didn't it?",
+            "The CIA confirmed the report was true, didn't it?"
+          ]
         },
         {
           "n": "14",
           "text": "The CIA did not take part in that raid, did it?",
           "alternatives": [
-            "The CIA did not participate in that raid, did it?"
+            "The CIA did not participate in that raid, did it?",
+            "The CIA did not take part in the raid, did it?"
           ]
         },
         {
@@ -105,7 +127,10 @@
         },
         {
           "n": "16",
-          "text": "The tunnel connects the two regions, doesn't it?"
+          "text": "The tunnel connects the two regions, doesn't it?",
+          "alternatives": [
+            "The tunnel connects the 2 regions, doesn't it?"
+          ]
         },
         {
           "n": "17",
@@ -113,7 +138,7 @@
         },
         {
           "n": "18",
-          "text": "The Interior Department acquired the home, didn't it?"
+          "text": "The Interior Department was authorized to acquire the home, wasn't it?"
         },
         {
           "n": "19",
@@ -125,7 +150,7 @@
         },
         {
           "n": "21",
-          "text": "Why did Reagan's childhood home become a federal historic site?"
+          "text": "Why did Congress want Reagan's childhood home to become a federal historic site?"
         },
         {
           "n": "22",
@@ -133,11 +158,18 @@
         },
         {
           "n": "23",
-          "text": "Why is the anniversary usually a somber occasion?"
+          "text": "Why is the anniversary usually a somber occasion?",
+          "alternatives": [
+            "Why is the anniversary usually a solemn occasion?"
+          ]
         },
         {
           "n": "24",
-          "text": "Who made the taped confession?"
+          "text": "Who made the taped confession?",
+          "alternatives": [
+            "Who made the recorded confession?",
+            "Who made the videotaped confession?"
+          ]
         },
         {
           "n": "25",
@@ -153,7 +185,10 @@
         },
         {
           "n": "28",
-          "text": "Isn't the Atlanta-based fast food chain switching its soft drink?"
+          "text": "Isn't the Atlanta-based fast food chain switching its soft drink?",
+          "alternatives": [
+            "Is the Atlanta-based fast food chain not switching its soft drink?"
+          ]
         },
         {
           "n": "29",
@@ -161,7 +196,10 @@
         },
         {
           "n": "30",
-          "text": "Did they always have to type their assignments?"
+          "text": "Did they always have to type their assignments?",
+          "alternatives": [
+            "Did they always have to type their homework?"
+          ]
         },
         {
           "n": "31",
@@ -169,7 +207,7 @@
         },
         {
           "n": "32",
-          "text": "Fortunately he was fast and accurate. wasn't he?"
+          "text": "Fortunately, he was fast and accurate, wasn't he?"
         },
         {
           "n": "33",
@@ -181,7 +219,10 @@
         },
         {
           "n": "35",
-          "text": "They will have dinner together some other time."
+          "text": "They will have dinner together some other time.",
+          "alternatives": [
+            "They will have dinner together next time."
+          ]
         }
       ]
     },

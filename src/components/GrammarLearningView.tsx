@@ -36,8 +36,14 @@ const GRAMMAR_KEYWORDS = new Set([
   "this", "that", "these", "those",
   "my", "your", "his", "her", "its", "our", "their", "mine", "yours", "hers", "theirs",
   "who", "whom", "whose", "which", "what", "where", "when", "why", "how",
-  "in", "on", "at", "for", "to", "from", "with", "by", "of", "into", "out"
+  "in", "on", "at", "for", "to", "from", "with", "by", "of", "into", "out",
+  // Negative contractions — the forms these lessons drill (Isn't he a boy? · She doesn't …) (6-1357)
+  "isn't", "aren't", "wasn't", "weren't", "don't", "doesn't", "didn't", "haven't", "hasn't", "hadn't",
+  "can't", "couldn't", "won't", "wouldn't", "shouldn't", "mustn't"
 ]);
+
+/** isn't, don't, Weren't … — one word, even though other apostrophes still split a token. */
+const NEGATIVE_CONTRACTION = /^[A-Za-z]+n['’]t$/;
 
 function isEnglish(text: string): boolean {
   if (!text) return false;
@@ -76,12 +82,18 @@ function buildCloze(enText: string): {
   parts: { text: string; isBlank: boolean; answer?: string }[];
   keywords: string[];
 } {
-  const tokens = enText.split(/(\s+|[.,?!;:"'()]+)/);
+  // A negative contraction stays one token. Split on its apostrophe, "Isn't" became "Isn" + "'" + "t":
+  // the blank took half a word and typing the whole "Isn't" was marked wrong, or the blank fell on
+  // "your" while the contraction the lesson drills stayed on screen (6-1357). Other apostrophes
+  // (What's, I'm) still split as before, so those items keep their blanks.
+  const tokens = enText
+    .split(/(\s+|[.,?!;:"()]+)/)
+    .flatMap((t) => (t.includes("'") && !NEGATIVE_CONTRACTION.test(t) ? t.split(/('+)/) : [t]));
   const candidates: { index: number; word: string; clean: string }[] = [];
 
   for (let i = 0; i < tokens.length; i++) {
     const raw = tokens[i];
-    const clean = raw.toLowerCase().trim();
+    const clean = raw.toLowerCase().replace(/’/g, "'").trim();
     if (GRAMMAR_KEYWORDS.has(clean)) {
       candidates.push({ index: i, word: raw, clean });
     }

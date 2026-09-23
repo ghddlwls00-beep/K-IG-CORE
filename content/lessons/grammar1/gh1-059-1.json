@@ -25,7 +25,7 @@
     },
     {
       "type": "instruction",
-      "text": "영작문제 5"
+      "text": "영작문제 5 답안"
     },
     {
       "type": "instruction",
@@ -70,7 +70,10 @@
         },
         {
           "n": "8",
-          "text": "Whom does he love?"
+          "text": "Whom does he love?",
+          "alternatives": [
+            "Who does he love?"
+          ]
         },
         {
           "n": "9",
@@ -134,7 +137,11 @@
         },
         {
           "n": "19",
-          "text": "He wants apples."
+          "text": "He wants apples.",
+          "alternatives": [
+            "He wants an apple.",
+            "He wants some apples."
+          ]
         }
       ]
     },

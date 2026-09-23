@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-22T21:19:28.673Z",
+ "generated": "2026-09-22T22:18:41.391Z",
  "command": "node docs/qa-2026-09-18/scripts/export-content-findings.cjs",
  "rule": "summarise-content-findings.cjs 와 같은 생존 규칙 (verification.survives && votes.length > 0)",
  "baselineCommit": "8325e10",
@@ -312,7 +312,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d019.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 526
@@ -335,7 +337,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d019.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 534
@@ -867,7 +871,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d046.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 582
@@ -1638,7 +1644,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d060.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 593
@@ -1661,7 +1669,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d060.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 598
@@ -1684,7 +1694,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d060.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 594
@@ -1707,7 +1719,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d060.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 595
@@ -1730,7 +1744,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d060.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 596
@@ -2351,7 +2367,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d071.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 632
@@ -2374,7 +2392,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d071.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 643
@@ -2397,7 +2417,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d072.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 664
@@ -2420,7 +2442,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d072.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 655
@@ -2443,7 +2467,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d072.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 658
@@ -2585,7 +2611,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d100.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 745
@@ -2608,7 +2636,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d100.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 735
@@ -2631,7 +2661,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d100.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 734
@@ -2654,7 +2686,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d100.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 752
@@ -4405,7 +4439,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d131.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 812
@@ -4428,7 +4464,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d131.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 808
@@ -4451,7 +4489,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d131.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 810
@@ -4474,7 +4514,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d131.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 814
@@ -4497,7 +4539,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d131.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 807
@@ -4520,7 +4564,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d132.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 820
@@ -4543,7 +4589,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d132.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 809
@@ -5227,7 +5275,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d146.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 868
@@ -5250,7 +5300,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d146.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 866
@@ -5273,7 +5325,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d146.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 876
@@ -5296,7 +5350,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d146.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 856
@@ -9259,7 +9315,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d025.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 552
@@ -9307,7 +9365,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d025.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 564
@@ -9543,7 +9603,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d032.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 547
@@ -9566,7 +9628,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d032.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 546
@@ -10737,7 +10801,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d090.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 695
@@ -10760,7 +10826,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d090.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 727
@@ -10791,7 +10859,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d090.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 694
@@ -10814,7 +10884,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d091.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 701
@@ -10837,7 +10909,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d091.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 702
@@ -10860,7 +10934,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d091.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 697
@@ -10883,7 +10959,9 @@
      "severity": "Medium"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d091.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 703
@@ -10906,7 +10984,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d091.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 704
@@ -11159,7 +11239,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d096.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 707
@@ -11182,7 +11264,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d096.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 696
@@ -11205,7 +11289,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d096.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 722
@@ -11228,7 +11314,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d096.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 721
@@ -11251,7 +11339,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d096.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 711
@@ -11619,7 +11709,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d175.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 918
@@ -11642,7 +11734,9 @@
      "severity": "Low"
     }
    ],
-   "changedSinceAudit": [],
+   "changedSinceAudit": [
+    "강의 파일 바뀜: content/lessons/ld/d175.json"
+   ],
    "evidence": {
     "source": "docs/qa-2026-09-18/out/content-review-pass1.json",
     "index": 932

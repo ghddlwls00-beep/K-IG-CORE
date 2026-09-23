@@ -109,11 +109,11 @@ const PREFIX_RULES: AffixRule[] = [
   { prefix: "subtitle", meaning: "sub(아래의) + title(제목) ➔ 화면 아래에 나오는 글자, 자막" },
   { prefix: "substitute", meaning: "sub(대신하여) + stitute(세우다) ➔ 원래 것 대신 아래에 세우다, 대체하다" },
   { prefix: "transport", meaning: "trans(가로질러) + port(나르다) ➔ 국경이나 먼 거리를 가로질러 나르다, 수송하다" },
-  { prefix: "translate", meaning: "trans(바꾸어) + late(옮기다) ➔ 한 언어를 다른 언어로 건네주다, 번역하다" },
+  { prefix: "translate", meaning: "trans(건너서) + late(옮겨진) ➔ 한 언어에서 다른 언어로 건너 옮기다, 번역하다" },
   { prefix: "transform", meaning: "trans(바꾸어) + form(모양) ➔ 형태를 완전히 바꾸다, 변형하다" },
   { prefix: "transfer", meaning: "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근가다" },
-  { prefix: "export", meaning: "ex(밖으로) + port(항구/나르다) ➔ 항구 밖으로 물건을 내보내다, 수출하다" },
-  { prefix: "import", meaning: "im/in(안으로) + port(항구/나르다) ➔ 항구 안으로 물건을 들여오다, 수입하다" },
+  { prefix: "export", meaning: "ex(밖으로) + port(나르다) ➔ 밖으로 실어 내보내다, 수출하다" },
+  { prefix: "import", meaning: "im/in(안으로) + port(나르다) ➔ 안으로 실어 들여오다, 수입하다" },
   { prefix: "inspect", meaning: "in(안을) + spect(들여다보다) ➔ 문제 없는지 안쪽을 자세히 보다, 검사하다" },
   { prefix: "expect", meaning: "ex(밖을 향해) + spect(바라보다) ➔ 앞으로 일어날 일을 기대하며 바라보다, 예상하다" },
   { prefix: "respect", meaning: "re(다시) + spect(돌아보다) ➔ 훌륭한 사람을 다시 돌아보다, 존경하다" },
@@ -304,6 +304,20 @@ const SYNONYM_GROUPS: string[][] = [
   ["precious", "priceless"], // hv-53 — "[ 소중한 ]" cannot fairly count priceless as wrong
 ];
 
+/**
+ * The two pronunciation notes some glosses carry — `tear 찢다; 눈물 (뜻에 따라 발음이 다름)`,
+ * `present … 발표하다 (동사는 뒤 강세)` — are for the study card, where they warn that the one
+ * clip matches one sense only. On a quiz or speed-drill screen they would point at the answer:
+ * about 30 of the 3,904 glosses carry one, so the option with a note is nearly always the right
+ * one. Those screens show the gloss without them; the card keeps them.
+ */
+const PRONUNCIATION_NOTES = [" (뜻에 따라 발음이 다름)", " (동사는 뒤 강세)"];
+function quizMeaning(meaning: string): string {
+  let m = meaning;
+  for (const note of PRONUNCIATION_NOTES) m = m.split(note).join("");
+  return m;
+}
+
 /** Whether two words of one lesson can stand as each other's wrong answer. */
 function conflicts(
   wordA: string,
@@ -325,18 +339,19 @@ export function generateActiveRecallQuizzes(
   if (validWords.length === 0) return [];
 
   const allMeanings = Array.from(
-    new Set(Object.values(vocaDict).map((v) => v.meaning).filter(Boolean)),
+    new Set(Object.values(vocaDict).map((v) => v.meaning).filter(Boolean).map(quizMeaning)),
   );
 
   return validWords.map((word, idx) => {
     const clean = word.toLowerCase().trim();
-    const correctMeaning = vocaDict[clean]?.meaning || "뜻";
+    const correctMeaning = quizMeaning(vocaDict[clean]?.meaning || "뜻");
     const isEnToKo = idx % 2 === 0;
 
     const poolMeanings = validWords
       .filter((w) => !conflicts(w, clean, vocaDict))
       .map((w) => vocaDict[w.toLowerCase().trim()]?.meaning)
-      .filter((m): m is string => Boolean(m));
+      .filter((m): m is string => Boolean(m))
+      .map(quizMeaning);
 
     const shuffledPool = [...poolMeanings].sort(() => Math.random() - 0.5);
     const distractors: string[] = [];
@@ -355,7 +370,8 @@ export function generateActiveRecallQuizzes(
           .flat()
           .filter((w) => w !== clean)
           .map((w) => vocaDict[w]?.meaning)
-          .filter(Boolean),
+          .filter((m): m is string => Boolean(m))
+          .map(quizMeaning),
       );
       const shuffledGlobal = [...allMeanings].sort(() => Math.random() - 0.5);
       for (const m of shuffledGlobal) {
@@ -483,7 +499,7 @@ export function generateSpeedDrillItems(
   for (let i = 0; i < validWords.length; i++) {
     const word = validWords[i];
     const clean = word.toLowerCase().trim();
-    const actualMeaning = vocaDict[clean]?.meaning || "뜻";
+    const actualMeaning = quizMeaning(vocaDict[clean]?.meaning || "뜻");
 
     let isMatch = Math.random() > 0.45;
     let displayedMeaning = actualMeaning;
@@ -496,7 +512,7 @@ export function generateSpeedDrillItems(
       // showing a made-up "다른 뜻".
       const otherMeanings = validWords
         .filter((w) => !conflicts(w, clean, vocaDict))
-        .map((w) => vocaDict[w.toLowerCase().trim()]?.meaning || "")
+        .map((w) => quizMeaning(vocaDict[w.toLowerCase().trim()]?.meaning || ""))
         .filter(Boolean);
       if (otherMeanings.length > 0) {
         displayedMeaning = otherMeanings[Math.floor(Math.random() * otherMeanings.length)];

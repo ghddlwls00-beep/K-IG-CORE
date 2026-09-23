@@ -36,7 +36,12 @@
         },
         {
           "n": "24",
-          "text": "What is she?"
+          "text": "What is she?",
+          "alternatives": [
+            "What does she do?",
+            "What is her job?",
+            "What does she do for a living?"
+          ]
         },
         {
           "n": "25",
@@ -103,14 +108,16 @@
           "n": "38",
           "text": "Is it eight o'clock?",
           "alternatives": [
-            "Is it eight o'clock now?"
+            "Is it eight o'clock now?",
+            "Is it 8 o'clock?"
           ]
         },
         {
           "n": "39",
           "text": "It is nine o'clock.",
           "alternatives": [
-            "It is nine o'clock now."
+            "It is nine o'clock now.",
+            "It is 9 o'clock."
           ]
         },
         {

@@ -55,11 +55,18 @@
         },
         {
           "n": "7",
-          "text": "Will you give me a wake-up call at 7 tomorrow morning?"
+          "text": "Will you give me a wake-up call at 7 tomorrow morning?",
+          "alternatives": [
+            "Will you give me a wake-up call at seven tomorrow morning?"
+          ]
         },
         {
           "n": "8",
-          "text": "Would he mind if I ask him to direct me to the station?"
+          "text": "Would he mind if I asked him to direct me to the station?",
+          "alternatives": [
+            "Does he mind if I ask him to direct me to the station?",
+            "Would he mind if I ask him to direct me to the station?"
+          ]
         },
         {
           "n": "9",
@@ -87,11 +94,17 @@
         },
         {
           "n": "15",
-          "text": "How often do the trains run on this route? About every ten minutes."
+          "text": "How often do the trains run on this route? About every ten minutes.",
+          "alternatives": [
+            "How often do the trains run on this route? About every 10 minutes."
+          ]
         },
         {
           "n": "16",
-          "text": "Are there through buses to the airport?"
+          "text": "Are there through buses to the airport?",
+          "alternatives": [
+            "Are there any through buses to the airport?"
+          ]
         },
         {
           "n": "17",

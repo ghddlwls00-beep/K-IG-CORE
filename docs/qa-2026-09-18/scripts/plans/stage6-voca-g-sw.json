@@ -1,0 +1,12 @@
+[
+ {"item": "6-0633 searchWord = 앱이 말하는 꼴(vocaSpeech.ts VOCA_SPEECH_FORMS) — colo(u)r", "files": ["content/voca_dictionary.json"], "from": "colour", "to": "color", "expect": 1},
+ {"item": "6-0633 같은 결함 — judg(e)ment", "files": ["content/voca_dictionary.json"], "from": "judgement", "to": "judgment", "expect": 1},
+ {"item": "6-0633 같은 결함 — medi(a)eval", "files": ["content/voca_dictionary.json"], "from": "mediaeval", "to": "medieval", "expect": 1},
+ {"item": "6-0633 같은 결함 — marvel(l)ous", "files": ["content/voca_dictionary.json"], "from": "marvellous", "to": "marvelous", "expect": 1},
+ {"item": "6-0633 같은 결함 — neighbo(u)r", "files": ["content/voca_dictionary.json"], "from": "neighbour", "to": "neighbor", "expect": 1},
+ {"item": "6-0633 같은 결함 — favo(u)r", "files": ["content/voca_dictionary.json"], "from": "favour", "to": "favor", "expect": 1},
+ {"item": "6-0633 같은 결함 — humo(u)r", "files": ["content/voca_dictionary.json"], "from": "humour", "to": "humor", "expect": 1},
+ {"item": "6-0633 같은 결함 — afterward(s)", "files": ["content/voca_dictionary.json"], "from": "afterwards", "to": "afterward", "expect": 1},
+ {"item": "6-0633 같은 결함 — hono(u)r", "files": ["content/voca_dictionary.json"], "from": "honour", "to": "honor", "expect": 1},
+ {"item": "6-0697 gray(grey) — 괄호만 지운 'graygrey' (6-0633 과 같은 규칙으로 한 번에)", "files": ["content/voca_dictionary.json"], "from": "graygrey", "to": "gray", "expect": 1}
+]

@@ -1,0 +1,6 @@
+[
+ {"item": "6-0887 · 6-0976 mv2-27 단어판 — 복수형 표제어 'pebbles' → 'pebble' (같은 판 stone · pond · cliff · stream 처럼 단수 기본형)", "files": ["content/lessons/phonics/mv2-27.json"],
+  "from": "pebbles", "to": "pebble", "expect": 1},
+ {"item": "6-0887 · 6-0976 사전 항목 표제어·searchWord 'pebbles' → 'pebble' (사전에 pebble 항목 없음 — 겹치는 키 없음)", "files": ["content/voca_dictionary.json"],
+  "from": "pebbles", "to": "pebble", "expect": 2}
+]

@@ -52,7 +52,10 @@
         },
         {
           "n": "7",
-          "text": "He went to Pusan on business."
+          "text": "He went to Busan on business.",
+          "alternatives": [
+            "He went to Pusan on business."
+          ]
         },
         {
           "n": "8",
@@ -64,7 +67,11 @@
         },
         {
           "n": "10",
-          "text": "Care to leave a message?"
+          "text": "Care to leave a message?",
+          "alternatives": [
+            "Would you care to leave a message?",
+            "Would you like to leave a message?"
+          ]
         },
         {
           "n": "11",
@@ -72,7 +79,10 @@
         },
         {
           "n": "12",
-          "text": "Will you be free to have lunch with me?"
+          "text": "Will you be free to have lunch with me?",
+          "alternatives": [
+            "Will you be free to eat lunch with me?"
+          ]
         },
         {
           "n": "13",

@@ -44,7 +44,11 @@
         },
         {
           "n": "5",
-          "text": "Give me a minute to change."
+          "text": "Give me a minute to change.",
+          "alternatives": [
+            "Give me a moment to change.",
+            "Give me a second to change."
+          ]
         },
         {
           "n": "6",
@@ -76,14 +80,14 @@
         },
         {
           "n": "13",
-          "text": "I'll tell you when."
+          "text": "I'll tell you when.",
+          "alternatives": [
+            "I'll tell you when to get off."
+          ]
         },
         {
           "n": "14",
-          "text": "This is the wrong place for him to announce the news.",
-          "alternatives": [
-            "This is a wrong place for him to announce the news."
-          ]
+          "text": "This is the wrong place for him to announce the news."
         },
         {
           "n": "15",

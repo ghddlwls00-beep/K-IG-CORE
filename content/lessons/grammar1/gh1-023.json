@@ -56,7 +56,10 @@
         },
         {
           "n": "6",
-          "text": "It is a book."
+          "text": "It is a book.",
+          "alternatives": [
+            "That is a book."
+          ]
         },
         {
           "n": "7",
@@ -123,7 +126,10 @@
         },
         {
           "n": "22",
-          "text": "It is not a book."
+          "text": "It is not a book.",
+          "alternatives": [
+            "That is not a book."
+          ]
         },
         {
           "n": "23",

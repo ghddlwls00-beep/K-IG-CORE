@@ -36,16 +36,7 @@
         {
           "n": "58",
           "text": "It'll be a little harder."
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "58 It'll be a little harder."
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "59",
           "text": "I got an answering machine."
@@ -75,7 +66,11 @@
         },
         {
           "n": "65",
-          "text": "Isiah was arrested April 15."
+          "text": "Isiah was arrested April 15.",
+          "alternatives": [
+            "Isiah was arrested on April 15.",
+            "Isiah was arrested on April 15th."
+          ]
         },
         {
           "n": "66",
@@ -103,7 +98,10 @@
         },
         {
           "n": "72",
-          "text": "That visa expired last August."
+          "text": "That visa expired last August.",
+          "alternatives": [
+            "The visa expired last August."
+          ]
         },
         {
           "n": "73",
@@ -115,7 +113,10 @@
         },
         {
           "n": "75",
-          "text": "Five Pakistanis are being questioned."
+          "text": "Five Pakistanis are being questioned.",
+          "alternatives": [
+            "Five Pakistanis are being interrogated."
+          ]
         }
       ]
     },

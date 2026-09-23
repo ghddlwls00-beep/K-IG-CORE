@@ -52,7 +52,11 @@
         },
         {
           "n": "57",
-          "text": "Does each student have his own room?"
+          "text": "Does each student have his own room?",
+          "alternatives": [
+            "Does each student have their own room?",
+            "Does each student have his or her own room?"
+          ]
         },
         {
           "n": "58",
@@ -72,21 +76,16 @@
         },
         {
           "n": "62",
-          "text": "Why was the British woman sitting there?"
+          "text": "Why was the British woman sitting there?",
+          "alternatives": [
+            "Why was the English woman sitting there?",
+            "Why was the Englishwoman sitting there?"
+          ]
         },
         {
           "n": "63",
           "text": "She is happy, isn't she?"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": "63, She is happy, isn't she?"
-    },
-    {
-      "type": "sentences",
-      "items": [
+        },
         {
           "n": "64",
           "text": "He is not poor, is he?"
@@ -123,7 +122,10 @@
         },
         {
           "n": "71",
-          "text": "All the boys receive a prize."
+          "text": "All the boys receive a prize.",
+          "alternatives": [
+            "All of the boys receive a prize."
+          ]
         },
         {
           "n": "72",
@@ -135,7 +137,10 @@
         },
         {
           "n": "74",
-          "text": "All the boys received a prize."
+          "text": "All the boys received a prize.",
+          "alternatives": [
+            "All of the boys received a prize."
+          ]
         },
         {
           "n": "75",
@@ -157,7 +162,10 @@
         },
         {
           "n": "78",
-          "text": "All the boys received a prize, didn't they?"
+          "text": "All the boys received a prize, didn't they?",
+          "alternatives": [
+            "All of the boys received a prize, didn't they?"
+          ]
         }
       ]
     },

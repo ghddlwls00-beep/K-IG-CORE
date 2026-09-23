@@ -48,7 +48,10 @@
         },
         {
           "n": "4",
-          "text": "Is it a book?"
+          "text": "Is it a book?",
+          "alternatives": [
+            "Is that a book?"
+          ]
         },
         {
           "n": "5",
@@ -102,7 +105,9 @@
           "n": "14",
           "text": "Isn't it a book?",
           "alternatives": [
-            "Is it not a book?"
+            "Is it not a book?",
+            "Isn't that a book?",
+            "Is that not a book?"
           ]
         },
         {
@@ -116,7 +121,9 @@
           "n": "16",
           "text": "Aren't those books?",
           "alternatives": [
-            "Are those not books?"
+            "Are those not books?",
+            "Aren't they books?",
+            "Are they not books?"
           ]
         },
         {
@@ -130,7 +137,9 @@
           "n": "18",
           "text": "Wasn't it a book?",
           "alternatives": [
-            "Was it not a book?"
+            "Was it not a book?",
+            "Wasn't that a book?",
+            "Was that not a book?"
           ]
         },
         {
@@ -144,7 +153,9 @@
           "n": "20",
           "text": "Weren't those books?",
           "alternatives": [
-            "Were those not books?"
+            "Were those not books?",
+            "Weren't they books?",
+            "Were they not books?"
           ]
         }
       ]

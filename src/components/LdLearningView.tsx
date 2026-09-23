@@ -82,10 +82,14 @@ export function LdLearningView({
    */
   const hintChunks = useMemo(() => {
     if (!hintsBlock?.text) return [];
+    // A lesson's list can name the same word for two rows ("German" in d007), so a
+    // chunk is kept once — otherwise a sentence that matches it shows the chip twice.
+    // A comma between digits ("4,000", "2,500,000") is a thousands separator, not a
+    // list break — splitting there left chips such as "000 pounds".
     return hintsBlock.text
-      .split(/,|\.\s+|\.$|\s{2,}/)
+      .split(/,(?!\d{3}(?!\d))|\.\s+|\.$|\s{2,}/)
       .map((chunk) => chunk.trim().replace(/[.,]+$/, "").trim())
-      .filter(Boolean);
+      .filter((chunk, index, all) => chunk && all.indexOf(chunk) === index);
   }, [hintsBlock]);
 
   const squash = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -95,12 +99,14 @@ export function LdLearningView({
     if (!sentence || hintChunks.length === 0) return [];
 
     const squashedSentence = squash(sentence);
+    // "4,000" in the sentence must meet the hint token "4,000" (read as "4000").
+    const sentenceNumbers = sentence.replace(/(\d),(?=\d{3}(?!\d))/g, "$1");
     const relevant = hintChunks.filter((chunk) => {
       const whole = squash(chunk);
       if (whole.length >= 3 && squashedSentence.includes(whole)) return true;
       return chunk.split(/\s+/).some((token) => {
         const bare = token.replace(/[^A-Za-z0-9'’.]/g, "").replace(/[.'’]+$/, "");
-        if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentence);
+        if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentenceNumbers);
         // A proper noun counts from 3 letters; a lower-case "어려운 단어" only from
         // 5, so that a short everyday word in the chunk cannot stick to every
         // sentence. Without the lower-case case at all, the 13 lessons whose
