@@ -155,9 +155,21 @@ scripts/generate-azure-ava.mjs 는 .env.local 을 읽지 않는다. R2 자격이
     않는데 생성기가 모아 만든다(수정 세션이 셈). 소리를 내는 글은 앱 코드가 speakText · 클립 요청으로
     부르는 글뿐이다(STUDENT 한국어는 부름 — StudentLearningView 의 "🔈 해석"). 과정마다 앱이 부르는
     칸을 코드에서 확인해 그것만 모으게 고쳐라.
+  - 같은 "앱이 소리 내는 칸" 정의를 검사 쪽에도 똑같이 — 한 곳에 두고 함께 쓰게 하라. 지금은 네 곳이 따로 정한다:
+    scripts/buildFreeSpeechKeys.mjs 의 SPEECH_KEYS(주석 "생성기와 같은 집합" — ko · korean · meaning 포함),
+    docs/qa-2026-09-18/scripts/lib/expectations.cjs 의 clipTexts(READING s.korean · GRAMMAR 상대 언어 문항 ·
+    instruction · heading 을 넣음), 그것을 쓰는 audio-inventory.cjs · audio-check.cjs, 그리고 check-changed-clips.cjs.
+    2026-09-23 밤 7-4 f 뒤 점검 세션이 셈: audio-inventory 가 "사이트가 말하는 클립" 으로 센 19,816 중 STUDENT 밖의
+    한국어 글 클립 4,061(GRAMMAR 2,329 · READING 1,729 · LD 3)은 앱이 한 번도 부르지 않는다(ReadingLearningView ·
+    GrammarLearningView 는 영어만 speakText, 위 플레이어도 영어만 — [course]/[lesson]/page.tsx extractSentencesForAudio).
+    그중 133 은 무료 강의 것이라 최종 관문 2(무료 소리 N/N)가 센다. 생성기만 줄이면 그 뒤 바뀐 한국어 글의 클립이
+    안 만들어져 audio-check 가 "무료인데 안 열림 · 클립 없음" 으로 가짜 경보를 낸다.
 증명: 자격을 지운 셸에서 생성 명령 → Azure 를 한 번도 부르지 않고 멈춤(exit 1). 자격이 있으면
   --dry-run 의 pending 이 고치기 전과 같음(앱이 안 부르는 칸을 뺀 만큼만 줄어야 함 — 그 차이를 과정별로).
   Azure 호출은 하지 마라 — 멈춤과 dry-run 으로만 증명.
+  검사 쪽: 새로 만든 audio-inventory 에서 STUDENT 밖 한국어 글 클립 4,061 → 0 · STUDENT 한국어는 그대로 남음 ·
+  audio-check --anon failures 0 · buildFreeSpeechKeys --check exit 0. 깨기: READING 한국어 한 줄을 바꾼 사본 → 클립을
+  요구하지 않음, STUDENT 한국어 한 줄을 바꾼 사본 → 클립 없음 1.
 그다음 AGENTS.md 의 "--env-file" 임시 안내를 원래 명령으로 되돌려라.
 
 ────────────────────────────────────────────────────
@@ -220,6 +232,18 @@ f. 6단계 보류 반영 — 6단계는 보류를 "추천안과 함께 한 표�
    G1(받아쓰기 입력 채점이 소리대로 친 수·하이픈을 받게)처럼 코드를 바꾸는 결정은 6단계 작업기록에
    적힌 시험(2,217행 자기 정답 통과 · 소리대로 친 꼴 통과 · 다른 수는 틀림 · 하이픈 꼴·띄운 꼴 둘 다
    통과)을 그대로 돌려 숫자로 보고해라.
+   7-4 f 반영 뒤 점검 세션이 찾은 것(2026-09-23 밤 — 수정 세션 숫자는 모두 재현):
+   ① G11(결정표 2번 "기능어 하나 더 → 70점")이 부정어에도 걸린다. grammarGrading.ts FUNCTION_WORDS 에 not · never ·
+      no · nor 가 있어, 짧은 모범 답안에 not 을 넣어 뜻이 반대가 된 답이 0점 → 70점이 됐다(예: 'He is Japanese.' 에
+      'He isn't Japanese.'). 점검 세션 측정(스크래치 g11-negation): 부정어 하나 넣은 꼴 6,143 중 70점 1,842 → 6,143,
+      6낱말 이하 모범만 386 → 4,687. 수정 세션의 시험(check-grammar-extra-word)은 the · very 만 넣어 이것을 못 본다.
+      결정표 2번이 소유자에게 말한 것은 "the · a 같은 작은 단어" 다. 한 낱말 풀어 주기에서 부정어는 빼고, 시험에 '+not'
+      을 더해 0점인지 세라. 깨기: 부정어를 다시 풀어 준 사본 → 시험 실패.
+   ② 원래 있던 규칙: 부정어가 빠지거나 더해져 뜻이 뒤집힌 답이 긴 문장에서는 전부터 70점이다(부정문 모범에서 부정어를
+      뺀 답 856 중 70점 853 — 스크래치 g11-negation-drop). 뜻이 반대인 답을 0점으로 할지는 채점 방침이라 점검 세션이
+      소유자에게 물었다(추천: 0점). 답을 받은 뒤에만 고쳐라.
+   ③ d196 알림 "1960년대 미국 글입니다" — 글에 쓰인 때가 없다(수정 세션 기준: 글이 때를 밝히는 d165 만 연대를 적음).
+      "옛 미국 글입니다" 로.
 
 ────────────────────────────────────────────────────
 7-5. LISTENING 힌트 칩 다듬기
