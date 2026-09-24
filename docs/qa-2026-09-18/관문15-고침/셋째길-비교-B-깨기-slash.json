@@ -1,0 +1,405 @@
+{
+ "base": "d2b50ca",
+ "break": "slash",
+ "changedCode": [
+  "src/components/LdLearningView.tsx",
+  "src/lib/curriculumPresentation.ts",
+  "src/lib/listeningUtils.ts",
+  "src/lib/vocaSpeech.ts",
+  "src/lib/vocaUtils.ts"
+ ],
+ "counts": {
+  "단계 이름": 47,
+  "목록·검색 제목": 1623,
+  "강의 쪽 제목": 1623,
+  "소리 글": 1623,
+  "빗금 나누기": 2631,
+  "어원": 5831
+ },
+ "rows": [
+  {
+   "course": "student",
+   "id": "s14-2",
+   "kind": "빗금 나누기",
+   "word": "n3",
+   "before": [
+    "He loves children, and when I need help from him, he always helps me.",
+    "She loves children, and when I need help from her, she always helps me."
+   ],
+   "after": [
+    "He loves children, and when I need help from him, he always helps me.",
+    "He loves children, and when I need help from him, she always helps me.",
+    "He loves children, and when I need help from her, he always helps me.",
+    "He loves children, and when I need help from her, she always helps me.",
+    "She loves children, and when I need help from him, he always helps me.",
+    "She loves children, and when I need help from him, she always helps me.",
+    "She loves children, and when I need help from her, he always helps me.",
+    "She loves children, and when I need help from her, she always helps me."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s14-2",
+   "kind": "빗금 나누기",
+   "word": "n7",
+   "before": [
+    "I want to become a good teacher just like him.",
+    "I want to become a good teacher just like her."
+   ],
+   "after": [
+    "I want to become a good teacher just like him",
+    "I want to become a good teacher just like her."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-2",
+   "kind": "빗금 나누기",
+   "word": "n9",
+   "before": [
+    "He likes to hang out and play with friends, but he does not like to talk to new people.",
+    "She likes to hang out and play with friends, but she does not like to talk to new people."
+   ],
+   "after": [
+    "He likes to hang out and play with friends, but he does not like to talk to new people.",
+    "He likes to hang out and play with friends, but she does not like to talk to new people.",
+    "She likes to hang out and play with friends, but he does not like to talk to new people.",
+    "She likes to hang out and play with friends, but she does not like to talk to new people."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-3",
+   "kind": "빗금 나누기",
+   "word": "n3",
+   "before": [
+    "In addition, he is good at playing soccer and computer games, and he speaks English well.",
+    "In addition, she is good at playing soccer and computer games, and she speaks English well."
+   ],
+   "after": [
+    "In addition, he is good at playing soccer and computer games, and he speaks English well.",
+    "In addition, he is good at playing soccer and computer games, and she speaks English well.",
+    "In addition, she is good at playing soccer and computer games, and he speaks English well.",
+    "In addition, she is good at playing soccer and computer games, and she speaks English well."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-3",
+   "kind": "빗금 나누기",
+   "word": "n6",
+   "before": [
+    "So I can learn a lot from him.",
+    "So I can learn a lot from her."
+   ],
+   "after": [
+    "So I can learn a lot from him",
+    "So I can learn a lot from her."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-3",
+   "kind": "빗금 나누기",
+   "word": "n7",
+   "before": [
+    "He is my friend, and I am proud of him.",
+    "She is my friend, and I am proud of her."
+   ],
+   "after": [
+    "He is my friend, and I am proud of him",
+    "He is my friend, and I am proud of her.",
+    "She is my friend, and I am proud of him",
+    "She is my friend, and I am proud of her."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-3",
+   "kind": "빗금 나누기",
+   "word": "n8",
+   "before": [
+    "He always understands my problems, and when I need help, he is always there.",
+    "She always understands my problems, and when I need help, she is always there."
+   ],
+   "after": [
+    "He always understands my problems, and when I need help, he is always there.",
+    "He always understands my problems, and when I need help, she is always there.",
+    "She always understands my problems, and when I need help, he is always there.",
+    "She always understands my problems, and when I need help, she is always there."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-4",
+   "kind": "빗금 나누기",
+   "word": "n1",
+   "before": [
+    "He sometimes tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+    "She sometimes tells me that she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that she wants to serve the community."
+   ],
+   "after": [
+    "He sometimes tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+    "He sometimes tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that she wants to serve the community.",
+    "He sometimes tells me that she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+    "He sometimes tells me that she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that she wants to serve the community.",
+    "She sometimes tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+    "She sometimes tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that she wants to serve the community.",
+    "She sometimes tells me that she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+    "She sometimes tells me that she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that she wants to serve the community."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s3-4",
+   "kind": "빗금 나누기",
+   "word": "n2",
+   "before": [
+    "He is a truly smart person, and I am sure that his dream will come true.",
+    "She is a truly smart person, and I am sure that her dream will come true."
+   ],
+   "after": [
+    "He is a truly smart person, and I am sure that his dream will come true.",
+    "He is a truly smart person, and I am sure that her dream will come true.",
+    "She is a truly smart person, and I am sure that his dream will come true.",
+    "She is a truly smart person, and I am sure that her dream will come true."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s6-2",
+   "kind": "소리 글",
+   "added": [
+    "My teacher’s name is Mr. (Surname)."
+   ],
+   "removed": [
+    "My teacher’s name is Mr. Ms. (Surname)."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s6-2",
+   "kind": "빗금 나누기",
+   "word": "n2",
+   "before": [
+    "My teacher’s name is Mr./Ms. (Surname)."
+   ],
+   "after": [
+    "My teacher’s name is Mr. (Surname).",
+    "My teacher’s name is Ms. (Surname)."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s6-3",
+   "kind": "빗금 나누기",
+   "word": "n5",
+   "before": [
+    "He has a habit of touching his nose when he teaches.",
+    "She has a habit of touching her nose when she teaches."
+   ],
+   "after": [
+    "He has a habit of touching his nose when he teaches.",
+    "He has a habit of touching his nose when she teaches.",
+    "He has a habit of touching her nose when he teaches.",
+    "He has a habit of touching her nose when she teaches.",
+    "She has a habit of touching his nose when he teaches.",
+    "She has a habit of touching his nose when she teaches.",
+    "She has a habit of touching her nose when he teaches.",
+    "She has a habit of touching her nose when she teaches."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s6-3",
+   "kind": "빗금 나누기",
+   "word": "n6",
+   "before": [
+    "I think he likes the color black because he always wears a black suit.",
+    "I think she likes the color black because she always wears a black suit."
+   ],
+   "after": [
+    "I think he likes the color black because he always wears a black suit.",
+    "I think he likes the color black because she always wears a black suit.",
+    "I think she likes the color black because he always wears a black suit.",
+    "I think she likes the color black because she always wears a black suit."
+   ]
+  },
+  {
+   "course": "student",
+   "id": "s6-3",
+   "kind": "빗금 나누기",
+   "word": "n7",
+   "before": [
+    "He is very kind, and I like him a lot.",
+    "She is very kind, and I like her a lot."
+   ],
+   "after": [
+    "He is very kind, and I like him a lot.",
+    "He is very kind, and I like her a lot.",
+    "She is very kind, and I like him a lot.",
+    "She is very kind, and I like her a lot."
+   ]
+  },
+  {
+   "course": "phonics",
+   "id": "hv-01",
+   "kind": "어원",
+   "word": "antique",
+   "before": "ante/anti(고대의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품",
+   "after": "ante/anti(이전의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-01",
+   "kind": "어원",
+   "word": "precaution",
+   "before": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방조치",
+   "after": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방 조치"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-07",
+   "kind": "어원",
+   "word": "transfer",
+   "before": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근가다",
+   "after": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근 가다"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-50",
+   "kind": "소리 글",
+   "added": [
+    "complement ⟨ˈkɑːmpləmɛnt⟩"
+   ],
+   "removed": [
+    "complement"
+   ]
+  },
+  {
+   "course": "phonics",
+   "id": "hv-60",
+   "kind": "어원",
+   "word": "inspect",
+   "before": "in(안을) + spect(들여다보다) ➔ 문제 없는지 안쪽을 자세히 보다, 검사하다",
+   "after": "in(안을) + spect(들여다보다) ➔ 문제없는지 안쪽을 자세히 보다, 검사하다"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-73",
+   "kind": "어원",
+   "word": "interview",
+   "before": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주보고 의견을 묻다, 면접/인터뷰",
+   "after": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주 보고 의견을 묻다, 면접/인터뷰"
+  },
+  {
+   "course": "phonics",
+   "id": "mv3-03",
+   "kind": "어원",
+   "word": "inspect",
+   "before": "in(안을) + spect(들여다보다) ➔ 문제 없는지 안쪽을 자세히 보다, 검사하다",
+   "after": "in(안을) + spect(들여다보다) ➔ 문제없는지 안쪽을 자세히 보다, 검사하다"
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044",
+   "kind": "목록·검색 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044-1",
+   "kind": "목록·검색 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트 · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044",
+   "kind": "강의 쪽 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044-1",
+   "kind": "강의 쪽 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트 · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  }
+ ],
+ "extra": [
+  "student/s14-2/빗금 나누기/n3",
+  "student/s14-2/빗금 나누기/n7",
+  "student/s3-2/빗금 나누기/n9",
+  "student/s3-3/빗금 나누기/n3",
+  "student/s3-3/빗금 나누기/n6",
+  "student/s3-3/빗금 나누기/n7",
+  "student/s3-3/빗금 나누기/n8",
+  "student/s3-4/빗금 나누기/n1",
+  "student/s3-4/빗금 나누기/n2",
+  "student/s6-3/빗금 나누기/n5",
+  "student/s6-3/빗금 나누기/n6",
+  "student/s6-3/빗금 나누기/n7"
+ ],
+ "missing": [],
+ "detailBad": [],
+ "pages": [
+  "/grammar2 (목록 · 검색)",
+  "/grammar2/gh2-044",
+  "/grammar2/gh2-044-1",
+  "/phonics/hv-01",
+  "/phonics/hv-07",
+  "/phonics/hv-50",
+  "/phonics/hv-60",
+  "/phonics/hv-73",
+  "/phonics/mv3-03",
+  "/student/s14-2",
+  "/student/s3-2",
+  "/student/s3-3",
+  "/student/s3-4",
+  "/student/s6-2",
+  "/student/s6-3"
+ ]
+}

@@ -15,6 +15,7 @@
  *   ④ 쪽이 소리 내는 글 → 클립 키 — scripts/lib/spoken-texts.cjs spokenTexts(생성기 · 무료 소리 키 · 감사와 같은 한 정의 —
  *      VOCA 낱말 단추 vocaWordSpeech · READING 낱말 카드 readingWordSpeech · 위 '전체 듣기' 까지) → unifiedSpeechKey
  *   ⑤ VOCA 격자 낱말마다 어원 카드 — analyzeEtymology(PhonicsLearningView 의 낱말 카드 · 퀴즈 어원 힌트)
+ *   ⑥ STUDENT 문장 · LISTENING 대본 영어마다 빗금 나누기 — expandSlashAlternatives(낱말 조각 정답 차례 · 첫 꼴 소리, 결정 B 둘1)
  * 화면 부품(.tsx 컴포넌트)이 그리는 모양은 이 도구가 보지 못한다 — 그런 코드가 바뀐 과정은 관문 0 이 전부 다시 돈다.
  *
  * --expect <json>: 허용된 바뀜 [{course, id, kind, added?, removed?}] — 실제 바뀜이 허용과 **꼭 같아야** exit 0
@@ -23,6 +24,7 @@
  *   presentation: (나)의 formatGroupTitle 이 LISTENING 단계 이름 끝에 ' ·' 를 붙임 → ③ 이 허용 밖으로 늘어야
  *   speech:       (나)의 VOCA 발음 표에 격자 첫 낱말(표에 없는 것)을 더함 → ④ 가 허용 밖으로 늘어야
  *   missing:      (나)의 VOCA 발음 표에서 complement 를 뺌 → 허용된 hv-50 소리 바뀜이 안 나타나야
+ *   slash:        (나)의 빗금 나누기를 '모든 꼴 끝 마침표 허용' 으로 → 문장 끝 'him/her.' 문장이 허용 밖으로 바뀌어야
  *
  *   node docs/qa-2026-09-18/scripts/compare-shared-code.cjs --base <커밋> [--expect <json>] [--out <json>] [--break=…]
  */
@@ -39,7 +41,7 @@ const EXPECT = arg("--expect", null);
 const OUT = arg("--out", null);
 const BREAK = (argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
 if (!BASE) { console.error("사용: --base <커밋> [--expect <json>] [--out <json>] [--break=presentation|speech|missing]"); process.exit(2); }
-if (BREAK && !["presentation", "speech", "missing"].includes(BREAK)) { console.error(`--break=${BREAK} 는 없다`); process.exit(2); }
+if (BREAK && !["presentation", "speech", "missing", "slash"].includes(BREAK)) { console.error(`--break=${BREAK} 는 없다`); process.exit(2); }
 const ts = require(path.join(REPO, "node_modules/typescript"));
 const git = (args) => execFileSync("git", ["-c", "core.quotepath=false", ...args], { cwd: REPO, encoding: "utf8", maxBuffer: 256 << 20 });
 const lines = (s) => s.split(/\r?\n/).map((x) => x.trim()).filter(Boolean);
@@ -103,7 +105,7 @@ function makeLoader(name, useBase) {
   const us = L("src/lib/unifiedSpeech.ts");
   const st = L("scripts/lib/spoken-texts.cjs");
   return {
-    name, cp, vs, vu, us, st,
+    name, cp, vs, vu, us, st, lu,
     fns: {
       vocaSpeechForm: vs.vocaSpeechForm, getCollocation: vu.getCollocation, generateLiaisonPoints: lu.generateLiaisonPoints,
       extractSentencesForAudio: la.extractSentencesForAudio, firstSlashAlternative: lu.firstSlashAlternative,
@@ -139,6 +141,17 @@ if (BREAK === "presentation") {
 } else if (BREAK === "missing") {
   delete B.vs.VOCA_PRONUNCIATIONS.complement;
   breakNote = "(나)의 VOCA 발음 표에서 complement 를 뺌";
+} else if (BREAK === "slash") {
+  // 결정 B 둘1 이 경고한 쉬운 고침 — 모든 꼴 끝의 마침표를 꼴에 넣음 → 문장 끝 'him/her.' 가 깨져야(허용 밖)
+  const naive = /\(?([A-Za-z'’]+\.?(?:\/[A-Za-z'’]+\.?)+)\)?/g;
+  B.lu.expandSlashAlternatives = (s) => {
+    const groups = [...String(s).matchAll(naive)].map((m) => ({ whole: m[0], options: m[1].split("/").filter(Boolean) }));
+    if (!groups.length) return [s];
+    let v = [s];
+    for (const g of groups) v = v.flatMap((x) => g.options.map((o) => x.replace(g.whole, o)));
+    return [...new Set(v)];
+  };
+  breakNote = "(나)의 빗금 나누기를 '모든 꼴 끝 마침표 허용' 으로 바꿈";
 }
 
 const isSpeakable = (t) => /[A-Za-zㄱ-ㆎ㐀-鿿가-힣]/u.test(t);
@@ -187,6 +200,16 @@ for (const course of COURSES) {
     const added = [...ka].filter(([k]) => !kb.has(k)).map(([, t]) => t).sort();
     const removed = [...kb].filter(([k]) => !ka.has(k)).map(([, t]) => t).sort();
     if (added.length || removed.length) rows.push({ course, id, kind: "소리 글", added, removed });
+    // ⑥ 빗금 나누기(expandSlashAlternatives — 받아쓰기 낱말 조각의 정답 차례 · 첫 꼴 소리): STUDENT 문장 · LISTENING 대본 영어
+    const slashTexts = course === "student"
+      ? ((lesson.blocks || []).filter((b) => b && b.type === "sentences").flatMap((b) => b.items || []).map((it) => [it.n, it.text]))
+      : course === "ld" && !/-\d+$/.test(id) ? (ldScripts[id] || []).map((r) => [r.n, r.en]) : [];
+    for (const [n, t] of slashTexts) {
+      if (typeof t !== "string") continue;
+      const xb = A.lu.expandSlashAlternatives(t), xa = B.lu.expandSlashAlternatives(t);
+      seen("빗금 나누기");
+      if (!same(xb, xa)) rows.push({ course, id, kind: "빗금 나누기", word: `n${n}`, before: xb, after: xa });
+    }
     // ⑤ VOCA 어원 카드
     if (course === "phonics") for (const w of new Set(gridWords(lesson))) {
       const eb = A.vu.analyzeEtymology(w), ea = B.vu.analyzeEtymology(w);

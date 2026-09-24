@@ -27,7 +27,9 @@
  *
  * AND ONE MORE (7-4 f ②, owner decision 2026-09-23): an answer that is negative
  * where the model is positive, or the other way round, is incorrect — see
- * `flipsNegation`.
+ * `flipsNegation`. The same goes for a word turned into its opposite by a
+ * prefix ("possible" for "impossible", owner decision 2026-09-24) — see
+ * `isPrefixedOpposite`.
  */
 
 export type AnswerGrade = "exact" | "partial" | "incorrect";
@@ -339,9 +341,22 @@ function editDistance(a: string, b: string): number {
   return d[a.length][b.length];
 }
 
+/**
+ * A negative prefix makes the opposite word, not a misspelling of it (관문 15 결정 A 흠 ②, owner
+ * decision 2026-09-24 '뜻이 반대면 0점'). "impossible" is two letters from "possible", and on words of
+ * eight letters or more two edits counted as a typo, so "Isn't it possible?" earned 70 points against
+ * "Isn't it impossible?" — as did "proper" for "improper" and "expensive" for "inexpensive". A real
+ * typo of the prefixed word ("inexpensiv") is not the bare word, so it keeps its partial credit.
+ */
+const OPPOSITE_PREFIXES = ["dis", "non", "im", "in", "il", "ir", "un"];
+function isPrefixedOpposite(a: string, b: string): boolean {
+  return OPPOSITE_PREFIXES.some((prefix) => a === prefix + b || b === prefix + a);
+}
+
 /** A misspelling or inflection of the same word, as opposed to a different word. */
 function looksLikeSameWord(typed: string, expected: string): boolean {
   if (typed === expected) return true;
+  if (isPrefixedOpposite(typed, expected)) return false;
   const longest = Math.max(typed.length, expected.length);
   if (editDistance(typed, expected) <= (longest >= 8 ? 2 : 1)) return true;
   // "studying" / "study", "triangles" / "triangle": same stem, different ending.

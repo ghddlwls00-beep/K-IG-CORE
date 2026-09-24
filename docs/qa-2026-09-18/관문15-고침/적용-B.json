@@ -1,0 +1,490 @@
+{
+ "at": "2026-09-24T17:27:40.369Z",
+ "ref": "f53d173",
+ "verdicts": "docs/qa-2026-09-18/내용-재검토/전수/두번째/판정.json",
+ "root": "C:\\Users\\ghddl\\.gemini\\antigravity\\scratch\\K-IG-CORE",
+ "write": true,
+ "count": {
+  "손으로": 5,
+  "적용": 26
+ },
+ "plan": [
+  {
+   "uid": "student/F:student/s6-2:T05",
+   "key": "F:student/s6-2:T05",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/listeningUtils.ts expandSlashAlternatives(빗금 패턴) — content/lessons/stude",
+   "출처": "전수(이 세션이 조정(확인 일꾼 '뒤집음 — 틀림이 분명함' 에 이 세션이 동의하고 앱 함수로 다시 잼: listeningUtils.expandSlashAlternatives 가 'Mr./Ms.' 를 나누지 않아(빗금 앞 마침표 때문 — 대조 'He/She is my friend.' 는 두 꼴로 나뉨) ① 소리 글(firstSlashAlternative)이 두 호칭을 잇달아 읽는 'Mr./Ms. (Surname)' 그대로 — 소유자 결정 BUG-028('빗금 두 꼴은 화면에 둘 다, 소리는 첫 꼴만')대로 안 들어감(⑤) ② 초등 낱말 조각 채점(generateWordBank · verifyAnyWordSequence)이 받는 차례가 'My teacher's name is Mr Ms Surname' 하나뿐 — 맞는 두 꼴 'Mr. (Surname)' · 'Ms. (Surname)' 은 오답, 틀린 영어만 정답(③ — 풀이 5 '틀린 답을 만점' = 높음). 두 번째 읽기 일꾼은 코드 주석 때문에 판단 필요로 올렸으나 소유자가 이 문장을 따로 정한 적은 없음.))",
+   "종류": "③",
+   "심각도": "높음",
+   "새클립": true,
+   "지금": "My teacher’s name is Mr./Ms. (Surname). — 소리 'Mr./Ms.' 둘 다 읽음 · 낱말 조각 정답은 'Mr Ms Surname' 하나",
+   "고칠글": "(글은 그대로) src/lib/listeningUtils.ts expandSlashAlternatives 의 빗금 나누기가 'Mr./Ms.' 도 두 꼴로 나누게 — 첫 꼴 소리 'My teacher’s name is Mr. (Surname).' · 조각 정답 'Mr' 또는 'Ms' 한 꼴. 주의(확인 일꾼이 잼): 모든 꼴 끝 마침표를 허용하는 쉬운 고침은 s3-3 #6 · #7 · s14-2 #7(문장 끝 'him/her.')을 깸 — 빗금 앞 꼴의 마침표와, 호칭 줄임말(Mr · Mrs · Ms · Dr)일 때만 마침표를 꼴에 넣게. content 에서 '글자.' 뒤 빗금은 이 문장 하나."
+  },
+  {
+   "uid": "ld-a/F:ld/d018:T02",
+   "key": "F:ld/d018:T02",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/lessons/ld/d018.json .blocks[2].text",
+   "출처": "전수(두 번째 읽기 · 확인 고쳐 동의)",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "힌트 줄 'photography racetrack, ran races. develop lift bet. 24 in a row. tie string' → n1 칩 [photography racetrack]",
+   "고칠글": "photography. racetrack, ran races. developing. lifted. make a bet. 24. in a row. tied a string"
+  },
+  {
+   "uid": "ld-a/F:ld/d062:T07",
+   "key": "F:ld/d062:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 고쳐 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "Give me some beer, said Taggy, and write out a check for charity.",
+   "고칠글": "\"Give me some beer,\" said Taggy, \"and write out a check for charity.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d062[n=5].en"
+   ],
+   "옛글": "Give me some beer, said Taggy, and write out a check for charity."
+  },
+  {
+   "uid": "ld-a/F:ld/d062:T10",
+   "key": "F:ld/d062:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 고쳐 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "I don't work just to give my money away. I looked at my girlfriend.",
+   "고칠글": "\"I don't work just to give my money away.\" I looked at my girlfriend.",
+   "칸": [
+    "content/ld_english_scripts.json .d062[n=7].en"
+   ],
+   "옛글": "I don't work just to give my money away. I looked at my girlfriend."
+  },
+  {
+   "uid": "ld-a/F:ld/d066:T04",
+   "key": "F:ld/d066:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "They said, Lite tastes soapy. The public, of course, was confused.",
+   "고칠글": "They said, \"Lite tastes soapy.\" The public, of course, was confused.",
+   "칸": [
+    "content/ld_english_scripts.json .d066[n=4].en"
+   ],
+   "옛글": "They said, Lite tastes soapy. The public, of course, was confused."
+  },
+  {
+   "uid": "ld-a/F:ld/d067:T06",
+   "key": "F:ld/d067:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "The ads would read, Lite is wonderful for washing clothes.",
+   "고칠글": "The ads would read, \"Lite is wonderful for washing clothes.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d067[n=7].en"
+   ],
+   "옛글": "The ads would read, Lite is wonderful for washing clothes."
+  },
+  {
+   "uid": "ld-a/F:ld/d069:T09",
+   "key": "F:ld/d069:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "Whenever the subject was mentioned, he used to reply, The motor car will never replace the horse.",
+   "고칠글": "Whenever the subject was mentioned, he used to reply, \"The motor car will never replace the horse.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d069[n=8].en"
+   ],
+   "옛글": "Whenever the subject was mentioned, he used to reply, The motor car will never replace the horse."
+  },
+  {
+   "uid": "ld-a/F:ld/d072:T07",
+   "key": "F:ld/d072:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "At 3:45, he said, that will have to be enough.",
+   "고칠글": "At 3:45, he said, \"That will have to be enough.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d072[n=7].en"
+   ],
+   "옛글": "At 3:45, he said, that will have to be enough."
+  },
+  {
+   "uid": "ld-b/F:ld/d252:T05",
+   "key": "F:ld/d252:T05",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/lessons/ld/d252.json .blocks[2].text",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "skillful put at ease. qualities. asset. specific skills. talents, display well-developed personality.",
+   "고칠글": "skillful. at ease. qualities. asset. specific skills. talents, display. well-developed personality."
+  },
+  {
+   "uid": "ld-b/F:ld/d262:T07",
+   "key": "F:ld/d262:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "겨울이 올 때 전체적인 사회 달력이 급격한 변화를 겪는다.",
+   "고칠글": "겨울이 올 때 전체적인 사교 일정이 급격한 변화를 겪는다.",
+   "칸": [
+    "content/ld_english_scripts.json .d262[0].ko"
+   ],
+   "옛글": "겨울이 올 때 전체적인 사회 달력이 급격한 변화를 겪는다."
+  },
+  {
+   "uid": "student/F:student/s17-1:T06",
+   "key": "F:student/s17-1:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "While living on Earth, he married Ungnyeo who had changed from a bear into a woman.",
+   "고칠글": "While living on Earth, he married Ungnyeo, who had changed from a bear into a woman.",
+   "칸": [
+    "content/lessons/student/s17-1.json .blocks[1].items[3].text"
+   ],
+   "옛글": "While living on Earth, he married Ungnyeo who had changed from a bear into a woman."
+  },
+  {
+   "uid": "student/F:student/s18-2:T04",
+   "key": "F:student/s18-2:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "첫 번째로 큰 명절은 음력 새해 첫날인 설날입니다.",
+   "고칠글": "첫 번째 큰 명절은 음력 새해 첫날인 설날입니다.",
+   "칸": [
+    "content/lessons/student/s18-2.json .blocks[2].text"
+   ],
+   "옛글": "첫 번째로 큰 명절은 음력 새해 첫날인 설날입니다."
+  },
+  {
+   "uid": "ld-a/F:ld/d006:T13",
+   "key": "F:ld/d006:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그것은 워싱턴 시 근처의 작은 마을이다. 그러나 그의 치과 병원은 워싱턴의 제퍼슨 가 1616번지에 있다.",
+   "고칠글": "그것은 워싱턴 시 근처의 작은 마을이다. 그러나 그의 치과 병원은 워싱턴의 제퍼슨가 1616번지에 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d006[4].ko"
+   ],
+   "옛글": "그것은 워싱턴 시 근처의 작은 마을이다. 그러나 그의 치과 병원은 워싱턴의 제퍼슨 가 1616번지에 있다."
+  },
+  {
+   "uid": "ld-a/F:ld/d007:T10",
+   "key": "F:ld/d007:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "John Wenger는 필라델피아에 산다. 그것은 미국의 동쪽 부분의 큰 도시이다.",
+   "고칠글": "존 웽거는 필라델피아에 산다. 그것은 미국의 동쪽 부분의 큰 도시이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d007[0].ko"
+   ],
+   "옛글": "John Wenger는 필라델피아에 산다. 그것은 미국의 동쪽 부분의 큰 도시이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d030:T19",
+   "key": "F:ld/d030:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 그 영수증을 읽었을 때 매우 화가 났다. 내가 그 시계를 $4.95에 팔았기 때문에 화났다.",
+   "고칠글": "그는 그 영수증을 읽었을 때 매우 화가 났다. 내가 그 시계를 4불 95센트에 팔았기 때문에 화났다.",
+   "칸": [
+    "content/ld_english_scripts.json .d030[8].ko"
+   ],
+   "옛글": "그는 그 영수증을 읽었을 때 매우 화가 났다. 내가 그 시계를 $4.95에 팔았기 때문에 화났다."
+  },
+  {
+   "uid": "ld-a/F:ld/d068:T12",
+   "key": "F:ld/d068:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나는 그가 내가 그의 짐을 집까지 먼 길을(줄곧) 운반해줄 것을 기대한다는 것을 알고 있었다.",
+   "고칠글": "나는 그가 내가 그의 짐을 집까지 먼 길을(줄곧) 운반해 줄 것을 기대한다는 것을 알고 있었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d068[n=4].ko"
+   ],
+   "옛글": "나는 그가 내가 그의 짐을 집까지 먼 길을(줄곧) 운반해줄 것을 기대한다는 것을 알고 있었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d069:T13",
+   "key": "F:ld/d069:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그것은 나를 정말 놀라게 했다. 내가 아는 한 나의 아버지는 전에 차를 결코 운전해본 적이 없었다.",
+   "고칠글": "그것은 나를 정말 놀라게 했다. 내가 아는 한 나의 아버지는 전에 차를 결코 운전해 본 적이 없었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d069[n=4].ko"
+   ],
+   "옛글": "그것은 나를 정말 놀라게 했다. 내가 아는 한 나의 아버지는 전에 차를 결코 운전해본 적이 없었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d072:T13",
+   "key": "F:ld/d072:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "모든 그 우체부들이 있었던 그 마지막 10대의 차량은 강도들이 분리시켜두었다.",
+   "고칠글": "모든 그 우체부들이 있었던 그 마지막 10대의 차량은 강도들이 분리시켜 두었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d072[n=4].ko"
+   ],
+   "옛글": "모든 그 우체부들이 있었던 그 마지막 10대의 차량은 강도들이 분리시켜두었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d075:T07",
+   "key": "F:ld/d075:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 차들은 너무나 빨리 달려서 커브를 전혀 돌 수 없기 때문에 그 track은 직선이어야 한다.",
+   "고칠글": "그 차들은 너무나 빨리 달려서 커브를 전혀 돌 수 없기 때문에 그 트랙은 직선이어야 한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d075[n=5].ko"
+   ],
+   "옛글": "그 차들은 너무나 빨리 달려서 커브를 전혀 돌 수 없기 때문에 그 track은 직선이어야 한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d086:T11",
+   "key": "F:ld/d086:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정부, 병원, 학교, 통신회사들은 컴퓨터로 일한다.",
+   "고칠글": "정부, 병원, 학교, 통신 회사들은 컴퓨터로 일한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d086[n=4].ko"
+   ],
+   "옛글": "정부, 병원, 학교, 통신회사들은 컴퓨터로 일한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d103:T10",
+   "key": "F:ld/d103:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "The Iditarod Trail Race는 세계에서 가장 긴 개썰매 경주이다.",
+   "고칠글": "Iditarod Trail Race는 세계에서 가장 긴 개썰매 경주이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d103[3].ko"
+   ],
+   "옛글": "The Iditarod Trail Race는 세계에서 가장 긴 개썰매 경주이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d114:T15",
+   "key": "F:ld/d114:T15",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d114[n=5].ko",
+   "출처": "전수(이 세션이 조정(확인 일꾼 '뒤집음 — 한쪽이 분명함' 에 이 세션이 동의: 영어 'Native Americans' 가 이 세 칸에서는 아메리카 대륙 전체의 원주민인데 한국어가 '미국 원주민' — d114 n10 은 '미국 원주민이 남미에도 살았다', d115 n1 은 바로 다음 n2 의 마야 · 아즈텍이 '미국 원주민' 이 됨(영어와 뜻이 다름). 이 세션이 대본 글을 읽어 확인. 과정의 다른 '미국 원주민'(지금 미국 땅 이야기 d116 ~ d120)은 그대로. d118 n9 는 전수 표 d118 T16 이 이미 고침(두 번 올리지 않음). 첫 읽기 d118 T16 과 같은 매김(② 낮음 · 보통). 한국어라 소리 없음.))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "d114 n5 ko '첫 번째 인디언 즉 미국 원주민들은 아마 15,000년도 더 전에 아시아로부터 왔을 것이다.' · d114 n10 ko '컬럼버스가 도착할 무렵 미국 원주민은 북미와 남미의 대부분에 살고 있었다.' · d115 n1 ko '미국 원주민들은 많은 다른 언어를 가진 많은 다른 문화를 발전시켰다.'",
+   "고칠글": "① d114 n5 ko '첫 번째 인디언 즉 아메리카 원주민들은 아마 15,000년도 더 전에 아시아로부터 왔을 것이다.' ② d114 n10 ko '콜럼버스가 도착할 무렵 아메리카 원주민은 북미와 남미의 대부분에 살고 있었다.'(1부 표 #212 '컬럼버스 → 콜럼버스' 와 같은 칸 — 두 고침을 합친 글) ③ d115 n1 ko '아메리카 원주민들은 많은 다른 언어를 가진 많은 다른 문화를 발전시켰다.'"
+  },
+  {
+   "uid": "ld-a/F:ld/d117:T06",
+   "key": "F:ld/d117:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 고쳐 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 정착민들에게 봄에 심고 밭에 비료를 주는 방법을 가르쳤다. 여러 해 동안 그들은 평화롭게 함께 살았으나 그런 다음 문제가 생기기 시작했다.",
+   "고칠글": "그들은 정착민들에게 봄에 심고 밭에 비료를 주는 방법을 가르쳤다. 몇 년 동안 그들은 평화롭게 함께 살았으나 그런 다음 문제가 생기기 시작했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d117[3].ko"
+   ],
+   "옛글": "그들은 정착민들에게 봄에 심고 밭에 비료를 주는 방법을 가르쳤다. 여러 해 동안 그들은 평화롭게 함께 살았으나 그런 다음 문제가 생기기 시작했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d162:T16",
+   "key": "F:ld/d162:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "모든 독자를 만족시켜줄 신문들이 있다.",
+   "고칠글": "모든 독자를 만족시켜 줄 신문들이 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d162[n=7].ko"
+   ],
+   "옛글": "모든 독자를 만족시켜줄 신문들이 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d193:T12",
+   "key": "F:ld/d193:T12",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d193[n=7].ko",
+   "출처": "전수(두 번째 읽기 · 확인 고쳐 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러나 어디에 정착하든지 어떤 새로운 생활방식을 시도하든지 그들은 여전히 그들의 조상의 놀라운 사냥 능력을 갖고 있다.",
+   "고칠글": "그러나 어디에 정착하든지 어떤 새로운 생활 방식을 시도하든지 그들 중 다수는 여전히 그들의 조상의 놀라운 사냥 능력을 갖고 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d212:T10",
+   "key": "F:ld/d212:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "많은 동물원들은 어린이들이 토끼, 오리, 및 다른 순한 동물들을 어루만질 수 있는 특별히 어린이들을 위하여 지정된 구역이 있다.",
+   "고칠글": "많은 동물원들은 어린이들이 토끼, 오리 및 다른 순한 동물들을 어루만질 수 있는 특별히 어린이들을 위하여 지정된 구역이 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d212[n=2].ko"
+   ],
+   "옛글": "많은 동물원들은 어린이들이 토끼, 오리, 및 다른 순한 동물들을 어루만질 수 있는 특별히 어린이들을 위하여 지정된 구역이 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d212:T16",
+   "key": "F:ld/d212:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 아마도 자기가 이 세상에서 토끼에 손가락이 물려 잘려나간 유일한 사람이라고 말했다.",
+   "고칠글": "그는 아마도 자기가 이 세상에서 토끼에게 손가락이 물려 잘려 나간 유일한 사람이라고 말했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d212[n=8].ko"
+   ],
+   "옛글": "그는 아마도 자기가 이 세상에서 토끼에 손가락이 물려 잘려나간 유일한 사람이라고 말했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d232:T13",
+   "key": "F:ld/d232:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "고대 희랍인들은 오늘날 여전히 공연되는 비극과 희극들을 만들어냈다.",
+   "고칠글": "고대 그리스인들은 오늘날 여전히 공연되는 비극과 희극들을 만들어냈다.",
+   "칸": [
+    "content/ld_english_scripts.json .d232[n=6].ko"
+   ],
+   "옛글": "고대 희랍인들은 오늘날 여전히 공연되는 비극과 희극들을 만들어냈다."
+  },
+  {
+   "uid": "ld-b/F:ld/d234:T04",
+   "key": "F:ld/d234:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 showboat가 마을에 들어서면 모든 사람이 하루 쉬고 minstrel들의 노래와 재치응답을 들으러 강으로 내려갔다.",
+   "고칠글": "그 showboat가 마을에 들어서면 모든 사람이 하루 쉬고 minstrel들의 노래와 재치 응답을 들으러 강으로 내려갔다.",
+   "칸": [
+    "content/ld_english_scripts.json .d234[n=3].ko"
+   ],
+   "옛글": "그 showboat가 마을에 들어서면 모든 사람이 하루 쉬고 minstrel들의 노래와 재치응답을 들으러 강으로 내려갔다."
+  },
+  {
+   "uid": "student/F:student/s17-1:T12",
+   "key": "F:student/s17-1:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "⑦",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "The country's ancient name was Gojoseon.",
+   "고칠글": "The country’s ancient name was Gojoseon.",
+   "칸": [
+    "content/lessons/student/s17-1.json .blocks[1].items[6].text"
+   ],
+   "옛글": "The country's ancient name was Gojoseon."
+  },
+  {
+   "uid": "student/F:student/s6-3:T05",
+   "key": "F:student/s6-3:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(두 번째 읽기 · 확인 동의)",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "He/She is very kind, and I like her/him a lot.",
+   "고칠글": "He/She is very kind, and I like him/her a lot.",
+   "칸": [
+    "content/lessons/student/s6-3.json .blocks[1].items[6].text"
+   ],
+   "옛글": "He/She is very kind, and I like her/him a lot."
+  }
+ ],
+ "leftovers": []
+}

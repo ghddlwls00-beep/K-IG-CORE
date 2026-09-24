@@ -1,0 +1,56 @@
+{
+ "at": "2026-09-24T17:28:57.323Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/손으로-B.json",
+ "root": "C:\\Users\\ghddl\\.gemini\\antigravity\\scratch\\K-IG-CORE",
+ "write": true,
+ "log": [
+  {
+   "id": "B 둘2 ld-a/F:ld/d018:T02",
+   "op": "set",
+   "file": "content/lessons/ld/d018.json",
+   "where": ".blocks[2].text",
+   "old": "photography. racetrack, ran races. developing. lifted. make a bet. 24 in a row. tied a string",
+   "new": "photography. racetrack, ran races. developing. lifted. make a bet. 24. in a row. tied a string"
+  },
+  {
+   "id": "B ld-b/F:ld/d252:T05",
+   "op": "set",
+   "file": "content/lessons/ld/d252.json",
+   "where": ".blocks[2].text",
+   "old": "skillful put at ease. qualities. asset. specific skills. talents, display. well-developed personality.",
+   "new": "skillful. at ease. qualities. asset. specific skills. talents, display. well-developed personality."
+  },
+  {
+   "id": "B 둘22 ld-a/F:ld/d114:T15 ①",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d114[n=5].ko",
+   "old": "첫 번째 인디언 즉 미국 원주민들은 아마 15,000년도 더 전에 아시아로부터 왔을 것이다.",
+   "new": "첫 번째 인디언 즉 아메리카 원주민들은 아마 15,000년도 더 전에 아시아로부터 왔을 것이다."
+  },
+  {
+   "id": "B 둘22 ld-a/F:ld/d114:T15 ②",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d114[n=10].ko",
+   "old": "콜럼버스가 도착할 무렵 미국 원주민은 북미와 남미의 대부분에 살고 있었다.",
+   "new": "콜럼버스가 도착할 무렵 아메리카 원주민은 북미와 남미의 대부분에 살고 있었다."
+  },
+  {
+   "id": "B 둘22 ld-a/F:ld/d114:T15 ③",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d115[n=1].ko",
+   "old": "미국 원주민들은 많은 다른 언어를 가진 많은 다른 문화를 발전시켰다.",
+   "new": "아메리카 원주민들은 많은 다른 언어를 가진 많은 다른 문화를 발전시켰다."
+  },
+  {
+   "id": "B ld-b/F:ld/d193:T12",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d193[n=7].ko",
+   "old": "그러나 어디에 정착하든지 어떤 새로운 생활방식을 시도하든지 그들 중 다수는 여전히 그들의 조상의 놀라운 사냥 능력을 갖고 있다.",
+   "new": "그러나 어디에 정착하든지 어떤 새로운 생활 방식을 시도하든지 그들 중 다수는 여전히 그들의 조상의 놀라운 사냥 능력을 갖고 있다."
+  }
+ ]
+}

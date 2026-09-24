@@ -284,15 +284,22 @@ function soundAlikeForm(word: string): string {
  * and I like her/him a lot", where the first option of each group disagrees
  * (independent review). Other slashed groups ("brother/sister", "sir/ma'am")
  * are independent choices and are combined with each referent.
+ *
+ * A TITLE KEEPS ITS FULL STOP. s6-2 #2 writes "Mr./Ms. (Surname)"; letters-only
+ * options never matched it, so it was not split — the audio said both titles and
+ * the tiles accepted only "Mr Ms Surname" (관문 15 결정 B 둘1, 높음). An option may
+ * end in "." only when it is Mr · Mrs · Ms · Dr, so a sentence-final "him/her."
+ * (s3-3 #6 · #7 · s14-2 #7) keeps its period outside the group.
  */
+const TITLE_OR_WORD = "(?:(?:Mrs|Mr|Ms|Dr)\\.|[A-Za-z'’]+)";
+const SLASH_GROUP = new RegExp(`\\(?(${TITLE_OR_WORD}(?:\\/${TITLE_OR_WORD})+)\\)?`, "g");
 const MASCULINE = new Set(["he", "him", "his", "himself"]);
 const FEMININE = new Set(["she", "her", "hers", "herself"]);
 const genderOf = (word: string) =>
   MASCULINE.has(word.toLowerCase()) ? "m" : FEMININE.has(word.toLowerCase()) ? "f" : null;
 
 export function expandSlashAlternatives(sentence: string): string[] {
-  const pattern = /\(?([A-Za-z'’]+(?:\/[A-Za-z'’]+)+)\)?/g;
-  const groups = [...sentence.matchAll(pattern)].map((match) => {
+  const groups = [...sentence.matchAll(SLASH_GROUP)].map((match) => {
     const options = match[1].split("/").filter(Boolean);
     return { whole: match[0], options, pronoun: options.every((o) => genderOf(o) !== null) };
   });
@@ -328,8 +335,8 @@ export function expandSlashAlternatives(sentence: string): string[] {
  * too." became "He She is …" once the slash was blanked for speech — while only one form is
  * accepted, so a learner who tapped what they heard in the blind dictation was marked wrong
  * (36 STUDENT sentences). The screen still shows "He/She". A sentence without a slashed
- * alternative comes back unchanged — so does "Mr./Ms.", which this parser does not split: its
- * dictation expects both words, as its audio says them.
+ * alternative comes back unchanged. "Mr./Ms. (Surname)" is said as "Mr. (Surname)" — see the title
+ * rule above expandSlashAlternatives.
  */
 export function firstSlashAlternative(sentence: string): string {
   return expandSlashAlternatives(sentence)[0] ?? sentence;
