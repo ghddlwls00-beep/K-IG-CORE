@@ -22,7 +22,8 @@
  *     고친 드라이버의 진짜 받아쓰기 FAIL 도 BLOCKED 로 셌다.
  *   ⑤ NA: 드라이버가 '해당 없음 — 다른 검사가 봄' 을 NA + coveredBy(그 검사 이름)로 적고, 같은 기록에 그 검사가 PASS 로 있을 때만 덮인 것으로 셈
  *     (없으면 BLOCKED 'NA 인데 대신 본 기록 없음'). 옛 기록의 'graded input · BLOCKED · tile-based answering …' 은 옛 기록에서만 NA(tile dictation) 로 읽음.
- *   증명(깨기) scripts/prove-coverage-rules.cjs — --break=ignore-blocked | merge-all | old-dictation-rule 가 옛 동작.
+ *   ⑥ GRAMMAR 'graded input' 의 도구 탓은 판정이 없는 칸(자가 채점 · 빈칸 안내 · 제출 전 종합 평가)만 — 전에는 note /./ (아래 TOOL_ARTIFACTS).
+ *   증명(깨기) scripts/prove-coverage-rules.cjs — --break=ignore-blocked | merge-all | old-dictation-rule | grammar-any-note 가 옛 동작.
  */
 const fs = require("fs");
 const path = require("path");
@@ -36,7 +37,7 @@ if (!SINCE && !FILES) {
   process.exit(1);
 }
 if (SINCE && Number.isNaN(Date.parse(SINCE))) { console.error(`build-coverage: --since 시각을 읽을 수 없음: ${SINCE}`); process.exit(1); }
-if (BREAK && !["ignore-blocked", "merge-all", "old-dictation-rule"].includes(BREAK)) { console.error(`build-coverage: 모르는 --break=${BREAK}`); process.exit(2); }
+if (BREAK && !["ignore-blocked", "merge-all", "old-dictation-rule", "grammar-any-note"].includes(BREAK)) { console.error(`build-coverage: 모르는 --break=${BREAK}`); process.exit(2); }
 const DATA = path.join(__dirname, "../out");                       // the other audit results the item table reads
 const OUT = path.resolve(argOf("--out-dir", DATA));                // where coverage.json / .md are written
 const FEAT = path.resolve(argOf("--features-dir", path.join(DATA, "features")));
@@ -61,11 +62,20 @@ const read = (f) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f)
  * can still pass. `resolved: false` means the browser genuinely did the wrong thing and the page
  * must be taken again before anything can be claimed about it.
  */
+/**
+ * ⑥ GRAMMAR 'graded input' (3차 점검 2026-09-24, 7-1 m ④ 와 같은 종류): 전에는 note /./ 라 GRAMMAR 의 어떤 graded input FAIL 도
+ * 통째로 '해결된 도구 탓' 이 됐다. 도구 탓은 판정이 없는 칸 — 정답을 넣어도 틀린 답을 넣어도 화면이 채점을 말하지 않는 칸 — 뿐이다:
+ * 자가 채점 화면('자가 채점 정답률') · 빈칸 안내('빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]') · 제출 전 종합 평가 칸
+ * ('no feedback' · '[전체 채점하기]를 누르면'). -post7c 표본(90방문)의 GRAMMAR FAIL 499 = 254 · 47 · 181 + 17 이 전부 이 셋이었다.
+ * correct→ 와 wrong→ 가 둘 다 이 셋일 때만 도구 탓 — 한쪽이라도 다른 글(예: 정답인데 '오답')이면 강의 FAIL 로 센다.
+ */
+const GRAMMAR_NO_VERDICT = "(?:자가 채점 정답률[^|]*|no feedback|[^|]*빈칸에 알맞은 단어를 직접 입력하거나[^|]*|[^|]*\\[전체 채점하기\\]를 누르면[^|]*)";
+const GRAMMAR_NO_VERDICT_NOTE = new RegExp(`^correct→${GRAMMAR_NO_VERDICT}\\s*\\|\\s*wrong→${GRAMMAR_NO_VERDICT}\\s*(?:\\||$)`);
 const TOOL_ARTIFACTS = [
   { courses: ["phonics"], feature: "step", note: /이 단어로 Step 2/, resolved: true,
     why: "단계 탭이 아닌 Step 1 안의 링크를 단계로 오인 — 585건 전부 같은 이름 하나이고 실제 단계 4개는 통과 (VOCA-STEP-WITHDRAWN)" },
-  { courses: ["grammar1", "grammar2"], feature: "graded input", note: /./, resolved: true,
-    why: "자가 채점 화면을 자동 채점으로 오인 — 자동 채점은 강의 282개 전수로 따로 확인함 (GRADE-EXAM-PASS)" },
+  { courses: ["grammar1", "grammar2"], feature: "graded input", note: BREAK === "grammar-any-note" ? /./ : GRAMMAR_NO_VERDICT_NOTE, noteOnly: true, resolved: true,
+    why: "판정이 없는 칸(자가 채점 · 빈칸 안내 · 제출 전 종합 평가)을 자동 채점으로 오인 — 자동 채점은 강의 282개 전수로 따로 확인함 (GRADE-EXAM-PASS)" },
   { courses: ["grammar1"], feature: "navigation", note: /./, resolved: true,
     why: "넘어가기 전 주소의 이웃과 비교했음 — 넘어간 뒤 페이지 기준으로 재평가하니 64건 전부 정상 (NAV-WITHDRAWN)" },
   { courses: ["ld", "student"], feature: "tile dictation", note: /./, resolved: false, oldTileRoutineOnly: true,
@@ -84,7 +94,8 @@ const isNewTileRoutine = (rec) => Boolean(rec.driverRev) || String(rec.at || "")
 // control that was mistaken for a step tab is the item
 const isArtifact = (course, check, rec) => TOOL_ARTIFACTS.find((a) => a.courses.includes(course) && a.feature === check.feature
   && !(a.oldTileRoutineOnly && BREAK !== "old-dictation-rule" && isNewTileRoutine(rec))
-  && (a.note.test(String(check.note || "")) || a.note.test(String(check.item || ""))));
+  // noteOnly: the rule describes what the SCREEN answered (the note) — the item is just the question number
+  && (a.note.test(String(check.note || "")) || (!a.noteOnly && a.note.test(String(check.item || "")))));
 /**
  * ⑤ 'not applicable here — another check covers it'. drive-generic writes it as status NA + coveredBy (7-1 m); records made
  * before that wrote the LISTENING/STUDENT tile pages' typed-input line as BLOCKED with this note — read as NA only there.

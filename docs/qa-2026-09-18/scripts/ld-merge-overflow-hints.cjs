@@ -13,7 +13,7 @@
  *   node ld-merge-overflow-hints.cjs            미리보기(강의 · 합친 힌트)
  *   node ld-merge-overflow-hints.cjs --apply    씀
  *   node ld-merge-overflow-hints.cjs --check    넘친 줄이 남은 강의 수만 셈 (0 이 아니면 exit 1)
- *   node ld-merge-overflow-hints.cjs --check --rev HEAD   일부러 깨기: 합치기 전(커밋된 판)으로 세면 104 가 나와야 한다
+ *   node ld-merge-overflow-hints.cjs --check --rev f35e8be   일부러 깨기: 합치기 전 판으로 세면 104 가 나와야 한다('--rev HEAD' 는 합친 것이 커밋된 뒤 가짜, 7-1 n)
  */
 const fs = require("fs");
 const path = require("path");

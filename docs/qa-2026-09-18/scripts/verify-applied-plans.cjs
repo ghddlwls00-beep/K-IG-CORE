@@ -23,7 +23,7 @@
  * 센 계획이 0개면 exit 1 (7-1 h — 계획 파일을 안 넘기면 '0개 · 0줄 · 어긋남 0' 으로 통과하던 것).
  *
  *   node verify-applied-plans.cjs plans/stage6-factual-reading-c.json [다른 계획 …]
- *   node verify-applied-plans.cjs plans/….json --rev HEAD            일부러 깨기: 고치기 전(커밋된 판)으로 세면 어긋나야 한다
+ *   node verify-applied-plans.cjs plans/….json --rev f35e8be            일부러 깨기: 고치기 전 판으로 세면 어긋나야 한다('--rev HEAD' 는 고친 것이 커밋된 뒤 가짜, 7-1 n)
  *   node verify-applied-plans.cjs plans/….json --plans-dir <폴더>     사슬을 따라갈 계획 폴더(기본: 이 도구 옆 plans/)
  */
 const fs = require("fs");

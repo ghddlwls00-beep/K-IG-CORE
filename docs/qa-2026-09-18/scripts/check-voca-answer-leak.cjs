@@ -7,7 +7,7 @@
  * 넣었다가 되돌림). 둘 중 하나라도 0 이 아니면 exit 1.
  *
  *   node check-voca-answer-leak.cjs                지금 파일
- *   node check-voca-answer-leak.cjs --rev HEAD     일부러 깨기: 커밋된 판(accordance · few 가 걸려야 함)
+ *   node check-voca-answer-leak.cjs --rev f35e8be     일부러 깨기: 고치기 전 판(accordance · few 가 걸려야 함 — '--rev HEAD' 는 고친 것이 커밋된 뒤 가짜, 7-1 n)
  *   node check-voca-answer-leak.cjs --file <json>  사전 사본으로
  *   node check-voca-answer-leak.cjs --break        일부러 깨기: 메모리에서 tear 에 '[테어]' · bow 에 '/baʊ/' 를 넣음(소리 표시 2 여야 함)
  */

@@ -3,7 +3,8 @@
  * BUG-011 · BUG-017 검사 — 사이트 검색창과 **같은 코드**(src/lib/searchMatch.ts)로 공개 색인을 검사한다.
  *
  *   node check-search.cjs                 지금 public/search-index.json
- *   node check-search.cjs --head          커밋된 색인(대조군) — CNN 120건이 있어 실패해야 정상
+ *   node check-search.cjs --head          고치기 전 색인(대조군, 00c5df0 = 8114912 바로 전으로 고정) — CNN 120건이 있어 실패해야 정상
+ *                                         (전에는 git HEAD 의 색인이라, 고친 색인이 커밋된 뒤로는 대조군이 PASS 였다 — 7-1 n)
  *   node check-search.cjs --index <파일>   일부러 깨뜨린 색인으로 이 검사가 실패하는지 볼 때
  *
  * 검사 (하나라도 어긋나면 exit 1):
@@ -20,10 +21,14 @@ const { execSync } = require("child_process");
 const { pathToFileURL } = require("url");
 const { loadTs, REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs");
 
-const HEAD = process.argv.includes("--head");
+const HEAD = process.argv.includes("--head"); // 이름은 그대로(목록 · 명령서가 이 이름으로 부름) — 뜻은 '고치기 전 색인'
+const PRE_FIX_REV = "00c5df0"; // 8114912(CNN 을 뺀 커밋) 바로 전 — 대조군
 const indexArg = process.argv.indexOf("--index");
+// 기준선(검사 3)은 '커밋된 색인' 그대로 — 뜻이 '지금 커밋된 내용에 예전 검색 규칙' 이라 옛 판이 아니다(대조군과 다름)
 const headText = execSync("git show HEAD:public/search-index.json", { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 });
-const text = HEAD ? headText : fs.readFileSync(indexArg > 0 ? path.resolve(process.argv[indexArg + 1]) : path.join(REPO, "public/search-index.json"), "utf8");
+const text = HEAD
+  ? execSync(`git show ${PRE_FIX_REV}:public/search-index.json`, { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 })
+  : fs.readFileSync(indexArg > 0 ? path.resolve(process.argv[indexArg + 1]) : path.join(REPO, "public/search-index.json"), "utf8");
 const index = JSON.parse(text);
 
 /** 예전 SearchDialog 규칙 그대로 (FUN-09 숫자 경계 포함) — 기준선에 쓴다. */
@@ -57,7 +62,7 @@ const baseline = JSON.parse(headText).filter((x) => x.course !== "cnn");
   const navDiff = NAV.filter((q) => JSON.stringify(search(index, q).map((x) => x.id)) !== JSON.stringify(oldSearch(baseline, q).map((x) => x.id)));
   if (navDiff.length) fails.push(`이름 검색 결과가 고치기 전과 다름: ${navDiff.join(", ")}`);
 
-  console.log(`색인 ${HEAD ? "(커밋된 판 — 대조군)" : indexArg > 0 ? `(${path.basename(process.argv[indexArg + 1])})` : "(지금)"} · 항목 ${index.length} · 칸 ${[...new Set(index.flatMap((x) => Object.keys(x)))].join(",")}`);
+  console.log(`색인 ${HEAD ? `(고치기 전 ${PRE_FIX_REV} — 대조군)` : indexArg > 0 ? `(${path.basename(process.argv[indexArg + 1])})` : "(지금)"} · 항목 ${index.length} · 칸 ${[...new Set(index.flatMap((x) => Object.keys(x)))].join(",")}`);
   console.log(`1. CNN 항목: ${cnn}`);
   console.log(`2. 유료 강의 본문: ${leak.rows}줄 · ${leak.lessons}강 (유료 문자열 ${leak.needles}개 확인)`);
   console.log(`3. 이름 검색 ${NAV.length}개 중 결과가 고치기 전과 다른 것: ${navDiff.length}`);

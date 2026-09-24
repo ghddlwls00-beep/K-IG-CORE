@@ -11,7 +11,8 @@
  *    다른 꼴로 읽은 것(I'm → I am · do not → don't …)이 100 이 아닌 글을 센다. 두 꼴을 다 쓰는 글은 어느 쪽인지 알 수 없어 뺀다.
  *
  *   node check-speech-scorer.cjs [--old] [--list] [--break]
- *   --old   : git HEAD 의 speechRecognition.ts 로 (고치기 전과 견줌 — ① 13 · ② 1,680 넘게, exit 1)
+ *   --old   : 고치기 전 판(f35e8be — 6단계 커밋 86d9ac9 앞)의 speechRecognition.ts 로 (고치기 전과 견줌 — ① 13 · ② 1,680 넘게, exit 1)
+ *             (전에는 git HEAD — 고친 채점기가 커밋된 뒤로는 HEAD 가 고친 판이라 0 · 0 이었다, 7-1 n)
  *   --break : 완벽한 읽기에서 끝 낱말 셋을 빼고 넣음 — 100 이 아닌 문장이 나오면(나와야 정상) exit 1
  * 셋 다 아닐 때: ① 이나 ② 에 하나라도 있으면 exit 1.
  */
@@ -24,7 +25,7 @@ const OLD = process.argv.includes("--old");
 const LIST = process.argv.includes("--list");
 const BREAK = process.argv.includes("--break");
 const src = OLD
-  ? execSync("git show HEAD:src/lib/speechRecognition.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 })
+  ? execSync("git show f35e8be:src/lib/speechRecognition.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 })
   : fs.readFileSync(path.join(REPO, "src/lib/speechRecognition.ts"), "utf8");
 const js = ts.transpileModule(src, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 } }).outputText;
 const mod = { exports: {} };
@@ -52,7 +53,7 @@ for (const [t, where] of reading) {
   const r = evaluatePronunciation(spoken, t);
   if (r.score !== 100) bad.push({ t, where, score: r.score, miss: r.wordAnalysis.filter((w) => !w.matched).map((w) => w.word).slice(0, 6) });
 }
-console.log(`${OLD ? "[HEAD 채점기] " : ""}${BREAK ? "[--break 끝 셋 뺌] " : ""}① READING 첫 줄(S[0]) 서로 다른 문장 ${reading.size} · 완벽한 읽기가 100 이 아닌 문장 ${bad.length}`);
+console.log(`${OLD ? "[고치기 전 f35e8be 채점기] " : ""}${BREAK ? "[--break 끝 셋 뺌] " : ""}① READING 첫 줄(S[0]) 서로 다른 문장 ${reading.size} · 완벽한 읽기가 100 이 아닌 문장 ${bad.length}`);
 if (LIST) for (const b of bad) console.log(`  ${b.score}점 ${b.where[0]} | 안 맞은 ${b.miss.join(" · ")} | ${b.t.slice(0, 90)}`);
 
 // ② 줄임말 — 한 꼴만 쓰는 글을 다른 꼴로 읽기
@@ -83,7 +84,7 @@ if (!BREAK) for (const t of strings) {
     break;
   }
 }
-if (!BREAK) console.log(`${OLD ? "[HEAD 채점기] " : ""}② 줄임말 한 꼴만 쓰는 글 ${tried} · 다른 꼴로 읽어 100 이 아닌 글 ${cbad.length}`);
+if (!BREAK) console.log(`${OLD ? "[고치기 전 f35e8be 채점기] " : ""}② 줄임말 한 꼴만 쓰는 글 ${tried} · 다른 꼴로 읽어 100 이 아닌 글 ${cbad.length}`);
 if (LIST) for (const b of cbad.slice(0, 20)) console.log(`  ${b}`);
 if (BREAK) process.exit(bad.length ? 1 : 0);
 process.exit(bad.length || cbad.length ? 1 : 0);

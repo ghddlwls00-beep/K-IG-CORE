@@ -52,6 +52,7 @@ function lsAt(rev, dir) {
 /** 그 경로를 건드린 커밋 (오래된 것부터) + "now" */
 const revsOf = (p) => [...git(["log", "--reverse", "--format=%h", "--", p]).split("\n").map((s) => s.trim()).filter(Boolean), "now"];
 const BASE_BEFORE = "2026-09-16 03:02:00 +0900"; // archive-checklist.json 을 만든 커밋(00c5df0) 시각
+// HEAD 가 맞는 곳(7-1 n): 여기 HEAD 는 역사를 거슬러 오를 출발점일 뿐 — 찾는 판은 날짜(BASE_BEFORE)로 고정된다.
 const baseOf = (p) => git(["rev-list", "-1", `--before=${BASE_BEFORE}`, "HEAD", "--", p]).trim().slice(0, 7);
 /** revs 에서 base 부터(포함) 본다 */
 const fromBase = (revs, base) => revs.slice(Math.max(0, revs.findIndex((r) => base.startsWith(r) || r.startsWith(base))));

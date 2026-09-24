@@ -22,8 +22,9 @@
  * (ReadingLearningView.tsx:199-206 — readingSentences 의 english/korean).
  *
  *   node check-reading-cloze.cjs [--runs 20] [--seed 1] [--old]
- *   --old  : 커밋된 판(git HEAD)의 생성기로 같은 것을 센다 — 대조군. 문제가 0 이 아니어야 정상(찾으면 exit 1).
- *   --diff : 커밋된 판과 지금 판의 빈칸 정답(보기와 달리 무작위가 아님)을 강의마다 견줘 바뀐 문항 수를 보인다.
+ *   --old  : 고치기 전 판(f35e8be — 6단계 커밋 86d9ac9 앞)의 생성기로 같은 것을 센다 — 대조군. 문제가 0 이 아니어야 정상(찾으면 exit 1).
+ *   --diff : 고치기 전 판과 지금 판의 빈칸 정답(보기와 달리 무작위가 아님)을 강의마다 견줘 바뀐 문항 수를 보인다.
+ *   (전에는 git HEAD 였는데, 고친 생성기가 커밋된 뒤로는 HEAD 가 고친 판이라 대조군이 모두 0 이었다 — 7-1 n)
  * 지금 생성기에서 하나라도 0 이 아니면 exit 1.
  */
 const fs = require("fs");
@@ -46,9 +47,10 @@ Math.random = () => {
   return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
 };
 
+const PRE_FIX_REV = "f35e8be";
 function load(old) {
   const src = old
-    ? execSync("git show HEAD:src/lib/readingUtils.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
+    ? execSync(`git show ${PRE_FIX_REV}:src/lib/readingUtils.ts`, { cwd: REPO, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
     : fs.readFileSync(path.join(REPO, "src/lib/readingUtils.ts"), "utf8");
   const js = ts.transpileModule(src, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true, resolveJsonModule: true } }).outputText;
   const mod = { exports: {} };
@@ -137,7 +139,7 @@ for (let run = 0; run < RUNS; run++) {
     }
   }
 }
-console.log(`생성기: ${OLD ? "커밋된 판(대조군)" : "지금 판"} · 강의 ${lessons.length} · ${RUNS}회 · 씨앗 ${SEED} · 문항 ${count.items}`);
+console.log(`생성기: ${OLD ? `고치기 전 판 ${PRE_FIX_REV}(대조군)` : "지금 판"} · 강의 ${lessons.length} · ${RUNS}회 · 씨앗 ${SEED} · 문항 ${count.items}`);
 console.log(`  대시로 붙은 정답 ${count.dash} · 같은 꼴 보기 ${count.family} · 조동사 ${count.modal} · 같은 자리 보기 ${count.sameSlot} · 정답만 대문자 ${count.caps} · 보기 4개 미만 ${count.short}`);
 console.log(`  (6단계) 정답이 또 보임 ${count.visible} · 관사 단서 ${count.article} · 이름 보기 ${count.nameOpt} · 같은 정답 ${count.reused} · 숫자 ${count.digit} · 또 맞는 보기 ${count.alsoFits}`);
 for (const [k, v] of Object.entries(examples)) console.log(`   예(${k}): ${v.join(" | ")}`);

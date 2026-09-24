@@ -10,7 +10,7 @@
  *   node set-voca-meanings.cjs plans/x.json             미리보기
  *   node set-voca-meanings.cjs plans/x.json --apply     씀
  *   node set-voca-meanings.cjs --check plans/a.json …   지금 뜻 = to 인지 센다
- *   node set-voca-meanings.cjs --check … --rev HEAD     일부러 깨기: 커밋된 판으로 세면 어긋나야 한다
+ *   node set-voca-meanings.cjs --check … --rev f35e8be     일부러 깨기: 고치기 전 판으로 세면 어긋나야 한다('--rev HEAD' 는 고친 것이 커밋된 뒤 가짜, 7-1 n)
  * 줄에 "supersededBy": "<계획 이름>[ 설명]" 이 있으면 그 계획의 같은 표제어 줄을 **사슬 끝까지** 따라가 지금 뜻 = 마지막 to 인지 센다
  *   (7단계 7-1 d 와 같은 규칙 — 전에는 "from 이 아니기만" 봐서, 뒤에 누가 무엇으로 바꿨든 통과했다). 따라갈 수 없으면 어긋남.
  * 줄에 "revertedBy" 가 있으면(뒤 계획이 그 줄의 from 으로 되돌림 — 6-0917 correctly, 3차 점검 #7 ③) 세지 않고 수만 보인다.

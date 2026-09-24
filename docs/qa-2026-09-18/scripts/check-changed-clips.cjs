@@ -48,6 +48,7 @@ const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("
 if (BREAK && !["student-ko", "reading-ko"].includes(BREAK)) { console.error(`--break=${BREAK} 는 없다 (student-ko · reading-ko)`); process.exit(2); }
 
 // ── 커밋된 판(HEAD)과 지금 판
+// HEAD 가 맞는 곳(7-1 n): 이 도구의 뜻이 '아직 커밋하지 않은 변경' 이라 git HEAD 를 쓴다 — 고치기 전 판을 흉내 내는 대조군이 아님.
 // core.safecrlf=false: 줄 끝(LF→CRLF) 경고 수백 줄만 끈다 — 비교하는 내용은 그대로
 const git = (args) => execFileSync("git", ["-c", "core.quotepath=false", "-c", "core.safecrlf=false", ...args], { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 });
 const lines = (s) => s.split(/\r?\n/).map((x) => x.trim()).filter(Boolean);

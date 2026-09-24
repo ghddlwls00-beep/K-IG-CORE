@@ -12,7 +12,7 @@
  * 모범 답안 · 대체 답안 · 줄의 right → 전부 exact, 줄의 wrong → 하나도 exact 아님.
  *
  *   node check-grammar-item-plans.cjs
- *   node check-grammar-item-plans.cjs --rev HEAD         # 일부러 깨기: 고치기 전 커밋의 파일에 대면 어긋나야 한다(exit 1)
+ *   node check-grammar-item-plans.cjs --rev f35e8be         # 일부러 깨기: 고치기 전 커밋의 파일에 대면 어긋나야 한다(exit 1 · '--rev HEAD' 는 고친 것이 커밋된 뒤 가짜, 7-1 n)
  *   node check-grammar-item-plans.cjs --plans-dir <폴더>  # 계획 폴더(기본: 이 도구 옆 plans/) — 0개 증명용
  */
 const fs = require("fs");

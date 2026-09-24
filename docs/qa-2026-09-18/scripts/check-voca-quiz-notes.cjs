@@ -6,7 +6,8 @@
  * 화면에 뜨는 글(한→영 문제 글 · 영→한 보기 · 스피드 뜻)에 표시가 든 문항을 센다. 0 이 아니면 exit 1.
  *
  *   node check-voca-quiz-notes.cjs [--runs 5] [--seed 1]
- *   node check-voca-quiz-notes.cjs --old     일부러 깨기: 떼기 전(git HEAD) 생성기에 지금 사전 — 0 이 아니어야 함
+ *   node check-voca-quiz-notes.cjs --old     일부러 깨기: 떼기 전 판(f35e8be — 6단계 커밋 86d9ac9 앞) 생성기에 지금 사전 — 0 이 아니어야 함
+ *                                           (전에는 git HEAD — 뗀 생성기가 커밋된 뒤로는 HEAD 가 뗀 판이라 0 · 0 이었다, 7-1 n)
  */
 const fs = require("fs");
 const path = require("path");
@@ -28,7 +29,7 @@ Math.random = () => {
 };
 
 const src = OLD
-  ? execSync("git show HEAD:src/lib/vocaUtils.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
+  ? execSync("git show f35e8be:src/lib/vocaUtils.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
   : fs.readFileSync(path.join(REPO, "src/lib/vocaUtils.ts"), "utf8");
 const js = ts.transpileModule(src, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
 const mod = { exports: {} };
@@ -64,7 +65,7 @@ for (let r = 0; r < RUNS; r++) {
     }
   }
 }
-console.log(`${OLD ? "[떼기 전 생성기(HEAD)] " : ""}사전에 발음 표시 든 항목 ${withNote} · 퀴즈 문항 ${q} 중 표시가 뜬 것 ${qBad} · 스피드 ${s} 중 ${sBad}`);
+console.log(`${OLD ? "[떼기 전 생성기(f35e8be)] " : ""}사전에 발음 표시 든 항목 ${withNote} · 퀴즈 문항 ${q} 중 표시가 뜬 것 ${qBad} · 스피드 ${s} 중 ${sBad}`);
 for (const e of ex) console.log(`  예: ${e}`);
 // --old 도 찾으면 exit 1 — 일부러 깨기가 정말 깨졌는지 종료 코드로도 보이게(3차 점검 #8 확인)
 process.exit(qBad + sBad ? 1 : 0);

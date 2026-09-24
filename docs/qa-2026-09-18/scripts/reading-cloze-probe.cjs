@@ -5,7 +5,7 @@
  * 앱과 같은 문장을 넘긴다(readingSentences 의 english/korean — check-reading-cloze.cjs 와 같음).
  *
  *   node reading-cloze-probe.cjs pr003 pr004 [--runs 400] [--old]
- *   --old : git HEAD 의 생성기 (고치기 전과 견줄 때)
+ *   --old : 고치기 전 판(f35e8be — 6단계 커밋 86d9ac9 앞)의 생성기 (고치기 전과 견줄 때 · 전에는 git HEAD — 커밋 뒤엔 고친 판이 됨, 7-1 n)
  */
 const fs = require("fs");
 const path = require("path");
@@ -27,7 +27,7 @@ Math.random = () => {
   return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
 };
 const src = OLD
-  ? execSync("git show HEAD:src/lib/readingUtils.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
+  ? execSync("git show f35e8be:src/lib/readingUtils.ts", { cwd: REPO, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 })
   : fs.readFileSync(path.join(REPO, "src/lib/readingUtils.ts"), "utf8");
 const js = ts.transpileModule(src, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true, resolveJsonModule: true } }).outputText;
 const mod = { exports: {} };
@@ -47,7 +47,7 @@ for (const id of ids) {
       for (const o of it.options) if (o !== it.missingWord) st.opts.set(o, (st.opts.get(o) || 0) + 1);
     });
   }
-  console.log(`\n== ${id}${OLD ? " (HEAD 생성기)" : ""} · ${RUNS}회`);
+  console.log(`\n== ${id}${OLD ? " (고치기 전 f35e8be 생성기)" : ""} · ${RUNS}회`);
   for (const [k, st] of stats) {
     const t = [...st.targets.keys()].join("/");
     const opts = [...st.opts.entries()].sort((a, b) => b[1] - a[1]).map(([w, n]) => `${w} ${((n / RUNS) * 100).toFixed(0)}%`).join(" · ");

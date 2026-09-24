@@ -6,6 +6,7 @@
  * 4·5단계 끝의 클립 생성 뒤, 여기 나온 영어 문장마다 클립이 생겼는지 대조하는 데 쓴다.
  *
  *   node ld-en-changes.cjs [--json]
+ * HEAD 가 맞는 곳(7-1 n): 뜻이 '아직 커밋하지 않은 대본 변경' 이라 git HEAD 를 쓴다 — 고치기 전 판을 흉내 내는 대조군이 아님.
  */
 const { execSync } = require("child_process");
 const fs = require("fs");

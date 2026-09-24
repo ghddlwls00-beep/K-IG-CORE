@@ -5,7 +5,8 @@
  * `npm run test:reading`(scripts/audit-reading.mjs)이 셋을 견준다(한국어 "Hover query").
  * 6단계 배치 5 의 사실 오류 고침(replace-in-lessons, 강의 파일 세 벌)이 중앙 파일을 빼먹어 이 검사가 깨졌다.
  *
- *   node reading-central-sync.cjs                 어긋난 문장 수 (지금 · HEAD 판 각각)
+ *   node reading-central-sync.cjs                 어긋난 문장 수 (지금 · 고치기 전 판 f35e8be 각각 — 고치기 전 판은 대조군, 4 여야)
+ *                                                 (전에는 git HEAD 판 — 고친 것이 커밋된 뒤로는 HEAD 가 고친 판이라 0 이었다, 7-1 n)
  *   node reading-central-sync.cjs --apply         중앙 파일의 어긋난 english · korean 값을 강의 파일 값으로 — 그 글자만 바꿈
  * 바꾸는 방식: 중앙 파일 원문에서 그 문장 id 의 블록을 찾아 english/korean 값만 글자 그대로 갈아 끼움(들여쓰기·줄바꿈 그대로),
  * 다시 읽어 강의 파일과 같은지 · 다른 문장이 안 바뀌었는지 확인한 뒤 쓴다.
@@ -33,12 +34,13 @@ function mismatches(readMain, central) {
   return out;
 }
 
-const headCentral = JSON.parse(git("HEAD", "src/lib/readingSentences.json"));
-const atHead = mismatches((f) => git("HEAD", f), headCentral);
+const PRE_FIX_REV = "f35e8be"; // 6단계 커밋 86d9ac9 앞 — 사실 오류 고침이 중앙 파일을 빼먹기 전
+const headCentral = JSON.parse(git(PRE_FIX_REV, "src/lib/readingSentences.json"));
+const atHead = mismatches((f) => git(PRE_FIX_REV, f), headCentral);
 const rawCentral = fs.readFileSync(CENTRAL, "utf8");
 const central = JSON.parse(rawCentral);
 const now = mismatches((f) => fs.readFileSync(path.join(REPO, f), "utf8"), central);
-console.log(`HEAD 판: 중앙 파일과 강의 파일이 다른 문장 ${atHead.length}${atHead.length ? " — " + atHead.map((m) => m.id).join(" ") : ""}`);
+console.log(`고치기 전 판(${PRE_FIX_REV}): 중앙 파일과 강의 파일이 다른 문장 ${atHead.length}${atHead.length ? " — " + atHead.map((m) => m.id).join(" ") : ""}`);
 console.log(`지금: 다른 문장 ${now.length} (영어 다름 ${now.filter((m) => m.c && m.c.english !== m.s.english).length} · 한국어 다름 ${now.filter((m) => m.c && m.c.korean !== m.s.korean).length} · 중앙에 없음 ${now.filter((m) => m.missing).length})`);
 for (const m of now.slice(0, 40)) console.log(`  ${m.id}${m.missing ? " (중앙에 없음)" : ""}`);
 if (!APPLY) process.exit(now.length ? 1 : 0);

@@ -177,6 +177,7 @@ if (LIST) for (const k of retiredOnly) console.log(`  폐지 과정에만 ${k}: 
 //       src/lib/speech.ts cleanText 에서 고침). 스윕은 고치기 전에 돌았다.
 //   (b) 스윕 무렵부터 지금까지의 **옛 판**(git: 2026-09-12 이후 content 를 바꾼 커밋마다 그 직전 판 + 커밋 안 된 변경의 HEAD 판)에서
 //       소리 내던 글 — 그 뒤 글이 바뀐 것.
+//       HEAD 가 맞는 곳(7-1 n): 여기서 HEAD 는 '커밋 안 된 변경의 바로 앞' 이라는 뜻 — 옛 판은 커밋마다 따로 세므로 대조군이 가짜가 되지 않음.
 //   (a)(b) 어디에도 없으면 까닭 없는 것 → 실패.
 const { execFileSync, spawnSync } = require("child_process");
 const git = (args) => execFileSync("git", ["-c", "core.quotepath=false", "-c", "core.safecrlf=false", ...args], { cwd: REPO, encoding: "utf8", maxBuffer: 256 << 20 });
