@@ -110,19 +110,49 @@ const squashHint = (value) => String(value).toLowerCase().replace(/[^a-z0-9]/g, 
 
 const PRONOUN_I = /^I(?:'m|'ve|'ll|'d)?$/;
 
+// 최종 관문 2026-09-25(칩 번짐 — 앱과 같음): 낱말 머리에서 시작할 때만 맞음(뒤는 이어져도 됨 — Alaska ↔ Alaskans) · 대문자 낱말은 대문자 그대로 ·
+// 수가 든 칩은 그 수가 모두 문장에 있을 때만. 맞춤 안에서는 짜 붙임 그대로(sea shells ↔ seashells). 낱말 끝까지 요구한 판은 필요한 칩 19 를 잃어 버림.
+const NUMBER_WORDS = new Set(
+  "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth twentieth hundredth thousandth dozen half twice".split(" "),
+);
+const unThousand = (value) => String(value).replace(/(\d),(?=\d{3}(?!\d))/g, "$1");
+const numbersIn = (chunk) => [
+  ...(unThousand(chunk).match(/\d+/g) || []).map((v) => ({ digit: true, v })),
+  ...String(chunk).toLowerCase().split(/[^a-z]+/).filter((w) => NUMBER_WORDS.has(w)).map((v) => ({ digit: false, v })),
+];
+const hasNumber = (sentence, n) =>
+  n.digit
+    ? new RegExp(`(?<!\\d)${n.v}(?!\\d)`).test(unThousand(sentence))
+    : new RegExp(`(?<![A-Za-z])${n.v}(?![A-Za-z])`, "i").test(sentence);
+function meetsAsWords(sentence, needle, caseSensitive) {
+  const at = [];
+  let squeezed = "";
+  for (let i = 0; i < sentence.length; i++) {
+    if (!/[A-Za-z0-9]/.test(sentence[i])) continue;
+    at.push(i);
+    squeezed += caseSensitive ? sentence[i] : sentence[i].toLowerCase();
+  }
+  for (let k = squeezed.indexOf(needle); k >= 0 && needle; k = squeezed.indexOf(needle, k + 1)) {
+    const start = at[k];
+    if (start === 0 || !/[A-Za-z0-9]/.test(sentence[start - 1])) return true;
+  }
+  return false;
+}
+
 function hintsForSentence(sentence, chunks) {
   if (!sentence || !chunks.length) return [];
-  const squashed = squashHint(sentence);
-  const sentenceNumbers = String(sentence).replace(/(\d),(?=\d{3}(?!\d))/g, "$1"); // 문장의 "4,000" 도 "4000" 으로 (앱과 같음)
+  sentence = String(sentence);
   const relevant = chunks.filter((chunk) => {
+    if (!numbersIn(chunk).every((n) => hasNumber(sentence, n))) return false;
     const whole = squashHint(chunk);
-    if (whole.length >= 3 && squashed.includes(whole)) return true;
+    if (whole.length >= 3 && meetsAsWords(sentence, whole, false)) return true;
     return chunk.split(/\s+/).some((token) => {
       const bare = token.replace(/[^A-Za-z0-9'’.]/g, "").replace(/[.'’]+$/, "");
-      if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentenceNumbers);
+      if (/^\d{2,}$/.test(bare)) return hasNumber(sentence, { digit: true, v: bare });
       const letters = bare.replace(/[^A-Za-z]/g, "");
-      if (letters.length < (/^[A-Z]/.test(bare) ? 3 : 5)) return false;
-      return squashed.includes(squashHint(bare));
+      const capital = /^[A-Z]/.test(bare);
+      if (letters.length < (capital ? 3 : 5)) return false;
+      return meetsAsWords(sentence, capital ? bare.replace(/[^A-Za-z0-9]/g, "") : squashHint(bare), capital);
     });
   });
   if (relevant.length) return relevant;

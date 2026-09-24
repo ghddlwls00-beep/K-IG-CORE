@@ -99,26 +99,63 @@ export function LdLearningView({
 
   const squash = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
 
+  /**
+   * Final gate 2026-09-25 (spill review): a chip used to match wherever its letters appeared in the
+   * sentence with spaces and punctuation squeezed out, so [Ten minutes later] rose on "forgotten",
+   * [New Jersey] on "news", [at times] on "that times" and [$4.95] on "$14.95" — 88 places across
+   * LISTENING. A match must now start where a word starts (it may run on: [Alaska] still meets
+   * "Alaskans", [forgetful] "forgetfulness"), a capitalised word counts only as that capitalised
+   * word, and a chip that carries a number shows only where every one of its numbers is spoken.
+   * Squeezing is kept inside the match, so "sea shells" still meets [seashells]. Requiring the end
+   * of a word as well was tried and dropped: it lost 19 chips a learner needs.
+   */
+  const NUMBER_WORDS = new Set(
+    "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth twentieth hundredth thousandth dozen half twice".split(" "),
+  );
+  const unThousand = (value: string) => value.replace(/(\d),(?=\d{3}(?!\d))/g, "$1");
+  const numbersIn = (chunk: string) => [
+    ...(unThousand(chunk).match(/\d+/g) ?? []).map((v) => ({ digit: true, v })),
+    ...chunk.toLowerCase().split(/[^a-z]+/).filter((w) => NUMBER_WORDS.has(w)).map((v) => ({ digit: false, v })),
+  ];
+  const hasNumber = (sentence: string, n: { digit: boolean; v: string }) =>
+    n.digit
+      ? new RegExp(`(?<!\\d)${n.v}(?!\\d)`).test(unThousand(sentence))
+      : new RegExp(`(?<![A-Za-z])${n.v}(?![A-Za-z])`, "i").test(sentence);
+  /** `needle` (letters and digits only) occurs in `sentence`, squeezed, starting where a word starts */
+  const meetsAsWords = (sentence: string, needle: string, caseSensitive: boolean) => {
+    const at: number[] = [];
+    let squeezed = "";
+    for (let i = 0; i < sentence.length; i++) {
+      if (!/[A-Za-z0-9]/.test(sentence[i])) continue;
+      at.push(i);
+      squeezed += caseSensitive ? sentence[i] : sentence[i].toLowerCase();
+    }
+    for (let k = squeezed.indexOf(needle); k >= 0 && needle; k = squeezed.indexOf(needle, k + 1)) {
+      const start = at[k];
+      if (start === 0 || !/[A-Za-z0-9]/.test(sentence[start - 1])) return true;
+    }
+    return false;
+  };
+
   /** The sentence argument is passed in: `currentDictationItem` is declared further down. */
   const pickHintsFor = (sentence: string): string[] => {
     if (!sentence || hintChunks.length === 0) return [];
 
-    const squashedSentence = squash(sentence);
-    // "4,000" in the sentence must meet the hint token "4,000" (read as "4000").
-    const sentenceNumbers = sentence.replace(/(\d),(?=\d{3}(?!\d))/g, "$1");
     const relevant = hintChunks.filter((chunk) => {
+      if (!numbersIn(chunk).every((n) => hasNumber(sentence, n))) return false;
       const whole = squash(chunk);
-      if (whole.length >= 3 && squashedSentence.includes(whole)) return true;
+      if (whole.length >= 3 && meetsAsWords(sentence, whole, false)) return true;
       return chunk.split(/\s+/).some((token) => {
         const bare = token.replace(/[^A-Za-z0-9'’.]/g, "").replace(/[.'’]+$/, "");
-        if (/^\d{2,}$/.test(bare)) return new RegExp(`(?<!\\d)${bare}(?!\\d)`).test(sentenceNumbers);
+        if (/^\d{2,}$/.test(bare)) return hasNumber(sentence, { digit: true, v: bare });
         // A proper noun counts from 3 letters; a lower-case "어려운 단어" only from
         // 5, so that a short everyday word in the chunk cannot stick to every
         // sentence. Without the lower-case case at all, the 13 lessons whose
         // hints are ordinary hard words ("farmhouse sixty") never showed a box.
         const letters = bare.replace(/[^A-Za-z]/g, "");
-        if (letters.length < (/^[A-Z]/.test(bare) ? 3 : 5)) return false;
-        return squashedSentence.includes(squash(bare));
+        const capital = /^[A-Z]/.test(bare);
+        if (letters.length < (capital ? 3 : 5)) return false;
+        return meetsAsWords(sentence, capital ? bare.replace(/[^A-Za-z0-9]/g, "") : squash(bare), capital);
       });
     });
     if (relevant.length > 0) return relevant;
