@@ -15,6 +15,13 @@ const OUT = path.join(__dirname, "../out");
 const norm = (s) => String(s || "").replace(/\s+/g, " ").trim().toLowerCase();
 
 const TESTS = require("./proof-tests.json");
+/**
+ * --prefix <p>: read a later re-run of ALL the tests under its own phase names (<p>fixed · <p>after …) so it never overwrites the
+ * 2026-09-23 records — e.g. the final gate's "prove again on the code of today" (최종 관문 0, `--prefix g0-`). Such a batch applies
+ * every break together and runs every lesson once per phase, so ALL tests read the same <p>fixed / <p>after files: a test's own
+ * phasePrefix ("r2-") and phaseOverride (the LISTENING sentence-1 run) are not used.
+ */
+const GLOBAL_PREFIX = process.argv.includes("--prefix") ? process.argv[process.argv.indexOf("--prefix") + 1] : "";
 const PHASES = ["base", "broken", "fixed", "after"];
 const PHASE_KO = { base: "깨뜨리기 전", broken: "깨뜨린 뒤", fixed: "검사 수정 후(앱은 깨진 채)", after: "되돌린 뒤", s1: "1번 문장 깨뜨린 뒤(새 검사)" };
 
@@ -60,15 +67,16 @@ if (process.argv.includes("--md")) {
   for (const t of TESTS) {
     // A later batch of tests runs under its own phase names ("r2-base" …) so it never
     // overwrites the records an earlier table was computed from.
-    const P = (ph) => `${t.phasePrefix || ""}${ph}`;
+    const P = (ph) => (GLOBAL_PREFIX ? `${GLOBAL_PREFIX}${ph}` : `${t.phasePrefix || ""}${ph}`);
+    const override = GLOBAL_PREFIX ? null : t.phaseOverride;
     const base = latest(t.course, P("base"), t.id);
-    const broken = latest(t.course, t.phaseOverride || P("broken"), t.id);
-    const fixed = t.phaseOverride ? broken : latest(t.course, P("fixed"), t.id);
+    const broken = latest(t.course, override || P("broken"), t.id);
+    const fixed = override ? broken : latest(t.course, P("fixed"), t.id);
     const after = latest(t.course, P("after"), t.id);
     let oldVerdict;
-    if (t.phaseOverride) {
+    if (override) {
       // the old check was not run on this state: recompute it from the same run's saved screens
-      const masked = VPS.filter((v) => t.texts.some((x) => whereFound(t.course, t.id, t.phaseOverride, x).some((w) => w.startsWith(`${v}:`))));
+      const masked = VPS.filter((v) => t.texts.some((x) => whereFound(t.course, t.id, override, x).some((w) => w.startsWith(`${v}:`))));
       oldVerdict = masked.length ? `**가짜** (${masked.map((v) => SHORT[v]).join("·")} — 같은 화면 글자로 재계산)` : "진짜";
     } else {
       // A screen size where the old check ALREADY called the text missing before anything was
@@ -85,15 +93,15 @@ if (process.argv.includes("--md")) {
     }
     // A phase with fewer than three screen sizes recorded is still running: no verdict from it.
     const complete = (byVp) => VPS.every((v) => byVp[v]);
-    const afterFor = t.phaseOverride ? latest(t.course, P("after"), t.id) : after;
+    const afterFor = override ? latest(t.course, P("after"), t.id) : after;
     const caught = complete(fixed) ? VPS.every((v) => gone(fixed[v], t)) : null;
     const clean = complete(afterFor) ? VPS.every((v) => !gone(afterFor[v], t)) : null;
     const newVerdict = caught === null ? "(진행 중)"
       : !caught ? "**못 잡음**"
       : clean === null ? "실패 잡음 · 되돌린 뒤 (진행 중)"
       : clean ? "실패 잡음 확인" : "잡음 · **되돌린 뒤에도 없다고 함**";
-    const afterCell = t.phaseOverride ? "(LISTENING 대본 되돌린 뒤 칸과 같음)" : cell(after, t);
-    console.log(`| ${t.name} | \`${t.course}/${t.id}\` | ${t.site} | ${cell(base, t)} | ${t.phaseOverride ? "(같은 실행에서 재계산)" : cell(broken, t)} | ${cell(fixed, t)} | ${afterCell} | ${oldVerdict} | ${newVerdict} |`);
+    const afterCell = override ? "(LISTENING 대본 되돌린 뒤 칸과 같음)" : cell(after, t);
+    console.log(`| ${t.name} | \`${t.course}/${t.id}\` | ${t.site} | ${cell(base, t)} | ${override ? "(같은 실행에서 재계산)" : cell(broken, t)} | ${cell(fixed, t)} | ${afterCell} | ${oldVerdict} | ${newVerdict} |`);
   }
   process.exit(0);
 }

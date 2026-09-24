@@ -31,13 +31,19 @@ const OUT = path.join(__dirname, "../out");
 const DEST = path.join(OUT, "proof", PHASE);
 fs.mkdirSync(DEST, { recursive: true });
 
+// 7단계 7-1 l 뒤 drive-generic 의 --redo 는 기록 파일을 옆 이름으로 치우고 새로 시작한다. 한 단계에서 같은 과정 강의를 여럿 부르면
+// 둘째 강의의 --redo 가 첫째 강의 기록을 치워 요약에서 빠졌다(최종 관문 0 도구 증명, 2026-09-24). 그래서 과정마다 첫 강의만 --redo,
+// 다음 강의는 --resume(같은 파일에 이어 씀).
+const startedCourses = new Set();
 for (const t of targets) {
   const [course, id] = t.split(":");
   const started = Date.now();
+  const mode = startedCourses.has(course) ? "--resume" : "--redo";
+  startedCourses.add(course);
   const r = spawnSync(process.execPath, [
     path.join(__dirname, "drive-generic.cjs"),
     "--course", course, "--ids", id,
-    "--suffix", `-proof-${PHASE}`, "--port", PORT, "--clone", CLONE, "--redo",
+    "--suffix", `-proof-${PHASE}`, "--port", PORT, "--clone", CLONE, mode,
   ], { encoding: "utf8", env: process.env, maxBuffer: 64 * 1024 * 1024 });
   const tail = String(r.stdout || "").trim().split(/\r?\n/).slice(-3).join(" | ");
   console.log(`[${PHASE}] ${course} ${id} · ${Math.round((Date.now() - started) / 1000)}s · exit ${r.status} · ${tail}`);
