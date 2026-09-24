@@ -59,6 +59,16 @@ for (const [name, f] of LOGS) {
   logs[name] = arr;
   for (const e of arr) { const at = resolve(e.file, e.where); if (!at) continue; if (e.op === "set") writes.push({ src: name, order: ORDER[name], ptr: at.ptr, value: e.new }); }
 }
+// LISTENING 힌트 첫 줄 되살리기(ld-restore-first-line — 결정 B 판단 필요 · 소유자 '되살린다'): 힌트 줄 앞에 원본 첫 줄을 붙임
+for (const f of ["힌트-첫줄.json", "힌트-첫줄-이어쓰기.json"]) {
+  const p = path.join(D, f);
+  if (!fs.existsSync(p)) continue;
+  for (const e of readJ(p)) {
+    if (!e.add.length && e.old.hintsIdx >= 0) continue;
+    const d = file(e.file); const hb = d ? d.blocks.findIndex((b) => b.type === "hints") : -1;
+    if (hb >= 0) writes.push({ src: "힌트 첫 줄", order: 13, ptr: `${e.file}#/blocks/${e.old.hintsIdx >= 0 ? e.old.hintsIdx : hb}/text`, value: e.new.hints });
+  }
+}
 const laterMatch = (ptr, order, now) => writes.find((w) => w.ptr === ptr && w.order > order && w.value === now);
 
 // ── 코드로 끝낸 줄 — 그 코드 파일에 고친 글이 있는가
@@ -122,6 +132,9 @@ for (const [table] of plans) {
     const walk = (n) => { if (hit) return; if (typeof n === "string") { if (n === r.고칠글) hit = true; } else if (Array.isArray(n)) n.forEach(walk); else if (n && typeof n === "object") Object.values(n).forEach(walk); };
     for (const rel of files) walk(file(rel));
     if (hit) { mark(table, r, "같은 고칠 글이 이미 들어가 있음(다른 판정)", true); continue; }
+    // 그 힌트 줄 앞에 뒤에서 원본 첫 줄을 붙인 경우(힌트 첫 줄 되살리기 — 옛 줄 = 이 고칠 글, 지금 = 되살린 줄)
+    const restored = writes.find((w) => w.src === "힌트 첫 줄" && (() => { const f2 = w.ptr.split("#")[0]; const at = resolve(f2, w.ptr.split("#/")[1].split("/").map((x) => (/^\d+$/.test(x) ? `[${x}]` : `.${x}`)).join("")); return at && at.value === w.value && String(w.value).endsWith(`. ${r.고칠글}`); })());
+    if (restored) { mark(table, r, "같은 고칠 글이 이미 들어가 있음 — 뒤에 힌트 첫 줄을 앞에 붙임", true); continue; }
     // 다른 정답 배열 — 그 파일의 한 문항 다른 정답에 모두 들어 있으면(다른 판정이 먼저 넣음)
     const wantAlts = asArray(r.고칠글);
     if (wantAlts && files.some((rel) => { const d = file(rel); return d && (d.blocks || []).some((b) => (b.items || []).some((it) => Array.isArray(it.alternatives) && wantAlts.every((x) => it.alternatives.includes(x)))); })) {
