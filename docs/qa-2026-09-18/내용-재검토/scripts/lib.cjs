@@ -11,13 +11,17 @@ const path = require("path");
 const Module = require("module");
 const { spawnSync } = require("child_process");
 
-const WT = path.resolve(__dirname, "../../../..");
-const DIR = path.resolve(__dirname, "..");
-const BASE = "9d6e15d748fc4a16832b26643a3c2f7e5614612d";
-const HEAD = "2a80bbaa087acda2570cb15cb24f6d0ff9285a00";
+// 고친 것 다시 읽기(2026-09-25)를 위해 바꿔 끼울 수 있게: KIG_WT = 화면 코드 · 감사 도구를 불러올 폴더(고친 판을 풀어 둔 곳),
+// KIG_SUB = 결과 폴더(내용-재검토/<KIG_SUB>), KIG_BASE · KIG_HEAD = 견줄 두 판. 없으면 내용 재검토 그대로(9d6e15d ↔ 2a80bba).
+const GIT_CWD = path.resolve(__dirname, "../../../..");
+const WT = process.env.KIG_WT ? path.resolve(process.env.KIG_WT) : GIT_CWD;
+const DIR = process.env.KIG_SUB ? path.resolve(__dirname, "..", process.env.KIG_SUB) : path.resolve(__dirname, "..");
+const revParse = (r) => spawnSync("git", ["rev-parse", r], { cwd: GIT_CWD }).stdout.toString().trim();
+const BASE = process.env.KIG_BASE ? revParse(process.env.KIG_BASE) : "9d6e15d748fc4a16832b26643a3c2f7e5614612d";
+const HEAD = process.env.KIG_HEAD ? revParse(process.env.KIG_HEAD) : "2a80bbaa087acda2570cb15cb24f6d0ff9285a00";
 
 function git(argv, input) {
-  const r = spawnSync("git", argv, { cwd: WT, input, maxBuffer: 1 << 30 });
+  const r = spawnSync("git", argv, { cwd: GIT_CWD, input, maxBuffer: 1 << 30 });
   if (r.status !== 0) throw new Error(`git ${argv.join(" ")} 실패: ${r.stderr}`);
   return r.stdout;
 }

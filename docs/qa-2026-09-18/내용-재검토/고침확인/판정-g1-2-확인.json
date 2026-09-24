@@ -1,0 +1,458 @@
+{
+ "조각": "g1-2",
+ "뽑은때": "2026-09-25 04:34",
+ "대상": [
+  {
+   "key": "OK:G01159",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=31].alternatives[5]",
+   "파일": "content/lessons/grammar1/gh1-091.json",
+   "전": null,
+   "뒤": "Didn't the financial district face a large rebuilding job?"
+  },
+  {
+   "key": "OK:G01121",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[3].items[n=30].alternatives[3]",
+   "파일": "content/lessons/grammar1/gh1-085.json",
+   "전": null,
+   "뒤": "Did the soldiers not leave the city?"
+  },
+  {
+   "key": "OK:G01041",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=26].alternatives[10]",
+   "파일": "content/lessons/grammar1/gh1-081-2.json",
+   "전": null,
+   "뒤": "When does he return to the USA?"
+  },
+  {
+   "key": "OK:G01822",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=100].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "Coca-Cola is based in Atlanta too, isn't it?"
+  },
+  {
+   "key": "OK:G01854",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=115].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "Bob leaves for England next week, doesn't he?"
+  },
+  {
+   "key": "OK:G01158",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=31].alternatives[4]",
+   "파일": "content/lessons/grammar1/gh1-091.json",
+   "전": null,
+   "뒤": "Didn't the financial district face a big reconstruction job?"
+  },
+  {
+   "key": "OK:G01122",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=1].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-089.json",
+   "전": null,
+   "뒤": "Is this your task?"
+  },
+  {
+   "key": "OK:G01040",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=26].alternatives[9]",
+   "파일": "content/lessons/grammar1/gh1-081-2.json",
+   "전": null,
+   "뒤": "When will he go back to America?"
+  },
+  {
+   "key": "OK:G01825",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=102].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "Why is the judge refusing to halt the switch?"
+  },
+  {
+   "key": "OK:G01855",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=115].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "Bob is going to leave for England next week, isn't he?"
+  },
+  {
+   "key": "OK:G01123",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=1].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-089.json",
+   "전": null,
+   "뒤": "Is this your project?"
+  },
+  {
+   "key": "OK:G01824",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=101].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "Didn't it try to get a temporary injunction?"
+  },
+  {
+   "key": "OK:G01856",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=116].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "Wasn't this measure far more effective?"
+  },
+  {
+   "key": "OK:G01827",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=103].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "It will seek mediation, won't it?"
+  },
+  {
+   "key": "OK:G01857",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=116].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "Wasn't this measure a lot more effective?"
+  },
+  {
+   "key": "OK:G01826",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=102].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "Why is the judge refusing to stop the change?"
+  },
+  {
+   "key": "OK:G01850",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=114].alternatives[5]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "The novelist got the Nobel Prize, didn't he?"
+  },
+  {
+   "key": "OK:G01829",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=104].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "How long is it going to take?"
+  },
+  {
+   "key": "OK:G01851",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=114].alternatives[6]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "The novelist won a Nobel Prize, didn't he?"
+  },
+  {
+   "key": "OK:G01828",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".blocks[3].items[n=103].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-111.json",
+   "전": null,
+   "뒤": "It is going to seek arbitration, isn't it?"
+  },
+  {
+   "key": "OK:G01852",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=114].alternatives[7]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "The novelist was awarded the Nobel Prize, wasn't he?"
+  },
+  {
+   "key": "OK:G01128",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=6].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-089.json",
+   "전": null,
+   "뒤": "Is your employer upset?"
+  },
+  {
+   "key": "OK:G01853",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=115].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "Bob will leave for England next week, won't he?"
+  },
+  {
+   "key": "OK:G01129",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=6].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-089.json",
+   "전": null,
+   "뒤": "Is your employer in a bad mood?"
+  },
+  {
+   "key": "OK:G01201",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[2].items[n=54].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-093.json",
+   "전": null,
+   "뒤": "Parliament approved the bill, didn't it?"
+  },
+  {
+   "key": "OK:G01148",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=27].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-091.json",
+   "전": null,
+   "뒤": "Don't your parents have an issue?"
+  },
+  {
+   "key": "OK:G01200",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[2].items[n=54].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-093.json",
+   "전": null,
+   "뒤": "Congress approved the bill, did it not?"
+  },
+  {
+   "key": "OK:G01149",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=28].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-091.json",
+   "전": null,
+   "뒤": "Doesn't the senator have a choice?"
+  },
+  {
+   "key": "OK:G01203",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".blocks[2].items[n=55].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-093.json",
+   "전": null,
+   "뒤": "The law comes into effect this month, doesn't it?"
+  },
+  {
+   "key": "OK:G01858",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".blocks[3].items[n=116].alternatives[3]",
+   "파일": "content/lessons/grammar1/gh1-113-1.json",
+   "전": null,
+   "뒤": "Wasn't this step much more effective?"
+  }
+ ],
+ "결과": [
+  {
+   "key": "OK:G01159",
+   "결론": "맞음 동의",
+   "까닭": "gh1-091 #31 [5] 'Didn't the financial district face a large rebuilding job?' ↔ KO gh1-090 #31 '그 금융가는 큰 재건 작업에 직면하지 않았니?' — 과거 · 부정 의문(Didn't) · 주어 the financial district · '큰 재건 작업' = a large rebuilding job 모두 맞음. 'a large job' 은 자연스러운 영어이고 모범 'major rebuilding job' 과 뜻이 같음. 분할본 없음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01121",
+   "결론": "맞음 동의",
+   "까닭": "gh1-085 #30 [3] 'Did the soldiers not leave the city?' ↔ KO gh1-084 #30 '군인들이 그 도시를 떠나지 않았나?' — 과거 · 풀어 쓴 부정 의문(Did … not) · 복수 soldiers · leave the city 맞음. 한국어에 '그' 가 없어도 the soldiers 는 맞는 옮김(같은 문항 기존 'Didn't the soldiers leave the city?' 와 같은 짝). 긍정 'Did the soldiers leave the city?' 는 채점기 부정 뒤집힘 규칙으로 0점이라 틀린 답을 받지 않음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01041",
+   "결론": "맞음 동의",
+   "까닭": "gh1-081-2 #26 [10](= gh1-081 #26) 'When does he return to the USA?' ↔ KO gh1-080-2 #26 '그는 언제 미국으로 돌아가나?' — 현재형으로 정해진 앞일 · he · return = 돌아가다 · 미국 = the USA 맞음, 모범 'the U.S.' 와 같은 뜻. 3e9687f 파일에서 분할본 · 본문 짝(다른 정답 목록 전체)과 KO 짝 글이 같음을 스크립트로 대조.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01822",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #100 [1] 'Coca-Cola is based in Atlanta too, isn't it?' ↔ KO gh1-110 #100 '코카콜라도 애틀랜타에 본부를 두고 있지?' — '도' = too · '본부를 두고 있다' = is based · 꼬리 isn't it 이 is 와 맞음. 사실(코카콜라 본사 = 애틀랜타)도 맞음. 분할본 gh1-111-2 #100 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01854",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #115 [1] 'Bob leaves for England next week, doesn't he?' ↔ KO gh1-112-1 #115 'Bob이 다음 주에 잉글랜드로 떠나지?' — 정해진 일정의 현재형(next week) · 꼬리 doesn't he 가 leaves 와 맞음 · 잉글랜드 = England. 본문 gh1-113 #115 와 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01158",
+   "결론": "맞음 동의",
+   "까닭": "gh1-091 #31 [4] 'Didn't the financial district face a big reconstruction job?' ↔ KO '그 금융가는 큰 재건 작업에 직면하지 않았니?' — '큰' = big · '재건 작업' = reconstruction job · 과거 부정 의문 · face = 직면하다 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01122",
+   "결론": "맞음 동의",
+   "까닭": "gh1-089 #1 [1] 'Is this your task?' ↔ KO gh1-088 #1 '이것은 당신의 과제냐?' — '과제' 는 '해결해야 할 일(task)' 과 '학생 과제(assignment)' 두 뜻이 있어 task 는 맞는 옮김. 현재 · this · your · 의문 꼴 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01040",
+   "결론": "맞음 동의",
+   "까닭": "gh1-081-2 #26 [9](= gh1-081 #26) 'When will he go back to America?' ↔ KO '그는 언제 미국으로 돌아가나?' — 한국어 현재형 '돌아가나' 는 앞일을 말하므로 will 도 맞음(같은 문항에 기존 'When is he going back to the U.S.?' 가 있어 서로 어긋나지 않음). 미국 = America · go back = 돌아가다 맞음. 분할본 · 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01825",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #102 [0] 'Why is the judge refusing to halt the switch?' ↔ KO '왜 그 판사는 그 전환을 중단시키기를 거부하고 있나?' — 현재진행 · the judge · halt = 중단시키다 · the switch = 그 전환 · why 의문 맞음. 분할본 gh1-111-2 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01855",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #115 [2] 'Bob is going to leave for England next week, isn't he?' ↔ KO 'Bob이 다음 주에 잉글랜드로 떠나지?' — be going to 앞일 · 꼬리 isn't he 가 is 와 맞음 · 뜻 같음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01123",
+   "결론": "맞음 동의",
+   "까닭": "gh1-089 #1 [2] 'Is this your project?' ↔ KO '이것은 당신의 과제냐?' — '과제' 는 '연구 과제' · '조별 과제' 처럼 project 로도 옮기는 말이라 뜻이 다른 영어가 아님. 현재 · this · your · 의문 꼴 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01824",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #101 [2] 'Didn't it try to get a temporary injunction?' ↔ KO '그것은 임시 금지명령(가처분)을 받아내려고 애쓰지 않았니?' — '임시 금지명령' 을 낱말 그대로 옮긴 temporary injunction · 과거 부정 의문 · try to get = 받아내려고 애쓰다 맞음. 분할본 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01856",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #116 [1] 'Wasn't this measure far more effective?' ↔ KO gh1-112-1 #116 '이 조처가 훨씬 더 효과적이지 않았니?' — far more = 훨씬 더 · 과거 부정 의문 · this measure = 이 조처 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01827",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #103 [0] 'It will seek mediation, won't it?' ↔ KO '그것은 중재를 모색하겠지?' — 표준국어대사전 '중재' 첫 뜻이 '분쟁에 끼어들어 쌍방을 화해시킴'(= mediation), 법률 뜻이 arbitration 이라 한국어 문제만 보고는 둘 다 맞는 옮김. 미래 will · 꼬리 won't it · seek = 모색하다 맞음. 분할본 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01857",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #116 [2] 'Wasn't this measure a lot more effective?' ↔ KO '이 조처가 훨씬 더 효과적이지 않았니?' — a lot more = 훨씬 더 · 과거 부정 의문 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01826",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #102 [1] 'Why is the judge refusing to stop the change?' ↔ KO '왜 그 판사는 그 전환을 중단시키기를 거부하고 있나?' — '전환' = change(바꿈) · stop = 중단시키다 · 현재진행 맞음. 분할본 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01850",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #114 [5] 'The novelist got the Nobel Prize, didn't he?' ↔ KO gh1-112-1 #114 '그 소설가가 노벨상을 받았지?' — got = 받았다 · 과거 · 꼬리 didn't he 가 got 과 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01829",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #104 [1] 'How long is it going to take?' ↔ KO '그것이 얼마나 오래 걸릴까?' — be going to 앞일 · it · take = 걸리다 · how long 의문 맞음. 분할본 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01851",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #114 [6] 'The novelist won a Nobel Prize, didn't he?' ↔ KO '그 소설가가 노벨상을 받았지?' — 'won a Nobel Prize' 도 흔한 맞는 영어(한국어에 관사 정보 없음) · 과거 · 꼬리 didn't he 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01828",
+   "결론": "맞음 동의",
+   "까닭": "gh1-111 #103 [1] 'It is going to seek arbitration, isn't it?' ↔ KO '그것은 중재를 모색하겠지?' — be going to 앞일 · 꼬리 isn't it 이 is 와 맞음 · 중재 = arbitration(모범과 같은 낱말). 분할본 같은 글.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01852",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #114 [7] 'The novelist was awarded the Nobel Prize, wasn't he?' ↔ KO '그 소설가가 노벨상을 받았지?' — 수동 '상을 받다' = was awarded · 꼬리 wasn't he 가 was 와 맞음 · 과거 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01128",
+   "결론": "맞음 동의",
+   "까닭": "gh1-089 #6 [0] 'Is your employer upset?' ↔ KO gh1-088 #6 '너의 고용주는 불행하니(기분 나쁘니)?' — 괄호가 밝힌 뜻 '기분 나쁘니' = upset · 현재 · your employer · 의문 꼴 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01853",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #115 [0] 'Bob will leave for England next week, won't he?' ↔ KO 'Bob이 다음 주에 잉글랜드로 떠나지?' — 한국어 현재형의 앞일을 will 로 · 꼬리 won't he 가 will 과 맞음 · England 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01129",
+   "결론": "맞음 동의",
+   "까닭": "gh1-089 #6 [1] 'Is your employer in a bad mood?' ↔ KO '너의 고용주는 불행하니(기분 나쁘니)?' — 괄호 '기분 나쁘니' 를 그대로 옮긴 꼴 · 현재 · 의문 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01201",
+   "결론": "맞음 동의",
+   "까닭": "gh1-093 #54 [2] 'Parliament approved the bill, didn't it?' ↔ KO gh1-092 #54 '의회가 그 법안을 승인했지?' — 의회 = Parliament(관사 없이 맞음) · 과거 · 꼬리 didn't it 맞음. 같은 과 #49 에도 Parliament 다른 정답이 있어 한 과 안에서 어긋나지 않음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01148",
+   "결론": "맞음 동의",
+   "까닭": "gh1-091 #27 [1] 'Don't your parents have an issue?' ↔ KO gh1-090 #27 '너의 부모님들은 한 문제를 갖고 있지 않니?' — '한 문제' = an issue(= a problem 의 흔한 말) · 복수 주어에 Don't · 현재 부정 의문 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01200",
+   "결론": "맞음 동의",
+   "까닭": "gh1-093 #54 [1] 'Congress approved the bill, did it not?' ↔ KO '의회가 그 법안을 승인했지?' — 줄이지 않은 꼬리 did it not 은 격식체로 맞는 영어 · 과거 · Congress 단수 it 맞음. 이 줄이 없을 때 채점기에서 70점이던 맞는 꼴이라 결정 C 의 목적과 같음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01149",
+   "결론": "맞음 동의",
+   "까닭": "gh1-091 #28 [1] 'Doesn't the senator have a choice?' ↔ KO '그 상원의원은 한 선택안을 갖고 있지 않니?' — 선택안 = option · choice · 3인칭 단수 Doesn't · 현재 부정 의문 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01203",
+   "결론": "맞음 동의",
+   "까닭": "gh1-093 #55 [1] 'The law comes into effect this month, doesn't it?' ↔ KO gh1-092 #55 '그 법은 이달에 발효하지?' — come into effect = 발효하다 · this month = 이달 · 꼬리 doesn't it 이 comes 와 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G01858",
+   "결론": "맞음 동의",
+   "까닭": "gh1-113-1 #116 [3] 'Wasn't this step much more effective?' ↔ KO '이 조처가 훨씬 더 효과적이지 않았니?' — '조처' = step(take steps = 조처를 취하다) · much more = 훨씬 더 · 과거 부정 의문 맞음. 본문 짝 같음.",
+   "때": "2026-09-25 04:40"
+  }
+ ]
+}

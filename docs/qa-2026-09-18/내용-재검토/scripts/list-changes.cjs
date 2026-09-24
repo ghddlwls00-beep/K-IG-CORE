@@ -39,6 +39,7 @@ const HEAD_DIR = opt("--head-dir", null);
 const OUT = opt("--out", path.join(__dirname, "..", "목록.jsonl"));
 const CHECK = opt("--check", null);
 const EXPORT = opt("--export-head", null);
+const PREFIX = opt("--prefix", "C"); // 고친 것 다시 읽기는 G(내용 재검토 목록 C 와 섞이지 않게)
 
 function git(argv, input) {
   const r = spawnSync("git", argv, { cwd: WT, input, maxBuffer: 1 << 30 });
@@ -310,7 +311,7 @@ const corder = (c) => { const i = COURSE_ORDER.indexOf(c); return i < 0 ? 99 : i
 // 차례: 과정 → 파일 → 조각이 나온 차례(파일 안 차례는 뽑은 순서 그대로)
 records.forEach((r, i) => (r._i = i));
 records.sort((x, y) => corder(x.course) - corder(y.course) || (x.file < y.file ? -1 : x.file > y.file ? 1 : 0) || x._i - y._i);
-records.forEach((r, i) => { r.id = `C${String(i + 1).padStart(5, "0")}`; delete r._i; });
+records.forEach((r, i) => { r.id = `${PREFIX}${String(i + 1).padStart(5, "0")}`; delete r._i; });
 const lines = records.map((r) => JSON.stringify({ id: r.id, course: r.course, lesson: r.lesson, file: r.file, path: r.path, kind: r.kind, before: r.before, after: r.after }));
 
 const filesWithText = new Set(records.map((r) => r.file));

@@ -1,0 +1,472 @@
+{
+ "조각": "g2-1",
+ "뽑은때": "2026-09-25 04:33",
+ "대상": [
+  {
+   "key": "F:G03057",
+   "까닭": "심각·높음 전부",
+   "ids": [
+    "G03057"
+   ],
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=5].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-013.json",
+   "전": null,
+   "뒤": "As a soldier, I respect him.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "gh2-013 #5 — 같은 고침에서 한국어 문제를 '나는 군인으로서 그를 존경한다'(내가 군인) → '나는 그를 군인으로서 존경한다'(그가 군인 — 관문 15 #540, G03050)로 바꿔 모범 'I respect him as a soldier.' 의 뜻에 맞췄는데, 새 다른 정답 'As a soldier, I respect him.' 은 문장 앞 as 구가 주어를 꾸미는 꼴이라 기본 뜻이 '(나는) 군인으로서 그를 존경한다'(내가 군인) — 한국어 고침이 없앤 뜻을 만점으로 받고 화면 '다른 정답' 으로 보여 준다. 같은 강의 #3 'As a Christian, how could you lie?' 는 앞 as 구가 주어(you)를 가리키므로, 이 다른 정답은 as 구의 자리 규칙을 거꾸로 가르친다. 대조 문맥('As a soldier, I respect him; as a man, I don't')에서는 그를 가리킬 수도 있어 확신 보통. ⑦(한 문항 안에서 한국어 고침과 다른 정답이 서로 반대 방향)도 걸림.",
+    "고칠 글": "(이 다른 정답을 뺌) — gh2-013 #5 .alternatives 를 비움(모범 'I respect him as a soldier.' 만 · 한국어 '나는 그를 군인으로서 존경한다.' 그대로)",
+    "고칠 곳": "content/lessons/grammar2/gh2-013.json · .blocks[1].items[n=5].alternatives[0]"
+   }
+  },
+  {
+   "key": "F:G03382",
+   "까닭": "화면에 안 닿음 전부",
+   "ids": [
+    "G03382"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=2].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-022-1.json",
+   "전": null,
+   "뒤": "You don't owe me anything.",
+   "주장": {
+    "판정": "화면에 안 닿음",
+    "까닭": "gh2-022-1(한국어 쪽) #2 .alternatives 'You don't owe me anything.' — 글은 맞음(영어 쪽 gh2-022 #2 의 같은 다른 정답 G03386 과 같은 글 · 맞음). 그러나 고친 판 GrammarLearningView.tsx 192~211 은 다른 정답을 '영어인 쪽' 에서만 가져오므로(altM/altP 중 영어 쪽 · 474 · 752 채점과 927 · 1279 '다른 정답' 화면도 그 값만 씀 · grammarGrading.ts 는 넘겨받은 것만 봄) 한국어 문제 파일의 alternatives 는 채점에도 화면에도 안 닿음. classify.cjs 98 줄이 sentences 의 items.alternatives 를 어느 쪽이든 닿음으로 잡아 목록에 들어옴. 고친 판 grammar2 의 한국어 쪽(-1) 파일 가운데 alternatives 가 있는 곳은 이 한 줄뿐(고치기 전 0) — 고침이 영어 쪽과 한국어 쪽 두 곳에 같은 줄을 넣은 흔적이지만 효과가 없어 틀림으로 세지 않음(지워도 되고 둬도 됨)."
+   }
+  },
+  {
+   "key": "X:0",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-027-1.json",
+    "칸": ".blocks[1].items[n=15].text (gh2-027 #15 한국어 문제 — 고치지 않은 옆 글)",
+    "지금": "나는 그들이 오래 전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'오래전' 은 표준국어대사전에 한 낱말(명사 '오래전(前)')로 올라 있어 붙여 씀 — 띄어쓰기. 고친 판 문법 I · II 에서 이 글 한 곳뿐 · 관문 15 고침 목록에 없음. 같은 고침이 '한동안' · '아무것도' 같은 한 낱말 띄어쓰기를 고친 것과 같은 종류.",
+    "고칠 글": "나는 그들이 오래전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:23"
+   }
+  },
+  {
+   "key": "OK:G03350",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=2].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "What brings you here?"
+  },
+  {
+   "key": "OK:G03398",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=11].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-022.json",
+   "전": null,
+   "뒤": "You arrived on time."
+  },
+  {
+   "key": "OK:G03353",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=4].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "I'm sorry, but I've got my hands full."
+  },
+  {
+   "key": "OK:G03348",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=2].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "What brought you here?"
+  },
+  {
+   "key": "OK:G03352",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=4].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "Sorry, but I have my hands full."
+  },
+  {
+   "key": "OK:G03324",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=6].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-020.json",
+   "전": null,
+   "뒤": "They sound the bell at the temple every hour."
+  },
+  {
+   "key": "OK:G03081",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=17].alternatives[3]",
+   "파일": "content/lessons/grammar2/gh2-013.json",
+   "전": null,
+   "뒤": "These days no one could do that."
+  },
+  {
+   "key": "OK:G03349",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=2].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "What's brought you here?"
+  },
+  {
+   "key": "OK:G03355",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=5].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "Please give me a break this time."
+  },
+  {
+   "key": "OK:G03325",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=7].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-020.json",
+   "전": null,
+   "뒤": "I easily found the tool."
+  },
+  {
+   "key": "OK:G03395",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=6].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-022.json",
+   "전": null,
+   "뒤": "Proper exercise will do you good."
+  },
+  {
+   "key": "OK:G03080",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=17].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-013.json",
+   "전": null,
+   "뒤": "Nowadays nobody could do it."
+  },
+  {
+   "key": "OK:G03354",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=5].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "This time, give me a break."
+  },
+  {
+   "key": "OK:G03326",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=8].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-020.json",
+   "전": null,
+   "뒤": "The organization found him useful."
+  },
+  {
+   "key": "OK:G03394",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=5].alternatives[3]",
+   "파일": "content/lessons/grammar2/gh2-022.json",
+   "전": null,
+   "뒤": "Will you do me a favour?"
+  },
+  {
+   "key": "OK:G03083",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=18].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-013.json",
+   "전": null,
+   "뒤": "He might be a millionaire."
+  },
+  {
+   "key": "OK:G03357",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=6].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "They lent me a little money."
+  },
+  {
+   "key": "OK:G03327",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=8].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-020.json",
+   "전": null,
+   "뒤": "The institution found him useful."
+  },
+  {
+   "key": "OK:G03397",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=8].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-022.json",
+   "전": null,
+   "뒤": "He did research into rockets."
+  },
+  {
+   "key": "OK:G03082",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=17].alternatives[4]",
+   "파일": "content/lessons/grammar2/gh2-013.json",
+   "전": null,
+   "뒤": "No one could do that nowadays."
+  },
+  {
+   "key": "OK:G03356",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=6].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": null,
+   "뒤": "They loaned me some money."
+  },
+  {
+   "key": "OK:G03320",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=4].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-020.json",
+   "전": null,
+   "뒤": "Sound moves slower than light."
+  },
+  {
+   "key": "OK:G03396",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=6].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-022.json",
+   "전": null,
+   "뒤": "Appropriate exercise will do you good."
+  },
+  {
+   "key": "OK:G02950",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=3].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-011.json",
+   "전": null,
+   "뒤": "He has a terrible relationship with her."
+  },
+  {
+   "key": "OK:G03085",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=20].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-013.json",
+   "전": null,
+   "뒤": "He will resolve the problem."
+  },
+  {
+   "key": "OK:G03321",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=5].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-020.json",
+   "전": null,
+   "뒤": "I heard a weird sound outside."
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:G03057",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "스스로 다시 봄(고친 판 파일에서 값 확인): gh2-013 #5 한국어 문제는 관문 15 #540 으로 '나는 그를 군인으로서 존경한다.'(그가 군인)로 바뀌었고 모범 'I respect him as a soldier.' 는 끝의 as 구가 목적어 him 의 자격. 새 다른 정답 'As a soldier, I respect him.' 은 문장 앞 as 구라 기본 뜻이 주어 I 의 자격('나는 군인으로서') — 같은 강의 #3 'As a Christian, how could you lie?' 도 앞 as 구가 주어 you 를 가리켜 이 자리 규칙을 가르침. 대조 문맥('as a soldier …, as a man …')에서만 him 으로 읽혀 확신 보통이 맞음. 한국어 문제와 뜻이 다른 영어를 만점으로 받고 '다른 정답' 에도 보여 줌 → 풀이 4 대로 ③ 높음. 같은 고침 안에서 한국어는 '그가 군인' 으로, 다른 정답은 '내가 군인' 쪽으로 간 ⑦ 도 걸림(까닭에 둘 다 — 무거운 ③ 하나로). 영어 쪽 파일의 다른 정답이라 채점(GrammarLearningView 474 · 752)과 화면(927 · 1279)에 닿음. 고친 판 content 에 이 글은 gh2-013.json 한 곳(분할본 없음). 고칠 글(이 다른 정답을 빼 alternatives 비움 · 모범 · 한국어 그대로)도 맞음 — 결정 C 자체가 아니라 넣은 글 하나의 뜻을 본 것.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "F:G03382",
+   "결론": "동의",
+   "닿음": false,
+   "까닭": "고친 판 GrammarLearningView.tsx 182~226 을 직접 읽음: altM · altP 가운데 isEnglish 인 쪽(영어 문장 쪽)의 것만 item.alternatives 로 쓰고, 한국어 파일이 main 이든 pair 이든(195~211 의 네 가지 모두) 한국어 쪽 alternatives 는 버림. 채점 474 · 752 와 '다른 정답' 927 · 1279 는 item.alternatives 만 봄 — src 전체에서 alternatives 를 읽는 곳은 이 뷰뿐(grammarGrading 은 넘겨받은 목록만). 고친 판 grammar2 의 -1 파일 가운데 alternatives 가 있는 곳은 gh2-022-1 #2 이 한 줄뿐(Grep 으로 확인). 글 'You don't owe me anything.' 은 '너는 나에게 아무것도 빚지지 않는다' 와 같은 뜻 · 맞는 영어이고, 영어 쪽 gh2-022 #2 에 같은 글(G03386)이 있어 학습자에게는 그쪽으로 닿음. 따라서 이 줄은 '화면에 안 닿음'(틀림 아님 · 지워도 되고 둬도 됨) — 주장 그대로.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "X:0",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "고친 판 gh2-027-1.json n=15 .text 가 '나는 그들이 오래 전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.' 임을 파일에서 확인. '오래전(前)' 은 표준국어대사전에 한 낱말(명사)로 올라 붙여 씀('얼마 전' 은 띄어 씀과 다름) — ② 띄어쓰기 · 낮음 · 확신 높음. 한국어 문제 글이라 화면(koreanText)에 보임 · GRAMMAR 한국어는 소리 없음(새 음성 클립 false). 고친 판 grammar1 · grammar2 에 '오래 전' 은 이 한 곳뿐 · 같은 고침이 '아무것도' · '한동안' 같은 한 낱말 띄어쓰기를 고친 것과 같은 종류. 고칠 글 '나는 그들이 오래전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.' 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03350",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #2 '무엇이 너를 여기로 데려왔니?(너 같은 사람이 여기에 웬일로 왔니?)' — 'What brings you here?' 는 괄호 풀이 '웬일로 왔니?' 의 관용 영어로 방문 까닭을 묻는 같은 뜻. 한국어 '왔니' 는 지금 와 있는 상태를 묻는 말이라 현재형 관용구와 맞음 · bring · 의문 꼴 그대로 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03398",
+   "결론": "맞음 동의",
+   "까닭": "gh2-022 #11 '너는 정시에 왔다.' — arrived = came(왔다) · 과거 · 이 과가 #10 'at the right time' 과 가르는 'on time' 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03353",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #4 '미안하지만 나는 나의 손이 가득 찼다(나도 바쁘다).' — I've got = I have(소유) · 관용구 have one's hands full 그대로 · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03348",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #2 '데려왔니?'(과거)를 단순 과거로 옮김 — 모범 현재완료와 같은 물음 · 의문 꼴 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03352",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #4 — 'Sorry, but …' 은 '미안하지만' 의 줄인 꼴 · 관용구 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03324",
+   "결론": "맞음 동의",
+   "까닭": "gh2-020 #6 '그 절에서는 매시간마다 종을 울린다.' — at the temple · every hour 자리만 바꿈 · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03081",
+   "결론": "맞음 동의",
+   "까닭": "gh2-013 #17 '요즈음 아무도 그것을 할 수 없을 것이다.' — these days = 요즈음 · no one · 그것 = that(모범과 같음 · 소유자 답 4) · could 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03349",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #2 — What's = What has, 모범 'What has brought you here?' 의 줄임꼴 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03355",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #5 '이번에는 나에게 용서를 주어라(이번 한 번 봐 주세요).' — please 를 더한 명령 꼴은 괄호의 공손한 부탁과 맞음 · give me a break · this time 그대로.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03325",
+   "결론": "맞음 동의",
+   "까닭": "gh2-020 #7 '나는 그 도구를 쉽게 찾았다.' — 부사 easily 를 동사 앞으로 옮긴 꼴, 뜻은 그대로(find + O + 형용사 '쉽다고 여겼다' 로 바뀌지 않음) · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03395",
+   "결론": "맞음 동의",
+   "까닭": "gh2-022 #6 '적절한 운동은 너에게 유익할 것이다.' — 적절한 = proper · will do you good 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03080",
+   "결론": "맞음 동의",
+   "까닭": "gh2-013 #17 — nobody = no one · 그것 = it(글자 그대로) · nowadays · could 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03354",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #5 — this time 을 앞으로 옮긴 명령 꼴 · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03326",
+   "결론": "맞음 동의",
+   "까닭": "gh2-020 #8 '그 기관은 그가 유용하다는 것을 발견했다(유용하다고 생각했다).' — 기관 = organization · find + O + 형용사 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03394",
+   "결론": "맞음 동의",
+   "까닭": "gh2-022 #5 — favour 는 영국 철자. 채점기(grammarGrading)에 철자 맞춤이 없어 다른 정답으로 받는 것이 맞고, 같은 강의 #21 cheque 와 같은 방식(모범 글끼리 섞인 표기 아님).",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03083",
+   "결론": "맞음 동의",
+   "까닭": "gh2-013 #18 '그는 백만장자일지 모른다.' — '~일지 모른다' = may/might, 같은 강의 #21 은 같은 한국어에 모범 might · 다른 정답 may 라 서로 맞음.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03357",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #6 '그들은 나에게 약간의 돈을 빌려주었다.' — 약간의 돈 = a little money · lent(빌려주었다) · 과거 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03327",
+   "결론": "맞음 동의",
+   "까닭": "gh2-020 #8 — 기관 = institution · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03397",
+   "결론": "맞음 동의",
+   "까닭": "gh2-022 #8 '그는 로켓에 대한 연구를 했다.' — research into 는 research on 과 같은 표준 연어 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03082",
+   "결론": "맞음 동의",
+   "까닭": "gh2-013 #17 — nowadays 를 끝으로 옮김 · that(소유자 답 4) · could 그대로 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03356",
+   "결론": "맞음 동의",
+   "까닭": "gh2-021 #6 — loan(동사) = lend, 미국 영어 표준 · 과거 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03320",
+   "결론": "맞음 동의",
+   "까닭": "gh2-020 #4 '소리는 빛보다 더 천천히 여행한다(움직인다).' — moves 는 한국어 괄호 '움직인다' · slower 는 부사 slow 의 비교급으로 표준 · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03396",
+   "결론": "맞음 동의",
+   "까닭": "gh2-022 #6 — 적절한 = appropriate · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G02950",
+   "결론": "맞음 동의",
+   "까닭": "gh2-011 #3 '그는 그녀와 형편없는 관계를 갖고 있다.' — 형편없는 = terrible · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03085",
+   "결론": "맞음 동의",
+   "까닭": "gh2-013 #20 '그는 그 문제를 해결할 것이다.' — 해결하다 = resolve · will 그대로(이 과는 조동사를 가름 — would 는 6-1531 에서 뺐고 여기는 will 유지) · 같은 뜻.",
+   "때": "2026-09-25 04:40"
+  },
+  {
+   "key": "OK:G03321",
+   "결론": "맞음 동의",
+   "까닭": "gh2-020 #5 '나는 밖에서 이상한 소리를 들었다.' — 이상한 = weird · 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:40"
+  }
+ ]
+}

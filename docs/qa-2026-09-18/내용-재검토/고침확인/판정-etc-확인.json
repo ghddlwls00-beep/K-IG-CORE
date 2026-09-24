@@ -1,0 +1,168 @@
+{
+ "조각": "etc",
+ "뽑은때": "2026-09-25 04:37",
+ "대상": [
+  {
+   "key": "OK:G05325",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".readingSentences[id=reading-158-s008].korean",
+   "파일": "content/lessons/reading/pr158-1.json",
+   "전": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는데 반해서, 인간은 그들이 진정한 선택지 앞에 있다는 것을 인식한다는 것이다.",
+   "뒤": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는 데 반해서, 인간은 그들이 진정한 선택지 앞에 있다는 것을 인식한다는 것이다."
+  },
+  {
+   "key": "OK:G00031",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=5].text",
+   "파일": "content/lessons/student/s16-3.json",
+   "전": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+   "뒤": "If I really want to become a great interpreter, I need to work hard at improving my English from now on."
+  },
+  {
+   "key": "OK:G00030",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=3].text",
+   "파일": "content/lessons/student/s16-3.json",
+   "전": "I will do this by going to an English Academy every day.",
+   "뒤": "I will do this by going to an English academy every day."
+  },
+  {
+   "key": "OK:G00033",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=7].text",
+   "파일": "content/lessons/student/s17-1.json",
+   "전": "The country's ancient name was Gojoseon.",
+   "뒤": "The country’s ancient name was Gojoseon."
+  },
+  {
+   "key": "OK:G00032",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=4].text",
+   "파일": "content/lessons/student/s17-1.json",
+   "전": "While living on Earth, he married Ungnyeo who had changed from a bear into a woman.",
+   "뒤": "While living on Earth, he married Ungnyeo, who had changed from a bear into a woman."
+  },
+  {
+   "key": "OK:G00035",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=4].text",
+   "파일": "content/lessons/student/s17-2.json",
+   "전": "It was called the Golden Age of Korean History.",
+   "뒤": "It was called the Golden Age of Korean history."
+  },
+  {
+   "key": "OK:G00034",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[7].text",
+   "파일": "content/lessons/student/s17-1.json",
+   "전": "그는 한국의 건립자가 되었습니다.",
+   "뒤": "그는 한국의 건국자가 되었습니다."
+  },
+  {
+   "key": "OK:G00037",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[7].text",
+   "파일": "content/lessons/student/s18-2.json",
+   "전": "음력설날에 절을 하는 것은 웃어른께 존경을 표하는 특별한 영예이자 특권입니다.",
+   "뒤": "음력 설날에 절을 하는 것은 웃어른께 존경을 표하는 특별한 영예이자 특권입니다."
+  },
+  {
+   "key": "OK:G05285",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".readingVocabulary[word=teenage].korean",
+   "파일": "content/lessons/reading/pr082.json",
+   "전": "십대의",
+   "뒤": "십 대의"
+  },
+  {
+   "key": "OK:G00036",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/student/s18-2.json",
+   "전": "첫 번째로 큰 명절은 음력 새해 첫날인 설날입니다.",
+   "뒤": "첫 번째 큰 명절은 음력 새해 첫날인 설날입니다."
+  }
+ ],
+ "결과": [
+  {
+   "key": "OK:G05325",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "pr158-1 s008 한국어(pr158 s008 G05326 도 글자 같음 — 고친 판 파일에서 확인) '못 하는데 반해서' → '못 하는 데 반해서'. '반하다' 는 '…에 반하여' 로 쓰여 앞의 '데' 는 '것' 뜻의 의존 명사 → '-는 데 반해' 띄어 씀이 맞음('-는 데 비해' 와 같은 결). '인식을 못 하는'(능력이 아닌 부정) 띄어 씀도 맞음. 영어 'whereas' 대조 · 'not conscious of possibilities' 와 뜻 같음 · 잘린 글 · 겹친 낱말 없음. READING 문장 한국어로 화면에 닿음(소리 안 냄).",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00031",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s16-3 #5 'improving English' → 'improving my English'. 소유격 없는 'improving English' 는 영어라는 언어 자체를 고친다는 말로 읽힘 — 'work hard at improving my English'(내 영어 실력) 가 맞는 영어. 짝 한국어 '영어 실력을 향상시키기 위해' 와 뜻 같음. 고친 판 파일 글자 확인(숨은 글자 없음). 소리 내는 STUDENT 영어라 새 클립 필요(판정 일꾼 기록과 같음 — 틀림 아님).",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00030",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s16-3 #3 'an English Academy' → 'an English academy'. 학원은 보통 명사라 문장 안에서는 소문자가 맞음 — 고친 판 STUDENT 전체에서 문장 속 academy 는 모두 소문자(s7-1 · s7-2 · s7-3 · s9-2 · s12-4), 대문자 Academy 는 제목(title case)에만 남아 흔들림 없음. 짝 한국어 '영어 학원을 감으로써' 와 뜻 같음. 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00033",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s17-1 #7 곧은 따옴표 ' → ’ 만 바뀜(코드 포인트로 확인 — n2 'country’s' 와 n7 둘 다 U+2019). 같은 강의 안 표기가 하나로 맞춰짐(⑦ 풀림). 마이크 채점은 고친 판 speechRecognition.ts normalizeText(79행 .replace(/[‘’]/g, \"'\"))가 ’ 를 ' 로 바꿔 비교하므로 채점 영향 없음. 영어 · 뜻 그대로, 짝 한국어 '그 나라의 고대 이름은 고조선' 같음. 글이 바뀌어 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00032",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s17-1 #4 'he married Ungnyeo who had changed …' → 'Ungnyeo, who had changed …'. 하나뿐인 고유 명사 뒤 관계절은 비제한 용법이라 쉼표가 맞음(쉼표 없으면 '곰에서 변한 웅녀' 를 다른 웅녀와 가르는 제한 용법으로 읽힘). 과거완료 had changed · 'While living on Earth, he …'(주어 환웅) 문법 맞음. 짝 한국어 '곰이 여자가 된 웅녀와 결혼을 했습니다' 와 뜻 같음. 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00035",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s17-2 #4 'the Golden Age of Korean History' → '… of Korean history'. 'Golden Age' 는 시대를 부르는 이름이라 대문자로 두고 'Korean history' 는 보통 명사라 소문자 — 맞는 표기. 짝 한국어 '한국 역사의 황금기' 와 같음. 사실(신라 8세기 전성기) 글은 바뀌지 않음. 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00034",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s17-1 n6 한국어 '한국의 건립자' → '한국의 건국자'. '건립' 은 건물 · 기관을 세우는 말이라 나라를 세운 사람(the founder of Korea)은 '건국자'(접미사 -자 붙여 씀)가 맞음. 같은 강의 h1 '고조선의 건국' · n1 '건국되었는가' 와 맞음. STUDENT 한국어는 소리 냄(StudentLearningView 한국어 칸 TTS) → 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00037",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s18-2 n6 한국어 '음력설날에' → '음력 설날에'. '음력설' · '설날' 은 각각 낱말이지만 '음력설날' 은 한 낱말이 아니라 띄어 씀. 같은 강의 n2 '가장 중요한 음력 설날의 전통' 과 같은 꼴이 됨. 영어 'To bow on the Lunar New Year …' 와 뜻 같음. 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G05285",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "pr082 카드 teenage '십대의' → '십 대의'(pr082-1 G05282 도 같음 — 고친 판 두 파일 확인). 나이 구간을 나타내는 '대(代)' 는 의존 명사라 한글 수 뒤에서 띄어 씀('10대' 처럼 아라비아 숫자면 붙여도 됨). 같은 쪽 문장 s001 · s002 '십 대' 와 같음 · 고친 판 content/lessons/reading 에 '십대' 남은 곳 0(grep). 카드 뜻은 소리 안 냄.",
+   "때": "2026-09-25 04:46"
+  },
+  {
+   "key": "OK:G00036",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "s18-2 n1 한국어 '첫 번째로 큰 명절은 … 설날' → '첫 번째 큰 명절은 … 설날'. 옛 꼴은 '가장 큰 명절' 로 읽혀 영어 'The first big holiday' 와 다르고, s18-3 n1 'Chuseok is the biggest national holiday' / '추석은 한 해의 가장 큰 명절' 과 부딪쳤음 — 새 꼴은 s18-1 'the two largest traditional holidays' 가운데 첫째라는 영어 뜻과 같고 모순도 풀림. 새 클립 필요.",
+   "때": "2026-09-25 04:46"
+  }
+ ]
+}

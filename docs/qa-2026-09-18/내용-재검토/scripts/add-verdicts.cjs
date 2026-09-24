@@ -36,7 +36,8 @@ const reached = new Set(ids.reached);
 const OUT = path.join(L.DIR, `판정-${chunk}.json`);
 const LOG = path.join(L.DIR, `기록-${chunk}.md`);
 const recs = new Map(L.readJsonl(path.join(L.DIR, "목록.jsonl")).map((r) => [r.id, r]));
-const sample = JSON.parse(fs.readFileSync(path.join(L.DIR, "표본.json"), "utf8"));
+// 표본은 내용 재검토에만(고친 것 다시 읽기 폴더에는 없음)
+const sample = fs.existsSync(path.join(L.DIR, "표본.json")) ? JSON.parse(fs.readFileSync(path.join(L.DIR, "표본.json"), "utf8")) : { 쪽: {} };
 const mySample = Object.entries(sample.쪽).filter(([, v]) => v.조각 === chunk).map(([u, v]) => [u, v.글수]);
 const state = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, "utf8")) : { 조각: chunk, 줄: [], 문맥: [], 표본: [] };
 const judged = new Map(state.줄.map((e) => [e.id, e]));
