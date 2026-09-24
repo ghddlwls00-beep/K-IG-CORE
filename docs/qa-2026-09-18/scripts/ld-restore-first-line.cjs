@@ -2,7 +2,7 @@
 /**
  * 관문 15 — LISTENING 받아쓰기 힌트 첫 줄 되살리기(결정 B 판단 필요 · 소유자 2026-09-25 '되살린다').
  *
- * 원본 교재(랩자료모음 … 본사 Lab v1.01/LD/dNNN.htm, EUC-KR)의 힌트 칸은 두 줄 — 첫 줄 = <p> 밖 SPAN, 둘째 줄 = <p> 안 SPAN —
+ * 원본 교재(랩자료모음 … 본사 Lab v1.01/LD/dNNN.htm, UTF-8)의 힌트 칸은 두 줄(파일은 UTF-8) — 첫 줄 = <p> 밖 SPAN, 둘째 줄 = <p> 안 SPAN —
  * 인데 처음 옮길 때 <p> 안 SPAN 만 가져와 첫 줄이 빠졌다(100강 · 그중 23강은 힌트가 통째로 없음). 원본은 **빠진 글을 찾는 데만** 쓴다
  * (정답이 아님 — 지금 대본이 기준).
  *
@@ -30,7 +30,7 @@ const ONLY = arg("--only", null) ? new Set(arg("--only", "").split(",")) : null;
 const OUT = arg("--out", null);
 const WRITE = argv.includes("--write");
 const INSTRUCTION = "다음에 나오는 고유 명사, 숫자, 어려운 단어를 참조하면서 영어로 받아쓰기를 하세요.";
-const dec = new TextDecoder("euc-kr");
+const dec = new TextDecoder("utf-8"); // 원본 LD/dNNN.htm 276개는 UTF-8(3차 점검 지적 — EUC-KR 로 읽으면 d201 여는 따옴표 한 글자가 깨짐, 영어 첫 줄은 나머지 275 같음)
 const ents = (s) => s.replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;|&rsquo;|&#8217;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 const plain = (h) => ents(h.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
 

@@ -1,0 +1,8 @@
+[
+ {"id": "C 빗금 뺌 grammar1/gh1-058#29 (gh1-059.json)", "why": "재점검(학습내용 나머지 전체, 2026-09-25 04:1x): 앱 cleanText(GrammarLearningView 60 · 222)가 다른 정답의 빗금을 빈칸으로 바꿔 화면에 틀린 영어 'his her' · 'his her' 를 치면 만점 · 'his/her' 는 0점 — 같은 문항에 'his or her' 꼴이 이미 있음", "op": "removeAlts", "file": "content/lessons/grammar1/gh1-059.json", "item": ".blocks[3].items[n=29]", "remove": ["Each student has his/her own idea."]},
+ {"id": "C 빗금 뺌 grammar1/gh1-058#30 (gh1-059.json)", "why": "같음", "op": "removeAlts", "file": "content/lessons/grammar1/gh1-059.json", "item": ".blocks[3].items[n=30]", "remove": ["Does each student have his/her own plan?"]},
+ {"id": "C 빗금 뺌 grammar1/gh1-058#29 (gh1-059-2.json)", "why": "같음 — 나눈 쪽", "op": "removeAlts", "file": "content/lessons/grammar1/gh1-059-2.json", "item": ".blocks[1].items[n=29]", "remove": ["Each student has his/her own idea."]},
+ {"id": "C 빗금 뺌 grammar1/gh1-058#30 (gh1-059-2.json)", "why": "같음 — 나눈 쪽", "op": "removeAlts", "file": "content/lessons/grammar1/gh1-059-2.json", "item": ".blocks[1].items[n=30]", "remove": ["Does each student have his/her own plan?"]},
+ {"id": "C 빗금 뺌 grammar1/gh1-066#57 (gh1-067.json)", "why": "같음", "op": "removeAlts", "file": "content/lessons/grammar1/gh1-067.json", "item": ".blocks[4].items[n=57]", "remove": ["Does each student have his/her own room?"]},
+ {"id": "C 빗금 뺌 grammar1/gh1-092#57 (gh1-093.json)", "why": "같음", "op": "removeAlts", "file": "content/lessons/grammar1/gh1-093.json", "item": ".blocks[2].items[n=57]", "remove": ["Does each student have his/her own project?"]}
+]

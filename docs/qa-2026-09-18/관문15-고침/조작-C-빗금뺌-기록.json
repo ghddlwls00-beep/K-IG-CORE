@@ -1,0 +1,172 @@
+{
+ "at": "2026-09-24T19:12:41.988Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/조작-C-빗금뺌.json",
+ "root": "C:\\Users\\ghddl\\.gemini\\antigravity\\scratch\\K-IG-CORE",
+ "write": true,
+ "log": [
+  {
+   "id": "C 빗금 뺌 grammar1/gh1-058#29 (gh1-059.json)",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-059.json",
+   "where": ".blocks[3].items[n=29]",
+   "before": {
+    "text": "Each student has his own idea.",
+    "alternatives": [
+     "Every student has his own idea.",
+     "Each student has their own idea.",
+     "Each student has his or her own idea.",
+     "Every student has their own idea.",
+     "Every student has his or her own idea.",
+     "Each student has his/her own idea."
+    ]
+   },
+   "after": {
+    "text": "Each student has his own idea.",
+    "alternatives": [
+     "Every student has his own idea.",
+     "Each student has their own idea.",
+     "Each student has his or her own idea.",
+     "Every student has their own idea.",
+     "Every student has his or her own idea."
+    ]
+   }
+  },
+  {
+   "id": "C 빗금 뺌 grammar1/gh1-058#30 (gh1-059.json)",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-059.json",
+   "where": ".blocks[3].items[n=30]",
+   "before": {
+    "text": "Does each student have his own plan?",
+    "alternatives": [
+     "Does every student have his own plan?",
+     "Does each student have their own plan?",
+     "Does each student have his or her own plan?",
+     "Does every student have their own plan?",
+     "Does every student have his or her own plan?",
+     "Does each student have his/her own plan?"
+    ]
+   },
+   "after": {
+    "text": "Does each student have his own plan?",
+    "alternatives": [
+     "Does every student have his own plan?",
+     "Does each student have their own plan?",
+     "Does each student have his or her own plan?",
+     "Does every student have their own plan?",
+     "Does every student have his or her own plan?"
+    ]
+   }
+  },
+  {
+   "id": "C 빗금 뺌 grammar1/gh1-058#29 (gh1-059-2.json)",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-059-2.json",
+   "where": ".blocks[1].items[n=29]",
+   "before": {
+    "text": "Each student has his own idea.",
+    "alternatives": [
+     "Every student has his own idea.",
+     "Each student has their own idea.",
+     "Each student has his or her own idea.",
+     "Every student has their own idea.",
+     "Every student has his or her own idea.",
+     "Each student has his/her own idea."
+    ]
+   },
+   "after": {
+    "text": "Each student has his own idea.",
+    "alternatives": [
+     "Every student has his own idea.",
+     "Each student has their own idea.",
+     "Each student has his or her own idea.",
+     "Every student has their own idea.",
+     "Every student has his or her own idea."
+    ]
+   }
+  },
+  {
+   "id": "C 빗금 뺌 grammar1/gh1-058#30 (gh1-059-2.json)",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-059-2.json",
+   "where": ".blocks[1].items[n=30]",
+   "before": {
+    "text": "Does each student have his own plan?",
+    "alternatives": [
+     "Does every student have his own plan?",
+     "Does each student have their own plan?",
+     "Does each student have his or her own plan?",
+     "Does every student have their own plan?",
+     "Does every student have his or her own plan?",
+     "Does each student have his/her own plan?"
+    ]
+   },
+   "after": {
+    "text": "Does each student have his own plan?",
+    "alternatives": [
+     "Does every student have his own plan?",
+     "Does each student have their own plan?",
+     "Does each student have his or her own plan?",
+     "Does every student have their own plan?",
+     "Does every student have his or her own plan?"
+    ]
+   }
+  },
+  {
+   "id": "C 빗금 뺌 grammar1/gh1-066#57 (gh1-067.json)",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-067.json",
+   "where": ".blocks[4].items[n=57]",
+   "before": {
+    "text": "Does each student have his own room?",
+    "alternatives": [
+     "Does each student have their own room?",
+     "Does each student have his or her own room?",
+     "Does each student have his/her own room?",
+     "Does each student have a room of their own?",
+     "Does each student have a room of his own?",
+     "Does each of the students have his own room?",
+     "Does each of the students have their own room?",
+     "Does each of the students have his or her own room?"
+    ]
+   },
+   "after": {
+    "text": "Does each student have his own room?",
+    "alternatives": [
+     "Does each student have their own room?",
+     "Does each student have his or her own room?",
+     "Does each student have a room of their own?",
+     "Does each student have a room of his own?",
+     "Does each of the students have his own room?",
+     "Does each of the students have their own room?",
+     "Does each of the students have his or her own room?"
+    ]
+   }
+  },
+  {
+   "id": "C 빗금 뺌 grammar1/gh1-092#57 (gh1-093.json)",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-093.json",
+   "where": ".blocks[2].items[n=57]",
+   "before": {
+    "text": "Does each student have his own project?",
+    "alternatives": [
+     "Does each student have their own project?",
+     "Does each student have his or her own project?",
+     "Does each student have his/her own project?",
+     "Does each student have her own project?",
+     "Does every student have his own project?"
+    ]
+   },
+   "after": {
+    "text": "Does each student have his own project?",
+    "alternatives": [
+     "Does each student have their own project?",
+     "Does each student have his or her own project?",
+     "Does each student have her own project?",
+     "Does every student have his own project?"
+    ]
+   }
+  }
+ ]
+}
