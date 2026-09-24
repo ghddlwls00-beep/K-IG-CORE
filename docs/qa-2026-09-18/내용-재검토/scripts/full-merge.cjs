@@ -14,7 +14,7 @@ const COURSE = { student: "STUDENT", "voca-a": "VOCA", "voca-b": "VOCA", "gramma
 const SEV = ["심각", "높음", "중간", "낮음"];
 const adj = fs.existsSync(path.join(BASE, "조정.json")) ? JSON.parse(fs.readFileSync(path.join(BASE, "조정.json"), "utf8")) : {};
 const chunks = fs.readdirSync(path.join(BASE, "읽을거리")).sort();
-const rows = [], decisions = [], flipped = [], waiting = [];
+const rows = [], decisions = [], flipped = [], waiting = [], kept = [];
 const perCourse = {};
 const reread = { 묶음: 0, 글: 0, 놓침: 0, 놓침목록: [] };
 const status = {};
@@ -46,6 +46,7 @@ for (const ch of chunks) {
       pc.틀림[final.심각도]++;
       rows.push({ ch, c, g: g.묶음, x: final, how });
     }
+    for (const x of g["원본 그대로"] || []) { pc.원본그대로 = (pc.원본그대로 || 0) + 1; kept.push({ c, g: g.묶음, x }); }
     for (const x of g["판단 필요"]) {
       const key = `D:${g.묶음}:${x.T}`;
       const r = vres.get(key), a = adj[key];
@@ -76,6 +77,7 @@ T.push(`| # | 심각도 | 과정 | 묶음 · T | 고칠 곳 | 지금 | 왜 틀�
 rows.forEach((r, i) => T.push(`| ${i + 1} | ${esc(r.x.심각도)} | ${r.c} | ${esc(r.g)} ${esc(r.x.T)} | ${esc(r.x["고칠 곳"])} | ${esc(r.x.지금)} | ${esc(r.x.까닭)} | ${esc(r.x["고칠 글"])} | ${r.x["새 음성 클립"] ? "**새 음성 클립 필요**" : ""} | ${esc(r.x.종류)} · ${esc(r.x.확신)} | ${esc(r.how)} |`));
 T.push("", `## 판단 필요 — 소유자가 번호로 답하면 됨`, "", decisions.length ? `| 번호 | 과정 · 묶음 | 추천안 | 까닭 | 다른 길 |\n|---|---|---|---|---|` : "(없음)");
 decisions.forEach((d, i) => T.push(`| ${i + 1} | ${d.c} · ${esc(d.g)} ${esc(d.x.T)} | ${esc(d.x.추천안)} | ${esc(d.x.까닭)} | ${esc(d.x["다른 길"] || "")} |`));
+T.push("", `## 원본 그대로(소유자 기준 2026-09-24 — 되살린 원본의 그 시대 사실, 고치지 않음)`, "", kept.length ? kept.map((k) => `- ${k.c} ${esc(k.g)} ${esc(k.x.T)} · ${esc(k.x.까닭)}`).join("\n") : "(없음)");
 T.push("", `## 확인에서 뒤집혀 표에서 뺀 것`, "", flipped.length ? flipped.map((f) => `- ${COURSE[f.ch]} ${f.g} ${f.x.T} · ${esc(f.x.까닭)} → ${esc(f.why)}`).join("\n") : "(없음)");
 if (waiting.length) T.push("", `## 아직 끝나지 않은 것`, "", waiting.map((w) => `- ${COURSE[w.ch]} ${w.g} ${w.x.T} · ${esc(w.x.까닭 || w.x.추천안 || "")}`).join("\n"));
 T.push("", `이 전수 읽기는 글을 고친 세션과 다른 세션이 했지만 같은 AI 계열입니다. 독립적인 검토가 아닙니다.`, "");

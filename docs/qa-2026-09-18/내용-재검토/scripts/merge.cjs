@@ -84,6 +84,7 @@ for (const f of findings) {
   if (a) {
     status = a.결론;
     if (a.결론 === "표에 올림") final = { ...final, 판정: "틀림", ...Object.fromEntries(Object.entries(a).filter(([k]) => !["결론", "까닭"].includes(k))) };
+    if (a.결론 === "판단 필요") final = { ...final, 판정: "판단 필요", 추천안: a.추천안, 까닭: a.까닭, "다른 길": a["다른 길"] || "" };
     final.조정까닭 = a.까닭;
   } else if (f.출처 === "맞음 표본") status = "조정 대기";
   else if (w.판정 === "틀림") {
@@ -108,7 +109,8 @@ for (const f of findings) {
       if (f.출처 === "1부 문맥(맞음 표본에서 봄)") { lines.set(id, { ...e, 확인: `맞음 표본 — 줄은 맞음 · 옆 글 틀림을 따로 올림(${f.key})` }); continue; }
       if (status === "표에 올림" && f.ids.includes(id)) lines.set(id, { ...e, 판정: "틀림", 종류: final.종류, 심각도: final.심각도, 확신: final.확신, 까닭: final.까닭, "고칠 글": final["고칠 글"], "고칠 곳": final["고칠 곳"], "새 음성 클립": final["새 음성 클립"], 조정: a.까닭 });
       else if (status === "판단 필요" && f.ids.includes(id)) lines.set(id, { ...e, 판정: "판단 필요", 조정: a.까닭 });
-      else lines.set(id, { ...e, 판정: "맞음", 조정: a.까닭 });
+      else if (status === "원본 그대로" && f.ids.includes(id)) lines.set(id, { ...e, 판정: "원본 그대로(소유자 기준)", 조정: a.까닭 });
+      else lines.set(id, { ...e, 판정: a.줄판정 || "맞음", 조정: a.까닭 }); // 줄판정: 다른 조정 묶음에 합친 줄(예: '판단 필요')
     }
   }
 }
@@ -117,13 +119,17 @@ for (const f of findings) {
 const reachedIds = recs.filter((r) => cls[r.id].닿음).map((r) => r.id);
 const judgedCount = reachedIds.filter((id) => lines.has(id) && lines.get(id).판정 !== undefined && !String(lines.get(id).판정).startsWith("안 닿음")).length;
 const table = findings.filter((f) => f.상태 === "표에 올림").sort((a, b) => sevRank(a.최종.심각도) - sevRank(b.최종.심각도) || (a.출처 < b.출처 ? -1 : 1) || (a.chunk < b.chunk ? -1 : 1));
-const part1 = table.filter((f) => f.출처 !== "2부 표본");
+// 1부 = 9/18 뒤 바뀐 줄의 틀림(판정 일꾼 · 맞음 표본에서 찾은 줄) · 옆 글 = 1부를 읽다 본 안 바뀐 글의 틀림 · 2부 = 표본
+const part1 = table.filter((f) => f.출처 === "1부" || f.출처 === "맞음 표본");
+const sideText = table.filter((f) => /^1부 문맥/.test(f.출처));
 const sevCount = (list) => Object.fromEntries(SEV.map((s) => [s, list.filter((f) => f.최종.심각도 === s).length]));
 const lineCount = (list) => list.reduce((s, f) => s + Math.max(1, f.ids.length), 0);
 const nums = {
   바뀐조각: recs.length, 닿음: reachedIds.length, 안닿음: recs.length - reachedIds.length, 판정: judgedCount, 판정안됨: Object.values(missing).reduce((s, x) => s + x.length, 0),
   틀림_건: part1.length, 틀림_줄: lineCount(part1), 틀림_심각도: sevCount(part1),
+  옆글_건: sideText.length, 옆글_심각도: sevCount(sideText),
   판단필요: findings.filter((f) => f.상태 === "판단 필요").length, 결정과다름: findings.filter((f) => f.상태 === "결정과 다름").length,
+  원본그대로: findings.filter((f) => f.상태 === "원본 그대로").length, 원본그대로_줄: lineCount(findings.filter((f) => f.상태 === "원본 그대로")),
   확인에서뒤집힘: findings.filter((f) => f.상태 === "확인에서 뒤집힘").length, 확인대기: findings.filter((f) => f.상태 === "확인 대기").length, 조정대기: findings.filter((f) => f.상태 === "조정 대기").length,
   안닿음주장_동의: findings.filter((f) => f.상태 === "안 닿음").length,
 };
@@ -186,15 +192,18 @@ T.push(`## 숫자`, "", `### 1 — 9/18 뒤 바뀐 글 (기준 판 \`9d6e15d\` �
 T.push(`| 무엇 | 수 |`, `|---|---|`,
   `| 바뀐 글 조각(목록) | **${nums.바뀐조각.toLocaleString()}** (학습자에게 닿음 ${nums.닿음.toLocaleString()} · 안 닿음 ${nums.안닿음.toLocaleString()}) |`,
   `| 판정한 줄 | ${nums.판정.toLocaleString()} / ${nums.닿음.toLocaleString()}${nums.판정안됨 ? ` — **판정 안 된 줄 ${nums.판정안됨}**` : ""} |`,
-  `| 틀림(표에 오름) | **${nums.틀림_건}건 · ${nums.틀림_줄}줄** — 심각 ${nums.틀림_심각도.심각} · 높음 ${nums.틀림_심각도.높음} · 중간 ${nums.틀림_심각도.중간} · 낮음 ${nums.틀림_심각도.낮음} |`,
+  `| 틀림(표에 오름) — 바뀐 글 | **${nums.틀림_건}건 · ${nums.틀림_줄}줄**(같은 글이 두 파일이면 2줄) — 심각 ${nums.틀림_심각도.심각} · 높음 ${nums.틀림_심각도.높음} · 중간 ${nums.틀림_심각도.중간} · 낮음 ${nums.틀림_심각도.낮음} |`,
+  `| (더) 바뀐 글 옆의 안 바뀐 글에서 본 틀림 | ${nums.옆글_건}건 — 심각 ${nums.옆글_심각도.심각} · 높음 ${nums.옆글_심각도.높음} · 중간 ${nums.옆글_심각도.중간} · 낮음 ${nums.옆글_심각도.낮음} (찾으러 다닌 것은 아님 — 전수 읽기가 나머지를 봄) |`,
   `| 판단 필요(소유자 결정) | ${nums.판단필요} |`, `| 결정과 다름 | ${nums.결정과다름} |`,
+  `| 원본 그대로(소유자 기준 — 되살린 원본의 그 시대 사실, 고치지 않음) | ${nums.원본그대로}건 · ${nums.원본그대로_줄}줄 |`,
   `| 확인에서 뒤집혀 표에서 뺀 것 | ${nums.확인에서뒤집힘} |`, `| 확인 · 조정 대기 | ${nums.확인대기 + nums.조정대기} |`, "");
 T.push(`### 2 — 안 바뀐 강의 표본 (씨앗 20260924)`, "", `| 과정 | 쪽 | 글 | 놓친 틀림(안 바뀐 글) | 바뀐 글의 틀림(1과 겹침) | 쪽당 놓친 틀림 · 95% 위쪽 한계 | 틀림 있는 쪽 비율 · 95% 위쪽 한계 |`, `|---|---|---|---|---|---|---|`);
 for (const c of ["STUDENT", "VOCA", "GRAMMAR I", "GRAMMAR II", "LISTENING", "READING"]) { const s = sampleStats[c]; if (s) T.push(`| ${c} | ${s.쪽}${s.읽은쪽 !== s.쪽 ? ` (읽음 ${s.읽은쪽})` : ""} | ${s.글} | ${s.놓친틀림} | ${s.바뀐글틀림} | ${s.쪽당놓친} · ${s.쪽당놓친_95위} | ${s.틀림있는쪽비율} · ${s.틀림있는쪽비율_95위} |`); }
 T.push("", "(95% 위쪽 한계: 놓친 것이 0 이면 3/N — 포아송 한쪽 95%.)", "");
 T.push(`## 틀림 표 — 심각도 순 (수정 세션이 그대로 고칠 수 있게)`, "", `영어나 소리 내는 글을 바꾸는 줄은 **새 음성 클립 필요** — 클립 이름이 글에서 나오므로 글이 바뀌면 옛 클립은 불리지 않는다(\`node scripts/generate-azure-ava.mjs\` → R2 먼저 → 같은 이름 덮어쓰기 금지).`, "");
 const cols = `| # | 심각도 | 과정 | 강의 | 파일 · 칸 | 고치기 전(9d6e15d) | 지금 | 왜 틀렸나 | 고칠 글 | 소리 | 종류 · 확신 | 확인 | id |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|`;
-T.push(`### 1부 — 9/18 뒤 바뀐 글`, "", cols, ...rowsFor(part1, false), "");
+T.push(`### 1부 — 9/18 뒤 바뀐 글 (${part1.length}건)`, "", cols, ...rowsFor(part1, false), "");
+T.push(`### 1부를 읽다 본 옆의 안 바뀐 글 (${sideText.length}건 — 고치기 전 = 지금)`, "", cols, ...rowsFor(sideText, false), "");
 const part2 = table.filter((f) => f.출처 === "2부 표본");
 T.push(`### 2부 — 표본에서 찾은 틀림`, "", part2.length ? cols : "(없음)", ...rowsFor(part2, true), "");
 const dec = findings.filter((f) => f.상태 === "판단 필요");
@@ -204,6 +213,10 @@ T.push("");
 const diff = findings.filter((f) => f.상태 === "결정과 다름");
 T.push(`## 결정과 다름 — 소유자가 이미 정한 것인데 분명히 틀렸다고 보인 것 (틀림으로 세지 않음)`, "", diff.length ? `| # | 과정 · 강의 | 어느 결정 | 지금 | 까닭 |\n|---|---|---|---|---|` : "(없음)");
 diff.forEach((f, i) => { const l = locOf(f); T.push(`| ${i + 1} | ${COURSE[f.chunk]} · ${esc(l.강의)} | ${esc(f.최종.결정)} | ${esc(l.지금)} | ${esc(f.최종.까닭)} |`); });
+T.push("");
+const kept = findings.filter((f) => f.상태 === "원본 그대로");
+T.push(`## 원본 그대로(소유자 기준) — 고치지 않음`, "", `소유자 기준(2026-09-24 — s11-1 '변경하지 말고' · s9-1 '그대로해' · 결정표 6): 되살린 원본의 글이 그 책의 시대 · 배경에서는 맞는 사실이면(학교 시간표 · 토요일 수업 같은 것) 틀림이 아님. 영어 · 정답 · 번역 · 맞춤법 잘못은 그대로 틀림.`, "", kept.length ? `| # | 과정 · 강의 | 지금 | 까닭 | id |\n|---|---|---|---|---|` : "(없음)");
+kept.forEach((f, i) => { const l = locOf(f); T.push(`| ${i + 1} | ${COURSE[f.chunk]} · ${esc(l.강의)} | ${esc(l.지금)} | ${esc(f.최종.조정까닭 || f.최종.까닭)} | ${f.ids.join(" ")} |`); });
 T.push("");
 const flipped = findings.filter((f) => f.상태 === "확인에서 뒤집힘");
 T.push(`## 확인에서 뒤집혀 표에서 뺀 것 (판정 일꾼은 틀림 · 확인 일꾼은 아님)`, "", flipped.length ? `| # | 과정 · 강의 | 지금 | 판정 일꾼 | 확인 일꾼 |\n|---|---|---|---|---|` : "(없음)");
