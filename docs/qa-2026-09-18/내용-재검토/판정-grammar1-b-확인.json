@@ -1,0 +1,656 @@
+{
+ "조각": "grammar1-b",
+ "뽑은때": "2026-09-24 16:19",
+ "대상": [
+  {
+   "key": "F:C04215",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C04215"
+   ],
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=133].text",
+   "파일": "content/lessons/grammar1/gh1-100.json",
+   "전": null,
+   "뒤": "그럼 합의한 거지? (거래 성립인가?)",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-100 #133(content/lessons/grammar1/gh1-100.json .blocks[3].items[n=133].text) — 고치기 전(9d6e15d) '좋나(됐나?) 혹은, 그것이 거래(합의, 협정)인가?' → 지금 '그럼 합의한 거지? (거래 성립인가?)'. 모범 답안은 부가의문문이 아닌 보통 의문문 'Is that a deal?' / 'Is it a deal?' 인데, 이 강의(gh1-100/101)에서 '~지?' 로 끝나는 한국어 문제는 모두 부가의문문이고 보통 · 부정 의문문은 '~나? · ~니?' 로 끝난다(#118 아니지? · #119 타지? · #122 따분하지 않지? · #123 망치지 않았지? · #124 · #125 · #126 무시했지? · #128 깨웠지? → 모두 '…, is it? / doesn't he? / isn't she? / did I? / didn't it?' · #115~#117 · #120 · #127 '~않나?' → 'Isn't it …? / Doesn't it …?'). 과의 약속대로 '그럼 합의한 거지?' 를 'It's a deal, isn't it?' · 'That's a deal, isn't it?' 로 쓰면 앱 채점기(gradeAgainstReferences, 이 작업 트리 글로 잼)가 incorrect(0점) — 한국어 문제에 맞는 답이 막힘. 괄호 '(거래 성립인가?)' 가 보통 의문문 꼴을 알려 주어 오도까지는 아니라 중간 · 보통. 고칠 글은 끝을 보통 의문문 '~인가? · ~건가?' 로 바꾸고 '그럼' 은 뺌('So is that a deal?' · 'Is that a deal then?' 은 채점기 partial 70점이라 '그럼' 이 있으면 그 말을 옮긴 학습자가 깎임). 다른 길: 한국어는 두고 대체 답안에 'It's a deal, isn't it?' · 'That's a deal, isn't it?' 를 더함(다만 괄호 풀이와 꼴이 달라짐).",
+    "고칠 글": "거래 성립인가? (합의한 건가?)"
+   }
+  },
+  {
+   "key": "F:C04618",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C04618",
+    "C04621"
+   ],
+   "읽을거리": "10.md",
+   "칸": ".blocks[3].items[n=13].text",
+   "파일": "content/lessons/grammar1/gh1-120-1.json",
+   "전": "우리는 알라스카에 많은 충성스런 시청자를 갖고 있다.",
+   "뒤": "우리는 알래스카에 많은 충성스런 시청자를 갖고 있다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "GRAMMAR I gh1-120 #13(content/lessons/grammar1/gh1-120.json .blocks[3].items[n=13].text · 분할 gh1-120-1.json .blocks[3].items[n=13].text) — 고치기 전 '우리는 알라스카에 많은 충성스런 시청자를 갖고 있다.' → 지금 '우리는 알래스카에 많은 충성스런 시청자를 갖고 있다.' 지명은 맞게 고쳤으나 같은 줄의 '충성스런' 은 비표준 준말 — '-스럽다' 의 관형형은 '-스러운'(자랑스런 × → 자랑스러운 ○). 영어 'We have many loyal viewers in Alaska.' 와 뜻은 맞음. 1부에서 맞음으로 넘겼다가 2부 표본 /grammar1/gh1-121-1 T25 를 한 줄씩 읽으며 봄 — 이 조각의 바뀐 한국어 줄 전부를 '스런' 등으로 다시 훑어 이 두 곳뿐임을 확인.",
+    "고칠 글": "우리는 알래스카에 많은 충성스러운 시청자를 갖고 있다."
+   }
+  },
+  {
+   "key": "X:0",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar1/gh1-097.json",
+    "칸": ".blocks[3].items[n=79].alternatives (지금 없음 — 새로 만듦)",
+    "지금": "#79 KO '모든 소년이 목숨을 잃지는 않았지?(Every)' / EN 'Every boy didn't lose his life, did he?' · 다른 정답 없음",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "부분 부정(~지는 않았지) 문항인데 분명한 부분 부정 꼴 'Not every boy lost his life, did he?' 가 앱 채점기로 incorrect(0점, 이 작업 트리 글로 잼 — 'did they?' 꼴도 0점). 결정 5 는 'All … not' 꼴을 만점으로 '둔다' 는 것이고, 그 까닭이 '모범 답안은 이미 분명한 Not all …' 이었는데 gh1-097 은 모범 답안이 'Every … not' 이고 Not every 꼴은 막혀 있음. 같은 강의 #80 은 이번에 모범 답안이 'Not everybody wore glasses, did they?' 로 바뀌어 한 강의 안에서 갈림. 바뀐 줄이 아니라 문맥으로 적음(모범 답안을 Not every 로 바꿀지는 소유자 몫 — 대체 답안만 더하면 새 클립 없음).",
+    "고칠 글": "[\"Not every boy lost his life, did he?\", \"Not every boy lost his life, did they?\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:01"
+   }
+  },
+  {
+   "key": "X:1",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar1/gh1-097.json",
+    "칸": ".blocks[3].items[n=81].alternatives (지금 없음 — 새로 만듦)",
+    "지금": "#81 KO '그 모든 소년들이 그들의 누이를 보호하지는 않았지?' / EN 'All the boys didn't protect their sisters, did they?' · 다른 정답 없음",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "부분 부정 문항인데 'Not all the boys protected their sisters, did they?' 가 앱 채점기로 incorrect(0점), 'Not all of the boys …' 는 partial(70점). 분명한 부분 부정 꼴이 막힘(#79 와 같은 까닭 — 결정 5 의 전제 '모범 답안은 Not all' 이 이 강의에선 성립 안 함).",
+    "고칠 글": "[\"Not all the boys protected their sisters, did they?\", \"Not all of the boys protected their sisters, did they?\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:01"
+   }
+  },
+  {
+   "key": "X:2",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar1/gh1-097.json",
+    "칸": ".blocks[3].items[n=83].alternatives",
+    "지금": "#83 KO '그들 모두가 그것을 냄새 맡지는 않았다.' / EN 'All of them didn't smell it.' · 다른 정답: 'All of them didn't smell that.'",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "부분 부정 문항인데 'Not all of them smelled it.' 가 앱 채점기로 incorrect(0점). gh1-069 #82 · #83(같은 꼴 '그들 모두가 오지는 않(았)다')은 모범 답안이 'Not all of them come/came.' 인데 여기선 그 꼴이 0점. 이번에 더한 C04173 'All of them didn't smell that.' 은 결정 3 · 5 대로라 맞음으로 판정하고, 빠진 Not all 꼴만 문맥으로 적음.",
+    "고칠 글": "[\"All of them didn't smell that.\", \"Not all of them smelled it.\", \"Not all of them smelled that.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:01"
+   }
+  },
+  {
+   "key": "X:8",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/lessons/grammar1/gh1-120.json · content/lessons/grammar1/gh1-120-2.json",
+    "칸": "gh1-120 .blocks[3].items[n=22].text · gh1-120-2 .blocks[1].items[n=22].text",
+    "지금": "왜 파월의 임무(순방)은 성공적이지 않았나?",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "괄호가 앞말을 보충할 때 조사는 괄호 앞 낱말에 맞춤 — '임무' 는 받침이 없어 '임무(순방)는'. 바뀐 줄 아님(같은 강의 #20 '무바라크' 가 바뀜).",
+    "고칠 글": "왜 파월의 임무(순방)는 성공적이지 않았나?",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:04"
+   }
+  },
+  {
+   "key": "OK:C04179",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=89].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-097.json",
+   "전": null,
+   "뒤": "There were sixty officers in the police station, weren't there?"
+  },
+  {
+   "key": "OK:C03597",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[4].items[n=27].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-065.json",
+   "전": null,
+   "뒤": "Do your parents not have a dream?"
+  },
+  {
+   "key": "OK:C04714",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[9].n",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "68",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04152",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[was 15].items[0].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": "Each boy ignored the advice.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04715",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[9].text",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "He completed his flight training at an aviation school.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04153",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[was 15].items[0].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": "Every boy ignored the advice.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04080",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=72].alternatives[4]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "All of the boys worry about their futures."
+  },
+  {
+   "key": "OK:C04716",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[10].n",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "69",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04150",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[was 15].items[0].n",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": "74",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04081",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=73].n",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "73"
+  },
+  {
+   "key": "OK:C04717",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[10].text",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "He had a counterfeit social security card.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04707",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[5].text",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "A Tanzanian national is under arrest.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04169",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=80].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-097.json",
+   "전": null,
+   "뒤": "Everybody didn't wear glasses, did they?"
+  },
+  {
+   "key": "OK:C04151",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[was 15].items[0].text",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": "All the boys ignored the advice.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04082",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=73].text",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "Every boy received a prize."
+  },
+  {
+   "key": "OK:C04710",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[7].n",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "66",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04706",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[5].n",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "64",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04168",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=80].text",
+   "파일": "content/lessons/grammar1/gh1-097.json",
+   "전": "Each boy didn't wear glasses, did he?",
+   "뒤": "Not everybody wore glasses, did they?"
+  },
+  {
+   "key": "OK:C04156",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[was 15].items[1].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": "Every boy did his homework.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04083",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=73].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "Each boy received a prize."
+  },
+  {
+   "key": "OK:C04093",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=75].n",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "75"
+  },
+  {
+   "key": "OK:C04711",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[7].text",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "His name appeared on a letter.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04705",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[4].text",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "Does this violate the patient-doctor relationship?",
+   "뒤": null
+  },
+  {
+   "key": "OK:C03599",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[4].items[n=29].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-065.json",
+   "전": null,
+   "뒤": "Does your father not love your mother?"
+  },
+  {
+   "key": "OK:C04084",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=73].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "All the boys received a prize."
+  },
+  {
+   "key": "OK:C04092",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=74].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "All of the boys ignored the advice."
+  },
+  {
+   "key": "OK:C04044",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=67].text",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "Everybody liked the contract, didn't they?"
+  },
+  {
+   "key": "OK:C04712",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[8].n",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "67",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04704",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".blocks[was 3].items[4].n",
+   "파일": "content/lessons/grammar1/gh1-123-2.json",
+   "전": "63",
+   "뒤": null
+  },
+  {
+   "key": "OK:C04154",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[was 15].items[1].n",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": "75",
+   "뒤": null
+  },
+  {
+   "key": "OK:C03598",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[4].items[n=28].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-065.json",
+   "전": null,
+   "뒤": "Does your son not have a dream?"
+  },
+  {
+   "key": "OK:C04085",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=73].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "All the boys received prizes."
+  },
+  {
+   "key": "OK:C04091",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[3].items[n=74].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-095.json",
+   "전": null,
+   "뒤": "Every boy ignored the advice."
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:C04215",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "gh1-100 #133 한국어 '그럼 합의한 거지? (거래 성립인가?)' ↔ gh1-101 'Is that a deal?' · 다른 정답 'Is it a deal?'(작업 트리 파일로 짝 19:19 · 번호 115~133 확인). 이 강의의 '~지?' 문항(#118 · #119 · #122 · #123 · #124 · #125 · #126 · #128)은 모두 부가의문문 답이고 '~나? · ~니?' 는 보통 · 부정 의문문 — #133 만 '~지?' 인데 답이 보통 의문문. 스크래치 채점(src/lib/grammarGrading.ts gradeAgainstReferences 를 메모리에서 트랜스파일, 작업 트리 글 · 읽기만)으로 'It's a deal, isn't it?' · 'That's a deal, isn't it?' = incorrect(0점), 'Is that a deal then?' · 'So is that a deal?' = partial(70) 을 직접 확인. 한국어 문제에 맞는 흔한 답이 0점 → ③, 기록.md 기준 풀이 5(맞는 답을 막음 · 0점 = 중간)대로 중간. 괄호 '(거래 성립인가?)' 가 보통 의문문 꼴을 일러 주어 확신 보통도 맞음. 고칠 글 '거래 성립인가? (합의한 건가?)' 는 기준 판 글처럼 '~인가?' 로 끝나 과의 약속과 맞고, 영어 · 소리를 안 건드림(GRAMMAR 한국어는 소리 안 냄) — 새 틀림 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "F:C04618",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "gh1-120 #13 · gh1-120-1 #13(두 파일 같은 글 — 작업 트리로 확인) '우리는 알래스카에 많은 충성스런 시청자를 갖고 있다.' — '충성스럽다' 는 ㅂ 불규칙이라 관형형은 '충성스러운'('자랑스런'이 비표준이고 '자랑스러운'이 표준인 것과 같은 규칙) → ② 한국어 맞춤법. 영어 'We have many loyal viewers in Alaska.' 와 뜻은 맞고 이번 고침(알라스카 → 알래스카)도 맞음. 바뀐 줄 안에 남은 옛 틀림이라 그 줄의 틀림으로 세는 것 맞음. 한국어 문항이라 화면에 보임(분할 -1 도 content/courses/grammar1.json 목록에 있음). 뜻을 오도하지 않는 표기라 낮음 · 고칠 글 맞음 · 새 클립 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "X:0",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"Not every boy lost his life, did he?\", \"Not every boy lost his life, did they?\"]",
+   "까닭": "gh1-096/097 #79 '모든 소년이 목숨을 잃지는 않았지?(Every)' ↔ 'Every boy didn't lose his life, did he?' · 다른 정답 없음(작업 트리로 확인). 스크래치 채점으로 'Not every boy lost his life, did he?' · '…, did they?' 모두 incorrect(0점) 직접 확인. 같은 과정 gh1-068/069 #79 는 모범 답안이 'Not every boy received a prize, did he?'(다른 정답 '…did they?' · 'Every boy didn't …') — 과정이 모범 답안으로 가르친 꼴이 여기선 0점이고, 같은 강의 #80 도 이제 'Not everybody …' 가 모범 답안. 결정 5(6-1393)는 gh1-061 #31 · gh1-069 #79 · #81 · #82 · #83 의 'All … not' 대체 답안 다섯을 만점으로 '둔' 것 — 이 문항과 무관하고, Not every 꼴을 더해도 All … not 꼴은 그대로라 결정을 다시 따지지 않음. 틀림(③)은 동의. 심각도만 바꿈: 기록.md 기준 풀이 5 로 '맞는 답을 막음(0점) = 중간'. 모범 답안 'Every … not' 은 결정 5 가 부분 부정으로 인정한 꼴이라 '모범 · 대체 답안이 모두 한국어 뜻을 빠뜨림(높음)' 에 들지 않음. 고칠 글은 gh1-069 #79 의 짝과 같은 꼴 — 맞는 영어 · 같은 뜻, 대체 답안이라 새 클립 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "X:1",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"Not all the boys protected their sisters, did they?\", \"Not all of the boys protected their sisters, did they?\"]",
+   "까닭": "gh1-096/097 #81 '그 모든 소년들이 그들의 누이를 보호하지는 않았지?' ↔ 'All the boys didn't protect their sisters, did they?' · 다른 정답 없음. 스크래치 채점으로 'Not all the boys protected their sisters, did they?' = incorrect(0점) · 'Not all of the boys …' = partial(70) 직접 확인. gh1-069 #81 은 모범 답안 'Not all the boys received a prize, did they?' + 다른 정답 'Not all of the boys …' — 같은 꼴이 여기선 막힘. 결정 5 와 무관(X:0 과 같은 까닭). 틀림(③) 동의, 심각도는 기준 풀이 5 대로 중간(가장 곧은 꼴이 0점 · 모범 답안은 결정 5 가 인정한 꼴). 고칠 글 맞는 영어 · 같은 뜻 · 새 클립 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "X:2",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"All of them didn't smell that.\", \"Not all of them smelled it.\", \"Not all of them smelled that.\"]",
+   "까닭": "gh1-096/097 #83 '그들 모두가 그것을 냄새 맡지는 않았다.' ↔ 'All of them didn't smell it.' · 다른 정답 'All of them didn't smell that.'(C04173, 결정 3 that 꼴 — 맞음). 스크래치 채점으로 'Not all of them smelled it.' · '… that.' 모두 incorrect(0점) 직접 확인. gh1-069 #83 '그들 모두가 오지는 않았다.' 는 모범 답안 'Not all of them came.' — 같은 꼴이 여기선 0점. 결정 5 와 무관(X:0 과 같은 까닭). 틀림(③) 동의, 심각도는 기준 풀이 5 대로 중간. 고칠 글은 있던 대체 답안을 둔 채 두 꼴을 더한 칸 전체 — 맞는 영어 · 같은 뜻 · 새 클립 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "X:8",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "gh1-120 #22 · gh1-120-2 #22(두 파일 같은 글 — 작업 트리로 확인, 기준 판과 같아 바뀐 줄 아님) '왜 파월의 임무(순방)은 성공적이지 않았나?' — 괄호 안 말이 앞말을 보충할 때 조사는 괄호 앞말에 맞춤('임무' 는 받침이 없어 '는'; 예 '기호(記號)는'). ② 한국어 맞춤법(조사) · 낮음 · 확신 보통 동의. 영어 'Why wasn't Powell's mission successful?' 와 뜻 맞음. 한국어 문항이라 화면에 보임. 고칠 글 '왜 파월의 임무(순방)는 성공적이지 않았나?' 맞음 · 새 클립 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04179",
+   "결론": "맞음 동의",
+   "까닭": "gh1-097 #89 다른 정답 'There were sixty officers in the police station, weren't there?' — 모범 답안 '60' 을 글자로 쓴 꼴, 꼬리 weren't there 맞음, 한국어 '그 경찰서에는 60명의 경관이 있었지?' 와 같은 뜻 · 맞는 문항에 붙음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C03597",
+   "결론": "맞음 동의",
+   "까닭": "gh1-065 #27 다른 정답 'Do your parents not have a dream?' — 줄이지 않은 부정 의문문, 맞는 영어 · 한국어 '당신의 부모님에게는 꿈이 있지 않습니까?' 와 같은 뜻 · 맞는 문항(짝 27:27 차례 확인).",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04714",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 번호 '68' 이 합친 블록 #68 로 옮김 — 분할 gh1-122-2 ↔ gh1-123-2 19:19 · 번호 57~75 끊김 없음, 12번째 자리 한국어 #68 '그는 항공학교에서 비행 훈련을 끝냈다.' 와 짝(작업 트리로 확인).",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04152",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 옛 블록 15 첫 문항(#74)의 다른 정답 'Each boy ignored the advice.' 가 합친 블록 #74 의 다른 정답으로 옮김 — 같은 문항(한국어 '그 모든 소년들이 그 충고를 무시했다(3가지로).')에 붙음, 짝 19:19 · 번호 58~76 확인.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04715",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 'He completed his flight training at an aviation school.' → #68 모범 답안 — 한국어 #68 '그는 항공학교에서 비행 훈련을 끝냈다.' 와 차례 · 뜻 짝 맞음(본문 gh1-123 #68 과 같은 글).",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04153",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 옛 블록 15 #74 다른 정답 'Every boy ignored the advice.' → 합친 블록 #74 다른 정답 — 같은 문항 '(3가지로)' 의 every 꼴, 자리 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04080",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #72 새 다른 정답 'All of the boys worry about their futures.' — 있던 'All the boys worry about their futures.' 와 같은 뜻 · 맞는 영어, 한국어 '모든 소년이 자신의 미래에 대하여 염려한다.(3가지로)' 의 all 꼴.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04716",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 번호 '69' → 합친 블록 #69, 한국어 #69 '그는 위조 사회보장 카드를 갖고 있었다.' 와 짝 · 번호 이어짐.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04150",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 옛 블록 15 번호 '74' → 합친 블록 #74(17번째 자리), 한국어 #74 와 짝 · 번호 58~76 끊김 없음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04081",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #73 번호 '73'(옛 블록 13 에서 옮김) — 16번째 자리, 72 와 74 사이 · 한국어 #73 과 짝.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04717",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 'He had a counterfeit social security card.' → #69 모범 답안 — 한국어 '그는 위조 사회보장 카드를 갖고 있었다.' 와 뜻 · 차례 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04707",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 'A Tanzanian national is under arrest.' → #64 모범 답안 — 한국어 '탄자니아 국적자 한 명이 체포되어 있다.' 와 뜻 · 차례 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04169",
+   "결론": "맞음 동의",
+   "까닭": "gh1-097 #80 새 다른 정답 'Everybody didn't wear glasses, did they?' — 결정 5 의 All … not 꼴(따지지 않음), 문법 · 꼬리(did they) 맞음, 한국어 '모든 사람이 안경을 쓰지는 않았지?(Everybody)' 문항에 붙음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04151",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 옛 블록 15 'All the boys ignored the advice.' → #74 모범 답안 — 한국어 '그 모든 소년들이 그 충고를 무시했다(3가지로).' 와 짝 · 뜻 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04082",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #73 모범 답안 'Every boy received a prize.'(옛 블록 13 에서 옮김) — 한국어 '모든 소년이 상을 하나 받았다(3가지로).' 와 짝 · 뜻 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04710",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 번호 '66' → #66, 한국어 '그의 이름이 한 편지 위에 나타났다.' 와 짝 · 번호 이어짐.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04706",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 번호 '64' → #64, 한국어 '탄자니아 국적자 한 명이 체포되어 있다.' 와 짝 · 번호 이어짐.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04168",
+   "결론": "맞음 동의",
+   "까닭": "gh1-097 #80 모범 답안 'Each boy didn't wear glasses, did he?'(each 는 부분 부정이 안 됨) → 'Not everybody wore glasses, did they?' — 부분 부정 · 부정문 뒤 긍정 꼬리 did they 맞음, 함께 바뀐 한국어 '모든 사람이 안경을 쓰지는 않았지?(Everybody)' 와 뜻 맞음, 같은 세트에 겹치는 문항 없음. (영어 문항은 소리 내는 글 — 새 글의 클립이 올라갔는지는 이 확인에서 보지 않음.)",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04156",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 옛 블록 15 둘째 문항(#75) 다른 정답 'Every boy did his homework.' → #75 다른 정답 — 한국어 '모든 소년이 그의 숙제를 했다.' 문항에 붙음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04083",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #73 다른 정답 'Each boy received a prize.'(옛 블록 13 에서 옮김) — 같은 문항의 each 꼴, 자리 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04093",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #75 번호 '75'(옛 블록 15 에서 옮김) — 18번째 자리, 한국어 #75 와 짝 · 번호 이어짐.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04711",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 'His name appeared on a letter.' → #66 모범 답안 — 한국어 '그의 이름이 한 편지 위에 나타났다.' 와 짝 · 뜻 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04705",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 'Does this violate the patient-doctor relationship?' → #63 모범 답안 — 한국어 '이것은 환자-의사 관계를 위반하나?' 와 짝 · 뜻 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C03599",
+   "결론": "맞음 동의",
+   "까닭": "gh1-065 #29 다른 정답 'Does your father not love your mother?' — 줄이지 않은 부정 의문문, 한국어 '당신의 아버지는 당신의 어머니를 사랑하지 않습니까?' 와 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04084",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #73 다른 정답 'All the boys received a prize.'(옛 블록 13 에서 옮김) — 같은 문항 '(3가지로)' 의 all 꼴(소년마다 하나씩으로 읽힘), 자리 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04092",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #74 새 다른 정답 'All of the boys ignored the advice.' — 모범 답안 'All the boys …' 와 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04044",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #67 모범 답안 'Everybody liked the contract, didn't they?'(옛 블록 5 에서 옮김) — 한국어 '모두가 그 계약을 좋아했지?(3가지로)' 와 짝, 다른 정답 everyone · all of them 과 합쳐 세 꼴.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04712",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 번호 '67' → #67, 한국어 '그는 한 동굴에서 한 편지를 발견했다.' 와 짝 · 번호 이어짐.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04704",
+   "결론": "맞음 동의",
+   "까닭": "gh1-123-2 옛 블록 3 번호 '63' → #63, 한국어 '이것은 환자-의사 관계를 위반하나?' 와 짝 · 번호 이어짐.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04154",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 옛 블록 15 둘째 문항 번호 '75' → #75(18번째 자리) — 번호 이어짐 · 짝 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C03598",
+   "결론": "맞음 동의",
+   "까닭": "gh1-065 #28 다른 정답 'Does your son not have a dream?' — 줄이지 않은 부정 의문문, '(단수로)' 대로 a dream, 한국어와 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04085",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #73 다른 정답 'All the boys received prizes.'(옛 블록 13 에서 옮김) — 같은 문항의 all 꼴, 맞는 영어 · 자리 맞음.",
+   "때": "2026-09-24 16:30"
+  },
+  {
+   "key": "OK:C04091",
+   "결론": "맞음 동의",
+   "까닭": "gh1-095 #74 다른 정답 'Every boy ignored the advice.'(옛 블록 15 에서 옮김) — 같은 문항 '(3가지로)' 의 every 꼴, 자리 맞음.",
+   "때": "2026-09-24 16:30"
+  }
+ ]
+}

@@ -1,0 +1,537 @@
+{
+ "조각": "grammar1-a",
+ "뽑은때": "2026-09-24 16:18",
+ "대상": [
+  {
+   "key": "F:C02984",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C02984",
+    "C02996",
+    "C02985",
+    "C02997"
+   ],
+   "읽을거리": "01.md",
+   "칸": ".blocks[3].items[n=19].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-009-1.json",
+   "전": null,
+   "뒤": "What was her last name before she got married?",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 02강(gh1-008 한국어 ↔ gh1-009 영어) #19 '결혼 전 그녀의 성은 무엇이었니?' — 기준 판(9d6e15d)은 'What was her maiden name?' 하나, 지금은 'What was her last name before she got married?' · 'What was her family name before marriage?' 를 더함(두 줄 자체는 맞는 영어 · 맞는 뜻). 그런데 이 두 꼴의 엇갈린 조합 'What was her last name before marriage?' · 'What was her family name before she got married?' 는 실제 채점 코드(src/lib/grammarGrading.ts 를 이 판 그대로 돌려 봄)로 둘 다 incorrect = 0점 — last ↔ family 는 내용어라 부분 점수도 없음. 한국어 '결혼 전 … 성' 의 곧은 번역이 막힘. 심각도 중간: 6단계 목록의 missing-alternative 관례(맞는 답 0점 = Medium, 예 6-1327 · 6-1338 · 6-1342)와 같게 — 틀린 답을 만점으로 받는 것만 높음(명령서). (참고: 'What was her surname before marriage?' 도 지금 0점.)",
+    "고칠 글": "What was her last name before marriage?",
+    "고칠 곳": "content/lessons/grammar1/gh1-009.json · gh1-009-1.json — sentences 블록 n=19 .alternatives 에 새 항목 둘: ① 'What was her last name before marriage?' ② 'What was her family name before she got married?' (지금 있는 대체 답안은 그대로)"
+   }
+  },
+  {
+   "key": "F:C03150",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "읽을거리": "02.md",
+   "칸": ".blocks[3].items[n=16].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-017-1.json",
+   "전": null,
+   "뒤": "He finished it as quickly as possible.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+    "고칠 글": "He finished it as quickly as he could.",
+    "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)"
+   }
+  },
+  {
+   "key": "F:C03421",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C03421",
+    "C03422",
+    "C03428",
+    "C03429"
+   ],
+   "읽을거리": "05.md",
+   "칸": ".blocks[1].items[n=38].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-051-2.json",
+   "전": null,
+   "뒤": "Is it eight o'clock now?",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 25강(gh1-050 한국어 ↔ gh1-051 영어) #38 '지금 여덟시냐?' — 기준 판은 대체 답안 없음, 지금은 'Is it eight o'clock now?' · 'Is it 8 o'clock?' 를 더함(두 줄 자체는 맞음). 한국어에 '지금' 이 있어 가장 곧은 번역인 숫자 + now 꼴 'Is it 8 o'clock now?' 가 빠져 실제 채점 코드로 incorrect = 0점(숫자 8 ↔ eight 는 비슷한 낱말로 안 보고, now 는 기능어가 아니라 길이 한도에서 걸림). 같은 고침에서 gh1-009 #39 는 'It was 7 o'clock then.' 까지 네 꼴을 다 넣어 exact — 이 문항만 조합이 빠짐. 심각도 중간 — 6단계 목록 missing-alternative 관례(6-1327 '7 o'clock' 0점 = Medium)와 같게.",
+    "고칠 글": "Is it 8 o'clock now?",
+    "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=38 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)"
+   }
+  },
+  {
+   "key": "F:C03423",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C03423",
+    "C03424",
+    "C03430",
+    "C03431"
+   ],
+   "읽을거리": "05.md",
+   "칸": ".blocks[1].items[n=39].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-051-2.json",
+   "전": null,
+   "뒤": "It is nine o'clock now.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 25강(gh1-050 ↔ gh1-051) #39 '지금은 아홉시다.' — 기준 판은 대체 답안 없음, 지금은 'It is nine o'clock now.' · 'It is 9 o'clock.' 를 더함(두 줄 자체는 맞음). 숫자 + now 꼴 'It is 9 o'clock now.' (와 'It's 9 o'clock now.')가 실제 채점 코드로 incorrect = 0점. #38 과 같은 까닭 · 같은 심각도(중간).",
+    "고칠 글": "It is 9 o'clock now.",
+    "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=39 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)"
+   }
+  },
+  {
+   "key": "F:C03575",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C03575",
+    "C03576"
+   ],
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=2].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-061.json",
+   "전": null,
+   "뒤": "How fast does he get there?",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 30강(gh1-060 한국어 ↔ gh1-061 영어) #2 '그는 얼마나 빨리 그곳에 가나?' — 기준 판은 'How fast does he go there?' 하나, 지금은 'How fast does he get there?' · 'How quickly does he go there?' 를 더함(두 줄 자체는 맞음). 엇갈린 조합 'How quickly does he get there?' 가 실제 채점 코드로 incorrect = 0점(quickly ↔ fast · get ↔ go 는 내용어라 부분 점수 없음; 대조 'How fast does he get there?' → exact). 흔한 번역. 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게.",
+    "고칠 글": "How quickly does he get there?",
+    "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=2 .alternatives 에 새 항목으로 더함(지금 있는 것은 그대로)"
+   }
+  },
+  {
+   "key": "F:C03577",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C03577",
+    "C03578",
+    "C03579"
+   ],
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=3].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-061.json",
+   "전": null,
+   "뒤": "How fast does the girl get here?",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #3 '그 소녀는 얼마나 빨리 여기에 오나?' — 기준 판은 'How fast does the girl come here?' 하나, 지금은 'How fast does the girl get here?' · 'How quickly does the girl come here?' · 'How soon does the girl come here?' 를 더함(세 줄 자체는 맞음). get here 를 fast 와만 짝지어 'How quickly does the girl get here?' · 'How soon does the girl get here?' 가 실제 채점 코드로 둘 다 incorrect = 0점. 심각도 중간.",
+    "고칠 글": "How quickly does the girl get here?",
+    "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=3 .alternatives 에 새 항목 둘: ① 'How quickly does the girl get here?' ② 'How soon does the girl get here?' (지금 있는 것은 그대로)"
+   }
+  },
+  {
+   "key": "F:C03580",
+   "까닭": "③ 채점 전부",
+   "ids": [
+    "C03580",
+    "C03581",
+    "C03582"
+   ],
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=9].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-061.json",
+   "전": null,
+   "뒤": "He came here as quickly as possible.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #9 '그는 가능한 한 빨리 여기에 왔다.' — 기준 판은 'He came here as soon as possible.' 하나, 지금은 'as quickly as possible' · 'as fast as possible' · 'as soon as he could' 를 더함(세 줄 자체는 맞음). 'as … as he could' 를 soon 과만 짝지어 '가능한 한 빨리' 의 흔한 번역 'He came here as quickly as he could.' · 'He came here as fast as he could.' 가 실제 채점 코드로 둘 다 incorrect = 0점. 02.md gh1-017 #16 과 같은 꼴(같이 고칠 것). 심각도 중간.",
+    "고칠 글": "He came here as quickly as he could.",
+    "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=9 .alternatives 에 새 항목 둘: ① 'He came here as quickly as he could.' ② 'He came here as fast as he could.' (지금 있는 것은 그대로)"
+   }
+  },
+  {
+   "key": "S:/grammar1/gh1-059-2:T01",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-grammar1-a/gh1-059-2.md",
+   "주장": {
+    "T": "T01",
+    "바뀐 글": false,
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR I 29강(gh1-058 한국어 문제) #20 — 이 강의 한국어 문제 37개 가운데 이것만 끝 문장부호가 없고 괄호가 바로 붙음(같은 쪽 T19 '…갖고 있다. (idea)' 와 다름). 한 강의 안 표기 흔들림. 영어 · 채점 · 소리에는 영향 없음(GRAMMAR 한국어는 소리 안 냄).",
+    "지금": "나도 그래(나도 원해)",
+    "고칠 글": "나도 그래. (나도 원해)",
+    "고칠 곳": "content/lessons/grammar1/gh1-058.json · gh1-058-2.json — sentences 블록 n=20 .text",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "OK:C03587",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=26].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-061.json",
+   "전": null,
+   "뒤": "Who loves you more than me?"
+  },
+  {
+   "key": "OK:C03557",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=19].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-059.json",
+   "전": null,
+   "뒤": "He wants an apple."
+  },
+  {
+   "key": "OK:C03239",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[3].items[n=46].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-033.json",
+   "전": null,
+   "뒤": "Is that hers?"
+  },
+  {
+   "key": "OK:C03588",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=30].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-061.json",
+   "전": null,
+   "뒤": "No boy likes that."
+  },
+  {
+   "key": "OK:C03596",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[4].items[n=26].alternatives[3]",
+   "파일": "content/lessons/grammar1/gh1-063.json",
+   "전": null,
+   "뒤": "Do your son and daughter have dreams?"
+  },
+  {
+   "key": "OK:C03508",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[1].items[n=34].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-057-2.json",
+   "전": null,
+   "뒤": "Who wants that?"
+  },
+  {
+   "key": "OK:C03540",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=29].alternatives[2]",
+   "파일": "content/lessons/grammar1/gh1-059-2.json",
+   "전": null,
+   "뒤": "Each student has his or her own idea."
+  },
+  {
+   "key": "OK:C03556",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=17].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-059.json",
+   "전": null,
+   "뒤": "The hospital wants lots of blood, doesn't it?"
+  },
+  {
+   "key": "OK:C02990",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=39].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-009-2.json",
+   "전": null,
+   "뒤": "It was 7 o'clock."
+  },
+  {
+   "key": "OK:C03589",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=31].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-061.json",
+   "전": null,
+   "뒤": "Not all of them like that."
+  },
+  {
+   "key": "OK:C03595",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[4].items[n=17].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-063.json",
+   "전": null,
+   "뒤": "Was your grandmother pretty?"
+  },
+  {
+   "key": "OK:C03509",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".blocks[1].items[n=35].text",
+   "파일": "content/lessons/grammar1/gh1-057-2.json",
+   "전": "Who were they?",
+   "뒤": "Where did they live?"
+  },
+  {
+   "key": "OK:C03541",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=29].alternatives[3]",
+   "파일": "content/lessons/grammar1/gh1-059-2.json",
+   "전": null,
+   "뒤": "Every student has their own idea."
+  },
+  {
+   "key": "OK:C03555",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=17].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-059.json",
+   "전": null,
+   "뒤": "The hospital wants a lot of blood, doesn't it?"
+  },
+  {
+   "key": "OK:C02991",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=39].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-009-2.json",
+   "전": null,
+   "뒤": "It was seven o'clock then."
+  },
+  {
+   "key": "OK:C03594",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[4].items[n=12].alternatives[0]",
+   "파일": "content/lessons/grammar1/gh1-063.json",
+   "전": null,
+   "뒤": "Is your mother well?"
+  },
+  {
+   "key": "OK:C03542",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[1].items[n=29].alternatives[4]",
+   "파일": "content/lessons/grammar1/gh1-059-2.json",
+   "전": null,
+   "뒤": "Every student has his or her own idea."
+  },
+  {
+   "key": "OK:C03554",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".blocks[3].items[n=16].alternatives[1]",
+   "파일": "content/lessons/grammar1/gh1-059.json",
+   "전": null,
+   "뒤": "He needs lots of water, doesn't he?"
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:C02984",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄(판정 일꾼 글을 믿지 않고). gh1-008 #19 '결혼 전 그녀의 성은 무엇이었니?' ↔ gh1-009 · gh1-009-1 #19 모범 'What was her maiden name?' + 새 대체 'What was her last name before she got married?' · 'What was her family name before marriage?'(둘 다 맞는 영어 · 같은 뜻). src/lib/grammarGrading.ts 를 이 작업 트리 그대로 메모리에서 변환해(파일 안 바꿈) 화면과 같은 참조[cleanText(정답) + 대체 답안]로 채점: 섞은 꼴 'What was her last name before marriage?' · 'What was her family name before she got married?' → incorrect(0점), 대조로 모범 · 두 대체 → exact, 'What was her banana name?' → incorrect. 분할본 gh1-009-1 도 같음. 화면 '다른 정답' 에 두 꼴이 보이는데 섞은 꼴은 0점 — 흔한 맞는 번역을 막음 = ③, 기록.md 기준 풀이 5 대로 중간(맞는 답 0점). 제안 두 줄을 메모리에서 더해 채점하면 둘 다 exact · 'What was her first name before marriage?' 는 incorrect 그대로 — 새 틀림 없음. 참고(더하지 않아도 됨): 'What was her last name before she was married?' · surname 꼴도 0점이나 새 동의어.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "F:C03150",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-016 #16 '그는 가능한 한 빨리 그것을 끝냈다.' ↔ gh1-017 · gh1-017-1 #16 모범 'He finished it as soon as possible.' + 새 대체 7개(it/that × soon/quickly/fast as possible · soon as he could — 모두 맞는 영어 · 같은 뜻, that 꼴은 결정 3). 실제 채점 코드로 'He finished it as quickly as he could.' · 'He finished it as fast as he could.'(that 꼴 둘도) → incorrect(0점), 대조 'He finished that as soon as he could.' → exact. 'as … as he could' 를 soon 과만 짝지은 엇갈림 빠짐 — 흔한 번역을 막음 = ③ 중간(기준 풀이 5). 제안 네 줄을 메모리에서 더하면 넷 다 exact · 'He finished it as slowly as he could.' · 'He didn't finish it as quickly as he could.' 는 incorrect 그대로.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "F:C03421",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-050 #38 '지금 여덟시냐?' ↔ gh1-051 · gh1-051-2 #38 모범 'Is it eight o'clock?' + 새 대체 'Is it eight o'clock now?' · 'Is it 8 o'clock?'. 실제 채점 코드로 '지금' 을 숫자로 곧게 옮긴 'Is it 8 o'clock now?' → incorrect(0점)(대조: 두 대체 → exact). now 꼴이 대체에 있어 '답 열쇠가 문제 뜻을 빠뜨림(높음)' 은 아니고 맞는 답을 막음 = ③ 중간. 같은 고침의 gh1-009 #39 는 7/seven × then 네 꼴을 다 넣어 이 문항만 조합이 빠짐. 제안 한 줄을 메모리에서 더하면 exact.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "F:C03423",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-050 #39 '지금은 아홉시다.' ↔ gh1-051 · gh1-051-2 #39 모범 'It is nine o'clock.' + 새 대체 'It is nine o'clock now.' · 'It is 9 o'clock.'. 실제 채점 코드로 'It is 9 o'clock now.' · 'It's 9 o'clock now.' → incorrect(0점), 'It's nine o'clock now.' → exact. #38 과 같은 까닭 · ③ 중간. 제안 한 줄을 메모리에서 더하면 두 꼴 다 exact(축약은 채점이 풂) · 'It isn't 9 o'clock now.' 는 incorrect 그대로.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "F:C03575",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-060 #2 '그는 얼마나 빨리 그곳에 가나?' ↔ gh1-061 #2(분할본 없음) 모범 'How fast does he go there?' + 새 대체 'How fast does he get there?' · 'How quickly does he go there?'(둘 다 맞음). 실제 채점 코드로 섞은 꼴 'How quickly does he get there?' → incorrect(0점)(대조 두 대체 → exact). 흔한 번역을 막음 = ③ 중간. 제안 한 줄을 메모리에서 더하면 exact · 'How slowly does he get there?' 는 incorrect 그대로.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "F:C03577",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-060 #3 '그 소녀는 얼마나 빨리 여기에 오나?' ↔ gh1-061 #3 모범 'How fast does the girl come here?' + 새 대체 셋(get here · how quickly · how soon — '얼마나 빨리' 는 속도 · 때 둘 다라 how soon 도 맞음). 실제 채점 코드로 'How quickly does the girl get here?' · 'How soon does the girl get here?' → incorrect(0점). ③ 중간. 제안 두 줄을 메모리에서 더하면 둘 다 exact · 'How quickly does the boy get here?' 는 incorrect 그대로.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "F:C03580",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-060 #9 '그는 가능한 한 빨리 여기에 왔다.' ↔ gh1-061 #9 모범 'He came here as soon as possible.' + 새 대체 셋(맞음). 실제 채점 코드로 'He came here as quickly as he could.' · 'He came here as fast as he could.' → incorrect(0점)(대조 'He came here as soon as he could.' → exact). gh1-017 #16 과 같은 꼴 · ③ 중간. 제안 두 줄을 메모리에서 더하면 둘 다 exact · 'He came here as slowly as he could.' · 'He didn't come here as fast as he could.' 는 incorrect 그대로.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "S:/grammar1/gh1-059-2:T01",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "혼자 다시 봄. gh1-058 #20 '나도 그래(나도 원해)'(gh1-058.json · gh1-058-2.json 에 이 글 그대로 · 9/18 전과 같음) — 이 강의 한국어 문제 37개(읽을거리 06.md #1~37 을 다 봄) 가운데 끝 문장부호가 없는 것은 이것 하나. 서술문 끝 마침표는 한글 맞춤법 문장 부호 규정의 원칙이라 ② 이고, 뜻 · 채점에는 영향이 없어 낮음(한 강의 안 표기 흔들림)이 맞음. 화면 한국어 문제로 보임(닿음) · GRAMMAR 한국어라 소리 없음. 고칠 글 '나도 그래. (나도 원해)' 는 같은 쪽 #29 '… 갖고 있다. (idea)' 꼴과 같아 새 틀림 없음(참고: gh1-008 #2 '그는 부유했다(부자였다).' 꼴의 '나도 그래(나도 원해).' 도 맞음 — 어느 쪽이든 됨).",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03587",
+   "결론": "맞음 동의",
+   "까닭": "gh1-060 #26 '누가 나보다 더 당신을 사랑하나?' ↔ 모범 'Who loves you more than I?' · 'Who loves you more than I do?' · 새 'Who loves you more than me?'. 'than me' 는 지금 영어에서 흔히 쓰는 표준 꼴(비격식)이고 자연스러운 읽기는 'than I do' 와 같은 뜻. 같은 강의 #7 'He has more money than me.' 가 9/18 전부터 정답이라 강의 안에서도 어긋나지 않음. 채점 exact.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03557",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #19 '그는 사과를 원한다.' ↔ 모범 'He wants apples.' · 새 'He wants an apple.' · 'He wants some apples.' — 한국어는 수를 안 밝혀 'an apple' 도 맞는 번역, 문법 맞음. 뒤 문항 #20 '나도 그래' ↔ 'So do I.' 와도 맞음.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03239",
+   "결론": "맞음 동의",
+   "까닭": "gh1-032 #46 '그것은 그녀의 것이냐?' ↔ 'Is it hers?' · 새 'Is that hers?'(결정 3 that 꼴) — 맞는 영어 · 같은 뜻. 같은 쪽 #41 'That is hers.' · #43 'Is that yours?' 와 같은 방식.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03588",
+   "결론": "틀림 찾음",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "보통",
+   "까닭": "줄 자체('No boy likes that.' — 결정 3 that 꼴)는 맞음. 그러나 이 문항 gh1-060 #30 '어떤 소년도 그것을 좋아하지 않는다.' 의 정답은 'No boy likes it/that.' 둘뿐이라 'No boys like it.' · 'None of the boys like it.' 가 실제 채점 코드로 incorrect = 0점. 같은 과정 04강 gh1-016 #6 '어떤 소년도 상을 받지 않는다.'(과정에서 '어떤 소년도' 문항은 이 둘뿐)에는 같은 고침에서 'No boys receive a prize.' · 'None of the boys receive(s) a prize.' 를 넣어 exact — 한국어 틀이 같은 두 문항이 다르게 채점돼 04강에서 만점이던 꼴을 30강에 쓰면 0점. 흔한 맞는 번역을 막음 = ③ 중간(기준 풀이 5). 이 틈은 9/18 전부터 있던 것(이번 줄이 만든 것 아님) — 과정 안 선례가 있어 '보이면' 에 드는 것으로 적음, 판정 일꾼이 찾으러 다닐 몫은 아니었으니 놓친 비율 셈에서는 빼도 됨. 제안 여섯 줄을 메모리에서 더하면 No boys / None of the boys 꼴 exact, 'All boys like it.' · 'No girls like it.' · 'Some boys like it.' 은 incorrect 그대로.",
+   "고칠 글": "No boys like it.",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=30 .alternatives 에 새 항목(gh1-017 #6 과 같게 + 결정 3 that 꼴): ① 'No boys like it.' ② 'None of the boys like it.' ③ 'None of the boys likes it.' ④ 'No boys like that.' ⑤ 'None of the boys like that.' ⑥ 'None of the boys likes that.' (지금 있는 것은 그대로 · 분할본 없음)",
+   "새 음성 클립": false,
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03596",
+   "결론": "틀림 찾음",
+   "종류": "③",
+   "심각도": "낮음",
+   "확신": "보통",
+   "까닭": "줄 자체('Do your son and daughter have dreams?')는 맞는 영어 · 같은 뜻(gh1-062 #26 '당신의 아들과 딸은 꿈이 있습니까?'). 그런데 이 새 줄이 dreams 꼴을 단수 son and daughter 와만 짝지어, 9/18 전부터 만점인 복수 꼴(sons and daughters · sons and daughter · son and daughters … a dream)의 dreams 판 'Do your sons and daughters have dreams?' 등 셋이 실제 채점 코드로 partial = 70점(모범 · 새 줄 → exact). 판정 일꾼은 '70점은 틀림 아님' 으로 두었으나(기록-grammar1-a.md 규칙 1, 이 문항을 예로 듦) 기록.md 기준 풀이 5(16:2x 고침)는 '막힌 답이 70점이면 낮음' 이고, 이것은 소유자가 70점으로 정한 꼴('그 N' · 꼬리 질문만 틀림 · 기능어 하나 더)이 아님 — 이 조각의 다른 ③ 과 같은 '새 대체 답안의 엇갈림 빠짐', 70점이라 낮음. 제안 세 줄을 메모리에서 더하면 셋 다 exact · 'Do your sons and daughters have no dreams?' 는 incorrect 그대로.",
+   "고칠 글": "Do your sons and daughters have dreams?",
+   "고칠 곳": "content/lessons/grammar1/gh1-063.json — sentences 블록 n=26 .alternatives 에 새 항목: ① 'Do your sons and daughters have dreams?' ② 'Do your sons and daughter have dreams?' ③ 'Do your son and daughters have dreams?' (지금 있는 것은 그대로 · 분할본 없음)",
+   "새 음성 클립": false,
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03508",
+   "결론": "맞음 동의",
+   "까닭": "gh1-056 #34 '누가 그것을 원하니?' ↔ 'Who wants it?' · 새 'Who wants that?'(결정 3) — 맞는 영어 · 같은 뜻. 분할본 gh1-057-2 같은 글. 바로 앞 #33 'Who likes that?' 과 같은 방식.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03540",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #29 '각 학생이 자기 자신의 생각을 갖고 있다. (idea)' ↔ 모범 'Each student has his own idea.' · 새 'Each student has his or her own idea.' — 맞는 영어 · 같은 뜻. each/every × his/their/his or her 여섯 꼴이 다 있어 엇갈림 빠짐 없음(채점 exact). 모범이 his 인 것은 6-1389 추천대로 — 틀림 아님.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03556",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #17 '그 병원은 많은 피를 원하지?' ↔ 모범 'The hospital wants much blood, doesn't it?' · 새 'The hospital wants lots of blood, doesn't it?' — 셀 수 없는 명사에 lots of 맞음, 꼬리 doesn't it 맞음, 같은 뜻.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C02990",
+   "결론": "맞음 동의",
+   "까닭": "gh1-008 #39 '그때는 7시였다.' ↔ 모범 'It was seven o'clock.' · 새 'It was 7 o'clock.' — 모범의 숫자 꼴이라 맞음(앞 문항 #38 'What time was it then?' 의 답이라 then 없이도 같은 뜻 · then 꼴 둘도 대체에 있음). 분할본 gh1-009-2 같은 글. (한 글자 숫자 채점 관찰은 메모 — 채점 코드 일이고 줄 자체는 맞음.)",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03589",
+   "결론": "맞음 동의",
+   "까닭": "gh1-060 #31 '그들 모두가 그것을 좋아하지는 않는다.' ↔ 모범 'Not all of them like it.' · 'All of them don't like it.'(결정 5) · 새 'Not all of them like that.' · 'All of them don't like that.'(결정 3) — 맞는 영어 · 같은 뜻, it/that × 두 꼴 넷이 다 있음. 참고만: 'They don't all like it.' 은 0점이나 과정 어디에도 이 꼴 정답이 없는 새 꼴이라 세지 않음.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03595",
+   "결론": "맞음 동의",
+   "까닭": "gh1-062 #17 '너의 할머니는 예쁘셨니?' ↔ 모범 'Was your grandmother beautiful?' · 새 'Was your grandmother pretty?' — '예쁘다' 에 더 곧은 번역, 문법 맞음.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03509",
+   "결론": "맞음 동의",
+   "까닭": "gh1-056 #35 결정 19 새 문항: 한국어 '그들은 어디에 살았니?'(◆C03497 · C03499) ↔ 영어 'Where did they live?' — 같은 뜻 · 맞는 영어, 번호 35 · 차례 35:35 짝 맞음, 분할본 gh1-056-2 ↔ gh1-057-2 도 같은 글. 겹치던 #24 'Who were they?' 의 두 번째 자리를 바꿈(결정대로) · 세트 안 #28 · #29(현재 · she/you)와 겹치지 않음. 영어 문항이라 새 클립이 필요한 글(클립이 있는지는 이 확인에서 안 봄 — /api 금지).",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03541",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #29 ↔ 새 'Every student has their own idea.' — 단수 they 맞음 · 같은 뜻 · 여섯 꼴 다 있음(채점 exact).",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03555",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #17 '그 병원은 많은 피를 원하지?' ↔ 새 'The hospital wants a lot of blood, doesn't it?' — 맞는 영어 · 같은 뜻 · 꼬리 맞음.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C02991",
+   "결론": "맞음 동의",
+   "까닭": "gh1-008 #39 '그때는 7시였다.' ↔ 새 'It was seven o'clock then.' — '그때는' 까지 옮긴 가장 곧은 번역, 맞음. 7/seven × then 네 꼴 다 있음. 분할본 gh1-009-2 같은 글.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03594",
+   "결론": "맞음 동의",
+   "까닭": "gh1-062 #12 '너의 어머니는 건강하시니?' ↔ 'Is your mother healthy?' · 새 'Is your mother well?' — well(건강한) 맞음, 같은 쪽 #3 · #6 'well' 과 같은 방식.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03542",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #29 ↔ 새 'Every student has his or her own idea.' — 맞는 영어 · 같은 뜻 · 여섯 꼴 다 있음.",
+   "때": "2026-09-24 16:31"
+  },
+  {
+   "key": "OK:C03554",
+   "결론": "맞음 동의",
+   "까닭": "gh1-058 #16 '그는 많은 물이 필요하지?' ↔ 모범 'He needs much water, doesn't he?' · 새 'He needs lots of water, doesn't he?' — 맞는 영어 · 같은 뜻 · 꼬리 맞음.",
+   "때": "2026-09-24 16:31"
+  }
+ ]
+}

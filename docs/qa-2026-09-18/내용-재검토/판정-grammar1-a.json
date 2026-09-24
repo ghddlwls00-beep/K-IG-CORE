@@ -1,0 +1,3836 @@
+{
+ "조각": "grammar1-a",
+ "줄": [
+  {
+   "id": "C02961",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02962",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02963",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02964",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02965",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02966",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02967",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02968",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02969",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02970",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02971",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02972",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02973",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02974",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02975",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02976",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02977",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02978",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02979",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02980",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02981",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02982",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02983",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02984",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 02강(gh1-008 한국어 ↔ gh1-009 영어) #19 '결혼 전 그녀의 성은 무엇이었니?' — 기준 판(9d6e15d)은 'What was her maiden name?' 하나, 지금은 'What was her last name before she got married?' · 'What was her family name before marriage?' 를 더함(두 줄 자체는 맞는 영어 · 맞는 뜻). 그런데 이 두 꼴의 엇갈린 조합 'What was her last name before marriage?' · 'What was her family name before she got married?' 는 실제 채점 코드(src/lib/grammarGrading.ts 를 이 판 그대로 돌려 봄)로 둘 다 incorrect = 0점 — last ↔ family 는 내용어라 부분 점수도 없음. 한국어 '결혼 전 … 성' 의 곧은 번역이 막힘. 심각도 중간: 6단계 목록의 missing-alternative 관례(맞는 답 0점 = Medium, 예 6-1327 · 6-1338 · 6-1342)와 같게 — 틀린 답을 만점으로 받는 것만 높음(명령서). (참고: 'What was her surname before marriage?' 도 지금 0점.)",
+   "지금": "What was her last name before she got married?",
+   "고칠 글": "What was her last name before marriage?",
+   "고칠 곳": "content/lessons/grammar1/gh1-009.json · gh1-009-1.json — sentences 블록 n=19 .alternatives 에 새 항목 둘: ① 'What was her last name before marriage?' ② 'What was her family name before she got married?' (지금 있는 대체 답안은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C02984",
+    "C02996",
+    "C02985",
+    "C02997"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C02985",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 02강(gh1-008 한국어 ↔ gh1-009 영어) #19 '결혼 전 그녀의 성은 무엇이었니?' — 기준 판(9d6e15d)은 'What was her maiden name?' 하나, 지금은 'What was her last name before she got married?' · 'What was her family name before marriage?' 를 더함(두 줄 자체는 맞는 영어 · 맞는 뜻). 그런데 이 두 꼴의 엇갈린 조합 'What was her last name before marriage?' · 'What was her family name before she got married?' 는 실제 채점 코드(src/lib/grammarGrading.ts 를 이 판 그대로 돌려 봄)로 둘 다 incorrect = 0점 — last ↔ family 는 내용어라 부분 점수도 없음. 한국어 '결혼 전 … 성' 의 곧은 번역이 막힘. 심각도 중간: 6단계 목록의 missing-alternative 관례(맞는 답 0점 = Medium, 예 6-1327 · 6-1338 · 6-1342)와 같게 — 틀린 답을 만점으로 받는 것만 높음(명령서). (참고: 'What was her surname before marriage?' 도 지금 0점.)",
+   "지금": "What was her family name before marriage?",
+   "고칠 글": "What was her last name before marriage?",
+   "고칠 곳": "content/lessons/grammar1/gh1-009.json · gh1-009-1.json — sentences 블록 n=19 .alternatives 에 새 항목 둘: ① 'What was her last name before marriage?' ② 'What was her family name before she got married?' (지금 있는 대체 답안은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C02984",
+    "C02996",
+    "C02985",
+    "C02997"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C02986",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02987",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02988",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02989",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02990",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02991",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02992",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02993",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02994",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02995",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02996",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 02강(gh1-008 한국어 ↔ gh1-009 영어) #19 '결혼 전 그녀의 성은 무엇이었니?' — 기준 판(9d6e15d)은 'What was her maiden name?' 하나, 지금은 'What was her last name before she got married?' · 'What was her family name before marriage?' 를 더함(두 줄 자체는 맞는 영어 · 맞는 뜻). 그런데 이 두 꼴의 엇갈린 조합 'What was her last name before marriage?' · 'What was her family name before she got married?' 는 실제 채점 코드(src/lib/grammarGrading.ts 를 이 판 그대로 돌려 봄)로 둘 다 incorrect = 0점 — last ↔ family 는 내용어라 부분 점수도 없음. 한국어 '결혼 전 … 성' 의 곧은 번역이 막힘. 심각도 중간: 6단계 목록의 missing-alternative 관례(맞는 답 0점 = Medium, 예 6-1327 · 6-1338 · 6-1342)와 같게 — 틀린 답을 만점으로 받는 것만 높음(명령서). (참고: 'What was her surname before marriage?' 도 지금 0점.)",
+   "지금": "What was her last name before she got married?",
+   "고칠 글": "What was her last name before marriage?",
+   "고칠 곳": "content/lessons/grammar1/gh1-009.json · gh1-009-1.json — sentences 블록 n=19 .alternatives 에 새 항목 둘: ① 'What was her last name before marriage?' ② 'What was her family name before she got married?' (지금 있는 대체 답안은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C02984",
+    "C02996",
+    "C02985",
+    "C02997"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C02997",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 02강(gh1-008 한국어 ↔ gh1-009 영어) #19 '결혼 전 그녀의 성은 무엇이었니?' — 기준 판(9d6e15d)은 'What was her maiden name?' 하나, 지금은 'What was her last name before she got married?' · 'What was her family name before marriage?' 를 더함(두 줄 자체는 맞는 영어 · 맞는 뜻). 그런데 이 두 꼴의 엇갈린 조합 'What was her last name before marriage?' · 'What was her family name before she got married?' 는 실제 채점 코드(src/lib/grammarGrading.ts 를 이 판 그대로 돌려 봄)로 둘 다 incorrect = 0점 — last ↔ family 는 내용어라 부분 점수도 없음. 한국어 '결혼 전 … 성' 의 곧은 번역이 막힘. 심각도 중간: 6단계 목록의 missing-alternative 관례(맞는 답 0점 = Medium, 예 6-1327 · 6-1338 · 6-1342)와 같게 — 틀린 답을 만점으로 받는 것만 높음(명령서). (참고: 'What was her surname before marriage?' 도 지금 0점.)",
+   "지금": "What was her family name before marriage?",
+   "고칠 글": "What was her last name before marriage?",
+   "고칠 곳": "content/lessons/grammar1/gh1-009.json · gh1-009-1.json — sentences 블록 n=19 .alternatives 에 새 항목 둘: ① 'What was her last name before marriage?' ② 'What was her family name before she got married?' (지금 있는 대체 답안은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C02984",
+    "C02996",
+    "C02985",
+    "C02997"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C02998",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C02999",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03000",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03001",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03002",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03003",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03004",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03005",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03006",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03007",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03008",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03009",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03010",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03011",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03012",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03013",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03014",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03015",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03016",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03017",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03018",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03019",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03020",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03021",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03022",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03023",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03024",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03025",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03026",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03027",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03028",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03029",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03030",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03031",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03032",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03033",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03034",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03035",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03036",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03037",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03038",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03039",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03040",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03041",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03042",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03043",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03044",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03045",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03046",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03047",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03048",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03049",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03050",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03051",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03052",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03053",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03054",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03055",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03056",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03057",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03058",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03059",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03060",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03061",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03062",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03063",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03064",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03065",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03066",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03067",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03068",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03069",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03070",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C03071",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03072",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03073",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03074",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03075",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03076",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03077",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03078",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03079",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03080",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03081",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03082",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03083",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03084",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03085",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03086",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03087",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03088",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03089",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03090",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03091",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03092",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03093",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03094",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03095",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03096",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03097",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03098",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03099",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03100",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03101",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03102",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03103",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03104",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03105",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03106",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03107",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03108",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03109",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03110",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03111",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03112",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03113",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03114",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03115",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03116",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03117",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03118",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03119",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03120",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03121",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03122",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03123",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03124",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03125",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03126",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03127",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03128",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03129",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03130",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03132",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03133",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03134",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03135",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03136",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03137",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03138",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03139",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03140",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03141",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03142",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03143",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03144",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03145",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03146",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03147",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03148",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03149",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03150",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished it as quickly as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03151",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished it as fast as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03152",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished it as soon as he could.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03153",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as soon as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03154",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as quickly as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03155",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as fast as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03156",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as soon as he could.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03157",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03158",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03159",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03160",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03161",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03162",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03163",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03164",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03165",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03166",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03167",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03168",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03169",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03170",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03171",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03172",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03173",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03174",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03175",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03176",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03177",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03178",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished it as quickly as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03179",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished it as fast as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03180",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished it as soon as he could.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03181",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as soon as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03182",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as quickly as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03183",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as fast as possible.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03184",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 04강(gh1-016 한국어 ↔ gh1-017 영어) #16 '그는 가능한 한 빨리 그것을 끝냈다.' — 기준 판은 'He finished it as soon as possible.' 하나, 지금은 it/that × (as soon/quickly/fast as possible · as soon as he could) 7개를 더함(일곱 줄 모두 맞는 영어 · 맞는 뜻). 그런데 'as … as he could' 꼴을 soon 과만 짝지어, '가능한 한 빨리' 의 흔한 번역 'He finished it as quickly as he could.' · 'He finished it as fast as he could.' (that 꼴도)가 실제 채점 코드로 incorrect = 0점(대조: 'He finished that as soon as he could.' → exact). 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게. 01.md 첫 판정은 '맞음' 이었으나 06.md 에서 같은 꼴(gh1-061 #9)을 찾고 채점 코드로 확인해 고쳐 적음.",
+   "지금": "He finished that as soon as he could.",
+   "고칠 글": "He finished it as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-017.json · gh1-017-1.json — sentences 블록 n=16 .alternatives 에 새 항목 넷: ① 'He finished it as quickly as he could.' ② 'He finished it as fast as he could.' ③ 'He finished that as quickly as he could.' ④ 'He finished that as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03150",
+    "C03151",
+    "C03152",
+    "C03153",
+    "C03154",
+    "C03155",
+    "C03156",
+    "C03178",
+    "C03179",
+    "C03180",
+    "C03181",
+    "C03182",
+    "C03183",
+    "C03184"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03185",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03186",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03187",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03188",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03189",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03190",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03191",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03192",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03193",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03194",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03195",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03196",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03197",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03198",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03199",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:55"
+  },
+  {
+   "id": "C03202",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03203",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03204",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03205",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03206",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03207",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03208",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03209",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03210",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03211",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03212",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03213",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03214",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03215",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03216",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03217",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03218",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03219",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03220",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03221",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03222",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03223",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03224",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03225",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03226",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03227",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03228",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03229",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03230",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03231",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03232",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03233",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03234",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03235",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03236",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03237",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03238",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03239",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03240",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03241",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03242",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03243",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03244",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03245",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03246",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03247",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03248",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03249",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03250",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03251",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03252",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03253",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03254",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03255",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03256",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03257",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03261",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03262",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03263",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03264",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03265",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03266",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03267",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03268",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03269",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03270",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03271",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03272",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03273",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03274",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03275",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03276",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03277",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03278",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03279",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03280",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03281",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03282",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03283",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03284",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03285",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03286",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03287",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03288",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03289",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03290",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03291",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03292",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03293",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:56"
+  },
+  {
+   "id": "C03294",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03295",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03296",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03297",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03298",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03299",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03300",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03301",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03302",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03303",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03304",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03305",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03306",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03307",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03308",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03309",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03310",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03311",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03312",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03313",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03314",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03315",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03316",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03317",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03318",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03319",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03320",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03321",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03322",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03323",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03324",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03325",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03326",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03327",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03328",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03329",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03330",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03331",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03332",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03333",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03334",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03335",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03336",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03337",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03338",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03339",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03340",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03341",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03342",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03343",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03344",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03345",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03346",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03347",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03348",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03349",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03350",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03351",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03352",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03353",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03354",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03355",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03356",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03357",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03358",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03359",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03360",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03361",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03362",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03363",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03364",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03365",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03366",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03367",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03368",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03369",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03370",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03371",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03372",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03373",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03374",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03378",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03379",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03380",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03381",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03382",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03383",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03384",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03385",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03386",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03387",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03388",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03389",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03390",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03391",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03392",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03393",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03394",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03395",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03396",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03397",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03398",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03399",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03400",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03401",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03402",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03403",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03404",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03408",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03409",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03410",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03411",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03412",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03413",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03414",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03415",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:57"
+  },
+  {
+   "id": "C03416",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03417",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03418",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03419",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03420",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03421",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 한국어 ↔ gh1-051 영어) #38 '지금 여덟시냐?' — 기준 판은 대체 답안 없음, 지금은 'Is it eight o'clock now?' · 'Is it 8 o'clock?' 를 더함(두 줄 자체는 맞음). 한국어에 '지금' 이 있어 가장 곧은 번역인 숫자 + now 꼴 'Is it 8 o'clock now?' 가 빠져 실제 채점 코드로 incorrect = 0점(숫자 8 ↔ eight 는 비슷한 낱말로 안 보고, now 는 기능어가 아니라 길이 한도에서 걸림). 같은 고침에서 gh1-009 #39 는 'It was 7 o'clock then.' 까지 네 꼴을 다 넣어 exact — 이 문항만 조합이 빠짐. 심각도 중간 — 6단계 목록 missing-alternative 관례(6-1327 '7 o'clock' 0점 = Medium)와 같게.",
+   "지금": "Is it eight o'clock now?",
+   "고칠 글": "Is it 8 o'clock now?",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=38 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03421",
+    "C03422",
+    "C03428",
+    "C03429"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03422",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 한국어 ↔ gh1-051 영어) #38 '지금 여덟시냐?' — 기준 판은 대체 답안 없음, 지금은 'Is it eight o'clock now?' · 'Is it 8 o'clock?' 를 더함(두 줄 자체는 맞음). 한국어에 '지금' 이 있어 가장 곧은 번역인 숫자 + now 꼴 'Is it 8 o'clock now?' 가 빠져 실제 채점 코드로 incorrect = 0점(숫자 8 ↔ eight 는 비슷한 낱말로 안 보고, now 는 기능어가 아니라 길이 한도에서 걸림). 같은 고침에서 gh1-009 #39 는 'It was 7 o'clock then.' 까지 네 꼴을 다 넣어 exact — 이 문항만 조합이 빠짐. 심각도 중간 — 6단계 목록 missing-alternative 관례(6-1327 '7 o'clock' 0점 = Medium)와 같게.",
+   "지금": "Is it 8 o'clock?",
+   "고칠 글": "Is it 8 o'clock now?",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=38 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03421",
+    "C03422",
+    "C03428",
+    "C03429"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03423",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 ↔ gh1-051) #39 '지금은 아홉시다.' — 기준 판은 대체 답안 없음, 지금은 'It is nine o'clock now.' · 'It is 9 o'clock.' 를 더함(두 줄 자체는 맞음). 숫자 + now 꼴 'It is 9 o'clock now.' (와 'It's 9 o'clock now.')가 실제 채점 코드로 incorrect = 0점. #38 과 같은 까닭 · 같은 심각도(중간).",
+   "지금": "It is nine o'clock now.",
+   "고칠 글": "It is 9 o'clock now.",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=39 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03423",
+    "C03424",
+    "C03430",
+    "C03431"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03424",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 ↔ gh1-051) #39 '지금은 아홉시다.' — 기준 판은 대체 답안 없음, 지금은 'It is nine o'clock now.' · 'It is 9 o'clock.' 를 더함(두 줄 자체는 맞음). 숫자 + now 꼴 'It is 9 o'clock now.' (와 'It's 9 o'clock now.')가 실제 채점 코드로 incorrect = 0점. #38 과 같은 까닭 · 같은 심각도(중간).",
+   "지금": "It is 9 o'clock.",
+   "고칠 글": "It is 9 o'clock now.",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=39 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03423",
+    "C03424",
+    "C03430",
+    "C03431"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03425",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03426",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03427",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03428",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 한국어 ↔ gh1-051 영어) #38 '지금 여덟시냐?' — 기준 판은 대체 답안 없음, 지금은 'Is it eight o'clock now?' · 'Is it 8 o'clock?' 를 더함(두 줄 자체는 맞음). 한국어에 '지금' 이 있어 가장 곧은 번역인 숫자 + now 꼴 'Is it 8 o'clock now?' 가 빠져 실제 채점 코드로 incorrect = 0점(숫자 8 ↔ eight 는 비슷한 낱말로 안 보고, now 는 기능어가 아니라 길이 한도에서 걸림). 같은 고침에서 gh1-009 #39 는 'It was 7 o'clock then.' 까지 네 꼴을 다 넣어 exact — 이 문항만 조합이 빠짐. 심각도 중간 — 6단계 목록 missing-alternative 관례(6-1327 '7 o'clock' 0점 = Medium)와 같게.",
+   "지금": "Is it eight o'clock now?",
+   "고칠 글": "Is it 8 o'clock now?",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=38 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03421",
+    "C03422",
+    "C03428",
+    "C03429"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03429",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 한국어 ↔ gh1-051 영어) #38 '지금 여덟시냐?' — 기준 판은 대체 답안 없음, 지금은 'Is it eight o'clock now?' · 'Is it 8 o'clock?' 를 더함(두 줄 자체는 맞음). 한국어에 '지금' 이 있어 가장 곧은 번역인 숫자 + now 꼴 'Is it 8 o'clock now?' 가 빠져 실제 채점 코드로 incorrect = 0점(숫자 8 ↔ eight 는 비슷한 낱말로 안 보고, now 는 기능어가 아니라 길이 한도에서 걸림). 같은 고침에서 gh1-009 #39 는 'It was 7 o'clock then.' 까지 네 꼴을 다 넣어 exact — 이 문항만 조합이 빠짐. 심각도 중간 — 6단계 목록 missing-alternative 관례(6-1327 '7 o'clock' 0점 = Medium)와 같게.",
+   "지금": "Is it 8 o'clock?",
+   "고칠 글": "Is it 8 o'clock now?",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=38 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03421",
+    "C03422",
+    "C03428",
+    "C03429"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03430",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 ↔ gh1-051) #39 '지금은 아홉시다.' — 기준 판은 대체 답안 없음, 지금은 'It is nine o'clock now.' · 'It is 9 o'clock.' 를 더함(두 줄 자체는 맞음). 숫자 + now 꼴 'It is 9 o'clock now.' (와 'It's 9 o'clock now.')가 실제 채점 코드로 incorrect = 0점. #38 과 같은 까닭 · 같은 심각도(중간).",
+   "지금": "It is nine o'clock now.",
+   "고칠 글": "It is 9 o'clock now.",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=39 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03423",
+    "C03424",
+    "C03430",
+    "C03431"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03431",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 25강(gh1-050 ↔ gh1-051) #39 '지금은 아홉시다.' — 기준 판은 대체 답안 없음, 지금은 'It is nine o'clock now.' · 'It is 9 o'clock.' 를 더함(두 줄 자체는 맞음). 숫자 + now 꼴 'It is 9 o'clock now.' (와 'It's 9 o'clock now.')가 실제 채점 코드로 incorrect = 0점. #38 과 같은 까닭 · 같은 심각도(중간).",
+   "지금": "It is 9 o'clock.",
+   "고칠 글": "It is 9 o'clock now.",
+   "고칠 곳": "content/lessons/grammar1/gh1-051.json · gh1-051-2.json — sentences 블록 n=39 .alternatives 에 새 항목으로 더함(지금 있는 대체 답안 둘은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03423",
+    "C03424",
+    "C03430",
+    "C03431"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03432",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03433",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03434",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03435",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03436",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03437",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03438",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03439",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03440",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03441",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03442",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03443",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03444",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03445",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03446",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03447",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03448",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03449",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03450",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03451",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03452",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03453",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03454",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03455",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03456",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03457",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03458",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03459",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03460",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03461",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03462",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03463",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03464",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03465",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03466",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03467",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03468",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03469",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03470",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03471",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03472",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03473",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03474",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03475",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03476",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03477",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03478",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03479",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03480",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03481",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03482",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03483",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03484",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03485",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03486",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03487",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03488",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03489",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03490",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03491",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03492",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03493",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03494",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03495",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03496",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03497",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03498",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03499",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03500",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03501",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03502",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03503",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03504",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03505",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03506",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03507",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03508",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03509",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03510",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03511",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03512",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03513",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03514",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03515",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03516",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03517",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03518",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03519",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:59"
+  },
+  {
+   "id": "C03521",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03522",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03523",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03524",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03525",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03526",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03527",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03528",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03529",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03530",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03531",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03532",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03533",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03534",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03535",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03536",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03537",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03538",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03539",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03540",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03541",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03542",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03543",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03544",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03545",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03546",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03548",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03549",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03550",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03551",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03552",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03553",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03554",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03555",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03556",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03557",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03558",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03559",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03560",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03561",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03562",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03563",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03564",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03565",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03566",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03567",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03568",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03569",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03570",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03571",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03572",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03573",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03574",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03575",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 한국어 ↔ gh1-061 영어) #2 '그는 얼마나 빨리 그곳에 가나?' — 기준 판은 'How fast does he go there?' 하나, 지금은 'How fast does he get there?' · 'How quickly does he go there?' 를 더함(두 줄 자체는 맞음). 엇갈린 조합 'How quickly does he get there?' 가 실제 채점 코드로 incorrect = 0점(quickly ↔ fast · get ↔ go 는 내용어라 부분 점수 없음; 대조 'How fast does he get there?' → exact). 흔한 번역. 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게.",
+   "지금": "How fast does he get there?",
+   "고칠 글": "How quickly does he get there?",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=2 .alternatives 에 새 항목으로 더함(지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03575",
+    "C03576"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03576",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 한국어 ↔ gh1-061 영어) #2 '그는 얼마나 빨리 그곳에 가나?' — 기준 판은 'How fast does he go there?' 하나, 지금은 'How fast does he get there?' · 'How quickly does he go there?' 를 더함(두 줄 자체는 맞음). 엇갈린 조합 'How quickly does he get there?' 가 실제 채점 코드로 incorrect = 0점(quickly ↔ fast · get ↔ go 는 내용어라 부분 점수 없음; 대조 'How fast does he get there?' → exact). 흔한 번역. 심각도 중간 — 6단계 목록 missing-alternative 관례와 같게.",
+   "지금": "How quickly does he go there?",
+   "고칠 글": "How quickly does he get there?",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=2 .alternatives 에 새 항목으로 더함(지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03575",
+    "C03576"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03577",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #3 '그 소녀는 얼마나 빨리 여기에 오나?' — 기준 판은 'How fast does the girl come here?' 하나, 지금은 'How fast does the girl get here?' · 'How quickly does the girl come here?' · 'How soon does the girl come here?' 를 더함(세 줄 자체는 맞음). get here 를 fast 와만 짝지어 'How quickly does the girl get here?' · 'How soon does the girl get here?' 가 실제 채점 코드로 둘 다 incorrect = 0점. 심각도 중간.",
+   "지금": "How fast does the girl get here?",
+   "고칠 글": "How quickly does the girl get here?",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=3 .alternatives 에 새 항목 둘: ① 'How quickly does the girl get here?' ② 'How soon does the girl get here?' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03577",
+    "C03578",
+    "C03579"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03578",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #3 '그 소녀는 얼마나 빨리 여기에 오나?' — 기준 판은 'How fast does the girl come here?' 하나, 지금은 'How fast does the girl get here?' · 'How quickly does the girl come here?' · 'How soon does the girl come here?' 를 더함(세 줄 자체는 맞음). get here 를 fast 와만 짝지어 'How quickly does the girl get here?' · 'How soon does the girl get here?' 가 실제 채점 코드로 둘 다 incorrect = 0점. 심각도 중간.",
+   "지금": "How quickly does the girl come here?",
+   "고칠 글": "How quickly does the girl get here?",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=3 .alternatives 에 새 항목 둘: ① 'How quickly does the girl get here?' ② 'How soon does the girl get here?' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03577",
+    "C03578",
+    "C03579"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03579",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #3 '그 소녀는 얼마나 빨리 여기에 오나?' — 기준 판은 'How fast does the girl come here?' 하나, 지금은 'How fast does the girl get here?' · 'How quickly does the girl come here?' · 'How soon does the girl come here?' 를 더함(세 줄 자체는 맞음). get here 를 fast 와만 짝지어 'How quickly does the girl get here?' · 'How soon does the girl get here?' 가 실제 채점 코드로 둘 다 incorrect = 0점. 심각도 중간.",
+   "지금": "How soon does the girl come here?",
+   "고칠 글": "How quickly does the girl get here?",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=3 .alternatives 에 새 항목 둘: ① 'How quickly does the girl get here?' ② 'How soon does the girl get here?' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03577",
+    "C03578",
+    "C03579"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03580",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #9 '그는 가능한 한 빨리 여기에 왔다.' — 기준 판은 'He came here as soon as possible.' 하나, 지금은 'as quickly as possible' · 'as fast as possible' · 'as soon as he could' 를 더함(세 줄 자체는 맞음). 'as … as he could' 를 soon 과만 짝지어 '가능한 한 빨리' 의 흔한 번역 'He came here as quickly as he could.' · 'He came here as fast as he could.' 가 실제 채점 코드로 둘 다 incorrect = 0점. 02.md gh1-017 #16 과 같은 꼴(같이 고칠 것). 심각도 중간.",
+   "지금": "He came here as quickly as possible.",
+   "고칠 글": "He came here as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=9 .alternatives 에 새 항목 둘: ① 'He came here as quickly as he could.' ② 'He came here as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03580",
+    "C03581",
+    "C03582"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03581",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #9 '그는 가능한 한 빨리 여기에 왔다.' — 기준 판은 'He came here as soon as possible.' 하나, 지금은 'as quickly as possible' · 'as fast as possible' · 'as soon as he could' 를 더함(세 줄 자체는 맞음). 'as … as he could' 를 soon 과만 짝지어 '가능한 한 빨리' 의 흔한 번역 'He came here as quickly as he could.' · 'He came here as fast as he could.' 가 실제 채점 코드로 둘 다 incorrect = 0점. 02.md gh1-017 #16 과 같은 꼴(같이 고칠 것). 심각도 중간.",
+   "지금": "He came here as fast as possible.",
+   "고칠 글": "He came here as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=9 .alternatives 에 새 항목 둘: ① 'He came here as quickly as he could.' ② 'He came here as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03580",
+    "C03581",
+    "C03582"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03582",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
+   "까닭": "GRAMMAR I 30강(gh1-060 ↔ gh1-061) #9 '그는 가능한 한 빨리 여기에 왔다.' — 기준 판은 'He came here as soon as possible.' 하나, 지금은 'as quickly as possible' · 'as fast as possible' · 'as soon as he could' 를 더함(세 줄 자체는 맞음). 'as … as he could' 를 soon 과만 짝지어 '가능한 한 빨리' 의 흔한 번역 'He came here as quickly as he could.' · 'He came here as fast as he could.' 가 실제 채점 코드로 둘 다 incorrect = 0점. 02.md gh1-017 #16 과 같은 꼴(같이 고칠 것). 심각도 중간.",
+   "지금": "He came here as soon as he could.",
+   "고칠 글": "He came here as quickly as he could.",
+   "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences 블록 n=9 .alternatives 에 새 항목 둘: ① 'He came here as quickly as he could.' ② 'He came here as fast as he could.' (지금 있는 것은 그대로)",
+   "새 음성 클립": false,
+   "묶음": [
+    "C03580",
+    "C03581",
+    "C03582"
+   ],
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03583",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03584",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03585",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03586",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03587",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03588",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03589",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03590",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03591",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03592",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03593",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03594",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03595",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C03596",
+   "판정": "맞음",
+   "배치": "2026-09-24 16:04"
+  },
+  {
+   "id": "C04741",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C04742",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C04743",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C04744",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "id": "C04745",
+   "판정": "맞음",
+   "배치": "2026-09-24 15:53"
+  }
+ ],
+ "문맥": [
+  {
+   "파일": "content/lessons/grammar1/gh1-009.json · gh1-009-1.json",
+   "칸": "sentences 블록 n=3 .text (GRAMMAR I 02강 gh1-008 #3 영어 모범 답안)",
+   "지금": "You were happy",
+   "종류": "①",
+   "심각도": "낮음",
+   "확신": "높음",
+   "까닭": "바뀌지 않은 옆 글. 같은 강의의 영어 42문항 중 이것만 끝 마침표가 없음(한 강의 안 표기 흔들림). 채점은 문장부호를 떼고 비교해 점수에는 영향 없음(grammarGrading normalizeLiteral) — 화면 모범 답안에만 보임.",
+   "고칠 글": "You were happy.",
+   "새 음성 클립": true,
+   "배치": "2026-09-24 15:53"
+  },
+  {
+   "파일": "content/lessons/grammar1/gh1-020.json",
+   "칸": "blocks[6] · blocks[8] · blocks[10] (instruction — 문법 확인 문제 (3)(4)(5), gh1-020/021 instruction 은 화면에 닿음)",
+   "지금": "(3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야하는 be동사는? / (4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야하는 be동사는? / (5)주어가 그 이외의 것일 때 써야하는 be 동사는? (we, you, they, those 등)",
+   "종류": "②",
+   "심각도": "낮음",
+   "확신": "높음",
+   "까닭": "바뀌지 않은 옆 글. '-어야 하다' 는 띄어 씀(써야 하는) — 세 곳 모두 붙여 씀. 또 같은 블록 안에서 (3)(4) 'be동사' · (5) 'be 동사' 로 표기가 흔들림 → 많은 쪽 'be동사' 로. (참고: (6) 뒤에만 '답:' 줄이 없음 — 다른 일곱 문항은 모두 '답:' 이 뒤따름.)",
+   "고칠 글": "blocks[6]: (3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야 하는 be동사는? / blocks[8]: (4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야 하는 be동사는? / blocks[10]: (5)주어가 그 이외의 것일 때 써야 하는 be동사는? (we, you, they, those 등)",
+   "새 음성 클립": false,
+   "배치": "2026-09-24 15:55"
+  }
+ ],
+ "표본": [
+  {
+   "쪽": "/grammar1/gh1-015-1",
+   "읽은 글": 44,
+   "틀림": [],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  },
+  {
+   "쪽": "/grammar1/gh1-017-2",
+   "읽은 글": 32,
+   "틀림": [],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  },
+  {
+   "쪽": "/grammar1/gh1-040",
+   "읽은 글": 50,
+   "틀림": [],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  },
+  {
+   "쪽": "/grammar1/gh1-046",
+   "읽은 글": 74,
+   "틀림": [],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  },
+  {
+   "쪽": "/grammar1/gh1-050-1",
+   "읽은 글": 42,
+   "틀림": [],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  },
+  {
+   "쪽": "/grammar1/gh1-056",
+   "읽은 글": 70,
+   "틀림": [],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  },
+  {
+   "쪽": "/grammar1/gh1-059-2",
+   "읽은 글": 36,
+   "틀림": [
+    {
+     "T": "T01",
+     "바뀐 글": false,
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "GRAMMAR I 29강(gh1-058 한국어 문제) #20 — 이 강의 한국어 문제 37개 가운데 이것만 끝 문장부호가 없고 괄호가 바로 붙음(같은 쪽 T19 '…갖고 있다. (idea)' 와 다름). 한 강의 안 표기 흔들림. 영어 · 채점 · 소리에는 영향 없음(GRAMMAR 한국어는 소리 안 냄).",
+     "지금": "나도 그래(나도 원해)",
+     "고칠 글": "나도 그래. (나도 원해)",
+     "고칠 곳": "content/lessons/grammar1/gh1-058.json · gh1-058-2.json — sentences 블록 n=20 .text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "배치": "2026-09-24 16:06"
+  }
+ ]
+}
