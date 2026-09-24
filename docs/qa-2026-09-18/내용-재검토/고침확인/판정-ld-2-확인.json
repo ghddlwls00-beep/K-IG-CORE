@@ -1,0 +1,367 @@
+{
+ "조각": "ld-2",
+ "뽑은때": "2026-09-25 04:44",
+ "대상": [
+  {
+   "key": "F:G05164",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G05164"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d211.json",
+   "전": "Raymond L Ditmars, Bronx, venom, snakebites.",
+   "뒤": "serves. purposes. sponsor. New York. Zoo. Raymond L Ditmars, Bronx, venom, snakebites.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d211 힌트 줄(content/lessons/ld/d211.json 힌트 블록 text). 되살린 첫 줄(serves · purposes · sponsor · New York · Zoo)은 대본 글자와 같음. 그러나 같은 줄의 이름 칩 [Raymond L Ditmars] 는 대본 n4 'Dr. Raymond L. Ditmars' 와 원본 첫 줄 'Dr.Raymond L. Ditmars' 에 있는 머리글자 마침표가 빠진 꼴(문장에 없는 꼴) — 기준 판부터 있던 꼴을 첫 줄 되살리기가 '지금 칩과 겹침' 으로 그대로 둠. 고친 판의 칩 규칙은 한 글자 머리글자(L.) 뒤 '. ' 에서 나누지 않으므로 마침표를 넣어도 한 칩 [Raymond L. Ditmars] 로 n4 에 뜸(규칙대로 셈). 받아쓰기 채점은 문장부호를 보지 않아 점수 영향 없음 → 확신 보통. 참고: [Zoo] 가 n1~n3 의 소문자 zoo 에 뜨는 것은 대소문자 무시 일치(앱 한계 — d201 Lady · Tiger 와 같게 봄).",
+    "고칠 글": "serves. purposes. sponsor. New York. Zoo. Raymond L. Ditmars, Bronx, venom, snakebites."
+   }
+  },
+  {
+   "key": "F:G05201",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G05201"
+   ],
+   "읽을거리": "09.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d236.json",
+   "전": "covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi power outlets",
+   "뒤": "3,000 miles. New York. Francisco. pioneer. astonished. crude. covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi. power outlets",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d236 힌트 줄(content/lessons/ld/d236.json 힌트 블록 text). 되살린 첫 줄의 도시 이름이 [Francisco] 로 잘려 n1 'from New York to San Francisco' 에 이름 앞부분 'San' 이 없는 칩이 뜸(원본 첫 줄은 'San Francisco'). 되살리기 도구가 'San' 이 n5 'dining cars and' 의 글자(carsand)에 걸려 번진다고 보고 뒤 조각만 남긴 것(ld-restore-first-line 번짐 줄이기 'San Francisco → Francisco') — 다른 조각 이름(d230 General Sherman · Tree)은 두 조각이 다 남았지만 여기는 이름 일부가 없어짐. 내용 재검토의 'Mrs' 'Watson' 처럼 이름은 한 칩이 맞는 꼴. 고치면 n5 에도 [San Francisco] 가 글자 일치로 뜨는데 이것은 앱 한계(내용 재검토 기준) — 둘 사이 고르는 일이 걸려 확신 보통. 나머지(3,000 miles · New York · pioneer · astonished · crude · Wi-Fi · power outlets)는 대본 꼴 그대로.",
+    "고칠 글": "3,000 miles. New York. San Francisco. pioneer. astonished. crude. covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi. power outlets"
+   }
+  },
+  {
+   "key": "F:G05216",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G05216"
+   ],
+   "읽을거리": "10.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d245.json",
+   "전": "Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+   "뒤": "Halloween. stems from the Christian feast. Saints. refers to. supposedly came. Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d245 힌트 줄(content/lessons/ld/d245.json 힌트 블록 text). 되살린 첫 줄의 축일 이름 'All Saints' 가 [Saints] 로 잘려 n1 · n2 · n3 에 이름 앞부분 'All' 이 없는 칩이 뜸(d236 [Francisco] 와 같은 종류 — 되살리기 도구가 'All' 이 n5 all-night · n6 Halloween 글자에 걸려 번진다고 보고 뒤 조각만 남김, 'All Saints' Day' 는 통째로 뺌). 이름은 한 칩이 맞는 꼴(내용 재검토 'Mrs. Watson' 한 칩). 고치면 [All Saints] 가 n5 · n6 에도 글자 일치로 뜨는데 이것은 앱 한계(내용 재검토 기준) — 둘 사이 고르는 일이 걸려 확신 보통. 나머지 되살린 칩(Halloween · stems from the Christian feast · refers to · supposedly came)은 대본 꼴 그대로.",
+    "고칠 글": "Halloween. stems from the Christian feast. All Saints. refers to. supposedly came. Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes."
+   }
+  },
+  {
+   "key": "F:G05237",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G05237"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d260.json",
+   "전": "engaged in furious snowball fights, snowball. local tomboy are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+   "뒤": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d260 힌트 줄(content/lessons/ld/d260.json 힌트 블록 text). 되살린 첫 줄(world over take a great delight in · get out the sleds · sharpen the ice skates · vie with · snowman)은 대본 꼴 그대로. 그러나 같은 줄에 기준 판부터 남은 [local tomboy are liable to come out on the worse end] 는 두 항목(if 절 끝의 'the local tomboy' 와 주절 'are liable to come out on the worse end')이 대본의 쉼표 경계를 건너 한 칩 — 내용 재검토가 d261 [tucked away bite tang] 을 같은 까닭(한 문장 안의 붙음, 확신 보통)으로 적었고 이번에 나눴음. 나누어도 두 칩 다 n4 에만 걸림(규칙대로 셈).",
+    "고칠 글": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy. are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly."
+   }
+  },
+  {
+   "key": "F:G05238",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G05238"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d261.json",
+   "전": "enthusiast. comparatively warm, North Pole. rugged individuals, tucked away bite tang. crisp",
+   "뒤": "head for sunny Florida. California. onset. Valley. host of. entertainments. winter. sports. enthusiast. comparatively warm, North Pole. rugged individuals, tucked away. bite. tang. crisp",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d261 힌트 줄(content/lessons/ld/d261.json 힌트 블록 text). 되살린 첫 줄의 리조트 이름 'Sun Valley' 가 [Valley] 로 잘려 n3 · n5 에 이름 앞부분 'Sun' 이 없는 칩이 뜸(d236 [Francisco] · d245 [Saints] 와 같은 종류 — 되살리기 도구가 'Sun' 이 n1 'sunny' 글자에 걸려 번진다고 보고 뒤 조각만 남김). 이름은 한 칩이 맞는 꼴(내용 재검토 'Mrs. Watson' 한 칩). 고치면 [Sun Valley] 가 n1 에도 글자 일치로 뜨는데 이것은 앱 한계(내용 재검토 기준) — 둘 사이 고르는 일이 걸려 확신 보통. 나머지 되살린 칩(head for sunny Florida · California · onset · host of · entertainments · winter · sports)과 나눈 칩(tucked away · bite · tang — 내용 재검토 고칠 글대로)은 대본 꼴 그대로.",
+    "고칠 글": "head for sunny Florida. California. onset. Sun Valley. host of. entertainments. winter. sports. enthusiast. comparatively warm, North Pole. rugged individuals, tucked away. bite. tang. crisp"
+   }
+  },
+  {
+   "key": "F:G05239",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G05239"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d262.json",
+   "전": "drastic. recreation. brought up. as a matter of course.",
+   "뒤": "whole. social. calendar undergoes a drastic. abandoned. indoors. outdoor recreation. take. drastic. recreation. brought up. as a matter of course.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d262 힌트 줄(content/lessons/ld/d262.json 힌트 블록 text). 되살린 첫 줄의 항목이 기준 판 칩과 겹쳐 같은 행에 같은 낱말이 두 번 뜸(겹친 낱말 — 되살리기 도구는 똑같은 항목만 빼고 겹치는 구절은 거르지 않음): n1 [calendar undergoes a drastic] + [drastic], n3 [outdoor recreation] + [recreation]. 게다가 [calendar undergoes a drastic] 은 대본 'undergoes a drastic change' 의 명사 앞에서 잘린 조각(a drastic 로 끝남). 고칠 글은 되살린 조각을 [calendar undergoes] 로 줄이고 기준 판 'recreation' 을 빼 겹침을 없앤 것 — 칩(규칙대로 셈): n1 [whole] [social] [calendar undergoes] [drastic] · n2 [social] [abandoned] [indoors] · n3 [outdoor recreation] · n5 [take] [brought up] [as a matter of course]. 점수 영향은 없어 확신 보통.",
+    "고칠 글": "whole. social. calendar undergoes. abandoned. indoors. outdoor recreation. take. drastic. brought up. as a matter of course."
+   }
+  },
+  {
+   "key": "OK:G04848",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".d200[n=4].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "벤자민 프랭클린은 모든 것에 대하여 호기심이 많았다.",
+   "뒤": "벤저민 프랭클린은 모든 것에 대하여 호기심이 많았다."
+  },
+  {
+   "key": "OK:G04856",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".d206[n=4].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "마침내 그것은 교정 호수 중의 하나의 가운데에서 둥둥 떠다니는 채로 남겨진 노젓는 배에 서있는 것이 발견되었다.",
+   "뒤": "마침내 그것은 교정 호수 중의 하나의 가운데에서 둥둥 떠다니는 채로 남겨진 노 젓는 배에 서있는 것이 발견되었다."
+  },
+  {
+   "key": "OK:G04864",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".d212[n=8].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "그는 아마도 자기가 이 세상에서 토끼에 손가락이 물려 잘려나간 유일한 사람이라고 말했다.",
+   "뒤": "그는 아마도 자기가 이 세상에서 토끼에게 손가락이 물려 잘려 나간 유일한 사람이라고 말했다."
+  },
+  {
+   "key": "OK:G04836",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".d194[n=3].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "수톤의 천막이 펼쳐지고 남자들이 소리지르며 당기고 서커스 코끼리들이 거대한 천막 기둥을 제위치에 세우는 것을 돕는다.",
+   "뒤": "수 톤의 천막이 펼쳐지고 남자들이 소리 지르며 당기고 서커스 코끼리들이 거대한 천막 기둥을 제 위치에 세우는 것을 돕는다."
+  },
+  {
+   "key": "OK:G04849",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".d200[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "그의 호기심은 그가 번개가 전기라는 것을 증명하고 우리의 일상 생활의 안락함에 기여해온 많은 것들을 발명하도록 이끌었다.",
+   "뒤": "그의 호기심은 그가 번개가 전기라는 것을 증명하고 우리의 일상생활의 안락함에 기여해온 많은 것들을 발명하도록 이끌었다."
+  },
+  {
+   "key": "OK:G04855",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".d206[n=2].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "몇 년 전에 어떤 대학의 설립자의 동상이 교정 한 복판의 명예의 자리로부터 사라졌다.",
+   "뒤": "몇 년 전에 어떤 대학의 설립자의 동상이 교정 한복판의 명예의 자리로부터 사라졌다."
+  },
+  {
+   "key": "OK:G04865",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".d213[n=3].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "동물원 관리들은 사람들이 표지를 읽지 못하는 것 같이 보인다고 자주 불평한다.",
+   "뒤": "동물원 관리들은 사람들이 표지를 읽지 못하는 것같이 보인다고 자주 불평한다."
+  },
+  {
+   "key": "OK:G04879",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d220[n=8].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "노련한 여행객은 급하게 계획된 여행은 휴식이 되고 즐겁기보다는 피곤하고 골치아프게 끝날 때가 더 많다는 것을 안다.",
+   "뒤": "노련한 여행객은 급하게 계획된 여행은 휴식이 되고 즐겁기보다는 피곤하고 골치 아프게 끝날 때가 더 많다는 것을 안다."
+  },
+  {
+   "key": "OK:G04831",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "05.md",
+   "칸": ".d192[n=8].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "원주민들의 놀라운 추적 능력은 이 이야기에 의하여 나타내진다.",
+   "뒤": "원주민 추적자들의 놀라운 추적 능력은 이 이야기에 의하여 나타내진다."
+  },
+  {
+   "key": "OK:G04854",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "06.md",
+   "칸": ".d204[n=7].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "그는 그 패이스트리(과자)가 그에게 맞지 않다고 말하면서 여러 번 사양하려고 시도했다.",
+   "뒤": "그는 그 페이스트리(과자)가 그에게 맞지 않다고 말하면서 여러 번 사양하려고 시도했다."
+  },
+  {
+   "key": "OK:G04862",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".d210[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "기록된 역사를 통틀어 우리는 가장 흥미있는 형태의 수집 중의 하나는 살아있는 동물의 수집이라는 것을 발견한다.",
+   "뒤": "기록된 역사를 통틀어 우리는 가장 흥미 있는 형태의 수집 중의 하나는 살아있는 동물의 수집이라는 것을 발견한다."
+  },
+  {
+   "key": "OK:G04878",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d220[n=7].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "성공적인 휴가는 주의깊은 계획에 달려있다.",
+   "뒤": "성공적인 휴가는 주의 깊은 계획에 달려있다."
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:G05164",
+   "결론": "동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "serves. purposes. sponsor. New York. Zoo. Raymond L. Ditmars, Bronx, venom, snakebites.",
+   "까닭": "앱 칩 규칙(3e9687f LdLearningView hintChunks · pickHintsFor)을 따로 옮긴 스크래치로 셈 — 지금 n4 칩 [New York] [Zoo] [Raymond L Ditmars] [Bronx] [venom]. 대본 n4 'Dr. Raymond L. Ditmars' 와 원본 첫 줄 'Dr.Raymond L. Ditmars'(랩자료모음 d211.htm, 읽기만) 모두 머리글자 L 뒤 마침표가 있어 [Raymond L Ditmars] 는 문장에 없는 꼴. 내용 재검토(C10827)가 이 꼴을 맞음으로 둔 까닭은 '코드를 고치기 전에는 최선'(기록-ld-b 16:43 — 옛 규칙이 'L. ' 에서 나눴음)이었는데, 고친 판 코드가 한 글자 머리글자 뒤에서 안 나누므로 그 까닭이 없어짐. 되살리기 도구도 'Dr. Raymond L. Ditmars ⊃ Raymond L Ditmars' 겹침 규칙으로 옛 꼴을 남김(ld-restore-first-line.cjs 226행). 고칠 글로 셈: n4 에 [Raymond L. Ditmars] 한 칩, 다른 행 칩 변화 없음. 받아쓰기 채점은 문장부호를 안 봐 점수 영향 없음 → 확신 보통 · 중간(명령서 LISTENING '문장에 없는 꼴' ⑥ 중간)에 동의. [Zoo] 가 n1~n3 소문자 zoo 에 뜨는 것은 대소문자 무시 일치(앱 한계).",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "F:G05201",
+   "결론": "동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "3,000 miles. New York. San Francisco. pioneer. astonished. crude. covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi. power outlets",
+   "까닭": "셈: 지금 n1 칩 [3,000 miles] [New York] [Francisco]. 원본 첫 줄 'three thousand miles New York San Francisco pioneers …'(읽기만)과 대본 n1 'from New York to San Francisco' 의 도시 이름에서 'San' 이 빠진 칩 — 되살리기 도구 3단계 '번짐 줄이기'가 'San' 이 n5 'dining cars and'(carsand) 글자에 걸린다고 보고 뒷부분만 남김. 한 문장 안의 줄인 구절 조각(d249 · d250 처럼 이어진 글자)과 달리 힌트의 몫인 고유 명사 자체가 온전하지 않아 되살린 첫 줄이 이름을 맞게 적지 못함(⑥ — 고치다 생긴 잘림이라 ⑦ 로도 볼 수 있으나 무게 같음). 고칠 글로 셈: n1 [3,000 miles] [New York] [San Francisco], n5 에 [San Francisco] 가 더 뜸 — 내용 재검토 기준의 앱 한계(글자 일치 번짐)라 틀림으로 안 셈. 두 꼴 사이 고르는 일이 걸려 확신 보통 · 중간에 동의.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "F:G05216",
+   "결론": "동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "Halloween. stems from the Christian feast. All Saints. refers to. supposedly came. Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+   "까닭": "셈: 지금 n1 · n2 · n3 에 [Saints]. 원본 첫 줄 'Halloween stems from Christian feast All Saints. Literally, refer to All Saints' Day. supposedly came'(읽기만)과 대본 n1 · n2 · n3 'All Saints' 의 축일 이름에서 'All' 이 빠진 칩(도구가 'All' 이 Halloween · all-night 글자에 걸린다고 보고 잘라 냄) — d236 과 같은 종류. 고칠 글로 셈: n1 · n2 · n3 [All Saints], n5(all-night) · n6(Halloween)에 번짐 — 앱 한계. 기준 판부터 있던 [Hallows](n2 — 내용 재검토 C11530 맞음)는 옛말 hallow 의 어려운 낱말 칩으로 볼 수 있고, 'All Hallows' Eve' 로 늘리면 n1 · n3 · n5 · n6 에도 번지므로 고칠 글에 넣지 않은 판정에 동의. 확신 보통 · 중간.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "F:G05237",
+   "결론": "동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy. are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+   "까닭": "셈: 지금 n4 칩 [engaged in furious snowball fights] [snowball] [local tomboy are liable to come out on the worse end]. 원본 둘째 줄 'snowball local tomboy are liable to come out on the worse end'(읽기만)는 띄어쓰기로만 항목을 가른 꼴이고 7단계가 snowball 뒤만 나눠 두 항목이 한 칩에 남음 — 대본 n4 '… at the local tomboy, are liable to …' 의 쉼표(절 경계)를 건너 'tomboy are' 라는 문장에 없는 이음이 보임. 명령서 LISTENING 예('두 항목이 한 칩에 붙음') · 내용 재검토 C11858(d261 [tucked away bite tang], ⑥ 중간 · 보통)과 같은 종류. 내용 재검토 C11839 는 이 줄을 맞음으로 뒀으나(놓침) 이번에 바뀐 줄의 글이라 판정 대상. 고칠 글로 셈: n4 [engaged in furious snowball fights] [snowball] [local tomboy] [are liable to come out on the worse end], 다른 행 변화 없음. 확신 보통 · 중간 동의.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "F:G05238",
+   "결론": "동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "head for sunny Florida. California. onset. Sun Valley. host of. entertainments. winter. sports. enthusiast. comparatively warm, North Pole. rugged individuals, tucked away. bite. tang. crisp",
+   "까닭": "셈: 지금 n3 · n5 에 [Valley]. 원본 첫 줄 '… onset Sun Valley. a host of entertainments winter-sports'(읽기만)와 대본 n3 · n5 'Sun Valley' 의 리조트 이름에서 'Sun' 이 빠진 칩(도구가 'Sun' 이 n1 sunny 에 걸린다고 보고 잘라 냄) — 칩만 보면 'Valley' 가 이름으로 읽힘. 고칠 글로 셈: n3 · n5 [Sun Valley], n1 에 번짐 — 앱 한계. 나머지(tucked away · bite · tang 나눔)는 내용 재검토 고칠 글대로이고 대본 꼴. 확신 보통 · 중간 동의.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "F:G05239",
+   "결론": "동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "whole. social. calendar undergoes. abandoned. indoors. outdoor recreation. take. drastic. brought up. as a matter of course.",
+   "까닭": "셈: 지금 n1 [whole] [social] [calendar undergoes a drastic] [drastic] · n3 [outdoor recreation] [recreation] — 한 행 칩 목록에 같은 낱말이 두 번(⑦ 겹친 낱말, 되살리기가 만든 것). 원본은 첫 줄 'whole social calendar undergo drastic abandon indoors. outdoor recreation. take as a matter of' / 둘째 줄 'course.'(읽기만) — 기준 판의 'drastic. recreation. brought up.' 은 7단계가 둘째 줄을 되살리며 넣은 것이라 되살린 첫 줄과 겹침. 도구의 겹침 거르기는 옛 칩이 새 칩 글자의 60% 이상일 때만 빼서(drastic 7/25 · recreation 10/17) 안 걸림 — 판정 까닭의 '겹치는 구절은 거르지 않음' 은 정확히는 '60% 문턱 밑이라 안 걸림'. 고칠 글로 셈: n1 [whole] [social] [calendar undergoes] [drastic] · n2 [social] [abandoned] [indoors] · n3 [outdoor recreation] · n5 [take] [brought up] [as a matter of course] — 겹침 없음. (되살린 'calendar undergoes a drastic' 을 두고 옛 drastic · recreation 만 빼도 겹침은 풀리나, 판정 고칠 글이 원본 항목(undergo · drastic 따로)에 더 가까움.) 채점 영향 없음 → 확신 보통 · 중간 동의.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04848",
+   "결론": "맞음 동의",
+   "까닭": "'Benjamin' 외래어 표기 '벤저민'(국립국어원 인명 표기) 맞음. 영어 n4 'Benjamin Franklin was curious about everything.' 과 뜻 같음.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04856",
+   "결론": "맞음 동의",
+   "까닭": "'노 젓는'(노를 젓다 — 구) 띄어 씀 맞음. 영어 n4 'found standing in a rowboat which had been left floating in the middle of one of the campus lakes' 와 뜻 같음. 안 바뀐 '서있는' 은 '-어 있다' 보조 용언이라 붙여 씀 허용(맞춤법 제47항).",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04864",
+   "결론": "맞음 동의",
+   "까닭": "유정 명사 뒤 '토끼에게' · '잘려 나간' 띄어 씀 맞음. 영어 n8 'to have had his finger bitten off by a rabbit' 과 뜻 같음.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04836",
+   "결론": "맞음 동의",
+   "까닭": "'수 톤'(관형사 수 + 단위 명사) · '소리 지르며' · '제 위치' 띄어 씀 맞음. 영어 n3 'Tons of canvas are unrolled, men shout and strain, the circus elephants help hoist the huge tent poles into place.' 와 뜻 같음.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04849",
+   "결론": "맞음 동의",
+   "까닭": "'일상생활' 은 표준국어대사전 한 낱말. 영어 n5 '… contributed to the comfort of our daily life' 와 뜻 같음. 안 바뀐 '기여해온' 은 보조 용언 붙여 씀 허용.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04855",
+   "결론": "맞음 동의",
+   "까닭": "'한복판' 한 낱말 맞음. 영어 n2 'in the center of the campus' 와 뜻 같음.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04865",
+   "결론": "맞음 동의",
+   "까닭": "체언 뒤 '같이'(처럼 — 조사)는 붙여 씀('것같이') 맞음. 영어 n3 'people seem to be unable to read signs' 와 뜻 같음.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04879",
+   "결론": "맞음 동의",
+   "까닭": "'골치 아프다' 는 구라 띄어 씀 맞음. 영어 n8 'tiring and nerve-wracking rather than restful and enjoyable' 과 뜻 같음.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04831",
+   "결론": "맞음 동의",
+   "까닭": "영어 n8 'The Aboriginal trackers' astonishing skill at tracking is illustrated by this story.' — '원주민 추적자들의' 로 소유 주체(trackers')를 맞춤, 뜻 같음. '나타내진다'(나타내어지다 준말)는 맞는 꼴.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04854",
+   "결론": "틀림 찾음",
+   "종류": "②",
+   "심각도": "낮음",
+   "확신": "보통",
+   "까닭": "고친 곳 '페이스트리'(pastry 외래어 표기)는 맞음. 그러나 같은 줄의 '맞지 않다고' — '맞다' 는 동사(표준국어대사전 맞다¹ 「동사」, 예 '옷이 몸에 맞지 않는다')라 보조 용언 '않다' 도 동사로 활용해 간접 인용은 '맞지 않는다고'(같은 파일의 '살이 찌지 않는다고' · '인정받지 않는다고' 와 같은 꼴). 고치기 전부터 있던 부분 — 내용 재검토 틀림 표 301번(d204 n7, '패이스트리' 만 고친 고칠 글)이 그대로 둔 것을 수정 세션이 그대로 넣음. 화면 /ld/d204-1 대본 한국어에 보임(소리 안 냄). 영어 n7 'saying that pastry did not agree with him' 과 뜻은 같음. 널리 쓰는 입말 꼴이고 두 번 읽은 판정이 넘긴 것이라 확신 보통.",
+   "고칠 글": "그는 그 페이스트리(과자)가 그에게 맞지 않는다고 말하면서 여러 번 사양하려고 시도했다.",
+   "새 음성 클립": false,
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04862",
+   "결론": "맞음 동의",
+   "까닭": "'흥미 있는'(흥미 있다 — 구) 띄어 씀 맞음. 영어 n1 'one of the most interesting forms of collections has been that of living animals' 와 뜻 같음. 안 바뀐 '살아있는' 은 보조 용언 붙여 씀 허용.",
+   "때": "2026-09-25 05:00"
+  },
+  {
+   "key": "OK:G04878",
+   "결론": "맞음 동의",
+   "까닭": "'주의 깊은' 띄어 씀 맞음. 영어 n7 'A successful vacation depends on careful planning.' 과 뜻 같음. '달려있다' 는 보조 용언 붙여 씀 허용.",
+   "때": "2026-09-25 05:00"
+  }
+ ]
+}

@@ -1,0 +1,762 @@
+{
+ "숫자": {
+  "판정": 5290,
+  "닿음": 5290,
+  "틀림": 12,
+  "틀림_심각도": {
+   "심각": 0,
+   "높음": 1,
+   "중간": 6,
+   "낮음": 5
+  },
+  "옆글": 11,
+  "판단필요": 4,
+  "뒤집힘": 1,
+  "대기": 0,
+  "새음성": 1
+ },
+ "조각": {
+  "etc": {
+   "판정": "155/155",
+   "틀림": 3
+  },
+  "g1-1": {
+   "판정": "943/943",
+   "틀림": 0
+  },
+  "g1-2": {
+   "판정": "990/990",
+   "틀림": 1
+  },
+  "g1-3": {
+   "판정": "748/748",
+   "틀림": 2
+  },
+  "g2-1": {
+   "판정": "856/856",
+   "틀림": 2
+  },
+  "g2-2": {
+   "판정": "838/838",
+   "틀림": 1
+  },
+  "ld-1": {
+   "판정": "382/382",
+   "틀림": 6
+  },
+  "ld-2": {
+   "판정": "378/378",
+   "틀림": 6
+  }
+ },
+ "확인": {
+  "etc": {
+   "대상": 10,
+   "적음": 10,
+   "결론": {
+    "맞음 동의": 10
+   }
+  },
+  "g1-1": {
+   "대상": 29,
+   "적음": 29,
+   "결론": {
+    "맞음 동의": 29
+   }
+  },
+  "g1-2": {
+   "대상": 30,
+   "적음": 30,
+   "결론": {
+    "맞음 동의": 30
+   }
+  },
+  "g1-3": {
+   "대상": 23,
+   "적음": 23,
+   "결론": {
+    "맞음 동의": 23
+   }
+  },
+  "g2-1": {
+   "대상": 29,
+   "적음": 29,
+   "결론": {
+    "동의": 3,
+    "맞음 동의": 26
+   }
+  },
+  "g2-2": {
+   "대상": 27,
+   "적음": 27,
+   "결론": {
+    "뒤집음": 1,
+    "맞음 동의": 26
+   }
+  },
+  "ld-1": {
+   "대상": 12,
+   "적음": 12,
+   "결론": {
+    "맞음 동의": 11,
+    "틀림 찾음": 1
+   }
+  },
+  "ld-2": {
+   "대상": 18,
+   "적음": 18,
+   "결론": {
+    "동의": 6,
+    "맞음 동의": 11,
+    "틀림 찾음": 1
+   }
+  }
+ },
+ "표": [
+  {
+   "ch": "g2-1",
+   "key": "F:G03057",
+   "src": "고친 글",
+   "ids": [
+    "G03057"
+   ],
+   "w": {
+    "id": "G03057",
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "gh2-013 #5 — 같은 고침에서 한국어 문제를 '나는 군인으로서 그를 존경한다'(내가 군인) → '나는 그를 군인으로서 존경한다'(그가 군인 — 관문 15 #540, G03050)로 바꿔 모범 'I respect him as a soldier.' 의 뜻에 맞췄는데, 새 다른 정답 'As a soldier, I respect him.' 은 문장 앞 as 구가 주어를 꾸미는 꼴이라 기본 뜻이 '(나는) 군인으로서 그를 존경한다'(내가 군인) — 한국어 고침이 없앤 뜻을 만점으로 받고 화면 '다른 정답' 으로 보여 준다. 같은 강의 #3 'As a Christian, how could you lie?' 는 앞 as 구가 주어(you)를 가리키므로, 이 다른 정답은 as 구의 자리 규칙을 거꾸로 가르친다. 대조 문맥('As a soldier, I respect him; as a man, I don't')에서는 그를 가리킬 수도 있어 확신 보통. ⑦(한 문항 안에서 한국어 고침과 다른 정답이 서로 반대 방향)도 걸림.",
+    "지금": "As a soldier, I respect him.",
+    "고칠 글": "(이 다른 정답을 뺌) — gh2-013 #5 .alternatives 를 비움(모범 'I respect him as a soldier.' 만 · 한국어 '나는 그를 군인으로서 존경한다.' 그대로)",
+    "고칠 곳": "content/lessons/grammar2/gh2-013.json · .blocks[1].items[n=5].alternatives[0]",
+    "새 음성 클립": false,
+    "묶음": [
+     "G03057"
+    ],
+    "배치": "2026-09-25 04:17"
+   },
+   "how": "둘 다 틀림"
+  },
+  {
+   "ch": "ld-1",
+   "key": "F:G05062",
+   "src": "고친 글",
+   "ids": [
+    "G05062"
+   ],
+   "w": {
+    "id": "G05062",
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d114 힌트 줄(content/lessons/ld/d114.json 의 hints 블록 .text). 이번 고침이 같은 강의 n4 영어를 'reached India' → 'reached the Indies'(G04675)로 바꾸고 이 힌트 줄도 함께 고쳤는데 'India' 는 그대로 남음 — 이제 대본 어디에도 없는 낱말이라 [India] 칩이 n4 · n5 에 뜸('Indians' 속 글자 일치). n4 받아쓰기에서 칩을 보고 'India' 로 치면 틀림(정답 'the Indies'). 내용 재검토 문맥(d114 n4 영어)이 '힌트 줄의 India → the Indies 도 같이' 라고 적었던 부분이 빠짐 — d033 'port'(영어를 고친 뒤 힌트에 남은 옛 꼴, ⑦ 중간)와 같은 종류. 고칠 글은 앱 규칙을 옮긴 읽기 전용 모의 도구로 확인: n4 [Christopher Columbus] [the Indies] · n5 에서 [India] 빠짐 · 다른 행 그대로(모의 도구 결과가 읽을거리의 지금 칩 10행과 같음).",
+    "지금": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. landed. off the coast. North America. India, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of animals. wandered. South America.",
+    "고칠 글": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. landed. off the coast. North America. the Indies, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of animals. wandered. South America.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05062"
+    ],
+    "배치": "2026-09-25 04:30"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-1",
+   "key": "X:0",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d037[n=8].en",
+    "지금": "The doctor said, You won't die. In fact, you'll be fine by dinner time.",
+    "종류": "①",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d037 n8 영어(바뀌지 않은 옆 글). 이번 고침이 같은 강의 같은 의사의 말 n6('\"I see,\" the doctor said.') · n7('The doctor asked Bobby, \"How do you feel now, my boy?\" …')에는 직접 화법 따옴표를 넣었는데, 바로 다음 줄 n8 의 'The doctor said, You won't die. …' 만 따옴표 없이 남아 한 강의 안에서 갈림(한국어 n8 은 “너는 죽지 않을 거야. …” 따옴표 있음). 따옴표가 없어 쉼표 뒤 대문자 'You' 를 이름으로 읽은 안전장치가 n8 에 힌트 8칩 전부를 띄움(앱 규칙). 받아쓰기 채점은 기호를 안 봄. 같은 강의 n3 · n4 · n5 · n9 의 따옴표 없는 말(한국어는 따옴표 있음)은 내용 재검토가 '과정 전체 방침' 으로 둔 종류라 여기 적지 않음.",
+    "고칠 글": "The doctor said, \"You won't die. In fact, you'll be fine by dinner time.\"",
+    "새 음성 클립": true,
+    "배치": "2026-09-25 04:18"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05164",
+   "src": "고친 글",
+   "ids": [
+    "G05164"
+   ],
+   "w": {
+    "id": "G05164",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d211 힌트 줄(content/lessons/ld/d211.json 힌트 블록 text). 되살린 첫 줄(serves · purposes · sponsor · New York · Zoo)은 대본 글자와 같음. 그러나 같은 줄의 이름 칩 [Raymond L Ditmars] 는 대본 n4 'Dr. Raymond L. Ditmars' 와 원본 첫 줄 'Dr.Raymond L. Ditmars' 에 있는 머리글자 마침표가 빠진 꼴(문장에 없는 꼴) — 기준 판부터 있던 꼴을 첫 줄 되살리기가 '지금 칩과 겹침' 으로 그대로 둠. 고친 판의 칩 규칙은 한 글자 머리글자(L.) 뒤 '. ' 에서 나누지 않으므로 마침표를 넣어도 한 칩 [Raymond L. Ditmars] 로 n4 에 뜸(규칙대로 셈). 받아쓰기 채점은 문장부호를 보지 않아 점수 영향 없음 → 확신 보통. 참고: [Zoo] 가 n1~n3 의 소문자 zoo 에 뜨는 것은 대소문자 무시 일치(앱 한계 — d201 Lady · Tiger 와 같게 봄).",
+    "지금": "serves. purposes. sponsor. New York. Zoo. Raymond L Ditmars, Bronx, venom, snakebites.",
+    "고칠 글": "serves. purposes. sponsor. New York. Zoo. Raymond L. Ditmars, Bronx, venom, snakebites.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05164"
+    ],
+    "배치": "2026-09-25 04:26"
+   },
+   "how": "20% 표본 — 확인 동의"
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05173",
+   "src": "고친 글",
+   "ids": [
+    "G05173"
+   ],
+   "w": {
+    "id": "G05173",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d218 힌트 줄(content/lessons/ld/d218.json 힌트 블록 text). 되살린 첫 줄(collectors · postage stamps · matchboxes · coins · paintings · object)과 나눈 칩(mania · stems from · psychological makeup)은 대본 꼴과 같음. 그러나 [seashells — in short] 는 두 항목(목록의 낱말 seashells 와 이음말 in short)이 대시 기호까지 달고 한 칩 — 원본 첫 줄 'sea shells in short' 를 한 항목으로 옮긴 것(명령서의 '두 항목이 한 칩에 붙음'). 한 문장(n2) 안에서 나란히 있어 점수 영향은 없음 → 확신 보통. 나누어도 seashells · in short 는 n2 에만 걸림(다른 행 헛칩 없음 — 규칙대로 셈). 고칠 글의 칩: n2 [postage stamps] [matchboxes] [coins] [paintings] [seashells] [in short].",
+    "지금": "collectors. postage stamps. matchboxes. coins. paintings. seashells — in short. object. mania. stems from. psychological makeup. external. bring this union about.",
+    "고칠 글": "collectors. postage stamps. matchboxes. coins. paintings. seashells. in short. object. mania. stems from. psychological makeup. external. bring this union about.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05173"
+    ],
+    "배치": "2026-09-25 04:26"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05228",
+   "src": "고친 글",
+   "ids": [
+    "G05228"
+   ],
+   "w": {
+    "id": "G05228",
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d253 힌트 줄(content/lessons/ld/d253.json 힌트 블록 text). 되살린 첫 줄에 원본의 여는 따옴표가 딸려 와 칩이 [\"Know thyself] 로 뜸 — 대본 n5 '… the ancient Greeks, \"Know thyself.\"' 는 따옴표가 닫혀 있는데 칩에는 여는 따옴표만 남음(남은 기호 — 내용 재검토가 d160 [\"All work and no play] 를 같은 까닭으로 적었고 수정 세션이 그 따옴표는 뺐음). 따옴표를 빼도 [Know thyself] 는 n5 에만 걸림(Know 가 다른 행 글자에 없음 — 규칙대로 셈). 나머지 되살린 칩(applicants · chief faults · virtues · reflected on · Evidently · motto · ancient Greeks · went on)은 대본 꼴 그대로.",
+    "지금": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. \"Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff.",
+    "고칠 글": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05228"
+    ],
+    "배치": "2026-09-25 04:34"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05237",
+   "src": "고친 글",
+   "ids": [
+    "G05237"
+   ],
+   "w": {
+    "id": "G05237",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d260 힌트 줄(content/lessons/ld/d260.json 힌트 블록 text). 되살린 첫 줄(world over take a great delight in · get out the sleds · sharpen the ice skates · vie with · snowman)은 대본 꼴 그대로. 그러나 같은 줄에 기준 판부터 남은 [local tomboy are liable to come out on the worse end] 는 두 항목(if 절 끝의 'the local tomboy' 와 주절 'are liable to come out on the worse end')이 대본의 쉼표 경계를 건너 한 칩 — 내용 재검토가 d261 [tucked away bite tang] 을 같은 까닭(한 문장 안의 붙음, 확신 보통)으로 적었고 이번에 나눴음. 나누어도 두 칩 다 n4 에만 걸림(규칙대로 셈).",
+    "지금": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+    "고칠 글": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy. are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05237"
+    ],
+    "배치": "2026-09-25 04:37"
+   },
+   "how": "20% 표본 — 확인 동의"
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05239",
+   "src": "고친 글",
+   "ids": [
+    "G05239"
+   ],
+   "w": {
+    "id": "G05239",
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d262 힌트 줄(content/lessons/ld/d262.json 힌트 블록 text). 되살린 첫 줄의 항목이 기준 판 칩과 겹쳐 같은 행에 같은 낱말이 두 번 뜸(겹친 낱말 — 되살리기 도구는 똑같은 항목만 빼고 겹치는 구절은 거르지 않음): n1 [calendar undergoes a drastic] + [drastic], n3 [outdoor recreation] + [recreation]. 게다가 [calendar undergoes a drastic] 은 대본 'undergoes a drastic change' 의 명사 앞에서 잘린 조각(a drastic 로 끝남). 고칠 글은 되살린 조각을 [calendar undergoes] 로 줄이고 기준 판 'recreation' 을 빼 겹침을 없앤 것 — 칩(규칙대로 셈): n1 [whole] [social] [calendar undergoes] [drastic] · n2 [social] [abandoned] [indoors] · n3 [outdoor recreation] · n5 [take] [brought up] [as a matter of course]. 점수 영향은 없어 확신 보통.",
+    "지금": "whole. social. calendar undergoes a drastic. abandoned. indoors. outdoor recreation. take. drastic. recreation. brought up. as a matter of course.",
+    "고칠 글": "whole. social. calendar undergoes. abandoned. indoors. outdoor recreation. take. drastic. brought up. as a matter of course.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05239"
+    ],
+    "배치": "2026-09-25 04:37"
+   },
+   "how": "20% 표본 — 확인 동의"
+  },
+  {
+   "ch": "etc",
+   "key": "F:G00026",
+   "src": "고친 글",
+   "ids": [
+    "G00026"
+   ],
+   "w": {
+    "id": "G00026",
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "s16-1 제목줄(instruction)의 '또 다른 장래희망 (통역사)' 만 '장래 희망' 으로 띄우고, 같은 강의의 과정 목록 부제목(label — curriculumPresentation.ts 281 subtitle = lesson.label)과 과정 목록 16장 머리(courses/student.json groups title — [course]/page.tsx formatGroupTitle)는 '장래희망' 그대로 둠 → 한 강의 안에서 같은 글이 서로 다르게 고쳐짐(학습자는 과정 목록에서 '장래희망', 강의 화면 제목줄에서 '장래 희망' 을 봄). 바꾼 글 자체('장래 희망' — 사전 한 낱말 아님, s3-4 '친구의 장래 희망' 과도 같음)는 맞음. s16-2 · s16-3 제목줄도 같은 고침이고 label 이 같은 꼴로 남음.",
+    "지금": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - My Other Dream Job (또 하나의 꿈)",
+    "고칠 글": "label = \"Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))\" · 16장 머리 title = \"Chapter 16. 또 다른 장래 희망 (통역사) (My Other Dream Job (Interpreter))\"",
+    "고칠 곳": "content/lessons/student/s16-1.json · s16-2.json · s16-3.json .label · content/courses/student.json .lessons[id=s16-1 · s16-2 · s16-3].label · .groups[Chapter 16].title",
+    "새 음성 클립": false,
+    "묶음": [
+     "G00026"
+    ],
+    "배치": "2026-09-25 04:31"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "etc",
+   "key": "F:G00028",
+   "src": "고친 글",
+   "ids": [
+    "G00028",
+    "G00029"
+   ],
+   "w": {
+    "id": "G00028",
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "03.md G00026(s16-1)과 같은 고침 — s16-2 · s16-3 제목줄(instruction)만 '또 다른 장래 희망 (통역사)' 로 띄우고 같은 강의의 과정 목록 부제목(label — curriculumPresentation.ts 281)과 과정 목록 16장 머리(courses/student.json groups title)는 '장래희망' 그대로 → 한 강의 안에서 같은 글이 서로 다르게 고쳐짐(이 읽을거리의 s16-2 · s16-3 '과정 목록 부제목' 이 '장래희망'). 바꾼 글 자체는 맞음. G00026 과 한 번에 고치면 셋 다 풀림.",
+    "지금": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)",
+    "고칠 글": "label = \"Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))\" · 16장 머리 title = \"Chapter 16. 또 다른 장래 희망 (통역사) (My Other Dream Job (Interpreter))\"",
+    "고칠 곳": "content/lessons/student/s16-1.json · s16-2.json · s16-3.json .label · content/courses/student.json .lessons[id=s16-1 · s16-2 · s16-3].label · .groups[Chapter 16].title (G00026 과 같은 고칠 곳)",
+    "새 음성 클립": false,
+    "묶음": [
+     "G00028",
+     "G00029"
+    ],
+    "배치": "2026-09-25 04:32"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "etc",
+   "key": "X:0",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/lessons/reading/pr175.json · content/lessons/reading/pr175-1.json (src/lib/readingSentences.json pr175 같은 글)",
+    "칸": ".readingSentences[id=reading-175-s002].korean",
+    "지금": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "이번에 '줄이는 데' 를 고친 같은 문장에 '운동능력' 이 붙은 채 남음 — 같은 강의 카드 athletic 은 '운동의 (athletic ability 운동 능력)' 로 띄어 써서 한 강의 안 표기가 흔들림(사전 한 낱말 아님 — 표준은 '운동 능력'). 고친 바뀜 자체는 맞음.",
+    "고칠 글": "그들은 어떤 음식이 그들의 운동 능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:28"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "g1-2",
+   "key": "F:G01642",
+   "src": "고친 글",
+   "ids": [
+    "G01642"
+   ],
+   "w": {
+    "id": "G01642",
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "gh1-109 #54 새 다른 정답 'Why did the president criticize the Japanese economy harshly?' 는 같은 문항에 함께 새로 넣은 'Why did the President criticize the Japanese economy harshly?'(G01640) 와 P 대소문자 하나만 다르다. 채점기는 대소문자를 안 가리므로(grammarGrading.ts normalizeLiteral 312행 toLowerCase) 채점에 더하는 것이 없고, 화면 '다른 정답'(GrammarLearningView 929 · 1279행)에는 거의 같은 두 줄이 나란히 보여 대문자가 뜻을 바꾸는지 헷갈리게 한다 — 고치다 생긴 겹침. (같은 문항의 'Why did the president criticize Japan's economy severely?' 는 낱말이 달라 따로 쓸모가 있어 틀림으로 세지 않음.) 기계 검사(mech-check — 일부러 망가뜨린 7줄을 모두 잡는 것을 먼저 확인)가 찾고 사람이 다시 읽어 확인.",
+    "지금": "Why did the president criticize the Japanese economy harshly?",
+    "고칠 글": "(이 다른 정답을 뺌)",
+    "고칠 곳": "content/lessons/grammar1/gh1-109.json · .blocks[3].items[n=54].alternatives[3] 'Why did the president criticize the Japanese economy harshly?'",
+    "새 음성 클립": false,
+    "묶음": [
+     "G01642"
+    ],
+    "배치": "2026-09-25 04:26"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "g1-3",
+   "key": "X:0",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/lessons/grammar1/gh1-122.json · content/lessons/grammar1/gh1-122-1.json",
+    "칸": ".blocks[3].items[n=41].text (gh1-122 #41 한국어 문제 — 고치지 않은 옆 글 · 이번에 영어 쪽 gh1-123 #41 에 다른 정답 4 를 더한 문항)",
+    "지금": "그 테러망은 다시 무리지어 다시 공격하려고 시도한다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "'무리(를) 짓다' 는 명사 '무리' 와 동사 '짓다' 두 낱말('짝짓다 · 매듭짓다' 처럼 사전에 오른 한 낱말이 아님)이라 '무리 지어' 로 띄어 씀. 같은 과정 gh1-116 #12 한국어 문제는 '다시 무리 지으려고' 로 띄어 써서 과정 안 표기도 갈림. 한국어 문제라 소리 없음. 화면: GrammarLearningView 가 이 글을 문제로 보여 줌.",
+    "고칠 글": "그 테러망은 다시 무리 지어 다시 공격하려고 시도한다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:31"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "g1-3",
+   "key": "X:1",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/lessons/grammar1/gh1-118.json · content/lessons/grammar1/gh1-118-1.json",
+    "칸": ".blocks[3].items[n=44].text (gh1-118 #44 한국어 문제 — 이번 고침이 '재 부착' → '재부착' 만 바꾼 줄(G02204 · G02207 맞음)의 손대지 않은 곳)",
+    "지금": "그들은 허블의 36커넥터를 재부착했지?",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "아라비아 숫자 '36' 과 보통 명사 '커넥터'(단위 명사가 아님)가 붙어 있음 — 한글 맞춤법 제2항(낱말마다 띄어 씀)에 어긋나고(제43항의 붙여 씀 허용은 단위 명사만), 셀 때 붙는 '개' 도 빠져 '36커넥터' 가 한 이름처럼 읽힘. 뜻은 영어 'the Hubble's 36 connectors' 와 같음 — 띄어쓰기 · 표기만. 내용 재검토의 고칠 글도 이 부분을 그대로 둬서 이번 고침에 남음. 한국어 문제라 소리 없음.",
+    "고칠 글": "그들은 허블의 커넥터 36개를 재부착했지?",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:31"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "g2-1",
+   "key": "X:0",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/lessons/grammar2/gh2-027-1.json",
+    "칸": ".blocks[1].items[n=15].text (gh2-027 #15 한국어 문제 — 고치지 않은 옆 글)",
+    "지금": "나는 그들이 오래 전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'오래전' 은 표준국어대사전에 한 낱말(명사 '오래전(前)')로 올라 있어 붙여 씀 — 띄어쓰기. 고친 판 문법 I · II 에서 이 글 한 곳뿐 · 관문 15 고침 목록에 없음. 같은 고침이 '한동안' · '아무것도' 같은 한 낱말 띄어쓰기를 고친 것과 같은 종류.",
+    "고칠 글": "나는 그들이 오래전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:23"
+   },
+   "how": "20% 표본 — 확인 동의"
+  },
+  {
+   "ch": "g2-2",
+   "key": "X:0",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/lessons/grammar2/gh2-033-1.json",
+    "칸": ".blocks[1].items[n=1].text",
+    "지금": "수십 명의 농장근로자들이 병원으로 보내지기에 충분히 병들었다 (입원해야 할 만큼 병들었다).",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "안 바뀐 옆 한국어 문제(이번에 다른 정답 4개를 더한 #1). '농장근로자' 는 사전에 한 낱말로 없음 — 낱말별 띄어쓰기로 '농장 근로자'(같은 조각에서 고친 '사업상' · '저녁 식사' 와 같은 종류의 띄어쓰기). 화면 한국어 문제로 보임.",
+    "고칠 글": "수십 명의 농장 근로자들이 병원으로 보내지기에 충분히 병들었다 (입원해야 할 만큼 병들었다).",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:14"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-1",
+   "key": "F:G04674",
+   "src": "고친 글",
+   "ids": [
+    "G04674"
+   ],
+   "w": {
+    "id": "G04674",
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "LISTENING d114 n4 한국어(content/ld_english_scripts.json .d114[n=4].ko). 이번 고침은 '컬럼버스 → 콜럼버스' 만 바꾸고 '인도에 도착했다고' 는 둠 — 그런데 같은 줄의 영어는 이번에 'India'(나라 인도) → 'the Indies'(인도 제도 · 아시아)로 바로잡혀, 영어가 고친 바로 그 점에서 한국어 짝이 옛 뜻('인도')으로 남음. 같은 과정 d054 n3 은 같은 사실을 '동인도 제도에 도착했다고' 로 옮김. 내용 재검토 문맥(d114 n4)도 영어와 함께 '인도 → 인도 제도' 를 적었음. 다만 우리말 역사 서술은 흔히 '콜럼버스는 인도에 닿았다고 믿었다' 로 적어 오도가 크지 않음 — 낮음 · 확신 보통.",
+    "지금": "처음에 콜럼버스는 자신이 인도에 도착했다고 생각해서 그는 거기에서 만난 사람들을 “인디언”이라고 불렀다.",
+    "고칠 글": "처음에 콜럼버스는 자신이 인도 제도에 도착했다고 생각해서 그는 거기에서 만난 사람들을 “인디언”이라고 불렀다.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G04674"
+    ],
+    "배치": "2026-09-25 04:30"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-1",
+   "key": "OK:G04709",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "key": "OK:G04709",
+    "결론": "표에 올림",
+    "닿음": true,
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "확인 일꾼(맞음 3% 가린 채)이 찾음 — 고침('한덩어리' → '한 덩어리')은 맞고, 같은 줄에 고치기 전부터 남은 '숲지대' 가 사전에 없는 붙여 쓰기(표준국어대사전 · 우리말샘 0건 — 같은 판이 연기 지역 · 해저 식물 · 외곽 지역 · 비상 착륙은 띄움). 고침이 만든 틀림이 아니라 옆 글로 셈",
+    "고칠 글": "1870년에 Estes Park의 한 커다란 숲 지대의 땅 한 덩어리를 산 것은 그였다.",
+    "고칠 곳": "content/ld_english_scripts.json .d130[n=6].ko",
+    "새 음성 클립": false,
+    "때": "2026-09-25 04:47",
+    "문맥": true,
+    "지금": "1870년에 Estes Park의 한 커다란 숲지대의 땅 한 덩어리를 산 것은 그였다.",
+    "판정": "틀림"
+   },
+   "how": "이 세션이 조정(조정.json) — 맞음 3% 표본"
+  },
+  {
+   "ch": "ld-1",
+   "key": "X:1",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d067[n=3].ko",
+    "지금": "그녀는 그 양조장에 편지를 써서 그들이 그들의 맥주 광고에 LITE라는 단어를 사용할 수 없다고 주장했다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "LISTENING d067 n3 한국어(바뀌지 않은 옆 글). 이번 고침이 바로 앞 강의 d066 한국어 n4 · n6 의 'LITE' 를 영어와 같게 'Lite' 로 고쳤고(내용 재검토 문맥), 같은 강의 d067 n1 한국어도 'Lite Soap Company' 인데 n3 · n5 · n7 만 'LITE' 로 남아 한 강의(이어진 이야기) 안 표기가 흔들림 — 영어는 모두 'Lite'.",
+    "고칠 글": "그녀는 그 양조장에 편지를 써서 그들이 그들의 맥주 광고에 Lite라는 단어를 사용할 수 없다고 주장했다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:24"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-1",
+   "key": "X:2",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d067[n=5].ko",
+    "지금": "그들은 대중이 어느 LITE가 어느 것인지 알기 때문에 “LITE tastes soapy” 광고를 무시하기로 계획했다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "n3 과 같음 — 영어 n5 는 'which Lite was which' · '\"Lite tastes soapy\" ad', d066 한국어 n4 는 이번에 “Lite는 비누 맛이 난다.” 로 고쳐짐. 바뀌지 않은 옆 글.",
+    "고칠 글": "그들은 대중이 어느 Lite가 어느 것인지 알기 때문에 “Lite tastes soapy” 광고를 무시하기로 계획했다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:24"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-1",
+   "key": "X:3",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "판정": "틀림",
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d067[n=7].ko",
+    "지금": "그 광고는 “LITE는 옷을 빨기에 좋다.”라고 할 것이다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "n3 과 같음 — 영어 n7 은 이번 고침 뒤 '\"Lite is wonderful for washing clothes.\"', 힌트 줄도 'Lite'. 바뀌지 않은 옆 글.",
+    "고칠 글": "그 광고는 “Lite는 옷을 빨기에 좋다.”라고 할 것이다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-25 04:24"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  },
+  {
+   "ch": "ld-2",
+   "key": "OK:G04854",
+   "src": "옆 글",
+   "ids": [],
+   "w": {
+    "key": "OK:G04854",
+    "결론": "표에 올림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "확인 일꾼(맞음 3% 가린 채)이 찾음 — 고침('페이스트리')은 맞고, 같은 줄에 고치기 전부터 남은 '맞지 않다고' 는 동사 '맞다' 뒤라 '맞지 않는다고'(같은 파일 '찌지 않는다고' · '인정받지 않는다고' 와 같은 꼴). 옆 글로 셈",
+    "고칠 글": "그는 그 페이스트리(과자)가 그에게 맞지 않는다고 말하면서 여러 번 사양하려고 시도했다.",
+    "새 음성 클립": false,
+    "때": "2026-09-25 05:00",
+    "문맥": true,
+    "지금": "그는 그 페이스트리(과자)가 그에게 맞지 않다고 말하면서 여러 번 사양하려고 시도했다.",
+    "고칠 곳": "content/ld_english_scripts.json .d204[n=7].ko",
+    "판정": "틀림"
+   },
+   "how": "이 세션이 조정(조정.json) — 맞음 3% 표본"
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05198",
+   "src": "고친 글",
+   "ids": [
+    "G05198"
+   ],
+   "w": {
+    "id": "G05198",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "LISTENING d233 힌트 줄(content/lessons/ld/d233.json 힌트 블록 text). 되살린 첫 줄의 [death] [judgment] 는 대본 n3 'such topics as death, judgment, heaven, hell, virtue, and vice' 의 소문자 꼴로 넣었는데, 같은 목록의 기준 판 칩 [Heaven] [Hell] [Virtue] [Vice] 는 대문자로 남아 n3 한 행의 칩 여섯이 대소문자로 섞임(한 강의 안 표기 흔들림 — 원본 교재는 여섯 다 대문자, 대본은 여섯 다 소문자). 채점은 대소문자를 안 봄 → 낮음 · 확신 보통. 나머지 되살린 칩(Middle Ages · mystery · morality · plays · intimately associated with · dealt with)과 나눈 칩(front steps · cathedrals · accommodate · marketplace)은 대본 꼴 그대로.",
+    "지금": "Middle Ages. mystery. morality. plays. intimately associated with. dealt with. death. judgment. Heaven, Hell, Virtue, Vice. abstractions. living characters. spectators graphic. living catechism. Bible. front steps. cathedrals, accommodate. marketplace.",
+    "고칠 글": "Middle Ages. mystery. morality. plays. intimately associated with. dealt with. death. judgment. heaven, hell, virtue, vice. abstractions. living characters. spectators graphic. living catechism. Bible. front steps. cathedrals, accommodate. marketplace.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05198"
+    ],
+    "배치": "2026-09-25 04:32"
+   },
+   "how": "한 일꾼(20% 표본 밖)"
+  }
+ ],
+ "판단필요": [
+  {
+   "ch": "ld-2",
+   "key": "F:G05201",
+   "w": {
+    "id": "G05201",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "판정 · 확인 일꾼 둘 다 '이름 앞부분 San 이 잘림' 을 흠(⑥ 중간 · 확신 보통)으로 적었고, 고치면 다른 줄에도 뜬다는 것도 적음. 이 세션이 고친 판 칩 규칙(LdLearningView 109~122 — 칩 속 대문자 3글자 이상 낱말이 문장 글자 어디에든 들어 있으면 뜸)으로 돌려 봄: 고칠 글대로 [San Francisco] 로 두면 이 이름을 말하지 않는 n5 'Delicious meals are served in fashionable dining cars and …'('cars and' 속 san)에도 뜸. 지금 [Francisco] 는 이름을 말하는 n1 에만 뜨고 글자도 맞음(채점은 칩과 상관없음). 수정 세션의 되살리기 도구가 번짐을 줄이려 일부러 고른 쪽이고, 다른 재점검 세션의 d006 [dental office] → [dental](65f4125)도 같은 원칙. 말하지 않는 문장에 칩이 뜨는 쪽이 이름 일부만 뜨는 쪽보다 받아쓰기에서 더 헷갈림",
+    "지금": "3,000 miles. New York. Francisco. pioneer. astonished. crude. covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi. power outlets",
+    "고칠 글": "3,000 miles. New York. San Francisco. pioneer. astonished. crude. covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi. power outlets",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05201"
+    ],
+    "배치": "2026-09-25 04:32",
+    "결론": "판단 필요",
+    "추천안": "두기(지금 [Francisco] 그대로)",
+    "무엇": "d236 힌트 줄 — 되살린 첫 줄의 'San Francisco' 가 [Francisco] 로 잘림"
+   },
+   "ids": [
+    "G05201"
+   ]
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05216",
+   "w": {
+    "id": "G05216",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "판정 · 확인 일꾼 둘 다 흠(⑥ 중간 · 확신 보통)으로 적음. 고친 판 칩 규칙으로 돌려 봄: 고칠 글대로 [All Saints] 로 두면 이 이름을 말하지 않는 n5 '… an all-night celebration …' 과 n6 '… the modern holiday of Halloween.'(Halloween 속 all)에도 뜸. 지금 [Saints] 는 'All Saints' 를 말하는 n1 · n2 · n3 에만 뜸. d236 과 같은 까닭으로 두기 추천",
+    "지금": "Halloween. stems from the Christian feast. Saints. refers to. supposedly came. Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+    "고칠 글": "Halloween. stems from the Christian feast. All Saints. refers to. supposedly came. Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05216"
+    ],
+    "배치": "2026-09-25 04:34",
+    "결론": "판단 필요",
+    "추천안": "두기(지금 [Saints] 그대로)",
+    "무엇": "d245 힌트 줄 — 되살린 첫 줄의 'All Saints' 가 [Saints] 로 잘림"
+   },
+   "ids": [
+    "G05216"
+   ]
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05238",
+   "w": {
+    "id": "G05238",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "판정 · 확인 일꾼 둘 다 흠(⑥ 중간 · 확신 보통)으로 적음. 고친 판 칩 규칙으로 돌려 봄: 고칠 글대로 [Sun Valley] 로 두면 이 이름을 말하지 않는 n1 '… head for sunny Florida …'(sunny 속 sun)에도 뜸. 지금 [Valley] 는 'Sun Valley' 를 말하는 n3 · n5 에만 뜸. d236 과 같은 까닭으로 두기 추천",
+    "지금": "head for sunny Florida. California. onset. Valley. host of. entertainments. winter. sports. enthusiast. comparatively warm, North Pole. rugged individuals, tucked away. bite. tang. crisp",
+    "고칠 글": "head for sunny Florida. California. onset. Sun Valley. host of. entertainments. winter. sports. enthusiast. comparatively warm, North Pole. rugged individuals, tucked away. bite. tang. crisp",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05238"
+    ],
+    "배치": "2026-09-25 04:37",
+    "결론": "판단 필요",
+    "추천안": "두기(지금 [Valley] 그대로)",
+    "무엇": "d261 힌트 줄 — 되살린 첫 줄의 'Sun Valley' 가 [Valley] 로 잘림"
+   },
+   "ids": [
+    "G05238"
+   ]
+  },
+  {
+   "ch": "ld-2",
+   "key": "F:G05252",
+   "w": {
+    "id": "G05252",
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "판정 일꾼 한 명이 흠(⑥ 중간 · 확신 높음)으로 적음(20% 표본 밖). 고친 판 칩 규칙으로 돌려 봄: 고칠 글대로 [Middle Ages] 로 두면 이 이름을 말하지 않는 n1 'Just as music is a universal language, so …'('language, so' 속 ages)에도 뜸. 지금 [Middle] 은 'the Middle Ages' 를 말하는 n2 에만 뜸. 같은 묶음 d274 의 [Middle Ages] 한 칩과 꼴이 다른 것은 남지만 d236 과 같은 까닭으로 두기 추천",
+    "지금": "universal language. mirror of the times. God-centered thought. Middle. hymns. chants of. worship. dignity. grace. 18th century. stately minuets. Romanticism. 19th century. well portray. great masters. Beethoven. Brahms. rhythms. jazz. swing. modern classical composers. characterize. discords. taste of the restlessness. vigor",
+    "고칠 글": "universal language. mirror of the times. God-centered thought. Middle Ages. hymns. chants of. worship. dignity. grace. 18th century. stately minuets. Romanticism. 19th century. well portray. great masters. Beethoven. Brahms. rhythms. jazz. swing. modern classical composers. characterize. discords. taste of the restlessness. vigor",
+    "새 음성 클립": false,
+    "묶음": [
+     "G05252"
+    ],
+    "배치": "2026-09-25 04:41",
+    "결론": "판단 필요",
+    "추천안": "두기(지금 [Middle] 그대로)",
+    "무엇": "d271 힌트 줄 — 되살린 첫 줄의 'Middle Ages' 가 [Middle] 로 잘림"
+   },
+   "ids": [
+    "G05252"
+   ]
+  }
+ ],
+ "뒤집힘": [
+  {
+   "ch": "g2-2",
+   "key": "F:G04167",
+   "w": {
+    "id": "G04167",
+    "판정": "틀림",
+    "종류": "④",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "gh2-042 #8 의 원래 영어는 'Why this is a problem was dramatically illustrated when keynoter Susan was ousted as a former marijuana user.'(내용 재검토 목록 C05189 — 9/18 뒤 이름을 빼고 'the keynote speaker' 로 바꿈). 실제 기조 연설자는 여성(Susan)인데 이번에 넣은 다른 정답만 'because he had been' 으로 남성 대명사를 씀 — 화면 '다른 정답' 에 그대로 보임. 모범과 다른 다른 정답 4개는 'for having been' 으로 대명사가 없음. 영어 문법과 한국어 문제의 뜻(성별 없음)에는 맞아 채점 문제는 아니고, 실제 인물의 성별만 어긋남 — 이름을 뺀 뒤라 학습자가 알아챌 길은 없어 낮음 · 확신 보통.",
+    "지금": "Why this is a problem was dramatically illustrated when the keynote speaker was ousted because he had been a marijuana user.",
+    "고칠 글": "Why this is a problem was dramatically illustrated when the keynote speaker was ousted because she had been a marijuana user.",
+    "고칠 곳": "content/lessons/grammar2/gh2-042.json · .blocks[1].items[n=8].alternatives[3] (문항 #8 다른 정답)",
+    "새 음성 클립": false,
+    "묶음": [
+     "G04167"
+    ],
+    "배치": "2026-09-25 04:19"
+   },
+   "why": "①~⑦ 에 들지 않음. (1) 화면에 닿는 글(한국어 문제 '기조 연설자가 과거 마리화나 사용자였다는 이유로 쫓겨났을 때…' · 모범 · 다른 정답 넷) 어디에도 연설자의 이름 · 성별이 없고, 'because he had been a marijuana user' 는 그 한국어를 옮긴 맞는 영어(because = '이유로' · 과거완료 had been = '과거 … 사용자였다')라 ①②③ 아님. (2) 'Susan' 은 6단계가 '원 기사 이름은 원 자료가 로컬에 없어 되살릴 수 없음'(6단계-진행.json)이라며 뺀 옛 교재 조각에만 있음 — 학습자에게 닿는 사실이 아니고 확인할 원 기사도 없어 ④(날짜 · 이름 · 숫자)가 아니라 '원본과 다름 그 자체'(기준상 틀림 아님). 판정 일꾼도 '채점 문제 아님 · 학습자가 알아챌 길 없음' 이라 적음. (3) 3e9687f 채점기(grammarGrading.ts)로 돌려 봄: 지금은 'he' 만점 · 'she'/'they' 70점, 'she' 로 바꾸면 'she' 만점 · 'he'/'they' 70점 — 고쳐도 만점을 받는 대명사만 바뀌고, 어느 쪽이 맞다는 근거가 화면에 없는 문체 선택(듣기 결정표 9 '사람 일반 he 는 문체로 둠' 과 같은 결). 수정 세션 표에 올리지 않음."
+  }
+ ],
+ "대기": []
+}

@@ -1,0 +1,452 @@
+{
+ "조각": "g2-2",
+ "뽑은때": "2026-09-25 04:28",
+ "대상": [
+  {
+   "key": "F:G04167",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "G04167"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=8].alternatives[3]",
+   "파일": "content/lessons/grammar2/gh2-042.json",
+   "전": null,
+   "뒤": "Why this is a problem was dramatically illustrated when the keynote speaker was ousted because he had been a marijuana user.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "④",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "gh2-042 #8 의 원래 영어는 'Why this is a problem was dramatically illustrated when keynoter Susan was ousted as a former marijuana user.'(내용 재검토 목록 C05189 — 9/18 뒤 이름을 빼고 'the keynote speaker' 로 바꿈). 실제 기조 연설자는 여성(Susan)인데 이번에 넣은 다른 정답만 'because he had been' 으로 남성 대명사를 씀 — 화면 '다른 정답' 에 그대로 보임. 모범과 다른 다른 정답 4개는 'for having been' 으로 대명사가 없음. 영어 문법과 한국어 문제의 뜻(성별 없음)에는 맞아 채점 문제는 아니고, 실제 인물의 성별만 어긋남 — 이름을 뺀 뒤라 학습자가 알아챌 길은 없어 낮음 · 확신 보통.",
+    "고칠 글": "Why this is a problem was dramatically illustrated when the keynote speaker was ousted because she had been a marijuana user.",
+    "고칠 곳": "content/lessons/grammar2/gh2-042.json · .blocks[1].items[n=8].alternatives[3] (문항 #8 다른 정답)"
+   }
+  },
+  {
+   "key": "OK:G04208",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=15].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "When you try to do anything, keep it in mind that you should do your best."
+  },
+  {
+   "key": "OK:G03886",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=1].alternatives[4]",
+   "파일": "content/lessons/grammar2/gh2-035.json",
+   "전": null,
+   "뒤": "Some states are suing tobacco companies to recover health care costs for smoking-related illnesses."
+  },
+  {
+   "key": "OK:G03826",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=15].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Can I get you something to drink?"
+  },
+  {
+   "key": "OK:G03814",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=11].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Your car's ready to go."
+  },
+  {
+   "key": "OK:G03846",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=4].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-034.json",
+   "전": null,
+   "뒤": "I'm on a diet in order to lose weight."
+  },
+  {
+   "key": "OK:G04192",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=9].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "Who he is is known to no one."
+  },
+  {
+   "key": "OK:G04140",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=14].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-041.json",
+   "전": null,
+   "뒤": "You may choose whatever you like."
+  },
+  {
+   "key": "OK:G03935",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=5].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-036.json",
+   "전": null,
+   "뒤": "He had to be rich in order to marry her."
+  },
+  {
+   "key": "OK:G04209",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=15].alternatives[3]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "When you are going to do anything, keep it in mind that you have to do your best."
+  },
+  {
+   "key": "OK:G03825",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=15].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Shall I bring you something to drink?"
+  },
+  {
+   "key": "OK:G03815",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=12].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Would you be free to have lunch with me?"
+  },
+  {
+   "key": "OK:G03841",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=2].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-034.json",
+   "전": null,
+   "뒤": "I'd like to cancel my order."
+  },
+  {
+   "key": "OK:G04193",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=10].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "There was no girl that was not kind."
+  },
+  {
+   "key": "OK:G04143",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=14].alternatives[3]",
+   "파일": "content/lessons/grammar2/gh2-041.json",
+   "전": null,
+   "뒤": "You may choose whichever one you like."
+  },
+  {
+   "key": "OK:G03934",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=4].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-036.json",
+   "전": null,
+   "뒤": "He must have been wealthy to marry her."
+  },
+  {
+   "key": "OK:G03824",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=14].alternatives[4]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Because I was in a hurry, I thought I had no choice but to speed up."
+  },
+  {
+   "key": "OK:G03812",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=9].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Tell him George called, please."
+  },
+  {
+   "key": "OK:G03840",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=1].alternatives[4]",
+   "파일": "content/lessons/grammar2/gh2-034.json",
+   "전": null,
+   "뒤": "I want to talk with you about what the government can do."
+  },
+  {
+   "key": "OK:G04190",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=9].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "Who he is is not known to anyone."
+  },
+  {
+   "key": "OK:G04142",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=14].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-041.json",
+   "전": null,
+   "뒤": "You may select whichever you like."
+  },
+  {
+   "key": "OK:G04134",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=6].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-041.json",
+   "전": null,
+   "뒤": "Citizens captured a sex offender whose plans authorities did not take seriously."
+  },
+  {
+   "key": "OK:G03937",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=5].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-036.json",
+   "전": null,
+   "뒤": "He needed to be rich to marry her."
+  },
+  {
+   "key": "OK:G03813",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=10].alternatives[2]",
+   "파일": "content/lessons/grammar2/gh2-033.json",
+   "전": null,
+   "뒤": "Do you want to leave a message?"
+  },
+  {
+   "key": "OK:G03843",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=3].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-034.json",
+   "전": null,
+   "뒤": "He promised to come back."
+  },
+  {
+   "key": "OK:G04191",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=9].alternatives[1]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "Who he is is known to nobody."
+  },
+  {
+   "key": "OK:G04185",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".blocks[1].items[n=6].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-043.json",
+   "전": null,
+   "뒤": "I think it true that he is poor but clever."
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:G04167",
+   "결론": "뒤집음",
+   "닿음": true,
+   "까닭": "①~⑦ 에 들지 않음. (1) 화면에 닿는 글(한국어 문제 '기조 연설자가 과거 마리화나 사용자였다는 이유로 쫓겨났을 때…' · 모범 · 다른 정답 넷) 어디에도 연설자의 이름 · 성별이 없고, 'because he had been a marijuana user' 는 그 한국어를 옮긴 맞는 영어(because = '이유로' · 과거완료 had been = '과거 … 사용자였다')라 ①②③ 아님. (2) 'Susan' 은 6단계가 '원 기사 이름은 원 자료가 로컬에 없어 되살릴 수 없음'(6단계-진행.json)이라며 뺀 옛 교재 조각에만 있음 — 학습자에게 닿는 사실이 아니고 확인할 원 기사도 없어 ④(날짜 · 이름 · 숫자)가 아니라 '원본과 다름 그 자체'(기준상 틀림 아님). 판정 일꾼도 '채점 문제 아님 · 학습자가 알아챌 길 없음' 이라 적음. (3) 3e9687f 채점기(grammarGrading.ts)로 돌려 봄: 지금은 'he' 만점 · 'she'/'they' 70점, 'she' 로 바꾸면 'she' 만점 · 'he'/'they' 70점 — 고쳐도 만점을 받는 대명사만 바뀌고, 어느 쪽이 맞다는 근거가 화면에 없는 문체 선택(듣기 결정표 9 '사람 일반 he 는 문체로 둠' 과 같은 결). 수정 세션 표에 올리지 않음.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04208",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'When you try to do anything, keep it in mind that you should do your best.' — '하려고 하면' = try to do(-려고 하다) · 명령 keep it in mind = '명심해라' · should = '-해야 한다' · you 는 한국어 괄호대로 일반인. 모범과 같은 뜻 · 맞는 영어 · 같은 문항 다른 정답(must · If you are going to · have to)과 모순 없음.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03886",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'…to recover health care costs for smoking-related illnesses.' — 한국어 '의료 보호 비용' 은 Medicaid 를 옮긴 말이지만 글자대로는 '의료(보호) 비용' 이라 health care costs 도 같은 뜻의 옮김(같은 문항 'medical care costs' 와 같은 결) · Some states = 몇몇 주들 · 현재진행 are suing = '제기하고 있다' · 맞는 영어.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03826",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Can I get you something to drink?' — '가져다 드릴까요?' 의 제안 의문(Can I = Shall I) · something to drink = '마실 어떤 것' · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03814",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Your car's ready to go.' — car's = car is 줄임(채점기는 명사 뒤 's 를 풀지 않아 이 다른 정답이 있어야 만점) · '갈 준비가 되어 있습니다' 와 같은 뜻 · 맞는 영어.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03846",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'I'm on a diet in order to lose weight.' — in order to = to(목적) = '체중을 빼기 위한' · 현재 · 1인칭 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04192",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Who he is is known to no one.' — known to no one = '누구에게도 알려져 있지 않다(전체부정)' · 맞는 영어. 반대 뜻 'known to everyone/everybody' · 부분부정 'not known to everyone' 은 이 문항에서 0점(3e9687f 채점기로 돌려 봄).",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04140",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'You may choose whatever you like.' — '어떤 것이든지' 는 whatever · whichever 둘 다 됨(같은 강의 #13 모범이 '어떤 책이든지' = Whatever book 이고 다른 정답이 Whichever book) · may = '선택해도 좋다' · 맞는 영어.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03935",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'He had to be rich in order to marry her.' — in order to = '결혼하기 위하여' · had to = '부유해야 했다'(과거) · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04209",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'When you are going to do anything, keep it in mind that you have to do your best.' — have to = '최선을 다해야 한다' · 나머지는 모범 그대로 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03825",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Shall I bring you something to drink?' — bring = '가져다 드리다' · Shall I = '-ㄹ까요?' 제안 · something to drink 그대로 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03815",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Would you be free to have lunch with me?' — '자유롭겠습니까?(점심 식사할 수 있겠습니까?)' 의 공손한 꼴 · have lunch with me = '나와 함께 점심을 먹다' · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03841",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'I'd like to cancel my order.' — would like to = '취소하고 싶다' 의 공손한 꼴 · my order = '나의 주문' · 맞는 영어(채점기는 I'd like 를 I would like 로 풂).",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04193",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'There was no girl that was not kind.' — no girl … not kind = '친절하지 않은 소녀는 없었다'(이중 부정 = 모두 친절) · 과거 · 맞는 영어. 반대 뜻 'There was no girl that was kind.' · 'There was a girl that was not kind.' 는 0점(채점기로 돌려 봄).",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04143",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'You may choose whichever one you like.' — whichever one = '어떤 것이든지' · may = '선택해도 좋다' · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03934",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'He must have been wealthy to marry her.' — wealthy = rich(부자) · must have been = '이었음에 틀림없다' · to marry her = '결혼하다니'(판단의 근거) · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03824",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Because I was in a hurry, I thought I had no choice but to speed up.' — because = '급했기 때문에' · speed up = '가속하다' · 과거 · no choice but to 그대로 · 맞는 영어.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03812",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Tell him George called, please.' — '전해주십시오' 의 부탁 명령문(please 가 끝으로) · called = '전화했다' · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03840",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'I want to talk with you about what the government can do.' — talk with you = 한국어 괄호 '(너와)' · the government = '정부' · want to = '-하고 싶다' · 맞는 영어.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04190",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Who he is is not known to anyone.' — anyone = anybody · 전체부정 그대로 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04142",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'You may select whichever you like.' — select = choose(선택하다) · may = '-해도 좋다' · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04134",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Citizens captured a sex offender whose plans authorities did not take seriously.' — plans 가 '계획' 에 오히려 더 가까움 · whose 관계절 · 과거 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03937",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'He needed to be rich to marry her.' — needed to = '-해야 했다'(필요) · 과거 · to marry her = '결혼하기 위하여' · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03813",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Do you want to leave a message?' — '남겨놓고 싶으십니까?' = want to leave(공손함은 덜하나 같은 뜻 · 같은 강의 #8 도 'Do you want to leave …' 를 다른 정답으로 둠) · 의문 · 맞는 영어.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G03843",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'He promised to come back.' — '다시 오겠다고' 의 '다시 오다' = come back · come again 둘 다 · 과거 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04191",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'Who he is is known to nobody.' — known to nobody = 전체부정 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  },
+  {
+   "key": "OK:G04185",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "'I think it true that he is poor but clever.' — clever = '똑똑한' · 가목적어 it 꼴(강의 핵심) 그대로 · 현재 · 맞는 영어 · 같은 뜻.",
+   "때": "2026-09-25 04:36"
+  }
+ ]
+}
