@@ -44,8 +44,8 @@ const LOGS = [["재검토 손으로", "손으로-재검토-기록.json"], ["칩 
   ["전수 손으로", "손으로-전수-기록.json"], ["전수 READING", "읽기-전수-기록.json"], ["전수 중앙 사본", "중앙사본-전수-기록.json"], ["전수 지문 블록", "지문블록-전수-기록.json"],
   ["B 손으로", "손으로-B-기록.json"], ["C", "조작-C-기록.json"], ["C 더함", "조작-C-더함-기록.json"],
   // 재점검 두 세션(2026-09-25)이 찾아 고친 것 — 앞 표가 고친 칸을 다시 고치면 사슬로 봄
-  ["재점검 중간", "재점검-나머지-중간-기록.json"], ["재점검1", "재점검-재검토1-기록.json"]];
-const ORDER = { "재검토": 1, "재검토 손으로": 2, "칩 규칙 뒤 데이터": 3, "재검토 지문 블록": 4, "전수": 5, "전수 손으로": 6, "전수 READING": 7, "전수 중앙 사본": 8, "전수 지문 블록": 9, "B": 10, "B 손으로": 11, "C": 12, "C 더함": 12, "재점검 중간": 14, "재점검1": 15 };
+  ["재점검 중간", "재점검-나머지-중간-기록.json"], ["재점검1", "재점검-재검토1-기록.json"], ["재점검2", "재점검-나머지-기록.json"]];
+const ORDER = { "재검토": 1, "재검토 손으로": 2, "칩 규칙 뒤 데이터": 3, "재검토 지문 블록": 4, "전수": 5, "전수 손으로": 6, "전수 READING": 7, "전수 중앙 사본": 8, "전수 지문 블록": 9, "B": 10, "B 손으로": 11, "C": 12, "C 더함": 12, "재점검 중간": 14, "재점검1": 15, "재점검2": 16 };
 const planRows = {};
 for (const [name, f] of plans) {
   const rows = readJ(path.join(D, f)).plan;
@@ -80,6 +80,15 @@ const REVERTED = new Map();
   if (fs.existsSync(p)) { const j = readJ(p); for (const e of Array.isArray(j) ? j : j.log || []) { const at = resolve(e.file, e.where); if (at) REVERTED.set(at.ptr, e.new); } }
 }
 const pending = [];
+// 뒤 조작이 다른 정답을 뺀 칸(재점검2 E18 — 전수 '더15' 가 한국어 쪽 gh2-022-1 에도 넣은 다른 정답을 지움): 뺀 목록이 고칠 글을 모두 담으면 '뒤에 다시 고침'
+const removals = [];
+for (const [name, arr] of Object.entries(logs)) for (const e of arr) {
+  if (e.op !== "removeAlts") continue;
+  const at = resolve(e.file, e.where); if (!at) continue;
+  const before = (e.before && e.before.alternatives) || [], after = (e.after && e.after.alternatives) || [];
+  removals.push({ ptr: `${at.ptr}/alternatives`, order: ORDER[name], removed: before.filter((x) => !after.includes(x)) });
+}
+const laterRemoval = (ptr, order, want) => removals.find((w) => w.ptr === ptr && w.order > order && want.every((x) => w.removed.includes(x)));
 
 // ── 코드로 끝낸 줄 — 그 코드 파일에 고친 글이 있는가
 const CODE = [
@@ -111,6 +120,7 @@ for (const [table] of plans) {
         if (at.value === r.고칠글) continue;
         if (laterMatch(at.ptr, order, at.value)) { later = true; continue; }
         if (REVERTED.has(at.ptr) && REVERTED.get(at.ptr) === at.value) { pend = true; continue; }
+        if (want && (at.value === undefined || Array.isArray(at.value)) && laterRemoval(at.ptr, order, want)) { later = true; continue; }
         ok = false;
       }
       if (ok && pend) { pending.push(`${table} ${r.uid}`); tally[`${table} · 제목 — 소유자 결정 대기(원본으로 되돌림)`] = (tally[`${table} · 제목 — 소유자 결정 대기(원본으로 되돌림)`] || 0) + 1; lines.push(`… ${table} ${r.uid} — 제목 소유자 결정 대기`); continue; }

@@ -1,0 +1,393 @@
+{
+ "at": "2026-09-24T20:57:31.274Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/재점검-나머지.json",
+ "root": ".",
+ "write": true,
+ "log": [
+  {
+   "id": "재점검2 칩 d177 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d177.json",
+   "where": ".blocks[2].text",
+   "old": "destination. amused. sent. minutes later. astonished",
+   "new": "Rudd. destination. amused. sent. minutes later. astonished"
+  },
+  {
+   "id": "재점검2 칩 d186 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d186.json",
+   "where": ".blocks[2].text",
+   "old": "Detroit hotel. cashed. check. clerk. bill. safe. overnight. receipt",
+   "new": "Detroit hotel. cashed. check. clerk. $100 bill. safe. overnight. receipt"
+  },
+  {
+   "id": "재점검2 칩 d190 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d190.json",
+   "where": ".blocks[2].text",
+   "old": "London. thickest fogs. Cars. buses crept along. horns blowing furiously. came to. standstill. confidently. get bearings.",
+   "new": "London. thickest fogs. Cars. buses crept along. horns blowing furiously. pea soup. came to a standstill. confidently. get bearings."
+  },
+  {
+   "id": "재점검2 칩 d192 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d192.json",
+   "where": ".blocks[2].text",
+   "old": "inhabitants. Australia. plant crops. domesticated. wandered. eyes of. eagle. heart of a lion. astonishing skill. illustrated. puzzled. Aboriginal tracker. boot prints",
+   "new": "inhabitants. Australia. plant crops. domesticated. wandered. eyes of an eagle. heart of a lion. astonishing skill. illustrated. puzzled. Aboriginal tracker. boot prints"
+  },
+  {
+   "id": "재점검2 칩 d197 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d197.json",
+   "where": ".blocks[2].text",
+   "old": "indispensable. circus. troupe. clown. antics. stunts. immune. appeal. carefree. pranks. routine. sad-faced. hobo. Emmett Kelly, foremost. winsome. pathetic. captivate. audiences",
+   "new": "indispensable. circus. troupe. clown. antics. stunts. immune. appeal. carefree. pranks. routine. sad-faced hobo. Emmett Kelly, foremost. winsome. pathetic. captivate. audiences"
+  },
+  {
+   "id": "재점검2 칩 d198 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d198.json",
+   "where": ".blocks[2].text",
+   "old": "curiosity. poke. nook. cranny. skunk. liberally sprayed. vile smelling perfume. odor. wear away. social. outcast",
+   "new": "curiosity. poke. nook. cranny. skunk. liberally sprayed. vile smelling perfume. odor. wear away. social outcast"
+  },
+  {
+   "id": "재점검2 칩 d200 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d200.json",
+   "where": ".blocks[2].text",
+   "old": "contributed. advancement. civilization. marvel. flight. outstanding. noted. Benjamin Franklin. Dutch. scientist prompt. world of a drop of water. single powerful lens. discoveries enabled",
+   "new": "contributed. advancement. civilization. marvel. flight. outstanding. noted. Benjamin Franklin. Dutch scientist. prompted. world of a drop of water. single powerful lens. discoveries enabled"
+  },
+  {
+   "id": "재점검2 칩 d204 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d204.json",
+   "where": ".blocks[2].text",
+   "old": "kindly. ran a boarding house. San Francisco. interests. lodgers at heart. acquired. roomer. freshly. baked peach pies. delight. appreciation. boarder turn upon. steaming pies, politely refuse. delicacy. pastry. take no for an answer, gave in. indigestion.",
+   "new": "kindly. ran a boarding house. San Francisco. interests. lodgers at heart. acquired. roomer. freshly baked peach pies. delight. appreciation. boarder turn upon. steaming pies, politely refuse. delicacy. pastry. take no for an answer, gave in. indigestion."
+  },
+  {
+   "id": "재점검2 칩 d209 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d209.json",
+   "where": ".blocks[2].text",
+   "old": "Foremost. social organizations. fraternities. sororities. formal application. put through an initiation. ceremony. pranks. hazing. designate. consist of. Greek letters.",
+   "new": "Foremost. social organizations. fraternities. sororities. formal application. put through an initiation ceremony. pranks. hazing. designate. consist of. Greek letters."
+  },
+  {
+   "id": "재점검2 칩 d216 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d216.json",
+   "where": ".blocks[2].text",
+   "old": "persist. evil. misfortune. abundance. impending. empty rocking chair. place. credence in. old wives'. tales.",
+   "new": "persist. evil. misfortune. abundance. impending. empty rocking chair. place. credence in. old wives' tales."
+  },
+  {
+   "id": "재점검2 칩 d220 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d220.json",
+   "where": ".blocks[2].text",
+   "old": "prospect. lure. far-away. beckons to. routes. consulted. veteran. hastily. planned. more often than not ends. up being. nerve-wracking. restful",
+   "new": "prospect. lure. far-away. beckons to. routes. consulted. veteran. hastily. planned. more often than not. ends up being. nerve-wracking. restful"
+  },
+  {
+   "id": "재점검2 칩 d221 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d221.json",
+   "where": ".blocks[2].text",
+   "old": "afford. overlook his budget. beyond. means. turn out. whereas. modest. vacation. merely. along. way. informative. resort at journey's end, attractive roadside. motorists. roadside parks. running water. facilities. overnight camping.",
+   "new": "afford. overlook his budget. beyond one's means. turn out. whereas. modest. vacation. merely. along the way. informative. resort at journey's end, attractive roadside. motorists. roadside parks. running water. facilities. overnight camping."
+  },
+  {
+   "id": "재점검2 칩 d224 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d224.json",
+   "where": ".blocks[2].text",
+   "old": "admit. Earning a living. present. challenge. average. is bound to. darkened. occasional. worries. daydream. such an extent that",
+   "new": "admit. humdrum. Earning a living. present. challenge. average. is bound to. darkened. occasional. worries. daydream. such an extent that"
+  },
+  {
+   "id": "재점검2 칩 d227 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d227.json",
+   "where": ".blocks[2].text",
+   "old": "inclined. exaggerate. Fishermen. notorious. exaggerated tales. amazing. tiny. huge monster. ardent fishing. enthusiast. run away with. think up. practical. victim",
+   "new": "inclined. exaggerate. Fishermen. notorious. exaggerated tales. amazing. tiny. huge monster. ardent fishing enthusiast. run away with. think up. practical. victim"
+  },
+  {
+   "id": "재점검2 칩 d234 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d234.json",
+   "where": ".blocks[2].text",
+   "old": "entertainment. Traditionally. associated with the colorful showboats. up and down the inland. waterways. more than a hundred years ago. pulled into town, took a holiday. repartee. minstrels. cheerful. carefree. banjos linger. spectacle.",
+   "new": "entertainment. Traditionally. associated with the colorful showboats. up and down the inland waterways. more than a hundred years ago. pulled into town, took a holiday. repartee. minstrels. cheerful. carefree. banjos linger. spectacle."
+  },
+  {
+   "id": "재점검2 칩 d253 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d253.json",
+   "where": ".blocks[2].text",
+   "old": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff.",
+   "new": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. Know thyself. went on the assumption. possessed integrity. desire. self-improvement. valuable addition. staff."
+  },
+  {
+   "id": "재점검2 칩 d259 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d259.json",
+   "where": ".blocks[2].text",
+   "old": "prospect. bleak. ahead of them. put up with. await. great anticipation. really sets in. gracefully. over the frozen surface pond. gliding swiftly down slope. snow-covered mountain.",
+   "new": "prospect. bleak. ahead of them. put up with. await. great anticipation. really sets in. skimming gracefully. over the frozen surface pond. gliding swiftly down slope. snow-covered mountain."
+  },
+  {
+   "id": "재점검2 칩 d263 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d263.json",
+   "where": ".blocks[2].text",
+   "old": "carols. ancient. commemorate. religious in origin. festivities. gathering around. Christmas. hanging. bright decorations. carolers wander. crisp winter air",
+   "new": "carols. ancient. commemorate. religious in origin. festivities. gathering around. Christmas. hanging bright decorations. carolers wander. crisp winter air"
+  },
+  {
+   "id": "재점검2 칩 d266 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d266.json",
+   "where": ".blocks[2].text",
+   "old": "communicate with his fellow men. prompted. devise. means of communicating language. telegraph. put into. words. visual arts. sketching, painting, sculpturing. primitive man indulged in. caves, technique. primitive artist. advanced. colors. pigments. last through the wear and tear. tribute",
+   "new": "communicate with his fellow men. prompted. devise. means of communicating language. telegraph. put into words. visual arts. sketching, painting, sculpturing. primitive man indulged in. caves, technique. primitive artist. advanced. colors. pigments. last through the wear and tear. tribute"
+  },
+  {
+   "id": "재점검2 칩 d267 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d267.json",
+   "where": ".blocks[2].text",
+   "old": "As a general rule. throughout the ages. go hand in hand. in the midst of terrible. want. devote. prophet. recognized. true of. genius. aware of extraordinary talent",
+   "new": "As a general rule. throughout the ages. poverty-stricken. go hand in hand. in the midst of terrible want. devote. prophet. recognized. true of. genius. aware of extraordinary talent"
+  },
+  {
+   "id": "재점검2 칩 d271 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d271.json",
+   "where": ".blocks[2].text",
+   "old": "universal language. mirror of the times. God-centered thought. Middle. hymns. chants of. worship. dignity. grace. 18th century. stately minuets. Romanticism. 19th century. well portray. great masters. Beethoven. Brahms. rhythms. jazz. swing. modern classical composers. characterize. discords. taste of the restlessness. vigor",
+   "new": "universal language. mirror of the times. God-centered thought. Middle. hymns. chants of worship. dignity. grace. 18th. stately minuets. Romanticism. 19th. well portray. great masters. Beethoven. Brahms. rhythms. jazz. swing. modern classical composers. characterize. discords. taste of the restlessness. vigor"
+  },
+  {
+   "id": "재점검2 칩 d275 (고침 탓)",
+   "op": "set",
+   "file": "content/lessons/ld/d275.json",
+   "where": ".blocks[2].text",
+   "old": "occupy. position. transaction. biggest. drawback. well worthwhile.",
+   "new": "occupy. position. transaction. biggest drawback. well worthwhile."
+  },
+  {
+   "id": "재점검2 칩 d006 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d006.json",
+   "where": ".blocks[2].text",
+   "old": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street.",
+   "new": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental. Washington. 1616 Jefferson. 6:15. 6:45. 7:15. parking lot. Madison."
+  },
+  {
+   "id": "재점검2 칩 d063 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d063.json",
+   "where": ".blocks[2].text",
+   "old": "Saturday morning 9:30, High Street. Ritz Hotel. likable. directions. \"Fantastic Five\". number two. top 20. purse, wallet. gasped.",
+   "new": "Saturday morning at 9:30, High Street. Ritz Hotel. likable. directions. \"Fantastic Five\". number two. top 20. purse, wallet. gasped."
+  },
+  {
+   "id": "재점검2 칩 d075 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d075.json",
+   "where": ".blocks[2].text",
+   "old": "drag racing. 1940s. drag tracks. absolutely straight course. 1320 feet long. take corner. 7 seconds",
+   "new": "drag racing. 1940s. drag tracks. absolutely straight course. 1320 feet long. take a corner. 7 seconds"
+  },
+  {
+   "id": "재점검2 칩 d105 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d105.json",
+   "where": ".blocks[2].text",
+   "old": "Proverbs. comment on a situation. express truth. specific situation. general truth. broth. metaphors. projects. comparison",
+   "new": "Proverbs. comment on a situation. express a truth. specific situation. general truth. broth. metaphors. projects. comparison"
+  },
+  {
+   "id": "재점검2 칩 d181 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d181.json",
+   "where": ".blocks[2].text",
+   "old": "people. distrusted. disapproval. rejected. right-handers. scissors. can openers. gear shifts. Anything Left-Handed Limited, London, 1968. specially designed reliable products. stems left of the face. toenail clippers, potato peelers, pens, golf clubs.",
+   "new": "people. distrusted. disapproval. rejected. right-handers. scissors. can openers. gear shifts. Anything Left-Handed, London, 1968. specially designed reliable products. stems left of the face. toenail clippers, potato peelers, pens, golf clubs."
+  },
+  {
+   "id": "재점검2 칩 d085 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d085.json",
+   "where": ".blocks[2].text",
+   "old": "translated into numbers. instructions. memory unit. arithmetic unit",
+   "new": "translated. instructions. memory unit. arithmetic unit"
+  },
+  {
+   "id": "재점검2 칩 d071 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d071.json",
+   "where": ".blocks[2].text",
+   "old": "3 a.m. August 8, Jack Mills. controls. Glasgow. London. made up of 12 coaches. 67 mailmen. sorting the mail. second coach. 5 mailmen. 128 bags. 5-pound notes. 100 years. 3 minutes past three, helper David Whitby. yellow warning light. out of order.",
+   "new": "3 a.m. August 8, Jack Mills. controls. Glasgow. London. made up of 12 coaches. 67. sorting the mail. second. 5 mailmen. 128 bags. 5-pound notes. 100 years. 3 minutes past three, helper David Whitby. yellow warning light. out of order."
+  },
+  {
+   "id": "재점검2 칩 d072 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d072.json",
+   "where": ".blocks[2].text",
+   "old": "creeping. knocked down. crossed. last 10 coaches. unloaded. 3:45, 2,500,000 pounds.",
+   "new": "creeping. knocked down. crossed. last 10. unloaded. 3:45, 2,500,000 pounds."
+  },
+  {
+   "id": "재점검2 칩 d074 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d074.json",
+   "where": ".blocks[2].text",
+   "old": "Australia. set off, May 5, 1930. route. Vienna, Constantinople, Baghdad. sandstorm. emergency landing. India six days later. two days. Burma, monsoon. football field. propeller. crash land. put her mind to. come to her rescue",
+   "new": "Australia. set off, May 5, 1930. route. Vienna, Constantinople, Baghdad. sandstorm. emergency landing. India. six days. two days. Burma, monsoon. football field. propeller. crash land. put her mind to. come to her rescue"
+  },
+  {
+   "id": "재점검2 칩 d088 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d088.json",
+   "where": ".blocks[2].text",
+   "old": "December, 1903, lifted. 37 meters. three more flights. 260 meters. 59 seconds. Flyer. Wilbur, Orville, Dayton, Ohio. mechanical flight. 1899. air pressure. wing surfaces. wind tunnel. 200",
+   "new": "December, 1903, lifted. 37. three more flights. 260. 59 seconds. Flyer. Wilbur, Orville, Dayton, Ohio. mechanical flight. 1899. air pressure. wing surfaces. wind tunnel. 200"
+  },
+  {
+   "id": "재점검2 칩 d091 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d091.json",
+   "where": ".blocks[2].text",
+   "old": "12. 14. 6 or 8 grades. reading, arithmetic, writing, social studies, science. art, music, physical education. third level. junior. senior high school. 17. 18. comprehensive. technical. vocational",
+   "new": "12. 14. 6 or 8 grades. reading, arithmetic, writing, social studies, science. art, music, physical education. third. junior. senior high school. 17. 18. comprehensive. technical. vocational"
+  },
+  {
+   "id": "재점검2 칩 d092 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d092.json",
+   "where": ".blocks[2].text",
+   "old": "institutions. Technical institutes. two-year programs. electronics, engineering, business. Community. junior colleges. vocational. academic. two years. junior college, associate degree. four-year college. Bachelor of Arts. Bachelor of Science degree. business, education, engineering, law, medicine.",
+   "new": "institutions. Technical institutes. two-year programs. electronics, engineering, business. Community. junior. vocational. academic. two years. associate. four-year. Bachelor of Arts. Bachelor of Science. business, education, engineering, law, medicine."
+  },
+  {
+   "id": "재점검2 칩 d096 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d096.json",
+   "where": ".blocks[3].text",
+   "old": "progress, pollution. the 1970s, England. 28 people. disaster. 100. torn off. several days. huge clouds of smoke. 30 miles away.",
+   "new": "progress, pollution. the 1970s, England. 28. disaster. 100. torn off. several days. huge clouds of smoke. 30 miles away."
+  },
+  {
+   "id": "재점검2 칩 d104 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d104.json",
+   "where": ".blocks[2].text",
+   "old": "March, four hours. 150. rest period. two hours each day.",
+   "new": "March, four. 150. rest period. two hours each day."
+  },
+  {
+   "id": "재점검2 칩 d121 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d121.json",
+   "where": ".blocks[2].text",
+   "old": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines",
+   "new": "population growth. Earth. overpopulated. 18th century, double. 80. famines"
+  },
+  {
+   "id": "재점검2 칩 d123 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d123.json",
+   "where": ".blocks[2].text",
+   "old": "fresh water. evaporation. distillation. evaporates. amount of water. 70,000 cubic kilometers. 110,000 cubic kilometers. 40,000. transferred",
+   "new": "fresh water. evaporation. distillation. evaporates. amount of water. 70,000. 110,000. 40,000. cubic kilometers. transferred"
+  },
+  {
+   "id": "재점검2 칩 d131 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d131.json",
+   "where": ".blocks[2].text",
+   "old": "4 cabins. Six more cabins. 1960. June, September. staffed principally. convenient arrangement",
+   "new": "build 4. Six more. 1960. June, September. staffed principally. convenient arrangement"
+  },
+  {
+   "id": "재점검2 칩 d146 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d146.json",
+   "where": ".blocks[2].text",
+   "old": "Washington University. mail. 5 letters, package. two postcards. special delivery letter.",
+   "new": "Washington University. mail. received 5, package. two postcards. special delivery letter."
+  },
+  {
+   "id": "재점검2 칩 d148 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d148.json",
+   "where": ".blocks[2].text",
+   "old": "the North American continent. Canada to the north, Mexico to the south. 1964, 185 million. Great Britain. 13 states. 48. 1959. Alaska. Hawaii",
+   "new": "the North American continent. Canada to the north, Mexico to the south. the largest in the world. 1964, 185 million. Great Britain. 13. 48. 1959. Alaska. Hawaii"
+  },
+  {
+   "id": "재점검2 칩 d153 (전부터)",
+   "op": "set",
+   "file": "content/lessons/ld/d153.json",
+   "where": ".blocks[2].text",
+   "old": "individual state. 17 or older. six years old, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree. doctor's degree.",
+   "new": "individual state. 17 or older. six, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree. doctor's degree."
+  },
+  {
+   "id": "재점검2 E18 gh2-022-1 #2",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar2/gh2-022-1.json",
+   "where": ".blocks[1].items[n=2]",
+   "before": {
+    "text": "너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).",
+    "alternatives": [
+     "You don't owe me anything."
+    ]
+   },
+   "after": {
+    "text": "너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).",
+    "alternatives": null
+   }
+  },
+  {
+   "id": "재점검2 d037 n9 en",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d037[n=9].en",
+   "old": "Oh, doctor, do you really think so? Bobby's mother looked very glad.",
+   "new": "\"Oh, doctor, do you really think so?\" Bobby's mother looked very glad."
+  },
+  {
+   "id": "재점검2 gh1-097 #79 gh1-097.json #79",
+   "op": "addAlts",
+   "file": "content/lessons/grammar1/gh1-097.json",
+   "where": ".blocks[3].items[n=79]",
+   "before": {
+    "text": "Not every boy lost his life, did he?",
+    "alternatives": [
+     "Every boy didn't lose his life, did he?",
+     "Not every boy lost his life, did they?",
+     "Every boy didn't lose his life, did they?",
+     "Not every boy died, did he?"
+    ]
+   },
+   "after": {
+    "text": "Not every boy lost his life, did he?",
+    "alternatives": [
+     "Every boy didn't lose his life, did he?",
+     "Not every boy lost his life, did they?",
+     "Every boy didn't lose his life, did they?",
+     "Not every boy died, did he?",
+     "Not every boy died, did they?"
+    ]
+   }
+  }
+ ]
+}

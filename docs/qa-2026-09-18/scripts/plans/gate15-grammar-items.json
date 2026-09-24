@@ -204,7 +204,7 @@
  {"item":"관문 15 gh2-021-1 #2","file":"content/lessons/grammar2/gh2-021-1.json","n":"2","text":{"from":"무엇이 너를 여기로 데려왔니?(너같은 사람이 여기에 웬일로 왔니?)","to":"무엇이 너를 여기로 데려왔니?(너 같은 사람이 여기에 웬일로 왔니?)"}},
  {"item":"관문 15 gh2-021-1 #5","file":"content/lessons/grammar2/gh2-021-1.json","n":"5","text":{"from":"이번에는 나에게 용서를 주어라(이번 한번 봐 주세요).","to":"이번에는 나에게 용서를 주어라(이번 한 번 봐 주세요)."}},
  {"item":"관문 15 gh2-021 #13","file":"content/lessons/grammar2/gh2-021.json","n":"13","alternatives":{"from":["Let me make you amends for your loss."],"to":[]},"wrong":["Let me make you amends for your loss."]},
- {"item":"관문 15 gh2-022-1 #2","file":"content/lessons/grammar2/gh2-022-1.json","n":"2","text":{"from":"너는 나에게 아무 것도 빚지지 않는다(빚진 것 없다).","to":"너는 나에게 아무것도 빚지지 않는다(빚진 것 없다)."},"alternatives":{"from":[],"to":["You don't owe me anything."]}},
+ {"item":"관문 15 gh2-022-1 #2","file":"content/lessons/grammar2/gh2-022-1.json","n":"2","text":{"from":"너는 나에게 아무 것도 빚지지 않는다(빚진 것 없다).","to":"너는 나에게 아무것도 빚지지 않는다(빚진 것 없다)."},"alternatives":{"from":[],"to":["You don't owe me anything."]},"supersededBy":"gate15-recheck2-items 재점검2 E18(2026-09-25) — 한국어 쪽에 잘못 든 다른 정답 지움"},
  {"item":"관문 15 gh2-022-1 #5","file":"content/lessons/grammar2/gh2-022-1.json","n":"5","text":{"from":"너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래?)","to":"너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래)?"}},
  {"item":"관문 15 gh2-022 #2","file":"content/lessons/grammar2/gh2-022.json","n":"2","alternatives":{"from":[],"to":["You don't owe me anything."]}},
  {"item":"관문 15 gh2-022 #13","file":"content/lessons/grammar2/gh2-022.json","n":"13","alternatives":{"from":[],"to":["Will you give me a ride?"]}},

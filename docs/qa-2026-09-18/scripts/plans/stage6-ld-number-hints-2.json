@@ -6,7 +6,7 @@
  {"item": "d041 n1 '16 years old' (n3 'just two years' 는 문장도 낱말이라 둠)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d041.json"],
   "from": "sixteen 18,", "to": "16 18,", "expect": 1},
  {"item": "d063 n1 'at 9:30' (n8 'number two' 는 문장도 낱말)", "files": ["content/lessons/ld/d063.json"],
-  "from": "Saturday morning nine thirty,", "to": "Saturday morning 9:30,", "expect": 1},
+  "from": "Saturday morning nine thirty,", "to": "Saturday morning 9:30,", "expect": 1, "supersededBy": "재점검-나머지 관문15-고침/재점검-나머지.json(2026-09-25 — 학습내용 나머지 전체, 힌트 줄 42강 통째로)", "nowText": "Saturday morning at 9:30, High Street."},
  {"item": "d095 n2 'the 10th at 9:30' · n3 'the 11th'", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d095.json"],
   "from": "tenth nine thirty evening. 8:40 a.m. eleventh.", "to": "10th 9:30 evening. 8:40 a.m. 11th.", "expect": 1},
  {"item": "d117 n1 'early 17th century'", "files": ["content/lessons/ld/d117.json"],
