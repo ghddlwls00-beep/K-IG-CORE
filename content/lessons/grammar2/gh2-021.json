@@ -32,31 +32,59 @@
         },
         {
           "n": "2",
-          "text": "What has brought you here?"
+          "text": "What has brought you here?",
+          "alternatives": [
+            "What brought you here?",
+            "What's brought you here?",
+            "What brings you here?"
+          ]
         },
         {
           "n": "3",
-          "text": "Can you give me a hand?"
+          "text": "Can you give me a hand?",
+          "alternatives": [
+            "Could you give me a hand?"
+          ]
         },
         {
           "n": "4",
-          "text": "I'm sorry but I have my hands full."
+          "text": "I'm sorry but I have my hands full.",
+          "alternatives": [
+            "Sorry, but I have my hands full.",
+            "I'm sorry, but I've got my hands full."
+          ]
         },
         {
           "n": "5",
-          "text": "Give me a break this time."
+          "text": "Give me a break this time.",
+          "alternatives": [
+            "This time, give me a break.",
+            "Please give me a break this time."
+          ]
         },
         {
           "n": "6",
-          "text": "They lent me some money."
+          "text": "They lent me some money.",
+          "alternatives": [
+            "They loaned me some money.",
+            "They lent me a little money."
+          ]
         },
         {
           "n": "7",
-          "text": "I want to borrow some money."
+          "text": "I want to borrow some money.",
+          "alternatives": [
+            "I'd like to borrow some money.",
+            "I want to borrow a little money."
+          ]
         },
         {
           "n": "8",
-          "text": "Wish me luck."
+          "text": "Wish me luck.",
+          "alternatives": [
+            "Please wish me luck.",
+            "Wish me good luck."
+          ]
         },
         {
           "n": "9",
@@ -74,12 +102,18 @@
           "n": "12",
           "text": "I must make you an apology.",
           "alternatives": [
-            "I owe you an apology."
+            "I owe you an apology.",
+            "I have to make you an apology.",
+            "I should make you an apology."
           ]
         },
         {
           "n": "13",
-          "text": "Let me make amends to you for your loss."
+          "text": "Let me make amends to you for your loss.",
+          "alternatives": [
+            "Let me make amends to you for your losses.",
+            "Please let me make amends to you for your loss."
+          ]
         },
         {
           "n": "14",
@@ -91,30 +125,55 @@
         },
         {
           "n": "16",
-          "text": "I will make you a new dress."
+          "text": "I will make you a new dress.",
+          "alternatives": [
+            "I'm going to make you a new dress."
+          ]
         },
         {
           "n": "17",
           "text": "What kind of a king will he make?",
           "alternatives": [
-            "What kind of king will he make?"
+            "What kind of king will he make?",
+            "What sort of king will he make?",
+            "What kind of king would he make?",
+            "What type of king will he make?"
           ]
         },
         {
           "n": "18",
-          "text": "Love makes all men equal."
+          "text": "Love makes all men equal.",
+          "alternatives": [
+            "Love makes all people equal.",
+            "Love makes everyone equal.",
+            "Love makes everybody equal."
+          ]
         },
         {
           "n": "19",
-          "text": "He made the burden heavier."
+          "text": "He made the burden heavier.",
+          "alternatives": [
+            "He made the load heavier.",
+            "He made the luggage heavier."
+          ]
         },
         {
           "n": "20",
-          "text": "He made a great contribution to the rescue effort."
+          "text": "He made a great contribution to the rescue effort.",
+          "alternatives": [
+            "He made a big contribution to the rescue effort.",
+            "He made a great contribution to the rescue efforts.",
+            "He made a large contribution to the rescue effort."
+          ]
         },
         {
           "n": "21",
-          "text": "You may make free use of my library."
+          "text": "You may make free use of my library.",
+          "alternatives": [
+            "You can make free use of my library.",
+            "You may make free use of my study.",
+            "You can make free use of my study."
+          ]
         },
         {
           "n": "22",

@@ -36,7 +36,11 @@
       "items": [
         {
           "n": "109",
-          "text": "Did you draw a map for me?"
+          "text": "Did you draw a map for me?",
+          "alternatives": [
+            "Did you draw me a map?",
+            "Did you draw the map for me?"
+          ]
         },
         {
           "n": "110",
@@ -46,14 +50,20 @@
           "n": "111",
           "text": "Can't you stay here during the vacation?",
           "alternatives": [
-            "Can you not stay here during the vacation?"
+            "Can you not stay here during the vacation?",
+            "Can't you stay here during the holidays?",
+            "Can't you stay here during your vacation?",
+            "Can't you stay here during vacation?",
+            "Can't you stay here during the holiday?"
           ]
         },
         {
           "n": "112",
           "text": "Don't you know the name of the poet?",
           "alternatives": [
-            "Do you not know the name of the poet?"
+            "Do you not know the name of the poet?",
+            "Don't you know the poet's name?",
+            "Do you not know the poet's name?"
           ]
         },
         {
@@ -71,25 +81,38 @@
             "The novelist won the Nobel Prize, didn't she?",
             "The novelist won the Nobel Prize, didn't they?",
             "The novelist received the Nobel Prize, didn't she?",
-            "The novelist received the Nobel Prize, didn't they?"
+            "The novelist received the Nobel Prize, didn't they?",
+            "The novelist got the Nobel Prize, didn't he?",
+            "The novelist won a Nobel Prize, didn't he?",
+            "The novelist was awarded the Nobel Prize, wasn't he?"
           ]
         },
         {
           "n": "115",
-          "text": "Bob is leaving for England next week, isn't he?"
+          "text": "Bob is leaving for England next week, isn't he?",
+          "alternatives": [
+            "Bob will leave for England next week, won't he?",
+            "Bob leaves for England next week, doesn't he?",
+            "Bob is going to leave for England next week, isn't he?"
+          ]
         },
         {
           "n": "116",
           "text": "Wasn't this measure much more effective?",
           "alternatives": [
-            "Was this measure not much more effective?"
+            "Was this measure not much more effective?",
+            "Wasn't this measure far more effective?",
+            "Wasn't this measure a lot more effective?",
+            "Wasn't this step much more effective?"
           ]
         },
         {
           "n": "117",
           "text": "Isn't New York a fascinating city?",
           "alternatives": [
-            "Is New York not a fascinating city?"
+            "Is New York not a fascinating city?",
+            "Isn't New York a charming city?",
+            "Isn't New York an attractive city?"
           ]
         },
         {
@@ -100,7 +123,12 @@
           "n": "119",
           "text": "Didn't the clerk get a 50% pay raise?",
           "alternatives": [
-            "Did the clerk not get a 50% pay raise?"
+            "Did the clerk not get a 50% pay raise?",
+            "Didn't the clerk get a 50 percent pay raise?",
+            "Didn't the clerk get a 50% raise?",
+            "Didn't the clerk get a 50% salary increase?",
+            "Didn't the clerk receive a 50% pay raise?",
+            "Didn't the clerk get a 50% pay rise?"
           ]
         },
         {
@@ -117,7 +145,12 @@
         },
         {
           "n": "122",
-          "text": "Will this do?"
+          "text": "Will this do?",
+          "alternatives": [
+            "Will this work?",
+            "Will this be enough?",
+            "Would this do?"
+          ]
         },
         {
           "n": "123",
@@ -125,18 +158,31 @@
         },
         {
           "n": "124",
-          "text": "Does this road take me home?"
+          "text": "Does this road take me home?",
+          "alternatives": [
+            "Does this road take me to my house?",
+            "Does this street take me home?",
+            "Will this road take me home?",
+            "Does this road lead me home?",
+            "Does this road go to my house?"
+          ]
         },
         {
           "n": "125",
           "text": "That's beyond me.",
           "alternatives": [
-            "It's beyond me."
+            "It's beyond me.",
+            "That's beyond my ability.",
+            "It's beyond my ability."
           ]
         },
         {
           "n": "126",
-          "text": "Were you making a reservation?"
+          "text": "Were you making a reservation?",
+          "alternatives": [
+            "Were you making reservations?",
+            "Were you making a booking?"
+          ]
         },
         {
           "n": "127",
@@ -146,31 +192,60 @@
           "n": "128",
           "text": "Weren't they crossing the street here?",
           "alternatives": [
-            "Were they not crossing the street here?"
+            "Were they not crossing the street here?",
+            "Weren't they crossing the road here?",
+            "Were they not crossing the road here?"
           ]
         },
         {
           "n": "129",
           "text": "Won't you drop in on me?",
           "alternatives": [
-            "Will you not drop in on me?"
+            "Will you not drop in on me?",
+            "Won't you drop by my place?",
+            "Won't you stop by my place?"
           ]
         },
         {
           "n": "130",
-          "text": "You didn't follow my advice, did you?"
+          "text": "You didn't follow my advice, did you?",
+          "alternatives": [
+            "You didn't take my advice, did you?"
+          ]
         },
         {
           "n": "131",
-          "text": "Why don't you take a rest?"
+          "text": "Why don't you take a rest?",
+          "alternatives": [
+            "Why don't you rest?",
+            "Why don't you take a break?",
+            "Why don't you have a rest?",
+            "Why don't you get some rest?",
+            "Why do you not take a rest?"
+          ]
         },
         {
           "n": "132",
-          "text": "Why couldn't he realize his dream?"
+          "text": "Why couldn't he realize his dream?",
+          "alternatives": [
+            "Why couldn't he achieve his dream?",
+            "Why wasn't he able to realize his dream?",
+            "Why couldn't he fulfill his dream?",
+            "Why couldn't he make his dream come true?",
+            "Why could he not realize his dream?",
+            "Why couldn't he realise his dream?"
+          ]
         },
         {
           "n": "133",
-          "text": "How many times a year does he go on a picnic?"
+          "text": "How many times a year does he go on a picnic?",
+          "alternatives": [
+            "How many times per year does he go on a picnic?",
+            "How many times a year does he go for a picnic?",
+            "How many times a year does he go on picnics?",
+            "How many times each year does he go on a picnic?",
+            "How many times a year does he go picnicking?"
+          ]
         },
         {
           "n": "134",
@@ -180,7 +255,10 @@
           "n": "135",
           "text": "I don't quite get your point.",
           "alternatives": [
-            "I don't quite understand your point."
+            "I don't quite understand your point.",
+            "I don't really get your point.",
+            "I don't quite see your point.",
+            "I don't quite understand what you mean."
           ]
         },
         {
@@ -201,19 +279,32 @@
           "n": "138",
           "text": "Will you speak more slowly, please?",
           "alternatives": [
-            "Would you speak more slowly, please?"
+            "Would you speak more slowly, please?",
+            "Would you speak more slowly?",
+            "Could you speak more slowly, please?",
+            "Would you please speak more slowly?",
+            "Will you please speak more slowly?",
+            "Could you please speak more slowly?",
+            "Would you talk more slowly, please?"
           ]
         },
         {
           "n": "139",
           "text": "May I have your phone number?",
           "alternatives": [
-            "May I have your telephone number?"
+            "May I have your telephone number?",
+            "Can I have your phone number?",
+            "Could I have your phone number?",
+            "Can I get your phone number?"
           ]
         },
         {
           "n": "140",
-          "text": "Where can I reach you?"
+          "text": "Where can I reach you?",
+          "alternatives": [
+            "Where can I contact you?",
+            "Where could I reach you?"
+          ]
         },
         {
           "n": "141",
@@ -231,16 +322,27 @@
           "text": "Isn't he working for a bank?",
           "alternatives": [
             "Isn't he working at a bank?",
-            "Is he not working for a bank?"
+            "Is he not working for a bank?",
+            "Isn't he working at the bank?",
+            "Is he not working at a bank?",
+            "Isn't he working in a bank?"
           ]
         },
         {
           "n": "144",
-          "text": "Let's listen to him."
+          "text": "Let's listen to him.",
+          "alternatives": [
+            "Let's listen to what he says.",
+            "Let's listen to his words."
+          ]
         },
         {
           "n": "145",
-          "text": "He was making a great speech, wasn't he?"
+          "text": "He was making a great speech, wasn't he?",
+          "alternatives": [
+            "He was giving a great speech, wasn't he?",
+            "He was delivering a great speech, wasn't he?"
+          ]
         }
       ]
     },

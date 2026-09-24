@@ -40,7 +40,8 @@
           "alternatives": [
             "What did he do?",
             "What was his job?",
-            "What did he do for a living?"
+            "What did he do for a living?",
+            "What was his occupation?"
           ]
         },
         {
@@ -73,7 +74,10 @@
         },
         {
           "n": "32",
-          "text": "Was this mine?"
+          "text": "Was this mine?",
+          "alternatives": [
+            "Was this one mine?"
+          ]
         },
         {
           "n": "33",
@@ -89,15 +93,24 @@
         },
         {
           "n": "36",
-          "text": "How was your mother?"
+          "text": "How was your mother?",
+          "alternatives": [
+            "How was your mother doing?"
+          ]
         },
         {
           "n": "37",
-          "text": "Was he your boss?"
+          "text": "Was he your boss?",
+          "alternatives": [
+            "Was he your superior?"
+          ]
         },
         {
           "n": "38",
-          "text": "What time was it then?"
+          "text": "What time was it then?",
+          "alternatives": [
+            "What time was it at that time?"
+          ]
         },
         {
           "n": "39",
@@ -105,7 +118,13 @@
           "alternatives": [
             "It was 7 o'clock.",
             "It was seven o'clock then.",
-            "It was 7 o'clock then."
+            "It was 7 o'clock then.",
+            "It was seven then.",
+            "It was 7 then.",
+            "It was seven.",
+            "It was seven o'clock at that time.",
+            "At that time, it was seven o'clock.",
+            "It was 7:00 then."
           ]
         },
         {
@@ -117,13 +136,18 @@
         },
         {
           "n": "41",
-          "text": "No, it was not cold yesterday."
+          "text": "No, it was not cold yesterday.",
+          "alternatives": [
+            "No, yesterday was not cold.",
+            "No, yesterday it was not cold."
+          ]
         },
         {
           "n": "42",
           "text": "It was warm yesterday.",
           "alternatives": [
-            "Yesterday was warm."
+            "Yesterday was warm.",
+            "Yesterday it was warm."
           ]
         }
       ]

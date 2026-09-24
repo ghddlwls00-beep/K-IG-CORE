@@ -28,37 +28,68 @@
       "items": [
         {
           "n": "1",
-          "text": "The IMF is unhappy with the government's handling of the economy."
+          "text": "The IMF is unhappy with the government's handling of the economy.",
+          "alternatives": [
+            "The IMF is dissatisfied with the government's handling of the economy.",
+            "The IMF is unhappy about the government's handling of the economy.",
+            "The IMF is unhappy with the government's management of the economy.",
+            "The IMF is not satisfied with the government's handling of the economy."
+          ]
         },
         {
           "n": "2",
-          "text": "The trade barrier did not stop businesses from selling the car."
+          "text": "The trade barrier did not stop businesses from selling the car.",
+          "alternatives": [
+            "The trade barrier did not stop companies from selling the car.",
+            "The trade barrier did not prevent businesses from selling the car."
+          ]
         },
         {
           "n": "3",
           "text": "I know a new Korean restaurant that opened recently.",
           "alternatives": [
-            "I know a new Korean restaurant which opened recently."
+            "I know a new Korean restaurant which opened recently.",
+            "I know a new Korean restaurant that recently opened.",
+            "I know a new Korean restaurant which recently opened."
           ]
         },
         {
           "n": "4",
-          "text": "Let's give it a try."
+          "text": "Let's give it a try.",
+          "alternatives": [
+            "Let's try it.",
+            "Let's give it a shot.",
+            "Let's give it a go."
+          ]
         },
         {
           "n": "5",
-          "text": "I'm buying."
+          "text": "I'm buying.",
+          "alternatives": [
+            "I'll pay.",
+            "It's on me.",
+            "I'll buy."
+          ]
         },
         {
           "n": "6",
           "text": "It's becoming harder to find others who share the belief.",
           "alternatives": [
-            "It's becoming harder to find others that share the belief."
+            "It's becoming harder to find others that share the belief.",
+            "It's becoming more difficult to find others who share the belief.",
+            "It's getting harder to find others who share the belief.",
+            "It's becoming harder to find other people who share the belief.",
+            "Finding others who share the belief is becoming harder."
           ]
         },
         {
           "n": "7",
-          "text": "The mother whose children work hard is happy."
+          "text": "The mother whose children work hard is happy.",
+          "alternatives": [
+            "The mother whose children study hard is happy.",
+            "A mother whose children work hard is happy.",
+            "A mother whose children study hard is happy."
+          ]
         },
         {
           "n": "8",
@@ -79,11 +110,17 @@
         },
         {
           "n": "10",
-          "text": "The teacher by whom I am taught English is very kind."
+          "text": "The teacher by whom I am taught English is very kind.",
+          "alternatives": [
+            "The teacher by whom I am taught English is very nice."
+          ]
         },
         {
           "n": "11",
-          "text": "The house in which he lives is very large."
+          "text": "The house in which he lives is very large.",
+          "alternatives": [
+            "The house in which he lives is very big."
+          ]
         },
         {
           "n": "12",
@@ -94,14 +131,18 @@
           "text": "The sculptures which you are looking at are masterpieces.",
           "alternatives": [
             "The sculptures that you are looking at are masterpieces.",
-            "The sculptures you are looking at are masterpieces."
+            "The sculptures you are looking at are masterpieces.",
+            "The sculptures at which you are looking are masterpieces."
           ]
         },
         {
           "n": "14",
           "text": "Weather reports are very important to people who plan the routes of ships and airplanes.",
           "alternatives": [
-            "Weather reports are very important to people that plan the routes of ships and airplanes."
+            "Weather reports are very important to people that plan the routes of ships and airplanes.",
+            "Weather reports are very important to people who plan the routes of ships and planes.",
+            "Weather reports are very important for people who plan the routes of ships and airplanes.",
+            "Weather reports are very important to those who plan the routes of ships and airplanes."
           ]
         }
       ]

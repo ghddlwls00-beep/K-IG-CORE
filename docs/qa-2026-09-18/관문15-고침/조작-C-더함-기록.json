@@ -1,0 +1,84 @@
+{
+ "at": "2026-09-24T18:21:16.597Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/조작-C-더함.json",
+ "root": "C:\\Users\\ghddl\\.gemini\\antigravity\\scratch\\K-IG-CORE",
+ "write": true,
+ "log": [
+  {
+   "id": "C grammar1/gh1-010#41 (gh1-011.json)",
+   "op": "addAlts",
+   "file": "content/lessons/grammar1/gh1-011.json",
+   "where": ".blocks[3].items[n=41]",
+   "before": {
+    "text": "Didn't you have a dream?",
+    "alternatives": [
+     "Did you not have a dream?"
+    ]
+   },
+   "after": {
+    "text": "Didn't you have a dream?",
+    "alternatives": [
+     "Did you not have a dream?",
+     "Didn't you have dreams?"
+    ]
+   }
+  },
+  {
+   "id": "C grammar1/gh1-010#41 (gh1-011-2.json)",
+   "op": "addAlts",
+   "file": "content/lessons/grammar1/gh1-011-2.json",
+   "where": ".blocks[1].items[n=41]",
+   "before": {
+    "text": "Didn't you have a dream?",
+    "alternatives": [
+     "Did you not have a dream?"
+    ]
+   },
+   "after": {
+    "text": "Didn't you have a dream?",
+    "alternatives": [
+     "Did you not have a dream?",
+     "Didn't you have dreams?"
+    ]
+   }
+  },
+  {
+   "id": "C grammar1/gh1-010#42 (gh1-011.json)",
+   "op": "addAlts",
+   "file": "content/lessons/grammar1/gh1-011.json",
+   "where": ".blocks[3].items[n=42]",
+   "before": {
+    "text": "Didn't he have a dream?",
+    "alternatives": [
+     "Did he not have a dream?"
+    ]
+   },
+   "after": {
+    "text": "Didn't he have a dream?",
+    "alternatives": [
+     "Did he not have a dream?",
+     "Didn't he have dreams?"
+    ]
+   }
+  },
+  {
+   "id": "C grammar1/gh1-010#42 (gh1-011-2.json)",
+   "op": "addAlts",
+   "file": "content/lessons/grammar1/gh1-011-2.json",
+   "where": ".blocks[1].items[n=42]",
+   "before": {
+    "text": "Didn't he have a dream?",
+    "alternatives": [
+     "Did he not have a dream?"
+    ]
+   },
+   "after": {
+    "text": "Didn't he have a dream?",
+    "alternatives": [
+     "Did he not have a dream?",
+     "Didn't he have dreams?"
+    ]
+   }
+  }
+ ]
+}

@@ -28,7 +28,12 @@
       "items": [
         {
           "n": "1",
-          "text": "To know oneself is difficult."
+          "text": "To know oneself is difficult.",
+          "alternatives": [
+            "To know yourself is difficult.",
+            "To know oneself is hard.",
+            "It is difficult to know oneself."
+          ]
         },
         {
           "n": "2",
@@ -39,7 +44,11 @@
         },
         {
           "n": "3",
-          "text": "It is not easy to know oneself."
+          "text": "It is not easy to know oneself.",
+          "alternatives": [
+            "It is not easy to know yourself.",
+            "To know oneself is not easy."
+          ]
         },
         {
           "n": "4",
@@ -52,7 +61,11 @@
         },
         {
           "n": "5",
-          "text": "It was difficult for him to keep up with his classmates."
+          "text": "It was difficult for him to keep up with his classmates.",
+          "alternatives": [
+            "It was hard for him to keep up with his classmates.",
+            "It was difficult for him to keep pace with his classmates."
+          ]
         },
         {
           "n": "6",
@@ -62,32 +75,60 @@
           "n": "7",
           "text": "It is difficult for me to answer that question.",
           "alternatives": [
-            "It is difficult for me to answer the question."
+            "It is difficult for me to answer the question.",
+            "It is hard for me to answer the question.",
+            "It is hard for me to answer that question."
           ]
         },
         {
           "n": "8",
-          "text": "It is rude of you to do so."
+          "text": "It is rude of you to do so.",
+          "alternatives": [
+            "It is rude of you to do that.",
+            "It is impolite of you to do so."
+          ]
         },
         {
           "n": "9",
-          "text": "It is very kind of you to help me."
+          "text": "It is very kind of you to help me.",
+          "alternatives": [
+            "It's really kind of you to help me.",
+            "It is so kind of you to help me.",
+            "It is very nice of you to help me."
+          ]
         },
         {
           "n": "10",
-          "text": "It is cruel of him to desert his old father."
+          "text": "It is cruel of him to desert his old father.",
+          "alternatives": [
+            "It is cruel of him to abandon his old father.",
+            "It is cruel of him to desert his elderly father."
+          ]
         },
         {
           "n": "11",
-          "text": "It is foolish of you to believe him."
+          "text": "It is foolish of you to believe him.",
+          "alternatives": [
+            "It is stupid of you to believe him.",
+            "It is foolish of you to believe what he says."
+          ]
         },
         {
           "n": "12",
-          "text": "It is very wise of him to study English grammar first."
+          "text": "It is very wise of him to study English grammar first.",
+          "alternatives": [
+            "It is really wise of him to study English grammar first.",
+            "It is very wise of him to first study English grammar."
+          ]
         },
         {
           "n": "13",
-          "text": "It's so thoughtful of you to prepare dinner for us tonight."
+          "text": "It's so thoughtful of you to prepare dinner for us tonight.",
+          "alternatives": [
+            "It's very thoughtful of you to prepare dinner for us tonight.",
+            "It's so thoughtful of you to make dinner for us tonight.",
+            "It's so considerate of you to prepare dinner for us tonight."
+          ]
         },
         {
           "n": "14",
@@ -98,7 +139,13 @@
         },
         {
           "n": "15",
-          "text": "The company's goal is to control 90% of auto sales."
+          "text": "The company's goal is to control 90% of auto sales.",
+          "alternatives": [
+            "The company's goal is to control 90 percent of auto sales.",
+            "The company's goal is to control 90% of car sales.",
+            "The company's aim is to control 90% of auto sales.",
+            "The goal of the company is to control 90% of auto sales."
+          ]
         },
         {
           "n": "16",

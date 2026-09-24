@@ -35,11 +35,19 @@
         },
         {
           "n": "2",
-          "text": "Can I exchange this?"
+          "text": "Can I exchange this?",
+          "alternatives": [
+            "Could I exchange this?",
+            "May I exchange this?",
+            "Can I exchange this one?"
+          ]
         },
         {
           "n": "3",
-          "text": "Sign this refund check and take it to the cashier."
+          "text": "Sign this refund check and take it to the cashier.",
+          "alternatives": [
+            "Sign this refund slip and take it to the cashier."
+          ]
         },
         {
           "n": "4",
@@ -47,12 +55,16 @@
           "alternatives": [
             "It's a real good buy.",
             "That's a really good buy.",
-            "That's a real good buy."
+            "That's a real good buy.",
+            "It's a really great buy."
           ]
         },
         {
           "n": "5",
-          "text": "You look down."
+          "text": "You look down.",
+          "alternatives": [
+            "You seem down."
+          ]
         },
         {
           "n": "6",
@@ -62,7 +74,11 @@
           "n": "7",
           "text": "Will you give me a wake-up call at 7 tomorrow morning?",
           "alternatives": [
-            "Will you give me a wake-up call at seven tomorrow morning?"
+            "Will you give me a wake-up call at seven tomorrow morning?",
+            "Would you give me a wake-up call at 7 tomorrow morning?",
+            "Could you give me a wake-up call at seven tomorrow morning?",
+            "Will you give me a wake-up call at 7 a.m. tomorrow?",
+            "Will you give me a wake-up call at 7 o'clock tomorrow morning?"
           ]
         },
         {
@@ -70,25 +86,34 @@
           "text": "Would he mind if I asked him to direct me to the station?",
           "alternatives": [
             "Does he mind if I ask him to direct me to the station?",
-            "Would he mind if I ask him to direct me to the station?"
+            "Would he mind if I ask him to direct me to the station?",
+            "Will he mind if I ask him to direct me to the station?"
           ]
         },
         {
           "n": "9",
-          "text": "Will you give me directions?"
+          "text": "Will you give me directions?",
+          "alternatives": [
+            "Would you give me directions?",
+            "Could you give me directions?",
+            "Can you give me directions?"
+          ]
         },
         {
           "n": "10",
           "text": "Are there any landmarks near it?",
           "alternatives": [
-            "Are there any landmarks near that?"
+            "Are there any landmarks near that?",
+            "Is there any landmark near it?"
           ]
         },
         {
           "n": "11",
           "text": "What's the most prominent building near it?",
           "alternatives": [
-            "What's the most prominent building near that?"
+            "What's the most prominent building near that?",
+            "What is the most noticeable building near it?",
+            "Which is the most prominent building near it?"
           ]
         },
         {
@@ -97,24 +122,37 @@
         },
         {
           "n": "13",
-          "text": "Drop me at the bank."
+          "text": "Drop me at the bank.",
+          "alternatives": [
+            "Please drop me at the bank.",
+            "Please drop me off at the bank.",
+            "Drop me at the bank, please."
+          ]
         },
         {
           "n": "14",
-          "text": "Can I take an airport-bound bus here?"
+          "text": "Can I take an airport-bound bus here?",
+          "alternatives": [
+            "Can I catch an airport-bound bus here?",
+            "Can I take a bus bound for the airport here?"
+          ]
         },
         {
           "n": "15",
           "text": "How often do the trains run on this route? About every ten minutes.",
           "alternatives": [
-            "How often do the trains run on this route? About every 10 minutes."
+            "How often do the trains run on this route? About every 10 minutes.",
+            "How often do trains run on this route? About every ten minutes.",
+            "How often do the trains run on this line? About every ten minutes.",
+            "How often do the trains run on this route? Around every ten minutes."
           ]
         },
         {
           "n": "16",
           "text": "Are there through buses to the airport?",
           "alternatives": [
-            "Are there any through buses to the airport?"
+            "Are there any through buses to the airport?",
+            "Is there a through bus to the airport?"
           ]
         },
         {
@@ -123,12 +161,17 @@
           "alternatives": [
             "I never get carsick but I always get airsick aboard a plane or seasick aboard a ship.",
             "I never get carsick but I always get airsick aboard a plane or seasick.",
-            "I never get carsick but I always get airsick or seasick aboard a ship."
+            "I never get carsick but I always get airsick or seasick aboard a ship.",
+            "I never get carsick, but I always get airsick and seasick."
           ]
         },
         {
           "n": "18",
-          "text": "The machine doesn't work right."
+          "text": "The machine doesn't work right.",
+          "alternatives": [
+            "The machine doesn't work properly.",
+            "The machine does not work correctly."
+          ]
         }
       ]
     },

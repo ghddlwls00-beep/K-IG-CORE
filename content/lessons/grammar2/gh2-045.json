@@ -30,7 +30,8 @@
           "n": "1",
           "text": "The exact time when the murder had been committed was never discovered.",
           "alternatives": [
-            "The exact time when the murder had been committed was never found out."
+            "The exact time when the murder had been committed was never found out.",
+            "The exact time when the murder was committed was never discovered."
           ]
         },
         {
@@ -38,26 +39,39 @@
           "text": "I don't know why he cut the class.",
           "alternatives": [
             "I don't know why he skipped the class.",
-            "I don't know why he skipped class."
+            "I don't know why he skipped class.",
+            "I don't know why he cut class.",
+            "I don't know the reason why he skipped class."
           ]
         },
         {
           "n": "3",
           "text": "I don't know where it took place.",
           "alternatives": [
-            "I don't know where that took place."
+            "I don't know where that took place.",
+            "I don't know where it happened.",
+            "I don't know where it occurred.",
+            "I don't know the place where it took place."
           ]
         },
         {
           "n": "4",
           "text": "This is where it happened.",
           "alternatives": [
-            "This is where that happened."
+            "This is where that happened.",
+            "This is the place where it happened.",
+            "This is where it occurred.",
+            "This is where it took place."
           ]
         },
         {
           "n": "5",
-          "text": "I went to the seaside where the scenery was very beautiful."
+          "text": "I went to the seaside where the scenery was very beautiful.",
+          "alternatives": [
+            "I went to the beach where the scenery was very beautiful.",
+            "I went to the seaside where the view was very beautiful.",
+            "I went to the seaside where the scenery is very beautiful."
+          ]
         },
         {
           "n": "6",
@@ -69,15 +83,30 @@
         },
         {
           "n": "8",
-          "text": "He showed me how he could speak English well."
+          "text": "He showed me how he could speak English well.",
+          "alternatives": [
+            "He showed me the way he could speak English well.",
+            "He showed me how he was able to speak English well.",
+            "He showed me the way in which he could speak English well."
+          ]
         },
         {
           "n": "9",
-          "text": "This is why I cannot agree with you."
+          "text": "This is why I cannot agree with you.",
+          "alternatives": [
+            "This is the reason why I cannot agree with you.",
+            "This is the reason I cannot agree with you.",
+            "This is why I can't agree with your opinion.",
+            "This is why I cannot agree with your opinion.",
+            "This is the reason why I can't agree with your opinion."
+          ]
         },
         {
           "n": "10",
-          "text": "It was this house that John bought last year."
+          "text": "It was this house that John bought last year.",
+          "alternatives": [
+            "It was this house which John bought last year."
+          ]
         },
         {
           "n": "11",
@@ -88,19 +117,37 @@
         },
         {
           "n": "12",
-          "text": "It was John that bought this house."
+          "text": "It was John that bought this house.",
+          "alternatives": [
+            "It was John who bought this house."
+          ]
         },
         {
           "n": "13",
-          "text": "I started from where she lived."
+          "text": "I started from where she lived.",
+          "alternatives": [
+            "I started from where she lives.",
+            "I departed from where she lived.",
+            "I set out from where she lived.",
+            "I started from the place where she lived."
+          ]
         },
         {
           "n": "14",
-          "text": "I took him where she lived."
+          "text": "I took him where she lived.",
+          "alternatives": [
+            "I took him to the place where she lived.",
+            "I took him where she lives."
+          ]
         },
         {
           "n": "15",
-          "text": "He decided to give her the flower whether she liked it or not."
+          "text": "He decided to give her the flower whether she liked it or not.",
+          "alternatives": [
+            "He decided to give the flower to her whether she liked it or not.",
+            "He decided to give her the flower whether or not she liked it.",
+            "He decided to give her the flowers whether she liked it or not."
+          ]
         }
       ]
     },

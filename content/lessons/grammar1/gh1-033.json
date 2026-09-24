@@ -38,7 +38,8 @@
           "n": "26",
           "text": "Does he love her sister?",
           "alternatives": [
-            "Does he love her younger sister?"
+            "Does he love her younger sister?",
+            "Does he love her little sister?"
           ]
         },
         {
@@ -104,7 +105,9 @@
           "alternatives": [
             "Does he not love her sister?",
             "Doesn't he love her younger sister?",
-            "Does he not love her younger sister?"
+            "Does he not love her younger sister?",
+            "Doesn't he love her little sister?",
+            "Does he not love her little sister?"
           ]
         },
         {
@@ -116,7 +119,10 @@
         },
         {
           "n": "37",
-          "text": "This is mine."
+          "text": "This is mine.",
+          "alternatives": [
+            "This one is mine."
+          ]
         },
         {
           "n": "38",
@@ -145,7 +151,10 @@
         },
         {
           "n": "42",
-          "text": "Is this mine?"
+          "text": "Is this mine?",
+          "alternatives": [
+            "Is this one mine?"
+          ]
         },
         {
           "n": "43",
@@ -176,7 +185,8 @@
           "n": "47",
           "text": "Isn't this mine?",
           "alternatives": [
-            "Is this not mine?"
+            "Is this not mine?",
+            "Isn't this one mine?"
           ]
         },
         {

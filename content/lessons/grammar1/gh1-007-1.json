@@ -34,18 +34,23 @@
           "n": "1",
           "text": "I am Korean.",
           "alternatives": [
-            "I am a Korean."
+            "I am a Korean.",
+            "I am a Korean person."
           ]
         },
         {
           "n": "2",
-          "text": "He is Japanese."
+          "text": "He is Japanese.",
+          "alternatives": [
+            "He is a Japanese person."
+          ]
         },
         {
           "n": "3",
           "text": "You are American.",
           "alternatives": [
-            "You are an American."
+            "You are an American.",
+            "You are an American person."
           ]
         },
         {
@@ -53,7 +58,8 @@
           "text": "She is Filipino.",
           "alternatives": [
             "She is Filipina.",
-            "She is a Filipina."
+            "She is a Filipina.",
+            "She is a Filipino person."
           ]
         },
         {
@@ -64,7 +70,8 @@
           "n": "6",
           "text": "They are workers.",
           "alternatives": [
-            "They are laborers."
+            "They are laborers.",
+            "They are employees."
           ]
         },
         {
@@ -90,12 +97,16 @@
           "n": "11",
           "text": "It is yours.",
           "alternatives": [
-            "That is yours."
+            "That is yours.",
+            "That one is yours."
           ]
         },
         {
           "n": "12",
-          "text": "This is mine."
+          "text": "This is mine.",
+          "alternatives": [
+            "This one is mine."
+          ]
         },
         {
           "n": "13",
@@ -111,7 +122,10 @@
         },
         {
           "n": "16",
-          "text": "Are you rich?"
+          "text": "Are you rich?",
+          "alternatives": [
+            "Are you wealthy?"
+          ]
         },
         {
           "n": "17",
@@ -121,7 +135,8 @@
           "n": "18",
           "text": "Are they healthy?",
           "alternatives": [
-            "Are they well?"
+            "Are they well?",
+            "Are they in good health?"
           ]
         },
         {

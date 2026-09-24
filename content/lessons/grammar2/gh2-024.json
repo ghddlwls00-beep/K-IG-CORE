@@ -28,21 +28,37 @@
       "items": [
         {
           "n": "1",
-          "text": "She is away from her desk at the moment."
+          "text": "She is away from her desk at the moment.",
+          "alternatives": [
+            "She's away from her desk right now.",
+            "She is away from her desk now."
+          ]
         },
         {
           "n": "2",
-          "text": "The connection seems to be very bad."
+          "text": "The connection seems to be very bad.",
+          "alternatives": [
+            "The connection seems very bad.",
+            "The connection seems to be really bad.",
+            "The connection seems to be very poor."
+          ]
         },
         {
           "n": "3",
-          "text": "I'll hang up and call again."
+          "text": "I'll hang up and call again.",
+          "alternatives": [
+            "I'll hang up and call back.",
+            "I'll hang up and call you back.",
+            "I'm going to hang up and call again."
+          ]
         },
         {
           "n": "4",
           "text": "Would you mind if I asked a few questions about Korean customs?",
           "alternatives": [
-            "Would you mind if I ask a few questions about Korean customs?"
+            "Would you mind if I ask a few questions about Korean customs?",
+            "Would you mind if I asked some questions about Korean customs?",
+            "Do you mind if I ask a few questions about Korean customs?"
           ]
         },
         {
@@ -50,7 +66,9 @@
           "text": "No, not at all. Go ahead.",
           "alternatives": [
             "No, I don't mind. Go ahead.",
-            "No, I don't. Go ahead."
+            "No, I don't. Go ahead.",
+            "No, I don't mind. Please go ahead.",
+            "No, not at all. Please go ahead."
           ]
         },
         {
@@ -67,16 +85,27 @@
             "Could you please speak up?",
             "Could you please speak louder?",
             "Could you speak a little louder?",
-            "Can you speak a little louder?"
+            "Can you speak a little louder?",
+            "Would you speak up, please?",
+            "Would you please speak up?",
+            "Could you speak a little louder, please?",
+            "Could you speak a bit louder?",
+            "Would you speak a little louder?"
           ]
         },
         {
           "n": "7",
-          "text": "I can hardly hear you."
+          "text": "I can hardly hear you.",
+          "alternatives": [
+            "I can barely hear you."
+          ]
         },
         {
           "n": "8",
-          "text": "What time do you start your day?"
+          "text": "What time do you start your day?",
+          "alternatives": [
+            "What time do you begin your day?"
+          ]
         },
         {
           "n": "9",
@@ -86,24 +115,40 @@
           "n": "10",
           "text": "Do you have time?",
           "alternatives": [
-            "Do you have any time?"
+            "Do you have any time?",
+            "Have you got time?",
+            "Do you have some time?"
           ]
         },
         {
           "n": "11",
-          "text": "Do you have the time?"
+          "text": "Do you have the time?",
+          "alternatives": [
+            "Have you got the time?"
+          ]
         },
         {
           "n": "12",
-          "text": "What's the date today?"
+          "text": "What's the date today?",
+          "alternatives": [
+            "What is today's date?",
+            "What date is it today?"
+          ]
         },
         {
           "n": "13",
-          "text": "What day is today?"
+          "text": "What day is today?",
+          "alternatives": [
+            "What day of the week is it today?",
+            "What day of the week is today?"
+          ]
         },
         {
           "n": "14",
-          "text": "What's the occasion?"
+          "text": "What's the occasion?",
+          "alternatives": [
+            "What's the occasion today?"
+          ]
         },
         {
           "n": "15",
@@ -111,27 +156,48 @@
         },
         {
           "n": "16",
-          "text": "Why are we eating out at this expensive restaurant?"
+          "text": "Why are we eating out at this expensive restaurant?",
+          "alternatives": [
+            "Why are we eating out in this expensive restaurant?"
+          ]
         },
         {
           "n": "17",
-          "text": "Today is our tenth wedding anniversary."
+          "text": "Today is our tenth wedding anniversary.",
+          "alternatives": [
+            "Today is our 10th wedding anniversary.",
+            "It's our tenth wedding anniversary today."
+          ]
         },
         {
           "n": "18",
-          "text": "How time flies!"
+          "text": "How time flies!",
+          "alternatives": [
+            "How fast time flies!"
+          ]
         },
         {
           "n": "19",
-          "text": "Christmas is just around the corner."
+          "text": "Christmas is just around the corner.",
+          "alternatives": [
+            "Christmas is right around the corner.",
+            "Christmas is just round the corner."
+          ]
         },
         {
           "n": "20",
-          "text": "Time is really dragging for me."
+          "text": "Time is really dragging for me.",
+          "alternatives": [
+            "For me, time is really dragging."
+          ]
         },
         {
           "n": "21",
-          "text": "What day does Christmas fall on this year?"
+          "text": "What day does Christmas fall on this year?",
+          "alternatives": [
+            "What day of the week does Christmas fall on this year?",
+            "This year, what day does Christmas fall on?"
+          ]
         },
         {
           "n": "22",
@@ -139,7 +205,9 @@
           "alternatives": [
             "We're going to have a three-day weekend.",
             "We are gonna have a three-day weekend.",
-            "We are going to have a 3-day weekend."
+            "We are going to have a 3-day weekend.",
+            "We will have a three-day weekend.",
+            "We will have a 3-day weekend."
           ]
         }
       ]

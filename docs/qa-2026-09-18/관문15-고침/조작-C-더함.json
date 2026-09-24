@@ -1,0 +1,6 @@
+[
+ {"id": "C grammar1/gh1-010#41 (gh1-011.json)", "why": "결정 A 결과.md '수정 세션용' — #40 과 같은 까닭으로 #41 도 0점(확인 일꾼이 잼) · 같이 넣을 것 · 지금 채점 incorrect 확인", "op": "addAlts", "file": "content/lessons/grammar1/gh1-011.json", "item": ".blocks[3].items[n=41]", "add": ["Didn't you have dreams?"]},
+ {"id": "C grammar1/gh1-010#41 (gh1-011-2.json)", "why": "같음 — 나눈 쪽", "op": "addAlts", "file": "content/lessons/grammar1/gh1-011-2.json", "item": ".blocks[1].items[n=41]", "add": ["Didn't you have dreams?"]},
+ {"id": "C grammar1/gh1-010#42 (gh1-011.json)", "why": "결정 A 결과.md '수정 세션용' — #42 도 0점 · 같이 넣을 것 · 지금 채점 incorrect 확인", "op": "addAlts", "file": "content/lessons/grammar1/gh1-011.json", "item": ".blocks[3].items[n=42]", "add": ["Didn't he have dreams?"]},
+ {"id": "C grammar1/gh1-010#42 (gh1-011-2.json)", "why": "같음 — 나눈 쪽", "op": "addAlts", "file": "content/lessons/grammar1/gh1-011-2.json", "item": ".blocks[1].items[n=42]", "add": ["Didn't he have dreams?"]}
+]

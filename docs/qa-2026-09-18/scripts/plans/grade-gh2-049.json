@@ -12,7 +12,8 @@
  {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "exact", "answers": [
    "He said that honesty is the best policy."]},
  {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "partial", "answers": [
-   "He said that honesty was the best policy.",
+   "He said that honesty was the best policy."]},
+ {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "exact", "note": "관문 15 결정 C(소유자 2026-09-25 '넣는다') — that 생략 꼴을 다른 정답으로 넣음(결정 A 표 grammar2/gh2-049#14). 6단계에는 그때 채점기 값 partial 을 적었음", "answers": [
    "He said honesty is the best policy."]},
  {"course": "grammar2", "lesson": "gh2-049", "n": 14, "expect": "incorrect", "answers": [
    "Lincoln said that honesty is the best policy."]}

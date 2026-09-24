@@ -62,7 +62,11 @@
         },
         {
           "n": "6",
-          "text": "When did you come here?"
+          "text": "When did you come here?",
+          "alternatives": [
+            "When did you get here?",
+            "When did you arrive here?"
+          ]
         },
         {
           "n": "7",
@@ -120,14 +124,16 @@
           "n": "16",
           "text": "He wants a lot of money, doesn't he?",
           "alternatives": [
-            "He wants much money, doesn't he?"
+            "He wants much money, doesn't he?",
+            "He wants lots of money, doesn't he?"
           ]
         },
         {
           "n": "17",
           "text": "She needs a little money, doesn't she?",
           "alternatives": [
-            "She needs some money, doesn't she?"
+            "She needs some money, doesn't she?",
+            "She needs a bit of money, doesn't she?"
           ]
         },
         {

@@ -38,7 +38,9 @@
           "n": "81",
           "text": "It is a book, isn't it?",
           "alternatives": [
-            "That is a book, isn't it?"
+            "That is a book, isn't it?",
+            "It is a book, is it not?",
+            "That is a book, is it not?"
           ]
         },
         {
@@ -59,19 +61,31 @@
         },
         {
           "n": "84",
-          "text": "I am in Korea, aren't I?"
+          "text": "I am in Korea, aren't I?",
+          "alternatives": [
+            "I am in Korea, am I not?"
+          ]
         },
         {
           "n": "85",
-          "text": "You are in Korea, aren't you?"
+          "text": "You are in Korea, aren't you?",
+          "alternatives": [
+            "You are in Korea, are you not?"
+          ]
         },
         {
           "n": "86",
-          "text": "He is in Korea, isn't he?"
+          "text": "He is in Korea, isn't he?",
+          "alternatives": [
+            "He is in Korea, is he not?"
+          ]
         },
         {
           "n": "87",
-          "text": "She is in Korea, isn't she?"
+          "text": "She is in Korea, isn't she?",
+          "alternatives": [
+            "She is in Korea, is she not?"
+          ]
         },
         {
           "n": "88",
@@ -149,39 +163,59 @@
         },
         {
           "n": "105",
-          "text": "We are in Korea, aren't we?"
+          "text": "We are in Korea, aren't we?",
+          "alternatives": [
+            "We are in Korea, are we not?"
+          ]
         },
         {
           "n": "106",
-          "text": "You love my sister, don't you?"
+          "text": "You love my sister, don't you?",
+          "alternatives": [
+            "You love my sister, do you not?"
+          ]
         },
         {
           "n": "107",
-          "text": "He loves me, doesn't he?"
+          "text": "He loves me, doesn't he?",
+          "alternatives": [
+            "He loves me, does he not?"
+          ]
         },
         {
           "n": "108",
           "text": "She loves your brother, doesn't she?",
           "alternatives": [
-            "She loves your brothers, doesn't she?"
+            "She loves your brothers, doesn't she?",
+            "She loves your brother, does she not?",
+            "She loves your brothers, does she not?"
           ]
         },
         {
           "n": "109",
-          "text": "They love you, don't they?"
+          "text": "They love you, don't they?",
+          "alternatives": [
+            "They love you, do they not?"
+          ]
         },
         {
           "n": "110",
           "text": "She loves his brother, doesn't she?",
           "alternatives": [
-            "She loves his brothers, doesn't she?"
+            "She loves his brothers, doesn't she?",
+            "She loves his brother, does she not?",
+            "She loves his brothers, does she not?"
           ]
         },
         {
           "n": "111",
           "text": "He loves her sister, doesn't he?",
           "alternatives": [
-            "He loves her younger sister, doesn't he?"
+            "He loves her younger sister, doesn't he?",
+            "He loves her little sister, doesn't he?",
+            "He loves her sister, does he not?",
+            "He loves her younger sister, does he not?",
+            "He loves her little sister, does he not?"
           ]
         },
         {

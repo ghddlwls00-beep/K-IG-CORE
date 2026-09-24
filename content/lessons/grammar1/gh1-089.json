@@ -38,18 +38,24 @@
           "n": "1",
           "text": "Is this your homework?",
           "alternatives": [
-            "Is this your assignment?"
+            "Is this your assignment?",
+            "Is this your task?",
+            "Is this your project?"
           ]
         },
         {
           "n": "2",
-          "text": "Is this prize yours?"
+          "text": "Is this prize yours?",
+          "alternatives": [
+            "Is this award yours?"
+          ]
         },
         {
           "n": "3",
           "text": "Is your professor healthy?",
           "alternatives": [
-            "Is your professor well?"
+            "Is your professor well?",
+            "Is your professor in good health?"
           ]
         },
         {
@@ -60,12 +66,17 @@
           "n": "5",
           "text": "Are they police officers?",
           "alternatives": [
-            "Are they policemen?"
+            "Are they policemen?",
+            "Are they police?"
           ]
         },
         {
           "n": "6",
-          "text": "Is your employer unhappy?"
+          "text": "Is your employer unhappy?",
+          "alternatives": [
+            "Is your employer upset?",
+            "Is your employer in a bad mood?"
+          ]
         },
         {
           "n": "7",
@@ -82,7 +93,10 @@
           "n": "9",
           "text": "Whose fatherland is this?",
           "alternatives": [
-            "Whose homeland is this?"
+            "Whose homeland is this?",
+            "Whose motherland is this?",
+            "Whose home country is this?",
+            "Whose native country is this?"
           ]
         },
         {
@@ -95,11 +109,19 @@
         },
         {
           "n": "12",
-          "text": "She is not that smart."
+          "text": "She is not that smart.",
+          "alternatives": [
+            "She is not so smart.",
+            "She is not that clever.",
+            "She is not that intelligent."
+          ]
         },
         {
           "n": "13",
-          "text": "Was the general brave?"
+          "text": "Was the general brave?",
+          "alternatives": [
+            "Was the general courageous?"
+          ]
         },
         {
           "n": "14",
@@ -110,12 +132,18 @@
           "text": "The microphone is still on.",
           "alternatives": [
             "The mike is still on.",
-            "The mic is still on."
+            "The mic is still on.",
+            "The microphone is still turned on.",
+            "The mic is still turned on.",
+            "The microphone is still switched on."
           ]
         },
         {
           "n": "16",
-          "text": "Where were the politicians?"
+          "text": "Where were the politicians?",
+          "alternatives": [
+            "Where were the statesmen?"
+          ]
         },
         {
           "n": "17",
@@ -123,12 +151,17 @@
           "alternatives": [
             "Was the lawmaker unhappy?",
             "Was the congresswoman unhappy?",
-            "Was the legislator unhappy?"
+            "Was the legislator unhappy?",
+            "Was the assemblyman unhappy?",
+            "Was the MP unhappy?"
           ]
         },
         {
           "n": "18",
-          "text": "Whose decision was this?"
+          "text": "Whose decision was this?",
+          "alternatives": [
+            "Whose was this decision?"
+          ]
         },
         {
           "n": "19",

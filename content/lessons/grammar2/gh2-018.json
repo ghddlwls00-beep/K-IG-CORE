@@ -30,30 +30,45 @@
           "n": "1",
           "text": "It was a mistake.",
           "alternatives": [
-            "That was a mistake."
+            "That was a mistake.",
+            "It was an error."
           ]
         },
         {
           "n": "2",
-          "text": "There was a mistake."
+          "text": "There was a mistake.",
+          "alternatives": [
+            "There was one mistake.",
+            "There was an error."
+          ]
         },
         {
           "n": "3",
-          "text": "Here is a problem."
+          "text": "Here is a problem.",
+          "alternatives": [
+            "Here is one problem."
+          ]
         },
         {
           "n": "4",
-          "text": "There was a boy."
+          "text": "There was a boy.",
+          "alternatives": [
+            "There was one boy."
+          ]
         },
         {
           "n": "5",
-          "text": "There was a boy there."
+          "text": "There was a boy there.",
+          "alternatives": [
+            "There was one boy there."
+          ]
         },
         {
           "n": "6",
           "text": "He succeeded in it.",
           "alternatives": [
-            "He succeeded in that."
+            "He succeeded in that.",
+            "He succeeded at it."
           ]
         },
         {
@@ -70,17 +85,29 @@
         },
         {
           "n": "10",
-          "text": "The company suffered a heavy loss."
+          "text": "The company suffered a heavy loss.",
+          "alternatives": [
+            "The company suffered a big loss.",
+            "The company suffered a large loss.",
+            "The company suffered a great loss."
+          ]
         },
         {
           "n": "11",
-          "text": "You must change your evil ways."
+          "text": "You must change your evil ways.",
+          "alternatives": [
+            "You have to change your evil ways.",
+            "You should change your evil ways.",
+            "You must change your wicked ways."
+          ]
         },
         {
           "n": "12",
           "text": "You've changed a lot since I saw you last.",
           "alternatives": [
-            "You've changed much since I saw you last."
+            "You've changed much since I saw you last.",
+            "You have changed a lot since I last saw you.",
+            "You've changed a lot since the last time I saw you."
           ]
         },
         {
@@ -111,7 +138,9 @@
           "n": "17",
           "text": "I took her by the arm.",
           "alternatives": [
-            "I took her by the arms."
+            "I took her by the arms.",
+            "I grabbed her by the arm.",
+            "I caught her by the arm."
           ]
         },
         {
@@ -120,7 +149,10 @@
         },
         {
           "n": "19",
-          "text": "Don't hold me like that."
+          "text": "Don't hold me like that.",
+          "alternatives": [
+            "Don't hold me that way."
+          ]
         },
         {
           "n": "20",
@@ -132,22 +164,32 @@
         },
         {
           "n": "22",
-          "text": "The promise still holds good."
+          "text": "The promise still holds good.",
+          "alternatives": [
+            "The promise still holds."
+          ]
         },
         {
           "n": "23",
           "text": "A conference was held.",
           "alternatives": [
-            "A meeting was held."
+            "A meeting was held.",
+            "One meeting was held."
           ]
         },
         {
           "n": "24",
-          "text": "Hold the mustard, please."
+          "text": "Hold the mustard, please.",
+          "alternatives": [
+            "Please hold the mustard."
+          ]
         },
         {
           "n": "25",
-          "text": "We will not be held responsible for theft."
+          "text": "We will not be held responsible for theft.",
+          "alternatives": [
+            "We are not held responsible for theft."
+          ]
         }
       ]
     },

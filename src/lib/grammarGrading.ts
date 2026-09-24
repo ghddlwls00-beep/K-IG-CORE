@@ -185,7 +185,10 @@ const NEGATIONS = new Set(["not", "never", "no", "nor"]);
  *   - "or not" ("whether to go or not" = "whether to go"), "no matter",
  *     "no sooner", "no doubt".
  */
-const NEGATORS = new Set(["not", "no", "never", "nobody", "nothing", "none", "neither", "nor", "nowhere", "noone", "cannot"]);
+// "unless" is "if … not" (관문 15 결정 C, 2026-09-25): once "Unless you study hard, …" is an accepted
+// answer, "If you study hard, …" against it drops the negation and must score 0 like any other flip —
+// and "If you don't study hard, …" against an "unless" model keeps the same meaning.
+const NEGATORS = new Set(["not", "no", "never", "nobody", "nothing", "none", "neither", "nor", "nowhere", "noone", "cannot", "unless"]);
 const NEGATED_AUX = /^(?:is|are|was|were|do|does|did|have|has|had|could|would|should|must|need|might|ca|wo|sha|ai)nt$/;
 /** "No," with its comma is read from the raw text; typed without one, these next words still mark it. */
 const ANSWER_NO = /^\s*no\s*[,.!;:]/i;

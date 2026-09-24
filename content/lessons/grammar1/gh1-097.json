@@ -38,14 +38,22 @@
           "n": "77",
           "text": "Each mayor received a warning, didn't he?",
           "alternatives": [
-            "Each mayor received a warning, didn't they?"
+            "Each mayor received a warning, didn't they?",
+            "Each mayor got a warning, didn't he?",
+            "Each mayor received one warning, didn't he?",
+            "Each mayor received a warning, did he not?"
           ]
         },
         {
           "n": "78",
           "text": "All the governors had a hard time, didn't they?",
           "alternatives": [
-            "All of the governors had a hard time, didn't they?"
+            "All of the governors had a hard time, didn't they?",
+            "All the governors had a difficult time, didn't they?",
+            "All the governors had a tough time, didn't they?",
+            "All the governors suffered, didn't they?",
+            "The governors all had a hard time, didn't they?",
+            "All the governors had a hard time, did they not?"
           ]
         },
         {
@@ -54,7 +62,8 @@
           "alternatives": [
             "Every boy didn't lose his life, did he?",
             "Not every boy lost his life, did they?",
-            "Every boy didn't lose his life, did they?"
+            "Every boy didn't lose his life, did they?",
+            "Not every boy died, did he?"
           ]
         },
         {
@@ -78,7 +87,9 @@
           "alternatives": [
             "All of them face a cleanup job.",
             "They all face a cleanup job.",
-            "They all face a cleaning job."
+            "They all face a cleaning job.",
+            "All of them face a clean-up job.",
+            "All of them face a cleaning task."
           ]
         },
         {
@@ -87,14 +98,18 @@
           "alternatives": [
             "Not all of them smelled that.",
             "All of them didn't smell it.",
-            "All of them didn't smell that."
+            "All of them didn't smell that.",
+            "Not all of them smelt it.",
+            "They didn't all smell it."
           ]
         },
         {
           "n": "84",
           "text": "Nobody called.",
           "alternatives": [
-            "No one called."
+            "No one called.",
+            "Nobody phoned.",
+            "No-one called."
           ]
         },
         {
@@ -103,7 +118,9 @@
           "alternatives": [
             "No one ignores it.",
             "Nobody ignores that.",
-            "No one ignores that."
+            "No one ignores that.",
+            "Nobody disregards it.",
+            "No-one ignores it."
           ]
         },
         {
@@ -112,65 +129,92 @@
           "alternatives": [
             "No one is buying it, are they?",
             "Nobody is buying that, are they?",
-            "No one is buying that, are they?"
+            "No one is buying that, are they?",
+            "Nobody's buying it, are they?",
+            "No one's buying it, are they?",
+            "Nobody is purchasing it, are they?",
+            "No-one is buying it, are they?"
           ]
         },
         {
           "n": "87",
           "text": "Nobody knows everything, do they?",
           "alternatives": [
-            "No one knows everything, do they?"
+            "No one knows everything, do they?",
+            "Nobody knows it all, do they?",
+            "No-one knows everything, do they?"
           ]
         },
         {
           "n": "88",
           "text": "Were there many researchers in the lab?",
           "alternatives": [
-            "Were there many researchers in the laboratory?"
+            "Were there many researchers in the laboratory?",
+            "Were there a lot of researchers in the lab?",
+            "Were there lots of researchers in the lab?"
           ]
         },
         {
           "n": "89",
           "text": "There were 60 officers in the police station, weren't there?",
           "alternatives": [
-            "There were sixty officers in the police station, weren't there?"
+            "There were sixty officers in the police station, weren't there?",
+            "There were 60 policemen in the police station, weren't there?",
+            "There were 60 police officers in the police station, weren't there?",
+            "There were 60 officers at the police station, weren't there?",
+            "There were 60 officers in the police station, were there not?"
           ]
         },
         {
           "n": "90",
           "text": "There weren't 60 officials in the office, were there?",
           "alternatives": [
-            "There weren't sixty officials in the office, were there?"
+            "There weren't sixty officials in the office, were there?",
+            "There weren't 60 officials at the office, were there?"
           ]
         },
         {
           "n": "91",
           "text": "Did many ministers go there?",
           "alternatives": [
-            "Did many pastors go there?"
+            "Did many pastors go there?",
+            "Did a lot of ministers go there?",
+            "Did a lot of pastors go there?"
           ]
         },
         {
           "n": "92",
           "text": "Didn't many monks go to the temple?",
           "alternatives": [
-            "Did many monks not go to the temple?"
+            "Did many monks not go to the temple?",
+            "Didn't a lot of monks go to the temple?",
+            "Didn't many Buddhist monks go to the temple?"
           ]
         },
         {
           "n": "93",
-          "text": "Many principals went there, didn't they?"
+          "text": "Many principals went there, didn't they?",
+          "alternatives": [
+            "A lot of principals went there, didn't they?",
+            "Many headmasters went there, didn't they?",
+            "Many principals went there, did they not?"
+          ]
         },
         {
           "n": "94",
-          "text": "Many sergeants didn't go there, did they?"
+          "text": "Many sergeants didn't go there, did they?",
+          "alternatives": [
+            "A lot of sergeants didn't go there, did they?"
+          ]
         },
         {
           "n": "95",
           "text": "The surgeon paid for the medicine, didn't he?",
           "alternatives": [
             "The surgeon paid for the medicine, didn't she?",
-            "The surgeon paid for the medicine, didn't they?"
+            "The surgeon paid for the medicine, didn't they?",
+            "The surgeon paid for the medication, didn't he?",
+            "The surgeon paid for the medicine, did he not?"
           ]
         }
       ]

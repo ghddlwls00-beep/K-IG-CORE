@@ -39,16 +39,28 @@
           "text": "He came with a book.",
           "alternatives": [
             "He brought a book.",
-            "He brought a book with him."
+            "He brought a book with him.",
+            "He came with one book.",
+            "He brought one book."
           ]
         },
         {
           "n": "3",
-          "text": "He has a poor relationship with her."
+          "text": "He has a poor relationship with her.",
+          "alternatives": [
+            "He has a terrible relationship with her.",
+            "He has a bad relationship with her.",
+            "He has an awful relationship with her."
+          ]
         },
         {
           "n": "4",
-          "text": "The money is on the table with the shopping list."
+          "text": "The money is on the table with the shopping list.",
+          "alternatives": [
+            "The money is on the table along with the shopping list.",
+            "The money is on the table together with the shopping list.",
+            "The money is with the shopping list on the table."
+          ]
         },
         {
           "n": "5",
@@ -56,20 +68,35 @@
           "alternatives": [
             "With only 2 days to go, we can't delay it.",
             "With only two days to go, we can't delay that.",
-            "With only 2 days to go, we can't delay that."
+            "With only 2 days to go, we can't delay that.",
+            "With only two days left, we can't delay it.",
+            "With only two days remaining, we can't delay it.",
+            "With just two days to go, we can't delay it."
           ]
         },
         {
           "n": "6",
-          "text": "With the Asian economy in recession, the IMF demanded structural reforms."
+          "text": "With the Asian economy in recession, the IMF demanded structural reforms.",
+          "alternatives": [
+            "With the Asian economy in recession, the IMF demanded structural reform.",
+            "With the Asian economy in recession, the IMF called for structural reforms.",
+            "With the Asian economy in a slump, the IMF demanded structural reforms."
+          ]
         },
         {
           "n": "7",
-          "text": "With all her faults, he still liked her."
+          "text": "With all her faults, he still liked her.",
+          "alternatives": [
+            "With all her flaws, he still liked her.",
+            "With all her shortcomings, he still liked her."
+          ]
         },
         {
           "n": "8",
-          "text": "I walked through a crowd."
+          "text": "I walked through a crowd.",
+          "alternatives": [
+            "I walked through the crowd."
+          ]
         },
         {
           "n": "9",
@@ -82,16 +109,26 @@
           "n": "10",
           "text": "It is not the role of the teacher.",
           "alternatives": [
-            "That is not the role of the teacher."
+            "That is not the role of the teacher.",
+            "It's not the role of a teacher.",
+            "It is not the role of teachers."
           ]
         },
         {
           "n": "11",
-          "text": "He accused her of lying."
+          "text": "He accused her of lying.",
+          "alternatives": [
+            "He accused her of telling lies.",
+            "He accused her of telling a lie.",
+            "He accused her of having lied."
+          ]
         },
         {
           "n": "12",
-          "text": "He informed me of the incident."
+          "text": "He informed me of the incident.",
+          "alternatives": [
+            "He informed me of the event."
+          ]
         },
         {
           "n": "13",
@@ -104,23 +141,35 @@
           "n": "14",
           "text": "He lived in a village 10 miles north of Seoul.",
           "alternatives": [
-            "He lived in a village ten miles north of Seoul."
+            "He lived in a village ten miles north of Seoul.",
+            "He lived in a village 10 miles to the north of Seoul.",
+            "He lived in a town 10 miles north of Seoul."
           ]
         },
         {
           "n": "15",
           "text": "The office is in the North Texas city of Dallas.",
           "alternatives": [
-            "The office is in the northern Texas city of Dallas."
+            "The office is in the northern Texas city of Dallas.",
+            "The office is located in the North Texas city of Dallas."
           ]
         },
         {
           "n": "16",
-          "text": "He walked to the office."
+          "text": "He walked to the office.",
+          "alternatives": [
+            "He went to the office on foot."
+          ]
         },
         {
           "n": "17",
-          "text": "Wait until the traffic lights change from red to green."
+          "text": "Wait until the traffic lights change from red to green.",
+          "alternatives": [
+            "Wait until the traffic light changes from red to green.",
+            "Wait till the traffic lights change from red to green.",
+            "Wait until the traffic light turns from red to green.",
+            "Wait until the traffic lights turn from red to green."
+          ]
         },
         {
           "n": "18",
@@ -131,13 +180,22 @@
         },
         {
           "n": "19",
-          "text": "This is the solution to the problem."
+          "text": "This is the solution to the problem.",
+          "alternatives": [
+            "This is a solution to the problem.",
+            "This is the answer to the problem."
+          ]
         },
         {
           "n": "20",
           "text": "You can go to prison for drunk driving.",
           "alternatives": [
-            "You can go to prison for drunken driving."
+            "You can go to prison for drunken driving.",
+            "You can go to jail for drunk driving.",
+            "You could go to prison for drunk driving.",
+            "You can go to prison for driving drunk.",
+            "You can go to prison for drinking and driving.",
+            "You can go to prison for drink-driving."
           ]
         }
       ]

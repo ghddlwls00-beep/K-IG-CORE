@@ -30,7 +30,9 @@
           "n": "1",
           "text": "If I had enough money, I would buy you a diamond ring.",
           "alternatives": [
-            "Had I enough money, I would buy you a diamond ring."
+            "Had I enough money, I would buy you a diamond ring.",
+            "If I had enough money, I would buy a diamond ring for you.",
+            "If I had enough money, I would get you a diamond ring."
           ]
         },
         {
@@ -43,7 +45,9 @@
           "alternatives": [
             "Had I known your phone number, I would have called you.",
             "If I had known your phone number, I would have given you a ring.",
-            "If I had known your phone number, I would have given you a call."
+            "If I had known your phone number, I would have given you a call.",
+            "If I had known your telephone number, I would have called you.",
+            "If I had known your phone number, I would have phoned you."
           ]
         },
         {
@@ -52,11 +56,18 @@
         },
         {
           "n": "5",
-          "text": "I wish I had a room reserved for tonight."
+          "text": "I wish I had a room reserved for tonight.",
+          "alternatives": [
+            "I wish I had a room booked for tonight."
+          ]
         },
         {
           "n": "6",
-          "text": "I wish I hadn't got a ticket for running a red light."
+          "text": "I wish I hadn't got a ticket for running a red light.",
+          "alternatives": [
+            "I wish I hadn't gotten a ticket for running a red light.",
+            "I wish I hadn't received a ticket for running a red light."
+          ]
         },
         {
           "n": "7",
@@ -64,21 +75,36 @@
         },
         {
           "n": "8",
-          "text": "The missile could have handed Argentina victory in the war."
+          "text": "The missile could have handed Argentina victory in the war.",
+          "alternatives": [
+            "The missile could have given Argentina victory in the war.",
+            "The missile could have brought Argentina victory in the war.",
+            "The missile could have brought victory to Argentina in the war."
+          ]
         },
         {
           "n": "9",
           "text": "If they had had the ability to make money, they would have had food and clothing.",
           "alternatives": [
             "Had they had the ability to make money, they would have had food and clothing.",
-            "If they had had the ability to make money, they would have had food and clothes."
+            "If they had had the ability to make money, they would have had food and clothes.",
+            "If they had had the ability to earn money, they would have had food and clothing.",
+            "If they had had the ability to earn money, they would have had food and clothes."
           ]
         },
         {
           "n": "10",
           "text": "He would be in high school now if he had not flunked a grade.",
           "alternatives": [
-            "Had he not flunked a grade, he would be in high school now."
+            "Had he not flunked a grade, he would be in high school now.",
+            "If he had not flunked a grade, he would be in high school now.",
+            "If he hadn't failed a grade, he would be in high school now.",
+            "He would be in high school now if he hadn't failed a grade.",
+            "He would now be in high school if he had not flunked a grade.",
+            "If he had not flunked a grade, he would now be in high school.",
+            "He would be in high school now if he had not failed a grade.",
+            "If he had not failed a grade, he would be in high school now.",
+            "Had he not failed a grade, he would be in high school now."
           ]
         },
         {
@@ -86,22 +112,33 @@
           "text": "If the blood products had been heat-treated, they could not have been infected with HIV.",
           "alternatives": [
             "Had the blood products been heat-treated, they could not have been infected with HIV.",
-            "If the blood products had been heat treated, they could not have been infected with HIV."
+            "If the blood products had been heat treated, they could not have been infected with HIV.",
+            "If the blood products had been heat-treated, they could not have been infected with the HIV virus.",
+            "If the blood product had been heat-treated, they could not have been infected with HIV.",
+            "Had the blood products been heat treated, they could not have been infected with HIV.",
+            "Had the blood products been heat-treated, they could not have been infected with the HIV virus."
           ]
         },
         {
           "n": "12",
-          "text": "I should have known you were lying."
+          "text": "I should have known you were lying.",
+          "alternatives": [
+            "I should have known you were telling a lie."
+          ]
         },
         {
           "n": "13",
-          "text": "If only I hadn't promised him."
+          "text": "If only I hadn't promised him.",
+          "alternatives": [
+            "If only I hadn't made him a promise."
+          ]
         },
         {
           "n": "14",
           "text": "Were it not for the sun, nothing could live.",
           "alternatives": [
-            "If it were not for the sun, nothing could live."
+            "If it were not for the sun, nothing could live.",
+            "If it were not for the sun, nothing would be able to live."
           ]
         },
         {
@@ -121,7 +158,9 @@
           "alternatives": [
             "If you should not go, he would go.",
             "Should you not go, he will go.",
-            "If you don't go, he will go."
+            "If you don't go, he will go.",
+            "If you should not go, he will go.",
+            "If you're not going, he will go."
           ]
         }
       ]

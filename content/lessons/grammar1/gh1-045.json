@@ -38,14 +38,17 @@
           "n": "41",
           "text": "Is it hers?",
           "alternatives": [
-            "Is that hers?"
+            "Is that hers?",
+            "Is that one hers?"
           ]
         },
         {
           "n": "42",
           "text": "Isn't this mine?",
           "alternatives": [
-            "Is this not mine?"
+            "Is this not mine?",
+            "Isn't this one mine?",
+            "Is this one not mine?"
           ]
         },
         {
@@ -54,7 +57,9 @@
           "alternatives": [
             "Is it not yours?",
             "Isn't that yours?",
-            "Is that not yours?"
+            "Is that not yours?",
+            "Isn't that one yours?",
+            "Is that one not yours?"
           ]
         },
         {
@@ -241,7 +246,10 @@
         },
         {
           "n": "80",
-          "text": "This is a pen, isn't it?"
+          "text": "This is a pen, isn't it?",
+          "alternatives": [
+            "This is a pen, is it not?"
+          ]
         }
       ]
     },

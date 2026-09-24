@@ -28,7 +28,11 @@
       "items": [
         {
           "n": "20",
-          "text": "Why did Mubarak cancel the meeting?"
+          "text": "Why did Mubarak cancel the meeting?",
+          "alternatives": [
+            "Why did Mubarak cancel the talks?",
+            "Why did Mubarak call off the meeting?"
+          ]
         },
         {
           "n": "21",
@@ -36,20 +40,40 @@
           "alternatives": [
             "The Palestinians and the Israelis must act.",
             "The Palestinians and Israelis must act.",
-            "Palestinians and the Israelis must act."
+            "Palestinians and the Israelis must act.",
+            "Palestinians and Israelis have to act.",
+            "Palestinians and Israelis should act.",
+            "The Palestinians and the Israelis have to act."
           ]
         },
         {
           "n": "22",
-          "text": "Why wasn't Powell's mission successful?"
+          "text": "Why wasn't Powell's mission successful?",
+          "alternatives": [
+            "Why wasn't Powell's tour successful?",
+            "Why was Powell's mission not successful?"
+          ]
         },
         {
           "n": "23",
-          "text": "Why couldn't he persuade the Israelis?"
+          "text": "Why couldn't he persuade the Israelis?",
+          "alternatives": [
+            "Why couldn't he convince the Israelis?",
+            "Why did he fail to persuade the Israelis?",
+            "Why could he not persuade the Israelis?",
+            "Why wasn't he able to persuade the Israelis?",
+            "Why couldn't he persuade Israelis?"
+          ]
         },
         {
           "n": "24",
-          "text": "When did Israelis end their military offensive against Palestinian lands?"
+          "text": "When did Israelis end their military offensive against Palestinian lands?",
+          "alternatives": [
+            "When did Israelis end their military offensive on Palestinian lands?",
+            "When did Israelis finish their military offensive against Palestinian lands?",
+            "When did Israelis end their military offensive against Palestinian land?",
+            "When did the Israelis end their military offensive against Palestinian land?"
+          ]
         },
         {
           "n": "25",
@@ -66,7 +90,9 @@
           "n": "27",
           "text": "He has to send it to the judge.",
           "alternatives": [
-            "He has to send that to the judge."
+            "He has to send that to the judge.",
+            "He must send it to the judge.",
+            "He should send it to the judge."
           ]
         },
         {
@@ -85,7 +111,10 @@
         },
         {
           "n": "30",
-          "text": "My father was an alcoholic."
+          "text": "My father was an alcoholic.",
+          "alternatives": [
+            "My father was an alcohol addict."
+          ]
         },
         {
           "n": "31",
@@ -93,7 +122,11 @@
         },
         {
           "n": "32",
-          "text": "Why did you break up with her?"
+          "text": "Why did you break up with her?",
+          "alternatives": [
+            "Why did you split up with her?",
+            "Why did you separate from her?"
+          ]
         },
         {
           "n": "33",
@@ -108,23 +141,38 @@
           "alternatives": [
             "The Arabs and the Israelis must make a choice.",
             "The Arabs and Israelis must make a choice.",
-            "Arabs and the Israelis must make a choice."
+            "Arabs and the Israelis must make a choice.",
+            "Arabs and Israelis have to make a choice.",
+            "Arabs and Israelis should make a choice."
           ]
         },
         {
           "n": "35",
           "text": "He addressed cadets.",
           "alternatives": [
-            "He addressed the cadets."
+            "He addressed the cadets.",
+            "He gave a speech to the cadets.",
+            "He made a speech to the cadets."
           ]
         },
         {
           "n": "36",
-          "text": "The responsibility for peace lies with Israel."
+          "text": "The responsibility for peace lies with Israel.",
+          "alternatives": [
+            "The responsibility for peace is with Israel.",
+            "The responsibility for peace rests with Israel.",
+            "Responsibility for peace lies with Israel."
+          ]
         },
         {
           "n": "37",
-          "text": "Israel must continue its withdrawals."
+          "text": "Israel must continue its withdrawals.",
+          "alternatives": [
+            "Israel must continue its withdrawal.",
+            "Israel has to continue its withdrawals.",
+            "Israel must continue the withdrawal.",
+            "Israel should continue its withdrawals."
+          ]
         }
       ]
     },

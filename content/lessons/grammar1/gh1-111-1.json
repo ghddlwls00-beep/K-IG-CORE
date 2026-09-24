@@ -36,46 +36,76 @@
       "items": [
         {
           "n": "71",
-          "text": "What happened to the criminal?"
+          "text": "What happened to the criminal?",
+          "alternatives": [
+            "What became of the criminal?"
+          ]
         },
         {
           "n": "72",
-          "text": "Why do they want his family's help?"
+          "text": "Why do they want his family's help?",
+          "alternatives": [
+            "Why do they want the help of his family?",
+            "Why do they want help from his family?"
+          ]
         },
         {
           "n": "73",
-          "text": "Now here are the rest of today's top stories."
+          "text": "Now here are the rest of today's top stories.",
+          "alternatives": [
+            "Now here are the rest of today's important stories.",
+            "Now here are the rest of today's main stories."
+          ]
         },
         {
           "n": "74",
-          "text": "The volcano created a disaster thousands of miles away, didn't it?"
+          "text": "The volcano created a disaster thousands of miles away, didn't it?",
+          "alternatives": [
+            "The volcano caused a disaster thousands of miles away, didn't it?"
+          ]
         },
         {
           "n": "75",
-          "text": "We'll go there sometime next week, won't we?"
+          "text": "We'll go there sometime next week, won't we?",
+          "alternatives": [
+            "We're going to go there sometime next week, aren't we?"
+          ]
         },
         {
           "n": "76",
           "text": "When will we have a live report?",
           "alternatives": [
-            "When shall we have a live report?"
+            "When shall we have a live report?",
+            "When are we going to have a live report?",
+            "When will we get a live report?"
           ]
         },
         {
           "n": "77",
-          "text": "In fact many of them are from Los Angeles, aren't they?"
+          "text": "In fact many of them are from Los Angeles, aren't they?",
+          "alternatives": [
+            "Actually, many of them are from Los Angeles, aren't they?",
+            "In fact, a lot of them are from Los Angeles, aren't they?",
+            "In fact, many of them come from Los Angeles, don't they?"
+          ]
         },
         {
           "n": "78",
           "text": "It is high noon in Los Angeles, isn't it?",
           "alternatives": [
             "It is noon in Los Angeles now, isn't it?",
-            "It is noon in Los Angeles, isn't it?"
+            "It is noon in Los Angeles, isn't it?",
+            "It's noon now in Los Angeles, isn't it?",
+            "It's now noon in Los Angeles, isn't it?",
+            "Now it's noon in Los Angeles, isn't it?"
           ]
         },
         {
           "n": "79",
-          "text": "Welcome back to Korea."
+          "text": "Welcome back to Korea.",
+          "alternatives": [
+            "Welcome to Korea again."
+          ]
         },
         {
           "n": "80",
@@ -83,56 +113,93 @@
           "alternatives": [
             "They are probably awake.",
             "They are probably still up.",
-            "They are probably still awake."
+            "They are probably still awake.",
+            "They are probably not sleeping.",
+            "They're probably not asleep.",
+            "They will probably be awake.",
+            "They'll probably be up."
           ]
         },
         {
           "n": "81",
-          "text": "You had a toothache yesterday, didn't you?"
+          "text": "You had a toothache yesterday, didn't you?",
+          "alternatives": [
+            "Yesterday you had a toothache, didn't you?",
+            "You had toothache yesterday, didn't you?"
+          ]
         },
         {
           "n": "82",
           "text": "Has it stopped aching now?",
           "alternatives": [
-            "Has that stopped aching now?"
+            "Has that stopped aching now?",
+            "Has it stopped hurting now?",
+            "Has that stopped hurting now?"
           ]
         },
         {
           "n": "83",
-          "text": "The tooth is aching now."
+          "text": "The tooth is aching now.",
+          "alternatives": [
+            "The tooth is hurting now.",
+            "The tooth hurts now."
+          ]
         },
         {
           "n": "84",
-          "text": "What's in them?"
+          "text": "What's in them?",
+          "alternatives": [
+            "What's inside them?",
+            "What's in those?"
+          ]
         },
         {
           "n": "85",
-          "text": "They are cooperating with the agency."
+          "text": "They are cooperating with the agency.",
+          "alternatives": [
+            "They are collaborating with the agency.",
+            "They are cooperating with the organization."
+          ]
         },
         {
           "n": "86",
-          "text": "The Defense Department wouldn't comment any further than that."
+          "text": "The Defense Department wouldn't comment any further than that.",
+          "alternatives": [
+            "The Department of Defense wouldn't comment any further than that.",
+            "The Defense Department wouldn't comment any more than that.",
+            "The Defense Department refused to comment any further than that."
+          ]
         },
         {
           "n": "87",
           "text": "That could reduce suspects' fear.",
           "alternatives": [
             "That could reduce the suspects' fear.",
-            "That could reduce the fear of the suspects."
+            "That could reduce the fear of the suspects.",
+            "It could reduce the suspects' fear.",
+            "It could reduce the fear of the suspects.",
+            "It could reduce suspects' fear.",
+            "That will be able to reduce the suspects' fear."
           ]
         },
         {
           "n": "88",
           "text": "They have to deal with the disaster.",
           "alternatives": [
-            "They must deal with the disaster."
+            "They must deal with the disaster.",
+            "They have to handle the disaster.",
+            "They need to deal with the disaster.",
+            "They should deal with the disaster.",
+            "They must handle the disaster."
           ]
         },
         {
           "n": "89",
           "text": "Which company makes chewing tobacco?",
           "alternatives": [
-            "What company makes chewing tobacco?"
+            "What company makes chewing tobacco?",
+            "Which company produces chewing tobacco?",
+            "Which company manufactures chewing tobacco?"
           ]
         },
         {
@@ -140,7 +207,9 @@
           "text": "How did the government boost its sales?",
           "alternatives": [
             "How did the government increase its sales?",
-            "How did the government raise its sales?"
+            "How did the government raise its sales?",
+            "How did the government increase sales?",
+            "How did the government boost sales?"
           ]
         }
       ]

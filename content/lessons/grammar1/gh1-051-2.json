@@ -40,7 +40,9 @@
           "alternatives": [
             "What does she do?",
             "What is her job?",
-            "What does she do for a living?"
+            "What does she do for a living?",
+            "What is her occupation?",
+            "What does she do for work?"
           ]
         },
         {
@@ -59,7 +61,8 @@
           "n": "28",
           "text": "Whose car is that?",
           "alternatives": [
-            "Whose car is it?"
+            "Whose car is it?",
+            "Whose is that car?"
           ]
         },
         {
@@ -81,7 +84,8 @@
           "n": "32",
           "text": "Is it mine?",
           "alternatives": [
-            "Is that mine?"
+            "Is that mine?",
+            "Is that one mine?"
           ]
         },
         {
@@ -98,7 +102,10 @@
         },
         {
           "n": "36",
-          "text": "How is your wife?"
+          "text": "How is your wife?",
+          "alternatives": [
+            "How is your wife doing?"
+          ]
         },
         {
           "n": "37",
@@ -110,7 +117,13 @@
           "alternatives": [
             "Is it eight o'clock now?",
             "Is it 8 o'clock?",
-            "Is it 8 o'clock now?"
+            "Is it 8 o'clock now?",
+            "Is it eight now?",
+            "Is it eight?",
+            "Is it 8 now?",
+            "Is it 8?",
+            "Is it 8:00?",
+            "Is it 8:00 now?"
           ]
         },
         {
@@ -119,7 +132,15 @@
           "alternatives": [
             "It is nine o'clock now.",
             "It is 9 o'clock.",
-            "It is 9 o'clock now."
+            "It is 9 o'clock now.",
+            "It is now nine o'clock.",
+            "Now it is nine o'clock.",
+            "It's nine now.",
+            "It's nine.",
+            "It is 9 now.",
+            "It is 9.",
+            "It's 9:00 now.",
+            "It is 9:00."
           ]
         },
         {

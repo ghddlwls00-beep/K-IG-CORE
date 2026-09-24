@@ -40,31 +40,61 @@
       "items": [
         {
           "n": "54",
-          "text": "You studied English, didn't you?"
+          "text": "You studied English, didn't you?",
+          "alternatives": [
+            "You studied English, did you not?"
+          ]
         },
         {
           "n": "55",
-          "text": "He studies English, doesn't he?"
+          "text": "He studies English, doesn't he?",
+          "alternatives": [
+            "He studies English, does he not?"
+          ]
         },
         {
           "n": "56",
-          "text": "Does he give money to each of his sons?"
+          "text": "Does he give money to each of his sons?",
+          "alternatives": [
+            "Does he give each of his sons money?",
+            "Does he give money to each one of his sons?",
+            "Does he give money to every one of his sons?",
+            "Does he give money to each and every one of his sons?",
+            "Does he give each one of his sons money?"
+          ]
         },
         {
           "n": "57",
           "text": "Does each student have his own room?",
           "alternatives": [
             "Does each student have their own room?",
-            "Does each student have his or her own room?"
+            "Does each student have his or her own room?",
+            "Does each student have his/her own room?",
+            "Does each student have a room of their own?",
+            "Does each student have a room of his own?",
+            "Does each of the students have his own room?",
+            "Does each of the students have their own room?",
+            "Does each of the students have his or her own room?"
           ]
         },
         {
           "n": "58",
-          "text": "He goes there every year, doesn't he?"
+          "text": "He goes there every year, doesn't he?",
+          "alternatives": [
+            "He goes there every year, does he not?",
+            "He goes there each year, doesn't he?",
+            "Every year he goes there, doesn't he?",
+            "Every year, he goes there, doesn't he?",
+            "He goes to that place every year, doesn't he?",
+            "He goes there annually, doesn't he?"
+          ]
         },
         {
           "n": "59",
-          "text": "Which car does he need?"
+          "text": "Which car does he need?",
+          "alternatives": [
+            "Which car does he require?"
+          ]
         },
         {
           "n": "60",
@@ -72,19 +102,26 @@
         },
         {
           "n": "61",
-          "text": "Why is the American sitting there?"
+          "text": "Why is the American sitting there?",
+          "alternatives": [
+            "Why's the American sitting there?"
+          ]
         },
         {
           "n": "62",
           "text": "Why was the British woman sitting there?",
           "alternatives": [
             "Why was the English woman sitting there?",
-            "Why was the Englishwoman sitting there?"
+            "Why was the Englishwoman sitting there?",
+            "Why was the British lady sitting there?"
           ]
         },
         {
           "n": "63",
-          "text": "She is happy, isn't she?"
+          "text": "She is happy, isn't she?",
+          "alternatives": [
+            "She is happy, is she not?"
+          ]
         },
         {
           "n": "64",
@@ -92,15 +129,26 @@
         },
         {
           "n": "65",
-          "text": "She was poor, wasn't she?"
+          "text": "She was poor, wasn't she?",
+          "alternatives": [
+            "She was poor, was she not?"
+          ]
         },
         {
           "n": "66",
-          "text": "Everybody likes the house, don't they?"
+          "text": "Everybody likes the house, don't they?",
+          "alternatives": [
+            "Everybody likes the house, do they not?",
+            "Everyone likes the house, don't they?"
+          ]
         },
         {
           "n": "67",
-          "text": "Everybody liked the house, didn't they?"
+          "text": "Everybody liked the house, didn't they?",
+          "alternatives": [
+            "Everybody liked the house, did they not?",
+            "Everyone liked the house, didn't they?"
+          ]
         },
         {
           "n": "68",
@@ -108,7 +156,8 @@
           "alternatives": [
             "No one likes it, do they?",
             "Nobody likes that, do they?",
-            "No one likes that, do they?"
+            "No one likes that, do they?",
+            "No-one likes it, do they?"
           ]
         },
         {
@@ -117,58 +166,95 @@
           "alternatives": [
             "No one liked it, did they?",
             "Nobody liked that, did they?",
-            "No one liked that, did they?"
+            "No one liked that, did they?",
+            "No-one liked it, did they?"
           ]
         },
         {
           "n": "70",
-          "text": "Every boy receives a prize."
+          "text": "Every boy receives a prize.",
+          "alternatives": [
+            "Every boy gets a prize.",
+            "Every boy wins a prize."
+          ]
         },
         {
           "n": "71",
           "text": "All the boys receive a prize.",
           "alternatives": [
-            "All of the boys receive a prize."
+            "All of the boys receive a prize.",
+            "All the boys get a prize.",
+            "All of the boys get a prize.",
+            "All the boys win a prize.",
+            "All of the boys win a prize."
           ]
         },
         {
           "n": "72",
-          "text": "Each boy receives a prize."
+          "text": "Each boy receives a prize.",
+          "alternatives": [
+            "Each boy gets a prize.",
+            "Each boy wins a prize."
+          ]
         },
         {
           "n": "73",
-          "text": "Every boy received a prize."
+          "text": "Every boy received a prize.",
+          "alternatives": [
+            "Every boy got a prize.",
+            "Every boy won a prize."
+          ]
         },
         {
           "n": "74",
           "text": "All the boys received a prize.",
           "alternatives": [
-            "All of the boys received a prize."
+            "All of the boys received a prize.",
+            "All the boys got a prize.",
+            "All of the boys got a prize.",
+            "All the boys won a prize.",
+            "All of the boys won a prize."
           ]
         },
         {
           "n": "75",
-          "text": "Each boy received a prize."
+          "text": "Each boy received a prize.",
+          "alternatives": [
+            "Each boy got a prize.",
+            "Each boy won a prize."
+          ]
         },
         {
           "n": "76",
           "text": "Every boy received a prize, didn't he?",
           "alternatives": [
-            "Every boy received a prize, didn't they?"
+            "Every boy received a prize, didn't they?",
+            "Every boy got a prize, didn't they?",
+            "Every boy got a prize, didn't he?",
+            "Every boy won a prize, didn't they?",
+            "Every boy received a prize, did they not?"
           ]
         },
         {
           "n": "77",
           "text": "Each boy received a prize, didn't he?",
           "alternatives": [
-            "Each boy received a prize, didn't they?"
+            "Each boy received a prize, didn't they?",
+            "Each boy got a prize, didn't he?",
+            "Each boy got a prize, didn't they?",
+            "Each boy won a prize, didn't he?",
+            "Each boy received a prize, did he not?"
           ]
         },
         {
           "n": "78",
           "text": "All the boys received a prize, didn't they?",
           "alternatives": [
-            "All of the boys received a prize, didn't they?"
+            "All of the boys received a prize, didn't they?",
+            "All the boys got a prize, didn't they?",
+            "All of the boys got a prize, didn't they?",
+            "All the boys won a prize, didn't they?",
+            "All the boys received a prize, did they not?"
           ]
         }
       ]

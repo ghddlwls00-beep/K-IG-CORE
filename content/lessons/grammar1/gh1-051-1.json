@@ -48,7 +48,11 @@
         },
         {
           "n": "4",
-          "text": "She is healthy."
+          "text": "She is healthy.",
+          "alternatives": [
+            "She is well.",
+            "She is in good health."
+          ]
         },
         {
           "n": "5",
@@ -82,22 +86,34 @@
         },
         {
           "n": "11",
-          "text": "This is yours."
+          "text": "This is yours.",
+          "alternatives": [
+            "This one is yours."
+          ]
         },
         {
           "n": "12",
           "text": "It is mine.",
           "alternatives": [
-            "That is mine."
+            "That is mine.",
+            "That one is mine."
           ]
         },
         {
           "n": "13",
-          "text": "Am I healthy?"
+          "text": "Am I healthy?",
+          "alternatives": [
+            "Am I in good health?",
+            "Am I well?"
+          ]
         },
         {
           "n": "14",
-          "text": "Is he famous?"
+          "text": "Is he famous?",
+          "alternatives": [
+            "Is he well-known?",
+            "Is he well known?"
+          ]
         },
         {
           "n": "15",
@@ -109,7 +125,10 @@
         },
         {
           "n": "17",
-          "text": "Is my car good?"
+          "text": "Is my car good?",
+          "alternatives": [
+            "Is my car nice?"
+          ]
         },
         {
           "n": "18",

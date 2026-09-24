@@ -43,7 +43,8 @@
           "text": "Don't your parents have a dream?",
           "alternatives": [
             "Don't your parents have dreams?",
-            "Do your parents not have a dream?"
+            "Do your parents not have a dream?",
+            "Do your parents not have dreams?"
           ]
         },
         {
@@ -65,7 +66,8 @@
           "n": "30",
           "text": "Does your boss like it?",
           "alternatives": [
-            "Does your boss like that?"
+            "Does your boss like that?",
+            "Does your superior like it?"
           ]
         },
         {
@@ -101,7 +103,10 @@
         },
         {
           "n": "36",
-          "text": "Does your mother know your boss?"
+          "text": "Does your mother know your boss?",
+          "alternatives": [
+            "Does your mother know your superior?"
+          ]
         },
         {
           "n": "37",
@@ -118,7 +123,8 @@
           "n": "39",
           "text": "Why does he study English?",
           "alternatives": [
-            "Why is he studying English?"
+            "Why is he studying English?",
+            "Why's he studying English?"
           ]
         },
         {
@@ -139,7 +145,10 @@
         },
         {
           "n": "44",
-          "text": "Why is your mother happy?"
+          "text": "Why is your mother happy?",
+          "alternatives": [
+            "Why's your mother happy?"
+          ]
         },
         {
           "n": "45",
@@ -147,22 +156,33 @@
         },
         {
           "n": "46",
-          "text": "Why are you looking at her?"
+          "text": "Why are you looking at her?",
+          "alternatives": [
+            "Why are you watching her?"
+          ]
         },
         {
           "n": "47",
-          "text": "Why was she looking at me?"
+          "text": "Why was she looking at me?",
+          "alternatives": [
+            "Why was she watching me?"
+          ]
         },
         {
           "n": "48",
           "text": "Why do you look at me?",
           "alternatives": [
-            "Why are you looking at me?"
+            "Why are you looking at me?",
+            "Why are you watching me?",
+            "Why do you watch me?"
           ]
         },
         {
           "n": "49",
-          "text": "Why is he running?"
+          "text": "Why is he running?",
+          "alternatives": [
+            "Why's he running?"
+          ]
         },
         {
           "n": "50",
@@ -186,7 +206,8 @@
           "n": "53",
           "text": "Who studies English hard?",
           "alternatives": [
-            "Who is studying English hard?"
+            "Who is studying English hard?",
+            "Who studies English diligently?"
           ]
         }
       ]

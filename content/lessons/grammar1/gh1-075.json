@@ -83,7 +83,8 @@
           "n": "10",
           "text": "Were they policemen?",
           "alternatives": [
-            "Were they police officers?"
+            "Were they police officers?",
+            "Were they police?"
           ]
         },
         {
@@ -92,7 +93,11 @@
         },
         {
           "n": "12",
-          "text": "Was I a good boy?"
+          "text": "Was I a good boy?",
+          "alternatives": [
+            "Was I a nice boy?",
+            "Was I a kind boy?"
+          ]
         },
         {
           "n": "13",
@@ -123,7 +128,10 @@
         },
         {
           "n": "19",
-          "text": "Whose car was this?"
+          "text": "Whose car was this?",
+          "alternatives": [
+            "Whose was this car?"
+          ]
         },
         {
           "n": "20",
@@ -169,7 +177,10 @@
         },
         {
           "n": "29",
-          "text": "How was your grandmother?"
+          "text": "How was your grandmother?",
+          "alternatives": [
+            "How was your grandma?"
+          ]
         }
       ]
     },

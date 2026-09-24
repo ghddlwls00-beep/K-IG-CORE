@@ -232,18 +232,24 @@
           "alternatives": [
             "Does he not love her sister?",
             "Doesn't he love her younger sister?",
-            "Does he not love her younger sister?"
+            "Does he not love her younger sister?",
+            "Doesn't he love her little sister?",
+            "Does he not love her little sister?"
           ]
         },
         {
           "n": "32",
-          "text": "This is mine."
+          "text": "This is mine.",
+          "alternatives": [
+            "This one is mine."
+          ]
         },
         {
           "n": "33",
           "text": "It is yours.",
           "alternatives": [
-            "That is yours."
+            "That is yours.",
+            "That one is yours."
           ]
         },
         {
@@ -261,18 +267,23 @@
           "n": "36",
           "text": "It is hers.",
           "alternatives": [
-            "That is hers."
+            "That is hers.",
+            "That one is hers."
           ]
         },
         {
           "n": "37",
-          "text": "Is this mine?"
+          "text": "Is this mine?",
+          "alternatives": [
+            "Is this one mine?"
+          ]
         },
         {
           "n": "38",
           "text": "Is it yours?",
           "alternatives": [
-            "Is that yours?"
+            "Is that yours?",
+            "Is that one yours?"
           ]
         },
         {

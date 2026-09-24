@@ -44,7 +44,10 @@
         },
         {
           "n": "3",
-          "text": "What can he do for me?"
+          "text": "What can he do for me?",
+          "alternatives": [
+            "What is he able to do for me?"
+          ]
         },
         {
           "n": "4",
@@ -54,7 +57,15 @@
           "n": "5",
           "text": "When does he come here?",
           "alternatives": [
-            "When is he coming here?"
+            "When is he coming here?",
+            "When will he come here?",
+            "When is he going to come here?",
+            "When does he get here?",
+            "When will he get here?",
+            "When is he getting here?",
+            "When does he arrive here?",
+            "When will he arrive here?",
+            "When is he arriving here?"
           ]
         },
         {
@@ -115,7 +126,9 @@
           "n": "15",
           "text": "She didn't have dinner, did she?",
           "alternatives": [
-            "She didn't eat dinner, did she?"
+            "She didn't eat dinner, did she?",
+            "She didn't have supper, did she?",
+            "She didn't eat supper, did she?"
           ]
         },
         {
@@ -123,7 +136,8 @@
           "text": "He needs much water, doesn't he?",
           "alternatives": [
             "He needs a lot of water, doesn't he?",
-            "He needs lots of water, doesn't he?"
+            "He needs lots of water, doesn't he?",
+            "He needs plenty of water, doesn't he?"
           ]
         },
         {
@@ -131,7 +145,8 @@
           "text": "The hospital wants much blood, doesn't it?",
           "alternatives": [
             "The hospital wants a lot of blood, doesn't it?",
-            "The hospital wants lots of blood, doesn't it?"
+            "The hospital wants lots of blood, doesn't it?",
+            "The hospital wants plenty of blood, doesn't it?"
           ]
         },
         {

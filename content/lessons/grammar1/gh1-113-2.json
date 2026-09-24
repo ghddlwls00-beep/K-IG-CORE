@@ -34,31 +34,60 @@
           "n": "128",
           "text": "Weren't they crossing the street here?",
           "alternatives": [
-            "Were they not crossing the street here?"
+            "Were they not crossing the street here?",
+            "Weren't they crossing the road here?",
+            "Were they not crossing the road here?"
           ]
         },
         {
           "n": "129",
           "text": "Won't you drop in on me?",
           "alternatives": [
-            "Will you not drop in on me?"
+            "Will you not drop in on me?",
+            "Won't you drop by my place?",
+            "Won't you stop by my place?"
           ]
         },
         {
           "n": "130",
-          "text": "You didn't follow my advice, did you?"
+          "text": "You didn't follow my advice, did you?",
+          "alternatives": [
+            "You didn't take my advice, did you?"
+          ]
         },
         {
           "n": "131",
-          "text": "Why don't you take a rest?"
+          "text": "Why don't you take a rest?",
+          "alternatives": [
+            "Why don't you rest?",
+            "Why don't you take a break?",
+            "Why don't you have a rest?",
+            "Why don't you get some rest?",
+            "Why do you not take a rest?"
+          ]
         },
         {
           "n": "132",
-          "text": "Why couldn't he realize his dream?"
+          "text": "Why couldn't he realize his dream?",
+          "alternatives": [
+            "Why couldn't he achieve his dream?",
+            "Why wasn't he able to realize his dream?",
+            "Why couldn't he fulfill his dream?",
+            "Why couldn't he make his dream come true?",
+            "Why could he not realize his dream?",
+            "Why couldn't he realise his dream?"
+          ]
         },
         {
           "n": "133",
-          "text": "How many times a year does he go on a picnic?"
+          "text": "How many times a year does he go on a picnic?",
+          "alternatives": [
+            "How many times per year does he go on a picnic?",
+            "How many times a year does he go for a picnic?",
+            "How many times a year does he go on picnics?",
+            "How many times each year does he go on a picnic?",
+            "How many times a year does he go picnicking?"
+          ]
         },
         {
           "n": "134",
@@ -68,7 +97,10 @@
           "n": "135",
           "text": "I don't quite get your point.",
           "alternatives": [
-            "I don't quite understand your point."
+            "I don't quite understand your point.",
+            "I don't really get your point.",
+            "I don't quite see your point.",
+            "I don't quite understand what you mean."
           ]
         },
         {
@@ -89,19 +121,32 @@
           "n": "138",
           "text": "Will you speak more slowly, please?",
           "alternatives": [
-            "Would you speak more slowly, please?"
+            "Would you speak more slowly, please?",
+            "Would you speak more slowly?",
+            "Could you speak more slowly, please?",
+            "Would you please speak more slowly?",
+            "Will you please speak more slowly?",
+            "Could you please speak more slowly?",
+            "Would you talk more slowly, please?"
           ]
         },
         {
           "n": "139",
           "text": "May I have your phone number?",
           "alternatives": [
-            "May I have your telephone number?"
+            "May I have your telephone number?",
+            "Can I have your phone number?",
+            "Could I have your phone number?",
+            "Can I get your phone number?"
           ]
         },
         {
           "n": "140",
-          "text": "Where can I reach you?"
+          "text": "Where can I reach you?",
+          "alternatives": [
+            "Where can I contact you?",
+            "Where could I reach you?"
+          ]
         },
         {
           "n": "141",
@@ -119,16 +164,27 @@
           "text": "Isn't he working for a bank?",
           "alternatives": [
             "Isn't he working at a bank?",
-            "Is he not working for a bank?"
+            "Is he not working for a bank?",
+            "Isn't he working at the bank?",
+            "Is he not working at a bank?",
+            "Isn't he working in a bank?"
           ]
         },
         {
           "n": "144",
-          "text": "Let's listen to him."
+          "text": "Let's listen to him.",
+          "alternatives": [
+            "Let's listen to what he says.",
+            "Let's listen to his words."
+          ]
         },
         {
           "n": "145",
-          "text": "He was making a great speech, wasn't he?"
+          "text": "He was making a great speech, wasn't he?",
+          "alternatives": [
+            "He was giving a great speech, wasn't he?",
+            "He was delivering a great speech, wasn't he?"
+          ]
         }
       ]
     },

@@ -36,7 +36,11 @@
       "items": [
         {
           "n": "109",
-          "text": "Did you draw a map for me?"
+          "text": "Did you draw a map for me?",
+          "alternatives": [
+            "Did you draw me a map?",
+            "Did you draw the map for me?"
+          ]
         },
         {
           "n": "110",
@@ -46,14 +50,20 @@
           "n": "111",
           "text": "Can't you stay here during the vacation?",
           "alternatives": [
-            "Can you not stay here during the vacation?"
+            "Can you not stay here during the vacation?",
+            "Can't you stay here during the holidays?",
+            "Can't you stay here during your vacation?",
+            "Can't you stay here during vacation?",
+            "Can't you stay here during the holiday?"
           ]
         },
         {
           "n": "112",
           "text": "Don't you know the name of the poet?",
           "alternatives": [
-            "Do you not know the name of the poet?"
+            "Do you not know the name of the poet?",
+            "Don't you know the poet's name?",
+            "Do you not know the poet's name?"
           ]
         },
         {
@@ -71,25 +81,38 @@
             "The novelist won the Nobel Prize, didn't she?",
             "The novelist won the Nobel Prize, didn't they?",
             "The novelist received the Nobel Prize, didn't she?",
-            "The novelist received the Nobel Prize, didn't they?"
+            "The novelist received the Nobel Prize, didn't they?",
+            "The novelist got the Nobel Prize, didn't he?",
+            "The novelist won a Nobel Prize, didn't he?",
+            "The novelist was awarded the Nobel Prize, wasn't he?"
           ]
         },
         {
           "n": "115",
-          "text": "Bob is leaving for England next week, isn't he?"
+          "text": "Bob is leaving for England next week, isn't he?",
+          "alternatives": [
+            "Bob will leave for England next week, won't he?",
+            "Bob leaves for England next week, doesn't he?",
+            "Bob is going to leave for England next week, isn't he?"
+          ]
         },
         {
           "n": "116",
           "text": "Wasn't this measure much more effective?",
           "alternatives": [
-            "Was this measure not much more effective?"
+            "Was this measure not much more effective?",
+            "Wasn't this measure far more effective?",
+            "Wasn't this measure a lot more effective?",
+            "Wasn't this step much more effective?"
           ]
         },
         {
           "n": "117",
           "text": "Isn't New York a fascinating city?",
           "alternatives": [
-            "Is New York not a fascinating city?"
+            "Is New York not a fascinating city?",
+            "Isn't New York a charming city?",
+            "Isn't New York an attractive city?"
           ]
         },
         {
@@ -100,7 +123,12 @@
           "n": "119",
           "text": "Didn't the clerk get a 50% pay raise?",
           "alternatives": [
-            "Did the clerk not get a 50% pay raise?"
+            "Did the clerk not get a 50% pay raise?",
+            "Didn't the clerk get a 50 percent pay raise?",
+            "Didn't the clerk get a 50% raise?",
+            "Didn't the clerk get a 50% salary increase?",
+            "Didn't the clerk receive a 50% pay raise?",
+            "Didn't the clerk get a 50% pay rise?"
           ]
         },
         {
@@ -117,7 +145,12 @@
         },
         {
           "n": "122",
-          "text": "Will this do?"
+          "text": "Will this do?",
+          "alternatives": [
+            "Will this work?",
+            "Will this be enough?",
+            "Would this do?"
+          ]
         },
         {
           "n": "123",
@@ -125,18 +158,31 @@
         },
         {
           "n": "124",
-          "text": "Does this road take me home?"
+          "text": "Does this road take me home?",
+          "alternatives": [
+            "Does this road take me to my house?",
+            "Does this street take me home?",
+            "Will this road take me home?",
+            "Does this road lead me home?",
+            "Does this road go to my house?"
+          ]
         },
         {
           "n": "125",
           "text": "That's beyond me.",
           "alternatives": [
-            "It's beyond me."
+            "It's beyond me.",
+            "That's beyond my ability.",
+            "It's beyond my ability."
           ]
         },
         {
           "n": "126",
-          "text": "Were you making a reservation?"
+          "text": "Were you making a reservation?",
+          "alternatives": [
+            "Were you making reservations?",
+            "Were you making a booking?"
+          ]
         }
       ]
     },

@@ -28,19 +28,38 @@
       "items": [
         {
           "n": "1",
-          "text": "I want to talk to you about what a government can do."
+          "text": "I want to talk to you about what a government can do.",
+          "alternatives": [
+            "I want to talk to you about what the government can do.",
+            "I want to talk with you about what a government can do.",
+            "I'd like to talk to you about what a government can do.",
+            "I want to talk to you about what governments can do.",
+            "I want to talk with you about what the government can do."
+          ]
         },
         {
           "n": "2",
-          "text": "I want to cancel my order."
+          "text": "I want to cancel my order.",
+          "alternatives": [
+            "I'd like to cancel my order.",
+            "I would like to cancel my order."
+          ]
         },
         {
           "n": "3",
-          "text": "He promised to come again."
+          "text": "He promised to come again.",
+          "alternatives": [
+            "He promised to come back.",
+            "He promised to return."
+          ]
         },
         {
           "n": "4",
-          "text": "I'm on a diet to lose weight."
+          "text": "I'm on a diet to lose weight.",
+          "alternatives": [
+            "I'm dieting to lose weight.",
+            "I'm on a diet in order to lose weight."
+          ]
         },
         {
           "n": "5",
@@ -53,7 +72,8 @@
             "Give me a moment to change clothes.",
             "Give me a moment to change my clothes.",
             "Give me a second to change clothes.",
-            "Give me a second to change my clothes."
+            "Give me a second to change my clothes.",
+            "Give me a minute to get changed."
           ]
         },
         {
@@ -62,44 +82,84 @@
         },
         {
           "n": "7",
-          "text": "They planned to attend a rally."
+          "text": "They planned to attend a rally.",
+          "alternatives": [
+            "They planned to go to a rally.",
+            "They planned to attend a gathering.",
+            "They planned to attend a meeting.",
+            "They planned to take part in a rally."
+          ]
         },
         {
           "n": "8",
-          "text": "The police threatened to use firearms."
+          "text": "The police threatened to use firearms.",
+          "alternatives": [
+            "The police threatened to use guns.",
+            "Police threatened to use firearms."
+          ]
         },
         {
           "n": "9",
-          "text": "They were determined to wipe out the student movement."
+          "text": "They were determined to wipe out the student movement.",
+          "alternatives": [
+            "They were determined to eradicate the student movement.",
+            "They were determined to stamp out the student movement."
+          ]
         },
         {
           "n": "10",
-          "text": "The government is trying to establish a climate of respect for law and order."
+          "text": "The government is trying to establish a climate of respect for law and order.",
+          "alternatives": [
+            "The government is trying to establish an atmosphere of respect for law and order.",
+            "The government is striving to establish a climate of respect for law and order.",
+            "The government is making efforts to establish a climate of respect for law and order."
+          ]
         },
         {
           "n": "11",
-          "text": "Tobacco industry executives sought to hide their knowledge that their product was addictive."
+          "text": "Tobacco industry executives sought to hide their knowledge that their product was addictive.",
+          "alternatives": [
+            "Tobacco industry executives tried to hide the fact that their product was addictive.",
+            "Tobacco industry executives sought to hide the fact that their product was addictive.",
+            "Tobacco industry executives tried to hide their knowledge that their product was addictive.",
+            "Tobacco industry executives knew that their product was addictive but tried to hide it."
+          ]
         },
         {
           "n": "12",
-          "text": "Where should I get off to go to the station?"
+          "text": "Where should I get off to go to the station?",
+          "alternatives": [
+            "Where do I have to get off to go to the station?",
+            "Where should I get off to get to the station?",
+            "Where do I need to get off to go to the station?"
+          ]
         },
         {
           "n": "13",
           "text": "I'll tell you when.",
           "alternatives": [
-            "I'll tell you when to get off."
+            "I'll tell you when to get off.",
+            "I'll let you know when to get off."
           ]
         },
         {
           "n": "14",
-          "text": "This is the wrong place for him to announce the news."
+          "text": "This is the wrong place for him to announce the news.",
+          "alternatives": [
+            "This is not the right place for him to announce the news.",
+            "This is not an appropriate place for him to announce the news.",
+            "This is an inappropriate place for him to announce the news."
+          ]
         },
         {
           "n": "15",
           "text": "It's part of a bid to stop smoking among teenagers.",
           "alternatives": [
-            "That's part of a bid to stop smoking among teenagers."
+            "That's part of a bid to stop smoking among teenagers.",
+            "It is part of an attempt to stop smoking among teenagers.",
+            "It's part of an effort to stop smoking among teenagers.",
+            "It's part of an attempt to stop teenagers from smoking.",
+            "It's part of a bid to stop smoking among teens."
           ]
         }
       ]

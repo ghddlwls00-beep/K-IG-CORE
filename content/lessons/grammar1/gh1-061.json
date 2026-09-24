@@ -47,7 +47,9 @@
           "alternatives": [
             "How fast does he get there?",
             "How quickly does he go there?",
-            "How quickly does he get there?"
+            "How quickly does he get there?",
+            "How soon does he get there?",
+            "How soon does he go there?"
           ]
         },
         {
@@ -58,7 +60,8 @@
             "How quickly does the girl come here?",
             "How soon does the girl come here?",
             "How quickly does the girl get here?",
-            "How soon does the girl get here?"
+            "How soon does the girl get here?",
+            "How soon does the girl arrive here?"
           ]
         },
         {
@@ -86,7 +89,10 @@
         },
         {
           "n": "8",
-          "text": "Do you want some more?"
+          "text": "Do you want some more?",
+          "alternatives": [
+            "Would you like some more?"
+          ]
         },
         {
           "n": "9",
@@ -96,7 +102,19 @@
             "He came here as fast as possible.",
             "He came here as soon as he could.",
             "He came here as quickly as he could.",
-            "He came here as fast as he could."
+            "He came here as fast as he could.",
+            "He got here as soon as possible.",
+            "He got here as fast as he could.",
+            "He got here as quickly as possible.",
+            "He got here as fast as possible.",
+            "He got here as soon as he could.",
+            "He got here as quickly as he could.",
+            "He arrived here as soon as possible.",
+            "He arrived here as quickly as possible.",
+            "He arrived here as fast as possible.",
+            "He arrived here as soon as he could.",
+            "He arrived here as quickly as he could.",
+            "He arrived here as fast as he could."
           ]
         },
         {
@@ -113,7 +131,10 @@
         },
         {
           "n": "13",
-          "text": "How many times did you meet her?"
+          "text": "How many times did you meet her?",
+          "alternatives": [
+            "How many times did you see her?"
+          ]
         },
         {
           "n": "14",
@@ -125,11 +146,22 @@
         },
         {
           "n": "16",
-          "text": "How long does he study in the library every day?"
+          "text": "How long does he study in the library every day?",
+          "alternatives": [
+            "How long does he study at the library every day?",
+            "How long does he study in the library each day?",
+            "How long does he study in the library daily?",
+            "How long does he study at the library each day?",
+            "How long does he study at the library daily?"
+          ]
         },
         {
           "n": "17",
-          "text": "How many hours were you in Japan?"
+          "text": "How many hours were you in Japan?",
+          "alternatives": [
+            "How many hours did you stay in Japan?",
+            "How many hours did you spend in Japan?"
+          ]
         },
         {
           "n": "18",
@@ -142,14 +174,20 @@
           "n": "19",
           "text": "Did you have a nice dinner?",
           "alternatives": [
-            "Did you have a good dinner?"
+            "Did you have a good dinner?",
+            "Did you eat a good dinner?",
+            "Did you eat a nice dinner?",
+            "Did you have a good supper?",
+            "Did you have a nice supper?"
           ]
         },
         {
           "n": "20",
           "text": "How many boys were in the library?",
           "alternatives": [
-            "How many boys were there in the library?"
+            "How many boys were there in the library?",
+            "How many boys were at the library?",
+            "How many boys were there at the library?"
           ]
         },
         {
@@ -172,7 +210,10 @@
         },
         {
           "n": "24",
-          "text": "How often does she come here?"
+          "text": "How often does she come here?",
+          "alternatives": [
+            "How frequently does she come here?"
+          ]
         },
         {
           "n": "25",
@@ -220,12 +261,17 @@
           "alternatives": [
             "All of them don't like it.",
             "Not all of them like that.",
-            "All of them don't like that."
+            "All of them don't like that.",
+            "They don't all like it.",
+            "They do not all like it."
           ]
         },
         {
           "n": "32",
-          "text": "What can I do?"
+          "text": "What can I do?",
+          "alternatives": [
+            "What am I able to do?"
+          ]
         }
       ]
     },

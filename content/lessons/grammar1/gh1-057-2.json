@@ -32,7 +32,10 @@
         },
         {
           "n": "20",
-          "text": "Why is she sad?"
+          "text": "Why is she sad?",
+          "alternatives": [
+            "Why's she sad?"
+          ]
         },
         {
           "n": "21",
@@ -82,14 +85,19 @@
         },
         {
           "n": "31",
-          "text": "Why is he running?"
+          "text": "Why is he running?",
+          "alternatives": [
+            "Why's he running?"
+          ]
         },
         {
           "n": "32",
           "text": "Why does he look at her?",
           "alternatives": [
             "Why does he watch her?",
-            "Why is he looking at her?"
+            "Why is he looking at her?",
+            "Why is he watching her?",
+            "Why's he looking at her?"
           ]
         },
         {

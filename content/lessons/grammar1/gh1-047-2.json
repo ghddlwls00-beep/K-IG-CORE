@@ -54,39 +54,59 @@
         },
         {
           "n": "105",
-          "text": "We are in Korea, aren't we?"
+          "text": "We are in Korea, aren't we?",
+          "alternatives": [
+            "We are in Korea, are we not?"
+          ]
         },
         {
           "n": "106",
-          "text": "You love my sister, don't you?"
+          "text": "You love my sister, don't you?",
+          "alternatives": [
+            "You love my sister, do you not?"
+          ]
         },
         {
           "n": "107",
-          "text": "He loves me, doesn't he?"
+          "text": "He loves me, doesn't he?",
+          "alternatives": [
+            "He loves me, does he not?"
+          ]
         },
         {
           "n": "108",
           "text": "She loves your brother, doesn't she?",
           "alternatives": [
-            "She loves your brothers, doesn't she?"
+            "She loves your brothers, doesn't she?",
+            "She loves your brother, does she not?",
+            "She loves your brothers, does she not?"
           ]
         },
         {
           "n": "109",
-          "text": "They love you, don't they?"
+          "text": "They love you, don't they?",
+          "alternatives": [
+            "They love you, do they not?"
+          ]
         },
         {
           "n": "110",
           "text": "She loves his brother, doesn't she?",
           "alternatives": [
-            "She loves his brothers, doesn't she?"
+            "She loves his brothers, doesn't she?",
+            "She loves his brother, does she not?",
+            "She loves his brothers, does she not?"
           ]
         },
         {
           "n": "111",
           "text": "He loves her sister, doesn't he?",
           "alternatives": [
-            "He loves her younger sister, doesn't he?"
+            "He loves her younger sister, doesn't he?",
+            "He loves her little sister, doesn't he?",
+            "He loves her sister, does he not?",
+            "He loves her younger sister, does he not?",
+            "He loves her little sister, does he not?"
           ]
         },
         {

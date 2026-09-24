@@ -56,7 +56,8 @@
           "n": "26",
           "text": "Neither do I.",
           "alternatives": [
-            "I don't either."
+            "I don't either.",
+            "Nor do I."
           ]
         },
         {
@@ -65,26 +66,34 @@
           "alternatives": [
             "No one likes it.",
             "Nobody likes that.",
-            "No one likes that."
+            "No one likes that.",
+            "No-one likes it."
           ]
         },
         {
           "n": "28",
           "text": "Anybody likes it.",
           "alternatives": [
-            "Anybody likes that."
+            "Anybody likes that.",
+            "Anyone likes it."
           ]
         },
         {
           "n": "29",
           "text": "Everybody likes it.",
           "alternatives": [
-            "Everybody likes that."
+            "Everybody likes that.",
+            "Everyone likes it."
           ]
         },
         {
           "n": "30",
-          "text": "He is handsome, kind, and clever, too."
+          "text": "He is handsome, kind, and clever, too.",
+          "alternatives": [
+            "He is handsome, kind, and smart, too.",
+            "He is handsome, kind, and intelligent, too.",
+            "He is handsome, kind, and also clever."
+          ]
         },
         {
           "n": "31",
@@ -107,7 +116,10 @@
         },
         {
           "n": "34",
-          "text": "Is she coming home, too?"
+          "text": "Is she coming home, too?",
+          "alternatives": [
+            "Is she also coming home?"
+          ]
         },
         {
           "n": "35",
@@ -120,7 +132,8 @@
           "n": "36",
           "text": "I don't either.",
           "alternatives": [
-            "Neither do I."
+            "Neither do I.",
+            "Nor do I."
           ]
         },
         {
@@ -141,17 +154,25 @@
         },
         {
           "n": "39",
-          "text": "He goes there each year."
+          "text": "He goes there each year.",
+          "alternatives": [
+            "Each year, he goes there."
+          ]
         },
         {
           "n": "40",
-          "text": "He gave money to each of his sons."
+          "text": "He gave money to each of his sons.",
+          "alternatives": [
+            "He gave each of his sons money."
+          ]
         },
         {
           "n": "41",
           "text": "Each hated the other.",
           "alternatives": [
-            "They hated each other."
+            "They hated each other.",
+            "Each of them hated the other.",
+            "The two hated each other."
           ]
         },
         {
@@ -163,7 +184,11 @@
         },
         {
           "n": "43",
-          "text": "He is a gentleman in every way."
+          "text": "He is a gentleman in every way.",
+          "alternatives": [
+            "He is a gentleman in every respect.",
+            "He is a gentleman in all respects."
+          ]
         }
       ]
     },

@@ -40,7 +40,10 @@
         },
         {
           "n": "4",
-          "text": "He might have studied English."
+          "text": "He might have studied English.",
+          "alternatives": [
+            "He may have studied English."
+          ]
         },
         {
           "n": "5",
@@ -48,17 +51,29 @@
         },
         {
           "n": "6",
-          "text": "He should have studied English."
+          "text": "He should have studied English.",
+          "alternatives": [
+            "He ought to have studied English."
+          ]
         },
         {
           "n": "7",
-          "text": "We were living in Seoul then."
+          "text": "We were living in Seoul then.",
+          "alternatives": [
+            "We lived in Seoul then.",
+            "We were living in Seoul back then.",
+            "Back then, we were living in Seoul."
+          ]
         },
         {
           "n": "8",
           "text": "I will have soup first and then the chicken.",
           "alternatives": [
-            "I will eat soup first and then the chicken."
+            "I will eat soup first and then the chicken.",
+            "I'll have soup first and then chicken.",
+            "I will eat soup first and then chicken.",
+            "I will eat soup first and then eat chicken.",
+            "First, I will have soup and then the chicken."
           ]
         },
         {
@@ -70,17 +85,27 @@
         },
         {
           "n": "10",
-          "text": "Can I leave a message, then?"
+          "text": "Can I leave a message, then?",
+          "alternatives": [
+            "Then, can I leave a message?",
+            "May I leave a message, then?",
+            "Could I leave a message, then?"
+          ]
         },
         {
           "n": "11",
-          "text": "He is rich."
+          "text": "He is rich.",
+          "alternatives": [
+            "He is wealthy."
+          ]
         },
         {
           "n": "12",
           "text": "So he can buy it.",
           "alternatives": [
-            "So he can buy that."
+            "So he can buy that.",
+            "So he is able to buy it.",
+            "So he can afford it."
           ]
         },
         {
@@ -91,34 +116,49 @@
           "n": "14",
           "text": "He is so poor that he cannot buy it.",
           "alternatives": [
-            "He is so poor that he cannot buy that."
+            "He is so poor that he cannot buy that.",
+            "He is so poor that he can't afford it."
           ]
         },
         {
           "n": "15",
           "text": "I did not have an apple.",
           "alternatives": [
-            "I did not eat an apple."
+            "I did not eat an apple.",
+            "I didn't have any apples."
           ]
         },
         {
           "n": "16",
           "text": "Instead, I had a peach.",
           "alternatives": [
-            "Instead, I ate a peach."
+            "Instead, I ate a peach.",
+            "I had a peach instead.",
+            "I ate a peach instead."
           ]
         },
         {
           "n": "17",
-          "text": "Instead of going to school, he went fishing."
+          "text": "Instead of going to school, he went fishing.",
+          "alternatives": [
+            "He went fishing instead of going to school."
+          ]
         },
         {
           "n": "18",
-          "text": "He will retain his position until he decides otherwise."
+          "text": "He will retain his position until he decides otherwise.",
+          "alternatives": [
+            "He will keep his position until he decides otherwise.",
+            "He will hold his position until he decides otherwise."
+          ]
         },
         {
           "n": "19",
-          "text": "The law made hundreds of otherwise honest men lawbreakers."
+          "text": "The law made hundreds of otherwise honest men lawbreakers.",
+          "alternatives": [
+            "The law made hundreds of otherwise honest people lawbreakers.",
+            "The law made hundreds of otherwise honest people criminals."
+          ]
         },
         {
           "n": "20",
@@ -126,7 +166,10 @@
         },
         {
           "n": "21",
-          "text": "I have some money."
+          "text": "I have some money.",
+          "alternatives": [
+            "I've got some money."
+          ]
         },
         {
           "n": "22",
@@ -137,11 +180,20 @@
         },
         {
           "n": "23",
-          "text": "Will you give me some apples?"
+          "text": "Will you give me some apples?",
+          "alternatives": [
+            "Would you give me some apples?",
+            "Could you give me some apples?"
+          ]
         },
         {
           "n": "24",
-          "text": "Some people like fish and some don't."
+          "text": "Some people like fish and some don't.",
+          "alternatives": [
+            "Some people like fish, and some people don't.",
+            "Some people like fish and others don't.",
+            "Some people like fish, but some don't."
+          ]
         },
         {
           "n": "25",
@@ -159,11 +211,17 @@
         },
         {
           "n": "27",
-          "text": "I want anything sweet."
+          "text": "I want anything sweet.",
+          "alternatives": [
+            "I want anything that is sweet."
+          ]
         },
         {
           "n": "28",
-          "text": "I want something sweet."
+          "text": "I want something sweet.",
+          "alternatives": [
+            "I want something that is sweet."
+          ]
         },
         {
           "n": "29",
@@ -174,15 +232,26 @@
         },
         {
           "n": "30",
-          "text": "He hasn't come yet."
+          "text": "He hasn't come yet.",
+          "alternatives": [
+            "He hasn't arrived yet.",
+            "He has not yet come."
+          ]
         },
         {
           "n": "31",
-          "text": "Yet, I'm sure he will be here any minute."
+          "text": "Yet, I'm sure he will be here any minute.",
+          "alternatives": [
+            "Yet, I'm sure he will be here soon.",
+            "Yet, I'm sure he will come here soon."
+          ]
         },
         {
           "n": "32",
-          "text": "The time is yet to come."
+          "text": "The time is yet to come.",
+          "alternatives": [
+            "The time has yet to come."
+          ]
         },
         {
           "n": "33",
@@ -190,12 +259,16 @@
           "alternatives": [
             "It is the largest diamond yet discovered.",
             "That is the largest diamond yet found.",
-            "That is the largest diamond yet discovered."
+            "That is the largest diamond yet discovered.",
+            "It is the biggest diamond yet found."
           ]
         },
         {
           "n": "34",
-          "text": "The war still goes on."
+          "text": "The war still goes on.",
+          "alternatives": [
+            "The war still continues."
+          ]
         },
         {
           "n": "35",
@@ -206,7 +279,9 @@
           "text": "He felt tired, still he continued his work.",
           "alternatives": [
             "He felt tired; still, he continued his work.",
-            "He felt tired, but he still continued his work."
+            "He felt tired, but he still continued his work.",
+            "He felt tired but still continued his work.",
+            "He felt tired, but still he continued his work."
           ]
         }
       ]

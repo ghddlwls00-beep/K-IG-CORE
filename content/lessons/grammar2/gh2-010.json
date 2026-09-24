@@ -28,11 +28,18 @@
       "items": [
         {
           "n": "1",
-          "text": "The sky was blue over our heads."
+          "text": "The sky was blue over our heads.",
+          "alternatives": [
+            "The sky over our heads was blue."
+          ]
         },
         {
           "n": "2",
-          "text": "She stayed there over a month."
+          "text": "She stayed there over a month.",
+          "alternatives": [
+            "She stayed there over one month.",
+            "She remained there over a month."
+          ]
         },
         {
           "n": "3",
@@ -40,19 +47,32 @@
           "alternatives": [
             "He is over 50.",
             "He is over fifty years old.",
-            "He is over 50 years old."
+            "He is over 50 years old.",
+            "He is over the age of 50.",
+            "He is over the age of fifty."
           ]
         },
         {
           "n": "4",
           "text": "He has little control over his emotions.",
           "alternatives": [
-            "He has little control over his emotion."
+            "He has little control over his emotion.",
+            "He has little control over his feelings.",
+            "He has almost no control over his emotions.",
+            "He has hardly any control over his emotions.",
+            "He has little control over his own emotions."
           ]
         },
         {
           "n": "5",
-          "text": "Over the next few days, they got to know the town well."
+          "text": "Over the next few days, they got to know the town well.",
+          "alternatives": [
+            "Over the next few days, they got to know the village well.",
+            "Over the next several days, they got to know the town well.",
+            "Over the next few days, they came to know the town well.",
+            "They got to know the town well over the next few days.",
+            "Over the following few days, they got to know the town well."
+          ]
         },
         {
           "n": "6",
@@ -60,7 +80,12 @@
           "alternatives": [
             "They had a difference of opinion over the best way to do it.",
             "They had a disagreement over the best way to do that.",
-            "They had a difference of opinion over the best way to do that."
+            "They had a difference of opinion over the best way to do that.",
+            "They disagreed over the best way to do it.",
+            "They had a conflict of opinion over the best way to do it.",
+            "They had an argument over the best way to do it.",
+            "They had a disagreement over the best way of doing it.",
+            "They had a clash of opinions over the best way to do it."
           ]
         },
         {
@@ -68,34 +93,67 @@
           "text": "All the presents are for you.",
           "alternatives": [
             "All of the presents are for you.",
-            "The presents are all for you."
+            "The presents are all for you.",
+            "All the gifts are for you.",
+            "The gifts are all for you.",
+            "All of the gifts are for you."
           ]
         },
         {
           "n": "8",
-          "text": "He took some aspirin for his headache."
+          "text": "He took some aspirin for his headache.",
+          "alternatives": [
+            "He took some aspirin for a headache.",
+            "He took a little aspirin for his headache.",
+            "He took some aspirins for his headache."
+          ]
         },
         {
           "n": "9",
-          "text": "I am speaking for all workers."
+          "text": "I am speaking for all workers.",
+          "alternatives": [
+            "I am speaking for all employees.",
+            "I am speaking for every worker.",
+            "I am speaking for all of the workers."
+          ]
         },
         {
           "n": "10",
-          "text": "He went to his friend for a piece of advice."
+          "text": "He went to his friend for a piece of advice.",
+          "alternatives": [
+            "He went to his friend for a word of advice.",
+            "He went to his friend for some advice.",
+            "He went to see his friend for a piece of advice."
+          ]
         },
         {
           "n": "11",
-          "text": "It's quite warm for January."
+          "text": "It's quite warm for January.",
+          "alternatives": [
+            "It is pretty warm for January.",
+            "It is fairly warm for January.",
+            "It is rather warm for January.",
+            "The weather is quite warm for January.",
+            "The weather is pretty warm for January."
+          ]
         },
         {
           "n": "12",
-          "text": "He is not bad for a beginner."
+          "text": "He is not bad for a beginner.",
+          "alternatives": [
+            "He is good for a beginner.",
+            "He does well for a beginner.",
+            "He is not bad for a novice.",
+            "For a beginner, he is not bad."
+          ]
         },
         {
           "n": "13",
           "text": "He was in prison for 5 years.",
           "alternatives": [
-            "He was in prison for five years."
+            "He was in prison for five years.",
+            "He was in jail for five years.",
+            "He was imprisoned for five years."
           ]
         },
         {
@@ -104,11 +162,18 @@
         },
         {
           "n": "15",
-          "text": "You are either for me or against me."
+          "text": "You are either for me or against me.",
+          "alternatives": [
+            "Either you are for me or you are against me."
+          ]
         },
         {
           "n": "16",
-          "text": "For all his wealth, he is a very lonely man."
+          "text": "For all his wealth, he is a very lonely man.",
+          "alternatives": [
+            "For all his wealth, he is a very lonely person.",
+            "For all his riches, he is a very lonely man."
+          ]
         }
       ]
     },

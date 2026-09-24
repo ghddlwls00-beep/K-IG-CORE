@@ -62,7 +62,10 @@
         },
         {
           "n": "6",
-          "text": "Koreans use spoons."
+          "text": "Koreans use spoons.",
+          "alternatives": [
+            "Korean people use spoons."
+          ]
         },
         {
           "n": "7",
@@ -73,7 +76,10 @@
         },
         {
           "n": "8",
-          "text": "They were inspecting a tanker."
+          "text": "They were inspecting a tanker.",
+          "alternatives": [
+            "They were inspecting an oil tanker."
+          ]
         },
         {
           "n": "9",
@@ -104,7 +110,10 @@
         },
         {
           "n": "15",
-          "text": "Did hundreds of soldiers leave the city?"
+          "text": "Did hundreds of soldiers leave the city?",
+          "alternatives": [
+            "Did several hundred soldiers leave the city?"
+          ]
         },
         {
           "n": "16",
@@ -117,7 +126,10 @@
           "n": "17",
           "text": "Is there no evidence?",
           "alternatives": [
-            "Isn't there any evidence?"
+            "Isn't there any evidence?",
+            "Is there not any evidence?",
+            "Is there no proof?",
+            "Isn't there any proof?"
           ]
         },
         {
@@ -130,27 +142,48 @@
         },
         {
           "n": "20",
-          "text": "Were they watching the soccer game?"
+          "text": "Were they watching the soccer game?",
+          "alternatives": [
+            "Were they watching the football match?"
+          ]
         },
         {
           "n": "21",
-          "text": "Do Koreans use spoons?"
+          "text": "Do Koreans use spoons?",
+          "alternatives": [
+            "Do Korean people use spoons?"
+          ]
         },
         {
           "n": "22",
-          "text": "Did the navy find his body?"
+          "text": "Did the navy find his body?",
+          "alternatives": [
+            "Did the navy discover his body?"
+          ]
         },
         {
           "n": "23",
-          "text": "The navy found his body, didn't it?"
+          "text": "The navy found his body, didn't it?",
+          "alternatives": [
+            "The navy found his body, didn't they?",
+            "The navy discovered his body, didn't it?"
+          ]
         },
         {
           "n": "24",
-          "text": "Were they inspecting a tanker?"
+          "text": "Were they inspecting a tanker?",
+          "alternatives": [
+            "Were they inspecting an oil tanker?",
+            "Were they investigating a tanker?"
+          ]
         },
         {
           "n": "25",
-          "text": "What was he inspecting?"
+          "text": "What was he inspecting?",
+          "alternatives": [
+            "What was he investigating?",
+            "What was he examining?"
+          ]
         },
         {
           "n": "26",
@@ -161,13 +194,18 @@
         },
         {
           "n": "27",
-          "text": "Who caught the disease?"
+          "text": "Who caught the disease?",
+          "alternatives": [
+            "Who got the disease?",
+            "Who caught the illness?"
+          ]
         },
         {
           "n": "28",
           "text": "Didn't she receive a letter?",
           "alternatives": [
-            "Did she not receive a letter?"
+            "Did she not receive a letter?",
+            "Didn't she get a letter?"
           ]
         },
         {
@@ -183,7 +221,8 @@
           "alternatives": [
             "Did soldiers not leave the city?",
             "Didn't the soldiers leave the city?",
-            "Didn't any soldiers leave the city?"
+            "Didn't any soldiers leave the city?",
+            "Did the soldiers not leave the city?"
           ]
         },
         {

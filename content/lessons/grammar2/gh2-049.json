@@ -32,7 +32,10 @@
         },
         {
           "n": "2",
-          "text": "He told me that he owed me an apology."
+          "text": "He told me that he owed me an apology.",
+          "alternatives": [
+            "He told me he owed me an apology."
+          ]
         },
         {
           "n": "3",
@@ -41,7 +44,11 @@
             "He will ask, \"Do you take a hundred-dollar bill?\"",
             "He will ask, \"Do you take a hundred dollar bill?\"",
             "He will ask, \"Do you take a 100-dollar bill?\"",
-            "He will ask, \"Do you take a $100 bill?\""
+            "He will ask, \"Do you take a $100 bill?\"",
+            "He will ask, \"Do you accept a 100 dollar bill?\"",
+            "He will ask, \"Do you take 100 dollar bills?\"",
+            "He will ask, \"Do you take a one hundred dollar bill?\"",
+            "He will ask, \"Do you accept $100 bills?\""
           ]
         },
         {
@@ -51,28 +58,54 @@
             "He will ask if they take a hundred-dollar bill.",
             "He will ask if they take a hundred dollar bill.",
             "He will ask if they take a 100-dollar bill.",
-            "He will ask if they take a $100 bill."
+            "He will ask if they take a $100 bill.",
+            "He will ask whether they take a 100 dollar bill.",
+            "He will ask if they accept a 100 dollar bill.",
+            "He will ask if they take 100 dollar bills."
           ]
         },
         {
           "n": "5",
-          "text": "The teller asked me, \"Do you want large bills?\""
+          "text": "The teller asked me, \"Do you want large bills?\"",
+          "alternatives": [
+            "The cashier asked me, \"Do you want large bills?\"",
+            "The teller asked me, \"Would you like large bills?\"",
+            "The teller asked me, \"Do you want big bills?\""
+          ]
         },
         {
           "n": "6",
-          "text": "The teller asked me if I wanted large bills."
+          "text": "The teller asked me if I wanted large bills.",
+          "alternatives": [
+            "The teller asked me whether I wanted large bills.",
+            "The cashier asked me if I wanted large bills.",
+            "The teller asked me if I would like large bills."
+          ]
         },
         {
           "n": "7",
-          "text": "The bank teller said, \"You had better have an account with this bank.\""
+          "text": "The bank teller said, \"You had better have an account with this bank.\"",
+          "alternatives": [
+            "The bank teller said, \"You had better have an account at this bank.\"",
+            "The bank teller said, \"It would be good to have an account with this bank.\""
+          ]
         },
         {
           "n": "8",
-          "text": "The bank teller recommended I have an account with the bank."
+          "text": "The bank teller recommended I have an account with the bank.",
+          "alternatives": [
+            "The bank teller recommended that I should have an account with the bank.",
+            "The bank teller advised me to have an account with the bank.",
+            "The bank teller suggested I have an account with the bank.",
+            "The bank teller recommended I have an account at the bank."
+          ]
         },
         {
           "n": "9",
-          "text": "She said, \"This is a little something for you on your graduation.\""
+          "text": "She said, \"This is a little something for you on your graduation.\"",
+          "alternatives": [
+            "She said, \"This is a little something for you for your graduation.\""
+          ]
         },
         {
           "n": "10",
@@ -80,16 +113,24 @@
           "alternatives": [
             "She said that was a little something for me on my graduation.",
             "She said that it was a little something for me on my graduation.",
-            "She said that was a little something for me for my graduation."
+            "She said that was a little something for me for my graduation.",
+            "She said it was a little something for me for my graduation.",
+            "She said it was a little something for me on my graduation."
           ]
         },
         {
           "n": "11",
-          "text": "He asked, \"Don't you have any vacancies?\""
+          "text": "He asked, \"Don't you have any vacancies?\"",
+          "alternatives": [
+            "He asked, \"Do you not have any vacancies?\""
+          ]
         },
         {
           "n": "12",
-          "text": "He asked if they had any vacancies."
+          "text": "He asked if they had any vacancies.",
+          "alternatives": [
+            "He asked whether they had any vacancies."
+          ]
         },
         {
           "n": "13",
@@ -97,7 +138,10 @@
         },
         {
           "n": "14",
-          "text": "He said that honesty is the best policy."
+          "text": "He said that honesty is the best policy.",
+          "alternatives": [
+            "He said honesty is the best policy."
+          ]
         }
       ]
     },

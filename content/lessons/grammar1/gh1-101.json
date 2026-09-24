@@ -42,7 +42,9 @@
             "Is it not out of the question?",
             "Isn't that out of the question?",
             "Isn't that impossible?",
-            "Is that not out of the question?"
+            "Is that not out of the question?",
+            "Is it not impossible?",
+            "Is that not impossible?"
           ]
         },
         {
@@ -51,7 +53,12 @@
           "alternatives": [
             "Does it not have its limits?",
             "Doesn't that have its limits?",
-            "Does that not have its limits?"
+            "Does that not have its limits?",
+            "Doesn't it have limits?",
+            "Doesn't it have its limitations?",
+            "Does it not have limits?",
+            "Doesn't it have limitations?",
+            "Does it not have limitations?"
           ]
         },
         {
@@ -62,7 +69,10 @@
             "Did it not become the symbol of the engagement policy?",
             "Didn't that become the symbol of the engagement policy?",
             "Hasn't that become the symbol of the engagement policy?",
-            "Did that not become the symbol of the engagement policy?"
+            "Did that not become the symbol of the engagement policy?",
+            "Didn't it become a symbol of the engagement policy?",
+            "Hasn't it become a symbol of the engagement policy?",
+            "Did it not become a symbol of the engagement policy?"
           ]
         },
         {
@@ -74,7 +84,13 @@
           "text": "The captain gets on the plane, doesn't he?",
           "alternatives": [
             "The captain gets on the plane, doesn't she?",
-            "The captain gets on the plane, don't they?"
+            "The captain gets on the plane, don't they?",
+            "The captain boards the plane, doesn't he?",
+            "The captain gets on the airplane, doesn't he?",
+            "The captain gets on the plane, does he not?",
+            "The captain gets on board the plane, doesn't he?",
+            "The captain boards the airplane, doesn't he?",
+            "The captain gets on the airplane, doesn't she?"
           ]
         },
         {
@@ -84,7 +100,14 @@
             "Did he not turn the mike off?",
             "Didn't he turn the mic off?",
             "Didn't he turn off the mic?",
-            "Didn't he turn off the mike?"
+            "Didn't he turn off the mike?",
+            "Did he not turn off the mic?",
+            "Did he not turn the mic off?",
+            "Did he not turn off the mike?",
+            "Didn't he switch off the mic?",
+            "Didn't he switch the mike off?",
+            "Didn't he turn off the microphone?",
+            "Didn't he turn the microphone off?"
           ]
         },
         {
@@ -93,7 +116,9 @@
           "alternatives": [
             "How did it proceed?",
             "How did that go?",
-            "How did that proceed?"
+            "How did that proceed?",
+            "How did it progress?",
+            "How did that progress?"
           ]
         },
         {
@@ -102,21 +127,41 @@
         },
         {
           "n": "123",
-          "text": "I didn't ruin the plan, did I?"
+          "text": "I didn't ruin the plan, did I?",
+          "alternatives": [
+            "I didn't mess up the plan, did I?",
+            "I didn't spoil the plan, did I?",
+            "I didn't mess the plan up, did I?",
+            "I didn't wreck the plan, did I?"
+          ]
         },
         {
           "n": "124",
-          "text": "The project continued, didn't it?"
+          "text": "The project continued, didn't it?",
+          "alternatives": [
+            "The project went on, didn't it?",
+            "The project continued, did it not?",
+            "The project kept going, didn't it?"
+          ]
         },
         {
           "n": "125",
-          "text": "The project did not continue, did it?"
+          "text": "The project did not continue, did it?",
+          "alternatives": [
+            "The project didn't go on, did it?",
+            "The project didn't keep going, did it?"
+          ]
         },
         {
           "n": "126",
           "text": "We totally ignored market principles, didn't we?",
           "alternatives": [
-            "We completely ignored market principles, didn't we?"
+            "We completely ignored market principles, didn't we?",
+            "We ignored market principles completely, didn't we?",
+            "We ignored market principles totally, didn't we?",
+            "We completely ignored market principles, did we not?",
+            "We completely ignored the principles of the market, didn't we?",
+            "We completely disregarded market principles, didn't we?"
           ]
         },
         {
@@ -124,38 +169,66 @@
           "text": "Didn't I share that with you?",
           "alternatives": [
             "Didn't I share it with you?",
-            "Did I not share that with you?"
+            "Did I not share that with you?",
+            "Did I not share it with you?"
           ]
         },
         {
           "n": "128",
-          "text": "The loud noise woke the dog up, didn't it?"
+          "text": "The loud noise woke the dog up, didn't it?",
+          "alternatives": [
+            "The loud noise woke up the dog, didn't it?",
+            "The loud noise woke the dog, didn't it?",
+            "The loud sound woke the dog up, didn't it?",
+            "The loud noise woke the dog up, did it not?",
+            "The loud sound woke up the dog, didn't it?"
+          ]
         },
         {
           "n": "129",
-          "text": "Did she know all my little shortcomings?"
+          "text": "Did she know all my little shortcomings?",
+          "alternatives": [
+            "Did she know all my little faults?",
+            "Did she know all my small shortcomings?",
+            "Did she know all my little flaws?",
+            "Did she know all my small faults?"
+          ]
         },
         {
           "n": "130",
           "text": "Which did you choose?",
           "alternatives": [
             "Which one did you choose?",
-            "Which one did you pick?"
+            "Which one did you pick?",
+            "Which did you pick?",
+            "Which one did you select?",
+            "Which did you select?"
           ]
         },
         {
           "n": "131",
-          "text": "When did you let her into your strange little world?"
+          "text": "When did you let her into your strange little world?",
+          "alternatives": [
+            "When did you let her come into your strange little world?",
+            "When did you let her into your weird little world?",
+            "When did you let her enter your strange little world?",
+            "When did you allow her into your strange little world?"
+          ]
         },
         {
           "n": "132",
-          "text": "Are you perfect for each other?"
+          "text": "Are you perfect for each other?",
+          "alternatives": [
+            "Are you guys perfect for each other?",
+            "Are you perfect for one another?"
+          ]
         },
         {
           "n": "133",
           "text": "Is that a deal?",
           "alternatives": [
-            "Is it a deal?"
+            "Is it a deal?",
+            "Do we have a deal?"
           ]
         }
       ]

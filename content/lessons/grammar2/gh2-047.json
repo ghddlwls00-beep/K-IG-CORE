@@ -28,15 +28,32 @@
       "items": [
         {
           "n": "1",
-          "text": "He's just got divorced, so he's been a little short lately."
+          "text": "He's just got divorced, so he's been a little short lately.",
+          "alternatives": [
+            "He has just got divorced, so he has been a little short lately.",
+            "He has just got divorced, so he's been a little short lately.",
+            "He just got divorced, so he's been a little short lately.",
+            "He's just gotten divorced, so he's been a little short lately.",
+            "He's just got divorced, so he's been a little short of money lately.",
+            "He's just got divorced, so he's been a little short recently.",
+            "Because he just got divorced, he has been a little short lately."
+          ]
         },
         {
           "n": "2",
-          "text": "Many babies are born to teenagers."
+          "text": "Many babies are born to teenagers.",
+          "alternatives": [
+            "A lot of babies are born to teenagers.",
+            "Many babies are born to teens.",
+            "Lots of babies are born to teenagers."
+          ]
         },
         {
           "n": "3",
-          "text": "What can not be cured must be endured."
+          "text": "What can not be cured must be endured.",
+          "alternatives": [
+            "What cannot be fixed must be endured."
+          ]
         },
         {
           "n": "4",
@@ -47,7 +64,14 @@
         },
         {
           "n": "5",
-          "text": "Korea is known to almost all people around the world."
+          "text": "Korea is known to almost all people around the world.",
+          "alternatives": [
+            "Korea is known to almost everyone in the world.",
+            "Korea is known to almost everyone around the world.",
+            "Korea is known to nearly all people around the world.",
+            "Korea is known to almost all people in the world.",
+            "Korea is known to almost all people all over the world."
+          ]
         },
         {
           "n": "6",
@@ -57,7 +81,9 @@
           "n": "7",
           "text": "Let it be done at once.",
           "alternatives": [
-            "Let that be done at once."
+            "Let that be done at once.",
+            "Let it be done immediately.",
+            "Let it be done right away."
           ]
         },
         {
@@ -72,44 +98,98 @@
           "n": "10",
           "text": "More than 24 seamen were killed and 35 more were wounded.",
           "alternatives": [
-            "More than twenty-four seamen were killed and thirty-five more were wounded."
+            "More than twenty-four seamen were killed and thirty-five more were wounded.",
+            "More than 24 sailors were killed and 35 more were wounded.",
+            "More than 24 seamen were killed and 35 more were injured.",
+            "Over 24 seamen were killed and 35 more were wounded.",
+            "More than 24 seamen were killed and another 35 were wounded.",
+            "More than twenty-four sailors were killed and thirty-five more were injured."
           ]
         },
         {
           "n": "11",
-          "text": "He was hoping that he would be allowed to return home."
+          "text": "He was hoping that he would be allowed to return home.",
+          "alternatives": [
+            "He was hoping to be allowed to return home.",
+            "He was hoping he would be allowed to return home.",
+            "He was hoping that he would be allowed to go home.",
+            "He was hoping that he would be allowed to go back home.",
+            "He was hoping that he would be allowed to return to his country."
+          ]
         },
         {
           "n": "12",
-          "text": "My car was rear-ended by a truck."
+          "text": "My car was rear-ended by a truck.",
+          "alternatives": [
+            "My car got rear-ended by a truck.",
+            "My car was hit from behind by a truck."
+          ]
         },
         {
           "n": "13",
-          "text": "The monks are followed by a wooden coffin."
+          "text": "The monks are followed by a wooden coffin.",
+          "alternatives": [
+            "The monks are followed by a wooden casket.",
+            "The monks are followed by the wooden coffin."
+          ]
         },
         {
           "n": "14",
-          "text": "The monks followed a wooden coffin."
+          "text": "The monks followed a wooden coffin.",
+          "alternatives": [
+            "The monks followed a wooden casket.",
+            "The monks followed the wooden coffin.",
+            "The monks followed behind a wooden coffin."
+          ]
         },
         {
           "n": "15",
-          "text": "The poor boy was well taken care of by a kind lady."
+          "text": "The poor boy was well taken care of by a kind lady.",
+          "alternatives": [
+            "The poor boy was taken good care of by a kind lady.",
+            "The poor boy was well looked after by a kind lady.",
+            "The poor boy was well cared for by a kind lady.",
+            "The poor boy was well taken care of by a kind woman."
+          ]
         },
         {
           "n": "16",
-          "text": "He was believed to be an honest man by all."
+          "text": "He was believed to be an honest man by all.",
+          "alternatives": [
+            "He was believed to be an honest man by everyone.",
+            "He was believed to be an honest person by everybody.",
+            "He was believed to be an honest person by all.",
+            "He was believed by everyone to be an honest man."
+          ]
         },
         {
           "n": "17",
-          "text": "It used to be thought the sun went round the earth."
+          "text": "It used to be thought the sun went round the earth.",
+          "alternatives": [
+            "It used to be thought that the sun went around the earth.",
+            "It used to be thought the sun went around the earth.",
+            "It was once thought that the sun went around the earth.",
+            "It used to be thought that the sun revolved around the earth."
+          ]
         },
         {
           "n": "18",
-          "text": "Are credit cards honored here?"
+          "text": "Are credit cards honored here?",
+          "alternatives": [
+            "Are credit cards accepted here?",
+            "Are credit cards honoured here?"
+          ]
         },
         {
           "n": "19",
-          "text": "Your reservation is made for flight 208 leaving for Chicago Friday at 2 p.m."
+          "text": "Your reservation is made for flight 208 leaving for Chicago Friday at 2 p.m.",
+          "alternatives": [
+            "Your reservation has been made for flight 208 leaving for Chicago on Friday at 2 p.m.",
+            "Your reservation has been made for flight 208 leaving for Chicago Friday at 2 p.m.",
+            "Your reservation is made for flight 208 departing for Chicago Friday at 2 p.m.",
+            "Your reservation is made for flight 208 leaving for Chicago at 2 p.m. on Friday.",
+            "Your booking is made for flight 208 leaving for Chicago Friday at 2 p.m."
+          ]
         }
       ]
     },

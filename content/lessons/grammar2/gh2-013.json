@@ -36,15 +36,28 @@
         },
         {
           "n": "3",
-          "text": "As a Christian, how could you lie?"
+          "text": "As a Christian, how could you lie?",
+          "alternatives": [
+            "As a Christian, how can you lie?",
+            "As a Christian, how can you tell a lie?",
+            "As a Christian, how could you tell a lie?",
+            "How could you lie as a Christian?"
+          ]
         },
         {
           "n": "4",
-          "text": "He is twice as rich as you are."
+          "text": "He is twice as rich as you are.",
+          "alternatives": [
+            "He is twice as rich as you.",
+            "He is two times as rich as you are."
+          ]
         },
         {
           "n": "5",
-          "text": "I respect him as a soldier."
+          "text": "I respect him as a soldier.",
+          "alternatives": [
+            "As a soldier, I respect him."
+          ]
         },
         {
           "n": "6",
@@ -63,7 +76,11 @@
           "text": "You should come here by ten o'clock.",
           "alternatives": [
             "You must come here by ten o'clock.",
-            "You should come here by 10 o'clock."
+            "You should come here by 10 o'clock.",
+            "You must come here by 10 o'clock.",
+            "You should be here by ten o'clock.",
+            "You should come here by 10.",
+            "You must come here by ten."
           ]
         },
         {
@@ -72,24 +89,38 @@
         },
         {
           "n": "11",
-          "text": "I will study English hard."
+          "text": "I will study English hard.",
+          "alternatives": [
+            "I will study English diligently."
+          ]
         },
         {
           "n": "12",
-          "text": "He would not answer."
+          "text": "He would not answer.",
+          "alternatives": [
+            "He would not reply.",
+            "He wouldn't respond."
+          ]
         },
         {
           "n": "13",
           "text": "It will be fine tomorrow.",
           "alternatives": [
-            "The weather will be fine tomorrow."
+            "The weather will be fine tomorrow.",
+            "The weather will be good tomorrow.",
+            "It will be nice tomorrow.",
+            "The weather will be nice tomorrow.",
+            "Tomorrow the weather will be fine."
           ]
         },
         {
           "n": "14",
           "text": "He would go to the library when he prepared for the examination.",
           "alternatives": [
-            "He would go to the library when he prepared for the exam."
+            "He would go to the library when he prepared for the exam.",
+            "He would go to the library when he was preparing for the exam.",
+            "When he prepared for the exam, he would go to the library.",
+            "He would go to the library when he prepared for the test."
           ]
         },
         {
@@ -100,12 +131,17 @@
             "He will be 15 tomorrow.",
             "He will turn 15 tomorrow.",
             "He will be fifteen years old tomorrow.",
-            "He will be 15 years old tomorrow."
+            "He will be 15 years old tomorrow.",
+            "Tomorrow he will be fifteen."
           ]
         },
         {
           "n": "16",
-          "text": "I could go to college with the money."
+          "text": "I could go to college with the money.",
+          "alternatives": [
+            "I could go to university with the money.",
+            "With the money, I could go to college."
+          ]
         },
         {
           "n": "17",
@@ -113,24 +149,40 @@
           "alternatives": [
             "Nowadays nobody could do that.",
             "Nowadays no one could do it.",
-            "Nowadays nobody could do it."
+            "Nowadays nobody could do it.",
+            "These days no one could do that.",
+            "No one could do that nowadays."
           ]
         },
         {
           "n": "18",
-          "text": "He may be a millionaire."
+          "text": "He may be a millionaire.",
+          "alternatives": [
+            "He might be a millionaire."
+          ]
         },
         {
           "n": "19",
-          "text": "You may go."
+          "text": "You may go.",
+          "alternatives": [
+            "You may leave."
+          ]
         },
         {
           "n": "20",
-          "text": "He will solve the problem."
+          "text": "He will solve the problem.",
+          "alternatives": [
+            "He will resolve the problem."
+          ]
         },
         {
           "n": "21",
-          "text": "He might be rich."
+          "text": "He might be rich.",
+          "alternatives": [
+            "He may be rich.",
+            "He might be wealthy.",
+            "He might be a rich man."
+          ]
         },
         {
           "n": "22",

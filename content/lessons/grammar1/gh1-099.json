@@ -36,38 +36,61 @@
       "items": [
         {
           "n": "96",
-          "text": "The athletes didn't pay for lunch, did they?"
+          "text": "The athletes didn't pay for lunch, did they?",
+          "alternatives": [
+            "The players didn't pay for lunch, did they?",
+            "The athletes didn't pay the lunch bill, did they?"
+          ]
         },
         {
           "n": "97",
           "text": "The company took part in the project, didn't it?",
           "alternatives": [
-            "The company participated in the project, didn't it?"
+            "The company participated in the project, didn't it?",
+            "The company took part in the project, did it not?",
+            "The company participated in the project, did it not?",
+            "The company joined the project, didn't it?",
+            "The company took part in the project, didn't they?",
+            "The firm took part in the project, didn't it?"
           ]
         },
         {
           "n": "98",
           "text": "He isn't going on a date today, is he?",
           "alternatives": [
-            "He isn't going out on a date today, is he?"
+            "He isn't going out on a date today, is he?",
+            "He won't go on a date today, will he?",
+            "He isn't going to go on a date today, is he?"
           ]
         },
         {
           "n": "99",
-          "text": "Does he borrow some money?"
+          "text": "Does he borrow some money?",
+          "alternatives": [
+            "Does he borrow a little money?",
+            "Does he borrow a bit of money?",
+            "Does he borrow a little bit of money?"
+          ]
         },
         {
           "n": "100",
           "text": "Doesn't he lend some money?",
           "alternatives": [
-            "Does he not lend some money?"
+            "Does he not lend some money?",
+            "Doesn't he lend a little money?",
+            "Does he not lend a little money?",
+            "Doesn't he loan some money?",
+            "Doesn't he lend a bit of money?"
           ]
         },
         {
           "n": "101",
           "text": "Didn't the staff support the ambassador?",
           "alternatives": [
-            "Did the staff not support the ambassador?"
+            "Did the staff not support the ambassador?",
+            "Didn't the staff back the ambassador?",
+            "Didn't the staff members support the ambassador?",
+            "Didn't the aides support the ambassador?"
           ]
         },
         {
@@ -78,25 +101,42 @@
             "How quickly does it become clear?",
             "How fast does that become clear?",
             "How soon does that become clear?",
-            "How quickly does that become clear?"
+            "How quickly does that become clear?",
+            "How quickly does it become obvious?",
+            "How fast does it become obvious?",
+            "How soon does it become evident?",
+            "How soon does it become apparent?"
           ]
         },
         {
           "n": "103",
           "text": "How quickly did the meeting end?",
           "alternatives": [
-            "How fast did the meeting end?"
+            "How fast did the meeting end?",
+            "How quickly did the meeting finish?",
+            "How soon did the meeting end?",
+            "How quickly did the gathering end?",
+            "How fast did the meeting finish?"
           ]
         },
         {
           "n": "104",
-          "text": "She sees him many times every day, doesn't she?"
+          "text": "She sees him many times every day, doesn't she?",
+          "alternatives": [
+            "She sees him many times a day, doesn't she?",
+            "She sees him many times each day, doesn't she?",
+            "She sees him many times every day, does she not?"
+          ]
         },
         {
           "n": "105",
           "text": "He takes care of the patient for many hours every day, doesn't he?",
           "alternatives": [
-            "He takes care of the patient many hours every day, doesn't he?"
+            "He takes care of the patient many hours every day, doesn't he?",
+            "He looks after the patient for many hours every day, doesn't he?",
+            "He cares for the patient for many hours every day, doesn't he?",
+            "He takes care of the patient for many hours a day, doesn't he?",
+            "He takes care of the patient for many hours every day, does he not?"
           ]
         },
         {
@@ -111,21 +151,29 @@
           "text": "Why didn't North and South Korea reach a compromise?",
           "alternatives": [
             "Why didn't South and North Korea reach a compromise?",
-            "Why didn't the two Koreas reach a compromise?"
+            "Why didn't the two Koreas reach a compromise?",
+            "Why did North and South Korea not reach a compromise?",
+            "Why didn't North and South Korea come to a compromise?",
+            "Why didn't South Korea and North Korea reach a compromise?",
+            "Why didn't North Korea and South Korea reach a compromise?",
+            "Why didn't the two Koreas come to a compromise?"
           ]
         },
         {
           "n": "108",
           "text": "There was no attempt to negotiate, was there?",
           "alternatives": [
-            "There wasn't any attempt to negotiate, was there?"
+            "There wasn't any attempt to negotiate, was there?",
+            "There were no attempts to negotiate, were there?",
+            "There wasn't an attempt to negotiate, was there?"
           ]
         },
         {
           "n": "109",
           "text": "He is Korean, isn't he?",
           "alternatives": [
-            "He is a Korean, isn't he?"
+            "He is a Korean, isn't he?",
+            "He is Korean, is he not?"
           ]
         },
         {
@@ -138,7 +186,9 @@
           "alternatives": [
             "She was an American, wasn't she?",
             "The woman was American, wasn't she?",
-            "The woman was an American, wasn't she?"
+            "The woman was an American, wasn't she?",
+            "She was American, was she not?",
+            "The woman was an American, was she not?"
           ]
         },
         {
@@ -160,7 +210,10 @@
         },
         {
           "n": "114",
-          "text": "He can't speak German, can he?"
+          "text": "He can't speak German, can he?",
+          "alternatives": [
+            "He doesn't speak German, does he?"
+          ]
         }
       ]
     },

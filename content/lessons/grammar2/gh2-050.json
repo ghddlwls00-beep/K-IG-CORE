@@ -32,7 +32,10 @@
         },
         {
           "n": "2",
-          "text": "He told me that he loved me."
+          "text": "He told me that he loved me.",
+          "alternatives": [
+            "He told me he loved me."
+          ]
         },
         {
           "n": "3",
@@ -40,15 +43,27 @@
         },
         {
           "n": "4",
-          "text": "He told me that he had loved me."
+          "text": "He told me that he had loved me.",
+          "alternatives": [
+            "He told me he had loved me."
+          ]
         },
         {
           "n": "5",
-          "text": "He said, \"I saw him steal the money yesterday.\""
+          "text": "He said, \"I saw him steal the money yesterday.\"",
+          "alternatives": [
+            "He said, \"I saw him stealing the money yesterday.\"",
+            "He said, \"Yesterday I saw him steal the money.\""
+          ]
         },
         {
           "n": "6",
-          "text": "He said that he had seen him steal the money the day before."
+          "text": "He said that he had seen him steal the money the day before.",
+          "alternatives": [
+            "He said he had seen him steal the money the day before.",
+            "He said that he had seen him steal the money the previous day.",
+            "He said that he had seen him stealing the money the day before."
+          ]
         },
         {
           "n": "7",
@@ -56,15 +71,34 @@
         },
         {
           "n": "8",
-          "text": "He said that Alexander conquered the Persian Empire."
+          "text": "He said that Alexander conquered the Persian Empire.",
+          "alternatives": [
+            "He said Alexander conquered the Persian Empire."
+          ]
         },
         {
           "n": "9",
-          "text": "I know the president accepted the Secretary's suggestion that he convene the summit in Washington."
+          "text": "I know the president accepted the Secretary's suggestion that he convene the summit in Washington.",
+          "alternatives": [
+            "I know the president accepted the Secretary's suggestion that he hold the summit in Washington.",
+            "I know the president accepted the minister's suggestion that he convene the summit in Washington.",
+            "I know the president accepted the Secretary's proposal that he convene the summit in Washington.",
+            "I know the president accepted the minister's suggestion that he hold the summit in Washington.",
+            "I know the president accepted the Secretary's suggestion that he host the summit in Washington.",
+            "I know the president accepted the minister's suggestion that he host the summit in Washington."
+          ]
         },
         {
           "n": "10",
-          "text": "Japan's officials sought to protect drug companies from competition, failing to prevent the spread of HIV among hemophiliacs."
+          "text": "Japan's officials sought to protect drug companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+          "alternatives": [
+            "Japanese officials sought to protect drug companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+            "Japan's officials tried to protect drug companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+            "Japan's officials sought to protect pharmaceutical companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+            "Japan's officials sought to protect drug companies from competition, failing to stop the spread of HIV among hemophiliacs.",
+            "Japan's officials sought to protect drug companies from competition, failing to prevent the spread of HIV among haemophiliacs.",
+            "Japanese officials tried to protect pharmaceutical companies from competition, failing to prevent the spread of HIV among hemophiliacs."
+          ]
         }
       ]
     },

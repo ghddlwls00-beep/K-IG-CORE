@@ -42,7 +42,9 @@
           "n": "2",
           "text": "Is your father rich?",
           "alternatives": [
-            "Is your father a rich man?"
+            "Is your father a rich man?",
+            "Is your father a rich person?",
+            "Is your father wealthy?"
           ]
         },
         {
@@ -56,7 +58,10 @@
           "n": "4",
           "text": "Does your sister go to bed early?",
           "alternatives": [
-            "Does your sister go to sleep early?"
+            "Does your sister go to sleep early?",
+            "Does your older sister go to bed early?",
+            "Does your elder sister go to bed early?",
+            "Does your older sister go to sleep early?"
           ]
         },
         {
@@ -92,7 +97,9 @@
           "n": "10",
           "text": "Why aren't more people doing it?",
           "alternatives": [
-            "Why aren't more people doing that?"
+            "Why aren't more people doing that?",
+            "Why are more people not doing it?",
+            "Why are more people not doing that?"
           ]
         },
         {
@@ -127,30 +134,44 @@
           "n": "15",
           "text": "What time did you get to work?",
           "alternatives": [
-            "What time did you go to work?"
+            "What time did you go to work?",
+            "What time did you come to work?",
+            "What time did you arrive at work?"
           ]
         },
         {
           "n": "16",
           "text": "Why did you get home late?",
           "alternatives": [
-            "Why did you come home late?"
+            "Why did you come home late?",
+            "Why did you come back home late?"
           ]
         },
         {
           "n": "17",
           "text": "What time did you leave your home?",
           "alternatives": [
-            "What time did you leave your house?"
+            "What time did you leave your house?",
+            "What time did you leave home?"
           ]
         },
         {
           "n": "18",
-          "text": "Did you take the subway?"
+          "text": "Did you take the subway?",
+          "alternatives": [
+            "Did you ride the subway?",
+            "Did you take the underground?",
+            "Did you take the metro?"
+          ]
         },
         {
           "n": "19",
-          "text": "Does your mother take the subway?"
+          "text": "Does your mother take the subway?",
+          "alternatives": [
+            "Does your mother ride the subway?",
+            "Does your mother take the underground?",
+            "Does your mother take the metro?"
+          ]
         },
         {
           "n": "20",

@@ -55,7 +55,10 @@
         },
         {
           "n": "5",
-          "text": "The scientist has a good memory."
+          "text": "The scientist has a good memory.",
+          "alternatives": [
+            "The scientist has got a good memory."
+          ]
         },
         {
           "n": "6",
@@ -63,7 +66,10 @@
         },
         {
           "n": "7",
-          "text": "My mother closes the door."
+          "text": "My mother closes the door.",
+          "alternatives": [
+            "My mother shuts the door."
+          ]
         },
         {
           "n": "8",
@@ -86,24 +92,38 @@
           "text": "Didn't he spend some time on an island?",
           "alternatives": [
             "Did he not spend some time on an island?",
-            "Didn't he spend any time on an island?"
+            "Didn't he spend any time on an island?",
+            "Did he not spend any time on an island?",
+            "Didn't he spend a little time on an island?"
           ]
         },
         {
           "n": "13",
-          "text": "Are they spending some time on an island?"
+          "text": "Are they spending some time on an island?",
+          "alternatives": [
+            "Are they spending a little time on an island?"
+          ]
         },
         {
           "n": "14",
-          "text": "They spent some time on an island, didn't they?"
+          "text": "They spent some time on an island, didn't they?",
+          "alternatives": [
+            "They spent a little time on an island, didn't they?"
+          ]
         },
         {
           "n": "15",
-          "text": "They didn't spend any time on an island, did they?"
+          "text": "They didn't spend any time on an island, did they?",
+          "alternatives": [
+            "They didn't spend any time at all on an island, did they?"
+          ]
         },
         {
           "n": "16",
-          "text": "They were not spending any time on an island."
+          "text": "They were not spending any time on an island.",
+          "alternatives": [
+            "They weren't spending any time at all on an island."
+          ]
         },
         {
           "n": "17",

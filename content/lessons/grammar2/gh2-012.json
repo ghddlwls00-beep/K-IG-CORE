@@ -30,42 +30,80 @@
           "n": "1",
           "text": "You must finish it by this Friday.",
           "alternatives": [
-            "You must finish that by this Friday."
+            "You must finish that by this Friday.",
+            "You have to finish it by this Friday.",
+            "You should finish it by this Friday.",
+            "You need to finish it by this Friday.",
+            "You must complete it by this Friday."
           ]
         },
         {
           "n": "2",
-          "text": "The telephone is by the window."
+          "text": "The telephone is by the window.",
+          "alternatives": [
+            "The phone is by the window."
+          ]
         },
         {
           "n": "3",
-          "text": "The play was written by Shakespeare."
+          "text": "The play was written by Shakespeare.",
+          "alternatives": [
+            "The drama was written by Shakespeare."
+          ]
         },
         {
           "n": "4",
-          "text": "He was shot by a terrorist with a gun."
+          "text": "He was shot by a terrorist with a gun.",
+          "alternatives": [
+            "He was shot with a gun by a terrorist.",
+            "He got shot by a terrorist with a gun."
+          ]
         },
         {
           "n": "5",
-          "text": "He shocked the whole company by resigning."
+          "text": "He shocked the whole company by resigning.",
+          "alternatives": [
+            "He shocked the entire company by resigning.",
+            "By resigning, he shocked the whole company.",
+            "He shocked the whole company by quitting."
+          ]
         },
         {
           "n": "6",
-          "text": "Since then, I have studied English."
+          "text": "Since then, I have studied English.",
+          "alternatives": [
+            "I have studied English since then."
+          ]
         },
         {
           "n": "7",
-          "text": "After work, I went home."
+          "text": "After work, I went home.",
+          "alternatives": [
+            "I went home after work.",
+            "After getting off work, I went home.",
+            "After leaving work, I went home."
+          ]
         },
         {
           "n": "8",
-          "text": "Shortly after lunch, they got back to work."
+          "text": "Shortly after lunch, they got back to work.",
+          "alternatives": [
+            "Right after lunch, they got back to work.",
+            "Just after lunch, they got back to work.",
+            "Immediately after lunch, they got back to work.",
+            "Shortly after lunch, they went back to work.",
+            "Right after lunch, they went back to work.",
+            "Shortly after lunch, they returned to work.",
+            "They got back to work shortly after lunch.",
+            "Soon after lunch, they got back to work."
+          ]
         },
         {
           "n": "9",
           "text": "I don't know anything about it.",
           "alternatives": [
-            "I don't know anything about that."
+            "I don't know anything about that.",
+            "I know nothing about it."
           ]
         },
         {
@@ -74,23 +112,41 @@
           "alternatives": [
             "He has about 100 dollars.",
             "He has about a hundred dollars.",
-            "He has about $100."
+            "He has about $100.",
+            "He has got about a hundred dollars."
           ]
         },
         {
           "n": "11",
-          "text": "He swam across the Han River."
+          "text": "He swam across the Han River.",
+          "alternatives": [
+            "He swam across the Hangang River."
+          ]
         },
         {
           "n": "12",
           "text": "All the people across the town know him.",
           "alternatives": [
-            "All of the people across the town know him."
+            "All of the people across the town know him.",
+            "Everyone across the town knows him.",
+            "Everybody across the town knows him.",
+            "All the people across the village know him.",
+            "All of the people across the village know him.",
+            "Everyone across the village knows him."
           ]
         },
         {
           "n": "13",
-          "text": "There is a regulation against smoking in this company."
+          "text": "There is a regulation against smoking in this company.",
+          "alternatives": [
+            "There is a rule against smoking in this company.",
+            "In this company, there is a regulation against smoking.",
+            "There is a regulation against smoking at this company.",
+            "This company has a regulation against smoking.",
+            "In this company, there is a rule against smoking.",
+            "This company has a rule against smoking.",
+            "There are regulations against smoking in this company."
+          ]
         },
         {
           "n": "14",
@@ -98,25 +154,44 @@
         },
         {
           "n": "15",
-          "text": "He stood up against the dictator."
+          "text": "He stood up against the dictator.",
+          "alternatives": [
+            "He rose up against the dictator."
+          ]
         },
         {
           "n": "16",
           "text": "He left three hours later.",
           "alternatives": [
-            "He left 3 hours later."
+            "He left 3 hours later.",
+            "He left after three hours.",
+            "Three hours later, he left."
           ]
         },
         {
           "n": "17",
           "text": "He returned after three hours.",
           "alternatives": [
-            "He returned after 3 hours."
+            "He returned after 3 hours.",
+            "He returned three hours later.",
+            "He went back after three hours.",
+            "He came back after three hours.",
+            "After three hours, he returned."
           ]
         },
         {
           "n": "18",
-          "text": "Fish can survive for only a short time out of water."
+          "text": "Fish can survive for only a short time out of water.",
+          "alternatives": [
+            "Fish can only survive for a short time out of water.",
+            "Fish can survive out of water for only a short time.",
+            "Fish can survive only for a short time out of water.",
+            "Fish can survive for just a short time out of water.",
+            "Fish can live for only a short time out of water.",
+            "Out of water, fish can survive for only a short time.",
+            "Out of water, fish can only survive for a short time.",
+            "Fish can only survive out of water for a short time."
+          ]
         }
       ]
     },

@@ -38,16 +38,23 @@
           "n": "1",
           "text": "Why does she go there?",
           "alternatives": [
-            "Why is she going there?"
+            "Why is she going there?",
+            "Why's she going there?"
           ]
         },
         {
           "n": "2",
-          "text": "This is my wife."
+          "text": "This is my wife.",
+          "alternatives": [
+            "This person is my wife."
+          ]
         },
         {
           "n": "3",
-          "text": "This book is cheap."
+          "text": "This book is cheap.",
+          "alternatives": [
+            "This book is inexpensive."
+          ]
         },
         {
           "n": "4",
@@ -55,7 +62,10 @@
         },
         {
           "n": "5",
-          "text": "These pens are cheap."
+          "text": "These pens are cheap.",
+          "alternatives": [
+            "These pens are inexpensive."
+          ]
         },
         {
           "n": "6",
@@ -134,7 +144,10 @@
         },
         {
           "n": "18",
-          "text": "Why is he happy?"
+          "text": "Why is he happy?",
+          "alternatives": [
+            "Why's he happy?"
+          ]
         },
         {
           "n": "19",
@@ -142,7 +155,10 @@
         },
         {
           "n": "20",
-          "text": "Why is she sad?"
+          "text": "Why is she sad?",
+          "alternatives": [
+            "Why's she sad?"
+          ]
         },
         {
           "n": "21",
@@ -192,14 +208,19 @@
         },
         {
           "n": "31",
-          "text": "Why is he running?"
+          "text": "Why is he running?",
+          "alternatives": [
+            "Why's he running?"
+          ]
         },
         {
           "n": "32",
           "text": "Why does he look at her?",
           "alternatives": [
             "Why does he watch her?",
-            "Why is he looking at her?"
+            "Why is he looking at her?",
+            "Why is he watching her?",
+            "Why's he looking at her?"
           ]
         },
         {

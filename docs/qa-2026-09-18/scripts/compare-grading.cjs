@@ -6,7 +6,8 @@
  *   입력 = 모범 · 다른 정답 · grade-offline 의 변형 11 · 틀린 답(WRONG) ·
  *          반대말 탐침(모범 낱말마다 un · in · im · dis 를 붙인 꼴, 접두어(dis · non · im · in · il · ir · un)가 붙어 있으면 뗀 꼴) ·
  *          오타 탐침(5자 이상 낱말의 끝 글자 빼기 · 가운데 두 글자 바꾸기 — 이것은 바뀌면 안 됨)
- * 점수가 달라진 입력마다, 그 입력과 어떤 참조 사이에 '한쪽 낱말 = 접두어 + 다른 쪽 낱말' 짝이 있는지 본다.
+ * 점수가 달라진 입력마다, 그 입력과 어떤 참조 사이에 '한쪽 낱말 = 접두어 + 다른 쪽 낱말' 짝이 있는지(흠 ②), 또는 맞지 않고 남은 낱말에
+ * unless 가 있는지(결정 C 뒤 — unless 를 'if … not' 의 부정으로 셈) 본다. unless 탐침: 모범의 unless → if · if(부정문) → unless.
  * 짝 없이 달라진 것이 하나라도 있거나, 달라진 것이 0(고침이 안 들어감)이거나, 아래 이름 붙은 네 경우가 기대와 다르면 exit 1.
  *   이름 붙은 경우: "Isn't it possible?"(참조 impossible) · "Was the conviction proper?"(improper) · "This book is expensive."(inexpensive) → 0점,
  *                  "This book is inexpensiv."(오타) → 70점 그대로.
@@ -70,6 +71,8 @@ function probes(model) {
     const p = PREFIXES.find((q) => low.startsWith(q) && low.length - q.length >= 4);
     if (p) put(core.slice(p.length), "접두어 뗌");
     for (const q of ADD) if (!low.startsWith(q)) put(q + core, "접두어 붙임");
+    if (low === "unless") put(core[0] === "U" ? "If" : "if", "unless → if");
+    if (low === "if" && /\bnot\b|n't\b/i.test(model)) put(core[0] === "I" ? "Unless" : "unless", "if → unless");
     if (core.length >= 5) {
       put(core.slice(0, -1), "오타 끝 빼기");
       const k = Math.floor(core.length / 2);
@@ -108,8 +111,13 @@ for (const course of ["grammar1", "grammar2"]) {
         // 남는 낱말은 개수까지 센다(여럿 나오는 낱말 — 'between … between' 의 한쪽에만 접두어를 붙인 탐침)
         const leftover = (xs, ys) => { const rest = [...ys]; return xs.filter((x) => { const i = rest.indexOf(x); if (i < 0) return true; rest.splice(i, 1); return false; }); };
         const cw = words(c.text);
-        const explained = refs.some((r) => { const rw = words(r); const lc = leftover(cw, rw), lr = leftover(rw, cw); return lc.some((x) => lr.some((y) => isPrefixPair(x, y))); });
-        changed.push({ course, id: p.id, n: a.n, kind: c.kind, text: c.text, before: gb, after: ga, explained });
+        let why = null;
+        for (const r of refs) {
+          const rw = words(r); const lc = leftover(cw, rw), lr = leftover(rw, cw);
+          if (lc.some((x) => lr.some((y) => isPrefixPair(x, y)))) { why = "접두어 짝"; break; }
+          if (lc.includes("unless") || lr.includes("unless")) { why = "unless = if … not"; }
+        }
+        changed.push({ course, id: p.id, n: a.n, kind: c.kind, text: c.text, before: gb, after: ga, explained: Boolean(why), why });
       }
     }
   }
@@ -119,6 +127,8 @@ const named = [
   ["Was the conviction proper?", ["Was the conviction improper?"], "incorrect"],
   ["This book is expensive.", ["This book is inexpensive."], "incorrect"],
   ["This book is inexpensiv.", ["This book is inexpensive."], "partial"],
+  ["If you study hard, you will never speak English fluently.", ["If you don't study hard, you will never speak English fluently.", "Unless you study hard, you will never speak English fluently."], "incorrect"],
+  ["If you don't study hard, you will never speak English fluently.", ["Unless you study hard, you will never speak English fluently."], "partial"],
 ].map(([u, refs, want]) => ({ u, before: A.gradeAgainstReferences(u, refs), after: B.gradeAgainstReferences(u, refs), want }));
 const unexplained = changed.filter((c) => !c.explained);
 const namedBad = named.filter((x) => x.after !== x.want);
@@ -128,6 +138,9 @@ for (const [k, v] of Object.entries(byKind)) console.log(`   ${k.padEnd(8)} 입�
 const dirs = {};
 for (const c of changed) dirs[`${c.before}→${c.after}`] = (dirs[`${c.before}→${c.after}`] || 0) + 1;
 console.log(`   방향 ${JSON.stringify(dirs)}`);
+const whys = {};
+for (const c of changed) whys[c.why || "설명 없음"] = (whys[c.why || "설명 없음"] || 0) + 1;
+console.log(`   까닭 ${JSON.stringify(whys)}`);
 for (const c of changed.filter((x) => x.kind !== "접두어 붙임" && x.kind !== "접두어 뗌").slice(0, 12)) console.log(`   [${c.explained ? "짝" : "**짝 없음**"}] ${c.course}/${c.id} #${c.n} ${c.kind} "${c.text}" ${c.before}→${c.after}`);
 for (const c of unexplained.slice(0, 12)) console.log(`   **설명 안 됨** ${c.course}/${c.id} #${c.n} ${c.kind} "${c.text}" ${c.before}→${c.after}`);
 for (const x of named) console.log(`   이름 붙은 경우 "${x.u}" ${x.before} → ${x.after} (기대 ${x.want})${x.after === x.want ? "" : " **다름**"}`);

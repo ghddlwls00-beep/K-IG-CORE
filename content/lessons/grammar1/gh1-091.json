@@ -40,7 +40,10 @@
         },
         {
           "n": "21",
-          "text": "Was this your rifle?"
+          "text": "Was this your rifle?",
+          "alternatives": [
+            "Was this your gun?"
+          ]
         },
         {
           "n": "22",
@@ -52,19 +55,26 @@
         },
         {
           "n": "23",
-          "text": "Were the government officials honest?"
+          "text": "Were the government officials honest?",
+          "alternatives": [
+            "Were the government officers honest?"
+          ]
         },
         {
           "n": "24",
           "text": "Were Democrats and Republicans cooperative?",
           "alternatives": [
             "Were the Democrats and Republicans cooperative?",
-            "Were the Democrats and the Republicans cooperative?"
+            "Were the Democrats and the Republicans cooperative?",
+            "Were Democrats and Republicans co-operative?"
           ]
         },
         {
           "n": "25",
-          "text": "Does the federal government have a good policy?"
+          "text": "Does the federal government have a good policy?",
+          "alternatives": [
+            "Does the federal government have good policies?"
+          ]
         },
         {
           "n": "26",
@@ -83,14 +93,17 @@
           "n": "27",
           "text": "Don't your parents have a problem?",
           "alternatives": [
-            "Do your parents not have a problem?"
+            "Do your parents not have a problem?",
+            "Don't your parents have an issue?"
           ]
         },
         {
           "n": "28",
           "text": "Doesn't the senator have an option?",
           "alternatives": [
-            "Does the senator not have an option?"
+            "Does the senator not have an option?",
+            "Doesn't the senator have a choice?",
+            "Doesn't the senator have an alternative?"
           ]
         },
         {
@@ -98,14 +111,19 @@
           "text": "Doesn't the congressman wake your mother up?",
           "alternatives": [
             "Does the congressman not wake your mother up?",
-            "Doesn't the congresswoman wake your mother up?"
+            "Doesn't the congresswoman wake your mother up?",
+            "Doesn't the congressman wake up your mother?",
+            "Doesn't the congressman wake your mother?",
+            "Doesn't the representative wake your mother up?",
+            "Does the congressman not wake up your mother?"
           ]
         },
         {
           "n": "30",
           "text": "Does the operator like it?",
           "alternatives": [
-            "Does the operator like that?"
+            "Does the operator like that?",
+            "Does the telephone operator like it?"
           ]
         },
         {
@@ -113,7 +131,11 @@
           "text": "Didn't the financial district face a major rebuilding job?",
           "alternatives": [
             "Did the financial district not face a major rebuilding job?",
-            "Didn't the financial district face a big rebuilding job?"
+            "Didn't the financial district face a big rebuilding job?",
+            "Did the financial district not face a big rebuilding job?",
+            "Didn't the financial district face a major reconstruction job?",
+            "Didn't the financial district face a big reconstruction job?",
+            "Didn't the financial district face a large rebuilding job?"
           ]
         },
         {
@@ -131,19 +153,27 @@
           "n": "34",
           "text": "Do your friends really mean it?",
           "alternatives": [
-            "Do your friends really mean that?"
+            "Do your friends really mean that?",
+            "Do your friends truly mean it?"
           ]
         },
         {
           "n": "35",
           "text": "Doesn't your commander show proper respect for the dead?",
           "alternatives": [
-            "Does your commander not show proper respect for the dead?"
+            "Does your commander not show proper respect for the dead?",
+            "Doesn't your commander show appropriate respect for the dead?",
+            "Doesn't your commander show proper respect to the dead?",
+            "Does your commander not show appropriate respect for the dead?"
           ]
         },
         {
           "n": "36",
-          "text": "Does the machine work that way?"
+          "text": "Does the machine work that way?",
+          "alternatives": [
+            "Does the machine work like that?",
+            "Does the machine operate that way?"
+          ]
         },
         {
           "n": "37",
@@ -154,14 +184,21 @@
             "Do they take planes often?",
             "Do they often take planes?",
             "Do they take airplanes often?",
-            "Do they take airplanes frequently?"
+            "Do they take airplanes frequently?",
+            "Do they often take a plane?",
+            "Do they often travel by plane?",
+            "Do they frequently fly?",
+            "Do they often take airplanes?",
+            "Do they take planes frequently?"
           ]
         },
         {
           "n": "38",
           "text": "Didn't the terrorist plant a bomb in the car?",
           "alternatives": [
-            "Did the terrorist not plant a bomb in the car?"
+            "Did the terrorist not plant a bomb in the car?",
+            "Didn't the terrorist place a bomb in the car?",
+            "Didn't the terrorist put a bomb in the car?"
           ]
         },
         {
@@ -172,7 +209,10 @@
             "Why is it taking place outside the border?",
             "Why does that take place outside the border?",
             "Why does that happen outside the border?",
-            "Why is that taking place outside the border?"
+            "Why is that taking place outside the border?",
+            "Why does it occur outside the border?",
+            "Why is it happening outside the border?",
+            "Why does it happen outside the borders?"
           ]
         }
       ]

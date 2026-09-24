@@ -40,7 +40,8 @@
           "alternatives": [
             "When are they going to finish their freshman year?",
             "When will they finish their first year?",
-            "When are they going to finish their first year?"
+            "When are they going to finish their first year?",
+            "When will they complete their first year?"
           ]
         },
         {
@@ -49,7 +50,8 @@
           "alternatives": [
             "They will become sophomores, won't they?",
             "They will be second-year students, won't they?",
-            "They will become second-year students, won't they?"
+            "They will become second-year students, won't they?",
+            "They are going to be sophomores, aren't they?"
           ]
         },
         {
@@ -65,14 +67,24 @@
           "alternatives": [
             "This is a pretty large area, isn't it?",
             "This is a fairly large area, isn't it?",
-            "This is quite a large area, isn't it?"
+            "This is quite a large area, isn't it?",
+            "This is a pretty big area, isn't it?",
+            "This is quite a big area, isn't it?",
+            "This is a fairly big area, isn't it?",
+            "This is a rather large area, isn't it?",
+            "This is a pretty large region, isn't it?",
+            "This is a fairly large region, isn't it?"
           ]
         },
         {
           "n": "40",
           "text": "Someday, he wants to be a language teacher.",
           "alternatives": [
-            "He wants to be a language teacher someday."
+            "He wants to be a language teacher someday.",
+            "Someday, he wants to become a language teacher.",
+            "He wants to become a language teacher someday.",
+            "One day, he wants to be a language teacher.",
+            "He wants to be a language teacher one day."
           ]
         },
         {
@@ -81,7 +93,10 @@
           "alternatives": [
             "When did they take their final exams?",
             "When did they take their final examinations?",
-            "When did they have their final exams?"
+            "When did they have their final exams?",
+            "When did they take the final exams?",
+            "When did they take their final exam?",
+            "When did they take the final exam?"
           ]
         },
         {
@@ -89,14 +104,23 @@
           "text": "Sometimes he cut classes, didn't he?",
           "alternatives": [
             "Sometimes he skipped classes, didn't he?",
-            "Sometimes he skipped class, didn't he?"
+            "Sometimes he skipped class, didn't he?",
+            "He sometimes skipped classes, didn't he?",
+            "He sometimes skipped class, didn't he?",
+            "He sometimes cut classes, didn't he?",
+            "Sometimes he cut class, didn't he?",
+            "He sometimes cut class, didn't he?"
           ]
         },
         {
           "n": "43",
           "text": "Isn't English a required subject?",
           "alternatives": [
-            "Is English not a required subject?"
+            "Is English not a required subject?",
+            "Isn't English a compulsory subject?",
+            "Isn't English a mandatory subject?",
+            "Isn't English a required course?",
+            "Isn't English a compulsory course?"
           ]
         },
         {
@@ -104,7 +128,8 @@
           "text": "German is an elective, isn't it?",
           "alternatives": [
             "German is an elective subject, isn't it?",
-            "German is an optional subject, isn't it?"
+            "German is an optional subject, isn't it?",
+            "German is an elective course, isn't it?"
           ]
         },
         {
@@ -113,19 +138,29 @@
           "alternatives": [
             "How many English classes does he have per week?",
             "How many English classes does he have every week?",
-            "How many English classes does he have in a week?"
+            "How many English classes does he have in a week?",
+            "How many English lessons does he have a week?"
           ]
         },
         {
           "n": "46",
           "text": "When do they have to pass the final examinations?",
           "alternatives": [
-            "When do they have to pass the final exams?"
+            "When do they have to pass the final exams?",
+            "When do they have to pass the final exam?",
+            "When must they pass the final exams?",
+            "When do they need to pass the final exams?",
+            "When do they have to pass their final exams?",
+            "When must they pass the final exam?"
           ]
         },
         {
           "n": "47",
-          "text": "When did he open a small grocery store in his hometown?"
+          "text": "When did he open a small grocery store in his hometown?",
+          "alternatives": [
+            "When did he open a small grocery shop in his hometown?",
+            "When did he open a little grocery store in his hometown?"
+          ]
         },
         {
           "n": "48",
@@ -133,7 +168,11 @@
           "alternatives": [
             "Within 2 years, he added another.",
             "Within two years, he added another one.",
-            "Within 2 years, he added another one."
+            "Within 2 years, he added another one.",
+            "He added another one within two years.",
+            "He added another within two years.",
+            "In two years, he added another one.",
+            "Within two years, he added one more."
           ]
         },
         {
@@ -142,7 +181,9 @@
           "alternatives": [
             "Recently he opened a third one, didn't he?",
             "He recently opened a third, didn't he?",
-            "He recently opened a third one, didn't he?"
+            "He recently opened a third one, didn't he?",
+            "Recently, he opened the third one, didn't he?",
+            "He opened a third one recently, didn't he?"
           ]
         },
         {
@@ -150,7 +191,10 @@
           "text": "They do not have time to get together, do they?",
           "alternatives": [
             "They do not have time to spend together, do they?",
-            "They do not have time to be together, do they?"
+            "They do not have time to be together, do they?",
+            "They don't have time to spend together, do they?",
+            "They don't have time to be together, do they?",
+            "They have no time to get together, do they?"
           ]
         },
         {
@@ -161,7 +205,12 @@
             "Why does Phil rarely go to the mall?",
             "Why does Phil seldom go to the mall?",
             "Why does Phil rarely go to the shopping center?",
-            "Why does Phil seldom go to the shopping center?"
+            "Why does Phil seldom go to the shopping center?",
+            "Why does Phil hardly ever go to the mall?",
+            "Why does Phil hardly ever go to the shopping district?",
+            "Why does Phil rarely go to the shopping mall?",
+            "Why does Phil seldom go to the shopping mall?",
+            "Why does Phil rarely go to the shopping area?"
           ]
         },
         {
@@ -172,7 +221,10 @@
           "n": "53",
           "text": "When did he recommend a nearby candy shop?",
           "alternatives": [
-            "When did he recommend a nearby candy store?"
+            "When did he recommend a nearby candy store?",
+            "When did he recommend a candy shop nearby?",
+            "When did he recommend a candy store nearby?",
+            "When did he recommend a nearby sweet shop?"
           ]
         },
         {
@@ -181,7 +233,9 @@
           "alternatives": [
             "Why did the President severely criticize the Japanese economy?",
             "Why did the President criticize the Japanese economy harshly?",
-            "Why did the President harshly criticize the Japanese economy?"
+            "Why did the President harshly criticize the Japanese economy?",
+            "Why did the president criticize the Japanese economy harshly?",
+            "Why did the president criticize Japan's economy severely?"
           ]
         },
         {
@@ -200,7 +254,10 @@
           "text": "The relief foundation is denying any link to terrorism, isn't it?",
           "alternatives": [
             "The relief foundation is denying any connection to terrorism, isn't it?",
-            "The relief foundation is denying any links to terrorism, isn't it?"
+            "The relief foundation is denying any links to terrorism, isn't it?",
+            "The aid foundation is denying any link to terrorism, isn't it?",
+            "The relief foundation is denying any link with terrorism, isn't it?",
+            "The relief foundation is denying any connection with terrorism, isn't it?"
           ]
         },
         {
@@ -209,23 +266,35 @@
         },
         {
           "n": "58",
-          "text": "You are not that tall."
+          "text": "You are not that tall.",
+          "alternatives": [
+            "You are not so tall.",
+            "You're not so tall."
+          ]
         },
         {
           "n": "59",
-          "text": "Will I ever play in the NBA?"
+          "text": "Will I ever play in the NBA?",
+          "alternatives": [
+            "Am I ever going to play in the NBA?"
+          ]
         },
         {
           "n": "60",
           "text": "It is decidedly so.",
           "alternatives": [
             "It is definitely so.",
-            "It definitely is."
+            "It definitely is.",
+            "It certainly is.",
+            "It is certainly so."
           ]
         },
         {
           "n": "61",
-          "text": "Why do we always stay here?"
+          "text": "Why do we always stay here?",
+          "alternatives": [
+            "Why do we stay here all the time?"
+          ]
         },
         {
           "n": "62",
@@ -237,7 +306,9 @@
             "That's nicer than my place.",
             "That's nicer than my house.",
             "That's better than my place.",
-            "That's better than my house."
+            "That's better than my house.",
+            "It's better than my home.",
+            "It's nicer than my home."
           ]
         },
         {
@@ -245,12 +316,17 @@
           "text": "I've never seen your place.",
           "alternatives": [
             "I've never seen your house.",
-            "I've never seen your home."
+            "I've never seen your home.",
+            "I have never seen your home."
           ]
         },
         {
           "n": "64",
-          "text": "They don't really come down here that much."
+          "text": "They don't really come down here that much.",
+          "alternatives": [
+            "They really don't come down here that much.",
+            "They don't really come down here so much."
+          ]
         },
         {
           "n": "65",
@@ -258,14 +334,19 @@
           "alternatives": [
             "Professor McCarthy will give a difficult examination.",
             "Professor McCarthy is going to give a difficult exam.",
-            "Professor McCarthy will give a difficult exam."
+            "Professor McCarthy will give a difficult exam.",
+            "Professor McCarthy will give a hard exam.",
+            "Professor McCarthy is going to give a hard exam.",
+            "Professor McCarthy will give a difficult test.",
+            "Professor McCarthy will give a hard test."
           ]
         },
         {
           "n": "66",
           "text": "The government was freezing the assets of terrorist groups.",
           "alternatives": [
-            "The government was freezing terrorist groups' assets."
+            "The government was freezing terrorist groups' assets.",
+            "The government was freezing the assets of terror groups."
           ]
         },
         {
@@ -274,7 +355,12 @@
           "alternatives": [
             "Did the athletes give their best performance?",
             "Did the athletes perform at their best?",
-            "Did the athletes put in their best performance?"
+            "Did the athletes put in their best performance?",
+            "Did the players give their best performance?",
+            "Did the players perform at their best?",
+            "Did the athletes give the best performance?",
+            "Did the players play their best game?",
+            "Did the athletes play their best game?"
           ]
         },
         {
@@ -292,7 +378,10 @@
         },
         {
           "n": "70",
-          "text": "Hundreds of people have skin cancer, don't they?"
+          "text": "Hundreds of people have skin cancer, don't they?",
+          "alternatives": [
+            "Several hundred people have skin cancer, don't they?"
+          ]
         }
       ]
     },

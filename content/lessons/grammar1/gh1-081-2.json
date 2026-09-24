@@ -53,7 +53,10 @@
         },
         {
           "n": "25",
-          "text": "When did you come to Korea?"
+          "text": "When did you come to Korea?",
+          "alternatives": [
+            "When did you arrive in Korea?"
+          ]
         },
         {
           "n": "26",
@@ -64,7 +67,13 @@
             "When does he return to America?",
             "When does he go back to the United States?",
             "When does he go back to America?",
-            "When is he going back to the U.S.?"
+            "When is he going back to the U.S.?",
+            "When is he going back to America?",
+            "When is he going back to the United States?",
+            "When will he go back to the U.S.?",
+            "When will he go back to America?",
+            "When does he return to the USA?",
+            "When is he returning to the U.S.?"
           ]
         },
         {
@@ -93,7 +102,8 @@
           "text": "Who shouts?",
           "alternatives": [
             "Who yells?",
-            "Who is shouting?"
+            "Who is shouting?",
+            "Who is yelling?"
           ]
         },
         {
@@ -107,12 +117,17 @@
           "n": "32",
           "text": "Do your children cry often?",
           "alternatives": [
-            "Do your children often cry?"
+            "Do your children often cry?",
+            "Do your kids cry often?",
+            "Do your kids often cry?"
           ]
         },
         {
           "n": "33",
-          "text": "Why are your children crying?"
+          "text": "Why are your children crying?",
+          "alternatives": [
+            "Why are your kids crying?"
+          ]
         },
         {
           "n": "34",
@@ -120,7 +135,12 @@
         },
         {
           "n": "35",
-          "text": "The child whispers, but his brother shouts."
+          "text": "The child whispers, but his brother shouts.",
+          "alternatives": [
+            "The child whispers, but his older brother shouts.",
+            "The child whispers, but his elder brother shouts.",
+            "The kid whispers, but his brother shouts."
+          ]
         },
         {
           "n": "36",
@@ -135,16 +155,25 @@
           "n": "37",
           "text": "Who looked for me?",
           "alternatives": [
-            "Who was looking for me?"
+            "Who was looking for me?",
+            "Who searched for me?",
+            "Who was searching for me?"
           ]
         },
         {
           "n": "38",
-          "text": "Did your mother look for this?"
+          "text": "Did your mother look for this?",
+          "alternatives": [
+            "Did your mother search for this?"
+          ]
         },
         {
           "n": "39",
-          "text": "Your grandmother did not look for this, did she?"
+          "text": "Your grandmother did not look for this, did she?",
+          "alternatives": [
+            "Your grandma didn't look for this, did she?",
+            "Your grandmother didn't search for this, did she?"
+          ]
         }
       ]
     },

@@ -28,11 +28,17 @@
       "items": [
         {
           "n": "1",
-          "text": "Have you ever loved a woman?"
+          "text": "Have you ever loved a woman?",
+          "alternatives": [
+            "Have you ever been in love with a woman?"
+          ]
         },
         {
           "n": "2",
-          "text": "Do you ever watch television?"
+          "text": "Do you ever watch television?",
+          "alternatives": [
+            "Do you ever watch TV?"
+          ]
         },
         {
           "n": "3",
@@ -42,25 +48,34 @@
           "n": "4",
           "text": "He just arrived.",
           "alternatives": [
-            "He has just arrived."
+            "He has just arrived.",
+            "He's just arrived.",
+            "He arrived just now.",
+            "He just got here."
           ]
         },
         {
           "n": "5",
           "text": "It's just two o'clock.",
           "alternatives": [
-            "It's just 2 o'clock."
+            "It's just 2 o'clock.",
+            "It's just two o'clock now."
           ]
         },
         {
           "n": "6",
-          "text": "This is just what I wanted."
+          "text": "This is just what I wanted.",
+          "alternatives": [
+            "This is just the thing I wanted."
+          ]
         },
         {
           "n": "7",
           "text": "She talked on for two hours.",
           "alternatives": [
-            "She talked on for 2 hours."
+            "She talked on for 2 hours.",
+            "She went on talking for two hours.",
+            "She kept on talking for two hours."
           ]
         },
         {
@@ -68,27 +83,40 @@
           "text": "The lights were all on.",
           "alternatives": [
             "All the lights were on.",
-            "All of the lights were on."
+            "All of the lights were on.",
+            "The lights were all turned on.",
+            "Every light was on."
           ]
         },
         {
           "n": "9",
           "text": "When do you expect him back?",
           "alternatives": [
-            "When are you expecting him back?"
+            "When are you expecting him back?",
+            "When do you expect him to come back?"
           ]
         },
         {
           "n": "10",
-          "text": "Back home, he had a family to support."
+          "text": "Back home, he had a family to support.",
+          "alternatives": [
+            "He had a family to support back home."
+          ]
         },
         {
           "n": "11",
-          "text": "The two are good."
+          "text": "The two are good.",
+          "alternatives": [
+            "The two of them are good."
+          ]
         },
         {
           "n": "12",
-          "text": "Both are good."
+          "text": "Both are good.",
+          "alternatives": [
+            "Both of them are good.",
+            "They are both good."
+          ]
         },
         {
           "n": "13",
@@ -100,13 +128,18 @@
         },
         {
           "n": "14",
-          "text": "Neither is good."
+          "text": "Neither is good.",
+          "alternatives": [
+            "Neither of them is good.",
+            "Neither one is good."
+          ]
         },
         {
           "n": "15",
           "text": "Either is good.",
           "alternatives": [
-            "Either one is good."
+            "Either one is good.",
+            "Either of them is good."
           ]
         },
         {
@@ -114,24 +147,39 @@
           "text": "Nothing is good.",
           "alternatives": [
             "None is good.",
-            "None of them is good."
+            "None of them is good.",
+            "None of them are good.",
+            "Nothing's good."
           ]
         },
         {
           "n": "17",
-          "text": "Let's meet at a nearby restaurant."
+          "text": "Let's meet at a nearby restaurant.",
+          "alternatives": [
+            "Let's meet at a restaurant nearby.",
+            "Let's meet at the nearby restaurant."
+          ]
         },
         {
           "n": "18",
-          "text": "Let's meet near a restaurant."
+          "text": "Let's meet near a restaurant.",
+          "alternatives": [
+            "Let's meet near the restaurant."
+          ]
         },
         {
           "n": "19",
-          "text": "Once you start anything, try to do your best."
+          "text": "Once you start anything, try to do your best.",
+          "alternatives": [
+            "Once you begin anything, try to do your best."
+          ]
         },
         {
           "n": "20",
-          "text": "I once had a family."
+          "text": "I once had a family.",
+          "alternatives": [
+            "I had a family once."
+          ]
         },
         {
           "n": "21",
@@ -157,12 +205,17 @@
           "n": "26",
           "text": "He studied English to pass the examination.",
           "alternatives": [
-            "He studied English to pass the exam."
+            "He studied English to pass the exam.",
+            "He studied English in order to pass the exam.",
+            "He studied English to pass the test."
           ]
         },
         {
           "n": "27",
-          "text": "I will find a way to meet my sister."
+          "text": "I will find a way to meet my sister.",
+          "alternatives": [
+            "I will find a way to see my sister."
+          ]
         }
       ]
     },

@@ -36,7 +36,10 @@
       "items": [
         {
           "n": "1",
-          "text": "Was there a problem?"
+          "text": "Was there a problem?",
+          "alternatives": [
+            "Was there an issue?"
+          ]
         },
         {
           "n": "2",
@@ -69,7 +72,10 @@
         },
         {
           "n": "7",
-          "text": "Did I have a problem?"
+          "text": "Did I have a problem?",
+          "alternatives": [
+            "Did I have an issue?"
+          ]
         },
         {
           "n": "8",
@@ -102,7 +108,9 @@
           "n": "14",
           "text": "Wasn't there a picture?",
           "alternatives": [
-            "Was there not a picture?"
+            "Was there not a picture?",
+            "Wasn't there a painting?",
+            "Wasn't there a drawing?"
           ]
         },
         {
@@ -126,7 +134,10 @@
         },
         {
           "n": "19",
-          "text": "Why didn't they go there?"
+          "text": "Why didn't they go there?",
+          "alternatives": [
+            "Why did they not go there?"
+          ]
         },
         {
           "n": "20",
@@ -144,12 +155,17 @@
           "text": "Weren't there boys?",
           "alternatives": [
             "Were there not boys?",
-            "Weren't there any boys?"
+            "Weren't there any boys?",
+            "Were there not any boys?",
+            "Were there no boys?"
           ]
         },
         {
           "n": "23",
-          "text": "Why don't you have a dream?"
+          "text": "Why don't you have a dream?",
+          "alternatives": [
+            "Why do you not have a dream?"
+          ]
         },
         {
           "n": "24",
@@ -176,7 +192,8 @@
           "alternatives": [
             "Why is it fun?",
             "Why is that interesting?",
-            "Why is that fun?"
+            "Why is that fun?",
+            "Why's it interesting?"
           ]
         }
       ]

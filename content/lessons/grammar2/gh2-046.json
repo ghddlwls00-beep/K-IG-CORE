@@ -28,45 +28,97 @@
       "items": [
         {
           "n": "1",
-          "text": "No sooner had she seen him than she turned and ran away."
+          "text": "No sooner had she seen him than she turned and ran away.",
+          "alternatives": [
+            "No sooner had she seen him than she turned around and ran away.",
+            "No sooner had she seen him than she turned and ran off.",
+            "No sooner had she seen him than she turned and fled."
+          ]
         },
         {
           "n": "2",
-          "text": "I will never forget this as long as I live."
+          "text": "I will never forget this as long as I live.",
+          "alternatives": [
+            "As long as I live, I will never forget this.",
+            "I will never forget this as long as I am alive."
+          ]
         },
         {
           "n": "3",
-          "text": "Let me know the time of your arrival so that I can meet you at the station."
+          "text": "Let me know the time of your arrival so that I can meet you at the station.",
+          "alternatives": [
+            "Let me know your arrival time so that I can meet you at the station.",
+            "Please let me know your arrival time so that I can meet you at the station.",
+            "Please let me know the time of your arrival so that I can meet you at the station.",
+            "Let me know when you will arrive so that I can meet you at the station."
+          ]
         },
         {
           "n": "4",
-          "text": "I took every precaution lest I should fail again."
+          "text": "I took every precaution lest I should fail again.",
+          "alternatives": [
+            "I took every precaution lest I fail again.",
+            "I took all precautions lest I should fail again."
+          ]
         },
         {
           "n": "5",
-          "text": "He was such an honest man that everybody trusted him."
+          "text": "He was such an honest man that everybody trusted him.",
+          "alternatives": [
+            "He was such an honest man that everyone trusted him.",
+            "He was such an honest person that everybody trusted him.",
+            "He was such an honest person that everyone trusted him."
+          ]
         },
         {
           "n": "6",
-          "text": "However hard you may try, you could never master English in a year."
+          "text": "However hard you may try, you could never master English in a year.",
+          "alternatives": [
+            "However hard you try, you will never master English in a year.",
+            "However hard you may try, you could never master English within a year.",
+            "However hard you try, you can never master English within a year.",
+            "However hard you may try, you could never master English in one year.",
+            "However hard you try, you will never be able to master English in a year."
+          ]
         },
         {
           "n": "7",
-          "text": "No matter how hard you may try, you could never master English in a year."
+          "text": "No matter how hard you may try, you could never master English in a year.",
+          "alternatives": [
+            "No matter how hard you try, you will never master English in a year.",
+            "No matter how hard you may try, you could never master English within a year.",
+            "No matter how hard you try, you can never master English within a year.",
+            "No matter how hard you may try, you could never master English in one year.",
+            "No matter how hard you try, you will never be able to master English in a year."
+          ]
         },
         {
           "n": "8",
-          "text": "The more you know him, the more you will like him."
+          "text": "The more you know him, the more you will like him.",
+          "alternatives": [
+            "The better you know him, the more you will like him.",
+            "The more you get to know him, the more you will like him.",
+            "The more you know him, the more you are going to like him."
+          ]
         },
         {
           "n": "9",
-          "text": "He was preparing what he suspected would be the most important announcement in a decade."
+          "text": "He was preparing what he suspected would be the most important announcement in a decade.",
+          "alternatives": [
+            "He was preparing what he suspected would be the most important announcement in ten years.",
+            "He was preparing what he guessed would be the most important announcement in a decade.",
+            "He was preparing what he guessed would be the most important announcement in ten years.",
+            "He was preparing what he suspected would be the most important announcement in 10 years."
+          ]
         },
         {
           "n": "10",
           "text": "He often came here last year.",
           "alternatives": [
-            "He would often come here last year."
+            "He would often come here last year.",
+            "He came here often last year.",
+            "Last year he often came here.",
+            "Last year, he would often come here."
           ]
         },
         {
@@ -75,20 +127,28 @@
         },
         {
           "n": "12",
-          "text": "A car is used to come here."
+          "text": "A car is used to come here.",
+          "alternatives": [
+            "Cars are used to come here.",
+            "A car is used to come to this place."
+          ]
         },
         {
           "n": "13",
           "text": "The professor is preparing an entrance examination.",
           "alternatives": [
-            "The professor is preparing an entrance exam."
+            "The professor is preparing an entrance exam.",
+            "The professor is preparing the entrance exam.",
+            "The professor is preparing the entrance examination."
           ]
         },
         {
           "n": "14",
           "text": "The student is preparing for an entrance examination.",
           "alternatives": [
-            "The student is preparing for an entrance exam."
+            "The student is preparing for an entrance exam.",
+            "The student is preparing for the entrance exam.",
+            "The student is preparing for the entrance examination."
           ]
         }
       ]

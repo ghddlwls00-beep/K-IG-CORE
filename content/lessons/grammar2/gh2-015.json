@@ -30,34 +30,54 @@
           "n": "1",
           "text": "I know a student who studies very hard.",
           "alternatives": [
-            "I know a student that studies very hard."
+            "I know a student that studies very hard.",
+            "I know a student who studies really hard."
           ]
         },
         {
           "n": "2",
           "text": "I met a boy on the subway, who looked very happy.",
           "alternatives": [
-            "I met a boy in the subway, who looked very happy."
+            "I met a boy in the subway, who looked very happy.",
+            "I met a boy on the subway, who seemed very happy.",
+            "I met a boy on the subway, who looked really happy."
           ]
         },
         {
           "n": "3",
-          "text": "I met her on Monday when there was a graduation ceremony."
+          "text": "I met her on Monday when there was a graduation ceremony.",
+          "alternatives": [
+            "I met her on Monday when a graduation ceremony was held.",
+            "I met her on Monday when there was a graduation."
+          ]
         },
         {
           "n": "4",
-          "text": "We walked along the beach at night, when it was cool and breezy."
+          "text": "We walked along the beach at night, when it was cool and breezy.",
+          "alternatives": [
+            "We walked along the beach at night, when the weather was cool and breezy.",
+            "We took a walk along the beach at night, when it was cool and breezy.",
+            "We went for a walk along the beach at night, when it was cool and breezy.",
+            "We strolled along the beach at night, when it was cool and breezy."
+          ]
         },
         {
           "n": "5",
           "text": "We watched the movie at the theatre in which there were many young couples.",
           "alternatives": [
-            "We watched the movie at the theater in which there were many young couples."
+            "We watched the movie at the theater in which there were many young couples.",
+            "We saw the movie at the theater in which there were many young couples.",
+            "We watched the movie at the theater in which there were a lot of young couples.",
+            "We watched the film at the theatre in which there were many young couples.",
+            "We watched the movie in the theater in which there were many young couples."
           ]
         },
         {
           "n": "6",
-          "text": "Show me one thing without which nothing could survive."
+          "text": "Show me one thing without which nothing could survive.",
+          "alternatives": [
+            "Show me one thing without which nothing can survive."
+          ]
         },
         {
           "n": "7",
@@ -85,7 +105,10 @@
         },
         {
           "n": "13",
-          "text": "I have studied English once."
+          "text": "I have studied English once.",
+          "alternatives": [
+            "I have studied English before."
+          ]
         },
         {
           "n": "14",

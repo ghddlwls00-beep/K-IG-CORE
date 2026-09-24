@@ -32,22 +32,38 @@
         },
         {
           "n": "2",
-          "text": "This is too heavy for me to carry."
+          "text": "This is too heavy for me to carry.",
+          "alternatives": [
+            "This one is too heavy for me to carry."
+          ]
         },
         {
           "n": "3",
           "text": "This is so heavy that I cannot carry it.",
           "alternatives": [
-            "This is too heavy for me to carry."
+            "This is too heavy for me to carry.",
+            "This is so heavy I can't carry it.",
+            "This one is so heavy that I can't carry it."
           ]
         },
         {
           "n": "4",
-          "text": "My boss is so stingy that he brown-bags it all the time."
+          "text": "My boss is so stingy that he brown-bags it all the time.",
+          "alternatives": [
+            "My boss is so stingy that he always brown-bags it.",
+            "My boss is so cheap that he brown-bags it all the time.",
+            "My boss is so stingy that he always brings his lunch.",
+            "My boss is so stingy that he always carries a lunch box.",
+            "My boss is so stingy that he always brings a packed lunch."
+          ]
         },
         {
           "n": "5",
-          "text": "He is sure to come tomorrow."
+          "text": "He is sure to come tomorrow.",
+          "alternatives": [
+            "He is certain to come tomorrow.",
+            "He is bound to come tomorrow."
+          ]
         },
         {
           "n": "6",
@@ -55,13 +71,20 @@
         },
         {
           "n": "7",
-          "text": "He got her to type the letter."
+          "text": "He got her to type the letter.",
+          "alternatives": [
+            "He had her type the letter.",
+            "He made her type the letter."
+          ]
         },
         {
           "n": "8",
           "text": "He let her do it her way.",
           "alternatives": [
-            "He let her do that her way."
+            "He let her do that her way.",
+            "He let her do it in her own way.",
+            "He allowed her to do it her way.",
+            "He let her do it her own way."
           ]
         },
         {
@@ -77,7 +100,12 @@
         },
         {
           "n": "11",
-          "text": "He asked me to let George build my house."
+          "text": "He asked me to let George build my house.",
+          "alternatives": [
+            "He requested me to let George build my house.",
+            "He asked me to allow George to build my house.",
+            "He asked me to let George build my home."
+          ]
         },
         {
           "n": "12",
@@ -85,24 +113,43 @@
         },
         {
           "n": "13",
-          "text": "I'd like to have a phone installed in my apartment."
+          "text": "I'd like to have a phone installed in my apartment.",
+          "alternatives": [
+            "I want to have a phone installed in my apartment.",
+            "I'd like to have a telephone installed in my apartment.",
+            "I would like to get a phone installed in my apartment.",
+            "I want to get a phone installed in my apartment."
+          ]
         },
         {
           "n": "14",
-          "text": "Where did you have your new suit custom-tailored?"
+          "text": "Where did you have your new suit custom-tailored?",
+          "alternatives": [
+            "Where did you have your new suit tailored?",
+            "Where did you have your new suit made?",
+            "Where did you have your new suit custom tailored?",
+            "Where did you get your new suit custom-tailored?",
+            "Where did you get your new suit tailored?"
+          ]
         },
         {
           "n": "15",
           "text": "I bought it off the rack.",
           "alternatives": [
-            "I bought that off the rack."
+            "I bought that off the rack.",
+            "I bought it ready-made."
           ]
         },
         {
           "n": "16",
           "text": "I had a little alteration made.",
           "alternatives": [
-            "I had a few alterations made."
+            "I had a few alterations made.",
+            "I had some alterations made.",
+            "I had a few alterations done.",
+            "I had some alterations done.",
+            "I had my clothes altered a little.",
+            "I had a little alteration done."
           ]
         },
         {
@@ -111,12 +158,17 @@
           "alternatives": [
             "Who is the girl who is to sing?",
             "Who is the girl who is going to sing?",
-            "Who is the girl that is going to sing?"
+            "Who is the girl that is going to sing?",
+            "Who is the girl that will sing?",
+            "Who is the girl who will sing?"
           ]
         },
         {
           "n": "18",
-          "text": "Who is the girl studying in my study?"
+          "text": "Who is the girl studying in my study?",
+          "alternatives": [
+            "Who is the girl studying in my study room?"
+          ]
         }
       ]
     },

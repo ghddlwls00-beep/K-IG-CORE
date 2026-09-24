@@ -50,7 +50,8 @@
           "n": "3",
           "text": "Is your son healthy?",
           "alternatives": [
-            "Is your son well?"
+            "Is your son well?",
+            "Is your son in good health?"
           ]
         },
         {
@@ -59,13 +60,17 @@
         },
         {
           "n": "5",
-          "text": "Are they your brothers?"
+          "text": "Are they your brothers?",
+          "alternatives": [
+            "Are they your siblings?"
+          ]
         },
         {
           "n": "6",
           "text": "Is my son healthy?",
           "alternatives": [
-            "Is my son well?"
+            "Is my son well?",
+            "Is my son in good health?"
           ]
         },
         {
@@ -81,7 +86,10 @@
         },
         {
           "n": "9",
-          "text": "Whose house is this?"
+          "text": "Whose house is this?",
+          "alternatives": [
+            "Whose home is this?"
+          ]
         },
         {
           "n": "10",
@@ -95,7 +103,8 @@
           "n": "12",
           "text": "Is your mother healthy?",
           "alternatives": [
-            "Is your mother well?"
+            "Is your mother well?",
+            "Is your mother in good health?"
           ]
         },
         {
@@ -118,12 +127,17 @@
           "n": "17",
           "text": "Was your grandmother beautiful?",
           "alternatives": [
-            "Was your grandmother pretty?"
+            "Was your grandmother pretty?",
+            "Was your grandma pretty?",
+            "Was your grandma beautiful?"
           ]
         },
         {
           "n": "18",
-          "text": "Whose house was this?"
+          "text": "Whose house was this?",
+          "alternatives": [
+            "Whose home was this?"
+          ]
         },
         {
           "n": "19",
@@ -145,12 +159,18 @@
           "n": "23",
           "text": "Were your children healthy?",
           "alternatives": [
-            "Were your children well?"
+            "Were your children well?",
+            "Were your kids healthy?",
+            "Were your kids well?",
+            "Were your children in good health?"
           ]
         },
         {
           "n": "24",
-          "text": "Were your mother and grandfather happy?"
+          "text": "Were your mother and grandfather happy?",
+          "alternatives": [
+            "Were your mother and grandpa happy?"
+          ]
         },
         {
           "n": "25",

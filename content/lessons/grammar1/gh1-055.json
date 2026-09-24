@@ -52,22 +52,37 @@
         },
         {
           "n": "5",
-          "text": "I have a vision."
+          "text": "I have a vision.",
+          "alternatives": [
+            "I've got a vision.",
+            "I have got a vision.",
+            "I have one vision."
+          ]
         },
         {
           "n": "6",
-          "text": "You have a car."
+          "text": "You have a car.",
+          "alternatives": [
+            "You've got a car.",
+            "You have one car."
+          ]
         },
         {
           "n": "7",
           "text": "He has a bicycle.",
           "alternatives": [
-            "He has a bike."
+            "He has a bike.",
+            "He has got a bicycle.",
+            "He has one bicycle."
           ]
         },
         {
           "n": "8",
-          "text": "They have a house."
+          "text": "They have a house.",
+          "alternatives": [
+            "They've got a house.",
+            "They have one house."
+          ]
         },
         {
           "n": "9",
@@ -79,7 +94,10 @@
         },
         {
           "n": "11",
-          "text": "He had a bag."
+          "text": "He had a bag.",
+          "alternatives": [
+            "He had one bag."
+          ]
         },
         {
           "n": "12",
@@ -105,7 +123,10 @@
         },
         {
           "n": "16",
-          "text": "Do I have a chance?"
+          "text": "Do I have a chance?",
+          "alternatives": [
+            "Do I have an opportunity?"
+          ]
         },
         {
           "n": "17",
@@ -124,7 +145,10 @@
         },
         {
           "n": "20",
-          "text": "Did I have a chance?"
+          "text": "Did I have a chance?",
+          "alternatives": [
+            "Did I have an opportunity?"
+          ]
         },
         {
           "n": "21",
@@ -220,7 +244,8 @@
           "text": "Wasn't there water?",
           "alternatives": [
             "Was there not water?",
-            "Wasn't there any water?"
+            "Wasn't there any water?",
+            "Was there not any water?"
           ]
         },
         {
@@ -228,7 +253,8 @@
           "text": "Weren't there girls?",
           "alternatives": [
             "Were there not girls?",
-            "Weren't there any girls?"
+            "Weren't there any girls?",
+            "Were there not any girls?"
           ]
         },
         {
@@ -236,7 +262,8 @@
           "text": "Didn't I have money?",
           "alternatives": [
             "Did I not have money?",
-            "Didn't I have any money?"
+            "Didn't I have any money?",
+            "Did I not have any money?"
           ]
         },
         {
@@ -261,7 +288,10 @@
           "alternatives": [
             "Didn't they eat dinner?",
             "Did they not have dinner?",
-            "Did they not eat dinner?"
+            "Did they not eat dinner?",
+            "Didn't they have supper?",
+            "Didn't they eat supper?",
+            "Did they not have supper?"
           ]
         },
         {

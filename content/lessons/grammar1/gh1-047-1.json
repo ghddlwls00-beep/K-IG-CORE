@@ -38,7 +38,9 @@
           "n": "81",
           "text": "It is a book, isn't it?",
           "alternatives": [
-            "That is a book, isn't it?"
+            "That is a book, isn't it?",
+            "It is a book, is it not?",
+            "That is a book, is it not?"
           ]
         },
         {
@@ -59,19 +61,31 @@
         },
         {
           "n": "84",
-          "text": "I am in Korea, aren't I?"
+          "text": "I am in Korea, aren't I?",
+          "alternatives": [
+            "I am in Korea, am I not?"
+          ]
         },
         {
           "n": "85",
-          "text": "You are in Korea, aren't you?"
+          "text": "You are in Korea, aren't you?",
+          "alternatives": [
+            "You are in Korea, are you not?"
+          ]
         },
         {
           "n": "86",
-          "text": "He is in Korea, isn't he?"
+          "text": "He is in Korea, isn't he?",
+          "alternatives": [
+            "He is in Korea, is he not?"
+          ]
         },
         {
           "n": "87",
-          "text": "She is in Korea, isn't she?"
+          "text": "She is in Korea, isn't she?",
+          "alternatives": [
+            "She is in Korea, is she not?"
+          ]
         },
         {
           "n": "88",

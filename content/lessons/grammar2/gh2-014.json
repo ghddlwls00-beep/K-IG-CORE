@@ -30,26 +30,40 @@
           "n": "1",
           "text": "He has studied English for ten years.",
           "alternatives": [
-            "He has studied English for 10 years."
+            "He has studied English for 10 years.",
+            "He's studied English for ten years."
           ]
         },
         {
           "n": "2",
-          "text": "I was looking for a driver."
+          "text": "I was looking for a driver.",
+          "alternatives": [
+            "I was searching for a driver."
+          ]
         },
         {
           "n": "3",
-          "text": "He will be doing his homework."
+          "text": "He will be doing his homework.",
+          "alternatives": [
+            "He will be doing homework."
+          ]
         },
         {
           "n": "4",
-          "text": "He has been looking for a clue."
+          "text": "He has been looking for a clue.",
+          "alternatives": [
+            "He's been looking for a clue.",
+            "He has been searching for a clue.",
+            "He has been looking for clues."
+          ]
         },
         {
           "n": "5",
           "text": "Either you or I should do it.",
           "alternatives": [
-            "Either you or I should do that."
+            "Either you or I should do that.",
+            "Either you or I must do it.",
+            "Either you or I have to do it."
           ]
         },
         {
@@ -61,13 +75,21 @@
         },
         {
           "n": "7",
-          "text": "He ran so fast that I could not keep up with him."
+          "text": "He ran so fast that I could not keep up with him.",
+          "alternatives": [
+            "He ran so fast I couldn't keep up with him.",
+            "He ran so fast that I could not follow him.",
+            "He ran so quickly that I could not keep up with him."
+          ]
         },
         {
           "n": "8",
           "text": "Three bombs exploded, one injuring 25 people.",
           "alternatives": [
-            "Three bombs exploded, one injuring twenty-five people."
+            "Three bombs exploded, one injuring twenty-five people.",
+            "Three bombs exploded, one of them injuring 25 people.",
+            "Three bombs went off, one injuring 25 people.",
+            "Three bombs exploded, one wounding 25 people."
           ]
         },
         {
@@ -76,32 +98,63 @@
           "alternatives": [
             "He studied hard, hoping to pass the entrance examination.",
             "He worked hard, hoping to pass the entrance exam.",
-            "He studied hard, hoping to pass the entrance exam."
+            "He studied hard, hoping to pass the entrance exam.",
+            "Hoping to pass the entrance exam, he studied hard.",
+            "He studied hard, hoping to pass the entrance test."
           ]
         },
         {
           "n": "10",
-          "text": "Three bombs exploded, killing three people."
+          "text": "Three bombs exploded, killing three people.",
+          "alternatives": [
+            "Three bombs exploded, killing 3 people.",
+            "Three bombs went off, killing three people."
+          ]
         },
         {
           "n": "11",
-          "text": "He read the letter, tears pouring down his cheeks."
+          "text": "He read the letter, tears pouring down his cheeks.",
+          "alternatives": [
+            "He read the letter, tears running down his cheeks.",
+            "He read the letter, tears streaming down his cheeks.",
+            "He read the letter, tears rolling down his cheeks.",
+            "He read the letter, tears flowing down his cheeks."
+          ]
         },
         {
           "n": "12",
-          "text": "He being sick, I took his place."
+          "text": "He being sick, I took his place.",
+          "alternatives": [
+            "He being ill, I took his place.",
+            "He being sick, I replaced him."
+          ]
         },
         {
           "n": "13",
-          "text": "He escaped, afraid he would be punished."
+          "text": "He escaped, afraid he would be punished.",
+          "alternatives": [
+            "He escaped, fearing he would be punished.",
+            "He escaped, fearing that he would be punished.",
+            "He escaped, afraid of being punished."
+          ]
         },
         {
           "n": "14",
-          "text": "Having finished the homework, I had nothing to do."
+          "text": "Having finished the homework, I had nothing to do.",
+          "alternatives": [
+            "Having finished the homework, I didn't have anything to do.",
+            "Having done the homework, I had nothing to do.",
+            "Having completed the homework, I had nothing to do."
+          ]
         },
         {
           "n": "15",
-          "text": "Having finished the homework, I have nothing to do."
+          "text": "Having finished the homework, I have nothing to do.",
+          "alternatives": [
+            "Having finished the homework, I don't have anything to do.",
+            "Having completed the homework, I have nothing to do.",
+            "Having done the homework, I have nothing to do."
+          ]
         }
       ]
     },

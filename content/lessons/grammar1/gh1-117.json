@@ -40,41 +40,68 @@
           "alternatives": [
             "Do US troops face an uphill battle?",
             "Do American forces face an uphill battle?",
-            "Do American troops face an uphill battle?"
+            "Do American troops face an uphill battle?",
+            "Does the US military face an uphill battle?",
+            "Do US forces face a tough battle?",
+            "Do US forces face a difficult battle?",
+            "Do American troops face a hard battle?"
           ]
         },
         {
           "n": "2",
-          "text": "Why did the twin towers fall?"
+          "text": "Why did the twin towers fall?",
+          "alternatives": [
+            "Why did the twin towers collapse?",
+            "Why did the twin buildings fall?",
+            "Why did the twin buildings collapse?"
+          ]
         },
         {
           "n": "3",
-          "text": "Is the terrorist attack only part of the answer?"
+          "text": "Is the terrorist attack only part of the answer?",
+          "alternatives": [
+            "Is the terror attack only part of the answer?",
+            "Is the terrorist attack just part of the answer?",
+            "Is the terrorist attack merely part of the answer?"
+          ]
         },
         {
           "n": "4",
           "text": "Isn't Sophia off duty today?",
           "alternatives": [
-            "Is Sophia not off duty today?"
+            "Is Sophia not off duty today?",
+            "Isn't Sophia off today?",
+            "Isn't Sophia off work today?"
           ]
         },
         {
           "n": "5",
           "text": "When was the chopper hit by enemy fire?",
           "alternatives": [
-            "When was the helicopter hit by enemy fire?"
+            "When was the helicopter hit by enemy fire?",
+            "When did the helicopter get hit by enemy fire?",
+            "When was the helicopter struck by enemy fire?"
           ]
         },
         {
           "n": "6",
           "text": "Who dragged off and killed the man?",
           "alternatives": [
-            "Who dragged off and killed him?"
+            "Who dragged off and killed him?",
+            "Who dragged away and killed the man?",
+            "Who dragged the man away and killed him?",
+            "Who dragged the man off and killed him?",
+            "Who dragged off and killed the person?"
           ]
         },
         {
           "n": "7",
-          "text": "The currently available vaccine is effective, isn't it?"
+          "text": "The currently available vaccine is effective, isn't it?",
+          "alternatives": [
+            "The currently available vaccine works, doesn't it?",
+            "The vaccine currently available is effective, isn't it?",
+            "The vaccine that is currently available is effective, isn't it?"
+          ]
         },
         {
           "n": "8",
@@ -82,16 +109,28 @@
           "alternatives": [
             "It can be improved, can't it?",
             "That could be improved, couldn't it?",
-            "That can be improved, can't it?"
+            "That can be improved, can't it?",
+            "It could improve, couldn't it?"
           ]
         },
         {
           "n": "9",
-          "text": "The vaccine was administered mostly to military personnel, wasn't it?"
+          "text": "The vaccine was administered mostly to military personnel, wasn't it?",
+          "alternatives": [
+            "The vaccine was given mostly to military personnel, wasn't it?",
+            "The vaccine was mostly administered to military personnel, wasn't it?",
+            "The vaccine was administered mostly to soldiers, wasn't it?",
+            "The vaccine was mostly given to soldiers, wasn't it?",
+            "The vaccine was administered mainly to military personnel, wasn't it?"
+          ]
         },
         {
           "n": "10",
-          "text": "Can the program root out terrorists?"
+          "text": "Can the program root out terrorists?",
+          "alternatives": [
+            "Can the program eradicate terrorists?",
+            "Can the program root terrorists out?"
+          ]
         },
         {
           "n": "11",
@@ -100,16 +139,30 @@
             "Do officials not have evidence?",
             "Don't officials have any evidence?",
             "Don't the officials have evidence?",
-            "Don't the officials have any evidence?"
+            "Don't the officials have any evidence?",
+            "Don't officials have proof?",
+            "Don't the officials have any proof?"
           ]
         },
         {
           "n": "12",
-          "text": "The terrorists are trying to regroup."
+          "text": "The terrorists are trying to regroup.",
+          "alternatives": [
+            "The terrorists are attempting to regroup.",
+            "The terrorists are making an effort to regroup.",
+            "The terrorists are trying to gather again."
+          ]
         },
         {
           "n": "13",
-          "text": "The latest assault is turning out to be tough."
+          "text": "The latest assault is turning out to be tough.",
+          "alternatives": [
+            "The recent attack is turning out to be tough.",
+            "The latest attack is turning out to be tough.",
+            "The latest assault is proving to be tough.",
+            "The latest assault is turning out to be difficult.",
+            "The recent attack is turning out to be difficult."
+          ]
         },
         {
           "n": "14",
@@ -117,7 +170,10 @@
           "alternatives": [
             "The operation would last twenty-four to seventy-two hours.",
             "The operation will last 24 to 72 hours.",
-            "The operation will last twenty-four to seventy-two hours."
+            "The operation will last twenty-four to seventy-two hours.",
+            "The operation will last between 24 and 72 hours.",
+            "The operation will continue for 24 to 72 hours.",
+            "The operation is going to last 24 to 72 hours."
           ]
         },
         {
@@ -126,28 +182,39 @@
           "alternatives": [
             "It could take up to 10 days to complete.",
             "That could take up to ten days to complete.",
-            "That could take up to 10 days to complete."
+            "That could take up to 10 days to complete.",
+            "It could take up to ten days to finish.",
+            "It may take up to 10 days to complete.",
+            "It might take up to ten days to complete."
           ]
         },
         {
           "n": "16",
           "text": "Don't you have to go after them?",
           "alternatives": [
-            "Do you not have to go after them?"
+            "Do you not have to go after them?",
+            "Don't you have to chase them?",
+            "Don't you have to pursue them?",
+            "Shouldn't you go after them?"
           ]
         },
         {
           "n": "17",
           "text": "Isn't the only proper defense an offense?",
           "alternatives": [
-            "Is the only proper defense not an offense?"
+            "Is the only proper defense not an offense?",
+            "Isn't the only proper defense an attack?",
+            "Isn't the only appropriate defense an offense?"
           ]
         },
         {
           "n": "18",
           "text": "Where were five international peacekeepers killed?",
           "alternatives": [
-            "Where were 5 international peacekeepers killed?"
+            "Where were 5 international peacekeepers killed?",
+            "Where were five international peacekeepers murdered?",
+            "Where were five international peacekeeping troops killed?",
+            "Where did five international peacekeepers get killed?"
           ]
         },
         {
@@ -155,56 +222,89 @@
           "text": "Weren't the other two Germans?",
           "alternatives": [
             "Weren't the other two German?",
-            "Were the other two not Germans?"
+            "Were the other two not Germans?",
+            "Weren't the other two people Germans?",
+            "Weren't the other two people German?",
+            "Were the other two not German?"
           ]
         },
         {
           "n": "20",
-          "text": "Are fighters hiding in eastern Afghanistan?"
+          "text": "Are fighters hiding in eastern Afghanistan?",
+          "alternatives": [
+            "Are fighters hidden in eastern Afghanistan?"
+          ]
         },
         {
           "n": "21",
           "text": "Aren't you seeing a clearer picture?",
           "alternatives": [
-            "Are you not seeing a clearer picture?"
+            "Are you not seeing a clearer picture?",
+            "Aren't you looking at a clearer picture?",
+            "Don't you see a clearer picture?"
           ]
         },
         {
           "n": "22",
           "text": "More than forty more were wounded, weren't they?",
           "alternatives": [
-            "More than 40 more were wounded, weren't they?"
+            "More than 40 more were wounded, weren't they?",
+            "More than 40 more were injured, weren't they?",
+            "More than 40 more people were wounded, weren't they?",
+            "Over 40 more were wounded, weren't they?",
+            "More than 40 more people were injured, weren't they?"
           ]
         },
         {
           "n": "23",
-          "text": "Are journalists covering the war in Afghanistan?"
+          "text": "Are journalists covering the war in Afghanistan?",
+          "alternatives": [
+            "Are reporters covering the war in Afghanistan?",
+            "Are journalists reporting on the war in Afghanistan?"
+          ]
         },
         {
           "n": "24",
           "text": "Didn't they receive a credible threat?",
           "alternatives": [
-            "Did they not receive a credible threat?"
+            "Did they not receive a credible threat?",
+            "Didn't they get a credible threat?",
+            "Didn't they receive a believable threat?"
           ]
         },
         {
           "n": "25",
-          "text": "Non-Afghan journalists could be kidnapped, couldn't they?"
+          "text": "Non-Afghan journalists could be kidnapped, couldn't they?",
+          "alternatives": [
+            "Journalists who weren't Afghan could be kidnapped, couldn't they?",
+            "Non-Afghan journalists could be abducted, couldn't they?",
+            "Non-Afghan reporters could be kidnapped, couldn't they?"
+          ]
         },
         {
           "n": "26",
-          "text": "Why did journalists immediately assess their security arrangements?"
+          "text": "Why did journalists immediately assess their security arrangements?",
+          "alternatives": [
+            "Why did journalists assess their security arrangements immediately?",
+            "Why did journalists immediately evaluate their security arrangements?",
+            "Why did journalists immediately assess their safety measures?"
+          ]
         },
         {
           "n": "27",
-          "text": "They were taking extra precautions, weren't they?"
+          "text": "They were taking extra precautions, weren't they?",
+          "alternatives": [
+            "They were taking additional precautions, weren't they?"
+          ]
         },
         {
           "n": "28",
           "text": "Isn't the threat their way of retaliating?",
           "alternatives": [
             "Isn't the threat their way of retaliation?",
-            "Is the threat not their way of retaliating?"
+            "Is the threat not their way of retaliating?",
+            "Isn't the threat their method of retaliation?",
+            "Isn't the threat their way to retaliate?"
           ]
         },
         {
@@ -213,14 +313,18 @@
           "alternatives": [
             "When did the remains of 7 servicemen return home?",
             "When did the remains of seven soldiers return home?",
-            "When did the remains of 7 soldiers return home?"
+            "When did the remains of 7 soldiers return home?",
+            "When did the remains of seven soldiers come home?",
+            "When did the bodies of seven soldiers return home?"
           ]
         },
         {
           "n": "30",
           "text": "Didn't they arrive at the air force base?",
           "alternatives": [
-            "Did they not arrive at the air force base?"
+            "Did they not arrive at the air force base?",
+            "Didn't they arrive at the air base?",
+            "Didn't they reach the air force base?"
           ]
         },
         {
@@ -228,44 +332,61 @@
           "text": "The servicemen died in two separate incidents, didn't they?",
           "alternatives": [
             "The soldiers died in two separate incidents, didn't they?",
-            "The servicemen died in 2 separate incidents, didn't they?"
+            "The servicemen died in 2 separate incidents, didn't they?",
+            "The soldiers died in two different incidents, didn't they?",
+            "The soldiers died in 2 separate incidents, didn't they?"
           ]
         },
         {
           "n": "32",
           "text": "Most were not killed in a fierce firefight with Taliban forces, were they?",
           "alternatives": [
-            "Most were not killed in a fierce firefight with Taliban troops, were they?"
+            "Most were not killed in a fierce firefight with Taliban troops, were they?",
+            "Most weren't killed in a fierce gunfight with Taliban forces, were they?",
+            "Most of them were not killed in a fierce firefight with Taliban forces, were they?"
           ]
         },
         {
           "n": "33",
-          "text": "How did the navy petty officer fall out of his helicopter?"
+          "text": "How did the navy petty officer fall out of his helicopter?",
+          "alternatives": [
+            "How did the navy petty officer fall from his helicopter?"
+          ]
         },
         {
           "n": "34",
           "text": "Wasn't he then dragged away by Al Qaeda fighters?",
           "alternatives": [
-            "Was he not then dragged away by Al Qaeda fighters?"
+            "Was he not then dragged away by Al Qaeda fighters?",
+            "Wasn't he then dragged off by Al Qaeda fighters?",
+            "After that, wasn't he dragged away by Al Qaeda fighters?",
+            "Wasn't he then dragged away by al-Qaeda fighters?"
           ]
         },
         {
           "n": "35",
           "text": "Is the recovery effort destroying vital clues?",
           "alternatives": [
-            "Is the recovery effort destroying important clues?"
+            "Is the recovery effort destroying important clues?",
+            "Is the restoration effort destroying vital clues?"
           ]
         },
         {
           "n": "36",
           "text": "Isn't it looking for answers?",
           "alternatives": [
-            "Is it not looking for answers?"
+            "Is it not looking for answers?",
+            "Isn't it looking for an answer?",
+            "Isn't it searching for answers?"
           ]
         },
         {
           "n": "37",
-          "text": "Why did the twin towers collapse?"
+          "text": "Why did the twin towers collapse?",
+          "alternatives": [
+            "Why did the twin towers fall?",
+            "Why did the twin towers fall down?"
+          ]
         }
       ]
     },

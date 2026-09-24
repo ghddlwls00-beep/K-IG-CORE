@@ -113,7 +113,8 @@
           "text": "My parents are at home.",
           "alternatives": [
             "Our parents are at home.",
-            "My parents are home."
+            "My parents are home.",
+            "Our parents are home."
           ]
         },
         {
@@ -128,7 +129,9 @@
           "n": "9",
           "text": "I am from Korea.",
           "alternatives": [
-            "I come from Korea."
+            "I come from Korea.",
+            "I am from South Korea.",
+            "I come from South Korea."
           ]
         },
         {
@@ -156,7 +159,11 @@
         },
         {
           "n": "15",
-          "text": "You are kind."
+          "text": "You are kind.",
+          "alternatives": [
+            "You are friendly.",
+            "You are nice."
+          ]
         },
         {
           "n": "16",

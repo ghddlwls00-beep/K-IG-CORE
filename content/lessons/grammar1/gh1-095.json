@@ -36,11 +36,21 @@
       "items": [
         {
           "n": "58",
-          "text": "He wakes up next to a beautiful woman, doesn't he?"
+          "text": "He wakes up next to a beautiful woman, doesn't he?",
+          "alternatives": [
+            "He wakes up beside a beautiful woman, doesn't he?",
+            "He gets up next to a beautiful woman, doesn't he?",
+            "He wakes up next to a beautiful woman, does he not?"
+          ]
         },
         {
           "n": "59",
-          "text": "What policy does he need?"
+          "text": "What policy does he need?",
+          "alternatives": [
+            "What kind of policy does he need?",
+            "Which policy does he need?",
+            "What policies does he need?"
+          ]
         },
         {
           "n": "60",
@@ -48,7 +58,10 @@
         },
         {
           "n": "61",
-          "text": "Why was the American sitting there?"
+          "text": "Why was the American sitting there?",
+          "alternatives": [
+            "Why was the American seated there?"
+          ]
         },
         {
           "n": "62",
@@ -56,16 +69,24 @@
           "alternatives": [
             "Why was the vice president participating in that project?",
             "Why was the vice president taking part in the project?",
-            "Why was the vice president participating in the project?"
+            "Why was the vice president participating in the project?",
+            "Why was the vice-president taking part in the project?"
           ]
         },
         {
           "n": "63",
-          "text": "She is in charge, isn't she?"
+          "text": "She is in charge, isn't she?",
+          "alternatives": [
+            "She is the person in charge, isn't she?",
+            "She is in charge, is she not?"
+          ]
         },
         {
           "n": "64",
-          "text": "He is not on this plane, is he?"
+          "text": "He is not on this plane, is he?",
+          "alternatives": [
+            "He is not on this airplane, is he?"
+          ]
         },
         {
           "n": "65",
@@ -73,7 +94,10 @@
           "alternatives": [
             "She was different from most of the girls, wasn't she?",
             "She was different from most women, wasn't she?",
-            "She was different from most of the women, wasn't she?"
+            "She was different from most of the women, wasn't she?",
+            "She was unlike most women, wasn't she?",
+            "She was different from most girls, was she not?",
+            "She differed from most women, didn't she?"
           ]
         },
         {
@@ -82,7 +106,8 @@
           "alternatives": [
             "Everyone likes the solution, don't they?",
             "All of them like the solution, don't they?",
-            "They all like the solution, don't they?"
+            "They all like the solution, don't they?",
+            "Everybody likes the solution, do they not?"
           ]
         },
         {
@@ -90,7 +115,9 @@
           "text": "Everybody liked the contract, didn't they?",
           "alternatives": [
             "Everyone liked the contract, didn't they?",
-            "All of them liked the contract, didn't they?"
+            "All of them liked the contract, didn't they?",
+            "They all liked the contract, didn't they?",
+            "Everybody liked the contract, did they not?"
           ]
         },
         {
@@ -99,14 +126,17 @@
           "alternatives": [
             "No one likes the terms, do they?",
             "Nobody likes the conditions, do they?",
-            "No one likes the conditions, do they?"
+            "No one likes the conditions, do they?",
+            "Nobody likes the condition, do they?",
+            "No-one likes the terms, do they?"
           ]
         },
         {
           "n": "69",
           "text": "Nobody hated her, did they?",
           "alternatives": [
-            "No one hated her, did they?"
+            "No one hated her, did they?",
+            "No-one hated her, did they?"
           ]
         },
         {
@@ -124,7 +154,11 @@
             "All agencies strengthen security.",
             "All agencies tighten security.",
             "All the agencies strengthen security.",
-            "All the agencies tighten security."
+            "All the agencies tighten security.",
+            "Every agency enhances security.",
+            "Every agency reinforces security.",
+            "Every institution strengthens security.",
+            "Every organization strengthens security."
           ]
         },
         {
@@ -133,7 +167,11 @@
           "alternatives": [
             "Every boy gets a tour of the center.",
             "Each boy gets a tour of the center.",
-            "All of the boys get a tour of the center."
+            "All of the boys get a tour of the center.",
+            "All boys get a tour of the center.",
+            "All the boys get a tour of the centre.",
+            "All the boys get to tour the center.",
+            "All the boys get to look around the center."
           ]
         },
         {
@@ -144,7 +182,11 @@
             "All the boys worry about their future.",
             "All the boys worry about their futures.",
             "All of the boys worry about their future.",
-            "All of the boys worry about their futures."
+            "All of the boys worry about their futures.",
+            "Each boy worries about his own future.",
+            "Every boy is worried about his future.",
+            "All boys worry about their future.",
+            "Each boy is concerned about his future."
           ]
         },
         {
@@ -155,7 +197,10 @@
             "All the boys received a prize.",
             "All the boys received prizes.",
             "All of the boys received a prize.",
-            "All of the boys received prizes."
+            "All of the boys received prizes.",
+            "Every boy got a prize.",
+            "Every boy received an award.",
+            "Every boy received one prize."
           ]
         },
         {
@@ -164,7 +209,9 @@
           "alternatives": [
             "Each boy ignored the advice.",
             "Every boy ignored the advice.",
-            "All of the boys ignored the advice."
+            "All of the boys ignored the advice.",
+            "All the boys disregarded the advice.",
+            "The boys all ignored the advice."
           ]
         },
         {
@@ -173,7 +220,8 @@
           "alternatives": [
             "Every boy did his homework.",
             "All the boys did their homework.",
-            "All of the boys did their homework."
+            "All of the boys did their homework.",
+            "Each of the boys did his homework."
           ]
         },
         {
@@ -184,7 +232,11 @@
             "Every priest attended the fundraiser, didn't they?",
             "Each priest attended the fundraiser, didn't they?",
             "All the priests attended the fundraiser, didn't they?",
-            "All of the priests attended the fundraiser, didn't they?"
+            "All of the priests attended the fundraiser, didn't they?",
+            "Every priest attended the fund-raiser, didn't he?",
+            "Every priest attended the fundraising event, didn't he?",
+            "Every priest attended the fundraiser, did he not?",
+            "Every priest went to the fundraiser, didn't he?"
           ]
         }
       ]

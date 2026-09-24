@@ -38,21 +38,30 @@
           "n": "1",
           "text": "He enjoys every minute of the trip.",
           "alternatives": [
-            "He enjoys every moment of the trip."
+            "He enjoys every moment of the trip.",
+            "He enjoys each moment of the trip.",
+            "He enjoys every moment of the journey.",
+            "He enjoys every minute of the journey."
           ]
         },
         {
           "n": "2",
           "text": "Each boy receives a prize.",
           "alternatives": [
-            "Each boy receives prizes."
+            "Each boy receives prizes.",
+            "Each boy gets a prize.",
+            "Each boy receives an award.",
+            "Each boy wins a prize."
           ]
         },
         {
           "n": "3",
           "text": "Every boy receives a prize.",
           "alternatives": [
-            "Every boy receives prizes."
+            "Every boy receives prizes.",
+            "Every boy gets a prize.",
+            "Every boy receives an award.",
+            "Every boy wins a prize."
           ]
         },
         {
@@ -63,7 +72,13 @@
             "All boys receive prizes.",
             "All the boys receive a prize.",
             "All of the boys receive prizes.",
-            "All of the boys receive a prize."
+            "All of the boys receive a prize.",
+            "All boys get prizes.",
+            "All the boys get a prize.",
+            "All boys receive awards.",
+            "All the boys receive an award.",
+            "All boys win a prize.",
+            "All the boys win prizes."
           ]
         },
         {
@@ -78,7 +93,15 @@
             "All boys do not receive prizes.",
             "All the boys do not receive a prize.",
             "Not all of the boys receive a prize.",
-            "Not all of the boys receive prizes."
+            "Not all of the boys receive prizes.",
+            "Not every boy receives a prize.",
+            "Not every boy gets a prize.",
+            "Not all boys get a prize.",
+            "Not all the boys get prizes.",
+            "Not all boys receive awards.",
+            "Not all boys win a prize.",
+            "Not every boy wins a prize.",
+            "Not every boy receives prizes."
           ]
         },
         {
@@ -87,25 +110,41 @@
           "alternatives": [
             "None of the boys receive a prize.",
             "None of the boys receives a prize.",
-            "No boys receive a prize."
+            "No boys receive a prize.",
+            "No boy gets a prize.",
+            "None of the boys get a prize.",
+            "No boys receive prizes.",
+            "None of the boys receive prizes.",
+            "No boy receives an award.",
+            "No boy wins a prize.",
+            "No boy receives prizes."
           ]
         },
         {
           "n": "7",
           "text": "Not all of them came.",
           "alternatives": [
-            "All of them didn't come."
+            "All of them didn't come.",
+            "They didn't all come.",
+            "Not every one of them came."
           ]
         },
         {
           "n": "8",
-          "text": "None of them came."
+          "text": "None of them came.",
+          "alternatives": [
+            "Not one of them came."
+          ]
         },
         {
           "n": "9",
           "text": "Every time I went to school, the teacher welcomed me.",
           "alternatives": [
-            "Whenever I went to school, the teacher welcomed me."
+            "Whenever I went to school, the teacher welcomed me.",
+            "Each time I went to school, the teacher welcomed me.",
+            "The teacher welcomed me every time I went to school.",
+            "The teacher welcomed me whenever I went to school.",
+            "Every time I went to school, the teacher greeted me."
           ]
         },
         {
@@ -121,7 +160,9 @@
           "n": "11",
           "text": "How fast do you go there?",
           "alternatives": [
-            "How fast do you get there?"
+            "How fast do you get there?",
+            "How quickly do you go there?",
+            "How quickly do you get there?"
           ]
         },
         {
@@ -139,7 +180,8 @@
           "n": "14",
           "text": "I have more money than you.",
           "alternatives": [
-            "I have more money than you do."
+            "I have more money than you do.",
+            "I have more money than you have."
           ]
         },
         {
@@ -163,7 +205,9 @@
             "He finished it as quickly as he could.",
             "He finished it as fast as he could.",
             "He finished that as quickly as he could.",
-            "He finished that as fast as he could."
+            "He finished that as fast as he could.",
+            "He completed it as quickly as possible.",
+            "He completed it as soon as possible."
           ]
         },
         {

@@ -28,28 +28,45 @@
       "items": [
         {
           "n": "1",
-          "text": "She must be very happy, for she smiles all the time."
+          "text": "She must be very happy, for she smiles all the time.",
+          "alternatives": [
+            "She must be very happy, for she always smiles.",
+            "She must be really happy, for she smiles all the time."
+          ]
         },
         {
           "n": "2",
-          "text": "While I was out, it rained for a while."
+          "text": "While I was out, it rained for a while.",
+          "alternatives": [
+            "While I was outside, it rained for a while.",
+            "While I was out, it rained for some time."
+          ]
         },
         {
           "n": "3",
-          "text": "He drinks black coffee while she prefers it with cream."
+          "text": "He drinks black coffee while she prefers it with cream.",
+          "alternatives": [
+            "While she prefers it with cream, he drinks black coffee.",
+            "He drinks black coffee while she likes it better with cream.",
+            "He drinks black coffee while she likes it more with cream."
+          ]
         },
         {
           "n": "4",
           "text": "While there are problems, we can do it.",
           "alternatives": [
-            "While there are problems, we can do that."
+            "While there are problems, we can do that.",
+            "While there are problems, we are able to do it."
           ]
         },
         {
           "n": "5",
           "text": "He had lunch on the plane.",
           "alternatives": [
-            "He ate lunch on the plane."
+            "He ate lunch on the plane.",
+            "He had lunch on the airplane.",
+            "He ate lunch on the airplane.",
+            "He had lunch on the aeroplane."
           ]
         },
         {
@@ -61,25 +78,43 @@
         },
         {
           "n": "7",
-          "text": "He was on his way home."
+          "text": "He was on his way home.",
+          "alternatives": [
+            "He was on the way home."
+          ]
         },
         {
           "n": "8",
-          "text": "I want to buy a book on international relations."
+          "text": "I want to buy a book on international relations.",
+          "alternatives": [
+            "I would like to buy a book on international relations."
+          ]
         },
         {
           "n": "9",
-          "text": "Which side are you on?"
+          "text": "Which side are you on?",
+          "alternatives": [
+            "What side are you on?"
+          ]
         },
         {
           "n": "10",
-          "text": "He lived in a town on the coast."
+          "text": "He lived in a town on the coast.",
+          "alternatives": [
+            "He lived in a village on the coast."
+          ]
         },
         {
           "n": "11",
           "text": "On my arriving home, I discovered the burglary.",
           "alternatives": [
-            "As soon as I arrived home, I discovered the burglary."
+            "As soon as I arrived home, I discovered the burglary.",
+            "On arriving home, I discovered the burglary.",
+            "Upon arriving home, I discovered the burglary.",
+            "As soon as I got home, I discovered the burglary.",
+            "On my arrival home, I discovered the burglary.",
+            "As soon as I arrived home, I discovered the theft.",
+            "On arriving home, I discovered the theft."
           ]
         },
         {
@@ -87,12 +122,19 @@
           "text": "They were in the U.S. at the time.",
           "alternatives": [
             "They were in the United States at the time.",
-            "They were in America at the time."
+            "They were in America at the time.",
+            "They were in the USA at the time."
           ]
         },
         {
           "n": "13",
-          "text": "He works at the head office."
+          "text": "He works at the head office.",
+          "alternatives": [
+            "He works at the headquarters.",
+            "He works at headquarters.",
+            "He works at the main office.",
+            "He works at head office."
+          ]
         },
         {
           "n": "14",
@@ -100,12 +142,18 @@
           "alternatives": [
             "Let's meet at 2.",
             "Let's meet at two o'clock.",
-            "Let's meet at 2 o'clock."
+            "Let's meet at 2 o'clock.",
+            "Let's meet at 2:00."
           ]
         },
         {
           "n": "15",
-          "text": "At night, you can see stars."
+          "text": "At night, you can see stars.",
+          "alternatives": [
+            "At night, we can see stars.",
+            "You can see stars at night.",
+            "We can see stars at night."
+          ]
         },
         {
           "n": "16",
@@ -115,7 +163,13 @@
           "n": "17",
           "text": "I used to major in architecture, but I dropped it, for I was not good at it.",
           "alternatives": [
-            "I once majored in architecture, but I dropped it because I wasn't good at it."
+            "I once majored in architecture, but I dropped it because I wasn't good at it.",
+            "I once majored in architecture, but I dropped it, for I was not good at it.",
+            "I used to major in architecture, but I gave it up, for I was not good at it.",
+            "I used to major in architecture, but I quit, for I was not good at it.",
+            "I once majored in architecture, but I gave it up because I wasn't good at it.",
+            "I used to major in architecture, but I dropped it because I was not good at it.",
+            "I once majored in architecture, but I quit because I wasn't good at it."
           ]
         }
       ]

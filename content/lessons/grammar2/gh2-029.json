@@ -28,18 +28,31 @@
       "items": [
         {
           "n": "1",
-          "text": "We are on a first-name basis."
+          "text": "We are on a first-name basis.",
+          "alternatives": [
+            "We are on a first name basis."
+          ]
         },
         {
           "n": "2",
           "text": "The mercury dropped to 6 degrees below zero.",
           "alternatives": [
-            "The mercury dropped to six degrees below zero."
+            "The mercury dropped to six degrees below zero.",
+            "The mercury fell to 6 degrees below zero.",
+            "The mercury fell to six degrees below zero.",
+            "The mercury dropped to minus 6 degrees.",
+            "The mercury dropped to minus six degrees."
           ]
         },
         {
           "n": "3",
-          "text": "If someone asks for George Brown, please direct him to me."
+          "text": "If someone asks for George Brown, please direct him to me.",
+          "alternatives": [
+            "If anyone asks for George Brown, please direct him to me.",
+            "If somebody asks for George Brown, please direct him to me.",
+            "If someone asks for George Brown, direct him to me, please.",
+            "If someone asks for George Brown, please direct them to me."
+          ]
         },
         {
           "n": "4",
@@ -49,64 +62,105 @@
           "n": "5",
           "text": "It was nothing.",
           "alternatives": [
-            "That was nothing."
+            "That was nothing.",
+            "It wasn't anything."
           ]
         },
         {
           "n": "6",
-          "text": "Thank you for inviting me."
+          "text": "Thank you for inviting me.",
+          "alternatives": [
+            "Thanks for inviting me."
+          ]
         },
         {
           "n": "7",
           "text": "Operator, I'd like to call New York, collect.",
           "alternatives": [
-            "Operator, I want to call New York, collect."
+            "Operator, I want to call New York, collect.",
+            "Operator, I want to call New York collect.",
+            "Operator, I'd like to make a collect call to New York."
           ]
         },
         {
           "n": "8",
           "text": "I'd like to know a phone number in Seoul, Korea.",
           "alternatives": [
-            "I want to know a phone number in Seoul, Korea."
+            "I want to know a phone number in Seoul, Korea.",
+            "I'd like to know a telephone number in Seoul, Korea.",
+            "I'd like to know a phone number in Seoul, South Korea."
           ]
         },
         {
           "n": "9",
-          "text": "Can I have the number for James Brown?"
+          "text": "Can I have the number for James Brown?",
+          "alternatives": [
+            "May I have the number for James Brown?",
+            "Could I have the number for James Brown?",
+            "Can I get the number for James Brown?",
+            "Can I have James Brown's number?"
+          ]
         },
         {
           "n": "10",
-          "text": "May I speak to Mr. Kim?"
+          "text": "May I speak to Mr. Kim?",
+          "alternatives": [
+            "May I speak with Mr. Kim?",
+            "May I talk to Mr. Kim?",
+            "Can I speak to Mr. Kim?"
+          ]
         },
         {
           "n": "11",
           "text": "This is he.",
           "alternatives": [
-            "Speaking."
+            "Speaking.",
+            "This is him."
           ]
         },
         {
           "n": "12",
-          "text": "You have the wrong number."
+          "text": "You have the wrong number.",
+          "alternatives": [
+            "You've got the wrong number."
+          ]
         },
         {
           "n": "13",
           "text": "There is no one here by that name.",
           "alternatives": [
-            "There isn't anyone here by that name."
+            "There isn't anyone here by that name.",
+            "There's nobody here by that name.",
+            "There is no one by that name here.",
+            "There is no one here with that name.",
+            "There's no-one here by that name."
           ]
         },
         {
           "n": "14",
-          "text": "What number did you dial?"
+          "text": "What number did you dial?",
+          "alternatives": [
+            "Which number did you dial?",
+            "What number did you call?"
+          ]
         },
         {
           "n": "15",
-          "text": "Only last week, I talked to him at this same number."
+          "text": "Only last week, I talked to him at this same number.",
+          "alternatives": [
+            "Just last week, I talked to him at this same number.",
+            "Only last week, I spoke to him at this same number.",
+            "I talked to him at this same number only last week."
+          ]
         },
         {
           "n": "16",
-          "text": "He no longer works here."
+          "text": "He no longer works here.",
+          "alternatives": [
+            "He doesn't work here anymore.",
+            "He does not work here any longer.",
+            "He doesn't work here any more."
+          ]
         },
         {
           "n": "17",
@@ -114,11 +168,17 @@
         },
         {
           "n": "18",
-          "text": "I am not a quitter."
+          "text": "I am not a quitter.",
+          "alternatives": [
+            "I'm no quitter."
+          ]
         },
         {
           "n": "19",
-          "text": "He is on another line."
+          "text": "He is on another line.",
+          "alternatives": [
+            "He's on the other line."
+          ]
         }
       ]
     },

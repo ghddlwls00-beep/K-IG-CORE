@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "21",
-          "text": "How was he?"
+          "text": "How was he?",
+          "alternatives": [
+            "How was he doing?"
+          ]
         },
         {
           "n": "22",
@@ -44,7 +47,9 @@
           "alternatives": [
             "What did she do?",
             "What was her job?",
-            "What did she do for a living?"
+            "What did she do for a living?",
+            "What was her occupation?",
+            "What did she do for work?"
           ]
         },
         {
@@ -61,7 +66,10 @@
         },
         {
           "n": "28",
-          "text": "Whose books were these?"
+          "text": "Whose books were these?",
+          "alternatives": [
+            "Whose were these books?"
+          ]
         },
         {
           "n": "29",
@@ -82,7 +90,8 @@
           "n": "32",
           "text": "Was it mine?",
           "alternatives": [
-            "Was that mine?"
+            "Was that mine?",
+            "Was that one mine?"
           ]
         },
         {
@@ -111,13 +120,17 @@
         },
         {
           "n": "39",
-          "text": "No, it was not hot yesterday."
+          "text": "No, it was not hot yesterday.",
+          "alternatives": [
+            "No, yesterday it was not hot."
+          ]
         },
         {
           "n": "40",
           "text": "It was cold yesterday.",
           "alternatives": [
-            "Yesterday was cold."
+            "Yesterday was cold.",
+            "Yesterday it was cold."
           ]
         }
       ]

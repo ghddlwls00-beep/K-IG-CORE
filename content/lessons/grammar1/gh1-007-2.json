@@ -43,7 +43,9 @@
           "text": "What is he?",
           "alternatives": [
             "What does he do?",
-            "What is his job?"
+            "What is his job?",
+            "What does he do for a living?",
+            "What is his occupation?"
           ]
         },
         {
@@ -76,7 +78,10 @@
         },
         {
           "n": "32",
-          "text": "Is this mine?"
+          "text": "Is this mine?",
+          "alternatives": [
+            "Is this one mine?"
+          ]
         },
         {
           "n": "33",
@@ -92,11 +97,17 @@
         },
         {
           "n": "36",
-          "text": "How is your mother?"
+          "text": "How is your mother?",
+          "alternatives": [
+            "How is your mother doing?"
+          ]
         },
         {
           "n": "37",
-          "text": "Is he your boss?"
+          "text": "Is he your boss?",
+          "alternatives": [
+            "Is he your superior?"
+          ]
         },
         {
           "n": "38",
@@ -106,7 +117,10 @@
           "n": "39",
           "text": "It is seven o'clock.",
           "alternatives": [
-            "It is 7 o'clock."
+            "It is 7 o'clock.",
+            "It is seven.",
+            "It is 7.",
+            "It is 7:00."
           ]
         },
         {

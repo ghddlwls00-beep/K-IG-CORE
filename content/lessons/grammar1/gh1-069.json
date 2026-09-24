@@ -44,14 +44,20 @@
           "alternatives": [
             "Not every boy received a prize, did they?",
             "Every boy didn't receive a prize, did he?",
-            "Every boy didn't receive a prize, did they?"
+            "Every boy didn't receive a prize, did they?",
+            "Not every boy got a prize, did they?",
+            "Not every boy got a prize, did he?",
+            "Not every boy won a prize, did they?"
           ]
         },
         {
           "n": "80",
           "text": "Not everybody received a prize, did they?",
           "alternatives": [
-            "Everybody didn't receive a prize, did they?"
+            "Everybody didn't receive a prize, did they?",
+            "Not everyone received a prize, did they?",
+            "Not everybody got a prize, did they?",
+            "Not everybody won a prize, did they?"
           ]
         },
         {
@@ -59,21 +65,28 @@
           "text": "Not all the boys received a prize, did they?",
           "alternatives": [
             "All the boys didn't receive a prize, did they?",
-            "Not all of the boys received a prize, did they?"
+            "Not all of the boys received a prize, did they?",
+            "Not all the boys got a prize, did they?",
+            "Not all of the boys got a prize, did they?",
+            "Not all the boys won a prize, did they?"
           ]
         },
         {
           "n": "82",
           "text": "Not all of them come.",
           "alternatives": [
-            "All of them don't come."
+            "All of them don't come.",
+            "They don't all come.",
+            "Not every one of them comes."
           ]
         },
         {
           "n": "83",
           "text": "Not all of them came.",
           "alternatives": [
-            "All of them didn't come."
+            "All of them didn't come.",
+            "They didn't all come.",
+            "Not every one of them came."
           ]
         },
         {
@@ -81,7 +94,9 @@
           "text": "Nobody came.",
           "alternatives": [
             "None of them came.",
-            "No one came."
+            "No one came.",
+            "No-one came.",
+            "Not one of them came."
           ]
         },
         {
@@ -90,21 +105,25 @@
           "alternatives": [
             "None of them come.",
             "None of them comes.",
-            "No one comes."
+            "No one comes.",
+            "No-one comes.",
+            "Not one of them comes."
           ]
         },
         {
           "n": "86",
           "text": "Nobody comes, do they?",
           "alternatives": [
-            "No one comes, do they?"
+            "No one comes, do they?",
+            "No-one comes, do they?"
           ]
         },
         {
           "n": "87",
           "text": "Nobody came, did they?",
           "alternatives": [
-            "No one came, did they?"
+            "No one came, did they?",
+            "No-one came, did they?"
           ]
         },
         {
@@ -118,7 +137,8 @@
           "n": "89",
           "text": "There were 60 girls in the classroom, weren't there?",
           "alternatives": [
-            "There were sixty girls in the classroom, weren't there?"
+            "There were sixty girls in the classroom, weren't there?",
+            "There were 60 girls in the classroom, were there not?"
           ]
         },
         {
@@ -130,26 +150,44 @@
         },
         {
           "n": "91",
-          "text": "Did many girls go there?"
+          "text": "Did many girls go there?",
+          "alternatives": [
+            "Did a lot of girls go there?",
+            "Did lots of girls go there?"
+          ]
         },
         {
           "n": "92",
           "text": "Didn't many girls go there?",
           "alternatives": [
-            "Did many girls not go there?"
+            "Did many girls not go there?",
+            "Didn't a lot of girls go there?",
+            "Didn't lots of girls go there?"
           ]
         },
         {
           "n": "93",
-          "text": "Many girls went there, didn't they?"
+          "text": "Many girls went there, didn't they?",
+          "alternatives": [
+            "A lot of girls went there, didn't they?",
+            "Lots of girls went there, didn't they?",
+            "Many girls went there, did they not?"
+          ]
         },
         {
           "n": "94",
-          "text": "Many girls didn't go there, did they?"
+          "text": "Many girls didn't go there, did they?",
+          "alternatives": [
+            "A lot of girls didn't go there, did they?",
+            "Lots of girls didn't go there, did they?"
+          ]
         },
         {
           "n": "95",
-          "text": "You paid for lunch, didn't you?"
+          "text": "You paid for lunch, didn't you?",
+          "alternatives": [
+            "You paid for lunch, did you not?"
+          ]
         },
         {
           "n": "96",
@@ -157,47 +195,80 @@
         },
         {
           "n": "97",
-          "text": "He pays for dinner, doesn't he?"
+          "text": "He pays for dinner, doesn't he?",
+          "alternatives": [
+            "He pays for dinner, does he not?",
+            "He pays for supper, doesn't he?"
+          ]
         },
         {
           "n": "98",
-          "text": "He doesn't pay for dinner, does he?"
+          "text": "He doesn't pay for dinner, does he?",
+          "alternatives": [
+            "He doesn't pay for supper, does he?"
+          ]
         },
         {
           "n": "99",
-          "text": "Does he pay for dinner?"
+          "text": "Does he pay for dinner?",
+          "alternatives": [
+            "Does he pay for supper?"
+          ]
         },
         {
           "n": "100",
           "text": "Doesn't he pay for dinner?",
           "alternatives": [
-            "Does he not pay for dinner?"
+            "Does he not pay for dinner?",
+            "Doesn't he pay for supper?"
           ]
         },
         {
           "n": "101",
           "text": "Didn't he pay for dinner?",
           "alternatives": [
-            "Did he not pay for dinner?"
+            "Did he not pay for dinner?",
+            "Didn't he pay for supper?"
           ]
         },
         {
           "n": "102",
-          "text": "How fast does he run?"
+          "text": "How fast does he run?",
+          "alternatives": [
+            "How quickly does he run?"
+          ]
         },
         {
           "n": "103",
-          "text": "How fast did he run?"
+          "text": "How fast did he run?",
+          "alternatives": [
+            "How quickly did he run?"
+          ]
         },
         {
           "n": "104",
-          "text": "She sees him many times every day, doesn't she?"
+          "text": "She sees him many times every day, doesn't she?",
+          "alternatives": [
+            "She sees him many times a day, doesn't she?",
+            "She sees him several times a day, doesn't she?",
+            "She sees him several times every day, doesn't she?",
+            "She sees him many times each day, doesn't she?",
+            "She sees him many times every day, does she not?"
+          ]
         },
         {
           "n": "105",
           "text": "You study English more than ten hours every day, don't you?",
           "alternatives": [
-            "You study English more than 10 hours every day, don't you?"
+            "You study English more than 10 hours every day, don't you?",
+            "You study English more than ten hours a day, don't you?",
+            "You study English more than 10 hours a day, don't you?",
+            "You study English over ten hours every day, don't you?",
+            "You study English over 10 hours every day, don't you?",
+            "You study English over ten hours a day, don't you?",
+            "You study English over 10 hours a day, don't you?",
+            "You study English more than ten hours each day, don't you?",
+            "You study English more than ten hours every day, do you not?"
           ]
         }
       ]

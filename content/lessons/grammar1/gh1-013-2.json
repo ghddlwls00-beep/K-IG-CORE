@@ -32,7 +32,10 @@
         },
         {
           "n": "20",
-          "text": "Why is he happy?"
+          "text": "Why is he happy?",
+          "alternatives": [
+            "Why's he happy?"
+          ]
         },
         {
           "n": "21",
@@ -91,7 +94,9 @@
           "n": "32",
           "text": "Why do you look at me?",
           "alternatives": [
-            "Why are you looking at me?"
+            "Why are you looking at me?",
+            "Why are you watching me?",
+            "Why do you watch me?"
           ]
         },
         {
@@ -114,7 +119,10 @@
           "alternatives": [
             "What did he do?",
             "What did he do for a living?",
-            "What was his job?"
+            "What was his job?",
+            "What was his occupation?",
+            "What did he do for work?",
+            "What kind of work did he do?"
           ]
         }
       ]

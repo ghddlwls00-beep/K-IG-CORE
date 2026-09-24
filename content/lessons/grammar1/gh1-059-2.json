@@ -32,7 +32,8 @@
           "alternatives": [
             "I do too.",
             "I do, too.",
-            "Me too."
+            "Me too.",
+            "I do as well."
           ]
         },
         {
@@ -40,12 +41,16 @@
           "text": "So does my mother.",
           "alternatives": [
             "My mother does too.",
-            "My mother does, too."
+            "My mother does, too.",
+            "My mother does as well."
           ]
         },
         {
           "n": "22",
-          "text": "She looks tired, doesn't she?"
+          "text": "She looks tired, doesn't she?",
+          "alternatives": [
+            "She seems tired, doesn't she?"
+          ]
         },
         {
           "n": "23",
@@ -67,7 +72,10 @@
         },
         {
           "n": "26",
-          "text": "He is coming home."
+          "text": "He is coming home.",
+          "alternatives": [
+            "He is coming back home."
+          ]
         },
         {
           "n": "27",
@@ -78,7 +86,12 @@
         },
         {
           "n": "28",
-          "text": "She was a lady in every way."
+          "text": "She was a lady in every way.",
+          "alternatives": [
+            "She was a lady in every respect.",
+            "She was a lady in all respects.",
+            "She was a lady in all ways."
+          ]
         },
         {
           "n": "29",
@@ -88,7 +101,8 @@
             "Each student has their own idea.",
             "Each student has his or her own idea.",
             "Every student has their own idea.",
-            "Every student has his or her own idea."
+            "Every student has his or her own idea.",
+            "Each student has his/her own idea."
           ]
         },
         {
@@ -99,7 +113,8 @@
             "Does each student have their own plan?",
             "Does each student have his or her own plan?",
             "Does every student have their own plan?",
-            "Does every student have his or her own plan?"
+            "Does every student have his or her own plan?",
+            "Does each student have his/her own plan?"
           ]
         },
         {
@@ -113,19 +128,28 @@
           "n": "32",
           "text": "Didn't he give money to each of his sons?",
           "alternatives": [
-            "Did he not give money to each of his sons?"
+            "Did he not give money to each of his sons?",
+            "Didn't he give each of his sons money?",
+            "Did he not give each of his sons money?",
+            "Didn't he give money to each one of his sons?"
           ]
         },
         {
           "n": "33",
           "text": "Doesn't she give money to each of her daughters?",
           "alternatives": [
-            "Does she not give money to each of her daughters?"
+            "Does she not give money to each of her daughters?",
+            "Doesn't she give each of her daughters money?",
+            "Doesn't she give money to each one of her daughters?"
           ]
         },
         {
           "n": "34",
-          "text": "Does he go there every day?"
+          "text": "Does he go there every day?",
+          "alternatives": [
+            "Does he go there each day?",
+            "Does he go there daily?"
+          ]
         },
         {
           "n": "35",

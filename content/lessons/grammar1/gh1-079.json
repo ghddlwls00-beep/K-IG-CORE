@@ -46,23 +46,34 @@
           "text": "Why does he beat her?",
           "alternatives": [
             "Why does he hit her?",
-            "Why is he hitting her?"
+            "Why is he hitting her?",
+            "Why is he beating her?",
+            "Why's he hitting her?"
           ]
         },
         {
           "n": "3",
-          "text": "Why was she looking at him?"
+          "text": "Why was she looking at him?",
+          "alternatives": [
+            "Why was she watching him?"
+          ]
         },
         {
           "n": "4",
           "text": "Why does your sister look at me?",
           "alternatives": [
-            "Why is your sister looking at me?"
+            "Why is your sister looking at me?",
+            "Why is your sister watching me?",
+            "Why does your sister watch me?",
+            "Why's your sister looking at me?"
           ]
         },
         {
           "n": "5",
-          "text": "Why is he tired?"
+          "text": "Why is he tired?",
+          "alternatives": [
+            "Why's he tired?"
+          ]
         },
         {
           "n": "6",
@@ -70,7 +81,14 @@
         },
         {
           "n": "7",
-          "text": "This is a very important problem, isn't it?"
+          "text": "This is a very important problem, isn't it?",
+          "alternatives": [
+            "This is a very important issue, isn't it?",
+            "This is a very important matter, isn't it?",
+            "This is a really important problem, isn't it?",
+            "This is a very important problem, is it not?",
+            "This is a very important question, isn't it?"
+          ]
         },
         {
           "n": "8",
@@ -84,7 +102,8 @@
           "n": "10",
           "text": "You need that special book, don't you?",
           "alternatives": [
-            "You need the special book, don't you?"
+            "You need the special book, don't you?",
+            "You need that special book, do you not?"
           ]
         },
         {
@@ -93,7 +112,10 @@
         },
         {
           "n": "12",
-          "text": "What book is your husband writing?"
+          "text": "What book is your husband writing?",
+          "alternatives": [
+            "What kind of book is your husband writing?"
+          ]
         },
         {
           "n": "13",
@@ -101,11 +123,17 @@
         },
         {
           "n": "14",
-          "text": "Why did you call me last night?"
+          "text": "Why did you call me last night?",
+          "alternatives": [
+            "Why did you phone me last night?"
+          ]
         },
         {
           "n": "15",
-          "text": "Who called you last week?"
+          "text": "Who called you last week?",
+          "alternatives": [
+            "Who phoned you last week?"
+          ]
         },
         {
           "n": "16",
@@ -122,14 +150,16 @@
           "n": "18",
           "text": "Why don't you feel the same?",
           "alternatives": [
-            "Why don't you feel the same way?"
+            "Why don't you feel the same way?",
+            "Why do you not feel the same?"
           ]
         },
         {
           "n": "19",
           "text": "We didn't see each other for a long time, did we?",
           "alternatives": [
-            "We haven't seen each other for a long time, have we?"
+            "We haven't seen each other for a long time, have we?",
+            "We haven't seen each other in a long time, have we?"
           ]
         },
         {
@@ -143,7 +173,9 @@
           "n": "21",
           "text": "We never talked about it, did we?",
           "alternatives": [
-            "We never talked about that, did we?"
+            "We never talked about that, did we?",
+            "We never spoke about it, did we?",
+            "We never discussed it, did we?"
           ]
         },
         {
@@ -152,14 +184,18 @@
         },
         {
           "n": "23",
-          "text": "She misses him, doesn't she?"
+          "text": "She misses him, doesn't she?",
+          "alternatives": [
+            "She misses him, does she not?"
+          ]
         },
         {
           "n": "24",
           "text": "My dog ate all the bones, didn't it?",
           "alternatives": [
             "My dog ate all the bones, didn't he?",
-            "My dog ate all the bones, didn't she?"
+            "My dog ate all the bones, didn't she?",
+            "My dog ate all the bones, did it not?"
           ]
         },
         {
@@ -179,27 +215,39 @@
         },
         {
           "n": "28",
-          "text": "You are kidding, aren't you?"
+          "text": "You are kidding, aren't you?",
+          "alternatives": [
+            "You're joking, aren't you?",
+            "You are kidding, are you not?"
+          ]
         },
         {
           "n": "29",
           "text": "When do you think about that night?",
           "alternatives": [
-            "When do you think about the night?"
+            "When do you think about the night?",
+            "When do you think of that night?",
+            "When do you think of the night?"
           ]
         },
         {
           "n": "30",
           "text": "You met someone, didn't you?",
           "alternatives": [
-            "You have met someone, haven't you?"
+            "You have met someone, haven't you?",
+            "You met somebody, didn't you?",
+            "You have met somebody, haven't you?",
+            "You met someone, did you not?"
           ]
         },
         {
           "n": "31",
           "text": "He meets someone, doesn't he?",
           "alternatives": [
-            "He is seeing someone, isn't he?"
+            "He is seeing someone, isn't he?",
+            "He meets somebody, doesn't he?",
+            "He is seeing somebody, isn't he?",
+            "He meets someone, does he not?"
           ]
         },
         {
@@ -238,13 +286,19 @@
         },
         {
           "n": "38",
-          "text": "When did we talk about this?"
+          "text": "When did we talk about this?",
+          "alternatives": [
+            "When did we speak about this?",
+            "When did we discuss this?"
+          ]
         },
         {
           "n": "39",
           "text": "Who talks about this?",
           "alternatives": [
-            "Who is talking about this?"
+            "Who is talking about this?",
+            "Who speaks about this?",
+            "Who is speaking about this?"
           ]
         },
         {
@@ -264,11 +318,17 @@
         },
         {
           "n": "43",
-          "text": "Do you like the color?"
+          "text": "Do you like the color?",
+          "alternatives": [
+            "Do you like the colour?"
+          ]
         },
         {
           "n": "44",
-          "text": "He misses her, doesn't he?"
+          "text": "He misses her, doesn't he?",
+          "alternatives": [
+            "He misses her, does he not?"
+          ]
         }
       ]
     },

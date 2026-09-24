@@ -106,7 +106,7 @@ function addNegation(main) {
 const results = {};
 const oldResults = {};
 const blank = () => ({ tried: 0, exact: 0, partial: 0, incorrect: 0 });
-const T = { items: items.length, short: 0, exactModel: 0, oneFn: blank(), oneFnShort: { tried: 0, partial: 0, incorrect: 0 }, content: blank(), twoFn: blank(), neg: blank(), negOver: blank(), drop: blank(), answerNo: blank(), wrongTag: blank(), flipMain: blank() };
+const T = { items: items.length, short: 0, exactModel: 0, negWhether: 0, oneFn: blank(), oneFnShort: { tried: 0, partial: 0, incorrect: 0 }, content: blank(), twoFn: blank(), neg: blank(), negOver: blank(), drop: blank(), answerNo: blank(), wrongTag: blank(), flipMain: blank() };
 const grade = (it, kind, text, bucket) => {
   const g = gradeAgainstReferences(text, it.refs);
   results[`${it.key}|${kind}`] = g;
@@ -138,7 +138,14 @@ for (const it of items) {
   for (const neg of ["not", "never"]) for (const at of negSpots) negForms.push([`+${neg}@${at}`, join([...w.slice(0, at), neg, ...w.slice(at)], end)]);
   const ai = w.slice(0, mainLen).findIndex((x) => AUX.test(x) && !/^am$/i.test(x));
   if (ai >= 0) { const t = [...w]; t[ai] = CONTRACT[t[ai].toLowerCase()] || `${t[ai]}n't`; negForms.push(["+n't", join(t, end)]); }
+  // 'whether … or not' 절 안에 넣은 부정어는 뺌(관문 15, 2026-09-25): 채점이 whether 뒤 'or not' 을 부정으로 세지 않듯(negatesAt)
+  // 그 절에 not 을 더해도 뜻이 뒤집히지 않는다 — 'whether not to go' ≈ 'whether to go', 'or not not' 은 말이 안 되는 꼴.
+  // 결정 C 로 'whether or not …' 다른 정답이 들어온 뒤 이 꼴이 낱말 차례로 70점이 되어 드러남(gh2-032 #3 · gh2-045 #15). 뺀 수는 따로 찍는다.
+  const wi = w.findIndex((x) => /^whether$/i.test(x));
+  const whetherOrNot = wi >= 0 && /\bor\s+not\b/i.test(model);
   for (const [kind, text] of negForms) {
+    const at = Number((kind.match(/@(\d+)$/) || [])[1]);
+    if (whetherOrNot && at > wi) { T.negWhether++; continue; }
     const g = grade(it, kind, text, T.neg);
     const n = nWords(text);
     if (it.refs.every((r) => n > nWords(r) * 1.15)) { T.negOver.tried++; T.negOver[g]++; }
@@ -164,7 +171,7 @@ console.log(`GRAMMAR 영어 문항 ${T.items}(6낱말 이하 ${T.short}) · 모�
 line("① 기능어 하나 더", T.oneFn, `  (6낱말 이하만 ${T.oneFnShort.tried}: 70점 ${T.oneFnShort.partial} · 0점 ${T.oneFnShort.incorrect})`);
 line("② 내용어 하나 더", T.content);
 line("③ 기능어 둘 더", T.twoFn);
-line("⑤ 부정어 하나 더", T.neg, `  (참고: 길이 한도를 넘는 꼴 ${T.negOver.tried} 중 70점 ${T.negOver.partial} · 만점 ${T.negOver.exact})`);
+line("⑤ 부정어 하나 더", T.neg, `  (참고: 길이 한도를 넘는 꼴 ${T.negOver.tried} 중 70점 ${T.negOver.partial} · 만점 ${T.negOver.exact} · 'whether … or not' 절 안이라 뺀 꼴 ${T.negWhether})`);
 line("⑥ 부정어 뺀 꼴", T.drop);
 line("⑦ 대답말 No, 만 다름", T.answerNo);
 line("⑧ 꼬리 긍정·부정만 틀림", T.wrongTag);
