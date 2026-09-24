@@ -11,7 +11,7 @@
   "from": "예를 들어 뉴욕 Bronx 동물원의 그의 실험실에서 일하는 Dr.Raymond L Ditmar는 어떤 유형의 신경병을 고치기 위하여 뱀의 독을 사용하는 한 가지 방법을 발견했다.",
   "to": "예를 들어 뉴욕 Bronx 동물원의 그의 실험실에서 일하던 Dr. Raymond L. Ditmars는 과학자들이 연구할 수 있도록 뱀의 독을 모았다.", "expect": 1},
  {"item": "6-0514 d211 hints ('diseases.' 한 조각뿐이던 힌트 — 고친 4행에 없는 낱말)", "files": ["content/lessons/ld/d211.json"],
-  "from": "diseases.", "to": "Raymond L Ditmars, Bronx, venom, snakebites.", "expect": 1},
+  "from": "diseases.", "to": "Raymond L Ditmars, Bronx, venom, snakebites.", "expect": 1, "supersededBy": "재점검-재검토1 관문15-고침/재점검-재검토1.json(2026-09-25 — 학습 내용 재검토1) — A3 [Raymond L. Ditmars]", "nowText": "serves. purposes. sponsor. New York. Zoo. Raymond L. Ditmars, Bronx, venom, snakebites."},
 
  {"item": "6-0521 d215 n6 EN", "files": ["content/ld_english_scripts.json"],
   "from": "Some animals, such as the white buffalo, were even worshipped because they were thought to be sacred.",

@@ -9,7 +9,7 @@
  {"item": "6-0553 d259 hints — 대본 'gliding' ('glide' 는 n5 에 짝이 안 됨)", "files": ["content/lessons/ld/d259.json"],
   "from": "pond glide swiftly", "to": "pond gliding swiftly", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0553 d262 hints — 'course.' 한 조각 → 대본의 어려운 말", "files": ["content/lessons/ld/d262.json"],
-  "from": "course.", "to": "drastic. recreation. brought up. as a matter of course.", "expect": 1},
+  "from": "course.", "to": "drastic. recreation. brought up. as a matter of course.", "expect": 1, "supersededBy": "재점검-재검토1 관문15-고침/재점검-재검토1.json(2026-09-25 — 학습 내용 재검토1) — A7 겹친 칩", "nowText": "whole. social. calendar undergoes. abandoned. indoors. outdoor recreation. take. drastic. brought up. as a matter of course."},
  {"item": "6-0556 d254 n5 KO — surest · well-developed personality · take a joke", "files": ["content/ld_english_scripts.json"],
   "from": "잘 발달된 개성의 분명한 징표 중의 하나는 농담을 받아들이는 능력이다.", "to": "원만한 인격을 가장 확실하게 보여 주는 징표 중 하나는 농담을 웃어넘길 줄 아는 능력이다.", "expect": 1},
  {"item": "6-0556 d254 n2 KO — serious(사람) = 진지하다", "files": ["content/ld_english_scripts.json"],

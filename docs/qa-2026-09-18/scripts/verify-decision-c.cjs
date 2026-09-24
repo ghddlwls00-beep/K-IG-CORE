@@ -19,7 +19,9 @@ const g = loadTs(path.join(REPO, "src/lib/grammarGrading.ts"));
 const BREAK = process.argv.includes("--break");
 const cleanText = (t) => (t ? t.replace(/^\s*\d+[\.\)]\s*/, "").replace(/\s*\/\s*/g, " ").trim() : ""); // GrammarLearningView 60 과 같은 글
 const J = JSON.parse(execFileSync("git", ["show", "f53d173:docs/qa-2026-09-18/내용-재검토/전수/채점/판정.json"], { cwd: REPO, encoding: "utf8", maxBuffer: 64e6 }).replace(/^﻿/, ""));
-const removed = new Set(JSON.parse(fs.readFileSync(path.join(REPO, "docs/qa-2026-09-18/관문15-고침/조작-C-빗금뺌.json"), "utf8")).flatMap((o) => o.remove));
+// 뒤에 뺀 다른 정답 — 빗금 6(조작-C-빗금뺌) · 재점검1(2026-09-25 — gh2-013 #5 'As a soldier, I respect him.' 반대 뜻 · gh1-109 #54 대소문자 겹침)
+const REMOVALS = ["조작-C-빗금뺌.json", "재점검-재검토1.json"];
+const removed = new Set(REMOVALS.flatMap((f) => { const p = path.join(REPO, "docs/qa-2026-09-18/관문15-고침", f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8").replace(/^﻿/, "")).filter((o) => o.op === "removeAlts").flatMap((o) => o.remove) : []; }));
 const cache = new Map();
 const lesson = (rel) => { if (!cache.has(rel)) cache.set(rel, JSON.parse(fs.readFileSync(path.join(REPO, rel), "utf8").replace(/^﻿/, ""))); return cache.get(rel); };
 if (BREAK) {
@@ -51,7 +53,7 @@ for (const c of ["grammar1", "grammar2"]) for (const f of fs.readdirSync(path.jo
   const d = lesson(`content/lessons/${c}/${f}`);
   for (const b of d.blocks || []) if (b.type === "sentences") for (const it of b.items || []) for (const a of it.alternatives || []) if (/\//.test(a)) dirtyNow++;
 }
-console.log(`${BREAK ? "(깨기 — 메모리에서 gh1-059 #29 에 'his/her' 다른 정답을 되살림) " : ""}A 표 답(파일마다) ${n + skipped} · 채점 ${n} · 만점 아님 ${bad.length} · 빗금이라 뺀 답 ${skipped} · 표 답 중 다듬으면 바뀌는 것 ${dirty} · 지금 파일의 빗금 든 다른 정답 ${dirtyNow}`);
+console.log(`${BREAK ? "(깨기 — 메모리에서 gh1-059 #29 에 'his/her' 다른 정답을 되살림) " : ""}A 표 답(파일마다) ${n + skipped} · 채점 ${n} · 만점 아님 ${bad.length} · 뒤에 뺀 답(빗금 6 · 재점검1) ${skipped} ·표 답 중 다듬으면 바뀌는 것 ${dirty} · 지금 파일의 빗금 든 다른 정답 ${dirtyNow}`);
 for (const b of bad.slice(0, 8)) console.log(`   ${b}`);
 const ok = bad.length === 0 && dirtyNow === 0;
 process.exit(ok ? 0 : 1);

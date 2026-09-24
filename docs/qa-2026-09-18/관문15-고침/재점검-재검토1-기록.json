@@ -1,0 +1,241 @@
+{
+ "at": "2026-09-24T20:25:41.656Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/재점검-재검토1.json",
+ "root": ".",
+ "write": true,
+ "log": [
+  {
+   "id": "재점검1 A1 G03057 높음 gh2-013.json #5",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar2/gh2-013.json",
+   "where": ".blocks[1].items[n=5]",
+   "before": {
+    "text": "I respect him as a soldier.",
+    "alternatives": [
+     "As a soldier, I respect him."
+    ]
+   },
+   "after": {
+    "text": "I respect him as a soldier.",
+    "alternatives": null
+   }
+  },
+  {
+   "id": "재점검1 A2 G05062 d114 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d114.json",
+   "where": ".blocks[2].text",
+   "old": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. landed. off the coast. North America. India, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of animals. wandered. South America.",
+   "new": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. landed. off the coast. North America. the Indies, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of animals. wandered. South America."
+  },
+  {
+   "id": "재점검1 A3 G05164 d211 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d211.json",
+   "where": ".blocks[2].text",
+   "old": "serves. purposes. sponsor. New York. Zoo. Raymond L Ditmars, Bronx, venom, snakebites.",
+   "new": "serves. purposes. sponsor. New York. Zoo. Raymond L. Ditmars, Bronx, venom, snakebites."
+  },
+  {
+   "id": "재점검1 A4 G05173 d218 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d218.json",
+   "where": ".blocks[2].text",
+   "old": "collectors. postage stamps. matchboxes. coins. paintings. seashells — in short. object. mania. stems from. psychological makeup. external. bring this union about.",
+   "new": "collectors. postage stamps. matchboxes. coins. paintings. seashells. in short. object. mania. stems from. psychological makeup. external. bring this union about."
+  },
+  {
+   "id": "재점검1 A5 G05228 d253 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d253.json",
+   "where": ".blocks[2].text",
+   "old": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. \"Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff.",
+   "new": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff."
+  },
+  {
+   "id": "재점검1 A6 G05237 d260 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d260.json",
+   "where": ".blocks[2].text",
+   "old": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+   "new": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy. are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly."
+  },
+  {
+   "id": "재점검1 A7 G05239 d262 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d262.json",
+   "where": ".blocks[2].text",
+   "old": "whole. social. calendar undergoes a drastic. abandoned. indoors. outdoor recreation. take. drastic. recreation. brought up. as a matter of course.",
+   "new": "whole. social. calendar undergoes. abandoned. indoors. outdoor recreation. take. drastic. brought up. as a matter of course."
+  },
+  {
+   "id": "재점검1 A10 G01642 낮음 gh1-109.json #54",
+   "op": "removeAlts",
+   "file": "content/lessons/grammar1/gh1-109.json",
+   "where": ".blocks[3].items[n=54]",
+   "before": {
+    "text": "Why did the President criticize the Japanese economy severely?",
+    "alternatives": [
+     "Why did the President severely criticize the Japanese economy?",
+     "Why did the President criticize the Japanese economy harshly?",
+     "Why did the President harshly criticize the Japanese economy?",
+     "Why did the president criticize the Japanese economy harshly?",
+     "Why did the president criticize Japan's economy severely?"
+    ]
+   },
+   "after": {
+    "text": "Why did the President criticize the Japanese economy severely?",
+    "alternatives": [
+     "Why did the President severely criticize the Japanese economy?",
+     "Why did the President criticize the Japanese economy harshly?",
+     "Why did the President harshly criticize the Japanese economy?",
+     "Why did the president criticize Japan's economy severely?"
+    ]
+   }
+  },
+  {
+   "id": "재점검1 A11 G04674 d114 n4 ko",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d114[n=4].ko",
+   "old": "처음에 콜럼버스는 자신이 인도에 도착했다고 생각해서 그는 거기에서 만난 사람들을 “인디언”이라고 불렀다.",
+   "new": "처음에 콜럼버스는 자신이 인도 제도에 도착했다고 생각해서 그는 거기에서 만난 사람들을 “인디언”이라고 불렀다."
+  },
+  {
+   "id": "재점검1 A12 G05198 d233 힌트",
+   "op": "set",
+   "file": "content/lessons/ld/d233.json",
+   "where": ".blocks[2].text",
+   "old": "Middle Ages. mystery. morality. plays. intimately associated with. dealt with. death. judgment. Heaven, Hell, Virtue, Vice. abstractions. living characters. spectators graphic. living catechism. Bible. front steps. cathedrals, accommodate. marketplace.",
+   "new": "Middle Ages. mystery. morality. plays. intimately associated with. dealt with. death. judgment. heaven, hell, virtue, vice. abstractions. living characters. spectators graphic. living catechism. Bible. front steps. cathedrals, accommodate. marketplace."
+  },
+  {
+   "id": "재점검1 B1 X:0 d037 n8 en",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d037[n=8].en",
+   "old": "The doctor said, You won't die. In fact, you'll be fine by dinner time.",
+   "new": "The doctor said, \"You won't die. In fact, you'll be fine by dinner time.\""
+  },
+  {
+   "id": "재점검1 B2 X:0 pr175.json s002",
+   "op": "set",
+   "file": "content/lessons/reading/pr175.json",
+   "where": ".readingSentences[id=reading-175-s002].korean",
+   "old": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+   "new": "그들은 어떤 음식이 그들의 운동 능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다."
+  },
+  {
+   "id": "재점검1 B2 X:0 pr175-1.json s002",
+   "op": "set",
+   "file": "content/lessons/reading/pr175-1.json",
+   "where": ".readingSentences[id=reading-175-s002].korean",
+   "old": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+   "new": "그들은 어떤 음식이 그들의 운동 능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다."
+  },
+  {
+   "id": "재점검1 B2 X:0 pr175-1.json 지문 블록",
+   "op": "set",
+   "file": "content/lessons/reading/pr175-1.json",
+   "where": ".blocks[1].text",
+   "old": "어떤 사람들은 다양한 상황의 필요를 충족시키기 위해 그들의 식사 패턴을 바꾼다. 그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다. 예를 들어, 이러한 사람들은 신체 활동에 필요한 힘을 얻으려고 과일과 야채를 선택한다. 그들은 업무상 약속에 대비하기 위해 아침으로는 빵과 시리얼 같은 섬유질이 풍부한 음식을, 점심으로는 샐러드를 고른다. 그러나, 낭만적인 저녁을 위해, 새우나 바닷가재를 선택한다.",
+   "new": "어떤 사람들은 다양한 상황의 필요를 충족시키기 위해 그들의 식사 패턴을 바꾼다. 그들은 어떤 음식이 그들의 운동 능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다. 예를 들어, 이러한 사람들은 신체 활동에 필요한 힘을 얻으려고 과일과 야채를 선택한다. 그들은 업무상 약속에 대비하기 위해 아침으로는 빵과 시리얼 같은 섬유질이 풍부한 음식을, 점심으로는 샐러드를 고른다. 그러나, 낭만적인 저녁을 위해, 새우나 바닷가재를 선택한다."
+  },
+  {
+   "id": "재점검1 B2 X:0 readingSentences.json s002",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr175[id=reading-175-s002].korean",
+   "old": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+   "new": "그들은 어떤 음식이 그들의 운동 능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다."
+  },
+  {
+   "id": "재점검1 B3 X:0 gh1-122.json #41",
+   "op": "set",
+   "file": "content/lessons/grammar1/gh1-122.json",
+   "where": ".blocks[3].items[n=41].text",
+   "old": "그 테러망은 다시 무리지어 다시 공격하려고 시도한다.",
+   "new": "그 테러망은 다시 무리 지어 다시 공격하려고 시도한다."
+  },
+  {
+   "id": "재점검1 B3 X:0 gh1-122-1.json #41",
+   "op": "set",
+   "file": "content/lessons/grammar1/gh1-122-1.json",
+   "where": ".blocks[3].items[n=41].text",
+   "old": "그 테러망은 다시 무리지어 다시 공격하려고 시도한다.",
+   "new": "그 테러망은 다시 무리 지어 다시 공격하려고 시도한다."
+  },
+  {
+   "id": "재점검1 B4 X:1 gh1-118.json #44",
+   "op": "set",
+   "file": "content/lessons/grammar1/gh1-118.json",
+   "where": ".blocks[3].items[n=44].text",
+   "old": "그들은 허블의 36커넥터를 재부착했지?",
+   "new": "그들은 허블의 커넥터 36개를 재부착했지?"
+  },
+  {
+   "id": "재점검1 B4 X:1 gh1-118-1.json #44",
+   "op": "set",
+   "file": "content/lessons/grammar1/gh1-118-1.json",
+   "where": ".blocks[3].items[n=44].text",
+   "old": "그들은 허블의 36커넥터를 재부착했지?",
+   "new": "그들은 허블의 커넥터 36개를 재부착했지?"
+  },
+  {
+   "id": "재점검1 B5 X:0 gh2-027-1.json #15",
+   "op": "set",
+   "file": "content/lessons/grammar2/gh2-027-1.json",
+   "where": ".blocks[1].items[n=15].text",
+   "old": "나는 그들이 오래 전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다.",
+   "new": "나는 그들이 오래전에 끝났다고 생각했지만 그들은 다시 데이트하고 있다."
+  },
+  {
+   "id": "재점검1 B6 X:0 gh2-033-1.json #1",
+   "op": "set",
+   "file": "content/lessons/grammar2/gh2-033-1.json",
+   "where": ".blocks[1].items[n=1].text",
+   "old": "수십 명의 농장근로자들이 병원으로 보내지기에 충분히 병들었다 (입원해야 할 만큼 병들었다).",
+   "new": "수십 명의 농장 근로자들이 병원으로 보내지기에 충분히 병들었다 (입원해야 할 만큼 병들었다)."
+  },
+  {
+   "id": "재점검1 B7 OK:G04709 d130 n6 ko",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d130[n=6].ko",
+   "old": "1870년에 Estes Park의 한 커다란 숲지대의 땅 한 덩어리를 산 것은 그였다.",
+   "new": "1870년에 Estes Park의 한 커다란 숲 지대의 땅 한 덩어리를 산 것은 그였다."
+  },
+  {
+   "id": "재점검1 B8 X:1 d067 n3 ko",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d067[n=3].ko",
+   "old": "그녀는 그 양조장에 편지를 써서 그들이 그들의 맥주 광고에 LITE라는 단어를 사용할 수 없다고 주장했다.",
+   "new": "그녀는 그 양조장에 편지를 써서 그들이 그들의 맥주 광고에 Lite라는 단어를 사용할 수 없다고 주장했다."
+  },
+  {
+   "id": "재점검1 B9 X:2 d067 n5 ko",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d067[n=5].ko",
+   "old": "그들은 대중이 어느 LITE가 어느 것인지 알기 때문에 “LITE tastes soapy” 광고를 무시하기로 계획했다.",
+   "new": "그들은 대중이 어느 Lite가 어느 것인지 알기 때문에 “Lite tastes soapy” 광고를 무시하기로 계획했다."
+  },
+  {
+   "id": "재점검1 B10 X:3 d067 n7 ko",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d067[n=7].ko",
+   "old": "그 광고는 “LITE는 옷을 빨기에 좋다.”라고 할 것이다.",
+   "new": "그 광고는 “Lite는 옷을 빨기에 좋다.”라고 할 것이다."
+  },
+  {
+   "id": "재점검1 B11 OK:G04854 d204 n7 ko",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d204[n=7].ko",
+   "old": "그는 그 페이스트리(과자)가 그에게 맞지 않다고 말하면서 여러 번 사양하려고 시도했다.",
+   "new": "그는 그 페이스트리(과자)가 그에게 맞지 않는다고 말하면서 여러 번 사양하려고 시도했다."
+  }
+ ]
+}
