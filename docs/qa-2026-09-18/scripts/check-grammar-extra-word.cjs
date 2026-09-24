@@ -141,11 +141,13 @@ for (const it of items) {
   // 'whether … or not' 절 안에 넣은 부정어는 뺌(관문 15, 2026-09-25): 채점이 whether 뒤 'or not' 을 부정으로 세지 않듯(negatesAt)
   // 그 절에 not 을 더해도 뜻이 뒤집히지 않는다 — 'whether not to go' ≈ 'whether to go', 'or not not' 은 말이 안 되는 꼴.
   // 결정 C 로 'whether or not …' 다른 정답이 들어온 뒤 이 꼴이 낱말 차례로 70점이 되어 드러남(gh2-032 #3 · gh2-045 #15). 뺀 수는 따로 찍는다.
+  // 뺄 자리는 whether 뒤부터 그 절의 'or not' 의 not 까지만(3차 점검 권고 — 뒤에 다른 절이 붙어도 그 절의 부정어는 그대로 잼)
   const wi = w.findIndex((x) => /^whether$/i.test(x));
-  const whetherOrNot = wi >= 0 && /\bor\s+not\b/i.test(model);
+  let ni = -1;
+  if (wi >= 0) for (let i = wi + 1; i + 1 < w.length + 1; i++) if (/^or$/i.test(w[i - 1] || "") && /^not[.,]?$/i.test(w[i] || "")) { ni = i; break; }
   for (const [kind, text] of negForms) {
     const at = Number((kind.match(/@(\d+)$/) || [])[1]);
-    if (whetherOrNot && at > wi) { T.negWhether++; continue; }
+    if (ni > wi && at > wi && at <= ni) { T.negWhether++; continue; }
     const g = grade(it, kind, text, T.neg);
     const n = nWords(text);
     if (it.refs.every((r) => n > nWords(r) * 1.15)) { T.negOver.tried++; T.negOver[g]++; }
