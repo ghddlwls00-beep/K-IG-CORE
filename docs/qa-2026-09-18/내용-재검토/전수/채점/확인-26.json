@@ -1,0 +1,3212 @@
+{
+ "파일": "26.md",
+ "뽑은때": "2026-09-25 00:45",
+ "대상": [
+  {
+   "key": "R:grammar2/gh2-050#9",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar2/gh2-050#8",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar2/gh2-048#11",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar2/gh2-048#10",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "B:grammar2/gh2-046#1:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No sooner had she seen him than she turned around and ran away.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉮ '돌아서다' 의 곧은 번역 turn around — No sooner had … than 지킴 · 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#1:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No sooner had she seen him than she turned and ran off.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '달아났다' = ran off(ran away 와 같은 뜻의 흔한 구동사) — 짜임 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#1:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No sooner had she seen him than she turned and fled.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '달아나다' 의 사전 뜻 flee — 짜임 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#2:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "As long as I live, I will never forget this.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 차례대로 as long as 절을 앞에 둔 꼴 — as long as 지킴 · 맞는 영어 · 가장 흔함. 0점(줄임꼴 I'll 도 같음).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#2:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I will never forget this as long as I am alive.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'살아있는 한' 의 곧은 번역 as long as I am alive — 맞는 영어 · 흔함. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Let me know your arrival time so that I can meet you at the station.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '도착 시간' 의 가장 흔한 번역 your arrival time — so that … can 지킴 · 맞는 영어. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Please let me know your arrival time so that I can meet you at the station.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'-해주세요' 의 please + arrival time — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Please let me know the time of your arrival so that I can meet you at the station.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'-해주세요' 를 please 로 옮긴 공손한 부탁 — 모범에 please 만 더함 · 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Let me know when you will arrive so that I can meet you at the station.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'도착 시간을' 을 의문사절 when you will arrive 로 — 맞는 영어 · 흔함 · so that 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#4:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I took every precaution lest I fail again.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "lest 뒤 should 없는 원형(가정법 현재)도 표준 영어 — 학교 문법도 'lest … (should)' 로 가르침 · lest 지킴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#4:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I took all precautions lest I should fail again.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉮ '모든 사전 주의' = all precautions(take all precautions 는 흔한 연어) — lest 지킴. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was such an honest man that everyone trusted him.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉮ '누구나' = everyone(everybody 와 같은 말) — such … that 지킴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#5:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was such an honest person that everybody trusted him.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '사람' 의 곧은 번역 person(모범 man 은 성별을 더함) — such … that 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#5:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was such an honest person that everyone trusted him.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "person + everyone — 두 맞는 꼴을 합침. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "However hard you try, you will never master English in a year.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "양보절의 may 는 빼는 것이 요즘 흔한 꼴 · '못할 것이다' = will never — however 지킴 · 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "However hard you may try, you could never master English within a year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '일 년 내에' 의 곧은 번역 within a year — however 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "However hard you try, you can never master English within a year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "may 없는 양보절 + can never + within — 맞는 영어 · 흔함. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "However hard you may try, you could never master English in one year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'일 년' = one year — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "However hard you try, you will never be able to master English in a year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'마스터하지 못할 것이다' = will never be able to — 맞는 영어 · 흔함. 길이 한도로 0점(같은 꼴이 #7 에서는 70점).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No matter how hard you try, you will never master English in a year.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "양보절 may 뺌 · will never — no matter how 지킴 · 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No matter how hard you may try, you could never master English within a year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '일 년 내에' = within a year — no matter how 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No matter how hard you try, you can never master English within a year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "may 없는 양보절 + can never + within — 맞는 영어. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No matter how hard you may try, you could never master English in one year.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'일 년' = one year — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No matter how hard you try, you will never be able to master English in a year.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'못할 것이다' = will never be able to — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#8:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The better you know him, the more you will like him.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'그를 더 많이 알수록' 을 영어 관용대로 the better you know him — the + 비교급, the + 비교급 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#8:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The more you get to know him, the more you will like him.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'알게 되다' 의 흔한 꼴 get to know — 짜임 지킴 · 맞는 영어. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#8:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The more you know him, the more you are going to like him.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ will ↔ be going to — 한국어 '좋아하게 될 것이다' 가 가르지 않음. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was preparing what he suspected would be the most important announcement in ten years.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '십 년' 의 곧은 번역 ten years(모범 a decade) — what he suspected would be 짜임 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was preparing what he guessed would be the most important announcement in a decade.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '추측하다' 의 사전 첫 뜻 guess — 삽입절 짜임 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was preparing what he guessed would be the most important announcement in ten years.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "guessed + ten years — 두 맞는 꼴을 합침. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was preparing what he suspected would be the most important announcement in 10 years.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "ten years 를 숫자로 — 맞는 표기. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#10:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He came here often last year.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 빈도 부사 often 을 뒤에 — 맞는 영어 · 흔함. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#10:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Last year he often came here.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉰ 한국어 차례처럼 때 부사 last year 를 앞에 — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#10:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Last year, he would often come here.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "다른 정답(would often)의 때 부사를 앞에 — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#12:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Cars are used to come here.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'자동차가' 는 수를 가르지 않음 — 일반 복수 cars 도 맞는 영어 · be used to 부정사(수동) 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#12:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "A car is used to come to this place.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'이곳에' 의 곧은 번역 to this place — 짜임 지킴. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#13:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The professor is preparing the entrance exam.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 한국어 '입학시험을' 은 관사를 가르지 않음 — 곧 치를 그 시험 the 도 자연스러움 · prepare 지킴. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#13:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The professor is preparing the entrance examination.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ the 꼴(모범 낱말 그대로). 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-046#13:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "The professor is preparing an entrance test.",
+    "점수": "0점",
+    "까닭": "entrance test 는 드문 연어 — '입학시험' 은 entrance exam(ination) 이 굳은 말(모범 · 다른 정답이 이미 받음)."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#14:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The student is preparing for the entrance exam.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 한국어가 관사를 가르지 않음 — the 꼴 · prepare for 지킴. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-046#14:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The student is preparing for the entrance examination.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ the 꼴(모범 낱말 그대로). 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He has just got divorced, so he has been a little short lately.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "모범의 줄임꼴 He's(= He has)를 푼 꼴 — 채점이 모범의 He's · he's 를 he is 로 풀어 has 와 어긋남. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He has just got divorced, so he's been a little short lately.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "앞 줄임꼴만 푼 꼴 — 같은 까닭(he's → he is). 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He just got divorced, so he's been a little short lately.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "미국 영어의 just + 과거(just got divorced) — get 수동 지킴 · 맞는 영어 · 흔함. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He's just gotten divorced, so he's been a little short lately.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "미국 영어 과거분사 gotten — 맞는 영어. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He's just got divorced, so he's been a little short of money lately.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '쪼들리다' 의 곧은 번역 short of money — 맞는 영어 · 흔함. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:5",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He's just got divorced, so he's been a little short recently.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '최근에' = recently — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:6",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Because he just got divorced, he has been a little short lately.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'이혼했기 때문에' 의 곧은 번역 because 절 — get 수동(got divorced) 지킴 · 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#2:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "A lot of babies are born to teenagers.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '많은' = a lot of — be born to 지킴 · 맞는 영어. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#2:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Many babies are born to teens.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '십대' = teens — 맞는 영어 · 흔함. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#2:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Lots of babies are born to teenagers.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '많은' = lots of. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What cannot be fixed must be endured.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '고치다' 의 사전 첫 뜻 fix — 수동 짜임 지킴 · 맞는 영어(속담의 낱말은 cure). 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Korea is known to almost everyone in the world.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '거의 모든 사람' 의 가장 흔한 번역 almost everyone · '전 세계의' = in the world — be known to 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Korea is known to almost everyone around the world.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ almost everyone — 모범 around the world 그대로. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Korea is known to nearly all people around the world.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '거의' = nearly. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Korea is known to almost all people in the world.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '전 세계의' = in the world. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Korea is known to almost all people all over the world.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '전 세계' = all over the world. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#7:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Let it be done immediately.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '즉시' 의 사전 첫 뜻 immediately — Let + 목적어 + be 과거분사 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#7:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Let it be done right away.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '즉시' = right away. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-047#8:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "They expect that they will vote on Friday.",
+    "점수": "0점",
+    "까닭": "#8(능동 expect to) ↔ #9(수동 be expected to) 짝이 가르치는 to 부정사를 that 절로 피함."
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-047#8:1",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "They expect they will vote on Friday.",
+    "점수": "0점",
+    "까닭": "같은 까닭 — to 부정사를 (that 없는) 절로 피함."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "More than 24 sailors were killed and 35 more were wounded.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '선원' 의 가장 흔한 번역 sailors — 수동 짜임 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "More than 24 seamen were killed and 35 more were injured.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '부상당했다' 의 가장 흔한 번역 were injured. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Over 24 seamen were killed and 35 more were wounded.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉮ '넘는' = over — 맞는 영어 · 흔함. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "More than 24 seamen were killed and another 35 were wounded.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'35명이 더' = another 35 — 맞는 영어 · 흔함. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "More than twenty-four sailors were killed and thirty-five more were injured.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "다른 정답처럼 수를 글로 쓴 꼴 + sailors · injured — 더할 다른 정답의 글자 수 꼴도 함께 받아야 함. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was hoping to be allowed to return home.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "hope to be allowed(to 부정사 수동) — 맞는 영어 · 가장 흔한 꼴 · be allowed to 지킴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was hoping he would be allowed to return home.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 맞는 영어 · 흔함. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was hoping that he would be allowed to go home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '집으로 돌아가다' = go home — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was hoping that he would be allowed to go back home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '돌아가다' 의 곧은 번역 go back. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was hoping that he would be allowed to return to his country.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "괄호 '(귀국하도록)' 의 곧은 번역 return to his country. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#12:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "My car got rear-ended by a truck.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "get 수동(같은 과 #1 got divorced 의 꼴) — 맞는 영어 · 구어에서 가장 흔함. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#12:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "My car was hit from behind by a truck.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '추돌당하다' 를 풀어 쓴 hit from behind — 수동 by 지킴 · 맞는 영어. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#13:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The monks are followed by a wooden casket.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '관' = casket(미국 영어) — 수동 짜임 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#13:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The monks are followed by the wooden coffin.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 한국어 '나무 관에' 는 관사를 가르지 않음 — 장례 행렬의 그 관 the 도 자연스러움. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#14:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The monks followed a wooden casket.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '관' = casket. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#14:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The monks followed the wooden coffin.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 관사를 가르지 않는 한국어 — the 꼴(#13 과 같음). 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#14:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The monks followed behind a wooden coffin.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'따라갔다' = followed behind(흔한 꼴) — 맞는 영어 · #13 수동과 짝인 능동 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The poor boy was taken good care of by a kind lady.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "take good care of 의 수동 was taken good care of — 가장 흔한 꼴 · 구동사 수동 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The poor boy was well looked after by a kind lady.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '보호받다(돌봄을 받다)' = be looked after — 구동사 수동 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The poor boy was well cared for by a kind lady.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ be cared for — 구동사 수동 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The poor boy was well taken care of by a kind woman.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '부인' = woman. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was believed to be an honest man by everyone.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '모든 사람' 의 가장 흔한 번역 everyone — be believed to be 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was believed to be an honest person by everybody.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '사람' = person · '모든 사람' = everybody. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was believed to be an honest person by all.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '사람' = person(모범 man 은 성별을 더함). 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was believed by everyone to be an honest man.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉰ by 구를 동사 바로 뒤에 — 맞는 영어 · 흔함. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It used to be thought that the sun went around the earth.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "접속사 that + 미국 영어 around — 맞는 영어 · 가장 흔한 꼴. 0점(that 하나 더 · around 가 함께 걸림).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It used to be thought the sun went around the earth.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉮ round ↔ around(미국 영어) — 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It was once thought that the sun went around the earth.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'생각된 적이 있었다' 의 곧은 번역 It was once thought — 가주어 It 수동 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It used to be thought that the sun revolved around the earth.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '돈다' = revolve around(천문에서 가장 흔한 말). 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-047#17:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "It used to be thought that the sun went round the earth.",
+    "점수": "70점",
+    "까닭": "기능어 that 하나 더 — 결정 2(70점)."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#18:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are credit cards accepted here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '받다' 의 가장 흔한 번역 accept(Are credit cards accepted here? 는 굳은 말) — 수동 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#18:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are credit cards honoured here?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 철자 honoured — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Your reservation has been made for flight 208 leaving for Chicago on Friday at 2 p.m.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "괄호 '(예약이 되어 있습니다)' 의 곧은 번역 has been made(현재완료 수동) + on Friday — 맞는 영어 · 가장 흔한 꼴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Your reservation has been made for flight 208 leaving for Chicago Friday at 2 p.m.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "has been made — 수동 지킴 · 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Your reservation is made for flight 208 departing for Chicago Friday at 2 p.m.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '떠나는' = departing. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Your reservation is made for flight 208 leaving for Chicago at 2 p.m. on Friday.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉰ 영어의 보통 차례 '시각 + 요일'(at 2 p.m. on Friday) — 맞는 영어 · 가장 흔함. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Your booking is made for flight 208 leaving for Chicago Friday at 2 p.m.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '예약' = booking(영국 영어). 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#1:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If I had enough money, I would buy a diamond ring for you.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "buy A for B(3형식) — 가정법 과거 지킴 · 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#1:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If I had enough money, I would get you a diamond ring.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '사 주다' = get(구어에서 흔함) — 가정법 과거 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If I had known your telephone number, I would have called you.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '전화번호' = telephone number — 가정법 과거완료 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#3:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If I had known your phone number, I would have phoned you.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '전화하다' = phone(영국 영어에서 흔함). 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I wish I had a room booked for tonight.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '예약하다' = book — have + 목적어 + 과거분사 · 가정법 과거 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#6:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I wish I hadn't gotten a ticket for running a red light.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "미국 영어 과거분사 gotten — 가정법 과거완료 지킴 · 맞는 영어. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#6:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I wish I hadn't received a ticket for running a red light.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '딱지를 떼다' = receive a ticket. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-048#7:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "I wish this wasn't a formal party.",
+    "점수": "70점",
+    "까닭": "이 과가 가르치는 가정법 were 를 구어 was 로 — 가르칠 점, 70점이면 됨."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#8:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The missile could have given Argentina victory in the war.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '가져다주다' = give — could have 과거분사 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#8:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The missile could have brought Argentina victory in the war.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '가져다주다' 의 곧은 번역 bring. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#8:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The missile could have brought victory to Argentina in the war.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "bring A to B(3형식) — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If they had had the ability to earn money, they would have had food and clothing.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '돈을 벌다' 의 사전 첫 뜻 earn money — 가정법 과거완료 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#9:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If they had had the ability to earn money, they would have had food and clothes.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "earn + 다른 정답의 clothes. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If he had not flunked a grade, he would be in high school now.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 차례대로 if 절을 앞에 — 혼합 가정법 지킴 · 맞는 영어 · 가장 흔한 꼴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If he hadn't failed a grade, he would be in high school now.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '낙제하다' 의 사전 첫 뜻 fail(flunk 는 구어). 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He would be in high school now if he hadn't failed a grade.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ fail — 모범 차례 그대로. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He would now be in high school if he had not flunked a grade.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ now 를 be 앞에 — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#11:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If the blood products had been heat-treated, they could not have been infected with the HIV virus.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 'HIV 바이러스' 를 곧게 옮긴 the HIV virus — 군더더기지만 흔히 쓰는 말 · 짜임 지킴. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#11:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If the blood product had been heat-treated, they could not have been infected with HIV.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'그 혈액 제품' 은 수를 가르지 않음 — 단수도 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#12:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I should have known you were telling a lie.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '거짓말하다' = tell a lie — should have known 지킴. 길이 한도로 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#13:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If only I hadn't made him a promise.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '약속하다' = make a promise — If only 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#14:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If it were not for the sun, nothing would be able to live.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'살 수 없을 것이다' = would not be able to — If it were not for 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#16:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If you should not go, he will go.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "다른 정답 'Should you not go, he will go.' 의 if 꼴 — 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-048#16:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "If you're not going, he will go.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'가지 않는다면' = if you're not going(흔한 구어) — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#2:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He told me he owed me an apology.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 간접화법 told · 시제 일치 지킴 · 맞는 영어 · 흔함. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask, \"Do you accept a 100 dollar bill?\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '받다' = accept(지폐 · 카드를 받다의 흔한 말) — 직접화법 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask, \"Do you take 100 dollar bills?\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'100달러 지폐' 를 일반 복수로 — 맞는 영어 · 흔함. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask, \"Do you take a one hundred dollar bill?\"",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'100' = one hundred — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask, \"Do you accept $100 bills?\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "accept + 일반 복수 — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#4:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask whether they take a 100 dollar bill.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "간접 의문의 whether(if 와 같음) — 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#4:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask if they accept a 100 dollar bill.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '받다' = accept. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#4:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He will ask if they take 100 dollar bills.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "일반 복수 — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The cashier asked me, \"Do you want large bills?\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '출납계원' = cashier(사전 뜻) — 직접화법 지킴. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#5:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The teller asked me, \"Would you like large bills?\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "높임말 '원하십니까' 의 공손한 꼴 Would you like — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#5:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The teller asked me, \"Do you want big bills?\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '고액권' = big bills(구어). 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#6:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The teller asked me whether I wanted large bills.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "간접 의문의 whether — 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#6:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The cashier asked me if I wanted large bills.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ cashier. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#6:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The teller asked me if I would like large bills.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#5 의 Would you like 를 옮긴 간접화법 — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#7:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The bank teller said, \"You had better have an account at this bank.\"",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "an account at this bank(흔한 전치사) — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#7:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The bank teller said, \"It would be good to have an account with this bank.\"",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "인용 안 '갖는 것이 좋을 것입니다' 의 곧은 번역 — 이 과의 꼴(직접화법 said, \"…\")은 지킴 · 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The bank teller recommended that I should have an account with the bank.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "학교 문법의 recommend that + 주어 + should 원형 — 맞는 영어. 길이 한도로 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The bank teller advised me to have an account with the bank.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '권했다' = advised — had better 의 간접화법으로 학교 문법이 가르치는 advise + 목적어 + to. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The bank teller suggested I have an account with the bank.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '권하다' = suggest(가정법 현재 지킴). 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The bank teller recommended I have an account at the bank.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "an account at the bank — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She said, \"This is a little something for you for your graduation.\"",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "for your graduation — 맞는 영어 · 흔함(짝 #10 은 for · on 둘 다 받음 — 한 과 안 흔들림). 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#10:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She said it was a little something for me for my graduation.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 맞는 영어 · 흔함. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#10:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She said it was a little something for me on my graduation.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "that 생략 + 다른 정답의 on. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#11:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He asked, \"Do you not have any vacancies?\"",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "모범 Don't you have 의 줄이지 않은 꼴은 Do you not have — 채점이 don't you 를 do not you 로 풀어 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#12:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He asked whether they had any vacancies.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "간접 의문의 whether — 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-049#12:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "He asked them if they had any vacancies.",
+    "점수": "70점",
+    "까닭": "기능어 them 하나 더 — 결정 2(70점)."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-049#14:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said honesty is the best policy.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 맞는 영어 · 흔함 · 격언 현재 지킴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#2:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He told me he loved me.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 간접화법 told · 시제 일치 지킴 · 맞는 영어 · 흔함. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-050#2:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "He told me that he loves me.",
+    "점수": "70점",
+    "까닭": "이 문항이 가르치는 시제 일치(loved)를 따르지 않음 — 70점이면 됨."
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-050#2:1",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "He said to me that he loved me.",
+    "점수": "0점",
+    "까닭": "간접화법 told 를 said to me 로 — 이 과 꼴을 피함."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#4:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He told me he had loved me.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 과거완료 시제 일치 지킴 · 맞는 영어. 70점(줄임꼴 he'd loved 도 같음).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said, \"I saw him stealing the money yesterday.\"",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "지각동사 + -ing('훔치는 것을') — 맞는 영어 · 직접화법 지킴. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#5:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said, \"Yesterday I saw him steal the money.\"",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 때 부사 yesterday 를 앞에 — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#6:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said he had seen him steal the money the day before.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 맞는 영어. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#6:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said that he had seen him steal the money the previous day.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'그 전날' = the previous day — 학교 문법이 yesterday 의 간접화법으로 the day before 와 함께 가르치는 꼴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#6:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said that he had seen him stealing the money the day before.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "지각동사 + -ing — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#8:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He said Alexander conquered the Persian Empire.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "접속사 that 생략 — 맞는 영어 · 역사적 사실 과거 지킴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-050#8:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "He said that Alexander had conquered the Persian Empire.",
+    "점수": "70점",
+    "까닭": "이 문항이 가르치는 '역사적 사실은 시제 일치의 예외(과거 그대로)' 를 따르지 않음 — 70점이면 됨."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I know the president accepted the Secretary's suggestion that he hold the summit in Washington.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '개최하다' 의 가장 흔한 번역 hold — 동격 that + 원형 지킴. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#9:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I know the president accepted the minister's suggestion that he convene the summit in Washington.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '장관' 의 사전 첫 뜻 minister. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#9:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I know the president accepted the Secretary's proposal that he convene the summit in Washington.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '제안' = proposal. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-050#9:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "I know that the president accepted the Secretary's suggestion that he convene the summit in Washington.",
+    "점수": "70점",
+    "까닭": "기능어 that 하나 더 — 결정 2(70점)."
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-050#9:1",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "I know the president accepted the Secretary's suggestion that he should convene the summit in Washington.",
+    "점수": "70점",
+    "까닭": "기능어 should 하나 더 — 결정 2(70점)."
+   }
+  },
+  {
+   "key": "S:grammar2/gh2-050#9:2",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "I know the president accepted the Secretary's suggestion to hold the summit in Washington.",
+    "점수": "0점",
+    "까닭": "이 문항이 가르치는 동격 that 절 + 원형(가정법 현재)을 to 부정사로 피함."
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Japanese officials sought to protect drug companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'일본의 관리들' 의 가장 흔한 번역 Japanese officials — 결과의 분사구문 지킴. 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Japan's officials tried to protect drug companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '-하려 했다' 의 가장 흔한 번역 tried to. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Japan's officials sought to protect pharmaceutical companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '제약 회사' 의 곧은 번역 pharmaceutical companies. 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Japan's officials sought to protect drug companies from competition, failing to stop the spread of HIV among hemophiliacs.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ '막다' = stop. 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Japan's officials sought to protect drug companies from competition, failing to prevent the spread of HIV among haemophiliacs.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 철자 haemophiliacs — 맞는 영어. 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:5",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Japanese officials tried to protect pharmaceutical companies from competition, failing to prevent the spread of HIV among hemophiliacs.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위 세 흔한 번역을 합친 꼴 — 맞는 영어. 0점.",
+    "확신": "보통"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "R:grammar2/gh2-050#8",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "He said that Alexander conquered the Persian Empire.",
+     "점수": "만점"
+    },
+    {
+     "답": "He said Alexander conquered the Persian Empire.",
+     "점수": "70점"
+    },
+    {
+     "답": "He said that Alexander had conquered the Persian Empire.",
+     "점수": "70점"
+    },
+    {
+     "답": "He said Alexander had conquered the Persian Empire.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He said Alexander conquered the Persian Empire.",
+     "점수": "70점",
+     "까닭": "간접화법의 that 생략 — 맞고 흔한 영어. 한국어 '~고 말했다' 는 that 유무를 가르지 않고, 이 문항이 가르치는 꼴(역사적 사실은 시제 일치 없이 과거 그대로)을 지킴. 기능어를 하나 '덜' 쓴 꼴이라 결정 2(하나 더) 아님 · 70점",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He said that Alexander had conquered the Persian Empire.",
+     "점수": "70점",
+     "까닭": "과거완료로 민 꼴 — #7→#8 이 가르치는 시제 일치의 예외(역사적 사실은 과거 그대로)를 피함(기능어 had 하나 더라 결정 2 로도 70점)"
+    },
+    {
+     "답": "He said Alexander had conquered the Persian Empire.",
+     "점수": "70점",
+     "까닭": "과거완료 — 이 문항이 가르치는 역사적 사실 예외를 피한 꼴"
+    }
+   ],
+   "까닭": "모범 하나뿐 — that 생략 꼴이 70점(막힘 낮음). 과거완료 꼴은 강의 꼴을 피해 안 적음.",
+   "때": "2026-09-25 00:53"
+  },
+  {
+   "key": "R:grammar2/gh2-050#9",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he convene the summit in Washington.",
+     "점수": "만점"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion that he convene the summit in Washington.",
+     "점수": "0점"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he hold the summit in Washington.",
+     "점수": "0점"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion that he hold the summit in Washington.",
+     "점수": "0점"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he host the summit in Washington.",
+     "점수": "0점"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion that he host the summit in Washington.",
+     "점수": "0점"
+    },
+    {
+     "답": "I know that the president accepted the Secretary's suggestion that he convene the summit in Washington.",
+     "점수": "70점"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he should convene the summit in Washington.",
+     "점수": "70점"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion to hold the summit in Washington.",
+     "점수": "0점"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion to hold the summit in Washington.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I know the president accepted the minister's suggestion that he convene the summit in Washington.",
+     "점수": "0점",
+     "까닭": "장관 = minister(사전 첫 뜻) — 한국어 문제는 어느 나라 장관인지 말하지 않고 문법 · 뜻이 맞음. 워싱턴 · 대통령으로 미국 각료(Secretary)를 뜻한다고 보면 minister 는 덜 정확해 확신 보통 · 0점",
+     "확신": "보통"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he hold the summit in Washington.",
+     "점수": "0점",
+     "까닭": "개최하다 = hold(사전 첫 뜻 · 'hold a summit' 가 가장 흔한 연어) — that 절 원형(가정법 현재) 꼴 그대로, 뜻 같음 · 0점",
+     "확신": "높음"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion that he hold the summit in Washington.",
+     "점수": "0점",
+     "까닭": "minister + hold — 둘 다 흔한 번역의 조합 · 0점",
+     "확신": "보통"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he host the summit in Washington.",
+     "점수": "0점",
+     "까닭": "개최하다 = host(주최하다) — 'host a summit' 도 흔함, 꼴 그대로 · 0점",
+     "확신": "보통"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion that he host the summit in Washington.",
+     "점수": "0점",
+     "까닭": "minister + host 조합 · 0점",
+     "확신": "보통"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion to hold the summit in Washington.",
+     "점수": "0점",
+     "까닭": "'개최하라는 제안' = suggestion to hold — 명사 suggestion + to 부정사도 맞고 흔하며 한국어에 행위자가 없어 더 곧은 번역. 명령 전달의 to 부정사도 이 과(화법)의 꼴. 다만 이 문항의 요점이 that 절 원형(가정법 현재 — 과거 accepted 뒤에도 원형)이라고 보면 그 꼴을 피한 것이라 확신 보통 · 0점",
+     "확신": "보통"
+    },
+    {
+     "답": "I know the president accepted the minister's suggestion to hold the summit in Washington.",
+     "점수": "0점",
+     "까닭": "minister + to hold 조합 — 위 둘의 까닭 · 0점",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I know that the president accepted the Secretary's suggestion that he convene the summit in Washington.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 쓴 꼴 70점"
+    },
+    {
+     "답": "I know the president accepted the Secretary's suggestion that he should convene the summit in Washington.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 should 하나 더(영국식 should 꼴 · 맞는 영어지만 하나 더 쓴 꼴은 결정 2 로 70점)"
+    }
+   ],
+   "까닭": "모범 하나뿐(Secretary · convene) — 장관 · 개최하다의 흔한 번역(minister · hold · host)과 to 부정사 꼴이 모두 0점.",
+   "때": "2026-09-25 00:53"
+  },
+  {
+   "key": "R:grammar2/gh2-048#10",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "He would be in high school now if he hadn't flunked a grade.",
+     "점수": "만점"
+    },
+    {
+     "답": "If he had not flunked a grade, he would be in high school now.",
+     "점수": "70점"
+    },
+    {
+     "답": "If he had not flunked a grade, he would now be in high school.",
+     "점수": "0점"
+    },
+    {
+     "답": "He would now be in high school if he had not flunked a grade.",
+     "점수": "70점"
+    },
+    {
+     "답": "He would be in high school now if he had not failed a grade.",
+     "점수": "0점"
+    },
+    {
+     "답": "If he had not failed a grade, he would be in high school now.",
+     "점수": "0점"
+    },
+    {
+     "답": "Had he not failed a grade, he would be in high school now.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "If he had not flunked a grade, he would be in high school now.",
+     "점수": "70점",
+     "까닭": "if 절을 앞에 — 한국어 차례 그대로 · 혼합 가정법 꼴 그대로. 모범(if 절 뒤)과 대체(Had 도치)에 if 절 앞 꼴이 없음 · 70점(줄임꼴 hadn't 도 같은 70점)",
+     "확신": "높음"
+    },
+    {
+     "답": "If he had not flunked a grade, he would now be in high school.",
+     "점수": "0점",
+     "까닭": "if 절 앞 + now 자리(would now be) — 흔한 부사 자리, 뜻 같음 · 0점",
+     "확신": "보통"
+    },
+    {
+     "답": "He would now be in high school if he had not flunked a grade.",
+     "점수": "70점",
+     "까닭": "now 자리만 다름(would now be — '지금 고등학교에' 차례) · 70점",
+     "확신": "보통"
+    },
+    {
+     "답": "He would be in high school now if he had not failed a grade.",
+     "점수": "0점",
+     "까닭": "낙제하다 = fail(사전 첫 뜻 · flunk 는 그 구어) — 'fail a grade' 도 흔한 미국 영어, 꼴 그대로 · 0점",
+     "확신": "높음"
+    },
+    {
+     "답": "If he had not failed a grade, he would be in high school now.",
+     "점수": "0점",
+     "까닭": "fail + if 절 앞(한국어 차례) · 0점",
+     "확신": "높음"
+    },
+    {
+     "답": "Had he not failed a grade, he would be in high school now.",
+     "점수": "0점",
+     "까닭": "fail + Had 도치(이 과의 꼴 · 대체에 flunk 로만 있음) · 0점",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "까닭": "if 절 앞 꼴이 모범 · 대체에 없어 70점 · 낙제하다=fail 은 모든 꼴 0점 · now 자리 바뀐 꼴 0/70점.",
+   "때": "2026-09-25 00:53"
+  },
+  {
+   "key": "R:grammar2/gh2-048#11",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "If the blood products had been heat-treated, they couldn't have been infected with HIV.",
+     "점수": "만점"
+    },
+    {
+     "답": "If the blood products had been heat-treated, they could not have been infected with the HIV virus.",
+     "점수": "70점"
+    },
+    {
+     "답": "If the blood product had been heat-treated, they could not have been infected with HIV.",
+     "점수": "70점"
+    },
+    {
+     "답": "Had the blood products been heat treated, they could not have been infected with HIV.",
+     "점수": "70점"
+    },
+    {
+     "답": "Had the blood products been heat-treated, they could not have been infected with the HIV virus.",
+     "점수": "70점"
+    },
+    {
+     "답": "If the blood products had been heat-treated, they could not have been infected by HIV.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "If the blood products had been heat-treated, they could not have been infected with the HIV virus.",
+     "점수": "70점",
+     "까닭": "한국어 문제가 'HIV 바이러스' — 그대로 옮긴 'the HIV virus' 는 겹말이라 문체 지침은 피하라 하지만 문법이 맞고 뉴스 · 일상에 매우 흔함 · 70점",
+     "확신": "보통"
+    },
+    {
+     "답": "If the blood product had been heat-treated, they could not have been infected with HIV.",
+     "점수": "70점",
+     "까닭": "'그 혈액 제품' 은 수를 가르지 않음 — 단수 the blood product 도 맞는 영어 · 70점",
+     "확신": "보통"
+    },
+    {
+     "답": "Had the blood products been heat treated, they could not have been infected with HIV.",
+     "점수": "70점",
+     "까닭": "붙임표 없는 heat treated 를 if 꼴 대체로는 받는데 도치(이 과의 꼴) 짝이 없음 · 70점",
+     "확신": "보통"
+    },
+    {
+     "답": "Had the blood products been heat-treated, they could not have been infected with the HIV virus.",
+     "점수": "70점",
+     "까닭": "Had 도치 + 'the HIV virus'(한국어 그대로) 조합 · 70점",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "If the blood products had been heat-treated, they could not have been infected by HIV.",
+     "점수": "70점",
+     "까닭": "사전 연어는 infect A with B — 사람이 병에 걸린 뜻의 by 는 덜 흔한 꼴이라 전치사 하나 바뀐 70점이 맞음"
+    }
+   ],
+   "까닭": "모범 · 대체 셋 — HIV virus(한국어 그대로) · 단수 product · 도치+붙임표 없음이 70점.",
+   "때": "2026-09-25 00:53"
+  },
+  {
+   "key": "B:grammar2/gh2-046#1:0",
+   "결론": "동의",
+   "까닭": "turn around 는 '돌아서다' 의 곧은 번역 — 맞고 흔한 영어 · No sooner had … than 지킴 · 뜻 같음(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#1:1",
+   "결론": "동의",
+   "까닭": "ran off = ran away(같은 뜻의 흔한 구동사) — 맞는 영어 · 짜임 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#1:2",
+   "결론": "동의",
+   "까닭": "flee(fled) 는 '달아나다' 의 사전 뜻 — 맞는 영어 · 짜임 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#2:0",
+   "결론": "동의",
+   "까닭": "as long as 절을 앞에 — 한국어 차례 그대로 · 맞고 가장 흔한 꼴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#2:1",
+   "결론": "동의",
+   "까닭": "as long as I am alive 는 '살아있는 한' 의 곧은 번역 — 맞는 영어(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:0",
+   "결론": "동의",
+   "까닭": "your arrival time 은 '도착 시간' 의 가장 흔한 말 — so that … can 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:1",
+   "결론": "동의",
+   "까닭": "please 는 '-해주세요' 를 옮긴 것 + arrival time — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:2",
+   "결론": "동의",
+   "까닭": "please 하나 더 — 기능어가 아니라 결정 2 아님, 한국어 '-해주세요' 그대로 · 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#3:3",
+   "결론": "동의",
+   "까닭": "간접의문 when you will arrive(명사절이라 will 맞음) — 뜻 같음 · so that 지킴 · 흔한 풀어쓰기(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#4:0",
+   "결론": "동의",
+   "까닭": "lest + 원형(가정법 현재)은 표준 영어(특히 미국) — lest 지킴, should 하나 덜(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#4:1",
+   "결론": "동의",
+   "까닭": "take all precautions 도 쓰이는 연어 — 뜻 같음 · lest 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#5:0",
+   "결론": "동의",
+   "까닭": "everyone = everybody — such … that 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#5:1",
+   "결론": "동의",
+   "까닭": "person 은 '사람' 의 곧은 번역 — 맞는 영어 · 짜임 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#5:2",
+   "결론": "동의",
+   "까닭": "person + everyone — 둘 다 맞는 꼴의 조합(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:0",
+   "결론": "동의",
+   "까닭": "양보절의 may 생략 · will never('못할 것이다') — 맞고 흔함 · however 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:1",
+   "결론": "동의",
+   "까닭": "within a year 는 '일 년 내에' 의 곧은 번역 — however 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:2",
+   "결론": "동의",
+   "까닭": "may 없는 양보절 + can never + within — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:3",
+   "결론": "동의",
+   "까닭": "in one year('일 년') — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#6:4",
+   "결론": "동의",
+   "까닭": "will never be able to 는 '못할 것이다' 그대로 — 맞는 영어(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:0",
+   "결론": "동의",
+   "까닭": "양보절 may 생략 · will never — no matter how 지킴 · 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:1",
+   "결론": "동의",
+   "까닭": "within a year — no matter how 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:2",
+   "결론": "동의",
+   "까닭": "may 없는 양보절 + can never + within — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:3",
+   "결론": "동의",
+   "까닭": "in one year — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#7:4",
+   "결론": "동의",
+   "까닭": "will never be able to — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#8:0",
+   "결론": "동의",
+   "까닭": "the better you know him 은 영어의 관용 — the 비교급, the 비교급 지킴 · 뜻 같음(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#8:1",
+   "결론": "동의",
+   "까닭": "get to know 는 이 문장에서 가장 자연스러운 꼴 — 짜임 지킴(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#8:2",
+   "결론": "동의",
+   "까닭": "will ↔ be going to — 한국어 '좋아하게 될 것이다' 가 가르지 않음(기준 ㉱)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:0",
+   "결론": "동의",
+   "까닭": "ten years 는 '십 년' 의 곧은 번역 — what he suspected would be 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:1",
+   "결론": "동의",
+   "까닭": "guess 는 '추측하다' 의 사전 뜻 — what he guessed would be 도 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:2",
+   "결론": "동의",
+   "까닭": "guessed + ten years 조합(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#9:3",
+   "결론": "동의",
+   "까닭": "10 years 숫자 표기 — 맞는 표기(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#10:0",
+   "결론": "동의",
+   "까닭": "often 을 뒤에 — 맞고 흔함(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#10:1",
+   "결론": "동의",
+   "까닭": "때 부사 last year 를 앞에 — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#10:2",
+   "결론": "동의",
+   "까닭": "다른 정답 would often 의 때 부사 앞 꼴 — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#12:0",
+   "결론": "동의",
+   "까닭": "'자동차가' 는 수를 가르지 않음 — 일반 복수 cars · be used to 부정사(수동) 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#12:1",
+   "결론": "동의",
+   "까닭": "to this place 는 '이곳에' 의 곧은 번역 — 맞는 영어(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#13:0",
+   "결론": "동의",
+   "까닭": "관사를 가르지 않는 한국어 — 곧 치를 그 시험 the 도 자연스러움(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#13:1",
+   "결론": "동의",
+   "까닭": "the + examination — 같은 까닭(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-046#13:0",
+   "결론": "동의",
+   "까닭": "입학시험은 entrance exam(ination) 이 굳은 말이고 모범 · 다른 정답이 둘 다 받음 — entrance test 는 덜 쓰는 꼴이라 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#14:0",
+   "결론": "동의",
+   "까닭": "the entrance exam — 그 시험 · prepare for 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-046#14:1",
+   "결론": "동의",
+   "까닭": "the + examination(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:0",
+   "결론": "동의",
+   "까닭": "모범 He's(= He has)를 푼 맞는 꼴 — 채점이 he's 를 늘 he is 로 풀어 70점(채점 빈틈)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:1",
+   "결론": "동의",
+   "까닭": "앞만 푼 꼴 — 같은 까닭(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:2",
+   "결론": "동의",
+   "까닭": "미국 영어 just + 과거 · get 수동 지킴 — 맞고 흔함(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:3",
+   "결론": "동의",
+   "까닭": "미국 영어 과거분사 gotten — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:4",
+   "결론": "동의",
+   "까닭": "short of money 는 '쪼들리다' 를 분명히 옮긴 꼴 — 맞는 영어(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:5",
+   "결론": "동의",
+   "까닭": "recently = 최근에 · 현재완료와 맞음(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#1:6",
+   "결론": "동의",
+   "까닭": "because 절('이혼했기 때문에') · got divorced 수동 지킴 — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#2:0",
+   "결론": "동의",
+   "까닭": "a lot of = 많은 — be born to 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#2:1",
+   "결론": "동의",
+   "까닭": "teens = teenagers — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#2:2",
+   "결론": "동의",
+   "까닭": "lots of = 많은(구어지만 맞음)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#3:0",
+   "결론": "동의",
+   "까닭": "'고치다' = fix — 수동 짜임 지킴 · 뜻 같음. 속담 낱말(cure)은 아니지만 틀린 영어 아님(0점) · 확신 보통 그대로",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:0",
+   "결론": "동의",
+   "까닭": "almost everyone · in the world — 가장 흔한 꼴 · be known to 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:1",
+   "결론": "동의",
+   "까닭": "almost everyone + around the world(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:2",
+   "결론": "동의",
+   "까닭": "nearly = 거의(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:3",
+   "결론": "동의",
+   "까닭": "in the world = 전 세계의(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#5:4",
+   "결론": "동의",
+   "까닭": "all over the world = 전 세계(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#7:0",
+   "결론": "동의",
+   "까닭": "immediately = 즉시(사전 첫 뜻) — Let + 목적어 + be p.p. 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#7:1",
+   "결론": "동의",
+   "까닭": "right away = 즉시(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-047#8:0",
+   "결론": "동의",
+   "까닭": "expect to V(#8) ↔ be expected to V(#9) 짝의 to 부정사를 that 절로 피함 · 주어가 같은데 that 절은 어색 — 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-047#8:1",
+   "결론": "동의",
+   "까닭": "같은 까닭 — to 부정사를 절로 피함",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:0",
+   "결론": "동의",
+   "까닭": "sailors = 선원(가장 흔한 말) — 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:1",
+   "결론": "동의",
+   "까닭": "injured = 부상당하다(가장 흔한 말)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:2",
+   "결론": "동의",
+   "까닭": "over = 넘는 — 맞고 흔함(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:3",
+   "결론": "동의",
+   "까닭": "another 35 = 35명이 더 — 맞고 흔함(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#10:4",
+   "결론": "동의",
+   "까닭": "글자 수 꼴 + sailors + injured 조합 — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:0",
+   "결론": "동의",
+   "까닭": "hope to be allowed(to 부정사 수동) — 가장 흔한 꼴 · be allowed to 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:1",
+   "결론": "동의",
+   "까닭": "that 생략 — 맞고 흔함(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:2",
+   "결론": "동의",
+   "까닭": "go home = 집으로 돌아가다(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:3",
+   "결론": "동의",
+   "까닭": "go back home — 맞는 영어(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#11:4",
+   "결론": "동의",
+   "까닭": "return to his country 는 괄호 '(귀국하도록)' 의 곧은 번역(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#12:0",
+   "결론": "동의",
+   "까닭": "get 수동(구어에서 흔함 · 같은 과 #1 got divorced) — 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#12:1",
+   "결론": "동의",
+   "까닭": "hit from behind 는 '추돌당하다' 를 푼 곧은 번역 — 수동 by 지킴(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#13:0",
+   "결론": "동의",
+   "까닭": "casket = 관(미국 영어) — 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#13:1",
+   "결론": "동의",
+   "까닭": "관사를 가르지 않는 한국어 — 장례 행렬의 그 관 the 도 자연스러움(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#14:0",
+   "결론": "동의",
+   "까닭": "casket(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#14:1",
+   "결론": "동의",
+   "까닭": "the 꼴 — #13 과 같은 까닭(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#14:2",
+   "결론": "동의",
+   "까닭": "follow behind 는 흔한 꼴 — 능동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:0",
+   "결론": "동의",
+   "까닭": "was taken good care of — take good care of 의 수동, 가장 흔함(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:1",
+   "결론": "동의",
+   "까닭": "be looked after — 구동사 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:2",
+   "결론": "동의",
+   "까닭": "be cared for — 구동사 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#15:3",
+   "결론": "동의",
+   "까닭": "woman = 부인(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:0",
+   "결론": "동의",
+   "까닭": "by everyone — 가장 흔함 · be believed to be 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:1",
+   "결론": "동의",
+   "까닭": "person + everybody(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:2",
+   "결론": "동의",
+   "까닭": "person(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#16:3",
+   "결론": "동의",
+   "까닭": "by 구를 동사 뒤로 — 맞고 오히려 더 자연스러움(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:0",
+   "결론": "동의",
+   "까닭": "that + around 가 함께 걸려 0점(that 하나만이면 결정 2 로 70점) — 맞는 영어",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:1",
+   "결론": "동의",
+   "까닭": "around(미국 영어) — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:2",
+   "결론": "동의",
+   "까닭": "It was once thought 는 '생각된 적이 있었다' 의 곧은 번역 — 가주어 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#17:3",
+   "결론": "동의",
+   "까닭": "revolve around — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-047#17:0",
+   "결론": "동의",
+   "까닭": "that 하나 더 — 결정 2(70점) · 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#18:0",
+   "결론": "동의",
+   "까닭": "Are credit cards accepted here? 는 굳은 말 — 수동 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#18:1",
+   "결론": "동의",
+   "까닭": "영국 철자 honoured — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:0",
+   "결론": "동의",
+   "까닭": "has been made(괄호 '예약이 되어 있습니다') + on Friday — 맞고 가장 흔함(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:1",
+   "결론": "동의",
+   "까닭": "has been made — 수동 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:2",
+   "결론": "동의",
+   "까닭": "departing = 떠나는(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:3",
+   "결론": "동의",
+   "까닭": "at 2 p.m. on Friday — 영어의 보통 차례(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-047#19:4",
+   "결론": "동의",
+   "까닭": "booking = 예약(영국)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#1:0",
+   "결론": "동의",
+   "까닭": "buy A for B — 맞는 영어 · 가정법 과거 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#1:1",
+   "결론": "동의",
+   "까닭": "get you = 사 주다(구어에서 흔함)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#3:0",
+   "결론": "동의",
+   "까닭": "telephone number(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#3:1",
+   "결론": "동의",
+   "까닭": "phone = 전화하다(영국에서 흔함)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#5:0",
+   "결론": "동의",
+   "까닭": "book = 예약하다 — have + 목적어 + p.p. · 가정법 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#6:0",
+   "결론": "동의",
+   "까닭": "미국 영어 gotten — 가정법 과거완료 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#6:1",
+   "결론": "동의",
+   "까닭": "receive a ticket — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-048#7:0",
+   "결론": "동의",
+   "까닭": "가정법 과거 were 가 이 과의 꼴 — 구어 was 는 70점이면 됨, 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#8:0",
+   "결론": "동의",
+   "까닭": "give = 가져다주다 — could have p.p. 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#8:1",
+   "결론": "동의",
+   "까닭": "bring = 가져다주다의 곧은 번역(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#8:2",
+   "결론": "동의",
+   "까닭": "bring A to B — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#9:0",
+   "결론": "동의",
+   "까닭": "earn money = 돈을 벌다(사전 첫 뜻)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#9:1",
+   "결론": "동의",
+   "까닭": "earn + clothes(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:0",
+   "결론": "동의",
+   "까닭": "가린 채 잰 R: 에서도 같은 막힘 — if 절 앞(한국어 차례) · 혼합 가정법 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:1",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘 — fail = 낙제하다(사전 첫 뜻)(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:2",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘 — fail · 모범 차례(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#10:3",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘 — now 자리(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#11:0",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘(보통) — 한국어 'HIV 바이러스' 그대로 · 겹말이지만 흔하고 문법 맞음(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#11:1",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘 — 수를 가르지 않는 한국어, 단수도 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#12:0",
+   "결론": "동의",
+   "까닭": "tell a lie = 거짓말하다 — should have known 지킴(길이 한도로 0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#13:0",
+   "결론": "동의",
+   "까닭": "make a promise = 약속하다 — If only 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#14:0",
+   "결론": "동의",
+   "까닭": "nothing would be able to live = '살 수 없을 것이다' — If it were not for 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#16:0",
+   "결론": "동의",
+   "까닭": "if you should + will — 맞는 영어(다른 정답 Should you not go, he will go 의 if 꼴)(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-048#16:1",
+   "결론": "동의",
+   "까닭": "if you're not going — 흔한 구어 · 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#2:0",
+   "결론": "동의",
+   "까닭": "that 생략 — told · 시제 일치 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:0",
+   "결론": "동의",
+   "까닭": "accept = 받다(지폐 · 카드) — 직접화법 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:1",
+   "결론": "동의",
+   "까닭": "일반 복수 100 dollar bills — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:2",
+   "결론": "동의",
+   "까닭": "one hundred — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#3:3",
+   "결론": "동의",
+   "까닭": "accept + $100 bills(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#4:0",
+   "결론": "동의",
+   "까닭": "whether = if(간접의문)(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#4:1",
+   "결론": "동의",
+   "까닭": "accept(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#4:2",
+   "결론": "동의",
+   "까닭": "일반 복수(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#5:0",
+   "결론": "동의",
+   "까닭": "cashier = 출납계원(사전 뜻 · 영국 은행에서도 씀) — 직접화법 지킴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#5:1",
+   "결론": "동의",
+   "까닭": "Would you like — 높임 '원하십니까' 의 공손한 꼴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#5:2",
+   "결론": "동의",
+   "까닭": "big bills — 구어에서 흔함(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#6:0",
+   "결론": "동의",
+   "까닭": "whether(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#6:1",
+   "결론": "동의",
+   "까닭": "cashier(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#6:2",
+   "결론": "동의",
+   "까닭": "if I would like — 공손한 물음의 간접화법(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#7:0",
+   "결론": "동의",
+   "까닭": "an account at this bank — 흔한 전치사(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#7:1",
+   "결론": "동의",
+   "까닭": "인용 안 '갖는 것이 좋을 것입니다' 의 곧은 번역 — 이 문항의 꼴(직접화법 said, \"…\")은 지킴, had better 자체는 이 과(화법)의 꼴이 아님(0점) · 확신 보통 그대로",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:0",
+   "결론": "동의",
+   "까닭": "recommend that + should 원형(학교 문법 꼴) — 기능어 둘 더라 길이 한도로 0점(하나만이면 결정 2)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:1",
+   "결론": "동의",
+   "까닭": "advise + 목적어 + to — had better 의 간접화법으로 학교 문법이 가르치는 꼴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:2",
+   "결론": "동의",
+   "까닭": "suggest + 원형(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#8:3",
+   "결론": "동의",
+   "까닭": "at the bank(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#9:0",
+   "결론": "동의",
+   "까닭": "for your graduation — 흔한 전치사, 짝 #10 은 for · on 둘 다 받음(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#10:0",
+   "결론": "동의",
+   "까닭": "that 생략(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#10:1",
+   "결론": "동의",
+   "까닭": "that 생략 + on(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#11:0",
+   "결론": "동의",
+   "까닭": "Don't you have 를 푼 Do you not have — 맞는 영어, 채점이 do not you 로 풀어 70점",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#12:0",
+   "결론": "동의",
+   "까닭": "whether(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-049#12:0",
+   "결론": "동의",
+   "까닭": "them 하나 더 — 결정 2(70점) · 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-049#14:0",
+   "결론": "동의",
+   "까닭": "that 생략 · 격언 현재 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#2:0",
+   "결론": "동의",
+   "까닭": "that 생략 — 시제 일치 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-050#2:0",
+   "결론": "동의",
+   "까닭": "시제 일치(loved)가 이 문항의 꼴 — loves 는 70점이면 됨, 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-050#2:1",
+   "결론": "동의",
+   "까닭": "said to me that — 간접화법에서 told 로 바꾸는 이 과의 꼴을 피함(덜 자연스러움) · 안 적는 게 맞음",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#4:0",
+   "결론": "동의",
+   "까닭": "that 생략 · 과거완료 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#5:0",
+   "결론": "동의",
+   "까닭": "지각동사 + -ing — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#5:1",
+   "결론": "동의",
+   "까닭": "yesterday 를 앞으로 — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#6:0",
+   "결론": "동의",
+   "까닭": "that 생략(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#6:1",
+   "결론": "동의",
+   "까닭": "the previous day — 학교 문법이 yesterday 의 간접화법으로 함께 가르치는 꼴(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#6:2",
+   "결론": "동의",
+   "까닭": "지각동사 + -ing(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#8:0",
+   "결론": "동의",
+   "까닭": "가린 채 잰 R: 에서도 같은 막힘 — that 생략 · 역사적 사실 과거 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-050#8:0",
+   "결론": "동의",
+   "까닭": "R: 에서도 안 적음 — 과거완료는 이 문항의 역사적 사실 예외를 피함",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#9:0",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘(높음) — hold = 개최하다(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#9:1",
+   "결론": "동의",
+   "까닭": "R: 에서도 막힘(보통) — minister = 장관(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#9:2",
+   "결론": "동의",
+   "까닭": "proposal = 제안 — that 절 원형 지킴 · 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-050#9:0",
+   "결론": "동의",
+   "까닭": "that 하나 더 — 결정 2(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-050#9:1",
+   "결론": "동의",
+   "까닭": "should 하나 더 — 결정 2(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "S:grammar2/gh2-050#9:2",
+   "결론": "동의",
+   "까닭": "가린 채 잰 R: 에서는 막힘(보통)으로 적었으나 이 까닭을 보고 동의 — #7~8(역사적 사실 예외)에 이어 #9 는 시제 일치의 또 다른 예외(제안의 that 절 원형: 과거 accepted 뒤에도 convene)를 보이는 문항이라 to 부정사는 그 꼴을 피함. 교육 방침이 걸린 경계라 R: 의 막힘(보통)과 엇갈림을 그대로 남김",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:0",
+   "결론": "동의",
+   "까닭": "Japanese officials — 가장 흔함 · 결과의 분사구문 지킴(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:1",
+   "결론": "동의",
+   "까닭": "tried to = -하려 했다(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:2",
+   "결론": "동의",
+   "까닭": "pharmaceutical companies = 제약 회사(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:3",
+   "결론": "동의",
+   "까닭": "stop = 막다(0점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:4",
+   "결론": "동의",
+   "까닭": "영국 철자 haemophiliacs — 맞는 영어(70점)",
+   "때": "2026-09-25 01:03"
+  },
+  {
+   "key": "B:grammar2/gh2-050#10:5",
+   "결론": "동의",
+   "까닭": "세 흔한 번역의 조합 — 맞는 영어(0점)",
+   "때": "2026-09-25 01:03"
+  }
+ ]
+}

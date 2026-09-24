@@ -1,0 +1,1875 @@
+{
+ "파일": "10.md",
+ "뽑은때": "2026-09-24 22:27",
+ "대상": [
+  {
+   "key": "R:grammar1/gh1-062#6",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-062#7",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-062#4",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-062#5",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-062#2",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "B:grammar1/gh1-058#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What is he able to do for me?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'할 수 있다' 의 사전 첫 뜻 둘(can · be able to) 가운데 be able to — 맞는 영어 · 같은 뜻인데 able 이 내용어로 잡혀 0점(참조는 can 꼴 하나뿐). 새 다른 정답 'What is he able to do for me?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will he come here?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '오나' 는 앞일을 가르지 않음 — 이미 만점인 진행형 미래(When is he coming here?)처럼 will 미래도 흔한 맞는 번역인데 70점(will ↔ does). 새 다른 정답 'When will he come here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When is he going to come here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — be going to 미래(한국어가 will · be going to 를 가르지 않음)가 길이 한도에 걸려 0점. 새 다른 정답 'When is he going to come here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When does he get here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'오다(와 닿다)' → get here 는 도착 때를 묻는 가장 흔한 영어 — 같은 과정 gh1-060 #1 · #2 · #3 · #18 · #22 는 get there/here 를 받는데 여기만 get 이 내용어로 잡혀 0점. 새 다른 정답 'When does he get here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will he get here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "will 미래 + get here 조합 — 0점(위 두 까닭). 새 다른 정답 'When will he get here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When is he getting here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "이 문항이 결정 4 로 받는 진행형 미래 + get here 조합 — 0점. 새 다른 정답 'When is he getting here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:5",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When does he arrive here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'오다(와 닿다)' 의 사전 뜻 arrive — 맞는 영어 · 같은 뜻인데 arrive 가 내용어로 잡혀 0점(gh1-060 #3 · gh1-014 #6 의 arrive 막힘과 같음). 새 다른 정답 'When does he arrive here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:6",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will he arrive here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "will 미래 + arrive 조합 — 0점. 새 다른 정답 'When will he arrive here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:7",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When is he arriving here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "진행형 미래(결정 4 로 받는 꼴) + arrive 조합 — 도착 예정을 묻는 흔한 영어인데 0점. 새 다른 정답 'When is he arriving here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#15:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She didn't have supper, did she?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'저녁(식사)' 의 사전 뜻 dinner · supper 가운데 supper — 맞는 영어 · 같은 뜻(꼬리도 맞음)인데 supper 가 dinner 와 다른 내용어로 잡혀 0점. 새 다른 정답 'She didn't have supper, did she?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#15:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She didn't eat supper, did she?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(eat 꼴은 이미 받음) — eat + supper 조합 0점. 새 다른 정답 'She didn't eat supper, did she?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-058#15:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "She hasn't had dinner, has she?",
+    "점수": "0점",
+    "까닭": "과거 문제('안 먹었지')를 현재완료로 옮김 — 소유자 결정 4 ②(G10: 현재완료는 그대로)."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#16:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He needs plenty of water, doesn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'많은' 의 사전 뜻(many · much · a lot of · lots of · plenty of) 가운데 plenty of — 셀 수 없는 명사 긍정문에 흔히 쓰는 맞는 영어인데 plenty 가 내용어로 잡혀 0점(a lot of · lots of 는 받음). 새 다른 정답 'He needs plenty of water, doesn't he?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#17:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The hospital wants plenty of blood, doesn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#16 과 같음 — '많은' → plenty of 가 0점(a lot of · lots of 는 받음). 새 다른 정답 'The hospital wants plenty of blood, doesn't it?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#20:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I do as well.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "이 문항이 가르치는 '주어 + 조동사 + 도' 대답(I do too)에서 too 를 같은 뜻 as well 로 — 맞는 영어인데 길이 한도(3낱말 × 1.15)에 걸려 0점. 새 다른 정답 'I do as well.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#21:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "My mother does as well.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#20 과 같음 — 가르치는 대동사 대답(My mother does too)의 too 를 같은 뜻 as well 로 쓴 맞는 영어가 0점(길이 한도). 새 다른 정답 'My mother does as well.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#22:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She seems tired, doesn't she?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'(피곤해) 보이다' 의 사전 뜻 look · seem 가운데 seem — 맞는 영어 · 같은 뜻 · 꼬리도 맞는데 seems 가 looks 와 다른 내용어로 잡혀 0점. 새 다른 정답 'She seems tired, doesn't she?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#26:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He is coming back home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "come back home 은 '집으로 오다(돌아오다)' 의 흔한 영어 — 가르치는 진행형도 지킨 같은 뜻 맞는 영어인데 내용어 back 하나 더해 0점(gh1-080 #16 의 come back home 막힘과 같음). 줄임꼴 He's … 도 같은 글로 0점. 새 다른 정답 'He is coming back home.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-058#26:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "He is on his way home.",
+    "점수": "0점",
+    "까닭": "뜻은 같은 관용구지만 이 문항이 보이는 진행형 동사(is coming)를 피함."
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-058#27:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Isn't he coming over here?",
+    "점수": "70점",
+    "까닭": "기능어 over 하나 더 — 소유자 결정 2(70점)."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#28:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She was a lady in every respect.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'모든 면에서' 의 사전 숙어 in every respect — respect 가 way 와 다른 내용어로 잡혀 0점(같은 문장 꼴 gh1-014 #43 도 같은 막힘으로 적힘). 새 다른 정답 'She was a lady in every respect.'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#28:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She was a lady in all respects.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "같은 숙어의 다른 꼴(in all respects = 모든 면에서) — 0점. 새 다른 정답 'She was a lady in all respects.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#28:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She was a lady in all ways.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'모든' → all(+ 복수) — 맞는 영어 · 같은 뜻인데 every way 와 달라 70점. 새 다른 정답 'She was a lady in all ways.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#29:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each student has his/her own idea.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "his or her 를 빗금으로 쓴 his/her(한국 교재 · 서식에 흔한 표기) — 채점이 빗금을 떼지 않아 'his/her' 를 모르는 한 낱말로 봐 0점(his or her · his · their 는 받음). 새 다른 정답 'Each student has his/her own idea.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#30:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does each student have his/her own plan?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#29 와 같음 — his/her 빗금 표기가 한 낱말로 잡혀 0점. 새 다른 정답 'Does each student have his/her own plan?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#32:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't he give each of his sons money?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "간접목적어를 앞에 둔 꼴(4형식) — 한국어 차례(아들들 각자에게 돈을)와도 같은 맞는 영어 · 같은 뜻, 가르치는 each of his sons 와 부정 의문도 지킴. 차례만 달라 70점(gh1-014 #40 과 같은 막힘). 새 다른 정답 'Didn't he give each of his sons money?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#32:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did he not give each of his sons money?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음 — 이 문항이 받는 줄이지 않은 부정 의문(Did he not …) + 4형식 — 70점. 새 다른 정답 'Did he not give each of his sons money?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#32:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't he give money to each one of his sons?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'각자' → each one of(each of 와 같은 뜻의 흔한 꼴) — one 이 채점 기능어 목록에 없어 결정 2 밖인데 70점. 새 다른 정답 'Didn't he give money to each one of his sons?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#33:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't she give each of her daughters money?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "#32 와 같음 — 4형식(간접목적어 앞) 맞는 영어 · 같은 뜻이 차례만 달라 70점. 새 다른 정답 'Doesn't she give each of her daughters money?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#33:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't she give money to each one of her daughters?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "#32 와 같음 — '각자' → each one of 가 70점. 새 다른 정답 'Doesn't she give money to each one of her daughters?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#34:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does he go there each day?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'매일' → each day(매 = each/every) — 맞는 영어 · 같은 뜻인데 every 대신 each 라 70점. 새 다른 정답 'Does he go there each day?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-058#34:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does he go there daily?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'매일' 의 사전 뜻 daily — every day 두 낱말과 달라 0점(gh1-016 #33 과 같은 막힘). 새 다른 정답 'Does he go there daily?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#2:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How soon does he get there?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'얼마나 빨리' → how soon — 바로 다음 문항 #3(같은 강의 · 같은 꼴 '얼마나 빨리 … 오나')은 How soon 두 꼴을 만점으로 받는데 여기만 soon 이 내용어로 잡혀 0점(한 강의 안 흔들림). 새 다른 정답 'How soon does he get there?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#2:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How soon does he go there?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — #3 의 'How soon does the girl come here?' 와 짝인 꼴이 0점. 새 다른 정답 'How soon does he go there?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How soon does the girl arrive here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'오다(와 닿다)' 의 사전 뜻 arrive — 이미 받는 get here 와 같은 뜻의 맞는 영어인데 arrive 가 내용어로 잡혀 0점. 새 다른 정답 'How soon does the girl arrive here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#8:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Would you like some more?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'원하나?' 를 권할 때의 가장 흔한 영어 would you like 로 — 괄호의 some more 도 지킨 맞는 영어 · 같은 뜻인데 would · like 가 달라 0점. 새 다른 정답 'Would you like some more?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He got here as soon as possible.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'여기에 왔다(와 닿았다)' → got here — 같은 강의 #1 · #3 · #18 · #22 가 get there/here 를 받는데 여기만 got 이 came 과 다른 내용어로 잡혀 0점. 새 다른 정답 'He got here as soon as possible.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He got here as fast as he could.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — got here + as fast as he could 조합 0점. 새 다른 정답 'He got here as fast as he could.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He got here as quickly as possible.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — got here + as quickly as possible 조합 0점. 새 다른 정답 'He got here as quickly as possible.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He got here as fast as possible.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — got here + as fast as possible 조합 0점. 새 다른 정답 'He got here as fast as possible.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He got here as soon as he could.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — got here + as soon as he could 조합 0점. 새 다른 정답 'He got here as soon as he could.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:5",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He got here as quickly as he could.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — got here + as quickly as he could 조합 0점. 새 다른 정답 'He got here as quickly as he could.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:6",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He arrived here as soon as possible.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'오다(와 닿다)' 의 사전 뜻 arrive — 맞는 영어 · 같은 뜻인데 arrived 가 came 과 다른 내용어로 잡혀 0점. 새 다른 정답 'He arrived here as soon as possible.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:7",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He arrived here as quickly as possible.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — arrived + as quickly as possible 조합 0점. 새 다른 정답 'He arrived here as quickly as possible.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:8",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He arrived here as fast as possible.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — arrived + as fast as possible 조합 0점. 새 다른 정답 'He arrived here as fast as possible.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:9",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He arrived here as soon as he could.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — arrived + as soon as he could 조합 0점. 새 다른 정답 'He arrived here as soon as he could.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:10",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He arrived here as quickly as he could.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — arrived + as quickly as he could 조합 0점. 새 다른 정답 'He arrived here as quickly as he could.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:11",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He arrived here as fast as he could.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — arrived + as fast as he could 조합 0점. 새 다른 정답 'He arrived here as fast as he could.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-060#9:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "He came as soon as possible.",
+    "점수": "70점",
+    "까닭": "문제의 '여기에'(here)를 뺌 — 70점."
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-060#12:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "How long is that holiday?",
+    "점수": "70점",
+    "까닭": "'그 N' → that N — 소유자 결정 3(G9: '그 N' 280곳은 70점 그대로)."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#13:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many times did you see her?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'(사람을) 만나다' 의 사전 뜻 meet · see 가운데 see — 괄호의 how many times 를 지킨 같은 뜻 맞는 영어인데 see 가 meet 과 다른 내용어로 잡혀 0점. 한국어 '보다' 와 겹쳐 학습자가 덜 쓸 수 있어 확신 보통. 새 다른 정답 'How many times did you see her?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-060#13:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "How many times have you met her?",
+    "점수": "70점",
+    "까닭": "과거 문제('만났나')를 현재완료로 — 소유자 결정 4 ②(G10: 현재완료는 그대로). 70점."
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-060#14:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "At what time does he go to school?",
+    "점수": "70점",
+    "까닭": "기능어 at 하나 더 — 소유자 결정 2(70점)."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long does he study at the library every day?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'도서관에서 공부하다' 는 study at the library 가 in 만큼(또는 더) 흔한 맞는 영어 — 전치사 하나 달라 70점. 새 다른 정답 'How long does he study at the library every day?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long does he study in the library each day?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'매일' → each day(매 = each/every) — 같은 뜻 맞는 영어인데 70점. 새 다른 정답 'How long does he study in the library each day?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long does he study in the library daily?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'매일' 의 사전 뜻 daily — every day 두 낱말과 달라 0점(gh1-016 #33 과 같은 막힘). 새 다른 정답 'How long does he study in the library daily?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long does he study at the library each day?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "at the library + each day 조합 — 70점. 새 다른 정답 'How long does he study at the library each day?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long does he study at the library daily?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "at the library + daily 조합 — 0점. 새 다른 정답 'How long does he study at the library daily?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#17:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many hours did you stay in Japan?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'(어디에) 있었다' → stay(머무르다 — 사전 뜻) — 맞는 영어 · 같은 뜻, 가르치는 how many hours 도 지킴. 동사 꼴이 달라 70점. 새 다른 정답 'How many hours did you stay in Japan?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#17:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many hours did you spend in Japan?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'몇 시간 있었나' → spend(시간을 보내다) — 영어에서 가장 흔한 꼴의 하나, 같은 뜻인데 70점. 새 다른 정답 'How many hours did you spend in Japan?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did you eat a good dinner?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'저녁 식사를 하다' → eat dinner — 같은 과정 gh1-058 #14 · #15 는 eat breakfast/dinner 를 받는데 여기만 eat 이 have 와 다른 내용어로 잡혀 0점. 새 다른 정답 'Did you eat a good dinner?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did you eat a nice dinner?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — eat + nice dinner 조합 0점. 새 다른 정답 'Did you eat a nice dinner?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did you have a good supper?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'저녁 식사' 의 사전 뜻 dinner · supper 가운데 supper — 맞는 영어 · 같은 뜻인데 0점(gh1-058 #15 와 같음). 새 다른 정답 'Did you have a good supper?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did you have a nice supper?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — nice supper 조합 0점. 새 다른 정답 'Did you have a nice supper?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#20:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many boys were at the library?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'도서관에 있었다' → at the library(장소 전치사 at) — 맞는 영어 · 같은 뜻인데 전치사 하나 달라 70점. 새 다른 정답 'How many boys were at the library?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#20:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many boys were there at the library?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음 — there 꼴(이미 받음) + at the library 70점. 새 다른 정답 'How many boys were there at the library?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#24:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How frequently does she come here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'자주' 의 사전 뜻 often · frequently 가운데 frequently — 맞는 영어 · 같은 뜻(빈도를 묻는 how + 부사도 지킴)인데 0점. 새 다른 정답 'How frequently does she come here?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#31:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They don't all like it.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "부분 부정의 흔한 영어 꼴(주어 + don't all + 동사 = Not all of them …) — all 과 not 을 함께 쓴 같은 뜻의 맞는 영어인데 0점. 이 문항이 Not all of them 꼴을 보이려는 교육 뜻이 걸릴 수 있어 확신 보통. 새 다른 정답 'They don't all like it.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#31:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They do not all like it.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(줄이지 않은 꼴) — 0점. 새 다른 정답 'They do not all like it.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-060#32:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What am I able to do?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'할 수 있다' → be able to(사전 첫 뜻 둘 가운데 하나) — 맞는 영어 · 같은 뜻인데 0점(gh1-058 #3 과 같음). 새 다른 정답 'What am I able to do?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-062#2:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Is this your pen?",
+    "점수": "70점",
+    "까닭": "이 문항이 가르치는 소유대명사 yours('너의 것')를 피함 — 짝 문항 #1 의 꼴. 70점."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is your son in good health?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'건강하다' 의 사전 숙어 be in good health — 맞는 영어 · 같은 뜻(be 의문문도 지킴)인데 길이 한도에 걸려 0점(healthy · well 은 받음). 새 다른 정답 'Is your son in good health?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-062#3:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Is your son fine?",
+    "점수": "0점",
+    "까닭": "fine 은 '괜찮은' — 건강을 묻는 말로는 어색하고 뜻이 넓어짐(건강한가 ≠ 괜찮니)."
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-062#3:1",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Is your son doing well?",
+    "점수": "0점",
+    "까닭": "doing well 은 '잘 지내다(형편 · 일 전반)' — 건강에 한정한 '건강한가' 보다 뜻이 넓어짐."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are they your siblings?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'형제' 는 표준국어대사전 뜻 ② '형제와 자매, 남매를 통틀어 이르는 말'(동기) — 성별을 모르는 '그들' 을 siblings 로 옮긴 맞는 영어가 0점. 과정은 형제 = brothers 로 가르쳐 확신 보통(다른 읽을거리에서 막힘 · 안 적음이 갈림). 새 다른 정답 'Are they your siblings?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#6:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is my son in good health?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#3 과 같음 — be in good health 가 0점(길이 한도). 새 다른 정답 'Is my son in good health?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Whose home is this?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'집' 의 사전 뜻 house · home 가운데 home — 맞는 영어 · 같은 뜻인데 home 이 house 와 다른 내용어로 잡혀 0점(다른 읽을거리의 '집' → home 막힘과 같음). 새 다른 정답 'Whose home is this?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#11:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is the weather warm today?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 비운 주어를 '날씨' 로 채운 맞는 영어 · 흔한 꼴 — 뜻 그대로 · be 의문문도 지킴. 모범 it 꼴만 있어 0점(같은 꼴 gh1-074 #11 의 막힘과 같음). 새 다른 정답 'Is the weather warm today?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#12:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is your mother in good health?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#3 과 같음 — be in good health 가 0점(길이 한도). 새 다른 정답 'Is your mother in good health?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#17:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was your grandma pretty?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'할머니'(높임 · 낮춤 짝이 없는 말)의 흔한 번역 grandma — 맞는 영어 · 같은 뜻인데 철자 비슷함으로만 잡혀 70점(gh1-074 #29 · gh1-080 #39 와 같은 막힘). 새 다른 정답 'Was your grandma pretty?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#17:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was your grandma beautiful?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음 — grandma + beautiful 70점. 새 다른 정답 'Was your grandma beautiful?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#18:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Whose home was this?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#9 와 같음 — '집' → home 이 0점. 새 다른 정답 'Whose home was this?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#19:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was yesterday hot?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 주제어 '어제는' 을 주어로 곧게 옮긴 맞는 영어(Yesterday was hot.) — be 과거 의문문도 지킴. 모범 it 꼴만 있어 0점(같은 문장 gh1-074 #11 의 막힘과 같음). 새 다른 정답 'Was yesterday hot?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#19:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the weather hot yesterday?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "비운 주어를 '날씨' 로 채운 맞는 영어 · 흔한 꼴 — 0점(gh1-074 #11 과 같음). 새 다른 정답 'Was the weather hot yesterday?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#20:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was last week hot?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#19 와 같음 — 주제어 '지난주는' 을 주어로 옮긴 맞는 영어(Last week was hot.)가 0점. 새 다른 정답 'Was last week hot?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#20:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the weather hot last week?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#19 와 같음 — '날씨' 주어 꼴이 0점. 새 다른 정답 'Was the weather hot last week?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-062#21:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Was this pencil yours?",
+    "점수": "70점",
+    "까닭": "한국어 '너의 연필' 을 소유대명사 꼴로 바꿈 — 짝 문항 #22 가 그 꼴을 따로 가르침. 70점."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were your children well?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "같은 강의 #3 · #6 · #12 는 '건강한가' 를 well 로도 받는데 과거 꼴인 이 문항만 well 이 빠져 0점(한 강의 안 흔들림). 새 다른 정답 'Were your children well?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were your kids healthy?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'아이들'(높임 · 낮춤이 없는 말)의 흔한 번역 kids — 맞는 영어 · 같은 뜻인데 0점(gh1-080 #32 와 같은 막힘). 새 다른 정답 'Were your kids healthy?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were your kids well?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "kids + well 조합 — 0점(위 두 까닭). 새 다른 정답 'Were your kids well?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were your children in good health?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "#3 과 같음 — be in good health 가 0점(길이 한도). 새 다른 정답 'Were your children in good health?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-062#24:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were your mother and grandpa happy?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'할아버지'(높임 · 낮춤 짝이 없는 말)의 흔한 번역 grandpa — #17 grandma 와 같음, 철자 비슷함으로만 잡혀 70점. 새 다른 정답 'Were your mother and grandpa happy?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-062#24:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Were your mother and your grandfather happy?",
+    "점수": "70점",
+    "까닭": "기능어 your 하나 더 — 소유자 결정 2(70점)."
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-062#25:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Does your kid have a dream?",
+    "점수": "0점",
+    "까닭": "'자녀'(격식 있는 한자말)의 사전 뜻은 child(ren) · sons and daughters — kid 는 '아이 · 애' 의 구어 번역이라 자녀의 흔한 번역이 아님(곧은 번역 child 는 만점)."
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "R:grammar1/gh1-062#2",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Is this pen yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does this pen belong to you?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is this your pen?",
+     "점수": "70점"
+    },
+    {
+     "답": "Is this pen your own?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is the pen yours?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does this pen belong to you?",
+     "점수": "0점",
+     "까닭": "강의가 가르치는 꼴을 피함 — #1 'Is this your pen?' 과 짝으로 '이 펜은 너의 것이냐' 를 be 의문문 + 소유대명사 yours 로 연습하는 문항; belong to 는 그 꼴을 비켜 감(0점)"
+    },
+    {
+     "답": "Is this your pen?",
+     "점수": "70점",
+     "까닭": "#1 '이것은 너의 펜이냐?' 의 꼴 — 주어가 '이 펜' 이 아니라 this 로 바뀌어 짝 문항이 가르는 차이를 없앰(70점)"
+    },
+    {
+     "답": "Is this pen your own?",
+     "점수": "0점",
+     "까닭": "your own 은 '너 자신의 것' 으로 강조가 더해진 드문 꼴 — 곧은 번역 아님(0점)"
+    },
+    {
+     "답": "Is the pen yours?",
+     "점수": "70점",
+     "까닭": "'이 펜' 의 '이'(this)를 the 로 — 뜻이 바뀜(70점)"
+    }
+   ],
+   "까닭": "곧은 번역은 모범 'Is this pen yours?' 하나 — 흔한 다른 맞는 영작 가운데 소유대명사 꼴을 지킨 것은 없음. 막힘 없음",
+   "때": "2026-09-24 22:31"
+  },
+  {
+   "key": "R:grammar1/gh1-062#4",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Whose classmates are these girls?",
+     "점수": "만점"
+    },
+    {
+     "답": "Whose class mates are these girls?",
+     "점수": "만점"
+    },
+    {
+     "답": "These girls are whose classmates?",
+     "점수": "0점"
+    },
+    {
+     "답": "Whose classmates are these girls",
+     "점수": "만점"
+    },
+    {
+     "답": "Of whom are these girls classmates?",
+     "점수": "0점"
+    },
+    {
+     "답": "Whose classmates are the girls?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "These girls are whose classmates?",
+     "점수": "0점",
+     "까닭": "되묻는 말(echo question) 차례 — 의문사를 앞에 두는 강의 꼴(Whose + N + be + 주어)을 피함, 드묾(0점)"
+    },
+    {
+     "답": "Of whom are these girls classmates?",
+     "점수": "0점",
+     "까닭": "딱딱하고 드문 꼴 — 흔한 영작 아님(0점)"
+    },
+    {
+     "답": "Whose classmates are the girls?",
+     "점수": "70점",
+     "까닭": "'이 소녀들' 의 '이'(these)를 the 로 — 뜻이 바뀜(70점)"
+    }
+   ],
+   "까닭": "급우 = classmate(s) 로 곧은 번역은 하나 — 띄어 쓴 class mates · 물음표 없음도 만점. 막힘 없음",
+   "때": "2026-09-24 22:31"
+  },
+  {
+   "key": "R:grammar1/gh1-062#5",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Are they your brothers?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they your siblings?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are those your brothers?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are they brothers of yours?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are they your brother?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Are they your siblings?",
+     "점수": "0점",
+     "까닭": "'형제' 는 사전에 brother 와 sibling(형제자매 · 동기) 두 뜻 — 성별을 가리지 않는 '형제' 는 흔한 쓰임('형제가 어떻게 되세요?')이고 문항에 성별 단서가 없어 siblings 도 문제 뜻 그대로 · 맞는 영어 · be 의문문 꼴도 지킴. 그런데 siblings 가 brothers 와 다른 내용어라 0점. 이 과정은 '형제' 를 늘 brother(s) 로만 받고 '여자 형제' 를 sisters 로 쓰므로 첫 뜻은 brothers — 흔함은 판단이라 확신 보통",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Are those your brothers?",
+     "점수": "70점",
+     "까닭": "'그들'(인칭 대명사 they)을 지시어 those('저 사람들')로 — 곧은 번역 아님(70점)"
+    },
+    {
+     "답": "Are they brothers of yours?",
+     "점수": "0점",
+     "까닭": "brothers of yours 는 '너의 형제들 가운데 (몇)' 로 뜻이 달라지고 드묾(0점)"
+    },
+    {
+     "답": "Are they your brother?",
+     "점수": "70점",
+     "까닭": "they … brother 수 일치가 틀린 영어(70점)"
+    }
+   ],
+   "까닭": "brothers 는 만점. '형제' 의 다른 사전 뜻 siblings 가 0점 — 막힘(보통)",
+   "때": "2026-09-24 22:31"
+  },
+  {
+   "key": "R:grammar1/gh1-062#6",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Is my son healthy?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is my son well?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is my son in good health?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is my son fine?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is my son in good shape?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is my boy healthy?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is my son in good health?",
+     "점수": "0점",
+     "까닭": "'건강하다' 의 사전 첫 뜻들 be healthy · be well · be in good health 가운데 in good health 만 없음 — 맞는 영어 · 문제 뜻 그대로 · be 의문문 꼴도 지킴(한국 학교 영어에서 '건강하다 = be in good health' 로 흔히 배움). 모범보다 두 낱말 길어 길이 제한(1.15)에 걸려 0점. 흔함은 판단이라 확신 보통",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Is my son fine?",
+     "점수": "0점",
+     "까닭": "fine 은 '괜찮은가 · 잘 있나' 로 뜻이 넓어짐 — '건강한가' 의 곧은 번역 아님(0점)"
+    },
+    {
+     "답": "Is my son in good shape?",
+     "점수": "0점",
+     "까닭": "in good shape 는 '몸매 · 체력이 좋은' 쪽 — 뜻이 다름(0점)"
+    },
+    {
+     "답": "Is my boy healthy?",
+     "점수": "0점",
+     "까닭": "my boy 는 '아들' 의 구어 · 곧은 번역 아님(0점)"
+    }
+   ],
+   "까닭": "healthy · well 은 만점. in good health 가 0점 — 막힘(보통). 같은 꼴 #3 · #12 · #23 도 같은 까닭이 걸릴 수 있음(이 R: 밖)",
+   "때": "2026-09-24 22:31"
+  },
+  {
+   "key": "R:grammar1/gh1-062#7",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Is that car yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is the car yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does that car belong to you?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does the car belong to you?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is that your car?",
+     "점수": "70점"
+    },
+    {
+     "답": "Is it your car?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is this car yours?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does that car belong to you?",
+     "점수": "0점",
+     "까닭": "강의가 가르치는 꼴을 피함 — be 의문문 + 소유대명사 yours('너의 것') 연습 문항에서 belong to 로 비켜 감(0점)"
+    },
+    {
+     "답": "Does the car belong to you?",
+     "점수": "0점",
+     "까닭": "위와 같음 — 소유대명사 꼴을 피함(0점)"
+    },
+    {
+     "답": "Is that your car?",
+     "점수": "70점",
+     "까닭": "주어가 '그 차' 가 아니라 that 으로 바뀐 #1 꼴 — '그 차는 너의 것이냐' 의 곧은 번역 아님(70점)"
+    },
+    {
+     "답": "Is it your car?",
+     "점수": "0점",
+     "까닭": "주어 it — '그 차는' 을 옮기지 않은 다른 문장(0점)"
+    },
+    {
+     "답": "Is this car yours?",
+     "점수": "70점",
+     "까닭": "'그 차'(that · the)를 this 로 — 뜻이 바뀜(70점)"
+    }
+   ],
+   "까닭": "that car · the car 둘 다 만점. 곧은 번역에 막힘 없음",
+   "때": "2026-09-24 22:31"
+  },
+  {
+   "key": "B:grammar1/gh1-058#3:0",
+   "결론": "동의",
+   "까닭": "can = be able to 는 한국 학교 영어의 기본 짝 — 'What is he able to do for me?' 는 맞는 영어 · '할 수 있니' 뜻 그대로 · 의문사 의문문 꼴도 지킴. able 이 내용어로 잡혀 0점. 소유자 결정에 안 걸림",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:0",
+   "결론": "동의",
+   "까닭": "한국어 현재형 '오나' 는 앞일을 흔히 말함 — 이 문항이 이미 진행형 미래(When is he coming here?)를 만점으로 받으므로 will 미래도 같은 뜻의 흔한 맞는 영어. 결정 4 는 진행형 · 현재완료만 다뤄 will 은 결정 밖. 70점 → 낮음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:1",
+   "결론": "동의",
+   "까닭": "be going to 미래 — 맞는 영어 · 같은 뜻 · 의문사 꼴 지킴, 길이 한도로 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:2",
+   "결론": "동의",
+   "까닭": "도착 때를 묻는 가장 흔한 영어 — 같은 과정 gh1-060 #3('얼마나 빨리 여기에 오나')이 get here 를 만점으로 받는데 여기만 0점(한 과정 안 흔들림)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:3",
+   "결론": "동의",
+   "까닭": "will + get here — 두 꼴 다 맞는 조합이고 'When will he get here?' 는 매우 흔한 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:4",
+   "결론": "동의",
+   "까닭": "이 문항이 이미 받는 진행형 미래 + get here — 흔한 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:5",
+   "결론": "동의",
+   "까닭": "'오다(와 닿다)' → arrive — 도착 때를 묻는 문맥에서 같은 뜻 · 맞는 영어(arrive here 도 자연스러움). get here 보다 덜 흔해 확신 보통 그대로",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:6",
+   "결론": "동의",
+   "까닭": "will + arrive 조합 — 맞는 영어 · 같은 뜻",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#5:7",
+   "결론": "동의",
+   "까닭": "진행형 미래 + arrive — 도착 예정을 묻는 흔한 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#15:0",
+   "결론": "동의",
+   "까닭": "'저녁(식사)' 의 사전 뜻 dinner · supper — supper 는 맞는 영어이고 꼬리 did she 도 맞음. 내용어라 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#15:1",
+   "결론": "동의",
+   "까닭": "이미 받는 eat 꼴 + supper 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-058#15:0",
+   "결론": "동의",
+   "까닭": "과거 '안 먹었지' 를 현재완료로 — 현재완료 대체 답안은 소유자 결정 4 ②(그대로)로 넣지 않음. 안 적는 게 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#16:0",
+   "결론": "동의",
+   "까닭": "'많은' → plenty of — 셀 수 없는 명사 긍정문에 자연스러운 맞는 영어(Plants need plenty of water), 이미 받는 a lot of · lots of 와 같은 급",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#17:0",
+   "결론": "동의",
+   "까닭": "#16 과 같음 — a lot of 자리의 plenty of, 문법 · 꼬리 doesn't it 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#20:0",
+   "결론": "동의",
+   "까닭": "as well = too — 이미 받는 'I do too.' 와 같은 대동사 대답, 맞는 영어 · 흔함. 길이 한도(3낱말)로 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#21:0",
+   "결론": "동의",
+   "까닭": "#20 과 같음 — 이미 받는 'My mother does too.' 의 too 를 as well 로",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#22:0",
+   "결론": "동의",
+   "까닭": "'~해 보이다' → seem — look 과 같은 뜻의 흔한 맞는 영어, 꼬리 doesn't she 도 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#26:0",
+   "결론": "동의",
+   "까닭": "come home 이 이미 '(집에) 돌아오다' 라 back 은 뜻을 바꾸지 않고 흔히 붙는 꼴 — 진행형도 지킨 맞는 영어. 한국어에 '돌아' 가 없어 확신 보통 그대로",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-058#26:0",
+   "결론": "동의",
+   "까닭": "이 문항이 보이는 진행형 동사(is coming)를 피한 관용구이고, on his way home 은 오는 쪽 · 가는 쪽을 가르지 않아 '오고 있다' 의 곧은 번역도 아님. 안 적는 게 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-058#27:0",
+   "결론": "동의",
+   "까닭": "over 는 채점 기능어 — 기능어 하나 더 쓴 꼴은 소유자 결정 2(70점)로 정해짐",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#28:0",
+   "결론": "동의",
+   "까닭": "'모든 면에서' 의 표준 숙어 in every respect — 맞는 영어 · 같은 뜻, 높음 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#28:1",
+   "결론": "동의",
+   "까닭": "같은 숙어의 흔한 꼴 in all respects — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#28:2",
+   "결론": "동의",
+   "까닭": "in all ways 는 in every way 보다 덜 쓰이나 맞는 영어 · 같은 뜻이고 '모든' → all 은 학습자가 흔히 씀. 70점 → 낮음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#29:0",
+   "결론": "동의",
+   "까닭": "빗금 his/her 는 글에서 흔한 표기(his or her 와 같은 뜻, 이미 받는 꼴) — 채점이 빗금을 떼지 않아 모르는 한 낱말로 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#30:0",
+   "결론": "동의",
+   "까닭": "#29 와 같음 — his/her 빗금 표기 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#32:0",
+   "결론": "동의",
+   "까닭": "간접목적어를 앞에 둔 give A B 꼴 — 맞는 영어 · 같은 뜻 · 부정 의문과 each of his sons 지킴, 차례만 달라 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#32:1",
+   "결론": "동의",
+   "까닭": "이미 받는 Did he not 꼴 + give A B — 맞는 영어, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#32:2",
+   "결론": "동의",
+   "까닭": "each one of = each of — 흔한 맞는 꼴. one 은 채점 기능어가 아니라 결정 2 밖, 70점 → 낮음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#33:0",
+   "결론": "동의",
+   "까닭": "#32:0 과 같음 — give A B 꼴 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#33:1",
+   "결론": "동의",
+   "까닭": "#32:2 와 같음 — each one of 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#34:0",
+   "결론": "동의",
+   "까닭": "'매일' → each day — 맞는 영어 · 같은 뜻, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-058#34:1",
+   "결론": "동의",
+   "까닭": "부사 daily 는 '매일' 의 사전 뜻 — 'Does he go there daily?' 맞는 영어, 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#2:0",
+   "결론": "동의",
+   "까닭": "같은 강의 #3 이 같은 꼴 '얼마나 빨리 … 오나' 에 How soon 두 꼴을 만점으로 받음(gh1-061 alternatives) — 한 강의 안 흔들림, 맞는 영어. 높음 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#2:1",
+   "결론": "동의",
+   "까닭": "#3 의 'How soon does the girl come here?' 와 같은 꼴 — 맞는 영어(예정을 묻는 현재형)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#3:0",
+   "결론": "동의",
+   "까닭": "arrive 는 이미 받는 get here 와 같은 뜻이고 How soon 과 자연스러운 짝 — 맞는 영어(How fast · quickly + arrive 를 넣지 않은 것도 맞음)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#8:0",
+   "결론": "동의",
+   "까닭": "would like = want 의 공손한 꼴 — 권할 때 가장 흔한 영어, 괄호의 some more 지킴 · 뜻 같음. 한국어가 반말 '원하나' 라 확신 보통 그대로",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:0",
+   "결론": "동의",
+   "까닭": "'여기에 왔다' → got here — 같은 강의 #1 · #3 · #18 · #22 가 get 꼴을 받음, 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:1",
+   "결론": "동의",
+   "까닭": "got here as fast as he could — 이 뜻의 가장 자연스러운 영어 가운데 하나",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:2",
+   "결론": "동의",
+   "까닭": "got here + 이미 받는 as quickly as possible 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:3",
+   "결론": "동의",
+   "까닭": "got here + 이미 받는 as fast as possible 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:4",
+   "결론": "동의",
+   "까닭": "got here + as soon as he could 조합 — 매우 흔한 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:5",
+   "결론": "동의",
+   "까닭": "got here + as quickly as he could 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:6",
+   "결론": "동의",
+   "까닭": "arrive = '와 닿다' — '여기에 왔다' 와 같은 뜻의 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:7",
+   "결론": "동의",
+   "까닭": "arrived quickly 는 흔한 연어 — as quickly as possible 조합 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:8",
+   "결론": "동의",
+   "까닭": "arrived + as fast as possible 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:9",
+   "결론": "동의",
+   "까닭": "arrived + as soon as he could 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:10",
+   "결론": "동의",
+   "까닭": "arrived + as quickly as he could 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#9:11",
+   "결론": "동의",
+   "까닭": "arrived + as fast as he could — got here 꼴보다 덜 쓰이나 맞는 영어 · 같은 뜻, 확신 보통 그대로",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-060#9:0",
+   "결론": "동의",
+   "까닭": "한국어의 '여기에' 를 뺀 꼴 — 문제 뜻을 다 옮기지 않아 70점이 맞음. 안 적는 게 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-060#12:0",
+   "결론": "동의",
+   "까닭": "'그 N' → that N 은 소유자 결정 3(G9 — '그 N' 280곳 70점 그대로)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#13:0",
+   "결론": "동의",
+   "까닭": "see 는 '(사람을) 만나다' 의 흔한 영어 — 괄호의 how many times 지킴 · 맞는 영어. '보다' 와 겹쳐 확신 보통 그대로",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-060#13:0",
+   "결론": "동의",
+   "까닭": "과거 '만났나' 를 현재완료로 — 소유자 결정 4 ②(현재완료는 그대로)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-060#14:0",
+   "결론": "동의",
+   "까닭": "at 하나 더 — 소유자 결정 2(기능어 하나 더 70점)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:0",
+   "결론": "동의",
+   "까닭": "study at the library 는 in the library 만큼 흔한 맞는 영어 — 전치사 하나로 70점. 높음 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:1",
+   "결론": "동의",
+   "까닭": "'매일' → each day — 맞는 영어 · 같은 뜻, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:2",
+   "결론": "동의",
+   "까닭": "'매일' → daily — 맞는 영어(How long … daily?), 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:3",
+   "결론": "동의",
+   "까닭": "at the library + each day 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#16:4",
+   "결론": "동의",
+   "까닭": "at the library + daily 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#17:0",
+   "결론": "동의",
+   "까닭": "'(일본에) 있었다' → stay — 맞는 영어 · 같은 뜻, 가르치는 how many hours 지킴. 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#17:1",
+   "결론": "동의",
+   "까닭": "spend(시간을 보내다) — '몇 시간 있었나' 의 가장 흔한 영어 가운데 하나, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:0",
+   "결론": "동의",
+   "까닭": "'식사를 하다' → eat — 맞는 영어(Did you eat a good dinner?), 같은 과정 gh1-058 #14 · #15 가 eat 꼴을 받음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:1",
+   "결론": "동의",
+   "까닭": "eat + nice dinner 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:2",
+   "결론": "동의",
+   "까닭": "'저녁 식사' → supper — 사전 뜻, 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#19:3",
+   "결론": "동의",
+   "까닭": "nice supper 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#20:0",
+   "결론": "동의",
+   "까닭": "at the library — 장소 전치사 at 도 맞는 영어 · 같은 뜻, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#20:1",
+   "결론": "동의",
+   "까닭": "이미 받는 there 꼴 + at the library 조합 — 맞는 영어, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#24:0",
+   "결론": "동의",
+   "까닭": "frequently = often — 빈도를 묻는 how + 부사 꼴 지킨 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#31:0",
+   "결론": "동의",
+   "까닭": "not … all 차례의 부분 부정 'They don't all like it.' 는 원어민이 가장 흔히 쓰는 꼴이고 '모두가 좋아하지는 않는다' 로만 읽힘(결정 5 가 둔 All … don't 보다 분명) — 강의의 부분 부정을 지킴. 결정 5 와 부딪히지 않음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#31:1",
+   "결론": "동의",
+   "까닭": "위와 같음 — 줄이지 않은 꼴",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-060#32:0",
+   "결론": "동의",
+   "까닭": "gh1-058 #3 과 같음 — '할 수 있나' → be able to, 맞는 영어 · 같은 뜻",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-062#2:0",
+   "결론": "동의",
+   "까닭": "짝 문항 #1 · #2 가 가르는 소유대명사 yours 꼴을 피함 — 확인 일꾼 R:(#2 · #7)에서도 같은 판단",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#3:0",
+   "결론": "동의",
+   "까닭": "be in good health 는 '건강하다' 의 사전 뜻 — 맞는 영어 · be 의문문 지킴. 확인 일꾼 R:(#6)에서 스스로 같은 막힘을 찾음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-062#3:0",
+   "결론": "동의",
+   "까닭": "fine 은 '괜찮은가' 로 뜻이 넓어짐 — R:(#6)에서도 같은 판단",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-062#3:1",
+   "결론": "동의",
+   "까닭": "doing well 은 형편 · 일 전반 — '건강한가' 보다 뜻이 넓어짐",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#5:0",
+   "결론": "동의",
+   "까닭": "확인 일꾼 R:(#5)에서 스스로 같은 막힘(보통)을 찾음 — '형제' 의 사전 뜻 sibling, 성별 단서 없음, 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#6:0",
+   "결론": "동의",
+   "까닭": "확인 일꾼 R:(#6)에서 스스로 같은 막힘(보통)을 찾음 — be in good health 0점(길이 한도)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#9:0",
+   "결론": "동의",
+   "까닭": "'집' → home — 맞는 영어 · 같은 뜻(Whose home is this?), 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#11:0",
+   "결론": "동의",
+   "까닭": "비운 주어를 '날씨' 로 채운 맞는 영어 — 27강은 be 의문문 과라 be 의문문 꼴을 지킴(비인칭 it 자체가 강의 꼴은 아님)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#12:0",
+   "결론": "동의",
+   "까닭": "#3 과 같음 — be in good health 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#17:0",
+   "결론": "동의",
+   "까닭": "grandma 는 '할머니' 의 흔한 번역 — 맞는 영어, 70점 → 낮음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#17:1",
+   "결론": "동의",
+   "까닭": "grandma + beautiful 조합 — 맞는 영어, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#18:0",
+   "결론": "동의",
+   "까닭": "#9 와 같음 — '집' → home 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#19:0",
+   "결론": "동의",
+   "까닭": "주제어 '어제는' 을 주어로 옮긴 맞는 영어(Yesterday was hot) — be 과거 의문문 지킴. 때 부사 '오늘'(#11 'Is today warm?')을 안 적은 구분도 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#19:1",
+   "결론": "동의",
+   "까닭": "#11 과 같음 — '날씨' 주어 꼴 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#20:0",
+   "결론": "동의",
+   "까닭": "#19:0 과 같음 — 주제어 '지난주는' → Last week was hot",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#20:1",
+   "결론": "동의",
+   "까닭": "#11 과 같음 — '날씨' 주어 꼴",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-062#21:0",
+   "결론": "동의",
+   "까닭": "'너의 연필' 을 짝 문항 #22 의 소유대명사 꼴로 바꿈 — 곧은 번역 아님, 70점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:0",
+   "결론": "동의",
+   "까닭": "같은 강의 #3 · #6 · #12 가 '건강한가' 에 well 을 받는데 이 문항만 빠짐 — 한 강의 안 흔들림, 높음 맞음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:1",
+   "결론": "동의",
+   "까닭": "'아이들'(격식어 '자녀' 가 아님) → kids — 흔한 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:2",
+   "결론": "동의",
+   "까닭": "kids + well 조합 — 맞는 영어",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#23:3",
+   "결론": "동의",
+   "까닭": "#3 과 같음 — be in good health 0점",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "B:grammar1/gh1-062#24:0",
+   "결론": "동의",
+   "까닭": "grandpa — #17 grandma 와 같음, 70점 → 낮음",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-062#24:0",
+   "결론": "동의",
+   "까닭": "your 하나 더 — 소유자 결정 2(70점)",
+   "때": "2026-09-24 22:40"
+  },
+  {
+   "key": "S:grammar1/gh1-062#25:0",
+   "결론": "동의",
+   "까닭": "'자녀'(격식 한자말) → kid 는 곧은 번역 아님 — '아이들'(#23 kids 막힘)과 가른 것도 맞음",
+   "때": "2026-09-24 22:40"
+  }
+ ]
+}

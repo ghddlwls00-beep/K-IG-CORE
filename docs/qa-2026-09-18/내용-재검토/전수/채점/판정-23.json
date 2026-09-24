@@ -1,0 +1,3490 @@
+{
+ "파일": "23.md",
+ "문항": {
+  "grammar2/gh2-028#1": {
+   "id": "grammar2/gh2-028#1",
+   "시험": [
+    {
+     "답": "I'll pick up the tab.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'll pick up the check.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'll pick up the bill.",
+     "점수": "0점"
+    },
+    {
+     "답": "I will pay the bill.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'll pick up the check.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '계산서' → check(미국) — pick up the check 는 사전에 오른 같은 관용구(pick up the tab/check/bill). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I'll pick up the bill.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '계산서' → bill(영국) — pick up the bill 도 같은 관용구. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I will pay the bill.",
+     "점수": "0점",
+     "까닭": "괄호 '내가 계산하겠다' 를 옮긴 다른 말 — 가르치는 관용구 pick up the tab 을 pay 로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#2": {
+   "id": "grammar2/gh2-028#2",
+   "시험": [
+    {
+     "답": "This is on me",
+     "점수": "만점"
+    },
+    {
+     "답": "This one's on me.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's on me.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This one's on me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'이것은' → this one(한턱낼 때 흔한 꼴 This one's on me · on me 는 지킴) — 낱말 하나 더라 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It's on me.",
+     "점수": "70점",
+     "까닭": "한국어가 '이것은' — 곧은 번역은 this(같은 과 #4 가 It's on me 를 따로 받음). it 은 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#3": {
+   "id": "grammar2/gh2-028#3",
+   "시험": [
+    {
+     "답": "I am buying today.",
+     "점수": "만점"
+    },
+    {
+     "답": "Today I'm buying.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'm paying today.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Today I'm buying.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 한국어 '오늘은' 을 앞에 둔 차례 — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'm paying today.",
+     "점수": "0점",
+     "까닭": "괄호 '내가 낸다' 를 옮긴 다른 말 — 가르치는 buy(= 한턱내다)를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#4": {
+   "id": "grammar2/gh2-028#4",
+   "시험": [
+    {
+     "답": "It is my treat.",
+     "점수": "만점"
+    },
+    {
+     "답": "This is my treat.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'm treating you.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is my treat.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어에 주어(이것 · 그것)가 없음 — This is my treat 도 같은 뜻의 흔한 꼴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'm treating you.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 you 하나 더(다른 정답 I'm treating) → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#5": {
+   "id": "grammar2/gh2-028#5",
+   "시험": [
+    {
+     "답": "Let us go Dutch.",
+     "점수": "만점"
+    },
+    {
+     "답": "Let's go dutch",
+     "점수": "만점"
+    },
+    {
+     "답": "Let's split the bill.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Let's split the bill.",
+     "점수": "0점",
+     "까닭": "가르치는 관용구 go Dutch 를 다른 말로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#6": {
+   "id": "grammar2/gh2-028#6",
+   "시험": [
+    {
+     "답": "Waiter, will you take our order",
+     "점수": "만점"
+    },
+    {
+     "답": "Waiter, would you take our order?",
+     "점수": "70점"
+    },
+    {
+     "답": "Waiter, could you take our order?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Waiter, would you take our order?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'받으시겠습니까' 의 공손한 would(take our order 는 지킴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Waiter, could you take our order?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "식당에서 흔한 공손한 부탁 Could you — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#7": {
+   "id": "grammar2/gh2-028#7",
+   "시험": [
+    {
+     "답": "What does your husband do for a living",
+     "점수": "만점"
+    },
+    {
+     "답": "What's your husband's job?",
+     "점수": "0점"
+    },
+    {
+     "답": "What does your husband do for work?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "What's your husband's job?",
+     "점수": "0점",
+     "까닭": "괄호 '직업이 뭡니까' 를 옮긴 다른 문장 — 가르치는 do for a living 을 피함."
+    },
+    {
+     "답": "What does your husband do for work?",
+     "점수": "0점",
+     "까닭": "가르치는 관용구 for a living 을 for work 로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#8": {
+   "id": "grammar2/gh2-028#8",
+   "시험": [
+    {
+     "답": "What's your husband doing?",
+     "점수": "만점"
+    },
+    {
+     "답": "What is your husband doing",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#9": {
+   "id": "grammar2/gh2-028#9",
+   "시험": [
+    {
+     "답": "It fits you perfectly",
+     "점수": "만점"
+    },
+    {
+     "답": "It perfectly fits you.",
+     "점수": "70점"
+    },
+    {
+     "답": "It fits you just right.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It perfectly fits you.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 부사 차례(한국어 '완벽하게 맞다' 차례) — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It fits you just right.",
+     "점수": "0점",
+     "까닭": "괄호 '꼭 맞다' 를 옮긴 말 — 본문 '완벽하게' 를 옮기지 않음."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#10": {
+   "id": "grammar2/gh2-028#10",
+   "시험": [
+    {
+     "답": "He's a Korean by birth, but an American by citizenship.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is Korean by birth but American by citizenship.",
+     "점수": "70점"
+    },
+    {
+     "답": "He is Korean by birth but American by nationality.",
+     "점수": "0점"
+    },
+    {
+     "답": "He is a Korean by birth but an American by nationality.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He is Korean by birth but American by citizenship.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "태생 · 국적은 관사 없는 형용사 Korean · American 이 더 흔함(by birth · by citizenship 은 지킴) — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He is Korean by birth but American by nationality.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '국적은' → by nationality(by + 명사 꼴 지킴) · 형용사 꼴 — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He is a Korean by birth but an American by nationality.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '국적은' → by nationality(by + 명사 꼴 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#11": {
+   "id": "grammar2/gh2-028#11",
+   "시험": [
+    {
+     "답": "He's a naturalized citizen.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is a naturalised citizen.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He is a naturalised citizen.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 철자 naturalised — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#12": {
+   "id": "grammar2/gh2-028#12",
+   "시험": [
+    {
+     "답": "What seems to be the problem",
+     "점수": "만점"
+    },
+    {
+     "답": "What seems to be the trouble?",
+     "점수": "0점"
+    },
+    {
+     "답": "What seems to be the matter?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What seems to be the trouble?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '문제' → trouble(의사가 흔히 묻는 What seems to be the trouble? · 꼴 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "What seems to be the matter?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '문제' → matter(What seems to be the matter? · 꼴 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#13": {
+   "id": "grammar2/gh2-028#13",
+   "시험": [
+    {
+     "답": "I'm afraid I have a cavity.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm afraid I've got a cavity.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'm afraid that I have a cavity.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think I have a cavity.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'm afraid I've got a cavity.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'갖고 있다' → have got(흔한 꼴 · I'm afraid 는 지킴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'm afraid that I have a cavity.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    },
+    {
+     "답": "I think I have a cavity.",
+     "점수": "0점",
+     "까닭": "괄호 '생각한다' 를 옮긴 다른 말 — 가르치는 I'm afraid 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#14": {
+   "id": "grammar2/gh2-028#14",
+   "시험": [
+    {
+     "답": "Do you think he'll forget us once he becomes rich and famous?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you think he'll forget us once he gets rich and famous?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you think he will forget us once he becomes wealthy and famous?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you think he is going to forget us once he becomes rich and famous?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you think he will forget about us once he becomes rich and famous?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do you think he'll forget us once he gets rich and famous?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '부유하고 유명해지면' → get rich and famous(가장 흔한 꼴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you think he will forget us once he becomes wealthy and famous?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '부유하다' → wealthy — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you think he is going to forget us once he becomes rich and famous?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ '잊을 것이라고' → be going to(한국어가 will 과 가르지 않음) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Do you think he will forget about us once he becomes rich and famous?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 about 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#15": {
+   "id": "grammar2/gh2-028#15",
+   "시험": [
+    {
+     "답": "I am afraid so.",
+     "점수": "만점"
+    },
+    {
+     "답": "I think so.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I think so.",
+     "점수": "0점",
+     "까닭": "괄호 '생각한다' 를 옮긴 다른 말 — 가르치는 I'm afraid so(달갑지 않은 일에 '그렇다')를 피함 · 뜻도 조금 다름."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#16": {
+   "id": "grammar2/gh2-028#16",
+   "시험": [
+    {
+     "답": "I hope not",
+     "점수": "만점"
+    },
+    {
+     "답": "I hope it is not so.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I hope it is not so.",
+     "점수": "0점",
+     "까닭": "가르치는 대용 꼴 I hope not 을 피함 — 흔하지 않은 말."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#17": {
+   "id": "grammar2/gh2-028#17",
+   "시험": [
+    {
+     "답": "You look familiar",
+     "점수": "만점"
+    },
+    {
+     "답": "You seem familiar.",
+     "점수": "0점"
+    },
+    {
+     "답": "You look familiar to me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You seem familiar.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '보인다' → seem — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You look familiar to me.",
+     "점수": "0점",
+     "까닭": "한국어에 없는 to me(기능어 둘)를 더함 — 결정 2 는 하나까지만 70점, 곧은 번역은 모범."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#18": {
+   "id": "grammar2/gh2-028#18",
+   "시험": [
+    {
+     "답": "Do I know you",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you know me?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Do you know me?",
+     "점수": "0점",
+     "까닭": "괄호 '댁에서 저를 아세요' 를 옮긴 다른 문장 — 본문 '내가 당신을 압니까' 와 주어 · 목적어가 뒤바뀌고 가르치는 Do I know you 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#19": {
+   "id": "grammar2/gh2-028#19",
+   "시험": [
+    {
+     "답": "You have a very good memory",
+     "점수": "만점"
+    },
+    {
+     "답": "You've got a very good memory.",
+     "점수": "0점"
+    },
+    {
+     "답": "You have a really good memory.",
+     "점수": "0점"
+    },
+    {
+     "답": "Your memory is very good.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You've got a very good memory.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'갖고 있다' → have got(흔한 꼴) — 낱말 하나 더라 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You have a really good memory.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '매우' → really — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Your memory is very good.",
+     "점수": "0점",
+     "까닭": "가르치는 have a good memory 꼴을 바꿈(주어를 memory 로)."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#20": {
+   "id": "grammar2/gh2-028#20",
+   "시험": [
+    {
+     "답": "Can you recognize me",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you recognise me?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can you recognise me?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do you recognise me?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 철자 recognise — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can you recognise me?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 철자 recognise(다른 정답 Can 꼴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#21": {
+   "id": "grammar2/gh2-028#21",
+   "시험": [
+    {
+     "답": "Do you have company",
+     "점수": "만점"
+    },
+    {
+     "답": "Have you got company?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you have any company?",
+     "점수": "70점"
+    },
+    {
+     "답": "Do you have a companion?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Have you got company?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'있습니까' → Have you got(영국 · 구어에 흔함 · company 는 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Do you have any company?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 any 하나 더 → 70점."
+    },
+    {
+     "답": "Do you have a companion?",
+     "점수": "0점",
+     "까닭": "#21 · #22 가 짝으로 가르치는 company(동행) ↔ a company(회사)를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#22": {
+   "id": "grammar2/gh2-028#22",
+   "시험": [
+    {
+     "답": "Do you have a company",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you own a company?",
+     "점수": "0점"
+    },
+    {
+     "답": "Have you got a company?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do you own a company?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '회사를 갖고 있다' → own a company(짝으로 가르치는 a company 는 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Have you got a company?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "Have you got(영국 · 구어) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#23": {
+   "id": "grammar2/gh2-028#23",
+   "시험": [
+    {
+     "답": "How do you spell your name",
+     "점수": "만점"
+    },
+    {
+     "답": "How is your name spelled?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How is your name spelled?",
+     "점수": "0점",
+     "까닭": "괄호를 옮긴 수동 꼴 — 본문 '당신은 … 어떻게 철자를 씁니까' 의 How do you spell 을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#24": {
+   "id": "grammar2/gh2-028#24",
+   "시험": [
+    {
+     "답": "Call me Bill",
+     "점수": "만점"
+    },
+    {
+     "답": "Please call me Bill.",
+     "점수": "0점"
+    },
+    {
+     "답": "Just call me Bill.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Please call me Bill.",
+     "점수": "0점",
+     "까닭": "한국어 '불러라' 에 없는 please 를 더함 — 곧은 번역은 모범."
+    },
+    {
+     "답": "Just call me Bill.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 just 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#25": {
+   "id": "grammar2/gh2-028#25",
+   "시험": [
+    {
+     "답": "Do not sir me.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't call me sir.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Don't call me sir.",
+     "점수": "0점",
+     "까닭": "가르치는 sir(동사로 쓴 꼴)를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-028#26": {
+   "id": "grammar2/gh2-028#26",
+   "시험": [
+    {
+     "답": "Do not mister me.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't call me mister.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Don't call me mister.",
+     "점수": "0점",
+     "까닭": "가르치는 mister(동사로 쓴 꼴)를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#1": {
+   "id": "grammar2/gh2-029#1",
+   "시험": [
+    {
+     "답": "We're on a first-name basis.",
+     "점수": "만점"
+    },
+    {
+     "답": "We are on a first name basis.",
+     "점수": "0점"
+    },
+    {
+     "답": "We're on first-name terms.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We are on a first name basis.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "하이픈 없는 first name(흔한 표기 · 뜻 같음) — 채점이 하이픈 낱말을 한 낱말로 봐 0점(채점 코드 한 곳에서도 풀림).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We're on first-name terms.",
+     "점수": "0점",
+     "까닭": "다른 관용구(영국 on first-name terms) — 한국어 '기반' 과 가르치는 basis 를 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#2": {
+   "id": "grammar2/gh2-029#2",
+   "시험": [
+    {
+     "답": "The mercury fell to 6 degrees below zero.",
+     "점수": "0점"
+    },
+    {
+     "답": "The mercury fell to six degrees below zero.",
+     "점수": "0점"
+    },
+    {
+     "답": "The mercury dropped to minus 6 degrees.",
+     "점수": "0점"
+    },
+    {
+     "답": "The mercury dropped to minus six degrees.",
+     "점수": "0점"
+    },
+    {
+     "답": "The temperature dropped to 6 degrees below zero.",
+     "점수": "0점"
+    },
+    {
+     "답": "The mercury has dropped to 6 degrees below zero.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The mercury fell to 6 degrees below zero.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '떨어지다' 의 사전 첫 뜻 fall — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The mercury fell to six degrees below zero.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "fell + six(낱말 표기 — 다른 정답의 six 꼴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The mercury dropped to minus 6 degrees.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'영하 6도' → minus 6 degrees(흔한 꼴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The mercury dropped to minus six degrees.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "minus six degrees — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The temperature dropped to 6 degrees below zero.",
+     "점수": "0점",
+     "까닭": "'수은주' 를 temperature 로 바꿈 — 한국어 낱말을 옮기지 않음."
+    },
+    {
+     "답": "The mercury has dropped to 6 degrees below zero.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 has 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#3": {
+   "id": "grammar2/gh2-029#3",
+   "시험": [
+    {
+     "답": "If anyone asks for George Brown, please direct him to me.",
+     "점수": "0점"
+    },
+    {
+     "답": "If somebody asks for George Brown, please direct him to me.",
+     "점수": "0점"
+    },
+    {
+     "답": "If someone asks for George Brown, direct him to me, please.",
+     "점수": "70점"
+    },
+    {
+     "답": "If someone asks for George Brown, please direct them to me.",
+     "점수": "70점"
+    },
+    {
+     "답": "If someone is looking for George Brown, please direct him to me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "If anyone asks for George Brown, please direct him to me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ 조건절의 '누가' → anyone(가장 흔함) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "If somebody asks for George Brown, please direct him to me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ someone = somebody — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "If someone asks for George Brown, direct him to me, please.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ please 를 끝에 — 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "If someone asks for George Brown, please direct them to me.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "누구인지 모르는 someone 을 받는 them(요즘 영어의 흔한 꼴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "If someone is looking for George Brown, please direct him to me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '찾다' 의 사전 첫 뜻 look for — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#4": {
+   "id": "grammar2/gh2-029#4",
+   "시험": [
+    {
+     "답": "How can I thank you enough",
+     "점수": "만점"
+    },
+    {
+     "답": "How can I ever thank you enough?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How can I ever thank you enough?",
+     "점수": "0점",
+     "까닭": "한국어에 없는 ever 를 더함 — 곧은 번역은 모범."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#5": {
+   "id": "grammar2/gh2-029#5",
+   "시험": [
+    {
+     "답": "It was nothing",
+     "점수": "만점"
+    },
+    {
+     "답": "It wasn't anything.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It wasn't anything.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ nothing ↔ not … anything(같은 뜻 · '아무것도 아니었다' 의 곧은 번역) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#6": {
+   "id": "grammar2/gh2-029#6",
+   "시험": [
+    {
+     "답": "Thank you for inviting me",
+     "점수": "만점"
+    },
+    {
+     "답": "Thanks for inviting me.",
+     "점수": "0점"
+    },
+    {
+     "답": "I thank you for inviting me.",
+     "점수": "70점"
+    },
+    {
+     "답": "Thank you for the invitation.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Thanks for inviting me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'감사합니다' → Thanks(가장 흔한 꼴 · for -ing 는 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I thank you for inviting me.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 I 하나 더 → 70점."
+    },
+    {
+     "답": "Thank you for the invitation.",
+     "점수": "0점",
+     "까닭": "가르치는 for -ing(초대해 주신 것)를 명사로 바꾸고 '나를' 을 뺌."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#7": {
+   "id": "grammar2/gh2-029#7",
+   "시험": [
+    {
+     "답": "Operator, I would like to call New York collect.",
+     "점수": "만점"
+    },
+    {
+     "답": "Operator, I want to call New York collect.",
+     "점수": "0점"
+    },
+    {
+     "답": "Operator, I'd like to make a collect call to New York.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Operator, I want to call New York collect.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '-고 싶습니다' → want to — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Operator, I'd like to make a collect call to New York.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'수신자 부담으로 전화하다' → make a collect call(가장 흔한 꼴 · collect 는 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#8": {
+   "id": "grammar2/gh2-029#8",
+   "시험": [
+    {
+     "답": "I would like to know a phone number in Seoul, Korea.",
+     "점수": "만점"
+    },
+    {
+     "답": "I want to know a phone number in Seoul, Korea.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'd like to know a telephone number in Seoul, Korea.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'd like to know a phone number in Seoul, South Korea.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I want to know a phone number in Seoul, Korea.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '-고 싶습니다' → want to — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I'd like to know a telephone number in Seoul, Korea.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '전화번호' → telephone number — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I'd like to know a phone number in Seoul, South Korea.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'한국' → South Korea — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#9": {
+   "id": "grammar2/gh2-029#9",
+   "시험": [
+    {
+     "답": "May I have the number for James Brown?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could I have the number for James Brown?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can I get the number for James Brown?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can I have James Brown's number?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "May I have the number for James Brown?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 May I(가질 수 있습니까) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Could I have the number for James Brown?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could I — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can I get the number for James Brown?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '가질' → get(구어에 흔함) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can I have James Brown's number?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉯ the number for James Brown ↔ James Brown's number — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#10": {
+   "id": "grammar2/gh2-029#10",
+   "시험": [
+    {
+     "답": "May I speak to Mr Kim?",
+     "점수": "만점"
+    },
+    {
+     "답": "May I speak with Mr. Kim?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I talk to Mr. Kim?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can I speak to Mr. Kim?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "May I speak with Mr. Kim?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "전화에서 흔한 speak with — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "May I talk to Mr. Kim?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '말하다' → talk — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can I speak to Mr. Kim?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "괄호 '통화할 수 있습니까' → Can I — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#11": {
+   "id": "grammar2/gh2-029#11",
+   "시험": [
+    {
+     "답": "This is he",
+     "점수": "만점"
+    },
+    {
+     "답": "Speaking",
+     "점수": "만점"
+    },
+    {
+     "답": "This is him.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is him.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "전화에서 가장 흔한 일상 꼴(격식은 This is he · 일상은 This is him — 사전이 둘 다 실음) · 세 낱말이라 한 낱말 차이로 0점. 격식 주격만 가르치려는 문항이면 판단 필요.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It's me.",
+     "점수": "0점",
+     "까닭": "괄호 '접니다' 를 옮긴 다른 말 — 전화 받는 꼴(This is he · Speaking)을 피함(It's me 는 아는 사이에 씀)."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#12": {
+   "id": "grammar2/gh2-029#12",
+   "시험": [
+    {
+     "답": "You have the wrong number",
+     "점수": "만점"
+    },
+    {
+     "답": "You've got the wrong number.",
+     "점수": "0점"
+    },
+    {
+     "답": "You dialed the wrong number.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You've got the wrong number.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'갖고 있습니다' → have got(흔한 꼴) — 낱말 하나 더라 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You dialed the wrong number.",
+     "점수": "0점",
+     "까닭": "괄호 '전화 잘못 거셨습니다' 를 옮긴 다른 말 — 가르치는 have the wrong number 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#13": {
+   "id": "grammar2/gh2-029#13",
+   "시험": [
+    {
+     "답": "There's no one here by that name.",
+     "점수": "만점"
+    },
+    {
+     "답": "There's nobody here by that name.",
+     "점수": "0점"
+    },
+    {
+     "답": "There is no one by that name here.",
+     "점수": "70점"
+    },
+    {
+     "답": "There is no one here with that name.",
+     "점수": "70점"
+    },
+    {
+     "답": "There's no-one here by that name.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There's nobody here by that name.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ no one = nobody — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There is no one by that name here.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ here 를 끝에 — 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "There is no one here with that name.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "괄호 '그런 이름 가진' → with that name — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "There's no-one here by that name.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "no-one 은 no one 의 영국 표기(사전 표제) — 하이픈 한 낱말이 부정어로 안 잡혀 0점(03.md gh1-014 #27 과 같은 코드 빈틈).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#14": {
+   "id": "grammar2/gh2-029#14",
+   "시험": [
+    {
+     "답": "What number did you dial",
+     "점수": "만점"
+    },
+    {
+     "답": "Which number did you dial?",
+     "점수": "70점"
+    },
+    {
+     "답": "What number did you call?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Which number did you dial?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'몇 번' → which number — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "What number did you call?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '몇 번으로 전화하셨습니까' → call(What number did you ~ 꼴 지킴 · 전화에서 흔함) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#15": {
+   "id": "grammar2/gh2-029#15",
+   "시험": [
+    {
+     "답": "Only last week I talked to him at this same number.",
+     "점수": "만점"
+    },
+    {
+     "답": "Just last week, I talked to him at this same number.",
+     "점수": "70점"
+    },
+    {
+     "답": "Only last week, I spoke to him at this same number.",
+     "점수": "0점"
+    },
+    {
+     "답": "I talked to him at this same number only last week.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Just last week, I talked to him at this same number.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '단지' → just(Just last week 가 흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Only last week, I spoke to him at this same number.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '말했습니다' → spoke — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I talked to him at this same number only last week.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 때를 끝에 — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#16": {
+   "id": "grammar2/gh2-029#16",
+   "시험": [
+    {
+     "답": "He no longer works here",
+     "점수": "만점"
+    },
+    {
+     "답": "He doesn't work here anymore.",
+     "점수": "0점"
+    },
+    {
+     "답": "He does not work here any longer.",
+     "점수": "0점"
+    },
+    {
+     "답": "He doesn't work here any more.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He doesn't work here anymore.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ '더 이상 … 않습니다' → not … anymore(가장 흔한 꼴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He does not work here any longer.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ not … any longer — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He doesn't work here any more.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ any more(영국 표기) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#17": {
+   "id": "grammar2/gh2-029#17",
+   "시험": [
+    {
+     "답": "When did he quit",
+     "점수": "만점"
+    },
+    {
+     "답": "When did he resign?",
+     "점수": "0점"
+    },
+    {
+     "답": "When did he quit his job?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "When did he resign?",
+     "점수": "0점",
+     "까닭": "'사임하다' 의 다른 낱말 — 가르치는 quit(같은 과 #18 quitter 와 짝)을 피함."
+    },
+    {
+     "답": "When did he quit his job?",
+     "점수": "0점",
+     "까닭": "한국어에 없는 his job 을 더함 — 곧은 번역은 모범."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#18": {
+   "id": "grammar2/gh2-029#18",
+   "시험": [
+    {
+     "답": "I'm not a quitter.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm no quitter.",
+     "점수": "0점"
+    },
+    {
+     "답": "I am not a person who quits.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'm no quitter.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ not a ↔ no(같은 뜻의 흔한 꼴 · quitter 는 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I am not a person who quits.",
+     "점수": "0점",
+     "까닭": "가르치는 quitter 를 풀어 씀 — 어색한 말."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-029#19": {
+   "id": "grammar2/gh2-029#19",
+   "시험": [
+    {
+     "답": "He's on another line.",
+     "점수": "만점"
+    },
+    {
+     "답": "He's on the other line.",
+     "점수": "0점"
+    },
+    {
+     "답": "He is on the phone.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He's on the other line.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'다른 선' → the other line(전화에서 흔함) — another 가 기능어 목록 밖이라 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He is on the phone.",
+     "점수": "0점",
+     "까닭": "괄호 '통화중입니다' 를 옮긴 다른 말 — 가르치는 on another line 을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-030#1": {
+   "id": "grammar2/gh2-030#1",
+   "시험": [
+    {
+     "답": "To know yourself is difficult.",
+     "점수": "0점"
+    },
+    {
+     "답": "To know oneself is hard.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is difficult to know oneself.",
+     "점수": "0점"
+    },
+    {
+     "답": "Knowing oneself is difficult.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "To know yourself is difficult.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '자신' → yourself(일반 주어 you 의 재귀 — 요즘 영어에서 oneself 보다 흔함 · to부정사 주어 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "To know oneself is hard.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어렵다' → hard — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It is difficult to know oneself.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "가주어 It … to(같은 과 #3 이 가르치는 꼴 · #2 는 It 꼴이 다른 정답) — 한국어가 두 꼴을 가르지 않음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Knowing oneself is difficult.",
+     "점수": "0점",
+     "까닭": "동명사 주어 — 가르치는 to부정사 주어를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#2": {
+   "id": "grammar2/gh2-030#2",
+   "시험": [
+    {
+     "답": "It's good not to pretend to know.",
+     "점수": "만점"
+    },
+    {
+     "답": "Not to pretend to know is good",
+     "점수": "만점"
+    },
+    {
+     "답": "It is good to not pretend to know.",
+     "점수": "70점"
+    },
+    {
+     "답": "Not pretending to know is good.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "It is good to not pretend to know.",
+     "점수": "70점",
+     "까닭": "가르치는 부정사 부정 어순(not to)을 피함(to not — 분리 부정사) — 70점이 맞음."
+    },
+    {
+     "답": "Not pretending to know is good.",
+     "점수": "0점",
+     "까닭": "동명사 주어 — 가르치는 to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#3": {
+   "id": "grammar2/gh2-030#3",
+   "시험": [
+    {
+     "답": "It isn't easy to know oneself.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is not easy to know yourself.",
+     "점수": "0점"
+    },
+    {
+     "답": "To know oneself is not easy.",
+     "점수": "0점"
+    },
+    {
+     "답": "Knowing oneself is not easy.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is not easy to know yourself.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '자신' → yourself(요즘 영어에서 oneself 보다 흔함 · 가주어 꼴 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "To know oneself is not easy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "to부정사 주어(같은 과 #1 이 가르치는 꼴) — 한국어가 두 꼴을 가르지 않음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Knowing oneself is not easy.",
+     "점수": "0점",
+     "까닭": "동명사 주어 — 가르치는 to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#4": {
+   "id": "grammar2/gh2-030#4",
+   "시험": [
+    {
+     "답": "It takes an hour for me to get here.",
+     "점수": "0점"
+    },
+    {
+     "답": "It takes me an hour to get here.",
+     "점수": "0점"
+    },
+    {
+     "답": "It takes me one hour to get here",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It takes an hour for me to get here.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '한 시간' → an hour(가장 흔함) — an 과 one 을 다른 낱말로 봐 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It takes me an hour to get here.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "다른 정답 It takes me … 꼴 + an hour — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#5": {
+   "id": "grammar2/gh2-030#5",
+   "시험": [
+    {
+     "답": "It was difficult for him to keep up with his classmates",
+     "점수": "만점"
+    },
+    {
+     "답": "It was hard for him to keep up with his classmates.",
+     "점수": "0점"
+    },
+    {
+     "답": "It was difficult for him to keep pace with his classmates.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It was hard for him to keep up with his classmates.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어려웠다' → hard — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It was difficult for him to keep pace with his classmates.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '보조를 맞추는' → keep pace with(가르치는 It … for … to 꼴 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#6": {
+   "id": "grammar2/gh2-030#6",
+   "시험": [
+    {
+     "답": "It isn't easy for me to make myself understood in English.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's not easy for me to make myself understood in English",
+     "점수": "만점"
+    },
+    {
+     "답": "Making myself understood in English is not easy for me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Making myself understood in English is not easy for me.",
+     "점수": "0점",
+     "까닭": "동명사 주어 — 가르치는 It … for … to 꼴을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#7": {
+   "id": "grammar2/gh2-030#7",
+   "시험": [
+    {
+     "답": "It's difficult for me to answer that question.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is hard for me to answer the question.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is hard for me to answer that question.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is hard for me to answer the question.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어렵다' → hard(다른 정답의 the question 꼴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It is hard for me to answer that question.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어렵다' → hard(모범의 that question 꼴) — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#8": {
+   "id": "grammar2/gh2-030#8",
+   "시험": [
+    {
+     "답": "It's rude of you to do so.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is rude of you to do that.",
+     "점수": "70점"
+    },
+    {
+     "답": "It is impolite of you to do so.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is rude for you to do so.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is rude of you to do that.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'그렇게 하다' → do that(요즘 영어에서 do so 보다 흔함 · '그것' 문항 아님) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is impolite of you to do so.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '무례하다' → impolite — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It is rude for you to do so.",
+     "점수": "70점",
+     "까닭": "가르치는 of(사람의 성질 형용사 뒤 의미상 주어)를 for 로 씀 — 70점이 맞음."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#9": {
+   "id": "grammar2/gh2-030#9",
+   "시험": [
+    {
+     "답": "It's very kind of you to help me.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's really kind of you to help me.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is so kind of you to help me.",
+     "점수": "70점"
+    },
+    {
+     "답": "It is very nice of you to help me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It's really kind of you to help me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '매우' → really — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is so kind of you to help me.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '매우' → so — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is very nice of you to help me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '친절하다' → nice(nice of you 는 흔한 꼴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#10": {
+   "id": "grammar2/gh2-030#10",
+   "시험": [
+    {
+     "답": "It's cruel of him to desert his old father.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is cruel of him to abandon his old father.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is cruel of him to desert his elderly father.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is cruel of him to abandon his old father.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '버리다' → abandon(가족을 버리다의 가장 흔한 말) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It is cruel of him to desert his elderly father.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '나이 많은' → elderly — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#11": {
+   "id": "grammar2/gh2-030#11",
+   "시험": [
+    {
+     "답": "It's foolish of you to believe him.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is stupid of you to believe him.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is foolish of you to believe what he says.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is stupid of you to believe him.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어리석다' → stupid — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is foolish of you to believe what he says.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'그의 말을 믿다' → believe what he says(곧은 번역) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#12": {
+   "id": "grammar2/gh2-030#12",
+   "시험": [
+    {
+     "답": "It's very wise of him to study English grammar first.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is really wise of him to study English grammar first.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is very wise of him to first study English grammar.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is really wise of him to study English grammar first.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '매우' → really — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is very wise of him to first study English grammar.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ '먼저 공부하는' 차례(to first study — 부정사 부정 어순을 가르치는 문항 아님) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#13": {
+   "id": "grammar2/gh2-030#13",
+   "시험": [
+    {
+     "답": "It is so thoughtful of you to prepare dinner for us tonight.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's very thoughtful of you to prepare dinner for us tonight.",
+     "점수": "70점"
+    },
+    {
+     "답": "It's so thoughtful of you to make dinner for us tonight.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's so considerate of you to prepare dinner for us tonight.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It's very thoughtful of you to prepare dinner for us tonight.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '너무나' → very — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It's so thoughtful of you to make dinner for us tonight.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '저녁 식사를 준비하다' → make dinner(가장 흔한 꼴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It's so considerate of you to prepare dinner for us tonight.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '사려 깊다' → considerate — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#14": {
+   "id": "grammar2/gh2-030#14",
+   "시험": [
+    {
+     "답": "My rule is to get up early",
+     "점수": "만점"
+    },
+    {
+     "답": "My rule is to wake up early",
+     "점수": "만점"
+    },
+    {
+     "답": "My rule is getting up early.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "My rule is getting up early.",
+     "점수": "0점",
+     "까닭": "동명사 보어 — 가르치는 to부정사 보어를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#15": {
+   "id": "grammar2/gh2-030#15",
+   "시험": [
+    {
+     "답": "The company's goal is to control 90 percent of auto sales.",
+     "점수": "70점"
+    },
+    {
+     "답": "The company's goal is to control 90% of car sales.",
+     "점수": "0점"
+    },
+    {
+     "답": "The company's aim is to control 90% of auto sales.",
+     "점수": "0점"
+    },
+    {
+     "답": "The goal of the company is to control 90% of auto sales.",
+     "점수": "0점"
+    },
+    {
+     "답": "The company's goal is to dominate 90% of auto sales.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The company's goal is to control 90 percent of auto sales.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "% 를 낱말 percent 로(같은 뜻 · 흔한 표기) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The company's goal is to control 90% of car sales.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '자동차' → car — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The company's aim is to control 90% of auto sales.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '목표' → aim — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The goal of the company is to control 90% of auto sales.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉯ the company's goal ↔ the goal of the company — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The company's goal is to dominate 90% of auto sales.",
+     "점수": "0점",
+     "까닭": "'장악하다' → dominate 는 시장 · 업계를 목적어로 쓰는 말 — '판매의 90%' 와는 어색한 짝."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-030#16": {
+   "id": "grammar2/gh2-030#16",
+   "시험": [
+    {
+     "답": "I make it a rule to get up early",
+     "점수": "만점"
+    },
+    {
+     "답": "I make it a rule to wake up early",
+     "점수": "만점"
+    },
+    {
+     "답": "I make a rule of getting up early.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I make a rule of getting up early.",
+     "점수": "0점",
+     "까닭": "다른 관용구 make a rule of -ing — 가르치는 가목적어 make it a rule to 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#1": {
+   "id": "grammar2/gh2-031#1",
+   "시험": [
+    {
+     "답": "Their original plan was for the balloon to fly across the Arctic Ocean",
+     "점수": "만점"
+    },
+    {
+     "답": "Their initial plan was for the balloon to fly across the Arctic Ocean.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Their initial plan was for the balloon to fly across the Arctic Ocean.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '원래' → initial — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#2": {
+   "id": "grammar2/gh2-031#2",
+   "시험": [
+    {
+     "답": "The problem is where to live",
+     "점수": "만점"
+    },
+    {
+     "답": "The question is where to live.",
+     "점수": "0점"
+    },
+    {
+     "답": "The issue is where to live.",
+     "점수": "0점"
+    },
+    {
+     "답": "The problem is where we should live.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The question is where to live.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '문제' → question(고를 거리의 문제 · where to 꼴 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The issue is where to live.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '문제' → issue — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The problem is where we should live.",
+     "점수": "0점",
+     "까닭": "의문사절 — 가르치는 의문사 + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#3": {
+   "id": "grammar2/gh2-031#3",
+   "시험": [
+    {
+     "답": "The best way is never to see him again",
+     "점수": "만점"
+    },
+    {
+     "답": "The best way is to never see him again.",
+     "점수": "70점"
+    },
+    {
+     "답": "The best way is not to see him ever again.",
+     "점수": "70점"
+    },
+    {
+     "답": "The best method is never to see him again.",
+     "점수": "0점"
+    },
+    {
+     "답": "The best way is never seeing him again.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The best way is not to see him ever again.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉱ never ↔ not … ever(not to 어순은 지킴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The best method is never to see him again.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '방법' → method — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The best way is to never see him again.",
+     "점수": "70점",
+     "까닭": "가르치는 부정사 부정 어순(never to)을 피함(분리 부정사) — 70점이 맞음."
+    },
+    {
+     "답": "The best way is never seeing him again.",
+     "점수": "0점",
+     "까닭": "동명사 보어 — 가르치는 to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#4": {
+   "id": "grammar2/gh2-031#4",
+   "시험": [
+    {
+     "답": "My plan is to build a house here",
+     "점수": "만점"
+    },
+    {
+     "답": "My plan is to build a home here.",
+     "점수": "0점"
+    },
+    {
+     "답": "My plan is building a house here.",
+     "점수": "0점"
+    },
+    {
+     "답": "I plan to build a house here.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "My plan is to build a home here.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '집' → home(build a home 도 흔함 · to부정사 보어 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "My plan is building a house here.",
+     "점수": "0점",
+     "까닭": "동명사 보어 — 가르치는 to부정사 보어를 피함."
+    },
+    {
+     "답": "I plan to build a house here.",
+     "점수": "70점",
+     "까닭": "가르치는 보어 꼴 My plan is to … 를 동사 plan 으로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#5": {
+   "id": "grammar2/gh2-031#5",
+   "시험": [
+    {
+     "답": "All I want is for someone to be thinking about me.",
+     "점수": "0점"
+    },
+    {
+     "답": "All that I want is for somebody to be thinking about me.",
+     "점수": "70점"
+    },
+    {
+     "답": "All I want is for somebody to think about me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "All I want is for someone to be thinking about me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '누군가' → someone(somebody 와 같은 말) — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "All that I want is for somebody to be thinking about me.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    },
+    {
+     "답": "All I want is for somebody to think about me.",
+     "점수": "0점",
+     "까닭": "한국어 '생각하고 있는' 의 진행(to be -ing)을 뺌 — 뜻이 조금 다름."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#6": {
+   "id": "grammar2/gh2-031#6",
+   "시험": [
+    {
+     "답": "The aim is to prepare children for school.",
+     "점수": "0점"
+    },
+    {
+     "답": "The purpose is to get children ready for school.",
+     "점수": "0점"
+    },
+    {
+     "답": "Its purpose is to prepare children for school.",
+     "점수": "70점"
+    },
+    {
+     "답": "The purpose is to prepare kids for school.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The aim is to prepare children for school.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '목적' → aim — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The purpose is to get children ready for school.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'학교에 갈 준비를 시키다' → get children ready for school(흔한 꼴 · to부정사 보어 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Its purpose is to prepare children for school.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'그 목적' → its purpose(그것의 목적) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The purpose is to prepare kids for school.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어린이들' → kids — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#7": {
+   "id": "grammar2/gh2-031#7",
+   "시험": [
+    {
+     "답": "Our only wish was to preserve peace.",
+     "점수": "0점"
+    },
+    {
+     "답": "Our sole wish was to keep peace.",
+     "점수": "0점"
+    },
+    {
+     "답": "Our sole wish was to maintain peace.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Our only wish was to preserve peace.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '유일한' → only(가장 흔함) — only 는 기능어 목록에 있고 sole 은 없어 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Our sole wish was to keep peace.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '보존하다' → keep — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Our sole wish was to maintain peace.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '보존하다' → maintain — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#8": {
+   "id": "grammar2/gh2-031#8",
+   "시험": [
+    {
+     "답": "The moment was right for them to establish an independent country.",
+     "점수": "0점"
+    },
+    {
+     "답": "The moment was right for them to set up an independent nation.",
+     "점수": "0점"
+    },
+    {
+     "답": "The moment was suitable for them to set up an independent country.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The moment was right for them to establish an independent country.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '수립하다' 의 사전 첫 뜻 establish — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The moment was right for them to set up an independent nation.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '국가' → nation — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The moment was suitable for them to set up an independent country.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '적합하다' 의 사전 첫 뜻 suitable — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#9": {
+   "id": "grammar2/gh2-031#9",
+   "시험": [
+    {
+     "답": "I did not know when to do it.",
+     "점수": "만점"
+    },
+    {
+     "답": "I didn't know when I should do it.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I didn't know when I should do it.",
+     "점수": "70점",
+     "까닭": "의문사절 — 가르치는 의문사 + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#10": {
+   "id": "grammar2/gh2-031#10",
+   "시험": [
+    {
+     "답": "I did not know who to go with.",
+     "점수": "만점"
+    },
+    {
+     "답": "I did not know whom to go with",
+     "점수": "만점"
+    },
+    {
+     "답": "I didn't know who I should go with.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I didn't know who I should go with.",
+     "점수": "70점",
+     "까닭": "의문사절 — 가르치는 의문사 + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#11": {
+   "id": "grammar2/gh2-031#11",
+   "시험": [
+    {
+     "답": "He likes to read novels very much.",
+     "점수": "0점"
+    },
+    {
+     "답": "He likes reading fiction a lot.",
+     "점수": "0점"
+    },
+    {
+     "답": "He likes reading novels a lot.",
+     "점수": "0점"
+    },
+    {
+     "답": "He really likes reading fiction.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He likes to read novels very much.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "다른 정답 둘(to read · novels)을 합친 꼴 — 조합이 빔. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He likes reading fiction a lot.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '매우 많이' → a lot — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He likes reading novels a lot.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ a lot + 괄호 '소설' → novels — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He really likes reading fiction.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉰ '매우 많이 좋아한다' → really likes — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#12": {
+   "id": "grammar2/gh2-031#12",
+   "시험": [
+    {
+     "답": "I find it hard to solve this problem.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it difficult to solve this problem.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it is difficult to solve this problem.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I find it hard to solve this problem.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어렵다' → hard — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I think it difficult to solve this problem.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "본문 '생각한다' → think(같은 과 #16 · 32과 #2 가 가르치는 think it + 형용사 가목적어 꼴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I think it is difficult to solve this problem.",
+     "점수": "0점",
+     "까닭": "that 절(it 이 절 안의 주어) — 가르치는 가목적어 꼴(find it + 형용사 + to)을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#13": {
+   "id": "grammar2/gh2-031#13",
+   "시험": [
+    {
+     "답": "I find it hard for him to solve the problem.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it difficult for him to solve the problem.",
+     "점수": "0점"
+    },
+    {
+     "답": "I find it difficult for him to solve that problem.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I find it hard for him to solve the problem.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '어렵다' → hard — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I think it difficult for him to solve the problem.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "본문 '생각(발견)한다' → think(같은 과 #16 의 think it + 형용사 가목적어 꼴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I find it difficult for him to solve that problem.",
+     "점수": "70점",
+     "까닭": "소유자 '그 N' — 그 문제 → that problem 70점."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#14": {
+   "id": "grammar2/gh2-031#14",
+   "시험": [
+    {
+     "답": "I didn't know how to drive a car at that time.",
+     "점수": "0점"
+    },
+    {
+     "답": "At that time, I didn't know how to drive a car.",
+     "점수": "0점"
+    },
+    {
+     "답": "Back then, I didn't know how to drive a car.",
+     "점수": "0점"
+    },
+    {
+     "답": "I didn't know how to drive a car at the time.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I didn't know how to drive a car at that time.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '그때' → at that time(가장 곧은 번역) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "At that time, I didn't know how to drive a car.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉰ 때를 앞에 — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Back then, I didn't know how to drive a car.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '그때' → back then — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I didn't know how to drive a car at the time.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '그때' → at the time — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#15": {
+   "id": "grammar2/gh2-031#15",
+   "시험": [
+    {
+     "답": "I do not know when and where to go.",
+     "점수": "만점"
+    },
+    {
+     "답": "I don't know when and where I should go.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I don't know when and where I should go.",
+     "점수": "70점",
+     "까닭": "의문사절 — 가르치는 의문사 + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-031#16": {
+   "id": "grammar2/gh2-031#16",
+   "시험": [
+    {
+     "답": "I think it easy for you to pass the test.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it is easy for you to pass the exam.",
+     "점수": "70점"
+    },
+    {
+     "답": "I consider it easy for you to pass the exam.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I think it easy for you to pass the test.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '시험' → test — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I consider it easy for you to pass the exam.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '생각한다' → consider(consider it + 형용사 가목적어 꼴 · 흔함) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I think it is easy for you to pass the exam.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 is 하나 더(that 절로 가목적어 꼴을 피함) → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#1": {
+   "id": "grammar2/gh2-032#1",
+   "시험": [
+    {
+     "답": "He taught us how to gain popularity again.",
+     "점수": "0점"
+    },
+    {
+     "답": "He taught us how to win back popularity.",
+     "점수": "0점"
+    },
+    {
+     "답": "He taught us how to regain our popularity.",
+     "점수": "70점"
+    },
+    {
+     "답": "He taught us the way to regain popularity.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He taught us how to gain popularity again.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'다시 얻다' 의 곧은 번역 gain … again(how to 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He taught us how to win back popularity.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '다시 얻다' → win back — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He taught us how to regain our popularity.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 our 하나 더 → 70점."
+    },
+    {
+     "답": "He taught us the way to regain popularity.",
+     "점수": "70점",
+     "까닭": "'방법' → the way — 가르치는 how to 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#2": {
+   "id": "grammar2/gh2-032#2",
+   "시험": [
+    {
+     "답": "I think the best way to succeed is to work hard.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think it the best way to succeed to work hard.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think working hard is the best way to success.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think that the best way to success is to work hard.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I think the best way to succeed is to work hard.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'성공으로의 최상의 방법' → the best way to succeed(가장 흔한 꼴 · 다른 정답 꼴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I think it the best way to succeed to work hard.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "모범 꼴 + the best way to succeed — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I think working hard is the best way to success.",
+     "점수": "0점",
+     "까닭": "동명사 주어 — 가르치는 to부정사를 피함."
+    },
+    {
+     "답": "I think that the best way to success is to work hard.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#3": {
+   "id": "grammar2/gh2-032#3",
+   "시험": [
+    {
+     "답": "I couldn't decide whether or not to go.",
+     "점수": "70점"
+    },
+    {
+     "답": "I couldn't decide whether to go.",
+     "점수": "70점"
+    },
+    {
+     "답": "I could not decide if I should go or not.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I couldn't decide whether or not to go.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "whether or not to go(or not 을 앞에 둔 흔한 꼴) — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I couldn't decide whether to go.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "괄호 '갈지 여부' → whether to go — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I could not decide if I should go or not.",
+     "점수": "70점",
+     "까닭": "if 절 — 가르치는 whether + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#4": {
+   "id": "grammar2/gh2-032#4",
+   "시험": [
+    {
+     "답": "Three Asian companies agreed to pay over one million dollars in fines.",
+     "점수": "70점"
+    },
+    {
+     "답": "Three Asian companies agreed to pay more than $1 million in fines.",
+     "점수": "0점"
+    },
+    {
+     "답": "Three Asian companies agreed to pay more than 1 million dollars in fines.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Three Asian companies agreed to pay over one million dollars in fines.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '이상' → over — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Three Asian companies agreed to pay more than $1 million in fines.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'백만 불' → $1 million(신문의 흔한 표기) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Three Asian companies agreed to pay more than 1 million dollars in fines.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "숫자 표기 1 million(같은 과정 gh2-029 #2 는 6/six 둘 다 정답) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#5": {
+   "id": "grammar2/gh2-032#5",
+   "시험": [
+    {
+     "답": "I waited for her to come",
+     "점수": "만점"
+    },
+    {
+     "답": "I waited until she came.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I waited until she came.",
+     "점수": "0점",
+     "까닭": "절 — 가르치는 for + 의미상 주어 + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#6": {
+   "id": "grammar2/gh2-032#6",
+   "시험": [
+    {
+     "답": "I had no other choice but to study English.",
+     "점수": "70점"
+    },
+    {
+     "답": "I had no option but to study English.",
+     "점수": "0점"
+    },
+    {
+     "답": "I didn't have any choice but to study English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I had no other choice but to study English.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "no other choice but to(흔한 꼴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I had no option but to study English.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '선택' → option — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I didn't have any choice but to study English.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ no ↔ not … any — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#7": {
+   "id": "grammar2/gh2-032#7",
+   "시험": [
+    {
+     "답": "Do not let me interrupt you.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't let me disturb you.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Don't let me disturb you.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '방해하다' → disturb — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#8": {
+   "id": "grammar2/gh2-032#8",
+   "시험": [
+    {
+     "답": "We hope to hear from you",
+     "점수": "만점"
+    },
+    {
+     "답": "We hope we will hear from you.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "We hope we will hear from you.",
+     "점수": "0점",
+     "까닭": "절 — 가르치는 hope + to부정사를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#9": {
+   "id": "grammar2/gh2-032#9",
+   "시험": [
+    {
+     "답": "We sought to reach an agreement",
+     "점수": "만점"
+    },
+    {
+     "답": "We tried to reach an agreement.",
+     "점수": "0점"
+    },
+    {
+     "답": "We sought to arrive at an agreement.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We sought to arrive at an agreement.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '도달하다' → arrive at(arrive at an agreement 도 흔한 연어) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We tried to reach an agreement.",
+     "점수": "0점",
+     "까닭": "'모색하다' 를 try(애쓰다)로 바꿈 — 가르치는 동사 seek to 를 피함 · 뜻도 조금 다름."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#10": {
+   "id": "grammar2/gh2-032#10",
+   "시험": [
+    {
+     "답": "He managed to save some money",
+     "점수": "만점"
+    },
+    {
+     "답": "He managed to save a little money.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He managed to save a little money.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '약간의' → a little — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#11": {
+   "id": "grammar2/gh2-032#11",
+   "시험": [
+    {
+     "답": "Let bygones be bygones",
+     "점수": "만점"
+    },
+    {
+     "답": "Let the past be the past.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Let the past be the past.",
+     "점수": "0점",
+     "까닭": "굳은 말 Let bygones be bygones 를 다른 말로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#12": {
+   "id": "grammar2/gh2-032#12",
+   "시험": [
+    {
+     "답": "If anyone calls for me while I'm out, please have him call 725-1081.",
+     "점수": "0점"
+    },
+    {
+     "답": "If somebody calls for me while I'm out, please have him call 725-1081.",
+     "점수": "0점"
+    },
+    {
+     "답": "If someone calls for me while I'm out, please ask him to call 725-1081.",
+     "점수": "0점"
+    },
+    {
+     "답": "If someone calls for me while I am out, please have them call 725-1081.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "If anyone calls for me while I'm out, please have him call 725-1081.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ 조건절의 '누가' → anyone(가장 흔함) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "If somebody calls for me while I'm out, please have him call 725-1081.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ someone = somebody — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "If someone calls for me while I'm out, please ask him to call 725-1081.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'전화해 달라고 해 주세요' → ask him to call(가장 곧은 번역 · 이 과의 to부정사) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "If someone calls for me while I am out, please have them call 725-1081.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "누구인지 모르는 someone 을 받는 them — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#13": {
+   "id": "grammar2/gh2-032#13",
+   "시험": [
+    {
+     "답": "Let me get it",
+     "점수": "만점"
+    },
+    {
+     "답": "I'll get it.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I'll get it.",
+     "점수": "0점",
+     "까닭": "괄호 '내가 받겠다' 를 옮긴 다른 말 — 가르치는 Let me 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#14": {
+   "id": "grammar2/gh2-032#14",
+   "시험": [
+    {
+     "답": "He was in a unique position to help her avoid this threat.",
+     "점수": "0점"
+    },
+    {
+     "답": "He was in a unique position to help her to avert this threat.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He was in a unique position to help her avoid this threat.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '피하다' 의 사전 첫 뜻 avoid — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He was in a unique position to help her to avert this threat.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 to 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#15": {
+   "id": "grammar2/gh2-032#15",
+   "시험": [
+    {
+     "답": "The government allows the company to import the cars duty-free.",
+     "점수": "0점"
+    },
+    {
+     "답": "The government permits the company to import the car duty-free.",
+     "점수": "70점"
+    },
+    {
+     "답": "The government permits the company to import the cars tax-free.",
+     "점수": "0점"
+    },
+    {
+     "답": "The government permits the company to import the cars duty free.",
+     "점수": "70점"
+    },
+    {
+     "답": "The government lets the company import the cars duty-free.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The government allows the company to import the cars duty-free.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '허락하다' → allow(가장 흔함 · allow … to 꼴 지킴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The government permits the company to import the car duty-free.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'그 자동차' — 한국어가 수를 가르지 않음(단수 car) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The government permits the company to import the cars tax-free.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '면세로' → tax-free — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The government permits the company to import the cars duty free.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "하이픈 없는 duty free(부사로 흔한 표기) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The government lets the company import the cars duty-free.",
+     "점수": "0점",
+     "까닭": "let + 원형 — 가르치는 permit … to 꼴을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  },
+  "grammar2/gh2-032#16": {
+   "id": "grammar2/gh2-032#16",
+   "시험": [
+    {
+     "답": "Weather reports help us to plan our activities.",
+     "점수": "70점"
+    },
+    {
+     "답": "Weather forecasts help us plan our activities.",
+     "점수": "0점"
+    },
+    {
+     "답": "The weather report helps us plan our activities.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Weather forecasts help us plan our activities.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '기상보도' → weather forecast(가장 흔한 말) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The weather report helps us plan our activities.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉯ 관사 · 수 — 한국어 '기상보도는' 은 수를 가르지 않음(총칭 단수) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Weather reports help us to plan our activities.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 to 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 23:20"
+  }
+ }
+}

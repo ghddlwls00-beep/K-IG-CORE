@@ -1,0 +1,2863 @@
+{
+ "파일": "13.md",
+ "문항": {
+  "grammar1/gh1-080#1": {
+   "id": "grammar1/gh1-080#1",
+   "시험": [
+    {
+     "답": "Are you a student?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you a pupil?",
+     "점수": "0점"
+    },
+    {
+     "답": "You are a student?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are you a pupil?",
+     "점수": "0점",
+     "까닭": "드묾 · 어색 — pupil 은 주로 영국에서 초중등 어린 학생을 이르는 좁은 말이라 '학생이냐?' 를 묻는 영어로 거의 안 씀; 흔한 번역 student 는 만점"
+    },
+    {
+     "답": "You are a student?",
+     "점수": "70점",
+     "까닭": "평서문 어순에 물음표만 붙인 꼴 — 이 과가 가르치는 의문문 어순(Are you …?)을 피함"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#2": {
+   "id": "grammar1/gh1-080#2",
+   "시험": [
+    {
+     "답": "Is your father rich?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is your father a rich person?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is your father wealthy?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is your dad rich?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is your father a rich person?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "부자 = rich person — 다른 정답 'a rich man' 은 받는데 같은 뜻의 성 중립 'a rich person' 은 0점(낱말 하나 차이). 새 다른 정답 'Is your father a rich person?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Is your father wealthy?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "부자(부유하다)의 흔한 다른 번역 wealthy — 뜻 같음, 0점. 새 다른 정답 'Is your father wealthy?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Is your dad rich?",
+     "점수": "0점",
+     "까닭": "한국어가 '아버지' 를 씀 — 곧은 번역 father(만점); dad 는 '아빠' 에 맞는 말(이 과정은 아버지 · 어머니를 father · mother 로 가르침)"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#3": {
+   "id": "grammar1/gh1-080#3",
+   "시험": [
+    {
+     "답": "Does he get up early?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he wake up early?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#4": {
+   "id": "grammar1/gh1-080#4",
+   "시험": [
+    {
+     "답": "Does your sister go to bed early?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your older sister go to bed early?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does your elder sister go to bed early?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does your older sister go to sleep early?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does your sister sleep early?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does your older sister go to bed early?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "누나 = 손위 누이 — older sister 는 한국어 '누나' 를 더 곧게 옮긴 흔한 번역인데 내용어 older 하나 더라 70점. 새 다른 정답 'Does your older sister go to bed early?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Does your elder sister go to bed early?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "elder sister(영국식 · 격식) = older sister — 같은 까닭으로 70점. 새 다른 정답 'Does your elder sister go to bed early?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does your older sister go to sleep early?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "받는 go to sleep 꼴과 older sister 를 합친 꼴이 70점 — older 꼴을 더할 때 go to sleep 짝도 함께('Does your older sister go to sleep early?')",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Does your sister sleep early?",
+     "점수": "70점",
+     "까닭": "어색 — 'sleep early' 는 한국식 영어; 영어는 잠자리에 드는 때를 go to bed · go to sleep 으로 말함(둘 다 만점)"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#5": {
+   "id": "grammar1/gh1-080#5",
+   "시험": [
+    {
+     "답": "How many people did the police arrest?",
+     "점수": "만점"
+    },
+    {
+     "답": "How many people were arrested by the police?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How many people were arrested by the police?",
+     "점수": "70점",
+     "까닭": "한국어 '경찰이 … 체포했나' 는 능동 — 수동태는 다른 꼴이고 이 과는 did 의문문을 가르침(강의가 가르치는 꼴을 피함)"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#6": {
+   "id": "grammar1/gh1-080#6",
+   "시험": [
+    {
+     "답": "The police arrested fifteen people, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "The police arrested 15 people, didn't they?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#7": {
+   "id": "grammar1/gh1-080#7",
+   "시험": [
+    {
+     "답": "Where did the police arrest fifteen people?",
+     "점수": "만점"
+    },
+    {
+     "답": "Where did the police arrest 15 people?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#8": {
+   "id": "grammar1/gh1-080#8",
+   "시험": [
+    {
+     "답": "Why were the police arresting workers?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why were the police arresting laborers?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why were the police arresting the workers?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why were the police arresting laborers?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "노동자의 사전 첫 뜻들 worker · laborer — laborer 꼴이 0점. 새 다른 정답 'Why were the police arresting laborers?'(영국 철자 labourers 는 한 글자 차이라 이것만 넣어도 70점)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why were the police arresting the workers?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 the 하나 더 70점(한국어도 '그' 없는 맨 '노동자들')"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#9": {
+   "id": "grammar1/gh1-080#9",
+   "시험": [
+    {
+     "답": "Why are the police arresting the students?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are the police arresting those students?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Why are the police arresting those students?",
+     "점수": "70점",
+     "까닭": "'그 N' → those N 70점은 소유자 결정('그 N' 280곳 그대로)"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#10": {
+   "id": "grammar1/gh1-080#10",
+   "시험": [
+    {
+     "답": "Why aren't more people doing that?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are more people not doing it?",
+     "점수": "70점"
+    },
+    {
+     "답": "Why are more people not doing that?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why are more people not doing it?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "줄이지 않은 부정 의문문의 표준 어순(Why are … not …?) — 줄임꼴 aren't 을 풀면 not 이 주어 뒤로 감; 이 과정은 #29 'Are you not happy in Korea?' 처럼 이 꼴을 받는데 여기만 70점. 새 다른 정답 'Why are more people not doing it?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Why are more people not doing that?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "같은 풀어 쓴 꼴에 결정 3 의 that — 70점. 새 다른 정답 'Why are more people not doing that?'",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#11": {
+   "id": "grammar1/gh1-080#11",
+   "시험": [
+    {
+     "답": "It's not the end.",
+     "점수": "만점"
+    },
+    {
+     "답": "It isn't the end.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#12": {
+   "id": "grammar1/gh1-080#12",
+   "시험": [
+    {
+     "답": "It's the beginning of the end.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is the start of the end.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "It is the start of the end.",
+     "점수": "0점",
+     "까닭": "'끝의 시작' 은 영어 굳은 말 the beginning of the end — start 로 바꾼 꼴은 관용구가 아니라 드물고 어색"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#13": {
+   "id": "grammar1/gh1-080#13",
+   "시험": [
+    {
+     "답": "What time did you go to bed last night?",
+     "점수": "만점"
+    },
+    {
+     "답": "What time did you go to sleep last night?",
+     "점수": "만점"
+    },
+    {
+     "답": "When did you go to bed last night?",
+     "점수": "70점"
+    },
+    {
+     "답": "What time did you sleep last night?",
+     "점수": "70점"
+    },
+    {
+     "답": "At what time did you go to bed last night?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "When did you go to bed last night?",
+     "점수": "70점",
+     "까닭": "'몇 시에' 는 what time — when 은 때를 넓게 묻는 말로 '몇 시' 를 옮기지 않음; 이 과의 몇 시 문항(#13 · #14 · #15 · #17 · #22)은 What time 을 가르침"
+    },
+    {
+     "답": "What time did you sleep last night?",
+     "점수": "70점",
+     "까닭": "어색 — sleep 은 자는 상태; 잠자리에 든 때는 go to bed · go to sleep(둘 다 만점)"
+    },
+    {
+     "답": "At what time did you go to bed last night?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 at 하나 더 70점"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#14": {
+   "id": "grammar1/gh1-080#14",
+   "시험": [
+    {
+     "답": "What time did you get up?",
+     "점수": "만점"
+    },
+    {
+     "답": "What time did you wake up?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#15": {
+   "id": "grammar1/gh1-080#15",
+   "시험": [
+    {
+     "답": "What time did you go to work?",
+     "점수": "만점"
+    },
+    {
+     "답": "What time did you get to work?",
+     "점수": "만점"
+    },
+    {
+     "답": "What time did you come to work?",
+     "점수": "0점"
+    },
+    {
+     "답": "What time did you arrive at work?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What time did you come to work?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "출근하다 = go to work · come to work(사전 뜻 — 말하는 이가 일터에 있을 때 흔함) — come 꼴만 0점. 새 다른 정답 'What time did you come to work?'",
+     "확신": "보통"
+    },
+    {
+     "답": "What time did you arrive at work?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "모범 get to work 와 같은 뜻(일터에 닿음)의 흔한 말 arrive at work — 0점. 새 다른 정답 'What time did you arrive at work?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#16": {
+   "id": "grammar1/gh1-080#16",
+   "시험": [
+    {
+     "답": "Why did you come home late?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why did you get home late?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why did you come back home late?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why did you come back home late?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "come back home 은 '집에 오다(돌아오다)' 의 흔한 영어 — 뜻 같고 맞는 영어인데 내용어 back 하나 더라 0점. 새 다른 정답 'Why did you come back home late?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#17": {
+   "id": "grammar1/gh1-080#17",
+   "시험": [
+    {
+     "답": "What time did you leave your house?",
+     "점수": "만점"
+    },
+    {
+     "답": "What time did you leave home?",
+     "점수": "70점"
+    },
+    {
+     "답": "What time did you leave the house?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What time did you leave home?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영어는 집을 나서는 일을 관사 · 소유격 없는 굳은 말 leave home 으로 흔히 말함(go home 처럼) — 한국어 '당신의 집' 과 같은 뜻인데 your 가 없어 70점. 새 다른 정답 'What time did you leave home?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "What time did you leave the house?",
+     "점수": "70점",
+     "까닭": "한국어가 일부러 넣은 '당신의' 를 관사 the 로 바꾼 꼴 — 소유격 자리 기능어 하나 차이 70점이 알맞음(맨 home 굳은 말과 달리 house 는 한정어 자리가 있음)"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#18": {
+   "id": "grammar1/gh1-080#18",
+   "시험": [
+    {
+     "답": "Did you take the subway?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did you ride the subway?",
+     "점수": "0점"
+    },
+    {
+     "답": "Did you take the underground?",
+     "점수": "0점"
+    },
+    {
+     "답": "Did you take the metro?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Did you ride the subway?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'지하철을 타다' 의 흔한 미국 영어 ride the subway — 0점. 새 다른 정답 'Did you ride the subway?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Did you take the underground?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "지하철의 영국 영어 underground — 영국/미국 낱말은 둘 다 맞는 영어(기준); 0점. 새 다른 정답 'Did you take the underground?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Did you take the metro?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "지하철의 흔한 다른 말 metro(서울 지하철 영어 이름에도 쓰임) — 0점. 새 다른 정답 'Did you take the metro?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#19": {
+   "id": "grammar1/gh1-080#19",
+   "시험": [
+    {
+     "답": "Does your mother take the subway?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your mother ride the subway?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does your mother take the underground?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does your mother take the metro?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does your mom take the subway?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does your mother ride the subway?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#18 과 같음 — ride the subway 0점. 새 다른 정답 'Does your mother ride the subway?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does your mother take the underground?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#18 과 같음 — 영국 영어 underground 0점. 새 다른 정답 'Does your mother take the underground?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does your mother take the metro?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#18 과 같음 — metro 0점. 새 다른 정답 'Does your mother take the metro?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Does your mom take the subway?",
+     "점수": "0점",
+     "까닭": "한국어가 '어머니' 를 씀 — 곧은 번역 mother(만점); mom 은 '엄마' 에 맞는 말"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#20": {
+   "id": "grammar1/gh1-080#20",
+   "시험": [
+    {
+     "답": "Do you have breakfast?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you eat breakfast?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#21": {
+   "id": "grammar1/gh1-080#21",
+   "시험": [
+    {
+     "답": "What did you have for breakfast?",
+     "점수": "만점"
+    },
+    {
+     "답": "What did you eat for breakfast?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#22": {
+   "id": "grammar1/gh1-080#22",
+   "시험": [
+    {
+     "답": "What time do you have lunch?",
+     "점수": "만점"
+    },
+    {
+     "답": "What time do you eat lunch?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#23": {
+   "id": "grammar1/gh1-080#23",
+   "시험": [
+    {
+     "답": "Where does he have lunch?",
+     "점수": "만점"
+    },
+    {
+     "답": "Where does he eat lunch?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#24": {
+   "id": "grammar1/gh1-080#24",
+   "시험": [
+    {
+     "답": "Does she like fast food?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does she enjoy fast food?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does she enjoy fast food?",
+     "점수": "0점",
+     "까닭": "드묾 — 좋아하다의 흔한 번역은 like(만점); enjoy 는 '즐기다' 로 결이 다른 풀어 옮김"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#25": {
+   "id": "grammar1/gh1-080#25",
+   "시험": [
+    {
+     "답": "When did you come to Korea?",
+     "점수": "만점"
+    },
+    {
+     "답": "When did you arrive in Korea?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "When did you arrive in Korea?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "오다 의 사전 뜻 arrive(도착) — 외국인에게 흔히 묻는 같은 뜻의 맞는 영어인데 0점. 새 다른 정답 'When did you arrive in Korea?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#26": {
+   "id": "grammar1/gh1-080#26",
+   "시험": [
+    {
+     "답": "When does he go back to America?",
+     "점수": "만점"
+    },
+    {
+     "답": "When is he going back to America?",
+     "점수": "0점"
+    },
+    {
+     "답": "When is he going back to the United States?",
+     "점수": "0점"
+    },
+    {
+     "답": "When will he go back to the U.S.?",
+     "점수": "70점"
+    },
+    {
+     "답": "When will he go back to America?",
+     "점수": "70점"
+    },
+    {
+     "답": "When does he return to the USA?",
+     "점수": "70점"
+    },
+    {
+     "답": "When is he returning to the U.S.?",
+     "점수": "70점"
+    },
+    {
+     "답": "When does he go back to the US?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "When is he going back to America?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "받는 진행형 미래(When is he going back to the U.S.?)와 받는 이름(America)을 합친 꼴이 0점(going ↔ go 가 다른 낱말로 셈) — 다른 정답의 조합이 빠짐. 새 다른 정답 'When is he going back to America?'",
+     "확신": "높음"
+    },
+    {
+     "답": "When is he going back to the United States?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "같은 조합 빠짐(진행형 + the United States) — 0점. 새 다른 정답 'When is he going back to the United States?'",
+     "확신": "높음"
+    },
+    {
+     "답": "When will he go back to the U.S.?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '돌아가나' 는 앞일을 가르지 않음 — 이미 받는 진행형 미래처럼 will 미래도 맞는 흔한 번역인데 70점. 새 다른 정답 'When will he go back to the U.S.?'",
+     "확신": "보통"
+    },
+    {
+     "답": "When will he go back to America?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "will 미래 + America — 70점. 새 다른 정답 'When will he go back to America?'",
+     "확신": "보통"
+    },
+    {
+     "답": "When does he return to the USA?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "미국의 흔한 영어 이름 the USA — the U.S. · the United States · America 는 받는데 USA 만 70점(us ↔ usa 한 글자 차이로 셈). 새 다른 정답 'When does he return to the USA?'(go back to the USA 짝도)",
+     "확신": "높음"
+    },
+    {
+     "답": "When is he returning to the U.S.?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "진행형 미래를 return 으로 쓴 꼴 — 70점. 새 다른 정답 'When is he returning to the U.S.?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#27": {
+   "id": "grammar1/gh1-080#27",
+   "시험": [
+    {
+     "답": "Where are you from?",
+     "점수": "만점"
+    },
+    {
+     "답": "Where do you come from?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#28": {
+   "id": "grammar1/gh1-080#28",
+   "시험": [
+    {
+     "답": "Where do you come from?",
+     "점수": "만점"
+    },
+    {
+     "답": "Where are you from?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#29": {
+   "id": "grammar1/gh1-080#29",
+   "시험": [
+    {
+     "답": "Aren't you happy in Korea?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you not happy in Korea?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you unhappy in Korea?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are you unhappy in Korea?",
+     "점수": "0점",
+     "까닭": "이 문항은 부정 의문문(Aren't you …?)을 가르침 — unhappy 긍정 의문은 그 꼴을 피하고 '~하지 않나?' 의 결도 없어짐"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#30": {
+   "id": "grammar1/gh1-080#30",
+   "시험": [
+    {
+     "답": "Who shouts?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who is yelling?",
+     "점수": "0점"
+    },
+    {
+     "답": "Who's shouting?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Who is yelling?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "받는 두 꼴(Who yells? · Who is shouting?)을 합친 꼴이 0점 — 다른 정답의 조합이 빠짐. 새 다른 정답 'Who is yelling?'",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#31": {
+   "id": "grammar1/gh1-080#31",
+   "시험": [
+    {
+     "답": "Who is crying?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who's crying?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#32": {
+   "id": "grammar1/gh1-080#32",
+   "시험": [
+    {
+     "답": "Do your children often cry?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do your kids cry often?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do your kids often cry?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do your kids cry often?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "아이들의 흔한 다른 번역 kids(한국어 '아이들' 은 높임 · 낮춤이 없는 말) — 0점. 새 다른 정답 'Do your kids cry often?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Do your kids often cry?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "같음(빈도 부사를 동사 앞에 둔 받는 어순과 kids) — 0점. 새 다른 정답 'Do your kids often cry?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#33": {
+   "id": "grammar1/gh1-080#33",
+   "시험": [
+    {
+     "답": "Why are your children crying?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are your kids crying?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why are your kids crying?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#32 와 같음 — 아이들 → kids 0점. 새 다른 정답 'Why are your kids crying?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#34": {
+   "id": "grammar1/gh1-080#34",
+   "시험": [
+    {
+     "답": "Is the baby crying?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is that baby crying?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Is that baby crying?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정('그 N' 280곳 그대로)"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#35": {
+   "id": "grammar1/gh1-080#35",
+   "시험": [
+    {
+     "답": "The child whispers but his brother shouts.",
+     "점수": "만점"
+    },
+    {
+     "답": "The child whispers, but his older brother shouts.",
+     "점수": "70점"
+    },
+    {
+     "답": "The child whispers, but his elder brother shouts.",
+     "점수": "70점"
+    },
+    {
+     "답": "The kid whispers, but his brother shouts.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The child whispers, but his older brother shouts.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "형 = 손위 형제 — older brother 는 한국어 '형' 을 더 곧게 옮긴 흔한 번역인데 older 하나 더라 70점. 새 다른 정답 'The child whispers, but his older brother shouts.'",
+     "확신": "높음"
+    },
+    {
+     "답": "The child whispers, but his elder brother shouts.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "elder brother(영국식 · 격식) = older brother — 70점. 새 다른 정답 'The child whispers, but his elder brother shouts.'",
+     "확신": "보통"
+    },
+    {
+     "답": "The kid whispers, but his brother shouts.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "아이 → kid(흔한 다른 번역) — 0점. 새 다른 정답 'The kid whispers, but his brother shouts.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#36": {
+   "id": "grammar1/gh1-080#36",
+   "시험": [
+    {
+     "답": "Are you angry?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you mad?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you upset?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are you upset?",
+     "점수": "0점",
+     "까닭": "upset 은 '속상한 · 언짢은' 에 가까운 넓은 말 — '화났나' 의 곧은 번역 angry · mad 는 만점"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#37": {
+   "id": "grammar1/gh1-080#37",
+   "시험": [
+    {
+     "답": "Who was looking for me?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who searched for me?",
+     "점수": "0점"
+    },
+    {
+     "답": "Who was searching for me?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Who searched for me?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "찾아다니다 의 사전 뜻 look for · search for — search 꼴 0점. 새 다른 정답 'Who searched for me?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Who was searching for me?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "받는 진행형(Who was looking for me?)에 search for — 0점. 새 다른 정답 'Who was searching for me?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#38": {
+   "id": "grammar1/gh1-080#38",
+   "시험": [
+    {
+     "답": "Did your mother look for this?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did your mother search for this?",
+     "점수": "0점"
+    },
+    {
+     "답": "Was your mother looking for this?",
+     "점수": "0점"
+    },
+    {
+     "답": "Did your mom look for this?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Did your mother search for this?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#37 과 같음 — 찾아다니다 → search for 0점. 새 다른 정답 'Did your mother search for this?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Was your mother looking for this?",
+     "점수": "0점",
+     "까닭": "결정 4 — 진행형 대체 답안은 소유자가 고른 12문항만(한국어 '찾아다니셨니' 는 단순 과거)"
+    },
+    {
+     "답": "Did your mom look for this?",
+     "점수": "0점",
+     "까닭": "한국어가 '어머니' 를 씀 — 곧은 번역 mother(만점); mom 은 '엄마' 에 맞는 말"
+    }
+   ],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-080#39": {
+   "id": "grammar1/gh1-080#39",
+   "시험": [
+    {
+     "답": "Your grandmother didn't look for this, did she?",
+     "점수": "만점"
+    },
+    {
+     "답": "Your grandma didn't look for this, did she?",
+     "점수": "70점"
+    },
+    {
+     "답": "Your grandmother didn't search for this, did she?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Your grandma didn't look for this, did she?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "할머니(높임 · 낮춤 짝이 없는 말)의 흔한 번역 grandma — 70점. 새 다른 정답 'Your grandma did not look for this, did she?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Your grandmother didn't search for this, did she?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#37 과 같음 — 찾아다니다 → search for 0점. 새 다른 정답 'Your grandmother did not search for this, did she?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:45"
+  },
+  "grammar1/gh1-082#1": {
+   "id": "grammar1/gh1-082#1",
+   "시험": [
+    {
+     "답": "The ski resort makes its own snow.",
+     "점수": "만점"
+    },
+    {
+     "답": "That ski resort makes its own snow.",
+     "점수": "70점"
+    },
+    {
+     "답": "The ski resort produces its own snow.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "That ski resort makes its own snow.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정('그 N' 280곳 그대로)"
+    },
+    {
+     "답": "The ski resort produces its own snow.",
+     "점수": "0점",
+     "까닭": "드묾 — '만든다' 의 흔한 번역은 make(스키장 인공 눈도 영어 굳은 말이 make snow); produce 는 '생산하다' 의 풀어 옮김"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#2": {
+   "id": "grammar1/gh1-082#2",
+   "시험": [
+    {
+     "답": "The storm dumps three feet of snow.",
+     "점수": "만점"
+    },
+    {
+     "답": "The storm dumps 3 feet of snow.",
+     "점수": "만점"
+    },
+    {
+     "답": "That storm dumps three feet of snow.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "That storm dumps three feet of snow.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#3": {
+   "id": "grammar1/gh1-082#3",
+   "시험": [
+    {
+     "답": "The official cancels ski races.",
+     "점수": "만점"
+    },
+    {
+     "답": "The official cancels the ski races.",
+     "점수": "70점"
+    },
+    {
+     "답": "That official cancels ski races.",
+     "점수": "70점"
+    },
+    {
+     "답": "The official cancels the ski race.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The official cancels the ski races.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 the 하나 더 70점(한국어 '스키 시합을' 에 '그' 없음)"
+    },
+    {
+     "답": "That official cancels ski races.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    },
+    {
+     "답": "The official cancels the ski race.",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(cancel races)' 가 복수 races 를 줌 — 단수로 바꾼 꼴은 힌트를 따르지 않음"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#4": {
+   "id": "grammar1/gh1-082#4",
+   "시험": [
+    {
+     "답": "My father remembers this.",
+     "점수": "만점"
+    },
+    {
+     "답": "My dad remembers this.",
+     "점수": "0점"
+    },
+    {
+     "답": "My father remembers it.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "My dad remembers this.",
+     "점수": "0점",
+     "까닭": "한국어가 '아버지' 를 씀 — 곧은 번역 father(만점); dad 는 '아빠' 에 맞는 말"
+    },
+    {
+     "답": "My father remembers it.",
+     "점수": "70점",
+     "까닭": "이것 = this — it 은 '그것' 이라 가리키는 말이 다름; 기능어 하나 차이 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#5": {
+   "id": "grammar1/gh1-082#5",
+   "시험": [
+    {
+     "답": "The scientist has a good memory.",
+     "점수": "만점"
+    },
+    {
+     "답": "That scientist has a good memory.",
+     "점수": "70점"
+    },
+    {
+     "답": "The scientist has got a good memory.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The scientist has got a good memory.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'갖고 있다' 의 영국 영어 has got(가짐의 뜻 같음) — 영국/미국 꼴은 둘 다 맞는 영어(기준)인데 got 하나 더라 0점. 새 다른 정답 'The scientist has got a good memory.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "That scientist has a good memory.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#6": {
+   "id": "grammar1/gh1-082#6",
+   "시험": [
+    {
+     "답": "The soldier closes the bridge.",
+     "점수": "만점"
+    },
+    {
+     "답": "The soldier closes off the bridge.",
+     "점수": "70점"
+    },
+    {
+     "답": "That soldier closes the bridge.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The soldier closes off the bridge.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 off 하나 더 70점"
+    },
+    {
+     "답": "That soldier closes the bridge.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#7": {
+   "id": "grammar1/gh1-082#7",
+   "시험": [
+    {
+     "답": "My mother closes the door.",
+     "점수": "만점"
+    },
+    {
+     "답": "My mother shuts the door.",
+     "점수": "0점"
+    },
+    {
+     "답": "My mom closes the door.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "My mother shuts the door.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "닫다 의 사전 첫 뜻들 close · shut — 힌트 없는 문항이라 shut the door 도 흔한 맞는 번역인데 0점. 새 다른 정답 'My mother shuts the door.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "My mom closes the door.",
+     "점수": "0점",
+     "까닭": "한국어가 '어머니' 를 씀 — 곧은 번역 mother(만점); mom 은 '엄마' 에 맞는 말"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#8": {
+   "id": "grammar1/gh1-082#8",
+   "시험": [
+    {
+     "답": "The monkey uses the tool.",
+     "점수": "만점"
+    },
+    {
+     "답": "The monkey uses that tool.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The monkey uses that tool.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#9": {
+   "id": "grammar1/gh1-082#9",
+   "시험": [
+    {
+     "답": "He spends some time on an island.",
+     "점수": "만점"
+    },
+    {
+     "답": "He spends a little time on an island.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He spends a little time on an island.",
+     "점수": "70점",
+     "까닭": "문항 힌트 '(spend, some time, on an island)' 가 some time 을 줌 — a little 로 바꾼 꼴은 힌트를 따르지 않음(70점)"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#10": {
+   "id": "grammar1/gh1-082#10",
+   "시험": [
+    {
+     "답": "My mother waits for test results.",
+     "점수": "만점"
+    },
+    {
+     "답": "My mother waits for the test results.",
+     "점수": "70점"
+    },
+    {
+     "답": "My mother waits for her test results.",
+     "점수": "70점"
+    },
+    {
+     "답": "My mother is waiting for test results.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "My mother waits for the test results.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 the 하나 더 70점"
+    },
+    {
+     "답": "My mother waits for her test results.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 her 하나 더 70점"
+    },
+    {
+     "답": "My mother is waiting for test results.",
+     "점수": "0점",
+     "까닭": "결정 4 — 진행형 대체 답안은 소유자가 고른 12문항만(한국어 '기다린다' 는 현재 단순)"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#11": {
+   "id": "grammar1/gh1-082#11",
+   "시험": [
+    {
+     "답": "He reads his newspaper.",
+     "점수": "만점"
+    },
+    {
+     "답": "He reads the newspaper.",
+     "점수": "70점"
+    },
+    {
+     "답": "He reads his paper.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He reads the newspaper.",
+     "점수": "70점",
+     "까닭": "한국어가 일부러 넣은 '그의' 를 the 로 바꾼 꼴 — 소유격 자리 기능어 하나 차이 70점이 알맞음"
+    },
+    {
+     "답": "He reads his paper.",
+     "점수": "0점",
+     "까닭": "드묾 — 신문의 흔한 번역 newspaper(만점); paper 는 '종이' 와 겹치는 구어 줄임"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#12": {
+   "id": "grammar1/gh1-082#12",
+   "시험": [
+    {
+     "답": "Didn't he spend some time on an island?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did he not spend any time on an island?",
+     "점수": "70점"
+    },
+    {
+     "답": "Didn't he spend a little time on an island?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Did he not spend any time on an island?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "받는 두 다른 정답(Did he not spend some time … · Didn't he spend any time …)을 합친 풀어 쓴 꼴이 70점 — 조합이 빠짐. 새 다른 정답 'Did he not spend any time on an island?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Didn't he spend a little time on an island?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "약간의 = a little(사전 첫 뜻) — 이 문항엔 힌트가 없어 a little time 도 흔한 맞는 번역인데 70점. 새 다른 정답 'Didn't he spend a little time on an island?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#13": {
+   "id": "grammar1/gh1-082#13",
+   "시험": [
+    {
+     "답": "Are they spending some time on an island?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they spending a little time on an island?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are they spending some time on the island?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Are they spending a little time on an island?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#12 와 같음 — 힌트 없는 문항의 약간의 → a little 70점. 새 다른 정답 'Are they spending a little time on an island?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Are they spending some time on the island?",
+     "점수": "70점",
+     "까닭": "한국어 '섬에서' 에 '그' 가 없음 — 이 과정은 '그 N' 만 the 로 옮기고 맨 명사는 모범처럼 an island; 관사 하나 차이 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#14": {
+   "id": "grammar1/gh1-082#14",
+   "시험": [
+    {
+     "답": "They spent some time on an island, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "They spent a little time on an island, didn't they?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "They spent a little time on an island, didn't they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#12 와 같음 — 힌트 없는 문항의 약간의 → a little 70점. 새 다른 정답 'They spent a little time on an island, didn't they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#15": {
+   "id": "grammar1/gh1-082#15",
+   "시험": [
+    {
+     "답": "They did not spend any time on an island, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "They spent no time on an island, did they?",
+     "점수": "0점"
+    },
+    {
+     "답": "They didn't spend any time at all on an island, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "They didn't spend any time at all on an island, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'조금도 … 않았다' 의 흔한 번역 not … any … at all — 힌트(some → any)를 지키고 '조금도' 를 at all 로 더 곧게 옮긴 맞는 영어인데 두 낱말 더라 길이 한도에 걸려 0점. 새 다른 정답 'They didn't spend any time at all on an island, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "They spent no time on an island, did they?",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(부정문에서는 some → any)' 가 not … any 꼴을 가르침 — no 꼴은 그 꼴을 피함"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#16": {
+   "id": "grammar1/gh1-082#16",
+   "시험": [
+    {
+     "답": "They weren't spending any time on an island.",
+     "점수": "만점"
+    },
+    {
+     "답": "They were spending no time on an island.",
+     "점수": "70점"
+    },
+    {
+     "답": "They weren't spending any time at all on an island.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "They weren't spending any time at all on an island.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#15 와 같음 — '조금도' → any … at all 70점. 새 다른 정답 'They were not spending any time at all on an island.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "They were spending no time on an island.",
+     "점수": "70점",
+     "까닭": "문항 힌트 '(부정문에서는 some → any)' 가 not … any 꼴을 가르침 — no 꼴은 그 꼴을 피함"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#17": {
+   "id": "grammar1/gh1-082#17",
+   "시험": [
+    {
+     "답": "Are they waiting for test results?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they waiting for the test results?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are they waiting for their test results?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are they waiting for the test results?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 the 하나 더 70점"
+    },
+    {
+     "답": "Are they waiting for their test results?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 their 하나 더 70점"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#18": {
+   "id": "grammar1/gh1-082#18",
+   "시험": [
+    {
+     "답": "Isn't he waiting for test results?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is he not waiting for test results?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#19": {
+   "id": "grammar1/gh1-082#19",
+   "시험": [
+    {
+     "답": "Didn't they wait for test results?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did they not wait for test results?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#20": {
+   "id": "grammar1/gh1-082#20",
+   "시험": [
+    {
+     "답": "He read his newspaper.",
+     "점수": "만점"
+    },
+    {
+     "답": "He read the newspaper.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He read the newspaper.",
+     "점수": "70점",
+     "까닭": "#11 과 같음 — 한국어 '그의' 를 the 로 바꾼 꼴, 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#21": {
+   "id": "grammar1/gh1-082#21",
+   "시험": [
+    {
+     "답": "Does he read his newspaper?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he read the newspaper?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does he read the newspaper?",
+     "점수": "70점",
+     "까닭": "#11 과 같음 — 한국어 '그의' 를 the 로 바꾼 꼴, 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#22": {
+   "id": "grammar1/gh1-082#22",
+   "시험": [
+    {
+     "답": "When does the monkey use the tool?",
+     "점수": "만점"
+    },
+    {
+     "답": "When does that monkey use the tool?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "When does that monkey use the tool?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#23": {
+   "id": "grammar1/gh1-082#23",
+   "시험": [
+    {
+     "답": "Is the monkey using the tool?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is the monkey using that tool?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Is the monkey using that tool?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#24": {
+   "id": "grammar1/gh1-082#24",
+   "시험": [
+    {
+     "답": "He opens the door, doesn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He opens that door, doesn't he?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He opens that door, doesn't he?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#25": {
+   "id": "grammar1/gh1-082#25",
+   "시험": [
+    {
+     "답": "Does he open the door?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he open that door?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does he open that door?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#26": {
+   "id": "grammar1/gh1-082#26",
+   "시험": [
+    {
+     "답": "Are the soldiers closing the bridge?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are the soldiers closing off the bridge?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are those soldiers closing the bridge?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are the soldiers closing off the bridge?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 off 하나 더 70점"
+    },
+    {
+     "답": "Are those soldiers closing the bridge?",
+     "점수": "70점",
+     "까닭": "'그 N' → those N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#27": {
+   "id": "grammar1/gh1-082#27",
+   "시험": [
+    {
+     "답": "Do you have a good memory?",
+     "점수": "만점"
+    },
+    {
+     "답": "Have you got a good memory?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Have you got a good memory?",
+     "점수": "0점",
+     "까닭": "이 문항들(#21 · #25 · #27 · #28 · #30)은 do 의문문(Do you have …?)을 드릴 — have got 의문은 do 를 쓰지 않는 다른 꼴이라 강의가 가르치는 꼴을 피함"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#28": {
+   "id": "grammar1/gh1-082#28",
+   "시험": [
+    {
+     "답": "Does the scientist have a good memory?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does that scientist have a good memory?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does that scientist have a good memory?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#29": {
+   "id": "grammar1/gh1-082#29",
+   "시험": [
+    {
+     "답": "He remembers this, doesn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He remembers it, doesn't he?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He remembers it, doesn't he?",
+     "점수": "70점",
+     "까닭": "이것 = this — it 은 '그것' 이라 가리키는 말이 다름; 기능어 하나 차이 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#30": {
+   "id": "grammar1/gh1-082#30",
+   "시험": [
+    {
+     "답": "Do officials cancel ski races?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do the officials cancel ski races?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Do the officials cancel ski races?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 the 하나 더 70점(한국어 '관리들이' 에 '그' 없음)"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#31": {
+   "id": "grammar1/gh1-082#31",
+   "시험": [
+    {
+     "답": "Are officials cancelling ski races?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are officials canceling ski races?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-082#32": {
+   "id": "grammar1/gh1-082#32",
+   "시험": [
+    {
+     "답": "Did officials cancel ski races?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did the officials cancel ski races?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Did the officials cancel ski races?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 the 하나 더 70점"
+    }
+   ],
+   "때": "2026-09-24 21:48"
+  },
+  "grammar1/gh1-084#1": {
+   "id": "grammar1/gh1-084#1",
+   "시험": [
+    {
+     "답": "Hundreds of soldiers are leaving the city.",
+     "점수": "만점"
+    },
+    {
+     "답": "Hundreds of soldiers are leaving that city.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Hundreds of soldiers are leaving that city.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정('그 N' 280곳 그대로)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#2": {
+   "id": "grammar1/gh1-084#2",
+   "시험": [
+    {
+     "답": "There are 30,000 troops.",
+     "점수": "만점"
+    },
+    {
+     "답": "There are thirty thousand troops.",
+     "점수": "만점"
+    },
+    {
+     "답": "There are 30000 troops.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#3": {
+   "id": "grammar1/gh1-084#3",
+   "시험": [
+    {
+     "답": "There's no evidence.",
+     "점수": "만점"
+    },
+    {
+     "답": "There is not any evidence.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#4": {
+   "id": "grammar1/gh1-084#4",
+   "시험": [
+    {
+     "답": "The enemy surrenders.",
+     "점수": "만점"
+    },
+    {
+     "답": "The enemies surrender.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The enemies surrender.",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(enemy, surrender)' 가 단수 enemy 를 줌 — 군대로서의 '적' 은 영어에서 집합 단수 the enemy; 복수 enemies 는 '적들 여럿' 으로 뜻이 달라짐"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#5": {
+   "id": "grammar1/gh1-084#5",
+   "시험": [
+    {
+     "답": "They were watching the soccer game.",
+     "점수": "만점"
+    },
+    {
+     "답": "They were watching that soccer game.",
+     "점수": "70점"
+    },
+    {
+     "답": "They were watching the football match.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "They were watching that soccer game.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    },
+    {
+     "답": "They were watching the football match.",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(watch, soccer game)' 가 soccer game 을 줌 — 힌트를 따르지 않은 꼴(힌트 없는 짝 #20 은 막힘으로 적음)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#6": {
+   "id": "grammar1/gh1-084#6",
+   "시험": [
+    {
+     "답": "Koreans use spoons.",
+     "점수": "만점"
+    },
+    {
+     "답": "Korean people use spoons.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Korean people use spoons.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국인(들) → Koreans · Korean people — 둘 다 아주 흔한 맞는 번역인데 Korean people 은 낱말이 늘어 0점. 새 다른 정답 'Korean people use spoons.'",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#7": {
+   "id": "grammar1/gh1-084#7",
+   "시험": [
+    {
+     "답": "The navy found his body.",
+     "점수": "만점"
+    },
+    {
+     "답": "The navy discovered his body.",
+     "점수": "만점"
+    },
+    {
+     "답": "The navy found his dead body.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The navy found his dead body.",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(body)' 가 body 를 줌 — 이 문맥의 his body 가 이미 시체의 뜻이라 dead 는 군말(어색)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#8": {
+   "id": "grammar1/gh1-084#8",
+   "시험": [
+    {
+     "답": "They were inspecting a tanker.",
+     "점수": "만점"
+    },
+    {
+     "답": "They were inspecting an oil tanker.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "They were inspecting an oil tanker.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "유조선 = oil tanker(유 = 기름) — 힌트 낱말 tanker 를 지키고 한국어를 더 곧게 옮긴 흔한 영어인데 낱말 둘 차이로 0점. 새 다른 정답 'They were inspecting an oil tanker.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#9": {
+   "id": "grammar1/gh1-084#9",
+   "시험": [
+    {
+     "답": "The tanker went down.",
+     "점수": "만점"
+    },
+    {
+     "답": "The tanker sank.",
+     "점수": "0점"
+    },
+    {
+     "답": "That tanker went down.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The tanker sank.",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(go down)' 가 go down 을 가르침 — sank 는 힌트를 따르지 않음(힌트 없는 짝 #26 은 막힘으로 적음)"
+    },
+    {
+     "답": "That tanker went down.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#10": {
+   "id": "grammar1/gh1-084#10",
+   "시험": [
+    {
+     "답": "How did she catch the disease?",
+     "점수": "만점"
+    },
+    {
+     "답": "How did she catch that disease?",
+     "점수": "70점"
+    },
+    {
+     "답": "How did she get the disease?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How did she catch that disease?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    },
+    {
+     "답": "How did she get the disease?",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(catch, disease)' 가 catch 를 줌 — 힌트를 따르지 않은 꼴(힌트 없는 짝 #27 은 막힘으로 적음)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#11": {
+   "id": "grammar1/gh1-084#11",
+   "시험": [
+    {
+     "답": "The woman received a letter.",
+     "점수": "만점"
+    },
+    {
+     "답": "That woman received a letter.",
+     "점수": "70점"
+    },
+    {
+     "답": "The woman got a letter.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "That woman received a letter.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    },
+    {
+     "답": "The woman got a letter.",
+     "점수": "0점",
+     "까닭": "문항 힌트 '(receive, letter)' 가 receive 를 줌 — 힌트를 따르지 않은 꼴(힌트 없는 짝 #28 은 막힘으로 적음)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#12": {
+   "id": "grammar1/gh1-084#12",
+   "시험": [
+    {
+     "답": "He was driving a tractor.",
+     "점수": "만점"
+    },
+    {
+     "답": "He drove a tractor.",
+     "점수": "0점"
+    },
+    {
+     "답": "He was driving the tractor.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He drove a tractor.",
+     "점수": "0점",
+     "까닭": "한국어 '운전하고 있었다' 는 과거 진행 — 이 문항은 진행형을 가르침(단순 과거는 꼴을 피함)"
+    },
+    {
+     "답": "He was driving the tractor.",
+     "점수": "70점",
+     "까닭": "한국어 '트랙터를' 에 '그' 가 없음 — 이 과정은 '그 N' 만 the 로, 맨 명사는 a 로 옮김; 관사 하나 차이 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#13": {
+   "id": "grammar1/gh1-084#13",
+   "시험": [
+    {
+     "답": "How many soldiers are leaving the city?",
+     "점수": "만점"
+    },
+    {
+     "답": "How many soldiers are leaving that city?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How many soldiers are leaving that city?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#14": {
+   "id": "grammar1/gh1-084#14",
+   "시험": [
+    {
+     "답": "How many soldiers left the city?",
+     "점수": "만점"
+    },
+    {
+     "답": "How many soldiers left that city?",
+     "점수": "70점"
+    },
+    {
+     "답": "How many soldiers have left the city?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How many soldiers left that city?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    },
+    {
+     "답": "How many soldiers have left the city?",
+     "점수": "70점",
+     "까닭": "결정 4 — 한국어에 표시 없는 현재완료는 그대로(대체 답안 안 넣음)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#15": {
+   "id": "grammar1/gh1-084#15",
+   "시험": [
+    {
+     "답": "Did hundreds of soldiers leave the city?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did hundreds of soldiers leave that city?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Did hundreds of soldiers leave that city?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#16": {
+   "id": "grammar1/gh1-084#16",
+   "시험": [
+    {
+     "답": "There are thirty thousand troops, aren't there?",
+     "점수": "만점"
+    },
+    {
+     "답": "There are 30,000 troops, aren't there?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#17": {
+   "id": "grammar1/gh1-084#17",
+   "시험": [
+    {
+     "답": "Isn't there any evidence?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is there not any evidence?",
+     "점수": "70점"
+    },
+    {
+     "답": "Is there no evidence?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is there not any evidence?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "받는 'Isn't there any evidence?' 를 풀어 쓴 꼴(Is there not …?) — 이 과정은 'Is he not waiting …' · 'Did she not receive …' 처럼 풀어 쓴 부정 의문을 받는데 여기만 70점. 새 다른 정답 'Is there not any evidence?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#18": {
+   "id": "grammar1/gh1-084#18",
+   "시험": [
+    {
+     "답": "Does the enemy surrender?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is the enemy surrendering?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Is the enemy surrendering?",
+     "점수": "0점",
+     "까닭": "바로 뒤 #19 '적이 항복하고 있나?' 가 진행형 문항 — #18 '항복하나?' 는 현재 단순(does)을 가르침; 결정 4(진행형 대체 답안은 12문항만)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#19": {
+   "id": "grammar1/gh1-084#19",
+   "시험": [
+    {
+     "답": "Is the enemy surrendering?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are the enemies surrendering?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are the enemies surrendering?",
+     "점수": "0점",
+     "까닭": "군대로서의 '적' 은 집합 단수 the enemy(#4 힌트 enemy) — 복수 enemies 는 '적들 여럿' 으로 뜻이 달라짐"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#20": {
+   "id": "grammar1/gh1-084#20",
+   "시험": [
+    {
+     "답": "Were they watching the soccer game?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were they watching that soccer game?",
+     "점수": "70점"
+    },
+    {
+     "답": "Were they watching the football match?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Were they watching the football match?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "축구 경기의 영국 영어 football match — 이 문항엔 힌트가 없고 영국/미국 낱말은 둘 다 맞는 영어(기준)인데 0점. 새 다른 정답 'Were they watching the football match?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Were they watching that soccer game?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#21": {
+   "id": "grammar1/gh1-084#21",
+   "시험": [
+    {
+     "답": "Do Koreans use spoons?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do Korean people use spoons?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do Korean people use spoons?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#6 과 같음 — 한국인들 → Korean people 0점. 새 다른 정답 'Do Korean people use spoons?'",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#22": {
+   "id": "grammar1/gh1-084#22",
+   "시험": [
+    {
+     "답": "Did the navy find his body?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did the navy discover his body?",
+     "점수": "0점"
+    },
+    {
+     "답": "Did the navy find his dead body?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Did the navy discover his body?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "찾아내다 → find · discover — 같은 과 짝 #7 은 discovered 를 받는데 이 물음 꼴은 0점. 새 다른 정답 'Did the navy discover his body?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Did the navy find his dead body?",
+     "점수": "0점",
+     "까닭": "his body 가 이미 시체의 뜻 — dead 는 군말(어색, #7 힌트 body)"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#23": {
+   "id": "grammar1/gh1-084#23",
+   "시험": [
+    {
+     "답": "The navy found his body, didn't it?",
+     "점수": "만점"
+    },
+    {
+     "답": "The navy found his body, didn't they?",
+     "점수": "70점"
+    },
+    {
+     "답": "The navy discovered his body, didn't it?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The navy found his body, didn't they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "조직을 뜻하는 집단 명사(navy)를 꼬리에서 they 로 받는 것은 흔한 맞는 영어(특히 영국) — 틀린 꼬리가 아니라서 '꼬리만 틀린 답 70점' 결정에 들지 않음; 70점. 새 다른 정답 'The navy found his body, didn't they?'",
+     "확신": "보통"
+    },
+    {
+     "답": "The navy discovered his body, didn't it?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#22 와 같음 — 찾아내다 → discover(짝 #7 은 받음) 0점. 새 다른 정답 'The navy discovered his body, didn't it?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#24": {
+   "id": "grammar1/gh1-084#24",
+   "시험": [
+    {
+     "답": "Were they inspecting a tanker?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were they inspecting an oil tanker?",
+     "점수": "0점"
+    },
+    {
+     "답": "Were they inspecting the tanker?",
+     "점수": "70점"
+    },
+    {
+     "답": "Were they investigating a tanker?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Were they inspecting an oil tanker?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#8 과 같음 — 유조선 = oil tanker 0점. 새 다른 정답 'Were they inspecting an oil tanker?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Were they investigating a tanker?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "조사하다 의 사전 첫 뜻 investigate — 이 문항엔 힌트가 없는데 0점. 새 다른 정답 'Were they investigating a tanker?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Were they inspecting the tanker?",
+     "점수": "70점",
+     "까닭": "한국어 '유조선을' 에 '그' 가 없음 — 맨 명사는 a 로; 관사 하나 차이 70점이 알맞음"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#25": {
+   "id": "grammar1/gh1-084#25",
+   "시험": [
+    {
+     "답": "What was he inspecting?",
+     "점수": "만점"
+    },
+    {
+     "답": "What was he investigating?",
+     "점수": "0점"
+    },
+    {
+     "답": "What was he examining?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What was he investigating?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "조사하다 의 사전 첫 뜻 investigate — 목적어 없는 '무엇을 조사하고 있었나?' 의 가장 흔한 번역 가운데 하나인데 0점(힌트 없음). 새 다른 정답 'What was he investigating?'",
+     "확신": "보통"
+    },
+    {
+     "답": "What was he examining?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "조사하다 → examine(사전 뜻) — 0점. 새 다른 정답 'What was he examining?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#26": {
+   "id": "grammar1/gh1-084#26",
+   "시험": [
+    {
+     "답": "The tanker went down, didn't it?",
+     "점수": "만점"
+    },
+    {
+     "답": "The tanker sank, didn't it?",
+     "점수": "0점"
+    },
+    {
+     "답": "That tanker went down, didn't it?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The tanker sank, didn't it?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "가라앉았다 의 가장 곧은 번역 sank — 이 문항엔 힌트(go down)가 없는데 0점. 새 다른 정답 'The tanker sank, didn't it?'",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "That tanker went down, didn't it?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#27": {
+   "id": "grammar1/gh1-084#27",
+   "시험": [
+    {
+     "답": "Who caught the disease?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who got the disease?",
+     "점수": "0점"
+    },
+    {
+     "답": "Who caught the illness?",
+     "점수": "0점"
+    },
+    {
+     "답": "Who caught that disease?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Who got the disease?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "병에 걸리다 → catch · get — 이 문항엔 힌트가 없는데 get 꼴 0점. 새 다른 정답 'Who got the disease?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Who caught the illness?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "병 → disease · illness(사전 첫 뜻들) — 0점. 새 다른 정답 'Who caught the illness?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Who caught that disease?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#28": {
+   "id": "grammar1/gh1-084#28",
+   "시험": [
+    {
+     "답": "Did she not receive a letter?",
+     "점수": "만점"
+    },
+    {
+     "답": "Didn't she get a letter?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Didn't she get a letter?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "받다 → receive · get — 이 문항엔 힌트가 없는데 get 꼴 0점. 새 다른 정답 'Didn't she get a letter?'(Did she not get 짝도)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#29": {
+   "id": "grammar1/gh1-084#29",
+   "시험": [
+    {
+     "답": "Didn't he drive a tractor?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did he not drive a tractor?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#30": {
+   "id": "grammar1/gh1-084#30",
+   "시험": [
+    {
+     "답": "Didn't the soldiers leave the city?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did the soldiers not leave the city?",
+     "점수": "70점"
+    },
+    {
+     "답": "Didn't soldiers leave that city?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Did the soldiers not leave the city?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "받는 'Didn't the soldiers leave the city?' 를 풀어 쓴 꼴 — 'Did soldiers not …' 은 받는데 the 를 넣은 풀어 쓴 꼴만 70점(다른 정답 조합 빠짐). 새 다른 정답 'Did the soldiers not leave the city?'",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Didn't soldiers leave that city?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점은 소유자 결정"
+    }
+   ],
+   "때": "2026-09-24 21:50"
+  },
+  "grammar1/gh1-084#31": {
+   "id": "grammar1/gh1-084#31",
+   "시험": [
+    {
+     "답": "Are there thirty thousand troops?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are there 30,000 troops?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:50"
+  }
+ }
+}

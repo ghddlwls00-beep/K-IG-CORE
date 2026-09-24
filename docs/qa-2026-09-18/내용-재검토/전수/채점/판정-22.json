@@ -1,0 +1,3807 @@
+{
+ "파일": "22.md",
+ "문항": {
+  "grammar2/gh2-023#1": {
+   "id": "grammar2/gh2-023#1",
+   "시험": [
+    {
+     "답": "Remember me to your wife!",
+     "점수": "만점"
+    },
+    {
+     "답": "Please remember me to your wife.",
+     "점수": "0점"
+    },
+    {
+     "답": "Remember me to your wife, please.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Please remember me to your wife.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '(부인에게 안부) 전해줘' 의 부탁을 please 로 옮긴 꼴 · remember me to 는 지킴 — 같은 과정 gh2-020 #19 는 같은 뜻 '기억시켜 줘(안부 전해 줘)' 의 모범이 바로 이 글. 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "Remember me to your wife, please.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉰ please 를 끝에 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#2": {
+   "id": "grammar2/gh2-023#2",
+   "시험": [
+    {
+     "답": "Say hello to your wife for me!",
+     "점수": "만점"
+    },
+    {
+     "답": "Say hi to your wife for me.",
+     "점수": "0점"
+    },
+    {
+     "답": "Please say hello to your wife for me.",
+     "점수": "70점"
+    },
+    {
+     "답": "Say hello to your wife for me, please.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Say hi to your wife for me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'안녕' → hi(hello 와 같은 인사말 · say hi to … for me 는 흔한 꼴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Please say hello to your wife for me.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'말해줘'(부탁)를 please 로 옮긴 흔한 꼴 — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Say hello to your wife for me, please.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ please 를 끝에 — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#3": {
+   "id": "grammar2/gh2-023#3",
+   "시험": [
+    {
+     "답": "Give my regards to your wife!",
+     "점수": "만점"
+    },
+    {
+     "답": "Give your wife my regards.",
+     "점수": "0점"
+    },
+    {
+     "답": "Please give my regards to your wife.",
+     "점수": "0점"
+    },
+    {
+     "답": "Please give your wife my regards.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Give your wife my regards.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉰ give + 사람 + my regards 차례(같은 뜻 · 흔함, give my regards 는 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Please give my regards to your wife.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '전해줘'(부탁)의 please — 0점(길이 한도).",
+     "확신": "보통"
+    },
+    {
+     "답": "Please give your wife my regards.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "please + give 사람 my regards 차례 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#4": {
+   "id": "grammar2/gh2-023#4",
+   "시험": [
+    {
+     "답": "Tell her that we miss her very much.",
+     "점수": "70점"
+    },
+    {
+     "답": "Tell her we miss her so much.",
+     "점수": "70점"
+    },
+    {
+     "답": "Tell her we miss her a lot.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Tell her we miss her so much.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'매우 많이' → so much(흔한 강조) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Tell her we miss her a lot.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'매우 많이' → a lot(very much 와 같은 정도 · 구어에서 가장 흔함) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Tell her that we miss her very much.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#5": {
+   "id": "grammar2/gh2-023#5",
+   "시험": [
+    {
+     "답": "How would you like your coffee",
+     "점수": "만점"
+    },
+    {
+     "답": "How do you want your coffee?",
+     "점수": "0점"
+    },
+    {
+     "답": "How do you like your coffee?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How do you want your coffee?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '원하니'(반말)의 곧은 번역 want — 커피를 어떻게 해 줄지 묻는 흔한 꼴(같은 과정 gh2-022 #20 은 would like 자리의 want 를 다른 정답으로 받음). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How do you like your coffee?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "커피 취향을 묻는 굳은 꼴 How do you like your coffee — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#6": {
+   "id": "grammar2/gh2-023#6",
+   "시험": [
+    {
+     "답": "Help yourself to dessert.",
+     "점수": "70점"
+    },
+    {
+     "답": "Please help yourself to the dessert.",
+     "점수": "0점"
+    },
+    {
+     "답": "Please help yourself to dessert.",
+     "점수": "0점"
+    },
+    {
+     "답": "Please have some dessert.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Help yourself to dessert.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ '디저트' 는 관사를 가르지 않음 — 관사 없는 dessert(코스 이름)도 자연스러움. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Please help yourself to the dessert.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'드세요'(공손한 명령)를 please 로 옮긴 흔한 꼴 · help yourself to 는 지킴 — 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "Please help yourself to dessert.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "please + 관사 없는 dessert — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Please have some dessert.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 help yourself to 를 have some 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#7": {
+   "id": "grammar2/gh2-023#7",
+   "시험": [
+    {
+     "답": "I'm sorry I'm late.",
+     "점수": "만점"
+    },
+    {
+     "답": "Sorry I'm late.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'm sorry for being late.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'm sorry that I'm late.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Sorry I'm late.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "I am 을 뺀 가장 흔한 사과 꼴(sorry + 절은 지킴) — 0점(모범 6낱말에 4낱말).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'm sorry for being late.",
+     "점수": "0점",
+     "까닭": "이 두 문항(#7 · #8)이 가르치는 sorry + 절을 for + -ing 로 피함."
+    },
+    {
+     "답": "I'm sorry that I'm late.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#8": {
+   "id": "grammar2/gh2-023#8",
+   "시험": [
+    {
+     "답": "I'm sorry I did not take your advice seriously.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm sorry that I didn't take your advice seriously.",
+     "점수": "70점"
+    },
+    {
+     "답": "Sorry I didn't take your advice seriously.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'm sorry for not taking your advice seriously.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Sorry I didn't take your advice seriously.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#7 과 같이 I am 을 뺀 흔한 사과 꼴(sorry + 절은 지킴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'm sorry that I didn't take your advice seriously.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    },
+    {
+     "답": "I'm sorry for not taking your advice seriously.",
+     "점수": "0점",
+     "까닭": "sorry + 절을 for + -ing 로 피함(#7 과 같음)."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#9": {
+   "id": "grammar2/gh2-023#9",
+   "시험": [
+    {
+     "답": "Do not take it too hard.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't take it so hard.",
+     "점수": "70점"
+    },
+    {
+     "답": "Don't take it too seriously.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Don't take it so hard.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'너무 심하게' → so hard(Don't take it so hard 도 흔한 위로 말 · take it hard 는 지킴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Don't take it too seriously.",
+     "점수": "0점",
+     "까닭": "뜻이 다름 — take it hard 는 '상심하다', take it seriously 는 '심각하게 여기다' · 가르치는 take it hard 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#10": {
+   "id": "grammar2/gh2-023#10",
+   "시험": [
+    {
+     "답": "I'd like to take your measurements.",
+     "점수": "만점"
+    },
+    {
+     "답": "I want to take your measurements.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'd like to measure you.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I want to take your measurements.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'재고 싶다' → want to(가장 곧은 번역 · take your measurements 는 지킴, 같은 과정 gh2-022 #20 은 would like 자리의 want 를 다른 정답으로 받음) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'd like to measure you.",
+     "점수": "0점",
+     "까닭": "가르치는 take one's measurements 를 measure 로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#11": {
+   "id": "grammar2/gh2-023#11",
+   "시험": [
+    {
+     "답": "She's very fussy about clothes.",
+     "점수": "만점"
+    },
+    {
+     "답": "She is very fussy about her clothes.",
+     "점수": "70점"
+    },
+    {
+     "답": "She is extremely fussy about clothes.",
+     "점수": "0점"
+    },
+    {
+     "답": "She is really fussy about clothes.",
+     "점수": "0점"
+    },
+    {
+     "답": "She is so fussy about clothes.",
+     "점수": "70점"
+    },
+    {
+     "답": "She is very particular about clothes.",
+     "점수": "0점"
+    },
+    {
+     "답": "She is very picky about clothes.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She is extremely fussy about clothes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'대단히' 의 사전 뜻 extremely — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "She is really fussy about clothes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'대단히' → really(흔한 강조) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "She is so fussy about clothes.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'대단히' → so — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "She is very particular about clothes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'신경을 쓴다(까다롭다)' → particular about(fussy 와 같은 뜻의 흔한 말 · be + 형용사 + about 꼴은 같음) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "She is very picky about clothes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "fussy 와 같은 뜻의 흔한 말 picky(한국 학습자가 '까다롭다' 에 흔히 씀) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "She is very fussy about her clothes.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 her 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#12": {
+   "id": "grammar2/gh2-023#12",
+   "시험": [
+    {
+     "답": "What is your ancestry?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who are your ancestors?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Who are your ancestors?",
+     "점수": "0점",
+     "까닭": "괄호 '조상이 누구냐' 를 옮긴 다른 물음 — 가르치는 What's your ancestry(혈통을 묻는 말)를 피하고 뜻도 '조상이 누구인가' 로 좁아짐."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#13": {
+   "id": "grammar2/gh2-023#13",
+   "시험": [
+    {
+     "답": "Freeze.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't move!",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Don't move!",
+     "점수": "0점",
+     "까닭": "괄호 '꼼짝 말아라' 를 옮긴 다른 말 — 가르치는 Freeze 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#14": {
+   "id": "grammar2/gh2-023#14",
+   "시험": [
+    {
+     "답": "After you.",
+     "점수": "0점"
+    },
+    {
+     "답": "Please, after you.",
+     "점수": "0점"
+    },
+    {
+     "답": "After you, please!",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "After you.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어에 please 가 없음 — 굳은 표현 After you 만으로 완전한 말(가장 흔한 꼴). 0점(모범 3낱말에 2낱말).",
+     "확신": "높음"
+    },
+    {
+     "답": "Please, after you.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "please 를 앞에 둔 흔한 꼴 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#15": {
+   "id": "grammar2/gh2-023#15",
+   "시험": [
+    {
+     "답": "You really take after your father!",
+     "점수": "만점"
+    },
+    {
+     "답": "You really do take after your father.",
+     "점수": "70점"
+    },
+    {
+     "답": "You really look like your father.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "You really do take after your father.",
+     "점수": "70점",
+     "까닭": "결정 2 — 강조 do 하나 더 → 70점."
+    },
+    {
+     "답": "You really look like your father.",
+     "점수": "0점",
+     "까닭": "가르치는 take after 를 look like 로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#16": {
+   "id": "grammar2/gh2-023#16",
+   "시험": [
+    {
+     "답": "I was named after him!",
+     "점수": "만점"
+    },
+    {
+     "답": "I was named for him.",
+     "점수": "70점"
+    },
+    {
+     "답": "They named me after him.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I was named for him.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "미국 영어 named for(named after 와 같은 뜻 · 수동 꼴 지킴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "They named me after him.",
+     "점수": "0점",
+     "까닭": "한국어 '이름 지어졌다' 의 수동 꼴을 능동으로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#17": {
+   "id": "grammar2/gh2-023#17",
+   "시험": [
+    {
+     "답": "What is your New Year's resolution?",
+     "점수": "0점"
+    },
+    {
+     "답": "What are your New Year resolutions?",
+     "점수": "70점"
+    },
+    {
+     "답": "What are your New Year's resolutions",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What is your New Year's resolution?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '결심' 은 수를 가르지 않음 — 단수 New Year's resolution 이 매우 흔함. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "What are your New Year resolutions?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "아포스트로피 없는 New Year resolution(영국에서 흔한 표기) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#18": {
+   "id": "grammar2/gh2-023#18",
+   "시험": [
+    {
+     "답": "Are you through with the meal?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are you done with your meal?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are you finished with your meal?",
+     "점수": "0점"
+    },
+    {
+     "답": "Have you finished your meal?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Are you through with the meal?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ '식사' 에 소유격이 없음 — the meal 도 자연스러움. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Are you done with your meal?",
+     "점수": "0점",
+     "까닭": "가르치는 through(끝난 — 이 과정이 26과 #16 · 27과 #15 에서도 되풀이해 가르침)를 done 으로 피함."
+    },
+    {
+     "답": "Are you finished with your meal?",
+     "점수": "0점",
+     "까닭": "가르치는 through 를 finished 로 피함."
+    },
+    {
+     "답": "Have you finished your meal?",
+     "점수": "0점",
+     "까닭": "be through with 꼴을 현재완료 finish 로 바꿈 — 가르치는 꼴을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#19": {
+   "id": "grammar2/gh2-023#19",
+   "시험": [
+    {
+     "답": "Is this restaurant open 7 days a week",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this restaurant open seven days per week?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is this restaurant open every day of the week?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is this restaurant open seven days per week?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ '일주일에' → per week — 0점(per 가 기능어 목록 밖).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Is this restaurant open every day of the week?",
+     "점수": "0점",
+     "까닭": "'일주일에 7일' 을 풀어 쓴 다른 말 — 가르치는 seven days a week 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-023#20": {
+   "id": "grammar2/gh2-023#20",
+   "시험": [
+    {
+     "답": "It's open Monday through Friday.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is open from Monday to Friday.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is open Monday to Friday.",
+     "점수": "70점"
+    },
+    {
+     "답": "It's open from Monday through Friday.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is open from Monday to Friday.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'월요일부터 금요일까지' 의 가장 흔한 번역 from … to(영국 영어 · 미국에서도 흔함 — Monday through Friday 는 미국 영어) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is open Monday to Friday.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 영어 Monday to Friday — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It's open from Monday through Friday.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 from 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:39"
+  },
+  "grammar2/gh2-024#1": {
+   "id": "grammar2/gh2-024#1",
+   "시험": [
+    {
+     "답": "She's away from her desk right now.",
+     "점수": "0점"
+    },
+    {
+     "답": "She is away from her desk now.",
+     "점수": "0점"
+    },
+    {
+     "답": "She is not at her desk at the moment.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She's away from her desk right now.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'지금' → right now(가장 흔한 번역 · away from her desk 는 지킴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "She is away from her desk now.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'지금' 의 사전 첫 뜻 now — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "She is not at her desk at the moment.",
+     "점수": "0점",
+     "까닭": "괄호 '자기 자리에 없다' 를 옮긴 다른 꼴 — 가르치는 away from 을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#2": {
+   "id": "grammar2/gh2-024#2",
+   "시험": [
+    {
+     "답": "The connection seems very bad.",
+     "점수": "70점"
+    },
+    {
+     "답": "The connection seems to be really bad.",
+     "점수": "0점"
+    },
+    {
+     "답": "The connection seems to be very poor.",
+     "점수": "0점"
+    },
+    {
+     "답": "It seems like the connection is very bad.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The connection seems very bad.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "seem + 형용사(to be 없이도 같은 뜻 · 흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The connection seems to be really bad.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'매우' → really — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The connection seems to be very poor.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "(연결 상태가) '나쁜' → poor(connection 과 가장 흔히 어울리는 말) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It seems like the connection is very bad.",
+     "점수": "0점",
+     "까닭": "가르치는 S + seem(s) to be 꼴을 It seems (like) + 절로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#3": {
+   "id": "grammar2/gh2-024#3",
+   "시험": [
+    {
+     "답": "I will hang up and call again.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'll hang up and call you again.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'll hang up and call back.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'll hang up and call you back.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'm going to hang up and call again.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'll hang up and call again later.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'll hang up and call back.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'다시 걸다' → call back(흔한 구동사 · hang up 은 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I'll hang up and call you back.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "call you back(전화에서 가장 흔한 꼴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I'm going to hang up and call again.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ '-겠다' → be going to(will 과 가르지 않음) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'll hang up and call you again.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 you 하나 더 → 70점."
+    },
+    {
+     "답": "I'll hang up and call again later.",
+     "점수": "70점",
+     "까닭": "한국어에 없는 later 를 더함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#4": {
+   "id": "grammar2/gh2-024#4",
+   "시험": [
+    {
+     "답": "Would you mind if I asked some questions about Korean customs?",
+     "점수": "70점"
+    },
+    {
+     "답": "Do you mind if I ask a few questions about Korean customs?",
+     "점수": "70점"
+    },
+    {
+     "답": "Would you mind if I asked you a few questions about Korean customs?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Would you mind if I asked some questions about Korean customs?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'몇 가지' → some — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you mind if I ask a few questions about Korean customs?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "같은 mind if 꼴의 현재형 Do you mind if I ask(흔함) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Would you mind if I asked you a few questions about Korean customs?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 you 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#5": {
+   "id": "grammar2/gh2-024#5",
+   "시험": [
+    {
+     "답": "No, I do not mind. Go ahead.",
+     "점수": "만점"
+    },
+    {
+     "답": "No, I don't mind. Please go ahead.",
+     "점수": "70점"
+    },
+    {
+     "답": "No, not at all. Please go ahead.",
+     "점수": "0점"
+    },
+    {
+     "답": "Not at all. Go ahead.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No, I don't mind. Please go ahead.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'계속하세요'(공손한 명령)를 please 로 — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "No, not at all. Please go ahead.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "모범 꼴 + please — 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Not at all. Go ahead.",
+     "점수": "70점",
+     "까닭": "'아니요' 를 옮기지 않음 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#6": {
+   "id": "grammar2/gh2-024#6",
+   "시험": [
+    {
+     "답": "Would you speak up, please?",
+     "점수": "70점"
+    },
+    {
+     "답": "Would you please speak up?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you speak a little louder, please?",
+     "점수": "0점"
+    },
+    {
+     "답": "Could you speak a bit louder?",
+     "점수": "0점"
+    },
+    {
+     "답": "Would you speak a little louder?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Would you speak up, please?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-주시겠습니까' 의 가장 흔한 공손 꼴 Would you — 다른 정답 11 에 Would 꼴이 없어 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Would you please speak up?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "Would you + please 가운데 — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you speak a little louder, please?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "다른 정답 조합 빈틈 — 'Could you speak a little louder?' · 'Could you speak louder, please?' 는 받는데 둘을 합친 꼴이 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you speak a bit louder?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'좀' → a bit — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Would you speak a little louder?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "Would you + a little louder — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#7": {
+   "id": "grammar2/gh2-024#7",
+   "시험": [
+    {
+     "답": "I can hardly hear you!",
+     "점수": "만점"
+    },
+    {
+     "답": "I can barely hear you.",
+     "점수": "0점"
+    },
+    {
+     "답": "I can't hear you well.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I can barely hear you.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'거의 ~할 수 없다' → barely(hardly 와 같은 뜻 · 전화에서 흔한 꼴, can + 부사 + hear 꼴은 같음) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I can't hear you well.",
+     "점수": "0점",
+     "까닭": "괄호 '잘 안 들립니다' 를 옮긴 다른 꼴 — 가르치는 can hardly 를 피하고 뜻도 약해짐."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#8": {
+   "id": "grammar2/gh2-024#8",
+   "시험": [
+    {
+     "답": "What time do you begin your day?",
+     "점수": "0점"
+    },
+    {
+     "답": "At what time do you start your day?",
+     "점수": "70점"
+    },
+    {
+     "답": "When do you start your day?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What time do you begin your day?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'시작하다' → begin(start 와 나란한 사전 첫 뜻) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "At what time do you start your day?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 at 하나 더 → 70점."
+    },
+    {
+     "답": "When do you start your day?",
+     "점수": "70점",
+     "까닭": "'몇 시에' 를 when 으로 느슨하게 옮김 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#9": {
+   "id": "grammar2/gh2-024#9",
+   "시험": [
+    {
+     "답": "Let us call it a day.",
+     "점수": "만점"
+    },
+    {
+     "답": "Let's call it a day!",
+     "점수": "만점"
+    },
+    {
+     "답": "Let's finish work for today.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Let's finish work for today.",
+     "점수": "0점",
+     "까닭": "괄호 '오늘 일과 끝내자' 를 옮긴 다른 말 — 가르치는 call it a day 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#10": {
+   "id": "grammar2/gh2-024#10",
+   "시험": [
+    {
+     "답": "Do you have time",
+     "점수": "만점"
+    },
+    {
+     "답": "Have you got time?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you have some time?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Have you got time?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 have got — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you have some time?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "물음에서 some(권유 · 긍정 기대)도 자연스러움 — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#11": {
+   "id": "grammar2/gh2-024#11",
+   "시험": [
+    {
+     "답": "Do you have the time",
+     "점수": "만점"
+    },
+    {
+     "답": "Have you got the time?",
+     "점수": "0점"
+    },
+    {
+     "답": "What time is it?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Have you got the time?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 have got(Have you got the time? 도 같은 굳은 말) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "What time is it?",
+     "점수": "0점",
+     "까닭": "괄호 '몇 시입니까' 를 옮긴 다른 문장 — 가르치는 Do you have the time 을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#12": {
+   "id": "grammar2/gh2-024#12",
+   "시험": [
+    {
+     "답": "What is the date today?",
+     "점수": "만점"
+    },
+    {
+     "답": "What is today's date?",
+     "점수": "0점"
+    },
+    {
+     "답": "What date is it today?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What is today's date?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'오늘 날짜는' 을 소유격으로 옮긴 가장 흔한 꼴 — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "What date is it today?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '며칠입니까' 의 흔한 꼴 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#13": {
+   "id": "grammar2/gh2-024#13",
+   "시험": [
+    {
+     "답": "What day is it today?",
+     "점수": "70점"
+    },
+    {
+     "답": "What day of the week is it today?",
+     "점수": "0점"
+    },
+    {
+     "답": "What day of the week is today?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What day of the week is it today?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'무슨 요일' → what day of the week — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "What day of the week is today?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같음(it 없는 꼴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "What day is it today?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 it 하나 더 → 70점(가장 흔한 꼴이라 메모에 따로 적음)."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#14": {
+   "id": "grammar2/gh2-024#14",
+   "시험": [
+    {
+     "답": "What is the occasion?",
+     "점수": "만점"
+    },
+    {
+     "답": "What's the occasion today?",
+     "점수": "0점"
+    },
+    {
+     "답": "What's the event?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What's the occasion today?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '오늘 무슨 날입니까' 의 '오늘' 을 옮긴 꼴 · What's the occasion 은 지킴 — 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "What's the event?",
+     "점수": "0점",
+     "까닭": "'행사' 를 낱말대로 옮김 — '무슨 날이냐' 를 묻는 굳은 말 What's the occasion 이 아니라 뜻이 다름."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#15": {
+   "id": "grammar2/gh2-024#15",
+   "시험": [
+    {
+     "답": "What are we celebrating",
+     "점수": "만점"
+    },
+    {
+     "답": "What are we celebrating today?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "What are we celebrating today?",
+     "점수": "0점",
+     "까닭": "한국어에 없는 today 를 더함."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#16": {
+   "id": "grammar2/gh2-024#16",
+   "시험": [
+    {
+     "답": "Why are we eating out in this expensive restaurant?",
+     "점수": "70점"
+    },
+    {
+     "답": "Why are we dining out at this expensive restaurant?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why are we eating at this expensive restaurant?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why are we eating out in this expensive restaurant?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'식당에서' → in(at 과 같이 흔함) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why are we dining out at this expensive restaurant?",
+     "점수": "0점",
+     "까닭": "가르치는 eat out 을 dine out 으로 바꿈."
+    },
+    {
+     "답": "Why are we eating at this expensive restaurant?",
+     "점수": "70점",
+     "까닭": "out 을 뺌 — 가르치는 eat out(외식하다)이 아님, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#17": {
+   "id": "grammar2/gh2-024#17",
+   "시험": [
+    {
+     "답": "Today is our 10th wedding anniversary.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's our tenth wedding anniversary today.",
+     "점수": "0점"
+    },
+    {
+     "답": "Today is our tenth anniversary.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Today is our 10th wedding anniversary.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "서수를 숫자로 쓴 10th(흔한 표기 — 같은 과정이 수 표기 다른 정답을 둔 것과 같은 까닭) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It's our tenth wedding anniversary today.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "It … today 의 흔한 꼴 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Today is our tenth anniversary.",
+     "점수": "70점",
+     "까닭": "'결혼' 을 옮기지 않음 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#18": {
+   "id": "grammar2/gh2-024#18",
+   "시험": [
+    {
+     "답": "How time flies.",
+     "점수": "만점"
+    },
+    {
+     "답": "Time flies!",
+     "점수": "0점"
+    },
+    {
+     "답": "How fast time flies!",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How fast time flies!",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '세월 빠르기도 하다' 를 옮긴 흔한 감탄문(How ~! 꼴 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Time flies!",
+     "점수": "0점",
+     "까닭": "가르치는 감탄문 How ~! 을 피함('어떻게' 를 옮기지 않음)."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#19": {
+   "id": "grammar2/gh2-024#19",
+   "시험": [
+    {
+     "답": "Christmas is right around the corner.",
+     "점수": "0점"
+    },
+    {
+     "답": "Christmas is just round the corner.",
+     "점수": "70점"
+    },
+    {
+     "답": "Christmas is just around the corner",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Christmas is right around the corner.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'바로' → right(right around the corner 는 매우 흔한 꼴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Christmas is just round the corner.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 영어 round — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#20": {
+   "id": "grammar2/gh2-024#20",
+   "시험": [
+    {
+     "답": "Time's really dragging for me.",
+     "점수": "0점"
+    },
+    {
+     "답": "For me, time is really dragging.",
+     "점수": "0점"
+    },
+    {
+     "답": "Time is really dragging on for me.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "For me, time is really dragging.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 차례대로 '나에게는' 을 앞에 둔 흔한 꼴 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Time's really dragging for me.",
+     "점수": "0점",
+     "까닭": "명사 뒤 's(= is) 줄임은 말할 때의 꼴 — 글로 쓰는 영작에서 흔하지 않음(채점은 대명사 줄임만 펼침 · 판정-03 과 같은 판단)."
+    },
+    {
+     "답": "Time is really dragging on for me.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 on 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#21": {
+   "id": "grammar2/gh2-024#21",
+   "시험": [
+    {
+     "답": "What day of the week does Christmas fall on this year?",
+     "점수": "0점"
+    },
+    {
+     "답": "This year, what day does Christmas fall on?",
+     "점수": "70점"
+    },
+    {
+     "답": "What day is Christmas this year?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What day of the week does Christmas fall on this year?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'무슨 요일' → what day of the week(fall on 은 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "This year, what day does Christmas fall on?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "때 구 '올해' 를 한국어 차례대로 앞에 둔 흔한 차례 — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "What day is Christmas this year?",
+     "점수": "0점",
+     "까닭": "괄호 '무슨 요일인가' 를 옮긴 다른 문장 — 가르치는 fall on 을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-024#22": {
+   "id": "grammar2/gh2-024#22",
+   "시험": [
+    {
+     "답": "We will have a three-day weekend.",
+     "점수": "70점"
+    },
+    {
+     "답": "We will have a 3-day weekend.",
+     "점수": "0점"
+    },
+    {
+     "답": "We're going to have a three day weekend.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We will have a three-day weekend.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉱ '갖게 될 것이다' → will(be going to 와 가르지 않음) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "We will have a 3-day weekend.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "will + 숫자 표기 3-day(다른 정답이 3-day 를 받음) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We're going to have a three day weekend.",
+     "점수": "70점",
+     "까닭": "하이픈을 뺀 표기 실수 — 명사 앞 복합 형용사는 three-day, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:40"
+  },
+  "grammar2/gh2-025#1": {
+   "id": "grammar2/gh2-025#1",
+   "시험": [
+    {
+     "답": "Call me between 9 am and 5 pm by day and between 8 and 11 pm by night.",
+     "점수": "만점"
+    },
+    {
+     "답": "Call me between 9 a.m. and 5 p.m. by day and between 8 p.m. and 11 p.m. by night.",
+     "점수": "70점"
+    },
+    {
+     "답": "Call me between 9:00 a.m. and 5:00 p.m. by day and between 8:00 and 11:00 p.m. by night.",
+     "점수": "0점"
+    },
+    {
+     "답": "Call me between 9 a.m. and 5 p.m. during the day and between 8 and 11 p.m. at night.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Call me between 9 a.m. and 5 p.m. by day and between 8 p.m. and 11 p.m. by night.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'오후 8시' 를 8 p.m. 으로 밝혀 쓴 맞는 꼴(by day · by night 지킴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Call me between 9:00 a.m. and 5:00 p.m. by day and between 8:00 and 11:00 p.m. by night.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "시각을 9:00 · 5:00 처럼 쓴 흔한 표기 — 쌍점이 지워져 900 으로 읽혀 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Call me between 9 a.m. and 5 p.m. during the day and between 8 and 11 p.m. at night.",
+     "점수": "0점",
+     "까닭": "이 과(#1 · #2)가 가르치는 by day · by night 을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#2": {
+   "id": "grammar2/gh2-025#2",
+   "시험": [
+    {
+     "답": "I worked in a factory by day and studied in a library by night.",
+     "점수": "70점"
+    },
+    {
+     "답": "I worked at a factory by day and studied at the library by night.",
+     "점수": "70점"
+    },
+    {
+     "답": "By day I worked at a factory and by night I studied at a library.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I worked in a factory by day and studied in a library by night.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'공장에서 · 도서관에서' → in(at 과 같이 흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I worked at a factory by day and studied at the library by night.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ '도서관에서' → at the library(흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "By day I worked at a factory and by night I studied at a library.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 차례대로 by day · by night 을 앞에 둔 꼴(by day · by night 지킴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#3": {
+   "id": "grammar2/gh2-025#3",
+   "시험": [
+    {
+     "답": "Can I have the day off tomorrow?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I have a day off tomorrow?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can I have tomorrow off?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I take tomorrow off?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can I have the day off tomorrow?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'쉬어도 됩니까' 의 흔한 번역 Can I(have … off 는 지킴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "May I have a day off tomorrow?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'하루' → a day — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can I have tomorrow off?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "다른 정답 꼴 + Can I — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "May I take tomorrow off?",
+     "점수": "0점",
+     "까닭": "이 과(#3~#5)가 가르치는 have … off 를 take 로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#4": {
+   "id": "grammar2/gh2-025#4",
+   "시험": [
+    {
+     "답": "Can I have a few days off next month?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I have some days off next month?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I have several days off next month?",
+     "점수": "0점"
+    },
+    {
+     "답": "May I take a few days off next month?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can I have a few days off next month?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'쉬어도 됩니까' → Can I — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "May I have some days off next month?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'며칠' → some days — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "May I have several days off next month?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'며칠' → several days — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "May I take a few days off next month?",
+     "점수": "0점",
+     "까닭": "have … off 를 take 로 바꿈(#3 과 같음)."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#5": {
+   "id": "grammar2/gh2-025#5",
+   "시험": [
+    {
+     "답": "May I have this Friday off",
+     "점수": "만점"
+    },
+    {
+     "답": "Can I have this Friday off?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I take this Friday off?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can I have this Friday off?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'쉬어도 됩니까' → Can I — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "May I take this Friday off?",
+     "점수": "0점",
+     "까닭": "have … off 를 take 로 바꿈(#3 과 같음)."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#6": {
+   "id": "grammar2/gh2-025#6",
+   "시험": [
+    {
+     "답": "Would you do me a favor?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you do me a favor?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can you do me a favor?",
+     "점수": "70점"
+    },
+    {
+     "답": "Will you do me a favour?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Would you do me a favor?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-주시겠습니까' 의 가장 흔한 공손 꼴 Would you — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you do me a favor?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 부탁 Could you — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can you do me a favor?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "부탁의 흔한 꼴 Can you — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Will you do me a favour?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 철자 favour — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#7": {
+   "id": "grammar2/gh2-025#7",
+   "시험": [
+    {
+     "답": "Can I ask you a personal question?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could I ask you a personal question?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I ask a personal question?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can I ask you a personal question?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'해도 됩니까' → Can I(가장 흔한 꼴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Could I ask you a personal question?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could I — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "May I ask a personal question?",
+     "점수": "70점",
+     "까닭": "'당신에게' 를 옮기지 않음 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#8": {
+   "id": "grammar2/gh2-025#8",
+   "시험": [
+    {
+     "답": "I have a prior engagement.",
+     "점수": "0점"
+    },
+    {
+     "답": "I've got a previous engagement.",
+     "점수": "0점"
+    },
+    {
+     "답": "I have a previous appointment.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I have a prior engagement.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'사전' 의 사전 뜻 prior — a prior engagement 는 a previous engagement 와 같은 굳은 말(더 흔히 씀). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I've got a previous engagement.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 have got — 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I have a previous appointment.",
+     "점수": "0점",
+     "까닭": "선약을 뜻하는 굳은 말 a previous engagement 의 engagement 를 appointment 로 바꿈 — 가르치는 말을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#9": {
+   "id": "grammar2/gh2-025#9",
+   "시험": [
+    {
+     "답": "He sounded an alarm.",
+     "점수": "70점"
+    },
+    {
+     "답": "He rang the alarm.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He sounded an alarm.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ '경보음을' 은 관사를 가르지 않음 — sound an alarm 도 흔함. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He rang the alarm.",
+     "점수": "0점",
+     "까닭": "가르치는 동사 sound(울리다 — 같은 과정 gh2-020 #6 'sound the bell' 에서도 가르침)를 ring 으로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#10": {
+   "id": "grammar2/gh2-025#10",
+   "시험": [
+    {
+     "답": "Do not take it personally.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't take it personal.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Don't take it personal.",
+     "점수": "70점",
+     "까닭": "비표준 — 부사 personally 가 맞음, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#11": {
+   "id": "grammar2/gh2-025#11",
+   "시험": [
+    {
+     "답": "I will take that one over there.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'll take that one there.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'll buy that one over there.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'll take that one there.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'저기에 있는' → there(over 없이도 같은 뜻 · 흔함) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I'll buy that one over there.",
+     "점수": "0점",
+     "까닭": "한국어 '사겠다' 의 곧은 번역이지만 이 문항이 가르치는 take(사다 — 같은 과 #10 · #14 도 take 의 쓰임)를 buy 로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#12": {
+   "id": "grammar2/gh2-025#12",
+   "시험": [
+    {
+     "답": "I need a ride to the airport!",
+     "점수": "만점"
+    },
+    {
+     "답": "I need a lift to the airport.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I need a lift to the airport.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 lift(= ride · 같은 과정 gh2-022 #13 모범이 'Will you give me a lift?') — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#13": {
+   "id": "grammar2/gh2-025#13",
+   "시험": [
+    {
+     "답": "Where should we pick you up at two sharp?",
+     "점수": "70점"
+    },
+    {
+     "답": "Where shall we pick you up at two o'clock sharp?",
+     "점수": "70점"
+    },
+    {
+     "답": "Where should we pick you up at 2 o'clock sharp?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Where should we pick you up at two sharp?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "제안을 묻는 should(미국에서 shall 보다 흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Where shall we pick you up at two o'clock sharp?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'두시' → two o'clock — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Where should we pick you up at 2 o'clock sharp?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "should + 2 o'clock — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#14": {
+   "id": "grammar2/gh2-025#14",
+   "시험": [
+    {
+     "답": "Do you take credit cards",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you accept credit cards?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Do you accept credit cards?",
+     "점수": "0점",
+     "까닭": "한국어 '받습니까' 의 곧은 번역이지만 이 문항이 가르치는 take(받다 — 같은 과 #10 · #11 과 함께 take 의 쓰임)를 accept 로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#15": {
+   "id": "grammar2/gh2-025#15",
+   "시험": [
+    {
+     "답": "What do I owe you",
+     "점수": "만점"
+    },
+    {
+     "답": "How much do I owe you?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How much do I owe you?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '얼마를 드려야 합니까' 의 가장 흔한 꼴 · owe 는 지킴 — 같은 과정 gh2-022 #1 모범이 바로 이 글. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#16": {
+   "id": "grammar2/gh2-025#16",
+   "시험": [
+    {
+     "답": "It will be 1000 dollars.",
+     "점수": "70점"
+    },
+    {
+     "답": "It'll be a thousand dollars.",
+     "점수": "70점"
+    },
+    {
+     "답": "It will be $1,000.",
+     "점수": "70점"
+    },
+    {
+     "답": "It will be one thousand dollars.",
+     "점수": "70점"
+    },
+    {
+     "답": "That'll be $1,000.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It will be 1000 dollars.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "모범이 that 인데 한국어 '그것은' 의 곧은 번역 it 이 70점(gh1-112 #125 · #136 과 같은 종류).",
+     "확신": "높음"
+    },
+    {
+     "답": "It'll be a thousand dollars.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "위와 같음(a thousand) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It will be $1,000.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "위와 같음($1,000) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It will be one thousand dollars.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "위와 같음(one thousand) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#17": {
+   "id": "grammar2/gh2-025#17",
+   "시험": [
+    {
+     "답": "Could you come down a little?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can you come down a bit?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can you come down a little bit?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can you go down a little?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can you give me a discount?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Could you come down a little?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could you — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can you come down a bit?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'조금' → a bit — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can you come down a little bit?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'조금' → a little bit(흔함) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Can you go down a little?",
+     "점수": "0점",
+     "까닭": "가르치는 come down(값을 내리다)을 go down 으로 바꿈."
+    },
+    {
+     "답": "Can you give me a discount?",
+     "점수": "0점",
+     "까닭": "괄호 '할인할 수 있습니까' 를 옮긴 다른 문장 — come down 을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#18": {
+   "id": "grammar2/gh2-025#18",
+   "시험": [
+    {
+     "답": "I'm sorry, but we don't discount.",
+     "점수": "0점"
+    },
+    {
+     "답": "Sorry, we don't discount.",
+     "점수": "70점"
+    },
+    {
+     "답": "Sorry, but we don't give discounts.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'm sorry, but we don't discount.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'미안하지만' → I'm sorry, but(가장 흔한 꼴) — I am 두 낱말이 늘어 0점(길이 한도).",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Sorry, we don't discount.",
+     "점수": "70점",
+     "까닭": "'-지만' 을 옮기지 않음 — 70점이면 됨."
+    },
+    {
+     "답": "Sorry, but we don't give discounts.",
+     "점수": "0점",
+     "까닭": "가르치는 동사 discount(에누리하다)를 give discounts 로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#19": {
+   "id": "grammar2/gh2-025#19",
+   "시험": [
+    {
+     "답": "I'd like to get a refund for this.",
+     "점수": "70점"
+    },
+    {
+     "답": "I'd like a refund on this.",
+     "점수": "70점"
+    },
+    {
+     "답": "I want to get a refund on this.",
+     "점수": "0점"
+    },
+    {
+     "답": "I would like to receive a refund on this.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'd like to get a refund for this.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "a refund for(흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I'd like a refund on this.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "would like + 명사(흔한 꼴 · refund on this 는 지킴) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I want to get a refund on this.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'싶습니다' → want(같은 과정 gh2-022 #20 은 want 꼴을 다른 정답으로 둠) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I would like to receive a refund on this.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'받다' → receive — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-025#20": {
+   "id": "grammar2/gh2-025#20",
+   "시험": [
+    {
+     "답": "I think that this is defective.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think this is faulty.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think this has a defect.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it is defective.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think this one is defective.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think this is broken.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I think this is faulty.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'결함이 있는' → faulty(defective 와 같은 뜻 · 영국에서 흔함) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I think this has a defect.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'결함이 있다' 를 곧게 옮김 — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I think this one is defective.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'이것' → this one(이것의 사전 번역) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I think that this is defective.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 that 하나 더 → 70점."
+    },
+    {
+     "답": "I think it is defective.",
+     "점수": "70점",
+     "까닭": "'이것' 은 this — it 은 곧은 번역 아님, 70점이면 됨."
+    },
+    {
+     "답": "I think this is broken.",
+     "점수": "0점",
+     "까닭": "뜻이 다름 — broken 은 '고장 난', 결함(defective)과 다름."
+    }
+   ],
+   "때": "2026-09-24 22:42"
+  },
+  "grammar2/gh2-026#1": {
+   "id": "grammar2/gh2-026#1",
+   "시험": [
+    {
+     "답": "It is the wrong size.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's a wrong size.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "It's a wrong size.",
+     "점수": "70점",
+     "까닭": "관사 실수 — '맞지 않는 사이즈' 는 the wrong size 가 굳은 꼴, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#2": {
+   "id": "grammar2/gh2-026#2",
+   "시험": [
+    {
+     "답": "Could I exchange this?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I exchange this?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can I exchange this one?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Could I exchange this?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could I — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "May I exchange this?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "허락을 묻는 May I(흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can I exchange this one?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'이것' → this one(이것의 사전 번역) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#3": {
+   "id": "grammar2/gh2-026#3",
+   "시험": [
+    {
+     "답": "Sign this refund slip and take it to the cashier.",
+     "점수": "0점"
+    },
+    {
+     "답": "Sign this refund cheque and take it to the cashier.",
+     "점수": "0점"
+    },
+    {
+     "답": "Sign this refund check and then take it to the cashier.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Sign this refund slip and take it to the cashier.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'전표' 의 사전 뜻 slip(refund slip 은 흔한 말) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Sign this refund cheque and take it to the cashier.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 철자 cheque — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Sign this refund check and then take it to the cashier.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 then 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#4": {
+   "id": "grammar2/gh2-026#4",
+   "시험": [
+    {
+     "답": "That is a really good buy.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's a really great buy.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is a really good purchase.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It's a really great buy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'훌륭한' 의 사전 뜻 great(a great buy 도 흔한 꼴 · 명사 buy 는 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It is a really good purchase.",
+     "점수": "0점",
+     "까닭": "가르치는 명사 buy(잘 산 물건 — a good buy)를 purchase 로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#5": {
+   "id": "grammar2/gh2-026#5",
+   "시험": [
+    {
+     "답": "You look down!",
+     "점수": "만점"
+    },
+    {
+     "답": "You seem down.",
+     "점수": "0점"
+    },
+    {
+     "답": "You look depressed.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You seem down.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'보인다' → seem(가르치는 down 은 지킴 · 흔함) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You look depressed.",
+     "점수": "0점",
+     "까닭": "가르치는 down(우울한)을 depressed 로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#6": {
+   "id": "grammar2/gh2-026#6",
+   "시험": [
+    {
+     "답": "I asked Betty out, but she turned me down.",
+     "점수": "만점"
+    },
+    {
+     "답": "I asked Betty for a date but she turned me down.",
+     "점수": "0점"
+    },
+    {
+     "답": "I asked Betty out but she rejected me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I asked Betty for a date but she turned me down.",
+     "점수": "0점",
+     "까닭": "가르치는 ask … out 을 피함."
+    },
+    {
+     "답": "I asked Betty out but she rejected me.",
+     "점수": "0점",
+     "까닭": "가르치는 turn down 을 reject 로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#7": {
+   "id": "grammar2/gh2-026#7",
+   "시험": [
+    {
+     "답": "Would you give me a wake-up call at 7 tomorrow morning?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you give me a wake-up call at seven tomorrow morning?",
+     "점수": "70점"
+    },
+    {
+     "답": "Will you give me a wake-up call at 7 a.m. tomorrow?",
+     "점수": "0점"
+    },
+    {
+     "답": "Will you give me a wake-up call at 7 o'clock tomorrow morning?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Would you give me a wake-up call at 7 tomorrow morning?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-주시겠습니까' 의 가장 흔한 공손 꼴 Would you — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you give me a wake-up call at seven tomorrow morning?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could you — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Will you give me a wake-up call at 7 a.m. tomorrow?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'내일 아침 7시' → 7 a.m. tomorrow(흔한 꼴) — 0점(a.m. 이 am 으로 읽혀 morning 과 짝이 안 맞음).",
+     "확신": "보통"
+    },
+    {
+     "답": "Will you give me a wake-up call at 7 o'clock tomorrow morning?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'7시' → 7 o'clock — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#8": {
+   "id": "grammar2/gh2-026#8",
+   "시험": [
+    {
+     "답": "Would he mind if I asked him to direct me to the station",
+     "점수": "만점"
+    },
+    {
+     "답": "Will he mind if I ask him to direct me to the station?",
+     "점수": "70점"
+    },
+    {
+     "답": "Would he mind if I asked him to show me the way to the station?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Will he mind if I ask him to direct me to the station?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'마음쓸까' → will(실제 조건의 흔한 꼴 · mind if 는 지킴) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Would he mind if I asked him to show me the way to the station?",
+     "점수": "0점",
+     "까닭": "괄호 '가는 길을 알려 달라고' 를 옮긴 다른 말 — 가르치는 direct 를 피함(#8 · #9 가 direct · directions 를 가르침)."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#9": {
+   "id": "grammar2/gh2-026#9",
+   "시험": [
+    {
+     "답": "Would you give me directions?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you give me directions?",
+     "점수": "70점"
+    },
+    {
+     "답": "Can you give me directions?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Would you give me directions?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-주시겠습니까' 의 가장 흔한 공손 꼴 Would you — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you give me directions?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could you — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can you give me directions?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "부탁의 흔한 꼴 Can you — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#10": {
+   "id": "grammar2/gh2-026#10",
+   "시험": [
+    {
+     "답": "Are there any landmarks near it",
+     "점수": "만점"
+    },
+    {
+     "답": "Is there any landmark near it?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is there any landmark near it?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '어떤 표지라도' 는 수를 가르지 않음 — 단수 any landmark 도 맞는 영어. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#11": {
+   "id": "grammar2/gh2-026#11",
+   "시험": [
+    {
+     "답": "What is the most prominent building near it?",
+     "점수": "만점"
+    },
+    {
+     "답": "What is the most noticeable building near it?",
+     "점수": "0점"
+    },
+    {
+     "답": "Which is the most prominent building near it?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What is the most noticeable building near it?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'눈에 잘 띄는' 의 사전 뜻 noticeable — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Which is the most prominent building near it?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "여럿 가운데 고르는 which — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#12": {
+   "id": "grammar2/gh2-026#12",
+   "시험": [
+    {
+     "답": "Are you going my way",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you going the same way as me?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are you going the same way as me?",
+     "점수": "0점",
+     "까닭": "괄호 '나하고 같은 방향으로' 를 옮긴 다른 꼴 — 가르치는 going my way 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#13": {
+   "id": "grammar2/gh2-026#13",
+   "시험": [
+    {
+     "답": "Please drop me at the bank.",
+     "점수": "0점"
+    },
+    {
+     "답": "Drop me off at the bank.",
+     "점수": "70점"
+    },
+    {
+     "답": "Please drop me off at the bank.",
+     "점수": "0점"
+    },
+    {
+     "답": "Drop me at the bank, please.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Please drop me at the bank.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'내려 주세요' 의 '주세요' 를 please 로 옮긴 곧은 꼴 — 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "Please drop me off at the bank.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "please + drop off(이 말의 가장 흔한 꼴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Drop me at the bank, please.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "please 를 끝에 — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Drop me off at the bank.",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 off 하나 더 → 70점(이 말의 가장 흔한 꼴이라 메모에 따로 적음)."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#14": {
+   "id": "grammar2/gh2-026#14",
+   "시험": [
+    {
+     "답": "Can I catch an airport-bound bus here?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can I take a bus bound for the airport here?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can I take a bus to the airport here?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can I catch an airport-bound bus here?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'(버스를) 타다' → catch(흔함 · airport-bound 는 지킴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can I take a bus bound for the airport here?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'공항행' → bound for the airport(-bound 를 지킨 풀어 쓴 꼴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Can I take a bus to the airport here?",
+     "점수": "0점",
+     "까닭": "가르치는 airport-bound(~행)를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#15": {
+   "id": "grammar2/gh2-026#15",
+   "시험": [
+    {
+     "답": "How often do trains run on this route? About every ten minutes.",
+     "점수": "70점"
+    },
+    {
+     "답": "How often do the trains run on this line? About every ten minutes.",
+     "점수": "0점"
+    },
+    {
+     "답": "How often do the trains run on this route? Around every ten minutes.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How often do trains run on this route? About every ten minutes.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ 일반적인 열차 운행 — 관사 없는 trains 도 자연스러움. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How often do the trains run on this line? About every ten minutes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'이 길' → line(열차 노선에 가장 흔한 말) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How often do the trains run on this route? Around every ten minutes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'약' → around — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#16": {
+   "id": "grammar2/gh2-026#16",
+   "시험": [
+    {
+     "답": "Is there a through bus to the airport?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is there any through bus to the airport?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are there any through buses going to the airport?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are there direct buses to the airport?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is there a direct bus to the airport?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is there a through bus to the airport?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '직행 버스가 있습니까' 는 수를 가르지 않음 — 단수 a through bus 도 흔함. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Is there any through bus to the airport?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "단수 any through bus — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Are there any through buses going to the airport?",
+     "점수": "70점",
+     "까닭": "한국어에 없는 going 을 더한 꼴 — 70점이면 됨."
+    },
+    {
+     "답": "Are there direct buses to the airport?",
+     "점수": "0점",
+     "까닭": "가르치는 through(직행 — 23과 #18 · 27과 #15 에서도 through 를 가르침)를 direct 로 바꿈."
+    },
+    {
+     "답": "Is there a direct bus to the airport?",
+     "점수": "0점",
+     "까닭": "위와 같음(through 를 direct 로)."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#17": {
+   "id": "grammar2/gh2-026#17",
+   "시험": [
+    {
+     "답": "I never get carsick, but I always get airsick or seasick.",
+     "점수": "만점"
+    },
+    {
+     "답": "I never get car sick but I always get air sick or sea sick.",
+     "점수": "만점"
+    },
+    {
+     "답": "I never get carsick, but I always get airsick and seasick.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I never get carsick, but I always get airsick and seasick.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'비행기 멀미나 뱃멀미는' 을 and 로 — 영어에서는 둘 다 늘 한다는 같은 뜻으로 자연스러움. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-026#18": {
+   "id": "grammar2/gh2-026#18",
+   "시험": [
+    {
+     "답": "The machine doesn't work properly.",
+     "점수": "0점"
+    },
+    {
+     "답": "The machine does not work correctly.",
+     "점수": "0점"
+    },
+    {
+     "답": "That machine doesn't work right.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The machine doesn't work properly.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'올바로' → properly(가장 흔한 꼴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The machine does not work correctly.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'올바로' → correctly — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "That machine doesn't work right.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정(280곳 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:43"
+  },
+  "grammar2/gh2-027#1": {
+   "id": "grammar2/gh2-027#1",
+   "시험": [
+    {
+     "답": "When did you get your driving licence?",
+     "점수": "0점"
+    },
+    {
+     "답": "When did you get your driver's licence?",
+     "점수": "70점"
+    },
+    {
+     "답": "When did you obtain your driver's license?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "When did you get your driving licence?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 driving licence — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "When did you get your driver's licence?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 철자 licence — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "When did you obtain your driver's license?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '따다(얻다)' → obtain — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#2": {
+   "id": "grammar2/gh2-027#2",
+   "시험": [
+    {
+     "답": "Will you breast-feed your baby as you did before?",
+     "점수": "70점"
+    },
+    {
+     "답": "Are you going to breastfeed your baby like you did before?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are you going to breast-feed your baby like you did before?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are you going to nurse your baby as you did before?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Will you breast-feed your baby as you did before?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉱ '먹일 겁니까' → will(be going to 와 가르지 않음) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Are you going to breastfeed your baby like you did before?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'했던 것처럼' → like you did(구어에서 가장 흔한 꼴) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Are you going to breast-feed your baby like you did before?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같음(breast-feed) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Are you going to nurse your baby as you did before?",
+     "점수": "0점",
+     "까닭": "이 두 문항(#2 · #3)이 짝으로 가르치는 breast-feed 를 nurse(학습자에게 드문 뜻)로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#3": {
+   "id": "grammar2/gh2-027#3",
+   "시험": [
+    {
+     "답": "No, I will bottle-feed my baby.",
+     "점수": "70점"
+    },
+    {
+     "답": "No, I'm going to bottlefeed my baby.",
+     "점수": "70점"
+    },
+    {
+     "답": "No, I'm going to feed my baby formula.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No, I will bottle-feed my baby.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉱ '먹일 겁니다' → will(be going to 와 가르지 않음) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "No, I'm going to bottlefeed my baby.",
+     "점수": "70점",
+     "까닭": "붙여 쓴 bottlefeed 는 사전 표기 아님(bottle-feed) — 70점이면 됨."
+    },
+    {
+     "답": "No, I'm going to feed my baby formula.",
+     "점수": "0점",
+     "까닭": "괄호 '분유' 를 옮긴 다른 말 — 가르치는 bottle-feed 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#4": {
+   "id": "grammar2/gh2-027#4",
+   "시험": [
+    {
+     "답": "When's your baby due?",
+     "점수": "만점"
+    },
+    {
+     "답": "When is the baby due?",
+     "점수": "70점"
+    },
+    {
+     "답": "When is your due date?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "When is the baby due?",
+     "점수": "70점",
+     "까닭": "'당신의 아기' → your baby — the 는 70점이면 됨."
+    },
+    {
+     "답": "When is your due date?",
+     "점수": "0점",
+     "까닭": "주어를 바꾼 다른 문장 — 가르치는 (baby) be due 꼴을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#5": {
+   "id": "grammar2/gh2-027#5",
+   "시험": [
+    {
+     "답": "Where did you go to school",
+     "점수": "만점"
+    },
+    {
+     "답": "Where did you attend school?",
+     "점수": "0점"
+    },
+    {
+     "답": "Which school did you go to?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Where did you attend school?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'다니다' → attend(go to 와 같은 뜻의 흔한 말) — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Which school did you go to?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '어느 학교에 다녔습니까' 를 옮긴 꼴(go to school 은 지킴 · 같은 과 #9 와 같은 뜻) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#6": {
+   "id": "grammar2/gh2-027#6",
+   "시험": [
+    {
+     "답": "We went to the same school, didn't we",
+     "점수": "만점"
+    },
+    {
+     "답": "We attended the same school, didn't we?",
+     "점수": "0점"
+    },
+    {
+     "답": "We went to the same school, right?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We attended the same school, didn't we?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'다녔다' → attended(꼬리까지 맞음) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We went to the same school, right?",
+     "점수": "0점",
+     "까닭": "가르치는 부가의문문 꼬리(didn't we)를 right 로 피함."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#7": {
+   "id": "grammar2/gh2-027#7",
+   "시험": [
+    {
+     "답": "We're fellow alumni, aren't we?",
+     "점수": "만점"
+    },
+    {
+     "답": "We are schoolmates, aren't we?",
+     "점수": "0점"
+    },
+    {
+     "답": "We are classmates, aren't we?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We are schoolmates, aren't we?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'동창생' 의 사전 뜻 schoolmate(부가의문 꼴은 지킴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We are classmates, aren't we?",
+     "점수": "0점",
+     "까닭": "뜻이 다름 — classmate 는 같은 반 친구."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#8": {
+   "id": "grammar2/gh2-027#8",
+   "시험": [
+    {
+     "답": "We're the class of 1995.",
+     "점수": "만점"
+    },
+    {
+     "답": "We are the class of '95.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We are the class of '95.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "연도를 줄인 '95(졸업 학번에 흔한 표기) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#9": {
+   "id": "grammar2/gh2-027#9",
+   "시험": [
+    {
+     "답": "Which school did you go to?",
+     "점수": "70점"
+    },
+    {
+     "답": "What school did you attend?",
+     "점수": "0점"
+    },
+    {
+     "답": "Which school did you attend?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Which school did you go to?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'어느' → which(가장 곧은 번역) — 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "What school did you attend?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'다녔습니까' → attend — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Which school did you attend?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "which + attend — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#10": {
+   "id": "grammar2/gh2-027#10",
+   "시험": [
+    {
+     "답": "You're a college graduate, aren't you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You are a university graduate, aren't you?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You are a university graduate, aren't you?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '대학' → university(꼬리까지 맞음) — 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#11": {
+   "id": "grammar2/gh2-027#11",
+   "시험": [
+    {
+     "답": "What grade are you in",
+     "점수": "만점"
+    },
+    {
+     "답": "Which grade are you in?",
+     "점수": "70점"
+    },
+    {
+     "답": "What year are you in?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Which grade are you in?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "학년을 고르는 which — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "What year are you in?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 · 대학의 학년 year — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#12": {
+   "id": "grammar2/gh2-027#12",
+   "시험": [
+    {
+     "답": "He got a C average on his report card, but I'm sure he'll get better grades next year.",
+     "점수": "만점"
+    },
+    {
+     "답": "He got a C average on his report card, but I'm certain he will get better grades next year.",
+     "점수": "0점"
+    },
+    {
+     "답": "He got a C average on his report card, but I'm sure he will get better scores next year.",
+     "점수": "0점"
+    },
+    {
+     "답": "He got a C average on his report card, but I'm sure he will get better marks next year.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He got a C average on his report card, but I'm certain he will get better grades next year.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'확신한다' → certain — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He got a C average on his report card, but I'm sure he will get better scores next year.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'점수' 의 사전 첫 뜻 score — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He got a C average on his report card, but I'm sure he will get better marks next year.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 marks — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#13": {
+   "id": "grammar2/gh2-027#13",
+   "시험": [
+    {
+     "답": "I mean it!",
+     "점수": "만점"
+    },
+    {
+     "답": "I mean that!",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm serious.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I'm serious.",
+     "점수": "0점",
+     "까닭": "괄호 '정말이야' 를 옮긴 다른 말 — 가르치는 I mean it 을 피함."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#14": {
+   "id": "grammar2/gh2-027#14",
+   "시험": [
+    {
+     "답": "What do you mean by hitting a poor old man?",
+     "점수": "0점"
+    },
+    {
+     "답": "What do you mean by beating the poor old man?",
+     "점수": "70점"
+    },
+    {
+     "답": "What do you mean by beating up a poor old man?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "What do you mean by hitting a poor old man?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'치다' 의 사전 첫 뜻 hit(What do you mean by -ing 는 지킴) — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "What do you mean by beating the poor old man?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ 지금 치고 있는 그 노인 — the 도 자연스러움. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "What do you mean by beating up a poor old man?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 up 하나 더 → 70점."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#15": {
+   "id": "grammar2/gh2-027#15",
+   "시험": [
+    {
+     "답": "I thought they were through a long time ago, but they're going steady again.",
+     "점수": "만점"
+    },
+    {
+     "답": "I thought they broke up a long time ago but they are going steady again.",
+     "점수": "0점"
+    },
+    {
+     "답": "I thought they were through long ago but they are going steady again.",
+     "점수": "70점"
+    },
+    {
+     "답": "I thought they were through a long time ago but they are dating again.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I thought they were through long ago but they are going steady again.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'오래 전에' → long ago — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I thought they broke up a long time ago but they are going steady again.",
+     "점수": "0점",
+     "까닭": "가르치는 through(끝난 — 23과 #18 · 26과 #16 에서도 가르침)를 broke up 으로 바꿈."
+    },
+    {
+     "답": "I thought they were through a long time ago but they are dating again.",
+     "점수": "0점",
+     "까닭": "한국어 '데이트하고 있다' 의 곧은 번역이지만 가르치는 go steady 를 피함."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar2/gh2-027#16": {
+   "id": "grammar2/gh2-027#16",
+   "시험": [
+    {
+     "답": "Can we have separate checks?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could we have separate checks, please?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could we have separate checks?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can we have separate bills, please?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can we get separate checks, please?",
+     "점수": "0점"
+    },
+    {
+     "답": "Can we have separate checks please",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can we have separate checks?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어에 please 가 없음 — please 없는 곧은 번역. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could we have separate checks, please?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could we — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Could we have separate checks?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "Could we · please 없음 — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can we have separate bills, please?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "영국 영어 bill — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Can we get separate checks, please?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'가질' → get(식당에서 흔함) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  }
+ }
+}

@@ -1,0 +1,1982 @@
+{
+ "파일": "05.md",
+ "문항": {
+  "grammar1/gh1-030#1": {
+   "id": "grammar1/gh1-030#1",
+   "시험": [
+    {
+     "답": "I love you.",
+     "점수": "만점"
+    },
+    {
+     "답": "I love you",
+     "점수": "만점"
+    },
+    {
+     "답": "i love you.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#2": {
+   "id": "grammar1/gh1-030#2",
+   "시험": [
+    {
+     "답": "You love my sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "You love my older sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "You love my younger sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "You love my big sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "You love my sisters.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You love my older sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "누이(남자의 여자 형제)는 손위 · 손아래를 다 가리켜 사전도 (손위) older sister · (손아래) younger sister 로 옮김 — 누이를 누나로 읽은 맞는 영작인데 모범이 sister 뿐이라 내용어 older 하나 더해 0점(모범 4낱말에 5낱말 · 더한 낱말이 기능어 아님). 곧은 번역 sister 는 만점이라 확신 보통. 같은 강의 여동생 문항(#8)은 younger sister 를 이미 받음.",
+     "확신": "보통"
+    },
+    {
+     "답": "You love my younger sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "누이는 표준국어대사전에 '흔히 손아래 사람을 이른다' — 누이를 누이동생으로 읽은 맞는 영작인데 내용어 younger 하나 더해 0점. 곧은 번역 sister 는 만점이라 확신 보통.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You love my big sister.",
+     "점수": "0점",
+     "까닭": "구어 꼴(big sister) — 누이를 손위로 읽고 다시 구어로 옮긴 드문 번역. 같은 뜻의 older sister 는 막힘(보통)으로 적음."
+    },
+    {
+     "답": "You love my sisters.",
+     "점수": "70점",
+     "까닭": "70점. '들' 없는 '나의 누이' 는 한 사람으로 읽힘 — 복수 번역은 흔하지 않음(형제는 형과 아우를 아우르는 말이라 복수 대체 답안이 따로 있음)."
+    }
+   ],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#3": {
+   "id": "grammar1/gh1-030#3",
+   "시험": [
+    {
+     "답": "He loves me.",
+     "점수": "만점"
+    },
+    {
+     "답": "He loves me",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#4": {
+   "id": "grammar1/gh1-030#4",
+   "시험": [
+    {
+     "답": "She loves your brother.",
+     "점수": "만점"
+    },
+    {
+     "답": "She loves your brothers.",
+     "점수": "만점"
+    },
+    {
+     "답": "She loves your siblings.",
+     "점수": "0점"
+    },
+    {
+     "답": "She loves your older brother.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "She loves your siblings.",
+     "점수": "0점",
+     "까닭": "sibling 은 형제자매 — 이 강의는 형제를 누이 · 여동생과 짝지어 남자 형제(brother)로 씀. 뜻이 넓어진 드문 번역."
+    },
+    {
+     "답": "She loves your older brother.",
+     "점수": "0점",
+     "까닭": "형제는 형과 아우를 아우르는 말 — older brother(형)는 한국어에 없는 뜻을 더한 것(사전 뜻에도 없음)."
+    }
+   ],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#5": {
+   "id": "grammar1/gh1-030#5",
+   "시험": [
+    {
+     "답": "They love you.",
+     "점수": "만점"
+    },
+    {
+     "답": "They love you",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#6": {
+   "id": "grammar1/gh1-030#6",
+   "시험": [
+    {
+     "답": "She loves his brother.",
+     "점수": "만점"
+    },
+    {
+     "답": "She loves his brothers.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#7": {
+   "id": "grammar1/gh1-030#7",
+   "시험": [
+    {
+     "답": "I love him.",
+     "점수": "만점"
+    },
+    {
+     "답": "I love him",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#8": {
+   "id": "grammar1/gh1-030#8",
+   "시험": [
+    {
+     "답": "He loves her sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "He loves her younger sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "He loves her little sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "He loves her baby sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "He loves her kid sister.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He loves her little sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "여동생의 사전 뜻 younger sister · little sister 가운데 little sister 가 0점 — 대체 답안이 younger sister 뿐(little ≠ younger 로 내용어가 다르고, 모범 'her sister' 에는 내용어 하나 더해 길이 넘침). 흔한 맞는 번역.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He loves her baby sister.",
+     "점수": "0점",
+     "까닭": "구어 · 흔히 막내(아기) 여동생을 이름 — 여동생의 흔한 번역 아님."
+    },
+    {
+     "답": "He loves her kid sister.",
+     "점수": "0점",
+     "까닭": "미국 구어(kid sister) — 학습자의 흔한 번역 아님."
+    }
+   ],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#9": {
+   "id": "grammar1/gh1-030#9",
+   "시험": [
+    {
+     "답": "I love her.",
+     "점수": "만점"
+    },
+    {
+     "답": "I love her",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#10": {
+   "id": "grammar1/gh1-030#10",
+   "시험": [
+    {
+     "답": "I don't love you.",
+     "점수": "만점"
+    },
+    {
+     "답": "I do not love you.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#11": {
+   "id": "grammar1/gh1-030#11",
+   "시험": [
+    {
+     "답": "You don't love my sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "You do not love my sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "You don't love my older sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "You don't love my younger sister.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You don't love my older sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#2 와 같음 — 누이는 손위 · 손아래를 다 가리켜 (손위) older sister 도 맞는 영작인데 모범이 sister 뿐이라 내용어 older 하나 더해 0점. 곧은 번역 sister 는 만점이라 확신 보통.",
+     "확신": "보통"
+    },
+    {
+     "답": "You don't love my younger sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#2 와 같음 — 누이는 '흔히 손아래'(표준국어대사전)라 younger sister 도 맞는 영작인데 0점. 확신 보통.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#12": {
+   "id": "grammar1/gh1-030#12",
+   "시험": [
+    {
+     "답": "He doesn't love me.",
+     "점수": "만점"
+    },
+    {
+     "답": "He does not love me.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#13": {
+   "id": "grammar1/gh1-030#13",
+   "시험": [
+    {
+     "답": "She doesn't love your brother.",
+     "점수": "만점"
+    },
+    {
+     "답": "She does not love your brothers.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#14": {
+   "id": "grammar1/gh1-030#14",
+   "시험": [
+    {
+     "답": "They don't love you.",
+     "점수": "만점"
+    },
+    {
+     "답": "They do not love you.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#15": {
+   "id": "grammar1/gh1-030#15",
+   "시험": [
+    {
+     "답": "She doesn't love his brother.",
+     "점수": "만점"
+    },
+    {
+     "답": "She does not love his brothers.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#16": {
+   "id": "grammar1/gh1-030#16",
+   "시험": [
+    {
+     "답": "I don't love him.",
+     "점수": "만점"
+    },
+    {
+     "답": "I do not love him.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#17": {
+   "id": "grammar1/gh1-030#17",
+   "시험": [
+    {
+     "답": "He doesn't love her sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "He does not love her younger sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "He doesn't love her little sister.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He doesn't love her little sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#8 과 같음 — 여동생 → little sister 가 0점(대체 답안이 younger sister 뿐). does not 꼴도 줄임꼴을 펼쳐 같게 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#18": {
+   "id": "grammar1/gh1-030#18",
+   "시험": [
+    {
+     "답": "I don't love her.",
+     "점수": "만점"
+    },
+    {
+     "답": "I do not love her.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#19": {
+   "id": "grammar1/gh1-030#19",
+   "시험": [
+    {
+     "답": "Do I love you?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I love you",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#20": {
+   "id": "grammar1/gh1-030#20",
+   "시험": [
+    {
+     "답": "Do you love my sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you love my older sister?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you love my younger sister?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do you love my older sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#2 와 같음 — 누이 → (손위) older sister 가 0점(모범이 sister 뿐 · 내용어 하나 더함). 확신 보통.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you love my younger sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#2 와 같음 — 누이 → (손아래) younger sister 가 0점. 확신 보통.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#21": {
+   "id": "grammar1/gh1-030#21",
+   "시험": [
+    {
+     "답": "Does he love me?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he love me",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#22": {
+   "id": "grammar1/gh1-030#22",
+   "시험": [
+    {
+     "답": "Does she love your brother?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does she love your brothers?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#23": {
+   "id": "grammar1/gh1-030#23",
+   "시험": [
+    {
+     "답": "Do they love you?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do they love you",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#24": {
+   "id": "grammar1/gh1-030#24",
+   "시험": [
+    {
+     "답": "Does she love his brother?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does she love his brothers?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-030#25": {
+   "id": "grammar1/gh1-030#25",
+   "시험": [
+    {
+     "답": "Do I love him?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I love him",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:36"
+  },
+  "grammar1/gh1-032#26": {
+   "id": "grammar1/gh1-032#26",
+   "시험": [
+    {
+     "답": "Does he love her sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he love her younger sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he love her little sister?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does he love her little sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "gh1-030 #8 과 같음 — 여동생의 사전 뜻 younger sister · little sister 가운데 little sister 가 0점(대체 답안이 younger sister 뿐 · little ≠ younger 내용어). 흔한 맞는 번역.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#27": {
+   "id": "grammar1/gh1-032#27",
+   "시험": [
+    {
+     "답": "Do I love her?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I love her",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#28": {
+   "id": "grammar1/gh1-032#28",
+   "시험": [
+    {
+     "답": "Don't I love you?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I not love you?",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't I love you",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#29": {
+   "id": "grammar1/gh1-032#29",
+   "시험": [
+    {
+     "답": "Don't you love my sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you not love my sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't you love my older sister?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you not love my older sister?",
+     "점수": "0점"
+    },
+    {
+     "답": "Don't you love my younger sister?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you not love my younger sister?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Don't you love my older sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "gh1-030 #2 와 같음 — 누이(남자의 여자 형제)는 손위 · 손아래를 다 가리켜 (손위) older sister 도 맞는 영작인데 모범 · 대체가 sister 뿐이라 내용어 older 하나 더해 0점. 곧은 번역 sister 는 만점이라 확신 보통.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you not love my older sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같음 — 이 과가 함께 받는 줄이지 않은 부정 의문 꼴(Do you not …)도 older sister 면 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Don't you love my younger sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "gh1-030 #2 와 같음 — 누이는 '흔히 손아래'(표준국어대사전)라 younger sister 도 맞는 영작인데 0점. 확신 보통.",
+     "확신": "보통"
+    },
+    {
+     "답": "Do you not love my younger sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같음 — 줄이지 않은 부정 의문 꼴(Do you not …)도 younger sister 면 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#30": {
+   "id": "grammar1/gh1-032#30",
+   "시험": [
+    {
+     "답": "Doesn't he love me?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he not love me?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#31": {
+   "id": "grammar1/gh1-032#31",
+   "시험": [
+    {
+     "답": "Doesn't she love your brother?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does she not love your brothers?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#32": {
+   "id": "grammar1/gh1-032#32",
+   "시험": [
+    {
+     "답": "Don't they love you?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do they not love you?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#33": {
+   "id": "grammar1/gh1-032#33",
+   "시험": [
+    {
+     "답": "Doesn't she love his brother?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does she not love his brothers?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#34": {
+   "id": "grammar1/gh1-032#34",
+   "시험": [
+    {
+     "답": "Don't I love him?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I not love him?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#35": {
+   "id": "grammar1/gh1-032#35",
+   "시험": [
+    {
+     "답": "Doesn't he love her sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he not love her younger sister?",
+     "점수": "만점"
+    },
+    {
+     "답": "Doesn't he love her little sister?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does he not love her little sister?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Doesn't he love her little sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "gh1-030 #8 과 같음 — 여동생 → little sister 가 0점(대체 답안이 younger sister 두 꼴뿐).",
+     "확신": "높음"
+    },
+    {
+     "답": "Does he not love her little sister?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같음 — 이 과가 함께 받는 줄이지 않은 부정 의문 꼴(Does he not …)도 little sister 면 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#36": {
+   "id": "grammar1/gh1-032#36",
+   "시험": [
+    {
+     "답": "Don't I love her?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I not love her?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#37": {
+   "id": "grammar1/gh1-032#37",
+   "시험": [
+    {
+     "답": "This is mine.",
+     "점수": "만점"
+    },
+    {
+     "답": "This is mine",
+     "점수": "만점"
+    },
+    {
+     "답": "This one is mine.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is my thing.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This one is mine.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "이것 → this one 은 맞는 영어이고 이 과가 가르치는 소유대명사 mine 도 지킴 — 모범이 'This is mine.' 뿐이라 내용어 one 하나 더해 0점(모범 3낱말에 4낱말 · one 은 기능어 목록에 없음). 곧은 번역 this 가 만점이고 this one 은 고르는 느낌이 더해진 꼴이라 확신 보통.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "This is my thing.",
+     "점수": "0점",
+     "까닭": "어색함(my thing 은 '내 취향 · 내 일' 로 읽힘) · 이 과가 가르치는 소유대명사 mine 을 피함."
+    }
+   ],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#38": {
+   "id": "grammar1/gh1-032#38",
+   "시험": [
+    {
+     "답": "It is yours.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's yours.",
+     "점수": "만점"
+    },
+    {
+     "답": "That's yours.",
+     "점수": "만점"
+    },
+    {
+     "답": "It belongs to you.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "It belongs to you.",
+     "점수": "0점",
+     "까닭": "뜻은 같으나 이 과가 가르치는 꼴(너의 것 → 소유대명사 yours)을 피한 영작."
+    }
+   ],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#39": {
+   "id": "grammar1/gh1-032#39",
+   "시험": [
+    {
+     "답": "They are theirs.",
+     "점수": "만점"
+    },
+    {
+     "답": "They're theirs.",
+     "점수": "만점"
+    },
+    {
+     "답": "Those are theirs.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#40": {
+   "id": "grammar1/gh1-032#40",
+   "시험": [
+    {
+     "답": "These are his.",
+     "점수": "만점"
+    },
+    {
+     "답": "These are his",
+     "점수": "만점"
+    },
+    {
+     "답": "These ones are his.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "These ones are his.",
+     "점수": "0점",
+     "까닭": "these ones 는 표준 문어에서 피하는 꼴(영국 구어 일부) — 흔한 맞는 번역 아님. 곧은 번역 These are his 는 만점."
+    }
+   ],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#41": {
+   "id": "grammar1/gh1-032#41",
+   "시험": [
+    {
+     "답": "It is hers.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's hers.",
+     "점수": "만점"
+    },
+    {
+     "답": "That's hers.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#42": {
+   "id": "grammar1/gh1-032#42",
+   "시험": [
+    {
+     "답": "Is this mine?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this mine",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this one mine?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is this one mine?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#37 과 같음 — 이것 → this one 은 맞는 영어 · 소유대명사 mine 을 지킴 — 모범이 'Is this mine?' 뿐이라 내용어 one 하나 더해 0점. 확신 보통.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#43": {
+   "id": "grammar1/gh1-032#43",
+   "시험": [
+    {
+     "답": "Is it yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is that yours?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#44": {
+   "id": "grammar1/gh1-032#44",
+   "시험": [
+    {
+     "답": "Are those theirs?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they theirs?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#45": {
+   "id": "grammar1/gh1-032#45",
+   "시험": [
+    {
+     "답": "Are these his?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these his",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#46": {
+   "id": "grammar1/gh1-032#46",
+   "시험": [
+    {
+     "답": "Is it hers?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is that hers?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#47": {
+   "id": "grammar1/gh1-032#47",
+   "시험": [
+    {
+     "답": "Isn't this mine?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this not mine?",
+     "점수": "만점"
+    },
+    {
+     "답": "Isn't this one mine?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Isn't this one mine?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#37 과 같음 — 이것 → this one 이 0점(모범 · 대체가 this 두 꼴뿐 · 내용어 one 더함). 확신 보통.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#48": {
+   "id": "grammar1/gh1-032#48",
+   "시험": [
+    {
+     "답": "Isn't it yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is it not yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Isn't that yours?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#49": {
+   "id": "grammar1/gh1-032#49",
+   "시험": [
+    {
+     "답": "Aren't they yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are those not yours?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-032#50": {
+   "id": "grammar1/gh1-032#50",
+   "시험": [
+    {
+     "답": "Aren't these his?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these not his?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:37"
+  },
+  "grammar1/gh1-034#1": {
+   "id": "grammar1/gh1-034#1",
+   "시험": [
+    {
+     "답": "I study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "i study english",
+     "점수": "만점"
+    },
+    {
+     "답": "I learn English.",
+     "점수": "0점"
+    },
+    {
+     "답": "I am studying English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I learn English.",
+     "점수": "0점",
+     "까닭": "learn 은 '배우다' 의 곧은 번역 — 공부하다 의 사전 첫 뜻 · 흔한 번역은 study(한국어도 배우다 · 공부하다 를 가름). 뜻이 다른 낱말."
+    },
+    {
+     "답": "I am studying English.",
+     "점수": "0점",
+     "까닭": "이 강의는 '공부한다'(현재) · '공부하고 있다'(진행, #6)를 대비해 가르침 — 현재 문항에 진행형은 강의가 가르치는 시제 꼴을 피한 영작."
+    }
+   ],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#2": {
+   "id": "grammar1/gh1-034#2",
+   "시험": [
+    {
+     "답": "You study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "You study English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#3": {
+   "id": "grammar1/gh1-034#3",
+   "시험": [
+    {
+     "답": "He studies English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He studies english.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#4": {
+   "id": "grammar1/gh1-034#4",
+   "시험": [
+    {
+     "답": "She studies English.",
+     "점수": "만점"
+    },
+    {
+     "답": "She studies English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#5": {
+   "id": "grammar1/gh1-034#5",
+   "시험": [
+    {
+     "답": "They study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "They study english",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#6": {
+   "id": "grammar1/gh1-034#6",
+   "시험": [
+    {
+     "답": "I am studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm learning English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I'm learning English.",
+     "점수": "0점",
+     "까닭": "#1 과 같음 — learn 은 '배우다' 의 곧은 번역, 공부하다 는 study. 뜻이 다른 낱말."
+    }
+   ],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#7": {
+   "id": "grammar1/gh1-034#7",
+   "시험": [
+    {
+     "답": "You are studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "You're studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#8": {
+   "id": "grammar1/gh1-034#8",
+   "시험": [
+    {
+     "답": "He is studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He's studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#9": {
+   "id": "grammar1/gh1-034#9",
+   "시험": [
+    {
+     "답": "She is studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "She's studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#10": {
+   "id": "grammar1/gh1-034#10",
+   "시험": [
+    {
+     "답": "They are studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "They're studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#11": {
+   "id": "grammar1/gh1-034#11",
+   "시험": [
+    {
+     "답": "I was studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I was studying english",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#12": {
+   "id": "grammar1/gh1-034#12",
+   "시험": [
+    {
+     "답": "They were studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "They were studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#13": {
+   "id": "grammar1/gh1-034#13",
+   "시험": [
+    {
+     "답": "Do I study English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do I study English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#14": {
+   "id": "grammar1/gh1-034#14",
+   "시험": [
+    {
+     "답": "Do you study English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you study english?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#15": {
+   "id": "grammar1/gh1-034#15",
+   "시험": [
+    {
+     "답": "Does he study English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he study English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#16": {
+   "id": "grammar1/gh1-034#16",
+   "시험": [
+    {
+     "답": "Does she study English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does she study English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#17": {
+   "id": "grammar1/gh1-034#17",
+   "시험": [
+    {
+     "답": "Do they study English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do they study English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#18": {
+   "id": "grammar1/gh1-034#18",
+   "시험": [
+    {
+     "답": "Am I studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Am I studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#19": {
+   "id": "grammar1/gh1-034#19",
+   "시험": [
+    {
+     "답": "Are you studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#20": {
+   "id": "grammar1/gh1-034#20",
+   "시험": [
+    {
+     "답": "Is he studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is he studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#21": {
+   "id": "grammar1/gh1-034#21",
+   "시험": [
+    {
+     "답": "Is she studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is she studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#22": {
+   "id": "grammar1/gh1-034#22",
+   "시험": [
+    {
+     "답": "Are they studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#23": {
+   "id": "grammar1/gh1-034#23",
+   "시험": [
+    {
+     "답": "Was I studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Was I studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#24": {
+   "id": "grammar1/gh1-034#24",
+   "시험": [
+    {
+     "답": "Were you studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were you studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-034#25": {
+   "id": "grammar1/gh1-034#25",
+   "시험": [
+    {
+     "답": "Was he studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Was he studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:38"
+  },
+  "grammar1/gh1-036#26": {
+   "id": "grammar1/gh1-036#26",
+   "시험": [
+    {
+     "답": "Was she studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Was she studying english",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#27": {
+   "id": "grammar1/gh1-036#27",
+   "시험": [
+    {
+     "답": "Were they studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were they studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#28": {
+   "id": "grammar1/gh1-036#28",
+   "시험": [
+    {
+     "답": "I don't study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I do not study English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#29": {
+   "id": "grammar1/gh1-036#29",
+   "시험": [
+    {
+     "답": "You don't study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "You do not study English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#30": {
+   "id": "grammar1/gh1-036#30",
+   "시험": [
+    {
+     "답": "He doesn't study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He does not study English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#31": {
+   "id": "grammar1/gh1-036#31",
+   "시험": [
+    {
+     "답": "She doesn't study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "She does not study English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#32": {
+   "id": "grammar1/gh1-036#32",
+   "시험": [
+    {
+     "답": "They don't study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "They do not study English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#33": {
+   "id": "grammar1/gh1-036#33",
+   "시험": [
+    {
+     "답": "I am not studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm not studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#34": {
+   "id": "grammar1/gh1-036#34",
+   "시험": [
+    {
+     "답": "You aren't studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "You're not studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#35": {
+   "id": "grammar1/gh1-036#35",
+   "시험": [
+    {
+     "답": "He isn't studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He's not studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#36": {
+   "id": "grammar1/gh1-036#36",
+   "시험": [
+    {
+     "답": "She isn't studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "She's not studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#37": {
+   "id": "grammar1/gh1-036#37",
+   "시험": [
+    {
+     "답": "They aren't studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "They're not studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#38": {
+   "id": "grammar1/gh1-036#38",
+   "시험": [
+    {
+     "답": "I was not studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I wasn't studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#39": {
+   "id": "grammar1/gh1-036#39",
+   "시험": [
+    {
+     "답": "You were not studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "You weren't studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#40": {
+   "id": "grammar1/gh1-036#40",
+   "시험": [
+    {
+     "답": "He was not studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He wasn't studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#41": {
+   "id": "grammar1/gh1-036#41",
+   "시험": [
+    {
+     "답": "She was not studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "She wasn't studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#42": {
+   "id": "grammar1/gh1-036#42",
+   "시험": [
+    {
+     "답": "They were not studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "They weren't studying English.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#43": {
+   "id": "grammar1/gh1-036#43",
+   "시험": [
+    {
+     "답": "Am I not studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Aren't I studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Am I not studying English",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#44": {
+   "id": "grammar1/gh1-036#44",
+   "시험": [
+    {
+     "답": "Aren't you studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are you not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#45": {
+   "id": "grammar1/gh1-036#45",
+   "시험": [
+    {
+     "답": "Isn't he studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is he not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#46": {
+   "id": "grammar1/gh1-036#46",
+   "시험": [
+    {
+     "답": "Isn't she studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is she not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#47": {
+   "id": "grammar1/gh1-036#47",
+   "시험": [
+    {
+     "답": "Aren't they studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#48": {
+   "id": "grammar1/gh1-036#48",
+   "시험": [
+    {
+     "답": "Was I not studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Wasn't I studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#49": {
+   "id": "grammar1/gh1-036#49",
+   "시험": [
+    {
+     "답": "Were you not studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Weren't you studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#50": {
+   "id": "grammar1/gh1-036#50",
+   "시험": [
+    {
+     "답": "Wasn't he studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Was he not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#51": {
+   "id": "grammar1/gh1-036#51",
+   "시험": [
+    {
+     "답": "Wasn't she studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Was she not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  },
+  "grammar1/gh1-036#52": {
+   "id": "grammar1/gh1-036#52",
+   "시험": [
+    {
+     "답": "Weren't they studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were they not studying English?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 21:39"
+  }
+ }
+}

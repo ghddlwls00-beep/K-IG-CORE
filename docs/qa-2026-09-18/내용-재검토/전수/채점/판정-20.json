@@ -1,0 +1,3076 @@
+{
+ "파일": "20.md",
+ "문항": {
+  "grammar2/gh2-016#1": {
+   "id": "grammar2/gh2-016#1",
+   "시험": [
+    {
+     "답": "He must study English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He has to study English.",
+     "점수": "0점"
+    },
+    {
+     "답": "He should study English.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He has to study English.",
+     "점수": "0점",
+     "까닭": "괄호 '(공부함에 틀림없다)' 의 추측 뜻은 must 만 싣는다 — has to 는 의무 뜻만. 이 과 #1~6 이 가르치는 조동사 must 표를 피함(0점)."
+    },
+    {
+     "답": "He should study English.",
+     "점수": "70점",
+     "까닭": "should 는 '틀림없다' 뜻이 없고 의무도 약함 — 이 문항이 가르치는 must(두 뜻)를 피함. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#2": {
+   "id": "grammar2/gh2-016#2",
+   "시험": [
+    {
+     "답": "He must be studying English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He has to be studying English.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'm sure he is studying English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He has to be studying English.",
+     "점수": "0점",
+     "까닭": "추측의 has to be 는 미국 구어 꼴 — 이 과가 가르치는 must be -ing 를 피함(0점)."
+    },
+    {
+     "답": "I'm sure he is studying English.",
+     "점수": "0점",
+     "까닭": "'틀림없다' 를 I'm sure 로 풀어 이 문항이 가르치는 must be -ing 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#3": {
+   "id": "grammar2/gh2-016#3",
+   "시험": [
+    {
+     "답": "He must have studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He must've studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'm sure he studied English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I'm sure he studied English.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 must have p.p.(과거 추측)를 I'm sure 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#4": {
+   "id": "grammar2/gh2-016#4",
+   "시험": [
+    {
+     "답": "He might have studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He might've studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He may have studied English.",
+     "점수": "70점"
+    },
+    {
+     "답": "Maybe he studied English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He may have studied English.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'~했을지 모른다' 의 가장 흔한 번역 may have p.p.(학교 문법이 might have 와 함께 가르침) — 조동사 + have p.p. 꼴 지킴 · 뜻 같음. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Maybe he studied English.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 조동사 + have p.p. 를 maybe 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#5": {
+   "id": "grammar2/gh2-016#5",
+   "시험": [
+    {
+     "답": "He would have studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He would've studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He'd have studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He probably studied English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He probably studied English.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 would have p.p. 를 probably 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#6": {
+   "id": "grammar2/gh2-016#6",
+   "시험": [
+    {
+     "답": "He should have studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He should've studied English.",
+     "점수": "만점"
+    },
+    {
+     "답": "He ought to have studied English.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He ought to have studied English.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'~했어야 했다(그런데 안 했다)' 를 학교 문법이 should have 와 나란히 가르치는 ought to have p.p. — 조동사 완료 꼴 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#7": {
+   "id": "grammar2/gh2-016#7",
+   "시험": [
+    {
+     "답": "We were living in Seoul then.",
+     "점수": "만점"
+    },
+    {
+     "답": "We lived in Seoul then.",
+     "점수": "0점"
+    },
+    {
+     "답": "We were living in Seoul back then.",
+     "점수": "0점"
+    },
+    {
+     "답": "We were living in Seoul at that time.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We lived in Seoul then.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'살고 있었다' 를 상태 동사 live 의 과거 lived 로 옮긴 흔한 꼴 — 이 문항이 가르치는 then(그때) 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "We were living in Seoul back then.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'그때' → back then(then 을 쓴 흔한 굳은 말) — then 지킴. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We were living in Seoul at that time.",
+     "점수": "0점",
+     "까닭": "이 과 #7~10 이 가르치는 then 을 at that time 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#8": {
+   "id": "grammar2/gh2-016#8",
+   "시험": [
+    {
+     "답": "I will have soup first and then the chicken.",
+     "점수": "만점"
+    },
+    {
+     "답": "I'll have soup first and then chicken.",
+     "점수": "70점"
+    },
+    {
+     "답": "I will eat soup first and then the chicken.",
+     "점수": "0점"
+    },
+    {
+     "답": "I will eat soup first and then chicken.",
+     "점수": "0점"
+    },
+    {
+     "답": "I will eat soup first and then eat chicken.",
+     "점수": "0점"
+    },
+    {
+     "답": "First, I will have soup and then the chicken.",
+     "점수": "70점"
+    },
+    {
+     "답": "I will have the soup first and then the chicken.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'll have soup first and then chicken.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ 관사 없는 chicken(한국어 '치킨' 에 관사 없음 — 둘 다 자연스러움) — and then 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I will eat soup first and then the chicken.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '먹다' 의 가장 곧은 번역 eat — 이 문항이 가르치는 and then 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I will eat soup first and then chicken.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "eat + 관사 없는 chicken — 곧은 번역 둘이 겹친 꼴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I will eat soup first and then eat chicken.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '먹고 … 먹겠다' 처럼 동사를 되풀이한 맞는 영어 — and then 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "First, I will have soup and then the chicken.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ first 를 앞에 둔 차례(맞고 흔함) — and then 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I will have the soup first and then the chicken.",
+     "점수": "70점",
+     "까닭": "기능어 the 하나 더 — 소유자 결정 2 로 70점."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#9": {
+   "id": "grammar2/gh2-016#9",
+   "시험": [
+    {
+     "답": "If it isn't on the table, then it will be in the drawer.",
+     "점수": "만점"
+    },
+    {
+     "답": "If it's not on the table, then it'll be in the drawer.",
+     "점수": "만점"
+    },
+    {
+     "답": "If it is not on the table, then it will be in the drawer.",
+     "점수": "만점"
+    },
+    {
+     "답": "If it's not on the table, it will be in the drawer.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "If it's not on the table, it will be in the drawer.",
+     "점수": "70점",
+     "까닭": "한국어의 '그렇다면' 이자 이 문항이 가르치는 then 을 뺌 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#10": {
+   "id": "grammar2/gh2-016#10",
+   "시험": [
+    {
+     "답": "Can I leave a message then?",
+     "점수": "만점"
+    },
+    {
+     "답": "Then, can I leave a message?",
+     "점수": "70점"
+    },
+    {
+     "답": "May I leave a message, then?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could I leave a message, then?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Then, can I leave a message?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 한국어처럼 '그러면' 을 앞에 둔 Then, … — then 지킴 · 맞고 흔함. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "May I leave a message, then?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "전화 영어의 흔한 공손 꼴 May I leave a message — then 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Could I leave a message, then?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 Could I — then 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#11": {
+   "id": "grammar2/gh2-016#11",
+   "시험": [
+    {
+     "답": "He's rich.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is wealthy.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He is wealthy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '부유하다' 의 사전 첫 뜻 wealthy(rich 와 나란히) — 뜻 같음. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#12": {
+   "id": "grammar2/gh2-016#12",
+   "시험": [
+    {
+     "답": "So, he can buy it.",
+     "점수": "만점"
+    },
+    {
+     "답": "So he is able to buy it.",
+     "점수": "0점"
+    },
+    {
+     "답": "So he can afford it.",
+     "점수": "0점"
+    },
+    {
+     "답": "Therefore, he can buy it.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "So he is able to buy it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'살 수 있다' → be able to(can 과 같은 뜻으로 학교 문법이 가르침) — 이 문항이 가르치는 So 지킴. 0점(길이 한도).",
+     "확신": "보통"
+    },
+    {
+     "답": "So he can afford it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "부유해서 '살 수 있다' → can afford(돈이 있어 살 수 있다 — 이 앞뒤에서 흔한 말) — So 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Therefore, he can buy it.",
+     "점수": "0점",
+     "까닭": "이 과 #11~14 가 가르치는 so(그래서)를 therefore 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#13": {
+   "id": "grammar2/gh2-016#13",
+   "시험": [
+    {
+     "답": "Do not be so pessimistic.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't be that pessimistic.",
+     "점수": "70점"
+    },
+    {
+     "답": "Don't become so pessimistic.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Don't be that pessimistic.",
+     "점수": "70점",
+     "까닭": "이 과 #11~14 가 가르치는 so(그렇게)를 that 으로 피함 — 70점이면 됨."
+    },
+    {
+     "답": "Don't become so pessimistic.",
+     "점수": "0점",
+     "까닭": "'되지 말아라' 를 become 으로 옮긴 어색한 직역('비관적으로 변해 가지 말라' 가 됨) — 영어는 be."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#14": {
+   "id": "grammar2/gh2-016#14",
+   "시험": [
+    {
+     "답": "He is so poor that he can't buy it.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is so poor that he can't afford it.",
+     "점수": "0점"
+    },
+    {
+     "답": "He's so poor he can't buy it.",
+     "점수": "70점"
+    },
+    {
+     "답": "He is too poor to buy it.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He is so poor that he can't afford it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "가난해서 '살 수 없다' → can't afford(이 앞뒤에서 가장 흔한 말) — 이 문항이 가르치는 so … that 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He's so poor he can't buy it.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 so … that 의 that 을 뺀 구어 꼴 — 70점이면 됨."
+    },
+    {
+     "답": "He is too poor to buy it.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 so … that 을 too … to 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#15": {
+   "id": "grammar2/gh2-016#15",
+   "시험": [
+    {
+     "답": "I didn't have an apple.",
+     "점수": "만점"
+    },
+    {
+     "답": "I didn't have any apples.",
+     "점수": "0점"
+    },
+    {
+     "답": "I did not eat an apple.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I didn't have any apples.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '사과를(사과가)' 는 수를 가르지 않음 — not … any apples 는 괄호 '사과가 없었다' 의 흔한 맞는 번역 · have 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I did not eat an apple.",
+     "점수": "0점",
+     "까닭": "괄호 '(사과를 갖고 있지 않았다, 사과가 없었다)' 가 have 의 두 뜻을 가리킴 — eat 는 한 뜻만, 이 문항이 가르치는 have 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#16": {
+   "id": "grammar2/gh2-016#16",
+   "시험": [
+    {
+     "답": "Instead, I had a peach.",
+     "점수": "만점"
+    },
+    {
+     "답": "Instead, I ate a peach.",
+     "점수": "0점"
+    },
+    {
+     "답": "I had a peach instead.",
+     "점수": "70점"
+    },
+    {
+     "답": "I ate a peach instead.",
+     "점수": "0점"
+    },
+    {
+     "답": "Instead of that, I had a peach.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Instead, I ate a peach.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '먹었다' 의 가장 곧은 번역 ate(이 한국어에는 괄호 없음) — 이 문항이 가르치는 Instead 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I had a peach instead.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ instead 를 끝에 둔 가장 흔한 차례 — 부사 instead 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I ate a peach instead.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "ate + 끝의 instead — 곧은 번역 둘이 겹친 꼴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Instead of that, I had a peach.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 부사 instead 를 #17 의 instead of 꼴로 바꿈(두 문항이 둘을 가름)."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#17": {
+   "id": "grammar2/gh2-016#17",
+   "시험": [
+    {
+     "답": "Instead of going to school, he went fishing.",
+     "점수": "만점"
+    },
+    {
+     "답": "He went fishing instead of going to school.",
+     "점수": "0점"
+    },
+    {
+     "답": "Rather than going to school, he went fishing.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He went fishing instead of going to school.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉰ 두 마디 차례를 바꾼 가장 흔한 꼴 — 이 문항이 가르치는 instead of -ing 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Rather than going to school, he went fishing.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 instead of 를 rather than 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#18": {
+   "id": "grammar2/gh2-016#18",
+   "시험": [
+    {
+     "답": "He'll retain his position until he decides otherwise.",
+     "점수": "만점"
+    },
+    {
+     "답": "He will keep his position until he decides otherwise.",
+     "점수": "0점"
+    },
+    {
+     "답": "He will hold his position until he decides otherwise.",
+     "점수": "0점"
+    },
+    {
+     "답": "He will retain his position until he decides differently.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He will keep his position until he decides otherwise.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '보유하다' → keep(직위를 지키다 — 가장 흔한 말) — 이 문항이 가르치는 otherwise 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He will hold his position until he decides otherwise.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '(직위를) 보유하다' → hold a position — otherwise 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He will retain his position until he decides differently.",
+     "점수": "0점",
+     "까닭": "이 과 #18~20 이 가르치는 otherwise(다르게)를 differently 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#19": {
+   "id": "grammar2/gh2-016#19",
+   "시험": [
+    {
+     "답": "The law made hundreds of otherwise honest men lawbreakers.",
+     "점수": "만점"
+    },
+    {
+     "답": "The law made hundreds of otherwise honest people lawbreakers.",
+     "점수": "0점"
+    },
+    {
+     "답": "The law made hundreds of otherwise honest people criminals.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The law made hundreds of otherwise honest people lawbreakers.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '사람' 의 곧은 번역 people(모범의 men 은 옛 통칭) — 이 문항이 가르치는 otherwise 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The law made hundreds of otherwise honest people criminals.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '범법자' → criminals(흔한 말) + people — otherwise 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#20": {
+   "id": "grammar2/gh2-016#20",
+   "시험": [
+    {
+     "답": "He worked hard; otherwise he would have failed.",
+     "점수": "만점"
+    },
+    {
+     "답": "He worked hard. Otherwise, he would've failed.",
+     "점수": "만점"
+    },
+    {
+     "답": "He worked hard, otherwise he'd have failed.",
+     "점수": "만점"
+    },
+    {
+     "답": "He worked hard; if not, he would have failed.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He worked hard; if not, he would have failed.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 otherwise 를 if not 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#21": {
+   "id": "grammar2/gh2-016#21",
+   "시험": [
+    {
+     "답": "I have some money.",
+     "점수": "만점"
+    },
+    {
+     "답": "I've got some money.",
+     "점수": "0점"
+    },
+    {
+     "답": "I have a little money.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I've got some money.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'갖고 있다' → have got(영국 · 구어에서 흔한 맞는 꼴) — 이 문항이 가르치는 some 지킴. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I have a little money.",
+     "점수": "0점",
+     "까닭": "이 과 #21~28 이 가르치는 some 을 a little 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#22": {
+   "id": "grammar2/gh2-016#22",
+   "시험": [
+    {
+     "답": "I have some 50 dollars.",
+     "점수": "만점"
+    },
+    {
+     "답": "I have some fifty dollars.",
+     "점수": "만점"
+    },
+    {
+     "답": "I have about 50 dollars.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I have about 50 dollars.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 some(수 앞의 '약')을 about 으로 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#23": {
+   "id": "grammar2/gh2-016#23",
+   "시험": [
+    {
+     "답": "Will you give me some apples?",
+     "점수": "만점"
+    },
+    {
+     "답": "Would you give me some apples?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you give me some apples?",
+     "점수": "70점"
+    },
+    {
+     "답": "Will you give me a few apples?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Would you give me some apples?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'주시겠습니까' 의 흔한 공손 꼴 Would you — 이 문항이 가르치는 부탁 의문문의 some 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Could you give me some apples?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 부탁 Could you — some 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Will you give me a few apples?",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 부탁 의문문의 some 을 a few 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#24": {
+   "id": "grammar2/gh2-016#24",
+   "시험": [
+    {
+     "답": "Some people like fish and some do not.",
+     "점수": "만점"
+    },
+    {
+     "답": "Some people like fish, and some people don't.",
+     "점수": "70점"
+    },
+    {
+     "답": "Some people like fish and others don't.",
+     "점수": "0점"
+    },
+    {
+     "답": "Some people like fish, but some don't.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Some people like fish, and some people don't.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '어떤 사람은 … 어떤 사람은' 을 그대로 옮긴 some people 되풀이 — some … some 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Some people like fish and others don't.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'어떤 사람은 … 어떤 사람은' 의 학교 문법 꼴 some … others — Some 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Some people like fish, but some don't.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "대조의 but(맞고 흔함) — some … some 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#25": {
+   "id": "grammar2/gh2-016#25",
+   "시험": [
+    {
+     "답": "I did not see anyone.",
+     "점수": "만점"
+    },
+    {
+     "답": "I didn't see any person.",
+     "점수": "만점"
+    },
+    {
+     "답": "I saw nobody.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#26": {
+   "id": "grammar2/gh2-016#26",
+   "시험": [
+    {
+     "답": "I saw some people.",
+     "점수": "만점"
+    },
+    {
+     "답": "I saw a few people.",
+     "점수": "0점"
+    },
+    {
+     "답": "I saw several people.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I saw a few people.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 some(#25 any 와 짝)을 a few 로 피함."
+    },
+    {
+     "답": "I saw several people.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 some 을 several 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#27": {
+   "id": "grammar2/gh2-016#27",
+   "시험": [
+    {
+     "답": "I want anything sweet.",
+     "점수": "만점"
+    },
+    {
+     "답": "I want anything that is sweet.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I want anything that is sweet.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'달콤한 어떤 것이라도' 를 관계절로 옮긴 맞는 꼴 — 이 문항이 가르치는 anything 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#28": {
+   "id": "grammar2/gh2-016#28",
+   "시험": [
+    {
+     "답": "I want something sweet.",
+     "점수": "만점"
+    },
+    {
+     "답": "I want something that is sweet.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I want something that is sweet.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'달콤한 어떤 것' 을 관계절로 옮긴 맞는 꼴 — 이 문항이 가르치는 something 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#29": {
+   "id": "grammar2/gh2-016#29",
+   "시험": [
+    {
+     "답": "Even I know it.",
+     "점수": "만점"
+    },
+    {
+     "답": "Even I know that.",
+     "점수": "만점"
+    },
+    {
+     "답": "Even I know about it.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Even I know about it.",
+     "점수": "70점",
+     "까닭": "기능어 about 하나 더 — 소유자 결정 2 로 70점(know about 은 '그것에 대해 안다' 로 뜻도 조금 다름)."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#30": {
+   "id": "grammar2/gh2-016#30",
+   "시험": [
+    {
+     "답": "He has not come yet.",
+     "점수": "만점"
+    },
+    {
+     "답": "He hasn't arrived yet.",
+     "점수": "0점"
+    },
+    {
+     "답": "He has not yet come.",
+     "점수": "70점"
+    },
+    {
+     "답": "He didn't come yet.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He hasn't arrived yet.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'아직 오지 않았다' → hasn't arrived yet(가장 흔한 말) — 이 문항이 가르치는 현재완료 + yet 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He has not yet come.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ not yet … 차례(명령서 예 not yet fully ↔ not fully … yet 와 같은 종류) — yet 지킴 · 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He didn't come yet.",
+     "점수": "70점",
+     "까닭": "yet + 과거 시제는 미국 구어 꼴 — 이 문항이 가르치는 현재완료 + yet 과 다름, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#31": {
+   "id": "grammar2/gh2-016#31",
+   "시험": [
+    {
+     "답": "Yet, I'm sure he'll be here any minute.",
+     "점수": "만점"
+    },
+    {
+     "답": "Yet, I'm sure he will be here soon.",
+     "점수": "0점"
+    },
+    {
+     "답": "Yet, I'm sure he will come here soon.",
+     "점수": "0점"
+    },
+    {
+     "답": "Yet I am sure that he will be here any minute.",
+     "점수": "70점"
+    },
+    {
+     "답": "But I'm sure he will be here soon.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Yet, I'm sure he will be here soon.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '곧' 의 사전 첫 뜻 soon(모범 any minute 은 굳은 말) — 이 문항이 가르치는 접속사 Yet 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Yet, I'm sure he will come here soon.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'여기에 올' 의 곧은 번역 come here + soon — Yet 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Yet I am sure that he will be here any minute.",
+     "점수": "70점",
+     "까닭": "기능어 that 하나 더 — 소유자 결정 2 로 70점."
+    },
+    {
+     "답": "But I'm sure he will be here soon.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 접속사 yet 을 but 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#32": {
+   "id": "grammar2/gh2-016#32",
+   "시험": [
+    {
+     "답": "The time is yet to come.",
+     "점수": "만점"
+    },
+    {
+     "답": "The time has yet to come.",
+     "점수": "70점"
+    },
+    {
+     "답": "The time has not come yet.",
+     "점수": "0점"
+    },
+    {
+     "답": "That time is yet to come.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The time has yet to come.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "be yet to 와 같은 뜻 · 같은 꼴의 have yet to(학교 문법이 함께 가르치고 더 흔함) — 이 문항이 가르치는 yet to 지킴. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The time has not come yet.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 be yet to(아직 ~ 않았다)를 #30 의 has not … yet 꼴로 피함."
+    },
+    {
+     "답": "That time is yet to come.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#33": {
+   "id": "grammar2/gh2-016#33",
+   "시험": [
+    {
+     "답": "It's the largest diamond yet found.",
+     "점수": "만점"
+    },
+    {
+     "답": "It is the biggest diamond yet found.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is the largest diamond ever found.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is the biggest diamond yet found.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '가장 큰' → biggest(largest 와 나란히 가장 흔함) — 이 문항이 가르치는 최상급 뒤 yet 지킴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It is the largest diamond ever found.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 yet(최상급 뒤 '이때까지')을 ever 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#34": {
+   "id": "grammar2/gh2-016#34",
+   "시험": [
+    {
+     "답": "The war still goes on.",
+     "점수": "만점"
+    },
+    {
+     "답": "The war still continues.",
+     "점수": "0점"
+    },
+    {
+     "답": "The war is still going on.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The war still continues.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '계속되다' 의 사전 첫 뜻 continue — 이 문항이 가르치는 still 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The war is still going on.",
+     "점수": "0점",
+     "까닭": "한국어 현재 '계속된다' 를 진행형으로 — 진행형 대체 답안은 소유자 결정 4(12문항)."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#35": {
+   "id": "grammar2/gh2-016#35",
+   "시험": [
+    {
+     "답": "Stand still.",
+     "점수": "만점"
+    },
+    {
+     "답": "Stand still!",
+     "점수": "만점"
+    },
+    {
+     "답": "Stay still.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Stay still.",
+     "점수": "0점",
+     "까닭": "'서 있어라' 의 stand 가 빠짐 — '움직이지 마라' 로 뜻이 넓어짐 · 이 문항이 가르치는 stand still 을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-016#36": {
+   "id": "grammar2/gh2-016#36",
+   "시험": [
+    {
+     "답": "He felt tired; still, he continued his work.",
+     "점수": "만점"
+    },
+    {
+     "답": "He felt tired but he still continued his work.",
+     "점수": "만점"
+    },
+    {
+     "답": "He felt tired but still continued his work.",
+     "점수": "70점"
+    },
+    {
+     "답": "He felt tired, but still he continued his work.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He felt tired but still continued his work.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "다른 정답 'but he still continued' 에서 되풀이 주어 he 를 뺀 가장 자연스러운 꼴 — still 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He felt tired, but still he continued his work.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "but still 을 붙여 앞에 둔 맞는 꼴 — still 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:35"
+  },
+  "grammar2/gh2-017#1": {
+   "id": "grammar2/gh2-017#1",
+   "시험": [
+    {
+     "답": "Have you ever loved a woman?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did you ever love a woman?",
+     "점수": "0점"
+    },
+    {
+     "답": "Have you ever been in love with a woman?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Have you ever been in love with a woman?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'(여성을) 사랑해 본 적' → been in love with(흔한 말 · 같은 뜻) — 이 문항이 가르치는 ever + 현재완료(경험) 지킴. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Did you ever love a woman?",
+     "점수": "0점",
+     "까닭": "'~해 본 적이 있나'(경험)는 현재완료가 이 문항이 가르치는 꼴 — did you ever 는 미국 구어 꼴(학교 문법의 경험 용법과 다름)."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#2": {
+   "id": "grammar2/gh2-017#2",
+   "시험": [
+    {
+     "답": "Do you ever watch television?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you ever watch TV?",
+     "점수": "0점"
+    },
+    {
+     "답": "Do you sometimes watch television?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do you ever watch TV?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '텔레비전' → TV(가장 흔한 표기) — 이 문항이 가르치는 의문문의 ever 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Do you sometimes watch television?",
+     "점수": "0점",
+     "까닭": "괄호 '(가끔 한 번이라도)' 가 가리키는 ever 를 sometimes 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#3": {
+   "id": "grammar2/gh2-017#3",
+   "시험": [
+    {
+     "답": "He's just a boy.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is only a boy.",
+     "점수": "70점"
+    },
+    {
+     "답": "He is nothing but a boy.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He is only a boy.",
+     "점수": "70점",
+     "까닭": "이 과 #3~6 이 가르치는 just(= only)를 only 로 피함 — 70점이면 됨."
+    },
+    {
+     "답": "He is nothing but a boy.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 just 를 nothing but 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#4": {
+   "id": "grammar2/gh2-017#4",
+   "시험": [
+    {
+     "답": "He has just arrived.",
+     "점수": "만점"
+    },
+    {
+     "답": "He's just arrived.",
+     "점수": "70점"
+    },
+    {
+     "답": "He arrived just now.",
+     "점수": "0점"
+    },
+    {
+     "답": "He just got here.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He's just arrived.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "다른 정답 'He has just arrived' 의 표준 줄임꼴 He's(= has) — 채점 코드가 대명사 뒤 's 를 is 로만 펴서 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He arrived just now.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'방금' → just now(과거 시제와 쓰는 흔한 말) — just 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He just got here.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'도착했다' → got here(아주 흔한 말) — 이 문항이 가르치는 just(방금) 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#5": {
+   "id": "grammar2/gh2-017#5",
+   "시험": [
+    {
+     "답": "It is just two o'clock.",
+     "점수": "만점"
+    },
+    {
+     "답": "It's just two o'clock now.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's exactly two o'clock.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It's just two o'clock now.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '지금은' 을 now 로 옮긴 맞는 꼴 — 이 문항이 가르치는 just(꼭) 지킴. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It's exactly two o'clock.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 just(= exactly)를 exactly 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#6": {
+   "id": "grammar2/gh2-017#6",
+   "시험": [
+    {
+     "답": "This is just what I wanted.",
+     "점수": "만점"
+    },
+    {
+     "답": "This is exactly what I wanted.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is just the thing I wanted.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is just the thing I wanted.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'바로 그것' → just the thing(흔한 말) — 이 문항이 가르치는 just(바로) 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "This is exactly what I wanted.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 just(바로)를 exactly 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#7": {
+   "id": "grammar2/gh2-017#7",
+   "시험": [
+    {
+     "답": "She talked on for two hours.",
+     "점수": "만점"
+    },
+    {
+     "답": "She went on talking for two hours.",
+     "점수": "0점"
+    },
+    {
+     "답": "She kept on talking for two hours.",
+     "점수": "0점"
+    },
+    {
+     "답": "She kept talking for two hours.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She went on talking for two hours.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'계속해서 말했다' → went on talking(계속의 on 을 쓴 흔한 꼴) — 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    },
+    {
+     "답": "She kept on talking for two hours.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'계속해서 말했다' → kept on talking(계속의 on) — 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "She kept talking for two hours.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 계속의 부사 on 을 뺌(keep -ing 로 피함)."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#8": {
+   "id": "grammar2/gh2-017#8",
+   "시험": [
+    {
+     "답": "All the lights were on.",
+     "점수": "만점"
+    },
+    {
+     "답": "The lights were all turned on.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every light was on.",
+     "점수": "0점"
+    },
+    {
+     "답": "All lights were on.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The lights were all turned on.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'켜져 있었다' 를 turned on 으로 옮긴 흔한 꼴 — 이 문항이 가르치는 on(켜진) · all 지킴. 0점(길이 한도).",
+     "확신": "보통"
+    },
+    {
+     "답": "Every light was on.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'모두' → every(단수) — on(켜진) 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "All lights were on.",
+     "점수": "70점",
+     "까닭": "'조명은' 은 그 자리의 정해진 조명 — all lights 는 일반 뜻이라 the 가 빠진 꼴, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#9": {
+   "id": "grammar2/gh2-017#9",
+   "시험": [
+    {
+     "답": "When do you expect him back?",
+     "점수": "만점"
+    },
+    {
+     "답": "When do you expect him to come back?",
+     "점수": "0점"
+    },
+    {
+     "답": "When do you expect him to return?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "When do you expect him to come back?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'돌아올 것으로 예상' 의 가장 곧은 번역 expect + 사람 + to come back — 이 문항이 가르치는 back 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "When do you expect him to return?",
+     "점수": "0점",
+     "까닭": "이 과 #9~10 이 가르치는 back 을 return 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#10": {
+   "id": "grammar2/gh2-017#10",
+   "시험": [
+    {
+     "답": "Back home he had a family to support.",
+     "점수": "만점"
+    },
+    {
+     "답": "He had a family to support back home.",
+     "점수": "70점"
+    },
+    {
+     "답": "In his hometown, he had a family to support.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He had a family to support back home.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ back home 을 끝에 둔 가장 흔한 차례 — back home 지킴 · 뜻 같음. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "In his hometown, he had a family to support.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 back home 을 in his hometown 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#11": {
+   "id": "grammar2/gh2-017#11",
+   "시험": [
+    {
+     "답": "The two are good.",
+     "점수": "만점"
+    },
+    {
+     "답": "The two of them are good.",
+     "점수": "0점"
+    },
+    {
+     "답": "Those two are good.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The two of them are good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'그 둘' → the two of them(흔한 꼴) — 이 문항이 가르치는 the two 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Those two are good.",
+     "점수": "70점",
+     "까닭": "'그 N' → those N 70점 — 소유자 결정('그 N' 280곳 70점)과 같은 종류."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#12": {
+   "id": "grammar2/gh2-017#12",
+   "시험": [
+    {
+     "답": "Both are good.",
+     "점수": "만점"
+    },
+    {
+     "답": "Both of them are good.",
+     "점수": "0점"
+    },
+    {
+     "답": "They are both good.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Both of them are good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'둘 다' → both of them(가장 흔한 꼴) — 이 문항이 가르치는 both 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "They are both good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "both 를 be 뒤에 둔 흔한 꼴 — 바로 다음 #13 모범 'They are not both good.' 의 긍정 꼴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#13": {
+   "id": "grammar2/gh2-017#13",
+   "시험": [
+    {
+     "답": "They aren't both good.",
+     "점수": "만점"
+    },
+    {
+     "답": "They're not both good.",
+     "점수": "만점"
+    },
+    {
+     "답": "Both of them are not good.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Both of them are not good.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "이미 만점인 다른 정답 'Both are not good.'(부분 부정)에 of them 을 붙인 같은 꼴 — both 지킴 · 뜻 같음. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#14": {
+   "id": "grammar2/gh2-017#14",
+   "시험": [
+    {
+     "답": "Neither is good.",
+     "점수": "만점"
+    },
+    {
+     "답": "Neither of them is good.",
+     "점수": "0점"
+    },
+    {
+     "답": "Neither one is good.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Neither of them is good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'둘 중 어느 것도' → neither of them(가장 흔한 꼴) — 이 문항이 가르치는 neither 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "Neither one is good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "neither one(흔한 꼴 — 다음 #15 다른 정답 'Either one is good.' 과 같은 모양) — 0점(길이 한도).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#15": {
+   "id": "grammar2/gh2-017#15",
+   "시험": [
+    {
+     "답": "Either one is good.",
+     "점수": "만점"
+    },
+    {
+     "답": "Either of them is good.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Either of them is good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'둘 중 어느 것이든' → either of them(가장 흔한 꼴) — 이 문항이 가르치는 either 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#16": {
+   "id": "grammar2/gh2-017#16",
+   "시험": [
+    {
+     "답": "None of them is good.",
+     "점수": "만점"
+    },
+    {
+     "답": "None of them are good.",
+     "점수": "70점"
+    },
+    {
+     "답": "Nothing's good.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "None of them are good.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "none of + 복수는 복수 동사도 맞음(학교 문법도 둘 다 가르침) — 다른 정답 'None of them is good.' 과 같은 뜻. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Nothing's good.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "Nothing is 의 표준 줄임꼴 — 채점 코드가 정해진 대명사 뒤 's 만 펴서 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#17": {
+   "id": "grammar2/gh2-017#17",
+   "시험": [
+    {
+     "답": "Let us meet at a nearby restaurant.",
+     "점수": "만점"
+    },
+    {
+     "답": "Let's meet at a restaurant nearby.",
+     "점수": "70점"
+    },
+    {
+     "답": "Let's meet at the nearby restaurant.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Let's meet at a restaurant nearby.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ nearby 를 명사 뒤에 둔 흔한 꼴(둘 다 맞음) — 이 문항이 가르치는 nearby 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Let's meet at the nearby restaurant.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ 정해진 가까운 식당의 the(한국어는 가르지 않음) — nearby 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#18": {
+   "id": "grammar2/gh2-017#18",
+   "시험": [
+    {
+     "답": "Let us meet near a restaurant.",
+     "점수": "만점"
+    },
+    {
+     "답": "Let's meet near the restaurant.",
+     "점수": "70점"
+    },
+    {
+     "답": "Let's meet close to the restaurant.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Let's meet near the restaurant.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ '식당 근처' 는 서로 아는 식당 — near the restaurant 가 가장 자연스러움(모범 a 는 아무 식당) · 이 문항이 가르치는 near 지킴. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Let's meet close to the restaurant.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 전치사 near(#17 nearby 와 가름)를 close to 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#19": {
+   "id": "grammar2/gh2-017#19",
+   "시험": [
+    {
+     "답": "Once you start anything, try to do your best.",
+     "점수": "만점"
+    },
+    {
+     "답": "Once you begin anything, try to do your best.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Once you begin anything, try to do your best.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '시작하다' → begin(start 와 나란히 사전 첫 뜻) — 이 문항이 가르치는 once(일단 ~하면) 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#20": {
+   "id": "grammar2/gh2-017#20",
+   "시험": [
+    {
+     "답": "I once had a family.",
+     "점수": "만점"
+    },
+    {
+     "답": "I had a family once.",
+     "점수": "70점"
+    },
+    {
+     "답": "I used to have a family.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I had a family once.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ once(한때)를 끝에 둔 흔한 차례 — once 지킴 · 뜻 같음. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I used to have a family.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 once(한때)를 used to 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#21": {
+   "id": "grammar2/gh2-017#21",
+   "시험": [
+    {
+     "답": "Their relationship is over.",
+     "점수": "만점"
+    },
+    {
+     "답": "Their relationship has ended.",
+     "점수": "0점"
+    },
+    {
+     "답": "Their relationship was over.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Their relationship has ended.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 over(끝난)를 end 로 피함."
+    },
+    {
+     "답": "Their relationship was over.",
+     "점수": "70점",
+     "까닭": "'끝났다' 는 지금 끝난 상태 — was over 는 이야기 속 과거 한때의 상태라 때가 어긋남, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#22": {
+   "id": "grammar2/gh2-017#22",
+   "시험": [
+    {
+     "답": "He walks fast.",
+     "점수": "만점"
+    },
+    {
+     "답": "He walks quickly.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He walks quickly.",
+     "점수": "0점",
+     "까닭": "이 과 #22~25 가 가르치는 fast(부사 · 형용사가 같은 꼴 — beautiful/beautifully 와 대조)를 quickly 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#23": {
+   "id": "grammar2/gh2-017#23",
+   "시험": [
+    {
+     "답": "He's fast.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is quick.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He is quick.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 형용사 fast 를 quick 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#24": {
+   "id": "grammar2/gh2-017#24",
+   "시험": [
+    {
+     "답": "She's beautiful.",
+     "점수": "만점"
+    },
+    {
+     "답": "She is pretty.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "She is pretty.",
+     "점수": "0점",
+     "까닭": "'아름답다' 의 곧은 번역은 beautiful(pretty 는 '예쁘다') — 이 과가 가르치는 beautiful/beautifully 짝을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#25": {
+   "id": "grammar2/gh2-017#25",
+   "시험": [
+    {
+     "답": "She smiles beautifully.",
+     "점수": "만점"
+    },
+    {
+     "답": "She has a beautiful smile.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "She has a beautiful smile.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 부사 beautifully 를 형용사 꼴로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#26": {
+   "id": "grammar2/gh2-017#26",
+   "시험": [
+    {
+     "답": "He studied English to pass the exam.",
+     "점수": "만점"
+    },
+    {
+     "답": "He studied English in order to pass the exam.",
+     "점수": "0점"
+    },
+    {
+     "답": "He studied English to pass the test.",
+     "점수": "0점"
+    },
+    {
+     "답": "He studied English to pass that exam.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He studied English in order to pass the exam.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'~하기 위하여' → in order to(학교 문법이 목적의 to 부정사와 함께 가르치는 꼴) — 뜻 같음. 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "He studied English to pass the test.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '시험' → test(exam 과 나란히 가장 흔함) — 목적의 to 부정사 지킴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He studied English to pass that exam.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-017#27": {
+   "id": "grammar2/gh2-017#27",
+   "시험": [
+    {
+     "답": "I'll find a way to meet my sister.",
+     "점수": "만점"
+    },
+    {
+     "답": "I will find a way to see my sister.",
+     "점수": "0점"
+    },
+    {
+     "답": "I am going to find a way to meet my sister.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I will find a way to see my sister.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ 가족을 '만나다' → see(meet 와 나란히 흔함) — 이 문항이 가르치는 find a way to 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I am going to find a way to meet my sister.",
+     "점수": "0점",
+     "까닭": "괄호 '(하겠다)' 가 의지의 will 을 가리킴 — 한국어가 미래 꼴을 가르므로 be going to 는 안 적음."
+    }
+   ],
+   "때": "2026-09-24 23:37"
+  },
+  "grammar2/gh2-018#1": {
+   "id": "grammar2/gh2-018#1",
+   "시험": [
+    {
+     "답": "It was a mistake.",
+     "점수": "만점"
+    },
+    {
+     "답": "That was a mistake.",
+     "점수": "만점"
+    },
+    {
+     "답": "It was an error.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It was an error.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '실수' → error(mistake 와 나란히 사전 첫 뜻) — 이 문항이 가르치는 It was 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#2": {
+   "id": "grammar2/gh2-018#2",
+   "시험": [
+    {
+     "답": "There was a mistake.",
+     "점수": "만점"
+    },
+    {
+     "답": "There was one mistake.",
+     "점수": "0점"
+    },
+    {
+     "답": "There was an error.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There was one mistake.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한 가지 실수' 의 곧은 번역 one mistake — 이 문항이 가르치는 There was 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There was an error.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '(착오)' 의 곧은 번역 error — There was 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#3": {
+   "id": "grammar2/gh2-018#3",
+   "시험": [
+    {
+     "답": "Here's a problem.",
+     "점수": "만점"
+    },
+    {
+     "답": "Here is one problem.",
+     "점수": "0점"
+    },
+    {
+     "답": "There is a problem here.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Here is one problem.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한 문제' 의 곧은 번역 one problem — 이 문항이 가르치는 Here is 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "There is a problem here.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 Here is 를 There is … here 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#4": {
+   "id": "grammar2/gh2-018#4",
+   "시험": [
+    {
+     "답": "There was a boy.",
+     "점수": "만점"
+    },
+    {
+     "답": "There was one boy.",
+     "점수": "0점"
+    },
+    {
+     "답": "A boy was there.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There was one boy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한 소년' 의 곧은 번역 one boy — 이 문항이 가르치는 There was 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "A boy was there.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 유도 부사 There was 를 피함 — 장소 there(거기에)는 한국어에 없는 뜻(#5 의 뜻)."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#5": {
+   "id": "grammar2/gh2-018#5",
+   "시험": [
+    {
+     "답": "There was a boy there.",
+     "점수": "만점"
+    },
+    {
+     "답": "There was one boy there.",
+     "점수": "0점"
+    },
+    {
+     "답": "A boy was there.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There was one boy there.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한 소년' 의 곧은 번역 one boy — 이 문항이 가르치는 There was … there 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "A boy was there.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 There was … there(유도 부사 there 와 장소 there)를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#6": {
+   "id": "grammar2/gh2-018#6",
+   "시험": [
+    {
+     "답": "He succeeded in that.",
+     "점수": "만점"
+    },
+    {
+     "답": "He succeeded at it.",
+     "점수": "70점"
+    },
+    {
+     "답": "He was successful in it.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He succeeded at it.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'~에 성공하다' 의 succeed at(succeed in 과 나란히 맞는 짝 · #7 의 succeed to(계승)와는 다름) — 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He was successful in it.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 동사 succeed 를 be successful 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#7": {
+   "id": "grammar2/gh2-018#7",
+   "시험": [
+    {
+     "답": "He succeeded to the throne.",
+     "점수": "만점"
+    },
+    {
+     "답": "He inherited the throne.",
+     "점수": "0점"
+    },
+    {
+     "답": "He succeeded to that throne.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He inherited the throne.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 succeed to(계승하다)를 inherit 로 피함."
+    },
+    {
+     "답": "He succeeded to that throne.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#8": {
+   "id": "grammar2/gh2-018#8",
+   "시험": [
+    {
+     "답": "He succeeded her as prime minister.",
+     "점수": "만점"
+    },
+    {
+     "답": "He succeeded her as the Prime Minister.",
+     "점수": "70점"
+    },
+    {
+     "답": "He replaced her as Prime Minister.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He succeeded her as the Prime Minister.",
+     "점수": "70점",
+     "까닭": "기능어 the 하나 더 — 소유자 결정 2 로 70점."
+    },
+    {
+     "답": "He replaced her as Prime Minister.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 succeed + 사람(뒤를 잇다)을 replace 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#9": {
+   "id": "grammar2/gh2-018#9",
+   "시험": [
+    {
+     "답": "She's suffering from a headache.",
+     "점수": "만점"
+    },
+    {
+     "답": "She has a headache.",
+     "점수": "0점"
+    },
+    {
+     "답": "She suffers from a headache.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "She has a headache.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 suffer from 을 have 로 피함."
+    },
+    {
+     "답": "She suffers from a headache.",
+     "점수": "0점",
+     "까닭": "'앓고 있다'(지금 겪는 중)의 한 번의 두통(a headache)은 현재 시제와 어울리지 않음 — 현재 시제는 되풀이되는 두통(headaches)에 씀."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#10": {
+   "id": "grammar2/gh2-018#10",
+   "시험": [
+    {
+     "답": "The company suffered a heavy loss.",
+     "점수": "만점"
+    },
+    {
+     "답": "The company suffered a big loss.",
+     "점수": "0점"
+    },
+    {
+     "답": "The company suffered a large loss.",
+     "점수": "0점"
+    },
+    {
+     "답": "The company suffered a great loss.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The company suffered a big loss.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '큰' 의 가장 곧은 번역 big — 이 문항이 가르치는 suffer + 손실 지킴 · 뜻 같음. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The company suffered a large loss.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '큰' → large(액수에 흔함) — suffer 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The company suffered a great loss.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '큰' → great — suffer 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#11": {
+   "id": "grammar2/gh2-018#11",
+   "시험": [
+    {
+     "답": "You must change your evil ways.",
+     "점수": "만점"
+    },
+    {
+     "답": "You have to change your evil ways.",
+     "점수": "0점"
+    },
+    {
+     "답": "You should change your evil ways.",
+     "점수": "70점"
+    },
+    {
+     "답": "You must change your wicked ways.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You have to change your evil ways.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'-해야 한다' → have to(must 와 나란히 가장 흔함) — 이 문항이 가르치는 change 지킴 · 뜻 같음. 0점(길이 한도).",
+     "확신": "높음"
+    },
+    {
+     "답": "You should change your evil ways.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-해야 한다' → should — change 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You must change your wicked ways.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '악한' → wicked(evil 과 나란히 사전 첫 뜻 · wicked ways 는 굳은 짝) — change 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#12": {
+   "id": "grammar2/gh2-018#12",
+   "시험": [
+    {
+     "답": "You have changed a lot since I saw you last.",
+     "점수": "만점"
+    },
+    {
+     "답": "You have changed a lot since I last saw you.",
+     "점수": "70점"
+    },
+    {
+     "답": "You've changed a lot since the last time I saw you.",
+     "점수": "0점"
+    },
+    {
+     "답": "You've changed a lot since I saw you last time.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You have changed a lot since I last saw you.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ since I last saw you(가장 흔한 차례) — 이 문항이 가르치는 현재완료 + since · change 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "You've changed a lot since the last time I saw you.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'마지막으로 본 이래로' → since the last time I saw you(흔한 꼴) — 뜻 같음. 0점(길이 한도).",
+     "확신": "보통"
+    },
+    {
+     "답": "You've changed a lot since I saw you last time.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "괄호 '(지난번에)' 를 last time 으로 옮긴 꼴 — 뜻 같음. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#13": {
+   "id": "grammar2/gh2-018#13",
+   "시험": [
+    {
+     "답": "The members objected to the plan.",
+     "점수": "만점"
+    },
+    {
+     "답": "The members were against the plan.",
+     "점수": "0점"
+    },
+    {
+     "답": "The members opposed that plan.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The members were against the plan.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 oppose(반대하다)를 be against 로 피함."
+    },
+    {
+     "답": "The members opposed that plan.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#14": {
+   "id": "grammar2/gh2-018#14",
+   "시험": [
+    {
+     "답": "The plant grows fast.",
+     "점수": "만점"
+    },
+    {
+     "답": "The plant grows quickly.",
+     "점수": "만점"
+    },
+    {
+     "답": "That plant grows fast.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "That plant grows fast.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#15": {
+   "id": "grammar2/gh2-018#15",
+   "시험": [
+    {
+     "답": "It grew dark.",
+     "점수": "만점"
+    },
+    {
+     "답": "It got dark.",
+     "점수": "0점"
+    },
+    {
+     "답": "It became dark.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "It got dark.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 grow(~하게 되다)를 get 으로 피함."
+    },
+    {
+     "답": "It became dark.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 grow 를 become 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#16": {
+   "id": "grammar2/gh2-018#16",
+   "시험": [
+    {
+     "답": "He grew a beard.",
+     "점수": "만점"
+    },
+    {
+     "답": "He has grown a beard.",
+     "점수": "0점"
+    },
+    {
+     "답": "He grew his beard.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He has grown a beard.",
+     "점수": "0점",
+     "까닭": "한국어 과거 '길렀다' 의 현재완료 — 소유자 결정 4 ②(현재완료는 그대로)."
+    },
+    {
+     "답": "He grew his beard.",
+     "점수": "70점",
+     "까닭": "굳은 말은 grow a beard(수염을 기르기 시작함) — grew his beard 는 있던 수염을 길게 했다는 뜻으로 보통 out · long 이 붙음, 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#17": {
+   "id": "grammar2/gh2-018#17",
+   "시험": [
+    {
+     "답": "I took her by the arm.",
+     "점수": "만점"
+    },
+    {
+     "답": "I grabbed her by the arm.",
+     "점수": "0점"
+    },
+    {
+     "답": "I caught her by the arm.",
+     "점수": "0점"
+    },
+    {
+     "답": "I took her arm.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I grabbed her by the arm.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '잡았다' → grabbed(흔한 말) — 이 문항이 가르치는 동사 + 사람 + by the arm 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I caught her by the arm.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '잡았다' → caught(학교 문법이 catch/take/seize + 사람 + by the 신체로 함께 가르침) — by the arm 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I took her arm.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 사람 + by the arm 꼴을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#18": {
+   "id": "grammar2/gh2-018#18",
+   "시험": [
+    {
+     "답": "I held her in my arms.",
+     "점수": "만점"
+    },
+    {
+     "답": "I took her in my arms.",
+     "점수": "0점"
+    },
+    {
+     "답": "I hugged her.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I took her in my arms.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'품에 안다' 의 흔한 굳은 말 take + 사람 + in one's arms — in my arms 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I hugged her.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 hold … in my arms 를 hug 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#19": {
+   "id": "grammar2/gh2-018#19",
+   "시험": [
+    {
+     "답": "Do not hold me like that.",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't hold me that way.",
+     "점수": "0점"
+    },
+    {
+     "답": "Don't hug me like that.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Don't hold me that way.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '그렇게' → that way(like that 과 나란히 흔함) — 이 문항이 가르치는 hold 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Don't hug me like that.",
+     "점수": "0점",
+     "까닭": "이 과 #18~25 가 가르치는 hold 를 hug 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#20": {
+   "id": "grammar2/gh2-018#20",
+   "시험": [
+    {
+     "답": "He held me to be a fool.",
+     "점수": "만점"
+    },
+    {
+     "답": "He regarded me as a fool.",
+     "점수": "0점"
+    },
+    {
+     "답": "He considered me a fool.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He regarded me as a fool.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 hold + 사람 + to be(여기다)를 regard as 로 피함."
+    },
+    {
+     "답": "He considered me a fool.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 hold … to be 를 consider 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#21": {
+   "id": "grammar2/gh2-018#21",
+   "시험": [
+    {
+     "답": "How long will the anchor hold?",
+     "점수": "만점"
+    },
+    {
+     "답": "How long will the anchor last?",
+     "점수": "0점"
+    },
+    {
+     "답": "How long will that anchor hold?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How long will the anchor last?",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 자동사 hold(견디다)를 last 로 피함."
+    },
+    {
+     "답": "How long will that anchor hold?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 70점 — 소유자 결정."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#22": {
+   "id": "grammar2/gh2-018#22",
+   "시험": [
+    {
+     "답": "The promise still holds good.",
+     "점수": "만점"
+    },
+    {
+     "답": "The promise still holds.",
+     "점수": "70점"
+    },
+    {
+     "답": "The promise is still valid.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The promise still holds.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'유효하다' 의 hold(오늘날 good 없이 더 흔함 — The offer still holds) — 이 문항이 가르치는 hold 지킴 · 뜻 같음. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The promise is still valid.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 hold good 을 be valid 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#23": {
+   "id": "grammar2/gh2-018#23",
+   "시험": [
+    {
+     "답": "A meeting was held.",
+     "점수": "만점"
+    },
+    {
+     "답": "A conference was held.",
+     "점수": "만점"
+    },
+    {
+     "답": "One meeting was held.",
+     "점수": "0점"
+    },
+    {
+     "답": "There was a meeting.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "One meeting was held.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한 회의' 의 곧은 번역 one meeting — 이 문항이 가르치는 be held 지킴 · 뜻 같음. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "There was a meeting.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 be held(열리다)를 There was 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#24": {
+   "id": "grammar2/gh2-018#24",
+   "시험": [
+    {
+     "답": "Hold the mustard, please.",
+     "점수": "만점"
+    },
+    {
+     "답": "Please hold the mustard.",
+     "점수": "70점"
+    },
+    {
+     "답": "No mustard, please.",
+     "점수": "0점"
+    },
+    {
+     "답": "Hold the mustard.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Please hold the mustard.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ please 를 앞에 둔 흔한 차례 — 이 문항이 가르치는 hold(빼다) 지킴 · 뜻 같음. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "No mustard, please.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 hold(빼다)를 no 로 피함."
+    },
+    {
+     "답": "Hold the mustard.",
+     "점수": "70점",
+     "까닭": "'-주세요' 의 please 를 뺌 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  },
+  "grammar2/gh2-018#25": {
+   "id": "grammar2/gh2-018#25",
+   "시험": [
+    {
+     "답": "We won't be held responsible for theft.",
+     "점수": "만점"
+    },
+    {
+     "답": "We are not held responsible for theft.",
+     "점수": "70점"
+    },
+    {
+     "답": "We are not responsible for theft.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "We are not held responsible for theft.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 현재 '지지 않는다' 를 현재 수동태로 옮긴 맞는 꼴 — 이 문항이 가르치는 be held responsible 지킴 · 뜻 같음. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "We are not responsible for theft.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 be held responsible(책임을 지게 되다)의 held 를 뺌 — hold 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:38"
+  }
+ }
+}

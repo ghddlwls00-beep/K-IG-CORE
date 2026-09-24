@@ -1,0 +1,3851 @@
+{
+ "파일": "25.md",
+ "문항": {
+  "grammar2/gh2-039#1": {
+   "id": "grammar2/gh2-039#1",
+   "시험": [
+    {
+     "답": "The IMF is dissatisfied with the government's handling of the economy.",
+     "점수": "0점"
+    },
+    {
+     "답": "The IMF is unhappy about the government's handling of the economy.",
+     "점수": "70점"
+    },
+    {
+     "답": "The IMF is unhappy with the government's management of the economy.",
+     "점수": "0점"
+    },
+    {
+     "답": "The IMF is not satisfied with the government's handling of the economy.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The IMF is dissatisfied with the government's handling of the economy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '불만이다' 의 사전 첫 뜻 dissatisfied — 맞는 영어 · 뜻 그대로. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The IMF is unhappy about the government's handling of the economy.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'~에 대하여' 의 곧은 번역 about — unhappy about 도 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The IMF is unhappy with the government's management of the economy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '처리' = management(경제 운영의 흔한 말). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The IMF is not satisfied with the government's handling of the economy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'불만이다' = not satisfied(뜻이 같음 — 반대 뜻 아님). 채점이 not 을 반대 뜻으로 봐 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#2": {
+   "id": "grammar2/gh2-039#2",
+   "시험": [
+    {
+     "답": "The trade barrier didn't stop businesses from selling the car.",
+     "점수": "만점"
+    },
+    {
+     "답": "The trade barrier did not stop companies from selling the car.",
+     "점수": "0점"
+    },
+    {
+     "답": "The trade barrier did not prevent businesses from selling the car.",
+     "점수": "0점"
+    },
+    {
+     "답": "The trade barrier did not stop businesses from selling that car.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The trade barrier did not stop companies from selling the car.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '사업체들' = companies(흔한 번역) — stop … from -ing 꼴 그대로. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The trade barrier did not prevent businesses from selling the car.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "stop … from -ing = prevent … from -ing(같은 뜻 · 같은 꼴). 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The trade barrier did not stop businesses from selling that car.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 은 70점 그대로(소유자 결정 — 280곳)."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#3": {
+   "id": "grammar2/gh2-039#3",
+   "시험": [
+    {
+     "답": "I know a new Korean restaurant which opened recently.",
+     "점수": "70점"
+    },
+    {
+     "답": "I know a new Korean restaurant that recently opened.",
+     "점수": "70점"
+    },
+    {
+     "답": "I know a new Korean restaurant which recently opened.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I know a new Korean restaurant which opened recently.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "관계사를 가르치지 않는 한정 관계절의 which — 판단 필요 2(소유자 21:2x '추천대로')의 목록 문항인데 이 판(5412468)에 아직 안 들어감. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I know a new Korean restaurant that recently opened.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 부사 차례 recently opened — 맞는 영어 · 흔함. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I know a new Korean restaurant which recently opened.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "which + 부사 앞 차례(위 두 꼴을 합침) — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#4": {
+   "id": "grammar2/gh2-039#4",
+   "시험": [
+    {
+     "답": "Let's try it.",
+     "점수": "0점"
+    },
+    {
+     "답": "Let's give it a shot.",
+     "점수": "0점"
+    },
+    {
+     "답": "Let's give it a go.",
+     "점수": "0점"
+    },
+    {
+     "답": "Let us give it a try.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Let's try it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '(한번 시도해 보자)' 의 곧은 번역 — give it a try 와 같은 뜻. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Let's give it a shot.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "give it a try 와 같은 뜻의 흔한 관용 give it a shot. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Let's give it a go.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한번 가 보자' 에 꼭 맞는 흔한 관용 give it a go. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#5": {
+   "id": "grammar2/gh2-039#5",
+   "시험": [
+    {
+     "답": "I'll pay.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's on me.",
+     "점수": "0점"
+    },
+    {
+     "답": "I'll buy.",
+     "점수": "0점"
+    },
+    {
+     "답": "I am buying.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I'll pay.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'내가 낼게' 의 곧은 번역. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It's on me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'내가 살게' 의 가장 흔한 영어 관용. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I'll buy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'내가 살게' 의 곧은 번역 — 구어 관용으로도 씀. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#6": {
+   "id": "grammar2/gh2-039#6",
+   "시험": [
+    {
+     "답": "It's becoming more difficult to find others who share the belief.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's getting harder to find others who share the belief.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's becoming harder to find other people who share the belief.",
+     "점수": "70점"
+    },
+    {
+     "답": "It's becoming harder to find others that share the belief.",
+     "점수": "70점"
+    },
+    {
+     "답": "Finding others who share the belief is becoming harder.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's becoming harder to find others who share that belief.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It's becoming more difficult to find others who share the belief.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'더 어려워지다' = more difficult(harder 와 같이 가장 흔함) — 관계절 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It's getting harder to find others who share the belief.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'-어지고 있다' = is getting(becoming 보다 흔함). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It's becoming harder to find other people who share the belief.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'다른 사람들' 의 곧은 번역 other people. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It's becoming harder to find others that share the belief.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사람 선행사의 that — 판단 필요 2(소유자 21:2x '추천대로')의 목록 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Finding others who share the belief is becoming harder.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'~을 발견하는 것이' 의 곧은 동명사 주어 — 관계절(who share) 지킴 · 맞는 영어. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It's becoming harder to find others who share that belief.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 은 70점 그대로(소유자 결정)."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#7": {
+   "id": "grammar2/gh2-039#7",
+   "시험": [
+    {
+     "답": "The mother whose children study hard is happy.",
+     "점수": "0점"
+    },
+    {
+     "답": "A mother whose children work hard is happy.",
+     "점수": "70점"
+    },
+    {
+     "답": "A mother whose children study hard is happy.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The mother whose children study hard is happy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 본문 '공부하는' 의 곧은 번역 — 모범은 괄호의 '(일하는)' work 만 받음. whose 꼴 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "A mother whose children work hard is happy.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '어머니는' 은 일반 진술 — a mother 도 자연스러움(관사 바꿈). 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "A mother whose children study hard is happy.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위 두 꼴을 합친 맞는 번역. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#8": {
+   "id": "grammar2/gh2-039#8",
+   "시험": [
+    {
+     "답": "This is the book that I bought yesterday.",
+     "점수": "70점"
+    },
+    {
+     "답": "This is the book which I bought yesterday.",
+     "점수": "만점"
+    },
+    {
+     "답": "This is the book I bought yesterday",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is the book that I bought yesterday.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사물 선행사의 that(가장 흔한 꼴) — 같은 과 #9 는 that 을 받는데 이 문항은 못 받음. 판단 필요 2(소유자 21:2x '추천대로') 목록 첫 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#9": {
+   "id": "grammar2/gh2-039#9",
+   "시험": [
+    {
+     "답": "I remember the girl who he helped.",
+     "점수": "만점"
+    },
+    {
+     "답": "I remember the girl that he helped.",
+     "점수": "만점"
+    },
+    {
+     "답": "I remember the girl whom he helped.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#10": {
+   "id": "grammar2/gh2-039#10",
+   "시험": [
+    {
+     "답": "The teacher by whom I'm taught English is very kind.",
+     "점수": "만점"
+    },
+    {
+     "답": "The teacher by whom I am taught English is very nice.",
+     "점수": "0점"
+    },
+    {
+     "답": "The teacher who teaches me English is very kind.",
+     "점수": "0점"
+    },
+    {
+     "답": "The teacher whom I am taught English by is very kind.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The teacher by whom I am taught English is very nice.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '친절하다' → nice(흔한 번역) — by whom 꼴 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The teacher who teaches me English is very kind.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 전치사 + 관계대명사(by whom) 수동 꼴을 능동 관계절로 피함 — 한국어 '(그에 의하여)' 가 by whom 을 가리킴."
+    },
+    {
+     "답": "The teacher whom I am taught English by is very kind.",
+     "점수": "70점",
+     "까닭": "가르치는 '전치사 + whom' 꼴을 전치사를 뒤로 보내 피함 — 판단 필요 2 추천(소유자 '추천대로')도 전치사 + which/whom 문항은 그대로 둠. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#11": {
+   "id": "grammar2/gh2-039#11",
+   "시험": [
+    {
+     "답": "The house in which he lives is very big.",
+     "점수": "0점"
+    },
+    {
+     "답": "The house where he lives is very large.",
+     "점수": "70점"
+    },
+    {
+     "답": "The house which he lives in is very large.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The house in which he lives is very big.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '크다' 의 가장 흔한 번역 big — in which 꼴 지킴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The house where he lives is very large.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 in which 를 관계부사 where 로 피함(한국어 '(그 안에)' 가 in which 를 가리킴) — 70점이면 됨."
+    },
+    {
+     "답": "The house which he lives in is very large.",
+     "점수": "70점",
+     "까닭": "가르치는 '전치사 + which' 를 전치사를 뒤로 보내 피함 — 판단 필요 2 추천도 이런 문항은 그대로 둠. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#12": {
+   "id": "grammar2/gh2-039#12",
+   "시험": [
+    {
+     "답": "This is the chair which I sit on.",
+     "점수": "70점"
+    },
+    {
+     "답": "This is the chair on which I am sitting.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is the chair I sit on.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "This is the chair which I sit on.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 on which(한국어 '그 위에') 를 전치사를 뒤로 보내 피함 — 70점이면 됨."
+    },
+    {
+     "답": "This is the chair on which I am sitting.",
+     "점수": "0점",
+     "까닭": "진행형 — 한국어 '앉는' 은 늘 앉는 의자(현재형)라 '지금 앉아 있는' 으로 뜻이 바뀜 · 결정 4(진행형 12문항) 범위 밖."
+    },
+    {
+     "답": "This is the chair I sit on.",
+     "점수": "70점",
+     "까닭": "관계사를 빼고 전치사를 뒤로 — 가르치는 on which 를 피함. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#13": {
+   "id": "grammar2/gh2-039#13",
+   "시험": [
+    {
+     "답": "The sculptures that you are looking at are masterpieces.",
+     "점수": "70점"
+    },
+    {
+     "답": "The sculptures you are looking at are masterpieces.",
+     "점수": "70점"
+    },
+    {
+     "답": "The sculptures at which you are looking are masterpieces.",
+     "점수": "70점"
+    },
+    {
+     "답": "The sculptures which you're looking at are masterpieces.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The sculptures that you are looking at are masterpieces.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "관계사를 가르치지 않는 한정 관계절의 that — 판단 필요 2(소유자 '추천대로') 목록 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The sculptures you are looking at are masterpieces.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "목적격 관계사 생략(가장 흔한 꼴) — 판단 필요 2 목록에 든 꼴인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The sculptures at which you are looking are masterpieces.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "전치사 + which — 같은 과 #10 ~ #12 가 가르치는 꼴 그대로 · 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-039#14": {
+   "id": "grammar2/gh2-039#14",
+   "시험": [
+    {
+     "답": "Weather reports are very important to people that plan the routes of ships and airplanes.",
+     "점수": "70점"
+    },
+    {
+     "답": "Weather reports are very important to people who plan the routes of ships and planes.",
+     "점수": "0점"
+    },
+    {
+     "답": "Weather reports are very important for people who plan the routes of ships and airplanes.",
+     "점수": "70점"
+    },
+    {
+     "답": "Weather reports are very important to those who plan the routes of ships and airplanes.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Weather reports are very important to people that plan the routes of ships and airplanes.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사람 선행사의 that — 판단 필요 2(소유자 '추천대로') 목록 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Weather reports are very important to people who plan the routes of ships and planes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '비행기' 의 가장 흔한 말 plane. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Weather reports are very important for people who plan the routes of ships and airplanes.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "important for people 도 맞는 영어('~에게'). 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Weather reports are very important to those who plan the routes of ships and airplanes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'~하는 사람들' 의 흔한 꼴 those who — 관계절 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#1": {
+   "id": "grammar2/gh2-040#1",
+   "시험": [
+    {
+     "답": "People that work outdoors are also concerned about the weather.",
+     "점수": "70점"
+    },
+    {
+     "답": "People who work outside are also concerned about the weather.",
+     "점수": "0점"
+    },
+    {
+     "답": "People who work outdoors are also worried about the weather.",
+     "점수": "0점"
+    },
+    {
+     "답": "People who work outdoors also worry about the weather.",
+     "점수": "0점"
+    },
+    {
+     "답": "People working outdoors are also concerned about the weather.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "People that work outdoors are also concerned about the weather.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사람 선행사의 that — 판단 필요 2(소유자 '추천대로') 목록 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "People who work outside are also concerned about the weather.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '밖에서' 의 곧은 번역 outside. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "People who work outdoors are also worried about the weather.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '염려하다' = be worried about(가장 흔함). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "People who work outdoors also worry about the weather.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'염려한다' 의 동사 번역 worry about — 관계절 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "People working outdoors are also concerned about the weather.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 관계대명사 who 절을 분사로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#2": {
+   "id": "grammar2/gh2-040#2",
+   "시험": [
+    {
+     "답": "There are many laundromats in the U.S. that have coin-operated washers and dryers.",
+     "점수": "0점"
+    },
+    {
+     "답": "There are many laundries in the U.S. that have coin-operated washers and dryers.",
+     "점수": "70점"
+    },
+    {
+     "답": "There are many coin-op laundries in the U.S. that have coin-operated washing machines and dryers.",
+     "점수": "0점"
+    },
+    {
+     "답": "There are a lot of coin-op laundries in the U.S. that have coin-operated washers and dryers.",
+     "점수": "70점"
+    },
+    {
+     "답": "There are many coin-op laundries in the U.S. which have coin-operated washers and dryers.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There are many laundromats in the U.S. that have coin-operated washers and dryers.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '빨래방' 의 미국 영어 laundromat — 모범의 'coin-op' 은 한국어에 없는 말(뒤 coin-operated 와 겹침). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There are many laundries in the U.S. that have coin-operated washers and dryers.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'빨래방' 의 곧은 번역 — 한국어에 없는 모범의 'coin-op' 을 빼면 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There are many coin-op laundries in the U.S. that have coin-operated washing machines and dryers.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '세탁기' 의 가장 흔한 번역 washing machine. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There are a lot of coin-op laundries in the U.S. that have coin-operated washers and dryers.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '많이' = a lot of. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There are many coin-op laundries in the U.S. which have coin-operated washers and dryers.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "관계사를 가르치지 않는 한정 관계절의 which(판단 필요 2 와 같은 종류 — 목록 밖 문항). 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#3": {
+   "id": "grammar2/gh2-040#3",
+   "시험": [
+    {
+     "답": "A lot of people use a substance that we all say we abhor.",
+     "점수": "70점"
+    },
+    {
+     "답": "Many people use a substance we all say we abhor.",
+     "점수": "70점"
+    },
+    {
+     "답": "A lot of people use a substance we all say we hate.",
+     "점수": "0점"
+    },
+    {
+     "답": "Many people use a substance which we all say we abhor.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "A lot of people use a substance that we all say we abhor.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "관계사를 가르치지 않는 한정 관계절의 that — 판단 필요 2(소유자 '추천대로') 목록 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Many people use a substance we all say we abhor.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '많은 사람들' 의 곧은 번역 many. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "A lot of people use a substance we all say we hate.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '혐오하다' → hate(흔한 번역). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Many people use a substance which we all say we abhor.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "many + 다른 정답의 which — 맞는 번역. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#4": {
+   "id": "grammar2/gh2-040#4",
+   "시험": [
+    {
+     "답": "Complaining was almost all the opposition could do to the President.",
+     "점수": "0점"
+    },
+    {
+     "답": "Complaining was nearly all the opposition could do to the President.",
+     "점수": "0점"
+    },
+    {
+     "답": "Complaining was about all the opposition could do to the President.",
+     "점수": "70점"
+    },
+    {
+     "답": "Complaining was just about all the opposition party could do to the President.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Complaining was almost all the opposition could do to the President.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'거의 전부' 의 곧은 번역 almost all. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Complaining was nearly all the opposition could do to the President.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '거의' = nearly. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Complaining was about all the opposition could do to the President.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "about all = '거의 전부'(맞는 영어). 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Complaining was just about all the opposition party could do to the President.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '야당' 의 사전 뜻 the opposition party. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#5": {
+   "id": "grammar2/gh2-040#5",
+   "시험": [
+    {
+     "답": "Do you know the name of the tunnel whose entrance we see over there?",
+     "점수": "70점"
+    },
+    {
+     "답": "Do you know the name of the tunnel the entrance of which we see there?",
+     "점수": "70점"
+    },
+    {
+     "답": "Do you know the name of the tunnel, the entrance of which we see over there?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do you know the name of the tunnel the entrance of which we see there?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'저쪽에서' → there(over 없이도 맞는 영어) — the entrance of which 꼴 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Do you know the name of the tunnel whose entrance we see over there?",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 'the N of which' 소유격 관계대명사 꼴을 whose 로 — 관계사 고르기가 가르칠 점인 문항(판단 필요 2 추천도 이런 문항은 그대로 둠). 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#6": {
+   "id": "grammar2/gh2-040#6",
+   "시험": [
+    {
+     "답": "There are some basic rules in the game without which you cannot play it.",
+     "점수": "만점"
+    },
+    {
+     "답": "There are a few basic rules in the game without which you can not play it.",
+     "점수": "70점"
+    },
+    {
+     "답": "The game has some basic rules without which you can not play it.",
+     "점수": "0점"
+    },
+    {
+     "답": "There are several basic rules in the game without which you can not play it.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There are a few basic rules in the game without which you can not play it.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '몇 가지' = a few(가장 흔함). 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The game has some basic rules without which you can not play it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'그 게임에는 … 있다' 의 흔한 꼴 the game has — without which 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "There are several basic rules in the game without which you can not play it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '몇 가지' = several. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#7": {
+   "id": "grammar2/gh2-040#7",
+   "시험": [
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where lawmakers gathered to discuss a motion on loan defaults.",
+     "점수": "0점"
+    },
+    {
+     "답": "Emotions were high in the National Assembly of Pakistan where lawmakers gathered to debate a motion on loan defaults.",
+     "점수": "0점"
+    },
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where legislators gathered to debate a motion on loan defaults.",
+     "점수": "0점"
+    },
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where lawmakers gathered to debate a motion on debt defaults.",
+     "점수": "0점"
+    },
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where lawmakers gathered in order to debate a motion on loan defaults.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where lawmakers gathered to discuss a motion on loan defaults.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '토의하다' 의 곧은 번역 discuss. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Emotions were high in the National Assembly of Pakistan where lawmakers gathered to debate a motion on loan defaults.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉯ 소유격 ↔ of — the National Assembly of Pakistan 은 정식 이름이기도 함. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where legislators gathered to debate a motion on loan defaults.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '국회의원들' = legislators. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where lawmakers gathered to debate a motion on debt defaults.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '채무 불이행' = debt default. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Emotions were high in Pakistan's National Assembly where lawmakers gathered in order to debate a motion on loan defaults.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'~하기 위하여' = in order to(학교 문법의 곧은 번역). 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#8": {
+   "id": "grammar2/gh2-040#8",
+   "시험": [
+    {
+     "답": "There is a rumor that this government is collapsing.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is rumored that this government is collapsing.",
+     "점수": "0점"
+    },
+    {
+     "답": "There's a rumour that this government is collapsing.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There is a rumor that this government is collapsing.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '소문이 있다' 는 수를 가르지 않음 — 단수 a rumor 가 가장 흔한 곧은 번역 · 동격 that 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There's a rumour that this government is collapsing.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같은 단수 꼴의 영국 철자(다른 정답도 rumours 를 받음). 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It is rumored that this government is collapsing.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 동격 that 절(rumors that)을 가주어 수동 꼴로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#9": {
+   "id": "grammar2/gh2-040#9",
+   "시험": [
+    {
+     "답": "The President announced a plan to eliminate coca farms.",
+     "점수": "0점"
+    },
+    {
+     "답": "The President announced a plan to eradicate coca farms.",
+     "점수": "0점"
+    },
+    {
+     "답": "The President announced a plan to get rid of coca farms.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The President announced a plan to eliminate coca farms.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '일소하다' = eliminate — to부정사 꼴 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The President announced a plan to eradicate coca farms.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '일소하다' = eradicate(마약 작물 뉴스의 흔한 말). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The President announced a plan to get rid of coca farms.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '일소하다' = get rid of. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-040#10": {
+   "id": "grammar2/gh2-040#10",
+   "시험": [
+    {
+     "답": "I want my electricity and gas turned on.",
+     "점수": "0점"
+    },
+    {
+     "답": "I want my power and gas turned on.",
+     "점수": "0점"
+    },
+    {
+     "답": "I want my lights and gas to be turned on.",
+     "점수": "0점"
+    },
+    {
+     "답": "I want the electricity and gas turned off.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I want my electricity and gas turned on.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'전기' 의 곧은 번역 electricity — 모범 lights 는 영어 관용. want + 목적어 + 과거분사 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I want my power and gas turned on.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '전기' = power(공과금 영어에서 흔함). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I want the electricity and gas turned off.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'전기' = electricity · 한국어에 '나의' 없음(the) · 괄호 '(꺼지기를)' = off. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I want my lights and gas to be turned on.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 want + 목적어 + 과거분사 꼴을 to be 를 더한 to부정사 꼴로 바꿈."
+    }
+   ],
+   "때": "2026-09-24 23:18"
+  },
+  "grammar2/gh2-041#1": {
+   "id": "grammar2/gh2-041#1",
+   "시험": [
+    {
+     "답": "The attack was in support of coca leaf growers who staged demonstrations.",
+     "점수": "70점"
+    },
+    {
+     "답": "The attacks were in support of coca leaf growers that staged demonstrations.",
+     "점수": "70점"
+    },
+    {
+     "답": "The attacks were in support of coca leaf farmers who staged demonstrations.",
+     "점수": "0점"
+    },
+    {
+     "답": "The attacks were in support of coca leaf growers who held demonstrations.",
+     "점수": "0점"
+    },
+    {
+     "답": "The attacks were in support of coca leaf growers who staged protests.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The attack was in support of coca leaf growers who staged demonstrations.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '그 공격은' 은 수를 가르지 않음 — 단수 the attack 이 곧은 번역. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The attacks were in support of coca leaf growers that staged demonstrations.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사람 선행사의 that — 판단 필요 2(소유자 21:2x '추천대로') 목록 문항인데 이 판(5412468)에 아직 안 들어감. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The attacks were in support of coca leaf farmers who staged demonstrations.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '재배자' = farmer(흔한 번역). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The attacks were in support of coca leaf growers who held demonstrations.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '시위를 벌이다' = hold a demonstration(가장 흔한 연어). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "The attacks were in support of coca leaf growers who staged protests.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '시위' = protest. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#2": {
+   "id": "grammar2/gh2-041#2",
+   "시험": [
+    {
+     "답": "How can you expect people that never respected our drug laws to enforce them now?",
+     "점수": "70점"
+    },
+    {
+     "답": "How can you expect people who never respected our drug laws to enforce the laws now?",
+     "점수": "70점"
+    },
+    {
+     "답": "How can you expect those who never respected our drug laws to enforce them now?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How can you expect people that never respected our drug laws to enforce them now?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사람 선행사의 that — 판단 필요 2(소유자 '추천대로') 목록 문항인데 이 판에 아직 안 들어감. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How can you expect people who never respected our drug laws to enforce the laws now?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 괄호 '(그 법을)' 의 곧은 번역 the laws. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How can you expect those who never respected our drug laws to enforce them now?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'~한 사람들' 의 흔한 꼴 those who — 관계절 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#3": {
+   "id": "grammar2/gh2-041#3",
+   "시험": [
+    {
+     "답": "Who's the boy that swims in the pool?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who is the boy swimming in the pool?",
+     "점수": "0점"
+    },
+    {
+     "답": "Who is the boy who swims in the pool?",
+     "점수": "70점"
+    },
+    {
+     "답": "Who is the boy that is swimming in the pool?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Who is the boy swimming in the pool?",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 '의문사 who 뒤 관계대명사 that' 을 분사로 피함 — 판단 필요 2 추천(소유자 '추천대로')도 이 문항은 그대로 둠."
+    },
+    {
+     "답": "Who is the boy who swims in the pool?",
+     "점수": "70점",
+     "까닭": "가르칠 점이 '의문사 who 뒤에는 that'(who … who 를 피함) — 판단 필요 2 추천이 이 문항을 빼고 그대로 둠. 70점이면 됨."
+    },
+    {
+     "답": "Who is the boy that is swimming in the pool?",
+     "점수": "0점",
+     "까닭": "진행형 — 한국어 '수영하는' 은 현재형 · 결정 4(진행형 12문항) 범위 밖."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#4": {
+   "id": "grammar2/gh2-041#4",
+   "시험": [
+    {
+     "답": "He's the best friend that I have.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is the best friend I have.",
+     "점수": "70점"
+    },
+    {
+     "답": "He is the best friend whom I have.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He is the best friend I have.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 '최상급 뒤 관계대명사 that' 을 뺌 — 판단 필요 2 추천(소유자 '추천대로')이 이 문항을 빼고 그대로 둠. 70점이면 됨."
+    },
+    {
+     "답": "He is the best friend whom I have.",
+     "점수": "70점",
+     "까닭": "가르칠 점 '최상급 뒤 that' 을 whom 으로 — 판단 필요 2 추천이 이 문항을 빼고 그대로 둠. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#5": {
+   "id": "grammar2/gh2-041#5",
+   "시험": [
+    {
+     "답": "He's the only boy that I can trust.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is the only boy I can trust.",
+     "점수": "70점"
+    },
+    {
+     "답": "He is the only boy whom I can trust.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He is the only boy I can trust.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 'the only 뒤 관계대명사 that' 을 뺌 — 판단 필요 2 추천(소유자 '추천대로')이 이 문항을 빼고 그대로 둠. 70점이면 됨."
+    },
+    {
+     "답": "He is the only boy whom I can trust.",
+     "점수": "70점",
+     "까닭": "가르칠 점 'the only 뒤 that' 을 whom 으로 — 판단 필요 2 추천이 이 문항을 빼고 그대로 둠. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#6": {
+   "id": "grammar2/gh2-041#6",
+   "시험": [
+    {
+     "답": "Citizens caught a sex offender whose schemes authorities did not take seriously.",
+     "점수": "0점"
+    },
+    {
+     "답": "Citizens captured a sex offender whose plans authorities did not take seriously.",
+     "점수": "0점"
+    },
+    {
+     "답": "Citizens captured a sex offender whose schemes authorities didn't take seriously.",
+     "점수": "만점"
+    },
+    {
+     "답": "Citizens captured a sex offender whose schemes the authorities did not take seriously.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Citizens caught a sex offender whose schemes authorities did not take seriously.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '잡았다' 의 가장 흔한 번역 caught — whose 꼴 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Citizens captured a sex offender whose plans authorities did not take seriously.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '계획' 의 가장 흔한 번역 plan. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Citizens captured a sex offender whose schemes the authorities did not take seriously.",
+     "점수": "70점",
+     "까닭": "기능어 the 하나 더 — 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#7": {
+   "id": "grammar2/gh2-041#7",
+   "시험": [
+    {
+     "답": "It is clear that we can not do it.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is obvious that we cannot do it.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's certain that we can't do it.",
+     "점수": "만점"
+    },
+    {
+     "답": "That we can not do it is certain.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is clear that we can not do it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '분명하다' 의 가장 흔한 번역 clear — 가주어 it … that 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It is obvious that we cannot do it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '분명하다' = obvious. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "That we can not do it is certain.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 가주어 it … that 꼴을 that 절 주어로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#8": {
+   "id": "grammar2/gh2-041#8",
+   "시험": [
+    {
+     "답": "The fact that he stole the money cannot be denied.",
+     "점수": "만점"
+    },
+    {
+     "답": "The fact that he stole the money can't be denied.",
+     "점수": "만점"
+    },
+    {
+     "답": "The fact that he stole that money can not be denied.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "The fact that he stole that money can not be denied.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 은 70점 그대로(소유자 결정)."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#9": {
+   "id": "grammar2/gh2-041#9",
+   "시험": [
+    {
+     "답": "Do you know what your daughter did to him?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you know what your daughter has done to him?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Do you know what your daughter has done to him?",
+     "점수": "70점",
+     "까닭": "한국어 과거 '했는지' · 과거 모범에 현재완료 — 소유자 결정 4(G10 ② 현재완료는 그대로) 범위."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#10": {
+   "id": "grammar2/gh2-041#10",
+   "시험": [
+    {
+     "답": "This is what she did.",
+     "점수": "만점"
+    },
+    {
+     "답": "This is what she has done.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is the thing she did.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "This is what she has done.",
+     "점수": "0점",
+     "까닭": "한국어 과거 '한 것' · 과거 모범에 현재완료 — 소유자 결정 4(G10 ② 현재완료는 그대로) 범위."
+    },
+    {
+     "답": "This is the thing she did.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 관계대명사 what 을 the thing 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#11": {
+   "id": "grammar2/gh2-041#11",
+   "시험": [
+    {
+     "답": "I think I know who did it.",
+     "점수": "만점"
+    },
+    {
+     "답": "I think that I know who did it.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think I know who has done it.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I think that I know who did it.",
+     "점수": "70점",
+     "까닭": "기능어 that 하나 더 — 결정 2(70점)."
+    },
+    {
+     "답": "I think I know who has done it.",
+     "점수": "70점",
+     "까닭": "한국어 과거 '했는지' · 과거 모범에 현재완료 — 소유자 결정 4(G10 ② 현재완료는 그대로) 범위."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#12": {
+   "id": "grammar2/gh2-041#12",
+   "시험": [
+    {
+     "답": "Whatever he buys is interesting.",
+     "점수": "만점"
+    },
+    {
+     "답": "Anything he buys is interesting.",
+     "점수": "0점"
+    },
+    {
+     "답": "Anything that he buys is interesting.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Anything he buys is interesting.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 복합관계대명사 whatever 를 anything 으로 피함."
+    },
+    {
+     "답": "Anything that he buys is interesting.",
+     "점수": "0점",
+     "까닭": "복합관계대명사 whatever 를 anything that 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#13": {
+   "id": "grammar2/gh2-041#13",
+   "시험": [
+    {
+     "답": "Whichever book he buys is interesting.",
+     "점수": "0점"
+    },
+    {
+     "답": "Any book he buys is interesting.",
+     "점수": "0점"
+    },
+    {
+     "답": "Whatever book he buys is interesting.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Whichever book he buys is interesting.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '어떤 책이든지' 가 같은 과 #15(모범 whichever book)와 글자까지 같아 학습자가 가를 수 없음 — 복합관계형용사 꼴 지킴 · 맞는 영어. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Any book he buys is interesting.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 복합관계형용사 whatever 를 any 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#14": {
+   "id": "grammar2/gh2-041#14",
+   "시험": [
+    {
+     "답": "You may choose whatever you like.",
+     "점수": "0점"
+    },
+    {
+     "답": "You can choose whichever you like.",
+     "점수": "70점"
+    },
+    {
+     "답": "You may select whichever you like.",
+     "점수": "0점"
+    },
+    {
+     "답": "You may choose whichever one you like.",
+     "점수": "0점"
+    },
+    {
+     "답": "You may choose anything you like.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You may choose whatever you like.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "복합관계대명사 꼴 지킴 — 'choose whatever you like' 는 가장 흔한 영어 관용이고 뜻이 거의 같음(같은 과 #13 은 '어떤 책이든지' 를 whatever 로 받음). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You can choose whichever you like.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'선택해도 좋다' 의 허가 can(가장 흔함). 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You may select whichever you like.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '선택하다' 의 곧은 번역 select. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You may choose whichever one you like.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'어떤 것' = whichever one(흔한 꼴). 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You may choose anything you like.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 복합관계대명사 whichever 를 anything 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-041#15": {
+   "id": "grammar2/gh2-041#15",
+   "시험": [
+    {
+     "답": "You may choose whatever book you like.",
+     "점수": "0점"
+    },
+    {
+     "답": "You can choose whichever book you like.",
+     "점수": "70점"
+    },
+    {
+     "답": "You may select whichever book you like.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You may choose whatever book you like.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '어떤 책이든지' 가 같은 과 #13(모범 whatever book)과 글자까지 같음 — 복합관계형용사 꼴 지킴 · 맞는 영어. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You can choose whichever book you like.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'선택해도 좋다' 의 허가 can. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "You may select whichever book you like.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '선택하다' 의 곧은 번역 select. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#1": {
+   "id": "grammar2/gh2-042#1",
+   "시험": [
+    {
+     "답": "Lend this money to whoever you trust.",
+     "점수": "70점"
+    },
+    {
+     "답": "Lend this money to anyone you trust.",
+     "점수": "0점"
+    },
+    {
+     "답": "Lend this money to whomever you trust",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Lend this money to whoever you trust.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 목적격 whomever(trust 의 목적어) — 격 고르기가 가르칠 점이라 주격 꼴 whoever 는 70점이면 됨."
+    },
+    {
+     "답": "Lend this money to anyone you trust.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 복합관계대명사 whomever 를 anyone 으로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#2": {
+   "id": "grammar2/gh2-042#2",
+   "시험": [
+    {
+     "답": "It is him who is to blame.",
+     "점수": "70점"
+    },
+    {
+     "답": "It is he who should be blamed.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is he that is to blame.",
+     "점수": "70점"
+    },
+    {
+     "답": "It is he who is to be blamed.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's he who is to blame.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is the one who is to blame.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is he who should be blamed.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'비난해야 할' 의 곧은 번역 should be blamed — 강조 구문 It is … who 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is he that is to blame.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "강조 구문의 that — 같은 과정 gh2-045 #10 ~ #12 가 가르치는 꼴 그대로 · 맞는 영어. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It is he who is to be blamed.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "be to blame 의 수동 꼴 is to be blamed 도 맞는 영어('비난받아야 할'). 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It is him who is to blame.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 주격 he(who 절의 주어와 같은 격) — him 은 구어 꼴이라 70점이면 됨."
+    },
+    {
+     "답": "He is the one who is to blame.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 강조 구문 It is … who 를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#3": {
+   "id": "grammar2/gh2-042#3",
+   "시험": [
+    {
+     "답": "I do not care what you think.",
+     "점수": "만점"
+    },
+    {
+     "답": "I don't mind what you think.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I don't mind what you think.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '상관하지 않는다' = don't mind — 명사절 what 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#4": {
+   "id": "grammar2/gh2-042#4",
+   "시험": [
+    {
+     "답": "Can I ask what this is about?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could I ask what this is about?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can I ask what this is about?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "반말 '물어도 되니?' 의 가장 흔한 허가 can. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could I ask what this is about?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "공손한 허가 could — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#5": {
+   "id": "grammar2/gh2-042#5",
+   "시험": [
+    {
+     "답": "Can you tell me what the regular fare is between Los Angeles and New York?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you tell me what the regular fare between Los Angeles and New York is?",
+     "점수": "70점"
+    },
+    {
+     "답": "Could you tell me how much the regular fare is between Los Angeles and New York?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Can you tell me what the regular fare is between Los Angeles and New York?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'말해 줄 수 있습니까' 의 곧은 번역 can. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you tell me what the regular fare between Los Angeles and New York is?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "간접의문문의 표준 차례(주어 전체 뒤 동사) — 맞는 영어. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Could you tell me how much the regular fare is between Los Angeles and New York?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'얼마인지' 의 곧은 번역 how much. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#6": {
+   "id": "grammar2/gh2-042#6",
+   "시험": [
+    {
+     "답": "Whose finger was on the button almost determined electoral success.",
+     "점수": "0점"
+    },
+    {
+     "답": "Whose finger was on the button nearly defined electoral success.",
+     "점수": "0점"
+    },
+    {
+     "답": "Whose finger was on the button almost defined election victory.",
+     "점수": "0점"
+    },
+    {
+     "답": "Whose finger was on the button almost decided electoral success.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Whose finger was on the button almost determined electoral success.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 괄호 '(결정지었다)' 의 곧은 번역 determined — 명사절 주어 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Whose finger was on the button nearly defined electoral success.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '거의' = nearly. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Whose finger was on the button almost defined election victory.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'선거 승리' 의 곧은 번역 election victory. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Whose finger was on the button almost decided electoral success.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'결정지었다' = decided. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#7": {
+   "id": "grammar2/gh2-042#7",
+   "시험": [
+    {
+     "답": "Compare what you did with what you saw.",
+     "점수": "0점"
+    },
+    {
+     "답": "Compare what you have done to what you have seen.",
+     "점수": "70점"
+    },
+    {
+     "답": "Compare what you've done with what you've seen.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Compare what you did with what you saw.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '한 것 · 본 것' 은 과거 관형형 — 단순 과거가 곧은 번역(관계대명사 what 지킴). 모범이 현재완료라 길이 한도로 0점. 결정 4 ② 는 과거 모범에 현재완료를 더하지 않기로 한 것이라 이 반대 방향과 다름.",
+     "확신": "높음"
+    },
+    {
+     "답": "Compare what you have done to what you have seen.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "compare A to B 도 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#8": {
+   "id": "grammar2/gh2-042#8",
+   "시험": [
+    {
+     "답": "Why this is a problem was dramatically revealed when the keynote speaker was ousted for having been a marijuana user.",
+     "점수": "0점"
+    },
+    {
+     "답": "Why this is a problem was dramatically shown when the keynote speaker was ousted for having been a marijuana user.",
+     "점수": "0점"
+    },
+    {
+     "답": "Why this is a problem was dramatically illustrated when the keynote speaker was kicked out for having been a marijuana user.",
+     "점수": "0점"
+    },
+    {
+     "답": "Why this is a problem was dramatically illustrated when the keynote speaker was ousted because he had been a marijuana user.",
+     "점수": "0점"
+    },
+    {
+     "답": "Why this is a problem was illustrated dramatically when the keynote speaker was ousted for having been a marijuana user.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why this is a problem was dramatically revealed when the keynote speaker was ousted for having been a marijuana user.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '드러났다' 의 곧은 번역 revealed. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Why this is a problem was dramatically shown when the keynote speaker was ousted for having been a marijuana user.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '드러났다' = was shown. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why this is a problem was dramatically illustrated when the keynote speaker was kicked out for having been a marijuana user.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '쫓겨났다' = was kicked out. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why this is a problem was dramatically illustrated when the keynote speaker was ousted because he had been a marijuana user.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'~였다는 이유로' = because — 가르치는 의문사절 주어(Why …) 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why this is a problem was illustrated dramatically when the keynote speaker was ousted for having been a marijuana user.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 부사 차례 illustrated dramatically. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#9": {
+   "id": "grammar2/gh2-042#9",
+   "시험": [
+    {
+     "답": "The problem is who will get there first.",
+     "점수": "0점"
+    },
+    {
+     "답": "The question is who is going to get there first.",
+     "점수": "0점"
+    },
+    {
+     "답": "The question is who'll get there first.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The problem is who will get there first.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '문제' 의 사전 첫 뜻 problem — 의문사절 보어 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The question is who is going to get there first.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ will ↔ be going to — 한국어 '도착할 것인가' 가 가르지 않음. 길이 한도로 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#10": {
+   "id": "grammar2/gh2-042#10",
+   "시험": [
+    {
+     "답": "It is a mystery to me how they can live together when they don't love each other anymore.",
+     "점수": "0점"
+    },
+    {
+     "답": "How they can live together when they no longer love each other is a mystery to me.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's a mystery to me how they can live together when they no longer love each other.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is a mystery to me how they can live together when they don't love each other anymore.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ '더 이상 ~않다' = not … anymore(no longer 만큼 흔함). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "How they can live together when they no longer love each other is a mystery to me.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 차례 그대로 의문사절 주어 — 같은 과 #8 도 이 꼴(Why this is a problem was …)을 가르침. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#11": {
+   "id": "grammar2/gh2-042#11",
+   "시험": [
+    {
+     "답": "There are various problems whose solution is hopeless.",
+     "점수": "70점"
+    },
+    {
+     "답": "There are various problems of which the solution is hopeless.",
+     "점수": "70점"
+    },
+    {
+     "답": "There are various problems the solution of which is hopeless",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There are various problems of which the solution is hopeless.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "of which the N — 'the N of which' 와 같은 꼴(학교 문법이 함께 가르침) · 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "There are various problems whose solution is hopeless.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 'the N of which' 를 whose 로 — 관계사 고르기가 가르칠 점인 문항(판단 필요 2 추천도 이런 문항은 그대로 둠). 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-042#12": {
+   "id": "grammar2/gh2-042#12",
+   "시험": [
+    {
+     "답": "Is this the man whom you spoke of yesterday?",
+     "점수": "70점"
+    },
+    {
+     "답": "Is this the man about whom you spoke yesterday?",
+     "점수": "70점"
+    },
+    {
+     "답": "Is this the man about whom you talked yesterday?",
+     "점수": "0점"
+    },
+    {
+     "답": "Is this the person of whom you spoke yesterday?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Is this the man about whom you spoke yesterday?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'그분에 대하여' 의 곧은 번역 about — 전치사 + whom 꼴 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Is this the man about whom you talked yesterday?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "talk about — '말하다' 의 흔한 번역 · 전치사 + whom 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Is this the person of whom you spoke yesterday?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '이분 · 그분' 은 성별을 가르지 않음 — person 이 곧은 번역. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Is this the man whom you spoke of yesterday?",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 전치사 + whom 을 전치사를 뒤로 보내 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:21"
+  },
+  "grammar2/gh2-043#1": {
+   "id": "grammar2/gh2-043#1",
+   "시험": [
+    {
+     "답": "The book whose cover is red is mine.",
+     "점수": "70점"
+    },
+    {
+     "답": "The book of which the cover is red is mine.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The book of which the cover is red is mine.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "of which the N — 'the N of which' 와 같은 꼴(학교 문법이 함께 가르침) · 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The book whose cover is red is mine.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 'the N of which' 를 whose 로 — 관계사 고르기가 가르칠 점(판단 필요 2 추천도 이런 문항은 그대로 둠). 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#2": {
+   "id": "grammar2/gh2-043#2",
+   "시험": [
+    {
+     "답": "This is the man whom John lives with.",
+     "점수": "70점"
+    },
+    {
+     "답": "This is the person with whom John lives.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is the person with whom John lives.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '사람' 의 곧은 번역 person(모범 man 은 한국어에 없는 성별을 더함) — with whom 지킴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "This is the man whom John lives with.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 전치사 + whom 을 전치사를 뒤로 보내 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#3": {
+   "id": "grammar2/gh2-043#3",
+   "시험": [
+    {
+     "답": "This is the cat by which the mouse was killed.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is the cat which killed the rat.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is the cat by which the mouse was killed.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '쥐' = mouse(rat 과 한국어가 가르지 않음 · 흔한 번역) — by which 지킴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "This is the cat which killed the rat.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 by which 수동 꼴(한국어 본문 '그것에 의하여 … 살해당한')을 능동 관계절로 피함 — 괄호는 뜻풀이."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#4": {
+   "id": "grammar2/gh2-043#4",
+   "시험": [
+    {
+     "답": "There are people without whom a society can not last very long.",
+     "점수": "0점"
+    },
+    {
+     "답": "There are people without whom society cannot last very long.",
+     "점수": "0점"
+    },
+    {
+     "답": "There are persons without whom society can not last very long.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There are people without whom a society can not last very long.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '사람들' 의 보통 복수 people(persons 는 법률 · 격식 말) — without whom 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There are people without whom society cannot last very long.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "people + 관사 없는 일반 society(가장 자연스러운 꼴). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There are persons without whom society can not last very long.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉯ 일반 사회는 관사 없는 society 도 자연스러움. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#5": {
+   "id": "grammar2/gh2-043#5",
+   "시험": [
+    {
+     "답": "It is true that he is poor but clever.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is true that he is poor but intelligent.",
+     "점수": "0점"
+    },
+    {
+     "답": "That he is poor but smart is true.",
+     "점수": "0점"
+    },
+    {
+     "답": "It's true that he's poor but smart.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is true that he is poor but clever.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '똑똑하다' = clever. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is true that he is poor but intelligent.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '똑똑하다' = intelligent. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "That he is poor but smart is true.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 가주어 it … that 을 that 절 주어로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#6": {
+   "id": "grammar2/gh2-043#6",
+   "시험": [
+    {
+     "답": "I think it is true that he is poor but smart.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think that it is true that he is poor but smart.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it true that he is poor but clever.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I think it true that he is poor but clever.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '똑똑한' = clever — 5형식 가목적어 꼴 지킴. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I think it is true that he is poor but smart.",
+     "점수": "70점",
+     "까닭": "기능어 is 하나 더 — 결정 2(70점). 이 문항이 가르치는 5형식 가목적어(think it true that)도 벗어남."
+    },
+    {
+     "답": "I think that it is true that he is poor but smart.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 5형식 가목적어(think it true that)를 3형식으로 피함 — 한국어가 #7 과 같은 짜임이라 메모에 적음."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#7": {
+   "id": "grammar2/gh2-043#7",
+   "시험": [
+    {
+     "답": "I think that it is true that he is stupid and rich.",
+     "점수": "70점"
+    },
+    {
+     "답": "I think it is true that he is foolish and rich.",
+     "점수": "0점"
+    },
+    {
+     "답": "I think it true that he is stupid and rich.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I think it is true that he is foolish and rich.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '멍청하다' = foolish. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I think it true that he is stupid and rich.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "같은 과 #6 모범 꼴(5형식 가목적어) — 맞는 영어. 한국어가 #6 과 같은 짜임이라 학습자가 가를 수 없음. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I think that it is true that he is stupid and rich.",
+     "점수": "70점",
+     "까닭": "기능어 that 하나 더 — 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#8": {
+   "id": "grammar2/gh2-043#8",
+   "시험": [
+    {
+     "답": "Who he is is not known to everyone.",
+     "점수": "0점"
+    },
+    {
+     "답": "Who he is is not known to everybody.",
+     "점수": "0점"
+    },
+    {
+     "답": "Who he is isn't known to all.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Who he is is not known to everyone.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '모두에게' = everyone — not … everyone 도 부분 부정 그대로. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Who he is is not known to everybody.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '모두' = everybody — 부분 부정 그대로. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#9": {
+   "id": "grammar2/gh2-043#9",
+   "시험": [
+    {
+     "답": "Who he is is not known to anyone.",
+     "점수": "0점"
+    },
+    {
+     "답": "Who he is is known to nobody.",
+     "점수": "0점"
+    },
+    {
+     "답": "Who he is is known to no one.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Who he is is not known to anyone.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ anybody = anyone(같은 뜻 · 더 흔함) — 전체 부정 그대로. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Who he is is known to nobody.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ not … anybody ↔ nobody — 전체 부정 그대로. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Who he is is known to no one.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ not … anybody ↔ no one — 전체 부정 그대로. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#10": {
+   "id": "grammar2/gh2-043#10",
+   "시험": [
+    {
+     "답": "There was no girl that was not kind.",
+     "점수": "70점"
+    },
+    {
+     "답": "There was no girl who was not kind.",
+     "점수": "0점"
+    },
+    {
+     "답": "There was not a girl who was not kind.",
+     "점수": "70점"
+    },
+    {
+     "답": "There wasn't a girl that wasn't kind.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There was no girl that was not kind.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "not a ↔ no(가장 흔한 꼴) — 이중 부정 짜임 그대로. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "There was no girl who was not kind.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "no + 사람 선행사의 who — 맞는 영어 · 이중 부정 그대로. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "There was not a girl who was not kind.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "사람 선행사의 who(관계사를 가르치지 않는 한정 관계절 — 판단 필요 2 와 같은 종류, 목록 밖). 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#11": {
+   "id": "grammar2/gh2-043#11",
+   "시험": [
+    {
+     "답": "He is not such a man as tells lies.",
+     "점수": "0점"
+    },
+    {
+     "답": "He is not the kind of man who tells a lie.",
+     "점수": "0점"
+    },
+    {
+     "답": "He isn't such a man as tells a lie.",
+     "점수": "만점"
+    },
+    {
+     "답": "He is not such a man as would tell a lie.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He is not such a man as tells lies.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'거짓말하다' = tell lies(가장 흔한 연어) — such … as 꼴 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He is not such a man as would tell a lie.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "such … as 꼴 그대로 — as would tell 은 학교 문법 책의 흔한 꼴 · 맞는 영어. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He is not the kind of man who tells a lie.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 such … as(관계대명사 as)를 피함."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#12": {
+   "id": "grammar2/gh2-043#12",
+   "시험": [
+    {
+     "답": "He has as many books as you do.",
+     "점수": "70점"
+    },
+    {
+     "답": "He has as many books as you.",
+     "점수": "70점"
+    },
+    {
+     "답": "He has as many books as you have.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He has as many books as you do.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "대동사 do — 가장 흔한 꼴 · as many … as 지킴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He has as many books as you.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "뒤 동사를 뺀 흔한 꼴 — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#13": {
+   "id": "grammar2/gh2-043#13",
+   "시험": [
+    {
+     "답": "I have the same watch as you do.",
+     "점수": "70점"
+    },
+    {
+     "답": "I have the same watch as you.",
+     "점수": "70점"
+    },
+    {
+     "답": "I have the same watch that you have.",
+     "점수": "70점"
+    },
+    {
+     "답": "I have the same watch as yours.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I have the same watch as you do.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "대동사 do — the same … as 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I have the same watch as you.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "뒤 동사를 뺀 흔한 꼴 — 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I have the same watch as yours.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "the same … as + 소유대명사 — 맞는 영어 · 흔함. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I have the same watch that you have.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 the same … as 를 that 으로 — 학교 문법이 '같은 종류' as · '바로 그것' that 으로 가르는 꼴. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#14": {
+   "id": "grammar2/gh2-043#14",
+   "시험": [
+    {
+     "답": "It is natural that you are disappointed about not passing the exam.",
+     "점수": "70점"
+    },
+    {
+     "답": "It is natural that you should be disappointed at failing the exam.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is natural that you are disappointed at not passing the test.",
+     "점수": "0점"
+    },
+    {
+     "답": "It is natural for you to be disappointed at not passing the exam.",
+     "점수": "70점"
+    },
+    {
+     "답": "It's natural that you're disappointed at not passing the exam.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It is natural that you are disappointed about not passing the exam.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "disappointed about 도 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It is natural that you should be disappointed at failing the exam.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'통과하지 못한 것' = failing(가장 흔한 번역) — 채점이 not 빠짐을 반대 뜻으로 봐 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It is natural that you are disappointed at not passing the test.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '시험' = test. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "It is natural for you to be disappointed at not passing the exam.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 It is natural that + (should) 절을 for … to 로 피함."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-043#15": {
+   "id": "grammar2/gh2-043#15",
+   "시험": [
+    {
+     "답": "When you are going to do anything, keep in mind that you should do your best.",
+     "점수": "70점"
+    },
+    {
+     "답": "When you are going to do anything, keep it in mind that you must do your best.",
+     "점수": "70점"
+    },
+    {
+     "답": "If you are going to do anything, keep it in mind that you should do your best.",
+     "점수": "70점"
+    },
+    {
+     "답": "When you try to do anything, keep it in mind that you should do your best.",
+     "점수": "0점"
+    },
+    {
+     "답": "When you are going to do anything, keep it in mind that you have to do your best.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "When you are going to do anything, keep it in mind that you must do your best.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'다해야 한다' 의 곧은 번역 must. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "If you are going to do anything, keep it in mind that you should do your best.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-하려고 하면' 의 '-면' = if(가장 곧은 번역). 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "When you try to do anything, keep it in mind that you should do your best.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'하려고 하면' = try to — 가목적어 it 지킴. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "When you are going to do anything, keep it in mind that you have to do your best.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-해야 한다' = have to. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "When you are going to do anything, keep in mind that you should do your best.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 가목적어 it(keep it in mind that)을 뺌."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#1": {
+   "id": "grammar2/gh2-044#1",
+   "시험": [
+    {
+     "답": "I took it for granted that he would get married to her.",
+     "점수": "0점"
+    },
+    {
+     "답": "I took for granted that he would marry her.",
+     "점수": "70점"
+    },
+    {
+     "답": "I took it for granted that he'd marry her.",
+     "점수": "만점"
+    },
+    {
+     "답": "I took it for granted that he was going to marry her.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I took it for granted that he would get married to her.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '결혼하다' = get married to — 가목적어 it 지킴. 길이 한도로 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I took it for granted that he was going to marry her.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ would ↔ was going to('결혼하리라는'). 길이 한도로 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I took for granted that he would marry her.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 가목적어 it(take it for granted that)을 뺌."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#2": {
+   "id": "grammar2/gh2-044#2",
+   "시험": [
+    {
+     "답": "It got so hot that we turned on the air conditioner.",
+     "점수": "0점"
+    },
+    {
+     "답": "It became so hot that we turned on the air conditioner.",
+     "점수": "0점"
+    },
+    {
+     "답": "It grew so hot that we turned the air conditioner on.",
+     "점수": "70점"
+    },
+    {
+     "답": "The weather got so hot that we turned on the air conditioner.",
+     "점수": "0점"
+    },
+    {
+     "답": "It grew so hot that we turned on the air conditioning.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It got so hot that we turned on the air conditioner.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '더워지다' = got hot(가장 흔함) — so … that 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It became so hot that we turned on the air conditioner.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '-어지다' = become. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It grew so hot that we turned the air conditioner on.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉰ 목적어를 가운데 둔 차례 turn … on. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The weather got so hot that we turned on the air conditioner.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 '날씨가' 의 곧은 번역 the weather — so … that 지킴(판단 필요 1 과 같은 종류). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "It grew so hot that we turned on the air conditioning.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "㉮ '에어컨' = air conditioning(흔함). 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#3": {
+   "id": "grammar2/gh2-044#3",
+   "시험": [
+    {
+     "답": "It was when I was attending a pop concert that I first saw her.",
+     "점수": "0점"
+    },
+    {
+     "답": "It was while I was attending a pop concert that I saw her for the first time.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It was when I was attending a pop concert that I first saw her.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉰ '처음 본' = first saw(가장 흔함) — 강조 구문 It was when … that 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "It was while I was attending a pop concert that I saw her for the first time.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-고 있을 때' = while — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#4": {
+   "id": "grammar2/gh2-044#4",
+   "시험": [
+    {
+     "답": "Political analysts are just as sure that Clinton will beat Dole as they were that Reagan would beat Mondale.",
+     "점수": "0점"
+    },
+    {
+     "답": "Political analysts are just as convinced that Clinton will defeat Dole as they were that Reagan would defeat Mondale.",
+     "점수": "0점"
+    },
+    {
+     "답": "Political analysts are just as certain that Clinton will beat Dole as they were that Reagan would beat Mondale.",
+     "점수": "0점"
+    },
+    {
+     "답": "Political analysts are just as convinced that Clinton will beat Bob Dole as they were that Reagan would beat Mondale.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Political analysts are just as sure that Clinton will beat Dole as they were that Reagan would beat Mondale.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '확신하다' = be sure. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Political analysts are just as convinced that Clinton will defeat Dole as they were that Reagan would defeat Mondale.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '무찌르다' 의 사전 첫 뜻 defeat. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Political analysts are just as certain that Clinton will beat Dole as they were that Reagan would beat Mondale.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '확신하다' = be certain. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Political analysts are just as convinced that Clinton will beat Bob Dole as they were that Reagan would beat Mondale.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '(밥) 돌' 의 곧은 번역 Bob Dole. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#5": {
+   "id": "grammar2/gh2-044#5",
+   "시험": [
+    {
+     "답": "The soldiers were standing in line for dinner when they were attacked.",
+     "점수": "0점"
+    },
+    {
+     "답": "The soldiers were queuing for dinner when they were attacked.",
+     "점수": "0점"
+    },
+    {
+     "답": "When they were attacked, the soldiers were lining up for dinner.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The soldiers were standing in line for dinner when they were attacked.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '줄 서다' = stand in line(흔함). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "The soldiers were queuing for dinner when they were attacked.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '줄 서다' = queue(영국 영어). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "When they were attacked, the soldiers were lining up for dinner.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "when 절을 앞에 둔 흔한 차례 — 과거진행 + when 꼴 그대로. 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#6": {
+   "id": "grammar2/gh2-044#6",
+   "시험": [
+    {
+     "답": "I don't know when he will come back.",
+     "점수": "0점"
+    },
+    {
+     "답": "I don't know when he'll be back.",
+     "점수": "0점"
+    },
+    {
+     "답": "I don't know when he is going to return.",
+     "점수": "0점"
+    },
+    {
+     "답": "I don't know when he'll return.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I don't know when he will come back.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '돌아오다' 의 가장 흔한 번역 come back — 의문사절 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I don't know when he'll be back.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '돌아오다' = be back(흔함). 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I don't know when he is going to return.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉱ will ↔ be going to. 길이 한도로 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#7": {
+   "id": "grammar2/gh2-044#7",
+   "시험": [
+    {
+     "답": "Do you know why he can't come?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do you know why he can not come?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#8": {
+   "id": "grammar2/gh2-044#8",
+   "시험": [
+    {
+     "답": "His father died on the day he was born.",
+     "점수": "70점"
+    },
+    {
+     "답": "His father died on the day that he was born.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "His father died on the day he was born.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 when 을 뺌 — 70점이면 됨."
+    },
+    {
+     "답": "His father died on the day that he was born.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 when 을 that 으로 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#9": {
+   "id": "grammar2/gh2-044#9",
+   "시험": [
+    {
+     "답": "I don't know the name of the village where he went.",
+     "점수": "0점"
+    },
+    {
+     "답": "I don't know the name of the town he went to.",
+     "점수": "70점"
+    },
+    {
+     "답": "I don't know the name of the town to which he went.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I don't know the name of the village where he went.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '마을' 의 곧은 번역 village — 관계부사 where 지킴. 0점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I don't know the name of the town he went to.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 where 를 피함 — 70점이면 됨."
+    },
+    {
+     "답": "I don't know the name of the town to which he went.",
+     "점수": "70점",
+     "까닭": "관계부사 where 를 전치사 + which 로 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#10": {
+   "id": "grammar2/gh2-044#10",
+   "시험": [
+    {
+     "답": "Drop by my house if you happen to be in the neighborhood.",
+     "점수": "70점"
+    },
+    {
+     "답": "Drop by my house when you happen to be in this neighborhood.",
+     "점수": "70점"
+    },
+    {
+     "답": "Drop by our house when you happen to be in the neighborhood.",
+     "점수": "70점"
+    },
+    {
+     "답": "Stop by my house when you happen to be in the neighborhood.",
+     "점수": "0점"
+    },
+    {
+     "답": "Drop by my house when you happen to be in the neighbourhood.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Drop by my house if you happen to be in the neighborhood.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'-게 되면' 의 '-면' = if — if you happen to 는 가장 흔한 관용. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Drop by my house when you happen to be in this neighborhood.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '이 동네' 의 곧은 번역 this neighborhood. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Drop by our house when you happen to be in the neighborhood.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '우리 집' 의 곧은 번역 our house. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Stop by my house when you happen to be in the neighborhood.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '들르다' = stop by(drop by 만큼 흔함). 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Drop by my house when you happen to be in the neighbourhood.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "영국 철자 neighbourhood — 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#11": {
+   "id": "grammar2/gh2-044#11",
+   "시험": [
+    {
+     "답": "Put the book back where you found it.",
+     "점수": "만점"
+    },
+    {
+     "답": "Put that book back where you found it.",
+     "점수": "70점"
+    },
+    {
+     "답": "Put the book back in the place where you found it.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Put the book back in the place where you found it.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'발견한 곳에' 의 곧은 번역 in the place where — where 지킴 · 맞는 영어. 길이 한도로 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Put that book back where you found it.",
+     "점수": "70점",
+     "까닭": "'그 N' → that N 은 70점 그대로(소유자 결정)."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-044#12": {
+   "id": "grammar2/gh2-044#12",
+   "시험": [
+    {
+     "답": "He showed me how he succeeded.",
+     "점수": "70점"
+    },
+    {
+     "답": "He showed me the way he had succeeded.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He showed me how he succeeded.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "단순 과거도 맞는 영어 — 한국어 '성공한' 은 과거완료를 가르지 않음 · how 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He showed me the way he had succeeded.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 how 를 the way 로 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:23"
+  },
+  "grammar2/gh2-045#1": {
+   "id": "grammar2/gh2-045#1",
+   "시험": [
+    {
+     "답": "The exact time when the murder was committed was never discovered.",
+     "점수": "70점"
+    },
+    {
+     "답": "The exact time the murder had been committed was never discovered.",
+     "점수": "70점"
+    },
+    {
+     "답": "The exact time at which the murder had been committed was never discovered.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "The exact time when the murder was committed was never discovered.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "단순 과거가 곧은 번역(한국어 '저질러진' 은 과거완료를 가르지 않고, 영어도 과거완료 없이가 더 자연스러움) — 관계부사 when 지킴. 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The exact time the murder had been committed was never discovered.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 when 을 뺌 — 70점이면 됨."
+    },
+    {
+     "답": "The exact time at which the murder had been committed was never discovered.",
+     "점수": "70점",
+     "까닭": "관계부사 when 을 전치사 + which 로 — 가르칠 점. 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#2": {
+   "id": "grammar2/gh2-045#2",
+   "시험": [
+    {
+     "답": "I don't know why he cut class.",
+     "점수": "70점"
+    },
+    {
+     "답": "I don't know the reason why he skipped class.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I don't know why he cut class.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "cut class 는 관사 없는 관용(다른 정답 'skipped class' 와 같은 꼴) — why 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I don't know the reason why he skipped class.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 괄호 '(그가 수업을 빼먹은 이유를 모른다)' 의 곧은 번역 the reason why — why 지킴. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#3": {
+   "id": "grammar2/gh2-045#3",
+   "시험": [
+    {
+     "답": "I don't know where it happened.",
+     "점수": "0점"
+    },
+    {
+     "답": "I don't know where it occurred.",
+     "점수": "0점"
+    },
+    {
+     "답": "I don't know the place where it took place.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I don't know where it happened.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '일어나다' 의 가장 흔한 번역 happen — 의문사절 where 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I don't know where it occurred.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '일어나다' = occur. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I don't know the place where it took place.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 괄호 '(일어난 장소를)' 의 곧은 번역 the place where. 길이 한도로 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#4": {
+   "id": "grammar2/gh2-045#4",
+   "시험": [
+    {
+     "답": "This is the place where it happened.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is where it occurred.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is where it took place.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is the place where it happened.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'곳' 의 곧은 번역 the place — 관계부사 where 지킴 · 맞는 영어. 길이 한도로 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "This is where it occurred.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '발생하다' 의 곧은 번역 occur. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "This is where it took place.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '발생하다' = take place(같은 과 #3 모범 낱말). 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#5": {
+   "id": "grammar2/gh2-045#5",
+   "시험": [
+    {
+     "답": "I went to the beach where the scenery was very beautiful.",
+     "점수": "0점"
+    },
+    {
+     "답": "I went to the seaside where the view was very beautiful.",
+     "점수": "0점"
+    },
+    {
+     "답": "I went to the seaside where the scenery is very beautiful.",
+     "점수": "70점"
+    },
+    {
+     "답": "I went to the seaside whose scenery was very beautiful.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I went to the beach where the scenery was very beautiful.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '해변' 의 가장 흔한 번역 beach — 관계부사 where 지킴. 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "I went to the seaside where the view was very beautiful.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '경치' = view. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I went to the seaside where the scenery is very beautiful.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '아름다운' 은 현재 — 늘 그런 경치는 현재형도 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I went to the seaside whose scenery was very beautiful.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 where 를 whose 로 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#6": {
+   "id": "grammar2/gh2-045#6",
+   "시험": [
+    {
+     "답": "I went to New York, and there I saw Mr. Kim.",
+     "점수": "70점"
+    },
+    {
+     "답": "I went to New York, where I saw Mr Kim.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I went to New York, and there I saw Mr. Kim.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 계속적 용법 where 를 and there 로 풀어 씀 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#7": {
+   "id": "grammar2/gh2-045#7",
+   "시험": [
+    {
+     "답": "I went to New York last year, and then I saw Mr. Kim.",
+     "점수": "70점"
+    },
+    {
+     "답": "I went to New York last year, when I saw Mr Kim.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "I went to New York last year, and then I saw Mr. Kim.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 계속적 용법 when 을 and then 으로 풀어 씀 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#8": {
+   "id": "grammar2/gh2-045#8",
+   "시험": [
+    {
+     "답": "He showed me the way he could speak English well.",
+     "점수": "70점"
+    },
+    {
+     "답": "He showed me how he could speak English well.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "He showed me the way he could speak English well.",
+     "점수": "70점",
+     "까닭": "이 문항이 가르치는 관계부사 how 를 the way 로 피함 — 70점이면 됨."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#9": {
+   "id": "grammar2/gh2-045#9",
+   "시험": [
+    {
+     "답": "This is the reason why I cannot agree with you.",
+     "점수": "0점"
+    },
+    {
+     "답": "This is the reason I cannot agree with you.",
+     "점수": "70점"
+    },
+    {
+     "답": "This is why I can't agree with your opinion.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "This is the reason why I cannot agree with you.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "한국어 본문 '이유' 의 곧은 번역 the reason why — 관계부사 why 지킴 · 맞는 영어. 길이 한도로 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "This is the reason I cannot agree with you.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 본문 '이유' 의 곧은 번역 — 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "This is why I can't agree with your opinion.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 본문 '당신의 의견에' 의 곧은 번역 agree with your opinion. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#10": {
+   "id": "grammar2/gh2-045#10",
+   "시험": [
+    {
+     "답": "It was this house which John bought last year.",
+     "점수": "70점"
+    },
+    {
+     "답": "It was this house that John bought last year.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It was this house which John bought last year.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "강조 구문에서 사물을 강조할 때 which 도 맞는 꼴(학교 문법이 가르침 · 같은 과 #11 은 when 꼴을 다른 정답으로 받음). 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#11": {
+   "id": "grammar2/gh2-045#11",
+   "시험": [
+    {
+     "답": "It was last year that John bought this house.",
+     "점수": "만점"
+    },
+    {
+     "답": "It was last year when John bought this house.",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#12": {
+   "id": "grammar2/gh2-045#12",
+   "시험": [
+    {
+     "답": "It was John who bought this house.",
+     "점수": "70점"
+    },
+    {
+     "답": "The person who bought this house was John.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "It was John who bought this house.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "강조 구문에서 사람을 강조할 때 who — 가장 흔한 꼴 · 학교 문법이 가르침(같은 과 #11 은 when 꼴을 받음). 70점.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "The person who bought this house was John.",
+     "점수": "0점",
+     "까닭": "이 문항이 가르치는 강조 구문 It was … that 을 피함."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#13": {
+   "id": "grammar2/gh2-045#13",
+   "시험": [
+    {
+     "답": "I started from where she lives.",
+     "점수": "70점"
+    },
+    {
+     "답": "I departed from where she lived.",
+     "점수": "0점"
+    },
+    {
+     "답": "I set out from where she lived.",
+     "점수": "0점"
+    },
+    {
+     "답": "I started from the place where she lived.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I started from where she lives.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '사는' 은 현재 — 지금도 사는 곳이면 현재형도 맞는 영어. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I departed from where she lived.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '출발했다' 의 곧은 번역 depart. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I set out from where she lived.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "㉮ '출발하다' = set out. 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I started from the place where she lived.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'사는 곳' 의 곧은 번역 the place where — where 지킴. 길이 한도로 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#14": {
+   "id": "grammar2/gh2-045#14",
+   "시험": [
+    {
+     "답": "I took him to where she lived.",
+     "점수": "70점"
+    },
+    {
+     "답": "I took him to the place where she lived.",
+     "점수": "0점"
+    },
+    {
+     "답": "I took him where she lives.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "I took him to the place where she lived.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'사는 곳으로' 의 곧은 번역 to the place where — where 지킴. 길이 한도로 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "I took him where she lives.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '사는' 은 현재 — 현재형도 맞는 영어. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "I took him to where she lived.",
+     "점수": "70점",
+     "까닭": "기능어 to 하나 더 — 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 23:25"
+  },
+  "grammar2/gh2-045#15": {
+   "id": "grammar2/gh2-045#15",
+   "시험": [
+    {
+     "답": "He decided to give the flower to her whether she liked it or not.",
+     "점수": "70점"
+    },
+    {
+     "답": "He decided to give her the flower whether or not she liked it.",
+     "점수": "70점"
+    },
+    {
+     "답": "He decided to give her the flowers whether she liked it or not.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He decided to give the flower to her whether she liked it or not.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "give A to B(3형식)도 맞는 영어 — whether 꼴 지킴. 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "He decided to give her the flower whether or not she liked it.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "whether or not 차례 — 가장 흔한 꼴. 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "He decided to give her the flowers whether she liked it or not.",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "한국어 '그 꽃' 은 수를 가르지 않음 — 꽃다발은 흔히 flowers. 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 23:25"
+  }
+ }
+}

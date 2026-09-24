@@ -1,0 +1,3088 @@
+{
+ "파일": "11.md",
+ "문항": {
+  "grammar1/gh1-064#27": {
+   "id": "grammar1/gh1-064#27",
+   "시험": [
+    {
+     "답": "Don't your parents have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Don't your parents have dreams?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do your parents not have dreams?",
+     "점수": "70점"
+    },
+    {
+     "답": "Don't your parents have any dreams?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Do your parents not have dreams?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "다른 정답 두 꼴(복수 dreams · 줄이지 않은 Do … not)을 합친 맞는 부정 의문 — 이 문항엔 '(단수로)' 가 없어 복수도 받는데 조합이 없어 70점. 새 다른 정답 'Do your parents not have dreams?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Don't your parents have any dreams?",
+     "점수": "70점",
+     "까닭": "기능어 any 하나 더 — 소유자 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#28": {
+   "id": "grammar1/gh1-064#28",
+   "시험": [
+    {
+     "답": "Doesn't your son have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your son not have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your son not have dreams?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Does your son not have dreams?",
+     "점수": "70점",
+     "까닭": "문제의 '(단수로)' 지시(a dream)를 어긴 복수 — 막힘 아님. (참고: 같은 문항의 복수 다른 정답 'Doesn't your son have dreams?' 는 지금 만점 — 메모)"
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#29": {
+   "id": "grammar1/gh1-064#29",
+   "시험": [
+    {
+     "답": "Doesn't your father love your mother?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your father not love your mother?",
+     "점수": "만점"
+    },
+    {
+     "답": "Doesn't your dad love your mom?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Doesn't your dad love your mom?",
+     "점수": "0점",
+     "까닭": "한국어가 '아버지 · 어머니' 를 씀 — 곧은 번역 father · mother(만점), dad · mom 은 '아빠 · 엄마' 에 맞는 말(묶음 12 · 13 과 같은 판단)."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#30": {
+   "id": "grammar1/gh1-064#30",
+   "시험": [
+    {
+     "답": "Does your boss like it?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your boss like that?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your superior like it?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does your superior like it?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'상사' 의 사전 뜻 superior(boss 와 함께 사전 첫 뜻) — 맞는 영어 · 뜻 그대로 · do 의문문 꼴 지킴. superior 가 boss 와 다른 내용어로 잡혀 0점. 이 과정의 '상사' 문항(gh1-006 #37 · gh1-008 #37 · 이 강의 #30 · #36)이 모두 boss 만 받음. 새 다른 정답 'Does your superior like it?'(that 꼴 짝도)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#31": {
+   "id": "grammar1/gh1-064#31",
+   "시험": [
+    {
+     "답": "Didn't your mother like it?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did your mother not like it?",
+     "점수": "만점"
+    },
+    {
+     "답": "Didn't your mother like that?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#32": {
+   "id": "grammar1/gh1-064#32",
+   "시험": [
+    {
+     "답": "Did your wife like it?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did your wife like that?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#33": {
+   "id": "grammar1/gh1-064#33",
+   "시험": [
+    {
+     "답": "Does your husband have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Has your husband got a dream?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Has your husband got a dream?",
+     "점수": "0점",
+     "까닭": "영국식 have got 의문문 — 이 강의는 have 를 do 의문문으로 가르치고(#27~#38 모두 Do/Does … have) 학습자에게 드묾(묶음 12 와 같은 판단)."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#34": {
+   "id": "grammar1/gh1-064#34",
+   "시험": [
+    {
+     "답": "Do your friends have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do your friends have dreams?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Do your friends have dreams?",
+     "점수": "0점",
+     "까닭": "문제의 '(단수로)' 지시(a dream)를 어긴 복수."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#35": {
+   "id": "grammar1/gh1-064#35",
+   "시험": [
+    {
+     "답": "Doesn't your wife have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your wife not have a dream?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#36": {
+   "id": "grammar1/gh1-064#36",
+   "시험": [
+    {
+     "답": "Does your mother know your boss?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does your mother know your superior?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does your mom know your boss?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does your mother know your superior?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#30 과 같음 — '상사' → superior(사전 첫 뜻 · 맞는 영어 · 뜻 그대로)가 0점. 새 다른 정답 'Does your mother know your superior?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Does your mom know your boss?",
+     "점수": "0점",
+     "까닭": "#29 와 같음 — '어머니' 의 곧은 번역 mother(만점), mom 은 '엄마' 에 맞는 말."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#37": {
+   "id": "grammar1/gh1-064#37",
+   "시험": [
+    {
+     "답": "Do the students have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Do those students have a dream?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Do those students have a dream?",
+     "점수": "70점",
+     "까닭": "'그 N' → those N — 소유자 결정('그 N' 280곳 70점 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#38": {
+   "id": "grammar1/gh1-064#38",
+   "시험": [
+    {
+     "답": "Didn't your parents have a dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did your parents not have a dream?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#39": {
+   "id": "grammar1/gh1-064#39",
+   "시험": [
+    {
+     "답": "Why does he study English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why is he studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why's he studying English?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why's he studying English?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 다른 정답 'Why is he studying English?'(결정 4)의 표준 줄임꼴 — 채점기 줄임꼴 목록(src/lib/grammarGrading.ts CONTRACTIONS 의 's 앞 낱말 he · she · it · that · this · there · what · who · where · here · how · when)에 why 가 없어 풀지 못하고 0점(묶음 12 gh1-078 #2 · #4 · #5 와 같은 코드 빈틈 — 대체 답안보다 채점 코드 한 곳에서 풀림)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#40": {
+   "id": "grammar1/gh1-064#40",
+   "시험": [
+    {
+     "답": "Is this book expensive?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this book expensive",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#41": {
+   "id": "grammar1/gh1-064#41",
+   "시험": [
+    {
+     "답": "Are these your books?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these books yours?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are these books yours?",
+     "점수": "70점",
+     "까닭": "문장 짜임이 다름 — '이 책들은 당신의 것입니까' 의 번역(주어 these books · 소유대명사 yours). 한국어는 '이것들은 … 당신의 책들' 이라 곧은 번역 'Are these your books?' 가 만점. 70점."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#42": {
+   "id": "grammar1/gh1-064#42",
+   "시험": [
+    {
+     "답": "Why are they studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why do they study English?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Why do they study English?",
+     "점수": "0점",
+     "까닭": "한국어가 진행 '공부하고 있습니까' 를 밝힌 문제 — 현재형은 한국어 뜻 그대로가 아님(이 강의 #39 · #42 가 현재 · 진행을 갈라 물음)."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#43": {
+   "id": "grammar1/gh1-064#43",
+   "시험": [
+    {
+     "답": "Why was he studying English?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why did he study English?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Why did he study English?",
+     "점수": "0점",
+     "까닭": "한국어가 과거진행 '공부하고 있었습니까' 를 밝힌 문제 — 단순 과거는 뜻 그대로가 아님."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#44": {
+   "id": "grammar1/gh1-064#44",
+   "시험": [
+    {
+     "답": "Why is your mother happy?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why's your mother happy?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why is your mom happy?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why's your mother happy?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "모범의 표준 줄임꼴(why is → why's) — 채점기 줄임꼴 목록에 why 가 없어 0점(#39 와 같은 코드 빈틈 · 채점 코드 한 곳에서 풀림)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why is your mom happy?",
+     "점수": "0점",
+     "까닭": "#29 와 같음 — '어머니' 의 곧은 번역 mother(만점), mom 은 '엄마' 에 맞는 말."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#45": {
+   "id": "grammar1/gh1-064#45",
+   "시험": [
+    {
+     "답": "Why was your wife happy?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why was your wife happy",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#46": {
+   "id": "grammar1/gh1-064#46",
+   "시험": [
+    {
+     "답": "Why are you looking at her?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are you watching her?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why are you staring at her?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why are you watching her?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'보고 있다' 의 흔한 번역 watch(지켜보다) — 맞는 영어 · 뜻 그대로 · 진행형 꼴 지킴. 모범 look at 만 있어 0점(묶음 12 gh1-078 #3 · #4 와 같은 판단). 새 다른 정답 'Why are you watching her?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why are you staring at her?",
+     "점수": "0점",
+     "까닭": "stare 는 '빤히 보다' 로 뜻이 좁음(묶음 12 gh1-078 #3 과 같은 판단)."
+    }
+   ],
+   "때": "2026-09-24 22:50"
+  },
+  "grammar1/gh1-064#47": {
+   "id": "grammar1/gh1-064#47",
+   "시험": [
+    {
+     "답": "Why was she looking at me?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why was she watching me?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why was she watching me?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#46 과 같음 — 과거진행 꼴을 지킨 watch 가 0점. 새 다른 정답 'Why was she watching me?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#48": {
+   "id": "grammar1/gh1-064#48",
+   "시험": [
+    {
+     "답": "Why do you look at me?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are you looking at me?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are you watching me?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why do you watch me?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why are you watching me?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#46 과 같음 — 만점 다른 정답(진행형 'Why are you looking at me?')과 같은 꼴에 watch 를 쓴 맞는 영어가 0점. 새 다른 정답 'Why are you watching me?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Why do you watch me?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "모범과 같은 현재형에 watch — 맞는 영어 · 뜻 그대로(나를 지켜보는 까닭을 물음). look at 꼴만 있어 0점(묶음 12 gh1-078 #4 와 같음). 새 다른 정답 'Why do you watch me?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#49": {
+   "id": "grammar1/gh1-064#49",
+   "시험": [
+    {
+     "답": "Why is he running?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why's he running?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why's he running?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#44 와 같음 — 모범의 표준 줄임꼴 why's 가 채점기 줄임꼴 목록에 없어 0점(코드 한 곳)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#50": {
+   "id": "grammar1/gh1-064#50",
+   "시험": [
+    {
+     "답": "Are they your sister's books?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are those your sister's books?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are those books your sister's?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are those books your sister's?",
+     "점수": "70점",
+     "까닭": "#41 과 같음 — 짜임이 다름('그 책들은 당신의 누이의 것입니까' 의 번역). 곧은 번역 'Are they/those your sister's books?' 는 만점. 70점."
+    }
+   ],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#51": {
+   "id": "grammar1/gh1-064#51",
+   "시험": [
+    {
+     "답": "Are these books expensive?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these books expensive",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#52": {
+   "id": "grammar1/gh1-064#52",
+   "시험": [
+    {
+     "답": "Isn't this car expensive?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this car not expensive?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-064#53": {
+   "id": "grammar1/gh1-064#53",
+   "시험": [
+    {
+     "답": "Who studies English hard?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who is studying English hard?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who's studying English hard?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who studies English diligently?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Who studies English diligently?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'열심히' 의 사전 뜻 diligently — 맞는 영어 · 뜻 그대로 · 의문사 who 꼴 지킴. hard 만 있어 0점(묶음 18 gh2-007 #12 와 같은 판단). 새 다른 정답 'Who studies English diligently?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:44"
+  },
+  "grammar1/gh1-066#54": {
+   "id": "grammar1/gh1-066#54",
+   "시험": [
+    {
+     "답": "You studied English, didn't you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You studied English, did you not?",
+     "점수": "70점"
+    },
+    {
+     "답": "You studied English didn't you",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You studied English, did you not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "줄이지 않은 꼬리 did you not — 과정이 3단계 부가의문문(gh1-039 #7 · #8 · #19 · #20 이 'are they not' 꼴을 만점 다른 정답으로 받음)에서 가르친 맞는 꼴. 꼬리가 틀린 답(소유자 결정 70점)이 아님(묶음 12 와 그 확인이 동의한 판단). 70점. 새 다른 정답 'You studied English, did you not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#55": {
+   "id": "grammar1/gh1-066#55",
+   "시험": [
+    {
+     "답": "He studies English, doesn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He studies English, does he not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He studies English, does he not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 does he not(과정이 gh1-039 에서 가르치고 받는 꼴)이 70점. 새 다른 정답 'He studies English, does he not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#56": {
+   "id": "grammar1/gh1-066#56",
+   "시험": [
+    {
+     "답": "Does he give money to each of his sons?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he give each of his sons money?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does he give money to each one of his sons?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does he give money to every one of his sons?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does he give money to each and every one of his sons?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does he give each one of his sons money?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does he give money to all of his sons?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does he give money to each son?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does he give each of his sons money?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "간접목적어를 앞에 둔 꼴(4형식) — 한국어 차례(아들 한 사람 한 사람에게 돈을)와도 같은 맞는 영어 · 같은 뜻, each of his sons 도 지킴. 차례만 달라 70점(묶음 10 gh1-058 #32 · #33 과 같은 막힘). 새 다른 정답 'Does he give each of his sons money?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Does he give money to each one of his sons?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'한 사람 한 사람' → each one of(each of 와 같은 뜻의 흔한 꼴) — one 이 기능어 목록 밖이라 결정 2 가 아닌데 70점(묶음 10 gh1-058 #32 와 같음). 새 다른 정답 'Does he give money to each one of his sons?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does he give money to every one of his sons?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'한 사람 한 사람 모두' → every one of(하나하나 모두) — 맞는 영어 · 뜻 그대로, 이 문항엔 괄호 낱말이 없음. 70점. 새 다른 정답 'Does he give money to every one of his sons?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does he give money to each and every one of his sons?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'한 사람 한 사람 모두' 의 가장 곧은 영어 each and every one — 맞는 영어 · 뜻 그대로인데 길이 한도(1.15)에 걸려 0점. 새 다른 정답 'Does he give money to each and every one of his sons?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does he give each one of his sons money?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위 두 막힘(4형식 · each one of)을 합친 맞는 꼴 — 0점. 새 다른 정답 'Does he give each one of his sons money?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Does he give money to all of his sons?",
+     "점수": "70점",
+     "까닭": "'한 사람 한 사람' 을 뺀 all — 이 강의가 each · every · all 을 갈라 가르치는 과(#70~#78 괄호)라 다른 꼴. 70점."
+    },
+    {
+     "답": "Does he give money to each son?",
+     "점수": "0점",
+     "까닭": "한국어의 '그의(아들)' 를 뺌 — each of his sons 의 뜻 그대로가 아님. 0점."
+    }
+   ],
+   "때": "2026-09-24 22:50"
+  },
+  "grammar1/gh1-066#57": {
+   "id": "grammar1/gh1-066#57",
+   "시험": [
+    {
+     "답": "Does each student have his own room?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does each student have their own room?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does each student have his or her own room?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does each student have his/her own room?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does each student have a room of their own?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does each student have a room of his own?",
+     "점수": "0점"
+    },
+    {
+     "답": "Does every student have their own room?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does each student have his/her own room?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "his or her 를 빗금으로 쓴 his/her(한국 교재 · 서식에 흔한 표기) — 채점이 빗금을 떼지 않아 'his/her' 를 모르는 한 낱말로 봐 0점(his · their · his or her 는 만점). 묶음 10 gh1-058 #29 · #30 · 묶음 14 와 같은 판단. 새 다른 정답 'Does each student have his/her own room?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does each student have a room of their own?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'자기 자신의 방' → a room of one's own(학교 문법의 of one's own 꼴) — 맞는 영어 · 뜻 그대로 · 괄호 each 도 지킴. 만점 다른 정답 their own room 과 짜임만 달라 길이 한도로 0점. 새 다른 정답 'Does each student have a room of their own?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Does each student have a room of his own?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "위와 같음 — 모범의 his 꼴로 쓴 a room of his own 이 0점. 새 다른 정답 'Does each student have a room of his own?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Does every student have their own room?",
+     "점수": "70점",
+     "까닭": "괄호 (each) 를 따르지 않은 every(묶음 03 과 같은 판단). 70점."
+    }
+   ],
+   "때": "2026-09-24 22:50"
+  },
+  "grammar1/gh1-066#58": {
+   "id": "grammar1/gh1-066#58",
+   "시험": [
+    {
+     "답": "He goes there every year, doesn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He goes there every year, does he not?",
+     "점수": "70점"
+    },
+    {
+     "답": "He goes there each year, doesn't he?",
+     "점수": "70점"
+    },
+    {
+     "답": "Every year he goes there, doesn't he?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He goes there every year, does he not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 does he not 이 70점. 새 다른 정답 'He goes there every year, does he not?'",
+     "확신": "보통"
+    },
+    {
+     "답": "He goes there each year, doesn't he?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'매년' → each year — 흔한 맞는 번역 · 뜻 그대로(묶음 10 each day 와 같은 판단). every 만 있어 70점. 새 다른 정답 'He goes there each year, doesn't he?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Every year he goes there, doesn't he?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "때 부사구를 앞에 둔 흔한 차례(한국어 차례와도 가까움) — 맞는 영어 · 뜻 그대로 · 꼬리 지킴. 차례만 달라 70점(묶음 03 '때 부사구 앞으로' 와 같음). 새 다른 정답 'Every year he goes there, doesn't he?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#59": {
+   "id": "grammar1/gh1-066#59",
+   "시험": [
+    {
+     "답": "Which car does he need?",
+     "점수": "만점"
+    },
+    {
+     "답": "What car does he need?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "What car does he need?",
+     "점수": "70점",
+     "까닭": "'어느' = which(고르는 물음) — 이 강의가 가르치는 의문사를 what 으로 바꿔 '무슨 차' 로 뜻이 넓어짐. 70점."
+    }
+   ],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#60": {
+   "id": "grammar1/gh1-066#60",
+   "시험": [
+    {
+     "답": "Who needs the house?",
+     "점수": "만점"
+    },
+    {
+     "답": "Who needs that house?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Who needs that house?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N — 소유자 결정('그 N' 70점 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#61": {
+   "id": "grammar1/gh1-066#61",
+   "시험": [
+    {
+     "답": "Why is the American sitting there?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why's the American sitting there?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why is that American sitting there?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why's the American sitting there?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "모범의 표준 줄임꼴(why is → why's) — 채점기 줄임꼴 목록(CONTRACTIONS 의 's 앞 낱말)에 why 가 없어 0점(gh1-064 #39 · #44 · #49 와 같은 코드 빈틈 · 채점 코드 한 곳에서 풀림)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why is that American sitting there?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N — 소유자 결정('그 N' 70점 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#62": {
+   "id": "grammar1/gh1-066#62",
+   "시험": [
+    {
+     "답": "Why was the British woman sitting there?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why was the English woman sitting there?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why was the British lady sitting there?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why was that British woman sitting there?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why was the British lady sitting there?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'여인' → lady(여성을 점잖게 부르는 흔한 말) — 맞는 영어 · 뜻 그대로 · 과거진행 꼴 지킴. woman 만 있어 0점. 새 다른 정답 'Why was the British lady sitting there?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why was that British woman sitting there?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N — 소유자 결정('그 N' 70점 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#63": {
+   "id": "grammar1/gh1-066#63",
+   "시험": [
+    {
+     "답": "She is happy, isn't she?",
+     "점수": "만점"
+    },
+    {
+     "답": "She's happy, isn't she?",
+     "점수": "만점"
+    },
+    {
+     "답": "She is happy, is she not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She is happy, is she not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 is she not 이 70점. 새 다른 정답 'She is happy, is she not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#64": {
+   "id": "grammar1/gh1-066#64",
+   "시험": [
+    {
+     "답": "He is not poor, is he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He isn't poor, is he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He's not poor, is he?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#65": {
+   "id": "grammar1/gh1-066#65",
+   "시험": [
+    {
+     "답": "She was poor, wasn't she?",
+     "점수": "만점"
+    },
+    {
+     "답": "She was poor, was she not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She was poor, was she not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 was she not 이 70점. 새 다른 정답 'She was poor, was she not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#66": {
+   "id": "grammar1/gh1-066#66",
+   "시험": [
+    {
+     "답": "Everybody likes the house, don't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Everybody likes the house, do they not?",
+     "점수": "70점"
+    },
+    {
+     "답": "Everyone likes the house, don't they?",
+     "점수": "70점"
+    },
+    {
+     "답": "Everybody likes that house, don't they?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Everybody likes the house, do they not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 do they not 이 70점. 새 다른 정답 'Everybody likes the house, do they not?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Everyone likes the house, don't they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "괄호의 Everybody 와 everyone 은 같은 뜻의 한 낱말(-body/-one) — 가르치는 every- 대명사 · 꼬리 they 꼴 지킴(묶음 03 gh1-014 와 그 확인이 동의한 판단). 70점. 새 다른 정답 'Everyone likes the house, don't they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Everybody likes that house, don't they?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N — 소유자 결정('그 N' 70점 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#67": {
+   "id": "grammar1/gh1-066#67",
+   "시험": [
+    {
+     "답": "Everybody liked the house, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Everybody liked the house, did they not?",
+     "점수": "70점"
+    },
+    {
+     "답": "Everyone liked the house, didn't they?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Everybody liked the house, did they not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 did they not 이 70점. 새 다른 정답 'Everybody liked the house, did they not?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Everyone liked the house, didn't they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#66 과 같음 — 괄호 Everybody 와 같은 낱말 everyone 이 70점. 새 다른 정답 'Everyone liked the house, didn't they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#68": {
+   "id": "grammar1/gh1-066#68",
+   "시험": [
+    {
+     "답": "Nobody likes it, do they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No one likes it, do they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No-one likes it, do they?",
+     "점수": "0점"
+    },
+    {
+     "답": "No one likes that, do they?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No-one likes it, do they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "no-one 은 no one 의 영국 표기(학습 사전 'no one (also no-one)') — 채점이 하이픈을 낱말 안에 남겨 한 낱말로 잡고 nobody 와 짝이 안 되어 부정이 빠진 것으로 봐 0점(묶음 03 gh1-014 #27 과 그 확인이 동의한 판단 · 채점 코드 한 곳에서도 풀림). 새 다른 정답 'No-one likes it, do they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#69": {
+   "id": "grammar1/gh1-066#69",
+   "시험": [
+    {
+     "답": "Nobody liked it, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No one liked it, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No-one liked it, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No-one liked it, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#68 과 같음 — 영국 표기 no-one 이 0점. 새 다른 정답 'No-one liked it, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#70": {
+   "id": "grammar1/gh1-066#70",
+   "시험": [
+    {
+     "답": "Every boy receives a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "Every boy gets a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every boy wins a prize.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Every boy gets a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'(상을) 받다' 의 가장 흔한 번역 get — 맞는 영어 · 뜻 그대로 · 괄호 Every · a prize 도 지킴. receive 만 있어 get 이 다른 내용어로 잡혀 0점. 새 다른 정답 'Every boy gets a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "Every boy wins a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'상을 받다' → win a prize(사전 풀이에 나오는 흔한 짝) — 맞는 영어 · 괄호 지킴. 0점(묶음 03 gh1-016 과 같은 판단). 새 다른 정답 'Every boy wins a prize.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#71": {
+   "id": "grammar1/gh1-066#71",
+   "시험": [
+    {
+     "답": "All the boys receive a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "All of the boys receive a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "All the boys get a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "All of the boys get a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "All the boys win a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "All of the boys win a prize.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "All the boys get a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#70 과 같음 — '받다' → get 이 0점. 새 다른 정답 'All the boys get a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "All of the boys get a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 다른 정답 all of the 꼴 + get — 0점. 새 다른 정답 'All of the boys get a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "All the boys win a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#70 과 같음 — win a prize 가 0점. 새 다른 정답 'All the boys win a prize.'",
+     "확신": "보통"
+    },
+    {
+     "답": "All of the boys win a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "all of the 꼴 + win — 0점. 새 다른 정답 'All of the boys win a prize.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#72": {
+   "id": "grammar1/gh1-066#72",
+   "시험": [
+    {
+     "답": "Each boy receives a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "Each boy gets a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "Each boy wins a prize.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Each boy gets a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#70 과 같음 — '받다' → get 이 0점. 새 다른 정답 'Each boy gets a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "Each boy wins a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#70 과 같음 — win a prize 가 0점. 새 다른 정답 'Each boy wins a prize.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#73": {
+   "id": "grammar1/gh1-066#73",
+   "시험": [
+    {
+     "답": "Every boy received a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "Every boy got a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every boy won a prize.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Every boy got a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#70 과 같음(과거) — '받았다' → got 이 0점. 새 다른 정답 'Every boy got a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "Every boy won a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#70 과 같음(과거) — won a prize 가 0점. 새 다른 정답 'Every boy won a prize.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#74": {
+   "id": "grammar1/gh1-066#74",
+   "시험": [
+    {
+     "답": "All the boys received a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "All of the boys received a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "All the boys got a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "All of the boys got a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "All the boys won a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "All of the boys won a prize.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "All the boys got a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#73 과 같음 — got 이 0점. 새 다른 정답 'All the boys got a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "All of the boys got a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 다른 정답 all of the 꼴 + got — 0점. 새 다른 정답 'All of the boys got a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "All the boys won a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#73 과 같음 — won 이 0점. 새 다른 정답 'All the boys won a prize.'",
+     "확신": "보통"
+    },
+    {
+     "답": "All of the boys won a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "all of the 꼴 + won — 0점. 새 다른 정답 'All of the boys won a prize.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#75": {
+   "id": "grammar1/gh1-066#75",
+   "시험": [
+    {
+     "답": "Each boy received a prize.",
+     "점수": "만점"
+    },
+    {
+     "답": "Each boy got a prize.",
+     "점수": "0점"
+    },
+    {
+     "답": "Each boy won a prize.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Each boy got a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#73 과 같음 — got 이 0점. 새 다른 정답 'Each boy got a prize.'",
+     "확신": "높음"
+    },
+    {
+     "답": "Each boy won a prize.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#73 과 같음 — won 이 0점. 새 다른 정답 'Each boy won a prize.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#76": {
+   "id": "grammar1/gh1-066#76",
+   "시험": [
+    {
+     "답": "Every boy received a prize, didn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "Every boy received a prize, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Every boy got a prize, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Every boy got a prize, didn't he?",
+     "점수": "0점"
+    },
+    {
+     "답": "Every boy won a prize, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Every boy received a prize, did they not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Every boy got a prize, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#73 과 같음 — 부가의문문 꼴(만점 꼬리 didn't they)을 지킨 got 이 0점. 새 다른 정답 'Every boy got a prize, didn't they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Every boy got a prize, didn't he?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 모범 꼬리 didn't he + got — 0점. 새 다른 정답 'Every boy got a prize, didn't he?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Every boy won a prize, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#73 과 같음 — won 이 0점. 새 다른 정답 'Every boy won a prize, didn't they?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Every boy received a prize, did they not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 did they not 이 70점. 새 다른 정답 'Every boy received a prize, did they not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#77": {
+   "id": "grammar1/gh1-066#77",
+   "시험": [
+    {
+     "답": "Each boy received a prize, didn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "Each boy received a prize, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Each boy got a prize, didn't he?",
+     "점수": "0점"
+    },
+    {
+     "답": "Each boy got a prize, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Each boy won a prize, didn't he?",
+     "점수": "0점"
+    },
+    {
+     "답": "Each boy received a prize, did he not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Each boy got a prize, didn't he?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#76 과 같음 — 꼬리를 지킨 got 이 0점. 새 다른 정답 'Each boy got a prize, didn't he?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Each boy got a prize, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 다른 꼬리 didn't they + got — 0점. 새 다른 정답 'Each boy got a prize, didn't they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Each boy won a prize, didn't he?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#76 과 같음 — won 이 0점. 새 다른 정답 'Each boy won a prize, didn't he?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Each boy received a prize, did he not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 did he not 이 70점. 새 다른 정답 'Each boy received a prize, did he not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-066#78": {
+   "id": "grammar1/gh1-066#78",
+   "시험": [
+    {
+     "답": "All the boys received a prize, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "All of the boys received a prize, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "All the boys got a prize, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "All of the boys got a prize, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "All the boys won a prize, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "All the boys received a prize, did they not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "All the boys got a prize, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#76 과 같음 — 꼬리를 지킨 got 이 0점. 새 다른 정답 'All the boys got a prize, didn't they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "All of the boys got a prize, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 다른 정답 all of the 꼴 + got — 0점. 새 다른 정답 'All of the boys got a prize, didn't they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "All the boys won a prize, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#76 과 같음 — won 이 0점. 새 다른 정답 'All the boys won a prize, didn't they?'",
+     "확신": "보통"
+    },
+    {
+     "답": "All the boys received a prize, did they not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#54 와 같음 — 줄이지 않은 꼬리 did they not 이 70점. 새 다른 정답 'All the boys received a prize, did they not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:46"
+  },
+  "grammar1/gh1-068#79": {
+   "id": "grammar1/gh1-068#79",
+   "시험": [
+    {
+     "답": "Not every boy received a prize, did he?",
+     "점수": "만점"
+    },
+    {
+     "답": "Not every boy received a prize, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Every boy didn't receive a prize, did they?",
+     "점수": "70점"
+    },
+    {
+     "답": "Not every boy got a prize, did they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Not every boy got a prize, did he?",
+     "점수": "0점"
+    },
+    {
+     "답": "Not every boy won a prize, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Every boy didn't receive a prize, did they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "결정 5 가 만점으로 둔 'Every boy didn't receive a prize, did he?' 에 이 문항이 만점으로 받는 꼬리 did they 를 붙인 조합 — 꼬리가 틀린 답(소유자 70점)이 아니라 맞는 꼬리인데 70점. 새 다른 정답 'Every boy didn't receive a prize, did they?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Not every boy got a prize, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "gh1-066 #70~#78 과 같음 — '받다' → get 의 과거 got(가장 흔한 번역) · 가르치는 Not every … 부분 부정과 꼬리 지킴. receive 만 있어 0점. 새 다른 정답 'Not every boy got a prize, did they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Not every boy got a prize, did he?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "모범 꼬리 did he + got — 0점. 새 다른 정답 'Not every boy got a prize, did he?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Not every boy won a prize, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'상을 받다' → win a prize(gh1-066 #70 과 같은 판단) — 0점. 새 다른 정답 'Not every boy won a prize, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#80": {
+   "id": "grammar1/gh1-068#80",
+   "시험": [
+    {
+     "답": "Not everybody received a prize, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Everybody didn't receive a prize, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Not everyone received a prize, did they?",
+     "점수": "70점"
+    },
+    {
+     "답": "Not everybody got a prize, did they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Not everybody won a prize, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Not everyone received a prize, did they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "괄호의 everybody 와 everyone 은 같은 뜻의 한 낱말(gh1-066 #66 과 같은 판단) — 부분 부정 · 꼬리 지킴. 70점. 새 다른 정답 'Not everyone received a prize, did they?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Not everybody got a prize, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#79 와 같음 — '받았다' → got 이 0점. 새 다른 정답 'Not everybody got a prize, did they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Not everybody won a prize, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#79 와 같음 — won a prize 가 0점. 새 다른 정답 'Not everybody won a prize, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#81": {
+   "id": "grammar1/gh1-068#81",
+   "시험": [
+    {
+     "답": "Not all the boys received a prize, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "Not all of the boys received a prize, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "All of the boys didn't receive a prize, did they?",
+     "점수": "70점"
+    },
+    {
+     "답": "Not all the boys got a prize, did they?",
+     "점수": "70점"
+    },
+    {
+     "답": "Not all of the boys got a prize, did they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Not all the boys won a prize, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Not all the boys got a prize, did they?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "#79 와 같음 — '받았다' → got. 0점이 아니라 70점인 것은 채점기가 결정 5 꼴('All the boys didn't receive…')과 견줄 때 got 을 not 의 한 글자 틀린 철자로 짝지은 우연. 새 다른 정답 'Not all the boys got a prize, did they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Not all of the boys got a prize, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "만점 다른 정답 all of the 꼴 + got — 0점. 새 다른 정답 'Not all of the boys got a prize, did they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Not all the boys won a prize, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#79 와 같음 — won a prize 가 0점. 새 다른 정답 'Not all the boys won a prize, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "All of the boys didn't receive a prize, did they?",
+     "점수": "70점",
+     "까닭": "결정 5 꼴 'All the boys didn't receive a prize, did they?' 에 기능어 of 하나 더 — 소유자 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#82": {
+   "id": "grammar1/gh1-068#82",
+   "시험": [
+    {
+     "답": "Not all of them come.",
+     "점수": "만점"
+    },
+    {
+     "답": "All of them don't come.",
+     "점수": "만점"
+    },
+    {
+     "답": "They don't all come.",
+     "점수": "0점"
+    },
+    {
+     "답": "Not every one of them comes.",
+     "점수": "0점"
+    },
+    {
+     "답": "Not all of them are coming.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "They don't all come.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "all 을 뒤로 띄운 부분 부정의 흔한 꼴(= 그들 모두가 오지는 않는다) — 맞는 영어 · 뜻 그대로인데 차례가 달라 0점(묶음 03 gh1-016 #7 · 묶음 10 gh1-060 #31 과 같은 막힘). 새 다른 정답 'They don't all come.'",
+     "확신": "보통"
+    },
+    {
+     "답": "Not every one of them comes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "Not every one of them — 같은 부분 부정의 맞는 꼴(묶음 03 gh1-016 #7 과 같음). 0점. 새 다른 정답 'Not every one of them comes.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Not all of them are coming.",
+     "점수": "0점",
+     "까닭": "한국어에 표시 없는 진행형 — 소유자 결정 4(진행형은 12문항만, 이 문항은 목록 밖)."
+    }
+   ],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#83": {
+   "id": "grammar1/gh1-068#83",
+   "시험": [
+    {
+     "답": "Not all of them came.",
+     "점수": "만점"
+    },
+    {
+     "답": "All of them didn't come.",
+     "점수": "만점"
+    },
+    {
+     "답": "They didn't all come.",
+     "점수": "0점"
+    },
+    {
+     "답": "Not every one of them came.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "They didn't all come.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#82 와 같음(과거) — all 을 뒤로 띄운 부분 부정이 0점(묶음 03 gh1-016 #7 과 같은 문장). 새 다른 정답 'They didn't all come.'",
+     "확신": "보통"
+    },
+    {
+     "답": "Not every one of them came.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#82 와 같음(과거) — 0점. 새 다른 정답 'Not every one of them came.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#84": {
+   "id": "grammar1/gh1-068#84",
+   "시험": [
+    {
+     "답": "Nobody came.",
+     "점수": "만점"
+    },
+    {
+     "답": "None of them came.",
+     "점수": "만점"
+    },
+    {
+     "답": "No one came.",
+     "점수": "만점"
+    },
+    {
+     "답": "No-one came.",
+     "점수": "0점"
+    },
+    {
+     "답": "Not one of them came.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No-one came.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "gh1-066 #68 과 같음 — 영국 표기 no-one(학습 사전 'no one (also no-one)')이 하이픈 때문에 한 낱말로 잡혀 0점. 새 다른 정답 'No-one came.'",
+     "확신": "보통"
+    },
+    {
+     "답": "Not one of them came.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'그들 중 아무도' → not one of them(같은 뜻의 맞는 영어) — none 과 다른 낱말로 잡혀 0점(묶음 03 gh1-016 #8 과 같은 막힘). 새 다른 정답 'Not one of them came.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#85": {
+   "id": "grammar1/gh1-068#85",
+   "시험": [
+    {
+     "답": "Nobody comes.",
+     "점수": "만점"
+    },
+    {
+     "답": "None of them come.",
+     "점수": "만점"
+    },
+    {
+     "답": "No one comes.",
+     "점수": "만점"
+    },
+    {
+     "답": "No-one comes.",
+     "점수": "0점"
+    },
+    {
+     "답": "Not one of them comes.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No-one comes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#84 와 같음 — no-one 이 0점. 새 다른 정답 'No-one comes.'",
+     "확신": "보통"
+    },
+    {
+     "답": "Not one of them comes.",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#84 와 같음 — '그들 중의 아무도' → not one of them 이 0점. 새 다른 정답 'Not one of them comes.'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#86": {
+   "id": "grammar1/gh1-068#86",
+   "시험": [
+    {
+     "답": "Nobody comes, do they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No one comes, do they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No-one comes, do they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No-one comes, do they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#84 와 같음 — no-one 이 0점. 새 다른 정답 'No-one comes, do they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#87": {
+   "id": "grammar1/gh1-068#87",
+   "시험": [
+    {
+     "답": "Nobody came, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No one came, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "No-one came, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "No-one came, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#84 와 같음 — no-one 이 0점. 새 다른 정답 'No-one came, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#88": {
+   "id": "grammar1/gh1-068#88",
+   "시험": [
+    {
+     "답": "Were there 60 girls in the classroom?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were there sixty girls in the classroom?",
+     "점수": "만점"
+    },
+    {
+     "답": "Were there 60 girls in that classroom?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Were there 60 girls in that classroom?",
+     "점수": "70점",
+     "까닭": "'그 N' → that N — 소유자 결정('그 N' 70점 그대로)."
+    }
+   ],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#89": {
+   "id": "grammar1/gh1-068#89",
+   "시험": [
+    {
+     "답": "There were 60 girls in the classroom, weren't there?",
+     "점수": "만점"
+    },
+    {
+     "답": "There were sixty girls in the classroom, weren't there?",
+     "점수": "만점"
+    },
+    {
+     "답": "There were 60 girls in the classroom, were there not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "There were 60 girls in the classroom, were there not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "gh1-066 #54 와 같음 — 줄이지 않은 꼬리 were there not(과정이 gh1-039 에서 가르치고 받는 꼴)이 70점. 새 다른 정답 'There were 60 girls in the classroom, were there not?'(sixty 꼴 짝도)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#90": {
+   "id": "grammar1/gh1-068#90",
+   "시험": [
+    {
+     "답": "There weren't 60 girls in the classroom, were there?",
+     "점수": "만점"
+    },
+    {
+     "답": "There were not sixty girls in the classroom, were there?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#91": {
+   "id": "grammar1/gh1-068#91",
+   "시험": [
+    {
+     "답": "Did many girls go there?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did a lot of girls go there?",
+     "점수": "0점"
+    },
+    {
+     "답": "Did lots of girls go there?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Did a lot of girls go there?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'많은' → a lot of(many 와 함께 가장 흔한 번역) — 맞는 영어 · 뜻 그대로 · did 의문문 지킴. 길이 한도에 걸려 0점. 새 다른 정답 'Did a lot of girls go there?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Did lots of girls go there?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'많은' → lots of(구어에서 흔함) — 맞는 영어 · 뜻 그대로인데 0점. 새 다른 정답 'Did lots of girls go there?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#92": {
+   "id": "grammar1/gh1-068#92",
+   "시험": [
+    {
+     "답": "Didn't many girls go there?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did many girls not go there?",
+     "점수": "만점"
+    },
+    {
+     "답": "Didn't a lot of girls go there?",
+     "점수": "0점"
+    },
+    {
+     "답": "Didn't lots of girls go there?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Didn't a lot of girls go there?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#91 과 같음 — 부정 의문을 지킨 a lot of 가 0점. 새 다른 정답 'Didn't a lot of girls go there?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Didn't lots of girls go there?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#91 과 같음 — lots of 가 0점. 새 다른 정답 'Didn't lots of girls go there?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#93": {
+   "id": "grammar1/gh1-068#93",
+   "시험": [
+    {
+     "답": "Many girls went there, didn't they?",
+     "점수": "만점"
+    },
+    {
+     "답": "A lot of girls went there, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Lots of girls went there, didn't they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Many girls went there, did they not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "A lot of girls went there, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#91 과 같음 — 부가의문문 꼴을 지킨 a lot of 가 0점. 새 다른 정답 'A lot of girls went there, didn't they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Lots of girls went there, didn't they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#91 과 같음 — lots of 가 0점. 새 다른 정답 'Lots of girls went there, didn't they?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Many girls went there, did they not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "gh1-066 #54 와 같음 — 줄이지 않은 꼬리 did they not 이 70점. 새 다른 정답 'Many girls went there, did they not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#94": {
+   "id": "grammar1/gh1-068#94",
+   "시험": [
+    {
+     "답": "Many girls didn't go there, did they?",
+     "점수": "만점"
+    },
+    {
+     "답": "A lot of girls didn't go there, did they?",
+     "점수": "0점"
+    },
+    {
+     "답": "Lots of girls didn't go there, did they?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "A lot of girls didn't go there, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#91 과 같음 — a lot of 가 0점. 새 다른 정답 'A lot of girls didn't go there, did they?'",
+     "확신": "높음"
+    },
+    {
+     "답": "Lots of girls didn't go there, did they?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#91 과 같음 — lots of 가 0점. 새 다른 정답 'Lots of girls didn't go there, did they?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#95": {
+   "id": "grammar1/gh1-068#95",
+   "시험": [
+    {
+     "답": "You paid for lunch, didn't you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You paid for lunch, did you not?",
+     "점수": "70점"
+    },
+    {
+     "답": "You paid for the lunch, didn't you?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You paid for lunch, did you not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "gh1-066 #54 와 같음 — 줄이지 않은 꼬리 did you not 이 70점. 새 다른 정답 'You paid for lunch, did you not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You paid for the lunch, didn't you?",
+     "점수": "70점",
+     "까닭": "기능어 the 하나 더 — 소유자 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#96": {
+   "id": "grammar1/gh1-068#96",
+   "시험": [
+    {
+     "답": "You didn't pay for lunch, did you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You did not pay for lunch, did you?",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#97": {
+   "id": "grammar1/gh1-068#97",
+   "시험": [
+    {
+     "답": "He pays for dinner, doesn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He pays for dinner, does he not?",
+     "점수": "70점"
+    },
+    {
+     "답": "He pays for supper, doesn't he?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He pays for dinner, does he not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "gh1-066 #54 와 같음 — 줄이지 않은 꼬리 does he not 이 70점. 새 다른 정답 'He pays for dinner, does he not?'",
+     "확신": "보통"
+    },
+    {
+     "답": "He pays for supper, doesn't he?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'저녁 (식사)' 의 사전 뜻 supper — 맞는 영어 · 뜻 그대로 · 꼬리 지킴. dinner 만 있어 0점(묶음 10 gh1-058 #15 · gh1-060 #19 와 같은 판단). 새 다른 정답 'He pays for supper, doesn't he?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#98": {
+   "id": "grammar1/gh1-068#98",
+   "시험": [
+    {
+     "답": "He doesn't pay for dinner, does he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He does not pay for dinner, does he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He doesn't pay for supper, does he?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He doesn't pay for supper, does he?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#97 과 같음 — '저녁' → supper 가 0점. 새 다른 정답 'He doesn't pay for supper, does he?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#99": {
+   "id": "grammar1/gh1-068#99",
+   "시험": [
+    {
+     "답": "Does he pay for dinner?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he pay for supper?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does he pay for supper?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#97 과 같음 — '저녁' → supper 가 0점. 새 다른 정답 'Does he pay for supper?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#100": {
+   "id": "grammar1/gh1-068#100",
+   "시험": [
+    {
+     "답": "Doesn't he pay for dinner?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does he not pay for dinner?",
+     "점수": "만점"
+    },
+    {
+     "답": "Doesn't he pay for supper?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Doesn't he pay for supper?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#97 과 같음 — 부정 의문을 지킨 supper 가 0점. 새 다른 정답 'Doesn't he pay for supper?'(Does he not … 짝도)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#101": {
+   "id": "grammar1/gh1-068#101",
+   "시험": [
+    {
+     "답": "Didn't he pay for dinner?",
+     "점수": "만점"
+    },
+    {
+     "답": "Did he not pay for dinner?",
+     "점수": "만점"
+    },
+    {
+     "답": "Didn't he pay for supper?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Didn't he pay for supper?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#97 과 같음 — supper 가 0점. 새 다른 정답 'Didn't he pay for supper?'(Did he not … 짝도)",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#102": {
+   "id": "grammar1/gh1-068#102",
+   "시험": [
+    {
+     "답": "How fast does he run?",
+     "점수": "만점"
+    },
+    {
+     "답": "How quickly does he run?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How quickly does he run?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'빨리' 의 사전 뜻 quickly — 맞는 영어 · 뜻 그대로 · 의문사 how 꼴 지킴(달리기 속도엔 fast 가 더 흔한 짝이라 확신 보통). fast 만 있어 0점. 새 다른 정답 'How quickly does he run?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#103": {
+   "id": "grammar1/gh1-068#103",
+   "시험": [
+    {
+     "답": "How fast did he run?",
+     "점수": "만점"
+    },
+    {
+     "답": "How quickly did he run?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How quickly did he run?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "#102 와 같음(과거) — quickly 가 0점. 새 다른 정답 'How quickly did he run?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#104": {
+   "id": "grammar1/gh1-068#104",
+   "시험": [
+    {
+     "답": "She sees him many times every day, doesn't she?",
+     "점수": "만점"
+    },
+    {
+     "답": "She sees him many times a day, doesn't she?",
+     "점수": "70점"
+    },
+    {
+     "답": "She sees him several times a day, doesn't she?",
+     "점수": "0점"
+    },
+    {
+     "답": "She sees him several times every day, doesn't she?",
+     "점수": "0점"
+    },
+    {
+     "답": "She sees him many times each day, doesn't she?",
+     "점수": "70점"
+    },
+    {
+     "답": "She sees him many times every day, does she not?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She sees him many times a day, doesn't she?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'매일 여러 번' 의 가장 흔한 영어 many times a day(하루에 여러 번) — 맞는 영어 · 뜻 그대로 · 꼬리 지킴. every 만 있어 70점. 새 다른 정답 'She sees him many times a day, doesn't she?'",
+     "확신": "높음"
+    },
+    {
+     "답": "She sees him several times a day, doesn't she?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "문제 괄호 '(여러 번)' 의 곧은 번역 several times + a day — 맞는 영어 · 뜻 그대로인데 several 이 many 와 다른 내용어로 잡혀 0점. 새 다른 정답 'She sees him several times a day, doesn't she?'",
+     "확신": "높음"
+    },
+    {
+     "답": "She sees him several times every day, doesn't she?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "괄호 '(여러 번)' → several times, 모범의 every day 그대로 — 0점. 새 다른 정답 'She sees him several times every day, doesn't she?'",
+     "확신": "높음"
+    },
+    {
+     "답": "She sees him many times each day, doesn't she?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'매일' → each day(gh1-066 #58 each year 와 같은 판단) — 70점. 새 다른 정답 'She sees him many times each day, doesn't she?'",
+     "확신": "보통"
+    },
+    {
+     "답": "She sees him many times every day, does she not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "gh1-066 #54 와 같음 — 줄이지 않은 꼬리 does she not 이 70점. 새 다른 정답 'She sees him many times every day, does she not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:48"
+  },
+  "grammar1/gh1-068#105": {
+   "id": "grammar1/gh1-068#105",
+   "시험": [
+    {
+     "답": "You study English more than ten hours every day, don't you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You study English more than 10 hours every day, don't you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You study English more than ten hours a day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English more than 10 hours a day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English over ten hours every day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English over 10 hours every day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English over ten hours a day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English over 10 hours a day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English more than ten hours each day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English more than ten hours every day, do you not?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English for more than ten hours every day, don't you?",
+     "점수": "70점"
+    },
+    {
+     "답": "You study English for more than ten hours a day, don't you?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You study English more than ten hours a day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'매일 열 시간 이상' 의 가장 흔한 영어 more than ten hours a day(하루에) — 맞는 영어 · 뜻 그대로 · 꼬리 지킴. every day 만 있어 70점. 새 다른 정답 'You study English more than ten hours a day, don't you?'",
+     "확신": "높음"
+    },
+    {
+     "답": "You study English more than 10 hours a day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "위와 같음 — 이 문항이 받는 숫자 꼴 10 + a day 가 70점. 새 다른 정답 'You study English more than 10 hours a day, don't you?'",
+     "확신": "높음"
+    },
+    {
+     "답": "You study English over ten hours every day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'이상' → over(more than 과 같은 뜻의 흔한 말) — 맞는 영어 · 뜻 그대로. 70점. 새 다른 정답 'You study English over ten hours every day, don't you?'",
+     "확신": "보통"
+    },
+    {
+     "답": "You study English over 10 hours every day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "위와 같음 — 숫자 꼴 10 + over 가 70점. 새 다른 정답 'You study English over 10 hours every day, don't you?'",
+     "확신": "보통"
+    },
+    {
+     "답": "You study English over ten hours a day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "over + a day(위 두 막힘의 조합 · 흔한 영어) — 70점. 새 다른 정답 'You study English over ten hours a day, don't you?'",
+     "확신": "보통"
+    },
+    {
+     "답": "You study English over 10 hours a day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "위와 같음(숫자 꼴) — 70점. 새 다른 정답 'You study English over 10 hours a day, don't you?'",
+     "확신": "보통"
+    },
+    {
+     "답": "You study English more than ten hours each day, don't you?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "'매일' → each day(gh1-066 #58 each year 와 같은 판단) — 70점. 새 다른 정답 'You study English more than ten hours each day, don't you?'",
+     "확신": "보통"
+    },
+    {
+     "답": "You study English more than ten hours every day, do you not?",
+     "점수": "70점",
+     "심각도": "낮음",
+     "까닭": "gh1-066 #54 와 같음 — 줄이지 않은 꼬리 do you not 이 70점. 새 다른 정답 'You study English more than ten hours every day, do you not?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You study English for more than ten hours every day, don't you?",
+     "점수": "70점",
+     "까닭": "기능어 for 하나 더 — 소유자 결정 2(70점)로 적지 않음. (참고: 기간의 for 를 넣은 꼴이 표준 영어라 수정 세션이 다른 정답으로 넣을지는 따로 — 메모)"
+    },
+    {
+     "답": "You study English for more than ten hours a day, don't you?",
+     "점수": "70점",
+     "까닭": "위 막힘 'more than ten hours a day' 에 기능어 for 하나 더 — 소유자 결정 2(70점)."
+    }
+   ],
+   "때": "2026-09-24 22:50"
+  },
+  "grammar1/gh1-072#1": {
+   "id": "grammar1/gh1-072#1",
+   "시험": [
+    {
+     "답": "These are yours.",
+     "점수": "만점"
+    },
+    {
+     "답": "These are yours",
+     "점수": "만점"
+    },
+    {
+     "답": "These are your things.",
+     "점수": "0점"
+    },
+    {
+     "답": "These things are yours.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "These are your things.",
+     "점수": "0점",
+     "까닭": "강의 꼴을 피함 — '너의 것들' 은 소유대명사 yours(이 강의 #4 mine · #9 mine · #12 yours · #13 his · #14 hers 와 같은 꼴). your things 는 소유대명사를 피하고 뜻도 '너의 물건' 으로 좁아짐(묶음 12 확인의 gh1-074 #4 판단과 같음)."
+    },
+    {
+     "답": "These things are yours.",
+     "점수": "0점",
+     "까닭": "드묾 — '이것들' 은 대명사 these 로 옮기는 것이 흔한 꼴이고 명사 things 를 덧붙인 꼴은 이 과정의 모범 · 다른 정답에 없음(묶음 12 확인의 gh1-074 #4 'Those things were theirs' 판단과 같음). 영어는 맞으나 흔한 영작이 아님."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#2": {
+   "id": "grammar1/gh1-072#2",
+   "시험": [
+    {
+     "답": "Those are their gloves.",
+     "점수": "만점"
+    },
+    {
+     "답": "They are their gloves.",
+     "점수": "만점"
+    },
+    {
+     "답": "Those are their gloves",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#3": {
+   "id": "grammar1/gh1-072#3",
+   "시험": [
+    {
+     "답": "Your face is pale.",
+     "점수": "만점"
+    },
+    {
+     "답": "Your face is pale",
+     "점수": "만점"
+    },
+    {
+     "답": "Your face looks pale.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Your face looks pale.",
+     "점수": "0점",
+     "까닭": "뜻이 다름 — looks pale 은 '창백해 보인다'. 한국어는 '창백하다'(be 동사 문장)."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#4": {
+   "id": "grammar1/gh1-072#4",
+   "시험": [
+    {
+     "답": "This land is mine.",
+     "점수": "만점"
+    },
+    {
+     "답": "This land is mine",
+     "점수": "만점"
+    },
+    {
+     "답": "This land belongs to me.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "This land belongs to me.",
+     "점수": "0점",
+     "까닭": "강의 꼴을 피함 — be 동사 + 소유대명사(mine)를 belong to 로 바꾼 다른 문형(묶음 12 확인의 gh1-074 #4 'They belonged to them' 판단과 같음)."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#5": {
+   "id": "grammar1/gh1-072#5",
+   "시험": [
+    {
+     "답": "Am I heavy?",
+     "점수": "만점"
+    },
+    {
+     "답": "Am I heavy",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#6": {
+   "id": "grammar1/gh1-072#6",
+   "시험": [
+    {
+     "답": "Is he big?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is he big",
+     "점수": "만점"
+    },
+    {
+     "답": "Is he tall?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Is he tall?",
+     "점수": "0점",
+     "까닭": "괄호 (big) 을 피함 — '크다' 를 키로 읽은 다른 낱말 tall."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#7": {
+   "id": "grammar1/gh1-072#7",
+   "시험": [
+    {
+     "답": "Is she cute?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is she cute",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#8": {
+   "id": "grammar1/gh1-072#8",
+   "시험": [
+    {
+     "답": "Why are you sad?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why are you sad",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#9": {
+   "id": "grammar1/gh1-072#9",
+   "시험": [
+    {
+     "답": "Is this mine?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this mine",
+     "점수": "만점"
+    },
+    {
+     "답": "Is it mine?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Is it mine?",
+     "점수": "0점",
+     "까닭": "'이것' = this — it 은 '그것' 에 맞는 말이라 한국어 뜻 그대로가 아님."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#10": {
+   "id": "grammar1/gh1-072#10",
+   "시험": [
+    {
+     "답": "Are they healthy?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are they well?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are they in good health?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Are they well?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'건강하다' → be well(건강하다 · 몸이 좋다) — 맞는 영어 · 뜻 그대로 · be 의문문 지킴. 같은 단계 gh1-062 #3 · #6 · #12 가 well 을 받는데(묶음 10) 여기엔 healthy 만 있어 0점. 새 다른 정답 'Are they well?'",
+     "확신": "보통"
+    },
+    {
+     "답": "Are they in good health?",
+     "점수": "0점",
+     "심각도": "중간",
+     "까닭": "'건강하다' 의 사전 숙어 be in good health — 맞는 영어 · 뜻 그대로인데 길이 한도에 걸려 0점(묶음 10 gh1-062 #3 · #6 · #12 · #23 과 같은 막힘). 새 다른 정답 'Are they in good health?'",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#11": {
+   "id": "grammar1/gh1-072#11",
+   "시험": [
+    {
+     "답": "Is my face green?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is my face green",
+     "점수": "만점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#12": {
+   "id": "grammar1/gh1-072#12",
+   "시험": [
+    {
+     "답": "Are these yours?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these yours",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these your things?",
+     "점수": "0점"
+    },
+    {
+     "답": "Are these things yours?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are these your things?",
+     "점수": "0점",
+     "까닭": "#1 과 같음 — 소유대명사 yours 를 피한 your things(뜻도 '너의 물건' 으로 좁아짐)."
+    },
+    {
+     "답": "Are these things yours?",
+     "점수": "0점",
+     "까닭": "#1 과 같음 — 대명사 these 에 명사 things 를 덧붙인 드문 꼴."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#13": {
+   "id": "grammar1/gh1-072#13",
+   "시험": [
+    {
+     "답": "Is this house his?",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this house his",
+     "점수": "만점"
+    },
+    {
+     "답": "Is this his house?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Is this his house?",
+     "점수": "70점",
+     "까닭": "짜임이 다름 — '이것은 그의 집이냐' 의 번역. 이 문항이 가르치는 소유대명사 his('그의 것')를 소유격 his house 로 바꿈. 70점."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  },
+  "grammar1/gh1-072#14": {
+   "id": "grammar1/gh1-072#14",
+   "시험": [
+    {
+     "답": "Are these cats hers?",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these cats hers",
+     "점수": "만점"
+    },
+    {
+     "답": "Are these her cats?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "Are these her cats?",
+     "점수": "70점",
+     "까닭": "괄호 (hers) 를 피함 — 소유대명사를 소유격 her cats 로 바꾼 다른 짜임('이것들은 그녀의 고양이들이냐'). 70점."
+    }
+   ],
+   "때": "2026-09-24 22:49"
+  }
+ }
+}
