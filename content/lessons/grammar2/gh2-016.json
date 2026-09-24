@@ -56,11 +56,17 @@
         },
         {
           "n": "8",
-          "text": "I will have soup first and then the chicken."
+          "text": "I will have soup first and then the chicken.",
+          "alternatives": [
+            "I will eat soup first and then the chicken."
+          ]
         },
         {
           "n": "9",
-          "text": "If it's not on the table, then it will be in the drawer."
+          "text": "If it's not on the table, then it will be in the drawer.",
+          "alternatives": [
+            "If that's not on the table, then it will be in the drawer."
+          ]
         },
         {
           "n": "10",
@@ -72,7 +78,10 @@
         },
         {
           "n": "12",
-          "text": "So he can buy it."
+          "text": "So he can buy it.",
+          "alternatives": [
+            "So he can buy that."
+          ]
         },
         {
           "n": "13",
@@ -80,15 +89,24 @@
         },
         {
           "n": "14",
-          "text": "He is so poor that he cannot buy it."
+          "text": "He is so poor that he cannot buy it.",
+          "alternatives": [
+            "He is so poor that he cannot buy that."
+          ]
         },
         {
           "n": "15",
-          "text": "I did not have an apple."
+          "text": "I did not have an apple.",
+          "alternatives": [
+            "I did not eat an apple."
+          ]
         },
         {
           "n": "16",
-          "text": "Instead, I had a peach."
+          "text": "Instead, I had a peach.",
+          "alternatives": [
+            "Instead, I ate a peach."
+          ]
         },
         {
           "n": "17",
@@ -149,7 +167,10 @@
         },
         {
           "n": "29",
-          "text": "Even I know it."
+          "text": "Even I know it.",
+          "alternatives": [
+            "Even I know that."
+          ]
         },
         {
           "n": "30",
@@ -167,7 +188,9 @@
           "n": "33",
           "text": "It is the largest diamond yet found.",
           "alternatives": [
-            "It is the largest diamond yet discovered."
+            "It is the largest diamond yet discovered.",
+            "That is the largest diamond yet found.",
+            "That is the largest diamond yet discovered."
           ]
         },
         {

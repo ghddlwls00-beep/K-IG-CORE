@@ -28,7 +28,7 @@
   "from": "The fire that followed the explosion burned for two days.", "to": "The fire that followed the explosion burned for several days.", "expect": 1},
  {"item": "6-0469 d096 n5 KO", "files": ["content/ld_english_scripts.json"],
   "from": "그 폭발에 뒤이은 화재가 이틀 동안 탔다.", "to": "그 폭발에 뒤이은 화재가 며칠 동안 탔다.", "expect": 1},
- {"item": "6-0469 d096 hints", "files": ["content/lessons/ld/d096.json"],
+ {"item": "6-0469 d096 hints", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d096.json"],
   "from": "tear off. two days.", "to": "tear off. several days.", "expect": 1},
 
  {"item": "6-0479 d172 n1 EN", "files": ["content/ld_english_scripts.json"],

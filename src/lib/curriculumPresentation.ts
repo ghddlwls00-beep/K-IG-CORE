@@ -151,9 +151,12 @@ export function formatLessonPresentation(
     const m = id.match(/^gh2-(\d+)/);
     const lessonNum = m ? String(parseInt(m[1], 10)).padStart(2, "0") : id;
     const isKoreanScript = id.endsWith("-1") || lesson.variant === "script";
+    // gh2-044 4번은 1996년 미국 대선(클린턴 · 돌)을 지금 일처럼 적은 뉴스 문장 — gh1-116 ~ 123 과 같은 방식으로 부제목에 적음
+    // (9/18 감사 6-1602 · 관문 15 전수 읽기, 소유자 결정 2026-09-24).
+    const newsNote = lessonNum === "44" ? " · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다" : "";
     return {
       title: `제 ${lessonNum}과 · 패턴 영작 훈련`,
-      subtitle: isKoreanScript ? "한국어 대조 스크립트" : "English Model Pattern",
+      subtitle: `${isKoreanScript ? "한국어 대조 스크립트" : "English Model Pattern"}${newsNote}`,
       badge: "🎙️ 마이크 채점",
       code: `Lesson ${lessonNum}`,
     };

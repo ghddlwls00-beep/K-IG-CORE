@@ -6,7 +6,7 @@
  {"item": "6-1041 pr004 s2 EN", "files": ["content/lessons/reading/pr004.json", "content/lessons/reading/pr004-1.json"],
   "from": "The 'cumbia' was created by African slaves who were brought to the hot regions of the country to work in the gold mines.",
   "to": "The 'cumbia' grew up in the hot Caribbean region of the country, where the drums of African slaves mixed with native flutes and Spanish songs.", "expect": 3},
- {"item": "6-1041 pr004 s2 KO", "files": ["content/lessons/reading/pr004.json", "content/lessons/reading/pr004-1.json"],
+ {"item": "6-1041 pr004 s2 KO", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/reading/pr004.json", "content/lessons/reading/pr004-1.json"],
   "from": "'cumbia'는 금광에서 일하도록 그 나라의 더운 지역으로 끌려온 아프리카 노예들이 만들었다.",
   "to": "'cumbia'는 그 나라의 더운 카리브 해 지역에서 생겨났는데, 그곳에서 아프리카 노예들의 북소리가 원주민의 피리 소리, 스페인 노래와 섞였다.", "expect": 3},
  {"item": "6-1041 pr004 s3 EN", "files": ["content/lessons/reading/pr004.json", "content/lessons/reading/pr004-1.json"],

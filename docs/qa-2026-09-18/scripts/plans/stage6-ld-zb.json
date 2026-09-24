@@ -11,7 +11,7 @@
  {"item": "6-0516 d213 n4 KO — signs to the contrary = 먹이를 주지 말라는 표지", "files": ["content/ld_english_scripts.json"],
   "from": "그들은 정반대의 표지가 분명히 붙어있는데도 동물에게 먹을 것을 주는 것을 고집한다.",
   "to": "그들은 먹이를 주지 말라는 표지가 눈에 잘 띄게 붙어 있는데도 동물에게 먹이 주는 것을 고집한다.", "expect": 1},
- {"item": "6-0518 d214 n3 KO — in the heavens ≠ 여러 하늘", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0518 d214 n3 KO — in the heavens ≠ 여러 하늘", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "예를 들어 천둥 소리는 여러 하늘의 무서운 신들 사이의 전투와 전쟁의 으르렁대는 소리라고 생각되었다.",
   "to": "예를 들어 천둥 소리는 하늘에 있는 무서운 신들 사이의 전투와 전쟁의 으르렁거리는 소리라고 여겨졌다.", "expect": 1},
  {"item": "6-0519 d214 n5 KO — hurricanes = 허리케인(태풍 아님) · 자연재해", "files": ["content/ld_english_scripts.json"],
@@ -24,6 +24,6 @@
   "to": "In ancient civilizations, charms and religious ritual often existed side by side.", "expect": 1},
  {"item": "6-0522 d215 n7 KO", "files": ["content/ld_english_scripts.json"],
   "from": "고대 문명에서는 미신이 종교를 대신했다고 말하는 것이 아마 진실이다.", "to": "고대 문명에서는 부적과 종교 의식이 나란히 존재하는 경우가 많았다.", "expect": 1},
- {"item": "6-0522 d215 hints — n7 의 새 말 ('charms' 는 n1·n2·n4 에도 있어 칩이 번지므로 뺌)", "files": ["content/lessons/ld/d215.json"],
+ {"item": "6-0522 d215 hints — n7 의 새 말 ('charms' 는 n1·n2·n4 에도 있어 칩이 번지므로 뺌)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d215.json"],
   "from": "white buffalo held sacred. superstition took the place", "to": "white buffalo held sacred. religious ritual side by side", "expect": 1}
 ]

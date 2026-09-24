@@ -46,7 +46,8 @@
           "text": "How fast does he go there?",
           "alternatives": [
             "How fast does he get there?",
-            "How quickly does he go there?"
+            "How quickly does he go there?",
+            "How quickly does he get there?"
           ]
         },
         {
@@ -55,12 +56,17 @@
           "alternatives": [
             "How fast does the girl get here?",
             "How quickly does the girl come here?",
-            "How soon does the girl come here?"
+            "How soon does the girl come here?",
+            "How quickly does the girl get here?",
+            "How soon does the girl get here?"
           ]
         },
         {
           "n": "4",
-          "text": "How much do you want?"
+          "text": "How much do you want?",
+          "alternatives": [
+            "How many do you want?"
+          ]
         },
         {
           "n": "5",
@@ -88,7 +94,9 @@
           "alternatives": [
             "He came here as quickly as possible.",
             "He came here as fast as possible.",
-            "He came here as soon as he could."
+            "He came here as soon as he could.",
+            "He came here as quickly as he could.",
+            "He came here as fast as he could."
           ]
         },
         {
@@ -197,7 +205,13 @@
           "n": "30",
           "text": "No boy likes it.",
           "alternatives": [
-            "No boy likes that."
+            "No boy likes that.",
+            "No boys like it.",
+            "None of the boys like it.",
+            "None of the boys likes it.",
+            "No boys like that.",
+            "None of the boys like that.",
+            "None of the boys likes that."
           ]
         },
         {

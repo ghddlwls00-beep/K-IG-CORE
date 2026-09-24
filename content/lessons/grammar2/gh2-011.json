@@ -38,7 +38,8 @@
           "n": "2",
           "text": "He came with a book.",
           "alternatives": [
-            "He brought a book."
+            "He brought a book.",
+            "He brought a book with him."
           ]
         },
         {
@@ -53,7 +54,9 @@
           "n": "5",
           "text": "With only two days to go, we can't delay it.",
           "alternatives": [
-            "With only 2 days to go, we can't delay it."
+            "With only 2 days to go, we can't delay it.",
+            "With only two days to go, we can't delay that.",
+            "With only 2 days to go, we can't delay that."
           ]
         },
         {
@@ -77,7 +80,10 @@
         },
         {
           "n": "10",
-          "text": "It is not the role of the teacher."
+          "text": "It is not the role of the teacher.",
+          "alternatives": [
+            "That is not the role of the teacher."
+          ]
         },
         {
           "n": "11",
@@ -89,7 +95,10 @@
         },
         {
           "n": "13",
-          "text": "What do you think of it?"
+          "text": "What do you think of it?",
+          "alternatives": [
+            "What do you think of that?"
+          ]
         },
         {
           "n": "14",
@@ -115,7 +124,10 @@
         },
         {
           "n": "18",
-          "text": "He gave it to his sister."
+          "text": "He gave it to his sister.",
+          "alternatives": [
+            "He gave that to his sister."
+          ]
         },
         {
           "n": "19",

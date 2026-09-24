@@ -47,7 +47,10 @@
         },
         {
           "n": "5",
-          "text": "It was nothing."
+          "text": "It was nothing.",
+          "alternatives": [
+            "That was nothing."
+          ]
         },
         {
           "n": "6",
@@ -55,11 +58,17 @@
         },
         {
           "n": "7",
-          "text": "Operator, I'd like to call New York, collect."
+          "text": "Operator, I'd like to call New York, collect.",
+          "alternatives": [
+            "Operator, I want to call New York, collect."
+          ]
         },
         {
           "n": "8",
-          "text": "I'd like to know a phone number in Seoul, Korea."
+          "text": "I'd like to know a phone number in Seoul, Korea.",
+          "alternatives": [
+            "I want to know a phone number in Seoul, Korea."
+          ]
         },
         {
           "n": "9",

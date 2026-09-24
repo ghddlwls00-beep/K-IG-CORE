@@ -67,7 +67,10 @@
         },
         {
           "n": "10",
-          "text": "Don't take it personally."
+          "text": "Don't take it personally.",
+          "alternatives": [
+            "Don't take that personally."
+          ]
         },
         {
           "n": "11",
@@ -94,7 +97,12 @@
         },
         {
           "n": "16",
-          "text": "That will be 1000 dollars."
+          "text": "That will be 1000 dollars.",
+          "alternatives": [
+            "That will be a thousand dollars.",
+            "That will be one thousand dollars.",
+            "That will be $1,000."
+          ]
         },
         {
           "n": "17",
@@ -106,7 +114,10 @@
         },
         {
           "n": "19",
-          "text": "I would like to get a refund on this."
+          "text": "I would like to get a refund on this.",
+          "alternatives": [
+            "I want to get a refund on this."
+          ]
         },
         {
           "n": "20",

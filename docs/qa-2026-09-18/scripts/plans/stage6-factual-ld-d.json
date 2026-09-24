@@ -10,7 +10,7 @@
   "from": "His mother was 20 years old and his father was 22.", "to": "His mother was 19 years old and his father was 21.", "expect": 1},
  {"item": "6-0383 d007 n6 KO", "files": ["content/ld_english_scripts.json"],
   "from": "그의 어머니는 20살이었고 그의 아버지는 22세였다.", "to": "그의 어머니는 19살이었고 그의 아버지는 21세였다.", "expect": 1},
- {"item": "6-0383 d007 넘친 힌트 줄", "files": ["content/lessons/ld/d007.json"],
+ {"item": "6-0383 d007 넘친 힌트 줄", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d007.json"],
   "from": "May 9, 1953. 20 22. June 4, 1954.", "to": "May 9, 1953. 19 21. June 4, 1954.", "expect": 1},
 
  {"item": "6-0412 d036 n1 EN", "files": ["content/ld_english_scripts.json"],
@@ -39,6 +39,6 @@
  {"item": "6-0426 d082 n5 KO", "files": ["content/ld_english_scripts.json"],
   "from": "David가 7살이었을 때 그의 아버지가 죽었고 그의 가족은 Louisville로 이사했다.",
   "to": "David가 10살이었을 때 그의 아버지가 죽었고 나중에 그의 가족은 Louisville로 이사했다.", "expect": 1},
- {"item": "6-0426 d082 hints", "files": ["content/lessons/ld/d082.json"],
+ {"item": "6-0426 d082 hints", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d082.json"],
   "from": "seven Louisville.", "to": "ten Louisville.", "expect": 1}
 ]

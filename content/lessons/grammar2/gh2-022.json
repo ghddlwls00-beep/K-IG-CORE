@@ -32,7 +32,10 @@
         },
         {
           "n": "2",
-          "text": "You owe me nothing."
+          "text": "You owe me nothing.",
+          "alternatives": [
+            "You don't owe me anything."
+          ]
         },
         {
           "n": "3",
@@ -76,7 +79,10 @@
         },
         {
           "n": "13",
-          "text": "Will you give me a lift?"
+          "text": "Will you give me a lift?",
+          "alternatives": [
+            "Will you give me a ride?"
+          ]
         },
         {
           "n": "14",
@@ -104,7 +110,10 @@
         },
         {
           "n": "20",
-          "text": "I'd like to open a savings account."
+          "text": "I'd like to open a savings account.",
+          "alternatives": [
+            "I want to open a savings account."
+          ]
         },
         {
           "n": "21",

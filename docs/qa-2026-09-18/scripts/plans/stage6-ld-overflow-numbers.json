@@ -9,10 +9,10 @@
   "from": "second coach five mailmen 128 bags five pound notes", "to": "second coach 5 mailmen 128 bags 5-pound notes", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "#51 — d071 n6 'At 3 minutes past three'", "files": ["content/lessons/ld/d071.json"],
   "from": "100 years three minutes past three", "to": "100 years 3 minutes past three", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
- {"item": "#51 — d130 n3 '10 cabins'", "files": ["content/lessons/ld/d130.json"],
+ {"item": "#51 — d130 n3 '10 cabins'", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d130.json"],
   "from": "ten cabins tennis courts", "to": "10 cabins tennis courts", "expect": 1},
  {"item": "#51 — d169 n3 '4 million gallons' (n1 'two and a half inches' 는 문장도 낱말이라 둠)", "files": ["content/lessons/ld/d169.json"],
   "from": "four million gallons of water", "to": "4 million gallons of water", "expect": 1},
- {"item": "#51 — d169 n4 '1 1/2 seconds … 5 feet high'", "files": ["content/lessons/ld/d169.json"],
+ {"item": "#51 — d169 n4 '1 1/2 seconds … 5 feet high'", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d169.json"],
   "from": "one and a half seconds, rush of water five feet high", "to": "1 1/2 seconds, rush of water 5 feet high", "expect": 1}
 ]

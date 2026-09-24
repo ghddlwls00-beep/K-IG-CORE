@@ -29,9 +29,10 @@ const head = (f) => { try { return JSON.parse(strip(execFileSync("git", ["show",
 const isGuide = (t) => /받아쓰기/.test(t);
 const norm = (w) => String(w).toLowerCase().replace(/[^a-z0-9]/g, "");
 const tokens = (t) => [...t.matchAll(/\S+/g)].map((m) => ({ w: m[0], n: norm(m[0]), s: m.index, e: m.index + m[0].length }));
-const SPLIT = /,(?!\d{3}(?!\d))|\.\s+|\.$|\s{2,}/g; // = hintChunks 의 나누기
+// = hintChunks 의 나누기 — 관문 15(C06113)부터 칭호 · 한 글자 머리글자 뒤 마침표에서는 안 자르고 칩 끝의 그 마침표는 남김(lib/expectations.cjs · 앱과 같음)
+const SPLIT = /,(?!\d{3}(?!\d))|(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))\.\s+|\.$|\s{2,}/g;
 const chunkAt = (text, pos) => { let k = 0; for (const m of text.matchAll(SPLIT)) if (m.index < pos) k++; return k; };
-const chunkText = (text, k) => (text.split(/,(?!\d{3}(?!\d))|\.\s+|\.$|\s{2,}/)[k] || "").trim().replace(/[.,]+$/, "").trim();
+const chunkText = (text, k) => (text.split(/,(?!\d{3}(?!\d))|(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))\.\s+|\.$|\s{2,}/)[k] || "").trim().replace(/(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))[.,]+$/, "").trim();
 function lcsMap(a, b) { // a[i] → b[j] (정규화 낱말이 같고 비지 않은 것끼리)
   const n = a.length, m = b.length, L = Array.from({ length: n + 1 }, () => new Int16Array(m + 1));
   for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = a[i].n && a[i].n === b[j].n ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);

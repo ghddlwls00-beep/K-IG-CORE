@@ -36,7 +36,10 @@
         },
         {
           "n": "3",
-          "text": "I know a new Korean restaurant that opened recently."
+          "text": "I know a new Korean restaurant that opened recently.",
+          "alternatives": [
+            "I know a new Korean restaurant which opened recently."
+          ]
         },
         {
           "n": "4",
@@ -48,7 +51,10 @@
         },
         {
           "n": "6",
-          "text": "It's becoming harder to find others who share the belief."
+          "text": "It's becoming harder to find others who share the belief.",
+          "alternatives": [
+            "It's becoming harder to find others that share the belief."
+          ]
         },
         {
           "n": "7",
@@ -58,7 +64,8 @@
           "n": "8",
           "text": "This is the book I bought yesterday.",
           "alternatives": [
-            "This is the book which I bought yesterday."
+            "This is the book which I bought yesterday.",
+            "This is the book that I bought yesterday."
           ]
         },
         {
@@ -84,11 +91,18 @@
         },
         {
           "n": "13",
-          "text": "The sculptures which you are looking at are masterpieces."
+          "text": "The sculptures which you are looking at are masterpieces.",
+          "alternatives": [
+            "The sculptures that you are looking at are masterpieces.",
+            "The sculptures you are looking at are masterpieces."
+          ]
         },
         {
           "n": "14",
-          "text": "Weather reports are very important to people who plan the routes of ships and airplanes."
+          "text": "Weather reports are very important to people who plan the routes of ships and airplanes.",
+          "alternatives": [
+            "Weather reports are very important to people that plan the routes of ships and airplanes."
+          ]
         }
       ]
     },

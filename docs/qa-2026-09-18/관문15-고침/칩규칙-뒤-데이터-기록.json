@@ -1,0 +1,16 @@
+{
+ "at": "2026-09-24T09:46:38.732Z",
+ "ops": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-wt-fix\\docs\\qa-2026-09-18\\관문15-고침\\칩규칙-뒤-데이터.json",
+ "root": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-wt-fix",
+ "write": true,
+ "log": [
+  {
+   "id": "C06113 칩 규칙 뒤 d058",
+   "op": "set",
+   "file": "content/lessons/ld/d058.json",
+   "where": ".blocks[2].text",
+   "old": "1896, Detroit, Michigan. amazed. motor vehicle. Henry Ford. mechanical. 1876. 12. 1903, founded the Ford Motor Company. Model T. 15 million. 1908. 1927. 1924, 7,500. $5 a day",
+   "new": "1896, Detroit, Michigan. amazed. motor vehicle. Henry Ford. mechanical. 1876. 12. 1903, founded the Ford Motor Company. Model T, 15 million. 1908. 1927. 1924, 7,500. $5 a day"
+  }
+ ]
+}

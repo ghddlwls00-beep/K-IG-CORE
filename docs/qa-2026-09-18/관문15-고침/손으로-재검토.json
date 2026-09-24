@@ -1,0 +1,637 @@
+[
+ {
+  "id": "M1 grammar1-a/F:C02984",
+  "why": "결혼 전 성 — 엇갈린 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-009.json",
+  "item": ".blocks[3].items[n=19]",
+  "add": [
+   "What was her last name before marriage?",
+   "What was her family name before she got married?"
+  ]
+ },
+ {
+  "id": "M1 grammar1-a/F:C02984",
+  "why": "결혼 전 성 — 엇갈린 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-009-1.json",
+  "item": ".blocks[3].items[n=19]",
+  "add": [
+   "What was her last name before marriage?",
+   "What was her family name before she got married?"
+  ]
+ },
+ {
+  "id": "M2 grammar1-a/F:C03150",
+  "why": "as … as he could 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-017.json",
+  "item": ".blocks[3].items[n=16]",
+  "add": [
+   "He finished it as quickly as he could.",
+   "He finished it as fast as he could.",
+   "He finished that as quickly as he could.",
+   "He finished that as fast as he could."
+  ]
+ },
+ {
+  "id": "M2 grammar1-a/F:C03150",
+  "why": "as … as he could 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-017-1.json",
+  "item": ".blocks[3].items[n=16]",
+  "add": [
+   "He finished it as quickly as he could.",
+   "He finished it as fast as he could.",
+   "He finished that as quickly as he could.",
+   "He finished that as fast as he could."
+  ]
+ },
+ {
+  "id": "M3 grammar1-a/F:C03421",
+  "why": "숫자 + now 꼴 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-051.json",
+  "item": ".blocks[3].items[n=38]",
+  "add": [
+   "Is it 8 o'clock now?"
+  ]
+ },
+ {
+  "id": "M3 grammar1-a/F:C03421",
+  "why": "숫자 + now 꼴 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-051-2.json",
+  "item": ".blocks[1].items[n=38]",
+  "add": [
+   "Is it 8 o'clock now?"
+  ]
+ },
+ {
+  "id": "M4 grammar1-a/F:C03423",
+  "why": "숫자 + now 꼴 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-051.json",
+  "item": ".blocks[3].items[n=39]",
+  "add": [
+   "It is 9 o'clock now."
+  ]
+ },
+ {
+  "id": "M4 grammar1-a/F:C03423",
+  "why": "숫자 + now 꼴 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-051-2.json",
+  "item": ".blocks[1].items[n=39]",
+  "add": [
+   "It is 9 o'clock now."
+  ]
+ },
+ {
+  "id": "M5 grammar1-a/F:C03575",
+  "why": "quickly × get 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-061.json",
+  "item": ".blocks[3].items[n=2]",
+  "add": [
+   "How quickly does he get there?"
+  ]
+ },
+ {
+  "id": "M6 grammar1-a/F:C03577",
+  "why": "get here 를 fast 와만 짝",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-061.json",
+  "item": ".blocks[3].items[n=3]",
+  "add": [
+   "How quickly does the girl get here?",
+   "How soon does the girl get here?"
+  ]
+ },
+ {
+  "id": "M7 grammar1-a/F:C03580",
+  "why": "as … as he could 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-061.json",
+  "item": ".blocks[3].items[n=9]",
+  "add": [
+   "He came here as quickly as he could.",
+   "He came here as fast as he could."
+  ]
+ },
+ {
+  "id": "M8 grammar1-a/OK:C03588",
+  "why": "No boys / None of the boys 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-061.json",
+  "item": ".blocks[3].items[n=30]",
+  "add": [
+   "No boys like it.",
+   "None of the boys like it.",
+   "None of the boys likes it.",
+   "No boys like that.",
+   "None of the boys like that.",
+   "None of the boys likes that."
+  ]
+ },
+ {
+  "id": "M9 grammar1-a/OK:C03596",
+  "why": "dreams 복수 조합 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-063.json",
+  "item": ".blocks[4].items[n=26]",
+  "add": [
+   "Do your sons and daughters have dreams?",
+   "Do your sons and daughter have dreams?",
+   "Do your son and daughters have dreams?"
+  ]
+ },
+ {
+  "id": "M11 grammar1-b/X:0",
+  "why": "소유자 결정 3",
+  "op": "setItem",
+  "file": "content/lessons/grammar1/gh1-097.json",
+  "item": ".blocks[3].items[n=79]",
+  "oldText": "Every boy didn't lose his life, did he?",
+  "oldAlts": null,
+  "newText": "Not every boy lost his life, did he?",
+  "newAlts": [
+   "Not every boy lost his life, did they?",
+   "Every boy didn't lose his life, did he?"
+  ]
+ },
+ {
+  "id": "M12 grammar1-b/X:1",
+  "why": "소유자 결정 3",
+  "op": "setItem",
+  "file": "content/lessons/grammar1/gh1-097.json",
+  "item": ".blocks[3].items[n=81]",
+  "oldText": "All the boys didn't protect their sisters, did they?",
+  "oldAlts": null,
+  "newText": "Not all the boys protected their sisters, did they?",
+  "newAlts": [
+   "Not all of the boys protected their sisters, did they?",
+   "All the boys didn't protect their sisters, did they?"
+  ]
+ },
+ {
+  "id": "M13 grammar1-b/X:2",
+  "why": "소유자 결정 3",
+  "op": "setItem",
+  "file": "content/lessons/grammar1/gh1-097.json",
+  "item": ".blocks[3].items[n=83]",
+  "oldText": "All of them didn't smell it.",
+  "oldAlts": [
+   "All of them didn't smell that."
+  ],
+  "newText": "Not all of them smelled it.",
+  "newAlts": [
+   "Not all of them smelled that.",
+   "All of them didn't smell it.",
+   "All of them didn't smell that."
+  ]
+ },
+ {
+  "id": "M14 grammar2/F:C04888",
+  "why": "소유자 결정 1 — 옛 교재 꼴 만점 대체 답 뺌",
+  "op": "removeAlts",
+  "file": "content/lessons/grammar2/gh2-021.json",
+  "item": ".blocks[1].items[n=13]",
+  "remove": [
+   "Let me make you amends for your loss."
+  ]
+ },
+ {
+  "id": "M15 grammar2/F:C05061",
+  "why": "높음 — '잔인하다' 에 'very bad' 만점",
+  "op": "removeAlts",
+  "file": "content/lessons/grammar2/gh2-030.json",
+  "item": ".blocks[1].items[n=10]",
+  "remove": [
+   "It is very bad of him to desert his old father."
+  ]
+ },
+ {
+  "id": "M10 grammar1-a/X:1",
+  "why": "'-어야 하다' 띄어 씀 · be동사 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-020.json",
+  "path": ".blocks[6].text",
+  "old": "(3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야하는 be동사는?",
+  "new": "(3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야 하는 be동사는?"
+ },
+ {
+  "id": "M10 grammar1-a/X:1",
+  "why": "'-어야 하다' 띄어 씀 · be동사 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-020.json",
+  "path": ".blocks[8].text",
+  "old": "(4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야하는 be동사는?",
+  "new": "(4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야 하는 be동사는?"
+ },
+ {
+  "id": "M10 grammar1-a/X:1",
+  "why": "'-어야 하다' 띄어 씀 · be동사 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-020.json",
+  "path": ".blocks[10].text",
+  "old": "(5)주어가 그 이외의 것일 때 써야하는 be 동사는? (we, you, they, those 등)",
+  "new": "(5)주어가 그 이외의 것일 때 써야 하는 be동사는? (we, you, they, those 등)"
+ },
+ {
+  "id": "M10 grammar1-a/X:1",
+  "why": "'-어야 하다' 띄어 씀 · be동사 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[6].text",
+  "old": "(3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야하는 be동사는?",
+  "new": "(3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야 하는 be동사는?"
+ },
+ {
+  "id": "M10 grammar1-a/X:1",
+  "why": "'-어야 하다' 띄어 씀 · be동사 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[8].text",
+  "old": "(4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야하는 be동사는?",
+  "new": "(4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야 하는 be동사는?"
+ },
+ {
+  "id": "M10 grammar1-a/X:1",
+  "why": "'-어야 하다' 띄어 씀 · be동사 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[10].text",
+  "old": "(5)주어가 그 이외의 것일 때 써야하는 be 동사는? (we, you, they, those 등)",
+  "new": "(5)주어가 그 이외의 것일 때 써야 하는 be동사는? (we, you, they, those 등)"
+ },
+ {
+  "id": "C05873 ld-b/F:C05873",
+  "why": "한 강의 안 100달러 · 백불 · 백달러 표기 맞춤",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d187[n=1].ko",
+  "old": "그 변호사는 내가 그와 함께 그 호텔로 돌아가서 또 다른 백달러 지폐를 그 직원에게 맡기라고 충고했다.",
+  "new": "그 변호사는 내가 그와 함께 그 호텔로 돌아가서 또 다른 100달러 지폐를 그 직원에게 맡기라고 충고했다."
+ },
+ {
+  "id": "C05873 ld-b/F:C05873",
+  "why": "한 강의 안 100달러 · 백불 · 백달러 표기 맞춤",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d187[n=4].ko",
+  "old": "나는 그 두 번째 백불에 대한 증인으로서 변호사가 있었기 때문에 그 직원은 그것에 대하여 아무 것도 모른다고 말하면서 무죄하게 보일 수는 없었다.",
+  "new": "나는 그 두 번째 100달러에 대한 증인으로서 변호사가 있었기 때문에 그 직원은 그것에 대하여 아무것도 모른다고 말하면서 무죄하게 보일 수는 없었다."
+ },
+ {
+  "id": "C05873 ld-b/F:C05873",
+  "why": "한 강의 안 100달러 · 백불 · 백달러 표기 맞춤",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d187[n=7].ko",
+  "old": "나는 그 백불 지폐를 요청했고 그 직원이 이미 그것을 나에게 주었다고 말했을 때 나는 그것을 부인했다.",
+  "new": "나는 그 100달러 지폐를 요청했고 그 직원이 이미 그것을 나에게 주었다고 말했을 때 나는 그것을 부인했다."
+ },
+ {
+  "id": "C05873 ld-b/F:C05873",
+  "why": "한 강의 안 100달러 · 백불 · 백달러 표기 맞춤",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d187[n=8].ko",
+  "old": "그 변호사는 말했다. “나는 이 사람이 당신에게 백불을 주는 것을 보았습니다.",
+  "new": "그 변호사는 말했다. “나는 이 사람이 당신에게 100달러를 주는 것을 보았습니다.”"
+ },
+ {
+  "id": "ld-b/X:65",
+  "why": "소유자 답 '붙인다' — 결정표 6 알림을 d197 에도",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d197[n=1].ko",
+  "old": "서커스단에서 뺄 수 없는 한 단원은 광대다.",
+  "new": "서커스단에서 뺄 수 없는 한 단원은 광대다. ※ 옛 글입니다(글에 나오는 광대 Emmett Kelly는 1979년에 세상을 떠났습니다)."
+ },
+ {
+  "id": "student/S:/student/s2-3:T01",
+  "why": "소유자 답 '바꾼다'",
+  "op": "set",
+  "file": "content/courses/student.json",
+  "path": ".lessons[8].title",
+  "old": "Father and Mother's Job (부모님의 직업)",
+  "new": "Father's and Mother's Jobs (부모님의 직업)"
+ },
+ {
+  "id": "student/S:/student/s2-3:T01",
+  "why": "소유자 답 '바꾼다'(화면 밖 menuLabel 도 같이 — 판정 '같이 맞추면 좋음')",
+  "op": "set",
+  "file": "content/courses/student.json",
+  "path": ".lessons[8].menuLabel",
+  "old": "2-3. Father and Mother's Job",
+  "new": "2-3. Father's and Mother's Jobs"
+ },
+ {
+  "id": "student/S:/student/s2-3:T01",
+  "why": "소유자 답 '바꾼다'",
+  "op": "set",
+  "file": "content/lessons/student/s2-3.json",
+  "path": ".title",
+  "old": "Father and Mother's Job (부모님의 직업)",
+  "new": "Father's and Mother's Jobs (부모님의 직업)"
+ },
+ {
+  "id": "student/S:/student/s2-3:T01",
+  "why": "소유자 답 '바꾼다'",
+  "op": "set",
+  "file": "content/lessons/student/s2-3.json",
+  "path": ".menuLabel",
+  "old": "2-3. Father and Mother's Job",
+  "new": "2-3. Father's and Mother's Jobs"
+ },
+ {
+  "id": "student/S:/student/s2-3:T01",
+  "why": "소유자 답 '바꾼다'",
+  "op": "set",
+  "file": "content/lessons/student/s2-3.json",
+  "path": ".blocks[0].text",
+  "old": "Chapter 2. Family Introduction (가족 소개) - Father and Mother's Job (부모님의 직업)",
+  "new": "Chapter 2. Family Introduction (가족 소개) - Father's and Mother's Jobs (부모님의 직업)"
+ },
+ {
+  "id": "student/X:4",
+  "why": "소유자 답 '붙여 쓴다'",
+  "op": "set",
+  "file": "content/courses/student.json",
+  "path": ".lessons[51].title",
+  "old": "Summer Vacation (여름 방학)",
+  "new": "Summer Vacation (여름방학)"
+ },
+ {
+  "id": "student/X:4",
+  "why": "소유자 답 '붙여 쓴다'",
+  "op": "set",
+  "file": "content/lessons/student/s12-2.json",
+  "path": ".title",
+  "old": "Summer Vacation (여름 방학)",
+  "new": "Summer Vacation (여름방학)"
+ },
+ {
+  "id": "student/X:4",
+  "why": "소유자 답 '붙여 쓴다'",
+  "op": "set",
+  "file": "content/lessons/student/s12-2.json",
+  "path": ".blocks[0].text",
+  "old": "Chapter 12. What I Do During School Vacations (방학 생활) - Summer Vacation (여름 방학)",
+  "new": "Chapter 12. What I Do During School Vacations (방학 생활) - Summer Vacation (여름방학)"
+ },
+ {
+  "id": "student/X:4",
+  "why": "소유자 답 '붙여 쓴다'",
+  "op": "set",
+  "file": "content/courses/student.json",
+  "path": ".lessons[52].title",
+  "old": "Winter Vacation (겨울 방학)",
+  "new": "Winter Vacation (겨울방학)"
+ },
+ {
+  "id": "student/X:4",
+  "why": "소유자 답 '붙여 쓴다'",
+  "op": "set",
+  "file": "content/lessons/student/s12-3.json",
+  "path": ".title",
+  "old": "Winter Vacation (겨울 방학)",
+  "new": "Winter Vacation (겨울방학)"
+ },
+ {
+  "id": "student/X:4",
+  "why": "소유자 답 '붙여 쓴다'",
+  "op": "set",
+  "file": "content/lessons/student/s12-3.json",
+  "path": ".blocks[0].text",
+  "old": "Chapter 12. What I Do During School Vacations (방학 생활) - Winter Vacation (겨울 방학)",
+  "new": "Chapter 12. What I Do During School Vacations (방학 생활) - Winter Vacation (겨울방학)"
+ },
+ {
+  "id": "M52 voca/F:C02764",
+  "why": "소유자 답 '붙인다' — 30자 안(판정 고칠 글 그대로)",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".attribute.meaning",
+  "old": "~의 탓(덕)으로 돌리다; 속성, 특성",
+  "new": "탓(덕)으로 돌리다; 속성, 특성 (동사는 뒤 강세)"
+ },
+ {
+  "id": "M52 voca/F:C02764",
+  "why": "소유자 답 '붙인다'",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".overwork.meaning",
+  "old": "혹사시키다, 과로하다; 과로",
+  "new": "혹사시키다, 과로하다; 과로 (동사는 뒤 강세)"
+ },
+ {
+  "id": "voca/F:C02694",
+  "why": "높음 — commonplace 가 common 의 오답 보기로(뜻이 겹치게)",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".commonplace.meaning",
+  "old": "평범한",
+  "new": "평범한, 흔한"
+ },
+ {
+  "id": "ld-a/F:C06224",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d006.json",
+  "path": ".blocks[2].text",
+  "old": "Dr. William N. Green dentist. toothaches fixes Olney. Washington D.C. dental office. Washington. 1616 Jefferson Street. 6:15 6:45 7:15. parking lot Madison Street. 8.",
+  "new": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental office. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street."
+ },
+ {
+  "id": "ld-a/F:C06249",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d007.json",
+  "path": ".blocks[2].text",
+  "old": "John Wenger Philadelphia. state of Pennsylvania. Mrs. Wenger, John's mother Germany. September 9, 1933. German, Polish French English, Bern, Switzerland November 12, 1931. French, German, Italian, English. May 9, 1953. 19 21. June 4, 1954. 22 University of Pennsylvania. French German. field of medicine.",
+  "new": "John Wenger. Philadelphia. state of Pennsylvania. Mrs. Wenger. Germany. September 9, 1933. German, Polish, French, English. Bern, Switzerland. November 12, 1931. Italian. May 9, 1953. 19. 21. June 4, 1954. 22. University of Pennsylvania. field of medicine."
+ },
+ {
+  "id": "ld-a/F:C06960",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d037.json",
+  "path": ".blocks[2].text",
+  "old": "Bobby Adams Dr. Smith throat, temperature, orange juice, two pieces of buttered toast, dry cereal, milk",
+  "new": "Bobby Adams. Dr. Smith. throat, temperature, orange juice, two pieces of buttered toast, dry cereal, milk"
+ },
+ {
+  "id": "ld-a/F:C07103",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d045.json",
+  "path": ".blocks[2].text",
+  "old": "German exam. English exam. Professor Charles M. McCarthy. M stand for Mark middle name. required subject. elective. credits German course.",
+  "new": "German exam. English exam. Professor Charles M. McCarthy. M stands for Mark. middle name. required subject. elective. credits."
+ },
+ {
+  "id": "ld-a/F:C07537",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d067.json",
+  "path": ".blocks[2].text",
+  "old": "Mrs. Ruth Ascott, take the name of high-powered detergent 53 beer ads. \"LITE IS WONDERFUL FOR WASHING CLOTHES.\"",
+  "new": "Mrs. Ruth Ascott, Lite. taking the name of. high-powered detergent. 53 years. beer ads. is wonderful for washing clothes."
+ },
+ {
+  "id": "ld-a/F:C07818",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d082.json",
+  "path": ".blocks[2].text",
+  "old": "D.W. Griffith 1908 1916, direct Floyds Fork, Kentucky January 22, 1875. ten Louisville. 1907, 1908, Griffith director New York.",
+  "new": "D.W. Griffith. 1908, 1916, directed. Floyds Fork, Kentucky. January 22, 1875. ten. Louisville. 1907, director. New York."
+ },
+ {
+  "id": "ld-a/F:C08928",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d130.json",
+  "path": ".blocks[2].text",
+  "old": "Hickman's Lodge. resort. Estes Park, Rocky Mountains. Joseph P. Hickman. central lodge, 10 cabins tennis courts, hiking trails, riding horses. fishing streams make up. 100 years. Thomas Hickman. 1870, 1900, 1910. 1950 California.",
+  "new": "Hickman's Lodge. resort. Estes Park, Rocky Mountains. Joseph P. Hickman. central lodge, 10 cabins. tennis courts, hiking trails, riding horses. fishing streams. make up. 100 years. Thomas Hickman. 1870, 1900, 1910. 1950. California."
+ },
+ {
+  "id": "ld-b/F:C09255",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d143.json",
+  "path": ".blocks[2].text",
+  "old": "blood transfusion Dr. Johnson. pressure. minor. up and around. 70",
+  "new": "blood transfusion. Dr. Johnson. pressure. minor. up and around. 70"
+ },
+ {
+  "id": "ld-b/F:C09282",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d144.json",
+  "path": ".blocks[2].text",
+  "old": "Mrs. Mills Dr. Cooper's 2:00 appointment",
+  "new": "Mrs. Mills. Dr. Cooper's. 2:00 appointment"
+ },
+ {
+  "id": "ld-b/F:C09582",
+  "why": "힌트 줄(칩 나눔)",
+  "op": "set",
+  "file": "content/lessons/ld/d157.json",
+  "path": ".blocks[2].text",
+  "old": "three children. Sigrid. Carl. Minneapolis. dairy products. Olaf Jensen. Inga. State University St. Paul. occupation. attracts",
+  "new": "three children. Sigrid. Carl. Minneapolis. dairy products. Olaf Jensen. Inga. state university. St. Paul. occupation. attracts"
+ },
+ {
+  "id": "reading-b/S:/reading/pr245-1:T16",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "content/lessons/reading/pr245.json",
+  "path": ".readingSentences[7].korean",
+  "old": "당신의 각각의 역할은 당신에게 몇 가지 요구를 한다. 그리고 당신은 동시에 두 개나 그 이상의 역할을 하도록 요청 받을 수 있다.",
+  "new": "당신의 각각의 역할은 당신에게 몇 가지 요구를 한다. 그리고 당신은 동시에 두 개나 그 이상의 역할을 하도록 요청받을 수 있다."
+ },
+ {
+  "id": "reading-a/F:C12163",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr004[1].korean",
+  "old": "'cumbia'는 그 나라의 더운 카리브 해 지역에서 생겨났는데, 그곳에서 아프리카 노예들의 북소리가 원주민의 피리 소리, 스페인 노래와 섞였다.",
+  "new": "'cumbia'는 그 나라의 더운 카리브해 지역에서 생겨났는데, 그곳에서 아프리카 노예들의 북소리가 원주민의 피리 소리, 스페인 노래와 섞였다."
+ },
+ {
+  "id": "reading-a/F:C12628",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr080[8].korean",
+  "old": "그리고 그 다음 그는 구장을 걸어 나가 어둠 속으로 사라졌다.",
+  "new": "그리고 그다음 그는 구장을 걸어 나가 어둠 속으로 사라졌다."
+ },
+ {
+  "id": "reading-b/X:0",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr179[0].korean",
+  "old": "초기의 자원 봉사자들은 혼자서 힘들고 불쾌한 작업을 해냈다.",
+  "new": "초기의 자원봉사자들은 혼자서 힘들고 불쾌한 작업을 해냈다."
+ },
+ {
+  "id": "reading-b/X:1",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr179[2].korean",
+  "old": "약 20년전까지만도 정부와 사설 단체로부터 거의 자금을 지원받지 못했다.",
+  "new": "약 20년 전까지만도 정부와 사설 단체로부터 거의 자금을 지원받지 못했다."
+ },
+ {
+  "id": "reading-b/X:2",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr179[7].korean",
+  "old": "둘째로 사회전체가 자원봉사활동에서 오는 경험과 훈련에 큰 가치를 두기 시작하였다.",
+  "new": "둘째로 사회 전체가 자원봉사활동에서 오는 경험과 훈련에 큰 가치를 두기 시작하였다."
+ },
+ {
+  "id": "reading-b/F:C13365",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr179[10].korean",
+  "old": "그래서, 최근에 자원 봉사자의 수가 상당히 증가하였다.",
+  "new": "그래서, 최근에 자원봉사자의 수가 상당히 증가하였다."
+ },
+ {
+  "id": "reading-b/F:C13881",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr234[4].korean",
+  "old": "이러한 요인들이 국가들 사이에 정치적 · 경제적 차이를 일으켜 왔다.",
+  "new": "이러한 요인들이 국가들 사이에 정치적·경제적 차이를 일으켜 왔다."
+ },
+ {
+  "id": "reading-b/X:3",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr234[6].korean",
+  "old": "따라서, 이러한 나라들이 직면한 가장 중요한 문제는 문화간의 차이들을 이해하는 것이다.",
+  "new": "따라서, 이러한 나라들이 직면한 가장 중요한 문제는 문화 간의 차이들을 이해하는 것이다."
+ },
+ {
+  "id": "reading-b/S:/reading/pr245-1:T16",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingSentences.json",
+  "path": ".pr245[7].korean",
+  "old": "당신의 각각의 역할은 당신에게 몇 가지 요구를 한다. 그리고 당신은 동시에 두 개나 그 이상의 역할을 하도록 요청 받을 수 있다.",
+  "new": "당신의 각각의 역할은 당신에게 몇 가지 요구를 한다. 그리고 당신은 동시에 두 개나 그 이상의 역할을 하도록 요청받을 수 있다."
+ },
+ {
+  "id": "reading-b/F:C13638",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingVocabulary.json",
+  "path": ".pr207[3].korean",
+  "old": "(결정 · 거부를) 무효화하다, 뒤집다 (be overridden 무효화되다)",
+  "new": "(결정·거부를) 무효화하다, 뒤집다 (be overridden 무효화되다)"
+ },
+ {
+  "id": "reading-b/F:C13758",
+  "why": "사본 · 중앙 파일에 같은 고침",
+  "op": "set",
+  "file": "src/lib/readingVocabulary.json",
+  "path": ".pr221[12].korean",
+  "old": "섬 (주로 섬 이름 · 시에 쓰는 말 — Isle of Dogs 개의 섬)",
+  "new": "섬 (주로 섬 이름·시에 쓰는 말 — Isle of Dogs 개의 섬)"
+ }
+]

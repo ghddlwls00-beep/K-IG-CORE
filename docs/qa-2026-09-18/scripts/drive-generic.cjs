@@ -67,7 +67,9 @@ const OUT = path.resolve(arg("--out-root", path.join(__dirname, "../out")));
 const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // 7단계 7-1 m: stamped on every record — build-coverage reads a stamped record by today's rules (the tile routine's results are the
 // product's, the typed-input line of a tile page is NA); records without it are read by the rules of their day.
-const DRIVER_REV = "7-1m";
+// 7-1m-g15 (최종 관문 15, 2026-09-24): 힌트 상자 제목이 '✍️ 고유 명사 · 숫자 · 어려운 낱말 참조' 로 바뀜(재검토 K009) — 상자 찾기가 두 제목을
+// 다 받음(HINT_CHIPS). 그 밖은 7-1m 그대로. build-coverage 는 이 값이 있는지만 본다(값은 안 봄).
+const DRIVER_REV = "7-1m-g15";
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -516,7 +518,7 @@ async function solveTiles(tab, exp, checks, stepLabel) {
  */
 const HINT_CHIPS = `(() => {
   const box = [...document.querySelectorAll('main div')].find((d) =>
-    /고유 명사 · 숫자 참조/.test(d.innerText || '') && d.querySelectorAll('p span').length);
+    /고유 명사 · 숫자( · 어려운 낱말)? 참조/.test(d.innerText || '') && d.querySelectorAll('p span').length);
   return box ? [...box.querySelectorAll('p span')].map((s) => s.innerText.trim()).filter(Boolean) : [];
 })()`;
 

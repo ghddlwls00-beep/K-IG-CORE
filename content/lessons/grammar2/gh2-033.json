@@ -48,7 +48,10 @@
         },
         {
           "n": "6",
-          "text": "Would you like to hold on or call again?"
+          "text": "Would you like to hold on or call again?",
+          "alternatives": [
+            "Do you want to hold on or call again?"
+          ]
         },
         {
           "n": "7",
@@ -59,7 +62,10 @@
         },
         {
           "n": "8",
-          "text": "Would you like to leave your name and phone number?"
+          "text": "Would you like to leave your name and phone number?",
+          "alternatives": [
+            "Do you want to leave your name and phone number?"
+          ]
         },
         {
           "n": "9",
@@ -70,7 +76,8 @@
           "text": "Care to leave a message?",
           "alternatives": [
             "Would you care to leave a message?",
-            "Would you like to leave a message?"
+            "Would you like to leave a message?",
+            "Do you want to leave a message?"
           ]
         },
         {

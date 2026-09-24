@@ -110,7 +110,10 @@
         },
         {
           "n": "40",
-          "text": "Was it cold yesterday?"
+          "text": "Was it cold yesterday?",
+          "alternatives": [
+            "Was the weather cold yesterday?"
+          ]
         },
         {
           "n": "41",
@@ -118,7 +121,10 @@
         },
         {
           "n": "42",
-          "text": "It was warm yesterday."
+          "text": "It was warm yesterday.",
+          "alternatives": [
+            "Yesterday was warm."
+          ]
         }
       ]
     },

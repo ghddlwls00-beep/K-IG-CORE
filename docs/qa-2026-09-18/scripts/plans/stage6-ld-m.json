@@ -25,7 +25,7 @@
   "from": "그러나 도시 생활이 Carl과 Inga Jensen같은 사람들을 끌어들인다.", "to": "그러나 도시 생활은 Carl과 Inga Jensen 같은 젊은이들을 끌어들인다.", "expect": 1},
  {"item": "6-0244 d159 힌트 — 대본 'matchboxes'", "files": ["content/lessons/ld/d159.json"],
   "from": "On the other hand, match boxes.", "to": "On the other hand, matchboxes.", "expect": 1},
- {"item": "6-0244 d161 힌트 — 대본 'card playing'·'ping pong'(하이픈이 있으면 입력 채점이 붙여 비교)", "files": ["content/lessons/ld/d161.json"],
+ {"item": "6-0244 d161 힌트 — 대본 'card playing'·'ping pong'(하이픈이 있으면 입력 채점이 붙여 비교)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d161.json"],
   "from": "Chess, card-playing, dancing fast game of ping-pong bridge table", "to": "Chess, card playing, dancing fast game of ping pong bridge table", "expect": 1},
  {"item": "6-0244 d165 힌트 — 대본 'specially equipped'", "files": ["content/lessons/ld/d165.json"],
   "from": "specially-equipped space capsule", "to": "specially equipped space capsule", "expect": 1},

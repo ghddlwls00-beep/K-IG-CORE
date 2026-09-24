@@ -36,7 +36,10 @@
         },
         {
           "n": "3",
-          "text": "Throw it into the fire."
+          "text": "Throw it into the fire.",
+          "alternatives": [
+            "Throw that into the fire."
+          ]
         },
         {
           "n": "4",
@@ -63,11 +66,17 @@
         },
         {
           "n": "9",
-          "text": "He read about it in the newspaper."
+          "text": "He read about it in the newspaper.",
+          "alternatives": [
+            "He read about that in the newspaper."
+          ]
         },
         {
           "n": "10",
-          "text": "It will be ready in a week."
+          "text": "It will be ready in a week.",
+          "alternatives": [
+            "That will be ready in a week."
+          ]
         },
         {
           "n": "11",

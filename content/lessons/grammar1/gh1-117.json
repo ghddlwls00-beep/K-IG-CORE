@@ -36,7 +36,12 @@
       "items": [
         {
           "n": "1",
-          "text": "Do US forces face an uphill battle?"
+          "text": "Do US forces face an uphill battle?",
+          "alternatives": [
+            "Do US troops face an uphill battle?",
+            "Do American forces face an uphill battle?",
+            "Do American troops face an uphill battle?"
+          ]
         },
         {
           "n": "2",
@@ -228,7 +233,10 @@
         },
         {
           "n": "32",
-          "text": "Most were not killed in a fierce firefight with Taliban forces, were they?"
+          "text": "Most were not killed in a fierce firefight with Taliban forces, were they?",
+          "alternatives": [
+            "Most were not killed in a fierce firefight with Taliban troops, were they?"
+          ]
         },
         {
           "n": "33",
@@ -243,7 +251,10 @@
         },
         {
           "n": "35",
-          "text": "Is the recovery effort destroying vital clues?"
+          "text": "Is the recovery effort destroying vital clues?",
+          "alternatives": [
+            "Is the recovery effort destroying important clues?"
+          ]
         },
         {
           "n": "36",

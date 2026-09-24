@@ -30,7 +30,9 @@
           "n": "1",
           "text": "He finished it working 15 hours a day.",
           "alternatives": [
-            "He finished it working fifteen hours a day."
+            "He finished it working fifteen hours a day.",
+            "He finished that working 15 hours a day.",
+            "He finished that working fifteen hours a day."
           ]
         },
         {
@@ -109,11 +111,17 @@
         },
         {
           "n": "18",
-          "text": "I am sure of being responsible for it."
+          "text": "I am sure of being responsible for it.",
+          "alternatives": [
+            "I am sure of being responsible for that."
+          ]
         },
         {
           "n": "19",
-          "text": "I am sure of your being responsible for it."
+          "text": "I am sure of your being responsible for it.",
+          "alternatives": [
+            "I am sure of your being responsible for that."
+          ]
         }
       ]
     },

@@ -16,10 +16,10 @@
  {"item": "6-0521 d215 n6 EN", "files": ["content/ld_english_scripts.json"],
   "from": "Some animals, such as the white buffalo, were even worshipped because they were thought to be sacred.",
   "to": "Some animals, such as the white buffalo, were held sacred, and some still are today.", "expect": 1},
- {"item": "6-0521 d215 n6 KO", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0521 d215 n6 KO", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "흰 들소같은 일부 동물들은 신성한 것으로 생각되었기 때문에 심지어 숭배받기까지 했다.",
   "to": "흰 들소같은 일부 동물들은 신성하게 여겨졌고, 일부는 오늘날에도 그렇다.", "expect": 1},
- {"item": "6-0521 d215 넘친 힌트 줄", "files": ["content/lessons/ld/d215.json"],
+ {"item": "6-0521 d215 넘친 힌트 줄", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d215.json"],
   "from": "white buffalo worship sacred.", "to": "white buffalo held sacred.", "expect": 1},
 
  {"item": "6-0531 d231 n2 EN", "files": ["content/ld_english_scripts.json"],
@@ -62,6 +62,6 @@
  {"item": "6-0570 d266 n4 EN", "files": ["content/ld_english_scripts.json"],
   "from": "The graphic arts such as sketching, painting, and sculpturing help to satisfy this desire.",
   "to": "The visual arts such as sketching, painting, and sculpturing help to satisfy this desire.", "expect": 1},
- {"item": "6-0570 d266 hints", "files": ["content/lessons/ld/d266.json"],
+ {"item": "6-0570 d266 hints", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d266.json"],
   "from": "graphic arts sketching,", "to": "visual arts sketching,", "expect": 1}
 ]

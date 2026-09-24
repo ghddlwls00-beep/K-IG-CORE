@@ -100,8 +100,10 @@ const isKo = (s) => /[가-힣]/.test(s);
  */
 const hintChunks = (text) =>
   String(text || "")
-    .split(/,(?!\d{3}(?!\d))|\.\s+|\.$|\s{2,}/) // 천 단위 쉼표("4,000")에서는 자르지 않음 (앱과 같음, 6단계 3차 점검 #4 N1)
-    .map((chunk) => chunk.trim().replace(/[.,]+$/, "").trim())
+    // 천 단위 쉼표("4,000")에서는 자르지 않음 (앱과 같음, 6단계 3차 점검 #4 N1) · 칭호(Mr. Mrs. Ms. Dr. St. …) · 한 글자 머리글자(N. · D.W.) 뒤
+    // 마침표에서도 자르지 않고, 칩 끝의 그 마침표는 남김 (앱과 같음, 관문 15 C06113 — 'Mrs. Watson' 이 [Mrs] [Watson] 로 갈리던 것)
+    .split(/,(?!\d{3}(?!\d))|(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))\.\s+|\.$|\s{2,}/)
+    .map((chunk) => chunk.trim().replace(/(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))[.,]+$/, "").trim())
     .filter((chunk, index, all) => chunk && all.indexOf(chunk) === index); // 같은 청크는 한 번 (앱과 같음, 6단계)
 
 const squashHint = (value) => String(value).toLowerCase().replace(/[^a-z0-9]/g, "");

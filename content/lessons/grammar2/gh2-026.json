@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "1",
-          "text": "It's the wrong size."
+          "text": "It's the wrong size.",
+          "alternatives": [
+            "That's the wrong size."
+          ]
         },
         {
           "n": "2",
@@ -42,7 +45,9 @@
           "n": "4",
           "text": "It's a really good buy.",
           "alternatives": [
-            "It's a real good buy."
+            "It's a real good buy.",
+            "That's a really good buy.",
+            "That's a real good buy."
           ]
         },
         {
@@ -74,11 +79,17 @@
         },
         {
           "n": "10",
-          "text": "Are there any landmarks near it?"
+          "text": "Are there any landmarks near it?",
+          "alternatives": [
+            "Are there any landmarks near that?"
+          ]
         },
         {
           "n": "11",
-          "text": "What's the most prominent building near it?"
+          "text": "What's the most prominent building near it?",
+          "alternatives": [
+            "What's the most prominent building near that?"
+          ]
         },
         {
           "n": "12",

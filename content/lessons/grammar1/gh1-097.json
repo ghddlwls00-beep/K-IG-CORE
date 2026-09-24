@@ -50,7 +50,12 @@
         },
         {
           "n": "79",
-          "text": "Every boy didn't lose his life, did he?"
+          "text": "Not every boy lost his life, did he?",
+          "alternatives": [
+            "Every boy didn't lose his life, did he?",
+            "Not every boy lost his life, did they?",
+            "Every boy didn't lose his life, did they?"
+          ]
         },
         {
           "n": "80",
@@ -61,7 +66,11 @@
         },
         {
           "n": "81",
-          "text": "All the boys didn't protect their sisters, did they?"
+          "text": "Not all the boys protected their sisters, did they?",
+          "alternatives": [
+            "All the boys didn't protect their sisters, did they?",
+            "Not all of the boys protected their sisters, did they?"
+          ]
         },
         {
           "n": "82",
@@ -74,8 +83,10 @@
         },
         {
           "n": "83",
-          "text": "All of them didn't smell it.",
+          "text": "Not all of them smelled it.",
           "alternatives": [
+            "Not all of them smelled that.",
+            "All of them didn't smell it.",
             "All of them didn't smell that."
           ]
         },

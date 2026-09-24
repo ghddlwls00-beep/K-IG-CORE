@@ -45,7 +45,9 @@
           "n": "4",
           "text": "It takes one hour for me to get here.",
           "alternatives": [
-            "It takes me one hour to get here."
+            "It takes me one hour to get here.",
+            "It takes an hour for me to get here.",
+            "It takes me an hour to get here."
           ]
         },
         {
@@ -73,10 +75,7 @@
         },
         {
           "n": "10",
-          "text": "It is cruel of him to desert his old father.",
-          "alternatives": [
-            "It is very bad of him to desert his old father."
-          ]
+          "text": "It is cruel of him to desert his old father."
         },
         {
           "n": "11",
