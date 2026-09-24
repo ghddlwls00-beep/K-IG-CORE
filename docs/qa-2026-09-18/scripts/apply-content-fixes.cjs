@@ -116,7 +116,13 @@ function findString(node, text, where = "", out = []) {
 // ---------------------------------------------------------------- 판정 읽기
 const verdicts = JSON.parse(readSrc(VERDICTS));
 const list = LIST ? new Map(readSrc(LIST).split("\n").filter(Boolean).map((l) => { const x = JSON.parse(l); return [x.id, x]; })) : new Map();
-if (REF === "file" && WRITE) { console.error("STOP: --ref file(초안)로는 쓰지 않음 — 커밋된 가지의 결과로만 적용"); process.exit(2); }
+// --ref file 은 초안 미리 보기용 — 쓰려면 그 파일을 만든 커밋된 출처를 --derived-from <커밋> 으로 적어야 함(예: 전수 읽기 판정.json + 결과.md '더한 틀림' 표를 합친 파일)
+const DERIVED = arg("--derived-from", null);
+if (REF === "file" && WRITE) {
+  if (!DERIVED) { console.error("STOP: --ref file(초안)로는 쓰지 않음 — 커밋된 가지의 결과로만 적용(합친 파일이면 --derived-from <커밋>)"); process.exit(2); }
+  const r = spawnSync("git", ["cat-file", "-e", `${DERIVED}^{commit}`], { cwd: REPO });
+  if (r.status !== 0) { console.error(`STOP: --derived-from ${DERIVED} 가 커밋이 아님`); process.exit(2); }
+}
 // 전수 읽기(full-merge.cjs) 판정은 꼴이 다르다: { 표: [{ ch(조각), c(과정), g(묶음 'ld/d010'), x(최종), how }] } — 재검토 꼴로 맞춤
 if (!verdicts["찾은것"] && Array.isArray(verdicts["표"])) {
   verdicts["찾은것"] = verdicts["표"].map((r) => ({ key: `F:${r.g}:${r.x && r.x.T}`, 상태: "표에 올림", 출처: `전수(${r.how || ""})`, 조각: r.ch, ids: [], 쪽: `/${r.g}`, 묶음: r.g, 최종: r.x || {} }));
@@ -191,19 +197,46 @@ function propose(f, file, parent, key, where, value, expectOld) {
   (findingSlots.get(uid(f)) || findingSlots.set(uid(f), []).get(uid(f))).push(k);
   return null;
 }
-const pathInWhere = (w) => { const m = String(w || "").match(/(content\/[\w./-]+\.json)\s+((?:\.[^\s.[\]()·—]+|\[[^\]]+\])+)/); return m ? { file: m[1], path: m[2] } : null; };
+// '고칠 곳' 적는 법 맞추기(전수 읽기에서 봄): 'items[5] (n=6) .alternatives' · 'json blocks[3].items(n=37).alternatives' · '… · 분할본 gh1-007-1.json …'
+const normWhere = (w) => String(w || "")
+  .replace(/\.json\s+blocks\[/g, ".json .blocks[")
+  .replace(/\.json\s+readingSentences/g, ".json .readingSentences")
+  .replace(/items\(n=(\d+)\)/g, "items[n=$1]")
+  .replace(/\s*\(n=\d+\)\s*(?=\.)/g, "")
+  .replace(/\]\s+\.(?=[A-Za-z])/g, "].");
+const PATH_RE = "((?:\\.[^\\s.[\\]()·—]+|\\[[^\\]]+\\])+)";
+const pathInWhere = (w) => { const m = normWhere(w).match(new RegExp(`(content\\/[\\w./-]+\\.json)\\s+${PATH_RE}`)); return m ? { file: m[1], path: m[2] } : null; };
+/** '고칠 곳' 에 적힌 (파일, 칸) 모두 — 첫 파일과 같은 폴더의 '분할본 gh1-007-1.json .blocks[…]' 처럼 폴더를 뺀 파일도. 칸을 안 적은 옆 파일은 첫 칸과 같은 칸으로 */
+function pathsInWhere(w) {
+  const first = pathInWhere(w);
+  if (!first) return [];
+  const out = [first];
+  const dir = path.posix.dirname(first.file);
+  const re = new RegExp(`(?<![\\w/])((?:gh[12]|pr|d|s|mv|hv)[\\w-]*\\.json)(?:\\s+${PATH_RE})?`, "g");
+  const t = normWhere(w);
+  let m;
+  while ((m = re.exec(t))) {
+    const file = `${dir}/${m[1]}`;
+    if (file === first.file || out.some((x) => x.file === file)) continue;
+    out.push({ file, path: m[2] || first.path });
+  }
+  return out;
+}
 // '고칠 곳' 에 JSON 칸(.commonplace.meaning 같은)이 적혔는데 바꾸려는 칸과 다르면 손으로 — 판정 줄(ids)은 '읽다 본 줄' 이고 고칠 칸은 다른 곳일 수 있다
 // (2026-09-24 미리 보기에서 잡음: C02694 는 바뀐 줄 common 을 읽다 commonplace 를 고치라는 판정인데, 도구가 common 을 바꿈).
-const wherePaths = (w) => [...String(w || "").matchAll(/(?:^|[\s·(,])(\.[A-Za-z_][\w-]*(?:\.[A-Za-z_][\w-]*|\[[^\]]+\])*)/g)].map((m) => m[1]);
+const wherePaths = (w) => [...normWhere(w).matchAll(/(?:^|[\s·(,])(\.[A-Za-z_][\w-]*(?:\.[A-Za-z_][\w-]*|\[[^\]]+\])*)/g)].map((m) => m[1]);
 /** 같은 칸인가 — '고칠 곳' 의 경로를 그 파일에서 풀어 같은 자리(parent · key)를 가리키면 같음([n=13] 과 [12] 처럼 적는 법만 다를 수 있음).
  *  풀리지 않는 조각 경로(.alternatives 같은)는 글자로 끝이 맞는지만 본다. */
+/** node 안(자기 자신 포함)에 target 객체가 있나 — '고칠 곳' 이 바꾸려는 칸의 윗자리를 적은 경우 */
+const contains = (node, target) => node === target || (node !== null && typeof node === "object" && Object.values(node).some((v) => contains(v, target)));
 const pathAgrees = (slotPath, w, json, parent, key) => {
   const ps = wherePaths(w);
   if (!ps.length) return true;
   const s = String(slotPath).replace(/\s+/g, "");
   return ps.some((p) => {
     // 끝 칸이 없는(undefined) 풀이는 '못 풂' 으로 — 맨 위에서 '.text' 를 풀면 오류 없이 없는 칸이 나온다
-    if (json) { const r = resolve(json, p); if (!r.error && r.parent && r.parent[r.key] !== undefined) return r.parent === parent && r.key === key; }
+    // 적힌 칸이 바꾸려는 칸이거나, 그 칸을 품은 자리(.readingSentences[0] → 그 문장의 .korean · 문항 → 그 .alternatives)면 같음
+    if (json) { const r = resolve(json, p); if (!r.error && r.parent && r.parent[r.key] !== undefined) return (r.parent === parent && r.key === key) || contains(r.parent[r.key], parent); }
     return s.endsWith(p) || p.endsWith(s);
   });
 };
@@ -222,7 +255,9 @@ for (const f of table) {
   const arr = asArray(fix);
   const value = arr || fix;
   if (!arr && COMPOSITE.some((r) => r.test(fix))) { no("'고칠 글' 이 여러 칸 · 목록 꼴"); continue; }
-  if (WHERE_MANUAL.some((r) => r.test(where)) || MULTI_SLOT.test(where)) { no(`'고칠 곳' 이 한 칸 바꾸기가 아님: ${where.slice(0, 80)}`); continue; }
+  // 여러 칸 표시는 한 파일 안의 여러 칸일 때만 손으로 — '… · 분할본 gh1-007-1.json 같은 칸' 은 파일마다 한 칸(pathsInWhere)
+  const multiFile = new Set(pathsInWhere(where).map((t) => t.file)).size > 1;
+  if (WHERE_MANUAL.some((r) => r.test(where)) || (MULTI_SLOT.test(where) && !multiFile)) { no(`'고칠 곳' 이 한 칸 바꾸기가 아님: ${where.slice(0, 80)}`); continue; }
   const ids = (f.ids || []).filter((id) => list.has(id));
   let why = null;
   if (ids.length) {
@@ -253,22 +288,36 @@ for (const f of table) {
       else why = propose(f, fin["파일"], r.parent, r.key, p, value, arr ? ANY : now);
     }
   } else if (pathInWhere(where)) {
-    // '고칠 곳' 에 파일과 JSON 경로가 적힘(표본 판정 등)
-    const { file: rel, path: p } = pathInWhere(where);
-    const file = load(rel);
-    if (!file) why = `파일 없음 ${rel}`;
-    else {
-      const r = resolve(file.json, p);
-      if (r.error) why = r.error;
-      else {
-        const cur = r.parent[r.key];
-        // LISTENING 표본 판정은 '지금' 에 칩 모양('[Mrs] [Watson]')을 적고 힌트 줄 전체를 고칠 글로 준다 — 그 칸이 hints 블록일 때만 대조 없이 받음
-        const isHints = r.parent && r.parent.type === "hints" && r.key === "text";
-        if (!arr && typeof now === "string" && cur === now) why = propose(f, rel, r.parent, r.key, p, value, now);
-        else if (arr) why = propose(f, rel, r.parent, r.key, p, value, ANY);
-        else if (isHints && typeof now === "string" && /^\s*\[/.test(now)) why = propose(f, rel, r.parent, r.key, p, value, ANY);
-        else why = `칸의 지금 글이 판정의 '지금' 과 다름 ${rel} ${p}`;
+    // '고칠 곳' 에 파일과 JSON 경로가 적힘(표본 판정 · 전수 읽기) — 분할본 등 여러 파일이면 파일마다 같은 고침
+    for (const { file: rel, path: p0 } of pathsInWhere(where)) {
+      const file = load(rel);
+      if (!file) { why = `파일 없음 ${rel}`; break; }
+      let p = p0;
+      let r = resolve(file.json, p);
+      if (r.error) { why = r.error; break; }
+      // 대체 답 배열 고침인데 적힌 칸이 문항(글 · n 이 있는 것)이면 그 문항의 alternatives(없으면 새로)
+      if (arr && r.parent[r.key] && typeof r.parent[r.key] === "object" && !Array.isArray(r.parent[r.key]) && typeof r.parent[r.key].text === "string") {
+        r = { parent: r.parent[r.key], key: "alternatives" }; p = `${p}.alternatives`;
       }
+      // 문항 번호를 적었으면(n=6) 그 칸의 문항이 그 번호인지 — 분할본은 블록 순서가 다를 수 있어 같은 [2].items[5] 가 딴 문항일 수 있음
+      if (arr) {
+        const nm = String(where).match(/\bn=(\d+)/);
+        if (nm && r.parent && r.parent.n !== undefined && String(r.parent.n) !== nm[1]) { why = `${rel} ${p} 의 문항 번호 ${r.parent.n} ≠ 적힌 n=${nm[1]}`; break; }
+      }
+      // 글 고침인데 적힌 칸이 문장 · 문항이면(.readingSentences[0]) — '지금' 과 같은 글 칸이 그 안에 하나일 때만
+      if (!arr && r.parent[r.key] && typeof r.parent[r.key] === "object" && typeof now === "string") {
+        const hits = findString(r.parent[r.key], now, p);
+        if (hits.length !== 1) { why = `${rel} ${p} 안에 '지금' 과 같은 칸이 ${hits.length}곳`; break; }
+        r = { parent: hits[0].parent, key: hits[0].key }; p = hits[0].where;
+      }
+      const cur = r.parent[r.key];
+      // LISTENING 표본 판정은 '지금' 에 칩 모양('[Mrs] [Watson]')을 적고 힌트 줄 전체를 고칠 글로 준다 — 그 칸이 hints 블록일 때만 대조 없이 받음
+      const isHints = r.parent && r.parent.type === "hints" && r.key === "text";
+      if (!arr && typeof now === "string" && cur === now) why = propose(f, rel, r.parent, r.key, p, value, now);
+      else if (arr) why = propose(f, rel, r.parent, r.key, p, value, ANY);
+      else if (isHints && typeof now === "string" && /^\s*\[/.test(now)) why = propose(f, rel, r.parent, r.key, p, value, ANY);
+      else why = `칸의 지금 글이 판정의 '지금' 과 다름 ${rel} ${p}`;
+      if (why) break;
     }
   } else {
     if (typeof now !== "string" || !now) { no("'지금' 글이 없음(칸을 찾을 수 없음)"); continue; }
