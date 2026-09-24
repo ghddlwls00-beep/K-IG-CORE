@@ -38,7 +38,7 @@ const SELECTOR = {
   await send("Network.enable"); await send("Runtime.enable"); await send("Page.enable");
   await send("Network.setCookie", { name: "kig_license_session", value: lic.token, domain: "127.0.0.1", path: "/", httpOnly: true });
   await send("Page.navigate", { url: BASE + "/robots.txt" }); await sleep(2500);
-  await ev(`localStorage.setItem('kig:device:id:v1', ${JSON.stringify(lic.deviceId)}); localStorage.setItem('kig:license:v1', ${JSON.stringify(JSON.stringify({ key: lic.key, plan: lic.plan, activatedAt: Date.now(), expiresAt: lic.expiresAt, token: lic.token }))}); sessionStorage.setItem('x','1'); 1`);
+  await ev(`localStorage.setItem('kig:device:id:v1', ${JSON.stringify(lic.deviceId)}); localStorage.setItem('kig:license:v1', ${JSON.stringify(JSON.stringify({ maskedKey: lic.maskedKey, licenseId: lic.licenseId, plan: lic.plan, activatedAt: Date.now(), expiresAt: lic.expiresAt, token: lic.token }))}); sessionStorage.setItem('x','1'); 1`); // BUG-018: token + masked code, never the code
   await send("Page.addScriptToEvaluateOnNewDocument", { source: `window.__ev=[]; (()=>{const seen=new WeakSet(); const op=HTMLMediaElement.prototype.play; HTMLMediaElement.prototype.play=function(){const el=this; if(!seen.has(el)){seen.add(el); ['playing','error'].forEach(e=>el.addEventListener(e,()=>window.__ev.push(e+':'+(el.currentSrc||'').split('/').pop())));} window.__ev.push('play:'+(el.src||'').split('/').pop().slice(0,30)); return op.apply(this,arguments).catch(e=>{window.__ev.push('reject:'+String(e).slice(0,40)); throw e;});};})();` });
   for (const r of targets) {
     await send("Page.navigate", { url: BASE + r.url });

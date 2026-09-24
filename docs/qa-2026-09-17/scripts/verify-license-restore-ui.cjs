@@ -19,6 +19,9 @@
  *   E  SEC-03: admin resets the devices → the page drops the licence and shows the paywall
  *
  *   node verify-license-restore-ui.cjs     exit 0 = every case as expected
+ *
+ * BUG-018 (2026-09-24 · 토큰 v2): case C checks the restored copy has the token and the masked code and NO "key" field
+ * (it used to require the code back).
  */
 const fs = require("fs");
 const path = require("path");
@@ -44,6 +47,7 @@ Object.assign(process.env, secrets);
 const { loadTs } = require("../../qa-2026-09-15/scripts/tsload.cjs");
 const adminAuth = loadTs(path.join(REPO, "src/lib/adminAuth.ts"));
 const serverLicense = loadTs(path.join(REPO, "src/lib/serverLicense.ts"));
+const licenseLib = loadTs(path.join(REPO, "src/lib/license.ts")); // BUG-018: maskLicenseKey — what the browser may keep
 const adminCookie = `${adminAuth.ADMIN_COOKIE_NAME}=${adminAuth.createAdminSessionToken()}`;
 
 const results = [];
@@ -127,7 +131,10 @@ const state = (tab) => tab.eval(`({
     await sleep(2500);
     sC = await state(tabC);
     check("C: lesson still opens from the server cookie", !sC.paywall && sC.text.includes("READING 목록"));
-    check("C: licence restored into localStorage", !!sC.licence && JSON.parse(sC.licence).key === key);
+    // BUG-018 (2026-09-24, 토큰 v2): the restored copy holds the token and the MASKED code — no "key" field. This used to
+    // require the code itself back (JSON.parse(sC.licence).key === key), exactly what BUG-018 removed.
+    const restored = (() => { try { return JSON.parse(sC.licence || "null"); } catch { return null; } })();
+    check("C: licence restored into localStorage (no code — masked code + token)", !!restored && !("key" in restored) && restored.maskedKey === licenseLib.maskLicenseKey(key) && typeof restored.token === "string" && restored.token.length > 0, restored ? `fields ${Object.keys(restored).sort().join(",")}` : "none");
     check("C: the SAME device ID restored", sC.deviceId === deviceA, `${sC.deviceId} vs ${deviceA}`);
     check("C: no reload", sC.loads === 1, `loads ${sC.loads}`);
     check("C: still 1 device slot", (await admin("/api/license/status")).body.records[key].devices.length === 1);

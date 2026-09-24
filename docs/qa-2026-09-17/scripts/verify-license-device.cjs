@@ -14,6 +14,10 @@
  *              an expired but genuine token still frees the slot
  *
  *   node verify-license-device.cjs     exit 0 = every case as expected
+ *
+ * BUG-018 (2026-09-24 · 토큰 v2): the session answer carries the masked code and an opaque licence id, not the code —
+ * the 'valid from cookies alone' case checks that (it used to require the code back). The v2 token itself is proven by
+ * docs/qa-2026-09-18/scripts/prove-license-token-v2.cjs.
  */
 const fs = require("fs");
 const os = require("os");
@@ -74,7 +78,10 @@ const setCookies = (res) => {
     // --- 8 days later Safari has wiped localStorage; only the server-set cookies are left
     clock += 8 * DAY;
     const s1 = await (await get(session.GET, "/api/license/session", cookieJar)).json();
-    check("session: valid from cookies alone", s1.valid === true && s1.key === key && s1.plan === "1Y" && s1.deviceId === phone && s1.token === a1body.licenseToken);
+    // BUG-018 (2026-09-24, 토큰 v2): the session hands back the MASKED code and an opaque id — never the code itself.
+    // This check used to require s1.key === key, which is exactly what BUG-018 removed.
+    const licenseModule = loadTs(path.join(REPO, "src/lib/license.ts"));
+    check("session: valid from cookies alone (no code — masked code + opaque id)", s1.valid === true && s1.key === undefined && s1.maskedKey === licenseModule.maskLicenseKey(key) && s1.maskedKey !== key && typeof s1.licenseId === "string" && s1.licenseId.length > 0 && !String(s1.licenseId).includes(key.split("-")[2]) && s1.plan === "1Y" && s1.deviceId === phone && s1.token === a1body.licenseToken, `key ${s1.key === undefined ? "none" : "PRESENT"} · masked ${s1.maskedKey === licenseModule.maskLicenseKey(key)} · licenseId ${typeof s1.licenseId}`);
     check("session: expiry is the fixed period (first registration + 365 days)", s1.expiresAt === Date.UTC(2026, 0, 1, 3, 0, 0) + 365 * DAY, new Date(s1.expiresAt).toISOString());
     check("session: nothing without cookies", (await (await get(session.GET, "/api/license/session")).json()).valid === false);
     const onlyDevice = await (await get(session.GET, "/api/license/session", `kig_device=${phone}`)).json();

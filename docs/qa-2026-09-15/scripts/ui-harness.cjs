@@ -241,7 +241,7 @@ async function worker(tab, queue, stats) {
     await boot.send("Network.setCookie", { name: "kig_license_session", value: lic.token, domain: "127.0.0.1", path: "/", httpOnly: true, sameSite: "Lax" });
     await boot.send("Page.navigate", { url: BASE + "/robots.txt" });
     await sleep(3000);
-    await boot.eval(`localStorage.clear(); localStorage.setItem('kig:device:id:v1', ${JSON.stringify(lic.deviceId)}); localStorage.setItem('kig:device:name:v1','QA harness'); localStorage.setItem('kig:license:v1', ${JSON.stringify(JSON.stringify({ key: lic.key, plan: lic.plan, activatedAt: Date.now(), expiresAt: lic.expiresAt, token: lic.token }))}); 'ok'`);
+    await boot.eval(`localStorage.clear(); localStorage.setItem('kig:device:id:v1', ${JSON.stringify(lic.deviceId)}); localStorage.setItem('kig:device:name:v1','QA harness'); localStorage.setItem('kig:license:v1', ${JSON.stringify(JSON.stringify({ maskedKey: lic.maskedKey, licenseId: lic.licenseId, plan: lic.plan, activatedAt: Date.now(), expiresAt: lic.expiresAt, token: lic.token }))}); 'ok'`); // BUG-018: the browser keeps the token + masked code, never the code
     const tabs = [];
     for (let i = 0; i < WORKERS; i++) {
       const t = await Tab.open();
