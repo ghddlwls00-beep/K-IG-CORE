@@ -1,0 +1,154 @@
+{
+ "조각": "student",
+ "뽑은때": "2026-09-24 20:31",
+ "대상": [
+  {
+   "key": "F:student/s16-1:T02",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/student/01.md",
+   "주장": {
+    "T": "T02",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "제목줄(h2)의 장 이름 '(또 다른 장래희망 (통역사))' — '장래 희망' 은 표준국어대사전 · 우리말샘에 한 낱말로 없어 띄어 씀(국립국어원 온라인가나다 '장래희망 띄어쓰기' 답 · 결정 17 원칙). 제목은 소리 없음. 같은 장 이름이 강의 label(과정 목록 쪽 부제목 — CourseDashboard pres.subtitle) · 과정 목록 groups[15].title 에도 있어 같이 맞춤. 9/18 기준 판과 같은 글.",
+    "지금": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - My Other Dream Job (또 하나의 꿈)",
+    "고칠 글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - My Other Dream Job (또 하나의 꿈)",
+    "고칠 곳": "content/lessons/student/s16-1.json .blocks[0].text (제목줄) — 같은 장 이름: s16-1.json label · content/courses/student.json lessons[63].label · groups[15].title 'Chapter 16. 또 다른 장래희망 (통역사) (My Other Dream Job (Interpreter))' → '장래 희망'",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:student/s18-3:T05",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/student/02.md",
+   "주장": {
+    "T": "T05",
+    "종류": "①",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "영어 #3(화면 · 소리 · 받아쓰기). 형용사 차례 — 영어는 'traditional Korean …'(성질 → 출처) 차례가 자연스러움. 'a Korean traditional rice cake' 는 한국어 차례('한국의 전통 떡')를 옮긴 꼴. 같은 과정 s19-2 'traditional Korean clothing' · s19-3 'Traditional Korean meals' 는 바른 차례라 과정 안에서도 흔들림. 한국어 #3(1부 판정) '…한국의 전통 떡인 송편을 만듭니다.' 는 그대로 맞음. 9/18 기준 판과 같은 글(9/17 에 원본 'song-pyeun' 표기만 고침).",
+    "지금": "In addition, most people play games with their relatives and make songpyeon, which is a Korean traditional rice cake.",
+    "고칠 글": "In addition, most people play games with their relatives and make songpyeon, which is a traditional Korean rice cake.",
+    "고칠 곳": "content/lessons/student/s18-3.json .blocks[1].items[2].text (영어 #3)",
+    "새 음성 클립": true
+   }
+  },
+  {
+   "key": "F:student/s3-4:T01",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/student/02.md",
+   "주장": {
+    "T": "T01",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "강의 제목(화면 h1 'Part 4 · Friend's Dreams (친구의 장래희망)') — '장래 희망' 은 표준국어대사전 · 우리말샘에 한 낱말로 없어 띄어 씀(국립국어원 온라인가나다 '장래희망 띄어쓰기' 답 · 결정 17 원칙). 제목은 소리 없음. T02 제목줄에도 같은 글(s16 장 이름의 '장래희망' 은 01.md 에 적음). 9/18 기준 판과 같은 글.",
+    "지금": "Friend's Dreams (친구의 장래희망)",
+    "고칠 글": "Friend's Dreams (친구의 장래 희망)",
+    "고칠 곳": "content/lessons/student/s3-4.json title · content/courses/student.json lessons[15].title (화면 h1 'Part 4 · ' 뒤)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:student/s3-4:T02",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/student/02.md",
+   "주장": {
+    "T": "T02",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "제목줄(h2) — T01 과 같은 까닭('장래희망' → '장래 희망'). 제목은 소리 없음. 9/18 기준 판과 같은 글.",
+    "지금": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래희망)",
+    "고칠 글": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래 희망)",
+    "고칠 곳": "content/lessons/student/s3-4.json .blocks[0].text (제목줄)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "G:student/s5-1",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/student/02.md",
+   "읽을글": 9
+  },
+  {
+   "key": "G:student/s5-3",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/student/02.md",
+   "읽을글": 5
+  },
+  {
+   "key": "G:student/s5-2",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/student/02.md",
+   "읽을글": 15
+  }
+ ],
+ "결과": [
+  {
+   "key": "G:student/s5-1",
+   "결론": "다시 읽음",
+   "읽은 글": 9,
+   "틀림": [],
+   "까닭": "판정을 가린 채 T01 ~ T09 전부 읽음(content/lessons/student/s5-1.json 과 견줌). 제목 두 줄 · 영어 #1 ~ #4 · 한국어 #1 ~ #3 모두 틀림 없음. 영어: 'sleep in late' 는 흔히 쓰는 말(겹말 취향 문제일 뿐) · 쌍반점 'so busy; we can’t …' 맞음 · 곧은 따옴표 섞임 없음(아포스트로피 한 곳). 한국어: '학교에 가는 준비는 나의 하루의 가장 어려운 부분입니다' 는 '갈 준비' · '나의 하루의' 가 더 매끄러울 뿐 맞춤법 · 뜻은 맞음(문체). '먹을 수도 없습니다' 띄어쓰기 맞음. 강의 안 '나' 로 한결같음. 한국어 #4(용돈 줄)는 1부에서 판정한 문맥 줄이라 세지 않음.",
+   "때": "2026-09-24 20:37"
+  },
+  {
+   "key": "G:student/s5-2",
+   "결론": "다시 읽음",
+   "읽은 글": 15,
+   "틀림": [],
+   "까닭": "판정을 가린 채 T01 ~ T15 전부 읽음(content/lessons/student/s5-2.json 과 견줌). 새로 적을 틀림 없음. T10 '것 보다' → '것보다' 는 읽을거리 표시대로 1부 문맥 #1 에 이미 적힘 — 다시 적지 않음(같은 줄의 '가는 것이 … 도착할 수 있습니다' 주술 어색함은 문체). 본 것: T06 '보통 약 15분' 의 '약' 은 영어(15 minutes)에 없는 말이나 'usually takes' 의 어림과 같은 뜻이라 오도 없음 — 틀림으로 세지 않음. 'stationery'(문구) 철자 맞음(원본 교재 'stationary' 가 고쳐져 있음). 'bike · bicycle' 섞임은 문체. '등굣길' 사이시옷 맞음. '걸어가다' 한 낱말로 붙임 맞음. 강의 안 '나' 한결같음. 한국어 #6(문구점 줄)은 1부 문맥 줄이라 세지 않음.",
+   "때": "2026-09-24 20:37"
+  },
+  {
+   "key": "G:student/s5-3",
+   "결론": "다시 읽음",
+   "읽은 글": 5,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'전달 사항' 은 표준국어대사전 한 낱말이 아니라 두 낱말(결정 17 원칙: 사전 한 낱말만 붙임 — 1부의 '생일 파티' · '스키 여행' · '다음 주' 와 같은 결)이라 띄어 씀. 뜻 · 영어 짝(gives us the announcements for the day)은 맞음. 흔히 붙여 쓰는 말이라 확신 보통. 화면 KO 줄 · 한국어 소리(학습자가 봄 · 들음). STUDENT 에서 '사항' 은 이 한 곳. 9/18 뒤 안 바뀐 글이라 고치기 전(9d6e15d) = 지금.",
+     "지금": "이 시간 동안, 우리 선생님께서는 출석을 부르시고 우리에게 그날의 전달사항을 말씀하십니다.",
+     "고칠 글": "이 시간 동안, 우리 선생님께서는 출석을 부르시고 우리에게 그날의 전달 사항을 말씀하십니다.",
+     "고칠 곳": "content/lessons/student/s5-3.json .blocks[3].text (한국어 문단 2번째 — 영어 #2 'During this time, our teacher calls roll …' 짝)",
+     "새 음성 클립": true
+    }
+   ],
+   "까닭": "판정을 가린 채 T01 ~ T05 전부 읽음(content/lessons/student/s5-3.json 과 견줌). 틀림 1(T04 '전달사항' 띄어쓰기 · 낮음). 본 것: T03 'calls roll' 맞는 관용어 · T05 'the students are very noisy so the teacher has to shout at us' 는 so 앞 쉼표가 없고 the students → us 로 사람이 바뀌나 뜻을 바꾸지 않아 틀림 아님(문체). '그날' 한 낱말 맞음. 영어 #1 · 한국어 #1 · 한국어 #3 은 1부 문맥 줄이라 세지 않음.",
+   "때": "2026-09-24 20:37"
+  },
+  {
+   "key": "F:student/s16-1:T02",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "content/lessons/student/s16-1.json .blocks[0].text 가 지금 글과 같음(화면 제목줄 h2 — 소리 없음). '장래 희망' 은 사전 한 낱말이 아니라 두 낱말 — 결정 17 원칙(사전 한 낱말만 붙임)대로 띄어 씀이 맞음. 고칠 글은 '장래희망' 한 곳만 띄우고 나머지 글자는 그대로라 새 틀림 없음. 고칠 곳의 같은 장 이름도 확인: s16-1.json label · courses/student.json lessons[63](= s16-1).label · groups[15].title 에 같은 '장래희망'. s16-2 · s16-3 제목줄 · label(lessons[64] · [65])은 그 묶음 T02 로 따로 적혀 있어 장 전체가 한 번에 맞춰짐. STUDENT 본문에 '장래희망/장래 희망' 은 없어 강의 안 흔들림도 안 생김. 심각도 낮음(띄어쓰기) · 새 음성 클립 false 맞음.",
+   "때": "2026-09-24 20:39"
+  },
+  {
+   "key": "F:student/s18-3:T05",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "content/lessons/student/s18-3.json .blocks[1].items[2].text 가 지금 글과 같음(영어 #3 — 화면 · 소리 · 받아쓰기). 영어 형용사 차례는 성질(traditional) → 출처(Korean) 가 자연스러움 — 'a traditional Korean rice cake'. 같은 강의 제목줄(T02)부터 'Traditional Korean Holidays' 이고 s19-2 · s19-3 도 'traditional Korean' 이라 강의 · 과정 안 흔들림. 'Korean traditional' 이 문법상 불가능한 꼴은 아니라 낮음 · 확신 보통이 알맞음. 고칠 글은 두 낱말 차례만 바꿔 새 틀림 없음, 한국어 짝 '한국의 전통 떡인 송편' 은 그대로 맞음. 영어가 바뀌므로 새 음성 클립 true 맞음.",
+   "때": "2026-09-24 20:39"
+  },
+  {
+   "key": "F:student/s3-4:T01",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "content/lessons/student/s3-4.json title · content/courses/student.json lessons[15](= s3-4).title 둘 다 'Friend's Dreams (친구의 장래희망)' — 화면 h1 'Part 4 · ' 뒤에 보임(소리 없음). '장래 희망' 띄어 씀(결정 17 원칙 — s16 장 이름과 같은 까닭). menuLabel '3-4. Friend's Dreams' 는 영어뿐이라 고칠 곳 빠짐 없음. 고칠 글은 한 곳만 띄워 새 틀림 없음. 심각도 낮음 · 새 음성 클립 false 맞음.",
+   "때": "2026-09-24 20:39"
+  },
+  {
+   "key": "F:student/s3-4:T02",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "content/lessons/student/s3-4.json .blocks[0].text(화면 제목줄 h2 — 소리 없음)가 지금 글과 같음. T01 과 같은 까닭으로 '장래 희망' 띄어 씀. label 'Chapter 3. Friend Introduction (친구 소개)' 에는 그 낱말이 없어 더 고칠 곳 없음. 심각도 낮음 · 새 음성 클립 false 맞음.",
+   "때": "2026-09-24 20:39"
+  }
+ ]
+}

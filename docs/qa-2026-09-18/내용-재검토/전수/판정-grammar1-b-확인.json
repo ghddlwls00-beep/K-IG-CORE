@@ -1,0 +1,909 @@
+{
+ "조각": "grammar1-b",
+ "뽑은때": "2026-09-24 20:33",
+ "대상": [
+  {
+   "key": "F:grammar1/gh1-068:T01",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/01.md",
+   "주장": {
+    "T": "T01",
+    "종류": "③",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-068 #79 KO '모든(every) 소년이 상을 하나 받지는 않았죠?' — 다른 정답이 꼬리 'did they?'(Not every … did they?)와 결정 5 꼴(Every boy didn't …, did he?)을 따로 받는데, 둘을 함께 쓴 맞는 영어가 70점(grade.cjs: 'Every boy didn't receive a prize, did they?' → 70점 · 'Not every boy received a prize, did they?' → 만점 · 'Every boy didn't receive a prize, did he?' → 만점). 같은 강의 #80 은 'Everybody didn't receive a prize, did they?' 를 만점 정답으로 받음 — 70점 조합 빈틈(풀이 5 · 낮음). 결정 5 를 따지는 것이 아니라 결정 5 꼴의 they 꼬리가 빠진 것. 고친 뒤 그 꼴 만점 · 'Every boy received a prize, didn't they?'(긍정) 은 그대로 0점(참조를 직접 준 grade.cjs 로 확인).",
+    "지금": "Not every boy received a prize, did he? · 다른 정답: Not every boy received a prize, did they? / Every boy didn't receive a prize, did he?",
+    "고칠 글": "[\"Not every boy received a prize, did they?\", \"Every boy didn't receive a prize, did he?\", \"Every boy didn't receive a prize, did they?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-069.json .blocks[4].items[0] (n=79) .alternatives (분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-072:T20",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/01.md",
+   "주장": {
+    "T": "T20",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-072 #10 KO '그들은 건강하니?' — 건강을 묻는 맞는 영어 'Are they well?' 이 0점(grade.cjs: 'Are they well?' → 0점 · 모범 'Are they healthy?' 만 있고 다른 정답 없음). 같은 과정 gh1-062 #3 · #6 · #12(건강한가/건강하시니)는 9/18 감사 6-1394 대로 'well' 꼴을 다른 정답으로 받음(grade.cjs: gh1-062 #3 'Is your son well?' → 만점) — grammar1-a 조각이 같은 한국어 gh1-006 #18 '그들은 건강한가?' · gh1-008 #18 · gh1-062 #23 에 적은 빈틈과 같은 것. 고친 뒤 'Are they well?' 만점 · 'Are they ill?' · 'Are they sick?' 은 그대로 0점(참조를 직접 준 grade.cjs 로 확인).",
+    "지금": "Are they healthy? (다른 정답 없음)",
+    "고칠 글": "[\"Are they well?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-073.json .blocks[3].items[9] (n=10) .alternatives 새로 만듦(분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-080:T10",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/01.md",
+   "주장": {
+    "T": "T10",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-080 #8 KO '왜 경찰이 노동자들을 체포하고 있었나?' — '노동자' 의 곧은 번역 'laborers' 가 0점(grade.cjs: 'Why were the police arresting laborers?' → 0점 · 모범 'workers' 만 있고 다른 정답 없음). 같은 과정 gh1-052 #6 '우리는 근로자들이었다.' 는 'We were laborers.' 를 다른 정답으로 받음(grade.cjs: gh1-052 #6 'We were laborers.' → 만점) — grammar1-a 조각이 '근로자들'(gh1-006 #6 · gh1-008 #6)에 적은 빈틈과 같은 낱말이고, '노동자' 는 오히려 labor 에 더 곧음. 고친 뒤 'laborers' 만점 · 'farmers' 는 그대로 0점(참조를 직접 준 grade.cjs 로 확인).",
+    "지금": "Why were the police arresting workers? (다른 정답 없음)",
+    "고칠 글": "[\"Why were the police arresting laborers?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-081.json .blocks[3].items[7] (n=8) .alternatives 새로 만듦 · 분할본 gh1-081-1.json .blocks[3].items[7] (n=8) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-084:T48",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/02.md",
+   "주장": {
+    "T": "T48",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-084 #26 KO '그 유조선이 가라앉았지?' — '가라앉다' 의 가장 곧은 번역 sink 를 쓴 맞는 영어가 0점(grade.cjs: 'The tanker sank, didn't it?' → 0점 · 모범 'The tanker went down, didn't it?' 만 있고 다른 정답 없음). 이 문항 한국어에는 힌트가 없음(같은 강의 #9 '그 유조선은 가라앉았다.(go down)' 은 힌트로 go down 을 시키므로 안 적음). 흔한 맞는 번역이 0점 — 풀이 5 중간. 고친 뒤 'sank' 만점 · 틀린 과거형 'sunk' 는 70점 · 'rose' 는 0점(참조를 직접 준 grade.cjs).",
+    "지금": "The tanker went down, didn't it? (다른 정답 없음)",
+    "고칠 글": "[\"The tanker sank, didn't it?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-085.json .blocks[3].items[25] (n=26) .alternatives 새로 만듦(분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-088:T06",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/02.md",
+   "주장": {
+    "T": "T06",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-088 #3 KO '너의 교수는 건강하니?' — 건강을 묻는 맞는 영어 'Is your professor well?' 이 0점(grade.cjs → 0점 · 모범 'Is your professor healthy?' 만 있고 다른 정답 없음). 같은 과정 gh1-062 #3 · #6 · #12 는 9/18 감사 6-1394 대로 'well' 꼴을 다른 정답으로 받음(grade.cjs: gh1-062 #3 'Is your son well?' → 만점) — 01.md gh1-072 #10 · grammar1-a 의 gh1-006 #18 과 같은 빈틈. 고친 뒤 'well' 만점 · 'ill' · 'sick' 은 그대로 0점(참조를 직접 준 grade.cjs).",
+    "지금": "Is your professor healthy? (다른 정답 없음)",
+    "고칠 글": "[\"Is your professor well?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-089.json .blocks[3].items[2] (n=3) .alternatives 새로 만듦(분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-092:T26",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/grammar1-b/02.md",
+   "주장": {
+    "T": "T26",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "GRAMMAR I gh1-092 #55 한국어 문제 '이 달에' — '이달'(이번 달)은 표준국어대사전에 한 낱말로 올라 붙여 씀('이날 · 이때' 와 같음). 띄어쓰기(낮음). 화면 한국어 문제에 보임(소리 없음).",
+    "지금": "그 법은 이 달에 발효하지?",
+    "고칠 글": "그 법은 이달에 발효하지?",
+    "고칠 곳": "content/lessons/grammar1/gh1-092.json .blocks[3].items[16] (n=55) .text (분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-096:T04",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/02.md",
+   "주장": {
+    "T": "T04",
+    "종류": "③",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-096 #79 KO '모든 소년이 목숨을 잃지는 않았지?(Every)' — 꼬리 'did they?' 를 쓴 맞는 영어가 70점(grade.cjs: \"Every boy didn't lose his life, did they?\" → 70점). 과정은 every · each 주어의 부가의문문에 he · they 꼬리를 둘 다 만점으로 받음(gh1-066 #76 · #77 · gh1-068 #79 \"Not every boy received a prize, did they?\" → 만점 · 같은 강의 #77 \"Each mayor received a warning, didn't they?\" → 만점). 소유자 답 3(모범을 'Not every boy lost his life, did he?' 로, 옛 모범은 다른 정답으로)은 다시 따지지 않고 그대로 두되, 그 뒤에도 they 꼬리 두 꼴은 70점(소유자 답 3 의 참조를 직접 준 grade.cjs: \"Not every boy lost his life, did they?\" → 70점 · \"Every boy didn't lose his life, did they?\" → 70점) — 소유자 답 3 을 넣을 때 다른 정답에 함께 더함. 1부 문맥 #0(판정-grammar1-b.json 문맥[0] — 같은 문항)의 고칠 글에 'Not every boy lost his life, did they?' 가 있었으나 소유자 답 3 의 할 일(결과-머리 35행)에는 빠짐 — 합칠 때 문맥 #0 · 소유자 답 3 과 한 건으로 볼 것. 고친 뒤 두 꼴 만점 · \"Every boy lost his life, didn't they?\"(긍정)는 0점 그대로.",
+    "지금": "Every boy didn't lose his life, did he? (다른 정답 없음 — 소유자 답 3 으로 .text 가 바뀔 문항)",
+    "고칠 글": "[\"Every boy didn't lose his life, did he?\", \"Not every boy lost his life, did they?\", \"Every boy didn't lose his life, did they?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json .blocks[3].items[2] (n=79) .alternatives — 소유자 답 3 의 .text 'Not every boy lost his life, did he?' 와 함께 넣음(첫 줄이 소유자 답 3 이 옮기는 옛 모범 · 분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-096:T06",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/02.md",
+   "주장": {
+    "T": "T06",
+    "종류": "③",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-096 #81 KO '그 모든 소년들이 그들의 누이를 보호하지는 않았지?' — 'all of the boys' 꼴이 70점(grade.cjs: \"All of the boys didn't protect their sisters, did they?\" → 70점). 과정은 '그 모든(all) 소년' 에 'All of the boys' 를 만점으로 받음(gh1-066 #71 · #74 · #78 · gh1-068 #81 \"Not all of the boys received a prize, did they?\" → 만점). 소유자 답 3(모범을 'Not all the boys protected their sisters, did they?' 로, 옛 모범은 다른 정답으로)을 넣은 뒤에도 \"Not all of the boys protected their sisters, did they?\" 는 70점(소유자 답 3 의 참조를 직접 준 grade.cjs → 70점) — gh1-068 #81 과 같은 모양으로 그 꼴을 더함. 1부 문맥 #1(판정-grammar1-b.json 문맥[1] — 같은 문항)의 고칠 글에 이 꼴이 있었으나 소유자 답 3 의 할 일(결과-머리 35행)에는 빠짐 — 합칠 때 문맥 #1 · 소유자 답 3 과 한 건으로 볼 것. 고친 뒤 만점 · 'None of the boys …' 는 0점 그대로.",
+    "지금": "All the boys didn't protect their sisters, did they? (다른 정답 없음 — 소유자 답 3 으로 .text 가 바뀔 문항)",
+    "고칠 글": "[\"All the boys didn't protect their sisters, did they?\", \"Not all of the boys protected their sisters, did they?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json .blocks[3].items[4] (n=81) .alternatives — 소유자 답 3 의 .text 'Not all the boys protected their sisters, did they?' 와 함께 넣음(첫 줄이 소유자 답 3 이 옮기는 옛 모범 · 분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-106:T44",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/03.md",
+   "주장": {
+    "T": "T44",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-106 #31 KO '그는 훌륭한 타자수는 아니었지?' — '훌륭한' 을 great 로 옮긴 맞는 영어가 0점(grade.cjs: 'He wasn't a great typist, was he?' → 0점 · 모범 'good' 만 있고 다른 정답 없음). 같은 과정 gh1-016 #28 '너는 훌륭한 저녁 식사를 했니?' 는 같은 낱말 '훌륭한' 에 'Did you have a great dinner?' 를 다른 정답으로 받음(grade.cjs: gh1-016 #28 → 만점) — 같은 한국어 낱말을 한쪽만 받음. 고친 뒤 'great' 만점 · 'He wasn't a bad typist, was he?' 는 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "He wasn't a good typist, was he? (다른 정답 없음)",
+    "고칠 글": "[\"He wasn't a great typist, was he?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-107.json .blocks[3].items[30] (n=31) .alternatives 새로 만듦(분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-108:T42",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/03.md",
+   "주장": {
+    "T": "T42",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-108 #63 KO '나는 너의 집을 결코 본 적이 없어.' — '집' 을 home 으로 옮긴 맞는 영어가 0점(grade.cjs: 'I've never seen your home.' → 0점 · 'I have never seen your home.' → 0점 · 다른 정답은 'your house' 뿐). 같은 과정 gh1-080 #17 '당신의 집을 떠났나' 는 'your home' · 'your house' 를 둘 다 만점으로 받음(grade.cjs → 둘 다 만점) — 같은 한국어 낱말을 한쪽만 받음. 고친 뒤 'home' 만점 · 'room' 은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "I've never seen your place. · 다른 정답: I've never seen your house.",
+    "고칠 글": "[\"I've never seen your house.\", \"I've never seen your home.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-109.json .blocks[3].items[27] (n=63) .alternatives (분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-110:T41",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/03.md",
+   "주장": {
+    "T": "T41",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-110 #96 KO '올림피아가 그 펩시의 도전을 받아들이고 있다.' — '도전을 받아들이다' 의 곧은 번역 accept 를 쓴 맞는 영어가 0점(grade.cjs: 'Olympia is accepting the Pepsi challenge.' → 0점 · 모범 'taking' 만 있고 다른 정답 없음). 모범은 광고 문구 'take the Pepsi Challenge' 의 굳은 말이고 한국어 문제는 '받아들이다' 라 학습자는 accept 를 쓰기 쉬움 — 흔한 맞는 번역이 0점(풀이 5 중간). 고친 뒤 'accepting' 만점 · 'rejecting' 은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Olympia is taking the Pepsi challenge. (다른 정답 없음)",
+    "고칠 글": "[\"Olympia is accepting the Pepsi challenge.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-111.json .blocks[3].items[25] (n=96) .alternatives 새로 만듦 · 분할본 gh1-111-2.json .blocks[1].items[6] (n=96) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-110:T43",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/03.md",
+   "주장": {
+    "T": "T43",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-110 #97 KO '왜 그 패스트푸드 체인이 그것의 청량음료를 바꾸고 있니?' — '바꾸다' 를 change 로 옮긴 맞는 영어가 0점(grade.cjs: 'Why is the fast food chain changing its soft drink?' → 0점 · 모범 'switching' 만 있고 다른 정답 없음). 같은 과정은 '바꾸다' 를 change 로 가르침(gh1-090 #32 '그의 인생을 바꿨나' · gh1-118 #60 · #74 · gh1-122 #46 — grade.cjs: gh1-090 #32 'Did his wife change his life?' → 만점). 고친 뒤 'changing' 만점 · 'selling' 은 0점 그대로(참조를 직접 준 grade.cjs). (참고 · 1부 글이라 여기서 세지 않음: 같은 뜻의 gh1-106 #28 'Isn't the Atlanta-based fast food chain switching its soft drink?' 도 다른 정답에 change 꼴이 없음)",
+    "지금": "Why is the fast food chain switching its soft drink? (다른 정답 없음)",
+    "고칠 글": "[\"Why is the fast food chain changing its soft drink?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-111.json .blocks[3].items[26] (n=97) .alternatives 새로 만듦 · 분할본 gh1-111-2.json .blocks[1].items[7] (n=97) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-112:T43",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T43",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-112 #135 KO '나는 당신의 논지를 잘 모르겠다.(무슨 말씀인지)' — '모르겠다' 를 곧게 옮긴 understand 꼴이 0점(grade.cjs: \"I don't quite understand your point.\" → 0점 · \"I don't really understand your point.\" → 0점 · 모범 \"I don't quite get your point.\" 만 있고 다른 정답 없음). 모범의 get 은 '알아듣다' 의 입말이고 한국어의 곧은 번역 understand 가 막힘 — 흔한 맞는 번역이 0점(풀이 5 중간). 고친 뒤 understand 꼴 만점 · \"I quite understand your point.\"(부정 빠짐) 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "I don't quite get your point. (다른 정답 없음)",
+    "고칠 글": "[\"I don't quite understand your point.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-113.json .blocks[3].items[26] (n=135) .alternatives 새로 만듦 · 분할본 gh1-113-2.json .blocks[1].items[8] (n=135) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-112:T50",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T50",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-112 #139 KO '내가 당신의 전화번호를 가져도 됩니까? (전화번호 알려줄래?)' — '전화번호' 를 온 꼴 telephone number 로 쓴 맞는 영어가 0점(grade.cjs: \"May I have your telephone number?\" → 0점 — 채점기는 telephone 을 phone 과 다른 낱말로 봄). 같은 과정은 한 낱말의 온 꼴 · 준 꼴을 둘 다 받음(gh1-088 #15 microphone · mike · mic · gh1-116 #5 helicopter · chopper — grade.cjs: gh1-088 #15 \"The microphone is still on.\" · \"The mic is still on.\" → 만점). 고친 뒤 telephone 꼴 만점 · \"May I have your house number?\" 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "May I have your phone number? (다른 정답 없음)",
+    "고칠 글": "[\"May I have your telephone number?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-113.json .blocks[3].items[30] (n=139) .alternatives 새로 만듦 · 분할본 gh1-113-2.json .blocks[1].items[12] (n=139) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "D:grammar1/gh1-112:T26",
+   "까닭": "판단 필요 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T26",
+    "추천안": "'그것' 을 곧게 옮긴 it 꼴을 다른 정답(만점)으로 더함 — 결정 3('그것' → that 도 만점)의 반대 방향. gh1-113.json · gh1-113-1.json n=125 에 \"It's beyond me.\" · gh1-113.json · gh1-113-2.json n=136 에 \"Does it make sense?\" · gh1-119.json · gh1-119-1.json n=52 에 \"Is it less than President Bush estimated?\" · \"Is it smaller than President Bush estimated?\" · gh1-119.json · gh1-119-2.json n=66 에 \"We are going to do it another time.\" · \"We are going to do it some other time.\" · \"We will do it another time.\" · \"We will do it some other time.\"(gh1-118 T45 틀림의 next time 꼴을 넣으면 그 it 짝도). 모범은 그대로라 화면 모범 · 소리는 안 바뀜 · 새 음성 없음.",
+    "까닭": "모범 답안이 that 인데 한국어 문제가 '그것' 인 문항 넷에서 '그것' 의 곧은 번역 it 꼴이 70점(grade.cjs: gh1-112 #125 \"It's beyond me.\" → 70점 · #136 \"Does it make sense?\" → 70점 · gh1-118 #52 \"Is it less than President Bush estimated?\" → 70점 · #66 \"We are going to do it another time.\" → 70점). 과정의 다른 '그것' 문항은 it · that 을 둘 다 만점으로 받음(gh1-120 #26 · #33 · gh1-122 #47 · #58 — 결정 3 으로 that 을 더한 곳). 결정 3 은 모범이 it 인 문항에 that 을 더하기로 정한 것이고 이 반대 방향(모범 that · it 70점)은 정하지 않았음 — 결정 3 을 넓힐지의 교육 방침이라 소유자에게 올림(결정 3 을 다시 따지는 것 아님). 네 문항 모두 이 조각의 안 바뀐 글(gh1-112 T26 · T45 · gh1-118 T24 · T45) — 한 번만 적음. \"That's beyond me.\" · \"Does that make sense?\" 는 굳은 말에 가까워, 결정 3 이 굳은 표현 6 을 뺀 것처럼 이 둘은 뺄 수도 있음.",
+    "다른 길": "그대로 둠 — 모범이 that 인 '그것' 문항의 it 꼴은 70점(기능어 하나 차이 · '그 N' 70점과 같은 결)."
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-116:T02",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T02",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-116 #1 KO '미군이 힘든 전투에 직면하나?' — '미군' 을 troops 나 American 으로 옮긴 맞는 영어가 0점(grade.cjs: \"Do US troops face an uphill battle?\" → 0점 · \"Do American forces face an uphill battle?\" → 0점 · \"Do American troops face an uphill battle?\" → 0점 · 모범 'US forces' 만 있고 다른 정답 없음). 같은 과정은 '군대' 에 forces · army · troops 를 모두 받고(gh1-102 #145 — grade.cjs: \"When did our troops defeat the enemy?\" → 만점) '미국' 에 America 를 받음(gh1-122 #42 · gh1-102 #144). 고친 뒤 세 꼴 만점 · 'easy battle' · 'Afghan troops' 는 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Do US forces face an uphill battle? (다른 정답 없음)",
+    "고칠 글": "[\"Do US troops face an uphill battle?\", \"Do American forces face an uphill battle?\", \"Do American troops face an uphill battle?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-117.json .blocks[3].items[0] (n=1) .alternatives 새로 만듦 · 분할본 gh1-117-1.json .blocks[3].items[0] (n=1) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-116:T43",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T43",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-116 #32 KO '대부분은 탈레반 군대와의 맹렬한 총격전에서 살해되지 않았지?' — '군대' 를 troops 로 옮긴 맞는 영어가 0점(grade.cjs: \"Most were not killed in a fierce firefight with Taliban troops, were they?\" → 0점 · 모범 'Taliban forces' 만 있고 다른 정답 없음). 같은 과정 gh1-102 #145 '우리의 군대' 는 forces · army · troops 를 모두 받음(grade.cjs: \"When did our troops defeat the enemy?\" → 만점) — 같은 한국어 낱말을 한쪽만 받음. 고친 뒤 troops 꼴 만점 · 긍정문(부정 빠짐)은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Most were not killed in a fierce firefight with Taliban forces, were they? (다른 정답 없음)",
+    "고칠 글": "[\"Most were not killed in a fierce firefight with Taliban troops, were they?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-117.json .blocks[3].items[31] (n=32) .alternatives 새로 만듦 · 분할본 gh1-117-2.json .blocks[1].items[12] (n=32) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-116:T45",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T45",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-116 #35 KO '그 복구(회수) 노력이 중요한 단서들을 파괴하고 있나?' — '중요한' 의 곧은 번역 important 를 쓴 맞는 영어가 0점(grade.cjs: \"Is the recovery effort destroying important clues?\" → 0점 · 모범 'vital' 만 있고 다른 정답 없음). 과정은 '중요한' 을 important 로 가르침(gh1-078 #7 '매우 중요한 문제' → 'a very important problem' · gh1-120 #1 '한 중요한 영구적인 기념비' → 'an important permanent memorial'). 흔한 맞는 번역이 0점(풀이 5 중간). 고친 뒤 important 꼴 만점 · 'finding important clues' 는 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Is the recovery effort destroying vital clues? (다른 정답 없음)",
+    "고칠 글": "[\"Is the recovery effort destroying important clues?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-117.json .blocks[3].items[34] (n=35) .alternatives 새로 만듦 · 분할본 gh1-117-2.json .blocks[1].items[15] (n=35) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-118:T04",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T04",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I gh1-118 #40 KO '그 팀의 일이 방해받았나?' — '그 팀의 일' 을 소유격으로 곧게 옮긴 가장 흔한 영어가 0점(grade.cjs: \"Was the team's work hampered?\" → 0점 · 모범 'the work of the team' 만 있고 다른 정답 없음 — 어순이 달라 채점기가 받지 못함). 같은 과정 gh1-110 #87 은 \"the suspects' fear\" · \"the fear of the suspects\" 를 둘 다 받음. 고친 뒤 소유격 꼴 만점 · 'helped' 는 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Was the work of the team hampered? (다른 정답 없음)",
+    "고칠 글": "[\"Was the team's work hampered?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-119.json .blocks[3].items[2] (n=40) .alternatives 새로 만듦 · 분할본 gh1-119-1.json .blocks[3].items[2] (n=40) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-118:T20",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T20",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-118 #50 KO '언제 그 예산 사무소가 흑자를 예측했나?' — '예측하다' 의 곧은 번역 predict 를 쓴 맞는 영어가 0점(grade.cjs: \"When did the budget office predict a surplus?\" → 0점 · 모범 'project' 만 있고 다른 정답 없음). 모범의 project 는 예산 분야 말이고 한국어의 곧은 번역이 막힘 — 흔한 맞는 번역이 0점(풀이 5 중간). 고친 뒤 predict 꼴 만점 · 'predict a deficit' 은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "When did the budget office project a surplus? (다른 정답 없음)",
+    "고칠 글": "[\"When did the budget office predict a surplus?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-119.json .blocks[3].items[12] (n=50) .alternatives 새로 만듦 · 분할본 gh1-119-1.json .blocks[3].items[12] (n=50) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-118:T36",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T36",
+    "종류": "③",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-118 #61 KO '그들이 모두 너 같지는 않지?' — 부분 부정의 분명한 꼴 \"Not all of them are like you, are they?\" 가 70점(grade.cjs → 70점 · 모범 \"They're not all like you, are they?\" 만 있고 다른 정답 없음). 같은 과정은 '그들 모두가 …지는 않다' 에 'Not all of them …' 을 모범으로 가르침(gh1-068 #82 'Not all of them come.' · #83 'Not all of them came.' · 소유자 답 3 의 gh1-097 #83 'Not all of them smelled it.'). 70점이라 낮음(풀이 5). 고친 뒤 만점 · \"All of them are like you, aren't they?\" · 'None of them …' 은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "They're not all like you, are they? (다른 정답 없음)",
+    "고칠 글": "[\"Not all of them are like you, are they?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-119.json .blocks[3].items[23] (n=61) .alternatives 새로 만듦 · 분할본 gh1-119-2.json .blocks[1].items[5] (n=61) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-118:T45",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T45",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-118 #66 KO '우리는 다음에 그것을 할 거야.' — '다음에' 를 next time 으로 옮긴 맞는 영어가 0점(grade.cjs: \"We will do that next time.\" → 0점 · \"We are going to do that next time.\" → 0점 · 다른 정답은 another time · some other time 꼴뿐). 같은 과정 gh1-106 #35 '그들은 다음에 함께 저녁 식사할 것이다.' 는 같은 '다음에' 에 'next time' 을 받음(grade.cjs: \"They will have dinner together next time.\" → 만점 · gh1-102 #138 도 같음). 고친 뒤 next time 두 꼴 만점 · 'We did that last time.' 은 0점 그대로(참조를 직접 준 grade.cjs). (it 꼴 70점은 판단 필요 gh1-112 T26 에 모음)",
+    "지금": "We are going to do that another time. · 다른 정답: We are going to do that some other time. / We will do that another time. / We will do that some other time.",
+    "고칠 글": "[\"We are going to do that some other time.\", \"We will do that another time.\", \"We will do that some other time.\", \"We are going to do that next time.\", \"We will do that next time.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-119.json .blocks[3].items[28] (n=66) .alternatives · 분할본 gh1-119-2.json .blocks[1].items[10] (n=66) .alternatives 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-120:T24",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T24",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-120 #34 KO '아랍인들과 이스라엘인들은 하나의 선택을 해야 한다.' — 두 민족 이름에 the 를 붙인 맞는 영어가 0점(grade.cjs: \"The Arabs and the Israelis must make a choice.\" → 0점 — 기능어 둘이 늘어 길이 제한에 걸림 · \"The Arabs and Israelis must make a choice.\" → 70점 · 다른 정답 없음). 같은 강의 #21 '팔레스타인인들과 이스라엘인들은 행동해야 한다.' 는 같은 꼴 셋을 다른 정답으로 받음(grade.cjs: \"The Palestinians and the Israelis must act.\" → 만점) — 한 강의 안에서 같은 문형을 한쪽만 받음. 고친 뒤 만점 · 'must not make' 는 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Arabs and Israelis must make a choice. (다른 정답 없음)",
+    "고칠 글": "[\"The Arabs and the Israelis must make a choice.\", \"The Arabs and Israelis must make a choice.\", \"Arabs and the Israelis must make a choice.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-121.json .blocks[3].items[33] (n=34) .alternatives 새로 만듦 · 분할본 gh1-121-2.json .blocks[1].items[14] (n=34) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-122:T14",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T14",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-122 #45 KO '그런 주장들은 신뢰성이 없다.' — '그런' 의 곧은 번역 such 를 쓴 맞는 영어가 0점(grade.cjs: \"Such claims are unreliable.\" → 0점 · 모범 'Those claims' 만 있고 다른 정답 없음). '그런'(그러한 종류의)은 such 가 가장 곧고 모범의 those 는 '그' 에 가까움 — 흔한 맞는 번역이 0점(풀이 5 중간). 고친 뒤 만점(참조를 직접 준 grade.cjs). (참고: 'Such claims are reliable.' 이 70점인 것은 un- 을 뗀 꼴을 채점기가 철자 실수로 보는 채점 코드 동작 — 지금 모범에도 같아 이 고침이 만든 것 아님)",
+    "지금": "Those claims are unreliable. (다른 정답 없음)",
+    "고칠 글": "[\"Such claims are unreliable.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-123.json .blocks[3].items[7] (n=45) .alternatives 새로 만듦 · 분할본 gh1-123-1.json .blocks[3].items[7] (n=45) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-122:T16",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T16",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR I gh1-122 #46 KO '그들은 자주 그들의 이야기를 바꾸나?' — '자주' 의 곧은 번역 often 을 쓴 맞는 영어가 0점(grade.cjs: \"Do they often change their stories?\" → 0점 · \"Do they change their stories often?\" → 0점 · \"Do they frequently change their stories?\" → 70점 · 모범 'frequently' 만 있고 다른 정답 없음). 같은 과정은 '자주' 를 often 으로 가르치고 두 자리를 다 받음(gh1-080 #32 '당신의 아이들은 자주 우나?' — grade.cjs: \"Do your children often cry?\" → 만점 · gh1-090 #37 often · frequently). 고친 뒤 세 꼴 만점 · 'rarely' 는 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Do they change their stories frequently? (다른 정답 없음)",
+    "고칠 글": "[\"Do they often change their stories?\", \"Do they change their stories often?\", \"Do they frequently change their stories?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-123.json .blocks[3].items[8] (n=46) .alternatives 새로 만듦 · 분할본 gh1-123-1.json .blocks[3].items[8] (n=46) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-122:T25",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T25",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-122 #51 KO '당신은 잠시 동안만 앉으실 수 있습니까?' — '앉다' 의 곧은 번역 sit down 을 쓴 맞는 영어가 0점(grade.cjs: \"Could you just sit down for a moment?\" → 0점 · 모범 'have a seat' 만 있고 다른 정답 없음). 모범은 굳은 말(have a seat)이고 한국어의 곧은 번역이 막힘 — 흔한 맞는 번역이 0점(풀이 5 중간). 고친 뒤 만점 · 'stand up' 은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "Could you just have a seat for a moment? (다른 정답 없음)",
+    "고칠 글": "[\"Could you just sit down for a moment?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-123.json .blocks[3].items[13] (n=51) .alternatives 새로 만듦 · 분할본 gh1-123-1.json .blocks[3].items[13] (n=51) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-122:T33",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "주장": {
+    "T": "T33",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-122 #55 KO '우리는 자유인이다.' — '자유인'(자유로운 사람)을 people 로 옮긴 맞는 영어가 0점(grade.cjs: \"We are free people.\" → 0점 · 모범 'free men' 만 있고 다른 정답 없음). '인(人)' 의 곧은 번역은 people 이고 모범의 men 은 옛 남성 총칭 — 흔한 맞는 번역이 0점(풀이 5 중간). 모범(뉴스 문장 · 결정 13)은 그대로 두고 다른 정답만 더함. 고친 뒤 만점 · 'not free people' 은 0점 그대로(참조를 직접 준 grade.cjs).",
+    "지금": "We are free men. (다른 정답 없음)",
+    "고칠 글": "[\"We are free people.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-123.json .blocks[3].items[17] (n=55) .alternatives 새로 만듦 · 분할본 gh1-123-1.json .blocks[3].items[17] (n=55) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "G:grammar1/gh1-118",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/grammar1-b/04.md",
+   "읽을글": 60
+  },
+  {
+   "key": "G:grammar1/gh1-108",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/grammar1-b/03.md",
+   "읽을글": 54
+  }
+ ],
+ "결과": [
+  {
+   "key": "G:grammar1/gh1-108",
+   "결론": "다시 읽음",
+   "읽은 글": 54,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "한국어 '2학년생' 을 곧게 옮긴 흔한 맞는 번역 'second-year students' 가 막힘 — grade.cjs: 'They will be second-year students, won't they?' → 0점. 같은 강의 #36 은 '일학년' 에 'first year' 꼴을 이미 다른 정답으로 받음(한 강의 안에서 같은 꼴을 다르게 채점).",
+     "지금": "정답 \"They will be sophomores, won't they?\" · 다른 정답 [\"They will become sophomores, won't they?\"]",
+     "고칠 글": "[\"They will become sophomores, won't they?\", \"They will be second-year students, won't they?\", \"They will become second-year students, won't they?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=37).alternatives",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T12",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'선택과목' 을 옮긴 맞는 번역이 막힘 — grade.cjs: 'German is an elective subject, isn't it?' → 70점 · 'German is an optional subject, isn't it?' → 0점. 바로 앞 #43 모범이 'a required subject' 라 학습자가 subject 를 붙이기 쉬움.",
+     "지금": "정답 \"German is an elective, isn't it?\" · 다른 정답 없음",
+     "고칠 글": "[\"German is an elective subject, isn't it?\", \"German is an optional subject, isn't it?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=44).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T14",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'일주일에' 의 흔한 맞는 번역 per week 가 0점 — grade.cjs: 'How many English classes does he have per week?' → 0점 ('every week' · 'in a week' 는 70점).",
+     "지금": "정답 \"How many English classes does he have a week?\" · 다른 정답 없음",
+     "고칠 글": "[\"How many English classes does he have per week?\", \"How many English classes does he have every week?\", \"How many English classes does he have in a week?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=45).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T19",
+     "종류": "③",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'세 번째를' 을 'a third one' 으로 쓰거나 부사를 동사 앞에 두면 70점 — grade.cjs: 'Recently he opened a third one, didn't he?' → 70점 · 'He recently opened a third, didn't he?' → 70점. 같은 강의 #48 은 'another one' 을 다른 정답으로 받음(한 강의 안 흔들림).",
+     "지금": "정답 \"Recently he opened a third, didn't he?\" · 다른 정답 없음",
+     "고칠 글": "[\"Recently he opened a third one, didn't he?\", \"He recently opened a third, didn't he?\", \"He recently opened a third one, didn't he?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=49).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T21",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'함께 할 시간' 의 흔한 맞는 번역이 0점 — grade.cjs: 'They don't have time to spend together, do they?' → 0점 · 'They don't have time to be together, do they?' → 0점.",
+     "지금": "정답 \"They do not have time to get together, do they?\" · 다른 정답 없음",
+     "고칠 글": "[\"They do not have time to spend together, do they?\", \"They do not have time to be together, do they?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=50).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T26",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'사탕가게' 의 흔한 맞는 번역 candy store(미국 영어의 기본 낱말 — 이 강의는 freshman · sophomore · elective 로 미국 영어, #47 도 'grocery store') 가 0점 — grade.cjs: 'When did he recommend a nearby candy store?' → 0점.",
+     "지금": "정답 \"When did he recommend a nearby candy shop?\" · 다른 정답 없음",
+     "고칠 글": "[\"When did he recommend a nearby candy store?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=53).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T28",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'심하게 비판했나' 의 흔한 맞는 번역이 막힘 — grade.cjs: 'Why did the President harshly criticize the Japanese economy?' → 0점 · 'Why did the president criticize the Japanese economy harshly?' → 0점 · 부사를 동사 앞에 둔 'Why did the President severely criticize the Japanese economy?' → 70점.",
+     "지금": "정답 \"Why did the President criticize the Japanese economy severely?\" · 다른 정답 없음",
+     "고칠 글": "[\"Why did the President severely criticize the Japanese economy?\", \"Why did the President criticize the Japanese economy harshly?\", \"Why did the President harshly criticize the Japanese economy?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=54).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T31",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'연관성' 의 흔한 맞는 번역 connection 이 0점 — grade.cjs: 'The relief foundation is denying any connection to terrorism, isn't it?' → 0점 ('any links' 는 70점).",
+     "지금": "정답 \"The relief foundation is denying any link to terrorism, isn't it?\" · 다른 정답 없음",
+     "고칠 글": "[\"The relief foundation is denying any connection to terrorism, isn't it?\", \"The relief foundation is denying any links to terrorism, isn't it?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=56).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T42",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'너의 집' 을 home 으로 옮긴 맞는 번역이 0점 — grade.cjs: 'I've never seen your home.' → 0점 (house 는 이미 다른 정답).",
+     "지금": "정답 \"I've never seen your place.\" · 다른 정답 [\"I've never seen your house.\"]",
+     "고칠 글": "[\"I've never seen your house.\", \"I've never seen your home.\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=63).alternatives",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T47",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'테러 집단들의 자산' 을 소유격으로 옮긴 흔한 맞는 번역이 0점 — grade.cjs: 'The government was freezing terrorist groups' assets.' → 0점.",
+     "지금": "정답 \"The government was freezing the assets of terrorist groups.\" · 다른 정답 없음",
+     "고칠 글": "[\"The government was freezing terrorist groups' assets.\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=66).alternatives (새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T50",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'많은 선수들' 의 흔한 맞는 번역이 0점 — grade.cjs: 'Where are many players training?' → 0점 · 'Where are a lot of athletes training?' → 0점 · 'Where are lots of athletes training?' → 0점.",
+     "지금": "정답 \"Where are many athletes training?\" · 다른 정답 없음",
+     "고칠 글": "[\"Where are many players training?\", \"Where are a lot of athletes training?\", \"Where are lots of athletes training?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-109.json blocks[3].items(n=68).alternatives (새 칸)",
+     "새 음성 클립": false
+    }
+   ],
+   "까닭": "T 54 글을 모두 읽음(한국어 35 중 1부 문맥 T25 는 '다시 적지 말 것' 이라 건너뜀). 영어 모범 · 한국어 뜻 · 맞춤법에서 틀림 못 찾음(일학년 · 되기 원한다 · 함께 할 · 동결시키고 는 허용 표기 · 문체). 틀림은 모두 ③ 다른 정답 빠짐 — grade.cjs(도구 확인 ✔ · 문항마다 찾기 확인 ✔)로 잰 것만 적음. 고칠 글은 grade.cjs 직접 참조로 넣어 봄: 새 꼴은 만점, 뜻이 반대 · 다른 낱말(per day · shoe store · freshmen · admitting · few players 등)은 0점 그대로. 안 적은 것: 'It will take some time'(70점) · 'You're not so tall'(70점) 은 기능어 한 낱말 차이, 'Who likes something sweet?'(0점) 은 '어떤 것이라도' = anything 이라 모범이 맞음, 'very tall'(0점) 은 '극도로' 와 다름, #38 That 꼴은 결정 3 몫.",
+   "때": "2026-09-24 20:45"
+  },
+  {
+   "key": "G:grammar1/gh1-118",
+   "결론": "다시 읽음",
+   "읽은 글": 60,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'그 팀의 일' 을 소유격으로 옮긴 가장 자연스러운 번역이 0점(낱말 5/7 이라 70% 비율 미달) — grade.cjs: 'Was the team's work hampered?' → 0점. '방해받다' 의 흔한 낱말 hinder 도 0점: 'Was the work of the team hindered?' → 0점.",
+     "지금": "정답 \"Was the work of the team hampered?\" · 다른 정답 없음",
+     "고칠 글": "[\"Was the team's work hampered?\", \"Was the work of the team hindered?\", \"Was the team's work hindered?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=40).alternatives 와 gh1-119-1.json blocks[3].items(n=40).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T06",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'얻을 수 있었지' 의 가장 곧은 번역 get, '수많은' 의 many 가 막힘 — grade.cjs: 'The team was able to get numerous samples, wasn't it?' → 0점 · 'The team was able to obtain many samples, wasn't it?' → 0점 · 'The team could get numerous samples, couldn't it?' → 0점.",
+     "지금": "정답 \"The team was able to obtain numerous samples, wasn't it?\" · 다른 정답 [\"The team could obtain numerous samples, couldn't it?\"]",
+     "고칠 글": "[\"The team could obtain numerous samples, couldn't it?\", \"The team was able to get numerous samples, wasn't it?\", \"The team was able to obtain many samples, wasn't it?\", \"The team was able to get many samples, wasn't it?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=41).alternatives 와 gh1-119-1.json blocks[3].items(n=41).alternatives (두 파일 같게)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T12",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'아직 완전히 … 않지' 의 흔한 맞는 꼴이 막힘 — grade.cjs: 'The telescope is not fully online yet, is it?' → 0점 · yet 을 끝에 둔 'The telescope isn't completely online yet, is it?' → 70점.",
+     "지금": "정답 \"The telescope is not yet completely online, is it?\" · 다른 정답 없음",
+     "고칠 글": "[\"The telescope is not completely online yet, is it?\", \"The telescope is not yet fully online, is it?\", \"The telescope is not fully online yet, is it?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=45).alternatives 와 gh1-119-1.json blocks[3].items(n=45).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T14",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "관사를 넣은 맞는 번역과 '기뻐하나' 의 happy 가 0점 — grade.cjs: 'Are the mission managers pleased with the progress?' → 0점(기능어 둘 더 → 길이 상한 — 결정 2 는 하나만 70점) · 'Are the mission managers happy with the progress?' → 0점 · 'Are mission managers happy with progress?' → 0점.",
+     "지금": "정답 \"Are mission managers pleased with progress?\" · 다른 정답 없음",
+     "고칠 글": "[\"Are the mission managers pleased with the progress?\", \"Are mission managers happy with progress?\", \"Are the mission managers happy with the progress?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=46).alternatives 와 gh1-119-1.json blocks[3].items(n=46).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T16",
+     "종류": "③",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'허블이' 를 관사 없이 Hubble 로 쓰는 흔한 맞는 꼴(NASA 도 관사 없이 씀)이 70점 — grade.cjs: 'When did Hubble get more powerful solar wings?' → 70점.",
+     "지금": "정답 \"When did the Hubble get more powerful solar wings?\" · 다른 정답 없음",
+     "고칠 글": "[\"When did Hubble get more powerful solar wings?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=47).alternatives 와 gh1-119-1.json blocks[3].items(n=47).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T20",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'예측했나' 의 가장 곧은 번역 predict · forecast 가 0점 — grade.cjs: 'When did the budget office predict a surplus?' → 0점 · 'When did the budget office forecast a surplus?' → 0점.",
+     "지금": "정답 \"When did the budget office project a surplus?\" · 다른 정답 없음",
+     "고칠 글": "[\"When did the budget office predict a surplus?\", \"When did the budget office forecast a surplus?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=50).alternatives 와 gh1-119-1.json blocks[3].items(n=50).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T24",
+     "종류": "③",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "한국어 '그것은' 을 곧게 옮긴 it 꼴이 70점 — grade.cjs: 'Is it less than President Bush estimated?' → 70점 · 'Is it smaller than President Bush estimated?' → 70점. (결정 3 은 it 모범에 that 을 더한 것 — 여기는 거꾸로 that 모범에 it 이 없음)",
+     "지금": "정답 \"Is that less than President Bush estimated?\" · 다른 정답 [\"Is that smaller than President Bush estimated?\"]",
+     "고칠 글": "[\"Is that smaller than President Bush estimated?\", \"Is it less than President Bush estimated?\", \"Is it smaller than President Bush estimated?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=52).alternatives 와 gh1-119-1.json blocks[3].items(n=52).alternatives (두 파일 같게)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T34",
+     "종류": "③",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'하버드 사람들에 대한 의견' 을 곧게 옮긴 'opinion about' 이 70점 — grade.cjs: 'Who changed your opinion about Harvard people?' → 70점 · 'opinion on' 도 70점.",
+     "지금": "정답 \"Who changed your opinion of Harvard people?\" · 다른 정답 없음",
+     "고칠 글": "[\"Who changed your opinion about Harvard people?\", \"Who changed your opinion on Harvard people?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=60).alternatives 와 gh1-119-2.json blocks[1].items(n=60).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T45",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'다음에' 의 가장 곧은 번역 next time 이 0점, '그것을' 을 옮긴 it 은 70점 — grade.cjs: 'We will do it next time.' → 0점 · 'We'll do that next time.' → 0점 · 'We're going to do it next time.' → 0점 · 'We will do it another time.' → 70점.",
+     "지금": "정답 \"We are going to do that another time.\" · 다른 정답 [\"We are going to do that some other time.\", \"We will do that another time.\", \"We will do that some other time.\"]",
+     "고칠 글": "[\"We are going to do that some other time.\", \"We will do that another time.\", \"We will do that some other time.\", \"We are going to do it another time.\", \"We will do it another time.\", \"We are going to do that next time.\", \"We will do that next time.\", \"We are going to do it next time.\", \"We will do it next time.\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=66).alternatives 와 gh1-119-2.json blocks[1].items(n=66).alternatives (두 파일 같게)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T48",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기 — 관형사 '그런' 이 꾸미는 '말' 은 명사라 '말 하지' 로 띄어 씀(국립국어원 풀이: '그런 말 하지 마' · '무슨 말 하는 거야'). 뜻은 영어 'You didn't say that, did you?' 와 맞음.",
+     "지금": "너는 그런 말하지 않았지?",
+     "고칠 글": "너는 그런 말 하지 않았지?",
+     "고칠 곳": "content/lessons/grammar1/gh1-118.json blocks[3].items(n=68).text 와 gh1-118-2.json blocks[1].items(n=68).text (두 파일 같게)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T49",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'그런 말' 을 곧게 옮긴 'such a thing' 이 0점 — grade.cjs: 'You didn't say such a thing, did you?' → 0점.",
+     "지금": "정답 \"You didn't say that, did you?\" · 다른 정답 없음",
+     "고칠 글": "[\"You didn't say such a thing, did you?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=68).alternatives 와 gh1-119-2.json blocks[1].items(n=68).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T53",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'대학' 의 흔한 맞는 번역 university 가 0점 — grade.cjs: 'We went to university together, didn't we?' → 0점.",
+     "지금": "정답 \"We went to college together, didn't we?\" · 다른 정답 없음",
+     "고칠 글": "[\"We went to university together, didn't we?\"]",
+     "고칠 곳": "content/lessons/grammar1/gh1-119.json blocks[3].items(n=70).alternatives 와 gh1-119-2.json blocks[1].items(n=70).alternatives (두 파일 같게, 새 칸)",
+     "새 음성 클립": false
+    }
+   ],
+   "까닭": "T 60 글을 모두 읽음(1부 문맥 T10 · T41 은 '다시 적지 말 것' 이라 건너뜀). 2002년 뉴스 문장(결정 13)이라 사실은 그대로 봄. 영어 모범의 문법 · 뜻 틀림은 못 찾음 — #41 다른 정답 'could obtain' 은 한 번의 성취에는 was able to 가 낫다는 문법서 풀이가 있으나 한국어 '얻을 수 있었지' 가 능력으로도 읽혀 틀림으로 세지 않음. 한국어는 T48 띄어쓰기 하나. 나머지는 ③ 다른 정답 빠짐 — grade.cjs(도구 확인 ✔ · 문항마다 찾기 확인 ✔)로 잰 것만. 고칠 글은 grade.cjs 직접 참조로 넣어 봄: 새 꼴은 만점, 부정 뒤집음 · 반대 낱말(helped · few · deficit · more · alone · won't)은 0점 그대로. 안 적은 것: '연결되어' → connected(0점) 는 영어 online 과 뜻이 조금 다른 한국어라 다른 정답으로 받을 글이 아님, 'What do I not understand?'(70점) · 'catch a cab'(0점) · 'coming to an end'(0점) 은 흔한 곧은 번역이 아님.",
+   "때": "2026-09-24 20:45"
+  },
+  {
+   "key": "F:grammar1/gh1-068:T01",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "다시 잼 — grade.cjs(도구 확인 ✔ · 찾기 확인 ✔): 'Every boy didn't receive a prize, did they?' → 70점, 두 꼴 따로는 만점('Not every boy received a prize, did they?' · 'Every boy didn't receive a prize, did he?'), 같은 강의 #80 'Everybody didn't receive a prize, did they?' → 만점. every 주어의 they 꼬리는 과정이 만점으로 받는 맞는 꼬리라 '꼬리만 틀린 답 70점'(아침 답)에 들지 않음 — 맞는 영어가 70점 = 낮음(풀이 5). 결정 5 꼴은 이미 다른 정답이라 결정 5 를 따지는 것 아님. 고칠 글을 참조로 넣어 보면 그 꼴 만점 · 긍정 'Every boy received a prize, didn't they?' 0점 그대로.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-072:T20",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Are they well?' → 0점 · 같은 과정 gh1-062 #3 'Is your son well?' → 만점(9/18 감사가 '건강한가' 에 well 을 받게 함). 건강을 묻는 맞는 영어가 0점 — 중간(풀이 5). 고칠 글 넣어 보면 well 만점 · ill · sick · 'Aren't they well?' 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-080:T10",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Why were the police arresting laborers?' → 0점 · gh1-052 #6 'We were laborers.' → 만점. '노동자' 의 사전 뜻 laborer 가 막힘 — 중간. 고친 뒤 laborers 만점 · farmers 0점(영국 철자 labourers 는 채점기 철자 규칙으로 70점).",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-084:T48",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'The tanker sank, didn't it?' → 0점. 이 문항 한국어엔 (go down) 힌트가 없어 '가라앉다' 의 곧은 번역 sink 가 막힘 — 중간. #9 는 힌트로 go down 을 시키므로 안 적은 것도 맞음. 고친 뒤 sank 만점 · 틀린 과거형 sunk 70점 · rose · 부정 뒤집음 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-088:T06",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Is your professor well?' → 0점 — gh1-072 #10 과 같은 빈틈(gh1-062 #3 'Is your son well?' → 만점). 중간. 고친 뒤 만점 · ill · sick 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-092:T26",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표준국어대사전에 '이달'(이번 달)이 한 낱말로 올라 있음(이날 · 이때 · 이번과 같은 짜임) — '이 달에' 는 띄어쓰기 틀림, 낮음. 화면 한국어 문제(소리 없음). 영어 'this month' 와 뜻 맞음.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-096:T04",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 지금 'Every boy didn't lose his life, did they?' → 70점, 소유자 답 3 대로 모범을 바꾼 참조로도 'Not every boy lost his life, did they?' · 'Every boy didn't lose his life, did they?' → 70점. 과정은 every · each 주어에 they 꼬리를 만점으로 받음(gh1-068 #79 'Not every boy received a prize, did they?' → 만점 · gh1-096 #77 'Each mayor received a warning, didn't they?' → 만점) — 맞는 영어 70점 = 낮음. 고칠 글(소유자 답 3 이 옮기는 옛 모범 + they 두 꼴)을 참조로 넣어 보면 두 꼴 만점 · 긍정 꼴 0점. 소유자 답 3(.text 바꿈)과 한 번에 넣어야 함.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-096:T06",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 소유자 답 3 참조(모범 'Not all the boys protected their sisters, did they?' · 옛 모범은 다른 정답)로 'Not all of the boys protected their sisters, did they?' → 70점. gh1-068 #81 은 같은 꼴을 만점('Not all of the boys received a prize, did they?' → 만점) — 낮음. 고칠 글 넣어 보면 만점 · 'None of the boys …' · 긍정 0점. (참고: 'All of the boys didn't protect their sisters, did they?' 는 고친 뒤에도 70점 — gh1-068 #81 도 같은 모양이라 그대로 둠)",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-106:T44",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'He wasn't a great typist, was he?' → 0점 · gh1-016 #28 'Did you have a great dinner?' → 만점(같은 '훌륭한'). 중간. 고친 뒤 great 만점 · bad · 긍정 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-108:T42",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "확인 일꾼의 G: 다시 읽기(판정을 가린 채)에서도 같은 T42 를 따로 찾음. grade.cjs: 'I've never seen your home.' → 0점 · gh1-080 #17 은 'your home' · 'your house' 둘 다 만점. 고칠 글 넣어 보면 'I have never seen your home.' 만점 · 'I've always seen your home.' 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-110:T41",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Olympia is accepting the Pepsi challenge.' → 0점. 한국어 '받아들이다' 의 곧은 번역이고 영어로도 맞는 말(accept a challenge) — 중간. 고친 뒤 만점 · rejecting · 부정 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-110:T43",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Why is the fast food chain changing its soft drink?' → 0점 · gh1-090 #32 'Did his wife change his life?' → 만점. '바꾸다' 의 가장 곧은 번역 — 중간. 고친 뒤 만점 · selling · 부정 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-112:T43",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: \"I don't quite understand your point.\" → 0점 · \"I don't really understand your point.\" → 0점. '모르겠다' 의 곧은 번역 understand 가 막힘 — 중간. 고친 뒤 quite understand 만점 · 부정 빠진 \"I quite understand your point.\" 0점. (really 꼴은 고친 뒤에도 0점 — '잘' 을 모범대로 quite 로 옮기는 것이 흔해 그대로 동의)",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-112:T50",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'May I have your telephone number?' → 0점(채점기가 telephone 과 phone 을 다른 낱말로 봄) · gh1-088 #15 microphone · mic 둘 다 만점. '전화번호' 의 온 꼴 — 중간. 고친 뒤 만점 · house number 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "D:grammar1/gh1-112:T26",
+   "결론": "뒤집음",
+   "닿음": true,
+   "까닭": "한쪽이 분명함 — it 꼴을 더하는 쪽(틀림 ③ 낮음 넷으로 표에). grade.cjs: gh1-112 #125 \"It's beyond me.\" → 70점 · #136 \"Does it make sense?\" → 70점 · gh1-118 #52 'Is it less than President Bush estimated?' → 70점 · #66 'We are going to do it another time.' → 70점. 넷 모두 한국어 '그것' 을 곧게 옮긴 맞는 영어(It's beyond me · Does it make sense 도 흔히 쓰는 말)라 풀이 5 의 '맞는 답이 70점 = 낮음' 에 바로 듦 — 소유자에게 고르라고 할 교육 방침이 아님. 결정 3 이 정한 뜻('그것' 은 it · that 둘 다 만점)과 맞고 과정의 다른 '그것' 문항(gh1-120 #26 · gh1-122 #47 — grade.cjs 로 it · that 둘 다 만점)과 한 모양이 됨. '그 N'(그 책) 70점 결정은 명사 앞 '그' 이야기라 대명사 '그것' 과 다름. 추천안의 고칠 곳 · 글을 그대로 올리면 됨(새 음성 없음). 확인 일꾼의 G:grammar1/gh1-118 에서도 T24 · T45 의 it 꼴 70점을 따로 찾음.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-116:T02",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Do US troops face an uphill battle?' · 'Do American forces …' · 'Do American troops …' → 모두 0점 · gh1-102 #145 'When did our troops defeat the enemy?' → 만점. '미군' 의 흔한 번역 — 중간. 고친 뒤 세 꼴 만점 · easy battle · Afghan troops · 부정 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-116:T43",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Most were not killed in a fierce firefight with Taliban troops, were they?' → 0점 · gh1-102 #145 troops 만점. '군대' 의 흔한 번역 — 중간. 고친 뒤 만점 · 긍정 꼴 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-116:T45",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Is the recovery effort destroying important clues?' → 0점. '중요한' 의 가장 곧은 번역 — 중간. 고친 뒤 만점 · finding · 부정 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-118:T04",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "고칠 글": "[\"Was the team's work hampered?\", \"Was the work of the team hindered?\", \"Was the team's work hindered?\"]",
+   "까닭": "틀림 · 심각도 동의(확인 일꾼의 G: 다시 읽기에서도 같은 T04 를 따로 찾음). grade.cjs: \"Was the team's work hampered?\" → 0점. 고칠 글만 넓힘 — '방해받다' 의 흔한 사전 낱말 hinder 도 0점('Was the work of the team hindered?' → 0점)이라 두 꼴을 함께 더함. 넣어 보면 hindered 꼴 만점 · helped · 부정 · play 0점. 고칠 곳은 판정 그대로(gh1-119.json · gh1-119-1.json n=40).",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-118:T20",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "고칠 글": "[\"When did the budget office predict a surplus?\", \"When did the budget office forecast a surplus?\"]",
+   "까닭": "틀림 · 심각도 동의(G: 에서도 같은 T20 을 따로 찾음). grade.cjs: predict → 0점 · 'When did the budget office forecast a surplus?' → 0점 — '예측하다' 를 경제 글에서 흔히 옮기는 forecast 도 함께 더함. 넣어 보면 forecast 만점 · deficit · 부정 0점. 고칠 곳은 판정 그대로(gh1-119.json · gh1-119-1.json n=50).",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-118:T36",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Not all of them are like you, are they?' → 70점 · gh1-068 #82 모범 'Not all of them come.' → 만점. 과정이 '그들 모두가 …지는 않다' 에 가르치는 꼴이 70점 — 낮음(풀이 5). 고친 뒤 만점 · 'All of them are like you, aren't they?' · 'None of them …' 0점. (확인 일꾼은 G: 다시 읽기에서 이 70점을 재고도 틀림으로 세지 않았음 — 과정의 모범 꼴이라는 근거를 보고 동의)",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-118:T45",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "G: 에서도 같은 T45 를 따로 찾음. grade.cjs: 'We will do that next time.' · 'We are going to do that next time.' → 0점 · gh1-106 #35 'They will have dinner together next time.' → 만점. 고칠 글 넣어 보면 'We will do that next time.' 만점 · 'We did that last time.' 0점. 'We will do it next time.' 은 넣은 뒤에도 70점 — it 꼴은 D:grammar1/gh1-112:T26(확인: 틀림으로 올림) 추천안대로 next time 짝까지 함께 넣을 것.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-120:T24",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'The Arabs and the Israelis must make a choice.' → 0점(기능어 둘 → 길이 상한) · 같은 강의 #21 'The Palestinians and the Israelis must act.' → 만점. 한 강의 안에서 같은 문형을 한쪽만 받음 — 중간. 고친 뒤 만점 · must not · mistake 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-122:T14",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Such claims are unreliable.' → 0점. '그런' 의 곧은 번역 such — 중간. 넣어 보면 만점. 'Such claims are reliable.' 이 넣은 뒤 70점이 되지만 지금 모범으로도 'Those claims are reliable.' → 70점(채점기가 un- 없는 긴 낱말을 철자 실수로 봄) — 이 고침이 만든 새 틀림이 아니라 채점 코드의 몫.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-122:T16",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Do they often change their stories?' · 'Do they change their stories often?' → 0점 · 'Do they frequently change their stories?' → 70점. '자주' 의 곧은 번역 often — 중간. 고친 뒤 셋 만점 · rarely · 부정 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-122:T25",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'Could you just sit down for a moment?' → 0점. '앉다' 의 곧은 번역 — 중간. 고친 뒤 만점 · stand up 0점.",
+   "때": "2026-09-24 20:52"
+  },
+  {
+   "key": "F:grammar1/gh1-122:T33",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs: 'We are free people.' → 0점. '자유인' 의 흔한 번역 — 중간. 고친 뒤 만점 · not free · poor 0점. 모범(뉴스 문장 · 결정 13)은 그대로 두고 다른 정답만 더함.",
+   "때": "2026-09-24 20:52"
+  }
+ ]
+}
