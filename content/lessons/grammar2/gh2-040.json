@@ -28,7 +28,10 @@
       "items": [
         {
           "n": "1",
-          "text": "People who work outdoors are also concerned about the weather."
+          "text": "People who work outdoors are also concerned about the weather.",
+          "alternatives": [
+            "People that work outdoors are also concerned about the weather."
+          ]
         },
         {
           "n": "2",
@@ -42,7 +45,8 @@
           "n": "3",
           "text": "A lot of people use a substance we all say we abhor.",
           "alternatives": [
-            "A lot of people use a substance which we all say we abhor."
+            "A lot of people use a substance which we all say we abhor.",
+            "A lot of people use a substance that we all say we abhor."
           ]
         },
         {

@@ -140,9 +140,9 @@ while (v.bad.length && round < 6) {
       const t = terminal(b.file, b.item, s0);
       if (!t) continue; // 이미 gate15 로 이어짐
       if (t.written) { cannot.push(`${key} — 사슬 끝이 ${t.f} #${t.line.item} 의 적힌 글(nowText · gone): 손으로 그 글을 관문 15 뒤 글로 고칠 것`); continue; }
-      // 사슬 끝 줄의 to 가 지금 있으면(사슬 중간 줄만 어긋난 경우 — 여기로 오지 않아야 함) 건너뜀
+      // 사슬 끝 줄의 to 가 지금도 있어도 잇는다 — 어긋난 것은 사슬이 이어 붙인 앞 글(끝 줄 to 보다 긴 글)이고, 관문 15 가 그 글을
+      // 고쳤으면 끝 줄에서 관문 15 줄로 넘어가야 verify 가 새 글을 센다. 전에는 여기서 말없이 건너뛰어 d083 두 줄이 남았다(2026-09-24).
       const tFiles = t.line.movedTo ? [t.line.movedTo] : (t.line.files || [t.line.file]);
-      if (tFiles.reduce((n, f) => n + fileText(f).split(esc(t.line.to)).length - 1, 0) >= 1) continue;
       const hitG15 = plan.some((g) => g.files.some((x) => tFiles.includes(x)) && (touches(esc(t.line.to), esc(g.from)) || touches(t.line.to, g.from)));
       if (!hitG15) { cannot.push(`${key} — 관문 15 고침과 걸치지 않음(${b.why.slice(0, 80)})`); continue; }
       const err = addSuperseded(t.f, t.line);
@@ -221,3 +221,9 @@ console.log(`${WRITE ? "적은" : "적을"} supersededBy ${linked} · 못 이은
 for (const c of cannot.slice(0, 40)) console.log(`   ${c}`);
 if (WRITE) console.log(`잇기 뒤: ${v.sum}`);
 for (const nt of notes.slice(0, 10)) console.log(`   (참고) 빠진 대체 답 ${nt.file}${nt.where}: ${nt.removed.slice(0, 70)}`);
+// 잇고도 남은 어긋남은 말없이 두지 않는다 — 줄마다 찍고 exit 1
+if (WRITE && v.bad.length) {
+  console.log(`남은 어긋남 ${v.bad.length}:`);
+  for (const b of v.bad) console.log(`   ${b.file} #${b.item} — ${b.why.slice(0, 120)}`);
+  process.exitCode = 1;
+}

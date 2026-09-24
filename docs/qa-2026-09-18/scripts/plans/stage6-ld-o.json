@@ -30,7 +30,7 @@
   "from": "얼마나 고마운지 모르겠습니다.“라고 말했다.", "to": "얼마나 고마운지 모르겠습니다.”라고 말했다.", "expect": 1},
  {"item": "6-0288 d188 n1 EN — 'the white man'·'the Indian' 집합 단수(옛 교과서 말투), 한 문장이라 기준 10 대로", "files": ["content/ld_english_scripts.json"],
   "from": "Long before the white man came to the Americas, the land belonged only to the Indian.", "to": "Long before white settlers came to the Americas, the land belonged only to Native Americans.", "expect": 1},
- {"item": "6-0288 d188 n1 KO", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0288 d188 n1 KO", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "백인이 미 대륙에 오기 오래 전에 그 땅은 인디언 만의 것이었다.", "to": "백인 정착민들이 미 대륙에 오기 오래 전에 그 땅은 아메리카 원주민만의 것이었다.", "expect": 1},
  {"item": "6-0292 d189 n12 KO — 따옴표 짝 + 우리말 풀이", "files": ["content/ld_english_scripts.json"],
   "from": "그들은 그 행진을 “The Trail of Tears\"라고 불렀다.", "to": "그들은 그 행진을 “눈물의 길(the Trail of Tears)”이라고 불렀다.", "expect": 1}

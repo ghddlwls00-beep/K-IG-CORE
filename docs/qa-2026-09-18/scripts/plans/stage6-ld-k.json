@@ -1,5 +1,5 @@
 [
- {"item": "6-0194 같은 종류 — d031 힌트 'Mt.Everest' 는 대본 n3 'Mount Everest' 와 다름(칭호 띄어쓰기는 ld-hint-glued-titles.cjs 로 16강 18곳)", "files": ["content/lessons/ld/d031.json"],
+ {"item": "6-0194 같은 종류 — d031 힌트 'Mt.Everest' 는 대본 n3 'Mount Everest' 와 다름(칭호 띄어쓰기는 ld-hint-glued-titles.cjs 로 16강 18곳)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d031.json"],
   "from": "Mt.Everest seven expedition.", "to": "Mount Everest seven expedition.", "expect": 1},
  {"item": "6-0196 d135 n2 EN — need(현재)와 decided(과거) 가 한 문장에(한국어는 이미 과거)", "files": ["content/ld_english_scripts.json"],
   "from": "They both need some new clothes for school and they decided", "to": "They both needed some new clothes for school and they decided", "expect": 1},

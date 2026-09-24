@@ -1,0 +1,515 @@
+[
+ {
+  "id": "전수 ld-a/F:ld/d095:T17",
+  "why": "뜻 흐린 번역(not nearly enough) — 1부 문맥 #101 고침 포함",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d095[n=7].ko",
+  "old": "다음 날 아침 Pat은 자기 돈을 세어보았다. 그녀는 자신이 거의 충분히 가져오지 않았다는 것을 발견했다.",
+  "new": "다음 날 아침 Pat은 자기 돈을 세어보았다. 그녀는 자신이 돈을 턱없이 적게 가져왔다는 것을 발견했다."
+ },
+ {
+  "id": "전수 ld-a/F:ld/d067:T07",
+  "why": "조사 '에게' → '에'(무정 명사) — 1부 문맥 #76 고침 포함",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d067[n=1].ko",
+  "old": "Lite Soap Company의 사장인 Mrs. Ruth Ascott은 자신의 강력한 세척제의 이름을 따서 그것을 새 맥주의 이름으로 사용하는 것에 대하여 그 양조장에게 매우 화가 났다.",
+  "new": "Lite Soap Company의 사장인 Mrs. Ruth Ascott은 자신의 강력한 세척제의 이름을 따서 그것을 새 맥주의 이름으로 사용하는 것에 대하여 그 양조장에 매우 화가 났다."
+ },
+ {
+  "id": "전수 ld-a/F:ld/d070:T14",
+  "why": "'치어서' → '치여서'(피동) — 1부 문맥 #82 고침 포함",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d070[n=8].ko",
+  "old": "Huskisson 씨는 경악했고 두려움으로 얼어붙었다. 그는 그 열차에 치어서 같은 날 밤에 죽었다.",
+  "new": "Huskisson 씨는 경악했고 두려움으로 얼어붙었다. 그는 그 열차에 치여서 같은 날 밤에 죽었다."
+ },
+ {
+  "id": "전수 ld-a/F:ld/d051:T11",
+  "why": "'추측컨대' → '추측건대' — 1부 문맥 #55 고침 포함",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d051[n=2].ko",
+  "old": "대부분의 사람들에 따르면 기자들은 추측컨대 유명한 사람과 인터뷰하고 다른 흥미 있는 것들을 하면서 그들의 시간의 대부분을 보낸다.",
+  "new": "대부분의 사람들에 따르면 기자들은 추측건대 유명한 사람과 인터뷰하고 다른 흥미 있는 것들을 하면서 그들의 시간의 대부분을 보낸다."
+ },
+ {
+  "id": "전수 ld/더:더19",
+  "why": "행마다 따옴표 짝 — n7 끝에 닫는 따옴표",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d042[n=7].ko",
+  "old": "그는 학우들을 위하여 무엇이든 하려고 했다. 사실상 모든 사람이 “George가 그것을 하게 해라.",
+  "new": "그는 학우들을 위하여 무엇이든 하려고 했다. 사실상 모든 사람이 “George가 그것을 하게 해라.”"
+ },
+ {
+  "id": "전수 ld/더:더19",
+  "why": "행마다 따옴표 짝 — n8 여는 따옴표 · 1부 문맥 #48 고침 포함",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d042[n=8].ko",
+  "old": "그는 어떤 것이든 기꺼이 너를 도와줄 거야.”라고 말하곤 했다.",
+  "new": "“그는 어떤 것이든 기꺼이 너를 도와줄 거야.”라고 말하곤 했다."
+ },
+ {
+  "id": "전수 ld-b/F:ld/d269:T03",
+  "why": "힌트 칩 두 항목 붙음 — 1부 고침 뒤 남은 [combine practicality grace beauty]",
+  "op": "set",
+  "file": "content/lessons/ld/d269.json",
+  "path": ".blocks[2].text",
+  "old": "pay homage to. skyscraper. utility. combine practicality grace beauty. scientific advancement",
+  "new": "pay homage to. skyscraper. utility. combine practicality. grace. beauty. scientific advancement"
+ },
+ {
+  "id": "전수 ld/더:더20",
+  "why": "힌트 칩 [object exactly as appears …] 에 it 빠짐 · object 번짐 — 1부 C11999 고침 포함",
+  "op": "set",
+  "file": "content/lessons/ld/d268.json",
+  "path": ".blocks[2].text",
+  "old": "object exactly as appears to the eye as with capturing its soul. abstractions. essentials. Picasso. Georges Braque. conception of things took the form of geometrical shapes. Cubism.",
+  "new": "exactly as it appears to the eye as with capturing its soul. abstractions. essentials. Picasso. Georges Braque. conception of things took the form of geometrical shapes. Cubism."
+ },
+ {
+  "id": "전수 grammar2/F:grammar2/gh2-023:T36",
+  "why": "'부터 … 까지' 곧은 번역 0점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-023.json",
+  "item": ".blocks[1].items[n=20]",
+  "add": [
+   "It is open from Monday to Friday."
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더23",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-113.json",
+  "item": ".blocks[3].items[n=125]",
+  "add": [
+   "It's beyond me."
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더23",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-113-1.json",
+  "item": ".blocks[3].items[n=125]",
+  "add": [
+   "It's beyond me."
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더24",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-113.json",
+  "item": ".blocks[3].items[n=136]",
+  "add": [
+   "Does it make sense?"
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더24",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-113-2.json",
+  "item": ".blocks[1].items[n=136]",
+  "add": [
+   "Does it make sense?"
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더25",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-119.json",
+  "item": ".blocks[3].items[n=52]",
+  "add": [
+   "Is it less than President Bush estimated?",
+   "Is it smaller than President Bush estimated?"
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더25",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-119-1.json",
+  "item": ".blocks[3].items[n=52]",
+  "add": [
+   "Is it less than President Bush estimated?",
+   "Is it smaller than President Bush estimated?"
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더26",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-119.json",
+  "item": ".blocks[3].items[n=66]",
+  "add": [
+   "We are going to do it another time.",
+   "We are going to do it some other time.",
+   "We will do it another time.",
+   "We will do it some other time."
+  ]
+ },
+ {
+  "id": "전수 grammar1/더:더26",
+  "why": "'그것' it 꼴 70점(결정 3)",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-119-2.json",
+  "item": ".blocks[1].items[n=66]",
+  "add": [
+   "We are going to do it another time.",
+   "We are going to do it some other time.",
+   "We will do it another time.",
+   "We will do it some other time."
+  ]
+ },
+ {
+  "id": "전수 voca-a/F:phonics/hv-08:T09",
+  "why": "opposite 와 가르기(퀴즈 · 드릴)",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".opposition.meaning",
+  "old": "반대",
+  "new": "반대, 저항; 야당"
+ },
+ {
+  "id": "전수 voca-a/F:phonics/hv-07:T46",
+  "why": "contrary 와 가르기(드릴)",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".disapproval.meaning",
+  "old": "반대",
+  "new": "반대, 못마땅함"
+ },
+ {
+  "id": "전수 판단 8 phonics/hv-17",
+  "why": "소유자 '추천대로' — healthy 둘째 뜻(healthful 과 겹쳐 오답 보기로 안 냄)",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".healthy.meaning",
+  "old": "건강한",
+  "new": "건강한; 건강에 좋은"
+ },
+ {
+  "id": "전수 판단 9 phonics/hv-51",
+  "why": "소유자 '추천대로' — 발음 둘 낱말 주석(퀴즈 · 스피드는 뗌)",
+  "op": "set",
+  "file": "content/voca_dictionary.json",
+  "path": ".implement.meaning",
+  "old": "실행하다; 도구",
+  "new": "실행하다; 도구 (뜻에 따라 발음이 다름)"
+ },
+ {
+  "id": "전수 grammar1-a/F:grammar1/gh1-020:T43",
+  "why": "안내문 띄어쓰기 · 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-020.json",
+  "path": ".blocks[2].text",
+  "old": "(1)평서문(나는 소년이다 등등)일 때 영어의 문장순서는?",
+  "new": "(1)평서문(나는 소년이다 등등)일 때 영어의 문장 순서는?"
+ },
+ {
+  "id": "전수 grammar1-a/F:grammar1/gh1-020:T44",
+  "why": "안내문 띄어쓰기 · 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[2].text",
+  "old": "(1)평서문(나는 소년이다 등등)일 때 영어의 문장순서는?",
+  "new": "(1)평서문(나는 소년이다 등등)일 때 영어의 문장 순서는?"
+ },
+ {
+  "id": "전수 grammar1-a/F:grammar1/gh1-020:T44",
+  "why": "안내문 띄어쓰기 · 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[3].text",
+  "old": "답: 주어가 먼저 나오고 그 다음에 동사가 나온다.",
+  "new": "답: 주어가 먼저 나오고 그다음에 동사가 나온다."
+ },
+ {
+  "id": "전수 grammar1-a/F:grammar1/gh1-020:T44",
+  "why": "안내문 띄어쓰기 · 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[13].text",
+  "old": "주어 + 동사 + not + 주격보어",
+  "new": "주어 + 동사 + not + 주격 보어"
+ },
+ {
+  "id": "전수 grammar1-a/F:grammar1/gh1-020:T44",
+  "why": "안내문 띄어쓰기 · 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[15].text",
+  "old": "답: 동사가 먼저 나오고 그 다음에 주어가 나오고 그 다음에 주격보어가 온다.",
+  "new": "답: 동사가 먼저 나오고 그다음에 주어가 나오고 그다음에 주격 보어가 온다."
+ },
+ {
+  "id": "전수 grammar1-a/F:grammar1/gh1-020:T44",
+  "why": "안내문 띄어쓰기 · 표기",
+  "op": "set",
+  "file": "content/lessons/grammar1/gh1-021.json",
+  "path": ".blocks[17].text",
+  "old": "답: 동사 + 주어 + not + 주격 보어, 혹은 동사와 not을 합친 축약어(isn't, aren't) + 주어 + 주격 보어의 순서로 한다. 주어가 I 일 때의 축약형은 Aren't I …? 이다 (ain't 는 표준 영어가 아님).",
+  "new": "답: 동사 + 주어 + not + 주격 보어, 혹은 동사와 not을 합친 축약어(isn't, aren't) + 주어 + 주격 보어의 순서로 한다. 주어가 I일 때의 축약형은 Aren't I …?이다 (ain't는 표준 영어가 아님)."
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-007.json",
+  "item": ".blocks[2].items[n=40]",
+  "add": [
+   "Is the weather cold?"
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-007-2.json",
+  "item": ".blocks[2].items[n=40]",
+  "add": [
+   "Is the weather cold?"
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-009.json",
+  "item": ".blocks[3].items[n=40]",
+  "add": [
+   "Was the weather cold yesterday?"
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-009-2.json",
+  "item": ".blocks[1].items[n=40]",
+  "add": [
+   "Was the weather cold yesterday?"
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-009.json",
+  "item": ".blocks[3].items[n=42]",
+  "add": [
+   "Yesterday was warm."
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-009-2.json",
+  "item": ".blocks[1].items[n=42]",
+  "add": [
+   "Yesterday was warm."
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-053.json",
+  "item": ".blocks[3].items[n=40]",
+  "add": [
+   "Yesterday was cold."
+  ]
+ },
+ {
+  "id": "전수 판단 1 grammar1/gh1-006",
+  "why": "소유자 '추천대로'",
+  "op": "addAlts",
+  "file": "content/lessons/grammar1/gh1-053-2.json",
+  "item": ".blocks[1].items[n=40]",
+  "add": [
+   "Yesterday was cold."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-039.json",
+  "item": ".blocks[1].items[n=3]",
+  "add": [
+   "I know a new Korean restaurant which opened recently."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-039.json",
+  "item": ".blocks[1].items[n=6]",
+  "add": [
+   "It's becoming harder to find others that share the belief."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-039.json",
+  "item": ".blocks[1].items[n=8]",
+  "add": [
+   "This is the book that I bought yesterday."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-039.json",
+  "item": ".blocks[1].items[n=13]",
+  "add": [
+   "The sculptures that you are looking at are masterpieces.",
+   "The sculptures you are looking at are masterpieces."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-039.json",
+  "item": ".blocks[1].items[n=14]",
+  "add": [
+   "Weather reports are very important to people that plan the routes of ships and airplanes."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-040.json",
+  "item": ".blocks[1].items[n=1]",
+  "add": [
+   "People that work outdoors are also concerned about the weather."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-040.json",
+  "item": ".blocks[1].items[n=3]",
+  "add": [
+   "A lot of people use a substance that we all say we abhor."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-041.json",
+  "item": ".blocks[1].items[n=1]",
+  "add": [
+   "The attacks were in support of coca leaf growers that staged demonstrations."
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-041.json",
+  "item": ".blocks[1].items[n=2]",
+  "add": [
+   "How can you expect people that never respected our drug laws to enforce them now?"
+  ]
+ },
+ {
+  "id": "전수 판단 2 grammar2/gh2-039",
+  "why": "소유자 '추천대로' — 관계사를 바꾼 흔한 맞는 번역이 70점",
+  "op": "addAlts",
+  "file": "content/lessons/grammar2/gh2-015.json",
+  "item": ".blocks[1].items[n=1]",
+  "add": [
+   "I know a student that studies very hard."
+  ]
+ },
+ {
+  "id": "전수 판단 4 ld/d104",
+  "why": "소유자 '추천대로' — 오늘 경주에 맞춤(우승 약 8~9일에 약 1,600km — iditarod.com)",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d104[n=4].en",
+  "old": "They run day and night and sometimes travel as much as 110 kilometers a day.",
+  "new": "They run day and night and sometimes travel more than 150 kilometers a day."
+ },
+ {
+  "id": "전수 판단 4 ld/d104",
+  "why": "같은 줄 한국어",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d104[n=4].ko",
+  "old": "그들은 밤낮으로 달리고 때로는 하루에 110 킬로미터나 여행한다.",
+  "new": "그들은 밤낮으로 달리고 때로는 하루에 150 킬로미터 넘게 여행한다."
+ },
+ {
+  "id": "전수 판단 4 ld/d104",
+  "why": "힌트 줄의 수 110 → 150(1부 C08290 줄 그대로에서 수만)",
+  "op": "set",
+  "file": "content/lessons/ld/d104.json",
+  "path": ".blocks[2].text",
+  "old": "March, four hours. 110. rest period. two hours each day.",
+  "new": "March, four hours. 150. rest period. two hours each day."
+ },
+ {
+  "id": "전수 판단 5 ld/d051",
+  "why": "소유자 '추천대로' — If + 현재, will",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d051[n=8].en",
+  "old": "If he does a good job, the boss would probably send him out more often.",
+  "new": "If he does a good job, the boss will probably send him out more often."
+ },
+ {
+  "id": "전수 판단 6 ld/d193",
+  "why": "소유자 '추천대로' — 원주민 전체 단정을 'many of them' 으로(d192 와 같게)",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d193[n=7].en",
+  "old": "But no matter where they settle or what new ways of life they try, they still have the amazing hunting skills of their ancestors.",
+  "new": "But no matter where they settle or what new ways of life they try, many of them still have the amazing hunting skills of their ancestors."
+ },
+ {
+  "id": "전수 판단 6 ld/d193",
+  "why": "같은 줄 한국어",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d193[n=7].ko",
+  "old": "그러나 어디에 정착하든지 어떤 새로운 생활방식을 시도하든지 그들은 여전히 그들의 조상의 놀라운 사냥 능력을 갖고 있다.",
+  "new": "그러나 어디에 정착하든지 어떤 새로운 생활방식을 시도하든지 그들 중 다수는 여전히 그들의 조상의 놀라운 사냥 능력을 갖고 있다."
+ },
+ {
+  "id": "전수 판단 7 ld/d232",
+  "why": "소유자 '추천대로' — '비교적 미개한 종족' 비하 표현(d255 n7 결정 #69 · #70 과 같은 말)",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d232[n=3].en",
+  "old": "Even comparatively uncivilized tribes, such as those found in Africa, express themselves in ritual dances and pantomime.",
+  "new": "Even small traditional communities express themselves in ritual dances and pantomime."
+ },
+ {
+  "id": "전수 판단 7 ld/d232",
+  "why": "같은 줄 한국어",
+  "op": "set",
+  "file": "content/ld_english_scripts.json",
+  "path": ".d232[n=3].ko",
+  "old": "아프리카에서 발견되는 그런 것들 같은 비교적 미개한 종족들조차 의식의 무용과 무언극에서 자신을 표현한다.",
+  "new": "작은 전통 사회들조차 의식의 무용과 무언극에서 자신을 표현한다."
+ }
+]

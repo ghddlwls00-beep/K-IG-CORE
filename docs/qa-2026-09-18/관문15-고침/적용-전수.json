@@ -1,0 +1,5201 @@
+{
+ "at": "2026-09-24T12:22:58.099Z",
+ "ref": "file",
+ "verdicts": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-wt-fix\\docs\\qa-2026-09-18\\관문15-고침\\전수-판정-332.json",
+ "root": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-wt-fix",
+ "write": true,
+ "count": {
+  "적용": 296,
+  "손으로": 36
+ },
+ "plan": [
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-006:T09",
+   "key": "F:grammar1/gh1-006:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "They are workers. (다른 정답 없음)",
+   "고칠글": "[\"They are laborers.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-007.json .blocks[2].items[5].alternatives",
+    "content/lessons/grammar1/gh1-007-1.json .blocks[2].items[5].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-006:T32",
+   "key": "F:grammar1/gh1-006:T32",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Are they healthy? (다른 정답 없음)",
+   "고칠글": "[\"Are they well?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-007.json .blocks[2].items[17].alternatives",
+    "content/lessons/grammar1/gh1-007-1.json .blocks[2].items[17].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-008:T11",
+   "key": "F:grammar1/gh1-008:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "They were workers. (다른 정답 없음)",
+   "고칠글": "[\"They were laborers.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-009.json .blocks[3].items[5].alternatives",
+    "content/lessons/grammar1/gh1-009-1.json .blocks[3].items[5].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-008:T32",
+   "key": "F:grammar1/gh1-008:T32",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Were they healthy? (다른 정답 없음)",
+   "고칠글": "[\"Were they well?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-009.json .blocks[3].items[17].alternatives",
+    "content/lessons/grammar1/gh1-009-1.json .blocks[3].items[17].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-014:T12",
+   "key": "F:grammar1/gh1-014:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I am, too. · 다른 정답: So am I.",
+   "고칠글": "[\"So am I.\", \"Me too.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-015.json .blocks[4].items[8].alternatives",
+    "content/lessons/grammar1/gh1-015-2.json .blocks[2].items[8].alternatives"
+   ],
+   "옛글": [
+    "So am I."
+   ]
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-052:T34",
+   "key": "F:grammar1/gh1-052:T34",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Was my hand cold? (다른 정답 없음)",
+   "고칠글": "[\"Were my hands cold?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-053.json .blocks[3].items[16].alternatives",
+    "content/lessons/grammar1/gh1-053-1.json .blocks[3].items[16].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-062:T41",
+   "key": "F:grammar1/gh1-062:T41",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Were your children healthy? (다른 정답 없음)",
+   "고칠글": "[\"Were your children well?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-063.json .blocks[4].items[22].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-072:T20",
+   "key": "F:grammar1/gh1-072:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Are they healthy? (다른 정답 없음)",
+   "고칠글": "[\"Are they well?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-073.json .blocks[3].items[9].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-080:T10",
+   "key": "F:grammar1/gh1-080:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Why were the police arresting workers? (다른 정답 없음)",
+   "고칠글": "[\"Why were the police arresting laborers?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-081.json .blocks[3].items[7].alternatives",
+    "content/lessons/grammar1/gh1-081-1.json .blocks[3].items[7].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-084:T48",
+   "key": "F:grammar1/gh1-084:T48",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "The tanker went down, didn't it? (다른 정답 없음)",
+   "고칠글": "[\"The tanker sank, didn't it?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-085.json .blocks[3].items[25].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-088:T06",
+   "key": "F:grammar1/gh1-088:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Is your professor healthy? (다른 정답 없음)",
+   "고칠글": "[\"Is your professor well?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-089.json .blocks[3].items[2].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-106:T44",
+   "key": "F:grammar1/gh1-106:T44",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "He wasn't a good typist, was he? (다른 정답 없음)",
+   "고칠글": "[\"He wasn't a great typist, was he?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-107.json .blocks[3].items[30].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-108:T42",
+   "key": "F:grammar1/gh1-108:T42",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I've never seen your place. · 다른 정답: I've never seen your house.",
+   "고칠글": "[\"I've never seen your house.\", \"I've never seen your home.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[27].alternatives"
+   ],
+   "옛글": [
+    "I've never seen your house."
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-110:T41",
+   "key": "F:grammar1/gh1-110:T41",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Olympia is taking the Pepsi challenge. (다른 정답 없음)",
+   "고칠글": "[\"Olympia is accepting the Pepsi challenge.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-111.json .blocks[3].items[25].alternatives",
+    "content/lessons/grammar1/gh1-111-2.json .blocks[1].items[6].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-110:T43",
+   "key": "F:grammar1/gh1-110:T43",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Why is the fast food chain switching its soft drink? (다른 정답 없음)",
+   "고칠글": "[\"Why is the fast food chain changing its soft drink?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-111.json .blocks[3].items[26].alternatives",
+    "content/lessons/grammar1/gh1-111-2.json .blocks[1].items[7].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-112:T43",
+   "key": "F:grammar1/gh1-112:T43",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I don't quite get your point. (다른 정답 없음)",
+   "고칠글": "[\"I don't quite understand your point.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-113.json .blocks[3].items[26].alternatives",
+    "content/lessons/grammar1/gh1-113-2.json .blocks[1].items[8].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-112:T50",
+   "key": "F:grammar1/gh1-112:T50",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "May I have your phone number? (다른 정답 없음)",
+   "고칠글": "[\"May I have your telephone number?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-113.json .blocks[3].items[30].alternatives",
+    "content/lessons/grammar1/gh1-113-2.json .blocks[1].items[12].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-116:T02",
+   "key": "F:grammar1/gh1-116:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Do US forces face an uphill battle? (다른 정답 없음)",
+   "고칠글": "[\"Do US troops face an uphill battle?\", \"Do American forces face an uphill battle?\", \"Do American troops face an uphill battle?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-117.json .blocks[3].items[0].alternatives",
+    "content/lessons/grammar1/gh1-117-1.json .blocks[3].items[0].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-116:T43",
+   "key": "F:grammar1/gh1-116:T43",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Most were not killed in a fierce firefight with Taliban forces, were they? (다른 정답 없음)",
+   "고칠글": "[\"Most were not killed in a fierce firefight with Taliban troops, were they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-117.json .blocks[3].items[31].alternatives",
+    "content/lessons/grammar1/gh1-117-2.json .blocks[1].items[12].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-116:T45",
+   "key": "F:grammar1/gh1-116:T45",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Is the recovery effort destroying vital clues? (다른 정답 없음)",
+   "고칠글": "[\"Is the recovery effort destroying important clues?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-117.json .blocks[3].items[34].alternatives",
+    "content/lessons/grammar1/gh1-117-2.json .blocks[1].items[15].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-118:T04",
+   "key": "F:grammar1/gh1-118:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Was the work of the team hampered? (다른 정답 없음)",
+   "고칠글": "[\"Was the team's work hampered?\", \"Was the work of the team hindered?\", \"Was the team's work hindered?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[2].alternatives",
+    "content/lessons/grammar1/gh1-119-1.json .blocks[3].items[2].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-118:T20",
+   "key": "F:grammar1/gh1-118:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "When did the budget office project a surplus? (다른 정답 없음)",
+   "고칠글": "[\"When did the budget office predict a surplus?\", \"When did the budget office forecast a surplus?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[12].alternatives",
+    "content/lessons/grammar1/gh1-119-1.json .blocks[3].items[12].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-118:T45",
+   "key": "F:grammar1/gh1-118:T45",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "We are going to do that another time. · 다른 정답: We are going to do that some other time. / We will do that another time. / We will do that some other time.",
+   "고칠글": "[\"We are going to do that some other time.\", \"We will do that another time.\", \"We will do that some other time.\", \"We are going to do that next time.\", \"We will do that next time.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[28].alternatives",
+    "content/lessons/grammar1/gh1-119-2.json .blocks[1].items[10].alternatives"
+   ],
+   "옛글": [
+    "We are going to do that some other time.",
+    "We will do that another time.",
+    "We will do that some other time."
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-120:T24",
+   "key": "F:grammar1/gh1-120:T24",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Arabs and Israelis must make a choice. (다른 정답 없음)",
+   "고칠글": "[\"The Arabs and the Israelis must make a choice.\", \"The Arabs and Israelis must make a choice.\", \"Arabs and the Israelis must make a choice.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-121.json .blocks[3].items[33].alternatives",
+    "content/lessons/grammar1/gh1-121-2.json .blocks[1].items[14].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-122:T14",
+   "key": "F:grammar1/gh1-122:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Those claims are unreliable. (다른 정답 없음)",
+   "고칠글": "[\"Such claims are unreliable.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-123.json .blocks[3].items[7].alternatives",
+    "content/lessons/grammar1/gh1-123-1.json .blocks[3].items[7].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-122:T16",
+   "key": "F:grammar1/gh1-122:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Do they change their stories frequently? (다른 정답 없음)",
+   "고칠글": "[\"Do they often change their stories?\", \"Do they change their stories often?\", \"Do they frequently change their stories?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-123.json .blocks[3].items[8].alternatives",
+    "content/lessons/grammar1/gh1-123-1.json .blocks[3].items[8].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-122:T25",
+   "key": "F:grammar1/gh1-122:T25",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Could you just have a seat for a moment? (다른 정답 없음)",
+   "고칠글": "[\"Could you just sit down for a moment?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-123.json .blocks[3].items[13].alternatives",
+    "content/lessons/grammar1/gh1-123-1.json .blocks[3].items[13].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-122:T33",
+   "key": "F:grammar1/gh1-122:T33",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "We are free men. (다른 정답 없음)",
+   "고칠글": "[\"We are free people.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-123.json .blocks[3].items[17].alternatives",
+    "content/lessons/grammar1/gh1-123-1.json .blocks[3].items[17].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-007:T10",
+   "key": "F:grammar2/gh2-007:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "You may watch TV after you finish your homework. (다른 정답 없음)",
+   "고칠글": "[\"You may watch television after you finish your homework.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-007.json .blocks[1].items[5].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-013:T08",
+   "key": "F:grammar2/gh2-013:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "나는 군인으로서 그를 존경한다.",
+   "고칠글": "나는 그를 군인으로서 존경한다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-013-1.json .blocks[1].items[4].text"
+   ],
+   "옛글": "나는 군인으로서 그를 존경한다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-013:T28",
+   "key": "F:grammar2/gh2-013:T28",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Nowadays no one could do that. (다른 정답 없음)",
+   "고칠글": "[\"Nowadays nobody could do that.\", \"Nowadays no one could do it.\", \"Nowadays nobody could do it.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-013.json .blocks[1].items[16].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-016:T16",
+   "key": "F:grammar2/gh2-016:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I will have soup first and then the chicken. (다른 정답 없음)",
+   "고칠글": "[\"I will eat soup first and then the chicken.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-016.json .blocks[1].items[7].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-016:T30",
+   "key": "F:grammar2/gh2-016:T30",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I did not have an apple. (다른 정답 없음)",
+   "고칠글": "[\"I did not eat an apple.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-016.json .blocks[1].items[14].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-016:T32",
+   "key": "F:grammar2/gh2-016:T32",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Instead, I had a peach. (다른 정답 없음)",
+   "고칠글": "[\"Instead, I ate a peach.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-016.json .blocks[1].items[15].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-020:T04",
+   "key": "F:grammar2/gh2-020:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "That sounds great. (다른 정답 없음)",
+   "고칠글": "[\"That sounds good.\", \"It sounds great.\", \"It sounds good.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-020.json .blocks[1].items[1].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-022:T26",
+   "key": "F:grammar2/gh2-022:T26",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Will you give me a lift? (다른 정답 없음)",
+   "고칠글": "[\"Will you give me a ride?\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-022.json .blocks[1].items[12].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-023:T10",
+   "key": "F:grammar2/gh2-023:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "How would you like your coffee? (다른 정답 없음)",
+   "고칠글": "[\"How do you want your coffee?\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-023.json .blocks[1].items[4].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-023:T20",
+   "key": "F:grammar2/gh2-023:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I would like to take your measurements. (다른 정답 없음)",
+   "고칠글": "[\"I want to take your measurements.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-023.json .blocks[1].items[9].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-023:T36",
+   "key": "F:grammar2/gh2-023:T36",
+   "status": "손으로",
+   "why": "대체 답을 빼는 고침('That is open Monday through Friday.') — 손으로",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "It is open Monday through Friday. (다른 정답 없음)",
+   "고칠글": "[\"It is open from Monday to Friday.\"]"
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-025:T35",
+   "key": "F:grammar2/gh2-025:T35",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I would like to get a refund on this. (다른 정답 없음)",
+   "고칠글": "[\"I want to get a refund on this.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-025.json .blocks[1].items[18].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-029:T12",
+   "key": "F:grammar2/gh2-029:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Operator, I'd like to call New York, collect. (다른 정답 없음)",
+   "고칠글": "[\"Operator, I want to call New York, collect.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-029.json .blocks[1].items[6].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-029:T14",
+   "key": "F:grammar2/gh2-029:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "I'd like to know a phone number in Seoul, Korea. (다른 정답 없음)",
+   "고칠글": "[\"I want to know a phone number in Seoul, Korea.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-029.json .blocks[1].items[7].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-030:T07",
+   "key": "F:grammar2/gh2-030:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "It takes one hour for me to get here. · 다른 정답: It takes me one hour to get here.",
+   "고칠글": "[\"It takes me one hour to get here.\", \"It takes an hour for me to get here.\", \"It takes me an hour to get here.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-030.json .blocks[1].items[3].alternatives"
+   ],
+   "옛글": [
+    "It takes me one hour to get here."
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-033:T11",
+   "key": "F:grammar2/gh2-033:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Would you like to hold on or call again? (다른 정답 없음)",
+   "고칠글": "[\"Do you want to hold on or call again?\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-033.json .blocks[1].items[5].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-033:T14",
+   "key": "F:grammar2/gh2-033:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Would you like to leave your name and phone number? (다른 정답 없음)",
+   "고칠글": "[\"Do you want to leave your name and phone number?\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-033.json .blocks[1].items[7].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-033:T16",
+   "key": "F:grammar2/gh2-033:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Care to leave a message? · 다른 정답: Would you care to leave a message? / Would you like to leave a message?",
+   "고칠글": "[\"Would you care to leave a message?\", \"Would you like to leave a message?\", \"Do you want to leave a message?\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-033.json .blocks[1].items[9].alternatives"
+   ],
+   "옛글": [
+    "Would you care to leave a message?",
+    "Would you like to leave a message?"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-036:T21",
+   "key": "F:grammar2/gh2-036:T21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "He was selling TV sets at cost to get rid of an overstock. (다른 정답 없음)",
+   "고칠글": "[\"He was selling television sets at cost to get rid of an overstock.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-036.json .blocks[1].items[12].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-043:T18",
+   "key": "F:grammar2/gh2-043:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Who he is is not known to anybody. (다른 정답 없음)",
+   "고칠글": "[\"Who he is is not known to anyone.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-043.json .blocks[1].items[8].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-044:T04",
+   "key": "F:grammar2/gh2-044:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "It grew so hot that we turned on the air conditioner. (다른 정답 없음)",
+   "고칠글": "[\"It got so hot that we turned on the air conditioner.\", \"It became so hot that we turned on the air conditioner.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-044.json .blocks[1].items[1].alternatives"
+   ]
+  },
+  {
+   "uid": "ld-a/F:ld/d005:T02",
+   "key": "F:ld/d005:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Tom Fred basketball baseball, tennis. seafood hamburgers French fries.",
+   "고칠글": "Tom. Fred. basketball, baseball, tennis. seafood. hamburgers, French fries.",
+   "칸": [
+    "content/lessons/ld/d005.json .blocks[2].text"
+   ],
+   "옛글": "Tom Fred basketball baseball, tennis. seafood hamburgers French fries."
+  },
+  {
+   "uid": "ld-a/F:ld/d008:T16",
+   "key": "F:ld/d008:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "Please come and see us soon. Love Nancy.",
+   "고칠글": "Please come and see us soon. Love, Nancy.",
+   "칸": [
+    "content/ld_english_scripts.json .d008[n=15].en"
+   ],
+   "옛글": "Please come and see us soon. Love Nancy."
+  },
+  {
+   "uid": "ld-a/F:ld/d095:T17",
+   "key": "F:ld/d095:T17",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d095[n=7].ko",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "다음 날 아침 Pat는 자기 돈을 세어보았다. 그녀는 자신이 거의 충분히 가져오지 않았다는 것을 발견했다.",
+   "고칠글": "다음 날 아침 Pat은 자기 돈을 세어보았다. 그녀는 자신이 돈을 턱없이 적게 가져왔다는 것을 발견했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d106:T03",
+   "key": "F:ld/d106:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "worth bush. the one-eyed man mice",
+   "고칠글": "worth. bush. the one-eyed man. mice",
+   "칸": [
+    "content/lessons/ld/d106.json .blocks[2].text"
+   ],
+   "옛글": "worth bush. the one-eyed man mice"
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T02",
+   "key": "F:ld/d021:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Judy in a rush. cap step on bored, quit.",
+   "고칠글": "Judy. in a rush. capped. stepped on. bored, quit.",
+   "칸": [
+    "content/lessons/ld/d021.json .blocks[2].text"
+   ],
+   "옛글": "Judy in a rush. cap step on bored, quit."
+  },
+  {
+   "uid": "ld-a/F:ld/d036:T22",
+   "key": "F:ld/d036:T22",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "여전히 그는 아마도 다른 누구보다도 정확한 것에 더 가깝다.",
+   "고칠글": "그래도 그는 아마도 다른 누구보다도 정확한 것에 더 가깝다.",
+   "칸": [
+    "content/ld_english_scripts.json .d036[n=12].ko"
+   ],
+   "옛글": "여전히 그는 아마도 다른 누구보다도 정확한 것에 더 가깝다."
+  },
+  {
+   "uid": "ld-a/F:ld/d038:T02",
+   "key": "F:ld/d038:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Mortons' Alfred.",
+   "고칠글": "Mortons'. Alfred.",
+   "칸": [
+    "content/lessons/ld/d038.json .blocks[2].text"
+   ],
+   "옛글": "Mortons' Alfred."
+  },
+  {
+   "uid": "ld-a/F:ld/d050:T11",
+   "key": "F:ld/d050:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그러나 여러분은 이 사람들 중의 일부가 그들의 자신의 아이들을 얼마나 등한시하는지 놀랄 것이다.",
+   "고칠글": "그러나 여러분은 이 사람들 중의 일부가 자신의 아이들을 얼마나 등한시하는지 놀랄 것이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d050[n=5].ko"
+   ],
+   "옛글": "그러나 여러분은 이 사람들 중의 일부가 그들의 자신의 아이들을 얼마나 등한시하는지 놀랄 것이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d051:T17",
+   "key": "F:ld/d051:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그는 심지어 그가 그의 자신의 칼럼을 갖게 해주기까지 할지 모른다.",
+   "고칠글": "그는 심지어 그가 자신의 칼럼을 갖게 해주기까지 할지 모른다.",
+   "칸": [
+    "content/ld_english_scripts.json .d051[n=9].ko"
+   ],
+   "옛글": "그는 심지어 그가 그의 자신의 칼럼을 갖게 해주기까지 할지 모른다."
+  },
+  {
+   "uid": "ld-a/F:ld/d054:T03",
+   "key": "F:ld/d054:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "Columbus, for example, in searching for a shortcut to the east, discovered America.",
+   "고칠글": "Columbus, for example, in searching for a shortcut to the East, discovered America.",
+   "칸": [
+    "content/ld_english_scripts.json .d054[n=2].en"
+   ],
+   "옛글": "Columbus, for example, in searching for a shortcut to the east, discovered America."
+  },
+  {
+   "uid": "ld-a/F:ld/d113:T13",
+   "key": "F:ld/d113:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Perkins 교수는 그 건설 현장으로부터 약 4마일 떨어진 Cisco 강 근처에서 “한 큰 무리의 Pomo 인디언들이 한때 살았다.”라고 말했다.",
+   "고칠글": "Perkins 교수는 한 큰 무리의 Pomo 인디언들이 한때 그 건설 현장으로부터 약 4마일 떨어진 Cisco 강 근처에 살았다고 말했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d113[n=2].ko"
+   ],
+   "옛글": "Perkins 교수는 그 건설 현장으로부터 약 4마일 떨어진 Cisco 강 근처에서 “한 큰 무리의 Pomo 인디언들이 한때 살았다.”라고 말했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d083:T05",
+   "key": "F:ld/d083:T05",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/lessons/ld/d083.json .blocks[2].text",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "5 performing area. wide view. The Birth of a Nation. American Civil War 1931. Hollywood, California. July 23rd, 1948",
+   "고칠글": "Griffith. 5 meters. performing area. wide view. Birth of a Nation. American Civil War. 1931. Hollywood, California. July 23rd, 1948"
+  },
+  {
+   "uid": "ld-a/F:ld/d088:T09",
+   "key": "F:ld/d088:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그것의 자체의 동력을 사용하여 크고 시끄러운 기계가 한 남자를 공중으로 올려서 그를 37미터를 운반했다. 그 형제들은 그날 세 번 더 비행했다.",
+   "고칠글": "자체의 동력을 사용하여 크고 시끄러운 기계가 한 남자를 공중으로 올려서 그를 37미터를 운반했다. 그 형제들은 그날 세 번 더 비행했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d088[n=2].ko"
+   ],
+   "옛글": "그것의 자체의 동력을 사용하여 크고 시끄러운 기계가 한 남자를 공중으로 올려서 그를 37미터를 운반했다. 그 형제들은 그날 세 번 더 비행했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d257:T06",
+   "key": "F:ld/d257:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그들은 자신의 의무를 효율적으로 완수할 수 있기 위해서는 최근의 발전과 보조를 맞추는 것이 필수불가결하다는 것을 인식한다.",
+   "고칠글": "그들은 자신의 의무를 효과적으로 완수할 수 있기 위해서는 최근의 발전과 보조를 맞추는 것이 필수불가결하다는 것을 인식한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d257[4].ko"
+   ],
+   "옛글": "그들은 자신의 의무를 효율적으로 완수할 수 있기 위해서는 최근의 발전과 보조를 맞추는 것이 필수불가결하다는 것을 인식한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d267:T11",
+   "key": "F:ld/d267:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "선지자는 그의 자신의 나라에서는 결코 인정받지 않는다고 한다.",
+   "고칠글": "선지자는 그 자신의 나라에서는 결코 인정받지 않는다고 한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d267[5].ko"
+   ],
+   "옛글": "선지자는 그의 자신의 나라에서는 결코 인정받지 않는다고 한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d269:T03",
+   "key": "F:ld/d269:T03",
+   "status": "손으로",
+   "why": "'지금' 과 같은 칸이 적힌 파일(content/lessons/ld/d269.json)에 없음",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "pay homage to skyscraper. utility. combine practicality grace beauty. scientific advancement",
+   "고칠글": "pay homage to. skyscraper. utility. combine practicality. grace. beauty. scientific advancement"
+  },
+  {
+   "uid": "ld-b/F:ld/d274:T09",
+   "key": "F:ld/d274:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그것은 세계의 다양한 국가들 사이에 존재하는 언어 장벽을 극복하는 수단으로써 점점 더 중요해지고 있다.",
+   "고칠글": "그것은 세계의 다양한 국가들 사이에 존재하는 언어 장벽을 극복하는 수단으로서 점점 더 중요해지고 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d274[5].ko"
+   ],
+   "옛글": "그것은 세계의 다양한 국가들 사이에 존재하는 언어 장벽을 극복하는 수단으로써 점점 더 중요해지고 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d275:T02",
+   "key": "F:ld/d275:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "drawback well worthwhile.",
+   "고칠글": "drawback. well worthwhile.",
+   "칸": [
+    "content/lessons/ld/d275.json .blocks[2].text"
+   ],
+   "옛글": "drawback well worthwhile."
+  },
+  {
+   "uid": "ld-b/F:ld/d193:T08",
+   "key": "F:ld/d193:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "경찰은 그의 말을 거의 믿을 수 없었지만 그가 진흙길을 통하여 마을의 외곽지역을 지나서 그 흔적을 따라가는 동안 그와 동행했다.",
+   "고칠글": "경찰은 그의 말을 거의 믿을 수 없었지만 그가 흙길을 통하여 마을의 외곽 지역을 지나서 그 흔적을 따라가는 동안 그와 동행했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d193[2].ko"
+   ],
+   "옛글": "경찰은 그의 말을 거의 믿을 수 없었지만 그가 진흙길을 통하여 마을의 외곽지역을 지나서 그 흔적을 따라가는 동안 그와 동행했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d196:T08",
+   "key": "F:ld/d196:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "unbearable. go on a diet relieve misery",
+   "고칠글": "unbearable. goes on a diet. relieve misery",
+   "칸": [
+    "content/lessons/ld/d196.json .blocks[2].text"
+   ],
+   "옛글": "unbearable. go on a diet relieve misery"
+  },
+  {
+   "uid": "ld-b/F:ld/d205:T05",
+   "key": "F:ld/d205:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "meat poison.",
+   "고칠글": "meat. poison.",
+   "칸": [
+    "content/lessons/ld/d205.json .blocks[2].text"
+   ],
+   "옛글": "meat poison."
+  },
+  {
+   "uid": "ld-b/F:ld/d179:T05",
+   "key": "F:ld/d179:T05",
+   "status": "손으로",
+   "why": "'지금' 과 같은 칸이 적힌 파일(content/lessons/ld/d179.json)에 없음",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Sister Maria, in charge. strict rules.\" disguise",
+   "고칠글": "Sister Maria, in charge. strict rules. disguise"
+  },
+  {
+   "uid": "ld-b/F:ld/d182:T07",
+   "key": "F:ld/d182:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "Can you possibly give me any advice on how to get a hold of such a pearl? said the man.",
+   "고칠글": "\"Can you possibly give me any advice on how to get a hold of such a pearl?\" said the man.",
+   "칸": [
+    "content/ld_english_scripts.json .d182[5].en"
+   ],
+   "옛글": "Can you possibly give me any advice on how to get a hold of such a pearl? said the man."
+  },
+  {
+   "uid": "ld-b/F:ld/d182:T08",
+   "key": "F:ld/d182:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "The jeweler regretfully replied, I would say it's virtually impossible to find an exact duplicate of that pearl.",
+   "고칠글": "The jeweler regretfully replied, \"I would say it's virtually impossible to find an exact duplicate of that pearl.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d182[6].en"
+   ],
+   "옛글": "The jeweler regretfully replied, I would say it's virtually impossible to find an exact duplicate of that pearl."
+  },
+  {
+   "uid": "ld-b/F:ld/d188:T18",
+   "key": "F:ld/d188:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그의 자신의 상상력과 한 영어 철자법 책을 이용하여 Sequoyah는 각 음에 대한 하나의 표시(sign)를 발명했다.",
+   "고칠글": "자신의 상상력과 한 영어 철자법 책을 이용하여 Sequoyah는 각 음에 대한 하나의 표시(sign)를 발명했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d188[11].ko"
+   ],
+   "옛글": "그의 자신의 상상력과 한 영어 철자법 책을 이용하여 Sequoyah는 각 음에 대한 하나의 표시(sign)를 발명했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d217:T03",
+   "key": "F:ld/d217:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "predictions amusing. customers",
+   "고칠글": "predictions. amusing. customers",
+   "칸": [
+    "content/lessons/ld/d217.json .blocks[2].text"
+   ],
+   "옛글": "predictions amusing. customers"
+  },
+  {
+   "uid": "ld-b/F:ld/d219:T11",
+   "key": "F:ld/d219:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "‘푸른 수염’은 부인을 수집했지만 고양이를 모으는 작가처럼 그는 자신의 견본이 죽은 것을 더 좋아했다.",
+   "고칠글": "‘푸른 수염’은 부인을 수집했지만 고양이를 모으는 작가처럼 그는 자신의 표본이 죽은 것을 더 좋아했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d219[4].ko"
+   ],
+   "옛글": "‘푸른 수염’은 부인을 수집했지만 고양이를 모으는 작가처럼 그는 자신의 견본이 죽은 것을 더 좋아했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d220:T03",
+   "key": "F:ld/d220:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "Every summer the lure of far away places beckons to millions of Americans.",
+   "고칠글": "Every summer the lure of far-away places beckons to millions of Americans.",
+   "칸": [
+    "content/ld_english_scripts.json .d220[2].en"
+   ],
+   "옛글": "Every summer the lure of far away places beckons to millions of Americans."
+  },
+  {
+   "uid": "ld-b/F:ld/d158:T02",
+   "key": "F:ld/d158:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "Monday Friday evenings weekends, television movies; sports. stamps model airplanes.",
+   "고칠글": "Monday. Friday. evenings. weekends. television. movies. sports. stamps. model airplanes.",
+   "칸": [
+    "content/lessons/ld/d158.json .blocks[2].text"
+   ],
+   "옛글": "Monday Friday evenings weekends, television movies; sports. stamps model airplanes."
+  },
+  {
+   "uid": "ld-b/F:ld/d163:T08",
+   "key": "F:ld/d163:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "가장 중요한 소식이 있는 1면 이외에 스포츠면, 사회면, 만화, 연예면, 경제면, 사설이 있다.",
+   "고칠글": "가장 중요한 소식이 있는 1면 이외에 스포츠면, 사교계 소식란, 만화, 연예면, 경제면, 사설이 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d163[1].ko"
+   ],
+   "옛글": "가장 중요한 소식이 있는 1면 이외에 스포츠면, 사회면, 만화, 연예면, 경제면, 사설이 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d163:T11",
+   "key": "F:ld/d163:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "어떤 잡지는 주로 남자를 위한 책이고 어떤 잡지는 여성을 위한 것이고 어린이의 잡지들을 선정한 것도 있다.",
+   "고칠글": "어떤 잡지는 주로 남자를 위한 책이고 어떤 잡지는 여성을 위한 것이고 여러 가지 어린이 잡지도 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d163[5].ko"
+   ],
+   "옛글": "어떤 잡지는 주로 남자를 위한 책이고 어떤 잡지는 여성을 위한 것이고 어린이의 잡지들을 선정한 것도 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d236:T08",
+   "key": "F:ld/d236:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그래서 사업가는 그의 열차칸에서 그의 자신의 사무실과 거의 같은 정도로 효율적으로 그의 업무를 처리할 수 있다.",
+   "고칠글": "그래서 사업가는 그의 열차칸에서 자신의 사무실과 거의 같은 정도로 효율적으로 그의 업무를 처리할 수 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d236[5].ko"
+   ],
+   "옛글": "그래서 사업가는 그의 열차칸에서 그의 자신의 사무실과 거의 같은 정도로 효율적으로 그의 업무를 처리할 수 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d237:T03",
+   "key": "F:ld/d237:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "One boards the plane with great apprehension and as he sits in his place and fastens his seatbelt, he may murmur a silent prayer for a safe journey.",
+   "고칠글": "One boards the plane with great apprehension and as he sits in his place and fastens his seat belt, he may murmur a silent prayer for a safe journey.",
+   "칸": [
+    "content/ld_english_scripts.json .d237[2].en"
+   ],
+   "옛글": "One boards the plane with great apprehension and as he sits in his place and fastens his seatbelt, he may murmur a silent prayer for a safe journey."
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-30:T06",
+   "key": "F:phonics/hv-30:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "결함",
+   "고칠글": "결함, 결점",
+   "칸": [
+    "content/voca_dictionary.json .defect.meaning"
+   ],
+   "옛글": "결함"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-03:T52",
+   "key": "F:phonics/hv-03:T52",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "지원하다",
+   "고칠글": "지지하다, 지원하다",
+   "칸": [
+    "content/voca_dictionary.json .support.meaning"
+   ],
+   "옛글": "지원하다"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-08:T09",
+   "key": "F:phonics/hv-08:T09",
+   "status": "손으로",
+   "why": "content/voca_dictionary.json 안에 '지금' 과 같은 칸이 3곳 — 어느 것인지 모름",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "반대",
+   "고칠글": "반대, 저항; 야당"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-21:T20",
+   "key": "F:phonics/hv-21:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "경력",
+   "고칠글": "직업; 경력",
+   "칸": [
+    "content/voca_dictionary.json .career.meaning"
+   ],
+   "옛글": "경력"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-50:T34",
+   "key": "F:phonics/hv-50:T34",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/vocaSpeech.ts VOCA_PRONUNCIATIONS 표에 한 줄 더함(graduate 줄 다음) → 말하는 글 'comp",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑤",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "complement — 발음 표에 없음(단어 단추 소리 = 맨 낱말 'complement' 클립) · 화면 뜻 '보완하다'",
+   "고칠글": "  complement: \"ˈkɑːmpləmɛnt\","
+  },
+  {
+   "uid": "voca-b/F:phonics/mv3-08:T09",
+   "key": "F:phonics/mv3-08:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그 후에",
+   "고칠글": "그 후에, 나중에",
+   "칸": [
+    "content/voca_dictionary.json .afterward(s).meaning"
+   ],
+   "옛글": "그 후에"
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-012:T58",
+   "key": "F:grammar1/gh1-012:T58",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 무엇이었니? (뭐하는 사람이었니?)",
+   "고칠글": "그는 무엇이었니? (뭐 하는 사람이었니?)",
+   "칸": [
+    "content/lessons/grammar1/gh1-012.json .blocks[3].items[34].text",
+    "content/lessons/grammar1/gh1-012-2.json .blocks[1].items[16].text"
+   ],
+   "옛글": "그는 무엇이었니? (뭐하는 사람이었니?)"
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-020:T43",
+   "key": "F:grammar1/gh1-020:T43",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/grammar1/gh1-020.json .blocks[2].text · .blocks[6].text · .block",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "blocks[2] '(1)평서문(나는 소년이다 등등)일 때 영어의 문장순서는?' · blocks[6] '(3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야하는 be동사는?' · blocks[8] '(4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야하는 be동사는?' · blocks[10] '(5)주어가 그 이외의 것일 때 써야하는 be 동사는? (we, you, they, those 등)'",
+   "고칠글": "blocks[2].text = (1)평서문(나는 소년이다 등등)일 때 영어의 문장 순서는? · blocks[6].text = (3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야 하는 be동사는? · blocks[8].text = (4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야 하는 be동사는? · blocks[10].text = (5)주어가 그 이외의 것일 때 써야 하는 be동사는? (we, you, they, those 등)"
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-020:T44",
+   "key": "F:grammar1/gh1-020:T44",
+   "status": "손으로",
+   "why": "content/lessons/grammar1/gh1-021.json .blocks[2] 안에 '지금' 과 같은 칸이 0곳",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "blocks[2] '(1)평서문(나는 소년이다 등등)일 때 영어의 문장순서는?' · blocks[3] '답: 주어가 먼저 나오고 그 다음에 동사가 나온다.' · blocks[6] '(3)…써야하는 be동사는?' · blocks[8] '(4)…써야하는 be동사는?' · blocks[10] '(5)…써야하는 be 동사는? (we, you, they, those 등)' · blocks[13] '주어 + 동사 + not + 주격보어' · blocks[15] '답: 동사가 먼저 나오고 그 다음에 주어가 나오고 그 다음에 주격보어가 온다.' · blocks[17] '답: 동사 + 주어 + not + 주격 보어, 혹은 동사와 not을 합친 축약어(isn't, aren't) + 주어 + 주격 보어의 순서로 한다. 주어가 I 일 때의 축약형은 Aren't I …? 이다 (ain't 는 표준 영어가 아님).'",
+   "고칠글": "blocks[2].text = (1)평서문(나는 소년이다 등등)일 때 영어의 문장 순서는? · blocks[3].text = 답: 주어가 먼저 나오고 그다음에 동사가 나온다. · blocks[6].text = (3)주어가 1인칭 단수(I:나)일 때 그것에 맞춰서 써야 하는 be동사는? · blocks[8].text = (4)주어가 3인칭 단수(he, she, it, this 등)일 때 써야 하는 be동사는? · blocks[10].text = (5)주어가 그 이외의 것일 때 써야 하는 be동사는? (we, you, they, those 등) · blocks[13].text = 주어 + 동사 + not + 주격 보어 · blocks[15].text = 답: 동사가 먼저 나오고 그다음에 주어가 나오고 그다음에 주격 보어가 온다. · blocks[17].text = 답: 동사 + 주어 + not + 주격 보어, 혹은 동사와 not을 합친 축약어(isn't, aren't) + 주어 + 주격 보어의 순서로 한다. 주어가 I일 때의 축약형은 Aren't I …?이다 (ain't는 표준 영어가 아님)."
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-050:T05",
+   "key": "F:grammar1/gh1-050:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 너의 남자친구냐?",
+   "고칠글": "그는 너의 남자 친구냐?",
+   "칸": [
+    "content/lessons/grammar1/gh1-050.json .blocks[3].items[24].text",
+    "content/lessons/grammar1/gh1-050-2.json .blocks[1].items[3].text"
+   ],
+   "옛글": "그는 너의 남자친구냐?"
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-052:T46",
+   "key": "F:grammar1/gh1-052:T46",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 그녀의 남자친구였니?",
+   "고칠글": "그는 그녀의 남자 친구였니?",
+   "칸": [
+    "content/lessons/grammar1/gh1-052.json .blocks[3].items[24].text",
+    "content/lessons/grammar1/gh1-052-2.json .blocks[1].items[4].text"
+   ],
+   "옛글": "그는 그녀의 남자친구였니?"
+  },
+  {
+   "uid": "grammar1-a/F:grammar1/gh1-060:T05",
+   "key": "F:grammar1/gh1-060:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "How much do you want? (다른 정답 없음)",
+   "고칠글": "[\"How many do you want?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-061.json .blocks[3].items[3].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-068:T01",
+   "key": "F:grammar1/gh1-068:T01",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Not every boy received a prize, did he? · 다른 정답: Not every boy received a prize, did they? / Every boy didn't receive a prize, did he?",
+   "고칠글": "[\"Not every boy received a prize, did they?\", \"Every boy didn't receive a prize, did he?\", \"Every boy didn't receive a prize, did they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-069.json .blocks[4].items[0].alternatives"
+   ],
+   "옛글": [
+    "Not every boy received a prize, did they?",
+    "Every boy didn't receive a prize, did he?"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-084:T18",
+   "key": "F:grammar1/gh1-084:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 여인이 한통의 편지를 받았다.(receive, letter)",
+   "고칠글": "그 여인이 한 통의 편지를 받았다.(receive, letter)",
+   "칸": [
+    "content/lessons/grammar1/gh1-084.json .blocks[3].items[10].text"
+   ],
+   "옛글": "그 여인이 한통의 편지를 받았다.(receive, letter)"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-084:T51",
+   "key": "F:grammar1/gh1-084:T51",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그녀가 한통의 편지를 받지 않았나?",
+   "고칠글": "그녀가 한 통의 편지를 받지 않았나?",
+   "칸": [
+    "content/lessons/grammar1/gh1-084.json .blocks[3].items[27].text"
+   ],
+   "옛글": "그녀가 한통의 편지를 받지 않았나?"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-092:T26",
+   "key": "F:grammar1/gh1-092:T26",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 법은 이 달에 발효하지?",
+   "고칠글": "그 법은 이달에 발효하지?",
+   "칸": [
+    "content/lessons/grammar1/gh1-092.json .blocks[3].items[16].text"
+   ],
+   "옛글": "그 법은 이 달에 발효하지?"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-096:T04",
+   "key": "F:grammar1/gh1-096:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Every boy didn't lose his life, did he? (다른 정답 없음 — 소유자 답 3 으로 .text 가 바뀔 문항)",
+   "고칠글": "[\"Every boy didn't lose his life, did he?\", \"Not every boy lost his life, did they?\", \"Every boy didn't lose his life, did they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-097.json .blocks[3].items[2].alternatives"
+   ],
+   "옛글": [
+    "Not every boy lost his life, did they?",
+    "Every boy didn't lose his life, did he?"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-096:T06",
+   "key": "F:grammar1/gh1-096:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "All the boys didn't protect their sisters, did they? (다른 정답 없음 — 소유자 답 3 으로 .text 가 바뀔 문항)",
+   "고칠글": "[\"All the boys didn't protect their sisters, did they?\", \"Not all of the boys protected their sisters, did they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-097.json .blocks[3].items[4].alternatives"
+   ],
+   "옛글": [
+    "Not all of the boys protected their sisters, did they?",
+    "All the boys didn't protect their sisters, did they?"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-106:T48",
+   "key": "F:grammar1/gh1-106:T48",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그가 잘 했니(일을 잘 했니)?",
+   "고칠글": "그가 잘했니(일을 잘했니)?",
+   "칸": [
+    "content/lessons/grammar1/gh1-106.json .blocks[3].items[33].text"
+   ],
+   "옛글": "그가 잘 했니(일을 잘 했니)?"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-108:T20",
+   "key": "F:grammar1/gh1-108:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 함께 할 시간이 없지?",
+   "고칠글": "그들은 함께할 시간이 없지?",
+   "칸": [
+    "content/lessons/grammar1/gh1-108.json .blocks[3].items[14].text"
+   ],
+   "옛글": "그들은 함께 할 시간이 없지?"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-112:T23",
+   "key": "F:grammar1/gh1-112:T23",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이 길이 나를 집으로 데려가주나(이 길로 가면 우리 집으로 가나)?",
+   "고칠글": "이 길이 나를 집으로 데려가 주나(이 길로 가면 우리 집으로 가나)?",
+   "칸": [
+    "content/lessons/grammar1/gh1-112.json .blocks[3].items[15].text",
+    "content/lessons/grammar1/gh1-112-1.json .blocks[3].items[15].text"
+   ],
+   "옛글": "이 길이 나를 집으로 데려가주나(이 길로 가면 우리 집으로 가나)?"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-116:T16",
+   "key": "F:grammar1/gh1-116:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 프로그램이 테러분자들을 뿌리 뽑을 수 있나?",
+   "고칠글": "그 프로그램이 테러분자들을 뿌리뽑을 수 있나?",
+   "칸": [
+    "content/lessons/grammar1/gh1-116.json .blocks[3].items[9].text",
+    "content/lessons/grammar1/gh1-116-1.json .blocks[3].items[9].text"
+   ],
+   "옛글": "그 프로그램이 테러분자들을 뿌리 뽑을 수 있나?"
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-118:T36",
+   "key": "F:grammar1/gh1-118:T36",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "They're not all like you, are they? (다른 정답 없음)",
+   "고칠글": "[\"Not all of them are like you, are they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[23].alternatives",
+    "content/lessons/grammar1/gh1-119-2.json .blocks[1].items[5].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1-b/F:grammar1/gh1-118:T48",
+   "key": "F:grammar1/gh1-118:T48",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "너는 그런 말하지 않았지?",
+   "고칠글": "너는 그런 말 하지 않았지?",
+   "칸": [
+    "content/lessons/grammar1/gh1-118.json .blocks[3].items[30].text",
+    "content/lessons/grammar1/gh1-118-2.json .blocks[1].items[12].text"
+   ],
+   "옛글": "너는 그런 말하지 않았지?"
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-008:T19",
+   "key": "F:grammar2/gh2-008:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 읽기에 있어서 다른 사람에 뒤진다. (뒤에 있다.)",
+   "고칠글": "그는 읽기에 있어서 다른 사람에게 뒤진다. (뒤에 있다.)",
+   "칸": [
+    "content/lessons/grammar2/gh2-008-1.json .blocks[1].items[10].text"
+   ],
+   "옛글": "그는 읽기에 있어서 다른 사람에 뒤진다. (뒤에 있다.)"
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-012:T08",
+   "key": "F:grammar2/gh2-012:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 사임함으로써 전체 회사에게 충격을 주었다.",
+   "고칠글": "그는 사임함으로써 전체 회사에 충격을 주었다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-012-1.json .blocks[1].items[4].text"
+   ],
+   "옛글": "그는 사임함으로써 전체 회사에게 충격을 주었다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-014:T01",
+   "key": "F:grammar2/gh2-014:T01",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 십년 동안 영어를 공부해왔다.",
+   "고칠글": "그는 십 년 동안 영어를 공부해왔다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-014-1.json .blocks[1].items[0].text"
+   ],
+   "옛글": "그는 십년 동안 영어를 공부해왔다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-015:T26",
+   "key": "F:grammar2/gh2-015:T26",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나는 십년 동안 영어를 공부해왔다.",
+   "고칠글": "나는 십 년 동안 영어를 공부해왔다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-015-1.json .blocks[1].items[13].text"
+   ],
+   "옛글": "나는 십년 동안 영어를 공부해왔다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-016:T41",
+   "key": "F:grammar2/gh2-016:T41",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나는 약간의 돈을 갖고 있다(돈이 있다)",
+   "고칠글": "나는 약간의 돈을 갖고 있다(돈이 있다).",
+   "칸": [
+    "content/lessons/grammar2/gh2-016-1.json .blocks[1].items[20].text"
+   ],
+   "옛글": "나는 약간의 돈을 갖고 있다(돈이 있다)"
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-020:T19",
+   "key": "F:grammar2/gh2-020:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다.).",
+   "고칠글": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다).",
+   "칸": [
+    "content/lessons/grammar2/gh2-020-1.json .blocks[1].items[9].text"
+   ],
+   "옛글": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다.)."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-025:T29",
+   "key": "F:grammar2/gh2-025:T29",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그것은 천불이 되겠습니다.",
+   "고칠글": "그것은 천 불이 되겠습니다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-025-1.json .blocks[1].items[15].text"
+   ],
+   "옛글": "그것은 천불이 되겠습니다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-026:T13",
+   "key": "F:grammar2/gh2-026:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "내가 그에게 나를 정거장으로 안내해달라고(가는 길을 알려 달라고) 부탁하면 그가 마음쓸까?(싫어할까?)",
+   "고칠글": "내가 그에게 나를 정거장으로 안내해달라고(가는 길을 알려 달라고) 부탁하면 그가 마음 쓸까?(싫어할까?)",
+   "칸": [
+    "content/lessons/grammar2/gh2-026-1.json .blocks[1].items[7].text"
+   ],
+   "옛글": "내가 그에게 나를 정거장으로 안내해달라고(가는 길을 알려 달라고) 부탁하면 그가 마음쓸까?(싫어할까?)"
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-026:T25",
+   "key": "F:grammar2/gh2-026:T25",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이 길로 열차가 얼마나 자주 다닙니까? 약 매 십분마다.",
+   "고칠글": "이 길로 열차가 얼마나 자주 다닙니까? 약 매 십 분마다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-026-1.json .blocks[1].items[14].text"
+   ],
+   "옛글": "이 길로 열차가 얼마나 자주 다닙니까? 약 매 십분마다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-027:T05",
+   "key": "F:grammar2/gh2-027:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "아닙니다. 저는 나의 아기에게 분유(우유)를 먹일 겁니다.",
+   "고칠글": "아닙니다. 저는 제 아기에게 분유(우유)를 먹일 겁니다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-027-1.json .blocks[1].items[2].text"
+   ],
+   "옛글": "아닙니다. 저는 나의 아기에게 분유(우유)를 먹일 겁니다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-029:T34",
+   "key": "F:grammar2/gh2-029:T34",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 다른 선 위에 있습니다(통화중입니다).",
+   "고칠글": "그는 다른 선 위에 있습니다(통화 중입니다).",
+   "칸": [
+    "content/lessons/grammar2/gh2-029-1.json .blocks[1].items[18].text"
+   ],
+   "옛글": "그는 다른 선 위에 있습니다(통화중입니다)."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-035:T16",
+   "key": "F:grammar2/gh2-035:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "The timing is right to do that. (다른 정답 없음)",
+   "고칠글": "[\"The timing is right to do it.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-035.json .blocks[1].items[8].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-038:T04",
+   "key": "F:grammar2/gh2-038:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "담배를 끄시는 것을 꺼려하시겠습니까? (담뱃불 좀 꺼주시겠습니까?)",
+   "고칠글": "담배를 끄시는 것을 꺼리시겠습니까? (담뱃불 좀 꺼주시겠습니까?)",
+   "칸": [
+    "content/lessons/grammar2/gh2-038-1.json .blocks[1].items[2].text"
+   ],
+   "옛글": "담배를 끄시는 것을 꺼려하시겠습니까? (담뱃불 좀 꺼주시겠습니까?)"
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-038:T06",
+   "key": "F:grammar2/gh2-038:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "물론 꺼려하지 않습니다(물론입니다).",
+   "고칠글": "물론 꺼리지 않습니다(물론입니다).",
+   "칸": [
+    "content/lessons/grammar2/gh2-038-1.json .blocks[1].items[3].text"
+   ],
+   "옛글": "물론 꺼려하지 않습니다(물론입니다)."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-041:T10",
+   "key": "F:grammar2/gh2-041:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "시민들이 당국이 그의 계획을 심각하게 여기지 않았던 성 범죄자를 잡았다.",
+   "고칠글": "시민들이 당국이 그의 계획을 심각하게 여기지 않았던 성범죄자를 잡았다.",
+   "칸": [
+    "content/lessons/grammar2/gh2-041-1.json .blocks[1].items[5].text"
+   ],
+   "옛글": "시민들이 당국이 그의 계획을 심각하게 여기지 않았던 성 범죄자를 잡았다."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-042:T11",
+   "key": "F:grammar2/gh2-042:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "누구의 손가락이 그 단추 위에 있느냐가 선거 승리를 거의 규정지었다.(결정지었다).",
+   "고칠글": "누구의 손가락이 그 단추 위에 있느냐가 선거 승리를 거의 규정지었다(결정지었다).",
+   "칸": [
+    "content/lessons/grammar2/gh2-042-1.json .blocks[1].items[5].text"
+   ],
+   "옛글": "누구의 손가락이 그 단추 위에 있느냐가 선거 승리를 거의 규정지었다.(결정지었다)."
+  },
+  {
+   "uid": "grammar2/F:grammar2/gh2-048:T08",
+   "key": "F:grammar2/gh2-048:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 미사일은 아르헨티나에게 그 전쟁에서 승리를 가져다줄 수 있었을 텐데.",
+   "고칠글": "그 미사일은 아르헨티나에 그 전쟁에서 승리를 가져다줄 수 있었을 텐데.",
+   "칸": [
+    "content/lessons/grammar2/gh2-048-1.json .blocks[1].items[7].text"
+   ],
+   "옛글": "그 미사일은 아르헨티나에게 그 전쟁에서 승리를 가져다줄 수 있었을 텐데."
+  },
+  {
+   "uid": "ld-a/F:ld/d001:T09",
+   "key": "F:ld/d001:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나는 왓슨 부인입니다. 나의 이름은 바바라입니다. 나는 간호사이고 병원에서 일합니다.",
+   "고칠글": "나는 왓슨 부인입니다. 나의 이름은 바버라입니다. 나는 간호사이고 병원에서 일합니다.",
+   "칸": [
+    "content/ld_english_scripts.json .d001[n=1].ko"
+   ],
+   "옛글": "나는 왓슨 부인입니다. 나의 이름은 바바라입니다. 나는 간호사이고 병원에서 일합니다."
+  },
+  {
+   "uid": "ld-a/F:ld/d004:T16",
+   "key": "F:ld/d004:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "우리는 커피, 옥수수, 면, 코코아를 재배한다. 우리는 또 밀, 쌀, 콩, 바나나도 생산한다.",
+   "고칠글": "우리는 커피, 옥수수, 목화, 카카오를 재배한다. 우리는 또 밀, 쌀, 콩, 바나나도 생산한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d004[n=5].ko"
+   ],
+   "옛글": "우리는 커피, 옥수수, 면, 코코아를 재배한다. 우리는 또 밀, 쌀, 콩, 바나나도 생산한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d008:T20",
+   "key": "F:ld/d008:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "아이들을 위한 스쿨 버스가 한 대 있다.",
+   "고칠글": "아이들을 위한 스쿨버스가 한 대 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d008[n=4].ko"
+   ],
+   "옛글": "아이들을 위한 스쿨 버스가 한 대 있다."
+  },
+  {
+   "uid": "ld-a/F:ld/d008:T31",
+   "key": "F:ld/d008:T31",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "제발 빨리 와서 우리를 만나줘. 사랑하는 낸시.",
+   "고칠글": "곧 와서 우리를 만나줘. 사랑을 담아, 낸시.",
+   "칸": [
+    "content/ld_english_scripts.json .d008[n=15].ko"
+   ],
+   "옛글": "제발 빨리 와서 우리를 만나줘. 사랑하는 낸시."
+  },
+  {
+   "uid": "ld-a/F:ld/d011:T23",
+   "key": "F:ld/d011:T23",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그것은 크기도 해. 그것은 세 개의 침실이 있어. 해변은 아름답고 멋진 판자산책로(boardwalk)가 있어.",
+   "고칠글": "그것은 크기도 해. 그것은 세 개의 침실이 있어. 해변은 아름답고 멋진 판자 산책로(boardwalk)가 있어.",
+   "칸": [
+    "content/ld_english_scripts.json .d011[n=8].ko"
+   ],
+   "옛글": "그것은 크기도 해. 그것은 세 개의 침실이 있어. 해변은 아름답고 멋진 판자산책로(boardwalk)가 있어."
+  },
+  {
+   "uid": "ld-a/F:ld/d011:T24",
+   "key": "F:ld/d011:T24",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "어제 우리는 오전 6시부터 8시까지 그 판자산책로에서 자전거를 탔어. 그것은 매우 재미있었어.",
+   "고칠글": "어제 우리는 오전 6시부터 8시까지 그 판자 산책로에서 자전거를 탔어. 그것은 매우 재미있었어.",
+   "칸": [
+    "content/ld_english_scripts.json .d011[n=9].ko"
+   ],
+   "옛글": "어제 우리는 오전 6시부터 8시까지 그 판자산책로에서 자전거를 탔어. 그것은 매우 재미있었어."
+  },
+  {
+   "uid": "ld-a/F:ld/d012:T23",
+   "key": "F:ld/d012:T23",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그리고 나는 얼마나 운이 좋았던가.",
+   "고칠글": "나는 얼마나 운이 좋았던가.",
+   "칸": [
+    "content/ld_english_scripts.json .d012[n=7].ko"
+   ],
+   "옛글": "그리고 나는 얼마나 운이 좋았던가."
+  },
+  {
+   "uid": "ld-a/F:ld/d012:T24",
+   "key": "F:ld/d012:T24",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그의 이름은 Teddy Williams야. 그는 인명구조원이고 잘생기고 매우매우 좋아.",
+   "고칠글": "그의 이름은 Teddy Williams야. 그는 인명구조원이고 잘생기고 매우 매우 좋아.",
+   "칸": [
+    "content/ld_english_scripts.json .d012[n=8].ko"
+   ],
+   "옛글": "그의 이름은 Teddy Williams야. 그는 인명구조원이고 잘생기고 매우매우 좋아."
+  },
+  {
+   "uid": "ld-a/F:ld/d014:T20",
+   "key": "F:ld/d014:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "중국어를 읽고 쓰는 것을 배우는 것은 매우 어렵지만 그는 한 마디도 말할 수 없다.",
+   "고칠글": "중국어를 읽고 쓰는 것을 배우는 것은 매우 어렵지만 그는 한마디도 말할 수 없다.",
+   "칸": [
+    "content/ld_english_scripts.json .d014[n=9].ko"
+   ],
+   "옛글": "중국어를 읽고 쓰는 것을 배우는 것은 매우 어렵지만 그는 한 마디도 말할 수 없다."
+  },
+  {
+   "uid": "ld-a/F:ld/d095:T12",
+   "key": "F:ld/d095:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그녀의 상은 샌프란시스코로의 여행이었다. 그녀는 10일날 저녁 9시 30분에 떠났다.",
+   "고칠글": "그녀의 상은 샌프란시스코로의 여행이었다. 그녀는 10일 저녁 9시 30분에 떠났다.",
+   "칸": [
+    "content/ld_english_scripts.json .d095[n=2].ko"
+   ],
+   "옛글": "그녀의 상은 샌프란시스코로의 여행이었다. 그녀는 10일날 저녁 9시 30분에 떠났다."
+  },
+  {
+   "uid": "ld-a/F:ld/d096:T14",
+   "key": "F:ld/d096:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 공장은 파괴되었고 그 마을의 몇몇 집의 지붕들이 뜯겨나갔다.",
+   "고칠글": "그 공장은 파괴되었고 그 마을의 몇몇 집의 지붕들이 뜯겨 나갔다.",
+   "칸": [
+    "content/ld_english_scripts.json .d096[n=4].ko"
+   ],
+   "옛글": "그 공장은 파괴되었고 그 마을의 몇몇 집의 지붕들이 뜯겨나갔다."
+  },
+  {
+   "uid": "ld-a/F:ld/d101:T14",
+   "key": "F:ld/d101:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 어부들이 너무 많은 고기를 잡는 것이 가능하다.",
+   "고칠글": "어부들이 너무 많은 고기를 잡는 것이 가능하다.",
+   "칸": [
+    "content/ld_english_scripts.json .d101[n=5].ko"
+   ],
+   "옛글": "그 어부들이 너무 많은 고기를 잡는 것이 가능하다."
+  },
+  {
+   "uid": "ld-a/F:ld/d105:T10",
+   "key": "F:ld/d105:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "“정직이 최상의 정책이다.”",
+   "고칠글": "“정직이 최선의 방책이다.”",
+   "칸": [
+    "content/ld_english_scripts.json .d105[n=3].ko"
+   ],
+   "옛글": "“정직이 최상의 정책이다.”"
+  },
+  {
+   "uid": "ld-a/F:ld/d110:T21",
+   "key": "F:ld/d110:T21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그의 사진은 미국 우표, 동전, 지폐에 나타난다.",
+   "고칠글": "그의 초상은 미국 우표, 동전, 지폐에 나타난다.",
+   "칸": [
+    "content/ld_english_scripts.json .d110[n=10].ko"
+   ],
+   "옛글": "그의 사진은 미국 우표, 동전, 지폐에 나타난다."
+  },
+  {
+   "uid": "ld-a/F:ld/d111:T15",
+   "key": "F:ld/d111:T15",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "만일 여러분이 한 나라에서 다른 나라로 한번이라도 여행해본 적이 있다면 여러분은 아마 여권을 갖고 있을 것이다.",
+   "고칠글": "만일 여러분이 한 나라에서 다른 나라로 한 번이라도 여행해본 적이 있다면 여러분은 아마 여권을 갖고 있을 것이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d111[n=1].ko"
+   ],
+   "옛글": "만일 여러분이 한 나라에서 다른 나라로 한번이라도 여행해본 적이 있다면 여러분은 아마 여권을 갖고 있을 것이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T17",
+   "key": "F:ld/d021:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "쥬디는 직장에서의 첫날이 즐거울 것이라고 생각했으나 모든 것이 잘못되었다.",
+   "고칠글": "주디는 직장에서의 첫날이 즐거울 것이라고 생각했으나 모든 것이 잘못되었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d021[n=1].ko"
+   ],
+   "옛글": "쥬디는 직장에서의 첫날이 즐거울 것이라고 생각했으나 모든 것이 잘못되었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T18",
+   "key": "F:ld/d021:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "첫째로 그녀는 늦잠잤다. 그녀는 그것에 대하여 너무나 속상한 나머지 엉뚱한 버스를 탔다.",
+   "고칠글": "첫째로 그녀는 늦잠 잤다. 그녀는 그것에 대하여 너무나 속상한 나머지 엉뚱한 버스를 탔다.",
+   "칸": [
+    "content/ld_english_scripts.json .d021[n=2].ko"
+   ],
+   "옛글": "첫째로 그녀는 늦잠잤다. 그녀는 그것에 대하여 너무나 속상한 나머지 엉뚱한 버스를 탔다."
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T19",
+   "key": "F:ld/d021:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그녀는 그 청량 음료 공장에 8시 30분 대신에 9시에 도착했다.",
+   "고칠글": "그녀는 그 청량음료 공장에 8시 30분 대신에 9시에 도착했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d021[n=3].ko"
+   ],
+   "옛글": "그녀는 그 청량 음료 공장에 8시 30분 대신에 9시에 도착했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T23",
+   "key": "F:ld/d021:T23",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그런 다음 그녀는 단추를 누르고 병들을 보내서 뚜껑이 씌어지게 했다.",
+   "고칠글": "그런 다음 그녀는 단추를 누르고 병들을 보내서 뚜껑이 씌워지게 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d021[n=7].ko"
+   ],
+   "옛글": "그런 다음 그녀는 단추를 누르고 병들을 보내서 뚜껑이 씌어지게 했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T24",
+   "key": "F:ld/d021:T24",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "점심 시간에 그녀의 사장은 자신에게 샌드위치를 사도록 그녀를 내보냈다.",
+   "고칠글": "점심시간에 그녀의 사장은 자신에게 샌드위치를 사도록 그녀를 내보냈다.",
+   "칸": [
+    "content/ld_english_scripts.json .d021[n=8].ko"
+   ],
+   "옛글": "점심 시간에 그녀의 사장은 자신에게 샌드위치를 사도록 그녀를 내보냈다."
+  },
+  {
+   "uid": "ld-a/F:ld/d021:T28",
+   "key": "F:ld/d021:T28",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "다음 날 아침 그녀는 정시에 출근해서 그만 두었다.",
+   "고칠글": "다음 날 아침 그녀는 정시에 출근해서 그만두었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d021[n=12].ko"
+   ],
+   "옛글": "다음 날 아침 그녀는 정시에 출근해서 그만 두었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d023:T13",
+   "key": "F:ld/d023:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "한 목격자는 Morton이 그 시간 무렵 그 범죄현장을 떠나는 것을 보았다고 말한다.",
+   "고칠글": "한 목격자는 Morton이 그 시간 무렵 그 범죄 현장을 떠나는 것을 보았다고 말한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d023[n=6].ko"
+   ],
+   "옛글": "한 목격자는 Morton이 그 시간 무렵 그 범죄현장을 떠나는 것을 보았다고 말한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d031:T17",
+   "key": "F:ld/d031:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그녀가 그 사진을 찍었을 때 그녀는 세계의 꼭대기 근처를 기어오르고 있었습니다.",
+   "고칠글": "그녀가 그 사진을 찍었을 때 그녀는 세계의 꼭대기 근처를 기어오르고 있었습니다.”",
+   "칸": [
+    "content/ld_english_scripts.json .d031[n=9].ko"
+   ],
+   "옛글": "그녀가 그 사진을 찍었을 때 그녀는 세계의 꼭대기 근처를 기어오르고 있었습니다."
+  },
+  {
+   "uid": "ld-a/F:ld/d130:T14",
+   "key": "F:ld/d130:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 Lodge의 역사는 100년 이상 거슬러간다.",
+   "고칠글": "그 Lodge의 역사는 100년 이상 거슬러 올라간다.",
+   "칸": [
+    "content/ld_english_scripts.json .d130[n=4].ko"
+   ],
+   "옛글": "그 Lodge의 역사는 100년 이상 거슬러간다."
+  },
+  {
+   "uid": "ld-a/F:ld/d130:T21",
+   "key": "F:ld/d130:T21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Joseph는 한 휴양지를 개발하기로 결정했고 그것의 오늘날의 외양과 시설은 그의 덕택이다.",
+   "고칠글": "Joseph은 한 휴양지를 개발하기로 결정했고 그것의 오늘날의 외양과 시설은 그의 덕택이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d130[n=11].ko"
+   ],
+   "옛글": "Joseph는 한 휴양지를 개발하기로 결정했고 그것의 오늘날의 외양과 시설은 그의 덕택이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d067:T07",
+   "key": "F:ld/d067:T07",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d067[n=1].ko",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Lite Soap Company의 사장인 Mrs.Ruth Ascott는 자신의 강력한 세척제의 이름을 따서 그것을 새 맥주의 이름으로 사용하는 것에 대하여 그 양조장에게 매우 화가 났다.",
+   "고칠글": "Lite Soap Company의 사장인 Mrs. Ruth Ascott은 자신의 강력한 세척제의 이름을 따서 그것을 새 맥주의 이름으로 사용하는 것에 대하여 그 양조장에 매우 화가 났다."
+  },
+  {
+   "uid": "ld-a/F:ld/d068:T11",
+   "key": "F:ld/d068:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나의 아버지는 그 당시 멀리 달라스에 계셨다. 나는 그를 놀래주고 그 차로 그를 만나기로 결정했다.",
+   "고칠글": "나의 아버지는 그 당시 멀리 댈러스에 계셨다. 나는 그를 놀래주고 그 차로 그를 만나기로 결정했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d068[n=3].ko"
+   ],
+   "옛글": "나의 아버지는 그 당시 멀리 달라스에 계셨다. 나는 그를 놀래주고 그 차로 그를 만나기로 결정했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d070:T14",
+   "key": "F:ld/d070:T14",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d070[n=8].ko",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Huskisson씨는 경악했고 두려움으로 얼어붙었다. 그는 그 열차에 치어서 같은 날 밤에 죽었다.",
+   "고칠글": "Huskisson 씨는 경악했고 두려움으로 얼어붙었다. 그는 그 열차에 치여서 같은 날 밤에 죽었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d032:T08",
+   "key": "F:ld/d032:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Jim Elliott와 William Smith가 절벽을 오르고 있었을 때 바위 몇 조각이 그들 옆으로 떨어졌다.",
+   "고칠글": "Jim Elliott과 William Smith가 절벽을 오르고 있었을 때 바위 몇 조각이 그들 옆으로 떨어졌다.",
+   "칸": [
+    "content/ld_english_scripts.json .d032[n=2].ko"
+   ],
+   "옛글": "Jim Elliott와 William Smith가 절벽을 오르고 있었을 때 바위 몇 조각이 그들 옆으로 떨어졌다."
+  },
+  {
+   "uid": "ld-a/F:ld/d032:T09",
+   "key": "F:ld/d032:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 그의 균형을 잃고 도와달라고 소리쳤다. 그는 5-6미터 떨어졌지만 Byram이 가까스로 로프 위에 그를 붙잡았다.",
+   "고칠글": "그는 그의 균형을 잃고 도와달라고 소리쳤다. 그는 5-6미터 떨어졌지만 Byram이 가까스로 로프로 그를 붙잡았다.",
+   "칸": [
+    "content/ld_english_scripts.json .d032[n=4].ko"
+   ],
+   "옛글": "그는 그의 균형을 잃고 도와달라고 소리쳤다. 그는 5-6미터 떨어졌지만 Byram이 가까스로 로프 위에 그를 붙잡았다."
+  },
+  {
+   "uid": "ld-a/F:ld/d034:T18",
+   "key": "F:ld/d034:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "뉴올리언스에는 백개 이상의 공원과 많은 유명한 식당들이 있다.",
+   "고칠글": "뉴올리언스에는 백 개 이상의 공원과 많은 유명한 식당들이 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d034[n=7].ko"
+   ],
+   "옛글": "뉴올리언스에는 백개 이상의 공원과 많은 유명한 식당들이 있다."
+  },
+  {
+   "uid": "ld-a/F:ld/d034:T22",
+   "key": "F:ld/d034:T22",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "뉴올리언스는 방문하거나 살기에 흥미있는 도시이다.",
+   "고칠글": "뉴올리언스는 방문하거나 살기에 흥미 있는 도시이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d034[n=11].ko"
+   ],
+   "옛글": "뉴올리언스는 방문하거나 살기에 흥미있는 도시이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d035:T20",
+   "key": "F:ld/d035:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "때로는 의붓 자매, 이복 형제, 조카며느리도 있다.",
+   "고칠글": "때로는 의붓자매, 이복형제, 조카며느리도 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d035[n=9].ko"
+   ],
+   "옛글": "때로는 의붓 자매, 이복 형제, 조카며느리도 있다."
+  },
+  {
+   "uid": "ld-a/F:ld/d036:T18",
+   "key": "F:ld/d036:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "사람들은 종종 자신이 원하는 날씨를 찾는다. 농부가 물이 필요할 때 그는 자신에게 비가 올 것이라고 말 해줄 어떤 것을 찾는다.",
+   "고칠글": "사람들은 종종 자신이 원하는 날씨를 찾는다. 농부가 물이 필요할 때 그는 자신에게 비가 올 것이라고 말해 줄 어떤 것을 찾는다.",
+   "칸": [
+    "content/ld_english_scripts.json .d036[n=8].ko"
+   ],
+   "옛글": "사람들은 종종 자신이 원하는 날씨를 찾는다. 농부가 물이 필요할 때 그는 자신에게 비가 올 것이라고 말 해줄 어떤 것을 찾는다."
+  },
+  {
+   "uid": "ld-a/F:ld/d036:T21",
+   "key": "F:ld/d036:T21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "거의 모든 사람이 기상요원이 말하는 것에 귀기울인다. 그러나 그는 항상 우리가 원하는 것을 우리에게 말해주지 않고 가끔은 실수한다.",
+   "고칠글": "거의 모든 사람이 기상요원이 말하는 것에 귀 기울인다. 그러나 그는 항상 우리가 원하는 것을 우리에게 말해주지는 않고 가끔은 실수한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d036[n=11].ko"
+   ],
+   "옛글": "거의 모든 사람이 기상요원이 말하는 것에 귀기울인다. 그러나 그는 항상 우리가 원하는 것을 우리에게 말해주지 않고 가끔은 실수한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d037:T08",
+   "key": "F:ld/d037:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Bobby Adams는 Dr.Smith가 그를 진단하는 동안 매우 조용했다.",
+   "고칠글": "Bobby Adams는 Dr. Smith가 그를 진찰하는 동안 매우 조용했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d037[n=1].ko"
+   ],
+   "옛글": "Bobby Adams는 Dr.Smith가 그를 진단하는 동안 매우 조용했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d037:T13",
+   "key": "F:ld/d037:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 의사는 말했다. “너는 죽지 않을거야. 사실, 너는 저녁 식사 시간까지는 좋아질거야.”",
+   "고칠글": "그 의사는 말했다. “너는 죽지 않을 거야. 사실, 너는 저녁 식사 시간까지는 좋아질 거야.”",
+   "칸": [
+    "content/ld_english_scripts.json .d037[n=8].ko"
+   ],
+   "옛글": "그 의사는 말했다. “너는 죽지 않을거야. 사실, 너는 저녁 식사 시간까지는 좋아질거야.”"
+  },
+  {
+   "uid": "ld-a/F:ld/d038:T12",
+   "key": "F:ld/d038:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "만일 Bobby가 오늘 오후 텔레비전을 볼 만큼 충분히 좋게 느낀다면, 또 나는 그렇게 생각하며, 그 시합이 끝날 때 그는 건강할 것입니다.",
+   "고칠글": "만일 Bobby가 오늘 오후 텔레비전을 볼 만큼 충분히 좋게 느낀다면, 또 저는 그렇게 생각하며, 그 시합이 끝날 때 그는 건강할 것입니다.",
+   "칸": [
+    "content/ld_english_scripts.json .d038[n=4].ko"
+   ],
+   "옛글": "만일 Bobby가 오늘 오후 텔레비전을 볼 만큼 충분히 좋게 느낀다면, 또 나는 그렇게 생각하며, 그 시합이 끝날 때 그는 건강할 것입니다."
+  },
+  {
+   "uid": "ld-a/F:ld/d038:T13",
+   "key": "F:ld/d038:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그것이 내가 이 병에 대하여 아는 유일한 치료제입니다.",
+   "고칠글": "그것이 제가 이 병에 대하여 아는 유일한 치료제입니다.",
+   "칸": [
+    "content/ld_english_scripts.json .d038[n=5].ko"
+   ],
+   "옛글": "그것이 내가 이 병에 대하여 아는 유일한 치료제입니다."
+  },
+  {
+   "uid": "ld-a/F:ld/d039:T20",
+   "key": "F:ld/d039:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러나 그는 그냥 잔다. 몇번 더 부른 후에 어머니는 이층으로 올라와서 Herby를 침대에서 끌어내야 한다.",
+   "고칠글": "그러나 그는 그냥 잔다. 몇 번 더 부른 후에 어머니는 이층으로 올라와서 Herby를 침대에서 끌어내야 한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d039[n=9].ko"
+   ],
+   "옛글": "그러나 그는 그냥 잔다. 몇번 더 부른 후에 어머니는 이층으로 올라와서 Herby를 침대에서 끌어내야 한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d039:T21",
+   "key": "F:ld/d039:T21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 언제나 말한다. “나는 일분만 있으면 일어나려고 했어. 정말 나는 그럴려고 했어.”",
+   "고칠글": "그는 언제나 말한다. “나는 일 분만 있으면 일어나려고 했어. 정말 나는 그러려고 했어.”",
+   "칸": [
+    "content/ld_english_scripts.json .d039[n=10].ko"
+   ],
+   "옛글": "그는 언제나 말한다. “나는 일분만 있으면 일어나려고 했어. 정말 나는 그럴려고 했어.”"
+  },
+  {
+   "uid": "ld-a/F:ld/d040:T12",
+   "key": "F:ld/d040:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 여행하며 볼 만한 것은 다 보았다. 나는 그가 일본, 호주, 브라질같은 장소들에 대하여 나에게 말하는 것은 무엇이든 믿었다.",
+   "고칠글": "그는 여행하며 볼 만한 것은 다 보았다. 나는 그가 일본, 호주, 브라질 같은 장소들에 대하여 나에게 말하는 것은 무엇이든 믿었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d040[n=3].ko"
+   ],
+   "옛글": "그는 여행하며 볼 만한 것은 다 보았다. 나는 그가 일본, 호주, 브라질같은 장소들에 대하여 나에게 말하는 것은 무엇이든 믿었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d040:T13",
+   "key": "F:ld/d040:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "야구에 대하여 무엇이든 알고 싶었을 때 나는 우리의 이웃 Fulton씨에게 물었다.",
+   "고칠글": "야구에 대하여 무엇이든 알고 싶었을 때 나는 우리의 이웃 Fulton 씨에게 물었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d040[n=4].ko"
+   ],
+   "옛글": "야구에 대하여 무엇이든 알고 싶었을 때 나는 우리의 이웃 Fulton씨에게 물었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d040:T14",
+   "key": "F:ld/d040:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그가 그 경기에 대하여 모르는 것은 아무 것도 없었다.",
+   "고칠글": "그가 그 경기에 대하여 모르는 것은 아무것도 없었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d040[n=5].ko"
+   ],
+   "옛글": "그가 그 경기에 대하여 모르는 것은 아무 것도 없었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d041:T12",
+   "key": "F:ld/d041:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나는 이제 다른 주제들에 대한 그들의 의견을 존중했다.",
+   "고칠글": "나는 이제 다른 주제들에 대한 그분들의 의견을 존중했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d041[n=4].ko"
+   ],
+   "옛글": "나는 이제 다른 주제들에 대한 그들의 의견을 존중했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d042:T10",
+   "key": "F:ld/d042:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 대학에서 함께 방을 썼고 숙제를 서로 도와주곤 했다. 그들은 항상 그들의 숙제를 타자쳐야 했다.",
+   "고칠글": "그들은 대학에서 함께 방을 썼고 숙제를 서로 도와주곤 했다. 그들은 항상 그들의 숙제를 타자 쳐야 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d042[n=2].ko"
+   ],
+   "옛글": "그들은 대학에서 함께 방을 썼고 숙제를 서로 도와주곤 했다. 그들은 항상 그들의 숙제를 타자쳐야 했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d042:T11",
+   "key": "F:ld/d042:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 언제나 Pete의 리포트를 그를 대신해서 타자쳐주곤 했다.",
+   "고칠글": "그는 언제나 Pete의 리포트를 그를 대신해서 타자 쳐 주곤 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d042[n=4].ko"
+   ],
+   "옛글": "그는 언제나 Pete의 리포트를 그를 대신해서 타자쳐주곤 했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d044:T06",
+   "key": "F:ld/d044:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "지금은 6월이고 Bill Patterson과 John Corcoran은 그들의 일학년을 끝낼 것이다.",
+   "고칠글": "지금은 6월이고 Bill Patterson과 John Corcoran은 그들의 1학년을 끝낼 것이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d044[n=1].ko"
+   ],
+   "옛글": "지금은 6월이고 Bill Patterson과 John Corcoran은 그들의 일학년을 끝낼 것이다."
+  },
+  {
+   "uid": "ld-a/F:ld/d044:T07",
+   "key": "F:ld/d044:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "삼학년에는 러시아어를 이수하고 싶어한다. 4학년에는 약간의 중국어를 공부하기 원한다.",
+   "고칠글": "3학년에는 러시아어를 이수하고 싶어 한다. 4학년에는 약간의 중국어를 공부하기 원한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d044[n=3].ko"
+   ],
+   "옛글": "삼학년에는 러시아어를 이수하고 싶어한다. 4학년에는 약간의 중국어를 공부하기 원한다."
+  },
+  {
+   "uid": "ld-a/F:ld/d046:T07",
+   "key": "F:ld/d046:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 고등학교에서 같은 반에 있었다. 그들은 자주 만나곤 했지만 지금 그들은 함께 할 시간이 거의 없다.",
+   "고칠글": "그들은 고등학교에서 같은 반에 있었다. 그들은 자주 만나곤 했지만 지금 그들은 함께할 시간이 거의 없다.",
+   "칸": [
+    "content/ld_english_scripts.json .d046[n=4].ko"
+   ],
+   "옛글": "그들은 고등학교에서 같은 반에 있었다. 그들은 자주 만나곤 했지만 지금 그들은 함께 할 시간이 거의 없다."
+  },
+  {
+   "uid": "ld-a/F:ld/d049:T10",
+   "key": "F:ld/d049:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "대중의 믿음에 따르면 미술가들과 음악인들은 추측컨대 변덕스럽다.",
+   "고칠글": "대중의 믿음에 따르면 미술가들과 음악인들은 추측건대 변덕스럽다.",
+   "칸": [
+    "content/ld_english_scripts.json .d049[n=1].ko"
+   ],
+   "옛글": "대중의 믿음에 따르면 미술가들과 음악인들은 추측컨대 변덕스럽다."
+  },
+  {
+   "uid": "ld-a/F:ld/d051:T11",
+   "key": "F:ld/d051:T11",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d051[n=2].ko",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "대부분의 사람들에 따르면 기자들은 추측컨대 유명한 사람과 인터뷰하고 다른 흥미있는 것들을 하면서 그들의 시간의 대부분을 보낸다.",
+   "고칠글": "대부분의 사람들에 따르면 기자들은 추측건대 유명한 사람과 인터뷰하고 다른 흥미 있는 것들을 하면서 그들의 시간의 대부분을 보낸다."
+  },
+  {
+   "uid": "ld-a/F:ld/d059:T11",
+   "key": "F:ld/d059:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 연극은 혹성 화성에서의 신비로운 폭발에 대한 뉴스 속보로 시작되었다.",
+   "고칠글": "그 연극은 행성 화성에서의 신비로운 폭발에 대한 뉴스 속보로 시작되었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d059[n=2].ko"
+   ],
+   "옛글": "그 연극은 혹성 화성에서의 신비로운 폭발에 대한 뉴스 속보로 시작되었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d061:T14",
+   "key": "F:ld/d061:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "쇼산업은 겉으로 보일지 모르는 것만큼 훌륭하지는 않다.",
+   "고칠글": "쇼 산업은 겉으로 보일지 모르는 것만큼 훌륭하지는 않다.",
+   "칸": [
+    "content/ld_english_scripts.json .d061[n=1].ko"
+   ],
+   "옛글": "쇼산업은 겉으로 보일지 모르는 것만큼 훌륭하지는 않다."
+  },
+  {
+   "uid": "ld-a/F:ld/d061:T19",
+   "key": "F:ld/d061:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 술도 담배도 하지 않았다. 그는 십대의 우상의 생활에 싫증나있었다.",
+   "고칠글": "그는 술도 담배도 하지 않았다. 그는 십대의 우상의 생활에 싫증나 있었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d061[n=6].ko"
+   ],
+   "옛글": "그는 술도 담배도 하지 않았다. 그는 십대의 우상의 생활에 싫증나있었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d112:T08",
+   "key": "F:ld/d112:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "한 노동자가 특이한 모습의 몇몇 돌을 목격했을 때 불도저들이 막 한 새로운 지역을 파들어가기 시작했었다.",
+   "고칠글": "한 노동자가 특이한 모습의 몇몇 돌을 목격했을 때 불도저들이 막 한 새로운 지역을 파 들어가기 시작했었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d112[n=2].ko"
+   ],
+   "옛글": "한 노동자가 특이한 모습의 몇몇 돌을 목격했을 때 불도저들이 막 한 새로운 지역을 파들어가기 시작했었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d112:T11",
+   "key": "F:ld/d112:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 연구가 이루어질 수 있을 때까지 작업을 중단해달라고 그 건설회사에게 요청했다.",
+   "고칠글": "그들은 연구가 이루어질 수 있을 때까지 작업을 중단해달라고 그 건설회사에 요청했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d112[n=5].ko"
+   ],
+   "옛글": "그들은 연구가 이루어질 수 있을 때까지 작업을 중단해달라고 그 건설회사에게 요청했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d113:T16",
+   "key": "F:ld/d113:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑦",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "포모 인디언들은 작은 영구적인 마을에 살곤 했고 그들은 아름다운 바구니를 만들곤 했다.",
+   "고칠글": "Pomo 인디언들은 작은 영구적인 마을에 살곤 했고 그들은 아름다운 바구니를 만들곤 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d113[n=7].ko"
+   ],
+   "옛글": "포모 인디언들은 작은 영구적인 마을에 살곤 했고 그들은 아름다운 바구니를 만들곤 했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d114:T16",
+   "key": "F:ld/d114:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 얼음이 녹기 전에 지금 물 밑의 땅의 많은 부분이 건조했다.",
+   "고칠글": "그 얼음이 녹기 전에 지금 물 밑의 땅의 많은 부분이 물 위로 드러나 있었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d114[n=7].ko"
+   ],
+   "옛글": "그 얼음이 녹기 전에 지금 물 밑의 땅의 많은 부분이 건조했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d114:T17",
+   "key": "F:ld/d114:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "인류학자들은 베링 해협 근처의 이런 지역 중 하나가 아시아와 알래스카를 이어 주었다고 믿는다.",
+   "고칠글": "인류학자들은 베링해협 근처의 이런 지역 중 하나가 아시아와 알래스카를 이어 주었다고 믿는다.",
+   "칸": [
+    "content/ld_english_scripts.json .d114[n=8].ko"
+   ],
+   "옛글": "인류학자들은 베링 해협 근처의 이런 지역 중 하나가 아시아와 알래스카를 이어 주었다고 믿는다."
+  },
+  {
+   "uid": "ld-a/F:ld/d118:T11",
+   "key": "F:ld/d118:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "점점 더 많은 유럽 정착민들이 도착함에 따라 미국인 원주민들은 그들이 항상 살아왔던 땅을 떠나도록 강요당했다.",
+   "고칠글": "점점 더 많은 유럽 정착민들이 도착함에 따라 미국 원주민들은 그들이 항상 살아왔던 땅을 떠나도록 강요당했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d118[n=1].ko"
+   ],
+   "옛글": "점점 더 많은 유럽 정착민들이 도착함에 따라 미국인 원주민들은 그들이 항상 살아왔던 땅을 떠나도록 강요당했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d118:T16",
+   "key": "F:ld/d118:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "미국 원주민들은 또 미국으로 가져와진 그 질병들로부터 끔찍하게 고통을 당했다.",
+   "고칠글": "미국 원주민들은 또 미대륙으로 가져와진 그 질병들로부터 끔찍하게 고통을 당했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d118[n=9].ko"
+   ],
+   "옛글": "미국 원주민들은 또 미국으로 가져와진 그 질병들로부터 끔찍하게 고통을 당했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d120:T17",
+   "key": "F:ld/d120:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "보호 구역에서의 생활은 즐겁지 않았다.",
+   "고칠글": "보호구역에서의 생활은 즐겁지 않았다.",
+   "칸": [
+    "content/ld_english_scripts.json .d120[n=3].ko"
+   ],
+   "옛글": "보호 구역에서의 생활은 즐겁지 않았다."
+  },
+  {
+   "uid": "ld-a/F:ld/d120:T20",
+   "key": "F:ld/d120:T20",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러나 미국 원주민들은 그들의 문화적인 주체성을 포기하기를 거부했다.",
+   "고칠글": "그러나 미국 원주민들은 그들의 문화적 정체성을 포기하기를 거부했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d120[n=7].ko"
+   ],
+   "옛글": "그러나 미국 원주민들은 그들의 문화적인 주체성을 포기하기를 거부했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d125:T10",
+   "key": "F:ld/d125:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 해들 동안에 사람들은 다른 기술들을 개발했다.",
+   "고칠글": "세월이 흐르면서 사람들은 다른 기술들을 개발했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d125[n=3].ko"
+   ],
+   "옛글": "그 해들 동안에 사람들은 다른 기술들을 개발했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d082:T10",
+   "key": "F:ld/d082:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이런 영화에서 Griffith는 오늘날에도 여전히 사용되는 많은 영화제작 기술을 발명했다.",
+   "고칠글": "이런 영화에서 Griffith는 오늘날에도 여전히 사용되는 많은 영화 제작 기술을 발명했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d082[n=3].ko"
+   ],
+   "옛글": "이런 영화에서 Griffith는 오늘날에도 여전히 사용되는 많은 영화제작 기술을 발명했다."
+  },
+  {
+   "uid": "ld-a/F:ld/d083:T17",
+   "key": "F:ld/d083:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 그 카메라를 연기지역으로부터 약 5미터 떨어진 곳에 두었다.",
+   "고칠글": "그들은 그 카메라를 연기 지역으로부터 약 5미터 떨어진 곳에 두었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d083[n=3].ko"
+   ],
+   "옛글": "그들은 그 카메라를 연기지역으로부터 약 5미터 떨어진 곳에 두었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d088:T10",
+   "key": "F:ld/d088:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "가장 긴 비행은 59초 동안 260미터를 여행했다. 그 형제들은 그들의 기계인 the Flyer가 성공인 것에 놀라지 않았다. 그들은 그것을 개발하면서 여러 해를 보냈다.",
+   "고칠글": "가장 긴 비행은 59초 동안 260미터를 날았다. 그 형제들은 그들의 기계인 the Flyer가 성공인 것에 놀라지 않았다. 그들은 그것을 개발하면서 여러 해를 보냈다.",
+   "칸": [
+    "content/ld_english_scripts.json .d088[n=3].ko"
+   ],
+   "옛글": "가장 긴 비행은 59초 동안 260미터를 여행했다. 그 형제들은 그들의 기계인 the Flyer가 성공인 것에 놀라지 않았다. 그들은 그것을 개발하면서 여러 해를 보냈다."
+  },
+  {
+   "uid": "ld-a/F:ld/d089:T15",
+   "key": "F:ld/d089:T15",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Orville이 the Flyer에 기어들어가서 비행기로 비행하는 첫 번째 사람이 되었다.",
+   "고칠글": "Orville이 the Flyer에 기어 들어가서 비행기로 비행하는 첫 번째 사람이 되었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d089[n=4].ko"
+   ],
+   "옛글": "Orville이 the Flyer에 기어들어가서 비행기로 비행하는 첫 번째 사람이 되었다."
+  },
+  {
+   "uid": "ld-a/F:ld/d092:T10",
+   "key": "F:ld/d092:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 그 다음에 4년 대학에서 계속할 수 있다.",
+   "고칠글": "그들은 그다음에 4년제 대학에서 계속할 수 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d092[n=5].ko"
+   ],
+   "옛글": "그들은 그 다음에 4년 대학에서 계속할 수 있다."
+  },
+  {
+   "uid": "ld-a/F:ld/d092:T13",
+   "key": "F:ld/d092:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이것들은 사업, 교육, 공학, 법, 의학에 있어서의 훈련을 제공한다.",
+   "고칠글": "이것들은 경영, 교육, 공학, 법, 의학에 있어서의 훈련을 제공한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d092[n=9].ko"
+   ],
+   "옛글": "이것들은 사업, 교육, 공학, 법, 의학에 있어서의 훈련을 제공한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d254:T09",
+   "key": "F:ld/d254:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "한 직장에 지원하는데 있어서 면접관의 성격을 고려하여 자신을 그에게 맞추는 것이 현명하다.",
+   "고칠글": "한 직장에 지원하는 데 있어서 면접관의 성격을 고려하여 자신을 그에게 맞추는 것이 현명하다.",
+   "칸": [
+    "content/ld_english_scripts.json .d254[0].ko"
+   ],
+   "옛글": "한 직장에 지원하는데 있어서 면접관의 성격을 고려하여 자신을 그에게 맞추는 것이 현명하다."
+  },
+  {
+   "uid": "ld-b/F:ld/d265:T07",
+   "key": "F:ld/d265:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "트리는 장식이 되었고 어린이들은 그들의 양말을 벽난로 옆에 걸어두었으며 부엌은 먹을 훌륭한 것들로 가득차있다.",
+   "고칠글": "트리는 장식이 되었고 어린이들은 그들의 양말을 벽난로 옆에 걸어두었으며 부엌은 먹을 훌륭한 것들로 가득 차 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d265[1].ko"
+   ],
+   "옛글": "트리는 장식이 되었고 어린이들은 그들의 양말을 벽난로 옆에 걸어두었으며 부엌은 먹을 훌륭한 것들로 가득차있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d265:T08",
+   "key": "F:ld/d265:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "당연히 어린이들은 그 다음 날 아침의 흥분에 대하여 생각하느라고 거의 잠을 이루지 못한다.",
+   "고칠글": "당연히 어린이들은 그다음 날 아침의 흥분에 대하여 생각하느라고 거의 잠을 이루지 못한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d265[2].ko"
+   ],
+   "옛글": "당연히 어린이들은 그 다음 날 아침의 흥분에 대하여 생각하느라고 거의 잠을 이루지 못한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d268:T09",
+   "key": "F:ld/d268:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "현 시대는 한 새 유형의 예술이 솟아나는 것을 보았다.",
+   "고칠글": "현시대는 한 새 유형의 예술이 솟아나는 것을 보았다.",
+   "칸": [
+    "content/ld_english_scripts.json .d268[0].ko"
+   ],
+   "옛글": "현 시대는 한 새 유형의 예술이 솟아나는 것을 보았다."
+  },
+  {
+   "uid": "ld-b/F:ld/d275:T09",
+   "key": "F:ld/d275:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "왜 영어가 오늘날 같이 중요한 위치를 차지하게 되었는지 다양한 이유들이 있다.",
+   "고칠글": "왜 영어가 오늘날같이 중요한 위치를 차지하게 되었는지 다양한 이유들이 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d275[0].ko"
+   ],
+   "옛글": "왜 영어가 오늘날 같이 중요한 위치를 차지하게 되었는지 다양한 이유들이 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d275:T14",
+   "key": "F:ld/d275:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "게다가 영어사용법의 규칙들에 대한 많은 예외는 그것을 통달하는 것을 어렵게 만든다.",
+   "고칠글": "게다가 영어 사용법의 규칙들에 대한 많은 예외는 그것을 통달하는 것을 어렵게 만든다.",
+   "칸": [
+    "content/ld_english_scripts.json .d275[5].ko"
+   ],
+   "옛글": "게다가 영어사용법의 규칙들에 대한 많은 예외는 그것을 통달하는 것을 어렵게 만든다."
+  },
+  {
+   "uid": "ld-b/F:ld/d275:T15",
+   "key": "F:ld/d275:T15",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러나 이 널리 사용되는 언어를 말할 수 있는 만족은 영어의 공부를 충분히 가치있게 만든다.",
+   "고칠글": "그러나 이 널리 사용되는 언어를 말할 수 있는 만족은 영어의 공부를 충분히 가치 있게 만든다.",
+   "칸": [
+    "content/ld_english_scripts.json .d275[6].ko"
+   ],
+   "옛글": "그러나 이 널리 사용되는 언어를 말할 수 있는 만족은 영어의 공부를 충분히 가치있게 만든다."
+  },
+  {
+   "uid": "ld-b/F:ld/d276:T09",
+   "key": "F:ld/d276:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그것이 없다면 인간은 그의 동료 인간들과 생각을 주고 받을 수 없을 것이다.",
+   "고칠글": "그것이 없다면 인간은 그의 동료 인간들과 생각을 주고받을 수 없을 것이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d276[1].ko"
+   ],
+   "옛글": "그것이 없다면 인간은 그의 동료 인간들과 생각을 주고 받을 수 없을 것이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d141:T16",
+   "key": "F:ld/d141:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "지난 주 나는 시내의 한 새로운 회사에 대한 지원서를 작성하고 개인 인터뷰를 마련했다.",
+   "고칠글": "지난주 나는 시내의 한 새로운 회사에 대한 지원서를 작성하고 개인 인터뷰를 마련했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d141[3].ko"
+   ],
+   "옛글": "지난 주 나는 시내의 한 새로운 회사에 대한 지원서를 작성하고 개인 인터뷰를 마련했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d142:T12",
+   "key": "F:ld/d142:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그녀는 많은 전기기사들에게 전화했었지만 그들은 모두 너무 바쁘다고 말했다.",
+   "고칠글": "그녀는 많은 전기 기사들에게 전화했었지만 그들은 모두 너무 바쁘다고 말했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d142[2].ko"
+   ],
+   "옛글": "그녀는 많은 전기기사들에게 전화했었지만 그들은 모두 너무 바쁘다고 말했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d143:T21",
+   "key": "F:ld/d143:T21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 지금 70세이지만 자기 관리를 잘 하면 여전히 오래 사실 수 있다.",
+   "고칠글": "그는 지금 70세이지만 자기 관리를 잘하면 여전히 오래 사실 수 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d143[11].ko"
+   ],
+   "옛글": "그는 지금 70세이지만 자기 관리를 잘 하면 여전히 오래 사실 수 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d144:T14",
+   "key": "F:ld/d144:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그런 다음 그녀는 다음 주에 약속할 수 있는지 알고 싶어했다.",
+   "고칠글": "그런 다음 그녀는 다음 주에 약속할 수 있는지 알고 싶어 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d144[5].ko"
+   ],
+   "옛글": "그런 다음 그녀는 다음 주에 약속할 수 있는지 알고 싶어했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d144:T17",
+   "key": "F:ld/d144:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그녀는 왜 내가 그녀가 전화를 잘못 걸었다고 바로 말하지 않았는지 알고 싶어했다.",
+   "고칠글": "그녀는 왜 내가 그녀가 전화를 잘못 걸었다고 바로 말하지 않았는지 알고 싶어 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d144[8].ko"
+   ],
+   "옛글": "그녀는 왜 내가 그녀가 전화를 잘못 걸었다고 바로 말하지 않았는지 알고 싶어했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d147:T14",
+   "key": "F:ld/d147:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Dear Jim. 이것은 대학에서의 너의 첫 해이고 네가 생일에 집으로부터 떠나있는 첫 번째이다.",
+   "고칠글": "Dear Jim. 이것은 대학에서의 너의 첫해이고 네가 생일에 집으로부터 떠나있는 첫 번째이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d147[0].ko"
+   ],
+   "옛글": "Dear Jim. 이것은 대학에서의 너의 첫 해이고 네가 생일에 집으로부터 떠나있는 첫 번째이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d153:T13",
+   "key": "F:ld/d153:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "일부는 석사 학위와 어쩌면 박사학위를 위하여 공부를 계속한다.",
+   "고칠글": "일부는 석사 학위와 어쩌면 박사 학위를 위하여 공부를 계속한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d153[7].ko"
+   ],
+   "옛글": "일부는 석사 학위와 어쩌면 박사학위를 위하여 공부를 계속한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d155:T16",
+   "key": "F:ld/d155:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "교직, 신문일, 의학, 공학 - 이런 것들과 많은 다른 분야들이 재능과 훈련을 갖춘 사람들에게 멋진 진로를 제공한다.",
+   "고칠글": "교직, 신문 일, 의학, 공학 - 이런 것들과 많은 다른 분야들이 재능과 훈련을 갖춘 사람들에게 멋진 진로를 제공한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d155[7].ko"
+   ],
+   "옛글": "교직, 신문일, 의학, 공학 - 이런 것들과 많은 다른 분야들이 재능과 훈련을 갖춘 사람들에게 멋진 진로를 제공한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d191:T17",
+   "key": "F:ld/d191:T17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 도시는 묘지처럼 조용한 것 같았고 나는 나의 길 안내자가 그녀와 그녀의 몇몇 친구들이 나에게 강도짓을 할 골목길로 인도하고 있을 수도 있다는 생각을 했던 것이 기억난다.",
+   "고칠글": "그 도시는 묘지처럼 조용한 것 같았고 나는 나의 길 안내자가 그녀와 그녀의 몇몇 친구들이 나에게 강도 짓을 할 골목길로 인도하고 있을 수도 있다는 생각을 했던 것이 기억난다.",
+   "칸": [
+    "content/ld_english_scripts.json .d191[5].ko"
+   ],
+   "옛글": "그 도시는 묘지처럼 조용한 것 같았고 나는 나의 길 안내자가 그녀와 그녀의 몇몇 친구들이 나에게 강도짓을 할 골목길로 인도하고 있을 수도 있다는 생각을 했던 것이 기억난다."
+  },
+  {
+   "uid": "ld-b/F:ld/d193:T07",
+   "key": "F:ld/d193:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러나 그 추적자가 그 흔적을 멀리 따라갈 수 있기 전에 갑작스런 소나기가 쏟아져서 그 흔적을 씻어내버렸다.",
+   "고칠글": "그러나 그 추적자가 그 흔적을 멀리 따라갈 수 있기 전에 갑작스러운 소나기가 쏟아져서 그 흔적을 씻어내 버렸다.",
+   "칸": [
+    "content/ld_english_scripts.json .d193[0].ko"
+   ],
+   "옛글": "그러나 그 추적자가 그 흔적을 멀리 따라갈 수 있기 전에 갑작스런 소나기가 쏟아져서 그 흔적을 씻어내버렸다."
+  },
+  {
+   "uid": "ld-b/F:ld/d197:T13",
+   "key": "F:ld/d197:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그의 태평스런 농담과 짓궂은 장난은 일상생활의 틀로부터의 유쾌한 탈출을 제공한다.",
+   "고칠글": "그의 태평스러운 농담과 짓궂은 장난은 일상생활의 틀로부터의 유쾌한 탈출을 제공한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d197[3].ko"
+   ],
+   "옛글": "그의 태평스런 농담과 짓궂은 장난은 일상생활의 틀로부터의 유쾌한 탈출을 제공한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d175:T10",
+   "key": "F:ld/d175:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 자신이 어떤 기계보다도 더 열심히, 더 빨리 일할 수 있다고 주장했다. “기계가 나를 바보로 만들게 두느니 차라리 손에 해머를 쥔 채 죽겠다.”고 그는 말했다.",
+   "고칠글": "그는 자신이 어떤 기계보다도 더 열심히, 더 빨리 일할 수 있다고 주장했다. “기계가 나를 바보로 만들게 두느니 차라리 손에 해머를 쥔 채 죽겠다.”라고 그는 말했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d175[0].ko"
+   ],
+   "옛글": "그는 자신이 어떤 기계보다도 더 열심히, 더 빨리 일할 수 있다고 주장했다. “기계가 나를 바보로 만들게 두느니 차라리 손에 해머를 쥔 채 죽겠다.”고 그는 말했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d181:T19",
+   "key": "F:ld/d181:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "왼손잡이에게는 가위가 들지 않는다. 깡통따개는 사실상 사용불능이다.",
+   "고칠글": "왼손잡이에게는 가위가 들지 않는다. 깡통따개는 사실상 사용 불능이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d181[6].ko"
+   ],
+   "옛글": "왼손잡이에게는 가위가 들지 않는다. 깡통따개는 사실상 사용불능이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d182:T10",
+   "key": "F:ld/d182:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그 해에 그에게 사업이 특히 잘 됐기 때문에 가격은 상관없었다.",
+   "고칠글": "그해에 그에게 사업이 특히 잘됐기 때문에 가격은 상관없었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d182[1].ko"
+   ],
+   "옛글": "그 해에 그에게 사업이 특히 잘 됐기 때문에 가격은 상관없었다."
+  },
+  {
+   "uid": "ld-b/F:ld/d182:T13",
+   "key": "F:ld/d182:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "며칠 뒤에 그 남자가 돌아와서 아내가 그 진주를 너무나 좋아한 나머지 그녀가 그것과 똑같은 것을 하나 더 원한다고 말했다. 그녀가 한쌍의 귀걸이를 만들기를 원하기 때문에 그것은 정확히 똑같은 크기와 품질이어야 했다.",
+   "고칠글": "며칠 뒤에 그 남자가 돌아와서 아내가 그 진주를 너무나 좋아한 나머지 그녀가 그것과 똑같은 것을 하나 더 원한다고 말했다. 그녀가 한 쌍의 귀걸이를 만들기를 원하기 때문에 그것은 정확히 똑같은 크기와 품질이어야 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d182[4].ko"
+   ],
+   "옛글": "며칠 뒤에 그 남자가 돌아와서 아내가 그 진주를 너무나 좋아한 나머지 그녀가 그것과 똑같은 것을 하나 더 원한다고 말했다. 그녀가 한쌍의 귀걸이를 만들기를 원하기 때문에 그것은 정확히 똑같은 크기와 품질이어야 했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d185:T12",
+   "key": "F:ld/d185:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 자신의 계산을 모두 다시 시작했다.",
+   "고칠글": "그는 자신의 계산을 처음부터 다시 시작해야 했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d185[1].ko"
+   ],
+   "옛글": "그는 자신의 계산을 모두 다시 시작했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d185:T16",
+   "key": "F:ld/d185:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Kaplan은 자신이 가능한 최고의 신체적, 정신적 조건에 있다고 느낄 때까지 며칠 더 기다렸다.",
+   "고칠글": "Kaplan은 자신이 가능한 최고의 신체적, 정신적 상태에 있다고 느낄 때까지 며칠 더 기다렸다.",
+   "칸": [
+    "content/ld_english_scripts.json .d185[5].ko"
+   ],
+   "옛글": "Kaplan은 자신이 가능한 최고의 신체적, 정신적 조건에 있다고 느낄 때까지 며칠 더 기다렸다."
+  },
+  {
+   "uid": "ld-b/F:ld/d188:T14",
+   "key": "F:ld/d188:T14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 구어체 체로키 언어의 문자 형태를 만들기로 결정했다.",
+   "고칠글": "그는 체로키 구어의 문자 형태를 만들기로 결정했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d188[7].ko"
+   ],
+   "옛글": "그는 구어체 체로키 언어의 문자 형태를 만들기로 결정했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d209:T06",
+   "key": "F:ld/d209:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "fraternity에 들어가기 위해서 학생은 정식 신청하고 기존회원들의 승인을 받아야 한다.",
+   "고칠글": "fraternity에 들어가기 위해서 학생은 정식 신청하고 기존 회원들의 승인을 받아야 한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d209[2].ko"
+   ],
+   "옛글": "fraternity에 들어가기 위해서 학생은 정식 신청하고 기존회원들의 승인을 받아야 한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d210:T07",
+   "key": "F:ld/d210:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "기록된 역사를 통틀어 우리는 가장 흥미있는 형태의 수집 중의 하나는 살아있는 동물의 수집이라는 것을 발견한다.",
+   "고칠글": "기록된 역사를 통틀어 우리는 가장 흥미 있는 형태의 수집 중의 하나는 살아있는 동물의 수집이라는 것을 발견한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d210[0].ko"
+   ],
+   "옛글": "기록된 역사를 통틀어 우리는 가장 흥미있는 형태의 수집 중의 하나는 살아있는 동물의 수집이라는 것을 발견한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d213:T13",
+   "key": "F:ld/d213:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "동물원 관리들은 사람들이 표지를 읽지 못하는 것 같이 보인다고 자주 불평한다.",
+   "고칠글": "동물원 관리들은 사람들이 표지를 읽지 못하는 것같이 보인다고 자주 불평한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d213[2].ko"
+   ],
+   "옛글": "동물원 관리들은 사람들이 표지를 읽지 못하는 것 같이 보인다고 자주 불평한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d217:T11",
+   "key": "F:ld/d217:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "미국에서는 네잎 클로버는 많은 사람들에 의하여 행복과 번영의 상징물로 여겨진다.",
+   "고칠글": "미국에서는 네 잎 클로버는 많은 사람들에 의하여 행복과 번영의 상징물로 여겨진다.",
+   "칸": [
+    "content/ld_english_scripts.json .d217[1].ko"
+   ],
+   "옛글": "미국에서는 네잎 클로버는 많은 사람들에 의하여 행복과 번영의 상징물로 여겨진다."
+  },
+  {
+   "uid": "ld-b/F:ld/d217:T13",
+   "key": "F:ld/d217:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "한가지 인기있는 형태의 미신적인 여흥은 점쟁이에게로의 방문이다.",
+   "고칠글": "한 가지 인기 있는 형태의 미신적인 여흥은 점쟁이에게로의 방문이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d217[3].ko"
+   ],
+   "옛글": "한가지 인기있는 형태의 미신적인 여흥은 점쟁이에게로의 방문이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d218:T10",
+   "key": "F:ld/d218:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "인간은 자신을 외부세계와 통합시키려는 타고난 욕구가 있다. 여러 가지 것들을 수집하는 것은 이런 결합이 일어나게 하는 한 가지 방법이다.",
+   "고칠글": "인간은 자신을 외부 세계와 통합시키려는 타고난 욕구가 있다. 여러 가지 것들을 수집하는 것은 이런 결합이 일어나게 하는 한 가지 방법이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d218[4].ko"
+   ],
+   "옛글": "인간은 자신을 외부세계와 통합시키려는 타고난 욕구가 있다. 여러 가지 것들을 수집하는 것은 이런 결합이 일어나게 하는 한 가지 방법이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d221:T10",
+   "key": "F:ld/d221:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "길을 가면서 캠핑하고 여행이 끝날 때 안락한 휴양지에서 일주일 정도를 보내기를 원하는 여행자들을 위하여 대부분의 주들은 자동차 운전자들을 위한 매력있는 노변 캠핑장을 제공한다.",
+   "고칠글": "길을 가면서 캠핑하고 여행이 끝날 때 안락한 휴양지에서 일주일 정도를 보내기를 원하는 여행자들을 위하여 대부분의 주들은 자동차 운전자들을 위한 매력 있는 노변 캠핑장을 제공한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d221[4].ko"
+   ],
+   "옛글": "길을 가면서 캠핑하고 여행이 끝날 때 안락한 휴양지에서 일주일 정도를 보내기를 원하는 여행자들을 위하여 대부분의 주들은 자동차 운전자들을 위한 매력있는 노변 캠핑장을 제공한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d223:T06",
+   "key": "F:ld/d223:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "모든 공공 도서관은 여행과 휴가가는 것에 대한 책이 많다.",
+   "고칠글": "모든 공공 도서관은 여행과 휴가 가는 것에 대한 책이 많다.",
+   "칸": [
+    "content/ld_english_scripts.json .d223[0].ko"
+   ],
+   "옛글": "모든 공공 도서관은 여행과 휴가가는 것에 대한 책이 많다."
+  },
+  {
+   "uid": "ld-b/F:ld/d223:T07",
+   "key": "F:ld/d223:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이런 책을 참조함으로써 어떤 주어진 위치이든 그곳의 모든 흥미있는 장소들을 포함할 일정을 준비할 수 있다.",
+   "고칠글": "이런 책을 참조함으로써 어떤 주어진 위치이든 그곳의 모든 흥미 있는 장소들을 포함할 일정을 준비할 수 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d223[1].ko"
+   ],
+   "옛글": "이런 책을 참조함으로써 어떤 주어진 위치이든 그곳의 모든 흥미있는 장소들을 포함할 일정을 준비할 수 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d223:T09",
+   "key": "F:ld/d223:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "분명히 이런 준비 연구는 가치있는 어떤 것을 휴가에 더해줄 것이다.",
+   "고칠글": "분명히 이런 준비 연구는 가치 있는 어떤 것을 휴가에 더해줄 것이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d223[4].ko"
+   ],
+   "옛글": "분명히 이런 준비 연구는 가치있는 어떤 것을 휴가에 더해줄 것이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d226:T05",
+   "key": "F:ld/d226:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "매우 어린 나이에 영어를 말하는 어린이들은 고도로 상상적인 Mother Goose 동요(rhyme)을 배운다.",
+   "고칠글": "매우 어린 나이에 영어를 말하는 어린이들은 고도로 상상적인 Mother Goose 동요(rhyme)를 배운다.",
+   "칸": [
+    "content/ld_english_scripts.json .d226[0].ko"
+   ],
+   "옛글": "매우 어린 나이에 영어를 말하는 어린이들은 고도로 상상적인 Mother Goose 동요(rhyme)을 배운다."
+  },
+  {
+   "uid": "ld-b/F:ld/d158:T19",
+   "key": "F:ld/d158:T19",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "어떤 수집품들은 많은 돈의 가치가 있다. 다른 것들은 그들의 소유주에게만 가치있다.",
+   "고칠글": "어떤 수집품들은 많은 돈의 가치가 있다. 다른 것들은 그들의 소유주에게만 가치 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d158[7].ko"
+   ],
+   "옛글": "어떤 수집품들은 많은 돈의 가치가 있다. 다른 것들은 그들의 소유주에게만 가치있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d159:T13",
+   "key": "F:ld/d159:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "반면에 나의 막내 동생은 성냥갑을 모은다.",
+   "고칠글": "반면에 나의 막냇동생은 성냥갑을 모은다.",
+   "칸": [
+    "content/ld_english_scripts.json .d159[3].ko"
+   ],
+   "옛글": "반면에 나의 막내 동생은 성냥갑을 모은다."
+  },
+  {
+   "uid": "ld-b/F:ld/d165:T10",
+   "key": "F:ld/d165:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "중요한 진보 중 하나는 1962년에 발사된 통신 위성 “Telstar”였다.",
+   "고칠글": "중요한 진보 중 하나는 1962년에 발사된 통신 위성 텔스타(Telstar)였다.",
+   "칸": [
+    "content/ld_english_scripts.json .d165[3].ko"
+   ],
+   "옛글": "중요한 진보 중 하나는 1962년에 발사된 통신 위성 “Telstar”였다."
+  },
+  {
+   "uid": "ld-b/F:ld/d166:T09",
+   "key": "F:ld/d166:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "또 다른 책 Life on the Mississippi는 그 시대의 강의 배들에서의 그의 모험에 대하여 말했다.",
+   "고칠글": "또 다른 책 “Life on the Mississippi”는 그 시대의 강의 배들에서의 그의 모험에 대하여 말했다.",
+   "칸": [
+    "content/ld_english_scripts.json .d166[3].ko"
+   ],
+   "옛글": "또 다른 책 Life on the Mississippi는 그 시대의 강의 배들에서의 그의 모험에 대하여 말했다."
+  },
+  {
+   "uid": "ld-b/F:ld/d168:T09",
+   "key": "F:ld/d168:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 서핑 보드 위에서 거대한 태평양의 파도를 타는 서핑객들에 깊은 감동을 받았다.",
+   "고칠글": "그는 서핑 보드 위에서 거대한 태평양의 파도를 타는 서핑객들에게 깊은 감동을 받았다.",
+   "칸": [
+    "content/ld_english_scripts.json .d168[4].ko"
+   ],
+   "옛글": "그는 서핑 보드 위에서 거대한 태평양의 파도를 타는 서핑객들에 깊은 감동을 받았다."
+  },
+  {
+   "uid": "ld-b/F:ld/d173:T15",
+   "key": "F:ld/d173:T15",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "대부분의 영화는 실내에서 지금 만들어지고 금을 발견할 최고의 장소는 보석가게 안이다.",
+   "고칠글": "대부분의 영화는 실내에서 지금 만들어지고 금을 발견할 최고의 장소는 보석 가게 안이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d173[8].ko"
+   ],
+   "옛글": "대부분의 영화는 실내에서 지금 만들어지고 금을 발견할 최고의 장소는 보석가게 안이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d234:T06",
+   "key": "F:ld/d234:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "쇼보트가 다른 마을로 떠난 오랜 후에도 그 밴조의 소리는 그 광경을 즐겼던 사람들의 마음에 남아있었다.",
+   "고칠글": "showboat가 다른 마을로 떠난 오랜 후에도 그 밴조의 소리는 그 광경을 즐겼던 사람들의 마음에 남아있었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d234[4].ko"
+   ],
+   "옛글": "쇼보트가 다른 마을로 떠난 오랜 후에도 그 밴조의 소리는 그 광경을 즐겼던 사람들의 마음에 남아있었다."
+  },
+  {
+   "uid": "ld-b/F:ld/d237:T04",
+   "key": "F:ld/d237:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "우리들 대부분은 열차여행에 익숙하지만 비행기 여행의 전망은 좀 무서울 수 있다.",
+   "고칠글": "우리들 대부분은 열차 여행에 익숙하지만 비행기 여행의 전망은 좀 무서울 수 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d237[0].ko"
+   ],
+   "옛글": "우리들 대부분은 열차여행에 익숙하지만 비행기 여행의 전망은 좀 무서울 수 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d238:T10",
+   "key": "F:ld/d238:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그는 창문 밖을 보고 아랫 쪽의 도시와 마을들이 점점 더 작아지는 것을 볼 때 놀란다.",
+   "고칠글": "그는 창문 밖을 보고 아래쪽의 도시와 마을들이 점점 더 작아지는 것을 볼 때 놀란다.",
+   "칸": [
+    "content/ld_english_scripts.json .d238[3].ko"
+   ],
+   "옛글": "그는 창문 밖을 보고 아랫 쪽의 도시와 마을들이 점점 더 작아지는 것을 볼 때 놀란다."
+  },
+  {
+   "uid": "ld-b/F:ld/d240:T10",
+   "key": "F:ld/d240:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "스포츠와 취미는 우리의 일상생활에서 중요한 역할을 해야하지만 우리는 우리의 책임을 등한시하지 않도록 조심해야 한다.",
+   "고칠글": "스포츠와 취미는 우리의 일상생활에서 중요한 역할을 해야 하지만 우리는 우리의 책임을 등한시하지 않도록 조심해야 한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d240[3].ko"
+   ],
+   "옛글": "스포츠와 취미는 우리의 일상생활에서 중요한 역할을 해야하지만 우리는 우리의 책임을 등한시하지 않도록 조심해야 한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d240:T12",
+   "key": "F:ld/d240:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이런 의무를 다한 후에 우리는 여가 시간을 좋아하는 스포츠를 추구하는데 쓸 수 있다.",
+   "고칠글": "이런 의무를 다한 후에 우리는 여가 시간을 좋아하는 스포츠를 추구하는 데 쓸 수 있다.",
+   "칸": [
+    "content/ld_english_scripts.json .d240[5].ko"
+   ],
+   "옛글": "이런 의무를 다한 후에 우리는 여가 시간을 좋아하는 스포츠를 추구하는데 쓸 수 있다."
+  },
+  {
+   "uid": "ld-b/F:ld/d243:T09",
+   "key": "F:ld/d243:T09",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "10월 31일 혹은 할로윈은 마녀, 귀신, 악마의 특별한 밤이다.",
+   "고칠글": "10월 31일 혹은 핼러윈은 마녀, 귀신, 악마의 특별한 밤이다.",
+   "칸": [
+    "content/ld_english_scripts.json .d243[1].ko"
+   ],
+   "옛글": "10월 31일 혹은 할로윈은 마녀, 귀신, 악마의 특별한 밤이다."
+  },
+  {
+   "uid": "ld-b/F:ld/d245:T07",
+   "key": "F:ld/d245:T07",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "할로윈은 기독교의 All Saints 축제로부터 연유한다.",
+   "고칠글": "핼러윈은 기독교의 All Saints 축제로부터 연유한다.",
+   "칸": [
+    "content/ld_english_scripts.json .d245[0].ko"
+   ],
+   "옛글": "할로윈은 기독교의 All Saints 축제로부터 연유한다."
+  },
+  {
+   "uid": "ld-b/F:ld/d245:T10",
+   "key": "F:ld/d245:T10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "점진적으로 이 풍습이 밤샘 축하가 되었는데 그 동안에 모든 사람이 기묘한 의상을 입었다.",
+   "고칠글": "점진적으로 이 풍습이 밤샘 축하가 되었는데 그동안에 모든 사람이 기묘한 의상을 입었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d245[4].ko"
+   ],
+   "옛글": "점진적으로 이 풍습이 밤샘 축하가 되었는데 그 동안에 모든 사람이 기묘한 의상을 입었다."
+  },
+  {
+   "uid": "ld-b/F:ld/d245:T11",
+   "key": "F:ld/d245:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이 고대의 축제가 지금 현대의 할로윈 명절로 바뀌었다.",
+   "고칠글": "이 고대의 축제가 지금 현대의 핼러윈 명절로 바뀌었다.",
+   "칸": [
+    "content/ld_english_scripts.json .d245[5].ko"
+   ],
+   "옛글": "이 고대의 축제가 지금 현대의 할로윈 명절로 바뀌었다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr062:T12",
+   "key": "F:reading/pr062:T12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러면 그는 거리낌 없는 마음으로 제 갈 길을 갈 수 있다.",
+   "고칠글": "그러면 그는 거리낌없는 마음으로 제 갈 길을 갈 수 있다.",
+   "칸": [
+    "content/lessons/reading/pr062.json .readingSentences[5].korean",
+    "content/lessons/reading/pr062-1.json .readingSentences[5].korean"
+   ],
+   "옛글": "그러면 그는 거리낌 없는 마음으로 제 갈 길을 갈 수 있다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr062:T23",
+   "key": "F:reading/pr062:T23",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "거리낌 없는, 평온한",
+   "고칠글": "거리낌없는, 평온한",
+   "칸": [
+    "content/lessons/reading/pr062.json .readingVocabulary[10].korean",
+    "content/lessons/reading/pr062-1.json .readingVocabulary[10].korean"
+   ],
+   "옛글": "거리낌 없는, 평온한"
+  },
+  {
+   "uid": "reading-a/F:reading/pr065:T02",
+   "key": "F:reading/pr065:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "온실효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다.",
+   "고칠글": "온실 효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다.",
+   "칸": [
+    "content/lessons/reading/pr065.json .readingSentences[0].korean",
+    "content/lessons/reading/pr065-1.json .readingSentences[0].korean"
+   ],
+   "옛글": "온실효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr082:T02",
+   "key": "F:reading/pr082:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "이 십대 소녀가 무엇을 겪고 있는지 정확히 보고 느낄 수 있다.",
+   "고칠글": "이 십 대 소녀가 무엇을 겪고 있는지 정확히 보고 느낄 수 있다.",
+   "칸": [
+    "content/lessons/reading/pr082.json .readingSentences[0].korean",
+    "content/lessons/reading/pr082-1.json .readingSentences[0].korean"
+   ],
+   "옛글": "이 십대 소녀가 무엇을 겪고 있는지 정확히 보고 느낄 수 있다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr082:T04",
+   "key": "F:reading/pr082:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "나도 십대 시절 가끔 몹시 좌절하고 혼란스러워했던 것이 기억난다.",
+   "고칠글": "나도 십 대 시절 가끔 몹시 좌절하고 혼란스러워했던 것이 기억난다.",
+   "칸": [
+    "content/lessons/reading/pr082.json .readingSentences[1].korean",
+    "content/lessons/reading/pr082-1.json .readingSentences[1].korean"
+   ],
+   "옛글": "나도 십대 시절 가끔 몹시 좌절하고 혼란스러워했던 것이 기억난다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr082:T18",
+   "key": "F:reading/pr082:T18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "십대의",
+   "고칠글": "십 대의",
+   "칸": [
+    "content/lessons/reading/pr082.json .readingVocabulary[5].korean",
+    "content/lessons/reading/pr082-1.json .readingVocabulary[5].korean"
+   ],
+   "옛글": "십대의"
+  },
+  {
+   "uid": "reading-a/F:reading/pr087:T12",
+   "key": "F:reading/pr087:T12",
+   "status": "손으로",
+   "why": "content/lessons/reading/pr087.json 안에 '지금' 과 같은 칸이 2곳 — 어느 것인지 모름",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "십대",
+   "고칠글": "십 대"
+  },
+  {
+   "uid": "reading-a/F:reading/pr087:T17",
+   "key": "F:reading/pr087:T17",
+   "status": "손으로",
+   "why": "content/lessons/reading/pr087.json 안에 '지금' 과 같은 칸이 2곳 — 어느 것인지 모름",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "십대",
+   "고칠글": "십 대"
+  },
+  {
+   "uid": "reading-a/F:reading/pr092:T02",
+   "key": "F:reading/pr092:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "많은 십대들이 사마귀와 여드름을 몹시 두려워한다.",
+   "고칠글": "많은 십 대들이 사마귀와 여드름을 몹시 두려워한다.",
+   "칸": [
+    "content/lessons/reading/pr092.json .readingSentences[0].korean",
+    "content/lessons/reading/pr092-1.json .readingSentences[0].korean"
+   ],
+   "옛글": "많은 십대들이 사마귀와 여드름을 몹시 두려워한다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr092:T16",
+   "key": "F:reading/pr092:T16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "십대",
+   "고칠글": "십 대",
+   "칸": [
+    "content/lessons/reading/pr092.json .readingVocabulary[9].korean",
+    "content/lessons/reading/pr092-1.json .readingVocabulary[9].korean"
+   ],
+   "옛글": "십대"
+  },
+  {
+   "uid": "reading-a/F:reading/pr093:T04",
+   "key": "F:reading/pr093:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "귀여운 밍크, 껴안고 싶은 너구리, 사랑스러운 하프물범을 생각해 보라.",
+   "고칠글": "귀여운 밍크, 껴안고 싶은 라쿤, 사랑스러운 하프물범을 생각해 보라.",
+   "칸": [
+    "content/lessons/reading/pr093.json .readingSentences[1].korean",
+    "content/lessons/reading/pr093-1.json .readingSentences[1].korean"
+   ],
+   "옛글": "귀여운 밍크, 껴안고 싶은 너구리, 사랑스러운 하프물범을 생각해 보라."
+  },
+  {
+   "uid": "reading-a/F:reading/pr095:T02",
+   "key": "F:reading/pr095:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에게 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다.",
+   "고칠글": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다.",
+   "칸": [
+    "content/lessons/reading/pr095.json .readingSentences[0].korean",
+    "content/lessons/reading/pr095-1.json .readingSentences[0].korean"
+   ],
+   "옛글": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에게 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr111:T04",
+   "key": "F:reading/pr111:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "사람들은 야생화와 나무들 냄새의 한 가운데에 텐트를 칠 수 있다.",
+   "고칠글": "사람들은 야생화와 나무들 냄새의 한가운데에 텐트를 칠 수 있다.",
+   "칸": [
+    "content/lessons/reading/pr111.json .readingSentences[1].korean",
+    "content/lessons/reading/pr111-1.json .readingSentences[1].korean"
+   ],
+   "옛글": "사람들은 야생화와 나무들 냄새의 한 가운데에 텐트를 칠 수 있다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr111:T06",
+   "key": "F:reading/pr111:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산 속에 홀로 있기를 즐길 수 있다.",
+   "고칠글": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산속에 홀로 있기를 즐길 수 있다.",
+   "칸": [
+    "content/lessons/reading/pr111.json .readingSentences[2].korean",
+    "content/lessons/reading/pr111-1.json .readingSentences[2].korean"
+   ],
+   "옛글": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산 속에 홀로 있기를 즐길 수 있다."
+  },
+  {
+   "uid": "reading-a/F:reading/pr005:T09",
+   "key": "F:reading/pr005:T09",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr005.json · pr005-1.json .readingVocabulary[3](word=tee",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "십대",
+   "고칠글": "십 대"
+  },
+  {
+   "uid": "reading-a/F:reading/pr041:T04",
+   "key": "F:reading/pr041:T04",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr041.json · pr041-1.json .readingSentences[1](id=readin",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "젊은이로서, 우리가 사회 집단에서 자신의 자리를 찾거나 또는 차지하기 위해 노력할 때 실수를 범하는 것을 부끄러워 할 필요가 없다.",
+   "고칠글": "젊은이로서, 우리가 사회 집단에서 자신의 자리를 찾거나 또는 차지하기 위해 노력할 때 실수를 범하는 것을 부끄러워할 필요가 없다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr223:T11",
+   "key": "F:reading/pr223:T11",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr223.json · pr223-1.json readingSentences[5](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "내 가족 구성원 모두가 좋은 시간과 슬픈 시간을 함께 나누고 서로 의사 소통을 할 때 난 행복하다.",
+   "고칠글": "내 가족 구성원 모두가 좋은 시간과 슬픈 시간을 함께 나누고 서로 의사소통을 할 때 난 행복하다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr131:T02",
+   "key": "F:reading/pr131:T02",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr131.json · pr131-1.json readingSentences[0](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "시간은 공간보다 더 일반적이다. 공간적 질서를 부여할 수 없는 인상과 감정과 생각이라는 내면 세계에도 적용되기 때문이다.",
+   "고칠글": "시간은 공간보다 더 일반적이다. 공간적 질서를 부여할 수 없는 인상과 감정과 생각이라는 내면세계에도 적용되기 때문이다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr131:T05",
+   "key": "F:reading/pr131:T05",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr131.json · pr131-1.json readingVocabulary[2](word worl",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "세계 (inner world 내면 세계)",
+   "고칠글": "세계 (inner world 내면세계)"
+  },
+  {
+   "uid": "reading-b/F:reading/pr133:T02",
+   "key": "F:reading/pr133:T02",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr133.json · pr133-1.json readingSentences[0](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "과거와 과거의 저작물에 대한 연구를 경멸하는 사람들의 일반적인 생각은 과거는 현재와 전혀 다르며, 따라서 우리는 과거로부터 아무 것도 값어치 있는 것을 배울 수 없다는 것이다.",
+   "고칠글": "과거와 과거의 저작물에 대한 연구를 경멸하는 사람들의 일반적인 생각은 과거는 현재와 전혀 다르며, 따라서 우리는 과거로부터 아무것도 값어치 있는 것을 배울 수 없다는 것이다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr136:T11",
+   "key": "F:reading/pr136:T11",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr136.json · pr136-1.json readingSentences[5](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그게 바로 일상 생활 속에서 우리가 시를 감상하는 이유이다.",
+   "고칠글": "그게 바로 일상생활 속에서 우리가 시를 감상하는 이유이다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr158:T15",
+   "key": "F:reading/pr158:T15",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr158.json · pr158-1.json readingSentences[7](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는데 반해서, 인간은 그들이 진정한 선택지 앞에 있다는 것을 인식한다는 것이다.",
+   "고칠글": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는 데 반해서, 인간은 그들이 진정한 선택지 앞에 있다는 것을 인식한다는 것이다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr175:T04",
+   "key": "F:reading/pr175:T04",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr175.json · pr175-1.json readingSentences[1](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+   "고칠글": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다."
+  },
+  {
+   "uid": "reading-b/F:reading/pr175:T09",
+   "key": "F:reading/pr175:T09",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/reading/pr175.json · pr175-1.json readingSentences[4](id reading",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "그러나, 낭만적인 저녁을 위해, 새우나 바다가재를 선택한다.",
+   "고칠글": "그러나, 낭만적인 저녁을 위해, 새우나 바닷가재를 선택한다."
+  },
+  {
+   "uid": "student/F:student/s1-1:T08",
+   "key": "F:student/s1-1:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "무엇보다도 내 자신을 소개할 수 있는 기회를 주셔서 감사합니다.",
+   "고칠글": "무엇보다도 나 자신을 소개할 수 있는 기회를 주셔서 감사합니다.",
+   "칸": [
+    "content/lessons/student/s1-1.json .blocks[4].text"
+   ],
+   "옛글": "무엇보다도 내 자신을 소개할 수 있는 기회를 주셔서 감사합니다."
+  },
+  {
+   "uid": "student/F:student/s12-1:T01",
+   "key": "F:student/s12-1:T01",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "School Vacations (방학 맞이)",
+   "고칠글": "School Vacations (방학맞이)",
+   "칸": [
+    "content/lessons/student/s12-1.json .title",
+    "content/courses/student.json .lessons[50].title"
+   ],
+   "옛글": "School Vacations (방학 맞이)"
+  },
+  {
+   "uid": "student/F:student/s12-1:T02",
+   "key": "F:student/s12-1:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 12. What I Do During School Vacations (방학 생활) - School Vacations (방학 맞이)",
+   "고칠글": "Chapter 12. What I Do During School Vacations (방학 생활) - School Vacations (방학맞이)",
+   "칸": [
+    "content/lessons/student/s12-1.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 12. What I Do During School Vacations (방학 생활) - School Vacations (방학 맞이)"
+  },
+  {
+   "uid": "student/F:student/s12-1:T13",
+   "key": "F:student/s12-1:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "가장 좋은 부분은 우리가 좋아하는 것들을 하면서 보낼 수 있는 많은 자유시간이 있다는 것입니다.",
+   "고칠글": "가장 좋은 부분은 우리가 좋아하는 것들을 하면서 보낼 수 있는 많은 자유 시간이 있다는 것입니다.",
+   "칸": [
+    "content/lessons/student/s12-1.json .blocks[7].text"
+   ],
+   "옛글": "가장 좋은 부분은 우리가 좋아하는 것들을 하면서 보낼 수 있는 많은 자유시간이 있다는 것입니다."
+  },
+  {
+   "uid": "student/F:student/s12-4:T06",
+   "key": "F:student/s12-4:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "내가 꿈꾸는 방학은 영어를 사용하는 국가로 해외여행 하는 것입니다.",
+   "고칠글": "내가 꿈꾸는 방학은 영어를 사용하는 국가로 해외여행하는 것입니다.",
+   "칸": [
+    "content/lessons/student/s12-4.json .blocks[3].text"
+   ],
+   "옛글": "내가 꿈꾸는 방학은 영어를 사용하는 국가로 해외여행 하는 것입니다."
+  },
+  {
+   "uid": "student/F:student/s14-3:T03",
+   "key": "F:student/s14-3:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "In order to become a teacher, my parents tell me that I need to study hard in all my subjects.",
+   "고칠글": "My parents tell me that in order to become a teacher, I need to study hard in all my subjects.",
+   "칸": [
+    "content/lessons/student/s14-3.json .blocks[1].items[0].text"
+   ],
+   "옛글": "In order to become a teacher, my parents tell me that I need to study hard in all my subjects."
+  },
+  {
+   "uid": "student/F:student/s15-3:T08",
+   "key": "F:student/s15-3:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "열심히 하고 그의 계획을 충실히 행함으로써 그는 2002년 월드컵 동안 한국팀을 준결승까지 진출시킬 수 있었습니다.",
+   "고칠글": "열심히 하고 그의 계획을 충실히 행함으로써 그는 2002년 월드컵 동안 한국 팀을 준결승까지 진출시킬 수 있었습니다.",
+   "칸": [
+    "content/lessons/student/s15-3.json .blocks[4].text"
+   ],
+   "옛글": "열심히 하고 그의 계획을 충실히 행함으로써 그는 2002년 월드컵 동안 한국팀을 준결승까지 진출시킬 수 있었습니다."
+  },
+  {
+   "uid": "student/F:student/s16-1:T02",
+   "key": "F:student/s16-1:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - My Other Dream Job (또 하나의 꿈)",
+   "고칠글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - My Other Dream Job (또 하나의 꿈)",
+   "칸": [
+    "content/lessons/student/s16-1.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - My Other Dream Job (또 하나의 꿈)"
+  },
+  {
+   "uid": "student/F:student/s16-2:T02",
+   "key": "F:student/s16-2:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)",
+   "고칠글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)",
+   "칸": [
+    "content/lessons/student/s16-2.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)"
+  },
+  {
+   "uid": "student/F:student/s16-3:T02",
+   "key": "F:student/s16-3:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)",
+   "고칠글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)",
+   "칸": [
+    "content/lessons/student/s16-3.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)"
+  },
+  {
+   "uid": "student/F:student/s16-3:T08",
+   "key": "F:student/s16-3:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+   "고칠글": "If I really want to become a great interpreter, I need to work hard at improving my English from now on.",
+   "칸": [
+    "content/lessons/student/s16-3.json .blocks[1].items[4].text"
+   ],
+   "옛글": "If I really want to become a great interpreter, I need to work hard at improving English from now on."
+  },
+  {
+   "uid": "student/F:student/s17-1:T11",
+   "key": "F:student/s17-1:T11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "그는 한국의 건립자가 되었습니다.",
+   "고칠글": "그는 한국의 건국자가 되었습니다.",
+   "칸": [
+    "content/lessons/student/s17-1.json .blocks[7].text"
+   ],
+   "옛글": "그는 한국의 건립자가 되었습니다."
+  },
+  {
+   "uid": "student/F:student/s18-3:T05",
+   "key": "F:student/s18-3:T05",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "In addition, most people play games with their relatives and make songpyeon, which is a Korean traditional rice cake.",
+   "고칠글": "In addition, most people play games with their relatives and make songpyeon, which is a traditional Korean rice cake.",
+   "칸": [
+    "content/lessons/student/s18-3.json .blocks[1].items[2].text"
+   ],
+   "옛글": "In addition, most people play games with their relatives and make songpyeon, which is a Korean traditional rice cake."
+  },
+  {
+   "uid": "student/F:student/s19-1:T01",
+   "key": "F:student/s19-1:T01",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Korean Culture is Unique (독창적인 한국 문화)",
+   "고칠글": "Korean Culture Is Unique (독창적인 한국 문화)",
+   "칸": [
+    "content/lessons/student/s19-1.json .title",
+    "content/courses/student.json .lessons[73].title"
+   ],
+   "옛글": "Korean Culture is Unique (독창적인 한국 문화)"
+  },
+  {
+   "uid": "student/F:student/s19-1:T02",
+   "key": "F:student/s19-1:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 19. Korean Culture (한국의 문화) - Korean Culture is Unique (독창적인 한국 문화)",
+   "고칠글": "Chapter 19. Korean Culture (한국의 문화) - Korean Culture Is Unique (독창적인 한국 문화)",
+   "칸": [
+    "content/lessons/student/s19-1.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 19. Korean Culture (한국의 문화) - Korean Culture is Unique (독창적인 한국 문화)"
+  },
+  {
+   "uid": "student/F:student/s3-4:T01",
+   "key": "F:student/s3-4:T01",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Friend's Dreams (친구의 장래희망)",
+   "고칠글": "Friend's Dreams (친구의 장래 희망)",
+   "칸": [
+    "content/lessons/student/s3-4.json .title",
+    "content/courses/student.json .lessons[15].title"
+   ],
+   "옛글": "Friend's Dreams (친구의 장래희망)"
+  },
+  {
+   "uid": "student/F:student/s3-4:T02",
+   "key": "F:student/s3-4:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(20% 표본 — 확인 동의)",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래희망)",
+   "고칠글": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래 희망)",
+   "칸": [
+    "content/lessons/student/s3-4.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래희망)"
+  },
+  {
+   "uid": "student/F:student/s5-3:T04",
+   "key": "F:student/s5-3:T04",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "이 시간 동안, 우리 선생님께서는 출석을 부르시고 우리에게 그날의 전달사항을 말씀하십니다.",
+   "고칠글": "이 시간 동안, 우리 선생님께서는 출석을 부르시고 우리에게 그날의 전달 사항을 말씀하십니다.",
+   "칸": [
+    "content/lessons/student/s5-3.json .blocks[3].text"
+   ],
+   "옛글": "이 시간 동안, 우리 선생님께서는 출석을 부르시고 우리에게 그날의 전달사항을 말씀하십니다."
+  },
+  {
+   "uid": "student/F:student/s5-4:T06",
+   "key": "F:student/s5-4:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "Like most other students, my favorite subject is P.E., and the class I dislike the most is history.",
+   "고칠글": "Like most other students, I like P.E. best, and the class I dislike the most is history.",
+   "칸": [
+    "content/lessons/student/s5-4.json .blocks[1].items[3].text"
+   ],
+   "옛글": "Like most other students, my favorite subject is P.E., and the class I dislike the most is history."
+  },
+  {
+   "uid": "student/F:student/s7-2:T03",
+   "key": "F:student/s7-2:T03",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": true,
+   "지금": "My favorite academy is English.",
+   "고칠글": "My favorite academy is the English academy.",
+   "칸": [
+    "content/lessons/student/s7-2.json .blocks[1].items[0].text"
+   ],
+   "옛글": "My favorite academy is English."
+  },
+  {
+   "uid": "student/F:student/s7-3:T01",
+   "key": "F:student/s7-3:T01",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Friends and Teachers at Academy (학원 친구들과 선생님)",
+   "고칠글": "Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "칸": [
+    "content/lessons/student/s7-3.json .title",
+    "content/courses/student.json .lessons[33].title"
+   ],
+   "옛글": "Friends and Teachers at Academy (학원 친구들과 선생님)"
+  },
+  {
+   "uid": "student/F:student/s7-3:T02",
+   "key": "F:student/s7-3:T02",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "①",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "Chapter 7. At the Academy (학원 생활) - Friends and Teachers at Academy (학원 친구들과 선생님)",
+   "고칠글": "Chapter 7. At the Academy (학원 생활) - Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "칸": [
+    "content/lessons/student/s7-3.json .blocks[0].text"
+   ],
+   "옛글": "Chapter 7. At the Academy (학원 생활) - Friends and Teachers at Academy (학원 친구들과 선생님)"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-01:T14",
+   "key": "F:phonics/hv-01:T14",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/vocaUtils.ts · PREFIX_RULES 의 { prefix: 'antique' }.meaning (hv-01 어원 카드",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "⑥",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "ante/anti(고대의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품",
+   "고칠글": "ante/anti(이전의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-01:T54",
+   "key": "F:phonics/hv-01:T54",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/vocaUtils.ts · PREFIX_RULES 의 { prefix: 'precaution' }.meaning (precauti",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방조치",
+   "고칠글": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방 조치"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-03:T15",
+   "key": "F:phonics/hv-03:T15",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "위쪽, 윗면",
+   "고칠글": "좋은 면; 위쪽, 윗면",
+   "칸": [
+    "content/voca_dictionary.json .upside.meaning"
+   ],
+   "옛글": "위쪽, 윗면"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-07:T08",
+   "key": "F:phonics/hv-07:T08",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/vocaUtils.ts · PREFIX_RULES 의 { prefix: 'transfer' }.meaning (transfer 어",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근가다",
+   "고칠글": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근 가다"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-07:T46",
+   "key": "F:phonics/hv-07:T46",
+   "status": "손으로",
+   "why": "content/voca_dictionary.json 안에 '지금' 과 같은 칸이 3곳 — 어느 것인지 모름",
+   "출처": "전수(둘 다 틀림)",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "반대",
+   "고칠글": "반대, 못마땅함"
+  },
+  {
+   "uid": "voca-a/F:phonics/hv-60:T27",
+   "key": "F:phonics/hv-60:T27",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/vocaUtils.ts PREFIX_RULES 의 { prefix: \"inspect\" } 항목 meaning (117행 — hv-",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "in(안을) + spect(들여다보다) ➔ 문제 없는지 안쪽을 자세히 보다, 검사하다",
+   "고칠글": "in(안을) + spect(들여다보다) ➔ 문제없는지 안쪽을 자세히 보다, 검사하다"
+  },
+  {
+   "uid": "voca-b/F:phonics/mv3-06:T08",
+   "key": "F:phonics/mv3-06:T08",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "십대",
+   "고칠글": "십 대",
+   "칸": [
+    "content/voca_dictionary.json .teenager.meaning"
+   ],
+   "옛글": "십대"
+  },
+  {
+   "uid": "voca-b/F:phonics/mv3-12:T13",
+   "key": "F:phonics/mv3-12:T13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "남녀 공학",
+   "고칠글": "남녀공학",
+   "칸": [
+    "content/voca_dictionary.json .coeducation.meaning"
+   ],
+   "옛글": "남녀 공학"
+  },
+  {
+   "uid": "voca-b/F:phonics/mv3-21:T06",
+   "key": "F:phonics/mv3-21:T06",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "포유 동물",
+   "고칠글": "포유동물",
+   "칸": [
+    "content/voca_dictionary.json .mammal.meaning"
+   ],
+   "옛글": "포유 동물"
+  },
+  {
+   "uid": "voca-b/F:phonics/hv-73:T42",
+   "key": "F:phonics/hv-73:T42",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: src/lib/vocaUtils.ts · PREFIX_RULES 의 { prefix: \"interview\" } 줄 .meaning (123행 —",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주보고 의견을 묻다, 면접/인터뷰",
+   "고칠글": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주 보고 의견을 묻다, 면접/인터뷰"
+  },
+  {
+   "uid": "voca-b/F:phonics/mv1-31:T42",
+   "key": "F:phonics/mv1-31:T42",
+   "status": "적용",
+   "why": "",
+   "출처": "전수(한 일꾼(20% 표본 밖))",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "야심찬",
+   "고칠글": "야심 찬",
+   "칸": [
+    "content/voca_dictionary.json .ambitious.meaning"
+   ],
+   "옛글": "야심찬"
+  },
+  {
+   "uid": "grammar1/더:더1",
+   "key": "더:더1",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"They will be sophomores, won't they?\" · 다른 정답 [\"They will become sophomores, won't they?\"]",
+   "고칠글": "[\"They will become sophomores, won't they?\", \"They will be second-year students, won't they?\", \"They will become second-year students, won't they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=37].alternatives"
+   ],
+   "옛글": [
+    "They will become sophomores, won't they?"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더2",
+   "key": "더:더2",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"German is an elective, isn't it?\" · 다른 정답 없음",
+   "고칠글": "[\"German is an elective subject, isn't it?\", \"German is an optional subject, isn't it?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=44].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더3",
+   "key": "더:더3",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"How many English classes does he have a week?\" · 다른 정답 없음",
+   "고칠글": "[\"How many English classes does he have per week?\", \"How many English classes does he have every week?\", \"How many English classes does he have in a week?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=45].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더4",
+   "key": "더:더4",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"They do not have time to get together, do they?\" · 다른 정답 없음",
+   "고칠글": "[\"They do not have time to spend together, do they?\", \"They do not have time to be together, do they?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=50].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더5",
+   "key": "더:더5",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"When did he recommend a nearby candy shop?\" · 다른 정답 없음",
+   "고칠글": "[\"When did he recommend a nearby candy store?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=53].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더6",
+   "key": "더:더6",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"Why did the President criticize the Japanese economy severely?\" · 다른 정답 없음",
+   "고칠글": "[\"Why did the President severely criticize the Japanese economy?\", \"Why did the President criticize the Japanese economy harshly?\", \"Why did the President harshly criticize the Japanese economy?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=54].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더7",
+   "key": "더:더7",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"The relief foundation is denying any link to terrorism, isn't it?\" · 다른 정답 없음",
+   "고칠글": "[\"The relief foundation is denying any connection to terrorism, isn't it?\", \"The relief foundation is denying any links to terrorism, isn't it?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=56].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더8",
+   "key": "더:더8",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"The government was freezing the assets of terrorist groups.\" · 다른 정답 없음",
+   "고칠글": "[\"The government was freezing terrorist groups' assets.\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=66].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더9",
+   "key": "더:더9",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"Where are many athletes training?\" · 다른 정답 없음",
+   "고칠글": "[\"Where are many players training?\", \"Where are a lot of athletes training?\", \"Where are lots of athletes training?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=68].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더10",
+   "key": "더:더10",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"The team was able to obtain numerous samples, wasn't it?\" · 다른 정답 [\"The team could obtain numerous samples, couldn't it?\"]",
+   "고칠글": "[\"The team could obtain numerous samples, couldn't it?\", \"The team was able to get numerous samples, wasn't it?\", \"The team was able to obtain many samples, wasn't it?\", \"The team was able to get many samples, wasn't it?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=41].alternatives",
+    "content/lessons/grammar1/gh1-119-1.json .blocks[3].items[n=41].alternatives"
+   ],
+   "옛글": [
+    "The team could obtain numerous samples, couldn't it?"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더11",
+   "key": "더:더11",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"The telescope is not yet completely online, is it?\" · 다른 정답 없음",
+   "고칠글": "[\"The telescope is not completely online yet, is it?\", \"The telescope is not yet fully online, is it?\", \"The telescope is not fully online yet, is it?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=45].alternatives",
+    "content/lessons/grammar1/gh1-119-1.json .blocks[3].items[n=45].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더12",
+   "key": "더:더12",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"Are mission managers pleased with progress?\" · 다른 정답 없음",
+   "고칠글": "[\"Are the mission managers pleased with the progress?\", \"Are mission managers happy with progress?\", \"Are the mission managers happy with the progress?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=46].alternatives",
+    "content/lessons/grammar1/gh1-119-1.json .blocks[3].items[n=46].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더13",
+   "key": "더:더13",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"You didn't say that, did you?\" · 다른 정답 없음",
+   "고칠글": "[\"You didn't say such a thing, did you?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=68].alternatives",
+    "content/lessons/grammar1/gh1-119-2.json .blocks[1].items[n=68].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더14",
+   "key": "더:더14",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "정답 \"We went to college together, didn't we?\" · 다른 정답 없음",
+   "고칠글": "[\"We went to university together, didn't we?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=70].alternatives",
+    "content/lessons/grammar1/gh1-119-2.json .blocks[1].items[n=70].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/더:더15",
+   "key": "더:더15",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "You owe me nothing. (다른 정답 없음)",
+   "고칠글": "[\"You don't owe me anything.\"]",
+   "칸": [
+    "content/lessons/grammar2/gh2-022.json .blocks[1].items[1].alternatives",
+    "content/lessons/grammar2/gh2-022-1.json .blocks[1].items[1].alternatives"
+   ]
+  },
+  {
+   "uid": "ld/더:더16",
+   "key": "더:더16",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "I'm glad to help a friend, he would say. Everyone liked George.",
+   "고칠글": "\"I'm glad to help a friend,\" he would say. Everyone liked George.",
+   "칸": [
+    "content/ld_english_scripts.json .d042[n=6].en"
+   ],
+   "옛글": "I'm glad to help a friend, he would say. Everyone liked George."
+  },
+  {
+   "uid": "ld/더:더17",
+   "key": "더:더17",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "He'd do anything for his fellow students. As a matter of fact, everyone used to say, let George do it.",
+   "고칠글": "He'd do anything for his fellow students. As a matter of fact, everyone used to say, \"Let George do it.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d042[n=7].en"
+   ],
+   "옛글": "He'd do anything for his fellow students. As a matter of fact, everyone used to say, let George do it."
+  },
+  {
+   "uid": "ld/더:더18",
+   "key": "더:더18",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "①",
+   "심각도": "중간",
+   "새클립": true,
+   "지금": "He'll be glad to help you with anything.",
+   "고칠글": "\"He'll be glad to help you with anything.\"",
+   "칸": [
+    "content/ld_english_scripts.json .d042[n=8].en"
+   ],
+   "옛글": "He'll be glad to help you with anything."
+  },
+  {
+   "uid": "ld/더:더19",
+   "key": "더:더19",
+   "status": "손으로",
+   "why": "칸의 지금 글이 판정의 '지금' 과 다름 content/ld_english_scripts.json .d042[n=8].ko",
+   "출처": "전수 더한 틀림",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그는 어떤 것이든 기꺼이 너를 도와줄거야.”라고 말하곤 했다.",
+   "고칠글": "“그는 어떤 것이든 기꺼이 너를 도와줄 거야.”라고 말하곤 했다."
+  },
+  {
+   "uid": "ld/더:더20",
+   "key": "더:더20",
+   "status": "손으로",
+   "why": "'지금' 과 같은 칸이 적힌 파일(content/lessons/ld/d268.json)에 없음",
+   "출처": "전수 더한 틀림",
+   "종류": "⑥",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "object exactly as appears to the eye as with capturing its soul. abstractions. essentials Picasso Georges Braque. conception of things took the form of geometrical shapes. cubism.",
+   "고칠글": "exactly as it appears to the eye as with capturing its soul. abstractions. essentials. Picasso. Georges Braque. conception of things took the form of geometrical shapes. Cubism."
+  },
+  {
+   "uid": "reading/더:더21",
+   "key": "더:더21",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "②",
+   "심각도": "중간",
+   "새클립": false,
+   "지금": "그리고 누가 결정하는가?",
+   "고칠글": "그리고 누가 결정해야 하는가?",
+   "칸": [
+    "content/lessons/reading/pr256.json .readingSentences[8].korean",
+    "content/lessons/reading/pr256-1.json .readingSentences[8].korean"
+   ],
+   "옛글": "그리고 누가 결정하는가?"
+  },
+  {
+   "uid": "grammar1/더:더22",
+   "key": "더:더22",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"Recently he opened a third, didn't he?\" · 다른 정답 없음",
+   "고칠글": "[\"Recently he opened a third one, didn't he?\", \"He recently opened a third, didn't he?\", \"He recently opened a third one, didn't he?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-109.json .blocks[3].items[n=49].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더23",
+   "key": "더:더23",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/grammar1/gh1-113.json .blocks[3].items[16] · gh1-113-1.json .blo",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"That's beyond me.\" · 다른 정답 없음 — \"It's beyond me.\" → 70점",
+   "고칠글": "[\"It's beyond me.\"]"
+  },
+  {
+   "uid": "grammar1/더:더24",
+   "key": "더:더24",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/grammar1/gh1-113.json .blocks[3].items[27] · gh1-113-2.json .blo",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"Does that make sense?\" · 다른 정답 없음 — \"Does it make sense?\" → 70점",
+   "고칠글": "[\"Does it make sense?\"]"
+  },
+  {
+   "uid": "grammar1/더:더25",
+   "key": "더:더25",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/grammar1/gh1-119.json .blocks[3].items[14] · gh1-119-1.json .blo",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"Is that less than President Bush estimated?\" · 다른 정답 [\"Is that smaller than President Bush estimated?\"] — it 꼴 둘 → 70점",
+   "고칠글": "[\"Is that smaller than President Bush estimated?\", \"Is it less than President Bush estimated?\", \"Is it smaller than President Bush estimated?\"]"
+  },
+  {
+   "uid": "grammar1/더:더26",
+   "key": "더:더26",
+   "status": "손으로",
+   "why": "'고칠 곳' 이 한 칸 바꾸기가 아님: content/lessons/grammar1/gh1-119.json .blocks[3].items[28] · gh1-119-2.json .blo",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"We are going to do that another time.\" · 다른 정답 셋(that 꼴) — it 꼴 넷 → 70점",
+   "고칠글": "[\"We are going to do that some other time.\", \"We will do that another time.\", \"We will do that some other time.\", \"We are going to do it another time.\", \"We are going to do it some other time.\", \"We will do it another time.\", \"We will do it some other time.\"]"
+  },
+  {
+   "uid": "grammar1/더:더27",
+   "key": "더:더27",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"When did the Hubble get more powerful solar wings?\" · 다른 정답 없음",
+   "고칠글": "[\"When did Hubble get more powerful solar wings?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=47].alternatives",
+    "content/lessons/grammar1/gh1-119-1.json .blocks[3].items[n=47].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar1/더:더28",
+   "key": "더:더28",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "③",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "정답 \"Who changed your opinion of Harvard people?\" · 다른 정답 없음",
+   "고칠글": "[\"Who changed your opinion about Harvard people?\", \"Who changed your opinion on Harvard people?\"]",
+   "칸": [
+    "content/lessons/grammar1/gh1-119.json .blocks[3].items[n=60].alternatives",
+    "content/lessons/grammar1/gh1-119-2.json .blocks[1].items[n=60].alternatives"
+   ]
+  },
+  {
+   "uid": "grammar2/더:더29",
+   "key": "더:더29",
+   "status": "적용",
+   "why": "",
+   "출처": "전수 더한 틀림",
+   "종류": "②",
+   "심각도": "낮음",
+   "새클립": false,
+   "지금": "너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래?)",
+   "고칠글": "너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래)?",
+   "칸": [
+    "content/lessons/grammar2/gh2-022-1.json .blocks[1].items[4].text"
+   ],
+   "옛글": "너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래?)"
+  }
+ ],
+ "leftovers": []
+}

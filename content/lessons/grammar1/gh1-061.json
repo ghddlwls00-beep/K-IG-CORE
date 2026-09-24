@@ -63,7 +63,10 @@
         },
         {
           "n": "4",
-          "text": "How much do you want?"
+          "text": "How much do you want?",
+          "alternatives": [
+            "How many do you want?"
+          ]
         },
         {
           "n": "5",

@@ -95,6 +95,8 @@ export const VOCA_PRONUNCIATIONS: Record<string, string> = {
   reject: "rɪˈdʒɛkt",
   refuse: "rɪˈfjuːz",
   graduate: "ˈɡrædʒueɪt",
+  // 관문 15 전수 읽기(hv-50, 소유자 결정 2026-09-24): the card shows the verb "보완하다" — full "-ment", not the noun's weak one
+  complement: "ˈkɑːmpləmɛnt",
 };
 
 /** What a VOCA word button says: the pronunciation-tagged form of the words above, else the spoken form. */

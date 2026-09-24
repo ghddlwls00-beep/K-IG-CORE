@@ -1,0 +1,112 @@
+{
+ "at": "2026-09-24T12:36:20.655Z",
+ "ops": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-wt-fix\\docs\\qa-2026-09-18\\관문15-고침\\중앙사본-전수.json",
+ "root": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-wt-fix",
+ "write": true,
+ "log": [
+  {
+   "id": "관문 15 중앙 사본 pr062",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr062[5].korean",
+   "old": "그러면 그는 거리낌 없는 마음으로 제 갈 길을 갈 수 있다.",
+   "new": "그러면 그는 거리낌없는 마음으로 제 갈 길을 갈 수 있다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr065",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr065[0].korean",
+   "old": "온실효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다.",
+   "new": "온실 효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr082",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr082[0].korean",
+   "old": "이 십대 소녀가 무엇을 겪고 있는지 정확히 보고 느낄 수 있다.",
+   "new": "이 십 대 소녀가 무엇을 겪고 있는지 정확히 보고 느낄 수 있다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr082",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr082[1].korean",
+   "old": "나도 십대 시절 가끔 몹시 좌절하고 혼란스러워했던 것이 기억난다.",
+   "new": "나도 십 대 시절 가끔 몹시 좌절하고 혼란스러워했던 것이 기억난다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr092",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr092[0].korean",
+   "old": "많은 십대들이 사마귀와 여드름을 몹시 두려워한다.",
+   "new": "많은 십 대들이 사마귀와 여드름을 몹시 두려워한다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr093",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr093[1].korean",
+   "old": "귀여운 밍크, 껴안고 싶은 너구리, 사랑스러운 하프물범을 생각해 보라.",
+   "new": "귀여운 밍크, 껴안고 싶은 라쿤, 사랑스러운 하프물범을 생각해 보라."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr095",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr095[0].korean",
+   "old": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에게 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다.",
+   "new": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr111",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr111[1].korean",
+   "old": "사람들은 야생화와 나무들 냄새의 한 가운데에 텐트를 칠 수 있다.",
+   "new": "사람들은 야생화와 나무들 냄새의 한가운데에 텐트를 칠 수 있다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr111",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr111[2].korean",
+   "old": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산 속에 홀로 있기를 즐길 수 있다.",
+   "new": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산속에 홀로 있기를 즐길 수 있다."
+  },
+  {
+   "id": "관문 15 중앙 사본 pr256",
+   "op": "set",
+   "file": "src/lib/readingSentences.json",
+   "where": ".pr256[8].korean",
+   "old": "그리고 누가 결정하는가?",
+   "new": "그리고 누가 결정해야 하는가?"
+  },
+  {
+   "id": "관문 15 중앙 사본 pr062",
+   "op": "set",
+   "file": "src/lib/readingVocabulary.json",
+   "where": ".pr062[10].korean",
+   "old": "거리낌 없는, 평온한",
+   "new": "거리낌없는, 평온한"
+  },
+  {
+   "id": "관문 15 중앙 사본 pr082",
+   "op": "set",
+   "file": "src/lib/readingVocabulary.json",
+   "where": ".pr082[5].korean",
+   "old": "십대의",
+   "new": "십 대의"
+  },
+  {
+   "id": "관문 15 중앙 사본 pr092",
+   "op": "set",
+   "file": "src/lib/readingVocabulary.json",
+   "where": ".pr092[9].korean",
+   "old": "십대",
+   "new": "십 대"
+  }
+ ]
+}

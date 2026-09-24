@@ -52,13 +52,21 @@
         },
         {
           "n": "40",
-          "text": "Was the work of the team hampered?"
+          "text": "Was the work of the team hampered?",
+          "alternatives": [
+            "Was the team's work hampered?",
+            "Was the work of the team hindered?",
+            "Was the team's work hindered?"
+          ]
         },
         {
           "n": "41",
           "text": "The team was able to obtain numerous samples, wasn't it?",
           "alternatives": [
-            "The team could obtain numerous samples, couldn't it?"
+            "The team could obtain numerous samples, couldn't it?",
+            "The team was able to get numerous samples, wasn't it?",
+            "The team was able to obtain many samples, wasn't it?",
+            "The team was able to get many samples, wasn't it?"
           ]
         },
         {
@@ -81,15 +89,28 @@
         },
         {
           "n": "45",
-          "text": "The telescope is not yet completely online, is it?"
+          "text": "The telescope is not yet completely online, is it?",
+          "alternatives": [
+            "The telescope is not completely online yet, is it?",
+            "The telescope is not yet fully online, is it?",
+            "The telescope is not fully online yet, is it?"
+          ]
         },
         {
           "n": "46",
-          "text": "Are mission managers pleased with progress?"
+          "text": "Are mission managers pleased with progress?",
+          "alternatives": [
+            "Are the mission managers pleased with the progress?",
+            "Are mission managers happy with progress?",
+            "Are the mission managers happy with the progress?"
+          ]
         },
         {
           "n": "47",
-          "text": "When did the Hubble get more powerful solar wings?"
+          "text": "When did the Hubble get more powerful solar wings?",
+          "alternatives": [
+            "When did Hubble get more powerful solar wings?"
+          ]
         },
         {
           "n": "48",
@@ -104,7 +125,11 @@
         },
         {
           "n": "50",
-          "text": "When did the budget office project a surplus?"
+          "text": "When did the budget office project a surplus?",
+          "alternatives": [
+            "When did the budget office predict a surplus?",
+            "When did the budget office forecast a surplus?"
+          ]
         },
         {
           "n": "51",
@@ -114,7 +139,9 @@
           "n": "52",
           "text": "Is that less than President Bush estimated?",
           "alternatives": [
-            "Is that smaller than President Bush estimated?"
+            "Is that smaller than President Bush estimated?",
+            "Is it less than President Bush estimated?",
+            "Is it smaller than President Bush estimated?"
           ]
         },
         {
@@ -173,11 +200,18 @@
         },
         {
           "n": "60",
-          "text": "Who changed your opinion of Harvard people?"
+          "text": "Who changed your opinion of Harvard people?",
+          "alternatives": [
+            "Who changed your opinion about Harvard people?",
+            "Who changed your opinion on Harvard people?"
+          ]
         },
         {
           "n": "61",
-          "text": "They're not all like you, are they?"
+          "text": "They're not all like you, are they?",
+          "alternatives": [
+            "Not all of them are like you, are they?"
+          ]
         },
         {
           "n": "62",
@@ -207,7 +241,13 @@
           "alternatives": [
             "We are going to do that some other time.",
             "We will do that another time.",
-            "We will do that some other time."
+            "We will do that some other time.",
+            "We are going to do that next time.",
+            "We will do that next time.",
+            "We are going to do it another time.",
+            "We are going to do it some other time.",
+            "We will do it another time.",
+            "We will do it some other time."
           ]
         },
         {
@@ -216,7 +256,10 @@
         },
         {
           "n": "68",
-          "text": "You didn't say that, did you?"
+          "text": "You didn't say that, did you?",
+          "alternatives": [
+            "You didn't say such a thing, did you?"
+          ]
         },
         {
           "n": "69",
@@ -227,7 +270,10 @@
         },
         {
           "n": "70",
-          "text": "We went to college together, didn't we?"
+          "text": "We went to college together, didn't we?",
+          "alternatives": [
+            "We went to university together, didn't we?"
+          ]
         },
         {
           "n": "71",

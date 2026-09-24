@@ -11,7 +11,7 @@
   "to": "One Cherokee silversmith, Sequoyah, saw how important reading and writing was to the white man.", "expect": 1},
  {"item": "6-0289 d188 n7 KO", "files": ["content/ld_english_scripts.json"],
   "from": "한 체로키 학자인 Sequoyah는", "to": "한 체로키 은세공인이었던 Sequoyah는", "expect": 1},
- {"item": "6-0289 d188 hints (새 어려운 낱말 silversmith)", "files": ["content/lessons/ld/d188.json"],
+ {"item": "6-0289 d188 hints (새 어려운 낱말 silversmith)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d188.json"],
   "from": "Cherokee copy Sequoyah,", "to": "Cherokee copy silversmith Sequoyah,", "expect": 1},
 
  {"item": "6-0318 d200 n6 EN", "files": ["content/ld_english_scripts.json"],

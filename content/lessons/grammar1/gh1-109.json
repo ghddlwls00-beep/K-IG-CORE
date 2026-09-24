@@ -47,7 +47,9 @@
           "n": "37",
           "text": "They will be sophomores, won't they?",
           "alternatives": [
-            "They will become sophomores, won't they?"
+            "They will become sophomores, won't they?",
+            "They will be second-year students, won't they?",
+            "They will become second-year students, won't they?"
           ]
         },
         {
@@ -99,11 +101,20 @@
         },
         {
           "n": "44",
-          "text": "German is an elective, isn't it?"
+          "text": "German is an elective, isn't it?",
+          "alternatives": [
+            "German is an elective subject, isn't it?",
+            "German is an optional subject, isn't it?"
+          ]
         },
         {
           "n": "45",
-          "text": "How many English classes does he have a week?"
+          "text": "How many English classes does he have a week?",
+          "alternatives": [
+            "How many English classes does he have per week?",
+            "How many English classes does he have every week?",
+            "How many English classes does he have in a week?"
+          ]
         },
         {
           "n": "46",
@@ -127,11 +138,20 @@
         },
         {
           "n": "49",
-          "text": "Recently he opened a third, didn't he?"
+          "text": "Recently he opened a third, didn't he?",
+          "alternatives": [
+            "Recently he opened a third one, didn't he?",
+            "He recently opened a third, didn't he?",
+            "He recently opened a third one, didn't he?"
+          ]
         },
         {
           "n": "50",
-          "text": "They do not have time to get together, do they?"
+          "text": "They do not have time to get together, do they?",
+          "alternatives": [
+            "They do not have time to spend together, do they?",
+            "They do not have time to be together, do they?"
+          ]
         },
         {
           "n": "51",
@@ -150,11 +170,19 @@
         },
         {
           "n": "53",
-          "text": "When did he recommend a nearby candy shop?"
+          "text": "When did he recommend a nearby candy shop?",
+          "alternatives": [
+            "When did he recommend a nearby candy store?"
+          ]
         },
         {
           "n": "54",
-          "text": "Why did the President criticize the Japanese economy severely?"
+          "text": "Why did the President criticize the Japanese economy severely?",
+          "alternatives": [
+            "Why did the President severely criticize the Japanese economy?",
+            "Why did the President criticize the Japanese economy harshly?",
+            "Why did the President harshly criticize the Japanese economy?"
+          ]
         },
         {
           "n": "55",
@@ -169,7 +197,11 @@
         },
         {
           "n": "56",
-          "text": "The relief foundation is denying any link to terrorism, isn't it?"
+          "text": "The relief foundation is denying any link to terrorism, isn't it?",
+          "alternatives": [
+            "The relief foundation is denying any connection to terrorism, isn't it?",
+            "The relief foundation is denying any links to terrorism, isn't it?"
+          ]
         },
         {
           "n": "57",
@@ -212,7 +244,8 @@
           "n": "63",
           "text": "I've never seen your place.",
           "alternatives": [
-            "I've never seen your house."
+            "I've never seen your house.",
+            "I've never seen your home."
           ]
         },
         {
@@ -230,7 +263,10 @@
         },
         {
           "n": "66",
-          "text": "The government was freezing the assets of terrorist groups."
+          "text": "The government was freezing the assets of terrorist groups.",
+          "alternatives": [
+            "The government was freezing terrorist groups' assets."
+          ]
         },
         {
           "n": "67",
@@ -243,7 +279,12 @@
         },
         {
           "n": "68",
-          "text": "Where are many athletes training?"
+          "text": "Where are many athletes training?",
+          "alternatives": [
+            "Where are many players training?",
+            "Where are a lot of athletes training?",
+            "Where are lots of athletes training?"
+          ]
         },
         {
           "n": "69",

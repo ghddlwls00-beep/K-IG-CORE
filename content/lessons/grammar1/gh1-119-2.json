@@ -61,11 +61,18 @@
         },
         {
           "n": "60",
-          "text": "Who changed your opinion of Harvard people?"
+          "text": "Who changed your opinion of Harvard people?",
+          "alternatives": [
+            "Who changed your opinion about Harvard people?",
+            "Who changed your opinion on Harvard people?"
+          ]
         },
         {
           "n": "61",
-          "text": "They're not all like you, are they?"
+          "text": "They're not all like you, are they?",
+          "alternatives": [
+            "Not all of them are like you, are they?"
+          ]
         },
         {
           "n": "62",
@@ -95,7 +102,13 @@
           "alternatives": [
             "We are going to do that some other time.",
             "We will do that another time.",
-            "We will do that some other time."
+            "We will do that some other time.",
+            "We are going to do that next time.",
+            "We will do that next time.",
+            "We are going to do it another time.",
+            "We are going to do it some other time.",
+            "We will do it another time.",
+            "We will do it some other time."
           ]
         },
         {
@@ -104,7 +117,10 @@
         },
         {
           "n": "68",
-          "text": "You didn't say that, did you?"
+          "text": "You didn't say that, did you?",
+          "alternatives": [
+            "You didn't say such a thing, did you?"
+          ]
         },
         {
           "n": "69",
@@ -115,7 +131,10 @@
         },
         {
           "n": "70",
-          "text": "We went to college together, didn't we?"
+          "text": "We went to college together, didn't we?",
+          "alternatives": [
+            "We went to university together, didn't we?"
+          ]
         },
         {
           "n": "71",

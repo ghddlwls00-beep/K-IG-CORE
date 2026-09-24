@@ -73,11 +73,19 @@
         },
         {
           "n": "45",
-          "text": "Those claims are unreliable."
+          "text": "Those claims are unreliable.",
+          "alternatives": [
+            "Such claims are unreliable."
+          ]
         },
         {
           "n": "46",
-          "text": "Do they change their stories frequently?"
+          "text": "Do they change their stories frequently?",
+          "alternatives": [
+            "Do they often change their stories?",
+            "Do they change their stories often?",
+            "Do they frequently change their stories?"
+          ]
         },
         {
           "n": "47",
@@ -100,7 +108,10 @@
         },
         {
           "n": "51",
-          "text": "Could you just have a seat for a moment?"
+          "text": "Could you just have a seat for a moment?",
+          "alternatives": [
+            "Could you just sit down for a moment?"
+          ]
         },
         {
           "n": "52",
@@ -116,7 +127,10 @@
         },
         {
           "n": "55",
-          "text": "We are free men."
+          "text": "We are free men.",
+          "alternatives": [
+            "We are free people."
+          ]
         },
         {
           "n": "56",

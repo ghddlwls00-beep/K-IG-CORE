@@ -5,7 +5,7 @@
   "from": "The words cooks and broth are metaphors for people and projects.", "to": "The words \"cooks\" and \"broth\" are metaphors for people and projects.", "expect": 1},
  {"item": "6-0128 d107 힌트 — 대본에 없는 '83' 과 d108 n1 의 낱말 'publications' 가 붙어 있던 것을 뺌", "files": ["content/lessons/ld/d107.json"],
   "from": "two years, 17, Philadelphia 83.publications,", "to": "two years, 17, Philadelphia", "expect": 1},
- {"item": "6-0128 d108 힌트 — 'publications' 를 그 낱말이 나오는 d108(n1·n8)로", "files": ["content/lessons/ld/d108.json"],
+ {"item": "6-0128 d108 힌트 — 'publications' 를 그 낱말이 나오는 d108(n1·n8)로", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d108.json"],
   "from": "Poor Richard's Almanac, weather, sun, moon planets.", "to": "publications. Poor Richard's Almanac, weather, sun, moon planets.", "expect": 1},
  {"item": "6-0130 d108 n2 KO — 혹성 → 행성", "files": ["content/ld_english_scripts.json"],
   "from": "연감(almanac)은 날씨, 태양, 달, 혹성들에 있어서의 변화들에 대한 정보를 준다.", "to": "연감(almanac)은 날씨, 태양, 달, 행성의 변화에 대한 정보를 준다.", "expect": 1},

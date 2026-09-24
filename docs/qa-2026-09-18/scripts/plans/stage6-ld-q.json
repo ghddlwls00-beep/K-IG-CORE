@@ -2,7 +2,7 @@
  {"item": "6-0312 d197 n5 KO — 따옴표 짝·마침표·'충분히 놀랍게도' 직역", "files": ["content/ld_english_scripts.json"],
   "from": "그러나 충분히 놀랍게도 현대 서커스계의 가장 사랑받는 광대 중의 한 사람은 슬픈 얼굴을 한 “hobo\"다",
   "to": "그러나 놀랍게도 현대 서커스계에서 가장 사랑받는 광대 중 한 사람은 슬픈 얼굴을 한 “호보(hobo)”다.", "expect": 1},
- {"item": "6-0314 d198 n9 KO — '추방객' 은 없는 말", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0314 d198 n9 KO — '추방객' 은 없는 말", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "그는 호기심 때문에 진짜 사회적인 추방객이 되었다.", "to": "그는 호기심 때문에 완전히 사회에서 따돌림 받는 신세가 되었다.", "expect": 1},
  {"item": "6-0315 d199 n7 EN — 여성에게만 붙는 비하를 지금 흔히 쓰는 말처럼 단정(지금 쓰는 표현 아님) — 한 문장이라 기준 10 대로 과거의 쓰임으로", "files": ["content/ld_english_scripts.json"],
   "from": "Nowadays, a woman who is excessively curious may often be referred to as a modern Lot's wife.",

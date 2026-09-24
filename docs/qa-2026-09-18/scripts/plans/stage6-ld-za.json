@@ -12,7 +12,7 @@
  {"item": "6-0495 d178 n9 KO — 장기판(가로세로 선의 한국 장기) → 체스판 · 만 개", "files": ["content/ld_english_scripts.json"],
   "from": "그들은 만개의 흑색 사각형과 백색 사각형이 무작위로 놓여진 거대한 “장기판”을 만들었다.",
   "to": "그들은 만 개의 흑색 사각형과 백색 사각형이 무작위로 놓여진 거대한 “체스판”을 만들었다.", "expect": 1},
- {"item": "6-0494·6E-015 d178 n1 KO — 문장 끝 쉼표 (n2 목록은 6-0491 에서 고침)", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0494·6E-015 d178 n1 KO — 문장 끝 쉼표 (n2 목록은 6-0491 에서 고침)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "다음 숫자들을 읽어 보라. 십초 이상 걸리지 않을 것이다,", "to": "다음 숫자들을 읽어 보라. 십초 이상 걸리지 않을 것이다.", "expect": 1},
 
  {"item": "6-0496 d179 n4 EN — 직접 화법 따옴표 (d118 n6·n7 처럼 행마다 닫음)", "files": ["content/ld_english_scripts.json"],

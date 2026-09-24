@@ -1,0 +1,174 @@
+{
+ "base": "d2b50ca",
+ "break": "speech",
+ "changedCode": [
+  "src/components/LdLearningView.tsx",
+  "src/lib/curriculumPresentation.ts",
+  "src/lib/vocaSpeech.ts",
+  "src/lib/vocaUtils.ts"
+ ],
+ "counts": {
+  "단계 이름": 47,
+  "목록·검색 제목": 1623,
+  "강의 쪽 제목": 1623,
+  "소리 글": 1623,
+  "어원": 5831
+ },
+ "rows": [
+  {
+   "course": "phonics",
+   "id": "hv-01",
+   "kind": "어원",
+   "word": "antique",
+   "before": "ante/anti(고대의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품",
+   "after": "ante/anti(이전의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-01",
+   "kind": "어원",
+   "word": "precaution",
+   "before": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방조치",
+   "after": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방 조치"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-07",
+   "kind": "어원",
+   "word": "transfer",
+   "before": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근가다",
+   "after": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근 가다"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-50",
+   "kind": "소리 글",
+   "added": [
+    "complement ⟨ˈkɑːmpləmɛnt⟩"
+   ],
+   "removed": [
+    "complement"
+   ]
+  },
+  {
+   "course": "phonics",
+   "id": "hv-60",
+   "kind": "어원",
+   "word": "inspect",
+   "before": "in(안을) + spect(들여다보다) ➔ 문제 없는지 안쪽을 자세히 보다, 검사하다",
+   "after": "in(안을) + spect(들여다보다) ➔ 문제없는지 안쪽을 자세히 보다, 검사하다"
+  },
+  {
+   "course": "phonics",
+   "id": "hv-73",
+   "kind": "어원",
+   "word": "interview",
+   "before": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주보고 의견을 묻다, 면접/인터뷰",
+   "after": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주 보고 의견을 묻다, 면접/인터뷰"
+  },
+  {
+   "course": "phonics",
+   "id": "mv1-01",
+   "kind": "소리 글",
+   "added": [
+    "do ⟨ˈbreɪk⟩"
+   ],
+   "removed": [
+    "do"
+   ]
+  },
+  {
+   "course": "phonics",
+   "id": "mv3-03",
+   "kind": "어원",
+   "word": "inspect",
+   "before": "in(안을) + spect(들여다보다) ➔ 문제 없는지 안쪽을 자세히 보다, 검사하다",
+   "after": "in(안을) + spect(들여다보다) ➔ 문제없는지 안쪽을 자세히 보다, 검사하다"
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044",
+   "kind": "목록·검색 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044-1",
+   "kind": "목록·검색 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트 · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044",
+   "kind": "강의 쪽 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "English Model Pattern · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044-1",
+   "kind": "강의 쪽 제목",
+   "before": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   },
+   "after": {
+    "title": "제 44과 · 패턴 영작 훈련",
+    "subtitle": "한국어 대조 스크립트 · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다",
+    "badge": "🎙️ 마이크 채점",
+    "code": "Lesson 44"
+   }
+  }
+ ],
+ "extra": [
+  "phonics/mv1-01/소리 글"
+ ],
+ "missing": [],
+ "detailBad": [],
+ "pages": [
+  "/grammar2 (목록 · 검색)",
+  "/grammar2/gh2-044",
+  "/grammar2/gh2-044-1",
+  "/phonics/hv-01",
+  "/phonics/hv-07",
+  "/phonics/hv-50",
+  "/phonics/hv-60",
+  "/phonics/hv-73",
+  "/phonics/mv1-01",
+  "/phonics/mv3-03"
+ ]
+}

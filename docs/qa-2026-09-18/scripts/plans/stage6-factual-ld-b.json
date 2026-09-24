@@ -9,7 +9,7 @@
  {"item": "6-0152 d115 n2 EN", "files": ["content/ld_english_scripts.json"],
   "from": "Some societies, like the Maya and Aztec civilizations of Central America, built great cities with large buildings.",
   "to": "Some societies, like the Maya and Aztec civilizations of Mexico and Central America, built great cities with large buildings.", "expect": 1},
- {"item": "6-0152 d115 n2 KO", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0152 d115 n2 KO", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "중앙 아메리카의 마야 및 아즈텍 문명같은 몇몇 사회들은",
   "to": "멕시코와 중앙 아메리카의 마야 및 아즈텍 문명같은 몇몇 사회들은", "expect": 1},
  {"item": "6-0152 d115 hints", "files": ["content/lessons/ld/d115.json"],
@@ -24,7 +24,7 @@
  {"item": "6-0157 d116 n6 EN", "files": ["content/ld_english_scripts.json"],
   "from": "About 300,000 of them were living east of the Mississippi River.",
   "to": "Many of them were living east of the Mississippi River.", "expect": 1},
- {"item": "6-0157 d116 n6 KO", "files": ["content/ld_english_scripts.json"],
+ {"item": "6-0157 d116 n6 KO", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/ld_english_scripts.json"],
   "from": "그들 중의 약 30만명은 미시시피 강의 동쪽에 살고 있었다.",
   "to": "그들 중의 많은 사람들은 미시시피 강의 동쪽에 살고 있었다.", "expect": 1},
 

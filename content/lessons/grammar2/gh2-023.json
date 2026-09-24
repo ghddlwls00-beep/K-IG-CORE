@@ -44,7 +44,10 @@
         },
         {
           "n": "5",
-          "text": "How would you like your coffee?"
+          "text": "How would you like your coffee?",
+          "alternatives": [
+            "How do you want your coffee?"
+          ]
         },
         {
           "n": "6",
@@ -67,7 +70,10 @@
         },
         {
           "n": "10",
-          "text": "I would like to take your measurements."
+          "text": "I would like to take your measurements.",
+          "alternatives": [
+            "I want to take your measurements."
+          ]
         },
         {
           "n": "11",
@@ -112,7 +118,8 @@
           "n": "20",
           "text": "It is open Monday through Friday.",
           "alternatives": [
-            "That is open Monday through Friday."
+            "That is open Monday through Friday.",
+            "It is open from Monday to Friday."
           ]
         }
       ]

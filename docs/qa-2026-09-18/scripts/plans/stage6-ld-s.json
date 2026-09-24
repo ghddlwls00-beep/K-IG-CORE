@@ -13,7 +13,7 @@
  {"item": "6-0356 d243 n7 KO", "files": ["content/ld_english_scripts.json"],
   "from": "이런 어린 해적, 인디언, 귀신, 기타 등등이 맛있는 것을 구걸하기 위하여 앞쪽 현관에 모이는 것을 지켜보는 것은 꽤 즐겁다.",
   "to": "이런 어린 해적, 마녀, 귀신 등등이 단것을 얻으려고 현관 앞에 모여드는 것을 지켜보는 것은 꽤 즐겁다.", "expect": 1},
- {"item": "6-0356·6-0358 d243 힌트 — 'Indians' → 'witches' · 대본 'October 31st' · 'costumes.' 두 번", "files": ["content/lessons/ld/d243.json"],
+ {"item": "6-0356·6-0358 d243 힌트 — 'Indians' → 'witches' · 대본 'October 31st' · 'costumes.' 두 번", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d243.json"],
   "from": "October 31 Halloween witches, ghosts, devils. adults outlandish costumes. costumes goodies amusing pirates, Indians, ghosts,",
   "to": "October 31st Halloween witches, ghosts, devils. adults outlandish costumes. goodies amusing pirates, witches, ghosts,", "expect": 1},
  {"item": "6-0357 d243 n4 KO — return to = 돌아가다", "files": ["content/ld_english_scripts.json"],

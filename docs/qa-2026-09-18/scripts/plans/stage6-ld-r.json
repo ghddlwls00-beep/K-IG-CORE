@@ -1,7 +1,7 @@
 [
  {"item": "6-0334 d219 n3 KO — Strangely enough 의 enough 는 '충분히' 가 아님", "files": ["content/ld_english_scripts.json"],
   "from": "충분히 이상하게도 그 저자는", "to": "참 이상하게도 그 저자는", "expect": 1},
- {"item": "6-0337 d220 힌트 — 대본 n8 'nerve-wracking'(철자가 다르면 칩대로 친 답이 틀림)", "files": ["content/lessons/ld/d220.json"],
+ {"item": "6-0337 d220 힌트 — 대본 n8 'nerve-wracking'(철자가 다르면 칩대로 친 답이 틀림)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d220.json"],
   "from": "up being nerve-racking restful", "to": "up being nerve-wracking restful", "expect": 1},
  {"item": "6-0338 d220 n1 KO — prospect of -ing = 생각/기대", "files": ["content/ld_english_scripts.json"],
   "from": "휴가가는 전망은 언제나 신나는 것이다.", "to": "휴가를 간다는 생각은 언제나 신나는 일이다.", "expect": 1},

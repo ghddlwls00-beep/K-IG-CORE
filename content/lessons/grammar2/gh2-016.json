@@ -56,7 +56,10 @@
         },
         {
           "n": "8",
-          "text": "I will have soup first and then the chicken."
+          "text": "I will have soup first and then the chicken.",
+          "alternatives": [
+            "I will eat soup first and then the chicken."
+          ]
         },
         {
           "n": "9",
@@ -93,11 +96,17 @@
         },
         {
           "n": "15",
-          "text": "I did not have an apple."
+          "text": "I did not have an apple.",
+          "alternatives": [
+            "I did not eat an apple."
+          ]
         },
         {
           "n": "16",
-          "text": "Instead, I had a peach."
+          "text": "Instead, I had a peach.",
+          "alternatives": [
+            "Instead, I ate a peach."
+          ]
         },
         {
           "n": "17",

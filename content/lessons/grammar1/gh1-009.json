@@ -56,7 +56,10 @@
         },
         {
           "n": "6",
-          "text": "They were workers."
+          "text": "They were workers.",
+          "alternatives": [
+            "They were laborers."
+          ]
         },
         {
           "n": "7",
@@ -110,7 +113,10 @@
         },
         {
           "n": "18",
-          "text": "Were they healthy?"
+          "text": "Were they healthy?",
+          "alternatives": [
+            "Were they well?"
+          ]
         },
         {
           "n": "19",
@@ -214,7 +220,10 @@
         },
         {
           "n": "40",
-          "text": "Was it cold yesterday?"
+          "text": "Was it cold yesterday?",
+          "alternatives": [
+            "Was the weather cold yesterday?"
+          ]
         },
         {
           "n": "41",
@@ -222,7 +231,10 @@
         },
         {
           "n": "42",
-          "text": "It was warm yesterday."
+          "text": "It was warm yesterday.",
+          "alternatives": [
+            "Yesterday was warm."
+          ]
         }
       ]
     },

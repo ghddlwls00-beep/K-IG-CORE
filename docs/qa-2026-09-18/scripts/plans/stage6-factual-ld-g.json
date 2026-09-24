@@ -3,7 +3,7 @@
   "from": "Consequently, Picasso's art is called Cubism.", "to": "Consequently, the style he developed with Georges Braque is called Cubism.", "expect": 1},
  {"item": "6-0575 d268 n7 KO", "files": ["content/ld_english_scripts.json"],
   "from": "결과적으로 피카소의 미술은 입체파라고 불린다.", "to": "결과적으로 그가 조르주 브라크와 함께 만든 양식은 입체파라고 불린다.", "expect": 1},
- {"item": "6-0575 d268 hints (새 고유명사 Georges Braque)", "files": ["content/lessons/ld/d268.json"],
+ {"item": "6-0575 d268 hints (새 고유명사 Georges Braque)", "supersededBy": "gate15-fixes 관문 15(2026-09-24) — 내용 재검토 · 전수 읽기 고침", "files": ["content/lessons/ld/d268.json"],
   "from": "abstractions. essentials Picasso", "to": "abstractions. essentials Picasso Georges Braque", "expect": 1},
 
  {"item": "6-0579 d271 n3 EN", "files": ["content/ld_english_scripts.json"],
