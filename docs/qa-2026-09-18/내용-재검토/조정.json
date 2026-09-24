@@ -1,4 +1,48 @@
 {
+ "F:C04888": {
+  "결론": "표에 올림",
+  "까닭": "소유자 결정 1(2026-09-24 18:1x, 이 채팅 '2번은 변경하지 말고 나머지는 추천대로 해') — 옛 교재 꼴 'make + 사람 + amends' 를 만점 '다른 정답' 에서 뺌(오늘 사전은 make amends (to sb) 만 실음 · 뺀 꼴은 채점 코드로 70점)",
+  "종류": "③", "심각도": "중간", "확신": "높음",
+  "고칠 글": "(대체 답안 없음 — alternatives 를 [] 로)",
+  "고칠 곳": "content/lessons/grammar2/gh2-021.json — sentences n=13 .alternatives 에서 \"Let me make you amends for your loss.\" 를 뺌(모범 \"Let me make amends to you for your loss.\" 그대로)",
+  "새 음성 클립": false
+ },
+ "F:C00244": {
+  "결론": "표에서 뺌",
+  "까닭": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
+ },
+ "X:grammar1-b:0": {
+  "결론": "표에 올림",
+  "까닭": "소유자 결정 3(2026-09-24 18:1x — 추천대로: 모범 답안을 분명한 Not 꼴로). 결정 5 의 전제('모범 답안은 이미 Not all 꼴')가 이 강의에는 안 맞았음. 같은 강의 #80 과 같은 모양 — 모범 'Not …' · 옛 모범 'Every/All … not' 은 대체 답안(만점, 결정 5 와 같게)",
+  "종류": "③", "심각도": "중간", "확신": "높음",
+  "고칠 글": "모범(text): \"Not every boy lost his life, did he?\" / alternatives: [\"Not every boy lost his life, did they?\", \"Every boy didn't lose his life, did he?\"]",
+  "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=79 .text 와 .alternatives (분할본 없음 · 한국어 gh1-096 #79 그대로)",
+  "새 음성 클립": true
+ },
+ "X:grammar1-b:1": {
+  "결론": "표에 올림",
+  "까닭": "소유자 결정 3(2026-09-24 18:1x) — #79 와 같음",
+  "종류": "③", "심각도": "중간", "확신": "높음",
+  "고칠 글": "모범(text): \"Not all the boys protected their sisters, did they?\" / alternatives: [\"Not all of the boys protected their sisters, did they?\", \"All the boys didn't protect their sisters, did they?\"]",
+  "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=81 .text 와 .alternatives",
+  "새 음성 클립": true
+ },
+ "X:grammar1-b:2": {
+  "결론": "표에 올림",
+  "까닭": "소유자 결정 3(2026-09-24 18:1x) — #79 와 같음(지금 대체 답안 'All of them didn't smell that.' 도 그대로 둠)",
+  "종류": "③", "심각도": "중간", "확신": "높음",
+  "고칠 글": "모범(text): \"Not all of them smelled it.\" / alternatives: [\"Not all of them smelled that.\", \"All of them didn't smell it.\", \"All of them didn't smell that.\"]",
+  "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=83 .text 와 .alternatives",
+  "새 음성 클립": true
+ },
+ "X:grammar2:24": {
+  "결론": "표에 올림",
+  "까닭": "소유자 결정 4(2026-09-24 18:1x — 결정 3 '그것 = that 도 만점' 을 GRAMMAR II 에도). 이 재검토가 찾은 것은 이 문항 — GRAMMAR II 의 나머지 '그것' 문항은 수정 세션이 7-4 f G9 방법으로 목록을 만들어 하나씩(머리글 '소유자 답')",
+  "종류": "③", "심각도": "중간", "확신": "높음",
+  "고칠 글": "[\"I mean that.\"]",
+  "고칠 곳": "content/lessons/grammar2/gh2-027.json — sentences n=13 .alternatives 를 새로 만듦(모범 'I mean it.' 그대로)",
+  "새 음성 클립": false
+ },
  "OK:C03588": {
   "결론": "표에 올림", "문맥": true,
   "까닭": "확인 일꾼(맞음 3% 가린 채)이 찾음 — 줄 'No boy likes that.' 은 맞고, 9/18 전부터 있던 gh1-060/061 #30 대체 답안 빈틈('No boys like it.' · 'None of the boys like it.' 0점). 같은 과정 gh1-016/017 #6 은 같은 틀을 받음 → 옆 글 ③ 중간(기준 풀이 5 — 맞는 답 0점). 판정 일꾼이 놓친 줄로는 세지 않음(그 줄 자체는 맞음)",

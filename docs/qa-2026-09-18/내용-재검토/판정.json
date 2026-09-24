@@ -9,12 +9,12 @@
   "안닿음": 9476,
   "판정": 5652,
   "판정안됨": 0,
-  "틀림_건": 245,
-  "틀림_줄": 282,
+  "틀림_건": 246,
+  "틀림_줄": 283,
   "틀림_심각도": {
    "심각": 0,
    "높음": 3,
-   "중간": 167,
+   "중간": 168,
    "낮음": 75
   },
   "옆글_건": 361,
@@ -24,7 +24,7 @@
    "중간": 70,
    "낮음": 290
   },
-  "판단필요": 2,
+  "판단필요": 0,
   "결정과다름": 0,
   "확인에서뒤집힘": 0,
   "확인대기": 0,
@@ -1665,7 +1665,7 @@
    "id": "C00244",
    "조각": "student",
    "칸": "student.sentences.items.text",
-   "판정": "판단 필요",
+   "판정": "맞음",
    "까닭": "STUDENT s11-1 은 6-R 로 되살린 원본 글(소유자 '원본으로 다 되살려', 2026-09-23). 영어 · 한국어 · 짝은 모두 맞음. 다만 #2 'On Saturdays, we only go to school in the morning.'(토요일에, 우리는 아침에만 학교에 갑니다) 과 그것을 전제로 한 #3 'Once we come home for lunch, we are free for the day.' 는 옛 토요일 오전 수업을 그림 — 한국 초 · 중 · 고는 2012년 주 5일 수업제 전면 시행 뒤 토요일 정규 수업이 없음. 학습자가 자기 이야기로 외워 말하는 본보기 글이라 지금 학생에게는 사실과 다른 말이 됨. 원본을 되살린 결정 · 옛 글을 다루는 방침(LISTENING 결정표 6 은 영어 그대로 + 한국어 알림, 그러나 STUDENT 한국어는 소리를 내서 알림 줄을 붙이기 어려움)이 걸려 판단 필요로.",
    "추천안": "#2 · #3 두 문장만 지금 학교 생활에 맞게 고침 — #2 EN 'On Saturdays, we don’t go to school.' / KO '토요일에 우리는 학교에 가지 않습니다.' · #3 EN 'We are free for the whole day.' / KO '우리는 하루 종일 자유입니다.' (content/lessons/student/s11-1.json .blocks[1].items[1] · items[2] · .blocks[3] · .blocks[4] — 새 음성 클립 4). 뒤 문장(#4 학원에 안 감 · #5~#8 친구 · 생일 · 노래방 · 컴퓨터)과 제목 'Saturday Afternoon' 은 그대로 이어짐.",
    "묶음": [
@@ -1673,13 +1673,14 @@
     "C00255",
     "C00245",
     "C00256"
-   ]
+   ],
+   "조정": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
   },
   {
    "id": "C00245",
    "조각": "student",
    "칸": "student.sentences.items.text",
-   "판정": "판단 필요",
+   "판정": "맞음",
    "까닭": "STUDENT s11-1 은 6-R 로 되살린 원본 글(소유자 '원본으로 다 되살려', 2026-09-23). 영어 · 한국어 · 짝은 모두 맞음. 다만 #2 'On Saturdays, we only go to school in the morning.'(토요일에, 우리는 아침에만 학교에 갑니다) 과 그것을 전제로 한 #3 'Once we come home for lunch, we are free for the day.' 는 옛 토요일 오전 수업을 그림 — 한국 초 · 중 · 고는 2012년 주 5일 수업제 전면 시행 뒤 토요일 정규 수업이 없음. 학습자가 자기 이야기로 외워 말하는 본보기 글이라 지금 학생에게는 사실과 다른 말이 됨. 원본을 되살린 결정 · 옛 글을 다루는 방침(LISTENING 결정표 6 은 영어 그대로 + 한국어 알림, 그러나 STUDENT 한국어는 소리를 내서 알림 줄을 붙이기 어려움)이 걸려 판단 필요로.",
    "추천안": "#2 · #3 두 문장만 지금 학교 생활에 맞게 고침 — #2 EN 'On Saturdays, we don’t go to school.' / KO '토요일에 우리는 학교에 가지 않습니다.' · #3 EN 'We are free for the whole day.' / KO '우리는 하루 종일 자유입니다.' (content/lessons/student/s11-1.json .blocks[1].items[1] · items[2] · .blocks[3] · .blocks[4] — 새 음성 클립 4). 뒤 문장(#4 학원에 안 감 · #5~#8 친구 · 생일 · 노래방 · 컴퓨터)과 제목 'Saturday Afternoon' 은 그대로 이어짐.",
    "묶음": [
@@ -1687,7 +1688,8 @@
     "C00255",
     "C00245",
     "C00256"
-   ]
+   ],
+   "조정": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
   },
   {
    "id": "C00246",
@@ -1747,7 +1749,7 @@
    "id": "C00255",
    "조각": "student",
    "칸": "student.paragraph.text",
-   "판정": "판단 필요",
+   "판정": "맞음",
    "까닭": "STUDENT s11-1 은 6-R 로 되살린 원본 글(소유자 '원본으로 다 되살려', 2026-09-23). 영어 · 한국어 · 짝은 모두 맞음. 다만 #2 'On Saturdays, we only go to school in the morning.'(토요일에, 우리는 아침에만 학교에 갑니다) 과 그것을 전제로 한 #3 'Once we come home for lunch, we are free for the day.' 는 옛 토요일 오전 수업을 그림 — 한국 초 · 중 · 고는 2012년 주 5일 수업제 전면 시행 뒤 토요일 정규 수업이 없음. 학습자가 자기 이야기로 외워 말하는 본보기 글이라 지금 학생에게는 사실과 다른 말이 됨. 원본을 되살린 결정 · 옛 글을 다루는 방침(LISTENING 결정표 6 은 영어 그대로 + 한국어 알림, 그러나 STUDENT 한국어는 소리를 내서 알림 줄을 붙이기 어려움)이 걸려 판단 필요로.",
    "추천안": "#2 · #3 두 문장만 지금 학교 생활에 맞게 고침 — #2 EN 'On Saturdays, we don’t go to school.' / KO '토요일에 우리는 학교에 가지 않습니다.' · #3 EN 'We are free for the whole day.' / KO '우리는 하루 종일 자유입니다.' (content/lessons/student/s11-1.json .blocks[1].items[1] · items[2] · .blocks[3] · .blocks[4] — 새 음성 클립 4). 뒤 문장(#4 학원에 안 감 · #5~#8 친구 · 생일 · 노래방 · 컴퓨터)과 제목 'Saturday Afternoon' 은 그대로 이어짐.",
    "묶음": [
@@ -1755,13 +1757,14 @@
     "C00255",
     "C00245",
     "C00256"
-   ]
+   ],
+   "조정": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
   },
   {
    "id": "C00256",
    "조각": "student",
    "칸": "student.paragraph.text",
-   "판정": "판단 필요",
+   "판정": "맞음",
    "까닭": "STUDENT s11-1 은 6-R 로 되살린 원본 글(소유자 '원본으로 다 되살려', 2026-09-23). 영어 · 한국어 · 짝은 모두 맞음. 다만 #2 'On Saturdays, we only go to school in the morning.'(토요일에, 우리는 아침에만 학교에 갑니다) 과 그것을 전제로 한 #3 'Once we come home for lunch, we are free for the day.' 는 옛 토요일 오전 수업을 그림 — 한국 초 · 중 · 고는 2012년 주 5일 수업제 전면 시행 뒤 토요일 정규 수업이 없음. 학습자가 자기 이야기로 외워 말하는 본보기 글이라 지금 학생에게는 사실과 다른 말이 됨. 원본을 되살린 결정 · 옛 글을 다루는 방침(LISTENING 결정표 6 은 영어 그대로 + 한국어 알림, 그러나 STUDENT 한국어는 소리를 내서 알림 줄을 붙이기 어려움)이 걸려 판단 필요로.",
    "추천안": "#2 · #3 두 문장만 지금 학교 생활에 맞게 고침 — #2 EN 'On Saturdays, we don’t go to school.' / KO '토요일에 우리는 학교에 가지 않습니다.' · #3 EN 'We are free for the whole day.' / KO '우리는 하루 종일 자유입니다.' (content/lessons/student/s11-1.json .blocks[1].items[1] · items[2] · .blocks[3] · .blocks[4] — 새 음성 클립 4). 뒤 문장(#4 학원에 안 감 · #5~#8 친구 · 생일 · 노래방 · 컴퓨터)과 제목 'Saturday Afternoon' 은 그대로 이어짐.",
    "묶음": [
@@ -1769,7 +1772,8 @@
     "C00255",
     "C00245",
     "C00256"
-   ]
+   ],
+   "조정": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
   },
   {
    "id": "C00257",
@@ -30477,12 +30481,19 @@
    "id": "C04888",
    "조각": "grammar2",
    "칸": "grammar2.sentences.items.alternatives",
-   "판정": "판단 필요",
+   "판정": "틀림",
+   "종류": "③",
+   "심각도": "중간",
+   "확신": "높음",
    "까닭": "고친 세션이 모범과 대체 답안을 맞바꿔 표준 꼴(make amends to you)을 모범으로 올린 것은 맞음. 다만 옛 교재 꼴 'make + 사람 + amends' 는 오늘 영어 사전(Oxford Learner's · Longman · Cambridge)에 'make amends (to sb) (for sth)' 로만 실리는 옛 꼴이라, 화면 '다른 정답' 에 만점 정답으로 보이면 학습자가 표준 꼴로 익힐 수 있음. 틀린 영어라고 잘라 말하기는 어려워(옛 문헌에 쓰임) 판단 필요로.",
+   "고칠 글": "(대체 답안 없음 — alternatives 를 [] 로)",
+   "고칠 곳": "content/lessons/grammar2/gh2-021.json — sentences n=13 .alternatives 에서 \"Let me make you amends for your loss.\" 를 뺌(모범 \"Let me make amends to you for your loss.\" 그대로)",
+   "새 음성 클립": false,
    "추천안": "gh2-021 #13 대체 답안에서 \"Let me make you amends for your loss.\" 를 뺀다(그 꼴은 채점 코드로 70점이 됨 — 확인함). 모범 \"Let me make amends to you for your loss.\" 만 만점.",
    "묶음": [
     "C04888"
-   ]
+   ],
+   "조정": "소유자 결정 1(2026-09-24 18:1x, 이 채팅 '2번은 변경하지 말고 나머지는 추천대로 해') — 옛 교재 꼴 'make + 사람 + amends' 를 만점 '다른 정답' 에서 뺌(오늘 사전은 make amends (to sb) 만 실음 · 뺀 꼴은 채점 코드로 70점)"
   },
   {
    "id": "C04889",
@@ -94626,7 +94637,7 @@
    "출처": "1부 문맥",
    "조각": "grammar1-b",
    "ids": [],
-   "확인방식": "둘 다 틀림(심각·높음 전부 확인)",
+   "확인방식": "이 세션이 조정(소유자 결정 3(2026-09-24 18:1x — 추천대로: 모범 답안을 분명한 Not 꼴로). 결정 5 의 전제('모범 답안은 이미 Not all 꼴')가 이 강의에는 안 맞았음. 같은 강의 #80 과 같은 모양 — 모범 'Not …' · 옛 모범 'Every/All … not' 은 대체 답안(만점, 결정 5 와 같게))",
    "최종": {
     "판정": "틀림",
     "파일": "content/lessons/grammar1/gh1-097.json",
@@ -94636,9 +94647,11 @@
     "심각도": "중간",
     "확신": "높음",
     "까닭": "부분 부정(~지는 않았지) 문항인데 분명한 부분 부정 꼴 'Not every boy lost his life, did he?' 가 앱 채점기로 incorrect(0점, 이 작업 트리 글로 잼 — 'did they?' 꼴도 0점). 결정 5 는 'All … not' 꼴을 만점으로 '둔다' 는 것이고, 그 까닭이 '모범 답안은 이미 분명한 Not all …' 이었는데 gh1-097 은 모범 답안이 'Every … not' 이고 Not every 꼴은 막혀 있음. 같은 강의 #80 은 이번에 모범 답안이 'Not everybody wore glasses, did they?' 로 바뀌어 한 강의 안에서 갈림. 바뀐 줄이 아니라 문맥으로 적음(모범 답안을 Not every 로 바꿀지는 소유자 몫 — 대체 답안만 더하면 새 클립 없음).",
-    "고칠 글": "[\"Not every boy lost his life, did he?\", \"Not every boy lost his life, did they?\"]",
-    "새 음성 클립": false,
-    "배치": "2026-09-24 16:01"
+    "고칠 글": "모범(text): \"Not every boy lost his life, did he?\" / alternatives: [\"Not every boy lost his life, did they?\", \"Every boy didn't lose his life, did he?\"]",
+    "새 음성 클립": true,
+    "배치": "2026-09-24 16:01",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=79 .text 와 .alternatives (분할본 없음 · 한국어 gh1-096 #79 그대로)",
+    "조정까닭": "소유자 결정 3(2026-09-24 18:1x — 추천대로: 모범 답안을 분명한 Not 꼴로). 결정 5 의 전제('모범 답안은 이미 Not all 꼴')가 이 강의에는 안 맞았음. 같은 강의 #80 과 같은 모양 — 모범 'Not …' · 옛 모범 'Every/All … not' 은 대체 답안(만점, 결정 5 와 같게)"
    },
    "확인": {
     "key": "X:0",
@@ -94649,7 +94662,16 @@
     "까닭": "gh1-096/097 #79 '모든 소년이 목숨을 잃지는 않았지?(Every)' ↔ 'Every boy didn't lose his life, did he?' · 다른 정답 없음(작업 트리로 확인). 스크래치 채점으로 'Not every boy lost his life, did he?' · '…, did they?' 모두 incorrect(0점) 직접 확인. 같은 과정 gh1-068/069 #79 는 모범 답안이 'Not every boy received a prize, did he?'(다른 정답 '…did they?' · 'Every boy didn't …') — 과정이 모범 답안으로 가르친 꼴이 여기선 0점이고, 같은 강의 #80 도 이제 'Not everybody …' 가 모범 답안. 결정 5(6-1393)는 gh1-061 #31 · gh1-069 #79 · #81 · #82 · #83 의 'All … not' 대체 답안 다섯을 만점으로 '둔' 것 — 이 문항과 무관하고, Not every 꼴을 더해도 All … not 꼴은 그대로라 결정을 다시 따지지 않음. 틀림(③)은 동의. 심각도만 바꿈: 기록.md 기준 풀이 5 로 '맞는 답을 막음(0점) = 중간'. 모범 답안 'Every … not' 은 결정 5 가 부분 부정으로 인정한 꼴이라 '모범 · 대체 답안이 모두 한국어 뜻을 빠뜨림(높음)' 에 들지 않음. 고칠 글은 gh1-069 #79 의 짝과 같은 꼴 — 맞는 영어 · 같은 뜻, 대체 답안이라 새 클립 없음.",
     "때": "2026-09-24 16:30"
    },
-   "조정": null
+   "조정": {
+    "결론": "표에 올림",
+    "까닭": "소유자 결정 3(2026-09-24 18:1x — 추천대로: 모범 답안을 분명한 Not 꼴로). 결정 5 의 전제('모범 답안은 이미 Not all 꼴')가 이 강의에는 안 맞았음. 같은 강의 #80 과 같은 모양 — 모범 'Not …' · 옛 모범 'Every/All … not' 은 대체 답안(만점, 결정 5 와 같게)",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "고칠 글": "모범(text): \"Not every boy lost his life, did he?\" / alternatives: [\"Not every boy lost his life, did they?\", \"Every boy didn't lose his life, did he?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=79 .text 와 .alternatives (분할본 없음 · 한국어 gh1-096 #79 그대로)",
+    "새 음성 클립": true
+   }
   },
   {
    "key": "X:1",
@@ -94657,7 +94679,7 @@
    "출처": "1부 문맥",
    "조각": "grammar1-b",
    "ids": [],
-   "확인방식": "둘 다 틀림(심각·높음 전부 확인)",
+   "확인방식": "이 세션이 조정(소유자 결정 3(2026-09-24 18:1x) — #79 와 같음)",
    "최종": {
     "판정": "틀림",
     "파일": "content/lessons/grammar1/gh1-097.json",
@@ -94667,9 +94689,11 @@
     "심각도": "중간",
     "확신": "높음",
     "까닭": "부분 부정 문항인데 'Not all the boys protected their sisters, did they?' 가 앱 채점기로 incorrect(0점), 'Not all of the boys …' 는 partial(70점). 분명한 부분 부정 꼴이 막힘(#79 와 같은 까닭 — 결정 5 의 전제 '모범 답안은 Not all' 이 이 강의에선 성립 안 함).",
-    "고칠 글": "[\"Not all the boys protected their sisters, did they?\", \"Not all of the boys protected their sisters, did they?\"]",
-    "새 음성 클립": false,
-    "배치": "2026-09-24 16:01"
+    "고칠 글": "모범(text): \"Not all the boys protected their sisters, did they?\" / alternatives: [\"Not all of the boys protected their sisters, did they?\", \"All the boys didn't protect their sisters, did they?\"]",
+    "새 음성 클립": true,
+    "배치": "2026-09-24 16:01",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=81 .text 와 .alternatives",
+    "조정까닭": "소유자 결정 3(2026-09-24 18:1x) — #79 와 같음"
    },
    "확인": {
     "key": "X:1",
@@ -94680,7 +94704,16 @@
     "까닭": "gh1-096/097 #81 '그 모든 소년들이 그들의 누이를 보호하지는 않았지?' ↔ 'All the boys didn't protect their sisters, did they?' · 다른 정답 없음. 스크래치 채점으로 'Not all the boys protected their sisters, did they?' = incorrect(0점) · 'Not all of the boys …' = partial(70) 직접 확인. gh1-069 #81 은 모범 답안 'Not all the boys received a prize, did they?' + 다른 정답 'Not all of the boys …' — 같은 꼴이 여기선 막힘. 결정 5 와 무관(X:0 과 같은 까닭). 틀림(③) 동의, 심각도는 기준 풀이 5 대로 중간(가장 곧은 꼴이 0점 · 모범 답안은 결정 5 가 인정한 꼴). 고칠 글 맞는 영어 · 같은 뜻 · 새 클립 없음.",
     "때": "2026-09-24 16:30"
    },
-   "조정": null
+   "조정": {
+    "결론": "표에 올림",
+    "까닭": "소유자 결정 3(2026-09-24 18:1x) — #79 와 같음",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "고칠 글": "모범(text): \"Not all the boys protected their sisters, did they?\" / alternatives: [\"Not all of the boys protected their sisters, did they?\", \"All the boys didn't protect their sisters, did they?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=81 .text 와 .alternatives",
+    "새 음성 클립": true
+   }
   },
   {
    "key": "X:2",
@@ -94688,7 +94721,7 @@
    "출처": "1부 문맥",
    "조각": "grammar1-b",
    "ids": [],
-   "확인방식": "둘 다 틀림(심각·높음 전부 확인)",
+   "확인방식": "이 세션이 조정(소유자 결정 3(2026-09-24 18:1x) — #79 와 같음(지금 대체 답안 'All of them didn't smell that.' 도 그대로 둠))",
    "최종": {
     "판정": "틀림",
     "파일": "content/lessons/grammar1/gh1-097.json",
@@ -94698,9 +94731,11 @@
     "심각도": "중간",
     "확신": "높음",
     "까닭": "부분 부정 문항인데 'Not all of them smelled it.' 가 앱 채점기로 incorrect(0점). gh1-069 #82 · #83(같은 꼴 '그들 모두가 오지는 않(았)다')은 모범 답안이 'Not all of them come/came.' 인데 여기선 그 꼴이 0점. 이번에 더한 C04173 'All of them didn't smell that.' 은 결정 3 · 5 대로라 맞음으로 판정하고, 빠진 Not all 꼴만 문맥으로 적음.",
-    "고칠 글": "[\"All of them didn't smell that.\", \"Not all of them smelled it.\", \"Not all of them smelled that.\"]",
-    "새 음성 클립": false,
-    "배치": "2026-09-24 16:01"
+    "고칠 글": "모범(text): \"Not all of them smelled it.\" / alternatives: [\"Not all of them smelled that.\", \"All of them didn't smell it.\", \"All of them didn't smell that.\"]",
+    "새 음성 클립": true,
+    "배치": "2026-09-24 16:01",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=83 .text 와 .alternatives",
+    "조정까닭": "소유자 결정 3(2026-09-24 18:1x) — #79 와 같음(지금 대체 답안 'All of them didn't smell that.' 도 그대로 둠)"
    },
    "확인": {
     "key": "X:2",
@@ -94711,7 +94746,16 @@
     "까닭": "gh1-096/097 #83 '그들 모두가 그것을 냄새 맡지는 않았다.' ↔ 'All of them didn't smell it.' · 다른 정답 'All of them didn't smell that.'(C04173, 결정 3 that 꼴 — 맞음). 스크래치 채점으로 'Not all of them smelled it.' · '… that.' 모두 incorrect(0점) 직접 확인. gh1-069 #83 '그들 모두가 오지는 않았다.' 는 모범 답안 'Not all of them came.' — 같은 꼴이 여기선 0점. 결정 5 와 무관(X:0 과 같은 까닭). 틀림(③) 동의, 심각도는 기준 풀이 5 대로 중간. 고칠 글은 있던 대체 답안을 둔 채 두 꼴을 더한 칸 전체 — 맞는 영어 · 같은 뜻 · 새 클립 없음.",
     "때": "2026-09-24 16:30"
    },
-   "조정": null
+   "조정": {
+    "결론": "표에 올림",
+    "까닭": "소유자 결정 3(2026-09-24 18:1x) — #79 와 같음(지금 대체 답안 'All of them didn't smell that.' 도 그대로 둠)",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "고칠 글": "모범(text): \"Not all of them smelled it.\" / alternatives: [\"Not all of them smelled that.\", \"All of them didn't smell it.\", \"All of them didn't smell that.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-097.json — sentences n=83 .text 와 .alternatives",
+    "새 음성 클립": true
+   }
   },
   {
    "key": "X:3",
@@ -94883,16 +94927,16 @@
   },
   {
    "key": "F:C04888",
-   "상태": "판단 필요",
+   "상태": "표에 올림",
    "출처": "1부",
    "조각": "grammar2",
    "ids": [
     "C04888"
    ],
-   "확인방식": "확인 일꾼이 봄",
+   "확인방식": "이 세션이 조정(소유자 결정 1(2026-09-24 18:1x, 이 채팅 '2번은 변경하지 말고 나머지는 추천대로 해') — 옛 교재 꼴 'make + 사람 + amends' 를 만점 '다른 정답' 에서 뺌(오늘 사전은 make amends (to sb) 만 실음 · 뺀 꼴은 채점 코드로 70점))",
    "최종": {
     "id": "C04888",
-    "판정": "판단 필요",
+    "판정": "틀림",
     "추천안": "gh2-021 #13 대체 답안에서 \"Let me make you amends for your loss.\" 를 뺀다(그 꼴은 채점 코드로 70점이 됨 — 확인함). 모범 \"Let me make amends to you for your loss.\" 만 만점.",
     "까닭": "고친 세션이 모범과 대체 답안을 맞바꿔 표준 꼴(make amends to you)을 모범으로 올린 것은 맞음. 다만 옛 교재 꼴 'make + 사람 + amends' 는 오늘 영어 사전(Oxford Learner's · Longman · Cambridge)에 'make amends (to sb) (for sth)' 로만 실리는 옛 꼴이라, 화면 '다른 정답' 에 만점 정답으로 보이면 학습자가 표준 꼴로 익힐 수 있음. 틀린 영어라고 잘라 말하기는 어려워(옛 문헌에 쓰임) 판단 필요로.",
     "다른 길": "그대로 둠 — 이 과가 make + 간접목적어 + 직접목적어(make you an apology · make you a new dress)를 가르치고, 교재 원래 꼴이라 만점으로 받아 줌.",
@@ -94900,7 +94944,14 @@
     "묶음": [
      "C04888"
     ],
-    "배치": "2026-09-24 16:02"
+    "배치": "2026-09-24 16:02",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "고칠 글": "(대체 답안 없음 — alternatives 를 [] 로)",
+    "고칠 곳": "content/lessons/grammar2/gh2-021.json — sentences n=13 .alternatives 에서 \"Let me make you amends for your loss.\" 를 뺌(모범 \"Let me make amends to you for your loss.\" 그대로)",
+    "새 음성 클립": false,
+    "조정까닭": "소유자 결정 1(2026-09-24 18:1x, 이 채팅 '2번은 변경하지 말고 나머지는 추천대로 해') — 옛 교재 꼴 'make + 사람 + amends' 를 만점 '다른 정답' 에서 뺌(오늘 사전은 make amends (to sb) 만 실음 · 뺀 꼴은 채점 코드로 70점)"
    },
    "확인": {
     "key": "F:C04888",
@@ -94909,7 +94960,16 @@
     "까닭": "판단 필요가 맞음. gh2-021 #13 지금 모범 'Let me make amends to you for your loss.' · 다른 정답 'Let me make you amends for your loss.' — 대체 답안은 GrammarLearningView 927-929 '다른 정답' · 1278 '(또는: …)' 에 보이고 채점에 쓰임(닿음). 모범과 대체를 맞바꿔 오늘 표준 꼴 make amends (to sb) (for sth) 을 모범으로 올린 것은 맞음. 남긴 'make + 사람 + amends' 는 옛 문헌에 쓰인 꼴이라 틀린 영어(①)로 단정하기 어렵지만 현대 학습 사전에는 없는 꼴 — 이 과(make 4형식 틀)가 가르치는 꼴과 현대 용법 사이의 교육 방침 문제라 소유자 몫. 추천안의 사실도 맞음: 대체 답안에서 빼면 그 꼴은 모범에 대해 partial(70점) — 채점기 src/lib/grammarGrading.ts 를 그대로 불러(스크래치 g2v.cjs — 'napkin into a banana' 0점 · 'triangel' 70점 먼저 확인) 재현. 확인 일꾼도 추천안(빼기)에 기움. 표본 S:/grammar2/gh2-021-1:T26 과 같은 문항이라 소유자 질문은 하나로 묶을 것.",
     "때": "2026-09-24 16:42"
    },
-   "조정": null
+   "조정": {
+    "결론": "표에 올림",
+    "까닭": "소유자 결정 1(2026-09-24 18:1x, 이 채팅 '2번은 변경하지 말고 나머지는 추천대로 해') — 옛 교재 꼴 'make + 사람 + amends' 를 만점 '다른 정답' 에서 뺌(오늘 사전은 make amends (to sb) 만 실음 · 뺀 꼴은 채점 코드로 70점)",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "고칠 글": "(대체 답안 없음 — alternatives 를 [] 로)",
+    "고칠 곳": "content/lessons/grammar2/gh2-021.json — sentences n=13 .alternatives 에서 \"Let me make you amends for your loss.\" 를 뺌(모범 \"Let me make amends to you for your loss.\" 그대로)",
+    "새 음성 클립": false
+   }
   },
   {
    "key": "F:C05061",
@@ -95574,7 +95634,7 @@
    "출처": "1부 문맥",
    "조각": "grammar2",
    "ids": [],
-   "확인방식": "둘 다 틀림(심각·높음 전부 확인)",
+   "확인방식": "이 세션이 조정(소유자 결정 4(2026-09-24 18:1x — 결정 3 '그것 = that 도 만점' 을 GRAMMAR II 에도). 이 재검토가 찾은 것은 이 문항 — GRAMMAR II 의 나머지 '그것' 문항은 수정 세션이 7-4 f G9 방법으로 목록을 만들어 하나씩(머리글 '소유자 답'))",
    "최종": {
     "판정": "틀림",
     "파일": "content/lessons/grammar2/gh2-027.json",
@@ -95582,11 +95642,13 @@
     "지금": "(대체 답안 없음) 모범: I mean it.",
     "종류": "③",
     "심각도": "중간",
-    "확신": "보통",
+    "확신": "높음",
     "까닭": "'나는 그것을 의미한다(정말이야).' 의 \"I mean that.\" 이 0점(3낱말 중 2낱말만 같아 70% 미만 — 채점 코드로 확인). GRAMMAR I 의 'mean it' 세 문항(gh1-091 #33 · #34 · gh1-099 #106)은 7단계 판단 a(3차 점검 '같은 뜻으로 흔히 씀')로 'mean that' 을 만점으로 더했으나, 결정 3(G9)이 GRAMMAR I 만 다뤄 GRAMMAR II 의 이 문항은 빠짐. 같은 표현이 과정에 따라 만점 / 0점으로 갈림. 결정 범위 문제라 확신 보통.",
     "고칠 글": "[\"I mean that.\"]",
     "새 음성 클립": false,
-    "배치": "2026-09-24 16:05"
+    "배치": "2026-09-24 16:05",
+    "고칠 곳": "content/lessons/grammar2/gh2-027.json — sentences n=13 .alternatives 를 새로 만듦(모범 'I mean it.' 그대로)",
+    "조정까닭": "소유자 결정 4(2026-09-24 18:1x — 결정 3 '그것 = that 도 만점' 을 GRAMMAR II 에도). 이 재검토가 찾은 것은 이 문항 — GRAMMAR II 의 나머지 '그것' 문항은 수정 세션이 7-4 f G9 방법으로 목록을 만들어 하나씩(머리글 '소유자 답')"
    },
    "확인": {
     "key": "X:24",
@@ -95596,7 +95658,16 @@
     "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)), 확신 보통도 무난. 재현: 'I mean that.' = incorrect(3낱말 중 2낱말). '정말이야' 뜻으로 흔히 쓰는 맞는 영어이고, 같은 표현이 GRAMMAR I 에서는 만점(gh1-091 #33 · #34 · gh1-099 #106 에 'mean that' 대체 답안 — 파일로 확인)인데 여기서는 0점. 결정 3(G9)은 GRAMMAR I 문항만 다뤘을 뿐 GRAMMAR II 에서 막으라는 결정이 아니라 결정을 다시 따지는 것 아님. 고칠 글 모의 채점 exact · 'I mean this.' · \"I don't mean it.\" 0점. 닿음.",
     "때": "2026-09-24 16:42"
    },
-   "조정": null
+   "조정": {
+    "결론": "표에 올림",
+    "까닭": "소유자 결정 4(2026-09-24 18:1x — 결정 3 '그것 = that 도 만점' 을 GRAMMAR II 에도). 이 재검토가 찾은 것은 이 문항 — GRAMMAR II 의 나머지 '그것' 문항은 수정 세션이 7-4 f G9 방법으로 목록을 만들어 하나씩(머리글 '소유자 답')",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "고칠 글": "[\"I mean that.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-027.json — sentences n=13 .alternatives 를 새로 만듦(모범 'I mean it.' 그대로)",
+    "새 음성 클립": false
+   }
   },
   {
    "key": "X:25",
@@ -111500,7 +111571,7 @@
   },
   {
    "key": "F:C00244",
-   "상태": "판단 필요",
+   "상태": "표에서 뺌",
    "출처": "1부",
    "조각": "student",
    "ids": [
@@ -111509,7 +111580,7 @@
     "C00245",
     "C00256"
    ],
-   "확인방식": "확인 일꾼이 봄",
+   "확인방식": "이 세션이 조정(소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로))",
    "최종": {
     "id": "C00244",
     "판정": "판단 필요",
@@ -111523,7 +111594,8 @@
      "C00245",
      "C00256"
     ],
-    "배치": "2026-09-24 16:12"
+    "배치": "2026-09-24 16:12",
+    "조정까닭": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
    },
    "확인": {
     "key": "F:C00244",
@@ -111532,7 +111604,10 @@
     "까닭": "판단 필요가 맞음. s11-1 #2 · #3 EN(.blocks[1].items[1] · [2]) · KO(.blocks[3] · [4]) 경로 · 짝 확인 — 글 자체(영어 문법 · 한국어 뜻 · 짝 · 차례)는 맞음. 사실 확인: 토요 휴업은 2005 월 1회 → 2006 월 2회 → 2012년 3월 주 5일 수업제 전면 시행이라 '토요일엔 오전만 학교' 는 지금 초등학생에게 사실과 다름(자기 이야기로 외우는 본보기 글). 그러나 (1) 소유자가 6-R 로 '원본으로 다 되살려' 한 과이고 원본에서 벗어나는 고침은 소유자 허락 사항, (2) 옛 시점 글 방침(LISTENING 결정표 6: 영어 그대로 + 한국어 알림)이 이미 있는데 STUDENT 한국어는 소리를 내서 같은 방법이 어려움 → 한쪽이 분명히 맞다고 할 수 없어 소유자가 고를 일. 추천안 글 확인: EN 'On Saturdays, we don’t go to school.' · 'We are free for the whole day.' 문법 맞음 · KO '토요일에 우리는 학교에 가지 않습니다.' · '우리는 하루 종일 자유입니다.' 맞춤법 · 띄어쓰기 맞음('하루종일' 은 표준국어대사전 표제어 없음 — 띄움이 맞음 · 확인) · #4 'We don’t have to attend any academies!' 로 이어짐. 알릴 것: 제목 'Saturday Afternoon' 은 원본 목차(content/archive/student-overview/s3.json 94행) 그대로 두는 안 — 고치면 본문이 '토요일 오후' 만의 이야기는 아니게 되지만 #6 이 토요일 오후 생일 축하라 어긋나지는 않음. 새 음성 클립 4(영어 2 · 한국어 2).",
     "때": "2026-09-24 16:48"
    },
-   "조정": null
+   "조정": {
+    "결론": "표에서 뺌",
+    "까닭": "소유자 결정 2(2026-09-24 18:1x) — s11-1 #2 · #3 은 바꾸지 않음(6-R 로 되살린 원본 그대로)"
+   }
   },
   {
    "key": "F:C00260",
