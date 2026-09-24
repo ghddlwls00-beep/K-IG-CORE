@@ -1,0 +1,26 @@
+{
+ "OK:C03588": {
+  "결론": "표에 올림", "문맥": true,
+  "까닭": "확인 일꾼(맞음 3% 가린 채)이 찾음 — 줄 'No boy likes that.' 은 맞고, 9/18 전부터 있던 gh1-060/061 #30 대체 답안 빈틈('No boys like it.' · 'None of the boys like it.' 0점). 같은 과정 gh1-016/017 #6 은 같은 틀을 받음 → 옆 글 ③ 중간(기준 풀이 5 — 맞는 답 0점). 판정 일꾼이 놓친 줄로는 세지 않음(그 줄 자체는 맞음)",
+  "종류": "③", "심각도": "중간", "확신": "보통",
+  "고칠 글": "No boys like it. (그리고 None of the boys like it. · None of the boys likes it. · No boys like that. · None of the boys like that. · None of the boys likes that.)",
+  "고칠 곳": "content/lessons/grammar1/gh1-061.json — sentences n=30 .alternatives 에 여섯 줄 더함(지금 있는 것 그대로 · 분할본 없음)",
+  "새 음성 클립": false
+ },
+ "OK:C03596": {
+  "결론": "표에 올림",
+  "까닭": "확인 일꾼(맞음 3% 가린 채)이 찾음 — 새 대체 답안 'Do your son and daughter have dreams?' 가 dreams 를 단수 son and daughter 와만 짝지어, 9/18 전부터 만점이던 복수 꼴의 dreams 판 셋이 70점 → ③ 낮음(기준 풀이 5 — 70점). 이 바뀜이 만든 빈틈이라 줄의 틀림으로 셈 = 판정 일꾼이 놓친 것 1(그 조각의 규칙 1 '70점은 틀림 아님' 은 기준 풀이 5 가 정해지기 전에 세운 것)",
+  "종류": "③", "심각도": "낮음", "확신": "보통",
+  "고칠 글": "Do your sons and daughters have dreams? (그리고 Do your sons and daughter have dreams? · Do your son and daughters have dreams?)",
+  "고칠 곳": "content/lessons/grammar1/gh1-063.json — sentences n=26 .alternatives 에 세 줄 더함(지금 있는 것 그대로 · 분할본 없음)",
+  "새 음성 클립": false
+ },
+ "F:C02764": {
+  "결론": "표에 올림", "ids": ["C02764", "C02572"],
+  "까닭": "판정 일꾼 '판단 필요' → 확인 일꾼 뒤집음을 따름: attribute · overwork 는 6단계 규칙('뜻풀이에 두 품사 뜻이 다 있으면 발음 주석')이 닿지 않은 누락(도구 목록에 없던 낱말 — 6-0864 present · 6-0953 tear 와 같은 종류, 그때 [Low]) → ⑤ 낮음 · 같은 hv-69 의 contract 와 표기 흔들림. abuse · excuse(C02766 · C02809)는 6단계-작업기록 'VOCA 끝 ③' 의 적힌 예외 2(30자 안에 표시를 넣으려면 풀이를 빼야 해 둠) — 문체 · 제약 결정이라 틀림 아님",
+  "종류": "⑤", "심각도": "낮음", "확신": "보통",
+  "고칠 글": "attribute: 탓(덕)으로 돌리다; 속성, 특성 (동사는 뒤 강세) / overwork: 혹사시키다, 과로하다; 과로 (동사는 뒤 강세)",
+  "고칠 곳": "content/voca_dictionary.json — .attribute.meaning (hv-69) · .overwork.meaning (hv-03) — 둘 다 30자 안(퀴즈 화면은 quizMeaning 이 주석을 뗌)",
+  "새 음성 클립": false
+ }
+}

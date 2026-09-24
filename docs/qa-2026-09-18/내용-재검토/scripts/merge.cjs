@@ -98,6 +98,19 @@ for (const f of findings) {
   f.최종 = final;
   f.확인방식 = heavy ? "둘 다 틀림(심각·높음 전부 확인)" : w.판정 === "틀림" ? (f.확인대상 ? "20% 표본 — 확인 동의" : "한 일꾼(20% 표본 밖)") : "확인 일꾼이 봄";
   if (a) f.확인방식 = `이 세션이 조정(${a.까닭})`;
+  // 조정이 묶음의 일부 id 에만 해당하면(ids) 나머지는 '맞음(조정)' · '맞음' 표본에서 찾은 옆 글 틀림(문맥: true)은 그 줄 판정은 맞음 그대로
+  if (a) {
+    const all = f.ids.slice();
+    if (a.ids) f.ids = a.ids;
+    if (f.출처 === "맞음 표본" && a.문맥) f.출처 = "1부 문맥(맞음 표본에서 봄)";
+    for (const id of all) {
+      const e = lines.get(id) || { id };
+      if (f.출처 === "1부 문맥(맞음 표본에서 봄)") { lines.set(id, { ...e, 확인: `맞음 표본 — 줄은 맞음 · 옆 글 틀림을 따로 올림(${f.key})` }); continue; }
+      if (status === "표에 올림" && f.ids.includes(id)) lines.set(id, { ...e, 판정: "틀림", 종류: final.종류, 심각도: final.심각도, 확신: final.확신, 까닭: final.까닭, "고칠 글": final["고칠 글"], "고칠 곳": final["고칠 곳"], "새 음성 클립": final["새 음성 클립"], 조정: a.까닭 });
+      else if (status === "판단 필요" && f.ids.includes(id)) lines.set(id, { ...e, 판정: "판단 필요", 조정: a.까닭 });
+      else lines.set(id, { ...e, 판정: "맞음", 조정: a.까닭 });
+    }
+  }
 }
 
 // ── 숫자 ──
