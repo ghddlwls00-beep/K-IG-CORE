@@ -8,9 +8,9 @@
  * 어긋나면 exit 1.
  *
  *   node check-dictation-times.cjs            # 지금 코드
- *   node check-dictation-times.cjs --old      # 일부러 깨기: HEAD 의 listeningUtils.ts 로 — 어긋나야 한다(exit 1)
+ *   node check-dictation-times.cjs --old      # 일부러 깨기: 고치기 전 판(8941bab)의 listeningUtils.ts 로 — 어긋나야 한다(exit 1)
  *
- * --old 의 HEAD 사본은 OS 임시 폴더에 씀(src/lib 안에 쓰면 같은 때 도는 tsc · next build 가 그 파일을 봄 — 3차 점검 #13).
+ * --old 의 옛 판 사본은 OS 임시 폴더에 씀(src/lib 안에 쓰면 같은 때 도는 tsc · next build 가 그 파일을 봄 — 3차 점검 #13).
  * listeningUtils.ts 는 import 가 없어 어느 폴더에서 불러도 같다.
  */
 const fs = require("fs");
@@ -21,8 +21,11 @@ const { loadTs, REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs");
 const OLD = process.argv.includes("--old");
 let file = path.join(REPO, "src/lib/listeningUtils.ts");
 if (OLD) {
-  const src = execFileSync("git", ["show", "HEAD:src/lib/listeningUtils.ts"], { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 });
-  if (/^\s*import\s/m.test(src)) throw new Error("HEAD listeningUtils.ts 에 import 가 생김 — 임시 폴더에서 불러오면 틀릴 수 있어 멈춤");
+  // 옛 판 = 6단계 고침(86d9ac9)이 들어가기 바로 전 8941bab 로 고정 — 전에는 `HEAD:` 였는데 86d9ac9 가 커밋된 뒤로는 HEAD 가 고친 판이라
+  // --old 가 '어긋남 0 · exit 0' 을 내 깨기가 가짜였다(2026-09-24, 3차 점검이 prove-license-token-v2 에서 같은 것을 찾아 형제를 봄).
+  const OLD_REV = "8941bab";
+  const src = execFileSync("git", ["show", `${OLD_REV}:src/lib/listeningUtils.ts`], { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 });
+  if (/^\s*import\s/m.test(src)) throw new Error(`${OLD_REV} listeningUtils.ts 에 import 가 생김 — 임시 폴더에서 불러오면 틀릴 수 있어 멈춤`);
   file = path.join(os.tmpdir(), `listeningUtils.head.${process.pid}.ts`);
   fs.writeFileSync(file, src);
 }
@@ -55,6 +58,6 @@ for (const [where, text] of rows) {
   if (missing.length || letters.length || !ok) bad.push(`${where}: 통째로 없는 조각 ${missing.join(",") || "-"} · 한 글자 타일 ${letters.join(",") || "-"} · 정답 차례 ${ok ? "맞음" : "틀림"} — ${JSON.stringify(tiles)}`);
 }
 const st = rows.filter((r) => !r[0].startsWith("ld")).length;
-console.log(`${OLD ? "[HEAD] " : ""}시각 · 천 단위 숫자 든 문장 ${rows.length}(STUDENT ${st} · LISTENING ${rows.length - st} — 시각 ${withTime} · 천 단위 ${withThousands}) · 어긋남 ${bad.length}`);
+console.log(`${OLD ? "[옛 판 8941bab] " : ""}시각 · 천 단위 숫자 든 문장 ${rows.length}(STUDENT ${st} · LISTENING ${rows.length - st} — 시각 ${withTime} · 천 단위 ${withThousands}) · 어긋남 ${bad.length}`);
 for (const b of bad.slice(0, 8)) console.log(`  ${b}`);
 process.exit(bad.length ? 1 : 0);

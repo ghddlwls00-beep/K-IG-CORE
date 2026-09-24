@@ -7,7 +7,7 @@
  * process.cwd() 를 임시 폴더로 — 저장소에 아무것도 쓰지 않음. 앱의 **실제** API 처리 함수(src/app/api/license/*\/route.ts ·
  * progress/student)를 Request 로 부른다. 이용권 코드는 이 시험이 만든 가짜 코드(generateLicenseKey)뿐.
  *
- * 깨기: 같은 '토큰에 코드가 읽히나' 검사를 옛 판(HEAD) serverLicense.ts 의 토큰에 대면 읽혀야 한다(검사가 실패를 잡는지).
+ * 깨기: 같은 '토큰에 코드가 읽히나' 검사를 옛 판(BUG-018 바로 전 커밋 b4fc941) serverLicense.ts 의 토큰에 대면 읽혀야 한다(검사가 실패를 잡는지).
  *   node docs/qa-2026-09-18/scripts/prove-license-token-v2.cjs        기대대로면 exit 0
  */
 const fs = require("fs");
@@ -130,10 +130,13 @@ const expect = (name, ok, detail = "") => { rows.push(`${ok ? "기대대로" : "
   const e2 = await call(R.verify, { body: { deviceId: A, token: e1.json.licenseToken } });
   expect("8 관리자 기기 초기화 뒤 — 옛 기기 확인 403", e2.status === 403, `status ${e2.status}`);
 
-  // 깨기 — 옛 판(HEAD) serverLicense.ts 의 토큰에 같은 검사: 코드가 읽혀야
+  // 깨기 — 옛 판 serverLicense.ts 의 토큰에 같은 검사: 코드가 읽혀야.
+  // 옛 판 = BUG-018 커밋(0524168) 바로 전 b4fc941 로 고정 — 전에는 `HEAD:` 였는데, BUG-018 이 커밋된 뒤로는 HEAD 가 새 판이라
+  // 이 깨기가 늘 실패했다(24/25 · 3차 점검이 찾음 2026-09-24).
+  const OLD_REV = "b4fc941";
   const oldDir = path.join(tmp, "old-src");
   fs.mkdirSync(oldDir, { recursive: true });
-  for (const f of ["serverLicense.ts", "license.ts"]) fs.writeFileSync(path.join(oldDir, f), execFileSync("git", ["show", `HEAD:src/lib/${f}`], { cwd: REPO, encoding: "utf8" }));
+  for (const f of ["serverLicense.ts", "license.ts"]) fs.writeFileSync(path.join(oldDir, f), execFileSync("git", ["show", `${OLD_REV}:src/lib/${f}`], { cwd: REPO, encoding: "utf8" }));
   const oldLic = loadTs(path.join(oldDir, "serverLicense.ts"));
   const oldTok = oldLic.issueLicenseToken(key, "1Y", A, null);
   expect("깨기: 옛 판 issueLicenseToken 의 토큰은 풀면 코드가 읽힘(검사가 실패를 잡음)", codeReadableIn(decoded(oldTok), key));

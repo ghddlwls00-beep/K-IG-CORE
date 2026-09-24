@@ -6,7 +6,7 @@
  *   - 지금 글에서 그 자리가 앱의 칩 나누기(lib/expectations.cjs hintChunks = 앱과 같은 규칙)로 갈라지는지
  *   - 대본에 두 낱말이 바로 이어져 나오는지 (이어지면 한 구절이 줄에서 끊긴 것일 가능성이 큼 — 붙은 채로 둠)
  * 판단은 사람이 한다 — 이 도구는 파일을 고치지 않는다.
- * 합치기 전 판(HEAD)의 hints + 넘친 줄로 이음매를 되살리고, 낱말 LCS 로 지금 글의 자리를 찾는다(합친 뒤 다른 계획이
+ * 합치기 전 판(8941bab — 6단계 커밋 86d9ac9 바로 전)의 hints + 넘친 줄로 이음매를 되살리고, 낱말 LCS 로 지금 글의 자리를 찾는다(합친 뒤 다른 계획이
  * 힌트 낱말을 고쳤어도 따라감 — 예: "eighteen" → "18").
  * 덧붙여, N1(천 단위 쉼표에서 안 자름) 뒤 "10,000 measure" 처럼 쉼표 숫자와 다음 낱말이 한 칩에 붙은 곳도 나열한다.
  *
@@ -22,7 +22,10 @@ const DIR = "content/lessons/ld";
 const JOINED_ONLY = process.argv.includes("--joined");
 const strip = (s) => String(s).replace(/^﻿/, "");
 const S = JSON.parse(strip(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8")));
-const head = (f) => { try { return JSON.parse(strip(execFileSync("git", ["show", `HEAD:${DIR}/${f}`], { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 }))); } catch { return null; } };
+// 합치기 전 판 = 6단계 합치기(86d9ac9)가 들어가기 바로 전 8941bab 로 고정 — 전에는 `HEAD:` 였는데 86d9ac9 가 커밋된 뒤로는 HEAD 가
+// 합친 판이라 '이음매 0' 만 냈다(2026-09-24, prove-license-token-v2 의 같은 문제를 따라 형제를 봄).
+const PRE_MERGE_REV = "8941bab";
+const head = (f) => { try { return JSON.parse(strip(execFileSync("git", ["show", `${PRE_MERGE_REV}:${DIR}/${f}`], { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 }))); } catch { return null; } };
 const isGuide = (t) => /받아쓰기/.test(t);
 const norm = (w) => String(w).toLowerCase().replace(/[^a-z0-9]/g, "");
 const tokens = (t) => [...t.matchAll(/\S+/g)].map((m) => ({ w: m[0], n: norm(m[0]), s: m.index, e: m.index + m[0].length }));
