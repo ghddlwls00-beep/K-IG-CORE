@@ -13,7 +13,7 @@ const fs = require("fs");
 const path = require("path");
 const E = require("./lib/expectations.cjs");
 const REPO = path.resolve(__dirname, "../../..");
-const BREAK = process.argv.includes("--break");
+const BREAK = process.argv.some((a) => a === "--break" || a.startsWith("--break="));
 const strip = (s) => String(s).replace(/^﻿/, "");
 const src = fs.readFileSync(path.join(REPO, "src/components/LdLearningView.tsx"), "utf8");
 
@@ -29,8 +29,12 @@ let pickCode = src.slice(a, b);
 pickCode = pickCode.replace(/\((\w+): string\): string\[\] =>/g, "($1) =>").replace(/\((\w+): string\)/g, "($1)");
 if (/:\s*string/.test(pickCode) || /:\s*string/.test(chunkBody)) throw new Error("지우지 못한 타입 표기가 남음");
 if (BREAK) {
+  // 쪼개기 식 전체(.split(/…/))를 바꾼다 — 전에는 6단계 식 글자 그대로를 찾아 바꿔, 관문 15 에서 식이 바뀌자 '못 찾음' 으로 멈췄다(2026-09-24).
+  //   --break           6단계 전 규칙(천 단위 쉼표에서도 자름)
+  //   --break=pre-g15   관문 15 전 규칙(칭호 · 머리글자 뒤에서도 자름) — 새 칭호 규칙을 복제가 따라가는지
+  const OLD = process.argv.includes("--break=pre-g15") ? "/,(?!\\d{3}(?!\\d))|\\.\\s+|\\.$|\\s{2,}/" : "/,|\\.\\s+|\\.$|\\s{2,}/";
   const before = chunkBody;
-  chunkBody = chunkBody.replace("/,(?!\\d{3}(?!\\d))|\\.\\s+|\\.$|\\s{2,}/", "/,|\\.\\s+|\\.$|\\s{2,}/");
+  chunkBody = chunkBody.replace(/\.split\(\/[^\n]*?\/\)/, `.split(${OLD})`).replace(/\.replace\(\/\(\?<![^\n]*?\[\.,\]\+\$\/, ""\)/, '.replace(/[.,]+$/, "")');
   if (before === chunkBody) throw new Error("--break: 바꿀 쪼개기 식을 못 찾음");
 }
 const make = new Function("hintsBlock", `const hintChunks = (() => {${chunkBody}\n})();\n${pickCode}\nreturn { hintChunks, pickHintsFor };`);
