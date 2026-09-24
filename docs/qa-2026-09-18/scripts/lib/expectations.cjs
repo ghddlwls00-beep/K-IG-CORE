@@ -284,7 +284,7 @@ function expected(course, id) {
    * control ever requests, so a changed Korean line showed up as a "missing clip".
    */
   // (spokenTexts throws when one of these src modules did not load — an empty clip list would pass every check)
-  const fns = { vocaSpeechForm: vocaSpeech && vocaSpeech.vocaSpeechForm, getCollocation: vocaUtils && vocaUtils.getCollocation, generateLiaisonPoints: listening && listening.generateLiaisonPoints, extractSentencesForAudio: lessonAudio.extractSentencesForAudio, firstSlashAlternative: listening && listening.firstSlashAlternative, vocaWordSpeech: vocaSpeech && vocaSpeech.vocaWordSpeech };
+  const fns = { vocaSpeechForm: vocaSpeech && vocaSpeech.vocaSpeechForm, getCollocation: vocaUtils && vocaUtils.getCollocation, generateLiaisonPoints: listening && listening.generateLiaisonPoints, extractSentencesForAudio: lessonAudio.extractSentencesForAudio, firstSlashAlternative: listening && listening.firstSlashAlternative, vocaWordSpeech: vocaSpeech && vocaSpeech.vocaWordSpeech, readingWordSpeech: vocaSpeech && vocaSpeech.readingWordSpeech };
   for (const t of spoken.spokenTexts({ course, id, lesson: d, pair: pairId ? { id: pairId, ...(pair || {}) } : null, ldScripts, dictionary: vocaDictionary || {}, fns })) addClip(t);
   /**
    * The exact words the tap-dictation expects, taken from the app's own generateWordBank rather

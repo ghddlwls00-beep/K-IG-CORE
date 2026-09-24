@@ -12,8 +12,9 @@
  *      ('He She is …')의 키를 불렀다 — 그 키는 이 결정으로 바뀐 것이라 따로 센다: 지금 글 · 옛 판의 빗금 문장의 두 꼴 글 키만.
  *   5. (7-6, 소유자 결정 2026-09-24) VOCA 의 발음이 둘인 20낱말은 이제 `<낱말> ⟨<IPA>⟩` 새 키로 말한다. 배포 전 운영은 맨 낱말 키를
  *      불렀다 — VOCA 단어판에 있는 그 20낱말의 맨 낱말 키만 따로 센다(READING 과 같이 쓰는 6낱말은 READING 이 여전히 불러 새 정의 안).
+ *   6. (BUG-029, 소유자 결정 2026-09-24) READING 단어 카드도 카드 뜻의 발음(`<낱말> ⟨IPA⟩`)을 말한다 — 그렇게 바뀐 카드의 맨 낱말 키만 따로 셈.
  *   (a) BUG-027 은 VOCA 단어판의 **쓴 꼴**(colo(u)r)로 만든 키 — 위 플레이어가 이제 말하는 꼴로 넘겨 새 정의의 글에서는 안 나오므로 쓴 꼴에서 셈.
- *   node docs/qa-2026-09-18/scripts/prove-spoken-definition.cjs [--list] [--break=history] [--break=bug028] [--break=voca76]
+ *   node docs/qa-2026-09-18/scripts/prove-spoken-definition.cjs [--list] [--break=history] [--break=bug028] [--break=voca76] [--break=reading29]
  */
 const fs = require("fs");
 const path = require("path");
@@ -28,6 +29,7 @@ const fns = {
   extractSentencesForAudio: loadTs(path.join(REPO, "src/lib/lessonAudioText.ts")).extractSentencesForAudio,
   firstSlashAlternative: loadTs(path.join(REPO, "src/lib/listeningUtils.ts")).firstSlashAlternative,
   vocaWordSpeech: loadTs(path.join(REPO, "src/lib/vocaSpeech.ts")).vocaWordSpeech,
+  readingWordSpeech: loadTs(path.join(REPO, "src/lib/vocaSpeech.ts")).readingWordSpeech,
 };
 const LIST = process.argv.includes("--list");
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(REPO, rel), "utf8"));
@@ -75,6 +77,17 @@ for (const id of ROUTES.student || []) {
 // ── 7-6: VOCA 단어판에 있는 발음이 둘인 20낱말의 **맨 낱말** 키(배포 전 운영이 부르는 것 — 새 정의는 `<낱말> ⟨<IPA>⟩` 새 키) ·
 //        (a) BUG-027 을 가리는 VOCA 단어판 **쓴 꼴** 키도 여기서 모음. 깨기 --break=voca76 — (d) 칸을 끄면 그 키들이 '빠뜨림' 으로 돌아와야.
 const BREAK_76 = process.argv.includes("--break=voca76");
+// BUG-029: READING 카드 가운데 이제 카드 뜻의 발음(`<낱말> ⟨IPA⟩`)을 말하는 카드의 **맨 낱말** 키 — 배포 전 운영이 부르는 것. 깨기 --break=reading29
+const BREAK_29 = process.argv.includes("--break=reading29");
+const READING_BARE = new Map(); // key → word
+for (const id of ROUTES.reading || []) {
+  const f = path.join(LESSONS, "reading", `${id}.json`);
+  if (!fs.existsSync(f)) continue;
+  for (const v of JSON.parse(fs.readFileSync(f, "utf8")).readingVocabulary || []) {
+    if (!v || !v.word || fns.readingWordSpeech(v.word, v.korean) === v.word) continue;
+    const k = keyOf(v.word); if (k) READING_BARE.set(k.key, String(v.word).trim());
+  }
+}
 const VOCA_BARE = new Map(); // key → word
 const VOCA_WRITTEN = new Set(); // raw keys of the written grid words
 for (const id of ROUTES.phonics || []) {
@@ -145,7 +158,10 @@ for (const [k, why] of Object.entries(EXPLAINED)) console.log(`  (까닭 있음)
 const gapAll = [...requested].filter((k) => OLD.has(k) && !NEW.has(k) && !RETIRED.test(OLD.get(k).from) && !EXPLAINED[k]);
 const gap028 = BREAK_028 ? [] : gapAll.filter((k) => BUG028.has(k));
 const gap76 = BREAK_76 ? [] : gapAll.filter((k) => VOCA_BARE.has(k));
-const gap = gapAll.filter((k) => !gap028.includes(k) && !gap76.includes(k));
+const gap29 = BREAK_29 ? [] : gapAll.filter((k) => READING_BARE.has(k) && !gap76.includes(k));
+const gap = gapAll.filter((k) => !gap028.includes(k) && !gap76.includes(k) && !gap29.includes(k));
+if (BREAK_29) console.log("(깨기 시험 --break=reading29 — BUG-029 READING 맨 낱말 칸을 끔)");
+console.log(`  (BUG-029 READING 맨 낱말) 운영(배포 전)이 부른, 이제 카드 뜻의 발음을 말하는 READING 카드의 맨 낱말 키 ${gap29.length} — 새 정의는 '<낱말> ⟨IPA⟩'(소유자 결정 2026-09-24)`);
 if (BREAK_028) console.log("(깨기 시험 --break=bug028 — BUG-028 옛 꼴 칸을 끔)");
 if (BREAK_76) console.log("(깨기 시험 --break=voca76 — 7-6 VOCA 맨 낱말 칸을 끔)");
 console.log(`  (BUG-028 옛 꼴) 운영(배포 전)이 부른 두 꼴 글 키 가운데 지금 글에 빗금 문장으로 있는 것 ${gap028.length} — 새 정의는 첫 꼴을 말함(소유자 결정 2026-09-24)`);

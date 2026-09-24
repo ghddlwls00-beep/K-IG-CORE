@@ -722,6 +722,11 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       ? `[...document.querySelectorAll('main button')].find((b) => /^학습 완료 (체크|취소)$/.test(b.getAttribute('aria-label') || ''))`
       : `[...document.querySelectorAll('main button')].find((b) => /학습 완료|완료 체크/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')))`;
     const cmState = `(() => { const b = ${cm}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '') + (b.disabled ? '|disabled' : '')).replace(/\\s+/g, ' ').trim() : null; })()`;
+    // BUG-030 (2026-09-24): a STUDENT completion is saved on the server (ProgressProvider queues it in
+    // 'kig:student:pending:v1' and posts it 650 ms later), and the server's answer can take it back. The state
+    // used to be read 700 ms after the press — before that answer — and the reload then cut the save off. Wait
+    // for the queue to empty (the server answered) before reading or reloading; other courses save locally.
+    const serverSaved = async () => page.course !== "student" || H.waitFor(tab, `(() => { try { const v = localStorage.getItem('kig:student:pending:v1'); return !v || v === '[]'; } catch (e) { return true; } })()`, 10000);
     await openStep3();
     let c0 = await tab.eval(cmState).catch(() => null);
     if (page.course === "student" && c0 && /\|disabled$/.test(c0)) {
@@ -731,13 +736,16 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     }
     if (c0 && !/\|disabled$/.test(c0)) {
       await H.click(tab, cm, { settle: 700 });
+      const saved1 = await serverSaved();
       const c1 = await tab.eval(cmState).catch(() => null);
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
       await openStep3();
       const c2 = await tab.eval(cmState).catch(() => null);
       await H.click(tab, cm, { settle: 700 });
+      const saved3 = await serverSaved();
       const c3 = await tab.eval(cmState).catch(() => null);
-      rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · toggle→reload→untoggle" : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}` });
+      const saveNote = page.course === "student" ? ` · server answered ${saved1 && saved3 ? "both" : `${saved1 ? "" : "not "}after toggle, ${saved3 ? "" : "not "}after untoggle`}` : "";
+      rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · toggle→reload→untoggle" : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}${saveNote}` });
       if (page.course === "student") H.logDataChange({ course: page.course, id: page.id, action: "completion toggled on and off via the lesson UI (Step 3)", detail: `${c0} → ${c1} → ${c3}` });
     } else if (c0) rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · control" : "control", status: "FAIL", note: `completion control stays disabled after practising a sentence: ${c0}` });
     else rec.checks.push({ feature: "completion", item: "control", status: "BLOCKED", note: step3 ? "Step 3 completion control not found" : "completion control not found" });

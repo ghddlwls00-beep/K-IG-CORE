@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, useRef, memo, useCallback } from "react";
 import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
 import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
+import { readingWordSpeech } from "@/lib/vocaSpeech";
 import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
@@ -426,7 +427,7 @@ export function ReadingLearningView({
     });
   }
 
-  function playWordAudio(word: string) {
+  function playWordAudio(word: string, meaning?: string) {
     if (!word) return;
     if (playingWord === word) {
       stopSpeech();
@@ -435,7 +436,8 @@ export function ReadingLearningView({
     }
     stopSpeech();
     setPlayingWord(word);
-    speakText(word, {
+    // BUG-029: a word whose pronunciation depends on the meaning is said as the card's meaning
+    speakText(readingWordSpeech(word, meaning), {
       lang: "en",
       rate: 0.9,
       onEnd: () => setPlayingWord((curr) => (curr === word ? null : curr)),
@@ -789,7 +791,7 @@ export function ReadingLearningView({
               return (
                 <div
                   key={kw.word + i}
-                  onClick={() => playWordAudio(kw.word)}
+                  onClick={() => playWordAudio(kw.word, kw.meaning)}
                   className="rounded-2xl border border-line bg-surface p-4 shadow-2xs hover:border-line-strong hover:shadow-xs transition-all cursor-pointer flex flex-col justify-between gap-3 group select-none"
                 >
                   <div className="flex items-center justify-between">
@@ -817,7 +819,7 @@ export function ReadingLearningView({
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        playWordAudio(kw.word);
+                        playWordAudio(kw.word, kw.meaning);
                       }}
                       className={`flex h-8 w-8 items-center justify-center rounded-full transition-all cursor-pointer ${
                         isPlaying

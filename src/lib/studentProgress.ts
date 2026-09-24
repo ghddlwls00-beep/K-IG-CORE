@@ -305,6 +305,20 @@ export async function getStudentProgress(key: string): Promise<StudentProgressRe
   return recalculate(await readRecord(key));
 }
 
+/**
+ * BUG-030 (2026-09-24) — a LIFE pass opens every STUDENT chapter: the page gate
+ * (src/app/student/[lesson]/page.tsx) and /api/student/chapter-audio skip the
+ * sequential lock for plan "LIFE". The RE-010 guard below did not, so a LIFE
+ * learner who began at chapter 3 pressed "이 강의 학습 완료", saw ✓ for about a
+ * second, and the server's answer took it back — nothing was stored. Measured on
+ * production with the audit's LIFE licence: unlockedThrough 1, and s3-3 absent
+ * after two presses. The caller that knows the plan passes the page gate's own
+ * answer here; every other plan keeps the bulk-jump guard.
+ */
+export interface StudentProgressWriteOptions {
+  everyChapterOpen?: boolean;
+}
+
 export async function updateStudentProgress(
   key: string,
   updateOrUpdates: {
@@ -318,6 +332,7 @@ export async function updateStudentProgress(
     clientUpdatedAt?: number;
     lastLessonId?: string;
   }>,
+  { everyChapterOpen = false }: StudentProgressWriteOptions = {},
 ): Promise<StudentProgressRecord> {
   const normalized = normalizeKey(key);
   const previous = writeQueues.get(normalized) || Promise.resolve(emptyRecord());
@@ -329,8 +344,10 @@ export async function updateStudentProgress(
       // RE-010 — the sequential-unlock guard. Completions are accepted only for
       // a lesson in a reachable chapter (current, earlier, or exactly one ahead),
       // so a bulk POST of every lesson id can no longer unlock the whole course.
+      // A pass that already opens every chapter has nothing out of reach (BUG-030).
       const chapterOf = chapterIndexByLesson();
-      const reachable = () => clampChapter(record.unlockedThrough) + 1;
+      const reachable = () =>
+        everyChapterOpen ? Number.POSITIVE_INFINITY : clampChapter(record.unlockedThrough) + 1;
       const updates = Array.isArray(updateOrUpdates) ? updateOrUpdates.slice(0, 100) : [updateOrUpdates];
       for (const update of updates) {
         const now = Date.now();
@@ -383,14 +400,15 @@ export async function updateStudentProgress(
 export async function mergeLegacyStudentProgress(
   key: string,
   lessonIds: string[],
+  { everyChapterOpen = false }: StudentProgressWriteOptions = {},
 ): Promise<StudentProgressRecord> {
   const validIds = new Set(getCourseGroups("student").flatMap((group) => group.lessons));
   const chapterOf = chapterIndexByLesson();
   const now = Date.now();
   let record = await readRecord(key);
   // One snapshot of what is reachable BEFORE the import; applying ids must not
-  // move this ceiling.
-  const ceiling = clampChapter(record.unlockedThrough) + 1;
+  // move this ceiling. None for a pass that opens every chapter (BUG-030).
+  const ceiling = everyChapterOpen ? Number.POSITIVE_INFINITY : clampChapter(record.unlockedThrough) + 1;
   for (const id of lessonIds.slice(0, 100)) {
     if (!validIds.has(id) || record.lessons[id]?.completed) continue;
     const chapter = chapterOf.get(id);

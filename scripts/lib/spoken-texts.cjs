@@ -71,7 +71,8 @@ function pairIdOf(course, id, index) {
  *   pair 는 그 쪽의 짝 강의(pairIdOf) — 위 플레이어 · GRAMMAR · READING 이 짝의 글을 쓴다.
  * @returns {string[]}
  */
-const FNS = ["vocaSpeechForm", "getCollocation", "generateLiaisonPoints", "extractSentencesForAudio", "firstSlashAlternative", "vocaWordSpeech"];
+// readingWordSpeech — BUG-029(소유자 결정 2026-09-24 '읽기 카드도 화면 뜻대로 발음'): READING 단어 카드는 카드 뜻의 발음(ReadingLearningView playWordAudio)
+const FNS = ["vocaSpeechForm", "getCollocation", "generateLiaisonPoints", "extractSentencesForAudio", "firstSlashAlternative", "vocaWordSpeech", "readingWordSpeech"];
 /** page.tsx 와 같은 선택 — 이 과정의 항목을 어떻게 말하나(위 플레이어에 넘김) */
 const speechFormFor = (course, fns) => (course === "student" ? fns.firstSlashAlternative : course === "phonics" ? fns.vocaWordSpeech : undefined);
 function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictionary = {}, fns }) {
@@ -104,7 +105,7 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
   } else if (course === "reading") {
     const pick = (k) => (lesson && Array.isArray(lesson[k]) && lesson[k].length ? lesson[k] : (pair && Array.isArray(pair[k]) ? pair[k] : []));
     for (const s of pick("readingSentences")) add(s && s.english);
-    for (const v of pick("readingVocabulary")) add(v && v.word);
+    for (const v of pick("readingVocabulary")) if (v && v.word) add(fns.readingWordSpeech(v.word, v.korean));
   } else if (course === "phonics") {
     for (const w of gridWords(lesson)) {
       add(fns.vocaWordSpeech(w));

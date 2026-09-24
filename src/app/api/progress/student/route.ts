@@ -74,11 +74,15 @@ export async function POST(request: Request) {
       );
     }
     const body = await request.json();
+    // BUG-030 — the page gate's own rule (src/app/student/[lesson]/page.tsx): a LIFE
+    // pass opens every chapter, so a completion anywhere in the course is a real one.
+    const options = { everyChapterOpen: session.payload.plan === "LIFE" };
     let record;
     if (Array.isArray(body.legacyCompletedLessonIds)) {
       record = await mergeLegacyStudentProgress(
         session.payload.key,
         body.legacyCompletedLessonIds.filter((value: unknown) => typeof value === "string"),
+        options,
       );
     } else {
       const rawUpdates = Array.isArray(body.updates) ? body.updates : [body];
@@ -92,6 +96,7 @@ export async function POST(request: Request) {
           clientUpdatedAt:
             typeof update.clientUpdatedAt === "number" ? update.clientUpdatedAt : undefined,
         })),
+        options,
       );
     }
     return NextResponse.json({ success: true, progress: publicProgress(record) });

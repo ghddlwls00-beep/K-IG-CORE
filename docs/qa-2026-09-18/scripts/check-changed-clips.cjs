@@ -40,6 +40,7 @@ const fns = {
   extractSentencesForAudio: loadTs(path.join(REPO, "src/lib/lessonAudioText.ts")).extractSentencesForAudio,
   firstSlashAlternative: loadTs(path.join(REPO, "src/lib/listeningUtils.ts")).firstSlashAlternative,
   vocaWordSpeech: loadTs(path.join(REPO, "src/lib/vocaSpeech.ts")).vocaWordSpeech,
+  readingWordSpeech: loadTs(path.join(REPO, "src/lib/vocaSpeech.ts")).readingWordSpeech,
 };
 
 const LIST = process.argv.includes("--list");

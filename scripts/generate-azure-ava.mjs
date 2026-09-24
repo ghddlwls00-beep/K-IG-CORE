@@ -180,6 +180,8 @@ function collectTexts() {
     firstSlashAlternative: loadTsModule("src/lib/listeningUtils.ts")?.firstSlashAlternative,
     // 7-6: a VOCA word button — a heteronym as `<word> ⟨<ipa>⟩` (its own clip name), else vocaSpeechForm
     vocaWordSpeech: loadTsModule("src/lib/vocaSpeech.ts")?.vocaWordSpeech,
+    // BUG-029: a READING word card — the pronunciation of the card's meaning, tagged like the VOCA words
+    readingWordSpeech: loadTsModule("src/lib/vocaSpeech.ts")?.readingWordSpeech,
   };
   for (const [name, fn] of Object.entries(fns)) {
     if (typeof fn !== "function") throw new Error(`${name} did not load — the clip list would be wrong`);
