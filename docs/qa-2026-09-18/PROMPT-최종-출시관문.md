@@ -62,7 +62,10 @@
   (관문 15 로 고친 배포가 끼면: 그 배포로 기대 글이 달라진 강의는 그 배포 뒤 기록만 쓰고, 나머지 강의의 기록은 그대로 둔다.
    코드가 바뀌었으면 그 파일을 쓰는 과정 전부를 다시 돌린다 — import 를 따라 과정 목록을 만들어라(예: LdLearningView → LISTENING 전부 ·
    vocaUtils → PhonicsLearningView → VOCA 전부 · listeningUtils → LISTENING · STUDENT). 여러 과정이 함께 쓰는 파일(layout · speech ·
-   ProgressProvider · [course]/[lesson]/page.tsx 등)이 바뀌면 전부 다시. 어느 강의의 기대 글이 달라졌는지는 expectations 를 배포 전 · 뒤 판으로
+   ProgressProvider · [course]/[lesson]/page.tsx 등)이 바뀌면 전부 다시. 다만 공용 파일이라도 ① git diff 가 그 몇 줄뿐이고 ② tsc · 빌드 0 이며
+   ③ 그 파일이 내놓는 값(예: curriculumPresentation 의 제목 · 부제목, vocaWordSpeech · 소리 글의 SSML · 클립 이름)을 모든 강의 · 과정 목록에
+   고치기 전 · 뒤 판으로 계산해 달라진 쪽 목록을 도구로 내고, 깨기(다른 줄 하나를 바꾼 사본 → 목록 밖이 달라짐 · exit 1)를 통과하면
+   그 목록의 쪽 × 3화면만 다시 돈다 — 하나라도 못 보이면 전부(2026-09-24 점검 세션, 판단 3 · hv-50 T34). 어느 강의의 기대 글이 달라졌는지는 expectations 를 배포 전 · 뒤 판으로
    대조해 목록으로. 고친 배포 뒤에 다시 돌 것이 확실한 과정은 첫 스윕에서 표본만 돌려도 된다 — 같은 과정을 두 번 다 도는 시간을 아끼려고
    (2026-09-24 점검 세션: 재검토가 LISTENING 힌트 칩 · VOCA 퀴즈 오답 보기를 코드에서 찾음).)
   관문 0 이 도는 동안 내용 파일(content/ · src/lib 의 글 파일)을 바꾸지 마라 — 기대 글이 틀어져 가짜 누락이 난다.
