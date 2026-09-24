@@ -190,6 +190,12 @@ const NEGATIONS = new Set(["not", "never", "no", "nor"]);
 // and "If you don't study hard, …" against an "unless" model keeps the same meaning.
 const NEGATORS = new Set(["not", "no", "never", "nobody", "nothing", "none", "neither", "nor", "nowhere", "noone", "cannot", "unless"]);
 const NEGATED_AUX = /^(?:is|are|was|were|do|does|did|have|has|had|could|would|should|must|need|might|ca|wo|sha|ai)nt$/;
+// 관문 15 재점검2 (2026-09-25): "Not every boy …" (some did) and "No boy …" (none did) each carry one
+// negation, so they paired off as the same meaning and "No boy lost his life, did he?" scored 70
+// against "Not every boy lost his life, did he?". A "not" that scopes a universal and a whole-sentence
+// negator on the other side say different things. The "All … didn't" forms (decision 5 B) are untouched.
+const PARTIAL_AFTER_NOT = new Set(["every", "everyone", "everybody", "everything", "all", "both", "always"]);
+const TOTAL_NEGATORS = new Set(["no", "none", "nobody", "nothing", "neither", "never", "noone", "nowhere"]);
 /** "No," with its comma is read from the raw text; typed without one, these next words still mark it. */
 const ANSWER_NO = /^\s*no\s*[,.!;:]/i;
 const ANSWER_NO_NEXT = new Set([
@@ -291,6 +297,14 @@ function flipsNegation(
       pool.splice(k, 1);
       return false;
     }).length;
+  const partialAt = (words: string[], i: number) => words[i] === "not" && PARTIAL_AFTER_NOT.has(words[i + 1] ?? "");
+  const totalAt = (words: string[], i: number) => TOTAL_NEGATORS.has(words[i]);
+  if (
+    (userNeg.some((i) => partialAt(userWords, i)) && modelNeg.some((i) => totalAt(modelWords, i))) ||
+    (modelNeg.some((i) => partialAt(modelWords, i)) && userNeg.some((i) => totalAt(userWords, i)))
+  ) {
+    return true;
+  }
   const user = unpaired(userNeg, userWords, matchedUser, spare(leftModel, modelWords, modelNeg, matchedModel));
   const model = unpaired(modelNeg, modelWords, matchedModel, spare(leftUser, userWords, userNeg, matchedUser));
   return (user + model) % 2 === 1;
