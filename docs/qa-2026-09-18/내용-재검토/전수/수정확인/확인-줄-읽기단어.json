@@ -1,0 +1,98 @@
+{
+ "조각": "줄-읽기단어",
+ "뽑은때": "2026-09-25 04:57",
+ "대상": [
+  {
+   "key": "P301",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P301",
+    "판정": "제대로",
+    "main 글": "포유동물",
+    "까닭": "main content/voca_dictionary.json \"mammal\".meaning 이 고칠 글과 같음(옛 '포유 동물' 스냅샷 0). mv3-21 격자에 겹칠 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:38"
+   }
+  },
+  {
+   "key": "P300",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P300",
+    "판정": "제대로",
+    "main 글": "남녀공학",
+    "까닭": "main content/voca_dictionary.json \"coeducation\".meaning 이 고칠 글과 같음(옛 '남녀 공학' 스냅샷 0). mv3-12 격자에 겹칠 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:38"
+   }
+  },
+  {
+   "key": "P248",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P248",
+    "판정": "제대로",
+    "main 글": "거리낌없는, 평온한",
+    "까닭": "main pr062.json · pr062-1.json readingVocabulary[10](word untroubled).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr062[10] 도 같음. 같은 카드의 lemma · partOfSpeech · score 등 그대로. 문장 T12(P247)와 한 강의 안 표기 맞음. untroubled 는 READING_PRONUNCIATIONS 에 없어 카드 소리 안 바뀜.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:37"
+   }
+  },
+  {
+   "key": "P303",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P303",
+    "판정": "제대로",
+    "main 글": "야심 찬",
+    "까닭": "main content/voca_dictionary.json \"ambitious\".meaning 이 고칠 글과 같음(격자 mv1-31 · mv2-25). 앱 안 COLLOCATION_PRESETS project '야심 찬 프로젝트를 관리하다'(vocaUtils.ts 182행)와 표기 맞음. 옛 '야심찬' 은 스냅샷에서 CNN 두 곳뿐(봄 밖). 두 격자에 겹칠 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:38"
+   }
+  },
+  {
+   "key": "P249",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P249",
+    "판정": "제대로",
+    "main 글": "온실 효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다.",
+    "까닭": "main pr065.json · pr065-1.json readingSentences[0](reading-065-s001).korean 둘 다 고칠 글과 같음. pr065-1 blocks[1] 지문 첫 문장도 '온실 효과' · src/lib/readingSentences.json pr065 도 같음(옛 글 0). english 칸 그대로 · 이 강의에서 다른 칸은 안 바뀜.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:37"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "P301",
+   "결론": "동의",
+   "까닭": "main 스냅 content/voca_dictionary.json \"mammal\" = {meaning '포유동물', searchWord 'mammal'} — 고칠 글과 글자 그대로, 옛 판 값 '포유 동물' = 읽을거리의 '지금'. 사전을 옛 판과 칸마다 견주면 키 3,904 · 순서 같음 · 원문 겹친 키 0, 다른 항목 19 중 mammal 은 meaning 한 칸만 바뀜(searchWord 그대로). mammal 이 든 격자는 VOCA 195 격자 중 mv3-21 하나 — main vocaUtils.ts 의 senseSegments · sharesSense 를 그대로 옮겨 재면 이 격자에서 mammal 과 뜻 조각이 겹치는 낱말 고치기 전 0 · 뒤 0, 이 격자에서 뜻이 바뀐 낱말은 mammal 하나(곁 낱말 안 건드림). 옛 글 '포유 동물' 스냅 전체(3,088 파일) 0. VOCA 소리는 낱말로만 정해짐(vocaSpeech.ts vocaWordSpeech(word)) — 뜻 글이 소리에 안 닿음.",
+   "때": "2026-09-25 05:02"
+  },
+  {
+   "key": "P300",
+   "결론": "동의",
+   "까닭": "main 스냅 content/voca_dictionary.json \"coeducation\" = {meaning '남녀공학', searchWord 'coeducation'} — 고칠 글과 글자 그대로, 옛 판 '남녀 공학' = '지금'. 이 항목에서 바뀐 칸은 meaning 하나. coeducation 이 든 격자는 195 중 mv3-12 하나 — sharesSense(앱 규칙 그대로)로 겹치는 낱말 고치기 전 0 · 뒤 0, 이 격자에서 뜻이 바뀐 낱말은 coeducation 하나. 옛 글 '남녀 공학' 스냅 전체 0, 새 글은 사전 한 곳. VOCA 뜻은 소리 없음(소리는 낱말로만).",
+   "때": "2026-09-25 05:02"
+  },
+  {
+   "key": "P248",
+   "결론": "동의",
+   "까닭": "main 스냅 pr062.json · pr062-1.json readingVocabulary[10] = {word 'untroubled', lemma 'untroubled', partOfSpeech 'adj.', korean '거리낌없는, 평온한', score 79 …} — korean 이 고칠 글과 글자 그대로. 옛 판과 칸마다 견주면 이 카드에서 바뀐 칸은 korean 하나이고, 강의 전체로도 pr062.json 2칸(s006 korean = P247 · rv[10] korean) · pr062-1.json 3칸(그 둘 + blocks[1] 한국어 지문 끝 문장 = P247 대체 길)뿐 — 곁 칸 망침 0. src/lib/readingVocabulary.json pr062 는 두 강의 파일의 readingVocabulary 와 통째로 같음(옛 판에서 pr062[10].korean 만 바뀜) · readingSentences pr062[5] 도 '거리낌없는' — 문장 · 카드 표기 맞음. 옛 글 '거리낌 없' 스냅 전체 0. untroubled 는 READING_PRONUNCIATIONS(vocaSpeech.ts 126~183행)에 없어 카드 소리는 낱말 그대로 · readingUtils.ts 는 korean 칸을 쓰지 않음.",
+   "때": "2026-09-25 05:02"
+  },
+  {
+   "key": "P303",
+   "결론": "동의",
+   "까닭": "main 스냅 content/voca_dictionary.json \"ambitious\" = {meaning '야심 찬', searchWord 'ambitious'} — 고칠 글과 글자 그대로, 옛 판 '야심찬' = '지금'. 바뀐 칸은 meaning 하나. ambitious 가 든 격자는 195 중 mv1-31 · mv2-25 둘 — 두 격자 모두 sharesSense 로 겹치는 낱말 고치기 전 0 · 뒤 0, 두 격자에서 뜻이 바뀐 낱말은 ambitious 하나. main vocaUtils.ts 182행 COLLOCATION_PRESETS translation '야심 찬 프로젝트를 관리하다' 와 표기 맞음. 옛 글 '야심찬' 스냅 전체는 content/lessons/cnn/cnn012.json · cnn044.json 각 1 — CNN 은 폐지 과정이라 봄 밖(주장과 같음). VOCA 뜻은 소리 없음.",
+   "때": "2026-09-25 05:02"
+  },
+  {
+   "key": "P249",
+   "결론": "동의",
+   "까닭": "main 스냅 pr065.json · pr065-1.json readingSentences[0](id reading-065-s001).korean = '온실 효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다.' — 고칠 글과 글자 그대로, english 'In order to avoid the greenhouse effect, …' 그대로. 옛 판과 칸마다 견주면 pr065.json 은 이 칸 하나, pr065-1.json 은 이 칸 + blocks[1] 한국어 지문 첫 문장(고칠 곳이 함께 적은 대체 길 — blocks[1].text 는 문장 korean 이어붙임과 글자 그대로 같음)뿐. src/lib/readingSentences.json pr065[0] 도 같고 두 강의 파일의 readingSentences 와 통째로 같음 · readingVocabulary pr065 는 안 바뀜 — 카드 greenhouse '온실 (greenhouse effect 온실 효과)' 와 표기 맞음. 옛 글 '온실효과' 스냅 전체 0.",
+   "때": "2026-09-25 05:02"
+  }
+ ]
+}

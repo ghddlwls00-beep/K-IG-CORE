@@ -1,0 +1,2694 @@
+{
+ "조각": "ld-a2",
+ "묶음": [
+  {
+   "묶음": "ld/d016",
+   "읽은 글": 18,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d017",
+   "읽은 글": 15,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d018",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d018 힌트 줄(한 칸)이 따로인 두 낱말 'photography'(n1) · 'racetrack'(n2 · n8)을 한 칩 [photography racetrack] 으로 붙여 n1 에 문장에 없는 꼴로 뜸 — 같은 칩이 칩 T04(n2)와 n8(n1 과 같은 칩이라 읽을거리엔 한 번)에도. 같은 줄의 [develop lift bet](n3 developing · n5 lifted · n6 bet 세 문장의 낱말이 한 칩 — n3 에만 뜨고 n5 · n6 에는 칩 없음) · [24 in a row](n9 '24 cameras in a row' 의 두 항목) · [tie string](n10 'tied a string' 의 두 낱말 — n11 에도 번짐)도 붙음(1부 판정 칩 n3 · n7 · n9 · n10 에 보임) — 힌트 줄은 한 칸이라 함께 나눔. 고친 줄 모의(chips.cjs): n1 [photography] · n2 [racetrack] [ran races] · n3 [develop] · n5 [lift] · n6 [bet] · n8 [racetrack] · n9 [24] [in a row] · n10 [tie] [string] · n11 [string] — 새 쪼갬 · 붙음 · 번짐 없음(n7 은 '$500' 숫자 안전장치로 전체 목록 — 지금과 같은 동작).",
+     "지금": "힌트 줄 'photography racetrack, ran races. develop lift bet. 24 in a row. tie string' → n1 칩 [photography racetrack]",
+     "고칠 글": "photography. racetrack, ran races. develop. lift. bet. 24. in a row. tie. string",
+     "고칠 곳": "content/lessons/ld/d018.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d019",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d019 힌트 줄이 'French'(n1 'the French author')와 '1865'(n3)를 한 칩 [French 1865] 로 붙여 n1(T02) · n3(칩 T05) · n4(1부 판정)에 문장에 없는 꼴로 뜸(n1 에는 1865, n3 에는 French 가 없음). 같은 줄의 [20 seconds science fiction](n6 '20 seconds' + n9 'science fiction')도 붙음(1부 판정 칩 n6 · n9) — 한 칸이라 함께 나눔. 고친 줄 모의: n1 [Jules Verne] [French] · n3 [1865] · n4 [French] [2 Americans] [one Frenchman] · n6 [97 hours] [13 minutes] [20 seconds] · n9 [Jules Verne] [science fiction] — 새 쪼갬 · 붙음 없음. n4 의 [French] 는 앱 규칙이 'Frenchman' 속 French 를 잡는 것(지금도 [French 1865] 로 뜸 — 새 번짐 아님).",
+     "지금": "힌트 줄 'Jules Verne, French 1865, 2 Americans. one Frenchman. 97 hours, 13 minutes, 20 seconds science fiction.' → n1 칩 [Jules Verne] [French 1865] · n3 칩 [French 1865]",
+     "고칠 글": "Jules Verne, French, 1865, 2 Americans. one Frenchman. 97 hours, 13 minutes, 20 seconds. science fiction.",
+     "고칠 곳": "content/lessons/ld/d019.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d020",
+   "읽은 글": 28,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d020 힌트 줄이 따로인 항목을 붙여 칩 셋이 문장에 없는 꼴: [Europe Guadeloupe](n1 T02 · n12 칩 T16 — n12 에는 Europe 이 없음), [15 suntan](n6 '$15' + n7 'suntan' — 칩 T08 · n7), [rolls first week August](n9 'rolls' + n13 'the first week in August' — 칩 T12 · n13). 고친 줄 모의: n1 [Europe] [Guadeloupe] [Caribbean] · n6 [15] · n7 [suntan] · n9 [rolls] · n12 [Guadeloupe] · n13 [first week] [August] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'Europe Guadeloupe. Caribbean. 15 suntan. rolls first week August.' → n1 칩 [Europe Guadeloupe] [Caribbean]",
+     "고칠 글": "Europe. Guadeloupe. Caribbean. 15. suntan. rolls. first week. August.",
+     "고칠 곳": "content/lessons/ld/d020.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d021",
+   "읽은 글": 28,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d021 힌트 줄이 이름 'Judy'(n1)와 관용구 'in a rush'(n5)를 한 칩 [Judy in a rush] 로, 'cap'(n7 capped) · 'step on'(n9 stepped on) · 'bored'(n10)를 한 칩 [cap step on bored] 로 붙임 — n1(T02)에 문장에 없는 'in a rush' 가 뜨고 정작 n5 · n7 · n9 에는 칩이 없음(칩 T13 n10 에도 [cap step on bored], 칩 T05 n3 은 숫자 안전장치로 붙은 칩 전부). 고친 줄 모의: n1 [Judy] · n5 [in a rush] · n7 [cap] · n9 [stepped on] · n10 [bored] · n12 [quit](n3 은 지금처럼 숫자 안전장치로 전체) — 새 쪼갬 · 붙음 · 번짐 없음. 'step on' 을 대본 꼴 'stepped on' 으로 쓴 까닭: 앱 규칙(5글자 미만 소문자 낱말은 낱말로 안 맞춤 · 덩어리 'stepon' 은 'steppedon' 속에 없음)으로는 'step on' 이 n9 에 뜨지 않음('cap' 은 'capped' 속에 있어 뜸).",
+     "지금": "힌트 줄 'Judy in a rush. cap step on bored, quit.' → n1 칩 [Judy in a rush]",
+     "고칠 글": "Judy. in a rush. cap. stepped on. bored, quit.",
+     "고칠 곳": "content/lessons/ld/d021.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T17",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "외래어 표기법 — 'ㅈ' 뒤에는 이중 모음을 쓰지 않음(주스 · 텔레비전처럼). Judy 는 '주디'(국립국어원 용례 '주디 갈런드'). 이 강의 한국어에서 이름이 나오는 곳은 여기 하나.",
+     "지금": "쥬디는 직장에서의 첫날이 즐거울 것이라고 생각했으나 모든 것이 잘못되었다.",
+     "고칠 글": "주디는 직장에서의 첫날이 즐거울 것이라고 생각했으나 모든 것이 잘못되었다.",
+     "고칠 곳": "content/ld_english_scripts.json · d021 대본 n1 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T18",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기 — '늦잠 자다' 는 명사 '늦잠' + 동사 '자다'(사전에 '늦잠자다' 한 낱말 없음). 뜻은 영어 'overslept' 와 같음.",
+     "지금": "첫째로 그녀는 늦잠잤다. 그녀는 그것에 대하여 너무나 속상한 나머지 엉뚱한 버스를 탔다.",
+     "고칠 글": "첫째로 그녀는 늦잠 잤다. 그녀는 그것에 대하여 너무나 속상한 나머지 엉뚱한 버스를 탔다.",
+     "고칠 곳": "content/ld_english_scripts.json · d021 대본 n2 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T19",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기 — '청량음료' 는 표준국어대사전 한 낱말이라 붙여 씀(소유자 결정 17 '사전 한 낱말은 붙임' 과 같은 기준).",
+     "지금": "그녀는 그 청량 음료 공장에 8시 30분 대신에 9시에 도착했다.",
+     "고칠 글": "그녀는 그 청량음료 공장에 8시 30분 대신에 9시에 도착했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d021 대본 n3 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T23",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "맞춤법 — '뚜껑을 씌우다' 의 피동은 '씌워지다'. '씌어지다' 는 '쓰다(글씨)' 의 이중 피동 꼴(6단계도 '씌어졌다' 를 고침)이라 병에 뚜껑을 씌우는 뜻(영어 'to be capped')에 안 맞는 꼴.",
+     "지금": "그런 다음 그녀는 단추를 누르고 병들을 보내서 뚜껑이 씌어지게 했다.",
+     "고칠 글": "그런 다음 그녀는 단추를 누르고 병들을 보내서 뚜껑이 씌워지게 했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d021 대본 n7 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T24",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 — '점심시간' 은 표준국어대사전 한 낱말('점심때' 처럼)이라 붙여 씀. 뜻은 영어 'At lunch' 와 같음.",
+     "지금": "점심 시간에 그녀의 사장은 자신에게 샌드위치를 사도록 그녀를 내보냈다.",
+     "고칠 글": "점심시간에 그녀의 사장은 자신에게 샌드위치를 사도록 그녀를 내보냈다.",
+     "고칠 곳": "content/ld_english_scripts.json · d021 대본 n8 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T28",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기 — '그만두다' 는 한 낱말(6단계가 GRAMMAR 의 '그만 두었다' 를 '그만두었다' 로 고쳤고, 내용 재검토 표 98 · 99 도 '그만 두었습니까 · 그만 두는' 을 같은 종류로 적음).",
+     "지금": "다음 날 아침 그녀는 정시에 출근해서 그만 두었다.",
+     "고칠 글": "다음 날 아침 그녀는 정시에 출근해서 그만두었다.",
+     "고칠 곳": "content/ld_english_scripts.json · d021 대본 n12 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d022",
+   "읽은 글": 28,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d022 힌트 줄이 'England' 와 'formal classes'(n1), '17'(n3)과 'physics'(n8), 'take a break' 와 'cafeteria'(n12)를 붙여 칩 [England formal classes](T02) · [17 physics](칩 T05 n3 · 칩 T12 n8 — n8 에 문장에 없는 17, n3 에 없는 physics) · [take a break cafeteria](칩 T17 n12)가 문장에 없는 꼴(칩 T09 n6 은 '9' 숫자 안전장치로 전체). 고친 줄 모의: n1 [Oxford] [England] [formal classes] · n3 [14] [15] [16] [17] · n8 [physics] · n12 [take a break] [cafeteria] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'Oxford, England formal classes. 14,15,16, 17 physics. take a break cafeteria' → n1 칩 [Oxford] [England formal classes]",
+     "고칠 글": "Oxford, England. formal classes. 14,15,16, 17. physics. take a break. cafeteria",
+     "고칠 곳": "content/lessons/ld/d022.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d023",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 — '범죄 현장' 은 두 명사(사전 한 낱말 아님)라 띄어 씀 — 소유자 결정 17 의 표준 띄어쓰기(영어 학원 · 저녁 식사처럼)와 같은 기준. 뜻은 영어 'the scene of the crime' 와 같음.",
+     "지금": "한 목격자는 Morton이 그 시간 무렵 그 범죄현장을 떠나는 것을 보았다고 말한다.",
+     "고칠 글": "한 목격자는 Morton이 그 시간 무렵 그 범죄 현장을 떠나는 것을 보았다고 말한다.",
+     "고칠 곳": "content/ld_english_scripts.json · d023 대본 n6 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d024",
+   "읽은 글": 20,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d024 힌트 줄이 'France' 와 '1783'(n2), 'American' · 'Frenchman' · 'channel'(n3 · n4)을 붙여 칩 [France 1783] · [American Frenchman channel] 이 문장에 없는 꼴 — 칩 T 가운데 처음은 n3(T05, n3 에는 1783 없음), 칩 T07 n4 에도 [American Frenchman channel](n4 에는 American · Frenchman 없음). 1부 판정 칩 n2 · n9 에도 [France 1783](n9 에는 1783 없음), n2 의 [last 8 minutes](lasted 의 기본꼴 'last' + '8 minutes' 두 항목)도 같은 줄이라 함께 나눔. 고친 줄 모의: n2 [balloon] [France] [1783] [last] [8 minutes] · n3 [balloon] [France] [American] [Frenchman] [channel] · n4 [balloon] [channel] · n9 [balloon] [France] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'balloon. France 1783. last 8 minutes. American Frenchman channel, belongings' → n3 칩 [balloon] [France 1783] [American Frenchman channel]",
+     "고칠 글": "balloon. France. 1783. last. 8 minutes. American. Frenchman. channel, belongings",
+     "고칠 곳": "content/lessons/ld/d024.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d026",
+   "읽은 글": 23,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d028",
+   "읽은 글": 16,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d029",
+   "읽은 글": 13,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d030",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T19",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "한 강의 안 표기 흔들림 — 같은 값 $4.95 를 n6(T17)은 '4불 95센트', 값 $495 를 n10(T20)은 '495불' 로 한국어 단위로 쓰는데 n9 만 '$4.95' 기호. n6 과 같게.",
+     "지금": "그는 그 영수증을 읽었을 때 매우 화가 났다. 내가 그 시계를 $4.95에 팔았기 때문에 화났다.",
+     "고칠 글": "그는 그 영수증을 읽었을 때 매우 화가 났다. 내가 그 시계를 4불 95센트에 팔았기 때문에 화났다.",
+     "고칠 곳": "content/ld_english_scripts.json · d030 대본 n9 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d031",
+   "읽은 글": 17,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d031 힌트 줄이 'Irene Watson' 과 'editor'(n1), 'Sacramento' 와 'Kathy Austin'(n2), 'Mount Everest' · 'seven'(n3)과 'expedition'(n4 · n6)을 붙여 칩 [Irene Watson editor](T02) · [Sacramento Kathy Austin](칩 T04 n2 · n6 · n8 — n6 · n8 에는 Sacramento 없음) · [Mount Everest seven expedition](1부 판정 칩 n3 · n6, n4 도 같은 칩 — n4 · n6 에는 Mount Everest · seven 없음)이 문장에 없는 꼴. 고친 줄 모의: n1 [Irene Watson] [editor] · n2 [Sacramento] [Kathy Austin] · n3 [Mount Everest] [seven] · n4 [expedition] · n6 [Kathy Austin] [expedition] · n8 [Kathy Austin] — 새 쪼갬 · 붙음 없음.",
+     "지금": "힌트 줄 'Irene Watson editor. Sacramento Kathy Austin. Mount Everest seven expedition.' → n1 칩 [Irene Watson editor]",
+     "고칠 글": "Irene Watson. editor. Sacramento. Kathy Austin. Mount Everest. seven. expedition.",
+     "고칠 곳": "content/lessons/ld/d031.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:40"
+  },
+  {
+   "묶음": "ld/d001",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T09",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "외래어 표기 틀림: 'Barbara' 의 국립국어원 표기는 '바버라'(외래어 표기 용례 — 흔히 쓰던 '바바라' 가 아님). 뜻과 나머지 글은 맞음.",
+     "지금": "나는 왓슨 부인입니다. 나의 이름은 바바라입니다. 나는 간호사이고 병원에서 일합니다.",
+     "고칠 글": "나는 왓슨 부인입니다. 나의 이름은 바버라입니다. 나는 간호사이고 병원에서 일합니다.",
+     "고칠 곳": "content/ld_english_scripts.json · d001 대본 n1 ko (키 d001 배열에서 n=1 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d002",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄에서 두 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [Bob Watson Denver](n2 'Bob Watson's brother … in Denver') · [Wisconsin 1937](n4 'Madison, Wisconsin' + n5 'born in 1937'). [Bob Watson Denver] 는 T02(n1) · T04(n2) 와 1부 판정 줄 n4 · n6 에, [Wisconsin 1937] 은 1부 판정 줄 n4 · n5 에 보임 — 힌트 줄은 한 칸이라 여기 한 번. 고친 줄을 chips.cjs 로 잼: n1 [Rod Watson] [Rodney Hill Watson] [Bob Watson] · n2 … [Bob Watson] [Denver] [Colorado] · n4 [Bob Watson] [Denver] … [Madison] [Wisconsin] · n5 [1937] [March 1] · n6 [Bob Watson] [1941] [government employee] — 새 쪼개짐 · 붙음 · 없는 꼴 없음(n1 의 [Bob Watson] 은 낱말 'Watson' 으로 걸리는 것 — 지금 [Bob Watson Denver] 가 걸리는 것과 같은 동작).",
+     "지금": "Rod Watson. Rodney Hill Watson. Bob Watson Denver, Colorado. Clayton Street. 1490. 1490 Clayton Street. Madison, Wisconsin 1937. March 1. 1941. government employee.",
+     "고칠 글": "Rod Watson. Rodney Hill Watson. Bob Watson. Denver, Colorado. Clayton Street. 1490. 1490 Clayton Street. Madison, Wisconsin. 1937. March 1. 1941. government employee.",
+     "고칠 곳": "content/lessons/ld/d002.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d003",
+   "읽은 글": 14,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d004",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄에서 두 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [Portuguese South America](n2 'speak Portuguese' + 'South America') · [steel mills rubber plants](n4 'steel mills and rubber plants') · [Amazon clinic](n6 'The Amazon' + n8 'a good clinic'). [Portuguese South America] 는 T02(n1 — n2 · n7 도 같은 칩 줄)에, 나머지 둘은 1부 판정 줄 n3 · n4 · n6 · n8 에 보임 — 힌트 줄은 한 칸이라 여기 한 번(줄 전체를 고치므로 셋 다). 고친 줄을 chips.cjs 로 잼: n1 [Brazil] [South America] · n2 [Brazil] [Portuguese] [South America] · n4 … [steel mills] [rubber plants] … · n6 [Brazil] [Amazon] · n8 [clinic] — 새 틀림 없음. (n3 의 [rubber plants] 는 낱말 'plants', n7 의 [South America] 는 'southeastern' 에 걸리는 지금과 같은 번짐 — n7 은 d011 T11 의 코드 고침으로 풀림)",
+     "지금": "Brazil. Portuguese South America. textile plants manufacture cotton, linen, silk products. steel mills rubber plants. agricultural products. coffee, corn, cotton, cocoa. wheat, rice, beans, bananas. Amazon clinic, school system.",
+     "고칠 글": "Brazil. Portuguese. South America. textile plants manufacture cotton, linen, silk products. steel mills. rubber plants. agricultural products. coffee, corn, cotton, cocoa. wheat, rice, beans, bananas. Amazon. clinic, school system.",
+     "고칠 곳": "content/lessons/ld/d004.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d005",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄에서 여러 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [Tom Fred basketball baseball](n1 'Tom and Fred' + n5 'basketball and baseball') · [seafood hamburgers French fries](n6 'seafood' + n7 'hamburgers and french fries'). T02(n1) · T07(n5) · T09(n6) · T11(n7) 에 보임 — 힌트 줄은 한 칸이라 여기 한 번. 고친 줄을 chips.cjs 로 잼: n1 [Tom] [Fred] · n5 [basketball] [baseball] [tennis] · n6 [Tom] [Fred] [seafood] · n7 [hamburgers] [French fries] — 새 틀림 없음.",
+     "지금": "Tom Fred basketball baseball, tennis. seafood hamburgers French fries.",
+     "고칠 글": "Tom. Fred. basketball. baseball, tennis. seafood. hamburgers. French fries.",
+     "고칠 곳": "content/lessons/ld/d005.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d006",
+   "읽은 글": 16,
+   "틀림": [
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기: 2017-06-01 부터 표준국어대사전은 외래어 뒤의 '가(街)' 를 해 · 강 · 산 · 주 등과 함께(26개) 앞말에 붙여 씀(국립국어원 「외래어 표기법」 일부 개정에 따른 띄어쓰기 변경 안내) — '제퍼슨가'. '워싱턴 시' 의 '시' 는 그 26개가 아니어서 그대로 둠.",
+     "지금": "그것은 워싱턴 시 근처의 작은 마을이다. 그러나 그의 치과 병원은 워싱턴의 제퍼슨 가 1616번지에 있다.",
+     "고칠 글": "그것은 워싱턴 시 근처의 작은 마을이다. 그러나 그의 치과 병원은 워싱턴의 제퍼슨가 1616번지에 있다.",
+     "고칠 곳": "content/ld_english_scripts.json · d006 대본 n5 ko (키 d006 배열에서 n=5 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d007",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T10",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "한 강의 안 표기 흔들림: 같은 사람을 n1 에서만 영어 'John Wenger' 로 쓰고, n3 '웽거 여사' · n5 · n7 · n9 · n10 '존' 은 한글로 씀 — 강의 안 다른 줄처럼 한글로 맞춤(뜻은 맞음).",
+     "지금": "John Wenger는 필라델피아에 산다. 그것은 미국의 동쪽 부분의 큰 도시이다.",
+     "고칠 글": "존 웽거는 필라델피아에 산다. 그것은 미국의 동쪽 부분의 큰 도시이다.",
+     "고칠 곳": "content/ld_english_scripts.json · d007 대본 n1 ko (키 d007 배열에서 n=1 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d008",
+   "읽은 글": 31,
+   "틀림": [
+    {
+     "T": "T16",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "편지 맺음말 쉼표 빠짐: 'Love Nancy.' 는 'Love, Nancy.'(과정 안 d012 n12 'Love, Kim.' 과 같게). 쉼표가 없어 '사랑하는 낸시(Nancy 를 부르는 말)' 로 읽히고, 실제로 n15 한국어가 그렇게 옮겨짐(T31). 받아쓰기 채점은 문장부호를 안 봄(listeningUtils typedDictationMatches) — 채점 영향 없음. 녹음이 말하는 낱말은 같음(쉼표만) — 화면 글이 바뀌므로 이 문장 새 음성 클립(텍스트 해시) 필요.",
+     "지금": "Please come and see us soon. Love Nancy.",
+     "고칠 글": "Please come and see us soon. Love, Nancy.",
+     "고칠 곳": "content/ld_english_scripts.json · d008 대본 n15 en (키 d008 배열에서 n=15 인 행의 en)",
+     "새 음성 클립": true
+    },
+    {
+     "T": "T20",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기: '스쿨버스' 는 표준국어대사전의 한 낱말.",
+     "지금": "아이들을 위한 스쿨 버스가 한 대 있다.",
+     "고칠 글": "아이들을 위한 스쿨버스가 한 대 있다.",
+     "고칠 곳": "content/ld_english_scripts.json · d008 대본 n4 ko (키 d008 배열에서 n=4 인 행의 ko)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T31",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "영어 n15 의 맺음말 'Love(,) Nancy' 는 '사랑을 담아, 낸시(가)' — 편지를 쓴 사람이 낸시. '사랑하는 낸시' 는 받는 사람을 부르는 말(n1 '친애하는 페기에게' 와 같은 꼴)로 읽혀 누가 누구에게 쓴 편지인지 헷갈림. 과정 안 d012 n12 '사랑을 담아, Kim.' 과 같게 옮김(T16 의 영어 쉼표와 함께).",
+     "지금": "제발 빨리 와서 우리를 만나줘. 사랑하는 낸시.",
+     "고칠 글": "제발 빨리 와서 우리를 만나줘. 사랑을 담아, 낸시.",
+     "고칠 곳": "content/ld_english_scripts.json · d008 대본 n15 ko (키 d008 배열에서 n=15 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d009",
+   "읽은 글": 11,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d010",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄에서 두 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [French Portuguese](n2 'French or Portuguese') · [Lake Victoria Nile River](n5 'Lake Victoria and of the Nile River'). T04(n2) · T09(n5) 에 보임 — 힌트 줄은 한 칸이라 여기 한 번. 고친 줄을 chips.cjs 로 잼: n2 [French] [Portuguese] · n5 [Lake Victoria] [Nile River], 다른 문장 칩은 그대로 — 새 틀림 없음.",
+     "지금": "get along all right. French Portuguese. Kenya. Lake Victoria Nile River. Sahara Desert. Far East. four hours",
+     "고칠 글": "get along all right. French. Portuguese. Kenya. Lake Victoria. Nile River. Sahara Desert. Far East. four hours",
+     "고칠 곳": "content/lessons/ld/d010.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d011",
+   "읽은 글": 25,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄에서 두 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [Kim Norris Ocean City](n1 'Kim Norris is in Ocean City') · [Washington boardwalk](n2 'from Washington' + n8 · n9 'boardwalk'). [Kim Norris Ocean City] 는 T02(n1 — n4 도 같은 칩 줄) · T04(n2), [Washington boardwalk] 는 T04(n2) · T14(n8 — n9 도 같은 칩 줄)에 보임 — 힌트 줄은 한 칸이라 여기 한 번. 고친 줄을 chips.cjs 로 잼: n1 [Kim Norris] [Ocean City] [New Jersey] [Becky Field] · n2 [Kim Norris] [Laura Beckett] [Washington] · n4 [Ocean City] [New Jersey] [Becky Field] · n8 · n9 [boardwalk] — 새 틀림 없음(n6 · n10 의 [New Jersey] 는 힌트 글로 못 막는 번짐이라 T11 에 따로).",
+     "지금": "Kim Norris Ocean City, New Jersey, Becky Field. Laura Beckett. Washington boardwalk.",
+     "고칠 글": "Kim Norris. Ocean City, New Jersey, Becky Field. Laura Beckett. Washington. boardwalk.",
+     "고칠 곳": "content/lessons/ld/d011.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T11",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "문장에 없는 칩: n6('the one who smiles') · n10('a new white swimming suit') 에 New Jersey 가 없는데 [New Jersey] 가 뜸(n10 도 같은 칩 줄이라 T11 하나로 보임). 칩 고르기(LdLearningView pickHintsFor)가 낱말 조각 'New'(대문자 3자)를 띄어쓰기 · 문장부호를 지운 문장 글자열 속에서 찾아 'onewho' · 'anewwhite' 안의 'new' 에 걸림(chips.cjs 로 확인). 힌트 줄을 어떻게 써도 New Jersey 를 두는 한 못 막으므로 코드 몫. 같은 까닭의 번짐: d008 n7 [Don corn]('good one' 속 'don') · d004 n7 [South America]('southeastern' 속 'south'). 고칠 때 소유격('Keith's' · 'Becky's' · 'Watson's')은 's 를 떼고 맞춰야 맞는 칩이 안 사라짐. 코드 고침 뒤 n6 은 칩 없음, n10 은 수 300 이 있어 안전망(목록 전체)이 뜸 — 안전망은 정해진 동작 그대로.",
+     "지금": "[칩 n6] [New Jersey] · [칩 n10] [New Jersey] — 힌트 줄 'Kim Norris Ocean City, New Jersey, Becky Field. Laura Beckett. Washington boardwalk.'",
+     "고칠 글": "(힌트 줄 그대로 — 코드 고침 뒤 n6 · n10 에 [New Jersey] 칩이 안 나옴: 대문자 낱말 조각도 문장의 낱말 경계에서만 맞춤)",
+     "고칠 곳": "src/components/LdLearningView.tsx pickHintsFor 108~118행(낱말 조각을 squashedSentence.includes 로 맞추는 곳) 코드 고침 — 힌트 글 그대로 (같은 규칙을 흉내 내는 docs/qa-2026-09-18/scripts/lib/expectations.cjs 도 함께)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T23",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: '판자산책로' 는 사전에 없는 붙임 — 두 낱말 '판자 산책로'. 같은 강의 T24(n9)도 같은 까닭으로 따로 적음.",
+     "지금": "그것은 크기도 해. 그것은 세 개의 침실이 있어. 해변은 아름답고 멋진 판자산책로(boardwalk)가 있어.",
+     "고칠 글": "그것은 크기도 해. 그것은 세 개의 침실이 있어. 해변은 아름답고 멋진 판자 산책로(boardwalk)가 있어.",
+     "고칠 곳": "content/ld_english_scripts.json · d011 대본 n8 ko (키 d011 배열에서 n=8 인 행의 ko)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T24",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: '판자산책로' → '판자 산책로'(T23 과 같은 까닭).",
+     "지금": "어제 우리는 오전 6시부터 8시까지 그 판자산책로에서 자전거를 탔어. 그것은 매우 재미있었어.",
+     "고칠 글": "어제 우리는 오전 6시부터 8시까지 그 판자 산책로에서 자전거를 탔어. 그것은 매우 재미있었어.",
+     "고칠 곳": "content/ld_english_scripts.json · d011 대본 n9 ko (키 d011 배열에서 n=9 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d012",
+   "읽은 글": 27,
+   "틀림": [
+    {
+     "T": "T23",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "한국어에 영어에 없는 '그리고' 가 더 있음 — 영어 n7 은 'How lucky I was.'(녹음 받아 적기 docs/qa-2026-09-15/evidence/ld-transcripts.json 도 'How lucky I was.' — 옛 교재 한국어의 '그리고' 가 남은 것). 뜻은 같음.",
+     "지금": "그리고 나는 얼마나 운이 좋았던가.",
+     "고칠 글": "나는 얼마나 운이 좋았던가.",
+     "고칠 곳": "content/ld_english_scripts.json · d012 대본 n7 ko (키 d012 배열에서 n=7 인 행의 ko)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T24",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: '매우매우' 는 사전에 없는 붙임 — 부사를 되풀이할 때는 '매우 매우' 로 띄어 씀('너무너무' 처럼 사전에 한 낱말로 오른 것만 붙임).",
+     "지금": "그의 이름은 Teddy Williams야. 그는 인명구조원이고 잘생기고 매우매우 좋아.",
+     "고칠 글": "그의 이름은 Teddy Williams야. 그는 인명구조원이고 잘생기고 매우 매우 좋아.",
+     "고칠 곳": "content/ld_english_scripts.json · d012 대본 n8 ko (키 d012 배열에서 n=8 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d013",
+   "읽은 글": 12,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d014",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄 끝 두 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [Italian Chinese](n6 'Italian, and Chinese'). T08(n6) · T12(n8 — n9 도 같은 칩 줄)에 보이고, n8 · n9 에는 Italian 이 없음 — 힌트 줄은 한 칸이라 여기 한 번. 고친 줄을 chips.cjs 로 잼: n6 [Russian] [Portuguese] [German] [Italian] [Chinese] · n8 · n9 [Chinese] — 새 틀림 없음.",
+     "지금": "athlete. Russian, Portuguese, German, Italian Chinese.",
+     "고칠 글": "athlete. Russian, Portuguese, German, Italian. Chinese.",
+     "고칠 곳": "content/lessons/ld/d014.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T20",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "띄어쓰기: 'can't speak a word' 의 '짧은 말' 뜻은 한 낱말 '한마디'(표준국어대사전 · 국립국어원 — '한마디도 안 했다'). '한 마디' 는 말의 도막을 셀 때.",
+     "지금": "중국어를 읽고 쓰는 것을 배우는 것은 매우 어렵지만 그는 한 마디도 말할 수 없다.",
+     "고칠 글": "중국어를 읽고 쓰는 것을 배우는 것은 매우 어렵지만 그는 한마디도 말할 수 없다.",
+     "고칠 곳": "content/ld_english_scripts.json · d014 대본 n9 ko (키 d014 배열에서 n=9 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d015",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T06",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄에서 세 항목이 붙어 대본에 없는 꼴의 칩이 됨 — [suit blonde purple pants](n2 'my new suit' · n4 · n6 'blonde' · n7 'purple pants'), 줄 끝 쉼표('pants,')도 남은 기호. T06(n4 — n6 · n7 도 같은 칩 줄) · T08(n5 — 'Saturday' 로 안전망이 목록 전체를 보임)에 보이고, 정작 'suit' 가 있는 n2 에는 칩이 없음 — 힌트 줄은 한 칸이라 여기 한 번. 고친 줄을 chips.cjs 로 잼: n2 [suit] · n4 · n6 [blonde] · n7 [purple pants] · n5 [discotheque] [suit] [blonde] [purple pants](안전망 — 지금과 같은 동작) — 새 틀림 없음.",
+     "지금": "discotheque. suit blonde purple pants,",
+     "고칠 글": "discotheque. suit. blonde. purple pants.",
+     "고칠 곳": "content/lessons/ld/d015.json · blocks[2].text (type hints 블록)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-24 23:45"
+  },
+  {
+   "묶음": "ld/d095",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T12",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'10일날' 은 사전에 없는 붙임꼴 — 날짜의 '일(日)' 과 '날' 이 겹친 말이라 '10일' 로 씀(굳이 '날' 을 쓰면 '10일 날' 로 띄어야 함). 같은 강의 n3 은 '11일 아침' 으로 '날' 없이 씀. 영어(on the 10th)와 뜻은 같음 — 표기만.",
+     "지금": "그녀의 상은 샌프란시스코로의 여행이었다. 그녀는 10일날 저녁 9시 30분에 떠났다.",
+     "고칠 글": "그녀의 상은 샌프란시스코로의 여행이었다. 그녀는 10일 저녁 9시 30분에 떠났다.",
+     "고칠 곳": "content/ld_english_scripts.json · d095 대본 n2 ko (\"d095\"[1].ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d096",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d096 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 경계 없는 'progress pollution the 1970s' 가 한 칩으로 n1(T02)에 뜸 — n1 의 두 낱말(progress · pollution)과 n2 의 'the 1970s' 가 붙음(⑥, 명령서 예 'Wisconsin 1937' 과 같은 붙음). 그래서 n2(T04)에는 [England] 만 뜨고 'the 1970s' 칩이 없음. 같은 줄 '100 tear off'(n3 칩 — 1부 판정 칩에서 보임)도 수 100 과 n4 의 구절이 붙었고, 'tear off' 는 n4 의 'torn off' 와 꼴이 달라 떼어 놓아도 어느 문장에도 안 뜸 → 'torn off' 로. 고칠 글을 넣으면 n1 [progress] [pollution] · n2 [the 1970s] [England] · n3 [28 people] [disaster] [100] · n4 [torn off] — 나머지 문장 그대로, 새 흠 없음(n7 · n9 의 [28 people] 은 지금도 'people' 낱말 일치로 뜨는 번짐 — 1부 방침대로 틀림으로 안 셈).",
+     "지금": "progress pollution the 1970s, England. 28 people. disaster. 100 tear off. several days. huge clouds of smoke. 30 miles away.",
+     "고칠 글": "progress. pollution. the 1970s, England. 28 people. disaster. 100. torn off. several days. huge clouds of smoke. 30 miles away.",
+     "고칠 곳": "content/lessons/ld/d096.json · blocks[3](type hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T14",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 — '뜯겨나가다' 는 사전에 없는 붙임꼴. 여기 '나가다' 는 지붕이 떨어져 나간다는 본용언이라 앞말과 띄어 씀('-어 나가다' 가 '계속해 나감' 을 뜻하는 보조 용언일 때만 붙여 씀 허용). 영어(were torn off)와 뜻은 같음.",
+     "지금": "그 공장은 파괴되었고 그 마을의 몇몇 집의 지붕들이 뜯겨나갔다.",
+     "고칠 글": "그 공장은 파괴되었고 그 마을의 몇몇 집의 지붕들이 뜯겨 나갔다.",
+     "고칠 곳": "content/ld_english_scripts.json · d096 대본 n4 ko (\"d096\"[3].ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d097",
+   "읽은 글": 18,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d098",
+   "읽은 글": 16,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d099",
+   "읽은 글": 13,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d099 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 경계 없는 'Oscar traffic well-off' 가 한 칩으로 n2(T03) · n3 · n6 세 행에 통째로 뜸 — n2 의 이름 Oscar, n3 의 traffic, n6 의 well off 가 붙음(⑥). 같은 줄 'Franklin Shipton'(n1 칩 — 1부 판정 칩에서 보임)도 사람 이름과 지명이 붙음 — 줄이 한 칸이라 함께 나눔. 'Mr.' 뒤 '. ' 에서 [Mr] 가 떨어지는 것은 ㉠ 내용 재검토 표 #15 코드 고침(src/components/LdLearningView.tsx hintChunks) 몫 — 글은 'Mr. Franklin' 그대로 둠(코드 고침 뒤 [Mr. Franklin] 한 칩). 고칠 글을 넣으면 n1 [Franklin] [Shipton] · n2 [Oscar] · n3 [Oscar] [traffic] · n6 [well-off] — n4 · n5 는 지금처럼 칩 없음, 새 흠 없음.",
+     "지금": "Mr. Franklin Shipton, Oscar traffic well-off",
+     "고칠 글": "Mr. Franklin. Shipton. Oscar. traffic. well-off",
+     "고칠 곳": "content/lessons/ld/d099.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d100",
+   "읽은 글": 4,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d101",
+   "읽은 글": 18,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d102",
+   "읽은 글": 25,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d102 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 경계 없는 'routes meteorologists' 가 한 칩으로 n3(T05) · n12 와 n6(T09) · n10 에 통째로 뜸 — n3 의 routes 와 n6 · n10 · n12 의 meteorologists 가 붙음(⑥). 고칠 글을 넣으면 n3 [routes] · n6 · n10 [meteorologists] + 지금의 weather 칩 · n12 [meteorologists] — 나머지 문장 그대로, 새 흠 없음. (n1 · n2 · n4 · n9 의 weather 칩 셋과 n6 · n7 · n8 · n10 의 [weather maps] 는 'weather' 낱말 일치로 뜨는 번짐 — 1부 방침대로 틀림으로 안 셈.)",
+     "지금": "routes meteorologists. weather stations, satellites, weather balloons. weather maps. temperature, air pressure, wind, humidity",
+     "고칠 글": "routes. meteorologists. weather stations, satellites, weather balloons. weather maps. temperature, air pressure, wind, humidity",
+     "고칠 곳": "content/lessons/ld/d102.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d103",
+   "읽은 글": 12,
+   "틀림": [
+    {
+     "T": "T10",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "영어 n4 문장 첫머리의 관사 'The' 가 한국어 문장에 그대로 남음 — 'The' 는 경주 이름의 일부가 아님(힌트 줄 · 칩도 'Iditarod Trail Race'). LISTENING 한국어에서 'The' 를 남긴 곳은 이것 말고는 작품 제목('The War of the Worlds' 등)뿐. 뜻은 같음.",
+     "지금": "The Iditarod Trail Race는 세계에서 가장 긴 개썰매 경주이다.",
+     "고칠 글": "Iditarod Trail Race는 세계에서 가장 긴 개썰매 경주이다.",
+     "고칠 곳": "content/ld_english_scripts.json · d103 대본 n4 ko (\"d103\"[3].ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d104",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d104 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 경계 없는 'four hours 110 rest period' 가 한 칩으로 n3(T05) · n4(T07) · n5 · n6 네 행에 통째로 뜸 — n3 의 four hours, n4 의 110, n5 의 rest period 세 항목이 붙음(⑥). 고칠 글을 넣으면 n2 [March] · n3 [four hours] [two hours each day] · n4 [110] · n5 [rest period] · n6 [four hours] [two hours each day] — 새 흠 없음(n3 · n6 에 서로의 hours 칩이 같이 뜨는 것은 지금도 'hours' 낱말 일치로 뜨는 번짐 — 1부 방침대로 틀림으로 안 셈).",
+     "지금": "March, four hours 110 rest period. two hours each day.",
+     "고칠 글": "March. four hours. 110. rest period. two hours each day.",
+     "고칠 곳": "content/lessons/ld/d104.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d105",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d105 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 경계 없는 'broth metaphors projects' 가 한 칩으로 n5(T05) · n7 에 통째로 뜸 — n5 · n7 의 broth 와 n7 의 metaphors · projects 가 붙음(⑥). 같은 줄 'specific general truth'(n1 · n2 · n4 칩 — 1부 판정 칩에서 보임)도 n4 의 두 항목(specific · general truth)이 붙음 — 줄이 한 칸이라 함께 나눔('express truth' 는 n1 의 두 낱말을 보인 칩이라 그대로). 고칠 글을 넣으면 n1 [Proverbs] [comment on a situation] [express truth] [general truth] · n2 [Proverbs] [express truth] [general truth] · n4 [Proverbs] [comment on a situation] [express truth] [specific] [general truth] · n5 [broth] · n7 [broth] [metaphors] [projects] · n8 [comparison] — 새 흠 없음(n1 · n2 의 truth 칩은 지금도 'truth' 낱말 일치로 뜨는 번짐).",
+     "지금": "Proverbs. comment on a situation. express truth. specific general truth. broth metaphors projects. comparison",
+     "고칠 글": "Proverbs. comment on a situation. express truth. specific. general truth. broth. metaphors. projects. comparison",
+     "고칠 곳": "content/lessons/ld/d105.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d106",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d106 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 'worth bush'(n2 의 두 낱말)가 한 칩으로 n2(T03) · n4 에, 'the one-eyed man mice' 가 한 칩으로 n9(T11)에 뜸 — n9 의 구절과 n10 의 mice 가 붙어, mice 가 나오는 n10 에는 칩이 하나도 없음(⑥). 고칠 글을 넣으면 n2 [worth] [bush] · n4 [worth] · n9 [the one-eyed man] · n10 [mice] — 새 흠 없음(n4 의 [worth] 는 지금도 'worth' 낱말 일치로 뜨는 번짐).",
+     "지금": "worth bush. the one-eyed man mice",
+     "고칠 글": "worth. bush. the one-eyed man. mice",
+     "고칠 곳": "content/lessons/ld/d106.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d108",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d108 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 'moon planets'(n2 · T03), '1733 1758'(n3 · T05), 'edition Franklin penny healthy'(n3 · T05, n4 · T07, n5 · T08, n7 · n8 — 1부 판정 칩)가 각각 한 칩 — 특히 넷째는 네 문장의 항목(edition · Franklin · penny · healthy)이 붙어 다섯 행에 통째로 뜸(⑥). 고칠 글을 넣으면 n2 [Poor Richard's Almanac] [weather] [sun] [moon] [planets] · n3 [Poor Richard's Almanac] [1733] [1758] [Franklin] · n4 [Poor Richard's Almanac] [edition] [Franklin] · n5 [Franklin] [penny] · n7 [healthy] [wealthy] [wise] · n8 [publications] [Poor Richard's Almanac] [Franklin] — 새 흠 없음(n2 · n3 · n4 의 [Poor Richard's Almanac] 은 지금도 'almanac' 낱말 일치로 뜨는 번짐).",
+     "지금": "publications. Poor Richard's Almanac, weather, sun, moon planets. 1733 1758. edition Franklin penny healthy, wealthy, wise.",
+     "고칠 글": "publications. Poor Richard's Almanac, weather, sun, moon, planets. 1733. 1758. edition. Franklin. penny. healthy, wealthy, wise.",
+     "고칠 곳": "content/lessons/ld/d108.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d109",
+   "읽은 글": 10,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d110",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T21",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "영어 'His picture' 는 초상(그리거나 새긴 얼굴) — Franklin 은 1790년에 죽어 사진이 없고, 우표 · 동전 · 지폐의 얼굴은 초상화를 새긴 것. 한국어 '사진' 은 영어 뜻을 좁혀 사실과 어긋남 → '초상'.",
+     "지금": "그의 사진은 미국 우표, 동전, 지폐에 나타난다.",
+     "고칠 글": "그의 초상은 미국 우표, 동전, 지폐에 나타난다.",
+     "고칠 곳": "content/ld_english_scripts.json · d110 대본 n10 ko (\"d110\"[9].ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d111",
+   "읽은 글": 23,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d111 힌트 줄(바뀌지 않음). chips.cjs 로 확인: 'identifies late 18th century' 가 한 칩으로 n2(T04) · n3 에 뜸 — n2 의 identifies 와 n3 의 late 18th century 가 붙음. 'description early 1800s'(n5 · T08)도 두 항목이 붙음(⑥). 고칠 글을 넣으면 n2 [passport] [identifies] · n3 [passport] [late 18th century] · n5 [passport] [description] [early 1800s] — 나머지 문장 그대로, 새 흠 없음('Forehead wrinkled' 는 n7 에 이어 나오는 두 낱말이라 그대로).",
+     "지금": "passport. identifies late 18th century, description early 1800s. black, curly. brown. broken. Forehead wrinkled, thin with big teeth. pointed.",
+     "고칠 글": "passport. identifies. late 18th century. description. early 1800s. black, curly. brown. broken. Forehead wrinkled, thin with big teeth. pointed.",
+     "고칠 곳": "content/lessons/ld/d111.json · blocks[2](type hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T15",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 — '(적어도) 한 차례라도' 라는 횟수 뜻이라 '한 번이라도'(번 = 횟수를 세는 의존 명사, '두 번이라도' 로 바꿔도 말이 됨). '한번' 을 붙여 쓰는 것은 '시험 삼아 · 기회 있는 어느 때' 뜻일 때. 영어(If you've ever traveled)와 뜻은 같음.",
+     "지금": "만일 여러분이 한 나라에서 다른 나라로 한번이라도 여행해본 적이 있다면 여러분은 아마 여권을 갖고 있을 것이다.",
+     "고칠 글": "만일 여러분이 한 나라에서 다른 나라로 한 번이라도 여행해본 적이 있다면 여러분은 아마 여권을 갖고 있을 것이다.",
+     "고칠 곳": "content/ld_english_scripts.json · d111 대본 n1 ko (\"d111\"[0].ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:00"
+  },
+  {
+   "묶음": "ld/d032",
+   "읽은 글": 10,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'Elliott' 는 녹음 · 표준 표기로 '엘리엇'(받침 ㅅ) — 받침 있는 말 뒤 조사는 '과' 여야 함('Elliott와' → 'Elliott과'). 같은 강의 n3 ko(1부 문맥)와 n6 ko(T10 — 1부 문맥 #40)의 'Elliott는' 도 같은 까닭으로 'Elliott은' — 수정 세션이 한 강의 안에서 함께 맞출 것('Kathy Byram과' · 'Byram이' 는 맞음). 고치기 전(9d6e15d) = 지금.",
+     "지금": "Jim Elliott와 William Smith가 절벽을 오르고 있었을 때 바위 몇 조각이 그들 옆으로 떨어졌다.",
+     "고칠 글": "Jim Elliott과 William Smith가 절벽을 오르고 있었을 때 바위 몇 조각이 그들 옆으로 떨어졌다.",
+     "고칠 곳": "content/ld_english_scripts.json · d032 대본 n2 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T09",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'Byram managed to hold him on the rope' 의 on 은 로프로(로프에 매단 채) 붙잡았다는 뜻 — '로프 위에 그를 붙잡았다' 는 '로프 위(자리)' 뜻이 되어 영어와 다름(학습자가 on the rope 를 '로프 위' 로 익힘). 고치기 전(9d6e15d) = 지금.",
+     "지금": "그는 그의 균형을 잃고 도와달라고 소리쳤다. 그는 5-6미터 떨어졌지만 Byram이 가까스로 로프 위에 그를 붙잡았다.",
+     "고칠 글": "그는 그의 균형을 잃고 도와달라고 소리쳤다. 그는 5-6미터 떨어졌지만 Byram이 가까스로 로프로 그를 붙잡았다.",
+     "고칠 곳": "content/ld_english_scripts.json · d032 대본 n4 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d033",
+   "읽은 글": 13,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "n3 칩 [location shipping center] 는 두 항목(location · shipping center)이 한 칩에 붙음 — 이 꼴은 어느 문장에도 없음. 같은 칩이 n6(1부 문맥 칩 줄)에도 보임. 힌트 줄은 한 칸이라 같은 줄의 다른 틀림도 함께 고침(모두 1부 문맥 칩 줄): [trade Latin America port] 붙음(n4 — 게다가 'port' 는 어느 문장에도 없고 n1 은 'seaports'), [coffee southern United States] 붙음(n1 · n5 · n6 · n7 — n1 · n7 은 'the United States' 라 'southern' 을 잘못 받아 적게 함). chips.cjs 로 재어 봄: n1 [New Orleans][seaports][United States] · n3 [location][shipping center] · n4 [New Orleans][trade][Latin America] · n5 [New Orleans][Bananas][cocoa beans][coffee] · n6 [shipping center][southern][United States] · n7 [New Orleans][United States] · n2 · n8 그대로 — 새 쪼개짐 · 붙음 · 없는 꼴 없음('port' 를 따로 두면 n1 의 seaports 에 새로 번지므로 문장 꼴 'seaports' 로; n6 의 [shipping center] 는 'industrial center' 의 center 로 지금도 보이는 것 — 새로 번진 것 아님).",
+     "지금": "칩 n3 [location shipping center] ← 힌트 줄 \"New Orleans. Mississippi River. 160 kilometers north. Gulf of Mexico. location shipping center. trade Latin America port. Bananas, cocoa beans, coffee southern United States.\"",
+     "고칠 글": "New Orleans. Mississippi River. 160 kilometers north. Gulf of Mexico. location. shipping center. trade. Latin America. seaports. Bananas, cocoa beans, coffee. southern. United States.",
+     "고칠 곳": "content/lessons/ld/d033.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d034",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "n6 칩 [indoor arena 100 parks] 는 두 항목(indoor arenas · 100 parks)이 한 칩에 붙음 — 이 꼴은 어느 문장에도 없음(n7 — 1부 문맥 칩 줄 — 에도 같은 칩). 힌트 줄은 한 칸이라 같은 줄의 다른 틀림도 함께 고침(1부 문맥 칩 줄): [conventions Superdome] 붙음(n5), [38 km] 는 문장이 '38 kilometers' — 약어 꼴을 받아 적게 함(n9), [annual Mardi Gras celebrations] 는 문장이 단수 'celebration'(n10). 'indoor arena' 도 문장 꼴 'indoor arenas' 로. chips.cjs 로 재어 봄: n5 [exhibitions][conventions][Superdome] · n6 [indoor arenas] · n7 [100 parks][New Orleans] · n9 [38 kilometers] · n10 [New Orleans][annual Mardi Gras celebration][parades][festivities] · 나머지 문장 칩 그대로 — 새 틀림 없음.",
+     "지금": "칩 n6 [indoor arena 100 parks] ← 힌트 줄 \"French Quarter. early 1900s. exhibitions, conventions Superdome. indoor arena 100 parks. New Orleans. Lake Pontchartrain Causeway, 38 km. annual Mardi Gras celebrations. parades. festivities.\"",
+     "고칠 글": "French Quarter. early 1900s. exhibitions, conventions. Superdome. indoor arenas. 100 parks. New Orleans. Lake Pontchartrain Causeway, 38 kilometers. annual Mardi Gras celebration. parades. festivities.",
+     "고칠 곳": "content/lessons/ld/d034.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T18",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "한글 수 '백' 뒤 단위 명사 '개' 는 띄어 씀(한글 맞춤법 제43항 — 붙여 쓰기는 아라비아 숫자와 쓰이거나 순서를 나타낼 때만). 고치기 전(9d6e15d) = 지금.",
+     "지금": "뉴올리언스에는 백개 이상의 공원과 많은 유명한 식당들이 있다.",
+     "고칠 글": "뉴올리언스에는 백 개 이상의 공원과 많은 유명한 식당들이 있다.",
+     "고칠 곳": "content/ld_english_scripts.json · d034 대본 n7 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T22",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'흥미있다' 는 사전에 없는 붙여 쓰기 — 명사 + '있다' 이므로 '흥미 있다'('흥미롭다' 와 다름). 고치기 전(9d6e15d) = 지금.",
+     "지금": "뉴올리언스는 방문하거나 살기에 흥미있는 도시이다.",
+     "고칠 글": "뉴올리언스는 방문하거나 살기에 흥미 있는 도시이다.",
+     "고칠 곳": "content/ld_english_scripts.json · d034 대본 n11 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d035",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "n7 칩 [Dorothy Aunt Helen] 은 두 이름(Dorothy · Aunt Helen)이 한 칩에 붙음 — 이 꼴은 어느 문장에도 없음. 같은 칩이 n8(두 이름이 따로 나옴)과 n10('aunts' 의 aunt 에 걸려)에도 보임. chips.cjs 로 재어 봄: n7 [Dorothy] · n8 [Dorothy][Aunt Helen] · n10 [Aunt Helen](지금도 'aunts' 로 보이는 것 — 새로 번진 것 아님) · 나머지 그대로 — 새 쪼개짐 · 붙음 없음.",
+     "지금": "칩 n7 [Dorothy Aunt Helen] ← 힌트 줄 \"golden wedding anniversary. 50 years. anniversary. confusion. George. Dorothy Aunt Helen, stepsisters, half-brothers, nieces-in-law.\"",
+     "고칠 글": "golden wedding anniversary. 50 years. anniversary. confusion. George. Dorothy. Aunt Helen, stepsisters, half-brothers, nieces-in-law.",
+     "고칠 곳": "content/lessons/ld/d035.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T20",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'이복형제(異腹兄弟)' 는 표준국어대사전의 한 낱말 — 붙여 씀('의붓 자매' 는 사전 한 낱말이 아니어서 그대로 둠). 고치기 전(9d6e15d) = 지금.",
+     "지금": "때로는 의붓 자매, 이복 형제, 조카며느리도 있다.",
+     "고칠 글": "때로는 의붓 자매, 이복형제, 조카며느리도 있다.",
+     "고칠 곳": "content/ld_english_scripts.json · d035 대본 n9 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d036",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T18",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'말하다' 는 한 낱말 — '말 해줄' 은 낱말 가운데를 띄움. '말해 줄'(원칙 · '말해줄' 허용). 고치기 전(9d6e15d) = 지금.",
+     "지금": "사람들은 종종 자신이 원하는 날씨를 찾는다. 농부가 물이 필요할 때 그는 자신에게 비가 올 것이라고 말 해줄 어떤 것을 찾는다.",
+     "고칠 글": "사람들은 종종 자신이 원하는 날씨를 찾는다. 농부가 물이 필요할 때 그는 자신에게 비가 올 것이라고 말해 줄 어떤 것을 찾는다.",
+     "고칠 곳": "content/ld_english_scripts.json · d036 대본 n8 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T21",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "영어 'he doesn't always tell us what we want' 는 부분 부정(늘 ~하는 것은 아니다)인데 '그는 항상 … 말해주지 않고' 는 '늘 말해 주지 않는다(한 번도 안 한다)' 로 읽힘 — 부분 부정의 뜻이 흐려져 영어와 다르게 읽힘(문법 과정이 가르치는 요점). 함께(낮음): '귀기울인다' 는 사전에 없는 붙여 쓰기 → '귀 기울인다', '기상요원' 은 사전 한 낱말이 아님 → '기상 요원'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "거의 모든 사람이 기상요원이 말하는 것에 귀기울인다. 그러나 그는 항상 우리가 원하는 것을 우리에게 말해주지 않고 가끔은 실수한다.",
+     "고칠 글": "거의 모든 사람이 기상 요원이 말하는 것에 귀 기울인다. 그러나 그가 항상 우리가 원하는 것을 우리에게 말해 주는 것은 아니며 가끔은 실수한다.",
+     "고칠 곳": "content/ld_english_scripts.json · d036 대본 n11 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T22",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "문장 머리 'Still,' 은 '그래도 · 그렇지만'(앞 문장 '가끔 실수한다' 에 맞서는 말)인데 '여전히'(전과 같이 계속)로 옮김 — 영어와 뜻이 다르고 학습자가 문장 머리 Still, 을 '여전히' 로 익힘. 고치기 전(9d6e15d) = 지금.",
+     "지금": "여전히 그는 아마도 다른 누구보다도 정확한 것에 더 가깝다.",
+     "고칠 글": "그래도 그는 아마도 다른 누구보다도 정확한 것에 더 가깝다.",
+     "고칠 곳": "content/ld_english_scripts.json · d036 대본 n12 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d037",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'Dr.Smith' — 영어(n1 en 'Dr. Smith')와 달리 마침표 뒤 띄어쓰기가 빠짐. 고치기 전(9d6e15d) = 지금.",
+     "지금": "Bobby Adams는 Dr.Smith가 그를 진단하는 동안 매우 조용했다.",
+     "고칠 글": "Bobby Adams는 Dr. Smith가 그를 진단하는 동안 매우 조용했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d037 대본 n1 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "의존 명사 '거' 는 띄어 씀 — '않을거야' → '않을 거야', '좋아질거야' → '좋아질 거야'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그 의사는 말했다. “너는 죽지 않을거야. 사실, 너는 저녁 식사 시간까지는 좋아질거야.”",
+     "고칠 글": "그 의사는 말했다. “너는 죽지 않을 거야. 사실, 너는 저녁 식사 시간까지는 좋아질 거야.”",
+     "고칠 곳": "content/ld_english_scripts.json · d037 대본 n8 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d038",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "힌트 줄이 한 청크 'Mortons' Alfred' — 두 항목(Mortons' · Alfred)이 한 칩에 붙음, 이 꼴은 문장에 없음(n6 은 'the Mortons' boy, Alfred'). n1 · n2 · n4 · n7 은 이름이 있는데 맞는 힌트가 없어 앱이 힌트 전체를 보이는 정상 동작이라 같은 붙은 칩이 n1 · n2 · n4 · n6 · n7 에 다 보임(T02 가 대표). chips.cjs 로 재어 봄: 다섯 문장 모두 [Mortons'] [Alfred] — 칩이 보이는 문장은 지금과 같고 새 틀림 없음.",
+     "지금": "칩 n1 [Mortons' Alfred] ← 힌트 줄 \"Mortons' Alfred.\"",
+     "고칠 글": "Mortons'. Alfred.",
+     "고칠 곳": "content/lessons/ld/d038.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d039",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "칩 [Herbert! Herby brush teeth] 는 세 항목(Herbert · Herby · brush teeth)이 한 칩에 붙고 문장에 없는 '!' 까지 붙음(n2 는 'Herbert, it's 7:00'). 같은 칩이 n3 · n6 · n9 에도 보임(T03 이 대표). 게다가 [comb hair] 는 문장 꼴이 'comb my hair' 라 어느 문장에도 안 보임(죽은 칩). 고친 줄은 문장 꼴 그대로 — chips.cjs 로 재어 봄: n2 [Herbert] · n3 [Herby] · n6 [Herby][brush my teeth][comb my hair] · n9 [Herby] · 나머지 칩 없음 그대로 — 새 틀림 없음.",
+     "지금": "칩 n2 [Herbert! Herby brush teeth] ← 힌트 줄 \"Herbert! Herby brush teeth, comb hair\"",
+     "고칠 글": "Herbert. Herby. brush my teeth, comb my hair",
+     "고칠 곳": "content/lessons/ld/d039.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T20",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "관형사 '몇' 과 단위 명사 '번' 은 띄어 씀 — '몇번' → '몇 번'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그러나 그는 그냥 잔다. 몇번 더 부른 후에 어머니는 이층으로 올라와서 Herby를 침대에서 끌어내야 한다.",
+     "고칠 글": "그러나 그는 그냥 잔다. 몇 번 더 부른 후에 어머니는 이층으로 올라와서 Herby를 침대에서 끌어내야 한다.",
+     "고칠 곳": "content/ld_english_scripts.json · d039 대본 n9 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T21",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'그럴려고' 는 비표준 — '그러다' + '-려고' = '그러려고'(맞춤법). 함께: 한글 수 '일' 뒤 시간의 양 '분' 은 띄어 씀 — '일분만' → '일 분만'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그는 언제나 말한다. “나는 일분만 있으면 일어나려고 했어. 정말 나는 그럴려고 했어.”",
+     "고칠 글": "그는 언제나 말한다. “나는 일 분만 있으면 일어나려고 했어. 정말 나는 그러려고 했어.”",
+     "고칠 곳": "content/ld_english_scripts.json · d039 대본 n10 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d040",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T09",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "칩 [Miss Ellis expert plants] 는 세 항목(Miss Ellis · expert · plants)이 한 칩에 붙음 — 이 꼴은 문장에 없음. 같은 줄의 'Mr. Fulton' 이 [Mr] [Fulton] 으로 쪼개지는 것(n4 — 1부 문맥 칩 줄)은 ㉠ 코드 고침(src/components/LdLearningView.tsx hintChunks — 내용 재검토 표 #15) 몫이라 힌트 글 그대로 둠. chips.cjs 로 재어 봄: n6 [Miss Ellis][expert][plants] · 나머지 문장 칩 그대로 — 새 틀림 없음.",
+     "지금": "칩 n6 [Miss Ellis expert plants] ← 힌트 줄 \"John, Japan, Australia, Brazil. Mr. Fulton. Miss Ellis expert plants\"",
+     "고칠 글": "John, Japan, Australia, Brazil. Mr. Fulton. Miss Ellis. expert. plants",
+     "고칠 곳": "content/lessons/ld/d040.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T12",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'같은'(형용사 '같다')은 앞 명사와 띄어 씀 — '브라질같은' → '브라질 같은'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그는 여행하며 볼 만한 것은 다 보았다. 나는 그가 일본, 호주, 브라질같은 장소들에 대하여 나에게 말하는 것은 무엇이든 믿었다.",
+     "고칠 글": "그는 여행하며 볼 만한 것은 다 보았다. 나는 그가 일본, 호주, 브라질 같은 장소들에 대하여 나에게 말하는 것은 무엇이든 믿었다.",
+     "고칠 곳": "content/ld_english_scripts.json · d040 대본 n3 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "호칭 의존 명사 '씨' 는 이름과 띄어 씀 — 'Fulton씨' → 'Fulton 씨'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "야구에 대하여 무엇이든 알고 싶었을 때 나는 우리의 이웃 Fulton씨에게 물었다.",
+     "고칠 글": "야구에 대하여 무엇이든 알고 싶었을 때 나는 우리의 이웃 Fulton 씨에게 물었다.",
+     "고칠 곳": "content/ld_english_scripts.json · d040 대본 n4 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T14",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'아무것' 은 한 낱말(대명사) — '아무 것도' → '아무것도'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그가 그 경기에 대하여 모르는 것은 아무 것도 없었다.",
+     "고칠 글": "그가 그 경기에 대하여 모르는 것은 아무것도 없었다.",
+     "고칠 곳": "content/ld_english_scripts.json · d040 대본 n5 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d041",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "n5 칩 [just two years] — n5 는 'two years of growing up'(just 없음)인데 칩이 'just two years' 를 보여 'It took just two years …' 로 잘못 받아 적게 함('years' 낱말에 걸려 n3 의 꼴이 번짐). 'two years' 로 두면 n3('in just two years') · n5 둘 다 문장 꼴 그대로. 같은 줄의 [16 18] 붙음(n1 · n3 — 1부 문맥 칩 줄)도 함께 고침. chips.cjs 로 재어 봄: n1 [16][two years] · n3 [18][two years] · n4 [subjects] · n5 [two years][growing up] — n1 의 [two years] 는 '16 years' 의 years 로 지금도([just two years]) 보이는 것 — 새로 번진 것 아님, 새 틀림 없음.",
+     "지금": "칩 n5 [just two years] [growing up] ← 힌트 줄 \"16 18, just two years. subjects. growing up\"",
+     "고칠 글": "16. 18. two years. subjects. growing up",
+     "고칠 곳": "content/lessons/ld/d041.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T12",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "한 강의 안 부모 지칭 흔들림 — n1 ko(1부 문맥) · n5 ko(T13)는 '그분들', n3 ko 는 '배우셨다' 로 높이는데 n4 만 '그들의 의견' 으로 낮춤. 같은 사람들을 한 강의 안에서 달리 부름(낮음). 고치기 전(9d6e15d) = 지금.",
+     "지금": "나는 이제 다른 주제들에 대한 그들의 의견을 존중했다.",
+     "고칠 글": "나는 이제 다른 주제들에 대한 그분들의 의견을 존중했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d041 대본 n4 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d042",
+   "읽은 글": 12,
+   "틀림": [
+    {
+     "T": "T10",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "'타자치다' 는 사전 한 낱말이 아님('타자를 치다' · '타자로 치다') — '숙제를 타자쳐야' 는 붙여 쓴 꼴. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그들은 대학에서 함께 방을 썼고 숙제를 서로 도와주곤 했다. 그들은 항상 그들의 숙제를 타자쳐야 했다.",
+     "고칠 글": "그들은 대학에서 함께 방을 썼고 숙제를 서로 도와주곤 했다. 그들은 항상 그들의 숙제를 타자로 쳐야 했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d042 대본 n2 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T11",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "T10 과 같은 까닭 — '타자쳐주곤' → '타자로 쳐 주곤'(한 강의 안 같게). 고치기 전(9d6e15d) = 지금.",
+     "지금": "그는 언제나 Pete의 리포트를 그를 대신해서 타자쳐주곤 했다.",
+     "고칠 글": "그는 언제나 Pete의 리포트를 그를 대신해서 타자로 쳐 주곤 했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d042 대본 n4 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d043",
+   "읽은 글": 13,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d044",
+   "읽은 글": 8,
+   "틀림": [
+    {
+     "T": "T06",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "한 강의 안 학년 숫자 표기 흔들림 — n1 '일학년', n2 ko(1부 문맥) '2학년생', n3 '삼학년 … 4학년'(한 문장 안에서도 섞임). 아라비아 숫자로 맞춤('6월' · '2학년생' · '4학년' 이 숫자). '일학년' 자체는 한글 맞춤법 제43항 다만으로 허용 — 흔들림만의 낮음(T07 과 함께 고칠 것). 고치기 전(9d6e15d) = 지금.",
+     "지금": "지금은 6월이고 Bill Patterson과 John Corcoran은 그들의 일학년을 끝낼 것이다.",
+     "고칠 글": "지금은 6월이고 Bill Patterson과 John Corcoran은 그들의 1학년을 끝낼 것이다.",
+     "고칠 곳": "content/ld_english_scripts.json · d044 대본 n1 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T07",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'-어 하다' 가 구('이수하고 싶다')에 붙으면 띄어 씀 — '싶어한다' → '싶어 한다'(같은 강의 n4 는 '되고 싶어 한다' 로 바르게 씀 · n2 ko(1부 문맥) '전공하고 싶어한다' 도 같은 까닭). 함께: 한 문장 안 '삼학년 … 4학년' 숫자 표기 흔들림 → '3학년'(T06 과 같게). 고치기 전(9d6e15d) = 지금.",
+     "지금": "삼학년에는 러시아어를 이수하고 싶어한다. 4학년에는 약간의 중국어를 공부하기 원한다.",
+     "고칠 글": "3학년에는 러시아어를 이수하고 싶어 한다. 4학년에는 약간의 중국어를 공부하기 원한다.",
+     "고칠 곳": "content/ld_english_scripts.json · d044 대본 n3 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d045",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "n5 칩 [M stand for Mark middle name] — 두 항목이 한 칩에 붙고 꼴도 문장과 다름(문장 'M stands for Mark, his middle name' — stand/stands). ㉠ 도 함께: [Professor Charles M] [McCarthy] 는 한 글자 머리글자 'M.' 뒤에서 쪼개짐 — src/components/LdLearningView.tsx hintChunks 코드 고침(내용 재검토 표 #15) 몫이라 힌트 글 'Professor Charles M. McCarthy' 는 그대로 둠(n6 — 1부 문맥 칩 줄 — 에도 같은 쪼개짐). 같은 줄의 [credits German course] 붙음(n1 · n6 · n7 · n8 · n9 — 1부 문맥 칩 줄)도 함께 고침. chips.cjs 로 재어 봄: n5 [English exam][Professor Charles M][McCarthy][M stands for Mark][middle name] · n7 [English exam][elective][credits] · n8 [German exam][credits][German course] · n9 [German course]('Of course' 의 course — 지금도 [credits German course] 로 보이는 것, 새로 번진 것 아님) — 새 쪼개짐 · 붙음 · 없는 꼴 없음.",
+     "지금": "칩 n5 [English exam] [Professor Charles M] [McCarthy] [M stand for Mark middle name] ← 힌트 줄 \"German exam. English exam. Professor Charles M. McCarthy. M stand for Mark middle name. required subject. elective. credits German course.\"",
+     "고칠 글": "German exam. English exam. Professor Charles M. McCarthy. M stands for Mark. middle name. required subject. elective. credits. German course.",
+     "고칠 곳": "content/lessons/ld/d045.json · blocks[2](hints).text (+ 'M.' 쪼개짐은 src/components/LdLearningView.tsx hintChunks 코드 고침 — 내용 재검토 표 #15)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d046",
+   "읽은 글": 7,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'함께하다' 는 표준국어대사전의 한 낱말(더불어 하다) — '함께 할 시간' → '함께할 시간'. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그들은 고등학교에서 같은 반에 있었다. 그들은 자주 만나곤 했지만 지금 그들은 함께 할 시간이 거의 없다.",
+     "고칠 글": "그들은 고등학교에서 같은 반에 있었다. 그들은 자주 만나곤 했지만 지금 그들은 함께할 시간이 거의 없다.",
+     "고칠 곳": "content/ld_english_scripts.json · d046 대본 n4 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d047",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "n2 칩 [fuel liquids] 는 두 항목(fuel — n1 · liquids — n2)이 한 칩에 붙음 — 이 꼴은 문장에 없음. 같은 칩이 n5(T08 — 이름이 있는데 맞는 힌트가 없어 앱이 힌트 전체를 보이는 정상 동작)에도 보임. chips.cjs 로 재어 봄: n1 [fuel](새로 보이지만 n1 'fuel for rockets' 의 문장 꼴 그대로 — 맞는 칩) · n2 [liquids][metals] · n5 [fuel][liquids][metals][shopping district][recommend] · n3 · n6 그대로 — 새 틀림 없음.",
+     "지금": "칩 n2 [fuel liquids] [metals] ← 힌트 줄 \"fuel liquids, metals. shopping district. recommend\"",
+     "고칠 글": "fuel. liquids, metals. shopping district. recommend",
+     "고칠 곳": "content/lessons/ld/d047.json · blocks[2](hints).text",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:48"
+  },
+  {
+   "묶음": "ld/d127",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d127 힌트 줄(한 칸)의 끝 항목 'oil wells barges endanger' 가 경계 없이 한 칩 — 따로인 세 항목 'oil wells'(n6) · 'barges'(n8) · 'endanger'(n9 'endangering')가 붙어 문장에 없는 꼴로 n6(칩 T07) · n8(n6 과 같은 칩이라 읽을거리엔 한 번) · n9(1부 판정 칩 줄)에 통째로 뜸 — n6 에는 barges · endanger 가, n8 에는 oil wells · endanger 가 없음(⑥ 두 항목이 하나로 붙음). 고친 줄 모의(chips.cjs): n6 [oil wells] · n8 [barges] · n9 [tidal power plant] [endanger] — 새 쪼갬 · 붙음 · 번짐 없음(n9 의 [tidal power plant] 는 'plants', n11 의 [ocean's tides] 는 'oceans' 낱말 일치로 지금도 뜨는 번짐 — 1부 방침대로 틀림으로 안 셈). 'endanger' 는 원래 항목 그대로 — 대본 꼴 'endangering' 속에 있어 n9 에 뜸.",
+     "지금": "힌트 줄 'ocean's tides. tidal power plant. France. 1966. oil wells barges endanger' → n6 칩 [oil wells barges endanger]",
+     "고칠 글": "ocean's tides. tidal power plant. France. 1966. oil wells. barges. endanger",
+     "고칠 곳": "content/lessons/ld/d127.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d128",
+   "읽은 글": 22,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d129",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d129 힌트 줄(한 칸)이 따로인 세 항목 'Burma'(n3) · 'exciting adventures'(n4) · 'Japan'(n6)을 한 칩 [Burma exciting adventures Japan] 으로 붙여 n3(칩 T05) · n4 · n9(n3 과 같은 칩이라 읽을거리엔 한 번) · n6(1부 판정 칩 줄)에 문장에 없는 꼴로 뜸 — n3 에는 exciting adventures · Japan 이, n4 에는 Burma · Japan 이 없음. 같은 줄의 [Afghanistan Tibet](n6 'Afghanistan and Tibet' 두 나라)도 붙음(1부 판정 칩 n6) — 힌트 줄은 한 칸이라 함께 나눔. 고친 줄 모의(chips.cjs): n3 [Burma] · n4 [exciting adventures] · n6 [Japan] [China] [Germany] [Syria] [Peru] [Afghanistan] [Tibet] · n9 [exciting adventures] — 새 쪼갬 · 붙음 없음(n9 'exciting tales' 의 칩은 'exciting' 낱말 일치로 지금도 [Burma exciting adventures Japan] 으로 뜨는 번짐 — 새 번짐 아님, 1부 방침대로 틀림으로 안 셈). 칩 T03 n2 [camels] [llamas] [horses] 는 맞음.",
+     "지금": "힌트 줄 'camels, llamas, horses. Burma exciting adventures Japan, China, Germany, Syria, Peru, Afghanistan Tibet. thousand-year-old eggs,' → n3 칩 [Burma exciting adventures Japan]",
+     "고칠 글": "camels, llamas, horses. Burma. exciting adventures. Japan, China, Germany, Syria, Peru, Afghanistan, Tibet. thousand-year-old eggs,",
+     "고칠 곳": "content/lessons/ld/d129.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d130",
+   "읽은 글": 21,
+   "틀림": [
+    {
+     "T": "T14",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 · 굳은 말 — '거슬러간다' 는 사전 한 낱말이 아니고 '거스르다' + '가다' 두 본용언이라 띄어 씀(보조 용언 붙여 쓰기 허용(한글 맞춤법 제47항) 밖 — '뜯겨 나갔다' · '늦잠 잤다' 와 같은 기준). 영어 'The history of the lodge goes back more than 100 years' 의 '지난 때로 거슬러 감' 은 한국어 굳은 말로 '거슬러 올라가다'. 뜻은 영어와 같아 오도는 아님.",
+     "지금": "그 Lodge의 역사는 100년 이상 거슬러간다.",
+     "고칠 글": "그 Lodge의 역사는 100년 이상 거슬러 올라간다.",
+     "고칠 곳": "content/ld_english_scripts.json · d130 대본 n4 ko (키 d130 배열에서 n=4 인 행의 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d131",
+   "읽은 글": 17,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d131 힌트 줄(한 칸)이 따로인 항목을 붙여 칩 셋이 문장에 없는 꼴: [June September](n7 'from June to September' 의 두 달 — 칩 T08), [staffed principally convenient arrangement](n8 'staffed principally' + n9 'convenient arrangement' — 칩 T10, n9 는 n8 과 같은 칩이라 읽을거리엔 한 번), [Six more cabins 1960](n2 'Six more cabins were built in 1960' 의 두 항목 — 1부 판정 칩 n1, n2 · n4 는 n1 과 같은 칩). 고친 줄 모의(chips.cjs): n1 [4 cabins] [Six more cabins] · n2 [4 cabins] [Six more cabins] [1960] · n4 [4 cabins] [Six more cabins] · n7 [June] [September] · n8 [staffed principally] · n9 [convenient arrangement] — 새 쪼갬 · 붙음 없음(n1 · n2 · n4 에 두 cabins 칩이 함께 뜨는 것은 'cabins' 낱말 일치로 지금도 뜨는 번짐 — 새 번짐 아님).",
+     "지금": "힌트 줄 '4 cabins. Six more cabins 1960. June September. staffed principally convenient arrangement' → n7 칩 [June September]",
+     "고칠 글": "4 cabins. Six more cabins. 1960. June. September. staffed principally. convenient arrangement",
+     "고칠 곳": "content/lessons/ld/d131.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d132",
+   "읽은 글": 32,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d132 힌트 줄 'complicated 2 minutes, positive confident.' 가 따로인 항목을 둘씩 붙임 — [positive confident](n6 'they are positive' + n7 'so confident')가 n7(칩 T08)에 문장에 없는 'positive' 와 함께 뜨고, [complicated 2 minutes](n5 · n8 'complicated' + n6 'In 2 minutes')도 붙음(1부 판정 칩 n5 · n6, n8 은 n5 와 같은 칩). 힌트 줄은 한 칸이라 함께 나눔. 고친 줄 모의(chips.cjs): n5 [complicated] · n6 [2 minutes] [positive] · n7 [confident] · n8 [complicated] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'complicated 2 minutes, positive confident.' → n7 칩 [positive confident]",
+     "고칠 글": "complicated. 2 minutes. positive. confident.",
+     "고칠 곳": "content/lessons/ld/d132.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d133",
+   "읽은 글": 27,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d133 힌트 줄이 따로인 두 항목 'two children'(n2) · 'New York'(n8)을 한 칩 [two children New York] 으로 붙여 n2(칩 T03) · n8(칩 T10) · n13(n2 와 같은 칩이라 읽을거리엔 한 번)에 문장에 없는 꼴로 뜸 — n2 · n13 에는 New York 이, n8 에는 two children 이 없음. 고친 줄 모의(chips.cjs): n2 [two children] · n8 [New York] [Europe] · n9 [Europe] · n13 [two children] — 새 쪼갬 · 붙음 없음(n13 'The children' 의 칩은 'children' 낱말 일치로 지금도 뜨는 번짐 — 새 번짐 아님). 칩 T12 n9 [Europe] 는 맞음.",
+     "지금": "힌트 줄 'two children New York, Europe' → n2 칩 [two children New York]",
+     "고칠 글": "two children. New York, Europe",
+     "고칠 곳": "content/lessons/ld/d133.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d134",
+   "읽은 글": 18,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d136",
+   "읽은 글": 12,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d136 힌트 줄 'socks shirts sweater.' 가 따로인 세 낱말(n1 socks · n2 · n4 shirts · n2 ~ n6 sweater)을 경계 없이 한 칩 [socks shirts sweater] 으로 만들어 n1(칩 T02) ~ n6 여섯 행에 통째로 뜸(n2 ~ n6 은 n1 과 같은 칩이라 읽을거리엔 한 번) — 행마다 그 문장에 없는 낱말이 같이 보임(⑥ 항목이 하나로 붙음). 고친 줄 모의(chips.cjs): n1 [socks] · n2 [shirts] [sweater] · n3 [sweater] · n4 [shirts] [sweater] · n5 [sweater] · n6 [sweater] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'socks shirts sweater.' → n1 칩 [socks shirts sweater]",
+     "고칠 글": "socks. shirts. sweater.",
+     "고칠 곳": "content/lessons/ld/d136.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d137",
+   "읽은 글": 24,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d137 힌트 줄(한 칸)이 따로인 항목을 붙여 칩 넷이 문장에 없는 꼴: [soup salad](n6 'soup and a salad' — 칩 T07), [lamb chops peas carrots](n7 'lamb chops with peas and carrots' — 1부 판정 칩 n7), [ice cream fresh fruit](n8 'some ice cream' + 'fresh fruit' — 1부 판정 칩 n8), [coffee portions generous](n9 'coffee' + n10 'the portions were generous' — 1부 판정 칩 n9, n10 은 같은 칩). 한 칸이라 함께 나눔. 고친 줄 모의(chips.cjs): n6 [soup] [salad] · n7 [Helen] [lamb chops] [peas] [carrots] [medium rare steak] [mashed potatoes] [gravy] · n8 [Helen] [dessert] [ice cream] [fresh fruit] · n9 [coffee] · n10 [portions] [generous] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'soup salad. Helen, lamb chops peas carrots, medium rare steak. mashed potatoes. gravy. dessert, ice cream fresh fruit. coffee portions generous,' → n6 칩 [soup salad]",
+     "고칠 글": "soup. salad. Helen, lamb chops, peas, carrots, medium rare steak. mashed potatoes. gravy. dessert, ice cream. fresh fruit. coffee. portions. generous,",
+     "고칠 곳": "content/lessons/ld/d137.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d138",
+   "읽은 글": 16,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d138 힌트 줄(한 칸)이 따로인 항목을 붙임 — [hot biscuits honey](n2 'hot biscuits with honey' 의 두 항목 — 칩 T03), [chocolate ice cream cake 5](n3 'chocolate ice cream and cake' + n5 '5:00' — 칩 T05, n3 에 문장에 없는 5). 게다가 한 자리 수 '5' 는 앱 규칙(수는 두 자리부터 맞춤)으로 어느 행에도 안 맞아, 숫자가 있는 n5(칩 T08)는 안전장치로 강의 칩 넷 전부(음식 이름)를 받고 5:00 칩은 따로 없음. 고칠 글은 붙은 항목을 나누고 '5' 를 대본 꼴 '5:00' 으로 씀(덩어리 '500' 이 n5 에 맞음 — d021 'stepped on' 처럼 대본 꼴로). 고친 줄 모의(chips.cjs): n2 [fried chicken] [corn] [hot biscuits] [honey] · n3 [chocolate ice cream] [cake] · n5 [5:00] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "힌트 줄 'fried chicken, corn, hot biscuits honey. chocolate ice cream cake 5' → n2 칩 [fried chicken] [corn] [hot biscuits honey]",
+     "고칠 글": "fried chicken, corn, hot biscuits. honey. chocolate ice cream. cake. 5:00",
+     "고칠 곳": "content/lessons/ld/d138.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 00:50"
+  },
+  {
+   "묶음": "ld/d062",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d062 n5 영어(받아쓰기 정답). Taggy 의 직접 화법에 따옴표가 없음 — 이 말은 n5 부터 n7 첫 문장('…give my money away.')까지 이어지고, 한국어 줄은 n5 에서 “ 로 열고 n7 에서 ” 로 닫아 옮김. 같은 과정 d018 n6 · n7 과 d067 n5 는 9/18 뒤 따옴표를 넣었고, 내용 재검토 1부도 d026 의 같은 종류를 ①(중간 · 보통)으로 적음. 받아쓰기 채점은 대소문자 · 기호를 안 봄(listeningUtils legacyTypedForm) — 채점 영향 없음. 녹음이 말하는 낱말은 같음(따옴표만) — 화면 글이 바뀌므로 이 문장 새 음성 클립(텍스트 해시) 필요. 여는 따옴표는 n5, 닫는 따옴표는 n7(T10 — 함께 고칠 것), n6 은 말 가운데라 그대로. 고치기 전(9d6e15d) = 지금.",
+     "지금": "Give me some beer, said Taggy, and write out a check for charity.",
+     "고칠 글": "\"Give me some beer,\" said Taggy, \"and write out a check for charity.",
+     "고칠 곳": "content/ld_english_scripts.json .d062[n=5].en (d062 대본 n5 영어)",
+     "새 음성 클립": true
+    },
+    {
+     "T": "T10",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d062 n7 영어. n5(T07)에서 여는 Taggy 의 말이 'I don't work just to give my money away.' 에서 끝나는데 닫는 따옴표가 없어 뒤의 'I looked at my girlfriend.'(나의 말)와 경계가 안 보임 — 한국어 n7 은 '…아니야.”라고 말했다.' 로 닫음. T07 과 함께 고칠 것. 채점 영향 없음(기호 안 봄) · 낱말은 녹음과 같음 · 새 음성 클립(텍스트 해시). 고치기 전(9d6e15d) = 지금.",
+     "지금": "I don't work just to give my money away. I looked at my girlfriend.",
+     "고칠 글": "I don't work just to give my money away.\" I looked at my girlfriend.",
+     "고칠 곳": "content/ld_english_scripts.json .d062[n=7].en (d062 대본 n7 영어)",
+     "새 음성 클립": true
+    },
+    {
+     "T": "T12",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d062 힌트 줄(한 칸 · 9/18 뒤 안 바뀜). 칩 [march out of] 는 대본 꼴이 아닌 기본형 — n8 은 'marched out of the room'(칩 T12 — 칩을 보고 치면 받아쓰기에서 틀림). 같은 줄에 이름 'Taggy Montag' 이 없어 n9(칩 T14 — 'Taggy Montag must have spent …')는 맞는 칩이 없고 이름 안전장치로 강의 칩 넷(dressing room · resist a look inside · write out a check for charity · march out of — 모두 n9 에 없는 말)이 통째로 뜸. 힌트 줄이 한 칸이라 함께 고침. chips.cjs 로 재어 봄: n2 [Taggy Montag] [dressing room] [resist a look inside] · n4 [Taggy Montag] [dressing room] · n5 [Taggy Montag] [write out a check for charity] · n8 [marched out of] · n9 [Taggy Montag] — n1 · n3 · n6 · n7 은 지금처럼 칩 없음, 새 쪼갬 · 붙음 · 번짐 없음(n2 · n4 · n5 의 [Taggy Montag] 는 낱말 'Taggy' 로 걸리는 이름 칩 — d071 [Jack Mills] · d077 [Oswald Wilson] 과 같은 동작). 겹침: 내용 재검토 1부 문맥 #61 이 같은 힌트 줄을 'marched out of' 만 고친 글로 적어 둠 — 이 고칠 글은 그것을 포함하고 n9 의 이름 칩을 더한 것(수정 세션은 이 글 하나로).",
+     "지금": "칩 n8 [march out of] · 칩 n9 [dressing room] [resist a look inside] [write out a check for charity] [march out of] ← 힌트 줄 'dressing room. resist a look inside. write out a check for charity. march out of'",
+     "고칠 글": "Taggy Montag. dressing room. resist a look inside. write out a check for charity. marched out of",
+     "고칠 곳": "content/lessons/ld/d062.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d063",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d063 힌트 줄(한 칸)의 'High Street Ritz Hotel' 이 따로인 두 곳(n1 · n3 의 High Street, n2 · n5 의 Ritz Hotel/the Ritz)을 경계 없이 한 칩으로 붙여 문장에 없는 꼴로 뜸 — 칩 T03(n2 — n3 도 같은 칩이라 읽을거리엔 한 번: n2 에는 High Street, n3 에는 Ritz Hotel 이 없음) · 칩 T07(n5) · 1부 판정 칩 n1. 이 칩 행들의 글은 9d6e15d 와 같음(힌트 줄 자체는 9/18 뒤 'nine thirty' → '9:30' 등으로 바뀌어 1부가 판정 — 이 붙음은 기준 판에도 있었음). 겹침: 내용 재검토 1부 C07471 이 같은 줄을 적었고 고칠 글도 그것과 같게 둠(수정 세션은 한 번 고침). chips.cjs 로 재어 봄: n1 [Saturday morning 9:30] [High Street] · n2 [Ritz Hotel] · n3 [High Street] · n4 [likable] · n5 [Ritz Hotel] [directions] · n9 [purse] [wallet] · n10 [\"Fantastic Five\"] [gasped] — 새 쪼갬 · 붙음 · 번짐 없음.",
+     "지금": "칩 n2 · n3 [High Street Ritz Hotel] · 칩 n5 [High Street Ritz Hotel] [directions] ← 힌트 줄 'Saturday morning 9:30, High Street Ritz Hotel. likable. directions. \"Fantastic Five\". number two. top 20. purse wallet gasped.'",
+     "고칠 글": "Saturday morning 9:30, High Street. Ritz Hotel. likable. directions. \"Fantastic Five\". number two. top 20. purse, wallet. gasped.",
+     "고칠 곳": "content/lessons/ld/d063.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d064",
+   "읽은 글": 10,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d065",
+   "읽은 글": 8,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d066",
+   "읽은 글": 11,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d066 n4 영어. 광고 문구(직접 인용) 'Lite tastes soapy.' 에 따옴표가 없음 — 한국어 n4 는 “LITE는 비누 맛이 난다.” 로 옮기고, 이어지는 d067 n5 영어는 9/18 뒤 'the \"Lite tastes soapy\" ad' 로 따옴표를 넣음. 내용 재검토 1부 d026 과 같은 종류(①). 채점 영향 없음(기호 안 봄) · 낱말은 녹음과 같음(따옴표만) · 새 음성 클립(텍스트 해시). 고치기 전(9d6e15d) = 지금.",
+     "지금": "They said, Lite tastes soapy. The public, of course, was confused.",
+     "고칠 글": "They said, \"Lite tastes soapy.\" The public, of course, was confused.",
+     "고칠 곳": "content/ld_english_scripts.json .d066[n=4].en (d066 대본 n4 영어)",
+     "새 음성 클립": true
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d067",
+   "읽은 글": 11,
+   "틀림": [
+    {
+     "T": "T06",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d067 n7 영어. 광고 문구(직접 인용)에 따옴표가 없음 — 같은 강의 n5 영어는 9/18 뒤 'the \"Lite tastes soapy\" ad' 로 따옴표를 넣어 한 강의 안에서 인용 표기가 다르고, 한국어 n7 도 “LITE는 옷을 빨기에 좋다.” 로 옮김. 채점 영향 없음(기호 안 봄) · 낱말은 녹음과 같음(따옴표만) · 새 음성 클립(텍스트 해시). 고치기 전(9d6e15d) = 지금.",
+     "지금": "The ads would read, Lite is wonderful for washing clothes.",
+     "고칠 글": "The ads would read, \"Lite is wonderful for washing clothes.\"",
+     "고칠 곳": "content/ld_english_scripts.json .d067[n=7].en (d067 대본 n7 영어)",
+     "새 음성 클립": true
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d068",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T11",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "외래어 표기: Dallas 는 '댈러스'(국립국어원 외래어 표기 용례) — '달라스' 는 틀린 표기(내용 재검토 1부 d058 '미쉬간 → 미시간' 과 같은 종류 · 낮음). 고치기 전(9d6e15d) = 지금.",
+     "지금": "나의 아버지는 그 당시 멀리 달라스에 계셨다. 나는 그를 놀래주고 그 차로 그를 만나기로 결정했다.",
+     "고칠 글": "나의 아버지는 그 당시 멀리 댈러스에 계셨다. 나는 그를 놀래주고 그 차로 그를 만나기로 결정했다.",
+     "고칠 곳": "content/ld_english_scripts.json .d068[n=3].ko (d068 대본 n3 한국어)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T12",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: 본용언이 파생어('운반하다')이고 활용형이 세 음절('운반해')이면 보조 용언은 띄어 씀(한글 맞춤법 제47항 해설 · 국립국어원 — 두 음절 활용형만 붙여 쓰기 허용) — '운반해줄' → '운반해 줄'(같은 강의 n6 은 '운전해 보았고' 로 띄어 씀). 고치기 전(9d6e15d) = 지금.",
+     "지금": "나는 그가 내가 그의 짐을 집까지 먼 길을(줄곧) 운반해줄 것을 기대한다는 것을 알고 있었다.",
+     "고칠 글": "나는 그가 내가 그의 짐을 집까지 먼 길을(줄곧) 운반해 줄 것을 기대한다는 것을 알고 있었다.",
+     "고칠 곳": "content/ld_english_scripts.json .d068[n=4].ko (d068 대본 n4 한국어)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d069",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T09",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d069 n8 영어. 아버지의 말(직접 화법)에 따옴표가 없음 — 한국어 n8 은 “자동차는 결코 말을 대신하지 않을 거야”라고 로 옮김. 내용 재검토 1부 d026 과 같은 종류(①). 채점 영향 없음(기호 안 봄) · 낱말은 녹음과 같음(따옴표만) · 새 음성 클립(텍스트 해시). 고치기 전(9d6e15d) = 지금.",
+     "지금": "Whenever the subject was mentioned, he used to reply, The motor car will never replace the horse.",
+     "고칠 글": "Whenever the subject was mentioned, he used to reply, \"The motor car will never replace the horse.\"",
+     "고칠 곳": "content/ld_english_scripts.json .d069[n=8].en (d069 대본 n8 영어)",
+     "새 음성 클립": true
+    },
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: '운전하다'(파생어) + 보조 용언 '보다' — 활용형 '운전해' 가 세 음절이라 띄어 씀('운전해 본' — 앞 강의 d068 n6 '운전해 보았고' 와 같게). 고치기 전(9d6e15d) = 지금.",
+     "지금": "그것은 나를 정말 놀라게 했다. 내가 아는 한 나의 아버지는 전에 차를 결코 운전해본 적이 없었다.",
+     "고칠 글": "그것은 나를 정말 놀라게 했다. 내가 아는 한 나의 아버지는 전에 차를 결코 운전해 본 적이 없었다.",
+     "고칠 곳": "content/ld_english_scripts.json .d069[n=4].ko (d069 대본 n4 한국어)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d070",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T09",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: '공공철도' 는 사전에 없는 붙임 — 두 낱말 '공공 철도'(같은 과정 d075 n3 '공공 도로' · d079 n4 '공공 설비' 도 띄어 씀). 전문 용어 붙여 쓰기(한글 맞춤법 제50항) 여지가 있어 확신 보통. 고치기 전(9d6e15d) = 지금.",
+     "지금": "증기에 의해서 달리는 세계 최초의 공공철도는 1825년에 잉글랜드에서 개통되었다.",
+     "고칠 글": "증기에 의해서 달리는 세계 최초의 공공 철도는 1825년에 잉글랜드에서 개통되었다.",
+     "고칠 곳": "content/ld_english_scripts.json .d070[n=1].ko (d070 대본 n1 한국어)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d071",
+   "읽은 글": 12,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d072",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "①",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d072 n7 영어. 강도의 말(직접 화법)에 따옴표가 없고 첫 낱말이 소문자('that') — 'he said, that will have to be enough' 가 간접 화법처럼 읽힘. 한국어 n7 은 “이 정도면 충분할 거야.”라고 로 옮김. 내용 재검토 1부 d026 과 같은 종류(①). 채점 영향 없음(대소문자 · 기호 안 봄) · 낱말은 녹음과 같음 · 새 음성 클립(텍스트 해시). 고치기 전(9d6e15d) = 지금.",
+     "지금": "At 3:45, he said, that will have to be enough.",
+     "고칠 글": "At 3:45, he said, \"That will have to be enough.\"",
+     "고칠 곳": "content/ld_english_scripts.json .d072[n=7].en (d072 대본 n7 영어)",
+     "새 음성 클립": true
+    },
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기: '분리시키다'(파생어) + 보조 용언 '두다' — 활용형 '분리시켜' 가 네 음절이라 띄어 씀('분리시켜 두었다', 한글 맞춤법 제47항 해설 · 국립국어원). 고치기 전(9d6e15d) = 지금.",
+     "지금": "모든 그 우체부들이 있었던 그 마지막 10대의 차량은 강도들이 분리시켜두었다.",
+     "고칠 글": "모든 그 우체부들이 있었던 그 마지막 10대의 차량은 강도들이 분리시켜 두었다.",
+     "고칠 곳": "content/ld_english_scripts.json .d072[n=4].ko (d072 대본 n4 한국어)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d074",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "d074 힌트 줄(한 칸)이 따로인 항목을 경계 없이 붙임 — [Australia set off May 5](n1 · n6 · n8 의 Australia + n2 의 'set off on May 5')가 칩 T02(n1 — n6 도 같은 칩)에 문장에 없는 'set off May 5' 와 함께, 칩 T04(n2)에는 문장에 없는 'Australia' 와 함께 뜸 · [route Vienna](n3 의 낱말 route 와 지명 Vienna)가 칩 T06(n3)에 한 칩. 이 칩 행들의 글은 9d6e15d 와 같음(힌트 줄은 9/18 뒤 새 항목이 더해져 1부가 판정 — 이 두 붙음은 기준 판에도 있었음). 겹침: 내용 재검토 1부 C07683 이 같은 줄을 적었고 고칠 글도 그것과 같게 둠(수정 세션은 한 번 고침). chips.cjs 로 재어 봄: n1 [Australia] · n2 [set off] [May 5] [1930] · n3 [route] [Vienna] [Constantinople] [Baghdad] · n5 … [monsoon] [football field] · n6 [Australia] · n7 … [crash land] [put her mind to] — 새 쪼갬 · 붙음 없음(n5 · n7 의 [emergency landing] 과 n8 의 [India six days later] 는 'landing' · 'later' 낱말 일치로 지금도 뜨는 번짐 — 새 번짐 아님).",
+     "지금": "칩 n1 · n6 [Australia set off May 5] · 칩 n2 [Australia set off May 5] [1930] · 칩 n3 [route Vienna] [Constantinople] [Baghdad] ← 힌트 줄 'Australia set off May 5, 1930. route Vienna, Constantinople, Baghdad. sandstorm. emergency landing. India six days later. two days. Burma, monsoon football field. propeller. crash land put her mind to. come to her rescue'",
+     "고칠 글": "Australia. set off, May 5, 1930. route. Vienna, Constantinople, Baghdad. sandstorm. emergency landing. India six days later. two days. Burma, monsoon. football field. propeller. crash land. put her mind to. come to her rescue",
+     "고칠 곳": "content/lessons/ld/d074.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d075",
+   "읽은 글": 8,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "한 강의 안 표기 흔들림: 같은 'track' 을 n4 한국어는 '트랙은'(9d6e15d 부터 · 1부 판정 맞음)으로, n5 는 영어 그대로 '그 track은' 으로 씀 — 'drag race · drag racing · drag track' 같은 이름말이 아닌 보통 낱말이라 n4 처럼 '트랙' 으로 맞춤. 고치기 전(9d6e15d) = 지금.",
+     "지금": "그 차들은 너무나 빨리 달려서 커브를 전혀 돌 수 없기 때문에 그 track은 직선이어야 한다.",
+     "고칠 글": "그 차들은 너무나 빨리 달려서 커브를 전혀 돌 수 없기 때문에 그 트랙은 직선이어야 한다.",
+     "고칠 곳": "content/ld_english_scripts.json .d075[n=5].ko (d075 대본 n5 한국어)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d076",
+   "읽은 글": 10,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d077",
+   "읽은 글": 13,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d078",
+   "읽은 글": 13,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d079",
+   "읽은 글": 12,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:05"
+  },
+  {
+   "묶음": "ld/d048",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d048 힌트 줄(content/lessons/ld/d048.json .blocks[2].text — 9/18 뒤 안 바뀐 줄, 강의에 한 칸). chips.cjs 로 확인: 'do it yourself fans' 는 대본 꼴(n5 'do-it-yourself fans')과 하이픈이 달라 문장에 없는 철자로 T02(n1) · T08(n5) · T12(n7)에 뜨고, 'add paint varnish' 는 n6 'add some paint or varnish' 의 두 항목(paint · varnish)을 이어 붙인 문장에 없는 꼴로 T10(n6)에 뜸. 고친 줄 모의(chips.cjs): n1 [take this saying to heart] [do-it-yourself fans] · n2 [take this saying to heart] · n5 [do-it-yourself fans] [bookcases] [put the parts together] · n6 [put the parts together] [paint] [varnish] · n7 [do-it-yourself fans] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음(n1 · n7 의 [do-it-yourself fans], n1 의 [take this saying to heart], n5 의 [put the parts together] 는 지금도 'yourself' · 'saying' · 'parts' 낱말 일치로 뜨는 번짐 — 1부 방침대로 틀림으로 안 셈). 내용 재검토 결과 표(안 바뀐 옆 글 표) #28 · X:52(1부 문맥 #52)와 같은 줄 · 같은 고칠 글 — 수정 세션은 한 번만 고치면 됨.",
+     "지금": "take this saying to heart. do it yourself fans. bookcases, put the parts together, add paint varnish",
+     "고칠 글": "take this saying to heart. do-it-yourself fans. bookcases, put the parts together, paint, varnish",
+     "고칠 곳": "content/lessons/ld/d048.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d049",
+   "읽은 글": 13,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d049 힌트 줄(content/lessons/ld/d049.json .blocks[2].text — 9/18 뒤 안 바뀐 줄). chips.cjs 로 확인: 'artists supposedly temperamental' 은 n1 의 낱말 셋을 이은 문장에 없는 꼴(대본 'artists and musicians are supposedly temperamental')로 T02(n1)에, 'front row audience' 는 n2 · n5 의 'front row' 와 n3 의 'audience' 두 항목을 한 칩으로 붙여 T04(n2 — n3 도 같은 칩 줄) · T09(n5)에 뜸. 같은 줄의 'That is' 는 대문자 'That' 낱말 일치로 T07(n4 'thought that') · n3('said that')에도 번짐 — 한 칸이라 함께 고침. 고친 줄 모의(chips.cjs): n1 [popular belief] [artists] [supposedly] [temperamental] · n2 [that is] [front row] · n3 [audience] · n4 칩 없음 · n5 [front row] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음(소문자 'that is' 는 통째로만 맞아 n2 에만 뜸, 문장 첫머리 대문자만 다른 사전 꼴이라 철자 틀림 아님). 내용 재검토 결과 표(안 바뀐 옆 글 표) #29 · X:53(1부 문맥 #53)과 같은 줄 · 같은 고칠 글.",
+     "지금": "popular belief, artists supposedly temperamental. That is, front row audience",
+     "고칠 글": "popular belief, artists, supposedly, temperamental. that is, front row. audience",
+     "고칠 곳": "content/lessons/ld/d049.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T10",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "LISTENING d049 n1 한국어(content/ld_english_scripts.json .d049[n=1].ko) — 받아쓰기 '한글 번역 가이드' · 대본 쪽 /ld/d049-1 에 보임, 소리 없음. 9/18 뒤 안 바뀐 글(고치기 전 9d6e15d = 지금). '추측하건대' 의 준말은 '추측건대' — '하' 앞 받침이 ㄱ 이면 '하' 가 통째로 줄어듦(한글 맞춤법 제40항 붙임 2, '생각건대' · '짐작건대' 와 같음). '추측컨대' 는 틀린 표기(뜻은 같아 오도는 아님 — 1부가 맞춤법 꼴 틀림을 낮음으로 매긴 것과 같게). 같은 낱말이 같은 조각 d051 n2 한국어에도 있음 — 그 줄은 1부 문맥 #55 가 '흥미 있는' 띄어쓰기로 이미 적었는데(읽을거리 d051 T11 '다시 적지 말 것') 그 고칠 글이 '추측컨대' 를 그대로 둠 → 수정 세션이 d051 n2 를 고칠 때 '추측건대' 도 함께 고치면 됨.",
+     "지금": "대중의 믿음에 따르면 미술가들과 음악인들은 추측컨대 변덕스럽다.",
+     "고칠 글": "대중의 믿음에 따르면 미술가들과 음악인들은 추측건대 변덕스럽다.",
+     "고칠 곳": "content/ld_english_scripts.json .d049[n=1].ko (d049 대본 n1 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d050",
+   "읽은 글": 11,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d050 힌트 줄(content/lessons/ld/d050.json .blocks[2].text). chips.cjs 로 확인: 'charity charitable organizations'(n1 · n6 · n9 의 charity 와 n3 의 charitable organizations) · 'raise money charitable causes'(n4 'raise money for charitable causes' 의 두 항목)가 저마다 한 칩이라 T04(n3 — n4 도 같은 칩 줄)에 문장에 없는 꼴로 뜨고, 'neglect Mrs. Brown' 은 동사 neglect(n5)와 이름(n6)을 이어 붙인 데다 칭호 뒤 '. ' 에서 갈려 [neglect Mrs] · [Brown] 이 됨(1부 판정 칩 n1 · n5 · n6 · n8 · n9 에 보임). 칭호 'Mrs.' 뒤 쪼개짐(㉠)은 내용 재검토 표 #15 의 코드 고침(src/components/LdLearningView.tsx hintChunks) 몫이라 칭호는 글에 그대로 둠(㉡). 고친 줄 모의(chips.cjs, 지금 규칙): n1 [charity] [charity bazaars] · n3 [charitable organizations] [charitable causes] · n4 [charitable organizations] [raise money] [charitable causes] · n5 [neglect] · n6 [charity] [Mrs] [Brown] [charity bazaars] [twice a week] · n8 [Brown] · n9 [charity] [charity bazaars] [practice] — 새 붙음 · 없는 꼴 · 번짐 없음(n3 의 [charitable causes] · n4 의 [charitable organizations] 는 지금도 'charitable' 낱말 일치로 뜨는 번짐, n6 의 [Mrs] [Brown] 은 ㉠ — 코드 고침 뒤 [Mrs. Brown] 한 칩). 내용 재검토 결과 표 #45(C07181)와 같은 줄 — 그 고칠 글은 칭호를 빼 'neglect. Brown' 으로 썼으나(그때 코드로는 칭호가 갈려서) 이 전수 규칙 ㉡ 대로 'Mrs. Brown' 을 남긴 것만 다름: 코드 고침 #15 와 함께 들어가면 이 줄이 n6 에 [Mrs. Brown] 을 보임.",
+     "지금": "charity charitable organizations. raise money charitable causes. neglect Mrs. Brown, charity bazaars. twice a week. practice",
+     "고칠 글": "charity. charitable organizations. raise money. charitable causes. neglect. Mrs. Brown, charity bazaars. twice a week. practice",
+     "고칠 곳": "content/lessons/ld/d050.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T11",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d050 n5 한국어(content/ld_english_scripts.json .d050[n=5].ko) — 받아쓰기 '한글 번역 가이드' · 대본 쪽 /ld/d050-1 에 보임, 소리 없음. 9/18 뒤 안 바뀐 글(고치기 전 9d6e15d = 지금). 영어 'their own children' 을 낱말대로 '그들의 자신의 아이들' 로 옮겨 소유 표현이 두 번 겹친 비문 — '자신' 은 앞 대명사에 '그들 자신' 처럼 바로 이어 씀(같은 과정 d057 n5 '자기 자신의 집' 은 바른 꼴). 뜻은 통해 오도는 아니나 띄어쓰기 · 표기 흔들림이 아닌 문법 틀림이라 중간(척도 글자대로). 같은 꼴이 이 파일 d051 n9(T17)에, 과정의 d188 n12 · d236 n6 · d267 n6 에도 있음(다른 조각 몫).",
+     "지금": "그러나 여러분은 이 사람들 중의 일부가 그들의 자신의 아이들을 얼마나 등한시하는지 놀랄 것이다.",
+     "고칠 글": "그러나 여러분은 이 사람들 중의 일부가 그들 자신의 아이들을 얼마나 등한시하는지 놀랄 것이다.",
+     "고칠 곳": "content/ld_english_scripts.json .d050[n=5].ko (d050 대본 n5 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d051",
+   "읽은 글": 17,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d051 힌트 줄(content/lessons/ld/d051.json .blocks[2].text). chips.cjs 로 확인: 'average cover column' 은 세 문장의 낱말(n5 average · n7 cover a story · n9 column)을 한 칩으로 붙여 T05(n5) · T07(n7 — n9 도 같은 칩 줄)에 문장에 없는 꼴로 뜸. 같은 줄의 'fill with adventure' 는 대본 꼴(n3 'filled with adventure')이 아닌 기본형이고, 'reporters lead rather routine lives' 는 'reporters' 낱말 일치로 n2 · n3 · n5(T05 — 'reporter spends' 가 이어 읽혀 걸림) · n6 에도 번짐(1부 판정 칩 n2 · n3 · n4 에 보임) — 한 칸이라 함께 고침. 고친 줄 모의(chips.cjs): n1 [fascinating] · n2 [supposedly] · n3 [filled with adventure] · n4 [lead rather routine lives] · n5 [average] · n6 칩 없음 · n7 [cover a story] · n9 [column] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음. 내용 재검토 결과 표 #46(C07204)과 같은 줄 · 같은 고칠 글.",
+     "지금": "fascinating. supposedly. fill with adventure. reporters lead rather routine lives. average cover column",
+     "고칠 글": "fascinating. supposedly. filled with adventure. lead rather routine lives. average. cover a story. column",
+     "고칠 곳": "content/lessons/ld/d051.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T17",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "LISTENING d051 n9 한국어(content/ld_english_scripts.json .d051[n=9].ko) — 받아쓰기 '한글 번역 가이드' · 대본 쪽 /ld/d051-1 에 보임, 소리 없음. 9/18 뒤 안 바뀐 글. 영어 'a column of his own' 을 '그의 자신의 칼럼' 으로 옮겨 소유 표현이 겹친 비문 — '그 자신의 칼럼'. 이 파일 d050 n5(T11)와 같은 꼴 · 같은 매김(뜻은 통해 오도는 아님).",
+     "지금": "그는 심지어 그가 그의 자신의 칼럼을 갖게 해주기까지 할지 모른다.",
+     "고칠 글": "그는 심지어 그가 그 자신의 칼럼을 갖게 해주기까지 할지 모른다.",
+     "고칠 곳": "content/ld_english_scripts.json .d051[n=9].ko (d051 대본 n9 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d052",
+   "읽은 글": 15,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d053",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d053 힌트 줄(content/lessons/ld/d053.json .blocks[2].text). chips.cjs 로 확인: 'get out of hand Chicago for instance'(n1 get out of hand + n2 Chicago · for instance)가 한 칩이라 T03(n2)에 문장에 없는 꼴로 뜨고 n1 에는 칩이 하나도 안 뜸, 'collect model trains nuisance'(n2 'collecting model trains' 의 기본형 + n4 nuisance)가 T03(n2) · T06(n4) · n3 · n6 · n7 에 통째로 뜸. 같은 줄의 'measure collection inexpensive match-boxes'(1부 판정 칩 n3 · n6 · n8, n7 도 같은 칩 줄)는 세 문장의 항목을 붙이고 'match-boxes' 는 대본(n7 'matchboxes')에 없는 철자, 'is valued at close to 10,000' 은 대본 꼴 '$10,000' 에서 $ 가 빠짐 — 한 칸이라 함께 고침. 고친 줄 모의(chips.cjs): n1 [get out of hand] · n2 [Chicago] [for instance] [collecting model trains] · n3 [collecting model trains] [collection] · n4 [collecting model trains] [nuisance] · n6 [collection] [is valued at close to $10,000] [measured] · n7 [collection] [inexpensive matchboxes] · n8 [measured] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음(n3 · n4 의 [collecting model trains] 는 지금도 'trains' 낱말 일치로 뜨는 번짐). 내용 재검토 결과 표 #48(C07242)과 같은 줄 · 같은 고칠 글.",
+     "지금": "get out of hand Chicago for instance. collect model trains nuisance. is valued at close to 10,000. measure collection inexpensive match-boxes",
+     "고칠 글": "get out of hand. Chicago, for instance. collecting model trains. nuisance. collection. is valued at close to $10,000. measured. inexpensive matchboxes",
+     "고칠 곳": "content/lessons/ld/d053.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d054",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "①",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "LISTENING d054 n2 영어(content/ld_english_scripts.json .d054[n=2].en — 받아쓰기 정답 · 낱말 타일 · 소리). 9/18 뒤 안 바뀐 글. 콜럼버스가 찾던 것은 동양(아시아)으로 가는 지름길 — 바로 뒤 n3 'the East Indies', 한국어 T10 '동양으로의 지름길' — 인데 소문자 'the east' 는 방위(동쪽)로 읽혀 서쪽으로 항해한 사실과 어긋나 보임. 아시아를 가리키는 지역 이름 East 는 대문자(Merriam-Webster · Chicago Manual 의 방위 · 지역 이름 규칙 — 방위는 소문자, 지역은 대문자). 9/18 감사가 고유 명사 소문자(pr207 congress · pr221 latin)를 [Low] 로 매긴 것과 같게 낮음. 받아쓰기 채점(typedDictationMatches)은 소문자로 맞춰 견주므로 채점 문제는 아님 — 화면 정답 · 타일 글자만 틀림. 녹음과: 대문자만 바뀌어 새 음성과 녹음은 같은 말 — 다만 클립 이름이 글 해시라 새 클립 필요.",
+     "지금": "Columbus, for example, in searching for a shortcut to the east, discovered America.",
+     "고칠 글": "Columbus, for example, in searching for a shortcut to the East, discovered America.",
+     "고칠 곳": "content/ld_english_scripts.json .d054[n=2].en (d054 대본 n2 en)",
+     "새 음성 클립": true
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d055",
+   "읽은 글": 15,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d056",
+   "읽은 글": 10,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d057",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d057 힌트 줄(content/lessons/ld/d057.json .blocks[2].text). T02 의 칩 [advantages] 는 n1 에 맞으나, 같은 칩 줄로 묶인 n8(읽을거리엔 n1 과 같은 칩이라 한 번 — chips.cjs 로 확인)에는 이 줄에 적힌 n8 의 힌트 둘 — 'make up for' · 'commute to'(대본 'commuting to work') — 이 하나도 안 뜨고 [advantages] 만 뜸: 'make up for' 는 n7 의 두 항목과 한 칩 'when it comes to beat make up for' 로 붙어 n7 에만 뜨고(1부 판정 칩 n7), 'commute to' 는 대본에 없는 기본형이라 어느 문장에도 안 맞음. 고친 줄 모의(chips.cjs): n1 [advantages] · n7 [when it comes to] [beat] · n8 [advantages] [make up for] [commuting to] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음. 내용 재검토 결과 표 #52(C07328)와 같은 줄 · 같은 고칠 글.",
+     "지금": "advantages. when it comes to beat make up for. commute to",
+     "고칠 글": "advantages. when it comes to. beat. make up for. commuting to",
+     "고칠 곳": "content/lessons/ld/d057.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d058",
+   "읽은 글": 16,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d059",
+   "읽은 글": 17,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d060",
+   "읽은 글": 14,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d061",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d061 힌트 줄(content/lessons/ld/d061.json .blocks[2].text). chips.cjs 로 확인: 경계 없는 항목들이 칩 넷으로 붙음 — [Show business Taggy Montag](n1 show business + n2 이름)가 T02(n1 — n2 · n3 도 같은 칩 줄) · T06(n5) · T10(n7) · n9 에, [ad favorite teenage idol](n3 ad · n5 favorite · n6 teenage idol)이 T06(n5) · T08(n6)에, [simply fantastic performer audience](n7 simply · n8 fantastic performer · audience)가 T10(n7) · n8 에, [enthusiastic autographs backstage](n8 · n9)가 1부 판정 칩 n8 · n9 에 문장에 없는 꼴로 뜸. 두 글자 'ad' 는 낱말 일치 규칙(소문자 낱말은 5자부터)에 안 걸려 n3 에 광고 칩이 없음. 고친 줄 모의(chips.cjs): n1 [Show business] · n2 [Taggy Montag] · n3 [Show business] [an ad] · n5 [Taggy Montag] [favorite] · n6 [teenage idol] · n7 [Show business] [simply] · n8 [fantastic performer] [audience] [enthusiastic] · n9 [Show business] [Taggy Montag] [autographs] [backstage] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음(n3 · n7 · n9 의 [Show business] 는 지금도 'show' 낱말 일치로 뜨는 번짐). 내용 재검토 결과 표 #56(C07426)과 같은 줄 · 같은 고칠 글.",
+     "지금": "Show business Taggy Montag. ad favorite teenage idol. simply fantastic performer audience. enthusiastic autographs backstage.",
+     "고칠 글": "Show business. Taggy Montag. an ad. favorite. teenage idol. simply. fantastic performer. audience. enthusiastic. autographs. backstage.",
+     "고칠 곳": "content/lessons/ld/d061.json .blocks[2].text (hints 블록 — 힌트 줄 전체)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T14",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "LISTENING d061 n1 한국어(content/ld_english_scripts.json .d061[n=1].ko) — 받아쓰기 '한글 번역 가이드' · 대본 쪽 /ld/d061-1 에 보임, 소리 없음. 9/18 뒤 안 바뀐 글. '쇼산업' 은 사전에 없는 두 낱말의 이음이라 띄어 씀(한글 맞춤법 제2항) — 같은 과정도 '컴퓨터 산업'(d086 n7) · '어로 산업'(d126 n7)처럼 띄어 씀. 확신 보통: 전문 용어로 보아 붙여 쓸 여지(제50항)가 조금 있음.",
+     "지금": "쇼산업은 겉으로 보일지 모르는 것만큼 훌륭하지는 않다.",
+     "고칠 글": "쇼 산업은 겉으로 보일지 모르는 것만큼 훌륭하지는 않다.",
+     "고칠 곳": "content/ld_english_scripts.json .d061[n=1].ko (d061 대본 n1 ko)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T19",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "LISTENING d061 n6 한국어(content/ld_english_scripts.json .d061[n=6].ko) — 받아쓰기 '한글 번역 가이드' · 대본 쪽에 보임, 소리 없음. 9/18 뒤 안 바뀐 글. 나이를 십 년 단위로 끊는 '대(代)' 는 의존 명사라 한글 수 뒤에서 띄어 씀('십 대' — 아라비아 숫자일 때만 '10대' 로 붙일 수 있음; 1부가 같은 까닭으로 d060 n1 '칠천명의' → '칠천 명의' 를 적음). 함께: '싫증나있었다' 의 보조 용언 '있다' 는 원칙대로 띄어 씀 — '싫증나다'(명사+동사 합성어)는 합성 동사 뒤 붙여 쓰기 허용에서 빠진다고 볼 수 있어(제47항 다만, '떠내려가 버렸다' 와 같음) 고칠 글은 어느 쪽으로 보아도 맞는 원칙 꼴 '싫증나 있었다'. 같은 꼴 '십대' 가 과정의 d068 n1 · d075 n3 · d076 n5 에도 있음(다른 조각 몫).",
+     "지금": "그는 술도 담배도 하지 않았다. 그는 십대의 우상의 생활에 싫증나있었다.",
+     "고칠 글": "그는 술도 담배도 하지 않았다. 그는 십 대의 우상의 생활에 싫증나 있었다.",
+     "고칠 곳": "content/ld_english_scripts.json .d061[n=6].ko (d061 대본 n6 ko)",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:09"
+  },
+  {
+   "묶음": "ld/d112",
+   "읽은 글": 11,
+   "틀림": [
+    {
+     "T": "T08",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 — '파들어가다' 는 사전에 한 낱말로 없고 '들어가다' 는 보조 용언이 아니므로 본용언 둘('파다' + '들어가다')은 띄어 씀 → '파 들어가기'. 뜻은 영어와 같음.",
+     "지금": "한 노동자가 특이한 모습의 몇몇 돌을 목격했을 때 불도저들이 막 한 새로운 지역을 파들어가기 시작했었다.",
+     "고칠 글": "한 노동자가 특이한 모습의 몇몇 돌을 목격했을 때 불도저들이 막 한 새로운 지역을 파 들어가기 시작했었다.",
+     "고칠 곳": "content/ld_english_scripts.json · d112 대본 n2 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T11",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "조사 — '에게' 는 사람 · 동물 뒤에 쓰고, 회사 · 기관 같은 무정 명사 뒤에는 '에' 를 씀('그 건설회사에 요청했다'). 뜻은 영어와 같음('건설회사' 띄어쓰기는 그대로 둠).",
+     "지금": "그들은 연구가 이루어질 수 있을 때까지 작업을 중단해달라고 그 건설회사에게 요청했다.",
+     "고칠 글": "그들은 연구가 이루어질 수 있을 때까지 작업을 중단해달라고 그 건설회사에 요청했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d112 대본 n5 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d113",
+   "읽은 글": 17,
+   "틀림": [
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "곳을 나타내는 '그 건설 현장으로부터 약 4마일 떨어진 Cisco 강 근처에서' 가 따옴표 밖에 있어 '말했다' 를 꾸밈 — 한국어로는 교수가 강 근처에서 말했다는 뜻으로 읽힘. 영어는 Pomo 인디언이 그 강 근처(공사 현장에서 약 4마일)에 살았다는 것('used to live near the Cisco River, about four miles from the construction site'). 그 말을 따옴표 안으로 옮김(이 강의 n8 · n9 처럼 따옴표로 옮기는 방식은 그대로).",
+     "지금": "Perkins 교수는 그 건설 현장으로부터 약 4마일 떨어진 Cisco 강 근처에서 “한 큰 무리의 Pomo 인디언들이 한때 살았다.”라고 말했다.",
+     "고칠 글": "Perkins 교수는 “한 큰 무리의 Pomo 인디언들이 그 건설 현장으로부터 약 4마일 떨어진 Cisco 강 근처에서 한때 살았다.”라고 말했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d113 대본 n2 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T16",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "한 강의 안 표기 흔들림 — 같은 강의 n2 · n5 는 'Pomo 인디언', n3 은 'Pomo족' 인데 n7 만 한글 '포모 인디언'. 많은 쪽(Pomo)으로 맞춤.",
+     "지금": "포모 인디언들은 작은 영구적인 마을에 살곤 했고 그들은 아름다운 바구니를 만들곤 했다.",
+     "고칠 글": "Pomo 인디언들은 작은 영구적인 마을에 살곤 했고 그들은 아름다운 바구니를 만들곤 했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d113 대본 n7 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d114",
+   "읽은 글": 19,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "두 항목('short route' · 'Asia')이 한 칩으로 붙음 — 문장은 'a short route to Asia' 라 'short route Asia' 꼴은 강의 어디에도 없음. 이 강의 칩 T 는 T03 하나(같은 칩이 1부 칸 n5 · n8 에도 보임). 같은 줄의 [melt Bering Strait] 도 두 항목('melted' · 'Bering Strait')이 붙은 칩이라(1부 칸 n8 에 보임) 한 칸이므로 함께 고침. chips.cjs 로 잼: 고친 뒤 n2 [short route] [Asia] · n5 [Asia] … · n7 [melted](지금은 칩 없음 — 'melted' 문장에 맞는 칩이 새로 뜸) · n8 [Asia] [Bering Strait] [Alaska], 나머지 문장 칩은 그대로 — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음. 'melt' 는 문장 꼴 'melted' 로 씀(원형이면 n7 에 문장에 없는 꼴로 새로 뜸). [land off the coast of North America] · [North] 가 n5 · n6 · n9 · n10 에 번지는 것은 1부 칸에만 보여 손대지 않음.",
+     "지금": "[칩 n2] [short route Asia] — d114 힌트 줄 '1492, Christopher Columbus. Atlantic Ocean. Spain. short route Asia. land off the coast of North America. India, Native Americans, 15,000. melt Bering Strait, Alaska. large herds of. wander. North. South America.'",
+     "고칠 글": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. land off the coast of North America. India, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of. wander. North. South America.",
+     "고칠 곳": "content/lessons/ld/d114.json · blocks[2](type hints).text — d114 힌트 줄 전체",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T17",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "띄어쓰기 — 2017년 외래어 표기법 개정으로 외래어 지명 뒤의 '해 · 섬 · 강 · 산 · 해협' 따위는 붙여 씀('카리브 해 → 카리브해' 와 같은 규칙) → '베링해협'.",
+     "지금": "인류학자들은 베링 해협 근처의 이런 지역 중 하나가 아시아와 알래스카를 이어 주었다고 믿는다.",
+     "고칠 글": "인류학자들은 베링해협 근처의 이런 지역 중 하나가 아시아와 알래스카를 이어 주었다고 믿는다.",
+     "고칠 곳": "content/ld_english_scripts.json · d114 대본 n8 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [
+    {
+     "T": "T15",
+     "추천안": "아메리카 대륙 전체의 원주민을 말하는 칸만 '미국 원주민' → '아메리카 원주민'(그 밖의 글자는 그대로): ① d114 대본 n5 ko(이 T15) '첫 번째 인디언 즉 아메리카 원주민들은 아마 15,000년도 더 전에 아시아로부터 왔을 것이다.' ② d115 대본 n1 ko(d115 T10) '아메리카 원주민들은 많은 다른 언어를 가진 많은 다른 문화를 발전시켰다.' ③ d114 대본 n10 ko(d114 T19 — 1부 문맥에서 이미 적힌 칸, 그 고침에 더해) '미국 원주민은' → '아메리카 원주민은' ④ d118 대본 n9 ko(d118 T16)의 '미국으로 가져와진' → '아메리카 대륙으로 들어온'(17세기 — 미국이 아직 없던 때 · 같은 강의 n11 은 'the Americas'). 지금의 미국 땅 이야기인 d116 ~ d120 의 다른 '미국 원주민' 은 그대로.",
+     "까닭": "이 과정은 'Native Americans' 를 줄곧 '미국 원주민' 으로 옮김 — 사전에도 있는 옮김이라 그 자체는 틀림 아님. 그런데 d114 n5 · n10 은 북미와 남미 전체를 말하고, d115 n1 은 바로 다음 문장(n2)이 멕시코 · 중앙아메리카의 마야 · 아즈텍을 예로 들어 '미국 원주민' 으로 읽으면 마야 · 아즈텍이 미국 원주민이 되며, d114 n10 은 '미국 원주민이 남미에도 살았다' 가 됨. 문맥마다 용어를 바꿀지(과정 안 용어 통일과 맞바꿈)는 옮김 방침이라 판단 필요. 네 칸 모두 한국어라 새 음성 클립 없음.",
+     "다른 길": "그대로 둠 — 과정 전체를 '미국 원주민' 한 가지로(익숙한 옮김 · 용어 통일)."
+    }
+   ],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d115",
+   "읽은 글": 17,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d116",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T05",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "'West' 와 'Mississippi River' 가 한 칩으로 붙음(n1 은 'West of the Mississippi River' — 'West Mississippi River' 꼴은 강의에 없음). 그 칩이 'east of the Mississippi River' 문장(n6)에 떠서 들리는 'east' 와 반대인 'West' 를 보여 줌. 이 강의 칩 T 는 T05 하나. 같은 줄의 [clothing shelter](n4 'clothing and shelter') · [tribes European settlers](n1 · n5 · n9 — 'tribes' 와 'European settlers' 가 붙음)도 같은 종류로 1부 칸에 보이며 한 칸이라 함께 고침. chips.cjs 로 잼: 고친 뒤 n1 [Mississippi River] [Great Plains] [wandering tribes] [great herds of buffalo] · n4 [great herds of buffalo] [clothing] [shelter] · n5 [north of Mexico] [European settlers] · n6 [Mississippi River] · n9 [wandering tribes] [European settlers] — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음('tribes' 만의 칩은 [wandering tribes] 와 겹쳐 뺌). n5 의 [European settlers]('Europeans' 로 맞음) · n9 의 [wandering tribes] 는 지금도 있는 부분 맞음이라 그대로.",
+     "지금": "[칩 n6] [West Mississippi River] ← 'Many of them were living east of the Mississippi River.' — d116 힌트 줄 'West Mississippi River, Great Plains, wandering tribes. great herds of buffalo. clothing shelter. north of Mexico. tribes European settlers.'",
+     "고칠 글": "Mississippi River, Great Plains, wandering tribes. great herds of buffalo. clothing, shelter. north of Mexico. European settlers.",
+     "고칠 곳": "content/lessons/ld/d116.json · blocks[2](type hints).text — d116 힌트 줄 전체",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d117",
+   "읽은 글": 6,
+   "틀림": [
+    {
+     "T": "T06",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'For a few years'(몇 해 — 짧았다는 뜻)를 '여러 해 동안'(수가 많은 해)으로 옮겨 평화롭던 기간이 길어짐 — 영어는 평화가 몇 해뿐이고 곧 문제가 생겼다는 흐름. '몇 년 동안' 으로.",
+     "지금": "그들은 정착민들에게 봄에 심고 밭에 비료를 주는 방법을 가르쳤다. 여러 해 동안 그들은 평화롭게 함께 살았으나 그런 다음 문제가 생기기 시작했다.",
+     "고칠 글": "그들은 정착민들에게 봄에 심고 밭에 비료를 주는 방법을 가르쳤다. 몇 년 동안 그들은 평화롭게 함께 살았으나 그런 다음 문제가 생기기 시작했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d117 대본 n4 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d118",
+   "읽은 글": 18,
+   "틀림": [
+    {
+     "T": "T11",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "한 강의 안 표기 흔들림 — 같은 강의 n2 · n6 · n9 는 '미국 원주민' 인데 n1 만 '미국인 원주민'('미국 국적의 원주민' 처럼 읽혀 어색함). '미국 원주민들' 로.",
+     "지금": "점점 더 많은 유럽 정착민들이 도착함에 따라 미국인 원주민들은 그들이 항상 살아왔던 땅을 떠나도록 강요당했다.",
+     "고칠 글": "점점 더 많은 유럽 정착민들이 도착함에 따라 미국 원주민들은 그들이 항상 살아왔던 땅을 떠나도록 강요당했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d118 대본 n1 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d119",
+   "읽은 글": 22,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "한 줄의 칩 틀림 둘(칩 T 는 T02 · T04 · T07 · T11 · T13, 그중 T02 · T07). ① T02: n7 의 [long journey West] 가 'West' 한 낱말 때문에 n1('moved west') · n5('west of the Mississippi River') · n9('moved West')에 번져 그 문장에 없는 'long journey' 를 보여 줌(n5 · n9 칩은 T02 와 같은 글). ② T07: 힌트 줄에 n4 의 해 1834 가 없어 맞는 칩이 하나도 없으므로 앱 안전망이 강의 칩 6개 전부를 띄움 — 들리는 1834 대신 1789 · 1848 이 보임. n6('The Native American people from the East protested …')도 맞는 칩이 없어 같은 6개(T07 과 같은 글). 고칠 글: 1834 를 넣고, 'long journey West' 에서 'West' 를 빼 번짐을 막고, 안전망이 칩 전부를 띄우지 않도록 n1 · n5 · n6 · n9 에 그 문장의 낱말(objected · Mississippi River · protested)을 넣음. chips.cjs 로 잼: 고친 뒤 n1 [objected] · n2 [1789] [permission] · n3 칩 없음 · n4 [1834] · n5 [Mississippi River] · n6 [protested] · n7 [Subsequently] [long journey] · n8 [1848] [California] · n9 [protested] — 모두 그 문장에 있는 꼴, 새 쪼개짐 · 붙음 · 번짐 없음(받아쓰기 채점은 대소문자를 안 보므로 'West' 칩이 빠져도 채점 영향 없음).",
+     "지금": "[칩 n1] [long journey West](n5 · n9 도 같음) · T07 [칩 n4] [1789] [permission] [Subsequently] [long journey West] [1848] [California](n6 도 같음) — d119 힌트 줄 '1789, permission. Subsequently, long journey West. 1848, California'",
+     "고칠 글": "objected. 1789, permission. 1834. Mississippi River. protested. Subsequently, long journey. 1848, California",
+     "고칠 곳": "content/lessons/ld/d119.json · blocks[2](type hints).text — d119 힌트 줄 전체",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d120",
+   "읽은 글": 25,
+   "틀림": [
+    {
+     "T": "T17",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "한 강의 안 표기 흔들림 — 같은 강의 n2 · n4 · n9 · n10 · n11 은 '보호구역'(붙여 씀)인데 n3 만 '보호 구역'.",
+     "지금": "보호 구역에서의 생활은 즐겁지 않았다.",
+     "고칠 글": "보호구역에서의 생활은 즐겁지 않았다.",
+     "고칠 곳": "content/ld_english_scripts.json · d120 대본 n3 ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T20",
+     "종류": "②",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "'cultural identity' 는 '문화적 정체성'. '주체성' 은 스스로 주인이 되는 성질(자주성)이라 뜻이 다름 — 이 문장의 칩도 [cultural identity] 라 학습자가 identity 를 '주체성' 으로 익힐 수 있음.",
+     "지금": "그러나 미국 원주민들은 그들의 문화적인 주체성을 포기하기를 거부했다.",
+     "고칠 글": "그러나 미국 원주민들은 그들의 문화적인 정체성을 포기하기를 거부했다.",
+     "고칠 곳": "content/ld_english_scripts.json · d120 대본 n7 ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d122",
+   "읽은 글": 11,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d123",
+   "읽은 글": 10,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d124",
+   "읽은 글": 13,
+   "틀림": [
+    {
+     "T": "T06",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "두 항목('carefully managed' · 'agriculture')이 한 칩으로 붙음 — 문장은 'must be carefully managed to provide enough water for agriculture' 라 'carefully manage agriculture' 꼴은 강의에 없음. 칩 T 는 T06 · T08([free] — 맞음). chips.cjs 로 잼: 고친 뒤 n5 [carefully managed] [agriculture] [industry] [home use] · n6 [free] 그대로 · n1 ~ n4 칩 없음 그대로 — 새 쪼개짐 · 붙음 · 없는 꼴 · 번짐 없음. 'manage' 는 문장 꼴 'managed' 로.",
+     "지금": "[칩 n5] [carefully manage agriculture] [industry] [home use] — d124 힌트 줄 'carefully manage agriculture, industry, home use. free.'",
+     "고칠 글": "carefully managed. agriculture, industry, home use. free.",
+     "고칠 곳": "content/lessons/ld/d124.json · blocks[2](type hints).text — d124 힌트 줄 전체",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d125",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "여러 항목이 한 칩으로 붙음 — [build dams streams rivers](n1 'build dams on streams and rivers')와 [settlements technological activities](n2 'settlements … technological activities')는 강의 어디에도 없는 꼴. 이 강의 칩 T 는 T03 하나. 같은 줄의 [water vapor make up](n5 'water vapor' + n6 'make up')도 같은 종류로 1부 칸(n1 · n4 · n6 · n8)에 보이며 한 칸이라 함께 고침. chips.cjs 로 잼: 고친 뒤 n1 [build dams] [streams] [rivers] [bring water up] [water vapor] · n2 [build dams] [streams] [rivers] [settlements] [technological activities] · n5 [rivers] [bring water up] [water vapor] · n6 [bring water up] [water vapor] [make up] — 새 쪼개짐 · 붙음 · 번짐 없음(n2 의 [build dams] 는 'building dams' 에 지금도 뜨는 부분 맞음). [bring water up] · [water vapor] 가 'water' 한 낱말로 n1 · n4 ~ n9 에 뜨는 번짐은 지금도 있고 1부 칸에만 보여 그대로 둠.",
+     "지금": "[칩 n2] [build dams streams rivers] [settlements technological activities] — d125 힌트 줄 'build dams streams rivers. settlements technological activities. bring water up. below the earth's surface. wells. water vapor make up. deep underground.'",
+     "고칠 글": "build dams, streams, rivers. settlements, technological activities. bring water up. below the earth's surface. wells. water vapor. make up. deep underground.",
+     "고칠 곳": "content/lessons/ld/d125.json · blocks[2](type hints).text — d125 힌트 줄 전체",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d126",
+   "읽은 글": 20,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:11"
+  },
+  {
+   "묶음": "ld/d080",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T09",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d080 힌트 줄(안 바뀐 글 — 고치기 전 9d6e15d = 지금). 'magnifies screen' 이 n5 'The lens magnifies the picture and shows it on the screen.' 의 두 낱말을 한 칩으로 붙여 n5(T09)에 문장에 없는 꼴 [magnifies screen] 이 뜸(두 항목이 붙음). 고친 줄 chips.cjs 확인: n5 [magnifies] [screen] · 다른 행은 지금과 같음 — 새 쪼개짐 · 붙음 · 번짐 없음. 겹침: 내용 재검토 ld-a 문맥 #89(읽을거리 표지와 같은 0부터 번호)에 같은 칸 · 같은 고칠 글이 이미 있음 — 한 번만 넣으면 됨(읽을거리가 칩 T 에 '이미 적음' 표지를 안 붙여 T 로 적음).",
+     "지금": "projector. shutter. magnifies screen",
+     "고칠 글": "projector. shutter. magnifies. screen",
+     "고칠 곳": "content/lessons/ld/d080.json .blocks[2].text (힌트 줄) — 내용 재검토 ld-a 문맥 #89 와 같은 칸 · 같은 고칠 글",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d082",
+   "읽은 글": 15,
+   "틀림": [
+    {
+     "T": "T10",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "LISTENING d082 n3 한국어(안 바뀐 글 — 고치기 전 = 지금). '영화제작' 은 사전 한 낱말이 아닌 두 낱말(영화 + 제작)이라 띄어 씀. 같은 강의 n1 한국어(9/18 뒤 고친 글)는 같은 말을 '영화 제작 기술' 로 띄어 써서 한 강의 안 표기도 흔들림.",
+     "지금": "이런 영화에서 Griffith는 오늘날에도 여전히 사용되는 많은 영화제작 기술을 발명했다.",
+     "고칠 글": "이런 영화에서 Griffith는 오늘날에도 여전히 사용되는 많은 영화 제작 기술을 발명했다.",
+     "고칠 곳": "content/ld_english_scripts.json .d082[n=3].ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d083",
+   "읽은 글": 23,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d083 힌트 줄(n2 · n3 · n7 칩은 9/18 뒤 그대로 — 고치기 전 = 지금). 흠 둘: ㉮ 'The Birth of a Nation' 의 'The' 가 대문자 세 글자라 앱 규칙상 'the' 가 든 문장마다 영화 제목 칩이 뜸 — 제목이 없는 n2(T03) · n3(T05) · n7(T10)(1부 칩 n4 · n5 · n6 · n9 · n10 도). 이 번짐은 내용 재검토 C07847 이 이미 적고 'The' 를 뺀 줄로 고침. ㉯ '5 performing area' 가 n3 'about 5 meters from the performing area' 의 수(5 meters)와 낱말(performing area)을 한 칩으로 붙임(T05 — 문장에 없는 꼴). C07847 의 고칠 글에는 이 붙음이 그대로 남아 있음. 그래서 고칠 글 = C07847 의 고칠 글에서 '5 performing area' 만 '5 meters. performing area' 로 나눈 줄('5' 한 자리 수는 앱 규칙상 혼자서는 칩이 못 뜨므로 대본 꼴 '5 meters' 로 둠). chips.cjs 확인: n1 · n5 · n10 [Griffith] · n2 · n4 · n6 칩 없음 · n3 [5 meters] [performing area] · n7 [wide view] · n8 [Griffith] [Birth of a Nation] · n9 [American Civil War] · n11 [Griffith] [1931] · n12 그대로 — 새 쪼개짐 · 붙음 · 번짐 없음. C07847 의 줄 대신 이 줄 하나를 넣으면 두 표가 함께 풀림.",
+     "지금": "5 performing area. wide view. The Birth of a Nation. American Civil War 1931. Hollywood, California. July 23rd, 1948",
+     "고칠 글": "Griffith. 5 meters. performing area. wide view. Birth of a Nation. American Civil War. 1931. Hollywood, California. July 23rd, 1948",
+     "고칠 곳": "content/lessons/ld/d083.json .blocks[2].text (힌트 줄) — 내용 재검토 C07847 과 같은 칸(그 고칠 글 대신 이 줄)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T17",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "LISTENING d083 n3 한국어(안 바뀐 글). '연기지역' 은 사전 한 낱말이 아닌 두 낱말(연기 + 지역)이라 띄어 씀(표준 띄어쓰기 — 사전 한 낱말만 붙임, 결정표 17 과 같은 원칙).",
+     "지금": "그들은 그 카메라를 연기지역으로부터 약 5미터 떨어진 곳에 두었다.",
+     "고칠 글": "그들은 그 카메라를 연기 지역으로부터 약 5미터 떨어진 곳에 두었다.",
+     "고칠 곳": "content/ld_english_scripts.json .d083[n=3].ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d084",
+   "읽은 글": 9,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d085",
+   "읽은 글": 15,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d086",
+   "읽은 글": 13,
+   "틀림": [
+    {
+     "T": "T11",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "LISTENING d086 n4 한국어(안 바뀐 글). '통신회사' 는 사전 한 낱말이 아닌 두 낱말(통신 + 회사)이라 띄어 씀(표준 띄어쓰기 — 사전 한 낱말만 붙임). 사전에 붙여 씀 허용으로 올라 있으면 틀림이 아니므로 확신 보통.",
+     "지금": "정부, 병원, 학교, 통신회사들은 컴퓨터로 일한다.",
+     "고칠 글": "정부, 병원, 학교, 통신 회사들은 컴퓨터로 일한다.",
+     "고칠 곳": "content/ld_english_scripts.json .d086[n=4].ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d087",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T02",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d087 힌트 줄(안 바뀐 글). 'Bruce New Orleans' 가 이름과 곳을 한 칩으로 붙여 n1(T02)에 문장에 없는 꼴 [Bruce New Orleans] 이 뜨고, 'riverboat ride reserve' 가 n4 의 riverboat ride 와 n5 의 reserved(기본형 reserve)를 붙여 n4(T06) · n5 에 둘 다 뜸. chips.cjs 확인: n1 [Bruce] [New Orleans] · n4 [riverboat ride] · n5 [reserved] · 다른 행 칩 없음(지금과 같음) — 새 쪼개짐 · 붙음 · 번짐 없음. 겹침: 내용 재검토 ld-a 문맥 #90 에 같은 칸 · 같은 고칠 글이 이미 있음 — 한 번만 넣으면 됨.",
+     "지금": "Bruce New Orleans. riverboat ride reserve",
+     "고칠 글": "Bruce. New Orleans. riverboat ride. reserved",
+     "고칠 곳": "content/lessons/ld/d087.json .blocks[2].text (힌트 줄) — 내용 재검토 ld-a 문맥 #90 과 같은 칸 · 같은 고칠 글",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d088",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T09",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "LISTENING d088 n2 한국어(안 바뀐 글). 'Using its own power' 를 옮긴 '그것의 자체의 동력' 은 '자체' 앞에 '그것의' 를 겹친 틀린 꼴('그것 자체의' 또는 '자체'). 뜻은 영어와 같음 — 꼴만 고침(나머지 글은 그대로).",
+     "지금": "그것의 자체의 동력을 사용하여 크고 시끄러운 기계가 한 남자를 공중으로 올려서 그를 37미터를 운반했다. 그 형제들은 그날 세 번 더 비행했다.",
+     "고칠 글": "자체 동력을 사용하여 크고 시끄러운 기계가 한 남자를 공중으로 올려서 그를 37미터를 운반했다. 그 형제들은 그날 세 번 더 비행했다.",
+     "고칠 곳": "content/ld_english_scripts.json .d088[n=2].ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d089",
+   "읽은 글": 17,
+   "틀림": [
+    {
+     "T": "T10",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d089 힌트 줄(n7 칩은 9/18 뒤 그대로). '90 meters 40 kilometers' 가 n7 'climb to 90 meters and travel 40 kilometers' 의 두 항목을 한 칩으로 붙임(T10 — 문장에 없는 꼴). 같은 줄의 'Europe United States'(1부 칩 n8)도 붙음, n1 은 안전장치로 두 붙은 칩까지 힌트 전부. 겹침: 내용 재검토 C07973 이 같은 칸을 이미 적었고 그 고칠 글이 이 붙음을 풂 — 고칠 글은 C07973 과 똑같음(한 번만 넣으면 됨). chips.cjs 확인: n7 [90 meters] [40 kilometers] · n8 [flying exhibitions] [Europe] [United States] [National Air and Space Museum] — 새 쪼개짐 · 붙음 · 번짐 없음. n4 · n5(T07) · n9 · n10 의 [Flyer III] 는 'Flyer' 낱말 일치(앱 규칙 — C07973 처럼 틀림으로 세지 않음, 힌트 글로는 쪼개지 않고는 못 없앰).",
+     "지금": "Kitty Hawk, North Carolina. December 17, 1903, Flyer III, 1905. 90 meters 40 kilometers. flying exhibitions. Europe United States. National Air and Space Museum. Washington DC.",
+     "고칠 글": "Kitty Hawk, North Carolina. December 17, 1903, Flyer III, 1905. 90 meters. 40 kilometers. flying exhibitions. Europe, United States. National Air and Space Museum. Washington DC.",
+     "고칠 곳": "content/lessons/ld/d089.json .blocks[2].text (힌트 줄) — 내용 재검토 C07973 과 같은 칸 · 같은 고칠 글",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d090",
+   "읽은 글": 14,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d091",
+   "읽은 글": 12,
+   "틀림": [],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d092",
+   "읽은 글": 13,
+   "틀림": [
+    {
+     "T": "T10",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "LISTENING d092 n5 한국어(안 바뀐 글). 둘: ㉮ '그다음' 은 표준국어대사전 한 낱말이라 '그 다음에' 는 붙여 씀. ㉯ 'a four-year college' 를 '4년 대학' 으로 옮겼으나 같은 강의 n6 은 같은 말을 '4년제 대학' 으로 — 한 강의 안 표기 흔들림(바른 말은 '4년제').",
+     "지금": "그들은 그 다음에 4년 대학에서 계속할 수 있다.",
+     "고칠 글": "그들은 그다음에 4년제 대학에서 계속할 수 있다.",
+     "고칠 곳": "content/ld_english_scripts.json .d092[n=5].ko",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T13",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "LISTENING d092 n9 한국어(안 바뀐 글). professional schools 의 'training in business, education, engineering, law, and medicine' 에서 business 는 분야(경영)인데 '사업' 으로 옮김 — 같은 강의 n2 한국어(9/18 뒤 고친 글)는 같은 business 를 '경영' 으로 옮겨 한 강의 안 같은 말이 다르게 옮겨짐.",
+     "지금": "이것들은 사업, 교육, 공학, 법, 의학에 있어서의 훈련을 제공한다.",
+     "고칠 글": "이것들은 경영, 교육, 공학, 법, 의학에 있어서의 훈련을 제공한다.",
+     "고칠 곳": "content/ld_english_scripts.json .d092[n=9].ko",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d093",
+   "읽은 글": 16,
+   "틀림": [
+    {
+     "T": "T07",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d093 힌트 줄(n6 · n8 칩은 9/18 뒤 그대로). 'subjects arrange surface' 가 n6 'the subjects are arranged on the surface' 의 세 낱말을 기본형(arrange)으로 한 칩에 붙여 n6(T07) · n8(T10 — 'subjects' 낱말 일치)에 문장에 없는 꼴로 뜸. 겹침: 내용 재검토 C08063 이 같은 칸을 이미 적었고 그 고칠 글이 이 흠을 풂 — 고칠 글은 C08063 과 똑같음(한 번만 넣으면 됨). chips.cjs 확인: n2 [prehistoric] · n4 [entertaining] [educational] · n6 [subjects] [arranged] [surface] · n8 [subjects] [realistically] — 새 쪼개짐 · 붙음 · 번짐 없음.",
+     "지금": "prehistoric entertaining educational. subjects arrange surface. realistically.",
+     "고칠 글": "prehistoric. entertaining, educational. subjects. arranged. surface. realistically.",
+     "고칠 곳": "content/lessons/ld/d093.json .blocks[2].text (힌트 줄) — 내용 재검토 C08063 과 같은 칸 · 같은 고칠 글",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  },
+  {
+   "묶음": "ld/d094",
+   "읽은 글": 14,
+   "틀림": [
+    {
+     "T": "T03",
+     "종류": "⑥",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "LISTENING d094 힌트 줄(안 바뀐 글). 'interests organize colors shapes' 가 n2 의 interests 와 n7 'organize colors and shapes' 를 한 칩으로 붙여 n2(T03) · n7(T09) 둘 다에 문장에 없는 꼴로 뜸. chips.cjs 확인: n2 [architecture] [clothing] [customs] [interests] · n7 [organize colors and shapes](n7 에 그대로 있는 꼴) — 새 쪼개짐 · 붙음 · 번짐 없음. 겹침: 내용 재검토 ld-a 문맥 #97 에 같은 칸 · 같은 고칠 글이 이미 있음 — 한 번만 넣으면 됨.",
+     "지금": "architecture, clothing, customs, interests organize colors shapes",
+     "고칠 글": "architecture, clothing, customs, interests. organize colors and shapes",
+     "고칠 곳": "content/lessons/ld/d094.json .blocks[2].text (힌트 줄) — 내용 재검토 ld-a 문맥 #97 과 같은 칸 · 같은 고칠 글",
+     "새 음성 클립": false
+    }
+   ],
+   "판단 필요": [],
+   "원본 그대로": [],
+   "배치": "2026-09-25 01:24"
+  }
+ ]
+}

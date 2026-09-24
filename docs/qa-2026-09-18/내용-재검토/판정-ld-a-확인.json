@@ -1,0 +1,1132 @@
+{
+ "조각": "ld-a",
+ "뽑은때": "2026-09-24 17:11",
+ "대상": [
+  {
+   "key": "F:C05489",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05489"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".d030[n=2].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "나는 나의 새 직장을 잃었다. Mr.Biggs가 지난 주 자신의 보석 가게에 나를 고용했지만 그가 오늘 나를 해고시켰다.",
+   "뒤": "나는 나의 새 직장을 잃었다. Mr. Biggs가 지난 주 자신의 보석 가게에 나를 고용했지만 그가 오늘 나를 해고시켰다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d030 n2 한국어(content/ld_english_scripts.json .d030[n=2].ko). 바뀐 곳 'Mr.Biggs → Mr. Biggs' 는 맞음. 남은 '지난 주' 는 표준국어대사전 한 낱말 '지난주' — 기준 판에도 있었음.",
+    "고칠 글": "나는 나의 새 직장을 잃었다. Mr. Biggs가 지난주 자신의 보석 가게에 나를 고용했지만 그가 오늘 나를 해고시켰다."
+   }
+  },
+  {
+   "key": "F:C05494",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05494"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".d032[n=3].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "Elliott는 바위 한 조각이 그의 손에 부딪쳤을 때 지도자였다.",
+   "뒤": "Elliott는 바위 한 조각이 그의 손에 부딪쳤을 때 선등자(앞장서서 오르는 사람)였다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "LISTENING d032 n3 한국어(content/ld_english_scripts.json .d032[n=3].ko). 바뀐 곳 '지도자 → 선등자(앞장서서 오르는 사람)'(암벽 등반의 leader = 앞장서 오르는 사람)는 맞음. 남은 'Elliott는' — 조사는 소리를 따르고 Elliott 는 [엘리엇](받침 ㅅ)이라 '은' — 기준 판에도 있었음. 같은 강의 n6 'Elliott는' 도 같음(문맥에 적음).",
+    "고칠 글": "Elliott은 바위 한 조각이 그의 손에 부딪쳤을 때 선등자(앞장서서 오르는 사람)였다."
+   }
+  },
+  {
+   "key": "F:C05531",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05531"
+   ],
+   "읽을거리": "05.md",
+   "칸": ".d048[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "한 속담은 우리에게 만일 어떤 것이 잘 되기를 원한다면 직접 해야 한다고 우리에게 말한다.",
+   "뒤": "한 속담은 만일 어떤 것이 잘 되기를 원한다면 직접 해야 한다고 우리에게 말한다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "LISTENING d048 n1 한국어(.d048[n=1].ko). 바뀐 곳(겹친 '우리에게' 하나 뺌)은 맞음. 남은 '잘 되기를' — '좋게 이루어지다' 뜻의 '잘되다' 는 표준국어대사전 한 낱말(if you want something done well = 어떤 것이 잘되기를) — 기준 판에도 있었음.",
+    "고칠 글": "한 속담은 만일 어떤 것이 잘되기를 원한다면 직접 해야 한다고 우리에게 말한다."
+   }
+  },
+  {
+   "key": "F:C05627",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05627"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".d083[n=8].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "Griffith의 가장 유명한 영화는 The Birth of a Nation 이었다.",
+   "뒤": "Griffith의 가장 유명한 영화는 The Birth of a Nation 이었다. ※ 이 영화는 흑인을 악의적으로 묘사하고 KKK를 미화한 작품으로, 영화사적 기법의 중요성과는 별개로 심각한 인종차별 논란의 대상입니다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d083 n8 한국어(.d083[n=8].ko). 결정표 7(G4) 알림은 계획(stage7-holds-b-notes 6-0428)의 글 그대로 n8 끝에 들어감 — 맞음. 남은 'Nation 이었다' — 서술격 조사 '이다' 는 앞말에 붙여 씀('Nation이었다') — 기준 판에도 있었음. 알림 글은 그대로 둠.",
+    "고칠 글": "Griffith의 가장 유명한 영화는 The Birth of a Nation이었다. ※ 이 영화는 흑인을 악의적으로 묘사하고 KKK를 미화한 작품으로, 영화사적 기법의 중요성과는 별개로 심각한 인종차별 논란의 대상입니다."
+   }
+  },
+  {
+   "key": "F:C05717",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05717"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".d113[n=8].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "퍼킨즈 교수는 그들이 “바구니에 식량을 수집하고 저장하고 준비했다.”고 말했다.",
+   "뒤": "Perkins 교수는 그들이 “바구니에 식량을 수집하고 저장하고 준비했다.”고 말했다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d113 n8 한국어(.d113[n=8].ko). 바뀐 곳 '퍼킨즈 → Perkins'(강의 안 영어 이름과 같게)는 맞음. 남은 '“…준비했다.”고 말했다' — 따옴표로 직접 인용한 뒤에는 '라고', 간접 인용은 따옴표 없이 '고'(한글 맞춤법) — 영어는 간접 화법('said that they collected …')이고 같은 강의 n3 · n4 는 9/18 뒤 따옴표를 빼고 간접 인용으로 고침. 기준 판에도 있었음.",
+    "고칠 글": "Perkins 교수는 그들이 바구니에 식량을 수집하고 저장하고 준비했다고 말했다."
+   }
+  },
+  {
+   "key": "F:C06153",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C06153"
+   ],
+   "읽을거리": "01.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d003.json",
+   "전": "farmhouse sixty.",
+   "뒤": "farmhouse 60.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d003 힌트 줄(content/lessons/ld/d003.json .blocks[2].text). 'sixty' → '60' 은 대본의 수 꼴과 맞춰 나아짐(기준 판 n4 는 안전장치로 떴고 지금은 60 일치로 뜸). 그러나 서로 다른 문장의 두 항목(n2 farmhouse · n4 60)이 한 칩 [farmhouse 60] 으로 붙어 n2 에 없는 60, n4 에 없는 farmhouse 가 같이 뜸(기준 판 'farmhouse sixty' 에도 있었음). 고칠 글(모의 도구 확인): n2 [farmhouse] · n4 [60].",
+    "고칠 글": "farmhouse. 60."
+   }
+  },
+  {
+   "key": "F:C06728",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C06728"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d027.json",
+   "전": "Frank Lewis, association of sports writers. Fernando Marcos. 1975 1978. 1978.",
+   "뒤": "Frank Lewis, Association of Sportswriters. Fernando Marcos. 1975 1978. 1978. New York Madrid. kept in touch with. coaching",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d027 힌트 줄(content/lessons/ld/d027.json .blocks[2].text). 'Association of Sportswriters' 는 대본 꼴과 맞춰 나아짐. 새로 넣은 'New York Madrid' 가 n7 의 New York 과 n8 의 Madrid 를 한 칩으로 붙여 두 행 모두와 n1(your new president — 'new' 일치)에 통째로 뜸. '1975 1978'(n4 두 해)도 한 칩이고 뒤에 '1978' 이 또 있어 n4 · n7 에 1978 이 두 번 보임(기준 판에도 있었음). 고칠 글(모의 도구 확인): n4 [Fernando Marcos] [1975] [1978] · n7 [1978] [New York] · n8 [Madrid]. n1 의 [New York] 은 'new' 낱말 일치(앱 규칙)라 남음.",
+    "고칠 글": "Frank Lewis, Association of Sportswriters. Fernando Marcos. 1975. 1978. New York. Madrid. kept in touch with. coaching"
+   }
+  },
+  {
+   "key": "F:C06749",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C06749"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d028.json",
+   "전": "Kevin Taylor, Canadian national swimming competition. twenty sports clubs women's 100 meter free style.",
+   "뒤": "Kevin Taylor, Canadian national swimming competition. 20 sports clubs. women's 100 meter freestyle. Angela Edwards. City Sports Club. three races. Karen Gibson. Toronto flu. broken 4 records",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d028 힌트 줄(content/lessons/ld/d028.json .blocks[2].text). 긴 칩이 나뉘어 나아졌으나 새로 넣은 'Toronto flu' 가 곳 이름과 병 이름(n7 'from Toronto has the flu')을 한 칩으로 붙임. 또 'Canadian national swimming competition' 은 대본의 고유 명사 꼴(Canadian National Swimming Competition)과 대소문자가 다름(기준 판에도 있었음). 고칠 글(모의 도구 확인): n1 [Kevin Taylor] [Canadian National Swimming Competition] … · n7 [Karen Gibson] [Toronto] [flu] — 다른 행은 지금과 같음. n6 의 [broken 4 records](대본 'hasn't broken any records')는 'broken' · 'records' 낱말 일치(앱 규칙)라 남음.",
+    "고칠 글": "Kevin Taylor, Canadian National Swimming Competition. 20 sports clubs. women's 100 meter freestyle. Angela Edwards. City Sports Club. three races. Karen Gibson. Toronto. flu. broken 4 records"
+   }
+  },
+  {
+   "key": "F:C06818",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C06818"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d031.json",
+   "전": "Irene Watson editor. Sacramento Kathy Austin. Mt.Everest seven expedition.",
+   "뒤": "Irene Watson editor. Sacramento Kathy Austin. Mount Everest seven expedition.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d031 힌트 줄(content/lessons/ld/d031.json .blocks[2].text). 'Mt.Everest' → 'Mount Everest' 는 대본 꼴과 맞춰 나아짐. 남은 흠(기준 판에도 있었음): 'Irene Watson editor' · 'Sacramento Kathy Austin' · 'Mount Everest seven expedition' 이 저마다 두세 항목을 한 칩으로 붙여, n4(expedition 만)에 [Mount Everest seven expedition], n6 · n8(Kathy 만)에 [Sacramento Kathy Austin] 이 통째로 뜸. 고칠 글(모의 도구 확인): n1 [Irene Watson] [editor] · n2 [Sacramento] [Kathy Austin] · n3 [Mount Everest] [seven] · n4 [expedition] · n6 [Kathy Austin] [expedition] · n8 [Kathy Austin].",
+    "고칠 글": "Irene Watson. editor. Sacramento. Kathy Austin. Mount Everest. seven. expedition."
+   }
+  },
+  {
+   "key": "F:C07017",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C07017"
+   ],
+   "읽을거리": "04.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d040.json",
+   "전": "John, Japan, Australia, Brazil. Mr.Fulton. Miss Ellis expert plants",
+   "뒤": "John, Japan, Australia, Brazil. Mr. Fulton. Miss Ellis expert plants",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d040 힌트 줄(content/lessons/ld/d040.json .blocks[2].text). 'Mr.Fulton' → 'Mr. Fulton' 으로 n4 칩이 [Fulton] 이 되어 나아짐('Mr' 두 글자는 앱 규칙상 안 뜸). 남은 흠(기준 판에도 있었음): 'Miss Ellis expert plants' 가 이름 · 낱말 셋을 한 칩으로 붙임(n6). 고칠 글(모의 도구 확인): n6 [Miss Ellis] [expert] [plants].",
+    "고칠 글": "John, Japan, Australia, Brazil. Mr. Fulton. Miss Ellis. expert. plants"
+   }
+  },
+  {
+   "key": "F:C07518",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C07518"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d066.json",
+   "전": "Chicago brewery least fattening lighter, LITE. \"LITE TASTES SOAPY.\"",
+   "뒤": "Chicago brewery. least fattening. lighter, LITE. \"LITE TASTES SOAPY.\", taste. non-fattening LITE beer. Lite Soap Company",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d066 힌트 줄(content/lessons/ld/d066.json .blocks[2].text). 새로 넣은 'non-fattening LITE beer' 가 n5(non-fattening)와 n6(Lite beer)을 붙이고, 'taste' 는 대본 꼴(n4 tastes · n5 tasted)이 아닌 기본형. 'Lite' 가 든 칩이 넷이라 'Lite' 낱말 일치로 n2 · n4 · n6 · n7 에 칩이 4~5개씩 쏟아짐(n2 'It was lighter, so they called it Lite.' 에 대본과 무관한 광고 문구 · 회사 이름까지). 대본은 'Lite' 인데 칩은 'LITE'. 고칠 글(모의 도구 확인): n2 [lighter] [Lite] · n4 [Lite] [tastes soapy] [Soap Company] · n5 [least fattening] [tasted like soap] [non-fattening] [Soap Company] · n6 [Lite] · n7 [Lite] [Soap Company] — 빠지는 힌트 낱말 없음(n4 · n5 의 [Soap Company] 는 'soap' 일치, 앱 규칙).",
+    "고칠 글": "Chicago brewery. least fattening. lighter, Lite. tastes soapy. tasted like soap. non-fattening. Soap Company"
+   }
+  },
+  {
+   "key": "F:C07596",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C07596"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d070.json",
+   "전": "public railroad run by steam opened England 1825. single track. double track Manchester Liverpool.",
+   "뒤": "public railroad. run by steam. opened. England. 1825. single track. double track Manchester Liverpool. Mr. Huskisson, Eight opening ceremony. 600 29 coaches. 17 miles, halfway across the track. locomotive. fantastic speed 23. panicked. froze",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d070 힌트 줄(content/lessons/ld/d070.json .blocks[2].text). 첫 긴 칩을 나눈 것은 나아짐. 새로 넣은 'Eight opening ceremony'(n3 'Eight trains took part in the opening ceremony')와 '600 29 coaches'(n4 '600 people and 29 coaches')가 두 항목씩 붙었고, 'double track Manchester Liverpool'(n2 세 항목)은 기준 판에도 있었음. 'fantastic speed 23' 은 대본 'a fantastic speed, 23 mph' 의 단위가 빠진 꼴. 고칠 글(모의 도구 확인): n2 … [double track] [Manchester] [Liverpool] … · n3 [Huskisson] [Eight] [opening ceremony] · n4 [600] [29 coaches] [17 miles] · n7 [fantastic speed] [23 mph].",
+    "고칠 글": "public railroad. run by steam. opened. England. 1825. single track. double track. Manchester, Liverpool. Mr. Huskisson, Eight. opening ceremony. 600. 29 coaches. 17 miles, halfway across the track. locomotive. fantastic speed, 23 mph. panicked. froze"
+   }
+  },
+  {
+   "key": "F:C07619",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C07619"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d071.json",
+   "전": "three a.m. August 8, Jack Mills controls Glasgow London. made up of 13 coaches.",
+   "뒤": "3 a.m. August 8, Jack Mills. controls. Glasgow. London. made up of 12 coaches. 67 mailmen sort mail. second coach. 5 mailmen. 128 bags. 5-pound notes. 100 years. 3 minutes past three, helper David Whitby. yellow warning light. out of order.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d071 힌트 줄(content/lessons/ld/d071.json .blocks[2].text). 'three a.m.' → '3 a.m.' · 13 → 12 coaches · 항목 나눔은 대본과 맞음. 남은 흠: 새로 넣은 '67 mailmen sort mail' 은 대본 꼴(n3 '67 mailmen sat sorting the mail')이 아닌 기본형 · 줄인 꼴. 고칠 글(모의 도구 확인): n3 [67 mailmen] [sorting the mail] [5 mailmen] — 다른 행은 지금과 같음(n4 의 [67 mailmen] 은 'mailmen' 일치, 앱 규칙).",
+    "고칠 글": "3 a.m. August 8, Jack Mills. controls. Glasgow. London. made up of 12 coaches. 67 mailmen. sorting the mail. second coach. 5 mailmen. 128 bags. 5-pound notes. 100 years. 3 minutes past three, helper David Whitby. yellow warning light. out of order."
+   }
+  },
+  {
+   "key": "F:C07847",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C07847"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d083.json",
+   "전": "5 performing area. wide view. The Birth of a Nation. American civil war 1930. Hollywood, California",
+   "뒤": "5 performing area. wide view. The Birth of a Nation. American Civil War 1931. Hollywood, California. July 23rd, 1948",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d083 힌트 줄(content/lessons/ld/d083.json .blocks[2].text). 1930 → 1931 · Civil War 대문자 · 새 항목(July 23rd, 1948)은 대본과 맞음. 남은 흠: 'American Civil War 1931' 이 n9 의 전쟁과 n11 의 해를 한 칩으로 붙임(기준 판 'American civil war 1930' 도 붙어 있었음). 또 'The Birth of a Nation' 의 'The' 가 대문자 세 글자라 앱 규칙상 'the' 가 든 거의 모든 문장(n2~n7 · n10)에 영화 제목 칩이 뜸(기준 판에도 있었음). 고칠 글(모의 도구 확인): n1 · n5 · n10 [Griffith] · n2 · n4 · n6 칩 없음 · n8 [Griffith] [Birth of a Nation] · n9 [American Civil War] · n11 [Griffith] [1931] — 제목에서 'The' 를 빼야 옆 행에 안 뜨고, 'Griffith' 를 넣어야 n10 이 힌트 전부를 띄우지 않음.",
+    "고칠 글": "Griffith. 5 performing area. wide view. Birth of a Nation. American Civil War. 1931. Hollywood, California. July 23rd, 1948"
+   }
+  },
+  {
+   "key": "F:C07893",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C07893"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d085.json",
+   "전": "translate into numbers instructions memory unit. arithmetic unit",
+   "뒤": "translate into numbers. instructions. memory unit. arithmetic unit",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d085 힌트 줄(content/lessons/ld/d085.json .blocks[2].text). 항목 나눔은 나아짐. 남은 흠: 'translate into numbers' 는 대본 꼴(n3 'is translated into numbers')이 아닌 기본형 — 기준 판에도 있었음. 고칠 글(모의 도구 확인): n3 [translated into numbers] — 다른 행은 지금과 같음(n1 · n4 의 칩은 'numbers' · 'translated' 낱말 일치, 앱 규칙).",
+    "고칠 글": "translated into numbers. instructions. memory unit. arithmetic unit"
+   }
+  },
+  {
+   "key": "F:C08421",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08421"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d110.json",
+   "전": "organizer. Philadelphia, police department, fire department, hospital, library. University of Pennsylvania.",
+   "뒤": "organizer. Philadelphia, police department, fire department, hospital, library. University of Pennsylvania. mail system. United States. Canada. representative Great Britain France. 1790. postage stamps, coins, paper money.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d110 힌트 줄(content/lessons/ld/d110.json .blocks[2].text). 새 항목으로 n5~n10 칩이 생겨 나아짐. 남은 흠: 새로 넣은 'representative Great Britain France' 가 n6 의 세 항목(9/18 뒤 'He represented … in Great Britain, and later … representative to France' 로 고쳐 서로 떨어짐)을 한 칩으로 붙여 n6 과 n8(greatest — 'Great' 일치)에 통째로 뜸. 고칠 글(모의 도구 확인): n6 [United States] [Great Britain] [representative] [France] · n8 [Great Britain](앱 규칙 일치라 남음).",
+    "고칠 글": "organizer. Philadelphia, police department, fire department, hospital, library. University of Pennsylvania. mail system. United States. Canada. Great Britain. representative. France. 1790. postage stamps, coins, paper money."
+   }
+  },
+  {
+   "key": "F:C08450",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08450"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d111.json",
+   "전": "passport. identifies late 18th century, description early 1800s. black, curly. brown. broken.",
+   "뒤": "passport. identifies late 18th century, description early 1800s. black, curly. brown. broken. Forehead wrinkled, thin with big teeth. pointed.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d111 힌트 줄(content/lessons/ld/d111.json .blocks[2].text). 끝에 n7 항목을 더한 것은 나아짐. 남은 흠(기준 판에도 있었음): 'identifies late 18th century'(n2 identifies · n3 late 18th century)와 'description early 1800s'(n5 'a passport description from the early 1800s')가 두 항목씩 붙어 n2 · n3 에 서로의 항목이 뜸. 새로 넣은 'Forehead wrinkled' 도 n6 처럼 항목을 나누지 않음. 고칠 글(모의 도구 확인): n2 [passport] [identifies] · n3 [passport] [late 18th century] · n5 [passport] [description] [early 1800s] · n7 [Forehead] [wrinkled] [thin with big teeth] [pointed].",
+    "고칠 글": "passport. identifies. late 18th century, description. early 1800s. black, curly. brown. broken. Forehead, wrinkled. thin with big teeth. pointed."
+   }
+  },
+  {
+   "key": "F:C08473",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08473"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d112.json",
+   "전": "Construction objects Bulldozers unusual shapes. broken pots, beads,",
+   "뒤": "Construction. objects. Bulldozers. unusual shapes. broken pots, beads, Anthropologists Logan University dig. contents",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d112 힌트 줄(content/lessons/ld/d112.json .blocks[2].text). 첫 칩을 나눈 것은 나아짐. 남은 흠: 새로 넣은 'Anthropologists Logan University dig' 가 n4(Anthropologists from Logan University)와 n6(dig)의 항목을 붙여 두 행에 뜨고, 'dig' 가 있는 n2(Bulldozers had just begun to dig)에는 안 뜸. 고칠 글(모의 도구 확인): n2 [Bulldozers] [unusual shapes] [dig] · n4 [Anthropologists] [Logan University] · n6 [Anthropologists] [dig] [contents].",
+    "고칠 글": "Construction. objects. Bulldozers. unusual shapes. broken pots, beads, Anthropologists. Logan University. dig. contents"
+   }
+  },
+  {
+   "key": "F:C08504",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08504"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d113.json",
+   "전": "Professor Margaret Perkins, local native Americans Pomo Indians Cisco River four miles canoes",
+   "뒤": "Professor Margaret Perkins, local Native Americans. Pomo Indians. Cisco River. four miles. canoes. nuts, seeds. acorns flour. permanent villages, baskets. residents.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d113 힌트 줄(content/lessons/ld/d113.json .blocks[2].text). 긴 칩을 나누고 새 항목으로 n5~n10 칩이 생겨 나아짐. 남은 흠: 새로 넣은 'acorns flour' 가 n6 'acorns which they made into flour' 의 두 낱말을 한 칩으로 붙임. 고칠 글(모의 도구 확인): n6 [acorns] [flour] — 다른 행은 지금과 같음(n3 · n4 의 [Cisco River] 는 'river' 일치, 앱 규칙).",
+    "고칠 글": "Professor Margaret Perkins, local Native Americans. Pomo Indians. Cisco River. four miles. canoes. nuts, seeds. acorns. flour. permanent villages, baskets. residents."
+   }
+  },
+  {
+   "key": "F:C08535",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08535"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d114.json",
+   "전": "1492, Christopher Columbus Atlantic Ocean Spain. short route Asia. land off the coast of North",
+   "뒤": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route Asia. land off the coast of North America. India, Native Americans, 15,000. melt Bering Strait, Alaska. large herds of. wander. North. South America.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d114 힌트 줄(content/lessons/ld/d114.json .blocks[2].text). 이름 칩을 나누고 새 항목을 더한 것은 나아짐. 남은 흠: 새로 넣은 'melt Bering Strait' 는 n7(melted — 기본형)과 n8(Bering Strait)의 항목을 붙여 정작 n7 에는 칩이 없고, 'wander'(n9 wandered)도 기본형. 'land off the coast of North America'(n3 'landed on an island off the coast …' — 기본형 · 줄임)는 'North' · 'America' 낱말로 n5 · n6 · n9 · n10 에 통째로 뜨고, 따로 떼어 낸 [North] 한 낱말 칩도 n3 · n6 · n9 · n10 에 뜸. 'short route Asia'(n2 'a short route to Asia')는 기준 판에도 붙어 있었음. 고칠 글(모의 도구 확인): n2 [short route] [Asia] · n3 [Christopher Columbus] [landed] [off the coast] [North America] [South America] · n7 [melted] · n8 [Asia] [Bering Strait] [Alaska] · n9 [North America] [large herds of animals] [wandered] [South America] — 빠지는 힌트 낱말 없음(옆 행의 [North America] · [South America] 는 'America(ns)' · 'northern' 일치, 앱 규칙).",
+    "고칠 글": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. landed. off the coast. North America. India, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of animals. wandered. South America."
+   }
+  },
+  {
+   "key": "F:C08562",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08562"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d115.json",
+   "전": "Maya Aztec Central America, Pueblo Indians, southwestern United States, sides of steep cliffs.",
+   "뒤": "Maya. Aztec. Mexico and Central America, Pueblo Indians, southwestern United States, sides of steep cliffs. Southwest wove cloth. Navajo Apache",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d115 힌트 줄(content/lessons/ld/d115.json .blocks[2].text). 'Maya' · 'Aztec' 을 나누고 'Mexico and Central America' 로 고친 것은 n2 영어와 맞음. 남은 흠: 새로 넣은 'Southwest wove cloth'(n8 Southwest · n9 wove cloth)와 'Navajo Apache'(n10 'The Navajo and Apache')가 두 항목씩 한 칩으로 붙어 n5 · n8 · n9 에 서로의 항목이 뜸. 고칠 글(모의 도구 확인): n5 … [Southwest] · n8 … [Southwest] · n9 [wove cloth] · n10 [Navajo] [Apache] — n5 의 [Southwest] 는 'southwestern' 속 글자 일치(앱 규칙).",
+    "고칠 글": "Maya. Aztec. Mexico and Central America, Pueblo Indians, southwestern United States, sides of steep cliffs. Southwest. wove cloth. Navajo. Apache"
+   }
+  },
+  {
+   "key": "F:C08585",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08585"
+   ],
+   "읽을거리": "12.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d116.json",
+   "전": "West Mississippi River, Great plains, wandering tribes great herds of buffalo(American bison).",
+   "뒤": "West Mississippi River, Great Plains, wandering tribes. great herds of buffalo. clothing shelter. north of Mexico. tribes European settlers.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d116 힌트 줄(content/lessons/ld/d116.json .blocks[2].text). 새 항목으로 n3~n5 칩이 생겨 나아짐. 남은 흠: 새로 넣은 'clothing shelter'(n4 'clothing and shelter')와 'tribes European settlers'(n9 'These tribes … the European settlers')가 두 항목씩 붙어 n1 · n5 · n9 에 뜨고, 'West Mississippi River' 는 'Mississippi' 낱말로 n6(east of the Mississippi River)에도 떠 동쪽 이야기에 'West' 가 보임. 고칠 글(모의 도구 확인): n1 [Mississippi River] [Great Plains] [wandering tribes] [great herds of buffalo] · n4 … [clothing] [shelter] · n5 [north of Mexico] [European settlers] · n6 [Mississippi River] · n9 [wandering tribes] [European settlers].",
+    "고칠 글": "Mississippi River, Great Plains, wandering tribes. great herds of buffalo. clothing, shelter. north of Mexico. European settlers."
+   }
+  },
+  {
+   "key": "F:C08709",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08709"
+   ],
+   "읽을거리": "12.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d121.json",
+   "전": "population growth. overpopulated 18th Century, double 80 years. famines,",
+   "뒤": "population growth. overpopulated 18th century, double 80 years. famines,",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d121 힌트 줄(content/lessons/ld/d121.json .blocks[2].text). 'Century' → 'century'(대본 꼴)는 맞음. 남은 흠(기준 판에도 있었음): 'overpopulated 18th century' 가 n2(overpopulated)와 n5(18th century)의 항목을 한 칩으로 붙여 두 행에 뜨고, 'double 80 years' 는 n7 'double in about 80 years' 를 줄여 붙인 칩, 끝의 쉼표는 남은 기호. n3(There will be more people than the Earth can support.)은 맞는 칩이 없어 이름(Earth) 안전장치로 힌트 전부가 뜸. 고칠 글(모의 도구 확인): n2 [Earth] [overpopulated] · n3 [Earth] · n5 [18th century] · n7 [population growth] [double] [80 years] — n4 의 [80 years] 는 'years' 일치(앱 규칙).",
+    "고칠 글": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines"
+   }
+  },
+  {
+   "key": "F:C08785",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08785"
+   ],
+   "읽을거리": "12.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d125.json",
+   "전": "build dams streams rivers. settlements technological activities.",
+   "뒤": "build dams streams rivers. settlements technological activities. bring water up. below the earth's surface. wells. water vapor make up. deep underground.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d125 힌트 줄(content/lessons/ld/d125.json .blocks[2].text). 새로 넣은 'bring water up' · 'water vapor make up'(n5 water vapor · n6 make up — 두 항목 붙음)이 'water' 낱말로 n1 · n4~n9 에 쏟아져 기준 판에서 칩이 없던 n7 · n9 에도 뜨고(나빠짐), 'build dams streams rivers'(n1 'build dams on streams and rivers') · 'settlements technological activities'(n2 두 항목)는 기준 판에도 붙어 있었음. 고칠 글(모의 도구 확인): n1 [build dams] [streams] [rivers] · n2 … [settlements] [technological activities] · n4 [below the earth's surface] [wells] · n5 [rivers] [vapor] · n6 [make up] · n7 · n9 칩 없음 · n8 [deep underground] — 'water' 가 든 구절은 옆 행에 뜨므로 'vapor' 만 남김.",
+    "고칠 글": "build dams. streams, rivers. settlements. technological activities. below the earth's surface. wells. vapor. make up. deep underground."
+   }
+  },
+  {
+   "key": "F:C08816",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08816"
+   ],
+   "읽을거리": "13.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d126.json",
+   "전": "seventy percent Pacific, Atlantic, Indian, Arctic, Antarctic Oceans body of water broken",
+   "뒤": "70%. Pacific, Atlantic, Indian, Arctic, Antarctic Oceans. body of water broken. oceanographers. billions of kilograms of fish. undersea plants minerals. undersea farms.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d126 힌트 줄(content/lessons/ld/d126.json .blocks[2].text). 'seventy percent' → '70%' · 새 항목(oceanographers 등)으로 나아짐. 남은 흠: 새로 넣은 'undersea plants minerals' 가 n9 'undersea plants contain vitamins and minerals' 의 두 항목을 한 칩으로 붙이고, 'Antarctic Oceans' 는 대본(… and Antarctic oceans)과 대소문자가 다르며 'oceans' 낱말로 n1 · n3 에도 뜸(기준 판에도 있었음). 고칠 글(모의 도구 확인): n1 [70%] · n2 [Pacific] [Atlantic] [Indian] [Arctic] [Antarctic] [body of water broken] · n3 칩 없음 · n9 [undersea plants] [minerals] [undersea farms] — n9 · n10 의 서로 다른 'undersea' 칩은 낱말 일치(앱 규칙).",
+    "고칠 글": "70%. Pacific, Atlantic, Indian, Arctic, Antarctic. body of water broken. oceanographers. billions of kilograms of fish. undersea plants. minerals. undersea farms."
+   }
+  },
+  {
+   "key": "F:C08990",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C08990"
+   ],
+   "읽을거리": "13.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d132.json",
+   "전": "complicated two minutes, positive confident.",
+   "뒤": "complicated 2 minutes, positive confident.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d132 힌트 줄(content/lessons/ld/d132.json .blocks[2].text). 'two' → '2'(대본 꼴)는 맞음. 남은 흠(기준 판에도 있었음): 'complicated 2 minutes'(n5 · n8 complicated · n6 2 minutes)와 'positive confident'(n6 positive · n7 confident)가 다른 문장의 항목을 붙여 n5 · n8 에 2 minutes, n7 에 positive 가 따라 뜸. 고칠 글(모의 도구 확인): n5 · n8 [complicated] · n6 [2 minutes] [positive] · n7 [confident].",
+    "고칠 글": "complicated. 2 minutes, positive. confident."
+   }
+  },
+  {
+   "key": "X:150",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d136[n=5].ko",
+    "지금": "Bob은 그의 사이즈의 스웨터를 모두 다 입어 보았지만 그 중에 어느 것도 그에게 어울리지 않았다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'그중' 은 한 낱말(같은 과정 d009 는 '그중의'). 바뀌지 않은 옆 글(C05762~C05764 와 같은 강의).",
+    "고칠 글": "Bob은 그의 사이즈의 스웨터를 모두 다 입어 보았지만 그중에 어느 것도 그에게 어울리지 않았다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 17:04"
+   }
+  },
+  {
+   "key": "X:151",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/lessons/ld/d138.json",
+    "칸": ".blocks[2].text (힌트 줄)",
+    "지금": "fried chicken, corn, hot biscuits honey. chocolate ice cream cake 5",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "바뀌지 않은 힌트 줄(칩은 9/18 뒤 새로 보임). 'chocolate ice cream cake 5' 가 n3 의 디저트와 n5 의 시각(5:00)을 한 칩으로 붙여 n5 에서는 맞는 칩이 안 잡히고 수 안전장치로 힌트 전부가 뜸. 'hot biscuits honey' 는 대본 'hot biscuits with honey' 를 줄인 꼴. 고칠 글(모의 도구 확인): n2 [fried chicken] [corn] [hot biscuits with honey] · n3 [chocolate ice cream and cake] · n5 [5:00] — '5:00' · 'corn' 은 통째로 문장에 있어 혼자서도 뜸.",
+    "고칠 글": "fried chicken, corn, hot biscuits with honey. chocolate ice cream and cake. 5:00",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 17:05"
+   }
+  },
+  {
+   "key": "X:152",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d137[n=8].ko",
+    "지금": "디저트로 나는 약간의 아이스크림을 먹었고 헬렌은 신선한 과일을 먹었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "9/18 뒤 같은 강의 n7 한국어(C05765)를 영어와 같게 'Helen은' 으로 고쳤는데 n8 은 '헬렌은' 으로 남아 한 강의 안 이름 표기가 흔들림. 바뀌지 않은 옆 글.",
+    "고칠 글": "디저트로 나는 약간의 아이스크림을 먹었고 Helen은 신선한 과일을 먹었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 17:05"
+   }
+  },
+  {
+   "key": "X:153",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d137[n=4].ko",
+    "지금": "지난 주에 우리는 한 새로운 호텔의 식당으로 갔다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'지난주' 는 한 낱말. 바뀌지 않은 옆 글.",
+    "고칠 글": "지난주에 우리는 한 새로운 호텔의 식당으로 갔다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 17:05"
+   }
+  },
+  {
+   "key": "X:154",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d138[n=3].ko",
+    "지금": "그녀는 항상 충분한 양의 초콜렛 아이스크림과 케이크를 디저트로 내놓는다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "chocolate 의 외래어 표기는 '초콜릿'. 바뀌지 않은 옆 글(C05766 과 같은 강의).",
+    "고칠 글": "그녀는 항상 충분한 양의 초콜릿 아이스크림과 케이크를 디저트로 내놓는다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 17:05"
+   }
+  },
+  {
+   "key": "S:/ld/d025:T20",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-a/d025.md",
+   "주장": {
+    "T": "T20",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n10(Carlos rowed the boat …)에 'rowed the boat' 칩이 없고(힌트는 기본형 'row the boat' 로 n9 항목과 붙어 있음) 붙은 이름 칩만 뜸(1부 C06676).",
+    "지금": "[Carlos Kim 10 a.m]",
+    "고칠 글": "Saturday, Carlos. Kim. 10 a.m., magazines, towels, food, fruit, cheese, sandwiches, cookies, juice. rubber boat. 11:30. an hour and a half. traffic. shallow water. rowed the boat",
+    "고칠 곳": "content/lessons/ld/d025.json .blocks[2].text — 1부 C06676",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d027:T08",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-a/d027.md",
+   "주장": {
+    "T": "T08",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n4 칩 [1975 1978] 과 [1978] — 두 해를 붙인 칩에 1978 이 한 번 더(1부 C06728).",
+    "지금": "[Fernando Marcos] [1975 1978] [1978]",
+    "고칠 글": "Frank Lewis, Association of Sportswriters. Fernando Marcos. 1975. 1978. New York. Madrid. kept in touch with. coaching",
+    "고칠 곳": "content/lessons/ld/d027.json .blocks[2].text — 1부 C06728",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d121:T04",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-a/d121.md",
+   "주장": {
+    "T": "T04",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n2 칩 [overpopulated 18th century] — n5 의 18th century 가 붙은 칩(1부 C08709).",
+    "지금": "[overpopulated 18th century]",
+    "고칠 글": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines",
+    "고칠 곳": "content/lessons/ld/d121.json .blocks[2].text(힌트 줄) — 1부 C08709",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d121:T06",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-a/d121.md",
+   "주장": {
+    "T": "T06",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n3(There will be more people than the Earth can support.)은 맞는 칩이 없어 이름(Earth) 안전장치로 붙은 칩 넷이 전부 뜸(1부 C08709 — 'Earth' 를 넣으면 [Earth] 만).",
+    "지금": "[population growth] [overpopulated 18th century] [double 80 years] [famines]",
+    "고칠 글": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines",
+    "고칠 곳": "content/lessons/ld/d121.json .blocks[2].text — 1부 C08709",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d121:T08",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-a/d121.md",
+   "주장": {
+    "T": "T08",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n4 에 'years' 로 뜬 [double 80 years] — n7 'double in about 80 years' 를 줄여 붙인 칩(1부 C08709).",
+    "지금": "[population growth] [double 80 years]",
+    "고칠 글": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines",
+    "고칠 곳": "content/lessons/ld/d121.json .blocks[2].text — 1부 C08709",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d121:T14",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-a/d121.md",
+   "주장": {
+    "T": "T14",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n7 칩 [double 80 years] — 'double in about 80 years' 에서 낱말을 빼고 붙인 꼴(1부 C08709).",
+    "지금": "[population growth] [double 80 years]",
+    "고칠 글": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines",
+    "고칠 곳": "content/lessons/ld/d121.json .blocks[2].text — 1부 C08709",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "OK:C05643",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d087[n=4].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "그는 강의 배(riverboat)를 타러 갈 수 있었을 것이며 혹은 그는 박물관들을 방문할 수 있었을 것이다.",
+   "뒤": "그는 유람선을 타러 갈 수도 있었고, 박물관을 방문할 수도 있었다."
+  },
+  {
+   "key": "OK:C05642",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d086[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "로케트, 비행기, 선박, 자동차를 위하여 특별 컴퓨터들이 개발되어왔다.",
+   "뒤": "로켓, 비행기, 선박, 자동차를 위하여 특별 컴퓨터들이 개발되어왔다."
+  },
+  {
+   "key": "OK:C05634",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d084[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "그 컴퓨터들이 다른 나라에 도착할 때 그들은 매우 조심스럽게 내려진다. 그들은 매우 손상입기 쉬우므로 특별한 주의가 기울여진다.",
+   "뒤": "그 컴퓨터들은 다른 나라에 도착하면 매우 조심스럽게 내려진다. 매우 망가지기 쉬우므로 특별히 주의해서 다룬다."
+  },
+  {
+   "key": "OK:C05722",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".d115[n=2].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "Some societies, like the Maya and Aztec civilizations of Central America, built great cities with large buildings.",
+   "뒤": "Some societies, like the Maya and Aztec civilizations of Mexico and Central America, built great cities with large buildings."
+  },
+  {
+   "key": "OK:C05645",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "09.md",
+   "칸": ".d088[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "1903년 12월의 어느 서늘하고 바람이 부는 아침에 두 형제가 대부분의 사람들이 결코 행해질 수 없을 것이 라고 믿었던 어떤 것을 했다.",
+   "뒤": "1903년 12월의 어느 서늘하고 바람이 부는 아침에 두 형제가 대부분의 사람들이 결코 행해질 수 없을 것이라고 믿었던 어떤 것을 했다."
+  },
+  {
+   "key": "OK:C05635",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d084[n=5].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "When the computers arrive in another country, they are unloaded very carefully they are given special care because they are very fragile.",
+   "뒤": "When the computers arrive in another country, they are unloaded very carefully. They are given special care because they are very fragile."
+  },
+  {
+   "key": "OK:C05629",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d083[n=11].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "Griffith는 1930년까지 영화를 만드는 것을 계속했다.",
+   "뒤": "Griffith는 1931년까지 영화를 만드는 것을 계속했다."
+  },
+  {
+   "key": "OK:C05723",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "11.md",
+   "칸": ".d115[n=3].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "마야인은 그들이 해, 달, 혹성들, 별들을 연구하는 특별한 건물들을 지었다.",
+   "뒤": "마야인은 그들이 해, 달, 행성들, 별들을 연구하는 특별한 건물들을 지었다."
+  },
+  {
+   "key": "OK:C05644",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d087[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "만일 그가 표를 예약했더라면 그는 재즈 컨서트에 갈 수 있었을 것이다.",
+   "뒤": "만일 그가 표를 예약했더라면 그는 재즈 콘서트에 갈 수 있었을 것이다."
+  },
+  {
+   "key": "OK:C05636",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".d085[n=6].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "The computer records the information and stores it. The large amount of information can be stored in a very small space.",
+   "뒤": "The computer records the information and stores it. A large amount of information can be stored in a very small space."
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:C05489",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d030 n2 한국어(대본 쪽 · 받아쓰기 화면 한국어 줄에 보임). 바뀐 곳 'Mr.Biggs → Mr. Biggs' 는 영어 n2('Mr. Biggs hired me at his jewelry store last week')와 맞음. 남은 '지난 주' 는 표준국어대사전 한 낱말 '지난주'(명사) — 띄어쓰기 틀림이라 ② 낮음이 기준대로. 고칠 글은 그 한 곳만 붙이고 나머지는 그대로라 새 틀림 없음. 'Biggs[빅스]가' 조사도 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C05494",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d032 n3 한국어. 영어 'Elliott was the leader when a piece of rock hit him on the hand' 의 leader 는 줄을 매고 앞서 오르는 사람이라 '선등자(앞장서서 오르는 사람)' 로 고친 것은 맞음. 남은 'Elliott는' — 영어 이름 뒤 조사는 우리말 소리를 따르고 Elliott 는 [엘리엇](받침 ㅅ)이라 '은'. ② 낮음 · 확신 보통 동의(조각 규칙 Anne은 · Pat이 와 같음). 덧붙임(판정 일꾼이 안 적은 것): 같은 강의 n2 한국어 'Jim Elliott와 William Smith가' 도 같은 까닭으로 'Jim Elliott과' — n6 'Elliott는'(문맥에 있음)과 함께 고칠 곳.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C05531",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d048 n1 한국어. 영어 'if you want something done well' 의 뜻(일이 좋게 이루어지다)은 표준국어대사전 한 낱말 '잘되다' — '잘되기를' 로 붙여 씀. 바뀐 곳(겹친 '우리에게' 하나 뺌)은 맞음. 띄어쓰기라 ② 낮음, '잘(부사) 되다' 로 읽을 여지가 조금 있어 확신 보통이 알맞음. 고칠 글은 그 한 곳만 바꿈.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C05627",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d083 n8 한국어. 서술격 조사 '이다' 는 앞말에 붙여 씀 — 'The Birth of a Nation이었다'(Nation[네이션] 받침 ㄴ 이라 '이었다' 꼴도 맞음). ② 낮음 동의. 결정표 7(G4) 알림은 6단계-목록 6-0428 계획 글과 한 글자까지 같고, 7단계-작업기록 46행('d083 은 이 영화는 으로 시작해 영화가 처음 나오는 n8 끝')대로 n8 끝에 있음 — 결정 사항이라 다시 따지지 않음. 고칠 글은 알림을 그대로 두고 띄어쓰기 한 곳만 고침.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C05717",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d113 n8 한국어. 영어는 간접 화법('Professor Perkins said that they collected, stored, and prepared food in the baskets')인데 한국어는 따옴표로 직접 인용한 뒤 간접 인용 조사 '고' 를 붙여 섞임 — 직접 인용은 '라고', 간접 인용은 따옴표 없이 '고'. 같은 강의 n3 · n4 를 9/18 뒤 따옴표 없는 간접 인용으로 고친 것과도 맞는 고칠 글(따옴표 빼고 '준비했다고')이 맞음. 심각도: 다른 조각(grammar2 #5 · #7)도 같은 흠을 ② 낮음으로 매겨 그대로 둠.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C06153",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d003 힌트 줄. 앱 규칙(src/components/LdLearningView.tsx hintChunks · pickHintsFor)을 글자 그대로 옮긴 읽기 전용 모의 도구로 다시 돌림(읽을거리 칩과 d001~d003 모두 같음): 지금 n2 · n4 모두 [farmhouse 60] — n2 의 농가와 n4 의 나이가 한 칩. 'sixty → 60' 은 대본 n4 와 맞아 나아졌으나 붙음은 기준 판부터 남음 → ⑥ 중간. 고칠 글 'farmhouse. 60.' 을 넣으면 n2 [farmhouse] · n4 [60](두 자리 수라 수 일치로 뜸)만, 다른 행 칩 없음 — 새 흠 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C06728",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d027 힌트 줄. 모의 도구: 새로 넣은 'New York Madrid' 가 한 칩으로 n7 · n8 과 n1('your new president' 의 new 일치)에 통째로 뜨고, n4 · n7 에 [1975 1978] [1978] 이 겹쳐 뜸 — 기준 판보다 n1 이 나빠짐 → ⑥ 중간. 고칠 글을 넣으면 n4 [Fernando Marcos] [1975] [1978] · n7 [1978] [New York] · n8 [Madrid] · n9 [kept in touch with] · n10 [Fernando Marcos] [coaching]. n1 의 [New York] 은 'new' 낱말 일치(앱 규칙)라 힌트 글로 못 없앰 — 주장대로.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C06749",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d028 힌트 줄. 모의 도구: 새 칩 [Toronto flu] 가 n7 에 곳 이름과 병 이름을 한 칩으로 보여 줌('Hong Kong flu' 같은 병 이름으로 읽힐 수 있음) → ⑥ 중간. 'Canadian national swimming competition' 은 대본 n1 의 고유 명사 꼴(Canadian National Swimming Competition)과 대소문자가 다름(기준 판부터). 고칠 글을 넣으면 n7 [Karen Gibson] [Toronto] [flu], n1 은 대문자 꼴, 다른 행은 같음. n6 의 [broken 4 records](대본 'hasn't broken any records') · n1 · n5 의 [20 sports clubs] 는 'broken' · 'sports' 낱말 일치(앱 규칙)라 남음 — 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C06818",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d031 힌트 줄. 모의 도구: 칩이 셋뿐이고 모두 붙음 — n1 [Irene Watson editor] · n2 · n6 · n8 [Sacramento Kathy Austin] · n3 · n4 · n6 [Mount Everest seven expedition](n4 는 expedition 만 있는데 통째로). 'Mt.Everest → Mount Everest' 는 나아졌으나 붙음이 기준 판부터 남음 → ⑥ 중간. 고칠 글을 넣으면 n1 [Irene Watson] [editor] · n2 [Sacramento] [Kathy Austin] · n3 [Mount Everest] [seven] · n4 [expedition] · n6 [Kathy Austin] [expedition] · n8 [Kathy Austin] — 주장과 같음, 새 흠 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C07017",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d040 힌트 줄. 모의 도구: n4 는 [Fulton](Mr 는 두 글자라 안 뜸) — 'Mr.Fulton' 보다 나음. n6 은 [Miss Ellis expert plants] 로 이름과 두 낱말이 한 칩(기준 판부터) → ⑥ 중간. 고칠 글을 넣으면 n6 [Miss Ellis] [expert] [plants], 다른 행은 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C07518",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d066 힌트 줄. 모의 도구: 'Lite' 가 든 칩 넷이 n2 · n4 · n6 · n7 에 4~5개씩 뜸 — n2('It was lighter, so they called it Lite.')에 광고 문구와 회사 이름까지 뜨고 n5 도 칩이 늘어 기준 판보다 나빠짐. [non-fattening LITE beer] 는 n5 · n6 항목을 붙였고, [taste] 는 대본에 없는 꼴(n4 tastes · n5 tasted), 칩 'LITE' 는 대본 'Lite' 와 다름 → ⑥ 중간. 고칠 글을 넣으면 n2 [lighter] [Lite] · n4 [Lite] [tastes soapy] [Soap Company] · n5 [least fattening] [tasted like soap] [non-fattening] [Soap Company] · n6 [Lite] · n7 [Lite] [Soap Company] — n4 · n5 의 [Soap Company] 는 'soap' 일치(앱 규칙). 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C07596",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d070 힌트 줄. 모의 도구: 새로 넣은 [Eight opening ceremony](n3) · [600 29 coaches](n4 — 사람 수와 차량 수가 한 칩) · [fantastic speed 23](n7 — 대본 '23 mph' 의 단위가 빠진 꼴)과 기준 판부터 있던 [double track Manchester Liverpool](n2 · n6) → ⑥ 중간. 고칠 글을 넣으면 n2 [double track] [Manchester] [Liverpool] … · n3 [Huskisson] [Eight] [opening ceremony] · n4 [600] [29 coaches] [17 miles] · n7 [fantastic speed] [23 mph] — 빠지는 힌트 없음, 새 흠 없음(n6 의 [single track] [double track] 은 'track' 일치, 앱 규칙).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C07619",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d071 힌트 줄. 모의 도구: n3('67 mailmen sat sorting the mail')에 [67 mailmen sort mail] — 대본에 없는 꼴(sort · 관사 없는 mail)이고 n4 에도 'mailmen' 일치로 뜸 → ⑥ 중간. 12 coaches · 67 mailmen 수는 대본 · 한국어와 맞음. 고칠 글을 넣으면 n3 [67 mailmen] [sorting the mail] [5 mailmen], n4 의 [67 mailmen] 은 앱 규칙. [helper David Whitby] 는 'his helper, David Whitby' 의 동격(Professor Margaret Perkins 처럼 직함+이름)이라 흠으로 안 봄.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C07847",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "Griffith. 5 meters. performing area. wide view. Birth of a Nation. American Civil War. 1931. Hollywood, California. July 23rd, 1948",
+   "새 음성 클립": false,
+   "까닭": "d083 힌트 줄. 모의 도구로 주장 확인: 'The' 가 대문자 세 글자라 n2~n7 · n9 · n10 에 [The Birth of a Nation] 이 뜨고, [American Civil War 1931] 이 n9 전쟁과 n11 해를 붙임 → ⑥ 중간 맞음, 주장의 고칠 글도 모의 도구에서 주장대로 나옴. 다만 그 고칠 글에 남은 '5 performing area' 는 n3 'about 5 meters from the performing area' 의 수와 곳을 붙이고 단위(meters)를 뺀 칩(기준 판부터) — 이 조각이 다른 곳에서 틀림으로 센 [600 29 coaches] · [fantastic speed 23] · [double 80 years] 와 같은 흠이라 함께 나눔('5 meters. performing area.'). 바꾼 고칠 글을 넣으면 n3 [5 meters] [performing area], 나머지는 주장과 같음(n1 · n5 · n10 [Griffith] · n2 · n4 · n6 칩 없음 · n8 [Griffith] [Birth of a Nation] · n9 [American Civil War] · n11 [Griffith] [1931] · n12 [Hollywood] [California] [July 23rd] [1948]) — 안전장치 안 켜짐, 빠지는 힌트 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C07893",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d085 힌트 줄. 모의 도구: [translate into numbers] 가 n3('is translated into numbers')에서 대본에 없는 기본형(기준 판부터) → ⑥ 중간. 고칠 글을 넣으면 n3 [translated into numbers]; n1 · n4 에도 뜨는 것은 'numbers' · 'translated' 낱말 일치(앱 규칙). 항목 나눔(instructions · memory unit)은 나아짐.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08421",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d110 힌트 줄. 모의 도구: 새 칩 [representative Great Britain France] 가 9/18 뒤 고친 n6('He represented several American colonies in Great Britain, and later he became the United States representative to France')의 세 항목을 붙이고 n8('greatest' 의 Great 일치)에도 통째로 뜸 → ⑥ 중간. 고칠 글을 넣으면 n6 [United States] [Great Britain] [representative] [France], n8 은 [Great Britain](앱 규칙). 사실(식민지 대표로 영국 · 뒤에 프랑스 주재 미국 대표)은 대본과 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08450",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d111 힌트 줄. 모의 도구: [identifies late 18th century] 가 n2 · n3 에 서로의 항목을 보이고(기준 판부터), [description early 1800s] · 새로 넣은 [Forehead wrinkled] 도 한 칩 → ⑥ 중간. 고칠 글을 넣으면 n2 [passport] [identifies] · n3 [passport] [late 18th century] · n5 [passport] [description] [early 1800s] · n7 [Forehead] [wrinkled] [thin with big teeth] [pointed] — 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08473",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d112 힌트 줄. 모의 도구: 새 칩 [Anthropologists Logan University dig] 가 n4 · n6 에 뜨고 'dig' 가 든 n2(Bulldozers had just begun to dig)에는 안 뜸 → ⑥ 중간. 고칠 글을 넣으면 n2 [Bulldozers] [unusual shapes] [dig] · n4 [Anthropologists] [Logan University] · n6 [Anthropologists] [dig] [contents] — 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08504",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d113 힌트 줄. 모의 도구: 새 칩 [acorns flour] 가 n6('acorns which they made into flour')의 두 낱말을 붙여 'acorn flour'(도토리 가루) 같은 한 낱말처럼 보임 → ⑥ 중간. 고칠 글을 넣으면 n6 [acorns] [flour], 다른 행은 같음(n3 · n4 [Cisco River] 는 'river' 일치 — 앱 규칙). 긴 칩을 나눈 것은 나아짐.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08535",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d114 힌트 줄. 모의 도구: [melt Bering Strait] 가 n7(melted) · n8(Bering Strait) 항목을 붙여 정작 n7 은 칩 없음, [wander] · [land off the coast of North America] 는 대본에 없는 기본형(landed · wandered), [North] · [land …] 가 n3 · n5 · n6 · n9 · n10 에 퍼짐, [short route Asia] 는 기준 판부터 붙음 → ⑥ 중간. 고칠 글을 넣으면 n2 [short route] [Asia] · n3 [Christopher Columbus] [landed] [off the coast] [North America] [South America] · n7 [melted] · n8 [Asia] [Bering Strait] [Alaska] · n9 [North America] [large herds of animals] [wandered] [South America] — 옆 행의 [North America] · [South America] 는 'America(ns)' · 'northern' 일치(앱 규칙). 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08562",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d115 힌트 줄. 모의 도구: 새 칩 [Southwest wove cloth](n8 Southwest · n9 wove cloth)가 n5 · n8 · n9 에, [Navajo Apache] 가 n10 에 두 부족을 한 칩으로 → ⑥ 중간. 'Mexico and Central America' 는 n2 영어와 맞음. 고칠 글을 넣으면 n5 · n8 [Southwest] · n9 [wove cloth] · n10 [Navajo] [Apache]. n1 · n8 의 [Mexico and Central America] 는 'American(s)' 일치(앱 규칙)라 남음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08585",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d116 힌트 줄. 모의 도구: [West Mississippi River] 가 n6('Many of them were living east of the Mississippi River')에도 떠 동쪽 문장에 'West' 가 보이고, 새 칩 [clothing shelter] · [tribes European settlers] 가 두 항목씩 붙어 n1 · n4 · n5 · n9 에 뜸 → ⑥ 중간. 고칠 글을 넣으면 n1 [Mississippi River] [Great Plains] [wandering tribes] [great herds of buffalo] · n4 [great herds of buffalo] [clothing] [shelter] · n5 [north of Mexico] [European settlers] · n6 [Mississippi River] · n9 [wandering tribes] [European settlers] — 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08709",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d121 힌트 줄. 모의 도구: [overpopulated 18th century](n2 · n5 항목 붙음) · [double 80 years](n7 'double in about 80 years' 를 줄여 붙임), n3 은 맞는 칩이 없어 이름(Earth) 안전장치로 힌트 넷이 다 뜸 — 모두 기준 판부터 → ⑥ 중간. 'Century → century' 는 맞음. 고칠 글을 넣으면 n2 [Earth] [overpopulated] · n3 [Earth] · n5 [18th century] · n7 [population growth] [double] [80 years] — 안전장치 안 켜짐. 한 가지 바로잡음: 까닭의 '끝의 쉼표는 남은 기호' 는 화면에 안 보임 — 앱이 조각 끝 [.,] 를 지우고(hintChunks), LD 는 힌트 줄을 칩으로만 그림(LdLearningView 791 · page.tsx 395). 고칠 글에서 빼는 것은 해가 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08785",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d125 힌트 줄. 모의 도구: 새로 넣은 [bring water up] · [water vapor make up] 이 'water' 낱말로 n1 · n4~n9 에 퍼져 기준 판에 칩이 없던 n7 · n9 에도 뜸(나빠짐), [water vapor make up] 은 n5 · n6 항목을 붙임, [build dams streams rivers] · [settlements technological activities] 는 기준 판부터 붙음 → ⑥ 중간. 고칠 글을 넣으면 n1 [build dams] [streams] [rivers] · n2 [build dams] [streams] [rivers] [settlements] [technological activities] · n4 [below the earth's surface] [wells] · n5 [rivers] [vapor] · n6 [make up] · n7 · n9 칩 없음 · n8 [deep underground]. n2 의 [build dams] 는 'building' 속 'build' 일치(앱 규칙). 'bring water up' 을 빼는 것은 'water' 가 든 한 옆 행에 퍼지므로 조각 기록의 '뺀다' 규칙에 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08816",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d126 힌트 줄. 모의 도구: 새 칩 [undersea plants minerals](n9 'undersea plants contain vitamins and minerals' 의 두 항목)가 n9 · n10 에, [Antarctic Oceans](대본은 소문자 oceans)가 'oceans' 일치로 n1 · n3 에 뜸 → ⑥ 중간. 고칠 글을 넣으면 n1 [70%] · n2 [Pacific] [Atlantic] [Indian] [Arctic] [Antarctic] [body of water broken] · n3 칩 없음 · n9 [undersea plants] [minerals] [undersea farms] · n10 [undersea plants] [undersea farms](undersea 일치, 앱 규칙) — 주장과 같음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "F:C08990",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d132 힌트 줄. 모의 도구: [complicated 2 minutes] 가 n5 · n6 · n8, [positive confident] 가 n6 · n7 에 — 다른 문장 항목이 붙어 따라 뜸(기준 판부터) → ⑥ 중간. 'two → 2' 는 대본 n6 과 맞음. 고칠 글을 넣으면 n5 · n8 [complicated] · n6 [2 minutes] [positive] · n7 [confident].",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "X:150",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d136 n5 한국어(대본 쪽 · 받아쓰기 한국어 줄). '그중' 은 표준국어대사전 한 낱말(명사) — '그중에' 로 붙여 씀. 띄어쓰기라 ② 낮음. 영어 'none of them looked good on him' 과 뜻은 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "X:151",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d138 힌트 줄(바뀌지 않음, 칩은 9/18 뒤 LD-HINTS-01 로 새로 보임). 모의 도구: n5('from about 5:00 in the morning')는 [chocolate ice cream cake 5] 의 '5' 가 한 자리 수라 안 맞아 수 안전장치로 힌트 넷(n2 음식 · n3 디저트)이 다 뜸, n3 칩은 'ice cream cake' 한 음식처럼 읽힘, [hot biscuits honey] 는 'with' 를 뺀 꼴 → ⑥ 중간. 고칠 글을 넣으면 n2 [fried chicken] [corn] [hot biscuits with honey] · n3 [chocolate ice cream and cake] · n5 [5:00] — 안전장치 안 켜짐.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "X:152",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d137 n8 한국어. 같은 강의 n7 한국어가 9/18 뒤 'Helen은' 으로 바뀌어 한 강의 안 이름 표기가 'Helen' · '헬렌' 으로 갈림 — 기준의 '낮음 = 한 강의 안 표기 흔들림'. 이 과정 한국어 줄은 영어 이름을 로마자로 두는 일이 많아(d030 Mr. Biggs · d031 Kathy) 'Helen은'(헬렌 받침 ㄴ → 은)으로 맞추는 고칠 글이 맞음. 확신 보통 동의.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "X:153",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d137 n4 한국어. '지난주' 는 표준국어대사전 한 낱말 — '지난주에'. ② 낮음. 영어 'Last week we went to the restaurant in a new hotel' 과 뜻은 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "X:154",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d138 n3 한국어. chocolate 의 표준 표기는 '초콜릿'(외래어 표기법 · 표준국어대사전). 다른 조각도 외래어 표기 흠을 ② 낮음으로 매겨 같게 둠. 같은 강의 n2 는 9/18 뒤 '비스킷' 으로 바로잡음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "S:/ld/d025:T20",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표본 d025 n10('Carlos rowed the boat and Kim looked at the ocean, beach, and the sky.'). 모의 도구: n10 칩은 [Carlos Kim 10 a.m] 하나 — 두 이름과 이 문장에 없는 시각(10 a.m)이 한 칩이고, 이 문장의 'rowed the boat' 는 힌트 줄에 'shallow water row the boat'(기본형 · n9 항목과 붙음)로만 있어 안 뜸 → ⑥ 중간. 1부 C06676 고칠 글을 넣으면 n10 [Carlos] [Kim] [rowed the boat], 다른 행도 붙음 없음(n2 [10 a.m] · n6 [an hour and a half] [traffic] · n9 [Carlos] [rubber boat] [shallow water]).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "S:/ld/d027:T08",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표본 d027 n4('… we've been good friends since 1975 and we've worked together since 1978.'). 칩 [Fernando Marcos] [1975 1978] [1978] — 두 해가 한 칩이고 1978 이 두 번 보임 → ⑥ 중간(1부 C06728 과 같은 힌트 줄). 그 고칠 글로 n4 [Fernando Marcos] [1975] [1978] 이 됨(모의 도구).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "S:/ld/d121:T04",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표본 d121 n2. 칩 [overpopulated 18th century] — n2 의 overpopulated 와 n5 의 18th century 가 한 칩이라 n2 에 이 문장에 없는 '18th century' 가 보임 → ⑥ 중간(1부 C08709). 고칠 글로 n2 [Earth] [overpopulated](모의 도구).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "S:/ld/d121:T06",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표본 d121 n3('There will be more people than the Earth can support.'). 맞는 칩이 없고 'Earth' 가 대문자라 이름 안전장치(소유자가 원한 빈 칸 막기)로 힌트 넷이 다 뜸 — 이 문장의 이름(Earth)은 안 보이고 다른 문장 칩만 보임 → ⑥ 중간. 안전장치 자체는 정한 동작이고 흠은 힌트 줄에 Earth 가 없는 것 — 1부 C08709 고칠 글이 'Earth' 를 넣어 n3 은 [Earth] 만 뜸(모의 도구).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "S:/ld/d121:T08",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표본 d121 n4. [double 80 years](n7 'double in about 80 years' 를 줄여 붙인 칩)가 n4 의 'years' 일치로 보임 — 붙은 꼴이 이 행에도 보이므로 행마다 센다는 조각 규칙대로 ⑥ 중간(1부 C08709). 적어 둠: 고칠 글 뒤에도 n4 에 [80 years] 가 'years' 일치(앱 규칙)로 남음 — 힌트 글로는 못 없애고 붙은 꼴만 고쳐짐.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "S:/ld/d121:T14",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "표본 d121 n7('… the world population will double in about 80 years.'). 칩 [double 80 years] 는 대본에 없는 줄인 꼴 — 칩대로 치면 받아쓰기 틀림 → ⑥ 중간(1부 C08709). 고칠 글로 n7 [population growth] [double] [80 years](모의 도구).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05643",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d087 n4 한국어. 영어 'He could have gone for a riverboat ride or he could have visited the museums.' — could have p.p.(과거에 할 수 있었으나 안 한 일)를 '~할 수도 있었고, ~할 수도 있었다' 로, or 를 두 가능성으로 옮겨 뜻이 맞음. riverboat ride(뉴올리언스 강 유람)를 '유람선' 으로 옮긴 것도 뜻이 맞음(강이라는 말이 빠진 것은 문체). 맞춤법 · 띄어쓰기 흠 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05642",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d086 n5 한국어. '로케트 → 로켓' 은 외래어 표기법 표준. 영어 'Special computers have been developed for rockets, airplanes, ships, and automobiles.' 와 뜻 · 목록 차례가 맞음. '개발되어왔다' 는 보조 용언 붙여 쓰기 허용(한글 맞춤법 제47항).",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05634",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d084 n5 한국어. 영어(9/18 뒤 두 문장으로 나눈 C05635)와 짝: 도착하면 매우 조심스럽게 내려진다(unloaded very carefully) · 매우 망가지기 쉬우므로(very fragile) 특별히 주의해서 다룬다(are given special care) — 수동을 일반 주어 능동으로 옮겼으나 뜻 같음. 옛 '손상입기' 같은 틀린 말이 없어짐. 흠 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05722",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d115 n2 영어. 아즈텍은 멕시코 중부, 마야는 멕시코 남부와 중앙아메리카라 'of Mexico and Central America' 가 사실에 맞음(옛 'of Central America' 는 아즈텍에 틀림). 문법 맞음. 한국어 n2(C05721 '멕시코와 중앙 아메리카')와 힌트 줄(C08562 'Mexico and Central America')도 같게 바뀜. 녹음(ld-transcripts)은 옛 문장이지만 사이트는 녹음 대신 대본 영어의 음성을 틂(unifiedSpeech — CNN 밖 모두) — 새 클립이 필요한 바뀜.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05645",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d088 n1 한국어. '것이 라고 → 것이라고' 띄어쓰기 바로잡음은 맞음. 영어 'On a cool windy morning in December 1903, two brothers did something that most people believed could never be done.' 과 뜻이 맞음(1903년 12월 · 두 형제 · 결코 될 수 없다고 믿은 일). 남은 흠 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05635",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d084 n5 영어. 이어 붙은 두 절(… unloaded very carefully they are given …)을 마침표로 나눔 — 문법 맞음, 낱말은 녹음(ld-transcripts d084)과 같고 문장부호만 바뀜. 받아쓰기 정답으로도 맞음. 한국어 C05634 와 짝 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05629",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d083 n11 한국어. 영어 n11(C05630)이 1931 로 바뀐 것과 같게 '1931년' — 그리피스의 마지막 영화 The Struggle 이 1931년이라 사실 맞음(녹음은 1930). 'Griffith[그리피스]는' 조사 맞음. '영화를 만드는 것을 계속했다' 는 어색한 직역이나 틀림 아님.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05723",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d115 n3 한국어. '혹성 → 행성'(planets 의 표준 용어). 영어 'The Maya built special buildings where they studied the sun, the moon, the planets, and the stars.' 와 뜻 맞음. 흠 없음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05644",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d087 n5 한국어. '컨서트 → 콘서트'(외래어 표기법 표준). 영어 'If he had reserved tickets, he could have gone to a jazz concert.'(과거 사실 반대 가정)와 '예약했더라면 … 갈 수 있었을 것이다' 가 맞음.",
+   "때": "2026-09-24 17:31"
+  },
+  {
+   "key": "OK:C05636",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d085 n6 영어. 'The large amount of information' → 'A large amount of information' — 처음 말하는 양이라 부정관사가 맞는 영어. 녹음(ld-transcripts d085)은 'The large amount' 라 새 음성과 녹음이 달라지지만 사이트는 녹음 대신 대본 영어의 음성을 틂(AudioPlayer isTtsMode · unifiedSpeech) — 들리는 것과 화면이 같음. 한국어 '많은 양의 정보가 …' 와 짝 맞음.",
+   "때": "2026-09-24 17:31"
+  }
+ ]
+}

@@ -1,0 +1,284 @@
+{
+ "조각": "grammar1-a",
+ "뽑은때": "2026-09-24 19:26",
+ "대상": [
+  {
+   "key": "F:grammar1/gh1-006:T09",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T09",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-006 #6 KO '그들은 근로자들이다.' — '근로자들' 의 맞는 번역 'laborers' 가 0점(grade.cjs: 'They are laborers.' → 0점). 같은 과정 복습 쪽 gh1-052 #6 '우리는 근로자들이었다.' 는 'We were laborers.' 를 다른 정답으로 받음(grade.cjs: gh1-052 #6 'We were laborers.' → 만점) — 같은 낱말을 첫 강의에서는 막고 복습에서는 받음. 다른 정답은 화면 '다른 정답' 과 채점에 닿음.",
+    "지금": "They are workers. (다른 정답 없음)",
+    "고칠 글": "[\"They are laborers.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-007.json .blocks[2].items[5] (n=6) .alternatives 새로 만듦 · 분할본 gh1-007-1.json .blocks[2].items[5] (n=6) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-006:T32",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T32",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-006 #18 KO '그들은 건강한가?' — 건강을 묻는 맞는 영어 'Are they well?' 이 0점(grade.cjs: 'Are they well?' → 0점 · 모범 'Are they healthy?' 만 있고 다른 정답 없음). 같은 과정 gh1-062 #3 · #6 · #12('건강한가/건강하시니')는 9/18 감사 6-1394 대로 'Is your son well?' 등을 다른 정답으로 받음(grade.cjs: gh1-062 #3 'Is your son well?' → 만점 · #12 'Is your mother well?' → 만점) — 같은 한국어 술어를 한쪽만 받음. 고친 뒤 'Are they well?' 만점 · 다른 낱말은 그대로 0점(참조를 직접 준 grade.cjs 로 확인). (9/18 은 6-1394 를 Low 로 매김 — 풀이 5 의 0점=중간을 따름)",
+    "지금": "Are they healthy? (다른 정답 없음)",
+    "고칠 글": "[\"Are they well?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-007.json .blocks[2].items[17] (n=18) .alternatives 새로 만듦 · 분할본 gh1-007-1.json .blocks[2].items[17] (n=18) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "D:grammar1/gh1-006:T74",
+   "까닭": "판단 필요 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T74",
+    "추천안": "한국어 문제에 '날씨가' 가 그대로 있는 두 문항은 'the weather' 꼴을 다른 정답(만점)으로 더함 — gh1-007.json · gh1-007-2.json n=40 에 'Is the weather cold?' · gh1-009.json · gh1-009-2.json n=40 에 'Was the weather cold yesterday?'. '어제는 ~했다' 평서문 둘에도 더함 — gh1-009.json · gh1-009-2.json n=42 에 'Yesterday was warm.' · gh1-053.json · gh1-053-2.json n=40 에 'Yesterday was cold.'. 모범 답안(비인칭 it)은 그대로라 화면이 보여 주는 꼴은 안 바뀜 · 새 음성 없음. '어제는 더웠니?' · '오늘 따뜻한가?' · '지난주는 더웠니?' 같은 의문문의 'Was yesterday hot?' 꼴은 영어로 어색해 더하지 않음.",
+    "까닭": "이 강의들은 날씨 · 때를 비인칭 주어 it 으로 말하는 꼴을 가르침(몇 시니? What time is it? · 7시이다. It is seven o'clock. · 날씨가 춥니? Is it cold?). 그런데 곧은 번역이 맞는 영어인데 0점: grade.cjs: gh1-006 #40 'Is the weather cold?' → 0점 · gh1-008 #40 'Was the weather cold yesterday?' → 0점 · gh1-008 #42 'Yesterday was warm.' → 0점('Yesterday it was warm.' → 70점) · gh1-052 #40 'Yesterday was cold.' → 0점('Yesterday it was cold.' → 70점). 맞는 영어를 0점으로 막으면 ③ 이지만, 가르치는 꼴(비인칭 it)을 쓰지 않은 답까지 만점을 줄지는 교육 방침이라('그 N' 을 70점으로 둔 결정 3 의 뒷부분처럼) 소유자에게 올림. 네 문항 모두 이 조각의 안 바뀐 글(gh1-006 T74 · gh1-008 T72 · T76 · gh1-052 T77) — 한 번만 적음.",
+    "다른 길": "그대로 둠 — 비인칭 it 을 쓴 답만 만점('the weather' · 'Yesterday was …' 는 0점 그대로). 70점을 주려면 채점 코드를 바꿔야 해 권하지 않음."
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-008:T11",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T11",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-008 #6 KO '그들은 근로자들이었다.' — 'laborers' 가 0점(grade.cjs: 'They were laborers.' → 0점). 같은 과정 gh1-052 #6 '우리는 근로자들이었다.' 는 'We were laborers.' 를 다른 정답으로 받음(grade.cjs → 만점) — gh1-006 #6(T09)과 같은 빈틈(현재 · 과거 짝).",
+    "지금": "They were workers. (다른 정답 없음)",
+    "고칠 글": "[\"They were laborers.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-009.json .blocks[3].items[5] (n=6) .alternatives 새로 만듦 · 분할본 gh1-009-1.json .blocks[3].items[5] (n=6) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-008:T32",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T32",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-008 #18 KO '그들은 건강했니?' — 'Were they well?' 이 0점(grade.cjs: 'Were they well?' → 0점). 같은 과정 gh1-062 #3 · #6 · #12 는 건강을 묻는 문항에 'well' 꼴을 다른 정답으로 받음(9/18 6-1394 · grade.cjs: gh1-062 #3 'Is your son well?' → 만점) — gh1-006 #18(T32)과 같은 빈틈(현재 · 과거 짝).",
+    "지금": "Were they healthy? (다른 정답 없음)",
+    "고칠 글": "[\"Were they well?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-009.json .blocks[3].items[17] (n=18) .alternatives 새로 만듦 · 분할본 gh1-009-1.json .blocks[3].items[17] (n=18) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-012:T58",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T58",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "GRAMMAR I gh1-012 #35 한국어 문제의 괄호 풀이 '뭐하는 사람' — '무엇을 하는' 뜻의 '뭐 하다' 는 두 낱말이라 띄어 씀('뭐하다' 한 낱말은 '말하기가 좀 뭐하다' 처럼 거북하다는 뜻의 형용사). 띄어쓰기(낮음). 화면 한국어 문제에 보임(소리 없음).",
+    "지금": "그는 무엇이었니? (뭐하는 사람이었니?)",
+    "고칠 글": "그는 무엇이었니? (뭐 하는 사람이었니?)",
+    "고칠 곳": "content/lessons/grammar1/gh1-012.json .blocks[3].items[34] (n=35) .text · 분할본 gh1-012-2.json .blocks[1].items[16] (n=35) .text",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-014:T12",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/01.md",
+   "주장": {
+    "T": "T12",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-014 #32 KO '나도 그래.'(#31 '나는 집에 있다 (왔다:나 집에 왔어).' 다음) — 흔한 맞는 번역 'Me too.' 가 0점(grade.cjs: 'Me too.' → 0점 · 'Me, too.' → 0점 · 'I am too.' → 만점). 같은 과정 gh1-058 #20 '나도 그래(나도 원해)' 는 9/18 감사 6-1388(Medium — '자연스러운 번역 Me too. 가 0점')대로 'Me too.' 를 다른 정답으로 받음(grade.cjs: gh1-058 #20 'Me too.' → 만점) — 같은 한국어에 한쪽만 받음. (참고 · 1부 글이라 여기서 세지 않음: 같은 강의 #26 · #36 '나도 그래.'(부정문 뒤)의 'Me neither.' 도 0점 — grade.cjs: gh1-014 #26 · #36 'Me neither.' → 0점)",
+    "지금": "I am, too. · 다른 정답: So am I.",
+    "고칠 글": "[\"So am I.\", \"Me too.\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-015.json .blocks[4].items[8] (n=32) .alternatives · 분할본 gh1-015-2.json .blocks[2].items[8] (n=32) .alternatives",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-050:T05",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/grammar1-a/03.md",
+   "주장": {
+    "T": "T05",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "GRAMMAR I gh1-050 #25 한국어 문제 '남자친구' — '남자 친구' 는 사전에 한 낱말로 오르지 않아 띄어 씀(국립국어원 풀이). 같은 과정은 '여자 친구'(gh1-006 #25 · gh1-008 #25 · gh1-054 #17) · '남자 친구'(gh1-054 #21)로 띄어 씀 — 과정 안 표기도 흔들림. 띄어쓰기(낮음). 화면 한국어 문제에 보임(소리 없음).",
+    "지금": "그는 너의 남자친구냐?",
+    "고칠 글": "그는 너의 남자 친구냐?",
+    "고칠 곳": "content/lessons/grammar1/gh1-050.json .blocks[3].items[24] (n=25) .text · 분할본 gh1-050-2.json .blocks[1].items[3] (n=25) .text",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-052:T34",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/03.md",
+   "주장": {
+    "T": "T34",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-052 #17 KO '나의 손이 차가웠니?' — 한국어 '손' 은 수를 가르지 않고, 영어로는 두 손을 말하는 'Were my hands cold?' 가 더 흔한 말인데 0점(grade.cjs: 'Were my hands cold?' → 0점). 과정은 수를 가르지 않는 한국어 명사에 복수 꼴을 다른 정답으로 받아 옴(형제 → 'your brothers' · 아들과 딸 → 'sons/daughters' · 사과 → 'apples'). 고친 뒤 'Were my hands cold?' 만점 · 'Were my feet cold?' 는 그대로 0점(참조를 직접 준 grade.cjs 로 확인).",
+    "지금": "Was my hand cold? (다른 정답 없음)",
+    "고칠 글": "[\"Were my hands cold?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-053.json .blocks[3].items[16] (n=17) .alternatives 새로 만듦 · 분할본 gh1-053-1.json .blocks[3].items[16] (n=17) 도 같게",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-060:T05",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/04.md",
+   "주장": {
+    "T": "T05",
+    "종류": "③",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-060 #4 KO '너는 얼마나 많이 원하나?' — 셀 수 있는 것을 묻는 맞는 영어 'How many do you want?' 가 70점(grade.cjs: 'How many do you want?' → 70점). 같은 한국어 문제 gh1-016 #12 는 'How many do you want?' 를 다른 정답으로 받음(grade.cjs: gh1-016 #12 → 만점) — 같은 문제를 한쪽만 만점. 70점이라 낮음(풀이 5).",
+    "지금": "How much do you want? (다른 정답 없음)",
+    "고칠 글": "[\"How many do you want?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-061.json .blocks[3].items[3] (n=4) .alternatives 새로 만듦(분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar1/gh1-062:T41",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar1-a/04.md",
+   "주장": {
+    "T": "T41",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR I gh1-062 #23 KO '너의 아이들은 건강했니?' — 'Were your children well?' 이 0점(grade.cjs: 'Were your children well?' → 0점). 같은 강의 #3 · #6 · #12(건강한가/건강하시니)는 9/18 6-1394 대로 'well' 꼴을 다른 정답으로 받음(grade.cjs: #3 'Is your son well?' → 만점 · #12 'Is your mother well?' → 만점) — 한 강의 안에서 같은 술어를 한쪽만 받음(gh1-006 #18 · gh1-008 #18 과 같은 빈틈). 고친 뒤 'Were your children well?' 만점 · 'Were your children ill?' 은 그대로 0점(참조를 직접 준 grade.cjs 로 확인).",
+    "지금": "Were your children healthy? (다른 정답 없음)",
+    "고칠 글": "[\"Were your children well?\"]",
+    "고칠 곳": "content/lessons/grammar1/gh1-063.json .blocks[4].items[22] (n=23) .alternatives 새로 만듦(분할본 없음)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "G:grammar1/gh1-044",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/grammar1-a/03.md",
+   "읽을글": 76
+  },
+  {
+   "key": "G:grammar1/gh1-042",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/grammar1-a/03.md",
+   "읽을글": 65
+  }
+ ],
+ "결과": [
+  {
+   "key": "G:grammar1/gh1-042",
+   "결론": "다시 읽음",
+   "읽은 글": 65,
+   "틀림": [],
+   "까닭": "읽을거리 03.md 3~84행의 T01~T65(문항 1~40 KO · EN · 다른 정답)를 판정을 보지 않고 모두 읽음. 한국어 문제와 영어 모범 답안의 뜻 · 인칭 · 수 · 시제 · 부정이 문항마다 맞고, 영어 문법 · 철자 · 문장부호 틀림 없음, 한국어 맞춤법 · 띄어쓰기 틀림 없음, 번호 1~40 이어짐. 다른 정답(Are they books? · Is he not a boy? 꼴 · They are theirs. · Are they theirs?)은 모두 문법이 맞고 문제의 뜻. 어미 '-냐 · -니 · -나' 가 섞인 것은 모두 맞는 의문형 어미라 문체(틀림 아님). T62 '그들의 것들이냐' 의 '것들' 은 이 과정 곳곳(gh1-012 · gh1-056 · gh1-074)과 같은 꼴이라 틀림 아님. grade.cjs 로 잰 것: #7 'Am I in Korea?' → 만점, #32 'This one is mine.' → 0점 · #39 'Are those their things?' → 0점 · #21 'Didn't you feel happy?' → 0점 — 모두 이 문형 연습의 흔한 번역이 아니거나 다른 문장이라 막힘이 틀림 아님. 그것 · 그것들 → that · they 는 결정 3 영역(1부에서 바뀐 글)이라 따지지 않음.",
+   "때": "2026-09-24 19:30"
+  },
+  {
+   "key": "G:grammar1/gh1-044",
+   "결론": "다시 읽음",
+   "읽은 글": 76,
+   "틀림": [],
+   "까닭": "읽을거리 03.md 86~167행의 T01~T76(문항 41~80)을 판정을 보지 않고 모두 읽음. 현재진행 · 과거진행 · 일반동사 의문문 · 부정 · 부정 의문문 · 첫 부가의문문(#80)이 한국어 문제(공부하고 있다 / 있었다 / 공부하나 / 있지 않나 / 않았나 / 펜이지?)와 문항마다 맞고, 영어 · 한국어 틀림 없음, 번호 41~80 이어짐. 다른 정답(Aren't I studying English? · Wasn't I studying English? · 부정 의문문의 not 꼴)은 모두 맞음. grade.cjs 로 잰 것: #64 'He isn't studying English.' · 'He's not studying English.' → 만점, #67 'I wasn't studying English.' → 만점, #46 'He's studying English.' → 만점(줄임꼴은 채점이 풂). #51 '나는 영어를 공부하나?' 에 'Am I studying English?' → 0점 — 한국어가 현재형이고 이 과가 진행형(#56~#63)과 가르므로 맞는 막힘(결정 4 영역도 아님). #80 'This is a pen, right?' → 0점 — 부가의문문을 가르치는 문항이라 틀림 아님. #80 'This is a pen, is it not?' → 70점 — 맞는 격식 꼬리지만 학습자가 흔히 쓰는 번역이 아니라 적지 않음(적는다면 풀이 5 로 낮음). 'isn't this?' 같은 꼬리만 틀린 답 70점은 소유자 아침 답(그대로).",
+   "때": "2026-09-24 19:30"
+  },
+  {
+   "key": "F:grammar1/gh1-006:T09",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "읽을거리 01.md 15~16행: KO '그들은 근로자들이다.', EN 'They are workers.'(다른 정답 없음). grade.cjs: gh1-006 #6 'They are laborers.' → 0점, gh1-052 #6 'We were laborers.' → 만점. 같은 과정 안에서 같은 낱말(근로자들)을 한쪽에서만 받음. laborer 는 근로자의 맞는 번역이라 ③, 0점이므로 풀이 5 에 따라 중간. 고친 뒤를 참조를 직접 준 grade.cjs 로 잼: 'They are laborers.' → 만점, 'They are farmers.' · 'They are not laborers.' → 0점. 새 틀림 없음. 고칠 곳(gh1-007.json · gh1-007-1.json .blocks[2].items[5], n=6, 지금 alternatives 없음)은 파일에서 확인함. 다른 정답은 화면의 '다른 정답' 과 채점에 쓰임.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-006:T32",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 39~40행: KO '그들은 건강한가?', EN 'Are they healthy?'. grade.cjs: 'Are they well?' → 0점. 같은 과정 gh1-062 #3 'Is your son well?' · #12 'Is your mother well?' → 만점. well 은 건강을 묻는 맞는 영어. 9/18 은 같은 꼴(6-1394)을 Low 로 매겼지만 풀이 5 는 0점을 중간으로 매기므로 중간을 그대로 둠. 고친 뒤(참조 직접): 'Are they well?' → 만점, 'Are they ill?' · 'Are they sick?' · 'Aren't they well?' → 0점. 새 틀림 없음. 경로 gh1-007.json · gh1-007-1.json .blocks[2].items[17](n=18)는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "D:grammar1/gh1-006:T74",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "grade.cjs 로 다시 잼: gh1-006 #40 'Is the weather cold?' → 0점, gh1-008 #40 'Was the weather cold yesterday?' → 0점, gh1-008 #42 'Yesterday was warm.' → 0점('Yesterday it was warm.' → 70점), gh1-052 #40 'Yesterday was cold.' → 0점. 과정 전체(content/lessons/grammar1)에 'the weather' 꼴 정답이 하나도 없고, 한국어 문제에 '날씨' 가 들어간 것도 이 두 문항뿐이다. 기존 결정 2 · 3 · 4 가 직접 다루지 않는 교육 방침 문제라 정말 골라야 함. 참고로 소유자는 결정 4(진행형 대체 답안 만점)와 결정 3 앞부분(that 만점)에서 맞는 다른 꼴을 받아 왔으니 추천안 쪽과 결이 같음. 추천안대로 넣었을 때(참조 직접): 'Is the weather cold?' → 만점, 'Is the weather hot?' · 'Isn't the weather cold?' · 'Is the water cold?' → 0점, 'Yesterday was warm.' → 만점, 'Yesterday was cold.' → 0점. 새 틀림 없음. 추천안의 자리(gh1-007 · gh1-007-2 n=40, gh1-009 · gh1-009-2 n=40 · n=42, gh1-053 · gh1-053-2 n=40)는 파일에서 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-008:T11",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 102~103행: KO '그들은 근로자들이었다.', EN 'They were workers.'(다른 정답 없음). grade.cjs: 'They were laborers.' → 0점, gh1-052 #6 'We were laborers.' → 만점. gh1-006 T09 의 과거형 짝이라 ③ 중간. 고친 뒤(참조 직접): 'They were laborers.' → 만점, 시제가 틀린 'They are laborers.' → 0점, 'They were soldiers.' → 0점. 경로 gh1-009.json · gh1-009-1.json .blocks[3].items[5](n=6)는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-008:T32",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 126~127행: KO '그들은 건강했니?', EN 'Were they healthy?'. grade.cjs: 'Were they well?' → 0점. gh1-006 T32 의 과거형 짝이고, gh1-062 #3 · #12 의 well 꼴은 만점. ③ 중간(풀이 5). 고친 뒤(참조 직접): 'Were they well?' → 만점, 'Were they ill?' · 'Were they sick?' → 0점. 경로 gh1-009.json · gh1-009-1.json .blocks[3].items[17](n=18)는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-012:T58",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 342행: '그는 무엇이었니? (뭐하는 사람이었니?)'. '무엇을 하는' 이라는 뜻이면 대명사 '뭐' 에 동사 '하다' 가 붙은 것이라 '뭐 하는' 으로 띄어 씀. 표준국어대사전의 한 낱말 '뭐하다' 는 '말하기가 좀 뭐하다' 처럼 쓰는 형용사. 화면의 한국어 문제(소리 없음)라 낮음, 확신 높음을 그대로 둠. 이 글은 고칠 곳 두 파일(gh1-012.json .blocks[3].items[34] · gh1-012-2.json .blocks[1].items[16], n=35)에만 있음을 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-014:T12",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 407~409행: #31 '나는 집에 있다 (왔다:나 집에 왔어).' 다음 #32 KO '나도 그래.', EN 'I am, too.', 다른 정답 'So am I.'. grade.cjs: 'Me too.' → 0점, 'Me, too.' → 0점, 'I am too.' → 만점. gh1-058 #20 'Me too.' → 만점(9/18 6-1388 로 더한 것). 'Me too.' 는 '나도 그래' 의 가장 흔한 맞는 영어라 ③ 중간. 고친 뒤(참조 ['I am, too.', 'So am I.', 'Me too.']): 'Me too.' · 'Me, too.' → 만점, 'Me neither.' · 'Me either.' · 'Neither am I.' → 0점. 긍정문 뒤의 부정 답은 여전히 막히므로 새 틀림 없음. 경로 gh1-015.json .blocks[4].items[8] · gh1-015-2.json .blocks[2].items[8](n=32, 지금 alternatives ['So am I.'])는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-050:T05",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 219행: '그는 너의 남자친구냐?'. '남자 친구' 는 표준국어대사전에 한 낱말로 오르지 않아 띄어 씀. 과정의 '여자 친구'(gh1-006 #25 · gh1-008 #25) 표기와도 맞음. 같은 꼴인 gh1-052 #25(T46)는 읽은 일꾼이 따로 적음. 낮음, 확신 높음을 그대로 둠. 경로 gh1-050.json .blocks[3].items[24] · gh1-050-2.json .blocks[1].items[3](n=25)는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-052:T34",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 290~291행: KO '나의 손이 차가웠니?', EN 'Was my hand cold?'. grade.cjs: 'Were my hands cold?' → 0점, 'Was my hand cold?' → 만점. 한국어 '손' 은 수를 가르지 않고, 영어로는 두 손을 말하는 쪽이 흔함. 과정이 1부에서 수를 가르지 않는 명사에 복수 꼴을 받아 온 것(형제 → brothers 등)과도 맞음. 이 과정의 한국어 문제가 복수를 '들' 로 자주 적는 점(근로자들 · 개들)은 단수로 읽을 까닭이 되므로 확신 보통을 그대로 둠. 고친 뒤(참조 직접): 'Were my hands cold?' → 만점, 'Were my feet cold?' · 'Were my hands warm?' · 'Weren't my hands cold?' → 0점. 경로 gh1-053.json · gh1-053-1.json .blocks[3].items[16](n=17)는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-060:T05",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "04.md 11~12행: KO '너는 얼마나 많이 원하나?', EN 'How much do you want?'. grade.cjs: 'How many do you want?' → 70점. 같은 한국어 문제인 gh1-016 #12 에서는 만점. 목적어가 없는 '얼마나 많이' 는 셀 수 있는 것이면 many 도 맞음. 70점이므로 낮음(풀이 5). 고친 뒤(참조 직접): 'How many do you want?' → 만점, 'How many do you need?' → 0점. 경로 gh1-061.json .blocks[3].items[3](n=4, 분할본 없음)는 확인함.",
+   "때": "2026-09-24 19:36"
+  },
+  {
+   "key": "F:grammar1/gh1-062:T41",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "04.md 116~117행: KO '너의 아이들은 건강했니?', EN 'Were your children healthy?'. grade.cjs: 'Were your children well?' → 0점. 같은 강의 #3 'Is your son well?' · #12 'Is your mother well?' → 만점이라, 한 강의 안에서 같은 술어를 한쪽만 받음. 0점이므로 중간(풀이 5). 고친 뒤(참조 직접): 'Were your children well?' → 만점, 'Were your children ill?' · 'Were your children sick?' → 0점. 경로 gh1-063.json .blocks[4].items[22](n=23, 분할본 없음)는 확인함.",
+   "때": "2026-09-24 19:36"
+  }
+ ]
+}

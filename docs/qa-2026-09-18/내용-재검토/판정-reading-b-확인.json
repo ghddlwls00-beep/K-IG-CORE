@@ -1,0 +1,457 @@
+{
+ "조각": "reading-b",
+ "뽑은때": "2026-09-24 16:18",
+ "대상": [
+  {
+   "key": "F:C13638",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C13638",
+    "C13664"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=overridden].korean",
+   "파일": "content/lessons/reading/pr207-1.json",
+   "전": null,
+   "뒤": "(결정 · 거부를) 무효화하다, 뒤집다 (be overridden 무효화되다)",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "pr207 카드 overridden 뜻 '(결정 · 거부를)' — 가운뎃점을 앞뒤로 띄움. 한국어 문장 부호 관례는 가운뎃점 앞뒤를 붙임(결정·거부). 같은 과정 pr139 한국어 '창의성·천재성' · pr054 '고객·잠재 고객' 은 붙여 씀 — 과정 안 표기 흔들림. 뜻은 맞음. 카드 한국어라 소리 없음(카드 소리는 낱말 overridden). 두 쪽 같음.",
+    "고칠 글": "(결정·거부를) 무효화하다, 뒤집다 (be overridden 무효화되다)"
+   }
+  },
+  {
+   "key": "X:2",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/lessons/reading/pr179.json · pr179-1.json (+ src/lib/readingSentences.json reading-179-s008)",
+    "칸": "readingSentences s008 korean",
+    "지금": "둘째로 사회전체가 자원봉사활동에서 오는 경험과 훈련에 큰 가치를 두기 시작하였다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "띄어쓰기 — '사회 전체가'(사전에 없는 붙임).",
+    "고칠 글": "둘째로 사회 전체가 자원봉사활동에서 오는 경험과 훈련에 큰 가치를 두기 시작하였다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:58"
+   }
+  },
+  {
+   "key": "X:3",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/lessons/reading/pr234.json · pr234-1.json (+ src/lib/readingSentences.json reading-234-s007)",
+    "칸": "readingSentences s007 korean",
+    "지금": "따라서, 이러한 나라들이 직면한 가장 중요한 문제는 문화간의 차이들을 이해하는 것이다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "띄어쓰기 — '사이' 뜻의 '간' 은 의존 명사라 띄움(문화 간). 사전에 한 낱말로 오른 형제간 · 부부간 꼴이 아님. 같은 문장의 영어만 바뀜(C13886 difference → differences) — 한국어 '차이들' 은 이미 복수라 뜻은 맞음.",
+    "고칠 글": "따라서, 이러한 나라들이 직면한 가장 중요한 문제는 문화 간의 차이들을 이해하는 것이다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:02"
+   }
+  },
+  {
+   "key": "OK:C12988",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=hiding].korean",
+   "파일": "content/lessons/reading/pr138.json",
+   "전": "숨는 (hiding place 숨는 곳)",
+   "뒤": "숨기, 숨는 것 (hiding place 숨을 곳, 은신처)"
+  },
+  {
+   "key": "OK:C12992",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=demands].korean",
+   "파일": "content/lessons/reading/pr139.json",
+   "전": "요구",
+   "뒤": "요구하다 (n. 요구)"
+  },
+  {
+   "key": "OK:C13774",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".readingVocabulary[word=latin].partOfSpeech",
+   "파일": "content/lessons/reading/pr221.json",
+   "전": "adj.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13601",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-201-s003].korean",
+   "파일": "content/lessons/reading/pr201.json",
+   "전": "그러나 우리는 어느 누구도 단지 우리가 그들이 행동해야한다고 생각하는 방식의 기대를 충족시키기 위해서 행동을 바꿀 의무는 없다는 것을 깨달아야 한다.",
+   "뒤": "그러나 우리는 그 누구도 단지 그들이 어떻게 행동해야 한다는 우리의 기대를 충족시키려고 변할 의무는 없다는 것을 깨달아야 한다."
+  },
+  {
+   "key": "OK:C13615",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-203-s007].korean",
+   "파일": "content/lessons/reading/pr203-1.json",
+   "전": "더 중요한 것은 논의를 바꾸어 \"독일어를 쓰면 독일인이다\"라고 말할 수 없다는 점이다. 그는 스위스인일 가능성도 충분히 있다.",
+   "뒤": "더 중요한 것은 그 논리를 뒤바꾸어 \"독일어를 쓰면 독일인이다\"라고 말할 수는 없다는 점이다."
+  },
+  {
+   "key": "OK:C12989",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=demands].partOfSpeech",
+   "파일": "content/lessons/reading/pr139-1.json",
+   "전": "n.",
+   "뒤": "v."
+  },
+  {
+   "key": "OK:C12995",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=matters].word",
+   "파일": "content/lessons/reading/pr140-1.json",
+   "전": null,
+   "뒤": "matters"
+  },
+  {
+   "key": "OK:C13775",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".readingVocabulary[word=latin].korean",
+   "파일": "content/lessons/reading/pr221.json",
+   "전": "라틴어의",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13761",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".readingVocabulary[word=latin].partOfSpeech",
+   "파일": "content/lessons/reading/pr221-1.json",
+   "전": "adj.",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13670",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=congress].korean",
+   "파일": "content/lessons/reading/pr207.json",
+   "전": "(미국) 의회",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13606",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-202-s005].english",
+   "파일": "content/lessons/reading/pr202-1.json",
+   "전": "It had to close in 1888 because of lack of money.",
+   "뒤": "It returned in 1886 as a weekly, Hanseong Jubo, but had to close in 1888 because of lack of money."
+  },
+  {
+   "key": "OK:C13614",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-203-s007].english",
+   "파일": "content/lessons/reading/pr203-1.json",
+   "전": "More importantly, we cannot switch the argument and say, \"If he speaks German, he is German.\" He may quite well be Swiss.",
+   "뒤": "More importantly, we cannot switch the argument and say, \"If he speaks German, he is German.\""
+  },
+  {
+   "key": "OK:C12994",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=laughing].korean",
+   "파일": "content/lessons/reading/pr140-1.json",
+   "전": "웃기는 (laughing matter 웃을 일)",
+   "뒤": "웃는, 웃음의 (laughing matter 웃을 일)"
+  },
+  {
+   "key": "OK:C13667",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=congress].word",
+   "파일": "content/lessons/reading/pr207.json",
+   "전": "congress",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13647",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=overpowered].word",
+   "파일": "content/lessons/reading/pr207-1.json",
+   "전": "overpowered",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13607",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-202-s005].korean",
+   "파일": "content/lessons/reading/pr202-1.json",
+   "전": "그 신문은 1888년에 자금 부족 때문에 폐간해야 했다.",
+   "뒤": "그 신문은 1886년에 주간 신문인 한성주보로 다시 나왔지만, 1888년에 자금 부족 때문에 폐간해야 했다."
+  },
+  {
+   "key": "OK:C13617",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-203-s008].korean",
+   "파일": "content/lessons/reading/pr203-1.json",
+   "전": "이것은 영어의 경우에 특히 그러하다.",
+   "뒤": "그는 스위스인일 가능성도 충분히 있다."
+  },
+  {
+   "key": "OK:C12997",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=matters].partOfSpeech",
+   "파일": "content/lessons/reading/pr140-1.json",
+   "전": null,
+   "뒤": "n."
+  },
+  {
+   "key": "OK:C13676",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=overpowered].korean",
+   "파일": "content/lessons/reading/pr207.json",
+   "전": "압도하다, 뒤집다 (be overpowered 뒤집히다)",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13644",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=congress].korean",
+   "파일": "content/lessons/reading/pr207-1.json",
+   "전": "(미국) 의회",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13604",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-202-s003].korean",
+   "파일": "content/lessons/reading/pr202-1.json",
+   "전": "한 달에 세 번씩 그 신문은 국내와 외부 세계에 대한 뉴스를 독자들에게 가져다 주었다.",
+   "뒤": "한 달에 세 번씩 그 신문은 국내와 외부 세계에 대한 뉴스를 독자들에게 가져다주었다."
+  },
+  {
+   "key": "OK:C13616",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingSentences[id=reading-203-s008].english",
+   "파일": "content/lessons/reading/pr203-1.json",
+   "전": "This is particularly true of the English language.",
+   "뒤": "He may quite well be Swiss."
+  },
+  {
+   "key": "OK:C12996",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".readingVocabulary[word=matters].lemma",
+   "파일": "content/lessons/reading/pr140-1.json",
+   "전": null,
+   "뒤": "matter"
+  },
+  {
+   "key": "OK:C13762",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "08.md",
+   "칸": ".readingVocabulary[word=latin].korean",
+   "파일": "content/lessons/reading/pr221-1.json",
+   "전": "라틴어의",
+   "뒤": null
+  },
+  {
+   "key": "OK:C13669",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "07.md",
+   "칸": ".readingVocabulary[word=congress].partOfSpeech",
+   "파일": "content/lessons/reading/pr207.json",
+   "전": "n.",
+   "뒤": null
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:C13638",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "카드 한국어는 ReadingLearningView 248(meaning: v.korean)로 카드에 보임 — 닿음. '(결정 · 거부를)' 처럼 가운뎃점 앞뒤를 띄운 것은 국립국어원 관례(가운뎃점은 앞뒤를 붙여 씀 — 문장 부호 규정 보기도 모두 붙임)와 다르고, 같은 과정 READING 한국어는 pr054 '고객·잠재 고객' · pr139 '창의성·천재성' 처럼 붙여 씀(content/lessons/reading 전체 grep: 띄운 가운뎃점은 9/18 뒤 고친 pr207 · pr221 · pr234 한국어뿐이고, pr230 aboard 카드의 ' · ' 는 보기 두 개 사이 가름표라 다른 쓰임). 뜻(override = 결정·거부를 무효화하다, be overridden 무효화되다 ↔ s003 한국어 '무효화되면') · 품사 v. · 기본형 override 는 맞음. 띄어쓰기 종류라 심각도 낮음 · 확신 보통 그대로 맞음. 고칠 글은 가운뎃점만 붙이고 나머지 그대로 — 새 틀림 없음. overridden 은 발음 표(READING_PRONUNCIATIONS)에 없어 카드 뜻을 바꿔도 소리 그대로(새 음성 클립 false 맞음). 두 쪽(pr207 · pr207-1) 카드 글자까지 같음(스크립트 비교). 거울 src/lib/readingVocabulary.json 35269행도 같은 글 — 함께 고치면 됨(화면엔 안 닿음).",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "X:2",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "pr179 s008 한국어(안 바뀐 줄) '사회전체가' — '전체' 는 따로 쓰는 명사이고 '사회전체' 는 사전에 없는 붙임 → '사회 전체가'. 문장 한국어는 ReadingLearningView 206(ko: s.korean)으로 두 쪽 모두 보임 — 닿음(pr179.json · pr179-1.json 86행, 글자 같음). 띄어쓰기라 심각도 낮음 맞음(확신은 높음으로 봐도 됨). 고칠 글은 그 자리만 띄움 — 영어 'society as a whole began to place a great value on …' 와 뜻이 맞고 새 틀림 없음. 같은 문장의 '자원봉사활동' 붙임은 법률 이름('자원봉사활동 기본법')도 붙여 쓰는 굳은 말이라 틀림으로 세지 않음. 같은 글이 안 닿는 두 곳(pr179-1.json 28행 instruction 한국어 지문 · src/lib/readingSentences.json 5427행)에도 있음 — 함께 고치면 됨.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "X:3",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "pr234 s007 한국어(안 바뀐 줄) '문화간의' — '관계 · 사이' 뜻의 '간' 은 의존 명사라 띄움(표준국어대사전 보기: 서울과 부산 간, 부모와 자식 간). 사전에 한 낱말로 오른 형제간 · 부부간 류가 아님 → '문화 간의'. 같은 문장 영어가 difference → differences 로 바뀌었지만 한국어 '차이들' 은 이미 복수라 뜻은 맞음. 닿음(ReadingLearningView 206 — pr234.json · pr234-1.json 81행). 띄어쓰기라 낮음 맞음. 고칠 글 새 틀림 없음. 같은 글이 안 닿는 두 곳(pr234-1.json 28행 instruction 한국어 지문 · src/lib/readingSentences.json 7182행)에도 있음 — 함께 고치면 됨.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12988",
+   "결론": "맞음 동의",
+   "까닭": "pr138 카드 hiding — 지문 s006 'the best hiding place' 의 hiding 은 place 를 꾸미는 동명사(명사)라 품사 n. · 뜻 '숨기, 숨는 것' 이 맞고, 보기 'hiding place 숨을 곳, 은신처' 는 s006 한국어 '가장 좋은 숨을 곳은' 과 같은 말. 맞춤법 · 띄어쓰기(숨는 것 · 숨을 곳) 맞음. 발음 표에 없는 낱말이라 소리는 hiding 그대로(클립 있음). 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12992",
+   "결론": "맞음 동의",
+   "까닭": "pr139 카드 demands — 지문에 두 번: s005 'The social order demands unity …'(동사) · s006 'the demands of society'(명사). 카드 v. '요구하다' 는 s005 를, '(n. 요구)' 는 s006 을 덮어 둘 다 맞음. 기본형 demand 맞음. 명사 · 동사 발음이 같아 소리 문제 없음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13774",
+   "결론": "맞음 동의",
+   "까닭": "pr221 소문자 카드 latin 이 지문 s003 'the Latin word canis' 의 표기대로 대문자 Latin 카드로 바뀜 — 없어진 품사 adj. 는 새 Latin 카드에 그대로 있음. 'Latin word' 의 Latin 은 형용사라 맞음. 카드는 여전히 14장(ReadingLearningView 244 의 14장 조건 충족). 두 쪽 같음, Latin 클립 있음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13601",
+   "결론": "맞음 동의",
+   "까닭": "pr201 s003 한국어 — 'no one is obligated to change just to meet our expectations of how we feel they should act' 를 '그 누구도 단지 그들이 어떻게 행동해야 한다는 우리의 기대를 충족시키려고 변할 의무는 없다' 로 옮김: 주어 · 의무 · 목적 · 기대의 내용이 모두 맞음('어떻게 ~해야 한다는' 은 '어떤 식으로 ~해야 한다는' 뜻의 자연스러운 꼴). 카드 obligated '(be obligated to) ~할 의무가 있다' · expectations '기대' 와 맞음. 띄어쓰기(행동해야 한다는 · 깨달아야 한다) 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13615",
+   "결론": "맞음 동의",
+   "까닭": "pr203-1 s007 한국어 — 나눈 영어 s007 과 같은 범위(인용문까지)만 옮김. '그 논리를 뒤바꾸어' 는 카드 argument '논리, 주장' · switch '뒤바꾸다' 와 맞고, '\"독일어를 쓰면 독일인이다\"라고 말할 수는 없다는 점이다' 가 영어와 같은 뜻. 뒤 문장 '그는 스위스인일 가능성도 충분히 있다.' 는 s008 로 영어와 함께 옮겨짐 — 짝 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12989",
+   "결론": "맞음 동의",
+   "까닭": "pr139-1 카드 demands 품사 n. → v. — OK:C12992 와 같은 카드: s005 의 동사 demands 에 맞고, 명사 뜻은 한국어 '(n. 요구)' 로 남아 s006 도 덮음. 틀림 아님. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12995",
+   "결론": "맞음 동의",
+   "까닭": "pr140-1 새 카드 matters — 영어 s001 이 'take laughing matter seriously'(가산 명사 matter 에 관사 없음) → 'laughing matters' 로 고쳐져, 카드 낱말도 지문 꼴 matters 로 바뀜. 지문에 그 꼴 그대로 있음. 기본형 matter · 품사 n. · 뜻 '일, 문제 (laughing matter 웃을 일)' 는 옛 matter 카드 것을 같은 카드에 옮김 — 자리 맞음. matters 클립 있음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13775",
+   "결론": "맞음 동의",
+   "까닭": "pr221 소문자 카드 latin 의 뜻 '라틴어의' 가 없어진 것 — 같은 뜻이 지문 표기대로 바뀐 대문자 Latin 카드(adj.)에 그대로 있음. 'the Latin word canis' 에서 '라틴어의' 가 맞는 뜻. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13761",
+   "결론": "맞음 동의",
+   "까닭": "pr221-1 소문자 카드 latin 품사 adj. 없어짐 — OK:C13774 와 같은 바뀜(대문자 Latin 카드로 옮김, 품사 adj. 그대로). 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13670",
+   "결론": "맞음 동의",
+   "까닭": "pr207 소문자 카드 congress 의 뜻 '(미국) 의회' 가 없어진 것 — 지문의 대문자 Congress(s001 · s002 · s003, 미국 의회 고유 명사)에 맞춰 바뀐 Congress 카드에 같은 뜻이 그대로 있음. 대통령 거부권 · 상하 양원 문맥과 맞음. Congress 클립 있음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13606",
+   "결론": "맞음 동의",
+   "까닭": "pr202-1 s005 영어 — 한성순보(1883, 열흘에 한 번 = s003 '한 달에 세 번')는 1884년 갑신정변 때 박문국이 불타 멈췄고(s004 'A year later … due to a fire'), 1886년 주간 한성주보로 다시 나왔다가 1888년 재정난으로 폐간. 옛 글 'It had to close in 1888' 은 1886년에 이름을 바꿔 주간으로 다시 나온 사실을 건너뛰었고, 새 글은 그 사실을 넣어 연도 · 이름 · 주간 · 까닭이 모두 사실과 맞음. 문법 맞음(as a weekly, Hanseong Jubo — 동격). 뒤 s006 'In spite of its short life' 와 이어짐. 새 문장 클립 있음(본 저장소 public/audio/azure-ava/v1, 로컬만). 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13614",
+   "결론": "맞음 동의",
+   "까닭": "pr203-1 s007 영어 — 한 칸에 두 문장이던 것을 나눔: s007 은 인용문으로 끝나고(마침표가 따옴표 안 — 미국식 맞음), 뒤 문장 'He may quite well be Swiss.' 는 s008 로, 옛 s008 'This is particularly true of the English language.' 는 s009 로 감. 영어 · 한국어 짝(id s007 · s008 · s009)이 모두 맞게 따라감, 문장 id 겹침 없음. s007 새 클립 있음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12994",
+   "결론": "맞음 동의",
+   "까닭": "pr140-1 카드 laughing 뜻 '웃기는' → '웃는, 웃음의 (laughing matter 웃을 일)' — 지문의 laughing matters 는 '웃음에 관한 일'(병원이 유머 치료를 진지하게 여긴다는 말장난)이라 '웃음의' 가 지문 뜻과 맞고, 보기 'laughing matter 웃을 일' 도 맞음. 품사 adj. 맞음. 맞춤법 맞음. 소리는 낱말 그대로(발음 표에 없음). 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13667",
+   "결론": "맞음 동의",
+   "까닭": "pr207 소문자 카드 낱말 congress 없어짐 — 지문은 셋 다 대문자 Congress(미국 의회 고유 명사)라 카드 낱말을 지문 꼴 Congress 로 바꾼 것이 맞음. 품사 n. · 뜻 '(미국) 의회' 는 새 카드에 그대로. 카드 14장 유지. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13647",
+   "결론": "맞음 동의",
+   "까닭": "pr207-1 카드 overpowered 없어짐 — 영어 s003 이 'rejection is overpowered'(거부권을 '압도하다' 는 맞지 않는 말) → 'is overridden'(veto 는 override 함)으로 고쳐져 overpowered 는 더는 지문에 없음. 그 자리에 overridden(v.) ← override 카드가 들어가 카드 14장 유지. 없앤 것이 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13607",
+   "결론": "맞음 동의",
+   "까닭": "pr202-1 s005 한국어 '그 신문은 1886년에 주간 신문인 한성주보로 다시 나왔지만, 1888년에 자금 부족 때문에 폐간해야 했다.' — 새 영어(OK:C13606)와 연도 · 이름 · 주간 · 까닭이 모두 같음. 띄어쓰기(주간 신문 · 다시 나왔지만 · 폐간해야 했다) 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13617",
+   "결론": "맞음 동의",
+   "까닭": "pr203-1 s008 한국어 '그는 스위스인일 가능성도 충분히 있다.' — 옛 s007 한국어 뒤 문장을 글자 그대로 옮김, 새 영어 s008 'He may quite well be Swiss.' 와 짝이 맞고 카드 quite '(may quite well) 충분히 ~일 수 있다' 와도 맞음. 옛 s008 한국어 '이것은 영어의 경우에 특히 그러하다.' 는 s009 로 영어와 함께 옮겨짐. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12997",
+   "결론": "맞음 동의",
+   "까닭": "pr140-1 matters 카드 품사 n. — 옛 matter 카드 품사를 같은 카드에 옮김. s001 'laughing matters' 의 matters 는 명사 복수라 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13676",
+   "결론": "맞음 동의",
+   "까닭": "pr207 카드 overpowered 뜻 '압도하다, 뒤집다 (be overpowered 뒤집히다)' 없어짐 — 카드째 없어진 것이라 맞음(OK:C13647 과 같은 바뀜). 새 overridden 카드 뜻 '무효화하다, 뒤집다 (be overridden 무효화되다)' 가 s003 한국어 '무효화되면' 과 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13644",
+   "결론": "맞음 동의",
+   "까닭": "pr207-1 소문자 카드 congress 뜻 '(미국) 의회' 없어짐 — OK:C13670 과 같은 바뀜: 같은 뜻이 대문자 Congress 카드에 그대로 옮겨짐. 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13604",
+   "결론": "맞음 동의",
+   "까닭": "pr202-1 s003 한국어 '가져다 주었다' → '가져다주었다' — 표준국어대사전에 '가져다주다' 가 한 낱말로 올라 있어 붙여 쓰는 것이 맞음. 뜻(brought the readers news about the country and the rest of the world) 그대로. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13616",
+   "결론": "맞음 동의",
+   "까닭": "pr203-1 s008 영어 'He may quite well be Swiss.' — 옛 s007 뒤 문장을 글자 그대로 떼어 옴(영어 자체는 기준 판과 같은 글). 짝 한국어 s008 과 맞고 앞 s007 인용문('If he speaks German, he is German.')의 반례로 이어짐. 클립 있음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C12996",
+   "결론": "맞음 동의",
+   "까닭": "pr140-1 matters 카드 기본형 matter — 옛 matter 카드의 낱말이 새 카드의 기본형 자리로 옮겨짐. matters 의 기본형으로 맞고 화면에 '← matter' 로 보임(ReadingLearningView 811). 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13762",
+   "결론": "맞음 동의",
+   "까닭": "pr221-1 소문자 카드 latin 뜻 '라틴어의' 없어짐 — OK:C13775 와 같은 바뀜(대문자 Latin 카드에 같은 뜻). 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  },
+  {
+   "key": "OK:C13669",
+   "결론": "맞음 동의",
+   "까닭": "pr207 소문자 카드 congress 품사 n. 없어짐 — 대문자 Congress 카드에 품사 n. 그대로(OK:C13667 과 같은 바뀜). 맞음. 두 쪽 같음.",
+   "때": "2026-09-24 16:27"
+  }
+ ]
+}

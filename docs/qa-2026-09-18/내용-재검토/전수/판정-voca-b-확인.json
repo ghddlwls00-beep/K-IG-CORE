@@ -1,0 +1,89 @@
+{
+ "조각": "voca-b",
+ "뽑은때": "2026-09-24 19:57",
+ "대상": [
+  {
+   "key": "F:phonics/mv3-08:T09",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/voca-b/05.md",
+   "주장": {
+    "T": "T09",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "같은 강의(mv3-08 격자)에 later '나중에' — afterward(s) 와 later 는 부사 '그 뒤에 · 나중에' 로 참 동의어. 9/15 감사 때는 둘 다 '나중에' 여서 SAME_MEANING 으로 잡혔고(docs/qa-2026-09-15/evidence/per-lesson-verdicts.json: '\"나중에\" is the meaning of afterward(s) / later'), 그 뒤 afterward(s) 만 '그 후에' 로 바뀌어 글자만 달라짐 — 6단계 기준 7 이 금지한 바꿔치기. 지금 앱 규칙(vocaUtils sharesSense: 조각 '그 후에' ≠ '나중에' · SYNONYM_GROUPS 에 없음)이 못 막아, 한→영 '[ 그 후에 ]' 에 later 가 · '[ 나중에 ]' 에 afterward(s) 가 오답 보기로 나오고 스피드 드릴도 맞는 뜻을 '불일치' 로 낼 수 있음 = 맞는 답을 막음(1부 규칙 2 — so/very · only/just 와 같은 종류, 9/18 hard/difficult High). 고칠 글은 기준 7 대로 공통 참뜻 '나중에' 를 더해 규칙이 막게(afterward(s) 는 mv3-08 에만 · 이 강의에 '나중에' · '그 후에' 조각을 가진 다른 낱말 없음 — 오답 후보 줄어듦 1). 9d6e15d 도 '그 후에'.",
+    "지금": "그 후에",
+    "고칠 글": "그 후에, 나중에",
+    "고칠 곳": "content/voca_dictionary.json 의 afterward(s).meaning",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "G:phonics/mv2-40",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/voca-b/05.md",
+   "읽을글": 16
+  },
+  {
+   "key": "G:phonics/mv2-34",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/voca-b/04.md",
+   "읽을글": 24
+  },
+  {
+   "key": "G:phonics/mv2-35",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/voca-b/04.md",
+   "읽을글": 15
+  },
+  {
+   "key": "G:phonics/mv2-36",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/voca-b/04.md",
+   "읽을글": 17
+  }
+ ],
+ "결과": [
+  {
+   "key": "G:phonics/mv2-34",
+   "결론": "다시 읽음",
+   "읽은 글": 24,
+   "틀림": [],
+   "까닭": "T 24(낱말 12 · 뜻 12)를 판정을 가린 채 모두 읽음 — neat 깔끔한 · flee 도망치다 · pale 창백한 · crash 충돌 · physical 신체의; 물리적인 · disease 질병 · poem 시, 시가 · drown 익사하다 · economy 경제 · nod 고개를 끄덕이다 · silence 침묵 · blossom 꽃이 피다. 철자 · 주된 뜻 · 품사 · 맞춤법 모두 맞음(crash 는 명사 뜻 · blossom 은 동사 뜻만 적었으나 그 뜻 자체는 맞아 틀림 아님). 퀴즈 겹침: 격자 30낱말(content/lessons/phonics/mv2-34.json)의 뜻을 앱 vocaUtils.ts senseSegments 규칙으로 견줌 — 조각 겹침 0, 뜻이 같은데 조각이 안 겹치는 짝도 없음(responsible 책임 있는 × charge …책임, 담당 은 품사가 달라 같은 뜻 아님). 소리 꼴 · 연어 · 어원 카드는 T 글에 없음. 틀림 0.",
+   "때": "2026-09-24 20:00"
+  },
+  {
+   "key": "G:phonics/mv2-35",
+   "결론": "다시 읽음",
+   "읽은 글": 15,
+   "틀림": [],
+   "까닭": "T 15(낱말 8 · 뜻 7 — various 는 낱말만 T, 뜻 '다양한' 은 앞 강의 hv-72 에서 읽음)를 판정을 가린 채 모두 읽음 — repair 수리하다; 수리 · nest 둥지 · tap 가볍게 두드리다 · various · vote 투표하다; 투표 · sore 쓰린, 따가운 · wheel 바퀴 · wealth 부, 재산. 철자 · 뜻 · 품사 · 맞춤법 모두 맞음. 퀴즈 겹침: 격자 30낱말 조각 겹침 0, 같은 뜻 짝 없음(intelligent 총명한, 똑똑한 은 이 강의에 짝이 없음). 틀림 0.",
+   "때": "2026-09-24 20:00"
+  },
+  {
+   "key": "G:phonics/mv2-36",
+   "결론": "다시 읽음",
+   "읽은 글": 17,
+   "틀림": [],
+   "까닭": "T 17(낱말 10 · 뜻 7 — silly · handicap 뜻은 1부에서 판정, sow 뜻은 1부 판정이고 낱말 T10 은 소리 꼴 'sow ⟨soʊ⟩' 와 함께 읽음)를 판정을 가린 채 모두 읽음 — slope 경사 · smart 똑똑한 · silly · sob 흐느끼다 · tire 지치게 하다; 타이어 · sow ⟨soʊ⟩(화면 뜻 '(씨를) 뿌리다' 의 발음 — 암퇘지 /saʊ/ 아님, 맞음) · wipe 닦다 · handicap · tough 힘든 · birth 출생. 철자 · 뜻 · 품사 · 맞춤법 모두 맞음. 퀴즈 겹침: 격자 30낱말 조각 겹침 0 — tough 힘든 × rough 거친, birth 출생 × origin 기원, 출신, smart 똑똑한 × silly 는 가르치는 뜻이 달라 같은 뜻 짝 아님. 틀림 0.",
+   "때": "2026-09-24 20:00"
+  },
+  {
+   "key": "G:phonics/mv2-40",
+   "결론": "다시 읽음",
+   "읽은 글": 16,
+   "틀림": [],
+   "까닭": "T 16(낱말 10 · 뜻 6 — delight · trash 뜻은 앞 강의, type · fur 뜻은 1부에서 판정)을 판정을 가린 채 모두 읽음 — delight · type · fur · peak 정상, 절정 · steam 증기 · person 사람 · organization 조직 · trash · informal 비공식의, 격식 없는 · garage 차고. 철자 · 뜻 · 품사 · 맞춤법 모두 맞음. 퀴즈 겹침: 격자 30낱말 조각 겹침 0 — special 특별한 × unique 독특한 은 가르치는 뜻이 달라 같은 뜻 짝 아님(퀴즈는 '가장 알맞은' 을 물음), steam 증기 × stream 개울, 시내 는 철자만 비슷. 틀림 0.",
+   "때": "2026-09-24 20:00"
+  },
+  {
+   "key": "F:phonics/mv3-08:T09",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "그 후에, 나중에",
+   "까닭": "틀림은 맞음 — afterward(s) 의 사전 첫 뜻이 'at a later time'(Oxford Learner's: afterwards = at a later time; after an event already mentioned · 동의어 later)이라 '나중에' 는 주된 뜻인데, 9/17 apply-voca.cjs 가 9/15 V-04(afterward(s)/later 둘 다 '나중에')를 풀려고 afterward(s) 를 '나중에' → '그 후에' 로 바꿔 글자만 갈라놓음 — 6단계 기준 7 이 금지한 바꿔치기(critical '결정적인' → '중대한' 을 되돌린 것과 같은 종류). 앱 vocaUtils.ts 를 메모리에서 트랜스파일해 mv3-08 격자(30낱말 · afterward(s) #15 = 한→영 · later #16 = 영→한 — 문제 종류는 격자 순서로 고정)로 3,000번 잼(스크래치 cases/voca-b/chk-after.cjs): '[ 그 후에 ]' 보기에 later 345(11.5%) · 'later' 문제 보기에 '그 후에' 368(12.3%) · 드릴 'afterward(s) — 나중에' 불일치 46(1.5%) · 'later — 그 후에' 불일치 48(1.6%). 주장의 '[ 나중에 ]' 에 afterward(s)' 는 later 가 늘 영→한이라 나오지 않음(대신 later 문제의 뜻 보기) — 틀림 자체는 그대로. 고칠 글을 넣으면 넷 모두 0 · 새로 막히는 쌍은 later 하나(afterward(s) 는 mv3-08 에만 · 사전 키 'afterward(s)' 있음) · since '~이후로; ~때문에' 와 조각 안 겹침 · 오답 후보 28 남음. '그 후에, 나중에' 는 afterward(s) 의 표준 뜻이라 새 틀림 없음 · VOCA 뜻이라 새 음성 클립 없음. 심각도만 고침 높음 → 중간: 두 방향 모두 가장 곧은 답(afterward(s) · '나중에')은 늘 보기에 있고 맞게 채점되며, 맞는 다른 답(later · '그 후에')이 0점 되는 꼴 — 풀이 5(맞는 다른 답 0점 = 중간, 가장 곧은 답이 막힐 때만 높음) · 9/18 border/edge(6-0873 Medium — '다른 쪽이 분명히 나은 답이라 hard/difficult 보다 작다') · 같은 전수 읽기 voca-a 확인의 hv-30 defect/fault(높음 → 중간)와 같게. 9/18 High 였던 hard/difficult · firm/company 는 같은 한국어 글('어려운' · '회사')이 두 낱말 모두의 뜻이라 어느 쪽이 답인지 가를 수 없던 경우. 결정 사항 아님(소유자-결정-요약 · 결과-머리 소유자 답에 없음).",
+   "때": "2026-09-24 20:07"
+  }
+ ]
+}

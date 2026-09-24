@@ -1,0 +1,481 @@
+{
+ "조각": "줄-문법1",
+ "결과": {
+  "P1": {
+   "id": "P1",
+   "판정": "제대로",
+   "main 글": "gh1-007 · gh1-007-1 .blocks[2].items[5] n=6 'They are workers.' alternatives ['They are laborers.', 'They are employees.']",
+   "까닭": "본 쪽 · 나눈 쪽 둘 다 새 alternatives 칸에 'They are laborers.' 가 글자 그대로 있음 · main 채점 코드로 main 참조에 만점(옛 참조로는 0점 — 넣은 다른 정답 덕). 같은 칸의 'They are employees.' 는 결정 C 표의 답(뜻 맞음). 모범 글 · 한국어 짝(gh1-006 · gh1-006-1 '그들은 근로자들이다.') · 옆 n=5 · n=7 안 바뀜. 빗금 · 겹친 다른 정답 없음.",
+   "때": "2026-09-25 04:27"
+  },
+  "P2": {
+   "id": "P2",
+   "판정": "제대로",
+   "main 글": "gh1-007 · gh1-007-1 .blocks[2].items[17] n=18 'Are they healthy?' alternatives ['Are they well?', 'Are they in good health?']",
+   "까닭": "두 파일 모두 'Are they well?' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 'Are they in good health?' 는 결정 C 표의 답. 모범 · 한국어 짝 '그들은 건강한가?' · 옆 n=17 · 19 그대로. 빗금 없음.",
+   "때": "2026-09-25 04:27"
+  },
+  "P3": {
+   "id": "P3",
+   "판정": "제대로",
+   "main 글": "gh1-009 · gh1-009-1 .blocks[3].items[5] n=6 'They were workers.' alternatives ['They were laborers.', 'They were employees.']",
+   "까닭": "두 파일 모두 'They were laborers.' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 'They were employees.' 는 결정 C 표의 답. 모범 · 짝 gh1-008 · gh1-008-1 '그들은 근로자들이었다.' · 옆 n=5 · 7 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P4": {
+   "id": "P4",
+   "판정": "제대로",
+   "main 글": "gh1-009 · gh1-009-1 .blocks[3].items[17] n=18 'Were they healthy?' alternatives ['Were they well?', 'Were they in good health?']",
+   "까닭": "두 파일 모두 'Were they well?' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 둘째 답은 결정 C 표. 모범 · 짝 '그들은 건강했니?' 그대로 · 옆 n=17 그대로 · n=19 는 결정 C 다른 정답만 늘어남(글 그대로).",
+   "때": "2026-09-25 04:27"
+  },
+  "P5": {
+   "id": "P5",
+   "판정": "제대로",
+   "main 글": "gh1-015 .blocks[4].items[8] · gh1-015-2 .blocks[2].items[8] n=32 'I am, too.' alternatives ['So am I.', 'Me too.']",
+   "까닭": "두 파일의 alternatives 가 고칠 글 ['So am I.', 'Me too.'] 과 글자 그대로 같음(옛 'So am I.' 남음) · 'Me too.' main 채점 만점(옛 참조 0점). 모범 · 짝 gh1-014 · gh1-014-2 '나도 그래.' · 옆 n=31 'I am home.' · n=33 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P6": {
+   "id": "P6",
+   "판정": "제대로",
+   "main 글": "gh1-053 · gh1-053-1 .blocks[3].items[16] n=17 'Was my hand cold?' alternatives ['Were my hands cold?']",
+   "까닭": "두 파일 모두 고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 0점). 모범 · 짝 gh1-052 · gh1-052-1 '나의 손이 차가웠니?' · 옆 n=16 · 18 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P7": {
+   "id": "P7",
+   "판정": "제대로",
+   "main 글": "gh1-063 .blocks[4].items[22] n=23 'Were your children healthy?' alternatives ['Were your children well?', 'Were your kids healthy?', 'Were your kids well?', 'Were your children in good health?']",
+   "까닭": "'Were your children well?' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 셋은 결정 C 표의 답(뜻 맞음). 나눈 쪽 파일 없음(gh1-063 하나뿐 — 확인). 모범 · 짝 gh1-062 '너의 아이들은 건강했니?' · 옆 n=22 그대로 · n=24 는 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:27"
+  },
+  "P8": {
+   "id": "P8",
+   "판정": "제대로",
+   "main 글": "gh1-073 .blocks[3].items[9] n=10 'Are they healthy?' alternatives ['Are they well?', 'Are they in good health?']",
+   "까닭": "'Are they well?' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 둘째는 결정 C 표. 나눈 쪽 없음(확인). 모범 · 짝 gh1-072 '그들은 건강하니?' · 옆 n=9 · 11 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P9": {
+   "id": "P9",
+   "판정": "제대로",
+   "main 글": "gh1-081 · gh1-081-1 .blocks[3].items[7] n=8 'Why were the police arresting workers?' alternatives ['Why were the police arresting laborers?']",
+   "까닭": "두 파일 모두 고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 0점). 모범 · 짝 gh1-080 · gh1-080-1 '왜 경찰이 노동자들을 체포하고 있었나?' · 옆 n=7 · 9 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P10": {
+   "id": "P10",
+   "판정": "제대로",
+   "main 글": "gh1-085 .blocks[3].items[25] n=26 'The tanker went down, didn't it?' alternatives ['The tanker sank, didn't it?']",
+   "까닭": "고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 0점). 나눈 쪽 없음(확인). 모범 · 짝 gh1-084 '그 유조선이 가라앉았지?' 그대로 · 옆 n=25 · 27 은 결정 C 다른 정답만 늘어남.",
+   "때": "2026-09-25 04:27"
+  },
+  "P11": {
+   "id": "P11",
+   "판정": "제대로",
+   "main 글": "gh1-089 .blocks[3].items[2] n=3 'Is your professor healthy?' alternatives ['Is your professor well?', 'Is your professor in good health?']",
+   "까닭": "'Is your professor well?' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 둘째는 결정 C 표. 나눈 쪽 없음(확인). 모범 · 짝 gh1-088 '너의 교수는 건강하니?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P12": {
+   "id": "P12",
+   "판정": "제대로",
+   "main 글": "gh1-107 .blocks[3].items[30] n=31 'He wasn't a good typist, was he?' alternatives ['He wasn't a great typist, was he?', 'He wasn't an excellent typist, was he?']",
+   "까닭": "'great' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 'excellent' 꼴은 결정 C 표. 나눈 쪽 없음(확인). 모범 · 짝 gh1-106 '그는 훌륭한 타자수는 아니었지?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P13": {
+   "id": "P13",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[27] n=63 'I've never seen your place.' alternatives ['I've never seen your house.', 'I've never seen your home.', 'I have never seen your home.']",
+   "까닭": "옛 'your house' 남고 'I've never seen your home.' 글자 그대로 더해짐 · main 채점 만점(옛 참조 0점). 셋째는 결정 C 표. 나눈 쪽 없음(확인). 모범 · 짝 gh1-108 '나는 너의 집을 결코 본 적이 없어.' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P14": {
+   "id": "P14",
+   "판정": "제대로",
+   "main 글": "gh1-111 .blocks[3].items[25] · gh1-111-2 .blocks[1].items[6] n=96 'Olympia is taking the Pepsi challenge.' alternatives ['Olympia is accepting the Pepsi challenge.', 'Olympia is accepting Pepsi's challenge.']",
+   "까닭": "두 파일 모두 'accepting the Pepsi challenge' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 둘째는 결정 C 표. 모범 · 짝 gh1-110 · gh1-110-2 그대로 · 옆 n=95 · 97 은 다른 정답만 늘어남.",
+   "때": "2026-09-25 04:27"
+  },
+  "P15": {
+   "id": "P15",
+   "판정": "제대로",
+   "main 글": "gh1-111 .blocks[3].items[26] · gh1-111-2 .blocks[1].items[7] n=97 'Why is the fast food chain switching its soft drink?' alternatives ['…changing its soft drink?', 'Why is the fast-food chain switching…', 'Why is the fast-food chain changing…']",
+   "까닭": "두 파일 모두 'Why is the fast food chain changing its soft drink?' 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 'fast-food' 두 꼴은 결정 C 표. 모범 · 짝 '왜 그 패스트푸드 체인이 그것의 청량음료를 바꾸고 있니?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P16": {
+   "id": "P16",
+   "판정": "제대로",
+   "main 글": "gh1-113 .blocks[3].items[26] · gh1-113-2 .blocks[1].items[8] n=135 'I don't quite get your point.' alternatives ['I don't quite understand your point.', 'I don't really get your point.', 'I don't quite see your point.', 'I don't quite understand what you mean.']",
+   "까닭": "두 파일 모두 첫 다른 정답이 고칠 글 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 셋은 결정 C 표. 모범 · 짝 gh1-112 · gh1-112-2 그대로 · 옆 n=136 은 E27 다른 정답만.",
+   "때": "2026-09-25 04:27"
+  },
+  "P17": {
+   "id": "P17",
+   "판정": "제대로",
+   "main 글": "gh1-113 .blocks[3].items[30] · gh1-113-2 .blocks[1].items[12] n=139 'May I have your phone number?' alternatives ['May I have your telephone number?', 'Can I have…', 'Could I have…', 'Can I get your phone number?']",
+   "까닭": "두 파일 모두 'telephone number' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 셋은 결정 C 표. 모범 · 짝 그대로 · 옆 n=138 · 140 은 다른 정답만 늘어남.",
+   "때": "2026-09-25 04:27"
+  },
+  "P18": {
+   "id": "P18",
+   "판정": "제대로",
+   "main 글": "gh1-117 · gh1-117-1 .blocks[3].items[0] n=1 'Do US forces face an uphill battle?' alternatives 7(고칠 글 3 + 결정 C 4)",
+   "까닭": "두 파일 모두 고칠 글의 셋('US troops' · 'American forces' · 'American troops')이 글자 그대로 앞 세 칸 · 셋 다 main 채점 만점(옛 참조 셋 다 0점). 더 든 넷('the US military' · 'tough/difficult/hard battle')은 결정 C 표. 모범 · 짝 gh1-116 · gh1-116-1 '미군이 힘든 전투에 직면하나?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P19": {
+   "id": "P19",
+   "판정": "제대로",
+   "main 글": "gh1-117 .blocks[3].items[31] · gh1-117-2 .blocks[1].items[12] n=32 모범 '…with Taliban forces, were they?' alternatives ['…with Taliban troops, were they?', 'Most weren't killed in a fierce gunfight…', 'Most of them were not killed…']",
+   "까닭": "두 파일 모두 'Taliban troops' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 둘은 결정 C 표. 모범 · 짝 그대로 · 옆 n=31 · 33 은 다른 정답만.",
+   "때": "2026-09-25 04:27"
+  },
+  "P20": {
+   "id": "P20",
+   "판정": "제대로",
+   "main 글": "gh1-117 .blocks[3].items[34] · gh1-117-2 .blocks[1].items[15] n=35 'Is the recovery effort destroying vital clues?' alternatives ['…destroying important clues?', 'Is the restoration effort destroying vital clues?']",
+   "까닭": "두 파일 모두 'important clues' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 둘째는 결정 C 표. 모범 · 짝 '그 복구(회수) 노력이 중요한 단서들을 파괴하고 있나?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P21": {
+   "id": "P21",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[2] n=40 'Was the work of the team hampered?' alternatives ['Was the team's work hampered?', 'Was the work of the team hindered?', 'Was the team's work hindered?']",
+   "까닭": "두 파일의 alternatives 가 고칠 글 셋과 글자 그대로 같음(새 칸) · 셋 다 main 채점 만점(옛 참조 셋 다 0점). 모범 · 짝 '그 팀의 일이 방해받았나?' 그대로 · 옆 n=41 은 E11 · 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:27"
+  },
+  "P22": {
+   "id": "P22",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[12] n=50 'When did the budget office project a surplus?' alternatives ['…predict a surplus?', '…forecast a surplus?']",
+   "까닭": "두 파일의 alternatives 가 고칠 글 둘과 같음(새 칸) · 둘 다 main 채점 만점(옛 참조 0점). 모범 · 짝 '언제 그 예산 사무소가 흑자를 예측했나?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P23": {
+   "id": "P23",
+   "판정": "제대로",
+   "main 글": "gh1-119 .blocks[3].items[28] · gh1-119-2 .blocks[1].items[10] n=66 'We are going to do that another time.' alternatives 14(옛 3 + 'next time' 둘 + E29 'do it' 넷 + 결정 C 'We'll do it next time.' · 'later' 꼴 등)",
+   "까닭": "고칠 글 다섯(옛 셋 + 'We are going to do that next time.' · 'We will do that next time.')이 두 파일 모두 글자 그대로 · next time 둘 main 채점 만점(옛 참조 0점). 결정 C 표에 없는 'We are going to do it some other time.' 은 같은 칸의 E29 고칠 글. 모범 · 짝 '우리는 다음에 그것을 할 거야.' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P24": {
+   "id": "P24",
+   "판정": "제대로",
+   "main 글": "gh1-121 .blocks[3].items[33] · gh1-121-2 .blocks[1].items[14] n=34 'Arabs and Israelis must make a choice.' alternatives [고칠 글 3 + 'have to' · 'should' 꼴]",
+   "까닭": "두 파일 모두 the 꼴 셋이 글자 그대로 앞 세 칸 · 셋 다 main 채점 만점(옛 참조 0점 · 70점 · 70점). 'have to' · 'should' 꼴은 결정 C 표. 모범 · 짝 '아랍인들과 이스라엘인들은 하나의 선택을 해야 한다.' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P25": {
+   "id": "P25",
+   "판정": "제대로",
+   "main 글": "gh1-123 · gh1-123-1 .blocks[3].items[7] n=45 'Those claims are unreliable.' alternatives ['Such claims are unreliable.' + 결정 C 5]",
+   "까닭": "두 파일 모두 'Such claims are unreliable.' 글자 그대로 첫 칸(새 칸) · main 채점 만점(옛 참조 0점). 나머지 다섯('not reliable' · 'no credibility' 등)은 결정 C 표 · 뜻 맞음. 모범 · 짝 '그런 주장들은 신뢰성이 없다.' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P26": {
+   "id": "P26",
+   "판정": "제대로",
+   "main 글": "gh1-123 · gh1-123-1 .blocks[3].items[8] n=46 'Do they change their stories frequently?' alternatives [고칠 글 3 + 'their story' 꼴 2]",
+   "까닭": "두 파일 모두 often 두 꼴 · 'frequently' 앞자리 꼴이 글자 그대로 · main 채점 만점(옛 참조 0점 · 0점 · 70점). 'their story' 두 꼴은 결정 C 표. 모범 · 짝 '그들은 자주 그들의 이야기를 바꾸나?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P27": {
+   "id": "P27",
+   "판정": "제대로",
+   "main 글": "gh1-123 · gh1-123-1 .blocks[3].items[13] n=51 'Could you just have a seat for a moment?' alternatives ['Could you just sit down for a moment?' + 결정 C 6]",
+   "까닭": "두 파일 모두 'sit down' 꼴 글자 그대로 첫 칸(새 칸) · main 채점 만점(옛 참조 0점). 나머지 여섯은 결정 C 표. 모범 · 짝 '당신은 잠시 동안만 앉으실 수 있습니까?' 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P28": {
+   "id": "P28",
+   "판정": "제대로",
+   "main 글": "gh1-123 · gh1-123-1 .blocks[3].items[17] n=55 'We are free men.' alternatives ['We are free people.']",
+   "까닭": "두 파일 모두 고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 0점). 모범 'free men' 은 그대로(결정 13). 짝 '우리는 자유인이다.' · 옆 n=54 · 56 은 다른 정답만.",
+   "때": "2026-09-25 04:27"
+  },
+  "P89": {
+   "id": "P89",
+   "판정": "제대로",
+   "main 글": "gh1-012 .blocks[3].items[34] · gh1-012-2 .blocks[1].items[16] n=35 '그는 무엇이었니? (뭐 하는 사람이었니?)'",
+   "까닭": "두 파일의 한국어 문제가 고칠 글과 글자 그대로 같음(스크립트로 비교). 옛 '뭐하는 사람이었니' 는 main grammar1 어디에도 안 남음. 영어 짝 gh1-013 · gh1-013-2 'What was he?' 그대로(결정 C 다른 정답만) · 옆 n=34 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P90": {
+   "id": "P90",
+   "판정": "제대로",
+   "main 글": "gh1-020 blocks[2] '(1)…영어의 문장 순서는?' · [6] '(3)…써야 하는 be동사는?' · [8] '(4)…써야 하는 be동사는?' · [10] '(5)…써야 하는 be동사는? (we, you, they, those 등)'",
+   "까닭": "네 칸 모두 고칠 글과 글자 그대로 같음(스크립트로 칸마다 비교 4/4). 다른 instruction 칸((2) · (6) · (7) · (8) · '답:')과 문장 24칸은 안 바뀜 · 나눈 쪽 파일 없음. '문장순서 · 써야하는 · be 동사는' 은 main content · src/lib 어디에도 안 남음.",
+   "때": "2026-09-25 04:27"
+  },
+  "P91": {
+   "id": "P91",
+   "판정": "제대로",
+   "main 글": "gh1-021 blocks[2] · [3] · [6] · [8] · [10] · [13] · [15] · [17] (예: [17] '…주어가 I일 때의 축약형은 Aren't I …?이다 (ain't는 표준 영어가 아님).')",
+   "까닭": "여덟 칸 모두 고칠 글과 글자 그대로 같음(스크립트로 칸마다 비교 8/8 — '그다음에' · '주격 보어' · 'I일' · '…?이다' · 'ain't는' 포함). 나머지 instruction 칸 그대로. 같은 파일 문장 칸 n=6 · 9 · 15 는 결정 C 다른 정답만 늘어남(글 그대로). 나눈 쪽 없음 · 옛 표기 main 어디에도 안 남음.",
+   "때": "2026-09-25 04:27"
+  },
+  "P92": {
+   "id": "P92",
+   "판정": "제대로",
+   "main 글": "gh1-050 .blocks[3].items[24] · gh1-050-2 .blocks[1].items[3] n=25 '그는 너의 남자 친구냐?'",
+   "까닭": "두 파일 모두 고칠 글과 글자 그대로 같음 · '남자친구냐' main 어디에도 안 남음. 영어 짝 'Is he your boyfriend?' · 옆 n=24 · 26 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P93": {
+   "id": "P93",
+   "판정": "제대로",
+   "main 글": "gh1-052 .blocks[3].items[24] · gh1-052-2 .blocks[1].items[4] n=25 '그는 그녀의 남자 친구였니?'",
+   "까닭": "두 파일 모두 고칠 글과 글자 그대로 같음 · 옛 글 안 남음. 영어 짝 'Was he her boyfriend?' · 옆 n=24 · 26 그대로.",
+   "때": "2026-09-25 04:27"
+  },
+  "P94": {
+   "id": "P94",
+   "판정": "제대로",
+   "main 글": "gh1-061 .blocks[3].items[3] n=4 'How much do you want?' alternatives ['How many do you want?']",
+   "까닭": "고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 70점). 나눈 쪽 없음(확인). 모범 · 짝 gh1-060 '너는 얼마나 많이 원하나?' · 옆 n=5 그대로 · n=3 은 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:27"
+  },
+  "P95": {
+   "id": "P95",
+   "판정": "제대로",
+   "main 글": "gh1-069 .blocks[4].items[0] n=79 'Not every boy received a prize, did he?' alternatives [고칠 글 3 + 'got/won a prize' 꼴 3]",
+   "까닭": "고칠 글 셋(옛 둘 + 'Every boy didn't receive a prize, did they?')이 글자 그대로 앞 세 칸 · 새 답 main 채점 만점(옛 참조 70점). 나머지 셋은 결정 C 표. 나눈 쪽 없음(확인). 모범 · 짝 gh1-068 '모든(every) 소년이 상을 하나 받지는 않았죠?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P96": {
+   "id": "P96",
+   "판정": "제대로",
+   "main 글": "gh1-084 .blocks[3].items[10] n=11 '그 여인이 한 통의 편지를 받았다.(receive, letter)'",
+   "까닭": "고칠 글과 글자 그대로 같음(힌트 '(receive, letter)' 그대로) · '한통의 편지' main 어디에도 안 남음 · 나눈 쪽 파일 없음(확인). 영어 짝 gh1-085 'The woman received a letter.' · 옆 n=10 · 12 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P97": {
+   "id": "P97",
+   "판정": "제대로",
+   "main 글": "gh1-084 .blocks[3].items[27] n=28 '그녀가 한 통의 편지를 받지 않았나?'",
+   "까닭": "고칠 글과 글자 그대로 같음 · 옛 글 안 남음. 영어 짝 'Didn't she receive a letter?' 그대로(결정 C 다른 정답만 늘어남) · 옆 n=27 · 29 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P98": {
+   "id": "P98",
+   "판정": "제대로",
+   "main 글": "gh1-092 .blocks[3].items[16] n=55 '그 법은 이달에 발효하지?'",
+   "까닭": "고칠 글과 글자 그대로 같음 · 옛 '이 달에' 안 남음 · 나눈 쪽 없음(확인). 영어 짝 gh1-093 'The law takes effect this month, doesn't it?' 그대로(결정 C 다른 정답만) · 옆 n=54 · 56 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P99": {
+   "id": "P99",
+   "판정": "제대로",
+   "main 글": "gh1-097 .blocks[3].items[2] n=79 text 'Not every boy lost his life, did he?' alternatives ['Every boy didn't lose his life, did he?', 'Not every boy lost his life, did they?', 'Every boy didn't lose his life, did they?', 'Not every boy died, did he?']",
+   "까닭": "고칠 곳대로 .text 가 소유자 답 3 의 'Not every boy lost his life, did he?' 로 바뀌고 옛 모범이 첫 다른 정답으로 옮겨짐 · 고칠 글 셋 글자 그대로 · they 꼬리 둘 main 채점 만점(옛 참조 0점 · 70점). 'Not every boy died, did he?' 는 결정 C 표. 짝 gh1-096 '모든 소년이 목숨을 잃지는 않았지?(Every)' 그대로. (.text 가 바뀐 영어 문장의 음성은 소유자 답 3 · 수정 세션 몫 — 이 판정에 안 넣음)",
+   "때": "2026-09-25 04:28"
+  },
+  "P100": {
+   "id": "P100",
+   "판정": "제대로",
+   "main 글": "gh1-097 .blocks[3].items[4] n=81 text 'Not all the boys protected their sisters, did they?' alternatives ['All the boys didn't protect their sisters, did they?', 'Not all of the boys protected their sisters, did they?']",
+   "까닭": ".text 가 소유자 답 3 의 글로 바뀌고 alternatives 가 고칠 글 둘과 글자 그대로 같음 · 'all of the boys' 꼴 main 채점 만점(옛 참조 70점). 짝 '그 모든 소년들이 그들의 누이를 보호하지는 않았지?' 그대로 · 옆 n=80 그대로 · n=82 는 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:28"
+  },
+  "P101": {
+   "id": "P101",
+   "판정": "제대로",
+   "main 글": "gh1-106 .blocks[3].items[33] n=34 '그가 잘했니(일을 잘했니)?'",
+   "까닭": "고칠 글과 글자 그대로 같음(두 곳 모두 붙임) · 옛 글 안 남음 · 나눈 쪽 없음(확인). 영어 짝 'Did he do a good job?' 그대로(결정 C 다른 정답만) · 옆 n=33 · 35 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P102": {
+   "id": "P102",
+   "판정": "제대로",
+   "main 글": "gh1-108 .blocks[3].items[14] n=50 '그들은 함께할 시간이 없지?'",
+   "까닭": "고칠 글과 글자 그대로 같음 · 옛 '함께 할' 안 남음 · 나눈 쪽 없음(확인). 영어 짝 gh1-109 'They do not have time to get together, do they?' 그대로(E5 · 결정 C 다른 정답만) · 옆 n=49 · 51 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P103": {
+   "id": "P103",
+   "판정": "제대로",
+   "main 글": "gh1-112 · gh1-112-1 .blocks[3].items[15] n=124 '이 길이 나를 집으로 데려가 주나(이 길로 가면 우리 집으로 가나)?'",
+   "까닭": "두 파일 모두 고칠 글과 글자 그대로 같음 · '데려가주나' 안 남음. 영어 짝 gh1-113 · gh1-113-1 'Does this road take me home?' 그대로(결정 C 다른 정답만) · 옆 n=123 · 125 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P104": {
+   "id": "P104",
+   "판정": "제대로",
+   "main 글": "gh1-116 · gh1-116-1 .blocks[3].items[9] n=10 '그 프로그램이 테러분자들을 뿌리뽑을 수 있나?'",
+   "까닭": "두 파일 모두 고칠 글과 글자 그대로 같음 · '뿌리 뽑을' main 어디에도 안 남음. 영어 짝 'Can the program root out terrorists?' 그대로(결정 C 다른 정답만) · 옆 n=9 · 11 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "P105": {
+   "id": "P105",
+   "판정": "제대로",
+   "main 글": "gh1-119 .blocks[3].items[23] · gh1-119-2 .blocks[1].items[5] n=61 'They're not all like you, are they?' alternatives ['Not all of them are like you, are they?']",
+   "까닭": "두 파일 모두 고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 70점). 모범 · 짝 '그들이 모두 너 같지는 않지?' 그대로 · 옆 n=60 은 E15 · 결정 C 다른 정답만 · n=62 도 다른 정답만.",
+   "때": "2026-09-25 04:28"
+  },
+  "P106": {
+   "id": "P106",
+   "판정": "제대로",
+   "main 글": "gh1-118 .blocks[3].items[30] · gh1-118-2 .blocks[1].items[12] n=68 '너는 그런 말 하지 않았지?'",
+   "까닭": "두 파일 모두 고칠 글과 글자 그대로 같음 · 옛 '그런 말하지' 안 남음. 영어 짝 'You didn't say that, did you?' 그대로(E16 · 결정 C 다른 정답만) · 옆 n=67 · 69 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E1": {
+   "id": "E1",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[1] n=37 'They will be sophomores, won't they?' alternatives [고칠 글 3 + 'They are going to be sophomores, aren't they?']",
+   "까닭": "고칠 글 셋(옛 하나 + 'second-year students' 둘)이 글자 그대로 앞 세 칸 · 새 둘 main 채점 만점(옛 참조 0점). 넷째는 결정 C 표. 나눈 쪽 없음(확인). 모범 · 짝 '그들은 2학년생이 되겠지?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E2": {
+   "id": "E2",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[8] n=44 'German is an elective, isn't it?' alternatives ['…an elective subject…', '…an optional subject…', '…an elective course…']",
+   "까닭": "고칠 글 둘이 글자 그대로 앞 두 칸(새 칸) · main 채점 만점(옛 참조 70점 · 0점). 셋째는 결정 C 표. 모범 · 짝 '독일어는 선택과목이지?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E3": {
+   "id": "E3",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[9] n=45 'How many English classes does he have a week?' alternatives ['…per week?', '…every week?', '…in a week?', 'How many English lessons does he have a week?']",
+   "까닭": "고칠 글 셋 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점 · 70점 · 70점). 넷째는 결정 C 표. 모범 · 짝 '그는 일주일에 얼마나 많은 영어 수업이 있나?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E4": {
+   "id": "E4",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[13] n=49 'Recently he opened a third, didn't he?' alternatives [고칠 글 3 + 결정 C 2]",
+   "까닭": "고칠 글 셋('a third one' · 부사 앞자리 꼴) 글자 그대로(새 칸) · main 채점 만점(옛 참조 셋 다 70점). 'Recently, he opened the third one…' · 'He opened a third one recently…' 는 결정 C 표. 모범 · 짝 '최근에 그는 세 번째를 열었지?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E5": {
+   "id": "E5",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[14] n=50 'They do not have time to get together, do they?' alternatives ['…to spend together…', '…to be together…' + don't 꼴 2 + 'They have no time to get together, do they?']",
+   "까닭": "고칠 글 둘 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 셋은 결정 C 표. 모범 그대로 · 한국어 짝은 P102 대로 '그들은 함께할 시간이 없지?' 로 바뀜(맞게).",
+   "때": "2026-09-25 04:28"
+  },
+  "E6": {
+   "id": "E6",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[17] n=53 'When did he recommend a nearby candy shop?' alternatives ['…a nearby candy store?' + 결정 C 3]",
+   "까닭": "'candy store' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 셋('candy shop nearby' · 'candy store nearby' · 'sweet shop')은 결정 C 표. 모범 그대로 · 한국어 짝이 '사탕가게' → '사탕 가게' 로 띄어짐(다른 고침 — 망가짐 아님).",
+   "때": "2026-09-25 04:28"
+  },
+  "E7": {
+   "id": "E7",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[18] n=54 'Why did the President criticize the Japanese economy severely?' alternatives [고칠 글 3 + 결정 C 2]",
+   "까닭": "고칠 글 셋 글자 그대로(새 칸) · main 채점 만점(옛 참조 70점 · 0점 · 0점). 소문자 president · \"Japan's economy\" 꼴은 결정 C 표. 모범 · 짝 '왜 그 대통령은 일본 경제를 심하게 비판했나?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E8": {
+   "id": "E8",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[20] n=56 'The relief foundation is denying any link to terrorism, isn't it?' alternatives [고칠 글 2 + 결정 C 3]",
+   "까닭": "'connection to' · 'links to' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점 · 70점). 'aid foundation' · 'link with' · 'connection with' 는 결정 C 표. 모범 · 짝 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E9": {
+   "id": "E9",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[30] n=66 'The government was freezing the assets of terrorist groups.' alternatives [\"The government was freezing terrorist groups' assets.\", '…the assets of terror groups.']",
+   "까닭": "소유격 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 'terror groups' 꼴은 결정 C 표. 모범 · 짝 '정부는 테러 집단들의 자산을 동결시키고 있었다.' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E10": {
+   "id": "E10",
+   "판정": "제대로",
+   "main 글": "gh1-109 .blocks[3].items[32] n=68 'Where are many athletes training?' alternatives ['Where are many players training?', 'Where are a lot of athletes training?', 'Where are lots of athletes training?']",
+   "까닭": "alternatives 가 고칠 글 셋과 글자 그대로 같음(새 칸) · 셋 다 main 채점 만점(옛 참조 셋 다 0점). 모범 · 짝 '많은 선수들이 어디에서 훈련하고 있나?' · 옆 n=69 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E11": {
+   "id": "E11",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[3] n=41 'The team was able to obtain numerous samples, wasn't it?' alternatives [고칠 글 4 + 결정 C 2]",
+   "까닭": "두 파일 모두 고칠 글 넷(옛 'could obtain' + get · many 꼴 셋)이 글자 그대로 앞 네 칸 · 새 셋 main 채점 만점(옛 참조 셋 다 0점). 'a lot of samples' · 'could get many samples' 는 결정 C 표. 모범 · 짝 '그 팀은 수많은 샘플을 얻을 수 있었지?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E12": {
+   "id": "E12",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[7] n=45 'The telescope is not yet completely online, is it?' alternatives [고칠 글 3 + 결정 C 3]",
+   "까닭": "두 파일 모두 고칠 글 셋 글자 그대로(새 칸) · main 채점 만점(옛 참조 70점 · 0점 · 0점). 'completely connected' · \"isn't … yet\" 꼴은 결정 C 표(한국어 '완전히 연결되어' 와 맞음). 모범 · 짝 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E13": {
+   "id": "E13",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[8] n=46 'Are mission managers pleased with progress?' alternatives ['Are the mission managers pleased with the progress?', 'Are mission managers happy with progress?', 'Are the mission managers happy with the progress?']",
+   "까닭": "두 파일의 alternatives 가 고칠 글 셋과 글자 그대로 같음(새 칸) · 셋 다 main 채점 만점(옛 참조 셋 다 0점). 모범 · 짝 '임무 관리자(운영자, 책임자)들이 진전에 기뻐하나?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E14": {
+   "id": "E14",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[9] n=47 'When did the Hubble get more powerful solar wings?' alternatives ['When did Hubble get more powerful solar wings?', 'When did the Hubble obtain more powerful solar wings?']",
+   "까닭": "두 파일 모두 관사 없는 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 70점). 'obtain' 꼴은 결정 C 표. 모범 · 짝 '언제 허블이 더 강력한 태양날개를 얻었나?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E15": {
+   "id": "E15",
+   "판정": "제대로",
+   "main 글": "gh1-119 .blocks[3].items[22] · gh1-119-2 .blocks[1].items[4] n=60 'Who changed your opinion of Harvard people?' alternatives ['…opinion about…', '…opinion on…', '…view of…', '…opinion of people from Harvard?']",
+   "까닭": "두 파일 모두 고칠 글 둘 글자 그대로(새 칸) · main 채점 만점(옛 참조 둘 다 70점). 나머지 둘은 결정 C 표. 모범 · 짝 '누가 하버드 사람들에 대한 너의 의견을 바꾸었니?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E16": {
+   "id": "E16",
+   "판정": "제대로",
+   "main 글": "gh1-119 .blocks[3].items[30] · gh1-119-2 .blocks[1].items[12] n=68 \"You didn't say that, did you?\" alternatives [\"You didn't say such a thing, did you?\", '…that kind of thing…', \"You didn't say so, did you?\"]",
+   "까닭": "두 파일 모두 'such a thing' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 나머지 둘은 결정 C 표. 모범 그대로 · 한국어 짝은 P106 대로 '너는 그런 말 하지 않았지?'(맞게).",
+   "때": "2026-09-25 04:28"
+  },
+  "E17": {
+   "id": "E17",
+   "판정": "제대로",
+   "main 글": "gh1-119 .blocks[3].items[32] · gh1-119-2 .blocks[1].items[14] n=70 \"We went to college together, didn't we?\" alternatives [\"We went to university together, didn't we?\", \"We attended college together, didn't we?\"]",
+   "까닭": "두 파일 모두 'university' 꼴 글자 그대로(새 칸) · main 채점 만점(옛 참조 0점). 'attended' 꼴은 결정 C 표. 모범 · 짝 '우리는 함께 대학에 다녔지?' · 옆 n=71 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E26": {
+   "id": "E26",
+   "판정": "제대로",
+   "main 글": "gh1-113 · gh1-113-1 .blocks[3].items[16] n=125 \"That's beyond me.\" alternatives [\"It's beyond me.\", \"That's beyond my ability.\", \"It's beyond my ability.\"]",
+   "까닭": "두 파일 모두 \"It's beyond me.\" 글자 그대로 첫 칸(새 칸) · main 채점 만점(옛 참조 70점). 'beyond my ability' 두 꼴은 결정 C 표(한국어 '내 능력 밖이다' 와 맞음). 모범 · 짝 '그것은 내 능력 밖이다.' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E27": {
+   "id": "E27",
+   "판정": "제대로",
+   "main 글": "gh1-113 .blocks[3].items[27] · gh1-113-2 .blocks[1].items[9] n=136 'Does that make sense?' alternatives ['Does it make sense?']",
+   "까닭": "두 파일 모두 고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 70점). 모범 · 짝 '그것이 말이 되나?' · 옆 n=137 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E28": {
+   "id": "E28",
+   "판정": "제대로",
+   "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[14] n=52 'Is that less than President Bush estimated?' alternatives ['Is that smaller than…', 'Is it less than President Bush estimated?', 'Is it smaller than President Bush estimated?']",
+   "까닭": "기계가 '글자 그대로는 없음' 이라 한 것은 고칠 글이 두 문장을 ' · ' 로 이은 꼴이라서 — 두 문장 모두 두 파일에 글자 그대로 있고(옛 'Is that smaller…' 도 남음) main 채점 만점(옛 참조 둘 다 70점). 모범 · 짝 '그것은 부시 대통령이 추산한 것보다 적나?' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "E29": {
+   "id": "E29",
+   "판정": "제대로",
+   "main 글": "gh1-119 .blocks[3].items[28] · gh1-119-2 .blocks[1].items[10] n=66 (P23 과 같은 칸) alternatives 14 — 'We are going to do it another time.' · '…it some other time.' · 'We will do it another time.' · '…it some other time.' 포함",
+   "까닭": "고칠 글 네 문장이 두 파일 모두 글자 그대로 있음(기계의 '글자 그대로는 없음' 은 ' · ' 로 이은 꼴 탓) · 넷 다 main 채점 만점(옛 참조 넷 다 70점). 같은 칸의 next time · later 꼴은 P23 고칠 글과 결정 C 표(gh1-118#66). 모범 · 짝 '우리는 다음에 그것을 할 거야.' 그대로.",
+   "때": "2026-09-25 04:28"
+  },
+  "D1": {
+   "id": "D1",
+   "판정": "제대로",
+   "main 글": "gh1-007 · gh1-007-2 n=40 'Is it cold?' alt ['Is the weather cold?'] · gh1-009 · gh1-009-2 n=40 'Was it cold yesterday?' alt ['Was the weather cold yesterday?'] · n=42 'It was warm yesterday.' alt ['Yesterday was warm.', 'Yesterday it was warm.'] · gh1-053 · gh1-053-2 n=40 'It was cold yesterday.' alt ['Yesterday was cold.', 'Yesterday it was cold.']",
+   "까닭": "추천안(전수/결과.md 판단 필요 표 1)의 네 답이 적힌 여덟 파일 칸 모두에 글자 그대로 있고 main 채점 만점. 모범(비인칭 it)은 네 문항 모두 그대로. 추천안이 빼라 한 것도 지켜짐: '몇 시니?'(n=38)에 'What's the time?' 없음 · 한국어에 '날씨' 없는 문항(n=41 · 42 등)에 'the weather' 없음 · '어제는 더웠니?'(gh1-052 · gh1-062 · gh1-074) · '오늘 따뜻한가?' · '지난주는 더웠니?' 의 영어에 다른 정답 없음(Was yesterday … 꼴 없음). 'Yesterday it was …' · 'No, yesterday was not cold.' 등은 결정 C 표의 답(추천안 범위 'Yesterday was …' 평서문과 맞음).",
+   "때": "2026-09-25 04:28"
+  }
+ }
+}

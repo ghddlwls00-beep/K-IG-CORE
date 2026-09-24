@@ -1,0 +1,118 @@
+{
+ "조각": "줄-문법2",
+ "뽑은때": "2026-09-25 05:01",
+ "대상": [
+  {
+   "key": "P30",
+   "까닭": "제대로 · 괜찮음이 아님 — 전부",
+   "주장": {
+    "id": "P30",
+    "판정": "옆 글을 망침",
+    "main 글": "gh2-013-1 .blocks[1].items[4] n=5 '나는 그를 군인으로서 존경한다.' · 짝 gh2-013 .blocks[1].items[4] n=5 'I respect him as a soldier.' alternatives ['As a soldier, I respect him.']",
+    "까닭": "한국어는 고칠 글과 글자 그대로 같음(옛 글 안 남음). 그런데 짝 영어 칸에 결정 C 가 더한 다른 정답 'As a soldier, I respect him.'(main 만점 · 화면 '다른 정답' 에 보임)의 결정 C 까닭은 '한국어 나는 군인으로서 그를 은 군인인 내가 로(오히려 더 자연스럽게) 읽힘 — 그 뜻의 맞는 영어' — 옛 한국어에 기댄 답(결정 C 를 잰 5412468 문항.json 의 ko 도 옛 글 '나는 군인으로서 그를 존경한다.'). P30 은 바로 그 읽힘을 없애려고 한국어를 '그를 군인으로서' 로 바꿈(P30 까닭: 'As a soldier, I respect him' = 군인인 내가). 두 고침이 함께 들어가 지금은 한국어(그가 군인)와 다른 정답(내가 군인)의 뜻이 엇갈림 — 1부 결과 표 1행(gh2-030 #10: 한국어를 고친 뒤 옛 뜻에 맞춘 다른 정답이 남아 만점 · 높음)과 같은 종류. 결정 C 표의 이 문항 '겹침' 칸이 비어 있어(전수 표 #30 을 못 봄) 겹침이 안 걸린 듯. 옆 n=4 · 6 은 그대로(영어 n=4 는 결정 C 다른 정답만).",
+    "고칠 것": "content/lessons/grammar2/gh2-013.json .blocks[1].items[4] (n=5) .alternatives 에서 'As a soldier, I respect him.' 을 뺌(하나뿐이라 alternatives 키째) — 한국어 P30 고침은 그대로 둠. (다른 길: P30 을 되돌려 옛 한국어로 두고 다른 정답을 둠 — 한국어와 모범 'I respect him as a soldier.' 가 다시 엇갈려 권하지 않음. 결정 C · 전수 표 둘 다 소유자 '추천대로' 라 어느 쪽인지 소유자에게 한 줄 알림.)",
+    "때": "2026-09-25 04:53"
+   }
+  },
+  {
+   "key": "E18",
+   "까닭": "제대로 · 괜찮음이 아님 — 전부",
+   "주장": {
+    "id": "E18",
+    "판정": "옆 글을 망침",
+    "main 글": "gh2-022 .blocks[1].items[1] n=2 'You owe me nothing.' alternatives [\"You don't owe me anything.\", \"You don't owe me a thing.\"] · 짝 gh2-022-1 .blocks[1].items[1] n=2 {text '너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).', alternatives [\"You don't owe me anything.\"]}",
+    "까닭": "영어 칸은 제대로: 고칠 글이 글자 그대로 첫 칸 · main 채점 만점(옛 0점) · 대조 'You owe me anything.' · \"You don't owe me nothing.\" · \"I don't owe you anything.\" · 'You owe me something.' main 0점 · 'You do not owe me anything.' 만점 · 둘째는 결정 C 표. 그런데 고칠 곳이 '(한국어 gh2-022-1.json 은 그대로)' 라 했는데 한국어 칸에도 alternatives [\"You don't owe me anything.\"] 가 새로 생김 — main GRAMMAR I · II 모든 파일에서 한국어 글 칸에 alternatives 가 있는 곳은 이 하나뿐(스크립트로 셈 · 옛 판 0). 기계 줄이 두 파일에서 찾은 것도 이 때문. 앱은 다른 정답을 영어 쪽 칸에서만 가져와(GrammarLearningView.tsx 187~211행 — 작업 트리와 본 저장소 파일이 같은 해시) src/lib 에도 alternatives 를 읽는 곳이 grammarGrading 말고 없어, 지금 화면 · 채점에는 안 보이는 데이터 흠. 한국어 글 '아무것도' 는 1부 결과 표 95행 고침(맞음). 적용 도구가 괄호 안의 파일 이름을 분할본처럼 읽은 듯(추정) — 줄.json 전체에서 고칠 곳에 '… 은 그대로' 파일 이름이 든 문법 줄은 이것 하나. 옆 n=1 · 3 그대로(영어는 결정 C 다른 정답만).",
+    "고칠 것": "content/lessons/grammar2/gh2-022-1.json .blocks[1].items[1] (n=2) 에서 alternatives 키를 지움(text '너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).' 는 그대로). 영어 gh2-022.json n=2 는 그대로.",
+    "때": "2026-09-25 04:54"
+   }
+  },
+  {
+   "key": "P47",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P47",
+    "판정": "제대로",
+    "main 글": "gh2-036 .blocks[1].items[12] n=13 'He was selling TV sets at cost to get rid of an overstock.' alternatives ['He was selling television sets at cost to get rid of an overstock.' + 결정 C 4]",
+    "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 나머지 넷(overstock 관사 없음 · TVs · in order to · excess stock)은 결정 C 표. 대조 'radio sets' 꼴 main 0점. 모범 · 짝 '그는 과잉재고를 없애기 위하여 텔레비전 수상기를 원가에 팔고 있었다.' 그대로 · 옆 n=12 · 14 결정 C 다른 정답만.",
+    "때": "2026-09-25 04:53"
+   }
+  },
+  {
+   "key": "P44",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P44",
+    "판정": "제대로",
+    "main 글": "gh2-033 .blocks[1].items[5] n=6 'Would you like to hold on or call again?' alternatives ['Do you want to hold on or call again?' + 결정 C 3(call back · hold · wait)]",
+    "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 나머지 셋은 결정 C 표. 대조 'hang up' 꼴 main 0점. 모범 · 짝 '당신은 들고 계시기를 원합니까, 다시 걸기를 원하십니까? (기다리시겠어요, 다시 거시겠어요?)' 그대로 · 옆 영어 n=5 · 7 결정 C 다른 정답만 · 한국어 n=7 '사업 상' → '사업상' 은 1부 결과 표 102행 고침(맞음).",
+    "때": "2026-09-25 04:53"
+   }
+  },
+  {
+   "key": "P45",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P45",
+    "판정": "제대로",
+    "main 글": "gh2-033 .blocks[1].items[7] n=8 'Would you like to leave your name and phone number?' alternatives ['Do you want to leave your name and phone number?' + 결정 C 2(telephone number · number)]",
+    "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘은 결정 C 표. 대조 'name and address' 꼴 main 0점. 모범 · 짝 '당신은 당신의 이름과 전화번호를 남겨 놓기를 원하십니까?' 그대로 · 옆 영어 n=7 · 9 결정 C 다른 정답만 · 한국어 n=7 은 1부 결과 표 102행 고침(맞음).",
+    "때": "2026-09-25 04:53"
+   }
+  },
+  {
+   "key": "P42",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P42",
+    "판정": "제대로",
+    "main 글": "gh2-029 .blocks[1].items[7] n=8 \"I'd like to know a phone number in Seoul, Korea.\" alternatives ['I want to know a phone number in Seoul, Korea.' + 결정 C 2(telephone · South Korea)]",
+    "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘은 결정 C 표. 대조 'Busan' 꼴 main 0점. 모범 · 짝 '저는 한국 서울의 전화번호를 알고 싶습니다.' 그대로 · 옆 n=7 · 9 결정 C 다른 정답만.",
+    "때": "2026-09-25 04:53"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "P30",
+   "결론": "동의",
+   "바른 판정": "옆 글을 망침",
+   "까닭": "main 스냅 gh2-013-1.json .blocks[1].items[4] n=5 text '나는 그를 군인으로서 존경한다.' — 고칠 글과 글자 그대로(옛 '나는 군인으로서 그를' 안 남음 · 이 문장이 든 파일은 gh2-013 · gh2-013-1 둘뿐, Grep). 짝 영어 gh2-013.json n=5 text 'I respect him as a soldier.' 그대로 · alternatives ['As a soldier, I respect him.'] 하나 — 결정 C 표 688행이 넣은 것(까닭 '한국어 나는 군인으로서 그를 은 군인인 내가 로(오히려 더 자연스럽게) 읽힘 — 그 뜻의 맞는 영어' · 겹침 칸 비어 있음 · 결정 C 가 잰 채점/문항.json 의 ko 는 옛 글 '나는 군인으로서 그를 존경한다.'). 전수 표 #30 의 까닭은 바로 'As a soldier, I respect him' = 군인인 내가 라서 '군인으로서' 를 목적어 뒤로 옮긴 것 — 두 고침이 함께 들어가 지금 한국어(그가 군인)와 다른 정답(내가 군인)이 엇갈림. 스냅 src/lib/grammarGrading.ts 를 불러 잼(도구 확인 셋 통과): 'As a soldier, I respect him.' main 만점(모범만 참조면 0점) · 'I respect him as a soldier.' 만점 — 앱은 이 글을 화면에 '다른 정답: …' 으로도 보임(GrammarLearningView.tsx 927~929). 1부 결과 머리 높음 ①(gh2-030 한국어를 '잔인하다' 로 고친 뒤 옛 뜻 'very bad' 가 만점)과 같은 종류 → 짝 어긋남 · 다른 뜻 = 옆 글을 망침. 옆 n=4 · 6 한국어 그대로 · 영어 n=4 는 결정 C 687행 두 다른 정답만 · n=6 다른 정답 없음. 고칠 것(gh2-013.json n=5 alternatives 키째 지움 · P30 한국어는 그대로 · 두 고침 모두 소유자 '추천대로' 라 소유자에게 한 줄 알림)도 맞음 — 되돌리는 길은 한국어와 모범 'I respect him as a soldier.' 가 다시 엇갈려 권하지 않는다는 데 동의.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "E18",
+   "결론": "동의",
+   "바른 판정": "옆 글을 망침",
+   "까닭": "main 스냅 gh2-022.json n=2 text 'You owe me nothing.' 그대로 · alternatives [\"You don't owe me anything.\", \"You don't owe me a thing.\"] — 고칠 글이 첫 칸, 둘째는 결정 C 803행(고칠 곳 gh2-022.json 만 · 겹침 '전수 더한 틀림'). 스냅 grammarGrading: 고칠 글 만점(모범만이면 0점) · 'You do not owe me anything.' · \"You don't owe me a thing.\" 만점 · 'You owe me anything.' · \"You don't owe me nothing.\" · \"I don't owe you anything.\" · 'You owe me something.' · \"You don't owe me everything.\" 0점. 그런데 고칠 곳이 '(한국어 gh2-022-1.json 은 그대로)' 인데 gh2-022-1.json n=2 에 alternatives [\"You don't owe me anything.\"] 가 새로 생김(결정 C 둘째 답은 없음 — E18 고칠 글만 두 파일에 들어간 꼴). 스크립트로 main GRAMMAR I · II 282파일 · alternatives 칸 2,297 을 셈: 한국어 글 칸에 alternatives 가 있는 곳은 이 하나(옛 작업 트리 판 0). 줄.json 에서 고칠 곳에 '… 은 그대로' 파일 이름이 든 문법 줄도 E18 하나 — 기계 줄이 두 파일에서 찾은 것과 맞음. 앱은 영어 쪽 칸의 alternatives 만 씀(GrammarLearningView.tsx 187~211 — 본 저장소 · 작업 트리 파일 해시 같음) · 스냅 src/lib 에서 이 키를 읽는 곳은 grammarGrading 뿐(listeningUtils 의 alternatives 는 빗금 대안) · 본 저장소 scripts/ 에 읽는 곳 없음 → 지금 화면 · 채점 영향 없는 데이터 흠이나 '그대로' 지시와 어긋나 짝 칸이 멀쩡하지 않음 = 옆 글을 망침(영향은 낮음). 한국어 text '너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).' 는 1부 판정(아무 것도 → 아무것도) 대로. 옆 n=1 · 3 한국어 그대로 · 영어는 결정 C 802 · 804행 다른 정답만. 고칠 것(gh2-022-1.json n=2 alternatives 키만 지움 · text · 영어 gh2-022.json 그대로) 맞음.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "P47",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 스냅 gh2-036.json .blocks[1].items[12] n=13 text 'He was selling TV sets at cost to get rid of an overstock.' 그대로 · alternatives 다섯: 첫 칸이 고칠 글 글자 그대로, 나머지 넷(to get rid of overstock · TVs · in order to · excess stock)은 결정 C 994행(겹침 '전수 표 #47' — television sets 는 한 번만 들어감). 스냅 grammarGrading: 고칠 글 만점(모범만이면 0점) · 'radio sets' 꼴 · 'He was buying television sets …' 0점. 짝 한국어 gh2-036-1 n=13 '그는 과잉재고를 없애기 위하여 텔레비전 수상기를 원가에 팔고 있었다.' 그대로 · 한국어 칸 alternatives 없음. 옆 영어 n=12(원래 1 + 결정 C 993행 4) · n=14(결정 C 995행 3)만 · 한국어 n=12 · 14 는 결정 C 표에 적힌 글 그대로.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "P44",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 스냅 gh2-033.json .blocks[1].items[5] n=6 text 'Would you like to hold on or call again?' 그대로 · alternatives 넷: 첫 칸 고칠 글 글자 그대로, 뒤 셋(call back · hold · wait)은 결정 C 947행(겹침 '전수 표 #44' — Do you want 꼴은 한 번만). 스냅 grammarGrading: 고칠 글 만점(모범만이면 0점) · 'hang up' 꼴 · \"Don't you want …\" 0점. 짝 한국어 gh2-033-1 n=6 '당신은 들고 계시기를 원합니까, 다시 걸기를 원하십니까? (기다리시겠어요, 다시 거시겠어요?)' 그대로 · 한국어 칸 alternatives 없음. 옆 영어 n=5(결정 C 946행 4) · n=7(원래 Pusan 1 + 결정 C 948행 3)만 · 한국어 n=7 '사업상' 은 1부 판정(사업 상 → 사업상) 대로 · n=5 그대로.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "P45",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 스냅 gh2-033.json .blocks[1].items[7] n=8 text 'Would you like to leave your name and phone number?' 그대로 · alternatives 셋: 첫 칸 고칠 글 글자 그대로, 뒤 둘(telephone number · number)은 결정 C 949행(겹침 '전수 표 #45'). 스냅 grammarGrading: 고칠 글 만점(모범만이면 0점) · 'name and address' 꼴은 Do you want · Would you like 둘 다 0점. 짝 한국어 gh2-033-1 n=8 '당신은 당신의 이름과 전화번호를 남겨 놓기를 원하십니까?' 그대로 · 한국어 칸 alternatives 없음. 옆 영어 n=7(위와 같음) · n=9(결정 C 950행 3)만 · 한국어 n=7 1부 고침 대로 · n=9 그대로.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "P42",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 스냅 gh2-029.json .blocks[1].items[7] n=8 text \"I'd like to know a phone number in Seoul, Korea.\" 그대로 · alternatives 셋: 첫 칸 고칠 글 글자 그대로, 뒤 둘(telephone · South Korea)은 결정 C 896행(겹침 '전수 표 #42' — want 꼴은 한 번만). 스냅 grammarGrading: 고칠 글 만점(모범만이면 0점) · 'Busan' 꼴 · \"I don't want …\" 0점. 짝 한국어 gh2-029-1 n=8 '저는 한국 서울의 전화번호를 알고 싶습니다.' 그대로 · 한국어 칸 alternatives 없음. 옆 n=9 는 결정 C 897행 4 뿐 · n=7 은 결정 C 895행 2 에 더해 전수 P41 의 'Operator, I want to call New York, collect.' 도 있음(첫 일꾼의 '옆 n=7 · 9 결정 C 다른 정답만' 은 n=7 에서 조금 덜 정확 — 이 줄 판정엔 영향 없음). 한국어 n=7 · 9 그대로.",
+   "때": "2026-09-25 05:11"
+  }
+ ]
+}

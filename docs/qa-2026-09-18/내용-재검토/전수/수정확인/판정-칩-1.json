@@ -1,0 +1,361 @@
+{
+ "조각": "칩-1",
+ "결과": {
+  "d002": {
+   "id": "d002",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main 힌트 줄 = 1부 C06133 고칠 글. 문장 8 모두 봄(chips-main.cjs): n1 [Rod Watson] [Rodney Hill Watson] [Bob Watson] · n2 [Rod Watson] [Rodney Hill Watson] [Bob Watson] [Denver] [Colorado] · n3 [Clayton Street] [1490] [1490 Clayton Street] · n4 [Bob Watson] [Denver] [Clayton Street] [1490] [1490 Clayton Street] [Madison] [Wisconsin] · n5 [1937] [March 1] · n6 [Bob Watson] [1941] [government employee] · n7 · n8 칩 없음. 전 칩의 붙은 칩 [Bob Watson Denver] · [Wisconsin 1937] 이 풀려 나아짐, 나빠진 문장 없음. 셈 안 한 번짐: n1 [Bob Watson] · n2 [Rod Watson] [Rodney Hill Watson] 은 'Watson' 낱말 일치(앱 규칙 — 1부가 알고 둠). 그 문장의 제 이름 칩이 같이 뜨고 한국어 가이드(n1 '로드 왓슨')도 받치지 않아 오도 아님.",
+   "때": "2026-09-25 04:43"
+  },
+  "d003": {
+   "id": "d003",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06153 고칠 글. 문장 7: n2 [farmhouse] · n4 [60] · 나머지 칩 없음(이름 · 수 없는 문장). 붙은 [farmhouse 60] 이 풀려 나아짐. 번짐 · 나빠진 곳 없음.",
+   "때": "2026-09-25 04:43"
+  },
+  "d004": {
+   "id": "d004",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06177 고칠 글. 문장 10: n1 [Brazil] [South America] · n2 [Brazil] [Portuguese] [South America] · n3 [textile plants manufacture cotton] [linen] [silk products] [rubber plants] [agricultural products] [cotton] · n4 [textile plants manufacture cotton] [silk products] [steel mills] [rubber plants] [agricultural products] · n5 [textile plants manufacture cotton] [coffee] [corn] [cotton] [cocoa] [wheat] [rice] [beans] [bananas] · n6 [Brazil] [Amazon] · n7 [Brazil] [South America] · n8 [clinic] · n9 · n10 칩 없음. 붙은 칩 [Portuguese South America] · [steel mills rubber plants] · [Amazon clinic] 이 풀리고 n9(bus system)의 대본과 다른 [school system] 이 없어져 나아짐. n10 의 [school system] 도 같이 빠졌으나 1부가 '이름 · 수 · 어려운 낱말이 아니라 뺌' 으로 정한 것(흠 아님). 셈 안 한 번짐: n3 · n4 · n5 의 옆 문장 항목은 'plants' · 'products' · 'cotton' 낱말 일치(앱 규칙 — 1부가 둠)이고 그 자리의 제 칩이 같이 뜸 · n7 [South America] 는 'southeastern' 속 'south' 글자 일치(한국어 '브라질 남동부') · n1 [South America] 는 대본 'South American'(형용사)의 곳 이름 참조. [textile plants manufacture cotton] 은 n3 에 글자 그대로 있는 원본 구절.",
+   "때": "2026-09-25 04:43"
+  },
+  "d005": {
+   "id": "d005",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 전수 표 #50 고칠 글. 문장 9: n1 [Tom] [Fred] · n5 [basketball] [baseball] [tennis] · n6 [Tom] [Fred] [seafood] · n7 [hamburgers] [French fries] · n2 · n3 · n4 · n8 · n9 칩 없음 — 전수가 잰 기대 칩과 같음. 붙은 두 칩이 풀려 나아짐, 번짐 없음. [French fries] 대문자는 대본 'french fries' 와 다르나 두 꼴 다 맞는 철자(전수가 둠 · 채점은 대소문자를 안 봄).",
+   "때": "2026-09-25 04:43"
+  },
+  "d006": {
+   "id": "d006",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n2",
+     "칩": "[dental office]",
+     "무엇": "고침 탓 아님 — 전부터 있던 번짐. 'Children like to come to his office.' 에 'office' 낱말 하나로 뜸(앱 규칙). 이 office 는 n5 의 치과 그 자리이고 main 한국어 가이드도 '그의 치과에 오는 것을' 이라, 칩과 한국어가 함께 'his dental office' 로 이끔 — 소리에 없는 'dental' 을 쳐 받아쓰기가 틀릴 수 있는 오도(이 문장의 칩은 이것 하나뿐). 1부 C06224 는 이 두 문장을 안 봄.",
+     "고칠 글": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street."
+    },
+    {
+     "n": "n8",
+     "칩": "[dental office]",
+     "무엇": "같은 까닭 — 'He gets to his office about 8.' 에 'office' 로 뜸, 한국어 가이드 '그는 8시쯤 치과에 도착한다'. 전 칩도 같음.",
+     "고칠 글": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street."
+    }
+   ],
+   "까닭": "main = 1부 C06224 고칠 글. 문장 9: n1 [Dr. William N. Green] [dentist] · n2 [dental office] · n3 [toothaches] [fixes] · n4 [Dr. William N. Green] [Olney] · n5 [Washington D.C.] [dental office] [Washington] [1616 Jefferson Street] [Madison Street] · n6 [6:15] [6:45] [7:15] · n7 [1616 Jefferson Street] [parking lot] [Madison Street] · n8 [dentist] [dental office] · n9 [dentist]. 새 규칙으로 이름이 [Dr. William N. Green] 한 칩, 'D.C.,' 쉼표 덕에 [Washington D.C.](마침표 남음) 와 [dental office] 가 따로 — 전 칩보다 나아짐, 나빠진 문장 없음. 문제는 n2 · n8 의 [dental office] 번짐 하나(위). 고칠 글은 chips-main.cjs 로 잼: n2 칩 없음(수 · 이름 없어 안전장치 안 켜짐) · n5 [Washington D.C.] [dental] [Washington] [1616 Jefferson Street] [Madison Street] · n8 [dentist] · 다른 문장 그대로 — 빠지는 이름 · 수 없음, 새 흠 없음('office' 는 쉬운 낱말이라 뺌). 셈 안 한 번짐: n5 [Madison Street] · n7 [1616 Jefferson Street] 는 'Street' 일치인데 그 문장의 제 거리 칩이 같이 뜸 · n4 [Dr. William N. Green] 은 'Dr. Green' 의 이름 참조 · n8 · n9 [dentist] 는 'dentists' 의 낱말 참조(한국어 '치과의사들').",
+   "때": "2026-09-25 04:43"
+  },
+  "d007": {
+   "id": "d007",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06249 고칠 글. 문장 10: n1 [John Wenger] [Philadelphia] [state of Pennsylvania] [Mrs. Wenger] · n2 [Philadelphia] [state of Pennsylvania] [University of Pennsylvania] · n3 [John Wenger] [Mrs. Wenger] [Germany] [September 9] [1933] [German] · n4 [German] [Polish] [French] [English] · n5 [John Wenger] [German] [French] [English] [Bern] [Switzerland] [November 12] [1931] [Italian] · n6 [John Wenger] [May 9] [1953] [19] [21] · n7 [John Wenger] [Philadelphia] [June 4] [1954] · n8 [Philadelphia] [state of Pennsylvania] [22] [University of Pennsylvania] · n9 [John Wenger] [German] [French] [English] · n10 [John Wenger] [field of medicine]. 새 규칙으로 [Mrs] [Wenger] → [Mrs. Wenger], 붙은 칩(John Wenger Philadelphia · Polish French English · Switzerland November 12 · 19 21 · 22 University of Pennsylvania · John's mother Germany)이 모두 풀려 나아짐, 나빠진 문장 없음. 셈 안 한 번짐: n1 [state of Pennsylvania] 는 'United States' 속 'state' 글자 일치(전 칩도 같음 · 한국어 '미국의 동쪽' 이 받치지 않음) · n2 · n8 의 두 Pennsylvania 칩은 서로 번지나 제 칩이 같이 뜸 · n1 [Mrs. Wenger] · n3 [German](Germany 속 글자)도 제 칩과 같이 · [John Wenger] 는 'John' 의 이름 참조. 날짜가 쉼표에서 [September 9] [1933] 로 뜨는 것은 전과 같고 둘이 늘 함께 뜸.",
+   "때": "2026-09-25 04:43"
+  },
+  "d008": {
+   "id": "d008",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06288 고칠 글. 문장 15: n1 [Dear Peggy] · n3 [20 acres] [5 miles from town] · n7 [living room] [dining room] [kitchen] [4 bedrooms] [bathroom] [Don] · n8 [barn next year] · n9 [modern heating system] · n10 [Don] [corn] [wheat] [vegetables] · n12 [10 cows] [100 chickens] [sheep] [pigs] · n13 [Don] · n15 [Nancy] · 나머지 칩 없음. 붙은 [Don corn] · [sheep pigs] 가 풀려 나아짐. n7 의 [Don] 은 'good one' 속 글자 일치(앱 규칙 — 1부가 알고 둠, 힌트 글로 못 없앰) — 사람 이름이라 그 문장 낱말 자리에 들어갈 여지가 없어 셈 안 함.",
+   "때": "2026-09-25 04:43"
+  },
+  "d010": {
+   "id": "d010",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06328 고칠 글. 문장 8: n1 [get along all right] · n2 [French] [Portuguese] · n4 [Kenya] · n5 [Lake Victoria] [Nile River] · n6 [Sahara Desert] · n7 [Far East] · n8 [four hours] · n3 칩 없음. 붙은 두 칩이 풀려 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:43"
+  },
+  "d011": {
+   "id": "d011",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06355 고칠 글. 문장 11: n1 [Kim Norris] [Ocean City] [New Jersey] [Becky Field] · n2 [Kim Norris] [Laura Beckett] [Washington] · n3 [Laura Beckett] · n4 [Ocean City] [New Jersey] [Becky Field] · n5 [Becky Field] · n6 [New Jersey] · n8 · n9 [boardwalk] · n10 [New Jersey] · n7 · n11 칩 없음. 붙은 [Kim Norris Ocean City] · [Washington boardwalk] 가 풀려 나아짐. n6 · n10 [New Jersey] 는 'the one who' · 'a new white' 속 'new' 일치(앱 규칙 · 전 칩도 같음 — 1부가 둠) — 곳 이름이라 그 문장 자리에 들어갈 여지가 없어 셈 안 함. 이름 칩은 'Kim' · 'Laura' · 'Becky' 의 이름 참조.",
+   "때": "2026-09-25 04:43"
+  },
+  "d014": {
+   "id": "d014",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d014). 문장 10: n1 [athlete] · n6 [Russian] [Portuguese] [German] [Italian] [Chinese] · n7 [Russian] [Portuguese] [German] · n8 · n9 [Chinese] · 나머지 칩 없음. [Italian Chinese] 가 풀려 n8 · n9 에 Italian 이 안 따라옴 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:43"
+  },
+  "d015": {
+   "id": "d015",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d015). 문장 8: n1 [discotheque] · n2 [suit](새로 닿음 — 제 낱말) · n4 · n6 [blonde] · n7 [purple pants] · n3 · n8 칩 없음. n5 의 네 칩은 'Saturday'(대문자 낱말)로 켜진 앱 안전장치(설계 — 셈 안 함, 전 칩도 안전장치) — 기계 표시 넷이 모두 이것. 붙은 [suit blonde purple pants] 와 끝 쉼표가 없어져 나아짐.",
+   "때": "2026-09-25 04:43"
+  },
+  "d016": {
+   "id": "d016",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06456 고칠 글. 문장 9: n1 [Peter Patralis] · n2 [3:30] · n3 [emptied all the trash] [closets] · n4 [Peter Patralis] [9:15] · n7 [Peter Patralis] [frightened] · n9 [Peter Patralis] [convince] · n5 · n6 · n8 칩 없음. [emptied all the trash] 대본 꼴 · 붙은 [frightened convince] 풀림 — 나아짐, 번짐 없음. 기계 표시(n7 · n9 [Peter Patralis] 꼴이 없음)는 바뀐 문장만 본 탓 — n1 에 'Peter Patralis' 그대로 있고 n4 · n7 · n9 는 'Peter' 의 이름 참조.",
+   "때": "2026-09-25 04:43"
+  },
+  "d017": {
+   "id": "d017",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06475 고칠 글. 문장 8: n2 [town] [suburbs] · n3 [valley] [hills] [lake] [coast] [mountains] [woods] · n8 [town](새로 닿음 — 대본 'in town') · 나머지 칩 없음. 물음표 흔적과 [hills? lake] 붙음이 없어져 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:43"
+  },
+  "d018": {
+   "id": "d018",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 두 번째 읽기 표 S2 고칠 글('24. in a row' 로 나눔 — 1부 C06500 의 '24 in a row' 를 바꾼 것) 과 같음. 문장 11: n1 [photography] · n2 [racetrack] [ran races] · n3 [developing] · n5 [lifted] · n6 [make a bet] · n8 [racetrack] · n9 [24] [in a row] · n10 · n11 [tied a string] · n4 칩 없음. n7 의 아홉 칩은 수($500)로 켜진 앱 안전장치(설계 — 기계 표시 아홉이 모두 이것). n5 · n6 에 칩이 새로 닿고 붙은 칩이 풀려 나아짐. n11 [tied a string] 은 'string' 낱말 일치(앱 규칙 — 1부가 둠, 전 칩 [tie string] 도 번짐) — 대본은 'cut the string' 이라 칩 말이 들어갈 자리가 아니고 한국어('끈을 끊었고')도 받치지 않아 셈 안 함.",
+   "때": "2026-09-25 04:43"
+  },
+  "d019": {
+   "id": "d019",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06525 고칠 글. 문장 10: n1 [Jules Verne] [French] · n3 [1865] · n4 [French] [2 Americans] [one Frenchman] · n6 [97 hours] [13 minutes] [20 seconds] · n9 [Jules Verne] [science fiction] · n10 [Jules Verne] · 나머지 칩 없음. 붙은 [French 1865] · [20 seconds science fiction] 이 풀려 나아짐. n4 [French] 는 'Frenchman' 속 글자 일치인데 제 칩 [one Frenchman] 이 같이 떠 오도 아님(1부가 둠). n9 · n10 은 'Verne's' 의 이름 참조.",
+   "때": "2026-09-25 04:43"
+  },
+  "d020": {
+   "id": "d020",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d020). 문장 13: n1 [Europe] [Guadeloupe] [Caribbean] · n6 [15] · n7 [suntan] · n9 [rolls] · n12 [Guadeloupe] · n13 [first week] [August] · 나머지 칩 없음. 붙은 세 칩([Europe Guadeloupe] · [15 suntan] · [rolls first week August])이 풀려 나아짐, 번짐 없음. n6 [15] 는 대본 '$15' 의 수(1부 고칠 글 그대로).",
+   "때": "2026-09-25 04:43"
+  },
+  "d021": {
+   "id": "d021",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 전수 표 #54 고칠 글. 문장 12: n1 [Judy] · n5 [in a rush] · n7 [capped] · n9 [stepped on] · n10 [bored] · n12 [quit] · n2 · n4 · n6 · n8 · n11 칩 없음 · n3 의 여섯 칩은 수(9 · 8:30)로 켜진 앱 안전장치(설계 — 기계 표시 여섯이 모두 이것) — 전수가 잰 기대 칩과 같음. n5 · n7 · n9 에 칩이 새로 닿고 붙은 두 칩이 풀려 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d022": {
+   "id": "d022",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d022). 문장 12: n1 [Oxford] [England] [formal classes] · n3 [14] [15] [16] [17] · n8 [physics] · n12 [taking a break] [cafeteria] · 나머지 칩 없음 · n6 의 열 칩은 수(9)로 켜진 앱 안전장치(설계 — 기계 표시 열이 모두 이것, 전 칩도 안전장치). 붙은 칩 풀림 · 'taking' 대본 꼴 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d024": {
+   "id": "d024",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06651 고칠 글. 문장 9: n1 · n5 [balloon] · n2 [balloon] [France] [1783] [lasted only 8 minutes] · n3 [balloon] [France] [American] [Frenchman] [channel] · n4 [balloon] [channel] · n6 [balloon] [belongings] · n9 [balloon] [France] · n7 · n8 칩 없음. [France 1783] · [American Frenchman channel] 이 풀려 n3 · n4 · n9 에 그 문장에 없는 항목이 안 따라오고 [lasted only 8 minutes] 대본 꼴 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d025": {
+   "id": "d025",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06676 고칠 글. 문장 11: n1 [Saturday] [Carlos] [Kim] · n2 [10 a.m] · n3 [magazines] [towels] [food] · n4 [fruit] [cheese] [sandwiches] [cookies] [juice] · n5 [rubber boat] [11:30] · n6 [an hour and a half] [traffic] · n7 [shallow water] · n8 [Carlos] [Kim] · n9 [Carlos] [rubber boat] [shallow water] · n10 [Carlos] [Kim] [rowed the boat] · n11 칩 없음. 붙은 칩이 모두 풀리고 n3 [food] · n10 [rowed the boat] 가 새로 닿음 — 나아짐, 나빠진 문장 없음. n7 [shallow water] 는 'The water felt good' 의 'water' 낱말 일치(앱 규칙 — 1부가 둠, 전 칩 [shallow water row the boat] 보다 나음) — 한국어 가이드가 '물은' 이라 'shallow' 를 받치지 않아 셈 안 함. n2 [10 a.m] 끝 마침표가 빠진 것은 앱이 소문자 줄임말 끝 '.' 을 떼는 규칙 탓(전 칩도 같음 · 받아쓰기 채점은 기호를 안 봄).",
+   "때": "2026-09-25 04:44"
+  },
+  "d027": {
+   "id": "d027",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06728 고칠 글. 문장 10: n1 [Frank Lewis] [New York] · n2 [Association of Sportswriters] · n3 · n5 [Fernando Marcos] · n4 [Fernando Marcos] [1975] [1978] · n7 [1978] [New York] · n8 [Madrid] · n9 [kept in touch with] · n10 [Fernando Marcos] [coaching] · n6 칩 없음. [New York Madrid] · [1975 1978] 이 풀려 1978 이 두 번 보이던 것도 없어짐 — 나아짐. n1 [New York] 은 'your new president' 의 'new' 일치(앱 규칙 — 1부가 둠, 전 칩 [New York Madrid] 보다 나음) — 곳 이름이라 들어갈 자리가 없고 한국어('새로운 회장')도 받치지 않아 셈 안 함. 기계 표시(n4 [Fernando Marcos] 꼴 없음)는 바뀐 문장만 본 탓 — n3 에 그대로 있음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d028": {
+   "id": "d028",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06749 고칠 글. 문장 8: n1 [Kevin Taylor] [Canadian National Swimming Competition] [20 sports clubs] [City Sports Club] · n2 [three races] · n3 [20 sports clubs] [City Sports Club] · n4 [women's 100 meter freestyle] · n5 [20 sports clubs] [Angela Edwards] [City Sports Club] · n6 [three races] [broken 4 records] · n7 [Karen Gibson] [Toronto] [flu] · n8 [Karen Gibson] [broken 4 records]. 대회 이름 대소문자 · [Toronto flu] 붙음이 고쳐져 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(모두 전 칩과 같은 앱 규칙 번짐 — 1부는 n6 만 적어 둠): n1 의 두 클럽 칩('sports announcer' 의 'sports') · n3 · n5 에서 서로 번진 클럽 칩(제 칩과 같이 뜸) · n2 [three races]('exciting races' — 한국어 '신나는 경주들') · n6 [broken 4 records]('hasn't broken any records' — 한국어 '아직 어떤 기록도' 가 칩의 4 를 받치지 않음). 기계 표시(n1 [20 sports clubs] · [City Sports Club] 꼴 없음)는 바뀐 문장만 본 탓 — n3 · n5 에 있음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d029": {
+   "id": "d029",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06768 고칠 글. 문장 7: n1 [Marta Perez] · n2 [50 meter backstroke] · n3 [Elizabeth Norris] [Lakeside Sports Club] [Community Sports Club] · n4 [Lakeside Sports Club] [Community Sports Club] · n5 [Lakeside Sports Club] [Sally Miller] [Community Sports Club] · n6 [Sally Miller] [cheering for] · n7 [Sally Miller]. [cheering for] 대본 꼴 — 나아짐, 나빠진 문장 없음. 두 클럽 칩이 'Sports Club' 낱말로 서로 번지는 것은 앱 규칙(1부가 둠 · 전과 같음) — n3 · n5 는 제 칩과 같이, n4 'her sports club' 은 두 클럽이 함께 떠 한쪽으로 이끌지 않고 한국어도 '자신의 스포츠 클럽' 이라 셈 안 함. 기계 표시(n6 [Sally Miller] 꼴 없음)는 바뀐 문장만 본 탓 — n5 에 있음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d031": {
+   "id": "d031",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06818 고칠 글. 문장 9: n1 [Irene Watson] [editor] · n2 [Sacramento] [Kathy Austin] · n3 [Mount Everest] [seven] · n4 [expedition] · n6 [Kathy Austin] [expedition] · n8 [Kathy Austin] · n5 · n7 · n9 칩 없음. 붙은 세 칩이 풀려 n4 · n6 · n8 에 그 문장에 없는 항목이 안 따라옴 — 나아짐, 번짐 없음. n6 · n8 은 'Kathy' 의 이름 참조.",
+   "때": "2026-09-25 04:44"
+  },
+  "d032": {
+   "id": "d032",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06833 고칠 글. 문장 6: n1 [rock climbing] [Kathy Byram] [Mount Everest] · n2 [rock climbing] [Jim Elliott] [William Smith] [cliff] · n3 [Jim Elliott] · n4 [Kathy Byram] [lost his balance] [5 or 6] · n5 [Mount Everest] [William Smith] [waist] [ledge] · n6 [Kathy Byram] [Jim Elliott] [William Smith]. [rock climbing] · [lost his balance] 대본 꼴, [lost balance 5 or 6] 풀림, n5 · n6 의 [rock climb] 번짐 없어짐 — 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(1부가 앱 규칙으로 둠): n2 [rock climbing]('were climbing up a cliff' — 한국어 '절벽을 오르고' 가 'rock' 을 받치지 않음) · n5 [Mount Everest]('mountain' 속 'mount'). 이름 칩은 성만 나오는 문장(n3 · n4 · n5 · n6)의 이름 참조.",
+   "때": "2026-09-25 04:44"
+  },
+  "d033": {
+   "id": "d033",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06852 고칠 글. 문장 8: n1 [New Orleans] [southern United States] · n2 [Mississippi River] [160 kilometers north] [Gulf of Mexico] · n3 [location] [shipping center] · n4 [New Orleans] [trade] [Latin America] · n5 [New Orleans] [Bananas] [cocoa beans] [coffee] · n6 [shipping center] [southern United States] · n7 [New Orleans] [southern United States] · n8 [New Orleans]. 대본에 없던 'port' 가 빠지고 붙은 칩이 풀림 — 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(전 칩에도 있던 앱 규칙 번짐): n1 · n7 [southern United States]('the United States' — 1부가 앱 규칙으로 둠, 한국어 '미국에서' 가 'southern' 을 받치지 않음) · n6 [shipping center]('industrial center' 의 'center' — 한국어 '산업 중심지', 전 칩 [location shipping center] 보다 나음).",
+   "때": "2026-09-25 04:44"
+  },
+  "d034": {
+   "id": "d034",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06879 고칠 글. 문장 11: n1 · n2 [French Quarter] · n3 · n11 [New Orleans] · n4 [early 1900s] · n5 [exhibitions] [conventions] [Superdome] · n6 [indoor arenas] · n7 [100 parks] [New Orleans] · n8 [New Orleans] [Lake Pontchartrain Causeway] · n9 [38 kilometers] · n10 [New Orleans] [annual Mardi Gras celebration] [parades] [festivities]. [38 kilometers] · [indoor arenas] · 단수 [annual Mardi Gras celebration] 대본 꼴, 붙은 칩 풀림 — 나아짐, 나빠진 문장 없음. n2 [French Quarter] 는 'the French people' 의 'French' 일치(앱 규칙 · 전과 같음) — 한국어 '프랑스 사람들' 이 받치지 않고 들어갈 자리가 없어 셈 안 함.",
+   "때": "2026-09-25 04:44"
+  },
+  "d035": {
+   "id": "d035",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06906 고칠 글. 문장 11: n1 [golden wedding anniversary] [50 years] [anniversary] · n5 [golden wedding anniversary] [anniversary] [confusion] · n6 [George] · n7 [Dorothy] · n8 [Dorothy] [Aunt Helen] · n9 [stepsisters] [half-brothers] [nieces-in-law] · n10 [Aunt Helen] · n2 · n3 · n4 · n11 칩 없음. [Dorothy Aunt Helen] 이 풀려 n7 에 Aunt Helen 이 안 따라옴 — 나아짐, 나빠진 문장 없음. n10 [Aunt Helen] 은 'aunts' 속 글자 일치(앱 규칙 — 1부가 둠, 전 칩 [Dorothy Aunt Helen] 보다 나음) — 사람 이름이라 'aunts and uncles' 자리에 들어갈 여지가 없어 셈 안 함. n5 의 [golden wedding anniversary] 는 제 칩 [anniversary] 와 같이 뜸.",
+   "때": "2026-09-25 04:44"
+  },
+  "d036": {
+   "id": "d036",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06939 고칠 글. 문장 12: n1 [American writer] [Charles Dudley Warner] · n2 [common subject] · n4 [common subject] · n10 [clear up] · n12 [comes closer to being correct] · 나머지 칩 없음. n12 대본 꼴 — 나아짐, 나빠진 문장 없음. n4 [common subject] 는 'common ways' 의 'common' 일치(앱 규칙 · 전과 같음) — 칩 말을 넣으면 문장이 안 되고 한국어('흔한 방식들')도 받치지 않아 셈 안 함.",
+   "때": "2026-09-25 04:44"
+  },
+  "d037": {
+   "id": "d037",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C06960 고칠 글. 문장 9: n1 [Bobby Adams] [Dr. Smith] · n2 [throat] [temperature] · n3 · n7 · n9 [Bobby Adams] · n5 [orange juice] [two pieces of buttered toast] [dry cereal] [milk] · n4 · n6 칩 없음 · n8 의 여덟 칩은 따옴표 없는 인용 첫 글자 'You' 대문자로 켜진 앱 안전장치(설계 — 기계 표시 열하나가 모두 이것, 전 칩도 안전장치). 새 규칙으로 [Dr. Smith] 한 칩이 되고 [Bobby Adams Dr] · [Smith throat] 가 없어짐 — 나아짐, 번짐 없음. n3 · n7 · n9 는 'Bobby' 의 이름 참조.",
+   "때": "2026-09-25 04:44"
+  },
+  "d038": {
+   "id": "d038",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 전수 표 #56 고칠 글. 문장 7: n6 [Mortons'] [Alfred](제 항목 · 대본 꼴 그대로) · n3 · n5 칩 없음 · n1 · n2 · n4 · n7 의 두 칩은 그 문장의 이름(Smith · Adams · Bobby — 이 강 힌트에 없음)으로 켜진 앱 안전장치(설계 — 기계 표시 여덟이 모두 이것, 전수가 잰 기대와 같음). 붙은 [Mortons' Alfred] 가 풀려 나아짐.",
+   "때": "2026-09-25 04:44"
+  },
+  "d039": {
+   "id": "d039",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d039). 문장 11: n2 [Herbert] · n3 · n9 [Herby] · n6 [Herby] [brush my teeth] [comb my hair] · 나머지 칩 없음. 느낌표와 붙은 칩이 없어지고 n6 에 [comb my hair] 가 닿음 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d040": {
+   "id": "d040",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07017 고칠 글. 문장 6: n2 [John] · n3 [Japan] [Australia] [Brazil] · n4 [Mr. Fulton](새 규칙 — 칭호째 한 칩) · n6 [Miss Ellis] [expert] [plants] · n1 · n5 칩 없음. [Fulton] → [Mr. Fulton] · [Miss Ellis expert plants] 풀림 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:44"
+  },
+  "d041": {
+   "id": "d041",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07034 고칠 글. 문장 7: n1 [16] [just two years] · n3 [18] [just two years] · n4 [subjects] · n5 [just two years] [growing up] · n2 · n6 · n7 칩 없음. [16 18] 이 풀려 n1 에 18, n3 에 16 이 안 따라옴 — 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(전 칩과 같은 앱 규칙 번짐): n1 [just two years]('16 years old' 의 'years' — 칩 말이 들어갈 자리 없음) · n5 [just two years]('It took two years of growing up' — 한국어 '2년의 성장' 이 'just' 를 받치지 않음).",
+   "때": "2026-09-25 04:46"
+  },
+  "d044": {
+   "id": "d044",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07080 고칠 글. 문장 5: n1 [June] [Bill Patterson] [John Corcoran] [freshman year] · n2 [Bill Patterson] [sophomores] · n3 [junior year] [take Russian] [senior year] [Chinese] · n4 [John Corcoran] [chemistry] [chemist] · n5 [Bill Patterson] [John Corcoran] [chemist]. [senior Chinese] 가 풀려 대본 꼴 [senior year] [Chinese] — 나아짐, 나빠진 문장 없음. n4 [chemist] 는 'chemistry' 속 글자 일치인데 제 칩 [chemistry] 와 같이 뜸(1부가 둠). 이름 칩은 'Bill' · 'John' 의 이름 참조.",
+   "때": "2026-09-25 04:46"
+  },
+  "d045": {
+   "id": "d045",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07103 고칠 글. 문장 9: n1 [German exam] · n4 [English exam] · n5 [English exam] [Professor Charles M. McCarthy] [M stands for Mark] [middle name] · n6 [German exam] [English exam] [Professor Charles M. McCarthy] [required subject] · n7 [English exam] [elective] [credits] · n8 [German exam] [credits] · n2 · n3 · n9 칩 없음. 새 규칙으로 [Professor Charles M. McCarthy] 가 한 칩(전 [Professor Charles M] [McCarthy]), [M stands for Mark] 대본 꼴, n9 'Of course' 에 뜨던 [credits German course] 가 없어짐 — 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(전 칩과 같은 앱 규칙 번짐): n5 · n6 · n7 · n8 의 시험 칩은 'English' · 'German' 낱말 일치 — 그 자리는 교수 · 과목 · 수업 · 과정 뜻이고 한국어도 '영어 담당 교수' · '영어는 필수 과목' · '영어 수업' · '독일어 과정' 이라 칩의 'exam' 을 받치지 않음. n6 은 'Professor McCarthy' 의 이름 참조. 기계 표시(n5 · n6 · n7 [English exam] 꼴 없음)는 바뀐 문장만 본 탓 — n4 에 있음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d046": {
+   "id": "d046",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07116 고칠 글. 문장 4: n1 [Ben Frank] [grocery store] [2 years] · n2 [2 years] · n3 [Ben Frank] [meats] [fruits] [vegetables] [teas] [coffees] [Phil Strickland] · n4 칩 없음. [coffees Phil Strickland] 가 풀려 나아짐, 나빠진 문장 없음. n1 [2 years] 는 'A few years ago' 의 'years' 일치(전과 같은 앱 규칙 번짐) — 한국어 '몇 년 전에' 가 받치지 않아 셈 안 함. 기계 표시(n3 [Ben Frank] 꼴 없음)는 바뀐 문장만 본 탓 — n1 에 있고 n3 은 'Ben's' 의 이름 참조.",
+   "때": "2026-09-25 04:46"
+  },
+  "d047": {
+   "id": "d047",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d047). 문장 6: n1 [fuel](새로 닿음 — 제 낱말) · n2 [liquids] [metals] · n3 [shopping district] · n6 [shopping district] [recommended] · n4 칩 없음 · n5 의 다섯 칩은 이름(Ben)으로 켜진 앱 안전장치(설계 — 기계 표시 다섯이 모두 이것, 전 칩도 안전장치). [fuel liquids] 풀림 · [recommended] 대본 꼴 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d048": {
+   "id": "d048",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d048). 문장 7: n1 [take this saying to heart] [do-it-yourself fans] · n2 [take this saying to heart] · n5 [do-it-yourself fans] [bookcases] [put the parts together] · n6 [put the parts together] [paint] [varnish] · n7 [do-it-yourself fans] · n3 · n4 칩 없음. 하이픈 대본 꼴 · [add paint varnish] 풀림 — 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(전 칩과 같은 앱 규칙 번짐): n1 두 칩('saying' · 'do it yourself') · n5 [put the parts together]('parts for making desks') · n7 [do-it-yourself fans]('do it yourself') — 그 자리에 칩 말을 넣으면 문장이 안 되고, 하이픈 꼴로 쳐도 채점이 하이픈을 띄어 맞게 봄. 기계 표시(n1 [take this saying to heart] 꼴 없음)는 바뀐 문장만 본 탓 — n2 에 있음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d049": {
+   "id": "d049",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 고칠 글(d049). 문장 5: n1 [popular belief] [artists] [supposedly] [temperamental] · n2 [that is] [front row] · n3 [audience] · n5 [front row] · n4 칩 없음(전 [That is] 번짐이 없어짐). 붙은 칩 풀림 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d050": {
+   "id": "d050",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07181 고칠 글. 문장 9: n1 [charity] [charity bazaars] · n3 [charitable organizations] [charitable causes] · n4 [charitable organizations] [raise money] [charitable causes] · n5 [neglect] · n6 [charity] [Brown] [charity bazaars] [twice a week] · n8 [Brown] · n9 [charity] [charity bazaars] [practice] · n2 · n7 칩 없음. 동사와 칭호가 붙은 [neglect Mrs] 가 없어지고 붙은 칩이 풀림 — 나아짐, 나빠진 문장 없음. 셈 안 한 번짐(전에도 있던 앱 규칙 번짐): n1 · n9 [charity bazaars]('charity') · n3 · n4 의 두 charitable 칩 — 모두 그 문장의 제 칩([charity] · [charitable organizations] · [charitable causes])과 같이 뜸. [Brown] 은 칭호 없는 이름(1부 고칠 글 — 칭호만 떨어진 칩 아님), n8 은 'The Browns' 의 이름 참조.",
+   "때": "2026-09-25 04:46"
+  },
+  "d051": {
+   "id": "d051",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07204 고칠 글. 문장 9: n1 [fascinating] · n2 [supposedly] · n3 [filled with adventure] · n4 [lead rather routine lives] · n5 [average] · n7 [cover a story] · n9 [column] · n6 · n8 칩 없음 — 1부가 잰 기대와 같음. 대본 꼴 · 붙은 칩 풀림 · n6 의 'reporters' 번짐 없어짐 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d052": {
+   "id": "d052",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07223 고칠 글. 문장 8: n1 [look forward to] [take a vacation] · n2 [take a vacation] [northern Wisconsin] · n3 [set up a tent](새로 닿음) · n4 [camping out](새로 닿음) · n6 · n8 [take a vacation] · n7 [camping out] · n5 칩 없음. 전 칩보다 새로 번진 곳 1: n7 [camping out] — 'After a week or so of camping' 의 'camping' 일치로, 전에는 이 문장에 칩이 없었음. 1부가 기대 칩에 적고 앱 규칙으로 둔 것이고 힌트 줄로는 못 막음('camping out' 이 n4 에 필요). 한국어 가이드가 '캠핑 후에는' 이라 'out' 을 받치지 않아 오도로 세지 않음. 그 밖의 [take a vacation] 번짐(n2 'vacation spots' · n6 'a vacation' · n8 'vacations')은 전과 같고 칩 말을 넣으면 문장이 안 됨.",
+   "때": "2026-09-25 04:46"
+  },
+  "d053": {
+   "id": "d053",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07242 고칠 글. 문장 8: n1 [get out of hand](새로 닿음) · n2 [Chicago] [for instance] [collecting model trains] · n3 [collecting model trains] [collection] · n4 [collecting model trains] [nuisance] · n6 [collection] [is valued at close to $10,000] [measured] · n7 [collection] [inexpensive matchboxes] · n8 [measured] · n5 칩 없음. 'match-boxes' 철자 · 붙은 칩이 모두 고쳐져 나아짐, 나빠진 문장 없음. n3 · n4 [collecting model trains] 는 'trains' 일치(앱 규칙 — 1부가 둠) — 'his trains' 자리에 넣으면 문장이 안 되고 제 칩([collection] · [nuisance])이 같이 떠 셈 안 함.",
+   "때": "2026-09-25 04:46"
+  },
+  "d054": {
+   "id": "d054",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07263 고칠 글. 문장 8: n1 · n5 [by accident] · n2 [Columbus] [searching for a shortcut] [East Indies] · n3 [East Indies] · n4 [Columbus] [original inhabitants] [tribute] · n6 [Alice fell down rabbit hole] [reversed] [modern chemical science] · n7 [fairy tale] [Middle Ages] [turn metals into gold] [modern chemical science] · n8 [laid foundations] [modern chemical science]. [original inhabitants tribute Columbus] · [reverse fairy tales] 가 풀려 [reversed] · [fairy tale] 대본 꼴 — 나아짐, 나빠진 문장 없음. [Alice fell down rabbit hole] · [laid foundations] 는 관사만 뺀 원본 힌트 구절(7-5 '관사 · 소유어만 뺀 한 구절' — 철자 · 활용 흠 아님, 전과 같음). 셈 안 한 번짐(전 칩에도 있던 앱 규칙 번짐 · 1부 기대 칩 n2 에 [East Indies] 적힘): n2 [East Indies]('to the East' — 한국어 '동양으로의') · n6 [modern chemical science]('the laws of science' — 한국어 '과학 법칙들') · n7 [modern chemical science]('modern chemistry' — 한국어 '현대 화학' 은 두 꼴에 똑같아 칩 쪽을 받치지 않음). 기계 표시 넷은 바뀐 문장만 본 탓(n3 · n8 에 그 꼴이 있음)과 관사 뺀 꼴.",
+   "때": "2026-09-25 04:46"
+  },
+  "d055": {
+   "id": "d055",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07288 고칠 글. 문장 9: n1 [popular hobbies] · n2 [pointing cameras at] [in sight] · n4 [enthusiasm] · n5 [Rome] · n7 [take cover off his lens] · n8 [whole roll] · n3 · n6 · n9 칩 없음. [pointing cameras at] 대본 활용 꼴 — 나아짐, 나빠진 문장 없음. 이 칩과 [take cover off his lens] 는 소유어 · 관사만 뺀 구절(1부가 'their' 를 넣으면 n3 · n4 에 번져 뺌 · 7-5 규칙) — 기계 표시(꼴 없음)는 이 줄임 탓, 철자 · 활용 흠 아님. 번짐 없음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d056": {
+   "id": "d056",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07307 고칠 글. 문장 8: n2 [engaged in profession] [Tony Sarg] · n3 [marionette shows] · n4 [marionette shows] [specialized in] [put on plays] [grown-ups] · n5 [put on plays] · n6 [engaged in profession] [Tony Sarg] · n7 [marionette shows] [operas] [comedies] [tragedies] · n8 [Tony Sarg] [marionette shows] [highly polished art] · n1 칩 없음. 붙은 두 긴 칩이 풀리고 [specialized in] · [grown-ups] 대본 꼴 — 나아짐. 전 칩보다 새로 번진 곳 1: n8 [marionette shows] — 'the marionette man' 의 'marionette' 일치(1부 기대 칩에 적힘 · 앱 규칙), 그 자리에 넣으면 문장이 안 되고 한국어도 '“marionette man”' 이라 셈 안 함 · 그 문장의 붙은 칩 [tragedies highly polished art] 는 없어짐. 그 밖의 번짐(전에도 있던 앱 규칙 번짐 — n4 · n5 · n7 은 1부가 적어 둠): n4 'children's shows'(한국어 '어린이 쇼') · n7 'his marionettes' · n5 'the plays' · n6 'his profession' — 칩 쪽 낱말을 한국어가 받치지 않거나 넣으면 문장이 안 됨. [engaged in profession] 은 원본 힌트의 줄인 구절(대본 'engaged in an interesting profession', 전과 같음 — 철자 · 활용 흠 아님).",
+   "때": "2026-09-25 04:46"
+  },
+  "d057": {
+   "id": "d057",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main = 1부 C07328 고칠 글. 문장 8: n1 [advantages] · n7 [when it comes to] [beat] · n8 [advantages] [make up for] [commuting to] · 나머지 칩 없음. n8 의 두 힌트([make up for] · [commuting to])가 새로 닿고 붙은 칩이 풀림 — 나아짐, 번짐 없음.",
+   "때": "2026-09-25 04:46"
+  },
+  "d058": {
+   "id": "d058",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "main 힌트 줄은 1부 C07355 고칠 글에서 'Model T. 15 million' 만 'Model T, 15 million' — 새 규칙이 한 글자 머리글자 'T' 뒤 '. ' 를 안 나눠 두 항목이 한 칩으로 붙을 것을 수정 세션이 쉼표로 막은 것(d006 'D.C.,' 와 같은 방법), 칩은 [Model T] [15 million] 으로 기대대로. 문장 10: n1 [1896] [Detroit] [Michigan] [amazed] [motor vehicle] [founded the Ford Motor Company] · n2 [Henry Ford] [mechanical] [founded the Ford Motor Company] · n3 [1876] [12] · n4 [Henry Ford] · n5 [motor vehicle] [Henry Ford] [1903] [founded the Ford Motor Company] · n7 [Henry Ford] [founded the Ford Motor Company] [Model T] [15 million] [1908] [1927] · n8 [1924] [7,500] · n9 [Henry Ford] [founded the Ford Motor Company] · n10 [Henry Ford] [founded the Ford Motor Company] [$5 a day] · n6 칩 없음. [mechanical 1876 12] · [15 million 1908 1927] 풀림 · 'founded the' 대본 꼴 — 나아짐, 나빠진 문장 없음. 회사 이름 칩이 'Ford' · 'Motor' 로 번지는 것은 앱 규칙(1부가 둠 · 전과 같음) — n1 · n5 는 제 칩([motor vehicle] · 회사 이름)과 같이, n2 · n7 · n9 · n10 은 'Ford' 이름 참조와 같이 뜸.",
+   "때": "2026-09-25 04:46"
+  }
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "조각": "줄-초등",
+ "결과": {
+  "P271": {
+   "id": "P271",
+   "판정": "제대로",
+   "main 글": "무엇보다도 나 자신을 소개할 수 있는 기회를 주셔서 감사합니다.",
+   "까닭": "main s1-1.json .blocks[4].text(한국어 #3 — .blocks[2..4] 가 한국어 #1~#3)가 고칠 글과 글자까지 같음. 짝 영어 #3 'First of all, thank you for giving me a chance to introduce myself.'(.blocks[1].items[2]) 그대로. 이 세션 옛 판과 견주면 s1-1.json 에서 바뀐 칸은 이 하나뿐. (새 클립은 수정 세션 몫 — 판정 밖)",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P272": {
+   "id": "P272",
+   "판정": "제대로",
+   "main 글": "School Vacations (방학맞이)",
+   "까닭": "main s12-1.json title · content/courses/student.json lessons[50].title(id s12-1) 둘 다 고칠 글과 같음. 같은 강의 제목줄(P273)도 '(방학맞이)' 라 h1 · h2 가 맞음. 과정 목록의 이웃 제목 '(여름방학)' · '(겨울방학)' 도 1부 줄대로 바뀌었고 s12-2 · s12-3 강의 파일 title · 제목줄과 서로 맞음(다른 줄 몫 — 흠 없음).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P273": {
+   "id": "P273",
+   "판정": "제대로",
+   "main 글": "Chapter 12. What I Do During School Vacations (방학 생활) - School Vacations (방학맞이)",
+   "까닭": "main s12-1.json .blocks[0].text 가 고칠 글과 같음. 장 이름 '(방학 생활)' · label 'Chapter 12. What I Do During School Vacations (방학 생활)' 그대로, 강의 title(P272)과 같은 꼴.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P274": {
+   "id": "P274",
+   "판정": "제대로",
+   "main 글": "가장 좋은 부분은 우리가 좋아하는 것들을 하면서 보낼 수 있는 많은 자유 시간이 있다는 것입니다.",
+   "까닭": "main s12-1.json .blocks[7].text(한국어 #6 — .blocks[2..7] 이 한국어 #1~#6)가 고칠 글과 같음. 짝 영어 #6 'The best part is we have a lot more free time that we spend doing things we like.' 그대로. s12-1.json 에서 바뀐 칸은 title · 제목줄(P272 · P273)과 이 칸뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P275": {
+   "id": "P275",
+   "판정": "제대로",
+   "main 글": "내가 꿈꾸는 방학은 영어를 사용하는 국가로 해외여행하는 것입니다.",
+   "까닭": "main s12-4.json .blocks[3].text(한국어 #2)가 고칠 글과 같음. 짝 영어 #2 'My dream vacation is to travel abroad to an English-speaking country.' 그대로. s12-4.json 에서 바뀐 칸은 이 하나뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P276": {
+   "id": "P276",
+   "판정": "제대로",
+   "main 글": "My parents tell me that in order to become a teacher, I need to study hard in all my subjects.",
+   "까닭": "main s14-3.json .blocks[1].items[0].text(영어 #1)가 고칠 글과 같음. 짝 한국어 #1 '선생님이 되기 위해서, 나의 부모님께서는 내가 나의 모든 과목에서 공부를 열심히 해야 한다고 말씀하십니다.' 는 그대로(줄의 까닭대로 둬도 뜻이 맞음). main listeningUtils 를 불러 재 보니 조각 정답은 20낱말 한 꼴로 깨끗함(빗금 · 약어 없음). s14-3.json 에서 바뀐 칸은 이 하나뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P277": {
+   "id": "P277",
+   "판정": "제대로",
+   "main 글": "열심히 하고 그의 계획을 충실히 행함으로써 그는 2002년 월드컵 동안 한국 팀을 준결승까지 진출시킬 수 있었습니다.",
+   "까닭": "main s15-3.json .blocks[4].text(한국어 #3)가 고칠 글과 같음. 짝 영어 #3 'By working hard and sticking to his plan he was able to bring the Korean team to the semi-finals during the 2002 World Cup.' 그대로. 참고(줄의 까닭이 '수정 세션이 같이 보면 좋음' 이라 한 것 — 판정 밖): 같은 과정 s15-2.json 한국어 '그가 한국팀의 감독이었던 시간 동안, …' 은 아직 '한국팀' 이라 과정 안 표기가 '한국팀' · '한국 팀' 둘로 갈림.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P278": {
+   "id": "P278",
+   "판정": "안 들어감",
+   "main 글": "제목줄 .blocks[0].text = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - My Other Dream Job (또 하나의 꿈)'(고침) · s16-1.json label = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'(옛) · content/courses/student.json lessons[63].label = 같은 옛 글 · content/courses/student.json groups[15].title = 'Chapter 16. 또 다른 장래희망 (통역사) (My Other Dream Job (Interpreter))'(옛)",
+   "까닭": "일부만 들어감. 고칠 곳에 적힌 네 칸 가운데 제목줄(h2)만 고칠 글과 같고, 같은 장 이름을 담은 s16-1.json label · student.json lessons[63].label · groups[15].title 세 칸은 옛 '장래희망' 그대로. main 전체에서 '장래희망' 을 찾으면 STUDENT 에 7곳 남음(groups[15].title 1 · lessons[63~65].label 3 · s16-1~3.json label 3). main src/lib/curriculumPresentation.ts 281행이 STUDENT 부제목을 lesson.label 로 내므로, 과정 목록의 부제목 · 장 제목은 '또 다른 장래희망', 강의 제목줄은 '또 다른 장래 희망' 으로 화면끼리 갈림. 소리 없는 칸이라 클립 영향 없음.",
+   "고칠 것": "content/lessons/student/s16-1.json label 과 content/courses/student.json lessons[63].label 을 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))' 로, content/courses/student.json groups[15].title 을 'Chapter 16. 또 다른 장래 희망 (통역사) (My Other Dream Job (Interpreter))' 로 바꿈(제목줄은 이미 됨).",
+   "때": "2026-09-25 04:58"
+  },
+  "P279": {
+   "id": "P279",
+   "판정": "안 들어감",
+   "main 글": "제목줄 .blocks[0].text = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)'(고침) · s16-2.json label = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'(옛) · content/courses/student.json lessons[64].label = 같은 옛 글",
+   "까닭": "일부만 들어감 — P278 과 같은 모습. 제목줄(h2)은 고칠 글과 같으나 고칠 곳에 같이 적힌 s16-2.json label · student.json lessons[64].label 은 옛 '장래희망' 그대로라 과정 목록 부제목(lesson.label)과 강의 제목줄이 '장래희망' / '장래 희망' 으로 갈림. 소리 없는 칸.",
+   "고칠 것": "content/lessons/student/s16-2.json label 과 content/courses/student.json lessons[64].label 을 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))' 로 바꿈(제목줄은 이미 됨).",
+   "때": "2026-09-25 04:58"
+  },
+  "P280": {
+   "id": "P280",
+   "판정": "안 들어감",
+   "main 글": "제목줄 .blocks[0].text = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)'(고침) · s16-3.json label = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'(옛) · content/courses/student.json lessons[65].label = 같은 옛 글",
+   "까닭": "일부만 들어감 — P278 과 같은 모습. 제목줄(h2)은 고칠 글과 같으나 고칠 곳에 같이 적힌 s16-3.json label · student.json lessons[65].label 은 옛 '장래희망' 그대로라 과정 목록 부제목과 강의 제목줄이 갈림. 소리 없는 칸.",
+   "고칠 것": "content/lessons/student/s16-3.json label 과 content/courses/student.json lessons[65].label 을 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))' 로 바꿈(제목줄은 이미 됨).",
+   "때": "2026-09-25 04:58"
+  },
+  "P281": {
+   "id": "P281",
+   "판정": "제대로",
+   "main 글": "If I really want to become a great interpreter, I need to work hard at improving my English from now on.",
+   "까닭": "main s16-3.json .blocks[1].items[4].text(영어 #5)가 고칠 글과 같음. 짝 한국어 #5 '만약 내가 정말로 훌륭한 통역사가 되고 싶다면, 나는 지금부터 영어 실력을 향상시키기 위해 열심히 해야만 합니다.' 그대로(뜻 맞음). 조각 정답 21낱말 한 꼴. 같은 파일 영어 #3 'an English academy'(옛 'English Academy')도 바뀌었으나 다른 줄 몫이고 흠 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P282": {
+   "id": "P282",
+   "판정": "제대로",
+   "main 글": "그는 한국의 건국자가 되었습니다.",
+   "까닭": "main s17-1.json .blocks[7].text(한국어 #6)가 고칠 글과 같음. 짝 영어 #6 'He became the founder of Korea.' 그대로. s17-1.json 에서 바뀐 칸은 이 칸과 영어 #4(S11) · #7(S30)뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P283": {
+   "id": "P283",
+   "판정": "제대로",
+   "main 글": "In addition, most people play games with their relatives and make songpyeon, which is a traditional Korean rice cake.",
+   "까닭": "main s18-3.json .blocks[1].items[2].text(영어 #3)가 고칠 글과 같음. 짝 한국어 #3 '게다가, 대부분의 사람들은 친척들과 함께 게임을 하고 한국의 전통 떡인 송편을 만듭니다.' 그대로(뜻 맞음). s18-3.json 에서 바뀐 칸은 이 하나뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P284": {
+   "id": "P284",
+   "판정": "제대로",
+   "main 글": "Korean Culture Is Unique (독창적인 한국 문화)",
+   "까닭": "main s19-1.json title · student.json lessons[73].title(id s19-1) 둘 다 고칠 글과 같고 제목줄(P285)도 'Is'. 줄이 '같이 맞추면 좋음' 이라 한 menuLabel '19-1. Korean Culture is Unique'(s19-1.json · student.json lessons[73] — 쪽 설명 meta 에만 쓰임)은 옛 'is' 그대로 — 선택 칸이라 판정에 넣지 않음(1부 s2-3 은 menuLabel 까지 맞췄음).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P285": {
+   "id": "P285",
+   "판정": "제대로",
+   "main 글": "Chapter 19. Korean Culture (한국의 문화) - Korean Culture Is Unique (독창적인 한국 문화)",
+   "까닭": "main s19-1.json .blocks[0].text 가 고칠 글과 같음. 장 이름 · label 'Chapter 19. Korean Culture (한국의 문화)' 그대로, 강의 title(P284)과 같은 꼴.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P286": {
+   "id": "P286",
+   "판정": "제대로",
+   "main 글": "Friend's Dreams (친구의 장래 희망)",
+   "까닭": "main s3-4.json title · student.json lessons[15].title(id s3-4) 둘 다 고칠 글과 같고 제목줄(P287)도 같은 꼴. menuLabel '3-4. Friend's Dreams' 는 한국어가 없어 해당 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P287": {
+   "id": "P287",
+   "판정": "제대로",
+   "main 글": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래 희망)",
+   "까닭": "main s3-4.json .blocks[0].text 가 고칠 글과 같음. 장 이름 '(친구 소개)' · label 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P288": {
+   "id": "P288",
+   "판정": "제대로",
+   "main 글": "이 시간 동안, 우리 선생님께서는 출석을 부르시고 우리에게 그날의 전달 사항을 말씀하십니다.",
+   "까닭": "main s5-3.json .blocks[3].text(한국어 #2)가 고칠 글과 같음. 짝 영어 #2 'During this time, our teacher calls roll and gives us the announcements for the day.' 그대로. s5-3.json 에서 바뀐 칸은 이 하나뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P289": {
+   "id": "P289",
+   "판정": "제대로",
+   "main 글": "Like most other students, I like P.E. best, and the class I dislike the most is history.",
+   "까닭": "main s5-4.json .blocks[1].items[3].text(영어 #4)가 고칠 글과 같음. 짝 한국어 #4 '대부분의 다른 학생들처럼 내가 가장 좋아하는 과목은 체육이고 내가 가장 싫어하는 수업은 역사입니다.' 그대로(줄의 까닭대로 뜻 맞음). 'P.E. best' 로 문장 가운데 '. ' 가 새로 생겼으나 main 앱 함수로 재 보니 조각 정답 · 소리 글이 한 문장 그대로이고(P · E 두 조각은 옛 글 'P.E.,' 때와 같음), speech.ts splitChunks 는 200자 넘을 때만 나눠 이 문장을 자르지 않음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P290": {
+   "id": "P290",
+   "판정": "제대로",
+   "main 글": "My favorite academy is the English academy.",
+   "까닭": "main s7-2.json .blocks[1].items[0].text(영어 #1)가 고칠 글과 같음. 짝 한국어 #1 '내가 가장 좋아하는 학원은 영어입니다.' 그대로(줄의 까닭대로 둬도 됨). 조각 정답 7낱말 한 꼴. s7-2.json 에서 바뀐 칸은 이 하나뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P291": {
+   "id": "P291",
+   "판정": "제대로",
+   "main 글": "Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "까닭": "main s7-3.json title · student.json lessons[33].title(id s7-3) 둘 다 고칠 글과 같고 제목줄(P292)도 같은 꼴. 줄이 '같이 맞추면 좋음' 이라 한 menuLabel '7-3. Friends and Teachers at Academy'(s7-3.json · student.json lessons[33] — 쪽 설명 meta)는 옛 글 그대로 — 선택 칸이라 판정에 넣지 않음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "P292": {
+   "id": "P292",
+   "판정": "제대로",
+   "main 글": "Chapter 7. At the Academy (학원 생활) - Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "까닭": "main s7-3.json .blocks[0].text 가 고칠 글과 같고 같은 줄 앞의 장 이름 'At the Academy' 와도 맞음. 같은 파일 한국어 #5 '큰 소리로'(옛 '큰소리로')도 바뀌었으나 다른 줄 몫이고 흠 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "S1": {
+   "id": "S1",
+   "판정": "제대로",
+   "main 글": "(content 그대로) s6-2.json #2 'My teacher’s name is Mr./Ms. (Surname).' · main src/lib/listeningUtils.ts 294~295행 TITLE_OR_WORD · SLASH_GROUP(빗금 꼴은 낱말, 또는 Mr · Mrs · Ms · Dr 뒤에 마침표가 붙은 호칭)",
+   "까닭": "main listeningUtils.ts 를 node 로 그대로 불러 잼: expandSlashAlternatives → 'My teacher’s name is Mr. (Surname).' · 'My teacher’s name is Ms. (Surname).' 두 꼴, firstSlashAlternative(소리 글) = 'My teacher’s name is Mr. (Surname).', generateWordBank 조각 정답 = [My, teacher’s, name, is, Mr, Surname] 또는 [… Ms, Surname](옛: 'Mr Ms Surname' 하나). 줄이 경고한 문장 끝 'him/her.'(s3-3 #6 · #7 · s14-2 #7)는 옛과 같음('… him.' / '… her.'). main content/ · src/lib/ 의 JSON 에서 빗금 든 글 12,566개를 새 함수와 옛 함수(이 세션 판)에 함께 넣으니 나뉨이 달라진 것은 s6-2 #2 하나뿐. s6-2.json 은 안 바뀜(화면은 'Mr./Ms.' 그대로 — BUG-028 대로). 옛 판과 견주면 listeningUtils.ts 에서 바뀐 것은 이 빗금 패턴과 주석뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "S11": {
+   "id": "S11",
+   "판정": "제대로",
+   "main 글": "While living on Earth, he married Ungnyeo, who had changed from a bear into a woman.",
+   "까닭": "main s17-1.json .blocks[1].items[3].text(n=4)가 고칠 글과 같음. 짝 한국어 #4 '지상에서 사는 동안, 그는 곰이 여자가 된 웅녀와 결혼을 했습니다.' 그대로(뜻 맞음). 조각 정답 16낱말 한 꼴(쉼표는 조각에 안 들어가 받아쓰기 영향 없음).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "S12": {
+   "id": "S12",
+   "판정": "제대로",
+   "main 글": "첫 번째 큰 명절은 음력 새해 첫날인 설날입니다.",
+   "까닭": "main s18-2.json .blocks[2].text(한국어 문단 1)가 고칠 글과 같음. 짝 영어 #1 'The first big holiday is Seollal, Lunar New Year’s Day.' 그대로. 같은 파일 한국어 #6 '음력 설날에'(옛 '음력설날에')도 바뀌었으나 다른 줄 몫이고 흠 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "S30": {
+   "id": "S30",
+   "판정": "제대로",
+   "main 글": "The country’s ancient name was Gojoseon.",
+   "까닭": "main s17-1.json .blocks[1].items[6].text(n=7)가 고칠 글과 같음 — 글자 번호로 보니 굽은 ’(U+2019), 같은 강의 #2 'our country’s'(U+2019)와 이제 같은 표기. 짝 한국어 #7 '그 나라의 고대 이름은 고조선이었습니다.' 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  },
+  "S31": {
+   "id": "S31",
+   "판정": "제대로",
+   "main 글": "He/She is very kind, and I like him/her a lot.",
+   "까닭": "main s6-3.json .blocks[1].items[6].text(n=7)가 고칠 글과 같음. main 앱 함수로 재 보니 소리 글 'He is very kind, and I like him a lot.' 과 조각 정답 두 꼴(He … him / She … her)이 옛 글 'her/him' 때와 똑같음 — 줄의 '새 음성: 없음' 이 맞음. 짝 한국어 #7 '그분은 매우 친절하시고 나는 그분을 많이 좋아합니다.' 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:58"
+  }
+ }
+}

@@ -1,0 +1,1770 @@
+{
+ "조각": "ld-b",
+ "뽑은때": "2026-09-24 17:09",
+ "대상": [
+  {
+   "key": "F:C05769",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05769"
+   ],
+   "읽을거리": "01.md",
+   "칸": ".d139[n=4].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "지난 주에 한 새로운 코메디가 극장에서 시작되었다.",
+   "뒤": "지난 주에 한 새로운 코미디가 극장에서 시작되었다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d139 n4 한국어(ld_english_scripts.json .d139[n=4].ko). 바뀐 곳 '코메디 → 코미디' 는 맞음. 남은 '지난 주' 는 표준국어대사전 한 낱말 '지난주' — 띄어쓰기 틀림(기준 판에도 있었음). 대본 쪽에 보임, 소리 없음.",
+    "고칠 글": "지난주에 한 새로운 코미디가 극장에서 시작되었다."
+   }
+  },
+  {
+   "key": "F:C05778",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05778"
+   ],
+   "읽을거리": "01.md",
+   "칸": ".d146[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "우체부가 우편물을 배달했고 나는 다섯 통의 편지와 하나의 소포와 두장의 엽서를 받았다. 그러나 나는 기다리고 있었던 편지를 받지 않았다.",
+   "뒤": "우체부가 우편물을 배달했고 나는 다섯 통의 편지와 하나의 소포와 두장의 엽서를 받았다. 그러나 나는 기다리고 있던 편지는 받지 못했다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d146 n5 한국어(.d146[n=5].ko). 바뀐 곳 '기다리고 있던 편지는 받지 못했다' 는 영어(I didn't get the letter I was waiting for)와 맞음. 남은 '두장의' 는 단위 명사 '장' 을 고유어 수 뒤에서 띄어 써야 함(한글 맞춤법 제43항 — 붙여 쓰기 허용은 아라비아 숫자 · 순서일 때) — 기준 판에도 있었음.",
+    "고칠 글": "우체부가 우편물을 배달했고 나는 다섯 통의 편지와 하나의 소포와 두 장의 엽서를 받았다. 그러나 나는 기다리고 있던 편지는 받지 못했다."
+   }
+  },
+  {
+   "key": "F:C05802",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05802",
+    "C05803"
+   ],
+   "읽을거리": "02.md",
+   "칸": ".d156[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "Jensens 가족은 전형적인 미국 농업 가족이다.",
+   "뒤": "Jensen 씨네는 전형적인 미국 농가이다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑦",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d156 한국어 n1 · n2(.d156[n=1].ko · [n=2].ko). 두 줄 글 자체는 영어와 뜻이 맞음. 6단계가 이름을 영문 'Jensen' 으로 맞추며(6단계-작업기록 '이름 표기 영문 통일 — d156 젠슨 → Jensen') n1 · n2 만 바꾸고 같은 강의 n8 한국어 '오늘날 젠슨 씨 부부는 …' 을 옛 한글 표기로 남겨, 한 강의 안에서 같은 이름이 'Jensen' 과 '젠슨' 으로 갈림. 기준 판은 n2 · n8 이 모두 '젠슨' 이었음.",
+    "고칠 글": "오늘날 Jensen 씨 부부는 늙었고 더 젊을 때 그랬던 것만큼 열심히 일할 수 없다.",
+    "고칠 곳": "content/ld_english_scripts.json .d156[n=8].ko (이 두 줄은 그대로)"
+   }
+  },
+  {
+   "key": "F:C05900",
+   "까닭": "심각·높음 전부",
+   "ids": [
+    "C05900"
+   ],
+   "읽을거리": "06.md",
+   "칸": ".d192[n=8].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "Aborigine 사람들의 놀라운 추적 능력은 이 이야기에 의하여 나타내진다.",
+   "뒤": "원주민들의 놀라운 추적 능력은 이 이야기에 의하여 나타내진다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "LISTENING d192 n8 한국어(.d192[n=8].ko). 영어는 'The Aboriginal trackers' astonishing skill at tracking' — 원주민 '추적자들' 의 능력인데, 한국어 '원주민들의 놀라운 추적 능력' 은 원주민 전체의 능력으로 바꿔 말함. 바로 앞 n7 은 같은 까닭으로 소유자 '이미 고친 것'(6-0298 '원주민은 …' → '원주민 추적자는 …', 영어와 맞춤)인데 n8 은 'Aborigine 사람들의' → '원주민들의' 로 낱말만 바꾸고 일반화가 남음(기준 판에도 있었음).",
+    "고칠 글": "원주민 추적자들의 놀라운 추적 능력은 이 이야기에 의하여 나타내진다."
+   }
+  },
+  {
+   "key": "F:C05930",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05930"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".d206[n=2].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "몇 년 전에 어떤 대학의 설립자의 조각(동상)이 교정 한 복판의 명예의 자리로부터 사라졌다.",
+   "뒤": "몇 년 전에 어떤 대학의 설립자의 동상이 교정 한 복판의 명예의 자리로부터 사라졌다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d206 n2 한국어(.d206[n=2].ko). 바뀐 곳 '조각(동상)' → '동상' 은 맞음. 남은 '한 복판' 은 표준국어대사전 한 낱말 '한복판' — 기준 판에도 있었음.",
+    "고칠 글": "몇 년 전에 어떤 대학의 설립자의 동상이 교정 한복판의 명예의 자리로부터 사라졌다."
+   }
+  },
+  {
+   "key": "F:C05932",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05932"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".d206[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "그 조각은 낚싯대를 잡고 있었고 밤 사이에 고기 한 마리가 미끼를 물고 잡혀 있었다.",
+   "뒤": "그 동상은 낚싯대를 잡고 있었고 밤 사이에 고기 한 마리가 미끼를 물고 잡혀 있었다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d206 n5 한국어(.d206[n=5].ko). 바뀐 곳 '조각' → '동상' 은 맞음. 남은 '밤 사이에'(during the night)는 표준국어대사전 한 낱말 '밤사이' — 기준 판에도 있었음.",
+    "고칠 글": "그 동상은 낚싯대를 잡고 있었고 밤사이에 고기 한 마리가 미끼를 물고 잡혀 있었다."
+   }
+  },
+  {
+   "key": "F:C05947",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05947"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".d214[n=3].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "예를 들어 천둥 소리는 여러 하늘의 무서운 신들 사이의 전투와 전쟁의 으르렁대는 소리라고 생각되었다.",
+   "뒤": "예를 들어 천둥 소리는 하늘에 있는 무서운 신들 사이의 전투와 전쟁의 으르렁거리는 소리라고 여겨졌다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d214 n3 한국어(.d214[n=3].ko). 바뀐 곳(하늘에 있는 · 으르렁거리는 · 여겨졌다)은 맞음. 남은 '천둥 소리' 는 표준국어대사전 한 낱말 '천둥소리' — 기준 판에도 있었음.",
+    "고칠 글": "예를 들어 천둥소리는 하늘에 있는 무서운 신들 사이의 전투와 전쟁의 으르렁거리는 소리라고 여겨졌다."
+   }
+  },
+  {
+   "key": "F:C05948",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05948"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".d214[n=5].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "무지함 속에서 원시인은 변덕스런 신들이 땅의 거주자들에게 화풀이하기 위하여 폭풍, 지진, 태풍같은 천연재해를 사용한다고 생각했다.",
+   "뒤": "무지함 속에서 원시인은 변덕스런 신들이 땅의 거주자들에게 화풀이하기 위하여 폭풍, 지진, 허리케인 같은 자연재해를 사용한다고 생각했다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d214 n5 한국어(.d214[n=5].ko). 바뀐 곳(태풍 → 허리케인 · 천연재해 → 자연재해)은 영어(hurricanes · natural calamities)와 맞음. 남은 '변덕스런' 은 표준형 '변덕스러운'(-스럽다 활용) — 기준 판에도 있었음.",
+    "고칠 글": "무지함 속에서 원시인은 변덕스러운 신들이 땅의 거주자들에게 화풀이하기 위하여 폭풍, 지진, 허리케인 같은 자연재해를 사용한다고 생각했다."
+   }
+  },
+  {
+   "key": "F:C05955",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05955"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".d215[n=6].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "흰 들소같은 일부 동물들은 신성한 것으로 생각되었기 때문에 심지어 숭배받기까지 했다.",
+   "뒤": "흰 들소같은 일부 동물들은 신성하게 여겨졌고, 일부는 오늘날에도 그렇다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d215 n6 한국어(.d215[n=6].ko). 바뀐 뜻(신성하게 여겨졌고 일부는 오늘날에도 그렇다)은 영어와 맞음. 남은 '들소같은' 의 '같은' 은 형용사라 띄어 씀('흰 들소 같은') — 기준 판에도 있었음.",
+    "고칠 글": "흰 들소 같은 일부 동물들은 신성하게 여겨졌고, 일부는 오늘날에도 그렇다."
+   }
+  },
+  {
+   "key": "F:C05963",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05963"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".d221[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "휴가를 계획하는데 있어서 예산을 간과할 수 없다.",
+   "뒤": "휴가를 계획하는데 있어서 예산을 간과할 수 없다. ※ 옛 글입니다(지금은 대부분의 주에서 도로변 공원·휴게소의 밤샘 야영을 허락하지 않습니다).",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d221 n1 한국어(.d221[n=1].ko). 결정표 6 알림(도로변 공원 · 휴게소 밤샘 야영 금지 — 대부분의 주가 휴게소 야영을 막음)은 들어감. 남은 '계획하는데 있어서' 의 '데' 는 의존 명사라 띄어 씀 — 기준 판에도 있었음.",
+    "고칠 글": "휴가를 계획하는 데 있어서 예산을 간과할 수 없다. ※ 옛 글입니다(지금은 대부분의 주에서 도로변 공원·휴게소의 밤샘 야영을 허락하지 않습니다)."
+   }
+  },
+  {
+   "key": "F:C05965",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05965"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".d222[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "휴가를 계획하는데 있어서 똑같이 중요한 것은 어떻게 여행할 것인가를 고려하는 것이다.",
+   "뒤": "휴가를 계획하는데 있어서 똑같이 중요한 것은 어떻게 여행할 것인가를 고려하는 것이다. ※ 옛 글입니다(미국 유람선의 쿠바행은 2019년에 금지되었습니다).",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d222 n1 한국어(.d222[n=1].ko). 결정표 6 알림(미국 유람선의 쿠바행 2019년 금지 — 2019-06 미 정부 조치)은 들어감. 남은 '계획하는데 있어서' 의 '데' 는 의존 명사라 띄어 씀 — 기준 판에도 있었음.",
+    "고칠 글": "휴가를 계획하는 데 있어서 똑같이 중요한 것은 어떻게 여행할 것인가를 고려하는 것이다. ※ 옛 글입니다(미국 유람선의 쿠바행은 2019년에 금지되었습니다)."
+   }
+  },
+  {
+   "key": "F:C05967",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C05967"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".d222[n=3].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "휴식도 되고 릴랙스가 되는 것 이외에도 해양 유람은 흥미있고 이국적인 장소로 가게 해준다.",
+   "뒤": "편히 쉬며 긴장을 풀 수 있는 것 외에도 바다 여행은 흥미있고 이국적인 장소로 가게 해준다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d222 n3 한국어(.d222[n=3].ko). 바뀐 앞부분(편히 쉬며 긴장을 풀 수 있는 것 외에도 바다 여행은)은 맞음. 남은 '흥미있고' 는 '흥미 있고'(명사 + 있다) — 기준 판에도 있었음.",
+    "고칠 글": "편히 쉬며 긴장을 풀 수 있는 것 외에도 바다 여행은 흥미 있고 이국적인 장소로 가게 해준다."
+   }
+  },
+  {
+   "key": "F:C06073",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C06073"
+   ],
+   "읽을거리": "11.md",
+   "칸": ".d263[n=2].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "대부분의 기독교 국가에서는 노래부르는 사람들의 무리들이 그리스도의 탄생을 기리기 위하여 노래를 부르면서 거리를 쏘다닌다.",
+   "뒤": "대부분의 기독교 국가에서는 노래부르는 사람들의 무리들이 그리스도의 탄생을 기리기 위하여 노래를 부르며 거리를 돌아다닌다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d263 n2 한국어(.d263[n=2].ko). 바뀐 곳(노래를 부르며 거리를 돌아다닌다)은 맞음. 남은 '노래부르는' 은 '노래 부르다'(명사 + 동사)라 띄어 씀 — 기준 판에도 있었음. (d263 은 표본 쪽이기도 함.)",
+    "고칠 글": "대부분의 기독교 국가에서는 노래 부르는 사람들의 무리들이 그리스도의 탄생을 기리기 위하여 노래를 부르며 거리를 돌아다닌다."
+   }
+  },
+  {
+   "key": "F:C06090",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C06090"
+   ],
+   "읽을거리": "12.md",
+   "칸": ".d272[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "몇년 전에 대부분의 지식인들은 대중 음악을 경멸했다.",
+   "뒤": "몇년 전에 대부분의 지식인들은 대중 음악을 경멸했다. ※ 옛 글입니다(지금 재즈는 널리 인정받는 음악입니다).",
+   "주장": {
+    "판정": "틀림",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "LISTENING d272 n1 한국어(.d272[n=1].ko). 결정표 6 알림(지금 재즈는 널리 인정받는 음악)은 들어감. 남은 '몇년' 은 '몇 년'(관형사 + 단위 명사), '대중 음악' 은 표준국어대사전 한 낱말 '대중음악' — 기준 판에도 있었음.",
+    "고칠 글": "몇 년 전에 대부분의 지식인들은 대중음악을 경멸했다. ※ 옛 글입니다(지금 재즈는 널리 인정받는 음악입니다)."
+   }
+  },
+  {
+   "key": "F:C09488",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C09488"
+   ],
+   "읽을거리": "02.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d153.json",
+   "전": "individual state. sixteen. six years old, elementary school. junior high school senior high school",
+   "뒤": "individual state. 17 or older. six years old, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree doctor's degree.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d153 힌트 줄(content/lessons/ld/d153.json 힌트 블록 text). 9/18 뒤 더한 'master's degree doctor's degree' 가 두 항목인데 경계가 없어 한 칩 [master's degree doctor's degree] 로 뜸(대본 n8 'a master's degree and perhaps a doctor's degree' — and 로 갈린 두 항목). 기준 판에서 이 칩이 없던 n7(After 4 years, they receive a bachelor's degree.)에도 'degree' 일치로 붙은 칩이 새로 뜸. 나머지(17 or older · 18 · junior/senior high school 나눔)는 나아짐. 고칠 글(모의 도구 확인): n7 · n8 에 [bachelor's degree] [master's degree] [doctor's degree] 로 따로 뜸('degree' 낱말 일치로 셋이 함께 뜨는 것은 앱 규칙 한계).",
+    "고칠 글": "individual state. 17 or older. six years old, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree. doctor's degree."
+   }
+  },
+  {
+   "key": "F:C09532",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C09532"
+   ],
+   "읽을거리": "02.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d155.json",
+   "전": "aptitude tests, field of interest. chemists, physicists, biologists. accounting, personnel management",
+   "뒤": "aptitude tests, field of interest. chemists, physicists, biologists. accounting, personnel management, public relations. Teaching, newspaper work, medicine, engineering fascinating careers.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d155 힌트 줄(content/lessons/ld/d155.json 힌트 블록 text). 9/18 뒤 더한 끝 'engineering fascinating careers' 가 두 항목(engineering · fascinating careers)인데 경계가 없어 한 칩으로 뜸 — n8 에 [engineering fascinating careers], 기준 판에서 칩이 없던 n3(There are many careers open to each of us.)에도 'careers' 일치로 이 붙은 칩이 새로 뜸. 고칠 글(모의 도구 확인): n8 [engineering] [fascinating careers] · n3 [fascinating careers].",
+    "고칠 글": "aptitude tests, field of interest. chemists, physicists, biologists. accounting, personnel management, public relations. Teaching, newspaper work, medicine, engineering. fascinating careers."
+   }
+  },
+  {
+   "key": "F:C09555",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C09555"
+   ],
+   "읽을거리": "02.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d156.json",
+   "전": "Jensens typical Norway settle on dairy farm Minnesota. Olaf Carl, plow planted fields,",
+   "뒤": "Jensens. typical Norway settle on dairy farm. Minnesota. Olaf Carl, plow planted fields, harvested crops. milked. Inga. Sigrid, Mr. and Mrs. Jensen",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d156 힌트 줄(content/lessons/ld/d156.json 힌트 블록 text). 9/18 뒤 흩어진 줄을 합치며 더한 'Mr. and Mrs. Jensen' 이 앱의 '. ' 나누기로 [Mr] [and Mrs] [Jensen] 이 되어 n2 · n8 에 뜻 없는 조각 [and Mrs] 가 뜸(명령서 예 'Mrs' 와 'Watson' 과 같은 종류 — 기준 판에 없던 흠). 또 기준 판부터 남은 [Olaf Carl](대본 'Olaf and Carl' — 두 이름이 한 칩, n4 · n9) · [typical Norway settle on dairy farm](n1 typical · n2 Norway · settled on a dairy farm — 세 항목) · [plow planted fields](plowed and planted the fields — and 로 갈린 항목)가 남음. 7-5 는 [typical Norway …] 를 n1 의 'farm' 이 칩에서 빠진다고 붙여 뒀으나 'farm' 은 힌트 낱말이 아님. 고칠 글(모의 도구 확인 — 이 --replace 로 'plow. planted fields' 를 더 나눔): n1 [Jensens] [typical] [Jensen] · n2 [Norway] [settle on dairy farm] [Minnesota] [Jensen] · n4 [Olaf] [Carl] · n5 [plow] [planted fields] [harvested crops] [milked] · n8 [Jensen] · n9 [Olaf] — 'Mr.' · 'Mrs.' 는 어려운 낱말이 아니라 뺌(남기려면 LdLearningView 칭호 약어 코드 수정이 먼저).",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen"
+   }
+  },
+  {
+   "key": "F:C09742",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C09742"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d164.json",
+   "전": "United States essential instruct fields of interest, Marconi, Italian inventor communications device.",
+   "뒤": "United States. essential. instruct. fields of interest, Marconi, Italian inventor communications device. Explorers. astronauts circle. civilization. means of radio.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d164 힌트 줄(content/lessons/ld/d164.json 힌트 블록 text). 9/18 뒤 더한 'means of radio' 가 'radio' 낱말 일치로 n1 · n3 · n4 에도 뜸 — n3 · n4 는 기준 판보다 헛칩이 늘어 나빠짐(정작 필요한 곳은 n6 'by means of radio' 하나). 기준 판부터 남은 [Italian inventor communications device] 는 n3 의 'Italian inventor' 와 n4 의 'communications device' 두 항목이 붙어 두 행에 통째로 뜸. 고칠 글(모의 도구 확인): n1 [United States] · n3 [Marconi] [Italian inventor] · n4 [communications device] · n6 [Explorers] [astronauts circle] [civilization] [by means of].",
+    "고칠 글": "United States. essential. instruct. fields of interest, Marconi, Italian inventor. communications device. Explorers. astronauts circle. civilization. by means of."
+   }
+  },
+  {
+   "key": "F:C10806",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C10806"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d210.json",
+   "전": "recorded history, forms of collections Ancient Rome Alexandria noted then-known world acquaint",
+   "뒤": "recorded history, forms of collections. Ancient Rome. Alexandria. noted. then-known world. acquaint. instructive, favorite spots. Sunday-afternoon pleasure seekers. reptiles, taste of far-off, exotic",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "LISTENING d210 힌트 줄(content/lessons/ld/d210.json 힌트 블록 text). 9/18 뒤 더한 칩 [Sunday-afternoon pleasure seekers] 와 기준 판부터 있던 [then-known world] 는 대본(n4 'Sunday afternoon pleasure seekers' · n2 'the then known world')에 없는 하이픈 꼴 — 6단계가 하이픈 힌트를 대본 꼴로 맞춘 방침(6-0244)과 어긋남(결정표 1 로 채점은 하이픈 · 띄움을 모두 받아 점수에는 영향 없음 → 확신 보통). 나눔 자체는 맞음. 고칠 글(모의 도구 확인): n2 [… then known world] · n4 [instructive] [favorite spots] [Sunday afternoon pleasure seekers].",
+    "고칠 글": "recorded history, forms of collections. Ancient Rome. Alexandria. noted. then known world. acquaint. instructive, favorite spots. Sunday afternoon pleasure seekers. reptiles, taste of far-off, exotic"
+   }
+  },
+  {
+   "key": "F:C10889",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C10889"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d214.json",
+   "전": "sparks ignorance, capricious calamities take spite out on dwellers Accordingly, priests refrain from",
+   "뒤": "sparks ignorance, capricious. calamities. take spite out on dwellers. Accordingly, priests. refrain from plague. calamities.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d214 힌트 줄(content/lessons/ld/d214.json 힌트 블록 text). 나눔은 나아졌으나 기준 판부터 남은 [sparks ignorance] 는 두 문장의 항목(n4 sparks · n5 ignorance)이 붙어 n4 · n5 에 함께 뜸 — 기준 판에도 있었음. 끝의 'calamities.' 는 앞 'calamities' 와 같은 조각이라 앱이 하나로 치므로(겹친 항목) 빼도 칩은 같음. 고칠 글(모의 도구 확인): n4 [sparks] · n5 [ignorance] [capricious] [calamities] [take spite out on dwellers] · n6 [calamities] [Accordingly] [priests] [refrain from plague].",
+    "고칠 글": "sparks. ignorance, capricious. calamities. take spite out on dwellers. Accordingly, priests. refrain from plague."
+   }
+  },
+  {
+   "key": "F:C10912",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C10912"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d215.json",
+   "전": "practice hang scalps conquered foes belt wore waists. wearers immune physical danger. good",
+   "뒤": "ancient Egypt. amulets eyes. beetles. protect wearers from harm. good fortune. white buffalo held sacred. religious ritual side by side",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d215 힌트 줄(content/lessons/ld/d215.json 힌트 블록 text — 결정표 8 로 새로 쓴 힌트). [amulets eyes] 는 두 항목이라 n4(These amulets …)에 대본에 없는 'eyes' 가 함께 뜸, [white buffalo held sacred] · [religious ritual side by side] 도 두 항목씩. 7-5 는 'side by side' · 'eyes' 가 혼자 못 뜬다고 붙였으나 앱은 조각 전체(sidebyside · eyes)가 문장에 있으면 띄움 — 모의 도구 확인. 고칠 글: n3 [ancient Egypt] [amulets] [eyes] [beetles] · n4 [amulets] [protect wearers from harm] · n6 [white buffalo] [held sacred] · n7 [religious ritual] [side by side](+ 'ancient' 일치 [ancient Egypt] 은 지금도 같음).",
+    "고칠 글": "ancient Egypt. amulets. eyes. beetles. protect wearers from harm. good fortune. white buffalo. held sacred. religious ritual. side by side"
+   }
+  },
+  {
+   "key": "F:C10971",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C10971"
+   ],
+   "읽을거리": "07.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d218.json",
+   "전": "mania stem from psychological make-up external bring this union about.",
+   "뒤": "mania stem from. psychological make-up. external. bring this union about.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d218 힌트 줄(content/lessons/ld/d218.json 힌트 블록 text). [mania stem from] 은 두 항목(this collecting mania · stems from)이 붙은 칩이고, [psychological make-up] 은 대본 n4 'psychological makeup' 에 없는 하이픈 꼴. 'stem from' 은 대본 'stems from' 에 글자로 안 들어 있어 혼자 두면 안 뜨므로 대본 꼴로. 고칠 글(모의 도구 확인): n4 [mania] [stems from] [psychological makeup] · n5 [external] [bring this union about].",
+    "고칠 글": "mania. stems from. psychological makeup. external. bring this union about."
+   }
+  },
+  {
+   "key": "F:C11074",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C11074"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d223.json",
+   "전": "take in Saint Augustine, Miami Beach luxurious mysterious Everglades. Seminole Indians appreciate",
+   "뒤": "take in Saint Augustine, Miami Beach. luxurious. mysterious Everglades. Seminole Indians appreciate. preparatory worthwhile",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d223 힌트 줄(content/lessons/ld/d223.json 힌트 블록 text). 9/18 뒤 더한 [preparatory worthwhile] 이 두 항목, 기준 판부터 남은 [take in Saint Augustine](구절 + 지명) · [Seminole Indians appreciate](민족 이름 + 낱말)도 이름과 낱말이 한 칩(명령서 예 'Wisconsin 1937' 과 같은 종류). 고칠 글(모의 도구 확인): n3 [take in] [Saint Augustine] [Miami Beach] [luxurious] [mysterious Everglades] · n4 [Seminole Indians] [appreciate] · n5 [preparatory] [worthwhile].",
+    "고칠 글": "take in. Saint Augustine, Miami Beach. luxurious. mysterious Everglades. Seminole Indians. appreciate. preparatory. worthwhile"
+   }
+  },
+  {
+   "key": "F:C11150",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C11150"
+   ],
+   "읽을거리": "08.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d227.json",
+   "전": "enthusiast. run away with think up practical victim",
+   "뒤": "enthusiast. run away with think up practical. victim",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d227 힌트 줄(content/lessons/ld/d227.json 힌트 블록 text). 'victim' 만 떼었고 [run away with think up practical] 은 세 항목(n5 run away with · n6 thinking up · practical jokes)이 붙은 채 남음 — 이 칩은 'practical' 로만 n6 · n7 · n8 에 뜨고, 'run away with' 가 있는 n5 에는 안 떠 그 문장의 힌트가 빠짐. 7-5 는 'run away with' 가 혼자 못 뜬다고 붙였으나 앱은 조각 전체(runawaywith)가 문장에 있으면 띄움 — 모의 도구 확인. 고칠 글: n5 [run away with] · n6 [think up] [practical] · n7 [practical] · n8 [practical] [victim].",
+    "고칠 글": "enthusiast. run away with. think up. practical. victim"
+   }
+  },
+  {
+   "key": "F:C11721",
+   "까닭": "중간·낮음 20% 표본",
+   "ids": [
+    "C11721"
+   ],
+   "읽을거리": "10.md",
+   "칸": ".blocks[2].text",
+   "파일": "content/lessons/ld/d254.json",
+   "전": "surest signs well-developed personality take a joke. on the part of the applicant out of place. as in",
+   "뒤": "surest signs. well-developed personality take a joke. on the part of the applicant. out of place. as in all things, go to extremes. prerogatives.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "LISTENING d254 힌트 줄(content/lessons/ld/d254.json 힌트 블록 text). 9/18 뒤 더한 'as in all things, go to extremes. prerogatives' 와 나눔은 맞음. [well-developed personality take a joke] 는 두 항목(a well-developed personality · the ability to take a joke) — 7-5 는 'take a joke' 가 혼자 못 뜬다고 붙였으나 앱은 조각 전체(takeajoke)가 문장에 있으면 띄움 — 모의 도구 확인. 고칠 글: n5 [surest signs] [well-developed personality] [take a joke].",
+    "고칠 글": "surest signs. well-developed personality. take a joke. on the part of the applicant. out of place. as in all things, go to extremes. prerogatives."
+   }
+  },
+  {
+   "key": "X:0",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d139[n=6].ko",
+    "지금": "나의 아내는 무엇을 입을지 마음을 정하는데 오랜 시간이 걸렸고 우리는 약간 늦게 우리의 집을 떠났다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'정하는 데' 의 '데' 는 의존 명사(일 · 것)라 띄어 씀. 바뀌지 않은 옆 글(C05769 와 같은 강의).",
+    "고칠 글": "나의 아내는 무엇을 입을지 마음을 정하는 데 오랜 시간이 걸렸고 우리는 약간 늦게 우리의 집을 떠났다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:1",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d140[n=5].ko",
+    "지금": "그 극이 끝난 후에 우리는 오랫 동안 만나지 못했던 몇몇 친구들을 만났다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'오랫동안' 은 표준국어대사전 한 낱말. 바뀌지 않은 옆 글.",
+    "고칠 글": "그 극이 끝난 후에 우리는 오랫동안 만나지 못했던 몇몇 친구들을 만났다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:2",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d140[n=8].ko",
+    "지금": "우리가 집에 도착할 무렵은 아침 두시 경이었다.",
+    "종류": "②",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "영어 'about 2:00 in the morning' 은 새벽 2시 — 한국어 '아침 두시' 는 새벽을 아침으로 옮긴 오역(두 시에 아침이라 하지 않음). '경' 은 접미사라 '두 시경'. 바뀌지 않은 옆 글(C09173 힌트 2:00 과 같은 문장).",
+    "고칠 글": "우리가 집에 도착할 무렵은 새벽 두 시경이었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:3",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d143[n=10].ko",
+    "지금": "존슨 박사는 한 동안 조심하는 것이 필요할 것이라고 말했지만 그는 걱정할 아무 것도 없다고 확신했다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'한동안' · '아무것' 은 표준국어대사전 한 낱말. 바뀌지 않은 옆 글.",
+    "고칠 글": "존슨 박사는 한동안 조심하는 것이 필요할 것이라고 말했지만 그는 걱정할 아무것도 없다고 확신했다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:4",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d144[n=2].ko",
+    "지금": "그녀는 자신의 이름이 Mrs.Mills라고 말했고 내가 Dr.Cooper의 비서냐고 물었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "칭호 뒤 띄어쓰기 빠짐 — 영어 대본 · 힌트는 'Mrs. Mills' · 'Dr. Cooper's' 로 고쳤는데(6단계 칭호 붙여 쓰기) 한국어 줄은 붙은 채 남음. 바뀌지 않은 옆 글.",
+    "고칠 글": "그녀는 자신의 이름이 Mrs. Mills라고 말했고 내가 Dr. Cooper의 비서냐고 물었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:5",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d144[n=4].ko",
+    "지금": "그녀는 그녀의 남편이 아프고 그를 돌보아야하기 때문에 두시 약속을 취소하고 싶다고 나에게 말했다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'-어야 하다' 의 '하다' 는 띄어 씀('돌보아야 하기'). 바뀌지 않은 옆 글.",
+    "고칠 글": "그녀는 그녀의 남편이 아프고 그를 돌보아야 하기 때문에 두시 약속을 취소하고 싶다고 나에게 말했다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:6",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d144[n=7].ko",
+    "지금": "나는 그녀에게 내가 그렇게 해드릴 수 없고 나는 Dr.Cooper의 비서가 아니라고 말했다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "칭호 뒤 띄어쓰기 빠짐(영어 대본은 'Dr. Cooper's'). 바뀌지 않은 옆 글.",
+    "고칠 글": "나는 그녀에게 내가 그렇게 해드릴 수 없고 나는 Dr. Cooper의 비서가 아니라고 말했다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:7",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d145[n=3].ko",
+    "지금": "나는 내가 전화를 잘못 걸었다고 추측하며 우연히도 Mrs.Mills에게 걸었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "칭호 뒤 띄어쓰기 빠짐(영어 대본은 'Mrs. Mills'). 바뀌지 않은 옆 글.",
+    "고칠 글": "나는 내가 전화를 잘못 걸었다고 추측하며 우연히도 Mrs. Mills에게 걸었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:8",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d148[n=3].ko",
+    "지금": "1964년에 그것의 인구는 185,000,000이상이었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'이상' 은 명사라 띄어 씀, 수에 단위 '명' 이 없음. 영어는 'over 185 million'. 바뀌지 않은 옆 글(C09388 힌트 '185 million' 과 같은 문장).",
+    "고칠 글": "1964년에 그것의 인구는 1억 8,500만 명 이상이었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:9",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d148[n=8].ko",
+    "지금": "오랫 동안 48개의 주가 있었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'오랫동안' 은 한 낱말. 바뀌지 않은 옆 글.",
+    "고칠 글": "오랫동안 48개의 주가 있었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:17"
+   }
+  },
+  {
+   "key": "X:60",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d191[n=2].en",
+    "지금": "I suppose you are lost. Can I help you?",
+    "종류": "①",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "여인의 말인데 따옴표가 없음 — 같은 행 한국어는 9/18 뒤 따옴표를 바로잡음(C05887). 확신 보통. 바뀌지 않은 옆 글.",
+    "고칠 글": "\"I suppose you are lost. Can I help you?\"",
+    "새 음성 클립": true,
+    "배치": "2026-09-24 16:36"
+   }
+  },
+  {
+   "key": "X:61",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d191[n=10].en",
+    "지금": "I know this part of town quite well, she replied.",
+    "종류": "①",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "직접 인용에 따옴표가 없음(한국어 C05888 은 따옴표). 확신 보통. 바뀌지 않은 옆 글.",
+    "고칠 글": "\"I know this part of town quite well,\" she replied.",
+    "새 음성 클립": true,
+    "배치": "2026-09-24 16:36"
+   }
+  },
+  {
+   "key": "X:62",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d191[n=11].en",
+    "지금": "But the fog, this terrible fog, made it impossible to see anything, I said.",
+    "종류": "①",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "직접 인용에 따옴표가 없음(한국어는 따옴표). 확신 보통. 바뀌지 않은 옆 글.",
+    "고칠 글": "\"But the fog, this terrible fog, made it impossible to see anything,\" I said.",
+    "새 음성 클립": true,
+    "배치": "2026-09-24 16:36"
+   }
+  },
+  {
+   "key": "X:63",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d194[n=3].ko",
+    "지금": "수톤의 천막이 펼쳐지고 남자들이 소리지르며 당기고 서커스 코끼리들이 거대한 천막 기둥을 제위치에 세우는 것을 돕는다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'수 톤' · '소리 지르며' · '제 위치에' 띄어 씀(관형사 수 · 두 낱말 · '제' = 자기의). 바뀌지 않은 옆 글.",
+    "고칠 글": "수 톤의 천막이 펼쳐지고 남자들이 소리 지르며 당기고 서커스 코끼리들이 거대한 천막 기둥을 제 위치에 세우는 것을 돕는다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:40"
+   }
+  },
+  {
+   "key": "X:66",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d197[n=7].ko",
+    "지금": "그의 애교있는 유머와 가엾은 외로움은 전세계의 서커스 구경꾼의 마음을 사로잡아왔다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'애교 있는' · '전 세계' 띄어 씀. 바뀌지 않은 옆 글.",
+    "고칠 글": "그의 애교 있는 유머와 가엾은 외로움은 전 세계의 서커스 구경꾼의 마음을 사로잡아왔다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:40"
+   }
+  },
+  {
+   "key": "X:74",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/lessons/ld/d202.json",
+    "칸": "힌트 블록 text",
+    "지금": "vividly brilliant fill associates",
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "바뀌지 않은 힌트 줄 — 네 낱말(n5 vividly · n6 brilliant · n8 fills · associates)이 한 칩으로 세 행에 통째로 뜸. 고칠 글(모의 도구 확인): n5 [vividly] · n6 [brilliant] · n8 [fill] [associates].",
+    "고칠 글": "vividly. brilliant. fill. associates",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:40"
+   }
+  },
+  {
+   "key": "X:75",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d202[n=2].ko",
+    "지금": "어떤 사람이 친절하다고 말하는 것은 그가 부드럽고 배려깊고 자선심이 많다고 말하는 것이다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'배려 깊고' 띄어 씀. 바뀌지 않은 옆 글.",
+    "고칠 글": "어떤 사람이 친절하다고 말하는 것은 그가 부드럽고 배려 깊고 자선심이 많다고 말하는 것이다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:40"
+   }
+  },
+  {
+   "key": "X:100",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d233[n=2].ko",
+    "지금": "이런 연극은 기독교계의 종교적인 축제와 밀접하게 관련있었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'관련 있었다' 띄어 씀. 바뀌지 않은 옆 글.",
+    "고칠 글": "이런 연극은 기독교계의 종교적인 축제와 밀접하게 관련 있었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:101",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d234[n=4].ko",
+    "지금": "그들의 즐거운 음악과 구김살없는 농담은 대기를 명절 분위기로 가득 채웠다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'구김살 없는' 띄어 씀. 바뀌지 않은 옆 글(C05996 과 같은 행).",
+    "고칠 글": "그들의 즐거운 음악과 구김살 없는 농담은 대기를 명절 분위기로 가득 채웠다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:102",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d235[n=7].ko",
+    "지금": "그들의 표시없는 무덤은 그들의 용기에 대한 보이지않는 기념비이다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'표시 없는' · '보이지 않는' 띄어 씀. 바뀌지 않은 옆 글.",
+    "고칠 글": "그들의 표시 없는 무덤은 그들의 용기에 대한 보이지 않는 기념비이다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:103",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d236[n=4].ko",
+    "지금": "그의 조악한 포장 마차는 승객들을 집의 모든 편안함과 함께 미국의 모든 곳으로 순식간에 옮겨주는 유선형의 호화항공기와 멋있는 열차로 바뀌었다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'포장마차' 는 한 낱말(앞 강의 d235 는 '포장마차'), '호화 항공기' 띄어 씀. 바뀌지 않은 옆 글.",
+    "고칠 글": "그의 조악한 포장마차는 승객들을 집의 모든 편안함과 함께 미국의 모든 곳으로 순식간에 옮겨주는 유선형의 호화 항공기와 멋있는 열차로 바뀌었다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:104",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d239[n=3].ko",
+    "지금": "일반적으로 누구나 그 결과를 기분좋게 받아들인다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'기분 좋게' 띄어 씀. 바뀌지 않은 옆 글.",
+    "고칠 글": "일반적으로 누구나 그 결과를 기분 좋게 받아들인다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:105",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d239[n=4].ko",
+    "지금": "스포츠는 팀워크와 공정한 경기의 정신을 발전시킴으로써 사회 생활에서 중요한 역할을 한다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'사회생활' 은 표준국어대사전 한 낱말. 바뀌지 않은 옆 글.",
+    "고칠 글": "스포츠는 팀워크와 공정한 경기의 정신을 발전시킴으로써 사회생활에서 중요한 역할을 한다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:106",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d239[n=5].ko",
+    "지금": "게다가 그들은 강하고 건강한 신체를 키우는데 도움이 된다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "의존 명사 '데' 띄어 씀('키우는 데'). 바뀌지 않은 옆 글.",
+    "고칠 글": "게다가 그들은 강하고 건강한 신체를 키우는 데 도움이 된다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:107",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d239[n=6].ko",
+    "지금": "대부분의 사람들은 스포츠가 재미와 레크리에이션을 위하여 해야한다는 것을 인식하지만 스포츠와 게임을 가볍게 받아들이지 못하는 소수의 사람들이 있다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'-어야 하다' 띄어 씀('해야 한다는'). 바뀌지 않은 옆 글.",
+    "고칠 글": "대부분의 사람들은 스포츠가 재미와 레크리에이션을 위하여 해야 한다는 것을 인식하지만 스포츠와 게임을 가볍게 받아들이지 못하는 소수의 사람들이 있다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:108",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d241[n=5].ko",
+    "지금": "당연히 그 교수는 그 내기를 받아들여야 했다. 몇주 동안 그는 밤늦게까지 연습했다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "관형사 '몇' 뒤 단위 명사 띄어 씀('몇 주'). 바뀌지 않은 옆 글.",
+    "고칠 글": "당연히 그 교수는 그 내기를 받아들여야 했다. 몇 주 동안 그는 밤늦게까지 연습했다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:52"
+   }
+  },
+  {
+   "key": "X:109",
+   "까닭": "중간·낮음 20% 표본",
+   "주장": {
+    "파일": "content/ld_english_scripts.json",
+    "칸": ".d247[n=1].ko",
+    "지금": "악수하는 것도 오랜 역사를 지닌 또 다른 예절바른 관습이다.",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'예절 바르다' 는 두 낱말. 바뀌지 않은 옆 글.",
+    "고칠 글": "악수하는 것도 오랜 역사를 지닌 또 다른 예절 바른 관습이다.",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:54"
+   }
+  },
+  {
+   "key": "S:/ld/d156-1:T15",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156-1.md",
+   "주장": {
+    "T": "T15",
+    "바뀐 글": false,
+    "종류": "⑦",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "같은 강의 n1 · n2 는 9/18 뒤 'Jensen' 으로 바꿨는데 n8 만 '젠슨' — 한 강의 안에서 같은 이름이 갈림(1부 C05802 · C05803 항목과 같음).",
+    "지금": "오늘날 젠슨 씨 부부는 늙었고 더 젊을 때 그랬던 것만큼 열심히 일할 수 없다.",
+    "고칠 글": "오늘날 Jensen 씨 부부는 늙었고 더 젊을 때 그랬던 것만큼 열심히 일할 수 없다.",
+    "고칠 곳": "content/ld_english_scripts.json .d156[n=8].ko",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d167:T02",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d167.md",
+   "주장": {
+    "T": "T02",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "두 사람 이름(Mark Twain married Olivia Langdon)이 한 칩 — 1부 C09815. ([one year before his death] 가 'before' 일치로 n1 에 뜨는 것은 앱 한계라 따로 안 셈.)",
+    "지금": "[1870] [Mark Twain Olivia Langdon] [one year before his death]",
+    "고칠 글": "1870, Mark Twain. Olivia Langdon. biographers, lecturer. talks. a variety of subjects. Tom Sawyer. Huckleberry Finn. satire. complete. 1909, one year before his death. 74",
+    "고칠 곳": "content/lessons/ld/d167.json 힌트 블록 text (1부 C09815)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d167:T04",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d167.md",
+   "주장": {
+    "T": "T04",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n2(Twain's later books)에 'Olivia Langdon' 이 붙은 칩 — 1부 C09815.",
+    "지금": "[Mark Twain Olivia Langdon] [biographers]",
+    "고칠 글": "1870, Mark Twain. Olivia Langdon. biographers, lecturer. talks. a variety of subjects. Tom Sawyer. Huckleberry Finn. satire. complete. 1909, one year before his death. 74",
+    "고칠 곳": "content/lessons/ld/d167.json 힌트 블록 text (1부 C09815)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d167:T06",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d167.md",
+   "주장": {
+    "T": "T06",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n3 에 'Olivia Langdon' 이 붙은 칩 — 1부 C09815.",
+    "지금": "[Mark Twain Olivia Langdon] [lecturer]",
+    "고칠 글": "1870, Mark Twain. Olivia Langdon. biographers, lecturer. talks. a variety of subjects. Tom Sawyer. Huckleberry Finn. satire. complete. 1909, one year before his death. 74",
+    "고칠 곳": "content/lessons/ld/d167.json 힌트 블록 text (1부 C09815)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d259-1:T07",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d259-1.md",
+   "주장": {
+    "T": "T07",
+    "바뀐 글": false,
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'첫눈' · '그해' 는 표준국어대사전 한 낱말.",
+    "지금": "그러나 다른 사람들은 그 해의 첫 눈을 겨울 운동 계절의 개시로 생각하고 굉장한 기대를 갖고 겨울이 오는 것을 기다린다.",
+    "고칠 글": "그러나 다른 사람들은 그해의 첫눈을 겨울 운동 계절의 개시로 생각하고 굉장한 기대를 갖고 겨울이 오는 것을 기다린다.",
+    "고칠 곳": "content/ld_english_scripts.json .d259[n=4].ko",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d259-1:T09",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d259-1.md",
+   "주장": {
+    "T": "T09",
+    "바뀐 글": false,
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "높음",
+    "까닭": "'눈 덮인' 띄어 씀(한 낱말 아님).",
+    "지금": "겨울이 정말로 시작되기 전에 그들은 연못의 얼어붙은 표면 위로 우아하게 미끄러지거나 눈덮인 산의 경사를 재빠르게 활강해 내려오는 자신을 상상할 수 있다.",
+    "고칠 글": "겨울이 정말로 시작되기 전에 그들은 연못의 얼어붙은 표면 위로 우아하게 미끄러지거나 눈 덮인 산의 경사를 재빠르게 활강해 내려오는 자신을 상상할 수 있다.",
+    "고칠 곳": "content/ld_english_scripts.json .d259[n=5].ko",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d156:T02",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156.md",
+   "주장": {
+    "T": "T02",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "칩 [typical Norway settle on dairy farm] 은 세 항목(n1 typical · n2 Norway · settled on a dairy farm)이 붙은 칩 — 1부 C09555 와 같은 흠.",
+    "지금": "[Jensens] [typical Norway settle on dairy farm] [Jensen]",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "고칠 곳": "content/lessons/ld/d156.json 힌트 블록 text (1부 C09555 와 같은 고칠 글)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d156:T04",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156.md",
+   "주장": {
+    "T": "T04",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "'Mr. and Mrs. Jensen' 이 앱의 '. ' 나누기로 갈려 뜻 없는 조각 [and Mrs] 가 뜸, [typical Norway settle on dairy farm] 도 붙음 — 1부 C09555.",
+    "지금": "[typical Norway settle on dairy farm] [Minnesota] [and Mrs] [Jensen]",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "고칠 곳": "content/lessons/ld/d156.json 힌트 블록 text (1부 C09555)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d156:T07",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156.md",
+   "주장": {
+    "T": "T07",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "두 이름(Olaf and Carl)이 한 칩 — 기준 판부터 있던 붙음, 1부 C09555 에 함께 적음.",
+    "지금": "[Olaf Carl]",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "고칠 곳": "content/lessons/ld/d156.json 힌트 블록 text (1부 C09555)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d156:T09",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156.md",
+   "주장": {
+    "T": "T09",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "[plow planted fields] 는 and 로 갈린 두 항목(plowed and planted the fields)이 붙은 칩 — 1부 C09555(--replace 로 더함). 한 문장 안의 붙음이라 확신 보통.",
+    "지금": "[plow planted fields] [harvested crops] [milked]",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "고칠 곳": "content/lessons/ld/d156.json 힌트 블록 text (1부 C09555)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d156:T14",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156.md",
+   "주장": {
+    "T": "T14",
+    "바뀐 글": true,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "뜻 없는 조각 [and Mrs] — 1부 C09555.",
+    "지금": "[and Mrs] [Jensen]",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "고칠 곳": "content/lessons/ld/d156.json 힌트 블록 text (1부 C09555)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/ld/d156:T16",
+   "까닭": "중간·낮음 20% 표본",
+   "표본파일": "읽을거리/표본-ld-b/d156.md",
+   "주장": {
+    "T": "T16",
+    "바뀐 글": false,
+    "종류": "⑥",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "n9(Their son Olaf …)에 'Carl' 이 붙은 칩 — 1부 C09555.",
+    "지금": "[Olaf Carl]",
+    "고칠 글": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "고칠 곳": "content/lessons/ld/d156.json 힌트 블록 text (1부 C09555)",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "OK:C05784",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d148[n=9].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "In 1959, however, two more stars were added to the flag representing the new states of Alaska and Hawaii.",
+   "뒤": "In 1959, however, Alaska and Hawaii became states, and soon two more stars were added to the flag."
+  },
+  {
+   "key": "OK:C05785",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d149[n=2].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "여전히 그 나라의 모든 부분에 살고 있는 이 원주민의 후손들이 많이(많은 수천명이) 있다.",
+   "뒤": "그 나라의 모든 지역에는 이 원주민의 후손들이 여전히 수백만 명 살고 있다."
+  },
+  {
+   "key": "OK:C05786",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d149[n=2].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "There are still many thousands of the descendants of these original inhabitants living in all parts of the country.",
+   "뒤": "There are still millions of descendants of these original inhabitants living in all parts of the country."
+  },
+  {
+   "key": "OK:C05787",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d149[n=6].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "It is for that reason that the language of the United States is English, and that its culture and customs are more like those of England than any other country in the world.",
+   "뒤": "It is for that reason that the language of the United States is English, and that its culture and customs are more like those of England than those of any other country in the world."
+  },
+  {
+   "key": "OK:C05797",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".d154[n=1].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "때때로 우리는 우리가 아는 어떤 사람이 둥근 구멍 안의 사각형(peg)이라고 말한다.",
+   "뒤": "때때로 우리는 우리가 아는 어떤 사람을 두고 '둥근 구멍에 박힌 네모난 못(square peg in a round hole)' 같다고 말한다."
+  },
+  {
+   "key": "OK:C05780",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d147[n=11].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "사랑, 아빠.",
+   "뒤": "사랑을 담아, 아빠가."
+  },
+  {
+   "key": "OK:C05796",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".d153[n=2].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "In most states, the children are required to attend school until they reach the age of 16.",
+   "뒤": "In most states, children are required to attend school until they are 17 or older."
+  },
+  {
+   "key": "OK:C05781",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d148[n=4].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "잉글랜드로부터 독립을 쟁취한 후에 이 땅이 처음 국가가 되었을 때 그것은 13개의 주를 갖고 있었다.",
+   "뒤": "영국으로부터 독립을 쟁취한 후에 이 땅이 처음 국가가 되었을 때 그것은 13개의 주를 갖고 있었다."
+  },
+  {
+   "key": "OK:C05795",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "02.md",
+   "칸": ".d153[n=2].ko",
+   "파일": "content/ld_english_scripts.json",
+   "전": "대부분의 주에서는 어린이들은 16세의 나이에 도달할 때까지 학교에 다닐 것이 요구된다.",
+   "뒤": "대부분의 주에서 아이들은 17세 이상이 될 때까지 학교에 다녀야 한다."
+  },
+  {
+   "key": "OK:C05782",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".d148[n=4].en",
+   "파일": "content/ld_english_scripts.json",
+   "전": "When this land first became a nation after winning its independence from England, it had 13 states.",
+   "뒤": "When this land first became a nation after winning its independence from Great Britain, it had 13 states."
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:C05769",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d139 n4 한국어(대본 쪽 /ld/d139-1 에 보임). '코미디' 고침은 맞고, 남은 '지난 주' 는 표준국어대사전 한 낱말 '지난주'(Last week) — 띄어쓰기 틀림 · 낮음 · 기준 판에도 있었음. 뜻은 영어와 같음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05778",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d146 n5 한국어. 바뀐 '기다리고 있던 편지는 받지 못했다' 는 영어(I didn't get the letter I was waiting for)와 맞음. '두장의' 는 고유어 수 관형사 '두' + 단위 명사 '장' 이라 띄어 씀(제43항 붙여 쓰기 허용은 순서 · 아라비아 숫자일 때) — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05802",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 대본 한국어: n1 'Jensen 씨네' · n2 'Jensen 부부' · n4 Olaf · Carl · n6 Inga · Sigrid 는 영문인데 n8 만 '젠슨 씨 부부' — 한 강의 안 이름 표기 흔들림(⑦ 낮음, 6단계 '젠슨 → Jensen' 이 n8 을 빠뜨림). 고칠 곳 n8 · 고칠 글 맞음. 더(판정 일꾼이 놓침 — 아래 '더 찾음'): 같은 묶음 C05803(n2) 의 '자리잡았다' 는 사전 한 낱말이 아닌 구('자리 잡다')라 띄어 써야 함 — 기준 판에도 있었음. 일꾼이 다른 줄에 쓴 규칙('바뀐 줄에 남은 기준 판 띄어쓰기 틀림도 적음')대로면 이 줄도 틀림.",
+   "더 찾음": [
+    {
+     "id": "C05803",
+     "파일": "content/ld_english_scripts.json",
+     "칸": ".d156[n=2].ko",
+     "지금": "Jensen 부부는 여러 해 전에 노르웨이에서 와서 미네소타의 낙농장에 자리잡았다.",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "높음",
+     "까닭": "'자리 잡다' 는 표준국어대사전 한 낱말이 아님(구) — 띄어 씀. 기준 판에도 있었음.",
+     "고칠 글": "Jensen 부부는 여러 해 전에 노르웨이에서 와서 미네소타의 낙농장에 자리 잡았다.",
+     "새 음성 클립": false
+    }
+   ],
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05900",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "d192 n8 한국어 '원주민들의 놀라운 추적 능력' 은 영어 'The Aboriginal trackers' astonishing skill' 의 trackers(추적자들)를 원주민 전체로 넓힌 옮김 — 틀림(②)은 맞고 고칠 글('원주민 추적자들의 …')도 n7 · n10 과 맞음. 다만 심각도는 중간: 9/18 감사가 바로 앞 n7 의 똑같은 틀림(tracker 를 빼 민족 전체에 대한 말이 됨)을 6-0298 [Medium] 으로 매겼고(심각도는 9/18 감사와 같은 넷), 이 줄도 '추적 능력' 이라는 뜻의 줄기는 남아 있어 '헷갈리게 하지만 오도는 아님' 에 가까움. 틀린 영어를 가르치거나 채점이 틀리는 것이 아님.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05930",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d206 n2 한국어. '조각(동상)' → '동상' 은 맞음. 남은 '한 복판' 은 표준국어대사전 한 낱말 '한복판' — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05932",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d206 n5 한국어. '조각' → '동상' 맞음. '밤 사이에'(during the night)는 표준국어대사전 한 낱말 '밤사이'(준말 밤새) — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05947",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d214 n3 한국어. 바뀐 곳(하늘에 있는 · 으르렁거리는 · 여겨졌다)은 영어와 맞음. '천둥 소리' 는 표준국어대사전 한 낱말 '천둥소리' — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05948",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d214 n5 한국어. 허리케인 · 자연재해는 영어(hurricanes · natural calamities)와 맞음. '변덕스런' 은 '-스럽다'(ㅂ 불규칙)의 관형사형이 '-스러운' 이라 비표준 — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05955",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d215 n6 한국어(결정표 8 로 새로 쓴 강의). 뜻(신성하게 여겨졌고 일부는 오늘날에도)은 영어 'were held sacred, and some still are today' 와 맞음. '들소같은' 의 '같은' 은 형용사라 띄어 씀 — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05963",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d221 n1 한국어. 결정표 6 알림은 n1 끝에 들어감(사실: 미국 대부분의 주가 휴게소 밤샘 야영을 막음). '계획하는데 있어서' 의 '데' 는 '일 · 경우' 뜻의 의존 명사라 띄어 씀 — 낮음 · 기준 판에도 있었음. 고칠 글은 알림을 그대로 두고 띄어쓰기만 고침 — 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05965",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d222 n1 한국어. 결정표 6 알림(2019-06 미국 정부의 유람선 쿠바행 금지 — 사실 맞음) 들어감. '계획하는 데' 의존 명사 띄어쓰기 — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C05967",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d222 n3 한국어. 바뀐 앞부분은 영어(restful and relaxing · an ocean cruise)와 맞음. '흥미있고' 는 '흥미'+'있다'(한 낱말은 '흥미롭다' 뿐)라 띄어 씀 — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C06073",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d263 n2 한국어. 바뀐 '노래를 부르며 거리를 돌아다닌다' 는 영어와 맞음. '노래부르는' 은 사전 한 낱말이 아닌 '노래 부르다'(명사+동사) — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C06090",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d272 n1 한국어. 결정표 6 알림(지금 재즈는 널리 인정받는 음악) 들어감. '몇년'(관형사 '몇' + 단위 명사 → '몇 년') · '대중 음악'(표준국어대사전 한 낱말 '대중음악') — 낮음 · 기준 판에도 있었음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C09488",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d153 힌트 줄. 앱 규칙(LdLearningView 84~144행)을 그대로 옮긴 내 모의 도구(작업 트리 밖, 읽기만)로 다시 계산: 지금 n7 · n8 에 [master's degree doctor's degree] 한 칩 — 대본 n8 'a master's degree and perhaps a doctor's degree' 의 두 항목이 붙음(⑥ 중간). 고칠 글을 넣으면 [master's degree] [doctor's degree] 로 갈리고 새 흠 없음('degree' 일치로 n7 에도 뜨는 것은 지금과 같은 앱 한계). 나머지 나눔(17 or older · 18 · junior/senior)은 나아짐.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C09532",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d155 힌트 줄. 모의 도구로 확인: 9/18 뒤 더한 끝 'engineering fascinating careers' 가 한 칩 — n8 에 두 항목이 붙어 뜨고, 기준 판에 칩이 없던 n3(There are many careers open to each of us.)에도 'careers' 일치로 대본에 없는 'engineering' 이 든 칩이 뜸(⑥ 중간). 고칠 글로 n8 [engineering] [fascinating careers] · n3 [fascinating careers] — 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C09555",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 힌트 줄. 모의 도구로 확인: 'Mr. and Mrs. Jensen' 이 앱의 '. ' 나누기로 [Mr](두 글자라 안 뜸) · [and Mrs] · [Jensen] 이 되어 n2 · n8 에 뜻 없는 [and Mrs] 가 뜸 — 9/18 뒤 새로 생긴 흠(⑥ 중간). 기준 판부터의 [Olaf Carl](n4 · n9 — n9 는 Olaf 만 있는데 Carl 까지) · [typical Norway settle on dairy farm](n1 · n2) 도 남음. 고칠 글을 넣으면 n1 [Jensens] [typical] [Jensen] · n2 [Norway] [settle on dairy farm] [Minnesota] [Jensen] · n4 [Olaf] [Carl] · n5 [plow] [planted fields] [harvested crops] [milked] · n8 [Jensen] · n9 [Olaf] — 일꾼 말과 같고 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C09742",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d164 힌트 줄. 모의 도구로 확인: 기준 판부터의 [Italian inventor communications device] 가 n3 · n4 에 통째로 뜸(n3 의 Italian inventor 와 n4 의 communications device — 두 문장의 항목이 붙음, ⑥ 중간). 9/18 뒤 더한 [means of radio] 는 'radio' 일치로 n1 · n3 · n4 에도 번짐. 고칠 글('Italian inventor. communications device' · 'by means of')을 넣으면 n1 [United States] · n3 [Marconi] [Italian inventor] · n4 [communications device] · n6 [Explorers] [astronauts circle] [civilization] [by means of] — 번짐도 사라지고 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C10806",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "낮음",
+   "까닭": "d210 힌트 줄. 모의 도구로 확인: 칩 [then-known world] · [Sunday-afternoon pleasure seekers] 가 대본 n2 'the then known world' · n4 'Sunday afternoon pleasure seekers' 와 하이픈만 다름 — 한 강의 안 표기 흔들림은 맞고 고칠 글(대본 꼴)도 새 흠 없음. 다만 심각도는 낮음: 하이픈 꼴이 오히려 표준 영어 표기이고, 결정표 1(G1)로 입력 채점이 하이픈을 공백으로 읽어 점수 영향이 없으며, 기준의 '낮음 = 한 강의 안 표기 흔들림' 에 해당. 9/18 감사도 같은 종류(힌트 철자 ≠ 대본 — 6-0244 card-playing · 6-0301 bootprints · 6-0269)를 모두 Low 로 매김. 나눔 자체는 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C10889",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d214 힌트 줄. 모의 도구로 확인: 기준 판부터의 [sparks ignorance] 가 n4(sparks) · n5(ignorance) 두 문장의 항목을 붙여 두 행에 모두 뜸(⑥ 중간). 끝의 중복 'calamities.' 는 앱이 한 번만 침 — 빼도 칩 같음. 고칠 글로 n4 [sparks] · n5 [ignorance] [capricious] [calamities] [take spite out on dwellers] · n6 [calamities] [Accordingly] [priests] [refrain from plague] — 일꾼 말과 같고 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C10912",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d215 힌트 줄(결정표 8 로 새로 쓴 힌트 — 내용은 결정대로, 판정은 경계만). 모의 도구로 확인: [amulets eyes] 가 n4(These amulets were believed …)에 대본에 없는 'eyes' 까지 붙여 뜸 · [white buffalo held sacred] · [religious ritual side by side] 도 두 항목씩(⑥ 중간). 'eyes'(4글자) · 'side by side' 는 조각 전체가 n3 · n7 에 들어 있어 혼자서도 뜸 — 7-5 의 '혼자 못 뜬다' 는 앱 규칙과 다름. 고칠 글로 n3 [ancient Egypt] [amulets] [eyes] [beetles] · n4 [amulets] [protect wearers from harm] · n6 [white buffalo] [held sacred] · n7 [religious ritual] [side by side] — 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C10971",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d218 힌트 줄. 모의 도구로 확인: [mania stem from] 은 n4 의 두 항목(this collecting mania · stems from)이 붙은 칩(⑥ 중간 — 한 문장 안 붙음이라 흠의 무게는 가벼운 편), [psychological make-up] 은 대본 'makeup' 과 표기만 다름(채점 영향 없음). 'stem from' 은 대본 'stems from' 에 글자로 안 들어 있어 떼면 안 뜨므로 대본 꼴로 바꾼 고칠 글이 맞음 — n4 [mania] [stems from] [psychological makeup] · n5 [external] [bring this union about], 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C11074",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d223 힌트 줄. 모의 도구로 확인: [Seminole Indians appreciate](민족 이름 + 낱말) · [take in Saint Augustine](구절 + 지명) · 9/18 뒤 더한 [preparatory worthwhile](두 낱말) — 모두 한 문장 안이지만 명령서 예 'Wisconsin 1937' 과 같은 이름 · 낱말 붙음(⑥ 중간). 'preparatory worthwhile' 은 9/18 감사 6-0343 수정안을 글자 그대로 옮기며 생긴 붙음. 고칠 글로 n3 [take in] [Saint Augustine] [Miami Beach] [luxurious] [mysterious Everglades] · n4 [Seminole Indians] [appreciate] · n5 [preparatory] [worthwhile] — 새 흠 없음('take in' 은 다른 행에 안 번짐).",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C11150",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d227 힌트 줄. 모의 도구로 확인: [run away with think up practical] 은 'practical'(과 'think') 일치로 n6 · n7 · n8 에만 뜨고, 정작 'run away with' 가 있는 n5(He has simply let his imagination run away with him.)에는 칩이 없음 — 그 문장의 어려운 구절 힌트가 빠짐(⑥ 중간). 'runawaywith' 는 n5 에 통째로 있어 떼면 뜸. 고칠 글로 n5 [run away with] · n6 [think up] [practical] · n7 [practical] · n8 [practical] [victim] — 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "F:C11721",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d254 힌트 줄. 모의 도구로 확인: 9/18 뒤 더한 끝부분 나눔은 맞고(기준 판의 헛칩 [as in] 이 n4 'teasing' 에 뜨던 것도 사라짐), 남은 [well-developed personality take a joke] 는 n5 의 두 항목(a well-developed personality · the ability to take a joke)이 붙은 칩(⑥ 중간, 한 문장 안). 'takeajoke' 는 n5 에 통째로 있어 혼자서도 뜸. 고칠 글로 n5 [surest signs] [well-developed personality] [take a joke] — 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:0",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d139 n6 한국어(대본 쪽). '마음을 정하는 데 오랜 시간이 걸렸고' 의 '데' 는 '일' 뜻의 의존 명사라 띄어 씀 — 낮음. 뜻은 영어와 같음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:1",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d140 n5 한국어. '오랫 동안' → 표준국어대사전 한 낱말 '오랫동안' — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:2",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d140 n8 한국어. 'about 2:00 in the morning' 은 새벽 2시인데 '아침 두시' 는 한국어에서 쓰지 않는 말(아침은 해 뜬 뒤) — 영어를 낱말대로 옮겨 헷갈리게 함(② 중간, 오도까지는 아님). '경' 은 접미사라 '두 시경'. 고칠 글('새벽 두 시경') 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:3",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d143 n10 한국어. '한 동안' · '아무 것' → 표준국어대사전 한 낱말 '한동안' · '아무것' — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:4",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d144 n2 한국어. 같은 강의의 영어 대본 · 힌트는 6단계(6-0194)에서 'Mrs. Mills' · 'Dr. Cooper's' 로 띄었는데 한국어 줄은 'Mrs.Mills' · 'Dr.Cooper' 로 붙은 채 — 칭호 뒤 띄어쓰기 틀림 · 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:5",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d144 n4 한국어. '-어야 하다' 의 '하다' 는 띄어 씀(보조 용언 붙여 쓰기 허용은 '-아/-어' 뒤만) → '돌보아야 하기' — 낮음. '두시'(시각)는 제43항 다만으로 붙여도 됨. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:6",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d144 n7 한국어. 'Dr.Cooper' → 'Dr. Cooper'(영어 대본과 같게) — 낮음. '해드릴' 은 보조 용언 붙여 쓰기 허용. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:7",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d145 n3 한국어. 'Mrs.Mills' → 'Mrs. Mills'(영어 대본 n3 'Mrs. Mills') — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:8",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d148 n3 한국어. '이상' 은 명사라 '185,000,000 이상' 으로 띄어야 함 — 낮음(수 자체는 영어 'over 185 million' 과 같아 뜻 틀림은 아님). 고칠 글 '1억 8,500만 명 이상' 은 같은 수 · 바른 표기라 새 흠 없음. (사실: 1964년 미국 인구 약 1억 9,190만 — 'over 185 million' 참.)",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:9",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d148 n8 한국어. '오랫 동안' → '오랫동안' — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:60",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d191 n2 영어 'I suppose you are lost. Can I help you?' 는 안개 속 여인의 말인데 따옴표가 없어 서술자의 말처럼 읽힘 — 같은 행 한국어는 9/18 뒤 따옴표를 넣음(C05887). ① 문장부호 · 중간(기준 '중간 = 문장부호') · 확신 보통 그대로. 따옴표는 입력 채점(legacyTypedForm 이 기호를 지움) · 낱말 타일(DICTATION_TOKEN)에 영향 없고, 녹음과 말도 같음. 소리 글 해시(normalizeUnifiedSpeechText 가 따옴표를 안 지움)가 바뀌어 새 음성 클립 필요 — 맞음. (참고: 9/18 감사는 같은 종류 d160 · d162 인용 따옴표를 6-0245 Low 로 매김.)",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:61",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d191 n10 영어 'I know this part of town quite well, she replied.' — 직접 인용에 따옴표가 없음(한국어 C05888 은 따옴표). ① 중간 · 확신 보통 · 새 음성 클립 true 그대로. 채점 · 타일 영향 없음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:62",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d191 n11 영어 'But the fog, this terrible fog, made it impossible to see anything, I said.' — 직접 인용 따옴표 빠짐(한국어는 따옴표). ① 중간 · 확신 보통 · 새 음성 클립 true 그대로. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:63",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d194 n3 한국어. '수톤'(관형사 '수' + 단위 명사 → '수 톤') · '소리지르며'(사전 한 낱말이 아닌 '소리 지르다') · '제위치에'('제' = 자기의 → '제 위치') — 낮음. 뜻은 영어와 같음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:66",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d197 n7 한국어. '애교있는'('애교 있다' — 한 낱말 아님) · '전세계'(관형사 '전' → '전 세계') — 낮음. '사로잡아왔다' 는 보조 용언 붙여 쓰기 허용이라 그대로 둔 것도 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:74",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d202 힌트 줄(바뀌지 않음). 모의 도구로 확인: 경계 없는 'vividly brilliant fill associates' 가 한 칩으로 n5 · n6 · n8 세 행에 통째로 뜸 — 세 문장의 네 낱말이 붙음(⑥ 중간). 고칠 글로 n5 [vividly] · n6 [brilliant] · n8 [fill] [associates] — 'fill'(4글자)은 조각 전체가 n8 'fills' 에 들어 있어 뜨고 다른 행엔 안 번짐, 새 흠 없음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:75",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d202 n2 한국어. '배려깊고' → '배려 깊고'(한 낱말 아님) — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:100",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d233 n2 한국어. '관련있었다' → '관련 있었다'(한 낱말은 '관련되다' · '관련하다' 뿐) — 낮음. 고칠 글 맞음. (같은 흠인 d234 n2 C05994 '관련있다' · n1 C05993 '인기있었던' 은 일꾼이 1부에서 이미 틀림으로 적음 — 판정 일관됨.)",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:101",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d234 n4 한국어. '구김살없는' → '구김살 없는'(표준국어대사전에 '구김살없다' 없음 — 구) — 낮음. 뜻은 영어 'carefree jokes' 와 같음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:102",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d235 n7 한국어. '표시없는' → '표시 없는' · '보이지않는' → '보이지 않는'('-지 않다' 는 붙여 쓰기 허용 밖) — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:103",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d236 n4 한국어. '포장 마차' → 표준국어대사전 한 낱말 '포장마차'(앞 강의 d235 n4 도 '포장마차') · '호화항공기' → '호화 항공기' — 낮음. 뜻은 영어(streamlined luxury aircraft and plush trains)와 같음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:104",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d239 n3 한국어. '기분좋게' → '기분 좋게'(한 낱말 아님) — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:105",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d239 n4 한국어. '사회 생활' → 표준국어대사전 한 낱말 '사회생활' — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:106",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d239 n5 한국어. '신체를 키우는데 도움이 된다' 의 '데' 는 '일' 뜻 의존 명사 → '키우는 데' — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:107",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d239 n6 한국어. '해야한다는' → '해야 한다는'('-어야 하다') — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:108",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d241 n5 한국어. '몇주' → '몇 주'(관형사 '몇' + 단위 명사) — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "X:109",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d247 n1 한국어. '예절바른' → '예절 바른'(사전 한 낱말 아님 — '예의 바르다' 와 같은 구) — 낮음. 고칠 글 맞음. (같은 강의 n7 '예절바르게' 도 같은 흠 — 대상 밖이라 적기만 함.)",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156-1:T15",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156-1 n8 한국어 '젠슨 씨 부부' — 같은 쪽 n1 · n2 는 'Jensen', n4 · n6 · n9 이름도 영문이라 한 강의 안 표기 흔들림(⑦ 낮음). 고칠 글 맞음. 1부 F:C05802 의 '고칠 곳' 과 같은 줄이므로 수정 세션은 한 번만 고치면 됨(표에 두 번 보여도 같은 수정).",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d167:T02",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d167 n1 칩. 모의 도구로 확인: [Mark Twain Olivia Langdon] 은 'Mark Twain married Olivia Langdon' 의 두 사람 이름이 한 칩(⑥ 중간 — 이 칩이 n2 · n3 · n5 · n6 에 'Twain'(n6 은 'marked') 일치로 뜨며 'Olivia Langdon' 까지 붙임). 고칠 글(1부 C09815)로 n1 [1870] [Mark Twain] [Olivia Langdon] … — 새 흠 없음. [one year before his death] 가 'before' 로 n1 에 뜨는 것은 앱 한계라 안 센 것도 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d167:T04",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d167 n2(According to his biographers, … Twain's later books.) 칩 [Mark Twain Olivia Langdon] — 문장에 없는 'Olivia Langdon' 까지 붙어 뜸(⑥ 중간, 1부 C09815 의 흠이 이 행에 보임). 고칠 글 적용 시 n2 [Mark Twain] [biographers].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d167:T06",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d167 n3(Mark Twain was also a very successful lecturer.) 칩 [Mark Twain Olivia Langdon] — 문장에 없는 'Olivia Langdon' 이 붙어 뜸(⑥ 중간, 1부 C09815). 고칠 글 적용 시 n3 [Mark Twain] [lecturer].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d259-1:T07",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d259-1 n4 한국어(9/18 뒤 안 바뀜). '그 해' · '첫 눈' → 표준국어대사전 한 낱말 '그해' · '첫눈' — 낮음. 뜻은 영어(the first snowfall of the year)와 같음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d259-1:T09",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d259-1 n5 한국어. '눈덮인' → '눈 덮인'(사전 한 낱말 아님) — 낮음. 고칠 글 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156:T02",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 n1(The Jensens are a typical American farm family.) 칩 [typical Norway settle on dairy farm] — 모의 도구로 확인, n1 에 없는 'Norway settle on dairy farm' 이 붙어 뜸(세 항목 붙음, ⑥ 중간, 1부 C09555). 고칠 글 적용 시 n1 [Jensens] [typical] [Jensen].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156:T04",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 n2 칩 [typical Norway settle on dairy farm] [Minnesota] [and Mrs] [Jensen] — 모의 도구로 확인. 뜻 없는 조각 [and Mrs](9/18 뒤 더한 'Mr. and Mrs. Jensen' 이 '. ' 로 갈림)와 붙은 칩(⑥ 중간, 1부 C09555). 고칠 글 적용 시 n2 [Norway] [settle on dairy farm] [Minnesota] [Jensen].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156:T07",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 n4 칩 [Olaf Carl] — 'Olaf and Carl' 두 이름이 한 칩(명령서 예 'Alaska Hawaii' 와 같은 종류, ⑥ 중간, 기준 판부터). 고칠 글 적용 시 [Olaf] [Carl].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156:T09",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 n5 칩 [plow planted fields] — 'plowed and planted the fields' 의 and 로 갈린 두 동사를 한 칩에 붙임(⑥ 중간 · 확신 보통 — 한 문장 안 붙음이라 흠은 가벼움). 고칠 글 적용 시 [plow] [planted fields] 로 갈리고 새 흠 없음(모의 도구 확인).",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156:T14",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 n8 칩 [and Mrs] [Jensen] — 뜻 없는 조각 [and Mrs](⑥ 중간, 9/18 뒤 새로 생김, 1부 C09555). 고칠 글 적용 시 n8 [Jensen].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "S:/ld/d156:T16",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "d156 n9(Their son Olaf runs the farm now …) 칩 [Olaf Carl] — 문장에 없는 'Carl' 이 붙어 뜸(⑥ 중간, 1부 C09555). 고칠 글 적용 시 n9 [Olaf].",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05784",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d148 n9 영어 'In 1959, however, Alaska and Hawaii became states, and soon two more stars were added to the flag.' — 문법 맞음. 사실: 알래스카 1959-01-03 · 하와이 1959-08-21 주 승격, 49별 국기 1959-07-04 · 50별 1960-07-04 → 옛 글 '1959년에 별 둘이 더해졌다' 보다 맞고 'soon' 이 두 날짜를 다 덮음. 한국어 n9(곧 두 개의 별이 국기에 첨가되었다)와 뜻 같음. (칩 [48 1959] [Alaska Hawaii] 는 힌트 줄 C09388 의 몫.)",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05785",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d149 n2 한국어 '그 나라의 모든 지역에는 이 원주민의 후손들이 여전히 수백만 명 살고 있다.' — 영어 'still millions of descendants … in all parts of the country' 와 뜻 같음, 띄어쓰기('수백만 명') 맞음. 소유자 '이미 고친 것'(d149 수백만 명) 글자대로.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05786",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d149 n2 영어 'There are still millions of descendants of these original inhabitants living in all parts of the country.' — 문법 맞음, 사실 맞음(2020 인구조사 원주민 단독 · 혼합 약 970만), 힌트 칩 [millions of descendants] 와 같은 꼴. 소유자 '이미 고친 것'.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05787",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d149 n6 영어 '… more like those of England than those of any other country in the world.' — 비교 대상을 맞춘 고침(옛 글은 문화 · 관습을 나라와 비교하는 틀린 비교)으로 문법 맞음. 한국어 n6(다른 어떤 나라보다도 잉글랜드의 그것과 더 흡사)과 뜻 같음. 이주민 대부분이 잉글랜드 출신이라는 n5 와도 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05797",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d154 n1 한국어 — 'a square peg in a round hole'(제자리가 아닌 사람)을 '둥근 구멍에 박힌 네모난 못 … 같다' 로 옮겨 뜻 같음, 원문 구절 괄호 병기 · 띄어쓰기 맞음. 같은 강의 n4 '네모난 못' 과도 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05780",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d147 n11 한국어 '사랑을 담아, 아빠가.' — 영어 편지 끝맺음 'Love, Dad.' 의 자연스러운 한국어 끝맺음, 뜻 같음(옛 '사랑, 아빠.' 보다 나음).",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05796",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d153 n2 영어 'In most states, children are required to attend school until they are 17 or older.' — 문법 맞음. 사실: NCES Table 1.2(2020) 최대 의무 나이 17세 이상 36개 주(3차 점검이 행마다 대조) → 'most states' 참. 힌트 칩 [17 or older] · n5 '18' 과 맞음. 결정표 1 로 'seventeen' 입력도 정답.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05781",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d148 n4 한국어 '영국으로부터 독립을 쟁취한 후에 …' — 영어 'Great Britain' 과 맞음(독립 상대는 1707년 이후의 그레이트브리튼 왕국), 띄어쓰기 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05795",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d153 n2 한국어 '대부분의 주에서 아이들은 17세 이상이 될 때까지 학교에 다녀야 한다.' — 영어 n2 와 뜻 같음, '다녀야 한다' 띄어쓰기 맞음.",
+   "때": "2026-09-24 17:27"
+  },
+  {
+   "key": "OK:C05782",
+   "결론": "맞음 동의",
+   "닿음": true,
+   "까닭": "d148 n4 영어 '… after winning its independence from Great Britain, it had 13 states.' — 사실 맞음(독립 전쟁 상대는 England 가 아닌 Great Britain), 문법 맞음, 칩 [Great Britain] [13 states] 와 같은 꼴, 한국어 '영국' 과 맞음.",
+   "때": "2026-09-24 17:27"
+  }
+ ]
+}

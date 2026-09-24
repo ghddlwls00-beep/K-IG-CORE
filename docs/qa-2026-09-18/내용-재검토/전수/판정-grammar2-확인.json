@@ -1,0 +1,683 @@
+{
+ "조각": "grammar2",
+ "뽑은때": "2026-09-24 20:06",
+ "대상": [
+  {
+   "key": "F:grammar2/gh2-007:T10",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/01.md",
+   "주장": {
+    "T": "T10",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-007 #6 KO '(당신은) 숙제를 마친 후에 텔레비전을 보아도 좋습니다.' — 한국어 문제가 '텔레비전' 을 온꼴로 적었는데 모범은 줄임말 TV 뿐이라 문제 낱말을 그대로 옮긴 맞는 영작이 0점(grade.cjs: 'You may watch television after you finish your homework.' → 0점 · TV 꼴 → 만점 — television ↔ TV 를 다른 내용어로 봄). 같은 낱말의 두 꼴이라 뜻 차이 없음 · 같은 과정 gh2-017 #2(텔레비전을 봅니까)는 모범이 television. 고친 뒤 television 꼴 만점 · 다른 낱말(movies)은 그대로 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 소리 안 냄. 9d6e15d 와 같음(9/18 뒤 안 바뀐 글).",
+    "지금": "You may watch TV after you finish your homework. (다른 정답 없음)",
+    "고칠 글": "[\"You may watch television after you finish your homework.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-007.json .blocks[1].items[5] (n=6) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-012:T08",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/grammar2/01.md",
+   "주장": {
+    "T": "T08",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-012 #5 한국어 문제 '전체 회사에게' — '에게' 는 사람 · 동물에 붙는 조사이고 회사 · 기관 같은 무정 명사에는 '에' 를 씀(국립국어원 풀이 '회사에' · '정부에'). 9/18 감사 6-1588 '그것에게'(무정물 여격, 낮음)와 같은 종류. 화면 한국어 문제에 보임(소리 없음) · 9d6e15d 와 같음.",
+    "지금": "그는 사임함으로써 전체 회사에게 충격을 주었다.",
+    "고칠 글": "그는 사임함으로써 전체 회사에 충격을 주었다.",
+    "고칠 곳": "content/lessons/grammar2/gh2-012-1.json .blocks[1].items[4] (n=5) .text",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-013:T28",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/01.md",
+   "주장": {
+    "T": "T28",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-013 #17 KO '요즈음 아무도 그것을 할 수 없을 것이다.' — '아무도' 의 흔한 번역 nobody 꼴이 0점(grade.cjs: 'Nowadays nobody could do that.' → 0점 · 'Nowadays nobody could do it.' → 0점 — no one 두 낱말 대 nobody 한 낱말). 같은 과정은 no one · nobody 를 서로 받음(gh2-008 #7 · gh2-016 #25 · gh2-037 #9 다른 정답). 또 '그것' 을 it 으로 옮긴 'Nowadays no one could do it.' → 70점 — 결정 3 · 소유자 답 4('그것' = it/that 만점)의 반대 방향(모범이 that)이라 수정 세션의 '그것 · it 문항' 목록에 들지 않음 · 굳은 표현 아님. 고친 뒤 셋 모두 만점 · 뜻이 반대인 'Nowadays everybody could do that.' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Nowadays no one could do that. (다른 정답 없음)",
+    "고칠 글": "[\"Nowadays nobody could do that.\", \"Nowadays no one could do it.\", \"Nowadays nobody could do it.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-013.json .blocks[1].items[16] (n=17) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-016:T16",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/01.md",
+   "주장": {
+    "T": "T16",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-016 #8 KO '나는 수프를 먼저 먹고 그런 다음 치킨(닭)을 먹겠다.' — '먹다' 를 그대로 옮긴 eat 꼴이 0점(grade.cjs: 'I will eat soup first and then the chicken.' → 0점 — have ↔ eat 을 다른 내용어로 봄). 이 문항이 가르치는 것은 then(그런 다음)이고 식사의 have 는 가르칠 점이 아님. 1부 결과 표 11행(gh2-022 #20 '싶다' → want 0점, ③ 중간 · 둘 다 틀림)과 같은 종류 — 한국어 낱말을 그대로 옮긴 맞는 영작이 막힘. 고친 뒤 eat 꼴 만점 · 다른 음식(fish)은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "I will have soup first and then the chicken. (다른 정답 없음)",
+    "고칠 글": "[\"I will eat soup first and then the chicken.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-016.json .blocks[1].items[7] (n=8) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-016:T30",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/01.md",
+   "주장": {
+    "T": "T30",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-016 #15 KO '나는 사과를 먹지 않았다. (사과를 갖고 있지 않았다, 나는 사과가 없었다.)' — 첫 뜻 '먹지 않았다' 를 그대로 옮긴 영작이 0점(grade.cjs: 'I did not eat an apple.' · 'I didn't eat an apple.' → 0점). have 가 두 뜻을 다 담는다는 것은 괄호가 보여 주지만, 한국어 첫 뜻의 곧은 번역을 0점으로 막음(#8 · #16 과 같은 종류). 고친 뒤 두 꼴 만점 · 반대 뜻 'I ate an apple.' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "I did not have an apple. (다른 정답 없음)",
+    "고칠 글": "[\"I did not eat an apple.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-016.json .blocks[1].items[14] (n=15) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-016:T32",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/01.md",
+   "주장": {
+    "T": "T32",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-016 #16 KO '그 대신에 나는 복숭아를 먹었다.' — 'Instead, I ate a peach.' 가 0점(grade.cjs). 이 문항이 가르치는 것은 instead — #8 · #15 와 같은 종류. 고친 뒤 만점 · 다른 과일(apple)은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Instead, I had a peach. (다른 정답 없음)",
+    "고칠 글": "[\"Instead, I ate a peach.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-016.json .blocks[1].items[15] (n=16) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-020:T04",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T04",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-020 #2 KO '그것은 좋게 들린다. (그것은 좋은 소리를 낸다. 그거 괜찮겠다.)' — 한국어 '좋게' 를 그대로 옮긴 'That sounds good.' 이 0점(grade.cjs — good ↔ great 을 다른 내용어로 봄 · 3낱말이라 한 낱말만 달라도 막힘). 'That sounds good.' 은 이 뜻의 가장 흔한 대답. ('그것은' 을 it 으로 쓴 'It sounds great.' 도 0점이나 That sounds … 는 굳은 대답 꼴이라 — 결정 3 이 굳은 표현을 뺀 것처럼 — 적지 않음.) 고친 뒤 good 꼴 만점 · 'That sounds bad.' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 소리 안 냄 · 9d6e15d 와 같음.",
+    "지금": "That sounds great. (다른 정답 없음)",
+    "고칠 글": "[\"That sounds good.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-020.json .blocks[1].items[1] (n=2) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-020:T19",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T19",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-020 #10 한국어 문제 '…판결했다.).' — 괄호 안 끝 마침표와 괄호 뒤 마침표가 겹침(마침표 두 번). 같은 강의 #8 · #9 는 '…(유용하다고 생각했다).' 처럼 괄호 뒤에만 마침표. 원본 교재도 같은 글이나 원본은 정답이 아님. 화면 한국어 문제에 보임(소리 없음) · 9d6e15d 와 같음.",
+    "지금": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다.).",
+    "고칠 글": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다).",
+    "고칠 곳": "content/lessons/grammar2/gh2-020-1.json .blocks[1].items[9] (n=10) .text",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-022:T26",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T26",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-022 #13 KO '너는 나에게 승차를 줄래(나를 태워줄래)?' — '승차' 를 그대로 옮긴 미국식 'Will you give me a ride?' 가 0점(grade.cjs — ride ↔ lift 를 다른 내용어로 봄). 모범 lift 는 영국식 — 이 과정은 대체로 미국식이고 같은 과정 gh2-025 #12 모범도 'I need a ride to the airport.'. 9/18 감사도 영국식 꼴만 받는 문항을 적음(6-1592 rumours). 고친 뒤 ride 꼴 만점 · 'Will you give me a pen?' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Will you give me a lift? (다른 정답 없음)",
+    "고칠 글": "[\"Will you give me a ride?\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-022.json .blocks[1].items[12] (n=13) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-023:T10",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T10",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-023 #5 KO '너는 너의 커피를 어떻게 원하니?' — '원하니' 를 그대로 옮긴 흔한 물음 'How do you want your coffee?' 가 0점(grade.cjs — want 는 기능어가 아니라 would like 와 짝이 안 됨). 1부 결과 표 11행(gh2-022 #20 '싶다' → 'I want to open a savings account.' 0점, ③ 중간 · 둘 다 틀림 — '회화 표현 강의라 would like 를 가르치는 문항이 아님')과 같은 종류. 고친 뒤 만점 · 'How do you want your tea?' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "How would you like your coffee? (다른 정답 없음)",
+    "고칠 글": "[\"How do you want your coffee?\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-023.json .blocks[1].items[4] (n=5) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-023:T20",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T20",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-023 #10 KO '나는 너의 치수를 재고 싶다.' — '싶다' 를 그대로 옮긴 'I want to take your measurements.' 가 0점(grade.cjs). 1부 결과 표 11행(gh2-022 #20 want 0점, ③ 중간)과 같은 종류. 고친 뒤 만점 · 'take your picture' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "I would like to take your measurements. (다른 정답 없음)",
+    "고칠 글": "[\"I want to take your measurements.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-023.json .blocks[1].items[9] (n=10) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-023:T36",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T36",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR II gh2-023 #20 KO '그것은 월요일부터 금요일까지 열립니다.' — '부터 … 까지' 를 그대로 옮긴 'It is open from Monday to Friday.' 가 0점(grade.cjs · 'It's open from Monday to Friday.' 도 0점 — 두 낱말이 더해져 길이 상한에 걸림). 모범 'Monday through Friday' 는 미국식 관용 꼴이고 한국어 문제는 그 꼴을 가리키지 않음(9/18 감사 6-1568 처럼 문제에 없는 꼴만 받는 경우 — Medium). 고친 뒤 from … to 꼴(줄임 꼴 포함) 만점 · 'from Monday to Sunday' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "It is open Monday through Friday. (다른 정답 없음)",
+    "고칠 글": "[\"It is open from Monday to Friday.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-023.json .blocks[1].items[19] (n=20) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-025:T35",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T35",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-025 #19 — 한국어(1부에서 판정한 글) '저는 이것에 대한 환불을 받고 싶습니다.' 를 그대로 옮긴 'I want to get a refund on this.' 가 0점(grade.cjs). 영어 모범은 9/18 뒤 안 바뀐 글. 1부 결과 표 11행(gh2-022 #20 want 0점, ③ 중간)과 같은 종류. 고친 뒤 만점 · 'a discount' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "I would like to get a refund on this. (다른 정답 없음)",
+    "고칠 글": "[\"I want to get a refund on this.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-025.json .blocks[1].items[18] (n=19) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-029:T12",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T12",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-029 #7 KO '교환원, 나는 수신자 부담으로 뉴욕으로 전화하고 싶습니다.' — '싶습니다' 를 그대로 옮긴 'Operator, I want to call New York, collect.' 가 0점(grade.cjs · 'I would like …' 는 만점). 1부 결과 표 11행(gh2-022 #20 want 0점, ③ 중간)과 같은 종류. 고친 뒤 만점 · 'Boston' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Operator, I'd like to call New York, collect. (다른 정답 없음)",
+    "고칠 글": "[\"Operator, I want to call New York, collect.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-029.json .blocks[1].items[6] (n=7) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-029:T14",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T14",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-029 #8 KO '저는 한국 서울의 전화번호를 알고 싶습니다.' — 'I want to know a phone number in Seoul, Korea.' 가 0점(grade.cjs). #7 · 1부 결과 표 11행과 같은 종류. 고친 뒤 만점 · 'Busan' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "I'd like to know a phone number in Seoul, Korea. (다른 정답 없음)",
+    "고칠 글": "[\"I want to know a phone number in Seoul, Korea.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-029.json .blocks[1].items[7] (n=8) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-030:T07",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T07",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR II gh2-030 #4 KO '내가 여기에 도달하는 것은 한 시간이 걸린다.' — '한 시간' 의 가장 흔한 번역 an hour 꼴이 두 구조 모두 0점(grade.cjs: 'It takes an hour for me to get here.' · 'It takes me an hour to get here.' → 0점 — an ↔ one 을 다른 낱말로 봄). 과정이 같은 짝을 받는 자리와 어긋남(gh2-012 #10 'a hundred dollars' 다른 정답 · 1부 문맥 #31 'a million'). 고친 뒤 만점 · 'a day' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "It takes one hour for me to get here. · 다른 정답: It takes me one hour to get here.",
+    "고칠 글": "[\"It takes me one hour to get here.\", \"It takes an hour for me to get here.\", \"It takes me an hour to get here.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-030.json .blocks[1].items[3] (n=4) .alternatives",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-033:T11",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T11",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-033 #6 KO '당신은 들고 계시기를 원합니까, 다시 걸기를 원하십니까? …' — '원합니까' 를 그대로 옮긴 'Do you want to hold on or call again?' 이 0점(grade.cjs). 이 과가 가르치는 것은 to 부정사(to hold on)이고 would like 가 아님. 1부 결과 표 11행(gh2-022 #20 want 0점, ③ 중간)과 같은 종류. 고친 뒤 만점 · 'hang up' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Would you like to hold on or call again? (다른 정답 없음)",
+    "고칠 글": "[\"Do you want to hold on or call again?\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-033.json .blocks[1].items[5] (n=6) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-033:T14",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T14",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-033 #8 KO '당신은 당신의 이름과 전화번호를 남겨 놓기를 원하십니까?' — 'Do you want to leave your name and phone number?' 가 0점(grade.cjs). #6 과 같은 종류. 고친 뒤 만점 · 'name and address' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Would you like to leave your name and phone number? (다른 정답 없음)",
+    "고칠 글": "[\"Do you want to leave your name and phone number?\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-033.json .blocks[1].items[7] (n=8) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-033:T16",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "주장": {
+    "T": "T16",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-033 #10 KO '메시지를 남겨놓고 싶으십니까?'(이 T) — 그대로 옮긴 'Do you want to leave a message?' 가 0점(grade.cjs). 영어 쪽 다른 정답(Would you care/like …)은 9/18 뒤 고친 글(1부에서 판정)이나 want 빈틈은 1부 표에 없음 — #6 · #8 · 1부 결과 표 11행과 같은 종류라 한국어 문제 T 에 적음. 고친 뒤 만점 · 'take a message' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음.",
+    "지금": "Care to leave a message? · 다른 정답: Would you care to leave a message? / Would you like to leave a message?",
+    "고칠 글": "[\"Would you care to leave a message?\", \"Would you like to leave a message?\", \"Do you want to leave a message?\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-033.json .blocks[1].items[9] (n=10) .alternatives",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-035:T16",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T16",
+    "종류": "③",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-035 #9 KO '그것을 하기에 시기가 적절하다.' — '그것' 을 it 으로 옮긴 'The timing is right to do it.' 이 70점(grade.cjs). 결정 3 · 소유자 답 4('그것' = it/that 만점)의 반대 방향(모범이 that)이라 수정 세션의 '한국어 그것 · 영어 it 문항' 목록에 들지 않음 · do that 은 굳은 표현 아님. 고친 뒤 만점 · 'wrong' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "The timing is right to do that. (다른 정답 없음)",
+    "고칠 글": "[\"The timing is right to do it.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-035.json .blocks[1].items[8] (n=9) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-036:T21",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T21",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-036 #13 KO '그는 과잉재고를 없애기 위하여 텔레비전 수상기를 원가에 팔고 있었다.' — 한국어 '텔레비전 수상기' 를 그대로 옮긴 'He was selling television sets at cost to get rid of an overstock.' 이 0점(grade.cjs — television ↔ TV 를 다른 내용어로 봄). gh2-007 #6(01.md T10)과 같은 종류(같은 낱말의 줄임말 · 온꼴). 고친 뒤 만점 · 'radio sets' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "He was selling TV sets at cost to get rid of an overstock. (다른 정답 없음)",
+    "고칠 글": "[\"He was selling television sets at cost to get rid of an overstock.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-036.json .blocks[1].items[12] (n=13) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-038:T06",
+   "까닭": "중간·낮음 20% 표본",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T06",
+    "종류": "②",
+    "심각도": "낮음",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-038 #4 한국어 문제 '꺼려하지 않습니다' — #3 과 같음('꺼리지 않습니다'). 같은 강의 #16 '꺼리십니까'. 화면 한국어 문제에 보임(소리 없음) · 9d6e15d 와 같음.",
+    "지금": "물론 꺼려하지 않습니다(물론입니다).",
+    "고칠 글": "물론 꺼리지 않습니다(물론입니다).",
+    "고칠 곳": "content/lessons/grammar2/gh2-038-1.json .blocks[1].items[3] (n=4) .text",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "D:grammar2/gh2-039:T13",
+   "까닭": "판단 필요 전부",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T13",
+    "추천안": "한정(제한) 관계절이고 그 문항이 관계사 고르기를 가르치지 않는 곳은 that · which · who(사람) 꼴을 서로 만점으로 — 결정 3('그것' = that 만점)처럼 수정 세션이 다른 정답을 더함(새 음성 없음). 이 조각에서 지금 70점인 곳(모두 grade.cjs 로 잼): gh2-039 #8 'This is the book that I bought yesterday.'(같은 과 #9 는 that · who · whom 을 이미 받음) · #3 'I know a new Korean restaurant which opened recently.' · #6 '…find others that share the belief.' · #13 'The sculptures that you are looking at are masterpieces.' · 'The sculptures you are looking at are masterpieces.' · #14 '…to people that plan the routes …' · gh2-040 #1 'People that work outdoors …' · #3 'A lot of people use a substance that we all say we abhor.' · gh2-041 #1 '…coca leaf growers that staged demonstrations.' · #2 '…expect people that never respected our drug laws …' · gh2-015 #1 'I know a student that studies very hard.'. 관계사 고르기가 가르칠 점인 문항(gh2-041 #3 ~ #5 의문사 who · 최상급 · only 뒤 that, 전치사 + which/whom 문항, gh2-015 #2 계속 용법 who)은 빼고 그대로. 고친 뒤 확인(참조를 직접 준 grade.cjs): #8 that 꼴 만점 · 'whom' 은 70점 그대로 · gh2-040 #3 that 꼴 만점.",
+    "까닭": "한정 관계절에서 that · which · who 는 모두 맞는 영어라 흔한 맞는 번역이 70점(풀이 5 로는 ③ 낮음). 다만 관계대명사 과에서 어느 꼴을 만점으로 할지(사람 who · 사물 which 를 가르치는지)는 교육 방침이 걸려 소유자에게 올림. 같은 과 안에서도 #9 는 that 을 받고 #8 은 못 받아 흔들림. 이 조각의 관계사 빈틈 10문항을 이 한 곳(gh2-039 T13)에 모음 — 다른 T 에 따로 세지 않음.",
+    "다른 길": "그대로 둠 — 관계사를 바꿔 쓴 답은 70점(채점기의 기능어 바꿈 = 70점 설계). 또는 같은 과 #9 에 맞춰 gh2-039 #8 한 문항에만 that 꼴을 더함."
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-043:T18",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T18",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "GRAMMAR II gh2-043 #9 KO '그가 누구인지는 누구에게도 알려져 있지 않다(전체부정).' — '누구에게도' 의 흔한 번역 anyone 꼴이 0점(grade.cjs: 'Who he is is not known to anyone.' → 0점 — anyone ↔ anybody 를 다른 내용어로 봄). 같은 과정은 anyone · anybody 를 서로 받음(gh2-016 #25 다른 정답 'I didn't see anyone.' · 'I didn't see anybody.') · 9/18 감사 6-1537 도 같은 짝 빈틈을 Medium 으로 적음. 고친 뒤 만점 · 부정을 뺀 'Who he is is known to anyone.' 은 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "Who he is is not known to anybody. (다른 정답 없음)",
+    "고칠 글": "[\"Who he is is not known to anyone.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-043.json .blocks[1].items[8] (n=9) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "F:grammar2/gh2-044:T04",
+   "까닭": "심각·높음·③ 전부",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T04",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "보통",
+    "까닭": "GRAMMAR II gh2-044 #2 KO '날씨가 너무 더워져서 우리는 에어컨을 켰다.' — '더워지다' 를 흔히 옮기는 got/became 꼴이 0점(grade.cjs: 'It got so hot that we turned on the air conditioner.' · 'It became so hot …' → 0점 — grew ↔ got/became 내용어). 이 문항이 가르치는 것은 so … that 이고 grow + 형용사는 가르칠 점이 아님(grow 를 가르치는 gh2-018 #15 'It grew dark.' 와 다름). 고친 뒤 두 꼴 만점 · 'so cold' 는 0점(참조를 직접 준 grade.cjs). 다른 정답은 화면 '다른 정답' 과 채점에 닿음 · 9d6e15d 와 같음.",
+    "지금": "It grew so hot that we turned on the air conditioner. (다른 정답 없음)",
+    "고칠 글": "[\"It got so hot that we turned on the air conditioner.\", \"It became so hot that we turned on the air conditioner.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-044.json .blocks[1].items[1] (n=2) .alternatives 새로 만듦",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "D:grammar2/gh2-044:T07",
+   "까닭": "판단 필요 전부",
+   "읽을거리": "전수/읽을거리/grammar2/03.md",
+   "주장": {
+    "T": "T07",
+    "추천안": "결정표 13 과 같은 방식 — gh2-044 부제목(src/lib/curriculumPresentation.ts, gh1-116 ~ 123 에 넣은 자리)에 '4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다' 한 줄. 영어 · 소리 · 채점 그대로.",
+    "까닭": "gh2-044 #4 'Political analysts are just as convinced that Clinton will beat Dole as they were that Reagan would beat Mondale.' 은 1996년 대선을 현재형으로 적어 지금 경선처럼 읽힘(사실 자체는 맞음 — 1996 클린턴 · 돌, 1984 레이건 · 먼데일). 9/18 감사 6-1602(Low · outdated)가 짚었고, 6단계 보류 6-1516 행(6단계-작업기록.md 보류 목록)이 '같은 결로 GRAMMAR II gh2-044 #4(6-1602)' 를 함께 올려 소유자가 A(부제목 한 줄)를 골랐으나, 결정표 13 요약과 7단계 고침은 '여덟 페이지'(gh1-116 ~ 123)에만 넣어 이 문항이 빠진 채 남음. 결정이 이 문항까지 닿는지 소유자 확인이 필요해 판단 필요로 적음(틀림으로 세지 않음).",
+    "다른 길": "원본 그대로(소유자 기준 2026-09-24 — 그 시대에 맞는 사실)로 알림 없이 둠 · 또는 과거형으로 고침(영어 · 새 음성 1)."
+   }
+  },
+  {
+   "key": "G:grammar2/gh2-020",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "읽을글": 50
+  },
+  {
+   "key": "G:grammar2/gh2-022",
+   "까닭": "묶음 3%(최소 2) — 판정을 가린 채 통째로 다시 읽음",
+   "읽을거리": "전수/읽을거리/grammar2/02.md",
+   "읽을글": 38
+  }
+ ],
+ "결과": [
+  {
+   "key": "G:grammar2/gh2-020",
+   "결론": "다시 읽음",
+   "읽은 글": 50,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "gh2-020 #2 KO '그것은 좋게 들린다. (그것은 좋은 소리를 낸다. 그거 괜찮겠다.)' 의 가장 곧은 번역이 모두 0점: grade.cjs 'That sounds good.' → 0점 · 'It sounds good.' → 0점 · 'It sounds great.' → 0점(정답 자체 → 만점 ✔). '좋게' 는 good 이고 great(훌륭하게 · 아주 좋게)를 가리키는 말이 한국어 문제에 없어, 문제만 보고는 great 를 알 길이 없다(9/18 6-1569 'concerns/companies' 와 같은 꼴). 짧은 문장이라 형용사 하나만 달라도 70% 비율에 못 미쳐 0점. 강의가 가르치는 'sound + 형용사' 는 그대로 지킨 답이다. 'It' 꼴은 한국어 '그것은' 의 곧은 번역이고, 소유자 결정 3(그것 → it · that 둘 다 만점)과 결이 같아 같이 넣음. 고친 뒤(참조 직접): 'That sounds good.' · 'It sounds good.' → 만점, 'That sounds bad.' · 'That doesn't sound good.' · 'That sounds strange.' · 'It sounds loud.' → 0점 — 새 틀림 없음. 대체 답안은 소리 내지 않음.",
+     "지금": "That sounds great. (다른 정답 없음)",
+     "고칠 글": "[\"That sounds good.\", \"It sounds great.\", \"It sounds good.\"]",
+     "고칠 곳": "content/lessons/grammar2/gh2-020.json .blocks[1].items[1] (n=2) .alternatives 새로 만듦(한국어 gh2-020-1.json 은 그대로)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T19",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "gh2-020 #10 KO '…발견했다(유죄라고 판결했다.).' — 괄호 안 마침표와 문장 끝 마침표가 겹침('.).'). 같은 강의의 같은 꼴 #8 '…발견했다(유용하다고 생각했다).' · #9 '…발견한다(편안하다고 생각한다).' 는 괄호 안 마침표가 없다 — 한 강의 안 표기 흔들림 · 겹친 문장부호. 화면에 보이는 한국어 문제(소리 없음)라 낮음.",
+     "지금": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다.).",
+     "고칠 글": "그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다).",
+     "고칠 곳": "content/lessons/grammar2/gh2-020-1.json .blocks[1].items[9] (n=10) .text",
+     "새 음성 클립": false
+    }
+   ],
+   "까닭": "읽을거리 grammar2/02.md 3~56행 T01~T50(#1~#25 KO · EN)을 모두 읽음. #26 은 1부 판정(바뀐 글)이라 뺌. T11(매시간 마다) · T33(염려마) · T37(안부전해)은 1부 문맥에서 이미 적어 다시 적지 않음. 영어 모범 답안 25개는 모두 문법 · 뜻이 맞음. 채점은 grade.cjs 로 잼(도구 확인 ✔ · 문항마다 정답 자체 → 만점 ✔). 틀림으로 적지 않은 것: #1 'He refused my request.' → 0점 · #6 ring · #5 noise 처럼 강의가 가르치는 낱말(turn down · sound)을 바꾼 답, #8~#10 'found that he was …' → 0점(5형식 find O C 를 가르치는 문항이고 한국어 '~라는 것을 발견했다' 는 그 꼴의 관례 풀이), #3 'He returned safe and sound.' → 0점('돌아왔다' 는 came back 으로 곧게 이어짐), #19 'Remember me to your wife.' → 70점('줘' 가 부탁이라 Please 는 문제에서 나옴), #13 'Does that hurt?' → 0점(소유자 답 4 — 수정 세션이 목록으로 넣음).",
+   "때": "2026-09-24 20:18"
+  },
+  {
+   "key": "G:grammar2/gh2-022",
+   "결론": "다시 읽음",
+   "읽은 글": 38,
+   "틀림": [
+    {
+     "T": "T04",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "높음",
+     "까닭": "gh2-022 #2 KO '너는 나에게 아무 것도 빚지지 않는다(빚진 것 없다).' 의 가장 곧은 번역(아무것도 ~지 않는다 = not … anything)이 0점: grade.cjs 'You don't owe me anything.' → 0점 · 'You do not owe me anything.' → 0점(정답 자체 → 만점 ✔). 모범 'You owe me nothing.' 은 4낱말이라 6낱말 답은 길이 상한(1.15배)에 걸림. 강의가 가르치는 'owe + 사람 + 것' 은 그대로 지킨 답. 같은 과정의 같은 꼴 gh2-012 #9 '아무 것도 모른다' → 'I don't know anything about it.' 이 모범이고, gh2-029 #13 은 'There isn't anyone …' 을 다른 정답으로 받음 — 여기만 막힘. 고친 뒤(참조 직접): 'You don't owe me anything.' → 만점, 'You owe me anything.' · 'You don't owe me nothing.' · 'I don't owe you anything.' · 'You owe me something.' → 0점 — 새 틀림 없음. 한국어 T03 의 '아무 것도' 띄어쓰기는 1부 결과 표 95행에 이미 있어 여기 넣지 않음.",
+     "지금": "You owe me nothing. (다른 정답 없음)",
+     "고칠 글": "[\"You don't owe me anything.\"]",
+     "고칠 곳": "content/lessons/grammar2/gh2-022.json .blocks[1].items[1] (n=2) .alternatives 새로 만듦(한국어 gh2-022-1.json 은 그대로)",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T09",
+     "종류": "②",
+     "심각도": "낮음",
+     "확신": "보통",
+     "까닭": "gh2-022 #5 KO '너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래?)' — 본 질문 '베풀어줄래' 에 물음표가 없고 물음표가 괄호 안에만 있음. 같은 강의의 같은 꼴 #1 '…빚지나(…)?' · #9 '…있나(…)?' · #13 '…줄래(나를 태워줄래)?' · #18 '…뭐냐(…)?' 는 모두 괄호 뒤에 물음표 — 한 강의 안 표기 흔들림 · 빠진 문장부호. 화면에 보이는 한국어 문제(소리 없음)라 낮음. (#17 KO 도 같은 꼴이나 1부 판정(바뀐 글)이라 여기 적지 않음.)",
+     "지금": "너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래?)",
+     "고칠 글": "너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래)?",
+     "고칠 곳": "content/lessons/grammar2/gh2-022-1.json .blocks[1].items[4] (n=5) .text",
+     "새 음성 클립": false
+    },
+    {
+     "T": "T26",
+     "종류": "③",
+     "심각도": "중간",
+     "확신": "보통",
+     "까닭": "gh2-022 #13 KO '너는 나에게 승차를 줄래(나를 태워줄래)?' — '승차(차를 탐)' 는 ride 로 곧게 이어지는데 모범은 영국식 lift 뿐: grade.cjs 'Will you give me a ride?' → 0점 · 'Can you give me a ride?' → 0점(정답 자체 → 만점 ✔). 같은 과정 gh2-025 #12 는 'I need a ride to the airport.'(탑승 · 차편)로 ride 를 가르침 — 과정이 가르친 낱말을 여기서는 0점. 강의가 가르치는 'give + 사람 + 것'(4형식)은 그대로 지킨 답. 고친 뒤(참조 직접): 'Will you give me a ride?' → 만점, 'Will you give me a hand?' · 'Won't you give me a ride?' → 0점, 'Will you give him a ride?' → 70점(지금 lift 꼴과 같은 기능어 규칙) — 새 틀림 없음.",
+     "지금": "Will you give me a lift? (다른 정답 없음)",
+     "고칠 글": "[\"Will you give me a ride?\"]",
+     "고칠 곳": "content/lessons/grammar2/gh2-022.json .blocks[1].items[12] (n=13) .alternatives 새로 만듦(한국어 gh2-022-1.json 은 그대로)",
+     "새 음성 클립": false
+    }
+   ],
+   "까닭": "읽을거리 grammar2/02.md 58~103행 T01~T38(#1~#16 KO · EN, #17~#22 는 EN 만 — 그 KO 는 1부 판정(바뀐 글))을 모두 읽음. T03(아무 것도)은 1부 문맥에서 이미 적어 다시 적지 않음. 영어 모범 답안 22개는 모두 문법 · 뜻이 맞음(#13 lift 는 맞는 영국식). T36(#20) 'I want to open a savings account.' → 0점(grade.cjs)도 찾았으나 1부 결과 표 11행(③ 중간 · 둘 다 틀림)에 이미 있어 겹쳐 적지 않음(처음 적은 판에서 뺌 — --replace). #5 는 gh2-025 #6 과 같은 영어지만 소유자 결정 19 의 '존댓말만 다른 1건은 그대로' 라 적지 않음. 채점은 grade.cjs 로 잼(도구 확인 ✔). 틀림으로 적지 않은 것: #15 'I have to buy him a pair of shoes.' → 70점 · #22 'Is there any vending machine near here?' → 70점(한국어 '어떤 자판기라도' 가 any 를 가리킴) · #16 'I bought myself a hamburger.' → 0점(한국어 '나 자신을 위한' 이 for 꼴을 가리키는 구조 연습) · #5 'Will you do me a favour?' → 70점 · #12 short-handed · #8 researched 처럼 강의가 가르치는 표현을 바꾼 답.",
+   "때": "2026-09-24 20:19"
+  },
+  {
+   "key": "F:grammar2/gh2-007:T10",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 15~16행: KO '(당신은) 숙제를 마친 후에 텔레비전을 보아도 좋습니다.', EN 'You may watch TV after you finish your homework.'(다른 정답 없음). grade.cjs: 'You may watch television after you finish your homework.' → 0점(정답 자체 → 만점 ✔). 한국어 문제가 '텔레비전' 온꼴이라 글자대로 옮긴 맞는 영작이 막힘. 같은 과정 gh2-017 #2 모범은 'Do you ever watch television?'(c-items 로 확인). 이 문항이 가르치는 것은 after 절이라 TV/television 은 곁가지. 0점 → 중간(풀이 5). 고친 뒤(참조 직접): television 꼴 → 만점, 'You may watch movies …' · 'You may not watch television …' → 0점 — 새 틀림 없음. 고칠 곳 gh2-007.json .blocks[1].items[5](n=6)는 파일에서 확인함.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-012:T08",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 157행 '그는 사임함으로써 전체 회사에게 충격을 주었다.' — 조사 '에게' 는 사람 · 동물 뒤에, 회사 같은 무정 명사 뒤에는 '에' 를 씀(표준국어대사전 '에게' · '에' 풀이). 영어 'He shocked the whole company by resigning.' 과 뜻은 맞음. 화면 한국어 문제(소리 없음)라 낮음 · 확신 보통 그대로. 고칠 곳 gh2-012-1.json .blocks[1].items[4](n=5)는 파일에서 확인함. ('전체 회사' 는 '회사 전체' 가 더 자연스럽지만 문체라 더하지 않음.)",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-013:T28",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 220~221행: KO '요즈음 아무도 그것을 할 수 없을 것이다.', EN 'Nowadays no one could do that.'. grade.cjs: 'Nowadays nobody could do that.' → 0점 · 'Nowadays nobody could do it.' → 0점 · 'Nowadays no one could do it.' → 70점. 과정은 no one · nobody 를 서로 받음(gh2-008 #7 · gh2-037 #9 다른 정답, gh2-016 #25 는 anyone · anybody · no one · nobody 모두 — c-items 로 확인). it 꼴은 소유자 답 4 의 반대 방향(모범이 that)이라 그 목록에 들지 않고, do that/do it 은 굳은 표현이 아님. 0점 → 중간. 고친 뒤(참조 직접): 세 꼴 만점, 'Nowadays everybody could do that.' · 'Nowadays anyone could do it.' → 0점 — 새 틀림 없음. 경로 gh2-013.json .blocks[1].items[16](n=17) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-016:T16",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 323~324행: KO '나는 수프를 먼저 먹고 그런 다음 치킨(닭)을 먹겠다.', EN 'I will have soup first and then the chicken.'. grade.cjs: 'I will eat soup first and then the chicken.' · 'I'll eat soup first and then the chicken.' → 0점. 이 과 #7 ~ #10 이 가르치는 것은 then 이고 have 는 곁가지 · '먹다' 의 곧은 번역 eat soup 는 맞는 영어. 0점 → 중간. 고친 뒤(참조 직접): 'I'll eat soup …' → 만점, 'I will eat fish …' · 'I will not eat soup …' → 0점. 경로 gh2-016.json .blocks[1].items[7](n=8) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-016:T30",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 337~338행: KO '나는 사과를 먹지 않았다. (사과를 갖고 있지 않았다, 나는 사과가 없었다.)', EN 'I did not have an apple.'. grade.cjs: 'I did not eat an apple.' · 'I didn't eat an apple.' → 0점. 한국어 첫 뜻(먹지 않았다)의 곧은 번역이 막힘. 이 문항은 #16 instead 의 앞 문장이라 have 가 가르칠 점이 아님. 괄호가 have 의 두 뜻을 보여 주므로 확신 보통 그대로. 고친 뒤(참조 직접): 'I didn't eat an apple.' → 만점, 'I ate an apple.' · 'I did not eat a peach.' → 0점. 경로 gh2-016.json .blocks[1].items[14](n=15) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-016:T32",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "01.md 339~340행: KO '그 대신에 나는 복숭아를 먹었다.', EN 'Instead, I had a peach.'. grade.cjs: 'Instead, I ate a peach.' → 0점. 가르칠 점 instead 를 지킨 맞는 영작이 막힘 → 중간. 고친 뒤(참조 직접): 만점, 'Instead, I ate an apple.' · 'Instead, I didn't eat a peach.' → 0점. 경로 gh2-016.json .blocks[1].items[15](n=16) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-020:T04",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"That sounds good.\", \"It sounds great.\", \"It sounds good.\"]",
+   "까닭": "틀림 · 중간은 동의(판정을 가린 G: 다시 읽기에서도 따로 찾음). grade.cjs: 'That sounds good.' → 0점 · 'It sounds good.' → 0점 · 'It sounds great.' → 0점(3낱말이라 한 낱말만 달라도 70% 비율에 못 미침). 읽은 일꾼의 고칠 글(good 꼴 하나)로는 한국어 '그것은 좋게 들린다' 를 글자대로 옮긴 'It sounds good.' 이 그대로 0점. 결정 3 이 뺀 '굳은 표현'(mean it · It is decidedly so · on the tip of my tongue 등 — 7단계-작업기록 70~71행)은 대명사를 바꾸면 뜻이 깨지는 관용구인데 'It sounds good/great.' 는 뜻이 같은 보통 영어라 그 예외에 들지 않음. 읽은 일꾼도 같은 반대 방향(모범 that · 한국어 그것)인 gh2-013 #17 · gh2-035 #9 에는 it 꼴을 넣음. 고친 뒤(참조 직접): 'That sounds good.' · 'It sounds good.' → 만점, 'That sounds bad.' · 'That doesn't sound good.' · 'That sounds strange.' · 'It sounds loud.' → 0점 — 새 틀림 없음. 고칠 곳은 주장 그대로(gh2-020.json .blocks[1].items[1] n=2 .alternatives 새로 만듦).",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-020:T19",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 23행 '그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다.).' — 괄호 안 마침표와 괄호 뒤 마침표가 겹침. 같은 강의 #8 · #9 는 '(…생각했다).' 처럼 괄호 뒤에만. 판정을 가린 G: 다시 읽기에서도 따로 찾음. 화면 한국어 문제(소리 없음) · 낮음 그대로. 경로 gh2-020-1.json .blocks[1].items[9](n=10) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-022:T26",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 84~85행: KO '너는 나에게 승차를 줄래(나를 태워줄래)?', EN 'Will you give me a lift?'. grade.cjs: 'Will you give me a ride?' · 'Can you give me a ride?' → 0점. '승차' 는 ride 로 곧게 이어지고 같은 과정 gh2-025 #12 모범이 'I need a ride to the airport.'(c-find 로 확인). 판정을 가린 G: 다시 읽기에서도 따로 찾음. 고친 뒤(참조 직접): 'Will you give me a ride?' → 만점, 'Will you give me a hand?' · 'Won't you give me a ride?' → 0점. 경로 gh2-022.json .blocks[1].items[12](n=13) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-023:T10",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 115~116행: KO '너는 너의 커피를 어떻게 원하니?'(예사말), EN 'How would you like your coffee?'. grade.cjs: 'How do you want your coffee?' → 0점. '원하니' 의 곧은 번역이고 흔히 쓰는 맞는 영어 · 1부 결과 표 11행(gh2-022 #20 '싶다' → want 0점, ③ 중간 · 둘 다 틀림)과 같은 종류. 0점 → 중간. 고친 뒤(참조 직접): 만점, 'How do you want your tea?' → 0점. 경로 gh2-023.json .blocks[1].items[4](n=5) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-023:T20",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 125~126행: KO '나는 너의 치수를 재고 싶다.'(예사말), EN 'I would like to take your measurements.'. grade.cjs: 'I want to take your measurements.' → 0점. 1부 결과 표 11행(gh2-022 #20)과 같은 꼴 · 과정도 같은 한국어를 want to 로 가르침(gh2-021 #7 · gh2-034 #2 — c-find 확인). 고친 뒤(참조 직접): 만점, 'I want to take your picture.' · 'I don't want to take your measurements.' → 0점. 경로 gh2-023.json .blocks[1].items[9](n=10) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-023:T36",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 145~146행: KO '그것은 월요일부터 금요일까지 열립니다.', EN 'It is open Monday through Friday.'. grade.cjs: 'It is open from Monday to Friday.' · 'It's open from Monday to Friday.' → 0점(두 낱말이 더해져 길이 상한), 'It is open Monday to Friday.' · 'It is open from Monday through Friday.' → 70점. '~부터 ~까지' 의 곧은 번역이 0점이고 문제는 through 꼴을 가리키지 않음 → 중간 · 확신 높음 그대로. 고친 뒤(참조 직접): 두 from … to 꼴 만점, 'It is open from Monday to Sunday.' · 'It is not open from Monday to Friday.' → 0점 — 새 틀림 없음(위 70점 두 꼴은 그대로 70점). 경로 gh2-023.json .blocks[1].items[19](n=20) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-025:T35",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 233~234행: KO(1부에서 바뀐 글) '저는 이것에 대한 환불을 받고 싶습니다.', EN(안 바뀐 글) 'I would like to get a refund on this.'. grade.cjs: 'I want to get a refund on this.' → 0점. 높임말 '싶습니다' 라 would like 가 더 어울리지만 want 도 뜻이 같은 맞는 번역 — 확신 보통 그대로. 고친 뒤(참조 직접): 만점, 'I want to get a discount on this.' → 0점. 경로 gh2-025.json .blocks[1].items[18](n=19) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-029:T12",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 381~382행: KO '교환원, 나는 수신자 부담으로 뉴욕으로 전화하고 싶습니다.', EN 'Operator, I'd like to call New York, collect.'. grade.cjs: 'Operator, I want to call New York, collect.' → 0점. gh2-025 #19 와 같은 꼴(높임말이라 확신 보통). 고친 뒤(참조 직접): 만점, '… call Boston, collect.' → 0점. 경로 gh2-029.json .blocks[1].items[6](n=7) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-029:T14",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 383~384행: KO '저는 한국 서울의 전화번호를 알고 싶습니다.', EN 'I'd like to know a phone number in Seoul, Korea.'. grade.cjs: 'I want to know a phone number in Seoul, Korea.' → 0점. #7 과 같은 꼴. 고친 뒤(참조 직접): 만점, '… in Busan, Korea.' → 0점. 경로 gh2-029.json .blocks[1].items[7](n=8) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-030:T07",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 416~417행: KO '내가 여기에 도달하는 것은 한 시간이 걸린다.', EN 'It takes one hour for me to get here.' · 다른 정답 'It takes me one hour to get here.'. grade.cjs: 'It takes an hour for me to get here.' · 'It takes me an hour to get here.' → 0점(an 은 기능어, one 은 아니라 짝이 안 맞음). '한 시간' 의 가장 흔한 영어이고 과정은 gh2-012 #10 에서 'a hundred dollars' 를 다른 정답으로 받음(c-items 확인) — 확신 높음 그대로. 고친 뒤(참조 직접): 두 an 꼴 만점, 'It takes me a day to get here.' → 0점. 고칠 글은 지금 다른 정답을 살린 전체 목록 · 경로 gh2-030.json .blocks[1].items[3](n=4) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-033:T11",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 490~491행: KO '당신은 들고 계시기를 원합니까, 다시 걸기를 원하십니까? (기다리시겠어요, 다시 거시겠어요?)', EN 'Would you like to hold on or call again?'. grade.cjs: 'Do you want to hold on or call again?' → 0점. '원합니까' 의 곧은 번역이고 가르칠 점(to 부정사)을 지킴. 고친 뒤(참조 직접): 만점, 'Do you want to hang up or call again?' → 0점. 경로 gh2-033.json .blocks[1].items[5](n=6) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-033:T14",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 494~495행: KO '당신은 당신의 이름과 전화번호를 남겨 놓기를 원하십니까?', EN 'Would you like to leave your name and phone number?'. grade.cjs: 'Do you want to leave your name and phone number?' → 0점. #6 과 같은 꼴. 고친 뒤(참조 직접): 만점, '… your name and address?' → 0점. 경로 gh2-033.json .blocks[1].items[7](n=8) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-033:T16",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "02.md 498~499행: KO '메시지를 남겨놓고 싶으십니까?', EN(1부에서 바뀐 글) 'Care to leave a message?' · 다른 정답 'Would you care to leave a message?' / 'Would you like to leave a message?'. grade.cjs: 'Do you want to leave a message?' → 0점. 영어 칸은 1부 몫이라 한국어 T 에 적은 것이 맞는 자리. 고칠 글은 지금 다른 정답 둘을 살리고 하나를 더한 전체 목록. 고친 뒤(참조 직접): 만점, 'Do you want to take a message?' → 0점. 경로 gh2-033.json .blocks[1].items[9](n=10) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-035:T16",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 54~55행: KO '그것을 하기에 시기가 적절하다.', EN 'The timing is right to do that.'. grade.cjs: 'The timing is right to do it.' → 70점 → 낮음(풀이 5). 모범이 that 인 반대 방향이라 소유자 답 4 목록 밖 · do that 은 굳은 표현 아님. 고친 뒤(참조 직접): 만점, 'The timing is wrong to do it.' · 'The timing is not right to do it.' → 0점. 경로 gh2-035.json .blocks[1].items[8](n=9) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-036:T21",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 89~90행: KO '…텔레비전 수상기를 원가에 팔고 있었다.', EN 'He was selling TV sets at cost to get rid of an overstock.'. grade.cjs: 'He was selling television sets at cost to get rid of an overstock.' → 0점. 한국어 '텔레비전' 을 글자대로 옮긴 맞는 영작 · gh2-007 #6 과 같은 짝. 고친 뒤(참조 직접): 만점, 'He was selling radio sets …' → 0점. 경로 gh2-036.json .blocks[1].items[12](n=13) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-038:T06",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 143행 '물론 꺼려하지 않습니다(물론입니다).' — '꺼리다' 는 동사라 형용사에 붙는 '-어하다' 를 붙인 '꺼려하다' 는 표준어가 아님(표준국어대사전에는 '꺼리다' 만 오름). 같은 강의 #16 '꺼리십니까' 와 흔들림. #3 '꺼려하시겠습니까'(T04)도 읽은 일꾼이 따로 적음. 화면 한국어 문제(소리 없음) · 낮음 그대로. 경로 gh2-038-1.json .blocks[1].items[3](n=4) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "D:grammar2/gh2-039:T13",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 192~195행. grade.cjs 로 추천안의 70점을 모두 다시 잼(정답 자체 → 만점 ✔): gh2-039 #8 'that' → 70점 · #3 'which' → 70점 · #6 'that' → 70점 · #13 'that' · 관계사 뺀 꼴 → 70점 · #14 → 70점, gh2-040 #1 · #3 → 70점, gh2-041 #1 · #2 → 70점, gh2-015 #1 → 70점. 같은 과 #9 는 that · who · whom 을 이미 만점으로 받아 흔들림. 한정 관계절에서 that · which · who 는 모두 맞는 영어지만 관계대명사 과에서 사람 who · 사물 which 를 가르칠지는 교육 방침이라 정말 골라야 함. 추천안이 뺀 곳(gh2-041 #3 ~ #5 의문사 · 최상급 · only 뒤 that, gh2-015 #2 계속 용법 who)은 맞게 가름. 고친 뒤(참조 직접): #8 that 꼴 만점 · whom 은 70점 그대로.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-043:T18",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 308~309행: KO '그가 누구인지는 누구에게도 알려져 있지 않다(전체부정).', EN 'Who he is is not known to anybody.'. grade.cjs: 'Who he is is not known to anyone.' → 0점. 과정 gh2-016 #25 는 anyone · anybody 를 둘 다 받음(c-items 확인) — 확신 높음 그대로. 고친 뒤(참조 직접): 만점, 'Who he is is known to anyone.' · 'Who he is is not known to all.'(#8 부분부정) → 0점 — 전체부정 · 부분부정 가름도 그대로. 경로 gh2-043.json .blocks[1].items[8](n=9) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "F:grammar2/gh2-044:T04",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 327~328행: KO '날씨가 너무 더워져서 우리는 에어컨을 켰다.', EN 'It grew so hot that we turned on the air conditioner.'. grade.cjs: 'It got so hot …' · 'It became so hot …' → 0점. 이 과 #1 ~ #3 의 가르칠 점은 that 절(so … that)이고 grow 는 gh2-018 #15 'It grew dark.' 에서 가르침(c-items 확인). '더워지다' 의 흔한 번역이 막힘 → 중간. 고친 뒤(참조 직접): 두 꼴 만점, 'It got so cold …' → 0점. 경로 gh2-044.json .blocks[1].items[1](n=2) 확인.",
+   "때": "2026-09-24 20:26"
+  },
+  {
+   "key": "D:grammar2/gh2-044:T07",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "03.md 331~332행. 사실은 맞음(1996 클린턴 · 돌, 1984 레이건 · 먼데일)이라 틀림은 아님. 6단계-작업기록 보류 목록 6-1516 행은 문제 칸에 'gh2-044 #4(6-1602)' 를 함께 적었지만 A(추천)는 '이 여덟 페이지의 부제목에 2002년 뉴스 방송 기반 …' 이고 소유자 결정표 13 도 '(8페이지, 6-1516)' 로만 물음 — 결정이 이 문항까지 닿는지 글로 정해지지 않았고 '2002년' 문구도 이 문장에 맞지 않음. 6-1602 는 한국어 '(밥) 돌 후보' 로만 고쳤고 지금 글에 들어 있음(c-items 확인). 알림을 달지 · 원본 그대로 둘지 정말 골라야 함.",
+   "때": "2026-09-24 20:26"
+  }
+ ]
+}

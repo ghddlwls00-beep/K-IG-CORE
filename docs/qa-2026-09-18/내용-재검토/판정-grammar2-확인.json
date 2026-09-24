@@ -1,0 +1,866 @@
+{
+ "조각": "grammar2",
+ "뽑은때": "2026-09-24 16:28",
+ "대상": [
+  {
+   "key": "F:C04888",
+   "까닭": "판단 필요 전부",
+   "ids": [
+    "C04888"
+   ],
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=13].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-021.json",
+   "전": "Let me make amends to you for your loss.",
+   "뒤": "Let me make you amends for your loss.",
+   "주장": {
+    "판정": "판단 필요",
+    "까닭": "고친 세션이 모범과 대체 답안을 맞바꿔 표준 꼴(make amends to you)을 모범으로 올린 것은 맞음. 다만 옛 교재 꼴 'make + 사람 + amends' 는 오늘 영어 사전(Oxford Learner's · Longman · Cambridge)에 'make amends (to sb) (for sth)' 로만 실리는 옛 꼴이라, 화면 '다른 정답' 에 만점 정답으로 보이면 학습자가 표준 꼴로 익힐 수 있음. 틀린 영어라고 잘라 말하기는 어려워(옛 문헌에 쓰임) 판단 필요로.",
+    "추천안": "gh2-021 #13 대체 답안에서 \"Let me make you amends for your loss.\" 를 뺀다(그 꼴은 채점 코드로 70점이 됨 — 확인함). 모범 \"Let me make amends to you for your loss.\" 만 만점."
+   }
+  },
+  {
+   "key": "F:C05061",
+   "까닭": "심각·높음 전부",
+   "ids": [
+    "C05061"
+   ],
+   "읽을거리": "04.md",
+   "칸": ".blocks[1].items[n=10].text",
+   "파일": "content/lessons/grammar2/gh2-030-1.json",
+   "전": "그가 그의 나이 많은 아버지를 버리는 것은 너무 나쁘다.",
+   "뒤": "그가 그의 나이 많은 아버지를 버리는 것은 잔인하다.",
+   "주장": {
+    "판정": "틀림",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "한국어를 '너무 나쁘다' → '잔인하다'(= cruel, 모범과 맞춤)로 고쳤는데, 옛 한국어 '너무 나쁘다' 에 맞춰 둔 대체 답안 \"It is very bad of him to desert his old father.\" 가 그대로 남아 만점(채점 코드로 exact 확인). 이제 '잔인하다' 를 'very bad' 로 옮긴 답을 만점으로 받고 화면 '다른 정답' 에도 그렇게 보여 줌 — 한국어 문제의 뜻과 다른 대체 답안. (다른 길: 한국어를 '…잔인하다(아주 나쁘다).' 로 두 뜻을 다 적고 대체 답안을 둠.)",
+    "고칠 글": "[]",
+    "고칠 곳": "content/lessons/grammar2/gh2-030.json · .blocks[1].items[n=10].alternatives — \"It is very bad of him to desert his old father.\" 를 뺌(대체 답안 없음)"
+   }
+  },
+  {
+   "key": "X:0",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-009.json",
+    "칸": ".blocks[1].items[n=14].alternatives (더함)",
+    "지금": "[\"Let's meet at 2.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "한국어 '두시에 만나자' 의 가장 흔한 영작 \"Let's meet at two o'clock.\" · \"Let's meet at 2 o'clock.\" 이 0점(incorrect) — 모범 5낱말에 o'clock 한 낱말(내용어)이 더해져 길이 상한(1.15)에 걸림. grammarGrading.ts 를 그대로 불러 채점해 확인(scratch grade.cjs). 숫자 대체 답안(C04757)을 더할 때 함께 막힌 꼴.",
+    "고칠 글": "[\"Let's meet at 2.\", \"Let's meet at two o'clock.\", \"Let's meet at 2 o'clock.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:56"
+   }
+  },
+  {
+   "key": "X:1",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-010.json",
+    "칸": ".blocks[1].items[n=3].alternatives (더함)",
+    "지금": "[\"He is over 50.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "'그는 50세가 넘었다' 의 흔한 영작 \"He is over fifty years old.\" · \"He is over 50 years old.\" 이 0점 — years old 두 낱말이 길이 상한에 걸림(채점 코드로 확인). 숫자 대체 답안(C04765)을 더할 때 함께 막힌 꼴.",
+    "고칠 글": "[\"He is over 50.\", \"He is over fifty years old.\", \"He is over 50 years old.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:56"
+   }
+  },
+  {
+   "key": "X:2",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-013.json",
+    "칸": ".blocks[1].items[n=15].alternatives (더함)",
+    "지금": "[\"He will turn fifteen tomorrow.\", \"He will be 15 tomorrow.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "'그는 내일 15살이 될 것이다' 의 흔한 영작 \"He will turn 15 tomorrow.\" · \"He will be 15 years old tomorrow.\" · \"He will be fifteen years old tomorrow.\" 이 모두 0점(채점 코드로 확인) — 숫자 꼴(C04790)은 be 에만 더했고 turn 의 숫자 꼴 · years old 꼴은 없음.",
+    "고칠 글": "[\"He will turn fifteen tomorrow.\", \"He will be 15 tomorrow.\", \"He will turn 15 tomorrow.\", \"He will be fifteen years old tomorrow.\", \"He will be 15 years old tomorrow.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:56"
+   }
+  },
+  {
+   "key": "X:3",
+   "까닭": "③ 채점 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-014.json",
+    "칸": ".blocks[1].items[n=9].alternatives (더함)",
+    "지금": "[\"He studied hard, hoping to pass the entrance examination.\", \"He worked hard, hoping to pass the entrance exam.\"]",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "한국어 '열심히 공부했다' 를 그대로 옮기고 exam 을 쓴 \"He studied hard, hoping to pass the entrance exam.\" 이 70점(partial) — studied×exam 짝만 빠짐(C04796 · C04797 을 더할 때 남은 조합). 채점 코드로 확인.",
+    "고칠 글": "[\"He studied hard, hoping to pass the entrance examination.\", \"He worked hard, hoping to pass the entrance exam.\", \"He studied hard, hoping to pass the entrance exam.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:56"
+   }
+  },
+  {
+   "key": "X:4",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-011.json",
+    "칸": ".blocks[1].items[n=2].alternatives (더함)",
+    "지금": "[\"He brought a book.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "'그는 책 한 권을 가지고 왔다' 의 흔한 영작 \"He brought a book with him.\" 이 0점 — 새 대체 답안 \"He brought a book.\"(C04774)보다 두 낱말 길어 길이 상한에 걸림(채점 코드로 확인). with 과이므로 with 를 쓴 이 꼴은 받아야 함.",
+    "고칠 글": "[\"He brought a book.\", \"He brought a book with him.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:56"
+   }
+  },
+  {
+   "key": "X:5",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-012.json",
+    "칸": ".blocks[1].items[n=10].alternatives (더함)",
+    "지금": "[\"He has about 100 dollars.\", \"He has about a hundred dollars.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "'그는 약 백 불을 갖고 있다' 를 \"He has about $100.\" 로 쓰면 0점($100 한 낱말 대 100 dollars 두 낱말 — 채점 코드로 확인). 숫자 대체 답안(C04780)을 더할 때 달러 기호 꼴은 빠짐. 흔한 정도가 '100 dollars' 보다 낮아 확신 보통.",
+    "고칠 글": "[\"He has about 100 dollars.\", \"He has about a hundred dollars.\", \"He has about $100.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:56"
+   }
+  },
+  {
+   "key": "X:13",
+   "까닭": "③ 채점 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-019.json",
+    "칸": ".blocks[1].items[n=5].alternatives (더함)",
+    "지금": "[\"The book looks interesting.\", \"That book looks fun.\"]",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "한국어 '그 책은 재미있어 보인다' 를 그대로 옮긴 \"The book looks fun.\" 이 70점(partial) — The×fun 짝만 빠짐(C04880 · C04881 을 더할 때 남은 조합). grammarGrading.ts 를 그대로 불러 채점해 확인.",
+    "고칠 글": "[\"The book looks interesting.\", \"That book looks fun.\", \"The book looks fun.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 15:59"
+   }
+  },
+  {
+   "key": "X:19",
+   "까닭": "③ 채점 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-024.json",
+    "칸": ".blocks[1].items[n=6].alternatives (더함)",
+    "지금": "[\"Can you speak up?\", \"Could you speak up?\", \"Could you speak up, please?\", \"Could you speak louder, please?\", \"Can you speak louder, please?\"]",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "새 한국어 '좀 더 크게 말씀해 주시겠습니까?' 를 그대로 옮긴 \"Could you speak louder?\" · \"Can you speak louder?\" 와 please 를 가운데 둔 \"Could you please speak up?\" · \"Could you please speak louder?\" 가 모두 70점(partial) — 이번에 더한 다섯 꼴(C04998~C05002)이 louder 는 please 붙은 꼴만 넣음. 채점 코드로 확인.",
+    "고칠 글": "[\"Can you speak up?\", \"Could you speak up?\", \"Could you speak up, please?\", \"Could you speak louder, please?\", \"Can you speak louder, please?\", \"Could you speak louder?\", \"Can you speak louder?\", \"Could you please speak up?\", \"Could you please speak louder?\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:02"
+   }
+  },
+  {
+   "key": "X:20",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-022.json",
+    "칸": ".blocks[1].items[n=20].alternatives (새로 — 지금 없음)",
+    "지금": "(대체 답안 없음) 모범: I'd like to open a savings account.",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "한국어 '나는 저축 예금 계좌를 개설하고 싶다.'(C04899 로 고침)를 그대로 옮긴 \"I want to open a savings account.\" 가 0점(incorrect) — want 가 기능어가 아니라 would like 와 짝이 안 됨. 채점 코드로 확인. 이 강의는 회화 표현 강의라 would like 를 가르치는 문항이 아님.",
+    "고칠 글": "[\"I want to open a savings account.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:02"
+   }
+  },
+  {
+   "key": "X:23",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-025.json",
+    "칸": ".blocks[1].items[n=16].alternatives (새로 — 지금 없음)",
+    "지금": "(대체 답안 없음) 모범: That will be 1000 dollars.",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "한국어 '그것은 천불이 되겠습니다.' 를 그대로 옮긴 \"That will be a thousand dollars.\" · \"That will be one thousand dollars.\" 가 0점(incorrect) — 숫자 1000 과 낱말 thousand 가 짝이 안 됨(\"$1,000\" 도 0점). 채점 코드로 확인. 같은 강의 #13 에는 숫자 꼴 대체 답안(C05007)을 더했는데 이 문항은 반대 방향(낱말 꼴)이 빠짐.",
+    "고칠 글": "[\"That will be a thousand dollars.\", \"That will be one thousand dollars.\", \"That will be $1,000.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:05"
+   }
+  },
+  {
+   "key": "X:24",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-027.json",
+    "칸": ".blocks[1].items[n=13].alternatives (새로 — 지금 없음)",
+    "지금": "(대체 답안 없음) 모범: I mean it.",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "'나는 그것을 의미한다(정말이야).' 의 \"I mean that.\" 이 0점(3낱말 중 2낱말만 같아 70% 미만 — 채점 코드로 확인). GRAMMAR I 의 'mean it' 세 문항(gh1-091 #33 · #34 · gh1-099 #106)은 7단계 판단 a(3차 점검 '같은 뜻으로 흔히 씀')로 'mean that' 을 만점으로 더했으나, 결정 3(G9)이 GRAMMAR I 만 다뤄 GRAMMAR II 의 이 문항은 빠짐. 같은 표현이 과정에 따라 만점 / 0점으로 갈림. 결정 범위 문제라 확신 보통.",
+    "고칠 글": "[\"I mean that.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:05"
+   }
+  },
+  {
+   "key": "X:31",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-032.json",
+    "칸": ".blocks[1].items[n=4].alternatives (더함)",
+    "지금": "[\"Three Asian companies agreed to pay more than one million dollars in fines.\", \"Three Asian firms agreed to pay more than one million dollars in fines.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "'백만 불 이상' 을 가장 흔히 옮기는 'more than a million dollars' 꼴이 concerns · companies · firms 어느 쪽이든 0점(incorrect) — a 와 one 이 짝이 안 됨('1 million' 도 0점). 채점 코드로 확인. 이번에 companies · firms 대체 답안(C05109 · C05110)을 더하면서 a million 꼴은 빠짐(gh2-012 #10 은 'a hundred dollars' 를 더했음).",
+    "고칠 글": "[\"Three Asian companies agreed to pay more than one million dollars in fines.\", \"Three Asian firms agreed to pay more than one million dollars in fines.\", \"Three Asian concerns agreed to pay more than a million dollars in fines.\", \"Three Asian companies agreed to pay more than a million dollars in fines.\", \"Three Asian firms agreed to pay more than a million dollars in fines.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:07"
+   }
+  },
+  {
+   "key": "X:32",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-034.json",
+    "칸": ".blocks[1].items[n=5].alternatives (더함)",
+    "지금": "[\"Give me a moment to change.\", \"Give me a second to change.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "한국어 '옷 갈아입게 잠깐만 시간을 다오.'(C05119)의 '옷' 을 그대로 옮긴 \"Give me a minute to change clothes.\" · \"…to change my clothes.\" 가 0점(incorrect) — 내용어 clothes 가 더해져 길이 상한에 걸림(moment · second 꼴도 같음). 채점 코드로 확인. 이번에 moment · second 를 더하면서 옷(clothes) 꼴은 빠짐.",
+    "고칠 글": "[\"Give me a moment to change.\", \"Give me a second to change.\", \"Give me a minute to change clothes.\", \"Give me a minute to change my clothes.\", \"Give me a moment to change clothes.\", \"Give me a moment to change my clothes.\", \"Give me a second to change clothes.\", \"Give me a second to change my clothes.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:07"
+   }
+  },
+  {
+   "key": "X:40",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-049.json",
+    "칸": ".blocks[1].items[n=3].alternatives (더함)",
+    "지금": "[\"He will ask, \\\"Do you take a hundred-dollar bill?\\\"\", \"He will ask, \\\"Do you take a hundred dollar bill?\\\"\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "모범의 숫자 꼴을 바르게 하이픈으로 이은 \"He will ask, \\\"Do you take a 100-dollar bill?\\\"\" 가 0점(incorrect) — '100-dollar' 한 토막이 '100' · 'dollar' 두 낱말과 짝이 안 됨. 채점 코드로 확인. 이번에 hundred-dollar · hundred dollar 꼴(C05416 · C05417)은 더했으나 숫자에 하이픈을 쓴 꼴은 빠짐.",
+    "고칠 글": "[\"He will ask, \\\"Do you take a hundred-dollar bill?\\\"\", \"He will ask, \\\"Do you take a hundred dollar bill?\\\"\", \"He will ask, \\\"Do you take a 100-dollar bill?\\\"\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:11"
+   }
+  },
+  {
+   "key": "X:41",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-049.json",
+    "칸": ".blocks[1].items[n=4].alternatives (더함)",
+    "지금": "[\"He will ask if they take a hundred-dollar bill.\", \"He will ask if they take a hundred dollar bill.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "\"He will ask if they take a 100-dollar bill.\" 이 0점 — #3 과 같은 까닭(C05418 · C05419 를 더할 때 숫자+하이픈 꼴 빠짐). 채점 코드로 확인.",
+    "고칠 글": "[\"He will ask if they take a hundred-dollar bill.\", \"He will ask if they take a hundred dollar bill.\", \"He will ask if they take a 100-dollar bill.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:11"
+   }
+  },
+  {
+   "key": "X:42",
+   "까닭": "심각·높음 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-048.json",
+    "칸": ".blocks[1].items[n=3].alternatives (더함)",
+    "지금": "[\"Had I known your phone number, I would have called you.\", \"If I had known your phone number, I would have given you a ring.\"]",
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "이번에 영국식 'give you a ring'(C05324)을 더했는데 같은 뜻의 미국식(이 과정 표기는 대체로 미국식) \"If I had known your phone number, I would have given you a call.\" 은 0점(call ↔ ring 내용어). 채점 코드로 확인.",
+    "고칠 글": "[\"Had I known your phone number, I would have called you.\", \"If I had known your phone number, I would have given you a ring.\", \"If I had known your phone number, I would have given you a call.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:11"
+   }
+  },
+  {
+   "key": "X:43",
+   "까닭": "③ 채점 전부",
+   "주장": {
+    "파일": "content/lessons/grammar2/gh2-048.json",
+    "칸": ".blocks[1].items[n=15].alternatives (더함)",
+    "지금": "[\"If I had been three minutes late, I would have missed the train.\", \"If I had been three minutes late, I should have missed the train.\", \"Had I been three minutes late, I should have missed the train.\", \"Had I been 3 minutes late, I would have missed the train.\"]",
+    "종류": "③",
+    "심각도": "중간",
+    "확신": "높음",
+    "까닭": "한국어 '내가 3분 늦었더라면 …' 의 숫자를 그대로 쓰고 가장 흔한 if 꼴로 쓴 \"If I had been 3 minutes late, I would have missed the train.\" 이 70점(partial) — 숫자 꼴(C05358)은 도치 꼴에만 더함. 채점 코드로 확인.",
+    "고칠 글": "[\"If I had been three minutes late, I would have missed the train.\", \"If I had been three minutes late, I should have missed the train.\", \"Had I been three minutes late, I should have missed the train.\", \"Had I been 3 minutes late, I would have missed the train.\", \"If I had been 3 minutes late, I would have missed the train.\"]",
+    "새 음성 클립": false,
+    "배치": "2026-09-24 16:11"
+   }
+  },
+  {
+   "key": "S:/grammar2/gh2-011:T04",
+   "까닭": "심각·높음 전부",
+   "표본파일": "읽을거리/표본-grammar2/gh2-011.md",
+   "주장": {
+    "T": "T04",
+    "바뀐 글": true,
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "보통",
+    "까닭": "'그는 책 한 권을 가지고 왔다' 의 흔한 영작 \"He brought a book with him.\" 이 0점(채점 코드로 확인) — 새 대체 답안 \"He brought a book.\"(C04774)보다 두 낱말 길어 길이 상한에 걸림. 1부 문맥(01.md)에 이미 적음.",
+    "지금": "He came with a book. · 다른 정답: He brought a book.",
+    "고칠 글": "[\"He brought a book.\", \"He brought a book with him.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-011.json · .blocks[1].items[n=2].alternatives",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/grammar2/gh2-021-1:T26",
+   "까닭": "판단 필요 전부",
+   "표본파일": "읽을거리/표본-grammar2/gh2-021-1.md",
+   "주장": {
+    "판정": "판단 필요",
+    "T": "T26",
+    "추천안": "#13 대체 답안에서 \"Let me make you amends for your loss.\" 를 빼고 모범 \"Let me make amends to you for your loss.\" 만 만점(뺀 꼴은 70점).",
+    "까닭": "1부 C04888 과 같음 — 'make + 사람 + amends' 는 오늘 사전에 'make amends (to sb)' 로만 실리는 옛 꼴인데 화면 '다른 정답' 에 만점으로 보임. 이 과가 make + 간접목적어 꼴을 가르치고 교재 원래 꼴이라 그대로 두는 길도 있음."
+   }
+  },
+  {
+   "key": "S:/grammar2/gh2-049:T06",
+   "까닭": "심각·높음 전부",
+   "표본파일": "읽을거리/표본-grammar2/gh2-049.md",
+   "주장": {
+    "T": "T06",
+    "바뀐 글": true,
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "모범의 숫자 꼴을 바르게 하이픈으로 이은 \"He will ask, \\\"Do you take a 100-dollar bill?\\\"\" 가 0점(채점 코드로 확인) — hundred-dollar · hundred dollar 대체 답안(C05416 · C05417)만 더함. 1부 문맥(08.md)에 이미 적음.",
+    "지금": "He will ask, \"Do you take a 100 dollar bill?\" · 다른 정답: He will ask, \"Do you take a hundred-dollar bill?\" / He will ask, \"Do you take a hundred dollar bill?\"",
+    "고칠 글": "[\"He will ask, \\\"Do you take a hundred-dollar bill?\\\"\", \"He will ask, \\\"Do you take a hundred dollar bill?\\\"\", \"He will ask, \\\"Do you take a 100-dollar bill?\\\"\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-049.json · .blocks[1].items[n=3].alternatives",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "S:/grammar2/gh2-049:T08",
+   "까닭": "심각·높음 전부",
+   "표본파일": "읽을거리/표본-grammar2/gh2-049.md",
+   "주장": {
+    "T": "T08",
+    "바뀐 글": true,
+    "종류": "③",
+    "심각도": "높음",
+    "확신": "높음",
+    "까닭": "\"He will ask if they take a 100-dollar bill.\" 이 0점 — T06 과 같은 까닭(C05418 · C05419). 1부 문맥(08.md)에 이미 적음.",
+    "지금": "He will ask if they take a 100 dollar bill. · 다른 정답: He will ask if they take a hundred-dollar bill. / He will ask if they take a hundred dollar bill.",
+    "고칠 글": "[\"He will ask if they take a hundred-dollar bill.\", \"He will ask if they take a hundred dollar bill.\", \"He will ask if they take a 100-dollar bill.\"]",
+    "고칠 곳": "content/lessons/grammar2/gh2-049.json · .blocks[1].items[n=4].alternatives",
+    "새 음성 클립": false
+   }
+  },
+  {
+   "key": "OK:C04758",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=17].text",
+   "파일": "content/lessons/grammar2/gh2-009.json",
+   "전": "I used to major in architecture but I dropped it for I was not good at it.",
+   "뒤": "I used to major in architecture, but I dropped it, for I was not good at it."
+  },
+  {
+   "key": "OK:C04759",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=6].text",
+   "파일": "content/lessons/grammar2/gh2-010-1.json",
+   "전": "그들은 그것을 하는 가장 좋은 방법에 대한 차이(의견의)가 있었다.",
+   "뒤": "그들은 그것을 하는 가장 좋은 방법을 두고 의견 충돌이 있었다."
+  },
+  {
+   "key": "OK:C04930",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=8].text",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "당신은 몇 시에 당신의 날을 시작합니까(하루 일과를)?"
+  },
+  {
+   "key": "OK:C04931",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=9].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "9"
+  },
+  {
+   "key": "OK:C04932",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=9].text",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "그것을 하루라고 부르자(오늘 일과 끝내자)."
+  },
+  {
+   "key": "OK:C04952",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=19].text",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "성탄절이 바로 모퉁이 주변에 있다(다 되어간다)."
+  },
+  {
+   "key": "OK:C04933",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=10].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "10"
+  },
+  {
+   "key": "OK:C04923",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=5].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "5"
+  },
+  {
+   "key": "OK:C04953",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=20].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "20"
+  },
+  {
+   "key": "OK:C04934",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=10].text",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "당신은 시간 있습니까?"
+  },
+  {
+   "key": "OK:C04922",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=19].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-023.json",
+   "전": null,
+   "뒤": "Is this restaurant open 7 days a week?"
+  },
+  {
+   "key": "OK:C04950",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=18].text",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "시간이 어떻게 날아가는지(세월 빠르기도 하다)."
+  },
+  {
+   "key": "OK:C04750",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=10].text",
+   "파일": "content/lessons/grammar2/gh2-008-1.json",
+   "전": "그것은 일주일 내에 준비가 될 것이다.",
+   "뒤": "그것은 일주일 후에 준비가 될 것이다."
+  },
+  {
+   "key": "OK:C04935",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=11].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "11"
+  },
+  {
+   "key": "OK:C04921",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=18].text",
+   "파일": "content/lessons/grammar2/gh2-023-1.json",
+   "전": "당신은 당신의 식사 끝났습니까?",
+   "뒤": "식사 다 하셨습니까?"
+  },
+  {
+   "key": "OK:C04951",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=19].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "19"
+  },
+  {
+   "key": "OK:C04945",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=16].n",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "16"
+  },
+  {
+   "key": "OK:C04751",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "01.md",
+   "칸": ".blocks[1].items[n=7].alternatives[0]",
+   "파일": "content/lessons/grammar2/gh2-008.json",
+   "전": null,
+   "뒤": "No one was in the house when we called."
+  },
+  {
+   "key": "OK:C04936",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=11].text",
+   "파일": "content/lessons/grammar2/gh2-024-1.json",
+   "전": null,
+   "뒤": "당신은 시간을 갖고 있습니까(몇 시입니까)?"
+  },
+  {
+   "key": "OK:C04920",
+   "까닭": "맞음 3%(최소 10) — 판정을 가린 채",
+   "읽을거리": "03.md",
+   "칸": ".blocks[1].items[n=17].text",
+   "파일": "content/lessons/grammar2/gh2-023-1.json",
+   "전": "당신의 새해의 결심들은 무엇들인가?",
+   "뒤": "당신의 새해 결심은 무엇입니까?"
+  }
+ ],
+ "결과": [
+  {
+   "key": "F:C04888",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "판단 필요가 맞음. gh2-021 #13 지금 모범 'Let me make amends to you for your loss.' · 다른 정답 'Let me make you amends for your loss.' — 대체 답안은 GrammarLearningView 927-929 '다른 정답' · 1278 '(또는: …)' 에 보이고 채점에 쓰임(닿음). 모범과 대체를 맞바꿔 오늘 표준 꼴 make amends (to sb) (for sth) 을 모범으로 올린 것은 맞음. 남긴 'make + 사람 + amends' 는 옛 문헌에 쓰인 꼴이라 틀린 영어(①)로 단정하기 어렵지만 현대 학습 사전에는 없는 꼴 — 이 과(make 4형식 틀)가 가르치는 꼴과 현대 용법 사이의 교육 방침 문제라 소유자 몫. 추천안의 사실도 맞음: 대체 답안에서 빼면 그 꼴은 모범에 대해 partial(70점) — 채점기 src/lib/grammarGrading.ts 를 그대로 불러(스크래치 g2v.cjs — 'napkin into a banana' 0점 · 'triangel' 70점 먼저 확인) 재현. 확인 일꾼도 추천안(빼기)에 기움. 표본 S:/grammar2/gh2-021-1:T26 과 같은 문항이라 소유자 질문은 하나로 묶을 것.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "F:C05061",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "③ 높음 · 확신 높음 그대로. gh2-030-1 #10 한국어가 '너무 나쁘다' → '잔인하다'(모범 'It is cruel of him to desert his old father.' 와 맞춤)로 바뀌었는데, 옛 '너무 나쁘다' 에 맞춰 둔 대체 답안 'It is very bad of him to desert his old father.' 가 gh2-030 #10 에 그대로 남아 만점(재현: exact)이고 화면 '다른 정답' 에도 보임 → '잔인하다 = very bad' 로 가르침(문제와 뜻이 다른 영어를 만점 — 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 의 높음). 고치다 생긴 흔적(⑦)이기도 함 — 무거운 ③ 하나로. 고칠 글(대체 답안 없앰)을 넣고 모의 채점: 'very bad' 꼴 0점 · 모범과 \"It's cruel of him …\" 은 그대로 만점 · 'kind' 0점 — 새 틀림 없음. 대체 답안은 소리 안 냄 → 새 음성 클립 없음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:0",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도만 기준대로 중간. 채점기 src/lib/grammarGrading.ts 를 그대로 불러(스크래치 g2v.cjs — 'napkin into a banana' 0점 · 'triangel' 70점 먼저 확인) 재현: \"Let's meet at two o'clock.\" · \"Let's meet at 2 o'clock.\" · \"Let us meet at two o'clock.\" 모두 incorrect(0점 — 모범 5낱말 + 내용어 o'clock 이 길이 상한 1.15). 흔한 맞는 번역을 0점으로 막는 것은 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) — 예 6-1327 \"It's 7 o'clock.\" 0점 = Medium. 고칠 글 모의 채점: 두 꼴 exact · 'three o'clock' · 'eat' 은 0점. 닿음(대체 답안 = 채점 · '다른 정답' 화면).",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:1",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'He is over fifty years old.' · 'He is over 50 years old.' · \"He's over fifty years old.\" 모두 incorrect(모범 4낱말 + years old 두 낱말 → 길이 상한). 모범 'He is over fifty.' 는 한국어 뜻을 빠뜨리지 않아 높음 조건 아님. 고칠 글 모의 채점: 의도한 꼴 exact · 'over sixty' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:2",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'He will turn 15 tomorrow.' · 'He will be 15 years old tomorrow.' · 'He will be fifteen years old tomorrow.' 모두 incorrect — 숫자 꼴(C04790)은 be 에만 있고 turn 숫자 꼴 · years old 꼴이 없음. 고칠 글 모의 채점: 의도한 꼴 exact(\"He'll be 15 years old tomorrow.\" 도 줄임말을 펴서 exact) · 'He was 15 yesterday.' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:3",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "낮음",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 낮음. 재현: 'He studied hard, hoping to pass the entrance exam.' = partial(70점). 막힌 답이 70점이면 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 낮음(일꾼은 중간). 한국어 '열심히 공부했다' 의 곧은 번역이고 studied·examination · worked·exam 은 이미 만점이라 studied·exam 짝만 빠진 것. 고칠 글 모의 채점 exact · 'fail' 꼴 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:4",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'He brought a book with him.' = incorrect(새 대체 답안 'He brought a book.' 보다 두 낱말 길어 길이 상한, 모범 'He came with a book.' 과는 LCS 60%). with 과(gh2-011) 문항이라 with him 꼴은 흔한 맞는 번역. 고칠 글 모의 채점 exact · 'a pen with him' 0점. 표본 S:/grammar2/gh2-011:T04 와 같은 문항 · 같은 고칠 곳. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:5",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'He has about $100.' = incorrect('$100' 한 토막 대 '100 dollars' 두 낱말 — 채점기는 $ 를 지우지 않음). 글로 쓸 때 흔한 꼴이라 확신 보통도 무난. 고칠 글 모의 채점: '$100' · '$ 100' exact · '100 won' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:13",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "낮음",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 낮음. 재현: 'The book looks fun.' = partial(70점) — 'The book looks interesting.' · 'That book looks fun.' 은 만점인데 The×fun 짝만 빠짐. 70점 막힘은 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 낮음(일꾼은 중간). 고칠 글 모의 채점 exact · 'funny' · 'boring' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:19",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"Can you speak up?\",\"Could you speak up?\",\"Could you speak up, please?\",\"Could you speak louder, please?\",\"Can you speak louder, please?\",\"Could you speak louder?\",\"Can you speak louder?\",\"Could you please speak up?\",\"Could you please speak louder?\",\"Could you speak a little louder?\",\"Can you speak a little louder?\"]",
+   "까닭": "③ 맞음, 고칠 글에 두 꼴을 더하고 심각도 중간. 재현: 일꾼이 든 'Could you speak louder?' · 'Can you speak louder?' · 'Could you please speak up?' · 'Could you please speak louder?' 는 모두 partial(70점 — 낮음). 여기에 새 한국어 '좀 더 크게 말씀해 주시겠습니까?' 를 가장 곧게 옮긴 'Could you speak a little louder?' · 'Can you speak a little louder?' 가 incorrect(0점 — a little 두 낱말이 길이 상한)라 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 중간(기준 풀이 4: 한 줄에 둘이면 무거운 쪽, 까닭에 둘 다). 고칠 글 모의 채점: 여섯 꼴 모두 exact · 'a little softer' · 'lower' · 'quieter' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:20",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'I want to open a savings account.' = incorrect(want 와 would like 가 짝이 안 됨). 모범 \"I'd like to\" 가 '싶다' 를 빠뜨린 것은 아니라 높음 조건 아님. 같은 과정이 '싶다' 를 want to 로 가르치는 문항(gh2-021 #7 · gh2-034 #1 · #2)이 있어 학습자가 쓰기 쉬운 꼴. 고칠 글 모의 채점 exact · 'close' · \"don't want\" 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:23",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'That will be a thousand dollars.' · 'one thousand dollars' · '$1,000' 모두 incorrect(숫자 1000 과 낱말 thousand 가 짝이 안 됨). '1,000 dollars' 는 쉼표를 지워 이미 exact. 고칠 글 모의 채점: 세 꼴과 '$1000' exact · 'a hundred dollars' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:24",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)), 확신 보통도 무난. 재현: 'I mean that.' = incorrect(3낱말 중 2낱말). '정말이야' 뜻으로 흔히 쓰는 맞는 영어이고, 같은 표현이 GRAMMAR I 에서는 만점(gh1-091 #33 · #34 · gh1-099 #106 에 'mean that' 대체 답안 — 파일로 확인)인데 여기서는 0점. 결정 3(G9)은 GRAMMAR I 문항만 다뤘을 뿐 GRAMMAR II 에서 막으라는 결정이 아니라 결정을 다시 따지는 것 아님. 고칠 글 모의 채점 exact · 'I mean this.' · \"I don't mean it.\" 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:31",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'more than a million dollars' 꼴이 concerns · companies · firms 모두 incorrect(a 와 one 이 짝이 안 됨), '1 million' · '$1 million' 도 incorrect. 고칠 글(5개) 모의 채점: 'companies … a million' exact · 'less than' · 'refused' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:32",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'Give me a minute to change clothes.' · '…to change my clothes.' · moment · second 꼴 모두 incorrect(내용어 clothes 가 길이 상한). 새 한국어 '옷 갈아입게' 를 그대로 옮긴 흔한 꼴. 고칠 글(8개) 모의 채점: 의도한 꼴 exact · 'wash' · 'an hour' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:40",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"He will ask, \\\"Do you take a hundred-dollar bill?\\\"\",\"He will ask, \\\"Do you take a hundred dollar bill?\\\"\",\"He will ask, \\\"Do you take a 100-dollar bill?\\\"\",\"He will ask, \\\"Do you take a $100 bill?\\\"\"]",
+   "까닭": "③ 맞음, 고칠 글에 한 꼴을 더하고 심각도 중간. 재현: 하이픈을 바르게 쓴 'He will ask, \"Do you take a 100-dollar bill?\"' = incorrect(0점 — '100-dollar' 한 토막) → 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 중간. 글에서 가장 흔한 '$100 bill' 꼴도 partial(70점)이라 함께 더함(일꾼 규칙 (가) 의 $ 꼴 — gh2-012 #10 에는 '$100' 을 더하자고 적었음). 고칠 글 모의 채점: 두 꼴 exact · '50-dollar' · '$50' 은 만점 아님. 표본 S:/grammar2/gh2-049:T06 과 같은 문항 · 같은 고칠 글. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:41",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"He will ask if they take a hundred-dollar bill.\",\"He will ask if they take a hundred dollar bill.\",\"He will ask if they take a 100-dollar bill.\",\"He will ask if they take a $100 bill.\"]",
+   "까닭": "X:40 과 같은 까닭. 재현: 'He will ask if they take a 100-dollar bill.' = incorrect(0점 → 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 중간) · '… a $100 bill.' = partial(70점) — 둘 다 더함. 고칠 글 모의 채점: 두 꼴 exact · '$50' · '20-dollar' 는 만점 아님. 표본 S:/grammar2/gh2-049:T08 과 같은 문항 · 같은 고칠 글. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:42",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: 'If I had known your phone number, I would have given you a call.' = incorrect(call ↔ ring 내용어). 이번에 더한 영국식 'give you a ring' 과 같은 뜻의 더 흔한 꼴. 고칠 글 모의 채점 exact(\"If I'd known …, I'd have given you a call.\" 도) · 'a gift' · 'would not have called' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "X:43",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "낮음",
+   "까닭": "③ 맞음 · 고칠 글 맞음, 심각도 낮음. 재현: 'If I had been 3 minutes late, I would have missed the train.' = partial(70점) — 숫자 꼴(C05358)은 도치 꼴에만. 70점 막힘은 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 낮음(일꾼은 중간). 고칠 글 모의 채점 exact · '3 minutes early' 0점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "S:/grammar2/gh2-011:T04",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "까닭": "X:4 와 같은 문항(gh2-011 #2) · 같은 고칠 글. 재현: 'He brought a book with him.' = incorrect(0점) → 기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때) 로 중간(일꾼은 높음). 표본 쪽 T04 에 모범과 '다른 정답: He brought a book.' 이 보임 — 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "S:/grammar2/gh2-021-1:T26",
+   "결론": "동의",
+   "닿음": true,
+   "까닭": "판단 필요가 맞음 — F:C04888 과 같은 문항(gh2-021 #13 'Let me make you amends for your loss.' 를 만점 다른 정답으로 둘지). 같은 판정 · 소유자 질문은 하나로 묶을 것. 추천안(빼면 70점)은 채점기로 재현됨. 표본 쪽 T26 에 모범 · 다른 정답이 보임 — 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "S:/grammar2/gh2-049:T06",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"He will ask, \\\"Do you take a hundred-dollar bill?\\\"\",\"He will ask, \\\"Do you take a hundred dollar bill?\\\"\",\"He will ask, \\\"Do you take a 100-dollar bill?\\\"\",\"He will ask, \\\"Do you take a $100 bill?\\\"\"]",
+   "까닭": "X:40 과 같은 문항(gh2-049 #3) · 같은 고칠 글('$100 bill' 꼴을 더함) · 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: '100-dollar' 꼴 0점 · '$100' 꼴 70점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "S:/grammar2/gh2-049:T08",
+   "결론": "고쳐 동의",
+   "닿음": true,
+   "심각도": "중간",
+   "고칠 글": "[\"He will ask if they take a hundred-dollar bill.\",\"He will ask if they take a hundred dollar bill.\",\"He will ask if they take a 100-dollar bill.\",\"He will ask if they take a $100 bill.\"]",
+   "까닭": "X:41 과 같은 문항(gh2-049 #4) · 같은 고칠 글 · 심각도 중간(기록.md 기준 풀이 5(9/18 감사 missing-alternative 매김 — 맞는 답 0점 막힘 = 중간 · 70점 = 낮음, 높음은 틀린 답을 만점으로 받거나 모범 · 대체가 모두 한국어 뜻을 빠뜨릴 때)). 재현: '100-dollar' 꼴 0점 · '$100' 꼴 70점. 닿음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04758",
+   "결론": "맞음 동의",
+   "까닭": "gh2-009 #17 영어에 쉼표 둘을 더함 — 독립절을 잇는 but 앞 · 이유의 등위 접속사 for 앞 쉼표는 표준이고, 없으면 'dropped it for I …' 가 전치사 for 로 잘못 읽힐 수 있어 고침이 맞음. 같은 과 #1 'She must be very happy, for she smiles all the time.' 과 같은 꼴. 한국어 #17 '…전공한 적이 있었지만, 그것을 잘하지 못했기 때문에 그만두었다' · 다른 정답 'I once majored …, but I dropped it because …' 와 뜻 맞음. 채점은 쉼표를 지워 전과 같음. 소리 내는 글이 바뀌었는데 새 글 클립(24-8d50ee5543f2717a.mp3, unifiedSpeechKey)이 본 저장소 public/audio/azure-ava/v1 에 있음(로컬만 — R2 는 안 봄).",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04759",
+   "결론": "맞음 동의",
+   "까닭": "gh2-010-1 #6 '…가장 좋은 방법을 두고 의견 충돌이 있었다' — 영어 'They had a disagreement over the best way to do it.' 의 disagreement(의견 충돌) · over(~을 두고)와 맞고 옛 '차이(의견의)' 의 어색한 괄호를 없앰. 다른 정답 'a difference of opinion over …' 도 같은 뜻. 띄어쓰기(방법을 두고 · 의견 충돌이) 맞음. 짝 16:16 · #6 짝 맞음(파일로 확인).",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04930",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #8 한국어가 영어 #8 'What time do you start your day?' 와 짝 — 괄호 '(하루 일과를)' 이 your day 의 뜻을 풀어 줌. 글은 옛 글 그대로.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04931",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). 9번째 문항의 n '9' — numberLabel 로 화면에 그대로 나옴(GrammarLearningView 219), 앞뒤 8 · 10 과 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04932",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #9 한국어 '그것을 하루라고 부르자(오늘 일과 끝내자).' 가 영어 #9 \"Let's call it a day.\" 와 짝 — 괄호 풀이가 관용 뜻과 맞음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04952",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #19 한국어 '성탄절이 바로 모퉁이 주변에 있다(다 되어간다).' 가 영어 #19 'Christmas is just around the corner.' 와 짝 — 괄호 풀이가 관용 뜻과 맞음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04933",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #10 의 n '10' — 앞뒤 9 · 11 과 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04923",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #5 의 n '5' — 블록 1 로 옮긴 첫 문항, 앞 #4(원래 블록 1)에서 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04953",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #20 의 n '20' — 앞뒤 19 · 21 과 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04934",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #10 한국어 '당신은 시간 있습니까?' 가 영어 #10 'Do you have time?'(다른 정답 'Do you have any time?') 와 짝. 바로 뒤 #11 '…시간을 갖고 있습니까(몇 시입니까)?' ↔ 'Do you have the time?' 과 괄호로 구별돼 두 문항 짝이 뒤바뀌지 않음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04922",
+   "결론": "맞음 동의",
+   "까닭": "gh2-023 #19 새 대체 답안 'Is this restaurant open 7 days a week?' — 모범 'seven days' 의 숫자 꼴, 한국어 '일주일에 7일 열립니까?' 도 숫자로 씀. 문법 · 뜻 맞음. 짝 20:20 · #19 짝 맞음(파일로 확인).",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04950",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #18 한국어 '시간이 어떻게 날아가는지(세월 빠르기도 하다).' 가 영어 #18 'How time flies!'(감탄문) 와 짝 — 괄호 풀이가 뜻과 맞음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04750",
+   "결론": "맞음 동의",
+   "까닭": "gh2-008-1 #10 '일주일 내에' → '일주일 후에' — 영어 'It will be ready in a week.' 의 in + 기간은 '(지금부터) 일주일 뒤에' 이고 '일주일 안에' 는 within a week. 전치사 in 과(gh2-008)가 가르치는 뜻과 맞게 고친 것. 맞춤법 · 띄어쓰기 맞음. 짝 17:17(파일로 확인).",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04935",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #11 의 n '11' — 앞뒤 10 · 12 와 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04921",
+   "결론": "맞음 동의",
+   "까닭": "gh2-023-1 #18 '당신은 당신의 식사 끝났습니까?' → '식사 다 하셨습니까?' — 영어 'Are you through with your meal?'(식사 다 끝냈느냐 — 종업원 말) 과 뜻 맞고 높임도 알맞음. '다 하셨습니까'(부사 다 + 하다) 띄어쓰기 맞음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04951",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #19 의 n '19' — 앞뒤 18 · 20 과 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04945",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #16 의 n '16' — 앞뒤 15 · 17 과 이어짐.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04751",
+   "결론": "맞음 동의",
+   "까닭": "gh2-008 #7 새 대체 답안 'No one was in the house when we called.' — 모범 'Nobody was in the house when we called.' 와 같은 뜻의 맞는 영어, 한국어 '우리가 전화했을 때 그 집 안에는 아무도 없었다.' 와 맞음. 채점: 이 꼴 만점, 'Somebody …' 는 0점(재현).",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04936",
+   "결론": "맞음 동의",
+   "까닭": "옮김(gh2-024-1 옛 블록 3 → 블록 1) — 자리를 판정: 현재 파일 두 쪽을 GrammarLearningView 182~222 짝 짓기(차례)대로 다시 짝지어 보니 22:22 · 번호 1~22 이어짐 · 두 쪽 n 이 같음(스크래치 g2v.cjs list). #11 한국어 '당신은 시간을 갖고 있습니까(몇 시입니까)?' 가 영어 #11 'Do you have the time?'(몇 시냐) 와 짝 — 괄호 풀이가 the time 의 뜻과 맞음.",
+   "때": "2026-09-24 16:42"
+  },
+  {
+   "key": "OK:C04920",
+   "결론": "맞음 동의",
+   "까닭": "gh2-023-1 #17 '당신의 새해의 결심들은 무엇들인가?' → '당신의 새해 결심은 무엇입니까?' — 영어 \"What are your New Year's resolutions?\" 와 뜻 맞음(한국어는 복수를 흔히 드러내지 않음). 띄어쓰기(새해 결심은) 맞음. #17 짝 맞음(파일로 확인).",
+   "때": "2026-09-24 16:42"
+  }
+ ]
+}

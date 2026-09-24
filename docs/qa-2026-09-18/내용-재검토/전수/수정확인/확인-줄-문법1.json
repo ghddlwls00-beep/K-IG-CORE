@@ -1,0 +1,134 @@
+{
+ "조각": "줄-문법1",
+ "뽑은때": "2026-09-25 04:54",
+ "대상": [
+  {
+   "key": "E10",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "E10",
+    "판정": "제대로",
+    "main 글": "gh1-109 .blocks[3].items[32] n=68 'Where are many athletes training?' alternatives ['Where are many players training?', 'Where are a lot of athletes training?', 'Where are lots of athletes training?']",
+    "까닭": "alternatives 가 고칠 글 셋과 글자 그대로 같음(새 칸) · 셋 다 main 채점 만점(옛 참조 셋 다 0점). 모범 · 짝 '많은 선수들이 어디에서 훈련하고 있나?' · 옆 n=69 그대로.",
+    "때": "2026-09-25 04:28"
+   }
+  },
+  {
+   "key": "E11",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "E11",
+    "판정": "제대로",
+    "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[3] n=41 'The team was able to obtain numerous samples, wasn't it?' alternatives [고칠 글 4 + 결정 C 2]",
+    "까닭": "두 파일 모두 고칠 글 넷(옛 'could obtain' + get · many 꼴 셋)이 글자 그대로 앞 네 칸 · 새 셋 main 채점 만점(옛 참조 셋 다 0점). 'a lot of samples' · 'could get many samples' 는 결정 C 표. 모범 · 짝 '그 팀은 수많은 샘플을 얻을 수 있었지?' 그대로.",
+    "때": "2026-09-25 04:28"
+   }
+  },
+  {
+   "key": "E12",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "E12",
+    "판정": "제대로",
+    "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[7] n=45 'The telescope is not yet completely online, is it?' alternatives [고칠 글 3 + 결정 C 3]",
+    "까닭": "두 파일 모두 고칠 글 셋 글자 그대로(새 칸) · main 채점 만점(옛 참조 70점 · 0점 · 0점). 'completely connected' · \"isn't … yet\" 꼴은 결정 C 표(한국어 '완전히 연결되어' 와 맞음). 모범 · 짝 그대로.",
+    "때": "2026-09-25 04:28"
+   }
+  },
+  {
+   "key": "E13",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "E13",
+    "판정": "제대로",
+    "main 글": "gh1-119 · gh1-119-1 .blocks[3].items[8] n=46 'Are mission managers pleased with progress?' alternatives ['Are the mission managers pleased with the progress?', 'Are mission managers happy with progress?', 'Are the mission managers happy with the progress?']",
+    "까닭": "두 파일의 alternatives 가 고칠 글 셋과 글자 그대로 같음(새 칸) · 셋 다 main 채점 만점(옛 참조 셋 다 0점). 모범 · 짝 '임무 관리자(운영자, 책임자)들이 진전에 기뻐하나?' 그대로.",
+    "때": "2026-09-25 04:28"
+   }
+  },
+  {
+   "key": "P28",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P28",
+    "판정": "제대로",
+    "main 글": "gh1-123 · gh1-123-1 .blocks[3].items[17] n=55 'We are free men.' alternatives ['We are free people.']",
+    "까닭": "두 파일 모두 고칠 글과 같은 새 칸 · main 채점 만점(옛 참조 0점). 모범 'free men' 은 그대로(결정 13). 짝 '우리는 자유인이다.' · 옆 n=54 · 56 은 다른 정답만.",
+    "때": "2026-09-25 04:27"
+   }
+  },
+  {
+   "key": "P99",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P99",
+    "판정": "제대로",
+    "main 글": "gh1-097 .blocks[3].items[2] n=79 text 'Not every boy lost his life, did he?' alternatives ['Every boy didn't lose his life, did he?', 'Not every boy lost his life, did they?', 'Every boy didn't lose his life, did they?', 'Not every boy died, did he?']",
+    "까닭": "고칠 곳대로 .text 가 소유자 답 3 의 'Not every boy lost his life, did he?' 로 바뀌고 옛 모범이 첫 다른 정답으로 옮겨짐 · 고칠 글 셋 글자 그대로 · they 꼬리 둘 main 채점 만점(옛 참조 0점 · 70점). 'Not every boy died, did he?' 는 결정 C 표. 짝 gh1-096 '모든 소년이 목숨을 잃지는 않았지?(Every)' 그대로. (.text 가 바뀐 영어 문장의 음성은 소유자 답 3 · 수정 세션 몫 — 이 판정에 안 넣음)",
+    "때": "2026-09-25 04:28"
+   }
+  },
+  {
+   "key": "P98",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P98",
+    "판정": "제대로",
+    "main 글": "gh1-092 .blocks[3].items[16] n=55 '그 법은 이달에 발효하지?'",
+    "까닭": "고칠 글과 글자 그대로 같음 · 옛 '이 달에' 안 남음 · 나눈 쪽 없음(확인). 영어 짝 gh1-093 'The law takes effect this month, doesn't it?' 그대로(결정 C 다른 정답만) · 옆 n=54 · 56 그대로.",
+    "때": "2026-09-25 04:28"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "E10",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main gh1-109.json .blocks[3].items[32] n=68 alternatives = 고칠 글 셋 글자 그대로(순서 같음 · 다른 칸 없음) = 결정 C 표 grammar1/gh1-108#68 더할것 셋. main 채점(main 참조) 셋 다 만점 · 같은 답을 옛 참조(작업 트리)로 재면 셋 다 0점 — 만점은 넣은 칸 덕. 나눈 쪽 없음(스냅에 gh1-108 · gh1-109 뿐). 모범 text · 짝 gh1-108 n=68 '많은 선수들이 어디에서 훈련하고 있나?' · 옆 n=69 옛과 같음 · n=67 은 다른 정답만 늘어남. 빗금 · 겹침 · 정답과 같은 칸 없음. 틀린 답(few · not training · aren't · players playing · resting)은 옛 · main 참조 모두 0점 — 새로 점수 받는 틀린 답 없음.",
+   "때": "2026-09-25 05:03"
+  },
+  {
+   "key": "E11",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main gh1-119.json · gh1-119-1.json 둘 다 .blocks[3].items[3] n=41 alternatives 앞 네 칸 = 고칠 글 넷 글자 그대로(순서 같음). 뒤 두 칸 'The team was able to obtain a lot of samples, wasn't it?' · 'The team could get many samples, couldn't it?' 은 결정 C 표 grammar1/gh1-118#41 더할것과 글자 그대로 같음(다른 데서 온 글 없음). 새 셋 main 만점 · 옛 참조로는 0점. gh1-119-2 엔 n=41 없음. 모범 · 짝 gh1-118 · gh1-118-1 n=41 '그 팀은 수많은 샘플을 얻을 수 있었지?' 옛과 같음. 뜻 반대 답('was not able … was it?' · 'was unable' · few · lose)은 옛 · main 모두 0점. 점수가 달라진 것은 꼬리만 틀린 'The team was able to get many samples, was it?' 0→70점뿐(소유자 결정: 꼬리만 틀리면 70점).",
+   "때": "2026-09-25 05:03"
+  },
+  {
+   "key": "E12",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 두 파일(gh1-119 · gh1-119-1) .blocks[3].items[7] n=45 alternatives 앞 세 칸 = 고칠 글 셋 글자 그대로. 뒤 세 칸('not yet completely connected' · \"isn't completely online yet\" · \"isn't fully connected yet\")은 결정 C 표 grammar1/gh1-118#45 더할것과 같음('not fully online yet' 은 둘에 다 있어 한 번만). 고칠 글 셋 main 만점 · 옛 참조로는 70 · 0 · 0점(주장과 같음). 짝 '그 망원경은 아직 완전히 연결되어 있지는 않지?' 옛과 같음. connected 꼴은 한국어 '연결되어' 와 맞음. 뜻 반대 답(\"completely online, isn't it?\") · offline · disconnected 는 0점. 점수가 달라진 것은 꼬리만 틀린 \"… yet, isn't it?\" 0→70점뿐. 흠은 아닌 덧붙임: 'is not completely online yet' 와 \"isn't completely online yet\" 가 함께 있어 화면 '다른 정답' 에 줄임꼴만 다른 두 줄이 보임. 둘 다 맞는 영어이고, 고칠 글과 결정 C 표가 겹쳐 생김.",
+   "때": "2026-09-25 05:03"
+  },
+  {
+   "key": "E13",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 두 파일 .blocks[3].items[8] n=46 alternatives = 고칠 글 셋 글자 그대로 = 결정 C 표 grammar1/gh1-118#46 셋. main 만점 · 옛 참조로는 셋 다 0점. 모범 text · 짝 '임무 관리자(운영자, 책임자)들이 진전에 기뻐하나?' 옛과 같음. unhappy · 'not happy' · \"Aren't …\" · angry · problem 은 옛 · main 모두 0점. 달라진 것은 관사 하나 틀린 'with a progress' 0→70점뿐. 옛 채점도 the↔a 는 70점을 주므로 같은 규칙.",
+   "때": "2026-09-25 05:03"
+  },
+  {
+   "key": "P28",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main gh1-123.json · gh1-123-1.json .blocks[3].items[17] n=55 alternatives = ['We are free people.'] 글자 그대로 = 결정 C 표 grammar1/gh1-122#55. 모범 'We are free men.' 그대로. main 만점 · 옛 참조로는 0점. 짝 gh1-122 · gh1-122-1 '우리는 자유인이다.' 옛과 같음(gh1-122 세 파일 바뀐 칸 0). 옆 n=54 · 56 은 text 그대로 두고 다른 정답만 늘어남. 'not free people' · \"aren't\" · unfree · poor 는 0점 그대로. 'We were free people.' 0→70점은 옛 참조의 'We were free men.' 이 받던 70점(시제 기능어 하나)과 같은 규칙.",
+   "때": "2026-09-25 05:03"
+  },
+  {
+   "key": "P99",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main gh1-097.json .blocks[3].items[2] n=79 text = 'Not every boy lost his life, did he?'. 내용-재검토-결과.md 결정 3 표와 조정.json 소유자 결정 3 과 같음. alternatives 앞 세 칸 = 고칠 글 셋 글자 그대로(옛 모범이 첫 칸). 넷째 'Not every boy died, did he?' = 결정 C 표 grammar1/gh1-096#79. they 꼬리 둘 main 만점 · 옛 참조로는 0 · 70점. 분할본 없음. 짝 gh1-096 n=79 '모든 소년이 목숨을 잃지는 않았지?(Every)' 옛과 같음(gh1-096 바뀐 칸 0). 옆 n=78 은 다른 정답만 늘어남 · n=80 옛과 같음. 뜻 반대 'Every boy lost his life, didn't he?' 는 0점. 이 줄 탓이 아닌 덧붙임: 전체 부정 'No boy lost his life, did he?' 가 0→70점이 됨. 소유자가 정한 새 모범 'Not every …' 과 no/not 기능어 하나만 다르기 때문. 과정에 원래 있던 gh1-069 n=79 에서도 옛 판 · 옛 채점으로 'No boy received a prize, did he?' 가 이미 70점(채점기가 양쪽 부정을 같은 쪽으로 봄). 또 맞는 영어 'Not every boy died, did they?' 는 70점(결정 C 는 he 꼬리만). 남은 빈틈일 뿐 옆 글을 망친 것은 아님.",
+   "때": "2026-09-25 05:03"
+  },
+  {
+   "key": "P98",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main gh1-092.json .blocks[3].items[16] n=55 text = '그 법은 이달에 발효하지?' 로 고칠 글과 글자 그대로. 스냅 content · src 어디에도 '이 달에' 나 다른 '발효하지' 가 없음(Grep). 분할본 없음(gh1-092.json 하나). 이 파일에서 옛→main 바뀐 칸은 이 한 칸뿐. 옆 n=54 '의회가 그 법안을 승인했지?' · n=56 옛과 같음. 영어 짝 gh1-093 n=55 text 'The law takes effect this month, doesn't it?' 그대로이고, 다른 정답 넷은 결정 C 표 grammar1/gh1-092#55 더할것 넷과 같음. 뜻 반대 · 때 틀린 영어(doesn't take · took · next month)는 0점. '이달'(이번 달)은 표준국어대사전 한 낱말이라 붙여 씀이 맞음.",
+   "때": "2026-09-25 05:03"
+  }
+ ]
+}

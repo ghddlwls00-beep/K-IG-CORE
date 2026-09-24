@@ -1,0 +1,122 @@
+{
+ "조각": "줄-초등",
+ "뽑은때": "2026-09-25 05:05",
+ "대상": [
+  {
+   "key": "P278",
+   "까닭": "제대로 · 괜찮음이 아님 — 전부",
+   "주장": {
+    "id": "P278",
+    "판정": "안 들어감",
+    "main 글": "제목줄 .blocks[0].text = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - My Other Dream Job (또 하나의 꿈)'(고침) · s16-1.json label = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'(옛) · content/courses/student.json lessons[63].label = 같은 옛 글 · content/courses/student.json groups[15].title = 'Chapter 16. 또 다른 장래희망 (통역사) (My Other Dream Job (Interpreter))'(옛)",
+    "까닭": "일부만 들어감. 고칠 곳에 적힌 네 칸 가운데 제목줄(h2)만 고칠 글과 같고, 같은 장 이름을 담은 s16-1.json label · student.json lessons[63].label · groups[15].title 세 칸은 옛 '장래희망' 그대로. main 전체에서 '장래희망' 을 찾으면 STUDENT 에 7곳 남음(groups[15].title 1 · lessons[63~65].label 3 · s16-1~3.json label 3). main src/lib/curriculumPresentation.ts 281행이 STUDENT 부제목을 lesson.label 로 내므로, 과정 목록의 부제목 · 장 제목은 '또 다른 장래희망', 강의 제목줄은 '또 다른 장래 희망' 으로 화면끼리 갈림. 소리 없는 칸이라 클립 영향 없음.",
+    "고칠 것": "content/lessons/student/s16-1.json label 과 content/courses/student.json lessons[63].label 을 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))' 로, content/courses/student.json groups[15].title 을 'Chapter 16. 또 다른 장래 희망 (통역사) (My Other Dream Job (Interpreter))' 로 바꿈(제목줄은 이미 됨).",
+    "때": "2026-09-25 04:58"
+   }
+  },
+  {
+   "key": "P279",
+   "까닭": "제대로 · 괜찮음이 아님 — 전부",
+   "주장": {
+    "id": "P279",
+    "판정": "안 들어감",
+    "main 글": "제목줄 .blocks[0].text = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)'(고침) · s16-2.json label = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'(옛) · content/courses/student.json lessons[64].label = 같은 옛 글",
+    "까닭": "일부만 들어감 — P278 과 같은 모습. 제목줄(h2)은 고칠 글과 같으나 고칠 곳에 같이 적힌 s16-2.json label · student.json lessons[64].label 은 옛 '장래희망' 그대로라 과정 목록 부제목(lesson.label)과 강의 제목줄이 '장래희망' / '장래 희망' 으로 갈림. 소리 없는 칸.",
+    "고칠 것": "content/lessons/student/s16-2.json label 과 content/courses/student.json lessons[64].label 을 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))' 로 바꿈(제목줄은 이미 됨).",
+    "때": "2026-09-25 04:58"
+   }
+  },
+  {
+   "key": "P280",
+   "까닭": "제대로 · 괜찮음이 아님 — 전부",
+   "주장": {
+    "id": "P280",
+    "판정": "안 들어감",
+    "main 글": "제목줄 .blocks[0].text = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)'(고침) · s16-3.json label = 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'(옛) · content/courses/student.json lessons[65].label = 같은 옛 글",
+    "까닭": "일부만 들어감 — P278 과 같은 모습. 제목줄(h2)은 고칠 글과 같으나 고칠 곳에 같이 적힌 s16-3.json label · student.json lessons[65].label 은 옛 '장래희망' 그대로라 과정 목록 부제목과 강의 제목줄이 갈림. 소리 없는 칸.",
+    "고칠 것": "content/lessons/student/s16-3.json label 과 content/courses/student.json lessons[65].label 을 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))' 로 바꿈(제목줄은 이미 됨).",
+    "때": "2026-09-25 04:58"
+   }
+  },
+  {
+   "key": "S12",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "S12",
+    "판정": "제대로",
+    "main 글": "첫 번째 큰 명절은 음력 새해 첫날인 설날입니다.",
+    "까닭": "main s18-2.json .blocks[2].text(한국어 문단 1)가 고칠 글과 같음. 짝 영어 #1 'The first big holiday is Seollal, Lunar New Year’s Day.' 그대로. 같은 파일 한국어 #6 '음력 설날에'(옛 '음력설날에')도 바뀌었으나 다른 줄 몫이고 흠 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:58"
+   }
+  },
+  {
+   "key": "S11",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "S11",
+    "판정": "제대로",
+    "main 글": "While living on Earth, he married Ungnyeo, who had changed from a bear into a woman.",
+    "까닭": "main s17-1.json .blocks[1].items[3].text(n=4)가 고칠 글과 같음. 짝 한국어 #4 '지상에서 사는 동안, 그는 곰이 여자가 된 웅녀와 결혼을 했습니다.' 그대로(뜻 맞음). 조각 정답 16낱말 한 꼴(쉼표는 조각에 안 들어가 받아쓰기 영향 없음).",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:58"
+   }
+  },
+  {
+   "key": "S30",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "S30",
+    "판정": "제대로",
+    "main 글": "The country’s ancient name was Gojoseon.",
+    "까닭": "main s17-1.json .blocks[1].items[6].text(n=7)가 고칠 글과 같음 — 글자 번호로 보니 굽은 ’(U+2019), 같은 강의 #2 'our country’s'(U+2019)와 이제 같은 표기. 짝 한국어 #7 '그 나라의 고대 이름은 고조선이었습니다.' 그대로.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:58"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "P278",
+   "결론": "동의",
+   "바른 판정": "안 들어감",
+   "까닭": "main 3e9687f 스냅샷에서 다시 잼. s16-1.json .blocks[0](type instruction · 제목줄).text 는 고칠 글과 === 이고, 작업 트리 옛 판의 같은 칸은 '지금' 과 === 라서 제목줄은 수정 세션이 바꿨음. 그러나 고칠 곳에 같이 적힌 세 칸 — s16-1.json label(8행) · content/courses/student.json lessons[63].label(949행 · id s16-1) · groups[15].title(145행 · lessons s16-1~3) — 은 main 과 옛 판이 같은 글(옛 '장래희망')임. main content 전체를 Grep '장래\\s?희망' 으로 보면 STUDENT 에서 붙여 쓴 곳 7(groups[15].title 1 · lessons[63~65].label 3 · s16-1~3.json label 3), 띄어 쓴 곳은 s16 제목줄 셋과 s3-4(표 #286 · #287, 다른 줄)뿐 — 주장의 셈과 같음. main src/lib/curriculumPresentation.ts 281행이 STUDENT subtitle 을 lesson.label 로 내므로 과정 목록 쪽은 '장래희망', 강의 제목줄은 '장래 희망' 으로 갈린다는 설명도 맞음. 같은 과정 #286 은 title 칸이 경로로 적혀 student.json lessons[15].title 까지 들어간 것을 보면, 적용이 고칠 곳의 첫 경로(제목줄)만 하고 '— 같은 장 이름:' 뒤에 글로 적은 칸을 빠뜨린 것으로 보임(추정). 다섯 판정에 '일부만' 칸이 없으므로, 고칠 곳에 든 칸 셋이 옛 글 그대로인 이 줄은 '안 들어감' 이 맞음. '옆 글을 망침' 은 고침이 옆 글을 바꿔 새 흠을 낸 경우인데, 이 세 칸은 바뀌지 않은 고칠 대상 자체라 해당하지 않음. 고칠 것도 맞음: 두 label → 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))', groups[15].title → 'Chapter 16. 또 다른 장래 희망 (통역사) (My Other Dream Job (Interpreter))' 는 표 #278 고칠 곳과 같고, 강의 파일 label 과 과정 목록 label 이 같은 글이 됨. 소리: main lessonAudioText.ts 는 blocks 만 읽고(STUDENT 는 sentences 칸) label · 장 제목은 읽지 않아 클립 영향 없음. main src/ 에 '장래' 없음. archive student-overview s4.json 에는 영어 이름 'My Other Dream Job' 만 있어 원본 목차와 부딪치지 않음.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "P279",
+   "결론": "동의",
+   "바른 판정": "안 들어감",
+   "까닭": "main 스냅샷: s16-2.json .blocks[0].text 는 고칠 글과 === (옛 판은 '지금' 과 ===, 즉 제목줄만 바뀜). 고칠 곳에 같이 적힌 s16-2.json label(8행)과 content/courses/student.json lessons[64].label(961행 · id s16-2)은 main 과 옛 판이 같은 옛 글 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사))'. curriculumPresentation.ts 281행(subtitle = lesson.label) 때문에 과정 목록 부제목과 강의 제목줄의 띄어쓰기가 갈림. P278 과 같은 까닭으로 '안 들어감'(일부만 들어감) 이 맞고 '옆 글을 망침' 은 아님. 고칠 것(두 label → '... (또 다른 장래 희망 (통역사))', groups[15].title 은 P278 몫)도 표 #279 와 같음. 소리 없는 칸.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "P280",
+   "결론": "동의",
+   "바른 판정": "안 들어감",
+   "까닭": "main 스냅샷: s16-3.json .blocks[0].text 는 고칠 글과 === (옛 판은 '지금' 과 ===). 고칠 곳에 같이 적힌 s16-3.json label(8행)과 content/courses/student.json lessons[65].label(973행 · id s16-3)은 main 과 옛 판이 같은 옛 '장래희망' 글. P278 과 같은 모습이라 '안 들어감'(일부만 들어감) 이 맞음. 고칠 것(두 label → 'Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))')도 표 #280 과 같음. 소리 없는 칸.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "S12",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main s18-2.json .blocks[2](paragraph ko).text 는 고칠 글 '첫 번째 큰 명절은 음력 새해 첫날인 설날입니다.' 와 같고, 옛 '첫 번째로 큰 …' 은 main 어디에도 없음(Grep '첫 번째로? 큰 명절' 은 이 한 칸뿐). 짝 영어 .blocks[1].items[0] 'The first big holiday is Seollal, Lunar New Year’s Day.' 는 옛 판과 같음. 한국어 문단 6 · 영어 항목 6 으로 짝 수 맞음, pairId null · 나눈 파일 없음. 옛 판과 견주면 같은 파일에서 바뀐 칸은 이것과 .blocks[7] '음력설날에' → '음력 설날에' 둘뿐인데, 뒤의 것은 줄.json 에 없고 1부 결과 표(내용-재검토-결과.md) 236행이 적은 고칠 글과 같음. 새 흠은 없음.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "S11",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main s17-1.json .blocks[1].items[3](n=4).text 는 고칠 글과 === 이고, 쉼표 없는 옛 글은 main 에 없음. main content 에서 'married Ungnyeo' 는 이 한 곳뿐(basics qa171-1 은 다른 문장이고 범위 밖). 짝 한국어 .blocks[5] '지상에서 사는 동안, 그는 곰이 여자가 된 웅녀와 결혼을 했습니다.' 는 그대로이며, 한국어 관형절은 제한 · 비제한을 가르지 않아 뜻이 맞음. main listeningUtils.ts 251행 DICTATION_TOKEN 은 쉼표를 조각에 넣지 않아 조각은 16개 그대로. 옛 판과 견주면 같은 파일에서 바뀐 칸은 이것과 S30 · P282 칸뿐.",
+   "때": "2026-09-25 05:11"
+  },
+  {
+   "key": "S30",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main s17-1.json .blocks[1].items[6](n=7).text 는 고칠 글과 === 이고, 글자 번호로 보면 U+2019 로 고칠 글과 같음. 같은 강의 n=2 'our country’s' 도 U+2019 이며, 곧은 ' 를 쓴 옛 글은 main 에 없음. main STUDENT 문장 칸 전체를 세면 굽은 ’ 35 · 곧은 ' 3 이고, 한 강의 안에서 둘이 섞인 곳은 0. 조각(DICTATION_TOKEN 이 ’ 를 받음)과 비교(listeningUtils.ts 543행이 ’ 를 ' 로 바꿈 · 264행 soundAlikeForm)도 두 기호를 같게 다룸. 짝 한국어 .blocks[8] '그 나라의 고대 이름은 고조선이었습니다.' 는 그대로임.",
+   "때": "2026-09-25 05:11"
+  }
+ ]
+}

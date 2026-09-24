@@ -1,0 +1,370 @@
+{
+ "조각": "칩-3",
+ "결과": {
+  "d121": {
+   "id": "d121",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n4",
+     "칩": "[80 years]",
+     "무엇": "n4 'For many years, the world population increased slowly …' 에 n7 의 [80 years] 가 'years' 낱말 일치로 뜸 — 문장의 'many years' 자리에 문장에 없는 수 80 이 겨룸(오도). 고침 탓 아님: 전에도 [double 80 years] 로 떴고 2부 확인(T08)이 '힌트 글로는 못 없앤다' 고 적었으나, '80' 만 두면 두 자리 수는 수로만 맞춰 n7 에만 뜸(chips-main.cjs 로 잼).",
+     "고칠 글": "population growth. Earth. overpopulated. 18th century, double. 80. famines"
+    }
+   ],
+   "까닭": "표 1부 C08709 고칠 글이 글자 그대로 들어감 — n2 [Earth] [overpopulated] · n3 [Earth](이름 안전장치 4칩 풀림) · n5 [18th century] · n7 [population growth] [double] [80 years], 붙은 칩 · 끝 쉼표 없어짐(나아짐, 나빠진 곳 없음). 남은 흠은 n4 [80 years](위 — 고친 뒤 n4 [population growth] · n7 [population growth] [double] [80], 다른 문장 그대로). [population growth] 가 'population' 일치로 n4 · n6 · n7 · n8 에 뜨는 것은 전부터(수 · 이름 아님, 같은 인구 이야기라 오도 작음).",
+   "때": "2026-09-25 04:53"
+  },
+  "d122": {
+   "id": "d122",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08728 고칠 글 그대로 — n1 [resources] [distributed equally] · n3 [1960s](수 안전장치 6칩 풀림) · n4 칩 없음 · n5 [Africa's] [more than 2%] · n6 [Europe's] · n7 [North America's] [immigration]. 'population' 으로 쏟아지던 칩 · 대본에 없던 'Africa population growth 2%' 없어짐. 모든 칩이 제 문장에 글자 그대로 있음, 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d123": {
+   "id": "d123",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n4 · n5",
+     "칩": "[110,000 cubic kilometers](n4) · [70,000 cubic kilometers](n5)",
+     "무엇": "'cubic' 낱말 일치로 서로 다른 문장의 수 칩이 번짐 — n4(lose 70,000 cubic kilometers)에 110,000, n5(receive 110,000 … 40,000 cubic kilometers)에 70,000 이 함께 뜸. 받아 적을 수 자리에 다른 수가 겨룸(오도). 고침 탓 아님(전부터 — 1부 C08746 은 'water' 번짐만 봄). 수와 'cubic kilometers' 를 떼면 수는 제 문장에만 뜸(잼: n4 … [70,000] [cubic kilometers] · n5 … [110,000] [40,000] [cubic kilometers] [transferred], n1~n3 그대로).",
+     "고칠 글": "fresh water. evaporation. distillation. evaporates. amount of water. 70,000. 110,000. 40,000. cubic kilometers. transferred"
+    }
+   ],
+   "까닭": "표 1부 C08746 고칠 글 그대로 — n2 · n3 [evaporates] · n5 [transferred](대본 꼴, 나아짐, 나빠진 곳 없음). 남은 흠은 위 수 번짐. [fresh water] · [amount of water] 가 'water' 일치로 모든 행에 뜨는 것은 1부가 앱 규칙으로 받은 것(수 아님).",
+   "때": "2026-09-25 04:53"
+  },
+  "d124": {
+   "id": "d124",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:127 고칠 글 그대로 — n5 [carefully managed](대본 꼴) [agriculture] [industry] [home use] · n6 [free]. n1~n4 는 이름 · 수 없어 칩 없음. 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d125": {
+   "id": "d125",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08785 고칠 글 그대로 — 'water' 든 칩([bring water up] · [water vapor make up])이 빠져 n7 · n9 번짐 없어짐, n1 [build dams] [streams] [rivers] · n2 [build dams] [streams] [rivers] [settlements] [technological activities] · n4 [below the earth's surface] [wells] · n5 [rivers] [vapor] · n6 [make up] · n8 [deep underground]. n2 의 [build dams] 는 'building dams' 속 'build' 일치의 사전형(1부가 앱 규칙으로 받음 · 수 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d126": {
+   "id": "d126",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08816 고칠 글 그대로 — [Antarctic](대소문자 대본대로, n1 · n3 번짐 없어짐) · n9 [undersea plants] [minerals] 나뉨. n9 의 [undersea farms] · n10 의 [undersea plants] 는 'undersea' 일치(1부가 앱 규칙으로 받음 · 수 · 이름 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d127": {
+   "id": "d127",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08849 고칠 글 그대로 — n6 [oil wells] · n8 [barges] · n9 [endangering](대본 꼴), 세 문장 항목이 붙어 통째로 뜨던 칩 없어짐. [tidal power plant] 가 n2('power')·n9('plants' — 뜻이 다른 바다 식물)에, [ocean's tides] 가 n11('oceans')에 뜨는 것은 전부터의 낱말 일치(1부가 앱 규칙으로 받음 · 수 · 이름 아님, n9 은 뜻이 달라 적어 둠). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d128": {
+   "id": "d128",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08876 고칠 글 그대로 — n7 [Europe](이름 안전장치로 12칩 쏟아지던 것 풀림) · n11 [Chinese] [English] · n12 [Greek] [Burmese] 나뉨. 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d129": {
+   "id": "d129",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08901 고칠 글 그대로 — n3 [Burma] · n4 [exciting adventures] · n6 [Japan] … [Afghanistan] [Tibet] 따로 · 끝 쉼표 없어짐. n9 의 [exciting adventures] 는 'exciting' 일치(전부터 · 1부가 앱 규칙으로 받음). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d130": {
+   "id": "d130",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08928 고칠 글 + 새 칩 규칙(한 글자 머리글자 뒤 안 나눔) — n2 · n5 · n7 · n9 · n10 · n11 의 끊긴 [Joseph P] 가 [Joseph P. Hickman] 한 칩이 되고 [10 cabins] [tennis courts] · [fishing streams] [make up] · [1950] [California] 나뉨(나아짐). 새 규칙 탓으로 달라진 곳 하나: n1(Hickman's Lodge …)에 전에는 [Hickman] 만 뜨던 자리에 [Joseph P. Hickman] 이 뜸 — n1 에 없는 'Joseph P.' 가 붙음('Hickman' 일치, 이 칩을 한 칩으로 두면 힌트 글로는 못 막음 · 성은 문장에 있어 해 작음). [Thomas Hickman](n1 · n2) · [Hickman's Lodge] · [central lodge](n4 · n7 · n9 'lodge') 번짐은 전부터(수 아님).",
+   "때": "2026-09-25 04:53"
+  },
+  "d131": {
+   "id": "d131",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n1 · n2",
+     "칩": "[Six more cabins](n1) · [4 cabins](n2)",
+     "무엇": "'cabins' 낱말 일치로 서로의 수 칩이 뜸 — n1(build 4 cabins)에 Six, n2(Six more cabins)에 4 가 겨룸(오도). n4(in the cabins)에도 두 칩. 고침 탓 아님(전부터 · 1부 C08953 이 앱 규칙으로 받음). 힌트 글로는 반만 고쳐짐: 'Six more cabins' → 'Six more' 면 n1 · n4 의 [Six more cabins] 는 없어지나(잼), '4' 는 한 자리 수라 앱 규칙상 수만으로 못 떠 'cabins' 를 달아야 하고(n1 은 수가 있어 칩이 없으면 안전장치로 전부 뜸) 그래서 n2 · n4 의 [4 cabins] 는 남음 — 이것은 코드(수 든 칩은 그 수가 든 문장에만) 몫.",
+     "고칠 글": "4 cabins. Six more. 1960. June, September. staffed principally. convenient arrangement"
+    }
+   ],
+   "까닭": "표 1부 C08953 고칠 글 그대로 — n2 [1960] · n7 [June] [September] · n8 [staffed principally] · n9 [convenient arrangement] 따로(나아짐, 나빠진 곳 없음). 남은 흠은 위 수 번짐(고칠 글은 부분 — 잼: n1 [4 cabins] · n2 [4 cabins] [Six more] [1960] · n4 [4 cabins]).",
+   "때": "2026-09-25 04:53"
+  },
+  "d132": {
+   "id": "d132",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C08990 고칠 글 그대로 — n5 · n8 [complicated] · n6 [2 minutes] [positive] · n7 [confident]. 다른 문장 항목이 따라 뜨던 것 없어짐. 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d133": {
+   "id": "d133",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:133 고칠 글 그대로 — n2 [two children] · n8 [New York] [Europe] · n9 [Europe] · n13 [two children]. n13(The children will enjoy that too.)의 [two children] 은 'children' 일치로 수 'two' 가 붙어 뜨나 같은 두 아이를 가리키고 문장에 겨루는 수가 없어 오도 작음(1부 설계). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d134": {
+   "id": "d134",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09043 고칠 글 그대로 — n8 [packs](전에 칩이 없던 자리에 대본 꼴로 뜸, 나아짐) · n5~n7 [square things] [round things]. n5 · n6 의 두 칩은 'things' 일치(1부 설계 · 수 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d135": {
+   "id": "d135",
+   "판정": "괜찮음",
+   "까닭": "2부 표본 T02~T13 고칠 글 그대로 — n1 [Bob] [Don] · n5 [Bob] [suit] · n6 [Don] [suit] · n7 [pants] · n8 [shoe](전엔 칩 없음, 나아짐). n3 · n4 의 [suit] 와 n9 · n10 의 [shoe] 는 복수(suits · shoes) 문장에 뜨는 사전형(1부 기준 '낱말 힌트의 사전형은 원래 설계' · n9 · n10 은 전에 칩 없던 자리지만 같은 낱말이라 해 작음). n4 의 [Don] 은 'tried on' 속 글자 일치(2부가 앱 규칙으로 받음 — 주어 they 에 Don 이 들고 힌트 글로는 못 막음). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d136": {
+   "id": "d136",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:134 고칠 글 그대로 — n1 [socks] · n2 · n4 [shirts] [sweater] · n3 · n5 · n6 [sweater], 세 낱말이 한 칩으로 모든 행에 뜨던 것 없어짐. n6 은 'sweaters' 에 사전형 [sweater](1부 설계). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d137": {
+   "id": "d137",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09112 고칠 글 그대로 — n6 [soup] [salad] · n7 [Helen] [lamb chops] [peas] [carrots] [medium rare steak] [mashed potatoes] [gravy] · n8 [Helen] [dessert] [ice cream] [fresh fruit] · n9 [coffee] · n10 [portions] [generous], 끝 쉼표 없어짐. 모든 칩이 제 문장에 글자 그대로. 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d138": {
+   "id": "d138",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:151 고칠 글 그대로 — n2 [fried chicken] [corn] [hot biscuits with honey](대본 꼴) · n3 [chocolate ice cream and cake] · n5 [5:00](수 안전장치 4칩 풀림). 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d139": {
+   "id": "d139",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:24 고칠 글 그대로 — n3 [review] · n5 [Saturday]. 새 흠 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d143": {
+   "id": "d143",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09255 고칠 글 그대로 + 새 칩 규칙(칭호 뒤 안 나눔) — n3 · n10 · n11 [Dr. Johnson] 한 칩(전에는 [Johnson] 만, 'Dr' 는 앞 칩 [blood transfusion Dr] 에 붙음) · n2 [blood transfusion] · n11 [up and around] · n12 [70]. n5 의 [blood transfusion] 은 'blood pressure' 의 'blood' 일치(1부가 앱 규칙 한계로 받음 · 수 · 이름 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d144": {
+   "id": "d144",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09282 고칠 글 그대로 + 새 칩 규칙 — n2 [Mrs. Mills] [Dr. Cooper's](칭호만 떨어지던 [Mrs] · 거리 이름처럼 읽히던 [Mills Dr] 없어짐) · n4 [2:00 appointment] · n7 [Dr. Cooper's](이름과 시각이 붙어 n4 · n6 · n7 에 통째로 뜨던 칩 없어짐). n6(make an appointment for next week)의 [2:00 appointment] 는 'appointment' 일치(1부 설계 — 문장에 겨루는 시각이 없어 오도 작음). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d145": {
+   "id": "d145",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:25 고칠 글 그대로 — n4 [astonished] · n7 [bother](bothering 의 사전형 — 1부 기준 '낱말 힌트의 사전형은 원래 설계', 제 문장에 뜸) · n8 [interrupt]. n3(I guess I dialed the wrong number and I happened to get Mrs. Mills.)은 맞는 칩이 없어 이름 안전장치로 세 칩이 다 뜸 — 설계이고 전에도 같은 세 낱말이 한 칩으로 떴음(나빠지지 않음). 참고: 'Mrs. Mills' 를 줄에 더하면 n3 에 [Mrs. Mills] 만 뜸(새 규칙으로 한 칩).",
+   "때": "2026-09-25 04:56"
+  },
+  "d146": {
+   "id": "d146",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n2",
+     "칩": "[5 letters]",
+     "무엇": "n2(I always find time to write several letters every week.)에 n5 의 [5 letters] 가 'letters' 일치로 뜸 — 'several letters' 자리에 문장에 없는 수 5 가 겨룸(오도). n3(write letters)에도 뜸. 고침 탓 아님(전에도 [mail 5 letters] 로 떴음 · 1부 C09335 가 앱 한계로 받음). 힌트 글로는 깨끗이 못 고침 — '5' 는 한 자리 수라 앱 규칙상 수만으로 못 뜨고 'letters' 가 들면 n2 · n3 에 뜸. 길은 코드(수가 든 칩은 그 수가 든 문장에만) 또는 '5 letters' 를 빼기(n5 의 5 힌트가 없어짐 — 소리는 five, 채점은 5 · five 둘 다 받음) — 수정 세션 · 소유자 판단이라 고칠 글은 적지 않음."
+    }
+   ],
+   "까닭": "표 1부 C09335 고칠 글 그대로 — n3 · n5 [mail] 따로 · n5 [mail] [5 letters] [package] [two postcards] [special delivery letter]. 남은 흠은 위 수 번짐. 새로 생긴 작은 번짐 하나: n6(Later in the day, the mailman delivered …)에 [mail] 이 'mailman' 속 글자로 새로 뜸(전 칩은 [special delivery letter] 뿐 — 1부 까닭의 '지금 붙은 칩도 같음' 은 n6 에는 맞지 않음, 같은 낱말 뿌리라 해는 작음). [special delivery letter] 가 'letter(s)' 로 n2 · n3 · n5 에 뜨는 것은 전부터(수 아님).",
+   "때": "2026-09-25 04:56"
+  },
+  "d147": {
+   "id": "d147",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:26 고칠 글 그대로 — n7 [enclosing](전에 칩이 없던 자리에 대본 꼴로 뜸, 나아짐) · n1 [Dear Jim]. n11(Love, Dad.)은 이름(Dad) 안전장치로 [Dear Jim] [enclosing] 이 뜸 — 설계이고 전에도 [Dear Jim] [enclose] 로 같음(나빠지지 않음).",
+   "때": "2026-09-25 04:56"
+  },
+  "d148": {
+   "id": "d148",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n8",
+     "칩": "[13 states]",
+     "무엇": "n8(For a long time, there were 48 states.)에 n4 의 [13 states] 가 'states' 일치로 [48] 과 함께 뜸 — 같은 'states' 에 다른 수 13 이 겨룸(오도). n1 · n2 · n5 · n7 · n9 에도 문장에 없는 13 이 뜸. 고침 탓 아님(전부터 · 1부 C09388 이 n2 의 이름 안전장치를 막으려고 둔 것). '13 states' 를 '13'(두 자리 수라 n4 에만)으로 하고 n2 에 대본 글자 그대로인 'the largest in the world' 를 더하면 n2 안전장치도 안 켜짐(잼: n1 [the North American continent] [Canada to the north] [Mexico to the south] · n2 [the largest in the world] · n4 [Great Britain] [13] · n7 칩 없음 · n8 [48] · n9 [1959] [Alaska] [Hawaii] — [13 states] 번짐 전부 없어짐, 새 흠 없음).",
+     "고칠 글": "the North American continent. Canada to the north, Mexico to the south. the largest in the world. 1964, 185 million. Great Britain. 13. 48. 1959. Alaska. Hawaii"
+    }
+   ],
+   "까닭": "표 1부 C09388 고칠 글 그대로 — n8 [48] · n9 [1959] [Alaska] [Hawaii] 로 붙은 두 칩([48 1959] · [Alaska Hawaii]) 나뉨(나아짐, 나빠진 곳 없음). 남은 흠은 위 수 번짐. n5 의 [the North American continent]('American flag')는 전부터의 낱말 일치(수 아님).",
+   "때": "2026-09-25 04:56"
+  },
+  "d151": {
+   "id": "d151",
+   "판정": "괜찮음",
+   "까닭": "표 1부 문맥 X:27 고칠 글 그대로 — n2 [wide plains] [cool forests]. 다른 문장 칩 없음. 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d153": {
+   "id": "d153",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n5 · n7",
+     "칩": "[six years old]",
+     "무엇": "n3 의 [six years old] 가 'years' 일치로 n5(The last three years of their public school education …)와 n7(After 4 years, they receive a bachelor's degree.)에 뜸 — 문장의 three · 4 자리에 다른 수 six 가 겨룸(오도). n4(After 6 years …)에도 뜸(수는 같으나 문장에 없는 나이 'old' 가 붙음). 고침 탓 아님(전부터 — 1부 C09488 은 'degree' 번짐만 봄). 'six' 만 두면 n3 에만 뜸(잼: n3 [six] [elementary school] [junior high school] [senior high school] · n4 · n5 · n7 에서 [six years old] 없어짐, 다른 칩 그대로 · 새 흠 없음).",
+     "고칠 글": "individual state. 17 or older. six, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree. doctor's degree."
+    }
+   ],
+   "까닭": "표 1부 C09488 고칠 글 그대로 — n7 · n8 [bachelor's degree] [master's degree] [doctor's degree] 따로(붙은 [master's degree doctor's degree] 없어짐, 나아짐, 나빠진 곳 없음). 남은 흠은 위 수 번짐. [elementary school] · [junior high school] · [senior high school] 이 'school' 로 n1~n6 에, [individual state] 가 n2 'states' 에 뜨는 것은 전부터(수 아님 · 1부 설계).",
+   "때": "2026-09-25 04:56"
+  },
+  "d155": {
+   "id": "d155",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09532 고칠 글 그대로 — n8 [engineering] [fascinating careers] 따로 · n3 [fascinating careers](붙어 뜨던 'engineering' 없어짐, 나아짐). [field of interest] 는 n2 'fields of interest' 의 사전형이고 'interest(s)' · 'fields' 일치로 n6 · n8 에도 뜸 — 전부터(1부 설계 · 수 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d156": {
+   "id": "d156",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09555 · 2부 T02 ~ T16 고칠 글 그대로 — 뜻 없는 조각 [and Mrs] 없어짐 · [typical] [Norway] [settle on dairy farm] · [Olaf] [Carl] · [plow] [planted fields] 나뉨 · n9 는 [Olaf] 만(붙어 뜨던 Carl 없어짐). [settle on dairy farm] · [plow] · [planted fields] · [harvested crops] 는 대본(settled on a dairy farm · plowed · the fields · the crops)의 사전형 · 줄인 꼴(1부 기준 원래 설계 — 제 문장에 뜸). n1 의 [Jensen] 은 'Jensens' 일치(같은 집안 이름). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d157": {
+   "id": "d157",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09582 · 2부 T11 고칠 글 그대로 + 새 칩 규칙 — n6 [Inga] [state university] [St. Paul](도시 이름이 한 칩 · 대소문자 대본대로, 'St' 가 앞 칩에 붙던 것 없어짐). [Olaf Jensen] 이 n7(The story of the Jensens)· n9(Carl and Inga Jensen)에 'Jensen' 일치로 뜨는 것은 전부터(같은 집안 이름 · 수 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d158": {
+   "id": "d158",
+   "판정": "괜찮음",
+   "까닭": "전수 표 P78 고칠 글 그대로 — n1 [Monday] [Friday] [evenings] [weekends] · n2 [television] [movies] [sports](대본에 없던 쌍반점 없어짐) · n6 [stamps] [model airplanes]. n3~n5 · n7 · n8 칩 없음 그대로. 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d159": {
+   "id": "d159",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09629 고칠 글 그대로 — n2 [rare 50-cent piece] [$250](느낌표 없어짐). n6 [On the other hand]('brother' 속 'other') · n7 [coin collection]('collection') · n10 [several thousand dollars]('dollars')는 전부터의 낱말 일치(1부가 앱 한계로 받음 — 수 칩인 n10 도 문장에 겨루는 수가 없음). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d160": {
+   "id": "d160",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09650 고칠 글 그대로 — 닫히지 않던 여는 따옴표 없어짐 · [golf] [swimming] · [mountain climbing] [attraction] [outdoors] 나뉨. [Jack dull] 은 'makes Jack a dull boy' 를 줄인 원래 힌트(1부가 둠 — 제 문장 n1 에만 뜸). [All work and no play] 가 n3 · n4('all')와 n7('baseball · football' 속 'all')에, [popular saying] 이 n6('popular')에 뜨는 것은 전부터(1부가 앱 한계로 받음 · 수 · 이름 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d161": {
+   "id": "d161",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09673 고칠 글 그대로 — n1 [sporting events] · n2 [spectators] [in person] · n5 [Chess] [card playing] [dancing](n6 낱말이 붙어 뜨던 것 없어짐) · n6 [fast game of ping pong] [bridge table] [brisk]. 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d163": {
+   "id": "d163",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09719 고칠 글 그대로 — n2 [amusement] [business] [editorials] · n4 [put out](제 문장에 뜸) · n6 [primarily] [selection] · n7 [taste] [interest], 통째로 뜨던 칩 없어짐. [news literary] 는 'news magazines, literary magazines' 의 두 꾸밈말을 붙인 칩 — 1부가 'news' 가 n1 'newspapers' · n2 'news' 에 번지지 않게 일부러 둔 것(제 문장 n5 에만 뜸). [magazine] · [interest] 는 복수 문장에 사전형. 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d164": {
+   "id": "d164",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09742 고칠 글 그대로 — 'radio' 로 n1 · n3 · n4 에 번지던 칩 없어짐 · n3 [Marconi] [Italian inventor] · n4 [communications device] · n6 [by means of](대본 꼴). [instruct] · [astronauts circle] 은 사전형(instructing · circling — 1부 기준 원래 설계, 제 문장에 뜸), n5 의 [fields of interest] 는 'interest' 일치(전부터 · 수 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d165": {
+   "id": "d165",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09765 고칠 글 그대로 — n1 [Television] [instrument] [hear performer] · n4 [Telstar](따옴표 없어짐) · n6 [Chicago] [auto race] [Italy] [ski tournament] [Norway] [parade] [Japan] [events](이름과 낱말 붙던 칩 없어짐). [hear performer] · [televise] · [orbit] 는 줄인 꼴 · 사전형(1부 기준 원래 설계 — 제 문장에 뜸). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d166": {
+   "id": "d166",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09788 고칠 글 그대로 — 'The' 로 n2~n5 에 번지던 제목 칩이 없어지고 n7 에만 [Celebrated Jumping Frog of Calaveras County] · [Missouri] [1835] · [fame] 따로 · 따옴표 · 쌍점 없어짐(나아짐). [adopt pen name of Mark Twain] · [measure depth] · [inspire] 는 사전형(1부 설계). [banks of the Mississippi River](n3 · n4 'river') · [Life on the Mississippi](n2 'Mississippi' · n5 'life') · [adopt pen name of Mark Twain](n5 'Mark Twain's')은 전부터의 낱말 일치(수 아님 — n5 의 책 제목 칩은 뜻이 다른 'life' 에 걸린 것이라 적어 둠). 새 흠 없음.",
+   "때": "2026-09-25 04:56"
+  },
+  "d167": {
+   "id": "d167",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09815 · 2부 T02 ~ T12 고칠 글 그대로 — n1 [1870] [Mark Twain] [Olivia Langdon] 따로, n2 · n3 · n5 · n6 에 붙어 뜨던 'Olivia Langdon' 없어짐(나아짐). n1 의 [one year before his death]('before')와 n6 의 [Mark Twain]('marked')은 전부터의 글자 일치(2부가 앱 한계로 받음 — n1 의 1870 과 다른 것을 가리켜 수 자리에서 겨루지 않음). [complete] 는 completed 의 사전형(1부 설계, 제 문장 n7 에 뜸). 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d168": {
+   "id": "d168",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09834 고칠 글 그대로 — n1 [Tempe] [Arizona] [Big Surf] [surfing](대본에 없던 따옴표 · 세 항목 붙음 없어짐) · n2 [Pacific Ocean](느낌표 없어짐). [Big Surf] 가 n3 · n5('surfing' · 'surfers'), [huge Pacific waves] · [Pacific Ocean] 이 'Pacific' 으로 n2 · n5 에 뜨는 것은 전부터(1부가 앱 한계로 받음 · 수 아님). [impress] 는 impressed 의 사전형. 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d169": {
+   "id": "d169",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09853 고칠 글 그대로 — n4 [1 1/2 seconds] [rush of water] [5 feet high] · n5 [400 feet] [break] · n7 [fantastic] 따로(다른 문장 낱말이 붙던 칩 없어짐). 'water' 일치로 n3 에 [rush of water], n4 에 [4 million gallons of water] 가 뜨는 것은 전부터(1부가 앱 한계로 받음 — n4 의 4 million gallons 는 같은 저수지 이야기이고 문장의 수(seconds · feet)와 단위가 달라 같은 자리에서 겨루지 않음). 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d170": {
+   "id": "d170",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C09876 고칠 글 그대로 — n1 [in advance] · n2 [cold meat] [salad] [bread] [cake] [bakery] [wine] [local winery] · n3 [set the table] [were due] · n4 [front porch] · n6 [portions]. n6(sitting on the table)의 [set the table] 은 'table' 일치(1부가 받음 · 수 아님). 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d172": {
+   "id": "d172",
+   "판정": "괜찮음",
+   "까닭": "되살린 첫 줄 + 표 1부 C09922 고칠 글 — 원본 첫 줄 '1840s, California uninhabited. Spanish missions, ranchers bandits 1848, rushed to making fortunes panning for gold.' 에서 대본에 없는 'uninhabited' 는 빼고 'making their fortunes' 는 대본대로(되살린 말 모두 대본 글자 그대로). n1 [1840s] [California] [Spanish missions] [ranchers] [bandits] [Native Americans] · n2 [1848] · n3 [California] [rushed to](n2 · n3 은 전에 이름 · 수 안전장치로 7칩이 쏟아지던 자리 — 나아짐) · n4 · n8 [making their fortunes] · n6 [saloon] [hotel] [stable] [jail] [cemetery] 따로. 되살린 칩은 제 문장에만 뜸(다른 문장 번짐 없음), 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d173": {
+   "id": "d173",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n6",
+     "칩": "[Los Angeles] [1848] [Cary Grant] … [smog] [jewelry](강의 칩 21개 전부)",
+     "무엇": "n6(The California scenery has changed too.)은 힌트에 California 가 없어 맞는 칩이 없고 이름 안전장치로 강의 칩 전부가 뜸 — 되살린 첫 줄로 줄이 길어져 전 8칩 → 21칩(나빠짐, 되살린 첫 줄 탓). 추천안의 '다른 문장 번짐이 없는지 재어 넣음' 에 어긋남(원본 첫 줄에도 California 는 없음 — 1부 C09947 이 '이름을 힌트에 더할지는 수정 세션 몫' 으로 남긴 자리). 'California' 를 더하면 n6 에 [California] 만 뜸(잼 — 다른 문장에 California 없음, 다른 칩 그대로 · 새 흠 없음).",
+     "고칠 글": "Los Angeles. 1848. Cary Grant. Rita Hayworth. John Wayne. Susan Hayward. would-be. stars. Hollywood prince. princess. pan for gold. factory town. California. unclimbed, snow-topped. uninhabited, unspoiled. high surf. superhighways, sprawling suburbs. smog. jewelry"
+    }
+   ],
+   "까닭": "되살린 첫 줄(원본 'Los Angeles, 1848, Cary Grant Rita Hayworth John Wayne Susan haywood. would-be stars' → 'Susan Hayward' 는 대본대로)과 표 1부 C09947 고칠 글로 n1 · n2 · n4 의 안전장치(전 8칩)가 풀려 n1 [Los Angeles] [1848] [Cary Grant] [Rita Hayworth] [stars] · n2 [John Wayne] [Susan Hayward] · n4 [Los Angeles] [pan for gold], n3 [would-be] [stars] [Hollywood prince] [princess] · n7 다섯 칩 · n8 [superhighways](대본 한 낱말) 따로 — 나아짐. 남은 흠은 n6(위).",
+   "때": "2026-09-25 04:57"
+  },
+  "d174": {
+   "id": "d174",
+   "판정": "괜찮음",
+   "까닭": "되살린 첫 줄(원본 'John Henry American folklore. Chesapeake Ohio Railroad nineteenth century. from far and wide drive' — 대본에 없는 'nineteenth century' 는 빼고 'railroad' 는 대본대로 소문자)로 n1 [John Henry] [American folklore] [Chesapeake] [Ohio] [railroad] [early 1870s] · n2 [John Henry] [railroad] · n7 [John Henry](n2 · n7 은 전에 이름 안전장치로 5칩) · n3 [from far and wide] [drive] — 나아짐, 새 번짐 없음([railroad] 는 railroad 가 든 n1 · n2 · n6 에만). 전부터: n3 의 [get through]('through'), n6 의 [Big Bend Tunnel]('tunneling') 낱말 일치, [Big Bend Tunnel] 의 대문자 T 는 대본 'Big Bend tunnel' 과 다름(채점은 대소문자를 안 봄 · 고유 이름 꼴). 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d175": {
+   "id": "d175",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n9",
+     "칩": "[make a fool out of me] [competition] … [15 feet] [this giant of a man](강의 칩 15개 전부)",
+     "무엇": "n9(As the song goes, he died with the hammer in his hand, Lord, Lord, died with the hammer in his hand.)는 맞는 칩이 없어 이름(Lord) 안전장치로 강의 칩 전부가 뜸 — 되살린 첫 줄로 전 4칩 → 15칩(나빠짐, 되살린 첫 줄 탓 · 원본 두 줄 모두 n9 칩이 없음). 'Lord' 를 더하면 n9 에 [Lord] 만 뜸(잼 — 다른 문장에 lord 없음, 다른 칩 그대로 · 새 흠 없음).",
+     "고칠 글": "make a fool out of me. competition. arranged. last. drilled. farthest. Hundreds. attraction. 30. broke down. 45. measure. 9 feet. 15 feet. this giant of a man. Lord"
+    }
+   ],
+   "까닭": "되살린 첫 줄(원본 'make a fool out of me competition arrange last 45 drill farthest Hundreds attraction. 30 broke down,' → 'arranged' · 'drilled' 는 대본대로)로 n1 [make a fool out of me] · n2 [competition] [arranged] · n4 [drilled] [farthest] 가 생기고 n5 의 이름 안전장치(전 4칩)가 [Hundreds] [attraction] 으로 풀림, 표 1부 C09997 고칠 글로 n3 [last] [45] · n6 [30] [broke down] [45] [measure] · n7 [drilled] [9 feet] [15 feet] — 나아짐. 남은 흠은 n9(위). [measure] 는 measured 의 사전형(1부 설계).",
+   "때": "2026-09-25 04:57"
+  },
+  "d176": {
+   "id": "d176",
+   "판정": "괜찮음",
+   "까닭": "표 1부 C10018 고칠 글 그대로 — n7 [seaside town](대본 꼴, 하이픈 없어짐) [three-hour train ride away]. [tend to gossip] 은 tended 의 사전형(1부 설계), [Richard Rudd] 가 n3 · n6(Rudd · Professor Rudd)에 뜨는 것은 같은 사람. 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  },
+  "d177": {
+   "id": "d177",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n4",
+     "칩": "[destination] [amused] [sent] [minutes later] [astonished]",
+     "무엇": "n4(He offered to take care of the children while Rudd went back home to find out where he was going.)는 맞는 칩이 없어 이름(Rudd) 안전장치로 강의 칩 다섯이 다 뜸 — 전에는 힌트 줄이 비어 칩이 없던 자리(새로 나빠짐, 되살린 첫 줄 탓). 'Rudd' 를 앞에 더하면 n2 [Rudd] [destination] · n4 [Rudd](잼 — Rudd 는 n2 · n4 에만, 다른 칩 그대로 · 새 흠 없음).",
+     "고칠 글": "Rudd. destination. amused. sent. minutes later. astonished"
+    }
+   ],
+   "까닭": "되살린 첫 줄(전엔 힌트 없음 · 원본 'destination amused sent off Ten minutes later, astonished')로 n2 [destination] · n5 [amused] · n7 [sent] · n8 [minutes later] [astonished] — 모두 대본 글자 그대로 · 제 문장에만(나아짐). 원본의 'sent off' → 'sent'(대본은 sent her husband off), 'Ten' 을 뺀 것은 두면 n2 'forgotten' 속 'ten' 으로 [Ten minutes later] 가 n2 에 번지기 때문(잼)이라 맞는 선택. 남은 흠은 n4(위).",
+   "때": "2026-09-25 04:57"
+  },
+  "d178": {
+   "id": "d178",
+   "판정": "괜찮음",
+   "까닭": "되살린 첫 줄(원본 'ten seconds. 876 … 405 Believe it or not, as quick(ly) as a flash \"photographic\"' → '10 seconds' · 'as quickly as a flash' 는 대본대로, 따옴표 없앰)로 n1 [10 seconds] · n2 [876] … [405] [as quickly as a flash](n1 · n2 는 전에 수 안전장치로 8칩) · n3 [photographic] — 나아짐. 'Believe it or not' 을 뺀 것은 두면 n4 'believe' 로 번지기 때문(잼)이라 맞는 선택. 표 1부 C10072 고칠 글로 n5 [23-year-old] [poetry] [recite] · n7 [backwards] · n9 [huge chessboard](따옴표 없어짐). n10 의 [squares put down] 은 'squares' 일치(같은 판의 네모 · 전부터). 새 흠 없음.",
+   "때": "2026-09-25 04:57"
+  }
+ }
+}

@@ -1,0 +1,4825 @@
+{
+ "파일": "16.md",
+ "뽑은때": "2026-09-24 21:56",
+ "대상": [
+  {
+   "key": "R:grammar1/gh1-112#132",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-112#133",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-112#130",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-112#131",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-112#136",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-112#137",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "B:grammar1/gh1-108#36:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will they complete their first year?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'끝내다' 의 흔한 번역 complete 가 0점 — 참조는 finish 뿐(complete ↔ finish 다른 낱말). 'complete their first year' 는 자연스러운 영어.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-108#36:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "When will they finish first grade?",
+    "점수": "0점",
+    "까닭": "'first grade' 는 영어에서 초등학교 1학년 — 이 강의의 '일학년' 은 대학(#37 sophomores · #41 기말시험 · #43 필수과목)이라 뜻이 달라짐. 한국식 'first grade' 를 정답으로 보이면 오히려 잘못 가르침."
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-108#36:1",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "When will they finish the first grade?",
+    "점수": "0점",
+    "까닭": "위와 같음(초등 1학년 뜻) — 'the first grade' 는 영어에서도 어색."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#37:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They will be second-year students, won't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'2학년생' 을 곧게 옮긴 second-year students 가 0점 — 같은 강의 #36 은 '일학년' 에 first year 꼴을 받음(한 강의 안 흔들림). 결과-머리 더1 과 같은 막힘.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#37:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They will become second-year students, won't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(become 꼴 — become sophomores 는 받음) — 0점. 더1.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#37:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They are going to be sophomores, aren't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ 한국어 '되겠지' 는 will · be going to 를 가르지 않음 — 꼬리까지 맞춘 be going to 꼴이 0점(길이 · 낱말 차이).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-108#37:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "They will be second graders, won't they?",
+    "점수": "0점",
+    "까닭": "second grader 는 영어에서 초등 2학년 — 이 강의의 '2학년생'(sophomore · 대학)과 뜻이 달라짐."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "This is a pretty big area, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'큰' 의 첫 번역 big 이 0점 — 참조는 large 뿐(reasonably · pretty · fairly · quite × large).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "This is quite a big area, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(quite a big) — 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "This is a fairly big area, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(fairly big) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "This is a rather large area, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'꽤' 의 흔한 번역 rather 가 0점 — 참조의 부사는 reasonably · pretty · fairly · quite 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "This is a pretty large region, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'지역' 의 흔한 번역 region 이 0점 — 참조는 area 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:5",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "This is a fairly large region, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(region) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Someday, he wants to become a language teacher.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'되다' 의 가장 곧은 번역 become 이 0점(be ↔ become 다른 낱말) — 참조는 be 꼴 둘뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He wants to become a language teacher someday.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(부사 끝 자리) — 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "One day, he wants to be a language teacher.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'언젠가' 의 흔한 번역 one day 가 0점 — 참조는 someday 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He wants to be a language teacher one day.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(one day 끝 자리) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#41:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did they take the final exams?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '마지막 시험' 에 소유격이 없어 the 도 자연스러움 — their ↔ the 로 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#41:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did they take their final exam?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '시험' 은 수를 가르지 않음 — 단수 final exam 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#41:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did they take the final exam?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위 둘(the · 단수)을 함께 쓴 꼴 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-108#41:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "When did they take their last exams?",
+    "점수": "0점",
+    "까닭": "last exams 는 '지난번 시험' 으로도 읽혀 뜻이 흐려짐 — '마지막 시험'(기말시험)의 곧은 번역은 final."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He sometimes skipped classes, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 빈도부사 sometimes 를 동사 앞(영어에서 가장 흔한 자리)에 두면 70점 — 참조는 모두 문장 앞 Sometimes.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He sometimes skipped class, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(skipped class) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He sometimes cut classes, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(cut classes) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Sometimes he cut class, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'수업을 빼먹다' 의 굳은 말 cut class(단수)가 70점 — skipped 는 class · classes 둘 다 받는데 cut 은 classes 만.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He sometimes cut class, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위 둘(부사 자리 · cut class)을 함께 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't English a compulsory subject?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'필수' 의 사전 첫 번역 compulsory 가 0점 — 참조는 required 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't English a mandatory subject?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'필수' → mandatory 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't English a required course?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'과목' → course 가 0점 — 참조는 subject 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't English a compulsory course?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위 둘(compulsory · course)을 함께 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#44:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "German is an elective subject, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'선택과목' 을 elective subject 로 옮기면 70점 — 바로 앞 #43 모범이 'a required subject' 라 subject 를 붙이기 쉬움(더2).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#44:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "German is an optional subject, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'선택' → optional 이 0점(더2).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#44:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "German is an elective course, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'과목' → course — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many English classes does he have per week?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ '일주일에' 의 흔한 번역 per week 가 0점(더3).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many English classes does he have every week?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "every week 는 70점(더3).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many English classes does he have in a week?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "in a week 는 70점(더3).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many English lessons does he have a week?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'수업' → lessons(영국 영어의 기본 말)가 0점 — 참조는 classes 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When do they have to pass the final exam?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '시험' 은 수를 가르지 않음 — 단수 final exam 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When must they pass the final exams?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'해야 하나' → must 가 0점 — 참조는 have to 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When do they need to pass the final exams?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'해야 하나' → need to 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When do they have to pass their final exams?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 한국어 '최종 시험' 에 소유격 없음 — the ↔ their 둘 다 자연스러운데 their 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When must they pass the final exam?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "must + 단수 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#47:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did he open a small grocery shop in his hometown?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'식료품점' → grocery shop(영국 영어 — shop/store 둘 다 맞음)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#47:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did he open a little grocery store in his hometown?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'작은' → little 이 0점 — 참조는 small 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He added another one within two years.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉰ 때 부사구를 문장 끝(영어에서 가장 흔한 자리)에 두면 0점 — 참조 넷은 모두 앞자리.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He added another within two years.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(another) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "In two years, he added another one.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'2년 내에' → in two years(지난 일에서 '두 해 사이에')가 0점 — within 만 받음(within 은 기능어 목록에 없어 in ↔ within 이 다른 낱말).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Within two years, he added one more.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'또 다른 하나' → one more 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Recently he opened a third one, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'세 번째를' → a third one 이 70점 — 같은 강의 #48 은 another one 을 받음(더22).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He recently opened a third, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ recently 를 동사 앞에 — 70점(더22).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He recently opened a third one, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위 둘을 함께 — 70점(더22).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Recently, he opened the third one, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'세 번째를' → the third one(세 번째 가게) — a ↔ the 에 one 까지 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He opened a third one recently, didn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉰ recently 를 문장 끝에 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#50:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They don't have time to spend together, do they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'함께 할 시간' 의 흔한 번역 spend together 가 0점(더4).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#50:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They don't have time to be together, do they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'함께 할' → be together 가 0점(더4).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#50:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They have no time to get together, do they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉱ have no time ↔ don't have time(같은 뜻 · 꼬리 do they 도 맞음) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does Phil hardly ever go to the mall?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'좀처럼 ~ 않다' 의 흔한 번역 hardly ever 가 0점 — 참조는 rarely · seldom 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does Phil hardly ever go to the shopping district?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(shopping district) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does Phil rarely go to the shopping mall?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'상가' → shopping mall 이 70점(mall · shopping center 는 만점).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does Phil seldom go to the shopping mall?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(seldom) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does Phil rarely go to the shopping area?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'상가' → shopping area 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did he recommend a nearby candy store?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'사탕 가게' 의 흔한 번역 candy store(미국 영어의 기본 말 — #47 도 grocery store)가 0점(더5).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did he recommend a candy shop nearby?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ nearby 를 명사 뒤에 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did he recommend a candy store nearby?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위 둘(store · nearby 뒤)을 함께 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When did he recommend a nearby sweet shop?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'사탕 가게' → sweet shop(영국 영어)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why did the President severely criticize the Japanese economy?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ severely 를 동사 앞에 — 70점(더6).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why did the President harshly criticize the Japanese economy?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'심하게' → harshly 가 0점(더6).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why did the president criticize the Japanese economy harshly?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(harshly 끝 자리) — 0점(더6).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why did the president criticize Japan's economy severely?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ '일본 경제' → Japan's economy 가 0점 — 참조는 the Japanese economy 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The relief foundation is denying any connection to terrorism, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'연관성' 의 흔한 번역 connection 이 0점(더7).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The relief foundation is denying any links to terrorism, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "any links 는 70점(더7).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The aid foundation is denying any link to terrorism, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 괄호로 준 '원조' → aid foundation 이 0점 — 참조는 relief 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The relief foundation is denying any link with terrorism, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'테러리즘과의' → link with — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The relief foundation is denying any connection with terrorism, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "connection with — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#58:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You are not so tall.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'그렇게' → so(not so tall)가 70점 — 참조는 that 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#58:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You're not so tall.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(줄임꼴) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#59:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Am I ever going to play in the NBA?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ 한국어 '경기할까' 는 will · be going to 를 가르지 않음 — be going to 꼴이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#60:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It certainly is.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'확실히' 의 흔한 번역 certainly 가 0점 — 참조는 decidedly · definitely 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#60:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It is certainly so.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#61:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why do we stay here all the time?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'항상' → all the time 이 0점 — 참조는 always 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#62:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It's better than my home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'집' → home 이 0점 — 참조는 place · house 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#62:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It's nicer than my home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#63:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I've never seen your home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'집' → home 이 0점 — 참조는 place · house 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#63:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I have never seen your home.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#64:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They really don't come down here that much.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 한국어 차례('정말로 … 않아') 그대로 really 를 부정 앞에 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#64:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They don't really come down here so much.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'그렇게 많이' → so much 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Professor McCarthy will give a hard exam.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'어려운' 의 첫 번역 hard 가 0점 — 참조는 difficult 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Professor McCarthy is going to give a hard exam.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(be going to) — 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Professor McCarthy will give a difficult test.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'시험' 의 첫 번역 test 가 0점 — 참조는 exam · examination 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Professor McCarthy will give a hard test.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위 둘(hard · test)을 함께 — 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#66:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The government was freezing terrorist groups' assets.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ '테러 집단들의 자산' 을 소유격으로 — 0점(더8).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#66:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The government was freezing the assets of terror groups.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'테러 집단' → terror groups(기사 영어에서 흔함)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did the players give their best performance?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'선수' 의 흔한 번역 player 가 0점 — 참조는 athletes 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did the players perform at their best?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(players) — 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did the athletes give the best performance?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ '최고의 성적' → the best performance(한국어에 소유격 없음)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did the players play their best game?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "괄호 '경기를 했나' 를 옮긴 play their best game 이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did the athletes play their best game?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(athletes) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#68:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Where are many players training?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'선수' → player 가 0점(더9).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#68:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Where are a lot of athletes training?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'많은' → a lot of 가 0점(더9).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#68:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Where are lots of athletes training?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'많은' → lots of 가 0점(더9).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-108#70:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Several hundred people have skin cancer, don't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'수백 명의 사람' → several hundred people 이 0점 — 참조는 hundreds of 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#71:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What became of the criminal?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'어떻게 됐나' 를 옮기는 영어 관용 what became of 가 0점 — 참조는 happened to 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#72:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why do they want the help of his family?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ '그의 가족의 도움' 을 of 로 — 0점(소유격 꼴만 받음).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#72:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why do they want help from his family?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'그의 가족의 도움' → help from his family(자연스러운 영어)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#73:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Now here are the rest of today's important stories.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'중요한' 의 곧은 번역 important 가 0점 — 참조는 뉴스 관용 top 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#73:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Now here are the rest of today's main stories.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'중요한 이야기들' → main stories 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-110#73:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Now here is the rest of today's top stories.",
+    "점수": "70점",
+    "까닭": "수 일치 — 'the rest of + 복수 명사' 는 are(글에서 is 는 틀림)."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#74:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The volcano caused a disaster thousands of miles away, didn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'재난을 만들어냈다' 의 가장 자연스러운 영어 caused a disaster 가 0점 — 참조는 created 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-110#74:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "The volcano made a disaster thousands of miles away, didn't it?",
+    "점수": "0점",
+    "까닭": "어색한 연어 — 'make a disaster' 는 재난을 일으킨다는 뜻으로 쓰지 않음."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#75:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "We're going to go there sometime next week, aren't we?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ 한국어 '가겠지' 는 will · be going to 를 가르지 않음 — 꼬리까지 맞춘 be going to 꼴이 0점(길이 상한).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#76:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When are we going to have a live report?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ '갖게 될까' 는 will · be going to 를 가르지 않음 — be going to 꼴이 0점(길이 상한).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#76:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will we get a live report?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'갖게 되다' → get 이 0점 — 참조는 have 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#77:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Actually, many of them are from Los Angeles, aren't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'사실상' → actually 가 0점 — 참조는 In fact 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#77:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "In fact, a lot of them are from Los Angeles, aren't they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'많은' → a lot of 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#77:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "In fact, many of them come from Los Angeles, don't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'출신이다' → come from(꼬리 don't they 까지 맞음)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#78:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It's noon now in Los Angeles, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ now 를 noon 뒤에 — 70점(now 끝 자리만 받음).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#78:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It's now noon in Los Angeles, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ now 를 be 동사 뒤에(흔한 자리) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#78:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Now it's noon in Los Angeles, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 한국어 차례('지금' 이 앞)대로 now 를 앞에 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#79:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Welcome to Korea again.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'다시 오신 것을 환영합니다' 를 곧게 옮긴 again 꼴이 0점 — 참조는 welcome back 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They are probably not sleeping.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'안 자고 있을 거야' 의 가장 곧은 번역(not sleeping = awake, 같은 뜻)이 0점 — 채점기가 참조(awake · up)에 없는 not 을 '뜻이 반대' 로 봄.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They're probably not asleep.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(not asleep) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They will probably be awake.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'있을 거야' → will be 가 0점(길이 · 낱말 차이).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They'll probably be up.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(be up) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#81:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Yesterday you had a toothache, didn't you?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ yesterday 를 앞에 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#81:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You had toothache yesterday, didn't you?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 영어는 toothache 를 관사 없이 씀(have toothache) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#82:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Has it stopped hurting now?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'쑤시다(아프다)' → hurt 가 0점 — 참조는 aching 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#82:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Has that stopped hurting now?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(결정 3 의 that 꼴) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#83:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The tooth is hurting now.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'쑤시고 있어(아파)' → hurting 이 0점 — 참조는 aching 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#83:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The tooth hurts now.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 괄호로 준 '(아파)' 를 옮긴 hurts(상태 동사 — 진행형과 뜻 같음)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#84:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What's inside them?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'안에' → inside 가 0점 — 참조는 in 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#84:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What's in those?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'그것들' → those 가 70점(결정 3 은 '그것' 만 — '그것들' 은 대상 밖).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#85:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They are collaborating with the agency.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'협력하다' → collaborate 가 0점 — 참조는 cooperate 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#85:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They are cooperating with the organization.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'기관' → organization 이 0점 — 참조는 agency 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-110#85:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "They are working with the agency.",
+    "점수": "0점",
+    "까닭": "뜻이 넓어짐 — '협력하다' 의 곧은 번역은 cooperate · collaborate(work with 는 '함께 일하다')."
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#86:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The Department of Defense wouldn't comment any further than that.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'국방부' 의 정식 이름 Department of Defense 가 0점 — 참조는 Defense Department 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#86:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The Defense Department wouldn't comment any more than that.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'조금도 더' → any more 가 0점 — 참조는 any further 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#86:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The Defense Department refused to comment any further than that.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'하려 하지 않았다' → refused to 가 0점 — 참조는 wouldn't 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It could reduce the suspects' fear.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "모범이 that 인데 '그것은' 의 곧은 번역 it 이 70점 — 전수 조정 규칙(더23 · 더24 와 같은 종류).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It could reduce the fear of the suspects.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(of 꼴) — 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It could reduce suspects' fear.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(관사 없는 꼴) — 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "That will be able to reduce the suspects' fear.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'줄일 수 있을 것이다' 의 곧은 번역 will be able to 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "That can reduce the suspects' fear.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'줄일 수 있을' → can 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They have to handle the disaster.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'처리하다' → handle 이 0점 — 참조는 deal with 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They need to deal with the disaster.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'해야 한다' → need to 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They should deal with the disaster.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'해야 한다' → should 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They must handle the disaster.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "must + handle — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#89:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Which company produces chewing tobacco?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'만들다(제조)' → produce 가 0점 — 참조는 makes 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#89:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Which company manufactures chewing tobacco?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'만들다(제조)' → manufacture 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#90:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How did the government increase sales?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 한국어 '판매를' 에 소유격 없음 — its 없는 꼴이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#90:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How did the government boost sales?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(boost) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The company isn't running the ad, is it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '그 광고' 는 수를 가르지 않음 — 단수가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The company isn't publishing the ads, is it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'게재하다' 의 사전 첫 번역 publish 가 0점 — 참조는 running 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The company isn't running the advertisements, is it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "ads 의 온꼴 advertisements 가 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The company isn't running the advertisement, is it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "온꼴 단수 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#92:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Chewing tobacco involves its own health risks, doesn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'수반하다' 의 사전 첫 번역 involve 가 0점 — 참조는 carries 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#92:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Chewing tobacco has its own health risks, doesn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'위험을 수반하다' → has ... risks(자연스러운 영어)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#92:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Chewing tobacco carries its own health risk, doesn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '위험' 은 수를 가르지 않음 — 단수가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#94:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Look at that thing!",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'저것' → that thing 이 0점(한 낱말 더 · 짧은 모범이라 길이 상한).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#95:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I won the bet completely.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ completely 를 끝에 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#96:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Olympia is accepting the Pepsi challenge.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'받아들이다' 의 첫 번역 accept 가 0점 — 참조는 take(광고 관용) 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#96:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Olympia is accepting Pepsi's challenge.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ '펩시의 도전' 을 소유격으로 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#97:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is the fast food chain changing its soft drink?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'바꾸다' 의 첫 번역 change 가 0점 — 참조는 switching 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#97:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is the fast-food chain switching its soft drink?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "명사 앞 복합 형용사 fast-food(하이픈 — 표준 표기)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#97:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is the fast-food chain changing its soft drink?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위 둘을 함께 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#98:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Who made a better suggestion?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'제안' 의 흔한 번역 suggestion 이 0점 — 참조는 deal · offer · proposal 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#98:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Who made the better offer?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "두 회사 가운데 '더 나은 제안' → the better offer 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#99:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All 1,900 Olympia stores will be serving it within 60 days, won't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'매장' 의 첫 번역 store 가 0점 — 참조는 outlets 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#99:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All 1,900 Olympia outlets will be offering it within 60 days, won't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'제공하다' → offer 가 0점 — 참조는 serving 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#100:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Coca-Cola also has its headquarters in Atlanta, doesn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'본부를 두고 있지' 의 가장 곧은 번역 has its headquarters 가 0점 — 참조는 is based 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#100:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Coca-Cola is based in Atlanta too, isn't it?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'도' → too(끝 자리)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#101:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't it try to obtain a temporary restraining order?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'받아내다' → obtain 이 0점 — 참조는 get 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#101:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't it try to get a temporary injunction?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 괄호로 준 '가처분' → temporary injunction 이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#102:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is the judge refusing to halt the switch?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'중단시키다' → halt 가 0점 — 참조는 stop 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#102:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is the judge refusing to stop the change?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'전환' → change 가 0점 — 참조는 switch 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#103:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It will seek mediation, won't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'중재' → mediation(일상 말의 흔한 번역)이 0점 — 참조는 arbitration 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#103:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It is going to seek arbitration, isn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ '모색하겠지' 는 will · be going to 를 가르지 않음 — be going to 꼴이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#104:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long is it going to take?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ '걸릴까' 는 will · be going to 를 가르지 않음 — be going to 꼴이 0점(길이 상한).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#104:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How long is that going to take?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(결정 3 의 that 꼴) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#105:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will I meet your friends and brothers?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "두 번째 your 를 빼는 자연스러운 꼴이 70점(한국어도 '너의' 하나).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#105:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When am I going to meet your friends and brothers?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(be going to) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#105:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "When will I meet your friends and siblings?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'형제들' → siblings(한국어 '형제' 는 남매도 이름)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You can't attend the party because you have a prior appointment, can you?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "다른 정답 조합 빈틈 — previous engagement · prior engagement · previous appointment 는 받는데 prior appointment 만 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You can't go to the party because you have a previous engagement, can you?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'참석하다' → go to 가 0점 — 참조는 attend 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You can't attend the party because you have a prior commitment, can you?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'선약' → prior commitment(흔한 말)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Because you have a previous engagement, you can't attend the party, can you?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉰ 한국어 차례대로 이유절을 앞에 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#109:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did you draw me a map?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ '나를 위하여' 를 간접목적어로 둔 꼴(draw me a map — 흔한 영어)이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#109:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did you draw the map for me?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 한국어 '지도를' 은 관사를 가르지 않음 — the map 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Can't you stay here during the holidays?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'휴가' → holidays(영국 영어의 기본 말)가 0점 — 참조는 vacation 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Can't you stay here during your vacation?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ '휴가 동안' → your vacation 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Can't you stay here during vacation?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ 관사 없는 during vacation(미국 영어에서 흔함)이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Can't you stay here during the holiday?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'휴가' → the holiday(영국 영어)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#112:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Don't you know the poet's name?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ '그 시인의 이름' 을 소유격으로(가장 흔한 꼴) — 0점(of 꼴만 받음).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#112:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do you not know the poet's name?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(Do you not 꼴) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#114:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The novelist got the Nobel Prize, didn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'받았지' → got 이 0점 — 참조는 won · received 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#114:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The novelist won a Nobel Prize, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "노벨상은 부문이 여럿이라 a Nobel Prize 도 흔함 — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#114:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The novelist was awarded the Nobel Prize, wasn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'상을 받다' 의 흔한 영어 was awarded(꼬리 wasn't he 까지 맞음)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#115:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Bob will leave for England next week, won't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 '떠나지?' 는 진행형(-고 있다)이 아님 — 다음 주 일을 will 로 옮긴 꼴(꼬리까지 맞음)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#115:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Bob leaves for England next week, doesn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "정해진 일정의 현재형(꼬리 doesn't he)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#115:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Bob is going to leave for England next week, isn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ be going to 꼴이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#116:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Wasn't this measure far more effective?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'훨씬' → far 가 0점 — 참조는 much 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#116:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Wasn't this measure a lot more effective?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'훨씬' → a lot 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#116:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Wasn't this step much more effective?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'조처' → step 이 0점 — 참조는 measure 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#117:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't New York a charming city?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'매혹적인' → charming 이 0점 — 참조는 fascinating 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#117:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't New York an attractive city?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'매혹적인' → attractive 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the clerk get a 50 percent pay raise?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "% 를 글로 쓴 50 percent(표준 표기)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the clerk get a 50% raise?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'봉급 인상' → raise 한 낱말(흔함)이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the clerk get a 50% salary increase?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'봉급 인상' → salary increase 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the clerk receive a 50% pay raise?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'받다' → receive 가 0점 — 참조는 get 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the clerk get a 50% pay rise?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 영어 pay rise 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#122:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Will this work?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'이것이면 될까' → work 가 0점 — 참조는 do 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#122:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Will this be enough?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'될까(충분할까)' → be enough 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#122:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Would this do?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "공손한 would 꼴이 0점(세 낱말 모범이라 한 낱말 차이로 70% 밑).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#123:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nothing can be better.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'좋을 수 없을' → can 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does this road take me to my house?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'집으로' → to my house 가 0점 — 참조는 home 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does this street take me home?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'길' → street 이 0점 — 참조는 road 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Will this road take me home?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "will 꼴이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does this road lead me home?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "길에 흔히 쓰는 lead 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does this road go to my house?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 괄호 '이 길로 가면 우리 집으로 가나' 를 옮긴 꼴이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#125:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It's beyond me.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "모범이 that 인데 '그것은' 의 곧은 번역 it 이 70점(더23).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#125:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "That's beyond my ability.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'내 능력 밖' 을 곧게 옮긴 beyond my ability 가 0점(길이 상한).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#125:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "It's beyond my ability.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(it 꼴) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#126:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were you making reservations?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 '예약' 은 수를 가르지 않음 — make reservations(흔함)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#126:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were you making a booking?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'예약' → booking(영국 영어)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#128:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Weren't they crossing the road here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'길을 건너다' → cross the road(영미 모두 흔함)가 0점 — 참조는 street 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#128:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were they not crossing the road here?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(Were they not 꼴) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#129:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Won't you drop by my place?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'나에게 들르다' → drop by my place 가 0점 — 참조는 drop in on me 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#129:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Won't you stop by my place?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'들르다' → stop by 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#130:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "You didn't take my advice, did you?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'충고를 따르다' → take advice(흔한 연어)가 0점 — 참조는 follow 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#131:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why don't you rest?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'쉬지 않니' 의 가장 곧은 번역 rest(동사)가 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#131:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why don't you take a break?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'쉬다' → take a break 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#131:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why don't you have a rest?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "영국 영어 have a rest 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why couldn't he achieve his dream?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'실현하다' → achieve 가 0점 — 참조는 realize 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why wasn't he able to realize his dream?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'할 수 없었니' → wasn't able to 가 0점(길이 상한).",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why couldn't he fulfill his dream?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'실현하다' → fulfill 이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why couldn't he make his dream come true?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'꿈을 실현하다' 의 흔한 관용 make ... come true 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#133:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many times per year does he go on a picnic?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉱ '일 년에' → per year 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#133:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many times a year does he go for a picnic?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 영어 go for a picnic 이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#133:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "How many times a year does he go on picnics?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "되풀이하는 일을 복수로(go on picnics) — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I don't really get your point.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'잘 모르겠다' → don't really 가 0점 — 참조는 quite 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I don't quite understand your point.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'모르겠다' 의 가장 흔한 번역 understand 가 0점 — 참조는 get 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I don't quite see your point.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "see your point(흔한 연어)가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "I don't quite understand what you mean.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 괄호 '무슨 말씀인지' 를 옮긴 what you mean 이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#136:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does it make sense?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "모범이 that 인데 '그것이' 의 곧은 번역 it 이 70점(더24).",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Would you speak more slowly?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '말씀하시겠습니까' 에 please 가 없음 — please 없는 곧은 번역이 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Could you speak more slowly, please?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "부탁의 흔한 꼴 Could you 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Would you please speak more slowly?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ please 를 가운데에(가장 흔한 자리) — 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Will you please speak more slowly?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(Will you) — 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Could you please speak more slowly?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "Could you + please 가운데 — 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:5",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Would you talk more slowly, please?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'말하다' → talk 가 0점 — 참조는 speak 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Can I have your phone number?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'가져도 됩니까' → Can I(가장 흔한 꼴)가 70점 — 참조는 May I 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "May I have your telephone number?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "phone 의 온꼴 telephone 이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Could I have your phone number?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "공손한 Could I 가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Can I get your phone number?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'가져도' → get(구어에서 흔함)이 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#140:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Where can I contact you?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 괄호 '어디로 연락하면 되나' 의 곧은 번역 contact 가 0점 — 참조는 reach 뿐.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#140:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Where could I reach you?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "could 꼴이 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#143:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't he working at the bank?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉯ '은행에서' → at the bank(흔함)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#143:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is he not working at a bank?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "다른 정답 조합 빈틈 — Isn't he … at a bank · Is he not … for a bank 는 받는데 Is he not … at a bank 가 70점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#143:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Isn't he working in a bank?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "work in a bank(영국 영어에서 흔함)가 70점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#144:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Let's listen to what he says.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'그의 말에' → what he says 가 0점 — 참조는 him 뿐.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#144:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Let's listen to his words.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'그의 말' 을 곧게 옮긴 his words 가 0점.",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#145:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was giving a great speech, wasn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'연설을 하다' → give a speech(make 만큼 흔한 연어)가 0점.",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-112#145:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He was delivering a great speech, wasn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'연설을 하다' → deliver a speech 가 0점.",
+    "확신": "보통"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "R:grammar1/gh1-112#130",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "You didn't follow my advice, did you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You did not follow my advice, did you?",
+     "점수": "만점"
+    },
+    {
+     "답": "You didn't take my advice, did you?",
+     "점수": "0점"
+    },
+    {
+     "답": "You didn't listen to my advice, did you?",
+     "점수": "0점"
+    },
+    {
+     "답": "You didn't follow my advice, right?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "You didn't take my advice, did you?",
+     "점수": "0점",
+     "까닭": "'충고를 따르다' 의 사전 번역 follow/take one's advice 중 take 꼴 — 맞는 영어 · 한국어 뜻 그대로 · 부가의문문 꼴을 지킴. take 가 follow 와 다른 내용어라 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "You didn't listen to my advice, did you?",
+     "점수": "0점",
+     "까닭": "listen to = '듣다' — 한국어 '따르다' 와 뜻이 다름"
+    },
+    {
+     "답": "You didn't follow my advice, right?",
+     "점수": "0점",
+     "까닭": "부가의문문('~지?' → 꼬리 질문)을 가르치는 문항에서 꼬리를 피한 꼴"
+    }
+   ],
+   "까닭": "모범 · 줄이지 않은 꼴 만점. '충고를 따르다' 의 흔한 다른 번역 take my advice 가 0점.",
+   "때": "2026-09-24 22:02"
+  },
+  {
+   "key": "R:grammar1/gh1-112#131",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Why don't you take a rest?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why don't you rest?",
+     "점수": "70점"
+    },
+    {
+     "답": "Why don't you take a break?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why don't you have a rest?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why don't you get some rest?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why do you not take a rest?",
+     "점수": "70점"
+    },
+    {
+     "답": "Why aren't you resting?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why don't you rest?",
+     "점수": "70점",
+     "까닭": "'쉬다' 의 사전 첫 뜻 rest 를 동사로 곧게 쓴 꼴 — 맞는 영어 · 뜻 그대로. take a 가 없어 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Why don't you take a break?",
+     "점수": "0점",
+     "까닭": "'쉬다' 의 흔한 번역 take a break — break 가 rest 와 다른 내용어라 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why don't you have a rest?",
+     "점수": "0점",
+     "까닭": "take a rest 와 같은 뜻의 흔한 영국 영어 꼴 have a rest — have(기능어) ↔ take(내용어) 짝이라 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why don't you get some rest?",
+     "점수": "0점",
+     "까닭": "'쉬다' 의 흔한 구어 번역 get some rest — 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why do you not take a rest?",
+     "점수": "70점",
+     "까닭": "줄이지 않은 부정 의문 'do you not' — 같은 강의가 #111 · #112 · #116 · #117 · #119 · #128 · #129 · #142 · #143 에서 '조동사 + 주어 + not' 꼴을 다른 정답(만점)으로 받는데 이 wh- 부정 의문만 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Why aren't you resting?",
+     "점수": "0점",
+     "까닭": "진행형 — 결정 4(G10)가 진행형 대체 답안을 두 뜻이 다 자연스러운 12문항으로 정함 · 이 문항은 'Why don't you ~?' 꼴"
+    }
+   ],
+   "까닭": "모범만 만점. '쉬다' 의 흔한 번역(rest · take a break · have a rest · get some rest)과 줄이지 않은 부정 의문이 막힘.",
+   "때": "2026-09-24 22:02"
+  },
+  {
+   "key": "R:grammar1/gh1-112#132",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Why couldn't he realize his dream?",
+     "점수": "만점"
+    },
+    {
+     "답": "Why couldn't he achieve his dream?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why couldn't he fulfill his dream?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why couldn't he make his dream come true?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why wasn't he able to realize his dream?",
+     "점수": "0점"
+    },
+    {
+     "답": "Why could he not realize his dream?",
+     "점수": "70점"
+    },
+    {
+     "답": "Why couldn't he realise his dream?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Why couldn't he achieve his dream?",
+     "점수": "0점",
+     "까닭": "'꿈을 실현하다' 의 흔한 번역 achieve one's dream — 맞는 영어 · 뜻 그대로 · 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Why couldn't he fulfill his dream?",
+     "점수": "0점",
+     "까닭": "'꿈을 실현하다' 의 흔한 번역 fulfill one's dream — 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Why couldn't he make his dream come true?",
+     "점수": "0점",
+     "까닭": "'꿈을 실현하다(이루다)' 의 흔한 풀어 쓴 번역 make one's dream come true — 길이 상한으로 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why wasn't he able to realize his dream?",
+     "점수": "0점",
+     "까닭": "'~할 수 없었다' 의 흔한 번역 wasn't able to — 부정 의문 꼴 지킴 · 길이 상한으로 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why could he not realize his dream?",
+     "점수": "70점",
+     "까닭": "줄이지 않은 부정 의문 'could he not' — 같은 강의가 yes/no 부정 의문에서 '조동사 + 주어 + not' 꼴을 만점 다른 정답으로 받음 · 여기는 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Why couldn't he realise his dream?",
+     "점수": "70점",
+     "까닭": "영국 철자 realise — 맞는 철자인데 오타로 봐 70점(다른 읽을거리의 colour · defence 와 같은 종류).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [],
+   "까닭": "모범만 만점. '실현하다' 의 흔한 다른 번역(achieve · fulfill · make … come true) · be able to · 줄이지 않은 꼴 · 영국 철자가 막힘.",
+   "때": "2026-09-24 22:02"
+  },
+  {
+   "key": "R:grammar1/gh1-112#133",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "How many times a year does he go on a picnic?",
+     "점수": "만점"
+    },
+    {
+     "답": "How many times per year does he go on a picnic?",
+     "점수": "0점"
+    },
+    {
+     "답": "How many times each year does he go on a picnic?",
+     "점수": "70점"
+    },
+    {
+     "답": "How many times a year does he go for a picnic?",
+     "점수": "70점"
+    },
+    {
+     "답": "How many times a year does he go picnicking?",
+     "점수": "0점"
+    },
+    {
+     "답": "How many times in a year does he go on a picnic?",
+     "점수": "70점"
+    },
+    {
+     "답": "How many times a year does he go to a picnic?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "How many times per year does he go on a picnic?",
+     "점수": "0점",
+     "까닭": "'일 년에' 의 흔한 번역 per year — per 가 기능어 목록 밖이라 0점(전수 결과 더3 'per week' 와 같은 종류).",
+     "확신": "높음"
+    },
+    {
+     "답": "How many times each year does he go on a picnic?",
+     "점수": "70점",
+     "까닭": "'일 년에' 를 each year 로 옮긴 맞는 영어 — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How many times a year does he go for a picnic?",
+     "점수": "70점",
+     "까닭": "'소풍 가다' 의 흔한 번역 go for a picnic(영국 영어에서 흔함) — 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "How many times a year does he go picnicking?",
+     "점수": "0점",
+     "까닭": "'소풍 가다' 의 맞는 번역 go picnicking(같은 강의 #127 'go fishing' 과 같은 go -ing 꼴) — 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "How many times in a year does he go on a picnic?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 in 하나 더 70점"
+    },
+    {
+     "답": "How many times a year does he go to a picnic?",
+     "점수": "70점",
+     "까닭": "'소풍 가다' 는 go on/for a picnic 이 표준 — go to a picnic 은 (행사에) 참석한다는 뜻에 가까워 곧은 번역이 아님 · 70점이 맞음"
+    }
+   ],
+   "까닭": "모범만 만점. per year(0점) · each year · go for a picnic(70점) · go picnicking(0점)이 막힘.",
+   "때": "2026-09-24 22:02"
+  },
+  {
+   "key": "R:grammar1/gh1-112#136",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Does that make sense?",
+     "점수": "만점"
+    },
+    {
+     "답": "Does it make sense?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does that make any sense?",
+     "점수": "70점"
+    },
+    {
+     "답": "Does it make any sense?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Does it make sense?",
+     "점수": "70점",
+     "까닭": "한국어 '그것' 의 곧은 번역 it 꼴이 70점(모범은 that) — 명령서 기준 '모범이 that 인데 it 이 70점이면 막힘'(전수 결과 더24 와 같음).",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "Does that make any sense?",
+     "점수": "70점",
+     "까닭": "결정 2 — 기능어 any 하나 더 70점"
+    },
+    {
+     "답": "Does it make any sense?",
+     "점수": "0점",
+     "까닭": "it 꼴에 기능어 any 하나 더 — 'Does it make sense?' 를 더하면 결정 2 로 70점이 됨 · 따로 적지 않음"
+    }
+   ],
+   "까닭": "모범 만점. '그것' → it 이 70점.",
+   "때": "2026-09-24 22:02"
+  },
+  {
+   "key": "R:grammar1/gh1-112#137",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "How do you spell it?",
+     "점수": "만점"
+    },
+    {
+     "답": "How do you spell that?",
+     "점수": "만점"
+    },
+    {
+     "답": "How is it spelled?",
+     "점수": "0점"
+    },
+    {
+     "답": "How do you write its spelling?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [],
+   "안적음": [
+    {
+     "답": "How is it spelled?",
+     "점수": "0점",
+     "까닭": "수동 꼴 — 한국어 '당신은 … 씁니까' 의 주어 · 능동을 바꿈(곧은 번역 아님) · 강의의 'How do you ~?' 꼴을 피함"
+    },
+    {
+     "답": "How do you write its spelling?",
+     "점수": "0점",
+     "까닭": "어색한 영어('철자를 쓰다' = spell) — 흔한 맞는 영작 아님"
+    }
+   ],
+   "까닭": "모범 it · 다른 정답 that 둘 다 만점 — 막힘 없음.",
+   "때": "2026-09-24 22:02"
+  },
+  {
+   "key": "B:grammar1/gh1-108#36:0",
+   "결론": "동의",
+   "까닭": "complete their first year — '끝내다' 의 사전 번역 · 맞는 영어 · 뜻 그대로 · 미래 의문 꼴 지킴.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-108#36:0",
+   "결론": "동의",
+   "까닭": "first grade 는 영어에서 초등 1학년 — 대학 '일학년'(#37 sophomores · #41 기말)과 뜻이 다름. 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-108#36:1",
+   "결론": "동의",
+   "까닭": "the first grade 도 초등 1학년 뜻 · 어색 — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#37:0",
+   "결론": "동의",
+   "까닭": "second-year students — '2학년생' 의 곧은 번역 · 맞는 영어 · 꼬리 won't they 맞음(더1).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#37:1",
+   "결론": "동의",
+   "까닭": "become + second-year students — 맞는 영어 · 뜻 그대로(더1).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#37:2",
+   "결론": "동의",
+   "까닭": "be going to + 꼬리 aren't they — 맞는 영어 · '되겠지' 는 will/be going to 를 가르지 않음(㉱).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-108#37:0",
+   "결론": "동의",
+   "까닭": "second graders 는 초등 2학년 — 대학 2학년(sophomore)과 뜻이 다름. 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:0",
+   "결론": "동의",
+   "까닭": "'큰' → big · a pretty big area — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:1",
+   "결론": "동의",
+   "까닭": "quite a big area — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:2",
+   "결론": "동의",
+   "까닭": "a fairly big area — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:3",
+   "결론": "동의",
+   "까닭": "'꽤' → rather(사전 번역) · a rather large area — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:4",
+   "결론": "동의",
+   "까닭": "'지역' → region(사전 번역) — 맞는 영어 · 뜻 그대로.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#39:5",
+   "결론": "동의",
+   "까닭": "a fairly large region — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:0",
+   "결론": "동의",
+   "까닭": "'되다' → become — 맞는 영어 · 뜻 그대로.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:1",
+   "결론": "동의",
+   "까닭": "become + someday 끝 자리 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:2",
+   "결론": "동의",
+   "까닭": "'언젠가' → one day(앞날 뜻) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#40:3",
+   "결론": "동의",
+   "까닭": "one day 끝 자리 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#41:0",
+   "결론": "동의",
+   "까닭": "the final exams — 한국어에 소유격 없음 · 맞는 영어(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#41:1",
+   "결론": "동의",
+   "까닭": "단수 their final exam — 수를 가르지 않는 한국어 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#41:2",
+   "결론": "동의",
+   "까닭": "the final exam — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-108#41:0",
+   "결론": "동의",
+   "까닭": "last exams 는 '지난번 시험' 으로 읽히기 쉬움 — '마지막 시험'(기말)의 곧은 번역은 final. 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:0",
+   "결론": "동의",
+   "까닭": "빈도부사를 동사 앞(가장 흔한 자리)에 — 맞는 영어(㉰).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:1",
+   "결론": "동의",
+   "까닭": "He sometimes skipped class — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:2",
+   "결론": "동의",
+   "까닭": "He sometimes cut classes — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:3",
+   "결론": "동의",
+   "까닭": "cut class(굳은 말 · 단수) — 맞는 영어 · skipped 는 단수를 받는데 cut 만 막힘.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#42:4",
+   "결론": "동의",
+   "까닭": "부사 가운데 + cut class — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:0",
+   "결론": "동의",
+   "까닭": "'필수' → compulsory(사전 첫 번역) — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:1",
+   "결론": "동의",
+   "까닭": "mandatory subject — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:2",
+   "결론": "동의",
+   "까닭": "'과목' → course(미국 대학 · 이 강의 배경) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#43:3",
+   "결론": "동의",
+   "까닭": "compulsory course — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#44:0",
+   "결론": "동의",
+   "까닭": "elective subject — 맞는 영어 · 앞 #43 'required subject' 와 같은 꼴(더2).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#44:1",
+   "결론": "동의",
+   "까닭": "'선택' → optional subject — 맞는 영어(더2).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#44:2",
+   "결론": "동의",
+   "까닭": "elective course — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:0",
+   "결론": "동의",
+   "까닭": "'일주일에' → per week — ㉱ 흔한 번역 · 맞는 영어(더3).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:1",
+   "결론": "동의",
+   "까닭": "every week — 맞는 영어 · a ↔ every 를 바꾼 꼴(기능어를 더한 꼴이 아님).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:2",
+   "결론": "뒤집음",
+   "까닭": "모범 '… have a week?' 에 기능어 in 하나만 더한 꼴 — 명령서가 '결정 2 로 이미 70점이라 적지 않는다' 고 정한 종류. (전수 결과 더3 의 고칠 글에는 이미 들어 있어 수정 세션은 넣게 되지만, 이 표의 막힘으로는 세지 않음.)",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#45:3",
+   "결론": "동의",
+   "까닭": "'수업' → lessons(영국에서 기본 말) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:0",
+   "결론": "동의",
+   "까닭": "단수 the final exam — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:1",
+   "결론": "동의",
+   "까닭": "'해야 하나' → must — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:2",
+   "결론": "동의",
+   "까닭": "need to — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:3",
+   "결론": "동의",
+   "까닭": "their final exams — 한국어에 소유격 없음 · 맞는 영어(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#46:4",
+   "결론": "동의",
+   "까닭": "must + 단수 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#47:0",
+   "결론": "동의",
+   "까닭": "grocery shop(영국) — 맞는 영어 · shop/store 둘 다 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#47:1",
+   "결론": "동의",
+   "까닭": "'작은' → little · a little grocery store — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:0",
+   "결론": "동의",
+   "까닭": "때 부사구를 문장 끝(가장 흔한 자리)에 — 맞는 영어(㉰).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:1",
+   "결론": "동의",
+   "까닭": "another + 끝 자리 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:2",
+   "결론": "동의",
+   "까닭": "지난 일에서 in two years = 두 해 만에(안에) — 맞는 영어 · 뜻 거의 같음(확신 보통 그대로).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#48:3",
+   "결론": "동의",
+   "까닭": "'또 다른 하나' → one more — 맞는 영어 · 뜻 그대로.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:0",
+   "결론": "동의",
+   "까닭": "a third one — 맞는 영어 · 같은 강의 #48 'another one' 과 같은 꼴(더22). one 은 채점기 기능어 목록 밖.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:1",
+   "결론": "동의",
+   "까닭": "recently 를 동사 앞에 — 맞는 영어(더22).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:2",
+   "결론": "동의",
+   "까닭": "위 둘 함께 — 맞는 영어(더22).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:3",
+   "결론": "동의",
+   "까닭": "the third one(세 번째 가게) — 맞는 영어 · 문맥상 뜻 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#49:4",
+   "결론": "동의",
+   "까닭": "recently 끝 자리 + 꼬리 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#50:0",
+   "결론": "동의",
+   "까닭": "time to spend together — 맞는 영어 · '함께 할 시간' 뜻 그대로(더4).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#50:1",
+   "결론": "동의",
+   "까닭": "time to be together — 맞는 영어(더4).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#50:2",
+   "결론": "동의",
+   "까닭": "have no time ↔ don't have time(㉱) · 부정문 뒤 꼬리 do they 맞음 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:0",
+   "결론": "동의",
+   "까닭": "'좀처럼 ~ 않다' → hardly ever — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:1",
+   "결론": "동의",
+   "까닭": "hardly ever + shopping district — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:2",
+   "결론": "동의",
+   "까닭": "'상가' → shopping mall — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:3",
+   "결론": "동의",
+   "까닭": "seldom + shopping mall — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#51:4",
+   "결론": "동의",
+   "까닭": "'상가' → shopping area — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:0",
+   "결론": "동의",
+   "까닭": "candy store(미국 기본 말 · 이 강의 미국 영어 · #47 grocery store) — 맞는 영어(더5).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:1",
+   "결론": "동의",
+   "까닭": "nearby 를 명사 뒤에 — 맞는 영어(㉰).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:2",
+   "결론": "동의",
+   "까닭": "candy store + nearby 뒤 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#53:3",
+   "결론": "동의",
+   "까닭": "sweet shop(영국) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:0",
+   "결론": "동의",
+   "까닭": "severely 를 동사 앞에 — 맞는 영어(더6).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:1",
+   "결론": "동의",
+   "까닭": "'심하게' → harshly — 맞는 영어(더6).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:2",
+   "결론": "동의",
+   "까닭": "harshly 끝 자리 — 맞는 영어(더6).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#54:3",
+   "결론": "동의",
+   "까닭": "'일본 경제' → Japan's economy — 뜻 그대로 · 맞는 영어(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:0",
+   "결론": "동의",
+   "까닭": "'연관성' → connection to — 맞는 영어(더7).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:1",
+   "결론": "동의",
+   "까닭": "any links — 맞는 영어(더7).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:2",
+   "결론": "동의",
+   "까닭": "한국어 괄호 '(원조)' → aid foundation — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:3",
+   "결론": "동의",
+   "까닭": "link with — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#56:4",
+   "결론": "동의",
+   "까닭": "connection with — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#58:0",
+   "결론": "동의",
+   "까닭": "'그렇게' → so · not so tall — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#58:1",
+   "결론": "동의",
+   "까닭": "줄임꼴 — 위와 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#59:0",
+   "결론": "동의",
+   "까닭": "be going to 꼴 — 맞는 영어(㉱).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#60:0",
+   "결론": "동의",
+   "까닭": "'확실히' → certainly — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#60:1",
+   "결론": "동의",
+   "까닭": "It is certainly so — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#61:0",
+   "결론": "동의",
+   "까닭": "'항상' → all the time — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#62:0",
+   "결론": "동의",
+   "까닭": "'집' → home — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#62:1",
+   "결론": "동의",
+   "까닭": "nicer than my home — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#63:0",
+   "결론": "동의",
+   "까닭": "your home — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#63:1",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼴 — 위와 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#64:0",
+   "결론": "동의",
+   "까닭": "really 를 부정 앞에(한국어 차례 '정말로 … 않아') — 맞는 영어 · 뜻 거의 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#64:1",
+   "결론": "동의",
+   "까닭": "'그렇게 많이' → so much — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:0",
+   "결론": "동의",
+   "까닭": "'어려운' → hard — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:1",
+   "결론": "동의",
+   "까닭": "be going to + hard exam — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:2",
+   "결론": "동의",
+   "까닭": "'시험' → test — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#65:3",
+   "결론": "동의",
+   "까닭": "hard test — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#66:0",
+   "결론": "동의",
+   "까닭": "소유격 terrorist groups' assets — 맞는 영어(더8).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#66:1",
+   "결론": "동의",
+   "까닭": "terror groups(기사 영어) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:0",
+   "결론": "동의",
+   "까닭": "'선수' → players — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:1",
+   "결론": "동의",
+   "까닭": "players + perform at their best — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:2",
+   "결론": "동의",
+   "까닭": "the best performance — 맞는 영어(한국어에 소유격 없음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:3",
+   "결론": "동의",
+   "까닭": "괄호 '경기를 했나' → play their best game — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#67:4",
+   "결론": "동의",
+   "까닭": "athletes + play their best game — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#68:0",
+   "결론": "동의",
+   "까닭": "many players — 맞는 영어(더9).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#68:1",
+   "결론": "동의",
+   "까닭": "a lot of athletes — 맞는 영어(더9).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#68:2",
+   "결론": "동의",
+   "까닭": "lots of athletes — 맞는 영어(더9).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-108#70:0",
+   "결론": "동의",
+   "까닭": "'수백 명' → several hundred people — 뜻 그대로 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#71:0",
+   "결론": "동의",
+   "까닭": "what became of — '어떻게 됐나' 의 관용 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#72:0",
+   "결론": "동의",
+   "까닭": "the help of his family — 맞는 영어(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#72:1",
+   "결론": "동의",
+   "까닭": "help from his family — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#73:0",
+   "결론": "동의",
+   "까닭": "'중요한' → important — 곧은 번역 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#73:1",
+   "결론": "동의",
+   "까닭": "main stories — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-110#73:0",
+   "결론": "동의",
+   "까닭": "'the rest of + 복수 명사' 는 are — here is 는 글에서 수 일치가 틀림. 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#74:0",
+   "결론": "동의",
+   "까닭": "caused a disaster — 맞는 영어 · 가장 자연스러운 연어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-110#74:0",
+   "결론": "동의",
+   "까닭": "make a disaster 는 '재난을 일으키다' 로 안 씀 — 어색한 연어. 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#75:0",
+   "결론": "동의",
+   "까닭": "be going to + 꼬리 aren't we — 맞는 영어(㉱).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#76:0",
+   "결론": "동의",
+   "까닭": "be going to — 맞는 영어(㉱).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#76:1",
+   "결론": "동의",
+   "까닭": "'갖게 되다' → get — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#77:0",
+   "결론": "동의",
+   "까닭": "'사실상' → actually — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#77:1",
+   "결론": "동의",
+   "까닭": "a lot of them — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#77:2",
+   "결론": "동의",
+   "까닭": "'출신이다' → come from + 꼬리 don't they — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#78:0",
+   "결론": "동의",
+   "까닭": "now 자리 바꿈 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#78:1",
+   "결론": "동의",
+   "까닭": "It's now noon — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#78:2",
+   "결론": "동의",
+   "까닭": "Now it's noon — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#79:0",
+   "결론": "동의",
+   "까닭": "Welcome to Korea again — 한국어 곧은 번역 · 맞는 영어(welcome back 이 더 관용이나 틀리지 않음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:0",
+   "결론": "동의",
+   "까닭": "'안 자고' → not sleeping — 곧은 번역 · 맞는 영어 · 부정이 참조에 없어 0점.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:1",
+   "결론": "동의",
+   "까닭": "not asleep — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:2",
+   "결론": "동의",
+   "까닭": "'있을 거야' → will be awake — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#80:3",
+   "결론": "동의",
+   "까닭": "'ll probably be up — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#81:0",
+   "결론": "동의",
+   "까닭": "yesterday 를 앞에 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#81:1",
+   "결론": "동의",
+   "까닭": "have toothache(영국 · 관사 없음) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#82:0",
+   "결론": "동의",
+   "까닭": "'쑤시다' → hurt — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#82:1",
+   "결론": "동의",
+   "까닭": "that 꼴 + hurting — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#83:0",
+   "결론": "동의",
+   "까닭": "is hurting — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#83:1",
+   "결론": "동의",
+   "까닭": "한국어 괄호 '(아파)' → hurts — 맞는 영어 · 뜻 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#84:0",
+   "결론": "동의",
+   "까닭": "'안에' → inside — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#84:1",
+   "결론": "동의",
+   "까닭": "'그것들' → those — 맞는 영어 · 결정 3 · 소유자 답 4 는 '그것' 만(그것들 아님)이라 결정 밖.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#85:0",
+   "결론": "동의",
+   "까닭": "'협력하다' → collaborate — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#85:1",
+   "결론": "동의",
+   "까닭": "'기관' → organization — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "S:grammar1/gh1-110#85:0",
+   "결론": "동의",
+   "까닭": "work with 는 '함께 일하다' 로 넓음 — 곧은 번역은 cooperate · collaborate. 안 적는 게 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#86:0",
+   "결론": "동의",
+   "까닭": "Department of Defense(정식 이름) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#86:1",
+   "결론": "동의",
+   "까닭": "any more than that — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#86:2",
+   "결론": "동의",
+   "까닭": "'하려 하지 않았다' → refused to — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:0",
+   "결론": "동의",
+   "까닭": "모범 that · '그것은' 의 곧은 번역 it 이 70점 — 명령서 기준 막힘(더23 · 더24 와 같은 종류).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:1",
+   "결론": "동의",
+   "까닭": "it + of 꼴 — 위와 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:2",
+   "결론": "동의",
+   "까닭": "it + 관사 없는 꼴 — 위와 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:3",
+   "결론": "동의",
+   "까닭": "'줄일 수 있을 것이다' → will be able to — 곧은 번역 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#87:4",
+   "결론": "뒤집음",
+   "까닭": "can 은 '줄일 수 있을 것이다' 의 '것이다'(추측 · 앞날)를 빠뜨림 — 곧은 번역은 could · will be able to. 한국어 문제 뜻 그대로가 아니라 70점이 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:0",
+   "결론": "동의",
+   "까닭": "'처리하다' → handle — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:1",
+   "결론": "동의",
+   "까닭": "'해야 한다' → need to — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:2",
+   "결론": "동의",
+   "까닭": "'해야 한다' → should — 흔한 번역 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#88:3",
+   "결론": "동의",
+   "까닭": "must handle — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#89:0",
+   "결론": "동의",
+   "까닭": "'만들다' → produce — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#89:1",
+   "결론": "동의",
+   "까닭": "'만들다' → manufacture — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#90:0",
+   "결론": "동의",
+   "까닭": "its 없는 increase sales — 한국어에 소유격 없음 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#90:1",
+   "결론": "동의",
+   "까닭": "boost sales — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:0",
+   "결론": "동의",
+   "까닭": "단수 the ad — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:1",
+   "결론": "동의",
+   "까닭": "'게재하다' → publish(회사가 광고를 publish 하는 꼴은 기사 영어에서 흔함) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:2",
+   "결론": "동의",
+   "까닭": "advertisements(ads 의 온꼴) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#91:3",
+   "결론": "동의",
+   "까닭": "advertisement — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#92:0",
+   "결론": "동의",
+   "까닭": "'수반하다' → involve · involves risks — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#92:1",
+   "결론": "동의",
+   "까닭": "has … health risks — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#92:2",
+   "결론": "동의",
+   "까닭": "단수 health risk — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#94:0",
+   "결론": "동의",
+   "까닭": "'저것' → that thing — 맞는 영어 · 뜻 그대로.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#95:0",
+   "결론": "동의",
+   "까닭": "completely 끝 자리 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#96:0",
+   "결론": "동의",
+   "까닭": "'받아들이다' → accept a challenge — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#96:1",
+   "결론": "동의",
+   "까닭": "'그 펩시의 도전' → Pepsi's challenge — 곧은 번역 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#97:0",
+   "결론": "동의",
+   "까닭": "'바꾸다' → change — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#97:1",
+   "결론": "동의",
+   "까닭": "fast-food(명사 앞 하이픈 표준 표기) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#97:2",
+   "결론": "동의",
+   "까닭": "위 둘 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#98:0",
+   "결론": "동의",
+   "까닭": "'제안' → suggestion — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#98:1",
+   "결론": "동의",
+   "까닭": "the better offer — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#99:0",
+   "결론": "동의",
+   "까닭": "'매장' → stores — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#99:1",
+   "결론": "동의",
+   "까닭": "'제공하다' → offering — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#100:0",
+   "결론": "동의",
+   "까닭": "has its headquarters + 꼬리 doesn't it — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#100:1",
+   "결론": "동의",
+   "까닭": "too 끝 자리 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#101:0",
+   "결론": "동의",
+   "까닭": "'받아내다' → obtain — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#101:1",
+   "결론": "동의",
+   "까닭": "한국어 괄호 '가처분' → temporary injunction — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#102:0",
+   "결론": "동의",
+   "까닭": "'중단시키다' → halt — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#102:1",
+   "결론": "동의",
+   "까닭": "'전환' → change — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#103:0",
+   "결론": "동의",
+   "까닭": "'중재' → mediation(사전 번역) — 맞는 영어. 법률상 arbitration 과 다르지만 한국어 '중재' 는 둘 다라 학습자가 가를 수 없음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#103:1",
+   "결론": "동의",
+   "까닭": "be going to + 꼬리 isn't it — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#104:0",
+   "결론": "동의",
+   "까닭": "be going to — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#104:1",
+   "결론": "동의",
+   "까닭": "that + be going to — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#105:0",
+   "결론": "동의",
+   "까닭": "두 번째 your 를 뺀 꼴 — 맞는 영어 · 한국어도 '너의' 하나.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#105:1",
+   "결론": "동의",
+   "까닭": "be going to + 위와 같음 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#105:2",
+   "결론": "동의",
+   "까닭": "'형제들' → siblings — 맞는 영어(한국어 '형제' 는 남매도 이름).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:0",
+   "결론": "동의",
+   "까닭": "prior appointment — 다른 정답 조합 빈틈 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:1",
+   "결론": "동의",
+   "까닭": "'참석하다' → go to — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:2",
+   "결론": "동의",
+   "까닭": "prior commitment — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-110#106:3",
+   "결론": "동의",
+   "까닭": "이유절을 앞에 + 주절에 맞춘 꼬리 can you — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#109:0",
+   "결론": "동의",
+   "까닭": "draw me a map — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#109:1",
+   "결론": "동의",
+   "까닭": "the map — 맞는 영어(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:0",
+   "결론": "동의",
+   "까닭": "'휴가' → holidays(영국) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:1",
+   "결론": "동의",
+   "까닭": "your vacation — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:2",
+   "결론": "동의",
+   "까닭": "during vacation(미국) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#111:3",
+   "결론": "동의",
+   "까닭": "the holiday(영국 · 휴가 기간) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#112:0",
+   "결론": "동의",
+   "까닭": "the poet's name — 맞는 영어 · 가장 흔한 꼴(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#112:1",
+   "결론": "동의",
+   "까닭": "Do you not + 소유격 — 맞는 영어 · 강의가 받는 부정 의문 꼴.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#114:0",
+   "결론": "동의",
+   "까닭": "'받았지' → got — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#114:1",
+   "결론": "동의",
+   "까닭": "a Nobel Prize — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#114:2",
+   "결론": "동의",
+   "까닭": "was awarded + 꼬리 wasn't he — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#115:0",
+   "결론": "동의",
+   "까닭": "will leave + 꼬리 won't he — 맞는 영어 · '떠나지?' 는 진행형(-고 있다)이 아님.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#115:1",
+   "결론": "동의",
+   "까닭": "정해진 일정의 현재형 + 꼬리 doesn't he — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#115:2",
+   "결론": "동의",
+   "까닭": "be going to + 꼬리 isn't he — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#116:0",
+   "결론": "동의",
+   "까닭": "'훨씬' → far — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#116:1",
+   "결론": "동의",
+   "까닭": "a lot more — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#116:2",
+   "결론": "동의",
+   "까닭": "'조처' → step — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#117:0",
+   "결론": "동의",
+   "까닭": "'매혹적인' → charming — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#117:1",
+   "결론": "동의",
+   "까닭": "attractive — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:0",
+   "결론": "동의",
+   "까닭": "50 percent(표준 표기) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:1",
+   "결론": "동의",
+   "까닭": "'봉급 인상' → a raise — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:2",
+   "결론": "동의",
+   "까닭": "salary increase — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:3",
+   "결론": "동의",
+   "까닭": "'받다' → receive — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#119:4",
+   "결론": "동의",
+   "까닭": "pay rise(영국) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#122:0",
+   "결론": "동의",
+   "까닭": "Will this work? — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#122:1",
+   "결론": "동의",
+   "까닭": "Will this be enough? — 맞는 영어 · '이것이면 될까' 뜻 그대로.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#122:2",
+   "결론": "동의",
+   "까닭": "Would this do? — 공손한 꼴 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#123:0",
+   "결론": "뒤집음",
+   "까닭": "can 은 '더 좋을 수 없을 것이다' 의 '것이다'(추측)를 빠뜨림 · 'Nothing could be better' 는 굳은 관용 — 한국어 문제 뜻 그대로가 아니라 70점이 맞음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:0",
+   "결론": "동의",
+   "까닭": "'집으로' → to my house — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:1",
+   "결론": "동의",
+   "까닭": "'길' → street — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:2",
+   "결론": "동의",
+   "까닭": "Will this road take me home? — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:3",
+   "결론": "동의",
+   "까닭": "lead me home — 맞는 영어(길이 사람을 이끄는 뜻).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#124:4",
+   "결론": "동의",
+   "까닭": "한국어 괄호 '이 길로 가면 우리 집으로 가나' → go to my house — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#125:0",
+   "결론": "동의",
+   "까닭": "모범 that · '그것은' → it 70점 — 명령서 기준 막힘(더23).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#125:1",
+   "결론": "동의",
+   "까닭": "'내 능력 밖' → beyond my ability — 곧은 번역 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#125:2",
+   "결론": "동의",
+   "까닭": "it + beyond my ability — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#126:0",
+   "결론": "동의",
+   "까닭": "make reservations — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#126:1",
+   "결론": "동의",
+   "까닭": "'예약' → booking(영국) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#128:0",
+   "결론": "동의",
+   "까닭": "cross the road — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#128:1",
+   "결론": "동의",
+   "까닭": "Were they not + road — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#129:0",
+   "결론": "동의",
+   "까닭": "'나에게 들르다' → drop by my place — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#129:1",
+   "결론": "동의",
+   "까닭": "stop by my place — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#130:0",
+   "결론": "동의",
+   "까닭": "take my advice — 맞는 영어(R: 스스로 잰 것에서도 같은 막힘).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#131:0",
+   "결론": "동의",
+   "까닭": "rest(동사) — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#131:1",
+   "결론": "동의",
+   "까닭": "take a break — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#131:2",
+   "결론": "동의",
+   "까닭": "have a rest(영국) — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:0",
+   "결론": "동의",
+   "까닭": "achieve — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:1",
+   "결론": "동의",
+   "까닭": "wasn't able to — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:2",
+   "결론": "동의",
+   "까닭": "fulfill — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#132:3",
+   "결론": "동의",
+   "까닭": "make his dream come true — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#133:0",
+   "결론": "동의",
+   "까닭": "per year — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#133:1",
+   "결론": "동의",
+   "까닭": "go for a picnic — 맞는 영어(R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#133:2",
+   "결론": "동의",
+   "까닭": "how many times a year 뒤 복수 generic(go to concerts 처럼) go on picnics — 맞는 영어 · 뜻 같음.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:0",
+   "결론": "동의",
+   "까닭": "don't really get — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:1",
+   "결론": "동의",
+   "까닭": "'모르겠다' → understand — 맞는 영어 · 가장 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:2",
+   "결론": "동의",
+   "까닭": "see your point — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#135:3",
+   "결론": "동의",
+   "까닭": "한국어 괄호 '무슨 말씀인지' → what you mean — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#136:0",
+   "결론": "동의",
+   "까닭": "모범 that · '그것이' → it 70점 — 명령서 기준 막힘(더24 · R: 에서도 같음).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:0",
+   "결론": "동의",
+   "까닭": "한국어에 please 없음 — please 없는 곧은 번역 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:1",
+   "결론": "동의",
+   "까닭": "Could you — 부탁의 흔한 꼴 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:2",
+   "결론": "동의",
+   "까닭": "please 를 가운데에 — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:3",
+   "결론": "동의",
+   "까닭": "Will you please — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:4",
+   "결론": "동의",
+   "까닭": "Could you please — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#138:5",
+   "결론": "동의",
+   "까닭": "'말하다' → talk — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:0",
+   "결론": "동의",
+   "까닭": "Can I — 맞는 영어 · 가장 흔한 꼴.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:1",
+   "결론": "동의",
+   "까닭": "telephone number — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:2",
+   "결론": "동의",
+   "까닭": "Could I — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#139:3",
+   "결론": "동의",
+   "까닭": "Can I get(구어) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#140:0",
+   "결론": "동의",
+   "까닭": "한국어 괄호 '연락하면' → contact — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#140:1",
+   "결론": "동의",
+   "까닭": "could(공손) — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#143:0",
+   "결론": "동의",
+   "까닭": "at the bank — 맞는 영어(㉯).",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#143:1",
+   "결론": "동의",
+   "까닭": "Is he not … at a bank — 다른 정답 조합 빈틈 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#143:2",
+   "결론": "동의",
+   "까닭": "work in a bank — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#144:0",
+   "결론": "동의",
+   "까닭": "'그의 말' → what he says — 뜻 그대로 · 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#144:1",
+   "결론": "동의",
+   "까닭": "his words — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#145:0",
+   "결론": "동의",
+   "까닭": "give a speech — 맞는 영어 · 흔함.",
+   "때": "2026-09-24 22:13"
+  },
+  {
+   "key": "B:grammar1/gh1-112#145:1",
+   "결론": "동의",
+   "까닭": "deliver a speech — 맞는 영어.",
+   "때": "2026-09-24 22:13"
+  }
+ ]
+}

@@ -1,0 +1,3382 @@
+{
+ "파일": "14.md",
+ "뽑은때": "2026-09-24 22:41",
+ "대상": [
+  {
+   "key": "R:grammar1/gh1-094#70",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-094#71",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-094#65",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-094#76",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "R:grammar1/gh1-094#64",
+   "까닭": "문항 5%(최소 3) — 잰 일꾼의 시험을 보지 않고 스스로 재기"
+  },
+  {
+   "key": "B:grammar1/gh1-088#1:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is this your task?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "과제 → task(사전 첫 뜻들 task · assignment · project) — 맞는 영어 · 뜻 그대로인데 homework · assignment 만 있어 0점. 새 다른 정답 'Is this your task?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#1:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is this your project?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "과제 → project(사전 뜻 — 연구 과제 · 학교 과제) — 맞는 영어인데 0점. 새 다른 정답 'Is this your project?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#2:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is this award yours?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "상(賞) → prize · award — 둘 다 사전 첫 뜻인데 award 꼴 0점. 새 다른 정답 'Is this award yours?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#3:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is your professor in good health?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "건강하다 → in good health(사전 번역) — 맞는 영어 · 뜻 그대로인데 낱말이 늘어 0점. 새 다른 정답 'Is your professor in good health?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#3:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is your professor well?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "건강하다 → well(아프지 않다는 뜻의 서술 형용사) — 흔한 맞는 영어인데 0점. 새 다른 정답 'Is your professor well?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#5:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are they police?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "police 는 '경찰관들' 을 뜻하는 복수 명사로 쓰는 맞는 영어(They are police.) — 뜻 그대로인데 다른 정답은 policemen · police officers 뿐이라 70점(12.md gh1-074 #10 'Were they police?' 판정과 같게). 새 다른 정답 'Are they police?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#6:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is your employer upset?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "문제의 괄호 '(기분 나쁘니)' 가 뜻을 풀어 줌 — upset 은 그 뜻의 가장 흔한 번역 · 맞는 영어인데 0점. 새 다른 정답 'Is your employer upset?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#6:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is your employer in a bad mood?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "괄호 '(기분 나쁘니)' 를 곧게 옮긴 in a bad mood — 맞는 영어인데 0점. 새 다른 정답 'Is your employer in a bad mood?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-088#7:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Is that ring yours?",
+    "점수": "70점",
+    "까닭": "'그 N' → that N 70점은 소유자 결정('그 N' 280곳 그대로)"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#9:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Whose motherland is this?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "조국 → motherland(사전 첫 뜻들 fatherland · motherland · homeland) — 맞는 영어인데 fatherland 와 철자가 비슷해 70점에 그침. 새 다른 정답 'Whose motherland is this?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#9:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Whose home country is this?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "조국 → home country — 흔한 맞는 영어 · 뜻 그대로인데 낱말이 늘어 0점. 새 다른 정답 'Whose home country is this?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#9:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Whose native country is this?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "조국 → native country(사전 뜻) — 맞는 영어인데 0점. 새 다른 정답 'Whose native country is this?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#11:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is the weather warm today?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 비운 주어를 '날씨' 로 채운 맞는 영어 · 흔한 꼴 — 뜻 그대로 · be 의문문인데 모범 it 꼴만 있어 0점(12.md gh1-074 '어제는 더웠나' 판정과 같게). 새 다른 정답 'Is the weather warm today?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#11:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is today warm?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'오늘' 을 주어로 옮긴 맞는 영어(Today is warm.) — be 의문문 꼴도 지킴. 모범 it 꼴만 있어 0점(12.md 'Was yesterday hot?' 판정과 같은 종류). 새 다른 정답 'Is today warm?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#12:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She is not so smart.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "그렇게 → so · that — not so smart 는 가장 흔한 번역 가운데 하나인데 70점. 새 다른 정답 'She is not so smart.'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#12:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She is not that clever.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "똑똑하다 → smart · clever · intelligent(사전 첫 뜻들) — clever 꼴 0점. 새 다른 정답 'She is not that clever.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#12:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She is not that intelligent.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "똑똑하다 → intelligent(사전 첫 뜻) — 0점. 새 다른 정답 'She is not that intelligent.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#13:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the general courageous?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "용감하다 → brave · courageous(사전 첫 뜻들) — 0점. 새 다른 정답 'Was the general courageous?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#15:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The microphone is still turned on.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "켜져 있다 → is (turned) on — is turned on 은 아주 흔한 맞는 번역인데 낱말 하나(turned — 기능어 아님)가 늘어 0점. 새 다른 정답 'The microphone is still turned on.'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#15:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The mic is still turned on.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(다른 정답 mic 꼴) — 0점. 새 다른 정답 'The mic is still turned on.'(mike 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#15:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The microphone is still switched on.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "켜져 있다 → switched on(영국 쪽에 흔함 · 사전 뜻) — 0점. 새 다른 정답 'The microphone is still switched on.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#16:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Where were the statesmen?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "정치가 → statesman · politician(사전 첫 뜻들 — '정치가' 는 statesman 에 가까운 말) — 0점. 새 다른 정답 'Where were the statesmen?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-088#16:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Where were those politicians?",
+    "점수": "70점",
+    "까닭": "'그 N' → those N 70점은 소유자 결정"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#17:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the assemblyman unhappy?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "국회의원 → assemblyman(한국 국회의원을 가리키는 사전 뜻) — 0점. 새 다른 정답 'Was the assemblyman unhappy?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#17:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the MP unhappy?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "국회의원 → MP(member of parliament — 영국 쪽 흔한 말 · 사전 뜻) — 영국/미국 낱말은 둘 다 맞는 영어인데 0점. 새 다른 정답 'Was the MP unhappy?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#18:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Whose was this decision?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'Whose is this ~?' 는 한국 학교 문법이 'Whose ~ is this?' 와 함께 가르치는 맞는 꼴 — 과거로 옮긴 맞는 영어 · 뜻 그대로인데 70점(12.md gh1-074 #19 'Whose was this car?' 판정과 같게). 새 다른 정답 'Whose was this decision?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#19:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was yesterday hot?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 '어제는' 을 주어로 곧게 옮긴 맞는 영어(Yesterday was hot.) — be 과거 의문문 꼴도 지킴. 모범 it 꼴만 있어 0점(12.md gh1-074 같은 문장 판정과 같게). 새 다른 정답 'Was yesterday hot?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-088#19:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the weather hot yesterday?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 비운 주어를 '날씨' 로 채운 맞는 영어 · 흔한 꼴 — 0점(12.md 같은 문장 판정과 같게). 새 다른 정답 'Was the weather hot yesterday?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#20:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was last week cool?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'지난주는' 을 주어로 곧게 옮긴 맞는 영어(Last week was cool.) — be 과거 의문문 꼴도 지킴. 모범 it 꼴만 있어 0점(gh1-088 #19 · 12.md 판정과 같은 종류). 새 다른 정답 'Was last week cool?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#20:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was the weather cool last week?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어가 비운 주어를 '날씨' 로 채운 맞는 영어 · 흔한 꼴 — 0점(gh1-088 #19 와 같은 종류). 새 다른 정답 'Was the weather cool last week?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#21:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Was this your gun?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "소총 → gun(총) — 바로 뒤 짝 #22 는 권총에 gun 꼴('Was this gun yours?')을 받음; 같은 기준이면 이 문항도 받아야 하는데 0점. 새 다른 정답 'Was this your gun?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#23:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were the government officers honest?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "관리 → official · officer(사전 뜻 — government officer 는 영국 쪽에 흔한 맞는 영어) — 70점. 새 다른 정답 'Were the government officers honest?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#24:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were Democrats and Republicans co-operative?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "co-operative(하이픈)는 영국 사전 표기 — 채점이 하이픈을 낱말 안에 남겨 철자 실수로 봐 70점(18.md co-existence 판정과 같은 종류 · 채점 코드 한 곳에서도 풀림). 새 다른 정답 'Were Democrats and Republicans co-operative?'(the 꼴 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#25:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does the federal government have good policies?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 '좋은 정책을' 은 수를 가르지 않음 — 정부의 정책은 복수 good policies 도 흔한 맞는 영어인데 0점(빠진 a 자리와 짝지어져 0점). 새 다른 정답 'Does the federal government have good policies?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#27:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Don't your parents have an issue?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "문제 → issue(have an issue = have a problem, 흔한 번역) — 0점(12.md '문제 → issue' 판정과 같게). 새 다른 정답 'Don't your parents have an issue?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#28:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't the senator have a choice?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "선택안 → option · choice — have a choice 는 같은 뜻의 흔한 맞는 영어인데 0점. 새 다른 정답 'Doesn't the senator have a choice?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#28:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't the senator have an alternative?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "선택안 → alternative(사전 뜻 — 대안) — 0점. 새 다른 정답 'Doesn't the senator have an alternative?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't the congressman wake up your mother?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 구동사 wake up 의 목적어 자리 — 명사 목적어는 wake up your mother · wake your mother up 둘 다 표준인데 70점. 새 다른 정답 'Doesn't the congressman wake up your mother?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't the congressman wake your mother?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "깨우다 → wake(타동사 — up 없이도 맞는 영어: Don't wake the baby.) — 70점. 새 다른 정답 'Doesn't the congressman wake your mother?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't the representative wake your mother up?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "하원의원 → representative(미국 하원의원의 정식 이름 · 사전 뜻) — 0점. 새 다른 정답 'Doesn't the representative wake your mother up?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does the congressman not wake up your mother?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "받는 풀어 쓴 부정 의문(Does … not)과 wake up your mother 의 조합 — 70점. 새 다른 정답 'Does the congressman not wake up your mother?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#30:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does the telephone operator like it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "교환원 = telephone operator(사전 뜻 그대로) — 뜻을 더 곧게 옮긴 맞는 영어인데 낱말이 늘어 0점. 새 다른 정답 'Does the telephone operator like it?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did the financial district not face a big rebuilding job?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "다른 정답 조합 빠짐 — 풀어 쓴 부정 의문(Did … not)은 major 꼴만, big 은 줄인 꼴(Didn't)만 있어 70점. 새 다른 정답 'Did the financial district not face a big rebuilding job?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the financial district face a major reconstruction job?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "재건 → reconstruction(사전 첫 뜻) — 0점. 새 다른 정답 'Didn't the financial district face a major reconstruction job?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the financial district face a big reconstruction job?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(big 꼴) — 0점. 새 다른 정답 'Didn't the financial district face a big reconstruction job?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the financial district face a large rebuilding job?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "큰 → large(사전 첫 뜻) — 0점. 새 다른 정답 'Didn't the financial district face a large rebuilding job?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#34:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do your friends truly mean it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "정말로 → really · truly(사전 뜻) — 0점. 새 다른 정답 'Do your friends truly mean it?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#35:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't your commander show appropriate respect for the dead?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "적절한 → appropriate(사전 첫 뜻) — 0점. 새 다른 정답 'Doesn't your commander show appropriate respect for the dead?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#35:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Doesn't your commander show proper respect to the dead?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "show respect to ~ 도 흔한 맞는 영어 — 전치사만 달라 70점. 새 다른 정답 'Doesn't your commander show proper respect to the dead?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#35:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does your commander not show appropriate respect for the dead?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "받는 풀어 쓴 꼴(Does … not) × appropriate — 0점. 새 다른 정답 'Does your commander not show appropriate respect for the dead?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#36:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does the machine work like that?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "그런 식으로 → that way · like that — like that 은 가장 흔한 번역 가운데 하나인데 0점. 새 다른 정답 'Does the machine work like that?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#36:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does the machine operate that way?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "작동하다 → operate(사전 첫 뜻) — 0점. 새 다른 정답 'Does the machine operate that way?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do they often take a plane?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "비행기를 타다 → take a plane(단수 · 흔한 맞는 영어) — 다른 정답은 복수 planes · airplanes 뿐이라 0점. 새 다른 정답 'Do they often take a plane?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do they often travel by plane?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "비행기를 타다 → travel by plane(흔한 번역) — 0점. 새 다른 정답 'Do they often travel by plane?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do they frequently fly?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "㉰ 부사 자리 — 'Do they often fly?' · 'Do they fly frequently?' 는 받는데 frequently 를 앞에 둔 꼴은 70점. 새 다른 정답 'Do they frequently fly?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do they often take airplanes?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "다른 정답 조합 빠짐 — 'Do they often take planes?' · 'Do they take airplanes often?' 은 받는데 이 꼴은 70점. 새 다른 정답 'Do they often take airplanes?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Do they take planes frequently?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "다른 정답 조합 빠짐 — 'Do they take airplanes frequently?' · 'Do they take planes often?' 은 받는데 이 꼴은 0점. 새 다른 정답 'Do they take planes frequently?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#38:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the terrorist place a bomb in the car?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "(폭탄을) 장치하다 → plant · place — place a bomb 은 뉴스에 흔한 맞는 영어인데 0점. 새 다른 정답 'Didn't the terrorist place a bomb in the car?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#38:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't the terrorist put a bomb in the car?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "장치하다 → put(놓아 두다) — 쉬운 맞는 영어 · 뜻 그대로인데 0점. 새 다른 정답 'Didn't the terrorist put a bomb in the car?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-090#38:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Didn't the terrorist plant a bomb in that car?",
+    "점수": "70점",
+    "까닭": "'그 N' → that N 70점은 소유자 결정"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#39:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does it occur outside the border?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "일어나다 → occur(사전 첫 뜻들) — 다음 강의의 같은 문항 gh1-092 #39 는 occur 를 받는데 여기는 0점. 새 다른 정답 'Why does it occur outside the border?'(that 꼴도)",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#39:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is it happening outside the border?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "결정 4 로 이 문항은 진행형 'Why is it taking place …' 를 받음 — happen 의 진행형 조합이 빠져 70점. 새 다른 정답 'Why is it happening outside the border?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-090#39:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does it happen outside the borders?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "국경 밖 → outside the borders(복수 — 나라의 국경을 뜻하는 흔한 맞는 영어) — 70점. 새 다른 정답 'Why does it happen outside the borders?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#39:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is it occurring outside the border?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "발생하다 → occur(이 문항이 받는 낱말) — 결정 4 로 진행형 'Why is it taking place …' 를 받는데 occur 의 진행형 조합이 빠져 70점. 새 다른 정답 'Why is it occurring outside the border?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#39:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is it happening outside the border?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "위와 같음(happen 의 진행형 — 이 문항은 happen 도 받음) — 70점. 새 다른 정답 'Why is it happening outside the border?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#39:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why does it occur outside the borders?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "국경선 밖 → outside the borders(복수 — 나라의 국경을 뜻하는 흔한 맞는 영어) — 70점. 새 다른 정답 'Why does it occur outside the borders?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#40:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are these small consequences?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "작은 → small(사전 첫 뜻) — small consequences 도 맞는 영어인데 0점. 새 다른 정답 'Are these small consequences?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#40:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are these minor effects?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "문제의 괄호 '(영향)' 을 옮긴 effects — 맞는 영어인데 0점. 새 다른 정답 'Are these minor effects?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#40:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Are these small effects?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위 둘을 함께(small · effects) — 0점. 새 다른 정답 'Are these small effects?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#41:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is this a normal way?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '정상적인 방식' 에 '그' 가 없음 — a normal way 도 맞는 영어인데 관사만 달라 70점. 새 다른 정답 'Is this a normal way?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#41:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is this the normal method?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "방식 → method(사전 첫 뜻들 way · method · manner) — 0점. 새 다른 정답 'Is this the normal method?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#42:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why are they developing the programmes?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 철자 programme(s) — 맞는 영어인데 채점이 철자 실수로 보아 70점(12.md colour 판정과 같은 종류). 새 다른 정답 'Why are they developing the programmes?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#43:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why was he referring to the three countries?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "언급하다 → mention · refer to(사전 첫 뜻들) — 0점. 새 다른 정답 'Why was he referring to the three countries?'(3 countries 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#44:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why's your mother generous?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "모범의 표준 줄임꼴(why is → why's) — 채점기 줄임꼴 목록(src/lib/grammarGrading.ts CONTRACTIONS 의 's 앞 낱말)에 why 가 없어 풀지 못하고 0점(12.md gh1-078 #2 · #5 와 같은 코드 빈틈 — 대체 답안보다 채점 코드 한 곳에서 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#44:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is your mother tolerant?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "관대하다 → tolerant(사전 첫 뜻들 generous · tolerant · lenient — 너그럽다는 뜻) — 0점. 새 다른 정답 'Why is your mother tolerant?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#44:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is your mother lenient?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "관대하다 → lenient(사전 뜻 — 엄하지 않다) — 0점. 새 다른 정답 'Why is your mother lenient?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#46:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why are the specialists feeling better about the economy?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "전문가 → expert · specialist(사전 첫 뜻들) — 0점. 새 다른 정답 'Why are the specialists feeling better about the economy?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#47:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why were the people accepting the president's speech favorably?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "받아들이다 → accept(사전 첫 뜻) — 맞는 영어 · 뜻 그대로인데 0점. 새 다른 정답 'Why were the people accepting the president's speech favorably?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#47:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why were the people receiving the speech of the president favorably?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ 소유격 — 대통령의 연설 → the speech of the president 도 맞는 영어인데 낱말이 늘어 0점. 새 다른 정답 'Why were the people receiving the speech of the president favorably?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-092#47:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Why were those people receiving the president's speech favorably?",
+    "점수": "70점",
+    "까닭": "'그 N' → those N 70점은 소유자 결정"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#48:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why do they purchase it on the black market?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "사다 → buy · purchase — 0점. 새 다른 정답 'Why do they purchase it on the black market?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#49:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why is he not submitting the budget to Congress?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "받는 'Why isn't he …' 를 풀어 쓴 꼴(Why is he not …) — 이 과정은 풀어 쓴 부정 의문을 받는데(같은 읽을거리 gh1-090 #27 · #28 · 이 강의 #52) 여기만 70점. 새 다른 정답 'Why is he not submitting the budget to Congress?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#49:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why isn't he submitting the budget to Parliament?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "의회 → parliament(사전 첫 뜻들 congress · parliament · assembly) — 0점. 새 다른 정답 'Why isn't he submitting the budget to Parliament?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#49:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why isn't he presenting the budget to Congress?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "(예산을) 제출하다 → present(흔한 연어 present the budget) — 0점. 새 다른 정답 'Why isn't he presenting the budget to Congress?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#50:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is the former the idea of the government?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉯ 소유격 — 정부의 아이디어 → the idea of the government 도 맞는 영어인데 낱말이 늘어 0점. 새 다른 정답 'Is the former the idea of the government?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#53:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Who put this angel on Earth only for me?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "단지 → just · only(사전 첫 뜻들) — only for me 는 흔한 맞는 번역인데 70점. 새 다른 정답 'Who put this angel on earth only for me?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#53:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Who placed this angel on earth just for me?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "놓다 → put · place — 0점. 새 다른 정답 'Who placed this angel on earth just for me?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#54:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Congress approved the bill, didn't they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "조직을 뜻하는 집단 명사(Congress)를 꼬리에서 they 로 받는 것은 흔한 맞는 영어 — 틀린 꼬리가 아니라서 '꼬리만 틀린 답 70점' 결정에 들지 않음; 70점(13.md gh1-084 #23 navy 판정과 같게). 새 다른 정답 'Congress approved the bill, didn't they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#54:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Congress approved the bill, did it not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did it not — 과정이 gh1-038(3단계 부가의문문)에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님, 12.md 판정과 같게). 70점. 새 다른 정답 'Congress approved the bill, did it not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#54:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Parliament approved the bill, didn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "의회 → parliament(사전 첫 뜻들) — 0점. 새 다른 정답 'Parliament approved the bill, didn't it?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-092#54:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "The Congress approved the bill, didn't it?",
+    "점수": "70점",
+    "까닭": "결정 2 — 기능어 the 하나 더 70점(적지 않음)"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-092#54:1",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Congress approved that bill, didn't it?",
+    "점수": "70점",
+    "까닭": "'그 N' → that N 70점은 소유자 결정"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The law goes into effect this month, doesn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "발효하다 → take effect · go into effect · come into effect(사전 뜻 — 미국 쪽은 go into effect 가 흔함) — 0점. 새 다른 정답 'The law goes into effect this month, doesn't it?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The law comes into effect this month, doesn't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "발효하다 → come into effect(영국 쪽에 흔함) — 0점. 새 다른 정답 'The law comes into effect this month, doesn't it?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The law will take effect this month, won't it?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "한국어 '발효하지' 는 때를 가르지 않음(정해진 앞날) — will take effect 도 흔한 맞는 영어인데 0점. 새 다른 정답 'The law will take effect this month, won't it?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The law takes effect this month, does it not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 does it not — gh1-038 에서 가르치는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'The law takes effect this month, does it not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#56:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Is the rule applied to each of his sons?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "적용되다 → be applied(한국어 꼴 그대로의 수동) — 맞는 영어 · 뜻 그대로인데 0점. 새 다른 정답 'Is the rule applied to each of his sons?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#57:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does each student have his/her own project?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "his or her 를 빗금으로 쓴 흔한 글 표기 his/her — 다른 정답 'his or her' 와 같은 뜻인데 채점이 한 낱말로 봐 0점. 새 다른 정답 'Does each student have his/her own project?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#57:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does each student have her own project?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "성을 가리지 않는 '자기 자신의' 를 her 로 받는 것도 맞는 영어(his · their · his or her 는 받음) — 70점. 새 다른 정답 'Does each student have her own project?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-092#57:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Does every student have his own project?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "각 → each · every(사전 첫 뜻들 — 이 과정은 같은 읽을거리 gh1-094 #70 ~ #76 에서 each · every 를 같게 받음) — 70점. 새 다른 정답 'Does every student have his own project?'(their · his or her 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#58:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He wakes up beside a beautiful woman, doesn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "옆에서 → beside · next to(사전 첫 뜻들) — 0점. 새 다른 정답 'He wakes up beside a beautiful woman, doesn't he?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#58:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He gets up next to a beautiful woman, doesn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "일어나다 → get up · wake up(사전 첫 뜻들) — 0점. 새 다른 정답 'He gets up next to a beautiful woman, doesn't he?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#58:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He wakes up next to a beautiful woman, does he not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 does he not — 과정이 gh1-038(3단계 부가의문문)에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님, 12.md 판정과 같게). 70점. 새 다른 정답 'He wakes up next to a beautiful woman, does he not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#59:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What kind of policy does he need?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "어떤 → what kind of(사전 첫 뜻들 what · which · what kind of) — 0점(12.md '무슨 → what kind of' 판정과 같게). 새 다른 정답 'What kind of policy does he need?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#59:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Which policy does he need?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "어떤 → which(고르는 뜻) — 맞는 영어인데 70점. 새 다른 정답 'Which policy does he need?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#59:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "What policies does he need?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '정책' 은 수를 가르지 않음 — 복수 what policies 도 맞는 영어인데 70점. 새 다른 정답 'What policies does he need?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#61:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why was the American seated there?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "앉아 있다 → be seated(사전 뜻 · 맞는 영어) — 0점. 새 다른 정답 'Why was the American seated there?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#62:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Why was the vice-president taking part in the project?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "vice-president(하이픈)는 영국 사전 표기 — 채점이 하이픈을 낱말 안에 남겨 70점(18.md co-existence 판정과 같은 종류). 새 다른 정답 'Why was the vice-president taking part in the project?'(나머지 조합도 — 채점 코드 한 곳에서도 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#63:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She is the person in charge, isn't she?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "책임자 → the person in charge(사전 뜻 그대로) — 맞는 영어 · 뜻 그대로인데 낱말이 늘어 0점. 새 다른 정답 'She is the person in charge, isn't she?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#63:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She is in charge, is she not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 is she not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'She is in charge, is she not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#64:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "He is not on this airplane, is he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "비행기 → airplane · plane(사전 첫 뜻들) — 0점. 새 다른 정답 'He is not on this airplane, is he?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#65:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She was unlike most women, wasn't she?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "~와 달랐다 → was unlike ~(같은 뜻의 흔한 맞는 영어) — 0점. 새 다른 정답 'She was unlike most women, wasn't she?'(girls 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#65:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "She was different from most girls, was she not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 was she not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'She was different from most girls, was she not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#66:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Everybody likes the solution, do they not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 do they not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'Everybody likes the solution, do they not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#67:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They all liked the contract, didn't they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "바로 앞 #66 이 받는 'They all like …' 꼴의 과거 — 이 문항엔 그 꼴이 빠져 70점(3가지로 · all). 새 다른 정답 'They all liked the contract, didn't they?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#67:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Everybody liked the contract, did they not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did they not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'Everybody liked the contract, did they not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#68:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nobody likes the condition, do they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '그 조건' 은 수를 가르지 않음 — 조건 하나(the condition)도 맞는 영어인데 70점. 새 다른 정답 'Nobody likes the condition, do they?'(No one 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#68:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No-one likes the terms, do they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "no-one 은 no one 의 영국 표기(사전 표제 'no one (also no-one)') — 하이픈 하나로 한 낱말이 되어 부정어로도 안 잡혀 0점(03.md gh1-014 #27 판정과 같게 · 채점 코드 한 곳에서 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#69:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No-one hated her, did they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "no-one 은 no one 의 영국 표기 — 하이픈 하나로 한 낱말이 되어 부정어로도 안 잡혀 0점(#68 과 같은 코드 빈틈)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#70:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every agency enhances security.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "강화하다 → enhance(사전 첫 뜻들 strengthen · reinforce · enhance · tighten) — enhance security 는 흔한 연어인데 0점. 새 다른 정답 'Every agency enhances security.'(each · all 꼴도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#70:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every agency reinforces security.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "강화하다 → reinforce(사전 첫 뜻) — 0점. 새 다른 정답 'Every agency reinforces security.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#71:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All boys get a tour of the center.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "한국어 '모든 소년들이' 에 '그' 가 없음 — All boys 도 맞는 영어이고 바로 앞 #70 은 'All agencies …' 를 받음(the 가 빠져 70점). 새 다른 정답 'All boys get a tour of the center.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#71:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the boys get a tour of the centre.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "영국 철자 centre — 맞는 영어인데 채점이 철자 실수로 보아 70점(12.md colour 판정과 같은 종류). 새 다른 정답 'All the boys get a tour of the centre.'(every · each · all of the 꼴도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#71:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the boys get to tour the center.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "둘러보게 된다 → get to tour(한국어 '-게 된다' 를 더 곧게 옮긴 맞는 영어) — 70점. 새 다른 정답 'All the boys get to tour the center.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each boy worries about his own future.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "자신의 → his own(한국어 '자신의' 를 곧게 옮김) — 맞는 영어인데 own 이 기능어 목록에 없어 0점. 새 다른 정답 'Each boy worries about his own future.'(every · all … their own 꼴도)",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every boy is worried about his future.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "염려하다 → be worried about(흔한 번역) — 0점. 새 다른 정답 'Every boy is worried about his future.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All boys worry about their future.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'모든 소년이' 에 '그' 가 없음 — All boys 도 맞는 영어(#70 은 All agencies 를 받음)인데 70점. 새 다른 정답 'All boys worry about their future.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each boy is concerned about his future.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "염려하다 → be concerned about(사전 뜻) — 0점. 새 다른 정답 'Each boy is concerned about his future.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#73:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every boy got a prize.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "받다 → get · receive — 0점. 새 다른 정답 'Every boy got a prize.'(each · all 꼴도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#73:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every boy received an award.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "상 → prize · award(사전 첫 뜻들) — 0점. 새 다른 정답 'Every boy received an award.'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#73:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every boy received one prize.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'상을 하나' 를 곧게 옮긴 one prize — 맞는 영어 · 뜻 그대로인데 0점. 새 다른 정답 'Every boy received one prize.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#74:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the boys disregarded the advice.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "무시하다 → disregard(사전 뜻) — 0점. 새 다른 정답 'All the boys disregarded the advice.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#74:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The boys all ignored the advice.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'그 모든 소년들' → the boys all(흔한 맞는 영어 — #66 은 They all 꼴을 받음) — 70점. 새 다른 정답 'The boys all ignored the advice.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#75:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each of the boys did his homework.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "each of the boys 는 each boy 와 같은 뜻의 흔한 맞는 영어(받는 all of the boys 와 짝) — 70점. 새 다른 정답 'Each of the boys did his homework.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#76:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every priest attended the fund-raiser, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "fund-raiser(하이픈)는 사전에 있는 같은 낱말의 표기 — 채점이 하이픈을 낱말 안에 남겨 70점. 새 다른 정답 'Every priest attended the fund-raiser, didn't he?'(채점 코드 한 곳에서도 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#76:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every priest attended the fundraising event, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "모금회 → fundraising event(사전 뜻 그대로) — 70점. 새 다른 정답 'Every priest attended the fundraising event, didn't he?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-094#76:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Every priest attended the fundraiser, did he not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did he not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'Every priest attended the fundraiser, did he not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#77:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each mayor got a warning, didn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "받다 → get · receive — 힌트 Each 를 지킨 맞는 영어인데 0점. 새 다른 정답 'Each mayor got a warning, didn't he?'(they 꼬리 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#77:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each mayor received one warning, didn't he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "'하나의 경고' 를 곧게 옮긴 one warning — 맞는 영어 · 뜻 그대로인데 0점. 새 다른 정답 'Each mayor received one warning, didn't he?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#77:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Each mayor received a warning, did he not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did he not — 과정이 gh1-038(3단계 부가의문문)에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님, 12.md 판정과 같게). 70점. 새 다른 정답 'Each mayor received a warning, did he not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the governors had a difficult time, didn't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "고생하다 → have a hard time · have a difficult time — 같은 뜻의 아주 흔한 영어인데 0점. 새 다른 정답 'All the governors had a difficult time, didn't they?'(all of the 꼴도)",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the governors had a tough time, didn't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "고생하다 → have a tough time(흔한 구어) — 0점. 새 다른 정답 'All the governors had a tough time, didn't they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the governors suffered, didn't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "고생하다 → suffer(사전 뜻) — 0점. 새 다른 정답 'All the governors suffered, didn't they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The governors all had a hard time, didn't they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "'그 모든 주지사들' → the governors all(흔한 맞는 영어 · 힌트 all 지킴) — 70점. 새 다른 정답 'The governors all had a hard time, didn't they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:4",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All the governors had a hard time, did they not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did they not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'All the governors had a hard time, did they not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#79:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Not every boy died, did he?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "목숨을 잃다 → die(사전 뜻) — 부분 부정 꼴(Not every)과 힌트 Every 를 지킨 맞는 영어인데 0점. 새 다른 정답 'Not every boy died, did he?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#82:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All of them face a clean-up job.",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "clean-up(하이픈)은 사전 표기(특히 영국) — 채점이 하이픈을 낱말 안에 남겨 70점. 새 다른 정답 'All of them face a clean-up job.'(They all 짝도 — 채점 코드 한 곳에서도 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#82:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "All of them face a cleaning task.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "일 → task(사전 뜻) — 0점. 새 다른 정답 'All of them face a cleaning task.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#83:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Not all of them smelt it.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "영국 과거형 smelt — 맞는 영어인데 smelled 와 달라 0점. 새 다른 정답 'Not all of them smelt it.'(that 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#83:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "They didn't all smell it.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "부분 부정의 흔한 맞는 꼴(they … not all) — 뜻 그대로('모두가 … 는 않았다')이고 #82 는 They all 꼴을 받는데 0점. 새 다른 정답 'They didn't all smell it.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#84:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nobody phoned.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "전화하다 → phone(사전 뜻 · 영국 쪽에 흔함) — 0점. 새 다른 정답 'Nobody phoned.' · 'No one phoned.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#84:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No-one called.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "no-one 은 no one 의 영국 표기(사전 표제 'no one (also no-one)') — 하이픈 하나로 한 낱말이 되어 부정어로도 안 잡혀 0점(03.md gh1-014 #27 판정과 같게 · 채점 코드 한 곳에서 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#85:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nobody disregards it.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "무시하다 → disregard(사전 뜻) — 0점. 새 다른 정답 'Nobody disregards it.'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#85:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No-one ignores it.",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "no-one 영국 표기 — 하이픈 하나로 한 낱말이 되어 부정어로도 안 잡혀 0점(#84 와 같은 코드 빈틈)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nobody's buying it, are they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "모범의 표준 줄임꼴(nobody is → nobody's) — 채점기 줄임꼴 목록(src/lib/grammarGrading.ts CONTRACTIONS 의 's 앞 낱말)에 nobody 가 없어 풀지 못하고 0점(why's 와 같은 종류의 코드 빈틈 — 채점 코드 한 곳에서 풀림)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No one's buying it, are they?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "다른 정답의 줄임꼴(no one is → no one's) — 목록에 one 이 없어 70점(같은 코드 빈틈)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nobody is purchasing it, are they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "사다 → purchase — 0점. 새 다른 정답 'Nobody is purchasing it, are they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No-one is buying it, are they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "no-one 영국 표기 — 하이픈 하나로 한 낱말이 되어 부정어로도 안 잡혀 0점(#84 와 같은 코드 빈틈)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#87:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Nobody knows it all, do they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "모든 것을 알다 → know it all(흔한 관용 · 같은 뜻) — 0점. 새 다른 정답 'Nobody knows it all, do they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#87:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "No-one knows everything, do they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "no-one 영국 표기 — 하이픈 하나로 한 낱말이 되어 부정어로도 안 잡혀 0점(#84 와 같은 코드 빈틈)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#88:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were there a lot of researchers in the lab?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ 많은 → many · a lot of — 가장 흔한 번역 가운데 하나인데 0점. 새 다른 정답 'Were there a lot of researchers in the lab?'(laboratory 짝도)",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#88:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Were there lots of researchers in the lab?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "많은 → lots of — 0점. 새 다른 정답 'Were there lots of researchers in the lab?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "S:grammar1/gh1-096#88:0",
+   "까닭": "안 적음 20%",
+   "주장": {
+    "답": "Were there many researchers in that lab?",
+    "점수": "70점",
+    "까닭": "'그 N' → that N 70점은 소유자 결정"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "There were 60 policemen in the police station, weren't there?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "경관 → policeman · police officer(사전 첫 뜻들) — 0점. 새 다른 정답 'There were 60 policemen in the police station, weren't there?'(sixty 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "There were 60 police officers in the police station, weren't there?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "경관 → police officer(사전 뜻 그대로) — 70점. 새 다른 정답 'There were 60 police officers in the police station, weren't there?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "There were 60 officers at the police station, weren't there?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "경찰서에 → at the police station(가장 흔한 전치사) — 70점. 새 다른 정답 'There were 60 officers at the police station, weren't there?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:3",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "There were 60 officers in the police station, were there not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 were there not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'There were 60 officers in the police station, were there not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#90:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "There weren't 60 officials at the office, were there?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "사무실에 → at the office(흔한 전치사) — 70점. 새 다른 정답 'There weren't 60 officials at the office, were there?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#91:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did a lot of ministers go there?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ 많은 → a lot of — 가장 흔한 번역 가운데 하나인데 0점. 새 다른 정답 'Did a lot of ministers go there?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#91:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Did a lot of pastors go there?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "위와 같음(다른 정답 pastors 꼴) — 0점. 새 다른 정답 'Did a lot of pastors go there?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#92:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't a lot of monks go to the temple?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ 많은 → a lot of — 0점. 새 다른 정답 'Didn't a lot of monks go to the temple?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#92:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Didn't many Buddhist monks go to the temple?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "승려 → Buddhist monk(사전 뜻 그대로) — 70점. 새 다른 정답 'Didn't many Buddhist monks go to the temple?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#93:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "A lot of principals went there, didn't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ 많은 → a lot of(긍정문에선 many 보다 흔함) — 0점. 새 다른 정답 'A lot of principals went there, didn't they?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#93:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Many headmasters went there, didn't they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "교장 → headmaster(영국 쪽 · 사전 뜻) — 영국/미국 낱말은 둘 다 맞는 영어인데 0점. 새 다른 정답 'Many headmasters went there, didn't they?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#93:2",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "Many principals went there, did they not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did they not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'Many principals went there, did they not?'",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#94:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "A lot of sergeants didn't go there, did they?",
+    "점수": "0점",
+    "심각도": "중간",
+    "까닭": "㉮ 많은 → a lot of — 0점. 새 다른 정답 'A lot of sergeants didn't go there, did they?'",
+    "확신": "높음"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#95:0",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The surgeon paid for the medication, didn't he?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "약 → medicine · medication(사전 첫 뜻들) — 70점. 새 다른 정답 'The surgeon paid for the medication, didn't he?'(she · they 꼬리 짝도)",
+    "확신": "보통"
+   }
+  },
+  {
+   "key": "B:grammar1/gh1-096#95:1",
+   "까닭": "막힘 전부",
+   "주장": {
+    "답": "The surgeon paid for the medicine, did he not?",
+    "점수": "70점",
+    "심각도": "낮음",
+    "까닭": "줄이지 않은 꼬리 did he not — gh1-038 에서 가르치고 다른 정답으로 받는 맞는 꼴(꼬리 틀림 아님). 70점. 새 다른 정답 'The surgeon paid for the medicine, did he not?'",
+    "확신": "보통"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "R:grammar1/gh1-094#64",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "He isn't on this plane, is he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He's not on this plane, is he?",
+     "점수": "만점"
+    },
+    {
+     "답": "He is not on this airplane, is he?",
+     "점수": "0점"
+    },
+    {
+     "답": "He isn't aboard this plane, is he?",
+     "점수": "0점"
+    },
+    {
+     "답": "He isn't on board this plane, is he?",
+     "점수": "70점"
+    },
+    {
+     "답": "He isn't in this plane, is he?",
+     "점수": "70점"
+    },
+    {
+     "답": "He is not on this flight, is he?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "He is not on this airplane, is he?",
+     "점수": "0점",
+     "까닭": "비행기 = airplane(미국 영어의 기본 낱말 · 한국 교과서가 처음 가르치는 뜻) — plane 과 같은 뜻 · 부가의문 꼬리 is he 그대로. 다른 정답이 하나도 없어 0점(airplane ↔ plane 은 철자 가까움에도 안 걸림). isn't 줄임꼴도 같이 풀림.",
+     "확신": "높음"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "He isn't aboard this plane, is he?",
+     "점수": "0점",
+     "까닭": "맞는 영어이나 '비행기에' 의 흔한 번역은 on — aboard 는 '탑승' 쪽 말로 이 문제에서 드묾(사전 뜻 번역이 아님)."
+    },
+    {
+     "답": "He isn't on board this plane, is he?",
+     "점수": "70점",
+     "까닭": "맞는 영어이나 드묾(위와 같음) · 70점."
+    },
+    {
+     "답": "He isn't in this plane, is he?",
+     "점수": "70점",
+     "까닭": "승객이 탄 것은 on a plane 이 관용 — in this plane 은 덜 자연스러움, 70점 합당."
+    },
+    {
+     "답": "He is not on this flight, is he?",
+     "점수": "0점",
+     "까닭": "flight = 항공편 — 한국어 '비행기' 와 낱말 뜻이 다름(곧은 번역 아님)."
+    }
+   ],
+   "까닭": "줄임꼴(isn't · he's)은 만점. 막힘은 airplane 하나(0점).",
+   "때": "2026-09-24 22:49"
+  },
+  {
+   "key": "R:grammar1/gh1-094#65",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "She was different from most women, wasn't she?",
+     "점수": "만점"
+    },
+    {
+     "답": "She was unlike most women, wasn't she?",
+     "점수": "0점"
+    },
+    {
+     "답": "She differed from most women, didn't she?",
+     "점수": "0점"
+    },
+    {
+     "답": "She was different than most women, wasn't she?",
+     "점수": "70점"
+    },
+    {
+     "답": "She wasn't like most women, was she?",
+     "점수": "0점"
+    },
+    {
+     "답": "She was different from most other women, wasn't she?",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "She was unlike most women, wasn't she?",
+     "점수": "0점",
+     "까닭": "'~와 다르다' = be unlike(사전 뜻) — 맞는 영어 · 긍정 그대로 · 꼬리 wasn't she 그대로. unlike 가 다른 정답에 없어 0점(girls 꼴도 같음).",
+     "확신": "보통"
+    },
+    {
+     "답": "She differed from most women, didn't she?",
+     "점수": "0점",
+     "까닭": "다르다 = differ(사전 첫 뜻들) — 일반동사라 꼬리가 didn't she 로 맞게 바뀜(부가의문 꼴 지킴). 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "She was different than most women, wasn't she?",
+     "점수": "70점",
+     "까닭": "different than + 명사는 미국 구어에 흔하나 문법 교재 · 격식 영어의 표준은 different from — 문법 과정에서 만점으로 둘지는 교육 방침 문제, 70점 그대로 무난."
+    },
+    {
+     "답": "She wasn't like most women, was she?",
+     "점수": "0점",
+     "까닭": "긍정 '달랐지' 를 부정문으로 바꾼 의역(꼬리도 뒤집힘) — 곧은 번역 아님."
+    },
+    {
+     "답": "She was different from most other women, wasn't she?",
+     "점수": "70점",
+     "까닭": "한국어에 없는 other 를 더함 — 70점 합당."
+    }
+   ],
+   "까닭": "women · girls · most of the 꼴은 이미 만점. 막힘은 unlike · differ 두 동의 표현(둘 다 0점, 흔함은 보통).",
+   "때": "2026-09-24 22:49"
+  },
+  {
+   "key": "R:grammar1/gh1-094#70",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Every agency enhances security.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every agency reinforces security.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every institution strengthens security.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every organization strengthens security.",
+     "점수": "0점"
+    },
+    {
+     "답": "All of the agencies strengthen security.",
+     "점수": "70점"
+    },
+    {
+     "답": "Every agency improves security.",
+     "점수": "0점"
+    },
+    {
+     "답": "Every agency strengthens its security.",
+     "점수": "70점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Every agency enhances security.",
+     "점수": "0점",
+     "까닭": "강화하다 = enhance(사전 뜻 · '보안 강화' = security enhancement, enhance security 는 아주 흔한 연어) — 다른 정답은 increase · strengthen · tighten 뿐이라 0점. Each · All · All the · All of the 꼴도 같이 막힘.",
+     "확신": "높음"
+    },
+    {
+     "답": "Every agency reinforces security.",
+     "점수": "0점",
+     "까닭": "강화하다 = reinforce(사전 첫 뜻) — reinforce security 맞는 연어. 0점. 다른 수량사 꼴도 같음.",
+     "확신": "보통"
+    },
+    {
+     "답": "Every institution strengthens security.",
+     "점수": "0점",
+     "까닭": "기관 = institution(사전 첫 뜻 — 금융기관 · 교육기관) — 문항은 agency 만 받아 0점. every · each · all 꼴 모두 같음.",
+     "확신": "높음"
+    },
+    {
+     "답": "Every organization strengthens security.",
+     "점수": "0점",
+     "까닭": "기관 = organization(사전 뜻) — 맞는 영어 · 뜻 그대로, 0점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "All of the agencies strengthen security.",
+     "점수": "70점",
+     "까닭": "결정 2(All the … 에 기능어 of 하나 더 → 70점). 다만 이 문항은 'All of the agencies increase security.' 가 만점이라 strengthen · tighten 에만 All of the 꼴이 없어 대체 답안이 고르지 않음(수정 세션 참고)."
+    },
+    {
+     "답": "Every agency improves security.",
+     "점수": "0점",
+     "까닭": "improve = 개선 — '강화' 와 뜻이 다름(곧은 번역 아님)."
+    },
+    {
+     "답": "Every agency strengthens its security.",
+     "점수": "70점",
+     "까닭": "결정 2(its 하나 더 → 70점)."
+    }
+   ],
+   "까닭": "동사(강화하다)와 주어(기관)의 흔한 번역 넷이 막힘 — enhance · reinforce · institution · organization. boost · heighten · step up · beef up 은 맞는 영어이나 '강화하다' 의 학습자 번역으로는 드물어 만들지 않음.",
+   "때": "2026-09-24 22:49"
+  },
+  {
+   "key": "R:grammar1/gh1-094#71",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "All the boys get to look around the center.",
+     "점수": "0점"
+    },
+    {
+     "답": "All the boys get to tour the center.",
+     "점수": "70점"
+    },
+    {
+     "답": "All the boys get a tour of the centre.",
+     "점수": "70점"
+    },
+    {
+     "답": "All boys get a tour of the center.",
+     "점수": "70점"
+    },
+    {
+     "답": "All the boys will get a tour of the center.",
+     "점수": "70점"
+    },
+    {
+     "답": "All the boys take a tour of the center.",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "All the boys get to look around the center.",
+     "점수": "0점",
+     "까닭": "둘러보다 = look around(사전 첫 뜻) · '~게 되다' = get to — 한국어를 가장 곧게 옮긴 영작인데 0점(모범 get a tour of 만 받음). Every boy gets · Each boy gets · All of the boys 꼴도 같이 0점.",
+     "확신": "높음"
+    },
+    {
+     "답": "All the boys get to tour the center.",
+     "점수": "70점",
+     "까닭": "get to tour = 둘러보게 되다 — 맞는 영어 · 뜻 그대로, 70점.",
+     "확신": "보통"
+    },
+    {
+     "답": "All the boys get a tour of the centre.",
+     "점수": "70점",
+     "까닭": "영국 철자 centre — 맞는 영어, 70점(같은 과정 gh1-092#47 은 favourably 를 만점으로 둠).",
+     "확신": "보통"
+    },
+    {
+     "답": "All boys get a tour of the center.",
+     "점수": "70점",
+     "까닭": "all + 관사 없는 복수 — 규칙 · 일정 진술로 자연스러움(같은 강의 #70 은 All agencies … 를 만점으로 둠), 70점.",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "All the boys will get a tour of the center.",
+     "점수": "70점",
+     "까닭": "결정 2(will 하나 더 → 70점)."
+    },
+    {
+     "답": "All the boys take a tour of the center.",
+     "점수": "0점",
+     "까닭": "'~게 된다'(get to · 주어짐)를 뺀 꼴 — 스스로 둘러본다는 말이 되어 곧은 번역 아님."
+    }
+   ],
+   "까닭": "가장 곧은 번역 get to look around 가 0점(높음). 나머지 셋은 70점(낮음).",
+   "때": "2026-09-24 22:49"
+  },
+  {
+   "key": "R:grammar1/gh1-094#76",
+   "결론": "다시 잼",
+   "시험": [
+    {
+     "답": "Every priest attended the fundraising event, didn't he?",
+     "점수": "70점"
+    },
+    {
+     "답": "Every priest went to the fundraiser, didn't he?",
+     "점수": "0점"
+    },
+    {
+     "답": "Every priest attended the fund-raiser, didn't he?",
+     "점수": "70점"
+    },
+    {
+     "답": "Every priest attended the fund raiser, didn't he?",
+     "점수": "만점"
+    },
+    {
+     "답": "All priests attended the fundraiser, didn't they?",
+     "점수": "70점"
+    },
+    {
+     "답": "Every priest participated in the fundraiser, didn't he?",
+     "점수": "0점"
+    }
+   ],
+   "막힘": [
+    {
+     "답": "Every priest attended the fundraising event, didn't he?",
+     "점수": "70점",
+     "까닭": "모금회 = fundraising event(가장 흔한 번역의 하나) — 맞는 영어 · 뜻 그대로, 70점. All the priests … didn't they 꼴도 70점.",
+     "확신": "높음"
+    },
+    {
+     "답": "Every priest went to the fundraiser, didn't he?",
+     "점수": "0점",
+     "까닭": "참석했다 → went to(행사에 갔다 = 참석) — 맞는 영어 · 뜻 같음, 0점.",
+     "확신": "보통"
+    },
+    {
+     "답": "Every priest attended the fund-raiser, didn't he?",
+     "점수": "70점",
+     "까닭": "fund-raiser 는 사전에 있는 하이픈 철자 — 70점(띄어 쓴 fund raiser 는 만점인데 하이픈만 70점).",
+     "확신": "보통"
+    }
+   ],
+   "안적음": [
+    {
+     "답": "All priests attended the fundraiser, didn't they?",
+     "점수": "70점",
+     "까닭": "특정한 그 모금회 — 관사 없는 all priests 는 '세상의 모든 신부' 로 읽혀 어색; All the priests 가 맞음(이미 만점)."
+    },
+    {
+     "답": "Every priest participated in the fundraiser, didn't he?",
+     "점수": "0점",
+     "까닭": "참석(attend) ≠ 참가 · 참여(participate) — 같은 강의 #62 가 '참여' 를 participate · take part 로 가름. 0점 합당."
+    }
+   ],
+   "까닭": "fund raiser(띄어 씀)는 만점. 막힘은 fundraising event(70) · went to(0) · fund-raiser(70).",
+   "때": "2026-09-24 22:49"
+  },
+  {
+   "key": "B:grammar1/gh1-088#1:0",
+   "결론": "동의",
+   "까닭": "task 는 '과제'(해야 할 일)의 사전 첫 뜻 — 맞는 영어 · 뜻 그대로 · 흔함. 다시 재도 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#1:1",
+   "결론": "동의",
+   "까닭": "project 도 과제(학교 · 연구 과제)의 사전 뜻 — homework 처럼 과제의 한 종류로 좁힐 뿐 뜻이 바뀌지 않는 맞는 영어. 흔함은 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#2:0",
+   "결론": "동의",
+   "까닭": "award 는 상(賞)의 가장 흔한 번역 가운데 하나 — 맞는 영어 · 뜻 그대로. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#3:0",
+   "결론": "동의",
+   "까닭": "in good health = 건강한 — 맞는 영어 · 흔한 꼴 · be 의문문 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#3:1",
+   "결론": "동의",
+   "까닭": "Is ~ well? 은 건강을 묻는 흔한 맞는 영어(서술 형용사 well). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#5:0",
+   "결론": "동의",
+   "까닭": "police 는 '경찰관들' 을 뜻하는 복수 명사로 쓰는 맞는 영어(Are they police?) — 뜻 그대로, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#6:0",
+   "결론": "동의",
+   "까닭": "문제가 괄호 '(기분 나쁘니)' 로 뜻을 풀어 줌 — upset 은 그 뜻의 흔한 맞는 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#6:1",
+   "결론": "동의",
+   "까닭": "in a bad mood 는 괄호 '(기분 나쁘니)' 를 곧게 옮긴 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-088#7:0",
+   "결론": "동의",
+   "까닭": "'그 N' → that N 70점은 소유자가 정한 것('그 N' 280곳 70점 그대로) — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#9:0",
+   "결론": "동의",
+   "까닭": "motherland = 조국(사전 첫 뜻) — 맞는 영어 · 흔함, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#9:1",
+   "결론": "동의",
+   "까닭": "home country 는 조국의 흔한 맞는 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#9:2",
+   "결론": "동의",
+   "까닭": "native country 도 조국 · 모국의 사전 번역 — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#11:0",
+   "결론": "동의",
+   "까닭": "한국어가 비운 주어를 the weather 로 채운 be 의문문 — 맞는 영어 · 흔함. 이 강의는 문항 모음(비인칭 it 을 따로 가르치는 과 아님). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#11:1",
+   "결론": "동의",
+   "까닭": "'오늘' 을 주어로 옮긴 Is today warm? — it 꼴보다 덜 관용적이나 맞는 영어(Today is warm.) · be 의문문 지킴. 확신은 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#12:0",
+   "결론": "동의",
+   "까닭": "not so smart 는 '그렇게 똑똑하지 않다' 의 가장 흔한 번역 가운데 하나 — 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#12:1",
+   "결론": "동의",
+   "까닭": "clever = 똑똑하다(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#12:2",
+   "결론": "동의",
+   "까닭": "intelligent = 똑똑하다 — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#13:0",
+   "결론": "동의",
+   "까닭": "courageous = 용감하다(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#15:0",
+   "결론": "동의",
+   "까닭": "is turned on = 켜져 있다 — 아주 흔한 맞는 영어(상태 수동). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#15:1",
+   "결론": "동의",
+   "까닭": "위와 같은 꼴의 mic 짝 — 다른 정답에 mic 이 있으니 이 조합도 필요. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#15:2",
+   "결론": "동의",
+   "까닭": "switched on 은 켜져 있다의 맞는 영어(영국 쪽 흔함). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#16:0",
+   "결론": "동의",
+   "까닭": "정치가 → statesman(사전 첫 뜻 — 한국어 '정치가' 는 statesman 쪽 말) — 맞는 영어 · 뜻 그대로. 학습자 빈도는 politician 보다 낮아 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-088#16:0",
+   "결론": "동의",
+   "까닭": "'그 N' → those N 70점은 소유자 결정 — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#17:0",
+   "결론": "동의",
+   "까닭": "assemblyman 은 한국 국회의원을 가리키는 흔한 영어 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#17:1",
+   "결론": "동의",
+   "까닭": "MP 는 국회의원의 영국 · 의회제 낱말 — 영국/미국 낱말은 둘 다 맞는 영어(기준). 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#18:0",
+   "결론": "동의",
+   "까닭": "대명사 whose 꼴(Whose was the decision? 은 쓰이는 맞는 영어) — 한국 학교 문법이 'Whose ~ is this?' 와 함께 가르침. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#19:0",
+   "결론": "동의",
+   "까닭": "'어제는' 을 주어로 옮긴 Was yesterday hot? — 맞는 영어(Yesterday was hot.) · be 과거 의문문 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-088#19:1",
+   "결론": "동의",
+   "까닭": "the weather 주어 — 맞는 영어 · 흔함. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#20:0",
+   "결론": "동의",
+   "까닭": "Last week was cool. 의 의문문 — 맞는 영어 · 뜻 그대로. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#20:1",
+   "결론": "동의",
+   "까닭": "the weather 주어 — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#21:0",
+   "결론": "동의",
+   "까닭": "gun 은 소총을 포함하는 일상어 — rifle 보다 넓을 뿐 뜻이 바뀌지 않음, 같은 강의 #22 는 권총에 gun 을 받음. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#23:0",
+   "결론": "동의",
+   "까닭": "government officer 는 영국 · 영연방에서 흔한 맞는 영어(관리 = official · officer). 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#24:0",
+   "결론": "동의",
+   "까닭": "co-operative 는 영국 사전 표기 — 맞는 영어, 하이픈 때문에 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#25:0",
+   "결론": "동의",
+   "까닭": "한국어 '좋은 정책을' 은 수를 가르지 않음 — good policies 맞는 영어 · 흔함. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#27:0",
+   "결론": "동의",
+   "까닭": "have an issue = have a problem — 흔한 맞는 영어 · 부정 의문 꼴 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#28:0",
+   "결론": "동의",
+   "까닭": "have a choice = 선택안이 있다 — 흔한 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#28:1",
+   "결론": "동의",
+   "까닭": "alternative 도 선택안의 사전 번역 — 맞는 영어, '다른 길' 느낌이 조금 더할 뿐. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:0",
+   "결론": "동의",
+   "까닭": "구동사 + 명사 목적어는 wake up your mother · wake your mother up 둘 다 표준. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:1",
+   "결론": "동의",
+   "까닭": "wake 는 up 없이도 타동사로 맞는 영어(Don't wake the baby.). 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:2",
+   "결론": "동의",
+   "까닭": "representative 는 미국 하원의원의 정식 이름 · 하원의원의 사전 뜻. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#29:3",
+   "결론": "동의",
+   "까닭": "받는 풀어 쓴 부정 의문(Does … not) × wake up your mother 의 맞는 조합. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#30:0",
+   "결론": "동의",
+   "까닭": "telephone operator = 교환원(사전 뜻 그대로) — 더 곧은 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:0",
+   "결론": "동의",
+   "까닭": "받는 두 꼴(Did … not · big)의 맞는 조합이 빠짐. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:1",
+   "결론": "동의",
+   "까닭": "reconstruction = 재건(사전 첫 뜻) — a major reconstruction job 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:2",
+   "결론": "동의",
+   "까닭": "위와 같음(big 짝). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#31:3",
+   "결론": "동의",
+   "까닭": "큰 → large — a large rebuilding job 맞는 영어(big 보다 덜 흔해 확신 보통). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#34:0",
+   "결론": "동의",
+   "까닭": "정말로 → truly — truly mean it 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#35:0",
+   "결론": "동의",
+   "까닭": "적절한 → appropriate(사전 첫 뜻) — appropriate respect 흔한 연어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#35:1",
+   "결론": "동의",
+   "까닭": "show respect to ~ 도 쓰이는 맞는 영어(for 가 더 흔함). 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#35:2",
+   "결론": "동의",
+   "까닭": "받는 Does … not 꼴 × appropriate 의 맞는 조합. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#36:0",
+   "결론": "동의",
+   "까닭": "그런 식으로 → like that — 가장 흔한 번역 가운데 하나. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#36:1",
+   "결론": "동의",
+   "까닭": "작동하다 → operate(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:0",
+   "결론": "동의",
+   "까닭": "take a plane(단수)은 흔한 맞는 영어 — 받는 planes · airplanes 와 같은 뜻. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:1",
+   "결론": "동의",
+   "까닭": "travel by plane 은 '비행기를 타다' 의 흔한 맞는 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:2",
+   "결론": "동의",
+   "까닭": "빈도부사를 본동사 앞에 둔 맞는 꼴(Do they often fly? 를 받음). 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:3",
+   "결론": "동의",
+   "까닭": "받는 꼴들(often take planes · take airplanes often)의 맞는 조합. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#37:4",
+   "결론": "동의",
+   "까닭": "받는 꼴들(take planes often · take airplanes frequently)의 맞는 조합. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#38:0",
+   "결론": "동의",
+   "까닭": "place a bomb 은 뉴스에 흔한 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#38:1",
+   "결론": "동의",
+   "까닭": "put a bomb in the car — 쉬운 맞는 영어 · 뜻 그대로(장치하다 → 놓아 두다). 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-090#38:0",
+   "결론": "동의",
+   "까닭": "'그 N' → that N 70점은 소유자 결정 — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#39:0",
+   "결론": "동의",
+   "까닭": "일어나다 → occur(사전 첫 뜻) — 다음 강의의 같은 문항(gh1-092 #39)은 받는데 여기만 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#39:1",
+   "결론": "동의",
+   "까닭": "결정 4 로 이 문항은 진행형(is taking place)을 받음 — happen 의 진행형이 빠진 것은 결정이 덜 들어간 것. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-090#39:2",
+   "결론": "동의",
+   "까닭": "outside the borders(나라의 국경 — 복수)는 흔한 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#39:0",
+   "결론": "동의",
+   "까닭": "결정 4 진행형 × 이 문항이 받는 occur 의 조합이 빠짐. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#39:1",
+   "결론": "동의",
+   "까닭": "결정 4 진행형 × happen 조합이 빠짐. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#39:2",
+   "결론": "동의",
+   "까닭": "borders 복수 — 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#40:0",
+   "결론": "동의",
+   "까닭": "작은 → small — small consequences 는 minor 보다 덜 굳은 연어이나 맞는 영어 · 뜻 그대로. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#40:1",
+   "결론": "동의",
+   "까닭": "문제 괄호 '(영향)' 을 옮긴 effects — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#40:2",
+   "결론": "동의",
+   "까닭": "위 둘(small · effects)의 조합 — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#41:0",
+   "결론": "동의",
+   "까닭": "한국어가 관사를 가르지 않음 — a normal way 도 맞는 영어. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#41:1",
+   "결론": "동의",
+   "까닭": "방식 → method(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#42:0",
+   "결론": "동의",
+   "까닭": "영국 철자 programmes — 맞는 영어, 철자 실수로 보아 70점(같은 과정 gh1-092 #47 은 favourably 를 만점으로 둠).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#43:0",
+   "결론": "동의",
+   "까닭": "언급하다 → refer to(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#44:0",
+   "결론": "동의",
+   "까닭": "why's 는 why is 의 줄임꼴(구어 · 비격식 글에 흔함) — 채점이 what's · how's · where's 는 풀면서 why's 는 못 풂. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#44:1",
+   "결론": "동의",
+   "까닭": "관대하다(너그럽다) → tolerant(사전 뜻) — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#44:2",
+   "결론": "동의",
+   "까닭": "관대하다(엄하지 않다) → lenient — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#46:0",
+   "결론": "동의",
+   "까닭": "전문가 → specialist(사전 첫 뜻) — 경제 전문가엔 expert 가 더 흔하나 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#47:0",
+   "결론": "뒤집음",
+   "까닭": "연설은 receive · take 하는 대상이고 accept(제안을 받아들임 · 수락)는 연설과 어울리는 연어가 아님 — 'accepting the president's speech favorably' 는 어색한 영어('호의적으로 받아들이다' 의 관용은 receive … favorably · take … well, 둘 다 이미 만점). 만점 정답으로 넣으면 어색한 연어를 가르침.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#47:1",
+   "결론": "동의",
+   "까닭": "㉯ 소유격 — the speech of the president 도 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-092#47:0",
+   "결론": "동의",
+   "까닭": "'그 N' → those N 70점은 소유자 결정 — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#48:0",
+   "결론": "동의",
+   "까닭": "사다 → purchase — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#49:0",
+   "결론": "동의",
+   "까닭": "Why is he not … 은 받는 Why isn't he … 를 풀어 쓴 표준 꼴(isn't → is not 로 풀면 낱말 차례만 달라 70점) — 과정이 다른 문항에서 풀어 쓴 부정 의문을 받음. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#49:1",
+   "결론": "동의",
+   "까닭": "의회 → parliament(사전 첫 뜻들) — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#49:2",
+   "결론": "동의",
+   "까닭": "present the budget 은 흔한 연어(예산을 제출하다). 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#50:0",
+   "결론": "동의",
+   "까닭": "㉯ 소유격 — the idea of the government 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#53:0",
+   "결론": "동의",
+   "까닭": "단지 → only — only for me 흔한 번역(Earth 대문자는 채점이 소문자로 봄). 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#53:1",
+   "결론": "동의",
+   "까닭": "놓다 → place — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#54:0",
+   "결론": "동의",
+   "까닭": "집단 명사를 꼬리에서 they 로 받는 것은 흔한 맞는 영어(미국 영어도 대명사는 복수가 흔함) — 틀린 꼬리가 아니라 '꼬리만 틀린 답 70점' 결정에 들지 않음. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#54:1",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did it not — 격식체의 맞는 꼴, 과정이 gh1-039 #7 · #8 · #19 · #20(are they not?)에서 다른 정답으로 받음. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#54:2",
+   "결론": "동의",
+   "까닭": "의회 → parliament — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-092#54:0",
+   "결론": "동의",
+   "까닭": "결정 2(기능어 the 하나 더 → 70점) — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-092#54:1",
+   "결론": "동의",
+   "까닭": "'그 N' → that N 70점은 소유자 결정 — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:0",
+   "결론": "동의",
+   "까닭": "발효하다 → go into effect(미국 쪽에 흔함) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:1",
+   "결론": "동의",
+   "까닭": "발효하다 → come into effect(영국 쪽에 흔함) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:2",
+   "결론": "동의",
+   "까닭": "㉱ 정해진 앞날 — 한국어가 때를 가르지 않음, will take effect · 꼬리 won't it 맞음. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#55:3",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 does it not — 맞는 꼴(과정이 다른 정답으로 받음). 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#56:0",
+   "결론": "동의",
+   "까닭": "적용되다 → be applied to — 한국어 꼴 그대로의 수동, 맞는 영어 · 뜻 거의 같음. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#57:0",
+   "결론": "동의",
+   "까닭": "his/her 는 his or her(받음)를 빗금으로 쓴 흔한 글 표기. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#57:1",
+   "결론": "동의",
+   "까닭": "성을 가리지 않는 '자기 자신의' 에 her 도 his 와 같은 자격의 맞는 영어(his 를 받음). 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-092#57:2",
+   "결론": "동의",
+   "까닭": "각 → every 도 사전 뜻(각 나라 = every country) — 이 문장에선 뜻 차이 없음. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#58:0",
+   "결론": "동의",
+   "까닭": "옆에서 → beside — 맞는 영어 · 흔함. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#58:1",
+   "결론": "동의",
+   "까닭": "일어나다 → get up(사전 첫 뜻) — wake up 보다 덜 관용적이나 맞는 영어 · 뜻 그대로(잠자리에서 일어남). 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#58:2",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 does he not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#59:0",
+   "결론": "동의",
+   "까닭": "어떤 → what kind of — 흔한 맞는 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#59:1",
+   "결론": "동의",
+   "까닭": "어떤 → which(고르는 뜻) — 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#59:2",
+   "결론": "동의",
+   "까닭": "한국어가 수를 가르지 않음 — what policies 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#61:0",
+   "결론": "동의",
+   "까닭": "앉아 있다 → be seated — 맞는 영어 · 뜻 그대로. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#62:0",
+   "결론": "동의",
+   "까닭": "vice-president 는 영국 사전 표기 — 맞는 영어, 하이픈 때문에 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#63:0",
+   "결론": "동의",
+   "까닭": "책임자 → the person in charge(사전 뜻 그대로) — 맞는 영어 · 꼬리 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#63:1",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 is she not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#64:0",
+   "결론": "동의",
+   "까닭": "비행기 → airplane(기본 낱말) — 내 R: 재기에서도 같은 막힘(0점) · 다른 정답 없음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#65:0",
+   "결론": "동의",
+   "까닭": "was unlike ~ = ~와 달랐다 — 내 R: 재기에서도 같은 막힘(0점).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#65:1",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 was she not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#66:0",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 do they not — 맞는 꼴 · 힌트 everybody 지킴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#67:0",
+   "결론": "동의",
+   "까닭": "바로 앞 #66 이 받는 They all 꼴의 과거 — 맞는 영어 · '3가지로' 의 all 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#67:1",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did they not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#68:0",
+   "결론": "동의",
+   "까닭": "한국어 '그 조건' 은 수를 가르지 않음 — 단수 the condition 도 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#68:1",
+   "결론": "동의",
+   "까닭": "no-one 은 no one 의 영국 표기(사전 표제에 있음) — 하이픈 한 낱말이 부정어로 안 잡혀 0점(채점 코드 빈틈).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#69:0",
+   "결론": "동의",
+   "까닭": "no-one 영국 표기 — #68 과 같은 코드 빈틈으로 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#70:0",
+   "결론": "동의",
+   "까닭": "강화하다 → enhance(enhance security 는 아주 흔한 연어) — 내 R: 재기에서도 같은 막힘(0점).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#70:1",
+   "결론": "동의",
+   "까닭": "강화하다 → reinforce(사전 첫 뜻) — 내 R: 재기에서도 같은 막힘(0점).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#71:0",
+   "결론": "동의",
+   "까닭": "all + 관사 없는 복수 — 규칙 · 일정 진술로 자연스러움(#70 은 All agencies 를 받음). 내 R: 과 같음, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#71:1",
+   "결론": "동의",
+   "까닭": "영국 철자 centre — 맞는 영어. 내 R: 과 같음, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#71:2",
+   "결론": "동의",
+   "까닭": "둘러보게 된다 → get to tour — 맞는 영어 · 뜻 그대로. 내 R: 과 같음, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:0",
+   "결론": "동의",
+   "까닭": "자신의 → his own — 한국어를 곧게 옮긴 맞는 영어(own 은 기능어가 아니라 길이 넘침으로 0점).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:1",
+   "결론": "동의",
+   "까닭": "염려한다 → is worried about — 흔한 맞는 번역. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:2",
+   "결론": "동의",
+   "까닭": "All boys + 일반 진술 — 맞는 영어(#70 All agencies 와 같은 종류). 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#72:3",
+   "결론": "동의",
+   "까닭": "염려하다 → be concerned about(사전 뜻) — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#73:0",
+   "결론": "동의",
+   "까닭": "받다 → get — Every boy got a prize. 흔한 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#73:1",
+   "결론": "동의",
+   "까닭": "상 → award(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#73:2",
+   "결론": "동의",
+   "까닭": "'상을 하나' → one prize — 곧은 번역 · 맞는 영어(하나임을 드러냄). 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#74:0",
+   "결론": "동의",
+   "까닭": "무시하다 → disregard(사전 뜻) — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#74:1",
+   "결론": "동의",
+   "까닭": "'그 모든 소년들' → the boys all(떠 있는 all) — 흔한 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#75:0",
+   "결론": "동의",
+   "까닭": "each of the boys = each boy — 흔한 맞는 영어(받는 all of the boys 와 짝). 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#76:0",
+   "결론": "동의",
+   "까닭": "fund-raiser 는 사전에 있는 하이픈 표기(띄어 쓴 fund raiser 는 만점인데 하이픈만 70점). 내 R: 과 같음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#76:1",
+   "결론": "동의",
+   "까닭": "모금회 → fundraising event — 흔한 맞는 번역. 내 R: 과 같음, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-094#76:2",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did he not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#77:0",
+   "결론": "동의",
+   "까닭": "받다 → get — 힌트 Each 지킨 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#77:1",
+   "결론": "동의",
+   "까닭": "'하나의 경고' → one warning — 곧은 번역 · 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#77:2",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did he not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:0",
+   "결론": "동의",
+   "까닭": "고생하다 → have a difficult time — 아주 흔한 맞는 영어 · 힌트 all 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:1",
+   "결론": "동의",
+   "까닭": "have a tough time — 흔한 맞는 영어(구어). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:2",
+   "결론": "동의",
+   "까닭": "고생하다 → suffer(사전 뜻, 조금 센 말) — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:3",
+   "결론": "동의",
+   "까닭": "'그 모든 주지사들' → the governors all — 맞는 영어 · 힌트 all 지킴. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#78:4",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did they not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#79:0",
+   "결론": "동의",
+   "까닭": "목숨을 잃다 → die — 부분 부정 Not every · 힌트 Every · 꼬리 did he 지킨 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#82:0",
+   "결론": "동의",
+   "까닭": "clean-up 은 사전 표기(특히 영국) — 맞는 영어, 하이픈 때문에 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#82:1",
+   "결론": "동의",
+   "까닭": "일 → task — a cleaning task 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#83:0",
+   "결론": "동의",
+   "까닭": "영국 과거형 smelt — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#83:1",
+   "결론": "동의",
+   "까닭": "They didn't all smell it 은 부분 부정의 표준 꼴(= Not all of them smelled it) — 뜻 그대로. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#84:0",
+   "결론": "동의",
+   "까닭": "전화하다 → phone(영국 쪽 흔함) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#84:1",
+   "결론": "동의",
+   "까닭": "no-one 영국 표기 — 부정어로 안 잡혀 0점(코드 빈틈).",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#85:0",
+   "결론": "동의",
+   "까닭": "무시하다 → disregard — 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#85:1",
+   "결론": "동의",
+   "까닭": "no-one 영국 표기 — 같은 코드 빈틈으로 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:0",
+   "결론": "동의",
+   "까닭": "nobody's = nobody is — 흔한 줄임꼴(구어 · 비격식 글), 채점 줄임꼴 목록에 없어 0점. 확신 보통.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:1",
+   "결론": "동의",
+   "까닭": "no one's = no one is — 같은 코드 빈틈으로 70점. 확신 보통.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:2",
+   "결론": "동의",
+   "까닭": "사다 → purchase — 맞는 영어 · 진행형 · 꼬리 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#86:3",
+   "결론": "동의",
+   "까닭": "no-one 영국 표기 — 같은 코드 빈틈으로 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#87:0",
+   "결론": "동의",
+   "까닭": "know it all = 모든 것을 알다(흔한 관용) — 맞는 영어 · 꼬리 지킴. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#87:1",
+   "결론": "동의",
+   "까닭": "no-one 영국 표기 — 같은 코드 빈틈으로 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#88:0",
+   "결론": "동의",
+   "까닭": "㉮ 많은 → a lot of — 가장 흔한 번역 가운데 하나. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#88:1",
+   "결론": "동의",
+   "까닭": "많은 → lots of — 흔한 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "S:grammar1/gh1-096#88:0",
+   "결론": "동의",
+   "까닭": "'그 N' → that N 70점은 소유자 결정 — 안 적는 게 맞음.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:0",
+   "결론": "동의",
+   "까닭": "경관 → policeman(사전 첫 뜻) — 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:1",
+   "결론": "동의",
+   "까닭": "경관 → police officer — 맞는 영어. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:2",
+   "결론": "동의",
+   "까닭": "경찰서에 → at the police station — 가장 흔한 전치사. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#89:3",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 were there not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#90:0",
+   "결론": "동의",
+   "까닭": "사무실에 → at the office — 흔한 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#91:0",
+   "결론": "동의",
+   "까닭": "㉮ 많은 → a lot of — 흔한 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#91:1",
+   "결론": "동의",
+   "까닭": "위와 같음(pastors 짝). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#92:0",
+   "결론": "동의",
+   "까닭": "㉮ 많은 → a lot of — 부정 의문에서도 맞는 영어. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#92:1",
+   "결론": "동의",
+   "까닭": "승려 → Buddhist monk(사전 뜻 그대로) — 맞는 영어. 확신 보통, 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#93:0",
+   "결론": "동의",
+   "까닭": "㉮ 많은 → a lot of(긍정문에선 many 보다 흔함). 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#93:1",
+   "결론": "동의",
+   "까닭": "교장 → headmaster(영국 낱말) — 영국/미국 낱말은 둘 다 맞는 영어. 확신 보통. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#93:2",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did they not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#94:0",
+   "결론": "동의",
+   "까닭": "㉮ 많은 → a lot of — 맞는 영어 · 부정문 · 꼬리 지킴. 0점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#95:0",
+   "결론": "동의",
+   "까닭": "약 → medication(사전 첫 뜻) — 맞는 영어. 70점.",
+   "때": "2026-09-24 22:59"
+  },
+  {
+   "key": "B:grammar1/gh1-096#95:1",
+   "결론": "동의",
+   "까닭": "줄이지 않은 꼬리 did he not — 맞는 꼴. 70점.",
+   "때": "2026-09-24 22:59"
+  }
+ ]
+}

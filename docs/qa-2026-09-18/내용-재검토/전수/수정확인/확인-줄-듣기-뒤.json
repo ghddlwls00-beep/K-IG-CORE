@@ -1,0 +1,179 @@
+{
+ "조각": "줄-듣기-뒤",
+ "뽑은때": "2026-09-25 04:51",
+ "대상": [
+  {
+   "key": "P77",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P77",
+    "판정": "제대로",
+    "main 글": "Every summer the lure of far-away places beckons to millions of Americans.",
+    "까닭": "main content/ld_english_scripts.json .d220[n=3].en 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .ko 도 바뀜(아래) — 뜻 짝 맞음. 짝 칸 n3.ko 도 바뀌었으나(수백만명 → 수백만 명 — 다른 줄 몫의 띄어쓰기, 뜻 그대로) 흠 없음. main 채점 함수로 보면 정답 'far-away' 는 legacy 꼴 'faraway' · spoken 꼴 'far away' 라 'faraway' · 'far away' · 'far-away' 셋 다 받음. main 힌트 줄(되살린 첫 줄)의 칩도 [far-away] 로 새 글과 같은 꼴.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "P76",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P76",
+    "판정": "제대로",
+    "main 글": "‘푸른 수염’은 부인을 수집했지만 고양이를 모으는 작가처럼 그는 자신의 표본이 죽은 것을 더 좋아했다.",
+    "까닭": "main content/ld_english_scripts.json .d219[n=5].ko 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .en 은 안 바뀜 — 뜻 짝 맞음. 같은 강의의 다른 바뀐 줄(n4.ko — 다른 줄 몫)도 읽어 봄 — 잘림 · 겹친 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "P75",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P75",
+    "판정": "제대로",
+    "main 글": "good luck charms. four-leaf clover. prosperity. rabbit foot. chain. entertainment. predictions. amusing. customers",
+    "까닭": "main content/lessons/ld/d217.json blocks[2](hints).text 가 '되살린 원본 첫 줄'(good luck charms. four-leaf clover. prosperity. rabbit foot. chain. entertainment.) 뒤에 고칠 글을 글자 그대로 담음 — 고칠 글의 항목이 모두 들어가고 옛 붙은 칩은 없음. 앞에 붙은 첫 줄은 수정 세션이 되살린 것(칩은 칩 조각 일꾼 몫). 같은 파일의 다른 블록은 안 바뀜.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "P74",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P74",
+    "판정": "제대로",
+    "main 글": "자신의 상상력과 한 영어 철자법 책을 이용하여 Sequoyah는 각 음에 대한 하나의 표시(sign)를 발명했다.",
+    "까닭": "main content/ld_english_scripts.json .d188[n=12].ko 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .en 은 안 바뀜 — 뜻 짝 맞음. 같은 강의 n8.ko(P220) · n1.ko('오래 전 → 오래전', 다른 줄 몫)도 바뀜 — 흠 없음. '그의' 를 빼고 '자신의' 로 시작 — 뒤 주어 Sequoyah 를 받음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "P79",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P79",
+    "판정": "제대로",
+    "main 글": "가장 중요한 소식이 있는 1면 이외에 스포츠면, 사교계 소식란, 만화, 연예면, 경제면, 사설이 있다.",
+    "까닭": "main content/ld_english_scripts.json .d163[n=2].ko 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .en 은 안 바뀜 — 뜻 짝 맞음. 같은 강의의 다른 바뀐 줄(n6.ko — 다른 줄 몫)도 읽어 봄 — 잘림 · 겹친 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "P78",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P78",
+    "판정": "제대로",
+    "main 글": "Monday. Friday. evenings. weekends. television. movies. sports. stamps. model airplanes.",
+    "까닭": "main content/lessons/ld/d158.json blocks[2](hints).text 가 고칠 글과 글자 그대로 같음. 같은 파일의 다른 블록은 안 바뀜.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "S10",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "S10",
+    "판정": "제대로",
+    "main 글": "겨울이 올 때 전체적인 사교 일정이 급격한 변화를 겪는다.",
+    "까닭": "main content/ld_english_scripts.json .d262[n=1].ko 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .en 은 안 바뀜 — 뜻 짝 맞음. 같은 강의 n2.ko '사교 활동'(다른 줄 몫)도 바뀜 — n1 '사교 일정' 과 잘 이어짐.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:23"
+   }
+  },
+  {
+   "key": "P228",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P228",
+    "판정": "제대로",
+    "main 글": "모든 공공 도서관은 여행과 휴가 가는 것에 대한 책이 많다.",
+    "까닭": "main content/ld_english_scripts.json .d223[n=1].ko 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .en 은 안 바뀜 — 뜻 짝 맞음. 같은 강의의 다른 바뀐 줄(n2.ko · n5.ko — 다른 줄 몫)도 읽어 봄 — 잘림 · 겹친 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  },
+  {
+   "key": "P229",
+   "까닭": "제대로 · 괜찮음 10%",
+   "주장": {
+    "id": "P229",
+    "판정": "제대로",
+    "main 글": "이런 책을 참조함으로써 어떤 주어진 위치이든 그곳의 모든 흥미 있는 장소들을 포함할 일정을 준비할 수 있다.",
+    "까닭": "main content/ld_english_scripts.json .d223[n=2].ko 가 고칠 글과 글자 그대로 같음(옛 글 없음). 짝 칸 .en 은 안 바뀜 — 뜻 짝 맞음. 같은 강의의 다른 바뀐 줄(n1.ko · n5.ko — 다른 줄 몫)도 읽어 봄 — 잘림 · 겹친 낱말 없음.",
+    "고칠 것": "없음",
+    "때": "2026-09-25 04:22"
+   }
+  }
+ ],
+ "결과": [
+  {
+   "key": "P74",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main 스냅샷 content/ld_english_scripts.json d188 n12.ko 가 고칠 글과 글자 그대로('그의 자신의' → '자신의'). 스냅샷 3,088파일에서 고칠 글 1곳 · 옛 글 0곳(찾기 도구는 있는 글을 찾고 없는 글은 0 으로 내는지 먼저 확인함). 짝 칸 n12.en 'Using his own imagination …' 은 옛 판과 같음 — '자신의 상상력' 이 뒤 주어 Sequoyah 를 받아 뜻 짝 맞음. 같은 강의 다른 바뀐 줄: n8.ko 는 P220 고칠 글 그대로, n1.ko '오래 전 → 오래전'(사전 한 낱말) — 잘림 · 겹친 낱말 없음. d188.json · d188-1.json 에는 한국어 글이 없어 다른 사본 없음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P75",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main content/lessons/ld/d217.json blocks[2](type hints).text = 'good luck charms. four-leaf clover. prosperity. rabbit foot. chain. entertainment. predictions. amusing. customers' — 끝에 고칠 글 'predictions. amusing. customers' 가 글자 그대로, 옛 글 'predictions amusing. customers' 는 스냅샷 전체 0곳. 앞 여섯 항목은 원본 자료(바탕화면 랩자료모음 최종 Lab v1.01 LD/d217.htm)의 첫 힌트 줄을 되살린 것 — 규칙대로 제대로. chips-main.cjs 로 잼: n5 [predictions] [amusing] · n6 [customers], 붙은 칩 없음. heading · instruction · choice · dictation 블록은 옛 판과 같음. (칩 몫 참고 — 이 줄 판정과 무관: 원본 첫 줄 끝의 'fortuneteller.' 가 되살린 줄에 없고 'good-luck' 은 대본 꼴 'good luck' 으로 바뀜.)",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P76",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d219 n5.ko 가 고칠 글 그대로('견본' → '표본'), 스냅샷에 고칠 글 1곳 · 옛 글 0곳. 짝 칸 n5.en 'he preferred his specimens dead' 는 안 바뀜 — 뜻 짝 맞음. 같은 강의 n4.ko 는 '푸른수염 → 푸른 수염' 으로 n5 와 같은 띄어쓰기가 됨 — 잘림 · 겹친 낱말 없음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P77",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d220 n3.en 이 고칠 글 그대로('far away places' → 'far-away places'), 스냅샷에 'lure of far' 는 이 1곳뿐이고 옛 글은 0곳. 짝 칸 n3.ko '매년 여름 먼 장소의 유혹이 수백만 명의 미국인에게 손짓한다.' 는 뜻 짝이 맞음('수백만명 → 수백만 명' 띄어쓰기만 바뀜). main src/lib/listeningUtils.ts(스냅샷 파일을 그대로 복사, 해시 같음)의 typedDictationMatches 를 스크래치에서 불러 잼: 새 정답에 'faraway' · 'far away' · 'far-away' 로 친 글이 모두 맞음(옛 정답에서는 'faraway' 가 틀림이었음). 같은 글을 치면 맞고, 'near' · 'far-off' 는 틀림 — 이 재기가 실패도 낼 수 있음을 확인함. main 힌트 줄 칩 n3 은 [lure] [far-away] [beckons to] 로 새 글과 같은 꼴(원본 자료 첫 줄은 'faraway' 인데 새 글에 맞춤). 새 음성 클립은 수정 세션 몫이라 판정에 넣지 않음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P78",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d158.json blocks[2](type hints).text 가 고칠 글과 글자 그대로. 스냅샷에 1곳, 옛 글은 0곳. 원본 자료 d158.htm 도 힌트가 이 한 줄뿐이라 되살릴 첫 줄이 없음. chips-main.cjs: n1 [Monday] [Friday] [evenings] [weekends] · n2 [television] [movies] [sports] · n6 [stamps] [model airplanes] · n3 ~ n5 · n7 · n8 칩 없음 — 붙은 칩 · 쌍반점 없음. 다른 블록은 옛 판과 같음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P79",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d163 n2.ko 가 고칠 글 그대로('사회면' → '사교계 소식란'), 스냅샷에 고칠 글 1곳 · 옛 글 0곳. 짝 칸 n2.en 'the society page' 는 안 바뀜 — 뜻 짝 맞음. 같은 강의 n6.ko 는 P80 고칠 글 그대로 — 잘림 · 겹친 낱말 없음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "S10",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d262 n1.ko 가 고칠 글 그대로('사회 달력' → '사교 일정'), 스냅샷에 고칠 글 1곳 · 옛 글 0곳. 짝 칸 n1.en 'the whole social calendar undergoes a drastic change' 는 안 바뀜 — 뜻 짝 맞음. 같은 강의 n2.ko '사교활동 → 사교 활동'(1부 문맥 #123 과 같은 띄어쓰기) 은 n1 과 잘 이어지고 흠이 없음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P228",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d223 n1.ko 가 고칠 글 그대로('휴가가는' → '휴가 가는'), 스냅샷에 고칠 글 1곳 · 옛 글 0곳. 짝 칸 n1.en 'Every public library has many books about travel and vacationing.' 은 안 바뀜. 같은 강의 n2.ko(P229) · n5.ko(P230) 도 각 고칠 글 그대로 — 흠 없음.",
+   "때": "2026-09-25 04:59"
+  },
+  {
+   "key": "P229",
+   "결론": "동의",
+   "바른 판정": "제대로",
+   "까닭": "main d223 n2.ko 가 고칠 글 그대로('흥미있는' → '흥미 있는'), 스냅샷에 고칠 글 1곳 · 옛 글 0곳. 짝 칸 n2.en 'By consulting these books, …' 는 안 바뀜. 같은 강의 n1.ko(P228) · n5.ko(P230) 도 각 고칠 글 그대로 — 흠 없음.",
+   "때": "2026-09-25 04:59"
+  }
+ ]
+}
