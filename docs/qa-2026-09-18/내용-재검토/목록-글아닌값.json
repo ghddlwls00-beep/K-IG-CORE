@@ -1,0 +1,1318 @@
+{
+ "summary": {
+  "base": "9d6e15d748fc4a16832b26643a3c2f7e5614612d",
+  "head": "2a80bbaa087acda2570cb15cb24f6d0ff9285a00",
+  "filesByteChanged": 1149,
+  "filesWithTextChange": 1149,
+  "filesWithOnlyNontextChange": 0,
+  "filesWithNoValueChange": [],
+  "fragments": 15128,
+  "byKind": {
+   "changed": 3726,
+   "removed": 8870,
+   "added": 2532
+  },
+  "byCourse": {
+   "student": 2562,
+   "phonics": 395,
+   "grammar1": 1788,
+   "grammar2": 699,
+   "ld": 6714,
+   "reading": 2774,
+   "phonics+reading": 196
+  },
+  "nontextChanges": 214
+ },
+ "nontext": [
+  {
+   "file": "content/courses/grammar1.json",
+   "path": ".lessons[id=gh1-016-1].menuLabel",
+   "kind": "removed",
+   "value": null
+  },
+  {
+   "file": "content/lessons/grammar1/gh1-016-1.json",
+   "path": ".menuLabel",
+   "kind": "removed",
+   "value": null
+  },
+  {
+   "file": "content/lessons/ld/d159.json",
+   "path": ".menuLabel",
+   "kind": "removed",
+   "value": null
+  },
+  {
+   "file": "content/lessons/ld/d263-1.json",
+   "path": ".menuLabel",
+   "kind": "removed",
+   "value": null
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=created].freq",
+   "kind": "changed",
+   "before": 2,
+   "after": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=mixed].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=mixed].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=courtship].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=courtship].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=origin].freq",
+   "kind": "changed",
+   "before": 2,
+   "after": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=popular].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=popular].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=families].score",
+   "kind": "removed",
+   "value": 94
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=families].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=sad].score",
+   "kind": "removed",
+   "value": 88
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=sad].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=missed].score",
+   "kind": "removed",
+   "value": 74
+  },
+  {
+   "file": "content/lessons/reading/pr004-1.json",
+   "path": ".readingVocabulary[word=missed].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=created].freq",
+   "kind": "changed",
+   "before": 2,
+   "after": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=mixed].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=mixed].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=courtship].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=courtship].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=origin].freq",
+   "kind": "changed",
+   "before": 2,
+   "after": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=popular].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=popular].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=families].score",
+   "kind": "removed",
+   "value": 94
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=families].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=sad].score",
+   "kind": "removed",
+   "value": 88
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=sad].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=missed].score",
+   "kind": "removed",
+   "value": 74
+  },
+  {
+   "file": "content/lessons/reading/pr004.json",
+   "path": ".readingVocabulary[word=missed].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr032-1.json",
+   "path": ".readingVocabulary[word=Western].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr032-1.json",
+   "path": ".readingVocabulary[word=Western].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr032-1.json",
+   "path": ".readingVocabulary[word=western].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr032-1.json",
+   "path": ".readingVocabulary[word=western].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr032.json",
+   "path": ".readingVocabulary[word=Western].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr032.json",
+   "path": ".readingVocabulary[word=Western].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr032.json",
+   "path": ".readingVocabulary[word=western].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr032.json",
+   "path": ".readingVocabulary[word=western].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr051-1.json",
+   "path": ".readingVocabulary[word=achieve].score",
+   "kind": "added",
+   "value": 75
+  },
+  {
+   "file": "content/lessons/reading/pr051-1.json",
+   "path": ".readingVocabulary[word=achieve].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr051-1.json",
+   "path": ".readingVocabulary[word=obtain].score",
+   "kind": "removed",
+   "value": 75
+  },
+  {
+   "file": "content/lessons/reading/pr051-1.json",
+   "path": ".readingVocabulary[word=obtain].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr051.json",
+   "path": ".readingVocabulary[word=achieve].score",
+   "kind": "added",
+   "value": 75
+  },
+  {
+   "file": "content/lessons/reading/pr051.json",
+   "path": ".readingVocabulary[word=achieve].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr051.json",
+   "path": ".readingVocabulary[word=obtain].score",
+   "kind": "removed",
+   "value": 75
+  },
+  {
+   "file": "content/lessons/reading/pr051.json",
+   "path": ".readingVocabulary[word=obtain].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr110-1.json",
+   "path": ".readingVocabulary[word=disease].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr110-1.json",
+   "path": ".readingVocabulary[word=disease].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr110-1.json",
+   "path": ".readingVocabulary[word=naturally].score",
+   "kind": "removed",
+   "value": 92
+  },
+  {
+   "file": "content/lessons/reading/pr110-1.json",
+   "path": ".readingVocabulary[word=naturally].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr110.json",
+   "path": ".readingVocabulary[word=disease].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "content/lessons/reading/pr110.json",
+   "path": ".readingVocabulary[word=disease].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr110.json",
+   "path": ".readingVocabulary[word=naturally].score",
+   "kind": "removed",
+   "value": 92
+  },
+  {
+   "file": "content/lessons/reading/pr110.json",
+   "path": ".readingVocabulary[word=naturally].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr140-1.json",
+   "path": ".readingVocabulary[word=matters].score",
+   "kind": "added",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr140-1.json",
+   "path": ".readingVocabulary[word=matters].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr140-1.json",
+   "path": ".readingVocabulary[word=matter].score",
+   "kind": "removed",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr140-1.json",
+   "path": ".readingVocabulary[word=matter].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr140.json",
+   "path": ".readingVocabulary[word=matters].score",
+   "kind": "added",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr140.json",
+   "path": ".readingVocabulary[word=matters].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr140.json",
+   "path": ".readingVocabulary[word=matter].score",
+   "kind": "removed",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr140.json",
+   "path": ".readingVocabulary[word=matter].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr148-1.json",
+   "path": ".readingVocabulary[word=millions].score",
+   "kind": "added",
+   "value": 79
+  },
+  {
+   "file": "content/lessons/reading/pr148-1.json",
+   "path": ".readingVocabulary[word=millions].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr148-1.json",
+   "path": ".readingVocabulary[word=million].score",
+   "kind": "removed",
+   "value": 79
+  },
+  {
+   "file": "content/lessons/reading/pr148-1.json",
+   "path": ".readingVocabulary[word=million].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr148.json",
+   "path": ".readingVocabulary[word=millions].score",
+   "kind": "added",
+   "value": 79
+  },
+  {
+   "file": "content/lessons/reading/pr148.json",
+   "path": ".readingVocabulary[word=millions].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr148.json",
+   "path": ".readingVocabulary[word=million].score",
+   "kind": "removed",
+   "value": 79
+  },
+  {
+   "file": "content/lessons/reading/pr148.json",
+   "path": ".readingVocabulary[word=million].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr171-1.json",
+   "path": ".readingVocabulary[word=Congress].score",
+   "kind": "added",
+   "value": 87
+  },
+  {
+   "file": "content/lessons/reading/pr171-1.json",
+   "path": ".readingVocabulary[word=Congress].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr171-1.json",
+   "path": ".readingVocabulary[word=congress].score",
+   "kind": "removed",
+   "value": 87
+  },
+  {
+   "file": "content/lessons/reading/pr171-1.json",
+   "path": ".readingVocabulary[word=congress].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr171.json",
+   "path": ".readingVocabulary[word=Congress].score",
+   "kind": "added",
+   "value": 87
+  },
+  {
+   "file": "content/lessons/reading/pr171.json",
+   "path": ".readingVocabulary[word=Congress].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr171.json",
+   "path": ".readingVocabulary[word=congress].score",
+   "kind": "removed",
+   "value": 87
+  },
+  {
+   "file": "content/lessons/reading/pr171.json",
+   "path": ".readingVocabulary[word=congress].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=early].score",
+   "kind": "added",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=early].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=year].score",
+   "kind": "added",
+   "value": 104
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=year].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=later].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=later].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=recently].score",
+   "kind": "removed",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=recently].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=country].score",
+   "kind": "removed",
+   "value": 104
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=country].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=until].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr182-1.json",
+   "path": ".readingVocabulary[word=until].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=early].score",
+   "kind": "added",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=early].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=year].score",
+   "kind": "added",
+   "value": 104
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=year].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=later].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=later].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=recently].score",
+   "kind": "removed",
+   "value": 77
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=recently].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=country].score",
+   "kind": "removed",
+   "value": 104
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=country].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=until].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr182.json",
+   "path": ".readingVocabulary[word=until].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=Congress].score",
+   "kind": "added",
+   "value": 97
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=Congress].freq",
+   "kind": "added",
+   "value": 3
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=overridden].score",
+   "kind": "added",
+   "value": 84
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=overridden].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=congress].score",
+   "kind": "removed",
+   "value": 97
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=congress].freq",
+   "kind": "removed",
+   "value": 3
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=overpowered].score",
+   "kind": "removed",
+   "value": 84
+  },
+  {
+   "file": "content/lessons/reading/pr207-1.json",
+   "path": ".readingVocabulary[word=overpowered].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=Congress].score",
+   "kind": "added",
+   "value": 97
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=Congress].freq",
+   "kind": "added",
+   "value": 3
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=overridden].score",
+   "kind": "added",
+   "value": 84
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=overridden].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=congress].score",
+   "kind": "removed",
+   "value": 97
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=congress].freq",
+   "kind": "removed",
+   "value": 3
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=overpowered].score",
+   "kind": "removed",
+   "value": 84
+  },
+  {
+   "file": "content/lessons/reading/pr207.json",
+   "path": ".readingVocabulary[word=overpowered].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr219-1.json",
+   "path": ".readingVocabulary[word=normally].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr219-1.json",
+   "path": ".readingVocabulary[word=normally].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr219-1.json",
+   "path": ".readingVocabulary[word=normal].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr219-1.json",
+   "path": ".readingVocabulary[word=normal].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr219.json",
+   "path": ".readingVocabulary[word=normally].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr219.json",
+   "path": ".readingVocabulary[word=normally].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr219.json",
+   "path": ".readingVocabulary[word=normal].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "content/lessons/reading/pr219.json",
+   "path": ".readingVocabulary[word=normal].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr221-1.json",
+   "path": ".readingVocabulary[word=Latin].score",
+   "kind": "added",
+   "value": 67
+  },
+  {
+   "file": "content/lessons/reading/pr221-1.json",
+   "path": ".readingVocabulary[word=Latin].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr221-1.json",
+   "path": ".readingVocabulary[word=latin].score",
+   "kind": "removed",
+   "value": 67
+  },
+  {
+   "file": "content/lessons/reading/pr221-1.json",
+   "path": ".readingVocabulary[word=latin].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr221.json",
+   "path": ".readingVocabulary[word=Latin].score",
+   "kind": "added",
+   "value": 67
+  },
+  {
+   "file": "content/lessons/reading/pr221.json",
+   "path": ".readingVocabulary[word=Latin].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr221.json",
+   "path": ".readingVocabulary[word=latin].score",
+   "kind": "removed",
+   "value": 67
+  },
+  {
+   "file": "content/lessons/reading/pr221.json",
+   "path": ".readingVocabulary[word=latin].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr240-1.json",
+   "path": ".readingVocabulary[word=evidence].score",
+   "kind": "added",
+   "value": 86
+  },
+  {
+   "file": "content/lessons/reading/pr240-1.json",
+   "path": ".readingVocabulary[word=evidence].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr240-1.json",
+   "path": ".readingVocabulary[word=evidenced].score",
+   "kind": "removed",
+   "value": 86
+  },
+  {
+   "file": "content/lessons/reading/pr240-1.json",
+   "path": ".readingVocabulary[word=evidenced].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr240.json",
+   "path": ".readingVocabulary[word=evidence].score",
+   "kind": "added",
+   "value": 86
+  },
+  {
+   "file": "content/lessons/reading/pr240.json",
+   "path": ".readingVocabulary[word=evidence].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "content/lessons/reading/pr240.json",
+   "path": ".readingVocabulary[word=evidenced].score",
+   "kind": "removed",
+   "value": 86
+  },
+  {
+   "file": "content/lessons/reading/pr240.json",
+   "path": ".readingVocabulary[word=evidenced].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=created].freq",
+   "kind": "changed",
+   "before": 2,
+   "after": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=mixed].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=mixed].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=courtship].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=courtship].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=origin].freq",
+   "kind": "changed",
+   "before": 2,
+   "after": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=popular].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=popular].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=families].score",
+   "kind": "removed",
+   "value": 94
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=families].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=sad].score",
+   "kind": "removed",
+   "value": 88
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=sad].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=missed].score",
+   "kind": "removed",
+   "value": 74
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr004[word=missed].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr032[word=Western].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr032[word=Western].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr032[word=western].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr032[word=western].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr051[word=achieve].score",
+   "kind": "added",
+   "value": 75
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr051[word=achieve].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr051[word=obtain].score",
+   "kind": "removed",
+   "value": 75
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr051[word=obtain].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr110[word=disease].score",
+   "kind": "added",
+   "value": 80
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr110[word=disease].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr110[word=naturally].score",
+   "kind": "removed",
+   "value": 92
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr110[word=naturally].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr140[word=matters].score",
+   "kind": "added",
+   "value": 77
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr140[word=matters].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr140[word=matter].score",
+   "kind": "removed",
+   "value": 77
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr140[word=matter].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr148[word=millions].score",
+   "kind": "added",
+   "value": 79
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr148[word=millions].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr148[word=million].score",
+   "kind": "removed",
+   "value": 79
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr148[word=million].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr171[word=Congress].score",
+   "kind": "added",
+   "value": 87
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr171[word=Congress].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr171[word=congress].score",
+   "kind": "removed",
+   "value": 87
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr171[word=congress].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=early].score",
+   "kind": "added",
+   "value": 77
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=early].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=year].score",
+   "kind": "added",
+   "value": 104
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=year].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=later].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=later].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=recently].score",
+   "kind": "removed",
+   "value": 77
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=recently].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=country].score",
+   "kind": "removed",
+   "value": 104
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=country].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=until].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr182[word=until].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=Congress].score",
+   "kind": "added",
+   "value": 97
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=Congress].freq",
+   "kind": "added",
+   "value": 3
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=overridden].score",
+   "kind": "added",
+   "value": 84
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=overridden].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=congress].score",
+   "kind": "removed",
+   "value": 97
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=congress].freq",
+   "kind": "removed",
+   "value": 3
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=overpowered].score",
+   "kind": "removed",
+   "value": 84
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr207[word=overpowered].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr219[word=normally].score",
+   "kind": "added",
+   "value": 69
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr219[word=normally].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr219[word=normal].score",
+   "kind": "removed",
+   "value": 69
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr219[word=normal].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr221[word=Latin].score",
+   "kind": "added",
+   "value": 67
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr221[word=Latin].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr221[word=latin].score",
+   "kind": "removed",
+   "value": 67
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr221[word=latin].freq",
+   "kind": "removed",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr240[word=evidence].score",
+   "kind": "added",
+   "value": 86
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr240[word=evidence].freq",
+   "kind": "added",
+   "value": 1
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr240[word=evidenced].score",
+   "kind": "removed",
+   "value": 86
+  },
+  {
+   "file": "src/lib/readingVocabulary.json",
+   "path": ".pr240[word=evidenced].freq",
+   "kind": "removed",
+   "value": 1
+  }
+ ]
+}
