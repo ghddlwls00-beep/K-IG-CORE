@@ -117,6 +117,9 @@ function unitsOf(c, id) {
   return U.filter((u) => u.text != null && String(u.text).trim());
 }
 
+// coverage.cjs 가 쪽마다 글 단위를 같은 규칙으로 세려고 불러 씀 — 그때는 파일을 쓰지 않음
+module.exports = { unitsOf, groupOf, picked, pages };
+if (require.main === module) {
 const out = { 씨앗: SEED, 틀: frames, 뽑음: picked, 쪽: {} };
 const OUT = path.join(L.DIR, "읽을거리");
 for (const [c] of plan) {
@@ -136,3 +139,4 @@ fs.writeFileSync(path.join(L.DIR, "표본.json"), JSON.stringify(out, null, 1));
 const perCourse = {};
 for (const [url, v] of Object.entries(out.쪽)) { const p = (perCourse[v.과정] = perCourse[v.과정] || { 쪽: 0, 글: 0, 바뀐글: 0 }); p.쪽++; p.글 += v.글수; p.바뀐글 += v.바뀐글; }
 console.log(JSON.stringify({ 씨앗: SEED, 틀: frames, 뽑음: picked, 과정별: perCourse }, null, 1));
+}

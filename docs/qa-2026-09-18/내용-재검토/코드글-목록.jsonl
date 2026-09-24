@@ -1,0 +1,36 @@
+{"id":"K001","file":"src/app/[course]/[lesson]/page.tsx","line":494,"kind":"removed","lit":"str","attr":null,"ctx":"extractSentencesForAudio > enParas","before":"한/영","after":null}
+{"id":"K002","file":"src/app/[course]/[lesson]/page.tsx","line":495,"kind":"removed","lit":"str","attr":null,"ctx":"extractSentencesForAudio > enParas","before":"Greeting and Introduction","after":null}
+{"id":"K003","file":"src/app/[course]/[lesson]/page.tsx","line":495,"kind":"removed","lit":"str","attr":null,"ctx":"extractSentencesForAudio > enParas","before":"My Personal and Educational Background","after":null}
+{"id":"K004","file":"src/app/[course]/page.tsx","line":51,"kind":"changed","lit":"str","attr":null,"ctx":"generateMetadata > description","before":"K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.","after":"K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩을 한 곳에서."}
+{"id":"K005","file":"src/app/layout.tsx","line":21,"kind":"changed","lit":"str","attr":null,"ctx":"metadata > description","before":"K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.","after":"K-IG 핵심 6개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING."}
+{"id":"K006","file":"src/app/layout.tsx","line":33,"kind":"changed","lit":"str","attr":null,"ctx":"metadata > openGraph > description","before":"K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.","after":"K-IG 핵심 6개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING."}
+{"id":"K007","file":"src/app/layout.tsx","line":51,"kind":"changed","lit":"str","attr":null,"ctx":"metadata > twitter > description","before":"K-IG 핵심 7개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING, CNN 뉴스.","after":"K-IG 핵심 6개 과정 전용 플랫폼: STUDENT 회화, VOCA 어휘, 영문법 1·2, LISTENING, READING."}
+{"id":"K008","file":"src/app/t/[tab]/page.tsx","line":31,"kind":"changed","lit":"str","attr":null,"ctx":"TAB_FALLBACK_DESCRIPTION","before":"K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩, CNN 뉴스를 한 곳에서.","after":"K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩을 한 곳에서."}
+{"id":"K009","file":"src/components/LdLearningView.tsx","line":794,"kind":"added","lit":"jsx","attr":null,"ctx":"LdLearningView","before":null,"after":"✍️ 고유 명사 · 숫자 참조"}
+{"id":"K010","file":"src/components/LessonSpeechGuard.tsx","line":1,"kind":"added","lit":"str","attr":null,"ctx":"","before":null,"after":"use client"}
+{"id":"K011","file":"src/components/PhonicsLearningView.tsx","line":494,"kind":"changed","lit":"str","attr":null,"ctx":"PhonicsLearningView > sub","before":"소리·어원·콜로케이션","after":"소리·뜻"}
+{"id":"K012","file":"src/components/ReadingLearningView.tsx","line":812,"kind":"added","lit":"str","attr":"title","ctx":"ReadingLearningView > @title","before":null,"after":"기본형"}
+{"id":"K013","file":"src/lib/lessonAudioText.ts","line":117,"kind":"added","lit":"str","attr":null,"ctx":"extractSentencesForAudio > enParas","before":null,"after":"한/영"}
+{"id":"K014","file":"src/lib/lessonAudioText.ts","line":118,"kind":"added","lit":"str","attr":null,"ctx":"extractSentencesForAudio > enParas","before":null,"after":"Greeting and Introduction"}
+{"id":"K015","file":"src/lib/lessonAudioText.ts","line":118,"kind":"added","lit":"str","attr":null,"ctx":"extractSentencesForAudio > enParas","before":null,"after":"My Personal and Educational Background"}
+{"id":"K016","file":"src/lib/speechRecognition.ts","line":80,"kind":"changed","lit":"str","attr":null,"ctx":"normalizeText","before":"you are","after":"\""}
+{"id":"K017","file":"src/lib/speechRecognition.ts","line":81,"kind":"changed","lit":"str","attr":null,"ctx":"normalizeText","before":"he is","after":" "}
+{"id":"K018","file":"src/lib/speechRecognition.ts","line":82,"kind":"changed","lit":"str","attr":null,"ctx":"normalizeText","before":"she is","after":" "}
+{"id":"K019","file":"src/lib/speechRecognition.ts","line":84,"kind":"changed","lit":"str","attr":null,"ctx":"normalizeText","before":"it is","after":"$1"}
+{"id":"K020","file":"src/lib/speechRecognition.ts","line":85,"kind":"changed","lit":"str","attr":null,"ctx":"normalizeText","before":"we are","after":" "}
+{"id":"K021","file":"src/lib/speechRecognition.ts","line":78,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"they are","after":null}
+{"id":"K022","file":"src/lib/speechRecognition.ts","line":79,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"do not","after":null}
+{"id":"K023","file":"src/lib/speechRecognition.ts","line":80,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"does not","after":null}
+{"id":"K024","file":"src/lib/speechRecognition.ts","line":81,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"did not","after":null}
+{"id":"K025","file":"src/lib/speechRecognition.ts","line":83,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"could not","after":null}
+{"id":"K026","file":"src/lib/speechRecognition.ts","line":84,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"will not","after":null}
+{"id":"K027","file":"src/lib/speechRecognition.ts","line":85,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"would not","after":null}
+{"id":"K028","file":"src/lib/speechRecognition.ts","line":86,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"should not","after":null}
+{"id":"K029","file":"src/lib/speechRecognition.ts","line":87,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"has not","after":null}
+{"id":"K030","file":"src/lib/speechRecognition.ts","line":88,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"have not","after":null}
+{"id":"K031","file":"src/lib/speechRecognition.ts","line":89,"kind":"removed","lit":"str","attr":null,"ctx":"normalizeText","before":"had not","after":null}
+{"id":"K032","file":"src/lib/vocaUtils.ts","line":112,"kind":"changed","lit":"str","attr":null,"ctx":"PREFIX_RULES > meaning","before":"trans(바꾸어) + late(옮기다) ➔ 한 언어를 다른 언어로 건네주다, 번역하다","after":"trans(건너서) + late(옮겨진) ➔ 한 언어에서 다른 언어로 건너 옮기다, 번역하다"}
+{"id":"K033","file":"src/lib/vocaUtils.ts","line":115,"kind":"changed","lit":"str","attr":null,"ctx":"PREFIX_RULES > meaning","before":"ex(밖으로) + port(항구/나르다) ➔ 항구 밖으로 물건을 내보내다, 수출하다","after":"ex(밖으로) + port(나르다) ➔ 밖으로 실어 내보내다, 수출하다"}
+{"id":"K034","file":"src/lib/vocaUtils.ts","line":116,"kind":"changed","lit":"str","attr":null,"ctx":"PREFIX_RULES > meaning","before":"im/in(안으로) + port(항구/나르다) ➔ 항구 안으로 물건을 들여오다, 수입하다","after":"im/in(안으로) + port(나르다) ➔ 안으로 실어 들여오다, 수입하다"}
+{"id":"K035","file":"src/lib/vocaUtils.ts","line":314,"kind":"added","lit":"str","attr":null,"ctx":"PRONUNCIATION_NOTES","before":null,"after":" (뜻에 따라 발음이 다름)"}
+{"id":"K036","file":"src/lib/vocaUtils.ts","line":314,"kind":"added","lit":"str","attr":null,"ctx":"PRONUNCIATION_NOTES","before":null,"after":" (동사는 뒤 강세)"}

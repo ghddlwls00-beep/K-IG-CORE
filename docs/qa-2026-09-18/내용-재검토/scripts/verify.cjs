@@ -37,19 +37,20 @@ function pick() {
     const first = (e.묶음 || [e.id])[0];
     if (seenGroup.has(first)) continue;
     seenGroup.add(first);
-    const heavy = e.판정 === "틀림" && (e.심각도 === "심각" || e.심각도 === "높음");
+    // ③ 채점 틀림은 심각도와 상관없이 전부(16:08 더함 — 일꾼마다 '맞는 답 0점' 을 중간 · 높음으로 달리 매겨, 기록.md 기준 풀이 5 로 높음에 맞추므로 둘 다 봐야 함)
+    const heavy = e.판정 === "틀림" && (e.심각도 === "심각" || e.심각도 === "높음" || e.종류 === "③");
     const light = e.판정 === "틀림" && !heavy;
-    const why = heavy ? "심각·높음 전부" : light ? (L.hash01(first, "v") < 0.2 ? "중간·낮음 20% 표본" : null) : `${e.판정} 전부`;
+    const why = heavy ? (e.심각도 === "심각" || e.심각도 === "높음" ? "심각·높음 전부" : "③ 채점 전부") : light ? (L.hash01(first, "v") < 0.2 ? "중간·낮음 20% 표본" : null) : `${e.판정} 전부`;
     if (!why) continue;
     const r = recs.get(first);
     T.push({ key: `F:${first}`, 까닭: why, ids: e.묶음 || [e.id], 읽을거리: fileOfId.get(first), 칸: r.path, 파일: r.file, 전: r.before, 뒤: r.after, 주장: { 판정: e.판정, 종류: e.종류, 심각도: e.심각도, 확신: e.확신, 까닭: e.까닭, "고칠 글": e["고칠 글"], "고칠 곳": e["고칠 곳"], 추천안: e.추천안, 결정: e.결정 } });
   }
   src.문맥.forEach((f, i) => {
-    const heavy = f.심각도 === "심각" || f.심각도 === "높음";
-    if (heavy || L.hash01(`${chunk}:X${i}`, "v") < 0.2) T.push({ key: `X:${i}`, 까닭: heavy ? "심각·높음 전부" : "중간·낮음 20% 표본", 주장: f });
+    const heavy = f.심각도 === "심각" || f.심각도 === "높음" || f.종류 === "③";
+    if (heavy || L.hash01(`${chunk}:X${i}`, "v") < 0.2) T.push({ key: `X:${i}`, 까닭: heavy ? (f.종류 === "③" && !(f.심각도 === "심각" || f.심각도 === "높음") ? "③ 채점 전부" : "심각·높음 전부") : "중간·낮음 20% 표본", 주장: f });
   });
   for (const s of src.표본) {
-    for (const f of s.틀림 || []) { const heavy = f.심각도 === "심각" || f.심각도 === "높음"; if (heavy || L.hash01(`${s.쪽}:${f.T}`, "v") < 0.2) T.push({ key: `S:${s.쪽}:${f.T}`, 까닭: heavy ? "심각·높음 전부" : "중간·낮음 20% 표본", 표본파일: `읽을거리/표본-${chunk}/${s.쪽.split("/").pop()}.md`, 주장: f }); }
+    for (const f of s.틀림 || []) { const heavy = f.심각도 === "심각" || f.심각도 === "높음" || f.종류 === "③"; if (heavy || L.hash01(`${s.쪽}:${f.T}`, "v") < 0.2) T.push({ key: `S:${s.쪽}:${f.T}`, 까닭: heavy ? (f.종류 === "③" && !(f.심각도 === "심각" || f.심각도 === "높음") ? "③ 채점 전부" : "심각·높음 전부") : "중간·낮음 20% 표본", 표본파일: `읽을거리/표본-${chunk}/${s.쪽.split("/").pop()}.md`, 주장: f }); }
     for (const f of s["판단 필요"] || []) T.push({ key: `S:${s.쪽}:${f.T}`, 까닭: "판단 필요 전부", 표본파일: `읽을거리/표본-${chunk}/${s.쪽.split("/").pop()}.md`, 주장: { 판정: "판단 필요", ...f } });
   }
   const oks = src.줄.filter((e) => e.판정 === "맞음").map((e) => e.id).sort((a, b) => L.hash01(a, "ok") - L.hash01(b, "ok"));
