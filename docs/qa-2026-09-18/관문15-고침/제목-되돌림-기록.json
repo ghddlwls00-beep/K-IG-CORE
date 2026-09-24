@@ -1,0 +1,216 @@
+{
+ "at": "2026-09-24T20:22:12.243Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/제목-되돌림.json",
+ "root": ".",
+ "write": true,
+ "log": [
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s2-3].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s2-3].title",
+   "old": "Father's and Mother's Jobs (부모님의 직업)",
+   "new": "Father and Mother's Job (부모님의 직업)"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s2-3].menuLabel",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s2-3].menuLabel",
+   "old": "2-3. Father's and Mother's Jobs",
+   "new": "2-3. Father and Mother's Job"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s3-4].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s3-4].title",
+   "old": "Friend's Dreams (친구의 장래 희망)",
+   "new": "Friend's Dreams (친구의 장래희망)"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s7-3].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s7-3].title",
+   "old": "Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "new": "Friends and Teachers at Academy (학원 친구들과 선생님)"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s12-1].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s12-1].title",
+   "old": "School Vacations (방학맞이)",
+   "new": "School Vacations (방학 맞이)"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s12-2].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s12-2].title",
+   "old": "Summer Vacation (여름방학)",
+   "new": "Summer Vacation (여름 방학)"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s12-3].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s12-3].title",
+   "old": "Winter Vacation (겨울방학)",
+   "new": "Winter Vacation (겨울 방학)"
+  },
+  {
+   "id": "제목 되돌림 courses/student.json .lessons[id=s19-1].title",
+   "op": "set",
+   "file": "content/courses/student.json",
+   "where": ".lessons[id=s19-1].title",
+   "old": "Korean Culture Is Unique (독창적인 한국 문화)",
+   "new": "Korean Culture is Unique (독창적인 한국 문화)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s12-1.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s12-1.json",
+   "where": ".title",
+   "old": "School Vacations (방학맞이)",
+   "new": "School Vacations (방학 맞이)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s12-1.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s12-1.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 12. What I Do During School Vacations (방학 생활) - School Vacations (방학맞이)",
+   "new": "Chapter 12. What I Do During School Vacations (방학 생활) - School Vacations (방학 맞이)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s12-2.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s12-2.json",
+   "where": ".title",
+   "old": "Summer Vacation (여름방학)",
+   "new": "Summer Vacation (여름 방학)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s12-2.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s12-2.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 12. What I Do During School Vacations (방학 생활) - Summer Vacation (여름방학)",
+   "new": "Chapter 12. What I Do During School Vacations (방학 생활) - Summer Vacation (여름 방학)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s12-3.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s12-3.json",
+   "where": ".title",
+   "old": "Winter Vacation (겨울방학)",
+   "new": "Winter Vacation (겨울 방학)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s12-3.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s12-3.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 12. What I Do During School Vacations (방학 생활) - Winter Vacation (겨울방학)",
+   "new": "Chapter 12. What I Do During School Vacations (방학 생활) - Winter Vacation (겨울 방학)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s16-1.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s16-1.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - My Other Dream Job (또 하나의 꿈)",
+   "new": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - My Other Dream Job (또 하나의 꿈)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s16-2.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s16-2.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)",
+   "new": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s16-3.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s16-3.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)",
+   "new": "Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래희망 (통역사)) - How I Will Fulfill My Dream (통역사가 되기 위한 다짐)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s19-1.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s19-1.json",
+   "where": ".title",
+   "old": "Korean Culture Is Unique (독창적인 한국 문화)",
+   "new": "Korean Culture is Unique (독창적인 한국 문화)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s19-1.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s19-1.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 19. Korean Culture (한국의 문화) - Korean Culture Is Unique (독창적인 한국 문화)",
+   "new": "Chapter 19. Korean Culture (한국의 문화) - Korean Culture is Unique (독창적인 한국 문화)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s2-3.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s2-3.json",
+   "where": ".title",
+   "old": "Father's and Mother's Jobs (부모님의 직업)",
+   "new": "Father and Mother's Job (부모님의 직업)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s2-3.json .menuLabel",
+   "op": "set",
+   "file": "content/lessons/student/s2-3.json",
+   "where": ".menuLabel",
+   "old": "2-3. Father's and Mother's Jobs",
+   "new": "2-3. Father and Mother's Job"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s2-3.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s2-3.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 2. Family Introduction (가족 소개) - Father's and Mother's Jobs (부모님의 직업)",
+   "new": "Chapter 2. Family Introduction (가족 소개) - Father and Mother's Job (부모님의 직업)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s3-4.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s3-4.json",
+   "where": ".title",
+   "old": "Friend's Dreams (친구의 장래 희망)",
+   "new": "Friend's Dreams (친구의 장래희망)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s3-4.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s3-4.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래 희망)",
+   "new": "Chapter 3. Friend Introduction (친구 소개) - Friend's Dreams (친구의 장래희망)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s7-3.json .title",
+   "op": "set",
+   "file": "content/lessons/student/s7-3.json",
+   "where": ".title",
+   "old": "Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "new": "Friends and Teachers at Academy (학원 친구들과 선생님)"
+  },
+  {
+   "id": "제목 되돌림 lessons/student/s7-3.json .blocks[0].text",
+   "op": "set",
+   "file": "content/lessons/student/s7-3.json",
+   "where": ".blocks[0].text",
+   "old": "Chapter 7. At the Academy (학원 생활) - Friends and Teachers at the Academy (학원 친구들과 선생님)",
+   "new": "Chapter 7. At the Academy (학원 생활) - Friends and Teachers at Academy (학원 친구들과 선생님)"
+  }
+ ]
+}

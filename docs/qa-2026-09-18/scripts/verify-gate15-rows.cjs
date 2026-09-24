@@ -44,8 +44,8 @@ const LOGS = [["재검토 손으로", "손으로-재검토-기록.json"], ["칩 
   ["전수 손으로", "손으로-전수-기록.json"], ["전수 READING", "읽기-전수-기록.json"], ["전수 중앙 사본", "중앙사본-전수-기록.json"], ["전수 지문 블록", "지문블록-전수-기록.json"],
   ["B 손으로", "손으로-B-기록.json"], ["C", "조작-C-기록.json"], ["C 더함", "조작-C-더함-기록.json"],
   // 재점검 두 세션(2026-09-25)이 찾아 고친 것 — 앞 표가 고친 칸을 다시 고치면 사슬로 봄
-  ["재점검 중간", "재점검-나머지-중간-기록.json"]];
-const ORDER = { "재검토": 1, "재검토 손으로": 2, "칩 규칙 뒤 데이터": 3, "재검토 지문 블록": 4, "전수": 5, "전수 손으로": 6, "전수 READING": 7, "전수 중앙 사본": 8, "전수 지문 블록": 9, "B": 10, "B 손으로": 11, "C": 12, "C 더함": 12, "재점검 중간": 14 };
+  ["재점검 중간", "재점검-나머지-중간-기록.json"], ["재점검1", "재점검-재검토1-기록.json"]];
+const ORDER = { "재검토": 1, "재검토 손으로": 2, "칩 규칙 뒤 데이터": 3, "재검토 지문 블록": 4, "전수": 5, "전수 손으로": 6, "전수 READING": 7, "전수 중앙 사본": 8, "전수 지문 블록": 9, "B": 10, "B 손으로": 11, "C": 12, "C 더함": 12, "재점검 중간": 14, "재점검1": 15 };
 const planRows = {};
 for (const [name, f] of plans) {
   const rows = readJ(path.join(D, f)).plan;
@@ -72,6 +72,14 @@ for (const f of ["힌트-첫줄.json", "힌트-첫줄-이어쓰기.json"]) {
   }
 }
 const laterMatch = (ptr, order, now) => writes.find((w) => w.ptr === ptr && w.order > order && w.value === now);
+// 소유자 결정 대기 — 제목 되돌림(2026-09-25 05:3x): 관문 15 표가 넣은 STUDENT 제목 고침을 배포 전에 원본(= 운영) 값으로 되돌림(소유자 규칙 '제목은 소유자 결정').
+// 그 칸의 줄은 '고친 것' 으로 세지 않고 '대기' 로 따로 센다 — 지금 값이 되돌린 원본 값일 때만(다른 값이면 '안 됨').
+const REVERTED = new Map();
+{
+  const p = path.join(D, "제목-되돌림-기록.json");
+  if (fs.existsSync(p)) { const j = readJ(p); for (const e of Array.isArray(j) ? j : j.log || []) { const at = resolve(e.file, e.where); if (at) REVERTED.set(at.ptr, e.new); } }
+}
+const pending = [];
 
 // ── 코드로 끝낸 줄 — 그 코드 파일에 고친 글이 있는가
 const CODE = [
@@ -94,7 +102,7 @@ for (const [table] of plans) {
   const order = ORDER[table];
   for (const r of planRows[table]) {
     if (r.status === "적용") {
-      let ok = true, later = false;
+      let ok = true, later = false, pend = false;
       for (const k of r.칸 || []) {
         const s = splitSlot(k); const at = s && resolve(s.rel, s.p);
         if (!at) { ok = false; continue; }
@@ -102,19 +110,21 @@ for (const [table] of plans) {
         if (want && Array.isArray(at.value)) { if (!want.every((x) => at.value.includes(x))) ok = false; continue; }
         if (at.value === r.고칠글) continue;
         if (laterMatch(at.ptr, order, at.value)) { later = true; continue; }
+        if (REVERTED.has(at.ptr) && REVERTED.get(at.ptr) === at.value) { pend = true; continue; }
         ok = false;
       }
+      if (ok && pend) { pending.push(`${table} ${r.uid}`); tally[`${table} · 제목 — 소유자 결정 대기(원본으로 되돌림)`] = (tally[`${table} · 제목 — 소유자 결정 대기(원본으로 되돌림)`] || 0) + 1; lines.push(`… ${table} ${r.uid} — 제목 소유자 결정 대기`); continue; }
       mark(table, r, ok ? (later ? "적용 — 뒤에 다시 고침(사슬)" : "적용 — 칸에 고칠 글 있음") : "적용인데 지금 칸 값이 다름", ok);
       continue;
     }
     // 손으로 · 건너뜀 — 조작 기록
     const ops = Object.entries(logs).flatMap(([name, arr]) => arr.filter((e) => String(e.id).split(/\s+/).includes(r.uid) || String(e.id).endsWith(r.uid) || String(e.id).includes(` ${r.uid} `) || String(e.id).includes(`${r.uid}(`)).map((e) => ({ ...e, _src: name })));
     if (ops.length) {
-      let ok = true, later = false;
+      let ok = true, later = false, pend = false;
       for (const e of ops) {
         const at = resolve(e.file, e.where);
         if (!at) { ok = false; continue; }
-        if (e.op === "set") { if (at.value === e.new) continue; if (laterMatch(at.ptr, ORDER[e._src], at.value)) { later = true; continue; } ok = false; continue; }
+        if (e.op === "set") { if (at.value === e.new) continue; if (laterMatch(at.ptr, ORDER[e._src], at.value)) { later = true; continue; } if (REVERTED.has(at.ptr) && REVERTED.get(at.ptr) === at.value) { pend = true; continue; } ok = false; continue; }
         const after = e.after || {};
         const cur = at.value || {};
         if (after.text !== undefined && cur.text !== after.text && !laterMatch(`${at.ptr}/text`, ORDER[e._src], cur.text)) ok = false;
@@ -123,6 +133,7 @@ for (const [table] of plans) {
         const removed = (e.before && Array.isArray(e.before.alternatives) ? e.before.alternatives : []).filter((x) => !(after.alternatives || []).includes(x));
         if (removed.some((x) => alts.includes(x))) ok = false;
       }
+      if (ok && pend) { pending.push(`${table} ${r.uid}`); tally[`${table} · 제목 — 소유자 결정 대기(원본으로 되돌림)`] = (tally[`${table} · 제목 — 소유자 결정 대기(원본으로 되돌림)`] || 0) + 1; lines.push(`… ${table} ${r.uid} — 제목 소유자 결정 대기`); continue; }
       mark(table, r, ok ? `조작 ${ops.length}(${[...new Set(ops.map((o) => o._src))].join(" · ")})${later ? " — 뒤에 다시 고침" : ""}` : "조작 기록과 지금 값이 다름", ok);
       continue;
     }
@@ -149,7 +160,8 @@ for (const [table] of plans) {
   }
 }
 const total = Object.values(planRows).reduce((a, r) => a + r.length, 0);
-console.log(`${BREAK ? "(깨기 — 재검토 첫 적용 줄의 고칠 글을 메모리에서 바꿈) " : ""}판정표 줄 ${total}(재검토 ${planRows["재검토"].length} · 전수 ${planRows["전수"].length} · B ${planRows["B"].length}) · 확인됨 ${total - bad.length} · 안 됨 ${bad.length}`);
+console.log(`${BREAK ? "(깨기 — 재검토 첫 적용 줄의 고칠 글을 메모리에서 바꿈) " : ""}판정표 줄 ${total}(재검토 ${planRows["재검토"].length} · 전수 ${planRows["전수"].length} · B ${planRows["B"].length}) · 확인됨 ${total - bad.length - pending.length} · 제목 소유자 결정 대기(원본으로 되돌림) ${pending.length} · 안 됨 ${bad.length}`);
+if (pending.length) console.log(`   대기: ${pending.join(" · ")}`);
 for (const [k, v] of Object.entries(tally).sort()) console.log(`   ${String(v).padStart(4)}  ${k}`);
 for (const b of bad) console.log(`   ✘ ${b}`);
 if (LIST) for (const l of lines) console.log(l);
