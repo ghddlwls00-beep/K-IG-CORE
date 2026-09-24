@@ -15,7 +15,7 @@ import {
 } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
-import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
+import { firstSlashAlternative, generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
 import { useProgress } from "@/components/ProgressProvider";
 
@@ -178,7 +178,8 @@ export function StudentLearningView({
       unlockMobileAudio();
       stopAll();
       setTarget({ idx, kind, loop });
-      playSentenceQueue([text], {
+      // BUG-028: an English sentence with a slashed alternative ("He/She …") is spoken in its first form
+      playSentenceQueue([kind === "en" ? firstSlashAlternative(text) : text], {
         lang: kind,
         rate: speed,
         loop,
@@ -225,7 +226,7 @@ export function StudentLearningView({
   );
 
   const allSentences = useMemo(
-    () => sentenceItems.map((s) => s.text).filter(Boolean),
+    () => sentenceItems.map((s) => firstSlashAlternative(s.text)).filter(Boolean),
     [sentenceItems]
   );
 
@@ -358,7 +359,7 @@ export function StudentLearningView({
       if (target) {
         const t = target;
         const text =
-          t.kind === "ko" ? koParas[t.idx] ?? "" : sentenceItems[t.idx]?.text ?? "";
+          t.kind === "ko" ? koParas[t.idx] ?? "" : firstSlashAlternative(sentenceItems[t.idx]?.text ?? "");
         if (text) {
           setTimeout(() => {
             playSentenceQueue([text], {

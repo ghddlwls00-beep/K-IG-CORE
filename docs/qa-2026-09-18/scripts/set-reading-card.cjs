@@ -8,7 +8,7 @@
  *
  *   node set-reading-card.cjs plans/x.json            미리보기
  *   node set-reading-card.cjs plans/x.json --apply    씀
- *   node set-reading-card.cjs --check plans/x.json …  세 사본 모두 to 인지
+ *   node set-reading-card.cjs --check plans/x.json …  세 사본 모두 to 인지 (계획을 하나도 안 넘기면 exit 1 — 7단계 7-1 h)
  */
 const fs = require("fs");
 const path = require("path");
@@ -43,6 +43,7 @@ function centralRange(raw, lesson) {
 }
 
 if (CHECK) {
+  if (!plans.length) { console.log("카드 계획을 하나도 안 넘김 — 센 것 0 (7-1 h). exit 1"); process.exit(1); }
   let lines = 0, bad = 0;
   const central = JSON.parse(read(CENTRAL));
   for (const p of plans) {

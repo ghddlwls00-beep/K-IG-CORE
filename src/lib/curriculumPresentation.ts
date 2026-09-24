@@ -46,7 +46,8 @@ export function formatGroupTitle(courseSlug: string, rawLabel: string): string {
     const stageTitles: Record<string, string> = {
       "제 1 단계": "제 1단계 : 기본 문장 구조 훈련 (Stage 1)",
       "제 2 단계": "제 2단계 : 어순 및 시제 훈련 (Stage 2)",
-      "제 3 단계": "제 3단계 : 조동사 & 수동태 훈련 (Stage 3)",
+      // 이름을 내용대로 — 답 199개 중 조동사 · 수동태 0(6-1372, 소유자 결정 2026-09-23)
+      "제 3 단계": "제 3단계 : 진행형 · 부가의문문 & 기초 문형 복습 (Stage 3)",
       "제 4 단계": "제 4단계 : 의문사 & 부정구문 훈련 (Stage 4)",
       "제 5 단계": "제 5단계 : 접속사 & 복문 확장 훈련 (Stage 5)",
       "제 6 단계": "제 6단계 : 실전 고급 복합 구문 (Stage 6)",
@@ -129,14 +130,17 @@ export function formatLessonPresentation(
     let stageNum = 1;
     if (stageBase <= 16) { stageNum = 1; stageName = "기본 문장 구조"; }
     else if (stageBase <= 42) { stageNum = 2; stageName = "어순 및 시제"; }
-    else if (stageBase <= 54) { stageNum = 3; stageName = "조동사 & 수동태"; }
+    else if (stageBase <= 54) { stageNum = 3; stageName = "진행형 · 부가의문문 & 기초 문형 복습"; }
     else if (stageBase <= 78) { stageNum = 4; stageName = "의문사 & 부정문"; }
     else if (stageBase <= 108) { stageNum = 5; stageName = "접속사 & 복문"; }
     else { stageNum = 6; stageName = "고급 복합 구문"; }
+    // gh1-116 ~ 123 은 2002년 뉴스 방송으로 만든 문장이라 인물 · 사건이 그때 기준(파월 국무장관 · 무바라크 대통령 …).
+    // 이 화면은 instruction · paragraph 를 그리지 않아 부제목에 적음(6-1516, 소유자 결정 2026-09-23).
+    const newsNote = num >= 116 && num <= 123 ? " · 2002년 뉴스 방송 기반 문장입니다" : "";
 
     return {
       title: `${lectureNum}강 · 기초 영작 훈련`,
-      subtitle: `제 ${stageNum}단계 (${stageName})`,
+      subtitle: `제 ${stageNum}단계 (${stageName})${newsNote}`,
       badge: "🎙️ 마이크 채점",
       code: `Lesson ${lectureNum}`,
     };

@@ -19,7 +19,7 @@
  {"item": "6-0328 d204 n6 KO — insisted 를 '권했다'", "files": ["content/ld_english_scripts.json"],
   "from": "그 여인은 약간 마음이 상했으나 그 남자가 당장 거기에서 한 조각을 먹도록 권했다.", "to": "그 여인은 약간 마음이 상했지만, 그 남자에게 당장 그 자리에서 한 조각을 먹으라고 고집했다.", "expect": 1},
  {"item": "6-0330 d204 힌트 — 'boarder' 두 번(넘친 줄은 배치 5 에서 합쳐짐)", "files": ["content/lessons/ld/d204.json"],
-  "from": "turn upon steaming pies boarder, politely refuse", "to": "turn upon steaming pies, politely refuse", "expect": 1},
+  "from": "turn upon steaming pies boarder, politely refuse", "to": "turn upon steaming pies, politely refuse", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0331 d218 n2 EN — in short 앞 줄표·뒤 쉼표(한국어 행은 줄표)", "files": ["content/ld_english_scripts.json"],
   "from": "coins, paintings, seashells, in short anything that is interesting or curious.", "to": "coins, paintings, seashells — in short, anything that is interesting or curious.", "expect": 1}
 ]

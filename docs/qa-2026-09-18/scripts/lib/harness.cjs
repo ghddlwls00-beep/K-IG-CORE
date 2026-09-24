@@ -192,9 +192,29 @@ async function startBrowser(name, port, { fresh = false } = {}) {
   };
 }
 
+/**
+ * 7단계 7-1 a — 방문 하나의 사건(콘솔 · 예외 · 4xx/5xx · 실패한 요청 · 요청)을 끝까지 남긴다.
+ * cdp.cjs 의 tab.resetEvents() 는 사건을 그냥 비우는데, 드라이버는 동작마다(문장 넘기기 등) 그것을 불러
+ * 9/18 기록 5,530건 중 3,071건에 요청 기록이 하나도 없었다("서버 오류 판정 불가"). 비우기 전에 방문 누적(tab.visitEvents)에
+ * 옮겨 두고, 새 방문(load)에서만 누적을 새로 시작한다. events(tab) 는 누적 + 지금 것을 돌려준다.
+ * cdp.cjs 자체는 그대로(다른 날의 도구가 단계별로 비우는 뜻 그대로 쓰므로) — 이 하네스로 연 탭만.
+ */
+const emptyEvents = () => ({ console: [], exceptions: [], log: [], badResponses: [], failed: [], requests: [], dialogs: [] });
+function mergeEvents(into, from) {
+  for (const [k, v] of Object.entries(from || {})) if (Array.isArray(v)) (into[k] ||= []).push(...v);
+  return into;
+}
+function keepVisitEvents(tab) {
+  const clear = tab.resetEvents.bind(tab);
+  tab.visitEvents = emptyEvents();
+  tab.resetEvents = () => { mergeEvents(tab.visitEvents, tab.events); clear(); };
+  tab.startVisit = () => { tab.visitEvents = emptyEvents(); clear(); };
+}
+
 /** Open an instrumented tab. opts.clean=true clears non-licence storage on every navigation. */
 async function openTab(browser, { clean = false } = {}) {
   const tab = await Tab.open(browser.port);
+  keepVisitEvents(tab);
   await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: AUDIO_HOOK });
   if (clean) await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: CLEAN_STORAGE });
   return tab;
@@ -221,7 +241,8 @@ async function load(tab, url, { marker = null, settle = 1200, expectPath = null 
   const finalUrl = expectPath ? `${BASE}${expectPath}` : target;
   await tab.send("Page.navigate", { url: "about:blank" }).catch(() => {});
   await waitFor(tab, `location.href === "about:blank"`, 10000);
-  tab.resetEvents();
+  // 새 방문의 시작 — about:blank 까지의 사건은 버리고 방문 누적을 새로(7-1 a)
+  if (tab.startVisit) tab.startVisit(); else tab.resetEvents();
   await tab.send("Page.navigate", { url: target });
   const navigated = await waitFor(tab, `location.href.split("?")[0].split("#")[0] === ${JSON.stringify(finalUrl.split("?")[0].split("#")[0])} && document.readyState === "complete"`, 45000);
   const markerExpr = marker ? `(() => { const m = document.querySelector("main"); return !!m && (m.innerText || "").includes(${JSON.stringify(marker)}); })()` : "true";
@@ -332,7 +353,8 @@ async function screenshot(tab, file, { fullPage = false } = {}) {
 }
 
 function events(tab) {
-  const e = tab.events;
+  // 방문 누적 + 마지막으로 비운 뒤의 것(7-1 a) — 동작마다 비워도 방문의 4xx · 요청이 사라지지 않게
+  const e = mergeEvents(mergeEvents(emptyEvents(), tab.visitEvents), tab.events);
   return {
     console: e.console.slice(0, 5),
     exceptions: e.exceptions.slice(0, 5),

@@ -19,12 +19,24 @@ for (const [plan, ms] of Object.entries(byPlan)) {
   let raw = fs.readFileSync(file, "utf8");
   const data = JSON.parse(raw);
   for (const m of ms) {
-    const hits = data.filter((l) => typeof l.item === "string" && l.item.startsWith(m.item));
+    // exact: true — item 글이 통째로 같은 줄만(한 줄의 item 이 다른 줄 item 의 앞부분일 때: '드릴 7' · '드릴 7 영어')
+    // to: "…" — item 글이 똑같은 줄이 둘 이상일 때 그 줄의 to 글로 가림(stage6-student-a 의 s8-3 두 줄)
+    const hits = data.filter((l) => typeof l.item === "string" && (m.exact ? l.item === m.item : l.item.startsWith(m.item)) && (m.to === undefined || l.to === m.to));
     if (hits.length !== 1) throw new Error(`${plan}: '${m.item}' 로 시작하는 줄 ${hits.length}개(1 이어야 함)`);
     for (const k of Object.keys(m.set)) if (k in hits[0]) throw new Error(`${plan}: '${m.item}' 에 이미 ${k}`);
     // 글자 자리: 그 줄의 item 값 뒤 첫 "expect": N 뒤에 끼움
     const itemJson = JSON.stringify(hits[0].item);
-    const at = raw.indexOf(`"item": ${itemJson}`) >= 0 ? raw.indexOf(`"item": ${itemJson}`) : raw.indexOf(`"item":${itemJson}`);
+    // 같은 item 글의 줄이 여럿이면 그 줄의 to 글이 뒤따르는 자리를 고름
+    const toJson = JSON.stringify(hits[0].to);
+    let at = -1;
+    for (const key of [`"item": ${itemJson}`, `"item":${itemJson}`]) {
+      for (let p = raw.indexOf(key); p >= 0 && at < 0; p = raw.indexOf(key, p + 1)) {
+        const next = raw.indexOf(`"item"`, p + key.length);
+        const body = raw.slice(p, next < 0 ? raw.length : next);
+        if (m.to === undefined || body.includes(`"to": ${toJson}`) || body.includes(`"to":${toJson}`)) at = p;
+      }
+      if (at >= 0) break;
+    }
     if (at < 0) throw new Error(`${plan}: '${m.item}' 의 글자 자리를 못 찾음`);
     const ex = /"expect":\s*\d+/g; ex.lastIndex = at;
     const e = ex.exec(raw); if (!e) throw new Error(`${plan}: '${m.item}' 뒤 expect 못 찾음`);

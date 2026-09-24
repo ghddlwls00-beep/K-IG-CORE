@@ -18,6 +18,8 @@ const E = require("./lib/expectations.cjs");
 const { REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs");
 
 const OUT = path.join(__dirname, "../out");
+// 7단계 7-1 i: 이 목록을 만든 재료의 지문 — audio-check.cjs 가 검사 전에 다시 계산해 다르면 멈춘다(읽기 전에 계산)
+const INPUTS = require("./lib/inventory-inputs.cjs").inputsFingerprint();
 const freeKeys = new Set(JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/freeSpeechKeys.json"), "utf8")).keys);
 const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8");
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
@@ -102,6 +104,7 @@ const report = {
   },
   clips: rows,
   legacyAudio: [...legacy.entries()].map(([src, r]) => ({ src, lessons: [...r.lessons].slice(0, 4), lessonCount: r.lessons.size, freeLesson: r.freeLesson })),
+  inputs: INPUTS,
 };
 fs.mkdirSync(OUT, { recursive: true });
 fs.writeFileSync(path.join(OUT, "audio-inventory.json"), JSON.stringify(report, null, 1));

@@ -15,7 +15,7 @@
   "from": "대평원의 미시시피 강의 서쪽에서는 유랑 종족들이 들소(미국의 들소)의 거대한 무리들을 따라다녔다.",
   "to": "미시시피 강 서쪽 대평원에서는 유랑 종족들이 들소(아메리카들소)의 거대한 무리들을 따라다녔다.", "expect": 1},
  {"item": "6-0148 d116 힌트 — Great Plains · 대본에 없는 '(American bison)' 뺌", "files": ["content/lessons/ld/d116.json"],
-  "from": "Great plains, wandering tribes great herds of buffalo(American bison).", "to": "Great Plains, wandering tribes great herds of buffalo.", "expect": 1},
+  "from": "Great plains, wandering tribes great herds of buffalo(American bison).", "to": "Great Plains, wandering tribes great herds of buffalo.", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0159 d118 n6 EN — asked 뒤 직접 의문문에 따옴표·대문자", "files": ["content/ld_english_scripts.json"],
   "from": "One Native American leader asked, how can we sell the land?", "to": "One Native American leader asked, \"How can we sell the land?\"", "expect": 1},
  {"item": "6-0159 d118 n7 EN — 같은 사람의 말(행마다 따옴표를 닫음)", "files": ["content/ld_english_scripts.json"],
@@ -34,7 +34,7 @@
  {"item": "6-0164 d120 n4 KO — Bureau of Indian Affairs = 인디언사무국", "files": ["content/ld_english_scripts.json"],
   "from": "그 보호구역은 정부 기관 - 인디언국의 통제 하에 놓였다.", "to": "그 보호구역은 정부 기관인 인디언사무국의 통제 하에 놓였다.", "expect": 1},
  {"item": "6-0148 d120 힌트 — 대본의 Bureau", "files": ["content/lessons/ld/d120.json"],
-  "from": "reservations bureau of Indian Affairs.", "to": "reservations Bureau of Indian Affairs.", "expect": 1},
+  "from": "reservations bureau of Indian Affairs.", "to": "reservations Bureau of Indian Affairs.", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0168 d121 n2 KO — 한 문장을 두 행에 잘라 n2 가 '-' 로 끝나고 n3 에 영어에 없는 '믿는다'", "files": ["content/ld_english_scripts.json"],
   "from": "많은 사람들은 세계가 곧 인구과잉이 될 것이라고 -", "to": "많은 사람들은 세계가 곧 인구과잉이 될 것이라고 믿는다.", "expect": 1},
  {"item": "6-0168 d121 n3 KO", "files": ["content/ld_english_scripts.json"],
@@ -49,5 +49,5 @@
   "from": "Joseph P.Hickman.", "to": "Joseph P. Hickman.", "expect": 1},
  {"item": "6-0170 d122 힌트 — 넘쳐 sentences 블록(n=0)에 있던 줄 가운데 지금 대본에 있는 것만(North America's population · 2%)을 hints 로", "files": ["content/lessons/ld/d122.json"],
   "from": "resources distributed equally Africa population growth Europe's population, immigration",
-  "to": "resources distributed equally Africa population growth 2%. Europe's population, North America's population, immigration", "expect": 1}
+  "to": "resources distributed equally Africa population growth 2%. Europe's population, North America's population, immigration", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"}
 ]

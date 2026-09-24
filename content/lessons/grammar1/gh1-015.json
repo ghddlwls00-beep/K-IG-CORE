@@ -36,11 +36,17 @@
       "items": [
         {
           "n": "1",
-          "text": "Who did it?"
+          "text": "Who did it?",
+          "alternatives": [
+            "Who did that?"
+          ]
         },
         {
           "n": "2",
-          "text": "Who likes it?"
+          "text": "Who likes it?",
+          "alternatives": [
+            "Who likes that?"
+          ]
         },
         {
           "n": "3",
@@ -168,11 +174,17 @@
       "items": [
         {
           "n": "24",
-          "text": "Who doesn't like it?"
+          "text": "Who doesn't like it?",
+          "alternatives": [
+            "Who doesn't like that?"
+          ]
         },
         {
           "n": "25",
-          "text": "She doesn't like it."
+          "text": "She doesn't like it.",
+          "alternatives": [
+            "She doesn't like that."
+          ]
         },
         {
           "n": "26",
@@ -185,16 +197,24 @@
           "n": "27",
           "text": "Nobody likes it.",
           "alternatives": [
-            "No one likes it."
+            "No one likes it.",
+            "Nobody likes that.",
+            "No one likes that."
           ]
         },
         {
           "n": "28",
-          "text": "Anybody likes it."
+          "text": "Anybody likes it.",
+          "alternatives": [
+            "Anybody likes that."
+          ]
         },
         {
           "n": "29",
-          "text": "Everybody likes it."
+          "text": "Everybody likes it.",
+          "alternatives": [
+            "Everybody likes that."
+          ]
         },
         {
           "n": "30",
@@ -224,7 +244,10 @@
         },
         {
           "n": "35",
-          "text": "I do not like it."
+          "text": "I do not like it.",
+          "alternatives": [
+            "I do not like that."
+          ]
         },
         {
           "n": "36",

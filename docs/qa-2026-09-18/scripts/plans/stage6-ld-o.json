@@ -7,7 +7,7 @@
   "from": "이 가게에는 왼쪽에 태엽이 있는 시계로부터 왼손잡이 가위, 손톱깎이, 감자깎이, 펜, 골프채까지 모든 것이 있다.",
   "to": "이 가게에는 용두가 왼쪽에 달린 손목시계부터 왼손잡이용 가위, 발톱깎이, 감자 깎는 칼, 펜, 골프채까지 없는 것이 없다.", "expect": 1},
  {"item": "6-0269 d181 힌트 — 대본 글자(can openers · toenail clippers · golf clubs; 하이픈·띄어쓰기가 다르면 칩대로 친 답이 틀림)", "files": ["content/lessons/ld/d181.json"],
-  "from": "can-openers gear shifts", "to": "can openers gear shifts", "expect": 1},
+  "from": "can-openers gear shifts", "to": "can openers gear shifts", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0269 d181 힌트", "files": ["content/lessons/ld/d181.json"],
   "from": "toe nail clippers, potato peelers, pens, golf-clubs.", "to": "toenail clippers, potato peelers, pens, golf clubs.", "expect": 1},
  {"item": "6-0273 d183 n7 KO — was quick to pay", "files": ["content/ld_english_scripts.json"],

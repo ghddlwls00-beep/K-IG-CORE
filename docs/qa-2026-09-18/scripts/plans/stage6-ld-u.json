@@ -21,7 +21,7 @@
  {"item": "6-0390 d030 힌트 — 대본 '$4.95'", "files": ["content/lessons/ld/d030.json"],
   "from": "495. 4 dollars and 95 cents, bargain.", "to": "495. $4.95, bargain.", "expect": 1},
  {"item": "6-0390 d032 힌트 — 대본 'Mount Everest'", "files": ["content/lessons/ld/d032.json"],
-  "from": "Kathy Byram Mt. Everest, Jim Elliott", "to": "Kathy Byram Mount Everest, Jim Elliott", "expect": 1},
+  "from": "Kathy Byram Mt. Everest, Jim Elliott", "to": "Kathy Byram Mount Everest, Jim Elliott", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0390 d035 힌트 — 대본 'stepsisters'", "files": ["content/lessons/ld/d035.json"],
   "from": "Aunt Helen, step-sisters, half-brothers", "to": "Aunt Helen, stepsisters, half-brothers", "expect": 1},
  {"item": "6-0391 d026 n11 KO — '갈꺼냐'", "files": ["content/ld_english_scripts.json"],

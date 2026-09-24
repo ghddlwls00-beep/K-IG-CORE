@@ -1,0 +1,4 @@
+[
+ {"item": "6-0242 G1 d159 n2 영어 — 명사 앞 복합 수식어 '50-cent piece'(결정표 1번 A: 입력 채점이 하이픈을 띄운 꼴도 받게 되어 고칠 수 있음)", "files": ["content/ld_english_scripts.json"], "from": "A short time ago, he bought a rare 50 cent piece worth $250.", "to": "A short time ago, he bought a rare 50-cent piece worth $250.", "expect": 1},
+ {"item": "6-0242 G1 d159 힌트 — 대본과 같은 꼴로(배치 5 가 맞춘 '50 cent' 를 대본을 따라)", "files": ["content/lessons/ld/d159.json"], "from": "rare 50 cent piece $250!", "to": "rare 50-cent piece $250!", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"}
+]

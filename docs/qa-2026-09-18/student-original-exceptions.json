@@ -21,11 +21,147 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
  },
  {
+  "lesson": "s1-2",
+  "kind": "한국어",
+  "text": "나의 이름은 홍길동이고, 나는 서울에 삽니다.",
+  "original": "나의 이름은 홍길동입니다 그리고 나는 서울에 삽니다.",
+  "en": "My name is Hong Gil Dong, and I live in Seoul.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1622 s1-2 #1 — 두 절을 문장부호 없이 이음'"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "한국어",
+  "text": "나는 (아파트 이름) 아파트에 삽니다.",
+  "original": "나는 한국아파트에 삽니다.",
+  "en": "I live in (apartment name) Apartments.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "한국어",
+  "text": "나는 (학교 이름) 초등학교 4학년입니다.",
+  "original": "나는 한국 초등학교 4학년입니다",
+  "en": "I am a 4th grade student at (school name) Elementary School.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "한국어",
+  "text": "나는 (10)살입니다.",
+  "original": "나는 11살 입니다.",
+  "en": "I am (10) years old.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s1-3",
+  "kind": "한국어",
+  "text": "나는 친구들과 함께 있는 것을 좋아하고, 친구들도 나와 함께 있는 것을 좋아합니다.",
+  "original": "나는 나의 친구들 주위에 있기를 좋아하고 그들도 제 주위에 있기를 좋아합니다.",
+  "en": "I love to be around my friends, and they like to be around me.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1623 s1-3 #3 — 한 문장 안 나/제 섞임 · '주위에 있기를' 옮긴 투(과의 나 로 맞춤)'"
+ },
+ {
+  "lesson": "s1-3",
+  "kind": "한국어",
+  "text": "대부분의 사람들이 나를 좋아합니다.",
+  "original": "대부분의 사람들이 저를 좋아합니다.",
+  "en": "Most people like me.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1623 s1-3 #5 — 과의 나 로 맞춤'"
+ },
+ {
+  "lesson": "s1-4",
+  "kind": "한국어",
+  "text": "나의 취미는 책 읽기, 음악 듣기, 등산, 영화 보기, 스포츠 참여입니다.",
+  "original": "나의 취미들은 책 읽기, 음악듣기, 등산, 영화보기, 스포츠에 참가하는 것 입니다.",
+  "en": "My hobbies include reading books, listening to music, hiking, watching movies, and participating in sports.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1626 s1-5 #1 — 띄어쓰기 · 것입니다 (되살리기로 content/lessons/student/s1-4.json 로 옮김)'"
+ },
+ {
+  "lesson": "s1-4",
+  "kind": "한국어",
+  "text": "나는 컴퓨터 게임 하기도 좋아합니다.",
+  "original": "나는 컴퓨터 게임하기도 또한 좋아합니다.",
+  "en": "I like to play computer games as well.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1626 s1-5 #3 — 도 + 또한 겹침 · 컴퓨터 게임 (되살리기로 content/lessons/student/s1-4.json 로 옮김)'"
+ },
+ {
   "lesson": "s1-5",
   "kind": "고침",
   "text": "I have been studying English for 3 years so far.",
   "original": "I have been studying English for (3, 4 or 5) years so far.",
   "why": "4·5단계 기준 9(소유자 승인 2026-09-23): 원본 빈칸 (3, 4 or 5) 를 3 으로, 한국어에 (다른 예: 4년, 5년) — 커밋 f35e8be · 계획 student-criterion9-0923.json (당시 s1-6, 되살리기로 s1-5 로 옮김)"
+ },
+ {
+  "lesson": "s1-5",
+  "kind": "한국어",
+  "text": "나는 학교에서 많은 다른 과목들을 공부하지만, 내가 가장 좋아하는 과목은 영어입니다.",
+  "original": "나는 학교에서 많은 다른 과목들을 공부하지만 나의 가장 좋아하는 과목은 영어입니다.",
+  "en": "I study many different subjects at school, but my favorite subject is English.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 전수(한 문단 안 나/저 섞임 10) — s1-6 (되살리기로 content/lessons/student/s1-5.json 로 옮김)'"
+ },
+ {
+  "lesson": "s1-5",
+  "kind": "한국어",
+  "text": "나는 지금까지 3년 동안 영어를 공부해오고 있습니다. (다른 예: 4년, 5년)",
+  "original": "나는 영어를 지금까지 3년간 공부해오고 있습니다.",
+  "en": "I have been studying English for 3 years so far.",
+  "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '48-50 (기준 9) s1-6 KO3 (되살리기로 content/lessons/student/s1-5.json 로 옮김)'"
+ },
+ {
+  "lesson": "s1-5",
+  "kind": "한국어",
+  "text": "배우는 것이 재미있고 신나기 때문에 나는 영어 공부하기를 좋아합니다.",
+  "original": "왜냐하면 배우는 것이 재미있고 신이 납니다.",
+  "en": "I like studying English because it is fun and exciting to learn.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본은 '왜냐하면 …신이 납니다.' 로 끝나 주절(영어 공부하기를 좋아한다)이 빠진 끊긴 문장"
+ },
+ {
+  "lesson": "s1-6",
+  "kind": "한국어",
+  "text": "내가 다른 사람들을 도울 때 그것은 나를 행복하게 합니다.",
+  "original": "제가 다른 사람들을 도울 때 그것은 저를 행복하게 합니다.",
+  "en": "When I help others, it makes me happy.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s1-6 한국어 #2'"
+ },
+ {
+  "lesson": "s1-6",
+  "kind": "한국어",
+  "text": "나는 고아원에서 자원봉사하기를 좋아하고 거기서 아이들을 도와줍니다.",
+  "original": "나는 고아원에 자원하기를 좋아하고 거기서 아이들을 도와줍니다.",
+  "en": "I like to volunteer at the orphanage and help the children there.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s1-6 #3 — volunteer = 자원봉사하다 · 고아원에서'"
+ },
+ {
+  "lesson": "s1-6",
+  "kind": "한국어",
+  "text": "고아원에서 자원봉사하는 것은 나에게 신나는 시간입니다.",
+  "original": "고아원에 자원하는 것은 저에게 신나는 시간입니다.",
+  "en": "Volunteering at the orphanage is an exciting time for me.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s1-6 한국어 #4'"
+ },
+ {
+  "lesson": "s2-1",
+  "kind": "한국어",
+  "text": "저의 가족에 대해 말씀드릴 수 있는 기회를 주셔서 감사합니다.",
+  "original": "당신에게 저의 가족을 소개할 수 있는 기회를 주셔서 감사합니다.",
+  "en": "Thank you for the chance to tell you about my family.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1628 s2-1 #1 — tell you about(소개하다 는 #2)'"
+ },
+ {
+  "lesson": "s2-2",
+  "kind": "한국어",
+  "text": "저는 좋은 가족이 있습니다.",
+  "original": "나는 좋은 가족이 있습니다.",
+  "en": "I have a nice family.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s2-2 한국어 #1'"
+ },
+ {
+  "lesson": "s2-2",
+  "kind": "한국어",
+  "text": "저의 가족은 (4)명입니다. 저의 아버지, 어머니, 여동생 그리고 저입니다.",
+  "original": "나의 가족은 (4) 명 입니다: 저의 아버지, 어머니, 여동생, 그리고 저 자신입니다.",
+  "en": "There are (4) people in my family: my father, my mother, my sister, and myself.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1629 s2-2 #2 — (4)명입니다 · 영어 쌍점을 옮긴 두 번 끝남'"
  },
  {
   "lesson": "s2-3",
@@ -35,11 +171,195 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
  },
  {
+  "lesson": "s2-3",
+  "kind": "한국어",
+  "text": "나의 아버지는 작은 핸드폰 회사에서 아주 열심히 일하십니다.",
+  "original": "나의 아버지는 작은 핸드폰 회사에서 아주 열심히 일합니다.",
+  "en": "My father works very hard at a small cell phone company.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s2-3 #1 아버지 … 일합니다'"
+ },
+ {
+  "lesson": "s2-3",
+  "kind": "한국어",
+  "text": "그분은 거기에서 거의 10년 동안 일해 오셨습니다.",
+  "original": "그는 거기에서 거의 10년 동안 일해오고 있습니다.",
+  "en": "He has worked there for almost ten years.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류(자기 가족 어른을 그/그녀/그들 로 · 높임 빠짐) — s2-3 #2 아버지'"
+ },
+ {
+  "lesson": "s2-3",
+  "kind": "한국어",
+  "text": "내가 생각하기에는 그분은 그 회사에서 가장 열심히 일하시는 분 같습니다.",
+  "original": "제가 생각하기에는 그는 그 회사에서 가장 열심히 일하시는 분 같습니다.",
+  "en": "I think he is the hardest worker in his company.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s2-3 한국어 #3'"
+ },
+ {
+  "lesson": "s2-3",
+  "kind": "한국어",
+  "text": "그분은 몇 년 동안 백화점에서 일하셨습니다.",
+  "original": "그녀는 몇 년 동안 백화점에서 일했습니다.",
+  "en": "She worked at a department store for several years.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류(자기 어머니를 '그녀' 로) — s2-3 #5'"
+ },
+ {
+  "lesson": "s2-3",
+  "kind": "한국어",
+  "text": "그분은 세상에서 최고의 어머니이십니다.",
+  "original": "그녀는 세상에서 최고의 어머니 이십니다.",
+  "en": "She is the best mother in the world.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류 — s2-3 #6'"
+ },
+ {
   "lesson": "s2-4",
   "kind": "고침",
   "text": "My parents always make my sister and me feel important and special.",
   "original": "My parents always make my sister and I feel important and special.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — grammar (S-15, S-16)"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "나의 부모님은 항상 나의 동생과 내가 중요하고 특별하다고 느끼게 해 주십니다.",
+  "original": "나의 부모님은 항상 나의 동생과 제가 중요하고 특별하게 느끼게 만듭니다.",
+  "en": "My parents always make my sister and me feel important and special.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1633 s2-4 #1 — 부모님 높임 · 한 문장 안 나/제 섞임'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "그분들은 항상 저희에게 좋은 본보기가 되어 주셨습니다.",
+  "original": "나의 부모님은 항상 저희에게 좋은 본보기가 되어줬습니다.",
+  "en": "They always have been a good example for us.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1633 s2-4 #3 — 부모님 높임'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "나의 아버지는 항상 집안일을 잘 도와주십니다.",
+  "original": "나의 아버지는 항상 집안일을 잘 도와줍니다.",
+  "en": "My father is always helpful around the house.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1633 s2-4 #4 — 아버지 높임(#5 가십니다 와 같게)'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "그분은 종종 어머니와 함께 쇼핑을 가십니다.",
+  "original": "그는 종종 어머니와 함께 쇼핑을 가십니다.",
+  "en": "He often goes shopping with my mother.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류 — s2-4 #5 아버지'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "나는 그분을 존경합니다.",
+  "original": "나는 그를 존경합니다.",
+  "en": "I look up to him.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류 — s2-4 #6 아버지'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "나의 어머니는 요리를 아주 잘하시고, 여전히 아름다운 여성이십니다.",
+  "original": "나의 어머니는 훌륭한 요리사 이시고 여전히 아름다운 여성 이십니다.",
+  "en": "My mother is a very good cook, and is still a beautiful woman.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1633 s2-4 #7 — 요리를 아주 잘하시고(very good cook) · 여성이십니다'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "그분은 나이보다 어려 보이십니다.",
+  "original": "그녀는 그녀의 나이보다 어려 보이십니다.",
+  "en": "She looks younger than her age.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류 — s2-4 #8'"
+ },
+ {
+  "lesson": "s2-4",
+  "kind": "한국어",
+  "text": "나는 나의 어머니를 사랑합니다.",
+  "original": "저는 저의 어머니를 사랑합니다.",
+  "en": "I love my mother.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s2-4 한국어 #9'"
+ },
+ {
+  "lesson": "s2-5",
+  "kind": "한국어",
+  "text": "나의 여동생은 (학교 이름) 초등학교에 다닙니다.",
+  "original": "나의 여동생은 (한국)초등학교에 다닙니다.",
+  "en": "My sister attends (School Name) Elementary School.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1635 s2-5 #1 — 학습자 빈칸 자리표시를 과정 꼴 (학교 이름) 으로'"
+ },
+ {
+  "lesson": "s2-6",
+  "kind": "한국어",
+  "text": "사실 그녀는 개를 한 마리 키웁니다.",
+  "original": "사실상 그녀는 개를 한 마리 가지고 있습니다.",
+  "en": "In fact, she has a dog.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1638 s2-6 #2 — 사실상(= 사실상 · 거의) → 사실 · 반려동물은 키우다'"
+ },
+ {
+  "lesson": "s2-6",
+  "kind": "한국어",
+  "text": "또한 그녀는 음악 듣기를 좋아하고 전화로 친구들과 이야기하기를 좋아합니다.",
+  "original": "또한 그녀는 음악듣기를 좋아하고 전화로 그녀의 친구들에게 이야기 하기를 좋아합니다.",
+  "en": "She also loves to listen to music and talk to her friends on the phone.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1639 s2-6 #3 문단 — 음악 듣기 · 친구들과 이야기하기'"
+ },
+ {
+  "lesson": "s2-6",
+  "kind": "한국어",
+  "text": "나의 가족은 항상 행복하고 우리는 서로서로 매우 가깝습니다. 이것은 내가 가족의 중요성을 진정으로 이해하는 데 도움을 줍니다.",
+  "original": "나의 가족은 항상 행복하고 우리는 서로서로 매우 가깝습니다. 이것은 제가 가족의 중요성을 진정으로 이해하는데 도움을 줍니다.",
+  "en": "My family is always happy, and we are very close to one another, which helps me really understand the importance of family.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 — s2-6 #5 (이해하는 데 띄어쓰기도)'"
+ },
+ {
+  "lesson": "s3-1",
+  "kind": "한국어",
+  "text": "나의 친구를 당신에게 소개하도록 해 주세요.",
+  "original": "나의 친구를 당신에게 소개하고 싶습니다.",
+  "en": "Allow me to introduce my friend to you.",
+  "why": "커밋 3705523 (09-06) feat: initial commit for K-IG-CORE standalone platform (VOCA · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '소개하고 싶습니다' 도 자연스럽지만 영어 'Allow me to …'(허락을 청함)의 꼴이 아님 — 이 과가 가르치는 영어 문형을 옮긴 지금 글(3차 점검도 둠)"
+ },
+ {
+  "lesson": "s3-1",
+  "kind": "한국어",
+  "text": "그는/그녀는 나의 가장 친한 친구 중 한 명입니다.",
+  "original": "그는/그녀는 나의 가장 좋은 친구 중 한명 입니다.",
+  "en": "He/She is one of my best friends.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1641 s3-1 #3 — best friend = 가장 친한 친구(다음 과 s3-2 처럼)'"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "한국어",
+  "text": "그들의 이름은 (이름들)입니다.",
+  "original": "그들의 이름은 대한, 민국 입니다.",
+  "en": "Their names are (names).",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "한국어",
+  "text": "나의 가장 친한 친구는 (이름)이고 나는 그를/그녀를 3년 동안 알아 왔습니다.",
+  "original": "저의 가장 친한 친구는 대한 이고 나는 그를/그녀를 3년 동안 알아왔습니다.",
+  "en": "My best friend is (name), and I have known him/her for 3 years.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 — s3-2 #5'"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "한국어",
+  "text": "그는/그녀는 나처럼 외향적이지만 때때로 수줍음을 타는 사람입니다.",
+  "original": "그는/그녀는 외향적이지만 나와 같이 부끄러움을 타는 사람입니다.",
+  "en": "He/She is an outgoing but sometimes shy person like me.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1642 s3-2 #8 — sometimes 빠짐 · like me 는 전체를 꾸밈'"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "한국어",
+  "text": "그는/그녀는 친구들과 어울려 놀기를 좋아하지만 새로운 사람들에게 이야기하는 것은 좋아하지 않습니다.",
+  "original": "그는/그녀는 친구 사귀기와 친구들과 놀기를 좋아하지만 그는/그녀는 새로운 사람들에게 이야기 하기를 좋아하지 않습니다.",
+  "en": "He/She likes to hang out and play with friends, but he/she does not like to talk to new people.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '친구 사귀기' 는 영어 hang out(어울려 놀다)과 다른 뜻"
  },
  {
   "lesson": "s3-3",
@@ -70,6 +390,22 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — grammar (S-15, S-16)"
  },
  {
+  "lesson": "s3-3",
+  "kind": "한국어",
+  "text": "게다가 그는/그녀는 축구와 컴퓨터 게임을 잘하고 영어도 잘합니다.",
+  "original": "게다가 그는/그녀는 피아노, 축구, 컴퓨터 게임 하기를 잘하고 영어 말하기를 잘합니다.",
+  "en": "In addition, he/she is good at playing soccer and computer games, and he/she speaks English well.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1647 s3-3 #3 한국어'"
+ },
+ {
+  "lesson": "s3-3",
+  "kind": "한국어",
+  "text": "그는/그녀는 항상 내 고민을 이해해 주고, 내가 도움이 필요할 때면 늘 곁에 있어 줍니다.",
+  "original": "그는/그녀는 항상 나의 문제들을 이해해 주고 내가 도움을 필요로 할 때 그는/그녀는 항상 거기에 있습니다.",
+  "en": "He/She always understands my problems, and when I need help, he/she is always there.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1646 s3-3 #8 — is always there = 늘 곁에 있다(자리 아님) · 내 고민'"
+ },
+ {
   "lesson": "s3-4",
   "kind": "고침",
   "text": "He/She sometimes tells me that he/she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he/she wants to serve the community.",
@@ -77,11 +413,91 @@
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1649 s3-4 #1 영어 — 목록 끝 접속사 · 관사(한 문장 30낱말)'"
  },
  {
+  "lesson": "s3-4",
+  "kind": "한국어",
+  "text": "그는/그녀는 때때로 경찰관, 소방관, 선생님, 의사, 통역사가 되어 지역 사회에 봉사하고 싶다고 나에게 말합니다.",
+  "original": "그는/그녀는 저에게 종종 경찰관, 소방관, 선생님, 의사, 통역사가 되고싶다고 말합니다.그리고 그는/그녀는 지역사회에 봉사하기를 원합니다.",
+  "en": "He/She sometimes tells me that he/she wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he/she wants to serve the community.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1648 s3-4 #1 — 통역사(과정의 16장처럼) · 지역 사회에 봉사(섬기다는 모심)'"
+ },
+ {
+  "lesson": "s3-4",
+  "kind": "한국어",
+  "text": "그는/그녀는 정말 똑똑해서 나는 그의/그녀의 꿈이 이루어질 것이라고 확신합니다.",
+  "original": "그는/그녀는 똑똑해서 나는 그의/그녀의 꿈이 이루어 질것이라 확신합니다.",
+  "en": "He/She is a truly smart person, and I am sure that his/her dream will come true.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r2.json '되살림 교정 s3-4 #2 한국어 — 원본 한국어 줄에 영어의 truly(정말)만 더함'"
+ },
+ {
   "lesson": "s4-1",
   "kind": "고침",
   "text": "Let me tell you about my relatives.",
   "original": "Let/Allow me tell you about my relatives.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
+ },
+ {
+  "lesson": "s4-1",
+  "kind": "한국어",
+  "text": "제 친척을 소개해 드리겠습니다.",
+  "original": "당신에게 저의 친척을 소개하고 싶습니다.",
+  "en": "Let me introduce my relatives to you.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1650 s4-1 #1 — Let me = 소개해 드리겠습니다(s3-1 의 would like to 와 다름)'"
+ },
+ {
+  "lesson": "s4-1",
+  "kind": "한국어",
+  "text": "제 친척에 대해 말씀드리겠습니다.",
+  "original": "나의 친척에 대해서 말씀 드리겠습니다.",
+  "en": "Let me tell you about my relatives.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1650 s4-1 #2 — 같은 과 저 로 · 말씀드리겠습니다(한 낱말)'"
+ },
+ {
+  "lesson": "s4-2",
+  "kind": "한국어",
+  "text": "나의 아버지와 어머니가 많은 남자형제와 여자형제가 있으시기 때문에 나는 많은 친척들이 있습니다.",
+  "original": "나의 아버지와 어머니가 많은 남자형제와 여자형제가 있기 때문에 나는 많은 친척들이 있습니다.",
+  "en": "I have many relatives because my father and mother have many brothers and sisters.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-2 #1 — 부모님 높임(6-1683 (1) 같은 종류)'"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 아버지는 (두) 명의 남자형제와 (두) 명의 여자형제가 있으십니다.",
+  "original": "나의 아버지는 두 명의 남자형제와 두 명의 여자형제가 있습니다.",
+  "en": "First of all, my father has (two) brothers and (two) sisters.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s4-3 #1 아버지 … 있습니다'"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 어머니 또한 (두) 명의 남자형제와 (두) 명의 여자형제가 있으십니다.",
+  "original": "나의 어머니 또한 두 명의 남자형제와 두 명의 여자형제가 있습니다.",
+  "en": "My mother also has (two) brothers and (two) sisters.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s4-3 #2 어머니 또한 … 있습니다'"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 아버지는 둘째 아들이십니다.",
+  "original": "나의 아버지는 둘째 아들 입니다.",
+  "en": "My father is the second son.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s4-3 #3 아버지 … 아들입니다'"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 할아버지와 할머니는 나의 큰아버지와 함께 살고 계십니다.",
+  "original": "나의 할아버지할머니는 나의 큰아버지와 함께 살고 있습니다.",
+  "en": "My grandparents live with my oldest uncle.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 고모들과 삼촌들 중 몇 분은 우리 집 가까이에 사셔서, 내가 자주 찾아뵙거나 그분들이 우리 집에 오십니다.",
+  "original": "나의 고모와 큰 아빠들은 우리 집 가까이에 살고 있기 때문에 나는 자주 그들에게 가거나 방문합니다.",
+  "en": "Some of my aunts and uncles live near my house so I often go and visit them, or they come and visit me.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
  },
  {
   "lesson": "s4-4",
@@ -98,6 +514,126 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
  },
  {
+  "lesson": "s4-4",
+  "kind": "한국어",
+  "text": "나의 어머니는 가족 가운데 제일 막내이십니다.",
+  "original": "나의 어머니는 그녀의 가족가운데 제일 막내입니다.",
+  "en": "My mother is the youngest child in her family.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류 — s4-4 #1 (가족 가운데 띄어쓰기도)'"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "한국어",
+  "text": "그분은 오빠가 (2)명 있고, 언니가 (2)명 있으십니다.",
+  "original": "그녀는 오빠가2명 있고, 여동생이2명 있습니다.",
+  "en": "She has (two) older brothers and (two) older sisters.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류 — s4-4 #2'"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "한국어",
+  "text": "나의 외삼촌들과 이모들은 모두 결혼을 하셨습니다. 그래서 나도 사촌들이 많습니다.",
+  "original": "나의 외삼촌들과 이모들은 모두 결혼을 했습니다. 그래서 저도 또한 많은 사촌들이 있습니다.",
+  "en": "My uncles and aunts are all married, so I have a lot of cousins as well.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s4-4 #3 외삼촌들과 이모들은 … 했습니다'"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "한국어",
+  "text": "외할아버지께서 몇 년 전에 돌아가셨기 때문에 외할머니는 큰외삼촌과 함께 살고 계십니다.",
+  "original": "할머니께서 몇 년 전에 돌아가셨기 때문에 나의 할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.",
+  "en": "Because my grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1654 s4-4 #4 — 어머니의 가장 큰 오빠 = 큰외삼촌 · 외할머니 높임'"
+ },
+ {
+  "lesson": "s4-5",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 친척은 나의 큰아버지 (삼촌 이름)입니다.",
+  "original": "나의 가장 좋아하는 친척은 나의 가장 나이 많은 삼촌 길동입니다.",
+  "en": "My favorite relative is my oldest uncle, (uncle’s name).",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1653 s4-5 #1 — 같은 사람을 s4-3 은 큰아버지 · 여기는 큰삼촌 → 큰아버지 · '나의 가장 좋아하는' → 내가 가장 좋아하는'"
+ },
+ {
+  "lesson": "s4-5",
+  "kind": "한국어",
+  "text": "그분은 마을의 다른 쪽에 살고 계십니다. 그리고 나의 가족은 그분을 한 달에 두 번 방문합니다.",
+  "original": "그는 마을의 다른 쪽에 살고 있습니다. 그리고 나의 가족은 그를 한 달에 두 번 방문합니다.",
+  "en": "He lives on the other side of town, and my family visits him twice a month.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류 — s4-5 #2 큰아버지(높임 빠짐도)'"
+ },
+ {
+  "lesson": "s4-5",
+  "kind": "한국어",
+  "text": "우리가 함께 모일 때면 우리는 보통 저녁을 먹으러 나갑니다.",
+  "original": "우리가 함께 모였을 때 우리는 종종 저녁 먹으러 밖으로 나갑니다.",
+  "en": "When we get together we usually go out for dinner.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1656 s4-5 #3 — usually = 보통(종종 = often) · 습관의 현재 '모일 때면''"
+ },
+ {
+  "lesson": "s4-6",
+  "kind": "한국어",
+  "text": "나의 큰아버지께서는 많은 기술과 재능을 가지고 계십니다.",
+  "original": "나의 가장 나이 많은 삼촌은 많은 기술과 재능을 가지고 있습니다.",
+  "en": "My oldest uncle has many skills and talents.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-6 #1 — 큰아버지(6-1653) · 높임'"
+ },
+ {
+  "lesson": "s4-6",
+  "kind": "한국어",
+  "text": "그분은 차를 고치실 수 있고 축구를 매우 잘하십니다.",
+  "original": "그는 차를 고칠 수 있고 축구를 매우 잘합니다.",
+  "en": "He can fix cars and play soccer very well.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-6 #2 — 가족 어른 그분 · 높임(6-1683)'"
+ },
+ {
+  "lesson": "s4-6",
+  "kind": "한국어",
+  "text": "그분은 모든 종류의 스포츠를 하실 수 있고, 피아노와 기타도 꽤 잘 치십니다.",
+  "original": "그는 모든 종류의 스포츠를 할 수 있고, 그는 피아노와 기타를 꽤 잘 칩니다.",
+  "en": "He can play all kinds of sports, and he can play the piano and guitar pretty well.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-6 #3 — 그분 · 높임 · 그는 겹침'"
+ },
+ {
+  "lesson": "s4-6",
+  "kind": "한국어",
+  "text": "그분은 또한 매우 관대하고 친절한 분이십니다.",
+  "original": "그는 매우 관대하고, 친절한 사람입니다.",
+  "en": "He is also a very generous and kind person.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-6 #4 — 그분 · 높임 · also(또한)'"
+ },
+ {
+  "lesson": "s4-6",
+  "kind": "한국어",
+  "text": "내가 그분을 방문할 때 그분은 항상 나에게 캔디를 주십니다.",
+  "original": "내가 그를 방문 할 때 그는 항상 저에게 캔디를 주십니다.",
+  "en": "He always gives me candy when I visit him.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-6 #5 — 한 문단 안 나/저 섞임(6-1658) · 그분 · 방문할'"
+ },
+ {
+  "lesson": "s4-6",
+  "kind": "한국어",
+  "text": "그분은 영어를 아주 유창하게 하실 수 있습니다. 그래서 나는 그분을 정말 많이 존경합니다.",
+  "original": "그는 영어를 아주 유창하게 말 할 수 있습니다. 그래서 나는 그를 정말 많이 존경합니다.",
+  "en": "He can speak English very fluently, so I really look up to him a lot.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s4-6 #6 — 그분 · 높임 · 말할'"
+ },
+ {
+  "lesson": "s5-1",
+  "kind": "한국어",
+  "text": "나는 늦잠을 자서 자주 학교에 지각을 하고, 나의 아침은 매우 바쁩니다.",
+  "original": "나는 늦잠을 자기 때문에 자주 학교에 지각을 합니다.",
+  "en": "I am often late for school because I sleep in late, and my mornings are very busy.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s5-1",
+  "kind": "한국어",
+  "text": "내가 학교에 가기 전에 어머니께서는 나에게 용돈을 주십니다.",
+  "original": "제가 학교에 가기 전에 나의 어머니께서는 나에게 용돈을 주십니다.",
+  "en": "Before I go to school, my mother gives me my allowance.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 s5-1 #4 — 한 문장 안 제/나 섞임 → 과의 나'"
+ },
+ {
   "lesson": "s5-2",
   "kind": "고침",
   "text": "On my way to school, I stop by the stationery store and go in to buy the supplies I need for class.",
@@ -105,11 +641,97 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
  },
  {
+  "lesson": "s5-2",
+  "kind": "한국어",
+  "text": "학교에 가는 길에 나는 문구점에 들러서 수업에 필요한 준비물을 사러 갑니다.",
+  "original": "학교에 가는 길에 저는 문구점에 들러서 수업에 필요한 준비물을 사러 갑니다.",
+  "en": "On my way to school, I stop by the stationery store and go in to buy the supplies I need for class.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s5-2 한국어 #6'"
+ },
+ {
   "lesson": "s5-3",
   "kind": "고침",
   "text": "At 8:30 in the morning, we meet before class with our teacher for the morning session.",
   "original": "At 8:30 in the morning, we meet before class with our teacher for morning session.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1661 s5-3 #1 영어 — session 은 셀 수 있는 명사(관사) · 같은 과 #3 'the morning session' 처럼'"
+ },
+ {
+  "lesson": "s5-3",
+  "kind": "한국어",
+  "text": "아침 8시 30분에, 우리는 수업 전에 우리 선생님과 아침 조회를 하기 위해 만납니다.",
+  "original": "아침 8:30분에, 우리는 수업 전에 우리 선생님과 아침조회를 하기 위해 만납니다.",
+  "en": "At 8:30 in the morning, we meet before class with our teacher for the morning session.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1662 s5-3 #1 한국어 — 8:30분(쌍점 + 분) → 8시 30분 · 아침 조회'"
+ },
+ {
+  "lesson": "s5-4",
+  "kind": "한국어",
+  "text": "9시 수업이 시작할 때, 우리 선생님께서는 우리가 그분의 책상에 올려놓은 숙제와 일기를 검사하십니다.",
+  "original": "9시 수업이 시작할 때, 우리 선생님께서는 우리가 그의 책상에 올려놓은 숙제와 일기를 검사하십니다.",
+  "en": "When class starts at 9:00, our teacher checks our homework and our journals that we put on his desk.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s5-4 한국어 #1'"
+ },
+ {
+  "lesson": "s5-4",
+  "kind": "한국어",
+  "text": "때때로 나는 선생님께서 말씀하실 것이 두려워서 나의 손을 책상 아래에 숨깁니다.",
+  "original": "때때로 나의 선생님이 말씀할 것이 두려워서 나는 나의 손을 저의 책상아래에 숨깁니다.",
+  "en": "Sometimes I hide my hands under my desk because I am afraid of what my teacher will say.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1664 s5-4 #3 — 선생님께서 말씀하실 · 한쪽 1인칭 · 책상 아래(수정안 그대로 — 6-1658 이 먼저 섞임 · 높임 · 띄어쓰기를 고친 글에서)'"
+ },
+ {
+  "lesson": "s5-4",
+  "kind": "한국어",
+  "text": "대부분의 다른 학생들처럼 내가 가장 좋아하는 과목은 체육이고 내가 가장 싫어하는 수업은 역사입니다.",
+  "original": "대부분의 다른 학생들처럼 제가 가장 좋아하는 과목은 체육 이고 제가 가장 싫어하는 수업은 역사입니다.",
+  "en": "Like most other students, my favorite subject is P.E., and the class I dislike the most is history.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s5-4 한국어 #4'"
+ },
+ {
+  "lesson": "s6-1",
+  "kind": "한국어",
+  "text": "나는 영어 클럽에 가고 나의 남동생/여동생은 (클럽 이름) 클럽에 갑니다.",
+  "original": "나는 영어 클럽에 가고 나의 남동생/여동생은 태권도클럽에 갑니다.",
+  "en": "I attend the English Club, and my brother/sister is in the (Club’s Name) Club.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1668 s6-1 #6 — 영어는 빈칸(Club's Name)인데 한국어가 태권도로 채움'"
+ },
+ {
+  "lesson": "s6-2",
+  "kind": "한국어",
+  "text": "나의 선생님 성함은 (성) 선생님이십니다.",
+  "original": "나의 선생님 성함은 홍선생님 이십니다.",
+  "en": "My teacher’s name is Mr./Ms. (Surname).",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s6-2",
+  "kind": "짝",
+  "text": "He/She is about (age) years old.",
+  "why": "7단계 7-4 f 결정표 15번(G14, 소유자 결정 2026-09-23): 선생님을 가리키는 '그는/그녀는' 을 '그분은' 으로 바꿔 한국어 글자 닮음이 낮아짐(원본 '그는/그녀는 약 30세 입니다.' ↔ 지금 '그분은 약 (나이)세이십니다.'). 짝은 그대로 맞음 — 같은 영어의 번역"
+ },
+ {
+  "lesson": "s6-2",
+  "kind": "한국어",
+  "text": "그분은 아이들을 사랑하시고 배우는 것을 재미있게 해 주십니다.",
+  "original": "그는/그녀는 아이들을 사랑하시고 배우는 것을 재미있게 해 주십니다.",
+  "en": "He/She loves children and makes learning fun.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-2 한국어 #4'"
+ },
+ {
+  "lesson": "s6-2",
+  "kind": "한국어",
+  "text": "때때로 그분은 우리에게 굉장한 이야기들을 해 주십니다.",
+  "original": "때때로 그는/그녀는 우리에게 굉장한 이야기들을 해 주십니다.",
+  "en": "Sometimes, he/she tells us great stories.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-2 한국어 #5'"
+ },
+ {
+  "lesson": "s6-2",
+  "kind": "한국어",
+  "text": "그분은 좋은 선생님이십니다.",
+  "original": "그는/그녀는 좋은 선생님 이십니다.",
+  "en": "He/She is a good teacher.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-2 한국어 #6'"
  },
  {
   "lesson": "s6-3",
@@ -147,11 +769,219 @@
   "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '49 (기준 9) s6-3 EN6'"
  },
  {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "나의 선생님은 (지역) 출신이십니다.",
+  "original": "나의 선생님은 강원도 출신이십니다.",
+  "en": "My teacher is from (Name).",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "때때로 그분은 사투리 억양으로 말씀하십니다.",
+  "original": "때때로 그는/그녀는 우스운 억양으로 말씀하십니다.",
+  "en": "Sometimes, he/she speaks with a regional accent!",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-3 한국어 #2'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "그분은 키가 크십니다.",
+  "original": "그는/그녀는 키가 큽니다.",
+  "en": "He/She is tall.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-3 한국어 #3'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "그분의 머리는 회색이십니다. (다른 예: 검은색, 흰색)",
+  "original": "그는/그녀의 머리는 (회색, 검정, 하얀)색 입니다.",
+  "en": "His/Her hair is gray.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-3 한국어 #4'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "그분은 수업하실 때 코를 만지는 버릇이 있으십니다. (다른 예: 손톱 물어뜯기, 머리 긁기, 손가락 관절 꺾기, 눈 비비기)",
+  "original": "그는/그녀는 수업할 때 그는/그녀의 코를 만지는 버릇이 하나 있습니다.",
+  "en": "He/She has a habit of touching his/her nose when he/she teaches.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-3 한국어 #5'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "내 생각에 그분은 검은색을 좋아하십니다. 왜냐하면 그분은 항상 검은 정장을 입으시기 때문입니다. (다른 예: 빨간색과 빨간 넥타이, 보라색과 보라색 드레스)",
+  "original": "제 생각에 그는/그녀는 파란색(초록, 빨강, 검정, 보라, 등)을 좋아하십니다. 왜냐하면 그녀는 항상 (빨강 타이, 검정 정장, 보라색 드레스)을 입기 때문입니다.",
+  "en": "I think he/she likes the color black because he/she always wears a black suit.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 · G13 — s6-3 한국어 #6'"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "한국어",
+  "text": "그분은 매우 친절하시고 나는 그분을 많이 좋아합니다.",
+  "original": "그는/그녀는 매우 친절하시고 나는 그는/그녀를 많이 좋아합니다.",
+  "en": "He/She is very kind, and I like her/him a lot.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-3 한국어 #7'"
+ },
+ {
+  "lesson": "s6-4",
+  "kind": "한국어",
+  "text": "나의 선생님께서는 내가 나의 꿈을 이루도록 도와주십니다.",
+  "original": "나의 선생님께서는 내가 나의 꿈을 깨닫는 것을 도와주십니다.",
+  "en": "My teacher is helping me realize my dreams.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s6-4",
+  "kind": "한국어",
+  "text": "그분은 우리를 도와주십니다.",
+  "original": "그는/그녀는 우리를 도와주십니다.",
+  "en": "He/She helps us.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-4 한국어 #3'"
+ },
+ {
+  "lesson": "s6-4",
+  "kind": "한국어",
+  "text": "그분은 우리가 많은 책들을 읽어야만 한다고 우리에게 말씀하십니다.",
+  "original": "그는/그녀는 우리가 많은 책들을 읽어야만 한다고 우리에게 말씀하십니다.",
+  "en": "He/She tells us that we must read a lot of books.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-4 한국어 #4'"
+ },
+ {
+  "lesson": "s6-4",
+  "kind": "한국어",
+  "text": "그분은 모든 학생들에게 매우 친절하시고 우리의 좋은 소질을 가르쳐 주십니다.",
+  "original": "그는/그녀는 모든 학생들에게 매우 친절하시고 우리의 좋은 소질을 가르쳐 주십니다.",
+  "en": "He/She is very kind to each student and points out our good qualities.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-4 한국어 #5'"
+ },
+ {
+  "lesson": "s6-4",
+  "kind": "한국어",
+  "text": "그분은 우리의 재능을 개발 할 수 있도록 우리를 도와주십니다.",
+  "original": "그는/그녀는 우리의 재능을 개발 할 수 있도록 우리를 도와주십니다.",
+  "en": "He/She helps us to develop our talents.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s6-4 한국어 #6'"
+ },
+ {
+  "lesson": "s6-4",
+  "kind": "한국어",
+  "text": "나의 선생님께서는 나의 좋은 소질 때문에 내가 선생님이 되어야 한다고 항상 말씀하십니다.",
+  "original": "나의 선생님께서는 나의 좋은 소질 때문에 제가 선생님이 되어야 한다고 항상 말씀하십니다.",
+  "en": "My teacher always says that I should be a teacher because of my good qualities.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 — s6-4'"
+ },
+ {
   "lesson": "s7-1",
   "kind": "고침",
   "text": "I go to a piano academy, an English academy, and an art academy near my home.",
   "original": "I go to a piano academy, English academy, and art academy near my home.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1676 s7-1 #3 영어 — a 를 English academy 에 함께 쓸 수 없음(an)'"
+ },
+ {
+  "lesson": "s7-1",
+  "kind": "한국어",
+  "text": "나의 다른 친구들 중 몇몇은 내가 다니는 것보다 더 많은 학원들을 다녀서 그들은 매일 매우 바쁩니다.",
+  "original": "나의 다른 친구들 중 몇몇은 내가 다니는 것 보다 더 많은 학원들을 다녀서 그들은매우 바쁩니다.",
+  "en": "Some of my other friends go to more academies than I do, so they are very busy every day.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s7-1",
+  "kind": "한국어",
+  "text": "그들은 주중에 나와 함께 놀 시간이 아주 적습니다.",
+  "original": "그들은 주중에 나와 함께 놀 시간이 아주 작습니다.",
+  "en": "They have very little time to play with me during the week.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s7-2",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 학원은 영어입니다.",
+  "original": "나의 가장 좋아하는 학원은 영어입니다.",
+  "en": "My favorite academy is English.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1653 · 6-1686 같은 종류 — s7-2 (영어가 'is English.' 라 '영어입니다' 는 그대로)'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "내 친구들 중 몇 명은 부끄러워하고 큰소리로 말하기를 좋아하지 않지만 그들은 아주 신중하게 말하기 때문에 좋은 발음을 가지고 있습니다.",
+  "original": "제 친구들 중 몇 명은 부끄러워하고 큰소리로 말하기를 좋아하지 않지만 그들은 아주신중하게 말하기 때문에 좋은 발음을 가지고 있습니다.",
+  "en": "There are a few of my friends who are shy and don’t like to speak out loud, but they have really good pronunciation because they speak very carefully.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s7-3 한국어 #5'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "나의 영어 학원 선생님은 한국인이십니다.",
+  "original": "나의 영어학원 선생님은 한국인 입니다.",
+  "en": "My English academy teacher is Korean.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G15 — s7-3 한국어 #6'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "비록 그분이 한국인이시지만, 그분은 영어를 수년 동안 공부해 오셨고 그것을 매우 잘 아십니다.",
+  "original": "비록 그가 한국인 이지만, 그는 영어를 수년 동안 공부해 오셨고 그것을 매우 잘 아십니다.",
+  "en": "Even though he is from Korea, he has studied English for many years and knows it very well.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s7-3 한국어 #7'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "그분이 말씀하실 때, 그분은 영어 원어민 같습니다.",
+  "original": "그가 말씀할 때, 그는 현지 영어를 말하는 사람 같습니다.",
+  "en": "When he speaks, he sounds like a native English speaker.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s7-3 한국어 #8'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "그분은 해외에서 공부하시는 동안 영어를 배우셨습니다.",
+  "original": "그는 해외에서 공부하시는 동안 영어를 배웠습니다.",
+  "en": "He learned English while studying abroad.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s7-3 한국어 #9'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "그분은 우리를 아주 잘 가르치시고 그분의 수업 활동은 항상 재미있습니다.",
+  "original": "그는 우리를 아주 잘 가르치고 그의 수업활동은 항상 재미있습니다.",
+  "en": "He teaches us very well, and his class activities are always fun.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 · G15 — s7-3 한국어 #10'"
+ },
+ {
+  "lesson": "s7-3",
+  "kind": "한국어",
+  "text": "나는 언젠가 그분이 하시는 것과 마찬가지로 영어를 잘 말할 수 있기를 원합니다.",
+  "original": "나는 언젠가 그가 하는 것과 마찬가지로 영어를 잘 말할 수 있기를 원합니다.",
+  "en": "I want to be able to speak English as well as he does someday.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s7-3 한국어 #11'"
+ },
+ {
+  "lesson": "s8-1",
+  "kind": "한국어",
+  "text": "내가 학교를 마친 후 집에 오면 나의 어머니께서는 항상 나를 반겨 주십니다.",
+  "original": "내가 학교를 마친 후 집에 오면 나의 어머니께서는 항상 저를 반겨 주십니다.",
+  "en": "When I come home after school, my mother is always glad to see me.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 — s8-1 #1'"
+ },
+ {
+  "lesson": "s8-1",
+  "kind": "한국어",
+  "text": "어머니와 함께 잠깐 이야기를 나눈 후 나는 나의 방에 가고 때때로 컴퓨터를 하고 놉니다.",
+  "original": "어머니와 함께 잠깐 이야기를 나눈 후 나는 나의 방에 가고 저는 때때로 컴퓨터를 하고 놉니다.",
+  "en": "After I chat with my mom for a little while, I go to my room, and I sometimes play on the computer.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 — s8-1 #4'"
+ },
+ {
+  "lesson": "s8-2",
+  "kind": "한국어",
+  "text": "비록 내가 피곤하더라도, 나는 새로운 것들을 배우는 것을 즐기기 때문에 계속 공부합니다.",
+  "original": "비록 제가 피곤하더라도, 나는 새로운 것들을 배우는 것을 즐기기 때문에 계속 공부합니다.",
+  "en": "Even though I am tired, I keep studying because I enjoy learning new things.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s8-2 #5 — 한 문단 안 나/저 섞임(6-1658)'"
  },
  {
   "lesson": "s8-3",
@@ -161,11 +991,83 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
  },
  {
+  "lesson": "s8-3",
+  "kind": "한국어",
+  "text": "가끔 나의 아버지께서 늦게 오시는 날에는 우리가 모두 함께 저녁을 먹지 못합니다.",
+  "original": "보통 나의 아버지께서는 늦게 오시기에 우리는 저녁시간을 함께 할 수 없습니다.",
+  "en": "Sometimes my father comes home late, so we can’t all be together at suppertime.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s8-3",
+  "kind": "한국어",
+  "text": "나의 어머니께서는 우리 가족의 건강을 걱정하시기 때문에 여러 가지 건강에 좋은 반찬을 준비하십니다.",
+  "original": "나의 어머니께서는 우리 가족들의 건강을 걱정하시기 때문에 그녀는 많은 다른 종류의 건강한 반찬들을 준비합니다.",
+  "en": "Because my mother worries about the health of our family, she prepares many different kinds of healthy side dishes.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1683 s8-3 #3 — 높임이 중간에 빠짐 · '그녀는' · 건강에 좋은 반찬'"
+ },
+ {
+  "lesson": "s8-3",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 음식은 (불고기)입니다.",
+  "original": "저의 가장 좋아하는 음식은 (불고기) 입니다.",
+  "en": "My favorite food is (bulgogi).",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1686 (2) s8-3 #4 — 저의 → 이 과의 다른 문단처럼 '나' · '나의 가장 좋아하는' → 내가 가장 좋아하는(6-1653 과 같음)'"
+ },
+ {
+  "lesson": "s8-3",
+  "kind": "한국어",
+  "text": "우리는 저녁 식사 시간에 항상 좋은 대화를 나눕니다.",
+  "original": "우리는 저녁 식사 시간에 항상 많은 대화를 나눕니다.",
+  "en": "We always have great conversations at dinnertime.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1684 s8-3 #5 — great conversations = 좋은 대화(많은 대화 아님)'"
+ },
+ {
   "lesson": "s8-4",
   "kind": "고침",
   "text": "I like the entertainment and sports programs because I can see famous actors, musicians, and sports players.",
   "original": "I like the entertainment (sports) programs because I can see famous actors and musicians (sports players).",
   "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '50 (기준 9) s8-4 EN3'"
+ },
+ {
+  "lesson": "s8-4",
+  "kind": "한국어",
+  "text": "나의 어머니께서는 우리가 TV를 많이 보는 것을 허락하지 않으십니다.",
+  "original": "나의 어머니께서는 우리에게 TV를 많이 보는 것을 허락하시지 않으십니다.",
+  "en": "My mother doesn’t allow us to watch a lot of TV.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1687 s8-4 #2 — 이중 높임 '허락하시지 않으십니다' · 우리가'"
+ },
+ {
+  "lesson": "s8-4",
+  "kind": "한국어",
+  "text": "나는 엔터테인먼트와 스포츠 프로그램들을 좋아합니다. 왜냐하면 나는 유명한 배우들과 음악가들, 운동선수들을 볼 수 있기 때문입니다.",
+  "original": "나는 연예(스포츠) 프로그램들을 좋아합니다. 왜냐하면 나는 유명한 배우들과 음악가들(운동선수들)을 볼 수 있기 때문입니다.",
+  "en": "I like the entertainment and sports programs because I can see famous actors, musicians, and sports players.",
+  "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '50 (기준 9) s8-4 KO3'"
+ },
+ {
+  "lesson": "s9-1",
+  "kind": "한국어",
+  "text": "나는 오전 7시 30분쯤에 아침 식사를 먹습니다.",
+  "original": "나는 오전 7시 30분에 아침식사를 먹습니다.",
+  "en": "I have breakfast around 7:30 a.m.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G15 — s9-1 한국어 #6'"
+ },
+ {
+  "lesson": "s9-2",
+  "kind": "한국어",
+  "text": "방과 후, 나는 미술, 피아노, 영어를 공부하는 사설 학원에 갑니다.",
+  "original": "방과 후, 나는 미술, 피아노, 영어를 공부하는 사설 학원들로 갑니다.",
+  "en": "After school, I go to private academies where I study Art, Piano and English.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s9-2 #4 — 학원에 갑니다(6-1694 같은 종류)'"
+ },
+ {
+  "lesson": "s9-2",
+  "kind": "한국어",
+  "text": "나의 마지막 학원 수업 후에, 나는 오후 6시쯤 집에 도착합니다.",
+  "original": "나의 마지막 학원 수업 후에, 나는 약 오후 6시쯤 집에 도착합니다.",
+  "en": "After my last academy class, I get home at around 6:00 p.m.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s9-2 #7 — '약 … 쯤' 겹침'"
  },
  {
   "lesson": "s9-3",
@@ -175,11 +1077,83 @@
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1689 s9-3 #7 영어 — 숙제와 과목을 견줌 → 숙제끼리(드릴의 같은 조각은 보류 G12 라 문항 글 자리만 짚음)'"
  },
  {
+  "lesson": "s9-3",
+  "kind": "한국어",
+  "text": "우리가 먹을 때, 나의 아버지께서는 자신의 하루에 관해 말씀하시고 우리는 우리의 경험들을 나눕니다.",
+  "original": "우리가 먹을 때, 나의 아버지께서는 그의 하루에 관해 말씀하시고 우리는 우리의 경험들을 나눕니다.",
+  "en": "When we eat, my father usually talks about his day, and we share our experiences.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류 — s9-3 #3 '아버지께서는 그의 하루' (어머니께서는 … 그녀는 과 같은 겹침)'"
+ },
+ {
+  "lesson": "s9-3",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 TV 쇼들은 (TV 쇼 이름)과 (TV 쇼 이름)입니다.",
+  "original": "내가 가장 좋아하는 TV쇼들은 미러클과 판타스틱 입니다.",
+  "en": "My favorite TV shows are (TV show name) and (TV show name).",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23)"
+ },
+ {
+  "lesson": "s9-3",
+  "kind": "한국어",
+  "text": "나는 밤 9시경에 숙제를 시작합니다.",
+  "original": "나는 오후 9시쯤에 나의 숙제를 시작합니다.",
+  "en": "I start my homework at around 9:00 p.m.",
+  "why": "커밋 3705523 (09-06) feat: initial commit for K-IG-CORE standalone platform (VOCA · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '오후 9시' 는 우리말로 어색(9 p.m. = 밤 9시) · '나의 숙제' 의 '나의' 군더더기"
+ },
+ {
+  "lesson": "s9-3",
+  "kind": "한국어",
+  "text": "그것이 다른 과목들의 숙제보다 쉽기 때문에 내가 가장 좋아하는 것입니다.",
+  "original": "그것은 내가 가장 좋아하는 것입니다. 왜냐하면 그것은 다른 과목들 보다 더 쉽기 때문입니다.",
+  "en": "It is my favorite because it is easier than my homework for other subjects.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1689 s9-3 #7 한국어'"
+ },
+ {
+  "lesson": "s9-3",
+  "kind": "한국어",
+  "text": "나는 대략 밤 10시 30분에 잠자러 가며 얼마나 멋진 하루였는지 생각합니다!",
+  "original": "나는 오후 10시 30분쯤 잠자리에 들고 얼마나 좋은 하루였는지 생각합니다.",
+  "en": "I go to bed at about 10:30 p.m. and think what a wonderful day it was!",
+  "why": "커밋 3705523 (09-06) feat: initial commit for K-IG-CORE standalone platform (VOCA · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '오후 10시 30분' 은 우리말로 어색(밤) · 영어 wonderful(멋진)과 느낌표를 옮김"
+ },
+ {
+  "lesson": "s10-1",
+  "kind": "한국어",
+  "text": "나의 한 주 계획은 나의 하루 계획과 마찬가지로 바쁩니다.",
+  "original": "나의 평일 계획은 나의 하루 계획과 마찬가지로 바쁩니다.",
+  "en": "My weekly schedule is just as busy as my daily one.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1690 s10-1 #2 한국어 — weekly ↔ daily 대비(9장 하루 일과 · 10장 한 주)라 수정안의 둘째 안: 한국어를 '한 주' 로'"
+ },
+ {
   "lesson": "s10-2",
   "kind": "고침",
   "text": "After I get up and prepare for school, the first day of my new week begins this way.",
   "original": "After I get up and prepare for school, the first day of my new week has started on this note.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s10-2",
+  "kind": "한국어",
+  "text": "나에게는, 매주 월요일 아침에 일어나는 것이 매우 힘듭니다.",
+  "original": "나에게는, 매일 월요일 아침에 일어나는 것이 매우 힘듭니다.",
+  "en": "For me, it is very hard to get out of bed every Monday morning.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s10-2",
+  "kind": "한국어",
+  "text": "나의 어머니가 일어나라고 나에게 소리치실 때, 나는 일어나고 싶지 않습니다.",
+  "original": "나의 어머니가 일어나라고 나에게 소리칠 때, 나는 일어나고 싶지 않습니다.",
+  "en": "When my mother shouts at me to wake up, I don’t want to get up.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s10-2 #2 어머니가 … 소리칠 때'"
+ },
+ {
+  "lesson": "s10-2",
+  "kind": "한국어",
+  "text": "내가 일어나서 학교 갈 준비를 한 후, 나의 새로운 주의 첫날이 이렇게 시작됩니다.",
+  "original": "내가 일어나서 학교 갈 준비를 한 후, 나의 새로운 주의 첫날이 다시 한번 이렇게 시작됩니다.",
+  "en": "After I get up and prepare for school, the first day of my new week begins this way.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1691 s10-2 #4 — 영어에 없는 '다시 한번''"
  },
  {
   "lesson": "s10-3",
@@ -189,11 +1163,51 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
  },
  {
+  "lesson": "s10-3",
+  "kind": "한국어",
+  "text": "나의 평일은 나의 반에 있는 다른 학생들의 평일과 비슷합니다.",
+  "original": "나의 평일은 나의 반에 있는 다른 학생들과 비슷합니다.",
+  "en": "My weekdays are similar to those of the other students in my class.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1693 s10-3 #1 — those of = 다른 학생들의 평일'"
+ },
+ {
+  "lesson": "s10-3",
+  "kind": "한국어",
+  "text": "월요일부터 금요일까지, 나는 약 7시간 동안 학교에 가고 방과 후에 나는 몇 시간 더 학원에 갑니다.",
+  "original": "월요일부터 금요일까지, 나는 약 7시간 동안 학교에 가고 방과 후에 나는 몇 시간 학원들로 갑니다.",
+  "en": "From Monday to Friday, I go to school for about seven hours and after school, I go to academies for several more hours.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1694 s10-3 #2 — several more hours 의 '더' · 학원에 갑니다'"
+ },
+ {
   "lesson": "s10-5",
   "kind": "고침",
   "text": "It is the end of the normal schedule of school and academies.",
   "original": "It is the end of normal schedule of school and academies.",
   "why": "원본 'the end of normal schedule' 은 관사가 빠진 문법 오류 — 9/7 08b77af 가 the 를 넣음(기록 없는 고침). 틀린 것을 고친 것이라 되돌리지 않음(9/17 · 6단계가 같은 종류 관사 빠짐을 고친 기준: 6-1661 · 6-1676). 원본은 본사 사본이 망가져 학생용 Lab v1.01 사본으로 대조"
+ },
+ {
+  "lesson": "s10-5",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 시간은 금요일 밤입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.",
+  "original": "나의 가장 좋아하는 날은 금요일 밤 입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.",
+  "en": "My favorite time is Friday night because it is the start of the weekend.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1698 s10-5 #1 — time = 시간(날 아님; '내가' 는 6-1686 같은 종류에서 이미)'"
+ },
+ {
+  "lesson": "s10-5",
+  "kind": "한국어",
+  "text": "그것은 학교와 학원의 정규 일정이 끝나는 시간입니다.",
+  "original": "그것은 학원들과 학교의 정상적인 계획의 끝입니다.",
+  "en": "It is the end of the normal schedule of school and academies.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-g.json '6-1698 같은 과 같은 종류 — s10-5 #2 금요일 밤을 '그날 … 날' 로'"
+ },
+ {
+  "lesson": "s10-5",
+  "kind": "한국어",
+  "text": "내가 이것을 하기 전에, 나는 다가오는 주말을 위해 내가 계획했던 재미있는 것들에 대해 생각하기 시작합니다.",
+  "original": "내가 이것을 하기 전에, 나는 다가오는 주를 위해 내가 계획했던 재미있는 것들에 대해 생각하기 시작합니다.",
+  "en": "Before I do this, I start thinking about the fun things that I have planned for the upcoming weekend.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '다가오는 주' 는 영어 weekend(주말)와 다름"
  },
  {
   "lesson": "s11-1",
@@ -210,6 +1224,78 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-11 no Saturday classes since 2012"
  },
  {
+  "lesson": "s11-2",
+  "kind": "한국어",
+  "text": "토요일에 나의 아버지께서는 보통 일을 일찍 마치십니다.",
+  "original": "토요일에, 나의 아버지 또한 그의 하루를 일찍 마칩니다.",
+  "en": "On Saturdays, my father usually finishes work early.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s11-2",
+  "kind": "한국어",
+  "text": "가끔씩 그분은 출장을 가시지만, 그분이 집에 계시면, 우리는 가족이 함께 저녁 식사를 하러 외출하기를 좋아합니다.",
+  "original": "가끔씩 그는 출장을 가지만, 그가 집에 계시면, 우리는 함께 저녁식사를 하러 외출하기를 좋아합니다.",
+  "en": "Sometimes he goes on business trips, but if he is at home, we like to go out for dinner together as a family.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G15 — s11-2 한국어 #2'"
+ },
+ {
+  "lesson": "s11-3",
+  "kind": "한국어",
+  "text": "다른 사람들은 가족들과 함께 시골, 바닷가, 또는 놀이공원으로 여행을 갑니다.",
+  "original": "다른 사람들은 그들의 가족들과 함께 시골, 바닷가, 또는 놀이공원으로 여행을 갑니다.",
+  "en": "Others go on trips with their families to the countryside, seaside, or amusement park.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s11-3 #7 — 주어와 같은 '그들의'(6-1741 같은 종류)'"
+ },
+ {
+  "lesson": "s11-3",
+  "kind": "한국어",
+  "text": "일요일에, 몇몇의 사람들은 친구들과 함께 쇼핑을 가거나 또는 TV를 보거나 컴퓨터 게임을 하면서 시간을 보냅니다.",
+  "original": "일요일에, 몇몇의 사람들은 친구들과 함께 쇼핑을 가거나 또는 TV를 보거나 컴퓨터게임을 하면서 그들의 시간을 보냅니다.",
+  "en": "On Sundays, some people either like to go shopping with friends or spend their time watching TV or playing computer games.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G15 — s11-3 한국어 #8'"
+ },
+ {
+  "lesson": "s11-4",
+  "kind": "한국어",
+  "text": "우리는 때때로 우리의 친척들을 방문하거나 그분들이 우리의 집에 오십니다.",
+  "original": "우리는 때때로 우리의 친척들을 방문하거나 그들이 우리의 집에 옵니다.",
+  "en": "We sometimes visit our relatives or they come to our house.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s11-4 #2 — 친척 어른 그분들 · 높임(6-1683; s4-3 '그분들이 … 오십니다' 와 같게)'"
+ },
+ {
+  "lesson": "s11-4",
+  "kind": "한국어",
+  "text": "그분들이 어떻게 지내시는지 보는 것은 좋습니다.",
+  "original": "그들이 어떻게 지내고 있는지 보는 것은 좋습니다.",
+  "en": "It’s nice to see how they are doing.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s11-4 #4 — 그분들 · 높임'"
+ },
+ {
+  "lesson": "s11-4",
+  "kind": "한국어",
+  "text": "나는 또한 나의 아빠의 친구 집을 방문하는 것을 좋아하는데, 왜냐하면 그의 아이들이 나와 동갑이고 우리는 항상 함께 시간을 보내면서 아주 재미있게 지내기 때문입니다.",
+  "original": "나는 또한 나의 아빠의 친구를 방문하는 것을 좋아하는데 왜냐하면 그의 아이들이 동갑이고 우리는 항상 우리의 시간을 함께 보내면서 아주 재미있게 보냅니다.",
+  "en": "I also like to visit the house of my father’s friend because his children are the same age and we always have great fun spending our time together.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s11-4 #5 — 친구 집 · 나와 동갑 · '왜냐하면 … 때문입니다'(주술 호응, 6-1727 같은 종류)'"
+ },
+ {
+  "lesson": "s12-1",
+  "kind": "한국어",
+  "text": "우리는 두 개의 주요한 학교 방학이 있습니다.",
+  "original": "우리는 두 개의 주요한 학교 방학을 가지고 있습니다.",
+  "en": "We have two main school vacations.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '방학을 가지고 있습니다' 는 have 를 글자대로 옮긴 번역투 — '방학이 있습니다'"
+ },
+ {
+  "lesson": "s12-1",
+  "kind": "한국어",
+  "text": "여름방학은 7월에 시작하고 겨울방학은 12월에 시작합니다.",
+  "original": "여름방학은 6월에 시작하고 겨울방학은 12월에 시작합니다.",
+  "en": "Summer vacation begins in July and the winter vacation begins in December.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '6월' 은 영어 July 와 어긋남 → 7월"
+ },
+ {
   "lesson": "s12-2",
   "kind": "고침",
   "text": "I spend my summer vacation a bit differently from the winter one.",
@@ -224,6 +1310,14 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
  },
  {
+  "lesson": "s12-2",
+  "kind": "한국어",
+  "text": "어쨌든, 비록 여름 동안 지독히 덥다 하더라도, 나는 나의 가족과 함께 여행하는 것이 행복합니다.",
+  "original": "어쨌던, 비록 여름 동안 지독히 덥다 하더라도, 나는 나의 가족과 함께 여행하는 것이 행복합니다.",
+  "en": "Even if it is terribly hot during the summer, I am happy to travel with my family anyway.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
   "lesson": "s12-3",
   "kind": "고침",
   "text": "However, last year we went on a short skiing trip to Gangwon Province.",
@@ -231,11 +1325,43 @@
   "why": "아직 커밋 전(작업 트리) · 계획 stage6-student-r1.json '되살림 교정 s12-3 #2 영어 — 로마자 Gangwon(2000년 표기법 — 같은 과정의 Shilla → Silla · 이순신 표기와 같은 종류)'"
  },
  {
+  "lesson": "s12-3",
+  "kind": "한국어",
+  "text": "나의 어머니께서는 내가 더 많이 공부하기를 원하셔서 겨울방학 동안 매일 나를 공부하게 하십니다.",
+  "original": "나의 어머니께서는 내가 더 많이 공부하기를 원하셔서 겨울방학 동안 매일, 그녀는 나를 공부하도록 만드십니다.",
+  "en": "My mother wants me to study more, so every day during winter break, she makes me study.",
+  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23) · 계획 stage6-student-r1.json '되살림 교정 s12-3 #3 — 어머니께서는 … 그녀는 겹침(6-1683 (2))'"
+ },
+ {
+  "lesson": "s12-4",
+  "kind": "한국어",
+  "text": "그분은 캐나다인이시고 우리에게 캐나다에 관해 많은 이야기를 해 주셨습니다.",
+  "original": "그는 캐나다인이고 우리에게 캐나다에 관해 많이 이야기를 해 주셨습니다.",
+  "en": "He is Canadian and has been telling us a lot about Canada.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s12-4 한국어 #4'"
+ },
+ {
   "lesson": "s13-1",
   "kind": "고침",
   "text": "When I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
   "original": "Since I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-h.json '6-1709 s13-1 #1 영어 — since + 과거 절에 단순 과거 주절 → 수정안의 둘째 안 When(한 낱말; #3 'I learned to respect' 와 나란함 · because I could read 와 시제 맞음)'"
+ },
+ {
+  "lesson": "s13-1",
+  "kind": "한국어",
+  "text": "내가 어렸을 때, 나는 많은 사람들의 지혜에 대해서 읽을 수 있었기 때문에 역사책과 소설책을 좋아하게 되었습니다.",
+  "original": "내가 어렸을 때부터, 나는 많은 사람들의 지혜에 대해서 읽을 수 있었기 때문에 역사책과 소설책 읽기를 좋아하는 것을 알게 되었습니다.",
+  "en": "When I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-h.json '6-1709 · 6-1710 s13-1 #1 한국어 — 어렸을 때 · learned to like = 좋아하게 되었습니다'"
+ },
+ {
+  "lesson": "s13-1",
+  "kind": "한국어",
+  "text": "나는 내가 가장 존경하는 사람에 대해 당신에게 소개하고 싶습니다.",
+  "original": "나는 내가 가장 좋아하는 사람에 대해 당신에게 소개하고 싶습니다.",
+  "en": "I would like to introduce to you the person I respect the most.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '가장 좋아하는' 은 영어 respect(존경하는)와 다름"
  },
  {
   "lesson": "s13-2",
@@ -259,6 +1385,22 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
  },
  {
+  "lesson": "s13-2",
+  "kind": "한국어",
+  "text": "이순신 장군은 400여 년 전에 살았고, 여러 번 일본 수군을 무찔렀습니다.",
+  "original": "이 장군은 500년 전에 살았고, 그는 여러 번 일본을 무찔렀습니다.",
+  "en": "Admiral Yi lived more than 400 years ago, and he defeated the Japanese navy over and over again.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s13-2",
+  "kind": "한국어",
+  "text": "그는 개량한 거북선을 만들어 일본군과 싸우는 데 사용했고, 여러 차례 그들을 물리쳤습니다.",
+  "original": "그는 일본과 맞서 싸울 때 사용했었던 거북선을 창작했고 그들을 수 차례에 정복했습니다.",
+  "en": "He built improved turtle ships, used them against the Japanese, and defeated them many times.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
   "lesson": "s13-3",
   "kind": "고침",
   "text": "I respect Admiral Yi because he prepared well and won great military victories.",
@@ -280,6 +1422,22 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-08 / S-29 Admiral Yi Sun-sin"
  },
  {
+  "lesson": "s13-3",
+  "kind": "한국어",
+  "text": "나는 이순신 장군을 존경합니다. 왜냐하면 그는 철저히 준비했고 큰 군사적 승리를 거두었기 때문입니다.",
+  "original": "나는 이순신 장군을 존경합니다. 왜냐하면 그는 준비할 수 있었고 큰 군사적 승리를 거둘 수 있었습니다.",
+  "en": "I respect Admiral Yi because he prepared well and won great military victories.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s13-3",
+  "kind": "한국어",
+  "text": "이순신 장군에게, 의무와 책임감은 매우 중요한 것들이었습니다.",
+  "original": "이장군에게, 의무와 책임감은 매우 중요한 것들이었습니다.",
+  "en": "To Admiral Yi, duty and responsibility were very important.",
+  "why": "커밋 08b77af (09-07) feat(student): revive [Student Conversation] as top priority · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '이장군' 은 이름처럼 읽힘 — Admiral Yi = 이순신 장군"
+ },
+ {
   "lesson": "s14-1",
   "kind": "고침",
   "text": "How can I choose among all of the great jobs like being a doctor, a movie star, and a lawyer?",
@@ -287,11 +1445,67 @@
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-h.json '6-1712 s14-1 #3 영어 — 목록 관사 나란히(a doctor, a movie star, and a lawyer)'"
  },
  {
+  "lesson": "s14-1",
+  "kind": "한국어",
+  "text": "의사, 영화배우, 변호사가 되는 것과 같은 모든 훌륭한 직업들 중에서 어떻게 내가 선택 할 수 있겠습니까?",
+  "original": "의사, 영화배우, 변호사가 되는 것과 같은 모든 훌륭한 직업들 중에서 어떻게 제가 선택 할 수 있겠습니까?",
+  "en": "How can I choose among all of the great jobs like being a doctor, a movie star, and a lawyer?",
+  "why": "7단계 질문 5(j-7) 소유자 결정 2026-09-24 '원본으로' — '좋은' → 원본 '훌륭한' 으로 되돌림(plans/stage7-student-ko-original.json). 남은 차이 원본 '제가' → '내가' 는 7단계 G13 표기 규칙('나' 로 통일)"
+ },
+ {
+  "lesson": "s14-2",
+  "kind": "한국어",
+  "text": "첫째, 나의 학교 선생님께서는 좋은 본보기가 되어 주십니다.",
+  "original": "첫째, 나의 학교선생님께서는 좋은 본보기를 보여주셨습니다.",
+  "en": "First, my school teacher sets a good example.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1713 s14-2 #2 — sets(현재) = 좋은 본보기가 되어 주십니다'"
+ },
+ {
+  "lesson": "s14-2",
+  "kind": "한국어",
+  "text": "그분은 아이들을 사랑하시고, 내가 그분으로부터 도움이 필요할 때에 그분은 나를 항상 도와주십니다.",
+  "original": "그는/그녀는 아이들을 사랑하시고, 내가 그는/그녀로부터 도움이 필요할 때에 그는/그녀는 저를 항상 도와주십니다.",
+  "en": "He/She loves children, and when I need help from him/her, he/she always helps me.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s14-2 한국어 #3'"
+ },
+ {
+  "lesson": "s14-2",
+  "kind": "한국어",
+  "text": "그분은 우리가 알아야 하는 것을 정확하게 가르치는 것을 뛰어나게 잘하십니다.",
+  "original": "그는/그녀는 우리가 알고 싶어하는 것을 정확하게 가르치는 것을 뛰어나게 잘 하십니다.",
+  "en": "He/She is excellent at teaching exactly what we need to know.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s14-2 한국어 #5'"
+ },
+ {
+  "lesson": "s14-2",
+  "kind": "한국어",
+  "text": "둘째, 나의 선생님께서는 많은 것들을 알고 계시고, 항상 우리와 함께 많은 것들에 대해서 그분의 지식을 공유하십니다.",
+  "original": "둘째, 나의 선생님께서는 많은 것들을 알고 계시고, 항상 우리와 함께 많은 것들에 대해서 그의/그녀의 지식을 공유합니다.",
+  "en": "Second, my teacher knows a lot of things, and shares his/her knowledge with us about many things all of the time.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s14-2 한국어 #6'"
+ },
+ {
+  "lesson": "s14-2",
+  "kind": "한국어",
+  "text": "나는 그분과 같은 좋은 선생님이 되고 싶습니다.",
+  "original": "나는 그/그녀와 같은 좋은 선생님이 되고 싶습니다.",
+  "en": "I want to become a good teacher just like him/her.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G14 — s14-2 한국어 #7'"
+ },
+ {
   "lesson": "s14-3",
   "kind": "고침",
   "text": "I think teaching children is fun and rewarding, and that I must have a lot of patience in order to teach them.",
   "original": "I think teaching children is fun, and rewarding, and that you must have a lot of patience in order to teach them.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s14-3",
+  "kind": "한국어",
+  "text": "그분들은 또한 나에게 아이들을 사랑하고 다른 사람들에게 봉사해야 한다고 말씀하십니다.",
+  "original": "그들은 또한 나에게 아이들을 사랑하고 다른 사람들에게 봉사해야 한다고 말씀합니다.",
+  "en": "They also tell me that I need to love children and serve others.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류 — s14-3 #3 부모님(그들 → 그분들 · 말씀하십니다; s2-4 #3 '그분들은' 과 같은 꼴)'"
  },
  {
   "lesson": "s15-1",
@@ -315,11 +1529,35 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
  },
  {
+  "lesson": "s15-1",
+  "kind": "한국어",
+  "text": "그때 우리나라 축구 대표팀은 세계 최고의 팀 중 하나가 아니었습니다.",
+  "original": "우리나라의 축구선수들은 최고의 팀 중 하나가 아니었습니다.",
+  "en": "At that time, our national soccer team was not one of the best teams in the world.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s15-1",
+  "kind": "한국어",
+  "text": "스포츠는 곧잘 새로운 영웅과 스타를 만들어 냅니다.",
+  "original": "스포츠는 새로운 영웅과 스타를 만드는 방법을 가지고 있습니다.",
+  "en": "Sports have a way of making new heroes and stars.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1718 s15-1 #4 — have a way of -ing = 곧잘 ~하다'"
+ },
+ {
   "lesson": "s15-2",
   "kind": "더함",
   "text": "The person I admire the most is Guus Hiddink, the Dutch coach who led the Korean national soccer team in 2002.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1719 s15-2 #1 영어 — 지금 감독처럼 쓴 현재형 · from Holland 수식 · Korean Republic → 2002년에 이끈 네덜란드 감독'",
   "original": "The person I admire the most is Guus Hiddink (히딩크), coach of the Korean Republic national soccer team from Holland."
+ },
+ {
+  "lesson": "s15-2",
+  "kind": "한국어",
+  "text": "비록 히딩크 감독이 한국 축구팀을 훈련시키는 데 많은 시간을 보냈지만, 그들은 여전히 많은 경기에서 이기지 못했습니다.",
+  "original": "비록 히딩크 감독이 많은 시간을 한국의 축구팀 훈련시키는데 보냈지만, 그들은 여전히 많은 경기를 승리하지 못했습니다.",
+  "en": "Even though Coach Hiddink spent a lot of time training Korea’s soccer team, they were still not winning very many games.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1721 s15-2 #3 — 축구팀을 · 훈련시키는 데 · 경기에서 이기지'"
  },
  {
   "lesson": "s16-1",
@@ -334,6 +1572,78 @@
   "text": "Her ability to interpret so well had a great effect on me.",
   "original": "Her ability to interpret so well had a great affect on me.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "한국어",
+  "text": "나는 빌 게이츠, (이름), (이름)과 같은 많은 성공한 사람들에 대해 TV에서 보았고 책에서 읽었습니다.",
+  "original": "나는 빌 게이츠, 아인슈타인, 과 같은 많은 성공한 사람들에 대해서 T.V에서 보아왔고, 읽어왔습니다.",
+  "en": "I have seen on TV and read about many successful people such as Bill Gates, (name) and (name).",
+  "why": "커밋 603ce71 (09-07) fix(student): reorder all 81 lessons into chronological narr · 한국어 판단(7단계 j): 지금 글을 둠: 원본은 '아인슈타인, 과 같은'(떠도는 쉼표) · 'T.V' · 영어의 (name) 자리표와 다름 — 영어와 같게 (이름) 자리표"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "한국어",
+  "text": "그녀는 매우 전문적인 통역사와 함께 있었습니다.",
+  "original": "그녀는 통역사와 함께 있었고 그녀는 매우 전문적이었습니다.",
+  "en": "She had an interpreter with her who was very professional.",
+  "why": "커밋 603ce71 (09-07) fix(student): reorder all 81 lessons into chronological narr · 한국어 판단(7단계 j): 지금 글을 둠: 원본은 '그녀는 매우 전문적이었습니다' 로 전문적인 사람을 잘못 가리킴(영어는 통역사가 전문적)"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "한국어",
+  "text": "그녀의 뛰어난 통역 능력은 나에게 큰 영향을 주었습니다.",
+  "original": "그녀의 멋진 통역하는 능력은 나에게 깊은 인상을 주었습니다.",
+  "en": "Her ability to interpret so well had a great effect on me.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "한국어",
+  "text": "그것은 내가 통역사가 되고 싶을 만큼 큰 감명을 주었습니다.",
+  "original": "그것은 나에게 통역사가 되고 싶어 하는 것에 충분히 감명을 주었습니다.",
+  "en": "It has impressed me enough to want to become an interpreter.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1723 s16-1 #6 — 말하는 이의 바람은 -고 싶다 · enough to = ~만큼'"
+ },
+ {
+  "lesson": "s16-2",
+  "kind": "한국어",
+  "text": "내가 통역사가 되고 싶은 이유는 많이 있습니다.",
+  "original": "왜 내가 통역사가 되고 싶어하는지에 대한 이유는 많이 있습니다.",
+  "en": "There are many reasons why I want to become an interpreter.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-j.json '6-1726 s16-2 #1 — '왜 … 이유' 겹침(싶어하는지 는 6-1723 같은 종류로 이미 '싶은지')'"
+ },
+ {
+  "lesson": "s16-2",
+  "kind": "한국어",
+  "text": "그래서 나는 영어가 중요하다는 것을 알고 있습니다.",
+  "original": "그래서 저는 영어가 중요하다는 것을 알고 있습니다.",
+  "en": "So, I know that English is important.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s16-2 한국어 #3'"
+ },
+ {
+  "lesson": "s16-2",
+  "kind": "한국어",
+  "text": "또 다른 이유는 내가 영어를 말하지 못하는 사람들을 위해 통역해 주고 싶다는 것입니다.",
+  "original": "또 다른 이유는 나는 영어를 말할 수 없는 사람들을 위해서 통역해 주고 싶습니다.",
+  "en": "Another reason is that I want to interpret for people who can’t speak English.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-j.json '6-1727 s16-2 #6 — '또 다른 이유는' 의 서술어(주술 호응)'"
+ },
+ {
+  "lesson": "s16-2",
+  "kind": "한국어",
+  "text": "마지막으로, 만일 내가 다른 나라에 간다면 그곳 사람들은 한국말을 이해할 수 없을지도 몰라서 나는 영어를 잘 말하도록 배워야 합니다. 그래야 나는 그들과 의사소통을 원활히 할 수 있습니다.",
+  "original": "마지막으로, 만일 내가 다른 나라에 간다면 그곳 사람들은 한국말을 이해 할 수 없을지도 몰라서 나는 영어를 잘 말하도록 배워야 합니다. 그래서 나는 그들과 의사소통을 원할히 할 수 있습니다.",
+  "en": "Finally, if I go to another country, the people might not understand Korean, so I must learn to speak English well so that I can communicate with them comfortably.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s16-3",
+  "kind": "한국어",
+  "text": "내가 성인이 되면, 나는 영어 원어민처럼 듣고 말할 수 있도록 해외로 영어 공부를 하러 갈 계획입니다.",
+  "original": "내가 성인이 되면, 나는 영어공부를 하기 위해 해외로 나갈 계획을 하고 있고 그렇게 함으로써 나는 현지 영어를 쓰는 사람처럼 말할 수 있습니다.",
+  "en": "When I grow up, I plan on going abroad to study English in another country so that I can listen and speak like a native speaker of English.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1730 s16-3 #4 — listen 빠짐 · so that(목적) · native speaker = 원어민(한 문장 그대로)'"
  },
  {
   "lesson": "s17-1",
@@ -364,6 +1674,14 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
  },
  {
+  "lesson": "s17-1",
+  "kind": "한국어",
+  "text": "전설에 따르면 우리나라의 역사는 4,000여 년 전에 시작되었습니다.",
+  "original": "우리나라 역사는 약 오 천년 전에 시작되었습니다.",
+  "en": "According to legend, our country’s history started more than 4,000 years ago.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-factual-student-a.json '6-1731 s17-1 한국어 2 (띄어쓰기 우리나라 포함)'"
+ },
+ {
   "lesson": "s17-2",
   "kind": "고침",
   "text": "After Gojoseon fell, the Korean Peninsula was divided into three kingdoms: Goguryeo, Baekje, and Silla.",
@@ -383,6 +1701,30 @@
   "text": "Silla was at its most powerful during the 8th century.",
   "original": "The Shilla Kingdom was the most powerful in the middle of the 8th century.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
+ },
+ {
+  "lesson": "s17-2",
+  "kind": "한국어",
+  "text": "고조선이 멸망한 이후에, 한반도는 고구려, 백제, 신라의 세 왕국으로 나누어졌습니다.",
+  "original": "고조선이 멸망한 이후에, 한반도는 세 개의 왕국으로 나누어 졌습니다; 고구려, 백제, 그리고 신라입니다.",
+  "en": "After Gojoseon fell, the Korean Peninsula was divided into three kingdoms: Goguryeo, Baekje, and Silla.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1746 같은 종류('니다:' 뒤에 서술어가 또 옴) — s17-2 #1'"
+ },
+ {
+  "lesson": "s17-2",
+  "kind": "한국어",
+  "text": "신라는 8세기에 가장 강성했습니다.",
+  "original": "신라왕국은 8세기 중반에 가장 힘이 쌨습니다.",
+  "en": "Silla was at its most powerful during the 8th century.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s17-2",
+  "kind": "한국어",
+  "text": "그 시기는 한국 역사의 황금기라고 불렸습니다.",
+  "original": "그것은 한국역사의 황금기라고 불렸습니다.",
+  "en": "It was called the Golden Age of Korean History.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
  },
  {
   "lesson": "s17-3",
@@ -420,6 +1762,38 @@
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1754 같은 종류(고유 지명 소문자) — s17-3 #6 영어 Korean Peninsula(s17-2 #1 과 같게)'"
  },
  {
+  "lesson": "s17-3",
+  "kind": "한국어",
+  "text": "그 후 1910년부터 1945년까지 한국은 일본의 지배를 받았습니다.",
+  "original": "잠시 동안, 한국은 일본에 의해 지배를 받았습니다.",
+  "en": "Later, Korea was ruled by Japan from 1910 to 1945.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "한국어",
+  "text": "1945년, 한국은 일본으로부터 해방되었습니다.",
+  "original": "1945년, 한국은 일본으로부터 독립했습니다.",
+  "en": "In 1945, Korea was liberated from Japan.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "한국어",
+  "text": "1950년 북쪽의 군대가 남쪽을 침략하면서 한국 전쟁이 일어났습니다.",
+  "original": "1950년 북쪽에서 온 군대가 남쪽을 침범했을 때 내전이 발생했습니다.",
+  "en": "The Korean War broke out in 1950 when armies from the North invaded the South.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1733 s17-3 #5 — '6·25' 는 음성 합성이 숫자로 읽을 수 있음 · 영어 The Korean War = 한국 전쟁'"
+ },
+ {
+  "lesson": "s17-3",
+  "kind": "한국어",
+  "text": "1953년 전쟁이 끝난 뒤에도 한반도는 북한과 남한으로 나뉜 채 남았습니다.",
+  "original": "결과적으로 한반도는 북한과 남한으로 나누어졌습니다.",
+  "en": "After the war ended in 1953, the Korean Peninsula remained divided into North and South Korea.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
   "lesson": "s17-4",
   "kind": "고침",
   "text": "Since the end of the war in 1953, the country has developed very quickly, especially during the 1970s.",
@@ -432,6 +1806,22 @@
   "text": "From then until now, the country has continued to grow.",
   "original": "From then until now, the country has continued to grow rapidly.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1735 s17-4 #2 영어 — 지금도 급성장하는 것처럼 말한 rapidly 를 뺌(최소)'"
+ },
+ {
+  "lesson": "s17-4",
+  "kind": "한국어",
+  "text": "1953년 전쟁이 끝난 이래로, 나라는 매우 빨리 발전해 왔고, 특히 1970년대에 그랬습니다.",
+  "original": "1953년 전쟁이 끝난 이래로, 나라는 매우 빨리 발전하기 시작했고, 특히 1970년대에 그랬습니다.",
+  "en": "Since the end of the war in 1953, the country has developed very quickly, especially during the 1970s.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s17-4",
+  "kind": "한국어",
+  "text": "그때부터 지금까지, 나라는 계속 성장해 왔습니다.",
+  "original": "그때부터 지금까지, 나라는 계속 급성장 했습니다.",
+  "en": "From then until now, the country has continued to grow.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1735 s17-4 #2 한국어'"
  },
  {
   "lesson": "s18-1",
@@ -448,11 +1838,51 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-10 holidays"
  },
  {
+  "lesson": "s18-1",
+  "kind": "한국어",
+  "text": "우리나라에는 많은 공휴일이 있습니다.",
+  "original": "우리나라는 많은 국경일들이 있습니다.",
+  "en": "My country has many holidays.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s18-1",
+  "kind": "한국어",
+  "text": "우리는 설날, 광복절, 어린이날, 부처님 오신 날, 추석 그리고 더 많은 날들을 기념합니다.",
+  "original": "우리는 음력설날, 독립기념일, 식목일, 그리고 석가탄신일 그리고 더 많은 휴일들을 기념합니다.",
+  "en": "We celebrate Seollal, Liberation Day, Children’s Day, Buddha’s Birthday, Chuseok, and many more.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s18-1",
+  "kind": "한국어",
+  "text": "저는 한국에서 가장 큰 전통 명절 두 가지에 대해 이야기하고 싶습니다.",
+  "original": "저는 한국에서 가장 큰 전통 공휴일 두 가지에 대해 이야기 하고 싶습니다.",
+  "en": "I would like to tell you about the two largest traditional holidays in Korea.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1737 s18-1 #4 — 설 · 추석은 명절(공휴일 아님)'"
+ },
+ {
   "lesson": "s18-2",
   "kind": "고침",
   "text": "The first big holiday is Seollal, Lunar New Year’s Day.",
   "original": "The first big holiday is Lunar New Year’s also known as seol-lal.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s18-2",
+  "kind": "한국어",
+  "text": "첫 번째로 큰 명절은 음력 새해 첫날인 설날입니다.",
+  "original": "첫 번째로 큰 휴일은 또한 설날이라고 알려진 음력설날입니다.",
+  "en": "The first big holiday is Seollal, Lunar New Year’s Day.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s18-2",
+  "kind": "한국어",
+  "text": "가족 모두는 아침에 일찍 일어나고 가장 좋은 옷을 입습니다.",
+  "original": "가족 모두는 아침에 일찍 일어나고 그들의 가장 좋은 옷을 입습니다.",
+  "en": "Each member of the family gets up early in the morning and dresses in their best clothes.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1741 같은 종류(주어와 같은 '그들의' 옮긴 투) — s18-2 #3'"
  },
  {
   "lesson": "s18-3",
@@ -469,6 +1899,46 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
  },
  {
+  "lesson": "s18-3",
+  "kind": "한국어",
+  "text": "추석은 한 해의 가장 큰 명절이고, 종종 한국의 추수감사절이라 불립니다.",
+  "original": "추석은 한 해의 가장 큰 국경일 이고, 그것은 종종 한국의 추수감사절이라 불린다.",
+  "en": "Chuseok is the biggest national holiday of the year, and it is often referred to as the Korean Thanksgiving.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1740 s18-3 #1 — 한다체 → 합니다체'"
+ },
+ {
+  "lesson": "s18-3",
+  "kind": "한국어",
+  "text": "추석에는 사람들이 조상의 묘를 찾아 성묘하고, 조상께 음식을 올려 차례를 지냅니다.",
+  "original": "추석 동안, 사람들은 그들 조상의 무덤을 방문하고 그들의 조상들에게 음식을 대접한다.",
+  "en": "During Chuseok, people visit their ancestral tombs and make an offering of food to their ancestors.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1741 · 6-1740 s18-3 #2 — 대접하다 → 음식을 올려 차례 · 그들 두 번 · 합니다체'"
+ },
+ {
+  "lesson": "s18-3",
+  "kind": "한국어",
+  "text": "게다가, 대부분의 사람들은 친척들과 함께 게임을 하고 한국의 전통 떡인 송편을 만듭니다.",
+  "original": "게다가, 대부분의 사람들은 그들의 친척들과 함께 게임을 하고 한국의 전통 떡인 송편을 만든다.",
+  "en": "In addition, most people play games with their relatives and make songpyeon, which is a Korean traditional rice cake.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1740 · 6-1741 같은 종류 s18-3 #3 — 합니다체 · 그들의'"
+ },
+ {
+  "lesson": "s18-3",
+  "kind": "한국어",
+  "text": "나는 우리나라의 전통 명절을 좋아합니다.",
+  "original": "나는 우리 나라의 국경일을 좋아합니다.",
+  "en": "I like our country's traditional holidays.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1750 같은 종류(우리나라 한 낱말) — s18-3 #4'"
+ },
+ {
+  "lesson": "s18-3",
+  "kind": "한국어",
+  "text": "이런 날을 통해서 나는 가족이 얼마나 중요한지에 대해 배웁니다.",
+  "original": "이런 날을 통해서 저는 가족이 얼마나 중요한지에 대해 배웁니다.",
+  "en": "On these days I learn how important family is!",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s18-3 한국어 #5'"
+ },
+ {
   "lesson": "s19-1",
   "kind": "고침",
   "text": "It has many unique aspects.",
@@ -481,6 +1951,62 @@
   "text": "Our clothes, housing, names, and language are not like those of any other country.",
   "original": "Our clothes, housing, names, and language are not like any other countries.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
+ },
+ {
+  "lesson": "s19-1",
+  "kind": "한국어",
+  "text": "그것은 많은 독특한 양상들을 가집니다.",
+  "original": "그것은 그것에 대한 아주 독특한 면을 가지고 있습니다.",
+  "en": "It has many unique aspects.",
+  "why": "커밋 3705523 (09-06) feat: initial commit for K-IG-CORE standalone platform (VOCA · 한국어 판단(7단계 j): 지금 글을 둠: 원본 '그것에 대한 아주 독특한 면' 에는 영어 many(많은)가 없음 · '그것에 대한' 군더더기"
+ },
+ {
+  "lesson": "s19-1",
+  "kind": "한국어",
+  "text": "우리의 옷, 주거, 이름들, 그리고 언어는 다른 어떤 나라의 것과도 같지 않습니다.",
+  "original": "예를 들면, 우리의 옷, 주거, 이름들, 그리고 언어는 다른 어떤 나라의 것과도 같지 않습니다.",
+  "en": "Our clothes, housing, names, and language are not like those of any other country.",
+  "why": "커밋 3705523 (09-06) feat: initial commit for K-IG-CORE standalone platform (VOCA · 계획 stage6-student-k.json '6-1743 s19-1 #3 — 영어에 없는 '예를 들면,'' · 한국어 판단(7단계 j): 지금 글을 둠: 원본 앞의 '예를 들면,' 은 영어에 없는 말"
+ },
+ {
+  "lesson": "s19-2",
+  "kind": "한국어",
+  "text": "그러나 명절에는 가족들이 한복이라 불리는 전통 의상을 입고 그날을 기념합니다.",
+  "original": "그러나 전통휴일들에는, 가족들은 한복이라 불리는 전통의상을 입음으로써 이 날들을 기념합니다.",
+  "en": "However, on traditional holidays, families celebrate these days by wearing traditional costumes called hanbok.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1744 s19-2 #3 — 전통휴일 → 명절 · 이 날들 · 전통 의상'"
+ },
+ {
+  "lesson": "s19-3",
+  "kind": "한국어",
+  "text": "한국 문화의 또 다른 독특한 면은 음식입니다.",
+  "original": "한국문화의 또 다른 면은 음식 입니다.",
+  "en": "Another unique aspect of Korean culture is its food.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s19-3",
+  "kind": "한국어",
+  "text": "전통 한국 식사는 보통 밥, 국, 생선 또는 고기, 몇 가지 채소 반찬, 그리고 한 가지 이상의 김치를 포함합니다.",
+  "original": "전통 한국 음식들은 밥, 국, 생선 또는 고기, 몇 가지 야채 반찬, 그리고 한가지 또는 더 많은 김치를 포함하고 있습니다.",
+  "en": "Traditional Korean meals usually include boiled rice, soup, fish or meat, several vegetable side dishes, and one or more kinds of kimchi.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s19-3",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 음식은 불고기입니다.",
+  "original": "나의 가장 좋아하는 음식은 불고기 입니다.",
+  "en": "My favorite food is bulgogi.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s19-3",
+  "kind": "한국어",
+  "text": "불고기는 가장 인기 있는 한국의 고기 요리인 반면 김치는 가장 인기 있는 채소 요리입니다. 나는 그것들 둘 다 좋아합니다.",
+  "original": "불고기는 가장 유명한 한국의 고기 요리 인 반면 김치는 가장 유명한 채소 요리 입니다. 저는 그것들 둘 다 좋아합니다.",
+  "en": "Bulgogi is the most popular Korean meat dish, while the most popular vegetable dish is kimchi. I like them both.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s19-3 한국어 #4'"
  },
  {
   "lesson": "s19-4",
@@ -504,6 +2030,46 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 High — facts (S-01…S-04, S-09)"
  },
  {
+  "lesson": "s19-4",
+  "kind": "한국어",
+  "text": "마지막으로, 한국어는 세계의 어떤 다른 언어와도 같지 않습니다.",
+  "original": "마지막으로, 한국 언어는 어떤 다른 세계언어도 같지 않습니다.",
+  "en": "Finally, the Korean language is not like any other world language.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1745 s19-4 #1 — 비교 조사 와/과 빠짐 · 세계 언어'"
+ },
+ {
+  "lesson": "s19-4",
+  "kind": "한국어",
+  "text": "대신에, 글을 쓸 때는 한자를 사용했습니다.",
+  "original": "대신에, 쓰기 위해서 한자기 쓰여졌습니다.",
+  "en": "Instead, Chinese characters were used for writing.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s19-4",
+  "kind": "한국어",
+  "text": "이 문자가 바로 한글입니다.",
+  "original": "곧 한글이라고 알려져 있는 쓰기 시스템이 창제되었습니다.",
+  "en": "This writing system is known as Hangul.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s20-1",
+  "kind": "한국어",
+  "text": "한국 땅은 중국과 일본 사이에 위치한 반도이고, 동해와 서해, 남해의 세 바다로 둘러싸여 있습니다.",
+  "original": "한국 땅은 중국과 일본 사이에 위치한 반도이고 삼면이 바다로 둘러싸여 있습니다: 동해, 서해, 그리고 남해 입니다.",
+  "en": "The land of Korea is a peninsula located between China and Japan and is surrounded by three seas: the East Sea, the West Sea, and the South Sea.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1746 s20-1 #1 — '있습니다:' 뒤 서술어 둘 → 한 문장'"
+ },
+ {
+  "lesson": "s20-1",
+  "kind": "한국어",
+  "text": "그것의 지리적 경관은 아름답고 방문할 만한 많은 훌륭한 장소들로 가득 차 있습니다.",
+  "original": "그것의 지질학적 경치는 아름답고 방문할만한 많은 훌륭한 장소들로 가득 차 있습니다.",
+  "en": "Its geographical landscape is beautiful and filled with many wonderful places to visit.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
   "lesson": "s20-2",
   "kind": "고침",
   "text": "Such places include Bulguksa Temple, Songnisan National Park, and the Independence Hall of Korea.",
@@ -523,6 +2089,30 @@
   "text": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and observe how Koreans lived in the past.",
   "original": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and you can observe how Koreans lived during ancient times.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1748 s20-3 #2 영어 — 목록 셋째에만 you can 되풀이(나란히)'"
+ },
+ {
+  "lesson": "s20-3",
+  "kind": "한국어",
+  "text": "방문할 만한 매우 흥미로운 장소 하나는 수도 서울에서 그리 멀지 않은 경기도 용인시(수원 근처)에 있는 한국민속촌입니다.",
+  "original": "방문할만한 매우 흥미 있는 한 장소는 한국민속촌은 수도인 서울에서 그다지 멀지 않은 경기도 수원시에 위치해 있습니다.",
+  "en": "One very interesting place to visit is the Korean Folk Village, located in Yongin, near Suwon, in Gyeonggi Province, not far from the capital, Seoul.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
+ },
+ {
+  "lesson": "s20-3",
+  "kind": "한국어",
+  "text": "당신이 그곳을 방문할 때에, 전통 결혼식을 볼 수 있고, 다양한 전통 음식을 맛볼 수 있고, 그리고 한국인들이 옛날에 어떻게 살았는지도 관찰할 수 있습니다.",
+  "original": "당신이 그곳을 방문할 때에, 전통결혼식을 볼 수 있고, 다양한 전통음식을 맛볼 수 있고, 그리고 한국인들이 고대시대 동안 어떻게 살았는지도 관찰할 수 있습니다.",
+  "en": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and observe how Koreans lived in the past.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1750 s20-3 #2 — 전통 결혼식 · 전통 음식(지적이 짚은 합성어)'"
+ },
+ {
+  "lesson": "s20-3",
+  "kind": "한국어",
+  "text": "그곳은 많은 외국인 방문객들에게 매우 인기 있는 관광지입니다.",
+  "original": "그곳은 많은 외국 방문객들에게 매우 유명한 관광지 입니다.",
+  "en": "It is a very popular attraction for many foreign visitors.",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
  },
  {
   "lesson": "s20-4",
@@ -546,10 +2136,42 @@
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-32 notation"
  },
  {
+  "lesson": "s20-4",
+  "kind": "한국어",
+  "text": "한국인들이 경주를 이렇게 부르는 것은, 그곳에 신라 왕조의 오래된 유물이 많이 남아 있기 때문입니다.",
+  "original": "한국인들은 신라왕조의 많은 오래된 유물들을 가지고 있기 때문에 그것을 이렇게 부릅니다.",
+  "en": "Koreans refer to it as this because it contains many of the old remains of the Silla Dynasty.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1751 s20-4 #5 — 이유절의 주어가 경주(한국인 아님)'"
+ },
+ {
   "lesson": "s20-5",
   "kind": "고침",
   "text": "Mt. Halla is the highest mountain in South Korea; it’s almost 2,000 meters high (about 6,400 feet).",
   "original": "Mt. Halla is the highest mountain in South Korea; it’s almost 2,000 meters high (about 6500 feet).",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-31 Korean"
+ },
+ {
+  "lesson": "s20-5",
+  "kind": "한국어",
+  "text": "그곳에는 할 수 있는 재미있는 일도 아주 많고, 방문할 만한 아름다운 장소도 많습니다.",
+  "original": "그곳에서 할 수 있는 많은 재미있는 것들과 방문할만한 많은 아름다운 장소들이 많이 있습니다.",
+  "en": "There are so many fun things to do there and many beautiful spots to visit.",
+  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-k.json '6-1757 s20-5 #3 — 많은 · 많은 · 많이 세 번 · 방문할 만한'"
+ },
+ {
+  "lesson": "s20-5",
+  "kind": "한국어",
+  "text": "나는 한라산에 가는 것을 좋아합니다.",
+  "original": "저는 한라산에 가는 것을 좋아합니다.",
+  "en": "I like going to Mt. Halla.",
+  "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s20-5 한국어 #4'"
+ },
+ {
+  "lesson": "s20-5",
+  "kind": "한국어",
+  "text": "한라산은 남한에서 가장 높은 산이고 높이는 약 2,000미터(1,947미터, 약 6,400피트)입니다.",
+  "original": "한라산은 남한에서 가장 높은 산이고 그것의 높이는 이천 미터 입니다. (약 6500피트)",
+  "en": "Mt. Halla is the highest mountain in South Korea; it’s almost 2,000 meters high (about 6,400 feet).",
+  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
  }
 ]

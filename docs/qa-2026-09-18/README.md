@@ -184,7 +184,7 @@ GRAMMAR I 9강은 본강의·짝강의와 문장이 완전히 같고(고유 문�
 
 | 남은 일 | 재개 명령 |
 |---|---|
-| 기능 전수 점검 READING 317/1,536 · LISTENING 138/1,656 (JSONL 이어쓰기로 자동 재개) | `node docs/qa-2026-09-18/scripts/drive-generic.cjs --course reading --viewports desktop,mobile,tablet --tabs 3 --port 9510` / 같은 명령의 `--course ld --port 9520` |
+| 기능 전수 점검 READING 317/1,536 · LISTENING 138/1,656 (JSONL 이어쓰기로 재개 — 2026-09-24 부터는 `--resume` 을 붙여야 이어 함, 7단계 7-1 l) | `node docs/qa-2026-09-18/scripts/drive-generic.cjs --course reading --viewports desktop,mobile,tablet --tabs 3 --port 9510 --resume` / 같은 명령의 `--course ld --port 9520` |
 | 기능 전수 점검 미착수 4개 과정 | 위 명령에서 `--course phonics|grammar1|grammar2|student` (포트 다르게) |
 | 내용 1차 검토 40/98 | `Workflow({scriptPath: <kig-content-review-wf_9c0b6ff0-b2a.js>, resumeFromRunId: "wf_47718ff2-021", args: <out/review-args.json>})` |
 | 내용 심화(VOCA 단어표 20단위 + READING 카드 24단위) | `Workflow({scriptPath: <kig-content-review-deep-wf_09d9ffc2-30f.js>, resumeFromRunId: "wf_09d9ffc2-30f", args: {phonics:[...195개], readingCardRows:3585}})` |
@@ -198,7 +198,7 @@ GRAMMAR I 9강은 본강의·짝강의와 문장이 완전히 같고(고유 문�
 
 - 진행률 대략 **15%**. 아래 표의 상태 칸이 기준.
 - 돌던 작업은 모두 정지했습니다 (드라이버 스모크, 브라우저). 인터넷이 없으면 운영 점검·에이전트 모두 불가.
-- **재개 방법**: 인터넷 복구 후 이 파일을 읽고 ① 전수 드라이버 `scripts/drive-generic.cjs` 를 과정별로 실행 (`--course <slug> --tabs 3 --viewports desktop,mobile,tablet`, JSONL 이어쓰기로 재개됨) ② 내용 검토 워크플로 재개 (§7 행의 명령) ③ 음성 전수·관리자·접근성 순.
+- **재개 방법**: 인터넷 복구 후 이 파일을 읽고 ① 전수 드라이버 `scripts/drive-generic.cjs` 를 과정별로 실행 (`--course <slug> --tabs 3 --viewports desktop,mobile,tablet --resume`, JSONL 이어쓰기로 재개 — 2026-09-24 부터 `--resume` 이 있어야 이어 함, 없으면 기록이 있는 파일에서 멈춤) ② 내용 검토 워크플로 재개 (§7 행의 명령) ③ 음성 전수·관리자·접근성 순.
 - 주의: **인터넷이 끊긴 상태로 드라이버를 돌리지 마세요.** 모든 페이지가 "로드 실패"로 기록되고 그 기록이 "검사 완료"로 남습니다.
 
 ## 단계

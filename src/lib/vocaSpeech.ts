@@ -56,3 +56,61 @@ export function vocaSpeechForm(text: string): string {
   if (!text) return text;
   return VOCA_SPEECH_FORMS[text.trim()] ?? text;
 }
+
+/**
+ * VOCA headwords whose pronunciation depends on the meaning (7단계 7-6 — 소유자 결정 2026-09-24,
+ * 질문 6 나): all twenty said in the pronunciation of the meaning the card shows).
+ *
+ * The card shows ONE meaning (content/voca_dictionary.json) — `sow` "(씨를) 뿌리다", `wind`
+ * "바람", `graduate` "졸업하다" — but the clips were made from the bare word, so which reading
+ * each clip holds was nobody's choice: the owner heard "사우" (a female pig) for `sow` on its card.
+ * Each value is the IPA of the meaning on the card (US).
+ *
+ * A VOCA word button says `<word> ⟨<ipa>⟩` (vocaWordSpeech). The tag survives
+ * normalizeUnifiedSpeechText, so the clip gets a NEW name: production clips are cached
+ * `immutable` for a year, and overwriting the old name would leave the old sound with everyone
+ * who already heard it. scripts/generate-azure-ava.mjs turns the tag into
+ * `<phoneme alphabet="ipa">`; the browser-voice fallback in speech.ts drops it. READING cards that
+ * share a word (lead · live · minute · produce · increase · refuse) keep asking for the bare word —
+ * only the VOCA view uses the tagged form, so their sound does not change.
+ */
+export const VOCA_PRONUNCIATIONS: Record<string, string> = {
+  sow: "soʊ",
+  row: "roʊ",
+  lead: "liːd",
+  wind: "wɪnd",
+  live: "lɪv",
+  wound: "wuːnd",
+  minute: "ˈmɪnɪt",
+  resume: "rɪˈzuːm",
+  produce: "prəˈduːs",
+  increase: "ɪnˈkriːs",
+  decrease: "dɪˈkriːs",
+  digest: "daɪˈdʒɛst",
+  transfer: "trænsˈfɝː",
+  converse: "kənˈvɝːs",
+  convert: "kənˈvɝːt",
+  extract: "ɪkˈstrækt",
+  insert: "ɪnˈsɝːt",
+  reject: "rɪˈdʒɛkt",
+  refuse: "rɪˈfjuːz",
+  graduate: "ˈɡrædʒueɪt",
+};
+
+/** What a VOCA word button says: the pronunciation-tagged form of the words above, else the spoken form. */
+export function vocaWordSpeech(word: string): string {
+  if (!word) return word;
+  const ipa = VOCA_PRONUNCIATIONS[word.trim()];
+  return ipa ? `${word.trim()} ⟨${ipa}⟩` : vocaSpeechForm(word);
+}
+
+/** `<word> ⟨<ipa>⟩` → [word, ipa] (the generator's SSML), or null for any other text. */
+export function pronunciationTag(text: string): [string, string] | null {
+  const m = /^(.+?)\s*⟨([^⟩]+)⟩$/.exec(text.trim());
+  return m ? [m[1], m[2]] : null;
+}
+
+/** The same text without the tag — what a browser voice may read if the clip is ever unavailable. */
+export function withoutPronunciationTag(text: string): string {
+  return text.replace(/\s*⟨[^⟩]*⟩/g, "").trim();
+}

@@ -4,6 +4,12 @@ import { cookies } from "next/headers";
 import type { Metadata } from "next";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { LessonBody } from "@/components/LessonBody";
+import { LessonSpeechGuard } from "@/components/LessonSpeechGuard";
+import { LdLearningView } from "@/components/LdLearningView";
+import { ReadingLearningView } from "@/components/ReadingLearningView";
+import { GrammarLearningView } from "@/components/GrammarLearningView";
+import { PhonicsLearningView } from "@/components/PhonicsLearningView";
+import { StudentLearningView } from "@/components/StudentLearningView";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
@@ -17,7 +23,9 @@ import {
 } from "@/lib/licenseSession";
 import { tabForCourse } from "@/lib/tabs";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
-import type { Block, ReadingSentence } from "@/lib/types";
+import { extractSentencesForAudio } from "@/lib/lessonAudioText";
+import { firstSlashAlternative } from "@/lib/listeningUtils";
+import { vocaWordSpeech } from "@/lib/vocaSpeech";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
@@ -41,6 +49,9 @@ export function generateStaticParams() {
  * for the day the route is prerendered again.
  */
 export const dynamicParams = false;
+
+/** BUG-023 — courses whose view the page renders itself (see the lesson body below). */
+const DIRECT_VIEW_COURSES = new Set(["ld", "reading", "grammar1", "grammar2", "phonics", "student"]);
 
 /**
  * The banner that represents each course in a share card. Mirrors the map on
@@ -257,6 +268,9 @@ export default async function LessonPage({
     course,
     ldEnglishScript,
     lesson.readingSentences ?? pairLesson?.readingSentences,
+    // how this course's items are spoken — STUDENT "He/She …" in its first form (BUG-028) ·
+    // a VOCA heteronym in its card meaning under its own clip name (7-6)
+    course === "student" ? firstSlashAlternative : course === "phonics" ? vocaWordSpeech : undefined,
   );
 
   return (
@@ -365,7 +379,62 @@ export default async function LessonPage({
       ) : null}
 
       {/* Educational Body with Aligned Sentences */}
-      {lesson.blocks.length > 0 ? (
+      {lesson.blocks.length > 0 && DIRECT_VIEW_COURSES.has(course) ? (
+        /*
+         * BUG-023 — the course view is rendered HERE, on the server, instead of by
+         * LessonBody's next/dynamic. That dynamic import made React stream a loading
+         * skeleton first and the lesson a moment later, swapped in by an inline
+         * script ($RC) near the end of the HTML — which on a 4G phone could not run
+         * until the page's JavaScript had finished executing, so the largest text
+         * appeared 1.5~3 s after the first paint. A client component referenced by
+         * the server page is still code-split: the browser loads only this course's
+         * view. Same props as LessonBody passed.
+         */
+        <LessonSpeechGuard>
+          {course === "ld" ? (
+            <LdLearningView
+              blocks={lesson.blocks}
+              pairBlocks={pairLesson?.blocks ?? null}
+              lessonKey={`${course}/${lesson.id}`}
+              isScript={isScript}
+              audioTracks={audio}
+              ldEnglishScript={ldEnglishScript}
+            />
+          ) : course === "reading" ? (
+            <ReadingLearningView
+              blocks={lesson.blocks}
+              pairBlocks={pairLesson?.blocks ?? null}
+              lessonKey={`${course}/${lesson.id}`}
+              isScript={isScript}
+              audioTracks={audio}
+              vocaDictionary={vocaDictionary}
+              readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
+              readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
+            />
+          ) : course === "grammar1" || course === "grammar2" ? (
+            <GrammarLearningView
+              blocks={lesson.blocks}
+              pairBlocks={pairLesson?.blocks ?? null}
+              course={course}
+              lessonKey={`${course}/${lesson.id}`}
+              isScript={isScript}
+              audioTracks={audio}
+            />
+          ) : course === "phonics" ? (
+            <PhonicsLearningView
+              blocks={lesson.blocks}
+              lessonKey={`${course}/${lesson.id}`}
+              vocaDictionary={vocaDictionary}
+            />
+          ) : (
+            <StudentLearningView
+              blocks={lesson.blocks}
+              lessonKey={`${course}/${lesson.id}`}
+              audioTracks={audio}
+            />
+          )}
+        </LessonSpeechGuard>
+      ) : lesson.blocks.length > 0 ? (
         <LessonBody
           blocks={lesson.blocks}
           pairBlocks={pairLesson?.blocks ?? null}
@@ -409,127 +478,5 @@ function getVoiceGender(course: string, lessonId: string): VoiceGender {
     return "female";
   }
   return "neutral";
-}
-
-
-function isEnglishText(text: string): boolean {
-  const latin = (text.match(/[a-zA-Z]/g) || []).length;
-  const hangul = (text.match(/[\uAC00-\uD7AF\u1100-\u11FF]/g) || []).length;
-  return latin > hangul;
-}
-
-function cleanText(text: string): string {
-  return text
-    .replace(/^\s*\d+[\.\)]\s*/, "")
-    .replace(/\s*\/\s*/g, " ")
-    .trim();
-}
-
-function extractSentencesForAudio(
-  blocks: Block[],
-  pairBlocks: Block[] | null | undefined,
-  isScript: boolean,
-  course: string,
-  ldEnglishScript?: { n: string; ko: string; en: string }[] | null,
-  readingSentences?: ReadingSentence[] | null,
-): string[] {
-  let targetBlocks = isScript && pairBlocks && pairBlocks.length > 0 ? pairBlocks : blocks;
-
-  // LD course: prioritize actual model English script
-  if (course === "ld") {
-    if (ldEnglishScript && ldEnglishScript.length > 0) {
-      const enList = ldEnglishScript.map((s) => cleanText(s.en)).filter(Boolean);
-      if (enList.length > 0) return enList;
-    }
-    const hints = targetBlocks.find((b) => b.type === "hints") as { type: "hints"; text: string } | undefined;
-    if (hints?.text) {
-      const hintWords = hints.text.split(/[.,]/).map((w) => cleanText(w)).filter(Boolean);
-      if (hintWords.length > 0) return hintWords;
-    }
-  }
-
-  // READING passages are already restored as canonical 1:1 sentence pairs.
-  // Using only the first legacy instruction block made the top player show
-  // 1/1 and stop after a fragment even when the passage contained 5-10 lines.
-  if (course === "reading" && readingSentences?.length) {
-    return readingSentences.map((sentence) => cleanText(sentence.english)).filter(Boolean);
-  }
-
-  // Phonics / VOCA course: extract from wordgrid
-  const wordgrid = targetBlocks.find((b) => b.type === "wordgrid") as { type: "wordgrid"; rows: string[][] } | undefined;
-  if (wordgrid?.rows) {
-    const words = wordgrid.rows.flat().map((w) => cleanText(w)).filter(Boolean);
-    if (words.length > 0) return words;
-  }
-
-  // In grammar1 (or whenever targetBlocks has Korean sentences and pairBlocks has English sentences):
-  // We MUST pick the English sentences so AudioPlayer reads the English lesson!
-  if (course !== "chinese") {
-    const mainSent = blocks.find((b) => b.type === "sentences") as { type: "sentences"; items: { text: string }[] } | undefined;
-    const pairSent = pairBlocks?.find((b) => b.type === "sentences") as { type: "sentences"; items: { text: string }[] } | undefined;
-    if (pairSent?.items?.[0]?.text) {
-      const mainIsEn = Boolean(mainSent?.items?.[0]?.text && isEnglishText(mainSent.items[0].text));
-      const pairIsEn = isEnglishText(pairSent.items[0].text);
-      if (!mainIsEn && pairIsEn) {
-        targetBlocks = pairBlocks!;
-      } else if (mainIsEn) {
-        targetBlocks = blocks;
-      }
-    }
-  }
-
-  // 1. Sentences blocks — every one, in order. Only the first used to be read, so a lesson whose
-  // items sit in two blocks (gh1-015: #1–#23 + #24–#43) played 23 of its 43 answers; 24 GRAMMAR
-  // pages were split like this (6-1347). The step views already flatten the blocks.
-  const sentItems = targetBlocks
-    .filter((b) => b.type === "sentences")
-    .flatMap((b) => (b as { type: "sentences"; items?: { text: string }[] }).items || []);
-  if (sentItems.length > 0) {
-    return sentItems.map((it) => cleanText(it.text)).filter(Boolean);
-  }
-
-  // 2. Dialogue / conversation courses (man, woman, student)
-  if (["man", "woman", "student"].includes(course)) {
-    const paras = targetBlocks.filter((b) => b.type === "paragraph") as { type: "paragraph"; text: string; lang?: string }[];
-    const enParas = paras
-      .map((p) => cleanText(p.text))
-      .filter((t) => {
-        if (!t) return false;
-        if (t.includes("K-IG") || t.includes("<font") || t.includes("한/영") || /^Chapter\s+\d/i.test(t) || t.endsWith(":")) return false;
-        if (t === "Greeting and Introduction" || t === "My Personal and Educational Background") return false;
-        return isEnglishText(t);
-      });
-    if (enParas.length > 0) {
-      return enParas;
-    }
-  }
-
-  // 3. Reading passage
-  if (course === "reading") {
-    const inst = targetBlocks.find((b) => b.type === "instruction");
-    if (inst?.text) {
-      return inst.text
-        .split(/(?<=[.?!])\s+/)
-        .map((s) => cleanText(s))
-        .filter(Boolean);
-    }
-  }
-
-  // Legacy speaking/listening courses store their full narration as a run of
-  // instruction/hints blocks. When the historical MP3 is unavailable, feed
-  // every English-bearing line to Ava instead of leaving the player silent.
-  const legacyNarration = targetBlocks
-    .filter((block) => block.type === "instruction" || block.type === "hints")
-    .map((block) => cleanText(block.text))
-    .filter((text) => /[A-Za-z\u3131-\u318e\u3400-\u9fff\uac00-\ud7a3]/u.test(text));
-  if (legacyNarration.length > 0) return legacyNarration;
-
-  // 4. Any paragraphs
-  const allParas = targetBlocks.filter((b) => b.type === "paragraph") as { type: "paragraph"; text: string }[];
-  if (allParas.length > 0) {
-    return allParas.map((p) => cleanText(p.text)).filter(Boolean);
-  }
-
-  return [];
 }
 

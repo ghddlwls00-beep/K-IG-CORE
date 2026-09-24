@@ -83,7 +83,7 @@
   ],
   "from": "나의 큰삼촌은 훌륭한 이야기꾼이십니다.",
   "to": "나의 큰아버지는 훌륭한 이야기꾼이십니다.",
-  "expect": 1,
+  "expect": 1, "gone": true, "note": "원본 되살리기(950417d)로 이 과 문장이 원본 교재 문장으로 바뀌어 이 문장은 없음",
   "supersededBy": "student-restore-0923"
  },
  {
@@ -121,7 +121,7 @@
   ],
   "from": "\"text\": \"My other uncles are very successful, too.\"",
   "to": "\"text\": \"My other uncles are very successful.\"",
-  "expect": 1, "supersededBy": "student-restore-0923",
+  "expect": 1, "gone": true, "note": "원본 되살리기(950417d)로 이 과 문장이 원본 교재 문장으로 바뀌어 이 문장은 없음", "supersededBy": "student-restore-0923",
   "raw": true
  },
  {
@@ -131,7 +131,7 @@
   ],
   "from": "나의 다른 삼촌들 또한 매우 성공했습니다.",
   "to": "나의 다른 삼촌들은 매우 성공하셨습니다.",
-  "expect": 1,
+  "expect": 1, "gone": true, "note": "원본 되살리기(950417d)로 이 과 문장이 원본 교재 문장으로 바뀌어 이 문장은 없음",
   "supersededBy": "student-restore-0923"
  },
  {

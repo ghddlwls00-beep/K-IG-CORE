@@ -14,7 +14,7 @@
  {"item": "6-0050 d054 n3 KO", "files": ["content/ld_english_scripts.json"],
   "from": "그는 자신이 인도에 도착했다고 생각했다.", "to": "그는 자신이 동인도 제도에 도착했다고 생각했다.", "expect": 1},
  {"item": "6-0050 d054 힌트 — 원래 힌트가 n3 용으로 쓴 'East India' 를 문장과 같게(칩이 n3 에 계속 뜨게)", "files": ["content/lessons/ld/d054.json"],
-  "from": "searching for a shortcut East India.", "to": "searching for a shortcut East Indies.", "expect": 1},
+  "from": "searching for a shortcut East India.", "to": "searching for a shortcut East Indies.", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0051 d054 n4 KO — tribute 는 찬사가 아니라 (실수가 남긴) 흔적 + 로써/로서", "files": ["content/ld_english_scripts.json"],
   "from": "심지어 오늘날에도 아메리카의 원주민들은 콜럼버스의 위대한 실수에 대한 찬사로써 인디언이라고 불린다.",
   "to": "심지어 오늘날에도 아메리카의 원주민들은 인디언이라고 불리는데, 이는 콜럼버스의 커다란 실수가 남긴 흔적이다.", "expect": 1}

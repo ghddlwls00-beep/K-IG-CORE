@@ -24,6 +24,10 @@
  *      the model's word. Swapping a content word for an unrelated one
  *      ("triangle" → "banana") is incorrect, not partial. Typos keep their
  *      partial credit: "triangel" is one transposition from "triangle".
+ *
+ * AND ONE MORE (7-4 f ②, owner decision 2026-09-23): an answer that is negative
+ * where the model is positive, or the other way round, is incorrect — see
+ * `flipsNegation`.
  */
 
 export type AnswerGrade = "exact" | "partial" | "incorrect";
@@ -154,6 +158,139 @@ const FUNCTION_WORDS = new Set([
   "there", "here", "very", "too", "also", "just", "only",
 ]);
 
+/** Function words that turn a sentence into its opposite. */
+const NEGATIONS = new Set(["not", "never", "no", "nor"]);
+
+/**
+ * 7-4 f ② — owner decision 2026-09-23 ("뜻이 반대면 0점으로 가자"): an answer
+ * whose sentence is negative where the model's is positive, or the other way
+ * round, says the opposite and earns nothing. Before, a dropped or added "not"
+ * was just one wrong function word, so "He is happy." scored 70 against "He is
+ * not happy." whenever the sentence was long enough to pass the length cap.
+ *
+ * Judged on the words the alignment could NOT match, so a negation written
+ * differently on both sides keeps its grade: "I have no money" / "I don't have
+ * any money", "never" / "not ever", and the "All … not" alternatives kept by
+ * decision 5 B. "isn't" / "is not" are already equal after expansion; the
+ * apostrophe-less "isnt" of the literal pass counts as a negation too, and a
+ * typo of the negation ("nto") is still the negation.
+ *
+ * Not counted:
+ *   - a question tag (", isn't he?", ", are they not?"): the tag is the mirror of
+ *     the sentence, so a wrong tag is a grammar slip, not the opposite meaning;
+ *   - a sentence-initial "No" answering a question ("No, it is not cold." against
+ *     "It is not cold." grades as before);
+ *   - "or not" ("whether to go or not" = "whether to go"), "no matter",
+ *     "no sooner", "no doubt".
+ */
+const NEGATORS = new Set(["not", "no", "never", "nobody", "nothing", "none", "neither", "nor", "nowhere", "noone", "cannot"]);
+const NEGATED_AUX = /^(?:is|are|was|were|do|does|did|have|has|had|could|would|should|must|need|might|ca|wo|sha|ai)nt$/;
+/** "No," with its comma is read from the raw text; typed without one, these next words still mark it. */
+const ANSWER_NO = /^\s*no\s*[,.!;:]/i;
+const ANSWER_NO_NEXT = new Set([
+  "i", "you", "he", "she", "it", "we", "they", "this", "that", "these", "those", "there", "here",
+  "my", "your", "his", "our", "their", "a", "an", "the",
+  "am", "is", "are", "was", "were", "do", "does", "did", "have", "has", "had",
+  "can", "could", "will", "would", "shall", "should", "may", "might", "must",
+  "not", "never", "thank", "thanks", "please",
+]);
+const NO_BUT_NOT_NEGATING = new Set(["matter", "sooner", "doubt"]);
+/** A question tag after its comma: ", isn't he?" · ", are they not?" · ", shall we?". */
+const TAG_RAW = /,\s*[a-z]+(?:n['’]t)?\s+(?:i|you|he|she|it|we|they|there|one)(?:\s+not)?\s*[?.!]*\s*$/i;
+/** What the raw text says before punctuation is stripped: an answering "No," · a question tag. */
+type RawCues = { userNo: boolean; modelNo: boolean; userTag: boolean; modelTag: boolean };
+const TAG_AUX = new Set([
+  "am", "is", "are", "was", "were", "do", "does", "did", "have", "has", "had",
+  "can", "could", "will", "would", "shall", "should", "may", "might", "must", "need", "ought",
+]);
+const TAG_SUBJECT = new Set(["i", "you", "he", "she", "it", "we", "they", "there", "one"]);
+/**
+ * Real words one letter away from a negation. Typed where the negation belongs they are
+ * another word, not a typo of it: "ever" for "never" and "either" for "neither" say
+ * the opposite; "now", "lot" and "one" are different words.
+ */
+const NOT_A_NEGATION_TYPO = new Set([
+  "ever", "either", "one", "now", "lot", "hot", "got", "dot", "pot", "rot", "cot", "jot", "tot",
+  "nut", "net", "nod", "note", "knot", "nit", "bone", "gone", "done", "nine", "nope", "noon",
+  "for", "fever", "lever", "sever",
+]);
+
+function negatesAt(words: string[], index: number, answerNo: boolean): boolean {
+  const word = words[index];
+  if (!NEGATORS.has(word) && !NEGATED_AUX.test(word)) return false;
+  if (word === "nor" && words.slice(0, index).includes("neither")) return false; // neither … nor is one negation
+  if (word === "not" && words[index - 1] === "or" && words[index + 1] !== "not") {
+    // "whether to go or not" = "whether to go"; "either you or not I" is a negation.
+    const before = words.slice(0, index);
+    if (index === words.length - 1 || before.includes("whether") || before.includes("if")) return false;
+  }
+  if (word === "no") {
+    const next = words[index + 1];
+    if (index === 0 && (answerNo || next === undefined || ANSWER_NO_NEXT.has(next))) return false;
+    if (NO_BUT_NOT_NEGATING.has(next)) return false;
+  }
+  return true;
+}
+
+/** Index where a trailing question tag begins ("… is not he", "… is he not"), or words.length. */
+function tagStart(words: string[]): number {
+  let k = words.length - 1;
+  if (words[k] === "not") k--;
+  if (k < 0 || !TAG_SUBJECT.has(words[k])) return words.length;
+  k--;
+  if (words[k] === "not") k--;
+  if (k < 0 || !(TAG_AUX.has(words[k]) || NEGATED_AUX.test(words[k]))) return words.length;
+  return k >= 2 ? k : words.length; // a question like "Where is he" is not a tag
+}
+
+/**
+ * True when the words left unmatched add or remove a negation: an odd number of
+ * unmatched negations between the two sides. One on each side ("no money" /
+ * "not … any money") is the same meaning; one more on either side is the opposite.
+ */
+function flipsNegation(
+  userWords: string[],
+  modelWords: string[],
+  matchedUser: Set<number>,
+  matchedModel: Set<number>,
+  cues: RawCues,
+): boolean {
+  const leftUser = userWords.map((_, i) => i).filter((i) => !matchedUser.has(i));
+  const leftModel = modelWords.map((_, i) => i).filter((i) => !matchedModel.has(i));
+  // A tag is read only where the raw text has one; "How many boys were there?" has none.
+  // The learner may leave out the comma, so the model's tag also marks the learner's.
+  const userTag = cues.userTag || cues.modelTag ? tagStart(userWords) : userWords.length;
+  const modelTag = cues.modelTag ? tagStart(modelWords) : modelWords.length;
+  const userNeg = leftUser.filter((i) => i < userTag && negatesAt(userWords, i, cues.userNo));
+  const modelNeg = leftModel.filter((i) => i < modelTag && negatesAt(modelWords, i, cues.modelNo));
+  if (userNeg.length === 0 && modelNeg.length === 0) return false;
+  // A misspelt negation in the same place on the other side ("nto" for "not") is still
+  // that negation and pairs it off. A real word never does: "does" for "doesnt" is the
+  // negation removed, "ever" for "never" the opposite (FUNCTION_WORDS, TAG_AUX and
+  // NOT_A_NEGATION_TYPO). The place is the gap between the same two matched words.
+  const gapOf = (matched: Set<number>, i: number) => [...matched].filter((m) => m < i).length;
+  const spare = (left: number[], words: string[], negs: number[], matched: Set<number>) =>
+    left.filter((i) => !negs.includes(i)).map((i) => ({ word: words[i], gap: gapOf(matched, i) }));
+  const unpaired = (negs: number[], words: string[], matched: Set<number>, pool: { word: string; gap: number }[]) =>
+    negs.filter((i) => {
+      const gap = gapOf(matched, i);
+      const k = pool.findIndex(
+        (p) =>
+          p.gap === gap &&
+          !TAG_AUX.has(p.word) &&
+          !FUNCTION_WORDS.has(p.word) &&
+          !NOT_A_NEGATION_TYPO.has(p.word) &&
+          editDistance(p.word, words[i]) <= 1,
+      );
+      if (k < 0) return true;
+      pool.splice(k, 1);
+      return false;
+    }).length;
+  const user = unpaired(userNeg, userWords, matchedUser, spare(leftModel, modelWords, modelNeg, matchedModel));
+  const model = unpaired(modelNeg, modelWords, matchedModel, spare(leftUser, userWords, userNeg, matchedUser));
+  return (user + model) % 2 === 1;
+}
+
 /**
  * Lower-case, punctuation and apostrophes removed — contractions left as written.
  *
@@ -269,6 +406,12 @@ function align(userWords: string[], modelWords: string[]) {
  */
 export function gradeAnswer(userRaw: string, modelRaw: string): AnswerGrade {
   const model = normalizeForComparison(modelRaw);
+  const cues: RawCues = {
+    userNo: ANSWER_NO.test(userRaw),
+    modelNo: ANSWER_NO.test(modelRaw),
+    userTag: TAG_RAW.test(userRaw),
+    modelTag: TAG_RAW.test(modelRaw),
+  };
   // BUG-010: a learner's "I'd read" is a correct contraction of both "I had read"
   // and "I would read", so both readings are tried (the Set drops duplicates).
   let expanded: AnswerGrade = "incorrect";
@@ -278,11 +421,11 @@ export function gradeAnswer(userRaw: string, modelRaw: string): AnswerGrade {
     normalizeForComparison(userRaw, "had"),
   ]);
   for (const user of userForms) {
-    const grade = gradeNormalized(user, model);
+    const grade = gradeNormalized(user, model, cues);
     if (GRADE_RANK[grade] > GRADE_RANK[expanded]) expanded = grade;
   }
   if (expanded === "exact") return expanded;
-  const literal = gradeNormalized(normalizeLiteral(userRaw), normalizeLiteral(modelRaw));
+  const literal = gradeNormalized(normalizeLiteral(userRaw), normalizeLiteral(modelRaw), cues);
   return GRADE_RANK[literal] > GRADE_RANK[expanded] ? literal : expanded;
 }
 
@@ -316,7 +459,7 @@ function gradeSpacingOnly(user: string, model: string): AnswerGrade | null {
   return changed.some((w) => MEANING_CHANGING_JOINS.has(w)) ? "partial" : "exact";
 }
 
-function gradeNormalized(user: string, model: string): AnswerGrade {
+function gradeNormalized(user: string, model: string, cues: RawCues): AnswerGrade {
   if (!user) return "incorrect";
   if (user === model) return "exact";
   const spacing = gradeSpacingOnly(user, model);
@@ -328,8 +471,23 @@ function gradeNormalized(user: string, model: string): AnswerGrade {
   if (modelWords.length === 0 || userWords.length <= 1) return "incorrect";
 
   const { length, matchedUser, matchedModel } = align(userWords, modelWords);
+  if (flipsNegation(userWords, modelWords, matchedUser, matchedModel, cues)) return "incorrect";
   if (length / modelWords.length < 0.7) return "incorrect";
-  if (userWords.length > modelWords.length * MAX_ANSWER_LEN_RATIO) return "incorrect";
+  if (userWords.length > modelWords.length * MAX_ANSWER_LEN_RATIO) {
+    // 6단계 G11 (결정표 2번, owner decision 2026-09-23): on a short model the cap is
+    // crossed by a single word — 65% of the models have six words or fewer — so
+    // one extra "the" scored 0 where the same slip on a long sentence scores 70.
+    // Exactly one surplus word is let through, and only a function word; a
+    // content word or a second extra word still hits the cap. A negation is not
+    // let through (3차 점검, 2026-09-23): "He isn't Japanese." against "He is
+    // Japanese." says the opposite, and the owner was asked about small words
+    // like the and a.
+    const surplus = userWords.filter((_, index) => !matchedUser.has(index));
+    const oneFunctionWordMore =
+      userWords.length === modelWords.length + 1 && surplus.length === 1 &&
+      FUNCTION_WORDS.has(surplus[0]) && !NEGATIONS.has(surplus[0]);
+    if (!oneFunctionWordMore) return "incorrect";
+  }
 
   // Pair the words the learner got wrong with the words the model wanted, in
   // order. "into a banana" against "into a triangle" pairs banana ↔ triangle.

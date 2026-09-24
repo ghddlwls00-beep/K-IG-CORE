@@ -103,7 +103,10 @@
         },
         {
           "n": "30",
-          "text": "Does the operator like it?"
+          "text": "Does the operator like it?",
+          "alternatives": [
+            "Does the operator like that?"
+          ]
         },
         {
           "n": "31",
@@ -119,11 +122,17 @@
         },
         {
           "n": "33",
-          "text": "Does your husband mean it?"
+          "text": "Does your husband mean it?",
+          "alternatives": [
+            "Does your husband mean that?"
+          ]
         },
         {
           "n": "34",
-          "text": "Do your friends really mean it?"
+          "text": "Do your friends really mean it?",
+          "alternatives": [
+            "Do your friends really mean that?"
+          ]
         },
         {
           "n": "35",
@@ -159,7 +168,11 @@
           "n": "39",
           "text": "Why does it take place outside the border?",
           "alternatives": [
-            "Why does it happen outside the border?"
+            "Why does it happen outside the border?",
+            "Why is it taking place outside the border?",
+            "Why does that take place outside the border?",
+            "Why does that happen outside the border?",
+            "Why is that taking place outside the border?"
           ]
         }
       ]

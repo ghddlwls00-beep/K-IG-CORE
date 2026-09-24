@@ -29,7 +29,7 @@
   "from": "철로를 반쯤 건넜을 때 그는 갑자기 한 열차가 자신을 향하여 질주해오는 것을 보았다.",
   "to": "철로를 반쯤 건넜을 때 그는 갑자기 기관차 한 대가 자신을 향해 질주해 오는 것을 보았다.", "expect": 1},
  {"item": "6-0097 d070 힌트 'panick' → 대본의 'panicked'", "files": ["content/lessons/ld/d070.json"],
-  "from": "fantastic speed 23 panick froze", "to": "fantastic speed 23 panicked froze", "expect": 1},
+  "from": "fantastic speed 23 panick froze", "to": "fantastic speed 23 panicked froze", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0100 d072 n5 KO — 무생물에 '에게로' · 이중 피동", "files": ["content/ld_english_scripts.json"],
   "from": "그 다리에서 돈가방들이 열차로부터 내려져서 기다리는 트럭들에게로 던져넣어졌다.",
   "to": "그 다리에서 돈가방들은 열차에서 내려져 기다리던 트럭들로 던져졌다.", "expect": 1},

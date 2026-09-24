@@ -17,7 +17,7 @@ Scope: the six live courses (STUDENT `student`, VOCA `phonics`, GRAMMAR I `gramm
 | Licensed browser | `%TEMP%\kig-audit-licensed-profile` (LIFE; the owner typed the code). Never type a code. Use `cloneProfile(name)` → `%TEMP%\kig-audit-0918-<name>`, one clone per parallel Edge. §8.4 |
 | Expected text of a lesson | Build it from `content/lessons/<course>/<id>.json` (plus `content/ld_english_scripts.json` for LISTENING). The displayed title comes from `formatLessonPresentation` (`src/lib/curriculumPresentation.ts:102`), **not** from the `title` field of the course index. §1.6 |
 | Expected clip URL of any spoken text | `unifiedSpeechPath(text)` = `/audio/azure-ava/v1/<key>.mp3` (`src/lib/unifiedSpeech.ts:37-39`). For VOCA headwords, pass the text through `vocaSpeechForm` first. §6 |
-| Does `generate-azure-ava.mjs --dry-run` touch Azure or R2? | **Azure: never.** It returns at `:601` before the key check. **R2: yes, a read-only `ListObjectsV2` walk of `audio/azure-ava/v1/`**, but only when the four `R2_*` env vars are set. The script does not load `.env.local` itself. Without the variables it uses local disk only and prints a warning. §6.3 |
+| Does `generate-azure-ava.mjs --dry-run` touch Azure or R2? | **Azure: never.** It returns at `:601` before the key check. **R2: yes, a read-only `ListObjectsV2` walk of `audio/azure-ava/v1/`**, but only when the four `R2_*` env vars are set. Since 7단계 7-2 the script loads `.env.local` itself; without the variables it stops before any Azure call (exit 1 — `--dry-run` prints the warning on its first line, `--allow-local-only` proceeds on local disk). §6.3 |
 | Does `upload-azure-ava-r2.mjs --dry-run` exist? | **No.** The flag is ignored. With R2 variables set it **uploads immediately**. Never run it in the audit. §6.4 |
 | Local manifest of bucket keys | There is none from the bucket itself. `public/audio/azure-ava/v1/.r2-uploaded.json` is the uploader's own checkpoint: 50,384 entries, written 2026-09-17 11:51 UTC. There are 50,382 local `.mp3` files; 2 checkpoint entries have no local file. §6.4 |
 | Scripts you must not run in this audit | Every `apply-*.cjs`, every `fix-*`/`realign-*`/`rebuild-*`/`restore-*`/`repair-*`/`revert-*` in `qa-2026-09-15/scripts`, `upload-azure-ava-r2.mjs`, `generate-azure-ava.mjs` without `--dry-run`, `licensed-profile.cjs`, `stt-*.cjs` (paid Azure API), and every `verify-*-ui.cjs` / `verify-csp-nonce*.cjs` / `verify-media-origin-stream.cjs` (they start a local `next dev`/`next start` and write `data/license-devices.json`). §4.5–4.6 |
@@ -495,6 +495,11 @@ spoken string S (view-specific: English sentence, row, word; VOCA: vocaSpeechFor
 
 ### 6.3 `scripts/generate-azure-ava.mjs`
 
+> **7단계 7-2 (2026-09-24) 이후:** 모으기는 `scripts/lib/spoken-texts.cjs`(앱이 소리 내는 글의 한 정의 — 무료 소리 키 ·
+> 감사 도구와 함께 씀)로 바뀌었다. 주소 있는 6과정만, 과정마다 화면이 소리 내는 칸 + 위 '전체 듣기'(`src/lib/lessonAudioText.ts`
+> `extractSentencesForAudio` 를 그대로 돌림). `.env.local` 을 스스로 읽고, R2 자격이 없으면 Azure 전에 멈춘다(`--allow-local-only`).
+> 아래 표의 `SPEECH_KEYS` · 폐지 과정 · 한국어 칸 이야기는 그 전 모습이다(items 30,455 → 15,321).
+
 | Aspect | Detail |
 |---|---|
 | Invocation | `node --env-file=.env.local scripts/generate-azure-ava.mjs --dry-run`. The script does **not** read `.env.local` itself; `package.json` `generate:ava` runs it without env |
@@ -522,6 +527,9 @@ spoken string S (view-specific: English sentence, row, word; VOCA: vocaSpeechFor
 - `public/audio` is gitignored (`.gitignore:57`), so another clone has neither the files nor the checkpoint.
 
 ### 6.5 `scripts/buildFreeSpeechKeys.mjs` → `src/lib/generated/freeSpeechKeys.json`
+
+> **7단계 7-2 이후:** 생성기와 같은 `scripts/lib/spoken-texts.cjs` 로 모으고, 쪽마다 짝 강의(`pairIdOf`)가 빌려 주는 글도 함께 —
+> 짝이 무료가 아니면 멈춘다. 키 517 → 264(빠진 253 은 앱이 부르지 않는 한국어 · 뜻 · 안내문), 바닥 300 → 200. 아래는 그 전 모습.
 
 - Loads through `loadTsModule` (no imports allowed): `license.ts` (`FREE_PREVIEW_LESSON_IDS`), `unifiedSpeech.ts`, `vocaSpeech.ts`, `vocaUtils.ts` (`getCollocation`), `listeningUtils.ts` (`generateLiaisonPoints`) (76-90).
 - For each free lesson except cnn (136-171): `collectValue` with the same `SPEECH_KEYS`, **plus a variant with the leading `\d+[.)]` removed** (110-117, because GRAMMAR's `cleanText` strips `1. `). For ld: the script rows' `en` plus liaison `original`s. For phonics: each grid word's `meaning`, `searchWord \|\| word`, and collocation phrase.
@@ -756,7 +764,7 @@ Each item names what was measured locally. None was reproduced on production.
 |---|---|---|
 | T-01 | `docs/qa-2026-09-18/scripts/lib/harness.cjs:145-164` | `load()` compares the final URL with the requested URL. The 97 GRAMMAR I odd routes redirect, so each costs a 45 s wait and returns `navigated:false` unless the driver maps them first (§9) |
 | T-02 | `scripts/generate-azure-ava.mjs:592-594` | `pending` excludes a key when **either** a local file exists **or** the bucket has it. On this machine (50,382 local clips) a clip generated but never uploaded is invisible to `--dry-run`, so "pending 0" does not prove bucket completeness. Measured: 2 checkpoint entries have no local file; local files missing from the checkpoint: 0 |
-| T-03 | `scripts/generate-azure-ava.mjs:242-245` | Collects from every `content/lessons` directory except `cnn`, **including retired `adults`, `adults-m`, `adults-w`, `basics`, `chinese`, `man`, `middle`, `woman` (1,283 files)**, and all `ko`/`korean`/`meaning` fields. The inventory and `pending` counts include clips no live view speaks, which could cost Azure characters on a fresh run |
+| T-03 | `scripts/generate-azure-ava.mjs:242-245` | Collects from every `content/lessons` directory except `cnn`, **including retired `adults`, `adults-m`, `adults-w`, `basics`, `chinese`, `man`, `middle`, `woman` (1,283 files)**, and all `ko`/`korean`/`meaning` fields. The inventory and `pending` counts include clips no live view speaks, which could cost Azure characters on a fresh run. **7단계 7-2 에서 고침** — `scripts/lib/spoken-texts.cjs`, 6과정 · 앱이 부르는 칸만 (items 30,455 → 15,321) |
 | T-04 | `scripts/upload-azure-ava-r2.mjs:124-179` | No dry-run. Any invocation with R2 variables uploads. Its checkpoint is not a bucket listing |
 | T-05 | `scripts/buildValidRoutes.mjs:23`, `scripts/buildFreeSpeechKeys.mjs:27` | Comments say `prebuild` **and `predev`** regenerate the lists, but `package.json` has no `predev`. `next dev` (used by the local verifiers) can run on stale lists |
 | T-06 | `public/search-index.json` (commit `00c5df0`), `scripts/buildSearchIndex.ts` | Not regenerated by `prebuild`. **Measured:** STUDENT 81 entries, `s19-3` missing; CNN 120 entries still present. Titles may drift from `formatLessonPresentation` after later content changes (not measured) |

@@ -92,7 +92,10 @@
         },
         {
           "n": "82",
-          "text": "Has it stopped aching now?"
+          "text": "Has it stopped aching now?",
+          "alternatives": [
+            "Has that stopped aching now?"
+          ]
         },
         {
           "n": "83",
@@ -186,7 +189,9 @@
           "n": "99",
           "text": "All 1,900 Olympia outlets will be serving it within 60 days, won't they?",
           "alternatives": [
-            "All 1,900 Olympia outlets will be serving it within sixty days, won't they?"
+            "All 1,900 Olympia outlets will be serving it within sixty days, won't they?",
+            "All 1,900 Olympia outlets will be serving that within 60 days, won't they?",
+            "All 1,900 Olympia outlets will be serving that within sixty days, won't they?"
           ]
         },
         {
@@ -210,7 +215,10 @@
         },
         {
           "n": "104",
-          "text": "How long will it take?"
+          "text": "How long will it take?",
+          "alternatives": [
+            "How long will that take?"
+          ]
         },
         {
           "n": "105",

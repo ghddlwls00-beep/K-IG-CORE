@@ -8,7 +8,7 @@ import { DictationPanel } from "./DictationPanel";
 import { speakText, stopSpeech, type VoiceGender } from "@/lib/speech";
 import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
-import { vocaSpeechForm } from "@/lib/vocaSpeech";
+import { vocaWordSpeech } from "@/lib/vocaSpeech";
 
 function ViewLoadingSkeleton() {
   return (
@@ -287,8 +287,8 @@ export function LessonBody({
     stopSpeech();
     setActiveWord(word);
     // The word grid shows the headword as written; only the audio drops a
-    // VOCA bracket. Anything not in that table of thirteen passes through.
-    speakText(vocaSpeechForm(word), {
+    // VOCA bracket, and a heteronym is said in its card meaning (7-6).
+    speakText(vocaWordSpeech(word), {
       lang: contentLang,
       gender: voiceGender,
       rate: 0.9,

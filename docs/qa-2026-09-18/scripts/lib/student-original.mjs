@@ -7,11 +7,14 @@
  * 지금 문장마다: 글자까지 같은 기준 문장 → '같음', 낱말이 반 이상 겹치는 기준 문장 → '고침', 앞뒤 짝 사이에 하나씩 남은 것끼리 → '바꿈',
  * 짝 없는 지금 문장 → '더함', 짝 없는 기준 문장 → '빠짐', 짝들의 기준 자리가 거꾸로 가면 → '차례'.
  * 영어 ↔ 한국어 짝: 지금 문장 i 의 한국어 문단이 원본에서 그 영어와 한 단추에 묶인 한국어보다 다른 문장의 한국어를 뚜렷이 더 닮으면 → '짝'.
- * (한국어 번역 글자는 감사에서 많이 고쳐 원본과 글자 대조는 하지 않는다 — 어느 영어의 번역인지만 본다.)
+ * 한국어 글자(7단계 7-1 j — 전에는 어느 영어의 번역인지만 봄): 지금 문장 i 의 영어와 한 단추에 묶인 원본 한국어와 견줘, 띄어쓰기 ·
+ * 문장부호를 뺀 글자가 다르면 → '한국어'(원본 한국어를 original 로). '짝' 으로 나온 줄은 '한국어' 로 또 세지 않는다.
  */
 import { readStudentOriginal } from "./swf-stage.mjs";
 
 export const key = (s) => String(s).replace(/[’‘]/g, "'").toLowerCase().replace(/[^a-z0-9]/g, "");
+/** 한국어 글자 — 띄어쓰기 · 문장부호 · 따옴표를 뺀 한글 · 숫자 · 영문자 */
+export const koKey = (s) => String(s).toLowerCase().replace(/[^가-힣0-9a-z]/g, "");
 const words = (s) => String(s).replace(/\([^)]*\)/g, " ").replace(/[’‘]/g, "'").toLowerCase().match(/[a-z0-9']+/g) || [];
 export const sim = (a, b) => {
   const A = words(a), B = words(b); if (!A.length || !B.length) return 0;
@@ -65,14 +68,19 @@ export function compareLesson(archiveRoot, id, en, ko) {
   P.forEach((p, k) => { if (!used.has(k) && !covered(p)) diffs.push({ kind: "빠짐", text: p, at: k + 1 }); });
   const seq = match.filter((v) => v !== -1);
   if (seq.some((v, t) => t > 0 && v < seq[t - 1])) diffs.push({ kind: "차례", text: "", order: match.map((v) => (v === -1 ? "-" : v + 1)).join(",") });
-  // 영어 ↔ 한국어 짝
+  // 영어 ↔ 한국어 짝 · 한국어 글자
   const U = o.units.filter((u) => u.en);
+  let koSame = 0, koTotal = 0;
   en.forEach((s, i) => {
     let own = null, ov = 0; for (const u of U) { const v = sim(s, u.en); if (v > ov) { ov = v; own = u; } }
     if (!own || ov < 0.5 || ko[i] == null) return;
     const dOwn = dice(ko[i], own.ko);
     let dOther = 0, other = null; for (const u of U) { if (u === own) continue; const v = dice(ko[i], u.ko); if (v > dOther) { dOther = v; other = u; } }
-    if (dOther > dOwn + 0.1 && dOwn < 0.5) diffs.push({ kind: "짝", text: s, ko: ko[i], original: own.ko, closer: other.ko, at: i + 1 });
+    if (dOther > dOwn + 0.1 && dOwn < 0.5) { diffs.push({ kind: "짝", text: s, ko: ko[i], original: own.ko, closer: other.ko, at: i + 1 }); return; }
+    if (!own.ko) return;
+    koTotal++;
+    if (koKey(ko[i]) === koKey(own.ko)) koSame++;
+    else diffs.push({ kind: "한국어", text: ko[i], original: own.ko, en: s, at: i + 1 });
   });
-  return { ref, diffs, same, lines: o.lines, copy: o.copy };
+  return { ref, diffs, same, koSame, koTotal, lines: o.lines, copy: o.copy };
 }

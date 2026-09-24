@@ -25,7 +25,7 @@
   },
   {
    "type": "instruction",
-   "text": "Until recently, people in many parts of the country could have orange juice during only a few months. Now orange juice is put up in cans, so that it is available regardless of the season."
+   "text": "In the early 1900s, people in many parts of the United States could have orange juice during only a few months of the year. Later, orange juice was put up in cans, so that it became available regardless of the season."
   },
   {
    "type": "choice",
@@ -47,21 +47,21 @@
  "readingSentences": [
   {
    "id": "reading-182-s001",
-   "english": "Until recently, people in many parts of the country could have orange juice during only a few months.",
-   "korean": "최근까지만 해도 전국의 많은 지역 사람들은 몇 달 동안에만 오렌지 주스를 마실 수 있었다."
+   "english": "In the early 1900s, people in many parts of the United States could have orange juice during only a few months of the year.",
+   "korean": "1900년대 초에는 미국의 많은 지역 사람들이 1년 중 몇 달 동안만 오렌지 주스를 마실 수 있었다."
   },
   {
    "id": "reading-182-s002",
-   "english": "Now orange juice is put up in cans, so that it is available regardless of the season.",
-   "korean": "이제는 오렌지 주스가 캔에 담겨 나와 계절에 상관없이 이용할 수 있게 되었다."
+   "english": "Later, orange juice was put up in cans, so that it became available regardless of the season.",
+   "korean": "그 뒤 오렌지 주스가 캔에 담겨 나오면서 계절에 상관없이 구할 수 있게 되었다."
   }
  ],
  "readingVocabulary": [
   {
-   "word": "recently",
-   "lemma": "recently",
-   "partOfSpeech": "adv.",
-   "korean": "최근에 (until recently 최근까지)",
+   "word": "early",
+   "lemma": "early",
+   "partOfSpeech": "adj.",
+   "korean": "초의 (the early 1900s 1900년대 초)",
    "score": 77,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 77점)",
    "examTags": [
@@ -71,10 +71,10 @@
    "freq": 1
   },
   {
-   "word": "country",
-   "lemma": "country",
+   "word": "year",
+   "lemma": "year",
    "partOfSpeech": "n.",
-   "korean": "나라",
+   "korean": "해, 1년 (of the year 1년 중)",
    "score": 104,
    "reason": "지문 핵심 주제문 구성 어휘 · 중학 필수 독해 기본 어휘 (평가 점수: 104점)",
    "examTags": [
@@ -194,10 +194,10 @@
    "freq": 1
   },
   {
-   "word": "until",
-   "lemma": "until",
-   "partOfSpeech": "prep.",
-   "korean": "~까지",
+   "word": "later",
+   "lemma": "later",
+   "partOfSpeech": "adv.",
+   "korean": "그 뒤에, 나중에",
    "score": 69,
    "reason": "지문 핵심 주제문 구성 어휘 · 지문 문맥 독해 핵심 어휘 (평가 점수: 69점)",
    "examTags": [

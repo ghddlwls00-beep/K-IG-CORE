@@ -25,7 +25,8 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const { launch, Tab, sleep } = require("../../qa-2026-09-15/scripts/verify/cdp.cjs");
-const BASE = "https://k-ig-core.vercel.app";
+// 7단계 7-3: BASE 로 로컬 운영 빌드(next build · next start)도 잰다 · --tag 로 결과 파일 이름을 따로(운영 기록을 덮지 않게)
+const BASE = (process.env.BASE || "https://k-ig-core.vercel.app").replace(/\/$/, "");
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const RUNS = Number(arg("--runs", 3));
 const LICENSED = process.argv.includes("--licensed");
@@ -111,7 +112,8 @@ async function measure(browser, url, cond) {
   } finally {
     browser.proc.kill();
   }
-  const outFile = path.join(__dirname, `../out/perf${LICENSED ? "-licensed" : "-anon"}${ONLY ? `-${ONLY}` : ""}.json`);
+  const TAG = arg("--tag", "");
+  const outFile = path.join(__dirname, `../out/perf${LICENSED ? "-licensed" : "-anon"}${ONLY ? `-${ONLY}` : ""}${TAG ? `-${TAG}` : ""}.json`);
   fs.writeFileSync(outFile, JSON.stringify({ at: new Date().toISOString(), base: BASE, licensed: LICENSED, results: out }, null, 1));
 })();
 

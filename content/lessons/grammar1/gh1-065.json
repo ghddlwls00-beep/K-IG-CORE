@@ -63,18 +63,26 @@
         },
         {
           "n": "30",
-          "text": "Does your boss like it?"
+          "text": "Does your boss like it?",
+          "alternatives": [
+            "Does your boss like that?"
+          ]
         },
         {
           "n": "31",
           "text": "Didn't your mother like it?",
           "alternatives": [
-            "Did your mother not like it?"
+            "Did your mother not like it?",
+            "Didn't your mother like that?",
+            "Did your mother not like that?"
           ]
         },
         {
           "n": "32",
-          "text": "Did your wife like it?"
+          "text": "Did your wife like it?",
+          "alternatives": [
+            "Did your wife like that?"
+          ]
         },
         {
           "n": "33",
@@ -108,7 +116,10 @@
         },
         {
           "n": "39",
-          "text": "Why does he study English?"
+          "text": "Why does he study English?",
+          "alternatives": [
+            "Why is he studying English?"
+          ]
         },
         {
           "n": "40",
@@ -173,7 +184,10 @@
         },
         {
           "n": "53",
-          "text": "Who studies English hard?"
+          "text": "Who studies English hard?",
+          "alternatives": [
+            "Who is studying English hard?"
+          ]
         }
       ]
     },

@@ -155,7 +155,11 @@
           "alternatives": [
             "He finished it as quickly as possible.",
             "He finished it as fast as possible.",
-            "He finished it as soon as he could."
+            "He finished it as soon as he could.",
+            "He finished that as soon as possible.",
+            "He finished that as quickly as possible.",
+            "He finished that as fast as possible.",
+            "He finished that as soon as he could."
           ]
         },
         {
@@ -227,7 +231,10 @@
         },
         {
           "n": "30",
-          "text": "Who paid for it?"
+          "text": "Who paid for it?",
+          "alternatives": [
+            "Who paid for that?"
+          ]
         },
         {
           "n": "31",

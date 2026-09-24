@@ -3,6 +3,7 @@ import {
   shouldUseUnifiedSpeech,
   unifiedSpeechPath,
 } from "@/lib/unifiedSpeech";
+import { vocaSpeechForm, withoutPronunciationTag } from "@/lib/vocaSpeech";
 
 /**
  * Dual-Engine Speech & Audio System for K-IG 교육 courseware.
@@ -497,9 +498,19 @@ export function normalizeLang(lang: SpeechLang | undefined): string {
   }
 }
 
-/** Strips reading marks the courseware uses ("/" chunk markers, [tags]). */
+/**
+ * Strips reading marks the courseware uses ("/" chunk markers, [tags]).
+ *
+ * It also says a bracketed VOCA headword ("colo(u)r") the way its clip is made:
+ * the clip generator keys EVERY text through vocaSpeechForm (RE-005), so a
+ * caller that hands over the written form must be translated here too. The
+ * speaker buttons already pass the spoken form; the page's top "전체 듣기"
+ * player did not — it asked for a "labo(u)r" clip that is never generated and
+ * for 13 bracketed clips made before RE-005 (BUG-027, 7단계). The table only
+ * matches those 14 exact headwords, so every other text is unchanged.
+ */
 function cleanText(text: string): string {
-  return normalizeUnifiedSpeechText(text);
+  return normalizeUnifiedSpeechText(vocaSpeechForm(text));
 }
 
 /** Break a long string into speakable chunks at sentence, then word boundaries. */
@@ -847,7 +858,8 @@ function playChunkViaSynthesis(chunk: LangSegment, runToken: number) {
   if (!run) return;
   run.usingStream = false;
 
-  const u = new SpeechSynthesisUtterance(chunk.text);
+  // A VOCA pronunciation tag (`sow ⟨soʊ⟩`, 7단계 7-6) names the clip; a browser voice must not read it.
+  const u = new SpeechSynthesisUtterance(withoutPronunciationTag(chunk.text));
   u.lang = normalizeLang(chunk.lang);
   u.rate = Math.max(0.5, Math.min(1.6, run.rate));
 

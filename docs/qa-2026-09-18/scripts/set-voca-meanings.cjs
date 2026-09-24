@@ -9,10 +9,13 @@
  *
  *   node set-voca-meanings.cjs plans/x.json             미리보기
  *   node set-voca-meanings.cjs plans/x.json --apply     씀
- *   node set-voca-meanings.cjs --check plans/a.json …   지금 뜻 = to 인지 센다 (supersededBy 가 있으면 from 이 아니기만)
+ *   node set-voca-meanings.cjs --check plans/a.json …   지금 뜻 = to 인지 센다
  *   node set-voca-meanings.cjs --check … --rev HEAD     일부러 깨기: 커밋된 판으로 세면 어긋나야 한다
+ * 줄에 "supersededBy": "<계획 이름>[ 설명]" 이 있으면 그 계획의 같은 표제어 줄을 **사슬 끝까지** 따라가 지금 뜻 = 마지막 to 인지 센다
+ *   (7단계 7-1 d 와 같은 규칙 — 전에는 "from 이 아니기만" 봐서, 뒤에 누가 무엇으로 바꿨든 통과했다). 따라갈 수 없으면 어긋남.
  * 줄에 "revertedBy" 가 있으면(뒤 계획이 그 줄의 from 으로 되돌림 — 6-0917 correctly, 3차 점검 #7 ③) 세지 않고 수만 보인다.
- *   supersededBy 의 "from 이 아니기만" 은 되돌린 줄에서 늘 어긋나므로. 되돌린 값은 revertedBy 가 가리키는 계획이 센다.
+ *   되돌린 값은 revertedBy 가 가리키는 계획이 센다.
+ * 계획을 하나도 안 넘기면 exit 1 (7-1 h — 전에는 '0개 · 0줄 · 어긋남 0' 으로 통과).
  */
 const fs = require("fs");
 const path = require("path");
@@ -34,18 +37,48 @@ const jsonStr = (s) => JSON.stringify(s).slice(1, -1); // 파일 안 글자 꼴(
 const leaks = (w, m) => /[A-Za-z]/.test(m) && new RegExp(`(?<![A-Za-z])${esc(w)}(?:s|es|ed|d|ing|ly)?(?![A-Za-z])`, "i").test(m);
 
 if (CHECK) {
+  if (!plans.length) { console.log("VOCA 계획을 하나도 안 넘김 — 센 것 0 (7-1 h). exit 1"); process.exit(1); }
   const D = JSON.parse(readRaw().replace(/^﻿/, ""));
-  let lines = 0, bad = 0, reverted = 0;
+  const PLAN_DIR = path.join(__dirname, "plans");
+  const succ = (s) => {
+    const n = String(s).trim().split(/\s/)[0].replace(/\.json$/, "");
+    const f = path.join(PLAN_DIR, `${n}.json`);
+    return { n, lines: fs.existsSync(f) ? readPlan(f) : null };
+  };
+  // 뒤 계획에서 같은 표제어 줄, 없으면 이 줄의 to 에서 이어지는 줄(from = to — 사이에 표제어 키가 바뀐 경우: labour → labo(u)r, 6-0911)
+  const chainEnd = (l) => {
+    let cur = l;
+    const via = [];
+    for (let hop = 0; hop < 20 && cur.supersededBy; hop++) {
+      const s = succ(cur.supersededBy);
+      if (!s.lines) return { problem: `뒤 계획 '${s.n}' 이 계획 폴더에 없음` };
+      let next = s.lines.filter((x) => x.word === cur.word);
+      if (!next.length) next = s.lines.filter((x) => x.from === cur.to);
+      if (!next.length) return { problem: `뒤 계획 '${s.n}' 에 ${cur.word} 줄도, 이 뜻에서 이어지는 줄도 없음(사슬 끊김)` };
+      via.push(next[next.length - 1].word === cur.word ? s.n : `${s.n}(표제어 ${next[next.length - 1].word})`);
+      cur = next[next.length - 1];
+    }
+    if (cur.supersededBy) return { problem: "사슬이 20 단계를 넘음" };
+    if (cur.revertedBy) return { problem: `사슬 끝 줄(${via[via.length - 1]})이 되돌려짐 — 끝을 다시 적어야 함` };
+    return { word: cur.word, to: cur.to, via };
+  };
+  let lines = 0, bad = 0, reverted = 0, chained = 0;
   for (const p of plans) {
     for (const l of readPlan(p)) {
       lines++;
       if (l.revertedBy) { reverted++; continue; }
-      const cur = (D[l.word] || {}).meaning;
-      const ok = l.supersededBy ? cur !== l.from : cur === l.to;
-      if (!ok) { bad++; console.log(`  어긋남 ${path.basename(p)} #${l.item}: ${l.word} 지금 ${JSON.stringify(cur)} · 기대 ${JSON.stringify(l.supersededBy ? `≠ ${l.from}` : l.to)}`); }
+      let cur = (D[l.word] || {}).meaning;
+      let ok, want;
+      if (l.supersededBy) {
+        chained++;
+        const e = chainEnd(l);
+        if (e.problem) { ok = false; want = e.problem; }
+        else { cur = (D[e.word] || {}).meaning; ok = cur === e.to; want = `${e.to} (사슬 끝 ${e.via.join(" → ")})`; }
+      } else { ok = cur === l.to; want = l.to; }
+      if (!ok) { bad++; console.log(`  어긋남 ${path.basename(p)} #${l.item}: ${l.word} 지금 ${JSON.stringify(cur)} · 기대 ${JSON.stringify(want)}`); }
     }
   }
-  console.log(`${REV ? `[${REV} 기준] ` : ""}VOCA 계획 ${plans.length}개 · ${lines}줄 · 어긋남 ${bad}${reverted ? ` (되돌린 줄 ${reverted} 은 세지 않음)` : ""}`);
+  console.log(`${REV ? `[${REV} 기준] ` : ""}VOCA 계획 ${plans.length}개 · ${lines}줄 · 어긋남 ${bad} · 뒤에 다시 고친 줄 ${chained}(사슬 끝까지 셈)${reverted ? ` · 되돌린 줄 ${reverted} 은 세지 않음` : ""}`);
   process.exit(bad ? 1 : 0);
 }
 

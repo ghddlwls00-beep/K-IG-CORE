@@ -43,11 +43,14 @@ for (const id of ids) {
 }
 check(`served STUDENT lessons = 82 (87 minus the 5 overview pages)`, ids.length === 82, `${ids.length}`);
 check("S-30 overview pages s1–s5 not served", !["s1", "s2", "s3", "s4", "s5"].some((x) => ids.includes(x)));
-check(`S-06/S-07 chunk cards inside their lesson: ${chunksIn}/${chunks} (${lessonsWithChunks} lessons)`, chunks > 0 && chunksIn === chunks, notIn.slice(0, 5).join(" | "));
+// 2026-09-23 소유자 결정(BUG-024 · 7단계 7-4 c "2번 다 지워"): STUDENT 청크 드릴 데이터를 모두 지움 — 조각이 0 이면 이 검사는
+// 해당 없음. 조각이 다시 생기면 전과 같이 모두 제 과 문장 안에 있어야 함.
+check(chunks === 0 ? "S-06/S-07 chunk cards — 드릴 데이터 없음(BUG-024, 소유자 결정 2026-09-23 지움)" : `S-06/S-07 chunk cards inside their lesson: ${chunksIn}/${chunks} (${lessonsWithChunks} lessons)`, chunksIn === chunks, notIn.slice(0, 5).join(" | "));
 check("S-07/S-29 no Hangul in English sentences or chunk cards", hangulEn.length === 0, hangulEn.slice(0, 5).join(" | "));
 check("English sentence count = Korean paragraph count in every lesson", countMismatch.length === 0, countMismatch.join(", "));
 const s193 = load("s19-3");
-check("S-05 s19-3 has 4 dictation sentences and chunk cards", s193.blocks.find((b) => b.type === "sentences")?.items.length === 4 && (s193.chunkDrills || []).length > 0 && !JSON.stringify(s193).includes("PASS-OFF"));
+// 청크 조각은 2026-09-23 소유자 결정으로 모든 과에서 지움(BUG-024) — 문장 4개와 PDF 찌꺼기 없음만 봄
+check("S-05 s19-3 has 4 dictation sentences (chunk cards: removed 2026-09-23, BUG-024)", s193.blocks.find((b) => b.type === "sentences")?.items.length === 4 && !("chunkDrills" in s193) && !JSON.stringify(s193).includes("PASS-OFF"));
 
 const gone = (label, re, list = allEn) => { const hits = list.filter((t) => re.test(t)); check(`gone: ${label}`, hits.length === 0, hits.slice(0, 3).join(" | ")); };
 gone("S-01 1948 liberation / librated", /1948|librated/);
@@ -81,7 +84,7 @@ gone("S-33 Korean spelling", /11살 입니다|가정주부 이십니다|그들�
 
 const has = (id, re) => { const d = load(id); const t = JSON.stringify(d); check(`${id} ${re}`, re.test(t)); };
 has("s17-3", /In 1945, Korea was liberated from Japan\./);
-has("s17-3", /After the war ended in 1953, the Korean peninsula remained divided/);
+has("s17-3", /After the war ended in 1953, the Korean [Pp]eninsula remained divided/); // 6단계 6-1754 가 지명으로 대문자 Peninsula(s17-2 #1 과 같게)
 has("s19-4", /in 1443, King Sejong created a unique Korean alphabet, and it was proclaimed in 1446/);
 has("s13-2", /Admiral Yi lived more than 400 years ago/);
 has("s18-1", /Seollal, Liberation Day/);

@@ -9,7 +9,13 @@
  * no other interaction. Only what fails here is reported as a product defect.
  *
  *   node recheck-audio.cjs [--course reading] [--limit N] [--port 9600]
+ *   node recheck-audio.cjs --from out/recheck-audio-ld.jsonl --status BLOCKED --limit 32 --suffix -x   지난 재검사의 그 상태 대상만 다시
  * Output: out/recheck-audio.jsonl (resumable) + summary.
+ *
+ * 7단계 7-1 f: 대상마다 스윕이 그것을 본 화면 크기(t.viewports — desktop 이 있으면 desktop, 없으면 본 크기)로 연다. 전에는 모두
+ * desktop 으로 열어, 휴대폰에서만 RETEST 가 된 버튼은 단계 이름이 달라(휴대폰 "STEP 4 🗣️ 실전섀도잉") 못 찾고 BLOCKED 가 됐다
+ * (2026-09-23 운영 재점검 LISTENING 32 · 9/22 재검사 LISTENING 385 — 모두 휴대폰만 본 것). 또 다른 재검사 파일의 결과를 '이미 함' 으로
+ * 건너뛸 때 BLOCKED 로 끝난 것은 건너뛰지 않는다(다시 봄). --desktop-only 는 옛 동작(깨기 증명용).
  */
 const fs = require("fs");
 const path = require("path");
@@ -61,8 +67,20 @@ function worthRechecking(a) {
   return true;
 }
 
+const DESKTOP_ONLY = process.argv.includes("--desktop-only");
+const FROM = arg("--from", null);
+const FROM_STATUS = arg("--status", null);
 const targets = new Map();
-for (const f of fs.readdirSync(path.join(OUT, "features")).filter((x) => x.endsWith(".jsonl") && !x.includes("smoke") && x !== "common.jsonl")) {
+// --from: 지난 재검사 결과에서 대상을 그대로(그 상태만) — 같은 대상을 고치기 전 · 뒤로 견주는 증명용
+if (FROM) for (const line of fs.readFileSync(path.resolve(FROM), "utf8").split("\n")) {
+  if (!line.trim()) continue;
+  let r; try { r = JSON.parse(line); } catch { continue; }
+  if (FROM_STATUS && r.status !== FROM_STATUS) continue;
+  if (ONLY && !ONLY.has(r.course)) continue;
+  const key = `${r.url}|${r.step}|${r.label}`;
+  if (!targets.has(key)) targets.set(key, { course: r.course, id: r.id, url: r.url, step: r.step, label: r.label, sweepNote: r.sweepNote || "", viewports: new Set(r.sweepViewports || ["desktop"]) });
+}
+for (const f of FROM ? [] : fs.readdirSync(path.join(OUT, "features")).filter((x) => x.endsWith(".jsonl") && !x.includes("smoke") && x !== "common.jsonl")) {
   for (const line of fs.readFileSync(path.join(OUT, "features", f), "utf8").split("\n")) {
     if (!line.trim()) continue;
     let r; try { r = JSON.parse(line); } catch { continue; }
@@ -80,12 +98,15 @@ for (const f of fs.readdirSync(path.join(OUT, "features")).filter((x) => x.endsW
 let list = [...targets.values()];
 if (LIMIT) list = list.slice(0, LIMIT);
 const out = H.jsonl(path.join(OUT, `recheck-audio${SUFFIX}.jsonl`), (r) => `${r.url}|${r.step}|${r.label}`);
-// every recheck-audio*.jsonl counts as done, so parallel runs never repeat each other's work
-const alreadyDone = new Set(out.done);
-for (const f of fs.readdirSync(OUT).filter((x) => /^recheck-audio.*\.jsonl$/.test(x) && x !== `recheck-audio${SUFFIX}.jsonl`)) {
-  for (const line of fs.readFileSync(path.join(OUT, f), "utf8").split("\n")) {
+// every recheck-audio*.jsonl counts as done, so parallel runs never repeat each other's work — except a
+// BLOCKED result: the control was never pressed, so it is looked at again (7-1 f)
+const alreadyDone = new Set();
+for (const f of FROM ? [`recheck-audio${SUFFIX}.jsonl`] : fs.readdirSync(OUT).filter((x) => /^recheck-audio.*\.jsonl$/.test(x))) {
+  const file = path.join(OUT, f);
+  if (!fs.existsSync(file)) continue;
+  for (const line of fs.readFileSync(file, "utf8").split("\n")) {
     if (!line.trim()) continue;
-    try { const r = JSON.parse(line); alreadyDone.add(`${r.url}|${r.step}|${r.label}`); } catch {}
+    try { const r = JSON.parse(line); if (r.status !== "BLOCKED") alreadyDone.add(`${r.url}|${r.step}|${r.label}`); } catch {}
   }
 }
 list = list.filter((t) => !alreadyDone.has(`${t.url}|${t.step}|${t.label}`));
@@ -104,11 +125,16 @@ console.log(`re-checking ${list.length} controls in isolation`);
   const browser = await H.startBrowser(`recheck${SUFFIX}`, PORT);
   try {
     const tab = await H.openTab(browser, { clean: true });
-    await H.setViewport(tab, "desktop");
+    let current = "desktop";
+    await H.setViewport(tab, current);
     let n = 0;
     const online = async () => { try { const r = await fetch(H.BASE + "/robots.txt", { signal: AbortSignal.timeout(10000) }); return r.ok; } catch { return false; } };
     for (const t of list) {
       while (!(await online())) { console.log("offline — waiting"); await H.sleep(60000); }
+      // 스윕이 그 버튼을 본 크기로(7-1 f) — 휴대폰에서만 본 버튼은 단계 이름이 다르다
+      const vp = DESKTOP_ONLY || t.viewports.has("desktop") ? "desktop" : t.viewports.has("mobile") ? "mobile" : [...t.viewports][0] || "desktop";
+      if (vp !== current) { await H.setViewport(tab, vp); current = vp; }
+      t.openedAt = vp;
       const exp = E.expected(t.course, t.id);
       await H.load(tab, t.url, { marker: H.MARKERS[t.course] });
       if (t.step && t.step !== "(initial)") {
@@ -141,7 +167,7 @@ console.log(`re-checking ${list.length} controls in isolation`);
       const errored = paths.filter((p) => clips[p].error > 0 || clips[p].rejected > 0);
       const status = !c.ok ? "BLOCKED" : played.length && !tts.length ? "PASS" : errored.length || tts.length || !paths.length ? "FAIL" : "FAIL";
       const rec = {
-        course: t.course, id: t.id, url: t.url, step: t.step, label: t.label, sweepViewports: [...t.viewports], sweepNote: t.sweepNote,
+        course: t.course, id: t.id, url: t.url, step: t.step, label: t.label, sweepViewports: [...t.viewports], openedAt: t.openedAt, sweepNote: t.sweepNote,
         clicked: c.ok, status,
         note: !c.ok ? `control not found (${c.reason})` : played.length && !tts.length ? "" : errored.length ? `clip error ${clips[errored[0]].errCode || clips[errored[0]].rejectName || ""}` : tts.length ? `browser TTS spoke: "${tts[0].slice(0, 60)}"` : !paths.length ? "no audio request in 12 s" : "requested but never played",
         clips: paths.map((p) => ({ path: p, ...clips[p], expected: exp.clipPaths.has(p) })),

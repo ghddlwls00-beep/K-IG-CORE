@@ -1,0 +1,27 @@
+{
+ "_note": "7단계 7-5 — ld-chip-boundaries.cjs 가 대본에 그 꼴 그대로 없는 낱말 때문에 못 가린 12쌍을 대본 문장을 읽고 정함(수정 세션, 2026-09-24). do: split = 경계(\". \") · keep = 한 항목",
+ "d034": {
+  "38|km": { "do": "keep", "why": "n9 'over 38 kilometers long' — 수와 단위 한 항목(km = kilometers)" },
+  "km|annual": { "do": "split", "why": "38 km 는 n9(다리), annual 은 n10(마디 그라 축제) — 다른 문장의 다른 항목" }
+ },
+ "d096": {
+  "100|tear": { "do": "split", "why": "100 은 n3(다친 사람 수), tear off 는 n4(지붕이 뜯김) — 다른 항목" },
+  "tear|off": { "do": "keep", "why": "n4 'were torn off' — 한 구동사(tear off)" }
+ },
+ "d103": {
+  "Alaska|dog-sleds": { "do": "split", "why": "Alaska 는 n1, dog sleds 는 n2 — 다른 항목" },
+  "dog-sleds|Alaskans": { "do": "split", "why": "dog sleds 는 n2, Alaskans 는 n3 — 다른 항목" }
+ },
+ "d138": {
+  "cake|5": { "do": "split", "why": "cake 는 n3(디저트), 5 는 n5(아침 5:00) — 다른 항목" }
+ },
+ "d196": {
+  "go|on": { "do": "keep", "why": "n6 'goes on a diet' — go on a diet 한 구절" }
+ },
+ "d210": {
+  "noted|then-known": { "do": "split", "why": "n2 'were noted for …' 와 'the then known world' 는 다른 항목" },
+  "then-known|world": { "do": "keep", "why": "n2 'the then known world' — 한 구절" },
+  "spots|Sunday-afternoon": { "do": "split", "why": "n4 'favorite spots of Sunday afternoon pleasure seekers' — favorite spots 와 Sunday-afternoon pleasure seekers 는 다른 항목(of 로 이어짐)" },
+  "Sunday-afternoon|pleasure": { "do": "keep", "why": "n4 'Sunday afternoon pleasure seekers' — 한 구절" }
+ }
+}

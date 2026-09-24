@@ -11,19 +11,28 @@ const LESSONS = path.join(ROOT, "content", "lessons");
 const OUTPUT = path.join(ROOT, "public", "audio", "azure-ava", "v1");
 const VOICE = "en-US-AvaMultilingualNeural";
 const OUTPUT_FORMAT = "audio-24khz-48kbitrate-mono-mp3";
-const SPEECH_KEYS = new Set([
-  "text",
-  "en",
-  "ko",
-  "english",
-  "korean",
-  "word",
-  "lemma",
-  "phrase",
-  "meaning",
-  "searchWord",
-  "hanzi",
-]);
+// 7단계 7-2: 무엇을 소리 내는지는 scripts/lib/spoken-texts.cjs 한 곳에서 — 무료 소리 키 · 감사 도구와 같은 정의.
+// 전에는 여기서 강의 JSON 의 text · en · ko · english · korean · word · lemma · phrase · meaning · searchWord 를 모두 모아,
+// 앱이 부르지 않는 READING · GRAMMAR 한국어와 VOCA 뜻의 클립까지 만들었다(6단계 끝 pending 1,610 중 약 893).
+const { SPOKEN_COURSES, spokenTexts, pairIdOf } = createRequire(import.meta.url)(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
+
+/**
+ * 7단계 7-2: .env.local 을 scripts/upload-azure-ava-r2.mjs 의 loadEnvLocal 과 같게 읽는다 — 진짜 환경변수가 이기고, 값은 찍지 않는다.
+ * 전에는 읽지 않아 `node --env-file=.env.local` 을 빠뜨리면 R2 목록을 못 보고 이 컴퓨터 파일만 기준으로 전부 다시 만들 뻔했다.
+ * KIG_ENV_LOCAL 은 '자격 없음' 을 시험할 때 다른(없는) 파일을 가리키게 하는 것.
+ */
+function loadEnvLocal() {
+  const file = process.env.KIG_ENV_LOCAL || path.join(ROOT, ".env.local");
+  if (!fs.existsSync(file)) return;
+  for (const line of fs.readFileSync(file, "utf8").split(/\r?\n/)) {
+    const match = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+    if (!match) continue;
+    const [, key, raw] = match;
+    if (process.env[key]) continue;
+    process.env[key] = raw.trim().replace(/^["']|["']$/g, "");
+  }
+}
+loadEnvLocal();
 
 function arg(name, fallback = null) {
   const index = process.argv.indexOf(name);
@@ -31,6 +40,7 @@ function arg(name, fallback = null) {
 }
 
 const DRY_RUN = process.argv.includes("--dry-run");
+const ALLOW_LOCAL_ONLY = process.argv.includes("--allow-local-only");
 const BATCH = process.argv.includes("--batch");
 const RESUME_BATCH_PREFIX = arg("--resume-batch-prefix");
 const SAMPLE = arg("--sample");
@@ -82,28 +92,6 @@ function isSpeakable(text) {
   return /[A-Za-z\u3131-\u318e\u3400-\u9fff\uac00-\ud7a3]/u.test(text);
 }
 
-function collectValue(value, key, output, inWordGrid = false) {
-  if (typeof value === "string") {
-    if (SPEECH_KEYS.has(key) || inWordGrid) {
-      output.add(value);
-      if (value.includes("\n")) {
-        for (const line of value.split(/\r?\n/)) output.add(line);
-      }
-    }
-    return;
-  }
-  if (Array.isArray(value)) {
-    for (const item of value) collectValue(item, key, output, inWordGrid);
-    return;
-  }
-  if (!value || typeof value !== "object") return;
-
-  const wordGrid = inWordGrid || value.type === "wordgrid";
-  for (const [childKey, childValue] of Object.entries(value)) {
-    collectValue(childValue, childKey, output, wordGrid && childKey === "rows");
-  }
-}
-
 /**
  * Loads a TypeScript module from src/ so this script can call the very function
  * the component calls.
@@ -131,66 +119,13 @@ function loadTsModule(relativePath) {
 }
 
 /**
- * Every phrase the VOCA collocation card can speak, taken from the component's
- * own function so the two cannot drift.
- */
-function collectCollocationPhrases(dictionary) {
-  const voca = loadTsModule("src/lib/vocaUtils.ts");
-  const getCollocation = voca?.getCollocation;
-  if (typeof getCollocation !== "function") throw new Error("getCollocation not found");
-
-  // Signature is `(word, searchWord?)`. It was `(word, meaning, searchWord?)`
-  // until KIG-012 (commit 98c740e) dropped `meaning` — it only fed the template
-  // that is no longer produced. Passing the Korean meaning in the second slot
-  // now makes it the lookup key, which matches no preset, so every word returns
-  // null and this collects nothing: no crash, no error, just a silently empty
-  // clip list. Calling the component's real function protects against drift in
-  // what it RETURNS, not in how it is CALLED — from JavaScript there is no type
-  // check, so a changed signature has to be followed by hand.
-  const phrases = new Set();
-  for (const [word, entry] of Object.entries(dictionary)) {
-    const item = getCollocation(word, entry?.searchWord);
-    // null where the author never wrote a collocation: the card is hidden, so
-    // there is no phrase to speak and no clip to generate.
-    if (item?.phrase) phrases.add(item.phrase);
-  }
-  return [...phrases];
-}
-
-/**
- * Runs generateLiaisonPoints over every Listening script sentence, returning
- * each card's spoken phrase.
- */
-function collectLiaisonPhrases() {
-  const scripts = path.join(ROOT, "content", "ld_english_scripts.json");
-  if (!fs.existsSync(scripts)) return [];
-
-  const listening = loadTsModule("src/lib/listeningUtils.ts");
-  const generate = listening?.generateLiaisonPoints;
-  if (typeof generate !== "function") throw new Error("generateLiaisonPoints not found");
-
-  const phrases = new Set();
-  const walk = (value) => {
-    if (!value) return;
-    if (Array.isArray(value)) return value.forEach(walk);
-    if (typeof value === "object") return Object.values(value).forEach(walk);
-    if (typeof value !== "string") return;
-    // The clinic only analyses sentences, not labels or single words.
-    if (!/[A-Za-z]/.test(value) || value.trim().split(/\s+/).length <= 2) return;
-    for (const card of generate(value)) if (card?.original) phrases.add(card.original);
-  };
-  walk(JSON.parse(fs.readFileSync(scripts, "utf8")));
-  return [...phrases];
-}
-
-/**
- * The clip keys already in R2.
+ * The clip keys already in R2, or null when the bucket cannot be listed.
  *
  * `public/audio` is gitignored, so "is the file on disk?" answers a different
  * question in a fresh clone than on the machine that generated the corpus.
- * Asking the bucket is the answer that holds either way. Without credentials
- * we can only fall back to the local view, and say so loudly, because acting
- * on it would spend the month's character budget several times over.
+ * Asking the bucket is the answer that holds either way. Acting on the local
+ * view alone would spend the month's character budget several times over, so
+ * main() stops (7단계 7-2) unless this is a --dry-run or --allow-local-only.
  */
 async function listUploadedKeys() {
   const keys = new Set();
@@ -198,16 +133,7 @@ async function listUploadedKeys() {
   const accessKeyId = process.env.R2_ACCESS_KEY_ID?.trim();
   const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY?.trim();
   const bucket = process.env.R2_BUCKET_NAME?.trim();
-  if (!accountId || !accessKeyId || !secretAccessKey || !bucket) {
-    console.warn(
-      "warning: no R2 credentials, so only this checkout's files count as existing.\n" +
-        "         public/audio is gitignored — in a fresh clone that makes every clip look\n" +
-        "         missing. Set R2_ACCOUNT_ID, R2_BUCKET_NAME, R2_ACCESS_KEY_ID and\n" +
-        "         R2_SECRET_ACCESS_KEY before generating, or the run will rebuild the\n" +
-        "         whole corpus.",
-    );
-    return keys;
-  }
+  if (!accountId || !accessKeyId || !secretAccessKey || !bucket) return null;
 
   const { S3Client, ListObjectsV2Command } = createRequire(import.meta.url)(
     path.join(ROOT, "node_modules", "@aws-sdk", "client-s3"),
@@ -230,90 +156,69 @@ async function listUploadedKeys() {
     }
     token = page.IsTruncated ? page.NextContinuationToken : undefined;
   } while (token);
-
-  console.log(`in bucket  : ${keys.size.toLocaleString("en-US")}`);
   return keys;
 }
+
+/** Texts per course — for the --dry-run breakdown. */
+const COLLECTED_BY_COURSE = {};
 
 function collectTexts() {
   if (SAMPLE) return [normalizeText(SAMPLE)].filter(Boolean);
 
+  // The functions the views call — the VOCA collocation card (getCollocation), the
+  // Listening sound clinic (generateLiaisonPoints, KIG-015) and the VOCA spoken
+  // form of a bracketed headword (vocaSpeechForm, RE-005 — `colo(u)r` → "color").
+  // Asking the app's own functions keeps the generated clip and the requested clip
+  // keyed off the identical string.
+  const fns = {
+    vocaSpeechForm: loadTsModule("src/lib/vocaSpeech.ts")?.vocaSpeechForm,
+    getCollocation: loadTsModule("src/lib/vocaUtils.ts")?.getCollocation,
+    generateLiaisonPoints: loadTsModule("src/lib/listeningUtils.ts")?.generateLiaisonPoints,
+    // the lesson page's top player (page.tsx → AudioPlayer) — its own function
+    extractSentencesForAudio: loadTsModule("src/lib/lessonAudioText.ts")?.extractSentencesForAudio,
+    // BUG-028: a STUDENT sentence "He/She …" is spoken in its first form
+    firstSlashAlternative: loadTsModule("src/lib/listeningUtils.ts")?.firstSlashAlternative,
+    // 7-6: a VOCA word button — a heteronym as `<word> ⟨<ipa>⟩` (its own clip name), else vocaSpeechForm
+    vocaWordSpeech: loadTsModule("src/lib/vocaSpeech.ts")?.vocaWordSpeech,
+  };
+  for (const [name, fn] of Object.entries(fns)) {
+    if (typeof fn !== "function") throw new Error(`${name} did not load — the clip list would be wrong`);
+  }
+  const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {});
+  const ldScripts = readJson(path.join(ROOT, "content", "ld_english_scripts.json"));
+  const dictionary = readJson(path.join(ROOT, "content", "voca_dictionary.json"));
+
+  // What each page can speak — scripts/lib/spoken-texts.cjs, the one definition the
+  // free-clip list and the audit tools use too. A page's pair is the one the site
+  // pairs it with (src/lib/content.ts getLessonContext).
+  // Only pages that have an address (src/lib/generated/validRoutes.json) — a file the site
+  // cannot serve (ld/LD_001: its id fails getLesson's pattern, the page 404s) speaks nothing.
+  const routes = readJson(path.join(ROOT, "src", "lib", "generated", "validRoutes.json")).lessons || {};
   const raw = new Set();
-  for (const file of jsonFiles(LESSONS)) {
-    if (file.split(path.sep).some((part) => part.toLowerCase() === "cnn")) continue;
-    collectValue(JSON.parse(fs.readFileSync(file, "utf8")), "", raw);
-  }
-
-  // Listening & Dictate renders its authentic English script from this
-  // supplemental file rather than from content/lessons, so it must be part
-  // of the same unified Ava inventory.
-  //
-  // ONLY the English. Every row here is {n, en, ko}, and LISTENING never speaks
-  // the translation — all twelve playback calls in LdLearningView pass `.en`,
-  // `.original` or the English queue, and the Korean is rendered as text.
-  //
-  // Collecting `ko` here made every correction to a translation look like
-  // missing audio: re-cutting the Korean sentence boundaries reported 62 clips
-  // pending when not one English character had changed. 109 entries leave the
-  // inventory — the Korean of these lessons is mostly also in
-  // content/lessons/ld/, which is collected separately and untouched, so the
-  // saving is the sentences that exist only here.
-  //
-  // Other courses are different and are left alone. STUDENT really does speak
-  // its Korean — StudentLearningView carries `kind: "en" | "ko"` and puts a
-  // play button beside each Korean line — so the blanket rule "skip Korean"
-  // would have silenced it.
-  const ldScriptsFile = path.join(ROOT, "content", "ld_english_scripts.json");
-  if (fs.existsSync(ldScriptsFile)) {
-    const ld = JSON.parse(fs.readFileSync(ldScriptsFile, "utf8"));
-    for (const rows of Object.values(ld)) {
-      if (!Array.isArray(rows)) continue;
-      // The row is handed over with only its `en` key, so `collectValue` sees a
-      // key it speaks and never sees `ko`. Passing `row.en` directly would not
-      // work: the key is what decides, and a bare value arrives with key "",
-      // which `SPEECH_KEYS` does not contain — the English would vanish too.
-      for (const row of rows) collectValue({ en: row?.en }, "", raw);
+  for (const course of SPOKEN_COURSES) {
+    const mine = (COLLECTED_BY_COURSE[course] = new Set());
+    const routed = new Set(routes[course] || []);
+    if (!routed.size) throw new Error(`validRoutes.json has no ${course} pages — run node scripts/buildValidRoutes.mjs`);
+    const index = readJson(path.join(ROOT, "content", "courses", `${course}.json`)).lessons || [];
+    const lessons = new Map(jsonFiles(path.join(LESSONS, course)).map((file) => [path.basename(file, ".json"), JSON.parse(fs.readFileSync(file, "utf8"))]));
+    for (const [id, lesson] of lessons) {
+      if (!routed.has(id)) continue;
+      const pairId = pairIdOf(course, id, index);
+      const pair = pairId ? { id: pairId, ...(lessons.get(pairId) || {}) } : null;
+      for (const text of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) {
+        raw.add(text);
+        mine.add(text);
+      }
     }
-  }
-
-  const dictionaryFile = path.join(ROOT, "content", "voca_dictionary.json");
-  if (fs.existsSync(dictionaryFile)) {
-    const dictionary = JSON.parse(fs.readFileSync(dictionaryFile, "utf8"));
-    collectValue(dictionary, "", raw);
-    for (const [word, entry] of Object.entries(dictionary)) {
-      raw.add(entry?.searchWord || word);
-    }
-    // Ask the component's own function rather than rebuilding its template.
-    for (const phrase of collectCollocationPhrases(dictionary)) raw.add(phrase);
-  }
-
-  // KIG-015: the Listening sound clinic speaks each liaison card's `original`
-  // ("one of", "pick up"), and those phrases exist only as the runtime output
-  // of generateLiaisonPoints — no file lists them. Collecting them by hand
-  // would drift from the engine, so run the engine itself over the same
-  // scripts the clinic reads. Without this, 3,412 of the clinic's play buttons
-  // had no clip and fell through to the browser's own voice.
-  for (const phrase of collectLiaisonPhrases()) raw.add(phrase);
-
-  // RE-005: thirteen VOCA headwords are written with a bracket so the card can
-  // teach two spellings — `colo(u)r`, `gray(grey)`, `autumn(=fall)`. Ava was
-  // reading the punctuation. The written form stays; the spoken one is looked
-  // up in the same table the VOCA view uses, so the clip that is generated and
-  // the clip that is requested are keyed off the identical string.
-  //
-  // It is an exact-match table, not a rule, so every other bracket in the
-  // corpus is left alone — a STUDENT fill-in blank and GRAMMAR's "who(m)" look
-  // the same and must keep their brackets.
-  const vocaSpeech = loadTsModule("src/lib/vocaSpeech.ts");
-  const vocaSpeechForm = vocaSpeech?.vocaSpeechForm;
-  if (typeof vocaSpeechForm !== "function") {
-    throw new Error("src/lib/vocaSpeech.ts did not export vocaSpeechForm — RE-005 clips would be keyed on the bracketed text.");
   }
 
   const normalized = new Set();
   for (const value of raw) {
-    const clean = normalizeText(vocaSpeechForm(String(value)));
+    const clean = normalizeText(fns.vocaSpeechForm(String(value)));
     if (clean && isSpeakable(clean)) normalized.add(clean);
+  }
+  for (const [course, set] of Object.entries(COLLECTED_BY_COURSE)) {
+    COLLECTED_BY_COURSE[course] = new Set([...set].map((v) => normalizeText(fns.vocaSpeechForm(String(v)))).filter((c) => c && isSpeakable(c)));
   }
   return [...normalized].sort((a, b) => a.localeCompare(b, "en"));
 }
@@ -353,10 +258,18 @@ function languageRuns(text) {
   return runs;
 }
 
+// 7단계 7-6: a VOCA heteronym's clip is named `<word> ⟨<ipa>⟩` (src/lib/vocaSpeech.ts vocaWordSpeech) —
+// say the word with that pronunciation. The same parser as the app, so the name and the sound agree.
+const { pronunciationTag } = loadTsModule("src/lib/vocaSpeech.ts") || {};
+
 function ssml(text) {
-  const body = languageRuns(text)
-    .map((run) => `<lang xml:lang="${run.language}">${escapeXml(run.text)}</lang>`)
-    .join("");
+  const tag = typeof pronunciationTag === "function" ? pronunciationTag(text) : null;
+  if (!tag && /⟨/.test(text)) throw new Error(`pronunciation tag not parsed — would read the IPA aloud: ${text}`);
+  const body = tag
+    ? `<lang xml:lang="en-US"><phoneme alphabet="ipa" ph="${escapeXml(tag[1])}">${escapeXml(tag[0])}</phoneme></lang>`
+    : languageRuns(text)
+      .map((run) => `<lang xml:lang="${run.language}">${escapeXml(run.text)}</lang>`)
+      .join("");
   return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US"><voice name="${VOICE}">${body}</voice></speak>`;
 }
 
@@ -567,6 +480,29 @@ function human(bytes) {
 }
 
 async function main() {
+  // 7단계 7-2: R2 를 먼저 본다 — 못 보면 --dry-run 은 첫 줄에 크게 적고 계속, 생성은 --allow-local-only 없이는 멈춤(Azure 를 부르기 전).
+  let uploaded;
+  let r2Problem = null;
+  try {
+    uploaded = await listUploadedKeys();
+    if (!uploaded) r2Problem = "R2 자격(R2_ACCOUNT_ID · R2_BUCKET_NAME · R2_ACCESS_KEY_ID · R2_SECRET_ACCESS_KEY)이 없음 — .env.local 에도";
+  } catch (error) {
+    r2Problem = `R2 목록을 읽지 못함 (${error instanceof Error ? error.name : "error"})`;
+    uploaded = null;
+  }
+  if (!uploaded) {
+    if (DRY_RUN) {
+      console.log(`!!! ${r2Problem} — R2 를 못 봐서 아래 숫자는 이 컴퓨터 파일 기준이다(이미 R2 에 있는 클립도 pending 으로 셈) !!!`);
+    } else if (!ALLOW_LOCAL_ONLY) {
+      console.error(`멈춤: ${r2Problem}. public/audio 는 git 밖이라 이 컴퓨터 파일만 보고 만들면 이미 있는 클립을 다시 만들어 한 달 문자 한도를 몇 배 쓴다.`);
+      console.error("      .env.local 에 R2 자격을 두거나, 이 컴퓨터 기준으로 만들려면 이름이 분명한 --allow-local-only 를 준다. Azure 는 부르지 않았다.");
+      process.exit(1);
+    } else {
+      console.log(`--allow-local-only: ${r2Problem} — 이 컴퓨터 파일만 있는 것으로 보고 만든다`);
+    }
+    uploaded = new Set();
+  }
+
   const discovered = collectTexts();
   const texts = LIMIT ? discovered.slice(0, LIMIT) : discovered;
   const characters = texts.reduce((sum, text) => sum + text.length, 0);
@@ -581,14 +517,14 @@ async function main() {
   console.log(`voice      : ${VOICE}`);
   console.log(`items      : ${texts.length.toLocaleString("en-US")}`);
   console.log(`characters : ${characters.toLocaleString("en-US")}`);
-  console.log("CNN        : excluded");
+  console.log(`courses    : ${SPOKEN_COURSES.join(" · ")} (scripts/lib/spoken-texts.cjs — CNN · 폐지 과정 없음)`);
+  if (uploaded.size) console.log(`in bucket  : ${uploaded.size.toLocaleString("en-US")}`);
 
   // A clip already in the bucket must not be synthesized again just because
   // this checkout does not have it on disk. public/audio is gitignored, so a
   // fresh clone starts with two files, and without this check a run there
   // would rebuild the whole corpus -- 1.26M characters against a 500,000
   // character monthly tier, and a needless re-upload of every object.
-  const uploaded = await listUploadedKeys();
   const pending = texts
     .map((text) => ({ text, key: speechKey(text), file: path.join(OUTPUT, `${speechKey(text)}.mp3`) }))
     .filter((item) => !fs.existsSync(item.file) && !uploaded.has(item.key));
@@ -597,6 +533,13 @@ async function main() {
   // The free tier bills by character and caps at 500,000 a month, so what a run
   // would actually synthesize is the number that decides whether it fits.
   console.log(`  characters: ${pendingCharacters.toLocaleString("en-US")}`);
+  if (DRY_RUN && !SAMPLE) {
+    const pendingTexts = new Set(pending.map((item) => item.text));
+    for (const [course, set] of Object.entries(COLLECTED_BY_COURSE)) {
+      const mine = [...set].filter((t) => pendingTexts.has(t));
+      console.log(`  ${course.padEnd(9)}: items ${set.size.toLocaleString("en-US")} · pending ${mine.length.toLocaleString("en-US")}`);
+    }
+  }
 
   if (DRY_RUN) return;
   if (!KEY) throw new Error("AZURE_SPEECH_KEY is required");

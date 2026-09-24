@@ -1,6 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 
+// ⛔ 다시 돌리지 마라 — 제목 표가 낡음 (7단계 7-7, 2026-09-24).
+// 이 파일은 STUDENT 과정을 처음 다듬을 때 한 번 쓴 도구다. 아래 CURRICULUM 제목 표는 지금 제목과 49곳 다르고(6단계 전부터 —
+// 수정 세션이 6단계 끝에 셈), 423행은 7-4 c 에서 소유자 결정으로 지운 chunkDrills 를 되만든다. 누가 돌리면 6단계 · 6-R(950417d) ·
+// 7단계에서 고친 제목과 드릴 삭제가 옛것으로 돌아간다. 그래서 실행하면 바로 멈춘다. 옛 동작이 필요하면 git 기록에서 꺼내 볼 것.
+console.error('repair-student-curriculum.mjs: 다시 돌리지 마라 — 제목 표가 낡았고 지운 chunkDrills 를 되만든다 (7단계 7-7). 아무것도 쓰지 않고 멈춤.');
+process.exit(1);
+
 const studentDir = 'content/lessons/student';
 const studentCourseJsonPath = 'content/courses/student.json';
 

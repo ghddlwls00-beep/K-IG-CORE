@@ -36,7 +36,10 @@
       "items": [
         {
           "n": "1",
-          "text": "Why do you study English?"
+          "text": "Why do you study English?",
+          "alternatives": [
+            "Why are you studying English?"
+          ]
         },
         {
           "n": "2",
@@ -85,7 +88,10 @@
         },
         {
           "n": "11",
-          "text": "This gentleman did it."
+          "text": "This gentleman did it.",
+          "alternatives": [
+            "This gentleman did that."
+          ]
         },
         {
           "n": "12",

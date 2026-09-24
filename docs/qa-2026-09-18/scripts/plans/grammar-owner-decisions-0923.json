@@ -1,6 +1,7 @@
 [
  {"item": 30, "file": "content/lessons/grammar1/gh1-068.json", "n": "80",
-  "text": {"from": "각(each) 소년이 한 상을 받지는 않았죠?", "to": "모든 사람이(everybody) 한 상을 받지는 않았죠?"}},
+  "text": {"from": "각(each) 소년이 한 상을 받지는 않았죠?", "to": "모든 사람이(everybody) 한 상을 받지는 않았죠?"},
+  "supersededBy": "stage6-grammar-items-f.json — 6-1398 이 '한 상을' 을 다시 씀(→ stage6-grammar-items-g '상을 하나'). everybody 결정은 그대로 · 7단계 7-1 h 에서 표시(이 파일이 전에는 아무 확인 도구에도 안 잡혔음)"},
  {"item": 30, "file": "content/lessons/grammar1/gh1-069.json", "n": "80",
   "text": {"from": "Not every boy received a prize, did he?", "to": "Not everybody received a prize, did they?"},
   "alternatives": {"from": ["Not every boy received a prize, did they?", "Each boy didn't receive a prize, did he?"], "to": ["Everybody didn't receive a prize, did they?"]},

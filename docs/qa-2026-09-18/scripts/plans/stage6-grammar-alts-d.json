@@ -1,8 +1,8 @@
 [
  {"item": "6-1362 gh1-032 #49 — 그것들 = those 도(문제를 그것들로 고침)", "course": "grammar1", "base": "gh1-033", "n": "49", "add": ["Aren't those yours?", "Are those not yours?"], "wrong": ["Aren't those mine?", "Are those yours?"]},
  {"item": "6-1370 gh1-044 #44", "course": "grammar1", "base": "gh1-045", "n": "44", "add": ["Aren't those yours?", "Are those not yours?"], "wrong": ["Aren't those mine?", "Are those yours?"]},
- {"item": "6-1368 gh1-039 #19 — #7 과 같은 문제에 격식 꼬리 are they not? 도", "course": "grammar1", "base": "gh1-039", "n": "19", "add": ["These are pens, are they not?"], "wrong": ["These are books, are they not?"]},
- {"item": "6-1368 gh1-039 #20 — #8 과 같게", "course": "grammar1", "base": "gh1-039", "n": "20", "add": ["Those are books, are they not?", "They are books, are they not?"], "wrong": ["Those are pens, are they not?"]},
+ {"item": "6-1368 gh1-039 #19 — #7 과 같은 문제에 격식 꼬리 are they not? 도", "course": "grammar1", "base": "gh1-039", "n": "19", "add": ["These are pens, are they not?"], "wrong": ["These are books, are they not?"], "supersededBy": "stage7-holds-e-grammar.json — 결정표 19번 A(G8): 과거형 꼬리로 · 격식 꼬리 대체 답안은 'These were pens, were they not?' 로 이어감"},
+ {"item": "6-1368 gh1-039 #20 — #8 과 같게", "course": "grammar1", "base": "gh1-039", "n": "20", "add": ["Those are books, are they not?", "They are books, are they not?"], "wrong": ["Those are pens, are they not?"], "supersededBy": "stage7-holds-e-grammar.json — 결정표 19번 A(G8): 과거형 꼬리로 · 대체 답안은 'Those/They were books, were they not?' 로 이어감"},
  {"item": "6-1368 gh1-041 #36 — 그것들 = they 도", "course": "grammar1", "base": "gh1-041", "n": "36", "add": ["They are not books, are they?"], "wrong": ["They are not pens, are they?"]},
  {"item": "6-1368 gh1-043 #16", "course": "grammar1", "base": "gh1-043", "n": "16", "add": ["Aren't they books?", "Are they not books?"], "wrong": ["Aren't they pens?"]},
  {"item": "6-1368 gh1-043 #20", "course": "grammar1", "base": "gh1-043", "n": "20", "add": ["Weren't they books?", "Were they not books?"], "wrong": ["Weren't they pens?"]},

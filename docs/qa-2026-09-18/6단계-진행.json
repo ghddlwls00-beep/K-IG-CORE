@@ -87,11 +87,15 @@
    "batch": 5
   },
   "6-0011": {
-   "status": "보류",
-   "reason": "G1(입력 채점의 수 표기, 보류 목록). d019 n4 힌트는 4단계 #51(f35e8be)로 이미 '2 Americans' — 칩이 정답과 같은 숫자. 문장을 낱말로 바꾸자는 수정안은 #51 소유자 결정(문장은 그대로)과 반대라 따르지 않음. 남은 것: Step 2 입력 모드에서 소리대로 친 'two Americans' 가 틀림(normalizeTyped 는 글자 그대로 비교).",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1(입력 채점의 수 표기, 보류 목록). d019 n4 힌트는 4단계 #51(f35e8be)로 이미 '2 Americans' — 칩이 정답과 같은 숫자. 문장을 낱말로 바꾸자는 수정안은 #51 소유자 결정(문장은 그대로)과 반대라 따르지 않음. 남은 것: Step 2 입력 모드에서 소리대로 친 'two Americans' 가 틀림(normalizeTyped 는 글자 그대로 비교).",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0012": {
    "status": "고침",
@@ -176,11 +180,15 @@
    "batch": 6
   },
   "6-0021": {
-   "status": "보류",
-   "reason": "G1. d039 n2 'Herbert, it's 7:00. Get up.' — 입력 채점이 '700' 으로 비교해 'seven'·'seven o'clock' 이 틀림. 이 강 힌트('Herbert! Herby brush teeth, comb hair')에 7:00 이 없음 — 힌트에 칩을 새로 써 넣는 것은 #51 범위 밖이었음. 수정안 둘(채점기가 받게 / 문장을 'seven o'clock' 으로) 중 검토자도 채점기 쪽을 먼저 둠.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d039 n2 'Herbert, it's 7:00. Get up.' — 입력 채점이 '700' 으로 비교해 'seven'·'seven o'clock' 이 틀림. 이 강 힌트('Herbert! Herby brush teeth, comb hair')에 7:00 이 없음 — 힌트에 칩을 새로 써 넣는 것은 #51 범위 밖이었음. 수정안 둘(채점기가 받게 / 문장을 'seven o'clock' 으로) 중 검토자도 채점기 쪽을 먼저 둠.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0022": {
    "status": "고침",
@@ -217,13 +225,15 @@
    "batch": 6
   },
   "6-0026": {
-   "status": "보류",
-   "reason": "G1. 힌트는 #51 을 넓혀 맞춤: d041 'sixteen 18' → '16 18'(n1 '16 years old', plans/stage6-ld-number-hints-2.json). d045 n7·n8 '3 credits'·'2 credits', d046 n2 'Within 2 years'(힌트 '2 years' 이미 숫자). 남은 것: 입력 모드가 'sixteen'·'three credits' 를 받지 않음 — 검토자도 채점기 정규화를 '안전한 쪽' 으로 먼저 둠.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 힌트는 #51 을 넓혀 맞춤: d041 'sixteen 18' → '16 18'(n1 '16 years old', plans/stage6-ld-number-hints-2.json). d045 n7·n8 '3 credits'·'2 credits', d046 n2 'Within 2 years'(힌트 '2 years' 이미 숫자). 남은 것: 입력 모드가 'sixteen'·'three credits' 를 받지 않음 — 검토자도 채점기 정규화를 '안전한 쪽' 으로 먼저 둠.",
    "files": [
-    "content/lessons/ld/d041.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0027": {
    "status": "고침",
@@ -350,11 +360,14 @@
    "batch": 6
   },
   "6-0041": {
-   "status": "보류",
-   "reason": "기준 10 — 한두 문장이 아니라 예시 전체(n6~n9: 아내가 주 2회 외출 → 남편이 저녁 → 남편이 '아내는 집에 있어야' 로 끝남)가 성 역할 틀이라 최소 수정으로 중립이 안 됨 → 초안을 붙여 소유자에게(보류 목록 6-0041). 초안 A: n6 'Mr. and Mrs. Brown, for example, go to charity bazaars and parties about twice a week.' · n7 'On these days, their children have to make dinner for themselves.' · n8 'The Browns always say the children should be glad to help, but their neighbors believe that the parents should stay home and take care of the children.' · n9 'They believe that there is no need to leave one's own home in order to practice charity.' — 교훈(charity begins at home)·문장 수 그대로, 영어 4행 클립.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 6
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 10번 A) → d050 n6~n9 를 보류 초안 그대로 — 브라운 부부가 함께 자선 행사에 나가고 이웃이 '부모가 집에 있어야' 라고 믿는 이야기(교훈 · 문장 수 그대로), 한국어 맞춤, 힌트 'Mrs. Brown' 은 n6 에 그대로 있어 맞음(plans/stage7-holds-c-ld.json) · 영어 클립 4 | 보류 때: 기준 10 — 한두 문장이 아니라 예시 전체(n6~n9: 아내가 주 2회 외출 → 남편이 저녁 → 남편이 '아내는 집에 있어야' 로 끝남)가 성 역할 틀이라 최소 수정으로 중립이 안 됨 → 초안을 붙여 소유자에게(보류 목록 6-0041). 초안 A: n6 'Mr. and Mrs. Brown, for example, go to charity bazaars and parties about twice a week.' · n7 'On these days, their children have to make dinner for themselves.' · n8 'The Browns always say the children should be glad to help, but their neighbors believe that the parents should stay home and take care of the children.' · n9 'They believe that there is no need to leave one's own home in order to practice charity.' — 교훈(charity begins at home)·문장 수 그대로, 영어 4행 클립.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
+   "clip": "필요",
+   "batch": 6,
+   "stage7": "7-4 f"
   },
   "6-0042": {
    "status": "이미 해결",
@@ -373,13 +386,14 @@
    "batch": 6
   },
   "6-0044": {
-   "status": "보류",
-   "reason": "두 부분. (1) 선배 기자를 'the older and more experienced men' 이라 한 명시적 단정 — 기준 10 대로 한 낱말만 고침: d051 n6 '…the older and more experienced reporters bring in.' · 한국어 '…더 나이 많고 더 경험 많은 기자들이…'(영어 1행 클립). (2) 가상의 젊은 기자를 n5~n9 모두 he/his/him 으로 부르는 옛 문체(일반 대명사 he)는 강의 절반을 다시 써야 해서 묶음 G2(6-0332 등과 함께)로 소유자 결정 — 보류 목록 G2.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 9번 A) → (1) 명시적 단정은 6단계에서 이미 고침(d051 n6 'reporters', 지금 파일에 있음) · (2) 가상의 기자를 he 로 부르는 옛 문체는 그대로 | 보류 때: 두 부분. (1) 선배 기자를 'the older and more experienced men' 이라 한 명시적 단정 — 기준 10 대로 한 낱말만 고침: d051 n6 '…the older and more experienced reporters bring in.' · 한국어 '…더 나이 많고 더 경험 많은 기자들이…'(영어 1행 클립). (2) 가상의 젊은 기자를 n5~n9 모두 he/his/him 으로 부르는 옛 문체(일반 대명사 he)는 강의 절반을 다시 써야 해서 묶음 G2(6-0332 등과 함께)로 소유자 결정 — 보류 목록 G2.",
    "files": [
     "content/ld_english_scripts.json"
    ],
    "clip": "필요",
-   "batch": 6
+   "batch": 6,
+   "stage7": "7-4 f"
   },
   "6-0045": {
    "status": "이미 해결",
@@ -1587,11 +1601,15 @@
    "batch": 8
   },
   "6-0186": {
-   "status": "보류",
-   "reason": "G1. d131 n1 '4 cabins' · n2 'Six more cabins' — 힌트('4 cabins. Six more cabins 1960')는 두 문장과 같은 꼴이라 칩은 맞음. 한 지문 안의 표기 통일(문장 변경)은 #51 결정(문장 그대로)과 반대. 남은 것은 입력 채점 — 검토자도 채점기 쪽이 클립을 안 건드려 안전하다고 적음.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d131 n1 '4 cabins' · n2 'Six more cabins' — 힌트('4 cabins. Six more cabins 1960')는 두 문장과 같은 꼴이라 칩은 맞음. 한 지문 안의 표기 통일(문장 변경)은 #51 결정(문장 그대로)과 반대. 남은 것은 입력 채점 — 검토자도 채점기 쪽이 클립을 안 건드려 안전하다고 적음.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0187": {
    "status": "고침",
@@ -1646,13 +1664,15 @@
    "batch": 8
   },
   "6-0193": {
-   "status": "보류",
-   "reason": "G1. 힌트는 #51 을 넓혀 맞춤: d134 'forty-four pounds' → '44 pounds'(n3 정답과 같은 글자, stage6-ld-number-hints-2). 남은 것: 입력 모드에서 소리대로 친 'forty-four pounds' 가 틀림.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 힌트는 #51 을 넓혀 맞춤: d134 'forty-four pounds' → '44 pounds'(n3 정답과 같은 글자, stage6-ld-number-hints-2). 남은 것: 입력 모드에서 소리대로 친 'forty-four pounds' 가 틀림.",
    "files": [
-    "content/lessons/ld/d134.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0194": {
    "status": "고침",
@@ -1695,11 +1715,15 @@
    "batch": 8
   },
   "6-0197": {
-   "status": "보류",
-   "reason": "G1. d135 n7 'The boys also bought 2 pairs of pants' — 힌트('Bob Don suits. pants shoe')에 수 없음. 수정안(문장을 two 로)은 #51 결정(문장 그대로)과 반대. 남은 것은 입력 채점.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d135 n7 'The boys also bought 2 pairs of pants' — 힌트('Bob Don suits. pants shoe')에 수 없음. 수정안(문장을 two 로)은 #51 결정(문장 그대로)과 반대. 남은 것은 입력 채점.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0198": {
    "status": "고침",
@@ -1756,11 +1780,15 @@
    "batch": 8
   },
   "6-0204": {
-   "status": "보류",
-   "reason": "G1. d138 n5 'from about 5:00 in the morning' — 입력 채점이 '500' 으로 비교. 힌트 끝의 '5' 는 숫자 칩(칩 '…cake 5'). 수정안(문장을 five o'clock 으로)은 #51 결정과 반대, 검토자가 든 다른 길(채점기가 받게)이 G1 A.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d138 n5 'from about 5:00 in the morning' — 입력 채점이 '500' 으로 비교. 힌트 끝의 '5' 는 숫자 칩(칩 '…cake 5'). 수정안(문장을 five o'clock 으로)은 #51 결정과 반대, 검토자가 든 다른 길(채점기가 받게)이 G1 A.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0205": {
    "status": "고침",
@@ -1790,13 +1818,15 @@
    "batch": 8
   },
   "6-0208": {
-   "status": "보류",
-   "reason": "G1. 힌트는 #51 을 넓혀 맞춤: d140 'two o'clock afford it' → '2:00. afford it' — n8 에 '2:00' 칩 하나, n11 에 'afford it'(전: 두 행 모두 한 덩어리 칩). 남은 것: 입력 모드가 'two o'clock'·'2 o'clock'·'two' 를 틀림으로(정답이 '200' 으로 비교됨).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 힌트는 #51 을 넓혀 맞춤: d140 'two o'clock afford it' → '2:00. afford it' — n8 에 '2:00' 칩 하나, n11 에 'afford it'(전: 두 행 모두 한 덩어리 칩). 남은 것: 입력 모드가 'two o'clock'·'2 o'clock'·'two' 를 틀림으로(정답이 '200' 으로 비교됨).",
    "files": [
-    "content/lessons/ld/d140.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0209": {
    "status": "이미 해결",
@@ -1806,13 +1836,15 @@
    "batch": 2
   },
   "6-0210": {
-   "status": "보류",
-   "reason": "G1. 힌트는 #51 을 넓혀 맞춤: d141 '…arrange two o'clock. Monday.' → '…arrange. 2:00. Monday.' — n6 칩이 '힌트 전체'(안전장치)에서 '2:00' 하나로. 남은 것은 입력 채점('two o'clock' 이 틀림).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 힌트는 #51 을 넓혀 맞춤: d141 '…arrange two o'clock. Monday.' → '…arrange. 2:00. Monday.' — n6 칩이 '힌트 전체'(안전장치)에서 '2:00' 하나로. 남은 것은 입력 채점('two o'clock' 이 틀림).",
    "files": [
-    "content/lessons/ld/d141.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0211": {
    "status": "고침",
@@ -1833,13 +1865,15 @@
    "batch": 8
   },
   "6-0213": {
-   "status": "보류",
-   "reason": "G1. 힌트는 #51 을 넓혀 맞춤: d143 '…up and around seventy' → '…up and around 70'(n12 '70 years old'). 남은 것은 입력 채점('seventy years old' 가 틀림).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 힌트는 #51 을 넓혀 맞춤: d143 '…up and around seventy' → '…up and around 70'(n12 '70 years old'). 남은 것은 입력 채점('seventy years old' 가 틀림).",
    "files": [
-    "content/lessons/ld/d143.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0214": {
    "status": "이미 해결",
@@ -1858,11 +1892,15 @@
    "batch": 8
   },
   "6-0216": {
-   "status": "보류",
-   "reason": "G1(입력 채점의 수 표기). d144 n4 '…cancel her 2:00 appointment…' — 힌트는 배치 5 에서 '2:00' 로 맞췄고(칩이 정답과 같은 글자), 수정안(문장을 two o'clock 으로)은 #51 결정(문장 그대로)과 반대. 지적이 함께 짚은 타일 모드의 '2' · '00' 두 타일도 같은 묶음 — G1 A 로 가면 입력은 풀리고, 타일은 순서대로 놓으면 맞으므로(타일이 주어짐) 그대로.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1(입력 채점의 수 표기). d144 n4 '…cancel her 2:00 appointment…' — 힌트는 배치 5 에서 '2:00' 로 맞췄고(칩이 정답과 같은 글자), 수정안(문장을 two o'clock 으로)은 #51 결정(문장 그대로)과 반대. 지적이 함께 짚은 타일 모드의 '2' · '00' 두 타일도 같은 묶음 — G1 A 로 가면 입력은 풀리고, 타일은 순서대로 놓으면 맞으므로(타일이 주어짐) 그대로.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 8
+   "batch": 8,
+   "stage7": "7-4 f"
   },
   "6-0217": {
    "status": "고침",
@@ -1899,15 +1937,15 @@
    "batch": 2
   },
   "6-0221": {
-   "status": "보류",
-   "reason": "G1. 수정안(10문장을 낱말로)은 #51 결정(문장 그대로)과 반대. 대신 힌트가 낱말로 적어 정답과 어긋나던 곳을 #51 을 넓혀 숫자로: d148 'thirteen states' → '13 states' · '185,000,000'(칩이 185 / 000 / 000 으로 쪼개짐) → '185 million'(n3 문장 그대로) · d152 'twentieth century … fifty states' → '20th century … 50 states' · d153 'sixteen' → '16' · 'eighteen' → '18'(n3 'six years old' 은 문장도 낱말이라 둠). d146 '5 letters' 는 힌트가 이미 숫자, d156 '2 boys' 는 힌트에 없음. 남은 것은 입력 채점.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 수정안(10문장을 낱말로)은 #51 결정(문장 그대로)과 반대. 대신 힌트가 낱말로 적어 정답과 어긋나던 곳을 #51 을 넓혀 숫자로: d148 'thirteen states' → '13 states' · '185,000,000'(칩이 185 / 000 / 000 으로 쪼개짐) → '185 million'(n3 문장 그대로) · d152 'twentieth century … fifty states' → '20th century … 50 states' · d153 'sixteen' → '16' · 'eighteen' → '18'(n3 'six years old' 은 문장도 낱말이라 둠). d146 '5 letters' 는 힌트가 이미 숫자, d156 '2 boys' 는 힌트에 없음. 남은 것은 입력 채점.",
    "files": [
-    "content/lessons/ld/d148.json",
-    "content/lessons/ld/d152.json",
-    "content/lessons/ld/d153.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-0222": {
    "status": "고침",
@@ -2093,11 +2131,17 @@
    "batch": 3
   },
   "6-0242": {
-   "status": "보류",
-   "reason": "G1 묶음(입력 채점) — 3차 점검 #4 의 반대를 받아 '필요 없음' 에서 바꿈. 지적(명사 앞 복합 수식어는 '50-cent piece')은 맞고, 지금 못 고치는 까닭은 입력 채점(normalizeTyped)이 하이픈 낱말을 '50cent' 로 붙여 비교해 소리로 구별 못 하는 하이픈이 틀림을 만들기 때문. G1 A(채점기 정규화)에 '하이픈을 양쪽 모두 공백으로' 가 들어가면 d159 n2 를 '…a rare 50-cent piece worth $250.' 로 고치고 클립 1. 힌트-대본 불일치 부분은 배치 5 에서 이미 풀림.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 8
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 + 이 지적대로 d159 n2 '…a rare 50-cent piece worth $250.' · 힌트도 같은 꼴(plans/stage7-holds-f-g1.json) · 영어 클립 1 | 보류 때: G1 묶음(입력 채점) — 3차 점검 #4 의 반대를 받아 '필요 없음' 에서 바꿈. 지적(명사 앞 복합 수식어는 '50-cent piece')은 맞고, 지금 못 고치는 까닭은 입력 채점(normalizeTyped)이 하이픈 낱말을 '50cent' 로 붙여 비교해 소리로 구별 못 하는 하이픈이 틀림을 만들기 때문. G1 A(채점기 정규화)에 '하이픈을 양쪽 모두 공백으로' 가 들어가면 d159 n2 를 '…a rare 50-cent piece worth $250.' 로 고치고 클립 1. 힌트-대본 불일치 부분은 배치 5 에서 이미 풀림.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx",
+    "content/ld_english_scripts.json",
+    "content/lessons/ld/d159.json"
+   ],
+   "clip": "필요",
+   "batch": 8,
+   "stage7": "7-4 f"
   },
   "6-0243": {
    "status": "이미 해결",
@@ -2226,11 +2270,14 @@
    "batch": 9
   },
   "6-0258": {
-   "status": "보류",
-   "reason": "G3(옛 글의 현재형 서술, 보류 목록). d165 는 1960년대 TV 를 현재형으로 씀 — n3 'Many programs are now televised in color.'(지금은 전부 컬러) · n5 Telstar 가 지금도 세계를 가깝게 한다(1963년 송신 중단). 한두 낱말이 아니라 글 전체의 시점 문제라 기준 10 대로 소유자에게: A 한국어 첫 행에 연대 알림 · B 해당 문장을 과거형으로(클립) · C 그대로.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d165 n1 한국어 끝에 '※ 이 글은 1960년대에 쓰였습니다(지금은 거의 모든 방송이 컬러이고, 텔스타 위성은 1963년에 작동을 멈췄습니다).' — 영어 · 음성 그대로(plans/stage7-holds-b-notes.json) | 보류 때: G3(옛 글의 현재형 서술, 보류 목록). d165 는 1960년대 TV 를 현재형으로 씀 — n3 'Many programs are now televised in color.'(지금은 전부 컬러) · n5 Telstar 가 지금도 세계를 가깝게 한다(1963년 송신 중단). 한두 낱말이 아니라 글 전체의 시점 문제라 기준 10 대로 소유자에게: A 한국어 첫 행에 연대 알림 · B 해당 문장을 과거형으로(클립) · C 그대로.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 9
+   "batch": 9,
+   "stage7": "7-4 f"
   },
   "6-0259": {
    "status": "이미 해결",
@@ -2274,11 +2321,14 @@
    "batch": 9
   },
   "6-0264": {
-   "status": "보류",
-   "reason": "G3. d168 은 2020년에 문을 닫은 Tempe 의 Big Surf 를 현재형으로 그림(n1 'many students … meet at a place called Big Surf'), d169 도 같은 곳(6-0474). 글 전체의 시점 문제 — 지적도 한국어 알림(클립 영향 없음) 또는 과거형을 선택지로 둠. 소유자 결정.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d168 n1 한국어 끝에 '※ 옛 글입니다(글에 나오는 인공 파도 풀장 Big Surf 는 지금은 문을 닫았습니다).' — 쓰인 해를 글이 밝히지 않아 연대 대신 '옛 글' | 보류 때: G3. d168 은 2020년에 문을 닫은 Tempe 의 Big Surf 를 현재형으로 그림(n1 'many students … meet at a place called Big Surf'), d169 도 같은 곳(6-0474). 글 전체의 시점 문제 — 지적도 한국어 알림(클립 영향 없음) 또는 과거형을 선택지로 둠. 소유자 결정.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 9
+   "batch": 9,
+   "stage7": "7-4 f"
   },
   "6-0265": {
    "status": "고침",
@@ -2654,11 +2704,14 @@
    "batch": 9
   },
   "6-0310": {
-   "status": "보류",
-   "reason": "G4(강 전체가 옛 차별적 틀인 글, 보류 목록). d196 은 신체적 차이를 가진 사람을 'freaks' 라 부르고 '가엾다'(pathetic)며 'fat lady' 를 동정의 대상으로 그리는 1960년대 구경거리 틀 — 한두 문장이 아니라 강 전체의 틀이라 기준 10 대로 소유자에게. 지적도 소유자 결정(강을 빼거나, 한국어로 1960년대 글이며 지금은 쓰지 않는 표현이라고 알리기)을 제안. 한국어 '기형아' 오역만 6-0305 로 고침.",
-   "files": [],
+   "status": "고침",
+   "reason": "7-4 f ③ (2026-09-24, 3차 점검 재점검 e): 알림 첫머리 '※ 1960년대 미국 글입니다.' → '※ 옛 미국 글입니다.' — 글에 쓰인 때가 없음(쓰인 때를 글이 밝히는 d165 만 연대, plans/stage7-d196-note.json) | 소유자 결정 2026-09-23 (결정표 7번 A) → d196 n1 한국어 끝에 보류 목록 G4 의 글 그대로 '※ 1960년대 미국 글입니다. 장애·체형을 가리키는 표현(freaks, fat lady 등)은 지금은 쓰지 않는 차별적 표현입니다.' | 보류 때: G4(강 전체가 옛 차별적 틀인 글, 보류 목록). d196 은 신체적 차이를 가진 사람을 'freaks' 라 부르고 '가엾다'(pathetic)며 'fat lady' 를 동정의 대상으로 그리는 1960년대 구경거리 틀 — 한두 문장이 아니라 강 전체의 틀이라 기준 10 대로 소유자에게. 지적도 소유자 결정(강을 빼거나, 한국어로 1960년대 글이며 지금은 쓰지 않는 표현이라고 알리기)을 제안. 한국어 '기형아' 오역만 6-0305 로 고침.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 9
+   "batch": 9,
+   "stage7": "7-4 f"
   },
   "6-0311": {
    "status": "이미 해결",
@@ -2760,11 +2813,15 @@
    "batch": 9
   },
   "6-0323": {
-   "status": "보류",
-   "reason": "G1. d201 n3 '…a public arena with 2 doors.' — d201 본 페이지에 hints 블록 자체가 없음. 수정안(문장을 two 로)은 #51 결정(문장 그대로)과 반대. 남은 것은 입력 채점('two doors' 가 틀림).",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d201 n3 '…a public arena with 2 doors.' — d201 본 페이지에 hints 블록 자체가 없음. 수정안(문장을 two 로)은 #51 결정(문장 그대로)과 반대. 남은 것은 입력 채점('two doors' 가 틀림).",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 6
+   "batch": 6,
+   "stage7": "7-4 f"
   },
   "6-0324": {
    "status": "고침",
@@ -2835,11 +2892,12 @@
    "batch": 9
   },
   "6-0332": {
-   "status": "보류",
-   "reason": "G2(옛 글의 일반 대명사 man/he). d218 n4 'the very psychological makeup of man' · n5 'Man has a natural desire to unite himself …' · d224 n2~n5 'the average man … he/his' · d225 n7 'between God and man' — 사람 일반을 man/he 로 부르는 옛 문체가 여러 강에 걸침. 지적도 '소유자 결정' 이라 함 — G2 에 더함.",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 9번 A) → 그대로 — 사람 일반을 man/he 로 부르는 옛 문체(d218 · d224 · d225)는 두고, 명시적으로 틀린 단정만 고치는 결정(여기엔 그런 단정 없음) | 보류 때: G2(옛 글의 일반 대명사 man/he). d218 n4 'the very psychological makeup of man' · n5 'Man has a natural desire to unite himself …' · d224 n2~n5 'the average man … he/his' · d225 n7 'between God and man' — 사람 일반을 man/he 로 부르는 옛 문체가 여러 강에 걸침. 지적도 '소유자 결정' 이라 함 — G2 에 더함.",
    "files": [],
    "clip": "불필요",
-   "batch": 9
+   "batch": 9,
+   "stage7": "7-4 f"
   },
   "6-0333": {
    "status": "이미 해결",
@@ -2908,18 +2966,24 @@
    "batch": 10
   },
   "6-0341": {
-   "status": "보류",
-   "reason": "G3(옛 글의 현재형 서술). d221 n5·n6 — 1950~60년대 미국 도로변 공원의 야영 시설을 현재형으로(지금은 사실상 모든 주에서 휴게소·도로변 공원 야영 금지). 지적도 '글에 연대를 밝히거나 n5/n6 을 지금 사정으로 다시 쓰기' 를 선택지로 둠 — G3 에 더함.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d221 n1 한국어 끝에 '※ 옛 글입니다(지금은 대부분의 주에서 도로변 공원·휴게소의 밤샘 야영을 허락하지 않습니다).' | 보류 때: G3(옛 글의 현재형 서술). d221 n5·n6 — 1950~60년대 미국 도로변 공원의 야영 시설을 현재형으로(지금은 사실상 모든 주에서 휴게소·도로변 공원 야영 금지). 지적도 '글에 연대를 밝히거나 n5/n6 을 지금 사정으로 다시 쓰기' 를 선택지로 둠 — G3 에 더함.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 10
+   "batch": 10,
+   "stage7": "7-4 f"
   },
   "6-0342": {
-   "status": "보류",
-   "reason": "G3. d222 n5 — 쿠바 크루즈를 지금도 흔한 선택처럼(2019년 6월 미국 재무부 OFAC 가 여객선·유람선의 쿠바행을 금지, 미국 크루즈 3사 쿠바 기항 취소). 지적의 한 선택지(목적지를 Jamaica and Puerto Rico 로)는 원문에 없는 여행지를 새로 넣는 것이라 소유자 결정으로 — G3 에 더함.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d222 n1 한국어 끝에 '※ 옛 글입니다(미국 유람선의 쿠바행은 2019년에 금지되었습니다).' — 쿠바 유람이 흔하던 때가 1960년 전일 수 있어 연대는 적지 않음 | 보류 때: G3. d222 n5 — 쿠바 크루즈를 지금도 흔한 선택처럼(2019년 6월 미국 재무부 OFAC 가 여객선·유람선의 쿠바행을 금지, 미국 크루즈 3사 쿠바 기항 취소). 지적의 한 선택지(목적지를 Jamaica and Puerto Rico 로)는 원문에 없는 여행지를 새로 넣는 것이라 소유자 결정으로 — G3 에 더함.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 10
+   "batch": 10,
+   "stage7": "7-4 f"
   },
   "6-0343": {
    "status": "고침",
@@ -3372,13 +3436,15 @@
    "batch": 10
   },
   "6-0393": {
-   "status": "보류",
-   "reason": "G1. 힌트는 넘친 줄을 합친 뒤 #51 대로 숫자로: d028 'twenty sports clubs' → '20 sports clubs' · 'broken four records' → 'broken 4 records'(plans/stage6-ld-overflow-numbers.json). n6 'three races' 는 문장도 낱말이라 둠. 검토자는 (b) 채점기가 수 낱말을 받게 하는 쪽을 '안전한 쪽' 으로 둠 — G1 A.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. 힌트는 넘친 줄을 합친 뒤 #51 대로 숫자로: d028 'twenty sports clubs' → '20 sports clubs' · 'broken four records' → 'broken 4 records'(plans/stage6-ld-overflow-numbers.json). n6 'three races' 는 문장도 낱말이라 둠. 검토자는 (b) 채점기가 수 낱말을 받게 하는 쪽을 '안전한 쪽' 으로 둠 — G1 A.",
    "files": [
-    "content/lessons/ld/d028.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 6
+   "batch": 6,
+   "stage7": "7-4 f"
   },
   "6-0394": {
    "status": "고침",
@@ -3597,11 +3663,14 @@
    "batch": 4
   },
   "6-0419": {
-   "status": "보류",
-   "reason": "G3(옛 글의 현재형 서술). d076 'A good drag racer can earn as much as $65,000 a year.' 는 옛 자료의 수를 지금 사실처럼('There are professional races now'). 지적의 선택지 '1980년대에는 …' 는 그 수가 어느 때 것인지 확인할 수 없어 쓰지 않음 — G3 결정(한국어 알림 등)을 따름.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d076 n1 한국어 끝에 '※ 옛 글입니다(수입 액수는 글이 쓰인 때의 것입니다).' — 수치가 어느 때 것인지 모름 | 보류 때: G3(옛 글의 현재형 서술). d076 'A good drag racer can earn as much as $65,000 a year.' 는 옛 자료의 수를 지금 사실처럼('There are professional races now'). 지적의 선택지 '1980년대에는 …' 는 그 수가 어느 때 것인지 확인할 수 없어 쓰지 않음 — G3 결정(한국어 알림 등)을 따름.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 11
+   "batch": 11,
+   "stage7": "7-4 f"
   },
   "6-0420": {
    "status": "고침",
@@ -3671,11 +3740,14 @@
    "batch": 3
   },
   "6-0428": {
-   "status": "보류",
-   "reason": "G4. d083 n8~n10 이 『국가의 탄생』(1915)을 설명 없이 유명한 성공작으로만 소개 — 흑인을 악의적으로 그리고 KKK 를 영웅으로 그린 영화. 영어는 사실(가장 유명한 영화·남북 전쟁과 그 뒤를 다룸)이라 지적도 영어는 두고 한국어 편집 알림('※ 이 영화는 흑인을 악의적으로 묘사하고 KKK를 미화한 작품으로 … 인종차별 논란의 대상입니다.')을 제안 — 강에 편집 해설을 더하는 콘텐츠 방침이라 소유자 결정(G4 의 A 와 같은 방식).",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 7번 A) → d083 에 보류 목록 G4 의 글 그대로 '※ 이 영화는 흑인을 악의적으로 묘사하고 KKK를 미화한 작품으로, …' — '이 영화는' 으로 시작해 영화가 처음 나오는 n8 한국어 끝에 | 보류 때: G4. d083 n8~n10 이 『국가의 탄생』(1915)을 설명 없이 유명한 성공작으로만 소개 — 흑인을 악의적으로 그리고 KKK 를 영웅으로 그린 영화. 영어는 사실(가장 유명한 영화·남북 전쟁과 그 뒤를 다룸)이라 지적도 영어는 두고 한국어 편집 알림('※ 이 영화는 흑인을 악의적으로 묘사하고 KKK를 미화한 작품으로 … 인종차별 논란의 대상입니다.')을 제안 — 강에 편집 해설을 더하는 콘텐츠 방침이라 소유자 결정(G4 의 A 와 같은 방식).",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 11
+   "batch": 11,
+   "stage7": "7-4 f"
   },
   "6-0429": {
    "status": "고침",
@@ -3882,11 +3954,15 @@
    "batch": 11
   },
   "6-0452": {
-   "status": "보류",
-   "reason": "G1. d090 '4 levels' · d091 '6 or 8 grades'(#51 에서 힌트를 이 꼴로) · d095 '8 that night' · d096 '28 people' — 네 강 모두 힌트 칩이 이미 정답과 같은 숫자. 수정안(문장을 낱말로)은 #51 결정과 반대. 남은 것은 입력 채점.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d090 '4 levels' · d091 '6 or 8 grades'(#51 에서 힌트를 이 꼴로) · d095 '8 that night' · d096 '28 people' — 네 강 모두 힌트 칩이 이미 정답과 같은 숫자. 수정안(문장을 낱말로)은 #51 결정과 반대. 남은 것은 입력 채점.",
+   "files": [
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
+   ],
    "clip": "불필요",
-   "batch": 6
+   "batch": 6,
+   "stage7": "7-4 f"
   },
   "6-0453": {
    "status": "고침",
@@ -4071,11 +4147,14 @@
    "batch": 11
   },
   "6-0474": {
-   "status": "보류",
-   "reason": "G3(옛 글의 현재형 서술). d169 는 2020년에 문을 닫은 Big Surf 를 현재형으로('Surfing in the desert is a fantastic success.') — 6-0264(d168)와 같은 곳·같은 결정.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d169 n1 한국어 끝에 d168 과 같은 알림 | 보류 때: G3(옛 글의 현재형 서술). d169 는 2020년에 문을 닫은 Big Surf 를 현재형으로('Surfing in the desert is a fantastic success.') — 6-0264(d168)와 같은 곳·같은 결정.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 12
+   "batch": 12,
+   "stage7": "7-4 f"
   },
   "6-0475": {
    "status": "이미 해결",
@@ -4498,11 +4577,15 @@
    "batch": 12
   },
   "6-0523": {
-   "status": "보류",
-   "reason": "기준 10 을 넘고, 이 행은 9/17 L-80 처리 때 이미 'd215 #3 머리가죽은 L-84 와 함께 소유자 결정 대기' 로 넘긴 것(docs/qa-2026-09-17/content-review/listening.md) → 보류 목록 G5. 지적: 머리가죽 예(n3·n4)는 (1) '많은 아메리카 인디언' 의 공통 관습처럼 일반화(일부 사회만, 유럽 식민자도 했고 현상금까지 걸었음) (2) '위험을 막는 행운의 부적' 이라는 동기는 근거 없음(전리품·용맹의 증거). 고치려면 n3·n4 를 기록이 뚜렷한 예로 바꾸고 n5 'regarded by the Indians' · 힌트도 바꿔야 함 — 3행 + 힌트, 새 예를 고르는 일. 초안(G5): A(추천) 고대 이집트 부적 — n3 'In ancient Egypt, for example, people wore small amulets shaped like eyes and beetles.' · n4 'These amulets were believed to protect their wearers from harm.' · n5 'Many animals were also regarded as symbols of good fortune.' · 힌트 'ancient Egypt amulets eyes beetles. protect wearers from harm.' · 클립 3 / B 그대로 두고 한국어 알림 / C 그대로. 'primitive man'(원시인, d214 n2·n5·n6 · d215 n1 · d266 n5·n7)은 선사 시대 사람 일반을 가리키는 옛 말로 특정 민족을 가리키지 않아 이 결정에 넣지 않음 — 특정 민족에 붙은 d257 n1 'primitive Indian medicine man' 은 6-0561 차례에(d257 도 L-84 범위).",
-   "files": [],
-   "clip": "불필요",
-   "batch": 12
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 8번 A) → d215 n3~n5 를 보류 초안 그대로 고대 이집트 부적 예로 · 한국어 맞춤 · 힌트 앞 두 조각 → 'ancient Egypt amulets eyes beetles. protect wearers from harm.' · 영어 클립 3 | 보류 때: 기준 10 을 넘고, 이 행은 9/17 L-80 처리 때 이미 'd215 #3 머리가죽은 L-84 와 함께 소유자 결정 대기' 로 넘긴 것(docs/qa-2026-09-17/content-review/listening.md) → 보류 목록 G5. 지적: 머리가죽 예(n3·n4)는 (1) '많은 아메리카 인디언' 의 공통 관습처럼 일반화(일부 사회만, 유럽 식민자도 했고 현상금까지 걸었음) (2) '위험을 막는 행운의 부적' 이라는 동기는 근거 없음(전리품·용맹의 증거). 고치려면 n3·n4 를 기록이 뚜렷한 예로 바꾸고 n5 'regarded by the Indians' · 힌트도 바꿔야 함 — 3행 + 힌트, 새 예를 고르는 일. 초안(G5): A(추천) 고대 이집트 부적 — n3 'In ancient Egypt, for example, people wore small amulets shaped like eyes and beetles.' · n4 'These amulets were believed to protect their wearers from harm.' · n5 'Many animals were also regarded as symbols of good fortune.' · 힌트 'ancient Egypt amulets eyes beetles. protect wearers from harm.' · 클립 3 / B 그대로 두고 한국어 알림 / C 그대로. 'primitive man'(원시인, d214 n2·n5·n6 · d215 n1 · d266 n5·n7)은 선사 시대 사람 일반을 가리키는 옛 말로 특정 민족을 가리키지 않아 이 결정에 넣지 않음 — 특정 민족에 붙은 d257 n1 'primitive Indian medicine man' 은 6-0561 차례에(d257 도 L-84 범위).",
+   "files": [
+    "content/ld_english_scripts.json",
+    "content/lessons/ld/d215.json"
+   ],
+   "clip": "필요",
+   "batch": 12,
+   "stage7": "7-4 f"
   },
   "6-0524": {
    "status": "고침",
@@ -4622,18 +4705,26 @@
    "batch": 4
   },
   "6-0538": {
-   "status": "보류",
-   "reason": "지적 스스로 'If the owner keeps the round (L-84)' — d234 강 전체를 둘지는 소유자가 정하는 중인 항목이라 이 강을 먼저 고치지 않음(보류 목록 G5). 강을 두기로 하면: n2 EN '…the inland waterways of the United States more than a hundred years ago.' · KO '…100여 년 전 미국의 내륙 수로를 오르내리던…' · 힌트 '75' → 'more than a hundred years ago' · 클립 1.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 12
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 8번 A) → d234 n2 '…more than a hundred years ago.' · 한국어 '100여 년 전 … 내륙 수로' · 힌트 '75' → 'more than a hundred years ago' · d234 n1 한국어 끝에 결정표 8번의 알림 '※ 민스트럴 쇼는 백인이 얼굴을 검게 칠하고 흑인을 조롱한 공연으로, 지금은 대표적인 인종차별로 여겨집니다.' · 영어 클립 1 | 보류 때: 지적 스스로 'If the owner keeps the round (L-84)' — d234 강 전체를 둘지는 소유자가 정하는 중인 항목이라 이 강을 먼저 고치지 않음(보류 목록 G5). 강을 두기로 하면: n2 EN '…the inland waterways of the United States more than a hundred years ago.' · KO '…100여 년 전 미국의 내륙 수로를 오르내리던…' · 힌트 '75' → 'more than a hundred years ago' · 클립 1.",
+   "files": [
+    "content/ld_english_scripts.json",
+    "content/lessons/ld/d234.json"
+   ],
+   "clip": "필요",
+   "batch": 12,
+   "stage7": "7-4 f"
   },
   "6-0539": {
-   "status": "보류",
-   "reason": "6-0538 과 같은 d234 — 강을 둘지 먼저(보류 목록 G5). 두기로 하면: n4 EN 'Their cheerful music and carefree jokes filled the air with a holiday mood.'(관사 a · 지금 뜻이 달라진 gay → cheerful) · 힌트 'gay' → 'cheerful' · 클립 1.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 12
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 8번 A) → d234 n4 'Their cheerful music … with a holiday mood.'(관사 a · gay → cheerful) · 힌트 'gay' → 'cheerful' · 한국어는 이미 '즐거운' 이라 그대로 · 영어 클립 1 | 보류 때: 6-0538 과 같은 d234 — 강을 둘지 먼저(보류 목록 G5). 두기로 하면: n4 EN 'Their cheerful music and carefree jokes filled the air with a holiday mood.'(관사 a · 지금 뜻이 달라진 gay → cheerful) · 힌트 'gay' → 'cheerful' · 클립 1.",
+   "files": [
+    "content/ld_english_scripts.json",
+    "content/lessons/ld/d234.json"
+   ],
+   "clip": "필요",
+   "batch": 12,
+   "stage7": "7-4 f"
   },
   "6-0540": {
    "status": "이미 해결",
@@ -4813,11 +4904,14 @@
    "batch": 3
   },
   "6-0561": {
-   "status": "보류",
-   "reason": "d257 은 소유자가 정하는 중인 범위(9/17 L-84 'd256–d257') → 보류 목록 G5. 4·5단계에서 같은 범위의 d256 은 소유자가 초안을 골라 'traditional healer' 로 고쳤음(#70). 같은 결로 초안: n1 EN 'A modern doctor makes a vivid contrast to the healers of earlier times.' · n2 EN 'His remedies are not face paint and ritual dances but scientific knowledge, skillful technique, and effective medicines.' · KO n1 '현대 의사는 옛 시대의 치료사들과 극명한 대조를 이룬다.' · n2 '그의 치료법은 얼굴에 칠하는 물감과 의식용 춤이 아니라 과학적인 지식, 숙련된 기술, 효과적인 약품이다.'(지금 한국어 '페인트' 는 집 칠하는 페인트로 읽힘) · 클립 2.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 13
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 8번 A) → d257 n1 · n2 를 보류 초안 그대로(d256 과 같은 방식 — 'the healers of earlier times' · 'face paint and ritual dances … effective medicines') · 한국어 초안 그대로('페인트' → '얼굴에 칠하는 물감') · 영어 클립 2 | 보류 때: d257 은 소유자가 정하는 중인 범위(9/17 L-84 'd256–d257') → 보류 목록 G5. 4·5단계에서 같은 범위의 d256 은 소유자가 초안을 골라 'traditional healer' 로 고쳤음(#70). 같은 결로 초안: n1 EN 'A modern doctor makes a vivid contrast to the healers of earlier times.' · n2 EN 'His remedies are not face paint and ritual dances but scientific knowledge, skillful technique, and effective medicines.' · KO n1 '현대 의사는 옛 시대의 치료사들과 극명한 대조를 이룬다.' · n2 '그의 치료법은 얼굴에 칠하는 물감과 의식용 춤이 아니라 과학적인 지식, 숙련된 기술, 효과적인 약품이다.'(지금 한국어 '페인트' 는 집 칠하는 페인트로 읽힘) · 클립 2.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
+   "clip": "필요",
+   "batch": 13,
+   "stage7": "7-4 f"
   },
   "6-0562": {
    "status": "고침",
@@ -4972,20 +5066,25 @@
    "batch": 5
   },
   "6-0580": {
-   "status": "보류",
-   "reason": "G1. d271 힌트가 정답과 반대로 낱말이던 곳을 #51 을 넓혀 맞춤: 'eighteenth century' → '18th century' · 'nineteenth century' → '19th century'(stage6-ld-number-hints-2). d272 n3 '20th century' · d273 n5 '7,000 languages' · d274 n3 '18th century' 는 힌트에 수 없음. 남은 것은 입력 채점('eighteenth century'·'seven thousand' 가 틀림).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 1번 A) → 받아쓰기 입력 모드 채점을 '옛 비교 또는 소리 꼴 비교' 로(src/lib/listeningUtils.ts typedDictationMatches · LdLearningView.tsx) — 소리대로 친 수(two o'clock · nineteen sixty-eight · five dollars · seventy percent · one and a half · eighteenth)와 하이픈을 띄운 꼴을 받음. 시험(check-ld-typed-numbers.cjs): 2,217행 자기 정답 2,217 · 수 든 231행 소리 꼴 231(옛 채점 0) · 다른 수 462 모두 틀림 · 하이픈 56행 띄운 꼴 56(옛 0) · 붙인 꼴 56 · 낱말 바꾼 틀린 답 2,211 모두 틀림 · 일부러 깨기(옛 채점 · 수 지우는 채점) 둘 다 exit 1. 문장 · 클립 · 힌트는 그대로 | 보류 때: G1. d271 힌트가 정답과 반대로 낱말이던 곳을 #51 을 넓혀 맞춤: 'eighteenth century' → '18th century' · 'nineteenth century' → '19th century'(stage6-ld-number-hints-2). d272 n3 '20th century' · d273 n5 '7,000 languages' · d274 n3 '18th century' 는 힌트에 수 없음. 남은 것은 입력 채점('eighteenth century'·'seven thousand' 가 틀림).",
    "files": [
-    "content/lessons/ld/d271.json"
+    "src/lib/listeningUtils.ts",
+    "src/components/LdLearningView.tsx"
    ],
    "clip": "불필요",
-   "batch": 6
+   "batch": 6,
+   "stage7": "7-4 f"
   },
   "6-0581": {
-   "status": "보류",
-   "reason": "d272 는 글 전체가 쓰인 때(1960년대)의 시점 — n1 'A few years ago…' · n3 'But today people are becoming increasingly aware that jazz, swing…' 뿐 아니라 n5 'still some people who refuse…' · n6 '젊은 세대가 좋아하는 그 야만적인 소음(jazz)' 까지. 두 문장만 과거로 돌리면 n6 이 그대로 남음 → 기준 10 대로 소유자에게: 보류 목록 G3(옛 글의 현재형). 지적도 d271 #4 의 같은 시대 표현을 9/17 L-92 에서 둔 것과 함께 정하라고 함. G3 A(추천)면 영어·클립 그대로, 강 첫 한국어 행에 '※ 1960년대에 쓰인 글입니다' 알림. B면 검토자 초안 n1 'In the early 20th century, many intellectuals scorned popular music.' · n3 'Over time, people became aware that jazz, swing, and other forms of 20th-century music were a valid and worthwhile trend in music.' + n6 도 손봐야 함.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 6번 A) → d272 n1 한국어 끝에 '※ 옛 글입니다(지금 재즈는 널리 인정받는 음악입니다).' | 보류 때: d272 는 글 전체가 쓰인 때(1960년대)의 시점 — n1 'A few years ago…' · n3 'But today people are becoming increasingly aware that jazz, swing…' 뿐 아니라 n5 'still some people who refuse…' · n6 '젊은 세대가 좋아하는 그 야만적인 소음(jazz)' 까지. 두 문장만 과거로 돌리면 n6 이 그대로 남음 → 기준 10 대로 소유자에게: 보류 목록 G3(옛 글의 현재형). 지적도 d271 #4 의 같은 시대 표현을 9/17 L-92 에서 둔 것과 함께 정하라고 함. G3 A(추천)면 영어·클립 그대로, 강 첫 한국어 행에 '※ 1960년대에 쓰인 글입니다' 알림. B면 검토자 초안 n1 'In the early 20th century, many intellectuals scorned popular music.' · n3 'Over time, people became aware that jazz, swing, and other forms of 20th-century music were a valid and worthwhile trend in music.' + n6 도 손봐야 함.",
+   "files": [
+    "content/ld_english_scripts.json"
+   ],
    "clip": "불필요",
-   "batch": 13
+   "batch": 13,
+   "stage7": "7-4 f"
   },
   "6-0582": {
    "status": "이미 해결",
@@ -7185,11 +7284,12 @@
    "batch": 18
   },
   "6-0829": {
-   "status": "보류",
-   "reason": "(처음 '필요 없음' 으로 적었다가 같은 종류 6-0845 가 '소유자가 정할 일' 이라 적어 보류로 바꿈) useful(mv1-03 · mv1-11) · next(mv1-05 · mv1-40) 가 같은 시리즈에 두 번 — 뜻은 같고 틀린 곳 없음. 되풀이를 둘지(복습) 새 낱말로 바꿀지(교재 설계 · 새 클립)는 편집 판단 → 보류 목록 G6. 도구로 세면 mv1 되풀이는 9개 · 18칸(scripts/voca-series-repeats.cjs). 추천 A: 둔다.",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 18번 A) → 그대로 — 같은 시리즈 안 되풀이는 앞 강 복습으로 둠(틀린 카드 없음). 7-4 d VOCA-REPEAT-01 도 같은 답으로 닫힘 | 보류 때: (처음 '필요 없음' 으로 적었다가 같은 종류 6-0845 가 '소유자가 정할 일' 이라 적어 보류로 바꿈) useful(mv1-03 · mv1-11) · next(mv1-05 · mv1-40) 가 같은 시리즈에 두 번 — 뜻은 같고 틀린 곳 없음. 되풀이를 둘지(복습) 새 낱말로 바꿀지(교재 설계 · 새 클립)는 편집 판단 → 보류 목록 G6. 도구로 세면 mv1 되풀이는 9개 · 18칸(scripts/voca-series-repeats.cjs). 추천 A: 둔다.",
    "files": [],
    "clip": "불필요",
-   "batch": 18
+   "batch": 18,
+   "stage7": "7-4 f"
   },
   "6-0830": {
    "status": "고침",
@@ -7201,11 +7301,12 @@
    "batch": 18
   },
   "6-0831": {
-   "status": "보류",
-   "reason": "(6-0829 와 같은 까닭으로 필요 없음 → 보류) teacher(mv1-04 · mv1-06) 되풀이 → 보류 목록 G6. 지적 원문의 mv1-04 '선生님' 은 지적 글의 오타: 사전 teacher 는 '선생님' 하나, 사전 전체에 한자 든 뜻은 일부러 넣은 3곳(biography · edition · justice)뿐.",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 18번 A) → 그대로 — 같은 시리즈 안 되풀이는 복습으로 둠(틀린 카드 없음) | 보류 때: (6-0829 와 같은 까닭으로 필요 없음 → 보류) teacher(mv1-04 · mv1-06) 되풀이 → 보류 목록 G6. 지적 원문의 mv1-04 '선生님' 은 지적 글의 오타: 사전 teacher 는 '선생님' 하나, 사전 전체에 한자 든 뜻은 일부러 넣은 3곳(biography · edition · justice)뿐.",
    "files": [],
    "clip": "불필요",
-   "batch": 18
+   "batch": 18,
+   "stage7": "7-4 f"
   },
   "6-0832": {
    "status": "고침",
@@ -7325,11 +7426,12 @@
    "batch": 18
   },
   "6-0845": {
-   "status": "보류",
-   "reason": "save(mv1-22 · mv1-23) · west(mv1-22 · mv1-26) 되풀이 — 지적 스스로 '의도한 복습일 수 있으니 소유자가 정할 일'. 바꾸려면 새 mv1 수준 낱말을 골라야 하는 편집이라 보류 목록 G6(6-0829 · 6-0831 과 한 묶음). 처음 적은 '1,200칸 중 8개' 는 어림이었고, 도구로 세면 mv1 에 되풀이 낱말 9개 · 18칸(지적이 짚은 5 + miss · queen · east · culture — scripts/voca-series-repeats.cjs). 추천 A: 둔다(틀린 곳 없음).",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 18번 A) → 그대로 — 같은 시리즈 안 되풀이는 복습으로 둠(틀린 카드 없음) | 보류 때: save(mv1-22 · mv1-23) · west(mv1-22 · mv1-26) 되풀이 — 지적 스스로 '의도한 복습일 수 있으니 소유자가 정할 일'. 바꾸려면 새 mv1 수준 낱말을 골라야 하는 편집이라 보류 목록 G6(6-0829 · 6-0831 과 한 묶음). 처음 적은 '1,200칸 중 8개' 는 어림이었고, 도구로 세면 mv1 에 되풀이 낱말 9개 · 18칸(지적이 짚은 5 + miss · queen · east · culture — scripts/voca-series-repeats.cjs). 추천 A: 둔다(틀린 곳 없음).",
    "files": [],
    "clip": "불필요",
-   "batch": 18
+   "batch": 18,
+   "stage7": "7-4 f"
   },
   "6-0846": {
    "status": "고침",
@@ -7593,18 +7695,20 @@
    "batch": 19
   },
   "6-0875": {
-   "status": "보류",
-   "reason": "단계 사이 되풀이 — 지적 스스로 '교재의 나선형 설계일 수 있어 소유자가 정할 일'. 도구로 셈(scripts/voca-series-repeats.cjs --cross): mv2-11~20 300칸 중 mv1 에도 나오는 칸 163(54%, 지적은 162) · mv3 에도 151(지적 150) · mv2 전체 1,200칸 중 625(52%) · mv3 는 mv2 와 556(46%). 틀린 카드는 없음 → 보류 목록 G6(한 시리즈 안 되풀이와 한 묶음, 추천 A: 둔다).",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 18번 A) → 그대로 — 단계 사이 되풀이는 앞 단계 복습(나선형)으로 둠 | 보류 때: 단계 사이 되풀이 — 지적 스스로 '교재의 나선형 설계일 수 있어 소유자가 정할 일'. 도구로 셈(scripts/voca-series-repeats.cjs --cross): mv2-11~20 300칸 중 mv1 에도 나오는 칸 163(54%, 지적은 162) · mv3 에도 151(지적 150) · mv2 전체 1,200칸 중 625(52%) · mv3 는 mv2 와 556(46%). 틀린 카드는 없음 → 보류 목록 G6(한 시리즈 안 되풀이와 한 묶음, 추천 A: 둔다).",
    "files": [],
    "clip": "불필요",
-   "batch": 19
+   "batch": 19,
+   "stage7": "7-4 f"
   },
   "6-0876": {
-   "status": "보류",
-   "reason": "mv2 안 되풀이(fall · cube · beach · pond · stone · forest) — 도구로 세면 mv2 에 11개 · 22칸(wood · lake · finger · stream · tap 도, scripts/voca-series-repeats.cjs mv2). 새 낱말로 바꿀지는 교재 설계 → 보류 목록 G6.",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 18번 A) → 그대로 — mv2 안 되풀이는 복습으로 둠(틀린 카드 없음) | 보류 때: mv2 안 되풀이(fall · cube · beach · pond · stone · forest) — 도구로 세면 mv2 에 11개 · 22칸(wood · lake · finger · stream · tap 도, scripts/voca-series-repeats.cjs mv2). 새 낱말로 바꿀지는 교재 설계 → 보류 목록 G6.",
    "files": [],
    "clip": "불필요",
-   "batch": 19
+   "batch": 19,
+   "stage7": "7-4 f"
   },
   "6-0877": {
    "status": "고침",
@@ -7634,11 +7738,12 @@
    "batch": 19
   },
   "6-0880": {
-   "status": "보류",
-   "reason": "mv2-16 · 17 동물 이름 17칸 중 8개가 mv1 되풀이 — 지적이 든 8개(cat mv1-07 · dog mv1-13 · horse mv1-10 · rabbit mv1-31 · cow mv1-26 · frog · mouse mv1-29 · fox mv1-30)를 사전·강의 파일로 대조해 8/8 맞음. 뜻은 다 맞고 문제는 수준·효율뿐이라 지적 스스로 소유자 몫 → 보류 목록 G6.",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 18번 A) → 그대로 — mv2 동물 이름의 mv1 되풀이는 앞 단계 복습으로 둠 | 보류 때: mv2-16 · 17 동물 이름 17칸 중 8개가 mv1 되풀이 — 지적이 든 8개(cat mv1-07 · dog mv1-13 · horse mv1-10 · rabbit mv1-31 · cow mv1-26 · frog · mouse mv1-29 · fox mv1-30)를 사전·강의 파일로 대조해 8/8 맞음. 뜻은 다 맞고 문제는 수준·효율뿐이라 지적 스스로 소유자 몫 → 보류 목록 G6.",
    "files": [],
    "clip": "불필요",
-   "batch": 19
+   "batch": 19,
+   "stage7": "7-4 f"
   },
   "6-0881": {
    "status": "고침",
@@ -9328,11 +9433,16 @@
    "batch": 23
   },
   "6-1066": {
-   "status": "보류",
-   "reason": "날짜 없는 기사 수치('this year' 서울만 3만여 명 ← 지난해 말 약 4,700)가 지금 사실처럼 나옴 — 1년이 안 되어 6배 넘게 늘었다는 수치는 어느 해의 전국 통계와도 안 맞음(지적: 2005년 전국 22,526 · 2007년 49,270 · 2026년 3월 서울만 82,000 넘음). 지적 스스로 '결정 필요'. 원기사를 못 찾아 날짜를 넣는 길(a)은 막혔고, 수치를 빼는 길(b)은 영어·클립·카드·빈칸이 바뀌는 편집 → 보류 목록 G7(READING 날짜 없는 옛 수치). 추천 B.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 23
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 12번 — 이 건은 추천 B) → pr024 s3 에서 맞지 않는 수치를 뺌: 'The number of foreign students attending Korean language programs has risen sharply, especially in Seoul.' · 한국어 '… 특히 서울에서 크게 늘었다.' · 문장 세 벌 + -1 지문 · 카드는 모두 지문에 그대로 있어 바뀜 없음 · 영어 클립 1 | 보류 때: 날짜 없는 기사 수치('this year' 서울만 3만여 명 ← 지난해 말 약 4,700)가 지금 사실처럼 나옴 — 1년이 안 되어 6배 넘게 늘었다는 수치는 어느 해의 전국 통계와도 안 맞음(지적: 2005년 전국 22,526 · 2007년 49,270 · 2026년 3월 서울만 82,000 넘음). 지적 스스로 '결정 필요'. 원기사를 못 찾아 날짜를 넣는 길(a)은 막혔고, 수치를 빼는 길(b)은 영어·클립·카드·빈칸이 바뀌는 편집 → 보류 목록 G7(READING 날짜 없는 옛 수치). 추천 B.",
+   "files": [
+    "src/lib/readingSentences.json",
+    "content/lessons/reading/pr024.json",
+    "content/lessons/reading/pr024-1.json"
+   ],
+   "clip": "필요",
+   "batch": 23,
+   "stage7": "7-4 f"
   },
   "6-1067": {
    "status": "고침",
@@ -10731,11 +10841,16 @@
    "batch": 23
   },
   "6-1199": {
-   "status": "보류",
-   "reason": "판단이 갈림 — 이 지문은 '언어에는 자동적인 것이 없고(s2), 아이는 모국어를 배워야 하며(s3), 오직 집중적인 교육으로만 전해진다(s4)' 는 옛 관점을 논지로 삼음. 현대 언어학은 아이가 가르침 없이 노출·상호작용으로 모국어를 습득하고, 특정 언어는 물려받지 않지만 언어를 배우는 능력은 타고난다고 봄(지적 근거). 한두 문장만 고치면 s2 와 어긋나서 지문의 주장 자체를 바꾸게 됨. 추천 A: 영어·카드·클립은 그대로 두고 한국어 번역(readingSentences s4 한국어와 -1 페이지 한국어 지문) 끝에 '※ 옛 관점의 글입니다. 현대 언어학에서는 아이들이 따로 배우지 않아도 주변의 말을 들으며 모국어를 스스로 습득한다고 봅니다.' 를 붙임(READING 은 한국어를 읽지 않아 클립 영향 없음). B: s2~s4 를 현대 관점으로 다시 씀 — 영어 3문장 클립 필요, 지문에서 빠지는 카드 training·intensive·education·art 4장 교체. 소유자가 A/B 를 정하면 그대로 처리.",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 11번 A) → pr167 s4 한국어 끝(문장 세 벌 + -1 한국어 지문 = 4곳)에 보류 목록의 글 그대로 '※ 옛 관점의 글입니다. 현대 언어학에서는 …' — 영어 · 카드 · 빈칸 · 음성 그대로 | 보류 때: 판단이 갈림 — 이 지문은 '언어에는 자동적인 것이 없고(s2), 아이는 모국어를 배워야 하며(s3), 오직 집중적인 교육으로만 전해진다(s4)' 는 옛 관점을 논지로 삼음. 현대 언어학은 아이가 가르침 없이 노출·상호작용으로 모국어를 습득하고, 특정 언어는 물려받지 않지만 언어를 배우는 능력은 타고난다고 봄(지적 근거). 한두 문장만 고치면 s2 와 어긋나서 지문의 주장 자체를 바꾸게 됨. 추천 A: 영어·카드·클립은 그대로 두고 한국어 번역(readingSentences s4 한국어와 -1 페이지 한국어 지문) 끝에 '※ 옛 관점의 글입니다. 현대 언어학에서는 아이들이 따로 배우지 않아도 주변의 말을 들으며 모국어를 스스로 습득한다고 봅니다.' 를 붙임(READING 은 한국어를 읽지 않아 클립 영향 없음). B: s2~s4 를 현대 관점으로 다시 씀 — 영어 3문장 클립 필요, 지문에서 빠지는 카드 training·intensive·education·art 4장 교체. 소유자가 A/B 를 정하면 그대로 처리.",
+   "files": [
+    "src/lib/readingSentences.json",
+    "content/lessons/reading/pr167.json",
+    "content/lessons/reading/pr167-1.json"
+   ],
    "clip": "불필요",
-   "batch": 5
+   "batch": 5,
+   "stage7": "7-4 f"
   },
   "6-1200": {
    "status": "고침",
@@ -10916,11 +11031,17 @@
    "batch": 25
   },
   "6-1217": {
-   "status": "보류",
-   "reason": "보류 G7 에 더함(READING 옛 글을 지금 일처럼). 두 문장 지문 전체의 때('Until recently … Now orange juice is put up in cans')가 틀림 — 통조림 · 냉동 농축 오렌지 주스는 1940년대부터 흔함. 고치려면 두 문장을 다 다시 써야 하고(수정안 'In the early 1900s … United States … Later …') 그러면 카드 14장 중 recently · until · country 셋이 지문에서 빠져 **가르칠 새 낱말 셋과 뜻을 골라야 함**(카드는 꼭 14장 — 아니면 앱이 자동 추출로 바꿈) — 가르칠 낱말을 바꾸는 일이라 소유자가 정함. 추천 A(다시 씀). (처음엔 '새 카드의 점수 · 설명 · 시험 표시를 지어내야 함' 을 까닭으로 적었으나 그 셋은 앱이 화면에 쓰지 않음 — ReadingLearningView.tsx:249-251, 배치 26 에 바로잡음)",
-   "files": [],
-   "clip": "불필요",
-   "batch": 26
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 12번 A) → pr182 s1 · s2 를 수정안대로('In the early 1900s … of the year.' / 'Later, orange juice was put up in cans, so that it became available …') · 한국어 맞춤 · 문장 세 벌 + -1 지문(plans/stage7-holds-d-reading.json) · 지문에서 빠진 카드 recently · until · country → early · later · year(세 사본, 카드 14장 그대로, plans/stage7-holds-d-cards-1 · 2) · 영어 문장 클립 2 + 카드 낱말 클립 | 보류 때: 보류 G7 에 더함(READING 옛 글을 지금 일처럼). 두 문장 지문 전체의 때('Until recently … Now orange juice is put up in cans')가 틀림 — 통조림 · 냉동 농축 오렌지 주스는 1940년대부터 흔함. 고치려면 두 문장을 다 다시 써야 하고(수정안 'In the early 1900s … United States … Later …') 그러면 카드 14장 중 recently · until · country 셋이 지문에서 빠져 **가르칠 새 낱말 셋과 뜻을 골라야 함**(카드는 꼭 14장 — 아니면 앱이 자동 추출로 바꿈) — 가르칠 낱말을 바꾸는 일이라 소유자가 정함. 추천 A(다시 씀). (처음엔 '새 카드의 점수 · 설명 · 시험 표시를 지어내야 함' 을 까닭으로 적었으나 그 셋은 앱이 화면에 쓰지 않음 — ReadingLearningView.tsx:249-251, 배치 26 에 바로잡음)",
+   "files": [
+    "src/lib/readingSentences.json",
+    "src/lib/readingVocabulary.json",
+    "content/lessons/reading/pr182.json",
+    "content/lessons/reading/pr182-1.json"
+   ],
+   "clip": "필요",
+   "batch": 26,
+   "stage7": "7-4 f"
   },
   "6-1218": {
    "status": "고침",
@@ -11207,11 +11328,16 @@
    "batch": 26
   },
   "6-1239": {
-   "status": "보류",
-   "reason": "보류 목록에 새 행(6-1239). pr213 은 시험지의 두 지문(Sue s1~s7 · Robert s8~s15)이 이어 붙어 표시가 없음 — 9/17 R-66 은 '분리 또는 표시' 를 권했으나 고칠 때 함께 두기만 함. 표시 방법이 발음 시험(첫 줄 영어를 그대로 채점) · 소리 · 원문에 없는 문장 사이에서 갈려 소유자가 정함. 추천 A(한국어 번역에만 '(이야기 1)' · '(이야기 2)' — 영어 · 클립 · 빈칸 · 발음 시험 그대로).",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 21번 A) → pr213 한국어에만 표지 — s1 앞 '(이야기 1) ' · s8 앞 '(이야기 2) '(각각 문장 세 벌 + -1 한국어 지문 = 4곳). 영어 · 음성 · 빈칸 · 발음 시험 그대로 | 보류 때: 보류 목록에 새 행(6-1239). pr213 은 시험지의 두 지문(Sue s1~s7 · Robert s8~s15)이 이어 붙어 표시가 없음 — 9/17 R-66 은 '분리 또는 표시' 를 권했으나 고칠 때 함께 두기만 함. 표시 방법이 발음 시험(첫 줄 영어를 그대로 채점) · 소리 · 원문에 없는 문장 사이에서 갈려 소유자가 정함. 추천 A(한국어 번역에만 '(이야기 1)' · '(이야기 2)' — 영어 · 클립 · 빈칸 · 발음 시험 그대로).",
+   "files": [
+    "src/lib/readingSentences.json",
+    "content/lessons/reading/pr213.json",
+    "content/lessons/reading/pr213-1.json"
+   ],
    "clip": "불필요",
-   "batch": 26
+   "batch": 26,
+   "stage7": "7-4 f"
   },
   "6-1240": {
    "status": "고침",
@@ -12572,11 +12698,17 @@
    "batch": 28
   },
   "6-1365": {
-   "status": "보류",
-   "reason": "보류 G8(새 줄) — 영작문제 5 의 중복 여섯(gh1-038 #17~#20 = #5~#8 · gh1-040 #37 · #38 = gh1-038 #22 · #24). 교재 원본 파일이 로컬에 없어 원래 문항을 되살릴 수 없고, 바꾸려면 새 문항을 지어야 해 소유자가 정함. 추천 A(과거형 꼬리 · 빠진 인칭으로 새 문항 + 클립).",
-   "files": [],
-   "clip": "불필요",
-   "batch": 28
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 A) → 영작문제 5 의 되풀이 여섯을 새 문항으로 — gh1-038 #17~#20 과거형 꼬리('이것은 펜이었지?' → 'This was a pen, wasn't it?' · 그것은 책이었지 · 이것들은 펜들이었지 · 그것들은 책들이었지 — 대체 답안은 #6 ~ #8 과 같은 결) · gh1-040 #37 '그들은 행복하지 않지?' · #38 '우리는 한국에 있지?'(세트에 없던 인칭). 앱 채점기로 모범 · 대체 답안 exact, 옛 답은 exact 아님(set-grammar-items, plans/stage7-holds-e-grammar.json) · 영어 클립 6 | 보류 때: 보류 G8(새 줄) — 영작문제 5 의 중복 여섯(gh1-038 #17~#20 = #5~#8 · gh1-040 #37 · #38 = gh1-038 #22 · #24). 교재 원본 파일이 로컬에 없어 원래 문항을 되살릴 수 없고, 바꾸려면 새 문항을 지어야 해 소유자가 정함. 추천 A(과거형 꼬리 · 빠진 인칭으로 새 문항 + 클립).",
+   "files": [
+    "content/lessons/grammar1/gh1-038.json",
+    "content/lessons/grammar1/gh1-039.json",
+    "content/lessons/grammar1/gh1-040.json",
+    "content/lessons/grammar1/gh1-041.json"
+   ],
+   "clip": "필요",
+   "batch": 28,
+   "stage7": "7-4 f"
   },
   "6-1366": {
    "status": "고침",
@@ -12651,20 +12783,27 @@
    "batch": 28
   },
   "6-1372": {
-   "status": "보류",
-   "reason": "보류 목록 새 행(6-1372) — 단계 이름은 목록 제목 · 부제목 · 검색 색인에 보이는 과정 구성이라 소유자가 정함: 3단계 '조동사 & 수동태' 인데 답 199개 중 조동사 0 · 수동태 0, 다른 단계도 어긋남(표지 표는 보류 행). 추천 A(3단계만 '진행형 · 부가의문문 & 기초 문형 복습'). **함께 찾아 고친 버그**: 부제목 단계를 페이지 번호로 가려 경계의 영어 답 쪽이 목록보다 한 단계 뒤로 — gh1-017 · 043 · 055 · 079 · 109 와 분할본 13페이지 → 짝 한국어 쪽(짝수) 번호로 가리게 고침(새 check-grammar1-stages.cjs: 지금 0 · --old 13, exit 1 · tsc exit 0).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 20번 A) → GRAMMAR I 3단계 이름 '조동사 & 수동태' → '진행형 · 부가의문문 & 기초 문형 복습'(src/lib/curriculumPresentation.ts 목록 제목 · 강의 부제목 두 곳, 검색 색인은 prebuild 가 다시 만듦). 다른 단계 이름은 그대로 | 보류 때: 보류 목록 새 행(6-1372) — 단계 이름은 목록 제목 · 부제목 · 검색 색인에 보이는 과정 구성이라 소유자가 정함: 3단계 '조동사 & 수동태' 인데 답 199개 중 조동사 0 · 수동태 0, 다른 단계도 어긋남(표지 표는 보류 행). 추천 A(3단계만 '진행형 · 부가의문문 & 기초 문형 복습'). **함께 찾아 고친 버그**: 부제목 단계를 페이지 번호로 가려 경계의 영어 답 쪽이 목록보다 한 단계 뒤로 — gh1-017 · 043 · 055 · 079 · 109 와 분할본 13페이지 → 짝 한국어 쪽(짝수) 번호로 가리게 고침(새 check-grammar1-stages.cjs: 지금 0 · --old 13, exit 1 · tsc exit 0).",
    "files": [
     "src/lib/curriculumPresentation.ts"
    ],
    "clip": "불필요",
-   "batch": 28
+   "batch": 28,
+   "stage7": "7-4 f"
   },
   "6-1373": {
-   "status": "보류",
-   "reason": "보류 G8 — gh1-046 #104 · #105 가 #89 · #91 과 한국어 · 영어 모두 같음. 바꾸려면 새 문항(지적의 안 '그들은 행복하지 않지?' · '우리는 한국에 있지?') + 새 클립 — 6-1365 와 함께 소유자가 정함. 추천 A.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 28
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 A) → gh1-046 #104 · #105(분할본 -2 포함) → 지적의 안 '그들은 행복하지 않지?' / 'They are not happy, are they?' · '우리는 한국에 있지?' / 'We are in Korea, aren't we?' — gh1-040 #37 · #38 과 같은 글이라 클립은 그쪽과 같음(새 글 0) | 보류 때: 보류 G8 — gh1-046 #104 · #105 가 #89 · #91 과 한국어 · 영어 모두 같음. 바꾸려면 새 문항(지적의 안 '그들은 행복하지 않지?' · '우리는 한국에 있지?') + 새 클립 — 6-1365 와 함께 소유자가 정함. 추천 A.",
+   "files": [
+    "content/lessons/grammar1/gh1-046.json",
+    "content/lessons/grammar1/gh1-046-2.json",
+    "content/lessons/grammar1/gh1-047.json",
+    "content/lessons/grammar1/gh1-047-2.json"
+   ],
+   "clip": "필요",
+   "batch": 28,
+   "stage7": "7-4 f"
   },
   "6-1374": {
    "status": "고침",
@@ -12781,11 +12920,17 @@
    "batch": 28
   },
   "6-1383": {
-   "status": "보류",
-   "reason": "보류 G8 에 더함 — gh1-056 #35 '그들은 누구였니?' 가 #24 '그들은 누구였나?' 와 같음(영어 'Who were they?' 둘 다). 바꾸려면 새 문항(지적의 안 '그들은 어디에 살았니?' → 'Where did they live?') + 새 클립 — 소유자가 정함.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 29
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 A) → gh1-056 #35(분할본 -2 포함) → 지적의 안 '그들은 어디에 살았니?' / 'Where did they live?' · 영어 클립 1 | 보류 때: 보류 G8 에 더함 — gh1-056 #35 '그들은 누구였니?' 가 #24 '그들은 누구였나?' 와 같음(영어 'Who were they?' 둘 다). 바꾸려면 새 문항(지적의 안 '그들은 어디에 살았니?' → 'Where did they live?') + 새 클립 — 소유자가 정함.",
+   "files": [
+    "content/lessons/grammar1/gh1-056.json",
+    "content/lessons/grammar1/gh1-056-2.json",
+    "content/lessons/grammar1/gh1-057.json",
+    "content/lessons/grammar1/gh1-057-2.json"
+   ],
+   "clip": "필요",
+   "batch": 29,
+   "stage7": "7-4 f"
   },
   "6-1384": {
    "status": "고침",
@@ -12881,11 +13026,12 @@
    "batch": 29
   },
   "6-1393": {
-   "status": "보류",
-   "reason": "보류 목록 새 행(6-1393) — 부분 부정 과에서 'All … not' 대체 답안 다섯이 exact 이고 '다른 정답' 으로 보임. 원어민에겐 뜻이 갈리고 학교 문법은 흔히 부분 부정으로 가르쳐, 빼면 그렇게 배운 학습자가 partial 이 됨 — 가르치는 방침이라 소유자가 정함. 추천 A(빼고 'Not all/Not every' 만).",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 5번 B — 소유자가 추천 A 대신 고름) → 그대로 — 'All … not' 대체 답안 다섯을 만점 정답으로 둠(한국 학교 영어는 이 꼴을 부분 부정으로 가르치고 시험에 나옴, 모범 답안은 이미 'Not all …') | 보류 때: 보류 목록 새 행(6-1393) — 부분 부정 과에서 'All … not' 대체 답안 다섯이 exact 이고 '다른 정답' 으로 보임. 원어민에겐 뜻이 갈리고 학교 문법은 흔히 부분 부정으로 가르쳐, 빼면 그렇게 배운 학습자가 partial 이 됨 — 가르치는 방침이라 소유자가 정함. 추천 A(빼고 'Not all/Not every' 만).",
    "files": [],
    "clip": "불필요",
-   "batch": 29
+   "batch": 29,
+   "stage7": "7-4 f"
   },
   "6-1394": {
    "status": "고침",
@@ -13021,11 +13167,15 @@
    "batch": 29
   },
   "6-1403": {
-   "status": "보류",
-   "reason": "보류 G8 에 더함 — gh1-076 #26 '그들은 어디에 있었니?' / 'Where were they?' 가 같은 쪽 #16 과 글자까지 같음. 바꾸려면 새 문항(지적의 안 '너의 형제들은 어디에 있었니?' → 'Where were your brothers?') + 새 클립 — 소유자가 정함.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 29
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 A) → gh1-076 #26 → 지적의 안 '너의 형제들은 어디에 있었니?' / 'Where were your brothers?' · 영어 클립 1 | 보류 때: 보류 G8 에 더함 — gh1-076 #26 '그들은 어디에 있었니?' / 'Where were they?' 가 같은 쪽 #16 과 글자까지 같음. 바꾸려면 새 문항(지적의 안 '너의 형제들은 어디에 있었니?' → 'Where were your brothers?') + 새 클립 — 소유자가 정함.",
+   "files": [
+    "content/lessons/grammar1/gh1-076.json",
+    "content/lessons/grammar1/gh1-077.json"
+   ],
+   "clip": "필요",
+   "batch": 29,
+   "stage7": "7-4 f"
   },
   "6-1404": {
    "status": "고침",
@@ -13379,13 +13529,14 @@
    "batch": 30
   },
   "6-1436": {
-   "status": "보류",
-   "reason": "보류 G8 에 더함 — gh1-090 #39 와 gh1-092 #39 가 한국어만 조금 다르고 번호 · 답이 같은 한 문항(과 경계에서 되풀이). 지우라는 수정안은 소유자가 정함 — GRAMMAR 는 학습자 답을 문항 순번으로 저장해 gh1-092 첫 문항을 빼면 그 과의 저장된 답이 모두 한 칸씩 밀림(추천: 둔다). 대체 답안 부분은 바로 함: 발생하다 = occur — 'Why does it occur outside the border?' 가 0점 → gh1-093 #39 대체 답안(앱 채점기 incorrect → exact · 틀린 대조 inside incorrect). 클립 무관.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 — 이 건은 추천 B) → 대체 답안 부분(발생하다 = occur, gh1-093 #39)은 6단계에서 고침 · 과 경계의 되풀이 문항은 그대로(빼면 gh1-092 의 저장된 답이 한 칸씩 밀림) | 보류 때: 보류 G8 에 더함 — gh1-090 #39 와 gh1-092 #39 가 한국어만 조금 다르고 번호 · 답이 같은 한 문항(과 경계에서 되풀이). 지우라는 수정안은 소유자가 정함 — GRAMMAR 는 학습자 답을 문항 순번으로 저장해 gh1-092 첫 문항을 빼면 그 과의 저장된 답이 모두 한 칸씩 밀림(추천: 둔다). 대체 답안 부분은 바로 함: 발생하다 = occur — 'Why does it occur outside the border?' 가 0점 → gh1-093 #39 대체 답안(앱 채점기 incorrect → exact · 틀린 대조 inside incorrect). 클립 무관.",
    "files": [
     "content/lessons/grammar1/gh1-093.json"
    ],
    "clip": "불필요",
-   "batch": 30
+   "batch": 30,
+   "stage7": "7-4 f"
   },
   "6-1437": {
    "status": "고침",
@@ -13979,11 +14130,12 @@
    "batch": 31
   },
   "6-1499": {
-   "status": "보류",
-   "reason": "보류 G8 에 더함 — 분할 페이지 gh1-110-1 끝과 gh1-110-2 첫머리에 #90 이 두 번(영어 gh1-111-1 · -2 도). 두 분할 페이지 모두 과정 목록에 있어 학습자가 여는 페이지이고 GRAMMAR 는 답을 문항 순번으로 저장하므로 -2 에서 빼면 -2 의 저장된 답이 한 칸씩 밀림 — 추천 B(둔다). 소유자가 정함.",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 — 이 건은 추천 B) → 그대로 — 분할 페이지 gh1-110-1 · -2 의 #90 되풀이(-2 에서 빼면 저장된 답이 밀림) | 보류 때: 보류 G8 에 더함 — 분할 페이지 gh1-110-1 끝과 gh1-110-2 첫머리에 #90 이 두 번(영어 gh1-111-1 · -2 도). 두 분할 페이지 모두 과정 목록에 있어 학습자가 여는 페이지이고 GRAMMAR 는 답을 문항 순번으로 저장하므로 -2 에서 빼면 -2 의 저장된 답이 한 칸씩 밀림 — 추천 B(둔다). 소유자가 정함.",
    "files": [],
    "clip": "불필요",
-   "batch": 31
+   "batch": 31,
+   "stage7": "7-4 f"
   },
   "6-1500": {
    "status": "고침",
@@ -14103,11 +14255,15 @@
    "batch": 31
   },
   "6-1512": {
-   "status": "보류",
-   "reason": "보류 목록 새 행(6-1512) — 'sex change operation' 은 AP · NLGJA 스타일북이 쓰지 말라는 옛 말. 성 정체성 용어이고 지적도 소유자가 일부러 정하라고 넘김. 추천 A: 영어만 'gender-affirming surgery'(클립 1), 한국어 '성전환 수술' 은 표준 중립 용어라 둠.",
-   "files": [],
-   "clip": "불필요",
-   "batch": 31
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 14번 A) → gh1-119 #71(분할본 -2 포함) 영어만 'It will cover your gender-affirming surgery, won't it?' · 한국어 '성전환 수술' 은 표준 중립 용어라 그대로 · 'sex change operation' 2곳 → 0 · 영어 클립 1 | 보류 때: 보류 목록 새 행(6-1512) — 'sex change operation' 은 AP · NLGJA 스타일북이 쓰지 말라는 옛 말. 성 정체성 용어이고 지적도 소유자가 일부러 정하라고 넘김. 추천 A: 영어만 'gender-affirming surgery'(클립 1), 한국어 '성전환 수술' 은 표준 중립 용어라 둠.",
+   "files": [
+    "content/lessons/grammar1/gh1-119.json",
+    "content/lessons/grammar1/gh1-119-2.json"
+   ],
+   "clip": "필요",
+   "batch": 31,
+   "stage7": "7-4 f"
   },
   "6-1513": {
    "status": "고침",
@@ -14140,11 +14296,14 @@
    "batch": 31
   },
   "6-1516": {
-   "status": "보류",
-   "reason": "보류 목록 새 행(6-1516) — 2002년 뉴스로 만든 gh1-116 ~ 123 문장이 날짜 없이 현재형(파월 국무장관 · 무바라크 대통령 · 부시 대통령). GRAMMAR 화면은 instruction · paragraph 를 그리지 않아 알림을 달려면 부제목(표시 코드)에 한 줄을 넣어야 함 — 과정 표시를 바꾸는 일이라 소유자가 정함. 추천 A(부제목 한 줄, 영어 · 클립 그대로).",
-   "files": [],
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 13번 A) → gh1-116 ~ 123(분할본 포함) 부제목 끝에 ' · 2002년 뉴스 방송 기반 문장입니다'(src/lib/curriculumPresentation.ts) — 영어 · 음성 · 채점 그대로. gh2-044 #4 는 이 결정의 여덟 페이지 밖이라 그대로 | 보류 때: 보류 목록 새 행(6-1516) — 2002년 뉴스로 만든 gh1-116 ~ 123 문장이 날짜 없이 현재형(파월 국무장관 · 무바라크 대통령 · 부시 대통령). GRAMMAR 화면은 instruction · paragraph 를 그리지 않아 알림을 달려면 부제목(표시 코드)에 한 줄을 넣어야 함 — 과정 표시를 바꾸는 일이라 소유자가 정함. 추천 A(부제목 한 줄, 영어 · 클립 그대로).",
+   "files": [
+    "src/lib/curriculumPresentation.ts"
+   ],
    "clip": "불필요",
-   "batch": 31
+   "batch": 31,
+   "stage7": "7-4 f"
   },
   "6-1517": {
    "status": "고침",
@@ -14480,11 +14639,12 @@
    "batch": 32
   },
   "6-1552": {
-   "status": "보류",
-   "reason": "보류 G8 에 더함 — GRAMMAR II 에서 영어가 글자까지 같은 유일한 짝 'Will you do me a favor?'(gh2-022 #5 반말 · gh2-025 #6 존댓말). 새 문항으로 바꾸려면 새 클립 — 소유자가 정함, 추천 B(존댓말 복습으로 둠).",
+   "status": "필요 없음",
+   "reason": "소유자 결정 2026-09-23 (결정표 19번 — 이 건은 추천 B) → 그대로 — gh2-022 #5(반말) · gh2-025 #6(존댓말) 'Will you do me a favor?' 는 존댓말 복습으로 둠 | 보류 때: 보류 G8 에 더함 — GRAMMAR II 에서 영어가 글자까지 같은 유일한 짝 'Will you do me a favor?'(gh2-022 #5 반말 · gh2-025 #6 존댓말). 새 문항으로 바꾸려면 새 클립 — 소유자가 정함, 추천 B(존댓말 복습으로 둠).",
    "files": [],
    "clip": "불필요",
-   "batch": 32
+   "batch": 32,
+   "stage7": "7-4 f"
   },
   "6-1553": {
    "status": "고침",
@@ -15116,11 +15276,12 @@
    "batch": 33
   },
   "6-1621": {
-   "status": "보류",
-   "reason": "보류 G12 — 청크 드릴(chunkDrills) D3 만 다루는 지적. 드릴은 학습자에게 표시되지 않는 데이터(BUG-024)이고 소유자가 9/23 '지금 정하지 않는다, 데이터 그대로' 로 정해 고치지 않음. 드릴을 되살리면 먼저 고칠 목록에 올림(ko '정말 기쁩니다' ↔ en 'It’s a pleasure').",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 청크 드릴(chunkDrills) D3 만 다루는 지적. 드릴은 학습자에게 표시되지 않는 데이터(BUG-024)이고 소유자가 9/23 '지금 정하지 않는다, 데이터 그대로' 로 정해 고치지 않음. 드릴을 되살리면 먼저 고칠 목록에 올림(ko '정말 기쁩니다' ↔ en 'It’s a pleasure').",
    "files": [],
    "clip": "불필요",
-   "batch": 33
+   "batch": 33,
+   "stage7": "7-4 f"
   },
   "6-1622": {
    "status": "고침",
@@ -15141,11 +15302,12 @@
    "batch": 33
   },
   "6-1624": {
-   "status": "보류",
-   "reason": "보류 G12 — 청크 드릴 순서(#3 드릴이 #1 드릴보다 앞) · also 빠짐. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 청크 드릴 순서(#3 드릴이 #1 드릴보다 앞) · also 빠짐. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 33
+   "batch": 33,
+   "stage7": "7-4 f"
   },
   "6-1625": {
    "status": "고침",
@@ -15155,7 +15317,8 @@
    ],
    "clip": "필요",
    "batch": 33,
-   "restore0923": "원본 되살리기(2026-09-23 밤): 이 지적이 고친 s1-4 글(Shy Person — 9/7 08b77af 가 다른 과정에서 끼운 글)이 사라짐 → s1-4 는 원본 Hobby. 이 고침의 대상 없음(계획 줄 supersededBy)."
+   "restore0923": "원본 되살리기(2026-09-23 밤): 이 지적이 고친 s1-4 글(Shy Person — 9/7 08b77af 가 다른 과정에서 끼운 글)이 사라짐 → s1-4 는 원본 Hobby. 이 고침의 대상 없음(계획 줄 supersededBy).",
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1626": {
    "status": "고침",
@@ -15207,18 +15370,20 @@
    "restore0923": "원본 되살리기: s5-5 부분은 9/7 에 바뀐 글이라 원본 글로 바뀜 — 되살린 글은 같은 기준으로 다시 봄(plans/stage6-student-r1.json). 다른 과의 고침은 그대로."
   },
   "6-1630": {
-   "status": "보류",
-   "reason": "보류 G12 — 드릴의 '누나'(문단은 여동생) · 첫 청크 없음. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 드릴의 '누나'(문단은 여동생) · 첫 청크 없음. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 33
+   "batch": 33,
+   "stage7": "7-4 f"
   },
   "6-1631": {
-   "status": "보류",
-   "reason": "보류 G12 — 드릴 '하나 또는 그이상의'(one more 아님). 문단은 이미 맞음('한 명 더'). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 드릴 '하나 또는 그이상의'(one more 아님). 문단은 이미 맞음('한 명 더'). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 33
+   "batch": 33,
+   "stage7": "7-4 f"
   },
   "6-1632": {
    "status": "고침",
@@ -15228,7 +15393,8 @@
    ],
    "clip": "필요",
    "batch": 33,
-   "restore0923": "원본 되살리기: 같은 종류 전수 중 s5-5 부분만 원본 글로 바뀜(6-1629 와 같음). 이 번호의 s2-3 고침은 그대로."
+   "restore0923": "원본 되살리기: 같은 종류 전수 중 s5-5 부분만 원본 글로 바뀜(6-1629 와 같음). 이 번호의 s2-3 고침은 그대로.",
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1633": {
    "status": "고침",
@@ -15238,14 +15404,16 @@
    ],
    "clip": "필요",
    "batch": 33,
-   "restore0923": "원본 되살리기: 같은 종류 전수 중 s5-5 부분만 원본 글로 바뀜(6-1629 와 같음). 이 번호의 s2-4 고침은 그대로."
+   "restore0923": "원본 되살리기: 같은 종류 전수 중 s5-5 부분만 원본 글로 바뀜(6-1629 와 같음). 이 번호의 s2-4 고침은 그대로.",
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1634": {
-   "status": "보류",
-   "reason": "보류 G12 — 드릴 '집안일을' ↔ 'around the house' 짝 · 순서. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 드릴 '집안일을' ↔ 'around the house' 짝 · 순서. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 33
+   "batch": 33,
+   "stage7": "7-4 f"
   },
   "6-1635": {
    "status": "고침",
@@ -15263,7 +15431,8 @@
     "content/lessons/student/s2-5.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1637": {
    "status": "고침",
@@ -15291,7 +15460,8 @@
     "content/lessons/student/s2-6.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1640": {
    "status": "고침",
@@ -15322,18 +15492,20 @@
    "batch": 34
   },
   "6-1643": {
-   "status": "보류",
-   "reason": "보류 G12 — 드릴 사슬이 문장을 다 만들지 못함(s3-2 'for 3 years.' 빠짐 · s4-5 주어 청크 없음). 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 드릴 사슬이 문장을 다 만들지 못함(s3-2 'for 3 years.' 빠짐 · s4-5 주어 청크 없음). 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1644": {
-   "status": "보류",
-   "reason": "보류 G12 — s3-3 드릴 순서 · 빠진 문장 · 드릴 #9 의 '매우'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s3-3 드릴 순서 · 빠진 문장 · 드릴 #9 의 '매우'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1645": {
    "status": "고침",
@@ -15342,7 +15514,8 @@
     "content/lessons/student/s3-2.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1646": {
    "status": "고침",
@@ -15430,11 +15603,12 @@
    "batch": 34
   },
   "6-1655": {
-   "status": "보류",
-   "reason": "보류 G12 — 드릴 네 곳의 짝 오류(s4-4 삼촌 · s3-2 돌아다니기 · s3-4 종종 · 되풀이 · 지역사회에서). 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — 드릴 네 곳의 짝 오류(s4-4 삼촌 · s3-2 돌아다니기 · s3-4 종종 · 되풀이 · 지역사회에서). 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 고칠 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1656": {
    "status": "고침",
@@ -15443,7 +15617,8 @@
     "content/lessons/student/s4-5.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1657": {
    "status": "고침",
@@ -15478,14 +15653,16 @@
    "reason": "지적의 해(곡선 아포스트로피 ’ 가 든 문장은 발음 채점에서 can’t 가 부분 일치로 깎임)는 배치 26 의 6-1274(speechRecognition.ts 가 ‘’ 를 ' 로 바꿈) · 배치 28 의 6N-001(줄임말)로 이미 풀림 — 지금 앱 채점 함수로 'My family is so busy; we can’t even eat breakfast together.' 에 can't · cannot 로 읽은 두 꼴 모두 100(check-speech-scorer ① 0). 문장과 드릴의 따옴표 모양이 다른 것은 드릴이 표시되지 않는 데이터라(BUG-024) 보류 G12 목록에 넣음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1660": {
-   "status": "보류",
-   "reason": "보류 G12 — s5-2 드릴 사슬(빠진 청크 · 떨어진 청크 · 차례). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s5-2 드릴 사슬(빠진 청크 · 떨어진 청크 · 차례). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1661": {
    "status": "고침",
@@ -15494,7 +15671,8 @@
     "content/lessons/student/s5-3.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1662": {
    "status": "고침",
@@ -15512,7 +15690,8 @@
     "content/lessons/student/s5-4.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1664": {
    "status": "고침",
@@ -15531,11 +15710,12 @@
    "batch": 34
   },
   "6-1666": {
-   "status": "보류",
-   "reason": "보류 G12 — s5-4 드릴 차례 · 빠진 첫 청크 · 드릴의 곧은 따옴표. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s5-4 드릴 차례 · 빠진 첫 청크 · 드릴의 곧은 따옴표. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1667": {
    "status": "고침",
@@ -15545,7 +15725,8 @@
    ],
    "clip": "필요",
    "batch": 34,
-   "restore0923": "원본 되살리기: s5-5 #4 가 원본 글로 바뀌어 대상이 사라짐(원본 s5-5 에는 football 없음)."
+   "restore0923": "원본 되살리기: s5-5 #4 가 원본 글로 바뀌어 대상이 사라짐(원본 s5-5 에는 football 없음).",
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1668": {
    "status": "고침",
@@ -15557,11 +15738,12 @@
    "batch": 34
   },
   "6-1669": {
-   "status": "보류",
-   "reason": "보류 G12 — s6-2 · s6-3 드릴이 두 조각뿐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음(지적도 '지금은 표시되지 않음' 이라 함).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s6-2 · s6-3 드릴이 두 조각뿐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음(지적도 '지금은 표시되지 않음' 이라 함).",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1670": {
    "status": "고침",
@@ -15579,7 +15761,8 @@
     "content/lessons/student/s6-3.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1672": {
    "status": "이미 해결",
@@ -15607,11 +15790,12 @@
    "batch": 34
   },
   "6-1675": {
-   "status": "보류",
-   "reason": "보류 G12 — s6-4 드릴 '꿈을 실행하기' (문단은 이미 '달성하기'). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s6-4 드릴 '꿈을 실행하기' (문단은 이미 '달성하기'). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1676": {
    "status": "고침",
@@ -15620,21 +15804,24 @@
     "content/lessons/student/s7-1.json"
    ],
    "clip": "필요",
-   "batch": 34
+   "batch": 34,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1677": {
-   "status": "보류",
-   "reason": "보류 G12 — s7-1 드릴 차례(마지막 문장의 세 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음(지적도 '지금은 표시되지 않음' 이라 함).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s7-1 드릴 차례(마지막 문장의 세 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음(지적도 '지금은 표시되지 않음' 이라 함).",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1678": {
-   "status": "보류",
-   "reason": "보류 G12 — s7-2 드릴 '영어가 매우 도움이 될것이라고' · '나의 친구들과함께'. 지적이 짚은 것은 드릴 글뿐이고 화면 문단 #4 는 이미 '도움이 될 것이라는' 으로 맞음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s7-2 드릴 '영어가 매우 도움이 될것이라고' · '나의 친구들과함께'. 지적이 짚은 것은 드릴 글뿐이고 화면 문단 #4 는 이미 '도움이 될 것이라는' 으로 맞음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1679": {
    "status": "고침",
@@ -15654,11 +15841,12 @@
    "batch": 34
   },
   "6-1681": {
-   "status": "보류",
-   "reason": "보류 G12 — s8-1 드릴 '컴퓨터 상으로'. 화면 문단 #4 는 이미 '컴퓨터를 하고 놉니다'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s8-1 드릴 '컴퓨터 상으로'. 화면 문단 #4 는 이미 '컴퓨터를 하고 놉니다'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1682": {
    "status": "고침",
@@ -15705,11 +15893,12 @@
    "batch": 34
   },
   "6-1685": {
-   "status": "보류",
-   "reason": "보류 G12 — s8-3 드릴 차례(#6 조각이 맨 앞 · #5 와 #6 뒤바뀜) · '하루동안'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s8-3 드릴 차례(#6 조각이 맨 앞 · #5 와 #6 뒤바뀜) · '하루동안'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 34
+   "batch": 34,
+   "stage7": "7-4 f"
   },
   "6-1686": {
    "status": "고침",
@@ -15750,7 +15939,8 @@
     "content/lessons/student/s9-3.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1690": {
    "status": "고침",
@@ -15771,11 +15961,12 @@
    "batch": 35
   },
   "6-1692": {
-   "status": "보류",
-   "reason": "보류 G12 — s10-2 드릴 '그것은 어렵습니다.'(very 빠짐). 화면 문단 #1 은 이미 '매우 힘듭니다'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s10-2 드릴 '그것은 어렵습니다.'(very 빠짐). 화면 문단 #1 은 이미 '매우 힘듭니다'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1693": {
    "status": "고침",
@@ -15796,25 +15987,28 @@
    "batch": 35
   },
   "6-1695": {
-   "status": "보류",
-   "reason": "보류 G12 — s10-3 드릴에 'for about seven hours' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s10-3 드릴에 'for about seven hours' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1696": {
-   "status": "보류",
-   "reason": "보류 G12 — s10-3 드릴 '배우로'(배우고 오타). 화면 문단 #5 는 '배우는 것과' 로 맞음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s10-3 드릴 '배우로'(배우고 오타). 화면 문단 #5 는 '배우는 것과' 로 맞음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1697": {
-   "status": "보류",
-   "reason": "보류 G12 — s10-4 드릴 여섯 조각이 과의 약 3분의 1 만 덮음 · 해라체. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음 — 되살리면 먼저 다시 짤 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s10-4 드릴 여섯 조각이 과의 약 3분의 1 만 덮음 · 해라체. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음 — 되살리면 먼저 다시 짤 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1698": {
    "status": "고침",
@@ -15826,11 +16020,12 @@
    "batch": 35
   },
   "6-1699": {
-   "status": "보류",
-   "reason": "보류 G12 — s10-5 드릴 짝(학교와 학원 정규 일정의 끝 ↔ the end of the normal schedule) · 조각이 문장을 다 못 만듦 · 사전형. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s10-5 드릴 짝(학교와 학원 정규 일정의 끝 ↔ the end of the normal schedule) · 조각이 문장을 다 못 만듦 · 사전형. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1700": {
    "status": "고침",
@@ -15863,46 +16058,52 @@
    "batch": 35
   },
   "6-1703": {
-   "status": "보류",
-   "reason": "보류 G12 — s12-1 드릴 차례(마지막 문장 끝 두 조각이 맨 앞) · 드릴 한국어 '우리가 어떤 것들을 할'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음(지적의 'LessonBody.tsx 가 차례대로 그린다' 는 지금 코드와 다름 — STUDENT 는 StudentLearningView 로 가고 chunkDrills 를 넘기지 않음).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s12-1 드릴 차례(마지막 문장 끝 두 조각이 맨 앞) · 드릴 한국어 '우리가 어떤 것들을 할'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음(지적의 'LessonBody.tsx 가 차례대로 그린다' 는 지금 코드와 다름 — STUDENT 는 StudentLearningView 로 가고 chunkDrills 를 넘기지 않음).",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1704": {
-   "status": "보류",
-   "reason": "보류 G12 — s12-1 드릴 '우리의 방학에 관해'(my · during 어긋남). 화면 문단은 이미 '나의 방학 동안에'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s12-1 드릴 '우리의 방학에 관해'(my · during 어긋남). 화면 문단은 이미 '나의 방학 동안에'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1705": {
-   "status": "보류",
-   "reason": "보류 G12 — s12-1 드릴에 #4 의 두 동사구(begins in July · begins in December)가 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음 — 되살리면 먼저 채울 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s12-1 드릴에 #4 의 두 동사구(begins in July · begins in December)가 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음 — 되살리면 먼저 채울 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1706": {
-   "status": "보류",
-   "reason": "보류 G12 — s12-2 드릴 차례(#4 끝 두 조각 뒤바뀜 · 마지막 문장 끝 두 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s12-2 드릴 차례(#4 끝 두 조각 뒤바뀜 · 마지막 문장 끝 두 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1707": {
-   "status": "보류",
-   "reason": "보류 G12 — s12-4 드릴 '해외가 본적이 있습니다.'. 화면 문단은 이미 '외국으로 나가 본 적이 있습니다'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s12-4 드릴 '해외가 본적이 있습니다.'. 화면 문단은 이미 '외국으로 나가 본 적이 있습니다'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1708": {
-   "status": "보류",
-   "reason": "보류 G12 — s12-4 드릴에 'for three years' 조각이 없음 · '선생님으로 부터'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s12-4 드릴에 'for three years' 조각이 없음 · '선생님으로 부터'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1709": {
    "status": "고침",
@@ -15911,7 +16112,8 @@
     "content/lessons/student/s13-1.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1710": {
    "status": "고침",
@@ -15920,14 +16122,16 @@
     "content/lessons/student/s13-1.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1711": {
-   "status": "보류",
-   "reason": "보류 G12 — s13-1 드릴 '이 (역사적으로) 유명한 책들로 부터'. 화면 문단은 이미 '이러한 역사책들을 통해서'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s13-1 드릴 '이 (역사적으로) 유명한 책들로 부터'. 화면 문단은 이미 '이러한 역사책들을 통해서'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1712": {
    "status": "고침",
@@ -15936,7 +16140,8 @@
     "content/lessons/student/s14-1.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1713": {
    "status": "고침",
@@ -15958,25 +16163,28 @@
    "restore0923": "원본 되살리기: s14-2 #5 를 원본 He/She 로 되살려 '그는/그녀는 우리가 알아야 하는 것을 … 잘하십니다'(이 고침은 남음)."
   },
   "6-1715": {
-   "status": "보류",
-   "reason": "보류 G12 — s14-2 드릴에 여섯 조각(82자)이 없어 네 문장을 못 만듦. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 다시 짤 목록(지적의 'LessonBody.tsx 가 차례대로 그린다' 는 지금 코드와 다름).",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s14-2 드릴에 여섯 조각(82자)이 없어 네 문장을 못 만듦. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음 — 되살리면 먼저 다시 짤 목록(지적의 'LessonBody.tsx 가 차례대로 그린다' 는 지금 코드와 다름).",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1716": {
-   "status": "보류",
-   "reason": "보류 G12 — s14-2 드릴 차례(마지막 문장 첫 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s14-2 드릴 차례(마지막 문장 첫 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1717": {
-   "status": "보류",
-   "reason": "보류 G12 — s14-3 드릴 경계 'my dream and help' · '나의 꿈을 그리고 도울 수 있을 것입니다.'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s14-3 드릴 경계 'my dream and help' · '나의 꿈을 그리고 도울 수 있을 것입니다.'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1718": {
    "status": "고침",
@@ -15985,7 +16193,8 @@
     "content/lessons/student/s15-1.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1719": {
    "status": "고침",
@@ -15994,14 +16203,16 @@
     "content/lessons/student/s15-2.json"
    ],
    "clip": "필요",
-   "batch": 35
+   "batch": 35,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1720": {
-   "status": "보류",
-   "reason": "보류 G12 — s15-2 드릴 '(히딩크), 거스 히딩크이다.' · 드릴 차례. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s15-2 드릴 '(히딩크), 거스 히딩크이다.' · 드릴 차례. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1721": {
    "status": "고침",
@@ -16013,11 +16224,12 @@
    "batch": 35
   },
   "6-1722": {
-   "status": "보류",
-   "reason": "보류 G12 — s15-3 드릴에 'during the 2002 World Cup.' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s15-3 드릴에 'during the 2002 World Cup.' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1723": {
    "status": "고침",
@@ -16030,18 +16242,20 @@
    "batch": 35
   },
   "6-1724": {
-   "status": "보류",
-   "reason": "보류 G12 — s16-2 드릴 차례(마지막 문장 열 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s16-2 드릴 차례(마지막 문장 열 조각이 맨 앞). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1725": {
-   "status": "보류",
-   "reason": "보류 G12 — s16-2 드릴 '나는 통역하기를 원합니다.' ↔ translate(번역). 화면 문단 #4 는 이미 '번역하고 싶습니다'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s16-2 드릴 '나는 통역하기를 원합니다.' ↔ translate(번역). 화면 문단 #4 는 이미 '번역하고 싶습니다'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1726": {
    "status": "고침",
@@ -16062,18 +16276,20 @@
    "batch": 35
   },
   "6-1728": {
-   "status": "보류",
-   "reason": "보류 G12 — s16-3 드릴 차례(#3 이 맨 앞) · 'every day' 조각 빠짐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s16-3 드릴 차례(#3 이 맨 앞) · 'every day' 조각 빠짐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 35
+   "batch": 35,
+   "stage7": "7-4 f"
   },
   "6-1729": {
-   "status": "보류",
-   "reason": "보류 G12 — s16-3 드릴 '영어로 공부할' (study English = 영어를 공부하다). 화면 문단은 이미 '영어공부를'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s16-3 드릴 '영어로 공부할' (study English = 영어를 공부하다). 화면 문단은 이미 '영어공부를'. 드릴은 표시되지 않는 데이터(BUG-024, 소유자 '데이터 그대로')라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1730": {
    "status": "고침",
@@ -16094,11 +16310,12 @@
    "batch": 5
   },
   "6-1732": {
-   "status": "보류",
-   "reason": "보류 G12 — s17-1 드릴에 #2 의 서술 조각이 없음(문장은 배치 5 의 6-1731 이 'According to legend, … more than 4,000 years ago.' 로 고침 — 드릴을 되살리면 그 글로). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s17-1 드릴에 #2 의 서술 조각이 없음(문장은 배치 5 의 6-1731 이 'According to legend, … more than 4,000 years ago.' 로 고침 — 드릴을 되살리면 그 글로). 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1733": {
    "status": "고침",
@@ -16129,14 +16346,16 @@
     "content/lessons/student/s17-4.json"
    ],
    "clip": "필요",
-   "batch": 36
+   "batch": 36,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1736": {
-   "status": "보류",
-   "reason": "보류 G12 — s17-4 드릴 차례 · 연도 조각 넷(1953 · 1970s · 1988 · 2002) 빠짐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음 — 되살리면 먼저 다시 짤 목록.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s17-4 드릴 차례 · 연도 조각 넷(1953 · 1970s · 1988 · 2002) 빠짐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음 — 되살리면 먼저 다시 짤 목록.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1737": {
    "status": "고침",
@@ -16148,11 +16367,12 @@
    "batch": 36
   },
   "6-1738": {
-   "status": "보류",
-   "reason": "보류 G12 — s18-2 드릴에 'as a gesture of' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s18-2 드릴에 'as a gesture of' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1739": {
    "status": "고침",
@@ -16161,7 +16381,8 @@
     "content/lessons/student/s18-2.json"
    ],
    "clip": "필요",
-   "batch": 36
+   "batch": 36,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1740": {
    "status": "고침",
@@ -16189,7 +16410,8 @@
     "content/lessons/student/s19-1.json"
    ],
    "clip": "필요",
-   "batch": 36
+   "batch": 36,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1743": {
    "status": "고침",
@@ -16207,7 +16429,8 @@
     "content/lessons/student/s19-2.json"
    ],
    "clip": "필요",
-   "batch": 36
+   "batch": 36,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1745": {
    "status": "고침",
@@ -16229,11 +16452,12 @@
    "batch": 36
   },
   "6-1747": {
-   "status": "보류",
-   "reason": "보류 G12 — s20-1 드릴에 'by three seas:' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s20-1 드릴에 'by three seas:' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1748": {
    "status": "고침",
@@ -16263,7 +16487,8 @@
     "content/lessons/student/s20-3.json"
    ],
    "clip": "필요",
-   "batch": 36
+   "batch": 36,
+   "drill7c": "드릴 부분은 소유자 결정(2026-09-23, 7-4 c '2번 다 지워')으로 청크 드릴 데이터를 지워 닫힘"
   },
   "6-1751": {
    "status": "고침",
@@ -16275,18 +16500,20 @@
    "batch": 36
   },
   "6-1752": {
-   "status": "보류",
-   "reason": "보류 G12 — s20-4 드릴 차례 · #1 조각 없음 · 'during the 8th century.' 빠짐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s20-4 드릴 차례 · #1 조각 없음 · 'during the 8th century.' 빠짐. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1753": {
-   "status": "보류",
-   "reason": "보류 G12 — s20-4 드릴 '신라왕국의 가장오래된 수도입니다.'(가장 = oldest 가 영어에 없음). 화면 문단은 '신라왕국의 오래된 수도입니다'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s20-4 드릴 '신라왕국의 가장오래된 수도입니다.'(가장 = oldest 가 영어에 없음). 화면 문단은 '신라왕국의 오래된 수도입니다'. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1754": {
    "status": "고침",
@@ -16325,11 +16552,12 @@
    "batch": 36
   },
   "6-1758": {
-   "status": "보류",
-   "reason": "보류 G12 — s20-5 드릴에 #4 'I like going to Mt. Halla.' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
+   "status": "고침",
+   "reason": "소유자 결정 2026-09-23 (결정표 22번 → 7-4 c(BUG-024) 소유자 답 '2번 다 지워') → STUDENT 청크 드릴 데이터(chunkDrills)를 82과에서 지움 — 이 지적이 가리키던 틀린 드릴 조각이 사이트 데이터에서 사라짐(scripts/student-drop-chunk-drills.mjs · 82과 1,103조각 · 되돌리려면 950417d 의 chunkDrills) | 보류 때: 보류 G12 — s20-5 드릴에 #4 'I like going to Mt. Halla.' 조각이 없음. 드릴은 표시되지 않는 데이터(BUG-024)라 고치지 않음.",
    "files": [],
    "clip": "불필요",
-   "batch": 36
+   "batch": 36,
+   "stage7": "7-4 f"
   },
   "6-1759": {
    "status": "대상 아님",

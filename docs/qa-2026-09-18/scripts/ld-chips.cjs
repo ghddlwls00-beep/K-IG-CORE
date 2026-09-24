@@ -48,17 +48,41 @@ if (args[0] === "--dupes") {
   process.exit(dup && !old ? 1 : 0);
 }
 const show =(k, c) => `${k.padEnd(9)} ${c.all ? "[전체] " : ""}${c.chips.length ? c.chips.map((x) => `「${x}」`).join(" ") : "(칩 없음)"}\n          ${c.sentence}`;
+/** --all: 본 페이지(dNNN)마다 대본의 모든 행 — 7단계 7-5 가 2,217행 전후를 견줄 때 */
+const allKeys = () => fs.readdirSync(path.join(REPO, "content/lessons/ld")).filter((f) => /^d\d{3}\.json$/.test(f)).sort()
+  .flatMap((f) => (S[f.slice(0, 4)] || []).map((r) => `${f.slice(0, 4)}:${r.n}`));
+const LONG = 5;
+const wordsOf = (chip) => String(chip).split(/\s+/).filter(Boolean);
+const key = (w) => String(w).toLowerCase().replace(/[’]/g, "'").replace(/[^a-z0-9']/g, "");
 if (args[0] === "--diff") {
   const before = JSON.parse(fs.readFileSync(args[1], "utf8"));
+  const SUMMARY = args.includes("--summary");
+  // 기능어(관사 · 전치사 · 접속사 · 대명사 · be · 소사)는 힌트 항목이 아니라 구절의 이음새 — 따로 센다(0 이 아니어도 실패 아님)
+  const FUNCTION = new Set("a an the of in on at to for from by with into onto and or but nor as is are was were be been it its his her their our your my him them this that these those up out off down over".split(" "));
+  let same = 0, changed = 0, longRowsBefore = 0, longRowsAfter = 0, lostRows = 0, lostFnRows = 0;
+  const lost = [];
   for (const [k, b] of Object.entries(before)) {
     const [id, n] = k.split(":");
     const a = chips(id, n);
-    const same = JSON.stringify(a.chips) === JSON.stringify(b.chips);
-    console.log(`${same ? "같음" : "바뀜"}  ${k}\n   전: ${b.all ? "[전체] " : ""}${b.chips.map((x) => `「${x}」`).join(" ") || "(칩 없음)"}\n   후: ${a.all ? "[전체] " : ""}${a.chips.map((x) => `「${x}」`).join(" ") || "(칩 없음)"}\n   문장: ${a.sentence}`);
+    const isSame = JSON.stringify(a.chips) === JSON.stringify(b.chips);
+    if (isSame) same++; else changed++;
+    if (b.chips.some((c) => wordsOf(c).length >= LONG)) longRowsBefore++;
+    if (a.chips.some((c) => wordsOf(c).length >= LONG)) longRowsAfter++;
+    // 그 행 문장에 든 힌트 낱말이 전에는 칩으로 떴는데 이제 안 뜨는가 — 0 이어야 함(명령서 7-5)
+    const sentence = new Set(wordsOf(a.sentence || "").map(key));
+    const afterWords = new Set(a.chips.flatMap(wordsOf).map(key));
+    const goneAll = [...new Set(b.chips.flatMap(wordsOf).map(key))].filter((w) => w && sentence.has(w) && !afterWords.has(w));
+    const gone = goneAll.filter((w) => !FUNCTION.has(w));
+    if (gone.length) { lostRows++; lost.push(`${k} 빠짐 ${gone.join(", ")}`); }
+    else if (goneAll.length) lostFnRows++;
+    if (!SUMMARY) console.log(`${isSame ? "같음" : "바뀜"}  ${k}\n   전: ${b.all ? "[전체] " : ""}${b.chips.map((x) => `「${x}」`).join(" ") || "(칩 없음)"}\n   후: ${a.all ? "[전체] " : ""}${a.chips.map((x) => `「${x}」`).join(" ") || "(칩 없음)"}\n   문장: ${a.sentence}`);
   }
+  console.log(`${Object.keys(before).length}행 — 같음 ${same} · 바뀜 ${changed} · ${LONG}낱말 이상 칩이 뜨는 행 ${longRowsBefore} → ${longRowsAfter} · 문장에 든 힌트 낱말이 칩에서 빠진 행 ${lostRows} (기능어만 빠진 행 ${lostFnRows} — 따로 셈)`);
+  for (const l of lost.slice(0, 40)) console.log(`  ${l}`);
+  process.exit(lostRows ? 1 : 0);
 } else {
   const save = args[0] === "--save" ? args[1] : null;
-  const keys = save ? args.slice(2) : args;
+  const keys = save ? (args.includes("--all") ? allKeys() : args.slice(2)) : (args.includes("--all") ? allKeys() : args);
   const out = {};
   for (const k of keys) { const [id, n] = k.split(":"); out[k] = chips(id, n); if (!save) console.log(show(k, out[k])); }
   if (save) { fs.writeFileSync(save, JSON.stringify(out, null, 1)); console.log(`저장 ${keys.length}행 → ${save}`); }

@@ -28,7 +28,7 @@
   "to": "그의 발견들은 의학에 있어서 큰 진보가 이루어질 수 있게 했다.", "expect": 1},
  {"item": "6-0318 d200 hints", "files": ["content/lessons/ld/d200.json"],
   "from": "world of a drop of water lenses. forerunner modern microscope enabled",
-  "to": "world of a drop of water single powerful lens. discoveries enabled", "expect": 1},
+  "to": "world of a drop of water single powerful lens. discoveries enabled", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
 
  {"item": "6-0321 d201 n2 EN (제목 'The Lady, or the Tiger?' — 쉼표·물음표 때문에 이 한 행만 따옴표)", "files": ["content/ld_english_scripts.json"],
   "from": "This story, The Lady or the Tiger, is about a curious form of punishment.",

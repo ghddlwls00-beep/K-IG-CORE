@@ -75,6 +75,7 @@ for (const id of ids) {
   for (const x of r.diffs) {
     const row = { lesson: id, kind: x.kind, text: x.text };
     if (x.original && x.kind !== "짝") row.original = x.original;
+    if (x.kind === "한국어") row.en = x.en; // 사람이 읽을 때 어느 문장의 번역인지
     const kept = old.find((o) => o.lesson === id && o.kind === x.kind && o.text === x.text && o.why && !/근거 못 찾음/.test(o.why));
     if (kept) { row.why = kept.why; if (kept.original && x.kind === "더함") row.original = kept.original; out.push(row); continue; }
     let why = "";
@@ -85,6 +86,11 @@ for (const id of ids) {
       why = x.why0;
     } else if (x.kind === "차례") {
       why = `차례 ${x.order} — 근거 못 찾음`;
+    } else if (x.kind === "한국어") { // 7-1 j: 지금 한국어를 들인 커밋 · 계획 줄(원본 한국어는 original)
+      const c = firstCommit(x.text); const p = planFor(x.text);
+      const src = c ? `커밋 ${c.split("|")[0]} (${c.split("|")[1]}) ${c.split("|")[2].slice(0, 60)}` : "아직 커밋 전(작업 트리)";
+      why = `${src}${p ? ` · 계획 ${p.file} '${p.item}'` : ""}`;
+      if (!c && !p) why += " · 근거 못 찾음";
     } else {
       if (x.kind === "더함") { // 원본 swf 에 따로 있는 줄(소개 문장 등)이면 그 줄을 original 로
         let best = null, bv = 0; for (const l of r.lines) { const v = sim(x.text, l); if (v > bv) { bv = v; best = l; } }

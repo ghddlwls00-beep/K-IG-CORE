@@ -12,9 +12,9 @@
   "from": "할아버지께서 몇 년 전에 돌아가셨기 때문에 나의 할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.",
   "to": "외할아버지께서 몇 년 전에 돌아가셨기 때문에 나의 외할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.", "expect": 1, "supersededBy": "stage6-student-c"},
  {"item": "6-1651 s4-4 청크(화면에 안 쓰임, 자료 맞춤)", "files": ["content/lessons/student/s4-4.json"],
-  "from": "나의 할아버지가 돌아가셨기 때문에", "to": "나의 외할아버지가 돌아가셨기 때문에", "expect": 1},
+  "from": "나의 할아버지가 돌아가셨기 때문에", "to": "나의 외할아버지가 돌아가셨기 때문에", "expect": 1, "gone": "\"chunkDrills\"", "supersededBy": "stage7-7-4c-drill-drop", "note": "청크 드릴 데이터를 지움(BUG-024 소유자 결정 2026-09-23)"},
  {"item": "6-1651 s4-4 청크", "files": ["content/lessons/student/s4-4.json"],
-  "from": "나의 할머니는 사십니다", "to": "나의 외할머니는 사십니다", "expect": 1},
+  "from": "나의 할머니는 사십니다", "to": "나의 외할머니는 사십니다", "expect": 1, "gone": "\"chunkDrills\"", "supersededBy": "stage7-7-4c-drill-drop"},
 
  {"item": "6-1670 s6-3 #1 — 서울·광역시 출신이면 province 가 틀림. 한국어 '(지역)' 과 맞춤", "files": ["content/lessons/student/s6-3.json"],
   "from": "My teacher is from (Name) province.", "to": "My teacher is from (Name).", "expect": 1},

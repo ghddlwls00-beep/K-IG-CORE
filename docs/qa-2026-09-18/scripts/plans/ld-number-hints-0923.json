@@ -16,6 +16,6 @@
  {"item": "51 d131 n1", "files": ["content/lessons/ld/d131.json"], "from": "four cabins.", "to": "4 cabins.", "expect": 1},
  {"item": "51 d132 n6", "files": ["content/lessons/ld/d132.json"], "from": "complicated two minutes", "to": "complicated 2 minutes", "expect": 1},
  {"item": "51 d146 n5", "files": ["content/lessons/ld/d146.json"], "from": "mail five letters", "to": "mail 5 letters", "expect": 1},
- {"item": "51 d175 n7", "files": ["content/lessons/ld/d175.json"], "from": "45 measure nine feet.", "to": "45 measure 9 feet.", "expect": 1, "supersededBy": "f35e8be", "note": "4·5단계 커밋 때부터 힌트가 '45 measure. 9 feet. …' — 같은 커밋 안 다른 고침이 덮음(6단계 · 되살리기와 무관)"}
+ {"item": "51 d175 n7", "files": ["content/lessons/ld/d175.json"], "from": "45 measure nine feet.", "to": "45 measure 9 feet.", "expect": 1, "nowText": "45 measure. 9 feet.", "supersededBy": "f35e8be", "note": "4·5단계 커밋 때부터 힌트가 '45 measure. 9 feet. …' — 같은 커밋 안 다른 고침이 덮음(6단계 · 되살리기와 무관)"}
 ]
 

@@ -20,15 +20,25 @@
  *     text, off-screen and sub-24px controls, unlabeled fields
  *
  *   node drive-generic.cjs --course reading [--ids pr001,pr002] [--limit N]
- *        [--viewports desktop,tablet,mobile] [--shard 1/4] [--suffix -v1] [--port 9500]
+ *        [--viewports desktop,tablet,mobile] [--shard 1/4] [--suffix -v1] [--port 9500] [--resume | --redo]
  *
- * Output: out/features/<course><suffix>.jsonl (resumable), out/rendered/<course>/<id>.<viewport>.json
+ * Output: out/features/<course><suffix>.jsonl, out/rendered/<course>/<id>.<viewport>.json
+ *
+ * 이미 한 방문(7단계 7-1 l — 전에는 같은 과정의 다른 기록 파일에 있는 방문을 모두 "이미 함" 으로 쳐서, 새 --suffix · --ids 로
+ * 몇 강만 다시 보려 해도 "0 … visits to do (246 already done)" 를 찍고 한 강도 안 본 채 exit 0 이었다 — 2026-09-23 실제로 그렇게 됨):
+ *   기본       이 기록 파일(<course><suffix>.jsonl)이 비어 있어야 하고, 다른 파일의 방문은 세지 않는다 — 부른 강의를 모두 본다.
+ *              이 파일에 이미 방문이 있으면 멈춤(exit 1): 이어 하기인지 새로 하기인지 이름으로 고르게.
+ *   --resume   이어 하기: 이 파일과 같은 과정의 다른 기록(<course>.jsonl · <course>-sN.jsonl)의 방문을 "이미 함" 으로(옛 기본 — 샤드 이어 하기도 이것).
+ *   --redo     새로 하기: 이 파일에 있던 기록은 옆 이름(.before-redo-<시각>)으로 남기고 빈 파일에서 시작.
+ *   할 일이 0 이 되면 크게 찍고 exit 1 — --resume 없이 · 또는 --ids 를 주었을 때(주었는데 볼 것이 0 이면 뭔가 잘못 부른 것).
+ *   --resume 이고 --ids 가 없을 때만 "남은 방문 0 — 이미 다 함" 으로 exit 0.
  */
 const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
 const C = require("./lib/containers.cjs");
+const { contentCheck } = require("./lib/content-check.cjs");
 
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const COURSE = arg("--course", null);
@@ -38,6 +48,8 @@ const VIEWPORTS = arg("--viewports", "desktop,tablet,mobile").split(",");
 const SUFFIX = arg("--suffix", "");
 const SHARD = arg("--shard", null);
 const REDO = process.argv.includes("--redo");
+const RESUME = process.argv.includes("--resume");
+if (REDO && RESUME) throw new Error("--redo 와 --resume 은 함께 쓸 수 없음");
 const PORT = Number(arg("--port", 9500));
 const CLONE = arg("--clone", `gen-${COURSE}${SHARD ? `-${SHARD.split("/")[0]}` : ""}`);
 // Bookmark/completion persistence needs 4 extra page loads; run it on every Nth lesson.
@@ -50,8 +62,12 @@ const MAX_PLAY = Number(arg("--max-play", 60));
 const WALK_AUDIO = arg("--walk-audio", "all");
 if (!COURSE) throw new Error("--course is required");
 
-const OUT = path.join(__dirname, "../out");
+// 7단계: --out-root <dir> 로 기록 · 화면 스냅숏을 다른 곳에(로컬 빌드를 돌린 기록이 운영 기록 옆에 섞이지 않게). 기본은 그대로 out/.
+const OUT = path.resolve(arg("--out-root", path.join(__dirname, "../out")));
 const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
+// 7단계 7-1 m: stamped on every record — build-coverage reads a stamped record by today's rules (the tile routine's results are the
+// product's, the typed-input line of a tile page is NA); records without it are read by the rules of their day.
+const DRIVER_REV = "7-1m";
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -230,13 +246,51 @@ async function pressAudio(tab, expr, stepLabel, exp, out) {
   });
 }
 
-async function gradedInputs(tab, exp, checks, maxFields = 12) {
+/**
+ * 7단계 7-1 m (3차 점검): a LISTENING MAIN page also takes a TYPED answer ('⌨️ 직접 키보드 타이핑 모드'), graded by
+ * typedDictationMatches — which 7-4 f G1 changed — and the browser had checked it on one page (d016). On the desktop pass,
+ * answer sentence 1 by typing: the right sentence must be accepted and a wrong one refused. The verdict is read from the
+ * view's own banners (the generic reader would take '✓ 정답 채점하기' — the button — for a '정답' verdict).
+ */
+async function typedDictation(tab, exp, checks) {
+  // Which sentence is the drill on? The every-control pass before this has usually moved it (the first try typed sentence 1
+  // into sentence 2+ and reported the right answer as refused). The view prints 'SENTENCE k OF n'.
+  const idx = await tab.eval(`(() => { const m = ((document.querySelector('main') || document.body).innerText || '').match(/SENTENCE\\s+(\\d+)\\s+OF\\s+(\\d+)/i); return m ? Number(m[1]) - 1 : 0; })()`).catch(() => 0);
+  const ans = (exp.answers || [])[idx];
+  if (!ans) return false;
+  const btn = (re) => `[...document.querySelectorAll('main button')].find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ').trim()))`;
+  // the verdict printed under the typing box (after its label '직접 듣고 영문 타이핑:')
+  const banner = async () => (await tab.eval(`(() => { const m = document.querySelector('main'); let t = m ? m.innerText : ''; const at = t.indexOf('직접 듣고 영문 타이핑'); if (at >= 0) t = t.slice(at); const hit = t.match(/[^\\n]{0,40}(정답입니다|훌륭한 청취력|정확히 청취|순서가 조금 다릅니다|다시 시도|오답|일치하지 않습니다)[^\\n]{0,60}/); return hit ? hit[0].replace(/\\s+/g, ' ').trim() : null; })()`).catch(() => null));
+  // the dictation input by its own placeholder — the first field on this step can be RiddleAnswer's box (LdLearningView), and typing
+  // there left the dictation empty: the first try graded an empty answer and reported the right sentence as refused
+  const field = `[...(document.querySelector('main') || document.body).querySelectorAll('input')].find((el) => /들리는 영문장/.test(el.placeholder || ''))`;
+  const trial = async (text) => {
+    const ok = await H.type(tab, field, text);
+    if (!ok) return { typed: false, feedback: null };
+    await H.click(tab, btn(/정답 채점하기/), { settle: 600 });
+    return { typed: true, feedback: await banner() };
+  };
+  const right = await trial(ans.text);
+  const wrong = await trial("zzz qqq xxx");
+  const accepted = (r) => !!r.feedback && /정답입니다|훌륭한 청취력|정확히 청취/.test(r.feedback);
+  const status = !right.typed || !wrong.typed ? "BLOCKED" : accepted(right) && !accepted(wrong) ? "PASS" : "FAIL";
+  checks.push({ feature: "graded input", item: `typed dictation · 문장 ${idx + 1}`, status, note: `correct→${right.feedback || (right.typed ? "no feedback" : "field not typable")} | wrong→${wrong.feedback || (wrong.typed ? "no feedback" : "field not typable")}`, expected: String(ans.text).slice(0, 80) });
+  return true;
+}
+
+async function gradedInputs(tab, exp, checks, maxFields = 12, course = null) {
   const fields = (await tab.eval(FIELDS).catch(() => [])) || [];
   if (!fields.length) return;
+  // LISTENING main page, desktop pass, typing mode on screen: test the typed answer once (7-1 m) — the NA line below is for the rest
+  if (course === "ld" && exp.variant !== "script" && maxFields === 12 && !checks.some((c) => c.feature === "graded input" && /^typed dictation/.test(String(c.item)))) {
+    if (await typedDictation(tab, exp, checks)) return;
+  }
   // LISTENING and STUDENT are answered by tapping word TILES, not by typing: typing into
   // whatever field is on screen would be a false failure. Their grading is covered by the
   // offline grader harness and by the tile routine.
-  if (exp.tileAnswers) { checks.push({ feature: "graded input", item: "tile dictation", status: "BLOCKED", note: "tile-based answering — checked by grade-offline.cjs and the tile routine, not by typing" }); return; }
+  // 7단계 7-1 l · m: not 'could not check' (BLOCKED, 9/17 ~ 9/24) but 'not applicable here — another check covers it'. build-coverage
+  // counts it covered only when this SAME record holds `coveredBy` as PASS; otherwise the lesson is BLOCKED 'NA 인데 대신 본 기록 없음'.
+  if (exp.tileAnswers) { checks.push({ feature: "graded input", item: "tile dictation", status: "NA", coveredBy: "tile dictation", note: "tile-based answering — answered by tapping tiles, not typing; the tile routine (tile dictation) and grade-offline.cjs check it" }); return; }
   const answers = exp.answers;
   const controls = withNth((await tab.eval(listControls("")).catch(() => [])) || []);
   const checkBtn = controls.find((c) => CHECK_RE.test(c.text + c.aria) && !SKIP_CLICK.test(c.text + c.aria));
@@ -288,12 +342,24 @@ function withNth(list) {
 async function solveTiles(tab, exp, checks, stepLabel) {
   const target = (exp.answers[0] || {}).text;
   if (!target && !exp.tileWordsAll) return;
+  // 7단계 7-1 b: is this the dictation step at all? The bank carries its own label (STUDENT "단어 보관함",
+  // LISTENING "단어 블록 뱅크"). On that step, start from a clean box BEFORE choosing the sentence — s14-1 had a
+  // tile already sitting in the answer box, so no sentence "fit" the bank and the routine returned without a
+  // word: no PASS, no BLOCKED, the lesson simply had no dictation result.
+  // 7단계 7-1 m: LISTENING can be switched to typing ('⌨️ 직접 키보드 타이핑 모드'), and this driver's own every-control loop presses
+  // that switch on the initial screen — so on every LISTENING MAIN page the dictation step was in typing mode when this ran: no bank,
+  // nothing assembled, nothing recorded (276 main pages, desktop: never one tile dictation record). Switch back to the tiles first.
+  const toTiles = `[...document.querySelectorAll('main button')].find((b) => /블록 탭 모드로 전환/.test((b.innerText || '').replace(/\\s+/g, ' ')))`;
+  if (await tab.eval(`Boolean(${toTiles})`).catch(() => false)) await H.click(tab, toTiles, { settle: 500 });
+  const hasBank = await tab.eval(`/단어 보관함|단어 블록 뱅크/.test((document.querySelector('main') || document.body).innerText || '')`).catch(() => false);
+  if (hasBank) await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /초기화|다시 풀기|리셋/.test((b.innerText || '').replace(/\\s+/g, ' ')))`, { settle: 500 });
   // Which sentence is the drill actually on? Controls pressed earlier in this step can advance it,
   // so ask the page: take the sentence whose tiles are ALL sitting in the bank right now. Assuming
   // the first sentence left STUDENT assembling two stray words out of six.
   const candidates = exp.tileWordsAll && exp.tileWordsAll.length
     ? exp.tileWordsAll
     : [String(target).replace(/[^\w'\u2019\s-]/g, " ").split(/\s+/).filter(Boolean)];
+  const blockedNoFit = (why) => { if (hasBank) checks.push({ feature: "tile dictation", item: `${stepLabel} · (문장 못 고름)`, status: "BLOCKED", note: why }); };
   const pick = await tab.eval(`(() => {
     const vis = ${VIS};
     const main = document.querySelector('main') || document.body;
@@ -311,9 +377,11 @@ async function solveTiles(tab, exp, checks, stepLabel) {
     }
     return -1;
   })()`).catch(() => -1);
-  if (pick < 0) return;                      // this step is not showing a tile bank we can solve
+  if (pick < 0) return blockedNoFit("보관함은 있는데 어느 문장의 타일도 보관함에 다 있지 않음(초기화 뒤)"); // not a dictation step → nothing recorded
   const words = candidates[pick];
-  if (words.length < 2 || words.length > 25) return;
+  // 7단계 7-1 b: the ceiling was 25 (9/18, no reason written down) — it silently skipped STUDENT s14-1 #2 (27 words) and would skip
+  // 8 STUDENT sentences (up to 29) and 236 LISTENING rows (up to 58, d237 #4). 60 covers every sentence the app builds a bank for.
+  if (words.length < 2 || words.length > 60) return blockedNoFit(`고른 문장의 낱말 ${words.length}개 — 2~60 밖이라 조립하지 않음`);
   const tiles = await tab.eval(`(() => {
     const vis = ${VIS};
     const main = document.querySelector('main') || document.body;
@@ -321,34 +389,42 @@ async function solveTiles(tab, exp, checks, stepLabel) {
       .map((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim())
       .filter((t) => t && t.length <= 25 && !/\\s/.test(t) && !/[가-힣]/.test(t) && !/^[\\p{Emoji}\\p{P}]+$/u.test(t)).length;
   })()`).catch(() => 0);
-  if (!tiles || tiles < words.length) return; // not the dictation step (or not enough tiles)
+  if (!tiles || tiles < words.length) return blockedNoFit(`보관함 타일 ${tiles} < 문장 낱말 ${words.length}`); // not the dictation step (or not enough tiles)
   // Only ever tap a tile that is still in the WORD BANK. A tile already placed in the assembled
   // sentence is also a button carrying the same word, and tapping it REMOVES that word
   // (LdLearningView handleRemoveTile / StudentLearningView handleRemoveTile). Picking those up
   // made the audit assemble a different sentence from the one it thought it was assembling, and
   // then report the app as marking a correct answer wrong. Both views mark a placed tile with a
   // ✕, and LISTENING also gives it title="클릭하여 되돌리기".
+  /**
+   * 7단계 7-1 b — a tile is chosen by its PLACE in the word bank, not by its text alone.
+   * STUDENT's bank does not remove a tapped tile: it stays where it was, `disabled` and faded
+   * (StudentLearningView — `disabled={isSelected}`). The old rule, "the LAST visible button with
+   * this text", therefore picked the already-used tile on a word the sentence needs twice; the
+   * tap did nothing, the top-up tapped the same dead tile again, and the lesson ended BLOCKED
+   * (9/18: STUDENT tile dictation BLOCKED 69 of 82). LISTENING removes a tapped tile from its
+   * bank (LdLearningView handleSelectTile), so there both rules agree.
+   * Now: list the bank's tiles in screen order, skip every tile that is already used (disabled /
+   * aria-disabled) or sits in the answer box (✕ · "되돌리기"), and tap the FIRST place that
+   * holds the word. The answer box is excluded by that marker, so first vs last no longer matters.
+   */
   const clickTile = async (word) => H.click(tab, `(() => {
     const vis = ${VIS};
     const main = document.querySelector('main') || document.body;
     const norm = (s) => s.replace(/[^\\w'\\u2019-]/g, '').toLowerCase();
     const want = ${JSON.stringify(word)};
-    // Identify the ANSWER BOX by its own label and exclude everything inside it, instead of
-    // guessing from a ✕ in the button text. A word the sentence needs twice was being taken as
-    // already placed on its second turn, so every repeated word went missing.
     const placed = (b) => /✕|✖/.test(b.innerText || '') || /되돌리|보관함으로/.test(b.getAttribute('title') || '');
-    // Take the LAST match, not the first: the answer box is rendered above the word bank, so on a
-    // word the sentence uses twice the first match could still be the tile already placed and the
-    // tap removed it again (the count oscillated instead of settling).
-    const hits = [...main.querySelectorAll('button')].filter(vis).filter((b) => !placed(b) && norm((b.innerText || '')) === norm(want));
-    return hits.length ? hits[hits.length - 1] : null;
+    const used = (b) => b.disabled || b.getAttribute('aria-disabled') === 'true';
+    const bank = [...main.querySelectorAll('button')].filter(vis).filter((b) => !placed(b));
+    const place = bank.findIndex((b) => !used(b) && norm(b.innerText || '') === norm(want));
+    return place >= 0 ? bank[place] : null;
   })()`, { settle: 250 });
   // Match the verdict BANNERS the two views actually render, not loose keywords: "다시" alone also
   // occurs in the Korean translation printed on the same page, which made a correct answer read
   // as a wrong one.
   const feedback = async () => (await tab.eval(`(() => {
     const m = document.querySelector('main'); const t = (m ? m.innerText : '');
-    const hit = t.match(/[^\\n]{0,60}(정답입니다|훌륭한 청취력|정확히 청취|순서가 조금 다릅니다|다시 시도|오답)[^\\n]{0,60}/);
+    const hit = t.match(/[^\\n]{0,60}(정답입니다|훌륭한 청취력|정확히 청취|순서가 조금 다릅니다|다시 시도|오답|일치하지 않습니다)[^\\n]{0,60}/);
     return hit ? hit[0].replace(/\\s+/g, ' ').trim() : null;
   })()`).catch(() => null));
   const press = async (re) => H.click(tab, `[...document.querySelectorAll('main button')].find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ')))`, { settle: 500 });
@@ -404,7 +480,7 @@ async function solveTiles(tab, exp, checks, stepLabel) {
   for (const w of [...words].reverse()) await clickTile(w);
   await press(/정답 확인|확인|채점/);
   const bad = await feedback();
-  const accepted = (f) => !!f && /정답입니다|훌륭한 청취력|정확히 청취/.test(f) && !/순서가 조금 다릅니다|다시 시도|오답/.test(f);
+  const accepted = (f) => !!f && /정답입니다|훌륭한 청취력|정확히 청취/.test(f) && !/순서가 조금 다릅니다|다시 시도|오답|일치하지 않습니다/.test(f);
   const norm = (s) => String(s).replace(/[^\w'’\s-]/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
   // if the answer box does not hold the sentence the audit meant to build, the verdict says
   // nothing about the app — report it as BLOCKED with what was actually assembled
@@ -446,6 +522,8 @@ const HINT_CHIPS = `(() => {
 
 async function walkDictation(tab, exp, texts, rec, stepLabel, depth) {
   if (depth === "light") return 0;
+  // 일부러 깨기(7-1 e): 문장 넘기기를 끈 판 — 넘기는 깊이에서 상자를 못 읽었으니 힌트 칩은 여전히 '없음' 으로 세야 한다
+  if (process.argv.includes("--break=no-walk")) return 0;
   const sentences = (exp.answers || []).length;
   if (!sentences) return 0;
   const button = (label) =>
@@ -529,8 +607,11 @@ async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
     if (!left) break;
     await pressAudio(tab, NEXT_CONTROL("play"), stepLabel, exp, rec.audio);
   }
-  await gradedInputs(tab, exp, rec.checks, depth === "medium" ? 1 : 12);
-  if (exp.tileAnswers && depth === "full") await solveTiles(tab, exp, rec.checks, stepLabel);
+  await gradedInputs(tab, exp, rec.checks, depth === "medium" ? 1 : 12, rec.course);
+  // 7단계 7-1 m: the tiles also on the phone (medium depth). Tap-to-assemble is the phone's way of answering (generateWordBank:
+  // "for mobile tap-to-assemble dictation"), and the phone record's typed-input line is NA coveredBy 'tile dictation' — which
+  // build-coverage counts as covered only when the same record holds that check. Until now only the desktop pass assembled.
+  if (exp.tileAnswers && depth !== "light") await solveTiles(tab, exp, rec.checks, stepLabel);
   // every other control: click once, look for errors and dead buttons
   for (let k = 0; k < maxOther; k++) {
     const left = await tab.eval(COUNT_CONTROLS("other")).catch(() => 0);
@@ -557,7 +638,7 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
   const exp = E.expected(page.course, page.id);
   const red = await resolveRedirect(page.url);
   const rec = {
-    course: page.course, id: page.id, url: page.url, viewport, at: new Date().toISOString(),
+    course: page.course, id: page.id, url: page.url, viewport, at: new Date().toISOString(), base: H.BASE, driverRev: DRIVER_REV,
     redirect: red.chain.length ? { chain: red.chain, finalPath: red.finalPath } : null,
     finalPath: red.finalPath, steps: [], checks: [], audio: [], problems: [], content: null, layout: null, events: null, hintChips: null, containers: null,
   };
@@ -627,27 +708,44 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
       const afterRemove = await tab.eval(bmState).catch(() => null);
       rec.checks.push({ feature: "bookmark", item: "add→reload→remove→reload", status: afterClick !== before && afterReload === afterClick && afterRemove === before ? "PASS" : "FAIL", note: `${before} → ${afterClick} → reload ${afterReload} → removed ${afterRemove}` });
-    } else rec.checks.push({ feature: "bookmark", item: "control", status: "NA", note: "no bookmark control on this page" });
+    // 7단계 7-1 m (3차 점검): the header bookmark is on every lesson — not finding it is 'could not check', never NA
+    } else rec.checks.push({ feature: "bookmark", item: "control", status: "BLOCKED", note: "bookmark control not found (the header bookmark is on every lesson)" });
 
     // completion toggle (STUDENT writes to the server — logged)
-    const cm = `[...document.querySelectorAll('main button')].find((b) => /학습 완료|완료 체크/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')))`;
-    const cmState = `(() => { const b = ${cm}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '')).replace(/\\s+/g, ' ').trim() : null; })()`;
-    const c0 = await tab.eval(cmState).catch(() => null);
-    if (c0) {
+    // 7단계 7-1 m (3차 점검): STUDENT has no header completion button (LessonActionButtons draws it only when course !== "student").
+    // A STUDENT lesson completes at the END OF STEP 3 — '이 강의 학습 완료' (aria-label 학습 완료 체크 / 학습 완료 취소), enabled after one
+    // solved dictation or one '낭독 완료 체크' (FUN-02). This test used to look only at the first screen and wrote 'no completion
+    // control' NA for every STUDENT lesson — the completion that drives the progress rate and the next chapter's unlock was never pressed.
+    const step3 = page.course === "student" ? (rec.steps || []).find((s) => /Step\s*3/i.test(s)) : null;
+    const openStep3 = async () => { if (step3) await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(step3)})`, { settle: 800 }); };
+    const cm = page.course === "student"
+      ? `[...document.querySelectorAll('main button')].find((b) => /^학습 완료 (체크|취소)$/.test(b.getAttribute('aria-label') || ''))`
+      : `[...document.querySelectorAll('main button')].find((b) => /학습 완료|완료 체크/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')))`;
+    const cmState = `(() => { const b = ${cm}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '') + (b.disabled ? '|disabled' : '')).replace(/\\s+/g, ' ').trim() : null; })()`;
+    await openStep3();
+    let c0 = await tab.eval(cmState).catch(() => null);
+    if (page.course === "student" && c0 && /\|disabled$/.test(c0)) {
+      // FUN-02 — practise one sentence first (the solved dictation above normally already counts)
+      await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.getAttribute('title') || '') === '낭독 완료 체크')`, { settle: 400 });
+      c0 = await tab.eval(cmState).catch(() => null);
+    }
+    if (c0 && !/\|disabled$/.test(c0)) {
       await H.click(tab, cm, { settle: 700 });
       const c1 = await tab.eval(cmState).catch(() => null);
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
+      await openStep3();
       const c2 = await tab.eval(cmState).catch(() => null);
       await H.click(tab, cm, { settle: 700 });
       const c3 = await tab.eval(cmState).catch(() => null);
-      rec.checks.push({ feature: "completion", item: "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}` });
-      if (page.course === "student") H.logDataChange({ course: page.course, id: page.id, action: "completion toggled on and off via the lesson UI", detail: `${c0} → ${c1} → ${c3}` });
-    } else rec.checks.push({ feature: "completion", item: "control", status: "NA", note: "no completion control" });
+      rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · toggle→reload→untoggle" : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}` });
+      if (page.course === "student") H.logDataChange({ course: page.course, id: page.id, action: "completion toggled on and off via the lesson UI (Step 3)", detail: `${c0} → ${c1} → ${c3}` });
+    } else if (c0) rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · control" : "control", status: "FAIL", note: `completion control stays disabled after practising a sentence: ${c0}` });
+    else rec.checks.push({ feature: "completion", item: "control", status: "BLOCKED", note: step3 ? "Step 3 completion control not found" : "completion control not found" });
 
     await tab.eval(`(() => { sessionStorage.removeItem('kig:audit:keep'); try { const keep = new Set(${JSON.stringify(["kig:license:v1", "kig:device:id:v1", "kig:device:name:v1", "kig:theme", "kig:lang"])}); for (const k of Object.keys(localStorage)) if (!keep.has(k)) localStorage.removeItem(k); } catch (e) {} })()`).catch(() => {});
   }
   if (viewport === "desktop") {
-    if (!persist) rec.checks.push({ feature: "bookmark/completion", item: "persistence", status: "NA", note: "exercised on the sampled lessons of this course (see --persist-every)" });
+    if (!persist) rec.checks.push({ feature: "bookmark/completion", item: "persistence", status: "NA", sampledBy: "reload test (--persist-every)", note: "exercised on the sampled lessons of this course (see --persist-every)" });
     // prev/next links vs the course order
     const nav = await tab.eval(`(() => { const as = [...document.querySelectorAll('main a[href], header a[href]')]; const pick = (re) => { const a = as.find((x) => re.test((x.innerText || '') + (x.getAttribute('aria-label') || ''))); return a ? new URL(a.href).pathname : null; }; return { prev: pick(/이전 강의|◀|←\\s*이전/), next: pick(/다음 강의|▶|다음\\s*→/) }; })()`).catch(() => ({ prev: null, next: null }));
     // Compare against the neighbours of the page that ACTUALLY rendered. GRAMMAR I redirects an
@@ -660,36 +758,10 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     rec.checks.push({ feature: "navigation", item: "prev/next", status: nav.prev === want(nb.prev) && nav.next === want(nb.next) ? "PASS" : "FAIL", note: `${navId !== page.id ? `(${page.id} → ${navId}) ` : ""}prev ${nav.prev} (course order ${want(nb.prev)}), next ${nav.next} (course order ${want(nb.next)})` });
   }
 
-  // content comparison against the lesson's own data
-  const all = texts.map((t) => t.text).join("\n");
-  const flat = norm(all);
-  /**
-   * A hint chip is checked against the hint box (see HINT_CHIPS), everything else
-   * against the page's text. If the sentence walk never ran there is no box to
-   * check, so the chip falls back to the page text and the record says so —
-   * silently skipping it would turn a missing walk into a clean PASS.
-   */
-  const seenChips = rec.hintChips ? new Set(rec.hintChips.map(norm)) : null;
-  /**
-   * A kind with a container (lib/containers.cjs) is looked for in that container only, by
-   * whole-text match. The step that owns it never opening means nothing was read, and the
-   * text counts as missing — never as found in some other step. Kinds without a reader yet
-   * still use the page text, and `viaPageText` says how many did, so a record never passes
-   * them off as checked in place.
-   */
-  const via = { container: 0, pageText: 0 };
-  const missing = exp.texts.filter((t) => {
-    if (t.kind === "hint-chip" && seenChips) return !seenChips.has(norm(t.text));
-    const c = C.containerFor(page.course, t);
-    if (c) {
-      via.container++;
-      const got = (rec.containers || {})[c.id];
-      return !got || !got.some((g) => C.key(g) === C.key(t.text));
-    }
-    via.pageText++;
-    return !flat.includes(norm(t.text).slice(0, 60));
-  });
-  rec.content = { expected: exp.texts.length, found: exp.texts.length - missing.length, missing: missing.slice(0, 25).map((m) => `${m.kind}: ${m.text.slice(0, 60)}`), missingCount: missing.length, chipsFromBox: seenChips ? seenChips.size : null, viaContainer: via.container, viaPageText: via.pageText, containersRead: rec.containers ? Object.fromEntries(Object.entries(rec.containers).map(([k, v]) => [k, v.length])) : null };
+  // content comparison against the lesson's own data — lib/content-check.cjs (hint chips at a depth that
+  // never walks the sentences are counted as "not seen at this depth", not as missing — 7단계 7-1 e)
+  const { missing, notSeen, via, seenChips } = contentCheck({ course: page.course, exp, texts, rec });
+  rec.content = { expected: exp.texts.length, found: exp.texts.length - missing.length - notSeen.length, missing: missing.slice(0, 25).map((m) => `${m.kind}: ${m.text.slice(0, 60)}`), missingCount: missing.length, notSeenAtDepth: notSeen.length, notSeenKinds: [...new Set(notSeen.map((m) => m.kind))], chipsFromBox: seenChips ? seenChips.size : null, viaContainer: via.container, viaPageText: via.pageText, containersRead: rec.containers ? Object.fromEntries(Object.entries(rec.containers).map(([k, v]) => [k, v.length])) : null };
   rec.events = H.events(tab);
   fs.mkdirSync(RENDERED, { recursive: true });
   fs.writeFileSync(path.join(RENDERED, `${page.id}.${viewport}.json`), JSON.stringify(texts, null, 1));
@@ -705,22 +777,37 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
   if (LIMIT) list = list.slice(0, LIMIT);
   const neighbourMap = E.neighbours(COURSE);
   const queue = list.flatMap((p) => VIEWPORTS.map((v) => [p, v]));
+  if (!queue.length) { console.log(`!!! ${COURSE}: 부른 강의가 0 (--ids · --shard · --limit 확인) — 볼 것이 없음 · exit 1`); process.exit(1); }
+  // --redo: 이 파일의 옛 기록은 옆 이름으로 남기고 빈 파일에서(지우지 않음)
+  if (REDO && fs.existsSync(JSONL) && fs.statSync(JSONL).size) {
+    const kept = `${JSONL}.before-redo-${new Date().toISOString().replace(/[:.]/g, "-")}`;
+    fs.renameSync(JSONL, kept);
+    console.log(`--redo: 옛 기록을 ${path.basename(kept)} 로 옮기고 새로 시작`);
+  }
   const out = H.jsonl(JSONL, (r) => `${r.url}|${r.viewport}`);
-  // A course may be split into shards (--suffix -s1, -s2 …) after part of it already ran
-  // unsharded: every JSONL of this course counts as done, so no visit is repeated.
-  // --redo ignores what is already recorded: used when a fix to this driver means the existing
-  // records for those pages cannot be trusted and have to be taken again.
+  if (!RESUME && out.done.size) {
+    console.log(`!!! ${path.basename(JSONL)} 에 이미 방문 ${out.done.size} — 이어 하려면 --resume, 새로 보려면 --redo(옛 기록은 옆 이름으로 남김) 또는 다른 --suffix · exit 1`);
+    process.exit(1);
+  }
+  // --resume: 샤드(--suffix -s1, -s2 …)로 나누기 전에 일부를 이미 돌렸으면 같은 과정의 다른 기록도 "이미 함" 으로 — 이어 하기일 때만
   const featDir = path.join(OUT, "features");
-  for (const f of REDO ? [] : fs.readdirSync(featDir).filter((x) => x.startsWith(COURSE) && x.endsWith(".jsonl") && !x.includes("smoke") && path.join(featDir, x) !== JSONL)) {
+  let fromOther = 0;
+  for (const f of RESUME ? fs.readdirSync(featDir).filter((x) => x.startsWith(COURSE) && x.endsWith(".jsonl") && !x.includes("smoke") && path.join(featDir, x) !== JSONL) : []) {
     const base = f.replace(/\.jsonl$/, "");
     if (base !== COURSE && !base.startsWith(`${COURSE}-s`)) continue;
     for (const line of fs.readFileSync(path.join(featDir, f), "utf8").split("\n")) {
       if (!line.trim()) continue;
-      try { const r = JSON.parse(line); if (!r.visitError && r.load && r.load.navigated) out.done.add(`${r.url}|${r.viewport}`); } catch {}
+      try { const r = JSON.parse(line); if (!r.visitError && r.load && r.load.navigated && !out.done.has(`${r.url}|${r.viewport}`)) { out.done.add(`${r.url}|${r.viewport}`); fromOther++; } } catch {}
     }
   }
   const todo = queue.filter(([p, v]) => !out.done.has(`${p.url}|${v}`));
-  console.log(`${COURSE}: ${todo.length} page×viewport visits to do (${out.done.size} already done), clone ${CLONE} port ${PORT}`);
+  console.log(`${COURSE}: ${todo.length} page×viewport visits to do (${out.done.size} already done${RESUME ? ` — --resume: 다른 기록에서 ${fromOther}` : ""}), clone ${CLONE} port ${PORT}`);
+  if (!todo.length) {
+    if (RESUME && !ONLY) { console.log(`${COURSE}: --resume — 남은 방문 0, 이미 다 함`); process.exit(0); }
+    console.log(`!!! ${COURSE}: 할 일이 0 — ${ONLY ? "--ids 로 부른 강의가 모두 이미 기록됨(다시 보려면 --redo 또는 새 --suffix)" : "모두 이미 기록됨"} · 한 강도 안 봄 · exit 1`);
+    process.exit(1);
+  }
+  if (process.argv.includes("--dry-run")) { console.log(`--dry-run: 방문할 것 ${todo.length} (${todo.slice(0, 6).map(([p, v]) => `${p.id}.${v}`).join(" · ")}${todo.length > 6 ? " …" : ""}) — 브라우저 열지 않음`); process.exit(0); }
   const browser = await H.startBrowser(CLONE, PORT);
   const started = Date.now();
   let cursor = 0;
@@ -754,7 +841,7 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
           try {
             rec = await visit(tab, page, viewport, neighbourMap, persist);
           } catch (err) {
-            rec = { course: page.course, id: page.id, url: page.url, viewport, at: new Date().toISOString(), visitError: String(err && err.message).slice(0, 300) };
+            rec = { course: page.course, id: page.id, url: page.url, viewport, at: new Date().toISOString(), base: H.BASE, driverRev: DRIVER_REV, visitError: String(err && err.message).slice(0, 300) };
           }
           const failedToLoad = rec.visitError || (rec.load && !rec.load.navigated);
           if (failedToLoad && !(await online())) { console.log(`went offline during ${page.url} — will redo it`); continue; }

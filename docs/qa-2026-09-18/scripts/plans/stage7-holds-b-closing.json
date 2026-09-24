@@ -1,0 +1,15 @@
+[
+ {"id": "6-0258", "status": "고침", "decision": "6번 A", "note": "d165 n1 한국어 끝에 '※ 이 글은 1960년대에 쓰였습니다(지금은 거의 모든 방송이 컬러이고, 텔스타 위성은 1963년에 작동을 멈췄습니다).' — 영어 · 음성 그대로(plans/stage7-holds-b-notes.json)", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0264", "status": "고침", "decision": "6번 A", "note": "d168 n1 한국어 끝에 '※ 옛 글입니다(글에 나오는 인공 파도 풀장 Big Surf 는 지금은 문을 닫았습니다).' — 쓰인 해를 글이 밝히지 않아 연대 대신 '옛 글'", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0474", "status": "고침", "decision": "6번 A", "note": "d169 n1 한국어 끝에 d168 과 같은 알림", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0341", "status": "고침", "decision": "6번 A", "note": "d221 n1 한국어 끝에 '※ 옛 글입니다(지금은 대부분의 주에서 도로변 공원·휴게소의 밤샘 야영을 허락하지 않습니다).'", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0342", "status": "고침", "decision": "6번 A", "note": "d222 n1 한국어 끝에 '※ 옛 글입니다(미국 유람선의 쿠바행은 2019년에 금지되었습니다).' — 쿠바 유람이 흔하던 때가 1960년 전일 수 있어 연대는 적지 않음", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0419", "status": "고침", "decision": "6번 A", "note": "d076 n1 한국어 끝에 '※ 옛 글입니다(수입 액수는 글이 쓰인 때의 것입니다).' — 수치가 어느 때 것인지 모름", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0581", "status": "고침", "decision": "6번 A", "note": "d272 n1 한국어 끝에 '※ 옛 글입니다(지금 재즈는 널리 인정받는 음악입니다).'", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0310", "status": "고침", "decision": "7번 A", "note": "d196 n1 한국어 끝에 보류 목록 G4 의 글 그대로 '※ 1960년대 미국 글입니다. 장애·체형을 가리키는 표현(freaks, fat lady 등)은 지금은 쓰지 않는 차별적 표현입니다.'", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-0428", "status": "고침", "decision": "7번 A", "note": "d083 에 보류 목록 G4 의 글 그대로 '※ 이 영화는 흑인을 악의적으로 묘사하고 KKK를 미화한 작품으로, …' — '이 영화는' 으로 시작해 영화가 처음 나오는 n8 한국어 끝에", "files": ["content/ld_english_scripts.json"], "clip": "불필요"},
+ {"id": "6-1199", "status": "고침", "decision": "11번 A", "note": "pr167 s4 한국어 끝(문장 세 벌 + -1 한국어 지문 = 4곳)에 보류 목록의 글 그대로 '※ 옛 관점의 글입니다. 현대 언어학에서는 …' — 영어 · 카드 · 빈칸 · 음성 그대로", "files": ["src/lib/readingSentences.json", "content/lessons/reading/pr167.json", "content/lessons/reading/pr167-1.json"], "clip": "불필요"},
+ {"id": "6-1239", "status": "고침", "decision": "21번 A", "note": "pr213 한국어에만 표지 — s1 앞 '(이야기 1) ' · s8 앞 '(이야기 2) '(각각 문장 세 벌 + -1 한국어 지문 = 4곳). 영어 · 음성 · 빈칸 · 발음 시험 그대로", "files": ["src/lib/readingSentences.json", "content/lessons/reading/pr213.json", "content/lessons/reading/pr213-1.json"], "clip": "불필요"},
+ {"id": "6-1372", "status": "고침", "decision": "20번 A", "note": "GRAMMAR I 3단계 이름 '조동사 & 수동태' → '진행형 · 부가의문문 & 기초 문형 복습'(src/lib/curriculumPresentation.ts 목록 제목 · 강의 부제목 두 곳, 검색 색인은 prebuild 가 다시 만듦). 다른 단계 이름은 그대로", "files": ["src/lib/curriculumPresentation.ts"], "clip": "불필요"},
+ {"id": "6-1516", "status": "고침", "decision": "13번 A", "note": "gh1-116 ~ 123(분할본 포함) 부제목 끝에 ' · 2002년 뉴스 방송 기반 문장입니다'(src/lib/curriculumPresentation.ts) — 영어 · 음성 · 채점 그대로. gh2-044 #4 는 이 결정의 여덟 페이지 밖이라 그대로", "files": ["src/lib/curriculumPresentation.ts"], "clip": "불필요"}
+]

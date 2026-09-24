@@ -25,8 +25,8 @@
   있으니 플래그로 풀지 마세요.
 - **소유자 몫은 손대지 마세요.** 법적 문서, 결제 수단, `지금-할-일.md` 의 "소유자만 할 수 있는 일",
   각 단계 작업기록의 "소유자 결정 대기" 는 사람이 결정할 일입니다.
-  (9/15 의 "교재 자체 결함 판정" 은 2026-09-23 소유자 결정으로 6단계에서 처리합니다 —
-  판단이 갈리는 것만 "보류" 로 올립니다.)
+  (9/15 의 "교재 자체 결함 판정" 은 2026-09-23 소유자 결정으로 6단계에서 처리했습니다 —
+  판단이 갈린 것은 "보류" 로 올렸고, 7단계 7-4 f 에서 소유자 결정표 답으로 모두 닫았습니다.)
 
 ## 🔴 통째로 읽으면 안 되는 파일들
 
@@ -60,13 +60,18 @@ node -e "const j=require('./docs/qa-2026-09-15/evidence/textbook-defects.json');
 그러므로 텍스트 변경과 클립 재생성은 **같은 작업 안에서** 끝내야 합니다.
 
 ```bash
-node --env-file=.env.local scripts/generate-azure-ava.mjs --dry-run   # pending 이 0 이어야 합니다
+node scripts/generate-azure-ava.mjs --dry-run   # pending 이 0 이어야 합니다
 ```
 
-⚠ **`--env-file=.env.local` 을 빼지 마세요** (7단계에서 생성기를 고치기 전까지). 생성기는
-`.env.local` 을 스스로 읽지 않고, R2 자격이 없으면 경고만 하고 이 컴퓨터의 파일만 기준으로
-계속 갑니다. `public/audio` 는 git 에 없어서 새로 받은 저장소에서는 모든 클립이 없는 것으로 보이고,
-그대로 생성하면 음성 전체를 다시 만들어 한 달 문자 한도를 몇 배 씁니다(생성기 195~210행 주석).
+생성기는 `.env.local` 을 스스로 읽고(7단계 7-2), R2 자격이 없으면 **Azure 를 부르기 전에 멈춥니다**
+(exit 1). `public/audio` 는 git 에 없어서 새로 받은 저장소에서는 모든 클립이 없는 것으로 보이기
+때문입니다 — 그대로 생성하면 음성 전체를 다시 만들어 한 달 문자 한도를 몇 배 씁니다. 이 컴퓨터
+파일만 기준으로 돌려야 할 때만 `--allow-local-only` 를 일부러 붙이세요.
+
+**앱이 소리 내는 글의 정의는 한 곳입니다** — `scripts/lib/spoken-texts.cjs`. 생성기 · 무료 소리 키
+(`buildFreeSpeechKeys.mjs`) · 감사 도구(`expectations.cjs` · `check-changed-clips.cjs`)가 함께 씁니다.
+화면이 소리 내는 곳을 바꾸면 여기를 고치고 `node docs/qa-2026-09-18/scripts/prove-spoken-definition.cjs`
+로 확인하세요.
 
 **한국어를 바꿀 때 — 과정마다 다릅니다.** LISTENING · VOCA · GRAMMAR · READING 은 한국어를
 재생하지 않으므로 해당 없습니다. **STUDENT 는 한국어 줄도 소리 내어 읽습니다**
@@ -89,7 +94,7 @@ R2 에 따로 올려야 합니다.
 
 ### 배포 순서 — 반드시 이 순서로
 
-1. `node --env-file=.env.local scripts/generate-azure-ava.mjs` — 클립 생성 (로컬). 위 ⚠ 참고
+1. `node scripts/generate-azure-ava.mjs` — 클립 생성 (로컬)
 2. `node scripts/upload-azure-ava-r2.mjs` — **클립을 R2 에 먼저 올립니다**
 3. 그다음 `main` 에 푸시 (Vercel 이 자동 배포)
 
@@ -136,7 +141,7 @@ node scripts/buildValidRoutes.mjs
 
 | 과정 | slug | 데이터 |
 |---|---|---|
-| VOCA 어휘 | `phonics` | `content/voca_dictionary.json` (3,877 표제어) |
+| VOCA 어휘 | `phonics` | `content/voca_dictionary.json` (3,904 표제어 — 2026-09-24 셈) |
 | GRAMMAR I | `grammar1` | `content/lessons/grammar1/` |
 | GRAMMAR II | `grammar2` | `content/lessons/grammar2/` |
 | LISTENING | `ld` | `content/lessons/ld/` · `content/ld_english_scripts.json` |
@@ -152,7 +157,8 @@ node scripts/buildValidRoutes.mjs
 고칠 때 근거를 따로 대야 합니다:
 
 - VOCA 의 한글 뜻 — 교재에 아예 없었습니다. 526건은 교정했고, 2026-09-18 감사가 사전 항목을
-  검토해 남긴 지적은 4단계(심각·높음)와 6단계(중간·낮음)에서 처리합니다.
+  검토해 남긴 지적은 4단계(심각·높음)와 6단계(중간·낮음)에서 모두 결론을 냈습니다
+  (`docs/qa-2026-09-18/scripts/stage6-progress.cjs summary` — 미처리 0 · 보류 0, 보류는 7단계 7-4 f 에서 소유자 결정표로 닫음).
 - LISTENING 의 영어 스크립트 — 교재에는 한글 대본만 있었습니다.
   지금 본문은 **녹음이 실제로 말하는 문장**으로 맞춰져 있습니다 (일치율 99.9%).
 - READING 어휘 카드의 뜻 — 교재 지문에 나오는 건 3분의 1뿐이었습니다.

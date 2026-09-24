@@ -85,7 +85,10 @@
         },
         {
           "n": "11",
-          "text": "Does he want it?"
+          "text": "Does he want it?",
+          "alternatives": [
+            "Does he want that?"
+          ]
         },
         {
           "n": "12",
@@ -104,7 +107,10 @@
         },
         {
           "n": "15",
-          "text": "Why did you like it?"
+          "text": "Why did you like it?",
+          "alternatives": [
+            "Why did you like that?"
+          ]
         },
         {
           "n": "16",
@@ -147,7 +153,10 @@
         },
         {
           "n": "24",
-          "text": "Where do you study?"
+          "text": "Where do you study?",
+          "alternatives": [
+            "Where are you studying?"
+          ]
         },
         {
           "n": "25",
@@ -155,7 +164,7 @@
         },
         {
           "n": "26",
-          "text": "Where were they?"
+          "text": "Where were your brothers?"
         },
         {
           "n": "27",
@@ -165,7 +174,9 @@
           "n": "28",
           "text": "Why is it interesting?",
           "alternatives": [
-            "Why is it fun?"
+            "Why is it fun?",
+            "Why is that interesting?",
+            "Why is that fun?"
           ]
         }
       ]

@@ -22,6 +22,9 @@ const vocaUtils = (() => {
 const vocaDictionary = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(REPO, "content/voca_dictionary.json"), "utf8")); } catch { return null; }
 })();
+// 7단계 7-2: '앱이 소리 내는 글' 은 생성기 · 무료 소리 키와 같은 한 정의(scripts/lib/spoken-texts.cjs) — clipTexts 는 그것으로
+const spoken = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
+const lessonAudio = loadTs(path.join(REPO, "src/lib/lessonAudioText.ts"));
 const validRoutes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 const ldScripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
 const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
@@ -167,14 +170,16 @@ function expected(course, id) {
   // LISTENING only: which dictation sentence shows the biggest hint box, and how many chips
   let hintWorstSentence = -1;
   let hintWorstSize = 0;
-  // a text whose speech form normalises to nothing (e.g. the label "[ hv-01 ]") has no clip
-  const addClip = (t) => { const c = clean(t); if (c && unified.normalizeUnifiedSpeechText && unified.normalizeUnifiedSpeechText(c)) clipTexts.add(c); else if (c && !unified.normalizeUnifiedSpeechText) clipTexts.add(c); };
+  // a text whose speech form normalises to nothing (e.g. the label "[ hv-01 ]") has no clip.
+  // The browser keys every text through vocaSpeechForm first (src/lib/speech.ts cleanText — BUG-027,
+  // 7단계), as the generator always has, so "labo(u)r" from the top player is requested as "labor".
+  const speechForm = (t) => (vocaSpeech && typeof vocaSpeech.vocaSpeechForm === "function" ? vocaSpeech.vocaSpeechForm(String(t)) : t);
+  const addClip = (t) => { const c = clean(speechForm(t)); if (c && unified.normalizeUnifiedSpeechText && unified.normalizeUnifiedSpeechText(c)) clipTexts.add(c); else if (c && !unified.normalizeUnifiedSpeechText) clipTexts.add(c); };
 
   if (course === "grammar1" || course === "grammar2") {
     const mine = itemsOf(d);
     const theirs = pair ? itemsOf(pair) : [];
-    for (const it of mine) { texts.push({ kind: "item", text: it.text }); addClip(it.text); }
-    for (const it of theirs) addClip(it.text);
+    for (const it of mine) texts.push({ kind: "item", text: it.text });
     // the learner types the OTHER language's item: KO page → EN answers, EN page → EN itself
     const english = mine.length && !isKo(mine[0].text) ? mine : theirs;
     for (const it of english) answers.push({ n: it.n, text: it.text, alternatives: it.alternatives });
@@ -194,19 +199,9 @@ function expected(course, id) {
      * and none of the 378 keys appears anywhere in the licensed sweep recordings of all 276
      * lessons (features/ld*.jsonl, recheck-audio-ld.jsonl), while the English control key does.
      */
-    for (const r of rows) addClip(r.en);
-    // STEP 3 "연음 & 소리 클리닉" speaks the PRESET phrases that generateLiaisonPoints returns
-    // ("want to" → "wanna" …), not the lesson's own sentences, so their clips are legitimate even
-    // though no text of this lesson hashes to them. Leaving them out made the audit report 1,198
-    // plays as "a clip of another lesson".
-    if (listening && typeof listening.generateLiaisonPoints === "function") {
-      for (const r of rows) {
-        for (const card of listening.generateLiaisonPoints(String(r.en || "")) || []) {
-          addClip(card.original);
-          if (card.phonetic) addClip(card.phonetic);
-        }
-      }
-    }
+    // (clips: the English rows and STEP 3's liaison PRESET phrases — generateLiaisonPoints `original`,
+    // which no text of this lesson hashes to; leaving them out once made the audit report 1,198 plays
+    // as "a clip of another lesson". Both come from scripts/lib/spoken-texts.cjs below.)
     // The Korean script on screen comes from ld_english_scripts.json (src/lib/content.ts
     // getLdEnglishScript), NOT from the `instruction` blocks of the lesson file. Those blocks hold
     // a second, older copy that nothing renders and that has drifted from the displayed one
@@ -253,8 +248,8 @@ function expected(course, id) {
     }
     for (const r of rows) answers.push({ n: r.n, text: clean(r.en), alternatives: [] });
   } else if (course === "reading") {
-    for (const s of d.readingSentences || []) { texts.push({ kind: "en", text: clean(s.english) }); addClip(s.english); addClip(s.korean); }
-    for (const v of d.readingVocabulary || []) { texts.push({ kind: "word", text: clean(v.word) }); texts.push({ kind: "meaning", text: clean(v.korean) }); addClip(v.word); addClip(v.lemma); }
+    for (const s of d.readingSentences || []) texts.push({ kind: "en", text: clean(s.english) });
+    for (const v of d.readingVocabulary || []) { texts.push({ kind: "word", text: clean(v.word) }); texts.push({ kind: "meaning", text: clean(v.korean) }); }
     /**
      * The Korean passage (2026-09-23): one expected text PER SENTENCE ("ko-sentence") instead of
      * the whole instruction block ("ko-passage"). STEP 4 draws readingSentences[].korean sentence
@@ -269,41 +264,28 @@ function expected(course, id) {
       for (const s of shown) if (s && s.korean) texts.push({ kind: "ko-sentence", text: clean(s.korean) });
     }
   } else if (course === "phonics") {
-    for (const w of gridWords(d)) {
-      texts.push({ kind: "word", text: w });
-      // Every speaker button for a grid word speaks vocaSpeechForm(word) — LessonBody.tsx:291,
-      // PhonicsLearningView.tsx:143 · 183 — and the generator keys every text through the same
-      // table (generate-azure-ava.mjs:315, RE-005), so a bracketed headword such as "labo(u)r" is
-      // never requested and never generated as itself. Expect the raw word's clip only when the
-      // table leaves it unchanged; otherwise the spoken form is the one clip (6단계 끝: mv3-04
-      // labour → labo(u)r showed as a new missing-clip for a file nothing asks for).
-      const spoken = vocaSpeech && typeof vocaSpeech.vocaSpeechForm === "function" ? vocaSpeech.vocaSpeechForm(w) : w;
-      addClip(spoken);
-      // STEP 1's collocation card has its own 청취 button, and it speaks the PRESET phrase from
-      // vocaUtils COLLOCATION_PRESETS — not the grid word — so its clip is legitimate even though
-      // no word of this lesson hashes to it (same shape as the LISTENING liaison presets).
-      if (vocaUtils && typeof vocaUtils.getCollocation === "function") {
-        const entry = vocaDictionary ? (vocaDictionary[w] || vocaDictionary[String(w).toLowerCase().trim()]) : null;
-        const col = vocaUtils.getCollocation(w, entry && entry.searchWord);
-        // The card's ONE speaker button speaks `phrase` (PhonicsLearningView.tsx:641). The example
-        // sentence is italic text at :661 with no control of its own, and the generator collects
-        // only `item.phrase` too — so expecting a clip for it reported the other 9 of BUG-001's
-        // 387. The VOCA sweep of all 195 lessons recorded the `phrase` keys of recover/discover,
-        // so it did press that button, and no example-sentence key anywhere in the same run.
-        if (col) addClip(col.phrase);
-      }
-    }
+    // (clips: vocaSpeechForm(word) — a bracketed headword such as "labo(u)r" is spoken as "labor",
+    // never as itself — and the collocation card's ONE speaker button's PRESET `phrase`, never the
+    // example sentence (BUG-001's other 9 of 387). Both come from scripts/lib/spoken-texts.cjs below.)
+    for (const w of gridWords(d)) texts.push({ kind: "word", text: w });
   } else if (course === "student") {
     // STUDENT: English sentences live in `sentences` blocks, their Korean in `paragraph` blocks
     for (const it of itemsOf(d)) {
       texts.push({ kind: isKo(it.text) ? "ko" : "en", text: it.text });
-      addClip(it.text);
       if (!isKo(it.text)) answers.push({ n: it.n, text: it.text, alternatives: it.alternatives });
     }
-    for (const b of d.blocks || []) if (b.type === "paragraph" && typeof b.text === "string") { texts.push({ kind: "ko", text: clean(b.text) }); addClip(b.text); }
+    for (const b of d.blocks || []) if (b.type === "paragraph" && typeof b.text === "string") texts.push({ kind: "ko", text: clean(b.text) });
   }
-  // instructions/headings are shown by every view
-  for (const b of d.blocks || []) if ((b.type === "instruction" || b.type === "heading") && typeof b.text === "string") addClip(b.text);
+  /**
+   * Every text this page may speak — 7단계 7-2: the ONE definition the clip generator and the free-clip
+   * list use (scripts/lib/spoken-texts.cjs), including what the top '전체 듣기' player speaks (the page's
+   * own extractSentencesForAudio). It used to add Korean READING sentences, Korean GRAMMAR items,
+   * instruction/heading blocks and LISTENING `phonetic` here — 4,061 clips outside STUDENT that no
+   * control ever requests, so a changed Korean line showed up as a "missing clip".
+   */
+  // (spokenTexts throws when one of these src modules did not load — an empty clip list would pass every check)
+  const fns = { vocaSpeechForm: vocaSpeech && vocaSpeech.vocaSpeechForm, getCollocation: vocaUtils && vocaUtils.getCollocation, generateLiaisonPoints: listening && listening.generateLiaisonPoints, extractSentencesForAudio: lessonAudio.extractSentencesForAudio, firstSlashAlternative: listening && listening.firstSlashAlternative, vocaWordSpeech: vocaSpeech && vocaSpeech.vocaWordSpeech };
+  for (const t of spoken.spokenTexts({ course, id, lesson: d, pair: pairId ? { id: pairId, ...(pair || {}) } : null, ldScripts, dictionary: vocaDictionary || {}, fns })) addClip(t);
   /**
    * The exact words the tap-dictation expects, taken from the app's own generateWordBank rather
    * than derived by splitting the sentence. A sentence with a slash alternative —
@@ -313,9 +295,14 @@ function expected(course, id) {
    */
   const tileWordsAll = (() => {
     if (!(course === "ld" || course === "student") || !listening || typeof listening.generateWordBank !== "function") return null;
+    // STUDENT: exactly what StudentLearningView hands generateWordBank — the FIRST "sentences" block's items, raw.
+    // 7단계 7-1 b: itemsOf() cleans the text (a slash becomes a space), so "He/She is a very talented artist, too."
+    // reached the app's function as "He She is …" and the audit assembled BOTH pronouns; the app — one of the pair
+    // is right, both is wrong (CNT-01, 9/16) — said 일치하지 않습니다, and s3-3 · s3-4 came back FAIL.
+    const studentBlock = (d.blocks || []).find((b) => b.type === "sentences");
     const sentences = course === "ld"
       ? answers.map((a) => a.text)
-      : itemsOf(d).filter((it) => !isKo(it.text)).map((it) => it.text);
+      : ((studentBlock && studentBlock.items) || []).map((it) => it && it.text).filter((t) => typeof t === "string" && t.trim() && !isKo(t));
     const out = [];
     for (const s of sentences) {
       try { const w = listening.generateWordBank(String(s), []).correctWords; if (w && w.length) out.push(w); } catch {}

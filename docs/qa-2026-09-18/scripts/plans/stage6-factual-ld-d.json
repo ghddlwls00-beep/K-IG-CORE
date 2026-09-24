@@ -19,7 +19,7 @@
  {"item": "6-0412 d036 n1 KO", "files": ["content/ld_english_scripts.json"],
   "from": "미국인 작가 Mark Twain이 한번 말한 것처럼", "to": "미국인 작가 Charles Dudley Warner가 한번 말한 것처럼", "expect": 1},
  {"item": "6-0412 d036 hints (새 고유명사)", "files": ["content/lessons/ld/d036.json"],
-  "from": "American author, Mark Twain common subject", "to": "American writer, Charles Dudley Warner common subject", "expect": 1},
+  "from": "American author, Mark Twain common subject", "to": "American writer, Charles Dudley Warner common subject", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
 
  {"item": "6-0417 d075 n2 EN", "files": ["content/ld_english_scripts.json"],
   "from": "Drag racing started in the United States in 1953.", "to": "Drag racing started in the United States in the 1940s.", "expect": 1},

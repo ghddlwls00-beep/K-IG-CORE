@@ -26,7 +26,7 @@
  {"item": "6-0226 d149 n2 KO", "files": ["content/ld_english_scripts.json"],
   "from": "여전히 그 나라의 모든 부분에 살고 있는 이 원주민의 후손들이 많이(많은 수천명이) 있다.", "to": "그 나라의 모든 지역에는 이 원주민의 후손들이 여전히 수백만 명 살고 있다.", "expect": 1},
  {"item": "6-0226 d149 힌트 — 새 문장과 같게", "files": ["content/lessons/ld/d149.json"],
-  "from": "inhabitants many thousands of descendants England.", "to": "inhabitants millions of descendants England.", "expect": 1},
+  "from": "inhabitants many thousands of descendants England.", "to": "inhabitants millions of descendants England.", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0227 d149 n6 EN — 비교 대상 맞춤(those of any other country)", "files": ["content/ld_english_scripts.json"],
   "from": "more like those of England than any other country in the world.", "to": "more like those of England than those of any other country in the world.", "expect": 1},
  {"item": "6-0228 d150 n1 KO — physical characteristics = 지형·자연 환경", "files": ["content/ld_english_scripts.json"],
@@ -38,7 +38,7 @@
  {"item": "6-0229 d152 n1 KO", "files": ["content/ld_english_scripts.json"],
   "from": "이십세기의 삶은 준비를 요한다.", "to": "21세기의 삶은 준비를 요한다.", "expect": 1},
  {"item": "6-0229 d152 힌트", "files": ["content/lessons/ld/d152.json"],
-  "from": "20th century adequate schooling", "to": "21st century adequate schooling", "expect": 1},
+  "from": "20th century adequate schooling", "to": "21st century adequate schooling", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0230 d152 n2 KO — '오늘 날' + 직역", "files": ["content/ld_english_scripts.json"],
   "from": "오늘 날 한 나라 안의 모든 개인들은 국민으로서 그들의 의무뿐만 아니라 그들의 일을 위하여 그들을 준비시키는 적절한 교육을 받아야 한다.",
   "to": "오늘날 한 나라의 모든 개인은 시민으로서의 책임뿐 아니라 자기 일을 위해서도 적절한 교육을 받아야 한다.", "expect": 1}

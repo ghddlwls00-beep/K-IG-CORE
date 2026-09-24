@@ -39,7 +39,7 @@
  {"item": "6-0414 d078 n8 KO", "files": ["content/ld_english_scripts.json"],
   "from": "팔거나 임 대하려고 노력한다.", "to": "팔거나 임대하려고 노력한다.", "expect": 1},
  {"item": "6-0415 d076 힌트 — 대본 n5 'teenage'", "files": ["content/lessons/ld/d076.json"],
-  "from": "burning rubber teen-age pastime", "to": "burning rubber teenage pastime", "expect": 1},
+  "from": "burning rubber teen-age pastime", "to": "burning rubber teenage pastime", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0415 d077 힌트 — 대본 n1 'three-room'", "files": ["content/lessons/ld/d077.json"],
   "from": "three room apartment.", "to": "three-room apartment.", "expect": 1},
  {"item": "6-0415 d082 힌트 끝 '..'", "files": ["content/lessons/ld/d082.json"],

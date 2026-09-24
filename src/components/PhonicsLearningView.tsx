@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useMemo } from "react";
 import type { Block } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
-import { vocaSpeechForm } from "@/lib/vocaSpeech";
+import { vocaSpeechForm, vocaWordSpeech } from "@/lib/vocaSpeech";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
   analyzeEtymology,
@@ -139,8 +139,9 @@ export function PhonicsLearningView({
     setActiveWord(word);
     setSelectedWord(word);
 
-    // The card keeps showing `colo(u)r`; only the audio drops the bracket.
-    speakText(vocaSpeechForm(word), {
+    // The card keeps showing `colo(u)r`; only the audio drops the bracket. A heteronym
+    // (`sow`, `wind` …) is said in the meaning on its card — its own clip name (7-6).
+    speakText(vocaWordSpeech(word), {
       lang: "en",
       rate: speed,
       onEnd: () => {
@@ -180,7 +181,7 @@ export function PhonicsLearningView({
       setActiveWord(w);
       setSelectedWord(w);
 
-      speakText(vocaSpeechForm(w), {
+      speakText(vocaWordSpeech(w), {
         lang: "en",
         rate: speed,
         onEnd: () => {

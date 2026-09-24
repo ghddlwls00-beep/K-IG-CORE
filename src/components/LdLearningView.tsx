@@ -11,6 +11,7 @@ import {
   generateLiaisonPoints,
   generateWordBank,
   verifyWordSequence,
+  typedDictationMatches,
   generateListeningContextQuiz,
   type LiaisonCard,
   type WordTile,
@@ -383,21 +384,10 @@ export function LdLearningView({
 
   function handleCheckDictation() {
     if (manualTypingMode) {
-      // KIG-024: collapse whitespace on both sides before comparing. Stripping
-      // punctuation can leave doubled or leading/trailing spaces, and a learner
-      // who typed the right words with an extra space used to be marked wrong.
-      // Whitespace is normalised first so tabs and pasted newlines become word
-      // separators instead of being deleted and gluing the words together.
-      const normalizeTyped = (text: string) =>
-        text
-          .toLowerCase()
-          .replace(/\s+/g, " ")
-          .replace(/[^a-z0-9 ]/g, "")
-          .replace(/\s+/g, " ")
-          .trim();
-      const cleanUser = normalizeTyped(typedAnswer);
-      const cleanTarget = normalizeTyped(currentDictationItem.en);
-      if (cleanUser === cleanTarget) {
+      // KIG-024 (whitespace collapsed on both sides) is kept inside
+      // typedDictationMatches, which also accepts numbers typed as they are heard
+      // ("two o'clock" for "2:00") and a hyphen typed as a space (6단계 G1).
+      if (typedDictationMatches(typedAnswer, currentDictationItem.en)) {
         setDictationStatus("correct");
         setDictationProgress((prev) => ({ ...prev, [dictationIndex]: true }));
       } else {

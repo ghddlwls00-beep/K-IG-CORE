@@ -11,20 +11,38 @@
  * are comparable. It never judges whether content is GOOD — only whether it is PRESENT.
  *
  *   node check-completeness.cjs [--course reading]
+ *   node check-completeness.cjs --break=missing-clip   일부러 깨기: 없는 클립 이름 하나를 첫 강의에 넣어 'missing-clip' 이 1 늘어야 한다
  * Output: out/completeness.json + printed tables.
+ *
+ * missing-clip (7단계 7-1 g): 클립은 이 컴퓨터의 public/audio 에 **또는 R2 버킷**에 있으면 있는 것 — public/audio 는 git 에 없어
+ * 컴퓨터마다 다르다(6단계 끝 missing-clip 8 은 실제로 R2 에 있는 클립 2개였다). R2 목록은 lib/r2-keys.cjs 로 읽기만 하고
+ * (.env.local 을 스스로 읽음), 자격이 없으면 "로컬만 봄" 을 크게 찍는다.
  */
 const fs = require("fs");
 const path = require("path");
 const E = require("./lib/expectations.cjs");
+const { r2ClipKeys, LOCAL_ONLY_WARNING } = require("./lib/r2-keys.cjs");
 const { REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs");
 
 const OUT = path.join(__dirname, "../out");
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const ONLY = arg("--course", null);
+const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
+const FAKE_CLIP = "/audio/azure-ava/v1/b-0000000000000000.mp3";
 
 const CLIP_DIR = path.join(REPO, "public/audio/azure-ava/v1");
 const onDisk = new Set(fs.readdirSync(CLIP_DIR).filter((f) => f.endsWith(".mp3")));
-const clipExists = (p) => onDisk.has(path.basename(String(p)));
+let inBucket = null;
+const clipExists = (p) => {
+  const name = path.basename(String(p));
+  return onDisk.has(name) || Boolean(inBucket && inBucket.has(name.replace(/\.mp3$/, "")));
+};
+
+(async () => {
+inBucket = await r2ClipKeys();
+console.log(inBucket ? `음성 클립: 이 컴퓨터 ${onDisk.size}개 + R2 ${inBucket.size}개와 함께 봄` : LOCAL_ONLY_WARNING);
+if (BREAK && BREAK !== "missing-clip") throw new Error(`모르는 --break=${BREAK}`);
+let injected = false;
 
 const gaps = [];
 const report = {};
@@ -108,7 +126,9 @@ for (const course of E.COURSES) {
     }
 
     // 4. every speaker button needs a clip file; a missing file is a button that cannot speak
-    for (const p of x.clipPaths || []) if (!clipExists(p)) add(course, "missing-clip", `음성 파일 없음: ${p}`, where);
+    const clipPaths = [...(x.clipPaths || [])];
+    if (BREAK === "missing-clip" && !injected) { clipPaths.push(FAKE_CLIP); injected = true; }
+    for (const p of clipPaths) if (!clipExists(p)) add(course, "missing-clip", `음성 파일 없음: ${p}`, where);
     for (const src of x.legacyAudio || []) {
       const f = path.join(REPO, "public", String(src).replace(/^\//, ""));
       if (!fs.existsSync(f)) add(course, "missing-legacy-audio", `옛 음성 파일 없음: ${src}`, where);
@@ -134,4 +154,7 @@ for (const [course, kinds] of Object.entries(totals)) {
     console.log(`   ${String(n).padStart(5)} × ${kind.padEnd(24)} e.g. ${sample.where} — ${sample.detail}`);
   }
 }
-console.log(`\n→ ${path.join(OUT, "completeness.json")}`);
+const missingClips = Object.values(report).reduce((n, k) => n + (k["missing-clip"] || []).length, 0);
+console.log(`\nmissing-clip ${missingClips}${inBucket ? " (이 컴퓨터 + R2)" : " (이 컴퓨터만 — R2 를 못 봄)"}${BREAK ? ` [일부러 깸: ${FAKE_CLIP} 를 넣음]` : ""}`);
+console.log(`→ ${path.join(OUT, "completeness.json")}`);
+})().catch((e) => { console.error(e); process.exit(1); });

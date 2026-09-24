@@ -6,7 +6,7 @@
   "from": "받아들여지면 그는 신고식을 치르게 되는데 그 동안에 기존 회원들이 다양한 장난과 농담으로 그의 착한 성품을 시험할 것이다.",
   "to": "과거에는 신입 회원이 장난과 농담으로 가득한 신고식을 치르는 경우가 많았지만, 이런 괴롭힘(hazing)은 지금은 대부분의 주에서 불법이며 fraternity 스스로도 금지하고 있다.", "expect": 1},
  {"item": "6-0509 d209 hints — 새 어려운 낱말 hazing (3차 점검 #4 N3 기준) · n4 | n5 항목 나눔", "files": ["content/lessons/ld/d209.json"],
-  "from": "ceremony pranks designate consist of Greek letters.", "to": "ceremony pranks hazing. designate consist of Greek letters.", "expect": 1},
+  "from": "ceremony pranks designate consist of Greek letters.", "to": "ceremony pranks hazing. designate consist of Greek letters.", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
 
  {"item": "6-0516 d213 n4 KO — signs to the contrary = 먹이를 주지 말라는 표지", "files": ["content/ld_english_scripts.json"],
   "from": "그들은 정반대의 표지가 분명히 붙어있는데도 동물에게 먹을 것을 주는 것을 고집한다.",
@@ -17,7 +17,7 @@
  {"item": "6-0519 d214 n5 KO — hurricanes = 허리케인(태풍 아님) · 자연재해", "files": ["content/ld_english_scripts.json"],
   "from": "폭풍, 지진, 태풍같은 천연재해를", "to": "폭풍, 지진, 허리케인 같은 자연재해를", "expect": 1},
  {"item": "6-0520 d215 n3 KO — made a practice of = 관례로 삼았다 (영어 행은 6-0523 보류 — 남는 동안 한국어는 맞게)", "files": ["content/ld_english_scripts.json"],
-  "from": "허리끈에 매다는 관습을 만들었다.", "to": "허리끈에 매다는 것을 관례로 삼았다.", "expect": 1},
+  "from": "허리끈에 매다는 관습을 만들었다.", "to": "허리끈에 매다는 것을 관례로 삼았다.", "expect": 1, "supersededBy": "stage7-holds-c-ld", "note": "G5 결정으로 d215 n3~n5 를 고대 이집트 부적 예로 다시 씀(6-0523)"},
 
  {"item": "6-0522 d215 n7 EN — '미신이 종교를 대신했다' 는 앞 행(제사장의 중재·신성한 동물)과도 모순 (기준 10: 한 문장, 알림 목록)", "files": ["content/ld_english_scripts.json"],
   "from": "It is probably true to say that in ancient civilizations superstition took the place of religion.",

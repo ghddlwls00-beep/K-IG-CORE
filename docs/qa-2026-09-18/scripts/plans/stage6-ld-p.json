@@ -10,7 +10,7 @@
  {"item": "6-0299 d192 n9 KO — had left the police puzzled", "files": ["content/ld_english_scripts.json"],
   "from": "한 작은 오스트레일리아 마을에서 황금 강도 사건이 경찰을 어리둥절하게 버려두었다.", "to": "오스트레일리아의 한 작은 마을에서 일어난 금 강도 사건은 경찰을 어리둥절하게 만들었다.", "expect": 1},
  {"item": "6-0301 d192 힌트 — 대본 n11 'boot prints' · n8 'illustrated'", "files": ["content/lessons/ld/d192.json"],
-  "from": "astonishing skill illustrate puzzled. Aboriginal tracker bootprints", "to": "astonishing skill illustrated puzzled. Aboriginal tracker boot prints", "expect": 1},
+  "from": "astonishing skill illustrate puzzled. Aboriginal tracker bootprints", "to": "astonishing skill illustrated puzzled. Aboriginal tracker boot prints", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0303 d193 n2 KO — pick out 을 '찍어냈다'(눈이 발자국을 만들어 냄)", "files": ["content/ld_english_scripts.json"],
   "from": "그 원주민 추적자가 다른 마을에 있었고 그의 날카로운 눈이 며칠 전에 보았던 그 똑같은 발자국을 찍어냈다.",
   "to": "그 원주민 추적자가 다른 마을에 있었는데, 그의 날카로운 눈이 며칠 전에 보았던 것과 똑같은 부츠 자국을 알아보았다.", "expect": 1},

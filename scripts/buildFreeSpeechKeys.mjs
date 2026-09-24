@@ -16,11 +16,12 @@
  * written to `src/lib/generated/freeSpeechKeys.json`. A key in that list is
  * public; any other clip needs a licence session.
  *
- * THE COLLECTION MIRRORS `scripts/generate-azure-ava.mjs`, not the other way
- * round: the generator decides what exists in the bucket, this decides what is
- * free, and both walk the lesson JSON with the same `SPEECH_KEYS`. If they
- * drift, the failure is a free lesson going silent for anonymous visitors —
- * the same failure RE-004 hit with STUDENT's `s1-1-1.mp3`. So the probe
+ * THE COLLECTION IS THE GENERATOR'S: both call `scripts/lib/spoken-texts.cjs`,
+ * the one definition of what a page speaks (7단계 7-2 — they used to share a
+ * copied `SPEECH_KEYS` list that also took Korean READING / GRAMMAR text and
+ * VOCA meanings no page speaks). If they drift, the failure is a free lesson
+ * going silent for anonymous visitors — the same failure RE-004 hit with
+ * STUDENT's `s1-1-1.mp3`. So the probe
  * `docs/qa-2026-09-15/scripts/verify/verify-speech-gate.cjs` fetches the free
  * clips anonymously from a running server and fails if any is denied.
  *
@@ -49,20 +50,7 @@ const LESSONS = path.join(ROOT, "content", "lessons");
 const OUT_FILE = path.join(ROOT, "src", "lib", "generated", "freeSpeechKeys.json");
 const CHECK = process.argv.includes("--check");
 
-/** Same set as scripts/generate-azure-ava.mjs — every field a view can speak. */
-const SPEECH_KEYS = new Set([
-  "text",
-  "en",
-  "ko",
-  "english",
-  "korean",
-  "word",
-  "lemma",
-  "phrase",
-  "meaning",
-  "searchWord",
-  "hanzi",
-]);
+const { spokenTexts, pairIdOf } = createRequire(import.meta.url)(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
 
 /**
  * Only modules without runtime imports can be transpiled alone. Each of the
@@ -83,9 +71,10 @@ function loadTsModule(relativePath) {
 
 const { FREE_PREVIEW_LESSON_IDS } = loadTsModule("src/lib/license.ts");
 const { normalizeUnifiedSpeechText, unifiedSpeechKey } = loadTsModule("src/lib/unifiedSpeech.ts");
-const { vocaSpeechForm } = loadTsModule("src/lib/vocaSpeech.ts");
+const { vocaSpeechForm, vocaWordSpeech } = loadTsModule("src/lib/vocaSpeech.ts");
 const { getCollocation } = loadTsModule("src/lib/vocaUtils.ts");
-const { generateLiaisonPoints } = loadTsModule("src/lib/listeningUtils.ts");
+const { generateLiaisonPoints, firstSlashAlternative } = loadTsModule("src/lib/listeningUtils.ts");
+const { extractSentencesForAudio } = loadTsModule("src/lib/lessonAudioText.ts");
 
 for (const [name, fn] of Object.entries({
   normalizeUnifiedSpeechText,
@@ -93,6 +82,9 @@ for (const [name, fn] of Object.entries({
   vocaSpeechForm,
   getCollocation,
   generateLiaisonPoints,
+  extractSentencesForAudio,
+  firstSlashAlternative,
+  vocaWordSpeech,
 })) {
   if (typeof fn !== "function") throw new Error(`${name} did not load — the free clip list would be wrong`);
 }
@@ -103,78 +95,28 @@ function isSpeakable(text) {
   return /[A-Za-zㄱ-ㆎ㐀-鿿가-힣]/u.test(text);
 }
 
-/**
- * Mirror of the generator's walk: speakable fields, word grids, and each line
- * of a multi-line value.
- *
- * Each value is ALSO added with a leading item number removed. GRAMMAR's
- * `cleanText()` strips "1. " before speaking, so gh1-009 stores "1. I was
- * poor." while the free lesson gh1-008 requests the clip for "I was poor." —
- * found in independent review: that clip answered 403 to anonymous visitors.
- */
-function collectValue(value, key, output, inWordGrid = false) {
-  if (typeof value === "string") {
-    if (SPEECH_KEYS.has(key) || inWordGrid) {
-      const add = (v) => {
-        output.add(v);
-        const unnumbered = v.replace(/^\s*\d+[.)]\s*/, "");
-        if (unnumbered !== v) output.add(unnumbered);
-      };
-      add(value);
-      if (value.includes("\n")) for (const line of value.split(/\r?\n/)) add(line);
-    }
-    return;
-  }
-  if (Array.isArray(value)) {
-    for (const item of value) collectValue(item, key, output, inWordGrid);
-    return;
-  }
-  if (!value || typeof value !== "object") return;
-  const wordGrid = inWordGrid || value.type === "wordgrid";
-  for (const [childKey, childValue] of Object.entries(value)) {
-    collectValue(childValue, childKey, output, wordGrid && childKey === "rows");
-  }
-}
-
 const raw = new Set();
 const ldScripts = readJson(path.join(ROOT, "content", "ld_english_scripts.json")) || {};
 const dictionary = readJson(path.join(ROOT, "content", "voca_dictionary.json")) || {};
+const fns = { vocaSpeechForm, getCollocation, generateLiaisonPoints, extractSentencesForAudio, firstSlashAlternative, vocaWordSpeech };
 let lessonsSeen = 0;
 
 for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {
   // CNN keeps its original broadcast audio and never requests a generated clip.
   if (course === "cnn") continue;
+  const index = readJson(path.join(ROOT, "content", "courses", `${course}.json`))?.lessons || [];
   for (const id of ids) {
     const lesson = readJson(path.join(LESSONS, course, `${id}.json`));
     if (!lesson) throw new Error(`free preview lesson ${course}/${id} has no file — FREE_PREVIEW_LESSON_IDS is stale`);
     lessonsSeen += 1;
-    collectValue(lesson, "", raw);
-
-    if (course === "ld") {
-      // The LISTENING view reads its English from the supplemental script file,
-      // keyed by the base id (`d001-1` -> `d001`). Only the English is spoken;
-      // the clinic's liaison cards are the runtime output of the same engine
-      // the view calls, so run it rather than guess.
-      const rows = ldScripts[id.replace(/-1$/, "")] || [];
-      for (const row of rows) {
-        if (!row?.en) continue;
-        collectValue({ en: row.en }, "", raw);
-        if (/[A-Za-z]/.test(row.en) && row.en.trim().split(/\s+/).length > 2) {
-          for (const card of generateLiaisonPoints(row.en)) if (card?.original) raw.add(card.original);
-        }
-      }
-    }
-
-    if (course === "phonics") {
-      const grid = (lesson.blocks || []).find((b) => b?.type === "wordgrid");
-      for (const word of (grid?.rows || []).flat().map((w) => (w || "").trim()).filter(Boolean)) {
-        const entry = dictionary[word] || dictionary[word.toLowerCase()];
-        if (entry?.meaning) raw.add(entry.meaning);
-        raw.add(entry?.searchWord || word);
-        const collocation = getCollocation(word, entry?.searchWord);
-        if (collocation?.phrase) raw.add(collocation.phrase);
-      }
-    }
+    // What this page speaks (scripts/lib/spoken-texts.cjs) — including what its
+    // pair lends it: a Korean GRAMMAR page speaks its English partner's answers
+    // (gh1-008 → gh1-009). The pair must be free too, or the page's own speaker
+    // buttons would ask for clips a visitor may not hear.
+    const pairId = pairIdOf(course, id, index);
+    if (pairId && !ids.includes(pairId)) throw new Error(`free preview lesson ${course}/${id} speaks its pair ${pairId}, which is not free — FREE_PREVIEW_LESSON_IDS must list both`);
+    const pair = pairId ? { id: pairId, ...(readJson(path.join(LESSONS, course, `${pairId}.json`)) || {}) } : null;
+    for (const text of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) raw.add(text);
   }
 }
 
@@ -188,7 +130,10 @@ const output = { lessons: lessonsSeen, count: keys.size, keys: [...keys].sort() 
 
 // --- assertions: a wrong list here silences free lessons or leaks paid ones ---
 if (lessonsSeen < 20) throw new Error(`only ${lessonsSeen} free lessons collected — expected the whole preview set`);
-if (keys.size < 300) throw new Error(`only ${keys.size} free clip keys — the walk collected almost nothing`);
+// 264 keys since 7단계 7-2 (the free pages' spoken text only — the old walk's 517 included Korean
+// READING/GRAMMAR text and VOCA meanings no page speaks). Every clip the audit sweeps recorded on a
+// free page (3,091 requests) is in the 264.
+if (keys.size < 200) throw new Error(`only ${keys.size} free clip keys — the walk collected almost nothing`);
 if (keys.size > 5000) throw new Error(`${keys.size} free clip keys — that is not a preview, something paid leaked in`);
 
 // --- BUG-019: the media objects the free lessons list, for an exact match ---

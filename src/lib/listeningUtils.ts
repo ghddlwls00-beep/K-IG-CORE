@@ -321,6 +321,21 @@ export function expandSlashAlternatives(sentence: string): string[] {
 }
 
 /**
+ * The sentence a slashed alternative is SPOKEN as: the first of expandSlashAlternatives — the same
+ * sentence the tiles, the hint and the first accepted answer follow (generateWordBank).
+ *
+ * BUG-028 (소유자 결정 2026-09-24): the audio read both forms — "He/She is a very talented artist,
+ * too." became "He She is …" once the slash was blanked for speech — while only one form is
+ * accepted, so a learner who tapped what they heard in the blind dictation was marked wrong
+ * (36 STUDENT sentences). The screen still shows "He/She". A sentence without a slashed
+ * alternative comes back unchanged — so does "Mr./Ms.", which this parser does not split: its
+ * dictation expects both words, as its audio says them.
+ */
+export function firstSlashAlternative(sentence: string): string {
+  return expandSlashAlternatives(sentence)[0] ?? sentence;
+}
+
+/**
  * Creates word-bank tiles for mobile tap-to-assemble dictation with plausible distractors.
  *
  * `acceptedWordSequences` holds every word sequence that counts as correct —
@@ -417,6 +432,190 @@ export function verifyWordSequence(userWords: string[], targetWords: string[]): 
 /** True when the assembled tiles match ANY of the accepted word sequences. */
 export function verifyAnyWordSequence(userWords: string[], accepted: string[][]): boolean {
   return accepted.some((target) => verifyWordSequence(userWords, target));
+}
+
+/**
+ * The typed-dictation comparison used until 2026-09-23 (KIG-024): lower case,
+ * whitespace collapsed, every other symbol deleted. Kept as one of the two ways a
+ * typed answer can match, so nothing that was accepted before stops being accepted.
+ */
+function legacyTypedForm(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .replace(/[^a-z0-9 ]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const UNIT_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const TEEN_WORDS = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const TENS_WORDS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+const SCALE_WORDS: Record<string, number> = { hundred: 100, thousand: 1000, million: 1_000_000, billion: 1_000_000_000 };
+const ORDINAL_WORDS: Record<string, number> = {
+  first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9, tenth: 10,
+  eleventh: 11, twelfth: 12, thirteenth: 13, fourteenth: 14, fifteenth: 15, sixteenth: 16, seventeenth: 17,
+  eighteenth: 18, nineteenth: 19, twentieth: 20, thirtieth: 30, fortieth: 40, fiftieth: 50, sixtieth: 60,
+  seventieth: 70, eightieth: 80, ninetieth: 90, hundredth: 100, thousandth: 1000, millionth: 1_000_000,
+};
+
+type NumberWord = { value: number; kind: "unit" | "teen" | "tens" | "scale"; ordinal?: boolean; decade?: boolean };
+
+function numberWord(token: string): NumberWord | null {
+  const unit = UNIT_WORDS.indexOf(token);
+  if (unit >= 0) return { value: unit, kind: "unit" };
+  const teen = TEEN_WORDS.indexOf(token);
+  if (teen >= 0) return { value: 10 + teen, kind: "teen" };
+  const tens = TENS_WORDS.indexOf(token);
+  if (tens >= 2) return { value: tens * 10, kind: "tens" };
+  // "sixties" — a decade, as in "the nineteen sixties"
+  const decade = TENS_WORDS.findIndex((w, i) => i >= 2 && token === w.replace(/y$/, "ies"));
+  if (decade >= 2) return { value: decade * 10, kind: "tens", decade: true };
+  if (token in SCALE_WORDS) return { value: SCALE_WORDS[token], kind: "scale" };
+  // "the eighteen hundreds" = "the 1800s"
+  if (token === "hundreds") return { value: 100, kind: "scale", decade: true };
+  if (token in ORDINAL_WORDS) {
+    const value = ORDINAL_WORDS[token];
+    const kind = value >= 100 ? "scale" : value >= 20 && value % 10 === 0 ? "tens" : value >= 10 ? "teen" : "unit";
+    return { value, kind, ordinal: true };
+  }
+  return null;
+}
+
+function ordinalSuffix(n: number): string {
+  if (n % 100 >= 11 && n % 100 <= 13) return "th";
+  return ["th", "st", "nd", "rd"][n % 10] ?? "th";
+}
+
+/** 1968 → "19 68": four-digit numbers are written as two pairs, so a year said the usual way and a clock time like 12:30 follow one rule. */
+function canonicalNumber(n: number): string {
+  return n >= 1000 && n <= 9999 ? `${Math.floor(n / 100)} ${n % 100}` : String(n);
+}
+
+/** A run of number words → its canonical digits ("nineteen sixty eight" → "19 68", "one hundred eighty five million" → "185000000"). */
+function numberRun(words: NumberWord[]): string {
+  const ordinal = words[words.length - 1].ordinal;
+  const decade = words[words.length - 1].decade;
+  const suffix = (n: number) => (ordinal ? ordinalSuffix(n) : decade ? "s" : "");
+  if (words.some((w) => w.kind === "scale")) {
+    let total = 0;
+    let current = 0;
+    for (const w of words) {
+      if (w.kind !== "scale") current += w.value;
+      else if (w.value === 100) current = (current || 1) * 100;
+      else { total += (current || 1) * w.value; current = 0; }
+    }
+    const n = total + current;
+    return ordinal ? `${n}${suffix(n)}` : decade ? `${canonicalNumber(n)}s` : canonicalNumber(n);
+  }
+  // No hundred/thousand: said in pairs — "nineteen sixty eight", "eight forty", "twenty five"
+  const pairs: { value: number; open: boolean }[] = [];
+  for (const w of words) {
+    const last = pairs[pairs.length - 1];
+    if (w.kind === "unit" && last && last.open) { last.value += w.value; last.open = false; }
+    else pairs.push({ value: w.value, open: w.kind === "tens" && !w.ordinal && !w.decade });
+  }
+  return pairs.map((p, i) => `${p.value}${i === pairs.length - 1 ? suffix(p.value) : ""}`).join(" ");
+}
+
+/**
+ * The form a typed dictation answer is compared in, spoken numbers and hyphens
+ * included (6단계 G1 — 결정표 1번, owner decision 2026-09-23).
+ *
+ * The audio reads numbers aloud: "2:00" is "two o'clock", "1968" is "nineteen
+ * sixty-eight", "$5" is "five dollars". A learner who types what they heard used
+ * to be marked wrong, and so did one who typed "left handed" for "left-handed" —
+ * the hyphen is not heard (the legacy form glued it into "lefthanded"). Both the
+ * answer and the typing are brought to one spelling: lower case, no symbols,
+ * numbers in digits (four-digit ones as two pairs), a clock time as "hour minute"
+ * ("hour" alone on the hour), ordinals as "18th", money as "5 dollar", percent as
+ * "70 percent", "1 1/2" as "1 and a half", hyphens as spaces. A different number
+ * still differs — numbers are respelled, never dropped.
+ */
+export function spokenTypedForm(text: string): string {
+  let s = ` ${text.toLowerCase().replace(/[’‘`´]/g, "'")} `;
+  s = s.replace(/\$\s?(\d[\d,]*)(?:\.(\d{1,2}))?/g, (_, dollars: string, cents?: string) =>
+    ` ${dollars.replace(/,/g, "")} dollar${cents ? ` ${Number(cents)} cent` : ""} `);
+  s = s.replace(/(\d[\d,.]*)\s?%/g, " $1 percent ");
+  s = s.replace(/\b(\d{1,2}):(\d{2})\b/g, (_, h: string, m: string) => ` ${Number(h)}${m === "00" ? "" : ` ${Number(m)}`} `);
+  const fraction = (a: string, b: string) =>
+    a === "1" && b === "2" ? "a half" : a === "1" && b === "4" ? "a quarter" : a === "3" && b === "4" ? "3 quarters" : `${a} ${b}`;
+  s = s.replace(/\b(\d+)\s+(\d+)\/(\d+)\b/g, (_, whole: string, a: string, b: string) => ` ${whole} and ${fraction(a, b)} `);
+  s = s.replace(/\b(\d+)\/(\d+)\b/g, (_, a: string, b: string) => ` ${fraction(a, b)} `);
+  while (/\d,\d{3}/.test(s)) s = s.replace(/(\d),(\d{3})/g, "$1$2");
+  s = s.replace(/(\d)\.(\d)/g, "$1 point $2");
+  s = s.replace(/\b([ap])\.\s?m\b\.?/g, "$1m");
+  // A comma or a sentence end stops a spoken number, so the list "876, 935, 290" typed as
+  // words stays three numbers. The marker is dropped at the end; other symbols are deleted
+  // in place as the legacy form did ("don't" → "dont", "U.S." → "us").
+  s = s.replace(/[-‐‑–—]/g, " ").replace(/[,;:!?]|\.(?=\s|$)/g, " | ").replace(/[^a-z0-9| ]/g, "");
+
+  const tokens = s.split(/\s+/).filter(Boolean).filter((t) => t !== "oclock");
+  for (let i = tokens.length - 2; i >= 0; i--) if (tokens[i] === "o" && tokens[i + 1] === "clock") tokens.splice(i, 2);
+  // "15 million" (digits, then the word) is one number
+  for (let i = tokens.length - 2; i >= 0; i--) {
+    if (/^\d+$/.test(tokens[i]) && tokens[i + 1] in SCALE_WORDS) tokens.splice(i, 2, String(Number(tokens[i]) * SCALE_WORDS[tokens[i + 1]]));
+  }
+
+  const out: string[] = [];
+  for (let i = 0; i < tokens.length; ) {
+    const starts = numberWord(tokens[i]) || (tokens[i] === "a" && tokens[i + 1] in SCALE_WORDS);
+    if (!starts) {
+      out.push(tokens[i]);
+      i += 1;
+      continue;
+    }
+    const run: NumberWord[] = [];
+    while (i < tokens.length) {
+      const t = tokens[i];
+      const w = numberWord(t);
+      if (w) {
+        run.push(w);
+        i += 1;
+        if (w.ordinal || w.decade) break;
+      } else if (t === "a" && run.length === 0 && tokens[i + 1] in SCALE_WORDS) {
+        run.push({ value: 1, kind: "unit" });
+        i += 1;
+      } else if (t === "and" && run.some((x) => x.kind === "scale") && numberWord(tokens[i + 1] ?? "")) {
+        i += 1; // "one hundred and five"
+      } else if (t === "oh" && run.length > 0 && numberWord(tokens[i + 1] ?? "")?.kind === "unit") {
+        i += 1; // "nineteen oh five": the unit that follows is a pair of its own
+        run.push({ ...(numberWord(tokens[i]) as NumberWord) });
+        run[run.length - 1].kind = "teen";
+        i += 1;
+      } else break;
+    }
+    out.push(...numberRun(run).split(" "));
+  }
+
+  // Digits the page wrote: "1968" → "19 68", "1960s" → "19 60s"
+  const result: string[] = [];
+  for (let i = 0; i < out.length; i++) {
+    const t = out[i];
+    if (t === "|") continue;
+    if (/^\d{4}$/.test(t)) result.push(canonicalNumber(Number(t)));
+    else if (/^\d{4}s$/.test(t)) result.push(`${canonicalNumber(Number(t.slice(0, 4))).replace(/(\d+)$/, "$1s")}`);
+    else if (/^\d+$/.test(t)) result.push(String(Number(t)));
+    else if (t === "dollars") result.push("dollar");
+    else if (t === "cents") result.push("cent");
+    else result.push(t);
+  }
+  // "four dollars and ninety five cents" = "$4.95"
+  return result
+    .filter((t, i, a) => !(t === "and" && a[i - 1] === "dollar" && /^\d+$/.test(a[i + 1] ?? "")))
+    .join(" ")
+    .split(" ")
+    .filter(Boolean)
+    .join(" ");
+}
+
+/**
+ * Whether a typed dictation answer counts as the target sentence: the legacy
+ * comparison OR the spoken-number/hyphen form above. Either one accepting is
+ * enough, so every answer accepted before 2026-09-23 still is.
+ */
+export function typedDictationMatches(typed: string, target: string): boolean {
+  return legacyTypedForm(typed) === legacyTypedForm(target) || spokenTypedForm(typed) === spokenTypedForm(target);
 }
 
 /**

@@ -195,13 +195,18 @@
         },
         {
           "n": "30",
-          "text": "No boy likes it."
+          "text": "No boy likes it.",
+          "alternatives": [
+            "No boy likes that."
+          ]
         },
         {
           "n": "31",
           "text": "Not all of them like it.",
           "alternatives": [
-            "All of them don't like it."
+            "All of them don't like it.",
+            "Not all of them like that.",
+            "All of them don't like that."
           ]
         },
         {

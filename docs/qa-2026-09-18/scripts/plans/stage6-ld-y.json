@@ -28,7 +28,7 @@
  {"item": "6-0468 d096 n1 KO — often … sometimes 대조", "files": ["content/ld_english_scripts.json"],
   "from": "공업은 종종 진보를 가져올 수 있지만 그것은 종종 공해와 또 다른 위험들도 가져온다.", "to": "공업은 흔히 진보를 가져오지만, 때로는 공해와 다른 위험들도 함께 가져온다.", "expect": 1},
  {"item": "6-0471 d096 힌트 — 대본(과 원래 녹음 55초)에 없는 'firemen.'", "files": ["content/lessons/ld/d096.json"],
-  "from": "huge clouds of smoke 30 miles away. firemen.", "to": "huge clouds of smoke 30 miles away.", "expect": 1},
+  "from": "huge clouds of smoke 30 miles away. firemen.", "to": "huge clouds of smoke 30 miles away.", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 힌트 칩 항목 경계('. ')를 넣어 이 글이 경계와 함께 남음"},
  {"item": "6-0473 d169 n3 KO — 못·저수지를 '그들은'", "files": ["content/ld_english_scripts.json"],
   "from": "Dexter는 못(lagoon)과 저수지를 건설했는데 그들은 함께 4백만 갤런의 물을 담았다.", "to": "Dexter는 못(lagoon)과 저수지를 건설했는데, 두 곳을 합치면 4백만 갤런의 물이 담겼다.", "expect": 1}
 ]

@@ -13,22 +13,66 @@
  *               missing/empty/invalid clips, duration outliers against the text length,
  *               and one audio file shared by different texts.
  *
- *   node audio-check.cjs --anon [--limit N] [--concurrency 12]
+ *   node audio-check.cjs --anon [--limit N] [--concurrency 12] [--extra-only]
  *   node audio-check.cjs --licensed [--limit N] [--concurrency 8] [--port 9560]
+ *   --refresh      목록이 지금 내용과 다르면 audio-inventory.cjs 로 다시 만든 뒤 검사
+ *   --extra-only   (--anon) 클립은 건너뛰고 옛 과정 소리 · 폐지 폴더 · 지어낸 번호 탐침만
  * Output: out/audio-check-anon.json / out/audio-check-licensed.json
+ *
+ * 7단계 7-1 i: 기준 목록(out/audio-inventory.json)이 내용보다 오래되면 틀린 경보를 낸다(6단계 배포 뒤 9/22 목록 그대로 → FAIL 8:
+ * 더는 안 쓰는 옛 클립 6을 '무료인데 막힘', 무료 · 유료가 함께 쓰는 클립을 '유료가 새어 나감' 으로). 그래서 목록에 적힌 재료 지문
+ * (lib/inventory-inputs.cjs)을 다시 계산해 다르면 멈춘다(exit 1) — --refresh 면 다시 만든다. 또 '지어낸 번호' 탐침이
+ * /audio/student/s1-1-9.mp3 였는데 그것은 무료 강의 s1-1 의 진짜 9번 파일이라 늘 FAIL 1 이었다 → 있을 수 없는 -99 로.
  */
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 const H = require("./lib/harness.cjs");
+const { inputsFingerprint } = require("./lib/inventory-inputs.cjs");
 
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const MODE = process.argv.includes("--licensed") ? "licensed" : "anon";
 const LIMIT = Number(arg("--limit", 0)) || 0;
 const CONC = Number(arg("--concurrency", MODE === "anon" ? 12 : 8));
 const PORT = Number(arg("--port", 9560));
+const EXTRA_ONLY = process.argv.includes("--extra-only");
 const OUT = path.join(__dirname, "../out");
-const inv = JSON.parse(fs.readFileSync(path.join(OUT, "audio-inventory.json"), "utf8"));
-const clips = LIMIT ? inv.clips.slice(0, LIMIT) : inv.clips;
+/**
+ * --anon 은 운영 주소에서만 뜻이 있다(7단계 7-2). 로컬 `next start` 는 public/audio 에 있는 파일(이 컴퓨터엔 클립 5만여 개)을
+ * 문지기(src/app/audio route → mediaAccess) 앞에서 정적 파일로 내준다 — 2026-09-24 에 BASE=localhost:3210 으로 돌리니 유료 15,054 중
+ * 15,053 이 206 이었고, 이 컴퓨터에 없는 유료 1개와 지어낸 이름만 403 이었다. 운영(Vercel)에는 public/audio 가 올라가지 않는다.
+ * 그래서 로컬 주소면 멈춘다. --allow-local 이면 돌리되 결과는 audio-check-anon-local.json 에(운영 결과 파일을 덮지 않게).
+ */
+const LOCAL_BASE = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?/i.test(H.BASE);
+if (MODE === "anon" && LOCAL_BASE && !process.argv.includes("--allow-local")) {
+  console.log(`!!! --anon 을 로컬 주소(${H.BASE})에 돌리지 않는다 — 로컬 next start 는 public/audio 파일을 문지기 없이 내주므로 '유료인데 열림' 이 거짓으로 쏟아진다. 운영 주소(BASE 없이)로 돌리거나, 알고 쓰려면 --allow-local · exit 2`);
+  process.exit(2);
+}
+const ANON_OUT = EXTRA_ONLY ? "audio-check-anon-extra.json" : LOCAL_BASE ? "audio-check-anon-local.json" : "audio-check-anon.json";
+const DEFAULT_INV = path.join(OUT, "audio-inventory.json");
+const INV_FILE = path.resolve(arg("--inventory", DEFAULT_INV)); // 다른 목록 파일(깨기 시험용)
+const INV_NAME = ((r) => (!r || r.startsWith("..") || path.isAbsolute(r) ? INV_FILE : r))(path.relative(process.cwd(), INV_FILE)); // 안내에는 실제로 읽은 파일 이름을(3차 점검 i)
+let inv = JSON.parse(fs.readFileSync(INV_FILE, "utf8"));
+{
+  const now = inputsFingerprint();
+  if (!inv.inputs || inv.inputs.fingerprint !== now.fingerprint) {
+    const why = inv.inputs ? `재료 지문이 다름(목록 ${inv.inputs.fingerprint} · 지금 ${now.fingerprint})` : "목록에 재료 지문이 없음(7-1 i 전에 만든 목록)";
+    if (!process.argv.includes("--refresh")) {
+      console.log(`!!! 기준 목록 ${INV_NAME}(${inv.at})이 지금 내용과 다름 — ${why}. node docs/qa-2026-09-18/scripts/audio-inventory.cjs 로 다시 만들거나 --refresh · exit 1`);
+      process.exit(1);
+    }
+    // --refresh 는 기본 목록(out/audio-inventory.json)만 다시 만든다 — 다른 파일을 가리키면 다시 만들어도 그 파일은 그대로라 멈춘다
+    if (INV_FILE !== path.resolve(DEFAULT_INV)) {
+      console.log(`!!! --refresh 는 기본 목록만 다시 만든다 — --inventory ${INV_NAME} 과 함께 쓸 수 없음 · exit 1`);
+      process.exit(1);
+    }
+    console.log(`기준 목록이 지금 내용과 다름(${why}) — --refresh: 다시 만듦`);
+    execFileSync(process.execPath, [path.join(__dirname, "audio-inventory.cjs")], { stdio: "ignore" });
+    inv = JSON.parse(fs.readFileSync(INV_FILE, "utf8"));
+  }
+  console.log(`기준 목록 ${INV_NAME}(${inv.at}) · 재료 ${inv.inputs.files}파일 · 지문 ${inv.inputs.fingerprint} (지금 내용과 같음)`);
+}
+const clips = EXTRA_ONLY ? [] : LIMIT ? inv.clips.slice(0, LIMIT) : inv.clips;
 
 async function anon() {
   const rows = [];
@@ -57,7 +101,8 @@ async function anon() {
   const extra = [];
   for (const l of inv.legacyAudio) extra.push({ url: l.src, expect: l.freeLesson ? "open" : "403", why: `lesson media ${l.lessons[0]}` });
   for (const p of ["/audio/adults/am01.mp3", "/audio/man/m01.mp3", "/audio/woman/w01.mp3", "/audio/basics/b01.mp3", "/audio/chinese/c01.mp3", "/audio/middle/mid01.mp3"]) extra.push({ url: p, expect: "403", why: "retired course folder" });
-  for (const p of ["/audio/student/s1-1-9.mp3", "/audio/ld/d001-9.mp3", "/audio/reading/pr001-9.mp3"]) extra.push({ url: p, expect: "403-or-404", why: "free id with an invented suffix (mediaAccess suffix stripping)" });
+  // 지어낸 번호는 있을 수 없는 -99 — '-9' 는 s1-1 의 진짜 9번 파일이라 늘 열렸다(7-1 i)
+  for (const p of ["/audio/student/s1-1-99.mp3", "/audio/ld/d001-99.mp3", "/audio/reading/pr001-99.mp3"]) extra.push({ url: p, expect: "403-or-404", why: "free id with an invented suffix (mediaAccess suffix stripping)" });
   const extraRows = [];
   let j = 0;
   const worker2 = async () => {
@@ -88,10 +133,14 @@ async function anon() {
     failures: fails.slice(0, 100),
     legacyAndFolders: { checked: extraRows.length, failures: extraFails.slice(0, 60) },
   };
-  fs.writeFileSync(path.join(OUT, "audio-check-anon.json"), JSON.stringify(out, null, 1));
+  // --extra-only 는 클립을 안 보므로 전체 결과 파일을 덮지 않는다 · 로컬 주소 결과도 따로
+  fs.writeFileSync(path.join(OUT, ANON_OUT), JSON.stringify(out, null, 1));
   console.log(JSON.stringify(out.summary, null, 1), "\nlegacy/folder failures:", extraFails.length);
   for (const f of fails.slice(0, 15)) console.log("  FAIL", JSON.stringify(f));
   for (const f of extraFails.slice(0, 15)) console.log("  FAIL", JSON.stringify(f));
+  // 실패가 있으면 exit 1 — 전에는 실패를 찍고도 exit 0 이었다(7-2 에서 로컬 실행 15,053 실패가 exit 0 으로 끝나 알게 됨)
+  console.log(`${ANON_OUT} · 실패 ${fails.length + extraFails.length} → exit ${fails.length || extraFails.length ? 1 : 0}`);
+  process.exitCode = fails.length || extraFails.length ? 1 : 0;
 }
 
 /** Runs inside the page: fetch a clip with the licence cookie, measure it, return numbers only. */

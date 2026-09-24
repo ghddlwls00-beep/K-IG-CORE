@@ -1,4 +1,4 @@
 [
  {"item": "6-0417 d075 hints — '1940s' 토큰은 숫자 규칙에 안 걸려(뒤에 s) 2행이 칩 전체로 떨어짐 → 'drag racing' 으로 행에 붙게 (hint-try 로 6행 비교)", "files": ["content/lessons/ld/d075.json"],
-  "from": "drag race 1940s. drag tracks", "to": "drag racing 1940s. drag tracks", "expect": 1}
+  "from": "drag race 1940s. drag tracks", "to": "drag racing 1940s. drag tracks", "expect": 1, "supersededBy": "stage7-ld-chip-boundaries", "note": "7-5(2026-09-24): 이 줄 글은 그대로지만 앞 줄(6-0417·6-0418)과 이은 사슬 글이 7-5 경계에 걸림 — 사슬 끝을 7-5 로"}
 ]
