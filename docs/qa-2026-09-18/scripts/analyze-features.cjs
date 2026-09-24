@@ -3,13 +3,16 @@
  * Turns the raw sweep records (out/features/<course>.jsonl) into coverage numbers and
  * grouped failures, so the report can quote counts instead of impressions.
  *
- *   node analyze-features.cjs [--course reading] [--top 25]
+ *   node analyze-features.cjs [--course reading] [--top 25] [--features-dir <폴더>]
  * Output: out/features-summary.json + printed tables.
+ *
+ * 최종 관문(2026-09-25): 기본은 out/features 의 기록 전부(옛 스윕까지)이고 과정은 파일 이름에서 뽑는다. 관문 숫자는 관문 0 기록 중
+ * 강의 × 화면마다 가장 늦은 것만 <과정>.jsonl 로 모은 폴더를 --features-dir 로 넘겨 센다(옛 기록 · 다시 돈 쪽의 앞 기록이 섞이지 않게).
  */
 const fs = require("fs");
 const path = require("path");
 const OUT = path.join(__dirname, "../out");
-const DIR = path.join(OUT, "features");
+const DIR = path.resolve(process.argv.includes("--features-dir") ? process.argv[process.argv.indexOf("--features-dir") + 1] : path.join(OUT, "features"));
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const ONLY = arg("--course", null);
 const TOP = Number(arg("--top", 25));
