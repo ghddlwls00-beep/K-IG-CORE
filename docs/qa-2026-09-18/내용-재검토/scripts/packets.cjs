@@ -16,6 +16,7 @@ const recs = L.readJsonl(path.join(L.DIR, "목록.jsonl"));
 const cls = require(path.join(L.DIR, "분류.json"));
 const byId = new Map(recs.map((r) => [r.id, r]));
 const q = Rn.q;
+const HB = L.HEAD.slice(0, 7), BB = L.BASE.slice(0, 7); // 읽을거리 머리의 판 이름(내용 재검토 2a80bba · 9d6e15d / 고친 것 다시 읽기 cd679df · 2a80bba)
 const KIND = { changed: "바뀜", added: "새로 생김", removed: "없어짐" };
 const MAX = 32000;
 
@@ -89,7 +90,7 @@ function ctxStudent(group, list) {
   const now = Rn.student(L.HEAD, id), old = Rn.student(L.BASE, id);
   if (!now) return [`(강의 파일 없음: ${id})`];
   const f = `content/lessons/student/${id}.json`;
-  const out = [`### 지금 화면 글 (2a80bba) — /student/${id}`, `- h1: ${q(now.h1)} · 과정 목록: ${q(now.indexTitle)} / 부제목 ${q(now.indexSubtitle)}`, `- 제목줄(h2): ${q(now.instruction)}`];
+  const out = [`### 지금 화면 글 (${HB}) — /student/${id}`, `- h1: ${q(now.h1)} · 과정 목록: ${q(now.indexTitle)} / 부제목 ${q(now.indexSubtitle)}`, `- 제목줄(h2): ${q(now.instruction)}`];
   const koRecs = list.filter((r) => r.file === f && cls[r.id].칸 === "student.paragraph.text" && r.after != null);
   now.rows.forEach((r, i) => {
     const mEn = [marksFor(list, f, "n", r.n, "text"), marksFor(list, f, "n", r.n, "n")].filter(Boolean).join(" ");
@@ -100,7 +101,7 @@ function ctxStudent(group, list) {
   const koMarks = list.filter((r) => r.file === f && cls[r.id].칸 === "student.paragraph.text").map((r) => `◆${r.id}`);
   if (koMarks.length) out.push(`- (한국어 문단 줄 ${koMarks.join(" ")} — 위 KO 는 차례대로 문장과 짝(StudentLearningView 658 koParas[idx]))`);
   if (old) {
-    out.push(`### 기준 판(9d6e15d) 글 — 비교용`);
+    out.push(`### 기준 판(${BB}) 글 — 비교용`);
     out.push(`- h1: ${q(old.h1)} · 제목줄: ${q(old.instruction)}`);
     old.rows.forEach((r, i) => out.push(`- ${i + 1}. [n ${r.n}] EN: ${q(r.en)} / KO: ${q(r.ko)}`));
   }
@@ -146,7 +147,7 @@ function ctxGrammar(group, list) {
       if (splitMarks.length) out.push(`  (이 분할본 파일의 줄: ${splitMarks.join(" ")} — 본문 짝의 같은 문항과 같게 판정)`);
       continue;
     }
-    out.push(`### 지금 화면 글 (2a80bba) — ${koFile}(한국어 문제) ↔ ${enFile}(영어) · 차례로 짝(GrammarLearningView 182~222) · 문항 수 ${now.counts.join(" : ")}${now.counts[0] !== now.counts[1] ? " ⚠ 다름" : ""}`);
+    out.push(`### 지금 화면 글 (${HB}) — ${koFile}(한국어 문제) ↔ ${enFile}(영어) · 차례로 짝(GrammarLearningView 182~222) · 문항 수 ${now.counts.join(" : ")}${now.counts[0] !== now.counts[1] ? " ⚠ 다름" : ""}`);
     if (now.ruleSummary.length) out.push(`- 문법 확인 요약(instruction): ${now.ruleSummary.map(q).join(" · ")}`);
     for (const r of now.rows) {
       const mk = [cellMarks(koFile, r.koN, "text"), cellMarks(enFile, r.enN, "text"), cellMarks(enFile, r.enN, "alternatives"), cellMarks(koFile, r.koN, "alternatives")].filter(Boolean).join(" ");
@@ -156,7 +157,7 @@ function ctxGrammar(group, list) {
     const old = Rn.grammarPair(L.BASE, course, a, b);
     if (old) {
       const changedRows = old.rows.filter((r, i) => { const n = now.rows[i]; return !n || n.ko !== r.ko || n.en !== r.en || JSON.stringify(n.alts) !== JSON.stringify(r.alts) || n.label !== r.label; });
-      out.push(`### 기준 판(9d6e15d) — 같은 차례에서 다른 문항만 (${changedRows.length} · 문항 수 ${old.counts.join(" : ")})`);
+      out.push(`### 기준 판(${BB}) — 같은 차례에서 다른 문항만 (${changedRows.length} · 문항 수 ${old.counts.join(" : ")})`);
       for (const r of changedRows) out.push(`- ${r.i}. [번호 ${r.label}] KO: ${q(r.ko)} / EN: ${q(r.en)}${r.alts.length ? ` · 다른 정답: ${r.alts.map(q).join(" / ")}` : ""}`);
     }
   }
@@ -165,7 +166,7 @@ function ctxGrammar(group, list) {
 function ctxLd(group, list) {
   const base = group.split("/")[1];
   const now = Rn.ldLesson(L.HEAD, base), old = Rn.ldLesson(L.BASE, base);
-  const out = [`### 지금 화면 글 (2a80bba) — /ld/${base}(받아쓰기 · 힌트 칩) · /ld/${base}-1(대본: 한국어 + 영어)`];
+  const out = [`### 지금 화면 글 (${HB}) — /ld/${base}(받아쓰기 · 힌트 칩) · /ld/${base}-1(대본: 한국어 + 영어)`];
   out.push(`- 힌트 줄(${base}.json): ${q(now.hints)}${old.hints !== now.hints ? `\n  기준 판 힌트 줄: ${q(old.hints)}` : ""} ${list.filter((r) => /\.hints|blocks/.test(cls[r.id].칸) && cls[r.id].칸 === "ld.hints.text").map((r) => `◆${r.id}`).join(" ")}`);
   const oldByN = new Map(old.rows.map((r) => [String(r.n), r]));
   for (const r of now.rows) {
@@ -187,7 +188,7 @@ function ctxReading(group, list) {
   const oa = Rn.readingLesson(L.BASE, id);
   if (!a) return [`(강의 파일 없음 ${id})`];
   const same = b && JSON.stringify(a) === JSON.stringify(b);
-  out.push(`### 지금 화면 글 (2a80bba) — /reading/${id} · /reading/${id}-1 ${same ? "(두 쪽 글 같음)" : "⚠ 두 쪽 글이 다름 — 아래 둘 다"}`);
+  out.push(`### 지금 화면 글 (${HB}) — /reading/${id} · /reading/${id}-1 ${same ? "(두 쪽 글 같음)" : "⚠ 두 쪽 글이 다름 — 아래 둘 다"}`);
   const f = `content/lessons/reading/${id}.json`, f1 = `content/lessons/reading/${id}-1.json`;
   const renderOne = (x, file) => {
     for (const s of x.sentences) {
@@ -203,7 +204,7 @@ function ctxReading(group, list) {
     const nowIds = new Map(a.sentences.map((s) => [s.id, s]));
     const diff = oa.sentences.filter((s) => { const n = nowIds.get(s.id); return !n || n.en !== s.en || n.ko !== s.ko; });
     const oldCards = oa.cards.filter((c) => !a.cards.some((n) => n.word === c.word && n.ko === c.ko && n.pos === c.pos));
-    out.push(`### 기준 판(9d6e15d) — 다른 문장 ${diff.length} · 다른 카드 ${oldCards.length}`);
+    out.push(`### 기준 판(${BB}) — 다른 문장 ${diff.length} · 다른 카드 ${oldCards.length}`);
     for (const s of diff) out.push(`- ${s.id.replace(/^reading-\d+-/, "")} EN: ${q(s.en)} / KO: ${q(s.ko)}`);
     for (const c of oldCards) out.push(`  · ${c.word} (${c.pos})${c.lemma ? ` ← ${c.lemma}` : ""} : ${q(c.ko)}`);
   }
@@ -241,7 +242,7 @@ function ctxVoca(group, list) {
   const id = group.split("/")[1];
   const now = Rn.vocaLesson(L.HEAD, id) || [];
   const oldDict = L.jsonAt(L.BASE, "content/voca_dictionary.json");
-  const out = [`### 지금 화면 글 (2a80bba) — /phonics/${id} 낱말 ${now.length} (뜻은 카드 · 퀴즈에 · 소리는 낱말)`];
+  const out = [`### 지금 화면 글 (${HB}) — /phonics/${id} 낱말 ${now.length} (뜻은 카드 · 퀴즈에 · 소리는 낱말)`];
   for (const w of now) {
     const mk = list.filter((r) => r.file === "content/voca_dictionary.json" && r.path.startsWith(`.${w.key}.`)).map((r) => `◆${r.id}`).join(" ");
     const oldMeaning = w.key && oldDict[w.key] ? oldDict[w.key].meaning : null;
