@@ -169,7 +169,22 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     if (!hasActiveLicense || !studentProgress) return;
     const legacyIds = legacyStudentIdsRef.current;
     if (!legacyIds.length) return;
-    const marker = `kig:student:migrated:${licenseInfo?.key.slice(-16) || "active"}`;
+    // BUG-018: the marker used to be named after the code's last 16 characters (its whole
+    // checksum). It is named after the opaque licence id now; an old-named marker still
+    // means "already sent", so it is renamed instead of sending the same lessons again.
+    // Wait for the id: a pre-BUG-018 copy has none until its first verification, and a
+    // marker written under a placeholder name would not be found once the id arrives —
+    // the lessons would be sent a second time (3차 점검, 2026-09-24).
+    const licenseId = licenseInfo?.licenseId;
+    if (!licenseId) return;
+    const marker = `kig:student:migrated:${licenseId}`;
+    const oldMarkers = Object.keys(window.localStorage).filter((name) => /^kig:student:migrated:[A-F0-9]{16}$/.test(name));
+    if (oldMarkers.length) {
+      window.localStorage.setItem(marker, "1");
+      for (const name of oldMarkers) window.localStorage.removeItem(name);
+      legacyStudentIdsRef.current = [];
+      return;
+    }
     if (window.localStorage.getItem(marker)) return;
     void fetch("/api/progress/student", {
       method: "POST",
@@ -184,7 +199,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           applyStudentProgress(data.progress);
         }
       });
-  }, [applyStudentProgress, hasActiveLicense, licenseInfo?.key, studentProgress]);
+  }, [applyStudentProgress, hasActiveLicense, licenseInfo?.licenseId, studentProgress]);
 
   const isCompleted = useCallback(
     (course: string, lessonId: string) => {

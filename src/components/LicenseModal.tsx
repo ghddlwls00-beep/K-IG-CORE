@@ -184,7 +184,8 @@ export function LicenseModal() {
                   {licenseInfo.planLabel}
                 </span>
                 <span className="font-mono text-[11.5px] text-ink-faint">
-                  코드: {licenseInfo.key}
+                  {/* BUG-018: the browser keeps only a masked copy of the code */}
+                  코드: {licenseInfo.maskedKey || "가려서 보관 중"}
                 </span>
               </div>
 

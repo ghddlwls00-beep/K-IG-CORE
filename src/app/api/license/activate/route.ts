@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import {
   issueLicenseToken,
+  licenseIdFor,
   validateLicenseKey,
 } from "@/lib/serverLicense";
 import { registerDeviceForKey } from "@/lib/deviceStorage";
 import { LICENSE_SESSION_COOKIE_NAME, deviceCookie, isValidDeviceId } from "@/lib/licenseSession";
+import { maskLicenseKey } from "@/lib/license";
 
 export async function POST(request: Request) {
   try {
@@ -76,6 +78,9 @@ export async function POST(request: Request) {
       activatedAt: regResult.firstActivatedAt ?? now,
       expiresAt,
       licenseToken,
+      // BUG-018: the page keeps these, never the code it just sent
+      maskedKey: maskLicenseKey(key),
+      licenseId: licenseIdFor(key),
       registeredDevicesCount: regResult.devices.length,
       maxDevices: regResult.maxDevices,
     });

@@ -7,21 +7,25 @@ import {
   readCookie,
   verifyLicenseSessionToken,
 } from "@/lib/licenseSession";
+import { issueLicenseToken, licenseIdFor } from "@/lib/serverLicense";
+import { maskLicenseKey } from "@/lib/license";
 
 /**
  * ISS-13 — what this browser's httpOnly cookies still prove after its localStorage
  * was cleared (Safari deletes script-writable storage after 7 days without a visit;
  * server-set cookies survive).
  *
- *   { valid: true, key, plan, deviceId, expiresAt, activatedAt, token }
+ *   { valid: true, maskedKey, licenseId, plan, deviceId, expiresAt, activatedAt, token }
  *       the licence session cookie is still good (same checks as the lesson gate:
  *       signature, record, device still registered, not revoked, period not over)
  *   { valid: false, deviceId? }
  *       no usable session; `deviceId` is the device cookie, so re-entering the code
  *       on this browser reuses its slot instead of taking a new one
  *
- * Reads only this request's own cookies; the token returned is the one the page
- * already kept in localStorage before it was cleared.
+ * BUG-018: the code itself is no longer returned (it used to be, as plain JSON —
+ * clearing storage did not get rid of it). A cookie still holding a v1 token (code
+ * readable inside) is swapped for a v2 token here, in the cookie and in the answer.
+ * Reads only this request's own cookies.
  */
 export async function GET(request: Request) {
   try {
@@ -34,18 +38,35 @@ export async function GET(request: Request) {
     }
     const { payload } = session;
     const record = await getDeviceRecordForKey(payload.key);
-    return NextResponse.json(
+    const expiresAt = effectiveLicenseExpiry(record, payload.plan, payload.expiresAt);
+    const sessionToken = session.legacy
+      ? issueLicenseToken(payload.key, payload.plan, payload.deviceId, payload.expiresAt)
+      : token;
+    const response = NextResponse.json(
       {
         valid: true,
-        key: payload.key,
+        maskedKey: maskLicenseKey(payload.key),
+        licenseId: licenseIdFor(payload.key),
         plan: payload.plan,
         deviceId: payload.deviceId,
-        expiresAt: effectiveLicenseExpiry(record, payload.plan, payload.expiresAt),
+        expiresAt,
         activatedAt: record?.firstActivatedAt ?? payload.iat,
-        token,
+        token: sessionToken,
       },
       { headers: { "Cache-Control": "no-store" } },
     );
+    if (session.legacy) {
+      response.cookies.set({
+        name: LICENSE_SESSION_COOKIE_NAME,
+        value: sessionToken,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+        maxAge: expiresAt ? Math.max(1, Math.floor((expiresAt - Date.now()) / 1000)) : 365 * 24 * 60 * 60,
+      });
+    }
+    return response;
   } catch (err) {
     console.error("License session API error:", err);
     return NextResponse.json({ valid: false, error: "세션 확인 중 오류가 발생했습니다." }, { status: 500 });

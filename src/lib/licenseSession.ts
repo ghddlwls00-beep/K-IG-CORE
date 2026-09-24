@@ -45,6 +45,8 @@ export function readCookie(request: Request, name: string): string | null {
 
 export interface VerifiedLicenseSession {
   payload: LicenseTokenPayload;
+  /** BUG-018: the token is the pre-2026-09 kind with the code readable inside — worth swapping for a new one */
+  legacy?: boolean;
 }
 
 export async function verifyLicenseSessionToken(
@@ -66,7 +68,7 @@ export async function verifyLicenseSessionToken(
   const expiresAt = effectiveLicenseExpiry(record, verified.payload.plan, verified.payload.expiresAt);
   if (expiresAt !== null && expiresAt <= Date.now()) return null;
 
-  return { payload: verified.payload };
+  return { payload: verified.payload, legacy: Boolean(verified.legacy) };
 }
 
 export async function verifyLicenseSession(

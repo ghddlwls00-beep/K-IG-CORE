@@ -18,7 +18,14 @@ export type LicensePlan =
   | "STU";
 
 export interface LicenseInfo {
-  key: string;
+  /**
+   * BUG-018 — the code as the learner may SEE it, never the code itself
+   * ("KIG-1Y-A1B2…C3D4"). The browser no longer keeps the code: the server
+   * hands back this masked form for the "내 이용권" panel.
+   */
+  maskedKey: string;
+  /** Opaque, stable id of the licence (not derived readably from the code) — for per-licence local markers. */
+  licenseId: string | null;
   plan: LicensePlan;
   planLabel: string;
   activatedAt: string;
@@ -53,6 +60,19 @@ export function normalizeLicenseKey(rawKey: string | null | undefined): string {
   return String(rawKey ?? "")
     .replace(/[\s​‌‍]/g, "")
     .toUpperCase();
+}
+
+/**
+ * BUG-018 — the form of a code that may be shown back to a learner: the plan, the
+ * first four characters of the nonce and the last four of the checksum
+ * ("KIG-1Y-A1B2…C3D4"). 24 of the 32 secret characters stay hidden, which is
+ * enough for "is this the code on my receipt?" and useless for activating it.
+ */
+export function maskLicenseKey(rawKey: string | null | undefined): string {
+  const parts = normalizeLicenseKey(rawKey).split("-");
+  if (parts.length !== 4 || parts[0] !== "KIG") return "";
+  const [, plan, nonce, checksum] = parts;
+  return `KIG-${plan}-${nonce.slice(0, 4)}…${checksum.slice(-4)}`;
 }
 
 /** Returns whether a given plan grants access exclusively to the STUDENT section. */

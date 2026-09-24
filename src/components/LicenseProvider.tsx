@@ -11,8 +11,20 @@ import {
 } from "@/lib/license";
 import { adoptDeviceId, getOrCreateDeviceId, hasStoredDeviceId, type ClientDevice } from "@/lib/device";
 
+/**
+ * What this browser keeps in localStorage "kig:license:v1".
+ *
+ * BUG-018 (PRIV-01): the licence CODE is no longer kept — only the server-signed
+ * token (which since BUG-018 carries the code encrypted), a masked copy for the
+ * "내 이용권" panel and an opaque id. `key` exists only in copies written before
+ * the change; the first successful verification replaces such a copy with one
+ * without it.
+ */
 interface StoredLicense {
-  key: string;
+  /** pre-BUG-018 copies only — dropped on the next verification */
+  key?: string;
+  maskedKey?: string;
+  licenseId?: string;
   plan: LicensePlan;
   activatedAt: number;
   expiresAt: number | null;
@@ -125,7 +137,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
           .then((res) => (res.ok ? res.json() : null))
           .then((data: {
             valid?: boolean;
-            key?: string;
+            maskedKey?: string;
+            licenseId?: string;
             plan?: LicensePlan;
             deviceId?: string;
             expiresAt?: number | null;
@@ -136,9 +149,11 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
             if (data.deviceId && (!hadDeviceId || data.valid) && data.deviceId !== dev.id) {
               setCurrentDevice(adoptDeviceId(data.deviceId));
             }
-            if (data.valid && data.key && data.plan && data.token) {
+            // BUG-018: restored from the token alone — the server no longer sends the code
+            if (data.valid && data.plan && data.token) {
               const restored: StoredLicense = {
-                key: data.key,
+                maskedKey: data.maskedKey,
+                licenseId: data.licenseId,
                 plan: data.plan,
                 activatedAt: data.activatedAt || Date.now(),
                 expiresAt: data.expiresAt ?? null,
@@ -159,31 +174,45 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       if (raw) {
         const parsed = JSON.parse(raw) as StoredLicense;
 
-        // Verify stored license with server to prevent localStorage tampering
-        if (parsed.token && parsed.key) {
+        // Verify stored license with server to prevent localStorage tampering.
+        // BUG-018: the token alone is enough; a pre-BUG-018 copy also sends its code once.
+        if (parsed.token) {
           const storedToken = parsed.token;
           fetch("/api/license/verify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              key: parsed.key,
+              ...(parsed.key ? { key: parsed.key } : {}),
               deviceId: dev.id,
               token: storedToken,
             }),
           })
             .then(async (res) => {
               const data = (await res.json().catch(() => null)) as
-                | { valid?: boolean; error?: string; expiresAt?: number | null }
+                | {
+                    valid?: boolean;
+                    error?: string;
+                    expiresAt?: number | null;
+                    maskedKey?: string;
+                    licenseId?: string;
+                    licenseToken?: string;
+                  }
                 | null;
 
               if (res.ok && data?.valid) {
                 // SEC-01: the server fixes the period to the first registration. A copy
                 // saved by an earlier re-activation can show a later date — take the server's.
-                const fixed =
-                  data.expiresAt !== undefined && data.expiresAt !== parsed.expiresAt
-                    ? { ...parsed, expiresAt: data.expiresAt }
-                    : parsed;
-                if (fixed !== parsed) {
+                // BUG-018: keep what the server hands back (a new token for a pre-BUG-018
+                // copy, the masked code, the opaque id) and drop the code itself.
+                const fixed: StoredLicense = {
+                  maskedKey: data.maskedKey ?? parsed.maskedKey,
+                  licenseId: data.licenseId ?? parsed.licenseId,
+                  plan: parsed.plan,
+                  activatedAt: parsed.activatedAt,
+                  expiresAt: data.expiresAt !== undefined ? data.expiresAt : parsed.expiresAt,
+                  token: data.licenseToken || storedToken,
+                };
+                if (JSON.stringify(fixed) !== JSON.stringify(parsed)) {
                   try {
                     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(fixed));
                   } catch {
@@ -229,7 +258,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
               setStored(null);
             });
         } else {
-          // Untrusted / un-signed localStorage data
+          // Untrusted / un-signed localStorage data (no server-signed token)
           window.localStorage.removeItem(STORAGE_KEY);
           setStored(null);
         }
@@ -265,7 +294,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
 
   const licenseInfo: LicenseInfo | null = stored
     ? {
-        key: stored.key,
+        maskedKey: stored.maskedKey ?? "",
+        licenseId: stored.licenseId ?? null,
         plan: stored.plan,
         planLabel: getPlanLabel(stored.plan),
         activatedAt: new Date(stored.activatedAt).toLocaleDateString("ko-KR"),
@@ -343,8 +373,11 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         };
       }
 
+      // BUG-018: the code the learner typed is not kept — the signed token, a masked
+      // copy for the "내 이용권" panel and an opaque id are.
       const newStored: StoredLicense = {
-        key: normalizeLicenseKey(rawKey),
+        maskedKey: data.maskedKey,
+        licenseId: data.licenseId,
         plan: data.plan,
         activatedAt: data.activatedAt || Date.now(),
         expiresAt: data.expiresAt,
@@ -387,14 +420,15 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   }
 
   async function deactivateLicense(): Promise<void> {
-    if (stored?.key) {
+    if (stored?.token) {
       const dev = getOrCreateDeviceId();
       try {
         await fetch("/api/license/deactivate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           // SEC-04: the server frees the slot only for a token it signed for this device.
-          body: JSON.stringify({ key: stored.key, deviceId: dev.id, token: stored.token }),
+          // BUG-018: the token alone — the code comes out of it on the server.
+          body: JSON.stringify({ deviceId: dev.id, token: stored.token }),
         });
       } catch {
         // ignore

@@ -1,9 +1,18 @@
 import { NextResponse } from "next/server";
-import { verifyLicenseToken } from "@/lib/serverLicense";
+import { issueLicenseToken, licenseIdFor, verifyLicenseToken } from "@/lib/serverLicense";
 import { effectiveLicenseExpiry, getDeviceRecordForKey } from "@/lib/deviceStorage";
 import { LICENSE_SESSION_COOKIE_NAME, deviceCookie, isValidDeviceId } from "@/lib/licenseSession";
-import { normalizeLicenseKey } from "@/lib/license";
+import { maskLicenseKey, normalizeLicenseKey } from "@/lib/license";
 
+/**
+ * BUG-018 — the page sends `{ deviceId, token }`; the code comes out of the token.
+ * A page that still keeps the code (activated before BUG-018, or an old bundle in
+ * an open tab) also sends `key`; then it must match the token, as before.
+ * A v1 token (code readable inside) is answered with a fresh v2 `licenseToken`,
+ * and the session cookie is switched to it — the page stores that and drops `key`.
+ * A v2 token is kept as it is (re-minting on every visit would change the token
+ * the per-tab reload guard is keyed by).
+ */
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -16,9 +25,9 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!key || typeof key !== "string") {
+    if (key !== undefined && (typeof key !== "string" || !key)) {
       return NextResponse.json(
-        { valid: false, error: "이용권 코드가 누락되었습니다." },
+        { valid: false, error: "이용권 코드 형식이 올바르지 않습니다." },
         { status: 400 },
       );
     }
@@ -45,10 +54,10 @@ export async function POST(request: Request) {
 
     const { plan, expiresAt } = tokenResult.payload;
 
-    // 2. Check if key in token matches provided key
+    // 2. If the page also sent a code (pre-BUG-018 storage), it must be the token's
     // SEC-KEY-01: compare the normalized spelling on both sides, so a spaced
     // variant cannot present itself as a different code.
-    if (tokenResult.payload.key !== normalizeLicenseKey(key)) {
+    if (typeof key === "string" && tokenResult.payload.key !== normalizeLicenseKey(key)) {
       return NextResponse.json(
         {
           valid: false,
@@ -60,7 +69,7 @@ export async function POST(request: Request) {
     }
 
     // 3. Database registration check: Is this device still registered in deviceStorage?
-    const normalizedKey = normalizeLicenseKey(key);
+    const normalizedKey = normalizeLicenseKey(tokenResult.payload.key);
     const record = await getDeviceRecordForKey(normalizedKey);
 
     // 4. Check if license has been revoked (e.g. customer refund)
@@ -104,14 +113,21 @@ export async function POST(request: Request) {
       );
     }
 
+    // BUG-018: a v1 token (readable code) is swapped for a v2 one here
+    const sessionToken = tokenResult.legacy
+      ? issueLicenseToken(normalizedKey, plan, deviceId, expiresAt)
+      : token;
     const response = NextResponse.json({
       valid: true,
       plan,
       expiresAt: fixedExpiresAt,
+      maskedKey: maskLicenseKey(normalizedKey),
+      licenseId: licenseIdFor(normalizedKey),
+      ...(tokenResult.legacy ? { licenseToken: sessionToken } : {}),
     });
     response.cookies.set({
       name: LICENSE_SESSION_COOKIE_NAME,
-      value: token,
+      value: sessionToken,
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
