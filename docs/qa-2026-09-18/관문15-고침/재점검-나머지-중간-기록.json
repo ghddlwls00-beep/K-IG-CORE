@@ -1,0 +1,24 @@
+{
+ "at": "2026-09-24T19:47:24.533Z",
+ "ops": "docs/qa-2026-09-18/관문15-고침/재점검-나머지-중간.json",
+ "root": ".",
+ "write": true,
+ "log": [
+  {
+   "id": "재점검2 줄303 d062 n6",
+   "op": "set",
+   "file": "content/ld_english_scripts.json",
+   "where": ".d062[n=6].en",
+   "old": "Let the press take a few photos of it and then burn it.",
+   "new": "\"Let the press take a few photos of it and then burn it.\""
+  },
+  {
+   "id": "재점검2 칩 d006",
+   "op": "set",
+   "file": "content/lessons/ld/d006.json",
+   "where": ".blocks[2].text",
+   "old": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental office. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street.",
+   "new": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street."
+  }
+ ]
+}
