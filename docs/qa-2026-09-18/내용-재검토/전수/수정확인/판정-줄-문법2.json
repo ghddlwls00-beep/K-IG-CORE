@@ -1,0 +1,301 @@
+{
+ "조각": "줄-문법2",
+ "결과": {
+  "P29": {
+   "id": "P29",
+   "판정": "제대로",
+   "main 글": "gh2-007 .blocks[1].items[5] n=6 'You may watch TV after you finish your homework.' alternatives ['You may watch television after you finish your homework.' + 결정 C 4]",
+   "까닭": "고칠 글이 글자 그대로 첫 칸(새 칸) · main 채점(3e9687f grammarGrading) 만점(옛 참조 · 옛 채점 0점). 나머지 넷(can · have finished · you've finished · can watch television)은 결정 C 표와 글자 그대로. 대조 'movies' 꼴 · 'may not watch' 꼴 main 0점. 모범 · 짝 한국어 '(당신은) 숙제를 마친 후에 텔레비전을 보아도 좋습니다.' 그대로 · 나눈 쪽 파일 없음(grammar2 는 영어 · 한국어 두 파일뿐 — main 88파일) · 옆 n=5 · 7 영어는 결정 C 다른 정답만 · 한국어 옆 그대로. 빗금 · 겹친 답 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "P30": {
+   "id": "P30",
+   "판정": "옆 글을 망침",
+   "main 글": "gh2-013-1 .blocks[1].items[4] n=5 '나는 그를 군인으로서 존경한다.' · 짝 gh2-013 .blocks[1].items[4] n=5 'I respect him as a soldier.' alternatives ['As a soldier, I respect him.']",
+   "까닭": "한국어는 고칠 글과 글자 그대로 같음(옛 글 안 남음). 그런데 짝 영어 칸에 결정 C 가 더한 다른 정답 'As a soldier, I respect him.'(main 만점 · 화면 '다른 정답' 에 보임)의 결정 C 까닭은 '한국어 나는 군인으로서 그를 은 군인인 내가 로(오히려 더 자연스럽게) 읽힘 — 그 뜻의 맞는 영어' — 옛 한국어에 기댄 답(결정 C 를 잰 5412468 문항.json 의 ko 도 옛 글 '나는 군인으로서 그를 존경한다.'). P30 은 바로 그 읽힘을 없애려고 한국어를 '그를 군인으로서' 로 바꿈(P30 까닭: 'As a soldier, I respect him' = 군인인 내가). 두 고침이 함께 들어가 지금은 한국어(그가 군인)와 다른 정답(내가 군인)의 뜻이 엇갈림 — 1부 결과 표 1행(gh2-030 #10: 한국어를 고친 뒤 옛 뜻에 맞춘 다른 정답이 남아 만점 · 높음)과 같은 종류. 결정 C 표의 이 문항 '겹침' 칸이 비어 있어(전수 표 #30 을 못 봄) 겹침이 안 걸린 듯. 옆 n=4 · 6 은 그대로(영어 n=4 는 결정 C 다른 정답만).",
+   "고칠 것": "content/lessons/grammar2/gh2-013.json .blocks[1].items[4] (n=5) .alternatives 에서 'As a soldier, I respect him.' 을 뺌(하나뿐이라 alternatives 키째) — 한국어 P30 고침은 그대로 둠. (다른 길: P30 을 되돌려 옛 한국어로 두고 다른 정답을 둠 — 한국어와 모범 'I respect him as a soldier.' 가 다시 엇갈려 권하지 않음. 결정 C · 전수 표 둘 다 소유자 '추천대로' 라 어느 쪽인지 소유자에게 한 줄 알림.)",
+   "때": "2026-09-25 04:53"
+  },
+  "P31": {
+   "id": "P31",
+   "판정": "제대로",
+   "main 글": "gh2-013 .blocks[1].items[16] n=17 'Nowadays no one could do that.' alternatives [고칠 글 3 + 'These days no one could do that.' · 'No one could do that nowadays.']",
+   "까닭": "고칠 글 셋이 글자 그대로 앞 세 칸(새 칸) · main 채점 셋 다 만점(옛 참조 0점 · 70점 · 0점). 뒤 둘은 결정 C 표. 대조 'Nowadays everybody could do that/it.' · 'somebody' 꼴 main 0점(뜻 반대 안 받음). 모범 · 짝 '요즈음 아무도 그것을 할 수 없을 것이다.' 그대로 · 옆 n=16 · 18 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P32": {
+   "id": "P32",
+   "판정": "제대로",
+   "main 글": "gh2-016 .blocks[1].items[7] n=8 'I will have soup first and then the chicken.' alternatives ['I will eat soup first and then the chicken.' + 결정 C 4]",
+   "까닭": "고칠 글 글자 그대로 첫 칸(새 칸) · main 채점 만점(옛 0점). 나머지 넷(I'll have … chicken · eat … chicken · eat … eat chicken · First, I will have …)은 결정 C 표. 대조 'fish' 꼴 · 'will not eat' 꼴 main 0점. 모범 · 짝 '나는 수프를 먼저 먹고 그런 다음 치킨(닭)을 먹겠다.' 그대로 · 옆 n=7 · 9 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P33": {
+   "id": "P33",
+   "판정": "제대로",
+   "main 글": "gh2-016 .blocks[1].items[14] n=15 'I did not have an apple.' alternatives ['I did not eat an apple.', \"I didn't have any apples.\"]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점) · \"I didn't eat an apple.\" 도 만점. 둘째는 결정 C 표. 대조 'I ate an apple.' · 'I did eat an apple.' main 0점(부정 뺀 꼴 안 받음). 모범 · 짝 '나는 사과를 먹지 않았다. (사과를 갖고 있지 않았다, 나는 사과가 없었다.)' 그대로 · 옆 n=14 · 16 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P34": {
+   "id": "P34",
+   "판정": "제대로",
+   "main 글": "gh2-016 .blocks[1].items[15] n=16 'Instead, I had a peach.' alternatives ['Instead, I ate a peach.', 'I had a peach instead.', 'I ate a peach instead.']",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘(instead 끝자리)은 결정 C 표. 대조 'apple' 꼴 · 'did not eat' 꼴 main 0점. 모범 · 짝 '그 대신에 나는 복숭아를 먹었다.' 그대로 · 옆 n=15 · 17 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P35": {
+   "id": "P35",
+   "판정": "제대로",
+   "main 글": "gh2-020 .blocks[1].items[1] n=2 'That sounds great.' alternatives ['That sounds good.', 'It sounds great.', 'It sounds good.', 'That sounds nice.', 'That sounds fine.']",
+   "까닭": "고칠 글 셋이 글자 그대로 앞 세 칸 · main 채점 셋 다 만점(옛 셋 다 0점). nice · fine 은 결정 C 표. 대조 'That sounds bad.' · 'It sounds bad.' · 'That does not sound good.' main 0점. 모범 · 짝 '그것은 좋게 들린다. (그것은 좋은 소리를 낸다. 그거 괜찮겠다.)' 그대로 · 옆 n=1 · 3 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P36": {
+   "id": "P36",
+   "판정": "제대로",
+   "main 글": "gh2-022 .blocks[1].items[12] n=13 'Will you give me a lift?' alternatives ['Will you give me a ride?' + 결정 C 5(can · could · would 꼴)]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 나머지 다섯은 결정 C 표. 대조 'Will you give me a pen?' · \"Won't you give me a ride?\" main 0점. 모범 · 짝 '너는 나에게 승차를 줄래(나를 태워줄래)?' 그대로 · 옆 n=12 결정 C 다른 정답만 · n=14 그대로.",
+   "때": "2026-09-25 04:53"
+  },
+  "P37": {
+   "id": "P37",
+   "판정": "제대로",
+   "main 글": "gh2-023 .blocks[1].items[4] n=5 'How would you like your coffee?' alternatives ['How do you want your coffee?', 'How do you like your coffee?']",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 둘째는 결정 C 표. 대조 'How do you want your tea?' main 0점. 모범 · 짝 '너는 너의 커피를 어떻게 원하니?' 그대로 · 옆 n=4 · 6 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P38": {
+   "id": "P38",
+   "판정": "제대로",
+   "main 글": "gh2-023 .blocks[1].items[9] n=10 'I would like to take your measurements.' alternatives ['I want to take your measurements.']",
+   "까닭": "alternatives 가 고칠 글과 글자 그대로 같음(새 칸 · 결정 C 표도 같은 하나) · main 채점 만점(옛 0점). 대조 'take your picture' 꼴 · \"don't want\" 꼴 main 0점. 모범 · 짝 '나는 너의 치수를 재고 싶다.' 그대로 · 옆 n=9 · 11 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P39": {
+   "id": "P39",
+   "판정": "제대로",
+   "main 글": "gh2-023 .blocks[1].items[19] n=20 'It is open Monday through Friday.' alternatives ['That is open Monday through Friday.', 'It is open from Monday to Friday.', 'It is open Monday to Friday.']",
+   "까닭": "고칠 글 글자 그대로(둘째 칸) · main 채점 만점(옛 0점) · 줄임 꼴 \"It's open from Monday to Friday.\" 도 만점. 첫째 'That is …' 는 결정 3(그것 = that)으로 5412468 참조에 이미 있던 것(채점/문항.json) · 셋째는 결정 C 표. 대조 'from Monday to Sunday' · 'closed' 꼴 main 0점. 모범 · 짝 '그것은 월요일부터 금요일까지 열립니다.' 그대로 · 옆 n=19 결정 C 다른 정답만(n=21 없음).",
+   "때": "2026-09-25 04:53"
+  },
+  "P40": {
+   "id": "P40",
+   "판정": "제대로",
+   "main 글": "gh2-025 .blocks[1].items[18] n=19 'I would like to get a refund on this.' alternatives ['I want to get a refund on this.' + 결정 C 3]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 나머지 셋(refund for this · a refund on this · receive)은 결정 C 표. 대조 'discount' 꼴 · \"don't want\" 꼴 main 0점. 모범 · 짝 '저는 이것에 대한 환불을 받고 싶습니다.' 그대로 · 옆 n=18 · 20 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P41": {
+   "id": "P41",
+   "판정": "제대로",
+   "main 글": "gh2-029 .blocks[1].items[6] n=7 \"Operator, I'd like to call New York, collect.\" alternatives ['Operator, I want to call New York, collect.', 'Operator, I want to call New York collect.', \"Operator, I'd like to make a collect call to New York.\"]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘은 결정 C 표. 대조 'Boston' 꼴 main 0점. 모범 · 짝 '교환원, 나는 수신자 부담으로 뉴욕으로 전화하고 싶습니다.' 그대로 · 옆 n=6 · 8 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P42": {
+   "id": "P42",
+   "판정": "제대로",
+   "main 글": "gh2-029 .blocks[1].items[7] n=8 \"I'd like to know a phone number in Seoul, Korea.\" alternatives ['I want to know a phone number in Seoul, Korea.' + 결정 C 2(telephone · South Korea)]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘은 결정 C 표. 대조 'Busan' 꼴 main 0점. 모범 · 짝 '저는 한국 서울의 전화번호를 알고 싶습니다.' 그대로 · 옆 n=7 · 9 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P43": {
+   "id": "P43",
+   "판정": "제대로",
+   "main 글": "gh2-030 .blocks[1].items[3] n=4 'It takes one hour for me to get here.' alternatives ['It takes me one hour to get here.', 'It takes an hour for me to get here.', 'It takes me an hour to get here.']",
+   "까닭": "alternatives 가 고칠 글 셋과 글자 그대로 같음(옛 하나 그대로 + an hour 꼴 둘) · 새 둘 main 채점 만점(옛 둘 다 0점). 대조 'a day' 꼴 둘 main 0점. 모범 · 짝 '내가 여기에 도달하는 것은 한 시간이 걸린다.' 그대로 · 옆 n=3 · 5 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P44": {
+   "id": "P44",
+   "판정": "제대로",
+   "main 글": "gh2-033 .blocks[1].items[5] n=6 'Would you like to hold on or call again?' alternatives ['Do you want to hold on or call again?' + 결정 C 3(call back · hold · wait)]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 나머지 셋은 결정 C 표. 대조 'hang up' 꼴 main 0점. 모범 · 짝 '당신은 들고 계시기를 원합니까, 다시 걸기를 원하십니까? (기다리시겠어요, 다시 거시겠어요?)' 그대로 · 옆 영어 n=5 · 7 결정 C 다른 정답만 · 한국어 n=7 '사업 상' → '사업상' 은 1부 결과 표 102행 고침(맞음).",
+   "때": "2026-09-25 04:53"
+  },
+  "P45": {
+   "id": "P45",
+   "판정": "제대로",
+   "main 글": "gh2-033 .blocks[1].items[7] n=8 'Would you like to leave your name and phone number?' alternatives ['Do you want to leave your name and phone number?' + 결정 C 2(telephone number · number)]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘은 결정 C 표. 대조 'name and address' 꼴 main 0점. 모범 · 짝 '당신은 당신의 이름과 전화번호를 남겨 놓기를 원하십니까?' 그대로 · 옆 영어 n=7 · 9 결정 C 다른 정답만 · 한국어 n=7 은 1부 결과 표 102행 고침(맞음).",
+   "때": "2026-09-25 04:53"
+  },
+  "P46": {
+   "id": "P46",
+   "판정": "제대로",
+   "main 글": "gh2-033 .blocks[1].items[9] n=10 'Care to leave a message?' alternatives ['Would you care to leave a message?', 'Would you like to leave a message?', 'Do you want to leave a message?']",
+   "까닭": "alternatives 가 고칠 글 셋과 글자 그대로 같음(옛 둘 그대로 + want 꼴) · want 꼴 main 채점 만점(옛 0점). 대조 'take a message' 꼴 main 0점. 모범 · 짝 '메시지를 남겨놓고 싶으십니까?' 그대로 · 옆 n=9 · 11 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P47": {
+   "id": "P47",
+   "판정": "제대로",
+   "main 글": "gh2-036 .blocks[1].items[12] n=13 'He was selling TV sets at cost to get rid of an overstock.' alternatives ['He was selling television sets at cost to get rid of an overstock.' + 결정 C 4]",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 나머지 넷(overstock 관사 없음 · TVs · in order to · excess stock)은 결정 C 표. 대조 'radio sets' 꼴 main 0점. 모범 · 짝 '그는 과잉재고를 없애기 위하여 텔레비전 수상기를 원가에 팔고 있었다.' 그대로 · 옆 n=12 · 14 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P48": {
+   "id": "P48",
+   "판정": "제대로",
+   "main 글": "gh2-043 .blocks[1].items[8] n=9 'Who he is is not known to anybody.' alternatives ['Who he is is not known to anyone.', 'Who he is is known to nobody.', 'Who he is is known to no one.']",
+   "까닭": "고칠 글 글자 그대로 첫 칸 · main 채점 만점(옛 0점). 뒤 둘(nobody · no one — 부정 지킴)은 결정 C 표. 대조 부정 뺀 'Who he is is known to anyone.' · '… anybody.' main 0점. 모범 · 짝 '그가 누구인지는 누구에게도 알려져 있지 않다(전체부정).' 그대로 · 옆 n=8 · 10 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P49": {
+   "id": "P49",
+   "판정": "제대로",
+   "main 글": "gh2-044 .blocks[1].items[1] n=2 'It grew so hot that we turned on the air conditioner.' alternatives ['It got so hot …', 'It became so hot …' + 결정 C 3]",
+   "까닭": "고칠 글 둘이 글자 그대로 앞 두 칸 · main 채점 둘 다 만점(옛 둘 다 0점). 나머지 셋(turned … on · The weather got · air conditioning)은 결정 C 표. 대조 'so cold' 꼴 둘 main 0점. 모범 · 짝 '날씨가 너무 더워져서 우리는 에어컨을 켰다.' 그대로 · 옆 n=1 · 3 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:53"
+  },
+  "P107": {
+   "id": "P107",
+   "판정": "제대로",
+   "main 글": "gh2-008-1 .blocks[1].items[10] n=11 '그는 읽기에 있어서 다른 사람에게 뒤진다. (뒤에 있다.)'",
+   "까닭": "고칠 글과 글자 그대로 같음 · 옛 글 안 남음. 영어 짝 gh2-008 n=11 \"He's behind the others in reading.\" 그대로(결정 C 다른 정답 4 만 늘어남 — others · other people · lags · falls behind, 한국어 고침(조사)과 뜻 어긋남 없음) · 옆 n=10 · 12 한국어 그대로.",
+   "때": "2026-09-25 04:53"
+  },
+  "P108": {
+   "id": "P108",
+   "판정": "제대로",
+   "main 글": "gh2-012-1 .blocks[1].items[4] n=5 '그는 사임함으로써 전체 회사에 충격을 주었다.'",
+   "까닭": "고칠 글과 글자 그대로 같음 · 옛 '회사에게' 안 남음. 영어 짝 'He shocked the whole company by resigning.' 그대로(결정 C 다른 정답 3 만 — entire · By resigning, … · quitting) · 옆 한국어 n=4 '피격 당했다' → '피격당했다' 는 1부 결과 표 83행 고침(맞음) · n=6 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P109": {
+   "id": "P109",
+   "판정": "제대로",
+   "main 글": "gh2-014-1 .blocks[1].items[0] n=1 '그는 십 년 동안 영어를 공부해왔다.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'He has studied English for ten years.' 그대로(옛 다른 정답 '… for 10 years.' 그대로 + 결정 C \"He's studied English for ten years.\" 하나) · 옆 n=2 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P110": {
+   "id": "P110",
+   "판정": "제대로",
+   "main 글": "gh2-015-1 .blocks[1].items[13] n=14 '나는 십 년 동안 영어를 공부해왔다.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'I have studied English for ten years.' · 다른 정답 'I have studied English for 10 years.' 모두 옛과 같음(이 칸은 바뀐 것 없음) · 옆 n=13 · 15 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P111": {
+   "id": "P111",
+   "판정": "제대로",
+   "main 글": "gh2-016-1 .blocks[1].items[20] n=21 '나는 약간의 돈을 갖고 있다(돈이 있다).'",
+   "까닭": "고칠 글과 글자 그대로 같음. 기계 줄의 '옛 글이 아직 있음' 은 옛 글이 새 글의 앞부분이라 글자열 찾기에 걸린 것 — 칸 글은 끝 마침표까지 고칠 글과 같음. 영어 짝 'I have some money.' 그대로(결정 C \"I've got some money.\" 하나) · 옆 n=20 · 22 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P112": {
+   "id": "P112",
+   "판정": "제대로",
+   "main 글": "gh2-020-1 .blocks[1].items[9] n=10 '그 판사는 그가 유죄인 것을 발견했다(유죄라고 판결했다).'",
+   "까닭": "고칠 글과 글자 그대로 같음(마침표 하나) · 옛 '판결했다.).' 안 남음. 영어 짝 'The judge found him guilty.' 다른 정답 없음 — 옛과 같음 · 옆 n=9 · 11 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P113": {
+   "id": "P113",
+   "판정": "제대로",
+   "main 글": "gh2-025-1 .blocks[1].items[15] n=16 '그것은 천 불이 되겠습니다.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'That will be 1000 dollars.' 그대로 — 다른 정답 7 은 1부 결과 표 12행 셋(a thousand · one thousand · $1,000 — 5412468 참조에 이미) + 결정 C 넷(It will be … 꼴), 한국어 고침(띄어쓰기)과 뜻 어긋남 없음 · 옆 n=15 · 17 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P114": {
+   "id": "P114",
+   "판정": "제대로",
+   "main 글": "gh2-026-1 .blocks[1].items[7] n=8 '내가 그에게 나를 정거장으로 안내해달라고(가는 길을 알려 달라고) 부탁하면 그가 마음 쓸까?(싫어할까?)'",
+   "까닭": "고칠 글과 글자 그대로 같음(바뀐 곳은 '마음 쓸까' 하나). 영어 짝 'Would he mind if I asked him to direct me to the station?' 그대로(옛 다른 정답 둘 + 결정 C 'Will he mind …' 하나) · 옆 한국어 n=9 '방향(안내)를' → '방향(안내)을' 은 1부 결과 표 96행 고침(맞음) · n=7 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P115": {
+   "id": "P115",
+   "판정": "제대로",
+   "main 글": "gh2-026-1 .blocks[1].items[14] n=15 '이 길로 열차가 얼마나 자주 다닙니까? 약 매 십 분마다.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'How often do the trains run on this route? About every ten minutes.' 그대로(옛 '10 minutes' 다른 정답 + 결정 C 셋) · 옆 n=14 · 16 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P116": {
+   "id": "P116",
+   "판정": "제대로",
+   "main 글": "gh2-027-1 .blocks[1].items[2] n=3 '아닙니다. 저는 제 아기에게 분유(우유)를 먹일 겁니다.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'No, I am going to bottle-feed my baby.' 그대로(옛 다른 정답 둘 + 결정 C 'No, I will bottle-feed my baby.' 하나) · 옆 n=2 · 4 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P117": {
+   "id": "P117",
+   "판정": "제대로",
+   "main 글": "gh2-029-1 .blocks[1].items[18] n=19 '그는 다른 선 위에 있습니다(통화 중입니다).'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'He is on another line.' 그대로(결정 C \"He's on the other line.\" 하나) · 옆 한국어 n=18 '그만 두는' → '그만두는' 은 1부 결과 표 99행 고침(맞음) · 뒤 칸 없음(n=19 가 끝).",
+   "때": "2026-09-25 04:54"
+  },
+  "P118": {
+   "id": "P118",
+   "판정": "제대로",
+   "main 글": "gh2-035 .blocks[1].items[8] n=9 'The timing is right to do that.' alternatives ['The timing is right to do it.' + 결정 C 4(The time is right … · the right time …)]",
+   "까닭": "고칠 글 글자 그대로 첫 칸(새 칸) · main 채점 만점(옛 70점). 나머지 넷은 결정 C 표. 대조 'wrong' 꼴 · 'not right' 꼴 main 0점. 모범 · 짝 '그것을 하기에 시기가 적절하다.' 그대로 · 옆 n=8 · 10 결정 C 다른 정답만.",
+   "때": "2026-09-25 04:54"
+  },
+  "P119": {
+   "id": "P119",
+   "판정": "제대로",
+   "main 글": "gh2-038-1 .blocks[1].items[2] n=3 '담배를 끄시는 것을 꺼리시겠습니까? (담뱃불 좀 꺼주시겠습니까?)'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'Would you mind putting out your cigarette?' 그대로(결정 C 다른 정답 3) · 옆 n=4 는 P120 고침(맞게 들어감) · n=2 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P120": {
+   "id": "P120",
+   "판정": "제대로",
+   "main 글": "gh2-038-1 .blocks[1].items[3] n=4 '물론 꺼리지 않습니다(물론입니다).'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'Of course not.' 그대로(결정 C \"Of course I don't mind.\" · 'Certainly not.') · 옆 n=3 은 P119 고침 · n=5 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P121": {
+   "id": "P121",
+   "판정": "제대로",
+   "main 글": "gh2-041-1 .blocks[1].items[5] n=6 '시민들이 당국이 그의 계획을 심각하게 여기지 않았던 성범죄자를 잡았다.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'Citizens captured a sex offender whose schemes authorities did not take seriously.' 그대로(결정 C 다른 정답 2 — caught · plans) · 옆 n=5 · 7 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P122": {
+   "id": "P122",
+   "판정": "제대로",
+   "main 글": "gh2-042-1 .blocks[1].items[5] n=6 '누구의 손가락이 그 단추 위에 있느냐가 선거 승리를 거의 규정지었다(결정지었다).'",
+   "까닭": "고칠 글과 글자 그대로 같음(마침표 하나) · 옛 '규정지었다.(' 안 남음. 영어 짝 'Whose finger was on the button almost defined electoral success.' 그대로(결정 C 다른 정답 4) · 옆 n=5 · 7 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "P123": {
+   "id": "P123",
+   "판정": "제대로",
+   "main 글": "gh2-048-1 .blocks[1].items[7] n=8 '그 미사일은 아르헨티나에 그 전쟁에서 승리를 가져다줄 수 있었을 텐데.'",
+   "까닭": "고칠 글과 글자 그대로 같음. 영어 짝 'The missile could have handed Argentina victory in the war.' 그대로(결정 C 다른 정답 3 — given · brought 꼴) · 옆 n=7 · 9 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "E18": {
+   "id": "E18",
+   "판정": "옆 글을 망침",
+   "main 글": "gh2-022 .blocks[1].items[1] n=2 'You owe me nothing.' alternatives [\"You don't owe me anything.\", \"You don't owe me a thing.\"] · 짝 gh2-022-1 .blocks[1].items[1] n=2 {text '너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).', alternatives [\"You don't owe me anything.\"]}",
+   "까닭": "영어 칸은 제대로: 고칠 글이 글자 그대로 첫 칸 · main 채점 만점(옛 0점) · 대조 'You owe me anything.' · \"You don't owe me nothing.\" · \"I don't owe you anything.\" · 'You owe me something.' main 0점 · 'You do not owe me anything.' 만점 · 둘째는 결정 C 표. 그런데 고칠 곳이 '(한국어 gh2-022-1.json 은 그대로)' 라 했는데 한국어 칸에도 alternatives [\"You don't owe me anything.\"] 가 새로 생김 — main GRAMMAR I · II 모든 파일에서 한국어 글 칸에 alternatives 가 있는 곳은 이 하나뿐(스크립트로 셈 · 옛 판 0). 기계 줄이 두 파일에서 찾은 것도 이 때문. 앱은 다른 정답을 영어 쪽 칸에서만 가져와(GrammarLearningView.tsx 187~211행 — 작업 트리와 본 저장소 파일이 같은 해시) src/lib 에도 alternatives 를 읽는 곳이 grammarGrading 말고 없어, 지금 화면 · 채점에는 안 보이는 데이터 흠. 한국어 글 '아무것도' 는 1부 결과 표 95행 고침(맞음). 적용 도구가 괄호 안의 파일 이름을 분할본처럼 읽은 듯(추정) — 줄.json 전체에서 고칠 곳에 '… 은 그대로' 파일 이름이 든 문법 줄은 이것 하나. 옆 n=1 · 3 그대로(영어는 결정 C 다른 정답만).",
+   "고칠 것": "content/lessons/grammar2/gh2-022-1.json .blocks[1].items[1] (n=2) 에서 alternatives 키를 지움(text '너는 나에게 아무것도 빚지지 않는다(빚진 것 없다).' 는 그대로). 영어 gh2-022.json n=2 는 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "E19": {
+   "id": "E19",
+   "판정": "제대로",
+   "main 글": "gh2-022-1 .blocks[1].items[4] n=5 '너는 나에게 호의를 베풀어줄래(한 가지 부탁을 들어줄래)?'",
+   "까닭": "고칠 글과 글자 그대로 같음 · 옛 '들어줄래?)' 안 남음. 영어 짝 'Will you do me a favor?' 그대로(결정 C 다른 정답 4 — can · could · would · favour; 결정 C 가 뺀 'Will you do a favor for me?' 는 안 들어감) · 옆 n=4 · 6 한국어 그대로.",
+   "때": "2026-09-25 04:54"
+  },
+  "D2": {
+   "id": "D2",
+   "판정": "제대로",
+   "main 글": "gh2-039 #8 alternatives ['This is the book which I bought yesterday.', 'This is the book that I bought yesterday.'] · #3 '…restaurant which opened recently.' · #6 '…find others that share the belief.' · #13 '…sculptures that you are looking at…' · '…sculptures you are looking at…' · #14 '…to people that plan the routes…' · gh2-040 #1 'People that work outdoors…' · #3 '…a substance that we all say we abhor.' · gh2-041 #1 '…growers that staged demonstrations.' · #2 '…expect people that never respected…' · gh2-015 #1 'I know a student that studies very hard.'",
+   "까닭": "추천안 목록 11꼴이 모두 그 문항의 main 다른 정답에 글자 그대로 있고 main 채점 만점(옛 참조 · 옛 채점 11꼴 모두 70점) — 결정 C 표에 실려 함께 들어감. 확인 문장대로 #8 'This is the book whom I bought yesterday.' main 70점 그대로 · gh2-040 #3 that 꼴 만점. 빼라던 곳도 그대로: gh2-041 #3 ~ #5 다른 정답 없음(who · whom 으로 바꾼 꼴 main 70점) · 전치사 + which/whom 문항(gh2-039 #10 · #11 · #12 · gh2-040 #5)에 관계사 바꾼 꼴 없음(that 넣은 꼴 main 70점) · gh2-015 #2(계속 용법 who) that 꼴 없음(main 70점). 모범 · 한국어 그대로. 이 문항들의 다른 정답은 모두 5412468 참조 · 결정 C 표로 설명됨(그 밖의 것 0) · 빗금 · 겹친 답 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "D3": {
+   "id": "D3",
+   "판정": "제대로",
+   "main 글": "src/lib/curriculumPresentation.ts 154~159행 — grammar2 에서 lessonNum '44' 이면 부제목 뒤에 ' · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다'",
+   "까닭": "추천안 글과 글자 그대로 같음 · gh1-116 ~ 123 의 ' · 2002년 뉴스 방송 기반 문장입니다'(137~139행)와 같은 방식. main 의 formatLessonPresentation 을 불러 봄: gh2-044 'English Model Pattern · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다' · gh2-044-1 '한국어 대조 스크립트 · 4번은 …' · gh2-043 · gh2-045 는 알림 없음 · gh1-116 알림 그대로. 옛 파일과 견주면 바뀐 줄은 이 넷뿐. gh2-044 #4 영어 · 한국어 글 그대로(영어 다른 정답은 결정 C 표 넷만 늘어남 — 소리 없음).",
+   "때": "2026-09-25 04:54"
+  }
+ }
+}

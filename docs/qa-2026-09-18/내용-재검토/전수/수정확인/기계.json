@@ -1,0 +1,1750 @@
+{
+ "판": "3e9687f21ab1eb915cc17e83fc7e7e922e201654",
+ "스냅": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\kig-snap-3e9687f",
+ "결정C": {
+  "문항": 1370,
+  "다른정답": 3233,
+  "모든파일만점": 3229,
+  "파일마다검사": 4114,
+  "파일마다만점": 4108,
+  "안된것": [
+   {
+    "id": "grammar1/gh1-058#29",
+    "답": "Each student has his/her own idea.",
+    "파일": "gh1-059-2.json .blocks[1].items[9] (n=29)",
+    "점수": "0점"
+   },
+   {
+    "id": "grammar1/gh1-058#29",
+    "답": "Each student has his/her own idea.",
+    "파일": "gh1-059.json .blocks[3].items[28] (n=29)",
+    "점수": "0점"
+   },
+   {
+    "id": "grammar1/gh1-058#30",
+    "답": "Does each student have his/her own plan?",
+    "파일": "gh1-059-2.json .blocks[1].items[10] (n=30)",
+    "점수": "0점"
+   },
+   {
+    "id": "grammar1/gh1-058#30",
+    "답": "Does each student have his/her own plan?",
+    "파일": "gh1-059.json .blocks[3].items[29] (n=30)",
+    "점수": "0점"
+   },
+   {
+    "id": "grammar1/gh1-066#57",
+    "답": "Does each student have his/her own room?",
+    "파일": "gh1-067.json .blocks[4].items[3] (n=57)",
+    "점수": "0점"
+   },
+   {
+    "id": "grammar1/gh1-092#57",
+    "답": "Does each student have his/her own project?",
+    "파일": "gh1-093.json .blocks[2].items[18] (n=57)",
+    "점수": "0점"
+   }
+  ],
+  "뺀답이들어감": [
+   {
+    "id": "grammar1/gh1-068#79",
+    "답": "Every boy didn't receive a prize, did they?",
+    "파일": "gh1-069.json .blocks[4].items[0] (n=79)",
+    "뺀까닭": "소유자 결정 5(6-1393)는 gh1-060 · gh1-068 의 'All/Every … not' 대체 답안 다섯을 그 모양 그대로 만점으로 "
+   },
+   {
+    "id": "grammar1/gh1-108#45",
+    "답": "How many English classes does he have in a week?",
+    "파일": "gh1-109.json .blocks[3].items[9] (n=45)",
+    "뺀까닭": "모범 '… have a week?' 에 기능어 in 하나만 더한 꼴 — 명령서가 '결정 2 로 이미 70점이라 적지 않는다' 고 정한 종류. ("
+   },
+   {
+    "id": "grammar1/gh1-120#34",
+    "답": "The Arabs and Israelis must make a choice.",
+    "파일": "gh1-121-2.json .blocks[1].items[14] (n=34)",
+    "뺀까닭": "도구로 재면 모범 'Arabs and Israelis must make a choice.' 에 기능어 The 하나만 더 쓴 꼴 — 결정 2(기능"
+   },
+   {
+    "id": "grammar1/gh1-120#34",
+    "답": "The Arabs and Israelis must make a choice.",
+    "파일": "gh1-121.json .blocks[3].items[33] (n=34)",
+    "뺀까닭": "도구로 재면 모범 'Arabs and Israelis must make a choice.' 에 기능어 The 하나만 더 쓴 꼴 — 결정 2(기능"
+   }
+  ],
+  "HeIsGot": [
+   {
+    "id": "grammar1/gh1-010#7",
+    "파일": "gh1-011-1.json .blocks[3].items[6] (n=7)",
+    "답": "He is got a dream.",
+    "점수": "70점"
+   },
+   {
+    "id": "grammar1/gh1-010#7",
+    "파일": "gh1-011.json .blocks[3].items[6] (n=7)",
+    "답": "He is got a dream.",
+    "점수": "70점"
+   },
+   {
+    "id": "grammar1/gh1-054#7",
+    "파일": "gh1-055-1.json .blocks[3].items[6] (n=7)",
+    "답": "He is got a bicycle.",
+    "점수": "70점"
+   },
+   {
+    "id": "grammar1/gh1-054#7",
+    "파일": "gh1-055.json .blocks[3].items[6] (n=7)",
+    "답": "He is got a bicycle.",
+    "점수": "70점"
+   }
+  ]
+ },
+ "채점코드": {
+  "변형": 1987,
+  "전과main": {
+   "부정 넣기: 전 0점 → main 0점": 1442,
+   "부정 빼기: 전 0점 → main 0점": 464,
+   "접두어 떼기: 전 70점 → main 0점": 44,
+   "접두어 떼기: 전 0점 → main 0점": 30,
+   "부정 빼기: 전 70점 → main 70점": 6,
+   "unless → if: 전 70점 → main 0점": 1
+  },
+  "main에서점수받는뜻반대": [
+   {
+    "id": "grammar1/gh1-102#138",
+    "ko": "너는 다음 기회에 나를 데리고 나갈 거지?",
+    "모범": "You will take me out some other time, won't you?",
+    "종류": "부정 빼기",
+    "답": "You will take me out some other time, will you?",
+    "전": "70점",
+    "main": "70점"
+   },
+   {
+    "id": "grammar1/gh1-108#37",
+    "ko": "그들은 2학년생이 되겠지?",
+    "모범": "They will be sophomores, won't they?",
+    "종류": "부정 빼기",
+    "답": "They will be sophomores, will they?",
+    "전": "70점",
+    "main": "70점"
+   },
+   {
+    "id": "grammar1/gh1-110#75",
+    "ko": "우리는 다음 주 언젠가 거기에 가겠지?",
+    "모범": "We'll go there sometime next week, won't we?",
+    "종류": "부정 빼기",
+    "답": "We'll go there sometime next week, will we?",
+    "전": "70점",
+    "main": "70점"
+   },
+   {
+    "id": "grammar1/gh1-110#99",
+    "ko": "모든 1,900개 올림피아 매장이 60일 안에 그것을 제공하고 있겠지?",
+    "모범": "All 1,900 Olympia outlets will be serving it within 60 days, won't they?",
+    "종류": "부정 빼기",
+    "답": "All 1,900 Olympia outlets will be serving it within 60 days, will they?",
+    "전": "70점",
+    "main": "70점"
+   },
+   {
+    "id": "grammar1/gh1-110#103",
+    "ko": "그것은 중재를 모색하겠지?",
+    "모범": "It will seek arbitration, won't it?",
+    "종류": "부정 빼기",
+    "답": "It will seek arbitration, will it?",
+    "전": "70점",
+    "main": "70점"
+   },
+   {
+    "id": "grammar1/gh1-118#71",
+    "ko": "그것은 너의 성전환 수술을 커버하겠지?",
+    "모범": "It will cover your gender-affirming surgery, won't it?",
+    "종류": "부정 빼기",
+    "답": "It will cover your gender-affirming surgery, will it?",
+    "전": "70점",
+    "main": "70점"
+   }
+  ]
+ },
+ "빗금": {
+  "빗금문장": 38,
+  "달라진문장": [
+   {
+    "where": "student/s6-2 #2",
+    "text": "My teacher’s name is Mr./Ms. (Surname).",
+    "전": [
+     "My teacher’s name is Mr./Ms. (Surname)."
+    ],
+    "main": [
+     "My teacher’s name is Mr. (Surname).",
+     "My teacher’s name is Ms. (Surname)."
+    ]
+   }
+  ]
+ },
+ "칩": {
+  "규칙만바뀐강": [
+   {
+    "강": "d001",
+    "전힌트": "Mrs. Watson. Barbara. Robert Watson. Wisconsin. Ellie. Tom.",
+    "main힌트": "Mrs. Watson. Barbara. Robert Watson. Wisconsin. Ellie. Tom.",
+    "문장": [
+     {
+      "n": "1",
+      "en": "I'm Mrs. Watson. My first name is Barbara. I'm a nurse and I work in a hospital.",
+      "전": [
+       "Mrs",
+       "Watson",
+       "Barbara",
+       "Robert Watson"
+      ],
+      "main": [
+       "Mrs. Watson",
+       "Barbara",
+       "Robert Watson"
+      ]
+     },
+     {
+      "n": "2",
+      "en": "I'm married to Robert Watson. He is a scientist. My husband and I live in Wisconsin.",
+      "전": [
+       "Watson",
+       "Robert Watson",
+       "Wisconsin"
+      ],
+      "main": [
+       "Mrs. Watson",
+       "Robert Watson",
+       "Wisconsin"
+      ]
+     },
+     {
+      "n": "3",
+      "en": "That's one of the states in the United States. We live in a house.",
+      "전": [
+       "Mrs",
+       "Watson",
+       "Barbara",
+       "Robert Watson",
+       "Wisconsin",
+       "Ellie",
+       "Tom"
+      ],
+      "main": [
+       "Mrs. Watson",
+       "Barbara",
+       "Robert Watson",
+       "Wisconsin",
+       "Ellie",
+       "Tom"
+      ]
+     }
+    ],
+    "새규칙만": true
+   },
+   {
+    "강": "d030",
+    "전힌트": "Dear Wilma. Mr. Biggs. jewelry. customer. price tag, 495. $4.95, bargain. receipts, upset. antique gold watch",
+    "main힌트": "Dear Wilma. Mr. Biggs. jewelry. customer. price tag, 495. $4.95, bargain. receipts, upset. antique gold watch",
+    "문장": [
+     {
+      "n": "2",
+      "en": "I have lost my new job. Mr. Biggs hired me at his jewelry store last week, but he fired me today.",
+      "전": [
+       "Biggs",
+       "jewelry"
+      ],
+      "main": [
+       "Mr. Biggs",
+       "jewelry"
+      ]
+     },
+     {
+      "n": "8",
+      "en": "Later Mr. Biggs told me to come into his office and bring my receipts.",
+      "전": [
+       "Biggs",
+       "receipts"
+      ],
+      "main": [
+       "Mr. Biggs",
+       "receipts"
+      ]
+     }
+    ],
+    "새규칙만": true
+   }
+  ],
+  "힌트줄바뀐강": [
+   {
+    "강": "d002",
+    "전힌트": "Rod Watson. Rodney Hill Watson. Bob Watson Denver, Colorado. Clayton Street. 1490. 1490 Clayton Street. Madison, Wisconsin 1937. March 1. 1941. government employee.",
+    "main힌트": "Rod Watson. Rodney Hill Watson. Bob Watson. Denver, Colorado. Clayton Street. 1490. 1490 Clayton Street. Madison, Wisconsin. 1937. March 1. 1941. government employee.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d003",
+    "전힌트": "farmhouse 60.",
+    "main힌트": "farmhouse. 60.",
+    "달라진문장": 2
+   },
+   {
+    "강": "d004",
+    "전힌트": "Brazil. Portuguese South America. textile plants manufacture cotton, linen, silk products. steel mills rubber plants. agricultural products. coffee, corn, cotton, cocoa. wheat, rice, beans, bananas. Amazon clinic, school system.",
+    "main힌트": "Brazil. Portuguese. South America. textile plants manufacture cotton, linen, silk products. steel mills. rubber plants. agricultural products. coffee, corn, cotton, cocoa. wheat, rice, beans, bananas. Amazon. clinic.",
+    "달라진문장": 9
+   },
+   {
+    "강": "d005",
+    "전힌트": "Tom Fred basketball baseball, tennis. seafood hamburgers French fries.",
+    "main힌트": "Tom. Fred. basketball, baseball, tennis. seafood. hamburgers, French fries.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d006",
+    "전힌트": "Dr. William N. Green dentist. toothaches fixes Olney. Washington D.C. dental office. Washington. 1616 Jefferson Street. 6:15 6:45 7:15. parking lot Madison Street. 8.",
+    "main힌트": "Dr. William N. Green. dentist. toothaches. fixes. Olney. Washington D.C., dental office. Washington. 1616 Jefferson Street. 6:15. 6:45. 7:15. parking lot. Madison Street.",
+    "달라진문장": 8
+   },
+   {
+    "강": "d007",
+    "전힌트": "John Wenger Philadelphia. state of Pennsylvania. Mrs. Wenger, John's mother Germany. September 9, 1933. German, Polish French English, Bern, Switzerland November 12, 1931. French, German, Italian, English. May 9, 1953. 19 21. June 4, 1954. 22 University of Pennsylvania. French German. field of medicine.",
+    "main힌트": "John Wenger. Philadelphia. state of Pennsylvania. Mrs. Wenger. Germany. September 9, 1933. German, Polish, French, English. Bern, Switzerland. November 12, 1931. Italian. May 9, 1953. 19. 21. June 4, 1954. 22. University of Pennsylvania. field of medicine.",
+    "달라진문장": 10
+   },
+   {
+    "강": "d008",
+    "전힌트": "Dear Peggy. 20 acres. 5 miles from town. living room, dining room, kitchen, 4 bedrooms, bathroom. barn next year. modern heating system. Don corn. wheat, vegetables. 10 cows, 100 chickens, sheep pigs. Nancy.",
+    "main힌트": "Dear Peggy. 20 acres. 5 miles from town. living room, dining room, kitchen, 4 bedrooms, bathroom. barn next year. modern heating system. Don. corn, wheat, vegetables. 10 cows, 100 chickens, sheep, pigs. Nancy.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d010",
+    "전힌트": "get along all right. French Portuguese. Kenya. Lake Victoria Nile River. Sahara Desert. Far East. four hours",
+    "main힌트": "get along all right. French. Portuguese. Kenya. Lake Victoria. Nile River. Sahara Desert. Far East. four hours",
+    "달라진문장": 2
+   },
+   {
+    "강": "d011",
+    "전힌트": "Kim Norris Ocean City, New Jersey, Becky Field. Laura Beckett. Washington boardwalk.",
+    "main힌트": "Kim Norris. Ocean City, New Jersey, Becky Field. Laura Beckett. Washington. boardwalk.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d014",
+    "전힌트": "athlete. Russian, Portuguese, German, Italian Chinese.",
+    "main힌트": "athlete. Russian, Portuguese, German, Italian, Chinese.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d015",
+    "전힌트": "discotheque. suit blonde purple pants,",
+    "main힌트": "discotheque. suit. blonde. purple pants.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d016",
+    "전힌트": "Peter Patralis. 3:30. empty trash. closets. 9:15. frightened convince",
+    "main힌트": "Peter Patralis. 3:30. emptied all the trash. closets. 9:15. frightened. convince",
+    "달라진문장": 3
+   },
+   {
+    "강": "d017",
+    "전힌트": "town suburbs?. valley. hills? lake. coast?. mountains, woods?",
+    "main힌트": "town. suburbs. valley. hills. lake. coast. mountains, woods.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d018",
+    "전힌트": "photography racetrack, ran races. develop lift bet. 24 in a row. tie string",
+    "main힌트": "photography. racetrack, ran races. developing. lifted. make a bet. 24. in a row. tied a string",
+    "달라진문장": 10
+   },
+   {
+    "강": "d019",
+    "전힌트": "Jules Verne, French 1865, 2 Americans. one Frenchman. 97 hours, 13 minutes, 20 seconds science fiction.",
+    "main힌트": "Jules Verne, French. 1865, 2 Americans. one Frenchman. 97 hours, 13 minutes, 20 seconds. science fiction.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d020",
+    "전힌트": "Europe Guadeloupe. Caribbean. 15 suntan. rolls first week August.",
+    "main힌트": "Europe. Guadeloupe. Caribbean. 15. suntan. rolls. first week, August.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d021",
+    "전힌트": "Judy in a rush. cap step on bored, quit.",
+    "main힌트": "Judy. in a rush. capped. stepped on. bored, quit.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d022",
+    "전힌트": "Oxford, England formal classes. 14,15,16, 17 physics. take a break cafeteria",
+    "main힌트": "Oxford, England. formal classes. 14, 15, 16, 17. physics. taking a break. cafeteria",
+    "달라진문장": 5
+   },
+   {
+    "강": "d024",
+    "전힌트": "balloon. France 1783. last 8 minutes. American Frenchman channel, belongings",
+    "main힌트": "balloon. France. 1783. lasted only 8 minutes. American. Frenchman. channel, belongings",
+    "달라진문장": 4
+   },
+   {
+    "강": "d025",
+    "전힌트": "Saturday, Carlos Kim 10 a.m. magazines, towels, food fruit, cheese, sandwiches, cookies, juice. rubber boat. 11:30. an hour and a half traffic. shallow water row the boat",
+    "main힌트": "Saturday, Carlos. Kim. 10 a.m., magazines, towels, food, fruit, cheese, sandwiches, cookies, juice. rubber boat. 11:30. an hour and a half. traffic. shallow water. rowed the boat",
+    "달라진문장": 9
+   },
+   {
+    "강": "d027",
+    "전힌트": "Frank Lewis, Association of Sportswriters. Fernando Marcos. 1975 1978. 1978. New York Madrid. kept in touch with. coaching",
+    "main힌트": "Frank Lewis, Association of Sportswriters. Fernando Marcos. 1975. 1978. New York. Madrid. kept in touch with. coaching",
+    "달라진문장": 4
+   },
+   {
+    "강": "d028",
+    "전힌트": "Kevin Taylor, Canadian national swimming competition. 20 sports clubs. women's 100 meter freestyle. Angela Edwards. City Sports Club. three races. Karen Gibson. Toronto flu. broken 4 records",
+    "main힌트": "Kevin Taylor, Canadian National Swimming Competition. 20 sports clubs. women's 100 meter freestyle. Angela Edwards. City Sports Club. three races. Karen Gibson. Toronto. flu. broken 4 records",
+    "달라진문장": 2
+   },
+   {
+    "강": "d029",
+    "전힌트": "Marta Perez. 50 meter backstroke. Elizabeth Norris. Lakeside Sports Club. Sally Miller. Community Sports Club. cheer for",
+    "main힌트": "Marta Perez. 50 meter backstroke. Elizabeth Norris. Lakeside Sports Club. Sally Miller. Community Sports Club. cheering for",
+    "달라진문장": 1
+   },
+   {
+    "강": "d031",
+    "전힌트": "Irene Watson editor. Sacramento Kathy Austin. Mount Everest seven expedition.",
+    "main힌트": "Irene Watson. editor. Sacramento. Kathy Austin. Mount Everest. seven. expedition.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d032",
+    "전힌트": "rock climb. Kathy Byram. Mount Everest, Jim Elliott. William Smith. cliff. lost balance 5 or 6. waist. ledge",
+    "main힌트": "rock climbing. Kathy Byram. Mount Everest, Jim Elliott. William Smith. cliff. lost his balance. 5 or 6. waist. ledge",
+    "달라진문장": 5
+   },
+   {
+    "강": "d033",
+    "전힌트": "New Orleans. Mississippi River. 160 kilometers north. Gulf of Mexico. location shipping center. trade Latin America port. Bananas, cocoa beans, coffee southern United States.",
+    "main힌트": "New Orleans. Mississippi River. 160 kilometers north. Gulf of Mexico. location. shipping center. trade, Latin America. Bananas, cocoa beans, coffee. southern United States.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d034",
+    "전힌트": "French Quarter. early 1900s. exhibitions, conventions Superdome. indoor arena 100 parks. New Orleans. Lake Pontchartrain Causeway, 38 km. annual Mardi Gras celebrations. parades. festivities.",
+    "main힌트": "French Quarter. early 1900s. exhibitions, conventions. Superdome. indoor arenas. 100 parks. New Orleans. Lake Pontchartrain Causeway, 38 kilometers. annual Mardi Gras celebration. parades. festivities.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d035",
+    "전힌트": "golden wedding anniversary. 50 years. anniversary. confusion. George. Dorothy Aunt Helen, stepsisters, half-brothers, nieces-in-law.",
+    "main힌트": "golden wedding anniversary. 50 years. anniversary. confusion. George. Dorothy. Aunt Helen, stepsisters, half-brothers, nieces-in-law.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d036",
+    "전힌트": "American writer, Charles Dudley Warner. common subject. clear up. come closer to being correct",
+    "main힌트": "American writer, Charles Dudley Warner. common subject. clear up. comes closer to being correct",
+    "달라진문장": 1
+   },
+   {
+    "강": "d037",
+    "전힌트": "Bobby Adams Dr. Smith throat, temperature, orange juice, two pieces of buttered toast, dry cereal, milk",
+    "main힌트": "Bobby Adams. Dr. Smith. throat, temperature, orange juice, two pieces of buttered toast, dry cereal, milk",
+    "달라진문장": 6
+   },
+   {
+    "강": "d038",
+    "전힌트": "Mortons' Alfred.",
+    "main힌트": "Mortons'. Alfred.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d039",
+    "전힌트": "Herbert! Herby brush teeth, comb hair",
+    "main힌트": "Herbert. Herby. brush my teeth, comb my hair",
+    "달라진문장": 4
+   },
+   {
+    "강": "d040",
+    "전힌트": "John, Japan, Australia, Brazil. Mr. Fulton. Miss Ellis expert plants",
+    "main힌트": "John, Japan, Australia, Brazil. Mr. Fulton. Miss Ellis. expert. plants",
+    "달라진문장": 2
+   },
+   {
+    "강": "d041",
+    "전힌트": "16 18, just two years. subjects. growing up",
+    "main힌트": "16. 18, just two years. subjects. growing up",
+    "달라진문장": 2
+   },
+   {
+    "강": "d044",
+    "전힌트": "June. Bill Patterson. John Corcoran. freshman year. sophomores. junior year, take Russian. senior Chinese. chemistry. chemist",
+    "main힌트": "June. Bill Patterson. John Corcoran. freshman year. sophomores. junior year, take Russian. senior year. Chinese. chemistry. chemist",
+    "달라진문장": 1
+   },
+   {
+    "강": "d045",
+    "전힌트": "German exam. English exam. Professor Charles M. McCarthy. M stand for Mark middle name. required subject. elective. credits German course.",
+    "main힌트": "German exam. English exam. Professor Charles M. McCarthy. M stands for Mark. middle name. required subject. elective. credits.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d046",
+    "전힌트": "Ben Frank. grocery store. 2 years, meats, fruits, vegetables, teas, coffees Phil Strickland",
+    "main힌트": "Ben Frank. grocery store. 2 years, meats, fruits, vegetables, teas, coffees. Phil Strickland",
+    "달라진문장": 1
+   },
+   {
+    "강": "d047",
+    "전힌트": "fuel liquids, metals. shopping district. recommend",
+    "main힌트": "fuel. liquids, metals. shopping district. recommended",
+    "달라진문장": 4
+   },
+   {
+    "강": "d048",
+    "전힌트": "take this saying to heart. do it yourself fans. bookcases, put the parts together, add paint varnish",
+    "main힌트": "take this saying to heart. do-it-yourself fans. bookcases, put the parts together, paint, varnish",
+    "달라진문장": 4
+   },
+   {
+    "강": "d049",
+    "전힌트": "popular belief, artists supposedly temperamental. That is, front row audience",
+    "main힌트": "popular belief, artists, supposedly, temperamental. that is, front row. audience",
+    "달라진문장": 5
+   },
+   {
+    "강": "d050",
+    "전힌트": "charity charitable organizations. raise money charitable causes. neglect Mrs. Brown, charity bazaars. twice a week. practice",
+    "main힌트": "charity. charitable organizations. raise money. charitable causes. neglect. Brown, charity bazaars. twice a week. practice",
+    "달라진문장": 6
+   },
+   {
+    "강": "d051",
+    "전힌트": "fascinating. supposedly. fill with adventure. reporters lead rather routine lives. average cover column",
+    "main힌트": "fascinating. supposedly. filled with adventure. lead rather routine lives. average. cover a story. column",
+    "달라진문장": 7
+   },
+   {
+    "강": "d052",
+    "전힌트": "look forward to. take vacation. Northern Wisconsin, set up tent camp out.",
+    "main힌트": "look forward to. take a vacation. northern Wisconsin, set up a tent. camping out.",
+    "달라진문장": 7
+   },
+   {
+    "강": "d053",
+    "전힌트": "get out of hand Chicago for instance. collect model trains nuisance. is valued at close to 10,000. measure collection inexpensive match-boxes",
+    "main힌트": "get out of hand. Chicago, for instance. collecting model trains. nuisance. collection. is valued at close to $10,000. measured. inexpensive matchboxes",
+    "달라진문장": 7
+   },
+   {
+    "강": "d054",
+    "전힌트": "by accident. Columbus, searching for a shortcut. East Indies. original inhabitants tribute Columbus. Alice fell down rabbit hole, reverse fairy tales. Middle Ages. turn metals into gold. laid foundations. modern chemical science.",
+    "main힌트": "by accident. Columbus, searching for a shortcut. East Indies. original inhabitants. tribute. Alice fell down rabbit hole, reversed. fairy tale. Middle Ages. turn metals into gold. laid foundations. modern chemical science.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d055",
+    "전힌트": "popular hobbies. point cameras at. in sight. enthusiasm. Rome. take cover off his lens. whole roll",
+    "main힌트": "popular hobbies. pointing cameras at. in sight. enthusiasm. Rome. take cover off his lens. whole roll",
+    "달라진문장": 1
+   },
+   {
+    "강": "d056",
+    "전힌트": "engaged in profession. Tony Sarg. marionettes specialize in put on plays. grownups. operas, comedies, tragedies highly polished art",
+    "main힌트": "engaged in profession. Tony Sarg. marionette shows. specialized in. put on plays. grown-ups. operas, comedies, tragedies. highly polished art",
+    "달라진문장": 5
+   },
+   {
+    "강": "d057",
+    "전힌트": "advantages. when it comes to beat make up for. commute to",
+    "main힌트": "advantages. when it comes to. beat. make up for. commuting to",
+    "달라진문장": 2
+   },
+   {
+    "강": "d058",
+    "전힌트": "1896, Detroit, Michigan. amazed. motor vehicle. Henry Ford. mechanical 1876 12. 1903, found Ford Motor Company. Model T. 15 million 1908 1927. 1924, 7,500. $5 a day",
+    "main힌트": "1896, Detroit, Michigan. amazed. motor vehicle. Henry Ford. mechanical. 1876. 12. 1903, founded the Ford Motor Company. Model T, 15 million. 1908. 1927. 1924, 7,500. $5 a day",
+    "달라진문장": 7
+   },
+   {
+    "강": "d059",
+    "전힌트": "1938, War of the Worlds. news flash. mysterious. planet Mars. burning object New Jersey. on another station. miss change stations, strange object. shine brightly scream",
+    "main힌트": "1938, War of the Worlds. news flash. mysterious. planet Mars. burning object. New Jersey. on another station. missed. changed stations, strange object. shining brightly. scream",
+    "달라진문장": 7
+   },
+   {
+    "강": "d060",
+    "전힌트": "7,000. 120. 6 million. Martian invaders. panic. army, air force, navy invader germ. harmless deadly",
+    "main힌트": "7,000. 120. 6 million. Martian invaders. panic. Army, Air Force, Navy. germ. harmless. deadly",
+    "달라진문장": 4
+   },
+   {
+    "강": "d061",
+    "전힌트": "Show business Taggy Montag. ad favorite teenage idol. simply fantastic performer audience. enthusiastic autographs backstage.",
+    "main힌트": "Show business. Taggy Montag. an ad. favorite. teenage idol. simply. fantastic performer. audience. enthusiastic. autographs. backstage.",
+    "달라진문장": 8
+   },
+   {
+    "강": "d062",
+    "전힌트": "dressing room. resist a look inside. write out a check for charity. march out of",
+    "main힌트": "dressing room. resist a look inside. write out a check for charity. marched out of",
+    "달라진문장": 2
+   },
+   {
+    "강": "d063",
+    "전힌트": "Saturday morning 9:30, High Street Ritz Hotel. likable. directions. \"Fantastic Five\". number two. top 20. purse wallet gasped.",
+    "main힌트": "Saturday morning 9:30, High Street. Ritz Hotel. likable. directions. \"Fantastic Five\". number two. top 20. purse, wallet. gasped.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d064",
+    "전힌트": "Social customs. behaving. impolite in your lap",
+    "main힌트": "Social customs. behaving. impolite. in your lap",
+    "달라진문장": 3
+   },
+   {
+    "강": "d065",
+    "전힌트": "nobleman. formal peas. amused. calmly",
+    "main힌트": "nobleman. formal. peas. amused. calmly",
+    "달라진문장": 2
+   },
+   {
+    "강": "d066",
+    "전힌트": "Chicago brewery. least fattening. lighter, LITE. \"LITE TASTES SOAPY.\", taste. non-fattening LITE beer. Lite Soap Company",
+    "main힌트": "Chicago brewery. least fattening. lighter, Lite. tastes soapy. tasted like soap. non-fattening. Soap Company",
+    "달라진문장": 5
+   },
+   {
+    "강": "d067",
+    "전힌트": "Mrs. Ruth Ascott, take the name of high-powered detergent 53 beer ads. \"LITE IS WONDERFUL FOR WASHING CLOTHES.\"",
+    "main힌트": "Mrs. Ruth Ascott, Lite. taking the name of. high-powered detergent. 53 years. beer ads. is wonderful for washing clothes.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d068",
+    "전힌트": "Dallas luggage confident brand-new",
+    "main힌트": "Dallas. luggage. confident. brand new",
+    "달라진문장": 4
+   },
+   {
+    "강": "d070",
+    "전힌트": "public railroad. run by steam. opened. England. 1825. single track. double track Manchester Liverpool. Mr. Huskisson, Eight opening ceremony. 600 29 coaches. 17 miles, halfway across the track. locomotive. fantastic speed 23. panicked. froze",
+    "main힌트": "public railroad. run by steam. opened. England. 1825. single track. double track. Manchester, Liverpool. Mr. Huskisson, Eight. opening ceremony. 600. 29 coaches. 17 miles, halfway across the track. locomotive. fantastic speed, 23 mph. panicked. froze",
+    "달라진문장": 7
+   },
+   {
+    "강": "d071",
+    "전힌트": "3 a.m. August 8, Jack Mills. controls. Glasgow. London. made up of 12 coaches. 67 mailmen sort mail. second coach. 5 mailmen. 128 bags. 5-pound notes. 100 years. 3 minutes past three, helper David Whitby. yellow warning light. out of order.",
+    "main힌트": "3 a.m. August 8, Jack Mills. controls. Glasgow. London. made up of 12 coaches. 67 mailmen. sorting the mail. second coach. 5 mailmen. 128 bags. 5-pound notes. 100 years. 3 minutes past three, helper David Whitby. yellow warning light. out of order.",
+    "달라진문장": 2
+   },
+   {
+    "강": "d072",
+    "전힌트": "creep. knock down. cross. last 10 coaches. unload. 3:45, 2,500,000 pounds.",
+    "main힌트": "creeping. knocked down. crossed. last 10 coaches. unloaded. 3:45, 2,500,000 pounds.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d073",
+    "전힌트": "Amy Johnson enthusiastic London, female pilot.",
+    "main힌트": "Amy Johnson. enthusiastic. London, female pilot.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d074",
+    "전힌트": "Australia set off May 5, 1930. route Vienna, Constantinople, Baghdad. sandstorm. emergency landing. India six days later. two days. Burma, monsoon football field. propeller. crash land put her mind to. come to her rescue",
+    "main힌트": "Australia. set off, May 5, 1930. route. Vienna, Constantinople, Baghdad. sandstorm. emergency landing. India six days later. two days. Burma, monsoon. football field. propeller. crash land. put her mind to. come to her rescue",
+    "달라진문장": 7
+   },
+   {
+    "강": "d075",
+    "전힌트": "drag racing 1940s. drag tracks. absolutely straight course. 1320 feet long. take corner. 7 seconds",
+    "main힌트": "drag racing. 1940s. drag tracks. absolutely straight course. 1320 feet long. take corner. 7 seconds",
+    "달라진문장": 3
+   },
+   {
+    "강": "d078",
+    "전힌트": "Real estate brokers appraisers",
+    "main힌트": "Real estate brokers. appraisers",
+    "달라진문장": 5
+   },
+   {
+    "강": "d080",
+    "전힌트": "projector. shutter. magnifies screen",
+    "main힌트": "projector. shutter. magnifies. screen",
+    "달라진문장": 1
+   },
+   {
+    "강": "d082",
+    "전힌트": "D.W. Griffith 1908 1916, direct Floyds Fork, Kentucky January 22, 1875. ten Louisville. 1907, 1908, Griffith director New York.",
+    "main힌트": "D.W. Griffith. 1908, 1916, directed. Floyds Fork, Kentucky. January 22, 1875. ten. Louisville. 1907, director. New York.",
+    "달라진문장": 9
+   },
+   {
+    "강": "d083",
+    "전힌트": "5 performing area. wide view. The Birth of a Nation. American Civil War 1931. Hollywood, California. July 23rd, 1948",
+    "main힌트": "Griffith. 5 meters. performing area. wide view. Birth of a Nation. American Civil War. 1931. Hollywood, California. July 23rd, 1948",
+    "달라진문장": 11
+   },
+   {
+    "강": "d084",
+    "전힌트": "Estelle Jones. Wren Computer ship pack. weigh. labels. terminal. load baggage compartment. fragile. packages",
+    "main힌트": "Estelle Jones. Wren. shipped. packed. weighed. labels. terminal. baggage compartment. fragile. packages. damaged",
+    "달라진문장": 7
+   },
+   {
+    "강": "d085",
+    "전힌트": "translate into numbers. instructions. memory unit. arithmetic unit",
+    "main힌트": "translated into numbers. instructions. memory unit. arithmetic unit",
+    "달라진문장": 3
+   },
+   {
+    "강": "d087",
+    "전힌트": "Bruce New Orleans. riverboat ride reserve",
+    "main힌트": "Bruce. New Orleans. riverboat ride. reserved",
+    "달라진문장": 3
+   },
+   {
+    "강": "d088",
+    "전힌트": "December, 1903, lift 37 meters. three more flights. 260 meters. 59 seconds. Flyer Wilbur Orville Dayton, Ohio. mechanical flight 1899. air pressure. wing surfaces. wind tunnel. 200",
+    "main힌트": "December, 1903, lifted. 37 meters. three more flights. 260 meters. 59 seconds. Flyer. Wilbur, Orville, Dayton, Ohio. mechanical flight. 1899. air pressure. wing surfaces. wind tunnel. 200",
+    "달라진문장": 5
+   },
+   {
+    "강": "d089",
+    "전힌트": "Kitty Hawk, North Carolina. December 17, 1903, Flyer III, 1905. 90 meters 40 kilometers. flying exhibitions. Europe United States. National Air and Space Museum. Washington DC.",
+    "main힌트": "Kitty Hawk, North Carolina. December 17, 1903, Flyer III, 1905. 90 meters. 40 kilometers. flying exhibitions. Europe, United States. National Air and Space Museum. Washington DC.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d091",
+    "전힌트": "12 14. 6 or 8 grades. reading, arithmetic, writing, social studies science. art, music, physical education. third level. junior. senior high school. 12. 14. 14. 17. 18. comprehensive. technical. vocational",
+    "main힌트": "12. 14. 6 or 8 grades. reading, arithmetic, writing, social studies, science. art, music, physical education. third level. junior. senior high school. 17. 18. comprehensive. technical. vocational",
+    "달라진문장": 4
+   },
+   {
+    "강": "d092",
+    "전힌트": "institutions. Technical institutes. two-year programs. electronics, engineering, business. Community. junior colleges. vocational. academic. two years junior college, associate degree. four year college. bachelor of arts. Bachelor of science degree. business, education, engineering, law, medicine.",
+    "main힌트": "institutions. Technical institutes. two-year programs. electronics, engineering, business. Community. junior colleges. vocational. academic. two years. junior college, associate degree. four-year college. Bachelor of Arts. Bachelor of Science degree. business, education, engineering, law, medicine.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d093",
+    "전힌트": "prehistoric entertaining educational. subjects arrange surface. realistically.",
+    "main힌트": "prehistoric. entertaining, educational. subjects. arranged. surface. realistically.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d094",
+    "전힌트": "architecture, clothing, customs, interests organize colors shapes",
+    "main힌트": "architecture, clothing, customs, interests. organize colors and shapes",
+    "달라진문장": 2
+   },
+   {
+    "강": "d095",
+    "전힌트": "Pat's week. United States. winning poem. contest. San Francisco. 10th 9:30 evening. 8:40 a.m. 11th. 8 that night, museums, Napa Valley. broke,",
+    "main힌트": "Pat. Pat's week. United States. winning poem. contest. San Francisco. 10th. 9:30 in the evening. 8:40 a.m. 11th. 8 that night, museums, Napa Valley. broke",
+    "달라진문장": 3
+   },
+   {
+    "강": "d096",
+    "전힌트": "progress pollution the 1970s, England. 28 people. disaster. 100 tear off. several days. huge clouds of smoke. 30 miles away.",
+    "main힌트": "progress, pollution. the 1970s, England. 28 people. disaster. 100. torn off. several days. huge clouds of smoke. 30 miles away.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d098",
+    "전힌트": "plants wear out. steel. concrete. businesses",
+    "main힌트": "plants. wear out. steel. concrete. businesses",
+    "달라진문장": 2
+   },
+   {
+    "강": "d099",
+    "전힌트": "Mr. Franklin Shipton, Oscar traffic well-off",
+    "main힌트": "Mr. Franklin. Shipton, Oscar. traffic. well off",
+    "달라진문장": 4
+   },
+   {
+    "강": "d102",
+    "전힌트": "routes meteorologists. weather stations, satellites, weather balloons. weather maps. temperature, air pressure, wind, humidity",
+    "main힌트": "routes. meteorologists. weather stations, satellites, weather balloons. weather maps. temperature, air pressure, wind, humidity",
+    "달라진문장": 4
+   },
+   {
+    "강": "d103",
+    "전힌트": "Alaska. dog-sleds. Alaskans. Iditarod Trail Race. 1,700. Anchorage. Nome. trails wilderness. route Nenana 1925.",
+    "main힌트": "Alaska. dog sleds. Alaskans. Iditarod Trail Race. 1,700. Anchorage. Nome. trails. wilderness. route. Nenana. 1925.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d104",
+    "전힌트": "March, four hours 110 rest period. two hours each day.",
+    "main힌트": "March, four hours. 150. rest period. two hours each day.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d105",
+    "전힌트": "Proverbs. comment on a situation. express truth. specific general truth. broth metaphors projects. comparison",
+    "main힌트": "Proverbs. comment on a situation. express truth. specific situation. general truth. broth. metaphors. projects. comparison",
+    "달라진문장": 5
+   },
+   {
+    "강": "d106",
+    "전힌트": "worth bush. the one-eyed man mice",
+    "main힌트": "worth. bush. the one-eyed man. mice",
+    "달라진문장": 4
+   },
+   {
+    "강": "d107",
+    "전힌트": "Benjamin Franklin Boston 1706. two years, 17, Philadelphia",
+    "main힌트": "Benjamin Franklin. Boston. 1706. two years, 17, Philadelphia",
+    "달라진문장": 4
+   },
+   {
+    "강": "d108",
+    "전힌트": "publications. Poor Richard's Almanac, weather, sun, moon planets. 1733 1758. edition Franklin penny healthy, wealthy, wise.",
+    "main힌트": "publications. Poor Richard's Almanac, weather, sun, moon, planets. 1733. 1758. edition. Franklin. penny. healthy, wealthy, wise.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d110",
+    "전힌트": "organizer. Philadelphia, police department, fire department, hospital, library. University of Pennsylvania. mail system. United States. Canada. representative Great Britain France. 1790. postage stamps, coins, paper money.",
+    "main힌트": "organizer. Philadelphia, police department, fire department, hospital, library. University of Pennsylvania. mail system. United States. Canada. Great Britain. representative. France. 1790. postage stamps, coins, paper money.",
+    "달라진문장": 2
+   },
+   {
+    "강": "d111",
+    "전힌트": "passport. identifies late 18th century, description early 1800s. black, curly. brown. broken. Forehead wrinkled, thin with big teeth. pointed.",
+    "main힌트": "passport. identifies. late 18th century, description. early 1800s. black, curly. brown. broken. Forehead, wrinkled. thin with big teeth. pointed.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d112",
+    "전힌트": "Construction. objects. Bulldozers. unusual shapes. broken pots, beads, Anthropologists Logan University dig. contents",
+    "main힌트": "Construction. objects. Bulldozers. unusual shapes. broken pots, beads, Anthropologists. Logan University. dig. contents",
+    "달라진문장": 3
+   },
+   {
+    "강": "d113",
+    "전힌트": "Professor Margaret Perkins, local Native Americans. Pomo Indians. Cisco River. four miles. canoes. nuts, seeds. acorns flour. permanent villages, baskets. residents.",
+    "main힌트": "Professor Margaret Perkins, local Native Americans. Pomo Indians. Cisco River. four miles. canoes. nuts, seeds. acorns. flour. permanent villages, baskets. residents.",
+    "달라진문장": 1
+   },
+   {
+    "강": "d114",
+    "전힌트": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route Asia. land off the coast of North America. India, Native Americans, 15,000. melt Bering Strait, Alaska. large herds of. wander. North. South America.",
+    "main힌트": "1492, Christopher Columbus. Atlantic Ocean. Spain. short route. Asia. landed. off the coast. North America. India, Native Americans, 15,000. melted. Bering Strait, Alaska. large herds of animals. wandered. South America.",
+    "달라진문장": 8
+   },
+   {
+    "강": "d115",
+    "전힌트": "Maya. Aztec. Mexico and Central America, Pueblo Indians, southwestern United States, sides of steep cliffs. Southwest wove cloth. Navajo Apache",
+    "main힌트": "Maya. Aztec. Mexico and Central America, Pueblo Indians, southwestern United States, sides of steep cliffs. Southwest. wove cloth. Navajo. Apache",
+    "달라진문장": 4
+   },
+   {
+    "강": "d116",
+    "전힌트": "West Mississippi River, Great Plains, wandering tribes. great herds of buffalo. clothing shelter. north of Mexico. tribes European settlers.",
+    "main힌트": "Mississippi River, Great Plains, wandering tribes. great herds of buffalo. clothing, shelter. north of Mexico. European settlers.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d117",
+    "전힌트": "English settlers. colonies. Atlantic coast. early 17th century. Native Americans settlers survive. corn, beans, squash, tobacco, maple sugar. fertilize fields",
+    "main힌트": "English settlers. colonies. Atlantic coast. early 17th century. Native Americans. survive. corn, beans, squash, tobacco, maple sugar. fertilize fields",
+    "달라진문장": 4
+   },
+   {
+    "강": "d118",
+    "전힌트": "clear the land European idea. real estate. personal use. tribes possessions in common, concept of private property. measles, mumps, smallpox, chickenpox.",
+    "main힌트": "cleared the land. European idea. real estate. personal use. tribes. possessions in common, concept of private property. measles, mumps, smallpox, chickenpox.",
+    "달라진문장": 7
+   },
+   {
+    "강": "d121",
+    "전힌트": "population growth. overpopulated 18th century, double 80 years. famines,",
+    "main힌트": "population growth. Earth. overpopulated. 18th century, double. 80 years. famines",
+    "달라진문장": 5
+   },
+   {
+    "강": "d122",
+    "전힌트": "resources. distributed equally. Africa population growth 2%. Europe's population, North America's population, immigration",
+    "main힌트": "resources. distributed equally. 1960s. Africa's. more than 2%. Europe's. North America's. immigration",
+    "달라진문장": 6
+   },
+   {
+    "강": "d123",
+    "전힌트": "fresh water. evaporation. distillation. evaporate. amount of water. 70,000 cubic kilometers. 110,000 cubic kilometers. 40,000. transfer",
+    "main힌트": "fresh water. evaporation. distillation. evaporates. amount of water. 70,000 cubic kilometers. 110,000 cubic kilometers. 40,000. transferred",
+    "달라진문장": 3
+   },
+   {
+    "강": "d124",
+    "전힌트": "carefully manage agriculture, industry, home use. free.",
+    "main힌트": "carefully managed. agriculture, industry, home use. free.",
+    "달라진문장": 1
+   },
+   {
+    "강": "d125",
+    "전힌트": "build dams streams rivers. settlements technological activities. bring water up. below the earth's surface. wells. water vapor make up. deep underground.",
+    "main힌트": "build dams. streams, rivers. settlements. technological activities. below the earth's surface. wells. vapor. make up. deep underground.",
+    "달라진문장": 8
+   },
+   {
+    "강": "d126",
+    "전힌트": "70%. Pacific, Atlantic, Indian, Arctic, Antarctic Oceans. body of water broken. oceanographers. billions of kilograms of fish. undersea plants minerals. undersea farms.",
+    "main힌트": "70%. Pacific, Atlantic, Indian, Arctic, Antarctic. body of water broken. oceanographers. billions of kilograms of fish. undersea plants. minerals. undersea farms.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d127",
+    "전힌트": "ocean's tides. tidal power plant. France. 1966. oil wells barges endanger",
+    "main힌트": "ocean's tides. tidal power plant. France. 1966. oil wells. barges. endangering",
+    "달라진문장": 3
+   },
+   {
+    "강": "d128",
+    "전힌트": "Ted Torkelson. 85. Norway. 12. Genoa. Far East. Norwegian, French, Italian, Turkish, Chinese English. Greek Burmese",
+    "main힌트": "Ted Torkelson. 85. Norway. 12. Europe. Genoa. Far East. Norwegian, French, Italian, Turkish, Chinese, English. Greek, Burmese",
+    "달라진문장": 3
+   },
+   {
+    "강": "d129",
+    "전힌트": "camels, llamas, horses. Burma exciting adventures Japan, China, Germany, Syria, Peru, Afghanistan Tibet. thousand-year-old eggs,",
+    "main힌트": "camels, llamas, horses. Burma. exciting adventures. Japan, China, Germany, Syria, Peru, Afghanistan, Tibet. thousand-year-old eggs",
+    "달라진문장": 4
+   },
+   {
+    "강": "d130",
+    "전힌트": "Hickman's Lodge. resort. Estes Park, Rocky Mountains. Joseph P. Hickman. central lodge, 10 cabins tennis courts, hiking trails, riding horses. fishing streams make up. 100 years. Thomas Hickman. 1870, 1900, 1910. 1950 California.",
+    "main힌트": "Hickman's Lodge. resort. Estes Park, Rocky Mountains. Joseph P. Hickman. central lodge, 10 cabins. tennis courts, hiking trails, riding horses. fishing streams. make up. 100 years. Thomas Hickman. 1870, 1900, 1910. 1950. California.",
+    "달라진문장": 8
+   },
+   {
+    "강": "d131",
+    "전힌트": "4 cabins. Six more cabins 1960. June September. staffed principally convenient arrangement",
+    "main힌트": "4 cabins. Six more cabins. 1960. June, September. staffed principally. convenient arrangement",
+    "달라진문장": 6
+   },
+   {
+    "강": "d132",
+    "전힌트": "complicated 2 minutes, positive confident.",
+    "main힌트": "complicated. 2 minutes, positive. confident.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d133",
+    "전힌트": "two children New York, Europe",
+    "main힌트": "two children. New York, Europe",
+    "달라진문장": 3
+   },
+   {
+    "강": "d134",
+    "전힌트": "44 pounds. square things. round things pack",
+    "main힌트": "44 pounds. square things. round things. packs",
+    "달라진문장": 4
+   },
+   {
+    "강": "d135",
+    "전힌트": "Bob Don suits. pants shoe",
+    "main힌트": "Bob. Don. suit. pants. shoe",
+    "달라진문장": 9
+   },
+   {
+    "강": "d136",
+    "전힌트": "socks shirts sweater.",
+    "main힌트": "socks. shirts. sweater.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d137",
+    "전힌트": "soup salad. Helen, lamb chops peas carrots, medium rare steak. mashed potatoes. gravy. dessert, ice cream fresh fruit. coffee portions generous,",
+    "main힌트": "soup, salad. Helen, lamb chops, peas, carrots, medium rare steak. mashed potatoes. gravy. dessert, ice cream. fresh fruit. coffee. portions. generous",
+    "달라진문장": 5
+   },
+   {
+    "강": "d138",
+    "전힌트": "fried chicken, corn, hot biscuits honey. chocolate ice cream cake 5",
+    "main힌트": "fried chicken, corn, hot biscuits with honey. chocolate ice cream and cake. 5:00",
+    "달라진문장": 3
+   },
+   {
+    "강": "d139",
+    "전힌트": "review Saturday",
+    "main힌트": "review. Saturday",
+    "달라진문장": 2
+   },
+   {
+    "강": "d143",
+    "전힌트": "blood transfusion Dr. Johnson. pressure. minor. up and around. 70",
+    "main힌트": "blood transfusion. Dr. Johnson. pressure. minor. up and around. 70",
+    "달라진문장": 5
+   },
+   {
+    "강": "d144",
+    "전힌트": "Mrs. Mills Dr. Cooper's 2:00 appointment",
+    "main힌트": "Mrs. Mills. Dr. Cooper's. 2:00 appointment",
+    "달라진문장": 4
+   },
+   {
+    "강": "d145",
+    "전힌트": "astonished bother interrupt",
+    "main힌트": "astonished. bother. interrupt",
+    "달라진문장": 4
+   },
+   {
+    "강": "d146",
+    "전힌트": "Washington University. mail 5 letters, package. two postcards. special delivery letter.",
+    "main힌트": "Washington University. mail. 5 letters, package. two postcards. special delivery letter.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d147",
+    "전힌트": "Dear Jim, enclose",
+    "main힌트": "Dear Jim, enclosing",
+    "달라진문장": 2
+   },
+   {
+    "강": "d148",
+    "전힌트": "the North American continent. Canada to the north, Mexico to the south. 1964, 185 million. Great Britain. 13 states. 48 1959, Alaska Hawaii",
+    "main힌트": "the North American continent. Canada to the north, Mexico to the south. 1964, 185 million. Great Britain. 13 states. 48. 1959. Alaska. Hawaii",
+    "달라진문장": 2
+   },
+   {
+    "강": "d151",
+    "전힌트": "wide plains cool forests",
+    "main힌트": "wide plains. cool forests",
+    "달라진문장": 1
+   },
+   {
+    "강": "d153",
+    "전힌트": "individual state. 17 or older. six years old, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree doctor's degree.",
+    "main힌트": "individual state. 17 or older. six years old, elementary school. junior high school. senior high school. 18. bachelor's degree. master's degree. doctor's degree.",
+    "달라진문장": 2
+   },
+   {
+    "강": "d155",
+    "전힌트": "aptitude tests, field of interest. chemists, physicists, biologists. accounting, personnel management, public relations. Teaching, newspaper work, medicine, engineering fascinating careers.",
+    "main힌트": "aptitude tests, field of interest. chemists, physicists, biologists. accounting, personnel management, public relations. Teaching, newspaper work, medicine, engineering. fascinating careers.",
+    "달라진문장": 2
+   },
+   {
+    "강": "d156",
+    "전힌트": "Jensens. typical Norway settle on dairy farm. Minnesota. Olaf Carl, plow planted fields, harvested crops. milked. Inga. Sigrid, Mr. and Mrs. Jensen",
+    "main힌트": "Jensens. typical. Norway. settle on dairy farm. Minnesota. Olaf. Carl. plow. planted fields, harvested crops. milked. Inga. Sigrid. Jensen",
+    "달라진문장": 6
+   },
+   {
+    "강": "d157",
+    "전힌트": "three children. Sigrid. Carl. Minneapolis. dairy products. Olaf Jensen. Inga. State University St. Paul. occupation. attracts",
+    "main힌트": "three children. Sigrid. Carl. Minneapolis. dairy products. Olaf Jensen. Inga. state university. St. Paul. occupation. attracts",
+    "달라진문장": 1
+   },
+   {
+    "강": "d158",
+    "전힌트": "Monday Friday evenings weekends, television movies; sports. stamps model airplanes.",
+    "main힌트": "Monday. Friday. evenings. weekends. television. movies. sports. stamps. model airplanes.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d159",
+    "전힌트": "coin collection. several thousand dollars. rare 50-cent piece. $250!. purchase. reasonable. On the other hand, matchboxes. 600",
+    "main힌트": "coin collection. several thousand dollars. rare 50-cent piece. $250. purchase. reasonable. On the other hand, matchboxes. 600",
+    "달라진문장": 1
+   },
+   {
+    "강": "d160",
+    "전힌트": "\"All work and no play. Jack dull. popular saying. baseball, basketball, football. golf swimming. hiking, fishing, skiing, mountain climbing attraction outdoors.",
+    "main힌트": "All work and no play. Jack dull. popular saying. baseball, basketball, football. golf. swimming. hiking, fishing, skiing, mountain climbing. attraction. outdoors.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d161",
+    "전힌트": "sporting events spectators, in person, Chess, card playing, dancing fast game of ping pong bridge table, brisk",
+    "main힌트": "sporting events. spectators, in person, Chess, card playing, dancing. fast game of ping pong. bridge table, brisk",
+    "달라진문장": 4
+   },
+   {
+    "강": "d163",
+    "전힌트": "sections. edition. front page. sports. society page, comics, amusement business editorials. magazine. put out news literary. photography, sports, art, music. primarily selection taste interest.",
+    "main힌트": "sections. edition. front page. sports. society page, comics, amusement. business. editorials. magazine. put out. news literary. photography, sports, art, music. primarily. selection. taste. interest.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d164",
+    "전힌트": "United States. essential. instruct. fields of interest, Marconi, Italian inventor communications device. Explorers. astronauts circle. civilization. means of radio.",
+    "main힌트": "United States. essential. instruct. fields of interest, Marconi, Italian inventor. communications device. Explorers. astronauts circle. civilization. by means of.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d165",
+    "전힌트": "Television instrument hear performer. reception. televise. advancement. \"Telstar\". specially equipped space capsule, orbit. Chicago auto race. Italy, ski tournament Norway, parade Japan events",
+    "main힌트": "Television. instrument. hear performer. reception. televise. advancement. Telstar. specially equipped space capsule, orbit. Chicago. auto race. Italy, ski tournament. Norway, parade. Japan. events",
+    "달라진문장": 4
+   },
+   {
+    "강": "d166",
+    "전힌트": "author. American literature. Samuel Langhorne Clemens. Missouri 1835, banks of the Mississippi River. adopt pen name of \"Mark Twain\". call of the boatmen. measure depth. inspire. fame: Tom Sawyer. Huckleberry Finn. Life on the Mississippi, adventures. Civil War. Nevada. California. \"The Celebrated Jumping Frog of Calaveras County,\" immediate success career",
+    "main힌트": "author. American literature. Samuel Langhorne Clemens. Missouri. 1835, banks of the Mississippi River. adopt pen name of Mark Twain. call of the boatmen. measure depth. inspire. fame. Tom Sawyer. Huckleberry Finn. Life on the Mississippi, adventures. Civil War. Nevada. California. Celebrated Jumping Frog of Calaveras County. immediate success. career",
+    "달라진문장": 5
+   },
+   {
+    "강": "d167",
+    "전힌트": "1870, Mark Twain Olivia Langdon. biographers, lecturer. talks. a variety of subjects. Tom Sawyer. Huckleberry Finn. satire. complete. 1909, one year before his death. 74",
+    "main힌트": "1870, Mark Twain. Olivia Langdon. biographers, lecturer. talks. a variety of subjects. Tom Sawyer. Huckleberry Finn. satire. complete. 1909, one year before his death. 74",
+    "달라진문장": 5
+   },
+   {
+    "강": "d168",
+    "전힌트": "Tempe, Arizona \"Big Surf\" surfing. 300 miles. Pacific Ocean!. Dexter. California. impress. huge Pacific waves. surfboards.",
+    "main힌트": "Tempe, Arizona. Big Surf. surfing. 300 miles. Pacific Ocean. Dexter. California. impress. huge Pacific waves. surfboards.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d169",
+    "전힌트": "Arizona. two and a half inches. bankrupt casino. full-scale experiments. several feet high. lagoon. reservoir. 4 million gallons of water. 1 1/2 seconds, rush of water 5 feet high. 400 feet break fantastic",
+    "main힌트": "Arizona. two and a half inches. bankrupt casino. full-scale experiments. several feet high. lagoon. reservoir. 4 million gallons of water. 1 1/2 seconds, rush of water. 5 feet high. 400 feet. break. fantastic",
+    "달라진문장": 4
+   },
+   {
+    "강": "d170",
+    "전힌트": "in advance cold meat salad. bread cake. bakery wine. local winery. set the table were due. front porch. portions",
+    "main힌트": "in advance. cold meat. salad. bread. cake. bakery. wine. local winery. set the table. were due. front porch. portions",
+    "달라진문장": 4
+   },
+   {
+    "강": "d172",
+    "전힌트": "Native Americans. panning for gold. Mining towns saloon, hotel, stable, jail cemetery. Fewer than 100 years later,",
+    "main힌트": "1840s. California. Spanish missions. ranchers. bandits. 1848. rushed to. making their fortunes. Native Americans. panning for gold. Mining towns. saloon, hotel, stable, jail. cemetery. Fewer than 100 years later,",
+    "달라진문장": 8
+   },
+   {
+    "강": "d173",
+    "전힌트": "Hollywood prince princess. pan for gold factory town. unclimbed, snow-topped uninhabited, unspoiled high surf. super highways, sprawling suburbs smog. jewelry",
+    "main힌트": "Los Angeles. 1848. Cary Grant. Rita Hayworth. John Wayne. Susan Hayward. would-be. stars. Hollywood prince. princess. pan for gold. factory town. unclimbed, snow-topped. uninhabited, unspoiled. high surf. superhighways, sprawling suburbs. smog. jewelry",
+    "달라진문장": 8
+   },
+   {
+    "강": "d174",
+    "전힌트": "early 1870s. cold steel drills. Big Bend Tunnel. get through. speed up the tunneling.",
+    "main힌트": "John Henry. American folklore. Chesapeake. Ohio. railroad. from far and wide. drive. early 1870s. cold steel drills. Big Bend Tunnel. get through. speed up the tunneling.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d175",
+    "전힌트": "45 measure. 9 feet. 15 feet. this giant of a man.",
+    "main힌트": "make a fool out of me. competition. arranged. last. drilled. farthest. Hundreds. attraction. 30. broke down. 45. measure. 9 feet. 15 feet. this giant of a man.",
+    "달라진문장": 8
+   },
+   {
+    "강": "d176",
+    "전힌트": "Richard Rudd. forgetful. forgetfulness. unintelligent, tend to gossip. absent-minded. seaside-town. three-hour train ride away.",
+    "main힌트": "Richard Rudd. forgetful. forgetfulness. unintelligent, tend to gossip. absent-minded. seaside town. three-hour train ride away.",
+    "달라진문장": 1
+   },
+   {
+    "강": "d177",
+    "전힌트": "",
+    "main힌트": "destination. amused. sent. minutes later. astonished",
+    "달라진문장": 5
+   },
+   {
+    "강": "d178",
+    "전힌트": "memories. captures. one person in 5,000. 23-year-old poetry recite backwards. huge \"chessboard\". 10,000. squares put down. haphazard fashion.",
+    "main힌트": "10 seconds. 876. 935. 290. 143. 841. 986. 405. as quickly as a flash. photographic. memories. captures. one person in 5,000. 23-year-old. poetry. recite. backwards. huge chessboard. 10,000. squares put down. haphazard fashion.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d179",
+    "전힌트": "Sister Maria, in charge. strict rules.\" disguise",
+    "main힌트": "occupied enemy territory. nuns. convent. knocked unconscious. crash landing. came to. leaning over. Sister Maria, in charge. strict rules. disguise",
+    "달라진문장": 5
+   },
+   {
+    "강": "d180",
+    "전힌트": "",
+    "main힌트": "wig. at a distance. glancing her way. crossed over to",
+    "달라진문장": 3
+   },
+   {
+    "강": "d181",
+    "전힌트": "can openers. gear shifts. Anything Left-Handed Limited, London, 1968. specially designed reliable products. stems left of the face. toenail clippers, potato peelers, pens, golf clubs.",
+    "main힌트": "people. distrusted. disapproval. rejected. right-handers. scissors. can openers. gear shifts. Anything Left-Handed Limited, London, 1968. specially designed reliable products. stems left of the face. toenail clippers, potato peelers, pens, golf clubs.",
+    "달라진문장": 7
+   },
+   {
+    "강": "d182",
+    "전힌트": "exact duplicate",
+    "main힌트": "elegantly dressed. jewelry shop. exquisite. $5,000. gem. jeweler. earrings. get a hold of. regretfully. virtually. exact duplicate",
+    "달라진문장": 6
+   },
+   {
+    "강": "d183",
+    "전힌트": "",
+    "main힌트": "$25,000. matching. pearl. amazement. part with. inherited",
+    "달라진문장": 5
+   },
+   {
+    "강": "d184",
+    "전힌트": "mud 300,000 New York, 700,000 many times over.",
+    "main힌트": "Jacobus. Jonker. diamond. prospector. South Africa. making his fortune. backyard. washed away. hillside. mud. 300,000. New York. 700,000. many times over.",
+    "달라진문장": 9
+   },
+   {
+    "강": "d185",
+    "전힌트": "Kaplan, cutter, twelve whole months. flaw. calculations. Six more months. exquisite. comparable. first-class quality. a few more days held his breath. split exactly as",
+    "main힌트": "Kaplan, cutter, twelve whole months. flaw. calculations. Six more months. exquisite. comparable. first-class quality. a few more days. held his breath. split exactly as",
+    "달라진문장": 2
+   },
+   {
+    "강": "d186",
+    "전힌트": "",
+    "main힌트": "Detroit hotel. cashed. check. clerk. bill. safe. overnight. receipt",
+    "달라진문장": 5
+   },
+   {
+    "강": "d187",
+    "전힌트": "",
+    "main힌트": "deposit. clerk. eyewitness. hand it over. tricked",
+    "달라진문장": 7
+   },
+   {
+    "강": "d188",
+    "전힌트": "Native Americans. council houses. Cherokee copy silversmith Sequoyah, 85 made up. English spelling book, amazingly",
+    "main힌트": "Americas. southeastern part. peace-loving farmers. permanent. Native Americans. council houses. Cherokee. copied. silversmith. Sequoyah, 85. made up. English spelling book, amazingly",
+    "달라진문장": 8
+   },
+   {
+    "강": "d189",
+    "전힌트": "Trail of Tears.",
+    "main힌트": "1828. 1830. U.S. Congress. legally. Mississippi River. drive. Cherokee. at gunpoint. 4,000. Trail of Tears.",
+    "달라진문장": 10
+   },
+   {
+    "강": "d190",
+    "전힌트": "standstill. confidently. get bearings.",
+    "main힌트": "London. thickest fogs. Cars. buses crept along. horns blowing furiously. came to. standstill. confidently. get bearings.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d191",
+    "전힌트": "",
+    "main힌트": "graveyard. alley. unfounded. straight to my destination",
+    "달라진문장": 3
+   },
+   {
+    "강": "d192",
+    "전힌트": "eagle. heart of a lion.\". astonishing skill. illustrated. puzzled. Aboriginal tracker boot prints",
+    "main힌트": "inhabitants. Australia. plant crops. domesticated. wandered. eyes of. eagle. heart of a lion. astonishing skill. illustrated. puzzled. Aboriginal tracker. boot prints",
+    "달라진문장": 9
+   },
+   {
+    "강": "d193",
+    "전힌트": "flash rainstorm broke. trail. outskirts. abandoned. traditional desert life settle. amazing. ancestors.",
+    "main힌트": "flash rainstorm broke. trail. outskirts. abandoned. traditional desert life. settle. amazing. ancestors.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d194",
+    "전힌트": "miniature canvas city. personalities. Lion tamers, acrobats, freaks. Greatest Show on Earth.",
+    "main힌트": "circus. hoisting. big top. Tons. unrolled. tent poles into place. vacant lot. miniature canvas city. personalities. Lion tamers, acrobats, freaks. Greatest Show on Earth.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d195",
+    "전힌트": "big top. ancient craft guilds, handed down",
+    "main힌트": "Circus. performers. slip. trapeze artist. go plunging. lion tamer. mauled. crippled. matter of course. big top. ancient craft guilds, handed down",
+    "달라진문장": 6
+   },
+   {
+    "강": "d196",
+    "전힌트": "unbearable. go on a diet relieve misery",
+    "main힌트": "men of skill and daring. freaks. deformity. snake charmer. sword swallower. pathetic. pitied. stares. unbearable. goes on a diet. relieve misery",
+    "달라진문장": 6
+   },
+   {
+    "강": "d197",
+    "전힌트": "hobo. Emmett Kelly, foremost. winsome. pathetic. captivate. audiences",
+    "main힌트": "indispensable. circus. troupe. clown. antics. stunts. immune. appeal. carefree. pranks. routine. sad-faced. hobo. Emmett Kelly, foremost. winsome. pathetic. captivate. audiences",
+    "달라진문장": 8
+   },
+   {
+    "강": "d198",
+    "전힌트": "outcast",
+    "main힌트": "curiosity. poke. nook. cranny. skunk. liberally sprayed. vile smelling perfume. odor. wear away. social. outcast",
+    "달라진문장": 7
+   },
+   {
+    "강": "d199",
+    "전힌트": "gave in to glance back. pillar of salt. referred to. modern Lot's wife.",
+    "main힌트": "misfortune brought about. excessive. contained. Old Testament. Sodom. Gomorrah. flight. command. gave in to. glance back. pillar of salt. referred to. modern Lot's wife.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d200",
+    "전힌트": "scientist prompt. world of a drop of water. single powerful lens. discoveries enabled",
+    "main힌트": "contributed. advancement. civilization. marvel. flight. outstanding. noted. Benjamin Franklin. Dutch. scientist prompt. world of a drop of water. single powerful lens. discoveries enabled",
+    "달라진문장": 7
+   },
+   {
+    "강": "d201",
+    "전힌트": "",
+    "main힌트": "whets. bewilderment. Lady. Tiger. savage",
+    "달라진문장": 6
+   },
+   {
+    "강": "d202",
+    "전힌트": "vividly brilliant fill associates",
+    "main힌트": "dispute. gentle. virtue. considerate. charitable. comfort. convenience. looking back. outstanding. vividly. brilliant. fill. associates",
+    "달라진문장": 8
+   },
+   {
+    "강": "d203",
+    "전힌트": "cowardice. manifestation selfishness. entirely wants desires",
+    "main힌트": "Roman proverb. consideration. takes the middle course. excessive. humility. hypocrisy. cowardice. manifestation. selfishness. entirely. wants. desires",
+    "달라진문장": 7
+   },
+   {
+    "강": "d204",
+    "전힌트": "baked peach pies. delight. appreciation. boarder turn upon. steaming pies, politely refuse. delicacy. pastry. take no for an answer, gave in indigestion.",
+    "main힌트": "kindly. ran a boarding house. San Francisco. interests. lodgers at heart. acquired. roomer. freshly. baked peach pies. delight. appreciation. boarder turn upon. steaming pies, politely refuse. delicacy. pastry. take no for an answer, gave in. indigestion.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d205",
+    "전힌트": "meat poison.",
+    "main힌트": "peach pie. literally. figuratively. merely. avoid. fault. offers out of politeness. put. serious inconvenience. meat. poison.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d206",
+    "전힌트": "capture furious, prank indulge",
+    "main힌트": "notorious. practical jokes. statue. founder. place of honor. rowboat. floating. fishing. bait. capture. furious, prank. indulge",
+    "달라진문장": 7
+   },
+   {
+    "강": "d207",
+    "전힌트": "",
+    "main힌트": "serious side. 15 hours a week. extracurricular. activities. dramatic production. formal. classes",
+    "달라진문장": 6
+   },
+   {
+    "강": "d208",
+    "전힌트": "eager",
+    "main힌트": "first. foremost. gymnasium. relax. strain. engaging in basketball. handball. workout. refreshed. eager",
+    "달라진문장": 5
+   },
+   {
+    "강": "d209",
+    "전힌트": "ceremony pranks hazing. designate. consist of. Greek letters.",
+    "main힌트": "Foremost. social organizations. fraternities. sororities. formal application. put through an initiation. ceremony. pranks. hazing. designate. consist of. Greek letters.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d210",
+    "전힌트": "recorded history, forms of collections. Ancient Rome. Alexandria. noted. then-known world. acquaint. instructive, favorite spots. Sunday-afternoon pleasure seekers. reptiles, taste of far-off, exotic",
+    "main힌트": "recorded history, forms of collections. Ancient Rome. Alexandria. noted. then known world. acquaint. instructive, favorite spots. Sunday afternoon pleasure seekers. reptiles, taste of far-off, exotic",
+    "달라진문장": 3
+   },
+   {
+    "강": "d211",
+    "전힌트": "Raymond L Ditmars, Bronx, venom, snakebites.",
+    "main힌트": "serves. purposes. sponsor. New York. Zoo. Raymond L Ditmars, Bronx, venom, snakebites.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d212",
+    "전힌트": "",
+    "main힌트": "section. rabbits. ducks. at their own risk. amputated",
+    "달라진문장": 4
+   },
+   {
+    "강": "d213",
+    "전힌트": "best interests at heart, refrain from literally",
+    "main힌트": "fascinating in their own right. signs. feeding. contrary. conspicuously posted. deliberately. best interests at heart, refrain from. literally",
+    "달라진문장": 6
+   },
+   {
+    "강": "d214",
+    "전힌트": "sparks ignorance, capricious. calamities. take spite out on dwellers. Accordingly, priests. refrain from plague. calamities.",
+    "main힌트": "unknown. primitive. man fashioned. superstitions. thunder. roar of battle. fearful. Lightning. supposedly. sparks. ignorance, capricious. calamities. take spite out on dwellers. Accordingly, priests. refrain from plague.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d215",
+    "전힌트": "ancient Egypt. amulets eyes. beetles. protect wearers from harm. good fortune. white buffalo held sacred. religious ritual side by side",
+    "main힌트": "intercession. good luck. charms. served the purpose. confronted with. engaged in. ancient Egypt. amulets. eyes. beetles. protect wearers from harm. good fortune. white buffalo. held sacred. religious ritual. side by side",
+    "달라진문장": 6
+   },
+   {
+    "강": "d216",
+    "전힌트": "tales.",
+    "main힌트": "persist. evil. misfortune. abundance. impending. empty rocking chair. place. credence in. old wives'. tales.",
+    "달라진문장": 7
+   },
+   {
+    "강": "d217",
+    "전힌트": "predictions amusing. customers",
+    "main힌트": "good luck charms. four-leaf clover. prosperity. rabbit foot. chain. entertainment. predictions. amusing. customers",
+    "달라진문장": 5
+   },
+   {
+    "강": "d218",
+    "전힌트": "mania stem from. psychological make-up. external. bring this union about.",
+    "main힌트": "collectors. postage stamps. matchboxes. coins. paintings. seashells — in short. object. mania. stems from. psychological makeup. external. bring this union about.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d219",
+    "전힌트": "",
+    "main힌트": "figurines. Bluebeard. specimens. chop off. closet. trophies. content. indulge in. innocent pastimes",
+    "달라진문장": 5
+   },
+   {
+    "강": "d220",
+    "전힌트": "up being nerve-wracking restful",
+    "main힌트": "prospect. lure. far-away. beckons to. routes. consulted. veteran. hastily. planned. more often than not ends. up being. nerve-wracking. restful",
+    "달라진문장": 4
+   },
+   {
+    "강": "d221",
+    "전힌트": "way. informative. resort at journey's end, attractive roadside motorists. roadside parks. running water. facilities. overnight camping.",
+    "main힌트": "afford. overlook his budget. beyond. means. turn out. whereas. modest. vacation. merely. along. way. informative. resort at journey's end, attractive roadside. motorists. roadside parks. running water. facilities. overnight camping.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d222",
+    "전힌트": "",
+    "main힌트": "consideration. advantages. pleasantest. ocean. cruise. exotic. Caribbean. tropical. Cuba. Jamaica",
+    "달라진문장": 5
+   },
+   {
+    "강": "d223",
+    "전힌트": "take in Saint Augustine, Miami Beach. luxurious. mysterious Everglades. Seminole Indians appreciate. preparatory worthwhile",
+    "main힌트": "public library. vacationing. consulting. itinerary. encompass. points of interest. locality. Florida. might well. take in. Saint Augustine, Miami Beach. luxurious. mysterious Everglades. Seminole Indians. appreciate. preparatory. worthwhile",
+    "달라진문장": 5
+   },
+   {
+    "강": "d224",
+    "전힌트": "worries. daydream. such an extent that",
+    "main힌트": "admit. Earning a living. present. challenge. average. is bound to. darkened. occasional. worries. daydream. such an extent that",
+    "달라진문장": 3
+   },
+   {
+    "강": "d225",
+    "전힌트": "",
+    "main힌트": "invariably. builds word pictures. Gerard Manley Hopkins. mediator",
+    "달라진문장": 4
+   },
+   {
+    "강": "d226",
+    "전힌트": "cat and the fiddle a host of. characters make up. illustrate. graphic representation",
+    "main힌트": "Mother Goose. rhymes. old lady who lived in a shoe. cow that jumped over the moon. cat and the fiddle. a host of. characters make up. illustrate. graphic representation",
+    "달라진문장": 4
+   },
+   {
+    "강": "d227",
+    "전힌트": "enthusiast. run away with think up practical. victim",
+    "main힌트": "inclined. exaggerate. Fishermen. notorious. exaggerated tales. amazing. tiny. huge monster. ardent fishing. enthusiast. run away with. think up. practical. victim",
+    "달라진문장": 7
+   },
+   {
+    "강": "d228",
+    "전힌트": "",
+    "main힌트": "scenic. beauty. flock. fishing spots. fine trails. tire of its ever-changing. city dweller. hustle. bustle",
+    "달라진문장": 5
+   },
+   {
+    "강": "d229",
+    "전힌트": "form miniature adventures",
+    "main힌트": "elderly. trailer. campers. house on wheels. hitch. favorite. park side by side. form miniature. adventures",
+    "달라진문장": 5
+   },
+   {
+    "강": "d230",
+    "전힌트": "",
+    "main힌트": "Yosemite. California. breathtaking. waterfalls. Sequoia. National Park. General Sherman. Tree",
+    "달라진문장": 6
+   },
+   {
+    "강": "d231",
+    "전힌트": "200 million. volcanic ash. temple. scenic spot. hot springs. geysers. Yellowstone National Park. bears picnickers. discourage.",
+    "main힌트": "weirdest. petrified. forest. Arizona. trunks. lie scattered. ruins. ancient marble. 200 million. volcanic ash. temple. scenic spot. hot springs. geysers. Yellowstone National Park. bears. picnickers. discourage.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d232",
+    "전힌트": "pantomime. Advanced. elaborate. ancient Greeks. tragedies. comedies. characters. portray. wore elaborate. grotesque masks.",
+    "main힌트": "indulge in make-believe. outlets. dramatics. ritual dances. pantomime. Advanced. elaborate. ancient Greeks. tragedies. comedies. characters. portray. wore. grotesque masks.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d233",
+    "전힌트": "Heaven, Hell, Virtue, Vice. abstractions. living characters. spectators graphic. living catechism. Bible. front steps cathedrals, accommodate marketplace.",
+    "main힌트": "Middle Ages. mystery. morality. plays. intimately associated with. dealt with. death. judgment. Heaven, Hell, Virtue, Vice. abstractions. living characters. spectators graphic. living catechism. Bible. front steps. cathedrals, accommodate. marketplace.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d234",
+    "전힌트": "waterways. more than a hundred years ago pull into town, took a holiday. repartee. minstrels. cheerful. carefree. banjos linger. spectacle.",
+    "main힌트": "entertainment. Traditionally. associated with the colorful showboats. up and down the inland. waterways. more than a hundred years ago. pulled into town, took a holiday. repartee. minstrels. cheerful. carefree. banjos linger. spectacle.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d235",
+    "전힌트": "wilderness destination. took a heavy toll in. rigors. perished on the way. unmarked graves invisible monument.",
+    "main힌트": "cover. distances. coast to coast. hazardous. covered wagon. struggling through. wilderness. destination. took a heavy toll in. rigors. perished on the way. unmarked graves. invisible monument.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d236",
+    "전힌트": "covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi power outlets",
+    "main힌트": "3,000 miles. New York. Francisco. pioneer. astonished. crude. covered wagon. replace. streamline luxury. plush trains. whisk. fashionable. compartment. Wi-Fi. power outlets",
+    "달라진문장": 5
+   },
+   {
+    "강": "d237",
+    "전힌트": "down the field, call the whole thing off. flight attendant. stoic fortitude braces. for ordeal ahead.",
+    "main힌트": "prospect. terrifying. gleaming silver form. overhead. boarding. apprehension. fastens. murmur. roar. taxi. down the field, call the whole thing off. flight attendant. stoic fortitude braces. for ordeal ahead.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d238",
+    "전힌트": "",
+    "main힌트": "novice. sickening. sensation",
+    "달라진문장": 3
+   },
+   {
+    "강": "d239",
+    "전힌트": "healthy bodies. for fun and recreation, sullen downcast.",
+    "main힌트": "in earnest. good-natured fights. outcome. good spirit. sense of teamwork. fair play. build strong. healthy bodies. for fun and recreation, sullen. downcast.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d240",
+    "전힌트": "",
+    "main힌트": "carry. to an extreme. attended to. leisure time. pursuit of our favorite. sports",
+    "달라진문장": 3
+   },
+   {
+    "강": "d241",
+    "전힌트": "hopelessly beaten. to date,",
+    "main힌트": "born artists. boasted. master. put his mind to. overheard. bet. handball. until far into the night. hopelessly beaten. to date,",
+    "달라진문장": 4
+   },
+   {
+    "강": "d242",
+    "전힌트": "",
+    "main힌트": "complicated. intricacies. spectacle. cheering. brilliant colors. martial music. combine. let on",
+    "달라진문장": 4
+   },
+   {
+    "강": "d243",
+    "전힌트": "devoted to myth superstition. October 31st Halloween witches, ghosts, devils. adults outlandish costumes. goodies amusing pirates, witches, ghosts, whatnot. front porch. beg for sweets.",
+    "main힌트": "devoted to. myth. superstition. October 31st. Halloween. witches, ghosts, devils. adults. outlandish costumes. goodies. amusing. pirates, whatnot. front porch. beg for sweets.",
+    "달라진문장": 7
+   },
+   {
+    "강": "d244",
+    "전힌트": "youngsters. damage for the most part, innocent.",
+    "main힌트": "candy. gum. Yum. offering. otherwise. liable. revenge. pieces. pranks. confine. strictly. mischief. youngsters. damage. for the most part, innocent.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d245",
+    "전힌트": "Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+    "main힌트": "Halloween. stems from the Christian feast. Saints. refers to. supposedly came. Hallows. forth from graves. peasants. lit huge bonfires. dressed in weird costumes.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d246",
+    "전힌트": "knights wore armor. helmets. to such an extent that. customary. identify. lifting visors. average soldier. preserving old medieval custom",
+    "main힌트": "rules. etiquette. bothersome. well-bred human being. at first glance. customs. saluting. stem from. knights wore armor. helmets. to such an extent that. customary. identify. lifting visors. average soldier. preserving old medieval custom",
+    "달라진문장": 4
+   },
+   {
+    "강": "d247",
+    "전힌트": "",
+    "main힌트": "Middle Ages. lurked. shortened form. stem from",
+    "달라진문장": 4
+   },
+   {
+    "강": "d248",
+    "전힌트": "bowls of warm water. bride. groom. girl's horror, scarlet fervently finger bowl. laughing matter.",
+    "main힌트": "Ignorance. social usage. blunders. newlyweds. New York. fashionable. proceeded without. incident. silver. bowls of warm water. bride. groom. girl's horror, scarlet. fervently. finger bowl. laughing matter.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d249",
+    "전힌트": "footsteps. dismal. mysterious shapes. shadows By that time, pleasure delights",
+    "main힌트": "frightened. fiction. chilling sort of way. detective. make their hair. stand. slightest noise. stealthy. footsteps. dismal. mysterious shapes. shadows. By that time, pleasure. delights",
+    "달라진문장": 7
+   },
+   {
+    "강": "d250",
+    "전힌트": "",
+    "main힌트": "enjoyable thrill. matching wits with. Sherlock Holmes. armchair. detectives. clues. accomplishment",
+    "달라진문장": 4
+   },
+   {
+    "강": "d251",
+    "전힌트": "size up applicant. personnel managers, pass judgment on prospective employees. fairly accurate judgments character",
+    "main힌트": "applying for a job. impressions. lasting. employer. judge. appearance. bearing. above all. hiring. size up applicant. personnel managers, pass judgment on prospective employees. fairly accurate judgments. character",
+    "달라진문장": 4
+   },
+   {
+    "강": "d252",
+    "전힌트": "skillful put at ease. qualities. asset. specific skills. talents, display well-developed personality.",
+    "main힌트": "raps on the personnel manager's. barges into. bothering. common courtesy. presenting oneself. skillful. at ease. qualities. asset. specific skills. talents, display. well-developed personality.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d253",
+    "전힌트": "assumption. possessed integrity. desire. self-improvement. valuable addition. staff.",
+    "main힌트": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. \"Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d254",
+    "전힌트": "surest signs. well-developed personality take a joke. on the part of the applicant. out of place. as in all things, go to extremes. prerogatives.",
+    "main힌트": "adjust. match one's mood to. On the other hand. robust. jovial. display. spirit. delight in teasing. surest signs. well-developed personality. take a joke. on the part of the applicant. out of place. as in all things, go to extremes. prerogatives.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d255",
+    "전힌트": "prayer. sacrifice. restore. favor. profession of physician. reserved to priest caste. persists, traditional communities",
+    "main힌트": "magical prayers. charms. formulas. Powdered goat foot. dried frog eyes. absurd remedies. cure. prayer. sacrifice. restore. favor. profession of physician. reserved to priest caste. persists, traditional communities",
+    "달라진문장": 3
+   },
+   {
+    "강": "d256",
+    "전힌트": "loud voice frighten exhausted.",
+    "main힌트": "performing a cure. colors. costume. evil spirits. loud voice. frighten. exhausted.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d257",
+    "전힌트": "keep up with recent developments. fulfill their duties effectively.",
+    "main힌트": "vivid contrast. remedies. oath. devote. advancement. private research. imperative. keep up with recent developments. fulfill their duties effectively.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d258",
+    "전힌트": "",
+    "main힌트": "cure. afflict. most highly skilled. diagnosing. diet",
+    "달라진문장": 4
+   },
+   {
+    "강": "d259",
+    "전힌트": "over the frozen surface pond. gliding swiftly down slope. snow-covered mountain.",
+    "main힌트": "prospect. bleak. ahead of them. put up with. await. great anticipation. really sets in. gracefully. over the frozen surface pond. gliding swiftly down slope. snow-covered mountain.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d260",
+    "전힌트": "engaged in furious snowball fights, snowball. local tomboy are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+    "main힌트": "world over take a great delight in. get out the sleds. sharpen the ice skates. vie with. snowman. engaged in furious snowball fights, snowball. local tomboy are liable to come out on the worse end. figures sledding children. take a few sled rides on the sly.",
+    "달라진문장": 3
+   },
+   {
+    "강": "d261",
+    "전힌트": "enthusiast. comparatively warm, North Pole. rugged individuals, tucked away bite tang. crisp",
+    "main힌트": "head for sunny Florida. California. onset. Valley. host of. entertainments. winter. sports. enthusiast. comparatively warm, North Pole. rugged individuals, tucked away. bite. tang. crisp",
+    "달라진문장": 5
+   },
+   {
+    "강": "d262",
+    "전힌트": "drastic. recreation. brought up. as a matter of course.",
+    "main힌트": "whole. social. calendar undergoes a drastic. abandoned. indoors. outdoor recreation. take. drastic. recreation. brought up. as a matter of course.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d263",
+    "전힌트": "bright decorations. carolers wander. crisp winter air",
+    "main힌트": "carols. ancient. commemorate. religious in origin. festivities. gathering around. Christmas. hanging. bright decorations. carolers wander. crisp winter air",
+    "달라진문장": 4
+   },
+   {
+    "강": "d264",
+    "전힌트": "",
+    "main힌트": "great feast. menus. host of. manage. themselves. little aid. devotion",
+    "달라진문장": 5
+   },
+   {
+    "강": "d265",
+    "전힌트": "",
+    "main힌트": "decorated. stockings. fireplace. excitement. practice. costly gifts",
+    "달라진문장": 5
+   },
+   {
+    "강": "d266",
+    "전힌트": "words. visual arts sketching, painting, sculpturing. primitive man indulged in. caves, technique. primitive artist advanced. colors. pigments. last through the wear and tear. tribute",
+    "main힌트": "communicate with his fellow men. prompted. devise. means of communicating language. telegraph. put into. words. visual arts. sketching, painting, sculpturing. primitive man indulged in. caves, technique. primitive artist. advanced. colors. pigments. last through the wear and tear. tribute",
+    "달라진문장": 7
+   },
+   {
+    "강": "d267",
+    "전힌트": "want. devote. prophet. recognized true of. genius. recognized. aware of extraordinary talent",
+    "main힌트": "As a general rule. throughout the ages. go hand in hand. in the midst of terrible. want. devote. prophet. recognized. true of. genius. aware of extraordinary talent",
+    "달라진문장": 5
+   },
+   {
+    "강": "d268",
+    "전힌트": "object exactly as appears to the eye as with capturing its soul. abstractions. essentials Picasso Georges Braque. conception of things took the form of geometrical shapes. cubism.",
+    "main힌트": "rise. departed from the classical. graphic. literal representation. not so much concerned with portraying. exactly as it appears to the eye as with capturing its soul. abstractions. essentials. Picasso. Georges Braque. conception of things took the form of geometrical shapes. Cubism.",
+    "달라진문장": 6
+   },
+   {
+    "강": "d269",
+    "전힌트": "pay homage to skyscraper. utility. combine practicality grace beauty. scientific advancement",
+    "main힌트": "artistic trends. reflected. God-centered. world. Middle Ages found expression. massive cathedrals. pay homage to. skyscraper. utility. combine practicality. grace. beauty. scientific advancement",
+    "달라진문장": 7
+   },
+   {
+    "강": "d270",
+    "전힌트": "anthem. stirs feelings of patriotism. folk songs. ballads. preserve. folklore. occasions of great emotion, weddings funerals, outlet joy or sorrow.",
+    "main힌트": "march. music. Formal. graduations. openings of conventions. dignified. national. anthem. stirs feelings of patriotism. folk songs. ballads. preserve. folklore. occasions of great emotion, weddings. funerals, outlet. joy or sorrow.",
+    "달라진문장": 5
+   },
+   {
+    "강": "d271",
+    "전힌트": "worship. dignity. grace. 18th century. stately minuets. romanticism. 19th century. well portray. great masters. Beethoven. Brahms. rhythms jazz swing. modern classical composers. characterize discords. taste of the restlessness. vigor",
+    "main힌트": "universal language. mirror of the times. God-centered thought. Middle. hymns. chants of. worship. dignity. grace. 18th century. stately minuets. Romanticism. 19th century. well portray. great masters. Beethoven. Brahms. rhythms. jazz. swing. modern classical composers. characterize. discords. taste of the restlessness. vigor",
+    "달라진문장": 5
+   },
+   {
+    "강": "d272",
+    "전힌트": "Wagner.",
+    "main힌트": "intellectuals scorned. valid. worthwhile trend. looks down. barbaric racket. Wagner.",
+    "달라진문장": 4
+   },
+   {
+    "강": "d273",
+    "전힌트": "common source. Romance Languages French, Spanish. Italian are derived from Latin. elements in part Latin",
+    "main힌트": "Tower. Babel. Old Testament. became confused. allegorical explanation. stem from. common source. Romance languages. French, Spanish. Italian are derived from Latin. elements. in part. Latin",
+    "달라진문장": 9
+   },
+   {
+    "강": "d274",
+    "전힌트": "Western Europe. French diplomacy. commonly. transact. overcoming language barriers",
+    "main힌트": "Middle Ages. Latin. universal. conducted. documents. fell into disuse. 18th century. Western Europe. French. diplomacy. commonly. transact. overcoming language barriers",
+    "달라진문장": 5
+   },
+   {
+    "강": "d275",
+    "전힌트": "drawback well worthwhile.",
+    "main힌트": "occupy. position. transaction. biggest. drawback. well worthwhile.",
+    "달라진문장": 7
+   },
+   {
+    "강": "d276",
+    "전힌트": "",
+    "main힌트": "precious possessions. fellow men. to a certain extent. mentality. accordingly. rewards",
+    "달라진문장": 5
+   }
+  ]
+ }
+}

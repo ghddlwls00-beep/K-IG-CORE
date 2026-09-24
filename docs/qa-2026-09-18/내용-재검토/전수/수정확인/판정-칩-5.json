@@ -1,0 +1,396 @@
+{
+ "조각": "칩-5",
+ "결과": {
+  "d228": {
+   "id": "d228",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 줄이 비어 칩 0 → 되살린 원본 줄 9칩. 바뀐 문장 n1 [scenic] [beauty] · n2 [flock] · n4 [fishing spots] [fine trails] · n5 [beauty] [tire of its ever-changing] · n6 [city dweller] [hustle] [bustle] 모두 제 문장 글(원본 city-dweller → 대본 꼴 city dweller, its 도 대본대로). 원본 'scenic beauty' 를 둘로 나눈 것은 한 칩이면 'beauty' 일치로 n5 에 [scenic beauty] 가 뜨기 때문(chips-main 으로 잼) — 지금 n5 의 [beauty] 는 그 문장 낱말이라 오도 없음. n3 칩 없음(이름 · 수 없음). 지시문도 힌트를 약속하는 원문으로 되돌아옴.",
+   "때": "2026-09-25 04:53"
+  },
+  "d229": {
+   "id": "d229",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [elderly] [trailer] [campers] [house on wheels] [hitch] [favorite] [park side by side] 가 n1 · n2 · n4 · n5 에 제 글로 뜸(원본 parked → 대본 꼴 park, 대본에서 바뀐 'gypsies of Europe' 는 뺌). 옛 붙은 칩 [form miniature adventures] 는 n5 [form miniature] · n7 [adventures] 로 풀림. 'trailer campers' 를 나눈 것은 한 칩이면 'trailer' 일치로 n2 · n5 · n7 에 [trailer campers] 가 뜨기 때문(잼) — 지금 [trailer] 는 그 문장들의 낱말(trailers)이라 오도 없음. [form miniature] 는 원본 항목 그대로의 압축(cities 생략). n3 · n6 칩 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d230": {
+   "id": "d230",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음(칩 0) → 되살린 원본 줄. 이름이 [Sequoia] [National Park] · [General Sherman] [Tree] 로 나뉘어 뜨는 것은 일부러 고른 꼴: 원본 그대로 'Sequoia National Park. General Sherman Tree' 로 두면 앱 낱말 일치로 n1 에 [Sequoia National Park], n3 · n4 · n5 에 [General Sherman Tree] 가 그 문장에 없는 이름으로 뜸(chips-main 으로 잼). 나눈 지금은 n1 [National Park](national parks) · n3 · n4 · n5 [Tree](tree/trees) · n4 [Sequoia](sequoia)처럼 그 문장에 있는 낱말이 대문자로만 다르게 떠 오도가 없음(채점은 대소문자 무시). n3 · n6 에는 조각이 나란히 떠 이름을 이어 읽을 수 있음. 'breath-taking · waterfall' 은 대본 꼴(breathtaking waterfalls), 대본에 없는 'trunk' 는 뺌 — 맞음. 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:53"
+  },
+  "d231": {
+   "id": "d231",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [weirdest] [petrified] [forest] [Arizona] [trunks] [lie scattered] [ruins] [ancient marble] 이 n1 · n4 에 제 낱말로 뜨고 다른 문장으로 안 번짐(대본에 없는 dense · tame 은 뺌). 표 고침 'bears. picnickers.' 들어가 n6 [bears] · n7 [bears] [picnickers] · n8 [bears] 로 옛 붙은 칩 풀림. n4 의 [ancient marble] | [temple] 은 원본 줄바꿈 자리('ancient marble / temple') — 두 칩 모두 뜻이 서고 같은 문장에 나란히 떠 오도 없음(합쳐도 새 흠 없음 — 잼). 기계 표시 n1 · n8 [Yellowstone National Park] 는 n5(안 바뀐 문장)에 그 꼴이 그대로 있음 — 기계는 바뀐 문장만 보고 냄. n1(national parks) · n8(Park officials)에 뜨는 것은 전부터 있던 앱 낱말 일치 번짐 — 이번 고침과 무관 · 나빠지지 않음(전엔 n1 칩이 이것 하나뿐), 1부 규칙대로 문제로 안 셈. 다만 n1 은 애리조나 문장에 다른 공원 이름이라 오도 소지 — 'Yellowstone' 만 남기면 n1 · n8 번짐이 사라지고 n5 [Yellowstone](잼 · 주 세션이 고를 일).",
+   "때": "2026-09-25 04:53"
+  },
+  "d232": {
+   "id": "d232",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [indulge in make-believe] [outlets] [dramatics] [ritual dances] 가 n1 · n2 · n3 에 제 글로 뜸(대본에서 바뀐 'comparatively uncivilized tribes, Africa' 는 뺌 — 대본 'small traditional communities' 와 맞음). 옛 붙은 칩 [wore elaborate] 가 [wore] 로 바뀌어 n4 로 번지던 것이 사라짐(n4 [Advanced] [elaborate] — 나아짐). n8 [elaborate] [characters] [portray] [wore] [grotesque masks] 는 제 문장 낱말(portray 는 사전형 — 1부 규칙상 맞음). 전부터 있던 것: n5 [ancient Greeks]('ancient world' 낱말 일치 — 안 바뀐 문장 · 이번 고침과 무관). n7 칩 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d233": {
+   "id": "d233",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n1 · n2 가 안전장치(엉뚱한 칩 11개)에서 제 칩 [Middle Ages] [mystery] [morality] [plays] · [plays] [intimately associated with] 로 바뀜 — 크게 나아짐. n3 [dealt with] [death] [judgment] + 옛 [Heaven] [Hell] [Virtue] [Vice], n6 [mystery] [plays] [Bible] [front steps] [cathedrals] [accommodate] [marketplace](원본 줄바꿈 'front / steps' 도 한 칩으로 이음) — 모두 제 문장 글. 원본 'mystery and morality plays' 는 and 로 나눔(1부 규칙) — [plays] 는 n1 · n2 · n4 · n6 모두의 낱말. 알림: n3 에서 새 [death] [judgment] 는 대본대로 소문자인데 옛 [Heaven] [Hell] [Virtue] [Vice] 는 대문자라 한 줄에 섞여 보임(대본은 모두 소문자 — 1부 C11279 가 둔 꼴, 채점은 대소문자 무시). 기계 표시 n4 [spectators graphic] 는 'spectators a graphic' 에서 관사만 뺀 압축(1부 7-5 규칙이 한 항목으로 본 바로 그 예), [living catechism] 은 n5 에 그대로 있는 칩(기계는 바뀐 문장만 봄). n4('living characters') · n5('living catechism')에 서로 뜨는 [living …] 둘은 전부터 있던 앱 낱말 일치 번짐 — 이번 고침과 무관.",
+   "때": "2026-09-25 04:53"
+  },
+  "d234": {
+   "id": "d234",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n2",
+     "칩": "[up and down the inland] [waterways]",
+     "무엇": "되살린 첫 줄 끝 'up and down (the) inland' 와 옛 줄 첫 'waterways' 가 원본 줄바꿈 자리에서 한 구절('up and down the inland waterways')이 둘로 나뉨 — 앞 칩이 명사 없는 조각(the inland)으로 끝남. 되살린 첫 줄 탓의 새 쪼개짐. 같은 문장에 나란히 떠 오도는 없음(낮음). 고칠 글로 재면 n2 만 [up and down the inland waterways] 로 바뀌고 다른 문장 그대로(chips-main).",
+     "고칠 글": "entertainment. Traditionally. associated with the colorful showboats. up and down the inland waterways. more than a hundred years ago. pulled into town, took a holiday. repartee. minstrels. cheerful. carefree. banjos linger. spectacle."
+    }
+   ],
+   "까닭": "되살린 첫 줄 [entertainment] [Traditionally] [associated with the colorful showboats] 가 n1 · n2 에 제 글로 뜨고, 1부 규칙 꼴 'pulled into town' 이 들어가 n3 [pulled into town] 이 새로 뜸 · 옛 붙은 칩 [more than a hundred years ago pull into town] 이 풀림 — 나아짐(원본 gay → 옛 줄 cheerful). 원본 'minstrel show' 는 넣으면 n3 에 번져(잼) 뺀 것. 남은 것: n2 줄바꿈 조각(문제 목록). 전부터 있던 것(이번 고침과 무관): n4 [took a holiday]('a holiday mood' 낱말 일치) · n1 · n2 [minstrels]('minstrel show' 글자 일치 · 복수꼴).",
+   "때": "2026-09-25 04:53"
+  },
+  "d235": {
+   "id": "d235",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [cover] [distances] [coast to coast] [hazardous] [covered wagon] [struggling through] 가 n2 · n3 · n4 에 제 글로 뜸(대본에 없는 settlement · settlers 는 뺌). 표 고침 'wilderness. destination.' · 'unmarked graves. invisible monument.' 들어가 n4 · n7 의 옛 붙은 칩 풀림. 'cover distances' 를 나눈 것은 한 칩이면 'cover'(covered) 일치로 n4 에 [cover distances] 가 뜨기 때문(잼) — 지금 n4 의 [cover] 는 'covered' 의 앞 글자라 오도가 거의 없음. n4 [struggling through] | [wilderness] 는 원본 줄바꿈 자리지만 두 칩 모두 뜻이 서는 조각(동사구 · 명사)이고 1부 표가 [wilderness] 를 따로 세운 꼴. n1 칩 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d236": {
+   "id": "d236",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n1 · n3 이 안전장치(엉뚱한 칩 8개)에서 제 칩 [3,000 miles] [New York] [Francisco] · [pioneer] [astonished] 로 바뀜(원본 'three thousand miles' → 대본 꼴 3,000) — 나아짐. 'San Francisco' 가 [Francisco] 로만 뜨는 것은 일부러 고른 꼴: 'San' 을 넣으면 n5 의 'cars and'(carsand) 글자 일치로 n5 에 [San Francisco] 가 뜸(chips-main 으로 잼). n1 에서 어려운 쪽 철자를 보여 주고 소리로 San 이 들려 오도는 없음. 원본 'ease and comfort' 는 넣으면 n4(comforts)로 번져(잼) 뺀 것. 표 고침 'Wi-Fi. power outlets' 들어감(n5). 기계 표시 n4 [streamline luxury] 는 옛 줄 사전형(streamlined — 1부 규칙상 맞음). 전부터 있던 것: n5 [plush trains]('modern trains' 낱말 일치 — 이번 고침과 무관).",
+   "때": "2026-09-25 04:53"
+  },
+  "d237": {
+   "id": "d237",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [prospect] [terrifying] [gleaming silver form] [overhead] [boarding] [apprehension] [fastens] [murmur] [roar] [taxi] 가 n1 ~ n4 에 제 글(대본 꼴 boarding · fastens)로 뜸. n4 [taxi] | [down the field] 는 원본 줄바꿈 자리지만 두 칩 모두 뜻이 서는 조각. 기계 표시 n4 [for ordeal ahead] 는 'for the ordeal ahead' 에서 관사만 뺀 옛 줄 압축(1부 7-5). 전부터 있던 것: n2 [call the whole thing off]('one thing' 낱말 일치 — 전에도 n2 에 뜸 · 이번 고침과 무관).",
+   "때": "2026-09-25 04:53"
+  },
+  "d238": {
+   "id": "d238",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 한 줄 [novice] [sickening] [sensation] 이 n1 · n3 · n6 에 제 낱말로 뜸([sensation] 은 n3 · n6 둘 다 그 낱말). n2 · n4 · n5 칩 없음(이름 · 수 없음). 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:53"
+  },
+  "d239": {
+   "id": "d239",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [in earnest] [good-natured fights] [outcome] [good spirit] [sense of teamwork] [fair play] [build strong] 이 n1 ~ n5 에 제 글로 뜸(원본 'team work' → 대본 꼴 teamwork). 표 고침 'sullen. downcast.' 들어가 n7 [sullen] [downcast]. [build strong] 은 대본 'build strong, healthy bodies' 의 쉼표 앞 이어진 조각. 번짐 없음. n8 칩 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d240": {
+   "id": "d240",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 줄 [carry] [to an extreme] [attended to] [leisure time] [pursuit of our favorite] [sports](대본 꼴 attended · our · sports). 'pursuit of our favorite sports' 를 나눈 것은 한 칩이면 'sports' 일치로 n4 에 그 구절이 뜨기 때문(잼) — 지금 n4 [sports] 는 그 문장 낱말. n1 · n2 · n5 칩 없음(이름 · 수 없음). 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:53"
+  },
+  "d241": {
+   "id": "d241",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n2 가 안전장치(이름 American 때문에 엉뚱한 [hopelessly beaten] [to date])에서 제 칩 [boasted] [master] [put his mind to] 로 바뀜 — 나아짐. n1 [born artists] · n4 [overheard] [bet] [handball] · n5 [bet] [until far into the night] 모두 제 글(원본 boast · overhear → 대본 꼴). [bet] 은 3글자지만 조각 전체 일치로 n4 · n5 에만 뜸 — 번짐 없음. n3 칩 없음.",
+   "때": "2026-09-25 04:53"
+  },
+  "d242": {
+   "id": "d242",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 한 줄 [complicated] [intricacies] [spectacle] [cheering] [brilliant colors] [martial music] [combine] [let on] 이 n2 ~ n5 에 제 낱말로 뜸([spectacle] 은 n3 · n5 둘 다 그 낱말). n1 칩 없음. 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:53"
+  },
+  "d243": {
+   "id": "d243",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "힌트 줄이 표 고칠 글(1부 C11483)과 글자까지 같음 — n1 [devoted to] [myth] [superstition] · n2 [October 31st] [Halloween] [witches] [ghosts] [devils] · n3 [adults] [outlandish costumes] · n4 [superstition] · n6 [goodies] · n7 [witches] [ghosts] [amusing] [pirates] [whatnot] [front porch] [beg for sweets] — 옛 붙은 칩이 모두 풀림. n5 [outlandish costumes]('their costumes' 낱말 일치)는 전부터(전엔 [adults outlandish costumes]) 있던 앱 한계로 오히려 짧아짐 — 두 번째 읽기도 새 틀림 아님으로 봄.",
+   "때": "2026-09-25 04:53"
+  },
+  "d244": {
+   "id": "d244",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [candy] [gum] [Yum] [offering] [otherwise] [liable] [revenge] [pieces] [pranks] [confine] [strictly] [mischief] 가 n1 · n2 · n4 · n5 · n6 에 제 낱말로 뜸. 표 고침 'damage.' 들어가 n8 [mischief] [damage] [for the most part] [innocent]. 원본 'confine strictly to mischief' 를 나눈 것은 대본이 'confine themselves strictly to mischief' 라 이어지지 않기 때문. [candy](n1 · n6) · [mischief](n6 · n8)는 두 문장 모두의 낱말. [gum] · [Yum] 은 3글자지만 조각 전체 일치로 제 문장에만 뜸. n3 · n7 칩 없음(이름 · 수 없음).",
+   "때": "2026-09-25 04:54"
+  },
+  "d245": {
+   "id": "d245",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n1 · n6 이 안전장치(엉뚱한 칩 5개)에서 제 칩으로 — n1 [Halloween] [stems from the Christian feast] [Saints] · n2 [Halloween] [Saints] [refers to] [Hallows] · n3 [Saints] [supposedly came] [forth from graves] · n6 [Halloween] — 나아짐(대본에 없는 Literally 는 뺌 · refer → refers). 'All Saints' 가 [Saints] 로만 뜨는 것은 일부러 고른 꼴: 'All' 을 넣으면 'all-night'(n5) · 'Halloween'(n6) 글자 일치로 n5 · n6 에 [All Saints] 가 뜸(chips-main 으로 잼). n3 [supposedly came] | [forth from graves] 는 원본 줄바꿈 자리 — 합치면 n4 로 번지는 칩이 길어져 나눈 채가 나음. 기계 표시 n3 [forth from graves] 는 'forth from their graves' 에서 소유어만 뺀 옛 줄 압축(1부 7-5). 전부터 있던 것: n4 [forth from graves]('for the' → forthe 글자 일치 — 안 바뀐 문장 · 이번 고침과 무관).",
+   "때": "2026-09-25 04:54"
+  },
+  "d246": {
+   "id": "d246",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [rules] [etiquette] [bothersome] [well-bred human being] [at first glance] [customs] [saluting] [stem from] 이 n1 ~ n4 에 제 글로 뜸(대본 꼴 customs · saluting · stem from). 'rules of etiquette' 를 나눈 것은 한 칩이면 'etiquette' 일치로 n2 에 그 구절이 뜨기 때문(잼) — 지금 n2 [etiquette] 는 그 문장 낱말. 기계 표시 [preserving old medieval custom] 은 n7(안 바뀐 문장) 'preserving this old medieval custom' 의 this 만 뺀 옛 줄 압축(기계는 바뀐 문장만 봄). 전부터 있던 것(이번 고침과 무관 · 나빠지지 않음 · 1부 규칙상 안 셈): 그 칩이 'custom' 일치로 n3 · n4 · n6 에, [knights wore armor] 가 n6 에 번짐.",
+   "때": "2026-09-25 04:54"
+  },
+  "d247": {
+   "id": "d247",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음(두 번째 읽기 판단 필요 → 소유자 '되살린다' 의 그 강) → 원본 줄 [Middle Ages] [lurked] [shortened form] [stem from] 이 n2 · n6 · n7 에 제 글로 뜸(원본 lurk → lurked · 대본에 없는 commonly 는 뺌). 기계 표시 n5 네 칩은 앱 안전장치: n5 는 인용 속 대문자 How 를 이름으로 보아 맞는 칩이 없으면 목록 전체를 띄움(설계 — 전엔 목록이 비어 칩 0). 원본 'extend hands' 는 대본 꼴 'extended their hands' 로 넣으면 'hands' 일치로 n1 · n4(handshake)에 번져(잼) 뺀 것 — [extended] 만은 넣어도 새 흠 없음(잼: n3 에 [extended], n5 안전장치 목록에 하나 더) · 고를 일. n1 · n3 · n4 칩 없음(이름 · 수 없음). 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:54"
+  },
+  "d248": {
+   "id": "d248",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n2 가 안전장치(엉뚱한 칩 6개)에서 [newlyweds] [New York] 으로 바뀜 — 나아짐. n1 [Ignorance] [social usage] [blunders] · n3 [fashionable] · n4 [proceeded without] [incident] [silver] [bowls of warm water] [bride] [groom] · n7 [incident] [laughing matter] 모두 제 글(원본 proceed → 대본 꼴). 표 고침 'scarlet. fervently. finger bowl.' 들어가 n6 풀림. n4 [silver] | [bowls of warm water] 는 원본 줄바꿈 자리지만 합치면 번지는 칩이 길어져 나눈 채가 나음. 전부터 있던 것: n5 · n6 [bowls of warm water]('water' 낱말 일치 — 이번 고침과 무관).",
+   "때": "2026-09-25 04:54"
+  },
+  "d249": {
+   "id": "d249",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [frightened] [fiction] [chilling sort of way] [detective] [make their hair] [stand] [slightest noise] [stealthy] 가 n1 ~ n4 · n6 에 제 글로 뜸. 표 고침(shadows. By that time, pleasure. delights) 들어가 n7 · n8 의 옛 붙은 칩 풀림. 'make their hair stand on end' 가 [make their hair] [stand] 로 나뉜 것은 한 칩이면 'stand' 일치로 n7(standing)에 그 숙어가 뜨기 때문(잼) — 지금 n7 의 [stand] 는 'standing' 의 앞 글자라 오도 거의 없음. n6 [stealthy] | [footsteps] 는 원본 줄바꿈 자리지만 두 칩 모두 뜻이 섬. n5 칩 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d250": {
+   "id": "d250",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 줄 [enjoyable thrill] [matching wits with] [Sherlock Holmes] [armchair] [detectives] [clues] [accomplishment] 이 n1 · n2 · n4 · n5 에 제 글로 뜸(원본 match → matching). 'armchair detectives' 를 나눈 것은 한 칩이면 'detectives' 일치로 n1 에 그 구절이 뜨기 때문(잼) — 지금 n1 의 [detectives] 는 그 문장 낱말. n3 칩 없음. 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:54"
+  },
+  "d251": {
+   "id": "d251",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [applying for a job] [impressions] [lasting] [employer] [judge] [appearance] [bearing] [above all] [hiring] 이 n1 ~ n3 에 제 글로 뜸(대본 꼴). 'prospective employer' 가 [employer] 로만 뜨는 것은 한 칩이면 'prospective' 일치로 n5(prospective employees)에 뜨기 때문(잼). 표 고침 'fairly accurate judgments. character' 들어가 n6 풀림. 기계 표시 [size up applicant] 는 n4(안 바뀐 문장) 'size up the applicant' 의 관사만 뺀 압축(1부 C11660 · 두 번째 읽기가 둔 꼴), [personnel managers] · [pass judgment on prospective employees] 는 n5 에 그대로 있는 칩(기계는 바뀐 문장만 봄). 전부터 있던 것(이번 고침과 무관 · 1부 규칙상 안 셈): n2 [pass judgment on prospective employees]('prospective employer' 낱말 일치 — 칩의 employees 와 문장의 employer 가 달라 오도 소지 · 전엔 n2 칩이 이것 하나) · n6 의 세 칩 번짐('applicant's' · 'personnel specialist' · 'judgments').",
+   "때": "2026-09-25 04:54"
+  },
+  "d252": {
+   "id": "d252",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [raps on the personnel manager's] [barges into] [bothering] [common courtesy] [presenting oneself] 가 n1 ~ n3 에 제 글로 뜸(대본 꼴 raps · barges · bothering · presenting). 표 고침(skillful. at ease. … display. well-developed personality.) 들어가 n4 [skillful] [at ease] · n6 [asset] [specific skills] [talents] [display] [well-developed personality] 로 풀림. n5 [qualities] [asset] 그대로. 번짐 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d253": {
+   "id": "d253",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n5",
+     "칩": "[\"Know thyself]",
+     "무엇": "남은 기호 — 되살린 첫 줄의 원본 인용 '\"Know Thyself.\"' 에서 여는 따옴표만 남아 칩 앞에 \" 가 붙어 보임(닫는 따옴표 없음). 되살린 첫 줄 탓의 새 흠. 고칠 글로 재면 n5 만 [Evidently] [motto] [ancient Greeks] [Know thyself] 로 바뀌고 다른 문장 그대로(chips-main).",
+     "고칠 글": "applicants. chief faults. virtues. reflected on. Evidently. motto. ancient Greeks. Know thyself. went on. assumption. possessed integrity. desire. self-improvement. valuable addition. staff."
+    }
+   ],
+   "까닭": "되살린 첫 줄 [applicants] [chief faults] [virtues] [reflected on] [Evidently] [motto] [ancient Greeks] [went on] 이 n2 ~ n6 에 제 글로 뜸(원본 reflect · possess → 대본 꼴, Thyself → 대본 thyself). 문제는 n5 의 따옴표 하나(문제 목록). n6 [went on] | [assumption] 은 원본 줄바꿈 자리('went on the / assumption') — 두 칩 모두 뜻은 서고 나란히 뜸. 'went on the assumption' 으로 이어도 새 흠 없음(잼 · 고를 일). 기계 표시 n6 [possessed integrity] 는 'possessed the integrity' 의 관사만 뺀 옛 줄 압축(1부 7-5). n1 칩 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d254": {
+   "id": "d254",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [adjust] [match one's mood to] [On the other hand] [robust] [jovial] [display] [spirit] [delight in teasing] 가 n1 ~ n4 에 제 글로 뜸(원본 'to his' → 대본 'to this' 앞까지 · tease → teasing). 표 고침 'well-developed personality. take a joke.' 들어가 n5 풀림. 기계 표시 n3 [on the part of the applicant] 는 n6(안 바뀐 문장)에 그대로 있는 칩이고, n3 에 뜨는 것은 'the applicant' 낱말 일치로 전부터(전엔 n3 칩이 이것 하나) 있던 번짐 — 이번 고침과 무관.",
+   "때": "2026-09-25 04:54"
+  },
+  "d255": {
+   "id": "d255",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [magical prayers] [charms] [formulas] [Powdered goat foot] [dried frog eyes] [absurd remedies] [cure] 가 n2 · n3 · n5 에 제 글로 뜸. n2 의 옛 [prayer] 는 n5 용 칩이 'prayers' 로 전부터 뜨던 것이라 새 [magical prayers] 와 낱말이 겹쳐 보이지만 그 문장 낱말이고, 빼면 n5 칩이 사라져 그대로 둠. 옛 줄 [profession of physician] [reserved to priest caste](관사만 뺀 압축) · [persists] [traditional communities] 그대로. n1 · n4 칩 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d256": {
+   "id": "d256",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [performing a cure] [colors] [costume] [evil spirits] 가 n1 · n2 · n3 에 제 글로 뜸(대본에서 바뀐 'Indian medicine man' · 'vivid' · 'roll wails' 등은 뺌 — 대본 traditional healer · bright colors). 표 고침 'loud voice. frighten. exhausted.' 들어가 옛 붙은 칩 [loud voice frighten exhausted] 가 풀림 — n2 [frighten] · n3 [loud voice] [frighten] · n4 [exhausted]. n5 칩 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d257": {
+   "id": "d257",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [vivid contrast] [remedies] [oath] [devote] [advancement] [private research] [imperative] 가 n1 ~ n5 에 제 글로 뜸(대본에 없는 weird 는 뺌 · 원본에 두 번 있던 devote 는 하나 — n3 · n4 둘 다 그 낱말). [oath] 는 4글자지만 조각 전체 일치로 n3 에만. 번짐 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d258": {
+   "id": "d258",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 줄 [cure] [afflict] [most highly skilled] [diagnosing] [diet] 이 n1 · n2 · n4 · n7 에 제 글로 뜸(원본 diagnose · dieting → 대본 꼴, 대본에서 바뀐 'cut down on misery of excess weight' 는 뺌). n3 · n5 · n6 칩 없음(이름 · 수 없음). 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:54"
+  },
+  "d259": {
+   "id": "d259",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n5",
+     "칩": "[gracefully]",
+     "무엇": "되살린 첫 줄의 원본 항목 'skim gracefully' 에서 skim 이 빠지고 [gracefully] 만 들어감 — 대본 꼴 'skimming gracefully' 는 n5 에 이어져 있고 넣어도 다른 문장으로 안 번짐. 틀린 칩은 아니고 덜 되살린 것(낮음). 고칠 글로 재면 n5 만 [skimming gracefully] 로 바뀌고 다른 문장 그대로(chips-main).",
+     "고칠 글": "prospect. bleak. ahead of them. put up with. await. great anticipation. really sets in. skimming gracefully. over the frozen surface pond. gliding swiftly down slope. snow-covered mountain."
+    }
+   ],
+   "까닭": "되살린 첫 줄 [prospect] [bleak] [ahead of them] [put up with] [await] [great anticipation] [really sets in] [gracefully] 가 n2 ~ n5 에 제 글로 뜸. 되살린다는 소유자 결정 방법('대본이 바뀐 낱말은 대본대로')대로면 skim 은 skimming 으로 들어갈 자리(문제 목록). 기계 표시 n5 [over the frozen surface pond] · [gliding swiftly down slope] 는 옛 줄 그대로의 압축('surface of a pond' · 'down the slope') — 이번 고침으로 바뀌지 않았고 1부 · 두 번째 읽기가 둔 칩. n1 칩 없음.",
+   "때": "2026-09-25 04:54"
+  },
+  "d260": {
+   "id": "d260",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [world over take a great delight in] [get out the sleds] [sharpen the ice skates] [vie with] [snowman] 이 n1 · n2 · n3 에 제 글로 뜸(대본 꼴 'the ice skates'). [world over take a great delight in] 은 대본에서 이어진 구절(앞 관사 the 만 뺌). 기계 표시 [figures sledding children] 은 n5(안 바뀐 문장) 'figures of sledding children' 의 옛 줄 압축(기계는 바뀐 문장만 봄). 전부터 있던 것(이번 고침과 무관 · 1부 규칙상 안 셈): 그 칩이 'children' 일치로 n1 · n3 · n6 에 번짐(전에도 n1 · n3 칩이 이것뿐).",
+   "때": "2026-09-25 04:55"
+  },
+  "d261": {
+   "id": "d261",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n1 · n3 이 안전장치(엉뚱한 칩 6개)에서 제 칩으로 — n1 [head for sunny Florida] [California] [onset] [winter] · n3 [Valley] [winter] · n4 [host of] [entertainments] [winter] [sports] [enthusiast] — 나아짐. 표 고침 'tucked away. bite. tang.' 들어가 n6 풀림. 'Sun Valley' 가 [Valley] 로만 뜨는 것은 일부러 고른 꼴: 'Sun' 을 넣으면 'sunny'(n1) 일치로 n1 에 [Sun Valley] 가 뜸(chips-main 으로 잼). 원본 'winter-sports enthusiast' 를 [winter] [sports] [enthusiast] 로 나눈 것도 한 칩이면 n1 · n3 · n5 · n6 에 그 구절이 뜨기 때문(잼) — 대신 쉬운 낱말 [winter] 가 다섯 문장, [sports] 가 세 문장에 뜨지만 모두 그 문장 낱말이라 오도는 없음(칩만 조금 많아짐). n2 칩 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d262": {
+   "id": "d262",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n1 · n3",
+     "칩": "n1 [calendar undergoes a drastic] [drastic] · n3 [outdoor recreation] [recreation]",
+     "무엇": "되살린 첫 줄 뒤에 남은 옛 줄 항목 'drastic.' · 'recreation.' 이 새 칩 속 낱말과 같아 한 문장에 같은 낱말이 두 번 뜸(겹친 칩 — 전엔 n1 [drastic] · n3 [recreation] 하나씩). 오도는 없으나 합치며 생긴 흠(되살린 첫 줄 탓 · 낮음). 두 옛 항목은 다른 문장에 안 뜨므로 빼도 잃는 칩 없음 — 고칠 글로 재면 n1 [whole] [social] [calendar undergoes a drastic] · n3 [outdoor recreation] 만 바뀌고 다른 문장 그대로(chips-main).",
+     "고칠 글": "whole. social. calendar undergoes a drastic. abandoned. indoors. outdoor recreation. take. brought up. as a matter of course."
+    }
+   ],
+   "까닭": "되살린 첫 줄 [whole] [social] [calendar undergoes a drastic] [abandoned] [indoors] [outdoor recreation] [take] 가 n1 · n2 · n3 · n5 에 제 글로 뜸(원본 undergo · abandon → 대본 꼴). 'whole social calendar …' 를 나눈 것은 한 칩이면 'social' 일치로 n2 에 그 구절이 뜨기 때문(잼) — 지금 n2 [social] 은 그 문장 낱말. [calendar undergoes a drastic] 은 원본 'calendar undergo drastic' 그대로의 압축(change 생략). 문제는 겹친 칩 둘(문제 목록). n4 · n6 칩 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d263": {
+   "id": "d263",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n1 · n2 가 안전장치(엉뚱한 칩 3개)에서 제 칩 [carols] [ancient] [Christmas] · [commemorate] 로 바뀜 — 나아짐. n3 [religious in origin] [festivities] [gathering around] [Christmas] [hanging] [bright decorations] 모두 제 글(원본 hang → hanging). 'gathering around the Christmas tree' 가 [gathering around] [Christmas] 로 나뉜 것은 한 칩이면 'Christmas' 일치로 n1 · n4 에 그 구절이 뜨기 때문(잼) — 지금 [Christmas] 는 n1 · n3 · n4 의 낱말. n5 칩 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d264": {
+   "id": "d264",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 줄 [great feast] [menus] [host of] [manage] [themselves] [little aid] [devotion] 이 n1 · n2 · n4 · n5 에 제 글로 뜸(원본 menu → menus). 'manage by themselves' 를 나눈 것은 한 칩이면 'themselves' 일치로 n5 에 그 구절이 뜨기 때문(잼) — 지금 n5 [themselves] 는 그 문장 낱말(earned themselves). 기계 표시 n3 일곱 칩은 앱 안전장치: n3 에 이름(Christmas)이 있고 맞는 칩이 없어 목록 전체를 띄움(설계 — 전엔 목록이 비어 칩 0). 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:55"
+  },
+  "d265": {
+   "id": "d265",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 줄 [decorated] [stockings] [fireplace] [excitement] [practice] [costly gifts] 가 n2 ~ n5 에 제 글로 뜸(원본 decorate → decorated). 기계 표시 n1 여섯 칩은 앱 안전장치: n1 에 이름(Christmas Eve)이 있고 맞는 칩이 없어 목록 전체를 띄움(설계 — 전엔 칩 0). 원본 끝 'Three Kings of old Christ Child' 는 넣으면 [Christ child] 가 'children' · 'Christmas' 일치로 n1 ~ n4 에, [three kings of old] 가 'stockings' 속 kings 로 n2 에 뜸(잼) — 그래서 n5 의 두 이름에 칩이 없지만 틀린 칩은 아님. 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:55"
+  },
+  "d266": {
+   "id": "d266",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [communicate with his fellow men] [prompted] [devise] [means of communicating language] [telegraph] [put into] 가 n1 ~ n3 에 제 글로 뜸(대본 꼴 his · prompted, 원본 graphic arts → 대본 visual arts). 표 고침(visual arts. sketching, … primitive artist. advanced.) 들어가 n4 · n7 의 옛 붙은 칩 풀림. n3 [put into] | [words] 는 원본 줄바꿈 자리('put into / words') — 동사구 조각이라 뜻은 서고 나란히 뜸('put into words' 로 이어도 새 흠 없음 — 잼 · 고를 일). 기계 표시 n9 [last through the wear and tear] 는 'lasts through …' 의 옛 줄 사전형(1부 규칙상 맞음). 전부터 있던 것(이번 고침과 무관 · 번지는 글은 오히려 짧아짐): n5 · n9 [primitive artist](전엔 [primitive artist advanced]) · n7 [primitive man indulged in] — 'primitive' · 'artist' 낱말 일치.",
+   "때": "2026-09-25 04:55"
+  },
+  "d267": {
+   "id": "d267",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n2",
+     "칩": "[in the midst of terrible] [want]",
+     "무엇": "되살린 첫 줄 끝 'in the midst of terrible' 과 옛 줄 첫 'want' 가 원본 줄바꿈 자리에서 한 구절('in the midst of terrible want')이 둘로 나뉨 — 앞 칩이 명사 없는 조각(terrible)으로 끝남. 되살린 첫 줄 탓의 새 쪼개짐. 같은 문장에 나란히 떠 오도는 없음(낮음).",
+     "고칠 글": "As a general rule. throughout the ages. poverty-stricken. go hand in hand. in the midst of terrible want. devote. prophet. recognized. true of. genius. aware of extraordinary talent"
+    },
+    {
+     "n": "n1",
+     "칩": "(없음 — poverty-stricken)",
+     "무엇": "되살린 첫 줄의 원본 항목 'poverty stricken' 이 빠짐 — 대본 n1 'poverty-stricken' 에 그대로 있고 넣어도 다른 문장으로 안 번짐. 틀린 칩은 아니고 덜 되살린 것(낮음). 위 고칠 글 하나에 두 가지를 함께 넣어 재면 n1 에 [poverty-stricken] 이 더해지고 n2 가 [go hand in hand] [in the midst of terrible want] 로 바뀔 뿐 다른 문장 그대로(chips-main).",
+     "고칠 글": "As a general rule. throughout the ages. poverty-stricken. go hand in hand. in the midst of terrible want. devote. prophet. recognized. true of. genius. aware of extraordinary talent"
+    }
+   ],
+   "까닭": "되살린 첫 줄 [As a general rule] [throughout the ages] [go hand in hand] 가 n1 · n2 에 제 글로 뜸. 표 고침 'recognized. true of.' 들어가 n6 [prophet] [recognized] · n7 [true of] · n8 [recognized] [genius] … 로 옛 붙은 칩 [recognized true of] 가 풀림(원본 'false of' → 대본 true of). 기계 표시 n8 [aware of extraordinary talent] 는 'aware of his extraordinary talent' 의 소유어만 뺀 옛 줄 압축(1부 7-5). 남은 것: n2 줄바꿈 조각 · n1 빠진 항목(문제 목록 — 고칠 글은 둘 다 담은 한 줄). n3 · n5 칩 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d268": {
+   "id": "d268",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [rise] [departed from the classical] [graphic] [literal representation] [not so much concerned with portraying] 가 n1 ~ n3 에 제 글로 뜸(원본 depart → departed · 대본 꼴 the). 표 고침(it 넣음 · object 뺌 · essentials. Picasso. Georges Braque. … Cubism.) 들어가 n3 [exactly as it appears to the eye as with capturing its soul] · n5 [essentials] · n6 [Picasso] [conception of things took the form of geometrical shapes] · n7 [Georges Braque] [Cubism] — 옛 붙은 칩 · n5 번짐 모두 풀림. n3 두 칩 사이 'an object' 가 빠진 것은 표가 n5 번짐을 막으려 뺀 꼴. [departed from the classical] 은 원본 항목 그대로의 압축. 번짐 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d269": {
+   "id": "d269",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n2 가 안전장치(옛 붙은 칩 4개)에서 제 칩 [God-centered] [world] [Middle Ages found expression] [massive cathedrals] 로 바뀌고 n1 [artistic trends] [reflected] 새로 뜸 — 나아짐. 표 고침(pay homage to. skyscraper. utility. combine practicality. grace. beauty.) 들어가 n4 ~ n8 풀림. 'God-centered world' 를 나눈 것은 한 칩이면 'world' 일치로 n5 에 그 구절이 뜨기 때문(잼) — 지금 n5 [world] 는 그 문장 낱말. 기계 표시 n7 [combine practicality] 는 표 고칠 글 그대로의 사전형(대본 combines)으로 1부 · 전수 표가 한 항목으로 둔 꼴. n3 칩 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d270": {
+   "id": "d270",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [march] [music] [Formal] [graduations] [openings of conventions] [dignified] [national] 이 n1 ~ n4 에 제 글로 뜸(원본 앞 '4.' 는 뺌). 표 고침 'weddings. funerals, outlet. joy or sorrow.' 들어가 n6 의 옛 붙은 칩 풀림. 'Formal occasions' 가 [Formal] 로만 뜨는 것은 한 칩이면 'occasions' 일치로 n6 에 뜨기 때문(잼). [music](n1 · n2 · n3)은 'march to music' 을 나눈 조각으로 모두 그 문장 낱말. n4 [national] | [anthem] 은 원본 줄바꿈 자리지만 두 칩 모두 뜻이 섬. 기계 표시 n6 [folk songs] 는 n5(안 바뀐 문장)에 그대로 있는 칩(기계는 바뀐 문장만 봄). 전부터 있던 것(이번 고침과 무관 · 1부 규칙상 안 셈): n3 [occasions of great emotion]('Formal occasions') · n6 [stirs feelings of patriotism]('their feelings') · [folk songs]('songs of joy') 낱말 일치 번짐.",
+   "때": "2026-09-25 04:55"
+  },
+  "d271": {
+   "id": "d271",
+   "판정": "문제",
+   "문제": [
+    {
+     "n": "n2",
+     "칩": "[chants of] [worship]",
+     "무엇": "되살린 첫 줄 끝 'chants of' 와 옛 줄 첫 'worship' 이 원본 줄바꿈 자리에서 한 구절('chants of worship')이 둘로 나뉨 — 앞 칩이 of 로 끝나는 조각. 되살린 첫 줄 탓의 새 쪼개짐. 같은 문장에 나란히 떠 오도는 없음(낮음). 고칠 글로 재면 n2 만 [chants of worship] 으로 바뀌고 다른 문장 그대로(chips-main).",
+     "고칠 글": "universal language. mirror of the times. God-centered thought. Middle. hymns. chants of worship. dignity. grace. 18th century. stately minuets. Romanticism. 19th century. well portray. great masters. Beethoven. Brahms. rhythms. jazz. swing. modern classical composers. characterize. discords. taste of the restlessness. vigor"
+    }
+   ],
+   "까닭": "되살린 첫 줄 [universal language] [mirror of the times] [God-centered thought] [Middle] [hymns] 가 n1 · n2 에 제 글로 뜸(원본 eighteenth · nineteenth → 18th · 19th). 표 고침(Romanticism · rhythms. jazz. swing. · characterize. discords.) 들어가 n3 ~ n5 풀림. 'Middle Ages' 가 [Middle] 로만 뜨는 것은 일부러 고른 꼴: 'Ages' 를 넣으면 n1 'language, so'(languageso) 글자 일치로 n1 에 [Middle Ages] 가 뜸(chips-main 으로 잼) — 대문자 Middle 이 보이고 소리로 Ages 가 들림. 남은 것: n2 줄바꿈 조각(문제 목록). 전부터 있던 것(이번 고침과 무관 · 1부 규칙상 안 셈 — 다만 오도 소지): 'century' 일치로 n2 에 [19th century] · n3 에 [18th century] 가 함께 뜨고, 'modern' 일치로 n4 에 [modern classical composers] 가 뜸 — '18th. 19th.' · 'classical composers' 로 줄이면 셋 다 사라지고 새 흠 없음(잼 · 주 세션이 고를 일).",
+   "때": "2026-09-25 04:55"
+  },
+  "d272": {
+   "id": "d272",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n3 이 안전장치([Wagner])에서 제 칩 [valid] [worthwhile trend] 로 바뀌고 n1 [intellectuals scorned] · n6 [looks down] [barbaric racket] [Wagner] — 나아짐(원본 scorn → scorned, 대본에서 바뀐 'maiden aunt … her nose at' 은 뺌). 기계 표시 n4 여섯 칩은 앱 안전장치: n4 에 이름(American)이 있고 맞는 칩이 없어 목록 전체(설계 — 전엔 [Wagner] 하나가 같은 까닭으로 뜸, 두 번째 읽기가 짚은 자리). n2 · n5 칩 없음.",
+   "때": "2026-09-25 04:55"
+  },
+  "d273": {
+   "id": "d273",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄로 n1 이 안전장치(옛 붙은 칩 5개)에서 제 칩 [Tower] [Babel] [Old Testament] 로 바뀌고 n3 [became confused] · n4 [allegorical explanation] · n6 [stem from] 새로 뜸 — 나아짐(대본에 없는 collapse 는 뺌). 표 고침(Romance languages. French, Spanish. … elements. in part. Latin) 들어가 옛 붙은 칩 [Romance Languages French] · [elements in part Latin] 풀림. 'Tower of Babel' 이 [Tower] [Babel] 로 나뉜 것은 일부러 고른 꼴: 한 칩이면 'tower' 일치로 n2 · n3 에 [Tower of Babel] 이 뜸(chips-main 으로 잼) — 지금 n2 · n3 [Tower] 는 그 문장 낱말(tower, 대문자만 다름). 기계 표시 [Italian are derived from Latin] 은 n7 'are all derived' 에서 all 을 뺀 옛 줄 칩(1부가 둔 꼴). 전부터 있던 것(이번 고침과 무관 · 번지는 글은 짧아짐 · 1부 규칙상 안 셈): n4 · n5 · n8 [Romance languages]('languages' 일치 — 전엔 [Romance Languages French]) · n9 [Italian are derived from Latin]('Latin' 일치). n7 의 [Latin] 겹침은 n9 에 필요한 칩이 그 문장에도 뜨는 것.",
+   "때": "2026-09-25 04:55"
+  },
+  "d274": {
+   "id": "d274",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [Middle Ages] [Latin] [universal] [conducted] [documents] [fell into disuse] [18th century] 가 n1 · n2 · n3 · n5 에 제 글로 뜸(원본 eighteenth → 18th · conduct → conducted). 표 고침 'French. diplomacy.' 들어가 n3 풀림. 'universal language' 가 [universal] 로만 뜨는 것은 한 칩이면 'language' 일치로 n1 · n2 · n3 · n6 에 뜨기 때문(잼). 기계 표시: [overcoming language barriers] 는 n6(안 바뀐 문장)의 관사만 뺀 옛 칩이고 n1 · n2 · n3 · n5 에 뜨는 것은 'language' 낱말 일치 — 전부터 있던 번짐(이번 고침과 무관 · 1부 규칙상 안 셈 · 낱말을 빼지 않고는 막을 길 없음). n7 열세 칩은 앱 안전장치(이름 English · 맞는 칩 없음 — 설계, 목록만 5 → 13 으로 길어짐).",
+   "때": "2026-09-25 04:55"
+  },
+  "d275": {
+   "id": "d275",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "되살린 첫 줄 [occupy] [position] [transaction] [biggest] 가 n1 · n4 · n5 에 제 낱말로 뜸(대본에서 바뀐 dialects · ambiguities 등은 뺌). 표 고침 'drawback. well worthwhile.' 들어가 n5 [biggest] [drawback] · n7 [well worthwhile] 로 옛 붙은 칩 풀림. n5 [biggest] | [drawback] 은 원본 줄바꿈 자리지만 두 칩 모두 뜻이 섬. 기계 표시 n2 · n3 · n6 은 앱 안전장치(이름 English · British Empire 등 · 맞는 칩 없음 — 설계, 전에도 같은 까닭으로 붙은 칩 하나가 뜸).",
+   "때": "2026-09-25 04:55"
+  },
+  "d276": {
+   "id": "d276",
+   "판정": "괜찮음",
+   "문제": [],
+   "까닭": "전 힌트 없음 → 원본 줄 [precious possessions] [fellow men] [to a certain extent] [mentality] [accordingly] [rewards] 가 n1 · n2 · n4 · n5 · n6 에 제 글로 뜸(원본 reward → rewards). [fellow men] 은 n2 · n5 둘 다 그 구절. n3 · n7 칩 없음(이름 · 수 없음). 지시문도 되돌아옴.",
+   "때": "2026-09-25 04:55"
+  }
+ }
+}

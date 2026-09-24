@@ -1,0 +1,357 @@
+{
+ "조각": "줄-읽기단어",
+ "결과": {
+  "P83": {
+   "id": "P83",
+   "판정": "제대로",
+   "main 글": "결함, 결점",
+   "까닭": "main content/voca_dictionary.json \"defect\".meaning 이 고칠 글과 글자 그대로 같음(옛 '결함' 단독 없음). searchWord 'defect' 그대로 · 사전 키 3,904 에 겹친 키 없음(원문에서 셈). hv-30 격자에서 fault '잘못; 결점' 과 조각 '결점' 이 겹쳐 규칙(sharesSense)이 이제 서로를 오답 보기 · 드릴 '불일치' 로 안 냄 — 의도대로. 같은 격자 defective '결함이 있는' 등과 새 겹침 · 흠 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P84": {
+   "id": "P84",
+   "판정": "제대로",
+   "main 글": "지지하다, 지원하다",
+   "까닭": "main content/voca_dictionary.json \"support\".meaning 이 고칠 글과 같음. 기계의 '옛 글이 아직 있음' 은 이 새 글 안의 '지원하다' 와 apply '적용하다; (일자리·학교에) 지원하다, 신청하다'(다른 낱말의 제 뜻)가 잡힌 것 — support 칸에 옛 글이 남은 것 아님. hv-03 에서 uphold '지지하다, 옹호하다' 와 '지지하다' 가 겹쳐 규칙이 막음(의도대로). support 가 나오는 다른 강의 mv2-29 격자에는 '지지' · '지원' 뜻 낱말이 없어 새 겹침 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P85": {
+   "id": "P85",
+   "판정": "제대로",
+   "main 글": "반대, 저항; 야당",
+   "까닭": "main content/voca_dictionary.json \"opposition\".meaning 이 고칠 글과 같음. 같은 글이던 disapproval 항목은 따로 '반대, 못마땅함'(P297 몫)으로 바뀌어 두 항목이 섞이지 않음. hv-08 격자의 oppose '반대하다' · opposite '반대의; 맞은편' 과 같은 조각은 없고, '저항 · 야당' 이 붙어 한→영 '[ 반대, 저항; 야당 ]' 에서 opposite 가 맞는 답처럼 보이지 않음 — 추천 글 그대로, 새 흠 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P86": {
+   "id": "P86",
+   "판정": "제대로",
+   "main 글": "직업; 경력",
+   "까닭": "main content/voca_dictionary.json \"career\".meaning 이 고칠 글과 같음. hv-21 격자 occupation '직업' 과 조각이 겹쳐 규칙이 이제 서로를 오답으로 안 냄(의도대로). 같은 격자 carrier '운반인, 매개체' · carriage 등과 새 겹침 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P87": {
+   "id": "P87",
+   "판정": "제대로",
+   "main 글": "  complement: \"ˈkɑːmpləmɛnt\",",
+   "까닭": "main src/lib/vocaSpeech.ts VOCA_PRONUNCIATIONS 99행이 고칠 글과 같음 — graduate 줄(97행) 바로 다음, 사이 98행에 까닭 주석 한 줄. vocaWordSpeech('complement') → 'complement ⟨ˈkɑːmpləmɛnt⟩' 로 고칠 곳에 적힌 말하는 글과 같음. 이 세션 옛 판과 견주면 이 파일은 그 두 줄만 더해짐(다른 줄 그대로). 사전 뜻 '보완하다' 그대로. 새 클립(생성기 · spoken-texts · R2)은 수정 세션 몫이라 판정에 넣지 않음. 참고: 표 위 주석은 아직 'all twenty'(이제 21 항목) — 코드 주석이라 화면 영향 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P88": {
+   "id": "P88",
+   "판정": "제대로",
+   "main 글": "그 후에, 나중에",
+   "까닭": "main content/voca_dictionary.json \"afterward(s)\".meaning 이 고칠 글과 같음(searchWord 'afterward' 그대로). 기계의 '옛 글이 아직 있음' 은 새 글 안의 '그 후에' 와 subsequently '그 후에, 이후에, 나중에'(다른 낱말)가 잡힌 것 — 옛 칸이 남은 것 아님. mv3-08 격자 later '나중에' 와 조각이 겹쳐 규칙이 이제 바꿔치기를 막음(의도대로).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P247": {
+   "id": "P247",
+   "판정": "제대로",
+   "main 글": "그러면 그는 거리낌없는 마음으로 제 갈 길을 갈 수 있다.",
+   "까닭": "main pr062.json · pr062-1.json readingSentences[5](id reading-062-s006).korean 둘 다 고칠 글과 같음. 대체 길 pr062-1 blocks[1] 한국어 지문 끝 문장도 '거리낌없는' · src/lib/readingSentences.json pr062 도 같은 글(옛 글 0). english 칸 그대로. 옛 판과 칸마다 견주면 이 강의에서 바뀐 칸은 이 문장(세 곳)과 카드 untroubled(P248)뿐. 스냅샷 전체에 옛 글 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P248": {
+   "id": "P248",
+   "판정": "제대로",
+   "main 글": "거리낌없는, 평온한",
+   "까닭": "main pr062.json · pr062-1.json readingVocabulary[10](word untroubled).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr062[10] 도 같음. 같은 카드의 lemma · partOfSpeech · score 등 그대로. 문장 T12(P247)와 한 강의 안 표기 맞음. untroubled 는 READING_PRONUNCIATIONS 에 없어 카드 소리 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P249": {
+   "id": "P249",
+   "판정": "제대로",
+   "main 글": "온실 효과를 피하기 위해 우리는 다른 에너지원을 찾아야만 한다.",
+   "까닭": "main pr065.json · pr065-1.json readingSentences[0](reading-065-s001).korean 둘 다 고칠 글과 같음. pr065-1 blocks[1] 지문 첫 문장도 '온실 효과' · src/lib/readingSentences.json pr065 도 같음(옛 글 0). english 칸 그대로 · 이 강의에서 다른 칸은 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P250": {
+   "id": "P250",
+   "판정": "제대로",
+   "main 글": "이 십 대 소녀가 무엇을 겪고 있는지 정확히 보고 느낄 수 있다.",
+   "까닭": "main pr082.json · pr082-1.json readingSentences[0](reading-082-s001).korean 둘 다 고칠 글과 같음 · pr082-1 blocks[1] 첫 문장 · src/lib/readingSentences.json pr082 도 같음. english 그대로. 같은 강의 s002(P251) · 카드 teenage(P252)도 '십 대' 로 바뀌어 강의 안 '십대' 0 — 옛 판과 견주면 바뀐 칸은 이 셋뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P251": {
+   "id": "P251",
+   "판정": "제대로",
+   "main 글": "나도 십 대 시절 가끔 몹시 좌절하고 혼란스러워했던 것이 기억난다.",
+   "까닭": "main pr082.json · pr082-1.json readingSentences[1](reading-082-s002).korean 둘 다 고칠 글과 같음 · pr082-1 blocks[1] 둘째 문장 · src/lib 도 같음(옛 글 0). english 'in my teens' 그대로 — 뜻 짝 맞음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P252": {
+   "id": "P252",
+   "판정": "제대로",
+   "main 글": "십 대의",
+   "까닭": "main pr082.json · pr082-1.json readingVocabulary[5](word teenage).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr082[5] 도 같음. 다른 카드 칸 그대로. teenage 는 READING_PRONUNCIATIONS 에 없어 소리 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P253": {
+   "id": "P253",
+   "판정": "제대로",
+   "main 글": "십 대",
+   "까닭": "main pr087.json · pr087-1.json readingVocabulary[6](word teenagers).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr087[6] 도 같음. 까닭이 함께 맞추라던 같은 강의 s001 · s006 · s008(readingSentences[0] · [5] · [7])도 '십 대들은' · '십 대 소녀들은' · '십 대들은' 으로 두 쪽 · blocks[1] · src/lib 모두 바뀌어 강의 안 '십대' 0. 옛 판과 견주면 바뀐 칸은 이 세 문장 · 두 카드(P254)뿐, english 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P254": {
+   "id": "P254",
+   "판정": "제대로",
+   "main 글": "십 대",
+   "까닭": "main pr087.json · pr087-1.json readingVocabulary[11](word teens).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr087[11] 도 같음. T12 카드 · 세 문장과 한 강의 안 표기 맞음. teens 는 READING_PRONUNCIATIONS 에 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P255": {
+   "id": "P255",
+   "판정": "제대로",
+   "main 글": "많은 십 대들이 사마귀와 여드름을 몹시 두려워한다.",
+   "까닭": "main pr092.json · pr092-1.json readingSentences[0](reading-092-s001).korean 둘 다 고칠 글과 같음 · pr092-1 blocks[1] 첫 문장 · src/lib 도 같음(옛 글 0). english 'Many teenagers …' 그대로. 같은 강의 카드 T16(P256)도 '십 대' — 강의 안 '십대' 0.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P256": {
+   "id": "P256",
+   "판정": "제대로",
+   "main 글": "십 대",
+   "까닭": "main pr092.json · pr092-1.json readingVocabulary[9](word teenagers).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr092[9] 도 같음. 옛 판과 견주면 이 강의에서 바뀐 칸은 이 카드와 s001(P255)뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P257": {
+   "id": "P257",
+   "판정": "제대로",
+   "main 글": "귀여운 밍크, 껴안고 싶은 라쿤, 사랑스러운 하프물범을 생각해 보라.",
+   "까닭": "main pr093.json · pr093-1.json readingSentences[1](reading-093-s002).korean 둘 다 고칠 글과 같음 · pr093-1 blocks[1] 둘째 문장 · src/lib 도 같음(옛 '너구리' 0). english 'the cuddly raccoon' 그대로 — 뜻 짝 맞음. 다른 칸 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P258": {
+   "id": "P258",
+   "판정": "제대로",
+   "main 글": "1998년에 국제 통화 기금(IMF)은 아시아 국가들에 영향을 주고 있는 경제적 어려움이 1999년 상반기까지는 나아지게 될 것이라고 말했다.",
+   "까닭": "main pr095.json · pr095-1.json readingSentences[0](reading-095-s001).korean 둘 다 고칠 글과 같음 · pr095-1 blocks[1] 첫 문장 · src/lib 도 같음(옛 '국가들에게' 0). english 그대로 · 다른 칸 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P259": {
+   "id": "P259",
+   "판정": "제대로",
+   "main 글": "사람들은 야생화와 나무들 냄새의 한가운데에 텐트를 칠 수 있다.",
+   "까닭": "main pr111.json · pr111-1.json readingSentences[1](reading-111-s002).korean 둘 다 고칠 글과 같음 · pr111-1 blocks[1] 둘째 문장 · src/lib 도 같음(옛 글 0). english 그대로. 이 강의에서 바뀐 칸은 이 문장과 s003(P260)뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P260": {
+   "id": "P260",
+   "판정": "제대로",
+   "main 글": "그들은 속세의 일상적 걱정거리를 완전히 잊은 채, 산속에 홀로 있기를 즐길 수 있다.",
+   "까닭": "main pr111.json · pr111-1.json readingSentences[2](reading-111-s003).korean 둘 다 고칠 글과 같음 · pr111-1 blocks[1] 셋째 문장 · src/lib 도 같음(옛 '산 속에' 0). english 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P261": {
+   "id": "P261",
+   "판정": "제대로",
+   "main 글": "십 대",
+   "까닭": "main pr005.json · pr005-1.json readingVocabulary[3](word teenager).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr005[3] 도 같음. 같은 강의 s001 한국어 '10대' 는 그대로(맞는 표기). 옛 판과 견주면 이 강의에서 바뀐 칸은 이 카드뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P262": {
+   "id": "P262",
+   "판정": "제대로",
+   "main 글": "젊은이로서, 우리가 사회 집단에서 자신의 자리를 찾거나 또는 차지하기 위해 노력할 때 실수를 범하는 것을 부끄러워할 필요가 없다.",
+   "까닭": "main pr041.json · pr041-1.json readingSentences[1](reading-041-s002).korean 둘 다 고칠 글과 같음 · pr041-1 blocks[1] 둘째 문장 · src/lib/readingSentences.json pr041[1] 도 같음(옛 '부끄러워 할' 0). english 그대로 · 다른 칸 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P263": {
+   "id": "P263",
+   "판정": "제대로",
+   "main 글": "내 가족 구성원 모두가 좋은 시간과 슬픈 시간을 함께 나누고 서로 의사소통을 할 때 난 행복하다.",
+   "까닭": "main pr223.json · pr223-1.json readingSentences[5](reading-223-s006).korean 둘 다 고칠 글과 같음 · pr223-1 blocks[1] 끝 문장 · src/lib 도 같음(옛 '의사 소통' 0). english 그대로 · 다른 칸 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P264": {
+   "id": "P264",
+   "판정": "제대로",
+   "main 글": "시간은 공간보다 더 일반적이다. 공간적 질서를 부여할 수 없는 인상과 감정과 생각이라는 내면세계에도 적용되기 때문이다.",
+   "까닭": "main pr131.json · pr131-1.json readingSentences[0](reading-131-s001).korean 둘 다 고칠 글과 같음 · pr131-1 blocks[1] 사본 · src/lib 도 같음(옛 '내면 세계' 0). 카드 world(P265)와 표기 맞음. english 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P265": {
+   "id": "P265",
+   "판정": "제대로",
+   "main 글": "세계 (inner world 내면세계)",
+   "까닭": "main pr131.json · pr131-1.json readingVocabulary[2](word world).korean 둘 다 고칠 글과 같음 · src/lib/readingVocabulary.json pr131[2] 도 같음. 괄호 · 앞말 '세계' 그대로 — 잘림 없음. world 는 READING_PRONUNCIATIONS 에 없어 소리 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P266": {
+   "id": "P266",
+   "판정": "제대로",
+   "main 글": "과거와 과거의 저작물에 대한 연구를 경멸하는 사람들의 일반적인 생각은 과거는 현재와 전혀 다르며, 따라서 우리는 과거로부터 아무것도 값어치 있는 것을 배울 수 없다는 것이다.",
+   "까닭": "main pr133.json · pr133-1.json readingSentences[0](reading-133-s001).korean 둘 다 고칠 글과 같음 · pr133-1 blocks[1] 사본 · src/lib 도 같음(옛 '아무 것도' 0). english 그대로 · 다른 칸 안 바뀜.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P267": {
+   "id": "P267",
+   "판정": "제대로",
+   "main 글": "그게 바로 일상생활 속에서 우리가 시를 감상하는 이유이다.",
+   "까닭": "main pr136.json · pr136-1.json readingSentences[5](reading-136-s006).korean 둘 다 고칠 글과 같음 · pr136-1 blocks[1] 끝 문장 · src/lib 도 같음(옛 '일상 생활' 0). english 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P268": {
+   "id": "P268",
+   "판정": "제대로",
+   "main 글": "그래서, 차이란, 돌은 가능성에 대한 인식을 못 하는 데 반해서, 인간은 그들이 진정한 선택지 앞에 있다는 것을 인식한다는 것이다.",
+   "까닭": "main pr158.json · pr158-1.json readingSentences[7](reading-158-s008).korean 둘 다 고칠 글과 같음 · pr158-1 blocks[1] 끝 문장 · src/lib 도 같음(옛 '하는데 반해서' 0). '못 하는' 띄어쓰기는 그대로(맞음). english 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P269": {
+   "id": "P269",
+   "판정": "제대로",
+   "main 글": "그들은 어떤 음식이 그들의 운동능력을 증대시키고, 체중을 줄이는 데 도움을 주며, 낭만적인 분위기에 젖도록 해주는가에 대해 어떤 생각을 갖고 있다.",
+   "까닭": "main pr175.json · pr175-1.json readingSentences[1](reading-175-s002).korean 둘 다 고칠 글과 같음 · pr175-1 blocks[1] 둘째 문장 · src/lib 도 같음(옛 '줄이는데' 0). 까닭대로 같은 줄 '운동능력' · '해주는가' 는 그대로. english 그대로. 이 강의에서 바뀐 칸은 이 문장과 s005(P270)뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P270": {
+   "id": "P270",
+   "판정": "제대로",
+   "main 글": "그러나, 낭만적인 저녁을 위해, 새우나 바닷가재를 선택한다.",
+   "까닭": "main pr175.json · pr175-1.json readingSentences[4](reading-175-s005).korean 둘 다 고칠 글과 같음 · pr175-1 blocks[1] 끝 문장 · src/lib 도 같음(옛 '바다가재' 0). english 'shrimp and lobster' 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:37"
+  },
+  "P293": {
+   "id": "P293",
+   "판정": "제대로",
+   "main 글": "ante/anti(이전의) + ique ➔ 옛날부터 전해 내려온 진귀한 물건, 골동품",
+   "까닭": "main src/lib/vocaUtils.ts 102행 PREFIX_RULES { prefix: \"antique\" }.meaning 이 고칠 글과 같음(옛 '(고대의)' 0). 이 세션 옛 판과 견주면 vocaUtils.ts 에서 바뀐 줄은 PREFIX_RULES 다섯(precaution · antique · transfer · inspect · interview — 이 조각의 P294 · P293 · P296 · P298 · P302)뿐, 함수 · 다른 규칙 그대로. 같은 강의 ancestor 'ante(앞서)'(100행) · anticipate 'anti/ante(앞서)'(101행)와 이제 같은 방향(앞 · 이전).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P294": {
+   "id": "P294",
+   "판정": "제대로",
+   "main 글": "pre(미리) + caution(조심) ➔ 사전에 주의함, 예방 조치",
+   "까닭": "main src/lib/vocaUtils.ts 86행 { prefix: \"precaution\" }.meaning 이 고칠 글과 같음(옛 '예방조치' 0 — 사전 · src/lib 어디에도 없음). 낱말 카드 뜻 '예방 조치'(voca_dictionary precaution)와 한 카드 안 표기 맞음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P295": {
+   "id": "P295",
+   "판정": "제대로",
+   "main 글": "좋은 면; 위쪽, 윗면",
+   "까닭": "main content/voca_dictionary.json \"upside\".meaning 이 고칠 글과 같음. 기계의 '옛 글이 아직 있음' 은 새 글 뒤쪽에 옛 글 '위쪽, 윗면' 이 둘째 뜻으로 그대로 든 것(까닭대로 남김) — 옛 칸이 남은 것 아님. hv-03 격자에 '좋은 면' · '위쪽' · '윗면' 과 겹칠 낱말 없음(support · uphold 등 새 겹침 없음).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P296": {
+   "id": "P296",
+   "판정": "제대로",
+   "main 글": "trans(건너서) + fer(나르다) ➔ 다른 장소/부서로 옮기다, 환승하다/전근 가다",
+   "까닭": "main src/lib/vocaUtils.ts 114행 { prefix: \"transfer\" }.meaning 이 고칠 글과 같음(옛 '전근가다' 0). 어원 풀이 앞부분(trans 건너서 + fer 나르다) 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P297": {
+   "id": "P297",
+   "판정": "제대로",
+   "main 글": "반대, 못마땅함",
+   "까닭": "main content/voca_dictionary.json \"disapproval\".meaning 이 고칠 글과 같음. 같은 글이던 opposition 항목은 따로 '반대, 저항; 야당'(P85)으로 — 두 항목이 섞이지 않음. hv-07 격자 contrary '반대되는, 반대의; 정반대; (~와) 반대로' · disapprove '반대하다' 와 같은 조각은 없고 '못마땅함' 이 붙어 뜻이 가려짐 — 추천 글 그대로, 새 흠 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P298": {
+   "id": "P298",
+   "판정": "제대로",
+   "main 글": "in(안을) + spect(들여다보다) ➔ 문제없는지 안쪽을 자세히 보다, 검사하다",
+   "까닭": "main src/lib/vocaUtils.ts 117행 { prefix: \"inspect\" }.meaning 이 고칠 글과 같음(옛 '문제 없는지' 0) — 적힌 행 번호도 맞음. hv-60 · mv3-03 의 inspect 카드가 함께 씀. 앞뒤 규칙(import · expect) 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P299": {
+   "id": "P299",
+   "판정": "제대로",
+   "main 글": "십 대",
+   "까닭": "main content/voca_dictionary.json \"teenager\".meaning 이 고칠 글과 같음. 사전 전체에 '십대' 0. mv3-06 격자에 겹칠 낱말 없음. VOCA 뜻이라 소리 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P300": {
+   "id": "P300",
+   "판정": "제대로",
+   "main 글": "남녀공학",
+   "까닭": "main content/voca_dictionary.json \"coeducation\".meaning 이 고칠 글과 같음(옛 '남녀 공학' 스냅샷 0). mv3-12 격자에 겹칠 낱말 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P301": {
+   "id": "P301",
+   "판정": "제대로",
+   "main 글": "포유동물",
+   "까닭": "main content/voca_dictionary.json \"mammal\".meaning 이 고칠 글과 같음(옛 '포유 동물' 스냅샷 0). mv3-21 격자에 겹칠 낱말 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P302": {
+   "id": "P302",
+   "판정": "제대로",
+   "main 글": "inter(서로) + view(얼굴을 보다) ➔ 서로 마주 보고 의견을 묻다, 면접/인터뷰",
+   "까닭": "main src/lib/vocaUtils.ts 123행 { prefix: \"interview\" }.meaning 이 고칠 글과 같음(옛 '마주보고' 0) — 적힌 행 번호도 맞음. hv-73 카드 · Step 2 퀴즈 힌트가 이 글을 씀. 앞뒤 규칙(international · discover) 그대로.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "P303": {
+   "id": "P303",
+   "판정": "제대로",
+   "main 글": "야심 찬",
+   "까닭": "main content/voca_dictionary.json \"ambitious\".meaning 이 고칠 글과 같음(격자 mv1-31 · mv2-25). 앱 안 COLLOCATION_PRESETS project '야심 찬 프로젝트를 관리하다'(vocaUtils.ts 182행)와 표기 맞음. 옛 '야심찬' 은 스냅샷에서 CNN 두 곳뿐(봄 밖). 두 격자에 겹칠 낱말 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "E25": {
+   "id": "E25",
+   "판정": "제대로",
+   "main 글": "그리고 누가 결정해야 하는가?",
+   "까닭": "main pr256.json · pr256-1.json readingSentences[8](reading-256-s009).korean 둘 다 고칠 글과 같음 · pr256-1 blocks[1] 한국어 지문 끝 문장도 같게 · src/lib/readingSentences.json pr256 도 같음(옛 '누가 결정하는가?' 0). english 'And who should decide?' 그대로 — should 뜻 살아 짝 맞음. 앞 문장 s008 'how do we decide …' → '어떻게 결정하는가?' 는 should 없는 영어라 그대로 둔 것이 맞음. 옛 판과 견주면 이 강의에서 바뀐 칸은 이 문장(세 곳)뿐.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "D8": {
+   "id": "D8",
+   "판정": "제대로",
+   "main 글": "건강한; 건강에 좋은",
+   "까닭": "추천안(전수/결과.md 판단 필요 8 — 소유자 '추천대로'): content/voca_dictionary.json healthy.meaning '건강한' → '건강한; 건강에 좋은'. main \"healthy\".meaning 이 추천 글 그대로. hv-17 에서 healthful '건강에 좋은' 과 조각이 겹쳐 규칙(sharesSense)이 이제 서로를 오답 · 드릴 '불일치' 로 안 냄. healthy 가 나오는 hv-15 · mv1-35 격자에 '건강' 조각 낱말이 없음을 격자로 확인(추천안 말과 같음). 사전 옛 판과 견주면 이 항목만 바뀜 · VOCA 뜻이라 소리 없음.",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  },
+  "D9": {
+   "id": "D9",
+   "판정": "제대로",
+   "main 글": "실행하다; 도구 (뜻에 따라 발음이 다름)",
+   "까닭": "추천안(전수/결과.md 판단 필요 9 — 소유자 '추천대로'): content/voca_dictionary.json implement.meaning 에 발음 주석. main \"implement\".meaning 이 추천 글 그대로 — separate '분리하다; 별도의 (뜻에 따라 발음이 다름)' · estimate · associate 와 같은 꼴(빈칸 하나 + 괄호). main vocaUtils.ts quizMeaning 의 PRONUNCIATION_NOTES 가 ' (뜻에 따라 발음이 다름)' 을 떼어 퀴즈 · 드릴 화면엔 '실행하다; 도구' 만 보임(주석이 정답을 드러내지 않음), senseSegments 도 괄호를 빼 조각은 '실행하다' · '도구' 그대로. hv-51 격자에 '도구' · '실행' 조각 낱말 없음. 새 클립 없음(추천안대로).",
+   "고칠 것": "없음",
+   "때": "2026-09-25 04:38"
+  }
+ }
+}
