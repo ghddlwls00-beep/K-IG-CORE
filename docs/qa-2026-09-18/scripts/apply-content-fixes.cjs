@@ -117,6 +117,10 @@ function findString(node, text, where = "", out = []) {
 const verdicts = JSON.parse(readSrc(VERDICTS));
 const list = LIST ? new Map(readSrc(LIST).split("\n").filter(Boolean).map((l) => { const x = JSON.parse(l); return [x.id, x]; })) : new Map();
 if (REF === "file" && WRITE) { console.error("STOP: --ref file(초안)로는 쓰지 않음 — 커밋된 가지의 결과로만 적용"); process.exit(2); }
+// 전수 읽기(full-merge.cjs) 판정은 꼴이 다르다: { 표: [{ ch(조각), c(과정), g(묶음 'ld/d010'), x(최종), how }] } — 재검토 꼴로 맞춤
+if (!verdicts["찾은것"] && Array.isArray(verdicts["표"])) {
+  verdicts["찾은것"] = verdicts["표"].map((r) => ({ key: `F:${r.g}:${r.x && r.x.T}`, 상태: "표에 올림", 출처: `전수(${r.how || ""})`, 조각: r.ch, ids: [], 쪽: `/${r.g}`, 묶음: r.g, 최종: r.x || {} }));
+}
 const table = (verdicts["찾은것"] || []).filter((f) => f["상태"] === "표에 올림");
 // 곁글 key(X:<n>)는 조각마다 0 부터라 과정 사이에 겹친다 — 조각을 붙여 하나로
 const uid = (f) => `${f["조각"] || "-"}/${f.key}`;
@@ -139,11 +143,22 @@ function filesFromWhere(where, page) {
   while ((m = re.exec(where || ""))) { out.add(m[0]); dir = path.posix.dirname(m[0]); }
   // '· gh1-058-2.json' 처럼 폴더를 뺀 옆 파일
   if (dir) for (const s of (where || "").match(/(?<![\w/])[a-z]+\d*-[\w-]+\.json/g) || []) out.add(`${dir}/${s}`);
-  if (!out.size && page) {
-    const [, course, id] = page.split("/");
-    if (course && id) out.add(`content/lessons/${course}/${id}.json`);
-  }
+  if (!out.size && page) for (const f of groupFiles(page)) out.add(f);
   return [...out];
+}
+/** 묶음(쪽) 하나가 글을 들고 있는 파일들 — 전수 읽기는 '고칠 곳' 에 파일 경로를 안 적기도 한다(묶음 'ld/d010' 만) */
+function groupFiles(page) {
+  const [, course, id] = String(page).split("/");
+  if (!course || !id) return [];
+  const dir = `content/lessons/${course}`;
+  const base = id.replace(/-\d+$/, "");
+  const sibs = (b) => { try { return fs.readdirSync(path.join(ROOT, dir)).filter((n) => new RegExp(`^${b}(-\\d+)?\\.json$`).test(n)).map((n) => `${dir}/${n}`); } catch { return []; } };
+  const out = sibs(base);
+  if (course === "ld") out.push("content/ld_english_scripts.json");
+  if (course === "phonics") out.push("content/voca_dictionary.json");
+  if (course === "grammar1") { const n = Number((base.match(/(\d+)$/) || [])[1]); if (n) for (const k of [n - 1, n + 1]) out.push(...sibs(`gh1-${String(k).padStart(3, "0")}`)); }
+  if (course === "student") out.push("content/courses/student.json");
+  return [...new Set(out)];
 }
 
 // ---------------------------------------------------------------- 1단계: 판정마다 바꿀 칸과 새 값을 정한다(아직 안 바꿈)
@@ -275,6 +290,20 @@ for (const f of table) {
       if (hits.length > 1) { why = `${c} 안에 '지금' 과 같은 칸이 ${hits.length}곳 — 어느 것인지 모름`; break; }
       for (const h of hits) { found++; why = propose(f, c, h.parent, h.key, h.where, value, now); if (why) break; }
       if (why) break;
+    }
+    // 적힌 파일에 없으면 묶음의 다른 파일(대본 · 짝 · 사전)에서 한 번 더 — 전수 읽기는 '고칠 곳' 이 강의 파일만 말하기도 한다
+    if (!why && !found && f["쪽"]) {
+      for (const c of groupFiles(f["쪽"]).filter((x) => !cands.includes(x))) {
+        const file = load(c);
+        if (!file) continue;
+        let scope = file.json, prefix = "";
+        if (/ld_english_scripts\.json$/.test(c)) { if (!ldLesson) continue; scope = file.json[`d${ldLesson[1]}`]; prefix = `.d${ldLesson[1]}`; if (!scope) continue; }
+        if (/voca_dictionary\.json$/.test(c)) { /* 사전은 크다 — 뜻 칸만 */ }
+        const hits = findString(scope, now, prefix);
+        if (hits.length > 1) { why = `${c} 안에 '지금' 과 같은 칸이 ${hits.length}곳 — 어느 것인지 모름`; break; }
+        for (const h of hits) { found++; why = propose(f, c, h.parent, h.key, h.where, value, now); if (why) break; }
+        if (why) break;
+      }
     }
     if (!why && !found) why = `'지금' 과 같은 칸이 적힌 파일(${cands.join(" · ")})에 없음`;
   }
