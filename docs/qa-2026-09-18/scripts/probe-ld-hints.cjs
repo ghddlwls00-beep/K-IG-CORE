@@ -44,7 +44,7 @@ const READ_STEP2 = `(() => {
   const text = main.innerText;
   // 라벨 span 바로 다음의 <p> 안에 칩이 들어 있다. 바깥 div 를 집으면 카드 전체의
   // span 을 다 끌어와 개수가 틀어지므로, 라벨을 가진 span 에서 형제 <p> 로 간다.
-  const label = [...main.querySelectorAll('span')].find((s) => /고유 명사\\s*·\\s*숫자 참조/.test(s.innerText || ''));
+  const label = [...main.querySelectorAll('span')].find((s) => /고유 명사\\s*·\\s*숫자(\\s*·\\s*어려운 낱말)? 참조/.test(s.innerText || ''));
   const chips = label && label.parentElement ? label.parentElement.querySelector('p') : null;
   const box = Boolean(label);
   let items = [];

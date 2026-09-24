@@ -1,0 +1,11 @@
+﻿[
+    {
+        "id":  "C06113 칩 규칙 뒤 d058",
+        "file":  "content/lessons/ld/d058.json",
+        "new":  "1896, Detroit, Michigan. amazed. motor vehicle. Henry Ford. mechanical. 1876. 12. 1903, founded the Ford Motor Company. Model T, 15 million. 1908. 1927. 1924, 7,500. $5 a day",
+        "path":  ".blocks[2].text",
+        "why":  "새 칩 규칙은 한 글자 머리글자 뒤 마침표에서 안 나눔 — \u0027Model T\u0027 는 차 이름(머리글자 아님)이라 [Model T. 15 million] 로 붙음 → 쉼표로",
+        "old":  "1896, Detroit, Michigan. amazed. motor vehicle. Henry Ford. mechanical. 1876. 12. 1903, founded the Ford Motor Company. Model T. 15 million. 1908. 1927. 1924, 7,500. $5 a day",
+        "op":  "set"
+    }
+]

@@ -60,7 +60,10 @@
         },
         {
           "n": "9",
-          "text": "Don't take it too hard."
+          "text": "Don't take it too hard.",
+          "alternatives": [
+            "Don't take that too hard."
+          ]
         },
         {
           "n": "10",
@@ -107,7 +110,10 @@
         },
         {
           "n": "20",
-          "text": "It is open Monday through Friday."
+          "text": "It is open Monday through Friday.",
+          "alternatives": [
+            "That is open Monday through Friday."
+          ]
         }
       ]
     },

@@ -87,9 +87,13 @@ export function LdLearningView({
     // chunk is kept once — otherwise a sentence that matches it shows the chip twice.
     // A comma between digits ("4,000", "2,500,000") is a thousands separator, not a
     // list break — splitting there left chips such as "000 pounds".
+    // The period of a title or a one-letter initial is not a list break either:
+    // "Mrs. Watson" came out as [Mrs] [Watson], "Dr. William N. Green" as [William N]
+    // [Green], "St. Paul" as [St] [Paul] (content review 2026-09-24, C06113) — and the
+    // title keeps its period when it ends a chunk ("Washington D.C.").
     return hintsBlock.text
-      .split(/,(?!\d{3}(?!\d))|\.\s+|\.$|\s{2,}/)
-      .map((chunk) => chunk.trim().replace(/[.,]+$/, "").trim())
+      .split(/,(?!\d{3}(?!\d))|(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))\.\s+|\.$|\s{2,}/)
+      .map((chunk) => chunk.trim().replace(/(?<!\b(?:Mrs?|Ms|Dr|St|Jr|Sr|Mt|Prof|[A-Z]))[.,]+$/, "").trim())
       .filter((chunk, index, all) => chunk && all.indexOf(chunk) === index);
   }, [hintsBlock]);
 
@@ -791,7 +795,7 @@ export function LdLearningView({
               {hintsForSentence.length > 0 && (
                 <div className="w-full rounded-xl border border-line bg-sunken px-3.5 py-2.5">
                   <span className="font-mono text-[10.5px] font-semibold uppercase tracking-wider text-ink-faint">
-                    ✍️ 고유 명사 · 숫자 참조
+                    ✍️ 고유 명사 · 숫자 · 어려운 낱말 참조
                   </span>
                   <p className="mt-1 flex flex-wrap gap-x-2.5 gap-y-1 text-[13px] font-medium text-ink">
                     {hintsForSentence.map((hint, index) => (

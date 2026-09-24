@@ -43,11 +43,17 @@
         },
         {
           "n": "3",
-          "text": "I don't know where it took place."
+          "text": "I don't know where it took place.",
+          "alternatives": [
+            "I don't know where that took place."
+          ]
         },
         {
           "n": "4",
-          "text": "This is where it happened."
+          "text": "This is where it happened.",
+          "alternatives": [
+            "This is where that happened."
+          ]
         },
         {
           "n": "5",

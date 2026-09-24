@@ -24,7 +24,7 @@ const OUT = path.join(__dirname, "../out");
 /** 힌트 상자 = "고유 명사 · 숫자 참조" 라벨을 가진 상자. 그 안의 span 이 칩이다. */
 const CHIPS = `(() => {
   const box = [...document.querySelectorAll('main div')].find((d) =>
-    /고유 명사 · 숫자 참조/.test(d.innerText || '') && d.querySelectorAll('p span').length);
+    /고유 명사 · 숫자( · 어려운 낱말)? 참조/.test(d.innerText || '') && d.querySelectorAll('p span').length);
   if (!box) return { box: false, chips: [] };
   return { box: true, chips: [...box.querySelectorAll('p span')].map((s) => s.innerText.trim()) };
 })()`;

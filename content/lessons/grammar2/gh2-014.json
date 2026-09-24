@@ -47,11 +47,17 @@
         },
         {
           "n": "5",
-          "text": "Either you or I should do it."
+          "text": "Either you or I should do it.",
+          "alternatives": [
+            "Either you or I should do that."
+          ]
         },
         {
           "n": "6",
-          "text": "Neither you nor I am responsible for it."
+          "text": "Neither you nor I am responsible for it.",
+          "alternatives": [
+            "Neither you nor I am responsible for that."
+          ]
         },
         {
           "n": "7",
