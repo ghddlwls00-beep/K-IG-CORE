@@ -133,6 +133,8 @@
   6단계-작업기록.md 의 "최종 관문 검사 목록" 명령(예: check-voca-twins · check-voca-answer-leak ·
   check-voca-distractors · ld-chip-app-vs-lib · ld-chips --dupes)을 전부 다시 돌려 기대값과 같은지,
   일부러 깨기도 다시 — 6단계 뒤에 바뀐 것(7단계 포함)이 그 검사를 깨지 않았는지 숫자로.
+  깨기가 안 깨지면(exit 0 · 0) 그 검사는 증명되지 않은 것이다 — 통과로 세지 말고 불통과로 적어라. '고치기 전 판' 을 git HEAD 로
+  읽던 깨기는 고친 것이 커밋되면 안 깨진다(2026-09-24 점검 세션이 일곱 개 찾음 — PROMPT-7단계.md 7-1 n 에서 고정 판으로 고침).
 
 ■ 관문 14 — 감사 보고서를 새 숫자로 다시 냈는가
   K-IG_Commercial_Release_Readiness_Report.md 를 이 관문의 숫자로 새로 쓴 판을 만들고,

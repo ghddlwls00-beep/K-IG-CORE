@@ -166,6 +166,29 @@ m. 커버리지 집계(build-coverage.cjs)의 결함 넷 — 최종 관문 6(NOT
    (그러면 본 쪽 graded input 은 NA 가 아니라 PASS/FAIL). 대본 쪽(-1)은 입력 칸이 없어 NA coveredBy tile dictation 그대로.
    휴대폰(medium)에서도 타일 루틴을 돈다(학습자 대부분이 휴대폰 — 관문 0 이 휴대폰 방문마다 10~30초 길어짐, 점검 세션이 받아들임).
 
+n. '고치기 전 판' 을 git HEAD 로 읽는 일부러 깨기 — 고친 것이 커밋되면 깨기가 안 깨진다 (2026-09-24 BUG-018 배포 뒤 점검 세션이 찾음)
+   prove-license-token-v2 가 커밋 뒤 24/25(깨기 하나만 실패 — HEAD 가 이제 새 판)로 드러나, 형제를 같은 방법으로 돌려 셈.
+   수정 세션이 이미 고친 셋(prove-license-token-v2 → b4fc941 · check-dictation-times · ld-merge-junctions → 8941bab — 점검 세션
+   재현: 25/25 · 지금 0 과 --old exit 1 · 104쪽 · 이음매 122 · 갈라짐 33 · 붙음 24 · 자리 없음 1) 밖에, 아직 HEAD 를 읽어 **깨기가 안
+   깨지는** 것 — 2026-09-24 오후 지금 판에서 돌림, 모두 exit 0:
+   - check-grammar-cloze --old (6단계 '최종 관문 검사 목록' 30번 — 기대 반쪽 빈칸 83) → 0
+   - check-grammar1-stages --old (31번 — 기대 13) → 0
+   - check-reading-cloze --old (18번 · 그 아래 줄 — 기대 320 · 1,120 · 2,492 …) → 모두 0
+   - check-voca-quiz-notes --old (23번 — 기대 640 · 278) → 0 · 0
+   - check-speech-scorer --old (28번 — 기대 ① 13 · ② 1,685) → 0 · 0 (같은 도구의 --break 는 그대로 깨짐)
+   - reading-central-sync 의 'HEAD 판' 줄 (24번 — 기대 4) → 0
+   - check-search --head (CNN 120 이 있어 실패해야 정상) → PASS
+   증명(점검 세션 — 저장소 스크립트는 안 고치고 사본에서 HEAD 만 바꿈): f35e8be 로 → 반쪽 빈칸 83 · exit 1 / 단계 다름 · exit 1 /
+   exit 1 / exit 1 / ① 13 · ② 1,783 · exit 1 / HEAD 판 4(reading-006-s001 · s004 · 091-s002 · s003) / 색인 00c5df0 로 → FAIL CNN 120 · exit 1.
+   --rev 를 받는 도구(check-grammar-item-plans · verify-applied-plans · set-voca-meanings · ld-merge-overflow-hints · check-voca-answer-leak)는
+   목록이 --rev f35e8be 로 부르니 괜찮지만, 머리말 사용법 줄이 '--rev HEAD' 라 그대로 따르면 가짜다(지금 판에 대면 모두 어긋남 0 · exit 0 — 잼).
+   고쳐라: --old · --head 의 옛 판을 상수로 고정(고친 커밋 바로 전 판 — 6단계 것은 f35e8be, 검색 색인은 00c5df0), 머리말 사용법의
+   '--rev HEAD' 도 그 판으로. 6단계-작업기록 '최종 관문 검사 목록' 73행 주석에 '--old · --head 도 고정 판' 을 더하고, 기대값이 바뀐 줄은
+   까닭과 함께 다시 적어라: 8번 ld-merge-junctions(갈라짐 29 · 붙음 28 → 33 · 24) · 28번 check-speech-scorer ②(글 1,686 → 1,784) ·
+   30번 check-grammar-cloze(모범 답안 2,237 → 2,244 · 정보 31 → 36).
+   증명: 고친 도구마다 지금 판 = 기대값(exit 0) · 깨기 = 기대값(exit 1). 다시 생기지 않게 scripts 에서 `HEAD:` · `"HEAD"` 를 '옛 판' 으로 쓰는
+   곳 0 을 grep 으로(뜻이 '커밋 안 된 변경' 인 check-changed-clips · ld-en-changes · prove-spoken-definition 은 빼고, 빼는 까닭을 그 파일 주석에).
+
 ────────────────────────────────────────────────────
 7-2. 음성 생성기 비용 함정
 ────────────────────────────────────────────────────
