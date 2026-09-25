@@ -1,0 +1,23 @@
+﻿[01:59:00] d112-1 re-press
+re-checking 1 controls in isolation
+1/1 PASS    /ld/d112-1 · STEP 2 (0/6) 🧩 탭-딕테이션 ▶ 🔊 표준 속도 
+[01:59:00] tile live script pages desktop
+정답 d197-1 desktop 화면 문장 8 · 조립 문장 8 · 낱말 13/13 → 정답입니다! 훌륭한 청취력입니다.
+ 문장 16 · 정답 16 · 정답 아님 0 · → C:\Users\ghddl\AppData\Local\Temp\claude\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE\b138581d-6e8d-498e-b217-99c4c524c08a\scratchpad\s7\tile-live-check-desktop.json
+[01:59:00] s17-1 desktop revisit (-g15-desktop-s2of2)
+student: 1 page×viewport visits to do (0 already done), clone g0-w1 port 9711
+1/1 /student/s17-1 desktop — 0 problem(s), content 14/14 · eta 0 min
+정답 d197-1 mobile 화면 문장 8 · 조립 문장 8 · 낱말 13/13 → 정답입니다! 훌륭한 청취력입니다.
+ 문장 16 · 정답 16 · 정답 아님 0 · → C:\Users\ghddl\AppData\Local\Temp\claude\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE\b138581d-6e8d-498e-b217-99c4c524c08a\scratchpad\s7\tile-live-check-mobile.json
+[02:00:22] recount
+대상 1658 · 재검사 결과 있음 1658 · 아직 0 · {"PASS":1658}
+== gate 5 recheck targets
+exit 0
+    3975 마이크로 학습자 발음을 녹음하는 버튼 — 소리를 내지 않는 것이 정상
+    1344 재생 속도 전환 버튼 — 재생 중이 아니면 새 요청이 없는 것이 정상
+     158 다음·이전 이동 버튼 — 음성 버튼이 아님
+      66 재생 버튼이 아닌 요소를 음성 컨트롤로 잘못 집었음 (단어 타일·문장 버튼 등)
+      47 (다시 봄) 도구 거르개가 단계 이름 때문에 뺀 재생 버튼 — 마이크로 학습자 발음을 녹음하는 버튼
+   대상: {"grammar2 RETEST":2,"ld RETEST":312}
+강의×화면(가장 늦은 기록) 4869 · 문제 적힌 것 0
+[02:00:39] done

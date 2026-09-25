@@ -1,0 +1,65 @@
+﻿===== gate1-entitlement | node docs/qa-2026-09-18/scripts/probe-entitlement-all.cjs | exit 0 | 1.4 min
+  │ grammar1 free │ 12    │ 12   │ 12       │ 12      │ 0        │ 6          │
+  │ grammar1 paid │ 182   │ 182  │ 182      │ 182     │ 1        │ 91         │
+  │ grammar2 free │ 4     │ 4    │ 4        │ 4       │ 0        │ 0          │
+  │ grammar2 paid │ 84    │ 84   │ 84       │ 84      │ 0        │ 0          │
+  │ ld free       │ 4     │ 4    │ 4        │ 4       │ 0        │ 0          │
+  │ ld paid       │ 548   │ 548  │ 548      │ 548     │ 0        │ 0          │
+  │ phonics paid  │ 193   │ 193  │ 193      │ 193     │ 21       │ 0          │
+  │ phonics free  │ 2     │ 2    │ 2        │ 2       │ 2        │ 0          │
+  │ reading free  │ 4     │ 4    │ 4        │ 4       │ 0        │ 0          │
+  │ reading paid  │ 508   │ 508  │ 508      │ 508     │ 0        │ 0          │
+  │ student free  │ 2     │ 2    │ 2        │ 2       │ 0        │ 0          │
+  │ student paid  │ 80    │ 80   │ 80       │ 80      │ 0        │ 0          │
+  └───────────────┴───────┴──────┴──────────┴─────────┴──────────┴────────────┘
+  1623 routes: 1623 PASS, 0 FAIL
+===== gate2-inventory | node docs/qa-2026-09-18/scripts/audio-inventory.cjs | exit 0 | 0.2 min
+  "clipReferences": 10124,
+  "uniqueClips": 3873,
+  "legacyAudioRefs": 512
+  }
+  },
+  "problems": {
+  "freeLessonClipsNotInFreeKeyList": [],
+  "freeLessonClipsNotInFreeKeyListCount": 0,
+  "paidOnlyClipsInFreeKeyList": [],
+  "paidOnlyClipsInFreeKeyListCount": 0,
+  "oneKeyManyTexts": [],
+  "oneKeyManyTextsCount": 0
+  }
+  }
+===== gate2-audio-anon | node docs/qa-2026-09-18/scripts/audio-check.cjs --anon | exit 0 | 1.1 min
+  기준 목록 docs\qa-2026-09-18\out\audio-inventory.json(2026-09-25T04:02:40.318Z) · 재료 3053파일 · 지문 b37d7d3c1bf50e2c3ee50a84 (지금 내용과 같음)
+  {
+  "freeListedOpen": 264,
+  "freeListedTotal": 264,
+  "paidBlocked": 15070,
+  "paidTotal": 15070,
+  "failures": 0
+  }
+  legacy/folder failures: 0
+  audio-check-anon.json · 실패 0 → exit 0
+===== gate2-free-keys | node scripts/buildFreeSpeechKeys.mjs --check | exit 0 | 0 min
+  src\lib\generated\freeSpeechKeys.json is current (28 free lessons, 264 clip keys)
+  src\lib\generated\freeMediaKeys.json is current (30 free lessons, 38 media keys)
+===== gate3-leak | node docs/qa-2026-09-18/scripts/probe-bundle-leak-all.cjs | exit 0 | 1.7 min
+  pages 1638, unique chunks 21, json 1
+  student {"paidLessons":80,"needles":821,"skippedAlsoFree":4,"skippedOnList":143,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  phonics {"paidLessons":193,"needles":962,"skippedAlsoFree":193,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  grammar1 {"paidLessons":182,"needles":4103,"skippedAlsoFree":186,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  grammar2 {"paidLessons":84,"needles":2354,"skippedAlsoFree":84,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  ld {"paidLessons":548,"needles":8550,"skippedAlsoFree":274,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  reading {"paidLessons":508,"needles":15590,"skippedAlsoFree":2104,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  bad chunks: 0; json: [{"url":"/search-index.json","status":200,"kb":299}]
+  유출 0 (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 143
+===== gate3-leak-break-index | node docs/qa-2026-09-18/scripts/probe-bundle-leak-all.cjs --break=index | exit 1 | 1.6 min
+  pages 1638, unique chunks 21, json 1
+  [일부러 깸] /search-index.json 사본에 유료 본문 한 문장: {"course":"student","id":"s1-3","text":"I am a very outgoing person, but I am also a little shy around new people."}
+  student {"paidLessons":80,"needles":821,"skippedAlsoFree":4,"skippedOnList":143,"inJs":0,"inJson":1,"lessonsWithLeak":1,"examples":[{"id":"s1-3","kind":"text","text":"I am a very outgoing person, but I am also a little shy around new people.","inJs":false,"inJson":["/search-index.json"]}]}
+  phonics {"paidLessons":193,"needles":962,"skippedAlsoFree":193,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  grammar1 {"paidLessons":182,"needles":4103,"skippedAlsoFree":186,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  grammar2 {"paidLessons":84,"needles":2354,"skippedAlsoFree":84,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  ld {"paidLessons":548,"needles":8550,"skippedAlsoFree":274,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  reading {"paidLessons":508,"needles":15590,"skippedAlsoFree":2104,"skippedOnList":0,"inJs":0,"inJson":0,"lessonsWithLeak":0,"examples":[]}
+  bad chunks: 0; json: [{"url":"/search-index.json","status":200,"kb":299}]
+  유출 1 (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 143 [일부러 깸: index]

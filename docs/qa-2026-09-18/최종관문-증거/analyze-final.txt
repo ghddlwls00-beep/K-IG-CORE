@@ -1,0 +1,93 @@
+﻿
+==============================================================================
+⚠ 도구 의심 2건 — 두 번째 방법으로 재현되기 전에는 보고서에 올리지 말 것
+==============================================================================
+   [grammar1] graded input: 실패율 100% (9469/9514) — 절반을 넘으면 도구를 먼저 의심할 것
+   [grammar2] graded input: 실패율 99% (4213/4239) — 절반을 넘으면 도구를 먼저 의심할 것
+
+=== grammar1: 582 records over 194 pages {"desktop":194,"mobile":194,"tablet":194}
+   checks {"PASS":21441,"FAIL":9469,"BLOCKED":0,"NA":157} · per feature {"graded input":{"PASS":45,"FAIL":9469,"BLOCKED":0,"NA":0},"control":{"PASS":18800,"FAIL":0,"BLOCKED":0,"NA":0},"step":{"PASS":2328,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark/completion":{"PASS":0,"FAIL":0,"BLOCKED":0,"NA":157},"navigation":{"PASS":194,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark":{"PASS":37,"FAIL":0,"BLOCKED":0,"NA":0},"completion":{"PASS":37,"FAIL":0,"BLOCKED":0,"NA":0}}
+   audio controls 9749 (pass 7912, fail 1837: TTS 0, wrong clip 0, silent 0)
+   content (desktop) 5002/5002 strings on 194 pages; 0 pages missing something
+   layout overflow 0 · offscreen 0 · clipped 0 · small targets 0 · unlabeled 0 · broken img 0
+   console 0 · exceptions 0 · HTTP errors 0 · failed requests 0 · load failures 0 · visit errors 0 · redirects 291
+   -- check:graded input
+       4762 × correct→자가 채점 정답률 | wrong→자가 채점 정답률 | lowercase→accepted, extra-spaces→accepted, no-final-
+            e.g. /grammar1/gh1-095 desktop · #58 · correct→자가 채점 정답률 | wrong→자가 채점 정답률 | lowercase→accepted, extra-spaces→accepted, no-final-period→accepted, curly-apostro
+       3502 × correct→no feedback | wrong→no feedback | lowercase→rejected, extra-spaces→rejected, no-fi
+            e.g. /grammar1/gh1-095 desktop · #62 · correct→no feedback | wrong→no feedback | lowercase→rejected, extra-spaces→rejected, no-final-period→rejected
+        958 × correct→문맥과 우리말 뜻을 보고 빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]을 눌러보세요. | wrong→문맥과 우리말 뜻을 보고 빈칸에 알맞
+            e.g. /grammar1/gh1-095 desktop · #58 · correct→문맥과 우리말 뜻을 보고 빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]을 눌러보세요. | wrong→문맥과 우리말 뜻을 보고 빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]을 눌러보
+        247 × correct→. 모든 문항 작성 후 [전체 채점하기]를 누르면 자동으로 점수와 상세 오답 분석이 제공됩니다. | wrong→no feedback | lowerc
+            e.g. /grammar1/gh1-095 desktop · #58 · correct→. 모든 문항 작성 후 [전체 채점하기]를 누르면 자동으로 점수와 상세 오답 분석이 제공됩니다. | wrong→no feedback | lowercase→rejected, extra-spaces→rej
+   -- audio
+       1837 × no playing event
+            e.g. /grammar1/gh1-095 desktop · ⚖️ Step 3 · 구문 각인 ▶ 🎙️ 내 발음 채점 및 섀도잉 검증 #0 · no playing event
+
+=== grammar2: 264 records over 88 pages {"desktop":88,"mobile":88,"tablet":88}
+   checks {"PASS":12390,"FAIL":4213,"BLOCKED":0,"NA":71} · per feature {"graded input":{"PASS":26,"FAIL":4213,"BLOCKED":0,"NA":0},"control":{"PASS":11186,"FAIL":0,"BLOCKED":0,"NA":0},"step":{"PASS":1056,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark/completion":{"PASS":0,"FAIL":0,"BLOCKED":0,"NA":71},"navigation":{"PASS":88,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark":{"PASS":17,"FAIL":0,"BLOCKED":0,"NA":0},"completion":{"PASS":17,"FAIL":0,"BLOCKED":0,"NA":0}}
+   audio controls 4448 (pass 3524, fail 924: TTS 0, wrong clip 0, silent 2)
+   content (desktop) 1592/1592 strings on 88 pages; 0 pages missing something
+   layout overflow 0 · offscreen 0 · clipped 0 · small targets 0 · unlabeled 0 · broken img 0
+   console 0 · exceptions 0 · HTTP errors 0 · failed requests 0 · load failures 0 · visit errors 0 · redirects 0
+   -- check:graded input
+       2184 × correct→자가 채점 정답률 | wrong→자가 채점 정답률 | lowercase→accepted, extra-spaces→accepted, no-final-
+            e.g. /grammar2/gh2-017 desktop · #1 · correct→자가 채점 정답률 | wrong→자가 채점 정답률 | lowercase→accepted, extra-spaces→accepted, no-final-period→accepted
+       1600 × correct→no feedback | wrong→no feedback | lowercase→rejected, extra-spaces→rejected, no-fi
+            e.g. /grammar2/gh2-017 desktop · #6 · correct→no feedback | wrong→no feedback | lowercase→rejected, extra-spaces→rejected, no-final-period→rejected
+        297 × correct→문맥과 우리말 뜻을 보고 빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]을 눌러보세요. | wrong→문맥과 우리말 뜻을 보고 빈칸에 알맞
+            e.g. /grammar2/gh2-017 desktop · #1 · correct→문맥과 우리말 뜻을 보고 빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]을 눌러보세요. | wrong→문맥과 우리말 뜻을 보고 빈칸에 알맞은 단어를 직접 입력하거나 [빈칸 정답 확인]을 눌러보
+        132 × correct→. 모든 문항 작성 후 [전체 채점하기]를 누르면 자동으로 점수와 상세 오답 분석이 제공됩니다. | wrong→no feedback | lowerc
+            e.g. /grammar2/gh2-017 desktop · #1 · correct→. 모든 문항 작성 후 [전체 채점하기]를 누르면 자동으로 점수와 상세 오답 분석이 제공됩니다. | wrong→no feedback | lowercase→rejected, extra-spaces→rej
+   -- audio
+        922 × no playing event
+            e.g. /grammar2/gh2-017 desktop · ⚖️ Step 3 · 구문 각인 ▶ 🎙️ 내 발음 채점 및 섀도잉 검증 #0 · no playing event
+          2 × no audio request within 10 s
+            e.g. /grammar2/gh2-025 mobile · 🧩 Step 2 · 빈칸 완성 ▶ 🔊 전체 문장 듣기 #0 · no audio request within 10 s
+
+=== ld: 1656 records over 552 pages {"desktop":552,"mobile":552,"tablet":552}
+   checks {"PASS":38542,"FAIL":6,"BLOCKED":0,"NA":1308} · per feature {"control":{"PASS":28468,"FAIL":0,"BLOCKED":0,"NA":0},"step":{"PASS":8280,"FAIL":0,"BLOCKED":0,"NA":0},"graded input":{"PASS":276,"FAIL":0,"BLOCKED":0,"NA":828},"tile dictation":{"PASS":822,"FAIL":6,"BLOCKED":0,"NA":0},"bookmark":{"PASS":72,"FAIL":0,"BLOCKED":0,"NA":0},"completion":{"PASS":72,"FAIL":0,"BLOCKED":0,"NA":0},"navigation":{"PASS":552,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark/completion":{"PASS":0,"FAIL":0,"BLOCKED":0,"NA":480}}
+   audio controls 17253 (pass 15544, fail 1709: TTS 0, wrong clip 0, silent 1709)
+   content (desktop) 4924/4924 strings on 552 pages; 0 pages missing something
+   layout overflow 0 · offscreen 0 · clipped 0 · small targets 0 · unlabeled 0 · broken img 0
+   console 0 · exceptions 0 · HTTP errors 0 · failed requests 0 · load failures 0 · visit errors 0 · redirects 0
+   -- audio
+       1709 × no audio request within 10 s
+            e.g. /ld/d001 desktop · STEP 2 (0/6) 🧩 탭-딕테이션 ▶ 🔊 표준 속도 · no audio request within 10 s
+   -- check:tile dictation
+          6 × #/# tiles placed · correct→순서가 조금 다릅니다. 오디오를 다시 듣고 도전해 보세요! · reversed→순서가 조금 다릅니다. 오디오를 다
+            e.g. /ld/d197-1 desktop · STEP 2 (0/8) 🧩 탭-딕테이션 · "One indispensable member of the circus t" · 10/10 tiles placed · correct→순서가 조금 다릅니다. 오디오를 다시 듣고 도전해 보세요! · reversed→순서가 조금 다릅니다. 오디오를 다시 듣고 도전해 보세요!
+
+=== phonics: 585 records over 195 pages {"desktop":195,"mobile":195,"tablet":195}
+   checks {"PASS":15250,"FAIL":0,"BLOCKED":0,"NA":172} · per feature {"control":{"PASS":12669,"FAIL":0,"BLOCKED":0,"NA":0},"step":{"PASS":2340,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark":{"PASS":23,"FAIL":0,"BLOCKED":0,"NA":0},"completion":{"PASS":23,"FAIL":0,"BLOCKED":0,"NA":0},"navigation":{"PASS":195,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark/completion":{"PASS":0,"FAIL":0,"BLOCKED":0,"NA":172}}
+   audio controls 8757 (pass 8367, fail 390: TTS 0, wrong clip 0, silent 390)
+   content (desktop) 5831/5831 strings on 195 pages; 0 pages missing something
+   layout overflow 0 · offscreen 0 · clipped 0 · small targets 0 · unlabeled 0 · broken img 0
+   console 0 · exceptions 0 · HTTP errors 0 · failed requests 0 · load failures 0 · visit errors 0 · redirects 0
+   -- audio
+        390 × no audio request within 10 s
+            e.g. /phonics/hv-01 desktop · STEP 3 🗣️ 발음 테스트 & 오답노트 망각곡선 라이트너 복습 ▶ 🎙️ "antique" 발음 테스트 · no audio request within 10 s
+
+=== reading: 1536 records over 512 pages {"desktop":512,"mobile":512,"tablet":512}
+   checks {"PASS":32344,"FAIL":0,"BLOCKED":0,"NA":454} · per feature {"control":{"PASS":25572,"FAIL":0,"BLOCKED":0,"NA":0},"step":{"PASS":6144,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark":{"PASS":58,"FAIL":0,"BLOCKED":0,"NA":0},"completion":{"PASS":58,"FAIL":0,"BLOCKED":0,"NA":0},"navigation":{"PASS":512,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark/completion":{"PASS":0,"FAIL":0,"BLOCKED":0,"NA":454}}
+   audio controls 6155 (pass 6144, fail 11: TTS 0, wrong clip 0, silent 10)
+   content (desktop) 15115/15115 strings on 512 pages; 0 pages missing something
+   layout overflow 0 · offscreen 0 · clipped 0 · small targets 0 · unlabeled 0 · broken img 0
+   console 0 · exceptions 0 · HTTP errors 0 · failed requests 0 · load failures 0 · visit errors 0 · redirects 0
+   -- audio
+         10 × no audio request within 10 s
+            e.g. /reading/pr214 desktop · 📝 Step 3 · 독해 퀴즈 ▶ playing · no audio request within 10 s
+          1 × no playing event
+            e.g. /reading/pr088 mobile · 📝 Step 3 · 독해 퀴즈 ▶ display · no playing event
+
+=== student: 246 records over 82 pages {"desktop":82,"mobile":82,"tablet":82}
+   checks {"PASS":17276,"FAIL":0,"BLOCKED":0,"NA":67} · per feature {"control":{"PASS":16262,"FAIL":0,"BLOCKED":0,"NA":0},"step":{"PASS":738,"FAIL":0,"BLOCKED":0,"NA":0},"tile dictation":{"PASS":164,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark":{"PASS":15,"FAIL":0,"BLOCKED":0,"NA":0},"completion":{"PASS":15,"FAIL":0,"BLOCKED":0,"NA":0},"navigation":{"PASS":82,"FAIL":0,"BLOCKED":0,"NA":0},"bookmark/completion":{"PASS":0,"FAIL":0,"BLOCKED":0,"NA":67}}
+   audio controls 3469 (pass 2483, fail 986: TTS 0, wrong clip 0, silent 573)
+   content (desktop) 828/828 strings on 82 pages; 0 pages missing something
+   layout overflow 0 · offscreen 0 · clipped 0 · small targets 0 · unlabeled 0 · broken img 0
+   console 0 · exceptions 0 · HTTP errors 0 · failed requests 0 · load failures 0 · visit errors 0 · redirects 0
+   -- audio
+        573 × no audio request within 10 s
+            e.g. /student/s15-2 desktop · 🧩 Step 2. 탭 딕테이션 (0/4) ▶ 다음 ▶️ · no audio request within 10 s
+        413 × no playing event
+            e.g. /student/s15-2 desktop · 🧩 Step 2. 탭 딕테이션 (0/4) ▶ players · no playing event
