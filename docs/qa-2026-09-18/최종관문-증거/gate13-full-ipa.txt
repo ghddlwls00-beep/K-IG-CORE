@@ -1,0 +1,57 @@
+﻿  1 main  exit 0 쨌 stage6-progress.cjs summary 쨌 전체 1778칸 (이월 6E 18) · 고침 1563 · 필요 없음 20 · 이미 해결 194 · 보류 0 · 대상 아님 1 · 미처리 0 · 클립 필요 307
+  2 main  exit 0 쨌 verify-applied-plans.cjs plans/stage6-factual-ld-a.json plans/stage6-factual-ld-a2.json plans/stage6-factual-ld-b.json ??+222) 쨌 stage6-voca-zzd.json: 바꾸기 계획 파일이 아님 — 건너뜀 ??계획 94개 · 1260줄 · 어긋남 0 · 뒤에 다시 고친 줄 225(사슬 끝까지 셈) · 되돌린 줄 2 은 세지 않음
+  2 break exit 1 쨌 verify-applied-plans.cjs --rev f35e8be plans/stage6-factual-ld-a.json ??+224) 쨌 stage6-voca-zzd.json: 바꾸기 계획 파일이 아님 — 건너뜀 ??[f35e8be 기준] 계획 94개 · 1260줄 · 어긋남 1256 · 뒤에 다시 고친 줄 225(사슬 끝까지 셈) · 되돌린 줄 2 은 세지 않음
+  3 main  exit 0 쨌 set-voca-meanings.cjs --check plans/stage6-voca-b.json plans/stage6-voca-c.json ??+51) 쨌 VOCA 계획 53개 · 355줄 · 어긋남 0 · 뒤에 다시 고친 줄 23(사슬 끝까지 셈) · 되돌린 줄 1 은 세지 않음
+  3 break exit 1 쨌 set-voca-meanings.cjs --check --rev f35e8be ??+53) 쨌 어긋남 stage6-voca-zzd.json #VOCA 끝 ① (3차 점검 #8 ①) system — 체계 · 제도: system 지금 "시스템" · 기대 "체계, 제도, 시스템" ??[f35e8be 기준] VOCA 계획 53개 · 355줄 · 어긋남 353 · 뒤에 다시 고친 줄 23(사슬 끝까지 셈) · 되돌린 줄 1 은 세지 않음
+  4 main  exit 0 쨌 ld-chip-app-vs-lib.cjs 쨌 LISTENING 276강 2217행 · 앱 코드와 검사 복제의 칩이 다른 행 0
+  4 break exit 1 쨌 ld-chip-app-vs-lib.cjs --break 쨌 앱: 「John Wenger」 「Mrs」 「Wenger」 「Germany」 「September 9」 「1933」 「German」 ??복제: 「John Wenger」 「Mrs. Wenger」 「Germany」 「September 9」 「1933」 「German」
+  5 main  exit 0 쨌 ld-chip-rule-diff.cjs 쨌 LISTENING 2217행 · 숫자 조각 칩이 뜨는 행: 옛 규칙 21 → 새 규칙 0 · 칩이 바뀐 행 146 {"행별 바뀜":129,"행별→없음":13,"행별→전체":4}
+  6 main  exit 0 쨌 ld-chips.cjs --dupes 쨌 LISTENING 2217행 중 같은 칩이 두 번 뜨는 행 0
+  6 break exit 0 쨌 ld-chips.cjs --dupes --old-rule 쨌 [고치기 전 규칙] LISTENING 2217행 중 같은 칩이 두 번 뜨는 행 5 (d092:2 d092:9 d163:2 d163:5 d178:4)
+  7 main  exit 0 쨌 ld-merge-overflow-hints.cjs --check 쨌 넘친 힌트 줄이 남은 LISTENING 본 페이지: 0
+  7 break exit 1 쨌 ld-merge-overflow-hints.cjs --check --rev f35e8be 쨌 d025.json: "rubber boat. 11:30. an hour traffic. shallow water row the boat" ??d027.json: "New York Madrid. kept in touch with coaching"
+  8 main  exit 0 쨌 ld-merge-junctions.cjs 쨌 d236  「3,000 miles.」 대본에 이어짐 예 · 칩 「3,000 miles」 ??넘친 줄을 합친 LISTENING 본 페이지 104 · 이음매 122 · 앞 글이 . , 로 끝나지 않은 이음매 58 → 지금 갈라짐 35 · 아직 붙음 22 · 자리 못 찾음 1
+  9 main  exit 0 쨌 grade-offline.cjs 쨌 === student dictation: 414 sentences · own words rejected 0 · UPPERCASE rejected 0 · wrong order accepted 0 · word bank missing a word 0 ??=== VOCA quiz: 195 lessons · 5797 questions · distractor identical to the answer 0 · answer missing from options 0
+ 10 main  exit 0 쨌 check-dictation.cjs 쨌 타일은 주는데 정답으로 인정하지 않는 대체 표현: 0건 (강의 0개) ??→ C:\Users\ghddl\.gemini\antigravity\scratch\K-IG-CORE\docs\qa-2026-09-18\out\dictation-offline.json
+ 11 main  exit 0 쨌 ld-remove-stray-sentences.cjs 쨌 sentences 블록이 있는 LISTENING 본 페이지: 0
+ 11 main  exit 0 쨌 ld-hint-glued-titles.cjs 쨌 d189: U.  →  (그대로 — 대본에 띄어 쓴 꼴 없음) ??강의 3 · 붙여 쓴 곳 3 · 대본에 띄어 쓴 꼴이 있어 고칠 곳 0 · 대본에 없음 3 (미리보기)
+ 12 main  exit 0 쨌 check-voca-answer-leak.cjs 쨌 VOCA 사전 3904항목 중 뜻풀이에 표제어가 든 항목 0 ??소리 표시(대괄호 · 빗금 발음)가 든 항목 0
+ 12 break exit 1 쨌 check-voca-answer-leak.cjs --rev f35e8be 쨌 few = (수가) 거의 없는 (a few: 몇몇의) ??[f35e8be 기준] 소리 표시(대괄호 · 빗금 발음)가 든 항목 0
+ 12 break exit 1 쨌 check-voca-answer-leak.cjs --break 쨌 tear = 찢다 [테어]; 눈물 [티어] ??bow = 절하다 /baʊ/; 활 /boʊ/
+ 13 main  exit 0 쨌 check-voca-markers.cjs 쨌 VOCA 사전 3904항목 · 사용역 표시: 기준 2 안 7 · 밖 0 · 뜻 뒤에 붙은 것 0
+ 13 break exit 1 쨌 check-voca-markers.cjs --rev f35e8be 쨌 밖: dumb (구어) — 멍청한 (구어); (옛·모욕적) 말을 못 하는 ??밖: gay (옛 뜻) — 동성애의; (옛 뜻) 명랑한
+ 14 main  exit 0 쨌 check-voca-searchword.cjs 쨌 괄호 표제어 14 · searchWord 가 말하는 꼴과 다른 것 0/14
+ 14 break exit 1 쨌 check-voca-searchword.cjs --rev f35e8be 쨌 autumn(=fall): searchWord "autumn=fall" · 말하는 꼴 "autumn" ??hono(u)r: searchWord "honour" · 말하는 꼴 "honor"
+ 15 main  exit 0 쨌 check-voca-twins.cjs 쨌 괄호 표제어 14 · 따로 선 쌍둥이 항목이 있는 것 7 (neighbo(u)r/neighbor · favo(u)r/favor · humo(u)r/humor · autumn(=fall)/autumn · hono(u)r/honor · dialog(ue)/dialogue · labo(u)r/labor) · 뜻이 다른 쌍 0
+ 15 break exit 1 쨌 check-voca-twins.cjs --break 쨌 괄호 표제어 14 · 따로 선 쌍둥이 항목이 있는 것 7 (neighbo(u)r/neighbor · favo(u)r/favor · humo(u)r/humor · autumn(=fall)/autumn · hono(u)r/honor · dialog(ue)/dialogue · labo(u)r/labor) · 뜻이 다른 쌍 1 ??neighbo(u)r = 이웃  ≠  neighbor = 이웃 (깨기)
+ 16 main  exit 0 쨌 check-voca-distractors.cjs 쨌 스피드 231880 · 정답인데 "불일치" 를 기대한 문항 0 ??(자리채움 보기 0)
+ 16 break exit 1 쨌 check-voca-distractors.cjs --old 쨌 mv2-10 ko→en [ 가장자리 ] · 오답으로 나온 것 border (국경, 경계; 가장자리, 테두리) ??mv2-31 ko→en [ 목 ] · 오답으로 나온 것 throat (목구멍, 목)
+ 17 main  exit 0 쨌 voca-overlap-pairs.cjs 쨌 mv3-28  company (회사)  ×  firm (확고한; 회사) ??mv3-32  beach (해변)  ×  shore (해안, 해변, 물가)
+ 18 main  exit 0 쨌 check-reading-cards.cjs 쨌 강의 256 · 카드 3584 · 어긋남 0
+ 18 break exit 1 쨌 check-reading-cards.cjs --break 쨌 강의 256 · 카드 3584 · 어긋남 1 ??pr004: 카드 "zzzqqq" 가 지문에 없음
+ 18 main  exit 0 쨌 check-reading-cloze.cjs 쨌 대시로 붙은 정답 0 · 같은 꼴 보기 0 · 조동사 0 · 같은 자리 보기 0 · 정답만 대문자 0 · 보기 4개 미만 0 ??(6단계) 정답이 또 보임 0 · 관사 단서 0 · 이름 보기 0 · 같은 정답 0 · 숫자 0 · 또 맞는 보기 0
+ 18 break exit 1 쨌 check-reading-cloze.cjs --old 쨌 예(reused): pr020 정답 plants/harness/plants | pr025 정답 anger/tensions/tensions | pr029 정답 you’ll/yourself/yourself | pr092 정답 warts/stress/warts ??예(digit): pr069 정답 metal · 보기 today,bible,1450s | pr075 정답 1,909 · 보기 study,women,delay | pr081 정답 major · 보기 solve,12:00,route | pr122 정답 world · 보기 money
+ 19 main  exit 0 쨌 grade-item.cjs --file plans/grade-gh2-049.json 쨌 gh2-049 #14 incorrect Lincoln said that honesty is the best policy.  (기대 incorrect) ??11개 중 기대와 다름 0
+ 20 main  exit 0 쨌 check-voca-hi-hage.cjs 쨌 '~히 / ~하게' 로만 다른 뜻 조각을 가진 같은 강의 쌍 0
+ 20 break exit 1 쨌 check-voca-hi-hage.cjs --break 쨌 [일부러 깨기] '~히 / ~하게' 로만 다른 뜻 조각을 가진 같은 강의 쌍 1 ??mv3-08 correctly = 올바르게, 정확하게 | exactly = 정확히, 꼭
+ 21 count exit 0 쨌 voca-transliterations.cjs 쨌 [한 조각] ticket = (차·입장) 표, 티켓  ← 티켓  (mv1-21 mv2-18 mv3-30) ??소리 옮김으로 보이는 조각이 있는 강의 낱말 105 · 그중 뜻 전부가 소리 옮김 73
+ 22 count exit 0 쨌 voca-heteronyms.cjs 쨌 [표시 없음] desolate = 황량한  (hv-60) ??합 83 (목록 120 중 강의에 있는 것)
+ 23 main  exit 0 쨌 check-voca-quiz-notes.cjs 쨌 사전에 발음 표시 든 항목 33 · 퀴즈 문항 28985 중 표시가 뜬 것 0 · 스피드 28985 중 0
+ 23 break exit 1 쨌 check-voca-quiz-notes.cjs --old 쨌 예: hv-03 en-to-ko "depression": 혹사시키다, 과로하다; 과로 (동사는 뒤 강세) ??예: hv-03 en-to-ko "submarine": 혹사시키다, 과로하다; 과로 (동사는 뒤 강세)
+ 24 main  exit 0 쨌 reading-central-sync.cjs 쨌 고치기 전 판(f35e8be): 중앙 파일과 강의 파일이 다른 문장 4 — reading-006-s001 reading-006-s004 reading-091-s002 reading-091-s003 ??지금: 다른 문장 0 (영어 다름 0 · 한국어 다름 0 · 중앙에 없음 0)
+ 26 main  exit 0 쨌 check-reading-passage-blocks.cjs 쨌 READING 단위 256 · 파일 512 · 지문 블록이 문장 이음과 다른 파일 0
+ 26 break exit 1 쨌 check-reading-passage-blocks.cjs --break 쨌 pr001.json (영어): 33번째 글자부터 다름 — 블록 …ak differently. Scientists say that their differences c / 문장 …ak differently.X Scientists say that their differences ??pr002-1.json (한국어): 49번째 글자부터 다름 — 블록 …게 만들려고 노력하고 있다. 계속된 그들의 노력에도 불구하고, 공장과 자동차들은 여전히 너무도 많은 / 문장 …게 만들려고 노력하고 있다.X 계속된 그들의 노력에도 불구하고, 공장과 자동차들
+ 27 main  exit 0 쨌 check-reading-rows.cjs 쨌 READING 줄 1478 · ① 문장 경계 든 줄 0 (둔 줄 7 뺌) · ② 따옴표 안 맞는 줄 0 · ③ '--' 0
+ 27 break exit 1 쨌 check-reading-rows.cjs --rev f35e8be 쨌 [f35e8be] READING 줄 1449 · ① 문장 경계 든 줄 35 (둔 줄 7 뺌) · ② 따옴표 안 맞는 줄 14 · ③ '--' 2
+ 27 break exit 1 쨌 check-reading-rows.cjs --break 쨌 ① reading-078-s004: "Doctor!" exclaimed the receptionist. "That can't be!" ??① reading-079-s005: Remember! Not all change is good.
+ 28 main  exit 0 쨌 check-speech-scorer.cjs 쨌 ① READING 첫 줄(S[0]) 서로 다른 문장 256 · 완벽한 읽기가 100 이 아닌 문장 0 ??② 줄임말 한 꼴만 쓰는 글 2634 · 다른 꼴로 읽어 100 이 아닌 글 0
+ 28 break exit 1 쨌 check-speech-scorer.cjs --old 쨌 [고치기 전 f35e8be 채점기] ① READING 첫 줄(S[0]) 서로 다른 문장 256 · 완벽한 읽기가 100 이 아닌 문장 13 ??[고치기 전 f35e8be 채점기] ② 줄임말 한 꼴만 쓰는 글 2634 · 다른 꼴로 읽어 100 이 아닌 글 2633
+ 28 break exit 1 쨌 check-speech-scorer.cjs --break 쨌 [--break 끝 셋 뺌] ① READING 첫 줄(S[0]) 서로 다른 문장 256 · 완벽한 읽기가 100 이 아닌 문장 256
+ 29 main  exit 0 쨌 check-audio-sentences.cjs 쨌 GRAMMAR 페이지 282 · 전체 듣기가 문항보다 적게 읽는 페이지 0
+ 29 break exit 1 쨌 check-audio-sentences.cjs --old 쨌 grammar1/gh1-015 읽음 23 / 문항 43 ??grammar1/gh1-015-2 읽음 1 / 문항 21
+ 30 main  exit 0 쨌 check-grammar-cloze.cjs 쨌 GRAMMAR 모범 답안(서로 다른) 2243 · ① 반쪽 빈칸 0 · ② n't 가 있는데 빈칸은 딴 곳 36 · ③ 온전한 꼴이 exact 아닌 빈칸 0 · ④ 고치기 전(f35e8be)과 빈칸이 달라진 문항 360 (n't 없는 문항 0)
+ 30 break exit 1 쨌 check-grammar-cloze.cjs --old 쨌 [고치기 전 f35e8be] GRAMMAR 모범 답안(서로 다른) 2243 · ① 반쪽 빈칸 83 · ② n't 가 있는데 빈칸은 딴 곳 396 · ③ 온전한 꼴이 exact 아닌 빈칸 0
+ 31 main  exit 0 쨌 check-grammar1-stages.cjs 쨌 grammar1 페이지 194 · 부제목 단계가 목록 단계와 다른 페이지 0
+ 31 break exit 1 쨌 check-grammar1-stages.cjs --old 쨌 gh1-079-2 부제목 5단계 · 목록 4단계 ??gh1-109 부제목 6단계 · 목록 5단계
+ 25 main  exit 0 쨌 npm run test:reading 쨌   1:1 EN-KO Alignment & Unique ID Match Verified    ??=================================================
+ 25 main  exit 0 쨌 npm run test:voca 쨌   conj. : 9 cards (0.3%) ??✅ ALL CHECKS PASSED: Every single lesson has exactly 14 high-yield, curated keywords!
