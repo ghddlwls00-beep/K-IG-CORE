@@ -157,11 +157,38 @@ const EXPLAINED = {
   "1i-e1cb4e914826a09c": "gh1-084 한국어 문제 — 위 플레이어가 한국어 문제 31개를 영어로 여겨 읽던 BUG-026(7단계에서 고침, src/lib/lessonAudioText.ts) — 지금은 영어 답을 읽음",
 };
 for (const [k, why] of Object.entries(EXPLAINED)) console.log(`  (까닭 있음) ${k}: ${why}`);
+// ── (d) 쪽마다 정한 소리 꼴(src/lib/lessonSpeechForm.ts — 소유자 결정 2026-09-25 로마자 한국어 낱말은 한국어로 · d169 '1 1/2'): 운영(배포 전)은
+//     표에 든 쪽에서 쓴 꼴 그대로의 글 키를 불렀다. 새 정의는 표대로 바꾼 글을 말하므로, 그 쪽들을 표 없이(글 그대로) 돌린 글의 키만 따로 센다.
+//     깨기 --break=speechform — 이 칸을 끄면 그 키들이 '빠뜨림' · '까닭 없음' 으로 돌아와 exit 1 이어야 한다.
+const BREAK_SF = process.argv.includes("--break=speechform");
+const SPEECHFORM_OLD = new Map(); // key → '<과정>/<쪽>'
+// 표 없이(쓴 꼴 그대로) 말하는 fns — 표가 생기기 전의 운영이 말하던 꼴. 아래 옛 판 확인(b)도 이것으로 돌린다(옛 판에는 표가 없었으므로).
+const PLAIN_FNS = { ...fns, lessonSpeechForm: (_k, t) => t };
+{
+  const table = loadTs(path.join(REPO, "src/lib/lessonSpeechForm.ts")).LESSON_SPEECH_WORDS || {};
+  const plain = PLAIN_FNS;
+  const plainKey = (value) => { const clean = unified.normalizeUnifiedSpeechText(String(value)); return clean && isSpeakable(clean) ? unified.unifiedSpeechKey(clean) : null; };
+  for (const pageKey of Object.keys(table)) {
+    const [course, id] = pageKey.split("/");
+    const f = path.join(LESSONS, course, `${id}.json`);
+    if (!fs.existsSync(f)) continue;
+    const index = readJson(`content/courses/${course}.json`).lessons || [];
+    const pid = pairIdOf(course, id, index);
+    const pf = pid && path.join(LESSONS, course, `${pid}.json`);
+    const pair = pid ? { id: pid, ...(fs.existsSync(pf) ? JSON.parse(fs.readFileSync(pf, "utf8")) : {}) } : null;
+    for (const t of spokenTexts({ course, id, lesson: JSON.parse(fs.readFileSync(f, "utf8")), pair, ldScripts, dictionary, fns: plain })) {
+      for (const k of [keyOf(t) && keyOf(t).key, plainKey(t)]) if (k && !NEW.has(k) && !SPEECHFORM_OLD.has(k)) SPEECHFORM_OLD.set(k, pageKey);
+    }
+  }
+}
 const gapAll = [...requested].filter((k) => OLD.has(k) && !NEW.has(k) && !RETIRED.test(OLD.get(k).from) && !EXPLAINED[k]);
 const gap028 = BREAK_028 ? [] : gapAll.filter((k) => BUG028.has(k));
 const gap76 = BREAK_76 ? [] : gapAll.filter((k) => VOCA_BARE.has(k));
 const gap29 = BREAK_29 ? [] : gapAll.filter((k) => READING_BARE.has(k) && !gap76.includes(k));
-const gap = gapAll.filter((k) => !gap028.includes(k) && !gap76.includes(k) && !gap29.includes(k));
+const gapSF = BREAK_SF ? [] : gapAll.filter((k) => SPEECHFORM_OLD.has(k) && !gap028.includes(k) && !gap76.includes(k) && !gap29.includes(k));
+const gap = gapAll.filter((k) => !gap028.includes(k) && !gap76.includes(k) && !gap29.includes(k) && !gapSF.includes(k));
+if (BREAK_SF) console.log("(깨기 시험 --break=speechform — 쪽마다 정한 소리 꼴의 옛 꼴 칸을 끔)");
+console.log(`  (소리 꼴 옛 꼴) 운영(배포 전)이 부른, 표(lessonSpeechForm — 로마자 한국어 낱말 · d169)로 바뀐 쪽의 쓴 꼴 그대로 글 키 ${gapSF.length} — 새 정의는 표대로 바꾼 글(소유자 결정 2026-09-25)`);
 if (BREAK_29) console.log("(깨기 시험 --break=reading29 — BUG-029 READING 맨 낱말 칸을 끔)");
 console.log(`  (BUG-029 READING 맨 낱말) 운영(배포 전)이 부른, 이제 카드 뜻의 발음을 말하는 READING 카드의 맨 낱말 키 ${gap29.length} — 새 정의는 '<낱말> ⟨IPA⟩'(소유자 결정 2026-09-24)`);
 if (BREAK_028) console.log("(깨기 시험 --break=bug028 — BUG-028 옛 꼴 칸을 끔)");
@@ -248,7 +275,8 @@ for (const { rev, course, id } of lessonAt) {
   const pair = p ? { id: p, ...(parseMaybe(pass2.get(`${rev}:content/lessons/${course}/${p}.json`)) || {}) } : null;
   const scriptsThen = parseMaybe(pass1.get(`${rev}:content/ld_english_scripts.json`)) || ldScripts;
   let texts = [];
-  try { texts = spokenTexts({ course, id, lesson, pair, ldScripts: scriptsThen, dictionary, fns }); } catch { continue; }
+  // 옛 판은 쪽마다 정한 소리 꼴 표(2026-09-25)가 생기기 전 — 그때 운영이 말하던 쓴 꼴 그대로(PLAIN_FNS)로 센다(표를 대면 옛 키를 못 찾음)
+  try { texts = spokenTexts({ course, id, lesson, pair, ldScripts: scriptsThen, dictionary, fns: PLAIN_FNS }); } catch { continue; }
   for (const t of texts) for (const k of [keyOf(t) && keyOf(t).key, rawKey(t)]) if (k && !HISTORY.has(k)) HISTORY.set(k, `${rev.slice(0, 8)} ${course}/${id}`);
   if (course === "student") for (const k of slashOldKeysOf(lesson)) if (!BUG028.has(k)) BUG028.set(k, `${rev.slice(0, 8)} student/${id}`);
 }
@@ -257,8 +285,10 @@ if (process.argv.includes("--break=history")) { HISTORY.clear(); console.log("(�
 const bug027 = stale.filter((k) => NEW_RAW.has(k));
 const fromHistory = stale.filter((k) => !NEW_RAW.has(k) && HISTORY.has(k));
 const bug028 = BREAK_028 ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && BUG028.has(k));
-const unexplained = stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k));
-console.log(`'둘 다 없음' ${stale.length} 확인 — (a) 앱이 글 그대로 요청(BUG-027, 고침) ${bug027.length} · (b) 옛 판(git ${commits.length}커밋의 직전 판 + HEAD, 강의 쪽 ${lessonAt.length})에서 소리 내던 글 ${fromHistory.length} · (c) BUG-028 옛 꼴(옛 판의 빗금 문장 두 꼴 글) ${bug028.length} · 까닭 없음 ${unexplained.length}`);
+const staleSF = BREAK_SF ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && SPEECHFORM_OLD.has(k));
+const unexplained = stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k));
+console.log(`'둘 다 없음' ${stale.length} 확인 — (a) 앱이 글 그대로 요청(BUG-027, 고침) ${bug027.length} · (b) 옛 판(git ${commits.length}커밋의 직전 판 + HEAD, 강의 쪽 ${lessonAt.length})에서 소리 내던 글 ${fromHistory.length} · (c) BUG-028 옛 꼴(옛 판의 빗금 문장 두 꼴 글) ${bug028.length} · (d) 소리 꼴 옛 꼴(표 없이 돌린 글) ${staleSF.length} · 까닭 없음 ${unexplained.length}`);
+if (LIST) for (const k of staleSF) console.log(`  소리 꼴 옛 꼴 ${k} ← ${SPEECHFORM_OLD.get(k)}`);
 if (LIST) for (const k of bug028) console.log(`  BUG-028 옛 꼴 ${k} ← ${BUG028.get(k)}`);
 for (const k of bug027) console.log(`  BUG-027 ${k}`);
 if (LIST) for (const k of fromHistory) console.log(`  옛 판 ${k} ← ${HISTORY.get(k)}`);
