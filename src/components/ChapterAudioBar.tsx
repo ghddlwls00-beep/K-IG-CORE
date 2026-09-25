@@ -7,6 +7,8 @@ import {
   togglePauseSpeech,
   unlockMobileAudio,
 } from "@/lib/speech";
+import { firstSlashAlternative } from "@/lib/listeningUtils";
+import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 
 interface ChapterAudioItem {
   text: string;
@@ -100,8 +102,12 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
       currentPayloadRef.current = payload;
       currentSentenceIdxRef.current = startIndex;
 
+      // Say each sentence exactly as the lesson view says it (StudentLearningView spokenEn), so the
+      // chapter bar asks for the same clip: a slashed alternative in its first form (BUG-028) and a
+      // Korean word written in romanization in Hangul (lessonSpeechForm — 소유자 결정 2026-09-25). This
+      // bar used to pass the written sentence, so "He/She …" asked for a different clip than the lesson.
       playSentenceQueue(
-        payload.items.map((it) => it.text),
+        payload.items.map((it) => lessonSpeechForm(`student/${it.lessonId}`, firstSlashAlternative(it.text))),
         {
           lang: "en",
           gender: "female",

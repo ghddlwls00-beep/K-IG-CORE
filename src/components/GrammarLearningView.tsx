@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Block, SentenceItem } from "@/lib/types";
 import { speakText, stopSpeech } from "@/lib/speech";
+import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import { gradeAgainstReferences, gradeAnswer } from "@/lib/grammarGrading";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 
@@ -358,7 +359,8 @@ export function GrammarLearningView({
     }
     stopSpeech();
     setActiveSpeakingId(id);
-    speakText(text, {
+    // a Korean word written in romanization ('Seoul', 'Busan') is said in Korean (lessonSpeechForm — 소유자 결정 2026-09-25)
+    speakText(lessonSpeechForm(lessonKey, text), {
       lang: "en",
       rate: audioSpeed,
       onStart: () => setActiveSpeakingId(id),

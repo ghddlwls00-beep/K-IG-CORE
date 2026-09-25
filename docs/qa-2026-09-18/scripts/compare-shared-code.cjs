@@ -104,12 +104,14 @@ function makeLoader(name, useBase) {
   const la = L("src/lib/lessonAudioText.ts");
   const us = L("src/lib/unifiedSpeech.ts");
   const st = L("scripts/lib/spoken-texts.cjs");
+  // 소유자 결정 2026-09-25(src/lib/lessonSpeechForm.ts) — 바탕이 그 파일보다 앞이면 없음(바탕의 spoken-texts 는 요구하지 않음). 지금 쪽은 없으면 멈춤.
+  const ks = (() => { try { return L("src/lib/lessonSpeechForm.ts"); } catch (e) { if (useBase) return {}; throw e; } })();
   return {
     name, cp, vs, vu, us, st, lu,
     fns: {
       vocaSpeechForm: vs.vocaSpeechForm, getCollocation: vu.getCollocation, generateLiaisonPoints: lu.generateLiaisonPoints,
       extractSentencesForAudio: la.extractSentencesForAudio, firstSlashAlternative: lu.firstSlashAlternative,
-      vocaWordSpeech: vs.vocaWordSpeech, readingWordSpeech: vs.readingWordSpeech,
+      vocaWordSpeech: vs.vocaWordSpeech, readingWordSpeech: vs.readingWordSpeech, lessonSpeechForm: ks.lessonSpeechForm,
     },
   };
 }

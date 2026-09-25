@@ -182,6 +182,9 @@ function collectTexts() {
     vocaWordSpeech: loadTsModule("src/lib/vocaSpeech.ts")?.vocaWordSpeech,
     // BUG-029: a READING word card — the pronunciation of the card's meaning, tagged like the VOCA words
     readingWordSpeech: loadTsModule("src/lib/vocaSpeech.ts")?.readingWordSpeech,
+    // per-page spoken forms (src/lib/lessonSpeechForm.ts): a Korean word written in romanization is said in Korean
+    // (소유자 결정 2026-09-25 — the Hangul becomes a ko-KR run) · LISTENING d169 "1 1/2" as "1 and a half"
+    lessonSpeechForm: loadTsModule("src/lib/lessonSpeechForm.ts")?.lessonSpeechForm,
   };
   for (const [name, fn] of Object.entries(fns)) {
     if (typeof fn !== "function") throw new Error(`${name} did not load — the clip list would be wrong`);

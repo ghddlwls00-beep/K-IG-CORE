@@ -30,6 +30,8 @@ const fns = {
   firstSlashAlternative: loadTs(path.join(REPO, "src/lib/listeningUtils.ts")).firstSlashAlternative,
   vocaWordSpeech: loadTs(path.join(REPO, "src/lib/vocaSpeech.ts")).vocaWordSpeech,
   readingWordSpeech: loadTs(path.join(REPO, "src/lib/vocaSpeech.ts")).readingWordSpeech,
+  // 쪽마다 정한 소리 꼴(src/lib/lessonSpeechForm.ts) — 로마자 한국어 낱말은 한글로(소유자 결정 2026-09-25) · d169 대분수
+  lessonSpeechForm: loadTs(path.join(REPO, "src/lib/lessonSpeechForm.ts")).lessonSpeechForm,
 };
 const LIST = process.argv.includes("--list");
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(REPO, rel), "utf8"));

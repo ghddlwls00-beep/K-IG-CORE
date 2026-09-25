@@ -16,6 +16,7 @@ import {
 import { mediaUrl, hasAudioFile } from "@/lib/media";
 import { shouldUseUnifiedSpeech } from "@/lib/unifiedSpeech";
 import { firstSlashAlternative, generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
+import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
 import { useProgress } from "@/components/ProgressProvider";
 
@@ -171,6 +172,13 @@ export function StudentLearningView({
     };
   }, [stopAll, lessonKey]);
 
+  /**
+   * What an English sentence is SPOKEN as: a slashed alternative ("He/She …") in its first form
+   * (BUG-028), and a Korean word written in romanization in Hangul so the voice says it in Korean
+   * (lessonSpeechForm — 소유자 결정 2026-09-25). The screen keeps the written sentence.
+   */
+  const spokenEn = useCallback((text: string) => lessonSpeechForm(lessonKey, firstSlashAlternative(text)), [lessonKey]);
+
   /** Start (or restart) playback of one sentence, optionally looping. */
   const startSentence = useCallback(
     (text: string, idx: number, kind: "en" | "ko", loop: boolean) => {
@@ -178,8 +186,7 @@ export function StudentLearningView({
       unlockMobileAudio();
       stopAll();
       setTarget({ idx, kind, loop });
-      // BUG-028: an English sentence with a slashed alternative ("He/She …") is spoken in its first form
-      playSentenceQueue([kind === "en" ? firstSlashAlternative(text) : text], {
+      playSentenceQueue([kind === "en" ? spokenEn(text) : text], {
         lang: kind,
         rate: speed,
         loop,
@@ -188,7 +195,7 @@ export function StudentLearningView({
         onError: () => setTarget(null),
       });
     },
-    [speed, stopAll]
+    [speed, stopAll, spokenEn]
   );
 
   const isTargetPlaying = useCallback(
@@ -226,8 +233,8 @@ export function StudentLearningView({
   );
 
   const allSentences = useMemo(
-    () => sentenceItems.map((s) => firstSlashAlternative(s.text)).filter(Boolean),
-    [sentenceItems]
+    () => sentenceItems.map((s) => spokenEn(s.text)).filter(Boolean),
+    [sentenceItems, spokenEn]
   );
 
   /** Whole-lesson TTS playback, sentence by sentence (so 다음/이전 works). */
@@ -359,7 +366,7 @@ export function StudentLearningView({
       if (target) {
         const t = target;
         const text =
-          t.kind === "ko" ? koParas[t.idx] ?? "" : firstSlashAlternative(sentenceItems[t.idx]?.text ?? "");
+          t.kind === "ko" ? koParas[t.idx] ?? "" : spokenEn(sentenceItems[t.idx]?.text ?? "");
         if (text) {
           setTimeout(() => {
             playSentenceQueue([text], {
@@ -374,7 +381,7 @@ export function StudentLearningView({
         }
       }
     },
-    [fullMode, fullIdx, allSentences, target, koParas, sentenceItems]
+    [fullMode, fullIdx, allSentences, target, koParas, sentenceItems, spokenEn]
   );
 
   /** Switching study step must silence whatever is playing. */
