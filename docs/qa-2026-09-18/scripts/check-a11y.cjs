@@ -17,6 +17,9 @@ const H = require("./lib/harness.cjs");
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const PAGES = arg("--pages", "/,/reading,/student,/phonics,/grammar1,/grammar2,/ld,/reading/pr001,/reading/pr100,/student/s1-1,/phonics/mv1-01,/grammar1/gh1-006,/grammar2/gh2-007,/ld/d001,/ld/d150").split(",");
 const PORT = Number(arg("--port", 9580));
+// 2026-09-26 관문 뒤 다시: --out 따로 파일(9/18 a11y.json 을 덮지 않게) · --inject-css 일부러 깨기(이 브라우저 안에서만 글자색 · 초점 표시를 망가뜨림)
+const OUTF = arg("--out", path.join(__dirname, "../out/a11y.json"));
+const INJECT = arg("--inject-css", "");
 
 const MEASURE = `(() => {
   const vis = (el) => !!(el.offsetParent || el.getClientRects().length) && getComputedStyle(el).visibility !== 'hidden';
@@ -73,6 +76,7 @@ async function keyboard(tab) {
   const out = { at: new Date().toISOString(), pages: [] };
   try {
     const tab = await H.openTab(browser);
+    if (INJECT) await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `document.addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = ${JSON.stringify(INJECT)}; document.head.appendChild(s); });` });
     for (const url of PAGES) {
       const course = url.split("/")[1];
       for (const theme of ["light", "dark"]) {
@@ -98,7 +102,9 @@ async function keyboard(tab) {
   } finally {
     browser.proc.kill();
   }
-  fs.writeFileSync(path.join(__dirname, "../out/a11y.json"), JSON.stringify(out, null, 1));
+  out.injectCss = INJECT || undefined;
+  fs.writeFileSync(OUTF, JSON.stringify(out, null, 1));
+  console.log(`→ ${OUTF}`);
   const worst = out.pages.flatMap((p) => (p.desktop.lowContrast || []).map((r) => ({ url: p.url, theme: p.theme, ...r }))).sort((a, b) => a.ratio - b.ratio).slice(0, 20);
   console.log("\nworst contrast:");
   for (const w of worst) console.log(`  ${w.ratio}:1 (needs ${w.need}) ${w.theme} ${w.url} · ${w.tag} "${w.text}" ${w.color} on ${w.background}`);

@@ -1,0 +1,61 @@
+﻿[     2ms] 시작 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[   253ms] 재생 누름 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  2272ms] 2초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  3099ms] 정지 누름 0.8초 뒤 · 정지 꺼짐 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  3414ms] 다시 재생 누름 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  3728ms] 0.3초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  3866ms] 연타 1 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  4005ms] 연타 2 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  4147ms] 연타 3 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  4287ms] 연타 4 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  4427ms] 연타 5 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  4566ms] 연타 6 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  4832ms] 연타 끝 0.25초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  5100ms] 연타 끝 0.5초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  5367ms] 연타 끝 0.75초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  5634ms] 연타 끝 1초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  5900ms] 연타 끝 1.25초 뒤 · 정지 꺼짐 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  6171ms] 연타 끝 1.5초 뒤 · 정지 켜짐 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  6189ms] 정지 누름 · 정지 꺼짐 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[  6999ms] 정지 0.8초 뒤 · 정지 꺼짐 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[ 10005ms] 정지 3.8초 뒤 → 단추 '재생' · 브라우저 말하기 {"speaking":false,"paused":false}
+[ 10017ms] 재생 누름 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+[ 13033ms] 3초 뒤 → 단추 '일시정지' · 브라우저 말하기 {"speaking":false,"paused":false}
+--- 소리 엔진 사건(시각 · 사건 · 파일 끝)
+[   216ms] tts.speak  
+[   328ms] play() x-e425b87a51e89224.mp3
+[   510ms] loadedmetadata x-e425b87a51e89224.mp3 ct 0
+[   590ms] playing x-e425b87a51e89224.mp3 ct 0
+[   590ms] play-resolved x-e425b87a51e89224.mp3
+[  3106ms] play() x-e425b87a51e89224.mp3
+[  3114ms] loadedmetadata x-e425b87a51e89224.mp3 ct 0
+[  3124ms] playing x-e425b87a51e89224.mp3 ct 0
+[  3124ms] play-resolved x-e425b87a51e89224.mp3
+[  3743ms] pause x-e425b87a51e89224.mp3 ct 0.583
+[  3871ms] play() x-e425b87a51e89224.mp3
+[  3876ms] playing x-e425b87a51e89224.mp3 ct 0.64
+[  3876ms] play-resolved x-e425b87a51e89224.mp3
+[  4027ms] pause x-e425b87a51e89224.mp3 ct 0.728
+[  4152ms] play() x-e425b87a51e89224.mp3
+[  4159ms] playing x-e425b87a51e89224.mp3 ct 0.79
+[  4159ms] play-resolved x-e425b87a51e89224.mp3
+[  4294ms] pause x-e425b87a51e89224.mp3 ct 0.879
+[  4434ms] play() x-e425b87a51e89224.mp3
+[  4443ms] playing x-e425b87a51e89224.mp3 ct 0.943
+[  4443ms] play-resolved x-e425b87a51e89224.mp3
+[  5859ms] pause x-e425b87a51e89224.mp3 ct 2.304
+[  5859ms] ended x-e425b87a51e89224.mp3 ct 2.304
+[  6162ms] play() 32-d1c3e750d398efba.mp3
+[  6184ms] play-rejected AbortError 32-d1c3e750d398efba.mp3
+[ 10014ms] play() x-e425b87a51e89224.mp3
+[ 10029ms] loadedmetadata x-e425b87a51e89224.mp3 ct 0
+[ 10038ms] playing x-e425b87a51e89224.mp3 ct 0
+[ 10038ms] play-resolved x-e425b87a51e89224.mp3
+[ 12389ms] pause x-e425b87a51e89224.mp3 ct 2.304
+[ 12389ms] ended x-e425b87a51e89224.mp3 ct 2.304
+[ 12705ms] play() 32-d1c3e750d398efba.mp3
+[ 12857ms] loadedmetadata 32-d1c3e750d398efba.mp3 ct 0
+[ 12867ms] playing 32-d1c3e750d398efba.mp3 ct 0
+[ 12867ms] play-resolved 32-d1c3e750d398efba.mp3
+예외 0 · 콘솔 0 []
+exit 0

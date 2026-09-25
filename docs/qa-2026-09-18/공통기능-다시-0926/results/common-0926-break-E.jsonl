@@ -1,0 +1,2 @@
+{"id":"E:long-session","area":"stability","status":"FAIL","at":"2026-09-25T20:30:59.516Z","break":"E","note":"목록 ↔ 강의 60번(화면 안 이동 60 · 제자리 도착 60) · 같은 목록 쪽 GC 뒤: 메모리 76 → 406.7MB · DOM 275 → 275 · 이벤트 358 → 358 · 늘어남 {\"heapMB\":330.7,\"nodes\":0,\"listeners\":0} · 문턱(메모리 15MB · DOM 50% · 이벤트 50%) · 예외 0","first":{"heapMB":76,"nodes":275,"listeners":358},"last":{"heapMB":406.7,"nodes":275,"listeners":358}}
+{"id":"Z:summary","area":"summary","at":"2026-09-25T20:30:59.523Z","break":"E","counts":{"PASS":0,"FAIL":1,"BLOCKED":0},"blockedWrites":[]}

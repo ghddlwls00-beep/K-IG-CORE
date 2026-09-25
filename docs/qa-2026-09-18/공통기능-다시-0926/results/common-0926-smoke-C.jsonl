@@ -1,0 +1,9 @@
+{"id":"C:flow","area":"navigation","status":"PASS","at":"2026-09-25T19:38:36.397Z","note":"첫 쪽 → /reading → /reading/pr001 → 뒤로 /reading(기대 /reading) → 앞으로 /reading/pr001 → 새로고침 /reading/pr001 (1073자)"}
+{"id":"C:direct-reload:/ld/d001","area":"navigation","status":"PASS","at":"2026-09-25T19:38:41.470Z","note":"주소로 바로 열기 뜸 · 잠김 false → 새로고침 뒤 /ld/d001 · 597자 · 잠김 false"}
+{"id":"C:404:/reading/pr999","area":"404","status":"PASS","at":"2026-09-25T19:38:43.209Z","note":"HTTP 404 · 404 화면 true · 552자"}
+{"id":"C:404:/nope","area":"404","status":"PASS","at":"2026-09-25T19:38:44.853Z","note":"HTTP 404 · 404 화면 true · 552자"}
+{"id":"C:404:/ld/dzzz","area":"404","status":"PASS","at":"2026-09-25T19:38:46.568Z","note":"HTTP 404 · 404 화면 true · 552자"}
+{"id":"C:404:/student/s99-9","area":"404","status":"PASS","at":"2026-09-25T19:38:48.369Z","note":"HTTP 404 · 404 화면 true · 552자"}
+{"id":"C:404:/t/nope","area":"404","status":"PASS","at":"2026-09-25T19:38:50.077Z","note":"HTTP 404 · 404 화면 true · 552자"}
+{"id":"C:404:/phonics/mv9-99","area":"404","status":"PASS","at":"2026-09-25T19:38:51.809Z","note":"HTTP 404 · 404 화면 true · 552자"}
+{"id":"Z:summary","area":"summary","at":"2026-09-25T19:38:51.816Z","counts":{"PASS":8,"FAIL":0,"BLOCKED":0},"blockedWrites":[]}
