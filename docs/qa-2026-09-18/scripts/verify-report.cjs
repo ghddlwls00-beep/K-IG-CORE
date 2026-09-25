@@ -47,7 +47,9 @@ const cov = read("coverage.json");
 const miss = read("missing-clips-licensed.json");
 const comp = read("completeness.json");
 const integ = read("data-integrity.json");
-const exam = read("grammar-exam.json");
+// 최종 관문(2026-09-25): 채점 코드가 바뀐 두 번째 관문 15 배포(bf3f4b6) 뒤에 다시 돈 시험 전수(--tag deploy3)가 있으면 그것 — 세 번째 배포(397f1e8)는
+// 채점 코드를 건드리지 않음(GrammarLearningView 의 소리 내는 글만). 없으면 예전 결과.
+const exam = read("grammar-exam-deploy3.json") || read("grammar-exam.json");
 const dict = read("dictation-offline.json");
 const ent = read("entitlement-all.json");
 const reviewCov = read("review-coverage.json");
@@ -89,8 +91,9 @@ const CLAIMS = [
   // the two totals the report quotes for scale — they moved as the sweeps finished and were stale
   { label: "확인 항목", value: (() => { const f = read("features-summary.json"); return f ? Object.values(f.summary).reduce((a, s) => a + Object.values(s.checks).reduce((x, y) => x + y, 0), 0) : null; })() },
   { label: "음성 버튼 누름", value: (() => { const f = read("features-summary.json"); return f ? Object.values(f.summary).reduce((a, s) => a + s.audio.controls, 0) : null; })() },
-  // categories the owner decides on, which the report had understated
-  { label: "검증 통과 저작권 지적", value: (() => { let n = 0; try { for (const f of fs.readdirSync(OUT).filter((x) => /^content-review-.*\.json$/.test(x))) for (const x of JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8")).findings || []) { const v = x.verification; if (v && v.survives && (v.votes || []).length && x.category === "copyright") n++; } } catch {} return n || null; })() },
+  // categories the owner decides on, which the report had understated.
+  // (최종 관문 2026-09-25: '검증 통과 저작권 지적' 항목은 뺐다 — 소유자 지시 "법정 표시·결제 연결·저작권 검토는 내가 변호사와 직접 하니
+  //  건드리지 말고 언급도 하지 마". 보고서에 그 숫자를 쓰지 않으므로 여기서도 요구하지 않는다.)
   { label: "검증 통과 사실 오류", value: (() => { let n = 0; try { for (const f of fs.readdirSync(OUT).filter((x) => /^content-review-.*\.json$/.test(x))) for (const x of JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8")).findings || []) { const v = x.verification; if (v && v.survives && (v.votes || []).length && x.category === "factual") n++; } } catch {} return n || null; })() },
 ];
 for (const c of CLAIMS) {

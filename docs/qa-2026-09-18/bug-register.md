@@ -244,6 +244,48 @@
 | **수정 후 검증** | `node docs/qa-2026-09-18/scripts/prove-life-completion.cjs` → **실패 0/9**. 이 검사가 실패할 수 있음: 고치기 전 코드(HEAD `1f8f7a7` 의 src · content 를 풀어 `KIG_CODE_ROOT` 로)에 돌리면 **5/9 실패**(LIFE 넷 · 규칙 글자 하나) · `--break`(LIFE 칸에 1Y) **4/9 실패**. 진짜 `route.ts` 의 POST 를 부르고(이용권 확인만 가짜) 진도는 임시 폴더에만 씀 — R2 값이 보이면 멈춤. 배포 뒤: `drive-generic.cjs --course student --ids s3-3` 의 completion 이 PASS(서버 답 두 번) |
 | **감사 이용권에 남은 것** | 없음 — 서버가 s3-3 을 두 번 다 버렸으므로(②). s1-3 은 끄고 다시 켜서 원래대로(켜짐) |
 
+### BUG-031 · 영어 문장 속 로마자 한국어 낱말(경주 · 불국사 · 추석 · 서울 …)을 영어식으로 읽음 — 56문장 → **고침 · 배포 `397f1e8`(2026-09-25 12:49, 최종 관문 세 번째 배포) · 운영 확인**
+
+소유자가 STUDENT 20-2 를 들으며 찾음 → '학습 내용 재검토1' 세션이 앱이 소리 내는 글 15,334 을 훑어 표를 만듦(`내용-재검토/한국어-발음/결과.md`) → 수정 세션이 고침(같은 AI 계열 — 독립 검토 아님).
+
+| | |
+|---|---|
+| **심각도** | P2 |
+| **영역** | 음성(STUDENT · GRAMMAR II · READING) |
+| **강의** | 56문장 · 30강(STUDENT 39문장 18강 · GRAMMAR II 11문장 8강 쌍 · READING 6문장 4강 쌍) · 낱말 42가지 |
+| **주소** | 예 `https://k-ig-core.vercel.app/student/s20-4` 첫 문장 'Another attractive destination is Gyeongju.' |
+| **재현 절차** | 문장 🔊 을 누른다 |
+| **기대 결과** | 한국어 낱말은 한국어 발음('경주') |
+| **실제 결과** | 영어 규칙으로 읽음(소유자가 들음 — 이 세션은 소리를 들을 수 없음) — 생성기(`scripts/generate-azure-ava.mjs` languageRuns)가 글자 종류로 언어를 나눠 로마자를 en-US 로 합성 |
+| **소유자 결정** | 2026-09-25: 56 전부 한국어로 — 영어에 굳은 발음이 있는 Seoul · kimchi · Mr. Kim 도("이것도 바꿔"). Korea · Korean 은 영어 낱말이라 그대로 · LISTENING d011 · d012 · d025 · d026 의 Kim(미국 사람)은 그대로 |
+| **고친 것** | `src/lib/lessonSpeechForm.ts`(새) — 쪽('<과정>/<쪽>')마다 낱말 표, 화면 글은 그대로 두고 소리 낼 글만 한글로(같은 목소리가 한글을 ko-KR 로 읽음 · 새 클립 이름). 부르는 곳은 BUG-028 의 첫 꼴과 같은 자리 + `scripts/lib/spoken-texts.cjs`(생성기 · 무료 소리 키 · 감사 도구) |
+| **수정 후 검증** | 옛 판(bf3f4b6) · 새 판 소리 글 전부 견줌: 15,334 중 바뀐 글 57(이 56 + BUG-032 1) · 목록과 글자까지 같음 · 목록 밖 0 · 깨기 잡힘 · `compare-shared-code --base bf3f4b6 --expect 관문15-고침/소리꼴-허용.json` exit 0(깨기 셋 exit 1) · 새 클립 56(1은 같은 글 클립이 이미 R2) 프레임 온전 56/56 · R2 올린 뒤 생성기 pending 0 · **운영**: 무료 `/student/s1-2` 첫 문장 🔊 → 새 키 `x-2981f91b43135230`('My name is 홍길동, and I live in 서울.') 206 · 옛 키 요청 0 · 스윕이 소리 글이 바뀐 44쪽 × 3화면을 그 배포 뒤 기록으로 다시 봄 |
+| **1분 확인(사장님)** | `/student/s20-4` 첫 문장 🔊 → '경주' 로 들리면 고쳐진 것 |
+
+### BUG-032 · LISTENING d169 '1 1/2 seconds' 가 '1 1 2 seconds' 로 합성됨 → **고침 · 배포 `397f1e8`(2026-09-25) · 운영 확인**
+
+| | |
+|---|---|
+| **심각도** | P2 |
+| **영역** | LISTENING 음성 · 받아쓰기 |
+| **강의** | d169 · d169-1(4번 문장 'Gates in the reservoir open for 1 1/2 seconds, …') |
+| **재현 절차** | 그 문장 🔊 · 위 '전체 듣기' |
+| **기대 결과** | 'one and a half seconds' |
+| **실제 결과** | 소리 정규화(`unifiedSpeech.ts` normalizeUnifiedSpeechText)가 빗금을 빈칸으로 바꿔 클립이 '1 1 2 seconds' 로 만들어짐(9/18 지도 R24 · P-1 에 적혔으나 버그로 올리지 않아 고쳐지지 않았음 — 이 감사의 누락). 수 사이 빗금이 있는 소리 글은 앱 전체에서 이 하나 |
+| **고친 것** | BUG-031 의 같은 표에 'ld/d169' · 'ld/d169-1': '1 1/2' · '1 1 2'(위 플레이어가 먼저 빗금을 지운 꼴) → '1 and a half'. 화면 글 · 받아쓰기 정답은 그대로 |
+| **수정 후 검증** | 수 사이 빗금 소리 글 1 → 0(스크래치 slash-digits-scan.cjs) · 오디오 목록의 '한 키 여러 글' 1 → 0(관문 2, 세 번째 배포 뒤) · 새 클립 1(6.65초) |
+
+### BUG-033 · STUDENT 과정 목록의 '장 전체 듣기'가 쓴 글을 그대로 소리 냄 — BUG-028(빗금 첫 꼴) · BUG-031 이 닿지 않던 길 → **고침 · 배포 `397f1e8`(2026-09-25) · 운영 확인**
+
+| | |
+|---|---|
+| **심각도** | P2 |
+| **영역** | STUDENT 과정 목록 · 음성 |
+| **주소** | `https://k-ig-core.vercel.app/student` 챕터마다 '챕터 N 전체 파트 듣기'(챕터 1 은 이용권 없이 미리 듣기) |
+| **실제 결과(고치기 전)** | `ChapterAudioBar` 가 `/api/student/chapter-audio` 의 문장 글을 그대로 `playSentenceQueue` 에 넘김 → 빗금 문장('Nice to meet you sir/ma'am.' 등 37)은 강의 화면(첫 꼴 — BUG-028 소유자 결정 2026-09-24)과 다른 두 꼴 글 클립을 부름. 스윕은 과정 목록의 이 단추를 누르지 않아 못 봄 — BUG-031 을 고치며 소리 내는 곳을 하나씩 찾다 발견 |
+| **고친 것** | 강의 화면과 같은 꼴로: `lessonSpeechForm('student/<쪽>', firstSlashAlternative(글))` |
+| **수정 후 검증** | 운영(로그인 없음) '챕터 1 전체 파트 듣기' → s1-1 첫 문장 `l-f696a5810cadceb8`('Nice to meet you sir.' — 강의 화면 🔊 와 같은 키) · s1-2 첫 문장 새 키 `x-2981…` · 7문장 모두 206 |
+
 ---
 
 ## P3 — 사소함
@@ -268,7 +310,7 @@
 | BUG-023 **이대로 둠 — 소유자 결정 2026-09-24 13:0x(이 채팅 "속도는 이대로두고") · 과정 화면 JS 나누기는 하지 않음.** 아래는 결정 전 기록: **열림 — 배포 뒤 운영 재측정(2026-09-24 12:1x · 소유자 "이대로 배포하고 운영에서 다시 재" · 단독 · 이용권 · 4G 휴대폰 · 3회 중앙값, `out/perf-licensed-4g-phone-prod-after-0924.json`): 강의 쪽 15개 LCP 중앙값 3.31 → 2.53초 · 2.5초 넘는 쪽 15 → 10 · 가장 느린 쪽 4.29 → 3.03초(pr001) · FCP 중앙값 1.86 → 1.97초 · 강의 쪽 JS 196~204 → 255KB(과정 화면을 서버 페이지가 바로 그려 번들에 들어감). 목표 2.5초에 조금 못 미침 — 더 줄이려면 과정 화면 JS 나누기(반나절~하루), 소유자 판단.** 7단계 7-3: 원인 하나 고침, 목표 2.5초는 못 미침 → 소유자 판단 대기(2026-09-24). 운영 단독 재측정(이용권 · 4G · 3회 중앙값): 강의 쪽 15개 LCP 2.7~4.3초(15개 모두 넘음). 원인 — `LessonBody` 의 `next/dynamic` 이 로딩 뼈대를 먼저 보내고 본문은 숨겨 두었다가 인라인 `$RC` 로 늦게 끼움 → 서버 페이지가 과정 화면을 직접 그리게 고침(`page.tsx` · `LessonSpeechGuard`). 같은 로컬 빌드 전 · 후(익명 무료 강의 6쪽): LCP 중앙값 **3.28 → 2.86초**, 가장 느린 쪽 4.12 → 3.00 · FCP→LCP 틈 1.4 → 0~0.2초. 남은 것: 첫 그림(FCP 2.5~2.9초) 자체 — 강의 화면 JS 가 첫 그림 전에 도는 것으로 보임. 더 줄이려면 과정 화면 JS 나누기(반나절~하루). 7단계-작업기록 7-3 | **이용권으로 로그인한 학습자의 휴대폰 4G 에서 최대 콘텐츠(LCP) 3.3초** — 권장 2.5초 밖, 느린 3G 3.8초. 비로그인은 4G 2.1초로 권장 안. 화면 밀림(CLS) 0 · 응답 시작 16~19ms 로 서버는 빠름. 지연은 **자바스크립트 실행**(4G 761ms), 페이지당 231~240KB | 이용권 학습자 강의 쪽(휴대폰) | 9/18 보고서 D절(`K-IG_Commercial_Release_Readiness_Report.md` 148행) — `scripts/measure-perf.cjs`, 다른 작업을 멈추고 단독 측정 | 원인 파일을 찾아 줄이고 로컬 운영 빌드에서 다시 잼, 목표 2.5초 이하. CSP(nonce) · 유료 잠금 · 공개 파일 유출 검사를 깨지 말 것, 유료 본문을 공개 번들로 옮기지 말 것(9/17 READING 사고) |
 | ~~BUG-024~~ **지움 — 소유자 결정 2026-09-23 밤(이 채팅 "2번 다 지워", 7단계 7-4 c)** · 82과 1,103조각 → 0 (HEAD 에서 chunkDrills 만 뺀 것과 같은 과 82 · 다른 과 0) · 배포 전. 9/7 `83b007c` 가 화면에서 뺀 기능의 데이터. 다시 돌리면 되만드는 `scripts/repair-student-curriculum.mjs` 는 7-7 에서 멈추게 함 | **STUDENT 유료 82강 전부에 청크 드릴(`chunkDrills`) 데이터가 있으나 학습자에게 한 번도 표시되지 않음.** `LessonBody.tsx:193-200` 이 STUDENT 를 `StudentLearningView` 로 분기하면서 `chunkDrills` 를 넘기지 않고, 그 화면에는 청크 관련 UI 가 한 줄도 없음. `chunkDrills` 를 실제로 그리는 코드는 일반 렌더러(`LessonBody.tsx:549`)뿐인데 STUDENT 는 그 앞에서 반환됨. 감사 도구가 보지 않던 영역이라 최초 감사에서 누락 — BUG-015 정리 중 발견 (2026-09-22) | `src/components/LessonBody.tsx:193-200` · `StudentLearningView.tsx` · `content/lessons/student/*.json` 82개 | `chunkDrills` 포함 파일 82개 = STUDENT 전체 강의 수 · `StudentLearningView.tsx` 내 `chunk`/`청크` 검색 0건 | **의도된 폐기인지 빠진 기능인지 소유자 판단 필요.** 빠진 기능이면 유료 82강에서 학습 단계 하나가 통째로 빠진 것이고, 폐기라면 데이터를 지워야 함 (LD 죽은 사본과 같은 처리) |
 | BUG-029 **고침 — 소유자 결정 2026-09-24 낮(이 채팅 "BUG-029 고쳐 — 읽기 카드도 화면 뜻대로 발음") · 배포 허락 13:0x("배포해") · R2 52 먼저 올림 · 이 커밋으로 배포.** READING 카드는 카드 뜻의 발음으로 — `vocaSpeech.ts` `READING_PRONUNCIATIONS`(찾은 6 + 카드에 나오는 발음 둘인 낱말 13 + 굴린 꼴 33) · `readingWordSpeech(낱말, 카드 뜻)` = `<낱말> ⟨<IPA>⟩`(새 클립 이름), 표에 없으면 그대로. 새 검사 `check-reading-pronunciations.cjs` 카드 7,168 · 꼬리표 192 · 실패 0(깨기 4) · 새 클립 51(+ combat 명사 1, 아래) · 로컬 빌드 pr002 'producing' → 새 키 206. 3차 점검 확인(12:4x) 뒤 그 제안(규칙 둘에 맞는 카드 잡기 ④)으로 **pr246 combat '싸움' 이 동사 소리를 받던 것**을 찾아 고침(규칙이 안 겹치게 · 품사 대조 ⑤ 더함 — 바뀐 카드 2쪽뿐). 3차 점검의 표 읽기 점검('모두 맞음')이 이 카드를 놓쳤음 — 3차 점검이 바로잡음 · 따로 만든 품사 검사 192장 안 맞음 0. 7단계-작업기록 'BUG-029 · BUG-030'. 아래는 찾았을 때의 기록: 3차 점검이 찾음(2026-09-24, 7-6 재점검 중) · 확인함(카드 뜻 직접 읽음) | **READING 단어 카드는 맨 낱말 클립을 같이 쓰는데, 뜻이 다른 카드가 한 클립을 씀 — increase**: 명사 카드(pr035 '증가' · pr197 '인상, 증가' → /ˈɪnkriːs/)와 동사 카드(pr054 '늘리다' · pr110 '늘리다' · pr175 '높이다, 늘리다' · pr255 '늘다' → /ɪnˈkriːs/)가 한 클립(각 -1 쪽 포함)이라 한쪽은 강세가 틀림. 같이 쓰는 나머지 다섯은 카드 뜻이 VOCA 표와 같은 쪽: minute pr016 '분, 순간' · live pr038 · pr221 · pr233 '살다' · produce pr049 등 '만들어 내다' · lead pr129 · pr199 '일으키다' · refuse pr239 '거부하다' | ReadingLearningView `playWordAudio(kw.word)` · `src/lib/vocaSpeech.ts` VOCA_PRONUNCIATIONS | 3차 점검 셈 + 이 세션이 readingVocabulary 의 뜻을 다시 읽어 확인 | 7-6(소유자 결정 6 나) '화면 뜻 발음')과 같은 원칙: READING 카드도 카드 뜻의 발음 · 새 클립 이름으로 — 다섯은 VOCA 새 클립을 그대로 쓰고, 새 클립은 increase 명사 1개. 운영 소리가 바뀌므로 소유자 확인 뒤 |
-| ~~BUG-028~~ **고침 — 소유자 결정 2026-09-24 아침(이 채팅 "빗금 문장 소리는 첫 번째 것만", 질문 7 가)).** STUDENT 영어 문장의 빗금 두 꼴은 **첫 꼴로 소리 냄** — listeningUtils `firstSlashAlternative`(= expandSlashAlternatives 의 첫 문장, 타일 · 힌트 · 첫 정답과 같은 문장)를 StudentLearningView 의 문장 재생 · 전체 재생 · 속도 바꿈과 page.tsx 위 플레이어(extractSentencesForAudio 의 새 인자)가 씀 · 생성기 · 감사는 scripts/lib/spoken-texts.cjs 한 정의로 같게. 화면 글은 그대로 'He/She'. 앱 함수로 '소리 글의 낱말' 을 채점: 들은 대로 놓으면 받음 **37/37**(전 1/37). 새 클립 18(나머지 18 은 같은 글의 클립이 이미 R2 에). 로컬 운영 빌드 /student/s1-1 1번 🔊 → `l-f696a5810cadceb8.mp3`('Nice to meet you sir.'). Mr./Ms. 한 문장(s6-2 #2)은 앱이 나누지 않아 전처럼 둘 다 읽고 둘 다 정답(소리 · 채점 맞음). 아래는 찾았을 때의 기록: | **STUDENT 받아쓰기에서 '들은 그대로 놓으면 오답' — 슬래시로 두 꼴을 적은 영어 문장 36개(10강).** `He/She is a very talented artist, too.` 같은 문장을 소리는 슬래시를 빈칸으로 바꿔 **둘 다 읽고**("He She is a very talented artist, too."), 채점은 9/16 CNT-01 결정대로 **한 꼴만 정답**(He … 또는 She …, 둘 다 놓으면 오답). 눈을 가리고 듣는 받아쓰기라 학습자는 들은 대로 He · She 를 다 놓고 '어순이나 단어가 일치하지 않습니다' 를 받음(보관함에는 두 꼴 타일이 다 있음). 36문장: s1-1 #1(sir/ma'am) · s3-1 #3 · s3-2 #5~9 · s3-3 #2~8 · s3-4 #1~2 · s6-1 #4 · #6(brother/sister) · s6-2 #3~6 · s6-3 #2~7 · s6-4 #3~6 · s14-2 #3 · #5~7. 예외 s6-2 #2 `Mr./Ms.` 는 앱이 나누지 않아 둘 다 놓아야 정답(소리와 맞음) | `src/lib/unifiedSpeech.ts` `normalizeUnifiedSpeechText`('/' → 빈칸) · `src/lib/listeningUtils.ts` `expandSlashAlternatives` · `generateWordBank` · `StudentLearningView.tsx` 받아쓰기 | 스크래치 `slash-heard.cjs` — 앱 함수로 '소리 글의 낱말' 을 채점: 슬래시 문장 37 중 받음 1(Mr./Ms.) · 거절 36. 감사의 s3-3 · s3-4 FAIL 은 감사 쪽 잘못(아래 7-1 b)이었지만 그걸 고친 뒤에도 이 문제는 남음 | **소유자 결정**: 가) 소리를 한 꼴만 읽게(He … — 새 음성 36개, 화면 글은 그대로) / 나) 둘 다 놓은 답도 정답(CNT-01 을 되돌림 — 틀린 영어 문장이 정답이 됨) / 다) 소리 · 채점은 그대로, 받아쓰기 화면에 '둘 중 하나만 놓으세요' 한 줄 / 라) 그대로. 추천 가) — 받아쓰기는 들은 것을 맞히는 연습이라 소리와 정답이 같아야 함 |
+| ~~BUG-028~~ **고침 — 소유자 결정 2026-09-24 아침(이 채팅 "빗금 문장 소리는 첫 번째 것만", 질문 7 가)).** (2026-09-25 최종 관문: STUDENT 과정 목록의 '장 전체 듣기'에는 이 결정이 닿지 않았던 것을 찾아 고침 — BUG-033.) STUDENT 영어 문장의 빗금 두 꼴은 **첫 꼴로 소리 냄** — listeningUtils `firstSlashAlternative`(= expandSlashAlternatives 의 첫 문장, 타일 · 힌트 · 첫 정답과 같은 문장)를 StudentLearningView 의 문장 재생 · 전체 재생 · 속도 바꿈과 page.tsx 위 플레이어(extractSentencesForAudio 의 새 인자)가 씀 · 생성기 · 감사는 scripts/lib/spoken-texts.cjs 한 정의로 같게. 화면 글은 그대로 'He/She'. 앱 함수로 '소리 글의 낱말' 을 채점: 들은 대로 놓으면 받음 **37/37**(전 1/37). 새 클립 18(나머지 18 은 같은 글의 클립이 이미 R2 에). 로컬 운영 빌드 /student/s1-1 1번 🔊 → `l-f696a5810cadceb8.mp3`('Nice to meet you sir.'). Mr./Ms. 한 문장(s6-2 #2)은 앱이 나누지 않아 전처럼 둘 다 읽고 둘 다 정답(소리 · 채점 맞음). 아래는 찾았을 때의 기록: | **STUDENT 받아쓰기에서 '들은 그대로 놓으면 오답' — 슬래시로 두 꼴을 적은 영어 문장 36개(10강).** `He/She is a very talented artist, too.` 같은 문장을 소리는 슬래시를 빈칸으로 바꿔 **둘 다 읽고**("He She is a very talented artist, too."), 채점은 9/16 CNT-01 결정대로 **한 꼴만 정답**(He … 또는 She …, 둘 다 놓으면 오답). 눈을 가리고 듣는 받아쓰기라 학습자는 들은 대로 He · She 를 다 놓고 '어순이나 단어가 일치하지 않습니다' 를 받음(보관함에는 두 꼴 타일이 다 있음). 36문장: s1-1 #1(sir/ma'am) · s3-1 #3 · s3-2 #5~9 · s3-3 #2~8 · s3-4 #1~2 · s6-1 #4 · #6(brother/sister) · s6-2 #3~6 · s6-3 #2~7 · s6-4 #3~6 · s14-2 #3 · #5~7. 예외 s6-2 #2 `Mr./Ms.` 는 앱이 나누지 않아 둘 다 놓아야 정답(소리와 맞음) | `src/lib/unifiedSpeech.ts` `normalizeUnifiedSpeechText`('/' → 빈칸) · `src/lib/listeningUtils.ts` `expandSlashAlternatives` · `generateWordBank` · `StudentLearningView.tsx` 받아쓰기 | 스크래치 `slash-heard.cjs` — 앱 함수로 '소리 글의 낱말' 을 채점: 슬래시 문장 37 중 받음 1(Mr./Ms.) · 거절 36. 감사의 s3-3 · s3-4 FAIL 은 감사 쪽 잘못(아래 7-1 b)이었지만 그걸 고친 뒤에도 이 문제는 남음 | **소유자 결정**: 가) 소리를 한 꼴만 읽게(He … — 새 음성 36개, 화면 글은 그대로) / 나) 둘 다 놓은 답도 정답(CNT-01 을 되돌림 — 틀린 영어 문장이 정답이 됨) / 다) 소리 · 채점은 그대로, 받아쓰기 화면에 '둘 중 하나만 놓으세요' 한 줄 / 라) 그대로. 추천 가) — 받아쓰기는 들은 것을 맞히는 연습이라 소리와 정답이 같아야 함 |
 
 ---
 
