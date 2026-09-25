@@ -73,13 +73,18 @@ for (const course of SPOKEN_COURSES) {
 }
 if (BREAK) rows[Math.floor(rows.length / 2)].text += " We visited Gyeongbokgung.";
 const distinct = new Set(rows.map((r) => r.text));
+// (수정 세션 2026-09-26) 소리 꼴 방식이 바뀜 — 한글로 바꾸던 것(397f1e8)을 소유자가 들어 보고 '엉망' → 고른 '라': 같은 영어 목소리가
+// 낱말에 붙은 발음 기호대로(`Gyeongju ⟨ˈkjʌŋˌdʒu⟩`, src/lib/lessonSpeechForm.ts). 기호가 붙은 낱말은 소리가 정해진 것이라 한국어 낱말 후보 ·
+// '한국어 낱말이 든 글' 에서 뺌 — 기호 안의 글자(kj · dʒu …)도 낱말로 잡지 않게 낱말째 지우고 본다.
+const stripTagged = (t) => t.replace(/[A-Za-z][A-Za-z'’-]*\s*⟨[^⟩]*⟩/g, " ");
+const tagged = rows.reduce((n, r) => n + (r.text.match(/⟨[^⟩]*⟩/g) || []).length, 0);
 const expect = opt("--expect-items");
 if (expect && Number(expect) !== distinct.size && !BREAK) { console.error(`소리 내는 글 ${distinct.size} ≠ 생성기 items ${expect} — 목록이 어긋남`); process.exit(1); }
 
 // ── 2) 후보(넓게) ───────────────────────────────────────────────────
 const tok = /[A-Za-zÀ-ÿŏŭŎŬ]+(?:[-'’][A-Za-zÀ-ÿŏŭŎŬ]+)*/g;
 const stats = new Map();
-for (const r of rows) for (const s of r.text.split(/(?<=[.!?])\s+/)) {
+for (const r of rows) for (const s of stripTagged(r.text).split(/(?<=[.!?])\s+/)) {
   let first = true;
   for (const m of s.matchAll(tok)) {
     const key = m[0].toLowerCase().replace(/['’]s$/, "");
@@ -134,7 +139,7 @@ const unjudged = candidates.filter((k) => !(k in KO) && !NOT.has(k) && !english.
 const ordinaryLeft = unjudged.filter((k) => !/^[a-z]/.test(k) || true);
 // 사람이 본 판정 밖의 후보: 소문자로만 쓰인 흔한 영어 낱말이 대부분 — 한국어 꼴 글자(eo · eu · yeo · ae · kk · jj · gw · gy)가 있거나 대문자로만 쓰인 것만 멈춤 사유로
 const cap = new Map();
-for (const r of rows) for (const m of r.text.matchAll(tok)) { const k = m[0].toLowerCase().replace(/['’]s$/, ""); if (/^[A-Z]/.test(m[0])) cap.set(k, true); }
+for (const r of rows) for (const m of stripTagged(r.text).matchAll(tok)) { const k = m[0].toLowerCase().replace(/['’]s$/, ""); if (/^[A-Z]/.test(m[0])) cap.set(k, true); }
 const koShape = /(eo|eu|yeo|ae|kk|jj|gw|gy|ŏ|ŭ)/;
 const stop = unjudged.filter((k) => koShape.test(k) || (cap.get(k) && (stats.get(k) || {}).lowerMid === 0));
 if (stop.length) {
@@ -155,17 +160,18 @@ const koOf = (course, id, pairId) => {
 };
 const hits = new Map();
 for (const r of rows) {
-  let spoken = r.text;
+  const open = stripTagged(r.text);
+  let spoken = open;
   const found = [];
   for (const [en, ko] of PHRASES) if (spoken.includes(en)) { found.push([en, ko]); spoken = spoken.split(en).join(ko); }
-  for (const m of r.text.matchAll(tok)) {
+  for (const m of open.matchAll(tok)) {
     const k = m[0].toLowerCase().replace(/['’]s$/, "");
     if (!(k in KO)) continue;
     if (NOT_IN.some((x) => x.word === k && x.course === r.course)) continue;
-    if (PHRASES.some(([en]) => en.split(/\s+/).some((p) => p.toLowerCase() === k) && r.text.includes(en))) continue;
+    if (PHRASES.some(([en]) => en.split(/\s+/).some((p) => p.toLowerCase() === k) && open.includes(en))) continue;
     if (!found.some(([en]) => en === m[0].replace(/['’]s$/, ""))) found.push([m[0].replace(/['’]s$/, ""), KO[k]]);
   }
-  const surname = r.text.match(SURNAME_LIKE);
+  const surname = open.match(SURNAME_LIKE);
   if (!found.length && !surname) continue;
   for (const [en, ko] of found) spoken = spoken.replace(new RegExp(`(?<![A-Za-z])${en.replace(/[-]/g, "\\-")}(?![A-Za-z])`, "g"), ko);
   const h = hits.get(r.text) || { text: r.text, words: found, spoken, surname: surname ? surname[1] : null, at: [], koCheck: [] };
@@ -180,6 +186,7 @@ const words = {};
 for (const h of list) for (const [en, ko] of h.words) { const k = `${en} → ${ko}`; words[k] = (words[k] || 0) + 1; }
 const byCourse = {};
 for (const h of list) { const c = h.at[0].split("/")[0]; byCourse[c] = (byCourse[c] || 0) + 1; }
+console.log(`발음 기호가 붙은 낱말 ${tagged}(소리가 정해진 것 — 후보에서 뺌)`);
 console.log(`소리 내는 글 ${distinct.size} · 로마자 낱말 ${stats.size} · 넓은 후보 ${candidates.length} · 한국어 낱말이 든 글 ${list.length}(${JSON.stringify(byCourse)}) · 성씨 꼴 영어 낱말만 든 글 ${surnameOnly.length}`);
 const miss = list.flatMap((h) => h.koCheck.filter((c) => !c.inKorean).map((c) => `${h.at[0]} ${c.en}→${c.ko}`));
 console.log(`같은 강의 한국어 쪽에 그 한글이 없는 것 ${miss.length}${miss.length ? ": " + miss.join(" · ") : ""}`);

@@ -267,14 +267,36 @@ function languageRuns(text) {
 // say the word with that pronunciation. The same parser as the app, so the name and the sound agree.
 const { pronunciationTag } = loadTsModule("src/lib/vocaSpeech.ts") || {};
 
+// A word with an IPA tag inside a sentence — `Gyeongju ⟨ˈkjʌŋˌdʒu⟩` (src/lib/lessonSpeechForm.ts: a Korean word
+// written in romanization, said in the SAME English voice with the Korean sound — 소유자 결정 2026-09-26 '라').
+// The tag belongs to the one written word right before it; a phrase carries one tag per word.
+const INLINE_TAG = /([A-Za-z][A-Za-z'’-]*)\s*⟨([^⟩]+)⟩/g;
+
+function withInlinePhonemes(text) {
+  let out = "";
+  let last = 0;
+  for (const m of text.matchAll(INLINE_TAG)) {
+    out += escapeXml(text.slice(last, m.index));
+    out += `<phoneme alphabet="ipa" ph="${escapeXml(m[2])}">${escapeXml(m[1])}</phoneme>`;
+    last = m.index + m[0].length;
+  }
+  return out + escapeXml(text.slice(last));
+}
+
 function ssml(text) {
-  const tag = typeof pronunciationTag === "function" ? pronunciationTag(text) : null;
-  if (!tag && /⟨/.test(text)) throw new Error(`pronunciation tag not parsed — would read the IPA aloud: ${text}`);
-  const body = tag
-    ? `<lang xml:lang="en-US"><phoneme alphabet="ipa" ph="${escapeXml(tag[1])}">${escapeXml(tag[0])}</phoneme></lang>`
-    : languageRuns(text)
-      .map((run) => `<lang xml:lang="${run.language}">${escapeXml(run.text)}</lang>`)
+  // a whole-text tag is ONE word (a VOCA / READING card: `sow ⟨soʊ⟩`) — a sentence with tags goes the inline way,
+  // or the whole sentence would be read as the last tag's sound
+  const whole = typeof pronunciationTag === "function" ? pronunciationTag(text) : null;
+  const tag = whole && !/\s/.test(whole[0].trim()) && !/⟨/.test(whole[0]) ? whole : null;
+  let body;
+  if (tag) {
+    body = `<lang xml:lang="en-US"><phoneme alphabet="ipa" ph="${escapeXml(tag[1])}">${escapeXml(tag[0])}</phoneme></lang>`;
+  } else {
+    body = languageRuns(text)
+      .map((run) => `<lang xml:lang="${run.language}">${run.language === "en-US" ? withInlinePhonemes(run.text) : escapeXml(run.text)}</lang>`)
       .join("");
+  }
+  if (/⟨|⟩/.test(body)) throw new Error(`pronunciation tag not parsed — would read the IPA aloud: ${text}`);
   return `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US"><voice name="${VOICE}">${body}</voice></speak>`;
 }
 
@@ -485,6 +507,15 @@ function human(bytes) {
 }
 
 async function main() {
+  // --print-ssml: the SSML each spoken text would be sent as — no R2, no Azure (a check that a tag becomes <phoneme>
+  // and nothing reads the IPA aloud). `--print-ssml all` prints every text that carries a tag or Hangul in Latin company.
+  const PRINT_SSML = arg("--print-ssml");
+  if (PRINT_SSML) {
+    const list = PRINT_SSML === "all" ? collectTexts().filter((t) => /⟨/.test(t) && /\s/.test(t.replace(/\s*⟨[^⟩]*⟩\s*$/, ""))) : [PRINT_SSML];
+    for (const t of list) console.log(`${t}\n  → ${ssml(t)}`);
+    console.log(`(${list.length})`);
+    return;
+  }
   // 7단계 7-2: R2 를 먼저 본다 — 못 보면 --dry-run 은 첫 줄에 크게 적고 계속, 생성은 --allow-local-only 없이는 멈춤(Azure 를 부르기 전).
   let uploaded;
   let r2Problem = null;

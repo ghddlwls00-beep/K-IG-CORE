@@ -280,15 +280,45 @@ for (const { rev, course, id } of lessonAt) {
   for (const t of texts) for (const k of [keyOf(t) && keyOf(t).key, rawKey(t)]) if (k && !HISTORY.has(k)) HISTORY.set(k, `${rev.slice(0, 8)} ${course}/${id}`);
   if (course === "student") for (const k of slashOldKeysOf(lesson)) if (!BUG028.has(k)) BUG028.set(k, `${rev.slice(0, 8)} student/${id}`);
 }
+// ── (e) 소리 꼴 첫 판(397f1e8 · 2026-09-25): 로마자 한국어 낱말을 한글로 바꿔 말하던 꼴. 소유자가 들어 보고 '엉망'(2026-09-26) → 같은 영어 목소리 +
+//     발음 기호 꼴(`Gyeongju ⟨ˈkjʌŋˌdʒu⟩`, 소유자가 고른 '라')로 바꿈. 그 판 운영을 돈 스윕 · 재검사는 한글 꼴 글의 키를 불렀다 — 그 판의 표를 git 에서
+//     그대로 읽어(지금 표로 흉내 내지 않음) 표에 든 쪽을 돌린 글의 키만 따로 센다. 깨기 --break=speechform1 — 이 칸을 끄면 '까닭 없음' 이 생겨야 한다.
+const BREAK_SF1 = process.argv.includes("--break=speechform1");
+const SF1_REV = "397f1e8";
+const SPEECHFORM_1 = new Map(); // key → '<과정>/<쪽>'
+{
+  const tsc = require(path.join(REPO, "node_modules/typescript"));
+  const js = tsc.transpileModule(git(["show", `${SF1_REV}:src/lib/lessonSpeechForm.ts`]), { compilerOptions: { module: tsc.ModuleKind.CommonJS, target: tsc.ScriptTarget.ES2020 } }).outputText;
+  const mod = { exports: {} };
+  new Function("module", "exports", "require", js)(mod, mod.exports, require);
+  const sf1 = mod.exports;
+  if (typeof sf1.lessonSpeechForm !== "function" || !sf1.LESSON_SPEECH_WORDS) throw new Error(`${SF1_REV} 의 lessonSpeechForm 을 못 읽음`);
+  const fns1 = { ...fns, lessonSpeechForm: sf1.lessonSpeechForm };
+  for (const pageKey of Object.keys(sf1.LESSON_SPEECH_WORDS)) {
+    const [course, id] = pageKey.split("/");
+    const f = path.join(LESSONS, course, `${id}.json`);
+    if (!fs.existsSync(f)) continue;
+    const index = readJson(`content/courses/${course}.json`).lessons || [];
+    const pid = pairIdOf(course, id, index);
+    const pf = pid && path.join(LESSONS, course, `${pid}.json`);
+    const pair = pid ? { id: pid, ...(fs.existsSync(pf) ? JSON.parse(fs.readFileSync(pf, "utf8")) : {}) } : null;
+    for (const t of spokenTexts({ course, id, lesson: JSON.parse(fs.readFileSync(f, "utf8")), pair, ldScripts, dictionary, fns: fns1 })) {
+      for (const k of [keyOf(t) && keyOf(t).key, rawKey(t)]) if (k && !NEW.has(k) && !SPEECHFORM_1.has(k)) SPEECHFORM_1.set(k, pageKey);
+    }
+  }
+}
 // 깨기 시험: --break=history — 옛 판을 안 본 것으로 치면 '까닭 없음' 이 생겨 exit 1 이어야 한다
 if (process.argv.includes("--break=history")) { HISTORY.clear(); console.log("(깨기 시험 --break=history — 옛 판 확인을 비움)"); }
+if (BREAK_SF1) console.log("(깨기 시험 --break=speechform1 — 소리 꼴 첫 판(397f1e8 한글 꼴) 칸을 끔)");
 const bug027 = stale.filter((k) => NEW_RAW.has(k));
 const fromHistory = stale.filter((k) => !NEW_RAW.has(k) && HISTORY.has(k));
 const bug028 = BREAK_028 ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && BUG028.has(k));
 const staleSF = BREAK_SF ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && SPEECHFORM_OLD.has(k));
-const unexplained = stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k));
-console.log(`'둘 다 없음' ${stale.length} 확인 — (a) 앱이 글 그대로 요청(BUG-027, 고침) ${bug027.length} · (b) 옛 판(git ${commits.length}커밋의 직전 판 + HEAD, 강의 쪽 ${lessonAt.length})에서 소리 내던 글 ${fromHistory.length} · (c) BUG-028 옛 꼴(옛 판의 빗금 문장 두 꼴 글) ${bug028.length} · (d) 소리 꼴 옛 꼴(표 없이 돌린 글) ${staleSF.length} · 까닭 없음 ${unexplained.length}`);
+const staleSF1 = BREAK_SF1 ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k) && SPEECHFORM_1.has(k));
+const unexplained = stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k) && !staleSF1.includes(k));
+console.log(`'둘 다 없음' ${stale.length} 확인 — (a) 앱이 글 그대로 요청(BUG-027, 고침) ${bug027.length} · (b) 옛 판(git ${commits.length}커밋의 직전 판 + HEAD, 강의 쪽 ${lessonAt.length})에서 소리 내던 글 ${fromHistory.length} · (c) BUG-028 옛 꼴(옛 판의 빗금 문장 두 꼴 글) ${bug028.length} · (d) 소리 꼴 옛 꼴(표 없이 돌린 글) ${staleSF.length} · (e) 소리 꼴 첫 판(${SF1_REV} 한글 꼴) ${staleSF1.length} · 까닭 없음 ${unexplained.length}`);
 if (LIST) for (const k of staleSF) console.log(`  소리 꼴 옛 꼴 ${k} ← ${SPEECHFORM_OLD.get(k)}`);
+if (LIST) for (const k of staleSF1) console.log(`  소리 꼴 첫 판 ${k} ← ${SPEECHFORM_1.get(k)}`);
 if (LIST) for (const k of bug028) console.log(`  BUG-028 옛 꼴 ${k} ← ${BUG028.get(k)}`);
 for (const k of bug027) console.log(`  BUG-027 ${k}`);
 if (LIST) for (const k of fromHistory) console.log(`  옛 판 ${k} ← ${HISTORY.get(k)}`);
