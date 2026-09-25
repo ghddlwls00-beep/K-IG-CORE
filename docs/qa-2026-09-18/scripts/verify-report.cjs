@@ -21,7 +21,8 @@ const fs = require("fs");
 const path = require("path");
 const OUT = path.join(__dirname, "../out");
 const DOC = path.join(__dirname, "..");
-const REPORT = path.join(DOC, "K-IG_Commercial_Release_Readiness_Report.md");
+// REPORT_PATH: 깨기 시험용 — 일부러 망가뜨린 사본을 대어 볼 때만 씀.
+const REPORT = process.env.REPORT_PATH || path.join(DOC, "K-IG_Commercial_Release_Readiness_Report.md");
 
 const read = (f) => { try { return JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8")); } catch { return null; } };
 const text = fs.existsSync(REPORT) ? fs.readFileSync(REPORT, "utf8") : null;
@@ -174,6 +175,13 @@ const MUST_SAY = [
   { key: "도구 오류를 밝힘", re: /도구.{0,20}(오류|결함).{0,20}\d+건|철회/ },
 ];
 for (const m of MUST_SAY) (m.re.test(text) ? ok("한계 명시", m.key) : fail("한계가 적혀 있지 않음", m.key));
+
+// 9/17 감사에서 사장님 결정으로 넘어간 뒤 결정 기록이 없는 셋(2026-09-26 기록을 따라가 확인 — 최종관문-작업기록 '9/17 결정 대기 추적').
+// 최종 관문 첫 판이 관문 13 을 '6 · 7단계 소유자 결정 대기 0' 으로만 적어 이 셋을 빠뜨렸다. 사장님이 정하시면 이 줄을 고친다.
+const PENDING_0917 = /R-30[^\n]{0,200}R-32[^\n]{0,200}d194/;
+PENDING_0917.test(text) ? ok("결정 대기 명시", "R-30 pr054 · R-32 pr078 · L-74 d194 n6") : fail("결정 대기가 적혀 있지 않음", "9/17 에서 넘어온 R-30 pr054 · R-32 pr078 · L-74 d194 n6");
+const zeroOnly = text.split("\n").find((l) => /결정 대기 0/.test(l) && !/R-30/.test(l));
+zeroOnly ? fail("'결정 대기 0' 이라고만 적음", zeroOnly.slice(0, 90)) : ok("'결정 대기 0' 줄", "9/17 에서 넘어온 셋과 함께 적음");
 
 // ---------------------------------------------------------------- 결과
 console.log(`보고서 점검 — 통과 ${passes.length} · 문제 ${problems.length}\n`);
