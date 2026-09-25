@@ -25,9 +25,11 @@ let chunkBody = m[1];
 const a = src.indexOf("const squash = "), b = src.indexOf("// Extract Korean sentences fallback");
 if (a < 0 || b < 0 || b < a) throw new Error("LdLearningView.tsx 에서 pickHintsFor 를 못 찾음 — 코드 모양이 바뀜");
 let pickCode = src.slice(a, b);
-// 타입 표기만 지움
-pickCode = pickCode.replace(/\((\w+): string\): string\[\] =>/g, "($1) =>").replace(/\((\w+): string\)/g, "($1)");
-if (/:\s*string/.test(pickCode) || /:\s*string/.test(chunkBody)) throw new Error("지우지 못한 타입 표기가 남음");
+// 타입 표기만 지움 — 최종 관문 2026-09-25: 정규식((x: string) 꼴만)으로는 칩 규칙의 새 도우미(여러 인자 · 객체 형 · number[])를 못 지워,
+// 저장소의 TypeScript 변환기(transpileModule — 형만 지우고 글은 그대로 둠)로. 변환 뒤에도 형 표기가 남으면 멈춤.
+const ts = require(path.join(REPO, "node_modules/typescript"));
+pickCode = ts.transpileModule(pickCode, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None, removeComments: false } }).outputText;
+if (/:\s*(string|number|boolean)\b/.test(pickCode) || /:\s*string/.test(chunkBody)) throw new Error("지우지 못한 타입 표기가 남음");
 if (BREAK) {
   // 쪼개기 식 전체(.split(/…/))를 바꾼다 — 전에는 6단계 식 글자 그대로를 찾아 바꿔, 관문 15 에서 식이 바뀌자 '못 찾음' 으로 멈췄다(2026-09-24).
   //   --break           6단계 전 규칙(천 단위 쉼표에서도 자름)

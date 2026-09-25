@@ -60,19 +60,38 @@ const PREFIXES = ["dis", "non", "im", "in", "il", "ir", "un"];
 const ADD = ["un", "in", "im", "dis"];
 const words = (s) => String(s).toLowerCase().replace(/[’']/g, "'").split(/\s+/).map((w) => w.replace(/[^a-z']/g, "")).filter(Boolean);
 const isPrefixPair = (x, y) => PREFIXES.some((p) => x === p + y || y === p + x);
+// 재점검2(2026-09-25): 일부 부정 ↔ 전체 부정 탐침 — 'not every X' → 'no X' · 'not all of' → 'none of' · 'not everyone' → 'no one' · 'not always' → 'never' ·
+// 'no X'(대답 'No,' 아님) → 'not every X'
+function scopeProbes(toks, i, m, core, low, put, out, model) {
+  const cap = core[0] === core[0].toUpperCase();
+  const C = (w) => (cap ? w[0].toUpperCase() + w.slice(1) : w);
+  if (low === "not" && i + 2 < toks.length) {
+    const next = toks[i + 2].toLowerCase().replace(/[^a-z]/g, "");
+    const ofNext = toks[i + 4] && /^of$/i.test(toks[i + 4].replace(/[^A-Za-z]/g, ""));
+    const swap = { every: "no", all: ofNext ? "none" : "no", everyone: "no one", everybody: "nobody", everything: "nothing", always: "never" }[next];
+    if (swap) { const t = [...toks]; t[i] = m[1] + C(swap) + m[3]; t[i + 1] = ""; t[i + 2] = ""; out.push({ kind: "일부 → 전체 부정", text: t.join("").replace(/\s{2,}/g, " ") }); }
+  }
+  if (low === "no" && !(i === 0 && /^no\s*[,.!]/i.test(model)) && i + 2 < toks.length && !/^(matter|sooner|doubt|longer|more|one)$/i.test(toks[i + 2].replace(/[^A-Za-z]/g, ""))) put(C("not every"), "전체 → 일부 부정");
+}
 function probes(model) {
   const out = [];
   const toks = model.split(/(\s+)/);
   toks.forEach((tok, i) => {
     const m = tok.match(/^([^A-Za-z]*)([A-Za-z]+)([^A-Za-z]*)$/);
-    if (!m || m[2].length < 4) return;
+    if (!m) return;
     const core = m[2], low = core.toLowerCase();
     const put = (w, kind) => { const t = [...toks]; t[i] = m[1] + w + m[3]; out.push({ kind, text: t.join("") }); };
+    // 재점검2: 짧은 낱말(not · no)도 부정 범위 탐침은 만든다 — 아래 4글자 미만 건너뛰기 전에
+    if (low === "not" || low === "no") scopeProbes(toks, i, m, core, low, put, out, model);
+    if (m[2].length < 4) return;
     const p = PREFIXES.find((q) => low.startsWith(q) && low.length - q.length >= 4);
     if (p) put(core.slice(p.length), "접두어 뗌");
     for (const q of ADD) if (!low.startsWith(q)) put(q + core, "접두어 붙임");
     if (low === "unless") put(core[0] === "U" ? "If" : "if", "unless → if");
     if (low === "if" && /\bnot\b|n't\b/i.test(model)) put(core[0] === "I" ? "Unless" : "unless", "if → unless");
+    // 재점검2: 'none' · 'nobody' · 'nothing' · 'never'(4글자 이상)의 전체 → 일부 탐침
+    const back = { none: "not all", nobody: "not everybody", nothing: "not everything", never: "not always" }[low];
+    if (back) put(core[0] === core[0].toUpperCase() ? back[0].toUpperCase() + back.slice(1) : back, "전체 → 일부 부정");
     if (core.length >= 5) {
       put(core.slice(0, -1), "오타 끝 빼기");
       const k = Math.floor(core.length / 2);
@@ -112,10 +131,15 @@ for (const course of ["grammar1", "grammar2"]) {
         const leftover = (xs, ys) => { const rest = [...ys]; return xs.filter((x) => { const i = rest.indexOf(x); if (i < 0) return true; rest.splice(i, 1); return false; }); };
         const cw = words(c.text);
         let why = null;
+        const PARTIAL = ["every", "everyone", "everybody", "everything", "all", "both", "always"];
+        const TOTAL = ["no", "none", "nobody", "nothing", "neither", "never", "noone", "nowhere"];
+        const partialIn = (ws) => ws.some((w, i) => w === "not" && PARTIAL.includes(ws[i + 1]));
         for (const r of refs) {
           const rw = words(r); const lc = leftover(cw, rw), lr = leftover(rw, cw);
           if (lc.some((x) => lr.some((y) => isPrefixPair(x, y)))) { why = "접두어 짝"; break; }
           if (lc.includes("unless") || lr.includes("unless")) { why = "unless = if … not"; }
+          // 재점검2: 한쪽 'not every/all/…'(일부 부정) · 다른 쪽 전체 부정어가 맞지 않고 남음
+          if ((partialIn(cw) && lc.includes("not") && lr.some((w) => TOTAL.includes(w))) || (partialIn(rw) && lr.includes("not") && lc.some((w) => TOTAL.includes(w)))) why = why || "일부 ↔ 전체 부정";
         }
         changed.push({ course, id: p.id, n: a.n, kind: c.kind, text: c.text, before: gb, after: ga, explained: Boolean(why), why });
       }
@@ -129,6 +153,9 @@ const named = [
   ["This book is inexpensiv.", ["This book is inexpensive."], "partial"],
   ["If you study hard, you will never speak English fluently.", ["If you don't study hard, you will never speak English fluently.", "Unless you study hard, you will never speak English fluently."], "incorrect"],
   ["If you don't study hard, you will never speak English fluently.", ["Unless you study hard, you will never speak English fluently."], "partial"],
+  // 재점검2(2026-09-25) gh1-097 #79 — 'No boy …' 는 뜻이 다름(0점) · 'Not every boy died, did they?' 는 맞는 영어(만점) · 결정 5 B 의 'Every boy didn't …' 는 그대로 만점
+  ["No boy lost his life, did he?", ["Not every boy lost his life, did he?", "Every boy didn't lose his life, did he?", "Not every boy lost his life, did they?", "Every boy didn't lose his life, did they?", "Not every boy died, did he?", "Not every boy died, did they?"], "incorrect"],
+  ["Every boy didn't lose his life, did he?", ["Not every boy lost his life, did he?", "Every boy didn't lose his life, did he?"], "exact"],
 ].map(([u, refs, want]) => ({ u, before: A.gradeAgainstReferences(u, refs), after: B.gradeAgainstReferences(u, refs), want }));
 const unexplained = changed.filter((c) => !c.explained);
 const namedBad = named.filter((x) => x.after !== x.want);
