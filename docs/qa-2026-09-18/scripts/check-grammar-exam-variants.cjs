@@ -15,6 +15,11 @@
  * --mode prefix(최종 관문 2026-09-25 — 관문 15 채점 흠 ② '뜻이 반대면 0점' 고침이 운영에서 되는가): 강의마다 모범 답안의 낱말 하나를
  *   반대말 접두어 꼴로(happy → unhappy · expensive → inexpensive · …) 바꾼 답 셋까지 → ✕ 오답(0점), 'Unless …' 다른 정답이 있는 문항은
  *   'if … not' 의 not 을 뺀 답(모범이 Unless 면 If 로) → ✕ 오답(0점), 그리고 모범 답안 하나 → ✓ 정답. 고치기 전 채점기면 접두어 답이 △ 70점.
+ *
+ * --mode scope(2026-09-25 — af6a226 '일부 부정 ↔ 전체 부정' 채점이 운영에서 되는가 · 소유자 'No boy' 건): 모범 답안이 'Not every/all/…' 로
+ *   시작하는 문항마다 전체 부정으로 바꾼 답(Not every boy → No boy · Not all of → None of · Not all the → None of the · Not everybody → Nobody …)
+ *   → ✕ 오답(0점), 그리고 모범 답안 하나 → ✓ 정답. 고치기 전 채점기(1ef7d36)면 △ 70점(재점검2: gh1-097 → gh1-096 Q79 'No boy lost his life, did he?' 70점).
+ *   그런 문항이 있는 강의: GRAMMAR I gh1-016 · 060 · 068 · 096.
  */
 const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
@@ -55,6 +60,24 @@ function prefixPlan(exp) {
   return plan;
 }
 
+function scopeSwap(text) {
+  if (/^Not all of\b/i.test(text)) return text.replace(/^Not all of\b/i, "None of");
+  if (/^Not all the\b/i.test(text)) return text.replace(/^Not all the\b/i, "None of the");
+  const m = text.match(/^Not (every|all|everyone|everybody|everything|always)\b/i);
+  const to = { every: "No", all: "No", everyone: "No one", everybody: "Nobody", everything: "Nothing", always: "Never" };
+  return m ? to[m[1].toLowerCase()] + text.slice(m[0].length) : null;
+}
+function scopePlan(exp) {
+  const plan = [];
+  for (const a of exp.answers) {
+    const typed = scopeSwap(a.text);
+    if (typed) plan.push({ a, typed, want: /오답/, label: "일부 → 전체 부정" });
+  }
+  const ctl = exp.answers.find((a) => !plan.some((p) => p.a === a));
+  if (ctl) plan.push({ a: ctl, typed: ctl.text, want: /✓\s*정답/, label: "모범 답안" });
+  return plan;
+}
+
 (async () => {
   const browser = await H.startBrowser(CLONE, PORT);
   let bad = 0, done = 0;
@@ -67,6 +90,9 @@ function prefixPlan(exp) {
       if (MODE === "prefix") {
         plan = prefixPlan(exp);
         if (plan.filter((p) => /오답/.test(String(p.want))).length === 0) { console.log(`- ${id}: 반대말 짝 · unless 문항 없음 — 건너뜀`); continue; }
+      } else if (MODE === "scope") {
+        plan = scopePlan(exp);
+        if (plan.filter((p) => /오답/.test(String(p.want))).length === 0) { console.log(`- ${id}: 'Not every/all …' 로 시작하는 문항 없음 — 건너뜀`); continue; }
       } else {
         const simple = exp.answers.filter((a) => { const w = words(a); return w.length <= 5 && w.findIndex((x) => AUX.test(x)) === 1 && !/n't|\bnot\b/i.test(a.text); });
         if (simple.length < 4) { console.log(`- ${id}: 짧은 be 동사 문항이 ${simple.length}개뿐 — 건너뜀`); continue; }
