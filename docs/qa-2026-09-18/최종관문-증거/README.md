@@ -17,5 +17,5 @@
 | `gate13-full-deploy3.txt` | 13 | 6단계 검사 목록 본 32 · 깨기 23 |
 | `post-final.log` · `after-ab.log` · `final-tail.json` | — | 스윕 뒤 순서를 돌린 기록(끝 다시 돌기 목록 0 등) |
 | `owner-pending-0917-now.txt` | 13(고친 판) | 9/17 감사에서 사장님 결정으로 넘어간 L-74 · L-84 · L-80 · R-30 · R-32 문장의 지금 글(영어 · 한국어) — `scripts/l74-l84-now.cjs` |
-| `verify-report-break-0917-before.txt` · `-after.txt` | 14(고친 판) | verify-report 의 새 검사 둘('결정 대기 셋을 적었나' · '결정 대기 0 만 쓴 줄') — 고치기 전 보고서 문제 2 · exit 1 · 고친 판 망가뜨린 사본 둘 각 exit 1 · 진짜 판 통과 44 |
+| `verify-report-break-0917-before.txt` · `-after.txt` | 14(고친 판) | verify-report 의 새 검사 둘('결정 대기 셋을 적었나' · '결정 대기 0 만 쓴 줄') — 고치기 전 보고서 문제 2 · exit 1 · 고친 판 망가뜨린 사본 둘 각 exit 1 · 진짜 판 통과 44 · `-decided.txt`: 사장님 결정 '다 그대로' 뒤 검사를 '셋 + 결정' 으로 — 깨기 셋 모두 exit 1 · 진짜 판 통과 44 |
 | `scripts/` | — | 위 파일을 만든 스크래치 도구 — 돌린 판 그대로(경로는 이 컴퓨터 기준이라 옮기면 고쳐야 함) |
