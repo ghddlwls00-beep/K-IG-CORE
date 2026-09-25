@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, useRef, memo, useCallback } from "react";
 import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
 import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
 import { readingWordSpeech } from "@/lib/vocaSpeech";
+import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
@@ -419,7 +420,8 @@ export function ReadingLearningView({
     }
     stopSpeech();
     setPlayingSentence(idx);
-    speakText(text, {
+    // a Korean word written in romanization ('Jikji', 'hanji') is said in Korean (lessonSpeechForm — 소유자 결정 2026-09-25)
+    speakText(lessonSpeechForm(lessonKey, text), {
       lang: "en",
       rate: 0.95,
       onEnd: () => setPlayingSentence((curr) => (curr === idx ? null : curr)),

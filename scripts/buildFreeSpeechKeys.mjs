@@ -75,6 +75,9 @@ const { vocaSpeechForm, vocaWordSpeech, readingWordSpeech } = loadTsModule("src/
 const { getCollocation } = loadTsModule("src/lib/vocaUtils.ts");
 const { generateLiaisonPoints, firstSlashAlternative } = loadTsModule("src/lib/listeningUtils.ts");
 const { extractSentencesForAudio } = loadTsModule("src/lib/lessonAudioText.ts");
+// per-page spoken forms (src/lib/lessonSpeechForm.ts) — a Korean word written in romanization is said in Korean
+// (소유자 결정 2026-09-25; the free STUDENT s1-2 among them)
+const { lessonSpeechForm } = loadTsModule("src/lib/lessonSpeechForm.ts");
 
 for (const [name, fn] of Object.entries({
   normalizeUnifiedSpeechText,
@@ -86,6 +89,7 @@ for (const [name, fn] of Object.entries({
   firstSlashAlternative,
   vocaWordSpeech,
   readingWordSpeech,
+  lessonSpeechForm,
 })) {
   if (typeof fn !== "function") throw new Error(`${name} did not load — the free clip list would be wrong`);
 }
@@ -99,7 +103,7 @@ function isSpeakable(text) {
 const raw = new Set();
 const ldScripts = readJson(path.join(ROOT, "content", "ld_english_scripts.json")) || {};
 const dictionary = readJson(path.join(ROOT, "content", "voca_dictionary.json")) || {};
-const fns = { vocaSpeechForm, getCollocation, generateLiaisonPoints, extractSentencesForAudio, firstSlashAlternative, vocaWordSpeech, readingWordSpeech };
+const fns = { vocaSpeechForm, getCollocation, generateLiaisonPoints, extractSentencesForAudio, firstSlashAlternative, vocaWordSpeech, readingWordSpeech, lessonSpeechForm };
 let lessonsSeen = 0;
 
 for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {

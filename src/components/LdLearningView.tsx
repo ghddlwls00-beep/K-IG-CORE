@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Block } from "@/lib/types";
 import { useLanguage } from "./LanguageProvider";
 import { speakText, stopSpeech, playSentenceQueue, isSpeaking } from "@/lib/speech";
+import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import {
@@ -355,7 +356,8 @@ export function LdLearningView({
     }
     stopSpeech();
     setPlayingSentenceText(text);
-    speakText(text, {
+    // what to SAY where the written form would be read wrongly (d169 "1 1/2" — lessonSpeechForm); the playing state keeps the written text
+    speakText(lessonSpeechForm(lessonKey, text), {
       lang: "en",
       rate,
       onEnd: () => setPlayingSentenceText((curr) => (curr === text ? null : curr)),
@@ -373,7 +375,7 @@ export function LdLearningView({
     if (allEnglishSentences.length === 0) return;
 
     setSpeedPlaying(true);
-    playSentenceQueue(allEnglishSentences, {
+    playSentenceQueue(allEnglishSentences.map((s) => lessonSpeechForm(lessonKey, s)), {
       lang: "en",
       rate,
       startIndex: currentQueueIndex,

@@ -19,6 +19,10 @@ const listening = (() => {
 const vocaUtils = (() => {
   try { return loadTs(path.join(REPO, "src/lib/vocaUtils.ts")); } catch { return null; }
 })();
+// 쪽마다 정한 소리 꼴(src/lib/lessonSpeechForm.ts · spoken-texts 가 요구) — 로마자 한국어 낱말은 한글로(소유자 결정 2026-09-25) · d169 대분수
+const lessonSpeechMod = (() => {
+  try { return loadTs(path.join(REPO, "src/lib/lessonSpeechForm.ts")); } catch { return null; }
+})();
 const vocaDictionary = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(REPO, "content/voca_dictionary.json"), "utf8")); } catch { return null; }
 })();
@@ -316,7 +320,7 @@ function expected(course, id) {
    * control ever requests, so a changed Korean line showed up as a "missing clip".
    */
   // (spokenTexts throws when one of these src modules did not load — an empty clip list would pass every check)
-  const fns = { vocaSpeechForm: vocaSpeech && vocaSpeech.vocaSpeechForm, getCollocation: vocaUtils && vocaUtils.getCollocation, generateLiaisonPoints: listening && listening.generateLiaisonPoints, extractSentencesForAudio: lessonAudio.extractSentencesForAudio, firstSlashAlternative: listening && listening.firstSlashAlternative, vocaWordSpeech: vocaSpeech && vocaSpeech.vocaWordSpeech, readingWordSpeech: vocaSpeech && vocaSpeech.readingWordSpeech };
+  const fns = { vocaSpeechForm: vocaSpeech && vocaSpeech.vocaSpeechForm, getCollocation: vocaUtils && vocaUtils.getCollocation, generateLiaisonPoints: listening && listening.generateLiaisonPoints, extractSentencesForAudio: lessonAudio.extractSentencesForAudio, firstSlashAlternative: listening && listening.firstSlashAlternative, vocaWordSpeech: vocaSpeech && vocaSpeech.vocaWordSpeech, readingWordSpeech: vocaSpeech && vocaSpeech.readingWordSpeech, lessonSpeechForm: lessonSpeechMod && lessonSpeechMod.lessonSpeechForm };
   for (const t of spoken.spokenTexts({ course, id, lesson: d, pair: pairId ? { id: pairId, ...(pair || {}) } : null, ldScripts, dictionary: vocaDictionary || {}, fns })) addClip(t);
   /**
    * The exact words the tap-dictation expects, taken from the app's own generateWordBank rather

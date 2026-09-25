@@ -26,6 +26,7 @@ import { formatLessonPresentation } from "@/lib/curriculumPresentation";
 import { extractSentencesForAudio } from "@/lib/lessonAudioText";
 import { firstSlashAlternative } from "@/lib/listeningUtils";
 import { vocaWordSpeech } from "@/lib/vocaSpeech";
+import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
@@ -271,7 +272,9 @@ export default async function LessonPage({
     // how this course's items are spoken — STUDENT "He/She …" in its first form (BUG-028) ·
     // a VOCA heteronym in its card meaning under its own clip name (7-6)
     course === "student" ? firstSlashAlternative : course === "phonics" ? vocaWordSpeech : undefined,
-  );
+  // said as the course view says it where the written form would be read wrongly (lessonSpeechForm): a Korean word written in
+  // romanization in Korean (소유자 결정 2026-09-25) · LISTENING d169 "1 1/2" as "1 and a half"
+  ).map((text) => lessonSpeechForm(`${course}/${lesson.id}`, text));
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">

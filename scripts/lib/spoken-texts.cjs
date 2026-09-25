@@ -29,6 +29,12 @@
  * StudentLearningView 의 문장 재생 · 전체 재생 · 속도 바꿈, page.tsx 가 extractSentencesForAudio 에 넘기는 것과 같은 함수).
  * VOCA 단어 단추는 vocaSpeech vocaWordSpeech 로 말한다(7단계 7-6 · 소유자 결정 2026-09-24 — 발음이 뜻 따라 다른 20낱말은
  * `<낱말> ⟨<IPA>⟩` 로 새 클립 이름, 나머지는 vocaSpeechForm 그대로 — PhonicsLearningView playWord · playRow, 위 플레이어).
+ * 쪽마다 정한 소리 꼴(src/lib/lessonSpeechForm.ts lessonSpeechForm('<과정>/<쪽>', 글) — 화면 글은 그대로):
+ *   영어 문장 속 로마자 한국어 낱말(Gyeongju · Seoul · Chuseok …)은 한글로(소유자 결정 2026-09-25 — STUDENT 39 · GRAMMAR II 11 · READING 6) ·
+ *   LISTENING d169 '1 1/2 seconds' 는 '1 and a half'(빗금이 빈칸이 되어 '1 1 2' 로 합성되던 것 — 9/18 R24).
+ *   STUDENT 영어 문장 · GRAMMAR 영어 문항 · READING 문장 영어 · LISTENING 대본 영어 · 위 플레이어에 — 화면이 넘기는 것과 같은 자리
+ *   (STUDENT 과정 목록의 장 듣기 ChapterAudioBar 도 강의 화면과 같은 꼴). 한국어(STUDENT 해석) · 낱말 카드 · 연음 카드 · VOCA 에는 대지 않는다
+ *   (표에 없는 쪽은 그대로 — LISTENING d011 · d012 · d025 · d026 의 Kim 은 미국 사람이라 표에 없음).
  */
 const SPOKEN_COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
 const isKo = (s) => /[가-힣]/.test(String(s || ""));
@@ -67,12 +73,13 @@ function pairIdOf(course, id, index) {
  * 강의 쪽 하나가 소리 낼 수 있는 글.
  * @param {{course: string, id: string, lesson: object, pair?: object|null, ldScripts?: object, dictionary?: object,
  *          fns: {vocaSpeechForm: Function, getCollocation: Function, generateLiaisonPoints: Function, extractSentencesForAudio: Function,
- *                firstSlashAlternative: Function, vocaWordSpeech: Function}}} a
+ *                firstSlashAlternative: Function, vocaWordSpeech: Function, readingWordSpeech: Function, lessonSpeechForm: Function}}} a
  *   pair 는 그 쪽의 짝 강의(pairIdOf) — 위 플레이어 · GRAMMAR · READING 이 짝의 글을 쓴다.
  * @returns {string[]}
  */
 // readingWordSpeech — BUG-029(소유자 결정 2026-09-24 '읽기 카드도 화면 뜻대로 발음'): READING 단어 카드는 카드 뜻의 발음(ReadingLearningView playWordAudio)
-const FNS = ["vocaSpeechForm", "getCollocation", "generateLiaisonPoints", "extractSentencesForAudio", "firstSlashAlternative", "vocaWordSpeech", "readingWordSpeech"];
+// lessonSpeechForm — 쪽마다 정한 소리 꼴(src/lib/lessonSpeechForm.ts): 로마자 한국어 낱말은 한글로(소유자 결정 2026-09-25) · d169 대분수
+const FNS = ["vocaSpeechForm", "getCollocation", "generateLiaisonPoints", "extractSentencesForAudio", "firstSlashAlternative", "vocaWordSpeech", "readingWordSpeech", "lessonSpeechForm"];
 /** page.tsx 와 같은 선택 — 이 과정의 항목을 어떻게 말하나(위 플레이어에 넘김) */
 const speechFormFor = (course, fns) => (course === "student" ? fns.firstSlashAlternative : course === "phonics" ? fns.vocaWordSpeech : undefined);
 function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictionary = {}, fns }) {
@@ -81,30 +88,33 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
   }
   const out = [];
   const add = (t) => { if (typeof t === "string" && t.trim()) out.push(t); };
-  // 위 '전체 듣기' — page.tsx 와 같은 입력으로 그 함수를 그대로
+  // 영어 문장을 말하는 꼴 — 화면이 넘기는 것처럼 로마자 한국어 낱말은 한글로(이 쪽의 표만: '<과정>/<쪽>')
+  const lessonKey = `${course}/${id}`;
+  const en = (t) => (typeof t === "string" ? fns.lessonSpeechForm(lessonKey, t) : t);
+  // 위 '전체 듣기' — page.tsx 와 같은 입력으로 그 함수를 그대로(page.tsx 도 그 결과에 lessonSpeechForm)
   const audio = (lesson && Array.isArray(lesson.audio) ? lesson.audio : []).filter((a, i, all) => all.findIndex((x) => x.src === a.src) === i);
   if (course !== "student" || audio.length === 1) {
     const base = (s) => String(s).replace(/-1$/, "");
     const script = course === "ld" ? (ldScripts[base(id)] || (pair && pair.id ? ldScripts[base(pair.id)] : null) || null) : null;
     const reading = (lesson && lesson.readingSentences) || (pair && pair.readingSentences) || null;
-    for (const t of fns.extractSentencesForAudio(blocksOf(lesson), pair ? blocksOf(pair) : null, Boolean(lesson && lesson.variant === "script"), course, script, reading, speechFormFor(course, fns)) || []) add(t);
+    for (const t of fns.extractSentencesForAudio(blocksOf(lesson), pair ? blocksOf(pair) : null, Boolean(lesson && lesson.variant === "script"), course, script, reading, speechFormFor(course, fns)) || []) add(en(t));
   }
   if (course === "student") {
-    for (const it of itemsOf(lesson)) if (it && typeof it.text === "string") add(fns.firstSlashAlternative(it.text));
+    for (const it of itemsOf(lesson)) if (it && typeof it.text === "string") add(en(fns.firstSlashAlternative(it.text)));
     for (const b of blocksOf(lesson)) if (b && b.type === "paragraph" && b.lang === "ko") add(b.text);
   } else if (course === "grammar1" || course === "grammar2") {
-    for (const d of [lesson, pair]) for (const it of itemsOf(d)) if (it && it.text && !isKo(it.text)) add(cleanText(it.text));
+    for (const d of [lesson, pair]) for (const it of itemsOf(d)) if (it && it.text && !isKo(it.text)) add(en(cleanText(it.text)));
   } else if (course === "ld") {
     const base = String(id).replace(/-1$/, "");
     const rows = ldScripts[base] || (pair && pair.id ? ldScripts[String(pair.id).replace(/-1$/, "")] : null) || [];
     for (const r of rows) {
       if (!r || !r.en) continue;
-      add(r.en);
+      add(en(r.en));
       for (const card of fns.generateLiaisonPoints(String(r.en)) || []) if (card) add(card.original);
     }
   } else if (course === "reading") {
     const pick = (k) => (lesson && Array.isArray(lesson[k]) && lesson[k].length ? lesson[k] : (pair && Array.isArray(pair[k]) ? pair[k] : []));
-    for (const s of pick("readingSentences")) add(s && s.english);
+    for (const s of pick("readingSentences")) add(en(s && s.english));
     for (const v of pick("readingVocabulary")) if (v && v.word) add(fns.readingWordSpeech(v.word, v.korean));
   } else if (course === "phonics") {
     for (const w of gridWords(lesson)) {
