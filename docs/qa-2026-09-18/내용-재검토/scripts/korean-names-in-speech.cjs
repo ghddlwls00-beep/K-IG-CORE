@@ -35,6 +35,8 @@ const loadTs = (rel) => {
 const { SPOKEN_COURSES, spokenTexts, pairIdOf } = require(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
 const vs = loadTs("src/lib/vocaSpeech.ts"), vu = loadTs("src/lib/vocaUtils.ts"), lu = loadTs("src/lib/listeningUtils.ts"), la = loadTs("src/lib/lessonAudioText.ts");
 const fns = { vocaSpeechForm: vs.vocaSpeechForm, getCollocation: vu.getCollocation, generateLiaisonPoints: lu.generateLiaisonPoints, extractSentencesForAudio: la.extractSentencesForAudio, firstSlashAlternative: lu.firstSlashAlternative, vocaWordSpeech: vs.vocaWordSpeech, readingWordSpeech: vs.readingWordSpeech };
+// (수정 세션 2026-09-25) 고친 판은 spoken-texts 가 쪽마다 정한 소리 꼴 표를 요구함 — 그 판에 있으면 넘김(옛 판에는 없음)
+if (fs.existsSync(path.join(ROOT, "src", "lib", "lessonSpeechForm.ts"))) fns.lessonSpeechForm = loadTs("src/lib/lessonSpeechForm.ts").lessonSpeechForm;
 for (const [k, f] of Object.entries(fns)) if (typeof f !== "function") throw new Error(`${k} 못 불러옴 — 소리 내는 글 목록이 틀림`);
 // 생성기 normalizeText 와 같은 것(src/lib/unifiedSpeech.ts 와 맞춤) — 생성기 코드에서 읽어 와 비교한다(아래 sameNormalize)
 const normalizeText = (t) => t.replace(/\s*\/\s*/g, " ").replace(/\[[^\]]*\]/g, " ").replace(/:{2,}/g, " ").replace(/-{2,}/g, " ").replace(/[…]+/g, " ").replace(/\s*\|\s*/g, ", ").replace(/\(\s*\)/g, " ").replace(/\s+/g, " ").trim();
