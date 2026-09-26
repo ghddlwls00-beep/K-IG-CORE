@@ -222,9 +222,9 @@ export function VoiceSpeakingTester({
 
       {/* What was heard, and nothing about the target (resultView "transcript") */}
       {result && !isListening && resultView === "transcript" && (
-        <div className="rounded-lg bg-surface p-2 border border-line/60 text-[13px]">
+        <div className="rounded-lg bg-surface p-2 border border-line/60 text-[14px]">
           <span className="text-[12px] text-ink-faint block">인식된 내 음성:</span>
-          <p className="font-medium text-ink italic mt-0.5">&quot;{result.transcript}&quot;</p>
+          <p className="font-medium text-ink mt-0.5">&quot;{result.transcript}&quot;</p>
         </div>
       )}
 

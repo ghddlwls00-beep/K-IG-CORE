@@ -4,11 +4,12 @@
  *
  * What lives here: how ④ is cut into sets and when a sentence comes back, the tiles' grammar distractors,
  * the first-letter clue, and the shape of the practice state kept on the device
- * (localStorage `kig:passoff:work:<lessonKey>`). What does NOT: anything that crosses days — review, pass,
- * "내일 1순위" scheduling. The lesson only reports those (src/lib/passoffEvents.ts); the common learning engine
- * owns them (설계 §4, 공통-학습-엔진.md).
+ * (localStorage `kig:passoff:work:<lessonKey>`) with the steps that change it. What does NOT: anything that
+ * crosses days — review, pass, "내일 1순위" scheduling. The lesson only records those (src/lib/passoffLearning.ts);
+ * the common learning engine owns them (설계 §4, 공통-학습-엔진.md).
  */
 import type { WordTile } from "./listeningUtils";
+import type { PassoffHelp } from "./passoffLearning";
 
 /** ④ comes in sets of about six minutes (설계 §2 · §3) — usually 8~10 sentences. */
 export const SET_SECONDS = 360;
@@ -148,10 +149,21 @@ export function contrastTiles(
 // The practice state kept on this device — kig:passoff:work:<lessonKey>
 // ---------------------------------------------------------------------------
 
+/**
+ * The presentation on screen was already answered — "right" at its first try or "missed" — and not yet passed on
+ * with '다음'. Kept the moment it is answered, not at '다음': a reload that showed the answer would otherwise bring
+ * the same item back as new, and the answer just seen would pass as a first try (점검 2026-09-27). settleOpen
+ * passes it on when the lesson opens again.
+ */
+export type OpenResult = "right" | "missed" | null;
+
 export interface FormItemState {
   done: boolean;
   /** answered wrong at the first try, so it came back once at the end of ③ */
   requeued: boolean;
+  open: OpenResult;
+  /** "reveal" once its answer was shown — an answer after that carries it */
+  help: "none" | "reveal";
 }
 
 export interface ComposeItemState {
@@ -162,7 +174,13 @@ export interface ComposeItemState {
   tomorrow: boolean;
   /** the first try of the first presentation — the set's two-line score */
   first: { answer: string; verdict: string; reference: string } | null;
+  open: OpenResult;
+  /** the most help the sentence has had in this lesson (clue · tiles · the answer) — an answer after it carries it */
+  help: PassoffHelp;
 }
+
+export const newFormState = (): FormItemState => ({ done: false, requeued: false, open: null, help: "none" });
+export const newComposeState = (): ComposeItemState => ({ done: false, requeues: 0, tomorrow: false, first: null, open: null, help: "none" });
 
 export interface PassoffWork {
   v: 1;
@@ -213,9 +231,84 @@ export function frameParts(template: string): string[] {
   return String(template ?? "").split(/_{2,}/);
 }
 
+/** A stored queue while it still holds items to do; otherwise the items not done yet, in lesson order. */
+export function queueOf(stored: readonly string[] | null, ids: readonly string[], isDone: (id: string) => boolean): string[] {
+  const valid = new Set(ids);
+  const kept = (stored ?? []).filter((id) => valid.has(id) && !isDone(id));
+  return kept.length ? kept : ids.filter((id) => !isDone(id));
+}
+
+/** ③ an item passed on with '다음': missed at its first try → once more at the end of ③ (설계 §3); otherwise done. */
+export function formItemDone(w: PassoffWork, queue: readonly string[], id: string, firstTryRight: boolean): void {
+  const s = w.form[id] ?? newFormState();
+  const rest = queue.filter((x) => x !== id);
+  if (!firstTryRight && !s.requeued) {
+    s.requeued = true;
+    w.formQueue = [...rest, id];
+  } else {
+    s.done = true;
+    w.formQueue = rest;
+  }
+  s.open = null;
+  w.form[id] = s;
+}
+
+/**
+ * ④ · ⑤ a sentence passed on with '다음 문장': right on its own → done; wrong or helped → back REQUEUE_GAP sentences
+ * later, or — after MAX_REQUEUES comebacks — the engine's "내일 1순위", no longer holding the set open.
+ */
+export function composeItemDone(w: PassoffWork, list: "composeQueue" | "transferQueue", queue: readonly string[], id: string, success: boolean): void {
+  const s = w.compose[id] ?? newComposeState();
+  if (success) {
+    s.done = true;
+    w[list] = queue.filter((x) => x !== id);
+  } else if (s.requeues < MAX_REQUEUES) {
+    s.requeues += 1;
+    w[list] = requeue(queue, id);
+  } else {
+    s.done = true;
+    s.tomorrow = true;
+    w[list] = queue.filter((x) => x !== id);
+  }
+  s.open = null;
+  w.compose[id] = s;
+}
+
+/**
+ * Answers given but not passed on with '다음' before the learner left (a reload, a closed tab) — passed on now,
+ * as the button would have: the one whose answer was already shown comes back later instead of as new.
+ * `lists` are the ids of ③, of the ④ set on screen and of ⑤. Returns whether anything changed.
+ */
+export function settleOpen(w: PassoffWork, lists: { forms: readonly string[]; composeSet: readonly string[]; transfers: readonly string[] }): boolean {
+  let changed = false;
+  for (const id of lists.forms) {
+    const s = w.form[id];
+    if (!s?.open) continue;
+    formItemDone(w, queueOf(w.formQueue, lists.forms, (x) => Boolean(w.form[x]?.done)), id, s.open === "right");
+    changed = true;
+  }
+  for (const [list, ids] of [["composeQueue", lists.composeSet], ["transferQueue", lists.transfers]] as const) {
+    for (const id of ids) {
+      const s = w.compose[id];
+      if (!s?.open) continue;
+      composeItemDone(w, list, queueOf(w[list], ids, (x) => Boolean(w.compose[x]?.done)), id, s.open === "right");
+      changed = true;
+    }
+  }
+  for (const s of [...Object.values(w.form), ...Object.values(w.compose)]) {
+    if (!s.open) continue;
+    s.open = null; // an item no longer on any list (its set was left): nothing to pass on
+    changed = true;
+  }
+  return changed;
+}
+
 const isRecord = (v: unknown): v is Record<string, unknown> => Boolean(v) && typeof v === "object" && !Array.isArray(v);
 const idList = (v: unknown, known: ReadonlySet<string>): string[] | null =>
   Array.isArray(v) ? [...new Set(v.filter((x): x is string => typeof x === "string" && known.has(x)))] : null;
+const openOf = (v: unknown): OpenResult => (v === "right" || v === "missed" ? v : null);
+const HELPS: readonly PassoffHelp[] = ["none", "hint", "tiles", "reveal"];
+const helpOf = (v: unknown): PassoffHelp => (HELPS.includes(v as PassoffHelp) ? (v as PassoffHelp) : "none");
 
 /**
  * Stored work, checked item by item against the ids the lesson has now — an item id that is gone (or never
@@ -232,7 +325,9 @@ export function sanitizeWork(raw: unknown, ids: { anchors: string[]; forms: stri
   work.ruleCheck = raw.ruleCheck === true;
   if (isRecord(raw.form)) {
     for (const [id, s] of Object.entries(raw.form)) {
-      if (forms.has(id) && isRecord(s)) work.form[id] = { done: s.done === true, requeued: s.requeued === true };
+      if (forms.has(id) && isRecord(s)) {
+        work.form[id] = { done: s.done === true, requeued: s.requeued === true, open: openOf(s.open), help: s.help === "reveal" ? "reveal" : "none" };
+      }
     }
   }
   work.formQueue = idList(raw.formQueue, forms);
@@ -247,6 +342,8 @@ export function sanitizeWork(raw: unknown, ids: { anchors: string[]; forms: stri
         requeues: typeof s.requeues === "number" && s.requeues >= 0 ? Math.min(MAX_REQUEUES, Math.floor(s.requeues)) : 0,
         tomorrow: s.tomorrow === true,
         first,
+        open: openOf(s.open),
+        help: helpOf(s.help),
       };
     }
   }

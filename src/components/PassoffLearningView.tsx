@@ -5,15 +5,26 @@ import type { Block } from "@/lib/types";
 import type { PassoffAnchor, PassoffFormItem, PassoffFrameBlock, PassoffProduceItem, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { speakText, stopSpeech } from "@/lib/speech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
-import { cutSets, emptyWork, requeue, sanitizeWork, MAX_REQUEUES, type ComposeItemState, type PassoffWork } from "@/lib/passoffLesson";
-import { emitPassoffLessonDone, PASSOFF_COURSE, type PassoffItemKind } from "@/lib/passoffEvents";
+import {
+  composeItemDone,
+  cutSets,
+  emptyWork,
+  formItemDone,
+  newComposeState,
+  newFormState,
+  queueOf,
+  sanitizeWork,
+  settleOpen,
+  type PassoffWork,
+} from "@/lib/passoffLesson";
+import { notePassoffLessonDone, PASSOFF_COURSE, strongerHelp, type PassoffItemKind } from "@/lib/passoffLearning";
 import { useProgress } from "./ProgressProvider";
 import { AnchorsStep } from "./passoff/AnchorsStep";
 import { RuleStep } from "./passoff/RuleStep";
 import { FormStep } from "./passoff/FormStep";
 import { ComposeStep } from "./passoff/ComposeStep";
 import { WrapUpStep } from "./passoff/WrapUpStep";
-import type { ComposeOutcome } from "./passoff/ComposeCard";
+import type { ComposeReport } from "./passoff/ComposeCard";
 import { CheckIcon, TextSizeIcon, spokenOf, tone, type FontSize, type Speaker } from "./passoff/ui";
 
 /**
@@ -25,13 +36,17 @@ import { CheckIcon, TextSizeIcon, spokenOf, tone, type FontSize, type Speaker } 
  * only what the steps draw (src/lib/passoffView.ts). On a free preview lesson the server leaves out the paid
  * STUDENT sentences and passes how many there are (`lockedExtraCount`).
  *
- * Practice state stays on this device (localStorage kig:passoff:work:<lessonKey>, src/lib/passoffLesson.ts). When
- * all five steps are done the lesson is marked complete in the course list (ProgressProvider) and announced for
- * the common learning engine (src/lib/passoffEvents.ts) — review across days is the engine's, not this page's.
+ * Practice state stays on this device (localStorage kig:passoff:work:<lessonKey>, src/lib/passoffLesson.ts) —
+ * an answer is kept the moment it is given, and one not passed on with '다음' before the learner left is passed on
+ * when the lesson opens again (settleOpen). Every answer and, when all five steps are done, the lesson itself go
+ * to the common learning engine (src/lib/passoffLearning.ts) — review across days is the engine's, not this
+ * page's — and the lesson is marked complete in the course list (ProgressProvider).
  *
- * The step tabs carry "Step N" (read by LessonStepNavigation below the lesson, like every course's tabs). Design
- * rules: docs/디자인-규칙.md — tokens, line icons, 44px targets, 16px inputs; the common frame's step tabs and end
- * bar replace this header once main is merged (설계 §15).
+ * The step tabs carry "Step N": LessonStepNavigation, the '← 이전 Step · 다음 Step →' bar below the lesson, finds
+ * them by it and follows the ones it sees CLICKED — so every step change this view makes itself (a step's own
+ * '다음 단계', coming back to the first unfinished step) goes through that step's tab (goStep). Design rules:
+ * docs/디자인-규칙.md — tokens, line icons, 44px targets, 16px inputs; the common frame's step tabs and end bar
+ * replace this header once main is merged (설계 §15).
  */
 const STEPS = [
   { short: "예문", title: "예문 떠올리기" },
@@ -75,11 +90,13 @@ function stepsDone(c: LessonContent, w: PassoffWork): boolean[] {
   ];
 }
 
-/** A stored queue while it still holds items to do; otherwise the items not done yet, in lesson order. */
-function queueOf(stored: string[] | null, items: { id: string }[], isDone: (id: string) => boolean): string[] {
-  const valid = new Set(items.map((i) => i.id));
-  const kept = (stored ?? []).filter((id) => valid.has(id) && !isDone(id));
-  return kept.length ? kept : items.filter((i) => !isDone(i.id)).map((i) => i.id);
+/** ④'s set on screen (a stored index past the last set means the last one). */
+const setIndexOf = (c: LessonContent, w: PassoffWork) => Math.min(w.composeSet, Math.max(0, c.sets.length - 1));
+
+/** How a step change the view makes itself should look: scrolled to the steps, and the new step's heading focused. */
+interface StepMove {
+  scroll: boolean;
+  focus: boolean;
 }
 
 export function PassoffLearningView({
@@ -110,6 +127,12 @@ export function PassoffLearningView({
   const [speed, setSpeed] = useState<1 | 0.85>(1);
   const [showSettings, setShowSettings] = useState(false);
   const topRef = useRef<HTMLDivElement | null>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const headingRefs = useRef<(HTMLHeadingElement | null)[]>([]);
+  // a tab clicked by the view itself (goStep) — how that move looks; null for the learner's own click
+  const tabMove = useRef<StepMove | null>(null);
+  // the step whose heading takes the focus once it is on screen
+  const focusStep = useRef<number | null>(null);
 
   // ── practice state on this device
   const storageKey = `kig:passoff:work:${lessonKey}`;
@@ -126,11 +149,25 @@ export function PassoffLearningView({
     } catch {
       // private window or blocked storage: the lesson works, and forgets on leaving
     }
+    // an answer given but not passed on with '다음' before leaving: passed on now, as the button would have
+    const onScreenSet = (content.sets[setIndexOf(content, next)] ?? []).map((p) => p.id);
+    if (settleOpen(next, { forms: ids.forms, composeSet: onScreenSet, transfers: content.transfers.map((t) => t.id) })) acted.current = true;
     setWork(next);
     // come back to the first step not finished yet
     const firstOpen = stepsDone(content, next).findIndex((d) => !d);
-    setStep(firstOpen < 0 ? 4 : firstOpen);
+    const start = firstOpen < 0 ? 4 : firstOpen;
+    setStep(start);
     setRestored(true);
+    // …and tell the bar below the lesson through that step's tab. Its click listener starts after this effect
+    // (it is later in the page), so the click waits a frame.
+    const frame = window.requestAnimationFrame(() => {
+      const tab = tabRefs.current[start];
+      if (!tab) return;
+      tabMove.current = { scroll: false, focus: false };
+      tab.click();
+      tabMove.current = null;
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, [storageKey, ids, content]);
 
   useEffect(() => {
@@ -188,36 +225,66 @@ export function PassoffLearningView({
   const done = useMemo(() => stepsDone(content, work), [content, work]);
   const allDone = done.every(Boolean);
   const composeDone = (id: string) => Boolean(work.compose[id]?.done);
-  const setIndex = Math.min(work.composeSet, Math.max(0, content.sets.length - 1));
-  const formQueue = queueOf(work.formQueue, content.forms, (id) => Boolean(work.form[id]?.done));
-  const composeQueue = queueOf(work.composeQueue, content.sets[setIndex] ?? [], composeDone);
-  const transferQueue = queueOf(work.transferQueue, content.transfers, composeDone);
+  const setIndex = setIndexOf(content, work);
+  const onScreenSet = (content.sets[setIndex] ?? []).map((p) => p.id);
+  const transferIds = content.transfers.map((t) => t.id);
+  const formQueue = queueOf(work.formQueue, ids.forms, (id) => Boolean(work.form[id]?.done));
+  const composeQueue = queueOf(work.composeQueue, onScreenSet, composeDone);
+  const transferQueue = queueOf(work.transferQueue, transferIds, composeDone);
 
-  function goStep(next: number) {
+  // the new step's heading takes the focus when a button inside the old step moved there — that button is now hidden
+  useEffect(() => {
+    if (focusStep.current !== step) return;
+    focusStep.current = null;
+    headingRefs.current[step]?.focus({ preventScroll: true });
+  }, [step]);
+
+  /** What a step tab's click does. */
+  function showStep(next: number, move: StepMove) {
+    if (move.focus) {
+      if (next === step) headingRefs.current[next]?.focus({ preventScroll: true });
+      else focusStep.current = next;
+    }
     setStep(next);
     const top = topRef.current;
-    if (top) window.scrollTo({ top: Math.max(0, top.getBoundingClientRect().top + window.scrollY - 72), behavior: "smooth" });
+    if (move.scroll && top) window.scrollTo({ top: Math.max(0, top.getBoundingClientRect().top + window.scrollY - 72), behavior: "smooth" });
   }
 
-  function composeDoneWith(list: "composeQueue" | "transferQueue") {
-    return (id: string, outcome: ComposeOutcome, queue: string[]) =>
-      update((w) => {
-        const s: ComposeItemState = w.compose[id] ?? { done: false, requeues: 0, tomorrow: false, first: null };
-        if (!s.first && outcome.first) s.first = outcome.first;
-        if (outcome.success) {
-          s.done = true;
-          w[list] = queue.filter((x) => x !== id);
-        } else if (s.requeues < MAX_REQUEUES) {
-          s.requeues += 1;
-          w[list] = requeue(queue, id);
-        } else {
-          // three comebacks and still not on its own: the engine's "내일 1순위" — it no longer holds the set open
-          s.done = true;
-          s.tomorrow = true;
-          w[list] = queue.filter((x) => x !== id);
-        }
-        w.compose[id] = s;
-      });
+  /** A step change the view makes itself — through the step's tab, so the bar below the lesson follows. */
+  function goStep(next: number, move: StepMove = { scroll: true, focus: true }) {
+    const tab = tabRefs.current[next];
+    if (!tab) {
+      showStep(next, move);
+      return;
+    }
+    tabMove.current = move;
+    tab.click();
+    tabMove.current = null;
+  }
+
+  function composeReport(list: "composeQueue" | "transferQueue"): ComposeReport {
+    return {
+      firstTry: (id, { right, first }) =>
+        update((w) => {
+          const s = w.compose[id] ?? newComposeState();
+          if (!s.first && first) s.first = first;
+          s.open = right ? "right" : "missed";
+          w.compose[id] = s;
+        }),
+      help: (id, help) =>
+        update((w) => {
+          const s = w.compose[id] ?? newComposeState();
+          s.help = strongerHelp(s.help, help);
+          w.compose[id] = s;
+        }),
+      done: (id, outcome, queue) =>
+        update((w) => {
+          const s = w.compose[id] ?? newComposeState();
+          if (!s.first && outcome.first) s.first = outcome.first;
+          w.compose[id] = s;
+          composeItemDone(w, list, queue, id, outcome.success);
+        }),
+    };
   }
 
   // ── the lesson is finished: once, after the learner's own last action (never on a restore)
@@ -233,8 +300,11 @@ export function PassoffLearningView({
       ...content.transfers.map((t) => ({ key: t.id, kind: "transfer" as const })),
       ...content.forms.map((f) => ({ key: f.id, kind: f.kind })),
     ];
-    const tomorrowFirst = ids.compose.filter((id) => work.compose[id]?.tomorrow);
-    emitPassoffLessonDone({ lessonId, entries, tomorrowFirst });
+    notePassoffLessonDone(
+      lessonId,
+      entries,
+      ids.compose.filter((id) => work.compose[id]?.tomorrow),
+    );
   }, [restored, allDone, work.lessonDone, work.compose, update, isCompleted, toggleComplete, lessonId, content, ids]);
 
   const stepsLeft = done.flatMap((d, i) => (d ? [] : [i]));
@@ -250,8 +320,11 @@ export function PassoffLearningView({
             return (
               <button
                 key={s.short}
+                ref={(node) => {
+                  tabRefs.current[i] = node;
+                }}
                 type="button"
-                onClick={() => goStep(i)}
+                onClick={() => showStep(i, tabMove.current ?? { scroll: true, focus: false })}
                 aria-current={current ? "step" : undefined}
                 aria-label={`${i + 1}단계 ${s.title}${done[i] ? " · 마침" : ""}`}
                 className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-xl border px-2.5 text-[14px] transition-colors ${
@@ -322,7 +395,12 @@ export function PassoffLearningView({
       ) : null}
 
       <section hidden={step !== 0} aria-labelledby="passoff-step-1" className="flex flex-col gap-3">
-        <StepHeading n={1} />
+        <StepHeading
+          n={1}
+          headingRef={(node) => {
+            headingRefs.current[0] = node;
+          }}
+        />
         <AnchorsStep
           anchors={content.anchors}
           revealed={work.revealed}
@@ -339,10 +417,16 @@ export function PassoffLearningView({
       </section>
 
       <section hidden={step !== 1} aria-labelledby="passoff-step-2" className="flex flex-col gap-3">
-        <StepHeading n={2} />
+        <StepHeading
+          n={2}
+          headingRef={(node) => {
+            headingRefs.current[1] = node;
+          }}
+        />
         <RuleStep
           rule={content.rule}
           anchors={content.anchors}
+          revealed={work.revealed}
           discovery={work.discovery}
           onDiscovery={(option) =>
             update((w) => {
@@ -356,39 +440,50 @@ export function PassoffLearningView({
             })
           }
           font={font}
+          onGoAnchors={() => goStep(0)}
           onNext={() => goStep(2)}
         />
       </section>
 
       <section hidden={step !== 2} aria-labelledby="passoff-step-3" className="flex flex-col gap-3">
-        <StepHeading n={3} />
+        <StepHeading
+          n={3}
+          headingRef={(node) => {
+            headingRefs.current[2] = node;
+          }}
+        />
         <FormStep
           items={content.forms}
           queue={formQueue}
           lessonId={lessonId}
           font={font}
-          requeuedIds={new Set(Object.entries(work.form).filter(([, s]) => s.requeued).map(([id]) => id))}
-          onItemDone={(id, firstTryRight) =>
+          states={work.form}
+          onItemFirstTry={(id, right) =>
             update((w) => {
-              const s = w.form[id] ?? { done: false, requeued: false };
-              const rest = formQueue.filter((x) => x !== id);
-              if (!firstTryRight && !s.requeued) {
-                // missed at its first try: once more at the end of ③ (설계 §3)
-                s.requeued = true;
-                w.formQueue = [...rest, id];
-              } else {
-                s.done = true;
-                w.formQueue = rest;
-              }
+              const s = w.form[id] ?? newFormState();
+              s.open = right ? "right" : "missed";
               w.form[id] = s;
             })
           }
+          onItemShown={(id) =>
+            update((w) => {
+              const s = w.form[id] ?? newFormState();
+              s.help = "reveal";
+              w.form[id] = s;
+            })
+          }
+          onItemDone={(id, firstTryRight) => update((w) => formItemDone(w, formQueue, id, firstTryRight))}
           onNext={() => goStep(3)}
         />
       </section>
 
       <section hidden={step !== 3} aria-labelledby="passoff-step-4" className="flex flex-col gap-3">
-        <StepHeading n={4} />
+        <StepHeading
+          n={4}
+          headingRef={(node) => {
+            headingRefs.current[3] = node;
+          }}
+        />
         <ComposeStep
           sets={content.sets}
           setIndex={setIndex}
@@ -398,7 +493,7 @@ export function PassoffLearningView({
           font={font}
           speaker={speaker}
           ruleTitle={content.rule?.title}
-          onPresentationDone={composeDoneWith("composeQueue")}
+          report={composeReport("composeQueue")}
           onNextSet={() =>
             update((w) => {
               w.composeSet = setIndex + 1;
@@ -410,7 +505,12 @@ export function PassoffLearningView({
       </section>
 
       <section hidden={step !== 4} aria-labelledby="passoff-step-5" className="flex flex-col gap-3">
-        <StepHeading n={5} />
+        <StepHeading
+          n={5}
+          headingRef={(node) => {
+            headingRefs.current[4] = node;
+          }}
+        />
         <WrapUpStep
           transfers={content.transfers}
           queue={transferQueue}
@@ -424,7 +524,7 @@ export function PassoffLearningView({
           speaker={speaker}
           stepsLeft={stepsLeft}
           lessonDone={work.lessonDone}
-          onPresentationDone={composeDoneWith("transferQueue")}
+          report={composeReport("transferQueue")}
           onCheckRight={() =>
             update((w) => {
               w.wrapCheck = true;
@@ -435,7 +535,7 @@ export function PassoffLearningView({
               w.frame = values;
             })
           }
-          onGoStep={goStep}
+          onGoStep={(s) => goStep(s)}
           onReset={() => {
             acted.current = false;
             try {
@@ -452,11 +552,12 @@ export function PassoffLearningView({
   );
 }
 
-function StepHeading({ n }: { n: number }) {
+/** A step's title — focusable (tabIndex -1) so that moving on from a button inside the last step lands here. */
+function StepHeading({ n, headingRef }: { n: number; headingRef: (node: HTMLHeadingElement | null) => void }) {
   return (
     <div className="flex items-baseline gap-2">
       <span className="text-[14px] font-semibold tabular-nums text-primary">{n}단계</span>
-      <h2 id={`passoff-step-${n}`} className="text-[18px] font-bold text-ink">
+      <h2 id={`passoff-step-${n}`} tabIndex={-1} ref={headingRef} className="text-[18px] font-bold text-ink">
         {STEPS[n - 1].title}
       </h2>
     </div>

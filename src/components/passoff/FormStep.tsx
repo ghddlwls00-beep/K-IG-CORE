@@ -3,20 +3,24 @@
 import { useRef, useState } from "react";
 import type { PassoffFormItem } from "@/lib/passoffTypes";
 import { expectedLabel, gradeChoice, gradeSelect, gradeShort, hasHangul } from "@/lib/passoffGrading";
-import { emitPassoffAttempt } from "@/lib/passoffEvents";
+import { notePassoffAttempt } from "@/lib/passoffLearning";
+import type { FormItemState } from "@/lib/passoffLesson";
 import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, CheckIcon, tone, type FontSize } from "./ui";
 
 /**
  * ③ 형태 찾기 4~6문제 (설계 §3) — one item at a time: tap the words (and give each its label), pick an option, or
  * type a word or two. Graded at once and deterministically (src/lib/passoffGrading.ts). A miss gets one more
  * try, then the answer and why; an item missed at its first try comes back once at the end of the step.
+ * The first try and a shown answer are kept at once (onItemFirstTry · onItemShown), not only at '다음'.
  */
 export function FormStep({
   items,
   queue,
   lessonId,
   font,
-  requeuedIds,
+  states,
+  onItemFirstTry,
+  onItemShown,
   onItemDone,
   onNext,
 }: {
@@ -25,8 +29,10 @@ export function FormStep({
   queue: string[];
   lessonId: string;
   font: FontSize;
-  /** items already sent back once */
-  requeuedIds: ReadonlySet<string>;
+  /** each item's state (sent back once · its answer shown) */
+  states: Readonly<Record<string, FormItemState>>;
+  onItemFirstTry: (id: string, right: boolean) => void;
+  onItemShown: (id: string) => void;
   onItemDone: (id: string, firstTryRight: boolean) => void;
   onNext: () => void;
 }) {
@@ -55,7 +61,7 @@ export function FormStep({
     );
   }
 
-  const again = requeuedIds.has(current.id);
+  const again = Boolean(states[current.id]?.requeued);
   return (
     <div className="flex flex-col gap-4">
       <p className="text-[14px] tabular-nums text-ink-soft">
@@ -67,7 +73,10 @@ export function FormStep({
         item={current}
         lessonId={lessonId}
         firstPresentation={!again}
+        answerSeen={states[current.id]?.help === "reveal"}
         font={font}
+        onFirstTry={(right) => onItemFirstTry(current.id, right)}
+        onShown={() => onItemShown(current.id)}
         onDone={(firstTryRight) => onItemDone(current.id, firstTryRight)}
       />
     </div>
@@ -80,13 +89,20 @@ function FormItemCard({
   item,
   lessonId,
   firstPresentation,
+  answerSeen,
   font,
+  onFirstTry,
+  onShown,
   onDone,
 }: {
   item: PassoffFormItem;
   lessonId: string;
   firstPresentation: boolean;
+  /** its answer was shown before (the first presentation missed twice): this presentation's answers carry "reveal" */
+  answerSeen: boolean;
   font: FontSize;
+  onFirstTry: (right: boolean) => void;
+  onShown: () => void;
   onDone: (firstTryRight: boolean) => void;
 }) {
   const [phase, setPhase] = useState<Phase>("answer");
@@ -107,20 +123,30 @@ function FormItemCard({
 
   function record(correct: boolean, answer?: string) {
     const first = tries === 0;
-    if (first) setFirstRight(correct);
-    emitPassoffAttempt({
+    if (first) {
+      setFirstRight(correct);
+      onFirstTry(correct);
+    }
+    // the help taken BEFORE this answer: "한 번 더" is not help; the answer shown in an earlier presentation is
+    notePassoffAttempt({
       lessonId,
       itemId: item.id,
       kind: item.kind,
       correct,
-      help: !correct && tries >= 1 ? "reveal" : "none",
+      help: answerSeen ? "reveal" : "none",
       mode: item.kind === "short" ? "typed" : "tap",
       firstTry: first && firstPresentation,
-      answer: correct ? undefined : answer,
+      answer,
     });
     setTries((t) => t + 1);
-    if (correct) setPhase("right");
-    else setPhase(tries >= 1 ? "shown" : "retry");
+    if (correct) {
+      setPhase("right");
+    } else if (tries >= 1) {
+      setPhase("shown");
+      onShown();
+    } else {
+      setPhase("retry");
+    }
   }
 
   function checkSelect() {
@@ -199,7 +225,7 @@ function FormItemCard({
                   aria-pressed={on}
                   disabled={settled}
                   onClick={() => toggleToken(i)}
-                  className={`inline-flex min-h-11 flex-col items-center justify-center rounded-xl border px-3 py-1 ${FONT[font].text} transition-colors disabled:cursor-default ${
+                  className={`inline-flex min-h-11 min-w-11 flex-col items-center justify-center rounded-xl border px-3 py-1 ${FONT[font].text} transition-colors disabled:cursor-default ${
                     isAnswer
                       ? `${tone.successBorder} border-2 font-semibold text-ink`
                       : on
@@ -232,7 +258,7 @@ function FormItemCard({
                       setLabels((prev) => ({ ...prev, [labelFor]: l }));
                       setLabelFor(null);
                     }}
-                    className={`min-h-11 rounded-xl border px-3 text-[14px] transition-colors ${
+                    className={`min-h-11 min-w-11 rounded-xl border px-3 text-[14px] transition-colors ${
                       labels[labelFor] === l ? "border-line-strong bg-sunken font-semibold text-ink" : "border-line text-ink hover:bg-sunken"
                     }`}
                   >
@@ -272,7 +298,7 @@ function FormItemCard({
                   type="button"
                   disabled={settled || isWrong}
                   onClick={() => chooseOption(i)}
-                  className={`inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors disabled:cursor-default ${
+                  className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors disabled:cursor-default ${
                     isAnswer ? `${tone.successBorder} font-semibold text-ink` : isWrong ? "border-line text-ink-faint line-through" : "border-line text-ink hover:bg-sunken"
                   }`}
                 >

@@ -9,8 +9,17 @@
  * dropped, contractions expanded on BOTH sides ("I'm" = "I am"), the learner's `'d` tried as would and as had,
  * "girlfriend" = "girl friend" but "maybe" ≠ "may be". That file is not changed and not imported: its verify
  * script transpiles it alone, and a change there must not move this course's verdicts (or the other way round).
- * Two additions here: NFKC first (a Korean keyboard's full-width "Ｉ ａｍ"), and a hyphen or dash between words
- * is a word break ("4th-grade" = "4th grade").
+ * What differs here, on purpose:
+ *   - NFKC first (a Korean keyboard's full-width "Ｉ ａｍ"), and a hyphen or dash between words is a word break
+ *     ("4th-grade" = "4th grade").
+ *   - A TYPED answer keeps an apostrophe inside a word: "its" ≠ "it's", "were" ≠ "we're", "ones" ≠ "one's".
+ *     Each is a word of its own and the confusion is what a grammar course marks wrong — GRAMMAR drops every
+ *     apostrophe, which let "Were good friends." pass for "We're good friends." (점검 2026-09-27). A MICROPHONE
+ *     answer drops them as GRAMMAR does: a recogniser cannot hear an apostrophe.
+ *   - `'s` is read like `'d`: "has" before been · got · gotten · had ("She's been" = "She has been", so "She is
+ *     been" is wrong); before another participle it can be either ("It's broken" · "He's broken it") — a
+ *     learner's is tried both ways, a reference's is read as the item spells it elsewhere (referenceForms);
+ *     "is" otherwise.
  *
  * THE ORDER (§8):
  *   1. Hangul in the answer → "hangul" ("영어 자판으로 바꿔 주세요"), not an attempt.
@@ -18,10 +27,13 @@
  *      only by a contraction ("Yes, it's.") — compared as typed: case and punctuation ignored, contractions
  *      NOT expanded. Checked before the accepted answers, because expanding would make it equal to one.
  *   3. The model answer or an accepted answer, after normalising → correct.
- *   4. A spelling slip → "typo" (correct, with a spelling mark): apostrophes left out ("Im", "dont" — never
- *      one ADDED, its/it's), or one slip of one letter in one content word of five letters or more — never in
- *      a target word, a function word, a negation, a number or an ending (walk/walks, like/liked — those are
- *      grammar), and never when a target group is missing.
+ *   4. A spelling slip → "typo" (correct, with a spelling mark), and only when no target group is missing:
+ *      a contraction typed without its apostrophe that is no other word ("dont", "Hes" — so "Im" for a lesson
+ *      whose target is 'm is wrong, and "its" · "were" · "ones" are never a slip), or one slip of one letter in
+ *      one content word of five letters or more — never in a target word, a function word, a negation, a
+ *      number, an ending (walk/walks, like/liked), two forms of one word (forget/forgot, broke/broken,
+ *      woman/women) or two look-alike words (bought/brought, later/latter): those are grammar or a different
+ *      word. A microphone answer keeps GRAMMAR's leniency for apostrophes (a slip, before the targets).
  *   5. Anything else is WRONG — there is no partial credit here ("partial 은 정답이 아님"): a wrong function
  *      word is the lesson's point. What comes back tells the learner where: the target groups missing
  *      (`targets`, any-of), the first error pattern the answer contains (word boundaries, same normalising),
@@ -31,8 +43,20 @@
  */
 
 // ---------------------------------------------------------------------------
-// Normalising — copied from grammarGrading.ts (2026-09-27); keep the two in step by hand.
+// Normalising — copied from grammarGrading.ts (2026-09-27); keep the two in step by hand (differences above).
 // ---------------------------------------------------------------------------
+
+/** "keep": a typed answer — an apostrophe inside a word stays (its ≠ it's). "drop": a microphone's — none stays. */
+type Apostrophes = "keep" | "drop";
+
+/** How one text is read. */
+interface Reading {
+  /** an ambiguous `'d` (before come · read · put …): would or had — left as written when not given */
+  d?: "would" | "had";
+  /** an ambiguous `'s` (before a participle other than been · got · gotten · had): is (the default) or has */
+  s?: "is" | "has";
+  apostrophes?: Apostrophes;
+}
 
 const CONTRACTIONS: [RegExp, string][] = [
   [/\bcan't\b/g, "can not"],
@@ -44,9 +68,19 @@ const CONTRACTIONS: [RegExp, string][] = [
   [/\b(you|we|they)'re\b/g, "$1 are"],
   [/\b(i|you|we|they|could|would|should|might|must)'ve\b/g, "$1 have"],
   [/\b([a-z]+)'ll\b/g, "$1 will"],
-  [/\b(he|she|it|that|this|there|what|who|where|here|how|when)'s\b/g, "$1 is"],
+  // he's · it's · there's … are read before these, by expandIsHas (is or has)
   [/\blet's\b/g, "let us"],
 ];
+
+/**
+ * A separator no learner types and no rule touches: the contraction rules see a word break (ownedWords joins
+ * a learner's tokens with it, to know which token each normalised word came from).
+ */
+const TOKEN_SEP = "";
+/** a word follows (after spaces or the token separator) */
+const WORD_AFTER = /^[\s]+[a-z]/;
+/** the words after a contraction, punctuation off each */
+const wordsAfter = (rest: string): string[] => rest.replace(/^[\s]+/, "").split(/[\s]+/).map((w) => w.replace(/[^a-z]/g, ""));
 
 /** `'d` is "would" or "had" by the word after it — grammarGrading.ts BUG-010, copied. */
 const D_SUBJECT = /\b(i|you|he|she|it|we|they|who|that|there)'d\b/g;
@@ -89,14 +123,48 @@ function auxiliaryFor(word: string): "would" | "had" | "either" {
 function expandWouldHad(text: string, either?: "would" | "had"): string {
   return text.replace(D_SUBJECT, (match: string, subject: string, offset: number, whole: string) => {
     const rest = whole.slice(offset + match.length);
-    if (!/^\s+[a-z]/.test(rest)) return match;
-    const words = rest.trim().split(/\s+/).map((w) => w.replace(/[^a-z]/g, ""));
+    if (!WORD_AFTER.test(rest)) return match;
+    const words = wordsAfter(rest);
     let k = 0;
     while (k < words.length && D_SKIP.has(words[k])) k++;
     if (!words[k]) return match;
     const aux = auxiliaryFor(words[k]);
     if (aux === "either") return either ? `${subject} ${either}` : match;
     return `${subject} ${aux}`;
+  });
+}
+
+/** `'s` after these is is or has; any other word's `'s` (Tom's · one's · Today's) stays as written. */
+const S_SUBJECT = /\b(he|she|it|that|this|there|what|who|where|here|how|when)'s\b/g;
+/** a question word's `'s` can have its subject in between: "Where's he gone?" · "How's she been?" */
+const S_QUESTION = new Set(["what", "who", "where", "how", "when"]);
+const S_INVERTED = new Set(["i", "you", "he", "she", "it", "we", "they", "there", "this", "that"]);
+/** `'s` before these is always has — "is been" · "is got" are never English */
+const S_HAS = new Set(["been", "got", "gotten", "had"]);
+
+/** What a `'s` stands for, by the word after it (adverbs skipped): has · is · either (a participle). */
+function readingOfS(subject: string, rest: string): "is" | "has" | "either" {
+  if (!WORD_AFTER.test(rest)) return "is";
+  const words = wordsAfter(rest);
+  let k = 0;
+  while (k < words.length && D_SKIP.has(words[k])) k++;
+  if (S_QUESTION.has(subject) && S_INVERTED.has(words[k])) {
+    k++;
+    while (k < words.length && D_SKIP.has(words[k])) k++;
+  }
+  const word = words[k];
+  if (!word) return "is";
+  if (S_HAS.has(word)) return "has";
+  // "It's broken" is · "He's broken it" has — the words do not tell; the item does (referenceForms)
+  if (D_HAD.has(word) || D_EITHER.has(word) || (word.length > 3 && word.endsWith("ed") && !D_ED_BASE.has(word))) return "either";
+  return "is";
+}
+
+/** `'s` as is or has (`either` decides a participle's; "is" when not given). */
+function expandIsHas(text: string, either?: "is" | "has"): string {
+  return text.replace(S_SUBJECT, (match: string, subject: string, offset: number, whole: string) => {
+    const reading = readingOfS(subject, whole.slice(offset + match.length));
+    return `${subject} ${reading === "either" ? either ?? "is" : reading}`;
   });
 }
 
@@ -143,30 +211,75 @@ function prepare(text: string): string {
   return String(text ?? "").normalize("NFKC").replace(/\s+/g, " ").trim();
 }
 
-/** Lower-case, punctuation and apostrophes removed — contractions left as written. */
-function normalizeLiteral(text: string): string {
-  return text
+const isWordChar = (c: string | undefined): boolean => Boolean(c) && /[a-z0-9]/.test(c as string);
+
+/**
+ * Lower-case, punctuation removed — contractions left as written. An apostrophe inside a word stays ("keep",
+ * the default — a typed answer: its ≠ it's, one's ≠ ones) or goes ("drop" — a microphone's). One at a word's
+ * edge always goes: a quotation mark ('Hello') or a plural possessive's end (Koreans').
+ */
+function normalizeLiteral(text: string, apostrophes: Apostrophes = "keep"): string {
+  const lower = text
     .normalize("NFKC")
     .toLowerCase()
     .replace(/[’‘]/g, "'")
     .replace(/[“”„]/g, '"')
     // PASS-OFF: a hyphen or dash between words is a word break ("4th-grade" = "4th grade", "No-one" = "No one")
-    .replace(/[-‐‑‒–—―]/g, " ")
-    .replace(/[.,?!;:"'()…]/g, "")
+    .replace(/[-‐‑‒–—―]/g, " ");
+  const marked =
+    apostrophes === "keep"
+      ? lower.replace(/'/g, (mark: string, at: number, whole: string) => (isWordChar(whole[at - 1]) && isWordChar(whole[at + 1]) ? mark : ""))
+      : lower.replace(/'/g, "");
+  return marked
+    .replace(/[.,?!;:"()…]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-/** The grader's comparison form: contractions expanded (grammarGrading.ts normalizeForComparison). */
-export function normalizeForComparison(text: string, eitherDAs?: "would" | "had"): string {
-  let normalized = expandWouldHad(String(text ?? "").normalize("NFKC").toLowerCase().replace(/[’‘]/g, "'"), eitherDAs);
+/** The grader's comparison form: contractions expanded (grammarGrading.ts normalizeForComparison), read as `reading` says. */
+export function normalizeForComparison(text: string, reading: Reading = {}): string {
+  let normalized = expandWouldHad(String(text ?? "").normalize("NFKC").toLowerCase().replace(/[’‘]/g, "'"), reading.d);
+  normalized = expandIsHas(normalized, reading.s);
   for (const [pattern, replacement] of CONTRACTIONS) normalized = normalized.replace(pattern, replacement);
-  return normalizeLiteral(normalized);
+  return normalizeLiteral(normalized, reading.apostrophes);
 }
 
-/** Both readings of a learner's `'d`, and the one as written. */
-function userForms(answer: string): string[] {
-  return [...new Set([normalizeForComparison(answer), normalizeForComparison(answer, "would"), normalizeForComparison(answer, "had")])].filter(Boolean);
+/** Every reading of a learner's answer: its `'d` as written, as would and as had × its `'s` before a participle as is and as has. */
+function userForms(answer: string, apostrophes: Apostrophes): string[] {
+  const out = new Set<string>();
+  for (const d of [undefined, "would", "had"] as const) {
+    for (const s of ["is", "has"] as const) out.add(normalizeForComparison(answer, { d, s, apostrophes }));
+  }
+  return [...out].filter(Boolean);
+}
+
+/** "has" or "is" when the item's target words name one of them and not the other. */
+function targetReading(targets: readonly (readonly string[])[] | null | undefined): "is" | "has" | null {
+  const named = new Set<string>();
+  for (const group of targets ?? []) for (const form of group ?? []) for (const w of normalizeLiteral(String(form ?? "")).split(" ")) named.add(w);
+  if (named.has("has") && !named.has("is")) return "has";
+  if (named.has("is") && !named.has("has")) return "is";
+  return null;
+}
+
+/**
+ * Each reference's comparison form. A reference's `'s` before a participle ("He's gone home.") is read the way
+ * the item spells it elsewhere — another answer written out ("He has gone home.") — or its targets name
+ * ("has" · "is"); otherwise "is", as GRAMMAR reads every `'s`. So an item that says "He has gone home." does not
+ * take "He is gone home." through its contracted answer, and "It's made of wood." still takes "It is made of wood.".
+ */
+function referenceForms(refs: readonly string[], targets: readonly (readonly string[])[] | null | undefined, apostrophes: Apostrophes): string[] {
+  const asIs = refs.map((r) => normalizeForComparison(r, { s: "is", apostrophes }));
+  const asHas = refs.map((r) => normalizeForComparison(r, { s: "has", apostrophes }));
+  const plain = new Set(asIs.filter((form, i) => form === asHas[i]));
+  const named = targetReading(targets);
+  return refs.map((_, i) => {
+    if (asIs[i] === asHas[i]) return asIs[i];
+    const has = plain.has(asHas[i]);
+    const is = plain.has(asIs[i]);
+    if (has !== is) return has ? asHas[i] : asIs[i];
+    return named === "has" ? asHas[i] : asIs[i];
+  });
 }
 
 /** A whole wrong answer compared as typed: case and punctuation ignored, contractions kept (데이터-형식 v1.2). */
@@ -328,30 +441,37 @@ interface AnswerForms {
   raw: string;
 }
 
-function formsOf(answer: string): AnswerForms {
+function formsOf(answer: string, apostrophes: Apostrophes): AnswerForms {
   return {
-    expanded: userForms(answer).map((f) => ` ${f} `),
-    literal: ` ${normalizeLiteral(answer)} `,
+    expanded: userForms(answer, apostrophes).map((f) => ` ${f} `),
+    literal: ` ${normalizeLiteral(answer, apostrophes)} `,
     raw: prepare(answer).toLowerCase().replace(/[’‘]/g, "'"),
   };
 }
 
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-/** A target form in the answer, at word boundaries. "'s" · "'re" · "'m" (a contraction ending) is looked for as typed. */
-function containsForm(forms: AnswerForms, form: string): boolean {
+/**
+ * A target form in the answer, at word boundaries. "'s" · "'re" · "'m" (a contraction ending) is looked for as
+ * typed; a form with an apostrophe inside ("It's" · "we're") is compared with it, so "Its" · "were" do not fill it.
+ */
+function containsForm(forms: AnswerForms, form: string, apostrophes: Apostrophes): boolean {
   const f = prepare(form).toLowerCase().replace(/[’‘]/g, "'");
   if (!f) return true;
   if (f.startsWith("'")) return new RegExp(`[a-z0-9]${escapeRegExp(f)}(?![a-z0-9])`).test(forms.raw);
-  const expanded = normalizeForComparison(f);
-  const literal = normalizeLiteral(f);
-  return (Boolean(expanded) && forms.expanded.some((e) => e.includes(` ${expanded} `))) || (Boolean(literal) && forms.literal.includes(` ${literal} `));
+  const literal = normalizeLiteral(f, apostrophes);
+  const expanded = new Set([normalizeForComparison(f, { s: "is", apostrophes }), normalizeForComparison(f, { s: "has", apostrophes })]);
+  return [...expanded].some((e) => Boolean(e) && forms.expanded.some((x) => x.includes(` ${e} `))) || (Boolean(literal) && forms.literal.includes(` ${literal} `));
+}
+
+function missingIn(answer: string, targets: readonly (readonly string[])[] | null | undefined, apostrophes: Apostrophes): string[][] {
+  const forms = formsOf(answer, apostrophes);
+  return (targets ?? []).filter((group) => Array.isArray(group) && group.length > 0 && !group.some((form) => containsForm(forms, form, apostrophes))).map((g) => [...g]);
 }
 
 /** The target groups (any-of) the answer lacks — a group is missing when none of its forms is there. */
-export function missingTargets(answer: string, targets: readonly (readonly string[])[] | null | undefined): string[][] {
-  const forms = formsOf(prepare(answer));
-  return (targets ?? []).filter((group) => Array.isArray(group) && group.length > 0 && !group.some((form) => containsForm(forms, form))).map((g) => [...g]);
+export function missingTargets(answer: string, targets: readonly (readonly string[])[] | null | undefined, options: GradeOptions = {}): string[][] {
+  return missingIn(prepare(answer), targets, options.spoken ? "drop" : "keep");
 }
 
 /** Every word of every target form — a target word is graded strictly (never a typo). */
@@ -367,8 +487,8 @@ export interface ErrorPatternLike {
   literal?: boolean;
 }
 
-function patternHit(forms: AnswerForms, match: string): boolean {
-  const piece = normalizeForComparison(match);
+function patternHit(forms: AnswerForms, match: string, apostrophes: Apostrophes): boolean {
+  const piece = normalizeForComparison(match, { apostrophes });
   return Boolean(piece) && forms.expanded.some((e) => e.includes(` ${piece} `));
 }
 
@@ -388,9 +508,6 @@ export interface DiffToken {
   opposite?: boolean;
 }
 
-/** A separator no learner types and no rule touches: the contraction rules see a word break. */
-const TOKEN_SEP = "";
-
 interface OwnedWords {
   raw: string[];
   words: string[];
@@ -398,26 +515,26 @@ interface OwnedWords {
   owner: number[];
 }
 
-function ownedWords(text: string, eitherDAs?: "would" | "had"): OwnedWords {
+function ownedWords(text: string, reading: Reading = {}): OwnedWords {
   const raw = prepare(text).split(" ").filter(Boolean);
   const out: OwnedWords = { raw, words: [], owner: [] };
-  let joined = expandWouldHad(raw.join(TOKEN_SEP).toLowerCase().replace(/[’‘]/g, "'"), eitherDAs);
+  let joined = expandIsHas(expandWouldHad(raw.join(TOKEN_SEP).toLowerCase().replace(/[’‘]/g, "'"), reading.d), reading.s);
   for (const [pattern, replacement] of CONTRACTIONS) joined = joined.replace(pattern, replacement);
   const pieces = joined.split(TOKEN_SEP);
   if (pieces.length === raw.length) {
     pieces.forEach((piece, index) => {
-      for (const w of words(normalizeLiteral(piece))) {
+      for (const w of words(normalizeLiteral(piece, reading.apostrophes))) {
         out.words.push(w);
         out.owner.push(index);
       }
     });
-    if (out.words.join(" ") === normalizeForComparison(text, eitherDAs)) return out;
+    if (out.words.join(" ") === normalizeForComparison(text, reading)) return out;
   }
-  // never seen, but kept safe: the literal words, one token at a time
+  // kept safe (a contraction rule that would join two tokens): the literal words, one token at a time
   out.words = [];
   out.owner = [];
   raw.forEach((token, index) => {
-    for (const w of words(normalizeLiteral(token))) {
+    for (const w of words(normalizeLiteral(token, reading.apostrophes))) {
       out.words.push(w);
       out.owner.push(index);
     }
@@ -503,9 +620,13 @@ function lineUp(user: OwnedWords, ref: OwnedWords): DiffToken[] {
   return tokens;
 }
 
-/** The learner's words against one reference — missing · wrong · extra · moved, in the learner's spelling. */
-export function diffAnswer(answer: string, reference: string): DiffToken[] {
-  return lineUp(ownedWords(answer), ownedWords(reference));
+/**
+ * The learner's words against one reference — missing · wrong · extra · moved, in the learner's spelling. A typed
+ * answer by default; `spoken` compares without apostrophes, as the grader does for a microphone's answer.
+ */
+export function diffAnswer(answer: string, reference: string, options: GradeOptions = {}): DiffToken[] {
+  const apostrophes: Apostrophes = options.spoken ? "drop" : "keep";
+  return lineUp(ownedWords(answer, { apostrophes }), ownedWords(reference, { apostrophes }));
 }
 
 function tagStart(ws: string[]): number {
@@ -519,9 +640,9 @@ function tagStart(ws: string[]): number {
 }
 
 /** An odd number of negations left unmatched — the answer says the opposite (a question tag and an answering "No," aside). */
-function flipsNegation(answer: string, reference: string): boolean {
-  const user = ownedWords(answer);
-  const ref = ownedWords(reference);
+function flipsNegation(answer: string, reference: string, apostrophes: Apostrophes): boolean {
+  const user = ownedWords(answer, { apostrophes });
+  const ref = ownedWords(reference, { apostrophes });
   const { matchedUser, matchedModel } = align(user.words, ref.words);
   const count = (ws: string[], matched: Set<number>, raw: string) => {
     const cut = TAG_RAW.test(raw) || TAG_RAW.test(reference) ? tagStart(ws) : ws.length;
@@ -581,16 +702,78 @@ function changesEnding(a: string, b: string): boolean {
   return a.length === b.length && a.slice(0, -1) === b.slice(0, -1) && /[sd]$/.test(a) && /[sd]$/.test(b);
 }
 
-/** One slip of one letter in a content word of five letters or more — never a target, function or negation word. */
+/**
+ * Irregular verbs (base · past · past participle — the textbook's table, pg10-2, and the common ones around it)
+ * and irregular plurals, one group per word. Two forms that differ by one letter are two forms of one word
+ * (forget/forgot · broke/broken · woman/women) or two different words (bought/brought · taught/caught) — never a
+ * spelling slip. (A plain -n / -t ending is not taken as grammar on its own: seven/seve · student/studen are
+ * real slips; the irregular -n / -t forms are all here.)
+ */
+const WORD_FORMS =
+  "arise,arose,arisen|awake,awoke,awoken|bear,bore,borne,born|beat,beaten|become,became|begin,began,begun|bend,bent|" +
+  "bind,bound|bite,bit,bitten|bleed,bled|blow,blew,blown|break,broke,broken|breed,bred|bring,brought|build,built|" +
+  "burn,burnt,burned|buy,bought|catch,caught|choose,chose,chosen|cling,clung|come,came|creep,crept|deal,dealt|dig,dug|" +
+  "do,did,done|draw,drew,drawn|dream,dreamt,dreamed|drink,drank,drunk|drive,drove,driven|eat,ate,eaten|fall,fell,fallen|" +
+  "feed,fed|feel,felt|fight,fought|find,found|flee,fled|fling,flung|fly,flew,flown|forbid,forbade,forbidden|" +
+  "forget,forgot,forgotten|forgive,forgave,forgiven|freeze,froze,frozen|get,got,gotten|give,gave,given|go,went,gone|" +
+  "grind,ground|grow,grew,grown|hang,hung|hear,heard|hide,hid,hidden|hold,held|keep,kept|kneel,knelt|know,knew,known|" +
+  "lay,laid|lead,led|lean,leant,leaned|leap,leapt,leaped|learn,learnt,learned|leave,left|lend,lent|lie,lay,lain|" +
+  "light,lit|lose,lost|make,made|mean,meant|meet,met|mistake,mistook,mistaken|pay,paid|prove,proved,proven|" +
+  "ride,rode,ridden|ring,rang,rung|rise,rose,risen|run,ran|say,said|see,saw,seen|seek,sought|sell,sold|send,sent|" +
+  "sew,sewed,sewn|shake,shook,shaken|shine,shone|shoot,shot|show,showed,shown|shrink,shrank,shrunk|sing,sang,sung|" +
+  "sink,sank,sunk|sit,sat|sleep,slept|slide,slid|smell,smelt,smelled|speak,spoke,spoken|speed,sped|spell,spelt,spelled|" +
+  "spend,spent|spill,spilt,spilled|spin,spun|spit,spat|spoil,spoilt,spoiled|spring,sprang,sprung|stand,stood|" +
+  "steal,stole,stolen|stick,stuck|sting,stung|stink,stank,stunk|strike,struck|string,strung|strive,strove,striven|" +
+  "swear,swore,sworn|sweep,swept|swell,swelled,swollen|swim,swam,swum|swing,swung|take,took,taken|teach,taught|" +
+  "tear,tore,torn|tell,told|think,thought|throw,threw,thrown|tread,trod,trodden|understand,understood|wake,woke,woken|" +
+  "wear,wore,worn|weave,wove,woven|weep,wept|win,won|wind,wound|withdraw,withdrew,withdrawn|write,wrote,written|" +
+  "man,men|woman,women|child,children|foot,feet|tooth,teeth|goose,geese|mouse,mice|person,people|leaf,leaves|" +
+  "life,lives|knife,knives|wife,wives|half,halves|wolf,wolves|shelf,shelves|thief,thieves|loaf,loaves|ox,oxen";
+const KNOWN_FORMS = new Set(WORD_FORMS.split(/[|,]/));
+
+/** Look-alike words a learner mixes up, one letter apart and both real (bought/brought is in WORD_FORMS). */
+const LOOK_ALIKES = new Set(
+  (
+    "better,bitter|later,latter|quiet,quite|loose,lose|desert,dessert|cloth,clothe|breath,breathe|advice,advise|" +
+    "device,devise|affect,effect|angel,angle|dairy,diary|dairy,daily|board,bored|coarse,course|marry,merry|medal,metal|" +
+    "moral,morale|steal,steel|wander,wonder|tired,tried|trail,trial|diner,dinner|super,supper|massage,message|" +
+    "human,humane|hole,whole|plain,plane|stationary,stationery|complement,compliment|lightening,lightning|" +
+    "clothes,cloths|snack,snake|angle,ankle|coast,cost|sweat,sweet|price,prize|place,plate|glass,grass|flight,fright|" +
+    "flesh,fresh|blush,brush|clown,crown|flame,frame|raise,rise|word,world|quit,quite"
+  )
+    .split("|")
+    .map((pair) => pair.split(",").sort().join(",")),
+);
+
+/**
+ * Two different words, or two forms of one word — the whole words, or their ends after a shared start
+ * (overtake/overtaken · fireman/firemen).
+ */
+function differentWord(a: string, b: string): boolean {
+  if (LOOK_ALIKES.has([a, b].sort().join(","))) return true;
+  let shared = 0;
+  while (shared < a.length && shared < b.length && a[shared] === b[shared]) shared++;
+  for (let cut = 0; cut <= shared; cut++) if (KNOWN_FORMS.has(a.slice(cut)) && KNOWN_FORMS.has(b.slice(cut))) return true;
+  return false;
+}
+
+/**
+ * One slip of one letter in a content word of five letters or more — never a target, function or negation
+ * word, never an apostrophe (its/it's · one's/ones are grammar; a contraction typed without one is
+ * restoreApostrophes'), and never a word that another word or form is one letter away from (differentWord).
+ */
 function isTypo(typed: string, expected: string, strict: Set<string>): boolean {
   if (expected.length < 5) return false;
   if (/\d/.test(typed) || /\d/.test(expected)) return false;
+  if (typed.includes("'") || expected.includes("'")) return false;
   if (FUNCTION_WORDS.has(expected) || FUNCTION_WORDS.has(typed)) return false;
   if (NEGATORS.has(expected) || NEGATORS.has(typed)) return false;
   if (strict.has(expected) || strict.has(typed)) return false;
   if (isPrefixedOpposite(typed, expected)) return false;
   if (editDistance(typed, expected) !== 1) return false;
-  return !changesEnding(typed, expected);
+  if (changesEnding(typed, expected)) return false;
+  if (differentWord(typed, expected)) return false;
+  return true;
 }
 
 /**
@@ -599,35 +782,36 @@ function isTypo(typed: string, expected: string, strict: Set<string>): boolean {
  */
 export function typoEligible(word: string, targets?: readonly (readonly string[])[] | null): boolean {
   const w = normalizeLiteral(word);
-  if (w.length < 5 || /\d/.test(w) || w.includes(" ")) return false;
+  if (w.length < 5 || /\d/.test(w) || w.includes(" ") || w.includes("'")) return false;
   return !FUNCTION_WORDS.has(w) && !NEGATORS.has(w) && !targetWords(targets).has(w);
 }
 
-function typoAgainst(answer: string, reference: string, strict: Set<string>): { typed: string; expected: string } | null {
-  const model = words(normalizeForComparison(reference));
-  if (!model.length) return null;
-  for (const form of userForms(answer)) {
+/** A one-letter slip in one word of the learner's `forms` against a reference's comparison form `model`. */
+function typoAgainst(forms: readonly string[], model: string, reference: string, strict: Set<string>, apostrophes: Apostrophes): { typed: string; expected: string } | null {
+  const modelWords = words(model);
+  if (!modelWords.length) return null;
+  for (const form of forms) {
     const user = words(form);
-    if (user.length !== model.length) continue;
+    if (user.length !== modelWords.length) continue;
     let at = -1;
     let single = true;
     for (let i = 0; i < user.length; i++) {
-      if (user[i] === model[i]) continue;
+      if (user[i] === modelWords[i]) continue;
       if (at >= 0) {
         single = false;
         break;
       }
       at = i;
     }
-    if (single && at >= 0 && isTypo(user[at], model[at], strict)) {
-      const ref = ownedWords(reference);
+    if (single && at >= 0 && isTypo(user[at], modelWords[at], strict)) {
+      const ref = ownedWords(reference, { apostrophes });
       return { typed: user[at], expected: referenceWord(ref, at) };
     }
   }
   return null;
 }
 
-const apostrophes = (s: string) => (s.match(/['’]/g) ?? []).length;
+const countApostrophes = (s: string) => (s.match(/['’]/g) ?? []).length;
 
 /**
  * Contractions typed without their apostrophe that can only be that contraction. "its" · "were" · "well" ·
@@ -652,24 +836,26 @@ function restoreApostrophes(text: string): string {
   });
 }
 
+/** One of the learner's forms is the reference's comparison form, or is it but for spacing ("girlfriend" = "girl friend"). */
+function sameAs(forms: readonly string[], model: string): boolean {
+  return Boolean(model) && forms.some((user) => user === model || sameBySpacing(user, model));
+}
+
 /**
- * "exact" after normalising; "apostrophe" when the answer is right but the learner LEFT OUT apostrophes
- * ("Im eleven", "Hes a …", "dont") — grammarGrading.ts's literal pass, extended to a reference that spells the
- * contraction out. Here that is a spelling slip, not a clean answer, and never the other way round: an
- * apostrophe the reference does not have ("It's tail" for "Its tail") is its/it's confused, which is grammar.
+ * The answer is right but the learner LEFT OUT an apostrophe — a spelling slip, not a clean answer, and never the
+ * other way round (an apostrophe the reference does not have — "It's tail" for "Its tail" — is its/it's confused,
+ * which is grammar). Typed: only a contraction that is no other word ("dont", "Hes" — restoreApostrophes).
+ * A microphone's answer: also one that is right once every apostrophe is dropped ("its" for "it's" — the
+ * recogniser's spelling; grammarGrading.ts's literal pass, extended to a reference that spells it out).
  */
-function exactAgainst(answer: string, reference: string): "exact" | "apostrophe" | null {
-  const model = normalizeForComparison(reference);
-  if (!model) return null;
-  for (const user of userForms(answer)) if (user === model || sameBySpacing(user, model)) return "exact";
-  if (apostrophes(answer) < apostrophes(reference)) {
-    const lu = normalizeLiteral(answer);
-    const lm = normalizeLiteral(reference);
-    if (lu && (lu === lm || sameBySpacing(lu, lm))) return "apostrophe";
+function apostropheSlipIn(answer: string, reference: string, model: string, apostrophes: Apostrophes): boolean {
+  if (apostrophes === "drop" && countApostrophes(answer) < countApostrophes(reference)) {
+    const lu = normalizeLiteral(answer, "drop");
+    const lm = normalizeLiteral(reference, "drop");
+    if (lu && (lu === lm || sameBySpacing(lu, lm))) return true;
   }
   const repaired = restoreApostrophes(answer);
-  if (repaired !== answer) for (const user of userForms(repaired)) if (user === model || sameBySpacing(user, model)) return "apostrophe";
-  return null;
+  return repaired !== answer && sameAs(userForms(repaired, apostrophes), model);
 }
 
 /** The word the learner wrote without its apostrophe ("dont" for "don't"). */
@@ -697,11 +883,11 @@ export function referencesOf(item: ProduceItemLike): string[] {
   return out;
 }
 
-function closest(answer: string, references: string[]): string {
-  const user = ownedWords(answer);
+function closest(answer: string, references: string[], apostrophes: Apostrophes): string {
+  const user = ownedWords(answer, { apostrophes });
   let best = { ref: references[0] ?? "", share: -1 };
   for (const reference of references) {
-    const ref = ownedWords(reference);
+    const ref = ownedWords(reference, { apostrophes });
     const share = align(user.words, ref.words).length / Math.max(1, ref.words.length, user.words.length);
     if (share > best.share) best = { ref: reference, share };
   }
@@ -726,44 +912,52 @@ export function gradeProduce(answerRaw: string, item: ProduceItemLike, options: 
   if (hasHangul(answer)) return { ...base, verdict: "hangul" };
 
   const spoken = Boolean(options.spoken);
+  // a typed answer keeps its apostrophes (its ≠ it's); a microphone's cannot have heard them
+  const apostrophes: Apostrophes = spoken ? "drop" : "keep";
   const graded = spoken ? spokenNumbersAsWords(answer) : answer;
   const refs = spoken ? refsAsWritten.map(spokenNumbersAsWords) : refsAsWritten;
+  const models = referenceForms(refs, item.targets, apostrophes);
   const asWritten = (i: number) => refsAsWritten[i] ?? refsAsWritten[0] ?? "";
   const patterns = (item.errorPatterns ?? []).filter((p) => p && typeof p.match === "string" && p.match.trim());
+  const missing = missingIn(graded, item.targets, apostrophes);
 
   // 2. a literal wrong answer, before the accepted ones — typed with or without its apostrophe ("Yes, hes.")
   const keys = new Set([literalKey(answer), literalKey(restoreApostrophes(answer))]);
   const literalHit = patterns.find((p) => p.literal && keys.has(literalKey(p.match))) ?? null;
 
   if (!literalHit) {
+    const forms = userForms(graded, apostrophes);
     // 3. the model answer or an accepted one
-    const exact = refs.findIndex((r) => exactAgainst(graded, r) === "exact");
+    const exact = models.findIndex((model) => sameAs(forms, model));
     if (exact >= 0) return { ...base, verdict: "correct", reference: asWritten(exact) };
-    // 4. a spelling slip: apostrophes left out, or one letter in one content word
-    const bare = refs.findIndex((r) => exactAgainst(graded, r) === "apostrophe");
-    if (bare >= 0) return { ...base, verdict: "typo", reference: asWritten(bare), typo: apostropheSlip(graded, refs[bare]) };
-    const strict = targetWords(item.targets);
-    if (!missingTargets(graded, item.targets).length) {
+    // 4. a spelling slip, only with every target there ("Im" for a lesson on 'm is wrong) — a microphone's
+    //    apostrophes aside: the recogniser spelt them, so they are a slip even before the targets
+    if (spoken || !missing.length) {
+      const bare = refs.findIndex((r, i) => apostropheSlipIn(graded, r, models[i], apostrophes));
+      if (bare >= 0) return { ...base, verdict: "typo", reference: asWritten(bare), typo: apostropheSlip(graded, refs[bare]) };
+    }
+    if (!missing.length) {
+      const strict = targetWords(item.targets);
       for (let i = 0; i < refs.length; i++) {
-        const typo = typoAgainst(graded, refs[i], strict);
+        const typo = typoAgainst(forms, models[i], refs[i], strict, apostrophes);
         if (typo) return { ...base, verdict: "typo", reference: asWritten(i), typo };
       }
     }
   }
 
   // 5. wrong — where and why
-  const near = closest(graded, refs);
+  const near = closest(graded, refs, apostrophes);
   const nearIndex = Math.max(0, refs.indexOf(near));
-  const forms = formsOf(graded);
-  const hit = literalHit ?? patterns.find((p) => !p.literal && patternHit(forms, p.match)) ?? null;
+  const forms = formsOf(graded, apostrophes);
+  const hit = literalHit ?? patterns.find((p) => !p.literal && patternHit(forms, p.match, apostrophes)) ?? null;
   return {
     ...base,
     verdict: "wrong",
     reference: asWritten(nearIndex),
-    diff: diffAnswer(graded, near),
-    missingTargets: missingTargets(graded, item.targets),
+    diff: lineUp(ownedWords(graded, { apostrophes }), ownedWords(near, { apostrophes })),
+    missingTargets: missing,
     pattern: hit ? { match: hit.match, hint: hit.hint, literal: Boolean(hit.literal) } : null,
-    negationFlip: flipsNegation(graded, near),
+    negationFlip: flipsNegation(graded, near, apostrophes),
   };
 }
 
@@ -891,12 +1085,15 @@ export function gradeChoice(item: { answer: number }, index: number): boolean {
 
 export type ShortVerdict = "correct" | "wrong" | "hangul" | "empty";
 
-/** A word or two typed into a short blank: any listed answer, case, punctuation and contractions aside. */
+/**
+ * A word or two typed into a short blank: any listed answer, case, punctuation and contractions aside — the
+ * apostrophes kept, as in ④ ("doesnt" is not "doesn't" here: the blank asks for that form).
+ */
 export function gradeShort(item: { answer: readonly string[] }, text: string): ShortVerdict {
   const typed = prepare(text);
   if (!typed) return "empty";
   if (hasHangul(typed)) return "hangul";
-  const forms = userForms(typed);
+  const forms = userForms(typed, "keep");
   const literal = normalizeLiteral(typed);
   return (item.answer ?? []).some((a) => {
     const m = normalizeForComparison(a);

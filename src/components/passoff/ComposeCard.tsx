@@ -5,7 +5,7 @@ import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { gradeProduce, hasHangul, isCorrect, writingIssues, type DiffToken, type ProduceResult } from "@/lib/passoffGrading";
 import { contrastPool, contrastTiles, firstLetters } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
-import { emitPassoffAttempt, type PassoffHelp } from "@/lib/passoffEvents";
+import { notePassoffAttempt, strongerHelp, type PassoffHelp } from "@/lib/passoffLearning";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, type FontSize, type Speaker } from "./ui";
 
@@ -14,6 +14,19 @@ export interface ComposeOutcome {
   success: boolean;
   /** the first try of the item's first presentation — the set's two-line score */
   first: { answer: string; verdict: string; reference: string } | null;
+}
+
+/**
+ * What a card tells the lesson about its sentence, each kept in the practice state the moment it happens — not
+ * only at '다음 문장', so a reload after the answer was shown cannot bring the sentence back as new (점검 2026-09-27).
+ */
+export interface ComposeReport {
+  /** the first try of a presentation: right on its own or not, and (first presentation) the answer for the set's score */
+  firstTry: (id: string, result: { right: boolean; first: ComposeOutcome["first"] }) => void;
+  /** help taken: ② the clue, ③ the tiles, ④ the answer */
+  help: (id: string, help: PassoffHelp) => void;
+  /** '다음 문장' */
+  done: (id: string, outcome: ComposeOutcome, queue: string[]) => void;
 }
 
 /** the help each ladder rung is (설계 §4): ① where it is wrong is not help; ② clue · ③ tiles · ④ the answer are */
@@ -25,7 +38,8 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  * src/lib/passoffGrading.ts. The answer is locked until a try. A wrong try climbs the ladder, one rung each time
  * (or by '도움 받기'): ① where it is wrong (missing box · wrong wavy · extra struck through) → ② a clue (the
  * lesson's rule, a missing target, each word's first letter) → ③ word tiles with two grammar distractors →
- * ④ the answer, the rule and its sound.
+ * ④ the answer, the rule and its sound. Every answer is recorded with the help taken BEFORE it — in this
+ * presentation or an earlier one (`priorHelp`: once the answer was shown, a comeback's answers carry "reveal").
  */
 export function ComposeCard({
   item,
@@ -33,9 +47,12 @@ export function ComposeCard({
   lessonId,
   presentation,
   comebacksLeft,
+  priorHelp,
   font,
   speaker,
   ruleTitle,
+  onFirstTry,
+  onHelp,
   onDone,
 }: {
   item: PassoffProduceItem;
@@ -45,9 +62,13 @@ export function ComposeCard({
   presentation: number;
   /** comebacks left if this presentation is not right on its own */
   comebacksLeft: number;
+  /** the most help the sentence had before this presentation */
+  priorHelp: PassoffHelp;
   font: FontSize;
   speaker: Speaker;
   ruleTitle?: string;
+  onFirstTry: (result: { right: boolean; first: ComposeOutcome["first"] }) => void;
+  onHelp: (help: PassoffHelp) => void;
   onDone: (outcome: ComposeOutcome) => void;
 }) {
   const [text, setText] = useState("");
@@ -75,6 +96,7 @@ export function ComposeCard({
     }
     if (next >= 4) setPhase("revealed");
     setRung(next);
+    if (HELP_AT[next] !== "none") onHelp(HELP_AT[next]);
   }
 
   function check() {
@@ -91,16 +113,20 @@ export function ComposeCard({
     setHangul(false);
     const correct = isCorrect(res);
     const firstTry = checks === 0;
-    if (firstTry) setFirst({ answer, verdict: res.verdict, reference: res.reference });
-    emitPassoffAttempt({
+    if (firstTry) {
+      const firstAnswer = { answer, verdict: res.verdict, reference: res.reference };
+      setFirst(firstAnswer);
+      onFirstTry({ right: correct, first: presentation === 0 ? firstAnswer : null });
+    }
+    notePassoffAttempt({
       lessonId,
       itemId: item.id,
       kind,
       correct,
-      help: HELP_AT[rung],
+      help: strongerHelp(priorHelp, HELP_AT[rung]),
       mode,
       firstTry: firstTry && presentation === 0,
-      answer: correct ? undefined : answer,
+      answer,
     });
     setChecks((c) => c + 1);
     setResult(res);
@@ -117,7 +143,7 @@ export function ComposeCard({
     const words = tilePicks.map((t) => t.word);
     const assembled = words.join(" ");
     const correct = verifyAnyWordSequence(words, bank.acceptedWordSequences) || isCorrect(gradeProduce(assembled, item));
-    emitPassoffAttempt({ lessonId, itemId: item.id, kind, correct, help: "tiles", mode: "tap", firstTry: false, answer: correct ? undefined : assembled });
+    notePassoffAttempt({ lessonId, itemId: item.id, kind, correct, help: strongerHelp(priorHelp, "tiles"), mode: "tap", firstTry: false, answer: assembled });
     setChecks((c) => c + 1);
     if (correct) {
       setRightBy({ answer: assembled, result: null });
@@ -242,7 +268,7 @@ export function ComposeCard({
                   setTilePicks((prev) => prev.filter((x) => x.id !== t.id));
                   setTileMiss(false);
                 }}
-                className={`min-h-11 rounded-xl border border-line-strong bg-sunken px-3 ${FONT[font].text} text-ink`}
+                className={`min-h-11 min-w-11 rounded-xl border border-line-strong bg-sunken px-3 ${FONT[font].text} text-ink`}
               >
                 {t.word}
               </button>
@@ -260,7 +286,7 @@ export function ComposeCard({
                     setTilePicks((prev) => [...prev, t]);
                     setTileMiss(false);
                   }}
-                  className={`min-h-11 rounded-xl border border-line px-3 ${FONT[font].text} text-ink transition-colors hover:bg-sunken disabled:opacity-30`}
+                  className={`min-h-11 min-w-11 rounded-xl border border-line px-3 ${FONT[font].text} text-ink transition-colors hover:bg-sunken disabled:opacity-30`}
                 >
                   {t.word}
                 </button>

@@ -19,11 +19,17 @@
  *      C1 부정 뒤집기 — 첫 be동사 · 조동사 뒤에 not 을 넣거나(부정문이면) 뺌
  *      C2 목표형 빠짐 — 모범 답에서 목표 낱말(targets 묶음의 꼴)을 지움
  *      C3 목표 낱말 한 글자 — 5글자 이상 목표 낱말의 가운데 한 글자를 바꿈(목표 낱말은 오타로 봐주지 않음 — 설계 §8)
+ *      C4 아포스트로피 — 모범 답 · 허용 답의 축약형 · 소유격에서 아포스트로피만 뺀 답(점검 2026-09-27). 뺀 꼴이 그 자체로 낱말이거나
+ *         (its · were · well · Ill · lets · Id …) 소유격이면(ones · peoples · Buddhas …) '오답'. 다른 낱말이 아닌 축약형(dont · Im …)은
+ *         '정답'이 아님(목표형이 아니면 '맞음(오타)', 목표형이면 '오답'). 같은 답을 마이크 답으로 넣으면 맞음(인식기는 아포스트로피를 못 들음).
+ *      C5 같은 낱말의 다른 꼴 · 비슷한 다른 낱말 — 모범 답의 5글자 이상 낱말을 한 글자 차이인 짝(forget/forgot · broke/broken ·
+ *         woman/women · bought/brought · later/latter …, 이 검사의 목록 — 채점기의 목록과 따로 둠)으로 바꾼 답이 '맞음(오타)'가 아님.
  *   D. 오타 — 목표 · 기능어가 아닌 5글자 이상 낱말의 가운데 한 글자를 바꾼 모범 답이 '맞음(오타)'(너무 엄격하지 않은지).
  *   E. literal 오답 패턴(데이터-형식 v1.2)이 '오답'이고 그 힌트가 붙음 · 보통 오답 패턴의 글이 패턴에 걸림.
  *   F. ③ 형태 찾기: select 정답 토큰(+라벨) → 정답, 하나 빠뜨림 · 엉뚱한 토큰 더함 · 라벨 틀림 → 오답, optional 은 골라도 정답 /
  *      choice 정답 → 정답, 다른 보기 → 오답 / short 정답 → 정답.
- *   G. 한글 섞인 답 → 'hangul' · 고정 표본(접두 반의어 예외 interesting · invaluable, 서술형 두 줄 점수, 아포스트로피, 어미, 마이크 숫자).
+ *   G. 한글 섞인 답 → 'hangul' · 고정 표본(접두 반의어 예외 interesting · invaluable, 서술형 두 줄 점수, 아포스트로피, 어미, 마이크 숫자,
+ *      's = is/has — "She is been" 오답, 같은 낱말의 다른 꼴).
  *
  *   node docs/pass-off-grammar/검사/check-grading.cjs
  *   node docs/pass-off-grammar/검사/check-grading.cjs --list              따로 센 것 · 실패 전부
@@ -33,6 +39,11 @@
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=fix         일부러 깨기: fix.from 에 한 글자 오타 꼴을 넣은 사본 → B FAIL
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=accept      일부러 깨기: accept 에 부정 뒤집은 답을 넣은 사본 → C1 FAIL
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=view        일부러 깨기: 화면 문항에서 accept 를 뺀 사본 → A FAIL
+ *   아래 넷은 채점기 글(메모리 사본)을 한 곳 바꿔 옛 동작으로 되돌림 — 바꿀 글을 못 찾으면 멈춤(깨기가 조용히 안 먹는 일 없게):
+ *   node docs/pass-off-grammar/검사/check-grading.cjs --break=apostrophe  타이핑한 답도 아포스트로피를 모두 지움(점검 전) → C4 FAIL
+ *   node docs/pass-off-grammar/검사/check-grading.cjs --break=inflection  같은 낱말의 다른 꼴 · 비슷한 낱말도 한 글자 오타로 봐줌 → C5 FAIL
+ *   node docs/pass-off-grammar/검사/check-grading.cjs --break=is-has      's been 을 has 로 읽지 않음(점검 전: 늘 is) → G FAIL
+ *   node docs/pass-off-grammar/검사/check-grading.cjs --break=ref-reading 허용 답의 's 를 다른 답으로 풀지 않음 → G FAIL("He is gone home")
  * exit 1 on any failure. 레슨 파일은 읽기만 한다.
  *
  * 같은 AI 계열이 채점기와 이 검사를 함께 만들었다 — 독립 검수가 아니다. 이 검사가 보증하는 것은 '레슨 파일에 적힌 답'에 대한
@@ -47,11 +58,23 @@ const LESSON_DIR = path.join(REPO, "content/lessons/passoff-grammar");
 const PRIVATE_DIR = path.join(REPO, "content/private/passoff-grammar");
 const LIST = process.argv.includes("--list");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-const BREAKS = ["targets", "targets-all", "fix", "accept", "view"];
+/** breaks of the grader itself: [the text in passoffGrading.ts, what it becomes] — the old behaviour, in memory only */
+const CODE_BREAKS = {
+  apostrophe: ['const apostrophes: Apostrophes = spoken ? "drop" : "keep";', 'const apostrophes: Apostrophes = "drop";'],
+  inflection: ["  if (differentWord(typed, expected)) return false;\n", ""],
+  "is-has": ['  if (S_HAS.has(word)) return "has";\n', ""],
+  "ref-reading": ["const plain = new Set(asIs.filter((form, i) => form === asHas[i]));", "const plain = new Set<string>();"],
+};
+const BREAKS = ["targets", "targets-all", "fix", "accept", "view", ...Object.keys(CODE_BREAKS)];
 if (BREAK && !BREAKS.includes(BREAK)) throw new Error(`모르는 --break=${BREAK} (${BREAKS.join(" · ")})`);
 
-function loadTsAlone(rel) {
-  const js = ts.transpileModule(fs.readFileSync(path.join(REPO, rel), "utf8"), {
+function loadTsAlone(rel, patch = null) {
+  let src = fs.readFileSync(path.join(REPO, rel), "utf8");
+  if (patch) {
+    if (src.split(patch[0]).length !== 2) throw new Error(`--break=${BREAK}: ${rel} 에서 바꿀 글을 한 곳에서 못 찾음 — 깨기가 안 먹음`);
+    src = src.replace(patch[0], patch[1]);
+  }
+  const js = ts.transpileModule(src, {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
   }).outputText;
   const mod = { exports: {} };
@@ -59,7 +82,7 @@ function loadTsAlone(rel) {
   new Function("module", "exports", js)(mod, mod.exports);
   return mod.exports;
 }
-const G = loadTsAlone("src/lib/passoffGrading.ts");
+const G = loadTsAlone("src/lib/passoffGrading.ts", CODE_BREAKS[BREAK] || null);
 const { attachPaidItems } = loadTsAlone("src/lib/passoffSupplement.ts");
 const { viewBlocks } = loadTsAlone("src/lib/passoffView.ts");
 for (const name of ["gradeProduce", "isCorrect", "gradeSelect", "gradeChoice", "gradeShort", "missingTargets", "typoEligible", "writingIssues", "twoLineScore", "isPrefixedOpposite", "expectedLabel", "normalizeForComparison"]) {
@@ -108,6 +131,44 @@ const longTargetAt = (p) => {
   }
   return null;
 };
+/** optimal-string-alignment distance (a swap of two letters is one) — this check's own, not the grader's */
+const osa = (a, b) => {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)]);
+  for (let j = 0; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
+};
+const matchCase = (like, word) => (like[0] === like[0].toUpperCase() ? word[0].toUpperCase() + word.slice(1) : word);
+/** C4: a contraction without its apostrophe that is no other word — this check's own list */
+const BARE_ONLY = new Set(
+  "im ive youre youve youll youd hes shes thats whats theres heres weve theyre theyve theyll theyd itll dont doesnt didnt isnt arent wasnt werent hasnt havent hadnt cant couldnt wouldnt shouldnt mustnt wont".split(" "),
+);
+/**
+ * C5: words a learner writes for one another — forms of one word (irregular verbs · plurals) and look-alike words.
+ * Kept here, apart from the grader's own lists, so that a word the grader forgets shows up as a FAIL.
+ */
+const PARTNER_GROUPS = [
+  "forget forgot forgotten", "break broke broken", "speak spoke spoken", "choose chose chosen", "freeze froze frozen",
+  "steal stole stolen", "wake woke woken", "take took taken", "give gave given", "drive drove driven", "rise rose risen",
+  "write wrote written", "ride rode ridden", "begin began begun", "drink drank drunk", "swim swam swum", "sing sang sung",
+  "ring rang rung", "know knew known", "grow grew grown", "throw threw thrown", "blow blew blown", "draw drew drawn",
+  "show showed shown", "mean meant", "build built", "spend spent", "send sent", "learn learnt learned", "burn burnt burned",
+  "dream dreamt dreamed", "spell spelt", "smell smelt", "arise arose arisen", "lose lost", "leave left",
+  "woman women", "man men", "fireman firemen", "policeman policemen", "child children",
+  "buy bought", "bring brought", "teach taught", "catch caught", "think thought", "fight fought", "seek sought",
+  "better bitter", "later latter", "quiet quite", "lose loose", "desert dessert", "tired tried", "diary dairy",
+  "angle angel", "board bored", "price prize", "glass grass", "flight fright", "fresh flesh", "steal steel", "wonder wander",
+];
+const PARTNERS = new Map();
+for (const group of PARTNER_GROUPS) {
+  const ws = group.split(" ");
+  for (const w of ws) PARTNERS.set(w, [...new Set([...(PARTNERS.get(w) || []), ...ws.filter((x) => x !== w)])]);
+}
 
 // ── 레슨: 파일(유료 보충을 제자리에) → 화면에 넘기는 모양
 const lessons = fs
@@ -173,6 +234,7 @@ for (const L of lessons) {
   L.view = clone(viewBlocks(L.file));
   if (BREAK && ["targets", "view"].includes(BREAK) && !broken) broken = breakView(L);
 }
+if (CODE_BREAKS[BREAK]) broken = `passoffGrading.ts 의 "${CODE_BREAKS[BREAK][0].trim()}" 을 바꾼 사본(메모리)`;
 if (BREAK && !broken) throw new Error(`--break=${BREAK}: 깰 문항을 못 찾음`);
 if (BREAK) console.log(`(깨기 시험 --break=${BREAK} — ${broken})`);
 
@@ -277,6 +339,42 @@ for (const L of lessons) {
         if (G.isCorrect(r3)) fail("C3", `${p.id} "${mutated}" → ${r3.verdict}(목표 낱말 "${word}" 의 한 글자 틀림을 오타로 봐줌)`);
       }
     }
+    // C4 — one apostrophe left out of a contraction or a possessive, in each reference
+    const asTyped = new Set(refs.map((r) => marksOff(r)));
+    for (const r of refs) {
+      const rt = tokensOf(r);
+      rt.forEach((t, i) => {
+        const m = t.match(/^([("“]*)([A-Za-z]+)['’]([A-Za-z]+)(.*)$/);
+        if (!m) return;
+        const without = `${m[2]}${m[3]}`;
+        const answer = rt.map((x, k) => (k === i ? `${m[1]}${without}${m[4]}` : x)).join(" ");
+        if (asTyped.has(marksOff(answer))) return; // the item lists it as right
+        const res = G.gradeProduce(answer, q);
+        if (BARE_ONLY.has(without.toLowerCase())) {
+          count("C4 아포스트로피만 뺀 축약형(dont · Im …) → 정답 아님");
+          if (res.verdict === "correct") fail("C4", `${p.id} "${answer}" → correct(아포스트로피를 뺀 축약형을 깨끗한 정답으로 봄)`);
+        } else {
+          count("C4 뺀 꼴이 다른 낱말 · 소유격 → 오답");
+          if (res.verdict !== "wrong") fail("C4", `${p.id} "${answer}" → ${res.verdict}("${m[2]}'${m[3]}" 대신 다른 낱말 "${without}" — 문법이 틀린 답)`);
+        }
+        count("C4 같은 답을 마이크로 → 맞음");
+        const heard = G.gradeProduce(answer, q, { spoken: true });
+        if (!G.isCorrect(heard)) fail("C4", `${p.id} 마이크 답 "${answer}" → ${heard.verdict}(인식기는 아포스트로피를 못 들음 — 봐줘야 함)`);
+      });
+    }
+    // C5 — one word of the model answer swapped for another form of it, or a look-alike word, one letter apart
+    toks.forEach((t, i) => {
+      const word = bare(t);
+      if (!/^[A-Za-z]{5,}$/.test(word)) return;
+      for (const partner of PARTNERS.get(word.toLowerCase()) || []) {
+        if (osa(word.toLowerCase(), partner) !== 1) continue;
+        const answer = replaceToken(p.en, i, matchCase(word, partner));
+        if (refs.some((r) => G.normalizeForComparison(r) === G.normalizeForComparison(answer))) continue; // the item lists it
+        count("C5 같은 낱말의 다른 꼴 · 비슷한 낱말 → 오타 아님");
+        const res = G.gradeProduce(answer, q);
+        if (G.isCorrect(res)) fail("C5", `${p.id} "${answer}" → ${res.verdict}("${word}" 대신 "${partner}" — 문법이거나 다른 낱말인데 봐줌)`);
+      }
+    });
     // D
     const di = toks.findIndex((t, i) => i > 0 && /^[A-Za-z]{5,}$/.test(bare(t)) && G.typoEligible(bare(t), p.targets) && toks.filter((x) => bare(x).toLowerCase() === bare(t).toLowerCase()).length === 1);
     if (di >= 0) {
@@ -341,9 +439,36 @@ expect("valuable ↔ invaluable 은 반대말 아님(과민 예외)", G.isPrefix
 const sample = { en: "I am eleven years old.", accept: ["I'm eleven years old."], targets: [["am", "'m"]], errorPatterns: [] };
 const graded = ["I am eleven years old.", "i am eleven years old.", "I am eleven years old", "I am elevan years old.", "I is eleven years old."].map((a) => ({ answer: a, result: G.gradeProduce(a, sample) }));
 expect("서술형 두 줄 점수", G.twoLineScore(graded), { total: 5, grammar: 4, written: 1, capital: 1, punctuation: 1, spelling: 1 });
-expect("축약형 아포스트로피를 빼면 오타(철자)", G.gradeProduce("Im eleven years old.", sample).verdict, "typo");
+// apostrophes (점검 2026-09-27 · 설계 §8): a slip only in a contraction that is no other word and is not the target
+expect("목표형 'm 을 아포스트로피 없이(Im) → 오답(목표 낱말은 엄격)", G.gradeProduce("Im eleven years old.", sample).verdict, "wrong");
+expect("목표가 아닌 축약형의 아포스트로피를 뺌(dont) → 오타(철자)", G.gradeProduce("I dont know what he said.", { en: "I don't know what he said.", targets: [["what"]] }).verdict, "typo");
+const were = { en: "We're good friends.", accept: ["We are good friends."], targets: [["are", "'re"]] };
+expect("We're → Were(다른 낱말) → 오답", G.gradeProduce("Were good friends.", were).verdict, "wrong");
+const itsDog = { en: "It's a dog and its hair is gray.", accept: ["It is a dog and its hair is gray."], targets: [["It's", "It is"], ["its"]] };
+expect("It's → Its → 오답", G.gradeProduce("Its a dog and its hair is gray.", itsDog).verdict, "wrong");
+expect("마이크 답의 its(인식기가 쓴 철자) → 오타로 봐줌", G.gradeProduce("its a dog and its hair is gray", itsDog, { spoken: true }).verdict, "typo");
+expect("소유격 one's → ones → 오답", G.gradeProduce("One should obey ones parents.", { en: "One should obey one's parents." }).verdict, "wrong");
 expect("its ≠ it's(아포스트로피를 더한 것은 봐주지 않음)", G.isCorrect(G.gradeProduce("It's tail is long.", { en: "Its tail is long." })), false);
 expect("walk ↔ walks 는 오타가 아님(어미)", G.gradeProduce("He walk to school.", { en: "He walks to school." }).verdict, "wrong");
+// two forms of one word · two look-alike words are never a one-letter typo
+expect("forget → forgot 는 오타가 아님", G.gradeProduce("Don't forgot it.", { en: "Don't forget it." }).verdict, "wrong");
+expect("bought → brought 는 오타가 아님", G.gradeProduce("He brought the book.", { en: "He bought the book." }).verdict, "wrong");
+expect("woman → women 은 오타가 아님", G.gradeProduce("The women was his wife.", { en: "The woman was his wife." }).verdict, "wrong");
+expect("later → latter 는 오타가 아님", G.gradeProduce("Two months latter, it was gone.", { en: "Two months later, it was gone." }).verdict, "wrong");
+expect("그래도 진짜 한 글자 오타는 봐줌(Englisj)", G.gradeProduce("He studies Englisj every morning.", { en: "He studies English every morning." }).verdict, "typo");
+// 's = is or has (점검 2026-09-27)
+const been = { en: "She has been to Paris.", accept: ["She's been to Paris."] };
+expect("She is been → 오답('s been = has been)", G.gradeProduce("She is been to Paris.", been).verdict, "wrong");
+expect("She's been → 정답(허용 답 없이도)", G.gradeProduce("She's been to Paris.", { en: "She has been to Paris." }).verdict, "correct");
+expect("모범 답이 She's been 뿐이어도 She is been → 오답", G.gradeProduce("She is been to Paris.", { en: "She's been to Paris." }).verdict, "wrong");
+expect("모범 답이 She's been 뿐이어도 She has been → 정답", G.gradeProduce("She has been to Paris.", { en: "She's been to Paris." }).verdict, "correct");
+const gone = { en: "He has gone home.", accept: ["He's gone home."] };
+expect("He is gone home → 오답(허용 답의 's 는 모범 답대로 has)", G.gradeProduce("He is gone home.", gone).verdict, "wrong");
+expect("He's gone home → 정답", G.gradeProduce("He's gone home.", gone).verdict, "correct");
+expect("It's made of wood → 정답(is + 분사)", G.gradeProduce("It's made of wood.", { en: "It is made of wood." }).verdict, "correct");
+expect("모범 답이 It's made 뿐이어도 It is made → 정답", G.gradeProduce("It is made of wood.", { en: "It's made of wood." }).verdict, "correct");
+expect("She is tired → 정답(모범 답 She's tired)", G.gradeProduce("She is tired today.", { en: "She's tired today." }).verdict, "correct");
+expect("Where's he gone → 정답(Where has he gone)", G.gradeProduce("Where's he gone?", { en: "Where has he gone?" }).verdict, "correct");
 expect("마이크 답의 숫자(11 = eleven)", G.gradeProduce("I am 11 years old", { ...sample, accept: [] }, { spoken: true }).verdict, "correct");
 expect("타이핑한 숫자는 그대로(11 ≠ eleven)", G.gradeProduce("I am 11 years old", { ...sample, accept: [] }).verdict, "wrong");
 

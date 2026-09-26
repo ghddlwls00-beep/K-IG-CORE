@@ -13,7 +13,8 @@ import { FOCUS_CLASS, FONT, LockIcon, Marked, PrimaryButton, SpeakButton, Studen
  *
  * The sentences are recalled one at a time, in order (stage A, 점검 10): the first one whose English is still
  * hidden is the one to recall, and its button wakes two seconds after it becomes that one — a single timer for
- * the page opened them all at once. Opening one moves the focus to its English, where the button was.
+ * the page opened them all at once. Opening one moves the focus to its English, where the button was. Only that
+ * sentence has the (filled) button; the ones after it say they wait their turn (디자인 규칙: one main action).
  */
 export function AnchorsStep({
   anchors,
@@ -66,8 +67,8 @@ export function AnchorsStep({
         {anchors.map((anchor, index) => {
           const shown = shownSet.has(anchor.id);
           const isCurrent = anchor.id === currentId;
-          // aria-disabled, not disabled: a button waiting its turn stays in the tab order
-          const waiting = !isCurrent || readyId !== anchor.id;
+          // aria-disabled, not disabled: the button waiting its two seconds stays in the tab order
+          const waiting = readyId !== anchor.id;
           return (
             <li key={anchor.id} className="rounded-2xl border border-line bg-surface p-4">
               <div className="flex gap-3">
@@ -101,14 +102,12 @@ export function AnchorsStep({
                       </div>
                       <StudentTag studentRef={anchor.studentRef} />
                     </>
-                  ) : (
+                  ) : isCurrent ? (
                     <div className="flex flex-col gap-3">
-                      {isCurrent ? (
-                        // 44px targets for the shared microphone's buttons here (디자인 규칙 §1-4), its own look untouched
-                        <div className="[&_button]:min-h-11">
-                          <VoiceSpeakingTester targetText={anchor.en} buttonLabel="먼저 말해 보기" resultView="transcript" />
-                        </div>
-                      ) : null}
+                      {/* 44px targets for the shared microphone's buttons here (디자인 규칙 §1-4), its own look untouched */}
+                      <div className="[&_button]:min-h-11">
+                        <VoiceSpeakingTester targetText={anchor.en} buttonLabel="먼저 말해 보기" resultView="transcript" />
+                      </div>
                       <button
                         type="button"
                         aria-disabled={waiting}
@@ -118,6 +117,8 @@ export function AnchorsStep({
                         영어 보기
                       </button>
                     </div>
+                  ) : (
+                    <p className="text-[14px] text-ink-faint">앞 문장을 연 뒤에 차례가 와요.</p>
                   )}
                 </div>
               </div>

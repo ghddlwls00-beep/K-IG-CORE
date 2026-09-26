@@ -2,31 +2,39 @@
 
 import { useState } from "react";
 import type { PassoffAnchor, PassoffRuleBlock } from "@/lib/passoffTypes";
-import { FOCUS_CLASS, FONT, Marked, PrimaryButton, Verdict, CheckIcon, CrossIcon, tone, type FontSize } from "./ui";
+import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, CheckIcon, CrossIcon, tone, type FontSize } from "./ui";
 
 /**
  * ② 규칙 1~3분 (설계 §3): a discovery question on the sentences of ① (recorded, never graded — the answer and
  * why come right after the choice) → the explanation card (rule 3~5 lines · a table · how Korean differs ·
  * ✗/✓ common mistakes · a worked example · old and new term) → one rule check. A wrong check points at the
  * rule line it is about and asks again.
+ *
+ * The step tabs are free to press, so ② can come before ①: a sentence whose English ① has not opened yet is
+ * shown by its Korean here — the English would give away ①'s "먼저 떠올리기" (점검 2026-09-27).
  */
 export function RuleStep({
   rule,
   anchors,
+  revealed,
   discovery,
   onDiscovery,
   checkDone,
   onCheckRight,
   font,
+  onGoAnchors,
   onNext,
 }: {
   rule: PassoffRuleBlock | null;
   anchors: PassoffAnchor[];
+  /** ① sentences whose English was opened */
+  revealed: readonly string[];
   discovery: number | null;
   onDiscovery: (option: number) => void;
   checkDone: boolean;
   onCheckRight: () => void;
   font: FontSize;
+  onGoAnchors: () => void;
   onNext: () => void;
 }) {
   const [missedPoint, setMissedPoint] = useState<number | null>(null);
@@ -34,6 +42,8 @@ export function RuleStep({
   const d = rule.discovery;
   const cardOpen = !d || discovery !== null;
   const shownAnchors = d?.anchorIds?.length ? anchors.filter((a) => d.anchorIds?.includes(a.id)) : [];
+  const opened = new Set(revealed);
+  const notOpened = shownAnchors.filter((a) => !opened.has(a.id)).length;
 
   return (
     <div className="flex flex-col gap-6">
@@ -44,12 +54,24 @@ export function RuleStep({
           </h3>
           {shownAnchors.length ? (
             <ul className="flex flex-col gap-1.5 border-l-2 border-line pl-3">
-              {shownAnchors.map((a) => (
-                <li key={a.id} lang="en" className={`${FONT[font].text} text-ink`}>
-                  <Marked text={a.en} phrases={a.focus} className={FOCUS_CLASS} />
-                </li>
-              ))}
+              {shownAnchors.map((a) =>
+                opened.has(a.id) ? (
+                  <li key={a.id} lang="en" className={`${FONT[font].text} text-ink`}>
+                    <Marked text={a.en} phrases={a.focus} className={FOCUS_CLASS} />
+                  </li>
+                ) : (
+                  <li key={a.id} className={`${FONT[font].text} text-ink-soft`}>
+                    {a.ko}
+                  </li>
+                ),
+              )}
             </ul>
+          ) : null}
+          {notOpened ? (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              <p className="text-[14px] text-ink-soft">1단계에서 먼저 떠올린 문장만 영어로 보여요.</p>
+              <SecondaryButton onClick={onGoAnchors}>1단계로</SecondaryButton>
+            </div>
           ) : null}
           <p className={`${FONT[font].text} text-ink`}>{d.question}</p>
           <div className="flex flex-wrap gap-2" role="group" aria-label="고르기">
@@ -63,7 +85,7 @@ export function RuleStep({
                   aria-pressed={chosen}
                   disabled={discovery !== null}
                   onClick={() => onDiscovery(i)}
-                  className={`inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors ${
+                  className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors ${
                     isAnswer ? `${tone.successBorder} font-semibold text-ink` : chosen ? "border-line-strong text-ink" : "border-line text-ink hover:bg-sunken"
                   } disabled:cursor-default`}
                 >
@@ -272,7 +294,7 @@ export function RuleCheck({
               type="button"
               disabled={right || isWrong}
               onClick={() => choose(i)}
-              className={`inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors disabled:cursor-default ${
+              className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors disabled:cursor-default ${
                 isRight ? `${tone.successBorder} font-semibold text-ink` : isWrong ? "border-line text-ink-faint line-through" : "border-line text-ink hover:bg-sunken"
               }`}
             >

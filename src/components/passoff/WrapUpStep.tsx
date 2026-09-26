@@ -4,7 +4,7 @@ import type { PassoffFrameBlock, PassoffProduceItem, PassoffRuleBlock } from "@/
 import { hasHangul } from "@/lib/passoffGrading";
 import { frameParts, type ComposeItemState } from "@/lib/passoffLesson";
 import { ComposeRun } from "./ComposeStep";
-import type { ComposeOutcome } from "./ComposeCard";
+import type { ComposeReport } from "./ComposeCard";
 import { RuleCheck } from "./RuleStep";
 import { FONT, SecondaryButton, Verdict, tone, type FontSize, type Speaker } from "./ui";
 
@@ -25,7 +25,7 @@ export function WrapUpStep({
   speaker,
   stepsLeft,
   lessonDone,
-  onPresentationDone,
+  report,
   onCheckRight,
   onFrame,
   onGoStep,
@@ -44,7 +44,7 @@ export function WrapUpStep({
   /** steps not finished yet (0-based), ⑤ itself included */
   stepsLeft: number[];
   lessonDone: boolean;
-  onPresentationDone: (id: string, outcome: ComposeOutcome, queue: string[]) => void;
+  report: ComposeReport;
   onCheckRight: () => void;
   onFrame: (values: string[]) => void;
   onGoStep: (step: number) => void;
@@ -79,7 +79,7 @@ export function WrapUpStep({
                 font={font}
                 speaker={speaker}
                 ruleTitle={rule?.title}
-                onPresentationDone={onPresentationDone}
+                report={report}
               />
             </>
           ) : (

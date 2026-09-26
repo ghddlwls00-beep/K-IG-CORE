@@ -3,7 +3,7 @@
 import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { twoLineScore } from "@/lib/passoffGrading";
 import { MAX_REQUEUES, type ComposeItemState } from "@/lib/passoffLesson";
-import { ComposeCard, type ComposeOutcome } from "./ComposeCard";
+import { ComposeCard, type ComposeReport } from "./ComposeCard";
 import { PrimaryButton, Verdict, type FontSize, type Speaker } from "./ui";
 
 /**
@@ -20,7 +20,7 @@ export function ComposeStep({
   font,
   speaker,
   ruleTitle,
-  onPresentationDone,
+  report,
   onNextSet,
   onNext,
 }: {
@@ -33,7 +33,7 @@ export function ComposeStep({
   font: FontSize;
   speaker: Speaker;
   ruleTitle?: string;
-  onPresentationDone: (id: string, outcome: ComposeOutcome, queue: string[]) => void;
+  report: ComposeReport;
   onNextSet: () => void;
   onNext: () => void;
 }) {
@@ -68,7 +68,7 @@ export function ComposeStep({
           font={font}
           speaker={speaker}
           ruleTitle={ruleTitle}
-          onPresentationDone={onPresentationDone}
+          report={report}
         />
       ) : (
         <div className="flex flex-col gap-4">
@@ -92,7 +92,7 @@ export function ComposeRun({
   font,
   speaker,
   ruleTitle,
-  onPresentationDone,
+  report,
 }: {
   items: PassoffProduceItem[];
   queue: string[];
@@ -102,7 +102,7 @@ export function ComposeRun({
   font: FontSize;
   speaker: Speaker;
   ruleTitle?: string;
-  onPresentationDone: (id: string, outcome: ComposeOutcome, queue: string[]) => void;
+  report: ComposeReport;
 }) {
   const item = items.find((i) => i.id === queue[0]);
   if (!item) return null;
@@ -115,10 +115,13 @@ export function ComposeRun({
       lessonId={lessonId}
       presentation={requeues}
       comebacksLeft={MAX_REQUEUES - requeues}
+      priorHelp={states[item.id]?.help ?? "none"}
       font={font}
       speaker={speaker}
       ruleTitle={ruleTitle}
-      onDone={(outcome) => onPresentationDone(item.id, outcome, queue)}
+      onFirstTry={(result) => report.firstTry(item.id, result)}
+      onHelp={(help) => report.help(item.id, help)}
+      onDone={(outcome) => report.done(item.id, outcome, queue)}
     />
   );
 }
