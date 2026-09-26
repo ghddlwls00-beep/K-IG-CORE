@@ -10,7 +10,7 @@ import { ReadingLearningView } from "@/components/ReadingLearningView";
 import { GrammarLearningView } from "@/components/GrammarLearningView";
 import { PhonicsLearningView } from "@/components/PhonicsLearningView";
 import { StudentLearningView } from "@/components/StudentLearningView";
-import { PassoffGrammarLearningView } from "@/components/PassoffGrammarLearningView";
+import { PassoffLearningView } from "@/components/PassoffLearningView";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
@@ -439,10 +439,13 @@ export default async function LessonPage({
           ) : course === "passoff-grammar" ? (
             // its own branch on purpose: the final else below is STUDENT's view. Only the blocks the view
             // draws (passoffLessonBlocks) — never the whole lesson, which would put every answer in the HTML.
-            <PassoffGrammarLearningView
+            // Keyed by lesson: a new lesson starts the five steps fresh, never with the last lesson's answers.
+            <PassoffLearningView
+              key={`${course}/${lesson.id}`}
               blocks={passoff?.blocks ?? []}
               lessonKey={`${course}/${lesson.id}`}
               lockedExtraCount={passoff?.lockedExtraCount ?? 0}
+              subtitle={"subtitle" in lesson && typeof lesson.subtitle === "string" ? lesson.subtitle : null}
             />
           ) : (
             <StudentLearningView

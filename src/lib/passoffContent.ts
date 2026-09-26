@@ -6,6 +6,7 @@ import type { Block, Lesson } from "./types";
 import { planOpensCourse } from "./license";
 import { LICENSE_SESSION_COOKIE_NAME, verifyLicenseSessionToken } from "./licenseSession";
 import { attachPaidItems, type PaidSupplement } from "./passoffSupplement";
+import { viewBlocks } from "./passoffView";
 
 /**
  * PASS-OFF GRAMMAR — what a lesson page may hand its view (설계 §7).
@@ -48,30 +49,8 @@ function sentenceCount(supplement: PaidSupplement): number {
   return new Set(supplement.items.map((e) => e.item.en).filter((en): en is string => typeof en === "string" && en.trim() !== "")).size;
 }
 
-/**
- * ONLY WHAT THE VIEW DRAWS goes into the page. Whatever this returns is serialised into the HTML (the
- * RSC payload), so a whole lesson would send every answer list and the source table to a phone that
- * shows none of it — and a learner could read ④'s answers there before trying. Stage A draws step ①,
- * so only the anchors go, without the fields no screen shows (the source table's `bookRef` · `fix` ·
- * `source` · `koSource` · `note`, and `paidStudent`). Stage B adds the blocks of the steps it draws here.
- */
-const VIEW_BLOCK_TYPES = new Set(["anchors"]);
-const HIDDEN_ITEM_FIELDS = new Set(["bookRef", "fix", "source", "koSource", "note", "paidStudent"]);
-
-function viewBlocks(blocks: Block[]): Block[] {
-  return blocks
-    .filter((b) => VIEW_BLOCK_TYPES.has(b.type))
-    .map((b) =>
-      b.type === "anchors"
-        ? {
-            ...b,
-            items: b.items.map(
-              (item) => Object.fromEntries(Object.entries(item).filter(([key]) => !HIDDEN_ITEM_FIELDS.has(key))) as typeof item,
-            ),
-          }
-        : b,
-    );
-}
+// ONLY WHAT THE VIEW DRAWS goes into the page — the five steps' blocks without the source table and the
+// record-only fields (src/lib/passoffView.ts viewBlocks, which the grading check also runs).
 
 export async function passoffLessonBlocks(
   course: string,

@@ -188,5 +188,275 @@
   "bug": "BUG-025",
   "decision": "소유자 결정 대기(2026-09-24) — 지우기 / 두기",
   "note": "옛 Flash 틀 — 받아쓰기 칸 수 rows 10"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "맨 위 칸",
+  "what": "grammarTags",
+  "lessons": 29,
+  "count": 43,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 레슨 화면이 쓰지 않음",
+  "note": "레슨의 목표 문법 태그 — 도전 판정 · 내용 검사(태그.json) · 공통 학습 엔진"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "맨 위 칸",
+  "what": "koreanWords",
+  "lessons": 7,
+  "count": 10,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 음성 쪽 기록, 화면이 쓰지 않음",
+  "note": "로마자 한국어 낱말 목록 — 코드 쪽이 src/lib/lessonSpeechForm.ts 발음 기호 행을 만드는 근거(데이터-형식 '음성')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "anchors.items 안 칸",
+  "what": "source",
+  "lessons": 3,
+  "count": 3,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "anchors.items 안 칸",
+  "what": "note",
+  "lessons": 4,
+  "count": 4,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "anchors.items 안 칸",
+  "what": "bookRef",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.select 안 칸",
+  "what": "bookRef",
+  "lessons": 24,
+  "count": 24,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.select 안 칸",
+  "what": "source",
+  "lessons": 28,
+  "count": 28,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "tags",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 레슨 화면은 challenge 만 씀, 페이지에 싣지 않음(viewBlocks)",
+  "note": "문법 태그 — 날을 넘기는 복습의 섞기 · 도전 판정(공통 학습 엔진 몫, 설계 §4) · 내용 검사(check-lessons)"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "challengeTags",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 레슨 화면은 challenge 만 씀, 페이지에 싣지 않음(viewBlocks)",
+  "note": "문법 태그 — 날을 넘기는 복습의 섞기 · 도전 판정(공통 학습 엔진 몫, 설계 §4) · 내용 검사(check-lessons)"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "paidStudent",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(서버가 이미 판정)",
+  "note": "무료 체험 떼기 표시 — scripts/buildPassoffIndex.mjs 가 읽어 서버 전용 보충으로 옮김(설계 §7)"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "bookRef",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "fix",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "source",
+  "lessons": 9,
+  "count": 9,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "note",
+  "lessons": 1,
+  "count": 1,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "tags",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 레슨 화면은 challenge 만 씀, 페이지에 싣지 않음(viewBlocks)",
+  "note": "문법 태그 — 날을 넘기는 복습의 섞기 · 도전 판정(공통 학습 엔진 몫, 설계 §4) · 내용 검사(check-lessons)"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "challengeTags",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 레슨 화면은 challenge 만 씀, 페이지에 싣지 않음(viewBlocks)",
+  "note": "문법 태그 — 날을 넘기는 복습의 섞기 · 도전 판정(공통 학습 엔진 몫, 설계 §4) · 내용 검사(check-lessons)"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "source",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "paidStudent",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(서버가 이미 판정)",
+  "note": "무료 체험 떼기 표시 — scripts/buildPassoffIndex.mjs 가 읽어 서버 전용 보충으로 옮김(설계 §7)"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "bookRef",
+  "lessons": 9,
+  "count": 9,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "fix",
+  "lessons": 29,
+  "count": 29,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "anchors.items 안 칸",
+  "what": "fix",
+  "lessons": 23,
+  "count": 23,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.select 안 칸",
+  "what": "fix",
+  "lessons": 7,
+  "count": 7,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "challengeNote",
+  "lessons": 1,
+  "count": 1,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "anchors.items 안 칸",
+  "what": "koSource",
+  "lessons": 14,
+  "count": 14,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.produce 안 칸",
+  "what": "koSource",
+  "lessons": 14,
+  "count": 14,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "koSource",
+  "lessons": 7,
+  "count": 7,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
+ },
+ {
+  "course": "passoff-grammar",
+  "kind": "drill.transfer 안 칸",
+  "what": "note",
+  "lessons": 1,
+  "count": 1,
+  "bug": "설계 §7 · 데이터-형식 v1.3",
+  "decision": "설계대로 — 페이지에 싣지 않음(src/lib/passoffView.ts viewBlocks)",
+  "note": "기록용 — 원문 대조표 · 다음 편집자 메모(데이터-형식 v1.3 '화면에 안 나오는 기록용')"
  }
 ]

@@ -13,8 +13,10 @@
  *   GRAMMAR   GrammarLearningView:361 playEnglish(item.englishText) — 영어 문항만(한국어 쪽 강의는 짝 강의의 영어)
  *   LISTENING LdLearningView:317 playText(….en · card.original) · :335 allEnglishSentences — 대본(ld_english_scripts)의 영어와 연음 카드 original
  *   READING   ReadingLearningView:421 playSentenceEn(pair.en) · :438 playWordAudio(kw.word) — 문장 영어 · 카드 낱말
- *   PASS-OFF GRAMMAR  PassoffGrammarLearningView — ① 예문(anchors) · ④ 영작(drill.produce) · ⑤ 처음 보는 문장(drill.transfer) 의 영어 en.
- *             위 '전체 듣기' 는 끔(page.tsx). 과정 등록 단계(A)의 최소 분기 — 단계 B 가 화면이 실제로 넘기는 글과 맞춘다(설계 §9).
+ *   PASS-OFF GRAMMAR  PassoffLearningView — ① 예문(anchors, '영어 보기' 뒤) · ④ 영작(drill.produce) · ⑤ 처음 보는 문장(drill.transfer, 둘 다
+ *             시도한 뒤의 모범 답)의 speakAs(동형이음어를 화면 뜻 발음으로 — 데이터-형식 '음성') 또는 en — src/components/passoff/ui.tsx spokenOf.
+ *             허용 답(accept) · 영어 제시문(promptEn) · 규칙 카드 · ③ 형태 찾기 · ⑤ 내 문장 · 한국어는 소리 내지 않는다.
+ *             위 '전체 듣기' 는 끔(page.tsx). 코드 단계 B 가 화면이 실제로 넘기는 글과 맞춤(설계 §9).
  *             무료 체험 pg01-1 의 유료 STUDENT 문장은 레슨 파일에 없다(서버 전용 보충 파일 — 아래 withHeldBack). 이용권이 있으면
  *             서버가 붙여 화면이 소리 내므로 클립을 모으는 쪽은 붙여서 넘기고, 무료 소리 키만 붙이지 않는다.
  *   위 '전체 듣기' — page.tsx 가 src/lib/lessonAudioText.ts extractSentencesForAudio 로 만든 fallbackSentences 를 AudioPlayer 가 소리 낸다
@@ -132,10 +134,12 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
       if (col) add(col.phrase);
     }
   } else if (course === "passoff-grammar") {
+    // src/components/passoff/ui.tsx spokenOf — the item's speakAs when it has one, else its en (the same test)
+    const spoken = (it) => (typeof it.speakAs === "string" && it.speakAs.trim() ? it.speakAs : it.en);
     for (const b of blocksOf(lesson)) {
       if (!b) continue;
-      if (b.type === "anchors") for (const it of b.items || []) if (it && it.en) add(en(it.en));
-      if (b.type === "drill") for (const k of ["produce", "transfer"]) for (const it of b[k] || []) if (it && it.en) add(en(it.en));
+      if (b.type === "anchors") for (const it of b.items || []) if (it && it.en) add(en(spoken(it)));
+      if (b.type === "drill") for (const k of ["produce", "transfer"]) for (const it of b[k] || []) if (it && it.en) add(en(spoken(it)));
     }
   }
   return out;
@@ -143,7 +147,7 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
 
 /**
  * PASS-OFF GRAMMAR — 무료 체험 레슨이 떼어 둔 유료 STUDENT 문항(content/private/<과정>/<쪽>.paid.json, src/lib/passoffSupplement.ts).
- * 이용권이 이 과정을 열면 서버가 제자리에 붙이고(src/lib/passoffContent.ts) 화면이 보이고 소리 낸다(PassoffGrammarLearningView speakText).
+ * 이용권이 이 과정을 열면 서버가 제자리에 붙이고(src/lib/passoffContent.ts) 화면이 보이고 소리 낸다(PassoffLearningView speakText).
  * 그래서 **클립을 모으는 쪽** — 생성기 · 감사의 clipTexts(expectations.cjs) · check-changed-clips · prove-spoken-definition ·
  * korean-names-in-speech — 은 붙인 레슨을 spokenTexts 에 넘긴다:
  *     spokenTexts({ …, lesson: withHeldBack(lesson, heldBackOf(ROOT, course, id), attachPaidItems) })

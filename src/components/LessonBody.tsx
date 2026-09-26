@@ -44,8 +44,8 @@ const StudentLearningView = dynamic(
   () => import("./StudentLearningView").then((mod) => mod.StudentLearningView),
   { loading: () => <ViewLoadingSkeleton /> }
 );
-const PassoffGrammarLearningView = dynamic(
-  () => import("./PassoffGrammarLearningView").then((mod) => mod.PassoffGrammarLearningView),
+const PassoffLearningView = dynamic(
+  () => import("./PassoffLearningView").then((mod) => mod.PassoffLearningView),
   { loading: () => <ViewLoadingSkeleton /> }
 );
 const BasicsLearningView = dynamic(
@@ -208,7 +208,7 @@ export function LessonBody({
   // count from the server); this branch keeps the course known here, where the audit reads the views.
   if (course === "passoff-grammar") {
     return (
-      <PassoffGrammarLearningView
+      <PassoffLearningView
         blocks={blocks}
         lessonKey={lessonKey}
       />

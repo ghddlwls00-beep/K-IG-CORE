@@ -15,6 +15,13 @@ export interface VoiceSpeakingTesterProps {
   onSuccess?: (transcript: string, score: number) => void;
   compact?: boolean;
   buttonLabel?: string;
+  /**
+   * What to show once the learner has spoken. "score" (the default — every caller before PASS-OFF GRAMMAR):
+   * the word-match score, the transcript and each word of `targetText`, exactly as before. "transcript": only
+   * what was heard. "none": nothing — the caller shows the transcript itself. The last two never show
+   * `targetText`, which may be the answer the learner has not reached yet (docs/pass-off-grammar/설계.md §3 · §8).
+   */
+  resultView?: "score" | "transcript" | "none";
 }
 
 export function VoiceSpeakingTester({
@@ -22,6 +29,7 @@ export function VoiceSpeakingTester({
   onSuccess,
   compact = false,
   buttonLabel = "마이크로 발음 테스트",
+  resultView = "score",
 }: VoiceSpeakingTesterProps) {
   const [supported, setSupported] = useState(true);
   const [isListening, setIsListening] = useState(false);
@@ -141,7 +149,7 @@ export function VoiceSpeakingTester({
             "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[12px] font-medium transition-all cursor-pointer select-none " +
             (isListening
               ? "border-red-500 bg-red-500/10 text-red-600 animate-pulse ring-2 ring-red-500/30"
-              : result
+              : result && resultView === "score"
               ? result.score >= 80
                 ? "border-emerald-500/60 bg-emerald-500/10 text-emerald-700 hover:bg-emerald-500/20"
                 : "border-amber-500/60 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
@@ -155,13 +163,13 @@ export function VoiceSpeakingTester({
           <span>
             {isListening
               ? "듣고 있는 중... (말씀하세요)"
-              : result
+              : result && resultView === "score"
               ? `${result.score}점 (${result.ratingLabel})`
               : cleanLabel}
           </span>
         </button>
 
-        {result && (
+        {result && resultView === "score" && (
           <button
             type="button"
             onClick={handleReset}
@@ -212,8 +220,16 @@ export function VoiceSpeakingTester({
         </div>
       )}
 
+      {/* What was heard, and nothing about the target (resultView "transcript") */}
+      {result && !isListening && resultView === "transcript" && (
+        <div className="rounded-lg bg-surface p-2 border border-line/60 text-[13px]">
+          <span className="text-[12px] text-ink-faint block">인식된 내 음성:</span>
+          <p className="font-medium text-ink italic mt-0.5">&quot;{result.transcript}&quot;</p>
+        </div>
+      )}
+
       {/* Evaluation Results Card */}
-      {result && !isListening && (
+      {result && !isListening && resultView === "score" && (
         <div
           className={
             "flex flex-col gap-2 rounded-xl border p-3.5 transition-all text-[13px] " +
