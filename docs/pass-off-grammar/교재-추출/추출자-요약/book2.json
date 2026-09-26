@@ -1,0 +1,218 @@
+{
+ "range": "g3 p1-29 (앞부분 p1-4 표지·특징/학습법·연결고리 구성도·목차 + TOPIC 16 가정법 p5-9, TOPIC 17 조동사 p10-17, TOPIC 18 부사 p18-29)",
+ "outputFile": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\claude\\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE--claude-worktrees-korean-market-analysis-39e7fc\\5adf4ccb-9cea-421f-9195-b5f31b723c7f\\scratchpad\\pdf\\out\\g3-p1-29.json",
+ "topics": [
+  {
+   "printedLabel": "TOPIC 16",
+   "title": "가정법",
+   "pages": "5-9",
+   "subtopics": [
+    "(1) 가정법 과거",
+    "(2) 가정법 현재",
+    "(3) 가정법 과거완료",
+    "(4) I wish가정법"
+   ],
+   "passOffSentences": 11,
+   "applicationSentences": 22,
+   "reviewTasks": 1,
+   "reviewItems": 22,
+   "tables": 0,
+   "explanationText": "문법 설명 문장이 전혀 없음. 인쇄된 것은 소주제 제목 4개뿐이고 공식(If+과거, would+동사원형 등)이나 뜻 설명은 없음. Application 끝의 혼합가정법 3문장(If he had taken…, he might be alive 등)은 소주제 제목도 없이 나옴. 설명은 교사 몫(p2 학습법 2·3번). 목차가 약속한 '가정법 미래'는 본문에 없음."
+  },
+  {
+   "printedLabel": "TOPIC 17",
+   "title": "조동사",
+   "pages": "10-17",
+   "subtopics": [
+    "(1) 조동사 can",
+    "(2) 조동사 may",
+    "(3)should / ought to / used to / had better"
+   ],
+   "passOffSentences": 12,
+   "applicationSentences": 37,
+   "reviewTasks": 2,
+   "reviewItems": 47,
+   "tables": 0,
+   "explanationText": "설명 문장은 없음. 인쇄된 것은 소주제 제목 3개, 예문 앞 공식 3개('*used to + 동원:', '*be used to ~ing:', '*had better + 동원:'. 동원은 동사원형), 태그 '(=ought to)'가 전부. must, may well, be able to, get used to는 제목·공식 없이 Application 예문으로만 나옴. 'be used to ~ing' 공식 뒤 예문은 명사(a danger)를 써서 공식과 어긋남."
+  },
+  {
+   "printedLabel": "TOPIC 18",
+   "title": "부사",
+   "pages": "18-29",
+   "subtopics": [
+    "(1) –ly 부사",
+    "(2) 형용사와 형태가 같은 부사",
+    "(2) 부사의 여러 가지 용법",
+    "(3) 주의해야 할 부사들",
+    "(4) 비교급과 최상급 / 위치",
+    "(5) 의문부사"
+   ],
+   "passOffSentences": 30,
+   "applicationSentences": 56,
+   "reviewTasks": 3,
+   "reviewItems": 71,
+   "tables": 0,
+   "explanationText": "설명 문장은 없음. 인쇄된 것은 다음이 전부: 소주제 제목 6개(번호 (2)가 두 번 인쇄됨), 형용사↔부사를 '='로 잇는 줄 3개, 'Cf.)' 대조 예문 1개(속담), So am I / Neither am I / So it was를 '='로 보인 줄 3개, 'So it was.' 옆의 한국어 풀이 '(정말 그렇다)'. 표 없음. '(4) 비교급과 최상급 / 위치'라는 제목 아래에 비교급·최상급 예문이 없음. Review 문항 71개는 과제1 12개 + 과제2 7칸(제시문 6개) + 과제3 52개."
+  }
+ ],
+ "exerciseTypes": [
+  {
+   "type": "ko_to_en_compose",
+   "instructionExample": "다음 문장들을 영작하시오.",
+   "itemCount": 110,
+   "webIdea": "한국어를 보고 영어로 입력하거나 말하기(음성 인식). 정답 여러 개 허용: 축약형, was/were, Can I… / Would you mind if…, very/pretty. 곡선 따옴표·대소문자·끝 문장부호는 관대하게 비교. 틀리면 해당 Application 문장과 소리를 다시 보여 주고, 틀린 문항만 모아 다시 풀기(학습법 4번)."
+  },
+  {
+   "type": "underline_modal + write_meaning",
+   "instructionExample": "다음 문장을 보고 조동사에 줄을 긋고 그 의미를 써 보세요.",
+   "itemCount": 11,
+   "webIdea": "문장 속 단어를 눌러 조동사 묶음(may have been, had better 등)을 고르고, 뜻은 보기에서 고름(능력/추측/허가/의무·충고/과거 후회/과거 습관/권유). 자유 서술은 자동 채점이 어려움."
+  },
+  {
+   "type": "underline_adverb",
+   "instructionExample": "다음 문장을 보고 부사를 찾아 줄을 치세요.",
+   "itemCount": 12,
+   "webIdea": "단어 여러 개를 눌러 고르기(more slowly, Even…sometimes, Usually…very). 함정 단어(friendly, true, sure는 형용사)를 누르면 바로 설명. 무엇을 꾸미는지 화살표로 표시."
+  },
+  {
+   "type": "rewrite_same_meaning + complete_sentence_starter",
+   "instructionExample": "다음 문장을 보고 뜻이 같아지도록 영작하시오. (Sue’s job is very hard / = ____, I am happy, too / = So ____, I am not happy / = Nei____ / = Nor ____)",
+   "itemCount": 7,
+   "webIdea": "앞말(So / Nei / Nor)을 고정 글자로 두고 뒤를 입력칸으로. 앞 세 칸은 문장 전체를 쓰는 칸. 형용사↔부사 짝 카드(hard/hard, fast/fast, late/late)와 동의·부정 응답(So am I / Neither am I) 대화 카드로 바꾸면 좋음. 지시문 '뜻이 같아지도록'은 수정 필요."
+  }
+ ],
+ "answerKey": {
+  "reviewItems": 140,
+  "linkedToBookSentence": 117,
+  "needsNewAnswer": 23,
+  "notes": "영작·바꿔쓰기 117문항은 모두 같은 토픽의 영어 문장에 1:1로 연결됨. 순서도 Application 목록 그대로이고, 빠진 문장은 다음뿐임: TOPIC 17 application 13 'James may be at school.', TOPIC 18 application 33 'There was a book.'과 38~40(So am I / Neither am I / So it was 줄은 과제 2에서 대신 다룸). 새 정답이 필요한 것은 밑줄 과제 23문항(조동사 11 + 부사 12)이며, 밑줄 칠 말과 뜻을 extraSlotAnswer에 적었음. 책의 영어 정답 자체가 틀리거나 어색한 16문항은 answerFix에 수정본을 넣음(예: she had → she would have, so long time → so long, from your house and to your school → to get from … to). 한국어 제시문이 영어와 어긋나거나 오타인 47곳은 promptFix에 수정안을 넣음. 여기에는 뜻이 정반대인 2건('너는 지금 떠나는 것이 낫다' ↔ You’d better not leave now, '그 강은 … 깨끗해' ↔ wasn’t clean enough)과 I wish 과거완료를 현재 바람으로 옮긴 건들이 들어 있음. TOPIC 18 과제 2의 1·3번은 책의 짝이 뜻이 같지 않아(Sue’s job is very hard ≠ Sue works very hard) '뜻이 같아지도록'이라는 정답 근거가 약함. 책에는 영어 정답표가 전혀 없음. 이 정답 연결과 수정안은 모두 이 에이전트 혼자 만들고 스스로 확인한 것이며, 교사나 원어민의 검수는 거치지 않았음."
+ },
+ "issues": {
+  "total": 81,
+  "high": 23,
+  "examples": [
+   {
+    "page": 5,
+    "text": "He could have done that if he head tried.",
+    "problem": "오타 head → had. Application p7에는 had로 바르게 인쇄됨.",
+    "fix": "He could have done that if he had tried."
+   },
+   {
+    "page": 5,
+    "text": "If you knew the answer, I would tell you.",
+    "problem": "문법은 맞지만 논리가 뒤집힘(네가 답을 안다면 내가 말해 줄 이유가 없음). 한국어 제시문도 같은 논리이고 '말 할'은 붙여 써야 함.",
+    "fix": "If I knew the answer, I would tell you. / 만약 내가 답을 안다면 너에게 말해 줄 텐데."
+   },
+   {
+    "page": 7,
+    "text": "If she had not bought the building, she had a lot of money now.",
+    "problem": "혼합가정법 주절에 조동사가 빠짐. Review (1) #21의 정답.",
+    "fix": "If she had not bought the building, she would have a lot of money now."
+   },
+   {
+    "page": 6,
+    "text": "If I didn’t want to buy this camera, I wouldn’t buy.",
+    "problem": "타동사 buy의 목적어가 빠졌고 같은 말을 되풀이하는 문장임.",
+    "fix": "If I didn’t want to buy this camera, I wouldn’t buy it."
+   },
+   {
+    "page": 9,
+    "text": "나는 내가 정선생님이 아팠다는 것을 알기를 원한다(그랬다면,)나는 그를 만나러 갔을 텐데.",
+    "problem": "I wish I had known(과거에 대한 후회)을 '알기를 원한다'(앞으로의 바람)로 옮김. 띄어쓰기도 틀림.",
+    "fix": "정 선생님이 편찮으셨다는 걸 알았더라면 좋았을 텐데. (그랬다면) 나는 그를 만나러 갔을 텐데."
+   },
+   {
+    "page": 17,
+    "text": "너는 지금 떠나는 것이 낫다.",
+    "problem": "영어 'You’d better not leave now.'는 부정인데 한국어는 긍정이라 뜻이 정반대임.",
+    "fix": "너는 지금 떠나지 않는 게 좋겠다."
+   },
+   {
+    "page": 17,
+    "text": "드는 시간을 더 현명하게 쓰는 것이 낫다.",
+    "problem": "'드는'은 '그는'의 오타.",
+    "fix": "그는 시간을 현명하게 쓰는 게 좋겠다."
+   },
+   {
+    "page": 15,
+    "text": "지난주에 나는 그녀를 볼 수 없었다.",
+    "problem": "영어는 Last weekend(지난 주말)인데 한국어는 '지난주'라서 제시문대로 쓰면 Last week가 답이 됨.",
+    "fix": "지난 주말에 나는 그녀를 만날 수 없었다."
+   },
+   {
+    "page": 28,
+    "text": "그 강은 안에서 수영할 만큼 충분히 깨끗해.",
+    "problem": "영어 'The river wasn’t clean enough to swim in.'은 부정·과거인데 한국어는 긍정·현재임.",
+    "fix": "그 강은 수영할 수 있을 만큼 깨끗하지 않았다."
+   },
+   {
+    "page": 19,
+    "text": "I am not happy = Neither am I =Nor am I",
+    "problem": "Neither am I는 'I am not happy, either.'와 같은 뜻이지 'I am not happy'와 같지 않음. 위 줄의 'too = So am I'와 짝이 맞지 않음.",
+    "fix": "I am not happy, either. = Neither am I. = Nor am I."
+   },
+   {
+    "page": 18,
+    "text": "(2) 부사의 여러 가지 용법",
+    "problem": "소주제 번호 (2)가 두 번 인쇄되어 뒤의 번호가 모두 하나씩 밀림.",
+    "fix": "(3) 부사의 여러 가지 용법, 이어서 (4)(5)(6)"
+   },
+   {
+    "page": 22,
+    "text": "I haven’t seen them for so long time.",
+    "problem": "'so long time'은 비문. Review 3. #36의 정답.",
+    "fix": "I haven’t seen them for so long."
+   },
+   {
+    "page": 23,
+    "text": "How long will it take from your house and to your school?",
+    "problem": "from A to B 사이에 and가 들어간 비문.",
+    "fix": "How long will it take to get from your house to your school?"
+   },
+   {
+    "page": 10,
+    "text": "*be used to ~ing: The taxi driver is used to a danger .",
+    "problem": "danger는 셀 수 없는 명사라 a를 붙이지 않음. 마침표 앞 공백도 있음. 공식은 ~ing인데 예문은 명사를 씀.",
+    "fix": "*be used to + 명사/동명사: The taxi driver is used to danger."
+   },
+   {
+    "page": 18,
+    "text": "Cf.) The early bird can catch the worms.",
+    "problem": "속담을 틀리게 옮김.",
+    "fix": "The early bird catches the worm."
+   },
+   {
+    "page": 4,
+    "text": "가정법의 과거완료 미 래",
+    "problem": "목차·구성도에는 가정법 미래가 있지만 본문 p5에는 가정법 미래 예문이 없음. 반대로 목차에 없는 '(2) 가정법 현재'가 본문에 있음.",
+    "fix": "본문에 가정법 미래(If + should / were to) 소주제를 넣거나 목차를 본문에 맞춤"
+   }
+  ]
+ },
+ "pedagogyObservations": [
+  "세 토픽 모두 같은 3단계 구성임: Pass-Off Sentences(소주제별 핵심 예문 2~7개) → Application Sentences(핵심 예문을 거의 그대로 다시 싣고 응용문을 덧붙인 긴 목록, 소주제 머리글 없음) → Review(영작·밑줄·바꿔쓰기). 이 범위에는 표나 도식이 하나도 없음.",
+  "책에 문법 설명이 거의 없음. 소주제 제목, 공식 3개(*used to + 동원 등), '=' 대응쌍, 'Cf.)'가 전부임. 학습법 2·3번대로 설명은 교사가 하고, 책은 예문 암기와 '한글 번역을 보고 영어로 바로 말하기' 연습용임.",
+  "Review는 Application 암기 확인임. 한국어 영작 문제가 Application 문장을 같은 순서로 번역한 것이라서 문장 수가 거의 같음(가정법 22/22, 조동사 36/37, 부사 52/56). Pass-Off 문장은 영어 그대로 다시 보여 주고 조동사·부사에 밑줄을 긋게 해서 한 번 더 확인함. 정답표는 없음.",
+  "STUDENT 과정과의 연결이 약함. Application 115줄 중 (N과) 표시가 있는 것은 8줄(1·3·4·5·6·7·14·16과)뿐임. 나머지는 Homer, early bird, taxi driver 같은 일반 문법책 예문이라서 p2 소개의 '예문은 TLA English 문장'과 다름. 표시된 문장도 원문과 다른 곳이 있음(16과 my 누락, 14과 축약, 4과 마침표 누락).",
+  "문법 초점 단어를 굵은 글씨로 표시하지 않음(PDF 글꼴 확인 결과 예문 속 bold는 0개). 학생이 조동사·부사를 스스로 찾아야 하는 구조이고, 그래서 Review 과제 1이 '밑줄 긋기'임.",
+  "난이도 편차가 큼. 가정법은 과거완료, 혼합가정법(If he had taken…, he might be alive), I wish 과거완료까지 설명 없이 나옴. 조동사는 may as well, may well, must have p.p.까지 나옴. 반면 부사 토픽 끝은 How old are you? 수준의 의문문 14개임. '초급자 대상'(학습법 1번)이라기에 가정법·조동사는 중급 이상임.",
+  "비슷한 형태를 짝지어 대비시켜 가르침: hard/hardly, late/early, used to / be used to / get used to, So am I / Neither am I, such a long time / so long, too ~ to / enough to, 형용사 hard ↔ 부사 hard.",
+  "소주제에 없는 내용이 Application에만 나옴: 혼합가정법(가정법), must(조동사), too/enough와 although/unless(부사). 목차와 본문도 어긋남: 가정법 미래가 본문에 없고, 가정법 현재·의문부사는 목차에 없고, 부사 (2) 번호가 중복되고, '비교급과 최상급' 제목 아래에 비교급 예문이 없음.",
+  "영어와 번역 품질 문제가 커서 그대로 옮기면 학생이 제시문대로 맞게 써도 틀린 답이 되는 문항이 생김. 81건 중 확신 높음이 23건임. 예: 영어 오류(head, a danger, had→would have, so long time, from…and to), 한국어가 영어와 정반대(부정 누락 2건), 시제 불일치(I wish 과거완료를 현재 바람으로, 혼합가정법을 과거로), 오타('드는', '되요', '날라갔을').",
+  "과제 형식이 단순함: 영작 110, 밑줄 23, 바꿔쓰기 7칸. 선택형, 빈칸형, 오류 고르기, 말하기 확인은 없음. 틀린 문항 재학습은 권고만 있고 채점은 교사 몫임."
+ ],
+ "webConversionNotes": [
+  "밑줄 과제 23문항(조동사 11, 부사 12)은 문장 속 단어를 눌러 고르는 방식으로 바꿔야 함. 정답이 여러 단어인 경우(more slowly, Even…sometimes, Usually…very, may have been, had better)와 함정 단어(friendly, true, sure) 처리 규칙이 필요함. 'in class' 같은 부사구를 정답으로 인정할지도 정해야 함.",
+  "'그 의미를 써 보세요'(조동사 11문항)는 자유 서술이라 자동 채점이 안 됨. 보기 고르기(능력/추측/허가/의무·충고/과거 후회/과거 습관/권유)로 바꿔야 함. #3 'I want to be able to…'는 진짜 조동사가 없고 be able to만 있어 정답 기준을 적어 둬야 함.",
+  "영작 110문항은 정답이 여러 개임: 축약형(You’d better / You had better, I’ll), was/were, someday 위치, Can I use… / Would you mind if…, very/pretty, such a long time / so long. 정답 목록과 관대한 비교(곡선 따옴표 ’ ↔ ', 대소문자, 끝 문장부호)가 필요함. 책 영어가 틀린 16문항은 answerFix로 정답을 바꿔 넣어야 함.",
+  "한국어 제시문 47곳은 promptFix로 고친 뒤 올려야 함. 뜻이 정반대인 2건, 시제 어긋남, '지난주' ↔ Last weekend, 오타('드는', '되요', '날라갔을')가 여기에 들어 있음. 그대로 두면 제시문대로 쓴 학생이 오답 처리됨.",
+  "한국어 번역이 책 어디에도 없는 문장이 11개 있음: I wish somebody would answer me. / He used to get up early. / James may be at school. / The early bird can catch the worms. / There was a book. / So am I·Neither am I·So it was 세 줄 / How tall is this tree? / How long is that bridge? / How much is this book?. '=' 짝 3줄은 왼쪽 반(Sue’s job is very hard 등)에 번역이 없음. 한→영 말하기 연습에 넣으려면 번역을 새로 써야 함(목록은 JSON의 crossRef에 있음).",
+  "p25 빈칸 '= So ____', '= Nei____', '= Nor ____'는 앞말이 인쇄된 칸이고, Nei는 단어 중간에서 끊겨 있음. 고정 글자 + 입력칸 UI가 필요함. 앞의 세 '=' 칸은 밑줄 없이 문장 전체를 쓰는 칸이라 형태가 다름. '뜻이 같아지도록'이라는 지시와 뜻이 다른 짝(Sue’s job is very hard ≠ Sue works very hard; I was late ≠ I got up late this morning)은 지시문을 '같은 단어를 부사로 써서 문장 만들기'로 바꾸거나 짝을 바꿔야 함.",
+  "Application에는 소주제 머리글이 없음. JSON에 위치로 추정한 소속 소주제(impliedGroup)를 붙여 두었으니, 소주제별 연습과 필터를 만들 때 쓸 수 있음(추정값이라 확인 필요).",
+  "책에 설명이 거의 없으므로 소주제마다 짧은 설명 카드(형태·뜻·예문)를 새로 써야 함. '동원'(=동사원형) 같은 약어는 풀어 써야 함. 웹 목차를 짤 때 소주제 번호 오류((2) 중복)와 목차-본문 불일치(가정법 미래 없음, 가정법 현재·의문부사는 목차에 없음)를 정리해야 하고, 목차·순서를 바꾸는 결정은 사장님 확인이 필요함.",
+  "(N과) 표시 8줄은 STUDENT 레슨(s1-3, s3-4, s4-6, s5-5, s6-1, s7-3, s14-3, s16-3)으로 연결할 수 있음. 다만 원문과 다른 곳(16과 my 누락, 14과 축약, 3과 He/She→He, 4과 마침표)을 원문대로 맞출지 정해야 함.",
+  "음성: Pass-Off 문장 44개가 Application에 그대로 다시 나오므로(가정법 8, 조동사 11, 부사 25) 클립을 한 번만 만들어 재사용할 수 있음. 이 사이트는 영어 텍스트를 바꾸면 클립 키(텍스트 해시)가 바뀌므로, answerFix로 문장을 확정한 뒤에 음성을 만들어야 함.",
+  "학습법 5번의 '소주제와 대주제를 그려 가며 정리·암기'와 p3 연결고리 구성도(말풍선 67개. 책은 70개라고 씀)는 소주제 완료 표시가 되는 인터랙티브 진도 지도로 살릴 수 있음. 한 소주제를 완전히 익힌 뒤 넘어가라는 책의 원칙(학습법 5번)에 맞춰 소주제별 통과 기준(예: 영작 정답률)을 두는 방식이 어울림."
+ ],
+ "selfCheck": "p1~p29 쪽 이미지를 모두 직접 보고, 쪽마다 영어 예문 줄과 한국어 제시문 줄을 세어 추출 결과와 맞춤. 결과: p5 11, p6 11, p7 11, p8 10(두 줄짜리 1개 포함), p9 12, p10 12, p11 12, p12 12, p13 13, p14 11, p15 12, p16 12, p17 12, p18 16, p19 14, p20 13, p21 14, p22 14, p23 15, p24 12, p25 제시문 6개·빈칸 7개, p26 12, p27 13, p28 13, p29 14. 모두 일치함(두 줄에 걸친 문장 3개는 한 항목으로 합침). 글자는 PDF 글자 정보에서 그대로 뽑아 곡선 따옴표 ’, en-dash '–ly', 공백 두 칸, 마침표 앞 공백까지 보존했으므로 옮겨 적다 생긴 오타가 없음. 굵은 글씨는 글꼴 정보로 확인했음(예문 속 bold 0개). 그림 선은 p25 빈칸 밑줄 4개뿐이라는 것도 확인했음. 이슈 81건의 인용문은 스크립트가 해당 쪽 글자와 자동 대조해 모두 통과했고, p2 소개글 문단도 원문과 대조해 통과했음. JSON은 지정된 node 명령으로 파싱 확인했고 빈 문자열은 0개. 저장소 파일은 수정하지 않았고 scratchpad에만 썼음. 한계: 오류·번역 판정과 정답 연결은 이 에이전트 한 명이 만들고 스스로 확인한 것이라 독립 검수가 아니며, 원어민·교사 검토도 없음. 사장님이 1분 안에 직접 확인할 수 있는 것: p17 이미지의 '드는 시간을 더 현명하게 쓰는 것이 낫다.'('그는'의 오타)와 '너는 지금 떠나는 것이 낫다.'(p13 영어 'You’d better not leave now.'와 뜻이 반대) 두 줄."
+}

@@ -1,0 +1,173 @@
+{
+ "range": "g3 p30-57 (TOPIC 19 전치사 p30-45, TOPIC 20 접속사 p46-57; p57이 책의 마지막 쪽)",
+ "outputFile": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\claude\\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE--claude-worktrees-korean-market-analysis-39e7fc\\5adf4ccb-9cea-421f-9195-b5f31b723c7f\\scratchpad\\pdf\\out\\g3-p30-57.json",
+ "topics": [
+  {
+   "printedLabel": "TOPIC 19",
+   "title": "전치사",
+   "pages": "30-45",
+   "subtopics": [
+    "(1) 전치사",
+    "(2) 전치사와 접속사비교",
+    "(3) 중요전치사들"
+   ],
+   "passOffSentences": 44,
+   "applicationSentences": 96,
+   "reviewTasks": 1,
+   "reviewItems": 92,
+   "tables": 0,
+   "explanationText": "문법 설명문이나 표는 없음. 인쇄된 것은 소주제 제목 3개와 (1)·적용 p32의 전치사 라벨(in :, at :, with :, of :, for :, about :, in spite of :, before :, after :, by :, without :), 그리고 문장 옆 짧은 주석 4개뿐: '(= Despite)', '(월요일까지는 받을 것임)', '(프레드가 월요일에는 돌아올 것임)', '(그 즈음에)'. 적용 섹션(p32-37)은 초점 전치사에 밑줄."
+  },
+  {
+   "printedLabel": "TOPIC 20",
+   "title": "접속사",
+   "pages": "46-57",
+   "subtopics": [
+    "(1) 등위접속사",
+    "(2) 종속접속사"
+   ],
+   "passOffSentences": 17,
+   "applicationSentences": 52,
+   "reviewTasks": 2,
+   "reviewItems": 67,
+   "tables": 0,
+   "explanationText": "문법 설명문이나 표는 없음. 소주제 제목 2개와 접속사 라벨 17개(and, but, or, so / when, Until (till), As, As soon as, Unless, If ~ not, If, As long as, Because, So~ that, Lest ~ should, Though (Although), As if (even though)), 동의 표현 주석 '(=unless)', '(=provided)', '= in order that'만 인쇄. 패스오프 문장의 접속사에 밑줄(so that은 굵게+밑줄). 'As if (even though)' 라벨은 틀림(예문은 even though)."
+  }
+ ],
+ "exerciseTypes": [
+  {
+   "type": "ko_to_en_compose",
+   "instructionExample": "다음을 영작하시오. (토픽19) / 다음을 보고 영작하시오. (토픽20)",
+   "itemCount": 142,
+   "webIdea": "한국어를 보여 주고 영어를 입력(또는 말하기 녹음)하게 한 뒤, 적용 문장(answerFromBook)과 비교해 채점. 대체 표현(be going to/will, holiday/vacation, 축약형)을 허용하고 문장부호·대소문자는 무시. 초점 전치사·접속사가 들어갔는지는 따로 확인. 틀리면 해당 적용 문장과 밑줄 힌트를 보여 주고 원어민 음성을 재생. 소주제별 8~12문항 세트로 나누고 틀린 문항만 다시 풀게 함."
+  },
+  {
+   "type": "underline_conjunction + classify_coordinating_subordinating",
+   "instructionExample": "다음 문장을 보고 접속사에 밑줄을 긋고, 종속접속사는 종속, 등위접속사는 등위라고 적으시오.",
+   "itemCount": 17,
+   "webIdea": "문장의 단어를 탭해서 접속사를 고르고(as soon as, so that, lest ~ should, Even though처럼 여러 단어는 한 덩어리로 선택), '등위/종속' 버튼을 눌러 바로 채점. 접속사가 여럿인 문장은 목표 접속사 하나만 고르는지 전부 고르는지 미리 정해야 함. 정답표는 extraSlotAnswer에 있음."
+  }
+ ],
+ "answerKey": {
+  "reviewItems": 159,
+  "linkedToBookSentence": 142,
+  "needsNewAnswer": 17,
+  "notes": "영작 142문항은 전부 같은 토픽의 적용 문장과 순서대로 1:1 대응함(answerFromBook). 159쌍 모두 의미를 눈으로 대조했음. 다만 정답으로 쓸 영어 문장 중 약 25개는 문장 자체에 실질 오류가 있어 고친 문장을 정답으로 써야 함(interview→review, guest→guests, stay the palace, no one to be friends, We’re waiting for hours, deep impression 등). 8개는 문체상 고치는 편이 나음. 한국어 프롬프트도 약 49개(토픽19 31, 토픽20 18)가 영어와 뜻이 어긋나거나 오탈자가 있어 손봐야 함. 예: 90번 '프레드는 월요일까지 돌아올 것이다'는 until을 by 뜻으로 가르침. 59번은 '일요일 오후에'가 빠져 초점 전치사 on을 쓸 자리가 없음. 접속사 밑줄·분류 17문항은 책에 정답이 없어서 새로 만들어 extraSlotAnswer에 넣었음(answerFromBook·proposedAnswer는 null). 이 중 접속사가 여럿인 4문항(2·3·10·17)은 채점 규칙을 정해야 함. 적용 문장 가운데 리뷰에 대응하는 한국어가 없는 것은 6개(토픽19의 '=' 바꿔쓰기 4개, 토픽20의 We’d better…와 Robin…)."
+ },
+ "issues": {
+  "total": 83,
+  "high": 36,
+  "examples": [
+   {
+    "page": 45,
+    "text": "프레드는 월요일까지 돌아올 것이다.",
+    "problem": "영어 'Fred will be away until Monday'는 월요일까지 계속 자리를 비운다는 뜻인데, 한국어는 by의 뜻('월요일까지는 돌아온다')임. 이 단원이 가르치는 by/until 구별을 정반대로 가르치게 됨.",
+    "fix": "프레드는 월요일까지 (계속) 자리를 비울 것이다."
+   },
+   {
+    "page": 46,
+    "text": "As if (even though) : Even though it is hard work, ...",
+    "problem": "라벨 오류. as if(마치 ~처럼)는 even though(비록 ~이지만)와 뜻이 다름. 예문은 even though를 쓰고 있음.",
+    "fix": "Even though (Even if) :"
+   },
+   {
+    "page": 30,
+    "text": "I do a little interview to prepare for school. (8과)",
+    "problem": "'interview'는 오식. STUDENT 8과(s8-4) 원문은 'a little review'. 리뷰 한국어(p39 '작은 인터뷰')도 이 오식을 따라 틀림.",
+    "fix": "I do a little review to prepare for school."
+   },
+   {
+    "page": 30,
+    "text": "Since I was young, I learned to like history books and novels because I could read about the wisdom of many people. (13과)",
+    "problem": "since절 뒤 주절이 단순과거 learned라 시제가 맞지 않음. 옛 STUDENT 원문을 그대로 옮긴 것이고, 현재 사이트 s13-1은 이미 'When I was young'으로 고쳐져 있음. since 접속사의 대표 예문이 틀린 시제를 가르치게 됨.",
+    "fix": "Since I was young, I have loved history books and novels because I can read about the wisdom of many people."
+   },
+   {
+    "page": 30,
+    "text": "Since the end of the war in 1953, the country began to develop very quickly. (17과)",
+    "problem": "since + 과거 시점 뒤에 단순과거 began을 써 시제가 맞지 않음. 현재 사이트 s17-4는 'has developed'로 고쳐져 있음.",
+    "fix": "Since the end of the war in 1953, the country has developed very quickly."
+   },
+   {
+    "page": 31,
+    "text": "By the time she arrived, most of the other guest had left.",
+    "problem": "guest는 복수 guests여야 함. 적용 p37에서는 밑줄이 By the time이 아니라 of에 그어져 있음.",
+    "fix": "By the time she arrived, most of the other guests had left. (밑줄은 By the time에)"
+   },
+   {
+    "page": 37,
+    "text": "I mailed the letter today, so they receive it by Monday.",
+    "problem": "밑줄이 학습 대상 by가 아니라 so에 있고, 미래 일에 현재형 receive를 썼음.",
+    "fix": "I mailed the letter today, so they should receive it by Monday. (밑줄은 by에)"
+   },
+   {
+    "page": 43,
+    "text": "나는 내 친척들을 방문하기를 좋아해.",
+    "problem": "영어의 on Sunday afternoons가 빠져 이 문항의 초점 전치사 on을 쓸 자리가 없음.",
+    "fix": "나는 일요일 오후마다 친척들을 방문하는 것을 좋아해."
+   },
+   {
+    "page": 39,
+    "text": "나는 그들에게 미안하다. 그들은 매우 다른 상황에 있다.",
+    "problem": "feel sorry for는 '안됐다'이지 '미안하다'가 아님. difficult는 '어려운'인데 '다른'으로 옮김.",
+    "fix": "나는 그들이 안됐다. 그들은 매우 어려운 상황에 있다."
+   },
+   {
+    "page": 31,
+    "text": "She had worked at a department store for several years. (1과)",
+    "problem": "과 번호 오류: 이 문장은 1과가 아니라 2과(s2-3)에 있음. 기준 시점 없이 쓴 과거완료도 어색함(사이트는 'She worked'로 고침).",
+    "fix": "She worked at a department store for several years. (2과)"
+   },
+   {
+    "page": 31,
+    "text": "I can draw his face within my memory.",
+    "problem": "within my memory는 영어에서 쓰지 않는 표현이라 within 예문으로 부적절함.",
+    "fix": "I can draw his face from memory. (within 예문: The station is within walking distance.)"
+   },
+   {
+    "page": 49,
+    "text": "He could stay the palace as long as he wanted.",
+    "problem": "stay는 자동사라 장소 앞에 전치사가 필요함.",
+    "fix": "He could stay in the palace as long as he wanted."
+   },
+   {
+    "page": 50,
+    "text": "Though she had no one to be friends, she could be satisfied with learning and growing herself.",
+    "problem": "friends with에서 with가 빠졌고, growing herself는 '자기를 키우다'로 읽힘.",
+    "fix": "Though she had no one to be friends with, she was able to find satisfaction in learning and growing on her own."
+   },
+   {
+    "page": 57,
+    "text": "지미는 그것이 위험했었지만, 그 실험을 먼저 했다.",
+    "problem": "went ahead with는 '강행했다'라는 뜻인데 '먼저 했다'로 잘못 옮김.",
+    "fix": "지미는 그 실험이 위험했는데도 강행했다."
+   }
+  ]
+ },
+ "pedagogyObservations": [
+  "각 토픽은 3단 구조임. ① Pass-Off Sentences(소주제별로 외울 핵심 예문) → ② Application Sentences(패스오프 문장마다 같은 전치사·접속사를 쓴 확장 예문 1~4개를 붙임) → ③ Review(적용 문장을 순서 그대로 한국어로 바꿔 두고 영작). 규칙 설명이나 표 없이 예문에서 패턴을 스스로 찾게 하는 귀납식 설계임.",
+  "핵심 예문의 약 60%가 STUDENT 과정 문장임((N과) 표시: 토픽19 44문장 중 28, 토픽20 17문장 중 10). 이미 외운 회화 문장을 문법의 눈으로 다시 보게 하는 '연결고리' 설계임. 다만 책은 옛 STUDENT 원문을 옮긴 것이라, 사이트가 이미 고친 오류 6건(Since I was young… learned, began to develop, had worked, for morning session, For a while, funny accent)이 그대로 남아 있음.",
+  "순서는 이렇게 이어짐: 토픽19 (1) 단일 전치사 11개 → (2) 뜻이 같은 전치사·접속사 쌍 비교(although/in spite of, because/because of, until, since) → (3) 장소·시간 전치사 25문장 목록 → 토픽20 등위접속사 4개·종속접속사 13개. (2) 비교 소단원이 다음 토픽인 접속사로 넘어가는 다리 역할을 함. until 문장과 It was not until 문장은 두 토픽에 되풀이되어 나선형 복습이 됨.",
+  "난이도 폭이 큼. STUDENT의 초중급 문장 옆에 It was not until ~ that 강조구문, lest ~ should, 가정법(If I were you), by/until 구별 같은 중상급 항목이 설명 없이 섞여 있음. lest ~ should, that I may, follow after 같은 고어·문어체도 현대 회화 문장과 구분 없이 나옴.",
+  "강조 표시가 일관되지 않음. 토픽19 적용은 초점 전치사에 밑줄을 그었는데 그중 3곳은 엉뚱한 단어(with·so·of)에 그어져 있음. 토픽20은 패스오프에만 밑줄이 있고 적용 섹션은 so that 한 곳만 굵게이고 나머지는 표시가 없음. 패스오프·적용 문장에는 한국어 해석이 없고, 짧은 한국어 주석은 4곳뿐임.",
+  "리뷰 분량이 매우 많음(토픽19 92문항, 토픽20 67문항). 거의 전부 한국어→영어 영작이고, 영어 정답이 인쇄되지 않아 교사 확인이나 적용 문장과의 대조를 전제로 함. 인식형 과제는 접속사 토픽의 '밑줄+등위/종속 분류' 17문항 하나뿐임.",
+  "리뷰 한국어에 직역투·오역이 많음(약 49문항 수정 필요). 그래서 한국어만 보고는 책의 영어를 재현할 수 없는 문항이 있음. 예: until/by 뜻이 뒤바뀐 90번, him이 '당신'이 된 토픽20 29번, 초점 전치사 구가 빠진 59번.",
+  "같은 문장이 자주 반복됨. 'After a few minutes, I finally get out of bed.'는 패스오프 2번, 적용 2번, 리뷰 2번(한국어는 서로 다름) 나옴. 반복 암기에는 도움이 되지만 드릴에서는 중복으로 보임.",
+  "품사 경계가 흐려지는 예시가 섞여 있음. 전치사 목록에 접속사 용법(Before I go to school…)이 들어가 있고, 'As if (even though)' 라벨은 틀렸으며, 관계부사 when(There are times when…)도 접속사 예로 쓰였음. 품사 판단을 가르치는 단원인데 예시가 오히려 헷갈리게 함."
+ ],
+ "webConversionNotes": [
+  "종이에서 하던 동작을 바꿔야 함. 토픽20 리뷰1의 '접속사에 밑줄 + 종속/등위 적기'는 단어 탭 선택과 등위/종속 버튼으로 옮길 수 있음. as soon as, so that, lest ~ should, Even though처럼 여러 단어는 한 덩어리로 선택되게 해야 함. 한 문장에 접속사가 여럿인 4문항(2·3·10·17)은 '목표 접속사만'인지 '전부'인지 정해야 채점할 수 있음.",
+  "영작 142문항은 정확 일치로 채점할 수 없음. 책에 영어 정답이 없으므로 answerFromBook(적용 문장)을 기준으로 하되, 대체 표현(be going to/will, holiday/vacation, get up/get out of bed, TV/television, 축약형)을 허용하고 문장부호·대소문자는 무시해야 함. 초점 전치사·접속사가 들어갔는지는 따로 판정해야 함.",
+  "정답으로 쓸 영어 문장 약 25개에 실질 오류가 있어, 오너가 수정본을 먼저 확정해야 함. 영어 문장을 고치면 음성 클립 키(텍스트 해시)가 바뀌므로 같은 작업 안에서 generate-azure-ava로 클립을 다시 만들어야 함.",
+  "한국어 프롬프트 약 49개가 영어와 어긋나거나 오탈자가 있음. 그대로 올리면 학생이 한국어대로 맞게 써도 오답 처리됨(예: 59번 '일요일 오후에' 누락, 90번 until/by 반대, 토픽20 17번 현재/과거 불일치).",
+  "한국어 해석이 어디에도 인쇄되지 않은 영어 문장이 있음: 토픽19의 '=' 바꿔쓰기 4문장, 토픽20 적용의 We’d better leave things…와 Robin, as you know…. 패스오프(3)의 Before I go to school…와 When I come home after school…은 토픽19 리뷰에는 없고 토픽20에만 나옴. 패스오프·적용 문장에 해석을 달려면 리뷰 한국어를 거꾸로 연결해야 하는데(JSON의 reviewRef), 그 한국어부터 먼저 고쳐야 함.",
+  "적용 섹션의 그룹 라벨은 p32의 6개만 인쇄되어 있고 나머지는 라벨 없는 목록임. 웹에서 전치사·접속사별 카드로 묶으려면 JSON의 focusInferred(추출자 추정)를 오너가 확인해야 함.",
+  "밑줄 강조는 웹 하이라이트로 옮기되, 잘못 그어진 3곳(with→along, so→by, of→By the time)과 빠진 곳(Because of의 of, because of her illness, translate this into)을 고쳐야 함. 토픽20 적용은 강조가 없으므로 새로 지정해야 함.",
+  "중복 문장을 정리해야 함. 리뷰 25번과 88번은 같은 영어 문장임. Let’s wait until…과 It was not until… 문장은 토픽19·20 두 리뷰에 모두 나옴.",
+  "STUDENT 과 참조는 JSON의 studentSource로 sN-M 레슨 링크를 걸 수 있음. 다만 과 번호 오류 1건(1과→2과)이 있음. 사이트 STUDENT가 이미 고친 문장 6건(funny→regional accent, Since→When I was young, began→has developed, For a while→Later … from 1910 to 1945, had worked→worked, for morning session→for the morning session)은 문법 섹션도 같은 문장으로 맞출지 오너가 정해야 함.",
+  "예외 처리가 필요한 문항이 있음: 문장이 아닌 구('A bridge over a river' / '강 위로 지나가는 다리'), 힌트가 섞인 프롬프트('몇 시니? 여섯 시 십분 (십분 지난 6시)'), 한 문장이 두 칸에 나뉘어 인쇄된 프롬프트(p57 47번, '친구들과' 중복).",
+  "lest ~ should, that I may, follow after 같은 고어체에는 '문어체/시험용' 표시를 하거나 현대식 대체 문장을 함께 보여 줘야 함. 1910~1945년 식민 지배를 'For a while(잠시 동안)'로 표현한 문장처럼 내용상 민감한 문장은 오너 확인이 필요함.",
+  "리뷰 92문항은 한 화면에 담기 어려움. 소주제별 8~12문항 세트로 나누고, 틀린 문항만 다시 풀게 하는 구조가 맞음."
+ ],
+ "selfCheck": "p30-57 이미지 28장을 전부 보고 쪽마다 영어 문장과 한국어 프롬프트 수를 셌음. 굵은 글씨는 PyMuPDF의 글꼴 이름(MalgunGothicBold)으로, 밑줄은 PDF 선 그림 좌표로 따로 뽑았고, 애매한 곳(n’t, so, of, with, Because)은 확대 이미지로 확인했음. 쪽별 항목 수는 다음과 같고 JSON 개수와 같음: p30 19, p31 25, p32 19, p33 17, p34 17, p35 17, p36 18, p37 8 / 리뷰 p38 11, p39 12, p40 12, p41 11, p42 12, p43 12, p44 12, p45 10 / p46 17, p47 12, p48 14, p49 14, p50 12 / p51 9, p52 8, p53 11, p54 11, p55 12, p56 11, p57 5. 스크립트로 양방향 대조를 했음: JSON의 모든 문자열이 텍스트 레이어에 있고, 텍스트 레이어의 모든 줄(머리글·쪽번호 제외)이 JSON에 있으며, 모든 answerFromBook은 같은 토픽의 적용 문장임. 결과는 실패 0건. 이 검사가 실제로 실패할 수 있는지 보려고 오타 1개, 프롬프트 삭제 1개, 틀린 정답 1개를 넣은 사본으로 돌렸고, 5건 실패로 잡아냈음. 리뷰 159문항의 한국어↔영어 의미 대응은 스크립트로 판단할 수 없어 전부 눈으로 대조했음. STUDENT 과 참조는 현재 레슨 파일과 최초 가져오기 커밋(3705523)을 grep으로 대조했음. JSON은 node JSON.parse를 통과함. 추출과 오류 판정은 같은 에이전트가 쓰고 스스로 점검한 것이라 독립 검수가 아님. 특히 low/medium 등급의 영어 자연스러움 판정은 원어민 확인을 권장함. 저장소 파일은 하나도 고치지 않았음."
+}

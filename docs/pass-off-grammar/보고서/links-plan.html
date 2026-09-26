@@ -1,0 +1,744 @@
+<title>Pass-Off Grammar 설계서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F2F4F6; --surface:#FFFFFF; --sunk:#E9EDF1; --ink:#16202A; --ink2:#4A5563; --ink3:#6B7684;
+  --line:#D9DFE6; --gold:#8F6412; --goldfill:#C8962E; --goldsoft:#FBF1DA;
+  --good:#0D7A62; --goodsoft:#E1F3EE; --bad:#B3261E; --badsoft:#FBE7E5; --warn:#935800; --warnsoft:#FCEFD9;
+  --serif:"Hahmlet","Nanum Myeongjo","Apple SD Gothic Neo",serif;
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1115; --surface:#161B21; --sunk:#1D232B; --ink:#E8ECF0; --ink2:#A9B3BF; --ink3:#8691A0;
+    --line:#2A323C; --gold:#E2B355; --goldfill:#C8962E; --goldsoft:#33290F;
+    --good:#4CC7A6; --goodsoft:#11302A; --bad:#F2877B; --badsoft:#3A1A17; --warn:#EBAA58; --warnsoft:#35260F;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1115; --surface:#161B21; --sunk:#1D232B; --ink:#E8ECF0; --ink2:#A9B3BF; --ink3:#8691A0;
+  --line:#2A323C; --gold:#E2B355; --goldfill:#C8962E; --goldsoft:#33290F;
+  --good:#4CC7A6; --goodsoft:#11302A; --bad:#F2877B; --badsoft:#3A1A17; --warn:#EBAA58; --warnsoft:#35260F;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-inline:18px;padding-block:28px 80px}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:clamp(28px,6vw,40px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(22px,4.6vw,28px);font-weight:700;margin-top:56px;padding-top:18px;border-top:2px solid var(--ink)}
+h3{font-size:19px;font-weight:700;margin-top:30px}
+p{margin:12px 0}
+a{color:var(--gold)}
+strong{font-weight:700}
+code{font-family:var(--mono);font-size:.88em;background:var(--sunk);padding:1px 5px;border-radius:4px;word-break:break-all}
+small,.muted{color:var(--ink3)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.lede{font-size:17px;color:var(--ink2);max-width:65ch}
+.verdict{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--good);padding:18px 18px 14px;border-radius:6px}
+.verdict .tag{display:inline-block;font-weight:700;color:var(--good);background:var(--goodsoft);padding:2px 10px;border-radius:99px;font-size:14px}
+.verdict p{font-size:17px;margin:10px 0 4px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.toc a{font-size:14px;text-decoration:none;color:var(--ink2);border:1px solid var(--line);background:var(--surface);padding:5px 11px;border-radius:99px}
+.toc a:hover,.toc a:focus-visible{border-color:var(--gold);color:var(--ink)}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:18px}
+.fig{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.fig b{display:block;font-family:var(--mono);font-size:22px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.fig span{font-size:14px;color:var(--ink2);line-height:1.45;display:block;margin-top:2px}
+.fig.new b{color:var(--gold)} .fig.fix b{color:var(--bad)} .fig.reuse b{color:var(--good)}
+.note{font-size:14px;color:var(--ink2);background:var(--sunk);border-radius:6px;padding:10px 14px;margin:14px 0}
+.done{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.done li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 14px 10px 42px;position:relative;font-size:15px}
+.done li::before{content:"✓";position:absolute;left:14px;top:9px;color:var(--good);font-weight:700}
+.done li b{display:inline}
+.done .how{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.dec{counter-reset:dec;list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
+.dec li{counter-increment:dec;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px 12px 52px;position:relative}
+.dec li::before{content:counter(dec);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);font-family:var(--mono);font-size:13px;display:grid;place-items:center}
+.dec .q{font-weight:700}
+.dec .rec{display:inline-block;margin-top:4px;font-size:14.5px;background:var(--goldsoft);color:var(--ink);padding:2px 8px;border-radius:4px}
+.dec .alt{font-size:14px;color:var(--ink3)}
+.dec ul{margin:6px 0 0;padding-left:18px;font-size:14.5px}
+.grp{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--ink3);margin-top:22px;text-transform:uppercase}
+.day{display:flex;height:34px;border-radius:6px;overflow:hidden;margin:14px 0 6px;font-size:13px;font-weight:600}
+.day div{display:grid;place-items:center;color:#fff;white-space:nowrap;padding:0 6px}
+.day .d1{background:#3E6C8F;flex:6.5}.day .d2{background:var(--goldfill);flex:11}.day .d3{background:#4D8A6F;flex:2.5}
+.daylegend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13.5px;color:var(--ink2)}
+.strip{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 16px;margin:16px -2px 0;scroll-snap-type:x mandatory}
+.shot{flex:0 0 auto;width:268px;scroll-snap-align:start;margin:0}
+.shot figcaption{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.5}
+.shot figcaption b{color:var(--ink)}
+/* phone mockups: the real site is dark with a gold accent, so the frames stay dark in both themes */
+.phone{width:268px;border-radius:30px;background:#0A0C0F;border:1px solid #2E343C;padding:12px}
+.scr{background:#111418;border-radius:20px;min-height:470px;padding:12px 12px 14px;color:#ECEEF1;font-family:var(--sans);font-size:12.5px;line-height:1.5;display:flex;flex-direction:column;gap:9px}
+.scr .bar{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#8E97A3}
+.scr .brand{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:#E2B355}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.steps span{font-size:9.5px;text-align:center;padding:3px 0;border-radius:4px;background:#1C2128;color:#8E97A3}
+.steps span.on{background:#E2B355;color:#1A1405;font-weight:700}
+.steps span.ok{color:#6FD1B5}
+.card{background:#1A1F26;border:1px solid #262D36;border-radius:12px;padding:10px 11px}
+.ko{font-size:15px;font-weight:700;color:#F4F5F7}
+.en{font-size:14px;color:#F4F5F7}
+.en b{color:#E2B355;text-decoration:underline;text-underline-offset:3px}
+.chipstag{display:inline-block;font-size:10px;border:1px solid #3B4450;border-radius:99px;padding:1px 7px;color:#A9B3BF}
+.gold{background:#E2B355;color:#1A1405;border:0;border-radius:10px;padding:9px;font-weight:700;font-size:13px;text-align:center}
+.ghost{border:1px solid #3B4450;color:#C9D0D8;border-radius:10px;padding:7px;font-size:12px;text-align:center}
+.row{display:flex;gap:6px;flex-wrap:wrap}
+.tok{border:1px solid #3B4450;border-radius:8px;padding:5px 8px;font-size:13px;color:#E3E7EB}
+.tok.sel{border-color:#6FD1B5;color:#6FD1B5;text-decoration:underline;text-underline-offset:3px}
+.fb{font-size:12px;border-radius:10px;padding:8px 10px}
+.fb.ok{background:#12302A;color:#9BE3CE}
+.fb.no{background:#3A1F1C;color:#F5B7AE}
+.fb.hint{background:#33290F;color:#F1D493}
+.input{border:1px solid #3B4450;border-radius:10px;padding:8px 9px;font-size:14px;color:#F4F5F7;background:#0F1216}
+.wave{text-decoration:underline wavy #F2877B;text-underline-offset:4px}
+.big{font-family:var(--mono);font-size:22px;color:#F4F5F7}
+.meter{height:6px;border-radius:99px;background:#262D36;overflow:hidden}
+.meter i{display:block;height:100%;background:#6FD1B5}
+.mmap{display:grid;gap:5px}
+.mrow{display:flex;align-items:center;gap:5px}
+.mrow em{font-style:normal;font-size:10px;color:#A9B3BF;width:62px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mrow .lock{font-size:10px;color:#8E97A3}
+.dot{width:14px;height:14px;border-radius:50%;border:1.5px solid #4B5563;flex:none}
+.dot.half{background:linear-gradient(90deg,#E2B355 50%,transparent 50%);border-color:#E2B355}
+.dot.full{background:#6FD1B5;border-color:#6FD1B5}
+.dot.due{border-color:#F2877B;background:radial-gradient(circle,#F2877B 30%,transparent 32%)}
+/* timeline */
+.tl{position:relative;margin:18px 0 8px;padding:0 4px}
+.tl ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;position:relative}
+.tl ol::before{content:"";position:absolute;left:5%;right:5%;top:11px;height:2px;background:var(--line)}
+.tl li{position:relative;text-align:center;font-size:12.5px;line-height:1.35;color:var(--ink2)}
+.tl li::before{content:"";display:block;width:16px;height:16px;border-radius:50%;margin:3px auto 6px;background:var(--surface);border:2px solid var(--ink3);position:relative;z-index:1}
+.tl li.k::before{background:var(--goldfill);border-color:var(--goldfill)}
+.tl li.p::before{background:var(--good);border-color:var(--good)}
+.tl li b{display:block;color:var(--ink);font-family:var(--mono);font-size:12px}
+.tlwrap{overflow-x:auto}
+.tlwrap .tl{min-width:560px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+.tbl{overflow-x:auto;margin-top:12px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--ink2);background:var(--sunk);white-space:nowrap}
+td.n,th.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;white-space:nowrap}
+.pill.g{background:var(--goodsoft);color:var(--good)}.pill.b{background:var(--badsoft);color:var(--bad)}.pill.w{background:var(--warnsoft);color:var(--warn)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.box h4{margin:0 0 6px;font-size:15px}
+.box ul{margin:6px 0 0;padding-left:18px}
+.box li{margin:3px 0}
+ul.clean{padding-left:20px}
+ul.clean li{margin:5px 0}
+.stages{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
+.stages li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;display:grid;grid-template-columns:44px 1fr;gap:4px 12px}
+.stages .no{font-family:var(--mono);font-size:20px;color:var(--gold);grid-row:span 3}
+.stages .t{font-weight:700}
+.stages .d{font-size:14.5px;color:var(--ink2)}
+.stages .h{font-size:13.5px;font-family:var(--mono);color:var(--ink3)}
+.owner{font-size:13.5px;color:var(--warn);font-weight:600}
+.map{display:grid;gap:6px;margin-top:12px}
+.mapr{display:grid;grid-template-columns:118px 1fr;gap:8px;align-items:start;font-size:13px}
+.mapr .tn{color:var(--ink2);padding-top:3px}
+.mapr .cs{display:flex;flex-wrap:wrap;gap:5px}
+.lk{border:1.5px solid var(--line);border-radius:99px;padding:2px 9px;background:var(--surface);font-size:12.5px;line-height:1.5}
+.p1 .lk{border-color:#C8962E}.p2 .lk{border-color:#5B7FA6}.p3 .lk{border-color:#8A6FB0}
+.lk.x{border-style:dashed;color:var(--bad)}
+.parthead{font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin-top:10px;color:var(--ink3)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:6px;margin-top:12px}
+summary{cursor:pointer;padding:11px 14px;font-weight:600}
+details > div{padding:0 14px 14px}
+pre.cmd{white-space:pre-wrap;word-break:break-word;background:var(--sunk);border:1px solid var(--line);border-radius:6px;padding:12px;font-family:var(--mono);font-size:12.5px;line-height:1.6;max-height:520px;overflow:auto}
+button.copy{font:inherit;font-size:14px;font-weight:600;background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+button.copy:focus-visible,.toc a:focus-visible,summary:focus-visible,.strip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.check{background:var(--goodsoft);border-radius:6px;padding:12px 14px;margin-top:14px}
+.check b{color:var(--good)}
+.src{font-size:13px;color:var(--ink3);word-break:break-word}
+.foot{margin-top:60px;font-size:13px;color:var(--ink3);border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:520px){ .mapr{grid-template-columns:1fr} .mapr .tn{padding-top:0;font-weight:600} }
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">K-IG CORE · 새 학습 섹션 설계 · 2026-09-27</div>
+  <h1 style="margin-top:8px">Pass-Off Grammar 설계서</h1>
+  <p class="lede">Pass-Off English Grammar 1·2·3권(191쪽)을 한 쪽도 빼지 않고 읽었습니다. 사이트 코드와 학습 연구도 조사해서, STUDENT 옆에 둘 새 섹션을 어떻게 만들고 학생을 어떻게 가르칠지 정리했습니다.</p>
+
+  <div class="verdict">
+    <span class="tag">🟢 만들 수 있습니다</span>
+    <p><strong>교재의 공부 방식은 학습 연구 결과와 잘 맞고, 사이트에 이미 있는 기능을 대부분 다시 쓸 수 있습니다.</strong> 다만 교재는 선생님이 설명한다고 전제한 책입니다. 그래서 웹에서는 <strong>문법 설명, 정답, 한국어 번역 188문장</strong>을 새로 만들어야 하고, <strong>교재 오류 후보 548건</strong>을 먼저 고쳐야 합니다.</p>
+    <p style="font-size:15px;color:var(--ink2)">사장님이 정하신 것(9월 27일)을 모두 반영했습니다. 레슨 67개, 이름 PASS-OFF GRAMMAR, STUDENT 이용권으로도 열림, 무료 체험은 다른 섹션과 같게, 순서 잠금, 예문은 원본 그대로입니다. 복습 체계는 사이트 공통 학습 엔진으로 만들고(옆 세션의 학습법 검토와 합친 뒤), 보호자 보고는 만들지 않습니다. 남은 질문은 없습니다(<a href="#open">추천대로 정한 것</a>). 관문을 모두 통과하면 이 세션이 사이트에 올립니다(사장님 허락).</p>
+  </div>
+
+  <nav class="toc" aria-label="차례">
+    <a href="#glance">한눈에</a><a href="#decide">사장님 결정</a><a href="#learn">학생은 이렇게 배웁니다</a><a href="#recheck">2주 점검 다시?</a><a href="#book">교재 분석</a><a href="#build">만드는 순서</a><a href="#best">최선인가요?</a><a href="#risk">위험과 대책</a><a href="#why">근거</a><a href="#appendix">부록</a>
+  </nav>
+</header>
+
+<h2 id="glance">한눈에</h2>
+<div class="figs">
+  <div class="fig"><b>67</b><span>레슨 수입니다. 교재 구성도의 동그라미 하나가 레슨 하나입니다(1권 29 · 2권 23 · 3권 15).</span></div>
+  <div class="fig"><b>912</b><span>교재 예문 수(중복 제외)입니다. 복습 문제는 1,067개입니다.</span></div>
+  <div class="fig reuse"><b>89%</b><span>복습 문제 가운데 정답을 교재 안에서 되살릴 수 있는 비율입니다(954/1,067).</span></div>
+  <div class="fig reuse"><b>144</b><span>STUDENT 문장과 글자까지 같은 예문 줄입니다. 교재의 "(2과)" 표시는 STUDENT 2장을 뜻합니다.</span></div>
+  <div class="fig new"><b>188</b><span>한국어 번역이 교재 어디에도 없는 문장입니다. 새로 번역해야 합니다.</span></div>
+  <div class="fig new"><b>67</b><span>새로 쓸 문법 설명 카드입니다(1~3분 분량). 교재에는 설명이 거의 없습니다.</span></div>
+  <div class="fig fix"><b>548</b><span>교재 오류 후보입니다. 영어와 뜻이 안 맞는 한국어 146, 영어 문법 109, 어색한 영어 92, 한국어 오타 78, 틀린 문법 설명 49, 기타 74.</span></div>
+  <div class="fig new"><b>846</b><span>새로 만들 음성 문장입니다. 이미 있는 음성은 66문장입니다.</span></div>
+</div>
+<p class="note">숫자는 모두 스크립트로 센 값입니다. 교재 읽기, 오류 판정, 설계는 같은 AI 계열이 하고 스스로 점검했으므로 <strong>독립 검수가 아닙니다</strong>. 사장님이 직접 확인하실 방법은 <a href="#check">부록의 1분 확인</a>에 있습니다.</p>
+
+<h2 id="decide">사장님 결정</h2>
+<div class="grp">사장님이 정하신 것 (9월 27일)</div>
+<ul class="done">
+  <li><b>레슨 목록: 목차의 동그라미 67개</b><span class="how">제목은 동그라미 글자 그대로 쓰고, 본문 내용은 가까운 레슨에 배치합니다(<a href="#mismatch">대응표</a>).</span></li>
+  <li><b>이름: PASS-OFF GRAMMAR, 메뉴에서 STUDENT 바로 다음(STAGE 02)</b><span class="how">과정 첫 화면에 "GRAMMAR I·II와 다른 점" 한 줄을 넣어 헷갈리지 않게 합니다. 문장을 완전히 익히면 "Pass-Off(통과)" 표시가 붙습니다.</span></li>
+  <li><b>이용권: 올패스(1개월·1년·평생)와 STUDENT 이용권 모두 이 과정을 엽니다</b><span class="how">잠금 화면과 관리자 화면의 이용권 설명 문구도 함께 고칩니다.</span></li>
+  <li><b>무료 체험: 다른 섹션과 똑같이 첫 두 레슨(1인칭 · 2인칭)</b><span class="how">1인칭 레슨에는 유료 STUDENT 레슨에서 온 문장 7개가 있습니다. "누구나 볼 수 있는 곳에 유료 내용 0" 규칙 때문에, 이 7문장만 이용권이 있을 때 보이고 체험판에는 "이용권이 있으면 7문장 더"라고 표시합니다.</span></li>
+  <li><b>순서 잠금: STUDENT와 같은 방식</b><span class="how">대주제 하나가 STUDENT의 챕터 하나와 같습니다. 대주제를 마쳐야 다음 대주제가 열립니다(<a href="#lock">규칙 보기</a>).</span></li>
+  <li><b>민감한 예문: 원본 그대로</b><span class="how">"You are fatter than her." 같은 예문도 바꾸지 않습니다. 영어 문법이 틀린 문장만 고칩니다.</span></li>
+  <li><b>더 최근에 고친 교재: 없음</b><span class="how">바탕화면의 PDF 3권이 기준입니다.</span></li>
+  <li><b>복습 체계는 사이트 공통 학습 엔진으로</b><span class="how">다음 날 확인, 날을 두고 복습, 통과 판정, 오답노트, "내 답도 맞아요"를 이 섹션에만 넣으면 다른 섹션과 학습법이 달라집니다. 그래서 옆 세션(3차 점검 수정)의 학습법 a~z 검토와 합쳐 설계 하나로 맞춘 뒤, 모든 섹션이 함께 쓰는 기능으로 만듭니다. PASS-OFF GRAMMAR가 첫 적용 대상이고, 그 전까지는 겹치지 않는 일만 먼저 합니다(<a href="#shared">설명</a>).</span></li>
+  <li><b>보호자 요약·보호자 보고: 만들지 않음</b></li>
+  <li><b>마이크: 다른 섹션과 똑같이</b><span class="how">① 예문 "먼저 말해 보기"와 ④ 영작 "마이크로 말해서 영작하기"를 둡니다. 카톡 안에서는 다른 섹션과 같은 "Safari/Chrome으로 열기" 안내가 뜨고, 말한 답은 글자로 바뀐 뒤 채점합니다.</span></li>
+  <li><b>설명 카드 검수: 사장님이 5장 읽기</b><span class="how">영어 선생님 검토 대신입니다. 나머지 62장은 기계 검사와 점검 세션 전수 대조로 보완합니다.</span></li>
+</ul>
+
+<div class="grp" id="open">추천대로 정한 것 (사장님 "추천대로 진행해")</div>
+<ul class="done">
+  <li><b>1·2·3권을 이어서 만들어 올림</b><span class="how">지금 사이트를 쓰는 학생이 없어서, 숨김 출시나 1권 시범 운영을 기다리지 않습니다. 관문을 모두 통과하면 메뉴까지 열어 올리고, 복습 간격 같은 숫자는 실제 학생이 생긴 뒤 그 기록으로 조정합니다.</span></li>
+  <li><b>목차에만 있는 세 칸</b><span class="how">ed와 -ing = 규칙동사에 -ed·-ing 붙이는 법(bored/boring은 형용사 레슨으로 연결). Going · Being = be going to(예정)와 being(진행형 수동태 is being built 등). 가정법 미래 = If + should / were to. 돌아오시면 Going · Being 레슨만 확인해 주세요.</span></li>
+  <li><b>도전 문장</b><span class="how">아직 안 배운 문법이 섞인 문장은 레슨 안에서 뒤쪽으로 옮겨 '도전' 표시를 답니다. 그 문법을 배운 뒤에 통과 조건에 넣습니다.</span></li>
+  <li><b>옛 문법 용어는 지금 교과서 용어와 함께</b><span class="how">예: "평서문(교재: 서술문)"</span></li>
+  <li><b>STUDENT와 같은 문장은 STUDENT 판으로</b><span class="how">STUDENT가 이미 고친 문장 6개와 글자까지 같은 문장 43개. 음성도 그대로 다시 씁니다.</span></li>
+  <li><b>학교 서술형 기준은 점수로 따로</b><span class="how">통과는 문법 정답으로만 판정합니다.</span></li>
+  <li><b>AI 채점은 출시 때 쓰지 않음</b><span class="how">추가 비용 0입니다. 학생이 생긴 뒤 "내 답도 맞아요" 신고가 5%를 넘으면 다시 검토합니다.</span></li>
+</ul>
+
+<div class="grp">사장님만 해 주실 수 있는 일 (돌아오시면)</div>
+<ol class="dec">
+  <li><span class="q">사장님만 해 주실 수 있는 일</span>
+    <ul>
+      <li><b>시험용 이용권 2개</b>(그중 하나는 기간제): 순서 잠금이 기간제 이용권에서 제대로 되는지, 학생끼리 기록이 섞이지 않는지 보려면 꼭 필요합니다. 이 컴퓨터에는 운영 이용권 저장소 열쇠가 없습니다.</li>
+      <li><b>학생 3~5명</b>(초등 고학년·중학생·성인 초급): 화면 시안이 나오면 링크를 보내 5분만 써 보게 해 주세요. 휴대폰으로 문장을 치는 속도를 재서 하루 분량을 정합니다.</li>
+      <li><b>설명 카드 5장 읽어 보기</b>(사장님 결정 — 영어 선생님 검토 대신): 대주제가 서로 다른 5장을 골라 휴대폰 링크로 드립니다. 읽고 이해가 안 되거나 이상한 곳을 알려 주시면 됩니다.</li>
+    </ul></li>
+</ol>
+
+<h2 id="learn">학생은 이렇게 배웁니다</h2>
+<p>교재의 공부 방식을 그대로 살렸습니다. <strong>외운 문장 → 문법 → 한국어 보고 바로 영작 → 다음 시간 Review → 구성도 외우기 → 소주제 하나씩 완전학습</strong>(교재 1권 2쪽 학습법 1~5). 웹에는 선생님이 없으므로 <strong>설명, 틀린 곳 짚어 주기, 복습 날짜 관리, 통과 판정</strong>을 화면이 대신합니다.</p>
+
+<h3>하루 15~20분, 버튼 하나</h3>
+<p>과정 첫 화면에는 <strong>"오늘 학습 시작"</strong> 버튼 하나만 크게 있습니다. 누르면 밀린 복습 → 새 레슨의 다음 부분 → 마무리가 이어집니다.</p>
+<div class="day" role="img" aria-label="하루 학습 시간 나눔: 복습 5~8분, 새 레슨 10~12분, 마무리 2~3분">
+  <div class="d1">복습 5~8분</div><div class="d2">새 레슨 10~12분</div><div class="d3">마무리</div>
+</div>
+<div class="daylegend"><span>복습은 하루 30문장까지(넘치면 다음 날로 나눔)</span><span>3일 넘게 쉬면 "오늘은 복습 10문장만" 복귀 코스</span><span>날짜는 한국시간 새벽 4시 기준</span></div>
+
+<h3>한 레슨 = 구성도 동그라미 하나, 모든 레슨이 같은 5단계</h3>
+<p>레슨마다 화면이 다르면 안 된다는 사장님 원칙대로, 67개 레슨이 모두 같은 5단계를 거칩니다. 교재의 여러 과제(밑줄, 동그라미, 불규칙동사표, 화법 전환 등)는 모두 이 5단계 안에 들어갑니다. 예문이 많은 레슨(최대 56문장)은 레슨을 쪼개지 않고 6분짜리 '세트'로 나눕니다. 그래서 중간에 멈췄다가 이어 할 수 있습니다.</p>
+
+<div class="strip" tabindex="0" aria-label="화면 시안 — 옆으로 넘겨 보세요">
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span class="brand">PASS-OFF GRAMMAR</span><span>☰</span></div>
+      <div class="card">
+        <div style="font-size:11px;color:#A9B3BF">오늘 할 일</div>
+        <div class="gold" style="margin-top:6px">오늘 학습 시작 · 약 17분</div>
+        <div style="font-size:11.5px;color:#C9D0D8;margin-top:7px">복습 18문장 · 새 레슨 '일반동사의 현재형' 세트 2</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;font-size:11.5px"><span>통과한 레슨</span><b style="font-family:var(--mono)">4 / 67</b></div>
+        <div class="meter" style="margin-top:6px"><i style="width:6%"></i></div>
+        <div style="font-size:11px;color:#A9B3BF;margin-top:5px">다음 통과까지 6문장 · 연속 9일</div>
+      </div>
+      <div class="card mmap">
+        <div style="font-size:11px;color:#A9B3BF;margin-bottom:2px">연결고리 구성도 · Part 1</div>
+        <div class="mrow"><em>인칭</em><span class="dot full"></span><span class="dot full"></span><span class="dot due"></span></div>
+        <div class="mrow"><em>동사의 현재형</em><span class="dot full"></span><span class="dot half"></span><span class="dot"></span></div>
+        <div class="mrow"><em>문장의 기초</em><span class="lock">🔒 동사의 현재형을 마치면 열림</span></div>
+        <div class="mrow"><em>문장의 종류</em><span class="lock">🔒</span></div>
+        <div class="mrow"><em>의문문</em><span class="lock">🔒</span></div>
+      </div>
+    </div></div>
+    <figcaption><b>과정 첫 화면.</b> 버튼 하나로 시작하고, 교재 구성도가 그대로 진도 지도가 됩니다. 빈 원 = 시작 전, 반 원 = 배우는 중, 꽉 찬 원 = 통과, 붉은 점 = 복습 필요입니다. 다음 대주제는 STUDENT처럼 잠겨 있습니다.</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span>← TOPIC 2 · Be동사의 현재형</span><span>가</span></div>
+      <div class="steps"><span class="on">① 예문</span><span>② 규칙</span><span>③ 찾기</span><span>④ 영작</span><span>⑤ 마무리</span></div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;color:#A9B3BF">먼저 말해 보세요 · 2/4</span><span class="chipstag">STUDENT 1과 · 바꾼 문장</span></div>
+        <div class="ko" style="margin-top:8px">나는 열한 살이다.</div>
+      </div>
+      <div class="row"><span class="ghost" style="flex:1">🎙️ 먼저 말해 보기</span><span class="gold" style="flex:1">영어 보기</span></div>
+      <div class="card">
+        <div class="en">I <b>am</b> eleven years old.</div>
+        <div class="row" style="margin-top:8px"><span class="ghost" style="flex:1">🔊 다시 듣기</span><span class="ghost" style="flex:1">다음 →</span></div>
+      </div>
+      <div style="font-size:11px;color:#8E97A3">'영어 보기'는 2초 뒤에 켜집니다. 먼저 떠올려 보는 것이 따라 읽기보다 오래 남습니다.</div>
+    </div></div>
+    <figcaption><b>① 예문 떠올리기</b>(교재 Pass-Off Sentences). STUDENT에서 외운 문장을 한국어만 보고 먼저 말해 본 뒤 영어와 소리를 확인합니다. 이 예문은 STUDENT 1-2의 "I am (10) years old."를 교재가 바꾼 문장이라 '바꾼 문장' 표시가 붙습니다. STUDENT와 글자까지 같은 문장은 꼬리표를 눌러 그 장으로 갈 수 있습니다(그 장이 열려 있을 때만).</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span>← TOPIC 2 · Be동사의 현재형</span><span>가</span></div>
+      <div class="steps"><span class="ok">① 예문</span><span class="on">② 규칙</span><span>③ 찾기</span><span>④ 영작</span><span>⑤ 마무리</span></div>
+      <div class="card">
+        <div style="font-weight:700;font-size:13.5px">am · are · is 는 주어에 따라 바뀝니다</div>
+        <div style="font-family:var(--mono);font-size:11.5px;margin-top:6px;color:#C9D0D8">I → am<br>you · we · they → are<br>he · she · it · 단수 명사 → is</div>
+      </div>
+      <div class="fb hint">한국어와 다른 점: '~이다'는 누가 주어든 그대로지만, be동사는 주어에 맞춰 모양이 바뀝니다.</div>
+      <div class="card" style="font-size:12px">
+        <div style="color:#F5B7AE">✗ She are tired.</div>
+        <div style="color:#9BE3CE">✓ She is tired.</div>
+        <div style="color:#A9B3BF;margin-top:5px;font-size:11px">풀이: 그녀는 → She → 3인칭 한 명 → is</div>
+      </div>
+      <div style="font-size:11px;color:#8E97A3">용어: 평서문(교재: 서술문)</div>
+      <div class="gold">규칙 확인 1문제</div>
+    </div></div>
+    <figcaption><b>② 규칙 1~3분.</b> 선생님 설명을 대신하는 짧은 한국어 설명입니다. 먼저 예문 3개를 나란히 보고 "am/are/is는 무엇에 따라 바뀔까요?"를 고릅니다. 그다음 표, 한국어와 다른 점, 흔한 실수, 풀이 예시를 보여 줍니다.</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span>← TOPIC 2 · Be동사의 현재형</span><span>가</span></div>
+      <div class="steps"><span class="ok">① 예문</span><span class="ok">② 규칙</span><span class="on">③ 찾기</span><span>④ 영작</span><span>⑤ 마무리</span></div>
+      <div style="font-size:12px;color:#C9D0D8">be동사를 모두 누르세요 · 2/5</div>
+      <div class="row"><span class="tok">They</span><span class="tok sel">are ✓</span><span class="tok">pleased</span><span class="tok">to</span><span class="tok">find</span><span class="tok">her.</span></div>
+      <div class="fb ok">They는 3인칭 여럿이라 are.</div>
+      <div style="font-size:12px;color:#C9D0D8;margin-top:4px">밑줄 친 대명사는 몇 인칭인가요?</div>
+      <div class="card"><div class="en"><span style="text-decoration:underline;text-underline-offset:3px">It</span> makes me happy.</div></div>
+      <div class="row"><span class="ghost" style="flex:1">1인칭</span><span class="ghost" style="flex:1">2인칭</span><span class="ghost" style="flex:1;border-color:#E2B355;color:#E2B355">3인칭</span></div>
+      <div class="gold">확인</div>
+    </div></div>
+    <figcaption><b>③ 형태 찾기 4~6문제.</b> 교재 Review의 "밑줄 긋고 몇 인칭인지 쓰기", "be동사에 동그라미"를 손가락으로 누르기로 바꿨습니다. 정답표가 있어 AI 없이 자동 채점됩니다.</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span>← TOPIC 2 · Be동사의 현재형</span><span>가</span></div>
+      <div class="steps"><span class="ok">① 예문</span><span class="ok">② 규칙</span><span class="ok">③ 찾기</span><span class="on">④ 영작</span><span>⑤ 마무리</span></div>
+      <div style="font-size:11px;color:#A9B3BF">세트 1/2 · 5/9 · 다시 볼 문장 1</div>
+      <div class="card"><div class="ko">그녀는 오늘 피곤하다.</div></div>
+      <div class="input">She <span class="wave">are</span> tired today.</div>
+      <div class="ghost">🎙️ 마이크로 말해서 영작하기</div>
+      <div class="fb no">틀린 곳 1군데 — 다시 써 보세요.</div>
+      <div class="fb hint">힌트: 주어 She는 3인칭 한 명이에요. be동사 모양은?</div>
+      <div class="row"><span class="ghost" style="flex:1">타일로 풀기 (도움)</span><span class="ghost" style="flex:1">정답 보기 (도움)</span></div>
+      <div class="gold">확인</div>
+    </div></div>
+    <figcaption><b>④ 순간영작</b>(교재 Application Sentences). 한국어를 보고 영어를 씁니다. 틀리면 정답을 바로 주지 않고 <b>틀린 자리 → 규칙 힌트 → 단어 타일 → 정답</b> 순서로 스스로 고치게 합니다. 틀린 문장은 몇 문장 뒤에 다시 나옵니다. 세트의 모든 문장을 한 번씩 스스로 맞혀야 끝나고, 첫날은 단어 타일로 풀어도 됩니다.</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span>← TOPIC 2 · Be동사의 현재형</span><span>가</span></div>
+      <div class="steps"><span class="ok">① 예문</span><span class="ok">② 규칙</span><span class="ok">③ 찾기</span><span class="ok">④ 영작</span><span class="on">⑤ 마무리</span></div>
+      <div class="card"><div style="font-size:11px;color:#E2B355">처음 보는 문장</div><div class="ko" style="margin-top:4px">그 가게는 일요일에 닫혀 있다.</div></div>
+      <div class="input">The shop is closed on Sundays.</div>
+      <div class="fb ok">맞았어요! 🔊</div>
+      <div class="card"><div style="font-size:11px;color:#A9B3BF">내 문장 만들기</div><div class="en" style="margin-top:4px">I am <span style="border-bottom:1px solid #E2B355;padding:0 18px">&nbsp;</span> years old.</div></div>
+      <div class="card" style="text-align:center"><div style="font-size:11.5px">'Be동사의 현재형' 반쯤 채워짐</div><div style="display:flex;justify-content:center;gap:5px;margin-top:6px"><span class="dot full"></span><span class="dot half"></span><span class="dot"></span></div><div style="font-size:11px;color:#A9B3BF;margin-top:5px">내일 복습 9문장이 준비돼요</div></div>
+    </div></div>
+    <figcaption><b>⑤ 마무리.</b> 외운 문장이 아닌 처음 보는 문장 2개로 규칙을 정말 쓸 수 있는지 확인합니다. 규칙 확인 1문제를 풀고, "내 이야기로 바꾸기" 1문장(채점 없음, 기기에만 저장)으로 끝냅니다.</figcaption>
+  </figure>
+
+  <figure class="shot">
+    <div class="phone"><div class="scr">
+      <div class="bar"><span>다음 날 · 확인 (교재 Review)</span><span>✕</span></div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:11px;color:#A9B3BF">어제 배운 'Be동사의 현재형'</div>
+        <div class="big" style="margin-top:6px">문법 정답 10 / 12</div>
+        <div style="font-size:12.5px;color:#C9D0D8;margin-top:2px">서술형 기준 8 / 12</div>
+        <div class="row" style="justify-content:center;margin-top:7px"><span class="chipstag">대문자 1</span><span class="chipstag">마침표 1</span></div>
+      </div>
+      <div class="card">
+        <div style="font-size:11.5px;color:#F5B7AE">틀린 2문장</div>
+        <div style="font-size:12.5px;margin-top:4px">우리는 모두 14살이다.</div>
+        <div style="font-size:12.5px">그가 너의 영어 선생님이시니?</div>
+      </div>
+      <div class="gold">틀린 2문장 지금 다시</div>
+      <div style="font-size:11px;color:#8E97A3">통과는 문법 정답으로만 판정합니다. 서술형 기준은 학교 시험 대비용으로 보여 드려요.</div>
+    </div></div>
+    <figcaption><b>다음 날 "확인".</b> 교재 Review를 시험처럼 다 풀고 결과를 한꺼번에 봅니다. 틀린 문장은 바로 힌트 사다리로 다시 씁니다(교재 학습법 4: 채점 후 틀린 문항은 반드시 다시 학습).</figcaption>
+  </figure>
+</div>
+<p class="muted" style="font-size:13.5px;margin-top:0">↔ 화면 시안은 옆으로 넘겨 보세요. 실제 사이트처럼 어두운 화면이며, 문장은 교재 1권 TOPIC 2의 실제 예문입니다. 마무리의 "처음 보는 문장"만 예시로 새로 썼습니다.</p>
+
+<h3 id="lock">순서 잠금 — STUDENT와 같은 방식</h3>
+<ul class="clean">
+  <li><strong>대주제 하나 = STUDENT 챕터 하나</strong>입니다. 처음에는 TOPIC 1(인칭)만 열려 있고, 열린 대주제 안의 레슨은 자유롭게 오갈 수 있습니다.</li>
+  <li><strong>다음 대주제가 열리는 조건</strong>: 지금 대주제 레슨의 80% 이상과 마지막 레슨의 5단계를 마치고, 대주제 끝 "구성도 다시 채우기"를 한 번 하면 열립니다. 처음 두 조건은 STUDENT와 같고, 마지막 조건은 교재 학습법 5번을 살리려고 더했습니다. 점수는 보지 않고, 한 번 해 보기만 하면 됩니다.</li>
+  <li>문장 "통과"(서로 다른 날 3번)까지 기다리면 한 대주제에 몇 주씩 걸려서, 여는 조건은 <strong>레슨을 마친 것</strong>으로 합니다. 통과는 복습에서 따로 쌓입니다.</li>
+  <li>평생 이용권은 STUDENT처럼 처음부터 모두 열립니다. 무료 체험은 TOPIC 1의 첫 두 레슨입니다.</li>
+  <li>복습이 많이 밀리면(재학습 중 문장 60개 초과) "복습을 먼저 해요"라고 권합니다. 이것은 잠금이 아니라 권유입니다.</li>
+</ul>
+
+<h3>한 문장이 "통과(Pass-Off)"하기까지</h3>
+<p>한 번 맞혔다고 통과시키면 대부분 잊는다는 것이 연구 결과입니다. 그래서 <strong>서로 다른 날 3번, 도움 없이 첫 시도에 맞혀야</strong> 통과입니다. 날짜는 화면이 알아서 잡아 줍니다.</p>
+<div class="tlwrap"><div class="tl"><ol>
+  <li class="k"><b>1일</b>레슨<br>(연습, 판정 안 함)</li>
+  <li><b>2일</b>확인<br>1번째</li>
+  <li><b>4일</b>섞어 복습<br>2번째</li>
+  <li><b>8일~</b>섞어 복습<br>3번째</li>
+  <li class="p"><b>통과</b>구성도에<br>불 켜짐</li>
+  <li><b>+21일</b>유지 확인<br>2~3문제</li>
+  <li><b>+60 · 120일</b>유지 확인<br>매번 다른 문장</li>
+</ol></div></div>
+<ul class="clean">
+  <li><strong>첫날 맞힌 것, 힌트·타일·정답 보기를 쓴 것은 세지 않습니다.</strong> 방금 본 문장은 기억이 부풀려지기 때문입니다.</li>
+  <li><strong>두 번째 복습부터는 여러 레슨을 섞습니다.</strong> 헷갈리는 짝(be동사와 일반동사, he/his/him, 과거와 현재완료, who/which/that/what)을 가까이 둡니다. 섞으면 틀리는 게 늘지만 1주 뒤 기억은 더 좋습니다. 이 안내를 처음에 한 번 보여 줍니다.</li>
+  <li><strong>레슨 통과</strong>는 그 레슨의 핵심 문장, 처음 보는 문장 2개, 형태 찾기 문제가 모두 통과한 것입니다. 그러면 구성도의 동그라미가 채워집니다.</li>
+  <li><strong>통과 뒤에도</strong> 3주, 2개월, 4개월 뒤에 2~3문제씩 매번 다른 문장으로 확인합니다. 틀리면 그 문장만 다시 복습으로 돌아가고, 동그라미에 붉은 점이 찍힙니다.</li>
+  <li>이 숫자들(3번, 간격, 하루 30문장)은 연구로 확정된 최적값이 아니라 <strong>출발값</strong>입니다. 실제 학생이 생기면 "1주 전 배운 문장을 다시 맞힌 비율"을 보고 조정합니다. 70% 미만이면 간격을 좁히고, 95%를 넘으면 2번으로 줄이는 것을 검토합니다.</li>
+</ul>
+
+<h3>구성도를 기억으로 다시 채우기</h3>
+<p>교재 학습법 5번은 "소주제와 대주제를 그려 가면서 문법 내용과 문장을 다 적을 수 있어야 한다"고 합니다. 연구에서도 지도를 <em>보여 주기</em>보다 <em>기억으로 다시 그리기</em>가 훨씬 효과적이었습니다. 그래서 대주제가 하나 끝날 때마다 세 가지를 합니다. 빈 구성도에 레슨 이름 칩을 놓고, 칸마다 규칙 한 줄을 고르고, 대표 문장 1개를 한국어를 보고 씁니다. 권이 끝나면 그 권의 구성도 전체를 다시 채웁니다. 틀린 칸은 복습으로 돌아갑니다.</p>
+
+<h3>선생님 대신 화면이 하는 일</h3>
+<div class="cols">
+  <div class="box"><h4>틀린 곳 짚어 주기</h4>
+    <ul><li>빠진 자리는 네모, 틀린 낱말은 물결 밑줄, 남는 낱말은 취소선으로 보여 줍니다. 색만 쓰지 않고 모양도 함께 씁니다.</li>
+    <li>한국 학생이 자주 틀리는 것(관사, 3인칭 -s, be동사, 어순)에 맞춘 한 줄 힌트를 줍니다.</li>
+    <li>a/the, is/are, he/his 같은 짧은 낱말은 한 글자만 달라도 틀림으로 봅니다. 이 과정이 가르치려는 것이 바로 그 차이이기 때문입니다.</li>
+    <li>긴 낱말의 한 글자 오타만 "맞음(오타 표시)"으로 봅니다.</li></ul></div>
+  <div class="box"><h4>오답노트</h4>
+    <ul><li>레슨별로 내가 틀린 문장과 자주 틀리는 유형을 모아 봅니다.</li>
+    <li>"지금 다시 풀기" 버튼이 있습니다.</li>
+    <li>다음 날 확인의 정답률이 60% 미만인 레슨은, 다음 복습 전에 풀이 예시를 더 담은 보충 설명 카드를 한 번 더 보여 줍니다.</li></ul></div>
+  <div class="box"><h4>"내 답도 맞아요"</h4>
+    <ul><li>채점이 틀렸다고 생각하면 누르는 버튼입니다.</li>
+    <li>누른 답은 맞음도 틀림도 아닌 '보류'로 둡니다. 그래서 아이의 진도가 깎이지 않습니다.</li>
+    <li>주 1회 모아서 확인하고, 맞으면 정답 목록에 추가합니다.</li></ul></div>
+  <div class="box"><h4>말하기</h4>
+    <ul><li>다른 섹션과 똑같이 마이크를 씁니다(사장님 결정). ① 예문은 "🎙️ 먼저 말해 보기", ④ 영작은 GRAMMAR I과 같은 "🎙️ 마이크로 말해서 영작하기"입니다.</li>
+    <li>카톡 안에서 열면 다른 섹션처럼 "Safari/Chrome으로 열기" 안내가 뜹니다. 그대로 타이핑으로도 풀 수 있습니다.</li>
+    <li>말한 답은 글자로 바뀐 뒤 채점기가 한 번 더 봅니다(GRAMMAR I과 같음).</li>
+    <li>통과한 문장은 "빠르게 말하기" 라운드를 선택할 수 있습니다(시간만 기록).</li>
+    <li>음성 인식은 틀린 문법을 고쳐서 받아쓰는 경향이 있어 채점에 쓰지 않습니다.</li></ul></div>
+  <div class="box"><h4>STUDENT와 이어 주기</h4>
+    <ul><li>STUDENT와 같은 문장에 "STUDENT 2과" 꼬리표를 답니다. 그 장이 열려 있을 때만 링크가 걸립니다.</li>
+    <li>교재가 바꾼 문장에는 "바꾼 문장" 표시를 합니다.</li>
+    <li>같은 문장은 음성도 그대로 다시 씁니다.</li>
+    <li>STUDENT 이용권 하나로 두 과정이 함께 열립니다.</li>
+    <li>2차: STUDENT에서 이미 외운 문장은 ① 단계를 짧게 합니다.</li></ul></div>
+</div>
+
+<h3 id="shared">다른 섹션과 달라지지 않게 — 공통 학습 엔진</h3>
+<p>레슨 화면(단계 탭, 듣기, 마이크, 단어 타일, 영작 채점)은 STUDENT·GRAMMAR에 이미 있는 부품이라 같게 보입니다. 하지만 <strong>날을 넘기는 복습 체계</strong>는 지금 어느 섹션에도 없습니다. 오늘 학습 시작 버튼, 복습 날짜, 서로 다른 날 3번 맞혀야 통과, 오답노트, "내 답도 맞아요"가 여기에 해당합니다. 이 섹션에만 넣으면 학생에게 완전히 다른 학습법으로 보입니다.</p>
+<ul class="clean">
+  <li><strong>이 체계는 빼지 않고, 사이트 공통 기능으로 한 번만 만들어 모든 섹션이 함께 쓰게 합니다.</strong> 먼저 떠올리기, 날을 두고 복습하기, 스스로 고치게 하기는 교재가 아니라 공부 방식 자체의 원리라 VOCA · GRAMMAR · LISTENING에도 그대로 맞습니다.</li>
+  <li>이 교재에만 있는 것(구성도 다시 채우기, 다음 날 교재 Review 확인)만 이 섹션 고유로 둡니다.</li>
+  <li>사장님이 옆 세션(3차 점검 수정)에 다른 섹션의 학습법과 모바일 화면을 a~z로 다시 보라고 하셨습니다. 그 결과가 나오면 두 설계를 <strong>공통 학습 엔진 설계 하나</strong>로 합칩니다. 두 세션이 서로 다른 복습 체계를 만들지 않게 하려는 것입니다. PASS-OFF GRAMMAR가 첫 적용 대상이 되고, 다른 섹션은 그 계획에 따라 차례로 붙입니다.</li>
+  <li>그 전까지 수정 세션은 겹치지 않는 일만 합니다. 교재 내용 정리, 과정 등록, 순서 잠금, 레슨 5단계 화면이 여기에 해당합니다.</li>
+</ul>
+
+<h3 id="recheck">2주 점검을 다시 해야 하나요?</h3>
+<div class="tbl"><table>
+  <thead><tr><th>무엇을 하면</th><th>다시 할 점검</th><th>시간</th></tr></thead>
+  <tbody>
+  <tr><td>PASS-OFF GRAMMAR만 새로 붙임(기존 섹션은 새 파일과 등록 분기 외에는 손대지 않음)</td><td>기존 섹션: 유료 잠금 · 유출 0 · 메뉴 기계 재점검만. 새 섹션: 처음 받는 출시 관문(4단계)</td><td>기존 섹션 약 1시간</td></tr>
+  <tr><td>공통 학습 엔진이나 옆 세션의 수정이 기존 섹션 화면을 바꿈</td><td>바뀐 섹션만 화면 · 버튼 · 소리 · 채점 점검. 문장 · 번역 · 음성을 안 바꾸면 내용 점검은 다시 하지 않음</td><td>사이트 전체라도 약 15~20시간(기계 시간 · 1,638쪽 · 쪽당 약 20~200초 · 브라우저 3개 동시)</td></tr>
+  <tr><td>기존 섹션의 문장 · 번역 · 음성을 바꿈</td><td>그 부분의 내용 점검과 음성 재생성까지 다시</td><td>바뀐 양에 비례</td></tr>
+  </tbody>
+</table></div>
+<p>그래서 원칙은 네 가지입니다.</p>
+<ol class="clean">
+  <li>PASS-OFF GRAMMAR는 기존 섹션을 건드리지 않고 먼저 만듭니다.</li>
+  <li>기존 섹션은 한꺼번에 뜯지 않고 섹션 하나씩 바꿔 점검한 뒤 올립니다.</li>
+  <li>학습법·화면을 바꿀 때 문장·번역·음성은 건드리지 않습니다.</li>
+  <li>옆 세션의 계획에도 "어느 섹션의 어떤 점검을 다시 하게 되는지, 몇 시간인지"를 같이 적게 합니다.</li>
+</ol>
+
+<h3>3권을 다 하려면</h3>
+<p>하루 15~20분, 새 문장 하루 약 9개 기준으로 <strong>1권은 약 3~4개월, 3권 전체는 약 7~9개월</strong>입니다. 설계자가 복습량까지 넣어 계산한 값이고, 실제 학생 기록이 생기면 다시 계산합니다. 교재가 강조한 "빠른 진도보다 소주제 하나하나의 완전학습"을 따른 속도입니다.</p>
+
+<h2 id="book">교재 분석 결과</h2>
+<p>3권 191쪽을 AI 일꾼 7명이 나눠 맡아, 쪽 이미지와 PDF 글자를 함께 보며 한 줄도 빼지 않고 옮겼습니다. 옮긴 결과는 PDF 글자와 기계로 대조했고, 2,423줄 가운데 빠진 줄은 0이었습니다. 글자 모양만 다른 24줄은 하나씩 열어 확인했습니다. 이 대조 도구가 제대로 잡아내는지는 일부러 문장 5개를 지운 사본으로 시험해 확인했습니다.</p>
+
+<h3>교재의 짜임</h3>
+<div class="cols">
+  <div class="box"><h4>① Pass-Off Sentences</h4>소주제별 핵심 예문 2~7개입니다. 초점 낱말은 굵게 인쇄했고, 대부분 STUDENT 문장을 그대로 또는 잘라서 썼습니다.</div>
+  <div class="box"><h4>② Application Sentences</h4>①의 문장을 다시 싣고 늘린 긴 목록입니다(주제당 26~96문장). 소주제 제목이 인쇄되지 않은 곳이 많습니다.</div>
+  <div class="box"><h4>③ Review</h4>②의 문장을 같은 순서로 한국어로 주고 영작하게 합니다. 밑줄·동그라미·괄호 채우기도 있습니다. 정답은 인쇄되어 있지 않습니다.</div>
+</div>
+
+<h3>교재에 없어서 새로 만들어야 하는 것</h3>
+<div class="tbl"><table>
+  <thead><tr><th>무엇</th><th class="n">얼마나</th><th>이유</th></tr></thead>
+  <tbody>
+  <tr><td>문법 설명 카드</td><td class="n">67장</td><td>교재는 "교사의 문법 설명"을 전제합니다(학습법 2). 설명 문단이 거의 없습니다.</td></tr>
+  <tr><td>한국어 번역</td><td class="n">188문장</td><td>태 38/38 · 화법 41/41 · 의문문 30/46 · 형용사 17 · 준동사 17 · 부사 12 · 시제 10 · 기타 23</td></tr>
+  <tr><td>형태 찾기 정답표</td><td class="n">약 420문제</td><td>교재 문제 약 220개(품사 · 몇 형식 · 문장 종류 · 명사/형용사/부사 밑줄 등)는 정답이 인쇄되어 있지 않습니다. 교재에 형태 과제가 없는 레슨에는 새 문제 약 200개가 필요합니다.</td></tr>
+  <tr><td>허용 답 목록</td><td class="n">약 1,100문제</td><td>한→영 영작은 맞는 답이 여러 개입니다(축약형, 어순, 비슷한 말). 모범답은 89%가 교재 예문으로 되살아납니다.</td></tr>
+  <tr><td>처음 보는 확인 문장</td><td class="n">134문장</td><td>레슨마다 2개씩입니다. 외운 문장이 아닌 새 문장에 규칙을 쓸 수 있는지 봅니다. GRAMMAR I·II의 검수된 문장 중 맞는 것이 있으면 먼저 가져다 씁니다.</td></tr>
+  <tr><td>목차에만 있는 레슨 내용</td><td class="n">약 45문장</td><td>Have/Has · 단문/중문/복문/감탄문 · 관계대명사 Which 등은 본문 문장이 적어 보충합니다. Going/Being · ed와 -ing · 가정법 미래는 사장님 답을 받은 뒤 씁니다.</td></tr>
+  <tr><td>음성</td><td class="n">846문장</td><td>이미 있는 음성은 66문장뿐입니다. 912문장을 다 합쳐도 3만 4천 자라 Azure 무료 한도(월 50만 자) 안입니다.</td></tr>
+  </tbody>
+</table></div>
+
+<h3>교재 오류 — 외우는 교재라 틀린 것도 그대로 외워집니다</h3>
+<p>오류 후보는 548건(중복을 빼면 541건)입니다. 그중 학습에 큰 영향을 주는 것으로 표시된 것만 80건이 넘습니다. 대표적인 예:</p>
+<div class="tbl"><table>
+  <thead><tr><th>교재(쪽)</th><th>인쇄된 것</th><th>고친 것</th></tr></thead>
+  <tbody>
+  <tr><td>2권 44쪽</td><td>I have just have lunch.</td><td>I have just had lunch.</td></tr>
+  <tr><td>2권 15~18쪽</td><td>send–send–send · show–show–show · understand ×3 · strive–stove · bite–bit–bit · hide–hid–hid</td><td>불규칙동사표 7줄(sent, showed–shown, understood, strove, bitten, hidden…)</td></tr>
+  <tr><td>1권 5쪽</td><td>She is best mother in the world.</td><td>She is the best mother in the world. (STUDENT 원문에도 the가 있음)</td></tr>
+  <tr><td>2권 63쪽</td><td>A new car was promised to me by him.</td><td>… to her by him. (정답 자체가 틀림)</td></tr>
+  <tr><td>3권 13·17쪽</td><td>너는 지금 떠나는 것이 낫다. ↔ You'd better not leave now.</td><td>한국어가 영어와 뜻이 반대입니다. 학생이 한국어대로 쓰면 오답 처리됩니다.</td></tr>
+  <tr><td>2권 42쪽</td><td>비행가 11시 30분에 시카고로 떠날 예정이다.</td><td>비행기는 11시 30분에 시카고를 떠난다.</td></tr>
+  </tbody>
+</table></div>
+<p>"교재는 정답지가 아니다"라는 사장님 원칙대로 틀린 영어와 오역은 고칩니다. 교재 시대의 사실(2012년 학교생활 등)은 오류가 아니므로 그대로 두고, 민감한 예문도 사장님 결정대로 원본 그대로 둡니다. 영어 문장을 고치면 그 문장의 음성도 같은 작업에서 새로 만듭니다.</p>
+
+<h3>STUDENT와의 연결</h3>
+<p>교재의 "(N과)" 표시는 사이트 STUDENT 과정의 Chapter N입니다. 표시가 붙은 239줄을 STUDENT와 대조했습니다.</p>
+<div class="tbl"><table>
+  <thead><tr><th>결과</th><th class="n">줄</th><th>처리</th></tr></thead>
+  <tbody>
+  <tr><td>STUDENT 해당 장 문장과 글자까지 같음</td><td class="n">144</td><td>"STUDENT N과" 꼬리표와 링크를 달고, 음성을 다시 씀</td></tr>
+  <tr><td>옛 판(지금은 안 쓰는 middle 과정) 문장과 같음</td><td class="n">47</td><td>꼬리표 없음</td></tr>
+  <tr><td>문법 연습용으로 바꾼 문장(의문문으로, 줄여서)</td><td class="n">38</td><td>"바꾼 문장" 표시</td></tr>
+  <tr><td>장 번호가 틀림</td><td class="n">6</td><td>맞는 장으로 고침(예: "We are very close to one another."는 1과가 아니라 2과)</td></tr>
+  <tr><td>다른 옛 과정과 같음</td><td class="n">4</td><td>꼬리표 없음</td></tr>
+  </tbody>
+</table></div>
+<p class="note">STUDENT 문장이 많이 쓰인 곳은 1권 전체, 2권 시제·준동사, 3권 전치사·접속사입니다. 형용사, 동사, 태, 화법, 가정법, 조동사, 부사는 일반 문법책 예문이 대부분이라 STUDENT와 거의 이어지지 않습니다. 교재 소개글은 "Pass-Off English 560여 문장"을 먼저 배우라고 하는데, 지금 사이트 STUDENT에는 414문장(82레슨)이 있습니다(교재가 쓰인 옛 판과 수가 다릅니다).</p>
+
+<h3 id="mismatch">레슨 67개와 본문 배치</h3>
+<p>사장님이 고르신 대로 목차 67칸을 레슨으로 두고, 본문은 아래처럼 배치합니다. 실선 칸은 그대로 쓰는 레슨입니다. <span style="color:var(--bad)">점선 칸</span>은 본문에 내용이 없어 사장님 답이 필요한 레슨입니다.</p>
+<div class="map">
+  <div class="parthead">PART 1 · 1권 · 29레슨</div>
+  <div class="mapr p1"><span class="tn">1 인칭</span><span class="cs"><span class="lk">1인칭</span><span class="lk">2인칭</span><span class="lk">3인칭</span></span></div>
+  <div class="mapr p1"><span class="tn">2 동사의 현재형</span><span class="cs"><span class="lk">Be동사의 현재형</span><span class="lk">일반동사의 현재형</span><span class="lk">Have/Has <small>(본문에서 나눔, 약 6문장 보충)</small></span></span></div>
+  <div class="mapr p1"><span class="tn">3 문장의 기초</span><span class="cs"><span class="lk">문장의 5형식</span><span class="lk">8품사</span><span class="lk">구</span></span></div>
+  <div class="mapr p1"><span class="tn">4 문장의 종류</span><span class="cs"><span class="lk">단문</span><span class="lk">중문</span><span class="lk">복문</span><span class="lk">서술문/명령문/기원문 <small>(+본문의 부정문)</small></span><span class="lk">감탄문</span></span></div>
+  <div class="mapr p1"><span class="tn">5 의문문</span><span class="cs"><span class="lk">의문문 만들기</span><span class="lk">의문문의 대답형</span><span class="lk">부가의문문</span><span class="lk">부정의문문</span></span></div>
+  <div class="mapr p1"><span class="tn">6 명사</span><span class="cs"><span class="lk">명사의 종류·성격</span><span class="lk">명사의 복수형</span><span class="lk">기수·서수·계절·달</span></span></div>
+  <div class="mapr p1"><span class="tn">7 대명사</span><span class="cs"><span class="lk">인칭·소유·복합인칭</span><span class="lk">대명사 it</span><span class="lk">의문·지시대명사</span><span class="lk">부정대명사·부정형용사</span></span></div>
+  <div class="mapr p1"><span class="tn">8 관계대명사</span><span class="cs"><span class="lk">Who</span><span class="lk">Which <small>(본문에서 나눔)</small></span><span class="lk">That</span><span class="lk">What</span></span></div>
+  <div class="parthead">PART 2 · 2권 · 23레슨</div>
+  <div class="mapr p2"><span class="tn">9 형용사</span><span class="cs"><span class="lk">용법과 종류</span><span class="lk">비교급</span><span class="lk">최상급</span><span class="lk">관사</span></span></div>
+  <div class="mapr p2"><span class="tn">10 동사</span><span class="cs"><span class="lk">동사의 종류</span><span class="lk">불규칙 종류</span><span class="lk x">ed와 -ing ?</span></span></div>
+  <div class="mapr p2"><span class="tn">11 시제</span><span class="cs"><span class="lk">12시제·현재와 과거 <small>(본문 둘을 합침)</small></span><span class="lk">3인칭 단수 현재</span><span class="lk">미래</span><span class="lk">시제 일치</span></span></div>
+  <div class="mapr p2"><span class="tn">12 완료와 진행</span><span class="cs"><span class="lk">현재 완료</span><span class="lk">과거·미래 완료</span><span class="lk">진행형</span><span class="lk x">Going Being ?</span></span></div>
+  <div class="mapr p2"><span class="tn">13 준동사</span><span class="cs"><span class="lk">부정사</span><span class="lk">분사</span><span class="lk">동명사</span><span class="lk">관용 표현</span></span></div>
+  <div class="mapr p2"><span class="tn">14 태</span><span class="cs"><span class="lk">능동태</span><span class="lk">수동태</span></span></div>
+  <div class="mapr p2"><span class="tn">15 화법</span><span class="cs"><span class="lk">직접 화법 <small>(따옴표 문장 쓰기)</small></span><span class="lk">간접 화법 <small>(본문의 전환 4종)</small></span></span></div>
+  <div class="parthead">PART 3 · 3권 · 15레슨</div>
+  <div class="mapr p3"><span class="tn">16 가정법</span><span class="cs"><span class="lk">가정법 과거 <small>(+가정법 현재)</small></span><span class="lk x">과거완료·미래 ? <small>(미래 본문 없음)</small></span><span class="lk">I wish 가정법</span></span></div>
+  <div class="mapr p3"><span class="tn">17 조동사</span><span class="cs"><span class="lk">조동사 1 (can)</span><span class="lk">조동사 2 (may)</span><span class="lk">조동사 3 (should 등)</span></span></div>
+  <div class="mapr p3"><span class="tn">18 부사</span><span class="cs"><span class="lk">종류 <small>(+의문부사)</small></span><span class="lk">형태·용법</span><span class="lk">주의할 부사·도치</span><span class="lk">위치·비교급·최상급 <small>(본문 여섯을 넷으로)</small></span></span></div>
+  <div class="mapr p3"><span class="tn">19 전치사</span><span class="cs"><span class="lk">종류·목적어·위치</span><span class="lk">전치사·접속사 비교</span><span class="lk">중요 전치사들</span></span></div>
+  <div class="mapr p3"><span class="tn">20 접속사</span><span class="cs"><span class="lk">등위접속사</span><span class="lk">종속접속사</span></span></div>
+</div>
+<p class="note">교재 소개글은 "연결고리 70개"라고 하지만, 구성도·목차의 동그라미는 67개입니다(1권 3쪽을 직접 세면 확인됩니다). 사이트에는 실제 수로 적는 것을 기본값으로 둡니다.</p>
+
+<h2 id="build">만드는 순서</h2>
+<p>이 프로젝트의 방식대로 <strong>수정 세션</strong>이 만들고 <strong>점검 세션</strong>이 숫자로 다시 확인하며, <strong>올리기(배포)는 사장님</strong>이 하십니다. 이미 검수를 통과한 코드(STUDENT·GRAMMAR 화면, 채점기, STUDENT 진도 저장과 순서 잠금)는 동작을 바꾸지 않습니다. 새 과정에 필요한 것은 새 파일로 만듭니다. 그래서 다른 과정을 다시 감사할 일이 생기지 않습니다.</p>
+<ol class="stages">
+  <li><span class="no">0</span><span class="t">휴대폰 시안 1레슨</span><span class="d">실제 문장 6개로 5단계를 눌러 볼 수 있는 시안을 만듭니다. 돌아오시면 사장님이 일부러 틀려 보며 힌트 사다리를 확인하시고, 가능하면 학생 3~5명이 써 봅니다. 기다리지 않고 1·2단계를 함께 진행합니다.</span><span class="h owner">사장님(돌아오시면): 시안 눌러 보기 · 시험용 이용권 2개</span></li>
+  <li><span class="no">1</span><span class="t">과정 뼈대와 이용권</span><span class="d">메뉴(STAGE 02 PASS-OFF GRAMMAR), 유료 잠금을 만듭니다. STUDENT 이용권으로도 열리게 하는데, 이 판정이 코드 여러 곳에 흩어져 있어 한꺼번에 고치고 잠금·관리자 문구도 함께 바꿉니다. 무료 체험 2레슨(유료 STUDENT 7문장은 서버 전용 파일로), 감사 도구 약 10개에 새 과정 추가, 문제가 생기면 메뉴에서 바로 내리는 절차, 견본 3레슨도 이 단계입니다. 도구마다 일부러 망가뜨려 실패하는지 증명합니다.</span><span class="h">약 3~5시간</span></li>
+  <li><span class="no">2</span><span class="t">레슨 화면 · 채점 · 진도 저장 · 순서 잠금 → 공통 학습 엔진</span><span class="d"><b>2-가 (바로 시작):</b> 5단계 레슨 화면, 새 채점 파일(기존 채점기는 그대로), 진도 서버 저장, 대주제 순서 잠금(STUDENT 방식을 새 파일로 옮겨 서버 판정·목록 잠금 표시·해금 알림), 관리자 집계 화면, Vercel·R2 한도 숫자 확인.<br><b>2-나 (옆 세션 검토와 설계를 합친 뒤):</b> 사이트 공통 학습 엔진입니다. 오늘 학습 시작, 복습 날짜와 문장별 통과(90일 모의실험 3가지로 검사), 오답노트, "내 답도 맞아요"를 만들고, 이 섹션이 첫 적용 대상이 됩니다.</span><span class="h">약 20~30시간</span></li>
+  <li><span class="no">3</span><span class="t">1권 내용 29레슨</span><span class="d">오류 수정, 번역, 설명 카드, 정답과 허용 답, 형태 찾기 정답표, STUDENT 꼬리표를 만듭니다. 결정 기록 파일 맨 위에 기준을 적고, 10건마다 보고하며, 점검 세션은 첫 50건 뒤·200건마다·끝에 확인합니다. 출시 전에 세 가지를 숫자로 확인합니다.
+      <br>· 다른 일꾼이 한국어만 보고 영작한 답을 채점기로 대조(912문장 전부)
+      <br>· 목록을 안 본 사람이 쓴 맞는 답이 몇 %나 정답 처리되는지(100문제 × 3답)
+      <br>· 교재의 틀린 원문이 오답으로 판정되는지</span><span class="h">일꾼 6개 병렬로 약 5~7시간 + 점검 약 2시간</span></li>
+  <li><span class="no">4</span><span class="t">1권 음성과 출시 관문</span><span class="d">순서: 글 확정 → 음성 생성 → R2 → 올리기이고, 올리기는 이 세션이 합니다(사장님 허락). 새 한국어 낱말과 read[red] 같은 발음은 사장님이 이미 고르신 방식(IPA)으로 만듭니다. 돌아오시면 샘플을 들어 보시고, 다르면 고칩니다. 출시 관문 0~15(유료 잠금, 유출 0, 모든 소리, 모든 정답 채점, 순서 잠금)를 모두 통과하면 메뉴까지 열어 올립니다. 지금은 쓰는 학생이 없어 숨겨 둘 필요가 없습니다.</span><span class="h owner">사장님(돌아오시면): 설명 카드 5장 읽기 · 발음 샘플 듣기 · 기간제 이용권으로 순서 잠금 확인 · 휴대폰 5분 확인</span></li>
+  <li><span class="no">5</span><span class="t">학생이 생긴 뒤 숫자로 조정</span><span class="d">지금은 사이트를 쓰는 학생이 없어서 시범 운영을 기다리지 않고 1·2·3권을 이어서 올립니다. 학생이 생기면 7일 재방문율, 1주 전 문장을 다시 맞힌 비율, 하루 학습 시간, 신고 승인율을 보고 조정합니다. 조정 기준은 셋입니다: 다시 맞힌 비율이 70% 미만이면 간격을 좁히고, 하루 학습 시간 중앙값이 25분을 넘으면 상한을 낮추고, 승인된 신고가 5%를 넘으면 정답 목록을 보강합니다.</span><span class="h">출시 뒤</span></li>
+  <li><span class="no">6</span><span class="t">2권 출시 → 3권 출시</span><span class="d">코드 변경 없이 내용만 더합니다. 같은 관문을 통과해야 합니다.</span><span class="h">권마다 약 8~12시간 + 관문</span></li>
+  <li><span class="no">7</span><span class="t">운영</span><span class="d">주 1회 "내 답도 맞아요" 신고를 처리하고, 월 1회 숫자 한 장으로 보고합니다. 2차 후보는 간격 알고리즘 개선(FSRS), 목록 밖 답만 AI 채점, 발음평가, STUDENT 진도와 연동입니다.</span><span class="h">선택</span></li>
+</ol>
+<p><strong>합계:</strong> 1권 출시까지 세션 작업 약 <strong>30~45시간</strong>, 3권 전체는 약 <strong>50~75시간</strong>입니다. 순서 잠금을 새 과정용으로 따로 만드는 일 때문에 처음 추정(25~35시간)보다 늘었습니다.</p>
+<p>근거는 이 프로젝트에서 잰 속도입니다: 6단계 시간당 약 150칸, 내용 재검토 시간당 약 4,500줄, 음성 62개 생성 29초, STUDENT 순차 해금 22개 파일 작업 약 12시간. 첫 부품과 첫 50건이 끝나면 실제 속도로 다시 추정해 알려 드립니다.</p>
+<p class="note">비용: 출시 때 새로 드는 돈은 거의 없습니다. 음성은 무료 한도 안이고, 진도 저장은 학생 1,000명 기준으로도 R2 무료 한도 안입니다(설계자 계산이며, 2단계에서 실제 한도를 숫자로 확인합니다). AI 채점을 나중에 켜면 한 번에 약 4~8원입니다. 90%를 정답 목록으로 처리하면 활성 학생 1,000명 · 하루 20문장 기준 월 약 28만원입니다. 발음평가는 5초 한 번에 약 2원(월 5시간 무료)입니다.</p>
+
+<h2 id="best">이게 최선인가요?</h2>
+<p><strong>지금 가진 근거로 만들 수 있는 최선의 설계입니다.</strong> 교재 191쪽 전부, 사이트 코드, 학습 연구 33개, 다른 제품 18개를 바탕으로 했습니다. 설계안 3개를 두 심사가 서로 반대 관점에서 따져 나온 조합이고, 심사가 찾은 규칙 위반도 고쳤습니다. 하지만 완벽한 결과는 설계만으로 나오지 않습니다. 아래 세 가지를 채워야 합니다.</p>
+<ol class="clean">
+  <li><strong>AI가 확인할 수 없는 것은 사람이 확인합니다.</strong> 가장 큰 위험은 AI가 새로 쓰는 내용입니다(설명 67장, 번역 188문장, 정답, 오류 수정). 그래서 두 가지를 사람이 확인합니다.
+    <br>· 사장님이 설명 카드 5장을 읽어 보십니다(영어 선생님 검토 대신 — 사장님 결정).
+    <br>· 학생 3~5명이 시안을 써 봅니다.
+    <br>이렇게 하면 나머지 설명 62장의 문법 정확성은 사람이 보지 않습니다. 그 대신 기계 검사(카드마다 예문이 설명대로 채점되는지)와 점검 세션의 67장 전수 대조를 더합니다.</li>
+  <li><strong>숫자는 실제 학생 기록으로 맞춥니다.</strong> 3번, 간격, 하루 30문장은 연구에서 가져온 출발값입니다. 지금은 쓰는 학생이 없어서, 학생이 생긴 뒤 기록을 보고 고칩니다(5단계).</li>
+  <li><strong>옆 세션과 설계를 합쳐야 완성됩니다.</strong> 복습·통과 체계는 이 학습법의 핵심이라, 합치기가 끝나야 1권을 낼 수 있습니다. 옆 세션 결과가 늦어지면 이 계획대로 공통 엔진을 먼저 만들고 옆 세션이 거기에 맞추게 합니다.</li>
+</ol>
+
+<h2 id="risk">위험과 대책</h2>
+<p>보고서가 인정한 한계는 모두 번호 붙은 단계의 작업으로 배정했습니다.</p>
+<div class="tbl"><table>
+  <thead><tr><th>위험</th><th>대책</th><th>단계</th></tr></thead>
+  <tbody>
+  <tr><td>순서 잠금 코드가 STUDENT 전용(22개 파일)</td><td>STUDENT 코드는 건드리지 않고 같은 방식을 새 파일로 만들고, 기간제 시험 이용권으로 챕터가 차례로 열리는지 확인합니다.</td><td>2 · 4</td></tr>
+  <tr><td>STUDENT 이용권 판정이 여러 곳에 흩어져 있음</td><td>한 번에 모두 고치고, STUDENT 이용권으로 GRAMMAR I·II는 여전히 잠겨 있는지까지 검사합니다.</td><td>1</td></tr>
+  <tr><td>맞는 답을 틀렸다고 하는 채점(기존 GRAMMAR는 맞는 표현의 약 60%만 인정)</td><td>허용 답을 넉넉히 만들고, 목록을 안 본 사람이 쓴 맞는 답으로 인정률을 재서 출시 기준으로 둡니다. "내 답도 맞아요"는 보류로 처리합니다.</td><td>3 · 7</td></tr>
+  <tr><td>무료 체험이 유료 STUDENT 문장을 공개</td><td>7문장을 서버 전용 파일로 빼고, 그 파일을 무료 파일에 되돌려 넣으면 실패하는 전용 검사를 둡니다.</td><td>1</td></tr>
+  <tr><td>AI가 쓴 설명·번역의 오류(독립 검수 없음)</td><td>역번역 대조, 교재 쪽 번호가 달린 원문 대조표, 카드마다 예문이 설명대로 채점되는지 기계 검사, 점검 세션의 67장 전수 대조, 사장님의 설명 카드 5장 읽기. 나머지 62장은 사람이 보지 않는다는 한계가 남습니다.</td><td>3 · 4</td></tr>
+  <tr><td>복습이 쌓여 학생이 그만둠</td><td>하루 30문장 상한을 두고, 재학습이 60문장을 넘으면 복습을 권하고, 복귀 코스를 둡니다. 학생이 생긴 뒤 하루 시간 중앙값이 25분을 넘으면 상한을 낮춥니다.</td><td>2 · 5</td></tr>
+  <tr><td>휴대폰 타자가 느려 하루 분량이 과함</td><td>시안으로 학생 3~5명 속도를 실제로 재고, 첫날은 단어 타일을 허용합니다.</td><td>0</td></tr>
+  <tr><td>카톡 안에서 마이크 안 됨 · 아이 목소리 인식률 · 음성 인식이 틀린 문법을 고쳐 받아씀</td><td>다른 섹션과 같은 "Safari/Chrome으로 열기" 안내를 띄우고, 타이핑으로도 풀 수 있게 합니다. 말한 답은 글자로 바뀐 뒤 채점기가 봅니다. 아이 10명의 녹음으로 인식률을 잰 뒤 마이크 점수 기준을 정합니다.</td><td>4</td></tr>
+  <tr><td>로마자 한국어 낱말·동형이음어 발음(read [red], 대한·단군)</td><td>사장님이 샘플을 먼저 듣고, 이미 고르신 방식(IPA)으로 새 음성 이름을 붙입니다.</td><td>4</td></tr>
+  <tr><td>출시 뒤 문장·정답을 고칠 때 학생 기록이 꼬임</td><td>문항에 바뀌지 않는 번호를 달고, 고칠 때 기록을 유지할지 초기화할지 정하는 규칙과 진도 파일 버전 옮기기 절차를 둡니다.</td><td>2</td></tr>
+  <tr><td>문제가 생겼을 때 새 과정만 내려야 함</td><td>사장님 조작 한 번으로 메뉴에서 숨기는 되돌리기 절차를 둡니다(음성·진도는 유지).</td><td>1</td></tr>
+  <tr><td>운영 진도 저장소를 이 컴퓨터에서 못 봄</td><td>로컬 대체 저장소와 미리보기 배포로 시험하고, 시험용 이용권 2개(사장님)와 관리자 집계 화면을 씁니다.</td><td>2 · 4</td></tr>
+  <tr><td>기존 채점기의 과민 규칙(예: interesting을 in+teresting으로 보고 반대말로 판정), 마이크 채점이 다른 정답을 무시하는 문제</td><td>새 채점 파일에 예외 목록과 이 과정의 정답·오답 대조 검사를 넣고, 마이크 채점에 다른 정답 비교를 더합니다.</td><td>2</td></tr>
+  <tr><td>작업을 너무 많이 동시에 돌려 실패</td><td>일꾼 6개 · 브라우저 2~3개 · 메모리 7.9GB 안에서 나누는 배분표를 씁니다.</td><td>3</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="why">근거</h2>
+<h3>학습 연구 — 무엇을 왜 넣었나</h3>
+<div class="tbl"><table>
+  <thead><tr><th>원리</th><th>근거 강도</th><th>설계에 넣은 곳</th></tr></thead>
+  <tbody>
+  <tr><td>초급자에게는 짧고 분명한 문법 설명이 효과적</td><td><span class="pill g">강함</span></td><td>② 규칙 1~3분</td></tr>
+  <tr><td>다시 보기보다 먼저 떠올리기(인출)가 오래 남음</td><td><span class="pill g">강함</span></td><td>① 예문 떠올리기, 시도 전 정답 잠금</td></tr>
+  <tr><td>서로 다른 날 3번 이상 다시 맞혀야 장기 기억</td><td><span class="pill g">강함</span></td><td>통과 기준</td></tr>
+  <tr><td>간격을 두고 복습(처음엔 촘촘히, 뒤로 갈수록 넓게)</td><td><span class="pill g">강함</span></td><td>2 · 4 · 8일, 3주 · 2개월 · 4개월</td></tr>
+  <tr><td>정답을 바로 주기보다 스스로 고치게 하는 피드백</td><td><span class="pill g">강함</span></td><td>힌트 사다리</td></tr>
+  <tr><td>지도를 보기보다 기억으로 다시 그리기</td><td><span class="pill g">강함</span></td><td>구성도 다시 채우기</td></tr>
+  <tr><td>학생의 "알아요" 느낌은 믿을 수 없음</td><td><span class="pill g">강함</span></td><td>통과는 화면이 판정</td></tr>
+  <tr><td>헷갈리는 문법을 섞어 연습(첫날은 따로)</td><td><span class="pill w">중간</span></td><td>2번째 복습부터 섞기</td></tr>
+  <tr><td>완전학습은 성취를 높이지만 자기 속도형은 이탈 위험</td><td><span class="pill w">중간</span></td><td>순서 잠금 + 하루 상한 + 복귀 코스</td></tr>
+  <tr><td>설명 직후 짧은 형태 찾기, 연습은 주로 영작</td><td><span class="pill w">중간</span></td><td>③ 4~6문제 → ④ 영작</td></tr>
+  <tr><td>음성 인식 말하기 연습은 효과가 있지만 문법 채점엔 부적합</td><td><span class="pill w">중간</span></td><td>마이크는 다른 섹션과 같게. 말한 답은 글자로 바뀐 뒤 채점</td></tr>
+  <tr><td>"순간영작" 방법 자체</td><td><span class="pill b">약함</span></td><td>인출·재학습 원리로 뒷받침합니다. "연구로 입증된 방법"이라고 홍보하지 않습니다.</td></tr>
+  </tbody>
+</table></div>
+<p class="src">주요 출처: Norris &amp; Ortega 2000 · Spada &amp; Tomita 2010 (명시적 지도) · Rawson &amp; Dunlosky 2011·2022, Serfaty &amp; Serrano 2024 (연속 재학습) · Kim &amp; Webb 2022, Suzuki 2017 (간격) · Nakata &amp; Suzuki 2019 (섞기) · Li 2010, Lyster &amp; Saito 2010, Heift 2010 (교정 피드백) · Blunt &amp; Karpicke 2014, Schroeder 외 2018 (개념도 다시 그리기) · Ngo 외 2024, Koizumi 2024 (음성 인식) · Kulik 외 1990 (완전학습). 전체 33개 근거와 링크는 저장소 <code>docs/pass-off-grammar/조사/학습과학.json</code>에 있습니다.</p>
+
+<h3>다른 제품에서 빌려온 것과 피한 것</h3>
+<div class="cols">
+  <div class="box"><h4>빌려온 것</h4><ul>
+    <li>클래스카드 '성분 찾기': 낱말을 눌러 표시하고, AI 없이 자동 채점</li>
+    <li>듀오링고: 허용 답 목록과 "내 답도 맞아요"(거짓 오답이 신고의 72%), 타일↔키보드 전환</li>
+    <li>Quill: 틀린 위치만 짚고 2~3번 다시 쓰게 한 뒤 정답</li>
+    <li>말해보카: 한국어 → 영어 카드 배열과 한 줄 오답 이유</li>
+    <li>3800제류: 무조건 많은 양 대신, 숙달하면 다음으로</li></ul></div>
+  <div class="box"><h4>피한 것</h4><ul>
+    <li>음성 인식으로 문법 채점(어순을 뒤집어도 만점이 나온다는 리뷰가 있음)</li>
+    <li>항상 켜진 단어 은행(너무 쉬워짐)</li>
+    <li>긴 영상 강의 중심의 수동 학습</li>
+    <li>말하기만으로 진도가 막히게 하기(카톡에서 막힘) — 타이핑으로도 풀 수 있게 둠</li>
+    <li>하트·광고식 게임 요소, 순위표 기본 노출</li></ul></div>
+</div>
+
+<h2 id="appendix">부록</h2>
+<h3>주제별 숫자</h3>
+<div class="tbl"><table>
+  <thead><tr><th>권</th><th>주제</th><th>쪽</th><th class="n">예문</th><th class="n">복습</th><th class="n">STUDENT</th><th class="n">음성 있음</th><th class="n">오류 후보</th></tr></thead>
+  <tbody>
+  <tr><td>1</td><td>인칭</td><td>5–9</td><td class="n">32</td><td class="n">32</td><td class="n">9</td><td class="n">4</td><td class="n">27</td></tr>
+  <tr><td>1</td><td>동사의 현재형</td><td>10–14</td><td class="n">26</td><td class="n">26</td><td class="n">4</td><td class="n">3</td><td class="n">14</td></tr>
+  <tr><td>1</td><td>문장의 기초</td><td>15–29</td><td class="n">74</td><td class="n">109</td><td class="n">15</td><td class="n">8</td><td class="n">45</td></tr>
+  <tr><td>1</td><td>문장의 종류</td><td>30–36</td><td class="n">31</td><td class="n">29</td><td class="n">7</td><td class="n">5</td><td class="n">17</td></tr>
+  <tr><td>1</td><td>의문문</td><td>37–41</td><td class="n">46</td><td class="n">34</td><td class="n">3</td><td class="n">1</td><td class="n">11</td></tr>
+  <tr><td>1</td><td>명사</td><td>42–47</td><td class="n">27</td><td class="n">26</td><td class="n">1</td><td class="n">1</td><td class="n">20</td></tr>
+  <tr><td>1</td><td>대명사</td><td>48–57</td><td class="n">59</td><td class="n">52</td><td class="n">6</td><td class="n">7</td><td class="n">36</td></tr>
+  <tr><td>1</td><td>관계대명사</td><td>58–63</td><td class="n">36</td><td class="n">35</td><td class="n">1</td><td class="n">0</td><td class="n">22</td></tr>
+  <tr><td>2</td><td>형용사</td><td>5–14</td><td class="n">61</td><td class="n">56</td><td class="n">2</td><td class="n">2</td><td class="n">22</td></tr>
+  <tr><td>2</td><td>동사</td><td>15–27</td><td class="n">29</td><td class="n">139</td><td class="n">4</td><td class="n">3</td><td class="n">29</td></tr>
+  <tr><td>2</td><td>시제</td><td>28–43</td><td class="n">63</td><td class="n">89</td><td class="n">5</td><td class="n">7</td><td class="n">48</td></tr>
+  <tr><td>2</td><td>완료와 진행</td><td>44–51</td><td class="n">32</td><td class="n">46</td><td class="n">1</td><td class="n">1</td><td class="n">27</td></tr>
+  <tr><td>2</td><td>준동사</td><td>52–61</td><td class="n">56</td><td class="n">49</td><td class="n">13</td><td class="n">5</td><td class="n">36</td></tr>
+  <tr><td>2</td><td>태</td><td>62–66</td><td class="n">38</td><td class="n">28</td><td class="n">0</td><td class="n">0</td><td class="n">10</td></tr>
+  <tr><td>2</td><td>화법</td><td>67–71</td><td class="n">41</td><td class="n">18</td><td class="n">1</td><td class="n">0</td><td class="n">13</td></tr>
+  <tr><td>3</td><td>가정법</td><td>5–9</td><td class="n">25</td><td class="n">22</td><td class="n">1</td><td class="n">1</td><td class="n">23</td></tr>
+  <tr><td>3</td><td>조동사</td><td>10–17</td><td class="n">38</td><td class="n">47</td><td class="n">3</td><td class="n">1</td><td class="n">28</td></tr>
+  <tr><td>3</td><td>부사</td><td>18–29</td><td class="n">61</td><td class="n">71</td><td class="n">2</td><td class="n">5</td><td class="n">25</td></tr>
+  <tr><td>3</td><td>전치사</td><td>30–45</td><td class="n">99</td><td class="n">92</td><td class="n">17</td><td class="n">13</td><td class="n">56</td></tr>
+  <tr><td>3</td><td>접속사</td><td>46–57</td><td class="n">52</td><td class="n">67</td><td class="n">11</td><td class="n">6</td><td class="n">27</td></tr>
+  </tbody>
+</table></div>
+<p class="muted" style="font-size:13.5px">표의 뜻은 이렇습니다.<br>
+· 예문: 주제 안에서 중복을 뺀 수입니다. 주제 사이에 겹치는 문장이 있어 합계가 912보다 조금 많습니다.<br>
+· STUDENT: STUDENT 문장과 같거나 그 일부인 예문입니다.<br>
+· 음성 있음: 글자까지 같은 음성 파일이 이 컴퓨터에 있는 예문입니다.<br>
+· 오류 후보: 그 주제 쪽의 수입니다(앞쪽 1~4쪽 12건 제외).<br>
+· 동사 단원의 복습 139문제 중 110개는 불규칙동사표 칸입니다.</p>
+
+<h3 id="check">1분 확인 — AI를 믿지 않고 직접 보시는 방법</h3>
+<div class="check">
+  <p style="margin-top:0"><b>① 오류가 실제로 인쇄돼 있는지:</b> 바탕화면 <code>문법교재1~3\문법교재2.pdf</code>를 열어 보세요. 44쪽 첫 예문이 "I have just have lunch."이고, 17쪽 불규칙동사표에 "send | send | send"가 있습니다.</p>
+  <p><b>② "(N과)"가 STUDENT 장인지:</b> <code>문법교재 1.pdf</code> 5쪽 "I have a nice family.(2과)"와 같은 문장이 사이트 STUDENT Chapter 2의 "2-2. Family Unit(가족 구성)" 레슨에 있습니다.</p>
+  <p><b>③ 레슨 67개:</b> <code>문법교재 1.pdf</code> 3쪽 구성도의 동그라미를 대주제 원은 빼고 세어 보세요. Part 1 29개, Part 2 23개, Part 3 15개입니다.</p>
+  <p style="margin-bottom:0"><b>④ 뜻이 반대인 한국어:</b> <code>문법교재3.pdf</code> 13쪽 "You'd better not leave now."와 17쪽 "너는 지금 떠나는 것이 낫다."를 비교해 보세요.</p>
+</div>
+
+<h3>이 보고서를 만든 방법</h3>
+<ul class="clean">
+  <li><strong>1차(61분):</strong> AI 일꾼 10개가 나눠 맡았습니다. 교재 읽기 7개(쪽 범위를 나눠 쪽 이미지와 PDF 글자를 함께 봄), 사이트 코드 지도 1개, 학습 연구 조사 1개, 제품·기술 조사 1개입니다.</li>
+  <li><strong>기계 검사:</strong> 옮긴 결과를 PDF 글자와 대조했습니다(2,423줄, 빠진 줄 0 — 일부러 5문장을 지운 사본에서는 잡아냄). STUDENT 대조, 음성 파일 대조, 편집 원본(.pub) 대조도 했습니다.</li>
+  <li><strong>2차(70분):</strong> 서로 다른 관점의 설계 3개(학습 효과 / 학습자·시장 / 만들기·운영)를 심사 두 명이 따로 점수 매겼습니다. 학습 관점 심사는 A 41 · B 40 · C 27점, 실현 가능성 심사는 C 37 · A 30 · B 29점입니다.
+    <br>이 보고서의 설계는 두 심사가 함께 권한 조합입니다: A의 학습 엔진 + B의 학생 화면 + C의 만들기·검증 방식.
+    <br>심사가 찾은 규칙 위반 두 가지(무료 체험 유출, 목차 이탈)는 고쳤고, 그 위에 사장님 결정(9월 27일)을 반영했습니다.</li>
+  <li><strong>한계:</strong> 모두 같은 AI 계열이 쓰고 점검했으므로 독립 검수가 아닙니다. 영어 교정안과 새 정답은 사람의 확인이 필요합니다. 실제 아이폰·안드로이드로는 아직 아무도 보지 않았습니다(4단계 관문에서 확인합니다).</li>
+</ul>
+
+<h3>저장소에 남긴 것</h3>
+<p>작업 가지 <code>claude/grammar-learning-section-a81aa0</code>의 <code>docs/pass-off-grammar/</code>에 교재 추출 자료(3권 전체 문장·복습·정답 연결·오류 목록), 조사 원자료, 설계 비교 기록, 검사 스크립트를 저장합니다. 기술 문서(설계.md)와 수정 세션 명령서도 같은 곳에 저장합니다. 저장소에 기록(커밋)만 하고 올리지(푸시) 않습니다. 사이트에는 아직 아무것도 만들지 않았습니다.</p>
+
+<details>
+  <summary>수정 세션에 붙여 넣을 명령서</summary>
+  <div>
+    <p style="font-size:14px">이 명령서는 이 세션이 옆 세션에 직접 보냅니다(사장님 허락). 사장님이 붙여 넣으실 필요는 없고, 기록용으로 남깁니다.</p>
+    <p><button class="copy" type="button" id="copyBtn">명령서 복사</button> <span id="copyMsg" class="muted" style="font-size:13px"></span></p>
+    <pre class="cmd" id="cmd">[PASS-OFF GRAMMAR — 0~4단계 명령서]
+
+사장님 결정(2026-09-27, 확정): 레슨 = 목차 동그라미 67개 · 이름 PASS-OFF GRAMMAR, STAGE 02(STUDENT 바로 다음) · 올패스와 STUDENT 이용권 모두 이 과정을 엶 · 무료 체험 = 다른 섹션과 같이 첫 두 레슨(유료 STUDENT 7문장은 이용권이 있을 때만) · 순서 잠금 = STUDENT와 같은 방식(대주제 = 챕터) · 민감한 예문은 원본 그대로 · 더 최근 교정판 없음(PDF 3권이 기준) · 복습 체계(오늘 할 일·다음 날 확인·통과·오답노트·신고 버튼)는 사이트 공통 학습 엔진으로, 옆 세션(3차 점검 수정)의 학습법 검토와 설계를 합친 뒤 만듦 · 보호자 요약·보고는 만들지 않음 · 마이크는 다른 섹션과 똑같이(① 먼저 말해 보기, ④ 마이크로 말해서 영작하기, 카톡은 기존 "Safari/Chrome으로 열기" 안내, 말한 답은 글자로 바꿔 채점) · 설명 카드 검수는 영어 선생님 대신 사장님이 5장 읽기(대주제가 서로 다른 5장을 골라 휴대폰 링크로 드릴 것. 나머지 62장은 카드마다 예문이 설명대로 채점되는지 기계 검사 + 점검 세션 전수 대조로 보완하고, "사람이 안 본 62장"이라는 한계를 보고에 적을 것).
+추가 결정(2026-09-27): 지금 사용자가 없으므로 관문 통과 뒤 메뉴까지 열어 올림 · 1·2·3권을 시범 운영 대기 없이 이어서 · 목차에만 있는 세 칸은 추천대로(ed와 -ing = 규칙동사 -ed·-ing / Going·Being = be going to + being / 가정법 미래 = If + should·were to) · 올리기(R2·푸시)는 이 세션("문법교재 학습 섹션 설계")이 함.
+
+읽을 것 (이 순서로):
+1. AGENTS.md — 특히 '텍스트를 바꾸면 음성이 깨집니다', 배포 순서, 금지 사항
+2. docs/pass-off-grammar/README.md — 자료 지도, 통째로 읽으면 안 되는 큰 파일
+3. docs/pass-off-grammar/설계.md — 이번 작업의 기준(레슨 67개 대응표, 5단계, 통과 규칙, 순서 잠금 규칙, 채점 순서, 이용권·무료 체험, 단계별 산출물과 관문)
+
+원칙:
+- 결정 기록 파일 docs/pass-off-grammar/작업기록.md 를 만들고 맨 위에 설계.md 의 기준을 옮겨 적을 것. 문맥이 압축되면 다시 읽을 것. 10건마다 "고침/필요 없음/보류" 수를 보고할 것.
+- 이미 관문을 통과한 코드(GrammarLearningView, StudentLearningView, CourseDashboard 의 STUDENT 동작, VoiceSpeakingTester, listeningUtils, grammarGrading.ts, studentProgress.ts, src/app/student/)는 동작을 바꾸지 말 것. 새 과정의 코드는 새 파일에 두고, 공용 파일에는 과정 등록 분기만 넣을 것. 기존 섹션의 문장·번역·음성은 건드리지 말 것(2주 점검 결과를 그대로 유효하게 두기 위함). 공용 파일을 바꿀 때마다 기존 섹션에서 다시 돌려야 할 점검(유료 잠금 · 유출 0 · 메뉴)을 적고 돌릴 것.
+- 과정 구조(레슨 목록·순서·제목)는 설계.md 의 대응표대로만. 목차에만 있는 세 칸(Going Being · ed와 -ing · 가정법 미래)은 사장님 답이 오기 전에는 내용을 쓰지 말 것.
+- 모든 검사는 일부러 망가뜨려 실패하는 것을 먼저 보인 뒤에만 PASS 로 적을 것.
+- 영어 글을 확정하기 전에는 음성을 만들지 말 것. 새 발음(로마자 한국어 낱말, read[red] 같은 동형이음어)은 샘플을 사장님께 먼저 들려 드릴 것.
+- git add -A · git stash 금지. 파일을 이름으로 add 할 것. 커밋까지만 하고, 푸시·R2 업로드·배포는 사장님이 맡기실 때만 할 것.
+- 같은 AI 가 쓰고 점검한 것은 "독립 검수 아님"으로 적고, 사장님이 폰으로 1분 안에 확인할 방법을 보고에 넣을 것.
+
+할 일:
+0단계 — 휴대폰 시안 1레슨(Be동사의 현재형, 실제 문장 6개로 5단계 모두)을 숨김 주소로 만들고, 사장님께 링크와 "일부러 틀려 보기" 안내를 드릴 것.
+1단계 — 과정 등록(STAGE 02, slug 는 설계.md 참고), 유료 잠금, STUDENT 이용권으로도 열리게(판정이 흩어진 곳 전부 + 잠금·관리자 문구), 무료 체험 2레슨(유료 STUDENT 7문장은 서버 전용 파일, 되돌려 넣으면 FAIL 나는 전용 검사), 감사 도구 약 10개에 slug 추가, 메뉴에서 내리는 되돌리기 절차, 견본 3레슨.
+2단계-가 (바로) — 5단계 레슨 화면, 새 채점 파일(import 없는 순수 파일), 진도 서버 저장(STUDENT 방식을 새 파일로, 로컬 대체 저장소로 시험), 대주제 순서 잠금(서버 판정 · 목록 잠금 표시 · 해금 알림), 관리자 집계, Vercel·R2 한도 숫자 확인, 출시 뒤 문항 변경 시 기록 규칙.
+2단계-나 (보류) — 오늘 학습 시작 · 다음 날 확인 · 복습 날짜와 문장별 통과 · 오답노트 · "내 답도 맞아요"는 사이트 공통 학습 엔진으로 만든다. 보호자 요약·리포트는 만들지 않는다(사장님 결정 2026-09-27). 옆 세션(3차 점검 수정)의 학습법 a~z 검토와 합친 공통 설계가 나올 때까지 착수하지 말 것. 그 전에 이 이름의 기능을 이 과정 전용으로 만들지 말 것.
+3단계 — 1권 29레슨 내용: 오류 수정(교재 추출 JSON 의 issues 를 하나씩, 시대 사실과 민감 예문은 원본 유지), 번역, 설명 카드, 정답·허용 답, 형태 찾기 정답표, STUDENT 꼬리표. 출시 전 증거 세 가지(역번역 대조 · 가린 인정률 · 교재 원문 오류의 오답 판정)를 숫자로.
+4단계 — 음성 생성 계획(--dry-run 의 pending 수 보고) → 사장님 발음 샘플 확인 → 생성 → (R2 업로드와 푸시는 사장님이 맡기실 때만) → 출시 관문 0~15 전부(순서 잠금은 기간제 시험 이용권으로) → 숨김 출시 → 사장님 휴대폰 확인 목록.
+
+보고: 단계마다 끝나면 이 순서로 쓸 것 — 한 줄 판정(🟢/🟡/🔴) → 끝난 것 → 사장님이 하실 일 → 1분 확인 → 기술 기록. 첫 부품과 첫 50건이 끝나면 남은 시간을 잰 속도로 다시 추정할 것.</pre>
+  </div>
+</details>
+
+<p class="foot">Pass-Off Grammar 설계서 · 2026-09-27 · 교재: Pass-Off English Grammar 1·2·3 (2012) · 이 문서의 판단과 숫자는 같은 AI 계열이 만들고 스스로 점검한 것이며 독립 검수가 아닙니다.</p>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn'), msg=document.getElementById('copyMsg'), pre=document.getElementById('cmd');
+  if(!btn||!pre) return;
+  btn.addEventListener('click',function(){
+    var text=pre.textContent;
+    function selectIt(){ try{ var r=document.createRange(); r.selectNodeContents(pre); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent='선택했어요. 길게 눌러 복사하세요.'; }catch(e){ msg.textContent='명령서를 직접 선택해 복사하세요.'; } }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ msg.textContent='복사했어요.'; }).catch(selectIt);
+      } else { selectIt(); }
+    }catch(e){ selectIt(); }
+  });
+})();
+</script>

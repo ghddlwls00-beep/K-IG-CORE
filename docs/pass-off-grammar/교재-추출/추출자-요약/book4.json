@@ -1,0 +1,213 @@
+{
+ "range": "g2 PDF pages 1-27 (front matter p1-4, TOPIC 9 형용사 p5-14, TOPIC 10 동사 p15-27)",
+ "outputFile": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\claude\\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE--claude-worktrees-korean-market-analysis-39e7fc\\5adf4ccb-9cea-421f-9195-b5f31b723c7f\\scratchpad\\pdf\\out\\g2-p1-27.json",
+ "topics": [
+  {
+   "printedLabel": "TOPIC 9",
+   "title": "형용사",
+   "pages": "5-14",
+   "subtopics": [
+    "(1) 한정적 용법과 서술적 용법",
+    "(2) 비교급",
+    "(3) 최상급",
+    "(4) 관사 (a / the)"
+   ],
+   "passOffSentences": 31,
+   "applicationSentences": 59,
+   "reviewTasks": 4,
+   "reviewItems": 56,
+   "tables": 0,
+   "explanationText": "문법 설명 문단은 한 줄도 없음. 설명 역할은 소주제 제목 4개, 굵은 글씨로 표시한 초점 단어, 메모 두 개((=/=eldest), (=oldest))가 전부. Application(7~9쪽)에는 소주제 제목조차 인쇄되지 않음(59줄 연속 목록). Pass-Off 31줄 가운데 두 줄은 두 문장짜리라 문장 수로는 33개."
+  },
+  {
+   "printedLabel": "TOPIC 10",
+   "title": "동사",
+   "pages": "15-27",
+   "subtopics": [
+    "(1)동사의 종류",
+    "(2)불규칙동사의 변화(현재-과거-과거완료)",
+    "ed와 –ing (목차·구성도에만 있고 본문 없음)"
+   ],
+   "passOffSentences": 6,
+   "applicationSentences": 29,
+   "reviewTasks": 2,
+   "reviewItems": 139,
+   "tables": 1,
+   "explanationText": "문법 설명 문단 없음. (1)동사의 종류는 제목과 문장 6개뿐이고, 굵은 글씨도 형식 표시도 없음. 1권 TOPIC 3(문장의 5형식) 지식을 전제로 Review에서 '몇 형식'을 물음. (2)는 불규칙동사 변화표 114행(동사의 뜻/현재/과거/과거분사, 15~18쪽). 제목의 '과거완료'는 '과거분사'의 잘못이고, 변화형 오류 7행과 뜻 오류 3행이 있음."
+  }
+ ],
+ "exerciseTypes": [
+  {
+   "type": "underline_adjective",
+   "instructionExample": "1. 다음 문장을 읽어보고 형용사에 밑줄을 그으시오.",
+   "itemCount": 12,
+   "webIdea": "문장의 단어를 탭해서 형용사를 고르는 UI. 정답은 underlineTokens(Application 굵은 글씨 기준)이고, 관사 a/an/the는 optionalTokens라 골라도 감점하지 않음. 틀리면 한정적/서술적 용법 해설(extraSlotNote)을 보여 줌."
+  },
+  {
+   "type": "ko_to_en_compose",
+   "instructionExample": "2. 다음 문장을 영작하시오.",
+   "itemCount": 21,
+   "webIdea": "한글을 보고 영어로 쓰거나 말하기 녹음. 단계형으로 운영: 단어 블록 배열 → 초점 부분 빈칸 → 전체 쓰기. 채점은 정규화 비교 + 인정답 목록, 불일치하면 모범답을 보여 주고 자기채점."
+  },
+  {
+   "type": "ko_to_en_compose + use_superlative",
+   "instructionExample": "3. 최상급을 이용하여 다음을 영작하시오.",
+   "itemCount": 7,
+   "webIdea": "먼저 형용사→최상급 변환 미니 드릴(-est / the most / 불규칙)을 두고 영작으로 넘어감. 한글 프롬프트 2개(큰 아버지, 행복한 여름)는 고친 뒤 사용."
+  },
+  {
+   "type": "ko_to_en_compose + use_article",
+   "instructionExample": "4. 다음의 내용을 보고 a나 the를 이용하여 영작하시오.",
+   "itemCount": 16,
+   "webIdea": "관사 칸 빈칸 연습(a / an / the / 관사 없음 버튼)을 먼저 두면 자동 채점이 쉬움. 그 뒤 전체 영작. 지시문은 '관사를 쓸 곳과 뺄 곳'으로 바꿈(무관사 정답이 섞여 있음)."
+  },
+  {
+   "type": "ko_to_en_compose + identify_sentence_pattern",
+   "instructionExample": "1.다음 문장을 보고 영작한 후에 몇 형식 문장인지 괄호 안에 쓰시오.",
+   "itemCount": 29,
+   "webIdea": "2단계로 구성: ① 영작 채점 → ② 모범 문장을 보여 준 뒤 1~5형식 버튼 선택(괄호는 책에 인쇄되지 않음). 문장 성분 S/V/O/C를 색으로 칠해 근거를 보이게 함. extraSlotAccept로 복수 정답 처리(#16, #24, #28, #29)."
+  },
+  {
+   "type": "write_past_and_past_participle",
+   "instructionExample": "2.다음 동사들의 과거형과 과거 완료형을 쓰시오.",
+   "itemCount": 110,
+   "webIdea": "110행 입력 그리드(과거·과거분사 두 칸)에 accept 복수 정답(burnt/burned 등)을 적용하고, 틀린 동사만 다시 풀게 함. 114행 원표는 검색·정렬되는 참고표와 뜻 칸이 있는 플래시카드로. 틀린 7행과 뜻 오류는 공개 전에 고칠 것."
+  }
+ ],
+ "answerKey": {
+  "reviewItems": 195,
+  "linkedToBookSentence": 183,
+  "needsNewAnswer": 17,
+  "notes": "책에는 정답이 전혀 인쇄되어 있지 않음. answerFromBook이 채워진 183개의 구성: ① 한→영 73문항은 같은 토픽 Application 문장에 연결(Review 순서가 Application 순서와 같음) ② 동사 변화 110문항은 책의 15~18쪽 표 행에 연결. 밑줄 12문항은 제시문이 곧 책 문장이고 정답은 책 굵은 글씨에서 가져옴. 따라서 195문항 모두 책으로 추적 가능하고 proposedAnswer는 0. needsNewAnswer 17 = 책 정답이 틀려 correctedAnswer를 붙인 문항: 형용사 5개(on→in the mirror, well—probably, science fiction book, There's a rainbow, strawberries), 동사 영작 5개(while working, tell me how to get to, asked, has turned, believes … to be), 변화표 7개(bear, bite, hide, send, show, strive, understand). 이와 별도로, 영어는 맞지만 한글 프롬프트가 틀려 고쳐야 하는 문항 4개(fast asleep, 큰 아버지, 행복한 여름, 손으로 나를 잡았다). 형식 29개와 밑줄 12개의 칸 정답은 추출자가 판정한 값(학교문법 5형식, There+be는 1형식). 형식이 학생 영작에 따라 갈리는 #16·#24·#28·#29는 extraSlotAccept에 복수 정답. 영작 인정답은 answerNote에, 동사 복수 정답은 accept 필드에 있음."
+ },
+ "issues": {
+  "total": 54,
+  "high": 14,
+  "examples": [
+   {
+    "page": 13,
+    "text": "나의 할머니는 나의 어머니의 큰 아버지와 함께 산다. ↔ My grandmother lives with my mother’s eldest brother.",
+    "problem": "'큰아버지'는 아버지의 형이다. mother's eldest brother는 큰외삼촌이다(STUDENT s4-4 한글도 '큰외삼촌').",
+    "fix": "나의 외할머니는 큰외삼촌(어머니의 큰오빠)과 함께 사신다."
+   },
+   {
+    "page": 11,
+    "text": "그는 빠르게 잠이 든다. ↔ He is fast asleep.",
+    "problem": "fast asleep은 '깊이 잠들어 있다'는 뜻이다. 이 한글로는 He falls asleep quickly.로 쓰게 된다.",
+    "fix": "그는 깊이 잠들어 있다."
+   },
+   {
+    "page": 13,
+    "text": "그것은 그들 인생에서 가장 행복한 여름이었다. ↔ It was the most beautiful summer of their lives.",
+    "problem": "beautiful을 '행복한'으로 옮겨 정답 문장과 어긋난다.",
+    "fix": "…가장 아름다운 여름이었다. (또는 the happiest summer도 정답으로 인정)"
+   },
+   {
+    "page": 15,
+    "text": "(2)불규칙동사의 변화(현재-과거-과거완료) / 2.다음 동사들의 과거형과 과거 완료형을 쓰시오.",
+    "problem": "세 번째 형태는 과거분사다. 과거완료는 시제 이름이다. 표 머리글('과거분사')과도 어긋난다.",
+    "fix": "(현재-과거-과거분사) / 과거형과 과거분사형을 쓰시오."
+   },
+   {
+    "page": 17,
+    "text": "보내다 | send | send | send",
+    "problem": "변화형 오류(원형을 세 번 씀).",
+    "fix": "send – sent – sent"
+   },
+   {
+    "page": 18,
+    "text": "이해하다 | understand | understand | understand",
+    "problem": "변화형 오류.",
+    "fix": "understand – understood – understood"
+   },
+   {
+    "page": 18,
+    "text": "보여주다 | show | show | show",
+    "problem": "변화형 오류.",
+    "fix": "show – showed – shown"
+   },
+   {
+    "page": 18,
+    "text": "노력하다, 애쓰다 | strive | stove | striven",
+    "problem": "과거형 오타(stove는 '난로').",
+    "fix": "strive – strove – striven"
+   },
+   {
+    "page": 15,
+    "text": "물다 | bite | bit | bit  /  (16쪽) 숨다 | hide | hid | hid",
+    "problem": "과거분사가 고어·비표준 형태다.",
+    "fix": "bite – bit – bitten / hide – hid – hidden"
+   },
+   {
+    "page": 17,
+    "text": "빌리다 | lend | lent | lent",
+    "problem": "lend는 '빌려주다'이고 '빌리다'는 borrow다. lend/borrow를 거꾸로 가르친다.",
+    "fix": "빌려주다 | lend | lent | lent"
+   },
+   {
+    "page": 19,
+    "text": "You must keep quiet during working with them.",
+    "problem": "during은 전치사라 뒤에 동명사절을 쓸 수 없다.",
+    "fix": "You must keep quiet while working with them."
+   },
+   {
+    "page": 20,
+    "text": "Age has turns his hair gray.",
+    "problem": "현재완료 형태 오류.",
+    "fix": "Age has turned his hair gray."
+   },
+   {
+    "page": 6,
+    "text": "We can buy strawberry by the pound.",
+    "problem": "셀 수 있는 명사를 단수 무관사로 썼다.",
+    "fix": "We can buy strawberries by the pound."
+   },
+   {
+    "page": 7,
+    "text": "You can see a shining face on the mirror.",
+    "problem": "거울에 비친 모습은 in the mirror로 말한다.",
+    "fix": "You can see a shining face in the mirror."
+   },
+   {
+    "page": 20,
+    "text": "Will you teach me how to go to Seoul?",
+    "problem": "길을 물을 때는 teach를 쓰지 않는다(한글 '가르쳐 주다'를 직역한 표현).",
+    "fix": "Can you tell me how to get to Seoul?"
+   },
+   {
+    "page": 4,
+    "text": "동 사 — 동사의 종류 · 불규칙 종류 · ed와 –ing",
+    "problem": "목차와 구성도의 'ed와 –ing' 소주제가 2권 본문 어디에도 없다.",
+    "fix": "소주제를 새로 만들거나, 형용사 (1)의 -ing/-ed 형용사로 연결 표시한다."
+   }
+  ]
+ },
+ "pedagogyObservations": [
+  "3단 반복 구조다. Pass-Off(초점 단어를 굵게 표시한 모델 문장) → Application(Pass-Off 문장을 전부 다시 싣고 확장: 형용사 31→59줄, 동사 6→29줄) → Review(Application 문장을 같은 순서로 한→영 역번역, 밑줄, 표 채우기) 순서라서, 한 문장이 Pass-Off·Application·Review에 최대 3~4번 나온다. '외운 문장 → 같은 문장 확장 노출 → 같은 순서로 회상'하는 방식이다.",
+  "문법 설명이 한 줄도 없다. 소주제 제목, 굵은 글씨, 메모((=/=eldest))가 전부이고, 학습법 2~3항대로 교사의 문법 설명을 전제로 한다. 동사 단원은 굵은 글씨도, 문장마다 몇 형식인지 표시도 없다. 1권 TOPIC 3(문장의 5형식)에서 배운 것에 기대어 Review에서 '몇 형식'을 묻는다(예문 There are many jobs…, gives me candy, I want to become …도 1권과 겹침).",
+  "순서: 형용사는 한정·서술 용법 → -ing/-ed 형용사(boring/bored) → 비교급 → 최상급 → 관사(형용사의 일종으로 취급)다. 관사 부분은 a/the 기본 규칙부터 무관사(for breakfast, at school, sports), by the + 단위, the + 신체 부위, do the -ing까지 한 번에 몰아 넣어 밀도가 높다. 동사는 1형식→5형식 순서로 배열한 29문장인데, inform A of B·rob A of B·owe A to B·help A with B처럼 4형식처럼 보이는 3형식과 진짜 4형식을 대비시키는 설계가 잘 되어 있다.",
+  "대상은 '초급자'(학습법 1항)인데 He stood astonished at the sight of…, The warmer the weather, the better I feel., make the most of, She thought him innocent.처럼 중급 이상 구문이 섞여 있다. 분량도 한 토픽에 형용사 59문장·56문항, 동사 29문장·139문항으로 한 차시에는 많다.",
+  "2쪽은 예문이 Pass-Off(TLA) English 문장이라서 선행학습자는 문법을 쉽게 이해한다고 한다. 그러나 이 범위 Application 88줄 가운데 STUDENT 과정 문장과 같거나 거기서 줄인 것은 8줄뿐이다(형용사 3, 동사 5). '이미 외운 문장으로 문법을 본다'는 이 책의 전제가 2권 앞부분에서는 거의 성립하지 않는다.",
+  "Review 설계의 약점: 문항 순서가 Application과 같아 순서 기억만으로 풀 수 있다. 과제 경계가 소주제와 한 문장씩 어긋나고(최상급 문장이 일반 영작 과제 끝에 있음), 지시문이 정답과 충돌한다('a나 the를 이용하여'라고 했는데 정답이 무관사, '괄호 안에 쓰시오'라고 했는데 괄호가 없음). Application 문장 3개(Peter is older than John., 샌드위치 두 문장)는 Review에서 빠졌다.",
+  "학습법 4항은 '채점 후 틀린 문항은 다시 학습'하라고 하지만 정답지가 없다. 한글 번역이 영어와 어긋나는 문항(fast asleep→빠르게 잠이 든다, eldest brother→큰 아버지, beautiful→행복한, took me by the hand→손으로 잡았다)이 있어서, 교사 없이 공부하면 학생이 틀린 영어를 정답으로 믿게 된다.",
+  "불규칙동사표는 암기용이라 오류의 피해가 가장 크다. 변화형 7행(send–send–send, show–show–show, understand×3, strive–stove, bite–bit–bit, hide–hid–hid, bear–born)과 뜻 칸(lend=빌리다, mistake=실수하다, upset=화내다)이 틀려서, 그대로 외우면 틀린 형태가 굳어진다.",
+  "목차·구성도에 있는 동사의 'ed와 –ing' 소주제가 본문에 없다. 분사형 형용사(-ing/-ed)는 형용사 (1)에서만 다루고, 규칙동사의 -ed·-ing 만들기 규칙은 책 어디에도 없다.",
+  "이 책만의 방법: 학습법 5항은 연결고리 구성도(3쪽: 대주제 20개, 소주제 동그라미 67개, 본문 표기는 70개)를 학생이 직접 그려 가며 소주제별 문법과 문장을 다 적을 수 있을 때까지 외우라고 한다(완전학습). 특징 3항은 Review를 '스스로 메모하여 정리'하는 곳이라고 설명하지만, 실제 Review 쪽은 영작·밑줄·표 채우기 드릴이다."
+ ],
+ "webConversionNotes": [
+  "밑줄 긋기(형용사 12문항)는 종이에서만 하는 동작이라 단어 탭 선택 UI로 바꿔야 한다. 정답은 underlineTokens, 관사는 optionalTokens(골라도 감점 없음). Review 제시문은 줄 전체가 굵게 인쇄되어 힌트가 없고, 정답 근거는 Application 굵은 글씨뿐이다.",
+  "'몇 형식인지 괄호 안에 쓰시오'인데 괄호가 인쇄되지 않았다. 웹에서 1~5형식 선택 칸을 새로 만들어야 한다. 형식은 학생이 쓴 영어 구조에 따라 달라지므로(#16 helped me write, #24 want to…help others learn, #28·#29 that절) '영작 채점 → 모범 문장 제시 → 형식 선택' 2단계로 하고 extraSlotAccept를 쓴다.",
+  "한→영 73문항은 책에 정답이 없어 정답 목록을 새로 조립해야 한다: answerFromBook + correctedAnswer(10문장) + answerNote의 인정답. 이 저장소의 grammar2(기초2) 레슨 JSON에 이미 있는 items[].alternatives 패턴(한 문장에 인정답 여러 개)을 재사용할 수 있다. 완전 일치 채점은 무리이므로 정규화(대소문자·축약형·구두점) + 인정답 + '모범답 보고 자기채점' 방식을 쓴다.",
+  "책은 한글을 Review에만 인쇄했다. 그래서 Pass-Off·Application 문장 카드와 듣기용 한글은 Review 프롬프트(koFromReview)에서 가져와야 하고, 한글이 전혀 없는 영어 15줄(밑줄 과제 12줄 + Peter is older than John. + 샌드위치 두 문장)은 새로 써야 한다. Review 한글 가운데 4개는 뜻이 틀려 그대로 쓰면 안 된다.",
+  "불규칙동사표 114행은 표를 웹 폼으로 바꾸는 작업이다. 참고표(검색·정렬)와 플래시카드로 만들고, Review 2(110행 빈 표)는 두 칸 입력 그리드로 만든다. 복수 정답 동사 약 18개(burn, dream, smell, light, prove, get, sink, show, strive 등)는 accept로 처리한다. 복습 표에는 뜻 칸이 없어 lie(눕다/거짓말하다)가 모호하고 lay가 이유 없이 두 번 나오므로 웹 표에는 뜻 칸을 넣는다. arise·forsake·overcome·overeat 4개는 복습에서 빠져 있다(notInReview).",
+  "공개 전에 고칠 것: 변화표 7행, 뜻 오류(lend·mistake·upset), 영어 오류 문장(strawberry, on the mirror, during working, has turns, scientific novel book, teach me how to go, believes his daughter beautiful). 고친 문장은 영어 텍스트가 바뀌므로 음성 클립도 새로 만들어야 한다(클립 키가 텍스트 해시).",
+  "음성: Application 88문장 대부분이 사이트에 없는 새 문장이라 TTS를 새로 만들어야 한다. STUDENT와 글자까지 같은 문장(She is more talented than me. / I want to be able to help others learn and grow, too. / He always gives me candy when I visit him. — 마지막 문장은 Application에서 마침표가 빠져 해시가 달라질 수 있음)은 기존 클립을 재사용할 수 있는지 확인한다. 'serve them'(원문 serve others)처럼 원문을 바꾼 문장은 원문으로 되돌릴지 먼저 정해야 클립을 두 번 만들지 않는다.",
+  "굵은 글씨(초점)는 강조 span으로 바꾼다. 6쪽 마지막 3줄은 PDF 텍스트에 굵게 정보가 없고 그림에서만 강조가 보여 bold 배열을 손으로 넣었다. 동사 단원은 굵은 글씨가 전혀 없어 문장 성분(S·V·O·C) 강조를 새로 설계해야 한다.",
+  "메모 표기 '(=/=eldest)', '(=oldest)'는 '≠ eldest', '= oldest' 기호와 툴팁 설명(eldest는 가족 서열에만 씀)으로 바꾼다.",
+  "같은 문장이 Pass-Off·Application·Review에 반복된다. 데이터는 문장 하나에 여러 참조(appRef/reviewRef)를 거는 식으로 저장해 음성·번역 중복을 막는다. Review가 Application과 같은 순서라 웹에서는 섞기 모드를 기본으로 두고 '책 순서' 모드를 따로 둔다.",
+  "Application에는 소주제 제목이 인쇄되지 않았다. 웹 단원을 나눌 때는 inferredSubPoint(추론)를 쓰되, Review 과제 경계가 소주제 경계와 어긋나는 곳(형용사 #33 최상급이 영작 과제 2에 있음, #34 비교급이 최상급 사이에 있음)은 소주제 기준으로 다시 배치해야 한다.",
+  "목차 연결고리 구성도를 웹 메뉴로 쓰면 '동사 — ed와 –ing' 칸이 빈 칸이 된다. 내용을 새로 만들지, 라벨을 조정할지 사장님 결정이 필요하다(과정 구조 변경에 해당).",
+  "내용 민감도: 'You are fatter than her. / 너는 그녀보다 더 뚱뚱해.'는 외모 비교 예문이다. 학생 대상 사이트라면 다른 비교 예문으로 바꿀지 사장님 판단이 필요하다."
+ ],
+ "selfCheck": "1~27쪽을 모두 그림(PNG)으로 읽었고, 굵은 글씨는 PDF 글꼴 정보로 한 번 더 확인했다(6쪽 바탕체 3줄은 고해상도로 확대해서 확인). 쪽마다 그림에서 센 줄 수와 추출한 수가 모두 일치한다: 5쪽 13 · 6쪽 18 · 7쪽 19 · 8쪽 20 · 9쪽 20 · 10쪽 12 · 11쪽 11 · 12쪽 10 · 13쪽 10(7+3) · 14쪽 13 · 15쪽 문장 6 + 표 17행 · 16쪽 34행 · 17쪽 33행 · 18쪽 30행 · 19쪽 15 · 20쪽 14 · 21쪽 10 · 22쪽 10 · 23쪽 9 · 24쪽 29 · 25쪽 29 · 26쪽 27 · 27쪽 25. 빌드 스크립트(scratchpad\\pdf\\build_g2_p1_27.cjs)는 모든 영어·한글 줄을 텍스트 레이어의 해당 쪽 줄과 글자 그대로 대조하고, 굵은 글씨가 문장 안에 있는지, 표 행 수, 복습 동사 수, Pass-Off↔Application 교차 참조, 특징 쪽 전문까지 대조한다. 하나라도 어긋나면 실패한다. 일부러 틀린 값 8가지(오타, 굵은 글씨, 쪽 번호, 표 행 수, 동사 수, 특징 쪽 글자, 한글 문항 누락, 문장 변경)를 넣어 돌려 8개 모두 실패하는 것을 확인했다(breaktest_g2_p1_27.cjs). 굵은 글씨 125줄을 PDF 굵은 글꼴과 대조한 결과(boldcheck_g2_p1_27.cjs) 다른 곳은 6쪽 3줄뿐이며, 이는 그림에서만 보이는 강조로 issues에 기록했다. JSON 파싱 확인했고 저장소 파일은 건드리지 않았다(git status 깨끗). 한계: 추출과 검사를 같은 에이전트가 했으므로 독립 검토가 아니다. 형식·밑줄 정답과 영어 자연스러움 판정은 추출자의 판단이다. STUDENT 대조는 content/lessons 문장 텍스트 기준(같은 문장·포함 관계·단어 겹침)이다."
+}

@@ -1,0 +1,263 @@
+{
+ "range": "g1 p30-63 (TOPIC 4 문장의 종류 · TOPIC 5 의문문 · TOPIC 6 명사 · TOPIC 7 대명사 · TOPIC 8 관계대명사, 1권 끝까지)",
+ "outputFile": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\claude\\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE--claude-worktrees-korean-market-analysis-39e7fc\\5adf4ccb-9cea-421f-9195-b5f31b723c7f\\scratchpad\\pdf\\out\\g1-p30-63.json",
+ "topics": [
+  {
+   "printedLabel": "TOPIC 4",
+   "title": "문장의 종류",
+   "pages": "30-36",
+   "subtopics": [
+    "(1) 문장의 종류",
+    "(2) 부정문"
+   ],
+   "passOffSentences": 18,
+   "applicationSentences": 29,
+   "reviewTasks": 2,
+   "reviewItems": 29,
+   "tables": 0,
+   "explanationText": "설명 문장은 없다. 소제목 2개와 예문 끝 괄호 태그만 인쇄: (단문)(중문)(복문)(서술문)(명령문)(기원문)(감탄문) / (be동사)(일반동사)(조동사)(there is 구문의 부정)(never 사용)(no+ 명사)(cannot 축약형)(does not의 축약형)(is not의 축약형). 부정어는 굵게. Application에는 소제목·태그 없음."
+  },
+  {
+   "printedLabel": "TOPIC 5",
+   "title": "의문문",
+   "pages": "37-41",
+   "subtopics": [
+    "(1) 의문문 만들기",
+    "(2) 의문문의 대답",
+    "(3) 부가의문문",
+    "(4) 부정의문문"
+   ],
+   "passOffSentences": 21,
+   "applicationSentences": 36,
+   "reviewTasks": 3,
+   "reviewItems": 34,
+   "tables": 0,
+   "explanationText": "설명 문장 없음. 소제목 4개, 첫 예문의 (be동사) 태그, 조동사+주어·부가의문문 꼬리·부정어를 굵게. '의문문의 대답' 6줄과 부가의문문 대답 줄(Yes, it is. / No, it isn’t.)이 사실상 예시 답. Application 소제목은 (1) 의문문 (2) 부가의문문 (3) 부정의문문으로 번호가 Pass-Off와 다름."
+  },
+  {
+   "printedLabel": "TOPIC 6",
+   "title": "명사",
+   "pages": "42-47",
+   "subtopics": [
+    "(1) 명사의 종류와 성격",
+    "(2) 명사의 복수형",
+    "(3) 계절, 달, 요일, 기수와 서수"
+   ],
+   "passOffSentences": 7,
+   "applicationSentences": 26,
+   "reviewTasks": 1,
+   "reviewItems": 26,
+   "tables": 2,
+   "explanationText": "(1) 예문 끝 태그로 명사 5종류(보통·집합·고유·물질·추상) 제시. (2) 복수형 규칙 11줄을 '규칙 표기 : 예' 목록으로 인쇄(–s, -es, 자음+y(-ies), 모음+y(-s), -f/-fe(-ves), roof(예외), o+es, o+s, -en, 변형, 단수=복수) — 언제 어느 규칙을 쓰는지 조건 설명은 없음. (3) 4계절·12달·7요일·기수·서수 단어 목록. 문장형 설명은 '(4계절은 소문자로 나타냄)' 한 줄뿐."
+  },
+  {
+   "printedLabel": "TOPIC 7",
+   "title": "대명사",
+   "pages": "48-57",
+   "subtopics": [
+    "(1) 인칭 / 소유 / 복합 인칭 대명사",
+    "(2) 대명사 it",
+    "(3) 의문대명사와 지시 대명사",
+    "(4) 부정대명사와 부정형용사"
+   ],
+   "passOffSentences": 35,
+   "applicationSentences": 56,
+   "reviewTasks": 4,
+   "reviewItems": 52,
+   "tables": 1,
+   "explanationText": "(1) 인칭대명사·소유대명사·복합 인칭 대명사(재귀대명사)를 1·2·3인칭별 목록으로 인쇄(ours·itself 누락). (2) it 예문에 (가주어)(it ~ that 강조구문)(비 인칭 주어) 태그 — (가주어) 태그는 잘못 붙음. (3) '의문대명사'·'지시대명사' 하위 제목만. (4) 설명 없이 예문만. 초점어는 모두 굵게."
+  },
+  {
+   "printedLabel": "TOPIC 8",
+   "title": "관계대명사",
+   "pages": "58-63",
+   "subtopics": [
+    "(1) who / whose / whom / which / of which",
+    "(2) that",
+    "(3) what"
+   ],
+   "passOffSentences": 18,
+   "applicationSentences": 35,
+   "reviewTasks": 3,
+   "reviewItems": 35,
+   "tables": 0,
+   "explanationText": "설명 문장 없음. 소제목(관계사 이름), 굵은 관계사, (= whose) 태그 하나뿐. 선행사·격·제한/계속적 용법·생략 규칙 설명이 없다. Review 1은 괄호에 사용할 관계사 힌트를 주고, Review 3 지시문은 what 문장들을 '복합 관계 대명사'라는 잘못된 용어로 부른다(간접의문문도 섞여 있음)."
+  }
+ ],
+ "exerciseTypes": [
+  {
+   "type": "한→영 영작 (지정 문법 요소 사용: 부정어·부가의문문·부정의문문·it·that·what)",
+   "instructionExample": "다음을 it을 사용하여 영작하세요. — 비가 온다.",
+   "itemCount": 57,
+   "webIdea": "한국어 프롬프트 → 영어 입력. 교정된 모범답안 + 허용 변형 목록으로 채점하고, 지정 요소(it, that, 부가의문문 꼬리, not/never)가 들어 있는지 자동 확인. 틀리면 모범답안 음성을 듣고 따라 말하는 패스오프 단계로 연결."
+  },
+  {
+   "type": "한→영 영작 (지시문은 '영작하세요'뿐, 토픽 문법이 내재)",
+   "instructionExample": "다음을 보고 영작하세요. — 그 지갑은 너의 것이야.",
+   "itemCount": 39,
+   "webIdea": "문장 카드: 한국어 보기 → 말하기/입력 → 정답 공개 → 자기 평가. 정답에서 초점어(소유·재귀대명사, 지시어, 부정대명사)를 강조 표시."
+  },
+  {
+   "type": "영작 + 문장 종류 분류",
+   "instructionExample": "다음 내용을 보고 영작하고 단문, 중문, 복문, 서술문, 명령문, 기원문, 감탄문 중에 선택하여 그 종류를 쓰시오.",
+   "itemCount": 21,
+   "webIdea": "영작 뒤 선택 버튼을 두 묶음(구조: 단문/중문/복문, 종류: 평서/의문/명령/감탄/기원)으로 나눠 책의 복수 정답 문제를 해소."
+  },
+  {
+   "type": "영어 질문에 yes/no 단답",
+   "instructionExample": "다음 질문을 보고 yes나 no로 대답하시오. — Is Jane a teacher? (no)",
+   "itemCount": 19,
+   "webIdea": "질문 음성 + (yes)/(no) 단서 → 단답 입력 또는 선택지(Yes, she is. / Yes, she does. / Yes, she can.) 고르기. 축약·비축약 모두 정답. 책에 정답이 없어 새 답안(proposedAnswer)을 씀."
+  },
+  {
+   "type": "영작 + 명사 동그라미",
+   "instructionExample": "다음을 보고 영작하고 명사에는 동그라미를 치세요. — 그녀는 피아니스트이다.",
+   "itemCount": 26,
+   "webIdea": "정답 문장을 단어 칩으로 보여 주고 명사를 탭해서 표시(종이의 동그라미 대체). 새로 만든 명사 정답표로 채점하고 first·lot 같은 애매한 단어는 채점에서 제외."
+  },
+  {
+   "type": "괄호 힌트 관계사로 영작",
+   "instructionExample": "다음을 관계 대명사 who / whose/ whom /which / of which를 이용하여 영작하세요. — 그는 그를 따르는 소녀를 사랑한다. (who)",
+   "itemCount": 14,
+   "webIdea": "힌트 관계사를 칩으로 표시하고 입력에 그 단어가 없으면 제출 전에 알림. 쉬운 단계로 문장 조각 배열(드래그) 모드 제공."
+  }
+ ],
+ "answerKey": {
+  "reviewItems": 176,
+  "linkedToBookSentence": 158,
+  "needsNewAnswer": 18,
+  "notes": "158문항은 같은 토픽에 인쇄된 영어 문장과 1:1로 연결했다(answerFromBook + answerSource). 새 답이 필요한 18문항은 모두 TOPIC 5 Review 1의 yes/no 단답이다(책에 답 없음; 19문항 중 1문항만 Pass-Off (2) 'Yes, I do.'와 일치). 연결된 158문항 중 30문항은 인쇄된 영어 자체에 오류가 있어 correctedAnswer를 따로 적었다(예: Everyday→Every day, borrow→lend, of which color→the color of which, That’ not→That’s not). 한국어 프롬프트와 책 영어의 뜻이 다른 문항은 note에 표시했다(예: '그들 둘 다 틀린 거야.' ↔ Neither of them is wrong. — 정반대 뜻). 추가 칸 답 47개: TOPIC 4 Review 1 문장 종류 21개(구조·기능 기준이 섞여 복수 정답 표시), TOPIC 6 Review 1 명사 목록 26개(책의 굵은 글씨가 불완전해 직접 판정). 같은 한국어 '그는 예전의 그가 아니다.'가 TOPIC 8 Review 2·3에 서로 다른 답으로 두 번 나온다. 괄호 단서((yes)/(no), (who) 등)는 빈칸이 아니라 hint 필드로 분리했다. Application 6문장은 Review에 안 나와 한국어가 없다(reviewRef=null)."
+ },
+ "issues": {
+  "total": 106,
+  "high": 87,
+  "examples": [
+   {
+    "page": 53,
+    "text": "Neither of them is wrong. / (Review p57) 그들 둘 다 틀린 거야.",
+    "problem": "한국어 프롬프트와 책 영어의 뜻이 정반대다. 이대로면 학생은 Both of them are wrong.을 쓰게 되어 neither 연습이 되지 않는다.",
+    "fix": "한국어를 '그들 둘 다 틀리지 않았어.'로 고친다."
+   },
+   {
+    "page": 48,
+    "text": "It is a great way to talk to my friends about what we did during the day. (가주어)",
+    "problem": "가주어가 아니다. STUDENT s10-4에서 앞 문장의 채팅을 받는 대명사이고 to talk는 way를 꾸민다.",
+    "fix": "태그를 '(앞 내용을 받는 it)'으로 고치고 가주어 예문은 It is fun to talk to my friends … 로 따로 둔다."
+   },
+   {
+    "page": 48,
+    "text": "소유대명사 : 1인칭 : mine / 2인칭 : yours / 3인칭 : his, hers, theirs",
+    "problem": "1인칭 복수 ours가 빠졌다(복합 인칭 대명사 3인칭에서는 itself도 빠짐).",
+    "fix": "1인칭 : mine, ours / 3인칭 재귀 : himself, herself, itself, themselves"
+   },
+   {
+    "page": 58,
+    "text": "She has a bird of which color is beautiful. (= whose)",
+    "problem": "비문이다. of which는 the color of which 형태로만 가능하고 (= whose) 설명도 성립하지 않는다.",
+    "fix": "She has a bird the color of which is beautiful. (= whose color is beautiful)"
+   },
+   {
+    "page": 63,
+    "text": "3. 복합 관계 대명사를 사용하여 문장을 영작하시오. / I don’t know who did it. / I asked him what he wanted.",
+    "problem": "복합관계대명사는 whoever·whatever 등을 가리키는 용어이고 what은 선행사를 포함하는 관계대명사다. who did it·which is his·asked him what he wanted는 간접의문문이다.",
+    "fix": "소제목을 '관계대명사 what'과 '간접의문문'으로 나누고 지시문을 '관계대명사 what 또는 의문사를 사용하여'로 고친다."
+   },
+   {
+    "page": 30,
+    "text": "I am 11 years old. (단문) … I have a wide variety of friends(서술문)",
+    "problem": "구조 기준(단문·중문·복문)과 기능 기준(서술·명령·기원·감탄문)을 한 목록에 섞고 의문문을 뺐다. Review 1(7개 중 하나 쓰기)의 정답이 하나로 정해지지 않는다.",
+    "fix": "구조와 종류를 두 문항으로 나누고 종류에 의문문을 추가한다."
+   },
+   {
+    "page": 49,
+    "text": "If there is any, I will borrow them to you.",
+    "problem": "borrow(빌리다)와 lend(빌려주다)를 혼동했고, 복수 them과 is가 맞지 않는다.",
+    "fix": "If there are any, I will lend them to you."
+   },
+   {
+    "page": 44,
+    "text": "Everyday he wants to eat some meat.",
+    "problem": "부사 '매일'은 두 단어 every day다.",
+    "fix": "Every day he wants to eat some meat."
+   },
+   {
+    "page": 59,
+    "text": "I met the boy whose mother interprets foreign books.",
+    "problem": "책은 translate(번역)한다. interpret는 통역이다(한국어 프롬프트도 '번역하는').",
+    "fix": "I met the boy whose mother translates foreign books."
+   },
+   {
+    "page": 60,
+    "text": "Invest us what money you have. / That’ not what I meant to say.",
+    "problem": "invest는 사람 목적어를 바로 받지 못하고(invest A in B), That’ not은 s가 빠진 오타다.",
+    "fix": "Invest what money you have in us. / That’s not what I meant to say."
+   },
+   {
+    "page": 31,
+    "text": "When she arrived at London, she didn’t have any friends.",
+    "problem": "도시에 도착할 때는 arrive in을 쓴다.",
+    "fix": "When she arrived in London, she didn’t have any friends."
+   },
+   {
+    "page": 32,
+    "text": "Our country’s soccer players are not one of the best teams. (15과)",
+    "problem": "주어(선수들)와 보어(팀들 중 하나)가 맞지 않는다. STUDENT s15-1의 과거 사실(At that time …)을 현재형으로 바꿔 대표팀에 대한 현재 평가처럼 읽힌다. Pass-Off p30은 best team(단수)으로 더 틀렸다.",
+    "fix": "Our national soccer team is not one of the best teams in the world."
+   },
+   {
+    "page": 53,
+    "text": "I have to do homework from both the academies and school. (10과) / (p31) We are very close to one another. (1과)",
+    "problem": "과 번호 오류. STUDENT에서 각각 s8-2(8과), s2-6(2과)에 있다.",
+    "fix": "(8과), (2과)"
+   },
+   {
+    "page": 52,
+    "text": "Those hate listening to long messages on answering machine.",
+    "problem": "사람을 뜻하는 those는 단독 주어로 못 쓰고(those who …), answering machine에 관사·복수가 없다.",
+    "fix": "Those people hate listening to long messages on answering machines."
+   },
+   {
+    "page": 46,
+    "text": "한국은 많은 전통 휴일들이 있다: 음력 설, 석가탄신일, 추석이다.",
+    "problem": "dated_fact: 석가탄신일은 2017년 공식 명칭이 '부처님오신날'로 바뀌었다(2012년 당시에는 맞음). 짝이 되는 영어도 쉼표로 끝나는 미완성 문장이다(Korea has many traditional days; … Chu-seok,).",
+    "fix": "한국에는 설날, 부처님오신날, 추석 같은 전통 명절이 많다. / Korea has many traditional holidays: Seollal, Buddha’s Birthday and Chuseok."
+   },
+   {
+    "page": 40,
+    "text": "다음 질문을 보고 yes나 no로 대답하시오. (19문항)",
+    "problem": "answer_missing: 단답 정답이 책에 없다. Can he play the guitar well?은 Pass-Off에 No, he can’t로 나오지만 Review 단서는 (yes)다.",
+    "fix": "proposedAnswer 18개를 새로 만들었다(Yes, I am. / No, she isn’t. …). 축약·비축약 모두 정답 처리."
+   }
+  ]
+ },
+ "pedagogyObservations": [
+  "모든 토픽이 같은 3단계다: Pass-Off(소제목별 대표 예문, 초점어 굵게) → Application(같은 순서로 늘린 예문, Pass-Off 예문 대부분이 그대로 다시 나옴) → Review(Application 문장의 한국어 번역을 같은 순서로 주고 영작). 한 문장을 영어로 보고, 다시 보고, 한국어만 보고 재생하는 암송·통과(pass-off)형 설계다.",
+  "Review는 Application과 거의 1:1이다: TOPIC 4 29/29, TOPIC 6 26/26, TOPIC 8 35/35, TOPIC 5 34/36, TOPIC 7 52/56. 처음 보는 문장에 규칙을 적용하는 전이 문항은 없다. 기억 재생 중심이라 일반화 연습은 웹에서 보완해야 한다.",
+  "문법 설명은 거의 인쇄되어 있지 않다. 소제목, 괄호 태그((단문)(be동사)(가주어) 등), 목록(복수형 11규칙, 대명사표)뿐이라 교사 설명을 전제로 한다. 웹 단독 학습에는 짧은 규칙 설명 카드가 새로 필요하다.",
+  "STUDENT 과정과 직접 연결된다: 이 범위 39문장(Pass-Off 5 + Application 34)에 (N과) 표시가 있고, 대부분 STUDENT 1~18과 문장을 줄이거나 의문문 등으로 바꿔 가져왔다(예: s1-3 I love to be around my friends → Do you like to be around your friends?, s6-3 black suit → blue tie). 회화 과정에서 외운 문장을 문법 눈으로 다시 보는 나선형 구성이다.",
+  "순서는 문장 단위(문장의 종류·부정문 → 의문문) → 품사(명사 → 대명사) → 절(관계대명사)이다. 관계대명사가 형용사·동사·시제(2권)보다 먼저 1권 끝에 온다. 통문장 암기가 먼저라 가능한 배열이지만, 문법만 따로 공부하는 학생에게는 선행 지식 부담이 크다.",
+  "한 토픽 안에서도 난이도 폭이 넓다: Is Jane a teacher? 같은 초등 수준부터 it ~ that 강조구문, 가목적어 make it possible, most of which, 관계형용사 what money you have 같은 고등 수준까지 섞여 있다. 대체로 쉬운 것에서 어려운 것 순이다.",
+  "Review 형태는 6가지(영작, 영작+문장 종류, 영어 질문에 yes/no 단답, 영작+명사 동그라미, 괄호 힌트 관계사 영작, 지정 요소 영작)이고 176문항 중 157문항이 한→영 영작이다. 듣기·선택형·빈칸형·오류 찾기는 없다.",
+  "예문 품질 편차가 크다: 관사·수 일치·어휘(interpret/translate, convenient/comfortable, borrow/lend) 오류와 문법 설명 오류(가주어 오표기, 복합관계대명사 용어, 지시대명사/지시형용사 미구분, ours·itself 누락)가 있다. 외우게 하는 교재라 오류도 그대로 외워지므로 웹 이전 전에 고쳐야 한다.",
+  "목록만 있고 연습이 없는 소단원이 있다: 명사 (3) 계절·달·요일·기수·서수, 대명사 (1) 인칭·소유·재귀 대명사표, 의문문 (2) 의문문의 대답.",
+  "용어가 전통 학교문법(서술문, 기원문, 복합 인칭 대명사, 복합 관계 대명사)이라 지금 교과서 용어(평서문, 재귀대명사, 관계대명사 what)와 달라 학생이 혼동할 수 있다."
+ ],
+ "webConversionNotes": [
+  "종이 전용 동작: TOPIC 6 Review의 '명사에 동그라미'는 영작한 문장을 단어 칩으로 보여 주고 명사를 탭하는 방식으로 바꿔야 한다. 책의 굵은 글씨는 정답표로 쓸 수 없다(glass·farm 누락, 관사 a를 굵게). JSON의 extraSlotAnswer(26문항)를 정답표로 쓰고, first·lot 같은 애매한 단어는 채점에서 뺀다.",
+  "TOPIC 4 Review 1 '( ) 안에 종류 쓰기' 21문항은 구조·기능 기준이 섞여 복수 정답이 생긴다. 선택 버튼을 두 묶음(구조/종류)으로 나누고 종류에 의문문을 추가해야 한다.",
+  "자유 영작 157문항은 정확 일치로 채점할 수 없다. 모범답안(교정본) + 허용 변형(축약형, there is no/there isn’t, 한국어 시제에 맞춘 is/was) + 필수 요소 검사(it, that, who, 부가의문문 꼬리, not/never)를 조합하거나, 정답 공개 후 자기 채점과 따라 말하기로 설계하는 편이 현실적이다.",
+  "책에 정답이 없는 문항: TOPIC 5 Review 1 yes/no 단답 19문항(1문항만 Pass-Off에 있음). proposedAnswer 18개를 새로 썼으니 사람이 확인해야 한다.",
+  "한국어 번역이 책 어디에도 없는 영어: Review에 안 나오는 Application 6문장(How was your day? / Who is my best friend? / Whose book is this? / Whom do you like most? / Which is yours? / Why do you think he likes those colors?)과 Pass-Off에만 있는 문장(He isn’t a student., Is this a desk?, 의문문의 대답 6줄, 부가의문문 대답 3줄, 고유명사 목록). 한국어 뜻을 보여 주려면 번역을 새로 써야 한다(JSON에서 reviewRef=null 또는 appRef=null로 표시).",
+  "표 3개는 웹 연습 폼이 필요하다: 복수형 11규칙(단수→복수 입력 드릴), 계절·달·요일·기수·서수(철자 쓰기, 숫자↔서수 변환), 인칭·소유·재귀 대명사표(빈칸 채우기). 표 자체의 누락(ours, itself)과 규칙 이름 오류(roof)를 먼저 고쳐야 한다.",
+  "영어 수정 제안이 45건(english_grammar 26 + english_unnatural 19)이다. 영어 텍스트를 고치면 그 문장의 음성 클립 키(텍스트 해시)가 바뀌므로 같은 작업에서 음성을 다시 만들어야 한다. 같은 문장이 Pass-Off·Application·다른 토픽(예: Who is my best friend? TOPIC 5·7)에 반복되므로 문장 단위로 한 번만 저장하고 참조하면 음성 수가 준다.",
+  "영어 문장 속 한국어 처리: 'My best friend is 대한.'(한글 그대로 인쇄), 로마자 Chu-seok · Song-Pyun · Soungni-san · Seoul. 표기를 표준(Chuseok, songpyeon, Songnisan, Daehan)으로 고치고 TTS가 한국어처럼 발음하게 해야 한다.",
+  "같은 한국어가 다른 정답을 요구한다: TOPIC 8 '그는 예전의 그가 아니다.'(Review 2 → that 문장, Review 3 → what 문장). 문항마다 사용할 문법을 표시하거나 두 답을 모두 정답으로 받는다.",
+  "괄호 단서((who)(whose)(of which)(most of which)(to whom), (yes)/(no))는 빈칸이 아니라 조건이다. JSON에서는 hint 필드로 분리했다. TOPIC 8 Review 2 item 9의 (who)는 'that을 이용하여' 지시와 충돌하므로 who·that 둘 다 정답 처리해야 한다.",
+  "(N과) 표시 39문장은 STUDENT 레슨 링크로 쓸 수 있다. 단 2개는 과 번호가 틀렸고(We are very close to one another: 1과→2과 s2-6, homework from both the academies and school: 10과→8과 s8-2), 3개(Students will be able…, Students should be able…, Why do you think he likes those colors?)는 STUDENT JSON과 원본 랩자료에서 원문을 찾지 못했다.",
+  "Application 소제목이 인쇄되지 않은 토픽(4·6·7·8)은 순서로 추론해 묶었다(inferredSubPoint). TOPIC 5는 Pass-Off와 Application 소제목 번호가 다르다. Review 문항 번호도 인쇄되어 있지 않다(n은 새로 매김).",
+  "두 줄로 인쇄된 문장 2개(Korea has many traditional days…, At first, there was only one mouse…)는 한 문장으로 합쳐야 하고, 한 줄에 세 문장을 넣은 것(It rains. / It is fine today / what time is it?)은 나눠야 한다.",
+  "내용 민감성 검토가 필요하다: In Saudi, one man can have many wives.(부정확·고정관념), Mr. Hillman was a crazy man., It appeared that James had a mental problem., 현재형으로 바뀐 'Our country’s soccer players are not one of the best teams'.",
+  "교재 본문과 정답은 유료 학습 내용이므로 누구나 받는 공개 파일(검색 색인, 공개 JSON 등)에 문장이나 정답이 들어가지 않게 설계해야 한다."
+ ],
+ "selfCheck": "범위의 34쪽 이미지(p030-p063)를 모두 열었다. 쪽마다 영어 문장 줄·한국어 프롬프트 줄·표 행 수를 세어 추출 결과와 대조했고, 모든 쪽이 일치했다(예: p30 영어 18, p49 영어 23, p40 영어 질문 19, p56 한국어 16, p42 문장 7 + 표 11행, p43 표 5행, p48 문장 12 + 표 3행). 굵은 글씨 경계가 애매한 4곳(p30 부정문, p39 부가의문문, p44·p45 명사)은 2배 확대 크롭으로 다시 확인했다. Review 176문항 모두 answerFromBook이나 proposedAnswer가 있다(빈 답 0). (N과) 39문장은 STUDENT 레슨 JSON과 대조해 34개 확인, 2개 과 번호 오류, 3개는 원문을 찾지 못했다. JSON은 지정된 node JSON.parse 검사를 통과했고, 저장소 파일은 하나도 고치지 않았다. issues.high=87은 확신도 high 건수이고, 학습 영향(severity)이 high인 건은 24건이다(JSON의 stats에 둘 다 있음). 한계: 추출과 점검을 같은 에이전트가 했으므로 독립 검수가 아니다. 굵은 글씨는 110dpi 이미지로 판정했다. proposedAnswer 18개, correctedAnswer 30개, 명사·문장 종류 답 47개는 책에 없는 내용이라 사람이 확인해야 한다. JSON은 스크립트(scratchpad\\pdf\\build_g1_p30_63.js)로 만들었으니 고칠 때는 스크립트를 수정해 다시 실행하면 된다."
+}

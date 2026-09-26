@@ -1,0 +1,219 @@
+{
+ "range": "g1 PDF p1-29 (앞부분 1~4쪽 + TOPIC 1 인칭 p5-9 · TOPIC 2 동사의 현재형 p10-14 · TOPIC 3 문장의 기초 p15-29)",
+ "outputFile": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\claude\\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE--claude-worktrees-korean-market-analysis-39e7fc\\5adf4ccb-9cea-421f-9195-b5f31b723c7f\\scratchpad\\pdf\\out\\g1-p1-29.json",
+ "topics": [
+  {
+   "printedLabel": "TOPIC 1",
+   "title": "인칭",
+   "pages": "5-9",
+   "subtopics": [
+    "1) 1인칭 (Application: 1인칭 단수 I 와 복수 We)",
+    "2) 2인칭 (Application: 2인칭 단수 you 와 복수 you)",
+    "3) 3인칭 (Application: 3인칭 단수 he/ she/ it 과 복수 they)"
+   ],
+   "passOffSentences": 8,
+   "applicationSentences": 32,
+   "reviewTasks": 2,
+   "reviewItems": 32,
+   "tables": 0,
+   "explanationText": "문법 설명 문단 없음. 소주제 제목과 Pass-Off 문장 끝의 (단수)/(복수) 표시, 인칭대명사 굵은 글씨가 전부. 인칭·수·격 설명은 교사 몫."
+  },
+  {
+   "printedLabel": "TOPIC 2",
+   "title": "동사의 현재형",
+   "pages": "10-14",
+   "subtopics": [
+    "1) be 동사의 현재형 : am / is / are",
+    "2) 일반동사의 현재형: 일반동사와 have (구성도·목차의 'Have/Has' 소주제가 여기 합쳐져 따로 없음)"
+   ],
+   "passOffSentences": 8,
+   "applicationSentences": 26,
+   "reviewTasks": 3,
+   "reviewItems": 26,
+   "tables": 0,
+   "explanationText": "설명 문단 없음. 소제목 'be 동사의 현재형 : am / is / are', '일반동사의 현재형: 일반동사와 have'와 동사 굵은 글씨(Application be동사는 주어+be동사)뿐. 3인칭 단수 -s/-es 규칙이나 do/does 부정·의문은 설명도 예문도 없음."
+  },
+  {
+   "printedLabel": "TOPIC 3",
+   "title": "문장의 기초",
+   "pages": "15-29",
+   "subtopics": [
+    "1) 문장의 5형식",
+    "2) 8 품사 (명사·대명사·동사·형용사·부사·전치사·감탄사·접속사)",
+    "3) 구 (명사구·형용사구·동사구·부사구·전치사구·접속사구·감탄사구)"
+   ],
+   "passOffSentences": 27,
+   "applicationSentences": 74,
+   "reviewTasks": 3,
+   "reviewItems": 109,
+   "tables": 0,
+   "explanationText": "설명 문단 없음. 5형식 문장에는 몇 형식인지, 주어·동사·목적어·보어 표시가 전혀 없음. 8품사·구 Pass-Off만 줄 앞에 '명사:', '형용사구:' 같은 종류 라벨과 해당 단어 굵은 글씨가 있음. Application 추가 문장은 굵은 글씨만 있고 종류 라벨 없음."
+  }
+ ],
+ "exerciseTypes": [
+  {
+   "type": "ko_to_en_compose (한글 보고 영작)",
+   "instructionExample": "다음을 보고 영작하세요. / 다음을 영어로 영작하세요. / 다음을 보고 영작을 해보시오.",
+   "itemCount": 116,
+   "webIdea": "한글을 보여 주고 기본은 단어 카드로 어순 맞추기, 심화는 자유 입력 후 모범답안과 비교해 스스로 채점하거나 허용 답 목록으로 채점. 정답 음성을 듣고 따라 말하기(학습법 3 '한글 보고 바로 말하기')."
+  },
+  {
+   "type": "ko_to_en_compose + underline_personal_pronoun + identify_person",
+   "instructionExample": "다음의 내용을 보고 영작하고 영작한 문장 안에 쓰인 인칭대명사를 찾아 줄을 긋고 몇 인칭인지 괄호 안에 쓰세요.",
+   "itemCount": 8,
+   "webIdea": "영작한 뒤 문장 단어를 탭해서 인칭대명사를 고르고 1·2·3인칭 버튼 선택. 대명사가 두 개인 문장(You…my, It…me)은 정답을 여러 개 허용."
+  },
+  {
+   "type": "ko_to_en_compose + circle_be_verb",
+   "instructionExample": "다음 내용을 보고 영작하고 문장에 쓰인 be동사에 동그라미를 하세요.",
+   "itemCount": 4,
+   "webIdea": "영작한 뒤 be동사 단어를 탭해 강조(동그라미 대신). Application be동사 문장 11개 전체로 넓힐 수 있음."
+  },
+  {
+   "type": "ko_to_en_compose + find_verb_write_base_form",
+   "instructionExample": "다음 내용을 보고 영작하고 일반동사를 찾아 동사의 원형을 괄호 안에 쓰세요.",
+   "itemCount": 4,
+   "webIdea": "동사를 탭하고 원형을 입력하거나 고르기. Application 15문장 전체로 -s/-es 떼기 연습(likes→like, mixes→mix, does→do)."
+  },
+  {
+   "type": "ko_to_en_compose + identify_sentence_pattern (몇 형식)",
+   "instructionExample": "다음 내용을 보고 영작하고 몇 형식인지 괄호 안에 쓰세요.",
+   "itemCount": 6,
+   "webIdea": "1~5형식 버튼 선택과 문장 성분(S/V/O/C) 색칠하기. 정답표를 새로 만들어 Application 27문장 전체로 넓힘."
+  },
+  {
+   "type": "identify_part_of_speech (굵은 단어 품사)",
+   "instructionExample": "다음 문장을 보고 굵게 쓰여진 단어의 품사를 적어 보시오.",
+   "itemCount": 29,
+   "webIdea": "굵은 단어를 강조하고 8품사 버튼 8개 중 고르면 바로 채점. 책에 정답이 없어 정답표 새로 작성. 모호 문항(tight, What a nice dress!)은 교체하거나 정답 여러 개 허용."
+  }
+ ],
+ "answerKey": {
+  "reviewItems": 167,
+  "linkedToBookSentence": 138,
+  "needsNewAnswer": 29,
+  "notes": "영작 138문항은 모두 같은 토픽에 인쇄된 영어 문장과 1:1로 연결됨. 순서도 책 문장 순서 그대로이고, Review 1은 Pass-Off 문장, 나머지는 Application 문장을 씀. 그중 25문항은 책 영어 자체에 오류가 있어 correctedAnswer를 따로 적음(best mother→the best mother, with her blond→with blond hair, has finished→will have finished, when I finished→when I have finished, admit→accept, gave me hurt→hurt my feelings 등). needsNewAnswer 29개는 품사 문항: 영어 문장이 주어지고 답이 품사라 문장 정답이 없음 → extraSlotAnswer로 새로 작성. 이 밖에 인칭 8·be동사 4·원형 4·형식 6개의 괄호/표시 답도 책에 없어 새로 씀(extraSlotAnswer 모두 51개). 한글과 영어가 어긋나는 문항(시제·오역)은 answerNote에 인정할 다른 답을 적음(answerNote 72개). 모든 답은 추출한 에이전트가 직접 쓰고 확인한 것이라 독립 검수가 아님."
+ },
+ "issues": {
+  "total": 90,
+  "high": 47,
+  "examples": [
+   {
+    "page": 5,
+    "text": "She is best mother in the world.",
+    "problem": "최상급 앞 the 누락. p5·6·15·18·22 다섯 곳에 반복. STUDENT 2과 원문(s2-3)에는 the가 있음.",
+    "fix": "She is the best mother in the world."
+   },
+   {
+    "page": 6,
+    "text": "He gave me hurt in my heart, but it was not serious.",
+    "problem": "hurt를 명사로 쓴 한국어 직역투 비문.",
+    "fix": "He hurt my feelings, but it was not serious."
+   },
+   {
+    "page": 7,
+    "text": "4. 여러분들은 나의 학급친구들이다. / 7. 그것은 나를 행복하게 만든다.",
+    "problem": "영작한 문장에 인칭대명사가 두 개씩 있음(You+my, It+me). '몇 인칭인지' 답이 하나로 정해지지 않음.",
+    "fix": "지시문을 '주어로 쓰인 인칭대명사'로 좁히거나 두 답 모두 인정"
+   },
+   {
+    "page": 12,
+    "text": "4) 그것은 그 주의 시작입니다.",
+    "problem": "the start of the weekend는 '주말의 시작'. STUDENT 10과 한글도 '주말의 시작'.",
+    "fix": "4) 그것은 주말의 시작입니다."
+   },
+   {
+    "page": 14,
+    "text": "13) 라이스는 영국에서 성장하고 있다.",
+    "problem": "Rice(쌀·벼)를 사람 이름으로 오역. 영어 'Rice grows in Britain.'도 사실과 다름.",
+    "fix": "Rice grows in Korea. / 벼는 한국에서 자란다."
+   },
+   {
+    "page": 15,
+    "text": "Flowers bloom. … I want her to be a good pianist. (2과)",
+    "problem": "5형식 문장에 형식·성분 표시가 전혀 없는데 Review는 '몇 형식인지' 묻고, 정답은 책 어디에도 없음.",
+    "fix": "문장마다 형식과 S/V/O/C 표시, 정답표 추가"
+   },
+   {
+    "page": 15,
+    "text": "He wants to be a fire fighter, police officer, teacher, doctor, interpreter. (3과)",
+    "problem": "명사 예문인데 굵은 글씨에 동사 be와 관사 a가 포함됨. 나열도 비문(or·관사 없음, fire fighter는 한 단어 firefighter).",
+    "fix": "He wants to be a firefighter, a police officer, a teacher, a doctor, or an interpreter. (굵은 글씨는 명사만)"
+   },
+   {
+    "page": 16,
+    "text": "She is a girl with her blond.",
+    "problem": "blond 뒤에 명사가 없어 비문.",
+    "fix": "She is a girl with blond hair."
+   },
+   {
+    "page": 16,
+    "text": "Even after I come home, I study for a couple more hours. (8과)",
+    "problem": "과 번호 오류. 이 문장은 STUDENT 10과(s10-3)에 있음. 'Even after'는 구접속사가 아님(부사 even + 접속사 after).",
+    "fix": "(10과), 접속사구 예문은 as soon as류로 교체"
+   },
+   {
+    "page": 17,
+    "text": "They admit his proposals.",
+    "problem": "admit는 '(사실을) 인정하다'. 제안을 받아들이는 것은 accept. 한글 '받아들인다'와도 어긋남.",
+    "fix": "They accept his proposals."
+   },
+   {
+    "page": 20,
+    "text": "Joshua has finished it by the time you come back.",
+    "problem": "미래 시점(by the time you come back)에는 미래완료가 필요. 한글 72)도 비문.",
+    "fix": "Joshua will have finished it by the time you come back."
+   },
+   {
+    "page": 20,
+    "text": "I’ll do the shopping when I finished washing dishes.",
+    "problem": "미래 문장의 때 부사절에 과거형.",
+    "fix": "I’ll do the shopping when I have finished washing the dishes."
+   },
+   {
+    "page": 27,
+    "text": "41) 그가 말할 때, 그는 외국인처럼 들린다.",
+    "problem": "a native English speaker는 '영어 원어민'. STUDENT 7과 한글도 '영어 원어민 같습니다'.",
+    "fix": "41) 그가 말할 때, 그는 영어 원어민처럼 들린다."
+   },
+   {
+    "page": 28,
+    "text": "61) 그에 대한 자신감이 없음에도 불구하고, 그는 결코 자신감을 잃지 않았다.",
+    "problem": "confidence in him(남들의 신뢰)을 '자신감'으로 오역해 앞뒤가 모순됨. 영어도 원문(s15-3)의 by many Korean people을 빼서 뜻이 흐려짐.",
+    "fix": "61) (많은 사람들이) 그를 믿지 않았음에도 불구하고, 그는 결코 자신감을 잃지 않았다."
+   },
+   {
+    "page": 3,
+    "text": "Be동사의 현재형 · 일반동사의 현재형 · Have/Has (구성도·목차)",
+    "problem": "본문에는 Have/Has 소주제가 따로 없음(일반동사에 합쳐짐). 구성도 동그라미는 67개인데 2쪽은 '연결고리 70개'라고 함.",
+    "fix": "소주제 구조와 개수를 하나로 정리(과정 구조라 사장님 결정 필요)"
+   }
+  ]
+ },
+ "pedagogyObservations": [
+  "각 토픽은 'Pass-Off Sentences(핵심 예문) → Application Sentences(같은 소주제 순서로 Pass-Off 문장을 다시 싣고 새 문장 추가) → Review' 3단 고정 구조. 이 범위에는 문법 설명 문단이 한 줄도 없음. 소주제 제목, (단수)/(복수) 같은 짧은 표시, 굵은 글씨가 전부이고 규칙 설명은 교사가 함(학습법 2 '교사의 문법 설명').",
+  "Pass-Off 예문 대부분은 STUDENT 과정 1~17과 문장을 그대로 또는 잘라서 씀((N과) 표시 62곳, STUDENT 원문과 맞춘 문장 75개). 이미 외운 문장에서 문법을 발견하게 하는 설계(2쪽: '560여 문장 선행 학습'). 다만 자르면서 문법·뜻이 흐려진 곳이 있음(the best→best, by many Korean people 삭제, 원문의 My parents→They).",
+  "Review 한국어 문장은 Application 영어 문장을 순서 그대로 번역한 것이라 책의 영어 문장이 곧 정답. Review 1은 늘 Pass-Off 문장(영작과 문법 표시: 인칭·be동사·원형·형식)이고 Review 2·3은 나머지 Application 문장 전부 영작. 이 범위 영어 문장 175개 모두 Review 어딘가에 한국어가 있지만, 영어 옆에는 해석이 없음(영→한 해석은 수업에서, 한→영은 Review에서).",
+  "학습 방식은 규칙을 먼저 가르치지 않음. 예문 암기 → 교사 설명 → 대량 적용 → 한글 보고 바로 영작하거나 말하기의 반복식이고, 틀린 문항 다시 공부하기와 구성도를 그려 가며 연결고리 외우기로 완전학습을 강조함(학습법 2~5).",
+  "난이도가 급하게 올라감. TOPIC 1·2는 초등 수준(인칭대명사, am/is/are, 3인칭 단수 -s/-es)인데 TOPIC 3 하나에서 5형식·8품사·구를 한꺼번에 다룸. 구 Application에는 미래완료(by the time), in case ~ should, do nothing but, Why not ~ 같은 중·고급 표현이 설명 없이 나옴. 분량도 TOPIC 3 Review가 109문항으로 TOPIC 1(32)·2(26)의 3~4배.",
+  "Application 추가 문장은 표시 없이 순서대로 배열됨. 5형식은 1형식 5→2형식 5→3형식 5→4형식 2→5형식 4개. 8품사는 명사→대명사→동사→형용사→부사→전치사→감탄사 순(접속사 추가 문장 없음). 구는 명사구 3→형용사구 3→동사구 1→부사구 1→접속사구 3개. 표시가 없어 학생 혼자서는 분류를 확인할 수 없음.",
+  "추가 예문은 STUDENT와 관계없는 외국 이름 예문(Jamie, Rita, Liz, Jane, Tina, Sarah, Jim, Bob, Joshua)이 많음. 외국 문법서 예문을 옮기다 생긴 듯한 오류가 섞여 있음(Rice grows in Britain, admit his proposals, has finished by the time, with her blond).",
+  "한국어 문항 품질이 고르지 않음. 시제가 어긋나고(어렸다/are, 차분하다/kept, 노력한다/tried, 만들었니/do you make), 오역이 있고(그 주의 시작, 라이스, 외국인처럼, 자신감, 항상/usually), 비문도 있음(것을 의미가 있다, 아무것도 않는다, 돌아왔을 때까지 마쳤다). 한글만 보고 영작하는 방식이라 이런 문항에서는 학생 답이 책 답과 달라짐.",
+  "과제는 모두 종이에 쓰는 형식(빈 줄 영작, 밑줄, 동그라미, 괄호 채우기)이고 선택형·듣기·말하기 과제는 없음. 문항 번호도 '1)', '1.', 번호 없음이 섞여 있음.",
+  "연결고리 구성도는 20개 대주제와 소주제를 한눈에 보여 주는 지도 역할을 하지만 본문과 맞지 않음. Have/Has 소주제가 본문에 없고, 동그라미는 67개인데 2쪽은 '70개'라고 함. 8품사 안에 '감탄사구', 5형식 안에 There 구문 같은 분류는 설명이 없어 교사마다 다르게 가르칠 수 있음."
+ ],
+ "webConversionNotes": [
+  "종이에서만 되는 동작을 바꿔야 함. 인칭대명사 밑줄(8문항), be동사 동그라미(4), 괄호 채우기(인칭·원형·형식)는 '문장 단어 탭 + 버튼 선택'으로 바꿈. 밑줄 대상이 둘인 문장(You…my, It…me)은 정답을 여러 개 허용.",
+  "영작 채점: 영작 정답 138개는 책 문장으로 모두 복원되지만, 자유 입력을 글자 그대로 맞는지로 채점하면 맞는 답도 틀리게 나옴(rainy/raining, hopes/wants, will do/will work, 관용 표현 Here he comes). 기본은 단어 카드로 어순 맞추기, 자유 입력은 모범답안 비교 후 스스로 채점하거나 허용 답 목록 사용.",
+  "책 영어 오류를 웹에 올리기 전에 고쳐야 함(correctedAnswer 25개, english_* issues 27개). 영어 문장을 고치면 그 문장의 음성 클립 키가 바뀌므로 같은 작업 안에서 음성을 다시 만들어야 함. 한글 문항의 오역·시제 불일치(translation_mismatch 18개)도 같이 고쳐야 채점 기준이 섬.",
+  "정답 키가 없는 분류 과제: 5형식 판별(Review 6개, Application 27문장), 품사(29), 구 종류(Application 18). 이 파일의 extraSlotAnswer·analysisNote를 초안으로 정답표를 만들 수 있지만, '추정'(배열 순서로 판단) 표시 항목과 모호 문항(tight, What a nice dress!, take care of, come true, in the basket)은 사람이 확인하거나 문항을 바꿔야 함.",
+  "굵은 글씨가 문제의 핵심이라 웹 데이터에 강조 구간을 토큰 단위로 보존해야 함(bold 204개를 PDF 글꼴 정보와 대조 완료). 여러 단어에 걸친 강조(come true, take care of, 'France; food, city, freedom, cheese', 'be a fire fighter …')는 범위로 표시해야 함.",
+  "영어 문장 속 한글 이름(He is 대한., named him 단군)은 로마자(Daehan, Dangun)로 바꾸고 음성은 한국어 발음으로 나오게 처리.",
+  "STUDENT 과정 연결: (N과) 표시 62곳과 원문 대조 75문장(studentMatch)으로 'STUDENT 2과에서 배운 문장' 링크와 기존 음성 재사용이 가능. 다만 책이 줄이거나 바꾼 문장(We are free for the day, They love each other, He wants to be a fire fighter… 등)은 원문과 달라 새 음성이 필요. 틀린 과 번호((8과)→10과, I have many friends의 1과)는 고쳐서 링크.",
+  "Pass-Off와 Application에 같은 문장이 반복됨(TOPIC 1 8개, TOPIC 2 8개, TOPIC 3 27개). 웹에서는 문장 데이터 하나에 '핵심' 표시만 달아 음성·문제 중복을 피함(appRef로 연결해 둠). TOPIC 3 문장 1~6은 Review 1과 3에 한국어가 두 가지로 있으니(꽃들이/꽃들은, 되기를 원한다/되고 싶다) 하나로 정리.",
+  "영어 옆에 한국어 해석이 없으므로 웹의 '해석 보기'는 Review 한국어를 가져와야 함(reviewRef로 연결; 이 범위 175문장 모두 있음). 그 한국어 가운데 오역·비문은 먼저 고쳐야 함.",
+  "연결고리 구성도(대주제 20, 동그라미 67)를 웹 진도 지도로 쓰면 학습법 5(구성도를 그리며 외우기)를 살릴 수 있음. 다만 Have/Has 소주제가 본문에 없고 개수가 '70개'와 다르므로 메뉴 구조는 사장님이 정해야 함.",
+  "자동 변환 주의: PDF 텍스트 층에 6쪽 3인칭 묶음과 10쪽 be동사 묶음이 두 번씩 들어 있음(겹친 글상자). TOPIC 1 Review 2)는 문항 번호가 인쇄되지 않음. 따옴표 글자(you‘re, I ’ll, 곧은/굽은 아포스트로피)는 채점 전에 통일해야 함."
+ ],
+ "selfCheck": "쪽별 대조: 본문 25쪽(p5~29) 모두 이미지에서 센 영어 문장 줄·한국어 문항 줄 수와 추출 수가 같음(예: p5 20/20, p17 18/18, p27 한국어 13/13). 스크립트로도 기계 대조함. (1) verify_g1_p1_29.cjs: 추출한 raw·prompt·소제목·지시문이 모두 해당 쪽 텍스트 층에 있고, 거꾸로 텍스트 층 내용 줄이 빠짐없이 추출됨 → PASS. (2) verify_bold_g1_p1_29.cjs: bold 204개를 PDF 글꼴 굵기 정보와 대조 → PASS. 두 검사 모두 일부러 망가뜨린 사본(문장 1개 삭제, 오타를 몰래 고침, 한국어 문항 삭제, 굵은 범위 변경)에서는 FAIL을 내는 것을 확인함. lessonRef 62개는 raw의 (N과)와 자동 대조했고, 모든 Pass-Off 문장에 Application 짝(appRef), 모든 문장에 Review 한국어(reviewRef)가 있음. 규칙 확인: lessonRef는 그 줄에 인쇄된 것만 적었으므로 TOPIC 1·2 Pass-Off 줄은 null임(스키마 예시와 다르지만 다른 추출자의 규칙과 같음). 스키마 밖 필드를 추가함: studentMatch, analysisNote, appRef, reviewRef, correctedAnswer, answerNote, printedItemNumbers, review bold, issues.severity, conventions, stats. issues.high=47은 confidence high 건수이고, 학습자 영향 severity high는 14건. 한계: 이 파일은 같은 에이전트가 추출하고 판단하고 확인한 것이라 독립 검수가 아님. 영어 교정안, 품사·형식 정답, '추정' 분류, issues 판단은 교사 확인이 필요함. 저장소 파일은 건드리지 않았음(git status 깨끗). 보조 스크립트는 scratchpad\\pdf\\build_g1_p1_29.cjs, verify_g1_p1_29.cjs, verify_bold_g1_p1_29.cjs."
+}

@@ -1,0 +1,212 @@
+{
+ "range": "g2 p28-51 (TOPIC 11 시제 p28-43, TOPIC 12 완료와 진행 p44-51)",
+ "outputFile": "C:\\Users\\ghddl\\AppData\\Local\\Temp\\claude\\C--Users-ghddl--gemini-antigravity-scratch-K-IG-CORE--claude-worktrees-korean-market-analysis-39e7fc\\5adf4ccb-9cea-421f-9195-b5f31b723c7f\\scratchpad\\pdf\\out\\g2-p28-51.json",
+ "topics": [
+  {
+   "printedLabel": "TOPIC 11",
+   "title": "시제",
+   "pages": "28-43",
+   "subtopics": [
+    "(1) 12시제",
+    "(2) 현재와 과거",
+    "(3) 3인칭 단수현재동사",
+    "(4) 미래시제 대용",
+    "(5) 시제 일치"
+   ],
+   "passOffSentences": 47,
+   "applicationSentences": 52,
+   "reviewTasks": 4,
+   "reviewItems": 89,
+   "tables": 0,
+   "explanationText": "문법 설명문 없음. 인쇄된 것은 소단원 제목 5개, (1)의 14문장 뒤에 굵게 붙은 시제 태그((현재)…(미래완료진행), 9번만 '(과거 완료)'로 띄어 씀), (5)의 '(주절이 현재일 때)'·'(주절이 과거일 때)' 묶음 태그뿐이다. 12시제 표·공식 없음. '12시제'라는 제목과 달리 예시된 시제는 11가지(미래진행 없음)."
+  },
+  {
+   "printedLabel": "TOPIC 12",
+   "title": "완료와 진행",
+   "pages": "44-51",
+   "subtopics": [
+    "(1) 현재 완료",
+    "(2) 과거 완료와 미래 완료",
+    "(3) 진행형"
+   ],
+   "passOffSentences": 18,
+   "applicationSentences": 32,
+   "reviewTasks": 3,
+   "reviewItems": 46,
+   "tables": 0,
+   "explanationText": "문법 설명문·시제 태그·공식 표 모두 없음. 소단원 제목 3개만 굵게 인쇄. Review 1이 요구하는 완료·진행 공식과 Review 2가 요구하는 시제 이름은 이 토픽 어디에도 인쇄되어 있지 않다. '(3) 진행형'에 진행형이 아닌 현재완료 문장(I have known him…)이 들어 있다."
+  }
+ ],
+ "exerciseTypes": [
+  {
+   "type": "en_to_ko_translate + name_tense (해석 + 시제 이름)",
+   "instructionExample": "1.다음 문장을 보고 한국말로 해석한 후 해당되는 시제를 적어보세요.",
+   "itemCount": 27,
+   "webIdea": "해석은 모범 번역을 보여 준 뒤 스스로 채점하거나 번역 보기 중 고르기로. 시제 이름은 12시제 드롭다운으로 자동 채점. 시제가 둘 이상인 문장은 물을 동사를 강조해 하나로 지정."
+  },
+  {
+   "type": "tense_transform_compose (시제 일치 빈칸 영작)",
+   "instructionExample": "2. 다음 네모 안에 있는 문장의 종속절을 이용하여 빈 칸에 올 수 있는 시제들로 문장을 영작하시오.",
+   "itemCount": 7,
+   "webIdea": "기준 문장 카드를 보여 주고, 칸마다 목표 시제를 지정하거나 시제 칩을 끌어다 넣게 함. 순서와 상관없이 채점하고 허용 답안 목록(would do, was doing 등)을 둠."
+  },
+  {
+   "type": "en_to_ko_translate (시제에 주의한 해석)",
+   "instructionExample": "3. 다음의 문장들을 시제에 주의하여 해석하시오.",
+   "itemCount": 16,
+   "webIdea": "시제 뜻이 서로 다른 번역 3개(…할 예정이다 / …하는 중이다 / …했다) 중 고르기 + 모범 번역 공개. 미래 대용 표현(is playing, leaves, is due to)을 강조."
+  },
+  {
+   "type": "ko_to_en_compose (한→영 영작)",
+   "instructionExample": "4. 다음의 문장들을 영작하시오.",
+   "itemCount": 84,
+   "webIdea": "타이핑 입력 + 자동 채점(축약형·아포스트로피·구두점·canceled/cancelled 같은 철자 변이 정규화). 틀리면 단어 칩 재배열로 한 단계 쉽게. 정답 음성 재생."
+  },
+  {
+   "type": "write_formula (시제 공식 쓰기)",
+   "instructionExample": "1. 완료시제 3가지와 진행시제 3가지의 공식을 적어보세요.",
+   "itemCount": 1,
+   "webIdea": "공식 6개를 빈칸형 폼(have/has + ___ 등)으로 만들고, 앞 단계에서 공식 표를 먼저 보여 줌. 책에 공식이 없으므로 표를 새로 써야 함. 완료진행 공식 추가 권장."
+  }
+ ],
+ "answerKey": {
+  "reviewItems": 135,
+  "linkedToBookSentence": 133,
+  "needsNewAnswer": 2,
+  "notes": "책에 정답지는 없지만 133문항은 책 안의 다른 문장이 답이다. 영→한 42문항은 같은 Review에 인쇄된 한국어 영작 문제문이, 한→영 84문항은 Application 영어가, 시제 일치 7칸은 Pass-Off (5) 예문이 답이다. 새 답이 필요한 2문항: TOPIC 11 Review 3-13(Joseph 현재형 문장. 책의 한국어는 과거형 문장의 번역), TOPIC 12 Review 1(공식. 책에 없음). 책의 답 39개는 틀려서 correctedAnswer로 고쳤다(영어 21, 한국어 18). 시제 이름 27칸 중 TOPIC 11의 14칸은 책 태그를 그대로 썼고, TOPIC 12의 13칸은 책에 없어 추출자가 작성했다. 순서와 상관없이 정답이 여럿인 곳: TOPIC 11 Review 2의 7칸."
+ },
+ "issues": {
+  "total": 75,
+  "high": 50,
+  "examples": [
+   {
+    "page": 28,
+    "text": "(1) 12시제",
+    "problem": "'12시제'라는 제목인데 예시된 시제는 11가지다. 미래진행이 빠졌고 현재·과거·미래는 2문장씩 겹친다.",
+    "fix": "미래진행 예문 추가: 'He will be watering the garden at this time tomorrow. (미래진행)'"
+   },
+   {
+    "page": 28,
+    "text": "Jane has finished cleaning the room just now.",
+    "problem": "just now는 현재완료와 함께 쓰지 않는다. 이 문장이 현재완료의 모범 예문으로 실려 있다(p28·p31·p34).",
+    "fix": "Jane has just finished cleaning the room."
+   },
+   {
+    "page": 28,
+    "text": "My sister attends 한국elementary school.",
+    "problem": "영어 문장에 한글이 섞였다. STUDENT s2-5 원문의 '(School Name)' 자리에 '한국'을 넣은 것이라 음성으로 읽을 수 없다.",
+    "fix": "My sister attends Hanguk Elementary School."
+   },
+   {
+    "page": 28,
+    "text": "He had been having a military service for two years when I met him.",
+    "problem": "'have a military service'는 쓰지 않는 표현이다.",
+    "fix": "He had been doing his military service for two years when I met him."
+   },
+   {
+    "page": 29,
+    "text": "I am gong to go around, and you should show me your paper.",
+    "problem": "gong은 going의 오타다(p29·p33·p38).",
+    "fix": "I am going to go around, and you should show me your paper."
+   },
+   {
+    "page": 31,
+    "text": "His dream will come true(4과)",
+    "problem": "마침표가 없고 과 표시가 틀렸다. 이 문장은 STUDENT s3-4에 있는 3과 문장이다.",
+    "fix": "His dream will come true.(3과)"
+   },
+   {
+    "page": 32,
+    "text": "Nick reads Bible for an hour everyday.",
+    "problem": "the Bible이어야 하고, 부사는 every day로 띄어 쓴다.",
+    "fix": "Nick reads the Bible for an hour every day."
+   },
+   {
+    "page": 32,
+    "text": "Lilly wears a red blouse today.",
+    "problem": "today와 함께면 현재진행형이 자연스럽다. 한국어 문제문 '입는다'도 같은 문제.",
+    "fix": "Lilly is wearing a red blouse today. / 릴리는 오늘 빨간 블라우스를 입고 있다."
+   },
+   {
+    "page": 40,
+    "text": "북쪽에서의 군대들이 남한을 침략했던 1950년대에 전쟁이 발발했다.",
+    "problem": "in 1950을 '1950년대'로 잘못 옮겼다.",
+    "fix": "1950년 북한군이 남한을 침략하면서 전쟁이 일어났다."
+   },
+   {
+    "page": 42,
+    "text": "이것은 나의 개이고 그것은 많이 짓는다.",
+    "problem": "'짓는다'는 오타이고 '짖는다'가 맞다.",
+    "fix": "이 개는 우리 개인데 많이 짖는다."
+   },
+   {
+    "page": 42,
+    "text": "그는 월요일 오후에 테니스를 치는 중이다.",
+    "problem": "미래 일정을 나타내는 현재진행형인데 '치는 중이다'(지금 진행 중)로 옮겨, 이 단원의 요점과 반대로 가르친다.",
+    "fix": "그는 월요일 오후에 테니스를 칠 예정이다."
+   },
+   {
+    "page": 42,
+    "text": "비행가 11시 30분에 시카고로 떠날 예정이다.",
+    "problem": "'비행가'는 오타이고, leaves Chicago(시카고를 떠난다)를 '시카고로'로 옮겨 뜻이 바뀌었다.",
+    "fix": "비행기는 11시 30분에 시카고를 떠난다."
+   },
+   {
+    "page": 43,
+    "text": "내가 돌아올 때 여기서 기다릴게.",
+    "problem": "'Wait here till I come back.'은 상대에게 하는 명령이다. 주어가 바뀌었고 till(~까지)도 빠졌다.",
+    "fix": "내가 돌아올 때까지 여기서 기다려."
+   },
+   {
+    "page": 43,
+    "text": "우리의 비행기는 떠날 예정이다.",
+    "problem": "in ten minutes(10분 후에)가 빠졌다.",
+    "fix": "우리 비행기는 10분 후에 떠난다."
+   },
+   {
+    "page": 44,
+    "text": "I have just have lunch.",
+    "problem": "현재완료 단원의 첫 예문인데 과거분사 had 자리에 have가 들어갔다(p44·p45).",
+    "fix": "I have just had lunch."
+   },
+   {
+    "page": 51,
+    "text": "우리는 쇼가 끝났을 때, 주차장에서 걷고 있었다.",
+    "problem": "park(공원)를 '주차장'으로 잘못 옮겼다.",
+    "fix": "쇼가 끝났을 때 우리는 공원에서 걷고 있었다."
+   },
+   {
+    "page": 51,
+    "text": "그는 내일 아침까지 그 집을 칠하고 있을 것이다.",
+    "problem": "tomorrow morning(내일 아침에)을 '내일 아침까지'로 옮겨 뜻이 바뀌었다.",
+    "fix": "그는 내일 아침에 그 집을 칠하고 있을 것이다."
+   }
+  ]
+ },
+ "pedagogyObservations": [
+  "설명 없이 예문으로 가르친다. 두 토픽 모두 문법 설명문·공식·시제 표가 없다. 소단원 제목과 예문, 그리고 TOPIC 11 (1)의 굵은 시제 태그와 (5)의 '(주절이 현재/과거일 때)' 태그만 있다. 이 범위에는 문장 속 핵심 단어의 굵은 글씨도 없다(PDF 글꼴 정보로 확인). 규칙 설명은 교사에게 맡긴 교재다.",
+  "세 단계 반복 구조다. Pass-Off(소단원별 모범 문장) → Application(Pass-Off 문장을 거의 그대로 다시 싣고 새 문장을 14개씩 더함: TOPIC 11은 38+14=52, TOPIC 12는 18+14=32) → Review(영→한 해석·시제 이름 → 변형 영작 → Application 전 문장 한→영 영작). 한 문장을 보기·해석·영작으로 3~4번 만나게 하는 반복 암기(패스오프) 방식이다.",
+  "Review 마지막 영작 과제가 Application 전 문장을 같은 순서의 한국어로 제시한다. 그래서 영→한 과제의 모범 번역은 영작 과제의 한국어이고, 영작 과제의 정답은 Application 영어다. 인쇄된 정답지는 없지만 135문항 중 133문항의 답을 책 안에서 찾을 수 있었다.",
+  "순서는 나선형이다. TOPIC 11이 12시제 개관 → 현재·과거 용법(지금 일어나는 일·습관·변하지 않는 사실·역사적 사실·시간 부사절) → 3인칭 단수 현재 → 미래 대용(현재진행·현재·be going to·be due to·be about to·시간/조건절 현재) → 시제 일치로 넓게 훑는다. TOPIC 12는 완료(현재/과거/미래)와 진행(현재/과거/미래·완료진행)을 다시 나눠 반복한다. 12시제 개관에서 빠진 미래진행은 TOPIC 12 (3)에서야 나온다.",
+  "난이도 폭이 넓다. 'I live in Seoul.' 같은 초급 문장과 미래완료진행·과거완료진행·2인칭 shall·시제 일치·timeserver 같은 고급 항목이 한 토픽에 섞여 있다. 15문장은 STUDENT 과정(1·2·3·6·7·9·16·17과) 문장을 줄이거나 시제를 바꿔 가져온 것이다. STUDENT를 배운 학생이 익숙한 문장으로 문법을 다시 보게 하는 '연결고리' 설계다.",
+  "책에 없는 지식을 묻는 과제가 있다. TOPIC 12 Review 1(완료·진행 공식 쓰기)과 Review 2(시제 이름 쓰기)의 답은 이 토픽에 인쇄되어 있지 않다. 교사가 수업 중에 판서한다는 전제로 보인다.",
+  "교정이 거의 안 된 쪽들이다. 24쪽에서 문제 75건이 나왔다(확신 높음 50, 학습 영향 큼 19). 특히 모범 문장 자체의 문법 오류(have just have, just now+현재완료, gong)와 한국어 문제문의 오역('치는 중이다', '시카고로', '주차장', '내일 아침까지', '10분' 누락)이 시제 단원의 요점과 정면으로 부딪친다. 그대로 옮기면 틀린 시제 규칙을 외우게 된다.",
+  "과제 유형은 해석·시제 이름·변형 영작·영작·공식 쓰기 다섯 가지로 단순하다. 이 범위에는 동그라미·밑줄 같은 종이 전용 활동이 없다."
+ ],
+ "webConversionNotes": [
+  "과제끼리 서로의 답을 보여 준다. TOPIC 11 Review 1·3의 영어 문장이 Review 4의 정답이고, Review 4의 한국어가 1·3의 모범 번역이다(TOPIC 12의 2번↔3번도 같음). 웹에서는 한 화면에 같이 보이지 않게 단계별로 열어야 한다(예: 영작을 먼저 풀고 제출한 뒤 해석).",
+  "한→영 영작 84문항(52+32)을 자동 채점하려면 축약형(I’m/I am), 곡선·직선 아포스트로피, 대소문자, 구두점, canceled/cancelled 같은 차이를 같은 답으로 봐야 하고 허용 답안 목록도 필요하다. 책의 영어 답 21개는 틀려서 correctedAnswer로 고쳐 두었다. 원문 그대로 채점하면 맞는 답을 오답 처리한다.",
+  "영→한 해석 43문항(14+16+13)은 자동 채점이 어렵다. 모범 번역을 보여 준 뒤 스스로 채점하게 하거나, 시제 뜻이 다른 번역 보기 중 고르기로 바꾸기를 권한다. 책의 한국어 모범 번역 18개는 오역·오타라 correctedAnswer로 고쳐 두었다.",
+  "시제 이름 27칸(14+13)은 드롭다운 선택형으로 만들고 명칭을 통일해야 한다(책 태그는 '과거 완료'와 '과거완료'가 섞여 있음). 시제가 둘 이상인 문장(Mary…, The sun…)은 물을 동사를 강조해 하나로 정해야 한다. TOPIC 12의 13칸은 책에 정답이 없어 추출자가 썼으므로 사장님 확인이 필요하다.",
+  "TOPIC 11 Review 2(시제 일치)는 네모 박스 기준 문장 + 순서 없는 빈칸 7개이고 정답이 여럿이다. 칸마다 목표 시제를 붙이거나(예: '현재완료로'), 시제 칩 끌어넣기 + 순서 무관 채점 + 허용 목록(would do, was doing 등)이 필요하다.",
+  "TOPIC 12 Review 1(공식 쓰기)은 책에 문항도 답도 없이 빈 공간만 있다. 6칸 빈칸형 폼으로 새로 만들고 앞 단계에 공식 표를 넣어야 한다. TOPIC 12 Review 2도 답 칸이 인쇄되어 있지 않아 입력칸 두 개(번역·시제 이름)를 새로 만들어야 한다.",
+  "12시제 표가 책에 없고 '12시제' 목록에는 미래진행이 빠져 있다. 웹용 3×4 표(현재/과거/미래 × 단순/진행/완료/완료진행)를 새로 만들고 칸마다 Pass-Off 문장을 연결해야 한다(미래진행은 TOPIC 12의 'He will be painting the house tomorrow morning.' 사용).",
+  "이 범위에는 문장 속 핵심 단어의 굵은 글씨가 없다. 웹에서 강조할 동사구(has finished, will have been living 등)를 새로 정해야 한다.",
+  "영어를 고치면 음성 클립 키가 바뀌므로 고친 문장은 음성을 다시 만들어야 한다. '한국elementary school'(한글이 섞임), 'Je-Ju'(한국 지명이라 한국어식 발음 필요), 'LA', 'Mr. Jung', '11:30', '3years'는 읽는 방식도 확인해야 한다.",
+  "시제 일치 9문장과 Pass-Off의 Joseph 현재형 문장, 모두 10문장은 한국어 번역이 책 어디에도 없다. 웹에서 번역을 보여 주려면 새로 써야 한다.",
+  "같은 문장이 쪽마다 다르게 인쇄된 곳(Joseph is/was, canceled/cancelled, 마침표 유무, 문제문에 붙은 '(2과)')은 웹 데이터에서 문장 하나의 ID로 묶어 한 번만 고치게 해야 한다. JSON에는 sameAsApplication·answerSource로 연결해 두었다.",
+  "(N과) 표시가 붙은 15문장은 STUDENT sN-M 레슨으로 링크할 수 있다(studentSource). 단 '(4과)'는 틀렸고(실제는 s3-4), 원문을 바꿔 실은 문장(She worked→had worked, The Korean War→A civil war, (School Name)→한국)은 링크할 때 원문과 다르다는 표시가 필요하다.",
+  "번호가 인쇄되지 않은 Review(TOPIC 11 4번 52문항, TOPIC 12 3번은 첫 문항에만 '(1)')는 웹에서 문항 ID를 새로 붙여야 한다. JSON의 n은 추출자가 붙인 순번이다."
+ ],
+ "selfCheck": "24쪽 이미지를 모두 열어 봤다. 쪽마다 눈으로 센 영어 문장 줄·한국어 문제 줄 개수를 JSON과 스크립트로 대조했고 24쪽 모두 일치했다(예: p28 영어 19/19, p33 18/18, p40 한국어 12/12, p51 10/10). JSON에 들어간 인쇄 문자열 815개를 PDF 텍스트 층의 해당 쪽과 대조해 불일치는 0이었다. 일부러 틀린 문자열 3개('I have just had lunch.' 등)는 모두 걸러져, 이 대조가 틀린 문자열을 실제로 잡아낼 수 있음도 확인했다. 굵은 글씨는 PDF 글꼴 정보로 확인했다(문장 안 굵은 단어 0개). node JSON.parse 통과. 저장소 파일은 건드리지 않았다(git status 변경 없음). 이 추출과 검사는 같은 에이전트가 했으므로 독립 검수가 아니다. 1분 확인법: PDF에서 p44 첫 예문 'I have just have lunch.', p42 '비행가 11시 30분에 시카고로…', p51 '주차장에서 걷고 있었다'를 직접 보면 대표 오류가 실제 인쇄된 것임을 확인할 수 있다. 아직 아무도 확인하지 않은 것: 추출자가 새로 쓴 답(TOPIC 12 시제 이름 13칸, 공식, 고친 답 39개)이 적절한지. 이슈 75건의 confidence는 '실제 문제라는 확신의 정도'(high 50 / medium 21 / low 4)이고, 학습 영향의 크기는 JSON에 severity로 따로 적었다(high 19). 스키마에 없던 필드도 추가했다: no, koSource, studentSource, sameAsApplication, labelPrinted/inferredLabel, correctedAnswer, box, notes, severity."
+}

@@ -1,0 +1,435 @@
+{
+ "findings": [
+  {
+   "topic": "명시적 vs 암시적 문법 지도 (메타분석)",
+   "claim": "초급 학습자에게는 규칙을 명시적으로 설명하고 연습시키는 방식이, 규칙을 알려주지 않고 노출만 시키는 방식보다 대체로 효과가 크다. 교사가 없는 웹에서도 '짧은 명시적 설명'은 빼면 안 되는 핵심 요소다.",
+   "evidence": "Norris & Ortega(2000): 1980–1998년 49개 연구, 명시적 d≈1.13 vs 암시적 d≈0.54, 효과는 지연검사에서도 유지. Goo 외(2015): 34개 표본으로 갱신, 명시적 지도가 자유 산출 g=0.454, 제한 산출 g=0.584만큼 더 효과적이었고, 구두+문자 결합 처치가 가장 좋았음. Spada & Tomita(2010): 41개 연구, 단순·복합 문법 모두 명시적 우위, 통제된 지식과 자발적 사용 모두에 기여. 한계: 초기 메타분석의 결과 측정이 선다형·문법성 판단 등 명시적 지식 쪽에 치우쳤다는 점을 저자들이 스스로 지적.",
+   "strength": "strong",
+   "sources": [
+    "Effectiveness of L2 Instruction: A Research Synthesis and Quantitative Meta-analysis (Norris & Ortega, 2000, Language Learning 50) — https://doi.org/10.1111/0023-8333.00136",
+    "Implicit and explicit instruction in L2 learning: Norris & Ortega (2000) revisited and updated (Goo, Granena, Yilmaz & Novella, 2015) — https://doi.org/10.1075/sibil.48.18goo",
+    "Interactions Between Type of Instruction and Type of Language Feature: A Meta-Analysis (Spada & Tomita, 2010, Language Learning 60) — https://doi.org/10.1111/j.1467-9922.2010.00562.x"
+   ],
+   "implication": "70개 소주제마다 교사 설명을 대신하는 1~3분짜리 한국어 규칙 설명을 둔다(표 1개 + 해당 Pass-Off Sentences 2~4개를 예문으로). 글과 음성을 함께 제공하되(구두+문자 결합), 설명만 읽고 넘어가지 못하게 바로 확인 문항과 Application Sentences 산출 연습으로 이어지게 한다."
+  },
+  {
+   "topic": "명시적 지도의 장기 효과와 한계",
+   "claim": "명시적 설명의 즉시 효과는 크지만 장기 유지와 자동화는 설명만으로 보장되지 않는다. 연습의 종류·강도·측정 방식이 효과를 크게 좌우한다.",
+   "evidence": "Kang, Sok & Han(2019): 1980–2015년 54개 연구·5,051명, 전체 g=1.06. 명시적·암시적 차이는 작았고(2차 요약에 따르면 지연검사에서는 암시적 지도가 더 잘 유지), 학습자의 초기 숙달도·지도 강도·측정 방식이 유의한 조절변수. Li & Sun(2024): 28개 보고·67표본·3,754명, 명시적 지도 효과 d=0.81(집단 간). 효과는 명시적 지도 유형·연습 유형·전달 방식·처치 길이와 강도에 따라 달라짐(초록 수준 확인).",
+   "strength": "moderate",
+   "sources": [
+    "Thirty-five years of ISLA on form-focused instruction: A meta-analysis (Kang, Sok & Han, 2019, Language Teaching Research 23(4)) — https://doi.org/10.1177/1362168818776671",
+    "Effects of different forms of explicit instruction on L2 development: A meta-analysis (Li & Sun, 2024, Foreign Language Annals 57) — https://doi.org/10.1111/flan.12726"
+   ],
+   "implication": "'설명 → 연습 → 날을 바꾼 재연습'을 한 묶음으로 설계한다. 소주제 학습 시간 중 설명은 20% 이하로 두고, 나머지는 인출·산출 연습과 재학습에 쓴다. 평가도 선택형만 쓰지 말고 한→영 말하기·쓰기 산출로 측정해야 실제 사용 능력을 볼 수 있다."
+  },
+  {
+   "topic": "기술습득이론(DeKeyser): 무엇이 자동화를 만드는가",
+   "claim": "규칙 지식(선언적) → 절차화 → 자동화는 '연습한 바로 그 기술'에서 일어난다(기술 특정성). 반응 속도는 연습량에 따라 거듭제곱 곡선으로 줄어든다. 말하기를 자동화하려면 말하기 산출 연습을 시켜야 한다.",
+   "evidence": "DeKeyser(1997): 61명이 규칙을 기준까지 익힌 뒤 8주간 컴퓨터 통제 이해·산출 연습 — 학습은 고도로 기술 특정적이고 거듭제곱 학습곡선을 따름. Maie & Godfroid(2025): 73명, 선언적·절차적·자동의 3단계를 확인했고 반응시간 감소가 거듭제곱 법칙에 부합(R²=.97). Suzuki & Sunada(2020): 중급 129명, 연습한 기술(이해 또는 산출)로 시험 볼 때 성적이 더 높았고 특히 산출 정확도는 산출 연습에서 두드러짐.",
+   "strength": "moderate",
+   "sources": [
+    "Beyond explicit rule learning: Automatizing second language morphosyntax (DeKeyser, 1997, SSLA 19) — https://doi.org/10.1017/S0272263197002040",
+    "Testing the three-stage model of second language skill acquisition (Maie & Godfroid, 2025, SSLA) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/testing-the-threestage-model-of-second-language-skill-acquisition/DF879921EDE594E795CBD8C18A87E86E",
+    "Dynamic interplay between practice type and practice schedule in a second language (Suzuki & Sunada, 2020, SSLA 42) — https://eric.ed.gov/?id=EJ1247278"
+   ],
+   "implication": "Application Sentences의 '한국어 보고 즉시 영어로 말하기'는 이론적으로 맞는 설계다. 웹에서는 (1) 이해 확인(해석·요소 찾기)은 짧게, (2) 산출(말하기·타이핑)을 주 연습으로 두고, (3) 문장별로 정답 여부와 '발화 시작까지 걸린 시간'을 기록해 자동화 진척을 추적한다. 말하기가 목표이므로 타이핑만으로 끝내지 말고 음성 산출 라운드를 반드시 넣는다."
+  },
+  {
+   "topic": "연습의 질: 연습 중 정확도",
+   "claim": "연습 중에 '맞게' 산출한 비율이 이후 정확도 향상을 예측한다. 교사가 없는 웹에서는 틀린 형태를 반복 연습하지 않도록 즉시 교정·재시도 구조가 필요하다.",
+   "evidence": "Sato & McDonough(2019): 대학생 34명·5주, 연습 중 정확한 wh-의문문 산출이 정확도 향상을 예측(유창성과는 무관). 명시적 지식은 절차화 초기에 목표형 산출을 도움. Kasprowicz, Marsden & Sephton(2019): 8–11세 113명, 컴퓨터 문법 게임으로 프랑스어 동사 어미 연습 — 세션 간격(7일 vs 3.5일)보다 언어 분석 능력과 '연습 중 정확도'가 학습을 더 잘 예측.",
+   "strength": "moderate",
+   "sources": [
+    "Practice is important but how about its quality? (Sato & McDonough, 2019, SSLA) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/abs/practice-is-important-but-how-about-its-quality/2C9B3512F13652E29957DD7285004ED0",
+    "Investigating distribution of practice effects for the learning of foreign language verb morphology in the young learner classroom (Kasprowicz, Marsden & Sephton, 2019, MLJ 103) — https://doi.org/10.1111/modl.12586 (요약: https://ripl.uk/research/one-page-summaries/kasprowicz-r-marsden-e-sephton-n-2019/)"
+   ],
+   "implication": "새 소주제 첫 라운드는 '정확도 우선'으로 한다: 설명 직후 산출하고, 틀리면 즉시 힌트 후 재시도, 세션 끝에 다시 출제한다. 시간 제한은 정확도가 확보된 2~3번째 세션부터 점차 강화한다. 분석력이 약한 학습자(특히 초등)에게는 힌트 단계를 더 잘게 나눠 준다."
+  },
+  {
+   "topic": "정확성과 유창성은 따로 키워야 한다 (일본 대학생 자료)",
+   "claim": "문법을 '알고 있어도' 말할 때는 느리거나 틀린다. 정확성과 유창성은 서로 다른 능력이라 둘 다 연습 설계에 넣어야 한다.",
+   "evidence": "Tokunaga(2021): 일본 대학생 45명, 일본어 문장을 보고 가능한 빨리 영어로 말하는 과제에서 현재진행형 정답률 .29, 부정관사 .40, 3인칭 -s .46 등 중학교 1학년 문법도 부정확했음. 발화 속도 평균 37.6 WPM(원어민 교사 119.9). 정확성과 유창성 상관 r≈.05~.10(사실상 무상관). 저자는 명시적 문법 지도와 유창성 연습의 균형을 권고.",
+   "strength": "weak",
+   "sources": [
+    "Investigating Fluency and Accuracy of Japanese University EFL Learners' Spoken English Production (Tokunaga, 2021, Journal of English Teaching 7(2)) — https://doi.org/10.33541/jet.v7i2.2775 (PDF: https://files.eric.ed.gov/fulltext/EJ1300236.pdf)"
+   ],
+   "implication": "한국 학습자도 비슷할 가능성이 크므로 '통과' 기준에 정확성(목표형 정답)과 유창성(응답 시작 시간) 두 축을 모두 둔다. 이 연구가 쓴 '모국어 문장 제시 → 가능한 빨리 영어로 말하기'는 Application Sentences와 같은 형식이라 소주제 사전·사후 진단에도 그대로 쓸 수 있다. 현재진행·3인칭 단수·복수·관사처럼 '형태는 쉬운데 언제 쓰는지 헷갈리는' 항목에는 두 형태 중 고르게 하는 대비 문항을 추가한다."
+  },
+  {
+   "topic": "인출 연습(테스트 효과)",
+   "claim": "다시 읽기나 듣고 따라 말하기보다 '먼저 떠올려 말해 보기(인출)'가 장기 기억과 산출 능력을 더 키운다. 한국어 단서를 보고 먼저 말해 본 뒤 정답을 듣는 순서가 낫다.",
+   "evidence": "Adesope 외(2017): 217개 연구 메타분석, 연습 시험이 재학습 및 다른 조건보다 효과적. Yang 외(2021): 교실 연구 222개·48,478명, 퀴즈의 성취 향상 g=0.499. Kang, Gollan & Pashler(2013): 외국어 단어를 듣고 따라 말하기보다 먼저 산출을 시도한 뒤 듣기(인출)가 즉시·2일 후 모두 이해와 산출에서 우수했고 발음 질 손실도 없음. Hopman & MacDonald(2018): 인공언어 학습에서 산출 연습 집단이 이해 연습 집단보다 문법 의존관계의 '이해'까지 더 잘함. Dunlosky 외(2013)는 연습 시험과 분산 연습을 효용이 가장 높은 학습법으로 평가.",
+   "strength": "strong",
+   "sources": [
+    "Rethinking the Use of Tests: A Meta-Analysis of Practice Testing (Adesope, Trevisan & Sundararajan, 2017, RER 87) — https://doi.org/10.3102/0034654316689306",
+    "Testing (quizzing) boosts classroom learning: A systematic and meta-analytic review (Yang et al., 2021, Psychological Bulletin 147) — https://doi.org/10.1037/bul0000309",
+    "Don't just repeat after me: Retrieval practice is better than imitation for foreign vocabulary learning (Kang, Gollan & Pashler, 2013, PBR 20) — https://doi.org/10.3758/s13423-013-0450-z",
+    "Production Practice During Language Learning Improves Comprehension (Hopman & MacDonald, 2018, Psychological Science 29) — https://doi.org/10.1177/0956797618754486",
+    "Improving Students' Learning With Effective Learning Techniques (Dunlosky et al., 2013, PSPI 14) — https://doi.org/10.1177/1529100612453266"
+   ],
+   "implication": "Application Sentences 화면의 기본 순서를 '한국어 → 스스로 말하기·타이핑 → 정답 공개 → 원어민 음성 → 다시 말하기'로 둔다. '정답 보기' 버튼은 시도한 뒤에만 켜지게 한다. 해석 단계(영→한)도 영어 문장을 잠깐 보여 준 뒤 가리고 뜻을 떠올리게 하는 인출형으로 만든다. Pass-Off Sentences 복습 역시 '다시 보기'가 아니라 한국어 단서로 떠올리기로 한다."
+  },
+  {
+   "topic": "연속 재학습(successive relearning)과 통과 기준",
+   "claim": "'한 세션 안에서 맞힐 때까지 인출하고, 며칠 간격으로 다시 맞힐 때까지 반복'을 3회 정도 하는 방식이 장기 유지에 가장 강력한 방법 중 하나다. 한 번 맞혔다고 통과시키면 대부분 잊는다.",
+   "evidence": "Rawson & Dunlosky(2011): 533명, 초기 기준(1~4회 정답)과 재학습 횟수(1~5회)를 조작해 1~4개월 뒤 유지와 효율을 측정 — 처방은 '초기 3회 정답 + 넓은 간격으로 3회 재학습'. Cerbin(2022)이 요약한 입문 심리학 수업 사례: 연속 재학습한 개념은 시험 84% vs 평소 방식 72%, 3일 뒤 80% vs 27%, 24일 뒤 64% vs 17%. Rawson, Dunlosky & Sciartelli(2013)는 수업 시험과 장기 유지에서 향상을 보고. Rawson & Dunlosky(2022): 외국어 어휘 등 10여 개 연구에서 반복 확인.",
+   "strength": "strong",
+   "sources": [
+    "Optimizing schedules of retrieval practice for durable and efficient learning: How much is enough? (Rawson & Dunlosky, 2011, JEP: General) — https://eric.ed.gov/?id=EJ934616",
+    "The Power of Successive Relearning: Improving Performance on Course Exams and Long-Term Retention (Rawson, Dunlosky & Sciartelli, 2013, EPR 25) — https://doi.org/10.1007/s10648-013-9240-4",
+    "Successive Relearning: An Underexplored but Potent Technique for Obtaining and Maintaining Knowledge (Rawson & Dunlosky, 2022, CDPS 31) — https://doi.org/10.1177/09637214221100484",
+    "Using Successive Relearning to Promote Robust, Durable Learning (Cerbin, 2022) — https://takinglearningseriously.com/wp-content/uploads/2022/09/Successive-Relearning_2022_Cerbin.pdf"
+   ],
+   "implication": "교재의 '소주제별 완전학습'과 'Review 채점 후 틀린 문항은 반드시 다시 학습' 지시를 웹 규칙으로 만든다. 각 Application Sentence는 (1) 첫날 세션에서 맞힐 때까지(틀린 문장은 세션 뒤쪽에 재출제), (2) 서로 다른 날 최소 3번의 재학습 세션에서 첫 시도에 다시 맞혀야 '통과(Pass-Off)'로 표시한다. 틀린 문장만 다시 도는 적응형 대기열을 두면 이미 아는 문장에 시간을 덜 쓴다."
+  },
+  {
+   "topic": "L2 문법에서의 재학습 횟수 (모국어→L2 번역 산출 + 피드백)",
+   "claim": "모국어 문장을 보고 L2 문장을 산출하는 연습을 '다 맞힐 때까지' 며칠에 걸쳐 3~4회 반복하면, 1~2회보다 2주 뒤 산출 능력이 뚜렷이 높다. 이해 능력은 적은 반복으로도 높지만 산출은 더 많은 재학습이 필요하다.",
+   "evidence": "Serfaty & Serrano(2024): 119명이 디지털 플래시카드로 12문장을 인공언어로 번역·타이핑하고 피드백을 받으며 전부 맞힐 때까지 반복. 재학습 세션을 1·2·3·4회(연속된 날) 실시 → 14일 뒤 수용 시험은 모든 집단이 높았으나 산출 시험은 3·4회 집단이 크게 높았고, 훈련 정확도는 3일째에 정점(초록·2차 요약으로 확인). 인공언어 실험이라 실제 영어 문법 일반화는 추가 확인이 필요.",
+   "strength": "moderate",
+   "sources": [
+    "Practice Makes Perfect, but How Much Is Necessary? The Role of Relearning in Second Language Grammar Acquisition (Serfaty & Serrano, 2024, Language Learning) — https://doi.org/10.1111/lang.12585"
+   ],
+   "implication": "Application Sentences의 한→영 연습을 소주제당 최소 3~4일(예: 1일차·2일차·3~4일차)에 걸쳐 반복하는 기본 일정을 둔다. '해석이 됨'을 통과 기준으로 쓰지 말고 산출 정답을 기준으로 한다. 한 세션의 소주제 문장 수는 10~15개로 제한해 '전부 맞힐 때까지'가 10~15분 안에 끝나게 한다."
+  },
+  {
+   "topic": "간격 두기(spacing): 몰아서 vs 나눠서",
+   "claim": "같은 연습 시간이라도 나눠서 하면 장기 기억이 훨씬 좋다. 이상적인 간격은 '얼마나 오래 기억해야 하는가'에 따라 달라진다.",
+   "evidence": "Kim & Webb(2022): 48개 실험·98개 효과크기·3,411명, 지연검사에서 간격 > 몰아서 g=1.15. 긴 간격은 보존기간이 길수록 유리했고, 균등 간격과 점점 늘리는 간격은 뚜렷한 차이가 없음. Bird(2010): 영어 시제·상 학습에서 분산 연습이 장기 시험에서 우수. Rogers(2015): 간격이 길면 초기 학습은 느리지만 유지는 좋음. Cepeda 외(2008): 1,350여 명, 최적 간격은 목표 보존기간이 1주면 그 20~40%, 1년이면 5~10%. Serrano(2022) 개관도 분산 연습의 우위를 정리.",
+   "strength": "strong",
+   "sources": [
+    "The Effects of Spaced Practice on Second Language Learning: A Meta-Analysis (Kim & Webb, 2022, Language Learning 72) — https://doi.org/10.1111/lang.12479",
+    "Effects of distributed practice on the acquisition of second language English syntax (Bird, 2010, Applied Psycholinguistics 31) — https://www.cambridge.org/core/journals/applied-psycholinguistics/article/abs/effects-of-distributed-practice-on-the-acquisition-of-second-language-english-syntax/9920EC042394DCB7094726C7F80F6F8C",
+    "Learning Second Language Syntax Under Massed and Distributed Conditions (Rogers, 2015, TESOL Quarterly 49) — https://doi.org/10.1002/tesq.252",
+    "Spacing effects in learning: A temporal ridgeline of optimal retention (Cepeda et al., 2008, Psychological Science 19) — https://doi.org/10.1111/j.1467-9280.2008.02209.x",
+    "A state-of-the-art review of distribution-of-practice effects on L2 learning (Serrano, 2022, SSLLT) — https://pressto.amu.edu.pl/index.php/ssllt/article/view/35602"
+   ],
+   "implication": "소주제 초기 학습이 끝나면 누적 복습 일정을 자동으로 만든다: 초기 재학습(1~3일 간격) → 약 1주 → 약 3주 → 약 2개월. 목표가 '과정이 끝날 때까지, 그 이후에도 기억'이므로 뒤쪽 간격을 점점 넓힌다. 점증형이냐 균등형이냐보다 '복습이 실제로 일어나게' 하는 것이 먼저다."
+  },
+  {
+   "topic": "문법 절차화 단계의 적정 간격 (주의점)",
+   "claim": "문법을 '빠르고 정확하게 말하는' 절차화 단계에서는 7일 같은 긴 간격보다 1~3일의 짧은 간격이 같거나 더 나을 수 있다. 교실 연구에서는 간격 길이보다 '복습을 했느냐'가 더 중요했다.",
+   "evidence": "Suzuki(2017): 60명, 인공언어 형태 규칙의 구두 산출 — 3.3일 간격이 7일 간격보다 정확했고 7·28일 지연검사까지 유지(소~중간 효과), 발화 속도 차이는 없음. Suzuki & DeKeyser(2017): 일본어 형태 연습에서 1일 간격이 7일 간격과 정확도가 같고 속도는 더 빠를 수 있었음. 저자들은 선언적 지식 단계에는 분산이, 후기 기술 단계에는 가까운 반복도 괜찮다고 해석. Kasprowicz 외(2019): 아동, 7일 vs 3.5일 차이 없음. Rogers & Cheung(2020): 초등 교실 어휘, 1일 vs 8일 차이 없음 — 복습만 하면 된다. Rogers, Nakata & Chiu(2025): 온라인 어휘 학습에서 간격 효과는 있으나 1·2·4·7·14일 사이 차이 없음, 참가자 61% 이탈.",
+   "strength": "moderate",
+   "sources": [
+    "The Optimal Distribution of Practice for the Acquisition of L2 Morphology: A Conceptual Replication and Extension (Suzuki, 2017, Language Learning 67) — https://doi.org/10.1111/lang.12236",
+    "Effects of distributed practice on the proceduralization of morphology (Suzuki & DeKeyser, 2017, LTR 21) — https://doi.org/10.1177/1362168815617334",
+    "Does it matter when you review? Input spacing, ecological validity, and the learning of L2 vocabulary (Rogers & Cheung, 2020, SSLA) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/does-it-matter-when-you-review/DFAD98F9D5B1547579EA1CC7D339B85D",
+    "Optimizing distributed practice online (Rogers, Nakata & Chiu, 2025, SSLA) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/optimizing-distributed-practice-online/C833408A4C3BAD939CA39EA734423BB7",
+    "Investigating distribution of practice effects for the learning of foreign language verb morphology in the young learner classroom (Kasprowicz, Marsden & Sephton, 2019, MLJ 103) — https://doi.org/10.1111/modl.12586"
+   ],
+   "implication": "새 소주제는 '1일차 학습 → 2일차 → 3~4일차'처럼 가까운 날짜에 모아서 절차화하고, 그 뒤 누적 복습 간격을 늘린다. 학습자가 며칠 빠지면 일정이 무너지지 않게 밀린 복습을 자동으로 다시 배치한다. 간격 알고리즘을 지나치게 정교하게 만드는 것보다 복습 알림·이어하기처럼 '실제로 복습하게 만드는 장치'에 개발 자원을 먼저 쓴다."
+  },
+  {
+   "topic": "섞어서 연습하기(interleaving)",
+   "claim": "비슷해서 헷갈리는 문법들을 섞어서 연습하면 연습 중 오답은 늘지만 1주 뒤 기억은 더 좋다. 단, 새 문법을 처음 배우는 한 세션 안에서 곧바로 섞는 것은 효과가 없었고, 여러 세션에 걸쳐 섞을 때 효과가 났다.",
+   "evidence": "Nakata & Suzuki(2019): 일본인 115명, 영어 문법 5개 — 섞기가 연습 중 오답이 가장 많았지만 1주 지연검사에서 블록보다 우수, 사전지식이 낮은 학습자에게 더 도움(초록). Pan 외(2019): 스페인어 과거시제 2종 — 단일 세션 섞기는 이점이 없었고(블록이 수치상 더 높음), 주 1회씩 2회 세션에 걸친 섞기는 1주 뒤 상당히 우수. Suzuki & Sunada(2020): 블록 후 섞기(혼합)가 기술 발달에 가장 좋음. Brunmair & Richter(2019): 59개 연구 g=0.42, 범주 사이가 비슷할수록 효과가 크고 단어 학습은 오히려 블록이 유리(g=−0.39).",
+   "strength": "moderate",
+   "sources": [
+    "Mixing Grammar Exercises Facilitates Long-Term Retention: Effects of Blocking, Interleaving, and Increasing Practice (Nakata & Suzuki, 2019, MLJ 103) — https://doi.org/10.1111/modl.12581",
+    "Does interleaved practice enhance foreign language learning? The effects of training schedule on Spanish verb conjugation skills (Pan, Tajran, Lovelett, Osuna & Rickard, 2019, J. Educational Psychology 111) — https://rickardlab.ucsd.edu/pdf/PTLOR-2019.pdf",
+    "Dynamic interplay between practice type and practice schedule in a second language (Suzuki & Sunada, 2020, SSLA 42) — https://eric.ed.gov/?id=EJ1247278",
+    "Similarity matters: A meta-analysis of interleaved learning and its moderators (Brunmair & Richter, 2019, Psychological Bulletin 145) — https://doi.org/10.1037/bul0000209",
+    "Optimizing second language practice in the classroom: Perspectives from cognitive psychology (Suzuki, Nakata & DeKeyser, 2019, MLJ 103) — https://doi.org/10.1111/modl.12582"
+   ],
+   "implication": "소주제 첫 학습(1~2일차)은 그 소주제만 블록으로, 3일차 이후 재학습과 누적 복습은 헷갈리는 짝을 섞어 출제한다: be동사 vs 일반동사(Are you…? / Do you…?), is vs does, 인칭·소유·목적격(he/his/him), 현재 vs 현재진행, 과거 vs 현재완료, 관계대명사 who/which/that/what 등. 섞기에서 오답이 늘어나는 것은 정상이라고 학습자에게 미리 알린다."
+  },
+  {
+   "topic": "완전학습(mastery learning)과 진도 관문",
+   "claim": "다음 단원으로 넘어가기 전에 기준 도달을 요구하는 완전학습은 성취를 높이고 특히 하위권에 도움이 되지만, 시간이 더 들고 자기속도 방식에서는 완료율이 떨어질 수 있다. 기준 없이 진도만 넘기면 성취가 낮아진다.",
+   "evidence": "Kulik, Kulik & Bangert-Drowns(1990): 108개 통제 평가, 대학·고교·초등 고학년의 시험 성적 향상, 약한 학생에게 효과가 더 크고 과제 시간은 늘어남, 자기속도형은 대학에서 완료율을 낮추는 경우가 많음(초록). Israni, Sales & Pane(2018): 인지튜터 대수 효과성 시험 로그 — 숙달 전에 다음 단원으로 옮긴 경우 사후 점수가 낮아지는 것으로 보임. VanLehn(2011): 단계마다 피드백을 주는 지능형 튜터 d=0.76, 사람 튜터 d=0.79로 근접.",
+   "strength": "moderate",
+   "sources": [
+    "Effectiveness of Mastery Learning Programs: A Meta-Analysis (Kulik, Kulik & Bangert-Drowns, 1990, RER 60) — https://doi.org/10.3102/00346543060002265",
+    "Mastery Learning in Practice: A (Mostly) Descriptive Analysis of Log Data from the Cognitive Tutor Algebra I Effectiveness Trial (Israni, Sales & Pane, 2018) — https://arxiv.org/abs/1802.08616",
+    "The Relative Effectiveness of Human Tutoring, Intelligent Tutoring Systems, and Other Tutoring Systems (VanLehn, 2011, Educational Psychologist 46) — https://doi.org/10.1080/00461520.2011.611369"
+   ],
+   "implication": "교재의 '소주제 하나하나 완전학습' 원칙을 웹의 관문으로 만들되, 딱딱한 잠금보다 부드러운 관문이 안전하다: 다음 소주제 미리보기는 허용하되 '통과' 표시와 다음 대주제 시작은 기준을 채운 뒤에만. 기준 미달이 쌓이면 보충 대기열을 자동으로 만든다. 자기속도형 이탈을 막기 위해 주간 목표·알림·(가능하면) 보호자나 교사용 주간 리포트를 둔다. 교사를 대신할 핵심은 단계별 힌트와 오류별 피드백이다."
+  },
+  {
+   "topic": "순간영작(瞬間英作文)과 모국어→L2 번역 연습의 근거",
+   "claim": "'한국어 보고 즉시 영어로 말하기' 방법 자체를 검증한 통제 실험은 찾지 못했다(교재·실천 기반). 다만 모국어 단서로 L2 문장을 인출·산출하는 번역 연습은 문법 정확도 향상에서 다른 형태 연습과 비슷하게 효과적이었고, 대조·번역은 어휘·연어 학습에서 특히 효과적이었다.",
+   "evidence": "森沢洋介의 瞬間英作文 시리즈는 누적 151만 부(출판사 인터뷰)이지만 효과 근거는 저자 경험담. 찾은 학술 추적 연구는 Nagaoka & Tsuchiya(2025) 중간보고 하나로, 한 학기 자료로 이상적 L2 자아와 말하기 점수의 상관을 보고(통제군 없음). Källkvist(2004): 스웨덴 고급 학습자 13주, 번역 연습과 빈칸·변형 연습의 문법 정확도 향상 차이가 작음. Laufer & Girsai(2008): 고교생, 대조분석+번역 집단이 의미중심·비대조 형태중심 집단보다 단어·연어 모든 검사에서 우수. Serfaty & Serrano(2024)의 번역 플래시카드 재학습도 산출 문법 유지에 효과.",
+   "strength": "weak",
+   "sources": [
+    "A Two-Year Longitudinal Study on the Effects of Instant English Composition Training on Japanese University Students' Ideal L2 Self and Speaking Proficiency (Interim Report) (Nagaoka & Tsuchiya, 2025, LET Kanto Journal 10) — https://www.jstage.jst.go.jp/article/letkj/10/0/10_91/_article/-char/en",
+    "瞬間英作文シリーズ累計151万部突破！森沢洋介先生インタビュー (ベレ出版) — https://www.beret.co.jp/column/8534",
+    "The effect of translation exercises versus gap-exercises on the learning of difficult L2 structures: preliminary results of an empirical study (Källkvist, 2004) — https://benjamins.com/catalog/btl.59.12kal",
+    "Form-focused Instruction in Second Language Vocabulary Learning: A Case for Contrastive Analysis and Translation (Laufer & Girsai, 2008, Applied Linguistics 29) — https://academic.oup.com/applij/article-abstract/29/4/694/183330",
+    "Practice Makes Perfect, but How Much Is Necessary? The Role of Relearning in Second Language Grammar Acquisition (Serfaty & Serrano, 2024, Language Learning) — https://doi.org/10.1111/lang.12585"
+   ],
+   "implication": "Application Sentences의 즉시 한→영 말하기는 유지하되 근거가 있는 형태로 만든다: (1) 먼저 인출을 시도하게 하고, (2) 정답을 여러 버전 허용하고, (3) 한국어 제시문이 목표 영어형을 분명히 가리키도록 맥락 표시를 붙이고(예: '(지금)', '(늘)'), (4) 한국어와 영어의 구조 차이(주어 생략, 어순, be동사 일치)를 짧게 대조하고, (5) 정확도가 잡힌 뒤 시간 제한을 점차 줄여 자동화한다. 홍보 문구는 '연구로 입증된 방법' 대신 '인출·반복 연습 원리에 기반'으로 쓴다."
+  },
+  {
+   "topic": "문장·텍스트 암기(아시아 EFL)와 정형 표현",
+   "claim": "이해를 바탕으로 한 문장·텍스트 암기는 정형 표현(덩어리)을 저장해 산출을 돕고, 초급자가 외운 덩어리는 시간이 지나면서 분해되어 새 문장을 만드는 재료가 된다. 다만 근거는 대부분 사례·상관·소규모 연구다.",
+   "evidence": "Ding(2007): 중국 전국 말하기·토론 대회 수상자 3명 면담 — 텍스트 암기와 모방을 가장 효과적인 방법으로 꼽았음. Wang(2023): 영어 전공 33명, 8주간 모범 에세이 7편 암기 — 쓰기 점수 10.64→12.21, 암기 성과와 사후 쓰기 r=0.63(통제군 없음). 성공 학습자 다수가 '이해한 뒤 암기'. Myles, Hooper & Mitchell(1998): 초보 아동 16명 2년 추적 — 외운 덩어리를 점차 풀어 그 부분을 새 발화에 생산적으로 사용. Boers 외(2006): 정형 표현에 주목시키는 22시간 지도 후 실험군이 구술 능숙도에서 더 높게 평가되었고, 정형 표현 사용 수가 평가와 잘 상관.",
+   "strength": "weak",
+   "sources": [
+    "Text memorization and imitation: The practices of successful Chinese learners of English (Ding, 2007, System 35) — https://doi.org/10.1016/j.system.2006.12.005",
+    "Text memorization: An effective strategy to improve Chinese EFL learners' argumentative writing proficiency (Wang, 2023, Frontiers in Psychology) — https://doi.org/10.3389/fpsyg.2023.1126194",
+    "Memorization strategy and foreign language learning: a narrative literature review (Wang, 2023, Frontiers in Psychology) — https://pmc.ncbi.nlm.nih.gov/articles/PMC10520696/",
+    "Rote or Rule? Exploring the Role of Formulaic Language in Classroom Foreign Language Learning (Myles, Hooper & Mitchell, 1998, Language Learning 48) — https://eric.ed.gov/?id=EJ571963",
+    "Formulaic sequences and perceived oral proficiency: putting a Lexical Approach to the test (Boers et al., 2006, LTR 10) — https://doi.org/10.1191/1362168806lr195oa"
+   ],
+   "implication": "STUDENT 과정에서 외운 560여 문장을 각 소주제의 '앵커'(Pass-Off Sentences)로 쓰는 교재 설계는 이 흐름과 맞다. 웹에서는 (1) 앵커 문장을 먼저 떠올리게 하고, (2) 그 문장에서 바뀌는 칸(주어·동사형)을 표시해 '덩어리 → 틀 → 규칙'으로 분해하게 하고, (3) 칸을 바꿔 새 문장을 만들게 해 생성 능력으로 잇는다. STUDENT 과정을 거치지 않은 학습자에게는 앵커 문장을 먼저 익히는 짧은 선행 모듈을 준다."
+  },
+  {
+   "topic": "자기 관련성(self-reference)",
+   "claim": "자기 자신과 관련지어 처리한 정보는 더 잘 기억된다. 자기소개 문장을 문법 예문으로 쓰는 것은 기억에 유리한 선택이다.",
+   "evidence": "Symons & Johnson(1997) 메타분석: 자기참조 부호화가 의미 부호화·타인참조 부호화보다 기억이 좋음. Pruss, Karni & Prior(2025): 히브리어 화자의 영어 단어 학습에서 자기와 관련된 문장 만들기가 번역 산출보다 즉시 d=0.71, 1주 뒤 d=0.52만큼 우수.",
+   "strength": "moderate",
+   "sources": [
+    "The self-reference effect in memory: A meta-analysis (Symons & Johnson, 1997, Psychological Bulletin 121) — https://pubmed.ncbi.nlm.nih.gov/9136641/",
+    "Self-reference promotes vocabulary learning in a foreign language (Pruss, Karni & Prior, 2025, Psychonomic Bulletin & Review) — https://pmc.ncbi.nlm.nih.gov/articles/PMC12426137/"
+   ],
+   "implication": "각 소주제 끝에 '내 이야기로 바꿔 말하기' 1~2문장을 넣는다(예: I am eleven years old → 내 나이, She has two brothers → 내 가족). 자유 문장은 채점이 어려우므로 틀을 고정하고 칸만 바꾸게 하거나, 채점 없이 녹음·저장만 해서 성취감용으로 쓴다."
+  },
+  {
+   "topic": "오류 교정 피드백의 효과와 유형 (메타분석)",
+   "claim": "교정 피드백은 중간 크기의 효과가 있고 오래 유지된다. 정답을 바로 알려 주는 방식(리캐스트)보다 학습자가 스스로 고치도록 유도하는 '프롬프트'가 더 효과적이고, 어린 학습자가 더 큰 도움을 받는다.",
+   "evidence": "Li(2010): 33개 연구, 전체 효과 중간 크기이며 시간이 지나도 유지. 암시적 피드백 효과가 더 잘 유지되었고, 실험실 > 교실, 외국어 환경 > 제2언어 환경. Lyster & Saito(2010): 교실 연구 15개·827명, 효과가 유의하고 지속적, 프롬프트 > 리캐스트, 자유 산출 측정에서 가장 뚜렷, 나이가 어릴수록 효과가 큼(초록).",
+   "strength": "strong",
+   "sources": [
+    "The Effectiveness of Corrective Feedback in SLA: A Meta-Analysis (Li, 2010, Language Learning 60) — https://doi.org/10.1111/j.1467-9922.2010.00561.x",
+    "Oral Feedback in Classroom SLA: A Meta-Analysis (Lyster & Saito, 2010, SSLA 32) — https://eric.ed.gov/?id=EJ892626"
+   ],
+   "implication": "웹 연습에서 오답이 나오면 곧바로 정답을 보여 주지 말고 먼저 스스로 고칠 기회를 준다(프롬프트형). 초등 고학년은 피드백 효과가 큰 집단이므로 피드백 문구를 아이 눈높이(짧은 한국어 + 예시 한 줄)로 쓴다."
+  },
+  {
+   "topic": "컴퓨터 기반 피드백과 힌트 사다리",
+   "claim": "오류 위치와 규칙 단서를 알려 주는 컴퓨터 피드백은 단순 정답 대조보다 효과적이다. 암시에서 명시로 도움을 단계적으로 올리는 '점진적 피드백'은 학습자가 스스로 고치게 돕는다.",
+   "evidence": "Nagata(1993): 일본어 조사 학습에서 지능형 컴퓨터 피드백이 답안지식 피드백보다 효과적. Heift(2004; 2010): 파서 기반 CALL에서 메타언어 설명 vs 단서 — 구체성에 따라 학습자 수정(uptake)이 달라졌고 상급 과정에서 차이가 뚜렷. Mohamed(2020) CALL 피드백 메타분석: 21개 연구 g=0.56, 문법 영역 g=0.70. Ai(2017): 암시적·일반적 → 구체적·명시적 점진 피드백으로 학습자가 스스로 오류를 찾아 고쳤지만 일부는 사람의 도움이 필요. Aljaafreh & Lantolf(1994): 암시→명시 13단계 조절 척도를 제시.",
+   "strength": "moderate",
+   "sources": [
+    "Intelligent Computer Feedback for Second Language Instruction (Nagata, 1993, MLJ 77) — https://www.semanticscholar.org/paper/Intelligent-Computer-Feedback-for-Second-Language-Nagata/89772559dd613f70ec1a5807e8a8d2087657bc29",
+    "Corrective feedback and learner uptake in CALL (Heift, 2004, ReCALL 16) — https://dl.acm.org/doi/abs/10.1017/S0958344004001120",
+    "Prompting in CALL: A Longitudinal Study of Learner Uptake (Heift, 2010, MLJ) — https://doi.org/10.1111/j.1540-4781.2010.01017.x",
+    "Feedback in Computer-Assisted Language Learning: A Meta-Analysis (Mohamed, 2020, TESL-EJ 24) — https://tesl-ej.org/wordpress/issues/volume24/ej94/ej94a4/",
+    "Providing graduated corrective feedback in an intelligent computer-assisted language learning environment (Ai, 2017, ReCALL) — https://www.cambridge.org/core/journals/recall/article/abs/providing-graduated-corrective-feedback-in-an-intelligent-computerassisted-language-learning-environment/BADDC5BCB3E8C333A601440155F5FE1B",
+    "Negative Feedback as Regulation and Second Language Learning in the Zone of Proximal Development (Aljaafreh & Lantolf, 1994, MLJ 78) — https://doi.org/10.1111/j.1540-4781.1994.tb02064.x"
+   ],
+   "implication": "Application Sentences 오답 시 힌트 사다리: ① '다시 해 볼까요?'(틀린 단어 위치만 표시) → ② 메타언어 단서('주어가 3인칭 단수예요') → ③ 부분 정답(첫 단어나 빈칸) → ④ 정답 + 한 줄 규칙 + 음성. 사용한 힌트 단계는 기록해 그 문장을 '미숙달'로 남기고 같은 세션 뒤쪽과 다음 날 다시 낸다. 소주제마다 흔한 오류(3인칭 -s 누락, be동사 불일치, 관사 누락 등)에 맞춘 오류별 문구를 미리 써 둔다."
+  },
+  {
+   "topic": "피드백 시점: 즉시 vs 지연",
+   "claim": "구두 산출·문법 연습에서는 즉시 피드백이 지연 피드백과 같거나 더 낫다는 결과가 우세하다. 차이가 없다는 연구도 있어, 연습에는 즉시, 여러 문장 작문에는 끝나고 모아서 주는 혼합이 합리적이다.",
+   "evidence": "Li, Zhu & Ellis(2016): 중국 중학생 120명, 새 구조(과거 수동태)에서 즉시 피드백 쪽 이점. Arroyo & Yilmaz(2018): 45명, 컴퓨터 채팅 과제 — 구두 산출 시험에서 즉시 > 지연·무피드백(두 사후검사 모두), 문법성 판단에서는 두 피드백이 같음. Li(2018)는 두 연구 모두 즉시 피드백 이점을 보였다고 정리하고 재현을 요청. Kamelabad 외(2026): LLM 챗봇 54명, 즉시 vs 지연 점수 차이 없음(p=.092), 즉시 조건 학습자가 도구를 더 효과적이라고 평가.",
+   "strength": "moderate",
+   "sources": [
+    "The Effects of the Timing of Corrective Feedback on the Acquisition of a New Linguistic Structure (Li, Zhu & Ellis, 2016, MLJ 100) — https://doi.org/10.1111/modl.12315",
+    "An Open for Replication Study: The Role of Feedback Timing in Synchronous Computer-Mediated Communication (Arroyo & Yilmaz, 2018, Language Learning 68) — https://doi.org/10.1111/lang.12300",
+    "What is the ideal time to provide corrective feedback? Replication of Li, Zhu & Ellis (2016) and Arroyo & Yilmaz (2018) (Li, 2018, Language Teaching) — https://www.cambridge.org/core/journals/language-teaching/article/abs/what-is-the-ideal-time-to-provide-corrective-feedback-replication-of-li-zhu-ellis-2016-and-arroyo-yilmaz-2018/61CDB7D7788B67238254362D7C69F798",
+    "Personalized language learning with an LLM chatbot: effects of immediate vs. delayed corrective feedback (Kamelabad et al., 2026, Frontiers in Education) — https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1703664/full"
+   ],
+   "implication": "Application Sentences와 요소 찾기 연습은 문항마다 즉시 피드백을 준다. Review의 한→영 작문(여러 문장 쓰기)은 다 쓴 뒤 문장별 결과를 한꺼번에 보여 주고, 틀린 문장만 곧바로 재도전하게 한 다음 재학습 대기열로 보낸다."
+  },
+  {
+   "topic": "힌트 남용과 '시스템 속이기'",
+   "claim": "힌트를 연달아 눌러 정답을 얻는 식의 '시스템 속이기'는 튜터 학습에서 학습 저하와 가장 강하게 연결된 행동이다. 도움 요청 습관을 교정해도 학습 성과가 저절로 오르지는 않는다.",
+   "evidence": "Baker 외(2004): 인지튜터 교실에서 시스템 속이기 빈도가 사후 점수와 사전지식·학업성취만큼 강하게(부적으로) 관련. Aleven 외(2016): 도움 요청 행동에 피드백을 주는 튜터는 도움 사용을 신중하게 만들었지만 학습 성과를 높이지는 못함.",
+   "strength": "moderate",
+   "sources": [
+    "Off-Task Behavior in the Cognitive Tutor Classroom: When Students 'Game the System' (Baker, Corbett, Koedinger & Wagner, 2004, CHI) — https://dl.acm.org/doi/10.1145/985692.985741",
+    "Help Helps, but only so Much: Research on Help Seeking with Intelligent Tutoring Systems (Aleven, Roll, McLaren & Koedinger, 2016, IJAIED) — https://link.springer.com/article/10.1007/s40593-015-0089-1"
+   ],
+   "implication": "(1) 첫 시도 전에는 힌트·정답 버튼을 끄고, (2) 힌트 단계 사이에 짧은 대기를 두고, (3) 힌트나 정답을 본 문장은 '통과' 집계에서 빼고 다시 내고, (4) 지나치게 빠른 연속 클릭이나 빈 답 제출이 반복되면 부드럽게 안내한다. 점수·배지는 '힌트 없이 맞힌 문장' 기준으로만 준다."
+  },
+  {
+   "topic": "입력 강조(굵게·색)의 효과",
+   "claim": "목표 형태를 굵게·색으로 강조하는 것만으로는 문법 학습 효과가 작다. 한국 학습자 연구에서는 형태 학습에는 도움이 됐지만 내용 이해는 떨어졌다.",
+   "evidence": "Lee & Huang(2008): 16개 연구(20개 표본), 시각적 입력 강조의 문법 학습 효과 d=0.22(작음). Lee(2007): 한국 EFL 학습자 259명 — 텍스트 강조가 수동태 형태 학습은 돕고 독해 이해에는 불리. 주제 친숙도는 이해를 돕지만 형태 학습에는 효과 없음.",
+   "strength": "moderate",
+   "sources": [
+    "Visual Input Enhancement and Grammar Learning: A Meta-Analytic Review (Lee & Huang, 2008, SSLA 30) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/abs/visual-input-enhancement-and-grammar-learning-a-metaanalytic-review/B9D0C50B09928C20C94548B37B29A042",
+    "Effects of Textual Enhancement and Topic Familiarity on Korean EFL Students' Reading Comprehension and Learning of Passive Form (Lee, 2007, Language Learning 57) — https://doi.org/10.1111/j.1467-9922.2007.00400.x"
+   ],
+   "implication": "색·굵기 강조는 설명 화면과 앵커 문장에서만, 소주제마다 일관된 색 규칙(예: 주어와 동사의 일치 부분)으로 최소한만 쓴다. 연습 단계로 갈수록 강조를 걷어낸다. 강조 자체를 핵심 교수법으로 기대하지 말고 반드시 명시적 설명·인출 연습과 함께 쓴다."
+  },
+  {
+   "topic": "입력 기반 연습(처리 교수·형태 찾기) vs 산출 기반 연습",
+   "claim": "이해(입력) 연습은 이해 능력에, 산출 연습은 산출 능력에 강하다. 같은 명시적 설명이 주어지면 산출 능력에는 산출 연습이 더 낫다. 어린 학습자에게는 짧은 명시적 설명 뒤 '형태 찾기' 연습만으로도 이해·산출 모두 지속적으로 향상되었다.",
+   "evidence": "Shintani, Li & Ellis(2013): 35개 비교 — 두 방식 모두 수용·산출 지식에 큰 효과, 수용 지식은 1주 안에 측정하면 이해 기반이 우세하나 장기엔 차이가 줄어듦. Shintani(2015): 42개 실험 — 처리 교수는 수용 지식에 우세, 산출 지식은 산출 기반과 동등하고, 같은 명시적 정보를 받았을 때는 산출 기반이 산출에서 우세. Kasprowicz & Marsden(2018): 9–11세 138명, 명시적 정보 + 형태 찾기 연습이 형태-의미 연결 연습만큼 효과적이었고 구두·서면, 이해·산출 6개 검사에서 지속적으로 향상.",
+   "strength": "moderate",
+   "sources": [
+    "Comprehension-Based Versus Production-Based Grammar Instruction: A Meta-Analysis of Comparative Studies (Shintani, Li & Ellis, 2013, Language Learning 63) — https://doi.org/10.1111/lang.12001",
+    "The Effectiveness of Processing Instruction and Production-based Instruction on L2 Grammar Acquisition: A Meta-Analysis (Shintani, 2015, Applied Linguistics 36) — https://academic.oup.com/applij/article-abstract/36/3/306/2422461",
+    "Towards Ecological Validity in Research into Input-based Practice: Form Spotting Can Be as Beneficial as Form-meaning Practice (Kasprowicz & Marsden, 2018, Applied Linguistics 39) — https://doi.org/10.1093/applin/amw051"
+   ],
+   "implication": "교재 Review의 '대명사에 밑줄 긋고 인칭 쓰기, be동사 동그라미, 동사 원형 쓰기'는 근거가 있는 형태 찾기 연습이다. 웹에서는 설명 직후 4~6문항의 빠른 탭·선택형(문장에서 대명사를 탭 → 인칭 고르기)으로 넣어 주의를 형태에 모은 다음, 곧바로 한→영 산출 연습으로 넘어간다. 말하기가 목표이므로 연습 시간의 대부분은 산출에 쓴다."
+  },
+  {
+   "topic": "발견 유도(의식 고양·유도 귀납) vs 규칙 먼저",
+   "claim": "규칙을 주기 전에 예문을 보고 규칙을 짧게 추측하게 하는 '유도 귀납'이 지연 효과가 더 좋았다는 연구가 있지만, 연역과 귀납의 차이는 대체로 작고 어떤 방식이든 지도하는 것이 지도하지 않는 것보다 낫다.",
+   "evidence": "Cerezo, Caras & Leow(2016): 컴퓨터 게임 기반 유도 귀납이 교실 연역 지도보다 지연 산출 검사에서 유지가 좋았고 구조 인식 수준도 높았음. 네덜란드 학생 981명 교실 연구(System, 2014): 귀납·연역의 차이는 문법성 판단에서만 나타남. Sinha & Kapur(2021): 53개 연구, '문제 먼저 → 설명'이 g=0.36(주로 개념 이해).",
+   "strength": "weak",
+   "sources": [
+    "The effectiveness of guided induction versus deductive instruction on the development of complex Spanish gustar structures (Cerezo, Caras & Leow, 2016, SSLA) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/abs/effectiveness-of-guided-induction-versus-deductive-instruction-on-the-development-of-complex-spanish-gustar-structures/0A256FD27F2DF9B1C21C577FA0A24725",
+    "The effectiveness of deductive, inductive, implicit and incidental grammatical instruction in second language classrooms (System, 2014) — https://www.sciencedirect.com/science/article/abs/pii/S0346251X14000980",
+    "When Problem Solving Followed by Instruction Works: Evidence for Productive Failure (Sinha & Kapur, 2021, RER 91) — https://doi.org/10.3102/00346543211019105"
+   ],
+   "implication": "설명 직전에 20~40초짜리 '발견 질문'을 넣는다: 이미 외운 앵커 문장 3개(I am…, You are…, He is…)를 나란히 보여 주고 'am/are/is는 무엇에 따라 바뀔까요?'를 선택형으로 물은 뒤 바로 명시적 설명으로 확인한다. 초등 학습자에게 긴 발견 활동은 피한다."
+  },
+  {
+   "topic": "한국어 설명과 한·영 대조",
+   "claim": "모국어로 된 명시적 설명, 특히 모국어와 L2의 차이를 짚는 설명은 초·중급 학습자에게 이득이다. 모국어 연습만으로는 부족하고 명시적 설명이 함께 있어야 한다.",
+   "evidence": "McManus & Marsden(SSLA, 부분 재현연구): 프랑스어 반과거 학습에서 모국어 연습만 한 집단은 '모국어 명시적 설명 + 모국어 연습' 집단과 달리 정확도·처리 속도·6주 지연 효과가 거의 없었음. Lee & Levine(2018): 한국 대학생 — 교사가 잠깐 한국어로 바꿔 설명하면 중급 학습자의 어휘 학습과 듣기 이해가 상급 수준까지 올라감(어휘 연구). Laufer & Girsai(2008): 대조분석 + 번역 집단이 가장 우수.",
+   "strength": "weak",
+   "sources": [
+    "Online and offline effects of L1 practice in L2 grammar learning (McManus & Marsden, SSLA) — https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/online-and-offline-effects-of-l1-practice-in-l2-grammar-learning/CA0DB509C645F4BF815CC6A69F6251D0",
+    "The effects of instructor language choice on second language vocabulary learning and listening comprehension (Lee & Levine, 2018, LTR) — https://doi.org/10.1177/1362168818770910",
+    "Form-focused Instruction in Second Language Vocabulary Learning: A Case for Contrastive Analysis and Translation (Laufer & Girsai, 2008, Applied Linguistics 29) — https://academic.oup.com/applij/article-abstract/29/4/694/183330"
+   ],
+   "implication": "소주제 설명은 한국어로 쓰고 '한국어에는 없는 것'을 분명히 적는다: be동사의 인칭 일치, 3인칭 단수 -s, 관사, 복수 표시, 주어를 생략할 수 없음, SVO 어순 등. Application Sentences의 한국어 제시문과 영어 정답을 나란히 보여 줄 때 구조 대응(주어 위치 등)을 한 줄로 짚어 준다."
+  },
+  {
+   "topic": "예시 학습(worked examples)과 인지부하",
+   "claim": "초보자는 문제를 바로 풀기보다 풀이 예시를 먼저 보는 것이 효과적이고, 숙련될수록 예시를 줄이고 스스로 풀게 해야 한다(전문성 역전). 한 문장에 새 요소가 많을수록 부하가 커진다.",
+   "evidence": "Sweller, Roussel & Tricot(2022): 언어 학습에 적용되는 인지부하 원리(예시 효과, 주의 분산, 중복 효과, 전문성 역전, 요소 상호작용)를 정리. Kalyuga 외(2003): 초보자에게 유효한 안내가 숙련자에게는 불필요하거나 해로울 수 있음. Renkl & Atkinson(2003): 예시 → 단계 지우기(fading) → 독립 풀이로 전환. Barbieri 외(2023): 수학 55개 연구 g=0.48(언어 영역의 직접 근거는 적음). 교재 관찰: 1권 Topic 1(인칭)의 Application Sentences에 아직 배우지 않은 과거시제·although·so·too…to가 들어 있음(예: He bought the book although it was too expensive.).",
+   "strength": "moderate",
+   "sources": [
+    "Cognitive Load Theory and Instructional Design for Language Learning (Sweller, Roussel & Tricot, 2022, Cambridge Handbook of Working Memory and Language) — https://www.cambridge.org/core/books/abs/cambridge-handbook-of-working-memory-and-language/cognitive-load-theory-and-instructional-design-for-language-learning/C1A61C6FC46C173594554509664B2757",
+    "The Expertise Reversal Effect (Kalyuga, Ayres, Chandler & Sweller, 2003, Educational Psychologist 38) — https://doi.org/10.1207/S15326985EP3801_4",
+    "Structuring the Transition From Example Study to Problem Solving in Cognitive Skill Acquisition: A Cognitive Load Perspective (Renkl & Atkinson, 2003, Educational Psychologist 38) — https://doi.org/10.1207/S15326985EP3801_3",
+    "A Meta-analysis of the Worked Examples Effect on Mathematics Performance (Barbieri et al., 2023, EPR 35) — https://doi.org/10.1007/s10648-023-09745-1",
+    "Pass-Off English Grammar 1 원본 PDF, Topic 1 Application Sentences (5–6쪽 직접 확인)"
+   ],
+   "implication": "(1) 한→영 변환 '풀이 예시' 2개(주어 찾기 → 인칭·수 판단 → 동사형 고르기 → 어순 배열)를 보여 준 뒤, 단계 일부를 비운 예시, 그다음 전체 산출 순으로 간다. (2) 사전 퀴즈에서 이미 맞히는 학습자는 설명·예시를 건너뛰게 한다. (3) Application Sentences마다 포함된 문법 요소를 태그로 달아 '이미 배운 요소 + 목표 요소'로만 된 문장을 먼저, 나머지는 '도전 문장'으로 덩어리 뜻풀이를 곁들여 뒤에 두는 방안을 검토한다(문장 순서·교재 구조 변경은 사장님 결정 사항). (4) 같은 내용을 글과 음성으로 동시에 길게 주는 중복은 피하고 설명 음성은 짧게 한다."
+  },
+  {
+   "topic": "자기설명 프롬프트 (영어 문법에서는 제한적)",
+   "claim": "일반 교과에서는 자기설명 유도가 중간 효과를 보이지만, 영어 문법 튜터 연구에서는 자기설명을 추가한 쪽이 연습만 한 쪽보다 효율이 낮았다. 문법 절차 능력에는 연습량이 더 중요하다.",
+   "evidence": "Bisra 외(2018): 64개 보고·69개 효과크기 g=0.55. Wylie, Koedinger & Mitamura(2009): 영어 문법(관사) 튜터, 4개 교실 연구·390명 — 연습만 한 조건이 일관되게 더 효율적. 후속 연구에서도 '설명 고르기'는 선언적 지식을, 연습은 절차 지식을 주로 높임.",
+   "strength": "moderate",
+   "sources": [
+    "Inducing Self-Explanation: a Meta-Analysis (Bisra, Liu, Nesbit, Salimi & Winne, 2018, EPR) — https://link.springer.com/article/10.1007/s10648-018-9434-x",
+    "Is self-explanation always better? The effects of adding self-explanation prompts to an English grammar tutor (Wylie, Koedinger & Mitamura, 2009, CogSci Proceedings) — https://philpapers.org/rec/WYLISA"
+   ],
+   "implication": "학습자에게 '왜 그런지 글로 설명하기'를 자주 시키지 않는다. 5문항 중 1문항 정도만 '이 문장에서 is를 쓴 이유는?' 같은 규칙 고르기(선택형)를 섞어 규칙 인출을 유지하고, 나머지 시간은 산출 연습에 쓴다."
+  },
+  {
+   "topic": "개념도·선행조직자와 연결고리 구성도(대주제 20 × 연결고리 70)",
+   "claim": "전체 지도를 미리 보여 주는 선행조직자의 효과는 작다. 개념도는 보는 것보다 직접 만드는 것이 효과적이고, 가장 강력한 것은 자료를 보지 않고 기억에서 개념도를 다시 그리는 '인출 기반 개념도'다.",
+   "evidence": "Luiten, Ames & Ackerson(1980): 135개 연구, 선행조직자 효과 즉시 약 0.21, 유지 약 0.26. Nesbit & Adesope(2006): 55개 연구·5,818명(초4~대학), 개념도 사용이 기억 유지 향상과 관련. Schroeder 외(2018): 142개 효과크기 g=0.58, 만들기 g=0.72 > 보기 g=0.43. Karpicke & Blunt(2011): 텍스트를 보며 개념도를 만드는 것보다 인출 연습이 1주 뒤 우수. Blunt & Karpicke(2014): 기억에서 개념도 그리기는 기억에서 글로 쓰기만큼 효과적이고, 둘 다 자료를 보며 하는 것보다 1주 뒤 우수(축어 문항 .48 vs .38).",
+   "strength": "strong",
+   "sources": [
+    "A Meta-analysis of the Effects of Advance Organizers on Learning and Retention (Luiten, Ames & Ackerson, 1980, AERJ 17) — https://doi.org/10.3102/00028312017002211",
+    "Learning With Concept and Knowledge Maps: A Meta-Analysis (Nesbit & Adesope, 2006, RER 76) — https://doi.org/10.3102/00346543076003413",
+    "Studying and Constructing Concept Maps: a Meta-Analysis (Schroeder, Nesbit, Anguiano & Adesope, 2018, EPR 30) — https://doi.org/10.1007/s10648-017-9403-9",
+    "Retrieval practice produces more learning than elaborative studying with concept mapping (Karpicke & Blunt, 2011, Science 331) — https://doi.org/10.1126/science.1199327",
+    "Learning With Retrieval-Based Concept Mapping (Blunt & Karpicke, 2014, Journal of Educational Psychology 106) — https://doi.org/10.1037/a0035934"
+   ],
+   "implication": "연결고리 구성도는 (1) 코스 시작과 대주제 시작 때 지도로 짧게 보여 주고 현재 위치를 표시한다. (2) 대주제가 끝날 때마다, 그리고 주 1회, 빈 화면에서 기억만으로 소주제 노드를 배치·연결하게 한다(드래그·선택형, 초등은 일부 노드를 미리 제공). (3) 노드를 누르면 대표 Pass-Off Sentence를 말해 보게 해 '구조 + 예문'을 함께 인출한다. (4) 제출 후 표준 지도와 비교해 빠진 노드를 강조하고 해당 소주제를 재학습 대기열로 보낸다. 교재 지시('구성도를 그려 가며 다 적을 수 있어야 한다')를 그대로 인출 과제로 옮기는 셈이다."
+  },
+  {
+   "topic": "학습자의 착각(메타인지)과 자기 채점",
+   "claim": "학습자는 다시 보기와 몰아서 하기가 더 잘 배운다고 느끼고, 자기 답을 채점할 때 틀린 답도 맞았다고 보는 과신 경향이 있다. 정답의 핵심 요소를 쪼개서 보여 주면 과신이 줄어든다.",
+   "evidence": "Kornell & Bjork(2008): 섞기가 실제로 더 효과적이었는데도 참가자 87%가 몰아서 하기가 더 잘 배웠다고 응답. Blunt & Karpicke(2014): 재학습 조건의 '학습됐다는 느낌'이 인출 조건보다 높았지만 실제 성적은 반대. Dunlosky 외(2011): 대학생이 틀린 답도 맞았다고 과대평가했고, 핵심 단위(idea-unit) 기준을 보여 주면 과신이 줄어듦.",
+   "strength": "strong",
+   "sources": [
+    "Learning Concepts and Categories: Is Spacing the 'Enemy of Induction'? (Kornell & Bjork, 2008, Psychological Science) — https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2008.02127.x",
+    "Learning With Retrieval-Based Concept Mapping (Blunt & Karpicke, 2014, Journal of Educational Psychology 106) — https://doi.org/10.1037/a0035934",
+    "Improving college students' evaluation of text learning using idea-unit standards (Dunlosky, Hartwig, Rawson & Lipko, 2011, QJEP 64) — https://doi.org/10.1080/17470218.2010.502239"
+   ],
+   "implication": "(1) '알아요' 버튼으로 통과시키지 않고 시스템 판정(인출 정답)으로만 통과 처리한다. (2) 말하기처럼 자동 채점이 어려운 항목에서 자기 채점을 쓸 때는 정답을 목표 요소별 체크리스트로 쪼개 보여 준다(예: □ 주어 He □ is □ 어순). (3) 섞기·간격 복습이 '어렵게 느껴지는 게 정상이고 더 효과적'이라는 안내를 학습 시작 때 짧게 한다."
+  },
+  {
+   "topic": "ASR(음성인식) 말하기 연습의 근거와 한계",
+   "claim": "ASR 기반 연습은 발음·말하기에 중간 크기의 효과가 있고, 목표가 분명하고 발화가 어느 정도 제한된 시스템일수록 효과가 크다. 그러나 최신 ASR은 학습자의 문법 오류(동사·명사 형태)를 고쳐서 받아쓰는 경향이 있어 문법 채점 도구로 그대로 쓰면 오류를 놓친다.",
+   "evidence": "Ngo, Chen & Lai(2024): 15개 연구·38개 효과크기 g=0.69, 명시적 교정 피드백이 있는 ASR은 크게, 받아쓰기형은 중간 정도 효과. Bibauw 외(2022): 대화형 CALL 17개 연구 d≈0.59. Hou & Min(2025): 16개 연구 g=0.61, 목표지향형·암묵적 제약이 있는 시스템·멀티모달 인터페이스가 더 효과적. Koizumi(2024): 일본 학습자 즉흥 발화 214개 — Whisper 단어 오류율 18.8~28.7%, 세 ASR 모두 틀린 동사·명사 형태를 고쳐서 받아쓰는 경향(Whisper가 가장 심함).",
+   "strength": "moderate",
+   "sources": [
+    "The effectiveness of automatic speech recognition in ESL/EFL pronunciation: A meta-analysis (Ngo, Chen & Lai, 2024, ReCALL 36) — https://doi.org/10.1017/S0958344023000113",
+    "Dialogue systems for language learning: A meta-analysis (Bibauw, Van den Noortgate, François & Desmet, 2022, LLT 26) — https://www.lltjournal.org/item/10125-73488/",
+    "Dialogue-based computer-assisted language learning systems for second language speaking development: A three-level meta-analysis (Hou & Min, 2025, ReCALL) — https://www.cambridge.org/core/journals/recall/article/dialoguebased-computerassisted-language-learning-systems-for-second-language-speaking-development-a-threelevel-metaanalysis/31847710516602398819C5E594038E7B",
+    "Accuracy of Automatic Speech Recognition in L2 Learners' Spontaneous Speech: Developing a Foundation for Automatic Linguistic Analysis (Koizumi, 2024, LET 中部支部研究紀要 35) — https://www.jstage.jst.go.jp/article/letcj/35/0/35_15/_pdf"
+   ],
+   "implication": "한→영 즉시 말하기에 ASR을 쓰되 채점은 '기대 정답 문장과의 대조'로 제한한다. 목표 요소(is/are, 3인칭 -s, 관사)는 음성만으로 확정하지 말고, 필요하면 핵심 단어 탭·타이핑으로 이중 확인하거나 체크리스트식 자기 채점을 함께 쓴다. 인식 실패를 학습자 오류로 처리하지 말고 '다시 말하기 / 타이핑으로 대신하기'를 선택하게 한다. 아이 목소리에서는 인식률이 더 낮을 수 있으므로 실제 학습자 녹음으로 인식률을 먼저 잰 뒤 채점 기준을 정한다."
+  },
+  {
+   "topic": "한→영 답안 자동 채점의 한계",
+   "claim": "초급 번역 연습 답안의 자동 채점은 여전히 어렵다. 특히 틀린 답을 틀렸다고 잡아내는 정확도가 낮고, 범용 대형언어모델의 few-shot 채점은 미세조정 모델보다 못했다.",
+   "evidence": "Miura 외(2024): 일본어→영어 문장번역 연습 21문항·답안 3,498개. 미세조정 BERT는 정답 식별 F1 약 90%, 오답 식별은 80% 미만. GPT few-shot은 그보다 낮음.",
+   "strength": "weak",
+   "sources": [
+    "Japanese-English Sentence Translation Exercises Dataset for Automatic Grading (Miura et al., 2024, arXiv) — https://arxiv.org/abs/2403.03396"
+   ],
+   "implication": "채점 1순위는 '허용 정답 목록(문장당 여러 변형) + 목표 요소 규칙 검사'로 하고, LLM 채점은 목록에 없는 답에만 보조로 쓰되 결과를 기록해 주기적으로 사람이 검수한다. 학습자에게 '다른 표현도 맞을 수 있어요 — 확인 요청' 버튼을 두고, 요청된 답을 허용 목록 보강에 쓴다."
+  },
+  {
+   "topic": "게이미피케이션과 앱 학습의 증거",
+   "claim": "게임 요소는 학습·동기·행동에 작은~중간 효과가 있지만, 학위논문이나 비학술 자료에서 효과가 부풀려지는 경향이 있고 설계가 중요하다. 복습 일정 알고리즘처럼 학습 자체를 돕는 장치가 참여도도 높였다.",
+   "evidence": "Sailer & Homner(2020): 인지 g=0.49, 동기 g=0.36, 행동 g=0.25. 게임 서사와 사회적 상호작용이 행동 효과를 조절. 한국 연구 메타분석(2023): 11개 사례·610명 g=0.517, 학위논문 g=0.799 vs 학술지 g=0.298(출판 편향 가능성). Settles & Meeder(2016): 반감기 회귀 간격반복 모델이 듀오링고 일일 참여를 12% 높임. Loewen 외(2019): 듀오링고 학습자 9명·한 학기, 사용 시간과 향상이 중간 정도 상관. Jiang 외(2021): 초급 과정 완료자 읽기 Intermediate Low, 듣기 Novice High(듀오링고가 보고서로도 배포).",
+   "strength": "moderate",
+   "sources": [
+    "The Gamification of Learning: a Meta-analysis (Sailer & Homner, 2020, EPR 32) — https://eric.ed.gov/?id=EJ1245270",
+    "Effects of Gamification on Students' English Language Proficiency: A Meta-Analysis on Research in South Korea (2023, Sustainability 15(14)) — https://doi.org/10.3390/su151411325",
+    "A Trainable Spaced Repetition Model for Language Learning (Settles & Meeder, 2016, ACL) — https://aclanthology.org/P16-1174/",
+    "Mobile-assisted language learning: A Duolingo case study (Loewen et al., 2019, ReCALL 31) — https://doi.org/10.1017/S0958344019000065",
+    "Evaluating the reading and listening outcomes of beginning-level Duolingo courses (Jiang, Rollinson, Plonsky, Gustafson & Pajak, 2021, Foreign Language Annals 54) — https://doi.org/10.1111/flan.12600"
+   ],
+   "implication": "포인트·배지는 '힌트 없이 맞힌 문장 수', '통과한 소주제', '구성도 재구성 성공'처럼 학습 행동에만 연결한다(접속 시간·클릭 수에는 주지 않는다). 순위표는 선택 사항으로 둔다(초급·아동의 불안 고려). 참여 장치로는 복습 일정 자동화를 먼저 구현한다."
+  },
+  {
+   "topic": "연속 기록(streak)·진척 표시·습관 형성",
+   "claim": "끊기지 않은 연속 기록을 보여 주면 계속하려는 동기가 생기지만, 끊긴 기록은 오히려 이탈을 부르고 '복구'가 가능하면 그 부작용이 줄어든다. 습관이 자리 잡는 데는 평균 두 달 남짓 걸리고 하루 빠지는 것은 큰 문제가 아니다. 목표에 가까워질수록 노력이 늘어난다.",
+   "evidence": "Silverman & Barasch(2023): 7개 연구, 유지 중인 연속 기록을 보여 주면 이후 참여가 늘고 끊긴 기록을 보여 주면 줄어듦. 자기 탓이라고 느끼면 악화, 복구가 가능하면 완화. Lally 외(2010): 습관 자동성 도달 평균 66일(18~254일), 한 번 빠져도 형성에 큰 영향 없음. Kivetz, Urminsky & Zheng(2006): 목표에 가까울수록 행동이 빨라지고, 착시적 진척(보너스 도장)도 완료를 앞당김. Matcha 외(2020): 학습 분석 대시보드는 학습 이론 근거가 약하고 효과 증거가 제한적.",
+   "strength": "weak",
+   "sources": [
+    "On or Off Track: How (Broken) Streaks Affect Consumer Decisions (Silverman & Barasch, 2023, Journal of Consumer Research 49) — https://academic.oup.com/jcr/article-abstract/49/6/1095/6623414",
+    "How are habits formed: Modelling habit formation in the real world (Lally, van Jaarsveld, Potts & Wardle, 2010, EJSP 40) — https://doi.org/10.1002/ejsp.674",
+    "The Goal-Gradient Hypothesis Resurrected: Purchase Acceleration, Illusionary Goal Progress, and Customer Retention (Kivetz, Urminsky & Zheng, 2006, JMR 43) — https://doi.org/10.1509/jmkr.43.1.39",
+    "A Systematic Review of Empirical Studies on Learning Analytics Dashboards: A Self-Regulated Learning Perspective (Matcha, Uzir, Gašević & Pardo, 2020, IEEE TLT) — https://eric.ed.gov/?id=EJ1279917"
+   ],
+   "implication": "연속 학습일을 보여 주되 '하루 쉬어도 유지'(주 1~2회 자동 보호)와 '복습으로 복구' 기능을 함께 둔다. 진척은 '다음 통과까지 남은 문장 수', '구성도에서 불이 켜진 연결고리 수(70개 중)'처럼 가까운 목표로 보여 준다. 복잡한 통계 대시보드보다 단순한 진척 막대와 '오늘 할 일 1개'가 낫다."
+  },
+  {
+   "topic": "세션 길이와 빈도",
+   "claim": "짧고 자주 하는 세션이 현실적이다. 설명 영상은 짧을수록 몰입도가 높고, 아동 교실 연구에서는 30분×6회와 60분×3회의 차이가 없었다. 다만 문법 학습의 최적 세션 길이를 직접 정한 연구는 부족하다.",
+   "evidence": "Guo, Kim & Rubin(2014): edX 690만 시청 세션 — 짧은 영상(약 6분 이하)이 훨씬 몰입도가 높음. Kasprowicz 외(2019): 8–11세, 60분×3회(7일 간격) vs 30분×6회(3.5일 간격) 차이 없음. Serrano(2011): 총시간이 같으면 집중형 과정이 중급 학습자에게 더 큰 즉시 향상(장기 유지는 측정 안 함). 간격 연구(Cepeda 외 2008; Kim & Webb 2022)는 나눠서 하기를 지지.",
+   "strength": "weak",
+   "sources": [
+    "How video production affects student engagement: An empirical study of MOOC videos (Guo, Kim & Rubin, 2014, L@S) — https://www.semanticscholar.org/paper/How-video-production-affects-student-engagement:-an-Guo-Kim/409090a8fa7edfededc03c396a16f6f57144270c",
+    "Investigating distribution of practice effects for the learning of foreign language verb morphology in the young learner classroom (Kasprowicz, Marsden & Sephton, 2019, MLJ 103) — https://doi.org/10.1111/modl.12586",
+    "The Time Factor in EFL Classroom Practice (Serrano, 2011, Language Learning 61) — https://doi.org/10.1111/j.1467-9922.2010.00591.x",
+    "Spacing effects in learning: A temporal ridgeline of optimal retention (Cepeda et al., 2008, Psychological Science 19) — https://doi.org/10.1111/j.1467-9280.2008.02209.x"
+   ],
+   "implication": "출발값: 주 5회 × 15~25분(초등은 10~15분 두 번으로 나눠도 됨). 한 세션 = 밀린 복습(섞기) 5~8분 → 새 소주제 또는 재학습 10~12분 → 마무리 점검 2~3분. 설명 영상은 소주제당 3~6분 이하. 이 숫자는 연구로 확정된 최적값이 아니라 근거에 맞춘 출발값이므로, 실제 이용 기록(완료율, 지연 점검 정답률)을 보고 조정한다."
+  },
+  {
+   "topic": "같은 문장의 반복 산출과 유창성, 기계적 드릴의 한계",
+   "claim": "같은 내용을 반복해서 말하면 유창성이 늘고, 그 향상은 같은 내용을 반복한 경우에만 사후검사까지 유지되었다. 뜻을 몰라도 풀리는 기계적 대치 드릴은 효과 근거가 약하다.",
+   "evidence": "De Jong & Perfetti(2011): ESL 24명, 4/3/2분 말하기를 3회 — 같은 주제를 반복한 집단만 사후검사에서 유창성이 유지되었고 반복 사용 표현이 늘어남(절차화로 해석). Wong & VanPatten(2003): 형태만 바꾸는 기계적 드릴은 습득·유창성에 유익하지 않다는 개관(입장 논문). Serfaty(2026): 의미 있는 드릴과 의사소통 드릴은 1일차 평가에서 차이 없음(탐색 연구).",
+   "strength": "weak",
+   "sources": [
+    "Fluency Training in the ESL Classroom: An Experimental Study of Fluency Development and Proceduralization (De Jong & Perfetti, 2011, Language Learning 61) — https://doi.org/10.1111/j.1467-9922.2010.00620.x",
+    "The Evidence is IN: Drills are OUT (Wong & VanPatten, 2003, Foreign Language Annals 36) — https://doi.org/10.1111/j.1944-9720.2003.tb02123.x",
+    "Communicative Drills: The Impact of Communicative Intent on Oral Proficiency (Serfaty, 2026, TESOL Quarterly) — https://doi.org/10.1002/tesq.70155"
+   ],
+   "implication": "재학습 세션에서 같은 Application Sentences를 반복해서 내는 것은 유창성에 유리하다(매번 새 문장만 줄 필요는 없다). 다만 세션마다 처음 보는 '전이 문장' 1~3개를 넣어 규칙 일반화를 확인한다. 연습은 항상 한국어 의미에서 출발하게 해(의미 처리 필수), 뜻을 몰라도 풀리는 기계적 변형 문제는 피한다."
+  }
+ ],
+ "recommendedLearningLoop": "【A. 소주제 1개 학습 루프 — 예: Topic 2 '동사의 현재형' 중 'be동사의 현재형'(Application Sentences 약 10~15문장). 70개 소주제 모두 같은 루프를 쓴다(과마다 다른 방식 금지).】\n0단계 사전 인출(1~2분): 이 소주제의 한→영 3~5문항을 먼저 풀게 한다. 모두 맞히면 설명·예시를 건너뛰고 재학습 일정으로 보낸다(전문성 역전). 틀려도 예습 효과가 있으므로 점수는 기록만 한다.\n1단계 앵커 소환 = Pass-Off Sentences(약 2분): STUDENT 과정에서 외운 해당 예문 2~4개(예: I am eleven years old.)를 한국어 단서만 보고 먼저 말한 뒤 원어민 음성으로 확인한다(따라 말하기보다 인출이 우수).\n2단계 발견 질문(약 30초): 앵커 문장을 나란히 놓고 'am/are/is는 무엇에 따라 바뀔까요?'를 선택형 1문항으로 묻는다.\n3단계 명시적 설명(1~3분): 한국어 설명 + 표 1개 + '한국어에는 없는 것' 1줄(인칭 일치 등) + 앵커 문장의 해당 부분만 일관된 색으로 표시한다. 영상이면 3~6분 이하. 색 표시는 연습 단계에서 뺀다.\n4단계 풀이 예시 → 단계 비우기(약 2분): 한→영 변환 과정(주어 찾기 → 인칭·수 → 동사형 → 어순) 예시 2개, 이어서 단계 일부를 비운 예시 2개.\n5단계 형태 찾기 = 교재 Review 요소 과제의 웹판(1~2분, 4~6문항): 문장에서 대명사를 탭하고 인칭 고르기, be동사 탭하기, 동사 원형 고르기. 문항마다 즉시 피드백.\n6단계 Application Sentences 1라운드(블록, 6~10분): 문장마다 ①영어 문장을 잠깐 보고 가린 뒤 뜻 떠올리기(해석) → ②한국어를 보고 먼저 말하기·타이핑(시도 전에는 정답 버튼 잠금) → ③틀리면 힌트 사다리(다시 → 틀린 위치 → 규칙 단서 → 부분 정답 → 정답 + 한 줄 규칙 + 음성) → ④정답 음성을 듣고 다시 말하기. 틀리거나 힌트를 쓴 문장은 세션 뒤쪽에 다시 내서 '세션 안에서 모든 문장을 한 번은 스스로 맞힐 때까지' 진행한다. 이 라운드는 시간 제한 없음(정확도 우선). 아직 안 배운 문법이 든 문장은 '도전 문장'으로 뒤에 두고 덩어리 뜻풀이를 준다.\n7단계 내 이야기로 바꾸기(약 1분): 앵커 틀에 자기 정보를 넣어 1~2문장 말하기(채점 없이 녹음·저장하거나 칸 채우기로 채점).\n8단계 마무리 점검(1~2분): 처음 보는 전이 문장 2~3개 + '이 문장에 is를 쓴 이유' 규칙 고르기 1문항.\n9단계 연속 재학습(2일차, 3~4일차 — 각 5~8분): 같은 문장들을 순서를 섞어 한→영 인출, 모든 문장을 첫 시도에 맞힐 때까지. 2일차부터 음성 산출 라운드를 넣는다(ASR은 기대 정답과 대조하는 방식으로만 채점하고, 목표형은 탭 확인이나 체크리스트 자기 채점으로 이중 확인). 3~4일차부터 응답 시작 시간 목표를 단계적으로 줄인다(구체 초 수치는 설계 초기값이며 실제 이용 기록으로 정한다).\n10단계 섞기 재학습(약 1주 뒤): 이 소주제 문장 + 이전 소주제의 헷갈리는 짝(be동사 vs 일반동사, is vs does, he/his/him 등)을 섞어서 낸다. 오답이 느는 것은 정상이라고 안내한다.\n11단계 통과(Pass-Off) 판정: 서로 다른 날 최소 3번의 세션에서 모든 문장을 힌트 없이 첫 시도에 맞힘 + 7일 이상 뒤 섞기 점검에서 첫 시도 정답률 기준 충족(예: 90% — 설계 초기값) + 응답 시간 목표 충족 → 연결고리 구성도에서 해당 연결고리에 불이 켜진다. 기준에 못 미친 문장은 자동으로 재학습 대기열로 간다.\n12단계 유지 복습: 통과 후 약 3주, 약 2개월 뒤 섞어서 1~2문항씩 자동 출제(오래 기억해야 하므로 간격을 넓힌다). 틀리면 해당 소주제를 재학습 대기열로 되돌린다.\n주간 Review(교재 Review 섹션의 웹판, 주 1회 10~15분): 이번 주 소주제들의 한→영 작문(쓰기)과 요소 식별을 한 번에 풀고, 다 끝난 뒤 문장별 결과를 보여 준다. 틀린 문장만 즉시 재도전하고 재학습 대기열로 보낸다(교재의 '채점 후 틀린 문항은 반드시 다시 학습' 지시를 구현).\n\n【B. 전체 코스 루프 — 3권 · 대주제 20(1권 Topic 1~8, 2권 9~15, 3권 16~20) · 연결고리 70】\n1. 시작 진단: STUDENT 과정 이수 여부, 앵커 문장 기억 정도, 기초 문법 사전 인출 퀴즈 → 앵커 선행 모듈 또는 빠른 트랙 배정. 교재의 목차와 과 순서는 그대로 따른다(바꾸려면 사장님 결정).\n2. 첫 화면에 연결고리 구성도(20×70)를 지도처럼 보여 주고 현재 위치를 표시한다(선행조직자 — 효과가 작으므로 짧게).\n3. 주간 리듬(출발값): 주 5회 × 15~25분. 매 세션 = 밀린 복습(섞기) 5~8분 → 새 소주제 또는 재학습 10~12분 → 마무리 점검 2~3분. 새 소주제는 주 2~3개(3권 전체 약 6~9개월). 부하 추정: 3권의 영어 예문은 자동 추출 기준 약 800여 개(대략치) ÷ 70 ≈ 소주제당 약 12문장 × 약 6회 인출 → 하루 30~40회 인출(문장당 15~20초면 8~12분). 실제 이용 기록으로 조정한다.\n4. 대주제가 끝날 때: '구성도 다시 그리기' 세션 — 빈 화면에 기억만으로 그 대주제의 소주제 노드를 배치·연결하고 노드별 대표 앵커 문장을 말한다 → 표준 지도와 비교 → 빠진 노드와 틀린 문장은 재학습 대기열. 같은 날 그 대주제 문장들을 섞은 누적 점검(지연 검사)을 한다.\n5. 매주 1회: 지금까지 배운 전체 구성도를 기억으로 다시 그린다(점점 커짐) — 교재의 '소주제와 대주제를 그려 가며 다 적을 수 있어야 한다'를 인출 과제로 구현.\n6. 권(Book)이 끝날 때: 종합 점검(그 권 전체를 섞은 한→영 말하기·쓰기 + 이전 권 소량) + 전체 구성도 다시 그리기. 기준 미달 소주제는 보충 경로로 보낸다.\n7. 참여 장치: 연속 학습일(주 1~2회 자동 보호, 복습으로 복구), '다음 통과까지 남은 문장 수', 구성도 불 켜기(70개 중 N개), 포인트는 '힌트 없이 맞힌 문장'에만. 며칠 빠지면 밀린 복습을 자동으로 다시 배치하고 '오늘 할 일 1개'만 보여 준다.\n8. 교사 부재 보완(품질 관리): 문장별 오답 패턴·힌트 사용·응답 시간·지연 점검 정답률을 기록해, 오답이 몰리는 문장과 설명을 주기적으로 고친다. ASR 인식률과 자동 채점 불일치는 실제 학습자 녹음·답안으로 먼저 측정한 뒤 기준을 정한다. 출시 후에는 '재학습 3회 vs 2회'처럼 핵심 설계를 A/B로 비교해 우리 학습자에게서 직접 확인한다.",
+ "mythsOrCautions": [
+  "'설명을 잘 들으면 말할 수 있다'는 착각: 규칙 지식과 자동화된 사용은 다르다(Tokunaga 2021에서 정확성과 유창성의 상관 r≈.1; Kang 외 2019의 장기 효과). 설명은 짧게, 연습과 재학습은 길게.",
+  "'한 번 맞히면 통과'는 착각: 1~2회 재학습으로는 2주 뒤 산출이 유지되지 않았다(Serfaty & Serrano 2024). 서로 다른 날 3회 이상 재학습한 뒤에 통과시킨다.",
+  "학습자의 '알아요' 판단과 '다시 보기'를 믿지 말 것: 재학습 뒤에는 학습됐다는 느낌이 부풀고(Blunt & Karpicke 2014), 87%가 비효율적인 몰아서 하기를 더 좋다고 느낀다(Kornell & Bjork 2008). 통과는 시스템이 인출 결과로 판정한다.",
+  "연습 중 정답률로 효과를 판단하지 말 것: 섞기는 연습 중 오답이 가장 많았지만 1주 뒤 결과는 가장 좋았다(Nakata & Suzuki 2019). 핵심 지표는 '오늘 정답률'이 아니라 '지연 점검 정답률'이다.",
+  "'간격은 길수록 좋다'는 단순화 금지: 문법 절차화 초기에는 1~3일 간격이 7일과 같거나 더 나았다(Suzuki 2017; Suzuki & DeKeyser 2017). 초기에는 촘촘히, 뒤로 갈수록 넓게.",
+  "'순간영작은 연구로 입증된 방법'이라고 홍보하지 말 것: 방법 자체의 통제 실험은 찾지 못했다(Nagaoka & Tsuchiya 2025는 상관 중간보고). 근거는 인출·번역 연습·재학습 연구에서 간접적으로 온다.",
+  "ASR로 문법 정답을 판정하지 말 것: ASR은 학습자의 동사·명사 형태 오류를 고쳐서 받아쓰는 경향이 있다(Koizumi 2024, Whisper가 가장 심함). 3인칭 -s, be동사, 관사 같은 목표형은 기대 정답 대조·탭 확인·체크리스트 자기 채점으로 이중 확인한다.",
+  "LLM에 한→영 답안 채점을 전적으로 맡기지 말 것: 특히 오답 검출이 약하다(Miura 외 2024에서 미세조정 모델도 오답 식별 80% 미만, GPT few-shot은 더 낮음). 허용 정답 목록 + 목표형 규칙 검사를 1순위로, LLM은 보조로 쓰고 기록을 사람이 검수한다.",
+  "굵게·색 강조는 만능이 아니다: 문법 학습 효과가 d=0.22로 작고(Lee & Huang 2008), 한국 학습자에게서는 내용 이해를 떨어뜨렸다(Lee 2007). 설명 화면에서만 일관되게 쓰고 연습에서는 걷어낸다.",
+  "자기설명 과제를 늘릴수록 좋은 것은 아니다: 영어 문법 튜터에서는 연습만 하는 쪽이 더 효율적이었다(Wylie 외 2009). 규칙 고르기 1문항 정도로 제한한다.",
+  "게이미피케이션·스트릭 효과를 과신하지 말 것: 학위논문에서 효과가 부풀려지고(한국 메타분석 학위논문 g=0.80 vs 학술지 0.30), 끊긴 연속 기록은 이탈을 부른다(Silverman & Barasch 2023). 보상은 학습 행동에만, 복구 기능은 필수.",
+  "'정답률 85%가 최적'이라는 말은 기계학습 알고리즘에서 유도된 결과다(The Eighty Five Percent Rule for optimal learning, Wilson 외 2019, Nature Communications — https://doi.org/10.1038/s41467-019-12552-4). 사람의 문법 학습에서 검증된 규칙이 아니므로 난이도 조절의 대략적 출발점으로만 쓴다.",
+  "메타분석 효과크기를 그대로 기대하지 말 것: 실험실 효과가 교실보다 크고(Li 2010), 온라인 연구 참가자의 61%가 중도 이탈했다(Rogers, Nakata & Chiu 2025). 웹 자기주도 학습의 가장 큰 위험은 이탈이며, 자기속도형 완전학습은 완료율을 떨어뜨릴 수 있다(Kulik 외 1990). 주간 목표·알림·보호자/교사 리포트가 필요하다.",
+  "학습자는 예문을 그대로 외우므로 예문 자체가 정확해야 한다: 교재 1권 앞부분(5~6쪽)에서 'She is best mother in the world.'(the 누락), 'He gave me hurt in my heart'(부자연스러운 표현) 같은 문장을 보았다. 웹 게시 전 예문 검수(사장님 확인)가 필요하다. 이 조사에서는 교재 내용을 고치지 않았다.",
+  "교재 1권 Topic 1(인칭)의 Application Sentences에는 아직 배우지 않은 문법(과거시제, although/so, too…to)이 섞여 있다. 교사 없이 초급자가 풀면 인지부하가 커지므로 문장별 문법 태그와 '도전 문장' 표시를 검토한다. 문장 순서·교재 구조 변경은 사장님 결정 사항이다.",
+  "듀오링고 효과 연구 중 일부는 회사 소속 연구자가 참여했고 회사 보고서로도 배포되었다(Jiang 외 2021). 앱 효과를 인용할 때는 독립 연구인지 확인한다.",
+  "근거의 한계: 문법 간격·섞기·재학습의 핵심 L2 연구 상당수가 인공언어·대학생·실험실 연구다. 한국 초등·중학생의 온라인 문법 학습에서 직접 검증된 것은 드물다. 출시 후 우리 학습자로 A/B 비교(예: 재학습 3회 vs 2회, 섞기 시작 시점)를 해 보는 것이 가장 확실하다.",
+  "검증 방식의 한계: 이 조사는 한 에이전트가 수행하고 스스로 점검했으며 독립 검토는 없다. 403 오류 등으로 원문 대신 초록이나 2차 요약만 확인한 항목이 있다: Kang 외(2019)의 지연검사 결과, Li & Sun(2024)의 조절변수 세부, Serfaty & Serrano(2024), Nakata & Suzuki(2019), Lyster & Saito(2010), Kulik 외(1990), Heift(2010). Rawson 계열 수업 사례 수치(84/72, 80/27, 64/17%)는 Cerbin(2022)의 요약에서 가져왔다."
+ ],
+ "summary": "결론: Pass-Off Grammar의 방법(외운 STUDENT 문장을 예문으로 → 문법 설명 → 한국어 보고 즉시 영어로 말하기 → 요소 찾기·영작 복습 → 연결고리 구성도 암기 → 소주제별 완전학습)은 학습과학 근거와 대체로 잘 맞는다. 웹에서 교사를 대신하려면 다음 7가지를 구현하면 된다. ①소주제마다 1~3분짜리 한국어 명시적 설명(한·영 차이 포함). ②Application Sentences를 '먼저 떠올려 말하기 → 정답·음성 확인' 순서의 인출 연습으로. ③서로 다른 날 3~4번의 연속 재학습 뒤 약 1주·3주·2개월 누적 복습. ④새 소주제는 블록으로, 재학습부터는 헷갈리는 문법과 섞기. ⑤오답 시 정답을 바로 주지 않는 힌트 사다리식 즉시 피드백. ⑥학습자 자기 판단이 아니라 시스템이 인출 결과로 판정하는 통과 기준. ⑦연결고리 구성도를 보여 주기만 하지 말고 기억으로 다시 그리게 하기.\n근거 강도: 가장 강함 — 명시적 지도(Norris & Ortega 2000 등), 인출 연습(Yang 외 2021 g≈0.50), 간격(Kim & Webb 2022 g=1.15), 연속 재학습(Rawson & Dunlosky), 교정 피드백(Li 2010; 스스로 고치게 하는 프롬프트가 정답 제시보다 우수), 기억으로 개념도 그리기(Blunt & Karpicke 2014), 학습자 착각. 중간 — 기술 특정성·절차화, 섞기, 완전학습, 형태 찾기 연습, ASR 말하기 연습(g≈0.6~0.7), 게이미피케이션(작은~중간). 약함/실천 근거 — 순간영작 방법 자체, 텍스트 암기, 연속 기록·진척 표시, 세션 길이.\n가장 큰 기술 위험: ASR이 학습자의 문법 오류를 고쳐서 받아쓰고(Koizumi 2024), 번역 답안 자동 채점은 오답 검출이 약하다(Miura 외 2024). 기대 정답 대조·허용 답안 목록·목표형 이중 확인이 필요하다.\n교재 관찰(1권 앞부분 직접 확인): 3권은 1권 Topic 1~8, 2권 9~15, 3권 16~20으로 나뉜다. 초반 Application Sentences에 아직 안 배운 문법이 섞여 있고, 일부 예문은 오류로 보이는 표현이 있어 웹 게시 전 문장별 문법 태그와 예문 검수가 필요하다(순서·내용 변경은 사장님 결정).\n검증 방식: WebSearch·WebFetch로 논문 원문이나 초록을 확인했고, 기억에만 의존한 주장은 넣지 않았다. 일부는 초록이나 2차 요약 수준까지만 확인했다(목록은 주의사항 참조). 한 에이전트가 조사하고 스스로 점검했으며 독립 검토는 없었다. 출시 후 '지연 점검 정답률'과 '완료율'을 핵심 지표로 삼아 A/B 비교로 우리 학습자에게서 직접 확인할 것을 권한다."
+}

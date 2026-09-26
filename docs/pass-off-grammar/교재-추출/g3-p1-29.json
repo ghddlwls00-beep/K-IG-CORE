@@ -1,0 +1,5590 @@
+{
+ "book": "g3",
+ "pageRange": [
+  1,
+  29
+ ],
+ "frontMatter": {
+  "introText": "특징\n1. Pass-Off Grammar 란?\nPass-Off English의 문법서이다.\nPass-Off English는 말하기가 우선적으로 이루어져야 하는 영어 교육이다. 그러나 speaking, listening, writing, vocabulary, grammar가 따로 구성되어 있지 않고 복합적으로 1년간 학습함으로써, Pass-Off English 학습자는 문법을 공부하기 전에 먼저 자신의 머릿속에 많은 영어 문장으로 그 지식의 근간을 형성 시켜준다. Pass-Off Grammar는 전체 문법이 대주제 20개와 연결고리 70개로 이루어져 있다. 각 문법에 대한 예문들은 TLA English의 문장들로 구성되어 있으므로, 이 책을 시작하기 전에 Pass-Off English의 560여 문장에 대한 학습이 선행되면 문법학습은 매우 쉽고 빠르게 일어난다.\n2. Pass-Off Sentences와 Application Sentences\nsentences에서는 문법 설명에 앞서 상황예문이나 표로 문법내용을 설명한다. 이 때 사용되는 예문이 Pass-Off English 의 예문이므로 선행학습자는 문법을 매우 쉽게 이해할 수 있다.\nApplication sentences는 대주제 20개와 소주제70개의 내용들에 관한 응용 문장들을 많이 접할 수 있게 하였다.\n3. Review\n전시간에 배웠던 문법사항에 대해 학습자 스스로 메모하여 내용을 정리하게 하였다.\n문법은 어떤 학문보다 자신만의 조직적인 지식의 틀이 머릿속에 잘 짜여있어야 하므로 70개의 연결고리를 하나씩 암기하여 그 틀을 짜 볼 수 있게 하였다.\n학습법\n1. Pass-Off Grammar는 학습대상을 Pass Off English를 마치거나 영어의 문법 기초가 필요한 초급자들을 학습의 대상으로 한다.\n2. Pass-Off sentences는 문법 예문으로 이를 반드시 암기해야 하며 70개의 문법 소주제 별로 교사의 문법 설명과 해당 문장을 외울 수 있어야 한다.\n3. Application Sentences는 교사의 문법 설명과 완전하게 이해된 Pass-Off Sentences를 기초하여 보다 많은 문법 적용과 확장을 할 수 있도록 해석해야 하며 한글 번역을 보고 영어로 문장을 바로 말할 수 있도록 심화하는 학습도 권장한다.\n4. Review 는 Pass-Off English의 기초 문장에 대한 test와 application sentence의 활용을 스스로 확인할 수 있게 하였다. 그러나 채점 후 틀린 문항은 반드시 다시 학습하여서 보충하기를 권한다.\n5. 문법 진도가 나아갈수록 소주제와 대주제를 그려 가면서 각 소 주제별로 문법 내용과 문장을 정리하고 암기하여 다 적을 수 있어야만 한다. 따라서 하나의 소주제 학습이 끝났다고 진도를 빠르게 진행하는 것에 초점을 두지 말고 소주제 하나하나의 완전학습에 만전을 기하기를 명심하시기를 바란다.",
+  "notes": "p1 표지: 'Pass-Off English / Grammar 3', 방패 모양 Pass-Off English 로고, 'Techniques of Language Acquisition'(TLA). p2 특징·학습법(introText, 세 권 공통으로 보임). p3 'Pass-Off Grammar 연결고리 구성도': 세 권 전체(Part 1~3)의 대주제 20개와 소주제 말풍선을 한 장에 그린 그림 — 말풍선을 세면 67개(Part 1 29, Part 2 23, Part 3 15)로 본문의 '연결고리 70개'와 다름. Part 3: 가정법(가정법 과거 / 가정법의 과거완료,미래 / I wish 가정법), 조동사(조동사 1 / 2 / 3), 부사(부사의 종류 / 부사의 형태·부사의 용법 / 주의할 부사들,도치 / 부사의 위치·비교급,최상급), 전치사(종류/목적어·부사의 위치 / 전치사,접속사·부사의 비교 / 중요 전치사들), 접속사(등위접속사 / 종속접속사). p4 'Pass-Off Grammar Part 3 목차': 가정법 5 · 조동사 10 · 부사 18 · 전치사 30 · 접속사 46 (본문 쪽수와 일치). 목차의 '가정법의 과거완료 미래' 중 '가정법 미래'는 본문에 없고, 본문의 '(2) 가정법 현재'와 부사 '(5) 의문부사'는 목차에 없음. 토픽 번호는 1권(TOPIC 1~8)·2권(9~15)에 이어 TOPIC 16부터 시작. 모든 본문 쪽에 머리띠 'The Revolution of English Education', 대각선 워터마크 'Pass-Off English', 바닥글 로고 'Pass-Off English 패스오프 잉글리쉬'와 쪽 번호가 있음."
+ },
+ "conventions": [
+  "n: Review 문항 번호는 책에 인쇄되어 있지 않아 과제마다 1부터 붙인 순번임. TOPIC 18 과제 2의 5a·5b는 제시문 한 줄(I am not happy)에 빈칸이 두 개(= Nei / = Nor)라 나눈 것.",
+  "bold: 이 범위의 Pass-Off·Application 예문에는 굵은 글씨가 전혀 없음(PDF 글꼴 정보로 확인). 그래서 모든 예문의 bold는 빈 배열 []. Review 제시문은 줄 전체가 굵은 글씨라 따로 적지 않음.",
+  "en: 인쇄된 영어 그대로(곡선 따옴표 ’, 공백 두 칸, 마침표 앞 공백까지). '(N과)'는 lessonRef, '(=ought to)'·'*used to + 동원:'·'Cf.)'·'(정말 그렇다)'는 tag로 떼어 냄. raw는 인쇄된 줄 전체(두 줄에 걸친 문장은 공백 하나로 이음).",
+  "Application에는 소주제 머리글이 인쇄되어 있지 않아 group 하나(label null)에 모두 넣고, 항목마다 impliedGroup(위치로 본 소속 소주제, 추정값)을 붙임.",
+  "추가 필드: passOff 항목 inApplication(같은 문장이 있는 application 번호), 모든 예문 koFromReview(이 문장을 번역한 Review 한국어 제시문; 없으면 null), Review 항목 sourceRef(기계용 출처), answerFix(책 영어 정답이 틀렸거나 어색할 때의 수정본), promptFix(한국어/영어 제시문 수정본), 토픽 crossRef(중복·번역 누락 목록), 토픽 printedTitle(글자 사이 띄운 원래 제목).",
+  "밑줄 과제(TOPIC 17 과제 1, TOPIC 18 과제 1)는 제시문이 곧 책의 영어 문장이라 answerFromBook은 null, 출처는 answerSource/sourceRef에, 정답(밑줄 칠 말과 뜻)은 extraSlotAnswer에 적음. proposedAnswer는 영작 정답이 책에 없을 때만 쓰는데, 이 범위의 영작·바꿔쓰기 문항은 모두 책 문장과 연결되어 null.",
+  "answerSource의 group#N은 인쇄 순서대로 센 소주제 번호(TOPIC 18은 '(2)'가 두 번 인쇄되어 인쇄 번호와 group#가 다름). application item N은 Application 목록의 1부터 센 순번."
+ ],
+ "topics": [
+  {
+   "printedLabel": "TOPIC 16",
+   "title": "가정법",
+   "printedTitle": "가 정 법",
+   "pages": [
+    5,
+    9
+   ],
+   "continuesFromPrevRange": false,
+   "continuesIntoNextRange": false,
+   "sections": [
+    {
+     "kind": "passOff",
+     "heading": "1. Pass-Off Sentences",
+     "page": 5,
+     "groups": [
+      {
+       "label": "(1) 가정법 과거",
+       "explanation": null,
+       "items": [
+        {
+         "page": 5,
+         "en": "If you got exercise, you would feel better.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If you got exercise, you would feel better.",
+         "inApplication": 1,
+         "koFromReview": "Review (1) #1: 만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야."
+        },
+        {
+         "page": 5,
+         "en": "Would you mind if I used your phone?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Would you mind if I used your phone?",
+         "inApplication": 2,
+         "koFromReview": "Review (1) #2: 내가 너의 전화기를 써도 되겠니?"
+        },
+        {
+         "page": 5,
+         "en": "If you knew the answer, I would tell you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If you knew the answer, I would tell you.",
+         "inApplication": 3,
+         "koFromReview": "Review (1) #3: 만약 네가 답을 안다면 내가 네게 말 할 텐데."
+        },
+        {
+         "page": 5,
+         "en": "If it were not snowy, we could climb the mountain.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If it were not snowy, we could climb the mountain.",
+         "inApplication": 4,
+         "koFromReview": "Review (1) #4: 만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데."
+        }
+       ]
+      },
+      {
+       "label": "(2) 가정법 현재",
+       "explanation": null,
+       "items": [
+        {
+         "page": 5,
+         "en": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 16,
+         "raw": "If I really want to become a great interpreter, I need to work hard at improving English from now on.(16과)",
+         "inApplication": 8,
+         "koFromReview": "Review (1) #8: 만약 내가 훌륭한 통역가가 되기를 정말 원한다면, 지금부터 영어를 향상시키기 위해서 나는 열심히 공부해야 해."
+        }
+       ]
+      },
+      {
+       "label": "(3) 가정법 과거완료",
+       "explanation": null,
+       "items": [
+        {
+         "page": 5,
+         "en": "If I had known English, I should have been happy.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I had known English, I should have been happy.",
+         "inApplication": null,
+         "koFromReview": null
+        },
+        {
+         "page": 5,
+         "en": "If I had been a bird, I would have flown to you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I had been a bird, I would have flown to you.",
+         "inApplication": 11,
+         "koFromReview": "Review (1) #11: 만약, 내가 새였다면, 나는 네게 날라갔을 텐데."
+        },
+        {
+         "page": 5,
+         "en": "He could have done that if he head tried.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He could have done that if he head tried.",
+         "inApplication": null,
+         "koFromReview": null
+        },
+        {
+         "page": 5,
+         "en": "World history might have been changed if they had won the war.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "World history might have been changed if they had won the war.",
+         "inApplication": 14,
+         "koFromReview": "Review (1) #14: 만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다."
+        }
+       ]
+      },
+      {
+       "label": "(4) I wish가정법",
+       "explanation": null,
+       "items": [
+        {
+         "page": 5,
+         "en": "I wish it would stop raining.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish it would stop raining.",
+         "inApplication": 15,
+         "koFromReview": "Review (1) #15: 나는 비가 그치기를 원한다."
+        },
+        {
+         "page": 5,
+         "en": "I wish somebody would answer me.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish somebody would answer me.",
+         "inApplication": null,
+         "koFromReview": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "application",
+     "heading": "2. Application Sentences",
+     "page": 6,
+     "groups": [
+      {
+       "label": null,
+       "explanation": null,
+       "items": [
+        {
+         "page": 6,
+         "en": "If you got exercise, you would feel better.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If you got exercise, you would feel better.",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #1: 만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야."
+        },
+        {
+         "page": 6,
+         "en": "Would you mind if I used your phone?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Would you mind if I used your phone?",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #2: 내가 너의 전화기를 써도 되겠니?"
+        },
+        {
+         "page": 6,
+         "en": "If you knew the answer, I would tell you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If you knew the answer, I would tell you.",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #3: 만약 네가 답을 안다면 내가 네게 말 할 텐데."
+        },
+        {
+         "page": 6,
+         "en": "If it were not snowy, we could climb the mountain.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If it were not snowy, we could climb the mountain.",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #4: 만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데."
+        },
+        {
+         "page": 6,
+         "en": "I wouldn’t buy that car if I were you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wouldn’t buy that car if I were you.",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #5: 내가 너라면 그 차를 안 살 텐데."
+        },
+        {
+         "page": 6,
+         "en": "If I didn’t want to buy this camera, I wouldn’t buy.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I didn’t want to buy this camera, I wouldn’t buy.",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #6: 만약 내가 이 카메라를 사기 원치 않는다면 나는 안 살 거야."
+        },
+        {
+         "page": 6,
+         "en": "If you were in my position, which one would you choose?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If you were in my position, which one would you choose?",
+         "impliedGroup": "group#1 (1) 가정법 과거",
+         "koFromReview": "Review (1) #7: 만약 네가 내 입장이라면, 어느 것을 너는 선택할래?"
+        },
+        {
+         "page": 6,
+         "en": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 16,
+         "raw": "If I really want to become a great interpreter, I need to work hard at improving English from now on.(16과)",
+         "impliedGroup": "group#2 (2) 가정법 현재",
+         "koFromReview": "Review (1) #8: 만약 내가 훌륭한 통역가가 되기를 정말 원한다면, 지금부터 영어를 향상시키기 위해서 나는 열심히 공부해야 해."
+        },
+        {
+         "page": 6,
+         "en": "If I had known English, I could have been happy.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I had known English, I could have been happy.",
+         "impliedGroup": "group#3 (3) 가정법 과거완료",
+         "koFromReview": "Review (1) #9: 만약 내가 영어를 알았다면,  행복할 수 있었을 텐데."
+        },
+        {
+         "page": 6,
+         "en": "If I had met him earlier, I would have been a better person.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I had met him earlier, I would have been a better person.",
+         "impliedGroup": "group#3 (3) 가정법 과거완료",
+         "koFromReview": "Review (1) #10: 만약 내가 그를 더 일찍 만났다면, 나는 더 좋은 사람이 되었을 텐데."
+        },
+        {
+         "page": 6,
+         "en": "If I had been a bird, I would have flown to you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I had been a bird, I would have flown to you.",
+         "impliedGroup": "group#3 (3) 가정법 과거완료",
+         "koFromReview": "Review (1) #11: 만약, 내가 새였다면, 나는 네게 날라갔을 텐데."
+        },
+        {
+         "page": 7,
+         "en": "If I had known you were in hospital, I would have gone to you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I had known you were in hospital, I would have gone to you.",
+         "impliedGroup": "group#3 (3) 가정법 과거완료",
+         "koFromReview": "Review (1) #12: 만약 내가 네가 병원에 입원했다는 것을 알았더라면, 나는 네게 갔었을 텐데."
+        },
+        {
+         "page": 7,
+         "en": "He could have done that if he had tried.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He could have done that if he had tried.",
+         "impliedGroup": "group#3 (3) 가정법 과거완료",
+         "koFromReview": "Review (1) #13: 그가 만약 시도했다면, 그는 그것을 할 수 있었을 텐데."
+        },
+        {
+         "page": 7,
+         "en": "World history might have been changed if they had won the war.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "World history might have been changed if they had won the war.",
+         "impliedGroup": "group#3 (3) 가정법 과거완료",
+         "koFromReview": "Review (1) #14: 만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다."
+        },
+        {
+         "page": 7,
+         "en": "I wish it would stop raining.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish it would stop raining.",
+         "impliedGroup": "group#4 (4) I wish가정법",
+         "koFromReview": "Review (1) #15: 나는 비가 그치기를 원한다."
+        },
+        {
+         "page": 7,
+         "en": "I wish I had something to read.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish I had something to read.",
+         "impliedGroup": "group#4 (4) I wish가정법",
+         "koFromReview": "Review (1) #16: 나는 읽을 무언가가 있기를 원한다."
+        },
+        {
+         "page": 7,
+         "en": "I wish our apartment was more convenient.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish our apartment was more convenient.",
+         "impliedGroup": "group#4 (4) I wish가정법",
+         "koFromReview": "Review (1) #17: 나는 우리 아파트가 조금 더 편리하기를 원한다."
+        },
+        {
+         "page": 7,
+         "en": "I wish I had known that Mr. Jung was ill. I would have gone to see him.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish I had known that Mr. Jung was ill. I would have gone to see him.",
+         "impliedGroup": "group#4 (4) I wish가정법",
+         "koFromReview": "Review (1) #18: 나는 내가 정선생님이 아팠다는 것을 알기를 원한다(그랬다면,)나는 그를 만나러 갔을 텐데."
+        },
+        {
+         "page": 7,
+         "en": "I wish it had been warmer.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I wish it had been warmer.",
+         "impliedGroup": "group#4 (4) I wish가정법",
+         "koFromReview": "Review (1) #19: 나는 날씨가 더 따듯하기를 바란다."
+        },
+        {
+         "page": 7,
+         "en": "If he had taken the doctor’s advice, he might be alive.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If he had taken the doctor’s advice, he might be alive.",
+         "impliedGroup": "(소주제 표시 없음) 혼합가정법 — group#3 과거완료의 확장",
+         "koFromReview": "Review (1) #20: 만약 그가 의사의 충고를 받아들였다면, 그는 살아 있었을지도 모른다."
+        },
+        {
+         "page": 7,
+         "en": "If she had not bought the building, she had a lot of money now.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If she had not bought the building, she had a lot of money now.",
+         "impliedGroup": "(소주제 표시 없음) 혼합가정법 — group#3 과거완료의 확장",
+         "koFromReview": "Review (1) #21: 만약 그녀가 그 건물을 사지 않았다면, 그녀는 많은 돈을 가졌을 텐데."
+        },
+        {
+         "page": 7,
+         "en": "If I hadn’t depended on them, I would be more independent.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "If I hadn’t depended on them, I would be more independent.",
+         "impliedGroup": "(소주제 표시 없음) 혼합가정법 — group#3 과거완료의 확장",
+         "koFromReview": "Review (1) #22: 만약 내가 그들을 의지하지 않았다면, 나는 더 독립적이 되었을 텐데."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "heading": "Review",
+     "page": 8,
+     "tasks": [
+      {
+       "no": "(1)",
+       "page": 8,
+       "instruction": "다음 문장들을 영작하시오.",
+       "taskTypes": [
+        "ko_to_en_compose"
+       ],
+       "items": [
+        {
+         "n": "1",
+         "page": 8,
+         "prompt": "만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If you got exercise, you would feel better.",
+         "answerSource": "application item 1",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "(네가) 운동을 한다면 기분이 더 좋아질 텐데."
+        },
+        {
+         "n": "2",
+         "page": 8,
+         "prompt": "내가 너의 전화기를 써도 되겠니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Would you mind if I used your phone?",
+         "answerSource": "application item 2",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "제가 당신 전화를 써도 괜찮을까요? (Would you mind if ~ 구문으로)"
+        },
+        {
+         "n": "3",
+         "page": 8,
+         "prompt": "만약 네가 답을 안다면 내가 네게 말 할 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If you knew the answer, I would tell you.",
+         "answerSource": "application item 3",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": "If I knew the answer, I would tell you.",
+         "promptFix": "만약 내가 답을 안다면 너에게 말해 줄 텐데."
+        },
+        {
+         "n": "4",
+         "page": 8,
+         "prompt": "만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If it were not snowy, we could climb the mountain.",
+         "answerSource": "application item 4",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 4,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "눈이 오지 않는다면 우리는 등산할 수 있을 텐데."
+        },
+        {
+         "n": "5",
+         "page": 8,
+         "prompt": "내가 너라면 그 차를 안 살 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I wouldn’t buy that car if I were you.",
+         "answerSource": "application item 5",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 5,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "6",
+         "page": 8,
+         "prompt": "만약 내가 이 카메라를 사기 원치 않는다면 나는 안 살 거야.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I didn’t want to buy this camera, I wouldn’t buy.",
+         "answerSource": "application item 6",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 6,
+          "part": null
+         },
+         "answerFix": "If I didn’t want to buy this camera, I wouldn’t buy it.",
+         "promptFix": null
+        },
+        {
+         "n": "7",
+         "page": 8,
+         "prompt": "만약 네가 내 입장이라면, 어느 것을 너는 선택할래?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If you were in my position, which one would you choose?",
+         "answerSource": "application item 7",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 7,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "8",
+         "page": 8,
+         "prompt": "만약 내가 훌륭한 통역가가 되기를 정말 원한다면, 지금부터 영어를 향상시키기 위해서 나는 열심히 공부해야 해.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+         "answerSource": "application item 8",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 8,
+          "part": null
+         },
+         "answerFix": "If I really want to become a great interpreter, I need to work hard at improving my English from now on.",
+         "promptFix": null
+        },
+        {
+         "n": "9",
+         "page": 8,
+         "prompt": "만약 내가 영어를 알았다면,  행복할 수 있었을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I had known English, I could have been happy.",
+         "answerSource": "application item 9",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 9,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "10",
+         "page": 8,
+         "prompt": "만약 내가 그를 더 일찍 만났다면, 나는 더 좋은 사람이 되었을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I had met him earlier, I would have been a better person.",
+         "answerSource": "application item 10",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 10,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "11",
+         "page": 9,
+         "prompt": "만약, 내가 새였다면, 나는 네게 날라갔을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I had been a bird, I would have flown to you.",
+         "answerSource": "application item 11",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 11,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "만약 내가 새였다면, 나는 너에게 날아갔을 텐데."
+        },
+        {
+         "n": "12",
+         "page": 9,
+         "prompt": "만약 내가 네가 병원에 입원했다는 것을 알았더라면, 나는 네게 갔었을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I had known you were in hospital, I would have gone to you.",
+         "answerSource": "application item 12",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 12,
+          "part": null
+         },
+         "answerFix": "If I had known you were in the hospital, I would have gone to see you.",
+         "promptFix": "만약 네가 병원에 입원했다는 걸 알았더라면, 나는 너를 보러 갔을 텐데."
+        },
+        {
+         "n": "13",
+         "page": 9,
+         "prompt": "그가 만약 시도했다면, 그는 그것을 할 수 있었을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He could have done that if he had tried.",
+         "answerSource": "application item 13",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 13,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "14",
+         "page": 9,
+         "prompt": "만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "World history might have been changed if they had won the war.",
+         "answerSource": "application item 14",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 14,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "만약 그들이 그 전쟁에서 이겼다면, 세계 역사가 바뀌었을지도 모른다."
+        },
+        {
+         "n": "15",
+         "page": 9,
+         "prompt": "나는 비가 그치기를 원한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I wish it would stop raining.",
+         "answerSource": "application item 15",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 15,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "비가 그치면 좋겠다."
+        },
+        {
+         "n": "16",
+         "page": 9,
+         "prompt": "나는 읽을 무언가가 있기를 원한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I wish I had something to read.",
+         "answerSource": "application item 16",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 16,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "읽을 거리가 있으면 좋을 텐데."
+        },
+        {
+         "n": "17",
+         "page": 9,
+         "prompt": "나는 우리 아파트가 조금 더 편리하기를 원한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I wish our apartment was more convenient.",
+         "answerSource": "application item 17",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 17,
+          "part": null
+         },
+         "answerFix": "I wish our apartment were more convenient.",
+         "promptFix": "우리 아파트가 좀 더 편리하면 좋을 텐데."
+        },
+        {
+         "n": "18",
+         "page": 9,
+         "prompt": "나는 내가 정선생님이 아팠다는 것을 알기를 원한다(그랬다면,)나는 그를 만나러 갔을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I wish I had known that Mr. Jung was ill. I would have gone to see him.",
+         "answerSource": "application item 18",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 18,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "정 선생님이 편찮으셨다는 걸 알았더라면 좋았을 텐데. (그랬다면) 나는 그를 만나러 갔을 텐데."
+        },
+        {
+         "n": "19",
+         "page": 9,
+         "prompt": "나는 날씨가 더 따듯하기를 바란다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I wish it had been warmer.",
+         "answerSource": "application item 19",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 19,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "날씨가 더 따뜻했더라면 좋았을 텐데."
+        },
+        {
+         "n": "20",
+         "page": 9,
+         "prompt": "만약 그가 의사의 충고를 받아들였다면, 그는 살아 있었을지도 모른다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If he had taken the doctor’s advice, he might be alive.",
+         "answerSource": "application item 20",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 20,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "만약 그가 의사의 충고를 받아들였다면, 그는 (지금) 살아 있을지도 모른다."
+        },
+        {
+         "n": "21",
+         "page": 9,
+         "prompt": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 많은 돈을 가졌을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If she had not bought the building, she had a lot of money now.",
+         "answerSource": "application item 21",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 21,
+          "part": null
+         },
+         "answerFix": "If she had not bought the building, she would have a lot of money now.",
+         "promptFix": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 지금 돈이 많을 텐데."
+        },
+        {
+         "n": "22",
+         "page": 9,
+         "prompt": "만약 내가 그들을 의지하지 않았다면, 나는 더 독립적이 되었을 텐데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "If I hadn’t depended on them, I would be more independent.",
+         "answerSource": "application item 22",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 22,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "만약 내가 그들에게 의지하지 않았다면, 나는 지금 더 독립적일 텐데."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "crossRef": {
+    "passOffCount": 11,
+    "applicationCount": 22,
+    "passOffNotInApplicationVerbatim": [
+     "group#3 item 1: If I had known English, I should have been happy. (application item 9과 거의 같음, 유사도 0.97)",
+     "group#3 item 3: He could have done that if he head tried. (application item 13과 거의 같음, 유사도 0.99)",
+     "group#4 item 2: I wish somebody would answer me."
+    ],
+    "applicationWithoutKoreanPrompt": [],
+    "applicationOnlyPartlyTranslated": [],
+    "sentencesWithNoKoreanAnywhere": [
+     "I wish somebody would answer me. [passOff group#4 item 2]"
+    ],
+    "nearDuplicateVariantsWithKoreanOnTwin": [
+     "passOff group#3 item 1: If I had known English, I should have been happy. — application item 9의 변형(그쪽 한국어: Review (1) #9: 만약 내가 영어를 알았다면,  행복할 수 있었을 텐데.)",
+     "passOff group#3 item 3: He could have done that if he head tried. — application item 13의 변형(그쪽 한국어: Review (1) #13: 그가 만약 시도했다면, 그는 그것을 할 수 있었을 텐데.)"
+    ]
+   }
+  },
+  {
+   "printedLabel": "TOPIC 17",
+   "title": "조동사",
+   "printedTitle": "조 동 사",
+   "pages": [
+    10,
+    17
+   ],
+   "continuesFromPrevRange": false,
+   "continuesIntoNextRange": false,
+   "sections": [
+    {
+     "kind": "passOff",
+     "heading": "1. Pass-Off Sentences",
+     "page": 10,
+     "groups": [
+      {
+       "label": "(1) 조동사 can",
+       "explanation": null,
+       "items": [
+        {
+         "page": 10,
+         "en": "He can fix cars and play soccer very well",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 4,
+         "raw": "He can fix cars and play soccer very well(4과)",
+         "inApplication": 1,
+         "koFromReview": "Review 2. #1: 그는 자동차 수리와 축구도 매우 잘 할 수 있다."
+        },
+        {
+         "page": 10,
+         "en": "Can you speak any foreign language?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Can you speak any foreign language?",
+         "inApplication": 3,
+         "koFromReview": "Review 2. #3: 너는 다른 외국어를 말할 수 있니?"
+        },
+        {
+         "page": 10,
+         "en": "I want to be able to speak English as well as he does someday.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 7,
+         "raw": "I want to be able to speak English as well as he does someday.(7과)",
+         "inApplication": 6,
+         "koFromReview": "Review 2. #6: 나는 언젠가는 그가 하는 것 만큼 영어를 잘 말수 있기를 바란다."
+        }
+       ]
+      },
+      {
+       "label": "(2) 조동사 may",
+       "explanation": null,
+       "items": [
+        {
+         "page": 10,
+         "en": "He may be in his office.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He may be in his office.",
+         "inApplication": 10,
+         "koFromReview": "Review 2. #10: 그는 그의 사무실에 있을 거야."
+        },
+        {
+         "page": 10,
+         "en": "She may have been asleep.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She may have been asleep.",
+         "inApplication": 14,
+         "koFromReview": "Review 2. #13: 그녀는 잠이 들었을 거야."
+        },
+        {
+         "page": 10,
+         "en": "You might have left it in the store.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You might have left it in the store.",
+         "inApplication": 15,
+         "koFromReview": "Review 2. #14: 너는 가게에서 그것을 두었을지도 몰라."
+        },
+        {
+         "page": 10,
+         "en": "You may as well walk to school.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You may as well walk to school.",
+         "inApplication": 16,
+         "koFromReview": "Review 2. #15: 너는 학교로 걸어가는 것이 좋겠다."
+        }
+       ]
+      },
+      {
+       "label": "(3)should / ought to / used to / had better",
+       "explanation": "*used to + 동원: | *be used to ~ing: | *had better + 동원:",
+       "items": [
+        {
+         "page": 10,
+         "en": "You should go to bed.",
+         "ko": null,
+         "bold": [],
+         "tag": "(=ought to)",
+         "lessonRef": null,
+         "raw": "You should go to bed. (=ought to)",
+         "inApplication": 22,
+         "koFromReview": "Review 2. #21: 너는 잠자리에 들어야 한다."
+        },
+        {
+         "page": 10,
+         "en": "I shouldn’t have eaten too much chocolate.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I shouldn’t have eaten too much chocolate.",
+         "inApplication": 23,
+         "koFromReview": "Review 2. #22: 나는 너무 많은 초콜릿을 먹지 말았어야 했는데."
+        },
+        {
+         "page": 10,
+         "en": "He used to get up early.",
+         "ko": null,
+         "bold": [],
+         "tag": "*used to + 동원:",
+         "lessonRef": null,
+         "raw": "*used to + 동원: He used to get up early.",
+         "inApplication": null,
+         "koFromReview": null
+        },
+        {
+         "page": 10,
+         "en": "The taxi driver is used to a danger .",
+         "ko": null,
+         "bold": [],
+         "tag": "*be used to ~ing:",
+         "lessonRef": null,
+         "raw": "*be used to ~ing: The taxi driver is used to a danger .",
+         "inApplication": 29,
+         "koFromReview": "Review 2. #28: 그 택시 운전사는 위험에 익숙하다."
+        },
+        {
+         "page": 10,
+         "en": "You had better come home!",
+         "ko": null,
+         "bold": [],
+         "tag": "*had better + 동원:",
+         "lessonRef": null,
+         "raw": "*had better + 동원:  You had better come home!",
+         "inApplication": 33,
+         "koFromReview": "Review 2. #32: 너는 일찍 집에 오는 것이 낫다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "application",
+     "heading": "2. Application Sentences",
+     "page": 11,
+     "groups": [
+      {
+       "label": null,
+       "explanation": null,
+       "items": [
+        {
+         "page": 11,
+         "en": "He can fix cars and play soccer very well",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 4,
+         "raw": "He can fix cars and play soccer very well(4과)",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #1: 그는 자동차 수리와 축구도 매우 잘 할 수 있다."
+        },
+        {
+         "page": 11,
+         "en": "I can’t speak Chinese, but someday, I ’ll learn.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I can’t speak Chinese, but someday, I ’ll learn.",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #2: 나는 중국어는 못하지만 언젠가 나는 배울 거야."
+        },
+        {
+         "page": 11,
+         "en": "Can you speak any foreign language?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Can you speak any foreign language?",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #3: 너는 다른 외국어를 말할 수 있니?"
+        },
+        {
+         "page": 11,
+         "en": "We can talk about the matter in the afternoon.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "We can talk about the matter in the afternoon.",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #4: 우리는 오후에 그 문제에 대해 논의할 수 있다."
+        },
+        {
+         "page": 11,
+         "en": "Karen couldn’t walk until she was five.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Karen couldn’t walk until she was five.",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #5: 카렌은 5살이 될 때까지 걷지 못했다."
+        },
+        {
+         "page": 11,
+         "en": "I want to be able to speak English as well as he does someday.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 7,
+         "raw": "I want to be able to speak English as well as he does someday.(7과)",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #6: 나는 언젠가는 그가 하는 것 만큼 영어를 잘 말수 있기를 바란다."
+        },
+        {
+         "page": 11,
+         "en": "Last weekend I wasn’t able to see her.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Last weekend I wasn’t able to see her.",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #7: 지난주에 나는 그녀를 볼 수 없었다."
+        },
+        {
+         "page": 11,
+         "en": "I will be able to live happily someday.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I will be able to live happily someday.",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #8: 나는 언젠가 행복하게 살수 있기를 바란다."
+        },
+        {
+         "page": 11,
+         "en": "I will be able to achieve my dream and help many children learn and grow.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 14,
+         "raw": "I will be able to achieve my dream and help many children learn and grow.(14과)",
+         "impliedGroup": "group#1 (1) 조동사 can",
+         "koFromReview": "Review 2. #9: 나는 내 꿈을 성취하고 많은 아이들이 배우고 자라도록 도울수 있기를 원한다."
+        },
+        {
+         "page": 11,
+         "en": "He may be in his office.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He may be in his office.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #10: 그는 그의 사무실에 있을 거야."
+        },
+        {
+         "page": 11,
+         "en": "You may wait in the restaurant, but you may not smoke.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You may wait in the restaurant, but you may not smoke.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #11: 너는 식당에서 기다려도 되지만, 담배 피우는 것은 안 된다."
+        },
+        {
+         "page": 11,
+         "en": "May I turn on the TV? Yes, you may.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "May I turn on the TV? Yes, you may.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #12: 제가 TV를 켜도 되요? 그래요. 됩니다."
+        },
+        {
+         "page": 12,
+         "en": "James may be at school.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "James may be at school.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": null
+        },
+        {
+         "page": 12,
+         "en": "She may have been asleep.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She may have been asleep.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #13: 그녀는 잠이 들었을 거야."
+        },
+        {
+         "page": 12,
+         "en": "You might have left it in the store.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You might have left it in the store.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #14: 너는 가게에서 그것을 두었을지도 몰라."
+        },
+        {
+         "page": 12,
+         "en": "You may as well walk to school.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You may as well walk to school.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #15: 너는 학교로 걸어가는 것이 좋겠다."
+        },
+        {
+         "page": 12,
+         "en": "You may well get confused.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You may well get confused.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #16: 네가 혼돈스러워 하는 것은 당연하다."
+        },
+        {
+         "page": 12,
+         "en": "Wherever you may go, I’ll never forget what you do to me.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Wherever you may go, I’ll never forget what you do to me.",
+         "impliedGroup": "group#2 (2) 조동사 may",
+         "koFromReview": "Review 2. #17: 네가 어디를 가더라도, 나는 결코 네가 내게 한 일을 잊지 않을 거야."
+        },
+        {
+         "page": 12,
+         "en": "She must call her parents at once.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She must call her parents at once.",
+         "impliedGroup": "(소주제 표시 없음) must",
+         "koFromReview": "Review 2. #18: 그녀는 당장 부모님께 전화해야 한다."
+        },
+        {
+         "page": 12,
+         "en": "You must not park here.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You must not park here.",
+         "impliedGroup": "(소주제 표시 없음) must",
+         "koFromReview": "Review 2. #19: 너는 이곳에 주차해서는 안 된다."
+        },
+        {
+         "page": 12,
+         "en": "He must have been asleep.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He must have been asleep.",
+         "impliedGroup": "(소주제 표시 없음) must",
+         "koFromReview": "Review 2. #20: 그는 잠이 들었음에 틀림없다."
+        },
+        {
+         "page": 12,
+         "en": "You should go to bed.",
+         "ko": null,
+         "bold": [],
+         "tag": "(=ought to)",
+         "lessonRef": null,
+         "raw": "You should go to bed. (=ought to)",
+         "impliedGroup": "group#3 (3) should",
+         "koFromReview": "Review 2. #21: 너는 잠자리에 들어야 한다."
+        },
+        {
+         "page": 12,
+         "en": "I shouldn’t have eaten too much chocolate.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I shouldn’t have eaten too much chocolate.",
+         "impliedGroup": "group#3 (3) should",
+         "koFromReview": "Review 2. #22: 나는 너무 많은 초콜릿을 먹지 말았어야 했는데."
+        },
+        {
+         "page": 12,
+         "en": "My mother used to be a school teacher.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "My mother used to be a school teacher.",
+         "impliedGroup": "group#3 (3) used to",
+         "koFromReview": "Review 2. #23: 나의 어머니는 학교 선생님이셨다."
+        },
+        {
+         "page": 13,
+         "en": "Joe used to smoke a lot.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Joe used to smoke a lot.",
+         "impliedGroup": "group#3 (3) used to",
+         "koFromReview": "Review 2. #24: 조는 담배를 많이 피웠었다."
+        },
+        {
+         "page": 13,
+         "en": "Carter used to stay up.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Carter used to stay up.",
+         "impliedGroup": "group#3 (3) used to",
+         "koFromReview": "Review 2. #25: 카터는 종종 (밤에) 자지 않고 있었다."
+        },
+        {
+         "page": 13,
+         "en": "She used to have a dog when she was a child.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She used to have a dog when she was a child.",
+         "impliedGroup": "group#3 (3) used to",
+         "koFromReview": "Review 2. #26: 그녀는 그녀가 어렸을 때, 개를 가졌었다."
+        },
+        {
+         "page": 13,
+         "en": "I didn’t use to wear glasses, but now I do.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I didn’t use to wear glasses, but now I do.",
+         "impliedGroup": "group#3 (3) used to",
+         "koFromReview": "Review 2. #27: 나는 안경을 끼지 않았었지만 지금은 낀다."
+        },
+        {
+         "page": 13,
+         "en": "The taxi driver is used to a danger.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "The taxi driver is used to a danger.",
+         "impliedGroup": "group#3 (3) be used to / get used to",
+         "koFromReview": "Review 2. #28: 그 택시 운전사는 위험에 익숙하다."
+        },
+        {
+         "page": 13,
+         "en": "Koreans are used to eating raw fish.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Koreans are used to eating raw fish.",
+         "impliedGroup": "group#3 (3) be used to / get used to",
+         "koFromReview": "Review 2. #29: 한국 사람들은 회를 먹는 것에 익숙하다."
+        },
+        {
+         "page": 13,
+         "en": "Jenny wasn’t used to getting up early.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Jenny wasn’t used to getting up early.",
+         "impliedGroup": "group#3 (3) be used to / get used to",
+         "koFromReview": "Review 2. #30: 제니는 일찍 일어나는 일에 익숙지 않다."
+        },
+        {
+         "page": 13,
+         "en": "I have to get used to living alone.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I have to get used to living alone.",
+         "impliedGroup": "group#3 (3) be used to / get used to",
+         "koFromReview": "Review 2. #31: 나는 홀로 사는 것에 익숙해져야 한다."
+        },
+        {
+         "page": 13,
+         "en": "You had better come home!",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You had better come home!",
+         "impliedGroup": "group#3 (3) had better",
+         "koFromReview": "Review 2. #32: 너는 일찍 집에 오는 것이 낫다."
+        },
+        {
+         "page": 13,
+         "en": "You’d better not leave now.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You’d better not leave now.",
+         "impliedGroup": "group#3 (3) had better",
+         "koFromReview": "Review 2. #33: 너는 지금 떠나는 것이 낫다."
+        },
+        {
+         "page": 13,
+         "en": "He had better spend time wisely.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He had better spend time wisely.",
+         "impliedGroup": "group#3 (3) had better",
+         "koFromReview": "Review 2. #34: 드는 시간을 더 현명하게 쓰는 것이 낫다."
+        },
+        {
+         "page": 13,
+         "en": "She had better have a rest.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She had better have a rest.",
+         "impliedGroup": "group#3 (3) had better",
+         "koFromReview": "Review 2. #35: 그녀는 휴식을 가지는 것이 낫다."
+        },
+        {
+         "page": 13,
+         "en": "You’d better not miss the last train.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You’d better not miss the last train.",
+         "impliedGroup": "group#3 (3) had better",
+         "koFromReview": "Review 2. #36: 너는 마지막 기차를 놓치지 않는 것이 낫다"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "heading": "Review",
+     "page": 14,
+     "tasks": [
+      {
+       "no": "1.",
+       "page": 14,
+       "instruction": "다음 문장을 보고 조동사에 줄을 긋고 그 의미를 써 보세요.",
+       "taskTypes": [
+        "underline_modal",
+        "write_meaning"
+       ],
+       "items": [
+        {
+         "n": "1",
+         "page": 14,
+         "prompt": "He can fix cars and play soccer very well(4과)",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) 조동사 can' item 1 — 제시문 자체가 이 문장; application item 1에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "can — 능력: ~할 수 있다",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "2",
+         "page": 14,
+         "prompt": "Can you speak any foreign language?",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) 조동사 can' item 2 — 제시문 자체가 이 문장; application item 3에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "Can — 능력(의문문): ~할 수 있니?",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "3",
+         "page": 14,
+         "prompt": "I want to be able to speak English as well as he does someday. (7과)",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) 조동사 can' item 3 — 제시문 자체가 이 문장; application item 6에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "be able to — 능력: ~할 수 있다(= can). want to는 조동사가 아님",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "4",
+         "page": 14,
+         "prompt": "He may be in his office.",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#2 '(2) 조동사 may' item 1 — 제시문 자체가 이 문장; application item 10에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "may — 추측: ~일지도 모른다",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "5",
+         "page": 14,
+         "prompt": "She may have been asleep.",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#2 '(2) 조동사 may' item 2 — 제시문 자체가 이 문장; application item 14에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "may have been — 과거에 대한 추측: ~였을지도 모른다",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "6",
+         "page": 14,
+         "prompt": "You might have left it in the store.",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#2 '(2) 조동사 may' item 3 — 제시문 자체가 이 문장; application item 15에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "might have left — 과거에 대한 (약한) 추측: ~했을지도 모른다",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "7",
+         "page": 14,
+         "prompt": "You may as well walk to school.",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#2 '(2) 조동사 may' item 4 — 제시문 자체가 이 문장; application item 16에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "may as well — ~하는 편이 낫다(권유)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 4,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "8",
+         "page": 14,
+         "prompt": "You should go to bed. (=ought to)",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(3)should / ought to / used to / had better' item 1 — 제시문 자체가 이 문장; application item 22에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "should — 의무·충고: ~해야 한다 / ~하는 게 좋다 (= ought to)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "9",
+         "page": 14,
+         "prompt": "I shouldn’t have eaten too much chocolate.",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(3)should / ought to / used to / had better' item 2 — 제시문 자체가 이 문장; application item 23에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "shouldn’t have eaten — 과거에 대한 후회: ~하지 말았어야 했는데",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "10",
+         "page": 14,
+         "prompt": "He used to get up early.",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(3)should / ought to / used to / had better' item 3 — 제시문 자체가 이 문장",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "used to — 과거의 습관: (예전에) ~하곤 했다",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "11",
+         "page": 14,
+         "prompt": "You had better come home!",
+         "promptLang": "en",
+         "extraSlot": "조동사에 밑줄 긋기 + 그 의미 쓰기",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(3)should / ought to / used to / had better' item 5 — 제시문 자체가 이 문장; application item 33에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "had better — 강한 충고: ~하는 게 낫다(안 그러면 곤란하다)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 5,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        }
+       ]
+      },
+      {
+       "no": "2.",
+       "page": 15,
+       "instruction": "다음 문장들을 영작하시오.",
+       "taskTypes": [
+        "ko_to_en_compose"
+       ],
+       "items": [
+        {
+         "n": "1",
+         "page": 15,
+         "prompt": "그는 자동차 수리와 축구도 매우 잘 할 수 있다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He can fix cars and play soccer very well",
+         "answerSource": "application item 1",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": "He can fix cars and play soccer very well.",
+         "promptFix": "그는 자동차 수리와 축구를 매우 잘할 수 있다."
+        },
+        {
+         "n": "2",
+         "page": 15,
+         "prompt": "나는 중국어는 못하지만 언젠가 나는 배울 거야.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I can’t speak Chinese, but someday, I ’ll learn.",
+         "answerSource": "application item 2",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": "I can’t speak Chinese, but someday I’ll learn it.",
+         "promptFix": null
+        },
+        {
+         "n": "3",
+         "page": 15,
+         "prompt": "너는 다른 외국어를 말할 수 있니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Can you speak any foreign language?",
+         "answerSource": "application item 3",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "너는 외국어를 할 줄 아니?"
+        },
+        {
+         "n": "4",
+         "page": 15,
+         "prompt": "우리는 오후에 그 문제에 대해 논의할 수 있다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "We can talk about the matter in the afternoon.",
+         "answerSource": "application item 4",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 4,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "5",
+         "page": 15,
+         "prompt": "카렌은 5살이 될 때까지 걷지 못했다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Karen couldn’t walk until she was five.",
+         "answerSource": "application item 5",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 5,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "6",
+         "page": 15,
+         "prompt": "나는 언젠가는 그가 하는 것 만큼 영어를 잘 말수 있기를 바란다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I want to be able to speak English as well as he does someday.",
+         "answerSource": "application item 6",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 6,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "나는 언젠가 그가 하는 것만큼 영어를 잘 말할 수 있으면 좋겠다."
+        },
+        {
+         "n": "7",
+         "page": 15,
+         "prompt": "지난주에 나는 그녀를 볼 수 없었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Last weekend I wasn’t able to see her.",
+         "answerSource": "application item 7",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 7,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "지난 주말에 나는 그녀를 만날 수 없었다."
+        },
+        {
+         "n": "8",
+         "page": 15,
+         "prompt": "나는 언젠가 행복하게 살수 있기를 바란다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I will be able to live happily someday.",
+         "answerSource": "application item 8",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 8,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "나는 언젠가 행복하게 살 수 있을 것이다."
+        },
+        {
+         "n": "9",
+         "page": 15,
+         "prompt": "나는 내 꿈을 성취하고 많은 아이들이 배우고 자라도록 도울수 있기를 원한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I will be able to achieve my dream and help many children learn and grow.",
+         "answerSource": "application item 9",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 9,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "나는 내 꿈을 이루고 많은 아이들이 배우고 성장하도록 도울 수 있을 것이다."
+        },
+        {
+         "n": "10",
+         "page": 15,
+         "prompt": "그는 그의 사무실에 있을 거야.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He may be in his office.",
+         "answerSource": "application item 10",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 10,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그는 (아마) 사무실에 있을지도 몰라."
+        },
+        {
+         "n": "11",
+         "page": 15,
+         "prompt": "너는 식당에서 기다려도 되지만, 담배 피우는 것은 안 된다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You may wait in the restaurant, but you may not smoke.",
+         "answerSource": "application item 11",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 11,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "12",
+         "page": 15,
+         "prompt": "제가 TV를 켜도 되요? 그래요. 됩니다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "May I turn on the TV? Yes, you may.",
+         "answerSource": "application item 12",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 12,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "제가 TV를 켜도 돼요? 네, 돼요."
+        },
+        {
+         "n": "13",
+         "page": 16,
+         "prompt": "그녀는 잠이 들었을 거야.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "She may have been asleep.",
+         "answerSource": "application item 14",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 14,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그녀는 잠들어 있었을지도 몰라."
+        },
+        {
+         "n": "14",
+         "page": 16,
+         "prompt": "너는 가게에서 그것을 두었을지도 몰라.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You might have left it in the store.",
+         "answerSource": "application item 15",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 15,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "너는 그것을 가게에 두고 왔을지도 몰라."
+        },
+        {
+         "n": "15",
+         "page": 16,
+         "prompt": "너는 학교로 걸어가는 것이 좋겠다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You may as well walk to school.",
+         "answerSource": "application item 16",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 16,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "16",
+         "page": 16,
+         "prompt": "네가 혼돈스러워 하는 것은 당연하다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You may well get confused.",
+         "answerSource": "application item 17",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 17,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "네가 혼란스러워하는 것도 당연하다."
+        },
+        {
+         "n": "17",
+         "page": 16,
+         "prompt": "네가 어디를 가더라도, 나는 결코 네가 내게 한 일을 잊지 않을 거야.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Wherever you may go, I’ll never forget what you do to me.",
+         "answerSource": "application item 18",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 18,
+          "part": null
+         },
+         "answerFix": "Wherever you may go, I’ll never forget what you have done for me.",
+         "promptFix": null
+        },
+        {
+         "n": "18",
+         "page": 16,
+         "prompt": "그녀는 당장 부모님께 전화해야 한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "She must call her parents at once.",
+         "answerSource": "application item 19",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 19,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "19",
+         "page": 16,
+         "prompt": "너는 이곳에 주차해서는 안 된다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You must not park here.",
+         "answerSource": "application item 20",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 20,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "20",
+         "page": 16,
+         "prompt": "그는 잠이 들었음에 틀림없다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He must have been asleep.",
+         "answerSource": "application item 21",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 21,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "21",
+         "page": 16,
+         "prompt": "너는 잠자리에 들어야 한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You should go to bed.",
+         "answerSource": "application item 22",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 22,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "22",
+         "page": 16,
+         "prompt": "나는 너무 많은 초콜릿을 먹지 말았어야 했는데.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I shouldn’t have eaten too much chocolate.",
+         "answerSource": "application item 23",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 23,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "23",
+         "page": 16,
+         "prompt": "나의 어머니는 학교 선생님이셨다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "My mother used to be a school teacher.",
+         "answerSource": "application item 24",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 24,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "24",
+         "page": 16,
+         "prompt": "조는 담배를 많이 피웠었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Joe used to smoke a lot.",
+         "answerSource": "application item 25",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 25,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "25",
+         "page": 17,
+         "prompt": "카터는 종종 (밤에) 자지 않고 있었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Carter used to stay up.",
+         "answerSource": "application item 26",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 26,
+          "part": null
+         },
+         "answerFix": "Carter used to stay up late.",
+         "promptFix": "카터는 예전에 밤늦게까지 자지 않곤 했다."
+        },
+        {
+         "n": "26",
+         "page": 17,
+         "prompt": "그녀는 그녀가 어렸을 때, 개를 가졌었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "She used to have a dog when she was a child.",
+         "answerSource": "application item 27",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 27,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그녀는 어렸을 때 개를 키웠었다."
+        },
+        {
+         "n": "27",
+         "page": 17,
+         "prompt": "나는 안경을 끼지 않았었지만 지금은 낀다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I didn’t use to wear glasses, but now I do.",
+         "answerSource": "application item 28",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 28,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "28",
+         "page": 17,
+         "prompt": "그 택시 운전사는 위험에 익숙하다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "The taxi driver is used to a danger.",
+         "answerSource": "application item 29",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 29,
+          "part": null
+         },
+         "answerFix": "The taxi driver is used to danger.",
+         "promptFix": null
+        },
+        {
+         "n": "29",
+         "page": 17,
+         "prompt": "한국 사람들은 회를 먹는 것에 익숙하다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Koreans are used to eating raw fish.",
+         "answerSource": "application item 30",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 30,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "30",
+         "page": 17,
+         "prompt": "제니는 일찍 일어나는 일에 익숙지 않다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Jenny wasn’t used to getting up early.",
+         "answerSource": "application item 31",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 31,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "제니는 일찍 일어나는 데 익숙하지 않았다."
+        },
+        {
+         "n": "31",
+         "page": 17,
+         "prompt": "나는 홀로 사는 것에 익숙해져야 한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I have to get used to living alone.",
+         "answerSource": "application item 32",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 32,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "32",
+         "page": 17,
+         "prompt": "너는 일찍 집에 오는 것이 낫다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You had better come home!",
+         "answerSource": "application item 33",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 33,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "너는 집에 오는 게 좋겠다!"
+        },
+        {
+         "n": "33",
+         "page": 17,
+         "prompt": "너는 지금 떠나는 것이 낫다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You’d better not leave now.",
+         "answerSource": "application item 34",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 34,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "너는 지금 떠나지 않는 게 좋겠다."
+        },
+        {
+         "n": "34",
+         "page": 17,
+         "prompt": "드는 시간을 더 현명하게 쓰는 것이 낫다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He had better spend time wisely.",
+         "answerSource": "application item 35",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 35,
+          "part": null
+         },
+         "answerFix": "He had better spend his time wisely.",
+         "promptFix": "그는 시간을 현명하게 쓰는 게 좋겠다."
+        },
+        {
+         "n": "35",
+         "page": 17,
+         "prompt": "그녀는 휴식을 가지는 것이 낫다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "She had better have a rest.",
+         "answerSource": "application item 36",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 36,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그녀는 좀 쉬는 게 좋겠다."
+        },
+        {
+         "n": "36",
+         "page": 17,
+         "prompt": "너는 마지막 기차를 놓치지 않는 것이 낫다",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You’d better not miss the last train.",
+         "answerSource": "application item 37",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 37,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "너는 마지막 기차를 놓치지 않는 게 좋겠다."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "crossRef": {
+    "passOffCount": 12,
+    "applicationCount": 37,
+    "passOffNotInApplicationVerbatim": [
+     "group#3 item 3: He used to get up early."
+    ],
+    "applicationWithoutKoreanPrompt": [
+     "application item 13: James may be at school."
+    ],
+    "applicationOnlyPartlyTranslated": [],
+    "sentencesWithNoKoreanAnywhere": [
+     "He used to get up early. [passOff group#3 item 3]",
+     "James may be at school. [application item 13]"
+    ],
+    "nearDuplicateVariantsWithKoreanOnTwin": []
+   }
+  },
+  {
+   "printedLabel": "TOPIC 18",
+   "title": "부사",
+   "printedTitle": "부 사",
+   "pages": [
+    18,
+    29
+   ],
+   "continuesFromPrevRange": false,
+   "continuesIntoNextRange": false,
+   "sections": [
+    {
+     "kind": "passOff",
+     "heading": "1. Pass-Off Sentences",
+     "page": 18,
+     "groups": [
+      {
+       "label": "(1) –ly 부사",
+       "explanation": null,
+       "items": [
+        {
+         "page": 18,
+         "en": "My elementary school is fairly large.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 6,
+         "raw": "My elementary school is fairly large.(6과)",
+         "inApplication": 1,
+         "koFromReview": "Review 3. #1: 나의 초등학교는 상당히 크다."
+        },
+        {
+         "page": 18,
+         "en": "Would you speak more slowly?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Would you speak more slowly?",
+         "inApplication": 4,
+         "koFromReview": "Review 3. #4: 조금만 더 천천히 말씀해 주실래요?"
+        },
+        {
+         "page": 18,
+         "en": "He is a truly smart person, and I am sure that his dream will come true.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 3,
+         "raw": "He is a truly smart person, and I am sure that his dream will come true.(3과)",
+         "inApplication": 5,
+         "koFromReview": "Review 3. #5: 그는 진실로 똑똑한 사람이고 나는 그의 꿈이 실현될 것을 확신한다."
+        },
+        {
+         "page": 18,
+         "en": "I could remember his face vaguely.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I could remember his face vaguely.",
+         "inApplication": 8,
+         "koFromReview": "Review 3. #8: 나는 그의 얼굴을 희미하게 기억할 수 있었다."
+        },
+        {
+         "page": 18,
+         "en": "Usually in class, the students are very friendly to each other.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 5,
+         "raw": "Usually in class, the students are very friendly to each other.(5과)",
+         "inApplication": 9,
+         "koFromReview": "Review 3. #9: 보통 학급에서, 학생들은 서로 서로에게 매우 친절하다."
+        },
+        {
+         "page": 18,
+         "en": "I am awfully hungry.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am awfully hungry.",
+         "inApplication": 10,
+         "koFromReview": "Review 3. #10: 나는 매우 배가 고프다."
+        }
+       ]
+      },
+      {
+       "label": "(2) 형용사와 형태가 같은 부사",
+       "explanation": null,
+       "items": [
+        {
+         "page": 18,
+         "en": "Sue’s job is very hard = Sue works very hard.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Sue’s job is very hard = Sue works very hard.",
+         "inApplication": 13,
+         "koFromReview": "['=' 2번째 부분만] Review 3. #13: 수는 매우 힘들게 일한다."
+        },
+        {
+         "page": 18,
+         "en": "Ben is a fast runner = Ben can run fast.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Ben is a fast runner = Ben can run fast.",
+         "inApplication": 14,
+         "koFromReview": "['=' 2번째 부분만] Review 3. #14: 벤은 빠르게 달릴 수 있다."
+        },
+        {
+         "page": 18,
+         "en": "I was late. = I got up late this morning.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I was late. = I got up late this morning.",
+         "inApplication": 15,
+         "koFromReview": "['=' 2번째 부분만] Review 3. #15: 나는 오늘아침에 늦게 일어났다."
+        },
+        {
+         "page": 18,
+         "en": "The early bird can catch the worms.",
+         "ko": null,
+         "bold": [],
+         "tag": "Cf.)",
+         "lessonRef": null,
+         "raw": "Cf.) The early bird can catch the worms.",
+         "inApplication": null,
+         "koFromReview": null
+        }
+       ]
+      },
+      {
+       "label": "(2) 부사의 여러 가지 용법",
+       "explanation": null,
+       "items": [
+        {
+         "page": 18,
+         "en": "Birds sing merrily.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Birds sing merrily.",
+         "inApplication": 17,
+         "koFromReview": "Review 3. #17: 새들은 즐겁게 노래한다."
+        },
+        {
+         "page": 18,
+         "en": "Birds are very beautiful.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Birds are very beautiful.",
+         "inApplication": 19,
+         "koFromReview": "Review 3. #19: 새들이 매우 아름답다."
+        },
+        {
+         "page": 18,
+         "en": "Perhaps he will come.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Perhaps he will come.",
+         "inApplication": 20,
+         "koFromReview": "Review 3. #20: 아마 그는 올 것이다."
+        },
+        {
+         "page": 18,
+         "en": "Even Homer sometimes nods.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Even Homer sometimes nods.",
+         "inApplication": 22,
+         "koFromReview": "Review 3. #22: 호머라도 때때로 존다."
+        },
+        {
+         "page": 18,
+         "en": "Only you can make it.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Only you can make it.",
+         "inApplication": 28,
+         "koFromReview": "Review 3. #28: 오직 그대만 할 수 있다."
+        },
+        {
+         "page": 18,
+         "en": "I am busy now.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am busy now.",
+         "inApplication": 31,
+         "koFromReview": "Review 3. #31: 나는 지금 바쁘다."
+        }
+       ]
+      },
+      {
+       "label": "(3) 주의해야 할 부사들",
+       "explanation": null,
+       "items": [
+        {
+         "page": 19,
+         "en": "Here is a book.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Here is a book.",
+         "inApplication": 32,
+         "koFromReview": "Review 3. #32: 여기에 책 한 권이 있다."
+        },
+        {
+         "page": 19,
+         "en": "There was a book.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "There was a book.",
+         "inApplication": 33,
+         "koFromReview": null
+        },
+        {
+         "page": 19,
+         "en": "He tried hard to find a job, but he had no luck.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He tried hard to find a job, but he had no luck.",
+         "inApplication": 34,
+         "koFromReview": "Review 3. #33: 그는 직업을 구하려고 열심히 노력했지만, 운이 없었다."
+        },
+        {
+         "page": 19,
+         "en": "She hardly ate anything, she was really sad.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She hardly ate anything, she was really sad.",
+         "inApplication": null,
+         "koFromReview": null
+        },
+        {
+         "page": 19,
+         "en": "I am happy, too = So am I",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am happy, too = So am I",
+         "inApplication": 38,
+         "koFromReview": null
+        },
+        {
+         "page": 19,
+         "en": "I am not happy = Neither am I =Nor am I",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am not happy = Neither am I =Nor am I",
+         "inApplication": 39,
+         "koFromReview": null
+        },
+        {
+         "page": 19,
+         "en": "It was cold yesterday. = So it was.",
+         "ko": null,
+         "bold": [],
+         "tag": "(정말 그렇다)",
+         "lessonRef": null,
+         "raw": "It was cold yesterday. = So it was. (정말 그렇다)",
+         "inApplication": 40,
+         "koFromReview": null
+        }
+       ]
+      },
+      {
+       "label": "(4) 비교급과 최상급 / 위치",
+       "explanation": null,
+       "items": [
+        {
+         "page": 19,
+         "en": "I am a pretty happy person.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 1,
+         "raw": "I am a pretty happy person. (1과)",
+         "inApplication": 41,
+         "koFromReview": "Review 3. #37: 나는 매우 행복한 사람이다."
+        },
+        {
+         "page": 19,
+         "en": "They are studying pretty hard.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "They are studying pretty hard.",
+         "inApplication": 42,
+         "koFromReview": "Review 3. #38: 그들은 매우 열심히 공부하고 있다."
+        }
+       ]
+      },
+      {
+       "label": "(5) 의문부사",
+       "explanation": null,
+       "items": [
+        {
+         "page": 19,
+         "en": "How old are you?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How old are you?",
+         "inApplication": 43,
+         "koFromReview": "Review 3. #39: 너는 몇 살이니?"
+        },
+        {
+         "page": 19,
+         "en": "How tall are you?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How tall are you?",
+         "inApplication": 45,
+         "koFromReview": "Review 3. #41: 너는 키가 얼마니?"
+        },
+        {
+         "page": 19,
+         "en": "How tall is this tree?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How tall is this tree?",
+         "inApplication": null,
+         "koFromReview": null
+        },
+        {
+         "page": 19,
+         "en": "How long is that bridge?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How long is that bridge?",
+         "inApplication": null,
+         "koFromReview": null
+        },
+        {
+         "page": 19,
+         "en": "How much is this book?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How much is this book?",
+         "inApplication": null,
+         "koFromReview": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "application",
+     "heading": "2. Application Sentences",
+     "page": 20,
+     "groups": [
+      {
+       "label": null,
+       "explanation": null,
+       "items": [
+        {
+         "page": 20,
+         "en": "My elementary school is fairly large.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 6,
+         "raw": "My elementary school is fairly large. (6과)",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #1: 나의 초등학교는 상당히 크다."
+        },
+        {
+         "page": 20,
+         "en": "Tom was not seriously injured in the accident.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Tom was not seriously injured in the accident.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #2: 톰은 그 사고에서 심각하게 다치지 않았다."
+        },
+        {
+         "page": 20,
+         "en": "He got the bag and got out of the shop quickly.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He got the bag and got out of the shop quickly.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #3: 그는 가방을 가지고 그 가게를 빠르게 나왔다."
+        },
+        {
+         "page": 20,
+         "en": "Would you speak more slowly?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Would you speak more slowly?",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #4: 조금만 더 천천히 말씀해 주실래요?"
+        },
+        {
+         "page": 20,
+         "en": "He is a truly smart person, and I am sure that his dream will come true.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 3,
+         "raw": "He is a truly smart person, and I am sure that his dream will come true. (3과)",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #5: 그는 진실로 똑똑한 사람이고 나는 그의 꿈이 실현될 것을 확신한다."
+        },
+        {
+         "page": 20,
+         "en": "We’re terribly sorry for pushing you.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "We’re terribly sorry for pushing you.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #6: 우리가 당신을 밀쳐서 정말 미안합니다."
+        },
+        {
+         "page": 20,
+         "en": "The meeting was badly organized.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "The meeting was badly organized.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #7: 그 회의는 나쁘게 조직되어 있었다."
+        },
+        {
+         "page": 20,
+         "en": "I could remember his face vaguely.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I could remember his face vaguely.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #8: 나는 그의 얼굴을 희미하게 기억할 수 있었다."
+        },
+        {
+         "page": 20,
+         "en": "Usually in class, the students are very friendly to each other.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 5,
+         "raw": "Usually in class, the students are very friendly to each other. (5과)",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #9: 보통 학급에서, 학생들은 서로 서로에게 매우 친절하다."
+        },
+        {
+         "page": 20,
+         "en": "I am awfully hungry.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am awfully hungry.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #10: 나는 매우 배가 고프다."
+        },
+        {
+         "page": 20,
+         "en": "The time passed very quickly.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "The time passed very quickly.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #11: 시간은 매우 빠르게 지났다."
+        },
+        {
+         "page": 20,
+         "en": "Alice and Jo are very happily married.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Alice and Jo are very happily married.",
+         "impliedGroup": "group#1 (1) –ly 부사",
+         "koFromReview": "Review 3. #12: 앨리스와 조는 매우 행복하게 결혼했다."
+        },
+        {
+         "page": 20,
+         "en": "Sue’s job is very hard = Sue works very hard.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Sue’s job is very hard = Sue works very hard.",
+         "impliedGroup": "group#2 (2) 형용사와 형태가 같은 부사",
+         "koFromReview": "['=' 2번째 부분만] Review 3. #13: 수는 매우 힘들게 일한다."
+        },
+        {
+         "page": 21,
+         "en": "Ben is a fast runner = Ben can run fast.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Ben is a fast runner = Ben can run fast.",
+         "impliedGroup": "group#2 (2) 형용사와 형태가 같은 부사",
+         "koFromReview": "['=' 2번째 부분만] Review 3. #14: 벤은 빠르게 달릴 수 있다."
+        },
+        {
+         "page": 21,
+         "en": "I  was late. = I got up late this morning.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I  was late. = I got up late this morning.",
+         "impliedGroup": "group#2 (2) 형용사와 형태가 같은 부사",
+         "koFromReview": "['=' 2번째 부분만] Review 3. #15: 나는 오늘아침에 늦게 일어났다."
+        },
+        {
+         "page": 21,
+         "en": "The bus left ten minutes early.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "The bus left ten minutes early.",
+         "impliedGroup": "group#2 (2) 형용사와 형태가 같은 부사",
+         "koFromReview": "Review 3. #16: 그 버스는 10분 일찍 떠났다."
+        },
+        {
+         "page": 21,
+         "en": "Birds sing merrily.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Birds sing merrily.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #17: 새들은 즐겁게 노래한다."
+        },
+        {
+         "page": 21,
+         "en": "Tom always goes to work by car.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Tom always goes to work by car.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #18: 톰은 항상 차로 출근한다."
+        },
+        {
+         "page": 21,
+         "en": "Birds are very beautiful.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Birds are very beautiful.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #19: 새들이 매우 아름답다."
+        },
+        {
+         "page": 21,
+         "en": "Perhaps he will come.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Perhaps he will come.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #20: 아마 그는 올 것이다."
+        },
+        {
+         "page": 21,
+         "en": "She hardly spoke to me.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She hardly spoke to me.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #21: 그녀는 내게 거의 말하지 않는다."
+        },
+        {
+         "page": 21,
+         "en": "Even Homer sometimes nods.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Even Homer sometimes nods.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #22: 호머라도 때때로 존다."
+        },
+        {
+         "page": 21,
+         "en": "Jack can’t even boil an egg.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Jack can’t even boil an egg.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #23: 잭은 달걀도 못 삶는다."
+        },
+        {
+         "page": 21,
+         "en": "The tea was too hot to drink.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "The tea was too hot to drink.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #24: 그 차가 마시기에 너무 뜨겁군."
+        },
+        {
+         "page": 21,
+         "en": "It’s too late to go to the cinema.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "It’s too late to go to the cinema.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #25: 영화관에 가기에 너무 늦었어."
+        },
+        {
+         "page": 21,
+         "en": "The river wasn’t clean enough to swim in.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "The river wasn’t clean enough to swim in.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #26: 그 강은 안에서 수영할 만큼 충분히 깨끗해."
+        },
+        {
+         "page": 21,
+         "en": "This coat is not warm enough to wear in winter.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "This coat is not warm enough to wear in winter.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #27: 이 코트는 겨울에 입을 만큼 충분히 따뜻하지 않아."
+        },
+        {
+         "page": 22,
+         "en": "Only you can make it.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Only you can make it.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #28: 오직 그대만 할 수 있다."
+        },
+        {
+         "page": 22,
+         "en": "Although it rained a lot, they enjoyed their holidays.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Although it rained a lot, they enjoyed their holidays.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #29: 비록 비가 많이 내렸더라도, 그들은 그 휴일은 즐겼다."
+        },
+        {
+         "page": 22,
+         "en": "You can’t go in unless you are a member.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "You can’t go in unless you are a member.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #30: 당신이 멤버가 아니시면, 들어가실 수 없습니다."
+        },
+        {
+         "page": 22,
+         "en": "I am busy now.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am busy now.",
+         "impliedGroup": "group#3 (2) 부사의 여러 가지 용법",
+         "koFromReview": "Review 3. #31: 나는 지금 바쁘다."
+        },
+        {
+         "page": 22,
+         "en": "Here is a book.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Here is a book.",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": "Review 3. #32: 여기에 책 한 권이 있다."
+        },
+        {
+         "page": 22,
+         "en": "There was a book.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "There was a book.",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": null
+        },
+        {
+         "page": 22,
+         "en": "He tried hard to find a job, but he had no luck.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "He tried hard to find a job, but he had no luck.",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": "Review 3. #33: 그는 직업을 구하려고 열심히 노력했지만, 운이 없었다."
+        },
+        {
+         "page": 22,
+         "en": "She hardly ate anything, and she was really sad.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "She hardly ate anything, and she was really sad.",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": "Review 3. #34: 그녀는 거의 아무것도 먹지 않았고, 정말 슬펐다."
+        },
+        {
+         "page": 22,
+         "en": "I haven’t seen them for such a long time.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I haven’t seen them for such a long time.",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": "Review 3. #35: 나는 그렇게 긴 시간 동안 그들을 보지 못했다."
+        },
+        {
+         "page": 22,
+         "en": "I haven’t seen them for so long time.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I haven’t seen them for so long time.",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": "Review 3. #36: 나는 매우 긴 시간 동안 그들을 보지 못했다."
+        },
+        {
+         "page": 22,
+         "en": "I am happy, too = So am I",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am happy, too = So am I",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": null
+        },
+        {
+         "page": 22,
+         "en": "I am not happy = Neither am I =Nor am I",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "I am not happy = Neither am I =Nor am I",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": null
+        },
+        {
+         "page": 22,
+         "en": "It was cold yesterday. = So it was.",
+         "ko": null,
+         "bold": [],
+         "tag": "(정말 그렇다)",
+         "lessonRef": null,
+         "raw": "It was cold yesterday. = So it was.(정말 그렇다)",
+         "impliedGroup": "group#4 (3) 주의해야 할 부사들",
+         "koFromReview": null
+        },
+        {
+         "page": 22,
+         "en": "I am a pretty happy person.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": 1,
+         "raw": "I am a pretty happy person.(1과)",
+         "impliedGroup": "group#5 (4) 비교급과 최상급 / 위치",
+         "koFromReview": "Review 3. #37: 나는 매우 행복한 사람이다."
+        },
+        {
+         "page": 23,
+         "en": "They are studying pretty hard.",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "They are studying pretty hard.",
+         "impliedGroup": "group#5 (4) 비교급과 최상급 / 위치",
+         "koFromReview": "Review 3. #38: 그들은 매우 열심히 공부하고 있다."
+        },
+        {
+         "page": 23,
+         "en": "How old are you?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How old are you?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #39: 너는 몇 살이니?"
+        },
+        {
+         "page": 23,
+         "en": "How far is it?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How far is it?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #40: 그곳은 얼마나 머니?"
+        },
+        {
+         "page": 23,
+         "en": "How tall are you?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How tall are you?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #41: 너는 키가 얼마니?"
+        },
+        {
+         "page": 23,
+         "en": "How long will it take from your house and to your school?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How long will it take from your house and to your school?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #42: 너의 집에서 학교까지 얼마나 걸릴 것 같니?"
+        },
+        {
+         "page": 23,
+         "en": "How big is that house?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How big is that house?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #43: 저 집은 얼마나 크니?"
+        },
+        {
+         "page": 23,
+         "en": "How often do you use your car?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How often do you use your car?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #44: 너는 얼마나 자주 네 차를 사용하니?"
+        },
+        {
+         "page": 23,
+         "en": "How did the war break out?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "How did the war break out?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #45: 전쟁이 어떻게 발발했니?"
+        },
+        {
+         "page": 23,
+         "en": "Where do you live?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Where do you live?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #46: 어디서 너는 사니?"
+        },
+        {
+         "page": 23,
+         "en": "Where are you going?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Where are you going?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #47: 어디로 너는 가니?"
+        },
+        {
+         "page": 23,
+         "en": "Where does Susan work?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Where does Susan work?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #48: 수잔은 어디서 일하니?"
+        },
+        {
+         "page": 23,
+         "en": "Where is a fire station?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "Where is a fire station?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #49: 소방서는 어디에 있니?"
+        },
+        {
+         "page": 23,
+         "en": "When are you going away?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "When are you going away?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #50: 언제 너는 갈 거니?"
+        },
+        {
+         "page": 23,
+         "en": "When is your birthday?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "When is your birthday?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #51: 네 생일이 언제이니?"
+        },
+        {
+         "page": 23,
+         "en": "When did you graduate from your university?",
+         "ko": null,
+         "bold": [],
+         "tag": null,
+         "lessonRef": null,
+         "raw": "When did you graduate from your university?",
+         "impliedGroup": "group#6 (5) 의문부사",
+         "koFromReview": "Review 3. #52: 언제 너는 대학을 졸업했니?"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "review",
+     "heading": "Review",
+     "page": 24,
+     "tasks": [
+      {
+       "no": "1.",
+       "page": 24,
+       "instruction": "다음 문장을 보고 부사를 찾아 줄을 치세요.",
+       "taskTypes": [
+        "underline_adverb"
+       ],
+       "items": [
+        {
+         "n": "1",
+         "page": 24,
+         "prompt": "My elementary school is fairly large. (6과)",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) –ly 부사' item 1 — 제시문 자체가 이 문장; application item 1에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "fairly (형용사 large를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "2",
+         "page": 24,
+         "prompt": "Would you speak more slowly?",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) –ly 부사' item 2 — 제시문 자체가 이 문장; application item 4에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "more slowly (slowly는 speak를, more는 slowly를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "3",
+         "page": 24,
+         "prompt": "He is a truly smart person, and I am sure that his dream will come true. (3과)",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) –ly 부사' item 3 — 제시문 자체가 이 문장; application item 5에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "truly (형용사 smart를 꾸밈) — 함정: sure, true는 형용사",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "4",
+         "page": 24,
+         "prompt": "I could remember his face vaguely.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) –ly 부사' item 4 — 제시문 자체가 이 문장; application item 8에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "vaguely (동사 remember를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 4,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "5",
+         "page": 24,
+         "prompt": "Usually in class, the students are very friendly to each other. (5과)",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) –ly 부사' item 5 — 제시문 자체가 이 문장; application item 9에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "Usually (문장 전체), very (형용사 friendly를 꾸밈) — 함정: friendly는 -ly로 끝나도 형용사; in class는 부사구",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 5,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "6",
+         "page": 24,
+         "prompt": "I am awfully hungry.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#1 '(1) –ly 부사' item 6 — 제시문 자체가 이 문장; application item 10에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "awfully (형용사 hungry를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 1,
+          "item": 6,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "7",
+         "page": 24,
+         "prompt": "Birds sing merrily.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(2) 부사의 여러 가지 용법' item 1 — 제시문 자체가 이 문장; application item 17에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "merrily (동사 sing을 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "8",
+         "page": 24,
+         "prompt": "Birds are very beautiful.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(2) 부사의 여러 가지 용법' item 2 — 제시문 자체가 이 문장; application item 19에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "very (형용사 beautiful을 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "9",
+         "page": 24,
+         "prompt": "Perhaps he will come.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(2) 부사의 여러 가지 용법' item 3 — 제시문 자체가 이 문장; application item 20에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "Perhaps (문장 전체를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "10",
+         "page": 24,
+         "prompt": "Even Homer sometimes nods.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(2) 부사의 여러 가지 용법' item 4 — 제시문 자체가 이 문장; application item 22에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "Even (명사 Homer를 꾸밈), sometimes (빈도부사, 동사 nods를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 4,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "11",
+         "page": 24,
+         "prompt": "Only you can make it.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(2) 부사의 여러 가지 용법' item 5 — 제시문 자체가 이 문장; application item 28에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "Only (대명사 you를 꾸밈)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 5,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "12",
+         "page": 24,
+         "prompt": "I am busy now.",
+         "promptLang": "en",
+         "extraSlot": "부사를 찾아 밑줄",
+         "answerFromBook": null,
+         "answerSource": "passOff group#3 '(2) 부사의 여러 가지 용법' item 6 — 제시문 자체가 이 문장; application item 31에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "now (시간 부사)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 3,
+          "item": 6,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        }
+       ]
+      },
+      {
+       "no": "2.",
+       "page": 25,
+       "instruction": "다음 문장을 보고 뜻이 같아지도록 영작하시오.",
+       "taskTypes": [
+        "rewrite_same_meaning",
+        "complete_sentence_starter"
+       ],
+       "items": [
+        {
+         "n": "1",
+         "page": 25,
+         "prompt": "Sue’s job is very hard",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '=' — '=' 다음 줄에 같은 뜻 문장 전체 쓰기 (밑줄 없음)",
+         "answerFromBook": "Sue works very hard.",
+         "answerSource": "passOff group#2 '(2) 형용사와 형태가 같은 부사' item 1 ('=' 기준 2번째 부분); application item 13에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 1,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "2",
+         "page": 25,
+         "prompt": "Ben is a fast runner",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '=' — '=' 다음 줄에 같은 뜻 문장 전체 쓰기 (밑줄 없음)",
+         "answerFromBook": "Ben can run fast.",
+         "answerSource": "passOff group#2 '(2) 형용사와 형태가 같은 부사' item 2 ('=' 기준 2번째 부분); application item 14에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 2,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "3",
+         "page": 25,
+         "prompt": "I was late.",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '=' — '=' 다음 줄에 같은 뜻 문장 전체 쓰기 (밑줄 없음)",
+         "answerFromBook": "I got up late this morning.",
+         "answerSource": "passOff group#2 '(2) 형용사와 형태가 같은 부사' item 3 ('=' 기준 2번째 부분); application item 15에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "passOff",
+          "group": 2,
+          "item": 3,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "4",
+         "page": 25,
+         "prompt": "I am happy, too",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '= So' — '= So' 뒤 밑줄 칸 채우기",
+         "answerFromBook": "So am I",
+         "answerSource": "passOff group#4 '(3) 주의해야 할 부사들' item 5 ('=' 기준 2번째 부분); application item 38에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "am I",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 4,
+          "item": 5,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "5a",
+         "page": 25,
+         "prompt": "I am not happy",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '= Nei' — '= Nei' 뒤 밑줄 칸 — 단어 중간(Nei-ther)부터 이어 쓰기",
+         "answerFromBook": "Neither am I",
+         "answerSource": "passOff group#4 '(3) 주의해야 할 부사들' item 6 ('=' 기준 2번째 부분); application item 39에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "ther am I (→ Neither am I)",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 4,
+          "item": 6,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "5b",
+         "page": 25,
+         "prompt": "I am not happy",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '= Nor' — '= Nor' 뒤 밑줄 칸 채우기",
+         "answerFromBook": "Nor am I",
+         "answerSource": "passOff group#4 '(3) 주의해야 할 부사들' item 6 ('=' 기준 3번째 부분); application item 39에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "am I",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 4,
+          "item": 6,
+          "part": 2
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "6",
+         "page": 25,
+         "prompt": "It was cold yesterday.",
+         "promptLang": "en",
+         "extraSlot": "인쇄 '= So (정말 그렇다)' — '= So' 뒤 밑줄 칸 채우기 (오른쪽에 '(정말 그렇다)' 풀이 인쇄)",
+         "answerFromBook": "So it was.",
+         "answerSource": "passOff group#4 '(3) 주의해야 할 부사들' item 7 ('=' 기준 2번째 부분); application item 40에도 같은 줄",
+         "proposedAnswer": null,
+         "extraSlotAnswer": "it was.",
+         "sourceRef": {
+          "section": "passOff",
+          "group": 4,
+          "item": 7,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        }
+       ]
+      },
+      {
+       "no": "3.",
+       "page": 26,
+       "instruction": "다음을 영작하시오.",
+       "taskTypes": [
+        "ko_to_en_compose"
+       ],
+       "items": [
+        {
+         "n": "1",
+         "page": 26,
+         "prompt": "나의 초등학교는 상당히 크다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "My elementary school is fairly large.",
+         "answerSource": "application item 1",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 1,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "2",
+         "page": 26,
+         "prompt": "톰은 그 사고에서 심각하게 다치지 않았다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Tom was not seriously injured in the accident.",
+         "answerSource": "application item 2",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 2,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "3",
+         "page": 26,
+         "prompt": "그는 가방을 가지고 그 가게를 빠르게 나왔다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He got the bag and got out of the shop quickly.",
+         "answerSource": "application item 3",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 3,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "4",
+         "page": 26,
+         "prompt": "조금만 더 천천히 말씀해 주실래요?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Would you speak more slowly?",
+         "answerSource": "application item 4",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 4,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "5",
+         "page": 26,
+         "prompt": "그는 진실로 똑똑한 사람이고 나는 그의 꿈이 실현될 것을 확신한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He is a truly smart person, and I am sure that his dream will come true.",
+         "answerSource": "application item 5",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 5,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "6",
+         "page": 26,
+         "prompt": "우리가 당신을 밀쳐서 정말 미안합니다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "We’re terribly sorry for pushing you.",
+         "answerSource": "application item 6",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 6,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "7",
+         "page": 26,
+         "prompt": "그 회의는 나쁘게 조직되어 있었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "The meeting was badly organized.",
+         "answerSource": "application item 7",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 7,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그 회의는 준비가 엉망이었다."
+        },
+        {
+         "n": "8",
+         "page": 26,
+         "prompt": "나는 그의 얼굴을 희미하게 기억할 수 있었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I could remember his face vaguely.",
+         "answerSource": "application item 8",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 8,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "9",
+         "page": 26,
+         "prompt": "보통 학급에서, 학생들은 서로 서로에게 매우 친절하다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Usually in class, the students are very friendly to each other.",
+         "answerSource": "application item 9",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 9,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "보통 수업 시간에 학생들은 서로에게 매우 친절하다."
+        },
+        {
+         "n": "10",
+         "page": 26,
+         "prompt": "나는 매우 배가 고프다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I am awfully hungry.",
+         "answerSource": "application item 10",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 10,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "11",
+         "page": 26,
+         "prompt": "시간은 매우 빠르게 지났다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "The time passed very quickly.",
+         "answerSource": "application item 11",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 11,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "12",
+         "page": 26,
+         "prompt": "앨리스와 조는 매우 행복하게 결혼했다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Alice and Jo are very happily married.",
+         "answerSource": "application item 12",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 12,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "앨리스와 조는 매우 행복한 결혼 생활을 하고 있다."
+        },
+        {
+         "n": "13",
+         "page": 27,
+         "prompt": "수는 매우 힘들게 일한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Sue works very hard.",
+         "answerSource": "application item 13 ('=' 기준 2번째 부분)",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 13,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "14",
+         "page": 27,
+         "prompt": "벤은 빠르게 달릴 수 있다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Ben can run fast.",
+         "answerSource": "application item 14 ('=' 기준 2번째 부분)",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 14,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "15",
+         "page": 27,
+         "prompt": "나는 오늘아침에 늦게 일어났다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I got up late this morning.",
+         "answerSource": "application item 15 ('=' 기준 2번째 부분)",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 15,
+          "part": 1
+         },
+         "answerFix": null,
+         "promptFix": "나는 오늘 아침에 늦게 일어났다."
+        },
+        {
+         "n": "16",
+         "page": 27,
+         "prompt": "그 버스는 10분 일찍 떠났다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "The bus left ten minutes early.",
+         "answerSource": "application item 16",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 16,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "17",
+         "page": 27,
+         "prompt": "새들은 즐겁게 노래한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Birds sing merrily.",
+         "answerSource": "application item 17",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 17,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "18",
+         "page": 27,
+         "prompt": "톰은 항상 차로 출근한다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Tom always goes to work by car.",
+         "answerSource": "application item 18",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 18,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "19",
+         "page": 27,
+         "prompt": "새들이 매우 아름답다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Birds are very beautiful.",
+         "answerSource": "application item 19",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 19,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "20",
+         "page": 27,
+         "prompt": "아마 그는 올 것이다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Perhaps he will come.",
+         "answerSource": "application item 20",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 20,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "21",
+         "page": 27,
+         "prompt": "그녀는 내게 거의 말하지 않는다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "She hardly spoke to me.",
+         "answerSource": "application item 21",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 21,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그녀는 내게 거의 말을 하지 않았다."
+        },
+        {
+         "n": "22",
+         "page": 27,
+         "prompt": "호머라도 때때로 존다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Even Homer sometimes nods.",
+         "answerSource": "application item 22",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 22,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "23",
+         "page": 27,
+         "prompt": "잭은 달걀도 못 삶는다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Jack can’t even boil an egg.",
+         "answerSource": "application item 23",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 23,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "24",
+         "page": 27,
+         "prompt": "그 차가 마시기에 너무 뜨겁군.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "The tea was too hot to drink.",
+         "answerSource": "application item 24",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 24,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그 차(茶)는 마시기에 너무 뜨거웠다."
+        },
+        {
+         "n": "25",
+         "page": 27,
+         "prompt": "영화관에 가기에 너무 늦었어.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "It’s too late to go to the cinema.",
+         "answerSource": "application item 25",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 25,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "26",
+         "page": 28,
+         "prompt": "그 강은 안에서 수영할 만큼 충분히 깨끗해.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "The river wasn’t clean enough to swim in.",
+         "answerSource": "application item 26",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 26,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그 강은 수영할 수 있을 만큼 깨끗하지 않았다."
+        },
+        {
+         "n": "27",
+         "page": 28,
+         "prompt": "이 코트는 겨울에 입을 만큼 충분히 따뜻하지 않아.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "This coat is not warm enough to wear in winter.",
+         "answerSource": "application item 27",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 27,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "28",
+         "page": 28,
+         "prompt": "오직 그대만 할 수 있다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Only you can make it.",
+         "answerSource": "application item 28",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 28,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "29",
+         "page": 28,
+         "prompt": "비록 비가 많이 내렸더라도, 그들은 그 휴일은 즐겼다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Although it rained a lot, they enjoyed their holidays.",
+         "answerSource": "application item 29",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 29,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "비가 많이 왔지만, 그들은 휴가를 즐겼다."
+        },
+        {
+         "n": "30",
+         "page": 28,
+         "prompt": "당신이 멤버가 아니시면, 들어가실 수 없습니다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "You can’t go in unless you are a member.",
+         "answerSource": "application item 30",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 30,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "31",
+         "page": 28,
+         "prompt": "나는 지금 바쁘다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I am busy now.",
+         "answerSource": "application item 31",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 31,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "32",
+         "page": 28,
+         "prompt": "여기에 책 한 권이 있다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Here is a book.",
+         "answerSource": "application item 32",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 32,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "33",
+         "page": 28,
+         "prompt": "그는 직업을 구하려고 열심히 노력했지만, 운이 없었다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "He tried hard to find a job, but he had no luck.",
+         "answerSource": "application item 34",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 34,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "34",
+         "page": 28,
+         "prompt": "그녀는 거의 아무것도 먹지 않았고, 정말 슬펐다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "She hardly ate anything, and she was really sad.",
+         "answerSource": "application item 35",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 35,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "35",
+         "page": 28,
+         "prompt": "나는 그렇게 긴 시간 동안 그들을 보지 못했다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I haven’t seen them for such a long time.",
+         "answerSource": "application item 36",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 36,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "나는 그들을 정말 오랫동안 못 봤다. (such a long time)"
+        },
+        {
+         "n": "36",
+         "page": 28,
+         "prompt": "나는 매우 긴 시간 동안 그들을 보지 못했다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I haven’t seen them for so long time.",
+         "answerSource": "application item 37",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 37,
+          "part": null
+         },
+         "answerFix": "I haven’t seen them for so long.",
+         "promptFix": "나는 그들을 그렇게 오래 못 봤다. (so long)"
+        },
+        {
+         "n": "37",
+         "page": 28,
+         "prompt": "나는 매우 행복한 사람이다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "I am a pretty happy person.",
+         "answerSource": "application item 41",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 41,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "나는 꽤 행복한 사람이다."
+        },
+        {
+         "n": "38",
+         "page": 28,
+         "prompt": "그들은 매우 열심히 공부하고 있다.",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "They are studying pretty hard.",
+         "answerSource": "application item 42",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 42,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "그들은 꽤 열심히 공부하고 있다."
+        },
+        {
+         "n": "39",
+         "page": 29,
+         "prompt": "너는 몇 살이니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How old are you?",
+         "answerSource": "application item 43",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 43,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "40",
+         "page": 29,
+         "prompt": "그곳은 얼마나 머니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How far is it?",
+         "answerSource": "application item 44",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 44,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "41",
+         "page": 29,
+         "prompt": "너는 키가 얼마니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How tall are you?",
+         "answerSource": "application item 45",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 45,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "42",
+         "page": 29,
+         "prompt": "너의 집에서 학교까지 얼마나 걸릴 것 같니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How long will it take from your house and to your school?",
+         "answerSource": "application item 46",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 46,
+          "part": null
+         },
+         "answerFix": "How long will it take to get from your house to your school?",
+         "promptFix": null
+        },
+        {
+         "n": "43",
+         "page": 29,
+         "prompt": "저 집은 얼마나 크니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How big is that house?",
+         "answerSource": "application item 47",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 47,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "44",
+         "page": 29,
+         "prompt": "너는 얼마나 자주 네 차를 사용하니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How often do you use your car?",
+         "answerSource": "application item 48",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 48,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "45",
+         "page": 29,
+         "prompt": "전쟁이 어떻게 발발했니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "How did the war break out?",
+         "answerSource": "application item 49",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 49,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "46",
+         "page": 29,
+         "prompt": "어디서 너는 사니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Where do you live?",
+         "answerSource": "application item 50",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 50,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "47",
+         "page": 29,
+         "prompt": "어디로 너는 가니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Where are you going?",
+         "answerSource": "application item 51",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 51,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "48",
+         "page": 29,
+         "prompt": "수잔은 어디서 일하니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Where does Susan work?",
+         "answerSource": "application item 52",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 52,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "49",
+         "page": 29,
+         "prompt": "소방서는 어디에 있니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "Where is a fire station?",
+         "answerSource": "application item 53",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 53,
+          "part": null
+         },
+         "answerFix": "Where is the fire station?",
+         "promptFix": null
+        },
+        {
+         "n": "50",
+         "page": 29,
+         "prompt": "언제 너는 갈 거니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "When are you going away?",
+         "answerSource": "application item 54",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 54,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": "너는 언제 떠나니?"
+        },
+        {
+         "n": "51",
+         "page": 29,
+         "prompt": "네 생일이 언제이니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "When is your birthday?",
+         "answerSource": "application item 55",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 55,
+          "part": null
+         },
+         "answerFix": null,
+         "promptFix": null
+        },
+        {
+         "n": "52",
+         "page": 29,
+         "prompt": "언제 너는 대학을 졸업했니?",
+         "promptLang": "ko",
+         "extraSlot": null,
+         "answerFromBook": "When did you graduate from your university?",
+         "answerSource": "application item 56",
+         "proposedAnswer": null,
+         "extraSlotAnswer": null,
+         "sourceRef": {
+          "section": "application",
+          "group": null,
+          "item": 56,
+          "part": null
+         },
+         "answerFix": "When did you graduate from university?",
+         "promptFix": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "crossRef": {
+    "passOffCount": 30,
+    "applicationCount": 56,
+    "passOffNotInApplicationVerbatim": [
+     "group#2 item 4: The early bird can catch the worms.",
+     "group#4 item 4: She hardly ate anything, she was really sad. (application item 35과 거의 같음, 유사도 0.96)",
+     "group#6 item 3: How tall is this tree?",
+     "group#6 item 4: How long is that bridge?",
+     "group#6 item 5: How much is this book?"
+    ],
+    "applicationWithoutKoreanPrompt": [
+     "application item 33: There was a book.",
+     "application item 38: I am happy, too = So am I",
+     "application item 39: I am not happy = Neither am I =Nor am I",
+     "application item 40: It was cold yesterday. = So it was."
+    ],
+    "applicationOnlyPartlyTranslated": [
+     "application item 13: Sue’s job is very hard = Sue works very hard.",
+     "application item 14: Ben is a fast runner = Ben can run fast.",
+     "application item 15: I  was late. = I got up late this morning."
+    ],
+    "sentencesWithNoKoreanAnywhere": [
+     "The early bird can catch the worms. [passOff group#2 item 4]",
+     "There was a book. [passOff group#4 item 2 = application item 33]",
+     "I am happy, too = So am I [passOff group#4 item 5 = application item 38]",
+     "I am not happy = Neither am I =Nor am I [passOff group#4 item 6 = application item 39]",
+     "It was cold yesterday. = So it was. [passOff group#4 item 7 = application item 40]",
+     "How tall is this tree? [passOff group#6 item 3]",
+     "How long is that bridge? [passOff group#6 item 4]",
+     "How much is this book? [passOff group#6 item 5]"
+    ],
+    "nearDuplicateVariantsWithKoreanOnTwin": [
+     "passOff group#4 item 4: She hardly ate anything, she was really sad. — application item 35의 변형(그쪽 한국어: Review 3. #34: 그녀는 거의 아무것도 먹지 않았고, 정말 슬펐다.)"
+    ]
+   }
+  }
+ ],
+ "issues": [
+  {
+   "page": 2,
+   "where": "특징 2. (Pass-Off Sentences와 Application Sentences) 첫 줄",
+   "text": "sentences에서는 문법 설명에 앞서 상황예문이나 표로 문법내용을 설명한다.",
+   "type": "korean_typo",
+   "problem": "문장 첫머리의 'Pass-Off'가 인쇄에서 빠져 'sentences에서는'으로 시작함(제목은 'Pass-Off Sentences와 Application Sentences').",
+   "fix": "Pass-Off Sentences에서는 문법 설명에 앞서 상황 예문이나 표로 문법 내용을 설명한다.",
+   "confidence": "high"
+  },
+  {
+   "page": 2,
+   "where": "특징 1. / 3., 학습법 2. ('연결고리 70개')",
+   "text": "대주제 20개와 연결고리 70개로 이루어져 있다.",
+   "type": "layout_or_extraction",
+   "problem": "p3 연결고리 구성도의 소주제 말풍선을 세면 67개(Part 1 29개, Part 2 23개, Part 3 15개)로 '70개'와 맞지 않음. 한 말풍선에 두 항목이 든 경우(예: '과거 완료 / 미래 완료', '부사의 형태 / 부사의 용법')가 있어 세는 방법에 따라 달라짐. 대주제 20개(8+7+5)는 맞음.",
+   "fix": "웹에 소주제 수를 적을 때는 실제 말풍선 수(67) 또는 항목을 쪼갠 기준을 정해 표기",
+   "confidence": "medium"
+  },
+  {
+   "page": 2,
+   "where": "학습법 1.",
+   "text": "학습대상을 Pass Off English를 마치거나 영어의 문법 기초가 필요한 초급자들을 학습의 대상으로 한다.",
+   "type": "korean_typo",
+   "problem": "'Pass Off'에 하이픈 누락, '학습대상을 … 학습의 대상으로 한다'로 같은 말이 겹침.",
+   "fix": "Pass-Off Grammar는 Pass-Off English를 마쳤거나 영어 문법 기초가 필요한 초급자를 학습 대상으로 한다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 2,
+   "where": "특징 1. 외 띄어쓰기",
+   "text": "형성 시켜준다",
+   "type": "korean_typo",
+   "problem": "띄어쓰기: '형성 시켜준다'→'형성시켜 준다', '소주제70개'→'소주제 70개', '각 소 주제별로'→'각 소주제별로', '짜여있어야'→'짜여 있어야', '이 때'→'이때'.",
+   "fix": "형성시켜 준다 / 소주제 70개 / 각 소주제별로 / 짜여 있어야 / 이때",
+   "confidence": "low"
+  },
+  {
+   "page": 4,
+   "where": "목차(p4)·구성도(p3) 가정법 두 번째 말풍선 vs 본문 p5",
+   "text": "가정법의 과거완료 미 래",
+   "type": "layout_or_extraction",
+   "problem": "목차·구성도는 가정법 소주제를 '가정법 과거 / 가정법 과거완료·미래 / I wish 가정법'으로 안내하지만, 본문 p5에는 가정법 미래(If + should / were to) 예문이 하나도 없고 목차에 없는 '(2) 가정법 현재'가 들어가 있음.",
+   "fix": "본문에 가정법 미래 소주제와 예문(예: If it should rain tomorrow, I would stay home. / If I were to be born again, I would be a doctor.)을 넣거나, 목차를 본문에 맞게 고침",
+   "confidence": "high"
+  },
+  {
+   "page": 5,
+   "where": "TOPIC 16 passOff group#1 '(1) 가정법 과거' item 3; application item 3; Review (1) #3",
+   "text": "If you knew the answer, I would tell you.",
+   "type": "english_unnatural",
+   "problem": "문법은 맞지만 논리가 뒤집혀 있음: 네가 이미 답을 안다면 내가 너에게 말해 줄 이유가 없음. 가정법 과거의 전형 예문은 'If I knew the answer, I would tell you.'(내가 답을 안다면 말해 줄 텐데 = 사실은 모름). Review 한국어 제시문 '만약 네가 답을 안다면 내가 네게 말 할 텐데.'도 같은 논리 오류를 옮겼고 '말 할'은 '말할'로 붙여 써야 함.",
+   "fix": "If I knew the answer, I would tell you. / 제시문: 만약 내가 답을 안다면 너에게 말해 줄 텐데.",
+   "confidence": "high"
+  },
+  {
+   "page": 5,
+   "where": "TOPIC 16 passOff group#3 '(3) 가정법 과거완료' item 1",
+   "text": "If I had known English, I should have been happy.",
+   "type": "english_unnatural",
+   "problem": "주절의 'I should have been'은 1인칭에서 would 대신 쓰던 옛 영국식 용법이라 요즘 학습자에게는 '~했어야 했다(의무)'로 읽힘. 같은 문장이 Application(p6)에서는 'could have been'으로 인쇄되고 Review 한국어('행복할 수 있었을 텐데')도 could에 맞춰져 있어 책 안에서 서로 다름.",
+   "fix": "If I had known English, I could have been happy.",
+   "confidence": "medium"
+  },
+  {
+   "page": 5,
+   "where": "TOPIC 16 passOff group#3 '(3) 가정법 과거완료' item 3",
+   "text": "He could have done that if he head tried.",
+   "type": "english_grammar",
+   "problem": "오타: head → had (Application p7에는 had로 바르게 인쇄됨).",
+   "fix": "He could have done that if he had tried.",
+   "confidence": "high"
+  },
+  {
+   "page": 5,
+   "where": "TOPIC 16 passOff group#2 제목",
+   "text": "(2) 가정법 현재",
+   "type": "grammar_explanation_wrong",
+   "problem": "'If I really want …, I need to …'는 현재·미래의 실제 조건을 말하는 직설법 조건문(1차 조건문)이지 사실과 반대를 말하는 가정법이 아님. '가정법 현재'는 옛 참고서식 명칭이고, 가정법 과거와 나란히 두면 '가정법 = 사실의 반대'라는 핵심 개념이 흐려짐.",
+   "fix": "(2) 조건문(직설법): If + 현재, 현재/미래 — 가정법과 비교용이라고 밝힘",
+   "confidence": "medium"
+  },
+  {
+   "page": 5,
+   "where": "TOPIC 16 passOff group#2 item 1; application item 8; Review (1) #8 정답",
+   "text": "at improving English from now on.(16과)",
+   "type": "english_unnatural",
+   "problem": "STUDENT s16-3 원문은 'improving my English'인데 책에서 my가 빠짐. 'improving English'는 '영어라는 언어 자체를 개선한다'로 읽혀 어색함.",
+   "fix": "If I really want to become a great interpreter, I need to work hard at improving my English from now on.",
+   "confidence": "high"
+  },
+  {
+   "page": 5,
+   "where": "TOPIC 16 passOff group#4 제목",
+   "text": "(4) I wish가정법",
+   "type": "korean_typo",
+   "problem": "띄어쓰기 누락.",
+   "fix": "(4) I wish 가정법",
+   "confidence": "low"
+  },
+  {
+   "page": 6,
+   "where": "TOPIC 16 application item 6; Review (1) #6 정답",
+   "text": "If I didn’t want to buy this camera, I wouldn’t buy.",
+   "type": "english_grammar",
+   "problem": "타동사 buy의 목적어(it)가 빠짐. 또 '사고 싶지 않다면 안 살 것'이라는 같은 말 반복이라 가정법 예문으로서 뜻이 약함.",
+   "fix": "If I didn’t want to buy this camera, I wouldn’t buy it. (더 나은 예: If I didn’t need this camera, I wouldn’t buy it.)",
+   "confidence": "high"
+  },
+  {
+   "page": 7,
+   "where": "TOPIC 16 application item 12; Review (1) #12 정답",
+   "text": "If I had known you were in hospital, I would have gone to you.",
+   "type": "english_unnatural",
+   "problem": "'gone to you'는 어색함 — 병문안은 'gone to see you / visited you'. ('in hospital'은 영국식, 미국식은 'in the hospital'로 둘 다 가능.)",
+   "fix": "If I had known you were in the hospital, I would have gone to see you.",
+   "confidence": "medium"
+  },
+  {
+   "page": 7,
+   "where": "TOPIC 16 application item 17; Review (1) #17 정답",
+   "text": "I wish our apartment was more convenient.",
+   "type": "english_grammar",
+   "problem": "가정법을 가르치는 문장인데 학교 문법·시험에서 요구하는 형태는 were. 구어에서는 was도 쓰이지만 이 단원의 모범 답으로는 부적절함(웹 채점은 둘 다 정답 처리 권장).",
+   "fix": "I wish our apartment were more convenient.",
+   "confidence": "medium"
+  },
+  {
+   "page": 7,
+   "where": "TOPIC 16 application item 21; Review (1) #21 정답",
+   "text": "If she had not bought the building, she had a lot of money now.",
+   "type": "english_grammar",
+   "problem": "혼합가정법 주절에 조동사가 빠짐. 과거 조건 → 현재 결과이므로 'would have'.",
+   "fix": "If she had not bought the building, she would have a lot of money now.",
+   "confidence": "high"
+  },
+  {
+   "page": 8,
+   "where": "TOPIC 16 Review (1) #1",
+   "text": "만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야.",
+   "type": "translation_mismatch",
+   "problem": "'~거야'는 will(실제 조건)로 읽혀 가정법 과거(would)가 드러나지 않고, '더 좋게 느낄'은 직역투. 학생이 'If you get exercise, you will feel better.'라고 써도 틀렸다고 할 근거가 없음.",
+   "fix": "(네가) 운동을 한다면 기분이 더 좋아질 텐데.",
+   "confidence": "medium"
+  },
+  {
+   "page": 8,
+   "where": "TOPIC 16 Review (1) #2",
+   "text": "내가 너의 전화기를 써도 되겠니?",
+   "type": "answer_ambiguous",
+   "problem": "제시문만 보면 'Can/May I use your phone?'이 가장 자연스러운 답이라 목표 구문 'Would you mind if I used your phone?'을 끌어낼 수 없음.",
+   "fix": "제가 당신 전화를 써도 괜찮을까요? (Would you mind if ~ 구문으로) — 구문 힌트를 붙이거나 두 답을 모두 인정",
+   "confidence": "medium"
+  },
+  {
+   "page": 8,
+   "where": "TOPIC 16 Review (1) #4",
+   "text": "만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데.",
+   "type": "korean_typo",
+   "problem": "띄어쓰기: '등산 할' → '등산할'.",
+   "fix": "눈이 오지 않는다면 우리는 등산할 수 있을 텐데.",
+   "confidence": "low"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #11",
+   "text": "만약, 내가 새였다면, 나는 네게 날라갔을 텐데.",
+   "type": "korean_typo",
+   "problem": "'날라갔을'은 틀린 말(날다+가다 → 날아가다). '만약,' 뒤 쉼표도 불필요.",
+   "fix": "만약 내가 새였다면, 나는 너에게 날아갔을 텐데.",
+   "confidence": "high"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #14",
+   "text": "만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다.",
+   "type": "translation_mismatch",
+   "problem": "might의 '~했을지도 모른다'가 빠지고 '바뀌었을 것이다'(would)로 옮김. '세계역사'는 '세계 역사'로 띄어 씀.",
+   "fix": "만약 그들이 그 전쟁에서 이겼다면, 세계 역사가 바뀌었을지도 모른다.",
+   "confidence": "low"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #15",
+   "text": "나는 비가 그치기를 원한다.",
+   "type": "translation_mismatch",
+   "problem": "'I wish + would'는 '~하면 좋겠다'(지금 이루어지지 않는 바람)인데 '원한다'(want)로 옮겨, 학생이 'I want the rain to stop.'이라고 써도 제시문과 맞음. (#16, #17도 같은 문제로 따로 적음)",
+   "fix": "비가 그치면 좋겠다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #16",
+   "text": "나는 읽을 무언가가 있기를 원한다.",
+   "type": "translation_mismatch",
+   "problem": "I wish I had ~(현재 사실과 반대되는 바람)를 '있기를 원한다'(want)로 옮겨 'I want something to read.'가 답이 될 수 있음.",
+   "fix": "읽을 거리가 있으면 좋을 텐데.",
+   "confidence": "medium"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #17",
+   "text": "나는 우리 아파트가 조금 더 편리하기를 원한다.",
+   "type": "translation_mismatch",
+   "problem": "I wish + 과거(현재 사실과 반대)를 '편리하기를 원한다'(want)로 옮김.",
+   "fix": "우리 아파트가 좀 더 편리하면 좋을 텐데.",
+   "confidence": "medium"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #18",
+   "text": "나는 내가 정선생님이 아팠다는 것을 알기를 원한다(그랬다면,)나는 그를 만나러 갔을 텐데.",
+   "type": "translation_mismatch",
+   "problem": "'I wish I had known'은 과거 일에 대한 후회('알았더라면 좋았을 텐데')인데 '알기를 원한다'(앞으로의 바람)로 옮김. '정선생님'→'정 선생님', '(그랬다면,)나는' 띄어쓰기도 틀림.",
+   "fix": "정 선생님이 편찮으셨다는 걸 알았더라면 좋았을 텐데. (그랬다면) 나는 그를 만나러 갔을 텐데.",
+   "confidence": "high"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #19",
+   "text": "나는 날씨가 더 따듯하기를 바란다.",
+   "type": "translation_mismatch",
+   "problem": "'I wish it had been warmer'는 과거('더 따뜻했더라면 좋았을 텐데')인데 현재 바람으로 옮겨 학생이 'I wish it were warmer.'를 쓰게 됨. ('따듯하다'는 표준어라 맞춤법 오류는 아님.)",
+   "fix": "날씨가 더 따뜻했더라면 좋았을 텐데.",
+   "confidence": "high"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #20",
+   "text": "만약 그가 의사의 충고를 받아들였다면, 그는 살아 있었을지도 모른다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 혼합가정법(과거 조건 → 현재 결과 'might be alive')인데 한국어는 '살아 있었을지도'(과거)로 옮겨 학생이 'might have been alive'를 쓰게 됨.",
+   "fix": "만약 그가 의사의 충고를 받아들였다면, 그는 (지금) 살아 있을지도 모른다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #21",
+   "text": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 많은 돈을 가졌을 텐데.",
+   "type": "translation_mismatch",
+   "problem": "혼합가정법의 '지금' 결과인데 '가졌을 텐데'(과거)로 옮겼고 '많은 돈을 가졌을'은 직역투. (영어 쪽 오류는 application item 21 항목 참조)",
+   "fix": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 지금 돈이 많을 텐데.",
+   "confidence": "medium"
+  },
+  {
+   "page": 9,
+   "where": "TOPIC 16 Review (1) #22",
+   "text": "만약 내가 그들을 의지하지 않았다면, 나는 더 독립적이 되었을 텐데.",
+   "type": "translation_mismatch",
+   "problem": "조사 오류 '그들을 의지하지' → '그들에게 의지하지'. 영어 'would be'는 현재 결과인데 '되었을 텐데'(과거)로 옮김.",
+   "fix": "만약 내가 그들에게 의지하지 않았다면, 나는 지금 더 독립적일 텐데.",
+   "confidence": "medium"
+  },
+  {
+   "page": 10,
+   "where": "TOPIC 17 passOff group#1 item 1; application item 1; Review 1. #1, 2. #1 정답",
+   "text": "He can fix cars and play soccer very well(4과)",
+   "type": "english_grammar",
+   "problem": "문장 끝 마침표 누락(STUDENT s4-6 원문: '…very well.'). 세 곳 모두 같음.",
+   "fix": "He can fix cars and play soccer very well.",
+   "confidence": "low"
+  },
+  {
+   "page": 10,
+   "where": "TOPIC 17 passOff group#3 제목",
+   "text": "(3)should / ought to / used to / had better",
+   "type": "layout_or_extraction",
+   "problem": "'(3)' 뒤 띄어쓰기 누락. 제목에 must가 없는데 Application에 must 예문 3개(She must call her parents at once. / You must not park here. / He must have been asleep.)가 소주제 없이 나옴.",
+   "fix": "(3) must / should / ought to / used to / had better",
+   "confidence": "medium"
+  },
+  {
+   "page": 10,
+   "where": "TOPIC 17 passOff group#3 item 4; application item 29; Review 2. #28 정답",
+   "text": "The taxi driver is used to a danger",
+   "type": "english_grammar",
+   "problem": "'위험(한 상황) 일반'을 뜻하는 danger는 셀 수 없는 명사라 a를 붙이지 않음. p10에는 마침표 앞 공백('danger .')도 있음.",
+   "fix": "The taxi driver is used to danger.",
+   "confidence": "high"
+  },
+  {
+   "page": 10,
+   "where": "TOPIC 17 passOff group#3 item 4 앞 공식",
+   "text": "*be used to ~ing:",
+   "type": "grammar_explanation_wrong",
+   "problem": "공식은 'be used to ~ing'인데 바로 뒤 예문은 동명사가 아닌 명사(danger)를 씀 → 'be used to + 명사/동명사'라고 해야 맞음. 또 be used to는 조동사가 아니라 형용사 구문이므로 조동사 used to와 '비교'용이라는 표시가 필요함.",
+   "fix": "*be used to + 명사/동명사(~ing): ~에 익숙하다 (조동사 used to와 비교)",
+   "confidence": "medium"
+  },
+  {
+   "page": 11,
+   "where": "TOPIC 17 application item 2; Review 2. #2 정답",
+   "text": "I can’t speak Chinese, but someday, I ’ll learn.",
+   "type": "english_grammar",
+   "problem": "'I ’ll' 사이 공백(오타). learn 뒤 목적어 it이 있어야 자연스러움.",
+   "fix": "I can’t speak Chinese, but someday I’ll learn it.",
+   "confidence": "high"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #7 (application item 7 'Last weekend I wasn’t able to see her.')",
+   "text": "지난주에 나는 그녀를 볼 수 없었다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 Last weekend(지난 주말)인데 한국어는 '지난주' — 제시문대로 쓰면 'Last week'가 정답이 됨. see her는 '만나다'가 자연스러움.",
+   "fix": "지난 주말에 나는 그녀를 만날 수 없었다.",
+   "confidence": "high"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #8 (application item 8)",
+   "text": "나는 언젠가 행복하게 살수 있기를 바란다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 'I will be able to live happily someday.'(~할 수 있을 것이다)인데 한국어는 '바란다'(hope)라 학생이 'I hope to …'를 쓰게 됨. '살수' → '살 수'.",
+   "fix": "나는 언젠가 행복하게 살 수 있을 것이다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #9 (application item 9)",
+   "text": "나는 내 꿈을 성취하고 많은 아이들이 배우고 자라도록 도울수 있기를 원한다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 will be able to(~할 수 있을 것이다)인데 '원한다'(want)로 옮겨 학생이 'I want to be able to …'를 쓰게 됨. '도울수' → '도울 수'. (STUDENT s14-3 원문: 'I know that one day I will be able to …')",
+   "fix": "나는 내 꿈을 이루고 많은 아이들이 배우고 성장하도록 도울 수 있을 것이다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #6",
+   "text": "나는 언젠가는 그가 하는 것 만큼 영어를 잘 말수 있기를 바란다.",
+   "type": "korean_typo",
+   "problem": "'것 만큼' → '것만큼'(조사는 붙여 씀), '말수' → '말할 수'.",
+   "fix": "나는 언젠가 그가 하는 것만큼 영어를 잘 말할 수 있으면 좋겠다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #3",
+   "text": "너는 다른 외국어를 말할 수 있니?",
+   "type": "translation_mismatch",
+   "problem": "영어('Can you speak any foreign language?')에 없는 '다른'(other)이 들어가 학생이 'any other foreign language'를 쓰게 됨.",
+   "fix": "너는 외국어를 할 줄 아니?",
+   "confidence": "low"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #10",
+   "text": "그는 그의 사무실에 있을 거야.",
+   "type": "translation_mismatch",
+   "problem": "may(추측, ~일지도 모른다)를 '있을 거야'(will/아마)로 옮겨 조동사 뜻이 흐려짐. 과제 1에서 may를 '추측'으로 쓰게 하면서 제시문은 확신에 가까움.",
+   "fix": "그는 (아마) 사무실에 있을지도 몰라.",
+   "confidence": "low"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #12",
+   "text": "제가 TV를 켜도 되요? 그래요. 됩니다.",
+   "type": "korean_typo",
+   "problem": "'되요'는 틀린 표기('돼요'). '그래요. 됩니다.'도 어색함.",
+   "fix": "제가 TV를 켜도 돼요? 네, 돼요.",
+   "confidence": "high"
+  },
+  {
+   "page": 12,
+   "where": "TOPIC 17 application item 18; Review 2. #17 정답",
+   "text": "Wherever you may go, I’ll never forget what you do to me.",
+   "type": "english_unnatural",
+   "problem": "'what you do to me'는 현재형이고 '나에게 (나쁜) 짓을 하다'로 읽힘. 한국어 제시문 '네가 내게 한 일'(과거, 고마운 일)과도 맞지 않음.",
+   "fix": "Wherever you may go, I’ll never forget what you have done for me.",
+   "confidence": "medium"
+  },
+  {
+   "page": 16,
+   "where": "TOPIC 17 Review 2. #16",
+   "text": "네가 혼돈스러워 하는 것은 당연하다.",
+   "type": "korean_typo",
+   "problem": "confused는 '혼란스러워하다'가 자연스러움('혼돈'은 chaos). '-어하다'는 붙여 씀.",
+   "fix": "네가 혼란스러워하는 것도 당연하다.",
+   "confidence": "low"
+  },
+  {
+   "page": 16,
+   "where": "TOPIC 17 Review 2. #13",
+   "text": "그녀는 잠이 들었을 거야.",
+   "type": "translation_mismatch",
+   "problem": "may have been(과거 추측 '~였을지도 모른다')을 '잠이 들었을 거야'로 옮겨 확신 정도가 달라지고, #20 '그는 잠이 들었음에 틀림없다'(must have)와 구분이 약함.",
+   "fix": "그녀는 잠들어 있었을지도 몰라.",
+   "confidence": "low"
+  },
+  {
+   "page": 13,
+   "where": "TOPIC 17 application item 26; Review 2. #25",
+   "text": "Carter used to stay up.",
+   "type": "english_unnatural",
+   "problem": "stay up은 보통 late와 함께 써야 '밤늦게까지 안 자다' 뜻이 분명함. 한국어 제시문 '카터는 종종 (밤에) 자지 않고 있었다.'의 '종종'은 영어에 없음.",
+   "fix": "Carter used to stay up late. / 제시문: 카터는 예전에 밤늦게까지 자지 않곤 했다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 13,
+   "where": "TOPIC 17 application item 35; Review 2. #34",
+   "text": "He had better spend time wisely.",
+   "type": "english_unnatural",
+   "problem": "'spend his time wisely'가 자연스러움. 한국어 제시문의 '더'는 영어에 없음.",
+   "fix": "He had better spend his time wisely.",
+   "confidence": "low"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #30 (application item 31)",
+   "text": "제니는 일찍 일어나는 일에 익숙지 않다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 과거(Jenny wasn’t used to getting up early.)인데 한국어는 현재라 학생이 isn’t를 쓰게 됨.",
+   "fix": "제니는 일찍 일어나는 데 익숙하지 않았다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #32 (application item 33)",
+   "text": "너는 일찍 집에 오는 것이 낫다.",
+   "type": "translation_mismatch",
+   "problem": "영어 'You had better come home!'에 없는 '일찍'이 들어 있음.",
+   "fix": "너는 집에 오는 게 좋겠다! (또는 영어를 'You had better come home early.'로)",
+   "confidence": "medium"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #33 (application item 34)",
+   "text": "너는 지금 떠나는 것이 낫다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 부정('You’d better not leave now.' 지금 떠나지 않는 게 좋겠다)인데 한국어는 긍정 — 정반대 뜻.",
+   "fix": "너는 지금 떠나지 않는 게 좋겠다.",
+   "confidence": "high"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #34 (application item 35)",
+   "text": "드는 시간을 더 현명하게 쓰는 것이 낫다.",
+   "type": "korean_typo",
+   "problem": "'드는'은 '그는'의 오타.",
+   "fix": "그는 시간을 현명하게 쓰는 게 좋겠다.",
+   "confidence": "high"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #36",
+   "text": "너는 마지막 기차를 놓치지 않는 것이 낫다",
+   "type": "korean_typo",
+   "problem": "마침표 누락.",
+   "fix": "너는 마지막 기차를 놓치지 않는 게 좋겠다.",
+   "confidence": "low"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #26",
+   "text": "그녀는 그녀가 어렸을 때, 개를 가졌었다.",
+   "type": "translation_mismatch",
+   "problem": "직역투('그녀는 그녀가', '개를 가졌었다').",
+   "fix": "그녀는 어렸을 때 개를 키웠었다.",
+   "confidence": "low"
+  },
+  {
+   "page": 15,
+   "where": "TOPIC 17 Review 2. #1",
+   "text": "그는 자동차 수리와 축구도 매우 잘 할 수 있다.",
+   "type": "korean_typo",
+   "problem": "'잘하다'(능숙하게 하다)는 한 단어라 '잘할 수'로 붙여 씀. '축구도'의 '도'는 어색함.",
+   "fix": "그는 자동차 수리와 축구를 매우 잘할 수 있다.",
+   "confidence": "low"
+  },
+  {
+   "page": 16,
+   "where": "TOPIC 17 Review 2. #14 (application item 15)",
+   "text": "너는 가게에서 그것을 두었을지도 몰라.",
+   "type": "translation_mismatch",
+   "problem": "left it in the store는 '가게에 두고 왔다'인데 '가게에서 … 두었을지도'는 어색함.",
+   "fix": "너는 그것을 가게에 두고 왔을지도 몰라.",
+   "confidence": "low"
+  },
+  {
+   "page": 17,
+   "where": "TOPIC 17 Review 2. #35 (application item 36)",
+   "text": "그녀는 휴식을 가지는 것이 낫다.",
+   "type": "translation_mismatch",
+   "problem": "'휴식을 가지는'은 영어 have a rest의 직역투.",
+   "fix": "그녀는 좀 쉬는 게 좋겠다.",
+   "confidence": "low"
+  },
+  {
+   "page": 14,
+   "where": "TOPIC 17 Review 1. #3",
+   "text": "I want to be able to speak English as well as he does someday. (7과)",
+   "type": "answer_ambiguous",
+   "problem": "이 문장에는 진짜 조동사(can/may 등)가 없고 조동사 상당어구 be able to(= can)만 있음. '조동사에 줄을 긋고'라는 지시에 학생이 want to를 긋거나 아무것도 못 그을 수 있어 정답 기준이 필요함.",
+   "fix": "정답: be able to (= can, 능력). 지시문을 '조동사(또는 조동사 역할을 하는 표현)'로",
+   "confidence": "medium"
+  },
+  {
+   "page": 10,
+   "where": "TOPIC 17 passOff group#3 item 2; application item 23; Review 1. #9, 2. #22",
+   "text": "I shouldn’t have eaten too much chocolate.",
+   "type": "english_unnatural",
+   "problem": "'too much'는 이미 '지나치게'라서 shouldn’t have와 뜻이 겹침; 보통 'so much'를 씀(틀린 문장은 아님).",
+   "fix": "I shouldn’t have eaten so much chocolate.",
+   "confidence": "low"
+  },
+  {
+   "page": 18,
+   "where": "TOPIC 18 passOff group#3 제목",
+   "text": "(2) 부사의 여러 가지 용법",
+   "type": "layout_or_extraction",
+   "problem": "소주제 번호 (2)가 두 번 나옴 → 뒤의 (3)(4)(5)도 하나씩 밀려야 함.",
+   "fix": "(3) 부사의 여러 가지 용법 → 이어서 (4) 주의해야 할 부사들, (5) 비교급과 최상급 / 위치, (6) 의문부사",
+   "confidence": "high"
+  },
+  {
+   "page": 18,
+   "where": "TOPIC 18 passOff group#2 item 4",
+   "text": "Cf.) The early bird can catch the worms.",
+   "type": "english_unnatural",
+   "problem": "속담 원형은 'The early bird catches the worm.'(can·복수 worms 없음).",
+   "fix": "Cf.) The early bird catches the worm.",
+   "confidence": "high"
+  },
+  {
+   "page": 18,
+   "where": "TOPIC 18 passOff group#2 items 1–3; application items 13–15; Review 2. #1–3",
+   "text": "Sue’s job is very hard = Sue works very hard.",
+   "type": "grammar_explanation_wrong",
+   "problem": "'='로 이었지만 뜻이 같지 않음: '일이 힘들다'(형용사 hard) ≠ '열심히 일한다'(부사 hard), 'I was late.'(늦었다) ≠ 'I got up late this morning.'(늦게 일어났다). 같은 형태가 형용사·부사로 쓰인다는 대비인데 Review 2가 '뜻이 같아지도록 영작하시오'라고 해 정답 근거가 없음. (Ben is a fast runner = Ben can run fast.는 거의 같은 뜻, 정확히는 Ben runs fast.)",
+   "fix": "'=' 대신 '형용사 ↔ 부사'로 표시하고 Review 2 지시문을 '같은 단어를 부사로 써서 문장을 만드시오'로 바꿈. 뜻이 같은 짝이 필요하면: Sue is a very hard worker. = Sue works very hard. / I was late for school. = I got to school late.",
+   "confidence": "high"
+  },
+  {
+   "page": 19,
+   "where": "TOPIC 18 passOff group#4 item 4",
+   "text": "She hardly ate anything, she was really sad.",
+   "type": "english_grammar",
+   "problem": "쉼표만으로 두 문장을 이음(comma splice). Application p22에는 and가 들어가 서로 다름. 뜻으로는 because가 자연스러움.",
+   "fix": "She hardly ate anything because she was really sad. (또는 …, and she was really sad.)",
+   "confidence": "medium"
+  },
+  {
+   "page": 19,
+   "where": "TOPIC 18 passOff group#4 item 6; application item 39; Review 2. #5a·5b",
+   "text": "I am not happy = Neither am I =Nor am I",
+   "type": "grammar_explanation_wrong",
+   "problem": "Neither am I / Nor am I는 'I am not happy, either.'(나도 행복하지 않아)와 같은 뜻이지 'I am not happy'와 같지 않음. 바로 위 'I am happy, too = So am I'와 짝을 맞추려면 either가 필요. '=Nor' 띄어쓰기도 틀림.",
+   "fix": "I am not happy, either. = Neither am I. = Nor am I.",
+   "confidence": "high"
+  },
+  {
+   "page": 19,
+   "where": "TOPIC 18 passOff group#4 item 7; application item 40; Review 2. #6",
+   "text": "It was cold yesterday. = So it was. (정말 그렇다)",
+   "type": "translation_mismatch",
+   "problem": "So it was.는 과거이므로 풀이도 '정말 그랬다'가 맞음.",
+   "fix": "It was cold yesterday. = So it was. (정말 그랬다)",
+   "confidence": "low"
+  },
+  {
+   "page": 19,
+   "where": "TOPIC 18 passOff group#5 제목",
+   "text": "(4) 비교급과 최상급 / 위치",
+   "type": "grammar_explanation_wrong",
+   "problem": "제목은 비교급·최상급·위치인데 예문 두 개(I am a pretty happy person. / They are studying pretty hard.)는 정도부사 pretty(꽤)일 뿐 비교급·최상급 부사가 하나도 없고, 위치 설명도 없음.",
+   "fix": "비교급·최상급 부사 예문 추가(예: He runs faster than I do. / She sings (the) best in our class.) 또는 제목을 '(4) 정도부사 pretty와 부사의 위치'로",
+   "confidence": "medium"
+  },
+  {
+   "page": 22,
+   "where": "TOPIC 18 application item 37; Review 3. #36 정답",
+   "text": "I haven’t seen them for so long time.",
+   "type": "english_grammar",
+   "problem": "'so long time'은 비문(so 뒤에는 'so long' 또는 'so long a time').",
+   "fix": "I haven’t seen them for so long.",
+   "confidence": "high"
+  },
+  {
+   "page": 28,
+   "where": "TOPIC 18 Review 3. #35·#36 (application items 36·37)",
+   "text": "나는 매우 긴 시간 동안 그들을 보지 못했다.",
+   "type": "answer_ambiguous",
+   "problem": "#35 '그렇게 긴 시간 동안'(such a long time)과 #36 '매우 긴 시간 동안'(so long)은 사실상 같은 뜻이라 어느 쪽에 such/so를 써야 할지 알 수 없고, '매우'는 very를 부름. 영어는 현재완료인데 제시문은 단순 과거.",
+   "fix": "#35 나는 그들을 정말 오랫동안 못 봤다. (such a long time) / #36 나는 그들을 그렇게 오래 못 봤다. (so long) — 또는 두 답을 모두 인정",
+   "confidence": "medium"
+  },
+  {
+   "page": 23,
+   "where": "TOPIC 18 application item 46; Review 3. #42 정답",
+   "text": "How long will it take from your house and to your school?",
+   "type": "english_grammar",
+   "problem": "from A to B 사이에 and가 들어간 비문. take 뒤에 to get이 있어야 자연스러움.",
+   "fix": "How long will it take to get from your house to your school?",
+   "confidence": "high"
+  },
+  {
+   "page": 23,
+   "where": "TOPIC 18 application item 53; Review 3. #49 정답",
+   "text": "Where is a fire station?",
+   "type": "english_unnatural",
+   "problem": "특정 소방서를 묻는 말은 the, 근처에 있는지 묻는 말은 'Is there a fire station near here?'. 'Where is a …?'는 어색함.",
+   "fix": "Where is the fire station? (또는 Where is the nearest fire station?)",
+   "confidence": "medium"
+  },
+  {
+   "page": 23,
+   "where": "TOPIC 18 application item 56; Review 3. #52 정답",
+   "text": "When did you graduate from your university?",
+   "type": "english_unnatural",
+   "problem": "'graduate from university/college'가 관용 표현; your를 붙이면 어색함.",
+   "fix": "When did you graduate from university?",
+   "confidence": "medium"
+  },
+  {
+   "page": 22,
+   "where": "TOPIC 18 application items 29·30",
+   "text": "Although it rained a lot, they enjoyed their holidays.",
+   "type": "grammar_explanation_wrong",
+   "problem": "although·unless(item 30 'You can’t go in unless you are a member.')는 부사가 아니라 종속접속사(부사절을 이끔). 부사 단원에 설명 없이 들어가 학생이 부사로 오해할 수 있음.",
+   "fix": "'부사절(접속사 although/unless가 이끄는 절)'이라고 표시하거나 TOPIC 20 접속사로 옮김",
+   "confidence": "low"
+  },
+  {
+   "page": 21,
+   "where": "TOPIC 18 application item 15",
+   "text": "I  was late. = I got up late this morning.",
+   "type": "layout_or_extraction",
+   "problem": "'I'와 'was' 사이에 공백 두 칸(인쇄 오타).",
+   "fix": "I was late. = I got up late this morning.",
+   "confidence": "low"
+  },
+  {
+   "page": 26,
+   "where": "TOPIC 18 Review 3. #12 (application item 12)",
+   "text": "앨리스와 조는 매우 행복하게 결혼했다.",
+   "type": "translation_mismatch",
+   "problem": "영어 'are very happily married'는 현재 상태(행복한 결혼 생활을 하고 있다)인데 한국어는 과거 사건('결혼했다')이라 학생이 'got married very happily'를 쓰게 됨.",
+   "fix": "앨리스와 조는 매우 행복한 결혼 생활을 하고 있다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 26,
+   "where": "TOPIC 18 Review 3. #7",
+   "text": "그 회의는 나쁘게 조직되어 있었다.",
+   "type": "translation_mismatch",
+   "problem": "직역투. badly organized는 '준비·진행이 엉망이었다'.",
+   "fix": "그 회의는 준비가 엉망이었다.",
+   "confidence": "low"
+  },
+  {
+   "page": 26,
+   "where": "TOPIC 18 Review 3. #9",
+   "text": "보통 학급에서, 학생들은 서로 서로에게 매우 친절하다.",
+   "type": "translation_mismatch",
+   "problem": "in class는 '수업 시간에'; '서로 서로에게'는 겹말.",
+   "fix": "보통 수업 시간에 학생들은 서로에게 매우 친절하다.",
+   "confidence": "low"
+  },
+  {
+   "page": 27,
+   "where": "TOPIC 18 Review 3. #15",
+   "text": "나는 오늘아침에 늦게 일어났다.",
+   "type": "korean_typo",
+   "problem": "띄어쓰기: '오늘아침' → '오늘 아침'.",
+   "fix": "나는 오늘 아침에 늦게 일어났다.",
+   "confidence": "low"
+  },
+  {
+   "page": 27,
+   "where": "TOPIC 18 Review 3. #21 (application item 21)",
+   "text": "그녀는 내게 거의 말하지 않는다.",
+   "type": "translation_mismatch",
+   "problem": "영어는 과거(She hardly spoke to me.)인데 한국어는 현재.",
+   "fix": "그녀는 내게 거의 말을 하지 않았다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 27,
+   "where": "TOPIC 18 Review 3. #24 (application item 24)",
+   "text": "그 차가 마시기에 너무 뜨겁군.",
+   "type": "translation_mismatch",
+   "problem": "영어는 과거(The tea was too hot to drink.)인데 한국어는 현재 감탄이고, '차'가 tea/car로 헷갈릴 수 있음.",
+   "fix": "그 차(茶)는 마시기에 너무 뜨거웠다.",
+   "confidence": "low"
+  },
+  {
+   "page": 28,
+   "where": "TOPIC 18 Review 3. #26 (application item 26)",
+   "text": "그 강은 안에서 수영할 만큼 충분히 깨끗해.",
+   "type": "translation_mismatch",
+   "problem": "영어는 부정·과거(The river wasn’t clean enough to swim in.)인데 한국어는 긍정·현재 — 정반대 뜻. '안에서'도 어색함.",
+   "fix": "그 강은 수영할 수 있을 만큼 깨끗하지 않았다.",
+   "confidence": "high"
+  },
+  {
+   "page": 28,
+   "where": "TOPIC 18 Review 3. #29 (application item 29)",
+   "text": "비록 비가 많이 내렸더라도, 그들은 그 휴일은 즐겼다.",
+   "type": "translation_mismatch",
+   "problem": "although는 사실(비가 많이 왔다)이라 '내렸지만'이 맞고, holidays는 '휴가', '그 휴일은'의 조사 '은'도 어색함.",
+   "fix": "비가 많이 왔지만, 그들은 휴가를 즐겼다.",
+   "confidence": "low"
+  },
+  {
+   "page": 28,
+   "where": "TOPIC 18 Review 3. #37·#38 (application items 41·42)",
+   "text": "나는 매우 행복한 사람이다.",
+   "type": "translation_mismatch",
+   "problem": "목표 부사는 pretty(꽤)인데 제시문은 '매우'(very)라 학생이 very를 쓰게 되어 이 소주제를 연습하지 못함. #38 '그들은 매우 열심히 공부하고 있다.'도 같음.",
+   "fix": "나는 꽤 행복한 사람이다. / 그들은 꽤 열심히 공부하고 있다.",
+   "confidence": "medium"
+  },
+  {
+   "page": 29,
+   "where": "TOPIC 18 Review 3. #50 (application item 54)",
+   "text": "언제 너는 갈 거니?",
+   "type": "translation_mismatch",
+   "problem": "going away는 '(여행·이사 등으로) 떠나다'인데 '갈 거니'는 목적지 없이 모호함.",
+   "fix": "너는 언제 떠나니?",
+   "confidence": "low"
+  },
+  {
+   "page": 24,
+   "where": "TOPIC 18 Review 1. #5",
+   "text": "Usually in class, the students are very friendly to each other. (5과)",
+   "type": "answer_ambiguous",
+   "problem": "정답은 Usually, very. friendly는 -ly로 끝나지만 형용사(함정)이고, in class는 부사구라 줄을 그을지 기준이 없음.",
+   "fix": "정답: Usually, very (부사구 in class의 인정 여부를 정해 둘 것)",
+   "confidence": "low"
+  }
+ ]
+}
