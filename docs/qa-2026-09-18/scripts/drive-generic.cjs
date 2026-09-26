@@ -69,7 +69,9 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // product's, the typed-input line of a tile page is NA); records without it are read by the rules of their day.
 // 7-1m-g15 (최종 관문 15, 2026-09-24): 힌트 상자 제목이 '✍️ 고유 명사 · 숫자 · 어려운 낱말 참조' 로 바뀜(재검토 K009) — 상자 찾기가 두 제목을
 // 다 받음(HINT_CHIPS). 그 밖은 7-1m 그대로. build-coverage 는 이 값이 있는지만 본다(값은 안 봄).
-const DRIVER_REV = "7-1m-g15";
+// 2026-09-27 STUDENT 학습법 · 화면 고침: '-s0927' — the STUDENT tile routine reads the view's data-* marks (two parts · fixed
+// blanks · data-feedback) and the completion test practises to the new 80% rule first (see solveStudentTiles · practiseStudent).
+const DRIVER_REV = "7-1m-g15-s0927";
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -334,6 +336,92 @@ function withNth(list) {
 }
 
 /**
+ * 2026-09-27 STUDENT 학습법 · 화면 고침 (D02 · D16 · STU-L03 · D18) — the STUDENT dictation is read by its data-* marks, not
+ * by its words: [data-dictation] carries the sentence index, the part (a sentence of 16+ words is assembled in two parts,
+ * D16), the part's word range and the word positions the app places itself (a personal blank such as "(school name)" is
+ * no tile, STU-L03); the bank is [data-word-bank], the placed tiles are the buttons of the answer box's visible layer
+ * ([data-assembly], title '…보관함으로 되돌리기'), the buttons are [data-action=check · reset · …] and the verdict is
+ * [data-feedback] = part · correct · hinted · wrong · empty. The words still come from the DATA (exp.tileWordsAll —
+ * generateWordBank's first form), and the app's judge is still verifyAnyWordSequence (check-student-dictation.cjs runs the
+ * same parts over all 414 sentences without a browser).
+ */
+const STU = {
+  info: `(() => { const d = document.querySelector('main [data-dictation]'); if (!d) return null; return { index: +d.dataset.index, part: +d.dataset.part, parts: +d.dataset.parts, start: +d.dataset.partStart, end: +d.dataset.partEnd, fixed: (d.dataset.fixedPositions || '').split(',').filter(Boolean).map(Number), solved: d.dataset.solved === 'true' }; })()`,
+  action: (name) => `document.querySelector('main [data-action="${name}"]')`,
+  feedback: `(() => { const f = document.querySelector('main [data-feedback]'); return f ? { kind: f.getAttribute('data-feedback'), text: (f.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 90) } : null; })()`,
+  box: `[...document.querySelectorAll('main [data-assembly] > div:not([aria-hidden]) button')].map((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim())`,
+};
+const clickStudentTile = (tab, word) => H.click(tab, `(() => {
+  const norm = (s) => s.replace(/[^\\w'\\u2019-]/g, '').toLowerCase();
+  const want = norm(${JSON.stringify(String(word || ""))});
+  return [...document.querySelectorAll('main [data-word-bank] button')].find((b) => !b.disabled && norm(b.innerText || '') === want) || null;
+})()`, { settle: 180 });
+
+/** Assemble the sentence the view is on, part by part (the first part only when `reversed` — wrecked on purpose). */
+async function assembleStudent(tab, words, { reversed = false } = {}) {
+  let placed = 0, needed = 0, last = null;
+  const verdicts = [];
+  for (let guard = 0; guard < 3; guard++) {
+    const info = await tab.eval(STU.info).catch(() => null);
+    if (!info) break;
+    const want = [];
+    for (let pos = info.start; pos < info.end; pos++) if (!info.fixed.includes(pos)) want.push(words[pos]);
+    const list = reversed ? want.slice().reverse() : want;
+    needed += list.length;
+    for (const w of list) if ((await clickStudentTile(tab, w)).ok) placed++;
+    const box = (await tab.eval(STU.box).catch(() => [])) || [];
+    if (box.length !== list.length) break; // a tile that did not land — reported as BLOCKED by the caller (placed < needed)
+    await H.click(tab, STU.action("check"), { settle: 450 });
+    last = await tab.eval(STU.feedback).catch(() => null);
+    verdicts.push(last ? last.kind : "none");
+    if (reversed || !last || last.kind !== "part") break;
+  }
+  return { placed, needed, verdicts, last };
+}
+
+async function solveStudentTiles(tab, exp, checks, stepLabel) {
+  const info = await tab.eval(STU.info).catch(() => null);
+  if (!info) return;
+  await H.click(tab, STU.action("reset"), { settle: 400 }); // this sentence from its first part
+  const words = (exp.tileWordsAll || [])[info.index];
+  const target = String(((exp.answers || [])[info.index] || {}).text || "");
+  if (!words || !words.length) { checks.push({ feature: "tile dictation", item: `${stepLabel} · (문장 못 고름)`, status: "BLOCKED", note: `문장 ${info.index + 1} 의 낱말이 기대값(tileWordsAll)에 없음` }); return; }
+  await H.waitFor(tab, `document.querySelectorAll('main [data-word-bank] button').length > 0`, 5000);
+  const good = await assembleStudent(tab, words);
+  await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+  await H.click(tab, STU.action("reset"), { settle: 400 });
+  const bad = await assembleStudent(tab, words, { reversed: true });
+  const accepted = !!good.last && good.last.kind === "correct";
+  const refused = !!bad.last && bad.last.kind === "wrong";
+  checks.push({
+    feature: "tile dictation", item: `${stepLabel} · "${target.slice(0, 40)}"`,
+    status: good.placed !== good.needed || !good.last || !bad.last ? "BLOCKED" : accepted && refused ? "PASS" : "FAIL",
+    note: `${good.placed}/${good.needed} tiles placed in ${good.verdicts.length} part(s) · correct→${good.verdicts.join(" > ")} "${good.last ? good.last.text : "no feedback"}" · reversed part 1→${bad.last ? `${bad.last.kind} "${bad.last.text}"` : "no feedback"}`,
+  });
+}
+
+/**
+ * D18 (2026-09-27): a STUDENT lesson completes when 80% of its sentences were dictated (hints for at most a third of the
+ * words) and 80% spoken (microphone ≥ 70 or '읽었어요'). Practise like a learner — every sentence of Step 2 assembled from
+ * the data, every '읽었어요' of Step 3 pressed — and say what was practised.
+ */
+async function practiseStudent(tab, exp) {
+  const all = exp.tileWordsAll || [];
+  let solved = 0;
+  await H.click(tab, `document.querySelector('main [data-step-tab="2"]')`, { settle: 800 });
+  for (let i = 0; i < all.length; i++) {
+    await H.click(tab, `document.querySelector('main [data-pill="${i}"]')`, { settle: 400 });
+    const r = await assembleStudent(tab, all[i]);
+    if (r.last && r.last.kind === "correct") solved++;
+  }
+  await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+  await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 800 });
+  for (let k = 0; k < 40; k++) if (!(await H.click(tab, `document.querySelector('main [data-action="said"][aria-pressed="false"]')`, { settle: 150 })).ok) break;
+  const said = await tab.eval(`document.querySelectorAll('main [data-action="said"][aria-pressed="true"]').length`).catch(() => 0);
+  return `practised: dictation ${solved}/${all.length} · spoken ${said}/${all.length}`;
+}
+
+/**
  * depth: "full" (desktop — every control), "medium" (mobile — one control of each kind,
  * so touch layout and touch input are really exercised) or "light" (tablet — layout only).
  */
@@ -342,6 +430,8 @@ function withNth(list) {
  * sentence from the DATA, press the check button, then wreck the order and press it again.
  */
 async function solveTiles(tab, exp, checks, stepLabel) {
+  // 2026-09-27: STUDENT's reworked dictation has its own routine (above); LISTENING goes on below as before
+  if (await tab.eval(`Boolean(document.querySelector('main [data-dictation]'))`).catch(() => false)) return solveStudentTiles(tab, exp, checks, stepLabel);
   const target = (exp.answers[0] || {}).text;
   if (!target && !exp.tileWordsAll) return;
   // 7단계 7-1 b: is this the dictation step at all? The bank carries its own label (STUDENT "단어 보관함",
@@ -670,7 +760,11 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
   let alive = await visitStepControls(tab, exp, rec, "(initial)", depth);
   for (const label of steps) {
     if (!alive) { await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath }); alive = true; }
-    const clicked = await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(label)})`, { settle: 800 });
+    // 2026-09-27: a tab of the shared StepTabs (STUDENT) carries a count that the controls of an earlier step can change
+    // ('Step 3 · 섀도잉 & 낭독 0/5' → '1/5'), so a tab with data-step-tab is found by its number; any other by its captured label.
+    const stepNo = (String(label).match(/^\s*step\s*(\d+)/i) || [])[1];
+    const byNumber = stepNo ? `document.querySelector('main [data-step-tab="${stepNo}"]') || ` : "";
+    const clicked = await H.click(tab, `${byNumber}[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(label)})`, { settle: 800 });
     if (!clicked.ok) { rec.checks.push({ feature: "step", item: label, status: "FAIL", note: `step button not clickable: ${clicked.reason}` }); continue; }
     const snap = await tab.eval(H.SNAPSHOT).catch(() => null);
     if (snap) {
@@ -715,11 +809,14 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
 
     // completion toggle (STUDENT writes to the server — logged)
     // 7단계 7-1 m (3차 점검): STUDENT has no header completion button (LessonActionButtons draws it only when course !== "student").
-    // A STUDENT lesson completes at the END OF STEP 3 — '이 강의 학습 완료' (aria-label 학습 완료 체크 / 학습 완료 취소), enabled after one
-    // solved dictation or one '낭독 완료 체크' (FUN-02). This test used to look only at the first screen and wrote 'no completion
+    // A STUDENT lesson completes at the END OF STEP 3 — '이 강의 학습 완료' (aria-label 학습 완료 체크 / 학습 완료 취소), enabled (since
+    // 2026-09-27, D18) after 80% of the sentences are dictated and 80% spoken; once completed it shows '✓ 완료한 강의' and a small
+    // '완료 취소' (aria-label 학습 완료 취소, STU-U26). This test used to look only at the first screen and wrote 'no completion
     // control' NA for every STUDENT lesson — the completion that drives the progress rate and the next chapter's unlock was never pressed.
     const step3 = page.course === "student" ? (rec.steps || []).find((s) => /Step\s*3/i.test(s)) : null;
-    const openStep3 = async () => { if (step3) await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(step3)})`, { settle: 800 }); };
+    // 2026-09-27: the STUDENT tab carries a count ('Step 3 · 섀도잉 & 낭독 2/5') that changes while the test practises — it is
+    // found by data-step-tab (StepTabs), and by its captured label only on a page without that mark
+    const openStep3 = async () => { if (step3) await H.click(tab, `document.querySelector('main [data-step-tab="3"]') || [...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(step3)})`, { settle: 800 }); };
     const cm = page.course === "student"
       ? `[...document.querySelectorAll('main button')].find((b) => /^학습 완료 (체크|취소)$/.test(b.getAttribute('aria-label') || ''))`
       : `[...document.querySelectorAll('main button')].find((b) => /학습 완료|완료 체크/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')))`;
@@ -731,9 +828,12 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     const serverSaved = async () => page.course !== "student" || H.waitFor(tab, `(() => { try { const v = localStorage.getItem('kig:student:pending:v1'); return !v || v === '[]'; } catch (e) { return true; } })()`, 10000);
     await openStep3();
     let c0 = await tab.eval(cmState).catch(() => null);
+    let practiceNote = "";
     if (page.course === "student" && c0 && /\|disabled$/.test(c0)) {
-      // FUN-02 — practise one sentence first (the solved dictation above normally already counts)
-      await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.getAttribute('title') || '') === '낭독 완료 체크')`, { settle: 400 });
+      // 2026-09-27 D18: one practised sentence (FUN-02) no longer completes a lesson — 80% dictated and 80% spoken do.
+      // Practise that much like a learner (practiseStudent), then read the button again; the note says what was practised.
+      practiceNote = await practiseStudent(tab, exp);
+      await openStep3();
       c0 = await tab.eval(cmState).catch(() => null);
     }
     if (c0 && !/\|disabled$/.test(c0)) {
@@ -747,9 +847,9 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       const saved3 = await serverSaved();
       const c3 = await tab.eval(cmState).catch(() => null);
       const saveNote = page.course === "student" ? ` · server answered ${saved1 && saved3 ? "both" : `${saved1 ? "" : "not "}after toggle, ${saved3 ? "" : "not "}after untoggle`}` : "";
-      rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · toggle→reload→untoggle" : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}${saveNote}` });
+      rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · toggle→reload→untoggle" : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}${saveNote}${practiceNote ? ` · ${practiceNote}` : ""}` });
       if (page.course === "student") H.logDataChange({ course: page.course, id: page.id, action: "completion toggled on and off via the lesson UI (Step 3)", detail: `${c0} → ${c1} → ${c3}` });
-    } else if (c0) rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · control" : "control", status: "FAIL", note: `completion control stays disabled after practising a sentence: ${c0}` });
+    } else if (c0) rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · control" : "control", status: "FAIL", note: `completion control stays disabled after practising${practiceNote ? ` (${practiceNote})` : " a sentence"}: ${c0}` });
     else rec.checks.push({ feature: "completion", item: "control", status: "BLOCKED", note: step3 ? "Step 3 completion control not found" : "completion control not found" });
 
     await tab.eval(`(() => { sessionStorage.removeItem('kig:audit:keep'); try { const keep = new Set(${JSON.stringify(["kig:license:v1", "kig:device:id:v1", "kig:device:name:v1", "kig:theme", "kig:lang"])}); for (const k of Object.keys(localStorage)) if (!keep.has(k)) localStorage.removeItem(k); } catch (e) {} })()`).catch(() => {});

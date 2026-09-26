@@ -181,10 +181,12 @@ function expectedFor(id) {
     next: nextId ? { id: nextId, title: titleOf(nextId) } : null,
     sentences,
     koCount: ko.length,
+    // 2026-09-27 STUDENT 학습법 · 화면 고침 (STU-U03 · D04): the shared StepTabs — no emoji, 'Step N · name', and the counts
+    // of Step 2 (solved) and Step 3 (spoken) as a badge; on a phone a tab that is not the current one reads 'Step N' only.
     stepLabels: [
-      "🎧Step 1. 블라인드 리스닝",
-      `🧩Step 2. 탭 딕테이션 (0/${en.length})`,
-      "🗣️Step 3. 섀도잉 & 낭독",
+      "Step 1 · 블라인드 리스닝",
+      `Step 2 · 탭 딕테이션 0/${en.length}`,
+      `Step 3 · 섀도잉 & 낭독 0/${en.length}`,
     ],
   };
 }

@@ -42,10 +42,18 @@ const OUT = path.join(__dirname, "../out");
  *
  * Everything excluded here is recorded as NOT APPLICABLE with its reason, never as a pass.
  */
+// 2026-09-27 (B01 · B04 — VoiceSpeakingTester): the mic's default name became '말하기 확인' (it was '마이크로 발음 테스트', which
+// '발음 테스트' matched), and since 59fdd44 its button carries an SVG icon instead of '🎙️', so its listening and score states
+// ('듣고 있는 중…', '85점 (대부분 일치)', '75점 (통과했어요)') are matched by their own words, as is GRAMMAR's own name for it
+// ('따라 말하고 확인', 59fdd44). The old words stay for older sweep records.
+const MIC_STATES = /말하기 확인|따라 말하고 확인|듣고 있는 중|\d+점 \((?:모든 단어 일치|거의 모두 일치|대부분 일치|거의 맞았어요|다시 시도|통과했어요|음성 감지 안 됨)/;
+// 2026-09-27 (STUDENT 학습법 · 화면 고침 · D03): STUDENT Step 3's button that opens the check is '말하기' (aria-label 'N번 문장
+// 말하기'); the speed buttons read '0.7×' · '0.85×' · '1×' · '1.2×'.
+const STUDENT_MIC = /문장 말하기/;
 const NOT_PLAYBACK = [
-  { re: /🎙️|발음 테스트|발음 채점|녹음|따라 말하기|섀도잉 검증|말하기 연습|내 발음/, why: "마이크로 학습자 발음을 녹음하는 버튼 — 소리를 내지 않는 것이 정상" },
+  { re: new RegExp(`${/🎙️|발음 테스트|발음 채점|녹음|따라 말하기|섀도잉 검증|말하기 연습|내 발음/.source}|${MIC_STATES.source}|${STUDENT_MIC.source}`), why: "마이크로 학습자 발음을 녹음하는 버튼 — 소리를 내지 않는 것이 정상" },
   { re: /다음\s*▶️|◀️\s*이전|다음 문장|이전 문장/, why: "다음·이전 이동 버튼 — 음성 버튼이 아님" },
-  { re: /\b\d(\.\d+)?x\b|표준 속도|배속/, why: "재생 속도 전환 버튼 — 재생 중이 아니면 새 요청이 없는 것이 정상" },
+  { re: /\b\d(\.\d+)?x\b|\d(\.\d+)?×|표준 속도|배속/, why: "재생 속도 전환 버튼 — 재생 중이 아니면 새 요청이 없는 것이 정상" },
 ];
 const skipped = [];
 function worthRechecking(a) {

@@ -37,7 +37,8 @@
 | 02:2x | 공통 틀 1 | `aef4109` 머리줄 · 제목 줄 · 플레이어 · 강의 끝 막대 · 검색 | verify-unit --build PASS · 디자인 검사 0 · 휴대폰 과정 화면 시작 약 220px 위로 | **운영에 올라감(03:3x · 설계 세션 — 깨끗한 복사본에서 다시 잼: tsc 0 · build 0 · 디자인 7칸 0 · 무료 6/6 · 유료 6/6 잠김 · drive-common 77/77 · gap 44/44)** |
 | 03:0x | 공통 틀 2 | `ab581c0` 과정 목록 · 잠금 화면 · 이어서 학습 · 뒤로 가기 자리 · 첫 쪽 불편만 | verify-unit --build PASS · drive-common A 24/24(깨기 12 FAIL) · C 8/8 · F 24/24 · gap M·S·P 14/14 | 대기열 |
 | 04:3x | GRAMMAR I · II | (이 커밋) 학습법 + 화면 한 번에 — 일꾼이 구현, 이 세션이 빌드 · 브라우저 확인 · 커밋 | verify-unit --build PASS · 디자인 0 · 채점 변화 0(2,431문항) · check-grammar-exam 오답 0 · all-alts 99/99 · 깨기 exit 1 · drive-common D 9/9 · 휴대폰 1단계 16.2 → 2.2화면 · 작은 누를 곳 238 → 0 · 확대 칸 69 → 0 | 설계 세션 대기열 |
-| 다음 | STUDENT | — | — | — |
+| 06:3x | STUDENT + 말하기 공용 | (이 커밋) 일꾼 1 = 말하기 채점 정렬 · [[칸]] · VoiceSpeakingTester 인자 / 일꾼 2 = STUDENT 화면 · 학습법 — 이 세션이 빌드 · 브라우저 확인 · 대비 · 문구 · 도구 고침 · 커밋 | verify-unit --build PASS · check-speech-scorer ①~⑦ PASS(--head · --break FAIL) · check-student-0927 22/22(깨기 넷 모두 FAIL) · check-student-dictation PASS(깨기 FAIL) · drive-common A·C·D·F 65/65 · drive-generic s1-1 · s1-2 × 2 문제 0 · gap M·S·P 14/14 · check-student-unlock 0 · 유출 0(깨기 1) · 디자인 17파일 0 · 휴대폰 44px 미만 29~35 → 0 · 단계 탭 3줄 → 1줄 | 설계 세션 대기열 |
+| 06:4x | GRAMMAR 엔진 기록 | (다음 커밋) 채점한 답마다 recordAttempt · 완료 때 틀리거나 도움 받은 문장만 markLessonDone | check-student-0927 G1(틀린 1번만 복습 · 안 푼 2번 없음) | 설계 세션 대기열 |
 
 - 점검 워크플로우 끝(03:1x · 일꾼 13 · 오류 0): 과정별 검토 6 + 반박 점검 6(반박된 것 0 · 고침 조정 95 · 놓친 것 38 더함) + 종합 1. 결과 파일: [사장님-요약.md](사장님-요약.md) · [계획.md](계획.md) · 과정별-결과.json(합본 — 반박된 항목 빠지고 고침은 점검 쪽으로).
 - 종합이 새로 짚은 것 하나: 사장님 PC 의 Pretendard 가 한 굵기만 깔려 있어 굵은 제목을 억지로 두껍게 그림 → 글꼴 자체 호스팅(Pretendard Variable)은 속도를 재고 결정(디자인 규칙 §2).
@@ -45,15 +46,25 @@
 - 사용량(03:1x): 5시간 36% · 주간 64%(09-28 05:00 재설정). 98% 면 멈추고 설계 세션에 알림. 새 문제 약 1,200개(LISTENING · READING)는 주간 재설정 뒤.
 - 첫 쪽은 사장님이 원래 사진 슬라이드를 고르심(머리줄 추가 안 함) — 휠 · 키 가로채기 제거 · 점 누름 영역만.
 
-### 다음 할 일 (04:4x 기준 — 압축 뒤 여기부터)
+### 다음 할 일 (06:4x 기준 — 압축 뒤 여기부터)
 
-1. **STUDENT**: journal 에서 STUDENT 검토 + 반박 점검을 `student-verified.md` 로 뽑음(GRAMMAR 때와 같은 node 스크립트 — 영역 이름 'STUDENT') →
-   일꾼 하나에 GRAMMAR 때와 같은 틀의 지시(README 계획 · verified.md · 디자인 규칙 · 바꾸는 선택자는 점검 도구와 같이 · 커밋 · 빌드 · 서버 금지 · 보고) —
-   STUDENT 는 한국어 줄도 소리 냄 · 챕터 순서 잠금(studentProgress) · Step 3 끝 완료(서버 진도) · 완료 기록 모양 {at, day: learningDay(Date.now())}(엔진 A11) · STU-U21 말하기 채점 창 번짐이 가장 먼저.
-   끝나면 이 세션이: verify-unit --build · 로컬 운영 빌드 캡처(s1-1 · s1-2) · drive-common D · check-student-unlock · 관련 student 도구 · 커밋 · 설계 세션에 해시와 숫자.
-2. **VOCA** 같은 방식 → 3. **LISTENING · READING**(새 문제 약 1,200개는 주간 사용량 재설정 09-28 05:00 뒤 워크플로우).
-4. **공통 엔진 붙이기**: main 에 f591451(src/lib/learning/*). 섹션마다 record.ts 의 recordAttempt · markLessonDone 만 부름 · 문항 열쇠 '강의id#순번' · 기기 저장. GRAMMAR 부터(오늘 복습 화면이 필요 — 엔진 planDay 로 과정 목록 맨 위 '오늘 복습 N' 카드).
-5. 사용량: 무거운 일 전에 get_usage — 98% 면 멈추고 설계 세션에 알림. 04:4x 에 5시간 55% · 주간 69%.
+1. ~~STUDENT~~ 끝(위 표). **운영에 올라간 뒤 이용권 브라우저로만 볼 수 있는 것**(로컬에는 이용권이 없어 유료 강의가 잠김): 16낱말 이상 문장의 앞 · 뒤 두 번 조립(s16-2 · s11-4) —
+   `drive-generic.cjs --course student --ids s16-2,s11-4 --viewports desktop,mobile` 을 운영에 대고(설계 세션 또는 이 세션). 논리는 check-student-dictation 이 414문장 · 451꼴 모두 통과로 봄.
+2. **VOCA** 같은 방식(`voca-verified.md` 뽑아 둠 · B03 한 낱말 판정 먼저) → 3. **LISTENING · READING**(`listening-verified.md` · `reading-verified.md` 뽑아 둠 · 새 문제 약 1,200개는 주간 사용량 재설정 09-28 05:00 뒤 워크플로우).
+4. **공통 엔진**: 기록은 붙임 — STUDENT(완료 때 문장 전부 · 20초) · GRAMMAR(완료 때 틀리거나 도움 받은 문장만 · 30초), 둘 다 채점한 답마다 recordAttempt(where lesson) · 기기 저장(kig-learning:<과정>).
+   완료 신호는 ProgressProvider 의 LESSON_COMPLETE_EVENT(toggleComplete 만 보냄). **복습 화면('오늘 복습 N')은 설계 세션이 PASS-OFF 로 먼저 만들고**(엔진 설계 §6) 섹션마다 붙임 — 그때 옛 완료(true)는 importUndatedDone 으로 '날짜 모름'.
+   VOCA · LISTENING · READING 도 고치는 차례에 기록부터(엔진 설계 §5 표: VOCA 낱말 5초 · 요소 통과 2 / LISTENING 못 맞힌 줄 25초 / READING 몰라요 낱말 6초).
+5. 사용량: 무거운 일 전에 get_usage — 98% 면 멈추고 설계 세션에 알림. 04:4x 에 5시간 55% · 주간 69% · 06:4x 에 확인할 것.
+
+### STUDENT 계획 (05:0x · `student-verified.md` 의 '점검(CHECK)' 쪽 고침 + 계획.md D01 ~ D04 · B01 · B02 · B04 · A11)
+
+- 사장님 질문(계획.md D13 ~ D19)은 "검토 결과대로"에 따라 **종합의 추천대로** 함 — 돌아오시면 되돌릴 수 있게 보고서에 따로 적음:
+  D13 나(2단계 먼저 듣기 · 우리말은 힌트 뒤) · D14 나(3단계 '영어 가리기' + 괄호 빈칸 20문장 '내 정보' — 화면과 마이크에만, 소리는 모범 문장 그대로) ·
+  D16 나(16낱말 이상 약 102문장은 앞 · 뒤 두 번에 조립, 소리는 한 문장 그대로) · D17 나(1단계 '보기'는 한 번 끝까지 들은 뒤) · D18 나(힌트가 낱말 1/3 넘으면 '힌트로 완성' · 완료는 받아쓰기 80% + 말하기 80%).
+- 안 하는 것: D15(이름표 13문장의 새 음성 — '음성은 그대로') · D19 녹음(실제 기기 시험 뒤) · L08 뜻 고르기 · L10 강의 사이 복습(공통 엔진의 복습 화면에서 — 다음 단위) · He/She 고르기.
+- 공용: 말하기 채점 두 낱말 창 → 순서를 지키는 전체 정렬(점수 공식 · 구간 그대로 · 완벽한 읽기 100 전 과정 검사) · VoiceSpeakingTester 선택 인자 targetTexts · passScore · onStart(인자 없으면 지금과 같음) · 새 공용 부품 StepTabs · icons(GRAMMAR 탭 모양 — 설계 세션도 씀).
+- 엔진: 완료 때 markLessonDone(문장마다 '강의id#순번' · kind sentence) · 받아쓰기 확인 · 마이크 결과는 recordAttempt(where lesson). 서버 진도 형식 · /api 그대로.
+- 이 세션이 할 확인: verify-unit --build · check-speech-scorer(③ ④ ⑤ ⑥ · --head FAIL · --break FAIL) · 디자인 검사 · 로컬 운영 빌드 캡처(s1-1 · s1-2 · s16-2 · 390/360/1366) · 가짜 인식기로 'Nice to meet you sir' 100점 · drive-common D · check-student-unlock · 유출 탐침(probe-bundle-leak-all).
 
 ### GRAMMAR 계획 (학습법 + 화면 한 번에 · `grammar-verified.md` 의 '점검(CHECK)' 쪽 고침을 따름)
 

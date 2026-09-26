@@ -101,7 +101,11 @@ const SNAPSHOT = `(() => {
   const W = window.innerWidth;
   const offscreen = [...main.querySelectorAll('button, a[href], input, select, textarea, [role=button]')].filter(vis).filter((el) => { const r = el.getBoundingClientRect(); return r.width > 0 && (r.right > W + 1 || r.left < -1); }).map((el) => (el.innerText || el.getAttribute('aria-label') || el.tagName).trim().slice(0, 40)).slice(0, 10);
   const small = [...main.querySelectorAll('button, a[href], input, select, textarea, [role=button]')].filter(vis).filter((el) => { const r = el.getBoundingClientRect(); return r.width > 0 && (r.width < 24 || r.height < 24); }).length;
-  const clipped = [...main.querySelectorAll('h1,h2,h3,p,li,button,span,div')].filter(vis).filter((el) => { const cs = getComputedStyle(el); return (cs.overflowX === 'hidden' || cs.overflow === 'hidden') && el.scrollWidth > el.clientWidth + 2 && el.children.length === 0 && (el.innerText || '').trim().length > 0 && cs.textOverflow !== 'ellipsis'; }).map((el) => (el.innerText || '').trim().slice(0, 40)).slice(0, 10);
+  // 2026-09-27 (STUDENT 학습법 · 화면 고침): a screen-reader-only label (Tailwind sr-only — absolute, 1×1px, overflow hidden;
+  // the step tabs keep 'Step ' that way on a phone so LessonStepNavigation and the drivers still read 'Step N') is hidden on
+  // purpose, not clipped — the first sweep of the new STUDENT tabs counted it as 'clipped text: Step' on every mobile step.
+  const srOnly = (el, cs) => { const r = el.getBoundingClientRect(); return cs.position === 'absolute' && r.width <= 1 && r.height <= 1; };
+  const clipped = [...main.querySelectorAll('h1,h2,h3,p,li,button,span,div')].filter(vis).filter((el) => { const cs = getComputedStyle(el); return (cs.overflowX === 'hidden' || cs.overflow === 'hidden') && el.scrollWidth > el.clientWidth + 2 && el.children.length === 0 && (el.innerText || '').trim().length > 0 && cs.textOverflow !== 'ellipsis' && !srOnly(el, cs); }).map((el) => (el.innerText || '').trim().slice(0, 40)).slice(0, 10);
   return {
     href: location.href,
     title: document.title,

@@ -188,5 +188,15 @@
   "bug": "BUG-025",
   "decision": "소유자 결정 대기(2026-09-24) — 지우기 / 두기",
   "note": "옛 Flash 틀 — 받아쓰기 칸 수 rows 10"
+ },
+ {
+  "course": "student",
+  "kind": "블록",
+  "what": "instruction",
+  "lessons": 82,
+  "count": 82,
+  "bug": "STU-U04",
+  "decision": "화면에서 뺌(2026-09-27 학습법 · 화면 고침, 사장님 '검토 결과대로') — 강의 파일은 그대로",
+  "note": "'장 이름 - 강 제목' — 82강 모두 lesson.label · title 과 글자까지 같아(STU-U04 CHECK 82/82) 강의 제목(h1)과 그 아래 장 이름 줄(page.tsx, pres.subtitle)로 나옴. 전에는 STUDENT 화면 위 상자의 h2 로 제목을 한 번 더 보였음"
  }
 ]

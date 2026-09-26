@@ -23,9 +23,10 @@
  *
  * OTHER PLACES THESE SELECTORS ALSO MATCH (listed by the 2026-09-23 review, "3차 점검").
  * The selectors are class substrings, so they are only safe because of WHEN they run:
- *   student-cards   StudentLearningView.tsx:835 (dictation, koParas[dictationIdx] — sentence 1
- *                   by default) and :1178 (shadowing) — not mounted while STEP 1 is open.
- *                   :835 would be exactly LISTENING's "sentence 1 only" hole if it were.
+ *   student-cards   2026-09-27: scoped to [data-step-panel="1"] — Step 2 (its one sentence's Korean line behind
+ *                   '우리말 힌트') and Step 3 (English and Korean of every sentence) also carry [data-en] / [data-ko],
+ *                   but they are other panels and not mounted while STEP 1 is open. Step 2's one line would be
+ *                   exactly LISTENING's "sentence 1 only" hole if the reader were not scoped.
  *   reading-passage ReadingLearningView.tsx:1130·1175 — another step's data-sentence-id spans,
  *                   not mounted during STEP 1 (the deliberate break of the last sentence was
  *                   caught 32/33, which is that fact measured).
@@ -79,17 +80,24 @@ const READERS = {
     return texts([...main.querySelectorAll('[data-step-panel="3"] [data-item] [data-en]')]);
   })()`,
 
-  /** STUDENT STEP 1 sentence cards, English and Korean, with the blind filter on "전체 보기" (StudentLearningView.tsx:651-766). */
+  /**
+   * STUDENT STEP 1 sentence list, English and Korean, with the script filter on '모두'.
+   * 2026-09-27 (STUDENT 학습법 · 화면 고침 — D01 · STU-U05): the filter is a four-part row '가림 · 영어 · 해석 · 모두'
+   * ([data-filter] with aria-pressed — it used to be found by '모두 가림 · 영어만 · 해석만 · 전체 보기' and a gold fill), and a
+   * sentence is li[data-sentence] with its English in [data-en] and its Korean in [data-ko], inside the Step 1 panel
+   * ([data-step-panel="1"]) — the class sizes this read before (text-[16px] · text-[13.5px]) left with the design rules.
+   * A blank in brackets is a chip INSIDE [data-en] whose text is the bracket itself, so the sentence reads as written.
+   */
   "student-cards": `(async () => {
     const main = document.querySelector('main'); if (!main) return [];
     ${SLEEP} ${TEXTS}
-    const filters = [...main.querySelectorAll('button')].filter((b) => /모두 가림|영어만|해석만|전체 보기/.test(b.innerText || ''));
-    const active = filters.find((b) => /(^|\\s)bg-primary(\\s|$)/.test(b.className));
-    const all = filters.find((b) => /전체 보기/.test(b.innerText || ''));
+    const panel = main.querySelector('[data-step-panel="1"]'); if (!panel) return [];
+    const active = panel.querySelector('[data-filter][aria-pressed="true"]');
+    const all = panel.querySelector('[data-filter="all"]');
     if (all && all !== active) { all.click(); await sleep(500); }
     const out = [
-      ...texts([...main.querySelectorAll('p[class*="text-[16px]"][class*="font-bold"]')]),
-      ...texts([...main.querySelectorAll('p[class*="text-[13.5px]"][class*="text-ink-soft"]')]),
+      ...texts([...panel.querySelectorAll('[data-sentence] [data-en]')]),
+      ...texts([...panel.querySelectorAll('[data-sentence] [data-ko]')]),
     ];
     if (active && all && all !== active) { active.click(); await sleep(300); }
     return out;

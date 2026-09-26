@@ -29,6 +29,7 @@ import { extractSentencesForAudio } from "@/lib/lessonAudioText";
 import { firstSlashAlternative } from "@/lib/listeningUtils";
 import { vocaWordSpeech } from "@/lib/vocaSpeech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { studentFirstWordKeepsCase } from "@/lib/studentCourseText";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
@@ -283,6 +284,16 @@ export default async function LessonPage({
   ).map((text) => lessonSpeechForm(`${course}/${lesson.id}`, text));
 
   const isGrammar = course === "grammar1" || course === "grammar2";
+  const isStudent = course === "student";
+  /**
+   * 2026-09-27 STUDENT 학습법 · 화면 고침 (STU-U17 · STU-U10): a STUDENT neighbour is named by its chapter code and its
+   * own title — 'Ch 12-1 · School Vacations (방학맞이)'. The presentation title's 'Part 1 ·' is the code's second half,
+   * and alone it read like going back ('다음 강의 Part 1'). The lesson titles themselves are unchanged.
+   */
+  const neighbour = (id: string, p: ReturnType<typeof formatLessonPresentation>) =>
+    isStudent
+      ? { href: `/${course}/${id}`, title: p.title.replace(/^Part \d+ · /, ""), code: p.code }
+      : { href: `/${course}/${id}`, title: p.title };
 
   // Unified Audio Player with native TTS fallback & gender profile
   const topPlayers =
@@ -348,6 +359,11 @@ export default async function LessonPage({
           const line = course === "grammar2" ? (pres.subtitle.split(" · ").slice(1).join(" · ") || null) : pres.subtitle;
           return line ? <p className="mt-1 text-label text-ink-soft">{line}</p> : null;
         })()}
+        {/*
+          2026-09-27 STU-U04 (STUDENT only): the chapter, one quiet line under the title — the STUDENT view no longer
+          repeats the title, an icon and a general description in a box of its own above the steps.
+        */}
+        {isStudent && pres.subtitle ? <p className="mt-0.5 text-caption text-ink-faint">{pres.subtitle}</p> : null}
       </header>
 
       {video.length > 0 ? (
@@ -428,10 +444,14 @@ export default async function LessonPage({
               vocaDictionary={vocaDictionary}
             />
           ) : (
+            // key: a new lesson is a new view — nothing of the last lesson's steps, tiles or reveals carries over
             <StudentLearningView
+              key={`${course}/${lesson.id}`}
               blocks={lesson.blocks}
               lessonKey={`${course}/${lesson.id}`}
               audioTracks={audio}
+              firstWordKeepsCase={studentFirstWordKeepsCase(lesson.blocks)}
+              next={next && nextPresentation ? { id: next.id, ...neighbour(next.id, nextPresentation), code: nextPresentation.code } : null}
             />
           )}
         </LessonSpeechGuard>
@@ -469,8 +489,8 @@ export default async function LessonPage({
       <LessonEndBar
         course={course}
         lessonId={lesson.id}
-        prev={prev && prevPresentation ? { href: `/${course}/${prev.id}`, title: prevPresentation.title } : null}
-        next={next && nextPresentation ? { href: `/${course}/${next.id}`, title: nextPresentation.title } : null}
+        prev={prev && prevPresentation ? neighbour(prev.id, prevPresentation) : null}
+        next={next && nextPresentation ? neighbour(next.id, nextPresentation) : null}
       />
     </main>
   );

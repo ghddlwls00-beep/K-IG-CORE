@@ -67,7 +67,7 @@ const LessonRow = memo(function LessonRow({
     ? "완료"
     : !isUnlocked
       ? sequentialLock
-        ? "앞 챕터를 마치면 열림"
+        ? "앞 장을 마치면 열림"
         : "이용권"
       : isFree && !hasCourseAccess
         ? "무료"
@@ -303,7 +303,8 @@ export function CourseDashboard({
     <div className="flex flex-col gap-5">
       {unlockNotice && (
         <div className="fixed inset-x-4 top-20 z-50 mx-auto max-w-md rounded-card border border-line bg-raised px-5 py-4 text-center text-label font-semibold text-ink shadow-xl" role="status">
-          챕터 {unlockNotice}이(가) 열렸습니다.
+          {/* 2026-09-27 STU-U28: a number and "장" fix the particle ('3장이'), instead of '챕터 3이(가)' */}
+          {unlockNotice}장이 열렸어요.
         </div>
       )}
 
@@ -420,12 +421,12 @@ export function CourseDashboard({
               : !hasCourseAccess
                 ? sectionIndex === 0 ? "1·2강 무료" : "이용권 등록 후 열립니다"
                 : !chapterUnlocked
-                  ? `챕터 ${sectionIndex}을(를) 마치면 열립니다`
+                  ? `${sectionIndex}장을 마치면 열립니다` // STU-U28: '{n}장을' — '챕터 {n}을(를)' read wrong
                   : chapterComplete
-                    ? "챕터 완료"
+                    ? "이 장 완료"
                     : isLife || !studentChapter
                       ? null
-                      : `진행 ${chapterPercent}% · ${studentChapter.requiredCount}강과 마지막 강의를 마치면 다음 챕터`;
+                      : `진행 ${chapterPercent}% · ${studentChapter.requiredCount}강과 마지막 강의를 마치면 다음 장`;
 
             return (
               <div

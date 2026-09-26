@@ -92,8 +92,9 @@
   --champagne-soft: #F7F2EA;
   --champagne-gold: #C5A46D;
 
-  /* 디자인 규칙 §4: 4.7:1 and 6.2:1 on the canvas (#FAF8F5) */
-  --success: #2F7D5B;
+  /* 디자인 규칙 §4: 6.0:1 and 6.2:1 on the canvas (#FAF8F5). 2026-09-27: success was #2F7D5B — 4.35:1 on --sunken
+     and 3.6–4.4:1 on its own 10–15% tint (a '✓ 읽었어요' · '통과했어요' chip); #256B4B is ≥ 4.5:1 on every surface and tint */
+  --success: #256B4B;
   --danger: #B3261E;
 
   /* the sticky header's height, for anything that sticks below it */

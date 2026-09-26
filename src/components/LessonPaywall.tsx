@@ -62,9 +62,10 @@ export function LessonPaywall({
         <span className="text-caption font-semibold text-ink-soft">{marker}</span>
         {lockReason === "progress" ? (
           <>
-            <h2 className="text-title-s font-bold text-ink">챕터 {chapter || "다음"}은(는) 앞 챕터를 마치면 열립니다</h2>
+            {/* 2026-09-27 STU-U28: '{n}장은' fixes the particle ('챕터 2은(는)' read wrong) */}
+            <h2 className="text-title-s font-bold text-ink">{chapter ? `${chapter}장은` : "다음 장은"} 앞 장을 마치면 열립니다</h2>
             <p className="text-label leading-relaxed text-ink-soft">
-              지금 챕터의 강의 80%와 마지막 강의를 마치면 다음 챕터가 바로 열립니다.
+              지금 장의 강의 80%와 마지막 강의를 마치면 다음 장이 바로 열립니다.
             </p>
           </>
         ) : isStudentOnly ? (
@@ -93,7 +94,7 @@ export function LessonPaywall({
           href="/student"
           className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity hover:opacity-90"
         >
-          지금 챕터로 돌아가기
+          지금 장으로 돌아가기
         </Link>
       ) : (
         <div className="grid w-full max-w-sm grid-cols-2 gap-2">

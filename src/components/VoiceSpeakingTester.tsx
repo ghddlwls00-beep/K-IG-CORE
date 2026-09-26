@@ -2,16 +2,33 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  evaluatePronunciation,
+  evaluateAgainstAny,
   isSpeechRecognitionSupported,
   listenToSpeech,
+  presentResult,
   type EvaluationResult,
   type VoiceRecognizerHandle,
 } from "@/lib/speechRecognition";
-import { isKakaoTalk, isInAppBrowser, isIOS, isAndroid } from "@/lib/speech";
+import {
+  getSpeechSnapshot,
+  isKakaoTalk,
+  isInAppBrowser,
+  isIOS,
+  isAndroid,
+  stopSpeech,
+  subscribeSpeech,
+} from "@/lib/speech";
 
 export interface VoiceSpeakingTesterProps {
   targetText: string;
+  /**
+   * 2026-09-27 (B02 · STU-U01): every accepted form of the sentence — "He is …" and "She is …",
+   * "Yes, sir." and "Yes, ma'am." The transcript is scored against each and the best one's score and
+   * word marks are shown (evaluateAgainstAny). Absent or empty → [targetText], exactly as before.
+   * A form may hold [[label]] slots the learner fills with their own words ("I go to [[school name]].",
+   * STU-L03): a slot accepts any 1-4 words and shows the words said, or '(label)' in red.
+   */
+  targetTexts?: string[];
   onSuccess?: (transcript: string, score: number) => void;
   compact?: boolean;
   buttonLabel?: string;
@@ -21,6 +38,14 @@ export interface VoiceSpeakingTesterProps {
    * every other caller keeps the notice exactly as before.
    */
   hideWhenUnsupported?: boolean;
+  /**
+   * 2026-09-27 (B02 · STU-U25): the caller's own pass mark (STUDENT passes 70). A score at or above it
+   * is shown in the success colours, and one below 80 says '통과했어요' instead of asking to try again,
+   * so the card never says '완료' and '다시' at once. Absent → the colours and words of today.
+   */
+  passScore?: number;
+  /** 2026-09-27 (STU-L02): called when listening starts, so the caller can reset its own playback state. */
+  onStart?: () => void;
 }
 
 /*
@@ -31,6 +56,14 @@ export interface VoiceSpeakingTesterProps {
  * element the audit helpers read is kept: the trigger title, '듣고 있는 중', 'N점 (…)', '↺ 다시 녹음',
  * '인식된 내 음성:' + the quoted <p>, the 'N점' badge span, '단어 일치 N/M', the error <span>, and
  * '지원되지 않는 브라우저'. The word chips also carry data-matched for the helpers.
+ *
+ * 2026-09-27 (B01 · B02 · B04 — STU-U21 · STU-U01 · STU-U25 · STU-L02 · STU-L13): the rating words come
+ * from speechRecognition.ts without emoji or '발음', and '모든 단어 일치' only when nothing is red. The
+ * default button name is '말하기 확인' (it said '마이크로 발음 테스트'; the five course views pass their
+ * own). New optional props targetTexts · passScore · onStart — a caller that passes none renders as
+ * before. Starting to listen stops any model sentence first (stopSpeech), and one that starts while
+ * the mic listens stops the listening, so the speaker is never scored as the learner. A new sentence
+ * (targetText / targetTexts) stops listening and clears the old result.
  */
 
 function MicIcon() {
@@ -63,10 +96,13 @@ function AlertIcon() {
 
 export function VoiceSpeakingTester({
   targetText,
+  targetTexts,
   onSuccess,
   compact = false,
-  buttonLabel = "마이크로 발음 테스트",
+  buttonLabel = "말하기 확인",
   hideWhenUnsupported = false,
+  passScore,
+  onStart,
 }: VoiceSpeakingTesterProps) {
   const [supported, setSupported] = useState(true);
   const [isListening, setIsListening] = useState(false);
@@ -74,50 +110,92 @@ export function VoiceSpeakingTester({
   const [result, setResult] = useState<EvaluationResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const recognizerRef = useRef<VoiceRecognizerHandle | null>(null);
+  // Every start gets a number; a callback from an older start (a sentence that has since changed)
+  // finds a different number here and does nothing.
+  const sessionRef = useRef(0);
+
+  const targets = targetTexts && targetTexts.length > 0 ? targetTexts : [targetText];
+  const targetsKey = targets.join("\n");
+
+  // A new sentence: the result, the words heard so far and any notice belong to the old one.
+  const [shownKey, setShownKey] = useState(targetsKey);
+  if (shownKey !== targetsKey) {
+    setShownKey(targetsKey);
+    setResult(null);
+    setInterimText("");
+    setErrorMessage(null);
+    setIsListening(false);
+  }
 
   useEffect(() => {
     setSupported(isSpeechRecognitionSupported());
   }, []);
 
+  // Stop listening when the sentence changes (and on unmount): the recogniser is still hearing the
+  // learner say the old one.
   useEffect(() => {
     return () => {
-      if (recognizerRef.current) {
-        recognizerRef.current.abort();
-      }
+      sessionRef.current += 1;
+      recognizerRef.current?.abort();
+      recognizerRef.current = null;
     };
-  }, []);
+  }, [targetsKey]);
+
+  // The other way round (STU-L02): a model sentence that starts playing while the mic listens would
+  // be scored as the learner's voice, so the listening stops and what it heard is dropped.
+  useEffect(() => {
+    if (!isListening) return;
+    return subscribeSpeech(() => {
+      if (!getSpeechSnapshot().speaking) return;
+      sessionRef.current += 1;
+      recognizerRef.current?.abort();
+      recognizerRef.current = null;
+      setIsListening(false);
+      setInterimText("");
+    });
+  }, [isListening]);
 
   function handleStartListening() {
     if (isListening) {
       handleStopListening();
       return;
     }
+    // A model sentence still playing (or looping) would be heard and scored as the learner's own
+    // voice (STU-L02), so it stops first, and the caller resets its own play buttons.
+    stopSpeech();
+    onStart?.();
     setErrorMessage(null);
     setInterimText("");
     setResult(null);
 
+    const session = ++sessionRef.current;
+    const current = () => session === sessionRef.current;
+    const scoredTargets = targets;
+
     const handle = listenToSpeech({
       lang: "en-US",
       onStart: () => {
-        setIsListening(true);
+        if (current()) setIsListening(true);
       },
       onInterim: (interim) => {
-        setInterimText(interim);
+        if (current()) setInterimText(interim);
       },
       onResult: (transcript) => {
+        if (!current()) return;
         setIsListening(false);
-        const evalResult = evaluatePronunciation(transcript, targetText);
+        const evalResult = evaluateAgainstAny(transcript, scoredTargets).result;
         setResult(evalResult);
         if (onSuccess) {
           onSuccess(transcript, evalResult.score);
         }
       },
       onError: (err) => {
+        if (!current()) return;
         setIsListening(false);
         setErrorMessage(err);
       },
       onEnd: () => {
-        setIsListening(false);
+        if (current()) setIsListening(false);
       },
     });
     recognizerRef.current = handle;
@@ -178,6 +256,13 @@ export function VoiceSpeakingTester({
 
   const cleanLabel = buttonLabel.replace(/^🎙️\s*/, "");
 
+  // The card's words and colours for the caller's pass mark (presentResult — without one, as before).
+  const shown = result ? presentResult(result, passScore) : null;
+  const shownLabel = shown ? shown.label : "";
+  const shownFeedback = shown ? shown.feedback : "";
+  const buttonSuccess = shown !== null && shown.buttonSuccess;
+  const cardSuccess = shown !== null && shown.cardSuccess;
+
   return (
     <div className="flex flex-col gap-2">
       {/* Trigger & Status Button */}
@@ -190,7 +275,7 @@ export function VoiceSpeakingTester({
             (isListening
               ? "border-danger bg-danger/10 text-danger"
               : result
-              ? result.score >= 80
+              ? buttonSuccess
                 ? "border-success/60 bg-success/10 text-success hover:bg-success/15"
                 : "border-line bg-raised text-ink hover:bg-sunken"
               : "border-line bg-raised text-ink-soft hover:bg-sunken")
@@ -202,7 +287,7 @@ export function VoiceSpeakingTester({
             {isListening
               ? "듣고 있는 중... (말씀하세요)"
               : result
-              ? `${result.score}점 (${result.ratingLabel})`
+              ? `${result.score}점 (${shownLabel})`
               : cleanLabel}
           </span>
         </button>
@@ -255,7 +340,7 @@ export function VoiceSpeakingTester({
         <div
           className={
             "flex flex-col gap-2 rounded-control border px-3 py-3 text-label " +
-            (result.score >= 85 ? "border-success/40" : result.score >= 60 ? "border-line" : "border-danger/40")
+            (cardSuccess ? "border-success/40" : result.score >= 60 ? "border-line" : "border-danger/40")
           }
         >
           {/* Header & Score Badge */}
@@ -264,7 +349,7 @@ export function VoiceSpeakingTester({
               <span
                 className={
                   "rounded-control px-2 py-0.5 text-label font-bold tabular-nums " +
-                  (result.score >= 85
+                  (cardSuccess
                     ? "bg-success/10 text-success"
                     : result.score >= 60
                     ? "bg-sunken text-ink"
@@ -273,7 +358,7 @@ export function VoiceSpeakingTester({
               >
                 {result.score}점
               </span>
-              <span className="font-semibold text-ink">{result.ratingLabel}</span>
+              <span className="font-semibold text-ink">{shownLabel}</span>
             </div>
             <span className="text-caption tabular-nums text-ink-faint">
               단어 일치 {result.matchedCount}/{result.totalWords}
@@ -309,7 +394,7 @@ export function VoiceSpeakingTester({
           </div>
 
           {/* Feedback */}
-          <p className="border-t border-line pt-1.5 text-caption text-ink-soft">{result.feedback}</p>
+          <p className="border-t border-line pt-1.5 text-caption text-ink-soft">{shownFeedback}</p>
         </div>
       )}
     </div>

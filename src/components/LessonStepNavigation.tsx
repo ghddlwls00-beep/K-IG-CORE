@@ -51,6 +51,15 @@ export function LessonStepNavigation({ courseHref }: { courseHref: string }) {
     target.click();
     setCurrentStep(step);
     window.requestAnimationFrame(() => {
+      // 2026-09-27 (STU-U19): a view that marks where its steps begin (data-step-start — STUDENT's step tabs) is brought
+      // up under the header, so the new step's content starts right below the tabs instead of in the lower half of a
+      // phone screen. A view without the mark keeps the old behaviour.
+      const start = document.querySelector<HTMLElement>("main [data-step-start]");
+      if (start) {
+        const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 56;
+        window.scrollTo({ top: start.getBoundingClientRect().top + window.scrollY - headerH - 8, behavior: "smooth" });
+        return;
+      }
       target.scrollIntoView({ behavior: "smooth", block: "center" });
     });
   };
