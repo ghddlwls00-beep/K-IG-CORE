@@ -10,13 +10,15 @@ import { ReadingLearningView } from "@/components/ReadingLearningView";
 import { GrammarLearningView } from "@/components/GrammarLearningView";
 import { PhonicsLearningView } from "@/components/PhonicsLearningView";
 import { StudentLearningView } from "@/components/StudentLearningView";
+import { PassoffGrammarLearningView } from "@/components/PassoffGrammarLearningView";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
 import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
-import { isStudentOnlyPlan } from "@/lib/license";
+import { planOpensCourse } from "@/lib/license";
+import { passoffLessonBlocks } from "@/lib/passoffContent";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
@@ -52,7 +54,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 /** BUG-023 — courses whose view the page renders itself (see the lesson body below). */
-const DIRECT_VIEW_COURSES = new Set(["ld", "reading", "grammar1", "grammar2", "phonics", "student"]);
+const DIRECT_VIEW_COURSES = new Set(["ld", "reading", "grammar1", "grammar2", "phonics", "student", "passoff-grammar"]);
 
 /**
  * The banner that represents each course in a share card. Mirrors the map on
@@ -69,6 +71,8 @@ const COURSE_OG_IMAGE: Record<string, string> = {
   reading: "/images/og/reading.jpg",
   cnn: "/images/og/cnn.jpg",
   student: "/images/og/students.jpg",
+  // GRAMMAR I's banner until PASS-OFF GRAMMAR has its own (docs/pass-off-grammar/작업기록.md)
+  "passoff-grammar": "/images/og/grammar1.jpg",
   chinese: "/images/og/chinese.jpg",
 };
 const OG_WIDTH = 1000;
@@ -164,9 +168,8 @@ export default async function LessonPage({
       (await cookies()).get(LICENSE_SESSION_COOKIE_NAME)?.value,
     );
     if (session) {
-      accessAllowed = isStudentOnlyPlan(session.payload.plan)
-        ? course === "student" // STUDENT-only passes cover the STUDENT course alone
-        : true; // 1M / 1Y / LIFE all-pass
+      // STUDENT passes open STUDENT and PASS-OFF GRAMMAR; 1M / 1Y / LIFE all-pass (license.ts planOpensCourse)
+      accessAllowed = planOpensCourse(session.payload.plan, course);
     }
   }
 
@@ -192,6 +195,10 @@ export default async function LessonPage({
       </main>
     );
   }
+
+  // 설계 §7 — a PASS-OFF GRAMMAR free preview keeps its paid STUDENT sentences in a server-only
+  // file; they are added here, after the gate, only for a licence that opens the course.
+  const passoff = course === "passoff-grammar" ? await passoffLessonBlocks(course, lesson) : null;
 
   const ldEnglishScript = course === "ld"
     ? getLdEnglishScript(id) ?? (pair ? getLdEnglishScript(pair.id) : null)
@@ -370,7 +377,7 @@ export default async function LessonPage({
             />
           ))}
         </div>
-      ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course) ? (
+      ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese", "passoff-grammar"].includes(course) ? (
         <div className="mb-8">
           <AudioPlayer
             fallbackSentences={fallbackSentences}
@@ -428,6 +435,13 @@ export default async function LessonPage({
               blocks={lesson.blocks}
               lessonKey={`${course}/${lesson.id}`}
               vocaDictionary={vocaDictionary}
+            />
+          ) : course === "passoff-grammar" ? (
+            // its own branch on purpose: the final else below is STUDENT's view
+            <PassoffGrammarLearningView
+              blocks={passoff?.blocks ?? lesson.blocks}
+              lessonKey={`${course}/${lesson.id}`}
+              lockedExtraCount={passoff?.lockedExtraCount ?? 0}
             />
           ) : (
             <StudentLearningView

@@ -13,6 +13,9 @@
  *   GRAMMAR   GrammarLearningView:361 playEnglish(item.englishText) — 영어 문항만(한국어 쪽 강의는 짝 강의의 영어)
  *   LISTENING LdLearningView:317 playText(….en · card.original) · :335 allEnglishSentences — 대본(ld_english_scripts)의 영어와 연음 카드 original
  *   READING   ReadingLearningView:421 playSentenceEn(pair.en) · :438 playWordAudio(kw.word) — 문장 영어 · 카드 낱말
+ *   PASS-OFF GRAMMAR  PassoffGrammarLearningView — ① 예문(anchors) · ④ 영작(drill.produce) · ⑤ 처음 보는 문장(drill.transfer) 의 영어 en.
+ *             위 '전체 듣기' 는 끔(page.tsx). 과정 등록 단계(A)의 최소 분기 — 단계 B 가 화면이 실제로 넘기는 글과 맞춘다(설계 §9).
+ *             무료 체험 pg01-1 의 유료 STUDENT 문장은 레슨 파일에 없다(서버 전용 보충 파일) — 그래서 무료 소리 키에도 들어가지 않는다.
  *   위 '전체 듣기' — page.tsx 가 src/lib/lessonAudioText.ts extractSentencesForAudio 로 만든 fallbackSentences 를 AudioPlayer 가 소리 낸다
  *            (CNN 밖에서는 늘 합성 음성 모드 — shouldUseUnifiedSpeech). 대개 위 목록 안의 영어지만 추측하지 않고 **그 함수를 그대로 돌려** 더한다
  *            (그렇게 해서 찾은 것: gh1-084 가 한국어 문제 31개를 영어로 여겨 읽던 BUG-026 — 고침). 보이는 조건은 page.tsx 대로
@@ -36,7 +39,7 @@
  *   (STUDENT 과정 목록의 장 듣기 ChapterAudioBar 도 강의 화면과 같은 꼴). 한국어(STUDENT 해석) · 낱말 카드 · 연음 카드 · VOCA 에는 대지 않는다
  *   (표에 없는 쪽은 그대로 — LISTENING d011 · d012 · d025 · d026 의 Kim 은 미국 사람이라 표에 없음).
  */
-const SPOKEN_COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const SPOKEN_COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading", "passoff-grammar"];
 const isKo = (s) => /[가-힣]/.test(String(s || ""));
 /** GrammarLearningView · page.tsx cleanText 와 같은 것 — 앞 번호 "1. " 와 " / " */
 const cleanText = (s) => String(s || "").replace(/^\s*\d+[.)]\s*/, "").replace(/\s*\/\s*/g, " ").trim();
@@ -93,7 +96,8 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
   const en = (t) => (typeof t === "string" ? fns.lessonSpeechForm(lessonKey, t) : t);
   // 위 '전체 듣기' — page.tsx 와 같은 입력으로 그 함수를 그대로(page.tsx 도 그 결과에 lessonSpeechForm)
   const audio = (lesson && Array.isArray(lesson.audio) ? lesson.audio : []).filter((a, i, all) => all.findIndex((x) => x.src === a.src) === i);
-  if (course !== "student" || audio.length === 1) {
+  // (PASS-OFF GRAMMAR 는 위 플레이어가 없다 — page.tsx)
+  if (course !== "passoff-grammar" && (course !== "student" || audio.length === 1)) {
     const base = (s) => String(s).replace(/-1$/, "");
     const script = course === "ld" ? (ldScripts[base(id)] || (pair && pair.id ? ldScripts[base(pair.id)] : null) || null) : null;
     const reading = (lesson && lesson.readingSentences) || (pair && pair.readingSentences) || null;
@@ -122,6 +126,12 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
       const entry = dictionary[w] || dictionary[w.toLowerCase()] || null;
       const col = fns.getCollocation(w, entry && entry.searchWord);
       if (col) add(col.phrase);
+    }
+  } else if (course === "passoff-grammar") {
+    for (const b of blocksOf(lesson)) {
+      if (!b) continue;
+      if (b.type === "anchors") for (const it of b.items || []) if (it && it.en) add(en(it.en));
+      if (b.type === "drill") for (const k of ["produce", "transfer"]) for (const it of b[k] || []) if (it && it.en) add(en(it.en));
     }
   }
   return out;

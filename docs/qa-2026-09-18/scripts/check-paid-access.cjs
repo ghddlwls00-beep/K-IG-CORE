@@ -10,8 +10,17 @@ const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
 const sentences = (d) => (d.blocks || []).flatMap((b) => (b.items || []).map((i) => i.text)).filter(Boolean);
+// PASS-OFF GRAMMAR's lessons are still being written: its last paid lesson on disk, and the first
+// example's Korean (step ① shows it before anything is pressed)
+const PASSOFF_PAID = (() => {
+  const { isFreePreviewLesson } = H.loadTs(path.join(H.REPO, "src/lib/license.ts"));
+  const ids = (JSON.parse(fs.readFileSync(path.join(H.REPO, "src/lib/generated/validRoutes.json"), "utf8")).lessons["passoff-grammar"] || [])
+    .filter((id) => !isFreePreviewLesson("passoff-grammar", id));
+  return ids[ids.length - 1] || null;
+})();
 const PAGES = [
   ["student", "s20-5", (d) => sentences(d).find((t) => t.length > 15)],
+  ...(PASSOFF_PAID ? [["passoff-grammar", PASSOFF_PAID, (d) => ((d.blocks.find((b) => b.type === "anchors") || { items: [] }).items[0] || {}).ko]] : []),
   ["phonics", "hv-75", (d) => (d.blocks.find((b) => b.type === "wordgrid") || { rows: [[]] }).rows.flat().find((w) => w && w.length > 6)],
   ["grammar1", "gh1-122", (d) => sentences(d).find((t) => t.length > 8)],
   ["grammar2", "gh2-050", (d) => sentences(d).find((t) => t.length > 15)],

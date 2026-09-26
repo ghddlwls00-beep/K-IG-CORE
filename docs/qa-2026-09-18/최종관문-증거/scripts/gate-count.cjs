@@ -33,8 +33,8 @@ const GRADING3 = readJson(arg("--grading3", null));
 const DEPLOY4 = arg("--deploy4", null) ? new Date(arg("--deploy4", null)) : null;
 const CHANGED4 = arg("--changed4", null) ? JSON.parse(fs.readFileSync(arg("--changed4", null), "utf8")).out : null;
 const PROD = "https://k-ig-core.vercel.app";
-const FILE_RE = /^(student|phonics|grammar1|grammar2|ld|reading)-g(0|15)-(desktop|tablet|mobile)-s?\d+of\d+(-r\d+)*\.jsonl$/;
-const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const FILE_RE = /^(student|passoff-grammar|phonics|grammar1|grammar2|ld|reading)-g(0|15)-(desktop|tablet|mobile)-s?\d+of\d+(-r\d+)*\.jsonl$/;
+const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
 const VPS = ["desktop", "tablet", "mobile"];
 
 // ---------------------------------------------------------------- 0. 파일 목록 · 날짜

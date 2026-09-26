@@ -1,0 +1,575 @@
+{
+  "lesson": "pg01-1",
+  "note": "무료 체험 레슨의 유료 STUDENT 문항 — 이용권이 이 과정을 열 때만 서버가 붙인다(src/lib/passoffContent.ts). scripts/buildPassoffIndex.mjs 가 레슨 파일의 paidStudent: true 문항을 옮겨 적는다. 고칠 때는 레슨 파일에 paidStudent: true 로 다시 넣고 스크립트를 돌리거나 여기서 고친다.",
+  "items": [
+    {
+      "block": "anchors",
+      "nth": 0,
+      "list": "items",
+      "after": null,
+      "at": 0,
+      "item": {
+        "id": "pg01-1:a1",
+        "en": "I have a nice family.",
+        "ko": "저는 좋은 가족이 있습니다.",
+        "focus": [
+          "I"
+        ],
+        "studentRef": {
+          "lesson": "s2-2",
+          "kind": "exact"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "passOff 1) item 1",
+          "reviewWhere": "review 1) item 1 (p7)"
+        },
+        "paidStudent": true
+      }
+    },
+    {
+      "block": "anchors",
+      "nth": 0,
+      "list": "items",
+      "after": "pg01-1:a1",
+      "at": 1,
+      "item": {
+        "id": "pg01-1:a2",
+        "en": "We are free for the day.",
+        "ko": "우리는 그날 동안 자유롭다.",
+        "focus": [
+          "We"
+        ],
+        "studentRef": {
+          "lesson": "s11-1",
+          "kind": "adapted"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "passOff 1) item 2",
+          "reviewWhere": "review 1) item 2 (p7)"
+        },
+        "paidStudent": true,
+        "fix": {
+          "from": "우리는 그 날 동안 자유롭다.",
+          "kind": "korean_typo",
+          "why": "'그날'(바로 그 날)은 한 낱말"
+        }
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "select",
+      "after": null,
+      "at": 0,
+      "item": {
+        "id": "pg01-1:s1",
+        "kind": "select",
+        "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+        "tokens": [
+          "I",
+          "have",
+          "a",
+          "nice",
+          "family",
+          "."
+        ],
+        "answer": [
+          0
+        ],
+        "optional": [],
+        "labels": [
+          "1인칭",
+          "2인칭",
+          "3인칭"
+        ],
+        "labelAnswer": [
+          0
+        ],
+        "why": "I 는 말하는 나 자신 → 1인칭(단수)",
+        "bookRef": {
+          "book": 1,
+          "page": 7,
+          "where": "review 1) item 1 (인칭대명사 밑줄 + 몇 인칭)"
+        },
+        "paidStudent": true
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "select",
+      "after": "pg01-1:s1",
+      "at": 1,
+      "item": {
+        "id": "pg01-1:s2",
+        "kind": "select",
+        "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+        "tokens": [
+          "We",
+          "are",
+          "free",
+          "for",
+          "the",
+          "day",
+          "."
+        ],
+        "answer": [
+          0
+        ],
+        "optional": [],
+        "labels": [
+          "1인칭",
+          "2인칭",
+          "3인칭"
+        ],
+        "labelAnswer": [
+          0
+        ],
+        "why": "We 는 나를 포함한 우리 → 1인칭(복수)",
+        "bookRef": {
+          "book": 1,
+          "page": 7,
+          "where": "review 1) item 2 (인칭대명사 밑줄 + 몇 인칭)"
+        },
+        "paidStudent": true
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": null,
+      "at": 0,
+      "item": {
+        "id": "pg01-1:p1",
+        "ko": "저는 좋은 가족이 있습니다.",
+        "condition": null,
+        "promptEn": null,
+        "en": "I have a nice family.",
+        "accept": [
+          "I have a good family."
+        ],
+        "targets": [
+          [
+            "i"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "I am have",
+            "hint": "have 가 이미 동사예요. am 과 함께 쓰지 않아요."
+          },
+          {
+            "match": "have nice family",
+            "hint": "family(가족 하나) 앞에 '하나'를 뜻하는 작은 말이 필요해요."
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "present-simple",
+          "article-basic"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s2-2",
+          "kind": "exact"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 1",
+          "reviewWhere": "review 1) item 1 (p7)"
+        },
+        "fix": null
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p1",
+      "at": 1,
+      "item": {
+        "id": "pg01-1:p2",
+        "ko": "나는 자주 내 친구들을 만나요.",
+        "condition": null,
+        "promptEn": null,
+        "en": "I often see my friends.",
+        "accept": [
+          "I often meet my friends.",
+          "I see my friends often.",
+          "I meet my friends often.",
+          "I frequently see my friends.",
+          "I frequently meet my friends."
+        ],
+        "targets": [
+          [
+            "i"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "see often my",
+            "hint": "often(자주)은 보통 동사 앞이나 문장 끝에 와요."
+          },
+          {
+            "match": "meet often my",
+            "hint": "often(자주)은 보통 동사 앞이나 문장 끝에 와요."
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "present-simple"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s5-2",
+          "kind": "adapted"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 2",
+          "reviewWhere": "review 2) item 1 (p8)"
+        },
+        "fix": null
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p2",
+      "at": 2,
+      "item": {
+        "id": "pg01-1:p3",
+        "ko": "나는 공부하기와 친구 사귀기를 좋아해요.",
+        "condition": null,
+        "promptEn": null,
+        "en": "I like to study and make friends.",
+        "accept": [
+          "I like studying and making friends.",
+          "I like to study and to make friends."
+        ],
+        "targets": [
+          [
+            "i"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "I like study and",
+            "hint": "like 뒤에 동작이 오면 to + 동사원형으로 써요."
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "present-simple",
+          "like-to"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s5-5",
+          "kind": "adapted"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 3",
+          "reviewWhere": "review 2) item 2 (p8)"
+        },
+        "fix": {
+          "from": "나는 공부하기와 친구 사귀기를 좋아해요",
+          "kind": "korean_typo",
+          "why": "문장 끝 마침표 누락"
+        }
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p3",
+      "at": 3,
+      "item": {
+        "id": "pg01-1:p4",
+        "ko": "나는 집으로 가서 가족과 저녁을 먹어요.",
+        "condition": null,
+        "promptEn": null,
+        "en": "I go home and have dinner with my family.",
+        "accept": [
+          "I go home and eat dinner with my family.",
+          "I go home and have supper with my family.",
+          "I go home and eat supper with my family."
+        ],
+        "targets": [
+          [
+            "i"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "go to home",
+            "hint": "home 에는 '집으로'라는 뜻이 이미 들어 있어요. 앞에 to 가 필요할까요?"
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "present-simple",
+          "conjunction-and-but-or-so"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s9-3",
+          "kind": "adapted"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 4",
+          "reviewWhere": "review 2) item 3 (p8)"
+        },
+        "fix": null
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p4",
+      "at": 4,
+      "item": {
+        "id": "pg01-1:p5",
+        "ko": "가끔씩 나는 내가 잠들기 전에 TV를 보거나 음악을 듣습니다.",
+        "condition": null,
+        "promptEn": null,
+        "en": "Sometimes I watch TV or listen to music before I go to bed.",
+        "accept": [
+          "Sometimes I watch TV or listen to music before bed.",
+          "Sometimes I watch TV or listen to music before going to bed.",
+          "Sometimes I watch TV or listen to music before I sleep.",
+          "Sometimes I watch TV, or listen to music before I go to bed.",
+          "Sometimes, I watch TV or listen to music before I go to bed.",
+          "I sometimes watch TV or listen to music before I go to bed.",
+          "I sometimes watch TV or listen to music before bed.",
+          "Before I go to bed, I sometimes watch TV or listen to music.",
+          "Before I go to bed, sometimes I watch TV or listen to music.",
+          "Sometimes I watch television or listen to music before I go to bed."
+        ],
+        "targets": [
+          [
+            "i"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "listen music",
+            "hint": "'음악을 듣다'는 listen 다음에 작은 말 하나가 더 필요해요."
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "present-simple",
+          "conjunction-and-but-or-so",
+          "subordinating-conjunction"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s10-4",
+          "kind": "exact"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 5",
+          "reviewWhere": "review 2) item 4 (p8)"
+        },
+        "fix": {
+          "from": "en: Sometimes I watch TV, or listen to music  before I go to bed. / ko: 때때로 나는 TV 를 보거나 음악을 들어요. 내가 잠자리에 들기 전에",
+          "kind": "english_grammar",
+          "why": "STUDENT 10-4 가 이미 고친 문장이라 영어·한국어 모두 STUDENT 판으로 맞춤(or 앞 쉼표·겹공백 삭제, 두 조각으로 끊긴 한국어를 한 문장으로)"
+        },
+        "challengeNote": "before I go to bed(종속접속사)는 뒤 레슨 문법이지만, 기초 문법인 전치사 before + 명사(before bed)로도 같은 뜻을 만들 수 있어 허용 답에 넣고 도전으로 두지 않음"
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p5",
+      "at": 5,
+      "item": {
+        "id": "pg01-1:p6",
+        "ko": "나의 가족과 나는 기독교인입니다.",
+        "condition": null,
+        "promptEn": null,
+        "en": "My family and I are Christians.",
+        "accept": [
+          "My family and I are Christian."
+        ],
+        "targets": [
+          [
+            "i"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "I and my family",
+            "hint": "다른 사람과 함께 쓸 때 I 는 어디에 올까요?"
+          },
+          {
+            "match": "family and me",
+            "hint": "주어 자리의 '나'는 me 가 아니에요."
+          },
+          {
+            "match": "family and I is",
+            "hint": "'가족과 나'는 여러 명이에요. be동사 모양은?"
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "be-present",
+          "noun-plural-basic"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s11-3",
+          "kind": "exact"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 6",
+          "reviewWhere": "review 2) item 5 (p8)"
+        },
+        "fix": null
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p6",
+      "at": 6,
+      "item": {
+        "id": "pg01-1:p7",
+        "ko": "우리는 그날 동안 자유롭다.",
+        "condition": null,
+        "promptEn": null,
+        "en": "We are free for the day.",
+        "accept": [
+          "We are free for the rest of the day.",
+          "We're free for the day.",
+          "We're free for the rest of the day."
+        ],
+        "targets": [
+          [
+            "we",
+            "we're"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "We is",
+            "hint": "We 는 여러 명이에요. be동사 모양은?"
+          },
+          {
+            "match": "We free",
+            "hint": "'자유롭다'는 be동사 + free 로 써요."
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "be-present"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s11-1",
+          "kind": "adapted"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 7",
+          "reviewWhere": "review 1) item 2 (p7)"
+        },
+        "fix": {
+          "from": "우리는 그 날 동안 자유롭다.",
+          "kind": "korean_typo",
+          "why": "'그날'은 한 낱말"
+        }
+      }
+    },
+    {
+      "block": "drill",
+      "nth": 0,
+      "list": "produce",
+      "after": "pg01-1:p7",
+      "at": 7,
+      "item": {
+        "id": "pg01-1:p8",
+        "ko": "우리는 서로서로 매우 가깝다.",
+        "condition": null,
+        "promptEn": null,
+        "en": "We are very close to one another.",
+        "accept": [
+          "We are very close to each other.",
+          "We are really close to one another.",
+          "We are really close to each other.",
+          "We're very close to one another.",
+          "We're very close to each other.",
+          "We're really close to one another.",
+          "We're really close to each other."
+        ],
+        "targets": [
+          [
+            "we",
+            "we're"
+          ]
+        ],
+        "errorPatterns": [
+          {
+            "match": "We very close",
+            "hint": "'가깝다'는 be동사 + close 로 써요."
+          }
+        ],
+        "tags": [
+          "pronoun-1st",
+          "be-present"
+        ],
+        "challenge": false,
+        "challengeTags": [],
+        "paidStudent": true,
+        "studentRef": {
+          "lesson": "s2-6",
+          "kind": "adapted"
+        },
+        "bookRef": {
+          "book": 1,
+          "page": 5,
+          "where": "application 1) item 8",
+          "reviewWhere": "review 2) item 6 (p8)"
+        },
+        "fix": null
+      }
+    }
+  ]
+}

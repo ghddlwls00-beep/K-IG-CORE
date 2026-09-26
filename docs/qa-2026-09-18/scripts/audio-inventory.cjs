@@ -25,11 +25,12 @@ const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8")
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
 const FREE_IDS = {};
 {
+  // a key may be quoted — "passoff-grammar" (2026-09-27): the unquoted-only pattern skipped it and made its free lessons paid
   let cur = null;
   for (const line of freeBlock.split("\n")) {
-    const m = line.match(/^\s*([a-z0-9]+):\s*\[/);
+    const m = line.match(/^\s*"?([a-z0-9-]+)"?:\s*\[/);
     if (m) { cur = m[1]; FREE_IDS[cur] = new Set(); }
-    if (cur) for (const x of line.matchAll(/"([a-z0-9-]+)"/g)) FREE_IDS[cur].add(x[1]);
+    if (cur) for (const x of (m ? line.slice(line.indexOf("[")) : line).matchAll(/"([a-z0-9-]+)"/g)) FREE_IDS[cur].add(x[1]);
     if (/\]/.test(line)) cur = null;
   }
 }

@@ -29,13 +29,14 @@ const unified = loadTs(path.join(REPO, "src/lib/unifiedSpeech.ts"));
 const MARKERS = {
   phonics: "VOCA 목록",
   student: "STUDENT 목록",
+  "passoff-grammar": "PASS-OFF GRAMMAR 목록",
   reading: "READING 목록",
   ld: "LISTENING 목록",
   grammar1: "GRAMMAR I 목록",
   grammar2: "GRAMMAR II 목록",
 };
-// LessonPaywall.tsx: licence paywall markers + the STUDENT sequential-progress lock heading
-const PAYWALL_RE = /ALL-PASS ONLY|STUDENT PASS ONLY|VIP ALL-PASS REQUIRED|순차 학습 잠금/;
+// LessonPaywall.tsx: licence paywall markers (PASS-OFF GRAMMAR: "STUDENT PASS · ALL-PASS") + the STUDENT sequential-progress lock heading
+const PAYWALL_RE = /ALL-PASS ONLY|STUDENT PASS ONLY|STUDENT PASS · ALL-PASS|VIP ALL-PASS REQUIRED|순차 학습 잠금/;
 const KEEP_KEYS = ["kig:license:v1", "kig:device:id:v1", "kig:device:name:v1", "kig:theme", "kig:lang"];
 
 const AUDIO_HOOK = `(() => {

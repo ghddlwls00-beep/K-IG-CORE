@@ -123,6 +123,43 @@ for (const course of E.COURSES) {
       if (!words.length) add(course, "no-words", "단어표가 비어 있음", where);
     } else if (course === "student") {
       if (!E.itemsOf(d).length) add(course, "no-items", "문장이 하나도 없음", where);
+    } else if (course === "passoff-grammar") {
+      // docs/pass-off-grammar/데이터-형식.md — what the five steps need to work at all. A free preview's
+      // held-back paid items (content/private/passoff-grammar/<id>.paid.json) are checked with it.
+      const blocks = d.blocks || [];
+      const held = (() => {
+        const f = path.join(REPO, "content/private/passoff-grammar", `${id}.paid.json`);
+        return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, "utf8")).items || []) : [];
+      })();
+      const heldIn = (list) => held.filter((e) => e.list === list).map((e) => e.item);
+      const anchors = [...blocks.filter((b) => b.type === "anchors").flatMap((b) => b.items || []), ...heldIn("items")];
+      const rule = blocks.find((b) => b.type === "rule");
+      const drill = blocks.find((b) => b.type === "drill") || {};
+      const select = [...(drill.select || []), ...heldIn("select")];
+      const produce = [...(drill.produce || []), ...heldIn("produce")];
+      const transfer = [...(drill.transfer || []), ...heldIn("transfer")];
+      if (!anchors.length) add(course, "no-anchors", "예문(①)이 하나도 없음", where);
+      if (anchors.length > 8) add(course, "too-many-anchors", `예문 ${anchors.length}개 — 8개까지`, where);
+      for (const a of anchors) {
+        if (!String(a.en || "").trim()) add(course, "anchor-missing-en", `${a.id} 영어 없음`, where);
+        if (!String(a.ko || "").trim()) add(course, "anchor-missing-ko", `${a.id} 한국어 없음`, where);
+      }
+      if (!rule) add(course, "no-rule", "규칙(②)이 없음", where);
+      else {
+        if (!String(rule.title || "").trim() || !(rule.points || []).length) add(course, "rule-incomplete", "규칙 제목이나 설명 줄이 없음", where);
+        if (!rule.check || !Array.isArray(rule.check.options) || typeof rule.check.answer !== "number") add(course, "rule-check-missing", "규칙 확인 문항(보기 · 정답 번호)이 없음", where);
+      }
+      if (!select.some((s) => !s.reserve)) add(course, "no-form-items", "형태 찾기(③) 문항이 없음", where);
+      for (const s of select) {
+        const keyed = s.kind === "select" || s.kind === "short" ? Array.isArray(s.answer) && s.answer.length > 0 : s.kind === "choice" ? Number.isInteger(s.answer) : false;
+        if (!keyed) add(course, "form-missing-answer", `${s.id} (${s.kind}) 정답 없음`, where);
+      }
+      if (!produce.length) add(course, "no-produce", "영작(④) 문항이 없음", where);
+      for (const p of [...produce, ...transfer]) {
+        if (!String(p.ko || "").trim() && !String(p.promptEn || "").trim()) add(course, "prompt-missing", `${p.id} 제시문(한국어 · 영어) 없음`, where);
+        if (!String(p.en || "").trim()) add(course, "answer-missing-en", `${p.id} 모범 답 없음`, where);
+      }
+      if (transfer.length < 2) add(course, "few-transfer", `처음 보는 문장(⑤) ${transfer.length}개 — 2개여야 함`, where);
     }
 
     // 4. every speaker button needs a clip file; a missing file is a button that cannot speak

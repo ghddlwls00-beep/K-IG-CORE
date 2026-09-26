@@ -94,6 +94,13 @@ export function formatGroupTitle(courseSlug: string, rawLabel: string): string {
     return clean;
   }
 
+  // PASS-OFF GRAMMAR: one section per textbook topic, "TOPIC 2. 동사의 현재형"
+  if (courseSlug === "passoff-grammar") {
+    const m = clean.match(/^(?:TOPIC\s*)?(\d+)\s*[.:]?\s*(.*)$/i);
+    if (!m) return clean;
+    return m[2] ? `TOPIC ${Number(m[1])}. ${m[2]}` : `TOPIC ${Number(m[1])}`;
+  }
+
   return clean;
 }
 
@@ -281,6 +288,20 @@ export function formatLessonPresentation(
       subtitle: lesson.label || `Chapter ${chapter} · 학생 실전 회화`,
       badge: "🎙️ 실전 회화",
       code: `Ch ${chapter}-${part}`,
+    };
+  }
+
+  // 9-2. PASS-OFF GRAMMAR — "pg02-1" is TOPIC 2's first link on the textbook's structure map.
+  // The title is the link's own words (D1), the topic goes underneath as STUDENT's chapter does.
+  if (courseSlug === "passoff-grammar") {
+    const m = id.match(/^pg(\d+)-(\d+)/);
+    const topic = m ? Number(m[1]) : lesson.unit ?? 0;
+    const link = m ? Number(m[2]) : 0;
+    return {
+      title: lesson.title || rawLabel || id,
+      subtitle: lesson.label || `TOPIC ${topic}`,
+      badge: "규칙 · 영작",
+      code: `Topic ${topic}-${link}`,
     };
   }
 

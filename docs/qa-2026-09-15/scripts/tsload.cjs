@@ -9,7 +9,8 @@ const fs = require("fs");
 const path = require("path");
 const Module = require("module");
 
-const REPO = "C:/Users/ghddl/.gemini/antigravity/scratch/K-IG-CORE";
+// KIG_REPO: point the audit at another checkout (a worktree whose branch is not on main yet) — unset, it is the main checkout
+const REPO = process.env.KIG_REPO || "C:/Users/ghddl/.gemini/antigravity/scratch/K-IG-CORE";
 const ts = require(path.join(REPO, "node_modules/typescript"));
 const cache = new Map();
 

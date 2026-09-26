@@ -29,17 +29,18 @@ const path = require("path");
 const REPO = path.resolve(__dirname, "../../..");
 const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
 const OUT = path.join(__dirname, "../out");
-const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
 const vr = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8");
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
 const FREE = {};
 {
+  // a key may be quoted — "passoff-grammar" (2026-09-27): the unquoted-only pattern skipped it and made its free lessons paid
   let cur = null;
   for (const line of freeBlock.split("\n")) {
-    const m = line.match(/^\s*([a-z0-9]+):\s*\[/);
+    const m = line.match(/^\s*"?([a-z0-9-]+)"?:\s*\[/);
     if (m) { cur = m[1]; FREE[cur] = new Set(); }
-    if (cur) for (const x of line.matchAll(/"([a-z0-9-]+)"/g)) FREE[cur].add(x[1]);
+    if (cur) for (const x of (m ? line.slice(line.indexOf("[")) : line).matchAll(/"([a-z0-9-]+)"/g)) FREE[cur].add(x[1]);
     if (/\]/.test(line)) cur = null;
   }
 }
@@ -75,6 +76,19 @@ function lessonNeedles(course, id) {
   if (course === "reading") for (const v of d.readingVocabulary || []) needles.push({ kind: "vocab-record", raw: v.word, f: "word" + flat(v.word) + "lemma" + flat(v.lemma) });
   for (const b of d.blocks || []) if (b.type === "wordgrid") for (const row of b.rows || []) { const f = flat(row.join(" ")); if (f.length >= 20) needles.push({ kind: "grid-row", raw: row.join(" "), f }); }
   return needles;
+}
+
+// PASS-OFF GRAMMAR (2026-09-27): a free preview's paid STUDENT items are held in
+// content/private/passoff-grammar/<id>.paid.json — no lesson file holds them, so they are a paid "lesson" of their own.
+function heldNeedles(course) {
+  const dir = path.join(REPO, "content/private", course);
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter((f) => f.endsWith(".paid.json")).map((f) => {
+    const strings = [];
+    for (const e of JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")).items || []) collectStrings(e.item, strings);
+    const needles = strings.filter((s) => typeof s === "string").map((s) => ({ kind: "held-back", raw: s, f: flat(s), meta: false })).filter((n) => n.f.length >= 20);
+    return { id: `${f.replace(/\.paid\.json$/, "")} (held back)`, needles };
+  });
 }
 
 async function get(url, headers = {}) {
@@ -166,12 +180,12 @@ async function crawl() {
   const result = { at: new Date().toISOString(), base: BASE, pages, chunks: chunkList.length, jsKB: Math.round(jsBytes / 1024), badChunks, json: jsonBodies.map((j) => ({ url: j.url, status: j.status, kb: Math.round(j.bytes / 1024) })), courses: {} };
   for (const c of COURSES) {
     const stat = { paidLessons: 0, needles: 0, skippedAlsoFree: 0, skippedOnList: 0, inJs: 0, inJson: 0, lessonsWithLeak: 0, examples: [] };
-    for (const id of vr.lessons[c] || []) {
-      if (isFree(c, id)) continue;
+    const paidSets = (vr.lessons[c] || []).filter((id) => !isFree(c, id)).map((id) => ({ id, needles: lessonNeedles(c, id) }));
+    for (const { id, needles } of [...paidSets, ...heldNeedles(c)]) {
       stat.paidLessons++;
       let leaked = false;
       const seen = new Set();
-      for (const n of lessonNeedles(c, id)) {
+      for (const n of needles) {
         if (seen.has(n.f)) continue;
         seen.add(n.f);
         if (freeFlat.has(n.f) || homeFlat.includes(n.f)) { stat.skippedAlsoFree++; continue; }

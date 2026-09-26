@@ -1,0 +1,434 @@
+{
+ "course": "passoff-grammar",
+ "tab": "passoff-grammar",
+ "lessonCount": 29,
+ "groups": [
+  {
+   "title": "TOPIC 1. 인칭",
+   "label": "TOPIC 1. 인칭",
+   "lessons": [
+    "pg01-1",
+    "pg01-2",
+    "pg01-3"
+   ]
+  },
+  {
+   "title": "TOPIC 2. 동사의 현재형",
+   "label": "TOPIC 2. 동사의 현재형",
+   "lessons": [
+    "pg02-1",
+    "pg02-2",
+    "pg02-3"
+   ]
+  },
+  {
+   "title": "TOPIC 3. 문장의 기초",
+   "label": "TOPIC 3. 문장의 기초",
+   "lessons": [
+    "pg03-1",
+    "pg03-2",
+    "pg03-3"
+   ]
+  },
+  {
+   "title": "TOPIC 4. 문장의 종류",
+   "label": "TOPIC 4. 문장의 종류",
+   "lessons": [
+    "pg04-1",
+    "pg04-2",
+    "pg04-3",
+    "pg04-4",
+    "pg04-5"
+   ]
+  },
+  {
+   "title": "TOPIC 5. 의문문",
+   "label": "TOPIC 5. 의문문",
+   "lessons": [
+    "pg05-1",
+    "pg05-2",
+    "pg05-3",
+    "pg05-4"
+   ]
+  },
+  {
+   "title": "TOPIC 6. 명사",
+   "label": "TOPIC 6. 명사",
+   "lessons": [
+    "pg06-1",
+    "pg06-2",
+    "pg06-3"
+   ]
+  },
+  {
+   "title": "TOPIC 7. 대명사",
+   "label": "TOPIC 7. 대명사",
+   "lessons": [
+    "pg07-1",
+    "pg07-2",
+    "pg07-3",
+    "pg07-4"
+   ]
+  },
+  {
+   "title": "TOPIC 8. 관계대명사",
+   "label": "TOPIC 8. 관계대명사",
+   "lessons": [
+    "pg08-1",
+    "pg08-2",
+    "pg08-3",
+    "pg08-4"
+   ]
+  }
+ ],
+ "lessons": [
+  {
+   "id": "pg01-1",
+   "title": "1인칭",
+   "label": "TOPIC 1. 인칭",
+   "series": "pg",
+   "variant": "main",
+   "unit": 1,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "1-1. 1인칭"
+  },
+  {
+   "id": "pg01-2",
+   "title": "2인칭",
+   "label": "TOPIC 1. 인칭",
+   "series": "pg",
+   "variant": "main",
+   "unit": 1,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "1-2. 2인칭"
+  },
+  {
+   "id": "pg01-3",
+   "title": "3인칭",
+   "label": "TOPIC 1. 인칭",
+   "series": "pg",
+   "variant": "main",
+   "unit": 1,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "1-3. 3인칭"
+  },
+  {
+   "id": "pg02-1",
+   "title": "Be동사의 현재형",
+   "label": "TOPIC 2. 동사의 현재형",
+   "series": "pg",
+   "variant": "main",
+   "unit": 2,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "2-1. Be동사의 현재형"
+  },
+  {
+   "id": "pg02-2",
+   "title": "일반동사의 현재형",
+   "label": "TOPIC 2. 동사의 현재형",
+   "series": "pg",
+   "variant": "main",
+   "unit": 2,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "2-2. 일반동사의 현재형"
+  },
+  {
+   "id": "pg02-3",
+   "title": "Have/Has",
+   "label": "TOPIC 2. 동사의 현재형",
+   "series": "pg",
+   "variant": "main",
+   "unit": 2,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "2-3. Have/Has"
+  },
+  {
+   "id": "pg03-1",
+   "title": "문장의 5형식",
+   "label": "TOPIC 3. 문장의 기초",
+   "series": "pg",
+   "variant": "main",
+   "unit": 3,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "3-1. 문장의 5형식"
+  },
+  {
+   "id": "pg03-2",
+   "title": "8품사",
+   "label": "TOPIC 3. 문장의 기초",
+   "series": "pg",
+   "variant": "main",
+   "unit": 3,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "3-2. 8품사"
+  },
+  {
+   "id": "pg03-3",
+   "title": "구",
+   "label": "TOPIC 3. 문장의 기초",
+   "series": "pg",
+   "variant": "main",
+   "unit": 3,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "3-3. 구"
+  },
+  {
+   "id": "pg04-1",
+   "title": "단문",
+   "label": "TOPIC 4. 문장의 종류",
+   "series": "pg",
+   "variant": "main",
+   "unit": 4,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "4-1. 단문"
+  },
+  {
+   "id": "pg04-2",
+   "title": "중문",
+   "label": "TOPIC 4. 문장의 종류",
+   "series": "pg",
+   "variant": "main",
+   "unit": 4,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "4-2. 중문"
+  },
+  {
+   "id": "pg04-3",
+   "title": "복문",
+   "label": "TOPIC 4. 문장의 종류",
+   "series": "pg",
+   "variant": "main",
+   "unit": 4,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "4-3. 복문"
+  },
+  {
+   "id": "pg04-4",
+   "title": "서술문/명령문/기원문",
+   "label": "TOPIC 4. 문장의 종류",
+   "series": "pg",
+   "variant": "main",
+   "unit": 4,
+   "part": 1,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "4-4. 서술문/명령문/기원문"
+  },
+  {
+   "id": "pg04-5",
+   "title": "감탄문",
+   "label": "TOPIC 4. 문장의 종류",
+   "series": "pg",
+   "variant": "main",
+   "unit": 4,
+   "part": 1,
+   "order": 5,
+   "hasAudio": false,
+   "menuLabel": "4-5. 감탄문"
+  },
+  {
+   "id": "pg05-1",
+   "title": "의문문 만들기",
+   "label": "TOPIC 5. 의문문",
+   "series": "pg",
+   "variant": "main",
+   "unit": 5,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "5-1. 의문문 만들기"
+  },
+  {
+   "id": "pg05-2",
+   "title": "의문문의 대답형",
+   "label": "TOPIC 5. 의문문",
+   "series": "pg",
+   "variant": "main",
+   "unit": 5,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "5-2. 의문문의 대답형"
+  },
+  {
+   "id": "pg05-3",
+   "title": "부가의문문",
+   "label": "TOPIC 5. 의문문",
+   "series": "pg",
+   "variant": "main",
+   "unit": 5,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "5-3. 부가의문문"
+  },
+  {
+   "id": "pg05-4",
+   "title": "부정의문문",
+   "label": "TOPIC 5. 의문문",
+   "series": "pg",
+   "variant": "main",
+   "unit": 5,
+   "part": 1,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "5-4. 부정의문문"
+  },
+  {
+   "id": "pg06-1",
+   "title": "명사의 종류·성격",
+   "label": "TOPIC 6. 명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 6,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "6-1. 명사의 종류·성격"
+  },
+  {
+   "id": "pg06-2",
+   "title": "명사의 복수형",
+   "label": "TOPIC 6. 명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 6,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "6-2. 명사의 복수형"
+  },
+  {
+   "id": "pg06-3",
+   "title": "기수·서수·계절·달",
+   "label": "TOPIC 6. 명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 6,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "6-3. 기수·서수·계절·달"
+  },
+  {
+   "id": "pg07-1",
+   "title": "인칭·소유·복합인칭 대명사",
+   "label": "TOPIC 7. 대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 7,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "7-1. 인칭·소유·복합인칭 대명사"
+  },
+  {
+   "id": "pg07-2",
+   "title": "대명사 it",
+   "label": "TOPIC 7. 대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 7,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "7-2. 대명사 it"
+  },
+  {
+   "id": "pg07-3",
+   "title": "의문대명사·지시대명사",
+   "label": "TOPIC 7. 대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 7,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "7-3. 의문대명사·지시대명사"
+  },
+  {
+   "id": "pg07-4",
+   "title": "부정대명사·부정형용사",
+   "label": "TOPIC 7. 대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 7,
+   "part": 1,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "7-4. 부정대명사·부정형용사"
+  },
+  {
+   "id": "pg08-1",
+   "title": "관계대명사 Who",
+   "label": "TOPIC 8. 관계대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 8,
+   "part": 1,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "8-1. 관계대명사 Who"
+  },
+  {
+   "id": "pg08-2",
+   "title": "관계대명사 Which",
+   "label": "TOPIC 8. 관계대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 8,
+   "part": 1,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "8-2. 관계대명사 Which"
+  },
+  {
+   "id": "pg08-3",
+   "title": "관계대명사 That",
+   "label": "TOPIC 8. 관계대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 8,
+   "part": 1,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "8-3. 관계대명사 That"
+  },
+  {
+   "id": "pg08-4",
+   "title": "관계대명사 What",
+   "label": "TOPIC 8. 관계대명사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 8,
+   "part": 1,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "8-4. 관계대명사 What"
+  }
+ ]
+}

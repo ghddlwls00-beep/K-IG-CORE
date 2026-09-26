@@ -80,6 +80,8 @@ const COURSE_OG_IMAGE: Record<string, string> = {
   reading: "/images/og/reading.jpg",
   cnn: "/images/og/cnn.jpg",
   student: "/images/og/students.jpg",
+  // GRAMMAR I's banner until PASS-OFF GRAMMAR has its own (docs/pass-off-grammar/작업기록.md)
+  "passoff-grammar": "/images/og/grammar1.jpg",
   chinese: "/images/og/chinese.jpg",
 };
 

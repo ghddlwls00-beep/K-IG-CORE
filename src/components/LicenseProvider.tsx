@@ -6,6 +6,7 @@ import {
   isFreePreviewLesson,
   isStudentOnlyPlan,
   normalizeLicenseKey,
+  planOpensCourse,
   type LicenseInfo,
   type LicensePlan,
 } from "@/lib/license";
@@ -39,7 +40,7 @@ interface StoredLicense {
  * the section pages or any non-lesson route.
  */
 const SERVER_GATED_LESSON_PATH =
-  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|student)\/[^/]+$/;
+  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|student|passoff-grammar)\/[^/]+$/;
 
 interface LicenseContextType {
   hasActiveLicense: boolean;
@@ -95,9 +96,10 @@ const STORAGE_KEY = "kig:license:v1";
  */
 function serverShowedLicensePaywall(plan: LicensePlan): boolean {
   if (!SERVER_GATED_LESSON_PATH.test(window.location.pathname)) return false;
-  if (!document.querySelector('[data-kig-paywall="license"]')) return false;
+  // data-kig-paid-extra: a PASS-OFF GRAMMAR free preview whose paid sentences the server left out
+  if (!document.querySelector('[data-kig-paywall="license"], [data-kig-paid-extra="license"]')) return false;
   const course = window.location.pathname.split("/")[1];
-  return !isStudentOnlyPlan(plan) || course === "student";
+  return planOpensCourse(plan, course);
 }
 
 export function LicenseProvider({ children }: { children: React.ReactNode }) {
@@ -329,13 +331,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       return Boolean(match && Number(match[1]) <= (studentProgress?.unlockedThrough || 1));
     }
 
-    // 3. STUDENT-only pass grants access exclusively to the student course
-    if (isStudentOnlyPlan(stored.plan)) {
-      return courseSlug === "student";
-    }
-
-    // 4. VIP All-pass grants access to all courses
-    return true;
+    // 3. A STUDENT pass opens its courses only; the VIP all-pass opens every course (planOpensCourse)
+    return planOpensCourse(stored.plan, courseSlug);
   }
 
   async function activateKey(

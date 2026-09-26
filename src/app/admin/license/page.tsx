@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getPlanLabel, type LicensePlan } from "@/lib/license";
+import { getPlanLabel, STUDENT_PASS_COURSES, type LicensePlan } from "@/lib/license";
+import { COURSE_BY_SLUG } from "@/lib/courses";
 import {
   buildAdminLicenseRows,
   countLegacyToImport,
@@ -21,6 +22,9 @@ import {
  * carry that browser's memos and issue dates over to the server (then removed).
  */
 const LEGACY_HISTORY_KEY = "kig:admin:history";
+
+/** What a STUDENT pass opens, by name ("STUDENT · PASS-OFF GRAMMAR") — from license.ts, so it cannot drift. */
+const STUDENT_PASS_SCOPE = STUDENT_PASS_COURSES.map((slug) => COURSE_BY_SLUG.get(slug)?.title ?? slug).join(" · ");
 
 type DeviceRecordMap = Record<string, AdminLicenseRecord>;
 
@@ -579,9 +583,9 @@ export default function AdminLicensePage() {
                       >
                         <div className="font-bold text-[15px]">{getPlanLabel(plan)}</div>
                         <div className={`text-[12px] mt-1 ${active ? "text-blue-100" : "text-ink-soft"}`}>
-                          {plan === "STU1M" && "30일간 STUDENT 전 강의 열람"}
-                          {plan === "STU1Y" && "365일간 STUDENT 전 강의 열람 (추천)"}
-                          {plan === "STULIFE" && "무제한 평생 열람 (STUDENT 전용)"}
+                          {plan === "STU1M" && `30일간 ${STUDENT_PASS_SCOPE} 전 강의 열람`}
+                          {plan === "STU1Y" && `365일간 ${STUDENT_PASS_SCOPE} 전 강의 열람 (추천)`}
+                          {plan === "STULIFE" && `무제한 평생 열람 (${STUDENT_PASS_SCOPE} 전용)`}
                         </div>
                       </button>
                     );

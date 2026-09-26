@@ -81,6 +81,28 @@ export function isStudentOnlyPlan(plan?: string | null): boolean {
   return plan.startsWith("STU");
 }
 
+/**
+ * The courses a STUDENT pass ("STU…" plans) opens. PASS-OFF GRAMMAR joined STUDENT on the
+ * owner's decision (D3, 2026-09-27 — docs/pass-off-grammar/설계.md §6). Every other course
+ * needs an all-pass.
+ */
+export const STUDENT_PASS_COURSES: readonly string[] = ["student", "passoff-grammar"];
+
+/**
+ * THE ONE ANSWER TO "DOES THIS PLAN OPEN THIS COURSE?" The lesson gate
+ * (`[course]/[lesson]/page.tsx`), the media gate (`mediaAccess.ts`), the client lock
+ * (`LicenseProvider`), the course list (`CourseDashboard`), the paywall copy (`LessonPaywall`)
+ * and the admin plan descriptions all ask it. It used to be six copies of
+ * `isStudentOnlyPlan(plan) ? course === "student" : true`, so a course added to the STUDENT
+ * pass in one of them would still have been locked by the others.
+ *
+ * It answers for the plan only — every caller has already checked that the licence itself is
+ * valid. 1M · 1Y · LIFE are all-pass and open every course, as before.
+ */
+export function planOpensCourse(plan: string | null | undefined, courseSlug: string): boolean {
+  return isStudentOnlyPlan(plan) ? STUDENT_PASS_COURSES.includes(courseSlug) : true;
+}
+
 /** Calculate expiration timestamp in milliseconds from now. */
 export function calculateExpiry(plan: LicensePlan | string, fromMs = Date.now()): number | null {
   if (plan === "LIFE" || plan === "STULIFE") return null;
@@ -119,6 +141,9 @@ export function getPlanLabel(plan: LicensePlan | string): string {
  */
 export const FREE_PREVIEW_LESSON_IDS: Record<string, readonly string[]> = {
   student: ["s1-1", "s1-2"],
+  // D4 — the first two lessons, as every course. The paid STUDENT sentences of pg01-1 are not in
+  // its file: a licence adds them on the server (src/lib/passoffContent.ts).
+  "passoff-grammar": ["pg01-1", "pg01-2"],
   phonics: ["mv1-01", "mv1-02"],
   grammar1: [
     "gh1-006", "gh1-006-1", "gh1-006-2",

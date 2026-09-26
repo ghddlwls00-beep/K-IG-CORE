@@ -44,6 +44,10 @@ const StudentLearningView = dynamic(
   () => import("./StudentLearningView").then((mod) => mod.StudentLearningView),
   { loading: () => <ViewLoadingSkeleton /> }
 );
+const PassoffGrammarLearningView = dynamic(
+  () => import("./PassoffGrammarLearningView").then((mod) => mod.PassoffGrammarLearningView),
+  { loading: () => <ViewLoadingSkeleton /> }
+);
 const BasicsLearningView = dynamic(
   () => import("./BasicsLearningView").then((mod) => mod.BasicsLearningView),
   { loading: () => <ViewLoadingSkeleton /> }
@@ -196,6 +200,17 @@ export function LessonBody({
         blocks={blocks}
         lessonKey={lessonKey}
         audioTracks={audioTracks}
+      />
+    );
+  }
+
+  // PASS-OFF GRAMMAR's five-step view. The lesson page renders it directly (with the paid-sentence
+  // count from the server); this branch keeps the course known here, where the audit reads the views.
+  if (course === "passoff-grammar") {
+    return (
+      <PassoffGrammarLearningView
+        blocks={blocks}
+        lessonKey={lessonKey}
       />
     );
   }

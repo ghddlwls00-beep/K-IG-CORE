@@ -31,7 +31,7 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"]; // as the probe
+const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"]; // as the probe
 const MIN = 20;
 
 /** Transpile a TS module that has no runtime imports (license.ts) — as buildFreeSpeechKeys.mjs does. */
@@ -109,6 +109,18 @@ export function paidNeedles() {
       .map((n) => ({ ...n, f: n.f.toLowerCase() }))
       .filter((n) => !publicStrings.has(n.f) && !listedText.includes(n.f) && !seen.has(n.f) && seen.add(n.f));
     byLesson.push({ course: c, id, needles });
+  }
+  // PASS-OFF GRAMMAR: a free preview's paid STUDENT items are held in content/private/passoff-grammar/<id>.paid.json
+  // (src/lib/passoffSupplement.ts). No lesson file holds them, so they are needles of their own.
+  const heldDir = path.join(ROOT, "content/private/passoff-grammar");
+  for (const f of fs.existsSync(heldDir) ? fs.readdirSync(heldDir).filter((x) => x.endsWith(".paid.json")) : []) {
+    const out = [];
+    for (const e of JSON.parse(fs.readFileSync(path.join(heldDir, f), "utf8")).items || []) collectStrings(e.item, out);
+    const seen = new Set();
+    const needles = out
+      .map((s) => ({ kind: "held-back", raw: s, f: flat(s).toLowerCase() }))
+      .filter((n) => n.f.length >= MIN && !publicStrings.has(n.f) && !listedText.includes(n.f) && !seen.has(n.f) && seen.add(n.f));
+    byLesson.push({ course: "passoff-grammar", id: `${f.replace(/\.paid\.json$/, "")} (held back)`, needles });
   }
   cache = byLesson;
   return cache;

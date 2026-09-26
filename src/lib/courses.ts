@@ -47,6 +47,21 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
       "일상 회화로 마스터하는 실전 듣기와 정독 훈련.",
     series: [{ slug: "s", title: "Conversation Lessons", prefix: "s" }],
   },
+  // PASS-OFF GRAMMAR (2026-09-27, docs/pass-off-grammar/설계.md) — made from the Pass-Off English
+  // Grammar textbooks, not from the legacy archive, so there is no legacy folder to point at.
+  // Lessons are "pg<topic>-<link>" (pg02-1 = TOPIC 2, first link), numbered like STUDENT's unit-part.
+  {
+    slug: "passoff-grammar",
+    tab: "passoff-grammar",
+    legacyFolder: "passoff-grammar",
+    numbering: "unit-part",
+    title: "PASS-OFF GRAMMAR",
+    titleEn: "Pass-Off Grammar",
+    kind: "audio-drill",
+    description:
+      "패스오프 문법. GRAMMAR I·II 가 문장을 되풀이해 영작하는 훈련이라면, 여기서는 레슨마다 예문 → 규칙 → 형태 찾기 → 영작 → 마무리 5단계로 문법 하나를 익혀 통과합니다.",
+    series: [{ slug: "pg", title: "Grammar Lessons", prefix: "pg" }],
+  },
   {
     slug: "phonics",
     tab: "voca",

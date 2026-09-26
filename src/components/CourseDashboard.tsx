@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
-import { isFreePreviewLesson } from "@/lib/license";
+import { isFreePreviewLesson, planOpensCourse, STUDENT_PASS_COURSES } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 
@@ -76,7 +76,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
               {!isUnlocked ? (
                 <span className="inline-flex items-center gap-1 rounded-full border border-line bg-sunken px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
                   <span>🔒</span>
-                  <span>{sequentialLock ? "이전 챕터 완료 필요" : courseSlug === "student" ? "STUDENT" : "올패스"}</span>
+                  <span>{sequentialLock ? "이전 챕터 완료 필요" : STUDENT_PASS_COURSES.includes(courseSlug) ? "STUDENT" : "올패스"}</span>
                 </span>
               ) : !hasCourseAccess && isFree ? (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
@@ -156,7 +156,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
           >
             <span>
               {!isUnlocked
-                ? courseSlug === "student"
+                ? STUDENT_PASS_COURSES.includes(courseSlug)
                   ? sequentialLock
                     ? "해금 조건 보기"
                     : "수강권 열람"
@@ -184,8 +184,7 @@ export function CourseDashboard({
 }) {
   const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
   const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress } = useLicense();
-  const hasCourseAccess =
-    hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student");
+  const hasCourseAccess = hasActiveLicense && planOpensCourse(licenseInfo?.plan, courseSlug);
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
   const [unlockNotice, setUnlockNotice] = useState<number | null>(null);
   const previousUnlockedRef = useRef<number | null>(null);

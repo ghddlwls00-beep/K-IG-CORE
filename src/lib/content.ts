@@ -69,7 +69,7 @@ export function getCourseIndex(slug: string): CourseIndex | null {
 }
 
 export function getLesson(course: string, id: string): Lesson | null {
-  // Keep the build trace restricted to the seven public course directories and
+  // Keep the build trace restricted to the public course directories and
   // reject path traversal before a filesystem path is assembled.
   if (!/^[a-z0-9-]+$/i.test(id)) return null;
   let courseDir: string;
@@ -82,6 +82,9 @@ export function getLesson(course: string, id: string): Lesson | null {
       break;
     case "student":
       courseDir = path.join(CONTENT_DIR, "lessons", "student");
+      break;
+    case "passoff-grammar":
+      courseDir = path.join(CONTENT_DIR, "lessons", "passoff-grammar");
       break;
     case "phonics":
       courseDir = path.join(CONTENT_DIR, "lessons", "phonics");

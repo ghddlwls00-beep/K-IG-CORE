@@ -30,6 +30,17 @@ export const TABS: Tab[] = [
     courses: ["student"],
     blurb: "Real Conversations. Pure Listening & Reading.",
   },
+  // PASS-OFF GRAMMAR — a new section (2026-09-27), so it has no legacy image or page. It sits
+  // right after STUDENT (STAGE 02). To take it off the menu, remove this entry — see
+  // docs/pass-off-grammar/작업기록.md "되돌리기".
+  {
+    slug: "passoff-grammar",
+    label: "PASS-OFF GRAMMAR",
+    legacyImage: "",
+    legacyIndex: "",
+    courses: ["passoff-grammar"],
+    blurb: "Learn the Rule, Write the Sentence, Pass It Off",
+  },
   {
     slug: "voca",
     label: "VOCA",

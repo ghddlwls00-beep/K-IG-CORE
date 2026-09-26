@@ -19,21 +19,23 @@ const path = require("path");
 const REPO = path.resolve(__dirname, "../../..");
 const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
 const OUT = path.join(__dirname, "../out");
-const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
 const routes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8")).lessons;
 const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8");
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
 const FREE = {};
+// a key may be quoted — "passoff-grammar" (2026-09-27): the unquoted-only pattern skipped it and made its free lessons paid
+const KEY = /^\s*"?([a-z0-9-]+)"?:\s*\[/;
 for (const line of freeBlock.split("\n")) {
-  const m = line.match(/^\s*([a-z0-9]+):\s*\[/);
+  const m = line.match(KEY);
   if (m) FREE[m[1]] = new Set();
 }
 {
   let cur = null;
   for (const line of freeBlock.split("\n")) {
-    const m = line.match(/^\s*([a-z0-9]+):\s*\[/);
+    const m = line.match(KEY);
     if (m) cur = m[1];
-    if (cur) for (const x of line.matchAll(/"([a-z0-9-]+)"/g)) FREE[cur].add(x[1]);
+    if (cur) for (const x of (m ? line.slice(line.indexOf("[")) : line).matchAll(/"([a-z0-9-]+)"/g)) FREE[cur].add(x[1]);
     if (/\]/.test(line)) cur = null;
   }
 }
@@ -49,7 +51,8 @@ const isFree = (course, id) => {
   }
 };
 const scripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
-const PAYWALL = /ALL-PASS ONLY|STUDENT PASS ONLY|VIP ALL-PASS REQUIRED/;
+// "STUDENT PASS · ALL-PASS" — PASS-OFF GRAMMAR's paywall (either pass opens it, LessonPaywall.tsx)
+const PAYWALL = /ALL-PASS ONLY|STUDENT PASS ONLY|STUDENT PASS · ALL-PASS|VIP ALL-PASS REQUIRED/;
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
 const jsonEsc = (s) => JSON.stringify(s).slice(1, -1);
 
@@ -73,6 +76,19 @@ function needles(course, id) {
     .filter((t) => !/^\[\s*[^\]]{1,20}\s*\]$/.test(t))
     .filter((t) => t.length >= 14 || (course === "phonics" && t.length >= 9));
   return [...new Set(c)].sort((a, b) => b.length - a.length).slice(0, 3).map((t) => t.slice(0, 32));
+}
+
+// PASS-OFF GRAMMAR (2026-09-27): a free preview's paid STUDENT items live in
+// content/private/passoff-grammar/<id>.paid.json and are added on the server for a licence only —
+// an anonymous request must carry none of them, in the HTML or in the RSC payload.
+function heldBack(course, id) {
+  const file = path.join(REPO, "content/private", course, `${id}.paid.json`);
+  if (!fs.existsSync(file)) return [];
+  const out = [];
+  for (const e of JSON.parse(fs.readFileSync(file, "utf8")).items || []) {
+    for (const t of [e.item && e.item.en, e.item && e.item.ko]) if (typeof t === "string" && t.trim()) out.push(t.trim().slice(0, 32));
+  }
+  return [...new Set(out)];
 }
 
 async function get1(url, headers) {
@@ -117,6 +133,7 @@ async function get(url, headers) {
       const all = needles(course, id);
       const ns = all.filter((n) => !inChrome(n));
       const chromeNeedles = all.filter(inChrome);
+      const held = free ? heldBack(course, id) : [];
       const url = `${BASE}/${course}/${id}`;
       const html = await get(url, {});
       const rsc = await get(url, { RSC: "1" });
@@ -127,10 +144,12 @@ async function get(url, headers) {
         const body = kind === "html" ? res.text.replace(/<script[\s\S]*?<\/script>/g, "") : res.text;
         const paywall = PAYWALL.test(body);
         const found = ns.filter((n) => res.text.includes(n) || res.text.includes(esc(n)) || res.text.includes(jsonEsc(n)));
+        const heldFound = held.filter((n) => res.text.includes(n) || res.text.includes(esc(n)) || res.text.includes(jsonEsc(n)));
         let pass;
         if (kind === "html") pass = res.status === 200 && (free ? !paywall && (ns.length === 0 || found.length > 0) : paywall && found.length === 0);
         else pass = res.status === 200 && (free ? true : found.length === 0);
-        return { status: res.status, chain: res.chain, finalPath: res.finalPath, paywall, found, pass, bytes: res.text.length };
+        pass = pass && heldFound.length === 0;
+        return { status: res.status, chain: res.chain, finalPath: res.finalPath, paywall, found, ...(held.length ? { heldBack: held.length, heldFound } : {}), pass, bytes: res.text.length };
       };
       const h = judge(html, "html");
       const r = judge(rsc, "rsc");

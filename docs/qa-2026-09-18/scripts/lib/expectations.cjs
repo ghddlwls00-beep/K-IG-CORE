@@ -31,7 +31,7 @@ const spoken = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
 const lessonAudio = loadTs(path.join(REPO, "src/lib/lessonAudioText.ts"));
 const validRoutes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 const ldScripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
-const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
 
 const lessonPath = (course, id) => path.join(REPO, "content/lessons", course, `${id}.json`);
 const hasLesson = (course, id) => fs.existsSync(lessonPath(course, id));

@@ -37,7 +37,7 @@ const REV = opt("--rev");
 const LIST = argv.includes("--list");
 const KNOWN_FILE = process.env.KIG_UNREACHED_KNOWN || path.join(REPO, "docs/qa-2026-09-18/unreached-data-known.json");
 const VR = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
-const COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading"].filter((c) => (VR.lessons[c] || []).length);
+const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"].filter((c) => (VR.lessons[c] || []).length);
 const META = new Set(["id", "course", "series", "variant", "pairId", "title", "label", "menuLabel", "unit", "part", "order", "legacyPath", "legacyEncoding", "audio", "video"]);
 
 // ── 코드 ──────────────────────────────────────────────────────────────────────────────
@@ -143,7 +143,7 @@ const PAGE_REL = "src/app/[course]/[lesson]/page.tsx";
 // 7단계 7-2: 위 '전체 듣기' 의 함수는 page.tsx 에서 src/lib/lessonAudioText.ts 로 글자 그대로 옮겼다
 const AUDIO_TEXT_REL = "src/lib/lessonAudioText.ts";
 // 7단계 7-3(BUG-023): page.tsx 가 쓰이는 과정의 화면을 직접 그린다 — LessonBody 처럼 넘기기만 하는 속성이므로 뺀다(화면이 읽는 칸은 화면 쪽에서 셈)
-const PASS_THROUGH_TAGS = new Set(["LessonBody", "LessonSpeechGuard", "LdLearningView", "ReadingLearningView", "GrammarLearningView", "PhonicsLearningView", "StudentLearningView"]);
+const PASS_THROUGH_TAGS = new Set(["LessonBody", "LessonSpeechGuard", "LdLearningView", "ReadingLearningView", "GrammarLearningView", "PhonicsLearningView", "StudentLearningView", "PassoffGrammarLearningView"]);
 /** page.tsx LessonPage 본문이 읽는 칸 이름(LessonBody · 과정 화면에 넘기기만 하는 속성은 뺌) — 블록 종류는 아래 실제 실행으로 */
 function pageReads() {
   const sf = parse(PAGE_REL);

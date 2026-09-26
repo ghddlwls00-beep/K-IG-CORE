@@ -36,7 +36,7 @@
  * below is now the allow list.
  */
 
-import { isStudentOnlyPlan } from "./license";
+import { planOpensCourse } from "./license";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
@@ -110,8 +110,8 @@ export async function resolveMediaAccess(
   const session = await verifyLicenseSessionToken(cookieValue);
   if (!session) return { allowed: false, reason: "locked" };
 
-  // STUDENT-only passes cover the STUDENT course alone; 1M / 1Y / LIFE are all-pass.
-  const allowed = isStudentOnlyPlan(session.payload.plan) ? course === "student" : true;
+  // STUDENT passes open their courses only (license.ts planOpensCourse); 1M / 1Y / LIFE are all-pass.
+  const allowed = planOpensCourse(session.payload.plan, course);
   return allowed ? { allowed: true, reason: "licensed" } : { allowed: false, reason: "locked" };
 }
 

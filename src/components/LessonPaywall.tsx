@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLicense } from "./LicenseProvider";
+import { planOpensCourse, STUDENT_PASS_COURSES } from "@/lib/license";
 
 interface LessonPaywallProps {
   courseSlug: string;
@@ -21,7 +22,13 @@ export function LessonPaywall({
   chapter,
 }: LessonPaywallProps) {
   const { openModal, licenseInfo } = useLicense();
-  const isStudentOnly = licenseInfo?.isStudentOnly;
+  // A STUDENT pass on a course it does not open (license.ts planOpensCourse). STUDENT's own pages keep
+  // the copy they had.
+  const isStudentOnly =
+    Boolean(licenseInfo?.isStudentOnly) &&
+    (courseSlug === "student" || !planOpensCourse(licenseInfo?.plan, courseSlug));
+  // A course the STUDENT pass opens besides STUDENT itself (PASS-OFF GRAMMAR): either pass will do.
+  const studentPassCourse = courseSlug !== "student" && STUDENT_PASS_COURSES.includes(courseSlug);
 
   return (
     <div
@@ -69,10 +76,10 @@ export function LessonPaywall({
           <>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-ink-soft">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500/70" />
-              {courseSlug === "student" ? "STUDENT PASS ONLY" : "ALL-PASS ONLY"}
+              {courseSlug === "student" ? "STUDENT PASS ONLY" : studentPassCourse ? "STUDENT PASS · ALL-PASS" : "ALL-PASS ONLY"}
             </span>
             <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
-              {title || (courseSlug === "student" ? "본 레슨은 STUDENT 이용권 등록 후 학습하실 수 있습니다" : "본 레슨은 올패스 등록 후 학습하실 수 있습니다")}
+              {title || (courseSlug === "student" ? "본 레슨은 STUDENT 이용권 등록 후 학습하실 수 있습니다" : studentPassCourse ? "본 레슨은 STUDENT 이용권 또는 올패스 등록 후 학습하실 수 있습니다" : "본 레슨은 올패스 등록 후 학습하실 수 있습니다")}
             </h2>
             <p className="text-[13px] text-ink-soft leading-relaxed">
               {courseSlug === "student" ? (
@@ -80,6 +87,12 @@ export function LessonPaywall({
                   발급받으신 이용권 인증 코드를 등록하시면
                   <br className="hidden sm:inline" />
                   <strong className="text-ink font-semibold"> STUDENT 과정</strong>을 제한 없이 학습하실 수 있습니다.
+                </>
+              ) : studentPassCourse ? (
+                <>
+                  STUDENT 이용권이나 올패스 인증 코드를 등록하시면
+                  <br className="hidden sm:inline" />
+                  <strong className="text-ink font-semibold"> {courseTitle} 과정</strong>을 제한 없이 학습하실 수 있습니다.
                 </>
               ) : (
                 <>

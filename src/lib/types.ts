@@ -7,6 +7,8 @@
  * the data layer, and Next.js reads it at build time.
  */
 
+import type { PassoffBlock } from "./passoffTypes";
+
 /** How a course's original content was delivered. Drives which player we render. */
 export type CourseKind =
   /** HTML page + MP3 in a sounds/ folder. The large majority of the archive. */
@@ -129,7 +131,9 @@ export type Block =
   /** The free-text dictation box. */
   | { type: "dictation"; rows: number }
   /** Phonics word lists, stored as a table of rows so the grid survives. */
-  | { type: "wordgrid"; rows: string[][] };
+  | { type: "wordgrid"; rows: string[][] }
+  /** PASS-OFF GRAMMAR's steps — anchors · rule · drill · frame (src/lib/passoffTypes.ts). */
+  | PassoffBlock;
 
 export interface SentenceItem {
   /** Original number as printed on the page ("1", "12"). */
