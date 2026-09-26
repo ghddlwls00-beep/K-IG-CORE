@@ -38,6 +38,13 @@ const norm = (s) =>
 const words = (s) => ` ${norm(s)} `;
 const hasHangul = (s) => /[가-힣]/.test(String(s ?? ""));
 const FORBIDDEN_UI = [/원어민\s*음성/, /AI\s*음성/i];
+// 데이터-형식 v1.3 — every field an item may carry (the internal ones — source · koSource · note · challengeNote — are never shown)
+const COMMON_FIELDS = ["id", "bookRef", "fix", "source", "koSource", "note", "paidStudent", "speakAs", "clauseLabel"];
+const ANCHOR_FIELDS = new Set([...COMMON_FIELDS, "en", "ko", "focus", "studentRef", "promptEn"]);
+const SELECT_FIELDS = new Set([...COMMON_FIELDS, "kind", "instruction", "why", "reserve", "tokens", "answer", "optional", "labels", "labelAnswer", "sentence", "underline", "options"]);
+const PRODUCE_FIELDS = new Set([...COMMON_FIELDS, "ko", "condition", "promptEn", "en", "accept", "targets", "errorPatterns", "tags", "challenge", "challengeTags", "challengeNote", "studentRef"]);
+const FIX_FIELDS = new Set(["from", "fromKo", "field", "kind", "why"]);
+const PATTERN_FIELDS = new Set(["match", "hint", "literal"]);
 const expand = (s) =>
   ` ${norm(s)
     .replace(/\bcan't\b/g, "can not")
@@ -289,6 +296,36 @@ function checkLesson(lesson, problems, tags) {
       if (letter === "t" && !p.source) P(`${p.id} source 없음`);
     }
   }
+  // v1.3: fields outside the data format are not allowed (the screen would ignore them, or a typo hides data)
+  const allowed = (it, list, what) => {
+    for (const k of Object.keys(it || {})) if (!list.has(k) && !k.startsWith("_")) P(`${it.id || what} 형식에 없는 필드 ${k}`);
+  };
+  for (const a of anchors) allowed(a, ANCHOR_FIELDS);
+  for (const s of sel) allowed(s, SELECT_FIELDS);
+  for (const p of [...prods, ...trans]) {
+    allowed(p, PRODUCE_FIELDS);
+    if (p.fix) allowed(p.fix, FIX_FIELDS, `${p.id}.fix`);
+    for (const e of p.errorPatterns || []) allowed(e, PATTERN_FIELDS, `${p.id}.errorPatterns`);
+    // a hint that ends with the whole model answer gives the answer away (규칙: 스스로 고치게)
+    for (const e of p.errorPatterns || []) if (p.en && gradeNorm(p.en).split(" ").length >= 2 && gradeWords(e.hint).includes(` ${gradeNorm(p.en)} `)) P(`${p.id} 오답 힌트가 모범 답을 그대로 말함`);
+  }
+  for (const a of anchors) if (a.fix) allowed(a.fix, FIX_FIELDS, `${a.id}.fix`);
+  for (const s of sel) if (s.fix) allowed(s.fix, FIX_FIELDS, `${s.id}.fix`);
+  // v1.3: ③ and ② come before ④ — they must not show the English of a ④ sentence that is not a ① anchor,
+  // and ⑤'s "처음 보는 문장" must not appear anywhere earlier in the lesson.
+  const anchorSet = new Set(anchors.map((a) => gradeNorm(a.en)));
+  const hidden = new Map(prods.filter((p) => !anchorSet.has(gradeNorm(p.en))).map((p) => [gradeNorm(p.en), p.id]));
+  const shows = (text) => hidden.get(gradeNorm(text));
+  for (const s of sel) {
+    const shown = shows(s.sentence) || shows((s.tokens || []).join(" "));
+    if (shown && !s.reserve) P(`${s.id} ③ 문장이 ④ ${shown} 의 정답을 먼저 보여 줌`);
+  }
+  for (const w of [...(rule.worked || []), ...(rule.mistakes || []).map((m) => m.right)]) {
+    const shown = shows(w);
+    if (shown) P(`② 설명 카드가 ④ ${shown} 의 정답을 먼저 보여 줌`);
+  }
+  const earlier = new Set([...anchors.map((a) => a.en), ...prods.map((p) => p.en), ...sel.map((s) => s.sentence || (s.tokens || []).join(" ")), ...(rule.worked || []), ...(rule.mistakes || []).map((m) => m.right)].filter(Boolean).map(gradeNorm));
+  for (const t of trans) if (earlier.has(gradeNorm(t.en))) P(`${t.id} ⑤ 처음 보는 문장이 레슨 앞에 이미 나옴`);
   const frame = block("frame");
   addId(frame.id, "f");
   if (!/_{2,}/.test(String(frame.template || ""))) P(`frame.template 에 빈칸 없음`);
@@ -458,6 +495,33 @@ function selftest(lessons) {
     }
     result[name] = "대상 없음(시험 못 함)";
   };
+  breakOne("unknownField", firstWith(() => true), (p) => { p.reject = ["x"]; }, (msg, p) => msg.includes(p.id) && msg.includes("형식에 없는 필드 reject"));
+  breakOne("hintGivesAnswer", firstWith((p) => gradeNorm(p.en).split(" ").length >= 2), (p) => { p.errorPatterns = [...(p.errorPatterns || []), { match: "zzqq", hint: `이렇게 써요: ${p.en}` }]; }, (msg, p) => msg.includes(p.id) && msg.includes("힌트가 모범 답"));
+  {
+    // ③ showing a ④ answer, and ⑤ appearing earlier — on the first lesson that has a non-anchor produce item
+    let target = null;
+    lessons.forEach((l, li) => {
+      if (target) return;
+      const blocks = l.data.blocks;
+      const anchorsN = new Set((blocks.find((b) => b.type === "anchors").items || []).map((a) => gradeNorm(a.en)));
+      const drill = blocks.find((b) => b.type === "drill");
+      const pi = (drill.produce || []).findIndex((p) => !anchorsN.has(gradeNorm(p.en)));
+      const si = (drill.select || []).findIndex((s) => s.kind === "choice" && !s.reserve);
+      if (pi >= 0 && si >= 0 && (drill.transfer || []).length) target = { li, pi, si };
+    });
+    if (!target) { result.selectShowsProduce = "대상 없음(시험 못 함)"; result.transferSeenBefore = "대상 없음(시험 못 함)"; }
+    else {
+      const copy = clone(lessons);
+      const drill = copy[target.li].data.blocks.find((b) => b.type === "drill");
+      const s = drill.select[target.si];
+      s.sentence = drill.produce[target.pi].en;
+      result.selectShowsProduce = fresh(run(copy, decisions, null)).some((p) => p.includes(s.id) && p.includes("정답을 먼저")) ? "잡음" : "놓침";
+      const copy2 = clone(lessons);
+      const drill2 = copy2[target.li].data.blocks.find((b) => b.type === "drill");
+      drill2.transfer[0].en = drill2.produce[target.pi].en;
+      result.transferSeenBefore = fresh(run(copy2, decisions, null)).some((p) => p.includes(drill2.transfer[0].id) && p.includes("처음 보는 문장")) ? "잡음" : "놓침";
+    }
+  }
   breakSelect("labelAnswerAsIndex", (s) => Array.isArray(s.labels) && s.answer?.length === 1 && [].concat(s.labelAnswer).every((x) => typeof x === "string"), (s) => { s.labelAnswer = [0]; }, "labelAnswer");
   breakSelect("underlineNotInSentence", (s) => s.kind === "choice" && s.sentence, (s) => { s.underline = ["zzzq"]; }, "밑줄");
   {
