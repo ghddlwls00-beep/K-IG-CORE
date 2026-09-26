@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 function getStepButtons(): Map<number, HTMLButtonElement> {
@@ -60,29 +59,29 @@ export function LessonStepNavigation({ courseHref }: { courseHref: string }) {
   const previousDisabled = !hasSteps || currentStep <= 1;
   const nextDisabled = !hasSteps || currentStep >= maxStep;
 
+  // 2026-09-27 (docs/디자인-규칙.md): 44px controls in the body font. '목록으로' left — the title row
+  // already goes back to the list, and the lesson ends with LessonEndBar right below this.
+  if (!hasSteps) return null;
   return (
-    <nav aria-label="학습 단계 이동" className="mt-12 sm:mt-16 flex items-center justify-between gap-3 border-t border-line pt-6 pb-2">
+    <nav aria-label="학습 단계 이동" className="mt-10 flex items-center justify-between gap-3 border-t border-line pt-5">
       <button
         type="button"
         onClick={() => moveToStep(currentStep - 1)}
         disabled={previousDisabled}
-        className="flex min-w-[7rem] items-center justify-center rounded-xl border border-line bg-surface px-3.5 sm:px-4 py-2.5 text-[12px] sm:text-[13px] font-medium text-ink transition-colors shadow-2xs enabled:hover:bg-raised enabled:cursor-pointer enabled:active:scale-95 disabled:cursor-not-allowed disabled:opacity-35"
+        className="flex min-h-11 min-w-[7.5rem] items-center justify-center rounded-control border border-line bg-raised px-4 text-label font-medium text-ink transition-colors enabled:hover:bg-sunken enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-35"
       >
         ← 이전 Step
       </button>
 
-      <Link
-        href={courseHref}
-        className="rounded-lg px-2.5 py-1.5 font-mono text-[11.5px] sm:text-[12px] text-ink-soft hover:text-ink transition-colors"
-      >
-        목록으로
-      </Link>
+      <span className="text-caption tabular-nums text-ink-soft" aria-live="polite">
+        {Math.min(currentStep, maxStep)} / {maxStep}
+      </span>
 
       <button
         type="button"
         onClick={() => moveToStep(currentStep + 1)}
         disabled={nextDisabled}
-        className="flex min-w-[7rem] items-center justify-center rounded-xl bg-ink px-4 sm:px-5 py-2.5 text-[12px] sm:text-[13px] font-semibold text-surface transition-all shadow-xs enabled:hover:opacity-90 enabled:cursor-pointer enabled:active:scale-95 disabled:cursor-not-allowed disabled:opacity-35"
+        className="flex min-h-11 min-w-[7.5rem] items-center justify-center rounded-control border border-line bg-raised px-4 text-label font-semibold text-ink transition-colors enabled:hover:bg-sunken enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-35"
       >
         다음 Step →
       </button>

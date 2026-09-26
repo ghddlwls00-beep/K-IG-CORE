@@ -13,6 +13,7 @@ import { StudentLearningView } from "@/components/StudentLearningView";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
+import { LessonEndBar } from "@/components/LessonEndBar";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
 import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
@@ -172,14 +173,18 @@ export default async function LessonPage({
 
   if (!accessAllowed) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-        <nav className="mb-8 font-mono text-[11.5px]">
-          <Link href={`/${course}`} className="text-ink-soft hover:text-ink">
-            ← {courseInfo?.title ?? course}
+      <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
+        <nav aria-label="과정으로">
+          <Link
+            href={`/${course}`}
+            className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
+          >
+            <span aria-hidden>←</span>
+            <span>{courseInfo?.title ?? course} 목록</span>
           </Link>
         </nav>
-        <header className="mb-6 sm:mb-8">
-          <h1 className="text-[1.5rem] sm:text-[1.85rem] font-bold tracking-tight text-balance text-ink">
+        <header className="mt-1 mb-4 sm:mb-6">
+          <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">
             {pres.title}
           </h1>
         </header>
@@ -277,73 +282,31 @@ export default async function LessonPage({
   ).map((text) => lessonSpeechForm(`${course}/${lesson.id}`, text));
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-      <nav className="mb-6 flex flex-col gap-3 sm:mb-8" aria-label="강의 이동">
-        <div className="flex items-center justify-between gap-3">
-          <Link
-            href={`/${course}`}
-            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-line bg-raised px-3.5 font-mono text-[11.5px] font-semibold text-ink-soft shadow-2xs hover:border-line-strong hover:text-ink"
-          >
-            <span aria-hidden>←</span>
-            <span>{courseInfo?.title ?? course} 목록</span>
-          </Link>
-          <LessonActionButtons
-            course={course}
-            lessonId={lesson.id}
-            title={pres.title}
-            courseTitle={courseInfo?.title ?? tab?.label}
-          />
-        </div>
-
-        {(prev || next) && (
-          <div
-            className={`grid gap-2 rounded-2xl border border-line bg-raised/70 p-2 shadow-2xs ${
-              prev && next ? "grid-cols-2" : "grid-cols-1"
-            }`}
-          >
-            {prev && prevPresentation ? (
-              <Link
-                href={`/${course}/${prev.id}`}
-                scroll={true}
-                aria-label={`이전 강의: ${prevPresentation.title}`}
-                className="group flex min-h-14 min-w-0 items-center gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-sunken"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[15px] text-ink-soft group-hover:border-line-strong group-hover:text-ink" aria-hidden>
-                  ←
-                </span>
-                <span className="min-w-0">
-                  <span className="block font-mono text-[10px] font-bold tracking-wider text-ink-faint">이전 강의</span>
-                  <span className="mt-0.5 block truncate text-[12px] font-semibold text-ink sm:text-[13px]">
-                    {prevPresentation.title}
-                  </span>
-                </span>
-              </Link>
-            ) : null}
-
-            {next && nextPresentation ? (
-              <Link
-                href={`/${course}/${next.id}`}
-                scroll={true}
-                aria-label={`다음 강의: ${nextPresentation.title}`}
-                className="group flex min-h-14 min-w-0 items-center justify-end gap-3 rounded-xl px-3 py-2.5 text-right hover:bg-sunken"
-              >
-                <span className="min-w-0">
-                  <span className="block font-mono text-[10px] font-bold tracking-wider text-ink-faint">다음 강의</span>
-                  <span className="mt-0.5 block truncate text-[12px] font-semibold text-ink sm:text-[13px]">
-                    {nextPresentation.title}
-                  </span>
-                </span>
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[15px] text-ink-soft group-hover:border-line-strong group-hover:text-ink" aria-hidden>
-                  →
-                </span>
-              </Link>
-            ) : null}
-          </div>
-        )}
+    <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
+      {/*
+        2026-09-27 (docs/디자인-규칙.md §6 · 점검 FRAME-U01): one title row — back to the list,
+        the title, the bookmark. The previous/next cards and the completion toggle moved to the end
+        of the lesson (LessonEndBar), so on a 390×844 phone the course view starts near the top of
+        the first screen instead of 460–615px down.
+      */}
+      <nav className="flex items-center justify-between gap-2" aria-label="과정으로">
+        <Link
+          href={`/${course}`}
+          className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
+        >
+          <span aria-hidden>←</span>
+          <span>{courseInfo?.title ?? course} 목록</span>
+        </Link>
+        <LessonActionButtons
+          course={course}
+          lessonId={lesson.id}
+          title={pres.title}
+          courseTitle={courseInfo?.title ?? tab?.label}
+        />
       </nav>
 
-      <header className="mb-6 sm:mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>
-        <h1 className="text-[1.5rem] sm:text-[1.85rem] leading-snug font-bold tracking-tight text-balance text-ink">
+      <header className="mt-1 mb-4 sm:mb-6">
+        <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">
           {pres.title}
         </h1>
       </header>
@@ -358,7 +321,7 @@ export default async function LessonPage({
 
       {/* Unified Audio Player with native TTS fallback & gender profile */}
       {topLevelAudio.length > 0 ? (
-        <div className="mb-8 flex flex-col gap-2.5">
+        <div className="mb-5 flex flex-col gap-2">
           {topLevelAudio.map((a) => (
             <AudioPlayer
               key={a.src}
@@ -371,7 +334,7 @@ export default async function LessonPage({
           ))}
         </div>
       ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course) ? (
-        <div className="mb-8">
+        <div className="mb-5">
           <AudioPlayer
             fallbackSentences={fallbackSentences}
             lang={courseInfo?.contentLang ?? "en"}
@@ -468,6 +431,12 @@ export default async function LessonPage({
       )}
 
       <LessonStepNavigation courseHref={`/${course}`} />
+      <LessonEndBar
+        course={course}
+        lessonId={lesson.id}
+        prev={prev && prevPresentation ? { href: `/${course}/${prev.id}`, title: prevPresentation.title } : null}
+        next={next && nextPresentation ? { href: `/${course}/${next.id}`, title: nextPresentation.title } : null}
+      />
     </main>
   );
 }

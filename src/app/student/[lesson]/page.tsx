@@ -114,12 +114,18 @@ export default async function StudentLessonPage({
 
   if (!accessAllowed) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-        <nav className="mb-8 font-mono text-[11.5px]">
-          <Link href="/student" className="text-ink-soft hover:text-ink">← STUDENT</Link>
+      <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
+        <nav aria-label="과정으로">
+          <Link
+            href="/student"
+            className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
+          >
+            <span aria-hidden>←</span>
+            <span>STUDENT 목록</span>
+          </Link>
         </nav>
-        <header className="mb-6 sm:mb-8">
-          <h1 className="text-[1.5rem] sm:text-[1.85rem] font-bold text-ink">{pres.title}</h1>
+        <header className="mt-1 mb-4 sm:mb-6">
+          <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">{pres.title}</h1>
         </header>
         <LessonPaywall
           courseSlug="student"
