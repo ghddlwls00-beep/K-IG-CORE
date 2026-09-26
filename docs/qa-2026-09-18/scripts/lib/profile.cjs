@@ -20,7 +20,10 @@ const path = require("path");
 // 그 뒤 원본에서 새로 뜬 사본은 잠김 화면(/api/license/session 만 부르고 verify 없음). 관문 0 사본(g0-w1 · 9/24 16:12 복사)은 그 기록이 있어 열림.
 // 원본은 건드리지 않고(되살리려면 코드를 다시 쳐야 함 — 소유자만) 복사할 곳 · 사본 이름 앞머리를 바꿀 수 있게 함:
 //   KIG_PROFILE_SOURCE=<이용권이 살아 있는 사본 폴더>  KIG_CLONE_PREFIX=<새 앞머리>  — 둘 다 없으면 전과 같음.
-const SOURCE = process.env.KIG_PROFILE_SOURCE || path.join(os.tmpdir(), "kig-audit-licensed-profile");
+// 2026-09-26: 04:26 ~ 04:31 에 TEMP 가 통째로 지워져 원본(%TEMP%\kig-audit-licensed-profile)이 없어짐 → 사장님이 같은 날 밤 코드를 다시 넣은 원본은
+// TEMP 밖 `%USERPROFILE%\KIG-audit-licensed-profile` 에 둠. 그것이 있으면 먼저 씀(없으면 옛 TEMP 자리).
+const DURABLE = path.join(os.homedir(), "KIG-audit-licensed-profile");
+const SOURCE = process.env.KIG_PROFILE_SOURCE || (fs.existsSync(DURABLE) ? DURABLE : path.join(os.tmpdir(), "kig-audit-licensed-profile"));
 const PREFIX = process.env.KIG_CLONE_PREFIX || "kig-audit-0918-";
 const SKIP_DIRS = ["Cache", "Code Cache", "GPUCache", "DawnGraphiteCache", "DawnWebGPUCache", "GrShaderCache", "ShaderCache", "Crashpad", "BrowserMetrics", "component_crx_cache", "optimization_guide_model_store", "Service Worker", "EdgeWallet", "EdgeCoupons", "Edge Shopping", "AutofillAiModelCache", "EntityExtraction", "Edge Entity Extraction"];
 
