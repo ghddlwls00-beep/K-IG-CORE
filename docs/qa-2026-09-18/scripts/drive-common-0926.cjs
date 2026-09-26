@@ -276,6 +276,10 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         const course = url.split("/")[1];
         const loaded = await H.load(tab, url, { marker: H.MARKERS[course] });
         if (!loaded.rendered || (await tab.eval(PAYWALLED).catch(() => true))) { rec(`D:rapid:${url}`, "rapid actions", "BLOCKED", { note: loaded.rendered ? "잠김 화면" : "안 뜸" }); continue; }
+        // 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-L03 ④): GRAMMAR's top player is folded under '정답 문장 전체 듣기'
+        // (details[data-answer-player]) — open it like a learner would, or no visible 재생 button is found (BLOCKED).
+        const foldedPlayer = `document.querySelector('main details[data-answer-player]:not([open]) > summary')`;
+        if (await tab.eval(`Boolean(${foldedPlayer})`).catch(() => false)) await H.click(tab, foldedPlayer, { settle: 300 });
         tab.resetEvents();
         // 재생 단추는 누르면 🔊 → ⏹️ 로 바뀜(ReadingLearningView 등) — 첫 판은 글로 다시 찾다가 1 ~ 2번만 누름(도구 탓).
         // 처음 찾은 단추에 표를 달아 같은 단추를 6번(재생 ↔ 정지 연타), 단추가 새로 그려지면 재생/정지 글로 다시 찾아 표를 닮

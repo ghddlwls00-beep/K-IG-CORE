@@ -42,7 +42,9 @@ function lessonFile(id) {
   return lessonCache.get(id);
 }
 
-// --- the page's own text handling (GrammarLearningView.tsx:30-115, 156-217) -------
+// --- the page's own text handling (GrammarLearningView.tsx GRAMMAR_KEYWORDS · buildCloze · item list) -------
+// 2026-09-27 (GRAMMAR 학습법 · 화면 고침): brought up to the view as it is now — the negative contractions (6-1357, which
+// this copy had missed) and GRM-L06: a sentence without a function word gets no blank when the fallback word opens it.
 const GRAMMAR_KEYWORDS = new Set([
   "am", "is", "are", "was", "were", "been", "being",
   "have", "has", "had", "do", "does", "did",
@@ -53,7 +55,10 @@ const GRAMMAR_KEYWORDS = new Set([
   "my", "your", "his", "her", "its", "our", "their", "mine", "yours", "hers", "theirs",
   "who", "whom", "whose", "which", "what", "where", "when", "why", "how",
   "in", "on", "at", "for", "to", "from", "with", "by", "of", "into", "out",
+  "isn't", "aren't", "wasn't", "weren't", "don't", "doesn't", "didn't", "haven't", "hasn't", "hadn't",
+  "can't", "couldn't", "won't", "wouldn't", "shouldn't", "mustn't",
 ]);
+const NEGATIVE_CONTRACTION = /^[A-Za-z]+n['’]t$/;
 
 function isEnglish(text) {
   if (!text) return false;
@@ -71,15 +76,21 @@ function isEnglishTextPage(text) {
 }
 
 function buildCloze(enText) {
-  const tokens = enText.split(/(\s+|[.,?!;:"'()]+)/);
+  const tokens = enText
+    .split(/(\s+|[.,?!;:"()]+)/)
+    .flatMap((t) => (t.includes("'") && !NEGATIVE_CONTRACTION.test(t) ? t.split(/('+)/) : [t]));
   const candidates = [];
   for (let i = 0; i < tokens.length; i++) {
-    const clean = tokens[i].toLowerCase().trim();
+    const clean = tokens[i].toLowerCase().replace(/’/g, "'").trim();
     if (GRAMMAR_KEYWORDS.has(clean)) candidates.push({ index: i, word: tokens[i] });
   }
   if (candidates.length === 0) {
     for (let i = 0; i < tokens.length; i++) {
-      if (/^[A-Za-z]{3,}$/.test(tokens[i])) { candidates.push({ index: i, word: tokens[i] }); break; }
+      if (/^[A-Za-z]{3,}$/.test(tokens[i])) {
+        const opensSentence = !tokens.slice(0, i).some((t) => /[A-Za-z0-9]/.test(t));
+        if (!opensSentence) candidates.push({ index: i, word: tokens[i] });
+        break;
+      }
     }
   }
   const toBlank = candidates.slice(0, 2);
@@ -342,189 +353,254 @@ const PAGE_HELPERS = `(() => {
   const vis = (el) => !!el && !!(el.offsetParent || el.getClientRects().length);
   const all = (sel) => [...document.querySelectorAll(sel)];
   const byText = (root, t) => (root ? [...root.querySelectorAll("button")].find((b) => norm(b.innerText).includes(t)) || null : null);
-  const card1 = (n) => { const i = document.querySelector('main input[aria-label="' + n + '번 영작 답안"]'); return i ? i.closest('div[class*="rounded-2xl"]') : null; };
-  const card2 = (n) => { const i = document.querySelector('main input[aria-label="' + n + '번 문장 빈칸"]'); if (i) return i.closest('div[class*="rounded-2xl"]'); return cards2().find((c) => norm(c.querySelector("span").innerText) === String(n)) || null; };
-  const cards2 = () => all('main div[class*="rounded-2xl"]').filter((d) => byText(d, "문장 듣기"));
-  const cards3 = () => all('main div[class*="rounded-2xl"]').filter((d) => d.querySelector('button[title="발음 듣기"], button[title="발음 정지"]'));
-  const card4 = (n) => { const i = document.querySelector('main input[aria-label="' + n + '번 시험 답안"]'); return i ? i.parentElement.parentElement : null; };
-  const modelCard = (c) => (c ? [...c.querySelectorAll("div")].find((d) => norm(d.innerText).startsWith("모범 답안 (Model Answer)")) || null : null);
-  const player = () => document.querySelector('main input[aria-label="문장 이동"]')?.closest('div[class*="rounded-3xl"]') || null;
+  // 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-U02 · U04 · U11 · L08): an item is li[data-item="N"] inside its step's
+  // section[data-step-panel="k"]; the rounded-2xl cards, font-mono numbers, emoji button labels and the tinted Korean box
+  // these helpers used to key on are gone. Steps 1–3 show ten items at a time (data-set bundles; the others are in the
+  // DOM but hidden — setNext() / setPrev() switch, bundleOf(n) says where an item is). Step 4 rows are li[data-exam-row].
+  const panel = (k) => document.querySelector('main [data-step-panel="' + k + '"]');
+  const itemIn = (k, n) => { const p = panel(k); return p ? p.querySelector('[data-item="' + n + '"]') : null; };
+  const card1 = (n) => itemIn(1, n);
+  const card2 = (n) => itemIn(2, n);
+  const cards2 = () => { const p = panel(2); return p ? [...p.querySelectorAll("[data-item]")] : []; };
+  const cards3 = () => { const p = panel(3); return p ? [...p.querySelectorAll("[data-item]")] : []; };
+  const card4 = (n) => document.querySelector('main [data-exam-row][data-item="' + n + '"]');
+  const modelCard = (c) => (c ? c.querySelector("[data-answer-panel]") : null);
+  // the top player: its root is now div.rounded-card (공통 틀 1); in GRAMMAR it sits folded in details[data-answer-player] (GRM-L03 ④)
+  const player = () => document.querySelector('main input[aria-label="문장 이동"]')?.closest('div[class*="rounded-card"], div[class*="rounded-3xl"]') || null;
+  const playerDetails = () => document.querySelector("main details[data-answer-player]");
   const pills = () => all('main nav[aria-label="문법 4단계 학습 모드"] button');
   const chromeNav = () => document.querySelector('main nav[aria-label="강의 이동"]');
   const stepNav = () => document.querySelector('main nav[aria-label="학습 단계 이동"]');
-  const viewRoot = () => pills().length ? pills()[0].closest("div.flex.flex-col.gap-8") || document.querySelector("main") : document.querySelector("main");
+  const viewRoot = () => document.querySelector("main [data-grammar-view]") || document.querySelector("main");
+  const activePanel = () => document.querySelector("main [data-step-panel]");
+  const more = () => { const p = activePanel(); return p ? p.querySelector("details[data-more]") : null; };
+  const FONT_KEY = { "기본": "normal", "크게": "large", "특대": "xlarge" };
 
   window.__g2 = {
     norm, txt, vis,
     pills, pill: (i) => pills()[i] || null,
-    step: () => { const p = pills().findIndex((b) => b.className.includes("bg-ink")); return p < 0 ? null : p + 1; },
+    // the current tab is aria-pressed (GRM-U15); it used to be the one with bg-ink
+    step: () => { const p = pills().findIndex((b) => b.getAttribute("aria-pressed") === "true"); return p < 0 ? null : p + 1; },
     header: () => {
       const m = document.querySelector("main");
       const t = m ? norm(m.innerText) : "";
+      const s = document.querySelector("main [data-summary][data-total]");
       return {
-        headline: (document.querySelector("main span.font-semibold") || {}).innerText || null,
-        hasTitle: t.includes("Grammar 2 : 문법 패턴 & 구문 직독직해"),
-        count: (t.match(/총 (\\d+)개 문항/) || [])[1] ? Number((t.match(/총 (\\d+)개 문항/) || [])[1]) : null,
+        // the header box ('Grammar 2 : 문법 패턴 & 구문 직독직해' · '총 N개 문항') was removed on purpose (GRM-U05);
+        // the item count is the summary line's data-total now
+        headline: null,
+        hasTitle: false,
+        count: s ? Number(s.dataset.total) : null,
         savedAt: (t.match(/([^\\n]{0,24}자동 저장됨)/) || [])[1] || null,
-        detailsRuleSummary: all("main details").some((d) => norm(d.innerText).includes("문법 확인")),
+        detailsRuleSummary: !!document.querySelector("main details[data-rule-summary]"),
         radios: all('main input[type="radio"]').length,
         textareas: all("main textarea").length,
-        pills: pills().map((b) => norm(b.innerText)),
-        speedPressed: all("main button[title^='음성 속도']").map((b) => ({ t: norm(b.innerText), pressed: b.getAttribute("aria-pressed") === "true" })),
-        fonts: ["기본", "크게", "특대"].map((f) => { const b = all("main button").find((x) => norm(x.innerText) === f); return { t: f, pressed: b ? b.getAttribute("aria-pressed") === "true" : null }; }),
+        // textContent: on a phone the other steps' names are hidden, but every tab still reads 'Step N · 이름'
+        pills: pills().map((b) => norm(b.textContent)),
+        speedPressed: all("main [data-speed]").map((b) => ({ t: norm(b.textContent), pressed: b.getAttribute("aria-pressed") === "true" })),
+        fonts: ["기본", "크게", "특대"].map((f) => { const b = document.querySelector('main [data-font="' + FONT_KEY[f] + '"]'); return { t: f, pressed: b ? b.getAttribute("aria-pressed") === "true" : null }; }),
       };
     },
+    // Step 1 summary (it replaced the three stats cards — GRM-U05 · U13: accuracy = 맞음 ÷ (맞음 + 다시 풀기))
     dash: () => {
-      const m = document.querySelector("main");
-      const t = m ? norm(m.innerText) : "";
-      const prog = t.match(/작성 진행률 (\\d+) \\/ (\\d+) (\\d+)%/);
-      const acc = t.match(/자가 채점 정답률 (\\d+) 개 맞음 (-?\\d+)%/);
-      return prog || acc ? {
-        answered: prog ? Number(prog[1]) : null, total: prog ? Number(prog[2]) : null,
-        progressPct: prog ? Number(prog[3]) : null,
-        correct: acc ? Number(acc[1]) : null, accuracyPct: acc ? Number(acc[2]) : null,
-      } : null;
+      const s = document.querySelector('main [data-step-panel="1"] [data-summary]');
+      if (!s) return null;
+      const d = s.dataset;
+      const answered = Number(d.answered), total = Number(d.total);
+      return {
+        answered, total,
+        progressPct: total > 0 ? Math.round((answered / total) * 100) : 0,
+        correct: Number(d.correct), retry: Number(d.retry),
+        accuracyPct: d.accuracy === "" ? null : Number(d.accuracy),
+      };
     },
-    input1: (n) => document.querySelector('main input[aria-label="' + n + '번 영작 답안"]'),
+    input1: (n) => document.querySelector('main [aria-label="' + n + '번 영작 답안"]'),
     card1,
     btn1: (n, which) => {
       const c = card1(n); if (!c) return null;
-      if (which === "play") return byText(c, "영어 정답 발음") || byText(c, "정지");
-      if (which === "clear") return [...c.querySelectorAll('button[title="지우기"]')][0] || null;
-      if (which === "reveal") return byText(c, "정답 확인") || byText(c, "정답 가리기");
-      if (which === "ok") return byText(c, "맞음");
-      if (which === "retry") return byText(c, "다시 풀기");
-      if (which === "mic") return byText(c, "마이크로 말해서 영작하기") || byText(c, "듣고 있는 중") || [...c.querySelectorAll('button[title^="마이크를 누르고"]')][0] || null;
-      if (which === "micReset") return byText(c, "다시 녹음");
-      const mc = modelCard(c); if (!mc) return null;
-      if (which === "copy") return byText(mc, "복사");
-      if (which === "modelPlay") return byText(mc, "발음 듣기");
-      return null;
+      const q = (sel) => c.querySelector(sel);
+      if (which === "check" || which === "reveal") return q("[data-check]"); // '확인' opens the answer after an attempt (was '💡 정답 확인')
+      if (which === "hint") return q("[data-hint]");
+      if (which === "mic") return q("[data-mic]");
+      if (which === "micUndo") return q("[data-mic-undo]");
+      if (which === "ok") return q('[data-grade="correct"]');
+      if (which === "retry") return q('[data-grade="retry"]');
+      if (which === "next") return q("[data-next]");
+      if (which === "play" || which === "modelPlay") return q("[data-answer-panel] [data-play]"); // only after 확인 (GRM-L03 ①)
+      return null; // clear (GRM-U19) · copy (GRM-U12) · micReset: removed
     },
     state1: (n) => {
       const c = card1(n); if (!c) return null;
-      const t = norm(c.innerText);
       const mc = modelCard(c);
-      const inp = c.querySelector("input");
-      const mic = byText(c, "마이크로 말해서 영작하기") || [...c.querySelectorAll('button[title^="마이크를 누르고"]')][0];
+      const inp = c.querySelector('[aria-label$="번 영작 답안"]');
+      const badge = c.querySelector("[data-badge]");
+      const verdict = c.querySelector("[data-verdict]");
+      const micLine = c.querySelector("[data-mic-line]");
+      const micGrade = c.querySelector("[data-mic-grade]");
+      const alts = mc ? mc.querySelector("[data-alts]") : null;
+      const mic = c.querySelector("[data-mic]");
       return {
-        number: norm(c.querySelector("span").innerText),
-        korean: txt(c.querySelector("div[class*='bg-raised'] p")),
+        number: txt(c.querySelector("[data-q]")),
+        korean: txt(c.querySelector("[data-ko]")),
+        visible: vis(c),
         value: inp ? inp.value : null,
         placeholder: inp ? inp.placeholder : null,
         ariaLabel: inp ? inp.getAttribute("aria-label") : null,
-        exactBadge: t.includes("🎯 정답 일치!"),
-        doneBadge: t.includes("✓ 학습 완료"),
-        reviewBadge: t.includes("↺ 복습 필요"),
-        playLabel: txt(byText(c, "영어 정답 발음") || byText(c, "정지")),
-        clearVisible: !!c.querySelector('button[title="지우기"]'),
-        revealLabel: txt(byText(c, "정답 확인") || byText(c, "정답 가리기")),
+        badge: badge ? badge.dataset.badge : null, // done · review · hint
+        verdict: verdict ? verdict.dataset.verdict : null, // exact · partial · incorrect (after 확인)
+        exactBadge: !!verdict && verdict.dataset.verdict === "exact", // was '🎯 정답 일치!'
+        doneBadge: !!badge && badge.dataset.badge === "done", // was '✓ 학습 완료'
+        reviewBadge: !!badge && badge.dataset.badge === "review", // was '↺ 복습 필요'
+        diff: mc ? txt(mc.querySelector("[data-diff]")) : null,
+        hint: txt(c.querySelector("[data-hint-text]")),
+        nudge: txt(c.querySelector("[data-nudge]")),
+        playLabel: null,
+        clearVisible: false,
+        revealLabel: txt(c.querySelector("[data-check]")),
         revealed: !!mc,
-        model: mc ? txt(mc.querySelector("p")) : null,
-        modelAlts: mc ? (norm(mc.innerText).match(/다른 정답: (.+)$/) || [])[1] || null : null,
-        copyLabel: mc ? txt(byText(mc, "복사")) : null,
-        micLabel: mic ? norm(mic.innerText) : null,
-        micResult: t.includes("인식된 내 음성:") ? {
-          score: Number((t.match(/(\\d+)점/) || [])[1]),
-          transcript: (norm(c.innerText).match(/인식된 내 음성: "([^"]*)"/) || [])[1] || null,
-          matched: (t.match(/단어 일치 (\\d+\\/\\d+)/) || [])[1] || null,
+        model: mc ? txt(mc.querySelector("[data-model]")) : null,
+        modelAlts: alts ? (norm(alts.innerText).match(/다른 정답: (.+)$/) || [])[1] || null : null,
+        closest: mc ? txt(mc.querySelector("[data-closest]")) : null,
+        copyLabel: null,
+        micLabel: mic ? mic.getAttribute("aria-label") : null,
+        micResult: micLine && micGrade ? {
+          grade: micGrade.dataset.micGrade,
+          transcript: (norm(micLine.innerText).match(/들은 문장: “([^”]*)”/) || [])[1] || null,
+          score: null, matched: null,
         } : null,
-        micError: (t.match(/⚠️ ([^⚠]*?)(?: 🌐|$)/) || [])[1] || null,
+        micError: txt(c.querySelector("[data-mic-error]")),
       };
     },
     cards2, card2,
-    blank: (n, k) => document.querySelectorAll('main input[aria-label="' + n + '번 문장 빈칸"]')[k] || null,
-    btn2: (n, which) => { const c = card2(n); if (!c) return null; return which === "play" ? byText(c, "전체 문장 듣기") : byText(c, "빈칸 정답 확인") || byText(c, "빈칸 가리기"); },
+    // aria-label is 'N번 문장 빈칸 (k/개수)' now (GRM-U01) — a prefix match; '1번 …' does not take '10번 …'
+    blank: (n, k) => document.querySelectorAll('main [aria-label^="' + n + '번 문장 빈칸"]')[k] || null,
+    btn2: (n, which) => {
+      const c = card2(n); if (!c) return null;
+      if (which === "play") return c.querySelector("[data-play]"); // only once the sentence is right or shown (GRM-L03 ⑤)
+      if (which === "check") return c.querySelector("[data-cloze-check]");
+      if (which === "retry") return c.querySelector("[data-cloze-retry]");
+      return c.querySelector("[data-cloze-reveal]") || c.querySelector("[data-cloze-check]");
+    },
     state2: (n) => {
       const c = card2(n); if (!c) return null;
-      const line = [...c.querySelectorAll("div")].find((d) => d.className.includes("flex-wrap") && (d.querySelector("input") || d.className.includes("items-center")));
-      const inputs = [...c.querySelectorAll("input")];
-      const marks = [...c.querySelectorAll('[role="status"]')].map((s) => norm(s.innerText));
+      const line = c.querySelector("[data-cloze]");
+      const inputs = [...c.querySelectorAll("input[data-blank]")];
       return {
-        number: norm(c.querySelector("span").innerText),
-        korean: txt(c.querySelector("p")),
+        number: txt(c.querySelector("[data-q]")),
+        korean: txt(c.querySelector("[data-ko]")),
+        visible: vis(c),
         blanks: inputs.map((i) => {
-          const wrap = i.parentElement;
-          const mark = norm((wrap.querySelector('[role="status"]') || {}).innerText || "");
-          return { value: i.value, aria: i.getAttribute("aria-label"), placeholder: i.placeholder, width: i.style.width, correct: mark === "✓", wrong: mark === "✗", mark };
+          const mark = i.parentElement.querySelector("[data-mark]");
+          return {
+            value: i.value, aria: i.getAttribute("aria-label"), placeholder: i.placeholder,
+            width: getComputedStyle(i).width, fontSize: getComputedStyle(i).fontSize, height: getComputedStyle(i).height,
+            correct: !!mark && mark.dataset.mark === "correct", wrong: !!mark && mark.dataset.mark === "wrong",
+            mark: mark ? norm(mark.innerText) : "",
+          };
         }),
-        marks,
+        marks: [...c.querySelectorAll("[data-mark]")].map((s) => s.dataset.mark),
         lineText: line ? norm(line.innerText) : null,
-        lineTokens: line ? [...line.children].map((ch) => (ch.tagName === "SPAN" && !ch.querySelector("input") ? ch.textContent : "[BLANK]")) : null,
-        revealLabel: txt(byText(c, "빈칸 정답 확인") || byText(c, "빈칸 가리기")),
-        revealed: !!byText(c, "빈칸 가리기"),
+        lineTokens: line ? [...line.childNodes].map((nd) => (nd.nodeType === 3 ? nd.textContent : nd.querySelector && nd.querySelector("input") ? "[BLANK]" : nd.textContent)) : null,
+        answers: [...c.querySelectorAll("[data-answer]")].map((s) => norm(s.innerText)),
+        verdict: txt(c.querySelector("[data-cloze-verdict]")),
+        checkLabel: txt(c.querySelector("[data-cloze-check]")),
+        revealLabel: txt(c.querySelector("[data-cloze-reveal]")),
+        revealed: c.querySelectorAll("[data-answer]").length > 0,
       };
     },
     cards3,
     card3: (i) => cards3()[i] || null,
-    p3: (i) => { const c = cards3()[i]; return c ? c.querySelector("p") : null; },
+    p3: (i) => { const c = cards3()[i]; return c ? c.querySelector("[data-en]") : null; },
     btn3: (i, which) => {
       const c = cards3()[i]; if (!c) return null;
-      if (which === "play") return c.querySelector('button[title="발음 듣기"], button[title="발음 정지"]');
-      if (which === "copy") return c.querySelector('button[title="문장 복사"], button[aria-label="복사됨"]');
-      if (which === "mic") return byText(c, "내 발음 채점 및 섀도잉 검증") || [...c.querySelectorAll('button[title^="마이크를 누르고"]')][0] || null;
-      return null;
+      if (which === "play") return c.querySelector("[data-play]"); // aria-label '문장 듣기' / '정지' (was title '발음 듣기')
+      if (which === "said") return c.querySelector("[data-said]"); // '따라 말했어요' — counts one repetition (GRM-L04)
+      if (which === "mic") return c.querySelector('button[title^="마이크를 누르고"]'); // VoiceSpeakingTester '따라 말하고 확인'
+      return null; // copy: removed (GRM-U12)
     },
     state3: (i) => {
       const c = cards3()[i]; if (!c) return null;
-      const ps = [...c.querySelectorAll("p")];
-      const t = norm(c.innerText);
+      const reps = c.querySelector("[data-reps]");
+      const play = c.querySelector("[data-play]");
+      const mic = c.querySelector('button[title^="마이크를 누르고"]');
       return {
-        number: norm(c.querySelector("span").innerText),
-        english: txt(ps[0]), korean: txt(ps[1]),
-        repeatLabel: norm([...c.querySelectorAll("span")].map((s) => norm(s.innerText)).find((s) => /회 연습|3회 달성/.test(s)) || ""),
-        playTitle: (c.querySelector('button[title="발음 듣기"], button[title="발음 정지"]') || {}).title || null,
-        copyAria: (c.querySelector('button[title="문장 복사"], button[aria-label="복사됨"]') || {}).getAttribute ? (c.querySelector('button[title="문장 복사"], button[aria-label="복사됨"]')).getAttribute("aria-label") : null,
-        micLabel: norm(((byText(c, "내 발음 채점") || [...c.querySelectorAll('button[title^="마이크를 누르고"]')][0]) || {}).innerText || ""),
-        hasMicResult: t.includes("인식된 내 음성:"),
+        number: txt(c.querySelector("[data-q]")),
+        english: txt(c.querySelector("[data-en]")), korean: txt(c.querySelector("[data-ko]")),
+        visible: vis(c),
+        repeatLabel: reps ? norm(reps.innerText) : "",
+        repeats: reps ? Number(reps.dataset.count) : null,
+        playTitle: play ? play.getAttribute("aria-label") : null,
+        copyAria: null,
+        micLabel: mic ? norm(mic.innerText) : "",
+        hasMicResult: norm(c.innerText).includes("인식된 내 음성:"),
       };
     },
-    input4: (n) => document.querySelector('main input[aria-label="' + n + '번 시험 답안"]'),
+    input4: (n) => document.querySelector('main [aria-label="' + n + '번 시험 답안"]'),
     card4,
-    btn4: (n) => { const c = card4(n); return c ? byText(c, "발음 청취") : null; },
+    btn4: (n) => { const c = card4(n); return c ? c.querySelector("[data-play]") : null; }, // after grading only
     state4: (n) => {
       const c = card4(n); if (!c) return null;
-      const inp = c.querySelector("input");
-      const t = norm(c.innerText);
+      const inp = c.querySelector('[aria-label$="번 시험 답안"]');
+      const badge = c.querySelector("[data-badge]");
+      const alts = c.querySelector("[data-alts]");
       return {
-        prompt: t.split(" ").length ? norm((c.querySelector("span.font-semibold") || {}).innerText || "") : null,
-        qLabel: norm((c.querySelector("span.font-mono") || {}).innerText || ""),
-        value: inp ? inp.value : null, disabled: inp ? inp.disabled : null,
+        prompt: txt(c.querySelector("[data-ko]")),
+        qLabel: txt(c.querySelector("[data-q]")),
+        value: inp ? inp.value : null,
+        disabled: inp ? inp.readOnly : null, // a graded sheet is read-only (was disabled)
         aria: inp ? inp.getAttribute("aria-label") : null, placeholder: inp ? inp.placeholder : null,
-        badge: t.includes("✓ 정답 (100점)") ? "exact" : t.includes("△ 부분 정답 (70점)") ? "partial" : t.includes("✕ 오답 (0점)") ? "incorrect" : null,
-        model: (t.match(/모범 답안: (.*?)(?: \\(또는:|🔊|$)/) || [])[1] || null,
-        alts: (t.match(/\\(또는: (.*?)\\)/) || [])[1] || null,
+        badge: badge ? badge.dataset.badge : null, // exact · partial · incorrect
+        badgeText: txt(badge),
+        model: txt(c.querySelector("[data-model]")),
+        alts: alts ? (norm(alts.innerText).match(/또는: (.*?)(?: 외 \\d+개)?$/) || [])[1] || null : null,
+        diff: txt(c.querySelector("[data-diff]")),
       };
     },
     exam: () => {
-      const m = document.querySelector("main"); const t = m ? norm(m.innerText) : "";
-      const sub = [...document.querySelectorAll("main button")].find((b) => norm(b.innerText).includes("전체 시험 채점하기"));
-      const again = [...document.querySelectorAll("main button")].find((b) => norm(b.innerText).includes("답안 다시 수정하기"));
-      const done = t.match(/작성 완료: (\\d+) \\/ (\\d+) 문항/);
+      const p = panel(4); const t = p ? norm(p.innerText) : "";
+      const sum = document.querySelector("main [data-exam-summary]");
+      const line = p ? p.querySelector("[data-summary]") : null;
+      const sub = document.querySelector("main [data-exam-submit]");
+      const last = t.match(/지난 시험 (\\d+)점/);
       return {
-        header: t.includes("실전 영작 모의 시험"),
-        footer: done ? { answered: Number(done[1]), total: Number(done[2]) } : null,
-        emptyNotice: t.includes("작성한 문항이 없습니다"),
-        submitDisabled: sub ? sub.disabled : null,
-        submitted: !!again,
-        score: (t.match(/최종 획득 점수 (\\d+)점/) || [])[1] ? Number((t.match(/최종 획득 점수 (\\d+)점/) || [])[1]) : null,
-        exact: (t.match(/정답 일치: (\\d+)개/) || [])[1] ? Number((t.match(/정답 일치: (\\d+)개/) || [])[1]) : null,
-        partial: (t.match(/부분 일치: (\\d+)개/) || [])[1] ? Number((t.match(/부분 일치: (\\d+)개/) || [])[1]) : null,
+        header: !!p,
+        footer: line ? { answered: Number(line.dataset.answered), total: Number(line.dataset.total) } : null,
+        emptyNotice: !!document.querySelector("main [data-exam-notice]"),
+        submitDisabled: sub ? sub.getAttribute("aria-disabled") === "true" : null,
+        submitted: !!sum,
+        score: sum ? Number(sum.dataset.score) : null,
+        exact: sum ? Number(sum.dataset.exact) : null,
+        partial: sum ? Number(sum.dataset.partial) : null,
+        incorrect: sum ? Number(sum.dataset.incorrect) : null,
+        lastExam: last ? Number(last[1]) : null,
       };
     },
-    submitBtn: () => [...document.querySelectorAll("main button")].find((b) => /전체 시험 채점하기|답안 다시 수정하기/.test(norm(b.innerText))) || null,
-    batchBtn: (show) => [...document.querySelectorAll("main button")].find((b) => norm(b.innerText) === (show ? "💡 전체 정답 보기" : "🔒 전체 정답 가리기")) || null,
-    resetBtn: () => [...document.querySelectorAll("main button")].find((b) => norm(b.innerText).includes("모든 작성 내용 초기화")) || null,
-    fontBtn: (label) => [...document.querySelectorAll("main button")].find((b) => norm(b.innerText) === label) || null,
-    speedBtn: (label) => [...document.querySelectorAll("main button")].find((b) => norm(b.innerText) === label && (b.title || "").startsWith("음성 속도")) || null,
+    // before grading: the submit; after: '새 시험' (the old '답안 다시 수정하기' is gone — GRM-L01)
+    submitBtn: () => document.querySelector("main [data-exam-submit]") || document.querySelector('main [data-exam-action="new"]'),
+    newExamBtn: () => document.querySelector('main [data-exam-action="new"]'),
+    retryWrongExamBtn: () => document.querySelector('main [data-exam-action="retry-wrong"]'),
+    // these live in '⋯ 더보기' (details[data-more]) now — press moreSummary() first so they are visible (GRM-L03 ② · U05 · U20)
+    moreSummary: () => { const d = more(); return d ? d.querySelector("summary") : null; },
+    batchBtn: (show) => document.querySelector('main [data-action="' + (show ? "reveal-all" : "hide-all") + '"]'),
+    resetBtn: () => document.querySelector('main [data-action="reset"]'),
+    resetConfirmBtn: () => document.querySelector('main [data-action="reset-confirm"]'),
+    fontBtn: (label) => document.querySelector('main [data-font="' + (FONT_KEY[label] || label) + '"]'),
+    speedBtn: (label) => document.querySelector('main [data-speed="' + (/^1(\\.0)?/.test(String(label)) ? "1" : "0.85") + '"]'),
     fontSizes: () => {
       const c = card1(1) || card4(1);
-      const ko = c ? c.querySelector("p, span.font-semibold") : null;
-      const inp = c ? c.querySelector("input") : null;
+      const ko = c ? c.querySelector("[data-ko]") : null;
+      const inp = c ? c.querySelector("textarea, input") : null;
       const mc = c ? modelCard(c) : null;
       const cs = (el) => (el ? getComputedStyle(el).fontSize : null);
-      return { korean: cs(ko), input: cs(inp), english: cs(mc ? mc.querySelector("p") : null), width: window.innerWidth };
+      return { korean: cs(ko), input: cs(inp), english: cs(mc ? mc.querySelector("[data-model]") : null), width: window.innerWidth };
     },
+    // bundles of ten in Steps 1–3 (GRM-L08)
+    setInfo: () => { const s = document.querySelector("main [data-set-nav]"); return s ? { index: Number(s.dataset.setIndex), count: Number(s.dataset.setCount), text: txt(s.querySelector("p")) } : null; },
+    setNext: () => all("main [data-set-next]").find(vis) || null,
+    setPrev: () => all("main [data-set-prev]").find(vis) || null,
+    bundleOf: (n) => { const li = document.querySelector('main [data-step-panel] [data-item="' + n + '"]'); const ol = li ? li.closest("[data-set]") : null; return ol ? Number(ol.dataset.set) : null; },
+    playerDetails,
+    playerSummary: () => { const d = playerDetails(); return d ? d.querySelector("summary") : null; },
     playerBtn: (which) => {
       const p = player(); if (!p) return null;
       const map = { play: '[aria-label="재생"], [aria-label="일시정지"]', stop: '[aria-label="정지"]', prev: '[aria-label="이전 문장"]', next: '[aria-label="다음 문장"]' };
@@ -537,7 +613,9 @@ const PAGE_HELPERS = `(() => {
       const slider = p.querySelector('input[aria-label="문장 이동"]');
       const play = p.querySelector('[aria-label="재생"], [aria-label="일시정지"]');
       const stop = p.querySelector('[aria-label="정지"]');
+      const d = playerDetails();
       return {
+        folded: d ? !d.open : false,
         counter: (t.match(/(\\d+)\\/(\\d+)/) || [0, null, null]).slice(1).join("/") || null,
         status: /음성 읽는 중/.test(t) ? "speaking" : /일시정지됨/.test(t) ? "paused" : /재생 버튼을 눌러/.test(t) ? "idle" : null,
         sliderMax: slider ? Number(slider.max) : null,
@@ -561,6 +639,7 @@ const PAGE_HELPERS = `(() => {
       const snButtons = sn ? [...sn.querySelectorAll("button")] : [];
       return {
         h1: txt(document.querySelector("main h1")),
+        subtitle: txt(document.querySelector("main header p")), // GRAMMAR only (GRM-U22)
         title: document.title,
         canonical: (document.querySelector('link[rel="canonical"]') || {}).href || null,
         robots: (document.querySelector('meta[name="robots"]') || {}).content || null,

@@ -282,6 +282,33 @@ export default async function LessonPage({
   // romanization in Korean (소유자 결정 2026-09-25) · LISTENING d169 "1 1/2" as "1 and a half"
   ).map((text) => lessonSpeechForm(`${course}/${lesson.id}`, text));
 
+  const isGrammar = course === "grammar1" || course === "grammar2";
+
+  // Unified Audio Player with native TTS fallback & gender profile
+  const topPlayers =
+    topLevelAudio.length > 0
+      ? topLevelAudio.map((a) => (
+          <AudioPlayer
+            key={a.src}
+            src={a.src}
+            fallbackSentences={fallbackSentences}
+            lang={courseInfo?.contentLang ?? "en"}
+            gender={voiceGender}
+            label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
+          />
+        ))
+      : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course)
+        ? [
+            <AudioPlayer
+              key="fallback"
+              fallbackSentences={fallbackSentences}
+              lang={courseInfo?.contentLang ?? "en"}
+              gender={voiceGender}
+              label="전체 듣기"
+            />,
+          ]
+        : null;
+
   return (
     <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
       {/*
@@ -310,6 +337,17 @@ export default async function LessonPage({
         <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">
           {pres.title}
         </h1>
+        {/*
+          2026-09-27 GRM-U22 · GRM-L10 (1차): GRAMMAR only — the stage line under the title, which also
+          carries the owner's era notes (gh1-116~123 '2002년 뉴스 방송 기반 문장', gh2-044 '1996년 미국 대선
+          무렵 뉴스'). They were only in the subtitle, which no lesson screen drew.
+        */}
+        {/* GRAMMAR II's subtitle is the English label 'English Model Pattern' (디자인 규칙 §1-7) — only its era note shows */}
+        {(() => {
+          if (!isGrammar || !pres.subtitle) return null;
+          const line = course === "grammar2" ? (pres.subtitle.split(" · ").slice(1).join(" · ") || null) : pres.subtitle;
+          return line ? <p className="mt-1 text-label text-ink-soft">{line}</p> : null;
+        })()}
       </header>
 
       {video.length > 0 ? (
@@ -320,29 +358,25 @@ export default async function LessonPage({
         </div>
       ) : null}
 
-      {/* Unified Audio Player with native TTS fallback & gender profile */}
-      {topLevelAudio.length > 0 ? (
-        <div className="mb-5 flex flex-col gap-2">
-          {topLevelAudio.map((a) => (
-            <AudioPlayer
-              key={a.src}
-              src={a.src}
-              fallbackSentences={fallbackSentences}
-              lang={courseInfo?.contentLang ?? "en"}
-              gender={voiceGender}
-              label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
-            />
-          ))}
-        </div>
-      ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese"].includes(course) ? (
-        <div className="mb-5">
-          <AudioPlayer
-            fallbackSentences={fallbackSentences}
-            lang={courseInfo?.contentLang ?? "en"}
-            gender={voiceGender}
-            label="전체 듣기"
-          />
-        </div>
+      {/*
+        2026-09-27 GRM-L03 ④: in GRAMMAR the top player reads every ENGLISH ANSWER of the lesson, so it
+        waits folded under an honest name — the learner opens it after trying, not before. Other
+        courses render exactly as before.
+      */}
+      {topPlayers ? (
+        isGrammar ? (
+          <details className="group mb-5" data-answer-player>
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-control border border-line bg-raised px-4 text-label font-medium text-ink transition-colors hover:bg-sunken [&::-webkit-details-marker]:hidden">
+              <span>정답 문장 전체 듣기</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-ink-soft transition-transform group-open:rotate-180">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <div className="mt-2 flex flex-col gap-2">{topPlayers}</div>
+          </details>
+        ) : (
+          <div className={topLevelAudio.length > 0 ? "mb-5 flex flex-col gap-2" : "mb-5"}>{topPlayers}</div>
+        )
       ) : null}
 
       {/* Educational Body with Aligned Sentences */}

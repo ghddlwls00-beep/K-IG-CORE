@@ -69,7 +69,12 @@ const read = (f) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f)
  * ('no feedback' · '[전체 채점하기]를 누르면'). -post7c 표본(90방문)의 GRAMMAR FAIL 499 = 254 · 47 · 181 + 17 이 전부 이 셋이었다.
  * correct→ 와 wrong→ 가 둘 다 이 셋일 때만 도구 탓 — 한쪽이라도 다른 글(예: 정답인데 '오답')이면 강의 FAIL 로 센다.
  */
-const GRAMMAR_NO_VERDICT = "(?:자가 채점 정답률[^|]*|no feedback|[^|]*빈칸에 알맞은 단어를 직접 입력하거나[^|]*|[^|]*\\[전체 채점하기\\]를 누르면[^|]*)";
+// 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-L03 ④ · U05 · U18): the three texts above left the screen (the stats card, the
+// Step 2 and Step 4 guides). The generic driver reads the FIRST line of <main> holding 정답|다시|… after it types an answer
+// (drive-generic.cjs feedback()), and on every GRAMMAR step that is now the folded top player's label '정답 문장 전체 듣기'
+// ([course]/[lesson]/page.tsx, above the course view) — a button name, not a verdict. The old texts stay for old records.
+// A real verdict ('✓ 정답', '✕ 오답 — …', '오답입니다') matches none of these, so it is still counted.
+const GRAMMAR_NO_VERDICT = "(?:자가 채점 정답률[^|]*|no feedback|[^|]*빈칸에 알맞은 단어를 직접 입력하거나[^|]*|[^|]*\\[전체 채점하기\\]를 누르면[^|]*|[^|]*정답 문장 전체 듣기[^|]*)";
 const GRAMMAR_NO_VERDICT_NOTE = new RegExp(`^correct→${GRAMMAR_NO_VERDICT}\\s*\\|\\s*wrong→${GRAMMAR_NO_VERDICT}\\s*(?:\\||$)`);
 const TOOL_ARTIFACTS = [
   { courses: ["phonics"], feature: "step", note: /이 단어로 Step 2/, resolved: true,

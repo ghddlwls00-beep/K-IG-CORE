@@ -547,3 +547,186 @@ export function gradeAgainstReferences(userRaw: string, references: string[]): A
   }
   return best;
 }
+
+/*
+ * ---------------------------------------------------------------------------
+ * 2026-09-27 GRM-L02 — WHICH words differ, for the screen only. NOT A GRADER.
+ *
+ * Step 1 '확인' and the Step 4 result used to say only 정답 / 부분 / 오답; the learner could not
+ * see that "She has working …" lacks "been" or that "What time it is?" has two words swapped.
+ * `diffAgainstReferences` lines the learner's words up against the closest reference with the
+ * same `align` the grader uses, on the same normalised words (contractions expanded, case and
+ * punctuation dropped), and hands every word back in the learner's own spelling.
+ *
+ * The grade it returns IS `gradeAgainstReferences(userRaw, references)`, called unchanged, and
+ * nothing above this line reads anything below it — the score rules do not move
+ * (docs/qa-2026-09-18/scripts/compare-grading.cjs --base <commit before this> shows 0 changed).
+ * ---------------------------------------------------------------------------
+ */
+
+export type DiffKind = "same" | "wrong" | "extra" | "missing" | "moved";
+
+export interface DiffToken {
+  kind: DiffKind;
+  /** The learner's token as typed; for "missing", the reference's word. */
+  text: string;
+  /** For "wrong": what the reference has in that place. */
+  expected?: string;
+}
+
+export interface AnswerDiff {
+  /** Exactly gradeAgainstReferences(userRaw, references). */
+  grade: AnswerGrade;
+  /** Index into `references` of the one the answer was lined up against (-1 when none). */
+  referenceIndex: number;
+  tokens: DiffToken[];
+}
+
+/** A whitespace character the contraction rules treat as a word break but a learner never types. */
+const TOKEN_SEP = " ";
+
+interface OwnedWords {
+  /** The typed tokens (split on whitespace). */
+  raw: string[];
+  /** The grader's normalised words. */
+  words: string[];
+  /** For each word, the index of the typed token it came from. */
+  owner: number[];
+}
+
+/**
+ * normalizeForComparison, word by word, remembering which typed token each word came from
+ * ("I'm" → "i" "am", both owned by token 0). The result must be the grader's own word list;
+ * when it is not (never seen, but checked), the literal words are used instead.
+ */
+function ownedWords(text: string): OwnedWords {
+  const raw = text.trim().split(/\s+/).filter(Boolean);
+  const words: string[] = [];
+  const owner: number[] = [];
+  let joined = expandWouldHad(raw.join(TOKEN_SEP).toLowerCase().replace(/[’‘]/g, "'"));
+  for (const [pattern, replacement] of CONTRACTIONS) joined = joined.replace(pattern, replacement);
+  const pieces = joined.split(TOKEN_SEP);
+  if (pieces.length === raw.length) {
+    pieces.forEach((piece, index) => {
+      for (const word of normalizeLiteral(piece).split(" ")) {
+        if (!word) continue;
+        words.push(word);
+        owner.push(index);
+      }
+    });
+    if (words.join(" ") === normalizeForComparison(text)) return { raw, words, owner };
+  }
+  words.length = 0;
+  owner.length = 0;
+  raw.forEach((token, index) => {
+    for (const word of normalizeLiteral(token).split(" ")) {
+      if (!word) continue;
+      words.push(word);
+      owner.push(index);
+    }
+  });
+  return { raw, words, owner };
+}
+
+/** A reference word as the reference spells it (its token without edge punctuation), or the normalised word. */
+function referenceWord(ref: OwnedWords, index: number): string {
+  const token = ref.owner[index];
+  const siblings = ref.owner.filter((o) => o === token).length;
+  if (siblings !== 1) return ref.words[index];
+  const bare = ref.raw[token].replace(/^[("“‘'[]+/, "").replace(/[.,?!;:)"”’'\]]+$/, "");
+  return bare || ref.words[index];
+}
+
+function lineUp(user: OwnedWords, ref: OwnedWords): DiffToken[] {
+  const { matchedUser, matchedModel } = align(user.words, ref.words);
+  const pairedUser = [...matchedUser].sort((a, b) => a - b);
+  const pairedRef = [...matchedModel].sort((a, b) => a - b);
+  const kind: DiffKind[] = user.words.map(() => "same");
+  const expected: (string | undefined)[] = user.words.map(() => undefined);
+  /** after: the learner's word it follows (-1 = before everything); at: its index in the reference */
+  const missing: { after: number; at: number; text: string }[] = [];
+
+  // Between two matched words (and before the first / after the last), pair the learner's
+  // leftovers with the reference's in order, as gradeNormalized does: a pair is a wrong word,
+  // a learner's word without a partner is extra, a reference word without one is missing.
+  for (let gap = 0; gap <= pairedUser.length; gap++) {
+    const u0 = gap === 0 ? 0 : pairedUser[gap - 1] + 1;
+    const u1 = gap === pairedUser.length ? user.words.length : pairedUser[gap];
+    const r0 = gap === 0 ? 0 : pairedRef[gap - 1] + 1;
+    const r1 = gap === pairedRef.length ? ref.words.length : pairedRef[gap];
+    const userGap: number[] = [];
+    for (let i = u0; i < u1; i++) userGap.push(i);
+    const refGap: number[] = [];
+    for (let j = r0; j < r1; j++) refGap.push(j);
+    const pairs = Math.min(userGap.length, refGap.length);
+    for (let p = 0; p < pairs; p++) {
+      kind[userGap[p]] = "wrong";
+      expected[userGap[p]] = referenceWord(ref, refGap[p]);
+    }
+    for (let p = pairs; p < userGap.length; p++) kind[userGap[p]] = "extra";
+    const after = userGap.length ? userGap[userGap.length - 1] : u0 - 1;
+    for (let p = pairs; p < refGap.length; p++) missing.push({ after, at: refGap[p], text: referenceWord(ref, refGap[p]) });
+  }
+
+  // A word the learner wrote in the wrong place: extra here, missing there ("What time it is?").
+  for (let i = 0; i < user.words.length; i++) {
+    if (kind[i] !== "extra") continue;
+    const k = missing.findIndex((m) => ref.words[m.at] === user.words[i]);
+    if (k < 0) continue;
+    kind[i] = "moved";
+    missing.splice(k, 1);
+  }
+
+  const tokens: DiffToken[] = [];
+  const insertAfter = (after: number) => {
+    for (const m of missing) if (m.after === after) tokens.push({ kind: "missing", text: m.text });
+  };
+  insertAfter(-1);
+  user.raw.forEach((token, t) => {
+    const mine: number[] = [];
+    user.owner.forEach((o, i) => {
+      if (o === t) mine.push(i);
+    });
+    if (!mine.length) {
+      tokens.push({ kind: "same", text: token }); // punctuation only
+      return;
+    }
+    const kinds = mine.map((i) => kind[i]);
+    if (kinds.every((k) => k === "same")) tokens.push({ kind: "same", text: token });
+    else if (kinds.every((k) => k === "extra")) tokens.push({ kind: "extra", text: token });
+    else if (kinds.every((k) => k === "moved")) tokens.push({ kind: "moved", text: token });
+    else {
+      // wrong, or partly right ("isn't" where the reference has "is"): show what belongs there
+      const fix = mine
+        .map((i) => (kind[i] === "wrong" ? expected[i] : kind[i] === "same" ? user.words[i] : ""))
+        .filter(Boolean)
+        .join(" ");
+      tokens.push({ kind: "wrong", text: token, expected: fix || undefined });
+    }
+    for (const i of mine) insertAfter(i);
+  });
+  return tokens;
+}
+
+/**
+ * The learner's answer word by word against the closest reference: the one with the best grade,
+ * then the most words in common. An exact answer comes back unmarked — it may be exact only by a
+ * rule the word lists do not show (a spacing-only difference, the literal pass).
+ */
+export function diffAgainstReferences(userRaw: string, references: string[]): AnswerDiff {
+  const grade = gradeAgainstReferences(userRaw, references);
+  const user = ownedWords(userRaw);
+  let best: { index: number; ref: OwnedWords; rank: number; share: number } | null = null;
+  references.forEach((reference, index) => {
+    if (!reference) return;
+    const ref = ownedWords(reference);
+    const rank = GRADE_RANK[gradeAnswer(userRaw, reference)];
+    const common = align(user.words, ref.words).length;
+    const share = common / Math.max(1, ref.words.length, user.words.length);
+    if (!best || rank > best.rank || (rank === best.rank && share > best.share)) best = { index, ref, rank, share };
+  });
+  const chosen = best as { index: number; ref: OwnedWords; rank: number; share: number } | null;
+  if (!chosen) return { grade, referenceIndex: -1, tokens: user.raw.map((text) => ({ kind: "extra" as const, text })) };
+  if (grade === "exact") return { grade, referenceIndex: chosen.index, tokens: user.raw.map((text) => ({ kind: "same" as const, text })) };
+  return { grade, referenceIndex: chosen.index, tokens: lineUp(user, chosen.ref) };
+}

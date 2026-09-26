@@ -371,11 +371,19 @@
         transcript: transcript ? norm(transcript.textContent) : null,
         scoreBadge: scoreBadge ? norm(scoreBadge.textContent) : null,
         error: err ? norm(err.textContent) : null,
+        // 2026-09-27 (GRM-U27, VoiceSpeakingTester 공용): the row is a WORD-RECOGNITION result, so its label became
+        // '알아들은 낱말:' and each word's title '인식됨 / 인식 안 됨' (it said '단어별 발음 일치도' · '정확히 일치한 발음' — a
+        // pronunciation judgement it never made). Both labels are read; the chips also carry data-matched now.
         wordChips: (() => {
-          const label = [...main().querySelectorAll("span")].find((s) => norm(s.textContent) === "단어별 발음 일치도:");
+          const label = [...main().querySelectorAll("span")].find((s) => /^(단어별 발음 일치도|알아들은 낱말):$/.test(norm(s.textContent)));
           if (!label) return [];
           const box = label.nextElementSibling;
-          return box ? [...box.querySelectorAll("span")].map((s) => ({ word: norm(s.textContent), matched: s.title === "정확히 일치한 발음" })) : [];
+          return box
+            ? [...box.querySelectorAll("span")].map((s) => ({
+                word: norm(s.textContent),
+                matched: s.dataset.matched ? s.dataset.matched === "true" : s.title === "정확히 일치한 발음" || s.title === "인식됨",
+              }))
+            : [];
         })(),
       };
     },

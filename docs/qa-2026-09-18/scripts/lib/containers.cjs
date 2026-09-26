@@ -56,18 +56,27 @@ const READERS = {
     return words;
   })()`,
 
-  /** GRAMMAR Step 1 Korean prompt of each item card (GrammarLearningView.tsx:796-799). */
+  /**
+   * GRAMMAR Step 1 Korean prompt of each item.
+   * 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-U11 · L08): the prompt is p[data-ko] inside the Step 1 panel
+   * (section[data-step-panel="1"]); the tinted box it used to sit in (div.bg-raised/50.p-3.5) is gone. Steps 1–3
+   * show ten items at a time, but every bundle stays in the DOM (hidden), and innerText of a hidden element is
+   * its text content — so this still reads EVERY item, not just the ten on screen.
+   */
   "grammar-ko": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    return texts([...main.querySelectorAll('div[class*="bg-raised/50"][class*="p-3.5"] > p')]);
+    return texts([...main.querySelectorAll('[data-step-panel="1"] [data-item] [data-ko]')]);
   })()`,
 
-  /** GRAMMAR Step 3 English sentence of each item card — the one place English is shown without a button (GrammarLearningView.tsx:1130-1132). */
+  /**
+   * GRAMMAR Step 3 English sentence of each item — the one place English is shown without a button.
+   * 2026-09-27: p[data-en] in the Step 3 panel (its hover colour, which this used to key on, left with the design rules).
+   */
   "grammar-en": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    return texts([...main.querySelectorAll('p[class*="group-hover:text-primary"]')]);
+    return texts([...main.querySelectorAll('[data-step-panel="3"] [data-item] [data-en]')]);
   })()`,
 
   /** STUDENT STEP 1 sentence cards, English and Korean, with the blind filter on "전체 보기" (StudentLearningView.tsx:651-766). */
