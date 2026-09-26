@@ -70,7 +70,8 @@ const get = async (url, headers = {}) => {
 
   // what a buyer sees on a locked lesson
   const paid = await get("/reading/pr100");
-  const paywall = paid.text.match(/[^<>]{0,80}(ALL-PASS ONLY|VIP ALL-PASS REQUIRED|STUDENT PASS ONLY)[^<>]{0,200}/);
+  // (+ PASS-OFF GRAMMAR's "STUDENT PASS · ALL-PASS", 2026-09-27 — the markers of LessonPaywall.tsx, all four)
+  const paywall = paid.text.match(/[^<>]{0,80}(ALL-PASS ONLY|VIP ALL-PASS REQUIRED|STUDENT PASS ONLY|STUDENT PASS · ALL-PASS)[^<>]{0,200}/);
   out.paywall = {
     markerContext: paywall ? paywall[0].replace(/\s+/g, " ").trim() : null,
     purchaseLinkPresent: /href="https?:\/\/(?!k-ig-core)[^"]+"[^>]*>\s*[^<]*구매/i.test(paid.text),

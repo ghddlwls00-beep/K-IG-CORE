@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/buildPassoffIndex.mjs && node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs && node scripts/checkPassoffFreeLeak.mjs && node scripts/buildSearchIndex.mjs",
+    "predev": "node scripts/buildPassoffIndex.mjs --index-only && node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs && node scripts/checkPassoffFreeLeak.mjs && node scripts/buildSearchIndex.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/buildPassoffIndex.mjs && node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs && node scripts/checkPassoffFreeLeak.mjs && node scripts/buildSearchIndex.mjs",
+    "prebuild": "node scripts/buildPassoffIndex.mjs --index-only && node scripts/buildValidRoutes.mjs && node scripts/buildFreeSpeechKeys.mjs && node scripts/checkPassoffFreeLeak.mjs && node scripts/buildSearchIndex.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

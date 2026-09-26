@@ -59,10 +59,19 @@ function collectStrings(v, out) {
     for (const [k, x] of Object.entries(v)) if (!/^(id|type|audio|src|image|href|slug|course)$/i.test(k)) collectStrings(x, out);
 }
 
-let cache = null;
-/** Needles of every paid lesson, grouped by lesson, with the free strings removed. */
-export function paidNeedles() {
-  if (cache) return cache;
+const cache = new Map();
+/**
+ * Needles of every paid lesson, grouped by lesson, with the free strings removed.
+ *
+ * `publicExcept` names courses whose FREE lessons are NOT counted as public here. It is for a check
+ * that looks INSIDE those free lessons (scripts/checkPassoffFreeLeak.mjs): counted as public, a paid
+ * sentence copied into one of them would stop being a needle, and the check could never see it.
+ * Without it (the search index), every free lesson is public, as the probe has it.
+ */
+export function paidNeedles({ publicExcept = [] } = {}) {
+  const except = new Set(publicExcept);
+  const cacheKey = [...except].sort().join(",");
+  if (cache.has(cacheKey)) return cache.get(cacheKey);
   const { isFreePreviewLesson } = loadTsModule("src/lib/license.ts");
   const routes = JSON.parse(fs.readFileSync(path.join(ROOT, "src/lib/generated/validRoutes.json"), "utf8"));
   const scripts = JSON.parse(fs.readFileSync(path.join(ROOT, "content/ld_english_scripts.json"), "utf8"));
@@ -82,7 +91,10 @@ export function paidNeedles() {
     return needles;
   };
   const publicStrings = new Set();
-  for (const c of COURSES) for (const id of routes.lessons[c] || []) if (isFreePreviewLesson(c, id)) for (const n of lessonNeedles(c, id)) publicStrings.add(n.f.toLowerCase());
+  for (const c of COURSES) {
+    if (except.has(c)) continue;
+    for (const id of routes.lessons[c] || []) if (isFreePreviewLesson(c, id)) for (const n of lessonNeedles(c, id)) publicStrings.add(n.f.toLowerCase());
+  }
   /**
    * The course index (content/courses/<course>.json) is what the public course pages list to
    * anyone: each lesson's title, label and menu name. Those strings are public by design,
@@ -122,8 +134,8 @@ export function paidNeedles() {
       .filter((n) => n.f.length >= MIN && !publicStrings.has(n.f) && !listedText.includes(n.f) && !seen.has(n.f) && seen.add(n.f));
     byLesson.push({ course: "passoff-grammar", id: `${f.replace(/\.paid\.json$/, "")} (held back)`, needles });
   }
-  cache = byLesson;
-  return cache;
+  cache.set(cacheKey, byLesson);
+  return byLesson;
 }
 
 /**

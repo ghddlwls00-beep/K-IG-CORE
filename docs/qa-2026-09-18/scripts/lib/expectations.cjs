@@ -29,6 +29,11 @@ const vocaDictionary = (() => {
 // 7단계 7-2: '앱이 소리 내는 글' 은 생성기 · 무료 소리 키와 같은 한 정의(scripts/lib/spoken-texts.cjs) — clipTexts 는 그것으로
 const spoken = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
 const lessonAudio = loadTs(path.join(REPO, "src/lib/lessonAudioText.ts"));
+// PASS-OFF GRAMMAR (점검 2026-09-27): a free preview lesson's paid STUDENT items are in content/private and a licence
+// hears them — the clip list puts them back (spoken-texts.cjs withHeldBack), as the generator does
+const passoffSupplement = (() => {
+  try { return loadTs(path.join(REPO, "src/lib/passoffSupplement.ts")); } catch { return null; }
+})();
 const validRoutes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 const ldScripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
 const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
@@ -321,7 +326,12 @@ function expected(course, id) {
    */
   // (spokenTexts throws when one of these src modules did not load — an empty clip list would pass every check)
   const fns = { vocaSpeechForm: vocaSpeech && vocaSpeech.vocaSpeechForm, getCollocation: vocaUtils && vocaUtils.getCollocation, generateLiaisonPoints: listening && listening.generateLiaisonPoints, extractSentencesForAudio: lessonAudio.extractSentencesForAudio, firstSlashAlternative: listening && listening.firstSlashAlternative, vocaWordSpeech: vocaSpeech && vocaSpeech.vocaWordSpeech, readingWordSpeech: vocaSpeech && vocaSpeech.readingWordSpeech, lessonSpeechForm: lessonSpeechMod && lessonSpeechMod.lessonSpeechForm };
-  for (const t of spoken.spokenTexts({ course, id, lesson: d, pair: pairId ? { id: pairId, ...(pair || {}) } : null, ldScripts, dictionary: vocaDictionary || {}, fns })) addClip(t);
+  // (withHeldBack throws when a lesson holds paid items back and attachPaidItems did not load — the clip list would miss them.
+  //  A checkout from before PASS-OFF GRAMMAR has neither the helper nor a held-back file, so its lessons go as they are.)
+  const spokenLesson = typeof spoken.withHeldBack === "function"
+    ? spoken.withHeldBack(d, spoken.heldBackOf(REPO, course, id), passoffSupplement && passoffSupplement.attachPaidItems)
+    : d;
+  for (const t of spoken.spokenTexts({ course, id, lesson: spokenLesson, pair: pairId ? { id: pairId, ...(pair || {}) } : null, ldScripts, dictionary: vocaDictionary || {}, fns })) addClip(t);
   /**
    * The exact words the tap-dictation expects, taken from the app's own generateWordBank rather
    * than derived by splitting the sentence. A sentence with a slash alternative —

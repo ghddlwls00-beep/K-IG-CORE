@@ -10,7 +10,9 @@
  *
  * 어떤 쪽을 보나: 바뀐(또는 새) 강의 파일의 쪽 + 그 쪽을 짝으로 쓰는 쪽(src/lib/content.ts 의 짝 규칙 — pairIdOf).
  *   대본(content/ld_english_scripts.json)의 줄이 바뀐 LISTENING 강의, 사전(content/voca_dictionary.json)이 바뀌면 VOCA 전부,
- *   과정 목록(content/courses/<과정>.json)이 바뀌면 그 과정 전부.
+ *   과정 목록(content/courses/<과정>.json)이 바뀌면 그 과정 전부. PASS-OFF GRAMMAR 무료 체험이 떼어 둔 유료 문항
+ *   (content/private/passoff-grammar/<쪽>.paid.json)이 바뀌면 그 쪽 — 두 판 모두 그 문항을 붙여서 센다(spoken-texts.cjs withHeldBack,
+ *   이용권이 듣는 글이라서 · 점검 2026-09-27).
  * 글 → 클립 키는 생성기와 같은 것: unifiedSpeechKey(normalizeUnifiedSpeechText(vocaSpeechForm(글))), 소리 낼 글자가 있는 것만.
  * src 함수(extractSentencesForAudio 등)는 지금 판을 쓴다 — 함수만 바뀌어 새로 소리 내는 글은 이 도구가 아니라 audio-inventory ·
  *   check-completeness 가 (모든 쪽을) 본다.
@@ -30,7 +32,10 @@ const fs = require("fs");
 const path = require("path");
 const { execFileSync, spawnSync } = require("child_process");
 const { loadTs, REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs");
-const { SPOKEN_COURSES, spokenTexts, pairIdOf } = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
+const { SPOKEN_COURSES, spokenTexts, pairIdOf, withHeldBack, HELD_BACK_COURSES = [] } = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
+// 떼어 둔 유료 문항을 붙이는 함수 — 그 도우미가 없는 판(PASS-OFF 전)에는 떼어 둔 파일도 없으므로 레슨 그대로
+const attachPaidItems = fs.existsSync(path.join(REPO, "src/lib/passoffSupplement.ts")) ? loadTs(path.join(REPO, "src/lib/passoffSupplement.ts")).attachPaidItems : null;
+const heldRel = (course, id) => `content/private/${course}/${id}.paid.json`;
 const { r2ClipKeys, LOCAL_ONLY_WARNING } = require("./lib/r2-keys.cjs");
 const { unifiedSpeechKey, normalizeUnifiedSpeechText } = loadTs(path.join(REPO, "src/lib/unifiedSpeech.ts"));
 const fns = {
@@ -132,6 +137,9 @@ for (const course of SPOKEN_COURSES) {
   if (touched(idxRel) || (course === "phonics" && touched(DICT_REL))) for (const id of everyId()) affected.add(id);
   for (const rel of [...changed, ...untracked, ...NOW_OVERRIDE.keys()]) {
     if (rel.startsWith(prefix) && rel.endsWith(".json") && !rel.slice(prefix.length).includes("/")) affected.add(rel.slice(prefix.length, -".json".length));
+    // PASS-OFF GRAMMAR: a changed held-back file is its lesson's change
+    const held = `content/private/${course}/`;
+    if (HELD_BACK_COURSES.includes(course) && rel.startsWith(held) && rel.endsWith(".paid.json")) affected.add(rel.slice(held.length, -".paid.json".length));
   }
   if (course === "ld" && touched(LD_REL)) {
     for (const base of new Set([...Object.keys(ldNow), ...Object.keys(ldHead)])) {
@@ -144,15 +152,17 @@ for (const course of SPOKEN_COURSES) {
 
   let pages = 0;
   const routed = new Set(((readNow("src/lib/generated/validRoutes.json") || {}).lessons || {})[course] || []);
+  // 이용권이 받는 레슨 — 떼어 둔 유료 문항을 붙인 것(그 판의 보충 파일로)
+  const held = (lesson, supplement) => (lesson && typeof withHeldBack === "function" && HELD_BACK_COURSES.includes(course) ? withHeldBack(lesson, supplement, attachPaidItems) : lesson);
   for (const id of [...affected].sort()) {
-    const now = readNow(lessonRel(id));
+    const now = held(readNow(lessonRel(id)), readNow(heldRel(course, id)));
     if (!now) continue; // 지워진 쪽 — 소리 낼 것이 없다
     if (!routed.has(id)) continue; // 주소가 없는 파일(ld/LD_001 — 쪽이 404) — 소리 낼 곳이 없다(생성기와 같음)
     pages++;
     const pidNow = pairIdOf(course, id, indexNow);
     const pairNow = pidNow ? { id: pidNow, ...(readNow(lessonRel(pidNow)) || {}) } : null;
     const nowKeys = keysOf(spokenTexts({ course, id, lesson: now, pair: pairNow, ldScripts: ldNow, dictionary: dictNow, fns }));
-    const head = readHead(lessonRel(id));
+    const head = held(readHead(lessonRel(id)), readHead(heldRel(course, id)));
     let headKeys = new Map();
     if (head) {
       const pidHead = pairIdOf(course, id, indexHead);

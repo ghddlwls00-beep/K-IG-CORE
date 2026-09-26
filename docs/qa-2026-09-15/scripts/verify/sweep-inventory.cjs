@@ -34,7 +34,9 @@ const BASE = (process.argv[2] || "http://localhost:3210").replace(/\/+$/, "");
 const LOCKED_MODE = process.argv.includes("--locked");
 const WORKERS = Number(process.env.QA_WORKERS || (LOCKED_MODE ? 6 : 3));
 const OUT_DIR = path.join(REPO, "docs/qa-2026-09-15/scripts/out");
-const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED"];
+// + PASS-OFF GRAMMAR's "STUDENT PASS · ALL-PASS" (2026-09-27 — either pass opens it). The snapshot also takes the licence
+// paywall's attribute data-kig-paywall, which does not change with the copy.
+const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED", "STUDENT PASS · ALL-PASS"];
 
 const validRoutes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 const { isFreePreviewLesson } = loadTs(path.join(REPO, "src/lib/license.ts"));
@@ -85,7 +87,7 @@ const SNAPSHOT = `(() => {
     tabs: document.querySelectorAll('[role=tab]').length,
     dropdowns: document.querySelectorAll('select, details, [aria-haspopup]').length,
     robots: document.querySelector('meta[name=robots]')?.getAttribute('content') || null,
-    paywall: ${JSON.stringify(PAYWALL_MARKERS)}.some((m) => text.includes(m)),
+    paywall: ${JSON.stringify(PAYWALL_MARKERS)}.some((m) => text.includes(m)) || !!document.querySelector('[data-kig-paywall]'),
     notFound: /404|찾을 수 없/.test(text),
   };
 })()`;

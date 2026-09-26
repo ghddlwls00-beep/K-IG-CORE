@@ -9,7 +9,8 @@
  *    stay. LISTENING's Kim (d011 · d012 · d025 · d026) is an American and stays — which is why this is a
  *    table per page and never a global word swap. The pages cover every sentence the app speaks that
  *    holds such a word: 56 of the 15,334 spoken texts (STUDENT 39 · GRAMMAR II 11 · READING 6), found by
- *    the '학습 내용 재검토1' session (docs/qa-2026-09-18/내용-재검토/한국어-발음/결과.md).
+ *    the '학습 내용 재검토1' session (docs/qa-2026-09-18/내용-재검토/한국어-발음/결과.md) — and PASS-OFF GRAMMAR's
+ *    own (2026-09-27, the rows at the end of the table).
  *    HOW it is said changed once. The first fix (397f1e8) handed speech the Hangul, and the generator
  *    wrapped it in <lang xml:lang="ko-KR"> inside the English voice — the voice switched language for one
  *    word, with a pause before it, and the owner heard it as a mess ("경주 제대로 수정 안됬네 엉망인데",
@@ -132,6 +133,15 @@ const KOREAN_WORD_PAGES: Record<string, string[]> = {
   "reading/pr154-1": ["hanji"],
   "reading/pr202": ["Hanseong Sunbo", "Hanseong Jubo"],
   "reading/pr202-1": ["Hanseong Sunbo", "Hanseong Jubo"],
+  // PASS-OFF GRAMMAR (2026-09-27) — each lesson file lists its words as `koreanWords` (docs/pass-off-grammar/데이터-형식.md
+  // 음성); only the lessons whose spoken `en` holds one are here. pg01-1's a3 is STUDENT s1-2's own sentence, so it gets
+  // STUDENT's clip. Daehan (pg01-3 · pg05-2) is a word no page says yet: it gets a row once the owner has heard a sample,
+  // and its two sentences get no clip before that (the voice stage holds them — docs/pass-off-grammar/작업기록.md).
+  "passoff-grammar/pg01-1": ["Hong Gil Dong", "Seoul"],
+  "passoff-grammar/pg03-3": ["Dangun"],
+  "passoff-grammar/pg05-1": ["Seoul"],
+  "passoff-grammar/pg06-1": ["Chuseok", "Songnisan"],
+  "passoff-grammar/pg08-2": ["songpyeon"],
 };
 
 /** The written word with its IPA tag — one tag per written word of a phrase ("Yi ⟨ˈi⟩ Sun-sin ⟨ˈsunˌʃin⟩"). */

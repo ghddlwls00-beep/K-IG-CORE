@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Block } from "@/lib/types";
 import type { PassoffAnchor } from "@/lib/passoffTypes";
 import { speakText, stopSpeech } from "@/lib/speech";
@@ -14,9 +14,14 @@ import { useLicense } from "./LicenseProvider";
  * two seconds later, then the English and its sound. Steps ②~⑤ (rule · form · composition ·
  * wrap-up) come with stage B, in this same component, so every lesson keeps one view.
  *
+ * The sentences are recalled one at a time, in order: the first one whose English is still hidden
+ * is the one to recall, and its "영어 보기" wakes two seconds after it becomes that one — so every
+ * sentence gets its moment to be recalled, not only the first (a single timer for the page opened
+ * them all at once). Opening one moves the focus to its English, where the button was.
+ *
  * It receives ONE lesson's blocks as props, after the server gate (ISS-00 — never import lesson
- * JSON here). On a free preview lesson the server leaves out the paid STUDENT sentences and passes
- * how many there are (`lockedExtraCount`, src/lib/passoffContent.ts).
+ * JSON here), and only the blocks it draws (src/lib/passoffContent.ts). On a free preview lesson the
+ * server leaves out the paid STUDENT sentences and passes how many there are (`lockedExtraCount`).
  *
  * Design rules (docs/디자인-규칙.md, 설계 §15): tokens only, line icons, 44px targets, the six type
  * sizes. The shared step tabs and end bar replace the local header once the common frame lands.
@@ -32,15 +37,32 @@ export function PassoffGrammarLearningView({
 }) {
   const anchors: PassoffAnchor[] = blocks.flatMap((b) => (b.type === "anchors" ? b.items : []));
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
-  const [ready, setReady] = useState(false);
+  const [readyId, setReadyId] = useState<string | null>(null);
+  const [openedId, setOpenedId] = useState<string | null>(null);
   const [speakingId, setSpeakingId] = useState<string | null>(null);
+  const englishRefs = useRef<Record<string, HTMLParagraphElement | null>>({});
   const { openModal } = useLicense();
 
-  // "영어 보기" wakes after two seconds, so the learner tries to recall first (설계 §3 ①).
+  // the sentence to recall now — the first one whose English is still hidden
+  const currentId = anchors.find((anchor) => !revealed[anchor.id])?.id ?? null;
+
+  // its "영어 보기" wakes two seconds after it becomes the one to recall, so the learner tries first (설계 §3 ①)
   useEffect(() => {
-    const timer = window.setTimeout(() => setReady(true), 2000);
+    if (!currentId) return;
+    const timer = window.setTimeout(() => setReadyId(currentId), 2000);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [currentId]);
+
+  // the button that was pressed is gone — keyboard and screen-reader focus goes to the English it opened
+  useEffect(() => {
+    if (openedId) englishRefs.current[openedId]?.focus();
+  }, [openedId]);
+
+  function reveal(anchor: PassoffAnchor) {
+    if (anchor.id !== currentId || readyId !== anchor.id) return;
+    setRevealed((prev) => ({ ...prev, [anchor.id]: true }));
+    setOpenedId(anchor.id);
+  }
 
   useEffect(() => {
     return () => {
@@ -82,6 +104,8 @@ export function PassoffGrammarLearningView({
           {anchors.map((anchor, index) => {
             const shown = Boolean(revealed[anchor.id]);
             const speaking = speakingId === anchor.id;
+            // aria-disabled, not disabled: a button waiting its turn stays in the tab order
+            const waiting = anchor.id !== currentId || readyId !== anchor.id;
             return (
               <li key={anchor.id} className="rounded-2xl border border-line bg-surface p-4">
                 <div className="flex gap-3">
@@ -92,7 +116,14 @@ export function PassoffGrammarLearningView({
                     <p className="text-[16px] leading-relaxed text-ink">{anchor.ko}</p>
                     {shown ? (
                       <div className="flex items-start justify-between gap-3">
-                        <p lang="en" className="text-[16px] font-semibold leading-relaxed text-ink">
+                        <p
+                          lang="en"
+                          tabIndex={-1}
+                          ref={(node) => {
+                            englishRefs.current[anchor.id] = node;
+                          }}
+                          className="text-[16px] font-semibold leading-relaxed text-ink"
+                        >
                           {anchor.en}
                         </p>
                         <button
@@ -107,9 +138,9 @@ export function PassoffGrammarLearningView({
                     ) : (
                       <button
                         type="button"
-                        disabled={!ready}
-                        onClick={() => setRevealed((prev) => ({ ...prev, [anchor.id]: true }))}
-                        className="min-h-11 self-start rounded-xl bg-ink px-4 text-[14px] font-semibold text-surface disabled:opacity-40"
+                        aria-disabled={waiting}
+                        onClick={() => reveal(anchor)}
+                        className="min-h-11 self-start rounded-xl bg-ink px-4 text-[14px] font-semibold text-surface aria-disabled:opacity-40"
                       >
                         영어 보기
                       </button>

@@ -59,8 +59,22 @@ const MIN_BODY = 150;
  * is the structural check (derived from the repository, so it survives a copy
  * change); this one is the belt to its braces, and it is what catches a
  * paywall appearing on a URL that is not a lesson at all.
+ *
+ * PASS-OFF GRAMMAR (2026-09-27) added a fourth: either pass opens it, so its
+ * paywall says "STUDENT PASS · ALL-PASS". The licence paywall also carries
+ * `data-kig-paywall="license"` (the marker LicenseProvider reloads on), which
+ * does not change with the copy, so a page is the paywall when either shows.
+ *   --break=plant-locked  일부러 깨기: 잠긴 PASS-OFF 레슨 하나를 축 A 가 보는 목록에만 더함 → A 가 그 잠금으로 FAIL 이어야
+ *   --break=old-markers   일부러 깨기: 옛 세 문구만, 속성 없이 — plant-locked 와 같이 주면 A 가 그 잠금을 못 보고 PASS 한다
+ *                         (고치기 전 이 도구가 그랬다는 증명)
  */
-const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED"];
+const OLD_MARKERS_ONLY = process.argv.includes("--break=old-markers");
+const PLANT_LOCKED = process.argv.includes("--break=plant-locked");
+const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED", ...(OLD_MARKERS_ONLY ? [] : ["STUDENT PASS · ALL-PASS"])];
+const PAYWALL_ATTRIBUTE = 'data-kig-paywall="license"';
+/** the paywall copy on the page, or its attribute, or null */
+const paywallOf = (html, text) =>
+  PAYWALL_MARKERS.find((m) => text.includes(m)) || (!OLD_MARKERS_ONLY && html.includes(PAYWALL_ATTRIBUTE) ? PAYWALL_ATTRIBUTE : null);
 
 const validRoutes = JSON.parse(
   fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"),
@@ -161,23 +175,30 @@ async function get(url) {
     console.log(`repo implies: 1 home + ${LISTED_COURSES.length} courses + ${LISTED_TABS.length} tabs + ${FREE.length} free lessons = ${EXPECTED_COUNT} (discontinued, unlisted: ${[...DISCONTINUED_COURSES].join(", ")})\n`);
 
     // A — every URL is served with a body.
+    const aUrls = [...urls];
+    if (PLANT_LOCKED) {
+      const locked = LOCKED.find((l) => l.course === "passoff-grammar");
+      if (!locked) throw new Error("--break=plant-locked: no locked PASS-OFF GRAMMAR lesson to plant");
+      aUrls.push(`${BASE}/${locked.course}/${locked.lesson}`);
+      console.log(`[일부러 깸] 축 A 목록에만 잠긴 레슨 /${locked.course}/${locked.lesson}${OLD_MARKERS_ONLY ? " · 옛 세 문구만(속성 없이)" : ""}\n`);
+    }
     const results = [];
     let cursor = 0;
     await Promise.all(
       Array.from({ length: 8 }, async () => {
-        while (cursor < urls.length) {
+        while (cursor < aUrls.length) {
           const i = cursor++;
           try {
-            const { status, html } = await get(urls[i]);
+            const { status, html } = await get(aUrls[i]);
             const text = renderedText(html);
             results[i] = {
-              url: urls[i],
+              url: aUrls[i],
               status,
               len: text.length,
-              paywall: PAYWALL_MARKERS.find((m) => text.includes(m)) || null,
+              paywall: paywallOf(html, text),
             };
           } catch (err) {
-            results[i] = { url: urls[i], status: 0, len: 0, paywall: null, err: err.message };
+            results[i] = { url: aUrls[i], status: 0, len: 0, paywall: null, err: err.message };
           }
         }
       }),

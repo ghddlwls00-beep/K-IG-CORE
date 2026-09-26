@@ -21,8 +21,20 @@
  * one (2026-09-23 after 950417d: STUDENT inJson 145 · 79 lessons, every one a list title, real leaks 0).
  * They are left out like the home HTML and counted apart (skippedOnList). Only title-type fields are
  * excused: lesson BODY text that showed up on a list page would still count as a leak.
+ *
+ * 점검 2026-09-27(PASS-OFF GRAMMAR 단계 A): a paid needle whose letters are ALSO app code that was there before the lesson —
+ * the JS carries the code, not the lesson. pg06-3 (기수·서수) lists "one, two, three, … ten", and LISTENING's hint-chip code
+ * (src/components/LdLearningView.tsx NUMBER_WORDS, since 2026-09-25) holds the same words in the same order, so the chunk that
+ * ships the LISTENING view matched four pg06-3 lines. Such a needle is counted apart (inAppCode, with the file and line as
+ * evidence) — neither clean nor a leak — only when ALL of these hold (see appCodeEvidence):
+ *   - it is a JS hit (a JSON file is data, never code);
+ *   - its letters are in a src/ .ts/.tsx file (not src/lib/generated) AS IT WAS at APP_CODE_REV, the commit before PASS-OFF
+ *     GRAMMAR was registered — read from git, so no code written after the lessons can excuse a line;
+ *   - its lesson (or held-back) file did not exist at APP_CODE_REV, so that code cannot be a copy of it.
  *   node probe-bundle-leak-all.cjs
- *   node probe-bundle-leak-all.cjs --break=index   일부러 깨기: 유료 강의 본문 한 문장을 /search-index.json 사본(메모리)에 넣음 → inJson 1 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=index      일부러 깨기: 유료 강의 본문 한 문장을 /search-index.json 사본(메모리)에 넣음 → inJson 1 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=js         일부러 깨기: 유료 PASS-OFF 레슨 문장 하나를 JS 사본(메모리)에 넣음 → 앱 코드 예외가 있어도 inJs 1 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=app-code   일부러 깨기: 앱 코드 예외를 끔 → 그 바늘들이 다시 유출로 셈 · exit 1
  */
 const fs = require("fs");
 const path = require("path");
@@ -89,6 +101,61 @@ function heldNeedles(course) {
     const needles = strings.filter((s) => typeof s === "string").map((s) => ({ kind: "held-back", raw: s, f: flat(s), meta: false })).filter((n) => n.f.length >= 20);
     return { id: `${f.replace(/\.paid\.json$/, "")} (held back)`, needles };
   });
+}
+
+// ── app code before the lessons (see the header) — read from git once, only when a JS hit asks
+const APP_CODE_REV = "4bc17f3^"; // 4bc17f3 = "PASS-OFF GRAMMAR 코드 단계 A: 과정 등록 …"
+let appCode = null; // [{ file, flat, lineAt }]
+const existedAtRev = new Map(); // "course/id" → boolean
+function gitBatch(specs) {
+  const { spawnSync } = require("child_process");
+  const res = spawnSync("git", ["cat-file", "--batch"], { cwd: REPO, input: specs.join("\n") + "\n", maxBuffer: 1 << 30 });
+  if (res.status !== 0) throw new Error(`git cat-file 실패 — 앱 코드 예외를 판정할 수 없음: ${String(res.stderr)}`);
+  const out = new Map();
+  let at = 0;
+  for (const spec of specs) {
+    const nl = res.stdout.indexOf(0x0a, at);
+    const header = res.stdout.slice(at, nl).toString("utf8");
+    at = nl + 1;
+    const m = header.match(/^\S+ blob (\d+)$/);
+    if (!m) { out.set(spec, null); continue; }
+    out.set(spec, res.stdout.slice(at, at + Number(m[1])).toString("utf8"));
+    at += Number(m[1]) + 1;
+  }
+  return out;
+}
+function loadAppCode() {
+  if (appCode) return appCode;
+  const { execFileSync } = require("child_process");
+  const files = execFileSync("git", ["-c", "core.quotepath=false", "ls-tree", "-r", "--name-only", APP_CODE_REV, "--", "src"], { cwd: REPO, encoding: "utf8" })
+    .split(/\r?\n/).filter((f) => /\.(ts|tsx)$/.test(f) && !f.startsWith("src/lib/generated/"));
+  if (files.length < 50) throw new Error(`${APP_CODE_REV} 의 src 파일이 ${files.length}개 — 앱 코드를 못 읽음`);
+  const texts = gitBatch(files.map((f) => `${APP_CODE_REV}:${f}`));
+  appCode = files.map((file) => {
+    let flatText = "";
+    const lineAt = [];
+    String(texts.get(`${APP_CODE_REV}:${file}`) || "").split(/\r?\n/).forEach((line, i) => {
+      const f = flat(line);
+      flatText += f;
+      for (let k = 0; k < f.length; k++) lineAt.push(i + 1);
+    });
+    return { file, flat: flatText, lineAt };
+  });
+  return appCode;
+}
+/** "file:line" of app code at APP_CODE_REV holding the needle's letters — or null (see the header for the three conditions) */
+function appCodeEvidence(course, id, n) {
+  const key = `${course}/${id}`;
+  if (!existedAtRev.has(key)) {
+    const rel = / \(held back\)$/.test(id) ? `content/private/${course}/${id.replace(/ \(held back\)$/, "")}.paid.json` : `content/lessons/${course}/${id}.json`;
+    existedAtRev.set(key, gitBatch([`${APP_CODE_REV}:${rel}`]).get(`${APP_CODE_REV}:${rel}`) !== null);
+  }
+  if (existedAtRev.get(key)) return null; // the lesson was there first — the code could be a copy of it
+  for (const c of loadAppCode()) {
+    const at = c.flat.indexOf(n.f);
+    if (at >= 0) return `${c.file}:${c.lineAt[at]} (${APP_CODE_REV})`;
+  }
+  return null;
 }
 
 async function get(url, headers = {}) {
@@ -160,7 +227,9 @@ async function crawl() {
 }
 
 (async () => {
-  const { pages, chunkList, badChunks, js, jsBytes, jsonBodies, homeFlat, listFlat } = await crawl();
+  const crawled = await crawl();
+  const { pages, chunkList, badChunks, jsBytes, jsonBodies, homeFlat, listFlat } = crawled;
+  let js = crawled.js;
 
   // free strings (not a leak if they also exist in free lessons or home HTML)
   const freeFlat = new Set();
@@ -175,11 +244,21 @@ async function crawl() {
       for (const n of lessonNeedles(c, id)) if (!n.meta && /^[A-Z][^()]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f)) { planted = { course: c, id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
     }
     console.log(`[일부러 깸] /search-index.json 사본에 유료 본문 한 문장: ${JSON.stringify(planted)}`);
+  } else if (BREAK === "js") {
+    // one paid PASS-OFF GRAMMAR lesson sentence into an in-memory copy of the JS — the app-code exception must not hide it
+    outer: for (const id of vr.lessons["passoff-grammar"] || []) {
+      if (isFree("passoff-grammar", id)) continue;
+      for (const n of lessonNeedles("passoff-grammar", id)) if (!n.meta && /^[A-Z][^()]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !js.includes(n.f)) { planted = { course: "passoff-grammar", id, text: n.raw.slice(0, 80) }; js += "\n" + n.f; break outer; }
+    }
+    if (!planted) throw new Error("--break=js: 심을 유료 PASS-OFF 문장이 없음 — 이 깨기는 아무것도 증명하지 못함");
+    console.log(`[일부러 깸] JS 사본에 유료 PASS-OFF 레슨 한 문장: ${JSON.stringify(planted)}`);
+  } else if (BREAK === "app-code") {
+    console.log("[일부러 깸] 앱 코드 예외를 끔 — 앱 코드와 글자가 같은 바늘도 유출로 셈");
   } else if (BREAK) throw new Error(`모르는 --break=${BREAK}`);
 
   const result = { at: new Date().toISOString(), base: BASE, pages, chunks: chunkList.length, jsKB: Math.round(jsBytes / 1024), badChunks, json: jsonBodies.map((j) => ({ url: j.url, status: j.status, kb: Math.round(j.bytes / 1024) })), courses: {} };
   for (const c of COURSES) {
-    const stat = { paidLessons: 0, needles: 0, skippedAlsoFree: 0, skippedOnList: 0, inJs: 0, inJson: 0, lessonsWithLeak: 0, examples: [] };
+    const stat = { paidLessons: 0, needles: 0, skippedAlsoFree: 0, skippedOnList: 0, inJs: 0, inJson: 0, inAppCode: 0, lessonsWithLeak: 0, examples: [], appCodeExamples: [] };
     const paidSets = (vr.lessons[c] || []).filter((id) => !isFree(c, id)).map((id) => ({ id, needles: lessonNeedles(c, id) }));
     for (const { id, needles } of [...paidSets, ...heldNeedles(c)]) {
       stat.paidLessons++;
@@ -193,6 +272,13 @@ async function crawl() {
         stat.needles++;
         const inJs = js.includes(n.f);
         const inJson = jsonBodies.filter((j) => j.flat.includes(n.f)).map((j) => j.url);
+        // app code that was there before the lesson (header) — JS only, counted apart with its file:line
+        const evidence = inJs && !inJson.length && BREAK !== "app-code" ? appCodeEvidence(c, id, n) : null;
+        if (evidence) {
+          stat.inAppCode++;
+          if (stat.appCodeExamples.length < 15) stat.appCodeExamples.push({ id, text: n.raw.slice(0, 80), code: evidence });
+          continue;
+        }
         if (inJs) stat.inJs++;
         if (inJson.length) stat.inJson++;
         if (inJs || inJson.length) {
@@ -203,14 +289,16 @@ async function crawl() {
       if (leaked) stat.lessonsWithLeak++;
     }
     result.courses[c] = stat;
-    console.log(c, JSON.stringify({ ...stat, examples: stat.examples.slice(0, 3) }));
+    console.log(c, JSON.stringify({ ...stat, examples: stat.examples.slice(0, 3), appCodeExamples: stat.appCodeExamples.slice(0, 4) }));
   }
   fs.mkdirSync(OUT, { recursive: true });
   if (!BREAK) fs.writeFileSync(path.join(OUT, "bundle-leak-all.json"), JSON.stringify(result, null, 1));
   console.log(`bad chunks: ${result.badChunks.length}; json: ${JSON.stringify(result.json)}`);
   const leaks = Object.values(result.courses).reduce((s, x) => s + x.inJs + x.inJson, 0);
   const onList = Object.values(result.courses).reduce((s, x) => s + x.skippedOnList, 0);
-  console.log(`유출 ${leaks} (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 ${onList}${BREAK ? ` [일부러 깸: ${BREAK}]` : ""}`);
+  const inAppCode = Object.values(result.courses).reduce((s, x) => s + x.inAppCode, 0);
+  console.log(`유출 ${leaks} (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 ${onList} · 레슨보다 먼저 있던 앱 코드와 글자가 같아 따로 센 것 ${inAppCode}${BREAK ? ` [일부러 깸: ${BREAK}]` : ""}`);
+  for (const [c, x] of Object.entries(result.courses)) for (const e of x.appCodeExamples) console.log(`  (앱 코드) ${c}/${e.id} "${e.text}" ← ${e.code}`);
   if (result.badChunks.length) console.log(`!!! 받지 못한 청크 ${result.badChunks.length} — 이 판정은 그 청크를 못 본 것 · exit 1`);
   process.exit(leaks || result.badChunks.length ? 1 : 0);
 })();

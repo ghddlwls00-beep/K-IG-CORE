@@ -14,7 +14,7 @@ const OUTPUT_FORMAT = "audio-24khz-48kbitrate-mono-mp3";
 // 7단계 7-2: 무엇을 소리 내는지는 scripts/lib/spoken-texts.cjs 한 곳에서 — 무료 소리 키 · 감사 도구와 같은 정의.
 // 전에는 여기서 강의 JSON 의 text · en · ko · english · korean · word · lemma · phrase · meaning · searchWord 를 모두 모아,
 // 앱이 부르지 않는 READING · GRAMMAR 한국어와 VOCA 뜻의 클립까지 만들었다(6단계 끝 pending 1,610 중 약 893).
-const { SPOKEN_COURSES, spokenTexts, pairIdOf } = createRequire(import.meta.url)(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
+const { SPOKEN_COURSES, spokenTexts, pairIdOf, heldBackOf, withHeldBack } = createRequire(import.meta.url)(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
 
 /**
  * 7단계 7-2: .env.local 을 scripts/upload-azure-ava-r2.mjs 의 loadEnvLocal 과 같게 읽는다 — 진짜 환경변수가 이기고, 값은 찍지 않는다.
@@ -189,6 +189,10 @@ function collectTexts() {
   for (const [name, fn] of Object.entries(fns)) {
     if (typeof fn !== "function") throw new Error(`${name} did not load — the clip list would be wrong`);
   }
+  // PASS-OFF GRAMMAR: a free preview lesson's paid STUDENT items live in content/private — a licence hears them,
+  // so they are put back before asking what the page speaks (spoken-texts.cjs withHeldBack)
+  const attachPaidItems = loadTsModule("src/lib/passoffSupplement.ts")?.attachPaidItems;
+  if (typeof attachPaidItems !== "function") throw new Error("attachPaidItems did not load — a licence's PASS-OFF sentences would get no clip");
   const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {});
   const ldScripts = readJson(path.join(ROOT, "content", "ld_english_scripts.json"));
   const dictionary = readJson(path.join(ROOT, "content", "voca_dictionary.json"));
@@ -206,10 +210,11 @@ function collectTexts() {
     if (!routed.size) throw new Error(`validRoutes.json has no ${course} pages — run node scripts/buildValidRoutes.mjs`);
     const index = readJson(path.join(ROOT, "content", "courses", `${course}.json`)).lessons || [];
     const lessons = new Map(jsonFiles(path.join(LESSONS, course)).map((file) => [path.basename(file, ".json"), JSON.parse(fs.readFileSync(file, "utf8"))]));
-    for (const [id, lesson] of lessons) {
+    for (const [id, file] of lessons) {
       if (!routed.has(id)) continue;
       const pairId = pairIdOf(course, id, index);
       const pair = pairId ? { id: pairId, ...(lessons.get(pairId) || {}) } : null;
+      const lesson = withHeldBack(file, heldBackOf(ROOT, course, id), attachPaidItems);
       for (const text of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) {
         raw.add(text);
         mine.add(text);

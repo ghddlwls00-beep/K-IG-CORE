@@ -17,7 +17,7 @@ const name = process.argv[2] || "probe";
     const r = await tab.eval(`(() => {
       const t = (document.querySelector('main') || document.body).innerText;
       let plan = null; try { plan = (JSON.parse(localStorage.getItem('kig:license:v1') || 'null') || {}).plan || null; } catch (e) {}
-      return { plan, paywall: /ALL-PASS ONLY|STUDENT PASS ONLY|VIP ALL-PASS REQUIRED/.test(t), passage: t.includes('baby monkeys were separated from their mothers'), chars: t.length };
+      return { plan, paywall: /ALL-PASS ONLY|STUDENT PASS ONLY|VIP ALL-PASS REQUIRED|STUDENT PASS · ALL-PASS/.test(t) || !!document.querySelector('[data-kig-paywall]'), passage: t.includes('baby monkeys were separated from their mothers'), chars: t.length };
     })()`);
     console.log(JSON.stringify({ profile, ...r }));
     await tab.close();

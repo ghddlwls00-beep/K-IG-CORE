@@ -1,12 +1,16 @@
 /**
  * PASS-OFF GRAMMAR lesson blocks — the shape agreed between the content session and the code
- * session in docs/pass-off-grammar/데이터-형식.md (v1, 2026-09-27). Field names are English and
- * values Korean. When the shape changes, that file changes first, then this one.
+ * session in docs/pass-off-grammar/데이터-형식.md (v1.3, 2026-09-27: its "필드 목록" is every field an
+ * item may carry, and the content check refuses any other). Field names are English and values
+ * Korean. When the shape changes, that file changes first, then this one.
  *
  * A lesson's `blocks` hold these four, in this order: anchors (① 예문 떠올리기), rule (② 규칙),
  * drill (③ 형태 찾기 · ④ 영작 · ⑤ 처음 보는 문장), frame (⑤ 내 문장).
  *
  * Item ids ("pg02-1:p4") never change once given — they are the keys of a learner's record.
+ *
+ * Gone in v1.3, so a grader must not look for them: `reject` (a wrong answer that only differs by a
+ * contraction is now an error pattern with `literal: true`) and `koFix` (now `fix.fromKo`).
  */
 
 /** Where an item sits in the textbook, for the source table the owner can hold against the page. */
@@ -23,10 +27,22 @@ export interface PassoffStudentRef {
   kind: "exact" | "adapted";
 }
 
+/** What was changed from the textbook, and why — for the source table, never the learner's screen. */
+export interface PassoffFix {
+  /** the old English (or sentence) */
+  from?: string;
+  /** the old Korean */
+  fromKo?: string;
+  /** which field changed: "en" · "ko" · "en+ko" · "sentence" · "underline" … */
+  field?: string;
+  kind: string;
+  why: string;
+}
+
 /** Fields every item may carry. */
 interface PassoffItemBase {
   id: string;
-  bookRef?: PassoffBookRef;
+  bookRef?: PassoffBookRef | null;
   /**
    * A sentence of a paid STUDENT chapter inside a free preview lesson (설계 §7). It never stays in
    * the free lesson file — scripts/buildPassoffIndex.mjs moves it to the server-only supplement.
@@ -34,10 +50,16 @@ interface PassoffItemBase {
   paidStudent?: boolean;
   /** A heteronym said in the meaning the screen shows ("read" → "red"), under its own clip. */
   speakAs?: string;
-  /** what was changed from the textbook, and why (the source table shows it) */
-  fix?: { from: string; kind: string; why: string } | null;
+  fix?: PassoffFix | null;
   /** a label for the clause the sentence shows ("의문사 절" — pg08-4 keeps it apart from what-clauses) */
   clauseLabel?: string;
+  /**
+   * Record-only, never shown: where a task not printed in the book came from ("new" ·
+   * "student:s3-3#1" · "grammar1:gh1-007#3"), where the Korean came from, and a note for the next editor.
+   */
+  source?: string;
+  koSource?: string;
+  note?: string;
 }
 
 /** ① 예문 떠올리기 — at most eight. */
@@ -46,7 +68,9 @@ export interface PassoffAnchor extends PassoffItemBase {
   ko: string;
   /** words to highlight; a multi-word unit is one string ("had better") */
   focus?: string[];
-  studentRef?: PassoffStudentRef;
+  studentRef?: PassoffStudentRef | null;
+  /** an answer lesson's English question (pg05-2 …): shown above the Korean, never spoken — only `en` is */
+  promptEn?: string | null;
 }
 
 export interface PassoffQuestion {
@@ -112,11 +136,26 @@ export interface PassoffProduceItem extends PassoffItemBase {
   accept?: string[];
   /** any-of groups; an answer missing one group is wrong */
   targets?: string[][];
-  errorPatterns?: { match: string; hint: string }[];
+  errorPatterns?: PassoffErrorPattern[];
   tags?: string[];
   challenge?: boolean;
   challengeTags?: string[];
+  /** record-only: why a sentence is or is not a challenge */
+  challengeNote?: string;
   studentRef?: PassoffStudentRef | null;
+}
+
+/**
+ * A known wrong answer and the hint it earns (데이터-형식.md "오답 패턴"). A plain pattern is a piece of
+ * a wrong answer, compared word by word after the grader's normalising. `literal: true` is a WHOLE wrong
+ * answer that only differs from a right one by a contraction ("Yes, it's."): the grader compares it
+ * first, before any accepted answer, ignoring only case and punctuation — never expanding the
+ * contraction (설계 §8).
+ */
+export interface PassoffErrorPattern {
+  match: string;
+  hint: string;
+  literal?: boolean;
 }
 
 /** ⑤ 처음 보는 문장 — a produce item plus where it came from ("new" · "grammar1:gh1-007#3"). */

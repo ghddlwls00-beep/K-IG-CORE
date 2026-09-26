@@ -1,7 +1,7 @@
 /**
  * PASS-OFF GRAMMAR — the paid STUDENT sentences of a free preview lesson (설계 §7, D4).
  *
- * pg01-1 (1인칭) is free, but seven of its sentences come from paid STUDENT chapters
+ * pg01-1 (1인칭) is free, but eight of its sentences come from paid STUDENT chapters
  * (s2-2 "I have a nice family." …). Left in the free lesson file they would be public twice
  * over: the free page would show them to anyone, and their clips would join the free clip list
  * (scripts/buildFreeSpeechKeys.mjs). And the site's leak checks (scripts/paidLeakCheck.mjs,
@@ -14,7 +14,7 @@
  *   - the lesson page puts it back, on the server, only for a licence that opens the course
  *     (attachPaidItems, called from src/lib/passoffContent.ts). The free page says how many
  *     sentences a licence adds;
- *   - scripts/checkPassoffFreeLeak.mjs proves that no paid STUDENT sentence is left in the free
+ *   - scripts/checkPassoffFreeLeak.mjs proves that no paid sentence (STUDENT's or any course's) is left in the free
  *     files or the free clip list, and fails when the supplement is put back (attachPaidItems).
  *
  * PURE AND IMPORT-FREE so the scripts can transpile it alone, as they do license.ts — the build,
@@ -107,16 +107,32 @@ export function attachPaidItems<B>(blocks: B[], entries: readonly PaidEntry[]): 
 }
 
 /**
- * The supplement after a split: entries just taken out of the lesson replace the stored ones
- * with the same item id, and a stored entry whose id is back in the lesson as a free item is
- * dropped (the lesson file decides — the item is no longer marked paid).
+ * The supplement after a split.
+ *
+ * AN ITEM ALREADY HELD BACK KEEPS ITS PLACE. When the lesson file gives back an item with a stored id
+ * (marked `paidStudent: true` again, to change it), only the item is replaced: its block, list,
+ * neighbour and index — and its turn in the stored order — stay those of the stored entry. The fresh
+ * entry's place was measured in a file that no longer holds the other held-back items, so it cannot say
+ * where the item goes among them: taking it brought a partial update back out of order (p1 p2 p3 held,
+ * p4 p5 free, p2 given back → p2 p1 p4 p3 p5; docs/pass-off-grammar/검사/supplement-merge.cjs). Only
+ * an item moved to another list takes its new place.
+ *
+ * An id new to the supplement comes after the stored ones, placed as measured in the file. A stored
+ * entry whose id is back in the lesson as a free item is dropped (the lesson file decides — the item is
+ * no longer marked paid).
  */
 export function mergePaidEntries(stored: readonly PaidEntry[], fresh: readonly PaidEntry[], freeIds: ReadonlySet<string>): PaidEntry[] {
-  const freshIds = new Set(fresh.map((e) => itemId(e.item)));
-  return [
-    ...stored.filter((e) => !freshIds.has(itemId(e.item)) && !freeIds.has(itemId(e.item) ?? "")),
-    ...fresh,
-  ];
+  const freshById = new Map(fresh.map((e) => [itemId(e.item), e]));
+  const samePlace = (a: PaidEntry, b: PaidEntry) => a.block === b.block && a.nth === b.nth && a.list === b.list;
+  const kept = stored
+    .filter((e) => !freeIds.has(itemId(e.item) ?? ""))
+    .map((e) => {
+      const given = freshById.get(itemId(e.item));
+      if (!given) return e;
+      return samePlace(e, given) ? { ...e, item: given.item } : given;
+    });
+  const keptIds = new Set(kept.map((e) => itemId(e.item)));
+  return [...kept, ...fresh.filter((e) => !keptIds.has(itemId(e.item)))];
 }
 
 /** Every item id in the blocks (all lists). */

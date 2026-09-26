@@ -23,7 +23,9 @@ const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8")
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
 const FREE = new Set([...freeBlock.matchAll(/"([a-z0-9-]+)"/g)].map((m) => m[1]));
 const scripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
-const PAYWALL = /ALL-PASS ONLY|STUDENT PASS ONLY|VIP ALL-PASS REQUIRED/;
+// + PASS-OFF GRAMMAR's "STUDENT PASS · ALL-PASS" (2026-09-27 — either pass opens it; LessonPaywall.tsx) and the licence
+// paywall's attribute, which does not change with the copy
+const PAYWALL = /ALL-PASS ONLY|STUDENT PASS ONLY|VIP ALL-PASS REQUIRED|STUDENT PASS · ALL-PASS|data-kig-paywall="license"/;
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
 
 function needles(course, id) {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLicense } from "./LicenseProvider";
-import { planOpensCourse, STUDENT_PASS_COURSES } from "@/lib/license";
+import { planOpensCourse, STUDENT_PASS_COURSES, STUDENT_PASS_SCOPE } from "@/lib/license";
 
 interface LessonPaywallProps {
   courseSlug: string;
@@ -67,7 +67,7 @@ export function LessonPaywall({
               본 레슨은 VIP 올패스 전용 강좌입니다
             </h2>
             <p className="text-[13px] text-ink-soft leading-relaxed">
-              현재 <strong className="text-ink font-semibold">STUDENT 전용 패스</strong>로 접속 중입니다.
+              현재 <strong className="text-ink font-semibold">STUDENT 패스</strong>({STUDENT_PASS_SCOPE})로 접속 중입니다.
               <br className="hidden sm:inline" />
               {courseTitle}을(를) 포함한 전체 과정을 이용하시려면 VIP 올패스 코드를 등록해 주세요.
             </p>

@@ -19,7 +19,11 @@
 const fs = require("fs");
 const path = require("path");
 const { loadTs, REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs");
-const { SPOKEN_COURSES, spokenTexts, pairIdOf, gridWords } = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
+const { SPOKEN_COURSES, spokenTexts, pairIdOf, gridWords, withHeldBack, heldBackOf } = require(path.join(REPO, "scripts/lib/spoken-texts.cjs"));
+// PASS-OFF GRAMMAR(점검 2026-09-27): 무료 체험 레슨이 떼어 둔 유료 STUDENT 문항도 이용권이 들으므로 새 정의에 넣는다 — 생성기와 같게
+// (spoken-texts.cjs withHeldBack). 그 도우미가 없는 판(PASS-OFF 전)에는 떼어 둔 파일도 없으므로 레슨 그대로.
+const attachPaidItems = fs.existsSync(path.join(REPO, "src/lib/passoffSupplement.ts")) ? loadTs(path.join(REPO, "src/lib/passoffSupplement.ts")).attachPaidItems : null;
+const spokenLessonOf = (course, id, lesson) => (typeof withHeldBack === "function" ? withHeldBack(lesson, heldBackOf(REPO, course, id), attachPaidItems) : lesson);
 const vocaMod = loadTs(path.join(REPO, "src/lib/vocaSpeech.ts"));
 const unified = loadTs(path.join(REPO, "src/lib/unifiedSpeech.ts"));
 const fns = {
@@ -55,7 +59,7 @@ for (const course of SPOKEN_COURSES) {
     if (!routed.has(id)) continue;
     const pid = pairIdOf(course, id, index);
     const pair = pid ? { id: pid, ...(lessons.get(pid) || {}) } : null;
-    for (const t of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) {
+    for (const t of spokenTexts({ course, id, lesson: spokenLessonOf(course, id, lesson), pair, ldScripts, dictionary, fns })) {
       const k = keyOf(t); if (k && !NEW.has(k.key)) NEW.set(k.key, { text: k.clean, course });
     }
   }
@@ -217,7 +221,7 @@ for (const course of SPOKEN_COURSES) {
   for (const f of fs.readdirSync(path.join(LESSONS, course)).filter((x) => x.endsWith(".json"))) {
     const id = f.replace(/\.json$/, "");
     if (!(ROUTES[course] || []).includes(id)) continue;
-    const lesson = JSON.parse(fs.readFileSync(path.join(LESSONS, course, f), "utf8"));
+    const lesson = spokenLessonOf(course, id, JSON.parse(fs.readFileSync(path.join(LESSONS, course, f), "utf8")));
     const pid = pairIdOf(course, id, index);
     const pair = pid ? { id: pid, ...(fs.existsSync(path.join(LESSONS, course, `${pid}.json`)) ? JSON.parse(fs.readFileSync(path.join(LESSONS, course, `${pid}.json`), "utf8")) : {}) } : null;
     for (const t of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) { const k = rawKey(t); if (k) NEW_RAW.add(k); }

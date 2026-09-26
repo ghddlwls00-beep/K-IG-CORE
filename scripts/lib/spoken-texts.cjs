@@ -15,7 +15,8 @@
  *   READING   ReadingLearningView:421 playSentenceEn(pair.en) · :438 playWordAudio(kw.word) — 문장 영어 · 카드 낱말
  *   PASS-OFF GRAMMAR  PassoffGrammarLearningView — ① 예문(anchors) · ④ 영작(drill.produce) · ⑤ 처음 보는 문장(drill.transfer) 의 영어 en.
  *             위 '전체 듣기' 는 끔(page.tsx). 과정 등록 단계(A)의 최소 분기 — 단계 B 가 화면이 실제로 넘기는 글과 맞춘다(설계 §9).
- *             무료 체험 pg01-1 의 유료 STUDENT 문장은 레슨 파일에 없다(서버 전용 보충 파일) — 그래서 무료 소리 키에도 들어가지 않는다.
+ *             무료 체험 pg01-1 의 유료 STUDENT 문장은 레슨 파일에 없다(서버 전용 보충 파일 — 아래 withHeldBack). 이용권이 있으면
+ *             서버가 붙여 화면이 소리 내므로 클립을 모으는 쪽은 붙여서 넘기고, 무료 소리 키만 붙이지 않는다.
  *   위 '전체 듣기' — page.tsx 가 src/lib/lessonAudioText.ts extractSentencesForAudio 로 만든 fallbackSentences 를 AudioPlayer 가 소리 낸다
  *            (CNN 밖에서는 늘 합성 음성 모드 — shouldUseUnifiedSpeech). 대개 위 목록 안의 영어지만 추측하지 않고 **그 함수를 그대로 돌려** 더한다
  *            (그렇게 해서 찾은 것: gh1-084 가 한국어 문제 31개를 영어로 여겨 읽던 BUG-026 — 고침). 보이는 조건은 page.tsx 대로
@@ -39,6 +40,9 @@
  *   (STUDENT 과정 목록의 장 듣기 ChapterAudioBar 도 강의 화면과 같은 꼴). 한국어(STUDENT 해석) · 낱말 카드 · 연음 카드 · VOCA 에는 대지 않는다
  *   (표에 없는 쪽은 그대로 — LISTENING d011 · d012 · d025 · d026 의 Kim 은 미국 사람이라 표에 없음).
  */
+const fs = require("fs");
+const path = require("path");
+
 const SPOKEN_COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading", "passoff-grammar"];
 const isKo = (s) => /[가-힣]/.test(String(s || ""));
 /** GrammarLearningView · page.tsx cleanText 와 같은 것 — 앞 번호 "1. " 와 " / " */
@@ -137,4 +141,31 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
   return out;
 }
 
-module.exports = { SPOKEN_COURSES, spokenTexts, pairIdOf, isKo, cleanText, itemsOf, gridWords };
+/**
+ * PASS-OFF GRAMMAR — 무료 체험 레슨이 떼어 둔 유료 STUDENT 문항(content/private/<과정>/<쪽>.paid.json, src/lib/passoffSupplement.ts).
+ * 이용권이 이 과정을 열면 서버가 제자리에 붙이고(src/lib/passoffContent.ts) 화면이 보이고 소리 낸다(PassoffGrammarLearningView speakText).
+ * 그래서 **클립을 모으는 쪽** — 생성기 · 감사의 clipTexts(expectations.cjs) · check-changed-clips · prove-spoken-definition ·
+ * korean-names-in-speech — 은 붙인 레슨을 spokenTexts 에 넘긴다:
+ *     spokenTexts({ …, lesson: withHeldBack(lesson, heldBackOf(ROOT, course, id), attachPaidItems) })
+ * **무료 소리 키(buildFreeSpeechKeys.mjs)만 붙이지 않는다** — 그 목록에 든 클립은 이용권 없이 열린다.
+ * (점검 2026-09-27: 아무도 붙이지 않아 생성기도 missing-clip 도 pg01-1 의 유료 8문장을 못 봤다 — 모은 것 0/8.)
+ *   heldBackOf(root, course, id) — 그 쪽의 보충 파일(없거나 떼는 과정이 아니면 null)
+ *   withHeldBack(lesson, supplement, attachPaidItems) — 이용권이 받는 레슨(보충이 없으면 lesson 그대로). attachPaidItems 는
+ *     부르는 쪽이 src/lib/passoffSupplement.ts 에서 불러 넘긴다(여기서 다시 만들지 않음 — fns 와 같은 까닭).
+ */
+const HELD_BACK_COURSES = ["passoff-grammar"];
+function heldBackOf(root, course, id) {
+  if (!HELD_BACK_COURSES.includes(course)) return null;
+  const file = path.join(root, "content", "private", course, `${id}.paid.json`);
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+}
+function withHeldBack(lesson, supplement, attachPaidItems) {
+  const items = supplement && Array.isArray(supplement.items) ? supplement.items : [];
+  if (!lesson || !items.length) return lesson;
+  if (typeof attachPaidItems !== "function") {
+    throw new Error("withHeldBack: attachPaidItems(src/lib/passoffSupplement.ts)를 불러 넘겨야 함 — 안 붙이면 이용권이 듣는 문장이 빠진다");
+  }
+  return { ...lesson, blocks: attachPaidItems(blocksOf(lesson), items) };
+}
+
+module.exports = { SPOKEN_COURSES, spokenTexts, pairIdOf, isKo, cleanText, itemsOf, gridWords, HELD_BACK_COURSES, heldBackOf, withHeldBack };

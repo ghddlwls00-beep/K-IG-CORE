@@ -437,9 +437,10 @@ export default async function LessonPage({
               vocaDictionary={vocaDictionary}
             />
           ) : course === "passoff-grammar" ? (
-            // its own branch on purpose: the final else below is STUDENT's view
+            // its own branch on purpose: the final else below is STUDENT's view. Only the blocks the view
+            // draws (passoffLessonBlocks) — never the whole lesson, which would put every answer in the HTML.
             <PassoffGrammarLearningView
-              blocks={passoff?.blocks ?? lesson.blocks}
+              blocks={passoff?.blocks ?? []}
               lessonKey={`${course}/${lesson.id}`}
               lockedExtraCount={passoff?.lockedExtraCount ?? 0}
             />

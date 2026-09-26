@@ -61,7 +61,9 @@ const LIMIT = Number(arg("--limit", 0)) || 0;
 const ONLY_IDS = arg("--ids", null) ? new Set(arg("--ids", "").split(",")) : null;
 const WORKERS = Number(arg("--workers", 4));
 const KEEP_KEYS = ["kig:license:v1", "kig:device:id:v1", "kig:device:name:v1", "kig:theme", "kig:lang"];
-const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED"];
+// + PASS-OFF GRAMMAR's "STUDENT PASS · ALL-PASS" (2026-09-27 — either pass opens it). The snapshot also takes the licence
+// paywall's attribute data-kig-paywall, which does not change with the copy.
+const PAYWALL_MARKERS = ["ALL-PASS ONLY", "STUDENT PASS ONLY", "VIP ALL-PASS REQUIRED", "STUDENT PASS · ALL-PASS"];
 
 const validRoutes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 
@@ -100,7 +102,7 @@ const SNAPSHOT = `(() => {
     smallTargets: small,
     imagesNoAlt: [...main.querySelectorAll('img')].filter((i) => !i.hasAttribute('alt')).length,
     brokenImages: [...main.querySelectorAll('img')].filter((i) => i.complete && i.naturalWidth === 0).length,
-    paywall: ${JSON.stringify(PAYWALL_MARKERS)}.some((m) => text.includes(m)),
+    paywall: ${JSON.stringify(PAYWALL_MARKERS)}.some((m) => text.includes(m)) || !!document.querySelector('[data-kig-paywall]'),
     leak: leak ? leak[0] : null,
     placeholder: /준비 중/.test(text),
     errorScreen: /Application error|client-side exception|문제가 발생했습니다|오류가 발생했습니다/.test(text),

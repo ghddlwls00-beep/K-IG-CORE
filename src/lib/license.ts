@@ -89,6 +89,14 @@ export function isStudentOnlyPlan(plan?: string | null): boolean {
 export const STUDENT_PASS_COURSES: readonly string[] = ["student", "passoff-grammar"];
 
 /**
+ * The same courses by their menu names, for the copy that tells a learner or the admin what a STUDENT
+ * pass opens (LicenseModal · LessonPaywall · admin/license). This file stays import-free (the scripts
+ * transpile it alone), so the names are written out here, and docs/pass-off-grammar/검사/plan-access.cjs
+ * fails when they stop matching courses.ts's titles of STUDENT_PASS_COURSES.
+ */
+export const STUDENT_PASS_SCOPE = "STUDENT · PASS-OFF GRAMMAR";
+
+/**
  * THE ONE ANSWER TO "DOES THIS PLAN OPEN THIS COURSE?" The lesson gate
  * (`[course]/[lesson]/page.tsx`), the media gate (`mediaAccess.ts`), the client lock
  * (`LicenseProvider`), the course list (`CourseDashboard`), the paywall copy (`LessonPaywall`)

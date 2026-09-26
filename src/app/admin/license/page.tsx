@@ -2,8 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getPlanLabel, STUDENT_PASS_COURSES, type LicensePlan } from "@/lib/license";
-import { COURSE_BY_SLUG } from "@/lib/courses";
+// STUDENT_PASS_SCOPE — what a STUDENT pass opens, by name ("STUDENT · PASS-OFF GRAMMAR"); license.ts keeps it
+// next to the list the gate uses, and docs/pass-off-grammar/검사/plan-access.cjs checks it against courses.ts
+import { getPlanLabel, STUDENT_PASS_SCOPE, type LicensePlan } from "@/lib/license";
 import {
   buildAdminLicenseRows,
   countLegacyToImport,
@@ -22,9 +23,6 @@ import {
  * carry that browser's memos and issue dates over to the server (then removed).
  */
 const LEGACY_HISTORY_KEY = "kig:admin:history";
-
-/** What a STUDENT pass opens, by name ("STUDENT · PASS-OFF GRAMMAR") — from license.ts, so it cannot drift. */
-const STUDENT_PASS_SCOPE = STUDENT_PASS_COURSES.map((slug) => COURSE_BY_SLUG.get(slug)?.title ?? slug).join(" · ");
 
 type DeviceRecordMap = Record<string, AdminLicenseRecord>;
 
@@ -533,7 +531,7 @@ export default function AdminLicensePage() {
                       : "text-ink-soft hover:text-ink"
                   }`}
                 >
-                  🎓 STUDENT 전용
+                  🎓 STUDENT 패스 ({STUDENT_PASS_SCOPE})
                 </button>
               </div>
             </div>
@@ -541,7 +539,7 @@ export default function AdminLicensePage() {
             {/* Plan Selector */}
             <div className="flex flex-col gap-2">
               <label className="text-[13px] font-semibold text-ink">
-                {planCategory === "VIP" ? "VIP 올패스 수강 기간" : "STUDENT 전용 패스 수강 기간"}
+                {planCategory === "VIP" ? "VIP 올패스 수강 기간" : "STUDENT 패스 수강 기간"}
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {planCategory === "VIP" ? (

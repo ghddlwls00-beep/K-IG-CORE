@@ -43,7 +43,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.a
  * course itself is left exactly as it is; only the sitemap stops listing it.
  * The list lives in `src/lib/discontinued.ts`, which the sitemap probe reads too.
  *
- * Result: 25 URLs — home, 6 courses, 6 tabs, 12 free preview lessons.
+ * Result: 29 URLs — home, 7 courses, 7 tabs, 14 free preview lessons (25 until PASS-OFF GRAMMAR
+ * added its course, its tab and its two free lessons, 2026-09-27).
  */
 
 export default function sitemap(): MetadataRoute.Sitemap {

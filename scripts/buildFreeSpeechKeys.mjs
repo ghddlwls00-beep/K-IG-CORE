@@ -121,6 +121,8 @@ for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {
     const pairId = pairIdOf(course, id, index);
     if (pairId && !ids.includes(pairId)) throw new Error(`free preview lesson ${course}/${id} speaks its pair ${pairId}, which is not free — FREE_PREVIEW_LESSON_IDS must list both`);
     const pair = pairId ? { id: pairId, ...(readJson(path.join(LESSONS, course, `${pairId}.json`)) || {}) } : null;
+    // The lesson FILE as it is — never withHeldBack (spoken-texts.cjs): a PASS-OFF GRAMMAR free preview's paid
+    // STUDENT items (content/private) are what a licence adds, and a key listed here opens its clip to anyone.
     for (const text of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) raw.add(text);
   }
 }

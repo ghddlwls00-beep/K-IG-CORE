@@ -32,12 +32,16 @@ const loadTs = (rel) => {
   new Function("module", "exports", "require", js)(m, m.exports, require);
   return m.exports;
 };
-const { SPOKEN_COURSES, spokenTexts, pairIdOf } = require(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
+const { SPOKEN_COURSES, spokenTexts, pairIdOf, withHeldBack, heldBackOf } = require(path.join(ROOT, "scripts", "lib", "spoken-texts.cjs"));
 const vs = loadTs("src/lib/vocaSpeech.ts"), vu = loadTs("src/lib/vocaUtils.ts"), lu = loadTs("src/lib/listeningUtils.ts"), la = loadTs("src/lib/lessonAudioText.ts");
 const fns = { vocaSpeechForm: vs.vocaSpeechForm, getCollocation: vu.getCollocation, generateLiaisonPoints: lu.generateLiaisonPoints, extractSentencesForAudio: la.extractSentencesForAudio, firstSlashAlternative: lu.firstSlashAlternative, vocaWordSpeech: vs.vocaWordSpeech, readingWordSpeech: vs.readingWordSpeech };
 // (수정 세션 2026-09-25) 고친 판은 spoken-texts 가 쪽마다 정한 소리 꼴 표를 요구함 — 그 판에 있으면 넘김(옛 판에는 없음)
 if (fs.existsSync(path.join(ROOT, "src", "lib", "lessonSpeechForm.ts"))) fns.lessonSpeechForm = loadTs("src/lib/lessonSpeechForm.ts").lessonSpeechForm;
 for (const [k, f] of Object.entries(fns)) if (typeof f !== "function") throw new Error(`${k} 못 불러옴 — 소리 내는 글 목록이 틀림`);
+// (PASS-OFF GRAMMAR · 점검 2026-09-27) 무료 체험 레슨이 떼어 둔 유료 문항도 이용권이 들으므로 붙여서 본다 — 생성기와 같게
+// (spoken-texts.cjs withHeldBack). 그 판에 도우미가 없으면(PASS-OFF 전) 떼어 둔 파일도 없으므로 레슨 그대로.
+const attachPaidItems = fs.existsSync(path.join(ROOT, "src", "lib", "passoffSupplement.ts")) ? loadTs("src/lib/passoffSupplement.ts").attachPaidItems : null;
+const spokenLesson = (course, id, lesson) => (typeof withHeldBack === "function" ? withHeldBack(lesson, heldBackOf(ROOT, course, id), attachPaidItems) : lesson);
 // 생성기 normalizeText 와 같은 것(src/lib/unifiedSpeech.ts 와 맞춤) — 생성기 코드에서 읽어 와 비교한다(아래 sameNormalize)
 const normalizeText = (t) => t.replace(/\s*\/\s*/g, " ").replace(/\[[^\]]*\]/g, " ").replace(/:{2,}/g, " ").replace(/-{2,}/g, " ").replace(/[…]+/g, " ").replace(/\s*\|\s*/g, ", ").replace(/\(\s*\)/g, " ").replace(/\s+/g, " ").trim();
 const gen = fs.readFileSync(path.join(ROOT, "scripts", "generate-azure-ava.mjs"), "utf8");
@@ -63,7 +67,7 @@ for (const course of SPOKEN_COURSES) {
     const pairId = pairIdOf(course, id, index);
     const pair = pairId ? { id: pairId, ...(lessons.get(pairId) || {}) } : null;
     const seen = new Set();
-    for (const raw of spokenTexts({ course, id, lesson, pair, ldScripts, dictionary, fns })) {
+    for (const raw of spokenTexts({ course, id, lesson: spokenLesson(course, id, lesson), pair, ldScripts, dictionary, fns })) {
       const clean = normalizeText(fns.vocaSpeechForm(String(raw)));
       if (!clean || !isSpeakable(clean) || seen.has(clean)) continue;
       seen.add(clean);
@@ -114,6 +118,9 @@ const KO = {
   hwanin: "환인", hwanung: "환웅", ungnyeo: "웅녀", dangun: "단군", sejong: "세종", yi: "이", kim: "김",
   seollal: "설날", chuseok: "추석", songpyeon: "송편", hanbok: "한복", kimchi: "김치", bulgogi: "불고기", hangul: "한글", hanji: "한지",
   hanseong: "한성", sunbo: "순보", jubo: "주보", "sun-sin": "순신", hong: "홍", gil: "길", dong: "동",
+  // PASS-OFF GRAMMAR 1권(2026-09-27): "He is Daehan." · "My best friend is Daehan." — 교재의 "He is 대한." 을 로마자로 적은 이름.
+  // 새 발음이라 사장님이 샘플을 들은 뒤 lessonSpeechForm.ts 에 행을 넣는다(그 전에는 이 도구가 '한국어 낱말이 든 글' 로 보여 줌)
+  daehan: "대한",
 };
 // 한국어 이름인데 이 글에서는 한국어가 아닌 사람 · 영어 낱말인 것(과정 · 까닭) — 낱말 판정보다 먼저 본다
 const NOT_IN = [
@@ -132,7 +139,10 @@ const NOT = new Set(("korea korean koreans korea's korea’s i'm i’m we're we�
   "iditarod alaska's nenana one-eyed margaret bering pueblo bureau torkelson genoa norwegian burmese peru tibet hawaii minnesota minneapolis samuel langhorne jumping rita wayne " +
   "chesapeake maria roman far-away augustine miami seminole sherman good-natured tang wagner e-mail deep-seated jasmine seminar sas johannes iranian on-line harrison legionella edgar " +
   "allan purloined paper-making sumerian saudi arabia bannister belgian palladium re-plan yang liwei china's guus ii man-made role-playing web ro chin " +
-  "surname oral angela marta irene fulton estelle managing missouri mining poe likewise rarer").split(/\s+/));
+  "surname oral angela marta irene fulton estelle managing missouri mining poe likewise rarer " +
+  // PASS-OFF GRAMMAR 1권(2026-09-27): 영어 이름 — Jamie eats lunch · Jane kisses Cheetah · Is Jane a teacher? · Tina kept calm ·
+  // Joshua will have finished · Emma and Jill · Homer's poems · the well of Abraham
+  "jamie jane tina joshua emma homer abraham").split(/\s+/));
 // 한국어 이름 판정에서 뺀 낱말 가운데 성씨처럼 쓰일 수 있는 영어 낱말(문장 가운데 대문자면 따로 봄)
 const SURNAME_LIKE = /(?<=\S\s+)(Park|Oh|Moon|Song|Son|Lee|Choi|Jung|Kang|Cho|Yoon|Jang|Lim|Shin|Kwon|Hwang|Ahn|Yoo|Jeon|Ko|Bae|Baek|Nam|Min|Ryu|Jin)(?![A-Za-z])/;
 const unjudged = candidates.filter((k) => !(k in KO) && !NOT.has(k) && !english.has(k));

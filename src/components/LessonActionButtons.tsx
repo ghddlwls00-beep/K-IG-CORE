@@ -43,8 +43,9 @@ export function LessonActionButtons({
         <span>{bookmarked ? "북마크됨" : "북마크"}</span>
       </button>
 
-      {/* STUDENT completion lives at the end of Step 3, after the learning flow. */}
-      {course !== "student" && (
+      {/* STUDENT completion lives at the end of Step 3, after the learning flow. PASS-OFF GRAMMAR's is
+          its five steps (docs/pass-off-grammar/설계.md §3), so it has no manual check either. */}
+      {course !== "student" && course !== "passoff-grammar" && (
         <button
           type="button"
           onClick={() => toggleComplete(course, lessonId)}

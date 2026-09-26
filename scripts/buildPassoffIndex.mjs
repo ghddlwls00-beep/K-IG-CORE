@@ -6,13 +6,18 @@
  * extractor, from the legacy menus. PASS-OFF GRAMMAR's lessons are being written now, a few at a
  * time (content/lessons/passoff-grammar/pgNN-M.json), so its index is derived from the files that
  * are actually there. Run it again whenever a lesson file is added; `prebuild` and `predev` run it
- * first, before buildValidRoutes reads the index.
+ * first (with --index-only), before buildValidRoutes reads the index.
  *
  * TWO STEPS, IN THIS ORDER:
  *   1. Each free preview lesson (license.ts FREE_PREVIEW_LESSON_IDS["passoff-grammar"]) gives up its
  *      `paidStudent: true` items to content/private/passoff-grammar/<id>.paid.json — the page adds
  *      them back only for a licence (src/lib/passoffSupplement.ts says why). A lesson with none is
  *      left byte for byte as it is.
+ *      ONLY A PLAIN RUN WRITES THIS STEP — the one the content session makes after editing a free lesson.
+ *      `prebuild` / `predev` pass --index-only: they write the index and only CHECK the split, stopping
+ *      when a free lesson still holds a paid item (the page would show it to anyone). A build used to
+ *      rewrite the lesson files here, so a dev server started by anyone could overwrite a file the
+ *      content session was in the middle of editing (review 2026-09-27).
  *   2. content/courses/passoff-grammar.json: one group per textbook topic ("TOPIC 2. 동사의 현재형",
  *      as `title` and `label` both — studentProgress-style code reads `label`), the lessons in order
  *      pg01-1 · pg01-2 · …, and each lesson summary shaped like the other courses' (types.ts
@@ -27,7 +32,8 @@
  *     while the server gates by ID, so both must name the same two lessons;
  *   - no lesson file at all — courses.ts lists the course, so the build needs its free lessons.
  *
- *   node scripts/buildPassoffIndex.mjs                    # split, then write the index
+ *   node scripts/buildPassoffIndex.mjs                    # split, then write the index (the content session, after editing)
+ *   node scripts/buildPassoffIndex.mjs --index-only       # write the index; refuse if the split would change a file (prebuild · predev)
  *   node scripts/buildPassoffIndex.mjs --check            # write nothing; exit 1 if a file would change
  *   node scripts/buildPassoffIndex.mjs --content <dir>    # another content root (lessons/ · private/ · courses/ under it) — for tests
  *
@@ -44,7 +50,10 @@ const LESSON_DIR = path.join(CONTENT, "lessons", COURSE);
 const PRIVATE_DIR = path.join(CONTENT, "private", COURSE);
 const OUT_FILE = path.join(CONTENT, "courses", `${COURSE}.json`);
 const CHECK = process.argv.includes("--check");
+const INDEX_ONLY = process.argv.includes("--index-only");
 const ID = /^pg(\d{2})-(\d+)$/;
+/** what the content session runs when the build finds the split undone */
+const SPLIT_BY_HAND = "the content session runs `node scripts/buildPassoffIndex.mjs` (the build never writes a lesson file)";
 
 /** Only modules without runtime imports can be transpiled alone (license.ts · passoffSupplement.ts). */
 function loadTsModule(relativePath) {
@@ -143,12 +152,19 @@ for (const id of FREE) {
       items: merged,
     };
     const next = JSON.stringify(supplement, null, 2) + "\n";
-    if (!same(storedText, next)) writes.push([privateFile, next, `${merged.length} paid item(s) held back from the free page`]);
+    if (!same(storedText, next)) {
+      if (INDEX_ONLY) problems.push(`content/private/${COURSE}/${id}.paid.json would change (${merged.length} held-back item(s)) — ${SPLIT_BY_HAND}`);
+      else writes.push([privateFile, next, `${merged.length} paid item(s) held back from the free page`]);
+    }
   }
   if (entries.length) {
-    // the supplement is written before the lesson (see the write loop) — a crash in between loses nothing
-    const next = JSON.stringify({ ...lesson.d, blocks }, null, indentOf(lesson.text)) + "\n";
-    writes.push([lesson.file, next, `${entries.length} paidStudent item(s) moved out: ${entries.map((e) => e.item.id).join(", ")}`]);
+    if (INDEX_ONLY) {
+      problems.push(`${id}: ${entries.length} paidStudent item(s) still in the free lesson file (${entries.map((e) => e.item.id).join(", ")}) — anyone would see them; ${SPLIT_BY_HAND}`);
+    } else {
+      // the supplement is written before the lesson (see the write loop) — a crash in between loses nothing
+      const next = JSON.stringify({ ...lesson.d, blocks }, null, indentOf(lesson.text)) + "\n";
+      writes.push([lesson.file, next, `${entries.length} paidStudent item(s) moved out: ${entries.map((e) => e.item.id).join(", ")}`]);
+    }
     lesson.d = { ...lesson.d, blocks };
   }
   // what the free file will hold after the write — nothing marked paid may stay
