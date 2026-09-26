@@ -38,6 +38,7 @@ const path = require("path");
 const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
 const C = require("./lib/containers.cjs");
+const V = require("./lib/voca-page.cjs");
 const { contentCheck } = require("./lib/content-check.cjs");
 
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
@@ -71,7 +72,9 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // 다 받음(HINT_CHIPS). 그 밖은 7-1m 그대로. build-coverage 는 이 값이 있는지만 본다(값은 안 봄).
 // 2026-09-27 STUDENT 학습법 · 화면 고침: '-s0927' — the STUDENT tile routine reads the view's data-* marks (two parts · fixed
 // blanks · data-feedback) and the completion test practises to the new 80% rule first (see solveStudentTiles · practiseStudent).
-const DRIVER_REV = "7-1m-g15-s0927";
+// 2026-09-27 VOCA 학습법 · 화면 고침: '-v0927' — a VOCA lesson completes after one finished Step 2 round (계획 D02 나 — lessonGate),
+// so the completion test finishes a round first when the button is disabled (lib/voca-page.cjs FINISH_ROUND).
+const DRIVER_REV = "7-1m-g15-s0927-v0927";
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -827,6 +830,8 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // for the queue to empty (the server answered) before reading or reloading; other courses save locally.
     const serverSaved = async () => page.course !== "student" || H.waitFor(tab, `(() => { try { const v = localStorage.getItem('kig:student:pending:v1'); return !v || v === '[]'; } catch (e) { return true; } })()`, 10000);
     await openStep3();
+    // 2026-09-27 (VOCA · D02 나): the completion button's gate is registered by the view after it read its record — read after that
+    if (page.course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
     let c0 = await tab.eval(cmState).catch(() => null);
     let practiceNote = "";
     if (page.course === "student" && c0 && /\|disabled$/.test(c0)) {
@@ -836,12 +841,21 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       await openStep3();
       c0 = await tab.eval(cmState).catch(() => null);
     }
+    if (page.course === "phonics" && c0 && /\|disabled$/.test(c0)) {
+      // 2026-09-27 (VOCA · 계획 D02 나): '이 강의 학습 완료' opens after one finished Step 2 round — finish one like a learner
+      // (lib/voca-page.cjs FINISH_ROUND answers every question), then read the button again; the note says what was done.
+      const r = await tab.eval(V.FINISH_ROUND).catch((e) => ({ ok: false, why: String(e && e.message ? e.message : e).slice(0, 80) }));
+      practiceNote = r && r.ok ? `practised: one Step 2 round (${r.answered} answers)` : `could not finish a Step 2 round: ${(r && r.why) || "?"}`;
+      await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+      c0 = await tab.eval(cmState).catch(() => null);
+    }
     if (c0 && !/\|disabled$/.test(c0)) {
       await H.click(tab, cm, { settle: 700 });
       const saved1 = await serverSaved();
       const c1 = await tab.eval(cmState).catch(() => null);
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
       await openStep3();
+      if (page.course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
       const c2 = await tab.eval(cmState).catch(() => null);
       await H.click(tab, cm, { settle: 700 });
       const saved3 = await serverSaved();

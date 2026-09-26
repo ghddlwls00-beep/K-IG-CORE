@@ -20,6 +20,12 @@ const path = require("path");
 const H = require("./lib/harness.cjs");
 
 const BREAK = process.argv.includes("--break") ? process.argv[process.argv.indexOf("--break") + 1] : "";
+// Made for the LOCAL build with a logged-out profile (it completes lessons and seeds storage) — anything but localhost stops
+// here, so a run without BASE can never reach the live site with the licensed profile's copy (2026-09-27).
+if (!/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(H.BASE) && !process.argv.includes("--allow-remote")) {
+  console.error(`멈춤: BASE=${H.BASE} — 이 검사는 로컬 운영 빌드(http://localhost:3210)와 빈 브라우저용입니다. 다른 곳이면 --allow-remote.`);
+  process.exit(2);
+}
 const PORT = 9594;
 const FAKE_STT = fs.readFileSync(path.join(__dirname, "lib/ld-fake-stt.js"), "utf8");
 const OUT = path.join(H.OUT, "student-0927");

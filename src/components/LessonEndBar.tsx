@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, type MouseEvent } from "react";
+import { useId, useState, useSyncExternalStore, type MouseEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useProgress } from "./ProgressProvider";
+import { getLessonGate, subscribeLessonGate } from "@/lib/lessonGate";
 
 /** `code` is shown before the title where a course numbers its lessons by chapter (STUDENT 'Ch 12-1'). */
 type Neighbour = { href: string; title: string; code?: string } | null;
@@ -23,6 +24,10 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * alone looked like going backwards), and STUDENT's '다음 강의' first sends the queued completion to the server and
  * waits for the answer (A11 — the next chapter's first lesson is opened by the server only once it knows); offline it
  * says so on one line, then goes.
+ *
+ * 2026-09-27 (계획 D02 나 — VOCA first): a course view may register a completion gate (src/lib/lessonGate.ts). While it is not
+ * ready, '이 강의 학습 완료' is disabled with the gate's reason on one line under it (VOCA: until one Step 2 round is finished).
+ * A completed lesson stays toggleable. No gate registered — every other course today — renders exactly as before.
  */
 export function LessonEndBar({
   course,
@@ -42,6 +47,9 @@ export function LessonEndBar({
   const completed = isCompleted(course, lessonId);
   const showComplete = course !== "student";
   const named = (n: NonNullable<Neighbour>) => (n.code ? `${n.code} · ${n.title}` : n.title);
+  const gate = useSyncExternalStore(subscribeLessonGate, () => getLessonGate(course, lessonId), () => null);
+  const blocked = showComplete && !completed && gate !== null && !gate.ready;
+  const reasonId = useId();
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
     if (course !== "student" || !next) return;
@@ -67,14 +75,18 @@ export function LessonEndBar({
       {showComplete ? (
         <button
           type="button"
-          onClick={() => toggleComplete(course, lessonId)}
+          onClick={() => {
+            if (!blocked) toggleComplete(course, lessonId);
+          }}
+          disabled={blocked || undefined}
+          aria-describedby={blocked ? reasonId : undefined}
           aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
           aria-pressed={completed}
           className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-control text-label font-semibold transition-colors cursor-pointer ${
             completed
               ? "border border-line bg-raised text-ink hover:bg-sunken"
               : "bg-ink text-surface hover:opacity-90"
-          }`}
+          }${blocked ? " disabled:cursor-not-allowed disabled:opacity-40" : ""}`}
         >
           {completed ? (
             <>
@@ -88,6 +100,11 @@ export function LessonEndBar({
             <span>이 강의 학습 완료</span>
           )}
         </button>
+      ) : null}
+      {blocked && gate ? (
+        <p id={reasonId} className="mt-2 text-center text-caption text-ink-soft">
+          {gate.reason}
+        </p>
       ) : null}
 
       {prev || next ? (

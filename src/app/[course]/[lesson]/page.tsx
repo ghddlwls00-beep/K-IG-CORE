@@ -320,6 +320,25 @@ export default async function LessonPage({
           ]
         : null;
 
+  /**
+   * 2026-09-27 (계획 A10 · D01 나 — VOCA): the top player again, as data, for the course view that plays the whole lesson at the
+   * head of its Step 1 word list. Same src, sentences, voice and label as `topPlayers` above — nothing spoken changes. The view
+   * marks itself data-owns-passage-player and globals.css then hides the wrapper below (data-passage-player). Other courses: null.
+   */
+  const passagePlayers =
+    course === "phonics" && topPlayers
+      ? topLevelAudio.length > 0
+        ? topLevelAudio.map((a) => ({
+            id: a.src,
+            src: a.src,
+            fallbackSentences,
+            lang: courseInfo?.contentLang ?? "en",
+            gender: voiceGender,
+            label: a.label && topLevelAudio.length > 1 ? a.label : undefined,
+          }))
+        : [{ id: "fallback", src: undefined, fallbackSentences, lang: courseInfo?.contentLang ?? "en", gender: voiceGender, label: "전체 듣기" }]
+      : null;
+
   return (
     <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
       {/*
@@ -391,7 +410,10 @@ export default async function LessonPage({
             <div className="mt-2 flex flex-col gap-2">{topPlayers}</div>
           </details>
         ) : (
-          <div className={topLevelAudio.length > 0 ? "mb-5 flex flex-col gap-2" : "mb-5"}>{topPlayers}</div>
+          // data-passage-player (2026-09-27 A10): hidden when the course view plays the same lesson itself (globals.css)
+          <div className={topLevelAudio.length > 0 ? "mb-5 flex flex-col gap-2" : "mb-5"} data-passage-player="">
+            {topPlayers}
+          </div>
         )
       ) : null}
 
@@ -438,10 +460,13 @@ export default async function LessonPage({
               audioTracks={audio}
             />
           ) : course === "phonics" ? (
+            // key: a new lesson is a new view (its rounds, cards and game start from that lesson's own record)
             <PhonicsLearningView
+              key={`${course}/${lesson.id}`}
               blocks={lesson.blocks}
               lessonKey={`${course}/${lesson.id}`}
               vocaDictionary={vocaDictionary}
+              passagePlayers={passagePlayers}
             />
           ) : (
             // key: a new lesson is a new view — nothing of the last lesson's steps, tiles or reveals carries over

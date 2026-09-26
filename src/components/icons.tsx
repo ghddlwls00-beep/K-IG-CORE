@@ -90,6 +90,16 @@ export function IconCheck({ size = 16, className }: IconProps) {
   );
 }
 
+/** Wrong / "다름" (2026-09-27, VOCA Step 2 · 4 — instead of ❌). */
+export function IconX({ size = 16, className }: IconProps) {
+  return (
+    <svg {...base(size, className)} strokeWidth={2.5}>
+      <path d="M6.5 6.5l11 11" />
+      <path d="M17.5 6.5l-11 11" />
+    </svg>
+  );
+}
+
 export function IconEye({ size = 16, className }: IconProps) {
   return (
     <svg {...base(size, className)}>

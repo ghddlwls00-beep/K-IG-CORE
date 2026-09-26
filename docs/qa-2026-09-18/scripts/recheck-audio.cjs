@@ -46,7 +46,9 @@ const OUT = path.join(__dirname, "../out");
 // '발음 테스트' matched), and since 59fdd44 its button carries an SVG icon instead of '🎙️', so its listening and score states
 // ('듣고 있는 중…', '85점 (대부분 일치)', '75점 (통과했어요)') are matched by their own words, as is GRAMMAR's own name for it
 // ('따라 말하고 확인', 59fdd44). The old words stay for older sweep records.
-const MIC_STATES = /말하기 확인|따라 말하고 확인|듣고 있는 중|\d+점 \((?:모든 단어 일치|거의 모두 일치|대부분 일치|거의 맞았어요|다시 시도|통과했어요|음성 감지 안 됨)/;
+// 2026-09-27 (B03 · speechSingleWord.ts): for a one-word target (the VOCA words) the same button says '알아들었어요' or
+// "'due'로 들렸어요 — 한 번 더" instead of 'N점 (…)' — the same mic, so the same rule.
+const MIC_STATES = /말하기 확인|따라 말하고 확인|듣고 있는 중|알아들었어요|로 들렸어요 — 한 번 더|알아듣지 못했어요|\d+점 \((?:모든 단어 일치|거의 모두 일치|대부분 일치|거의 맞았어요|다시 시도|통과했어요|음성 감지 안 됨)/;
 // 2026-09-27 (STUDENT 학습법 · 화면 고침 · D03): STUDENT Step 3's button that opens the check is '말하기' (aria-label 'N번 문장
 // 말하기'); the speed buttons read '0.7×' · '0.85×' · '1×' · '1.2×'.
 const STUDENT_MIC = /문장 말하기/;

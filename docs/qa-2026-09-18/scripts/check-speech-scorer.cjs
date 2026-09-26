@@ -30,6 +30,9 @@
  *    초록 아님. 통과 점수를 안 주면 전과 같음(채점기 말 그대로, 버튼 80 · 카드 85 부터 초록).
  * 그리고 전후 표(기본 실행에서만): 앱이 마이크에 넘기는 모든 문장(STUDENT · READING 첫 줄 · LISTENING · GRAMMAR I·II · VOCA 낱말,
  *    폐지 과정의 DialogueLearningView 는 뺌)에 흉내 읽기 여덟 가지를 넣어 고치기 전 → 뒤 점수. 완벽한 읽기가 100 이 아닌 문장은 이름을 적는다.
+ *    2026-09-27 (B03): 'VOCA 낱말' 칸은 문장 채점기 점수 그대로다. 화면은 한 낱말 과녁(VOCA 3,894 · GRAMMAR 'Freeze!')에 점수 대신
+ *    한 낱말 판정('알아들었어요' / "'…'로 들렸어요 — 한 번 더", src/lib/speechSingleWord.ts)을 보인다 — 그 검사는 check-speech-single-word.cjs.
+ *    이 파일의 출력은 B03 앞뒤로 글자 하나 다르지 않다(문장 채점기를 건드리지 않음).
  *
  *   node check-speech-scorer.cjs [--head] [--rev <커밋>] [--old] [--list] [--break]
  *   --head  : 고치기 전 판(1117b2f — B01 을 고치기 직전 HEAD, --rev 로 바꿈)의 채점기로 모든 칸을 돌림 — ③ · ④ 가 실패해야 맞음(exit 1).

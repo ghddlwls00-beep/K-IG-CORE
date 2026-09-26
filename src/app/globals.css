@@ -287,6 +287,16 @@ textarea:focus-visible,
   display: none;
 }
 
+/*
+ * 2026-09-27 (계획 A10 — 과정 화면이 전체 듣기를 넘겨받는 장치, first used by VOCA · D01 나): the lesson page marks the wrapper of its
+ * top player with data-passage-player; a course view that plays the same sentences in its own place marks itself
+ * data-owns-passage-player, and then the top one is hidden from the server's first paint (no layout shift). A browser without
+ * :has shows both, as before. A view without the mark (every course but VOCA today) renders exactly as before.
+ */
+main:has([data-owns-passage-player]) [data-passage-player] {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

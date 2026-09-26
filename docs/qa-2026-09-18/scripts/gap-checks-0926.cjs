@@ -13,6 +13,7 @@
 const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
+const V = require("./lib/voca-page.cjs");
 const ts = require(path.join(H.REPO, "node_modules/typescript"));
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const ONLY = new Set(arg("--only", "M,S,P,R,W,O").split(","));
@@ -108,17 +109,31 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
         await H.load(tab, `/${course}`, { marker: null });
         const c0 = await tab.eval(COUNTERS);
         await H.load(tab, `/${course}/${id}`, { marker: H.MARKERS[course] });
+        // 2026-09-27 (VOCA · 계획 D02 나): a VOCA lesson's '학습 완료 체크' is disabled until one Step 2 round is finished on this
+        // device (lessonGate) — finish one like a learner first (lib/voca-page.cjs), or the press does nothing and this reads FAIL.
+        // The gate is registered once the view read its record ([data-voca-view][data-ready]); the note says what was done.
+        let practised = "";
+        if (course === "phonics") {
+          if (await H.waitFor(tab, V.VIEW_READY, 8000)) await H.sleep(300);
+          const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
+          if (gated) {
+            const r = await tab.eval(V.FINISH_ROUND).catch(() => ({ ok: false, why: "eval failed" }));
+            practised = r && r.ok ? ` · 2단계 한 회차를 끝냄(답 ${r.answered}개)` : ` · 2단계 한 회차를 끝내지 못함: ${(r && r.why) || "?"}`;
+            await H.sleep(400);
+          }
+        }
         const mark = await H.click(tab, `document.querySelector('button[aria-label="학습 완료 체크"]')`, { settle: 800 });
         const shown = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 취소"]'))`).catch(() => false);
         await H.load(tab, `/${course}`, { marker: null });
         const c1 = await tab.eval(COUNTERS);
         await H.load(tab, `/${course}/${id}`, { marker: H.MARKERS[course] });
+        if (course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
         const unmark = await H.click(tab, `document.querySelector('button[aria-label="학습 완료 취소"]')`, { settle: 800 });
         await H.load(tab, `/${course}`, { marker: null });
         const c2 = await tab.eval(COUNTERS);
         const want1 = BREAK === "P" ? c0.done + 2 : c0.done + 1;
         const ok = mark.ok && shown && unmark.ok && c1.done === want1 && c1.incomplete === c1.total - c1.done && c2.done === c0.done;
-        rec(`P:complete:${course}/${id}`, mark.ok ? (ok ? "PASS" : "FAIL") : "BLOCKED", `완료 체크 전 ${c0.done}/${c0.total} → 체크 뒤 ${c1.done}/${c1.total}(기대 ${want1}) · 미완료 ${c1.incomplete} → 취소 뒤 ${c2.done}/${c2.total}`);
+        rec(`P:complete:${course}/${id}`, mark.ok ? (ok ? "PASS" : "FAIL") : "BLOCKED", `완료 체크 전 ${c0.done}/${c0.total} → 체크 뒤 ${c1.done}/${c1.total}(기대 ${want1}) · 미완료 ${c1.incomplete} → 취소 뒤 ${c2.done}/${c2.total}${practised}`);
       }
     }
 

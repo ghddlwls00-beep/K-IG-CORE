@@ -12,8 +12,8 @@
  * docs/qa-2026-09-18/4-5단계-작업기록.md and scripts/proof-summary.cjs.
  *
  * Each reader runs right after the driver opens its step, before the driver presses
- * anything on that step. A reader that has to open a view to see everything (VOCA's
- * "전체 N단어 펼쳐보기", STUDENT's blind filter) opens it with a plain element.click()
+ * anything on that step. A reader that has to open a view to see everything (STUDENT's
+ * blind filter; VOCA's "전체 N단어 펼쳐보기" until 2026-09-27) opens it with a plain element.click()
  * — which does not set the driver's `__kigClicked` mark, so the control pass still
  * presses that button itself — and puts it back the way it found it.
  *
@@ -45,16 +45,17 @@ const BTN = "const btn = (re) => [...main.querySelectorAll('button')].find((b) =
 const TEXTS = "const texts = (list) => list.map((el) => (el.innerText || '').replace(/\\s+/g, ' ').trim()).filter(Boolean);";
 
 const READERS = {
-  /** VOCA STEP 1 word grid — every card of every cluster (PhonicsLearningView.tsx:766-812). */
-  "voca-grid": `(async () => {
+  /**
+   * VOCA STEP 1 word list — every word of every row.
+   * 2026-09-27 (VOCA 학습법 · 화면 고침 — E01 · VOCA-U09): Step 1 shows every word at once (no '전체 N단어 펼쳐보기', no
+   * 'Cluster #n'), each word a button whose word is [data-word-text] inside li[data-word] in the Step 1 panel
+   * ([data-step-panel="1"]) — the card class this read before (min-h-[96px]) left with the design rules. '뜻 가리기' hides only
+   * the meanings, never the words. Steps 2–4 are other panels and not mounted while STEP 1 is open.
+   */
+  "voca-grid": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
-    ${SLEEP} ${BTN} ${TEXTS}
-    const open = btn(/^전체 \\d+단어 펼쳐보기$/);
-    if (open) { open.click(); await sleep(500); }
-    const cards = [...main.querySelectorAll('div')].filter((d) => /(^|\\s)min-h-\\[96px\\](\\s|$)/.test(d.className) && d.children.length >= 3);
-    const words = texts(cards.map((c) => c.children[1]));
-    if (open) { const close = btn(/전체 펼쳐보기 닫기/); if (close) { close.click(); await sleep(300); } }
-    return words;
+    ${TEXTS}
+    return texts([...main.querySelectorAll('[data-step-panel="1"] [data-word] [data-word-text]')]);
   })()`,
 
   /**

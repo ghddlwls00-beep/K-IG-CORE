@@ -18,6 +18,13 @@ import {
   stopSpeech,
   subscribeSpeech,
 } from "@/lib/speech";
+import {
+  SINGLE_WORD_ALTERNATIVES,
+  isSingleWordTarget,
+  judgeSingleWord,
+  presentSingleWord,
+  type SingleWordResult,
+} from "@/lib/speechSingleWord";
 
 export interface VoiceSpeakingTesterProps {
   targetText: string;
@@ -29,6 +36,11 @@ export interface VoiceSpeakingTesterProps {
    * STU-L03): a slot accepts any 1-4 words and shows the words said, or '(label)' in red.
    */
   targetTexts?: string[];
+  /**
+   * Called with what was heard and a score. 2026-09-27 (B03): for a one-word target (isSingleWordTarget) the card
+   * shows no score, and the score here is 100 when the word was understood, else the best sentence-scorer score
+   * of the recogniser's guesses; the transcript is the guess that was the word, else its first guess.
+   */
   onSuccess?: (transcript: string, score: number) => void;
   compact?: boolean;
   buttonLabel?: string;
@@ -64,6 +76,12 @@ export interface VoiceSpeakingTesterProps {
  * before. Starting to listen stops any model sentence first (stopSpeech), and one that starts while
  * the mic listens stops the listening, so the speaker is never scored as the learner. A new sentence
  * (targetText / targetTexts) stops listening and clears the old result.
+ *
+ * 2026-09-27 (B03 · VOCA-L10 · speechSingleWord.ts): when every form of the target is ONE word or one hyphenated
+ * word (the VOCA words), the recogniser is asked for 5 guesses and the button says '알아들었어요' (success
+ * colours) or "'due'로 들렸어요 — 한 번 더" instead of 'N점 (…)', with no card: a homophone, the number in
+ * figures, a hyphen, space or joined spelling and the case all count as the word. A sentence takes the path
+ * above unchanged — the same recogniser settings, score, words and card.
  */
 
 function MicIcon() {
@@ -108,6 +126,8 @@ export function VoiceSpeakingTester({
   const [isListening, setIsListening] = useState(false);
   const [interimText, setInterimText] = useState("");
   const [result, setResult] = useState<EvaluationResult | null>(null);
+  // The verdict for a one-word target (B03) — set instead of `result`, never with it.
+  const [wordResult, setWordResult] = useState<SingleWordResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const recognizerRef = useRef<VoiceRecognizerHandle | null>(null);
   // Every start gets a number; a callback from an older start (a sentence that has since changed)
@@ -116,12 +136,14 @@ export function VoiceSpeakingTester({
 
   const targets = targetTexts && targetTexts.length > 0 ? targetTexts : [targetText];
   const targetsKey = targets.join("\n");
+  const singleWord = isSingleWordTarget(targets);
 
   // A new sentence: the result, the words heard so far and any notice belong to the old one.
   const [shownKey, setShownKey] = useState(targetsKey);
   if (shownKey !== targetsKey) {
     setShownKey(targetsKey);
     setResult(null);
+    setWordResult(null);
     setInterimText("");
     setErrorMessage(null);
     setIsListening(false);
@@ -167,22 +189,31 @@ export function VoiceSpeakingTester({
     setErrorMessage(null);
     setInterimText("");
     setResult(null);
+    setWordResult(null);
 
     const session = ++sessionRef.current;
     const current = () => session === sessionRef.current;
     const scoredTargets = targets;
+    const oneWord = singleWord;
 
     const handle = listenToSpeech({
       lang: "en-US",
+      maxAlternatives: oneWord ? SINGLE_WORD_ALTERNATIVES : 1,
       onStart: () => {
         if (current()) setIsListening(true);
       },
       onInterim: (interim) => {
         if (current()) setInterimText(interim);
       },
-      onResult: (transcript) => {
+      onResult: (transcript, alternatives) => {
         if (!current()) return;
         setIsListening(false);
+        if (oneWord) {
+          const judged = judgeSingleWord(alternatives, scoredTargets);
+          setWordResult(judged);
+          onSuccess?.(judged.transcript, judged.score);
+          return;
+        }
         const evalResult = evaluateAgainstAny(transcript, scoredTargets).result;
         setResult(evalResult);
         if (onSuccess) {
@@ -210,6 +241,7 @@ export function VoiceSpeakingTester({
 
   function handleReset() {
     setResult(null);
+    setWordResult(null);
     setInterimText("");
     setErrorMessage(null);
     handleStartListening();
@@ -262,6 +294,8 @@ export function VoiceSpeakingTester({
   const shownFeedback = shown ? shown.feedback : "";
   const buttonSuccess = shown !== null && shown.buttonSuccess;
   const cardSuccess = shown !== null && shown.cardSuccess;
+  // A one-word target's verdict (B03): words only — '알아들었어요' or what was heard — never a score.
+  const verdict = wordResult ? presentSingleWord(wordResult) : null;
 
   return (
     <div className="flex flex-col gap-2">
@@ -274,6 +308,10 @@ export function VoiceSpeakingTester({
             "inline-flex min-h-11 items-center gap-1.5 rounded-control border px-3 text-label font-medium transition-colors cursor-pointer select-none " +
             (isListening
               ? "border-danger bg-danger/10 text-danger"
+              : verdict
+              ? verdict.success
+                ? "border-success/60 bg-success/10 text-success hover:bg-success/15"
+                : "border-line bg-raised text-ink hover:bg-sunken"
               : result
               ? buttonSuccess
                 ? "border-success/60 bg-success/10 text-success hover:bg-success/15"
@@ -283,16 +321,18 @@ export function VoiceSpeakingTester({
           title="마이크를 누르고 영어 문장을 소리내어 말해보세요."
         >
           {isListening ? <StopIcon /> : <MicIcon />}
-          <span>
+          <span aria-live={singleWord ? "polite" : undefined}>
             {isListening
               ? "듣고 있는 중... (말씀하세요)"
+              : verdict
+              ? verdict.label
               : result
               ? `${result.score}점 (${shownLabel})`
               : cleanLabel}
           </span>
         </button>
 
-        {result && (
+        {(result || wordResult) && (
           <button
             type="button"
             onClick={handleReset}

@@ -553,11 +553,63 @@ export interface VoiceRecognizerHandle {
   abort: () => void;
 }
 
+/** iPhone · iPad (also an iPad asking for the desktop site): Safari's recogniser there is the device's dictation. */
+function isAppleMobile(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent || "";
+  return /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && (navigator.maxTouchPoints || 0) > 1);
+}
+
+/**
+ * The line shown for a recogniser error. 2026-09-27 (B03 · VOCA-L10 (5)): on an iPhone or iPad, Safari refuses
+ * with 'service-not-allowed' when the device's dictation (받아쓰기) is off and with 'not-allowed' when Safari may
+ * not use the microphone, and both got one line about browser settings and HTTPS that never said to turn
+ * dictation on. There each code now says, in one line, where to switch it on (the not-allowed line still starts
+ * '마이크 접근 권한이', which the audit helpers read). Every other device and every other code keeps its words
+ * exactly. Pure — the audit scripts call it in node.
+ */
+export function recognitionErrorMessage(error: string, appleMobile: boolean): string {
+  if (error === "no-speech") {
+    return "음성이 감지되지 않았습니다. 다시 마이크를 켜고 말씀해보세요.";
+  }
+  if (appleMobile && error === "service-not-allowed") {
+    return "받아쓰기가 꺼져 있어요 — 설정 > 일반 > 키보드에서 '받아쓰기'를 켠 뒤 다시 눌러 주세요.";
+  }
+  if (appleMobile && error === "not-allowed") {
+    return "마이크 접근 권한이 꺼져 있어요 — 설정에서 Safari의 마이크를 '허용'으로 바꾼 뒤 다시 눌러 주세요.";
+  }
+  if (error === "not-allowed" || error === "service-not-allowed") {
+    return "마이크 접근 권한이 거부되었거나 차단되었습니다. 브라우저 설정에서 마이크를 허용해 주세요. (모바일 기기에서는 HTTPS 보안 연결이 필요할 수 있습니다)";
+  }
+  return `음성 인식 오류: ${error}`;
+}
+
+/**
+ * Every guess for the whole utterance, the first guess first: the first guess of each final part joined (the
+ * transcript), then each part's other guesses in its place. One final part — the usual case for one word —
+ * gives that part's guesses as they are.
+ */
+function guessesOf(parts: string[][], transcript: string): string[] {
+  const out = [transcript];
+  parts.forEach((guesses, i) => {
+    for (let k = 1; k < guesses.length; k++) {
+      const other = parts.map((p, j) => (j === i ? guesses[k] : p[0])).join("").trim();
+      if (other && !out.includes(other)) out.push(other);
+    }
+  });
+  return out;
+}
+
 /**
  * Starts listening through Web Speech API.
+ *
+ * 2026-09-27 (B03): `maxAlternatives` asks the recogniser for more than one guess — the one-word check asks for
+ * 5 (speechSingleWord.ts). Absent → 1, as before. `onResult` gets the transcript exactly as before and, second,
+ * every guess (guessesOf — the first is the transcript), so a caller that reads only the transcript is unchanged.
  */
 export function listenToSpeech({
   lang = "en-US",
+  maxAlternatives = 1,
   onResult,
   onInterim,
   onError,
@@ -565,7 +617,8 @@ export function listenToSpeech({
   onStart,
 }: {
   lang?: string;
-  onResult: (transcript: string) => void;
+  maxAlternatives?: number;
+  onResult: (transcript: string, alternatives: string[]) => void;
   onInterim?: (interim: string) => void;
   onError?: (error: string) => void;
   onEnd?: () => void;
@@ -584,9 +637,11 @@ export function listenToSpeech({
     recognition.lang = lang;
     recognition.continuous = false;
     recognition.interimResults = true;
-    recognition.maxAlternatives = 1;
+    recognition.maxAlternatives = maxAlternatives;
 
     let finalTranscript = "";
+    // Each final part's guesses, in order (the first is the one the transcript is built from).
+    const finalParts: string[][] = [];
 
     recognition.onstart = () => {
       onStart?.();
@@ -598,6 +653,13 @@ export function listenToSpeech({
         const res = event.results[i];
         if (res.isFinal) {
           finalTranscript += res[0].transcript;
+          const guesses = [res[0].transcript];
+          const count = typeof res.length === "number" ? res.length : 1;
+          for (let k = 1; k < count; k++) {
+            const t = res[k]?.transcript;
+            if (typeof t === "string") guesses.push(t);
+          }
+          finalParts.push(guesses);
         } else {
           interim += res[0].transcript;
         }
@@ -606,18 +668,13 @@ export function listenToSpeech({
         onInterim(interim);
       }
       if (finalTranscript) {
-        onResult(finalTranscript.trim());
+        const transcript = finalTranscript.trim();
+        onResult(transcript, guessesOf(finalParts, transcript));
       }
     };
 
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-      if (event.error === "no-speech") {
-        onError?.("음성이 감지되지 않았습니다. 다시 마이크를 켜고 말씀해보세요.");
-      } else if (event.error === "not-allowed" || event.error === "service-not-allowed") {
-        onError?.("마이크 접근 권한이 거부되었거나 차단되었습니다. 브라우저 설정에서 마이크를 허용해 주세요. (모바일 기기에서는 HTTPS 보안 연결이 필요할 수 있습니다)");
-      } else {
-        onError?.(`음성 인식 오류: ${event.error}`);
-      }
+      onError?.(recognitionErrorMessage(event.error, isAppleMobile()));
     };
 
     recognition.onend = () => {

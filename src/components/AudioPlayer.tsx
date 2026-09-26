@@ -33,6 +33,8 @@ export function AudioPlayer({
   gender = "neutral",
   autoplay = false,
   label,
+  initialRate,
+  onRateChange,
 }: {
   src?: string;
   fallbackSentences?: string[];
@@ -40,6 +42,13 @@ export function AudioPlayer({
   gender?: VoiceGender;
   autoplay?: boolean;
   label?: string;
+  /**
+   * 2026-09-27 (VOCA · 계획 A10 · D01): a course view that plays the lesson with this player AND plays single items itself keeps
+   * one speed control — this one: it starts the player at the view's speed and hears every change. Absent → 1× and nothing
+   * reported, exactly as before.
+   */
+  initialRate?: number;
+  onRateChange?: (rate: number) => void;
 }) {
   const { t } = useLanguage();
   const pathname = usePathname();
@@ -47,7 +56,7 @@ export function AudioPlayer({
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [rate, setRate] = useState(1);
+  const [rate, setRate] = useState(initialRate ?? 1);
   const [missing, setMissing] = useState(() => !hasAudioFile(src));
   const [playBlocked, setPlayBlocked] = useState(false);
   const lastTimeRef = useRef(0);
@@ -176,6 +185,7 @@ export function AudioPlayer({
 
   function changeRate(r: number) {
     setRate(r);
+    onRateChange?.(r);
     if (isTtsMode && speech.speaking) {
       startQueue(ttsIndex, r);
     }
