@@ -18,6 +18,7 @@ import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
 import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { isStudentOnlyPlan } from "@/lib/license";
+import { freeLessonLinks } from "@/lib/freeLessonLinks";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
@@ -192,7 +193,7 @@ export default async function LessonPage({
           courseSlug={course}
           courseTitle={courseInfo?.title ?? tab?.label}
           lessonId={lesson.id}
-          title={pres.title}
+          freeLessons={freeLessonLinks(course)}
         />
       </main>
     );

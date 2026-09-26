@@ -15,6 +15,8 @@ interface ProgressContextType {
   completed: Record<string, boolean>;
   bookmarks: Record<string, boolean>;
   recent: RecentLesson | null;
+  /** 2026-09-27 (점검 FRAME-U02 · FRAME-L02): the last lesson opened in each course, for '이어서 학습' */
+  recentByCourse: Record<string, RecentLesson>;
   isCompleted: (course: string, lessonId: string) => boolean;
   toggleComplete: (course: string, lessonId: string) => void;
   isBookmarked: (course: string, lessonId: string) => boolean;
@@ -29,6 +31,7 @@ const ProgressContext = createContext<ProgressContextType>({
   completed: {},
   bookmarks: {},
   recent: null,
+  recentByCourse: {},
   isCompleted: () => false,
   toggleComplete: () => {},
   isBookmarked: () => false,
@@ -42,6 +45,8 @@ const ProgressContext = createContext<ProgressContextType>({
 const COMPLETED_KEY = "kig:progress:completed";
 const BOOKMARKS_KEY = "kig:progress:bookmarks";
 const RECENT_KEY = "kig:progress:recent";
+/** { [course]: RecentLesson } — RECENT_KEY keeps only the one lesson opened last, in any course */
+const RECENT_BY_COURSE_KEY = "kig:progress:recent:v2";
 const PENDING_KEY = "kig:student:pending:v1";
 
 interface StudentPendingUpdate {
@@ -61,6 +66,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [bookmarks, setBookmarks] = useState<Record<string, boolean>>({});
   const [recent, setRecent] = useState<RecentLesson | null>(null);
+  const [recentByCourse, setRecentByCourse] = useState<Record<string, RecentLesson>>({});
   const [studentSyncStatus, setStudentSyncStatus] = useState<ProgressContextType["studentSyncStatus"]>("local");
   const pendingRef = useRef<StudentPendingUpdate[]>([]);
   const legacyStudentIdsRef = useRef<string[]>([]);
@@ -129,6 +135,14 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
       const savedRecent = window.localStorage.getItem(RECENT_KEY);
       if (savedRecent) setRecent(JSON.parse(savedRecent));
+
+      const savedByCourse = window.localStorage.getItem(RECENT_BY_COURSE_KEY);
+      if (savedByCourse) setRecentByCourse(JSON.parse(savedByCourse));
+      else if (savedRecent) {
+        // first visit after this change: seed the per-course map from the single old record
+        const old = JSON.parse(savedRecent) as RecentLesson;
+        if (old?.course) setRecentByCourse({ [old.course]: old });
+      }
 
       const pending = window.localStorage.getItem(PENDING_KEY);
       if (pending) pendingRef.current = JSON.parse(pending);
@@ -260,6 +274,15 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
       setRecent(item);
+      setRecentByCourse((previous) => {
+        const next = { ...previous, [course]: item };
+        try {
+          window.localStorage.setItem(RECENT_BY_COURSE_KEY, JSON.stringify(next));
+        } catch {
+          // ignore
+        }
+        return next;
+      });
       try {
         window.localStorage.setItem(RECENT_KEY, JSON.stringify(item));
       } catch {
@@ -294,6 +317,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         completed,
         bookmarks,
         recent,
+        recentByCourse,
         isCompleted,
         toggleComplete,
         isBookmarked,

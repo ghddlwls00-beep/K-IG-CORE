@@ -25,7 +25,21 @@ export interface DashboardSection {
   lessons: DashboardLessonItem[];
 }
 
-const DashboardLessonCard = memo(function DashboardLessonCard({
+/*
+ * 2026-09-27 — the course list rebuilt to docs/디자인-규칙.md (점검 FRAME-U02 · U12 · L02 · L09):
+ *   - '이어서 학습' (the last lesson opened in THIS course) or '처음부터' at the top; visitors get
+ *     '무료로 먼저 해 보기' with the two free lessons instead of an empty progress card
+ *   - the section holding that lesson opens by itself and scrolls to it; which sections are open is
+ *     kept for the tab (sessionStorage), so BACK from a lesson returns to the same list
+ *   - one 52px row per lesson: title · state (완료 · 무료 · 잠금) · bookmark. The repeated badge,
+ *     subtitle, file id and '학습하기' of the old cards are gone; titles are unchanged
+ *   - a chevron (not ▶, which read as a play button), no gradient, no emerald/blue/amber
+ * Kept on purpose for the audit drivers (drive-common-0926 A · gap-checks P): the progress sentence
+ * '학습 진도율: N / T개 완료 (P%)', the filter labels '전체 (N)' · '북마크 (N)' · '미완료 (N)', and
+ * aria-expanded on the section headers.
+ */
+
+const LessonRow = memo(function LessonRow({
   lesson,
   courseSlug,
   isDone,
@@ -33,6 +47,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   isUnlocked,
   isFree,
   hasCourseAccess,
+  isRecent,
   onToggleBookmark,
   sequentialLock,
 }: {
@@ -43,132 +58,70 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   isUnlocked: boolean;
   isFree: boolean;
   hasCourseAccess: boolean;
+  isRecent: boolean;
   onToggleBookmark: (courseSlug: string, lessonId: string) => void;
   sequentialLock: boolean;
 }) {
   const pres = lesson.presentation;
+  const state = isDone
+    ? "완료"
+    : !isUnlocked
+      ? sequentialLock
+        ? "앞 챕터를 마치면 열림"
+        : "이용권"
+      : isFree && !hasCourseAccess
+        ? "무료"
+        : "";
 
   return (
     <li
-      style={{
-        contentVisibility: "auto",
-        containIntrinsicSize: "0 130px",
-      }}
+      data-lesson-id={lesson.id}
+      style={{ contentVisibility: "auto", containIntrinsicSize: "0 52px" }}
+      className={`flex items-center ${isRecent ? "bg-sunken" : ""}`}
     >
-      <div
-        className={`group relative flex h-full flex-col justify-between gap-3 rounded-2xl border p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
-          isDone
-            ? "border-emerald-500/30 bg-raised shadow-2xs hover:border-emerald-500/60"
-            : "border-line bg-raised shadow-2xs hover:border-line-strong"
-        }`}
+      <Link
+        href={`/${courseSlug}/${lesson.id}`}
+        scroll={true}
+        className="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 py-2 pl-4 pr-2 transition-colors hover:bg-sunken"
       >
-        <div className="flex flex-col gap-1.5">
-          <div className="flex items-center justify-between gap-1.5">
-            <span className="font-mono text-[11px] font-bold text-ink tracking-wider">
-              {pres.code}
-            </span>
-            <div className="flex items-center gap-1.5">
-              {isDone && (
-                <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
-                  ✓ 완료
-                </span>
-              )}
-              {!isUnlocked ? (
-                <span className="inline-flex items-center gap-1 rounded-full border border-line bg-sunken px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
-                  <span>🔒</span>
-                  <span>{sequentialLock ? "이전 챕터 완료 필요" : courseSlug === "student" ? "STUDENT" : "올패스"}</span>
-                </span>
-              ) : !hasCourseAccess && isFree ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                  <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>무료 보기</span>
-                </span>
-              ) : null}
-              {pres.badge && (
-                <span className="rounded-full bg-sunken px-2 py-0.5 text-[10px] font-medium text-ink-soft">
-                  {pres.badge}
-                </span>
-              )}
-              {/* Quick Bookmark Toggle on card.
-                  KIG-013: the list page is not gated, so without this the star
-                  still toggled for lessons the learner cannot open. Locked cards
-                  keep the toggle disabled. */}
-              <button
-                type="button"
-                disabled={!isUnlocked}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  onToggleBookmark(courseSlug, lesson.id);
-                }}
-                title={
-                  !isUnlocked
-                    ? "이용권 등록 후 북마크할 수 있습니다"
-                    : isStarred
-                      ? "북마크 해제"
-                      : "북마크 추가"
-                }
-                aria-label={
-                  !isUnlocked
-                    ? "잠긴 레슨은 북마크할 수 없습니다"
-                    : isStarred
-                      ? "북마크 해제"
-                      : "북마크 추가"
-                }
-                className={`-m-2 p-2 transition-transform ${
-                  isUnlocked ? "cursor-pointer active:scale-90" : "cursor-not-allowed opacity-40"
-                }`}
-              >
-                <span
-                  className={`text-[13px] ${
-                    isStarred
-                      ? "text-amber-500 font-bold"
-                      : "text-ink-faint hover:text-ink"
-                  }`}
-                >
-                  {isStarred ? "★" : "☆"}
-                </span>
-              </button>
-            </div>
-          </div>
-
-          <Link
-            href={`/${courseSlug}/${lesson.id}`}
-            scroll={true}
-            className="text-[14px] font-semibold leading-snug text-ink transition-colors focus:outline-none group-hover:opacity-75"
-          >
-            {pres.title}
-          </Link>
-
-          {pres.subtitle && (
-            <span className="text-[12px] text-ink-soft line-clamp-1">
-              {pres.subtitle}
-            </span>
-          )}
-        </div>
-
-        <div className="flex items-center justify-between border-t border-line pt-2.5 font-mono text-[10.5px] text-ink-faint">
-          <span className="tabular-nums">{lesson.id}</span>
-          <Link
-            href={`/${courseSlug}/${lesson.id}`}
-            scroll={true}
-            className="inline-flex items-center gap-1 font-medium text-ink-soft group-hover:text-ink transition-all group-hover:translate-x-0.5"
-          >
-            <span>
-              {!isUnlocked
-                ? courseSlug === "student"
-                  ? sequentialLock
-                    ? "해금 조건 보기"
-                    : "수강권 열람"
-                  : "올패스 열람"
-                : isFree && !hasCourseAccess
-                  ? "무료 보기"
-                  : "학습하기"}
-            </span>
-            <span className="text-[11px] opacity-60">{!isUnlocked ? "🔒" : "→"}</span>
-          </Link>
-        </div>
-      </div>
+        {courseSlug === "student" ? (
+          <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code.replace(/^Ch\s*/, "")}</span>
+        ) : null}
+        <span className={`min-w-0 flex-1 truncate text-label ${isUnlocked ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
+          {pres.title}
+        </span>
+        {state ? (
+          <span className={`flex shrink-0 items-center gap-1 text-caption ${isDone ? "text-success font-medium" : "text-ink-soft"}`}>
+            {isDone ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M5 12.5l4.5 4.5L19 7.5" />
+              </svg>
+            ) : !isUnlocked ? (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+              </svg>
+            ) : null}
+            <span>{state}</span>
+          </span>
+        ) : null}
+      </Link>
+      {/* KIG-013: the list page is not gated, so a locked row keeps the bookmark disabled. */}
+      <button
+        type="button"
+        disabled={!isUnlocked}
+        onClick={() => onToggleBookmark(courseSlug, lesson.id)}
+        title={!isUnlocked ? "이용권 등록 후 북마크할 수 있습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
+        aria-label={!isUnlocked ? "잠긴 레슨은 북마크할 수 없습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
+        aria-pressed={isStarred}
+        className={`mr-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-control transition-colors ${
+          isUnlocked ? "cursor-pointer hover:bg-sunken" : "cursor-not-allowed opacity-30"
+        } ${isStarred ? "text-primary" : "text-ink-faint hover:text-ink"}`}
+      >
+        <svg width="17" height="17" viewBox="0 0 24 24" fill={isStarred ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden>
+          <path d="M6.5 3.5h11a1 1 0 0 1 1 1v16l-6.5-4.2-6.5 4.2v-16a1 1 0 0 1 1-1Z" />
+        </svg>
+      </button>
     </li>
   );
 });
@@ -182,7 +135,7 @@ export function CourseDashboard({
   sections: DashboardSection[];
   totalLessons: number;
 }) {
-  const { completed, bookmarks, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
+  const { completed, bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
   const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress } = useLicense();
   const hasCourseAccess =
     hasActiveLicense && (!licenseInfo?.isStudentOnly || courseSlug === "student");
@@ -248,6 +201,24 @@ export function CourseDashboard({
 
   const progressPercent = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
 
+  // '이어서 학습': the last lesson opened in this course (a script page counts as its listed lesson)
+  const allLessons = useMemo(() => sections.flatMap((s) => s.lessons), [sections]);
+  const recentRecord = recentByCourse[courseSlug];
+  const recentListed = useMemo(() => {
+    if (!recentRecord) return null;
+    const exact = allLessons.find((l) => l.id === recentRecord.lessonId);
+    if (exact) return exact;
+    return allLessons.find((l) => recentRecord.lessonId.startsWith(`${l.id}-`)) ?? null;
+  }, [allLessons, recentRecord]);
+  const firstLesson = allLessons[0] ?? null;
+
+  // the two free lessons (first two cards of the first section — the same rule as the gate)
+  const freeLessons = useMemo(() => {
+    const first = sections[0];
+    if (!first) return [];
+    return first.lessons.filter((lesson, lessonIdx) => isFreePreviewLesson(courseSlug, lesson.id, 0, lessonIdx)).slice(0, 2);
+  }, [courseSlug, sections]);
+
   // Filter sections based on selected filter
   const filteredSections = useMemo(() => {
     return sections
@@ -267,253 +238,267 @@ export function CourseDashboard({
       .filter((sec) => sec.lessons.length > 0);
   }, [sections, filter, courseSlug, isBookmarked, isCompleted]);
 
-  // Track open/collapsed state of sections. All sections start collapsed by default.
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
-    const initial: Record<string, boolean> = {};
-    sections.forEach((sec) => {
-      initial[sec.label] = false;
-    });
-    return initial;
-  });
+  // Which sections are open. Kept for this tab (sessionStorage) so BACK from a lesson finds the list
+  // as it was; the first visit opens the section with the recent lesson, or the first section.
+  const openKey = `kig:list-open:${courseSlug}`;
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const openRestoredRef = useRef(false);
+  useEffect(() => {
+    if (openRestoredRef.current) return;
+    let restored: Record<string, boolean> | null = null;
+    try {
+      const saved = window.sessionStorage.getItem(openKey);
+      if (saved) restored = JSON.parse(saved);
+    } catch {
+      // ignore
+    }
+    if (!restored) {
+      const home = recentListed
+        ? sections.find((s) => s.lessons.some((l) => l.id === recentListed.id))
+        : sections[0];
+      restored = home ? { [home.label]: true } : {};
+    }
+    openRestoredRef.current = true;
+    setOpenSections(restored);
+  }, [openKey, recentListed, sections]);
 
   const toggleSection = (label: string) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [label]: !prev[label],
-    }));
+    setOpenSections((prev) => {
+      const next = { ...prev, [label]: !prev[label] };
+      try {
+        window.sessionStorage.setItem(openKey, JSON.stringify(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
   };
 
+  // Once, on a fresh visit (not BACK — NavigationScrollRestoration handles that), bring the recent
+  // lesson's row into view.
+  const scrolledRef = useRef(false);
+  useEffect(() => {
+    if (scrolledRef.current || !recentListed || !openRestoredRef.current) return;
+    scrolledRef.current = true;
+    const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    if (nav?.type === "back_forward") return;
+    const row = document.querySelector(`[data-lesson-id="${CSS.escape(recentListed.id)}"]`);
+    if (row && window.scrollY < 40) row.scrollIntoView({ block: "center" });
+  }, [openSections, recentListed]);
+
+  const filterButton = (key: typeof filter, label: string) => (
+    <button
+      type="button"
+      onClick={() => setFilter(key)}
+      aria-pressed={filter === key}
+      className={`flex min-h-11 items-center justify-center rounded-control px-3 text-label transition-colors cursor-pointer ${
+        filter === key ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:text-ink"
+      }`}
+    >
+      {label}
+    </button>
+  );
+
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-5">
       {unlockNotice && (
-        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-emerald-500/30 bg-raised px-5 py-4 text-center text-[14px] font-bold text-emerald-700 dark:text-emerald-400 shadow-xl dark:text-emerald-300" role="status">
-          🎉 챕터 {unlockNotice}가 열렸습니다.
+        <div className="fixed inset-x-4 top-20 z-50 mx-auto max-w-md rounded-card border border-line bg-raised px-5 py-4 text-center text-label font-semibold text-ink shadow-xl" role="status">
+          챕터 {unlockNotice}이(가) 열렸습니다.
         </div>
       )}
-      {/* Course Progress Dashboard Card - Apple Glass / Clean Depth */}
-      <div className="rounded-3xl border border-line bg-gradient-to-b from-raised to-sunken/70 p-4.5 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4 sm:gap-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-faint">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Course Progress & Analytics
+
+      {/* Where to go next */}
+      {hasCourseAccess ? (
+        <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="진도">
+          {recentListed || firstLesson ? (
+            <Link
+              href={`/${courseSlug}/${(recentListed ?? firstLesson)!.id}`}
+              className="flex min-h-14 items-center justify-between gap-3 rounded-control bg-ink px-4 py-2 text-surface transition-opacity hover:opacity-90"
+            >
+              <span className="min-w-0">
+                <span className="block text-caption text-surface/75">{recentListed ? "이어서 학습" : "처음부터"}</span>
+                <span className="block truncate text-label font-semibold">{(recentListed ?? firstLesson)!.presentation.title}</span>
+              </span>
+              <span aria-hidden>→</span>
+            </Link>
+          ) : null}
+          <div className="mt-4 flex flex-col gap-2">
+            <p className="text-label text-ink">
+              학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
+              <span className="tabular-nums text-ink-soft">({progressPercent}%)</span>
+            </p>
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-sunken" aria-hidden>
+              <div className="h-full rounded-full bg-ink transition-[width] duration-500" style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }} />
             </div>
-            <h2 className="text-[17px] sm:text-[20px] font-bold text-ink tracking-tight mt-1">
-              학습 진도율: <span className="text-emerald-700 dark:text-emerald-400">{completedCount}</span> / {totalLessons}개 완료 <span className="text-ink-faint text-[14px] sm:text-[16px] font-normal">({progressPercent}%)</span>
-            </h2>
-            {courseSlug === "student" && hasActiveLicense && (
-              <p className="mt-1 text-[11.5px] text-ink-faint" aria-live="polite">
-                {studentSyncStatus === "saved" && "✓ 서버에 저장됨"}
-                {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중..."}
-                {studentSyncStatus === "pending" && "연결 복구 후 자동 저장 예정"}
-                {studentSyncStatus === "error" && "저장 실패 · 연결되면 자동으로 다시 시도합니다"}
+            {courseSlug === "student" && (
+              <p className="text-caption text-ink-soft" aria-live="polite">
+                {studentSyncStatus === "saved" && "서버에 저장됨"}
+                {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중…"}
+                {studentSyncStatus === "pending" && "연결되면 자동으로 저장합니다"}
+                {studentSyncStatus === "error" && "저장하지 못했습니다 · 연결되면 다시 시도합니다"}
               </p>
             )}
           </div>
+        </section>
+      ) : (
+        <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="무료 체험">
+          <h2 className="text-label font-semibold text-ink">무료로 먼저 해 보기</h2>
+          <p className="mt-1 text-caption text-ink-soft">이용권 없이 첫 두 강의를 끝까지 학습할 수 있습니다.</p>
+          {freeLessons.length ? (
+            <div className={`mt-3 grid gap-2 ${freeLessons.length > 1 ? "sm:grid-cols-2" : ""}`}>
+              {freeLessons.map((lesson, i) => (
+                <Link
+                  key={lesson.id}
+                  href={`/${courseSlug}/${lesson.id}`}
+                  className={`flex min-h-12 items-center justify-between gap-2 rounded-control px-4 text-label font-semibold transition-colors ${
+                    i === 0 ? "bg-ink text-surface hover:opacity-90" : "border border-line text-ink hover:bg-sunken"
+                  }`}
+                >
+                  <span className="truncate">{lesson.presentation.title}</span>
+                  <span aria-hidden>→</span>
+                </Link>
+              ))}
+            </div>
+          ) : null}
+          {/* kept for the audit drivers, which read the counters on every list page */}
+          <p className="mt-3 text-caption text-ink-soft">
+            학습 진도율: <span className="tabular-nums">{completedCount}</span> / {totalLessons}개 완료 ({progressPercent}%)
+          </p>
+        </section>
+      )}
 
-          {/* Apple-style Segmented Control Filter Pills */}
-          <div className="w-full sm:w-auto grid grid-cols-3 sm:flex items-center rounded-full border border-line bg-sunken p-1 text-[11.5px] sm:text-[12.5px]">
-            <button
-              type="button"
-              onClick={() => setFilter("all")}
-              className={`px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium text-center ${
-                filter === "all"
-                  ? "bg-raised text-ink font-semibold shadow-xs"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              전체 ({totalLessons})
-            </button>
-            <button
-              type="button"
-              onClick={() => setFilter("bookmarked")}
-              className={`px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium flex items-center justify-center gap-1 ${
-                filter === "bookmarked"
-                  ? "bg-raised text-amber-600 dark:text-amber-300 font-semibold shadow-xs"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              <span>★</span>
-              <span>북마크 ({bookmarkCount})</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setFilter("incomplete")}
-              className={`px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium text-center ${
-                filter === "incomplete"
-                  ? "bg-raised text-ink font-semibold shadow-xs"
-                  : "text-ink-soft hover:text-ink"
-              }`}
-            >
-              미완료 ({Math.max(0, totalLessons - completedCount)})
-            </button>
-          </div>
-        </div>
-
-        {/* Apple-style Smooth Rounded Progress Bar */}
-        <div className="w-full bg-sunken rounded-full h-2.5 overflow-hidden p-0.5">
-          <div
-            className="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-            style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }}
-          />
-        </div>
+      {/* Filters */}
+      <div className="grid grid-cols-3 gap-1 rounded-control bg-sunken p-1" role="group" aria-label="목록 거르기">
+        {filterButton("all", `전체 (${totalLessons})`)}
+        {filterButton("bookmarked", `북마크 (${bookmarkCount})`)}
+        {filterButton("incomplete", `미완료 (${Math.max(0, totalLessons - completedCount)})`)}
       </div>
 
       {/* Sections */}
       {filteredSections.length === 0 ? (
-        <div className="rounded-2xl border border-line bg-surface p-12 text-center flex flex-col items-center justify-center gap-3">
-          <span className="text-3xl">📭</span>
-          <p className="text-[15px] font-semibold text-ink">
-            {filter === "bookmarked"
-              ? "아직 북마크된 레슨이 없습니다."
-              : "조건에 해당하는 레슨이 없습니다."}
+        <div className="flex flex-col items-center justify-center gap-2 rounded-card border border-line p-10 text-center">
+          <p className="text-label font-semibold text-ink">
+            {filter === "bookmarked" ? "아직 북마크한 강의가 없습니다." : "조건에 맞는 강의가 없습니다."}
           </p>
-          <p className="text-[13px] text-ink-soft max-w-sm">
+          <p className="max-w-sm text-caption text-ink-soft">
             {filter === "bookmarked"
-              ? "학습 중 중요하거나 복습이 필요한 레슨에서 [☆ 북마크]를 눌러보세요."
-              : "모든 레슨을 완료하셨습니다! 대단합니다!"}
+              ? "다시 보고 싶은 강의에서 제목 옆 북마크를 누르세요."
+              : "모든 강의를 마쳤습니다."}
           </p>
           {filter !== "all" && (
             <button
               type="button"
               onClick={() => setFilter("all")}
-              className="mt-2 rounded-xl border border-line px-4 py-2 text-[12.5px] font-semibold text-ink hover:bg-raised transition-colors cursor-pointer"
+              className="mt-2 min-h-11 rounded-control border border-line px-4 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-raised"
             >
-              전체 레슨 목록 보기
+              전체 목록 보기
             </button>
           )}
         </div>
       ) : (
-        <div className="flex flex-col gap-6">
-          {/* Accordion List */}
-          <div className="flex flex-col gap-3.5">
-            {filteredSections.map((section) => {
-              const sectionIndex = section.sectionIndex;
-              const chapterNumber = sectionIndex + 1;
-              const isOpen = openSections[section.label] ?? false;
-              const completedInSection = section.lessons.filter((l) =>
-                isCompleted(courseSlug, l.id),
-              ).length;
-              const studentChapter = courseSlug === "student"
-                ? studentProgress?.chapters.find((item) => item.chapter === chapterNumber)
-                : undefined;
-              const chapterUnlocked = courseSlug !== "student"
-                || (!hasCourseAccess
-                  ? sectionIndex === 0
-                  : section.lessons.some((lesson, lessonIdx) =>
-                      checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx),
-                    ));
-              const chapterComplete = Boolean(studentChapter?.complete);
-              const chapterPercent = studentChapter?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
+        <div className="flex flex-col gap-3">
+          {filteredSections.map((section) => {
+            const sectionIndex = section.sectionIndex;
+            const chapterNumber = sectionIndex + 1;
+            // a filter shows its matches without making the learner open each section
+            const isOpen = filter !== "all" || (openSections[section.label] ?? false);
+            const completedInSection = section.lessons.filter((l) => isCompleted(courseSlug, l.id)).length;
+            const studentChapter = courseSlug === "student"
+              ? studentProgress?.chapters.find((item) => item.chapter === chapterNumber)
+              : undefined;
+            const chapterUnlocked = courseSlug !== "student"
+              || (!hasCourseAccess
+                ? sectionIndex === 0
+                : section.lessons.some((lesson, lessonIdx) =>
+                    checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx),
+                  ));
+            const chapterComplete = Boolean(studentChapter?.complete);
+            const chapterPercent = studentChapter?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
+            const isLife = licenseInfo?.plan === "LIFE";
+            const studentNote = courseSlug !== "student"
+              ? null
+              : !hasCourseAccess
+                ? sectionIndex === 0 ? "1·2강 무료" : "이용권 등록 후 열립니다"
+                : !chapterUnlocked
+                  ? `챕터 ${sectionIndex}을(를) 마치면 열립니다`
+                  : chapterComplete
+                    ? "챕터 완료"
+                    : isLife || !studentChapter
+                      ? null
+                      : `진행 ${chapterPercent}% · ${studentChapter.requiredCount}강과 마지막 강의를 마치면 다음 챕터`;
 
-
-              return (
-                <div
-                  key={`${sectionIndex}-${section.label}`}
-                  id={`section-${sectionIndex}`}
-                  className="rounded-3xl border border-line bg-raised shadow-2xs overflow-hidden transition-all duration-200 scroll-mt-24"
+            return (
+              <div
+                key={`${sectionIndex}-${section.label}`}
+                id={`section-${sectionIndex}`}
+                className="scroll-mt-20 overflow-hidden rounded-card border border-line bg-raised"
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleSection(section.label)}
+                  className="flex min-h-14 w-full items-center gap-3 px-4 py-3 text-left transition-colors cursor-pointer select-none hover:bg-sunken"
+                  aria-expanded={isOpen}
                 >
-                  {/* Clickable Section Accordion Header */}
-                  <button
-                    type="button"
-                    onClick={() => toggleSection(section.label)}
-                    className="w-full flex items-center justify-between p-5 text-left hover:bg-sunken/80 transition-colors cursor-pointer select-none"
-                    aria-expanded={isOpen}
-                  >
-                    <div className="flex min-w-0 flex-1 items-center gap-3.5">
-                      <div
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line font-mono text-[11px] font-bold transition-all duration-300 ${
-                          isOpen ? "rotate-90 bg-ink text-surface" : "bg-sunken text-ink-soft"
-                        }`}
-                      >
-                        ▶
-                      </div>
-                      <div className="min-w-0 flex-1 flex flex-col">
-                        <span className="font-bold text-[16px] text-ink tracking-tight flex items-center gap-2">
-                          {section.label}
-                        </span>
-                        <span className="font-mono text-[11.5px] text-ink-faint mt-0.5">
-                          총 {section.lessons.length}개 레슨
-                          {completedInSection > 0 && (
-                            <span className="text-emerald-700 dark:text-emerald-400 font-semibold ml-2">
-                              · {completedInSection}개 완료
-                            </span>
-                          )}
-                        </span>
-                        {courseSlug === "student" && (
-                          <span className="mt-1 text-[11px] font-medium text-ink-soft">
-                            {!hasCourseAccess && sectionIndex === 0
-                              ? "1·2강 무료 체험"
-                              : !chapterUnlocked
-                                ? `챕터 ${sectionIndex} 완료 후 해금`
-                                : chapterComplete
-                                  ? "✓ 챕터 완료"
-                                  : `진행률 ${chapterPercent}%${studentChapter ? ` · 해금 기준 ${studentChapter.requiredCount}강 + 마지막 강의` : ""}`}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden
+                    className={`shrink-0 text-ink-soft transition-transform duration-200 ${isOpen ? "rotate-90" : ""}`}>
+                    <path d="M9 6l6 6-6 6" />
+                  </svg>
+                  <span className="flex min-w-0 flex-1 flex-col">
+                    <span className="text-label font-semibold text-ink">{section.label}</span>
+                    {studentNote ? <span className="mt-0.5 text-caption text-ink-soft">{studentNote}</span> : null}
+                  </span>
+                  <span className="flex shrink-0 items-center gap-1.5 text-caption tabular-nums text-ink-soft">
+                    {courseSlug === "student" && !chapterUnlocked ? (
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="잠김">
+                        <rect x="5" y="11" width="14" height="9" rx="2" />
+                        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                      </svg>
+                    ) : null}
+                    {completedInSection}/{section.lessons.length}
+                  </span>
+                </button>
 
-                    <div className="ml-3 flex shrink-0 items-center gap-2">
-                      {courseSlug === "student" && (
-                        <span className={`inline-flex min-h-8 min-w-[72px] shrink-0 items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-[11px] font-semibold ${
-                          chapterComplete
-                            ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-                            : chapterUnlocked
-                              ? "bg-blue-500/10 text-blue-700 dark:text-blue-300"
-                              : "bg-sunken text-ink-soft" /* BUG-035: ink-faint on sunken was 4.47:1 */
-                        }`}>
-                          {chapterComplete ? "완료" : chapterUnlocked ? "학습 가능" : "🔒 잠금"}
-                        </span>
-                      )}
-                      <span className="rounded-full border border-line bg-sunken px-3 py-1 text-[11.5px] font-medium text-ink-soft hidden sm:inline">
-                        {isOpen ? "접기 ▲" : "펼치기 ▼"}
-                      </span>
-                    </div>
-                  </button>
-
-                  {courseSlug === "student" && (
-                    <ChapterAudioBar
-                      chapterNumber={chapterNumber}
-                      chapterUnlocked={chapterUnlocked}
-                      previewOnly={!hasCourseAccess && sectionIndex === 0}
-                      totalLessons={section.lessons.length}
-                    />
-                  )}
-
-                  {/* Section Content Grid */}
-                  {isOpen && (
-                    <div className="border-t border-line p-4 sm:p-6 bg-sunken/50">
-                      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                        {section.lessons.map((lesson, lessonIdx) => {
-                          const isDone = isCompleted(courseSlug, lesson.id);
-                          const isStarred = isBookmarked(courseSlug, lesson.id);
-                          const isFree = isFreePreviewLesson(courseSlug, lesson.id, sectionIndex, lessonIdx);
-                          const isUnlocked = checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx);
-                          const sequentialLock = courseSlug === "student" && hasCourseAccess && !isUnlocked;
-
-                          return (
-                            <DashboardLessonCard
-                              key={lesson.id}
-                              lesson={lesson}
-                              courseSlug={courseSlug}
-                              isDone={isDone}
-                              isStarred={isStarred}
-                              isUnlocked={isUnlocked}
-                              isFree={isFree}
-                              hasCourseAccess={hasCourseAccess}
-                              onToggleBookmark={handleToggleBookmark}
-                              sequentialLock={sequentialLock}
-                            />
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                {isOpen && (
+                  <div className="border-t border-line">
+                    {courseSlug === "student" && chapterUnlocked && (
+                      <ChapterAudioBar
+                        chapterNumber={chapterNumber}
+                        chapterUnlocked={chapterUnlocked}
+                        previewOnly={!hasCourseAccess && sectionIndex === 0}
+                        totalLessons={section.lessons.length}
+                      />
+                    )}
+                    <ul className="divide-y divide-line">
+                      {section.lessons.map((lesson) => {
+                        // position in the UNFILTERED section — the free and unlock rules count cards
+                        const lessonIdx = sections[sectionIndex].lessons.findIndex((l) => l.id === lesson.id);
+                        const isDone = isCompleted(courseSlug, lesson.id);
+                        const isStarred = isBookmarked(courseSlug, lesson.id);
+                        const isFree = isFreePreviewLesson(courseSlug, lesson.id, sectionIndex, lessonIdx);
+                        const isUnlocked = checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx);
+                        const sequentialLock = courseSlug === "student" && hasCourseAccess && !isUnlocked;
+                        return (
+                          <LessonRow
+                            key={lesson.id}
+                            lesson={lesson}
+                            courseSlug={courseSlug}
+                            isDone={isDone}
+                            isStarred={isStarred}
+                            isUnlocked={isUnlocked}
+                            isFree={isFree}
+                            hasCourseAccess={hasCourseAccess}
+                            isRecent={recentListed?.id === lesson.id}
+                            onToggleBookmark={handleToggleBookmark}
+                            sequentialLock={sequentialLock}
+                          />
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

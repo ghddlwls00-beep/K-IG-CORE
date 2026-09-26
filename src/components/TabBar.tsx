@@ -42,6 +42,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
     };
   }, [mobileMenuOpen]);
 
+  // The home page keeps its own look without this header (사장님 2026-09-27 "추가하지마 이건").
   if (pathname === "/") {
     return null;
   }

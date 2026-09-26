@@ -124,50 +124,27 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
       : fallbackSections(course.series, listed)
   ).filter((section) => section.lessons.length > 0);
 
+  // 2026-09-27 (docs/디자인-규칙.md · 점검 FRAME-U12 · U20): the same 768px column as the lessons,
+  // a plain meta line instead of 'CORE TRACK · 총 N개 정규 레슨 · N개 단계 구성', no entrance animation.
   return (
-    <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-14">
-      {/* Apple-style subtle Back Navigation Pill */}
-      <nav className="mb-8">
+    <main className="mx-auto max-w-3xl px-4 pt-3 pb-12 sm:px-5 sm:pt-6 sm:pb-16">
+      <nav aria-label="처음 화면으로">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2 rounded-full border border-line bg-sunken px-3.5 py-1.5 font-mono text-[11.5px] font-medium text-ink-soft hover:bg-raised hover:text-ink transition-all shadow-2xs"
+          className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
         >
-          <span className="transition-transform duration-200 group-hover:-translate-x-0.5">←</span>
-          <span>홈으로 돌아가기</span>
+          <span aria-hidden>←</span>
+          <span>처음 화면</span>
         </Link>
       </nav>
 
-      {/* Apple Pro Course Hero Header */}
-      <header
-        className="mb-10 sm:mb-12 flex flex-col gap-3 pb-8 border-b border-line"
-        style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}
-      >
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-black/5 px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wider text-ink-soft">
-            CORE TRACK
-          </span>
-          <span className="text-ink-faint">·</span>
-          <span className="font-mono text-[12px] font-semibold text-emerald-700 dark:text-emerald-400">
-            총 {listed.length}개 정규 레슨
-          </span>
-          {sections.length > 0 && (
-            <>
-              <span className="text-ink-faint">·</span>
-              <span className="font-mono text-[12px] text-ink-faint">
-                {sections.length}개 단계 구성
-              </span>
-            </>
-          )}
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-ink">
-          {course.title}
-        </h1>
-
+      <header className="mt-2 mb-6 flex flex-col gap-2">
+        <h1 className="text-title-l font-bold tracking-tight text-ink">{course.title}</h1>
+        <p className="text-caption text-ink-soft tabular-nums">
+          {listed.length}개 강의{sections.length > 0 ? ` · ${sections.length}구간` : ""}
+        </p>
         {course.description ? (
-          <p className="max-w-2xl text-[15px] sm:text-[16px] text-ink-soft leading-relaxed">
-            {course.description}
-          </p>
+          <p className="max-w-2xl text-label leading-relaxed text-ink-soft">{course.description}</p>
         ) : null}
       </header>
 

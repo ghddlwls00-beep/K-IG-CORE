@@ -7,6 +7,7 @@ import { LessonPaywall } from "@/components/LessonPaywall";
 import { getAllLessonParams, getLesson } from "@/lib/content";
 import { formatLessonPresentation } from "@/lib/curriculumPresentation";
 import { isFreePreviewLesson } from "@/lib/license";
+import { freeLessonLinks } from "@/lib/freeLessonLinks";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
@@ -133,6 +134,7 @@ export default async function StudentLessonPage({
           lessonId={id}
           lockReason={sequentialLock ? "progress" : "license"}
           chapter={lessonChapter || undefined}
+          freeLessons={freeLessonLinks("student")}
         />
       </main>
     );

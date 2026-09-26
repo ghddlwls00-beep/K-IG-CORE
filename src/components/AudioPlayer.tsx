@@ -297,18 +297,33 @@ export function AudioPlayer({
           // The jump happens when the finger or key is released, so dragging across
           // the bar does not restart the voice at every sentence on the way.
           <div className="relative flex-1 px-1 min-w-[40px]">
-            <div aria-hidden className="flex h-11 w-full items-center gap-[2px]">
-              {fallbackSentences.map((_, i) => (
-                <span
-                  key={i}
-                  className={`h-1.5 flex-1 rounded-full transition-colors ${
-                    i <= (scrubIndex ?? (ttsActive ? ttsIndex : -1))
-                      ? "bg-primary"
-                      : "bg-ink/10"
-                  }`}
-                />
-              ))}
-            </div>
+            {fallbackSentences.length <= 16 ? (
+              <div aria-hidden className="flex h-11 w-full items-center gap-[2px]">
+                {fallbackSentences.map((_, i) => (
+                  <span
+                    key={i}
+                    className={`h-1.5 flex-1 rounded-full transition-colors ${
+                      i <= (scrubIndex ?? (ttsActive ? ttsIndex : -1))
+                        ? "bg-primary"
+                        : "bg-ink/10"
+                    }`}
+                  />
+                ))}
+              </div>
+            ) : (
+              // 17+ sentences (GRAMMAR has up to 46): the 2px gaps alone were wider than the bar on a
+              // phone, so the segments vanished. One track with a fill instead.
+              <div aria-hidden className="flex h-11 w-full items-center">
+                <span className="relative h-1.5 w-full overflow-hidden rounded-full bg-ink/10">
+                  <span
+                    className="absolute inset-y-0 left-0 rounded-full bg-primary transition-[width]"
+                    style={{
+                      width: `${(((scrubIndex ?? (ttsActive ? ttsIndex : -1)) + 1) / fallbackSentences.length) * 100}%`,
+                    }}
+                  />
+                </span>
+              </div>
+            )}
             <input
               type="range"
               min={0}

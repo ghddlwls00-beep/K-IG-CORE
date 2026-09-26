@@ -91,6 +91,10 @@ async function openAccordions(tab) {
   }
 }
 const listLinks = (course) => `(() => { const main = document.querySelector('main'); return [...new Set([...main.querySelectorAll('a[href^="/"]')].map((a) => new URL(a.href).pathname).filter((p) => p.startsWith('/${course}/')))]; })()`;
+// 2026-09-27: 거르기(북마크 · 미완료) 결과는 구간 목록([id^="section-"]) 안의 강의만 센다. 새 목록 화면은 맨 위 카드('이어서 학습' ·
+// '무료로 먼저 해 보기')에도 강의 링크가 있어, main 전체를 세면 거른 목록 밖의 링크까지 들어가 '완료한 것이 보임 2' 로 FAIL 이 났다(화면 흠 아님).
+// 옛 목록 화면도 구간 상자에 id="section-N" 이 있어 둘 다에 맞는다.
+const sectionLinks = (course) => `(() => { const main = document.querySelector('main'); return [...new Set([...main.querySelectorAll('[id^="section-"] a[href^="/"]')].map((a) => new URL(a.href).pathname).filter((p) => p.startsWith('/${course}/')))]; })()`;
 const COUNTERS = `(() => { const t = ${mainText};
   const m = t.match(/학습 진도율:\\s*(\\d+)\\s*\\/\\s*(\\d+)개 완료\\s*\\((\\d+)%\\)/);
   const n = (re) => { const x = t.match(re); return x ? Number(x[1]) : null; };
@@ -173,14 +177,14 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         // 북마크 거르기 → 북마크한 두 강의만
         const bm = await H.click(tab, chip("/북마크\\s*\\(/"), { settle: 900 });
         await openAccordions(tab);
-        const bmLinks = await tab.eval(listLinks(course));
+        const bmLinks = await tab.eval(sectionLinks(course));
         const bmWant = marks.map((id) => `/${course}/${id}`);
         const bmOk = bm.ok && bmLinks.length === bmWant.length && bmWant.every((p) => bmLinks.includes(p));
         rec(`A:filter-bookmarks:${course}`, "course list filters", bm.ok ? (bmOk ? "PASS" : "FAIL") : "BLOCKED", { note: `북마크 거르기 → 강의 ${bmLinks.length}(기대 ${bmWant.length}: ${bmWant.join(" ")})`, shown: bmLinks.slice(0, 6) });
         // 미완료 거르기 → 완료한 셋은 없고 N − 3
         const inc = await H.click(tab, chip("/미완료\\s*\\(/"), { settle: 900 });
         await openAccordions(tab);
-        const incLinks = await tab.eval(listLinks(course));
+        const incLinks = await tab.eval(sectionLinks(course));
         const doneShown = doneMains.map((id) => `/${course}/${id}`).filter((p) => incLinks.includes(p));
         const incOk = inc.ok && incLinks.length === N - 3 && !doneShown.length;
         rec(`A:filter-incomplete:${course}`, "course list filters", inc.ok ? (incOk ? "PASS" : "FAIL") : "BLOCKED", { note: `미완료 거르기 → 강의 ${incLinks.length}(기대 ${N - 3}) · 완료한 것이 보임 ${doneShown.length}` });
