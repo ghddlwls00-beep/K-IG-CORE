@@ -45,6 +45,16 @@
 - 사용량(03:1x): 5시간 36% · 주간 64%(09-28 05:00 재설정). 98% 면 멈추고 설계 세션에 알림. 새 문제 약 1,200개(LISTENING · READING)는 주간 재설정 뒤.
 - 첫 쪽은 사장님이 원래 사진 슬라이드를 고르심(머리줄 추가 안 함) — 휠 · 키 가로채기 제거 · 점 누름 영역만.
 
+### 다음 할 일 (04:4x 기준 — 압축 뒤 여기부터)
+
+1. **STUDENT**: journal 에서 STUDENT 검토 + 반박 점검을 `student-verified.md` 로 뽑음(GRAMMAR 때와 같은 node 스크립트 — 영역 이름 'STUDENT') →
+   일꾼 하나에 GRAMMAR 때와 같은 틀의 지시(README 계획 · verified.md · 디자인 규칙 · 바꾸는 선택자는 점검 도구와 같이 · 커밋 · 빌드 · 서버 금지 · 보고) —
+   STUDENT 는 한국어 줄도 소리 냄 · 챕터 순서 잠금(studentProgress) · Step 3 끝 완료(서버 진도) · 완료 기록 모양 {at, day: learningDay(Date.now())}(엔진 A11) · STU-U21 말하기 채점 창 번짐이 가장 먼저.
+   끝나면 이 세션이: verify-unit --build · 로컬 운영 빌드 캡처(s1-1 · s1-2) · drive-common D · check-student-unlock · 관련 student 도구 · 커밋 · 설계 세션에 해시와 숫자.
+2. **VOCA** 같은 방식 → 3. **LISTENING · READING**(새 문제 약 1,200개는 주간 사용량 재설정 09-28 05:00 뒤 워크플로우).
+4. **공통 엔진 붙이기**: main 에 f591451(src/lib/learning/*). 섹션마다 record.ts 의 recordAttempt · markLessonDone 만 부름 · 문항 열쇠 '강의id#순번' · 기기 저장. GRAMMAR 부터(오늘 복습 화면이 필요 — 엔진 planDay 로 과정 목록 맨 위 '오늘 복습 N' 카드).
+5. 사용량: 무거운 일 전에 get_usage — 98% 면 멈추고 설계 세션에 알림. 04:4x 에 5시간 55% · 주간 69%.
+
 ### GRAMMAR 계획 (학습법 + 화면 한 번에 · `grammar-verified.md` 의 '점검(CHECK)' 쪽 고침을 따름)
 
 - 학습법: L01 4단계 독립 시험(examAnswers · examResult · '틀린 것만 다시' · '새 시험' · 옛 저장 옮김) · L02 틀린 낱말 표시(grammarGrading 에 diff 만 더하고 점수 규칙 불변 — compare-grading 으로 판정 변화 0 증명) ·
