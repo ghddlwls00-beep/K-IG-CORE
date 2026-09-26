@@ -36,7 +36,16 @@ const STOP = `[...document.querySelectorAll('main button')].filter(${VIS}).find(
       const startedAfter = log.filter((e) => e.t > t0 && /^(playing|play-resolved)$/.test(e.ev)).map((e) => String(e.src).split("/").pop().slice(-24));
       const after = await tab.eval(`(() => { const t = ${TOGGLE}; return t ? t.getAttribute('aria-label') : null; })()`);
       const stopped = !startedAfter.length && after === "재생";
-      rows.push(`${mode}: 누를 때 정지 단추 ${before.stopDisabled ? "꺼짐" : "켜짐"} · 재생 단추 '${before.toggle}' → 1.5초 뒤 단추 '${after}' · 누른 뒤 새로 시작한 소리 ${startedAfter.length ? startedAfter.join(",") : "없음"} → ${stopped ? "멈춤" : "안 멈춤"}`);
+      let resumed = "";
+      // --resume(--toggle 과 같이): 틈에서 멈춘 뒤 다시 '재생' → 이어서 다음 문장이 나와야(첫 문장부터 다시가 아니라)
+      if (process.argv.includes("--resume") && mode === "문장 사이" && stopped) {
+        const t1 = await tab.eval("Math.round(performance.now())");
+        await H.click(tab, TOGGLE, { settle: 0 });
+        await H.sleep(2000);
+        const next = (await H.audioLog(tab)).filter((e) => e.t > t1 && e.ev === "playing").map((e) => String(e.src).split("/").pop().slice(-24));
+        resumed = ` · 다시 '재생' → 나온 소리 ${next.length ? next[0] : "없음"}`;
+      }
+      rows.push(`${mode}: 누를 때 정지 단추 ${before.stopDisabled ? "꺼짐" : "켜짐"} · 재생 단추 '${before.toggle}' → 1.5초 뒤 단추 '${after}' · 누른 뒤 새로 시작한 소리 ${startedAfter.length ? startedAfter.join(",") : "없음"} → ${stopped ? "멈춤" : "안 멈춤"}${resumed}`);
       await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
       const s2 = await tab.eval(`(() => { const s = ${STOP}; return s && !s.disabled; })()`).catch(() => false);
       if (s2) await H.click(tab, STOP, { settle: 300 });

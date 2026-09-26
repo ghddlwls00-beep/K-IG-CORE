@@ -1106,12 +1106,15 @@ let queueIndex = 0;
 let queueToken = -1;
 let queueOptions: QueueOptions = {};
 let queueGapTimer: ReturnType<typeof setTimeout> | null = null;
+/** The next sentence was due while playback was paused; resumeSpeech() starts it. */
+let queueHeldInGap = false;
 
 function resetQueue() {
   if (queueGapTimer) {
     clearTimeout(queueGapTimer);
     queueGapTimer = null;
   }
+  queueHeldInGap = false;
   queue = [];
   queueIndex = 0;
   queueToken = -1;
@@ -1128,6 +1131,9 @@ export function playSentenceQueue(sentences: string[], options: QueueOptions = {
   }
 
   resetQueue();
+  // Starting a queue (or jumping within one) means "play" — a pause left over from
+  // the previous queue must not hold the new one (see playQueueItem).
+  manuallyPaused = false;
   const runToken = ++token;
 
   queue = items;
@@ -1146,6 +1152,13 @@ export function playSentenceQueue(sentences: string[], options: QueueOptions = {
 
 function playQueueItem(runToken: number) {
   if (runToken !== token || queueToken !== runToken) return;
+
+  // Paused before this sentence started (between sentences): wait for resumeSpeech().
+  if (manuallyPaused) {
+    queueHeldInGap = true;
+    emit({ paused: true });
+    return;
+  }
 
   if (queueIndex >= queue.length) {
     if (queueOptions.loop) {
@@ -1172,6 +1185,11 @@ function playQueueItem(runToken: number) {
       onEnd: () => {
         if (runToken !== token || queueToken !== runToken) return;
         queueIndex += 1;
+        // BUG-034: the queue is still playing during the gap before the next sentence.
+        // finishRun() has just reported "not speaking"; report "speaking" again so a
+        // player's stop button stays enabled and its play/pause button pauses the
+        // queue instead of starting it over from the first sentence.
+        if (queueIndex < queue.length || queueOptions.loop) emit({ speaking: true, paused: false });
         const gap = queueOptions.gap ?? 250;
         queueGapTimer = setTimeout(() => {
           queueGapTimer = null;
@@ -1253,6 +1271,13 @@ export function pauseSpeech(): void {
   if (!snapshot.speaking || manuallyPaused) return;
   manuallyPaused = true;
 
+  // Between two sentences of a queue nothing is sounding: the next sentence
+  // waits in playQueueItem() until resumeSpeech() (BUG-034).
+  if (!active) {
+    emit({ paused: true });
+    return;
+  }
+
   if (active?.usingStream || !hasSynthesis()) {
     try {
       sharedAudioElement?.pause();
@@ -1289,6 +1314,17 @@ export function pauseSpeech(): void {
 export function resumeSpeech(): void {
   if (!manuallyPaused) return;
   manuallyPaused = false;
+
+  // Paused between two sentences: start the one that was held, or let the
+  // pending gap timer start it (BUG-034).
+  if (!active) {
+    emit({ paused: false });
+    if (queueHeldInGap && queueToken !== -1 && queueToken === token) {
+      queueHeldInGap = false;
+      playQueueItem(queueToken);
+    }
+    return;
+  }
 
   if (active?.usingStream || !hasSynthesis()) {
     try {

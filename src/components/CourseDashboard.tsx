@@ -461,7 +461,7 @@ export function CourseDashboard({
                             ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
                             : chapterUnlocked
                               ? "bg-blue-500/10 text-blue-700 dark:text-blue-300"
-                              : "bg-sunken text-ink-faint"
+                              : "bg-sunken text-ink-soft" /* BUG-035: ink-faint on sunken was 4.47:1 */
                         }`}>
                           {chapterComplete ? "완료" : chapterUnlocked ? "학습 가능" : "🔒 잠금"}
                         </span>
