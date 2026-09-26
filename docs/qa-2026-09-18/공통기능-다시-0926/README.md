@@ -52,6 +52,9 @@
   - 빠른 동작 6과정 **9/9**(`common-0926-local-fix.jsonl`) · 새 클립 0(생성기 pending 0 — 글은 안 바뀜)
 - **BUG-035** `CourseDashboard.tsx`: 잠금 표시 `text-ink-faint` → `text-ink-soft` — 로컬 /student 밝은 테마 대비 낮은 글 **19 → 0** · 다른 값 그대로(`a11y-compare-localfix.txt`).
 - 확인 못 한 것: 실제 아이폰 · 안드로이드(특히 iOS 의 소리 재생 규칙) — 배포 뒤 사장님 휴대폰 1분: READING 무료 1강 위 플레이어 재생 → 두 문장째로 넘어가는 순간 '정지' → 멈추면 됨.
+- **배포 `29d527a`(2026-09-26 21:06:57 · 사장님 "올려") · 운영 확인**: 틈 정지 3/3 · 틈 일시정지 3/3 → 다시 재생 둘째 문장 3/3 · 가운데 6/6(`bug034-deployed-*.txt`) ·
+  /student 대비 낮은 글 19 → 0(`a11y-compare-deployed.txt`) · 관문 1 ~ 3 다시 통과(`../최종관문-증거/gate-http-probes-deploy5.txt`) ·
+  빠른 동작 3판 8/9 · 9/9 · 9/9(`common-0926-deployed*.jsonl` — 8 인 판의 gh2-007 소리 오류 2 는 되풀이 6번 0 · `diag-grammar2-again-0926.txt` · findings-log OBS-0926-G2-NOTSUPPORTED).
 
 ### 명령서 대조표 뒤 더 본 것 (2026-09-26 13:0x ~ 13:4x — `scripts/gap-checks-0926.cjs` · 운영 · 이용권 없음)
 
