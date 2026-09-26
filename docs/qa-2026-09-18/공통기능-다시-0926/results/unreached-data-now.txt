@@ -1,0 +1,35 @@
+﻿과정 6 · 대체 길 규칙 1 · 짝 규칙(코드 자리 확인됨) · '전체 듣기' 를 돌린 강의 쪽 1541
+
+== student — 강의 82 · 블록 578(위 '전체 듣기' 로 소리 나는 블록 0) · 화면 StudentLearningView (코드 파일 13)
+   알고 있음 · 맨 위 칸 legacyFlash — 82과 · 82개
+
+== phonics — 강의 195 · 블록 780(위 '전체 듣기' 로 소리 나는 블록 195) · 화면 PhonicsLearningView (코드 파일 7)
+   알고 있음 · 블록 instruction — 195과 · 195개
+   알고 있음 · 블록 choice — 195과 · 195개
+   알고 있음 · 블록 dictation — 195과 · 195개
+
+== grammar1 — 강의 194 · 블록 1111(위 '전체 듣기' 로 소리 나는 블록 99) · 화면 GrammarLearningView (코드 파일 8)
+   알고 있음 · 블록 heading — 191과 · 191개
+   알고 있음 · 블록 choice — 194과 · 194개
+   알고 있음 · 블록 dictation — 194과 · 194개
+   알고 있음 · 블록 hints — 4과 · 4개
+
+== grammar2 — 강의 88 · 블록 352(위 '전체 듣기' 로 소리 나는 블록 44) · 화면 GrammarLearningView (코드 파일 8)
+   알고 있음 · 블록 heading — 88과 · 88개
+   알고 있음 · 블록 choice — 88과 · 88개
+   알고 있음 · 블록 dictation — 88과 · 88개
+
+== ld — 강의 553 · 블록 2215(위 '전체 듣기' 로 소리 나는 블록 0) · 화면 LdLearningView (코드 파일 11)
+   알고 있음 · 블록 heading — 553과 · 553개
+   알고 있음 · 블록 choice — 553과 · 553개
+   알고 있음 · 블록 dictation — 553과 · 553개
+   알고 있음 · 블록(대체 길만) instruction (본문 쪽) — 276과 · 277개 (LISTENING 은 대본(ld_english_scripts)을 먼저 씀 — 이 블록들은 대본이 없을 때의 대체 길(LdLearningView koSentences · page.tsx extractSentencesForAudio ld 분기))
+   알고 있음 · 대본 줄 안 칸 n — 1과 · 276개
+
+== reading — 강의 512 · 블록 2048(위 '전체 듣기' 로 소리 나는 블록 256) · 화면 ReadingLearningView (코드 파일 9)
+   알고 있음 · 블록 heading — 512과 · 512개
+   알고 있음 · 블록 choice — 512과 · 512개
+   알고 있음 · 블록 dictation — 512과 · 512개
+
+아무 화면도 읽지 않는 것 19가지 · 그중 알고 있는 것(unreached-data-known.json) 19 · 새로 찾음 0 · 낡은 줄 0
+exit 0

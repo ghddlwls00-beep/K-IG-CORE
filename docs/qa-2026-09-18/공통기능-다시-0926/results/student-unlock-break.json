@@ -1,0 +1,174 @@
+{
+ "break": true,
+ "at": "2026-09-26T04:15:24.936Z",
+ "chapters": [
+  {
+   "chapter": 1,
+   "label": "Chapter 1",
+   "lessons": 7,
+   "required": 6,
+   "first": "s1-1",
+   "last": "s2-1"
+  },
+  {
+   "chapter": 2,
+   "label": "Chapter 2",
+   "lessons": 5,
+   "required": 4,
+   "first": "s2-2",
+   "last": "s2-6"
+  },
+  {
+   "chapter": 3,
+   "label": "Chapter 3",
+   "lessons": 4,
+   "required": 4,
+   "first": "s3-1",
+   "last": "s3-4"
+  },
+  {
+   "chapter": 4,
+   "label": "Chapter 4",
+   "lessons": 6,
+   "required": 5,
+   "first": "s4-1",
+   "last": "s4-6"
+  },
+  {
+   "chapter": 5,
+   "label": "Chapter 5",
+   "lessons": 5,
+   "required": 4,
+   "first": "s5-1",
+   "last": "s5-5"
+  },
+  {
+   "chapter": 6,
+   "label": "Chapter 6",
+   "lessons": 4,
+   "required": 4,
+   "first": "s6-1",
+   "last": "s6-4"
+  },
+  {
+   "chapter": 7,
+   "label": "Chapter 7",
+   "lessons": 3,
+   "required": 3,
+   "first": "s7-1",
+   "last": "s7-3"
+  },
+  {
+   "chapter": 8,
+   "label": "Chapter 8",
+   "lessons": 4,
+   "required": 4,
+   "first": "s8-1",
+   "last": "s8-4"
+  },
+  {
+   "chapter": 9,
+   "label": "Chapter 9",
+   "lessons": 3,
+   "required": 3,
+   "first": "s9-1",
+   "last": "s9-3"
+  },
+  {
+   "chapter": 10,
+   "label": "Chapter 10",
+   "lessons": 5,
+   "required": 4,
+   "first": "s10-1",
+   "last": "s10-5"
+  },
+  {
+   "chapter": 11,
+   "label": "Chapter 11",
+   "lessons": 4,
+   "required": 4,
+   "first": "s11-1",
+   "last": "s11-4"
+  },
+  {
+   "chapter": 12,
+   "label": "Chapter 12",
+   "lessons": 4,
+   "required": 4,
+   "first": "s12-1",
+   "last": "s12-4"
+  },
+  {
+   "chapter": 13,
+   "label": "Chapter 13",
+   "lessons": 3,
+   "required": 3,
+   "first": "s13-1",
+   "last": "s13-3"
+  },
+  {
+   "chapter": 14,
+   "label": "Chapter 14",
+   "lessons": 3,
+   "required": 3,
+   "first": "s14-1",
+   "last": "s14-3"
+  },
+  {
+   "chapter": 15,
+   "label": "Chapter 15",
+   "lessons": 3,
+   "required": 3,
+   "first": "s15-1",
+   "last": "s15-3"
+  },
+  {
+   "chapter": 16,
+   "label": "Chapter 16",
+   "lessons": 3,
+   "required": 3,
+   "first": "s16-1",
+   "last": "s16-3"
+  },
+  {
+   "chapter": 17,
+   "label": "Chapter 17",
+   "lessons": 4,
+   "required": 4,
+   "first": "s17-1",
+   "last": "s17-4"
+  },
+  {
+   "chapter": 18,
+   "label": "Chapter 18",
+   "lessons": 3,
+   "required": 3,
+   "first": "s18-1",
+   "last": "s18-3"
+  },
+  {
+   "chapter": 19,
+   "label": "Chapter 19",
+   "lessons": 4,
+   "required": 4,
+   "first": "s19-1",
+   "last": "s19-4"
+  },
+  {
+   "chapter": 20,
+   "label": "Chapter 20",
+   "lessons": 5,
+   "required": 4,
+   "first": "s20-1",
+   "last": "s20-5"
+  }
+ ],
+ "totalLessons": 82,
+ "problems": [
+  {
+   "kind": "chapter-number-disagrees",
+   "severity": "P1",
+   "detail": "s2-1 — 목차상 챕터 1 (Chapter 1) 인데 강의 번호로는 챕터 2. 진도 저장은 1, 열람 허용은 2 기준으로 판단합니다"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{"id":"M:mobile:/:open","status":"FAIL","note":"메뉴 열기 false · 보이는 과정 링크 0","at":"2026-09-26T03:56:51.936Z"}
+{"id":"M:mobile:/reading/pr001:open-close","status":"PASS","note":"열림 · 과정 링크 7(/student /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true","at":"2026-09-26T03:56:56.827Z","links":[{"href":"/student","text":"STUDENT"},{"href":"/phonics","text":"VOCA"},{"href":"/grammar1","text":"GRAMMAR I"},{"href":"/grammar2","text":"GRAMMAR II"},{"href":"/ld","text":"LISTENING"},{"href":"/reading","text":"READING 학습중 ●"},{"href":"/cnn","text":"CNN NEWS"}]}
+{"id":"M:mobile:/reading/pr001:links","status":"PASS","note":"과정 링크 7/7 도착 · 메뉴 닫힘","at":"2026-09-26T03:57:25.909Z"}
+{"id":"M:tablet:/:open","status":"FAIL","note":"메뉴 열기 false · 보이는 과정 링크 0","at":"2026-09-26T03:57:27.428Z"}
+{"id":"M:tablet:/reading/pr001:open-close","status":"PASS","note":"열림 · 과정 링크 7(/student /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true","at":"2026-09-26T03:57:31.499Z","links":[{"href":"/student","text":"STUDENT"},{"href":"/phonics","text":"VOCA"},{"href":"/grammar1","text":"GRAMMAR I"},{"href":"/grammar2","text":"GRAMMAR II"},{"href":"/ld","text":"LISTENING"},{"href":"/reading","text":"READING 학습중 ●"},{"href":"/cnn","text":"CNN NEWS"}]}
+{"id":"M:tablet:/reading/pr001:links","status":"PASS","note":"과정 링크 7/7 도착 · 메뉴 닫힘","at":"2026-09-26T03:58:00.062Z"}
+{"id":"S:search:Greeting","status":"PASS","note":"결과 4(앱 검색 함수 4) · 눌러 → /student/s1-1(기대 /student/s1-1)","at":"2026-09-26T03:58:06.344Z","items":["STUDENT Ch 1-1 Part 1 · Greeting (인사말) Chapter 1. Self-introduction (자기소개) 🎙️ 실전 회화 →","STUDENT Ch 2-1 Part 1 · Greeting (인사말) Chapter 2. Family Introduction (가족 소개) 🔒 이용권 🎙️ 실전 회화 →","STUDENT Ch 3-1 Part 1 · Greeting (인사말) Chapter 3. Friend Introduction (친구 소개) 🔒 이용권 🎙️ 실전 회화 →","STUDENT Ch 4-1 Part 1 · Greeting (인사말) Chapter 4. Relative Introduction (친척 소개) 🔒 이용권 🎙️ 실전 회화 →"]}
+{"id":"S:search:Traditional Food","status":"PASS","note":"결과 1(앱 검색 함수 1) · 눌러 → /student/s19-3(기대 /student/s19-3)","at":"2026-09-26T03:58:12.410Z","items":["STUDENT Ch 19-3 Part 3 · Traditional Food (Bulgogi) (전통 음식 (불고기)) Chapter 19. Korean Culture (한국의 문화) 🔒 이용권 🎙️ 실전 회화 →"]}
+{"id":"S:search:Passage 100","status":"PASS","note":"결과 1(앱 검색 함수 1) · 눌러 → /reading/pr100(기대 /reading/pr100)","at":"2026-09-26T03:58:18.503Z","items":["READING Passage 100 100회 · 원문 독해 & 리스닝 Passage 100 · 음성 듣기 🔒 이용권 📖 직독직해 →"]}
+{"id":"P:complete:reading/pr001","status":"PASS","note":"완료 체크 전 0/256 → 체크 뒤 1/256(기대 1) · 미완료 255 → 취소 뒤 0/256","at":"2026-09-26T03:58:27.883Z"}
+{"id":"P:complete:ld/d001","status":"PASS","note":"완료 체크 전 0/276 → 체크 뒤 1/276(기대 1) · 미완료 275 → 취소 뒤 0/276","at":"2026-09-26T03:58:37.066Z"}
+{"id":"P:complete:phonics/mv1-01","status":"PASS","note":"완료 체크 전 0/195 → 체크 뒤 1/195(기대 1) · 미완료 194 → 취소 뒤 0/195","at":"2026-09-26T03:58:46.282Z"}
+{"id":"R:idle:/","status":"PASS","note":"연 뒤 5초 요청 26 → 30초 26 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T03:59:17.817Z"}
+{"id":"R:idle:/reading","status":"PASS","note":"연 뒤 5초 요청 24 → 30초 24 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T03:59:49.325Z"}
+{"id":"R:idle:/reading/pr001","status":"PASS","note":"연 뒤 5초 요청 33 → 30초 33 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T04:00:20.968Z"}
+{"id":"R:idle:/ld/d001","status":"PASS","note":"연 뒤 5초 요청 33 → 30초 33 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T04:00:52.499Z"}
+{"id":"R:idle:/student/s1-1","status":"PASS","note":"연 뒤 5초 요청 34 → 30초 34 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T04:01:24.012Z"}
+{"id":"R:idle:/phonics/mv1-01","status":"PASS","note":"연 뒤 5초 요청 34 → 30초 34 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T04:01:55.559Z"}
+{"id":"R:idle:/grammar1/gh1-006","status":"PASS","note":"연 뒤 5초 요청 34 → 30초 34 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T04:02:27.320Z"}
+{"id":"R:idle:/grammar2/gh2-007","status":"PASS","note":"연 뒤 5초 요청 35 → 30초 35 (가만히 있는 25초 동안 +0 · 문턱 3)","at":"2026-09-26T04:02:58.843Z"}
+{"id":"W:console-warnings","status":"PASS","note":"위 8쪽을 열고 30초씩 두는 동안 콘솔 경고 0","at":"2026-09-26T04:02:58.845Z","warnings":[]}
+{"id":"O:desktop:/","status":"PASS","note":"보이는 글 조각 62 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:00.330Z","pairs":[]}
+{"id":"O:desktop:/student","status":"PASS","note":"보이는 글 조각 195 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:01.813Z","pairs":[]}
+{"id":"O:desktop:/phonics","status":"PASS","note":"보이는 글 조각 31 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:03.279Z","pairs":[]}
+{"id":"O:desktop:/grammar1","status":"PASS","note":"보이는 글 조각 39 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:04.787Z","pairs":[]}
+{"id":"O:desktop:/grammar2","status":"PASS","note":"보이는 글 조각 39 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:06.269Z","pairs":[]}
+{"id":"O:desktop:/ld","status":"PASS","note":"보이는 글 조각 35 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:07.745Z","pairs":[]}
+{"id":"O:desktop:/reading","status":"PASS","note":"보이는 글 조각 39 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:09.210Z","pairs":[]}
+{"id":"O:tablet:/","status":"PASS","note":"보이는 글 조각 62 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:10.694Z","pairs":[]}
+{"id":"O:tablet:/student","status":"PASS","note":"보이는 글 조각 195 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:12.195Z","pairs":[]}
+{"id":"O:tablet:/phonics","status":"PASS","note":"보이는 글 조각 31 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:13.769Z","pairs":[]}
+{"id":"O:tablet:/grammar1","status":"PASS","note":"보이는 글 조각 39 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:15.244Z","pairs":[]}
+{"id":"O:tablet:/grammar2","status":"PASS","note":"보이는 글 조각 39 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:16.710Z","pairs":[]}
+{"id":"O:tablet:/ld","status":"PASS","note":"보이는 글 조각 35 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:18.205Z","pairs":[]}
+{"id":"O:tablet:/reading","status":"PASS","note":"보이는 글 조각 39 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:19.668Z","pairs":[]}
+{"id":"O:mobile:/","status":"PASS","note":"보이는 글 조각 62 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:21.155Z","pairs":[]}
+{"id":"O:mobile:/student","status":"PASS","note":"보이는 글 조각 175 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:22.640Z","pairs":[]}
+{"id":"O:mobile:/phonics","status":"PASS","note":"보이는 글 조각 27 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:24.101Z","pairs":[]}
+{"id":"O:mobile:/grammar1","status":"PASS","note":"보이는 글 조각 33 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:25.554Z","pairs":[]}
+{"id":"O:mobile:/grammar2","status":"PASS","note":"보이는 글 조각 33 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:27.023Z","pairs":[]}
+{"id":"O:mobile:/ld","status":"PASS","note":"보이는 글 조각 30 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:28.509Z","pairs":[]}
+{"id":"O:mobile:/reading","status":"PASS","note":"보이는 글 조각 33 · 30% 넘게 겹친 쌍 0","at":"2026-09-26T04:03:29.969Z","pairs":[]}
+{"id":"M:mobile:/reading:open-close","status":"PASS","note":"열림 · 과정 링크 7(/student /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true","at":"2026-09-26T04:04:02.002Z","links":[{"href":"/student","text":"STUDENT"},{"href":"/phonics","text":"VOCA"},{"href":"/grammar1","text":"GRAMMAR I"},{"href":"/grammar2","text":"GRAMMAR II"},{"href":"/ld","text":"LISTENING"},{"href":"/reading","text":"READING 학습중 ●"},{"href":"/cnn","text":"CNN NEWS"}]}
+{"id":"M:mobile:/reading:links","status":"PASS","note":"과정 링크 7/7 도착 · 메뉴 닫힘","at":"2026-09-26T04:04:31.047Z"}
+{"id":"M:mobile:/reading/pr001:open-close","status":"PASS","note":"열림 · 과정 링크 7(/student /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true","at":"2026-09-26T04:04:35.336Z","links":[{"href":"/student","text":"STUDENT"},{"href":"/phonics","text":"VOCA"},{"href":"/grammar1","text":"GRAMMAR I"},{"href":"/grammar2","text":"GRAMMAR II"},{"href":"/ld","text":"LISTENING"},{"href":"/reading","text":"READING 학습중 ●"},{"href":"/cnn","text":"CNN NEWS"}]}
+{"id":"M:mobile:/reading/pr001:links","status":"PASS","note":"과정 링크 7/7 도착 · 메뉴 닫힘","at":"2026-09-26T04:05:03.968Z"}
+{"id":"M:tablet:/reading:open-close","status":"PASS","note":"열림 · 과정 링크 7(/student /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true","at":"2026-09-26T04:05:08.234Z","links":[{"href":"/student","text":"STUDENT"},{"href":"/phonics","text":"VOCA"},{"href":"/grammar1","text":"GRAMMAR I"},{"href":"/grammar2","text":"GRAMMAR II"},{"href":"/ld","text":"LISTENING"},{"href":"/reading","text":"READING 학습중 ●"},{"href":"/cnn","text":"CNN NEWS"}]}
+{"id":"M:tablet:/reading:links","status":"PASS","note":"과정 링크 7/7 도착 · 메뉴 닫힘","at":"2026-09-26T04:05:36.669Z"}
+{"id":"M:tablet:/reading/pr001:open-close","status":"PASS","note":"열림 · 과정 링크 7(/student /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true","at":"2026-09-26T04:05:40.761Z","links":[{"href":"/student","text":"STUDENT"},{"href":"/phonics","text":"VOCA"},{"href":"/grammar1","text":"GRAMMAR I"},{"href":"/grammar2","text":"GRAMMAR II"},{"href":"/ld","text":"LISTENING"},{"href":"/reading","text":"READING 학습중 ●"},{"href":"/cnn","text":"CNN NEWS"}]}
+{"id":"M:tablet:/reading/pr001:links","status":"PASS","note":"과정 링크 7/7 도착 · 메뉴 닫힘","at":"2026-09-26T04:06:09.762Z"}
+{"id":"T:reading-sentence:pr001","status":"PASS","note":"⏱️ Step 1 · 속독 챌린지 에서 문장 1 · 2 · 3 을 차례로 누름 → 소리 x-e425b87a51e89224.mp3 · 32-d1c3e750d398efba.mp3 · 2z-1b848964426cbdae.mp3 (서로 다른 소리 3/3)","at":"2026-09-26T04:18:22.983Z"}
+{"id":"T:reading-sentence:pr002","status":"PASS","note":"⏱️ Step 1 · 속독 챌린지 에서 문장 1 · 2 · 3 을 차례로 누름 → 소리 32-49e78a83de91591f.mp3 · 3x-20fd1f5ae183157d.mp3 · 2a-22704a2461b65c81.mp3 (서로 다른 소리 3/3)","at":"2026-09-26T04:18:28.024Z"}
+{"id":"Z:ld-reset:d001","status":"PASS","note":"보관함 19 → 3개 놓음: 놓인 3 · 보관함 16 → '↺ 전체 초기화': 놓인 0 · 보관함 19","at":"2026-09-26T04:18:32.328Z"}
+{"id":"Z:ld-reset:d002","status":"PASS","note":"보관함 13 → 3개 놓음: 놓인 3 · 보관함 10 → '↺ 전체 초기화': 놓인 0 · 보관함 13","at":"2026-09-26T04:18:36.509Z"}
+{"id":"E:robots-sitemap","status":"FAIL","note":"robots.txt 200 · Sitemap 줄 true · sitemap.xml 200 · 주소 25 · CNN 주소 0","at":"2026-09-26T04:18:36.980Z"}
+{"id":"E:meta:/","status":"PASS","note":"HTTP 200 · 제목 'K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENI' · 설명 71자 · og:title true · lang ko","at":"2026-09-26T04:18:37.133Z"}
+{"id":"E:meta:/reading","status":"PASS","note":"HTTP 200 · 제목 'READING · K-IG 교육 · K-IG 핵심 어학 마스터' · 설명 49자 · og:title true · lang ko","at":"2026-09-26T04:18:37.293Z"}
+{"id":"E:meta:/student","status":"PASS","note":"HTTP 200 · 제목 'STUDENT · K-IG 교육 · K-IG 핵심 어학 마스터' · 설명 26자 · og:title true · lang ko","at":"2026-09-26T04:18:37.427Z"}
+{"id":"E:meta:/reading/pr001","status":"PASS","note":"HTTP 200 · 제목 '001회 · 원문 독해 &amp; 리스닝 · K-IG 핵심 어학 마스터' · 설명 50자 · og:title true · lang ko","at":"2026-09-26T04:18:37.566Z"}
+{"id":"K:third-party-hosts","status":"INFO","note":"8쪽을 여는 동안 요청 호스트 1곳 — 이 사이트 밖: 없음","at":"2026-09-26T04:19:14.128Z","hosts":[["k-ig-core.vercel.app",250]]}
+{"id":"X:search-input:<img src=x one","status":"PASS","note":"검색 칸에 넣음 → 실행됨 아니오 · 글자 그대로 보임 true","at":"2026-09-26T04:19:18.142Z"}
+{"id":"X:search-input:\"><svg onload=","status":"PASS","note":"검색 칸에 넣음 → 실행됨 아니오 · 글자 그대로 보임 true","at":"2026-09-26T04:19:22.054Z"}
+{"id":"X:url-reflection:/reading?q=","status":"PASS","note":"HTTP 200 · 넣은 글이 쪽에 그대로 없음","at":"2026-09-26T04:19:22.273Z"}
+{"id":"E:robots-sitemap","status":"PASS","note":"robots.txt 200 · Sitemap 줄 true · sitemap.xml 200 · 주소 25(설계 25) · CNN 주소 0 · 빠진 기대 주소 0","at":"2026-09-26T04:21:40.158Z"}
+{"id":"E:meta:/","status":"PASS","note":"HTTP 200 · 제목 'K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENI' · 설명 71자 · og:title true · lang ko","at":"2026-09-26T04:21:40.330Z"}
+{"id":"E:meta:/reading","status":"PASS","note":"HTTP 200 · 제목 'READING · K-IG 교육 · K-IG 핵심 어학 마스터' · 설명 49자 · og:title true · lang ko","at":"2026-09-26T04:21:40.496Z"}
+{"id":"E:meta:/student","status":"PASS","note":"HTTP 200 · 제목 'STUDENT · K-IG 교육 · K-IG 핵심 어학 마스터' · 설명 26자 · og:title true · lang ko","at":"2026-09-26T04:21:40.678Z"}
+{"id":"E:meta:/reading/pr001","status":"PASS","note":"HTTP 200 · 제목 '001회 · 원문 독해 &amp; 리스닝 · K-IG 핵심 어학 마스터' · 설명 50자 · og:title true · lang ko","at":"2026-09-26T04:21:40.849Z"}
+{"id":"K:third-party-hosts","status":"PASS","note":"8쪽을 여는 동안 요청 호스트 1곳 — 이 사이트 밖: 없음 · CSP connect-src 'self'","at":"2026-09-26T04:34:21.648Z","hosts":[["k-ig-core.vercel.app",246]]}

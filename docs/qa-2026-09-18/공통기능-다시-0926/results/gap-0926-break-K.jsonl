@@ -1,0 +1,2 @@
+{"id":"K:third-party-hosts","status":"INFO","note":"8쪽을 여는 동안 요청 호스트 1곳 — 이 사이트 밖: 없음","at":"2026-09-26T04:29:21.850Z","break":"K","hosts":[["k-ig-core.vercel.app",249]]}
+{"id":"K:third-party-hosts","status":"FAIL","note":"8쪽을 여는 동안 요청 호스트 1곳 — 이 사이트 밖: k-ig-core.vercel.app ×248 [깨기 — 이 사이트를 밖으로 셈] · CSP connect-src 'self'","at":"2026-09-26T04:36:30.566Z","break":"K","hosts":[["k-ig-core.vercel.app",248]]}

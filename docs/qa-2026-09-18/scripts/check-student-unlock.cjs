@@ -37,6 +37,9 @@ const chapters = groups.map((g, i) => ({
   label: g.label || `Chapter ${i + 1}`,
   lessonIds: (g.lessons || []).filter((id) => /^s\d+-\d+$/.test(id)),
 }));
+// --break(2026-09-26 명령서 대조표 뒤 더함): 챕터 2 의 첫 강의를 메모리에서 챕터 1 로 옮김 → 두 가지 챕터 판정이 어긋나 지적이 나와야 함(파일은 안 바뀜)
+const BREAK = process.argv.includes("--break");
+if (BREAK && chapters[1] && chapters[1].lessonIds.length) chapters[0].lessonIds.push(chapters[1].lessonIds.shift());
 const totalLessons = chapters.reduce((a, c) => a + c.lessonIds.length, 0);
 const allIds = E.pages("student").map((p) => p.id);
 
@@ -108,7 +111,8 @@ if (lastLesson && nb[lastLesson] && nb[lastLesson].next) {
 // ---------------------------------------------------------------- 결과
 const byKind = {};
 for (const p of problems) (byKind[p.kind] ||= []).push(p);
-fs.writeFileSync(path.join(OUT, "student-unlock.json"), JSON.stringify({
+fs.writeFileSync(path.join(OUT, BREAK ? "student-unlock-break.json" : "student-unlock.json"), JSON.stringify({
+  break: BREAK || undefined,
   at: new Date().toISOString(),
   chapters: chapters.map((c) => ({ chapter: c.chapter, label: c.label, lessons: c.lessonIds.length, required: Math.max(1, Math.ceil(c.lessonIds.length * REQUIRED_RATIO)), first: c.lessonIds[0], last: c.lessonIds[c.lessonIds.length - 1] })),
   totalLessons, problems,
@@ -121,4 +125,6 @@ for (const [kind, list] of Object.entries(byKind)) {
   console.log(`  ${list[0].severity}  ${String(list.length).padStart(3)} × ${kind}`);
   for (const p of list.slice(0, 4)) console.log(`         ${p.detail}`);
 }
-console.log(`\n→ ${path.join(OUT, "student-unlock.json")}`);
+console.log(`\n→ ${path.join(OUT, BREAK ? "student-unlock-break.json" : "student-unlock.json")}${BREAK ? " [깨기 — 챕터 2 첫 강의를 챕터 1 로 옮김]" : ""}`);
+// 지적이 있으면 exit 1(전에는 늘 0 — 검사 목록에서 실패로 못 셈)
+process.exitCode = problems.length ? 1 : 0;

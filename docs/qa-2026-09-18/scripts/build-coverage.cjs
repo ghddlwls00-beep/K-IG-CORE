@@ -281,7 +281,8 @@ for (const course of E.COURSES) for (const p of E.pages(course)) units += (E.exp
 
 const items = [
   { what: "과정 (course)", identified: E.COURSES.length, tested: E.COURSES.length, how: "6개 과정 전부" },
-  { what: "챕터·스테이지 (STUDENT)", identified: 20, tested: 20, how: "scripts/check-student-unlock.cjs" },
+  // 2026-09-26 명령서 대조표가 찾음: 전에는 20 · 20 을 손으로 적어 두어 check-student-unlock 이 돌지 않아도 '20/20' 으로 나왔음 → 그 결과 파일에서 읽음(없으면 '안 잼')
+  (() => { let u = null; try { u = JSON.parse(fs.readFileSync(path.join(__dirname, "../out/student-unlock.json"), "utf8")); } catch {} return { what: "챕터·스테이지 (STUDENT)", identified: u ? u.chapters.length : "안 잼", tested: u ? (u.problems.length ? `${u.chapters.length} · 지적 ${u.problems.length}` : u.chapters.length) : "안 잼", how: u ? `scripts/check-student-unlock.cjs(out/student-unlock.json ${u.at})` : "scripts/check-student-unlock.cjs — 결과 파일 없음" }; })(),
   { what: "강의 (main + script)", identified: totals.discovered, tested: totals.discovered - totals.notTested, how: "out/features/*.jsonl" },
   { what: "학습 단위 (화면에 나와야 할 문장·낱말)", identified: units, tested: feat ? feat.summary && Object.values(feat.summary).reduce((a, s) => a + (s.content ? s.content.expected : 0), 0) : "?", how: "데이터 대조" },
   { what: "VOCA 낱말", identified: integ ? integ.vocaStats.words : "?", tested: integ ? integ.vocaStats.withMeaning : "?", how: "scripts/check-data-integrity.cjs" },
