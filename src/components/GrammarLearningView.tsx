@@ -24,6 +24,8 @@
  *   audit's text readers still see every item.
  * Saved per lesson in localStorage `kig:grammar:work:<lesson>` (version 2 — an old save opens with its
  * answers; see readWork). Font size and speed are a per-device preference (`kig:grammar:prefs`).
+ * The common learning engine (src/lib/learning — reviews that cross days) gets every graded answer
+ * (noteAttempt) and, when the lesson is finished, its missed or helped sentences (src/lib/grammarLearning.ts).
  * The data-* attributes are what the audit helpers read (docs/qa-2026-09-18/scripts/lib/g1-page.cjs ·
  * g2-driver.cjs · containers.cjs · check-grammar-exam*.cjs) — keep them when restyling.
  */
@@ -42,7 +44,11 @@ import {
 } from "@/lib/grammarGrading";
 import { diffSpokenAnswer, gradeSpokenAnswer } from "@/lib/spokenAnswer";
 import { isSpeechRecognitionSupported, listenToSpeech, type VoiceRecognizerHandle } from "@/lib/speechRecognition";
+import { markLessonDone, readCourseRecord, recordAttempt } from "@/lib/learning/record";
+import type { AnswerMode, Help } from "@/lib/learning/types";
+import { grammarItemKey, grammarLearningProfile } from "@/lib/grammarLearning";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
+import { LESSON_COMPLETE_EVENT } from "./ProgressProvider";
 
 export interface GrammarItem {
   id: number;
@@ -786,6 +792,8 @@ export function GrammarLearningView({
   const examScrollRef = useRef<number | "summary" | null>(null);
 
   const storageKey = `kig:grammar:work:${lessonKey}`;
+  const lessonId = lessonKey.split("/").pop() || lessonKey;
+  const learningProfile = useMemo(() => grammarLearningProfile(course), [course]);
   const fs = FONT_STYLES[fontSize];
   const bundleIndex = Math.min(bundle, bundles.length - 1);
   const [bundleStart, bundleEnd] = bundles[bundleIndex];
@@ -797,6 +805,36 @@ export function GrammarLearningView({
   useEffect(() => {
     answersRef.current = answers;
   }, [answers]);
+
+  /**
+   * The lesson's review entries for the engine (계획 D12 · 공통-학습-엔진.md §5): the sentences missed or
+   * helped in this lesson — on the retry list of Step 1 (wrong, hinted or opened without an attempt), a
+   * written exam answer that was not fully right, and whatever first tries the course log still holds
+   * as wrong or helped. Read at the moment the learner finishes the lesson.
+   */
+  // The lesson is finished (LessonEndBar → ProgressProvider.toggleComplete announces it): its first
+  // completion date is kept and its misses come back from tomorrow. Un-completing keeps the record.
+  useEffect(() => {
+    const onComplete = (event: Event) => {
+      const detail = (event as CustomEvent<{ course?: string; lessonId?: string; completed?: boolean }>).detail;
+      if (!detail || detail.course !== course || detail.lessonId !== lessonId || !detail.completed) return;
+      const missed = new Set<number>();
+      for (const it of items) {
+        if (selfGrades[it.id] === false || hints[it.id] === true) missed.add(it.id);
+        if (examResult && (examAnswers[it.id] || "").trim() && (examResult.perItem[it.id] ?? "incorrect") !== "exact") missed.add(it.id);
+      }
+      for (const entry of readCourseRecord(course).log) {
+        if (entry.lessonId !== lessonId || entry.where !== "lesson" || !entry.firstTry) continue;
+        if (entry.correct && entry.help === "none") continue;
+        const id = Number(entry.item.split("#")[1]);
+        if (items.some((it) => it.id === id)) missed.add(id);
+      }
+      const entries = [...missed].sort((a, b) => a - b).map((id) => ({ key: grammarItemKey(lessonId, id), kind: "sentence" }));
+      markLessonDone(learningProfile, lessonId, entries);
+    };
+    window.addEventListener(LESSON_COMPLETE_EVENT, onComplete);
+    return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
+  }, [course, lessonId, learningProfile, items, selfGrades, hints, examResult, examAnswers]);
 
   // The microphone: asked once for the whole view (GRM-U09).
   useEffect(() => {
@@ -1010,6 +1048,25 @@ export function GrammarLearningView({
   }
 
   /**
+   * The common learning engine (src/lib/learning, 공통-학습-엔진.md §2 · §5): one answer inside the
+   * lesson, with this view's own verdict. An answer inside a lesson never counts toward a pass — the
+   * engine keeps it in the course log, and the lesson's misses come back from the next day once the
+   * lesson is finished (below). Stored on this device only (계획 D04 is the owner's).
+   */
+  function noteAttempt(id: number, attempt: { correct: boolean; help: Help; mode: AnswerMode; answer?: string; firstTry?: boolean }) {
+    recordAttempt(learningProfile, grammarItemKey(lessonId, id), {
+      lessonId,
+      kind: "sentence",
+      correct: attempt.correct,
+      help: attempt.help,
+      mode: attempt.mode,
+      where: "lesson",
+      firstTry: attempt.firstTry ?? selfGrades[id] === undefined,
+      ...(attempt.answer && !attempt.correct ? { answer: attempt.answer } : {}),
+    });
+  }
+
+  /**
    * 확인 (GRM-U02 · L02 · L09 · L07). The first 확인 of an attempt grades it: an exactly right TYPED
    * answer without a hint is '맞음'; anything else goes to the retry list. A spoken answer is graded
    * the same way (numbers matched) but never turns '맞음' on by itself. With nothing written, the
@@ -1023,6 +1080,8 @@ export function GrammarLearningView({
     if (!value) {
       if (open) return;
       if (nudged[key] || hints[id]) {
+        // the answer opened without an attempt — a miss for the engine
+        noteAttempt(id, { correct: false, help: "reveal", mode: "typed" });
         setRevealedAnswers((prev) => ({ ...prev, [key]: true }));
         setSelfGrades((prev) => ({ ...prev, [id]: false }));
       } else {
@@ -1033,6 +1092,7 @@ export function GrammarLearningView({
     if (!open) {
       const spoken = isFromMic(id);
       const grade = spoken ? gradeSpokenAnswer(value, referencesOf(item)) : gradeAgainstReferences(value, referencesOf(item));
+      noteAttempt(id, { correct: grade === "exact", help: hints[id] ? "hint" : "none", mode: spoken ? "voice" : "typed", answer: value });
       if (grade !== "exact" || hints[id]) setSelfGrades((prev) => ({ ...prev, [id]: false }));
       else if (!spoken) setSelfGrades((prev) => ({ ...prev, [id]: true }));
       setRevealedAnswers((prev) => ({ ...prev, [key]: true }));
@@ -1280,6 +1340,11 @@ export function GrammarLearningView({
       return;
     }
     const result = gradeExam(items, examAnswers, formatSavedAt());
+    // every written answer of the sheet, for the engine (an empty line is not an attempt)
+    for (const it of items) {
+      const written = (examAnswers[it.id] || "").trim();
+      if (written) noteAttempt(it.id, { correct: result.perItem[it.id] === "exact", help: "none", mode: "typed", answer: written, firstTry: true });
+    }
     const firstMiss = items.find((it) => result.perItem[it.id] !== "exact");
     examScrollRef.current = firstMiss ? firstMiss.id : "summary";
     setExamResult(result);
