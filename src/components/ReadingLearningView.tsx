@@ -25,6 +25,8 @@ interface ReadingLearningViewProps {
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
   readingSentences?: ReadingSentence[] | null;
   readingVocabulary?: ReadingVocabularyItem[] | null;
+  /** 2026-09-27 (계획 A10 · D01): the page's whole-lesson player as data — the view may play it in its own step (not used yet) */
+  passagePlayers?: import("@/lib/passagePlayer").PassagePlayerData[] | null;
 }
 
 // ---------------------------------------------------------------------------

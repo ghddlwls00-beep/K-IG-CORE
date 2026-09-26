@@ -25,6 +25,8 @@ interface LdLearningViewProps {
   isScript: boolean;
   audioTracks?: { src: string; label?: string }[];
   ldEnglishScript?: LdScriptRow[] | null;
+  /** 2026-09-27 (계획 A10 · F01): the page's whole-lesson player as data — the view may play it in its own step (not used yet) */
+  passagePlayers?: import("@/lib/passagePlayer").PassagePlayerData[] | null;
 }
 
 /** `answer`: the solution of a riddle round ("Can you guess why?"), kept out of the Korean line. */

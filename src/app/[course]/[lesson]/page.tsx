@@ -324,9 +324,10 @@ export default async function LessonPage({
    * 2026-09-27 (계획 A10 · D01 나 — VOCA): the top player again, as data, for the course view that plays the whole lesson at the
    * head of its Step 1 word list. Same src, sentences, voice and label as `topPlayers` above — nothing spoken changes. The view
    * marks itself data-owns-passage-player and globals.css then hides the wrapper below (data-passage-player). Other courses: null.
+   * LISTENING · READING get the same data (2026-09-27, their 학습법 · 화면 차례) — a view that does not mark itself changes nothing.
    */
   const passagePlayers =
-    course === "phonics" && topPlayers
+    (course === "phonics" || course === "ld" || course === "reading") && topPlayers
       ? topLevelAudio.length > 0
         ? topLevelAudio.map((a) => ({
             id: a.src,
@@ -438,6 +439,7 @@ export default async function LessonPage({
               isScript={isScript}
               audioTracks={audio}
               ldEnglishScript={ldEnglishScript}
+              passagePlayers={passagePlayers}
             />
           ) : course === "reading" ? (
             <ReadingLearningView
@@ -449,6 +451,7 @@ export default async function LessonPage({
               vocaDictionary={vocaDictionary}
               readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
               readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
+              passagePlayers={passagePlayers}
             />
           ) : course === "grammar1" || course === "grammar2" ? (
             <GrammarLearningView

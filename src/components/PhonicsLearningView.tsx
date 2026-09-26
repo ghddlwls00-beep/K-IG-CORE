@@ -86,15 +86,9 @@ import { StepTabs } from "./StepTabs";
 import { IconCheck, IconChevronDown, IconChevronRight, IconPlay, IconRepeat, IconSpeaker, IconStop, IconX } from "./icons";
 import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 
-/** The page's top player as data (page.tsx `passagePlayers`) — the same props it renders the top AudioPlayer with. */
-export interface PassagePlayerData {
-  id: string;
-  src?: string;
-  fallbackSentences: string[];
-  lang: string;
-  gender: VoiceGender;
-  label?: string;
-}
+/** The page's top player as data (page.tsx `passagePlayers`) — shared with LISTENING · READING since 2026-09-27. */
+import type { PassagePlayerData } from "@/lib/passagePlayer";
+export type { PassagePlayerData };
 
 interface PhonicsLearningViewProps {
   blocks: Block[];
