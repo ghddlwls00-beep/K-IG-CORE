@@ -312,20 +312,62 @@ function checkLesson(lesson, problems, tags) {
   for (const a of anchors) if (a.fix) allowed(a.fix, FIX_FIELDS, `${a.id}.fix`);
   for (const s of sel) if (s.fix) allowed(s.fix, FIX_FIELDS, `${s.id}.fix`);
   // v1.3: ③ and ② come before ④ — they must not show the English of a ④ sentence that is not a ① anchor,
-  // and ⑤'s "처음 보는 문장" must not appear anywhere earlier in the lesson.
+  // and ⑤'s "처음 보는 문장" must not appear anywhere earlier in the lesson. A ④ answer of four words or fewer
+  // ("Yes, it is.") is the pattern the card teaches and is not protected. Checked as containment, so a ③ blank
+  // filled with its answer, a choice option or a table cell that carries the whole sentence is caught too.
   const anchorSet = new Set(anchors.map((a) => gradeNorm(a.en)));
-  const hidden = new Map(prods.filter((p) => !anchorSet.has(gradeNorm(p.en))).map((p) => [gradeNorm(p.en), p.id]));
-  const shows = (text) => hidden.get(gradeNorm(text));
+  const hidden = prods.filter((p) => !anchorSet.has(gradeNorm(p.en)) && gradeNorm(p.en).split(" ").length >= 5).map((p) => [gradeNorm(p.en), p.id]);
+  const shows = (text) => {
+    const w = gradeWords(text);
+    const hit = hidden.find(([n]) => w.includes(` ${n} `));
+    return hit ? hit[1] : null;
+  };
+  const fillBlank = (sentence, word) => String(sentence || "").replace(/_{2,}/, String(word ?? ""));
+  const selectTexts = (s) => {
+    const out = [];
+    if (s.kind === "select") out.push((s.tokens || []).join(" "));
+    if (s.kind === "choice") {
+      if (/_{2,}/.test(s.sentence || "")) for (const o of s.options || []) out.push(fillBlank(s.sentence, o));
+      else if (s.sentence) out.push(s.sentence);
+      out.push(...(s.options || []));
+    }
+    if (s.kind === "short") {
+      if (/_{2,}/.test(s.sentence || "")) for (const a of s.answer || []) out.push(fillBlank(s.sentence, a));
+      else if (s.sentence) out.push(s.sentence);
+    }
+    return out.filter(Boolean);
+  };
   for (const s of sel) {
-    const shown = shows(s.sentence) || shows((s.tokens || []).join(" "));
-    if (shown && !s.reserve) P(`${s.id} ③ 문장이 ④ ${shown} 의 정답을 먼저 보여 줌`);
+    if (s.reserve) continue;
+    const shown = selectTexts(s).map(shows).find(Boolean);
+    if (shown) P(`${s.id} ③ 문장이 ④ ${shown} 의 정답을 먼저 보여 줌`);
   }
-  for (const w of [...(rule.worked || []), ...(rule.mistakes || []).map((m) => m.right)]) {
-    const shown = shows(w);
-    if (shown) P(`② 설명 카드가 ④ ${shown} 의 정답을 먼저 보여 줌`);
+  const ruleTexts = [
+    ...(rule.points || []),
+    ...((rule.table && rule.table.rows) || []).flat(),
+    rule.koDiff,
+    ...(rule.mistakes || []).flatMap((m) => [m.wrong, m.right, m.why]),
+    ...(rule.worked || []),
+    ...(rule.check ? [rule.check.question, ...(rule.check.options || []), rule.check.why] : []),
+    ...(rule.check && /_{2,}/.test(rule.check.question || "") ? [fillBlank(rule.check.question, (rule.check.options || [])[rule.check.answer])] : []),
+    ...(rule.discovery ? [rule.discovery.question, ...(rule.discovery.options || []), rule.discovery.why] : []),
+  ].filter(Boolean);
+  const cardShown = [...new Set(ruleTexts.map(shows).filter(Boolean))];
+  for (const id of cardShown) P(`② 설명 카드가 ④ ${id} 의 정답을 먼저 보여 줌`);
+  const earlier = [...anchors.map((a) => a.en), ...prods.map((p) => p.en), ...sel.flatMap(selectTexts), ...ruleTexts].map(gradeWords);
+  for (const t of trans) if (earlier.some((e) => e.includes(` ${gradeNorm(t.en)} `))) P(`${t.id} ⑤ 처음 보는 문장이 레슨 앞에 이미 나옴`);
+  // challenge items sit at the end of ④, and every later-lesson tag of a challenge item is named
+  let seenChallenge = false;
+  for (const p of prods) {
+    if (p.challenge) seenChallenge = true;
+    else if (seenChallenge) P(`${p.id} 도전 문항 뒤에 도전 아닌 문항(도전은 세트 끝)`);
   }
-  const earlier = new Set([...anchors.map((a) => a.en), ...prods.map((p) => p.en), ...sel.map((s) => s.sentence || (s.tokens || []).join(" ")), ...(rule.worked || []), ...(rule.mistakes || []).map((m) => m.right)].filter(Boolean).map(gradeNorm));
-  for (const t of trans) if (earlier.has(gradeNorm(t.en))) P(`${t.id} ⑤ 처음 보는 문장이 레슨 앞에 이미 나옴`);
+  for (const p of [...prods, ...trans]) {
+    if (!p.challenge) continue;
+    const later = (p.tags || []).filter((t) => !tags.base.has(t) && tags.order.has(t) && tags.order.get(t) > lessonIdx);
+    const missing = later.filter((t) => !(p.challengeTags || []).includes(t));
+    if (missing.length) P(`${p.id} 뒤 레슨 태그 [${missing.join(",")}] 가 challengeTags 에 없음`);
+  }
   const frame = block("frame");
   addId(frame.id, "f");
   if (!/_{2,}/.test(String(frame.template || ""))) P(`frame.template 에 빈칸 없음`);
@@ -505,21 +547,48 @@ function selftest(lessons) {
       const blocks = l.data.blocks;
       const anchorsN = new Set((blocks.find((b) => b.type === "anchors").items || []).map((a) => gradeNorm(a.en)));
       const drill = blocks.find((b) => b.type === "drill");
-      const pi = (drill.produce || []).findIndex((p) => !anchorsN.has(gradeNorm(p.en)));
+      const pi = (drill.produce || []).findIndex((p) => !anchorsN.has(gradeNorm(p.en)) && gradeNorm(p.en).split(" ").length >= 5);
       const si = (drill.select || []).findIndex((s) => s.kind === "choice" && !s.reserve);
       if (pi >= 0 && si >= 0 && (drill.transfer || []).length) target = { li, pi, si };
     });
-    if (!target) { result.selectShowsProduce = "대상 없음(시험 못 함)"; result.transferSeenBefore = "대상 없음(시험 못 함)"; }
+    const names = ["selectShowsProduce", "choiceOptionIsProduce", "cardTableShowsProduce", "transferSeenBefore"];
+    if (!target) for (const n of names) result[n] = "대상 없음(시험 못 함)";
+    else {
+      const attempt = (name, mutate, expect) => {
+        const copy = clone(lessons);
+        const L = copy[target.li].data;
+        const drill = L.blocks.find((b) => b.type === "drill");
+        const id = mutate(drill, L.blocks.find((b) => b.type === "rule"));
+        result[name] = fresh(run(copy, decisions, null)).some((p) => p.includes(id) && p.includes(expect)) ? "잡음" : "놓침";
+      };
+      attempt("selectShowsProduce", (d) => { d.select[target.si].sentence = d.produce[target.pi].en; return d.select[target.si].id; }, "정답을 먼저");
+      attempt("choiceOptionIsProduce", (d) => { const s = d.select[target.si]; s.options = [...s.options.slice(0, -1), d.produce[target.pi].en]; return s.id; }, "정답을 먼저");
+      attempt("cardTableShowsProduce", (d, rule) => { rule.table = { columns: ["예"], rows: [[d.produce[target.pi].en]] }; return d.produce[target.pi].id; }, "설명 카드");
+      attempt("transferSeenBefore", (d) => { d.transfer[0].en = d.produce[target.pi].en; return d.transfer[0].id; }, "처음 보는 문장");
+    }
+  }
+  {
+    // challenge order and challengeTags: move a challenge item to the front / drop its challengeTags
+    let hit = null;
+    lessons.forEach((l, li) => {
+      if (hit) return;
+      const d = l.data.blocks.find((b) => b.type === "drill");
+      const ci = (d.produce || []).findIndex((p) => p.challenge && (p.challengeTags || []).length);
+      if (ci > 0 && !(d.produce[0].challenge)) hit = { li, ci };
+    });
+    if (!hit) { result.challengeNotAtEnd = "대상 없음(시험 못 함)"; result.challengeTagsMissing = "대상 없음(시험 못 함)"; }
     else {
       const copy = clone(lessons);
-      const drill = copy[target.li].data.blocks.find((b) => b.type === "drill");
-      const s = drill.select[target.si];
-      s.sentence = drill.produce[target.pi].en;
-      result.selectShowsProduce = fresh(run(copy, decisions, null)).some((p) => p.includes(s.id) && p.includes("정답을 먼저")) ? "잡음" : "놓침";
+      const d = copy[hit.li].data.blocks.find((b) => b.type === "drill");
+      const [c] = d.produce.splice(hit.ci, 1);
+      d.produce.unshift(c);
+      result.challengeNotAtEnd = fresh(run(copy, decisions, null)).some((p) => p.includes("세트 끝")) ? "잡음" : "놓침";
       const copy2 = clone(lessons);
-      const drill2 = copy2[target.li].data.blocks.find((b) => b.type === "drill");
-      drill2.transfer[0].en = drill2.produce[target.pi].en;
-      result.transferSeenBefore = fresh(run(copy2, decisions, null)).some((p) => p.includes(drill2.transfer[0].id) && p.includes("처음 보는 문장")) ? "잡음" : "놓침";
+      const d2 = copy2[hit.li].data.blocks.find((b) => b.type === "drill");
+      const item = d2.produce[hit.ci];
+      item.challengeTags = item.challengeTags.slice(1);
+      item.tags = [...new Set([...(item.tags || []), ...lessons[hit.li].data.blocks.find((b) => b.type === "drill").produce[hit.ci].challengeTags])];
+      result.challengeTagsMissing = fresh(run(copy2, decisions, null)).some((p) => p.includes(item.id) && p.includes("challengeTags 에 없음")) ? "잡음" : "놓침";
     }
   }
   breakSelect("labelAnswerAsIndex", (s) => Array.isArray(s.labels) && s.answer?.length === 1 && [].concat(s.labelAnswer).every((x) => typeof x === "string"), (s) => { s.labelAnswer = [0]; }, "labelAnswer");
