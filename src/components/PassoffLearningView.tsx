@@ -19,6 +19,7 @@ import {
 } from "@/lib/passoffLesson";
 import { notePassoffLessonDone, PASSOFF_COURSE, strongerHelp, type PassoffItemKind } from "@/lib/passoffLearning";
 import { useProgress } from "./ProgressProvider";
+import { usePassoffProgress } from "./PassoffProgressProvider";
 import { AnchorsStep } from "./passoff/AnchorsStep";
 import { RuleStep } from "./passoff/RuleStep";
 import { FormStep } from "./passoff/FormStep";
@@ -40,7 +41,8 @@ import { CheckIcon, TextSizeIcon, spokenOf, tone, type FontSize, type Speaker } 
  * an answer is kept the moment it is given, and one not passed on with '다음' before the learner left is passed on
  * when the lesson opens again (settleOpen). Every answer and, when all five steps are done, the lesson itself go
  * to the common learning engine (src/lib/passoffLearning.ts) — review across days is the engine's, not this
- * page's — and the lesson is marked complete in the course list (ProgressProvider).
+ * page's — and the lesson is marked complete in the course list (ProgressProvider) and on the server, where it
+ * counts toward opening the next topic (PassoffProgressProvider — 설계 §5).
  *
  * The step tabs carry "Step N": LessonStepNavigation, the '← 이전 Step · 다음 Step →' bar below the lesson, finds
  * them by it and follows the ones it sees CLICKED — so every step change this view makes itself (a step's own
@@ -289,12 +291,18 @@ export function PassoffLearningView({
 
   // ── the lesson is finished: once, after the learner's own last action (never on a restore)
   const { isCompleted, toggleComplete } = useProgress();
+  const { recordLessonComplete, confirmed, countedIds } = usePassoffProgress();
+  // finished on this device, but the server — which the list and the topic lock count by — does not have it (after
+  // the owner's reset, a lost write, another code here: 코드 단계 C 점검 1); only finishing it again records it
+  const notCounted = work.lessonDone && confirmed && countedIds !== null && !countedIds.has(lessonId);
   useEffect(() => {
     if (!restored || !acted.current || !allDone || work.lessonDone) return;
     update((w) => {
       w.lessonDone = true;
     });
     if (!isCompleted(PASSOFF_COURSE, lessonId)) toggleComplete(PASSOFF_COURSE, lessonId);
+    // …and to the server, which opens the next topic from it (설계 §5 — PassoffProgressProvider)
+    recordLessonComplete(lessonId);
     const entries: { key: string; kind: PassoffItemKind }[] = [
       ...content.produce.map((p) => ({ key: p.id, kind: "produce" as const })),
       ...content.transfers.map((t) => ({ key: t.id, kind: "transfer" as const })),
@@ -305,7 +313,7 @@ export function PassoffLearningView({
       entries,
       ids.compose.filter((id) => work.compose[id]?.tomorrow),
     );
-  }, [restored, allDone, work.lessonDone, work.compose, update, isCompleted, toggleComplete, lessonId, content, ids]);
+  }, [restored, allDone, work.lessonDone, work.compose, update, isCompleted, toggleComplete, recordLessonComplete, lessonId, content, ids]);
 
   const stepsLeft = done.flatMap((d, i) => (d ? [] : [i]));
 
@@ -524,6 +532,7 @@ export function PassoffLearningView({
           speaker={speaker}
           stepsLeft={stepsLeft}
           lessonDone={work.lessonDone}
+          notCounted={notCounted}
           report={composeReport("transferQueue")}
           onCheckRight={() =>
             update((w) => {

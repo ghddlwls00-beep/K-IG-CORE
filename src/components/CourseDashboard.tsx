@@ -13,7 +13,9 @@ import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson, planOpensCourse, STUDENT_PASS_COURSES } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
+import { passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
+import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
 
 export interface DashboardLessonItem {
   id: string;
@@ -35,6 +37,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   hasCourseAccess,
   onToggleBookmark,
   sequentialLock,
+  lockLabel,
 }: {
   lesson: DashboardLessonItem;
   courseSlug: string;
@@ -45,6 +48,8 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
   hasCourseAccess: boolean;
   onToggleBookmark: (courseSlug: string, lessonId: string) => void;
   sequentialLock: boolean;
+  /** what a card locked by the course order says (PASS-OFF GRAMMAR: "TOPIC N-1 을 마치면 열림") — STUDENT's own when absent */
+  lockLabel?: string;
 }) {
   const pres = lesson.presentation;
 
@@ -76,7 +81,7 @@ const DashboardLessonCard = memo(function DashboardLessonCard({
               {!isUnlocked ? (
                 <span className="inline-flex items-center gap-1 rounded-full border border-line bg-sunken px-2 py-0.5 font-mono text-[9.5px] font-medium text-ink-faint">
                   <span>🔒</span>
-                  <span>{sequentialLock ? "이전 챕터 완료 필요" : STUDENT_PASS_COURSES.includes(courseSlug) ? "STUDENT" : "올패스"}</span>
+                  <span>{sequentialLock ? (lockLabel ?? "이전 챕터 완료 필요") : STUDENT_PASS_COURSES.includes(courseSlug) ? "STUDENT" : "올패스"}</span>
                 </span>
               ) : !hasCourseAccess && isFree ? (
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/[0.06] px-2 py-0.5 text-[10px] font-medium text-emerald-700">
@@ -200,6 +205,23 @@ export function CourseDashboard({
     }
   }, [courseSlug, licenseInfo?.plan, studentProgress]);
 
+  // PASS-OFF GRAMMAR opens topic by topic, as STUDENT opens chapters (설계 §5) — from the server's answer
+  // (PassoffProgressProvider; until it comes, the one kept on this device). With a licence this list counts what the
+  // server counts, plus completions on their way (countedIds) — the topic lock counts nothing else, and a list that
+  // also took this device's own record showed ✓ the lock did not (코드 단계 C 점검 1). Another device's lessons count
+  // too. Without a licence (the free lessons) it is this device's record, as in every other course.
+  const isPassoff = courseSlug === "passoff-grammar";
+  const { progress: passoffProgress, countedIds, syncStatus: passoffSyncStatus } = usePassoffProgress();
+  const passoffNotice = usePassoffUnlockNotice(isPassoff && hasCourseAccess && licenseInfo?.plan !== "LIFE");
+  const passoffDone = isPassoff && hasCourseAccess ? countedIds : null;
+  /** a licence, and no answer yet to show the topic locks from (LIFE needs none — every topic is open) */
+  const passoffChecking = isPassoff && hasCourseAccess && !passoffProgress && licenseInfo?.plan !== "LIFE";
+  /** done on this list: the server's count for PASS-OFF GRAMMAR with a licence — this device's record otherwise */
+  const isDoneHere = useCallback(
+    (lessonId: string) => (passoffDone ? passoffDone.has(lessonId) : isCompleted(courseSlug, lessonId)),
+    [courseSlug, isCompleted, passoffDone],
+  );
+
   const handleToggleBookmark = useCallback(
     (slug: string, id: string) => {
       toggleBookmark(slug, id);
@@ -232,9 +254,9 @@ export function CourseDashboard({
   );
   const completedCount = useMemo(() => {
     let count = 0;
-    for (const id of listedIds) if (completed[`${prefix}${id}`]) count++;
+    for (const id of listedIds) if (passoffDone ? passoffDone.has(id) : completed[`${prefix}${id}`]) count++;
     return count;
-  }, [completed, listedIds, prefix]);
+  }, [completed, listedIds, passoffDone, prefix]);
 
   // Same rule as the progress count: the chip says "북마크 (N)" and clicking it
   // filters THIS list, so counting an unlisted script page would promise rows
@@ -258,13 +280,13 @@ export function CourseDashboard({
             return isBookmarked(courseSlug, l.id);
           }
           if (filter === "incomplete") {
-            return !isCompleted(courseSlug, l.id);
+            return !isDoneHere(l.id);
           }
           return true;
         }),
       }))
       .filter((sec) => sec.lessons.length > 0);
-  }, [sections, filter, courseSlug, isBookmarked, isCompleted]);
+  }, [sections, filter, courseSlug, isBookmarked, isDoneHere]);
 
   // Track open/collapsed state of sections. All sections start collapsed by default.
   const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
@@ -289,6 +311,13 @@ export function CourseDashboard({
           🎉 챕터 {unlockNotice}가 열렸습니다.
         </div>
       )}
+      {/* PASS-OFF GRAMMAR's lines follow docs/디자인-규칙.md (12px and up, no direct colours, no emoji) — the
+          STUDENT lines beside them are unchanged here and follow it on main */}
+      {passoffNotice && (
+        <div className="fixed inset-x-4 top-24 z-50 mx-auto max-w-md rounded-2xl border border-line bg-raised px-5 py-4 text-center text-[14px] font-semibold text-ink shadow-xl" role="status">
+          {topicWithParticle(passoffNotice, "이/가")} 열렸어요.
+        </div>
+      )}
       {/* Course Progress Dashboard Card - Apple Glass / Clean Depth */}
       <div className="rounded-3xl border border-line bg-gradient-to-b from-raised to-sunken/70 p-4.5 sm:p-7 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex flex-col gap-4 sm:gap-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -306,6 +335,14 @@ export function CourseDashboard({
                 {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중..."}
                 {studentSyncStatus === "pending" && "연결 복구 후 자동 저장 예정"}
                 {studentSyncStatus === "error" && "저장 실패 · 연결되면 자동으로 다시 시도합니다"}
+              </p>
+            )}
+            {isPassoff && hasCourseAccess && (
+              <p className="mt-1 text-[12px] text-ink-soft" aria-live="polite">
+                {passoffSyncStatus === "saved" && "서버에 저장됨"}
+                {passoffSyncStatus === "syncing" && "진도를 서버와 맞추는 중…"}
+                {passoffSyncStatus === "pending" && "연결되면 자동으로 저장합니다"}
+                {passoffSyncStatus === "error" && "저장하지 못했습니다 · 연결되면 다시 시도합니다"}
               </p>
             )}
           </div>
@@ -390,20 +427,40 @@ export function CourseDashboard({
               const sectionIndex = section.sectionIndex;
               const chapterNumber = sectionIndex + 1;
               const isOpen = openSections[section.label] ?? false;
-              const completedInSection = section.lessons.filter((l) =>
-                isCompleted(courseSlug, l.id),
-              ).length;
+              const completedInSection = section.lessons.filter((l) => isDoneHere(l.id)).length;
               const studentChapter = courseSlug === "student"
                 ? studentProgress?.chapters.find((item) => item.chapter === chapterNumber)
                 : undefined;
-              const chapterUnlocked = courseSlug !== "student"
+              // PASS-OFF GRAMMAR: this section's topic (by its lessons' ids) and the one before it
+              const passoffTopic = isPassoff ? passoffTopicOf(sections[sectionIndex]?.lessons[0]?.id ?? "") : null;
+              const passoffPreviousTopic = isPassoff && sectionIndex > 0
+                ? passoffTopicOf(sections[sectionIndex - 1]?.lessons[0]?.id ?? "")
+                : null;
+              const passoffState = passoffTopic !== null
+                ? passoffProgress?.topics.find((item) => item.topic === passoffTopic)
+                : undefined;
+              const chapterUnlocked = (courseSlug !== "student" && !isPassoff)
                 || (!hasCourseAccess
                   ? sectionIndex === 0
                   : section.lessons.some((lesson, lessonIdx) =>
                       checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx),
                     ));
-              const chapterComplete = Boolean(studentChapter?.complete);
-              const chapterPercent = studentChapter?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
+              const chapterComplete = Boolean(studentChapter?.complete) || Boolean(passoffState?.complete);
+              const chapterPercent = studentChapter?.percent ?? passoffState?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
+              // PASS-OFF GRAMMAR's line under the topic name — '레슨' throughout, as its lock screen says
+              const passoffLine = !isPassoff
+                ? null
+                : !hasCourseAccess
+                  ? sectionIndex === 0 ? "첫 두 레슨 무료 체험" : "이용권 등록 후 열림"
+                  : passoffChecking
+                    ? "진도 확인 중…"
+                    : !chapterUnlocked
+                      ? `${topicWithParticle(passoffPreviousTopic ?? sectionIndex, "을/를")} 마치면 열림`
+                      : chapterComplete
+                        ? "대주제 완료"
+                        : passoffState && !passoffProgress?.everyTopicOpen
+                          ? `진행 ${chapterPercent}% · 레슨 ${passoffState.requiredCount}개와 마지막 레슨${passoffProgress?.mapRefillRequired ? ", 구성도 다시 채우기를" : "을"} 마치면 다음 대주제`
+                          : `진행 ${chapterPercent}%`;
 
 
               return (
@@ -450,19 +507,24 @@ export function CourseDashboard({
                                   : `진행률 ${chapterPercent}%${studentChapter ? ` · 해금 기준 ${studentChapter.requiredCount}강 + 마지막 강의` : ""}`}
                           </span>
                         )}
+                        {passoffLine ? (
+                          <span className="mt-1 text-[12px] font-medium text-ink-soft">{passoffLine}</span>
+                        ) : null}
                       </div>
                     </div>
 
                     <div className="ml-3 flex shrink-0 items-center gap-2">
-                      {courseSlug === "student" && (
+                      {(courseSlug === "student" || isPassoff) && (
                         <span className={`inline-flex min-h-8 min-w-[72px] shrink-0 items-center justify-center whitespace-nowrap rounded-full px-3 py-1 text-[11px] font-semibold ${
-                          chapterComplete
-                            ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-                            : chapterUnlocked
-                              ? "bg-blue-500/10 text-blue-700 dark:text-blue-300"
-                              : "bg-sunken text-ink-soft" /* BUG-035: ink-faint on sunken was 4.47:1 */
+                          passoffChecking
+                            ? "bg-sunken text-ink-soft"
+                            : chapterComplete
+                              ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+                              : chapterUnlocked
+                                ? "bg-blue-500/10 text-blue-700 dark:text-blue-300"
+                                : "bg-sunken text-ink-soft" /* BUG-035: ink-faint on sunken was 4.47:1 */
                         }`}>
-                          {chapterComplete ? "완료" : chapterUnlocked ? "학습 가능" : "🔒 잠금"}
+                          {passoffChecking ? "확인 중" : chapterComplete ? "완료" : chapterUnlocked ? "학습 가능" : "🔒 잠금"}
                         </span>
                       )}
                       <span className="rounded-full border border-line bg-sunken px-3 py-1 text-[11.5px] font-medium text-ink-soft hidden sm:inline">
@@ -485,11 +547,11 @@ export function CourseDashboard({
                     <div className="border-t border-line p-4 sm:p-6 bg-sunken/50">
                       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                         {section.lessons.map((lesson, lessonIdx) => {
-                          const isDone = isCompleted(courseSlug, lesson.id);
+                          const isDone = isDoneHere(lesson.id);
                           const isStarred = isBookmarked(courseSlug, lesson.id);
                           const isFree = isFreePreviewLesson(courseSlug, lesson.id, sectionIndex, lessonIdx);
                           const isUnlocked = checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx);
-                          const sequentialLock = courseSlug === "student" && hasCourseAccess && !isUnlocked;
+                          const sequentialLock = (courseSlug === "student" || isPassoff) && hasCourseAccess && !isUnlocked;
 
                           return (
                             <DashboardLessonCard
@@ -503,6 +565,13 @@ export function CourseDashboard({
                               hasCourseAccess={hasCourseAccess}
                               onToggleBookmark={handleToggleBookmark}
                               sequentialLock={sequentialLock}
+                              lockLabel={
+                                !isPassoff
+                                  ? undefined
+                                  : passoffChecking
+                                    ? "진도 확인 중"
+                                    : `${topicWithParticle(passoffPreviousTopic ?? sectionIndex, "을/를")} 마치면 열림`
+                              }
                             />
                           );
                         })}

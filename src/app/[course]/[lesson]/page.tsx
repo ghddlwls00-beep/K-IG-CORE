@@ -32,7 +32,9 @@ import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
-  return getAllLessonParams().filter((item) => item.course !== "student");
+  // STUDENT and PASS-OFF GRAMMAR have routes of their own (src/app/student · src/app/passoff-grammar) that gate
+  // the chapter / topic order first and then render this page
+  return getAllLessonParams().filter((item) => item.course !== "student" && item.course !== "passoff-grammar");
 }
 
 /**

@@ -11,6 +11,7 @@ import {
   type LicensePlan,
 } from "@/lib/license";
 import { adoptDeviceId, getOrCreateDeviceId, hasStoredDeviceId, type ClientDevice } from "@/lib/device";
+import { passoffTopicOf, type PassoffProgressSnapshot } from "@/lib/passoffUnlock";
 
 /**
  * What this browser keeps in localStorage "kig:license:v1".
@@ -61,6 +62,12 @@ interface LicenseContextType {
   studentProgressLoading: boolean;
   refreshStudentProgress: () => Promise<StudentProgressSnapshot | null>;
   applyStudentProgress: (progress: StudentProgressSnapshot) => void;
+  /**
+   * PASS-OFF GRAMMAR's topic lock as the server last answered — null without a licence or before the first answer.
+   * PassoffProgressProvider reads and writes it (the server decides; isUnlocked only shows it).
+   */
+  passoffProgress: PassoffProgressSnapshot | null;
+  applyPassoffProgress: (progress: PassoffProgressSnapshot | null) => void;
 }
 
 export interface StudentChapterSnapshot {
@@ -112,6 +119,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const [clock, setClock] = useState(0);
   const [studentProgress, setStudentProgress] = useState<StudentProgressSnapshot | null>(null);
   const [studentProgressLoading, setStudentProgressLoading] = useState(false);
+  const [passoffSnapshot, setPassoffSnapshot] = useState<PassoffProgressSnapshot | null>(null);
 
   useEffect(() => {
     const updateClock = () => setClock(Date.now());
@@ -273,6 +281,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   // Compute active status
   const isExpired = Boolean(clock > 0 && stored?.expiresAt && stored.expiresAt < clock);
   const hasActiveLicense = Boolean(stored && !isExpired && stored.token);
+  // a PASS-OFF GRAMMAR answer belongs to an active licence (PassoffProgressProvider asks again when the licence changes)
+  const passoffProgress = hasActiveLicense ? passoffSnapshot : null;
 
   const refreshStudentProgress = useCallback(async (): Promise<StudentProgressSnapshot | null> => {
     setStudentProgressLoading(true);
@@ -329,6 +339,14 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       if (stored.plan === "LIFE") return true;
       const match = lessonId.match(/^s(\d+)-/);
       return Boolean(match && Number(match[1]) <= (studentProgress?.unlockedThrough || 1));
+    }
+
+    // PASS-OFF GRAMMAR opens topic by topic (설계 §5) — as the server last answered; TOPIC 1 until it has. LIFE: all.
+    if (courseSlug === "passoff-grammar") {
+      if (!planOpensCourse(stored.plan, courseSlug)) return false;
+      if (stored.plan === "LIFE") return true;
+      const topic = passoffTopicOf(lessonId);
+      return topic !== null && topic <= (passoffProgress?.unlockedThrough || 1);
     }
 
     // 3. A STUDENT pass opens its courses only; the VIP all-pass opens every course (planOpensCourse)
@@ -465,6 +483,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         studentProgressLoading,
         refreshStudentProgress,
         applyStudentProgress: setStudentProgress,
+        passoffProgress,
+        applyPassoffProgress: setPassoffSnapshot,
       }}
     >
       {children}

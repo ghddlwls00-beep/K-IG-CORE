@@ -25,6 +25,7 @@ export function WrapUpStep({
   speaker,
   stepsLeft,
   lessonDone,
+  notCounted = false,
   report,
   onCheckRight,
   onFrame,
@@ -44,6 +45,8 @@ export function WrapUpStep({
   /** steps not finished yet (0-based), ⑤ itself included */
   stepsLeft: number[];
   lessonDone: boolean;
+  /** done on this device, but not in this licence's server progress — finishing it again records it */
+  notCounted?: boolean;
   report: ComposeReport;
   onCheckRight: () => void;
   onFrame: (values: string[]) => void;
@@ -136,6 +139,11 @@ export function WrapUpStep({
       {lessonDone || (stepsLeft.length === 0 && frameShown) ? (
         <section aria-live="polite" className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4">
           <Verdict ok>레슨 완료 — 5단계를 모두 마쳤어요.</Verdict>
+          {notCounted ? (
+            <p className="text-[14px] leading-relaxed text-ink-soft">
+              이 이용권의 진도에는 아직 이 레슨이 기록되지 않았어요. &lsquo;처음부터 다시 하기&rsquo;로 5단계를 다시 마치면 기록돼요.
+            </p>
+          ) : null}
           <div className="flex justify-end">
             <SecondaryButton
               onClick={() => {

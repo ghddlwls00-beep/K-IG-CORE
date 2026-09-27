@@ -3,6 +3,7 @@ import Script from "next/script";
 import { headers } from "next/headers";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { ProgressProvider } from "@/components/ProgressProvider";
+import { PassoffProgressProvider } from "@/components/PassoffProgressProvider";
 import { LicenseProvider } from "@/components/LicenseProvider";
 import { LicenseModal } from "@/components/LicenseModal";
 import { TabBar } from "@/components/TabBar";
@@ -92,10 +93,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <LanguageProvider>
           <LicenseProvider>
             <ProgressProvider>
-              <KakaoTalkNoticeBanner />
-              <TabBar tabs={tabs} courseTabs={courseTabs} />
-              <LicenseModal />
-              {children}
+              {/* PASS-OFF GRAMMAR's server progress (topic lock) — it asks the server only on that course's pages */}
+              <PassoffProgressProvider>
+                <KakaoTalkNoticeBanner />
+                <TabBar tabs={tabs} courseTabs={courseTabs} />
+                <LicenseModal />
+                {children}
+              </PassoffProgressProvider>
             </ProgressProvider>
           </LicenseProvider>
         </LanguageProvider>

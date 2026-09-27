@@ -34,6 +34,28 @@ interface AdminStudentProgress {
   chapters?: { lessonIds: string[] }[];
 }
 
+/** /api/admin/passoff-progress — PASS-OFF GRAMMAR's topic lock record (docs/pass-off-grammar/설계.md §5) */
+interface AdminPassoffProgress {
+  /** a LIFE code — every topic open whatever the record says */
+  everyTopicOpen: boolean;
+  unlockedThrough: number;
+  completedLessons: number;
+  totalLessons: number;
+  lastLessonId?: string;
+  lastLessonDay?: string;
+  updatedAt: number;
+  mapRefillRequired: boolean;
+  topics: {
+    topic: number;
+    label: string;
+    lessonCount: number;
+    completedCount: number;
+    requiredCount: number;
+    complete: boolean;
+    unlocked: boolean;
+  }[];
+}
+
 
 export default function AdminLicensePage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -60,6 +82,9 @@ export default function AdminLicensePage() {
   const [openProgressKey, setOpenProgressKey] = useState<string | null>(null);
   const [studentProgressByKey, setStudentProgressByKey] = useState<Record<string, AdminStudentProgress>>({});
   const [progressLoadingKey, setProgressLoadingKey] = useState<string | null>(null);
+  const [openPassoffKey, setOpenPassoffKey] = useState<string | null>(null);
+  const [passoffProgressByKey, setPassoffProgressByKey] = useState<Record<string, AdminPassoffProgress>>({});
+  const [passoffLoadingKey, setPassoffLoadingKey] = useState<string | null>(null);
 
   // Check server-side admin session on mount
   useEffect(() => {
@@ -392,6 +417,58 @@ export default function AdminLicensePage() {
       return;
     }
     await requestStudentProgress(key, "setChapter", { chapter });
+  }
+
+  // PASS-OFF GRAMMAR progress — look, open topics by hand and reset, the way STUDENT's is above (its own route and state)
+  async function requestPassoffProgress(
+    key: string,
+    action: "get" | "reset" | "setTopic" = "get",
+    extra: Record<string, unknown> = {},
+  ) {
+    setPassoffLoadingKey(key);
+    try {
+      const response = await fetch("/api/admin/passoff-progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key, action, ...extra }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) throw new Error(data.error || "진도 처리 실패");
+      setPassoffProgressByKey((previous) => ({ ...previous, [key]: data.progress }));
+      setOpenPassoffKey(key);
+    } catch (error) {
+      alert(error instanceof Error ? error.message : "PASS-OFF GRAMMAR 진도를 처리하지 못했습니다.");
+    } finally {
+      setPassoffLoadingKey(null);
+    }
+  }
+
+  async function handlePassoffProgressReset(key: string) {
+    if (!confirm("이 이용권의 PASS-OFF GRAMMAR 진도를 모두 초기화할까요? 이 작업은 되돌릴 수 없습니다.")) return;
+    if (
+      !confirm(
+        "마지막 확인입니다. 서버의 완료 기록과 TOPIC 해금 상태를 초기화합니다(TOPIC 1 만 열림).\n\n" +
+          "학습자 기기에 남은 레슨 연습 기록은 지워지지 않습니다. 그 기기에서 마쳤던 레슨은 '처음부터 다시 하기'로 다시 마쳐야 다시 기록됩니다" +
+          "(목록의 완료 표시도 서버 기록을 따릅니다).",
+      )
+    ) {
+      return;
+    }
+    await requestPassoffProgress(key, "reset");
+  }
+
+  async function handleSetPassoffTopic(key: string, currentTopic: number, topic: number) {
+    if (topic <= currentTopic) return;
+    if (
+      !confirm(
+        `이용권 [${key}]의 PASS-OFF GRAMMAR 를 TOPIC ${currentTopic}까지 → TOPIC ${topic}까지 열까요?\n\n` +
+          "한 번 연 TOPIC 은 진도 초기화 말고는 다시 잠기지 않습니다.",
+      )
+    ) {
+      setPassoffProgressByKey((previous) => ({ ...previous }));
+      return;
+    }
+    await requestPassoffProgress(key, "setTopic", { topic });
   }
 
   // ISS-14: every issued code on the server, newest first, with search.
@@ -885,6 +962,16 @@ export default function AdminLicensePage() {
                             {progressLoadingKey === item.key ? "불러오는 중..." : "STUDENT 진도"}
                           </button>
 
+                          <button
+                            type="button"
+                            onClick={() => openPassoffKey === item.key
+                              ? setOpenPassoffKey(null)
+                              : void requestPassoffProgress(item.key)}
+                            className="rounded-lg border border-blue-500/20 bg-blue-500/5 px-2.5 py-1 text-[11.5px] font-semibold text-blue-700 hover:bg-blue-500/15 cursor-pointer transition-colors"
+                          >
+                            {passoffLoadingKey === item.key ? "불러오는 중..." : "PASS-OFF 진도"}
+                          </button>
+
                           {/* ADM-02: the "🧪 내 기기에 등록 테스트" button was removed. It
                               registered the admin's browser on a CUSTOMER code with no
                               confirmation — taking one of the customer's device slots and,
@@ -988,6 +1075,72 @@ export default function AdminLicensePage() {
                               </button>
                             </div>
                           </div>
+                        </div>
+                      )}
+
+                      {openPassoffKey === item.key && passoffProgressByKey[item.key] && (
+                        <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-4 text-[12px] text-blue-950">
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap gap-x-4 gap-y-1">
+                              <strong>
+                                {passoffProgressByKey[item.key].everyTopicOpen
+                                  ? "PASS-OFF GRAMMAR · LIFE — 모든 TOPIC 열림"
+                                  : `PASS-OFF GRAMMAR · TOPIC ${passoffProgressByKey[item.key].unlockedThrough}까지 열림`}
+                              </strong>
+                              <span>
+                                완료 레슨 {passoffProgressByKey[item.key].completedLessons}/{passoffProgressByKey[item.key].totalLessons}
+                              </span>
+                              <span>
+                                마지막 완료 {passoffProgressByKey[item.key].lastLessonId || "기록 없음"}
+                                {passoffProgressByKey[item.key].lastLessonDay ? ` (${passoffProgressByKey[item.key].lastLessonDay})` : ""}
+                              </span>
+                              <span>저장 {new Date(passoffProgressByKey[item.key].updatedAt).toLocaleString("ko-KR")}</span>
+                            </div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              {!passoffProgressByKey[item.key].everyTopicOpen ? (
+                                <label className="flex items-center gap-1.5">
+                                  <span>수동 해금</span>
+                                  <select
+                                    value={passoffProgressByKey[item.key].unlockedThrough}
+                                    onChange={(event) => void handleSetPassoffTopic(
+                                      item.key,
+                                      passoffProgressByKey[item.key].unlockedThrough,
+                                      Number(event.target.value),
+                                    )}
+                                    className="rounded-lg border border-blue-200 bg-white px-2 py-1 font-semibold"
+                                  >
+                                    {/* only upward — an open topic never closes again but by a reset */}
+                                    {passoffProgressByKey[item.key].topics
+                                      .filter((topic) => topic.topic >= passoffProgressByKey[item.key].unlockedThrough)
+                                      .map((topic) => (
+                                        <option key={topic.topic} value={topic.topic}>TOPIC {topic.topic}까지</option>
+                                      ))}
+                                  </select>
+                                </label>
+                              ) : null}
+                              <button
+                                type="button"
+                                onClick={() => void handlePassoffProgressReset(item.key)}
+                                className="rounded-lg border border-red-300 bg-white px-2.5 py-1 font-semibold text-red-600 hover:bg-red-50"
+                              >
+                                진도 초기화
+                              </button>
+                            </div>
+                          </div>
+                          <ul className="mt-2 flex flex-wrap gap-1.5">
+                            {passoffProgressByKey[item.key].topics.map((topic) => (
+                              <li key={topic.topic} title={topic.label} className="rounded-lg border border-blue-200 bg-white px-2 py-0.5">
+                                TOPIC {topic.topic} · {topic.completedCount}/{topic.lessonCount}
+                                {topic.complete ? " · 완료" : topic.unlocked ? " · 열림" : " · 잠김"}
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="mt-2 text-[11.5px] text-blue-900/80">
+                            다음 TOPIC 이 열리는 조건: 레슨 80% 이상 + 마지막 레슨
+                            {passoffProgressByKey[item.key].mapRefillRequired
+                              ? " + 구성도 다시 채우기 1번"
+                              : " (구성도 다시 채우기 조건은 공통 학습 엔진이 생길 때까지 꺼져 있음)"}
+                          </p>
                         </div>
                       )}
                     </div>
