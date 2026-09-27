@@ -39,7 +39,7 @@
 | 04:3x | GRAMMAR I · II | (이 커밋) 학습법 + 화면 한 번에 — 일꾼이 구현, 이 세션이 빌드 · 브라우저 확인 · 커밋 | verify-unit --build PASS · 디자인 0 · 채점 변화 0(2,431문항) · check-grammar-exam 오답 0 · all-alts 99/99 · 깨기 exit 1 · drive-common D 9/9 · 휴대폰 1단계 16.2 → 2.2화면 · 작은 누를 곳 238 → 0 · 확대 칸 69 → 0 | 설계 세션 대기열 |
 | 06:3x | STUDENT + 말하기 공용 | `1d14dea` 일꾼 1 = 말하기 채점 정렬 · [[칸]] · VoiceSpeakingTester 인자 / 일꾼 2 = STUDENT 화면 · 학습법 — 이 세션이 빌드 · 브라우저 확인 · 대비 · 문구 · 도구 고침 · 커밋 | verify-unit --build PASS · check-speech-scorer ①~⑦ PASS(--head · --break FAIL) · check-student-0927 22/22(깨기 넷 모두 FAIL) · check-student-dictation PASS(깨기 FAIL) · drive-common A·C·D·F 65/65 · drive-generic s1-1 · s1-2 × 2 문제 0 · gap M·S·P 14/14 · check-student-unlock 0 · 유출 0(깨기 1) · 디자인 17파일 0 · 휴대폰 44px 미만 29~35 → 0 · 단계 탭 3줄 → 1줄 | 설계 세션 대기열 |
 | 06:4x | GRAMMAR 엔진 기록 | `b842836` 채점한 답마다 recordAttempt · 완료 때 틀리거나 도움 받은 문장만 markLessonDone | check-student-0927 G1(틀린 1번만 복습 · 안 푼 2번 없음) | 설계 세션 대기열 |
-| 10:3x | LISTENING · READING | (이 커밋) 일꾼 둘 + 이 세션: READING 빈칸 '또 맞는 짝' 표(과정 전체 핵심어 685)를 서버 전용으로 — 강의 쪽이 그 강의 짝만 넘김(유출 규칙) · LISTENING 1~3단계 이름을 사장님 원래 짧은 이름으로 되돌림(4·5단계만 D05) · 드라이버에 READING 완료 조건 · 4단계 재생 길 | verify-unit --build PASS(ld 5,499 → 5,152 틀린 소리 카드 뺀 만큼 · 새 클립 0) · 휴대폰 · 작은 폰 · 데스크탑 LISTENING · READING 모든 단계 44px 미만 24~58 → 0 · 탭 2~4줄 → 1줄 · 확대 칸 0 · drive-common A·C·D·F 65/65 · gap P·Z·T 7/7 · drive-generic d001 · d001-1 × 2 문제 0 · check-reading-cloze 0(강의 짝 = 전체 표 2,560세트 · 깨기 FAIL) · 유출 0 · 디자인 0 · STUDENT 22/22 · VOCA 7/7 회귀 · **drive-reading pr001: 휴대폰 50/51 · 데스크탑 266/296 — 아래 '먼저 고칠 것'** | **READING 은 아래 두 가지를 고친 뒤에 올릴 것** |
+| 10:3x | LISTENING · READING | (이 커밋) 일꾼 둘 + 이 세션: READING 빈칸 '또 맞는 짝' 표(과정 전체 핵심어 685)를 서버 전용으로 — 강의 쪽이 그 강의 짝만 넘김(유출 규칙) · LISTENING 1~3단계 이름을 사장님 원래 짧은 이름으로 되돌림(4·5단계만 D05) · 드라이버에 READING 완료 조건 · 4단계 재생 길 | verify-unit --build PASS(ld 5,499 → 5,152 틀린 소리 카드 뺀 만큼 · 새 클립 0) · 휴대폰 · 작은 폰 · 데스크탑 LISTENING · READING 모든 단계 44px 미만 24~58 → 0 · 탭 2~4줄 → 1줄 · 확대 칸 0 · drive-common A·C·D·F 65/65 · gap P·Z·T 7/7 · drive-generic d001 · d001-1 × 2 문제 0 · check-reading-cloze 0(강의 짝 = 전체 표 2,560세트 · 깨기 FAIL) · 유출 0 · 디자인 0 · STUDENT 22/22 · VOCA 7/7 회귀 · drive-reading pr001(09-28 도구 고침 뒤): 휴대폰 52/52 · 데스크탑 319 PASS · FAIL 0 | 설계 세션 대기열 6 — READING 올려도 됨(09-28) |
 | 08:1x | VOCA + 한 낱말 판정 | `71815e0` 일꾼 1 = B03 · 일꾼 2 = VOCA 화면 · 학습법 — 이 세션이 빌드 · 브라우저 확인 · 과정 설명 글 되돌림(첫 쪽 슬라이드가 씀 — 사장님 몫) · 검사 도구 · 커밋 | verify-unit --build PASS · check-speech-single-word PASS(262줄 · --head · --break FAIL) · check-speech-scorer 그대로 · check-voca-learning 22/22(깨기 10 모두 FAIL) · 옛 check-voca-* 7 통과 · check-voca-0927 7/7(깨기 4 FAIL) · check-student-0927 22/22(회귀) · drive-common A·C·D·F 65/65 · gap P 3/3 · drive-generic mv1-01 × 2 문제 0 · 유출 0 · 디자인 0 · 휴대폰 44px 미만 19~89 → 0 · 3단계 7.1 → 0.8화면 | 설계 세션 대기열 |
 
 - 점검 워크플로우 끝(03:1x · 일꾼 13 · 오류 0): 과정별 검토 6 + 반박 점검 6(반박된 것 0 · 고침 조정 95 · 놓친 것 38 더함) + 종합 1. 결과 파일: [사장님-요약.md](사장님-요약.md) · [계획.md](계획.md) · 과정별-결과.json(합본 — 반박된 항목 빠지고 고침은 점검 쪽으로).
@@ -48,11 +48,14 @@
 - 사용량(03:1x): 5시간 36% · 주간 64%(09-28 05:00 재설정). 98% 면 멈추고 설계 세션에 알림. 새 문제 약 1,200개(LISTENING · READING)는 주간 재설정 뒤.
 - 첫 쪽은 사장님이 원래 사진 슬라이드를 고르심(머리줄 추가 안 함) — 휠 · 키 가로채기 제거 · 점 누름 영역만.
 
-### 먼저 고칠 것 — READING (10:3x · 주간 사용량 91% 에서 멈춤 · 09-28 05:00 재설정 뒤 첫 일)
+### READING '먼저 고칠 것' — 풀림(09-28 05:4x · 둘 다 점검 도구 쪽이었음 · 앱 코드 변화 0)
 
-1. **소리 단추를 다시 눌러도 안 멈춤**: drive-reading pr001 에서 1단계 · 4단계 문장 누름과 2단계 낱말 🔊 를 두 번째 누를 때 소리가 멈추지 않음(휴대폰 1 · 데스크탑 25칸 — 'second press stops playback'). 다른 과정처럼 재생 ↔ 정지로.
-2. **데스크탑 2단계 뜻 13개를 드라이버가 못 읽음**(content 25/38 · reveal-all): 새 화면은 낱말마다 '뜻 보기' — drive-reading 의 데스크탑 길이 옛 '모두 보기'를 찾는 것으로 보임(도구 쪽). 고친 뒤 drive-reading --no-resume 과 --break gate · cloze · hover 를 다시.
-3. 그 뒤 README 표의 READING 줄을 고치고 설계 세션에 '올려도 됨' 알림. 디자인 규칙 §7 에 AudioPlayer `speeds` · LISTENING · READING 의 넘겨받기 · 완료 조건 한 줄씩.
+1. '두 번째 누름에 안 멈춤' — 화면은 이미 멈추고 있었음(pressSentence · playWord · playRow 가 stopAll). 도구가 못 본 까닭: stopSpeech 가 pause 뒤 같은 차례에 src 를 지우고 load() 해서
+   pause 사건이 버려짐 → drive-reading 의 stopProbe 를 소리 요소 상태(재생 중 → 끝 전에 멈춤 · 0.4초 그대로 · 새 소리 없음 · 재생 표시 꺼짐)로 다시 씀 + `--break stop`(누르지 않고 올리기만).
+2. '데스크탑 뜻 13개 못 읽음' — '뜻 모두 보기/가리기'는 지금 화면의 켜고 끄는 단추인데, 데스크탑 길이 낱말마다 '뜻 보기'를 누른 뒤 그 단추를 눌러 모두 가린 다음 글을 읽었음 → 읽고 나서 누르게 바꿈.
+3. 다시 잰 것(로컬 · 로그아웃): drive-reading pr001 휴대폰 52/52 · 데스크탑 319 PASS · FAIL 0 · BLOCKED 1(마이크) · 내용 38/38 · exit 0 /
+   깨기: stop 휴대폰 3 · 데스크탑 41 FAIL · gate 휴대폰 5 FAIL · cloze 데스크탑 15 FAIL · hover 데스크탑 1 FAIL(cloze · hover 는 데스크탑 길만 봄 — 휴대폰 깨기는 통과가 맞음) → **READING 올려도 됨**.
+4. 남은 일: 디자인 규칙 §7 에 AudioPlayer `speeds` · LISTENING · READING 의 넘겨받기 · 완료 조건 한 줄씩(다음 문서 정리 때).
 
 ### 다음 할 일 (06:4x 기준 — 압축 뒤 여기부터)
 

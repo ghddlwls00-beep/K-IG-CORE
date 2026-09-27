@@ -18,7 +18,8 @@
  *           its clip and shows its Korean (a line under it on a phone, [data-ko-panel] from sm); the whole-lesson player appears
  *           only after the timed reading and tints the sentence it reads.
  *   Step 2  li[data-vocab] per key word: word · part of speech · passage line [data-context] · '뜻 보기' → [data-meaning] · the
- *           word's clip · '알아요 / 몰라요' (kig:reading:words:v1:…; '알아요' folds the row) · '뜻 모두 보기'.
+ *           word's clip · '알아요 / 몰라요' (kig:reading:words:v1:…; '알아요' folds the row) · '뜻 모두 보기 / 뜻 모두 가리기' (one
+ *           toggle, [data-action="reveal-all"]).
  *   Step 3  one blank at a time, exactly generateClozeItems(pairs, { lessonKey: 'reading/<main id>', keywords, round, unknown }):
  *           masked sentence, the four options in order, right/wrong, the filled sentence, its Korean, '문장 듣기', '다음 문제',
  *           the result and '다른 빈칸으로 다시 풀기' (round 1); the reading-aloud check with a stubbed recogniser.
@@ -29,7 +30,8 @@
  *   engine  kig-learning:reading gets an attempt per '알아요/몰라요' and per blank (item '<main id>#k<n>'), and on completion
  *           the '몰라요' words and the missed blanks as items.
  * Deliberate breaks (--break): 'gate' presses completion without the timed reading first, 'cloze' judges round 0 against
- * round 1's blanks, 'hover' expects mouse-over to change the passage — each must record FAILs (and exit 1).
+ * round 1's blanks, 'hover' expects mouse-over to change the passage, 'stop' (2026-09-28) only moves the mouse over a
+ * playing sound control where the second press belongs, so the sound is never stopped — each must record FAILs (and exit 1).
  *
  * READ-ONLY toward the product: it never edits the repository, never deploys and never calls a licence or admin API. The
  * only data it changes is localStorage inside its own profile CLONE (per-lesson READING keys, bookmark / completion keys and
@@ -51,7 +53,7 @@
  *   --suffix S             output file docs/qa-2026-09-18/out/features/reading<S>.jsonl
  *   --shard i/n            1-based shard i of n (clone "drv-rd-<i>", port 9470+i)
  *   --resume / --no-resume finished page x viewport records are skipped (default on)
- *   --break gate|cloze|hover   deliberate break (see above)
+ *   --break gate|cloze|hover|stop   deliberate break (see above)
  *   --dry                  print the page list and exit
  * Exit 1 when any check FAILed (2026-09-27; it used to exit 0 unless the driver itself crashed).
  *
@@ -115,7 +117,7 @@ function parseArgs(argv) {
     else throw new Error(`unknown option ${k}`);
   }
   for (const vp of a.viewports) if (!H.VIEWPORTS[vp]) throw new Error(`unknown viewport ${vp}`);
-  if (a.brk && !["gate", "cloze", "hover"].includes(a.brk)) throw new Error(`--break must be gate, cloze or hover`);
+  if (a.brk && !["gate", "cloze", "hover", "stop"].includes(a.brk)) throw new Error(`--break must be gate, cloze, hover or stop`);
   return a;
 }
 let BREAK = "";
@@ -432,21 +434,93 @@ async function playProbe(rec, tab, { feature, item, trigger, text, expr, touch =
   return res;
 }
 
-/** A second press on the same control must stop playback (pause event on the shared element). */
-async function stopProbe(rec, tab, { feature, item, expr, touch = false }) {
-  await H.audioLog(tab, { clear: true });
-  const clicked = await press(tab, expr, { touch });
-  if (!clicked.ok) return false;
-  for (let i = 0; i < 14; i++) {
-    const log = await H.audioLog(tab);
-    if (log.some((e) => e.ev === "pause" || e.ev === "ended")) {
-      ck(rec, feature, item, "second press stops playback", "pause event", "pause event", "PASS");
-      return true;
-    }
-    await sleep(100);
+/** The shared audio element (window.__kigMedia — EXTRA_HOOK keeps the element of the last play()) as plain data. */
+const MEDIA_STATE = `(() => { const a = window.__kigMedia; return a ? { paused: a.paused, ended: a.ended, hasSrc: !!a.getAttribute('src'), t: Math.round(a.currentTime * 100) / 100, dur: isFinite(a.duration) ? Math.round(a.duration * 100) / 100 : null } : null; })()`;
+const isSounding = (m) => !!m && m.hasSrc && !m.paused && !m.ended;
+const mediaText = (m) => (m ? `${m.paused ? "paused" : "playing"}${m.ended ? " · ended" : ""} at ${m.t}/${m.dur} s${m.hasSrc ? "" : " · src removed"}` : "no audio element");
+async function mediaUntil(tab, pred, ms) {
+  const end = Date.now() + ms;
+  let m = await jsEval(tab, MEDIA_STATE, null);
+  while (!pred(m) && Date.now() < end) {
+    await sleep(80);
+    m = await jsEval(tab, MEDIA_STATE, null);
   }
-  ck(rec, feature, item, "second press stops playback", "pause event", "no pause/ended event within 1.4 s", "FAIL");
-  return false;
+  return m;
+}
+/** "this control shows it is not playing" — the view's own marks (ReadingLearningView PLAYING_MARK · speakerButton · play-row) */
+const idleSentence = (i) => `(() => { const s = ${sent1(i)}; const e = s && s.querySelector('[data-en]'); return !!e && !/underline/.test(e.className); })()`;
+const idleSpeaker = (btn) => `(() => { const b = ${btn}; return !!b && / 듣기$/.test(b.getAttribute('aria-label') || ''); })()`;
+const idleRow = (i) => `(() => { const b = ${inRow4(i, '[data-action="play-row"]')}; return !!b && b.getAttribute('aria-pressed') === 'false'; })()`;
+
+/**
+ * A second press on the same control, while its clip plays, must stop the sound — and not start it again.
+ *
+ * 2026-09-28 — this used to wait for a 'pause' event, which the app's stop never produces: stopSpeech() (speech.ts
+ * hardStopStream — the stop of every course, e.g. StudentLearningView toggleSentence → stopAll) calls pause() and then
+ * removeAttribute('src') + load() in the same task, and the media element load algorithm removes the element's queued
+ * events, the 'pause' among them (HTML "media element load algorithm": "pending events and callbacks are discarded"). So the
+ * probe FAILed every correct stop (26 of 26 in each 2026-09-27 run; never a PASS on record) and could PASS a press that did
+ * nothing, on a word clip short enough to end by itself ('pause' + 'ended') inside the 1.4 s. Now it reads the shared element:
+ *   before  the clip must be sounding when the second press lands (waits up to 3 s); a clip that already ran to its end is
+ *           first played again with the same control (`rearm` presses — 2 for a Step 1 sentence, whose press after the end
+ *           closes its Korean line), so the press always meets a playing sound;
+ *   after   within 1.4 s the element is paused WITHOUT having reached its end (ended = false), stays so for 0.4 s, and the
+ *           press requested no clip (no play()) — then `idle` (the control's own playing mark) must be off.
+ * --break stop moves the mouse over the control instead of pressing it: this check must then FAIL on every probe.
+ */
+async function stopProbe(rec, tab, { feature, item, expr, touch = false, rearm = 1, idle = null }) {
+  const what = "second press stops playback";
+  let before = await mediaUntil(tab, (s) => isSounding(s) || !!(s && s.ended), 3000);
+  let note;
+  if (!isSounding(before) && before && before.ended) {
+    for (let k = 0; k < rearm; k++) await press(tab, expr, { touch, settle: 200 });
+    before = await mediaUntil(tab, isSounding, 6000);
+    note = `the clip had ended before the second press — played again first (${rearm} press${rearm > 1 ? "es" : ""})`;
+  }
+  const armed = isSounding(before);
+  await H.audioLog(tab, { clear: true });
+  const clicked = BREAK === "stop" ? { ok: true, hovered: await hover(tab, expr) } : await press(tab, expr, { touch });
+  if (!clicked.ok) {
+    ck(rec, feature, item, what, "the control pressed", `press failed: ${clicked.reason || ""}`, "FAIL");
+    return false;
+  }
+  if (!armed) {
+    ck(rec, feature, item, what, "a clip playing when the second press lands", `nothing was playing before the second press (${mediaText(before)})`, "FAIL", note || "nothing was tested");
+    return false;
+  }
+  let m = null;
+  let restarted = false;
+  let quietSince = 0;
+  const t0 = Date.now();
+  for (;;) {
+    await sleep(100);
+    restarted = (await H.audioLog(tab)).some((e) => e.ev === "play()");
+    m = await jsEval(tab, MEDIA_STATE, null);
+    if (restarted) break;
+    if (m && m.paused && !m.ended) {
+      if (!quietSince) quietSince = Date.now();
+      if (Date.now() - quietSince >= 400) break;
+    } else {
+      quietSince = 0;
+      if (Date.now() - t0 >= 1400) break;
+    }
+  }
+  const stopped = !restarted && !!m && m.paused && !m.ended;
+  const actual = restarted
+    ? `the press started a clip again (play()) — ${mediaText(m)}`
+    : stopped
+      ? `stopped before its end (${mediaText(m)}), no new clip`
+      : !m
+        ? "the audio element could not be read after the press"
+        : m.ended
+          ? `the clip ran to its end by itself (${mediaText(m)}) — the press did not stop it`
+          : `still sounding 1.4 s after the press (${mediaText(m)})`;
+  ck(rec, feature, item, what, "paused before its end, no new play()", actual, stopped ? "PASS" : "FAIL", BREAK === "stop" ? "깨기 stop: the mouse only moved over the control — must FAIL" : note);
+  if (idle) {
+    const off = await jsEval(tab, `(() => { try { return !!(${idle}); } catch (e) { return null; } })()`, null);
+    ck(rec, feature, item, "after the second press the control shows it stopped", "true", String(off), off === true ? "PASS" : "FAIL");
+  }
+  return stopped;
 }
 
 /** No clip may start (a key word's meaning, the Korean line). */
@@ -685,7 +759,7 @@ async function step1Checks(rec, tab, D, captured) {
     hasCk(rec, "step1", `s${i + 1}`, "its Korean shows in the panel under the passage", S.ko, await jsText(tab, `document.querySelector(${J(`${SEL.step1} [data-ko-panel]`)})`));
     const cls = await jsEval(tab, `(((${sent1(i)}) || {}).querySelector ? (${sent1(i)}).querySelector('[data-en]').className : '')`, "");
     ck(rec, "step1", `s${i + 1}`, "the playing sentence is underlined (not bold red)", "underline decoration-primary", cut(cls, 120), /underline/.test(cls) && !/red|font-bold/.test(cls) ? "PASS" : "FAIL");
-    await stopProbe(rec, tab, { feature: "step1", item: `s${i + 1}`, expr: sent1(i) });
+    await stopProbe(rec, tab, { feature: "step1", item: `s${i + 1}`, expr: sent1(i), rearm: 2, idle: idleSentence(i) });
     lacksCk(rec, "step1", `s${i + 1}`, "a second press closes the Korean", S.ko, (await jsText(tab, `document.querySelector(${J(`${SEL.step1} [data-ko-panel]`)})`)) || "");
   }
 
@@ -785,8 +859,15 @@ async function step2Checks(rec, tab, D, captured) {
     await press(tab, inVoca(k, '[data-action="reveal"]'), { settle: 150 });
     eqCk(rec, "step2", `k${k}`, "meaning after '뜻 보기'", V.korean, await jsText(tab, inVoca(k, "[data-meaning]")));
     await playProbe(rec, tab, { feature: "step2", item: `k${k}`, trigger: `word ${V.word}`, text: D.wordSpoken(k), expr: inVoca(k, '[data-action="word-audio"]') });
-    await stopProbe(rec, tab, { feature: "step2", item: `k${k}`, expr: inVoca(k, '[data-action="word-audio"]') });
+    await stopProbe(rec, tab, { feature: "step2", item: `k${k}`, expr: inVoca(k, '[data-action="word-audio"]'), idle: idleSpeaker(inVoca(k, '[data-action="word-audio"]')) });
   }
+
+  // 2026-09-28 — the Step 2 text for the content check is read HERE: every meaning opened by its own '뜻 보기' (the loop
+  // above), as a learner opens them, before '알아요' folds a row. It used to be read after pressing '뜻 모두 보기' below, but
+  // that button is one toggle (renderStep2 allRevealed): with all 14 meanings already open it reads '뜻 모두 가리기', so the
+  // press HID them — the 2026-09-27 desktop run lost 13 meanings (content 25/38). The phone opens one word first, so there the
+  // same press showed them all (38/38).
+  captured.step2 = await stepText(tab, "step2");
 
   // '몰라요' on the first word, '알아요' on the second — saved, sent to the engine, and the known row folds
   const before = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.length;
@@ -801,13 +882,17 @@ async function step2Checks(rec, tab, D, captured) {
   const k2 = log.find((e) => e.item === `${D.mainId}#k2`);
   ck(rec, "engine", "marks", "each mark is an attempt (몰라요 = wrong, 알아요 = right; tap, lesson)", "k1 false · k2 true", `k1 ${k1 ? k1.correct : "none"} · k2 ${k2 ? k2.correct : "none"}`, k1 && k2 && k1.correct === false && k2.correct === true && k1.mode === "tap" && k1.where === "lesson" ? "PASS" : "FAIL");
 
-  // '뜻 모두 보기'
-  await press(tab, action(SEL.step2, "reveal-all"), { settle: 250 });
+  // the toggle, both ways (2026-09-28): every meaning is open now, so it reads '뜻 모두 가리기' and hides them all; pressed
+  // again it reads '뜻 모두 보기' and shows every meaning (the folded '알아요' row aside)
+  const toggle = action(SEL.step2, "reveal-all");
+  eqCk(rec, "step2", "reveal-all", "with every meaning open the button reads '뜻 모두 가리기'", "뜻 모두 가리기", await jsText(tab, toggle));
+  await press(tab, toggle, { settle: 250 });
+  eqCk(rec, "step2", "reveal-all", "'뜻 모두 가리기' hides every meaning", "0", String(await count(tab, `${SEL.step2} [data-meaning]`)));
+  eqCk(rec, "step2", "reveal-all", "then the button reads '뜻 모두 보기'", "뜻 모두 보기", await jsText(tab, toggle));
+  await press(tab, toggle, { settle: 250 });
   const text2 = await stepText(tab, "step2");
   const missing = D.vocab.filter((v, i) => i !== 1 && !norm(text2).includes(norm(v.korean))).map((v) => v.word);
   ck(rec, "step2", "reveal-all", "'뜻 모두 보기' shows every meaning (the folded row aside)", "0 missing", missing.join(",") || "0 missing", missing.length === 0 ? "PASS" : "FAIL");
-  captured.step2 = text2;
-  await press(tab, action(SEL.step2, "reveal-all"), { settle: 200 });
 }
 
 // ---------------------------------------------------------------------------
@@ -911,7 +996,7 @@ async function step4Checks(rec, tab, D, captured, firstRun) {
     eqCk(rec, "step4", `s${i + 1}`, "English", S.en, await jsText(tab, inRow4(i, "[data-en]")));
     eqCk(rec, "step4", `s${i + 1}`, "Korean", S.ko, await jsText(tab, inRow4(i, "[data-ko]")));
     await playProbe(rec, tab, { feature: "step4", item: `s${i + 1}`, trigger: `row ${i + 1} number`, text: D.spoken(i), expr: inRow4(i, '[data-action="play-row"]') });
-    await stopProbe(rec, tab, { feature: "step4", item: `s${i + 1}`, expr: inRow4(i, '[data-action="play-row"]') });
+    await stopProbe(rec, tab, { feature: "step4", item: `s${i + 1}`, expr: inRow4(i, '[data-action="play-row"]'), idle: idleRow(i) });
   }
   // a dotted key word opens its meaning, silently (D32 다 · RD-L08)
   const kwRow = await jsEval(tab, `[...document.querySelectorAll(${J(`${SEL.step4} [data-rows] [data-sentence-id]`)})].findIndex((r) => r.querySelector('[data-keyword]'))`, -1);
@@ -992,7 +1077,9 @@ function contentCompare(rec, D, captured) {
   }
   for (const [i, v] of D.vocab.entries()) {
     push("step2", `word ${v.word}`, v.word);
-    if (i !== 1) push("step2", `meaning ${v.word}`, v.korean); // the second word is marked '알아요' and folded by then
+    // not the second word's meaning — the desktop run marks it '알아요' (which folds it) and checks it on its own
+    // (step2[k2] "meaning after '뜻 보기'"), so both runs count the same texts (2026-09-28: the desktop text is now read before the fold)
+    if (i !== 1) push("step2", `meaning ${v.word}`, v.korean);
   }
   if (D.sentences[0]) push("step3", "reading-aloud sentence", D.sentences[0].en);
 
@@ -1194,7 +1281,7 @@ async function runTouch(rec, tab, D, viewport) {
   const koWhere = phone ? `document.querySelector(${J(`${SEL.step1} [data-ko-line]`)})` : `document.querySelector(${J(`${SEL.step1} [data-ko-panel]`)})`;
   await playProbe(rec, tab, { feature: "step1", item: "s1", trigger: "sentence 1 tap", text: D.spoken(0), expr: sent1(0), touch: true });
   hasCk(rec, "step1", "s1", phone ? "tap opens the Korean line under the sentence" : "tap shows the Korean in the panel under the passage", s0.ko, (await jsText(tab, koWhere)) || "");
-  await stopProbe(rec, tab, { feature: "step1", item: "s1", expr: sent1(0), touch: true });
+  await stopProbe(rec, tab, { feature: "step1", item: "s1", expr: sent1(0), touch: true, rearm: 2, idle: idleSentence(0) });
   lacksCk(rec, "step1", "s1", "a second tap closes it", s0.ko, (await jsText(tab, koWhere)) || "");
   const tooFast = await timedRun(rec, tab, D, { purpose: "first", waitMs: 200, label: "too-fast (tap)", touch: true });
   boolCk(rec, "wpm", "too-fast", "not saved (tap)", true, tooFast === null);
