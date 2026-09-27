@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation";
 import { topicWithParticle } from "@/lib/passoffUnlock";
 import { useProgress } from "../ProgressProvider";
 import { usePassoffProgress } from "../PassoffProgressProvider";
-import { CheckIcon, CrossIcon, LockIcon, tone } from "./ui";
+import { IconCheck, IconLock, IconX } from "../icons";
+import { tone } from "./ui";
 
 /**
  * A PASS-OFF GRAMMAR lesson in a topic this licence has not opened yet (설계 §5) — what
@@ -23,6 +24,10 @@ import { CheckIcon, CrossIcon, LockIcon, tone } from "./ui";
  * reaches the server. So this sends what is still queued, and when the server's answer opens the topic it asks for
  * the page again (once) — the lesson then comes from the server's gate like any other. Only the server's own answer
  * counts for that (`confirmed`), never the copy kept on this device; the counts below follow it too.
+ *
+ * 2026-09-28 (merged with main — docs/디자인-규칙.md §6 · 공통 틀 2): the frame of the other lock screens — '← 목록' and the
+ * title as the lesson page draws them, one card in the tokens, the conditions and lessons divided by a line instead of a
+ * box inside the box. Every word above is kept (the lock checks read '순차 학습 잠금' · 'TOPIC N을 마치면 열려요').
  */
 export interface PassoffTopicLockProps {
   title: string;
@@ -73,43 +78,43 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
   const finishedHereOnly = new Set(notCounted.filter((lesson) => isCompleted(COURSE, lesson.id)).map((lesson) => lesson.id));
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-      <nav className="mb-6 sm:mb-8">
+    <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
+      <nav aria-label="과정으로">
         <Link
           href={`/${COURSE}`}
-          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-raised px-4 text-[14px] font-semibold text-ink-soft hover:text-ink"
+          className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
         >
           <span aria-hidden>←</span>
           <span>PASS-OFF GRAMMAR 목록</span>
         </Link>
       </nav>
-      <header className="mb-6 sm:mb-8">
-        <h1 className="text-[22px] font-bold leading-snug text-ink sm:text-[28px]">{title}</h1>
+      <header className="mt-1 mb-4 sm:mb-6">
+        <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">{title}</h1>
       </header>
 
       <section
         data-kig-paywall="progress"
         data-passoff-topic={topic}
         aria-labelledby="passoff-topic-lock"
-        className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-5 sm:p-8"
+        className="mt-2 flex flex-col gap-4 rounded-card border border-line bg-raised px-5 py-6 sm:px-8 sm:py-8"
       >
-        <p className="flex items-center gap-2 text-[14px] font-semibold text-ink-soft">
-          <LockIcon />
+        <p className="flex items-center gap-2 text-caption font-semibold text-ink-soft">
+          <IconLock size={16} className="shrink-0" />
           <span>순차 학습 잠금</span>
         </p>
-        <h2 id="passoff-topic-lock" className="text-[22px] font-bold leading-snug text-ink">
+        <h2 id="passoff-topic-lock" className="text-title-s font-bold text-ink">
           {previousTopic !== null
             ? `${topicWithParticle(previousTopic, "을/를")} 마치면 열려요`
             : `${topicWithParticle(topic, "은/는")} 아직 열리지 않았어요`}
         </h2>
-        <p className="text-[16px] leading-relaxed text-ink-soft">
+        <p className="text-label leading-relaxed text-ink-soft">
           대주제는 차례로 열려요. 열린 대주제 안에서는 레슨을 순서와 상관없이 고를 수 있어요.
         </p>
 
         {current ? (
-          <div className="flex flex-col gap-2 rounded-xl border border-line p-4">
-            <p className="text-[14px] text-ink-soft">지금 학습할 대주제</p>
-            <p className="text-[16px] font-semibold text-ink">{current.label}</p>
+          <div className="flex flex-col gap-2 border-t border-line pt-4">
+            <p className="text-label text-ink-soft">지금 학습할 대주제</p>
+            <p className="text-body font-semibold text-ink">{current.label}</p>
             <ul className="flex flex-col gap-1.5">
               <Condition ok={completedCount >= current.requiredCount}>
                 레슨 {current.requiredCount}개 이상 마치기 (지금 {completedCount}/{lessons.length})
@@ -124,22 +129,22 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
 
             {notCounted.length ? (
               <div className="mt-2 flex flex-col gap-1 border-t border-line pt-3">
-                <p className="text-[14px] text-ink-soft">아직 기록되지 않은 레슨</p>
+                <p className="text-label text-ink-soft">아직 기록되지 않은 레슨</p>
                 <ul className="flex flex-col">
                   {notCounted.map((lesson) => (
                     <li key={lesson.id} className="flex flex-wrap items-center gap-x-2">
                       <Link
                         href={`/${COURSE}/${lesson.id}`}
-                        className="inline-flex min-h-11 min-w-11 items-center text-[16px] text-ink underline underline-offset-4 hover:text-ink-soft"
+                        className="inline-flex min-h-11 min-w-11 items-center text-body text-ink underline underline-offset-4 hover:text-ink-soft"
                       >
                         {lesson.title}
                       </Link>
-                      {finishedHereOnly.has(lesson.id) ? <span className="text-[14px] text-ink-soft">이 기기에서 마침</span> : null}
+                      {finishedHereOnly.has(lesson.id) ? <span className="text-label text-ink-soft">이 기기에서 마침</span> : null}
                     </li>
                   ))}
                 </ul>
                 {finishedHereOnly.size ? (
-                  <p className="text-[14px] leading-relaxed text-ink-soft">
+                  <p className="text-label leading-relaxed text-ink-soft">
                     이 기기에서 마쳤는데 기록되지 않은 레슨은 그 레슨 5단계 끝의 &lsquo;처음부터 다시 하기&rsquo;로 다시 마치면
                     기록돼요.
                   </p>
@@ -152,7 +157,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
         <div>
           <Link
             href={listHref}
-            className="inline-flex min-h-11 items-center justify-center rounded-xl bg-ink px-5 text-[14px] font-semibold text-surface hover:opacity-90"
+            className="inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity hover:opacity-90"
           >
             {current ? `TOPIC ${current.topic} 레슨 보기` : "목록으로"}
           </Link>
@@ -164,8 +169,8 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
 
 function Condition({ ok, children }: { ok: boolean; children: ReactNode }) {
   return (
-    <li className="flex items-start gap-2 text-[16px] text-ink">
-      <span className={`mt-0.5 ${ok ? tone.success : tone.danger}`}>{ok ? <CheckIcon /> : <CrossIcon />}</span>
+    <li className="flex items-start gap-2 text-body text-ink">
+      <span className={`mt-0.5 ${ok ? tone.success : tone.danger}`}>{ok ? <IconCheck size={18} /> : <IconX size={18} />}</span>
       <span>
         <span className="sr-only">{ok ? "됨: " : "아직: "}</span>
         {children}

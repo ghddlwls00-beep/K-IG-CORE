@@ -147,9 +147,11 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
 }
 
 // --- STUDENT's own lock, unchanged -------------------------------------------------------------------
+// 2026-09-28 main 합친 뒤: STUDENT 잠금 문구는 main 의 공통 틀 2(STU-U28)가 '챕터 2은 이전 챕터 완료 후 열립니다' →
+// '2장은 앞 장을 마치면 열립니다' 로 바꾼 것이 기준(이 과정이 바꾼 것 아님 — LessonPaywall.tsx 의 progress 문구 그대로)
 {
   const s2 = await page("/student/s2-1", stu.cookie);
-  check("L10 STUDENT 이용권: /student/s2-1 은 STUDENT 순서 잠금 문구 그대로('챕터 2은 이전 챕터 완료 후 열립니다')", s2.text.includes("순차 학습 잠금") && s2.text.includes("챕터 2은 이전 챕터 완료 후 열립니다"), s2.text.match(/순차 학습 잠금.{0,50}/)?.[0]);
+  check("L10 STUDENT 이용권: /student/s2-1 은 STUDENT 순서 잠금 문구 그대로(main 판 '2장은 앞 장을 마치면 열립니다')", s2.text.includes("순차 학습 잠금") && s2.text.includes("2장은 앞 장을 마치면 열립니다"), s2.text.match(/순차 학습 잠금.{0,50}/)?.[0]);
   const s1 = await page("/student/s1-3", stu.cookie);
   check("L10b STUDENT 이용권: /student/s1-3 열림", s1.status === 200 && !PAYWALL.test(s1.text), s1.status);
 }

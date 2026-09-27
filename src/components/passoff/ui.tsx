@@ -4,27 +4,32 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import type { PassoffStudentRef } from "@/lib/passoffTypes";
 import { useLicense } from "../LicenseProvider";
+import { IconCheck, IconSpeaker, IconStop, IconX } from "../icons";
 
 /**
- * Small pieces the five PASS-OFF GRAMMAR steps share (docs/디자인-규칙.md, 설계 §15): line icons instead of
- * emoji, 44px targets, the six type sizes, and the two result colours.
- *
- * `success` · `danger` are the common frame's tokens (main, 공통 틀 1: --success · --danger in globals.css).
- * This branch does not have them yet, so each class carries the same value as a fallback — once main is
- * merged the variable wins and these can become text-success · text-danger.
+ * Small pieces the five PASS-OFF GRAMMAR steps share, on the common parts of docs/디자인-규칙.md (merged with main
+ * 2026-09-28): the line icons of src/components/icons.tsx, 44px targets, the six type tokens (text-caption · label ·
+ * body · title-s · title), rounded-control · rounded-card, and the two result colours `success` · `danger` of
+ * globals.css (dark mode included). The buttons carry the same classes as the other course views' filled / outline
+ * buttons (GrammarLearningView · StudentLearningView · LdLearningView …).
  */
 export const tone = {
-  success: "text-[color:var(--success,#2F7D5B)] dark:text-[color:var(--success,#5FBF95)]",
-  danger: "text-[color:var(--danger,#B3261E)] dark:text-[color:var(--danger,#F2B8B5)]",
-  successBorder: "border-[color:var(--success,#2F7D5B)] dark:border-[color:var(--success,#5FBF95)]",
-  dangerBorder: "border-[color:var(--danger,#B3261E)] dark:border-[color:var(--danger,#F2B8B5)]",
-  dangerWavy: "underline decoration-wavy decoration-2 underline-offset-4 decoration-[color:var(--danger,#B3261E)] dark:decoration-[color:var(--danger,#F2B8B5)]",
+  success: "text-success",
+  danger: "text-danger",
+  successBorder: "border-success",
+  dangerBorder: "border-danger",
+  dangerWavy: "underline decoration-wavy decoration-2 underline-offset-4 decoration-danger",
 };
 
 /** What a step needs to play a sentence: which one is playing, and play/stop by item (its `speakAs` or `en`). */
 export interface Speaker {
   speakingId: string | null;
   toggle: (id: string, item: { en: string; speakAs?: string | null }) => void;
+  /**
+   * The microphone started (VoiceSpeakingTester onStart): it has already stopped any sentence playing (stopSpeech, which
+   * calls no one back), so the play button that sentence had lit goes back to '문장 듣기'.
+   */
+  reset: () => void;
 }
 
 /**
@@ -35,13 +40,19 @@ export function spokenOf(item: { en: string; speakAs?: string | null }): string 
   return typeof item.speakAs === "string" && item.speakAs.trim() ? item.speakAs : item.en;
 }
 
-/** Text sizes the learner picks (기본 · 크게 · 특대 — GRAMMAR's three, on the 16 · 18 · 22 steps). */
+/** Text sizes the learner picks (기본 · 크게 · 특대 — GRAMMAR's three: text-body 16 · text-title-s 18 · text-title 22). */
 export type FontSize = "normal" | "large" | "xlarge";
 export const FONT: Record<FontSize, { text: string; input: string }> = {
-  normal: { text: "text-[16px] leading-relaxed", input: "text-[16px]" },
-  large: { text: "text-[18px] leading-relaxed", input: "text-[18px]" },
-  xlarge: { text: "text-[22px] leading-relaxed", input: "text-[22px]" },
+  normal: { text: "text-body leading-relaxed", input: "text-body" },
+  large: { text: "text-title-s leading-relaxed", input: "text-title-s" },
+  xlarge: { text: "text-title leading-relaxed", input: "text-title" },
 };
+export const FONT_LABEL: Record<FontSize, string> = { normal: "기본", large: "크게", xlarge: "특대" };
+
+/** One option of a segmented control (글자 크기 · 문장 속도) — the other course views' segment buttons. */
+export const segmentButton = (on: boolean) =>
+  "flex min-h-11 min-w-11 items-center justify-center rounded-control px-3 text-label tabular-nums transition-colors cursor-pointer " +
+  (on ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:bg-raised/60");
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { children: ReactNode };
 
@@ -51,7 +62,7 @@ export function PrimaryButton({ className = "", children, ...rest }: ButtonProps
     <button
       type="button"
       {...rest}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-ink px-5 text-[14px] font-semibold text-surface transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 aria-disabled:opacity-40 ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 aria-disabled:opacity-40 ${className}`}
     >
       {children}
     </button>
@@ -63,7 +74,7 @@ export function SecondaryButton({ className = "", children, ...rest }: ButtonPro
     <button
       type="button"
       {...rest}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-4 text-[14px] font-semibold text-ink transition-colors hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40 ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control border border-line bg-raised px-3 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40 ${className}`}
     >
       {children}
     </button>
@@ -76,9 +87,9 @@ export function SpeakButton({ speaking, onClick, label = "문장 듣기" }: { sp
       type="button"
       onClick={onClick}
       aria-label={speaking ? "문장 멈추기" : label}
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-line-strong hover:text-ink"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-raised text-ink-soft transition-colors cursor-pointer hover:bg-sunken hover:text-ink"
     >
-      {speaking ? <StopIcon /> : <SpeakerIcon />}
+      {speaking ? <IconStop size={18} /> : <IconSpeaker size={20} />}
     </button>
   );
 }
@@ -86,8 +97,8 @@ export function SpeakButton({ speaking, onClick, label = "문장 듣기" }: { sp
 /** A result line: a check or a cross, then the words. */
 export function Verdict({ ok, children }: { ok: boolean; children: ReactNode }) {
   return (
-    <p className={`flex items-start gap-2 text-[16px] font-semibold ${ok ? tone.success : tone.danger}`} role="status">
-      <span className="mt-0.5">{ok ? <CheckIcon /> : <CrossIcon />}</span>
+    <p className={`flex items-start gap-2 text-body font-semibold ${ok ? tone.success : tone.danger}`} role="status">
+      <span className="mt-0.5">{ok ? <IconCheck size={18} /> : <IconX size={18} />}</span>
       <span>{children}</span>
     </p>
   );
@@ -134,15 +145,15 @@ export function StudentTag({ studentRef }: { studentRef?: PassoffStudentRef | nu
   if (!studentRef || !/^s\d+-\d+$/.test(studentRef.lesson)) return null;
   const name = `STUDENT ${studentRef.lesson.slice(1)}`;
   if (studentRef.kind === "adapted") {
-    return <span className="text-[12px] text-ink-faint">{name} 문장을 바꾼 문장</span>;
+    return <span className="text-caption text-ink-faint">{name} 문장을 바꾼 문장</span>;
   }
   if (!isUnlocked("student", studentRef.lesson)) {
-    return <span className="text-[12px] text-ink-faint">{name} 에 나온 문장</span>;
+    return <span className="text-caption text-ink-faint">{name} 에 나온 문장</span>;
   }
   return (
     <Link
       href={`/student/${studentRef.lesson}`}
-      className="inline-flex min-h-11 items-center text-[14px] text-ink-soft underline underline-offset-4 hover:text-ink"
+      className="inline-flex min-h-11 items-center text-label text-ink-soft underline underline-offset-4 hover:text-ink"
     >
       {name} 에 나온 문장
     </Link>
@@ -152,62 +163,8 @@ export function StudentTag({ studentRef }: { studentRef?: PassoffStudentRef | nu
 /** A small label next to a prompt ("it을 써서" · "의문사 절" · "도전"). */
 export function Chip({ children, strong = false }: { children: ReactNode; strong?: boolean }) {
   return (
-    <span className={`inline-flex items-center rounded-lg border px-2 py-0.5 text-[12px] ${strong ? "border-line-strong font-semibold text-ink" : "border-line text-ink-soft"}`}>
+    <span className={`inline-flex items-center rounded-control border px-2 py-0.5 text-caption ${strong ? "border-line-strong font-semibold text-ink" : "border-line text-ink-soft"}`}>
       {children}
     </span>
-  );
-}
-
-export function SpeakerIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M11 5 6 9H3v6h3l5 4V5Z" />
-      <path d="M15.5 8.5a5 5 0 0 1 0 7" />
-      <path d="M18.5 5.5a9 9 0 0 1 0 13" />
-    </svg>
-  );
-}
-
-export function StopIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden>
-      <rect x="6.5" y="6.5" width="11" height="11" rx="1.5" />
-    </svg>
-  );
-}
-
-export function CheckIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M5 12.5l4.5 4.5L19 7.5" />
-    </svg>
-  );
-}
-
-export function CrossIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
-      <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />
-    </svg>
-  );
-}
-
-export function LockIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="shrink-0 text-ink-soft">
-      <rect x="5" y="11" width="14" height="9" rx="2" />
-      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-    </svg>
-  );
-}
-
-export function TextSizeIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M4 18 9 6l5 12" />
-      <path d="M5.8 14h6.4" />
-      <path d="M15 18l3-7 3 7" />
-      <path d="M16 16h4" />
-    </svg>
   );
 }

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import type { PassoffAnchor } from "@/lib/passoffTypes";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { useLicense } from "../LicenseProvider";
-import { FOCUS_CLASS, FONT, LockIcon, Marked, PrimaryButton, SpeakButton, StudentTag, Chip, type FontSize, type Speaker } from "./ui";
+import { IconLock } from "../icons";
+import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Chip, type FontSize, type Speaker } from "./ui";
 
 /**
  * ① 예문 떠올리기 (설계 §3): the Korean → 먼저 말해 보기 (the microphone, optional — what it heard is shown, never
@@ -59,7 +60,7 @@ export function AnchorsStep({
 
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-[14px] leading-relaxed text-ink-soft">
+      <p className="text-label leading-relaxed text-ink-soft">
         한국어를 보고 영어 문장을 먼저 떠올려 보세요. 소리 내어 말해 봐도 좋아요. 떠올린 뒤 &lsquo;영어 보기&rsquo;를 누르세요.
       </p>
 
@@ -70,9 +71,9 @@ export function AnchorsStep({
           // aria-disabled, not disabled: the button waiting its two seconds stays in the tab order
           const waiting = readyId !== anchor.id;
           return (
-            <li key={anchor.id} className="rounded-2xl border border-line bg-surface p-4">
+            <li key={anchor.id} className="rounded-card border border-line bg-raised p-4">
               <div className="flex gap-3">
-                <span className="w-6 shrink-0 pt-0.5 text-right text-[14px] font-semibold tabular-nums text-ink-faint">{index + 1}</span>
+                <span className="w-6 shrink-0 pt-0.5 text-right text-label font-semibold tabular-nums text-ink-faint">{index + 1}</span>
                 <div className="flex min-w-0 flex-1 flex-col gap-3">
                   {anchor.promptEn ? (
                     <p lang="en" className={`${FONT[font].text} text-ink-soft`}>
@@ -104,21 +105,15 @@ export function AnchorsStep({
                     </>
                   ) : isCurrent ? (
                     <div className="flex flex-col gap-3">
-                      {/* 44px targets for the shared microphone's buttons here (디자인 규칙 §1-4), its own look untouched */}
-                      <div className="[&_button]:min-h-11">
-                        <VoiceSpeakingTester targetText={anchor.en} buttonLabel="먼저 말해 보기" resultView="transcript" />
-                      </div>
-                      <button
-                        type="button"
-                        aria-disabled={waiting}
-                        onClick={() => reveal(anchor)}
-                        className="min-h-11 self-start rounded-xl bg-ink px-4 text-[14px] font-semibold text-surface aria-disabled:opacity-40"
-                      >
+                      {/* the shared microphone (44px since main's common parts): what it heard only, never a score or the English;
+                          starting it stops a sentence playing, and onStart puts that sentence's play button back */}
+                      <VoiceSpeakingTester targetText={anchor.en} buttonLabel="먼저 말해 보기" resultView="transcript" onStart={speaker.reset} />
+                      <PrimaryButton aria-disabled={waiting} onClick={() => reveal(anchor)} className="self-start">
                         영어 보기
-                      </button>
+                      </PrimaryButton>
                     </div>
                   ) : (
-                    <p className="text-[14px] text-ink-faint">앞 문장을 연 뒤에 차례가 와요.</p>
+                    <p className="text-label text-ink-faint">앞 문장을 연 뒤에 차례가 와요.</p>
                   )}
                 </div>
               </div>
@@ -132,19 +127,13 @@ export function AnchorsStep({
         // so the server can add the sentences (data-kig-paid-extra, like the paywall's marker).
         <section
           data-kig-paid-extra="license"
-          className="flex flex-col gap-3 rounded-2xl border border-line bg-raised p-4 sm:flex-row sm:items-center sm:justify-between"
+          className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4 sm:flex-row sm:items-center sm:justify-between"
         >
-          <p className="flex items-center gap-2 text-[16px] text-ink">
-            <LockIcon />
+          <p className="flex items-center gap-2 text-body text-ink">
+            <IconLock size={18} className="shrink-0 text-ink-soft" />
             <span>이용권이 있으면 {lockedExtraCount}문장 더 풀 수 있습니다.</span>
           </p>
-          <button
-            type="button"
-            onClick={openModal}
-            className="min-h-11 rounded-xl border border-line-strong px-4 text-[14px] font-semibold text-ink hover:bg-sunken"
-          >
-            이용권 코드 등록
-          </button>
+          <SecondaryButton onClick={openModal}>이용권 코드 등록</SecondaryButton>
         </section>
       ) : null}
 

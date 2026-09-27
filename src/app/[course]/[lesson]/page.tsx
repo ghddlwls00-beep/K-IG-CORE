@@ -394,6 +394,14 @@ export default async function LessonPage({
           repeats the title, an icon and a general description in a box of its own above the steps.
         */}
         {isStudent && pres.subtitle ? <p className="mt-0.5 text-caption text-ink-faint">{pres.subtitle}</p> : null}
+        {/*
+          2026-09-28 PASS-OFF GRAMMAR (merged with main): the textbook's own subheading of this link of the structure map
+          (D1 — the title is the link's words, this is its subtitle), in GRAMMAR's line under the title. The course view
+          drew it itself above its step tabs before the common frame came.
+        */}
+        {course === "passoff-grammar" && "subtitle" in lesson && typeof lesson.subtitle === "string" && lesson.subtitle ? (
+          <p className="mt-1 text-label text-ink-soft">{lesson.subtitle}</p>
+        ) : null}
       </header>
 
       {video.length > 0 ? (
@@ -494,7 +502,6 @@ export default async function LessonPage({
               blocks={passoff?.blocks ?? []}
               lessonKey={`${course}/${lesson.id}`}
               lockedExtraCount={passoff?.lockedExtraCount ?? 0}
-              subtitle={"subtitle" in lesson && typeof lesson.subtitle === "string" ? lesson.subtitle : null}
             />
           ) : (
             // key: a new lesson is a new view — nothing of the last lesson's steps, tiles or reveals carries over

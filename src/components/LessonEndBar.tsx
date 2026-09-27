@@ -28,6 +28,11 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * 2026-09-27 (계획 D02 나 — VOCA first): a course view may register a completion gate (src/lib/lessonGate.ts). While it is not
  * ready, '이 강의 학습 완료' is disabled with the gate's reason on one line under it (VOCA: until one Step 2 round is finished).
  * A completed lesson stays toggleable. No gate registered — every other course today — renders exactly as before.
+ *
+ * 2026-09-28 (PASS-OFF GRAMMAR, merged with main): its view registers { ready: the five steps are done, undo: false } and
+ * completes the lesson itself when the learner finishes the fifth step (docs/pass-off-grammar/설계.md §3). The bar shows the
+ * disabled button with the reason until then, and '학습 완료함' as a status afterwards — no '취소', because that course's
+ * server keeps completions only (lessonGate.ts `undo`).
  */
 export function LessonEndBar({
   course,
@@ -45,12 +50,12 @@ export function LessonEndBar({
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const completed = isCompleted(course, lessonId);
-  // PASS-OFF GRAMMAR completes with its five steps (docs/pass-off-grammar/설계.md §3 — no manual check), as its branch
-  // had it in LessonActionButtons before main moved the toggle here
-  const showComplete = course !== "student" && course !== "passoff-grammar";
+  const showComplete = course !== "student";
   const named = (n: NonNullable<Neighbour>) => (n.code ? `${n.code} · ${n.title}` : n.title);
   const gate = useSyncExternalStore(subscribeLessonGate, () => getLessonGate(course, lessonId), () => null);
   const blocked = showComplete && !completed && gate !== null && !gate.ready;
+  // a gate with undo: false (PASS-OFF GRAMMAR): a completed lesson is a status line, not a toggle
+  const doneForGood = showComplete && completed && gate !== null && gate.undo === false;
   const reasonId = useId();
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
@@ -74,7 +79,17 @@ export function LessonEndBar({
 
   return (
     <section aria-label="강의 마치기" className="mt-8 border-t border-line pt-6">
-      {showComplete ? (
+      {doneForGood ? (
+        <p
+          role="status"
+          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-control border border-line bg-raised text-label font-semibold text-ink"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-success">
+            <path d="M5 12.5l4.5 4.5L19 7.5" />
+          </svg>
+          <span>학습 완료함</span>
+        </p>
+      ) : showComplete ? (
         <button
           type="button"
           onClick={() => {

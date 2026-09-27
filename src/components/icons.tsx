@@ -166,3 +166,25 @@ export function IconBackspace({ size = 16, className }: IconProps) {
     </svg>
   );
 }
+
+/** Locked (2026-09-28, PASS-OFF GRAMMAR's topic lock and paid sentences — the same shape as the course list's lock). */
+export function IconLock({ size = 16, className }: IconProps) {
+  return (
+    <svg {...base(size, className)}>
+      <rect x="5" y="11" width="14" height="9" rx="2" />
+      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+    </svg>
+  );
+}
+
+/** Text size and sound speed settings (2026-09-28, PASS-OFF GRAMMAR — a large and a small A). */
+export function IconTextSize({ size = 16, className }: IconProps) {
+  return (
+    <svg {...base(size, className)}>
+      <path d="M4 18 9 6l5 12" />
+      <path d="M5.8 14h6.4" />
+      <path d="M15 18l3-7 3 7" />
+      <path d="M16 16h4" />
+    </svg>
+  );
+}

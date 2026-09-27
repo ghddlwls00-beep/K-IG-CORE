@@ -17,6 +17,12 @@ import type { AnswerMode, CourseProfile, Help } from "./learning/types";
 
 export const PASSOFF_COURSE = "passoff-grammar";
 
+/**
+ * The line under the end bar's disabled '이 강의 학습 완료' (src/lib/lessonGate.ts — main's common part) until the five steps
+ * are done: the lesson completes with them (설계 §3), as VOCA's · LISTENING's · READING's gates say what opens theirs.
+ */
+export const PASSOFF_GATE_REASON = "5단계를 모두 마치면 완료돼요.";
+
 export type PassoffItemKind = "produce" | "transfer" | "select" | "choice" | "short";
 /** the help received before an answer: ladder ② clue = "hint", ③ tiles = "tiles", the answer shown = "reveal" (설계 §4) */
 export type PassoffHelp = Help;
