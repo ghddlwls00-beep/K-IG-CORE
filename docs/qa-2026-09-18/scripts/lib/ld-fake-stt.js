@@ -11,6 +11,12 @@
  *   string  -> recognised as that transcript
  *   null    -> a "no-speech" error
  *   "__not-allowed__" -> a "not-allowed" error (permission denied branch)
+ *
+ * 2026-09-27 (LISTENING 학습법 · 화면 고침 — F04 · D27 다): the wiring it exercises on LISTENING is now VoiceSpeakingTester (one per
+ * line, key = the line) → onMicResult: the line's BEST score is kept (shadowScores = max, not the last), the English of a line
+ * hidden by '글 가리기' is shown after a result, and the common learning engine gets recordAttempt(mode 'voice', correct = score ≥ 70,
+ * help 'none' when the English was hidden, else 'hint'). This stub needs no change for that — it still only fakes the recogniser.
+ * STUDENT (check-student-0927) and VOCA (check-voca-0927) load it too.
  */
 (() => {
   if (window.__kigFakeStt) return;

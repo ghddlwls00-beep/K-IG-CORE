@@ -158,13 +158,13 @@ export function ComposeCard({
   const comeback = success ? null : comebacksLeft > 0 ? "이 문장은 조금 뒤에 다시 나와요." : "이 문장은 여러 번 다시 풀었어요. 다음으로 넘어가요.";
 
   return (
-    <section className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-4">
+    <section className="flex flex-col gap-4 rounded-card border border-line bg-raised p-4">
       {item.challenge || item.condition || item.clauseLabel || presentation > 0 ? (
         <div className="flex flex-wrap items-center gap-2">
           {item.challenge ? <Chip strong>도전</Chip> : null}
           {item.condition ? <Chip>{item.condition}</Chip> : null}
           {item.clauseLabel ? <Chip>{item.clauseLabel}</Chip> : null}
-          {presentation > 0 ? <span className="text-[12px] text-ink-faint">다시 풀기</span> : null}
+          {presentation > 0 ? <span className="text-caption text-ink-faint">다시 풀기</span> : null}
         </div>
       ) : null}
       {item.promptEn ? (
@@ -203,27 +203,27 @@ export function ComposeCard({
                 check();
               }
             }}
-            className={`w-full resize-none rounded-xl border border-line bg-surface px-3 py-2.5 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
+            className={`w-full resize-none rounded-control border border-line bg-surface px-3 py-2.5 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
           />
           {hangul ? (
-            <p className={`text-[14px] ${tone.danger}`}>한글이 섞여 있어요. 영어 자판으로 바꿔 주세요.</p>
+            <p className={`text-label ${tone.danger}`}>한글이 섞여 있어요. 영어 자판으로 바꿔 주세요.</p>
           ) : (
-            <p className="text-[12px] text-ink-faint">영어 자판으로 쓰세요. 첫 글자 대문자와 끝 문장부호는 서술형 점수로 따로 봐요.</p>
+            <p className="text-caption text-ink-faint">영어 자판으로 쓰세요. 첫 글자 대문자와 끝 문장부호는 서술형 점수로 따로 봐요.</p>
           )}
           <div className="flex flex-wrap items-center justify-between gap-2">
-            {/* 44px targets for the shared microphone's buttons here (디자인 규칙 §1-4), its own look untouched */}
-            <div className="[&_button]:min-h-11">
-              <VoiceSpeakingTester
-                targetText={item.en}
-                buttonLabel="마이크로 말해서 영작하기"
-                resultView="none"
-                onSuccess={(transcript) => {
-                  setText(transcript);
-                  setHeard(transcript);
-                  setHangul(hasHangul(transcript));
-                }}
-              />
-            </div>
+            {/* the shared microphone (44px since main's common parts). resultView "none": no score, no answer — what it heard
+                fills the box, and passoffGrading grades that text as before. onStart: the play button of a sentence it stopped */}
+            <VoiceSpeakingTester
+              targetText={item.en}
+              buttonLabel="마이크로 말해서 영작하기"
+              resultView="none"
+              onStart={speaker.reset}
+              onSuccess={(transcript) => {
+                setText(transcript);
+                setHeard(transcript);
+                setHangul(hasHangul(transcript));
+              }}
+            />
             <div className="flex flex-wrap gap-2">
               {rung >= 1 ? <SecondaryButton onClick={() => climb(rung + 1)}>도움 받기</SecondaryButton> : null}
               <PrimaryButton disabled={!text.trim()} onClick={check}>
@@ -238,16 +238,16 @@ export function ComposeCard({
         <div className="flex flex-col gap-2 border-t border-line pt-3">
           <Verdict ok={false}>틀린 자리를 표시했어요. 고쳐서 다시 확인하세요.</Verdict>
           <DiffLine tokens={result.diff} reveal={false} font={font} />
-          <p className="text-[12px] text-ink-faint">빈 네모 = 빠진 낱말 · 물결 = 틀린 낱말 · 가운데 줄 = 필요 없는 낱말 · 점선 = 자리가 바뀐 낱말</p>
+          <p className="text-caption text-ink-faint">빈 네모 = 빠진 낱말 · 물결 = 틀린 낱말 · 가운데 줄 = 필요 없는 낱말 · 점선 = 자리가 바뀐 낱말</p>
           {result.pattern ? <p className={`${FONT[font].text} text-ink`}>{result.pattern.hint}</p> : null}
-          {result.negationFlip ? <p className="text-[16px] text-ink">뜻이 반대가 됐어요. not · no · never 가 있어야 하는지 보세요.</p> : null}
-          {result.diff.some((t) => t.opposite) ? <p className="text-[16px] text-ink">뜻이 반대인 낱말을 썼어요(앞에 붙는 말을 확인하세요).</p> : null}
+          {result.negationFlip ? <p className="text-body text-ink">뜻이 반대가 됐어요. not · no · never 가 있어야 하는지 보세요.</p> : null}
+          {result.diff.some((t) => t.opposite) ? <p className="text-body text-ink">뜻이 반대인 낱말을 썼어요(앞에 붙는 말을 확인하세요).</p> : null}
           {rung >= 2 ? (
             <div className="flex flex-col gap-1 border-t border-line pt-2">
-              <p className="text-[14px] font-semibold text-ink-soft">단서</p>
-              {ruleTitle ? <p className="text-[16px] text-ink">규칙: {ruleTitle}</p> : null}
-              {result.missingTargets.length ? <p className="text-[16px] text-ink">이 문장에 꼭 써야 하는 문법 낱말이 빠졌어요.</p> : null}
-              <p className="text-[14px] text-ink-soft">낱말의 첫 글자</p>
+              <p className="text-label font-semibold text-ink-soft">단서</p>
+              {ruleTitle ? <p className="text-body text-ink">규칙: {ruleTitle}</p> : null}
+              {result.missingTargets.length ? <p className="text-body text-ink">이 문장에 꼭 써야 하는 문법 낱말이 빠졌어요.</p> : null}
+              <p className="text-label text-ink-soft">낱말의 첫 글자</p>
               <p lang="en" className={`font-mono ${FONT[font].text} text-ink`}>
                 {firstLetters(item.en)}
               </p>
@@ -258,8 +258,8 @@ export function ComposeCard({
 
       {phase === "answer" && rung === 3 && bank ? (
         <div className="flex flex-col gap-3 border-t border-line pt-3">
-          <p className="text-[14px] text-ink-soft">낱말 카드를 차례로 누르세요. 문법이 틀린 카드도 섞여 있어요. 놓은 카드를 누르면 돌아가요.</p>
-          <div lang="en" aria-label="만든 문장" className="flex min-h-14 flex-wrap gap-2 rounded-xl border border-dashed border-line p-2">
+          <p className="text-label text-ink-soft">낱말 카드를 차례로 누르세요. 문법이 틀린 카드도 섞여 있어요. 놓은 카드를 누르면 돌아가요.</p>
+          <div lang="en" aria-label="만든 문장" className="flex min-h-14 flex-wrap gap-2 rounded-control border border-dashed border-line p-2">
             {tilePicks.map((t) => (
               <button
                 key={t.id}
@@ -268,7 +268,7 @@ export function ComposeCard({
                   setTilePicks((prev) => prev.filter((x) => x.id !== t.id));
                   setTileMiss(false);
                 }}
-                className={`min-h-11 min-w-11 rounded-xl border border-line-strong bg-sunken px-3 ${FONT[font].text} text-ink`}
+                className={`min-h-11 min-w-11 rounded-control border border-line-strong bg-sunken px-3 ${FONT[font].text} text-ink`}
               >
                 {t.word}
               </button>
@@ -286,7 +286,7 @@ export function ComposeCard({
                     setTilePicks((prev) => [...prev, t]);
                     setTileMiss(false);
                   }}
-                  className={`min-h-11 min-w-11 rounded-xl border border-line px-3 ${FONT[font].text} text-ink transition-colors hover:bg-sunken disabled:opacity-30`}
+                  className={`min-h-11 min-w-11 rounded-control border border-line px-3 ${FONT[font].text} text-ink transition-colors hover:bg-sunken disabled:opacity-30`}
                 >
                   {t.word}
                 </button>
@@ -307,7 +307,7 @@ export function ComposeCard({
         <div className="flex flex-col gap-2 border-t border-line pt-3">
           <Verdict ok>{typo && typo.typed ? `맞았어요. 철자만 확인하세요: ${typo.typed} → ${typo.expected}` : "맞았어요."}</Verdict>
           {issues && (issues.capital || issues.punctuation) ? (
-            <p className="text-[14px] text-ink-soft">
+            <p className="text-label text-ink-soft">
               서술형 기준으로는 {[issues.capital ? "대문자" : "", issues.punctuation ? "끝 문장부호" : ""].filter(Boolean).join(" · ")}를 확인하세요.
             </p>
           ) : null}
@@ -318,13 +318,13 @@ export function ComposeCard({
             <SpeakButton speaking={speaker.speakingId === item.id} onClick={() => speaker.toggle(item.id, item)} />
           </div>
           <StudentTag studentRef={item.studentRef} />
-          {comeback ? <p className="text-[14px] text-ink-soft">{comeback}</p> : null}
+          {comeback ? <p className="text-label text-ink-soft">{comeback}</p> : null}
         </div>
       ) : null}
 
       {phase === "revealed" ? (
         <div className="flex flex-col gap-2 border-t border-line pt-3">
-          <p className="text-[14px] font-semibold text-ink-soft">정답</p>
+          <p className="text-label font-semibold text-ink-soft">정답</p>
           <div className="flex items-start justify-between gap-3">
             <p lang="en" className={`${FONT[font].text} font-semibold text-ink`}>
               {item.en}
@@ -333,13 +333,13 @@ export function ComposeCard({
           </div>
           {result && result.diff.length ? (
             <>
-              <p className="text-[14px] text-ink-soft">내 답</p>
+              <p className="text-label text-ink-soft">내 답</p>
               <DiffLine tokens={result.diff} reveal font={font} />
             </>
           ) : null}
-          {ruleTitle ? <p className="text-[16px] text-ink">규칙: {ruleTitle}</p> : null}
+          {ruleTitle ? <p className="text-body text-ink">규칙: {ruleTitle}</p> : null}
           <StudentTag studentRef={item.studentRef} />
-          {comeback ? <p className="text-[14px] text-ink-soft">{comeback}</p> : null}
+          {comeback ? <p className="text-label text-ink-soft">{comeback}</p> : null}
         </div>
       ) : null}
 

@@ -40,7 +40,7 @@ export function ComposeStep({
   if (!sets.length) {
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-[16px] text-ink-soft">이 레슨에는 영작 문장이 없습니다.</p>
+        <p className="text-body text-ink-soft">이 레슨에는 영작 문장이 없습니다.</p>
         <div className="flex justify-end">
           <PrimaryButton onClick={onNext}>다음 단계: 마무리</PrimaryButton>
         </div>
@@ -51,10 +51,10 @@ export function ComposeStep({
   const lastSet = setIndex >= sets.length - 1;
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-[14px] leading-relaxed text-ink-soft">
+      <p className="text-label leading-relaxed text-ink-soft">
         한국어를 영어로 써 보세요. 틀리면 틀린 자리부터 차례로 도와 드려요. 틀린 문장은 조금 뒤에 다시 나와요.
       </p>
-      <p className="text-[14px] tabular-nums text-ink-soft">
+      <p className="text-label tabular-nums text-ink-soft">
         {sets.length > 1 ? `세트 ${setIndex + 1} / ${sets.length} · ` : ""}
         {queue.length ? `남은 문장 ${queue.length} / ${set.length}` : `${set.length}문장 마침`}
       </p>
@@ -140,10 +140,10 @@ export function SetSummary({ items, states }: { items: PassoffProduceItem[]; sta
   ].filter(Boolean);
   const allOnTheirOwn = items.every((i) => !states[i.id]?.tomorrow);
   return (
-    <div className="flex flex-col gap-2 rounded-2xl border border-line bg-surface p-4">
+    <div className="flex flex-col gap-2 rounded-card border border-line bg-raised p-4">
       <Verdict ok>{allOnTheirOwn ? "이 세트의 문장을 모두 스스로 맞혔어요." : "이 세트를 마쳤어요."}</Verdict>
       {score.total ? (
-        <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[16px]">
+        <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-body">
           <dt className="text-ink-soft">첫 시도 문법 정답</dt>
           <dd className="font-semibold tabular-nums text-ink">
             {score.grammar} / {score.total}
@@ -151,7 +151,7 @@ export function SetSummary({ items, states }: { items: PassoffProduceItem[]; sta
           <dt className="text-ink-soft">서술형 기준</dt>
           <dd className="font-semibold tabular-nums text-ink">
             {score.written} / {score.total}
-            {reasons.length ? <span className="ml-2 text-[14px] font-normal text-ink-soft">({reasons.join(" · ")})</span> : null}
+            {reasons.length ? <span className="ml-2 text-label font-normal text-ink-soft">({reasons.join(" · ")})</span> : null}
           </dd>
         </dl>
       ) : null}

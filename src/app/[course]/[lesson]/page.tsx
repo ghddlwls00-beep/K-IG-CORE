@@ -14,11 +14,13 @@ import { PassoffLearningView } from "@/components/PassoffLearningView";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
+import { LessonEndBar } from "@/components/LessonEndBar";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
 import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { planOpensCourse } from "@/lib/license";
 import { passoffLessonBlocks } from "@/lib/passoffContent";
+import { freeLessonLinks } from "@/lib/freeLessonLinks";
 import {
   LICENSE_SESSION_COOKIE_NAME,
   verifyLicenseSessionToken,
@@ -29,6 +31,8 @@ import { extractSentencesForAudio } from "@/lib/lessonAudioText";
 import { firstSlashAlternative } from "@/lib/listeningUtils";
 import { vocaWordSpeech } from "@/lib/vocaSpeech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { studentFirstWordKeepsCase } from "@/lib/studentCourseText";
+import { clozeAlsoFitsFor } from "@/lib/readingClozeFitsForLesson";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
@@ -177,14 +181,18 @@ export default async function LessonPage({
 
   if (!accessAllowed) {
     return (
-      <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-        <nav className="mb-8 font-mono text-[11.5px]">
-          <Link href={`/${course}`} className="text-ink-soft hover:text-ink">
-            ← {courseInfo?.title ?? course}
+      <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
+        <nav aria-label="과정으로">
+          <Link
+            href={`/${course}`}
+            className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
+          >
+            <span aria-hidden>←</span>
+            <span>{courseInfo?.title ?? course} 목록</span>
           </Link>
         </nav>
-        <header className="mb-6 sm:mb-8">
-          <h1 className="text-[1.5rem] sm:text-[1.85rem] font-bold tracking-tight text-balance text-ink">
+        <header className="mt-1 mb-4 sm:mb-6">
+          <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">
             {pres.title}
           </h1>
         </header>
@@ -192,7 +200,7 @@ export default async function LessonPage({
           courseSlug={course}
           courseTitle={courseInfo?.title ?? tab?.label}
           lessonId={lesson.id}
-          title={pres.title}
+          freeLessons={freeLessonLinks(course)}
         />
       </main>
     );
@@ -285,76 +293,115 @@ export default async function LessonPage({
   // romanization in Korean (소유자 결정 2026-09-25) · LISTENING d169 "1 1/2" as "1 and a half"
   ).map((text) => lessonSpeechForm(`${course}/${lesson.id}`, text));
 
-  return (
-    <main className="mx-auto max-w-3xl px-4 py-6 sm:px-5 sm:py-12">
-      <nav className="mb-6 flex flex-col gap-3 sm:mb-8" aria-label="강의 이동">
-        <div className="flex items-center justify-between gap-3">
-          <Link
-            href={`/${course}`}
-            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-line bg-raised px-3.5 font-mono text-[11.5px] font-semibold text-ink-soft shadow-2xs hover:border-line-strong hover:text-ink"
-          >
-            <span aria-hidden>←</span>
-            <span>{courseInfo?.title ?? course} 목록</span>
-          </Link>
-          <LessonActionButtons
-            course={course}
-            lessonId={lesson.id}
-            title={pres.title}
-            courseTitle={courseInfo?.title ?? tab?.label}
+  const isGrammar = course === "grammar1" || course === "grammar2";
+  const isStudent = course === "student";
+  /**
+   * 2026-09-27 STUDENT 학습법 · 화면 고침 (STU-U17 · STU-U10): a STUDENT neighbour is named by its chapter code and its
+   * own title — 'Ch 12-1 · School Vacations (방학맞이)'. The presentation title's 'Part 1 ·' is the code's second half,
+   * and alone it read like going back ('다음 강의 Part 1'). The lesson titles themselves are unchanged.
+   */
+  const neighbour = (id: string, p: ReturnType<typeof formatLessonPresentation>) =>
+    isStudent
+      ? { href: `/${course}/${id}`, title: p.title.replace(/^Part \d+ · /, ""), code: p.code }
+      : { href: `/${course}/${id}`, title: p.title };
+
+  // Unified Audio Player with native TTS fallback & gender profile
+  const topPlayers =
+    topLevelAudio.length > 0
+      ? topLevelAudio.map((a) => (
+          <AudioPlayer
+            key={a.src}
+            src={a.src}
+            fallbackSentences={fallbackSentences}
+            lang={courseInfo?.contentLang ?? "en"}
+            gender={voiceGender}
+            label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
           />
-        </div>
+        ))
+      : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese", "passoff-grammar"].includes(course)
+        ? [
+            <AudioPlayer
+              key="fallback"
+              fallbackSentences={fallbackSentences}
+              lang={courseInfo?.contentLang ?? "en"}
+              gender={voiceGender}
+              label="전체 듣기"
+            />,
+          ]
+        : null;
 
-        {(prev || next) && (
-          <div
-            className={`grid gap-2 rounded-2xl border border-line bg-raised/70 p-2 shadow-2xs ${
-              prev && next ? "grid-cols-2" : "grid-cols-1"
-            }`}
-          >
-            {prev && prevPresentation ? (
-              <Link
-                href={`/${course}/${prev.id}`}
-                scroll={true}
-                aria-label={`이전 강의: ${prevPresentation.title}`}
-                className="group flex min-h-14 min-w-0 items-center gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-sunken"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[15px] text-ink-soft group-hover:border-line-strong group-hover:text-ink" aria-hidden>
-                  ←
-                </span>
-                <span className="min-w-0">
-                  <span className="block font-mono text-[10px] font-bold tracking-wider text-ink-faint">이전 강의</span>
-                  <span className="mt-0.5 block truncate text-[12px] font-semibold text-ink sm:text-[13px]">
-                    {prevPresentation.title}
-                  </span>
-                </span>
-              </Link>
-            ) : null}
+  /**
+   * 2026-09-27 (계획 A10 · D01 나 — VOCA): the top player again, as data, for the course view that plays the whole lesson at the
+   * head of its Step 1 word list. Same src, sentences, voice and label as `topPlayers` above — nothing spoken changes. The view
+   * marks itself data-owns-passage-player and globals.css then hides the wrapper below (data-passage-player). Other courses: null.
+   * LISTENING · READING get the same data (2026-09-27, their 학습법 · 화면 차례) — a view that does not mark itself changes nothing.
+   */
+  const passagePlayers =
+    (course === "phonics" || course === "ld" || course === "reading") && topPlayers
+      ? topLevelAudio.length > 0
+        ? topLevelAudio.map((a) => ({
+            id: a.src,
+            src: a.src,
+            fallbackSentences,
+            lang: courseInfo?.contentLang ?? "en",
+            gender: voiceGender,
+            label: a.label && topLevelAudio.length > 1 ? a.label : undefined,
+          }))
+        : [{ id: "fallback", src: undefined, fallbackSentences, lang: courseInfo?.contentLang ?? "en", gender: voiceGender, label: "전체 듣기" }]
+      : null;
 
-            {next && nextPresentation ? (
-              <Link
-                href={`/${course}/${next.id}`}
-                scroll={true}
-                aria-label={`다음 강의: ${nextPresentation.title}`}
-                className="group flex min-h-14 min-w-0 items-center justify-end gap-3 rounded-xl px-3 py-2.5 text-right hover:bg-sunken"
-              >
-                <span className="min-w-0">
-                  <span className="block font-mono text-[10px] font-bold tracking-wider text-ink-faint">다음 강의</span>
-                  <span className="mt-0.5 block truncate text-[12px] font-semibold text-ink sm:text-[13px]">
-                    {nextPresentation.title}
-                  </span>
-                </span>
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-[15px] text-ink-soft group-hover:border-line-strong group-hover:text-ink" aria-hidden>
-                  →
-                </span>
-              </Link>
-            ) : null}
-          </div>
-        )}
+  return (
+    <main className="mx-auto max-w-3xl px-4 pt-3 pb-10 sm:px-5 sm:pt-6 sm:pb-14">
+      {/*
+        2026-09-27 (docs/디자인-규칙.md §6 · 점검 FRAME-U01): one title row — back to the list,
+        the title, the bookmark. The previous/next cards and the completion toggle moved to the end
+        of the lesson (LessonEndBar), so on a 390×844 phone the course view starts near the top of
+        the first screen instead of 460–615px down.
+      */}
+      <nav className="flex items-center justify-between gap-2" aria-label="과정으로">
+        <Link
+          href={`/${course}`}
+          className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-control px-2 text-label font-medium text-ink-soft transition-colors hover:bg-raised hover:text-ink"
+        >
+          <span aria-hidden>←</span>
+          <span>{courseInfo?.title ?? course} 목록</span>
+        </Link>
+        <LessonActionButtons
+          course={course}
+          lessonId={lesson.id}
+          title={pres.title}
+          courseTitle={courseInfo?.title ?? tab?.label}
+        />
       </nav>
 
-      <header className="mb-6 sm:mb-8" style={{ animation: "fadeUp var(--dur-slow) var(--ease) both" }}>
-        <h1 className="text-[1.5rem] sm:text-[1.85rem] leading-snug font-bold tracking-tight text-balance text-ink">
+      <header className="mt-1 mb-4 sm:mb-6">
+        <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">
           {pres.title}
         </h1>
+        {/*
+          2026-09-27 GRM-U22 · GRM-L10 (1차): GRAMMAR only — the stage line under the title, which also
+          carries the owner's era notes (gh1-116~123 '2002년 뉴스 방송 기반 문장', gh2-044 '1996년 미국 대선
+          무렵 뉴스'). They were only in the subtitle, which no lesson screen drew.
+        */}
+        {/* GRAMMAR II's subtitle is the English label 'English Model Pattern' (디자인 규칙 §1-7) — only its era note shows */}
+        {(() => {
+          if (!isGrammar || !pres.subtitle) return null;
+          const line = course === "grammar2" ? (pres.subtitle.split(" · ").slice(1).join(" · ") || null) : pres.subtitle;
+          return line ? <p className="mt-1 text-label text-ink-soft">{line}</p> : null;
+        })()}
+        {/*
+          2026-09-27 STU-U04 (STUDENT only): the chapter, one quiet line under the title — the STUDENT view no longer
+          repeats the title, an icon and a general description in a box of its own above the steps.
+        */}
+        {isStudent && pres.subtitle ? <p className="mt-0.5 text-caption text-ink-faint">{pres.subtitle}</p> : null}
+        {/*
+          2026-09-28 PASS-OFF GRAMMAR (merged with main): the textbook's own subheading of this link of the structure map
+          (D1 — the title is the link's words, this is its subtitle), in GRAMMAR's line under the title. The course view
+          drew it itself above its step tabs before the common frame came.
+        */}
+        {course === "passoff-grammar" && "subtitle" in lesson && typeof lesson.subtitle === "string" && lesson.subtitle ? (
+          <p className="mt-1 text-label text-ink-soft">{lesson.subtitle}</p>
+        ) : null}
       </header>
 
       {video.length > 0 ? (
@@ -365,29 +412,28 @@ export default async function LessonPage({
         </div>
       ) : null}
 
-      {/* Unified Audio Player with native TTS fallback & gender profile */}
-      {topLevelAudio.length > 0 ? (
-        <div className="mb-8 flex flex-col gap-2.5">
-          {topLevelAudio.map((a) => (
-            <AudioPlayer
-              key={a.src}
-              src={a.src}
-              fallbackSentences={fallbackSentences}
-              lang={courseInfo?.contentLang ?? "en"}
-              gender={voiceGender}
-              label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
-            />
-          ))}
-        </div>
-      ) : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese", "passoff-grammar"].includes(course) ? (
-        <div className="mb-8">
-          <AudioPlayer
-            fallbackSentences={fallbackSentences}
-            lang={courseInfo?.contentLang ?? "en"}
-            gender={voiceGender}
-            label="전체 듣기"
-          />
-        </div>
+      {/*
+        2026-09-27 GRM-L03 ④: in GRAMMAR the top player reads every ENGLISH ANSWER of the lesson, so it
+        waits folded under an honest name — the learner opens it after trying, not before. Other
+        courses render exactly as before.
+      */}
+      {topPlayers ? (
+        isGrammar ? (
+          <details className="group mb-5" data-answer-player>
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-control border border-line bg-raised px-4 text-label font-medium text-ink transition-colors hover:bg-sunken [&::-webkit-details-marker]:hidden">
+              <span>정답 문장 전체 듣기</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-ink-soft transition-transform group-open:rotate-180">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <div className="mt-2 flex flex-col gap-2">{topPlayers}</div>
+          </details>
+        ) : (
+          // data-passage-player (2026-09-27 A10): hidden when the course view plays the same lesson itself (globals.css)
+          <div className={topLevelAudio.length > 0 ? "mb-5 flex flex-col gap-2" : "mb-5"} data-passage-player="">
+            {topPlayers}
+          </div>
+        )
       ) : null}
 
       {/* Educational Body with Aligned Sentences */}
@@ -411,6 +457,7 @@ export default async function LessonPage({
               isScript={isScript}
               audioTracks={audio}
               ldEnglishScript={ldEnglishScript}
+              passagePlayers={passagePlayers}
             />
           ) : course === "reading" ? (
             <ReadingLearningView
@@ -422,6 +469,11 @@ export default async function LessonPage({
               vocaDictionary={vocaDictionary}
               readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
               readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
+              passagePlayers={passagePlayers}
+              clozeAlsoFits={clozeAlsoFitsFor(
+                (lesson.readingSentences ?? pairLesson?.readingSentences ?? []).map((s) => s.english),
+                (lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? []).map((v) => v.word),
+              )}
             />
           ) : course === "grammar1" || course === "grammar2" ? (
             <GrammarLearningView
@@ -433,10 +485,13 @@ export default async function LessonPage({
               audioTracks={audio}
             />
           ) : course === "phonics" ? (
+            // key: a new lesson is a new view (its rounds, cards and game start from that lesson's own record)
             <PhonicsLearningView
+              key={`${course}/${lesson.id}`}
               blocks={lesson.blocks}
               lessonKey={`${course}/${lesson.id}`}
               vocaDictionary={vocaDictionary}
+              passagePlayers={passagePlayers}
             />
           ) : course === "passoff-grammar" ? (
             // its own branch on purpose: the final else below is STUDENT's view. Only the blocks the view
@@ -447,13 +502,16 @@ export default async function LessonPage({
               blocks={passoff?.blocks ?? []}
               lessonKey={`${course}/${lesson.id}`}
               lockedExtraCount={passoff?.lockedExtraCount ?? 0}
-              subtitle={"subtitle" in lesson && typeof lesson.subtitle === "string" ? lesson.subtitle : null}
             />
           ) : (
+            // key: a new lesson is a new view — nothing of the last lesson's steps, tiles or reveals carries over
             <StudentLearningView
+              key={`${course}/${lesson.id}`}
               blocks={lesson.blocks}
               lessonKey={`${course}/${lesson.id}`}
               audioTracks={audio}
+              firstWordKeepsCase={studentFirstWordKeepsCase(lesson.blocks)}
+              next={next && nextPresentation ? { id: next.id, ...neighbour(next.id, nextPresentation), code: nextPresentation.code } : null}
             />
           )}
         </LessonSpeechGuard>
@@ -488,6 +546,12 @@ export default async function LessonPage({
       )}
 
       <LessonStepNavigation courseHref={`/${course}`} />
+      <LessonEndBar
+        course={course}
+        lessonId={lesson.id}
+        prev={prev && prevPresentation ? neighbour(prev.id, prevPresentation) : null}
+        next={next && nextPresentation ? neighbour(next.id, nextPresentation) : null}
+      />
     </main>
   );
 }

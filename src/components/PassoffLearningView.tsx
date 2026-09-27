@@ -1,10 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Block } from "@/lib/types";
 import type { PassoffAnchor, PassoffFormItem, PassoffFrameBlock, PassoffProduceItem, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { speakText, stopSpeech } from "@/lib/speech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
 import {
   composeItemDone,
   cutSets,
@@ -17,16 +18,18 @@ import {
   settleOpen,
   type PassoffWork,
 } from "@/lib/passoffLesson";
-import { notePassoffLessonDone, PASSOFF_COURSE, strongerHelp, type PassoffItemKind } from "@/lib/passoffLearning";
-import { useProgress } from "./ProgressProvider";
+import { notePassoffLessonDone, PASSOFF_COURSE, PASSOFF_GATE_REASON, strongerHelp, type PassoffItemKind } from "@/lib/passoffLearning";
+import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 import { usePassoffProgress } from "./PassoffProgressProvider";
+import { StepTabs } from "./StepTabs";
+import { IconCheck, IconTextSize } from "./icons";
 import { AnchorsStep } from "./passoff/AnchorsStep";
 import { RuleStep } from "./passoff/RuleStep";
 import { FormStep } from "./passoff/FormStep";
 import { ComposeStep } from "./passoff/ComposeStep";
 import { WrapUpStep } from "./passoff/WrapUpStep";
 import type { ComposeReport } from "./passoff/ComposeCard";
-import { CheckIcon, TextSizeIcon, spokenOf, tone, type FontSize, type Speaker } from "./passoff/ui";
+import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from "./passoff/ui";
 
 /**
  * PASS-OFF GRAMMAR lesson view — the same five steps for every lesson (docs/pass-off-grammar/설계.md §3; the
@@ -44,11 +47,19 @@ import { CheckIcon, TextSizeIcon, spokenOf, tone, type FontSize, type Speaker } 
  * page's — and the lesson is marked complete in the course list (ProgressProvider) and on the server, where it
  * counts toward opening the next topic (PassoffProgressProvider — 설계 §5).
  *
- * The step tabs carry "Step N": LessonStepNavigation, the '← 이전 Step · 다음 Step →' bar below the lesson, finds
- * them by it and follows the ones it sees CLICKED — so every step change this view makes itself (a step's own
- * '다음 단계', coming back to the first unfinished step) goes through that step's tab (goStep). Design rules:
- * docs/디자인-규칙.md — tokens, line icons, 44px targets, 16px inputs; the common frame's step tabs and end bar
- * replace this header once main is merged (설계 §15).
+ * 2026-09-28 — on main's common parts (docs/디자인-규칙.md §6 · §7), so the lesson looks and moves like the other courses:
+ *   - the step tabs are the shared StepTabs (44px · one row on a phone · "Step N · 이름" — LessonStepNavigation, the bar
+ *     below the lesson, finds them by that text and follows the ones it sees CLICKED). Every step change this view makes
+ *     itself (a step's own '다음 단계', coming back to the first unfinished step) presses that step's tab (goStep), as
+ *     VOCA · READING · LISTENING do;
+ *   - the end of the lesson is the common LessonEndBar. This view registers a completion gate (src/lib/lessonGate.ts):
+ *     '이 강의 학습 완료' stays off, with PASSOFF_GATE_REASON under it, until the five steps are done. Finishing the fifth
+ *     step completes the lesson by itself, as before (설계 §3 — the course's method is unchanged); `undo: false` because
+ *     the server takes completions only (설계 §5), so the bar then shows '학습 완료함' without '취소'. Should the button be
+ *     pressed while the steps are done but this device has no completion mark, the same finish runs (LESSON_COMPLETE_EVENT);
+ *   - the line icons of src/components/icons.tsx and the type · radius · colour tokens; text size and sentence speed sit
+ *     beside the step's title, in GRAMMAR's words and segments ('글자 크기' 기본 · 크게 · 특대 · '문장 속도' 1.0× · 0.85×).
+ * The textbook's own subheading of the lesson is the line under the page's title (page.tsx), as STUDENT's chapter is.
  */
 const STEPS = [
   { short: "예문", title: "예문 떠올리기" },
@@ -105,13 +116,10 @@ export function PassoffLearningView({
   blocks,
   lessonKey,
   lockedExtraCount = 0,
-  subtitle,
 }: {
   blocks: Block[];
   lessonKey: string;
   lockedExtraCount?: number;
-  /** the textbook's own subheading for this link of the map (D1: the title is the link, this is the subtitle) */
-  subtitle?: string | null;
 }) {
   const lessonId = lessonKey.split("/").pop() ?? lessonKey;
   const content = useMemo(() => contentOf(blocks), [blocks]);
@@ -129,12 +137,14 @@ export function PassoffLearningView({
   const [speed, setSpeed] = useState<1 | 0.85>(1);
   const [showSettings, setShowSettings] = useState(false);
   const topRef = useRef<HTMLDivElement | null>(null);
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const headingRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   // a tab clicked by the view itself (goStep) — how that move looks; null for the learner's own click
   const tabMove = useRef<StepMove | null>(null);
   // the step whose heading takes the focus once it is on screen
   const focusStep = useRef<number | null>(null);
+
+  /** a step's tab in the shared StepTabs (data-step-tab is 1-based) */
+  const tabOf = (index: number) => topRef.current?.querySelector<HTMLButtonElement>(`[data-step-tab="${index + 1}"]`) ?? null;
 
   // ── practice state on this device
   const storageKey = `kig:passoff:work:${lessonKey}`;
@@ -163,7 +173,7 @@ export function PassoffLearningView({
     // …and tell the bar below the lesson through that step's tab. Its click listener starts after this effect
     // (it is later in the page), so the click waits a frame.
     const frame = window.requestAnimationFrame(() => {
-      const tab = tabRefs.current[start];
+      const tab = topRef.current?.querySelector<HTMLButtonElement>(`[data-step-tab="${start + 1}"]`);
       if (!tab) return;
       tabMove.current = { scroll: false, focus: false };
       tab.click();
@@ -219,6 +229,7 @@ export function PassoffLearningView({
           onError: () => setSpeakingId((curr) => (curr === id ? null : curr)),
         });
       },
+      reset: () => setSpeakingId(null),
     }),
     [speakingId, lessonKey, speed],
   );
@@ -254,7 +265,7 @@ export function PassoffLearningView({
 
   /** A step change the view makes itself — through the step's tab, so the bar below the lesson follows. */
   function goStep(next: number, move: StepMove = { scroll: true, focus: true }) {
-    const tab = tabRefs.current[next];
+    const tab = tabOf(next);
     if (!tab) {
       showStep(next, move);
       return;
@@ -295,13 +306,15 @@ export function PassoffLearningView({
   // finished on this device, but the server — which the list and the topic lock count by — does not have it (after
   // the owner's reset, a lost write, another code here: 코드 단계 C 점검 1); only finishing it again records it
   const notCounted = work.lessonDone && confirmed && countedIds !== null && !countedIds.has(lessonId);
-  useEffect(() => {
-    if (!restored || !acted.current || !allDone || work.lessonDone) return;
+  // one finish per run of the five steps: the automatic one below and the end bar's button both come here
+  const finishing = useRef(false);
+  const finish = useCallback(() => {
+    if (finishing.current) return;
+    finishing.current = true;
     update((w) => {
       w.lessonDone = true;
     });
-    if (!isCompleted(PASSOFF_COURSE, lessonId)) toggleComplete(PASSOFF_COURSE, lessonId);
-    // …and to the server, which opens the next topic from it (설계 §5 — PassoffProgressProvider)
+    // …to the server, which opens the next topic from it (설계 §5 — PassoffProgressProvider)
     recordLessonComplete(lessonId);
     const entries: { key: string; kind: PassoffItemKind }[] = [
       ...content.produce.map((p) => ({ key: p.id, kind: "produce" as const })),
@@ -313,102 +326,99 @@ export function PassoffLearningView({
       entries,
       ids.compose.filter((id) => work.compose[id]?.tomorrow),
     );
-  }, [restored, allDone, work.lessonDone, work.compose, update, isCompleted, toggleComplete, recordLessonComplete, lessonId, content, ids]);
+  }, [update, recordLessonComplete, lessonId, content, ids, work.compose]);
+  const finishRef = useRef(finish);
+  useEffect(() => {
+    finishRef.current = finish;
+  }, [finish]);
+
+  useEffect(() => {
+    if (!restored || !acted.current || !allDone || work.lessonDone) return;
+    finish();
+    // the course list's mark — its LESSON_COMPLETE_EVENT comes back to the listener below, which finds this finish done
+    if (!isCompleted(PASSOFF_COURSE, lessonId)) toggleComplete(PASSOFF_COURSE, lessonId);
+  }, [restored, allDone, work.lessonDone, finish, isCompleted, toggleComplete, lessonId]);
+
+  // '이 강의 학습 완료' pressed in the end bar (open once the steps are done — see the gate below): the same finish
+  useEffect(() => {
+    const onComplete = (event: Event) => {
+      const detail = (event as CustomEvent<{ course?: string; lessonId?: string; completed?: boolean }>).detail;
+      if (!detail || detail.course !== PASSOFF_COURSE || detail.lessonId !== lessonId || !detail.completed) return;
+      finishRef.current();
+    };
+    window.addEventListener(LESSON_COMPLETE_EVENT, onComplete);
+    return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
+  }, [lessonId]);
+
+  // main's end bar (LessonEndBar · lessonGate): off until the five steps are done, and no undo — the server keeps completions only
+  const gateReady = allDone || work.lessonDone;
+  useEffect(() => {
+    setLessonGate(PASSOFF_COURSE, lessonId, { ready: gateReady, reason: PASSOFF_GATE_REASON, undo: false });
+  }, [gateReady, lessonId]);
+  useEffect(() => () => clearLessonGate(PASSOFF_COURSE, lessonId), [lessonId]);
 
   const stepsLeft = done.flatMap((d, i) => (d ? [] : [i]));
 
-  return (
-    <div ref={topRef} className="flex flex-col gap-5">
-      {subtitle ? <p className="-mt-3 text-[14px] text-ink-soft">{subtitle}</p> : null}
-
-      <div className="flex items-center gap-2">
-        <nav aria-label="학습 단계" className="flex min-w-0 flex-1 flex-wrap gap-1">
-          {STEPS.map((s, i) => {
-            const current = i === step;
-            return (
-              <button
-                key={s.short}
-                ref={(node) => {
-                  tabRefs.current[i] = node;
-                }}
-                type="button"
-                onClick={() => showStep(i, tabMove.current ?? { scroll: true, focus: false })}
-                aria-current={current ? "step" : undefined}
-                aria-label={`${i + 1}단계 ${s.title}${done[i] ? " · 마침" : ""}`}
-                className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-xl border px-2.5 text-[14px] transition-colors ${
-                  current ? "border-primary font-semibold text-primary" : "border-line text-ink-soft hover:bg-sunken"
-                }`}
-              >
-                <span className="tabular-nums">{i + 1}</span>
-                <span className={current ? "" : "hidden sm:inline"}>{s.short}</span>
-                {done[i] ? (
-                  <span className={tone.success}>
-                    <CheckIcon size={14} />
-                  </span>
-                ) : null}
-                {/* LessonStepNavigation finds the tabs by this text */}
-                <span className="sr-only"> Step {i + 1}</span>
-              </button>
-            );
-          })}
-        </nav>
-        <button
-          type="button"
-          aria-expanded={showSettings}
-          aria-label="글자 크기 · 소리 빠르기"
-          onClick={() => setShowSettings((v) => !v)}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line text-ink-soft transition-colors hover:bg-sunken"
-        >
-          <TextSizeIcon />
-        </button>
-      </div>
-
-      {showSettings ? (
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-line p-3">
-          <div role="group" aria-label="글자 크기" className="flex items-center gap-1">
-            <span className="mr-1 text-[14px] text-ink-soft">글자</span>
-            {(
-              [
-                ["normal", "기본"],
-                ["large", "크게"],
-                ["xlarge", "특대"],
-              ] as const
-            ).map(([key, label]) => (
-              <button
-                key={key}
-                type="button"
-                aria-pressed={font === key}
-                onClick={() => setFont(key)}
-                className={`min-h-11 min-w-11 rounded-xl border px-3 text-[14px] ${font === key ? "border-line-strong font-semibold text-ink" : "border-line text-ink-soft hover:bg-sunken"}`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-          <div role="group" aria-label="소리 빠르기" className="flex items-center gap-1">
-            <span className="mr-1 text-[14px] text-ink-soft">빠르기</span>
-            {([1, 0.85] as const).map((value) => (
-              <button
-                key={value}
-                type="button"
-                aria-pressed={speed === value}
-                onClick={() => setSpeed(value)}
-                className={`min-h-11 min-w-11 rounded-xl border px-3 text-[14px] tabular-nums ${speed === value ? "border-line-strong font-semibold text-ink" : "border-line text-ink-soft hover:bg-sunken"}`}
-              >
-                {value === 1 ? "1.0" : "0.85"}
-              </button>
-            ))}
-          </div>
+  // text size and sentence speed — GRAMMAR's words and segments, beside the step's title
+  const settingsButton = (
+    <button
+      type="button"
+      aria-expanded={showSettings}
+      aria-label="글자 크기 · 문장 속도"
+      onClick={() => setShowSettings((v) => !v)}
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-control border border-line bg-raised text-ink-soft transition-colors cursor-pointer hover:bg-sunken hover:text-ink"
+    >
+      <IconTextSize size={20} />
+    </button>
+  );
+  const settingsPanel = showSettings ? (
+    <div className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4">
+      <div className="flex flex-wrap items-center gap-2" role="group" aria-label="글자 크기">
+        <span className="w-20 text-label text-ink-soft">글자 크기</span>
+        <div className="flex gap-1 rounded-control bg-sunken p-1">
+          {(["normal", "large", "xlarge"] as const).map((key) => (
+            <button key={key} type="button" aria-pressed={font === key} onClick={() => setFont(key)} className={segmentButton(font === key)}>
+              {FONT_LABEL[key]}
+            </button>
+          ))}
         </div>
-      ) : null}
+      </div>
+      <div className="flex flex-wrap items-center gap-2" role="group" aria-label="문장 속도">
+        <span className="w-20 text-label text-ink-soft">문장 속도</span>
+        <div className="flex gap-1 rounded-control bg-sunken p-1">
+          {([1, 0.85] as const).map((value) => (
+            <button key={value} type="button" aria-pressed={speed === value} onClick={() => setSpeed(value)} className={segmentButton(speed === value)}>
+              {value === 1 ? "1.0×" : "0.85×"}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  ) : null;
+  const heading = (index: number) => (
+    <StepHeading
+      n={index + 1}
+      done={done[index]}
+      headingRef={(node) => {
+        headingRefs.current[index] = node;
+      }}
+      settings={settingsButton}
+      panel={settingsPanel}
+    />
+  );
+
+  return (
+    <div ref={topRef} className="flex flex-col gap-4" data-passoff-view data-step={step + 1}>
+      <StepTabs
+        label="학습 단계"
+        stepStart
+        current={step + 1}
+        onSelect={(n) => showStep(n - 1, tabMove.current ?? { scroll: true, focus: false })}
+        steps={STEPS.map((s, i) => ({ n: i + 1, name: s.short }))}
+      />
 
       <section hidden={step !== 0} aria-labelledby="passoff-step-1" className="flex flex-col gap-3">
-        <StepHeading
-          n={1}
-          headingRef={(node) => {
-            headingRefs.current[0] = node;
-          }}
-        />
+        {heading(0)}
         <AnchorsStep
           anchors={content.anchors}
           revealed={work.revealed}
@@ -425,12 +435,7 @@ export function PassoffLearningView({
       </section>
 
       <section hidden={step !== 1} aria-labelledby="passoff-step-2" className="flex flex-col gap-3">
-        <StepHeading
-          n={2}
-          headingRef={(node) => {
-            headingRefs.current[1] = node;
-          }}
-        />
+        {heading(1)}
         <RuleStep
           rule={content.rule}
           anchors={content.anchors}
@@ -454,12 +459,7 @@ export function PassoffLearningView({
       </section>
 
       <section hidden={step !== 2} aria-labelledby="passoff-step-3" className="flex flex-col gap-3">
-        <StepHeading
-          n={3}
-          headingRef={(node) => {
-            headingRefs.current[2] = node;
-          }}
-        />
+        {heading(2)}
         <FormStep
           items={content.forms}
           queue={formQueue}
@@ -486,12 +486,7 @@ export function PassoffLearningView({
       </section>
 
       <section hidden={step !== 3} aria-labelledby="passoff-step-4" className="flex flex-col gap-3">
-        <StepHeading
-          n={4}
-          headingRef={(node) => {
-            headingRefs.current[3] = node;
-          }}
-        />
+        {heading(3)}
         <ComposeStep
           sets={content.sets}
           setIndex={setIndex}
@@ -513,12 +508,7 @@ export function PassoffLearningView({
       </section>
 
       <section hidden={step !== 4} aria-labelledby="passoff-step-5" className="flex flex-col gap-3">
-        <StepHeading
-          n={5}
-          headingRef={(node) => {
-            headingRefs.current[4] = node;
-          }}
-        />
+        {heading(4)}
         <WrapUpStep
           transfers={content.transfers}
           queue={transferQueue}
@@ -547,6 +537,8 @@ export function PassoffLearningView({
           onGoStep={(s) => goStep(s)}
           onReset={() => {
             acted.current = false;
+            // the five steps done again are a new finish (the server records what it lost — 코드 단계 C 점검 1)
+            finishing.current = false;
             try {
               window.localStorage.removeItem(storageKey);
             } catch {
@@ -561,14 +553,41 @@ export function PassoffLearningView({
   );
 }
 
-/** A step's title — focusable (tabIndex -1) so that moving on from a button inside the last step lands here. */
-function StepHeading({ n, headingRef }: { n: number; headingRef: (node: HTMLHeadingElement | null) => void }) {
+/**
+ * A step's title — focusable (tabIndex -1) so that moving on from a button inside the last step lands here — with '마침'
+ * once that step is done (the shared step tabs carry names only), and the text size · speed button on the right.
+ */
+function StepHeading({
+  n,
+  done,
+  headingRef,
+  settings,
+  panel,
+}: {
+  n: number;
+  done: boolean;
+  headingRef: (node: HTMLHeadingElement | null) => void;
+  settings: ReactNode;
+  panel: ReactNode;
+}) {
   return (
-    <div className="flex items-baseline gap-2">
-      <span className="text-[14px] font-semibold tabular-nums text-primary">{n}단계</span>
-      <h2 id={`passoff-step-${n}`} tabIndex={-1} ref={headingRef} className="text-[18px] font-bold text-ink">
-        {STEPS[n - 1].title}
-      </h2>
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
+          <span className="text-label font-semibold tabular-nums text-primary">{n}단계</span>
+          <h2 id={`passoff-step-${n}`} tabIndex={-1} ref={headingRef} className="text-title-s font-bold text-ink">
+            {STEPS[n - 1].title}
+          </h2>
+          {done ? (
+            <span className="inline-flex items-center gap-1 text-caption font-medium text-success">
+              <IconCheck size={14} />
+              <span>마침</span>
+            </span>
+          ) : null}
+        </div>
+        {settings}
+      </div>
+      {panel}
     </div>
   );
 }

@@ -9,9 +9,15 @@ const fs = require("fs");
 const path = require("path");
 const Module = require("module");
 
-// KIG_REPO: point the audit at another checkout (a worktree whose branch is not on main yet) — unset, it is the main checkout
-const REPO = process.env.KIG_REPO || "C:/Users/ghddl/.gemini/antigravity/scratch/K-IG-CORE";
-const ts = require(path.join(REPO, "node_modules/typescript"));
+// 2026-09-27: the repository this file sits in (or KIG_REPO), not a fixed folder — with the fixed
+// main path, a check run from another checkout (a worktree the second session verifies in) silently
+// read main's files. TypeScript is taken from that checkout if it has node_modules, else from main.
+const MAIN_REPO = "C:/Users/ghddl/.gemini/antigravity/scratch/K-IG-CORE";
+const REPO = process.env.KIG_REPO || path.resolve(__dirname, "../../..");
+const ts = require(
+  [REPO, MAIN_REPO].map((root) => path.join(root, "node_modules/typescript")).find((p) => fs.existsSync(p)) ||
+    path.join(MAIN_REPO, "node_modules/typescript"),
+);
 const cache = new Map();
 
 function resolveSpec(spec, fromDir) {

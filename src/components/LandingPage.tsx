@@ -110,78 +110,20 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       behavior: "smooth",
     });
     setTimeout(() => {
-      if (el) el.style.scrollSnapType = "y mandatory";
+      // back to the container's own snapping classes (mandatory on phones, proximity from md)
+      if (el) el.style.scrollSnapType = "";
       isAnimatingRef.current = false;
     }, 600);
   };
 
-  // Strictly advance or retreat one section at a time on desktop wheel and keyboard
-  // Mobile touch uses native CSS scroll-snap (scroll-snap-stop: always) for buttery 120Hz smooth physics
+  // 2026-09-27 (점검 FRAME-U13 · 사장님 "그냥 다로 해": 원래 슬라이드 그대로, 불편한 점만): the mouse wheel and
+  // the arrow / space / page keys are no longer taken over to jump exactly one slide — on a desktop one notch
+  // of the wheel used to move a whole screen and the keys could do nothing else. Scrolling is the browser's
+  // own again: slides still snap into place on a phone, and only gently near a slide from md up (see the
+  // container's scroll-snap classes). A resize still re-aligns the slide in view.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-
-    let cooldownTimer: ReturnType<typeof setTimeout> | null = null;
-    let wheelDelta = 0;
-    let wheelResetTimer: ReturnType<typeof setTimeout> | null = null;
-
-    function handleNavigate(direction: 1 | -1) {
-      if (!el || isAnimatingRef.current) return;
-      const current = activeIdxRef.current;
-      const next = Math.min(Math.max(current + direction, 0), tabs.length - 1);
-      if (next === current) return;
-
-      isAnimatingRef.current = true;
-      activeIdxRef.current = next;
-      setScrollActive(next);
-
-      el.style.scrollSnapType = "none";
-      el.scrollTo({
-        top: next * el.clientHeight,
-        behavior: "smooth",
-      });
-
-      if (cooldownTimer) clearTimeout(cooldownTimer);
-      cooldownTimer = setTimeout(() => {
-        if (el) el.style.scrollSnapType = "y mandatory";
-        isAnimatingRef.current = false;
-      }, 600);
-    }
-
-    function onWheel(e: WheelEvent) {
-      if (!el) return;
-      e.preventDefault();
-
-      if (isAnimatingRef.current) return;
-
-      wheelDelta += e.deltaY;
-
-      if (wheelResetTimer) clearTimeout(wheelResetTimer);
-      wheelResetTimer = setTimeout(() => {
-        wheelDelta = 0;
-      }, 150);
-
-      // Require a decisive wheel gesture (threshold 25px)
-      if (Math.abs(wheelDelta) >= 25) {
-        const direction = wheelDelta > 0 ? 1 : -1;
-        wheelDelta = 0;
-        handleNavigate(direction);
-      }
-    }
-
-    // Keyboard arrow keys
-    function onKeyDown(e: KeyboardEvent) {
-      if (["INPUT", "TEXTAREA", "SELECT"].includes((e.target as HTMLElement)?.tagName)) return;
-
-      if (e.key === "ArrowDown" || e.key === "PageDown" || (e.key === " " && !e.shiftKey)) {
-        e.preventDefault();
-        handleNavigate(1);
-      } else if (e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey)) {
-        e.preventDefault();
-        handleNavigate(-1);
-      }
-    }
-
     function onResize() {
       if (!el) return;
       el.scrollTo({
@@ -189,19 +131,9 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
         behavior: "instant",
       });
     }
-
-    el.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("keydown", onKeyDown);
     window.addEventListener("resize", onResize);
-
-    return () => {
-      el.removeEventListener("wheel", onWheel);
-      window.removeEventListener("keydown", onKeyDown);
-      window.removeEventListener("resize", onResize);
-      if (cooldownTimer) clearTimeout(cooldownTimer);
-      if (wheelResetTimer) clearTimeout(wheelResetTimer);
-    };
-  }, [tabs.length]);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const el = e.currentTarget;
@@ -241,9 +173,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar"
+        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory] md:[scroll-snap-type:y_proximity]"
         style={{
-          scrollSnapType: "y mandatory",
           WebkitOverflowScrolling: "touch",
         }}
       >
@@ -304,7 +235,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                 type="button"
                 onClick={() => scrollToTab(i + 1)}
                 aria-label="다음 코스로 이동"
-                className="absolute bottom-3.5 sm:bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-0.5 text-ink-faint hover:text-primary transition-colors cursor-pointer select-none"
+                className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex min-h-11 min-w-11 flex-col items-center justify-center gap-0.5 text-ink-faint hover:text-primary transition-colors cursor-pointer select-none"
               >
                 <span className="font-mono text-[9px] font-bold tracking-[0.2em] text-primary/70 uppercase">
                   NEXT
@@ -317,9 +248,12 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       </div>
 
       {/* Right Side Dots Navigation */}
+      {/* 2026-09-27 (점검 FRAME-U13): the dots look the same (7px) but each is pressed through a 44×24 area —
+          the 7px buttons themselves were below the 24px minimum (WCAG 2.5.8). 24px tall keeps the column
+          close to its original spacing; '다음 코스로 이동' and '학습 시작하기' do the same job with a big target. */}
       <nav
-        aria-label="Section Navigation"
-        className="pointer-events-auto absolute top-1/2 right-5 z-20 flex -translate-y-1/2 flex-col gap-2.5 sm:right-7"
+        aria-label="과정 슬라이드"
+        className="pointer-events-auto absolute top-1/2 right-1 z-20 flex -translate-y-1/2 flex-col sm:right-3"
       >
         {tabs.map((tab, idx) => {
           const isActive = scrollActive === idx;
@@ -328,14 +262,20 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
               key={tab.slug}
               type="button"
               onClick={() => scrollToTab(idx)}
-              aria-label={`Scroll to section ${tab.num} (${tab.label})`}
-              className={
-                "h-[7px] w-[7px] cursor-pointer rounded-full border-none p-0 transition-[transform,background-color] duration-200 " +
-                (isActive
-                  ? "scale-140 bg-primary ring-2 ring-primary/25"
-                  : "bg-ink/20 hover:scale-120 hover:bg-ink-soft")
-              }
-            />
+              aria-label={`${tab.label} 슬라이드로 이동`}
+              aria-current={isActive ? "true" : undefined}
+              className="group flex h-6 w-11 cursor-pointer items-center justify-center border-none bg-transparent p-0"
+            >
+              <span
+                aria-hidden
+                className={
+                  "block h-[7px] w-[7px] rounded-full transition-[transform,background-color] duration-200 " +
+                  (isActive
+                    ? "scale-140 bg-primary ring-2 ring-primary/25"
+                    : "bg-ink/20 group-hover:scale-120 group-hover:bg-ink-soft")
+                }
+              />
+            </button>
           );
         })}
       </nav>

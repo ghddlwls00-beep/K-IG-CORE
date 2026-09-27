@@ -1,20 +1,118 @@
 "use client";
 
-import { useEffect, useMemo, useState, useRef, memo, useCallback } from "react";
-import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
-import { speakText, stopSpeech, unlockMobileAudio } from "@/lib/speech";
-import { readingWordSpeech } from "@/lib/vocaSpeech";
-import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
-import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
-import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
+/**
+ * READING — one view for all 512 pages (256 lessons and their "-1" pages): Step 1 속독 챌린지 · Step 2 핵심 어휘 ·
+ * Step 3 독해 퀴즈 · Step 4 원문 대조 (the owner's step names and order; every tab still reads "Step N").
+ *
+ * 2026-09-27 학습법 · 화면 고침 (사장님 "검토 결과대로 … 끝까지"; docs/qa-2026-09-18/학습법-화면-0927/reading-verified.md ·
+ * 계획.md G01–G05 · D01 · D02 · D31–D33 · D35). The sentences, the translations and every sound are unchanged: speakText gets
+ * lessonSpeechForm(pageKey, sentence) for a sentence and readingWordSpeech(word, meaning) for a key word, exactly as before, and
+ * the whole-lesson player is the page's own AudioPlayer with the same sentences (the page hands them over as data — A10).
+ * What changed, by review item:
+ *   Frame   no header card (RD-U07): the word count and the target move into Step 1's row; the shared StepTabs (RD-U15);
+ *           line icons, the colour tokens and the six text sizes (RD-U08 · U09 · U20); 44px controls (RD-U10); one 'Aa' menu —
+ *           text size, sentence numbers, copy — remembered for every lesson (RD-U07); nothing changes on mouse-over (RD-U02).
+ *   Step 1  (G01 · D31 나 · RD-L03 · L04 · U01 · U02 · U05 · U06 · U11 · U17) '뜻을 파악하며 평소 속도로': start → the passage comes
+ *           up under the header, numbers and sentence taps are off, '다 읽었어요' waits at the end of the passage; the time is
+ *           performance.now() and stops while the page is hidden; faster than 500 WPM is explained and not saved; one line
+ *           against the target (180 WPM) instead of grades; the one-sentence passages show the time only. A sentence is a
+ *           button (Enter/Space) that plays it and opens its Korean line under it on a phone, in a panel under the passage
+ *           from sm. The playing sentence is underlined, not bold red. Text is selectable (long-press dictionary).
+ *   Player  (D01 나 · G04 · RD-L07) the whole-lesson player plays after the first timed reading (Step 1) and in Step 4 — never
+ *           before it; while it plays, its sentence is tinted (Step 1 when not timing, Step 4's English line) and kept in view.
+ *   Step 2  (G02 · D32 다 · RD-L05 · L15 · U13) one row per word — word 18 · part of speech and base form 12, '뜻 보기' and
+ *           a speaker, the word's passage line with the word underlined; the meaning stays hidden until asked; then
+ *           '알아요 / 몰라요' ('알아요' folds the row and it stays folded; '몰라요' words come first in Step 3 and the review).
+ *   Step 3  (G02 · D33 나 · RD-L06 · L13 · U14) one blank at a time from the lesson's key words — the start, the middle and
+ *           the end of the passage; options 2×2 at 48px; after an answer the filled sentence, its translation and
+ *           '문장 듣기'; 'n/3' and '다른 빈칸으로 다시 풀기'. The blanks are seeded by the lesson (readingUtils) — the same
+ *           for every learner, never a romanized Korean word. The reading-aloud check stays here until the comprehension
+ *           questions exist (D34 — a later stage), named for what it is; a romanized Korean word is any word to it.
+ *   Step 4  (G03 · D31 나 · D32 다 · RD-U03 · U05 · U18 · U23 · L08) one row per sentence — number (plays it) | English |
+ *           Korean, the Korean under the English on a phone; '영어만' puts '해석 보기' in each row instead of a bottom bar; key
+ *           words are dotted — pressing one shows its meaning (a played row also lists them as buttons); '같은 글 다시 읽기'
+ *           times the same passage again and shows the two numbers only; the memo, folded, at the end.
+ * Completion (D02 나): LessonEndBar's '이 강의 학습 완료' opens after one timed reading (src/lib/lessonGate.ts).
+ * On this device and for the learning engine: src/lib/readingLearning.ts (storage keys, what is kept, the engine's items).
+ * The data-* attributes are what the audit helpers read (drive-reading.cjs · lib/containers.cjs · lib/reading-page.cjs) —
+ * keep them.
+ */
+
 import {
-  extractPassageKeywords,
+  Fragment,
+  memo,
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type MouseEvent as ReactMouseEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type ReactNode,
+} from "react";
+import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
+import { getServerSpeechSnapshot, getSpeechSnapshot, speakText, stopSpeech, subscribeSpeech, unlockMobileAudio } from "@/lib/speech";
+import { readingWordSpeech } from "@/lib/vocaSpeech";
+import { LESSON_SPEECH_WORDS, lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
+import { markLessonDone, recordAttempt } from "@/lib/learning/record";
+import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
+import type { PassagePlayerData } from "@/lib/passagePlayer";
+import {
+  contextSnippet,
   extractFullReadingPassage,
-  generateReadingQuiz,
+  extractPassageKeywords,
+  findWordSpans,
   generateClozeItems,
-  type KeyWord,
+  generateReadingQuiz,
   type ClozeItem,
+  type KeyWord,
 } from "@/lib/readingUtils";
+import {
+  PREFS_STORAGE_KEY,
+  READING_GATE_REASON,
+  READING_LEARNING_PROFILE,
+  READING_MAX_WPM,
+  READING_TARGET_WPM,
+  clockElapsed,
+  clockHide,
+  clockShow,
+  clockStart,
+  formatApprox,
+  formatClock,
+  formatDuration,
+  isTimeOnlyPassage,
+  legacyBestCounts,
+  legacyWpmStorageKey,
+  parsePrefs,
+  parseSpeedRecord,
+  parseWordsRecord,
+  posLabel,
+  readingItemKey,
+  readingMainId,
+  reviewEntries,
+  serializePrefs,
+  serializeSpeedRecord,
+  serializeWordsRecord,
+  speedStorageKey,
+  targetMs,
+  targetVerdict,
+  wordsPerMinute,
+  wordsStorageKey,
+  type PassageSize,
+  type ReadingClockState,
+  type ReadingPrefs,
+  type SpeedRecord,
+  type WordMark,
+  type WordsRecord,
+} from "@/lib/readingLearning";
+import { AudioPlayer } from "./AudioPlayer";
+import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
+import { StepTabs } from "./StepTabs";
+import { IconCheck, IconChevronDown, IconChevronRight, IconRepeat, IconSpeaker, IconStop, IconX } from "./icons";
+import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 
 interface ReadingLearningViewProps {
   blocks: Block[];
@@ -25,222 +123,231 @@ interface ReadingLearningViewProps {
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
   readingSentences?: ReadingSentence[] | null;
   readingVocabulary?: ReadingVocabularyItem[] | null;
+  /** 2026-09-27 (계획 A10 · D01 나): the page's whole-lesson player as data — played after the first timed reading and in Step 4 */
+  passagePlayers?: PassagePlayerData[] | null;
+  /** 2026-09-27 (유출 규칙): this lesson's reviewed 'also fits' blank pairs, worked out on the server (readingClozeFitsForLesson) */
+  clozeAlsoFits?: Record<string, string[]> | null;
 }
 
-// ---------------------------------------------------------------------------
-// Isolated Micro-Component: WPM Stopwatch Bar
-// Encapsulates 1-second interval ticks so the 1,300-line reading view never re-renders
-// ---------------------------------------------------------------------------
+type StepNo = 1 | 2 | 3 | 4;
+const STEPS: { n: StepNo; name: string }[] = [
+  { n: 1, name: "속독 챌린지" },
+  { n: 2, name: "핵심 어휘" },
+  { n: 3, name: "독해 퀴즈" },
+  { n: 4, name: "원문 대조" },
+];
 
-/**
- * Fastest reading speed we are willing to score. Reading with comprehension
- * tops out around 400 WPM and even competitive skimming stays under ~1,000, so
- * anything above this is a mis-click (start then immediately finish), not a
- * result. Without a ceiling the trainer happily reported 1,680 WPM for a
- * three-second "completion" and saved it as the learner's personal best
- * (KIG-035).
- */
-const MAX_PLAUSIBLE_WPM = 1000;
+// the button kinds of the course views (GrammarLearningView · StudentLearningView · PhonicsLearningView), 44px
+const filledButton =
+  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40";
+const outlineButton =
+  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control border border-line bg-raised px-3 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40";
+const quietButton =
+  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40";
+const iconButton =
+  "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-raised text-ink-soft transition-colors cursor-pointer hover:bg-sunken hover:text-ink";
+const segmentButton = (on: boolean) =>
+  "flex min-h-11 min-w-11 flex-1 items-center justify-center rounded-control px-2 text-label transition-colors cursor-pointer " +
+  (on ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:bg-raised/60");
 
-const WpmStopwatchBar = memo(function WpmStopwatchBar({
-  wordCount,
-  bestWpm,
-  wpmStorageKey,
-  onFinish,
-  onReset,
-}: {
-  wordCount: number;
-  bestWpm: number | null;
-  wpmStorageKey: string;
-  /** `null` WPM means the run was too fast to be a real reading measurement. */
-  onFinish: (wpm: number | null, seconds: number) => void;
-  onReset: () => void;
-}) {
-  const [running, setRunning] = useState(false);
-  const [elapsed, setElapsed] = useState(0);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+/** The passage sizes of the 'Aa' menu — English and the Korean line beside it (the six-size scale: 16/14 · 18/16 · 22/18). */
+const SIZE_CLASS: Record<PassageSize, { en: string; ko: string }> = {
+  normal: { en: "text-body", ko: "text-label" },
+  large: { en: "text-title-s", ko: "text-body" },
+  xlarge: { en: "text-title", ko: "text-title-s" },
+};
+const SIZE_LABEL: Record<PassageSize, string> = { normal: "보통", large: "크게", xlarge: "특대" };
+const REGION_LABEL = ["글 앞", "글 중간", "글 끝"] as const;
 
+/** A tinted sentence (selected, or the one the whole-lesson player is reading); playing alone adds the underline (RD-U06). */
+const TINT = "bg-primary-soft";
+const PLAYING_MARK = "bg-primary-soft underline decoration-primary decoration-2 underline-offset-4";
+
+function headerHeight(): number {
+  if (typeof window === "undefined") return 56;
+  return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 56;
+}
+
+/** Scroll so `y` (a page offset) is at the top — instantly when it is more than 1.5 screens away or motion is reduced. */
+function scrollPageTo(y: number) {
+  const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  const far = Math.abs(y - window.scrollY) > window.innerHeight * 1.5;
+  window.scrollTo({ top: Math.max(0, y), behavior: reduce || far ? "auto" : "smooth" });
+}
+
+/** Bring `el` under the sticky header when it is off screen — the smallest move that shows it ("nearest"). */
+function keepInView(el: Element | null) {
+  if (!el) return;
+  const r = el.getBoundingClientRect();
+  const top = headerHeight() + 8;
+  const bottom = window.innerHeight - 8;
+  if (r.top >= top && r.bottom <= bottom) return;
+  const delta = r.top < top || r.height > bottom - top ? r.top - top : r.bottom - bottom;
+  scrollPageTo(window.scrollY + delta);
+}
+
+/** A timed reading in progress (Step 1 '첫 읽기' or Step 4 '같은 글 다시 읽기') — its clock stands still while the page is hidden. */
+interface ReadingRun {
+  purpose: "first" | "again";
+  clock: ReadingClockState;
+}
+
+interface RunOutcome {
+  purpose: "first" | "again";
+  wpm: number;
+  ms: number;
+  hiddenMs: number;
+  tooFast: boolean;
+}
+
+/** The clock of a timed reading — its own small component, so the 250 ms tick does not re-render the view. */
+const ReadingClock = memo(function ReadingClock({ read }: { read: () => number }) {
+  const [text, setText] = useState(() => formatClock(read()));
   useEffect(() => {
-    if (running) {
-      timerRef.current = setInterval(() => {
-        setElapsed((prev) => prev + 1);
-      }, 1000);
-    } else if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-    return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
+    const timer = window.setInterval(() => setText(formatClock(read())), 250);
+    return () => window.clearInterval(timer);
+  }, [read]);
+  return <span className="tabular-nums">{text}</span>;
+});
+
+/** The 'Aa' menu — text size, sentence numbers, copying the passage (RD-U07). Remembered for every READING lesson. */
+function ViewMenu({
+  prefs,
+  onChange,
+  onCopy,
+  copied,
+}: {
+  prefs: ReadingPrefs;
+  onChange: (next: ReadingPrefs) => void;
+  onCopy: () => void;
+  copied: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const boxRef = useRef<HTMLDivElement | null>(null);
+  const panelId = useId();
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (event: PointerEvent) => {
+      if (boxRef.current && !boxRef.current.contains(event.target as Node)) setOpen(false);
     };
-  }, [running]);
-
-  function start() {
-    unlockMobileAudio();
-    stopSpeech();
-    setElapsed(0);
-    setRunning(true);
-  }
-
-  function finish() {
-    setRunning(false);
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-    const finalSeconds = Math.max(1, elapsed);
-    const calculated = Math.round((wordCount / finalSeconds) * 60);
-    if (calculated > MAX_PLAUSIBLE_WPM) {
-      // Do not score it and do not let it overwrite the stored best.
-      onFinish(null, finalSeconds);
-      return;
-    }
-    if (!bestWpm || calculated > bestWpm) {
-      try {
-        window.localStorage.setItem(wpmStorageKey, String(calculated));
-      } catch {
-        // ignore
-      }
-    }
-    onFinish(calculated, finalSeconds);
-  }
-
-  function reset() {
-    setRunning(false);
-    setElapsed(0);
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
-    onReset();
-  }
-
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
   return (
-    <div className="rounded-2xl border border-line bg-gradient-to-br from-surface via-raised/30 to-surface p-4 sm:p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-5">
-      <div className="flex flex-col gap-1.5">
-        <span className="font-mono text-[11px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">
-          속독 페이싱 훈련 (WPM Pacing)
-        </span>
-        <h2 className="text-[17px] font-bold text-ink">
-          한국어 번역을 멈추고 영어 어순대로 눈을 빠르게 굴려 읽어보세요.
-        </h2>
-        <p className="text-[13px] text-ink-soft">
-          글을 읽기 시작할 때 [속독 시작]을 누르고, 마지막 마침표를 읽는 순간 [완독 완료]를 눌러 WPM을 측정하세요.
-        </p>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="rounded-xl border border-line bg-surface px-4 py-2 text-center shadow-2xs">
-          <span className="block font-mono text-[10.5px] font-semibold text-ink-faint uppercase">경과 시간</span>
-          <span className="font-mono text-[20px] font-bold text-ink tabular-nums">
-            {Math.floor(elapsed / 60)
-              .toString()
-              .padStart(2, "0")}
-            :{(elapsed % 60).toString().padStart(2, "0")}
-          </span>
+    <div ref={boxRef} className="relative shrink-0">
+      <button
+        type="button"
+        data-action="view-menu"
+        aria-expanded={open}
+        aria-controls={panelId}
+        aria-label="보기 설정 — 글자 크기 · 문장 번호 · 지문 복사"
+        onClick={() => setOpen((v) => !v)}
+        className="flex h-11 w-11 items-center justify-center rounded-control border border-line bg-raised text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken"
+      >
+        <span aria-hidden>Aa</span>
+      </button>
+      {open ? (
+        <div
+          id={panelId}
+          role="group"
+          aria-label="보기 설정"
+          className="absolute right-0 top-full z-30 mt-2 flex w-64 flex-col gap-3 rounded-card border border-line bg-raised p-3 shadow-lg"
+        >
+          <div className="flex flex-col gap-1">
+            <p className="text-caption text-ink-soft">글자 크기</p>
+            <div className="flex gap-1 rounded-control bg-sunken p-1" role="group" aria-label="글자 크기">
+              {(["normal", "large", "xlarge"] as const).map((size) => (
+                <button
+                  key={size}
+                  type="button"
+                  data-size={size}
+                  aria-pressed={prefs.size === size}
+                  onClick={() => onChange({ ...prefs, size })}
+                  className={segmentButton(prefs.size === size)}
+                >
+                  {SIZE_LABEL[size]}
+                </button>
+              ))}
+            </div>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={prefs.numbers}
+            data-action="toggle-numbers"
+            onClick={() => onChange({ ...prefs, numbers: !prefs.numbers })}
+            className="flex min-h-11 items-center justify-between gap-2 rounded-control px-1 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
+          >
+            <span>문장 번호</span>
+            <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (prefs.numbers ? "bg-ink" : "bg-line-strong/25")}>
+              <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (prefs.numbers ? "left-[18px]" : "left-0.5")} />
+            </span>
+          </button>
+          <button type="button" data-action="copy-passage" onClick={onCopy} className={`${outlineButton} w-full`}>
+            {copied ? <IconCheck /> : null}
+            <span>{copied ? "복사했어요" : "지문 복사"}</span>
+          </button>
         </div>
-
-        {!running ? (
-          <button
-            type="button"
-            onClick={start}
-            className="rounded-xl bg-ink px-5 py-3 text-[13.5px] font-bold text-surface shadow-xs hover:opacity-90 active:scale-95 transition-all cursor-pointer flex items-center gap-2"
-          >
-            <span>⏱️</span>
-            <span>{elapsed > 0 ? "다시 측정 시작" : "속독 측정 시작"}</span>
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={finish}
-            className="rounded-xl bg-emerald-600 px-5 py-3 text-[13.5px] font-bold text-white shadow-xs hover:bg-emerald-700 active:scale-95 transition-all cursor-pointer flex items-center gap-2 animate-pulse"
-          >
-            <span>✓</span>
-            <span>완독 완료! (속도 측정)</span>
-          </button>
-        )}
-
-        {elapsed > 0 && !running && (
-          <button
-            type="button"
-            onClick={reset}
-            className="rounded-xl border border-line bg-surface px-3 py-3 text-[12.5px] font-medium text-ink-soft hover:bg-raised transition-colors cursor-pointer"
-            title="타이머 초기화"
-          >
-            ↺
-          </button>
-        )}
-      </div>
+      ) : null}
     </div>
   );
-});
+}
 
 export function ReadingLearningView({
   blocks,
   pairBlocks = null,
   lessonKey,
-  isScript,
   vocaDictionary = null,
   readingSentences = null,
   readingVocabulary = null,
+  passagePlayers = null,
+  clozeAlsoFits = null,
 }: ReadingLearningViewProps) {
-  // Extract full passages from main and pair blocks (supporting multi-paragraph & section labels like (A), (B), (C))
+  const pageId = lessonKey.split("/").pop() || lessonKey;
+  /** the main page's id — a "-1" page shares its passage, its words, its records and its engine items */
+  const mainId = readingMainId(pageId);
+  const mainKey = `reading/${mainId}`;
+  const { isCompleted } = useProgress();
+  const lessonCompleted = isCompleted("reading", pageId);
+
+  // ------------------------------------------------------------------------------------------------------------
+  // The lesson: the 1:1 sentence pairs (the server passes them after the licence check — ISS-00: never an
+  // all-lessons data file here) and the 14 key words
+  // ------------------------------------------------------------------------------------------------------------
   const mainText = extractFullReadingPassage(blocks);
   const pairText = extractFullReadingPassage(pairBlocks);
-
-  // Determine English vs Korean fallback passages
   const mainIsEn = isEnglish(mainText);
   const enPassageFallback = mainIsEn ? mainText : pairText;
   const koPassageFallback = mainIsEn ? pairText : mainText;
 
-  // 1:1 Aligned sentence pairs from the lesson's own data (passed by the server
-  // page after the licence check). ISS-00: never fall back to an all-lessons
-  // data file here — anything this client component imports ships publicly.
   const sentencePairs = useMemo(() => {
     if (readingSentences && readingSentences.length > 0) {
-      return readingSentences.map((s, idx) => ({
-        id: s.id,
-        index: idx,
-        en: s.english,
-        ko: s.korean,
-      }));
+      return readingSentences.map((s, idx) => ({ id: s.id, index: idx, en: s.english, ko: s.korean }));
     }
     const enSents = splitSentences(enPassageFallback);
     const koSents = splitSentences(koPassageFallback);
-    return alignSentences(enSents, koSents).map((s, idx) => ({
-      id: `fallback-s${idx + 1}`,
-      index: idx,
-      en: s.en,
-      ko: s.ko,
-    }));
+    return alignSentences(enSents, koSents).map((s, idx) => ({ id: `fallback-s${idx + 1}`, index: idx, en: s.en, ko: s.ko }));
   }, [readingSentences, enPassageFallback, koPassageFallback]);
 
-  // Canonical full text derived from verified 1:1 sentences
-  const enPassage = useMemo(() => {
-    if (sentencePairs.length > 0) {
-      return sentencePairs.map((s) => s.en).join(" ");
-    }
-    return enPassageFallback;
-  }, [sentencePairs, enPassageFallback]);
+  const enPassage = useMemo(
+    () => (sentencePairs.length > 0 ? sentencePairs.map((s) => s.en).join(" ") : enPassageFallback),
+    [sentencePairs, enPassageFallback],
+  );
+  const koPassage = useMemo(
+    () => (sentencePairs.length > 0 ? sentencePairs.map((s) => s.ko).join(" ") : koPassageFallback),
+    [sentencePairs, koPassageFallback],
+  );
+  const wordCount = useMemo(() => enPassage.trim().split(/\s+/).filter(Boolean).length, [enPassage]);
+  const timeOnly = isTimeOnlyPassage(sentencePairs.length);
 
-  const koPassage = useMemo(() => {
-    if (sentencePairs.length > 0) {
-      return sentencePairs.map((s) => s.ko).join(" ");
-    }
-    return koPassageFallback;
-  }, [sentencePairs, koPassageFallback]);
-
-  // Total words calculation for WPM
-  const wordCount = useMemo(() => {
-    return enPassage.trim().split(/\s+/).filter(Boolean).length;
-  }, [enPassage]);
-
-  // Expected reading time in seconds at 180 WPM
-  const expectedSeconds = Math.max(15, Math.round((wordCount / 180) * 60));
-
-  // Extract exactly 14 high-yield academic vocabulary items (AI multi-factor scoring)
+  // Every lesson carries 14 cards (RD-L05 ④ — the condition changes only with the data)
   const keywords: KeyWord[] = useMemo(() => {
     if (readingVocabulary && readingVocabulary.length === 14) {
       return readingVocabulary.map((v) => ({
@@ -257,114 +364,131 @@ export function ReadingLearningView({
     return extractPassageKeywords(enPassage, 14, vocaDictionary);
   }, [readingVocabulary, enPassage, vocaDictionary]);
 
+  /** each key word's first passage line, as a short piece with the word in it (Step 2 — D32 · RD-L05 ②) */
+  const contexts = useMemo(
+    () =>
+      keywords.map((kw) => {
+        for (const pair of sentencePairs) {
+          const spans = findWordSpans(pair.en, kw.word);
+          if (spans.length) return contextSnippet(pair.en, spans[0], 48);
+        }
+        return null;
+      }),
+    [keywords, sentencePairs],
+  );
+
+  /** the key words in each sentence — the dotted words of Step 4 (D32 다 · RD-L08) */
+  const keywordMarks = useMemo(
+    () =>
+      sentencePairs.map((pair) => {
+        const found = keywords
+          .flatMap((kw, k) => findWordSpans(pair.en, kw.word).map(([start, end]) => ({ start, end, order: k + 1 })))
+          .sort((a, b) => a.start - b.start || b.end - a.end);
+        const kept: typeof found = [];
+        for (const m of found) if (!kept.length || m.start >= kept[kept.length - 1].end) kept.push(m);
+        return kept;
+      }),
+    [keywords, sentencePairs],
+  );
+
   /**
-   * KIG-008 — the auto-generated comprehension questions are off (see
-   * `quizFlags.ts`).
-   *
-   * `generateReadingQuiz()` picks its "correct" option by keyword substring
-   * match against the passage: `tEn.includes("art")` also fires on start, part
-   * and heart, and `tKo.includes("법")` fires on 방법. Measured over the corpus,
-   * 208 of 256 lessons had a wrong answer key (170 simply wrong, 38 ungrammatical
-   * fallbacks), so a learner who reads the passage correctly is marked wrong.
-   *
-   * The call site is kept, behind the flag, so turning it back on is one edit
-   * and does not mean reconstructing the memo's dependencies from history.
-   * Reviewed questions written against the source material do not belong here.
+   * KIG-008 — the auto-generated comprehension questions stay off (quizFlags.ts; 208 of 256 lessons had a wrong answer key).
+   * The call site is kept behind the flag, so turning it back on is one edit. Reviewed questions are a later stage and do
+   * not belong behind this flag (RD-L02).
    */
-  const questions = useMemo(() => {
-    return SHOW_GENERATED_QUIZ ? generateReadingQuiz(enPassage, koPassage, lessonKey) : [];
-  }, [enPassage, koPassage, lessonKey]);
+  const questions = useMemo(
+    () => (SHOW_GENERATED_QUIZ ? generateReadingQuiz(enPassage, koPassage, lessonKey) : []),
+    [enPassage, koPassage, lessonKey],
+  );
 
-  const clozeItems: ClozeItem[] = useMemo(() => {
-    return generateClozeItems(sentencePairs);
-  }, [sentencePairs]);
+  const ownsPlayer = Boolean(passagePlayers && passagePlayers.length > 0);
+  const playerAligned = Boolean(passagePlayers && passagePlayers[0] && passagePlayers[0].fallbackSentences.length === sentencePairs.length);
 
-  // Current active mode (4-Step Pedagogical reading flow)
-  const [activeTab, setActiveTab] = useState<"speed" | "voca" | "quiz" | "dual">("speed");
-  const [fontSize, setFontSize] = useState<"normal" | "large" | "xlarge">("normal");
-  const [showNumbers, setShowNumbers] = useState(true);
-  const [dualMobileView, setDualMobileView] = useState<"both" | "en" | "ko">("both");
+  // ------------------------------------------------------------------------------------------------------------
+  // State
+  // ------------------------------------------------------------------------------------------------------------
+  const [step, setStep] = useState<StepNo>(1);
+  const [prefs, setPrefs] = useState<ReadingPrefs>({ size: "normal", numbers: true });
+  const [copied, setCopied] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [seenCompleted, setSeenCompleted] = useState(false);
 
-  // Active playing audio state
-  const [playingSentence, setPlayingSentence] = useState<number | null>(null);
-  const [playingWord, setPlayingWord] = useState<string | null>(null);
+  // sound — one key at a time: "s:<sentence index>" or "w:<word order>"
+  const [playing, setPlaying] = useState<string | null>(null);
+  const playingSawRef = useRef(false);
 
-  // --- STEP 1: WPM Speed Reading Isolated State (Micro-Render Optimization) ---
-  const [measuredWpm, setMeasuredWpm] = useState<number | null>(null);
-  const [measuredSeconds, setMeasuredSeconds] = useState<number | null>(null);
-  const [bestWpm, setBestWpm] = useState<number | null>(null);
-  const [wpmTooFast, setWpmTooFast] = useState(false);
+  // Step 1 and Step 4's timed readings
+  const [speed, setSpeed] = useState<SpeedRecord>({ first: null, again: null });
+  const [legacyRead, setLegacyRead] = useState(false);
+  const [running, setRunning] = useState<"first" | "again" | null>(null);
+  const runRef = useRef<ReadingRun | null>(null);
+  const [outcome, setOutcome] = useState<RunOutcome | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
 
-  const wpmStorageKey = `kig:reading:wpm:${lessonKey}`;
+  // Step 2
+  const [words, setWords] = useState<WordsRecord>({ marks: {}, missed: [] });
+  const wordsRef = useRef<WordsRecord>(words);
+  const [revealed, setRevealed] = useState<Record<number, boolean>>({});
+  const [unfolded, setUnfolded] = useState<Record<number, boolean>>({});
+  const answeredRef = useRef<Set<number>>(new Set());
 
-  // Restore previous best WPM
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(wpmStorageKey);
-      if (raw) {
-        const val = parseInt(raw, 10);
-        if (!isNaN(val)) setBestWpm(val);
-      }
-    } catch {
-      // ignore
-    }
-  }, [wpmStorageKey]);
+  // Step 3 — one blank at a time
+  const [clozeRound, setClozeRound] = useState(0);
+  const [clozeUnknown, setClozeUnknown] = useState<number[]>([]);
+  const [clozeIndex, setClozeIndex] = useState(0);
+  const [clozePicks, setClozePicks] = useState<Record<number, number>>({});
+  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
 
-  const handleFinishWpm = useCallback((wpm: number | null, seconds: number) => {
-    setMeasuredSeconds(seconds);
-    if (wpm === null) {
-      // Too fast to be a reading measurement: show why, and leave the personal
-      // best untouched.
-      setMeasuredWpm(null);
-      setWpmTooFast(true);
-      return;
-    }
-    setWpmTooFast(false);
-    setMeasuredWpm(wpm);
-    setBestWpm((prev) => (!prev || wpm > prev ? wpm : prev));
-  }, []);
+  // Step 4
+  const [dualView, setDualView] = useState<"both" | "en" | "ko">("both");
+  const [shownKo, setShownKo] = useState<Record<number, boolean>>({});
+  const [activeRow, setActiveRow] = useState<number | null>(null);
+  const [gloss, setGloss] = useState<{ row: number; order: number } | null>(null);
+  const [rereading, setRereading] = useState(false);
 
-  const handleResetWpm = useCallback(() => {
-    setMeasuredWpm(null);
-    setMeasuredSeconds(null);
-    setWpmTooFast(false);
-  }, []);
-
-  // --- STEP 2: Vocabulary Tooltip & Reveal State ---
-  const [revealedVocaMeaning, setRevealedVocaMeaning] = useState<Record<string, boolean>>({});
-
-  // --- STEP 3: Quiz & Cloze Answer States ---
-  // `userAnswers` belongs to the quiz block. Live code the moment
-  // SHOW_GENERATED_QUIZ is true — do not delete it as dead.
-  const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
-  const [clozeAnswers, setClozeAnswers] = useState<Record<number, number>>({});
-  const [readingScore, setReadingScore] = useState<number | null>(null);
-
-  // --- Dual Mode Pinned Sentence & 1:1 Live Hover Translation State ---
-  const [pinnedSentence, setPinnedSentence] = useState<number | null>(null);
-  const [hoveredSentenceId, setHoveredSentenceId] = useState<string | null>(null);
-
-  // Active sentence either hovered or pinned
-  const activeSentence = useMemo(() => {
-    if (hoveredSentenceId) {
-      return sentencePairs.find((s) => s.id === hoveredSentenceId) || null;
-    }
-    if (pinnedSentence !== null && sentencePairs[pinnedSentence]) {
-      return sentencePairs[pinnedSentence];
-    }
-    return null;
-  }, [hoveredSentenceId, pinnedSentence, sentencePairs]);
-
-  // --- Notes state ---
+  // the memo (kept exactly as it was stored — kig:reading:notes:<page key>)
   const [notes, setNotes] = useState("");
   const [savedAt, setSavedAt] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
-  const [restored, setRestored] = useState(false);
+  const [notesRestored, setNotesRestored] = useState(false);
+  const [memoOpen, setMemoOpen] = useState(false);
+  const lastSavedNotesRef = useRef<string | null>(null);
   const notesStorageKey = `kig:reading:notes:${lessonKey}`;
 
-  // FUN-07: what was last written, so restoring a note is not itself "a save"
-  // and a fresh visit does not show "자동 저장됨" before anything was typed.
-  const lastSavedNotesRef = useRef<string | null>(null);
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  const passageRef = useRef<HTMLDivElement | null>(null);
+  const resultRef = useRef<HTMLDivElement | null>(null);
+  const rereadRef = useRef<HTMLDivElement | null>(null);
+  const lastUserScrollRef = useRef(0);
+
+  // a lesson seen completed on this screen stays completable after '완료 취소' (like VOCA · STUDENT); adjusted while rendering
+  if (lessonCompleted && !seenCompleted) setSeenCompleted(true);
+
+  // ------------------------------------------------------------------------------------------------------------
+  // This device's records (src/lib/readingLearning.ts) — read once per lesson
+  // ------------------------------------------------------------------------------------------------------------
+  useEffect(() => {
+    let speedRaw: string | null = null;
+    let wordsRaw: string | null = null;
+    let prefsRaw: string | null = null;
+    let legacy = false;
+    try {
+      speedRaw = window.localStorage.getItem(speedStorageKey(mainId));
+      wordsRaw = window.localStorage.getItem(wordsStorageKey(mainId));
+      prefsRaw = window.localStorage.getItem(PREFS_STORAGE_KEY);
+      legacy =
+        legacyBestCounts(window.localStorage.getItem(legacyWpmStorageKey(`reading/${mainId}`))) ||
+        legacyBestCounts(window.localStorage.getItem(legacyWpmStorageKey(lessonKey)));
+    } catch {
+      // storage unavailable: the lesson works, nothing is remembered
+    }
+    setSpeed(parseSpeedRecord(speedRaw));
+    const record = parseWordsRecord(wordsRaw, keywords.length);
+    wordsRef.current = record;
+    setWords(record);
+    setPrefs(parsePrefs(prefsRaw));
+    setLegacyRead(legacy);
+    setLoaded(true);
+  }, [mainId, lessonKey, keywords.length]);
 
   useEffect(() => {
     let restoredNotes = "";
@@ -380,19 +504,16 @@ export function ReadingLearningView({
       // ignore
     }
     lastSavedNotesRef.current = restoredNotes;
-    setRestored(true);
+    // a memo that holds something is shown open (RD-U18 — folded only when empty)
+    setMemoOpen(restoredNotes.length > 0);
+    setNotesRestored(true);
   }, [notesStorageKey]);
 
   useEffect(() => {
-    if (!restored || notes === lastSavedNotesRef.current) return;
+    if (!notesRestored || notes === lastSavedNotesRef.current) return;
     const timer = setTimeout(() => {
       try {
-        const at = new Date().toLocaleString("ko-KR", {
-          month: "numeric",
-          day: "numeric",
-          hour: "numeric",
-          minute: "2-digit",
-        });
+        const at = new Date().toLocaleString("ko-KR", { month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit" });
         window.localStorage.setItem(notesStorageKey, JSON.stringify({ notes, at }));
         lastSavedNotesRef.current = notes;
         setSavedAt(at);
@@ -401,914 +522,1181 @@ export function ReadingLearningView({
       }
     }, 400);
     return () => clearTimeout(timer);
-  }, [notes, notesStorageKey, restored]);
+  }, [notes, notesStorageKey, notesRestored]);
 
-  // Clean speech synthesis on unmount
+  const changePrefs = (next: ReadingPrefs) => {
+    setPrefs(next);
+    try {
+      window.localStorage.setItem(PREFS_STORAGE_KEY, serializePrefs(next));
+    } catch {
+      // ignore
+    }
+  };
+
+  const commitWords = useCallback(
+    (next: WordsRecord) => {
+      wordsRef.current = next;
+      setWords(next);
+      try {
+        window.localStorage.setItem(wordsStorageKey(mainId), serializeWordsRecord(next));
+      } catch {
+        // ignore
+      }
+    },
+    [mainId],
+  );
+
+  // ------------------------------------------------------------------------------------------------------------
+  // The common learning engine — the only two calls this view makes (공통-학습-엔진.md §2 · §5)
+  // ------------------------------------------------------------------------------------------------------------
+  const noteAttempt = useCallback(
+    (order: number, correct: boolean, answer?: string) => {
+      const firstTry = !answeredRef.current.has(order);
+      answeredRef.current.add(order);
+      try {
+        recordAttempt(READING_LEARNING_PROFILE, readingItemKey(mainId, order), {
+          lessonId: mainId,
+          kind: "word",
+          correct,
+          help: "none",
+          mode: "tap",
+          where: "lesson",
+          firstTry,
+          ...(answer ? { answer } : {}),
+        });
+      } catch {
+        // storage unavailable: the lesson works, only the review forgets
+      }
+    },
+    [mainId],
+  );
+
+  // The lesson is finished (LessonEndBar → ProgressProvider.toggleComplete announces it): the '몰라요' words and the words of
+  // missed blanks come back from the next day (공통-학습-엔진.md §5). Un-completing keeps the record.
   useEffect(() => {
+    const onComplete = (event: Event) => {
+      const detail = (event as CustomEvent<{ course?: string; lessonId?: string; completed?: boolean }>).detail;
+      if (!detail || detail.course !== "reading" || detail.lessonId !== pageId || !detail.completed) return;
+      try {
+        markLessonDone(READING_LEARNING_PROFILE, mainId, reviewEntries(mainId, wordsRef.current));
+      } catch {
+        // storage unavailable: the lesson is complete; only the review forgets
+      }
+    };
+    window.addEventListener(LESSON_COMPLETE_EVENT, onComplete);
+    return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
+  }, [pageId, mainId]);
+
+  // D02 나: '이 강의 학습 완료' opens once the passage was read and timed (or when the lesson was completed) — lessonGate
+  const gateReady = Boolean(speed.first || speed.again) || legacyRead || lessonCompleted || seenCompleted;
+  useEffect(() => {
+    if (!loaded) return;
+    setLessonGate("reading", pageId, { ready: gateReady, reason: READING_GATE_REASON });
+  }, [loaded, gateReady, pageId]);
+  useEffect(() => () => clearLessonGate("reading", pageId), [pageId]);
+
+  // ------------------------------------------------------------------------------------------------------------
+  // Sound — a sentence is lessonSpeechForm(pageKey, sentence) and a word readingWordSpeech(word, meaning), as always
+  // ------------------------------------------------------------------------------------------------------------
+  const speech = useSyncExternalStore(subscribeSpeech, getSpeechSnapshot, getServerSpeechSnapshot);
+  // the whole-lesson player reads the passage's sentences in order (page.tsx fallbackSentences), so its place is the sentence's
+  const queueIndex = playerAligned && speech.speaking && speech.total === sentencePairs.length && speech.index >= 0 ? speech.index : -1;
+
+  // a single sound that ended or was stopped elsewhere (the player, another step, the screen going off) clears its mark
+  useEffect(() => {
+    if (!playing) {
+      playingSawRef.current = false;
+      return;
+    }
+    if (speech.total > 0) {
+      setPlaying(null);
+      return;
+    }
+    if (speech.speaking) playingSawRef.current = true;
+    else if (playingSawRef.current) {
+      playingSawRef.current = false;
+      setPlaying(null);
+    }
+  }, [speech.speaking, speech.total, playing]);
+
+  const stopAll = useCallback(() => {
+    stopSpeech();
+    setPlaying(null);
+  }, []);
+
+  useEffect(() => () => stopSpeech(), []);
+
+  const playSentence = (i: number, toggle = true) => {
+    const pair = sentencePairs[i];
+    if (!pair?.en) return;
+    const key = `s:${i}`;
+    if (toggle && playing === key) {
+      stopAll();
+      return;
+    }
+    stopSpeech();
+    playingSawRef.current = false;
+    setPlaying(key);
+    // a Korean word written in romanization ('Jikji', 'hanji') is said in Korean (lessonSpeechForm — 소유자 결정 2026-09-25)
+    speakText(lessonSpeechForm(lessonKey, pair.en), {
+      lang: "en",
+      rate: 0.95,
+      onEnd: () => setPlaying((cur) => (cur === key ? null : cur)),
+      onError: () => setPlaying((cur) => (cur === key ? null : cur)),
+    });
+  };
+
+  const playWord = (order: number) => {
+    const kw = keywords[order - 1];
+    if (!kw?.word) return;
+    const key = `w:${order}`;
+    if (playing === key) {
+      stopAll();
+      return;
+    }
+    stopSpeech();
+    playingSawRef.current = false;
+    setPlaying(key);
+    // BUG-029: a word whose pronunciation depends on the meaning is said as the card's meaning
+    speakText(readingWordSpeech(kw.word, kw.meaning), {
+      lang: "en",
+      rate: 0.9,
+      onEnd: () => setPlaying((cur) => (cur === key ? null : cur)),
+      onError: () => setPlaying((cur) => (cur === key ? null : cur)),
+    });
+  };
+
+  // A learner scrolling by hand is not pulled back for 2 s (like STUDENT — STU-U09)
+  useEffect(() => {
+    const mark = () => {
+      lastUserScrollRef.current = Date.now();
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End"].includes(event.key)) mark();
+    };
+    window.addEventListener("wheel", mark, { passive: true });
+    window.addEventListener("touchmove", mark, { passive: true });
+    window.addEventListener("keydown", onKey);
     return () => {
-      stopSpeech();
+      window.removeEventListener("wheel", mark);
+      window.removeEventListener("touchmove", mark);
+      window.removeEventListener("keydown", onKey);
     };
   }, []);
 
-  // Audio trigger helpers
-  function playSentenceEn(text: string, idx: number) {
-    if (!text) return;
-    if (playingSentence === idx) {
-      stopSpeech();
-      setPlayingSentence(null);
+  // G04: while the whole lesson plays, its sentence stays in view (the smallest move — "nearest")
+  useEffect(() => {
+    if (queueIndex < 0 || running || (step !== 1 && step !== 4)) return;
+    if (Date.now() - lastUserScrollRef.current < 2000) return;
+    const id = sentencePairs[queueIndex]?.id;
+    if (!id) return;
+    keepInView(rootRef.current?.querySelector(`[data-step-panel="${step}"] [data-sentence-id="${CSS.escape(id)}"]`) ?? null);
+  }, [queueIndex, running, step, sentencePairs]);
+
+  // ------------------------------------------------------------------------------------------------------------
+  // Timed reading (G01 · D31 나 · RD-L04) — performance.now(), paused while the page is hidden
+  // ------------------------------------------------------------------------------------------------------------
+  const readElapsed = useCallback(() => {
+    const run = runRef.current;
+    return run ? clockElapsed(run.clock, performance.now()) : 0;
+  }, []);
+
+  useEffect(() => {
+    if (!running) return;
+    const onVisibility = () => {
+      const run = runRef.current;
+      if (!run) return;
+      if (document.visibilityState === "hidden") clockHide(run.clock, performance.now());
+      else clockShow(run.clock, performance.now());
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, [running]);
+
+  /** the passage's top under the header (G01 — "시작하면 지문 맨 위가 머리줄 밑에") */
+  const bringPassageUp = () => {
+    window.requestAnimationFrame(() => {
+      const el = passageRef.current;
+      if (!el) return;
+      scrollPageTo(el.getBoundingClientRect().top + window.scrollY - headerHeight() - 8);
+    });
+  };
+
+  const startRun = (purpose: "first" | "again") => {
+    unlockMobileAudio();
+    stopAll();
+    setSelected(null);
+    setActiveRow(null);
+    setGloss(null);
+    setOutcome(null);
+    runRef.current = { purpose, clock: clockStart(performance.now()) };
+    setRunning(purpose);
+    if (purpose === "again") setRereading(true);
+    bringPassageUp();
+  };
+
+  const cancelRun = () => {
+    runRef.current = null;
+    setRunning(null);
+    setRereading(false);
+  };
+
+  const finishRun = () => {
+    const run = runRef.current;
+    if (!run) return;
+    const ms = readElapsed();
+    runRef.current = null;
+    setRunning(null);
+    setRereading(false);
+    const wpm = wordsPerMinute(wordCount, ms);
+    const tooFast = wpm > READING_MAX_WPM;
+    setOutcome({ purpose: run.purpose, wpm, ms, hiddenMs: run.clock.hiddenMs, tooFast });
+    if (!tooFast) {
+      const kept = { wpm, ms: Math.round(ms), at: new Date().toISOString() };
+      const next: SpeedRecord = run.purpose === "first" ? { ...speed, first: kept } : { ...speed, again: kept };
+      setSpeed(next);
+      try {
+        window.localStorage.setItem(speedStorageKey(mainId), serializeSpeedRecord(next));
+      } catch {
+        // storage unavailable: the result shows; it is not kept
+      }
+    }
+    // the result appears where the reading ended — keep it on screen
+    window.requestAnimationFrame(() => keepInView(run.purpose === "first" ? resultRef.current : rereadRef.current));
+  };
+
+  // ------------------------------------------------------------------------------------------------------------
+  // Steps
+  // ------------------------------------------------------------------------------------------------------------
+  const unknownOrders = useMemo(
+    () =>
+      Object.entries(words.marks)
+        .filter(([, mark]) => mark === "unknown")
+        .map(([order]) => Number(order))
+        .sort((a, b) => a - b),
+    [words.marks],
+  );
+
+  const switchStep = (n: StepNo) => {
+    if (n === step) return;
+    stopAll();
+    if (runRef.current) cancelRun();
+    setSelected(null);
+    setGloss(null);
+    setActiveRow(null);
+    // a new set of blanks takes the words marked '몰라요' so far — a set in progress stays as it is
+    if (n === 3 && Object.keys(clozePicks).length === 0) setClozeUnknown(unknownOrders);
+    setStep(n);
+  };
+
+  /**
+   * A button that moves to another step presses that step's tab (계획 G05), so the step bar below (LessonStepNavigation,
+   * which follows the tab presses) moves with it, and brings the new step's top under the header.
+   */
+  const goToStep = (n: StepNo) => {
+    const tab = rootRef.current?.querySelector<HTMLButtonElement>(`[data-step-tab="${n}"]`);
+    if (tab) tab.click();
+    else switchStep(n);
+    window.requestAnimationFrame(() => {
+      const start = rootRef.current?.querySelector<HTMLElement>("[data-step-start]");
+      if (start && start.getBoundingClientRect().top < headerHeight()) {
+        scrollPageTo(start.getBoundingClientRect().top + window.scrollY - headerHeight() - 8);
+      }
+    });
+  };
+
+  const copyPassage = () => {
+    if (!enPassage || !navigator.clipboard) return;
+    navigator.clipboard
+      .writeText(enPassage)
+      .then(() => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      })
+      .catch(() => {});
+  };
+
+  // ------------------------------------------------------------------------------------------------------------
+  // Pieces
+  // ------------------------------------------------------------------------------------------------------------
+  const size = SIZE_CLASS[prefs.size];
+
+  const speakerButton = (label: string, key: string, onPress: () => void, action?: string) => {
+    const on = playing === key;
+    return (
+      <button
+        type="button"
+        data-action={action}
+        onClick={onPress}
+        aria-label={on ? `${label} 정지` : `${label} 듣기`}
+        className={iconButton + (on ? " border-ink/40 text-ink" : "")}
+      >
+        {on ? <IconStop /> : <IconSpeaker />}
+      </button>
+    );
+  };
+
+  const pressSentence = (i: number) => {
+    if (running) return;
+    if (selected === i) {
+      setSelected(null);
+      if (playing === `s:${i}`) stopAll();
       return;
     }
-    stopSpeech();
-    setPlayingSentence(idx);
-    // a Korean word written in romanization ('Jikji', 'hanji') is said in Korean (lessonSpeechForm — 소유자 결정 2026-09-25)
-    speakText(lessonSpeechForm(lessonKey, text), {
-      lang: "en",
-      rate: 0.95,
-      onEnd: () => setPlayingSentence((curr) => (curr === idx ? null : curr)),
-      onError: () => setPlayingSentence((curr) => (curr === idx ? null : curr)),
-    });
-  }
+    setSelected(i);
+    playSentence(i, false);
+  };
 
-  function playWordAudio(word: string, meaning?: string) {
-    if (!word) return;
-    if (playingWord === word) {
-      stopSpeech();
-      setPlayingWord(null);
-      return;
-    }
-    stopSpeech();
-    setPlayingWord(word);
-    // BUG-029: a word whose pronunciation depends on the meaning is said as the card's meaning
-    speakText(readingWordSpeech(word, meaning), {
-      lang: "en",
-      rate: 0.9,
-      onEnd: () => setPlayingWord((curr) => (curr === word ? null : curr)),
-      onError: () => setPlayingWord((curr) => (curr === word ? null : curr)),
-    });
-  }
-
-  function handleCopyPassage(txt: string) {
-    if (!txt) return;
-    navigator.clipboard.writeText(txt).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  }
-
-  // Formatting helpers
-  const fontClasses =
-    fontSize === "xlarge"
-      ? "text-[20px] leading-loose"
-      : fontSize === "large"
-      ? "text-[18px] leading-relaxed"
-      : "text-[16px] leading-relaxed";
-
-  return (
-    <div className="flex flex-col gap-6">
-      {/* 1. Header & 5-Step Learning Navigation Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-line bg-surface/90 p-4 shadow-xs">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-600/10 text-[14px]">
-              📖
-            </span>
-            <span className="font-mono text-[11px] font-bold text-ink-soft uppercase tracking-wider">
-              Reading 독해 마스터리 코스웨어
-            </span>
-          </div>
-          <div className="mt-1 flex items-center gap-2 text-[12px] text-ink-faint">
-            <span>총 {wordCount}단어</span>
-            <span>·</span>
-            <span>{sentencePairs.length}개 핵심 문장</span>
-            <span>·</span>
-            <span>권장 속독 시간 약 {expectedSeconds}초</span>
-          </div>
-        </div>
-
-        {/* View Options (Font Size & Number Toggle) */}
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setShowNumbers((prev) => !prev)}
-            title="문장 번호 표시 On/Off"
-            className={
-              "rounded border px-2.5 py-1 font-mono text-[11px] transition-colors cursor-pointer " +
-              (showNumbers
-                ? "border-ink/50 bg-raised font-semibold text-ink"
-                : "border-line bg-surface text-ink-faint hover:text-ink")
-            }
-          >
-            # 번호 {showNumbers ? "ON" : "OFF"}
-          </button>
-
-          <div className="flex items-center rounded border border-line bg-surface text-[11px] font-mono text-ink-soft">
-            <button
-              type="button"
-              onClick={() => setFontSize("normal")}
-              aria-pressed={fontSize === "normal"}
-              className={`min-h-6 px-2 py-1 transition-colors cursor-pointer ${fontSize === "normal" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
-            >
-              보통
-            </button>
-            <button
-              type="button"
-              onClick={() => setFontSize("large")}
-              aria-pressed={fontSize === "large"}
-              className={`min-h-6 border-x border-line px-2 py-1 transition-colors cursor-pointer ${fontSize === "large" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
-            >
-              크게
-            </button>
-            <button
-              type="button"
-              onClick={() => setFontSize("xlarge")}
-              aria-pressed={fontSize === "xlarge"}
-              className={`min-h-6 px-2 py-1 transition-colors cursor-pointer ${fontSize === "xlarge" ? "bg-raised font-bold text-ink" : "hover:text-ink"}`}
-            >
-              특대
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. Step Selector Tabs (Clean, Balanced 4-Pill Grid) */}
-      <nav aria-label="리딩 4단계 학습 단계" className="w-full rounded-2xl border border-line bg-surface p-1.5 shadow-2xs">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-          <button
-            type="button"
-            onClick={() => setActiveTab("speed")}
-            className={
-              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
-              (activeTab === "speed"
-                ? "bg-ink text-surface font-semibold shadow-xs"
-                : "text-ink-soft hover:bg-raised hover:text-ink")
-            }
-          >
-            <span>⏱️</span>
-            <span>Step 1 · 속독 챌린지</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab("voca")}
-            className={
-              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
-              (activeTab === "voca"
-                ? "bg-ink text-surface font-semibold shadow-xs"
-                : "text-ink-soft hover:bg-raised hover:text-ink")
-            }
-          >
-            <span>📚</span>
-            <span>Step 2 · 핵심 어휘</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab("quiz")}
-            className={
-              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
-              (activeTab === "quiz"
-                ? "bg-ink text-surface font-semibold shadow-xs"
-                : "text-ink-soft hover:bg-raised hover:text-ink")
-            }
-          >
-            <span>📝</span>
-            <span>Step 3 · 독해 퀴즈</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab("dual")}
-            className={
-              "flex items-center justify-center gap-1.5 rounded-xl px-2.5 py-2.5 text-[12.5px] sm:text-[13px] font-medium transition-all cursor-pointer whitespace-nowrap select-none " +
-              (activeTab === "dual"
-                ? "bg-ink text-surface font-semibold shadow-xs"
-                : "text-ink-soft hover:bg-raised hover:text-ink")
-            }
-          >
-            <span>⚖️</span>
-            <span>Step 4 · 원문 대조</span>
-          </button>
-        </div>
-      </nav>
-
-      {/* ========================================================================= */}
-      {/* STEP 1: ⏱️ 실전 속독 챌린지 (WPM Speed Reading Stopwatch) */}
-      {/* ========================================================================= */}
-      {activeTab === "speed" && (
-        <section aria-label="Speed Reading" className="flex flex-col gap-6 animate-in fade-in duration-200">
-          {/* Isolated High-Performance Stopwatch Controller */}
-          <WpmStopwatchBar
-            wordCount={wordCount}
-            bestWpm={bestWpm}
-            wpmStorageKey={wpmStorageKey}
-            onFinish={handleFinishWpm}
-            onReset={handleResetWpm}
-          />
-
-          {/* Implausible measurement: explain instead of scoring it */}
-          {wpmTooFast && (
-            <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-5 shadow-xs flex flex-wrap items-center gap-4 animate-in slide-in-from-top-2 duration-300">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500 text-[22px] text-white shadow-xs font-bold">
-                ⏱️
-              </span>
-              <div>
-                <p className="font-mono text-[15px] font-extrabold text-amber-950 dark:text-amber-200">
-                  측정값을 저장하지 않았습니다
-                </p>
-                <p className="text-[12.5px] text-amber-900 dark:text-amber-300 mt-0.5">
-                  {measuredSeconds ?? 0}초 만에 완독하면 {MAX_PLAUSIBLE_WPM} WPM을 넘어 실제 읽기 속도로 볼 수
-                  없습니다. 지문을 끝까지 읽은 뒤 [완독 완료]를 눌러 주세요.
-                </p>
-              </div>
-            </div>
-          )}
-
-          {/* WPM Measurement Result Card */}
-          {measuredWpm !== null && (
-            <div className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-5 shadow-xs flex flex-wrap items-center justify-between gap-4 animate-in slide-in-from-top-2 duration-300">
-              <div className="flex items-center gap-3.5">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-600 text-[22px] text-white shadow-xs font-bold">
-                  ⚡
-                </span>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[22px] font-extrabold text-emerald-950 dark:text-emerald-200 tabular-nums">
-                      {measuredWpm} WPM
-                    </span>
-                    <span className="rounded-full bg-emerald-600 px-2 py-0.5 font-mono text-[11px] font-bold text-white uppercase">
-                      {measuredWpm >= 200
-                        ? "🚀 최상위 속독 수준"
-                        : measuredWpm >= 160
-                        ? "⚡ 권장 속도 완벽 마스터"
-                        : measuredWpm >= 120
-                        ? "📖 양호한 독해 속도"
-                        : "💡 직독직해 집중 훈련 권장"}
-                    </span>
-                  </div>
-                  <p className="text-[12.5px] text-emerald-900 dark:text-emerald-300 mt-0.5">
-                    {wordCount}개 단어를 {measuredSeconds ?? 0}초 만에 완독하셨습니다. (내 최고 기록: {bestWpm} WPM)
-                  </p>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab("quiz")}
-                className="rounded-xl bg-emerald-800 dark:bg-emerald-700 px-4 py-2.5 text-[12.5px] font-bold text-white shadow-xs hover:opacity-90 transition-all cursor-pointer"
-              >
-                독해 이해도 퀴즈 풀기 ➔
-              </button>
-            </div>
-          )}
-
-          {/* Passage Reading Board */}
-          <div className="rounded-2xl border border-line bg-surface p-6 sm:p-8 shadow-xs">
-            <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-3">
-              <div className="flex items-center gap-2">
-                <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink-soft uppercase tracking-wider border border-line">
-                  English Passage
-                </span>
-                <span className="text-[12px] text-ink-faint">
-                  단락 내 문장을 터치하면 즉시 발음이 재생됩니다
-                </span>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => handleCopyPassage(enPassage)}
-                className="rounded border border-line bg-raised px-2.5 py-1 font-mono text-[11px] text-ink-soft hover:text-ink transition-colors cursor-pointer"
-              >
-                {copied ? "✓ 복사 완료" : "지문 전체 복사"}
-              </button>
-            </div>
-
-            {/* Seamless Paragraph Reading with 1:1 Hover Focus */}
-            <div className={`${fontClasses} font-serif tracking-normal text-ink text-justify select-none`}>
-              {sentencePairs.map((pair) => {
-                const isPlaying = playingSentence === pair.index;
-                const isHovered = hoveredSentenceId === pair.id;
-
-                return (
-                  <span
-                    key={pair.id}
-                    data-sentence-id={pair.id}
-                    onMouseEnter={() => setHoveredSentenceId(pair.id)}
-                    onMouseLeave={() => setHoveredSentenceId(null)}
-                    onClick={() => playSentenceEn(pair.en, pair.index)}
-                    className={
-                      "inline cursor-pointer rounded px-1.5 py-0.5 transition-colors duration-100 " +
-                      (isPlaying
-                        ? "bg-red-500/15 text-red-600 dark:text-red-400 font-bold"
-                        : isHovered
-                        ? "bg-amber-200/80 text-amber-950 dark:bg-amber-900/60 dark:text-amber-100 ring-1 ring-amber-400/80"
-                        : "hover:bg-raised/80")
-                    }
-                    title="터치하여 발음 청취 / 마우스 올려 번역 미리보기"
-                  >
-                    {showNumbers && (
-                      <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isHovered ? "text-amber-700 dark:text-amber-300 opacity-100" : "opacity-60"}`}>
-                        [{pair.index + 1}]
-                      </sup>
-                    )}
-                    <span>{pair.en}</span>{" "}
-                  </span>
-                );
-              })}
-            </div>
-
-            {/* Stable height translation hint bar in Step 1 (Zero Layout Shift) */}
-            <div className="mt-5 min-h-[52px] flex items-center">
-              {activeSentence ? (
-                <div className="w-full flex flex-col items-stretch gap-2 rounded-xl border border-amber-300/80 bg-amber-50/90 dark:border-amber-700/60 dark:bg-amber-950/40 px-3.5 py-2.5 text-[13px] animate-in fade-in duration-100 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-                  <div className="flex min-w-0 items-start gap-2">
-                    <span className="shrink-0 rounded bg-amber-200/80 dark:bg-amber-800/60 px-1.5 py-0.5 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-100">
-                      [{activeSentence.index + 1}]
-                    </span>
-                    <span className="min-w-0 whitespace-normal break-keep font-semibold leading-relaxed text-amber-950 dark:text-amber-100">
-                      👉 {activeSentence.ko}
-                    </span>
-                  </div>
-                  <span className="shrink-0 self-end font-mono text-[10.5px] text-ink-faint sm:self-auto">1:1 직독직해</span>
-                </div>
-              ) : (
-                <div className="w-full text-center text-[11.5px] text-ink-faint py-2">
-                  문장에 마우스를 올리면(Hover) 한국어 직독직해 번역이 여기에 표시됩니다.
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ========================================================================= */}
-      {/* STEP 2: 📚 지문 핵심 어휘 (Key Vocabulary Builder) */}
-      {/* ========================================================================= */}
-      {activeTab === "voca" && (
-        <section aria-label="Key Vocabulary" className="flex flex-col gap-6 animate-in fade-in duration-200">
-          <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
-                <span>📚</span> 지문 필수 핵심 어휘 (Lexical Builder)
-              </h2>
-              <p className="mt-0.5 text-[12.5px] text-ink-soft">
-                본문에 등장한 핵심 단어의 발음과 의미를 먼저 파악하고, 단어 카드를 클릭하여 암기 상태를 확인하세요.
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="rounded bg-raised px-2.5 py-0.5 font-mono text-[11.5px] font-semibold text-ink-soft border border-line">
-                총 {keywords.length}개 핵심 어휘
-              </span>
-              <button
-                type="button"
-                onClick={() => {
-                  const allRevealed =
-                    keywords.length > 0 &&
-                    keywords.every((kw) => revealedVocaMeaning[kw.word]);
-                  if (allRevealed) {
-                    setRevealedVocaMeaning({});
-                  } else {
-                    const all: Record<string, boolean> = {};
-                    keywords.forEach((kw) => {
-                      all[kw.word] = true;
-                    });
-                    setRevealedVocaMeaning(all);
+  /**
+   * The passage as flowing text (Step 1, and Step 4 while the same passage is timed again). A sentence is a button:
+   * inline, with vertical padding so its pressable box is at least 44px tall without moving the lines (the passage keeps
+   * a loose line height); its text carries the tint. While timing: plain text, no numbers, no taps (RD-U01 ④).
+   */
+  const renderPassage = (timing: boolean, where: "step1" | "reread") => (
+    <div
+      ref={passageRef}
+      data-passage={where}
+      className="rounded-card border border-line bg-raised px-4 py-4 sm:px-6 sm:py-5"
+    >
+      {timing ? (
+        // one slim line, so the passage's first line still comes up right under the header (G01 — y ≤ 120)
+        <p className="mb-1 text-label font-medium text-ink-soft" role="status">
+          읽는 중 · <ReadingClock read={readElapsed} />
+        </p>
+      ) : null}
+      <div lang="en" className={`${size.en} font-serif leading-loose text-left text-ink sm:max-w-[68ch]`}>
+        {sentencePairs.map((pair, i) => {
+          const learnFirst = where === "step1" && i === 0 ? "" : undefined;
+          if (timing) {
+            return (
+              <Fragment key={pair.id}>
+                <span data-sentence-id={pair.id} data-learn-first={learnFirst} className="px-1.5 py-3.5">
+                  <span data-en>{pair.en}</span>
+                </span>{" "}
+              </Fragment>
+            );
+          }
+          const isSelected = selected === i;
+          const isPlaying = playing === `s:${i}`;
+          const isCurrent = queueIndex === i;
+          return (
+            <Fragment key={pair.id}>
+              <span
+                role="button"
+                tabIndex={0}
+                data-sentence-id={pair.id}
+                data-learn-first={learnFirst}
+                aria-pressed={isSelected}
+                onClick={() => pressSentence(i)}
+                onKeyDown={(event: ReactKeyboardEvent<HTMLSpanElement>) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    // the top player listens for Space on the window — this press is the sentence's (RD-U02 CHECK)
+                    event.preventDefault();
+                    event.stopPropagation();
+                    pressSentence(i);
                   }
                 }}
-                className="rounded-lg border border-line bg-raised px-3 py-1.5 text-[11.5px] font-medium text-ink hover:bg-surface cursor-pointer transition-colors"
+                className="cursor-pointer rounded-control px-1.5 py-3.5"
               >
-                {keywords.length > 0 &&
-                keywords.every((kw) => revealedVocaMeaning[kw.word])
-                  ? "🙈 전체 뜻 가리기"
-                  : "💡 전체 뜻 보기"}
+                {prefs.numbers ? (
+                  <sup aria-hidden className="mr-0.5 font-sans text-caption tabular-nums text-ink-faint">
+                    {i + 1}
+                  </sup>
+                ) : null}
+                <span data-en className={`box-decoration-clone rounded-sm ${isPlaying ? PLAYING_MARK : isSelected || isCurrent ? TINT : ""}`}>
+                  {pair.en}
+                </span>
+              </span>{" "}
+              {isSelected ? (
+                // a phone opens the Korean line right under the sentence (RD-U11); from sm it is in the panel below
+                <span data-ko-line lang="ko" className="my-1 block rounded-control bg-sunken px-3 py-2 font-sans text-label text-ink sm:hidden">
+                  {pair.ko}
+                </span>
+              ) : null}
+            </Fragment>
+          );
+        })}
+      </div>
+      {timing ? (
+        // where the reading ends — the eyes are already here (RD-U01 ②)
+        <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-center">
+          <button type="button" data-action="finish-reading" onClick={finishRun} className={`${filledButton} min-h-12 w-full sm:w-auto sm:px-6`}>
+            <IconCheck />
+            <span>다 읽었어요</span>
+          </button>
+          <button type="button" data-action="cancel-reading" onClick={cancelRun} className={`${quietButton} w-full sm:w-auto`}>
+            그만두기
+          </button>
+        </div>
+      ) : null}
+    </div>
+  );
+
+  /** one line against the target (RD-L04 ② — instead of the grades '최상위 속독 수준' …, whose steps did not match the target) */
+  const verdictLine = (wpm: number) => {
+    const verdict = targetVerdict(wpm);
+    if (timeOnly) {
+      const goal = formatApprox(targetMs(wordCount));
+      return verdict === "faster" ? `목표 시간(약 ${goal})보다 빨라요.` : verdict === "slower" ? `목표 시간(약 ${goal})보다 오래 걸렸어요.` : `목표 시간(약 ${goal})과 비슷해요.`;
+    }
+    const goal = `1분에 ${READING_TARGET_WPM}단어`;
+    return verdict === "faster" ? `목표(${goal})보다 빨라요.` : verdict === "slower" ? `목표(${goal})보다 느려요.` : `목표(${goal})와 비슷해요.`;
+  };
+
+  const tooFastNotice = (o: RunOutcome) => (
+    <p data-too-fast role="status" className="border-l-2 border-danger pl-3 text-label text-ink">
+      이해하며 읽기엔 너무 빨라요 — 1분에 {READING_MAX_WPM}단어를 넘었어요({formatDuration(o.ms)}). 끝까지 읽은 뒤 &lsquo;다 읽었어요&rsquo;를 눌러
+      주세요. 이번 기록은 저장하지 않았어요.
+    </p>
+  );
+
+  const hiddenNote = (o: RunOutcome | null) =>
+    o && o.hiddenMs >= 500 ? <p className="text-caption text-ink-soft">다른 화면에 있던 {formatDuration(o.hiddenMs)}는 빼고 쟀어요.</p> : null;
+
+  const playerBlock = (where: "step1" | "step4") =>
+    ownsPlayer && passagePlayers ? (
+      // the page's whole-lesson player, here (A10 · D01 나) — the same sentences and voice as the top one, which is hidden
+      <div data-reading-player={where} className="flex flex-col gap-1.5">
+        <p className="text-label text-ink-soft">{where === "step1" ? "이제 들으며 다시 읽어 보세요." : "들으면서 읽으면 지금 문장에 색이 칠해져요."}</p>
+        {passagePlayers.map((p) => (
+          <AudioPlayer key={p.id} src={p.src} fallbackSentences={p.fallbackSentences} lang={p.lang} gender={p.gender} label={p.label} />
+        ))}
+      </div>
+    ) : null;
+
+  // --- Step 1 ------------------------------------------------------------------------------------------------------
+  function renderStep1() {
+    const timing = running === "first";
+    const first = speed.first;
+    const read = Boolean(first) || legacyRead;
+    const shown = outcome && outcome.purpose === "first" ? outcome : null;
+    return (
+      <section data-step-panel="1" aria-label="속독" className="flex flex-col gap-3">
+        {!timing ? (
+          <p className="text-label text-ink-soft">
+            {read
+              ? "문장을 누르면 해석과 소리가 나와요. 다시 재려면 '다시 재기'를 누르세요."
+              : "'읽기 시작'을 누르고 뜻을 파악하며 평소 속도로 읽으세요. 다 읽으면 '다 읽었어요'를 누르세요."}
+          </p>
+        ) : null}
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+            {!timing && !first ? (
+              <button type="button" data-action="start-reading" onClick={() => startRun("first")} className={`${filledButton} min-h-12 px-5`}>
+                <span>읽기 시작</span>
+              </button>
+            ) : null}
+            <p data-passage-meta className="text-label tabular-nums text-ink-soft">
+              {wordCount}단어 · {sentencePairs.length}문장 · 목표 약 {formatApprox(targetMs(wordCount))}
+            </p>
+          </div>
+          <ViewMenu prefs={prefs} onChange={changePrefs} onCopy={copyPassage} copied={copied} />
+        </div>
+
+        {renderPassage(timing, "step1")}
+
+        {!timing ? (
+          <div data-ko-panel className="hidden min-h-12 sm:block" aria-live="polite">
+            {selected !== null && sentencePairs[selected] ? (
+              <div className="flex items-start gap-3 rounded-card border border-line bg-raised px-4 py-2">
+                <span className="pt-2.5 text-label font-semibold tabular-nums text-ink-soft">{selected + 1}</span>
+                <p lang="ko" className="min-w-0 flex-1 py-2 text-body text-ink">
+                  {sentencePairs[selected].ko}
+                </p>
+                {speakerButton(`${selected + 1}번 문장`, `s:${selected}`, () => playSentence(selected))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
+        {shown?.tooFast ? tooFastNotice(shown) : null}
+
+        {!timing && first ? (
+          <div ref={resultRef} data-speed-result role="status" className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
+            <p className="text-caption text-ink-soft">첫 읽기</p>
+            <p className="text-title font-semibold tabular-nums text-ink">{timeOnly ? formatDuration(first.ms) : `${first.wpm} WPM`}</p>
+            <p className="text-label tabular-nums text-ink-soft">
+              {wordCount}단어 · {formatDuration(first.ms)}
+            </p>
+            <p className="text-label text-ink">{verdictLine(first.wpm)}</p>
+            {hiddenNote(shown)}
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <button type="button" data-action="to-step2" onClick={() => goToStep(2)} className={`${filledButton} sm:flex-1`}>
+                <span>다음: Step 2 핵심 어휘</span>
+                <IconChevronRight />
+              </button>
+              <button type="button" data-action="measure-again" onClick={() => startRun("first")} className={`${outlineButton} sm:flex-1`}>
+                <IconRepeat />
+                <span>다시 재기</span>
               </button>
             </div>
           </div>
+        ) : null}
 
-          {/* Vocabulary Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5">
-            {keywords.map((kw, i) => {
-              const isPlaying = playingWord === kw.word;
-              const isRevealed = revealedVocaMeaning[kw.word] === true;
+        {!timing && read ? playerBlock("step1") : null}
+      </section>
+    );
+  }
 
-              return (
-                <div
-                  key={kw.word + i}
-                  onClick={() => playWordAudio(kw.word, kw.meaning)}
-                  className="rounded-2xl border border-line bg-surface p-4 shadow-2xs hover:border-line-strong hover:shadow-xs transition-all cursor-pointer flex flex-col justify-between gap-3 group select-none"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
-                      <span className="font-mono text-[11px] font-bold text-emerald-700 bg-emerald-500/10 px-1.5 py-0.5 rounded">
-                        {kw.pos}
-                      </span>
-                      <span className="text-[17px] font-bold text-ink group-hover:text-primary transition-colors">
-                        {kw.word}
-                      </span>
-                      {/*
-                        The card names the word as the passage writes it ("spent", "setting"),
-                        but the gloss is a dictionary form ("(시간을) 보내다"). 1,121 of the 3,584
-                        cards are inflected; without the base form, "setting v. 두다" reads like a
-                        wrong part of speech. The base form stands beside it, small.
-                      */}
-                      {kw.lemma && kw.lemma.toLowerCase() !== kw.word.toLowerCase() && (
-                        <span className="whitespace-nowrap text-[12px] font-medium text-ink-faint" title="기본형">
-                          ← {kw.lemma}
-                        </span>
-                      )}
-                    </div>
+  // --- Step 2 ------------------------------------------------------------------------------------------------------
+  const setMark = (order: number, mark: WordMark) => {
+    const cur = wordsRef.current;
+    if (cur.marks[order] === mark) return;
+    commitWords({ ...cur, marks: { ...cur.marks, [order]: mark } });
+    // a self-report: '몰라요' is a wrong answer for the engine, '알아요' a right one (both inside the lesson — never a pass)
+    noteAttempt(order, mark === "known");
+    if (mark === "known") setUnfolded((prev) => ({ ...prev, [order]: false }));
+  };
 
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        playWordAudio(kw.word, kw.meaning);
-                      }}
-                      className={`flex h-8 w-8 items-center justify-center rounded-full transition-all cursor-pointer ${
-                        isPlaying
-                          ? "bg-red-500 text-white"
-                          : "bg-raised text-ink-soft hover:bg-ink hover:text-surface"
-                      }`}
-                      title="발음 듣기"
-                    >
-                      <span className="text-[12px]">{isPlaying ? "⏹️" : "🔊"}</span>
-                    </button>
-                  </div>
-
-                  <div className="border-t border-line/60 pt-2 flex items-center justify-between">
-                    {isRevealed ? (
-                      <span className="text-[13.5px] font-medium text-ink animate-in fade-in">
-                        {kw.meaning}
-                      </span>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setRevealedVocaMeaning((prev) => ({ ...prev, [kw.word]: true }));
-                        }}
-                        className="inline-flex min-h-6 items-center text-[12px] text-ink-faint hover:text-ink cursor-pointer underline decoration-dotted"
-                      >
-                        💡 뜻 확인하기
-                      </button>
-                    )}
-                    <span className="text-[10.5px] font-mono text-ink-faint">
-                      #{String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* ========================================================================= */}
-      {/* STEP 3: 📝 독해력 실전 퀴즈 & 클로즈 (Comprehension Check & Cloze Drill) */}
-      {/* ========================================================================= */}
-      {activeTab === "quiz" && (
-        <section aria-label="Reading Quizzes" className="flex flex-col gap-6 animate-in fade-in duration-200">
-          {/*
-            KIG-008 / CNT-08: the generated comprehension questions are off (see
-            quizFlags.ts). While they are off, neither the banner announcing
-            them nor a "준비 중" note is shown — the audit read the note as an
-            unfinished product. The step keeps its cloze drill. Keyed to the
-            FLAG, so flipping it brings banner and questions back together.
-          */}
-          {SHOW_GENERATED_QUIZ ? (
-            <>
-              {/* Header Banner */}
-              <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
-                    <span>📝</span> 독해력 실전 인출 테스트 (Retrieval Practice)
-                  </h2>
-                  <p className="mt-0.5 text-[12.5px] text-ink-soft">
-                    눈으로만 읽는 독해는 기억에 남지 않습니다. 지문의 주제와 세부 내용을 스스로 정리해 보세요.
-                  </p>
-                </div>
-                <span className="rounded bg-primary/10 px-2.5 py-0.5 font-mono text-[11.5px] font-bold text-primary border border-primary/20">
-                  인출 연습 (Retrieval Practice)
-                </span>
-              </div>
-
-              {/* Part 1: Multiple Choice Comprehension Questions */}
-              <div className="flex flex-col gap-4">
-            {questions.map((q) => {
-              const selectedIdx = userAnswers[q.id];
-              const isAnswered = selectedIdx !== undefined;
-              const isCorrect = selectedIdx === q.answerIndex;
-
-              return (
-                <div key={q.id} className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-col gap-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="text-[15px] font-bold text-ink leading-snug">{q.question}</h3>
-                    {isAnswered && (
-                      <span
-                        className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold shrink-0 ${
-                          isCorrect
-                            ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30"
-                            : "bg-red-500/15 text-red-700 dark:text-red-300 border border-red-500/30"
-                        }`}
-                      >
-                        {isCorrect ? "✓ 정답입니다!" : "✕ 오답입니다"}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Options */}
-                  <div className="flex flex-col gap-2">
-                    {q.options.map((opt, oIdx) => {
-                      const isChosen = selectedIdx === oIdx;
-                      const isRightOption = oIdx === q.answerIndex;
-
-                      let btnStyle = "border-line bg-surface text-ink hover:bg-raised";
-                      if (isAnswered) {
-                        if (isRightOption) {
-                          btnStyle = "border-emerald-500 bg-emerald-500/10 text-emerald-950 dark:text-emerald-200 font-bold ring-1 ring-emerald-500/40";
-                        } else if (isChosen && !isRightOption) {
-                          btnStyle = "border-red-500 bg-red-500/10 text-red-900 dark:text-red-200 line-through";
-                        } else {
-                          btnStyle = "border-line/60 opacity-60 text-ink-soft";
-                        }
-                      }
-
-                      return (
-                        <button
-                          key={oIdx}
-                          type="button"
-                          onClick={() => {
-                            if (!isAnswered) {
-                              setUserAnswers((prev) => ({ ...prev, [q.id]: oIdx }));
-                            }
-                          }}
-                          disabled={isAnswered}
-                          className={`flex items-center gap-3 rounded-xl border p-3.5 text-left text-[13.5px] transition-all cursor-pointer ${btnStyle}`}
-                        >
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-current font-mono text-[11px] font-bold">
-                            {oIdx + 1}
-                          </span>
-                          <span className="flex-1">{opt}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {/* Explanation after answering */}
-                  {isAnswered && (
-                    <div className="rounded-xl border border-line/80 bg-raised/40 p-4 text-[13px] text-ink-soft leading-relaxed animate-in fade-in">
-                      <span className="font-bold text-ink mr-2">💡 해설:</span>
-                      {q.explanation}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-              </div>
-            </>
-          ) : null}
-
-          {/* Part 2: Cloze Keyword Fill-in Drills */}
-          {clozeItems.length > 0 && (
-            <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-col gap-4">
-              <div className="flex items-center justify-between border-b border-line/60 pb-3">
-                <div>
-                  <h3 className="text-[15px] font-bold text-ink flex items-center gap-2">
-                    <span>🔤</span> 핵심 키워드 클로즈(Cloze) 빈칸 완성
-                  </h3>
-                  <p className="mt-0.5 text-[12px] text-ink-soft">
-                    지문의 문맥을 보고 빈칸에 들어갈 가장 알맞은 어휘를 고르세요.
-                  </p>
-                </div>
-                <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-medium text-ink-soft">
-                  {clozeItems.length}문항
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {clozeItems.map((ci) => {
-                  const selectedIdx = clozeAnswers[ci.id];
-                  const isAnswered = selectedIdx !== undefined;
-                  const isCorrect = selectedIdx === ci.answerIndex;
-
-                  return (
-                    <div key={ci.id} className="rounded-xl border border-line/70 bg-raised/20 p-4 flex flex-col gap-3">
-                      <p className="text-[15.5px] font-serif leading-relaxed text-ink">
-                        {ci.maskedSentence}
-                      </p>
-
-                      <div className="flex flex-wrap items-center gap-2">
-                        {ci.options.map((opt, oIdx) => {
-                          const isChosen = selectedIdx === oIdx;
-                          const isRight = oIdx === ci.answerIndex;
-
-                          let btnClass = "border-line bg-surface text-ink hover:bg-raised";
-                          if (isAnswered) {
-                            if (isRight) {
-                              btnClass = "border-emerald-500 bg-emerald-500/15 text-emerald-900 dark:text-emerald-300 font-bold";
-                            } else if (isChosen) {
-                              btnClass = "border-red-500 bg-red-500/15 text-red-900 dark:text-red-300 line-through";
-                            } else {
-                              btnClass = "border-line/60 opacity-50";
-                            }
-                          }
-
-                          return (
-                            <button
-                              key={oIdx}
-                              type="button"
-                              onClick={() => {
-                                if (!isAnswered) {
-                                  setClozeAnswers((prev) => ({ ...prev, [ci.id]: oIdx }));
-                                }
-                              }}
-                              disabled={isAnswered}
-                              className={`rounded-lg border px-3 py-1.5 font-mono text-[12.5px] transition-all cursor-pointer ${btnClass}`}
-                            >
-                              {opt}
-                            </button>
-                          );
-                        })}
-                      </div>
-
-                      {isAnswered && (
-                        <div className="text-[12px] font-mono text-ink-soft pt-1">
-                          {isCorrect ? "✓ 정답입니다!" : `❌ 정답은 '${ci.missingWord}' 입니다.`}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Part 3: Voice Speaking Test */}
-          {sentencePairs[0] && (
-            <div className="rounded-2xl border border-line bg-surface p-5 shadow-xs flex flex-col gap-3">
-              <div>
-                <h3 className="text-[15px] font-bold text-ink flex items-center gap-2">
-                  <span>🎙️</span> 지문 대표 문장 낭독 & 발음 채점
-                </h3>
-                <p className="mt-0.5 text-[12px] text-ink-soft">
-                  직접 소리 내어 지문의 핵심 문장을 읽고, 인식된 문장이 원문과 얼마나 일치하는지 확인해보세요.
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-line/60 bg-raised/30 p-3.5 text-[15px] font-serif text-ink">
-                {sentencePairs[0].en}
-              </div>
-
-              <VoiceSpeakingTester
-                targetText={sentencePairs[0].en}
-                buttonLabel="🎙️ 마이크 켜고 소리 내어 읽기"
-                onSuccess={(transcript, score) => {
-                  setReadingScore(score);
-                }}
-              />
-            </div>
-          )}
-        </section>
-      )}
-
-      {/* ========================================================================= */}
-      {/* ========================================================================= */}
-      {/* STEP 4: ⚖️ 원문 vs 완역 좌우 대조 (Dual Passage Review) */}
-      {/* ========================================================================= */}
-      {activeTab === "dual" && (
-        <section aria-label="Side-by-Side Dual Reading" className="flex flex-col gap-4 animate-in fade-in duration-200">
-          {/* Top Invariant Status Header Bar & Mobile View Switcher */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-line/70 bg-surface px-4 py-2.5 text-[12px] text-ink-soft shadow-2xs">
-            <div className="flex items-center gap-2">
-              <span className="text-[13px]">⚖️</span>
-              <span className="font-medium text-ink">영어 원문과 한글 완역 1:1 대조 리딩</span>
-              <span className="text-ink-faint hidden sm:inline">· 문장을 탭하면 대응 번역이 실시간 동기화됩니다</span>
-            </div>
-
-            <div className="flex items-center justify-between sm:justify-end gap-2">
-              {/* View toggle — FUN-08: it used to be a mobile-only control whose
-                  panels were forced back on at lg, so on a desktop "영어만" did
-                  nothing. It now applies at every width. */}
-              <div className="flex items-center rounded-lg border border-line bg-raised/70 p-0.5 text-[11px] font-medium" role="group" aria-label="대조 보기 선택">
-                <button
-                  type="button"
-                  onClick={() => setDualMobileView("both")}
-                  aria-pressed={dualMobileView === "both"}
-                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "both" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
-                >
-                  양방향
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setDualMobileView("en")}
-                  aria-pressed={dualMobileView === "en"}
-                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "en" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
-                >
-                  영어만
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setDualMobileView("ko")}
-                  aria-pressed={dualMobileView === "ko"}
-                  className={`min-h-6 px-2 py-0.5 rounded cursor-pointer ${dualMobileView === "ko" ? "bg-surface text-ink font-bold shadow-2xs" : "text-ink-soft"}`}
-                >
-                  한글만
-                </button>
-              </div>
-
-              <span className="font-mono text-[10.5px] sm:text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                {sentencePairs.length}개 문장 1:1 정합
-              </span>
-            </div>
-          </div>
-
-          {/* Dual Columns: Left English, Right Korean (the toggle above hides either side) */}
-          <div className={`grid grid-cols-1 gap-6 ${dualMobileView === "both" ? "lg:grid-cols-2" : ""}`}>
-            {/* Left Column: English Passage */}
-            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "ko" ? "hidden" : "block"}`}>
-              <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
-                <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink uppercase tracking-wider border border-line">
-                  English Passage (영어 원문)
-                </span>
-                <span className="font-mono text-[11px] text-ink-faint">탭 발음 듣기 / 번역 확인</span>
-              </div>
-
-              <div className={`${fontClasses} font-serif text-ink leading-loose text-justify select-none`}>
-                {sentencePairs.map((pair) => {
-                  const isSelected = pinnedSentence === pair.index;
-                  const isHovered = hoveredSentenceId === pair.id;
-                  const isPlaying = playingSentence === pair.index;
-                  const isHighlight = isSelected || isHovered || isPlaying;
-
-                  return (
-                    <span
-                      key={pair.id}
-                      data-sentence-id={pair.id}
-                      onMouseEnter={() => setHoveredSentenceId(pair.id)}
-                      onMouseLeave={() => setHoveredSentenceId(null)}
-                      onClick={() => {
-                        setPinnedSentence((prev) => (prev === pair.index ? null : pair.index));
-                        playSentenceEn(pair.en, pair.index);
-                      }}
-                      className={
-                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-colors duration-100 " +
-                        (isHighlight
-                          ? "bg-amber-200/90 text-amber-950 dark:bg-amber-900/60 dark:text-amber-100 ring-1 ring-amber-400/80"
-                          : "hover:bg-raised/80 hover:text-ink")
-                      }
-                    >
-                      {showNumbers && (
-                        <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isHighlight ? "text-amber-700 dark:text-amber-300 opacity-100" : "opacity-70"}`}>
-                          [{pair.index + 1}]
-                        </sup>
-                      )}
-                      <span>{pair.en}</span>{" "}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Right Column: Korean Passage */}
-            <div className={`rounded-2xl border border-line bg-surface p-4 sm:p-6 shadow-xs ${dualMobileView === "en" ? "hidden" : "block"}`}>
-              <div className="mb-4 flex items-center justify-between border-b border-line/70 pb-2.5">
-                <span className="rounded bg-raised px-2 py-0.5 font-mono text-[11px] font-semibold text-ink-soft uppercase tracking-wider border border-line">
-                  Korean Interpretation (한글 완역)
-                </span>
-                <span className="font-mono text-[11px] text-ink-faint">1:1 일치 단락</span>
-              </div>
-
-              <div className={`${fontClasses} text-ink/90 leading-loose text-justify select-none`}>
-                {sentencePairs.map((pair) => {
-                  const isSelected = pinnedSentence === pair.index;
-                  const isHovered = hoveredSentenceId === pair.id;
-                  const isPlaying = playingSentence === pair.index;
-                  const isHighlight = isSelected || isHovered || isPlaying;
-
-                  return (
-                    <span
-                      key={pair.id}
-                      data-sentence-id={pair.id}
-                      onMouseEnter={() => setHoveredSentenceId(pair.id)}
-                      onMouseLeave={() => setHoveredSentenceId(null)}
-                      onClick={() => {
-                        setPinnedSentence((prev) => (prev === pair.index ? null : pair.index));
-                      }}
-                      className={
-                        "inline cursor-pointer rounded px-1.5 py-0.5 transition-colors duration-100 " +
-                        (isHighlight
-                          ? "bg-amber-200/90 text-amber-950 dark:bg-amber-900/60 dark:text-amber-100 ring-1 ring-amber-400/80"
-                          : "hover:bg-raised/80 hover:text-ink")
-                      }
-                    >
-                      {showNumbers && (
-                        <sup className={`mr-1 select-none font-mono text-[10px] font-bold ${isHighlight ? "text-amber-700 dark:text-amber-300 opacity-100" : "opacity-70"}`}>
-                          [{pair.index + 1}]
-                        </sup>
-                      )}
-                      <span>{pair.ko}</span>{" "}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* Synchronized 1:1 Live Translation Overlay Layer (Docked Below Columns & Sticky Bottom HUD) */}
-          <div className="sticky bottom-3 sm:bottom-4 z-20 pointer-events-none mt-2">
-            <div className={`pointer-events-auto mx-auto max-w-3xl rounded-2xl border p-3 sm:p-4 shadow-xl backdrop-blur-md transition-all duration-150 ${
-              activeSentence
-                ? "border-amber-400/90 bg-surface/95 dark:bg-neutral-900/95 ring-1 ring-amber-500/30"
-                : "hidden sm:block border-line/80 bg-surface/90 dark:bg-neutral-900/90 opacity-80"
-            }`}>
-              {activeSentence ? (
-                <div className="flex items-start justify-between gap-3 sm:gap-4 max-h-[35vh] overflow-y-auto">
-                  <div className="flex items-start gap-2.5 sm:gap-3 min-w-0">
-                    <div className="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 font-mono text-[11px] sm:text-[12px] font-bold text-amber-900 dark:text-amber-200">
-                      #{activeSentence.index + 1}
-                    </div>
-                    <div className="flex flex-col gap-0.5 min-w-0">
-                      <div className="font-serif text-[13.5px] sm:text-[14.5px] font-medium text-ink leading-snug">
-                        {activeSentence.en}
-                      </div>
-                      <div className="text-[13px] sm:text-[14px] text-amber-950 dark:text-amber-200 font-semibold leading-relaxed">
-                        👉 {activeSentence.ko}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                    <button
-                      type="button"
-                      onClick={() => playSentenceEn(activeSentence.en, activeSentence.index)}
-                      className="rounded-xl border border-amber-400/60 bg-amber-200/70 dark:bg-amber-800/60 px-2.5 sm:px-3 py-1.5 font-mono text-[10.5px] sm:text-[11px] font-bold text-amber-950 dark:text-amber-100 hover:bg-amber-300 transition-colors cursor-pointer flex items-center gap-1 shadow-2xs"
-                    >
-                      <span>🔊</span>
-                      <span className="hidden xs:inline">발음</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setPinnedSentence(null);
-                        setHoveredSentenceId(null);
-                      }}
-                      className="rounded-lg p-1.5 text-ink-faint hover:text-ink hover:bg-raised transition-colors cursor-pointer"
-                      title="닫기"
-                      aria-label="닫기"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-center justify-between text-[12px] text-ink-soft">
-                  <span className="flex items-center gap-2">
-                    <span>💡</span>
-                    <span>영어 또는 한국어 문장에 마우스를 올리거나 탭하면 해당 문장의 1:1 번역이 여기에 표시됩니다.</span>
-                  </span>
-                  <span className="font-mono text-[11px] text-ink-faint">클릭하면 문장 고정(Pin)</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 6. Reading Notes & Summary Notepad */}
-      <section aria-label="Reading Notes" className="rounded-xl border border-line bg-surface p-4 sm:p-5 shadow-xs">
-        <div className="mb-3.5 flex items-center justify-between border-b border-line/70 pb-2.5">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-[11px] font-semibold uppercase text-ink tracking-wider">
-              📝 독해 핵심 메모 & 어휘 노트 (Reading Notepad)
+  function renderWordRow(kw: KeyWord, order: number) {
+    const mark = words.marks[order];
+    const isRevealed = revealed[order] === true;
+    const context = contexts[order - 1];
+    const lemma = kw.lemma && kw.lemma.toLowerCase() !== kw.word.toLowerCase() ? kw.lemma : null;
+    if (mark === "known" && !unfolded[order]) {
+      return (
+        <li key={order} data-vocab={order} data-mark="known">
+          <button
+            type="button"
+            data-action="unfold"
+            aria-expanded={false}
+            onClick={() => setUnfolded((prev) => ({ ...prev, [order]: true }))}
+            className="flex min-h-12 w-full items-center gap-2 px-4 text-left transition-colors cursor-pointer hover:bg-sunken"
+          >
+            <span lang="en" data-word-text className="min-w-0 flex-1 truncate text-body font-semibold text-ink">
+              {kw.word}
             </span>
-            {savedAt && (
-              <span className="font-mono text-[10.5px] text-ink-faint">
-                자동 저장됨 ({savedAt})
-              </span>
-            )}
+            <span className="flex shrink-0 items-center gap-1 text-caption font-medium text-success">
+              <IconCheck size={14} />
+              알아요
+            </span>
+            <IconChevronDown className="shrink-0 text-ink-soft" />
+          </button>
+        </li>
+      );
+    }
+    return (
+      <li key={order} data-vocab={order} data-mark={mark ?? ""} className="flex flex-col gap-2 px-4 py-3">
+        <div className="flex items-start gap-2">
+          <div className="min-w-0 flex-1">
+            <p lang="en" data-word-text className="text-title-s font-semibold text-ink [overflow-wrap:anywhere]">
+              {kw.word}
+            </p>
+            <p className="text-caption text-ink-faint">
+              {posLabel(kw.pos)}
+              {lemma ? (
+                <>
+                  {" · 기본형 "}
+                  <span lang="en">{lemma}</span>
+                </>
+              ) : null}
+            </p>
           </div>
+          {!isRevealed ? (
+            <button
+              type="button"
+              data-action="reveal"
+              onClick={() => setRevealed((prev) => ({ ...prev, [order]: true }))}
+              aria-label={`${kw.word} 뜻 보기`}
+              className={outlineButton}
+            >
+              뜻 보기
+            </button>
+          ) : null}
+          {speakerButton(kw.word, `w:${order}`, () => playWord(order), "word-audio")}
+        </div>
+        {context ? (
+          <p lang="en" data-context className="text-label text-ink-soft">
+            {context.before}
+            <span className="font-semibold text-ink underline decoration-primary decoration-2 underline-offset-4">{context.match}</span>
+            {context.after}
+          </p>
+        ) : null}
+        {isRevealed ? (
+          <>
+            <p data-meaning className="text-body text-ink">
+              {kw.meaning}
+            </p>
+            <div role="group" aria-label={`${kw.word} — 이 단어를 아나요?`} className="grid grid-cols-2 gap-2">
+              {(["known", "unknown"] as const).map((m) => (
+                <button
+                  key={m}
+                  type="button"
+                  data-action={m}
+                  aria-pressed={mark === m}
+                  onClick={() => setMark(order, m)}
+                  className={
+                    "flex min-h-11 items-center justify-center gap-1.5 rounded-control border px-3 text-label font-semibold transition-colors cursor-pointer " +
+                    (mark === m
+                      ? m === "known"
+                        ? "border-success bg-success/10 text-success"
+                        : "border-danger bg-danger/10 text-danger"
+                      : "border-line bg-raised text-ink hover:bg-sunken")
+                  }
+                >
+                  {mark === m ? m === "known" ? <IconCheck size={14} /> : <IconX size={14} /> : null}
+                  {m === "known" ? "알아요" : "몰라요"}
+                </button>
+              ))}
+            </div>
+          </>
+        ) : null}
+      </li>
+    );
+  }
 
-          <span className="font-mono text-[11px] text-ink-faint">
-            {notes.length}자
-          </span>
+  function renderStep2() {
+    const known = Object.values(words.marks).filter((m) => m === "known").length;
+    const unknown = Object.values(words.marks).filter((m) => m === "unknown").length;
+    const allRevealed = keywords.length > 0 && keywords.every((_, i) => revealed[i + 1]);
+    return (
+      <section data-step-panel="2" aria-label="핵심 어휘" className="flex flex-col gap-3">
+        <p className="text-label text-ink-soft">
+          뜻을 먼저 떠올려 본 뒤 &lsquo;뜻 보기&rsquo;를 누르고 알아요 · 몰라요를 표시하세요. 몰라요 단어는 3단계 빈칸에 먼저 나와요.
+        </p>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p data-vocab-summary className="text-label tabular-nums text-ink-soft">
+            알아요 {known} · 몰라요 {unknown} · 남은 단어 {Math.max(0, keywords.length - known - unknown)}
+          </p>
+          <button
+            type="button"
+            data-action="reveal-all"
+            onClick={() => {
+              if (allRevealed) setRevealed({});
+              else setRevealed(Object.fromEntries(keywords.map((_, i) => [i + 1, true])));
+            }}
+            className={quietButton}
+          >
+            {allRevealed ? "뜻 모두 가리기" : "뜻 모두 보기"}
+          </button>
+        </div>
+        {keywords.length ? (
+          <ul className="flex list-none flex-col divide-y divide-line rounded-card border border-line bg-raised">
+            {keywords.map((kw, i) => renderWordRow(kw, i + 1))}
+          </ul>
+        ) : (
+          <p className="text-label text-ink-soft">이 강의에는 핵심 어휘가 없어요.</p>
+        )}
+      </section>
+    );
+  }
+
+  // --- Step 3 ------------------------------------------------------------------------------------------------------
+  const clozeKeywords = useMemo(() => keywords.map((kw) => ({ word: kw.word, pos: kw.pos })), [keywords]);
+  const clozeItems: ClozeItem[] = useMemo(
+    () => generateClozeItems(sentencePairs, { lessonKey: mainKey, keywords: clozeKeywords, round: clozeRound, unknown: clozeUnknown, alsoFits: clozeAlsoFits ?? {} }),
+    [sentencePairs, mainKey, clozeKeywords, clozeRound, clozeUnknown, clozeAlsoFits],
+  );
+
+  const pickOption = (item: ClozeItem, optionIndex: number) => {
+    if (clozePicks[item.id] !== undefined) return;
+    const correct = optionIndex === item.answerIndex;
+    setClozePicks((prev) => ({ ...prev, [item.id]: optionIndex }));
+    noteAttempt(item.order, correct, correct ? undefined : item.options[optionIndex]);
+    if (!correct) {
+      const cur = wordsRef.current;
+      if (!cur.missed.includes(item.order)) commitWords({ ...cur, missed: [...cur.missed, item.order] });
+    }
+  };
+
+  const nextBlank = () => {
+    stopAll();
+    setClozeIndex((i) => i + 1);
+  };
+
+  const newBlanks = () => {
+    stopAll();
+    setClozeRound((r) => r + 1);
+    setClozeUnknown(unknownOrders);
+    setClozePicks({});
+    setClozeIndex(0);
+  };
+
+  const filledSentence = (item: ClozeItem): ReactNode => {
+    const spans = findWordSpans(item.originalSentence, item.missingWord);
+    const out: ReactNode[] = [];
+    let at = 0;
+    spans.forEach(([start, end], k) => {
+      out.push(item.originalSentence.slice(at, start));
+      out.push(
+        <span key={k} className="font-semibold underline decoration-primary decoration-2 underline-offset-4">
+          {item.originalSentence.slice(start, end)}
+        </span>,
+      );
+      at = end;
+    });
+    out.push(item.originalSentence.slice(at));
+    return out;
+  };
+
+  function renderBlank(item: ClozeItem) {
+    const picked = clozePicks[item.id];
+    const answered = picked !== undefined;
+    const correct = picked === item.answerIndex;
+    const total = clozeItems.length;
+    const right = clozeItems.filter((it) => clozePicks[it.id] === it.answerIndex).length;
+    const last = clozeIndex + 1 >= total;
+    const pair = sentencePairs[item.sentenceIndex];
+    return (
+      <div data-cloze data-order={item.order} data-region={item.region} className="flex flex-col gap-3">
+        <div className="flex items-center justify-between gap-2">
+          <p className="text-label tabular-nums text-ink-soft">
+            {clozeIndex + 1} / {total} · {REGION_LABEL[item.region]}
+          </p>
+          <p className="text-label tabular-nums text-ink-soft">맞힘 {right}</p>
+        </div>
+        <p data-masked lang="en" className="rounded-card border border-line bg-raised px-4 py-4 font-serif text-body text-ink">
+          {item.maskedSentence}
+        </p>
+        <div role="group" aria-label="보기" className="grid grid-cols-2 gap-2">
+          {item.options.map((opt, i) => {
+            const isAnswer = i === item.answerIndex;
+            const isPicked = picked === i;
+            const look = !answered
+              ? "border-line bg-raised text-ink hover:bg-sunken cursor-pointer"
+              : isAnswer
+                ? "border-success bg-success/10 font-semibold text-success"
+                : isPicked
+                  ? "border-danger bg-danger/10 text-danger line-through"
+                  : "border-line bg-raised text-ink-faint";
+            return (
+              <button
+                key={`${item.id}-${i}`}
+                type="button"
+                data-option={i}
+                disabled={answered}
+                onClick={() => pickOption(item, i)}
+                className={`flex min-h-12 w-full items-center justify-between gap-2 rounded-control border px-4 py-2 text-left text-body transition-colors disabled:cursor-default ${look}`}
+              >
+                <span lang="en" className="min-w-0 [overflow-wrap:anywhere]">
+                  {opt}
+                </span>
+                {answered && isAnswer ? <IconCheck className="shrink-0" /> : answered && isPicked ? <IconX className="shrink-0" /> : null}
+              </button>
+            );
+          })}
+        </div>
+        {answered ? (
+          <div data-cloze-feedback={correct ? "correct" : "wrong"} role="status" className={"flex flex-col gap-2 border-l-2 pl-3 " + (correct ? "border-success" : "border-danger")}>
+            <p className={"flex items-center gap-1.5 text-label font-semibold " + (correct ? "text-success" : "text-danger")}>
+              {correct ? <IconCheck size={14} /> : <IconX size={14} />}
+              {correct ? "맞았어요" : "틀렸어요"}
+              {!correct ? (
+                <span className="font-normal text-ink">
+                  {" · 정답 "}
+                  <span lang="en" className="font-semibold">
+                    {item.missingWord}
+                  </span>
+                </span>
+              ) : null}
+            </p>
+            <p data-filled lang="en" className="font-serif text-body text-ink">
+              {filledSentence(item)}
+            </p>
+            {pair ? (
+              <p data-cloze-ko lang="ko" className="text-label text-ink-soft">
+                {pair.ko}
+              </p>
+            ) : null}
+            <div className="flex flex-wrap gap-2">
+              <button type="button" data-action="cloze-listen" onClick={() => playSentence(item.sentenceIndex)} className={outlineButton}>
+                {playing === `s:${item.sentenceIndex}` ? <IconStop /> : <IconSpeaker />}
+                <span>{playing === `s:${item.sentenceIndex}` ? "정지" : "문장 듣기"}</span>
+              </button>
+            </div>
+          </div>
+        ) : null}
+        {answered ? (
+          <button type="button" data-action="cloze-next" onClick={nextBlank} className={`${filledButton} min-h-12 w-full`}>
+            <span>{last ? "결과 보기" : "다음 문제"}</span>
+            <IconChevronRight />
+          </button>
+        ) : null}
+      </div>
+    );
+  }
+
+  function renderBlankResult() {
+    const total = clozeItems.length;
+    const right = clozeItems.filter((it) => clozePicks[it.id] === it.answerIndex).length;
+    return (
+      <div data-cloze-result role="status" className="flex flex-col gap-3">
+        <div className="flex flex-col gap-0.5">
+          <h3 className="text-title-s font-semibold text-ink">빈칸 {total}문제 끝</h3>
+          <p className="text-label tabular-nums text-ink-soft">
+            {right} / {total} 맞힘
+          </p>
+        </div>
+        <ul className="list-none divide-y divide-line rounded-card border border-line bg-raised">
+          {clozeItems.map((it) => {
+            const ok = clozePicks[it.id] === it.answerIndex;
+            return (
+              <li key={it.id} className="flex items-center gap-2 px-4 py-2">
+                <span className={"flex shrink-0 items-center " + (ok ? "text-success" : "text-danger")} aria-label={ok ? "맞음" : "틀림"}>
+                  {ok ? <IconCheck size={16} /> : <IconX size={16} />}
+                </span>
+                <p className="min-w-0 flex-1 text-label text-ink">
+                  <span lang="en" className="font-semibold">
+                    {it.missingWord}
+                  </span>
+                  <span className="text-ink-soft"> · {REGION_LABEL[it.region]}</span>
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+        <button type="button" data-action="cloze-again" onClick={newBlanks} className={`${filledButton} w-full`}>
+          <IconRepeat />
+          <span>다른 빈칸으로 다시 풀기</span>
+        </button>
+      </div>
+    );
+  }
+
+  /** the romanized Korean words of this page (lessonSpeechForm) — any word the learner says there counts (RD-L13 ④) */
+  const readAloudTargets = useMemo(() => {
+    const target = sentencePairs[0]?.en ?? "";
+    const korean = (LESSON_SPEECH_WORDS[lessonKey] || []).filter(([, spoken]) => spoken.includes("⟨")).map(([written]) => written);
+    let slotted = target;
+    for (const written of korean.sort((a, b) => b.length - a.length)) {
+      const spans = findWordSpans(slotted, written);
+      for (const [start, end] of [...spans].reverse()) slotted = `${slotted.slice(0, start)}[[${slotted.slice(start, end)}]]${slotted.slice(end)}`;
+    }
+    return slotted !== target ? [target, slotted] : undefined;
+  }, [sentencePairs, lessonKey]);
+
+  function renderStep3() {
+    const item = clozeItems[clozeIndex];
+    return (
+      <section data-step-panel="3" aria-label="독해 퀴즈" className="flex flex-col gap-3">
+        {SHOW_GENERATED_QUIZ && questions.length ? (
+          <div className="flex flex-col gap-3">
+            {questions.map((q) => {
+              const picked = quizAnswers[q.id];
+              const answered = picked !== undefined;
+              return (
+                <div key={q.id} className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
+                  <h3 className="text-body font-semibold text-ink">{q.question}</h3>
+                  <div className="flex flex-col gap-2">
+                    {q.options.map((opt, oIdx) => (
+                      <button
+                        key={oIdx}
+                        type="button"
+                        disabled={answered}
+                        onClick={() => setQuizAnswers((prev) => ({ ...prev, [q.id]: oIdx }))}
+                        className={
+                          "flex min-h-11 items-center rounded-control border px-3 text-left text-label transition-colors " +
+                          (!answered
+                            ? "border-line bg-raised text-ink hover:bg-sunken cursor-pointer"
+                            : oIdx === q.answerIndex
+                              ? "border-success text-success"
+                              : picked === oIdx
+                                ? "border-danger text-danger line-through"
+                                : "border-line text-ink-faint")
+                        }
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                  {answered ? <p className="text-label text-ink-soft">{q.explanation}</p> : null}
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
+
+        <p className="text-label text-ink-soft">
+          빈칸에 들어갈 단어를 고르세요. 이 글의 핵심 어휘에서 글 앞 · 중간 · 끝 한 문제씩 나오고, 몰라요로 표시한 단어가 먼저 나와요.
+        </p>
+        {clozeItems.length === 0 ? (
+          <p className="text-label text-ink-soft">이 글에서는 빈칸 문제를 만들 수 없어요.</p>
+        ) : item ? (
+          renderBlank(item)
+        ) : (
+          renderBlankResult()
+        )}
+
+        {sentencePairs[0] ? (
+          <div data-read-aloud className="mt-3 flex flex-col gap-3 border-t border-line pt-4">
+            <div>
+              <h3 className="text-body font-semibold text-ink">소리 내어 읽기 · 말하기 인식(단어 일치)</h3>
+              <p className="mt-0.5 text-label text-ink-soft">첫 문장을 소리 내어 읽으면, 알아들은 단어가 원문과 얼마나 맞는지 보여 줘요.</p>
+            </div>
+            <p lang="en" className="rounded-card border border-line bg-raised px-4 py-3 font-serif text-body text-ink">
+              {sentencePairs[0].en}
+            </p>
+            <VoiceSpeakingTester targetText={sentencePairs[0].en} targetTexts={readAloudTargets} onStart={stopAll} buttonLabel="소리 내어 읽기" />
+          </div>
+        ) : null}
+      </section>
+    );
+  }
+
+  // --- Step 4 ------------------------------------------------------------------------------------------------------
+  const englishWithKeywords = (i: number): ReactNode => {
+    const text = sentencePairs[i]?.en ?? "";
+    const marks = keywordMarks[i] || [];
+    if (!marks.length) return text;
+    const out: ReactNode[] = [];
+    let at = 0;
+    for (const m of marks) {
+      out.push(text.slice(at, m.start));
+      const open = gloss?.row === i && gloss.order === m.order;
+      out.push(
+        <span
+          key={`${m.start}-${m.order}`}
+          data-keyword={m.order}
+          className={
+            "cursor-pointer underline decoration-dotted decoration-1 underline-offset-4 " +
+            (open ? "decoration-primary decoration-2 font-semibold" : "decoration-ink-faint")
+          }
+        >
+          {text.slice(m.start, m.end)}
+        </span>,
+      );
+      at = m.end;
+    }
+    out.push(text.slice(at));
+    return out;
+  };
+
+  const toggleGloss = (row: number, order: number) => {
+    setGloss((cur) => (cur && cur.row === row && cur.order === order ? null : { row, order }));
+  };
+
+  const playRow = (i: number) => {
+    if (activeRow === i && playing === `s:${i}`) {
+      stopAll();
+      setActiveRow(null);
+      return;
+    }
+    setActiveRow(i);
+    playSentence(i, false);
+  };
+
+  const onRowClick = (event: ReactMouseEvent<HTMLLIElement>, i: number) => {
+    const target = event.target as HTMLElement;
+    if (target.closest("button, a, input, textarea, select, summary")) return;
+    // a drag that selected text is not a press
+    if (typeof window !== "undefined" && (window.getSelection()?.toString() ?? "").trim()) return;
+    const keyword = target.closest("[data-keyword]");
+    if (keyword) {
+      toggleGloss(i, Number(keyword.getAttribute("data-keyword")));
+      return;
+    }
+    playRow(i);
+  };
+
+  function renderRow(pair: (typeof sentencePairs)[number], i: number) {
+    const isPlaying = playing === `s:${i}`;
+    const isCurrent = queueIndex === i;
+    const koVisible = dualView === "both" || dualView === "ko" || shownKo[i];
+    const rowWords = (keywordMarks[i] || []).map((m) => m.order).filter((o, k, all) => all.indexOf(o) === k);
+    const glossWord = gloss && gloss.row === i ? keywords[gloss.order - 1] : null;
+    return (
+      <li
+        key={pair.id}
+        data-sentence-id={pair.id}
+        data-row={i + 1}
+        onClick={(event) => onRowClick(event, i)}
+        className="grid cursor-pointer grid-cols-[2.75rem_minmax(0,1fr)] gap-x-3 px-2 py-2 sm:grid-cols-[2.75rem_minmax(0,1.7fr)_minmax(0,1fr)] sm:gap-x-4 sm:px-3"
+      >
+        <button
+          type="button"
+          data-action="play-row"
+          aria-pressed={isPlaying}
+          aria-label={isPlaying ? `${i + 1}번 문장 정지` : `${i + 1}번 문장 듣기`}
+          onClick={() => playRow(i)}
+          className={
+            "row-span-2 flex h-11 w-11 items-center justify-center self-start rounded-full border text-label font-semibold tabular-nums transition-colors cursor-pointer sm:row-span-1 " +
+            (isPlaying || isCurrent ? "border-primary bg-primary-soft text-ink" : "border-line bg-raised text-ink-soft hover:bg-sunken hover:text-ink")
+          }
+        >
+          {isPlaying ? <IconStop /> : prefs.numbers ? i + 1 : <IconSpeaker />}
+        </button>
+        {dualView !== "ko" ? (
+          <p lang="en" data-en className={`${size.en} py-2 font-serif leading-relaxed text-ink`}>
+            <span className={`box-decoration-clone rounded-sm ${isPlaying ? PLAYING_MARK : isCurrent ? TINT : ""}`}>{englishWithKeywords(i)}</span>
+          </p>
+        ) : null}
+        {koVisible ? (
+          <p lang="ko" data-ko className={`${size.ko} py-2 text-ink-soft sm:pt-2.5`}>
+            {pair.ko}
+          </p>
+        ) : (
+          <div className="pb-1 sm:pt-0.5">
+            <button
+              type="button"
+              data-action="show-ko"
+              onClick={() => setShownKo((prev) => ({ ...prev, [i]: true }))}
+              className={quietButton + " -ml-3"}
+            >
+              해석 보기
+            </button>
+          </div>
+        )}
+        {glossWord ? (
+          <div data-gloss role="status" className="col-span-full mb-1 flex items-center gap-2 rounded-control bg-sunken px-3 py-1">
+            <p className="min-w-0 flex-1 text-label text-ink">
+              <span lang="en" className="font-semibold">
+                {glossWord.word}
+              </span>
+              <span className="text-ink-soft"> · {posLabel(glossWord.pos)} · </span>
+              {glossWord.meaning}
+            </p>
+            {speakerButton(glossWord.word, `w:${gloss!.order}`, () => playWord(gloss!.order))}
+            <button type="button" aria-label="뜻 닫기" onClick={() => setGloss(null)} className={iconButton}>
+              <IconX />
+            </button>
+          </div>
+        ) : null}
+        {activeRow === i && rowWords.length ? (
+          // the same words as buttons — for a keyboard, and for anyone who did not see that the dotted words open
+          <div className="col-span-full flex flex-wrap items-center gap-1 pb-1" role="group" aria-label={`${i + 1}번 문장의 핵심 어휘`}>
+            <span className="pr-1 text-caption text-ink-soft">핵심 어휘</span>
+            {rowWords.map((order) => (
+              <button
+                key={order}
+                type="button"
+                data-keyword-chip={order}
+                aria-pressed={gloss?.row === i && gloss.order === order}
+                onClick={() => toggleGloss(i, order)}
+                className="inline-flex min-h-11 items-center rounded-control border border-line bg-raised px-3 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
+              >
+                <span lang="en">{keywords[order - 1]?.word}</span>
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </li>
+    );
+  }
+
+  function renderStep4() {
+    if (rereading) {
+      return (
+        <section data-step-panel="4" aria-label="원문 대조" className="flex flex-col gap-3">
+          <p className="text-label text-ink-soft">같은 글을 뜻을 파악하며 평소 속도로 다시 읽으세요. 다 읽으면 &lsquo;다 읽었어요&rsquo;를 누르세요.</p>
+          {renderPassage(running === "again", "reread")}
+        </section>
+      );
+    }
+    const first = speed.first;
+    const again = speed.again;
+    const shown = outcome && outcome.purpose === "again" ? outcome : null;
+    const views: { value: "both" | "en" | "ko"; label: string }[] = [
+      { value: "both", label: "영어 · 한글" },
+      { value: "en", label: "영어만" },
+      { value: "ko", label: "한글만" },
+    ];
+    return (
+      <section data-step-panel="4" aria-label="원문 대조" className="flex flex-col gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-label font-semibold text-ink">영어 원문 · 한글 해석</h2>
+          <div className="flex items-center gap-2">
+            <div className="flex gap-1 rounded-control bg-sunken p-1" role="group" aria-label="대조 보기">
+              {views.map((v) => (
+                <button
+                  key={v.value}
+                  type="button"
+                  data-view={v.value}
+                  aria-pressed={dualView === v.value}
+                  onClick={() => {
+                    setDualView(v.value);
+                    setShownKo({});
+                  }}
+                  className={segmentButton(dualView === v.value)}
+                >
+                  {v.label}
+                </button>
+              ))}
+            </div>
+            <ViewMenu prefs={prefs} onChange={changePrefs} onCopy={copyPassage} copied={copied} />
+          </div>
+        </div>
+        <p className="text-label text-ink-soft">줄이나 번호를 누르면 그 문장을 들어요. 점선 단어를 누르면 뜻이 보여요.</p>
+        {playerBlock("step4")}
+        <ol data-rows className="flex list-none flex-col divide-y divide-line rounded-card border border-line bg-raised">
+          {sentencePairs.map((pair, i) => renderRow(pair, i))}
+        </ol>
+
+        <div ref={rereadRef} data-reread className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
+          <h3 className="text-body font-semibold text-ink">같은 글 다시 읽기</h3>
+          <p className="text-label text-ink-soft">해석과 소리를 확인했으면 같은 글을 다시 읽고 속도를 재 보세요.</p>
+          {again ? (
+            <p data-reread-result role="status" className="text-label tabular-nums text-ink">
+              {timeOnly
+                ? `같은 글 다시 읽기: ${first ? `${formatDuration(first.ms)} → ` : ""}${formatDuration(again.ms)}`
+                : `같은 글 다시 읽기: ${first ? `${first.wpm} → ` : ""}${again.wpm} WPM`}
+            </p>
+          ) : null}
+          {hiddenNote(shown && !shown.tooFast ? shown : null)}
+          {shown?.tooFast ? tooFastNotice(shown) : null}
+          <button type="button" data-action="reread-start" onClick={() => startRun("again")} className={`${outlineButton} sm:self-start`}>
+            <IconRepeat />
+            <span>다시 읽고 재기</span>
+          </button>
         </div>
 
-        <textarea
-          rows={3}
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          aria-label="독해 핵심 메모 & 어휘 노트"
-          placeholder="지문의 핵심 주제문, 새로 배운 단어, 문법 포인트 등을 자유롭게 메모하세요... (실시간 자동 저장)"
-          className="w-full rounded-lg border border-line/80 bg-raised/20 p-3.5 text-[16px] sm:text-[13.5px] text-ink placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors"
-        />
+        <details data-notes open={memoOpen} onToggle={(event) => setMemoOpen(event.currentTarget.open)} className="group rounded-card border border-line bg-raised">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-card px-4 text-label font-medium text-ink transition-colors hover:bg-sunken [&::-webkit-details-marker]:hidden">
+            <span>메모</span>
+            <span className="flex items-center gap-2">
+              {savedAt ? <span className="text-caption font-normal text-ink-soft">저장됨 · {savedAt}</span> : null}
+              <IconChevronDown className="shrink-0 text-ink-soft transition-transform group-open:rotate-180" />
+            </span>
+          </summary>
+          <div className="flex flex-col gap-1 border-t border-line px-4 py-3">
+            <textarea
+              rows={3}
+              value={notes}
+              onChange={(event) => setNotes(event.target.value)}
+              aria-label="메모"
+              placeholder="이 글에서 기억할 것을 적어 두세요. 이 기기에 저장돼요."
+              className="w-full rounded-control border border-line bg-surface p-3 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+            />
+            <p className="text-caption tabular-nums text-ink-soft">{notes.length}자</p>
+          </div>
+        </details>
       </section>
+    );
+  }
+
+  // ------------------------------------------------------------------------------------------------------------
+  // Render
+  // ------------------------------------------------------------------------------------------------------------
+  const markedCount = Object.keys(words.marks).length;
+  return (
+    <div
+      ref={rootRef}
+      className="flex flex-col gap-3"
+      data-reading-view
+      data-ready={loaded ? "" : undefined}
+      data-step={step}
+      data-owns-passage-player={ownsPlayer ? "" : undefined}
+    >
+      <StepTabs
+        label="READING 4단계 학습"
+        stepStart
+        current={step}
+        onSelect={(n) => switchStep(n as StepNo)}
+        steps={STEPS.map((s) => ({ n: s.n, name: s.name, badge: s.n === 2 && markedCount > 0 ? `${markedCount}/${keywords.length}` : undefined }))}
+      />
+      {step === 1 ? renderStep1() : null}
+      {step === 2 ? renderStep2() : null}
+      {step === 3 ? renderStep3() : null}
+      {step === 4 ? renderStep4() : null}
     </div>
   );
 }
 
-// Helpers
+// Helpers — the passage from the lesson blocks when a lesson has no sentence pairs (never for today's data: all 512
+// READING pages carry readingSentences; kept so a lesson without them still shows its text)
 function isEnglish(text: string): boolean {
   if (!text) return false;
   const latin = (text.match(/[a-zA-Z]/g) || []).length;
-  const hangul = (text.match(/[\uAC00-\uD7AF\u1100-\u11FF]/g) || []).length;
+  const hangul = (text.match(/[가-힯ᄀ-ᇿ]/g) || []).length;
   return latin >= hangul && latin > 0;
 }
 
@@ -1329,8 +1717,10 @@ function splitSentences(text: string): string[] {
     .replace(/\b(Mr|Mrs|Ms|Dr|Prof|Sr|Jr)\.\s+/gi, "$1.__SPACE__")
     .replace(/\b(U\.S\.|e\.g\.|i\.e\.)\s+/gi, (m) => m.replace(/\s+/g, "__SPACE__"));
 
+  // 2026-09-27: split after . ? ! without a look-behind (older iOS Safari cannot parse one — lessonSpeechForm.ts)
   return protectedText
-    .split(/(?<=[.?!])\s+/)
+    .replace(/([.?!])\s+/g, "$1\u0000")
+    .split("\u0000")
     .map((s) => cleanSentenceText(s.replace(/__SPACE__/g, " ")))
     .filter((s) => s.length > 0);
 }

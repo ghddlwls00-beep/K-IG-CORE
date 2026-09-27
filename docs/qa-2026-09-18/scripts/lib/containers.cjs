@@ -12,8 +12,8 @@
  * docs/qa-2026-09-18/4-5단계-작업기록.md and scripts/proof-summary.cjs.
  *
  * Each reader runs right after the driver opens its step, before the driver presses
- * anything on that step. A reader that has to open a view to see everything (VOCA's
- * "전체 N단어 펼쳐보기", STUDENT's blind filter) opens it with a plain element.click()
+ * anything on that step. A reader that has to open a view to see everything (STUDENT's
+ * blind filter; VOCA's "전체 N단어 펼쳐보기" until 2026-09-27) opens it with a plain element.click()
  * — which does not set the driver's `__kigClicked` mark, so the control pass still
  * presses that button itself — and puts it back the way it found it.
  *
@@ -23,18 +23,17 @@
  *
  * OTHER PLACES THESE SELECTORS ALSO MATCH (listed by the 2026-09-23 review, "3차 점검").
  * The selectors are class substrings, so they are only safe because of WHEN they run:
- *   student-cards   StudentLearningView.tsx:835 (dictation, koParas[dictationIdx] — sentence 1
- *                   by default) and :1178 (shadowing) — not mounted while STEP 1 is open.
- *                   :835 would be exactly LISTENING's "sentence 1 only" hole if it were.
- *   reading-passage ReadingLearningView.tsx:1130·1175 — another step's data-sentence-id spans,
- *                   not mounted during STEP 1 (the deliberate break of the last sentence was
- *                   caught 32/33, which is that fact measured).
- *   ld-script-ko    LdLearningView.tsx:493 (page note), :800 (hint chips), :1001·1134 (step
- *                   notes) — none holds a script line, so none can stand in for one.
- *   reading-vocab   scoped to section[aria-label="Key Vocabulary"], which exists only while
- *                   STEP 2 is open; nothing else in that section carries those two classes.
- *   reading-ko      scoped to the one column labelled "한글 완역" inside the STEP 4 section; the
- *                   English column beside it has the same span structure and is excluded by it.
+ *   student-cards   2026-09-27: scoped to [data-step-panel="1"] — Step 2 (its one sentence's Korean line behind
+ *                   '우리말 힌트') and Step 3 (English and Korean of every sentence) also carry [data-en] / [data-ko],
+ *                   but they are other panels and not mounted while STEP 1 is open. Step 2's one line would be
+ *                   exactly LISTENING's "sentence 1 only" hole if the reader were not scoped.
+ *   reading-passage 2026-09-27: scoped to [data-step-panel="1"] and to [data-en] — Step 4's rows also carry
+ *                   data-sentence-id, but that panel is not mounted during STEP 1.
+ *   ld-script-ko    2026-09-27: scoped to [data-step-panel="5"] [data-line] [data-ko] — Steps 2–4 also carry [data-ko] for the
+ *                   line on screen, but they are other panels and not mounted while STEP 5 is open.
+ *   reading-vocab   2026-09-27: scoped to [data-step-panel="2"] li[data-vocab] — [data-word-text] · [data-meaning].
+ *   reading-ko      2026-09-27: scoped to [data-step-panel="4"] [data-rows] — the English of a row is [data-en], a
+ *                   different attribute, so it cannot stand in for the Korean.
  * If a new element with the same classes appears in the SAME step, a selector widens without
  * any error. Re-run the deliberate-break test (scripts/proof-run.cjs) after changing a view.
  */
@@ -44,94 +43,134 @@ const BTN = "const btn = (re) => [...main.querySelectorAll('button')].find((b) =
 const TEXTS = "const texts = (list) => list.map((el) => (el.innerText || '').replace(/\\s+/g, ' ').trim()).filter(Boolean);";
 
 const READERS = {
-  /** VOCA STEP 1 word grid — every card of every cluster (PhonicsLearningView.tsx:766-812). */
-  "voca-grid": `(async () => {
+  /**
+   * VOCA STEP 1 word list — every word of every row.
+   * 2026-09-27 (VOCA 학습법 · 화면 고침 — E01 · VOCA-U09): Step 1 shows every word at once (no '전체 N단어 펼쳐보기', no
+   * 'Cluster #n'), each word a button whose word is [data-word-text] inside li[data-word] in the Step 1 panel
+   * ([data-step-panel="1"]) — the card class this read before (min-h-[96px]) left with the design rules. '뜻 가리기' hides only
+   * the meanings, never the words. Steps 2–4 are other panels and not mounted while STEP 1 is open.
+   */
+  "voca-grid": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
-    ${SLEEP} ${BTN} ${TEXTS}
-    const open = btn(/^전체 \\d+단어 펼쳐보기$/);
-    if (open) { open.click(); await sleep(500); }
-    const cards = [...main.querySelectorAll('div')].filter((d) => /(^|\\s)min-h-\\[96px\\](\\s|$)/.test(d.className) && d.children.length >= 3);
-    const words = texts(cards.map((c) => c.children[1]));
-    if (open) { const close = btn(/전체 펼쳐보기 닫기/); if (close) { close.click(); await sleep(300); } }
-    return words;
+    ${TEXTS}
+    return texts([...main.querySelectorAll('[data-step-panel="1"] [data-word] [data-word-text]')]);
   })()`,
 
-  /** GRAMMAR Step 1 Korean prompt of each item card (GrammarLearningView.tsx:796-799). */
+  /**
+   * GRAMMAR Step 1 Korean prompt of each item.
+   * 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-U11 · L08): the prompt is p[data-ko] inside the Step 1 panel
+   * (section[data-step-panel="1"]); the tinted box it used to sit in (div.bg-raised/50.p-3.5) is gone. Steps 1–3
+   * show ten items at a time, but every bundle stays in the DOM (hidden), and innerText of a hidden element is
+   * its text content — so this still reads EVERY item, not just the ten on screen.
+   */
   "grammar-ko": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    return texts([...main.querySelectorAll('div[class*="bg-raised/50"][class*="p-3.5"] > p')]);
+    return texts([...main.querySelectorAll('[data-step-panel="1"] [data-item] [data-ko]')]);
   })()`,
 
-  /** GRAMMAR Step 3 English sentence of each item card — the one place English is shown without a button (GrammarLearningView.tsx:1130-1132). */
+  /**
+   * GRAMMAR Step 3 English sentence of each item — the one place English is shown without a button.
+   * 2026-09-27: p[data-en] in the Step 3 panel (its hover colour, which this used to key on, left with the design rules).
+   */
   "grammar-en": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    return texts([...main.querySelectorAll('p[class*="group-hover:text-primary"]')]);
+    return texts([...main.querySelectorAll('[data-step-panel="3"] [data-item] [data-en]')]);
   })()`,
 
-  /** STUDENT STEP 1 sentence cards, English and Korean, with the blind filter on "전체 보기" (StudentLearningView.tsx:651-766). */
+  /**
+   * STUDENT STEP 1 sentence list, English and Korean, with the script filter on '모두'.
+   * 2026-09-27 (STUDENT 학습법 · 화면 고침 — D01 · STU-U05): the filter is a four-part row '가림 · 영어 · 해석 · 모두'
+   * ([data-filter] with aria-pressed — it used to be found by '모두 가림 · 영어만 · 해석만 · 전체 보기' and a gold fill), and a
+   * sentence is li[data-sentence] with its English in [data-en] and its Korean in [data-ko], inside the Step 1 panel
+   * ([data-step-panel="1"]) — the class sizes this read before (text-[16px] · text-[13.5px]) left with the design rules.
+   * A blank in brackets is a chip INSIDE [data-en] whose text is the bracket itself, so the sentence reads as written.
+   */
   "student-cards": `(async () => {
     const main = document.querySelector('main'); if (!main) return [];
     ${SLEEP} ${TEXTS}
-    const filters = [...main.querySelectorAll('button')].filter((b) => /모두 가림|영어만|해석만|전체 보기/.test(b.innerText || ''));
-    const active = filters.find((b) => /(^|\\s)bg-primary(\\s|$)/.test(b.className));
-    const all = filters.find((b) => /전체 보기/.test(b.innerText || ''));
+    const panel = main.querySelector('[data-step-panel="1"]'); if (!panel) return [];
+    const active = panel.querySelector('[data-filter][aria-pressed="true"]');
+    const all = panel.querySelector('[data-filter="all"]');
     if (all && all !== active) { all.click(); await sleep(500); }
     const out = [
-      ...texts([...main.querySelectorAll('p[class*="text-[16px]"][class*="font-bold"]')]),
-      ...texts([...main.querySelectorAll('p[class*="text-[13.5px]"][class*="text-ink-soft"]')]),
+      ...texts([...panel.querySelectorAll('[data-sentence] [data-en]')]),
+      ...texts([...panel.querySelectorAll('[data-sentence] [data-ko]')]),
     ];
     if (active && all && all !== active) { active.click(); await sleep(300); }
     return out;
   })()`,
 
-  /** READING STEP 1 passage, one span per sentence (ReadingLearningView.tsx:683-712). */
+  /**
+   * READING STEP 1 passage, one element per sentence.
+   * 2026-09-27 (READING 학습법 · 화면 고침 — G01 · G05): the sentence's English is [data-en] inside [data-sentence-id] in the
+   * Step 1 panel ([data-step-panel="1"]) — a sentence also carries a number <sup> and, when pressed, a Korean line OUTSIDE it,
+   * so only [data-en] is read. Step 4's rows carry [data-sentence-id] too, but are another panel, not mounted during STEP 1.
+   */
   "reading-passage": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    return texts([...main.querySelectorAll('[data-sentence-id] > span')]);
+    return texts([...main.querySelectorAll('[data-step-panel="1"] [data-sentence-id] [data-en]')]);
   })()`,
 
   /**
-   * READING STEP 2 key-vocabulary cards: the word and, once revealed, the meaning of each
-   * card (ReadingLearningView.tsx:785-845). The meanings are hidden until "💡 전체 뜻 보기";
-   * the driver presses it only at full depth, which is why the old page-text check reported
-   * 9 meanings missing on tablet and mobile before anything was broken (2026-09-23). The
-   * reader reveals them itself and hides them again afterwards.
+   * READING STEP 2 key words: the word and, once revealed, the meaning of each row.
+   * 2026-09-27 (READING 학습법 · 화면 고침 — G02 · D32): one row per word, li[data-vocab] in the Step 2 panel — the word is
+   * [data-word-text], the meaning [data-meaning] (hidden until '뜻 보기'; '뜻 모두 보기' is [data-action="reveal-all"]). A word the
+   * learner marked '알아요' is a folded row ([data-action="unfold"]) whose meaning is not drawn, so the reader unfolds such rows
+   * first (they stay unfolded for this visit), reveals every meaning, and hides them again afterwards. The class sizes this
+   * read before (text-[17px] · text-[13.5px]) left with the design rules.
    */
   "reading-vocab": `(async () => {
     const main = document.querySelector('main'); if (!main) return [];
-    ${SLEEP} ${BTN} ${TEXTS}
-    const sec = main.querySelector('section[aria-label="Key Vocabulary"]'); if (!sec) return [];
-    const show = btn(/전체 뜻 보기/);
-    if (show) { show.click(); await sleep(500); }
+    ${SLEEP} ${TEXTS}
+    const panel = main.querySelector('[data-step-panel="2"]'); if (!panel) return [];
+    for (const b of [...panel.querySelectorAll('[data-action="unfold"]')]) b.click();
+    if (panel.querySelector('[data-action="unfold"]')) await sleep(300);
+    const toggle = panel.querySelector('[data-action="reveal-all"]');
+    const hidden = panel.querySelectorAll('[data-action="reveal"]').length > 0;
+    if (toggle && hidden) { toggle.click(); await sleep(400); }
     const out = [
-      ...texts([...sec.querySelectorAll('span[class*="text-[17px]"][class*="font-bold"]')]),
-      ...texts([...sec.querySelectorAll('span[class*="text-[13.5px]"][class*="font-medium"]')]),
+      ...texts([...panel.querySelectorAll('[data-vocab] [data-word-text]')]),
+      ...texts([...panel.querySelectorAll('[data-vocab] [data-meaning]')]),
     ];
-    if (show) { const hide = btn(/전체 뜻 가리기/); if (hide) { hide.click(); await sleep(300); } }
+    if (toggle && hidden) { toggle.click(); await sleep(250); }
     return out;
   })()`,
 
   /**
-   * READING STEP 4 dual view, the Korean column only — one span per sentence
-   * (ReadingLearningView.tsx:1156-1197). The column is found by its label "한글 완역": the
-   * English label is CSS-uppercased, so innerText reads "KOREAN INTERPRETATION".
+   * READING STEP 4, the Korean of each sentence row.
+   * 2026-09-27 (READING 학습법 · 화면 고침 — G03): one row per sentence (ol[data-rows] li[data-sentence-id]) with its English
+   * [data-en] and its Korean [data-ko], in the Step 4 panel. The view opens on '영어 · 한글', where every row shows [data-ko];
+   * under '영어만' a row shows '해석 보기' instead, so a reader running after a driver chose that view finds fewer.
    */
   "reading-ko": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    const sec = main.querySelector('section[aria-label="Side-by-Side Dual Reading"]'); if (!sec) return [];
-    const col = [...sec.querySelectorAll('div.rounded-2xl')].find((d) => /한글 완역/.test(d.innerText || ''));
-    return col ? texts([...col.querySelectorAll('[data-sentence-id] > span')]) : [];
+    return texts([...main.querySelectorAll('[data-step-panel="4"] [data-rows] [data-sentence-id] [data-ko]')]);
   })()`,
 
-  /** LISTENING STEP 5 1:1 script, the Korean line of each sentence (LdLearningView.tsx:1338-1343). */
-  "ld-script-ko": `(() => {
+  /**
+   * LISTENING STEP 5 script, the Korean line of each sentence.
+   * 2026-09-27 (LISTENING 학습법 · 화면 고침 — D29 나 · LD-L08): a line is li[data-line] in the Step 5 panel ([data-step-panel="5"])
+   * and its Korean p[data-ko] shows on a press or with '해석 모두 보기' ([data-action="show-all-ko"], role switch); a line not yet
+   * dictated is hidden until '그래도 보기' ([data-action="peek"] — once for the lesson, kept on this device). The reader presses
+   * '그래도 보기' if it is there and '해석 모두 보기' if it is off, reads, and turns '해석 모두 보기' back (the peek stays — it is
+   * what a learner who looks has done). It read p.text-[13px].mt-1 before, a class the design rules removed.
+   */
+  "ld-script-ko": `(async () => {
     const main = document.querySelector('main'); if (!main) return [];
-    ${TEXTS}
-    return texts([...main.querySelectorAll('p[class*="text-[13px]"][class*="mt-1"]')]);
+    ${SLEEP} ${TEXTS}
+    const panel = main.querySelector('[data-step-panel="5"]'); if (!panel) return [];
+    const peek = panel.querySelector('[data-action="peek"]');
+    if (peek) { peek.click(); await sleep(400); }
+    const all = panel.querySelector('[data-action="show-all-ko"]');
+    const wasOn = all && all.getAttribute('aria-checked') === 'true';
+    if (all && !wasOn) { all.click(); await sleep(400); }
+    const out = texts([...panel.querySelectorAll('[data-line] [data-ko]')]);
+    if (all && !wasOn) { all.click(); await sleep(200); }
+    return out;
   })()`,
 };
 

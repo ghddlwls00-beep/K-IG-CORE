@@ -5,7 +5,8 @@ import type { PassoffFormItem } from "@/lib/passoffTypes";
 import { expectedLabel, gradeChoice, gradeSelect, gradeShort, hasHangul } from "@/lib/passoffGrading";
 import { notePassoffAttempt } from "@/lib/passoffLearning";
 import type { FormItemState } from "@/lib/passoffLesson";
-import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, CheckIcon, tone, type FontSize } from "./ui";
+import { IconCheck } from "../icons";
+import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, type FontSize } from "./ui";
 
 /**
  * ③ 형태 찾기 4~6문제 (설계 §3) — one item at a time: tap the words (and give each its label), pick an option, or
@@ -42,7 +43,7 @@ export function FormStep({
   if (!items.length) {
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-[16px] text-ink-soft">이 레슨에는 형태 찾기 문제가 없습니다.</p>
+        <p className="text-body text-ink-soft">이 레슨에는 형태 찾기 문제가 없습니다.</p>
         <div className="flex justify-end">
           <PrimaryButton onClick={onNext}>다음 단계: 영작</PrimaryButton>
         </div>
@@ -64,7 +65,7 @@ export function FormStep({
   const again = Boolean(states[current.id]?.requeued);
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-[14px] tabular-nums text-ink-soft">
+      <p className="text-label tabular-nums text-ink-soft">
         남은 문제 {queue.length} / {items.length}
         {again ? " · 다시 풀기" : ""}
       </p>
@@ -201,8 +202,8 @@ function FormItemCard({
   const optionalSet = new Set(item.kind === "select" ? item.optional ?? [] : []);
 
   return (
-    <section className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-4">
-      <h3 className="text-[16px] font-semibold text-ink">{item.instruction}</h3>
+    <section className="flex flex-col gap-4 rounded-card border border-line bg-raised p-4">
+      <h3 className="text-body font-semibold text-ink">{item.instruction}</h3>
 
       {item.kind === "select" ? (
         <div className="flex flex-col gap-3">
@@ -225,7 +226,7 @@ function FormItemCard({
                   aria-pressed={on}
                   disabled={settled}
                   onClick={() => toggleToken(i)}
-                  className={`inline-flex min-h-11 min-w-11 flex-col items-center justify-center rounded-xl border px-3 py-1 ${FONT[font].text} transition-colors disabled:cursor-default ${
+                  className={`inline-flex min-h-11 min-w-11 flex-col items-center justify-center rounded-control border px-3 py-1 ${FONT[font].text} transition-colors disabled:cursor-default ${
                     isAnswer
                       ? `${tone.successBorder} border-2 font-semibold text-ink`
                       : on
@@ -234,15 +235,15 @@ function FormItemCard({
                   }`}
                 >
                   <span>{token}</span>
-                  {label ? <span className="text-[12px] font-normal text-ink-soft">{label}</span> : null}
-                  {phase === "shown" && optionalSet.has(i) ? <span className="text-[12px] font-normal text-ink-faint">골라도 됨</span> : null}
+                  {label ? <span className="text-caption font-normal text-ink-soft">{label}</span> : null}
+                  {phase === "shown" && optionalSet.has(i) ? <span className="text-caption font-normal text-ink-faint">골라도 됨</span> : null}
                 </button>
               );
             })}
           </div>
           {item.labels?.length && labelFor !== null && picked.includes(labelFor) && !settled ? (
             <div className="flex flex-col gap-2">
-              <p className="text-[14px] text-ink-soft">
+              <p className="text-label text-ink-soft">
                 <span lang="en" className="font-semibold text-ink">
                   {item.tokens[labelFor]}
                 </span>{" "}
@@ -258,7 +259,7 @@ function FormItemCard({
                       setLabels((prev) => ({ ...prev, [labelFor]: l }));
                       setLabelFor(null);
                     }}
-                    className={`min-h-11 min-w-11 rounded-xl border px-3 text-[14px] transition-colors ${
+                    className={`min-h-11 min-w-11 rounded-control border px-3 text-label transition-colors ${
                       labels[labelFor] === l ? "border-line-strong bg-sunken font-semibold text-ink" : "border-line text-ink hover:bg-sunken"
                     }`}
                   >
@@ -269,7 +270,7 @@ function FormItemCard({
             </div>
           ) : null}
           {item.labels?.length && !settled ? (
-            <p className="text-[12px] text-ink-faint">고른 낱말을 다시 누르면 빠져요. 이름표는 낱말을 고르면 나와요.</p>
+            <p className="text-caption text-ink-faint">고른 낱말을 다시 누르면 빠져요. 이름표는 낱말을 고르면 나와요.</p>
           ) : null}
           {!settled ? (
             <div className="flex justify-end">
@@ -298,11 +299,11 @@ function FormItemCard({
                   type="button"
                   disabled={settled || isWrong}
                   onClick={() => chooseOption(i)}
-                  className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-xl border px-4 text-[16px] transition-colors disabled:cursor-default ${
+                  className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-control border px-4 text-body transition-colors disabled:cursor-default ${
                     isAnswer ? `${tone.successBorder} font-semibold text-ink` : isWrong ? "border-line text-ink-faint line-through" : "border-line text-ink hover:bg-sunken"
                   }`}
                 >
-                  {isAnswer ? <span className={tone.success}><CheckIcon size={16} /></span> : null}
+                  {isAnswer ? <span className={tone.success}><IconCheck size={16} /></span> : null}
                   {option}
                 </button>
               );
@@ -346,9 +347,9 @@ function FormItemCard({
                 checkShort();
               }
             }}
-            className={`min-h-11 w-full rounded-xl border border-line bg-surface px-3 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
+            className={`min-h-11 w-full rounded-control border border-line bg-surface px-3 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
           />
-          {hangul ? <p className={`text-[14px] ${tone.danger}`}>한글이 섞여 있어요. 영어 자판으로 바꿔 주세요.</p> : null}
+          {hangul ? <p className={`text-label ${tone.danger}`}>한글이 섞여 있어요. 영어 자판으로 바꿔 주세요.</p> : null}
           {!settled ? (
             <div className="flex justify-end">
               <PrimaryButton disabled={!text.trim()} onClick={checkShort}>
@@ -362,7 +363,7 @@ function FormItemCard({
       {phase === "retry" ? (
         <div className="flex flex-col gap-1">
           <Verdict ok={false}>한 번 더 해 보세요.</Verdict>
-          {selectNote ? <p className="text-[14px] text-ink-soft">{selectNote}</p> : null}
+          {selectNote ? <p className="text-label text-ink-soft">{selectNote}</p> : null}
         </div>
       ) : null}
       {phase === "right" ? <Verdict ok>맞았어요.</Verdict> : null}
@@ -380,7 +381,7 @@ function FormItemCard({
       {settled ? (
         <div className="flex flex-wrap items-center justify-end gap-2">
           {phase === "shown" || firstRight === false ? (
-            <span className="text-[14px] text-ink-soft">{firstPresentation ? "이 문제는 끝에서 한 번 더 나와요." : ""}</span>
+            <span className="text-label text-ink-soft">{firstPresentation ? "이 문제는 끝에서 한 번 더 나와요." : ""}</span>
           ) : null}
           <PrimaryButton onClick={() => onDone(firstRight === true)}>다음</PrimaryButton>
         </div>

@@ -18,7 +18,12 @@ if (process.argv[2] === "--verify") {
   let pass = 0, ipaPlayed = 0, hangulReq = 0, other = 0, mic = 0;
   const bad = [];
   // 마이크 버튼은 학습자 발음을 녹음 — 소리를 내지 않는 것이 정상(recheck-audio NOT_PLAYBACK 과 같은 규칙). 처음 판은 대상에서 안 빼 FAIL 50 으로 셌음.
-  const MIC = /🎙️|발음 테스트|발음 채점|녹음|따라 말하기|섀도잉 검증|말하기 연습|내 발음/;
+  // 2026-09-27 (B01 · B04): the mic's default name became '말하기 확인' (was '마이크로 발음 테스트') and its states read
+  // '듣고 있는 중…' / 'N점 (대부분 일치)' with an SVG icon, no '🎙️'; GRAMMAR names it '따라 말하고 확인' (59fdd44) — same
+  // words as recheck-audio NOT_PLAYBACK.
+  // 2026-09-27 (B03 · speechSingleWord.ts): a one-word target's mic says '알아들었어요' or "'due'로 들렸어요 — 한 번 더"
+  // instead of 'N점 (…)' — same words as recheck-audio MIC_STATES.
+  const MIC = /🎙️|발음 테스트|발음 채점|녹음|따라 말하기|섀도잉 검증|말하기 연습|내 발음|말하기 확인|따라 말하고 확인|듣고 있는 중|알아들었어요|로 들렸어요 — 한 번 더|알아듣지 못했어요|\d+점 \((?:모든 단어 일치|거의 모두 일치|대부분 일치|거의 맞았어요|다시 시도|통과했어요|음성 감지 안 됨)/;
   for (const r of latest.values()) {
     if (MIC.test(String(r.label || ""))) { mic++; if ((r.clips || []).some((c) => hangul.has(c.path))) { hangulReq++; bad.push(`마이크인데 한글판 요청 ${r.url} ${r.label}`); } continue; }
     const paths = (r.clips || []).map((c) => c.path);

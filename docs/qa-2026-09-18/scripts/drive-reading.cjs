@@ -1,25 +1,49 @@
 #!/usr/bin/env node
 /**
- * READING course driver — 2026-09-18 commercial-release audit.
+ * READING course driver — 2026-09-18 commercial-release audit; rewritten 2026-09-27 for the READING 학습법 · 화면 고침.
  *
- * Exercises every control of every READING route on production with trusted input
- * (real mouse/touch events through CDP), compares what is on screen against the
- * lesson DATA (content/lessons/reading/<id>.json, read with the app's own
- * content.ts / readingUtils.ts / curriculumPresentation.ts), and records one JSONL
- * record per page x viewport.
+ * Exercises every control of every READING route with trusted input (real mouse/touch events through CDP), compares what
+ * is on screen against the lesson DATA (content/lessons/reading/<id>.json, read with the app's own content.ts /
+ * readingUtils.ts / readingLearning.ts / curriculumPresentation.ts), and records one JSONL record per page x viewport.
  *
- * READ-ONLY toward the product: it never edits the repository, never deploys and
- * never calls a licence or admin API. The only data it changes is localStorage
- * inside its own profile CLONE (per-lesson WPM / notes / bookmark / completion
- * keys, which it cleans up again). READING writes no server progress at all
- * (ProgressProvider only calls /api/progress/student for course === "student"),
- * so there is nothing to log with H.logDataChange.
+ * 2026-09-27 — what the view is now (src/components/ReadingLearningView.tsx header) and what this driver checks:
+ *   frame   the shared StepTabs ([data-step-tab]), no header card: the passage meta line [data-passage-meta] '76단어 · 5문장 ·
+ *           목표 약 25초'; the page's top player is hidden (the view owns it — [data-owns-passage-player]); the '이 강의
+ *           학습 완료' button (aria-label '학습 완료 체크' / '학습 완료 취소' — LessonEndBar) is DISABLED until one timed reading
+ *           (계획 D02 나), with the reason line under it.
+ *   Step 1  '읽기 시작' → the passage comes up under the header, sentences are plain text (no numbers, no taps), '다 읽었어요'
+ *           sits at the end of the passage; a run faster than 500 WPM is not saved ([data-too-fast]); a real run shows
+ *           [data-speed-result] (WPM, or the time on the five one-sentence passages) = the stored record
+ *           (kig:reading:speed:v1:reading/<main id>); mouse-over changes nothing; a sentence is a button (Enter/Space) that plays
+ *           its clip and shows its Korean (a line under it on a phone, [data-ko-panel] from sm); the whole-lesson player appears
+ *           only after the timed reading and tints the sentence it reads.
+ *   Step 2  li[data-vocab] per key word: word · part of speech · passage line [data-context] · '뜻 보기' → [data-meaning] · the
+ *           word's clip · '알아요 / 몰라요' (kig:reading:words:v1:…; '알아요' folds the row) · '뜻 모두 보기 / 뜻 모두 가리기' (one
+ *           toggle, [data-action="reveal-all"]).
+ *   Step 3  one blank at a time, exactly generateClozeItems(pairs, { lessonKey: 'reading/<main id>', keywords, round, unknown }):
+ *           masked sentence, the four options in order, right/wrong, the filled sentence, its Korean, '문장 듣기', '다음 문제',
+ *           the result and '다른 빈칸으로 다시 풀기' (round 1); the reading-aloud check with a stubbed recogniser.
+ *   Step 4  rows [number | English | Korean]; the number plays; a dotted key word opens its meaning ([data-gloss]) without sound;
+ *           '영어만' → '해석 보기' per row; '한글만'; the whole-lesson player tints the row it reads; '다시 읽고 재기' times the
+ *           same passage again → '같은 글 다시 읽기: A → B WPM' = the stored record; the memo (kig:reading:notes:<page key> —
+ *           unchanged) folded, open when it holds something.
+ *   engine  kig-learning:reading gets an attempt per '알아요/몰라요' and per blank (item '<main id>#k<n>'), and on completion
+ *           the '몰라요' words and the missed blanks as items.
+ * Deliberate breaks (--break): 'gate' presses completion without the timed reading first, 'cloze' judges round 0 against
+ * round 1's blanks, 'hover' expects mouse-over to change the passage, 'stop' (2026-09-28) only moves the mouse over a
+ * playing sound control where the second press belongs, so the sound is never stopped — each must record FAILs (and exit 1).
+ *
+ * READ-ONLY toward the product: it never edits the repository, never deploys and never calls a licence or admin API. The
+ * only data it changes is localStorage inside its own profile CLONE (per-lesson READING keys, bookmark / completion keys and
+ * the course's learning-engine record, which it cleans up again where noted). READING writes no server progress at all
+ * (ProgressProvider only calls /api/progress/student for course === "student").
  *
  * Usage (Node 24, no dependencies beyond the repo's own):
  *   node docs/qa-2026-09-18/scripts/drive-reading.cjs --ids pr001,pr100-1
  *   node docs/qa-2026-09-18/scripts/drive-reading.cjs --course-range pr001..pr040
  *   node docs/qa-2026-09-18/scripts/drive-reading.cjs --limit 20 --viewports desktop
  *   node docs/qa-2026-09-18/scripts/drive-reading.cjs --shard 1/4      (4 processes)
+ *   BASE=http://localhost:3210 node docs/qa-2026-09-18/scripts/drive-reading.cjs --ids pr001 --break gate
  *
  * Options
  *   --ids a,b,c            explicit route ids (pr001, pr001-1, ...)
@@ -29,7 +53,9 @@
  *   --suffix S             output file docs/qa-2026-09-18/out/features/reading<S>.jsonl
  *   --shard i/n            1-based shard i of n (clone "drv-rd-<i>", port 9470+i)
  *   --resume / --no-resume finished page x viewport records are skipped (default on)
+ *   --break gate|cloze|hover|stop   deliberate break (see above)
  *   --dry                  print the page list and exit
+ * Exit 1 when any check FAILed (2026-09-27; it used to exit 0 unless the driver itself crashed).
  *
  * Output: out/features/reading<suffix>.jsonl  (one record per page x viewport)
  *         out/rendered/reading/<id>.<viewport>.json  (rendered text of every step)
@@ -49,11 +75,16 @@ try {
 }
 
 const H = require("./lib/harness.cjs");
+const R = require("./lib/reading-page.cjs");
 const { loadTs, REPO, sleep } = H;
 
 const content = loadTs(path.join(REPO, "src/lib/content.ts"));
 const presentation = loadTs(path.join(REPO, "src/lib/curriculumPresentation.ts"));
 const readingUtils = loadTs(path.join(REPO, "src/lib/readingUtils.ts"));
+const readingLearning = loadTs(path.join(REPO, "src/lib/readingLearning.ts"));
+const clozeFitsFor = loadTs(path.join(REPO, "src/lib/readingClozeFitsForLesson.ts")).clozeAlsoFitsFor;
+const speechForm = loadTs(path.join(REPO, "src/lib/lessonSpeechForm.ts"));
+const vocaSpeech = loadTs(path.join(REPO, "src/lib/vocaSpeech.ts"));
 const speechRecognition = loadTs(path.join(REPO, "src/lib/speechRecognition.ts"));
 const validRoutes = require(path.join(REPO, "src/lib/generated/validRoutes.json"));
 
@@ -62,14 +93,14 @@ const MARKER = H.MARKERS.reading;
 const OUT = path.join(__dirname, "../out");
 const RENDER_DIR = path.join(OUT, "rendered", COURSE);
 const FREE_IDS = new Set(["pr001", "pr001-1", "pr002", "pr002-1"]);
-const MAX_PLAUSIBLE_WPM = 1000;
+const MAX_WPM = readingLearning.READING_MAX_WPM;
 
 // ---------------------------------------------------------------------------
 // CLI
 // ---------------------------------------------------------------------------
 
 function parseArgs(argv) {
-  const a = { viewports: ["desktop", "tablet", "mobile"], resume: true, suffix: "", limit: 0 };
+  const a = { viewports: ["desktop", "tablet", "mobile"], resume: true, suffix: "", limit: 0, brk: "" };
   for (let i = 2; i < argv.length; i++) {
     const k = argv[i];
     const v = () => argv[++i];
@@ -81,12 +112,15 @@ function parseArgs(argv) {
     else if (k === "--shard") a.shard = v();
     else if (k === "--resume") a.resume = true;
     else if (k === "--no-resume") a.resume = false;
+    else if (k === "--break") a.brk = v();
     else if (k === "--dry") a.dry = true;
     else throw new Error(`unknown option ${k}`);
   }
   for (const vp of a.viewports) if (!H.VIEWPORTS[vp]) throw new Error(`unknown viewport ${vp}`);
+  if (a.brk && !["gate", "cloze", "hover", "stop"].includes(a.brk)) throw new Error(`--break must be gate, cloze, hover or stop`);
   return a;
 }
+let BREAK = "";
 
 /** Every in-scope READING route, in the course index order. */
 function allRoutes() {
@@ -136,22 +170,32 @@ function lessonData(id) {
   const vocab = lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? [];
   const pairs = sentences.map((s, i) => ({ id: s.id, index: i, en: s.english, ko: s.korean }));
   const wordCount = pairs.map((p) => p.en).join(" ").trim().split(/\s+/).filter(Boolean).length;
+  const mainId = readingLearning.readingMainId(id);
+  const pageKey = `${COURSE}/${id}`;
+  const keywords = vocab.map((v) => ({ word: v.word, pos: v.partOfSpeech }));
   const d = {
     id,
+    mainId,
+    pageKey,
     lesson,
-    isScript: lesson.variant === "script",
     sentences: pairs,
     vocab,
+    keywords,
     wordCount,
-    expectedSeconds: Math.max(15, Math.round((wordCount / 180) * 60)),
-    cloze: readingUtils.generateClozeItems(pairs.map((p) => ({ en: p.en, ko: p.ko }))),
+    timeOnly: readingLearning.isTimeOnlyPassage(pairs.length),
+    meta: `${wordCount}단어 · ${pairs.length}문장 · 목표 약 ${readingLearning.formatApprox(readingLearning.targetMs(wordCount))}`,
+    // what the app says: a sentence through lessonSpeechForm (a romanized Korean word said in Korean), a word through readingWordSpeech
+    spoken: (i) => speechForm.lessonSpeechForm(pageKey, pairs[i].en),
+    wordSpoken: (k) => vocaSpeech.readingWordSpeech(vocab[k - 1].word, vocab[k - 1].korean),
+    // 2026-09-27 (유출 규칙): the lesson's own reviewed pairs, as the page hands them to the view (readingClozeFitsForLesson.ts)
+    cloze: (round, unknown) => readingUtils.generateClozeItems(pairs, { lessonKey: `${COURSE}/${mainId}`, keywords, round, unknown, alsoFits: clozeFitsFor(pairs.map((p) => p.en), keywords.map((k) => k.word)) }),
     title: presentation.formatLessonPresentation(COURSE, lesson).title,
     canonical: content.canonicalLessonId(COURSE, id),
     prev: ctx.prev ? { id: ctx.prev.id, title: presentation.formatLessonPresentation(COURSE, ctx.prev).title } : null,
     next: ctx.next ? { id: ctx.next.id, title: presentation.formatLessonPresentation(COURSE, ctx.next).title } : null,
     free: FREE_IDS.has(id),
-    // smallest elapsed time whose WPM is still scored (finish earlier => "too fast")
-    minScoredSeconds: Math.max(2, Math.ceil((wordCount * 60) / MAX_PLAUSIBLE_WPM) + 1),
+    // a run slower than 500 WPM is saved: words × 120 ms, plus a second
+    minMs: Math.ceil(wordCount * 120) + 1000,
   };
   dataCache.set(id, d);
   return d;
@@ -224,24 +268,22 @@ const boolCk = (rec, f, i, a, exp, act, note) => ck(rec, f, i, a, String(exp), S
 // ---------------------------------------------------------------------------
 
 const SEL = {
-  step1: `section[aria-label="Speed Reading"]`,
-  step2: `section[aria-label="Key Vocabulary"]`,
-  step3: `section[aria-label="Reading Quizzes"]`,
-  step4: `section[aria-label="Side-by-Side Dual Reading"]`,
-  notes: `section[aria-label="Reading Notes"]`,
+  view: "main [data-reading-view]",
+  step1: 'main [data-step-panel="1"]',
+  step2: 'main [data-step-panel="2"]',
+  step3: 'main [data-step-panel="3"]',
+  step4: 'main [data-step-panel="4"]',
 };
 const STEP_KEYS = ["step1", "step2", "step3", "step4"];
 
 const el = (sel) => `document.querySelector(${J(sel)})`;
-const stepTab = (n) => `document.querySelectorAll('nav[aria-label="리딩 4단계 학습 단계"] button')[${n - 1}]`;
+const stepTab = (n) => `document.querySelector('main [data-step-tab="${n}"]')`;
 const sent1 = (i) => `document.querySelectorAll(${J(`${SEL.step1} [data-sentence-id]`)})[${i}]`;
-const dualCol = (which) => `(document.querySelectorAll(${J(`${SEL.step4} > div`)})[1]||{children:[]}).children[${which === "en" ? 0 : 1}]`;
-const dualSpan = (which, i) => `((${dualCol(which)})||{querySelectorAll:()=>[]}).querySelectorAll('[data-sentence-id]')[${i}]`;
-const vocaCard = (i) => `document.querySelectorAll(${J(`${SEL.step2} .grid > div`)})[${i}]`;
-const btnByText = (scope, text) =>
-  `[...document.querySelectorAll(${J(`${scope} button`)})].find((b) => (b.innerText||'').replace(/\\s+/g,' ').includes(${J(text)}))`;
-const btnByExactText = (scope, text) =>
-  `[...document.querySelectorAll(${J(`${scope} button`)})].find((b) => (b.innerText||'').replace(/\\s+/g,' ').trim() === ${J(text)})`;
+const row4 = (i) => `document.querySelectorAll(${J(`${SEL.step4} [data-rows] [data-sentence-id]`)})[${i}]`;
+const inRow4 = (i, sel) => `((${row4(i)}) || { querySelector: () => null }).querySelector(${J(sel)})`;
+const vocaRow = (k) => `document.querySelector(${J(`${SEL.step2} [data-vocab="${k}"]`)})`;
+const inVoca = (k, sel) => `((${vocaRow(k)}) || { querySelector: () => null }).querySelector(${J(sel)})`;
+const action = (scope, name) => `document.querySelector(${J(`${scope} [data-action="${name}"]`)})`;
 
 async function jsText(tab, expr) {
   const v = await tab.eval(`(() => { const e = (${expr}); return e ? (e.innerText || e.value || "") : null; })()`).catch(() => null);
@@ -255,6 +297,9 @@ async function exists(tab, expr) {
 }
 async function stepText(tab, key) {
   return jsText(tab, el(SEL[key]));
+}
+async function count(tab, sel) {
+  return jsEval(tab, `document.querySelectorAll(${J(sel)}).length`, -1);
 }
 async function pointOf(tab, expr) {
   return jsEval(
@@ -313,6 +358,12 @@ async function press(tab, expr, { touch = false, settle = 0, verify = null } = {
   if (settle) await sleep(settle);
   return r;
 }
+async function key(tab, k) {
+  const code = k === " " ? "Space" : k;
+  const vk = k === " " ? 32 : k === "Enter" ? 13 : 0;
+  await tab.send("Input.dispatchKeyEvent", { type: "rawKeyDown", key: k, code, windowsVirtualKeyCode: vk, ...(k === " " ? { text: " " } : {}) });
+  await tab.send("Input.dispatchKeyEvent", { type: "keyUp", key: k, code, windowsVirtualKeyCode: vk });
+}
 
 // ---------------------------------------------------------------------------
 // audio
@@ -355,9 +406,8 @@ async function waitClip(tab, expected, ms = 12000) {
 }
 
 /**
- * Click something that should speak `text`, and judge it:
- * the clip path must equal the app's own key for that text and must reach 'playing'
- * without a media error and without falling back to browser TTS.
+ * Press something that should speak `text` (the string the app hands to speech), and judge it: the clip path must equal
+ * the app's own key for that text and must reach 'playing' without a media error and without falling back to browser TTS.
  */
 async function playProbe(rec, tab, { feature, item, trigger, text, expr, touch = false, timeout = 12000 }) {
   const expected = H.expectedClip(text);
@@ -369,16 +419,7 @@ async function playProbe(rec, tab, { feature, item, trigger, text, expr, touch =
     return null;
   }
   const res = await waitClip(tab, expected, timeout);
-  rec.audio.push({
-    trigger,
-    text: cut(text, 90),
-    expected,
-    requested: res.requested,
-    playing: res.playing,
-    error: res.error,
-    tts: res.tts.map((t) => cut(t, 60)),
-    dur: res.dur,
-  });
+  rec.audio.push({ trigger, text: cut(text, 90), expected, requested: res.requested, playing: res.playing, error: res.error, tts: res.tts.map((t) => cut(t, 60)), dur: res.dur });
   const ok = res.playing && !res.error && !res.tts.length;
   ck(
     rec,
@@ -393,47 +434,137 @@ async function playProbe(rec, tab, { feature, item, trigger, text, expr, touch =
   return res;
 }
 
-/** Second click on the same control must stop playback (pause event on the shared element). */
-async function stopProbe(rec, tab, { feature, item, expr, touch = false }) {
-  await H.audioLog(tab, { clear: true });
-  const clicked = await press(tab, expr, { touch });
-  if (!clicked.ok) return false;
-  for (let i = 0; i < 14; i++) {
-    const log = await H.audioLog(tab);
-    if (log.some((e) => e.ev === "pause" || e.ev === "ended")) {
-      ck(rec, feature, item, "second click stops playback", "pause event", "pause event", "PASS");
-      return true;
-    }
-    await sleep(100);
+/** The shared audio element (window.__kigMedia — EXTRA_HOOK keeps the element of the last play()) as plain data. */
+const MEDIA_STATE = `(() => { const a = window.__kigMedia; return a ? { paused: a.paused, ended: a.ended, hasSrc: !!a.getAttribute('src'), t: Math.round(a.currentTime * 100) / 100, dur: isFinite(a.duration) ? Math.round(a.duration * 100) / 100 : null } : null; })()`;
+const isSounding = (m) => !!m && m.hasSrc && !m.paused && !m.ended;
+const mediaText = (m) => (m ? `${m.paused ? "paused" : "playing"}${m.ended ? " · ended" : ""} at ${m.t}/${m.dur} s${m.hasSrc ? "" : " · src removed"}` : "no audio element");
+async function mediaUntil(tab, pred, ms) {
+  const end = Date.now() + ms;
+  let m = await jsEval(tab, MEDIA_STATE, null);
+  while (!pred(m) && Date.now() < end) {
+    await sleep(80);
+    m = await jsEval(tab, MEDIA_STATE, null);
   }
-  ck(rec, feature, item, "second click stops playback", "pause event", "no pause/ended event within 1.4 s", "FAIL");
-  return false;
+  return m;
+}
+/** "this control shows it is not playing" — the view's own marks (ReadingLearningView PLAYING_MARK · speakerButton · play-row) */
+const idleSentence = (i) => `(() => { const s = ${sent1(i)}; const e = s && s.querySelector('[data-en]'); return !!e && !/underline/.test(e.className); })()`;
+const idleSpeaker = (btn) => `(() => { const b = ${btn}; return !!b && / 듣기$/.test(b.getAttribute('aria-label') || ''); })()`;
+const idleRow = (i) => `(() => { const b = ${inRow4(i, '[data-action="play-row"]')}; return !!b && b.getAttribute('aria-pressed') === 'false'; })()`;
+
+/**
+ * A second press on the same control, while its clip plays, must stop the sound — and not start it again.
+ *
+ * 2026-09-28 — this used to wait for a 'pause' event, which the app's stop never produces: stopSpeech() (speech.ts
+ * hardStopStream — the stop of every course, e.g. StudentLearningView toggleSentence → stopAll) calls pause() and then
+ * removeAttribute('src') + load() in the same task, and the media element load algorithm removes the element's queued
+ * events, the 'pause' among them (HTML "media element load algorithm": "pending events and callbacks are discarded"). So the
+ * probe FAILed every correct stop (26 of 26 in each 2026-09-27 run; never a PASS on record) and could PASS a press that did
+ * nothing, on a word clip short enough to end by itself ('pause' + 'ended') inside the 1.4 s. Now it reads the shared element:
+ *   before  the clip must be sounding when the second press lands (waits up to 3 s); a clip that already ran to its end is
+ *           first played again with the same control (`rearm` presses — 2 for a Step 1 sentence, whose press after the end
+ *           closes its Korean line), so the press always meets a playing sound;
+ *   after   within 1.4 s the element is paused WITHOUT having reached its end (ended = false), stays so for 0.4 s, and the
+ *           press requested no clip (no play()) — then `idle` (the control's own playing mark) must be off.
+ * --break stop moves the mouse over the control instead of pressing it: this check must then FAIL on every probe.
+ */
+async function stopProbe(rec, tab, { feature, item, expr, touch = false, rearm = 1, idle = null }) {
+  const what = "second press stops playback";
+  let before = await mediaUntil(tab, (s) => isSounding(s) || !!(s && s.ended), 3000);
+  let note;
+  if (!isSounding(before) && before && before.ended) {
+    for (let k = 0; k < rearm; k++) await press(tab, expr, { touch, settle: 200 });
+    before = await mediaUntil(tab, isSounding, 6000);
+    note = `the clip had ended before the second press — played again first (${rearm} press${rearm > 1 ? "es" : ""})`;
+  }
+  const armed = isSounding(before);
+  await H.audioLog(tab, { clear: true });
+  const clicked = BREAK === "stop" ? { ok: true, hovered: await hover(tab, expr) } : await press(tab, expr, { touch });
+  if (!clicked.ok) {
+    ck(rec, feature, item, what, "the control pressed", `press failed: ${clicked.reason || ""}`, "FAIL");
+    return false;
+  }
+  if (!armed) {
+    ck(rec, feature, item, what, "a clip playing when the second press lands", `nothing was playing before the second press (${mediaText(before)})`, "FAIL", note || "nothing was tested");
+    return false;
+  }
+  let m = null;
+  let restarted = false;
+  let quietSince = 0;
+  const t0 = Date.now();
+  for (;;) {
+    await sleep(100);
+    restarted = (await H.audioLog(tab)).some((e) => e.ev === "play()");
+    m = await jsEval(tab, MEDIA_STATE, null);
+    if (restarted) break;
+    if (m && m.paused && !m.ended) {
+      if (!quietSince) quietSince = Date.now();
+      if (Date.now() - quietSince >= 400) break;
+    } else {
+      quietSince = 0;
+      if (Date.now() - t0 >= 1400) break;
+    }
+  }
+  const stopped = !restarted && !!m && m.paused && !m.ended;
+  const actual = restarted
+    ? `the press started a clip again (play()) — ${mediaText(m)}`
+    : stopped
+      ? `stopped before its end (${mediaText(m)}), no new clip`
+      : !m
+        ? "the audio element could not be read after the press"
+        : m.ended
+          ? `the clip ran to its end by itself (${mediaText(m)}) — the press did not stop it`
+          : `still sounding 1.4 s after the press (${mediaText(m)})`;
+  ck(rec, feature, item, what, "paused before its end, no new play()", actual, stopped ? "PASS" : "FAIL", BREAK === "stop" ? "깨기 stop: the mouse only moved over the control — must FAIL" : note);
+  if (idle) {
+    const off = await jsEval(tab, `(() => { try { return !!(${idle}); } catch (e) { return null; } })()`, null);
+    ck(rec, feature, item, "after the second press the control shows it stopped", "true", String(off), off === true ? "PASS" : "FAIL");
+  }
+  return stopped;
+}
+
+/** No clip may start (a key word's meaning, the Korean line). */
+async function silentProbe(rec, tab, { feature, item, action: what, expr, touch = false }) {
+  await H.audioLog(tab, { clear: true });
+  await press(tab, expr, { touch, settle: 500 });
+  const log = await H.audioLog(tab);
+  ck(rec, feature, item, `${what} does not speak`, "no play()", log.some((e) => e.ev === "play()") ? "a clip was requested" : "no play()", log.some((e) => e.ev === "play()") ? "FAIL" : "PASS");
 }
 
 // ---------------------------------------------------------------------------
 // localStorage of the clone (the only data this driver changes)
 // ---------------------------------------------------------------------------
 
-const wpmKey = (id) => `kig:reading:wpm:reading/${id}`;
-const notesKey = (id) => `kig:reading:notes:reading/${id}`;
+const speedKey = (D) => readingLearning.speedStorageKey(D.mainId);
+const wordsKey = (D) => readingLearning.wordsStorageKey(D.mainId);
+const notesKey = (D) => `kig:reading:notes:${D.pageKey}`;
+const legacyKey = (D) => readingLearning.legacyWpmStorageKey(D.pageKey);
 const progKey = (id) => `reading:${id}`;
 
-async function lsGet(tab, key) {
-  return jsEval(tab, `(() => { try { return localStorage.getItem(${J(key)}); } catch (e) { return null; } })()`, null);
+async function lsGet(tab, k) {
+  return jsEval(tab, `(() => { try { return localStorage.getItem(${J(k)}); } catch (e) { return null; } })()`, null);
+}
+async function lsJson(tab, k) {
+  const raw = await lsGet(tab, k);
+  try {
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
 }
 async function progressMap(tab, kind) {
   return jsEval(tab, `(() => { try { return JSON.parse(localStorage.getItem('kig:progress:${kind}') || '{}'); } catch (e) { return null; } })()`, null);
 }
-/** Clear this lesson's own keys so every page starts from a known state. Returns true if it changed anything. */
-async function resetLessonState(tab, id) {
+/** Clear this lesson's own keys (and the course's engine record) so every page starts from a known state. Returns true if it changed anything. */
+async function resetLessonState(tab, D) {
   return jsEval(
     tab,
     `(() => { try {
       let changed = false;
-      for (const k of [${J(wpmKey(id))}, ${J(notesKey(id))}]) if (localStorage.getItem(k) !== null) { localStorage.removeItem(k); changed = true; }
+      for (const k of ${J([speedKey(D), wordsKey(D), notesKey(D), legacyKey(D), "kig-learning:reading"])}) if (localStorage.getItem(k) !== null) { localStorage.removeItem(k); changed = true; }
       for (const m of ['kig:progress:completed', 'kig:progress:bookmarks']) {
         const raw = localStorage.getItem(m); if (!raw) continue;
-        const o = JSON.parse(raw); if (o && ${J(progKey(id))} in o) { delete o[${J(progKey(id))}]; localStorage.setItem(m, JSON.stringify(o)); changed = true; }
+        const o = JSON.parse(raw); if (o && ${J(progKey(D.id))} in o) { delete o[${J(progKey(D.id))}]; localStorage.setItem(m, JSON.stringify(o)); changed = true; }
       }
       return changed;
     } catch (e) { return false; } })()`,
@@ -447,12 +578,9 @@ async function resetLessonState(tab, id) {
 
 const EXTRA_HOOK = `(() => {
   if (window.__kigDrv) return; window.__kigDrv = true;
-  // keep a handle on the (detached) shared audio element so the driver can let a
-  // clip finish quickly instead of waiting out its whole duration
   const P = HTMLMediaElement.prototype, op = P.play;
   P.play = function () { window.__kigMedia = this; return op.apply(this, arguments); };
-  // Fake SpeechRecognition: the real one cannot run headless (no microphone, no
-  // recognition service). Marked "UI wiring only" in the results.
+  // Fake SpeechRecognition: the real one cannot run headless (no microphone, no recognition service). "UI wiring only".
   class FakeRec {
     constructor() { this.lang = 'en-US'; this.continuous = false; this.interimResults = true; this.maxAlternatives = 1; }
     start() {
@@ -478,21 +606,16 @@ const EXTRA_HOOK = `(() => {
   try { Object.defineProperty(window, 'SpeechRecognition', { configurable: true, writable: true, value: FakeRec }); } catch (e) {}
 })()`;
 
-/** Jump the currently playing clip to its end so the real 'ended' handler runs now. */
-async function fastForward(tab) {
-  return jsEval(
-    tab,
-    `(() => { const a = window.__kigMedia; if (!a || !isFinite(a.duration) || a.duration <= 0) return false; try { a.currentTime = Math.max(0, a.duration - 0.12); return true; } catch (e) { return false; } })()`,
-    false,
-  );
-}
-
 // ---------------------------------------------------------------------------
 // checks — page shell
 // ---------------------------------------------------------------------------
 
+const completeBtn = `document.querySelector('main button[aria-label="학습 완료 체크"], main button[aria-label="학습 완료 취소"]')`;
+const bookmarkBtn = `document.querySelector('main button[aria-label="북마크 추가"], main button[aria-label="북마크 해제"]')`;
+const completeState = `(() => { const b = ${completeBtn}; return b ? { aria: b.getAttribute('aria-label'), disabled: !!b.disabled } : null; })()`;
+
 async function shellChecks(rec, tab, D, snap) {
-  rec.steps = (await jsEval(tab, `[...document.querySelectorAll('nav[aria-label="리딩 4단계 학습 단계"] button')].map((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim())`, [])) || [];
+  rec.steps = (await jsEval(tab, `[...document.querySelectorAll('main [data-step-tab]')].map((b) => (b.textContent || '').replace(/\\s+/g, ' ').trim())`, [])) || [];
 
   eqCk(rec, "shell", "", "h1 title", D.title, (snap.h1 || [])[0]);
   const canonical = await jsEval(tab, `(document.querySelector('link[rel=canonical]') || {}).href || null`, null);
@@ -509,13 +632,11 @@ async function shellChecks(rec, tab, D, snap) {
   ck(rec, "shell", "", "no broken images", "0", String(snap.brokenImages), snap.brokenImages === 0 ? "PASS" : "FAIL");
   ck(rec, "shell", "", "form fields are labelled", "0 unlabelled", String(snap.unlabeledFields), snap.unlabeledFields === 0 ? "PASS" : "FAIL");
 
-  // course link
-  const courseHref = await jsEval(tab, `((document.querySelector('nav[aria-label="강의 이동"] a[href="/reading"]')) || {}).getAttribute ? document.querySelector('nav[aria-label="강의 이동"] a[href="/reading"]').getAttribute('href') : null`, null);
-  eqCk(rec, "shell", "", "course link href", "/reading", courseHref);
-  const courseText = await jsText(tab, `document.querySelector('nav[aria-label="강의 이동"] a[href="/reading"]')`);
-  hasCk(rec, "shell", "", "course link label", "READING 목록", courseText);
+  // the title row (2026-09-27 frame): '← READING 목록' in nav[aria-label="과정으로"]
+  eqCk(rec, "shell", "", "course link href", "/reading", await jsEval(tab, `(() => { const a = document.querySelector('nav[aria-label="과정으로"] a[href="/reading"]'); return a ? a.getAttribute('href') : null; })()`, null));
+  hasCk(rec, "shell", "", "course link label", "READING 목록", await jsText(tab, `document.querySelector('nav[aria-label="과정으로"] a[href="/reading"]')`));
 
-  // prev / next
+  // prev / next (LessonEndBar)
   for (const dir of ["prev", "next"]) {
     const label = dir === "prev" ? "이전 강의" : "다음 강의";
     const expr = `document.querySelector('main a[aria-label^=${J(label)}]')`;
@@ -530,25 +651,31 @@ async function shellChecks(rec, tab, D, snap) {
     }
   }
 
-  // header stats
-  const header = await jsText(tab, `document.querySelector('main')`);
-  hasCk(rec, "header", "", "word count", `총 ${D.wordCount}단어`, header);
-  hasCk(rec, "header", "", "sentence count", `${D.sentences.length}개 핵심 문장`, header);
-  hasCk(rec, "header", "", "recommended time", `권장 속독 시간 약 ${D.expectedSeconds}초`, header);
+  // the passage meta line (the header card is gone — RD-U07)
+  eqCk(rec, "meta", "", "word count · sentences · target", D.meta, await jsText(tab, `document.querySelector('main [data-passage-meta]')`));
+  lacksCk(rec, "meta", "", "no header card", "독해 마스터리", await jsText(tab, `document.querySelector('main')`));
 
-  // step tabs
-  const wantTabs = ["Step 1 · 속독 챌린지", "Step 2 · 핵심 어휘", "Step 3 · 독해 퀴즈", "Step 4 · 원문 대조"];
-  ck(rec, "steps", "", "four step tabs", wantTabs.join(" | "), rec.steps.join(" | "), rec.steps.length === 4 && wantTabs.every((t, i) => norm(rec.steps[i]).includes(t)) ? "PASS" : "FAIL");
+  // step tabs (StepTabs) — the text of each still reads "Step N · name" (LessonStepNavigation finds them by it)
+  const want = ["Step 1 · 속독 챌린지", "Step 2 · 핵심 어휘", "Step 3 · 독해 퀴즈", "Step 4 · 원문 대조"];
+  ck(rec, "steps", "", "four step tabs", want.join(" | "), rec.steps.join(" | "), rec.steps.length === 4 && want.every((t, i) => norm(rec.steps[i]).includes(t)) ? "PASS" : "FAIL");
 
-  // action buttons start in the off state (fresh lesson state)
-  eqCk(rec, "bookmark", "", "initial aria-label", "북마크 추가", await jsEval(tab, `(() => { const b = document.querySelector('main button[aria-label="북마크 추가"], main button[aria-label="북마크 해제"]'); return b ? b.getAttribute('aria-label') : null; })()`, null));
-  eqCk(rec, "complete", "", "initial aria-label", "학습 완료 체크", await jsEval(tab, `(() => { const b = document.querySelector('main button[aria-label="학습 완료 체크"], main button[aria-label="학습 완료 취소"]'); return b ? b.getAttribute('aria-label') : null; })()`, null));
+  // the top whole-lesson player is hidden — the view plays it after the timed reading and in Step 4 (D01 나)
+  const top = await jsEval(tab, `(() => { const p = document.querySelector('main [data-passage-player]'); return p ? getComputedStyle(p).display : 'absent'; })()`, null);
+  ck(rec, "player", "top", "the page's top player is hidden (the view owns it)", "none", String(top), top === "none" || top === "absent" ? "PASS" : "FAIL");
+  boolCk(rec, "player", "step1", "no whole-lesson player in Step 1 before the timed reading", false, await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-reading-player]`)})`));
 
-  // bottom step navigation, before anything was clicked
+  // bookmark, and completion — disabled until one timed reading (D02 나)
+  eqCk(rec, "bookmark", "", "initial aria-label", "북마크 추가", await jsEval(tab, `(() => { const b = ${bookmarkBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
+  await H.waitFor(tab, R.VIEW_READY, 8000);
+  await sleep(200);
+  const c0 = await jsEval(tab, completeState, null);
+  eqCk(rec, "complete", "gate", "initial aria-label", "학습 완료 체크", c0 && c0.aria);
+  boolCk(rec, "complete", "gate", "'이 강의 학습 완료' disabled before a timed reading", true, !!(c0 && c0.disabled));
+  hasCk(rec, "complete", "gate", "the reason under it", readingLearning.READING_GATE_REASON, await jsText(tab, `document.querySelector('main section[aria-label="강의 마치기"]')`));
+
   const navState = await bottomNavState(tab);
   boolCk(rec, "stepnav", "", "← 이전 Step disabled on Step 1", true, navState.prevDisabled);
   boolCk(rec, "stepnav", "", "다음 Step → enabled on Step 1", false, navState.nextDisabled);
-  eqCk(rec, "stepnav", "", "목록으로 link href", "/reading", await jsEval(tab, `(() => { const a = document.querySelector('nav[aria-label="학습 단계 이동"] a'); return a ? a.getAttribute('href') : null; })()`, null));
 }
 
 async function bottomNavState(tab) {
@@ -567,577 +694,367 @@ async function activeStep(tab) {
 }
 
 async function openStep(rec, tab, n, { touch = false } = {}) {
-  const key = STEP_KEYS[n - 1];
-  if ((await activeStep(tab)) === key) return true;
-  const r = await press(tab, stepTab(n), { touch, verify: () => exists(tab, el(SEL[key])) });
+  const k = STEP_KEYS[n - 1];
+  if ((await activeStep(tab)) === k) return true;
+  const r = await press(tab, stepTab(n), { touch, verify: () => exists(tab, el(SEL[k])) });
   for (let i = 0; i < 25; i++) {
-    if (await exists(tab, el(SEL[key]))) return true;
+    if (await exists(tab, el(SEL[k]))) return true;
     await sleep(80);
   }
-  ck(rec, "steps", `step${n}`, "open step tab", `${key} section visible`, `not visible${r && r.ok === false ? ` (${r.reason})` : ""}`, "FAIL");
+  ck(rec, "steps", `step${n}`, "open step tab", `${k} panel visible`, `not visible${r && r.ok === false ? ` (${r.reason})` : ""}`, "FAIL");
   return false;
 }
 
 // ---------------------------------------------------------------------------
-// checks — top "whole passage" player
+// checks — Step 1 (timed reading + passage)
 // ---------------------------------------------------------------------------
 
-const playBtn = `document.querySelector('main button[aria-label="재생"], main button[aria-label="일시정지"]')`;
-const stopBtn = `document.querySelector('main button[aria-label="정지"]')`;
-const prevSentBtn = `document.querySelector('main button[aria-label="이전 문장"]')`;
-const nextSentBtn = `document.querySelector('main button[aria-label="다음 문장"]')`;
-const rangeInput = `document.querySelector('main input[aria-label="문장 이동"]')`;
-
-async function playerState(tab) {
-  return jsEval(
-    tab,
-    `(() => {
-      const box = document.querySelector('main input[aria-label="문장 이동"]');
-      const bar = box ? box.closest('.rounded-3xl') : null;
-      const t = bar ? (bar.innerText || '').replace(/\\s+/g, ' ').trim() : '';
-      const play = document.querySelector('main button[aria-label="재생"], main button[aria-label="일시정지"]');
-      const stop = document.querySelector('main button[aria-label="정지"]');
-      const counter = (t.match(/(\\d+)\\/(\\d+)/) || [null])[0];
-      const speeds = bar ? [...bar.querySelectorAll('button')].filter((b) => /×/.test(b.innerText || '')).map((b) => ({ label: (b.innerText || '').trim(), pressed: b.getAttribute('aria-pressed') === 'true' })) : [];
-      return { text: t, aria: play ? play.getAttribute('aria-label') : null, stopDisabled: stop ? !!stop.disabled : null, counter, speeds, valuetext: box ? box.getAttribute('aria-valuetext') : null, value: box ? box.value : null };
-    })()`,
-    {},
-  );
-}
-
-async function playerChecks(rec, tab, D) {
-  const n = D.sentences.length;
-  const s0 = await playerState(tab);
-  eqCk(rec, "player", "", "idle aria-label", "재생", s0.aria);
-  boolCk(rec, "player", "", "정지 disabled while idle", true, s0.stopDisabled);
-  eqCk(rec, "player", "", "idle counter", `1/${n}`, s0.counter);
-  hasCk(rec, "player", "", "idle status line", "▶ 재생 버튼을 눌러 전체 듣기", s0.text);
-  eqCk(rec, "player", "", "sentence slider aria-valuetext", `1번째 문장 / 전체 ${n}문장`, s0.valuetext);
-  const pressed1 = (s0.speeds || []).find((x) => x.pressed);
-  eqCk(rec, "player", "", "default speed", "1×", pressed1 ? pressed1.label : null);
-
-  // play → first sentence clip
-  await playProbe(rec, tab, { feature: "player", item: "play", trigger: "▶ 재생", text: D.sentences[0].en, expr: playBtn });
-  const s1 = await playerState(tab);
-  eqCk(rec, "player", "", "aria-label while speaking", "일시정지", s1.aria);
-  boolCk(rec, "player", "", "정지 enabled while speaking", false, s1.stopDisabled);
-  hasCk(rec, "player", "", "status while speaking", "🔊 음성 읽는 중…", s1.text);
-
-  // pause / resume
-  await H.click(tab, playBtn);
-  await sleep(500);
-  const sp = await playerState(tab);
-  hasCk(rec, "player", "", "status while paused", "⏸ 일시정지됨 — ▶ 를 눌러 이어 듣기", sp.text);
-  eqCk(rec, "player", "", "aria-label while paused", "재생", sp.aria);
-  await H.click(tab, playBtn);
-  await sleep(600);
-  const sr = await playerState(tab);
-  hasCk(rec, "player", "", "status after resume", "🔊 음성 읽는 중…", sr.text);
-
-  // walk the queue with 다음 / 이전: every sentence must be the next clip
-  for (let i = 1; i < n; i++) {
-    await playProbe(rec, tab, { feature: "player", item: `next→${i + 1}`, trigger: `다음 문장 → ${i + 1}/${n}`, text: D.sentences[i].en, expr: nextSentBtn });
-    const st = await playerState(tab);
-    eqCk(rec, "player", `next→${i + 1}`, "counter after 다음", `${i + 1}/${n}`, st.counter);
-  }
-  if (n > 1) {
-    await playProbe(rec, tab, { feature: "player", item: "prev", trigger: `이전 문장 → ${n - 1}/${n}`, text: D.sentences[n - 2].en, expr: prevSentBtn });
-    eqCk(rec, "player", "prev", "counter after 이전", `${n - 1}/${n}`, (await playerState(tab)).counter);
-  }
-
-  // speed buttons restart the current sentence at the new rate
-  const cur = n > 1 ? n - 2 : 0;
-  await H.audioLog(tab, { clear: true });
-  await H.click(tab, btnByExactText("main", "1.2×"));
-  const fast = await waitClip(tab, H.expectedClip(D.sentences[cur].en), 12000);
-  const rate12 = await jsEval(tab, `(() => { const a = window.__kigMedia; return a ? a.playbackRate : null; })()`, null);
-  ck(rec, "player", "speed", "1.2× restarts the current sentence", "clip playing at rate 1.2", `playing=${fast.playing} rate=${rate12}`, fast.playing && Math.abs((rate12 || 0) - 1.2) < 0.01 ? "PASS" : "FAIL");
-  const s12 = await playerState(tab);
-  eqCk(rec, "player", "speed", "aria-pressed follows the chosen speed", "1.2×", ((s12.speeds || []).find((x) => x.pressed) || {}).label);
-  await H.click(tab, btnByExactText("main", "1×"));
-  await sleep(400);
-
-  // let a clip end: the queue must advance on its own, and stop at the last sentence
-  await H.audioLog(tab, { clear: true });
-  const before = (await playerState(tab)).counter;
-  await fastForward(tab);
-  await sleep(1200);
-  const after = await playerState(tab);
-  if (n > 1) {
-    ck(rec, "player", "auto-advance", "queue advances when a clip ends", `counter past ${before}`, after.counter, after.counter !== before ? "PASS" : "FAIL");
-  }
-  // stop
-  await H.click(tab, stopBtn);
-  await sleep(500);
-  const st = await playerState(tab);
-  eqCk(rec, "player", "stop", "counter back to 1/n after 정지", `1/${n}`, st.counter);
-  boolCk(rec, "player", "stop", "정지 disabled again", true, st.stopDisabled);
-  eqCk(rec, "player", "stop", "aria-label back to 재생", "재생", st.aria);
-
-  // idle 다음 starts at sentence 2 (or 1 when the lesson has a single sentence)
-  const idleTarget = n > 1 ? 1 : 0;
-  await playProbe(rec, tab, { feature: "player", item: "idle-next", trigger: "다음 문장 while idle", text: D.sentences[idleTarget].en, expr: nextSentBtn });
-  await H.click(tab, stopBtn);
-  await sleep(300);
-
-  // sentence slider: arrow keys then keyup commit
-  await H.audioLog(tab, { clear: true });
-  await jsEval(tab, `(() => { const r = ${rangeInput}; if (r) { r.scrollIntoView({ block: 'center' }); r.focus(); } return document.activeElement === ${rangeInput}; })()`, false);
-  const sliderTarget = Math.min(n - 1, 2);
-  for (let i = 0; i < sliderTarget; i++) {
-    await tab.send("Input.dispatchKeyEvent", { type: "rawKeyDown", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39 });
-    await tab.send("Input.dispatchKeyEvent", { type: "keyUp", key: "ArrowRight", code: "ArrowRight", windowsVirtualKeyCode: 39 });
-    await sleep(80);
-  }
-  const slid = await waitClip(tab, H.expectedClip(D.sentences[sliderTarget].en), 12000);
-  rec.audio.push({ trigger: `문장 이동 slider → ${sliderTarget + 1}`, text: cut(D.sentences[sliderTarget].en, 90), expected: H.expectedClip(D.sentences[sliderTarget].en), requested: slid.requested, playing: slid.playing, error: slid.error, tts: slid.tts });
-  ck(rec, "player", "slider", "arrow keys + keyup jump to that sentence", `clip of sentence ${sliderTarget + 1} playing`, slid.playing ? "playing" : `requested ${slid.requested.join(",") || "nothing"}`, slid.playing ? "PASS" : "FAIL");
-  await H.click(tab, stopBtn);
-  await sleep(300);
-
-  // global Space shortcut (AudioPlayer.tsx:182-198)
-  await H.audioLog(tab, { clear: true });
-  await jsEval(tab, `document.body.focus()`, null);
-  await tab.send("Input.dispatchKeyEvent", { type: "rawKeyDown", key: " ", code: "Space", windowsVirtualKeyCode: 32, text: " " });
-  await tab.send("Input.dispatchKeyEvent", { type: "keyUp", key: " ", code: "Space", windowsVirtualKeyCode: 32 });
-  const spaceRes = await waitClip(tab, H.expectedClip(D.sentences[0].en), 8000);
-  ck(rec, "player", "space", "Space starts playback", "clip of sentence 1 playing", spaceRes.playing ? "playing" : `requested ${spaceRes.requested.join(",") || "nothing"}`, spaceRes.playing ? "PASS" : "FAIL");
-  await H.click(tab, stopBtn);
-  await sleep(300);
-}
-
-// ---------------------------------------------------------------------------
-// checks — Step 1 (WPM + passage)
-// ---------------------------------------------------------------------------
-
-const wpmStartBtn = btnByText(SEL.step1, "측정 시작");
-const wpmFinishBtn = btnByText(SEL.step1, "완독 완료");
-const wpmResetBtn = `document.querySelector(${J(`${SEL.step1} button[title="타이머 초기화"]`)})`;
-
-async function wpmElapsed(tab) {
-  const t = await stepText(tab, "step1");
-  const m = /경과 시간\s*(\d{2}):(\d{2})/.exec(t || "");
-  return m ? Number(m[1]) * 60 + Number(m[2]) : null;
-}
-
-/** too-fast branch, then start the run that keeps timing while other checks happen. */
-async function wpmTooFastThenStart(rec, tab, D) {
-  const before = await lsGet(tab, wpmKey(D.id));
-  const started = await press(tab, wpmStartBtn, { settle: 150 });
-  ck(rec, "wpm", "start", "속독 측정 시작 click", "timer starts", started.ok ? "clicked" : `click failed: ${started.reason}`, started.ok ? "PASS" : "FAIL");
-  hasCk(rec, "wpm", "start", "finish button appears", "완독 완료! (속도 측정)", await stepText(tab, "step1"));
-  await press(tab, wpmFinishBtn, { settle: 400 });
-  const tooFastText = await stepText(tab, "step1");
-  hasCk(rec, "wpm", "too-fast", "implausible run is not scored", "측정값을 저장하지 않았습니다", tooFastText);
-  hasCk(rec, "wpm", "too-fast", "explanation names the seconds and the ceiling", `1초 만에 완독하면 ${MAX_PLAUSIBLE_WPM} WPM을 넘어`, tooFastText);
-  const after = await lsGet(tab, wpmKey(D.id));
-  eqCk(rec, "wpm", "too-fast", "stored best untouched", String(before), String(after));
-
-  // R14: does restarting clear the previous card?
-  await press(tab, wpmStartBtn, { settle: 300 });
-  const during = await stepText(tab, "step1");
-  ck(
-    rec,
-    "wpm",
-    "restart",
-    "restart clears the previous result card",
-    "previous card gone while the new run times",
-    norm(during).includes("측정값을 저장하지 않았습니다") ? "previous '측정값을 저장하지 않았습니다' card still shown" : "cleared",
-    norm(during).includes("측정값을 저장하지 않았습니다") ? "FAIL" : "PASS",
-    "map §12-15 / R14: WpmStopwatchBar.start() never calls onReset",
-  );
-  return Date.now();
-}
-
-async function wpmFinish(rec, tab, D, { label, expectBest }) {
-  // wait until the elapsed seconds are enough for the result to be scored
-  for (let i = 0; i < 400; i++) {
-    const e = await wpmElapsed(tab);
-    if (e != null && e >= D.minScoredSeconds) break;
-    await sleep(500);
-  }
-  const elapsed = await wpmElapsed(tab);
-  await press(tab, wpmFinishBtn, { settle: 500 });
-  const text = await stepText(tab, "step1");
-  const shown = /([0-9]+) WPM/.exec(text || "");
-  const secs = /([0-9]+)초 만에 완독/.exec(text || "");
-  const usedSeconds = secs ? Number(secs[1]) : elapsed;
-  const expectedWpm = Math.round((D.wordCount / Math.max(1, usedSeconds)) * 60);
-  ck(rec, "wpm", label, "WPM result card shown", `${expectedWpm} WPM`, shown ? `${shown[1]} WPM` : "no result card", shown && Number(shown[1]) === expectedWpm ? "PASS" : "FAIL", `wordCount=${D.wordCount} seconds=${usedSeconds}`);
-  const badge = expectedWpm >= 200 ? "🚀 최상위 속독 수준" : expectedWpm >= 160 ? "⚡ 권장 속도 완벽 마스터" : expectedWpm >= 120 ? "📖 양호한 독해 속도" : "💡 직독직해 집중 훈련 권장";
-  hasCk(rec, "wpm", label, "badge matches the measured speed", badge, text);
-  hasCk(rec, "wpm", label, "summary line", `${D.wordCount}개 단어를 ${usedSeconds}초 만에 완독하셨습니다.`, text);
-  hasCk(rec, "wpm", label, "quiz shortcut button", "독해 이해도 퀴즈 풀기 ➔", text);
-  const stored = Number(await lsGet(tab, wpmKey(D.id)));
-  if (expectBest == null) {
-    ck(rec, "wpm", label, "best stored in localStorage", String(expectedWpm), String(stored), stored === expectedWpm ? "PASS" : "FAIL", wpmKey(D.id));
-  } else {
-    const best = Math.max(expectBest, expectedWpm);
-    ck(rec, "wpm", label, "stored best keeps the higher value", String(best), String(stored), stored === best ? "PASS" : "FAIL", wpmKey(D.id));
-    hasCk(rec, "wpm", label, "restored personal best is shown", `내 최고 기록: ${best} WPM`, text, "best comes from localStorage after a reload");
-  }
-  return { wpm: expectedWpm, seconds: usedSeconds };
+/** One timed reading: start, wait `waitMs`, finish. Returns the stored record's run (or null). */
+async function timedRun(rec, tab, D, { purpose, waitMs, label, touch = false }) {
+  const startExpr = purpose === "again" ? action(SEL.step4, "reread-start") : `(${action(SEL.step1, "start-reading")}) || (${action(SEL.step1, "measure-again")})`;
+  const started = await press(tab, startExpr, { touch, settle: 700 });
+  ck(rec, "wpm", label, "start the timed reading", "started", started.ok ? "started" : `press failed: ${started.reason}`, started.ok ? "PASS" : "FAIL");
+  const passageSel = purpose === "again" ? 'main [data-passage="reread"]' : 'main [data-passage="step1"]';
+  // G01: the passage's top comes up under the header; sentences are plain text while timing. A page too short to scroll
+  // that far (the bottom of the page is already on screen) is NA, not a failure.
+  const pos = await jsEval(tab, `(() => { const s = document.querySelector(${J(`${passageSel} [data-sentence-id] [data-en]`)}); if (!s) return null; const maxScroll = document.documentElement.scrollHeight - innerHeight; return { top: Math.round(s.getBoundingClientRect().top), atBottom: scrollY >= maxScroll - 2 }; })()`, null);
+  const top = pos ? pos.top : null;
+  ck(rec, "wpm", label, "the passage's first line comes up under the header", "y ≤ 120", String(top), top !== null && top <= 120 ? "PASS" : pos && pos.atBottom ? "NA" : "FAIL", pos && pos.atBottom && top > 120 ? "the page is scrolled to its end — too short to bring the passage higher" : "계획 G01 확인 '시작 뒤 첫 줄 y ≤ 120'");
+  eqCk(rec, "wpm", label, "no pressable sentence while timing", "0", String(await count(tab, `${passageSel} [role="button"]`)));
+  eqCk(rec, "wpm", label, "no sentence numbers while timing", "0", String(await count(tab, `${passageSel} sup`)));
+  const finish = `document.querySelector(${J(`${passageSel} [data-action="finish-reading"]`)})`;
+  boolCk(rec, "wpm", label, "'다 읽었어요' at the end of the passage", true, await exists(tab, finish));
+  await sleep(waitMs);
+  await press(tab, finish, { touch, settle: 600 });
+  const stored = await lsJson(tab, speedKey(D));
+  return stored ? stored[purpose] || null : null;
 }
 
 async function step1Checks(rec, tab, D, captured) {
   const n = D.sentences.length;
-  const count = await jsEval(tab, `document.querySelectorAll(${J(`${SEL.step1} [data-sentence-id]`)}).length`, 0);
-  ck(rec, "step1", "", "sentence count matches the data", String(n), String(count), count === n ? "PASS" : "FAIL");
+  hasCk(rec, "step1", "", "guidance: read for meaning at your usual speed (D31 나)", "뜻을 파악하며 평소 속도로", await stepText(tab, "step1"));
+  const cnt = await count(tab, `${SEL.step1} [data-sentence-id]`);
+  ck(rec, "step1", "", "sentence count matches the data", String(n), String(cnt), cnt === n ? "PASS" : "FAIL");
+  boolCk(rec, "step1", "", "the first sentence is the first learning item (data-learn-first)", true, await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-sentence-id][data-learn-first]`)})`));
 
-  for (let i = 0; i < Math.min(n, count); i++) {
+  for (let i = 0; i < Math.min(n, cnt); i++) {
     const S = D.sentences[i];
-    const id = await jsEval(tab, `(${sent1(i)}).getAttribute('data-sentence-id')`, null);
-    eqCk(rec, "step1", `s${i + 1}`, "data-sentence-id", S.id, id);
-    const enText = await jsText(tab, `(${sent1(i)}).querySelector('span')`);
-    eqCk(rec, "step1", `s${i + 1}`, "English sentence text", S.en, enText);
-    const sup = await jsText(tab, `(${sent1(i)}).querySelector('sup')`);
-    eqCk(rec, "step1", `s${i + 1}`, "sentence number", `[${i + 1}]`, sup);
-
-    // hover shows the 1:1 Korean translation
-    await hover(tab, sent1(i));
-    await sleep(140);
-    const barText = await stepText(tab, "step1");
-    hasCk(rec, "step1", `s${i + 1}`, "hover shows the Korean translation", `👉 ${S.ko}`, barText);
-    hasCk(rec, "step1", `s${i + 1}`, "translation bar carries the sentence number", `[${i + 1}]`, barText);
-
-    // click plays this sentence's clip; a second click stops it
-    await playProbe(rec, tab, { feature: "step1", item: `s${i + 1}`, trigger: `sentence ${i + 1} click`, text: S.en, expr: sent1(i) });
-    const playingClass = await jsEval(tab, `((${sent1(i)}) || {}).className || ''`, "");
-    ck(rec, "step1", `s${i + 1}`, "playing sentence is highlighted", "class contains bg-red-500/15", cut(playingClass, 120), /bg-red-500\/15/.test(playingClass) ? "PASS" : "FAIL");
-    await stopProbe(rec, tab, { feature: "step1", item: `s${i + 1}`, expr: sent1(i) });
+    eqCk(rec, "step1", `s${i + 1}`, "data-sentence-id", S.id, await jsEval(tab, `(${sent1(i)}).getAttribute('data-sentence-id')`, null));
+    eqCk(rec, "step1", `s${i + 1}`, "English sentence text", S.en, await jsText(tab, `(${sent1(i)}).querySelector('[data-en]')`));
+    eqCk(rec, "step1", `s${i + 1}`, "a sentence is a button", "button", await jsEval(tab, `(${sent1(i)}).getAttribute('role')`, null));
   }
 
+  // RD-U02: moving the mouse over the passage changes nothing (60 moves)
+  const before = await jsEval(tab, `(document.querySelector(${J(`${SEL.step1} [data-passage]`)}) || {}).outerHTML || ''`, "");
+  for (let k = 0; k < 60; k++) await hover(tab, sent1(k % Math.max(1, cnt)));
   await hoverAway(tab);
-  await sleep(200);
-  hasCk(rec, "step1", "", "idle translation bar placeholder", "문장에 마우스를 올리면(Hover) 한국어 직독직해 번역이 여기에 표시됩니다.", await stepText(tab, "step1"));
+  const after = await jsEval(tab, `(document.querySelector(${J(`${SEL.step1} [data-passage]`)}) || {}).outerHTML || ''`, "");
+  const changed = BREAK === "hover" ? before === after : before !== after;
+  ck(rec, "step1", "hover", "60 mouse moves over the sentences change nothing", "unchanged", changed ? "the passage changed" : "unchanged", changed ? "FAIL" : "PASS", BREAK === "hover" ? "깨기 hover: expects a change" : undefined);
 
-  // copy
-  const copyExpr = btnByText(SEL.step1, "지문 전체 복사");
-  const copied = await press(tab, copyExpr, { settle: 400 });
-  if (copied.ok) {
-    hasCk(rec, "step1", "copy", "copy feedback", "✓ 복사 완료", await stepText(tab, "step1"));
-    const clip = await jsEval(tab, `navigator.clipboard.readText().catch(() => null)`, null);
-    const want = D.sentences.map((s) => s.en).join(" ");
-    ck(rec, "step1", "copy", "clipboard holds the whole passage", cut(want, 120), clip == null ? "clipboard unreadable" : cut(clip, 120), clip != null && norm(clip) === norm(want) ? "PASS" : "FAIL", clip == null ? "clipboard read blocked in this profile" : undefined);
-  } else {
-    ck(rec, "step1", "copy", "copy button clickable", "clickable", copied.reason || "missing", "FAIL");
+  // press a sentence: its clip plays and its Korean shows (the panel from sm); a second press stops and closes
+  for (let i = 0; i < Math.min(n, cnt); i++) {
+    const S = D.sentences[i];
+    await playProbe(rec, tab, { feature: "step1", item: `s${i + 1}`, trigger: `sentence ${i + 1} press`, text: D.spoken(i), expr: sent1(i) });
+    hasCk(rec, "step1", `s${i + 1}`, "its Korean shows in the panel under the passage", S.ko, await jsText(tab, `document.querySelector(${J(`${SEL.step1} [data-ko-panel]`)})`));
+    const cls = await jsEval(tab, `(((${sent1(i)}) || {}).querySelector ? (${sent1(i)}).querySelector('[data-en]').className : '')`, "");
+    ck(rec, "step1", `s${i + 1}`, "the playing sentence is underlined (not bold red)", "underline decoration-primary", cut(cls, 120), /underline/.test(cls) && !/red|font-bold/.test(cls) ? "PASS" : "FAIL");
+    await stopProbe(rec, tab, { feature: "step1", item: `s${i + 1}`, expr: sent1(i), rearm: 2, idle: idleSentence(i) });
+    lacksCk(rec, "step1", `s${i + 1}`, "a second press closes the Korean", S.ko, (await jsText(tab, `document.querySelector(${J(`${SEL.step1} [data-ko-panel]`)})`)) || "");
   }
 
-  // sentence numbering toggle
-  const numBtn = `document.querySelector('main button[title="문장 번호 표시 On/Off"]')`;
-  eqCk(rec, "step1", "numbers", "toggle label (on)", "# 번호 ON", await jsText(tab, numBtn));
-  await press(tab, numBtn, { settle: 220 });
-  eqCk(rec, "step1", "numbers", "toggle label (off)", "# 번호 OFF", await jsText(tab, numBtn));
-  const supsOff = await jsEval(tab, `document.querySelectorAll(${J(`${SEL.step1} [data-sentence-id] sup`)}).length`, -1);
-  ck(rec, "step1", "numbers", "numbers hidden", "0", String(supsOff), supsOff === 0 ? "PASS" : "FAIL");
-  await press(tab, numBtn, { settle: 220 });
-  const supsOn = await jsEval(tab, `document.querySelectorAll(${J(`${SEL.step1} [data-sentence-id] sup`)}).length`, -1);
-  ck(rec, "step1", "numbers", "numbers back", String(n), String(supsOn), supsOn === n ? "PASS" : "FAIL");
+  // keyboard: Enter on a focused sentence plays it (and the top player does not take the key)
+  await jsEval(tab, `(() => { const s = ${sent1(0)}; if (s) s.focus(); return document.activeElement === s; })()`, false);
+  await H.audioLog(tab, { clear: true });
+  await key(tab, "Enter");
+  const kb = await waitClip(tab, H.expectedClip(D.spoken(0)), 8000);
+  ck(rec, "step1", "keyboard", "Enter on a sentence plays it", "clip of sentence 1 playing", kb.playing ? "playing" : `requested ${kb.requested.join(",") || "nothing"}`, kb.playing ? "PASS" : "FAIL");
+  await key(tab, "Enter");
+  await sleep(300);
 
-  // font size
-  for (const [label, px] of [["크게", "18px"], ["특대", "20px"], ["보통", "16px"]]) {
-    await press(tab, btnByExactText("main", label), { settle: 220 });
-    const size = await jsEval(tab, `(() => { const c = document.querySelector(${J(`${SEL.step1} .font-serif`)}); return c ? getComputedStyle(c).fontSize : null; })()`, null);
-    const pressed = await jsEval(tab, `(() => { const b = ${btnByExactText("main", label)}; return b ? b.getAttribute('aria-pressed') : null; })()`, null);
-    eqCk(rec, "step1", `font ${label}`, "passage font-size", px, size);
-    eqCk(rec, "step1", `font ${label}`, "aria-pressed", "true", pressed);
+  // the 'Aa' menu: size, numbers, copy (RD-U07)
+  const menu = action(SEL.step1, "view-menu");
+  await press(tab, menu, { settle: 250 });
+  for (const [size, px] of [["large", "18px"], ["xlarge", "22px"], ["normal", "16px"]]) {
+    await press(tab, `document.querySelector('main [data-size="${size}"]')`, { settle: 200 });
+    const fontSize = await jsEval(tab, `(() => { const c = document.querySelector(${J(`${SEL.step1} [data-passage] [lang="en"]`)}); return c ? getComputedStyle(c).fontSize : null; })()`, null);
+    eqCk(rec, "step1", `size ${size}`, "passage font-size", px, fontSize);
   }
+  eqCk(rec, "step1", "size", "the size is remembered for every lesson", "normal", ((await lsJson(tab, readingLearning.PREFS_STORAGE_KEY)) || {}).size);
+  await press(tab, `document.querySelector('main [data-action="toggle-numbers"]')`, { settle: 200 });
+  eqCk(rec, "step1", "numbers", "numbers off", "0", String(await count(tab, `${SEL.step1} [data-sentence-id] sup`)));
+  await press(tab, `document.querySelector('main [data-action="toggle-numbers"]')`, { settle: 200 });
+  eqCk(rec, "step1", "numbers", "numbers back", String(n), String(await count(tab, `${SEL.step1} [data-sentence-id] sup`)));
+  await press(tab, `document.querySelector('main [data-action="copy-passage"]')`, { settle: 400 });
+  hasCk(rec, "step1", "copy", "copy feedback", "복사했어요", await jsText(tab, `document.querySelector('main [data-action="copy-passage"]')`));
+  const clip = await jsEval(tab, `navigator.clipboard.readText().catch(() => null)`, null);
+  const want = D.sentences.map((s) => s.en).join(" ");
+  ck(rec, "step1", "copy", "clipboard holds the whole passage", cut(want, 120), clip == null ? "clipboard unreadable" : cut(clip, 120), clip != null && norm(clip) === norm(want) ? "PASS" : "FAIL", clip == null ? "clipboard read blocked in this profile" : undefined);
+  await key(tab, "Escape");
+  await sleep(150);
 
   captured.step1 = await stepText(tab, "step1");
 }
 
+async function timingChecks(rec, tab, D) {
+  // too fast: start and finish at once — explained, not saved, the gate stays shut (RD-L04 ⑥)
+  const tooFast = await timedRun(rec, tab, D, { purpose: "first", waitMs: 200, label: "too-fast" });
+  boolCk(rec, "wpm", "too-fast", "a run faster than 500 WPM is not saved", true, tooFast === null);
+  boolCk(rec, "wpm", "too-fast", "the reason is shown", true, await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-too-fast]`)})`));
+  boolCk(rec, "complete", "gate", "still disabled after a too-fast run", true, !!(((await jsEval(tab, completeState, null)) || {}).disabled));
+
+  // a real run
+  const run = await timedRun(rec, tab, D, { purpose: "first", waitMs: D.minMs, label: "first" });
+  ck(rec, "wpm", "first", "the run is stored", "a run", run ? `${run.wpm} WPM · ${run.ms} ms` : "none", run ? "PASS" : "FAIL", speedKey(D));
+  if (run) {
+    const wpm = readingLearning.wordsPerMinute(D.wordCount, run.ms);
+    ck(rec, "wpm", "first", "WPM = words ÷ the timed minutes", String(wpm), String(run.wpm), wpm === run.wpm && run.wpm <= MAX_WPM ? "PASS" : "FAIL");
+    const result = await jsText(tab, `document.querySelector(${J(`${SEL.step1} [data-speed-result]`)})`);
+    hasCk(rec, "wpm", "first", "the result shows the number", D.timeOnly ? readingLearning.formatDuration(run.ms) : `${run.wpm} WPM`, result, D.timeOnly ? "one-sentence passage: the time only" : undefined);
+    const verdict = readingLearning.targetVerdict(run.wpm);
+    hasCk(rec, "wpm", "first", "one line against the target (no grades)", { faster: "빨라요", near: "비슷해요", slower: D.timeOnly ? "오래 걸렸어요" : "느려요" }[verdict], result);
+    lacksCk(rec, "wpm", "first", "no old grade words", "최상위", result);
+  }
+  // the gate opens, the player appears in Step 1
+  await sleep(300);
+  boolCk(rec, "complete", "gate", "enabled after one timed reading", false, !!(((await jsEval(tab, completeState, null)) || {}).disabled));
+  boolCk(rec, "player", "step1", "the whole-lesson player appears after the timed reading", true, await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-reading-player="step1"] button[aria-label="재생"]`)})`));
+  return run;
+}
+
+/** G04: the whole-lesson player tints the sentence it reads. */
+async function playerTintChecks(rec, tab, D, where) {
+  const scope = where === "step1" ? SEL.step1 : SEL.step4;
+  const play = `document.querySelector(${J(`${scope} [data-reading-player] button[aria-label="재생"], ${scope} [data-reading-player] button[aria-label="일시정지"]`)})`;
+  const stop = `document.querySelector(${J(`${scope} [data-reading-player] button[aria-label="정지"]`)})`;
+  if (!(await exists(tab, play))) {
+    ck(rec, "player", where, "whole-lesson player present", "present", "absent", "FAIL");
+    return;
+  }
+  await playProbe(rec, tab, { feature: "player", item: where, trigger: `${where} player ▶`, text: D.spoken(0), expr: play });
+  const tinted = await jsEval(
+    tab,
+    `(() => { const list = [...document.querySelectorAll(${J(`${scope} [data-sentence-id]`)})]; return list.map((s) => { const e = s.querySelector('[data-en] span') || s.querySelector('[data-en]'); return e && /bg-primary-soft/.test(e.className) ? 1 : 0; }); })()`,
+    [],
+  );
+  ck(rec, "player", where, "only the sentence being read is tinted (G04)", "1 at sentence 1", (tinted || []).join(""), (tinted || [])[0] === 1 && (tinted || []).reduce((a, b) => a + b, 0) === 1 ? "PASS" : "FAIL");
+  await press(tab, stop, { settle: 400 });
+}
+
 // ---------------------------------------------------------------------------
-// checks — Step 2 (vocabulary)
+// checks — Step 2 (key words)
 // ---------------------------------------------------------------------------
 
 async function step2Checks(rec, tab, D, captured) {
-  const cards = await jsEval(tab, `document.querySelectorAll(${J(`${SEL.step2} .grid > div`)}).length`, 0);
-  ck(rec, "step2", "", "card count matches the data", String(D.vocab.length), String(cards), cards === D.vocab.length ? "PASS" : "FAIL");
-  hasCk(rec, "step2", "", "card counter", `총 ${D.vocab.length}개 핵심 어휘`, await stepText(tab, "step2"));
+  const rows = await count(tab, `${SEL.step2} [data-vocab]`);
+  ck(rec, "step2", "", "row count matches the data", String(D.vocab.length), String(rows), rows === D.vocab.length ? "PASS" : "FAIL");
+  eqCk(rec, "step2", "", "meanings start hidden (RD-L15)", "0", String(await count(tab, `${SEL.step2} [data-meaning]`)));
 
-  for (let i = 0; i < Math.min(D.vocab.length, cards); i++) {
-    const V = D.vocab[i];
-    const info = await jsEval(
-      tab,
-      `(() => { const c = ${vocaCard(i)}; if (!c) return null; const sp = [...c.querySelectorAll('span')].map((s) => (s.innerText || '').trim()); return { pos: sp[0], word: sp[1], idx: sp.find((s) => /^#\\d\\d$/.test(s)), text: (c.innerText || '').replace(/\\s+/g, ' ').trim() }; })()`,
-      null,
-    );
-    if (!info) {
-      ck(rec, "step2", `#${i + 1}`, "card present", "card", "missing", "FAIL");
-      continue;
-    }
-    eqCk(rec, "step2", `#${i + 1}`, "part of speech", V.partOfSpeech, info.pos);
-    eqCk(rec, "step2", `#${i + 1}`, "word", V.word, info.word);
-    eqCk(rec, "step2", `#${i + 1}`, "card index", `#${String(i + 1).padStart(2, "0")}`, info.idx);
-    // reveal the meaning
-    const revealExpr = `(() => { const c = ${vocaCard(i)}; return c ? [...c.querySelectorAll('button')].find((b) => (b.innerText || '').includes('뜻 확인하기')) : null; })()`;
-    const rv = await press(tab, revealExpr, { settle: 180 });
-    const after = await jsText(tab, vocaCard(i));
-    if (rv.ok) hasCk(rec, "step2", `#${i + 1}`, "meaning after 뜻 확인하기", V.korean, after);
-    else ck(rec, "step2", `#${i + 1}`, "meaning after 뜻 확인하기", V.korean, `reveal button not clickable (${rv.reason})`, "FAIL");
-    // pronunciation clip
-    const audioExpr = `(() => { const c = ${vocaCard(i)}; return c ? c.querySelector('button[title="발음 듣기"]') : null; })()`;
-    await playProbe(rec, tab, { feature: "step2", item: `#${i + 1}`, trigger: `🔊 ${V.word}`, text: V.word, expr: audioExpr });
-    const icon = await jsText(tab, audioExpr);
-    eqCk(rec, "step2", `#${i + 1}`, "speaker icon while playing", "⏹️", icon);
-    await stopProbe(rec, tab, { feature: "step2", item: `#${i + 1}`, expr: audioExpr });
-    const iconBack = await jsText(tab, audioExpr);
-    eqCk(rec, "step2", `#${i + 1}`, "speaker icon after stop", "🔊", iconBack);
+  for (let k = 1; k <= Math.min(D.vocab.length, rows); k++) {
+    const V = D.vocab[k - 1];
+    eqCk(rec, "step2", `k${k}`, "word", V.word, await jsText(tab, inVoca(k, "[data-word-text]")));
+    hasCk(rec, "step2", `k${k}`, "part of speech in words", readingLearning.posLabel(V.partOfSpeech), (await jsText(tab, vocaRow(k))) || "");
+    const line = (await jsText(tab, inVoca(k, "[data-context]"))) || "";
+    ck(rec, "step2", `k${k}`, "its passage line holds the word (any case)", V.word, line, line.toLowerCase().includes(String(V.word).toLowerCase()) ? "PASS" : "FAIL");
+    await press(tab, inVoca(k, '[data-action="reveal"]'), { settle: 150 });
+    eqCk(rec, "step2", `k${k}`, "meaning after '뜻 보기'", V.korean, await jsText(tab, inVoca(k, "[data-meaning]")));
+    await playProbe(rec, tab, { feature: "step2", item: `k${k}`, trigger: `word ${V.word}`, text: D.wordSpoken(k), expr: inVoca(k, '[data-action="word-audio"]') });
+    await stopProbe(rec, tab, { feature: "step2", item: `k${k}`, expr: inVoca(k, '[data-action="word-audio"]'), idle: idleSpeaker(inVoca(k, '[data-action="word-audio"]')) });
   }
 
-  // clicking the card body (not the button) plays the same word
-  await playProbe(rec, tab, { feature: "step2", item: "card-body", trigger: "card body click", text: D.vocab[0].word, expr: `(() => { const c = ${vocaCard(0)}; return c ? c.querySelector('div') : null; })()` });
-  await stopProbe(rec, tab, { feature: "step2", item: "card-body", expr: `(() => { const c = ${vocaCard(0)}; return c ? c.querySelector('div') : null; })()` });
+  // 2026-09-28 — the Step 2 text for the content check is read HERE: every meaning opened by its own '뜻 보기' (the loop
+  // above), as a learner opens them, before '알아요' folds a row. It used to be read after pressing '뜻 모두 보기' below, but
+  // that button is one toggle (renderStep2 allRevealed): with all 14 meanings already open it reads '뜻 모두 가리기', so the
+  // press HID them — the 2026-09-27 desktop run lost 13 meanings (content 25/38). The phone opens one word first, so there the
+  // same press showed them all (38/38).
+  captured.step2 = await stepText(tab, "step2");
 
-  // reveal-all toggle
-  const toggleAll = btnByText(SEL.step2, "전체 뜻");
-  eqCk(rec, "step2", "toggle-all", "label once every card is revealed", "🙈 전체 뜻 가리기", await jsText(tab, toggleAll));
-  await press(tab, toggleAll, { settle: 250 });
-  const hidden = await jsEval(tab, `[...document.querySelectorAll(${J(`${SEL.step2} .grid > div button`)})].filter((b) => (b.innerText || '').includes('뜻 확인하기')).length`, -1);
-  ck(rec, "step2", "toggle-all", "🙈 hides every meaning", String(D.vocab.length), String(hidden), hidden === D.vocab.length ? "PASS" : "FAIL");
-  eqCk(rec, "step2", "toggle-all", "label after hiding", "💡 전체 뜻 보기", await jsText(tab, toggleAll));
-  await press(tab, toggleAll, { settle: 250 });
+  // '몰라요' on the first word, '알아요' on the second — saved, sent to the engine, and the known row folds
+  const before = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.length;
+  await press(tab, inVoca(1, '[data-action="unknown"]'), { settle: 250 });
+  await press(tab, inVoca(2, '[data-action="known"]'), { settle: 250 });
+  const words = (await lsJson(tab, wordsKey(D))) || {};
+  ck(rec, "step2", "marks", "the marks are saved", '{"1":"unknown","2":"known"}', J(words.marks || null), words.marks && words.marks["1"] === "unknown" && words.marks["2"] === "known" ? "PASS" : "FAIL", wordsKey(D));
+  eqCk(rec, "step2", "marks", "'알아요' folds its row", "known", await jsEval(tab, `(${vocaRow(2)} || {}).getAttribute ? ${vocaRow(2)}.getAttribute('data-mark') : null`, null));
+  boolCk(rec, "step2", "marks", "the folded row can be opened again", true, await exists(tab, inVoca(2, '[data-action="unfold"]')));
+  const log = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.slice(before);
+  const k1 = log.find((e) => e.item === `${D.mainId}#k1`);
+  const k2 = log.find((e) => e.item === `${D.mainId}#k2`);
+  ck(rec, "engine", "marks", "each mark is an attempt (몰라요 = wrong, 알아요 = right; tap, lesson)", "k1 false · k2 true", `k1 ${k1 ? k1.correct : "none"} · k2 ${k2 ? k2.correct : "none"}`, k1 && k2 && k1.correct === false && k2.correct === true && k1.mode === "tap" && k1.where === "lesson" ? "PASS" : "FAIL");
+
+  // the toggle, both ways (2026-09-28): every meaning is open now, so it reads '뜻 모두 가리기' and hides them all; pressed
+  // again it reads '뜻 모두 보기' and shows every meaning (the folded '알아요' row aside)
+  const toggle = action(SEL.step2, "reveal-all");
+  eqCk(rec, "step2", "reveal-all", "with every meaning open the button reads '뜻 모두 가리기'", "뜻 모두 가리기", await jsText(tab, toggle));
+  await press(tab, toggle, { settle: 250 });
+  eqCk(rec, "step2", "reveal-all", "'뜻 모두 가리기' hides every meaning", "0", String(await count(tab, `${SEL.step2} [data-meaning]`)));
+  eqCk(rec, "step2", "reveal-all", "then the button reads '뜻 모두 보기'", "뜻 모두 보기", await jsText(tab, toggle));
+  await press(tab, toggle, { settle: 250 });
   const text2 = await stepText(tab, "step2");
-  const missingMeanings = D.vocab.filter((v) => !norm(text2).includes(norm(v.korean))).map((v) => v.word);
-  ck(rec, "step2", "toggle-all", "💡 reveals every meaning", "0 missing", missingMeanings.join(",") || "0 missing", missingMeanings.length === 0 ? "PASS" : "FAIL");
-  captured.step2 = text2;
+  const missing = D.vocab.filter((v, i) => i !== 1 && !norm(text2).includes(norm(v.korean))).map((v) => v.word);
+  ck(rec, "step2", "reveal-all", "'뜻 모두 보기' shows every meaning (the folded row aside)", "0 missing", missing.join(",") || "0 missing", missing.length === 0 ? "PASS" : "FAIL");
 }
 
 // ---------------------------------------------------------------------------
-// checks — Step 3 (cloze + mic)
+// checks — Step 3 (blanks + reading aloud)
 // ---------------------------------------------------------------------------
 
-async function clozeItemsInDom(tab) {
-  return (
-    (await jsEval(
-      tab,
-      `(() => [...document.querySelectorAll(${J(`${SEL.step3} p`)})].filter((p) => (p.innerText || '').includes('_______')).map((p, i) => { const box = p.parentElement; const opts = [...box.querySelectorAll('button')]; return { i, masked: (p.innerText || '').replace(/\\s+/g, ' ').trim(), options: opts.map((b) => (b.innerText || '').trim()), disabled: opts.map((b) => !!b.disabled), feedback: (box.innerText || '').replace(/\\s+/g, ' ').trim() }; }))()`,
-      [],
-    )) || []
+async function blankInDom(tab) {
+  return jsEval(
+    tab,
+    `(() => { const c = document.querySelector(${J(`${SEL.step3} [data-cloze]`)}); if (!c) return null; const opts = [...c.querySelectorAll('[data-option]')];
+      return { order: Number(c.getAttribute('data-order')), masked: (c.querySelector('[data-masked]') || {}).innerText || '', options: opts.map((b) => (b.innerText || '').trim()), disabled: opts.map((b) => !!b.disabled),
+        feedback: (c.querySelector('[data-cloze-feedback]') || { getAttribute: () => null }).getAttribute('data-cloze-feedback'), filled: (c.querySelector('[data-filled]') || {}).innerText || '', ko: (c.querySelector('[data-cloze-ko]') || {}).innerText || '' }; })()`,
+    null,
   );
 }
-const clozeOption = (item, opt) =>
-  `(() => { const ps = [...document.querySelectorAll(${J(`${SEL.step3} p`)})].filter((p) => (p.innerText || '').includes('_______')); const box = ps[${item}] ? ps[${item}].parentElement : null; return box ? box.querySelectorAll('button')[${opt}] : null; })()`;
 
-async function step3Checks(rec, tab, D, captured, { mode, touch = false }) {
-  const text = await stepText(tab, "step3");
-  lacksCk(rec, "step3", "", "generated quiz stays off (SHOW_GENERATED_QUIZ=false)", "독해력 실전 인출 테스트", text);
-  lacksCk(rec, "step3", "", "no generated question numbering", "Q1.", text);
-  hasCk(rec, "step3", "", "cloze heading", "🔤 핵심 키워드 클로즈(Cloze) 빈칸 완성", text);
-  hasCk(rec, "step3", "", "cloze item count badge", `${D.cloze.length}문항`, text);
-
-  const items = await clozeItemsInDom(tab);
-  ck(rec, "step3", "", "cloze item count matches generateClozeItems()", String(D.cloze.length), String(items.length), items.length === D.cloze.length ? "PASS" : "FAIL");
-
-  for (let i = 0; i < Math.min(items.length, D.cloze.length); i++) {
-    const want = D.cloze[i];
-    const got = items[i];
-    eqCk(rec, "step3", `cloze${i + 1}`, "masked sentence", want.maskedSentence, got.masked);
-    const answerIdx = got.options.findIndex((o) => o === want.missingWord);
-    ck(rec, "step3", `cloze${i + 1}`, "exactly one option is the answer", `one option === ${want.missingWord}`, got.options.join(" | "), got.options.filter((o) => o === want.missingWord).length === 1 ? "PASS" : "FAIL");
-    ck(rec, "step3", `cloze${i + 1}`, "options are unique", "4 distinct options", got.options.join(" | "), new Set(got.options).size === got.options.length ? "PASS" : "FAIL");
-    // the answer must not still be visible in the masked sentence (map R0)
-    const leak = new RegExp(`\\b${want.missingWord.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i").test(got.masked);
-    ck(rec, "step3", `cloze${i + 1}`, "answer is not visible in the masked sentence", "hidden", leak ? `'${want.missingWord}' still in the sentence` : "hidden", leak ? "FAIL" : "PASS", leak ? "map R0 / §12-1: only the first occurrence is masked" : undefined);
-    // a capitalised answer among lower-case distractors gives itself away (map R1)
-    const others = got.options.filter((o) => o !== want.missingWord);
-    const giveaway = /^[A-Z]/.test(want.missingWord) && others.length > 0 && others.every((o) => /^[a-z]/.test(o));
-    ck(rec, "step3", `cloze${i + 1}`, "answer does not stand out by capitalisation", "same case as the distractors", giveaway ? `answer '${want.missingWord}' is the only capitalised option` : "ok", giveaway ? "FAIL" : "PASS", giveaway ? "map R1 / §12-2: distractors are lower-cased" : undefined);
-    // an inflection of the answer as a distractor makes two options defensible (map R2)
-    const stem = (w) => w.toLowerCase().replace(/(ing|ed|es|s|d)$/, "");
-    const infl = others.filter((o) => o.toLowerCase() !== want.missingWord.toLowerCase() && stem(o) === stem(want.missingWord) && stem(o).length >= 4);
-    ck(rec, "step3", `cloze${i + 1}`, "no distractor is an inflection of the answer", "none", infl.join(",") || "none", infl.length ? "FAIL" : "PASS", infl.length ? "map R2 / §12-3: two defensible answers" : undefined);
-
-    if (mode === "correct") {
-      if (answerIdx < 0) continue;
-      await press(tab, clozeOption(i, answerIdx), { touch, settle: 250 });
-      const after = (await clozeItemsInDom(tab))[i];
-      hasCk(rec, "step3", `cloze${i + 1}`, "correct answer feedback", "✓ 정답입니다!", after ? after.feedback : "");
-      ck(rec, "step3", `cloze${i + 1}`, "options lock after answering", "every option disabled", after ? after.disabled.join(",") : "", after && after.disabled.every(Boolean) ? "PASS" : "FAIL");
-      const cls = await jsEval(tab, `(() => { const b = ${clozeOption(i, answerIdx)}; return b ? b.className : ''; })()`, "");
-      ck(rec, "step3", `cloze${i + 1}`, "correct option is marked green", "border-emerald-500", cut(cls, 120), /border-emerald-500/.test(cls) ? "PASS" : "FAIL");
-    } else if (mode === "wrong") {
-      const wrongIdx = got.options.findIndex((o) => o !== want.missingWord);
-      if (wrongIdx < 0) continue;
-      await press(tab, clozeOption(i, wrongIdx), { touch, settle: 250 });
-      const after = (await clozeItemsInDom(tab))[i];
-      hasCk(rec, "step3", `cloze${i + 1}`, "wrong answer feedback names the answer", `❌ 정답은 '${want.missingWord}' 입니다.`, after ? after.feedback : "");
-      const wrongCls = await jsEval(tab, `(() => { const b = ${clozeOption(i, wrongIdx)}; return b ? b.className : ''; })()`, "");
-      ck(rec, "step3", `cloze${i + 1}`, "chosen wrong option is struck through", "line-through", cut(wrongCls, 120), /line-through/.test(wrongCls) ? "PASS" : "FAIL");
-      if (answerIdx >= 0) {
-        const rightCls = await jsEval(tab, `(() => { const b = ${clozeOption(i, answerIdx)}; return b ? b.className : ''; })()`, "");
-        ck(rec, "step3", `cloze${i + 1}`, "the answer is revealed in green", "border-emerald-500", cut(rightCls, 120), /border-emerald-500/.test(rightCls) ? "PASS" : "FAIL");
-      }
-      ck(rec, "step3", `cloze${i + 1}`, "options lock after answering", "every option disabled", after ? after.disabled.join(",") : "", after && after.disabled.every(Boolean) ? "PASS" : "FAIL");
-      // a second click must not change the verdict
-      const other = got.options.findIndex((o, idx) => idx !== wrongIdx);
-      if (other >= 0) {
-        await press(tab, clozeOption(i, other), { touch, settle: 200 });
-        const again = (await clozeItemsInDom(tab))[i];
-        eqCk(rec, "step3", `cloze${i + 1}`, "answered item ignores further clicks", after ? after.feedback : "", again ? again.feedback : "");
-      }
+/** Answer one set: `plan` says per item "right" or "wrong". Returns the orders answered wrong. */
+async function answerSet(rec, tab, D, items, { label, plan, touch = false, listen = false }) {
+  const wrong = [];
+  for (let i = 0; i < items.length; i++) {
+    const want = items[i];
+    const got = await blankInDom(tab);
+    if (!got) {
+      ck(rec, "step3", `${label}#${i + 1}`, "blank on screen", "a blank", "none", "FAIL");
+      return wrong;
     }
+    eqCk(rec, "step3", `${label}#${i + 1}`, "the key word it asks (order)", String(want.order), String(got.order));
+    eqCk(rec, "step3", `${label}#${i + 1}`, "masked sentence = the generator's", want.maskedSentence, got.masked);
+    eqCk(rec, "step3", `${label}#${i + 1}`, "the four options, in order", want.options.join(" | "), got.options.join(" | "));
+    const pick = plan[i] === "wrong" ? want.options.findIndex((o, j) => j !== want.answerIndex) : want.answerIndex;
+    await press(tab, `document.querySelector(${J(`${SEL.step3} [data-cloze] [data-option="${pick}"]`)})`, { touch, settle: 300 });
+    const after = await blankInDom(tab);
+    eqCk(rec, "step3", `${label}#${i + 1}`, "feedback", plan[i] === "wrong" ? "wrong" : "correct", after && after.feedback);
+    ck(rec, "step3", `${label}#${i + 1}`, "options lock after answering", "every option disabled", after ? after.disabled.join(",") : "", after && after.disabled.every(Boolean) ? "PASS" : "FAIL");
+    eqCk(rec, "step3", `${label}#${i + 1}`, "the filled sentence", want.originalSentence, after && after.filled);
+    eqCk(rec, "step3", `${label}#${i + 1}`, "its Korean", D.sentences[want.sentenceIndex].ko, after && after.ko);
+    if (plan[i] === "wrong") {
+      wrong.push(want.order);
+      const cls = await jsEval(tab, `(() => { const b = document.querySelector(${J(`${SEL.step3} [data-cloze] [data-option="${pick}"]`)}); return b ? b.className : ''; })()`, "");
+      ck(rec, "step3", `${label}#${i + 1}`, "the picked wrong option is struck through", "line-through", cut(cls, 100), /line-through/.test(cls) ? "PASS" : "FAIL");
+    }
+    if (listen) await playProbe(rec, tab, { feature: "step3", item: `${label}#${i + 1}`, trigger: "문장 듣기", text: D.spoken(want.sentenceIndex), expr: action(SEL.step3, "cloze-listen"), touch });
+    await press(tab, action(SEL.step3, "cloze-next"), { touch, settle: 300 });
   }
+  return wrong;
+}
 
-  // reading-aloud test — a real microphone cannot be driven headless
-  const micBtn = btnByText(SEL.step3, "마이크 켜고 소리 내어 읽기");
-  const micText = await stepText(tab, "step3");
-  hasCk(rec, "step3", "mic", "target sentence is the first sentence of the passage", D.sentences[0].en, micText);
+async function step3Checks(rec, tab, D, captured, { touch = false } = {}) {
+  const text = await stepText(tab, "step3");
+  lacksCk(rec, "step3", "", "generated quiz stays off (SHOW_GENERATED_QUIZ=false)", "Q1.", text);
+  const unknown = [1]; // Step 2 marked the first word '몰라요' (runDesktop) — Step 3 asks it first in its part of the passage
+  const round0 = D.cloze(BREAK === "cloze" ? 1 : 0, touch ? [] : unknown);
+  if (!round0.length) {
+    hasCk(rec, "step3", "", "a passage without blanks says so", "빈칸 문제를 만들 수 없어요", text);
+    return;
+  }
+  const before = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.length;
+  const plan = round0.map((_, i) => (i === 1 ? "wrong" : "right"));
+  const wrong = await answerSet(rec, tab, D, round0, { label: BREAK === "cloze" ? "round0(깨기: round 1 expected)" : "round0", plan, touch, listen: !touch });
+  const result = await jsText(tab, `document.querySelector(${J(`${SEL.step3} [data-cloze-result]`)})`);
+  hasCk(rec, "step3", "result", "n / total", `${round0.length - wrong.length} / ${round0.length} 맞힘`, result);
+  const log = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.slice(before);
+  ck(rec, "engine", "blanks", "every blank answer is an attempt", `${round0.length} attempts`, `${log.length}`, log.length === round0.length && log.every((e) => /#k\d+$/.test(e.item) && e.mode === "tap" && e.where === "lesson") ? "PASS" : "FAIL");
+  const words = (await lsJson(tab, wordsKey(D))) || {};
+  ck(rec, "engine", "blanks", "a missed blank's word is kept for the review", J(wrong), J((words.missed || []).filter((o) => wrong.includes(o))), wrong.every((o) => (words.missed || []).includes(o)) ? "PASS" : "FAIL", wordsKey(D));
+  captured.step3 = `${text || ""}\n${round0.map((it) => it.maskedSentence).join("\n")}`;
+
+  // '다른 빈칸으로 다시 풀기' → round 1
+  await press(tab, action(SEL.step3, "cloze-again"), { touch, settle: 400 });
+  const round1 = D.cloze(1, touch ? [] : unknown);
+  const first = await blankInDom(tab);
+  eqCk(rec, "step3", "round1", "'다른 빈칸으로 다시 풀기' asks round 1's first blank", round1[0] ? round1[0].maskedSentence : "(none)", first ? first.masked : "(none)");
+
+  // reading aloud — a real microphone cannot be driven headless; the stub drives the scoring path
+  const target = D.sentences[0].en;
   ck(rec, "step3", "mic", "real microphone recognition", "a person reads the sentence aloud", "no microphone and no recognition service in a headless browser", "BLOCKED", "BLOCKED (real microphone) — must be checked on a real device");
-
+  const micBtn = `[...document.querySelectorAll(${J(`${SEL.step3} [data-read-aloud] button`)})].find((b) => /소리 내어 읽기|다시 녹음/.test(b.innerText || ''))`;
   if (await exists(tab, micBtn)) {
-    // UI wiring only: an injected SpeechRecognition stub drives the scoring path.
-    const target = D.sentences[0].en;
     await jsEval(tab, `(() => { window.__kigSayError = null; window.__kigSay = ${J(target)}; })()`, null);
     await press(tab, micBtn, { touch, settle: 900 });
-    const perfect = await stepText(tab, "step3");
     const exp = speechRecognition.evaluatePronunciation(target, target);
-    hasCk(rec, "step3", "mic", "UI wiring only — perfect reading scores 100", `${exp.score}점`, perfect, "stubbed SpeechRecognition, not a real microphone");
-    hasCk(rec, "step3", "mic", "UI wiring only — rating label", exp.ratingLabel || "", perfect, "stubbed SpeechRecognition");
-    hasCk(rec, "step3", "mic", "UI wiring only — word match count", `단어 일치 ${exp.matchedCount}/${exp.totalWords}`, perfect, "stubbed SpeechRecognition");
-
-    const wrongSpoken = "hello world this is not the sentence";
-    const expWrong = speechRecognition.evaluatePronunciation(wrongSpoken, target);
-    await jsEval(tab, `window.__kigSay = ${J(wrongSpoken)}`, null);
-    const retry = btnByText(SEL.step3, "다시 녹음");
-    await press(tab, (await exists(tab, retry)) ? retry : micBtn, { touch, settle: 900 });
-    const wrongText = await stepText(tab, "step3");
-    hasCk(rec, "step3", "mic", "UI wiring only — a wrong reading scores lower", `${expWrong.score}점`, wrongText, `expected from evaluatePronunciation("${cut(wrongSpoken, 40)}")`);
-
-    await jsEval(tab, `(() => { window.__kigSay = ''; window.__kigSayError = 'no-speech'; })()`, null);
-    const retry2 = btnByText(SEL.step3, "다시 녹음");
-    await press(tab, (await exists(tab, retry2)) ? retry2 : micBtn, { touch, settle: 800 });
-    hasCk(rec, "step3", "mic", "UI wiring only — no-speech error message", "음성이 감지되지 않았습니다. 다시 마이크를 켜고 말씀해보세요.", await stepText(tab, "step3"), "stubbed error");
-
-    await jsEval(tab, `(() => { window.__kigSayError = 'not-allowed'; })()`, null);
-    const retry3 = btnByText(SEL.step3, "다시 녹음");
-    await press(tab, (await exists(tab, retry3)) ? retry3 : micBtn, { touch, settle: 800 });
-    hasCk(rec, "step3", "mic", "UI wiring only — permission denied message", "마이크 접근 권한이 거부되었거나 차단되었습니다.", await stepText(tab, "step3"), "stubbed error");
+    hasCk(rec, "step3", "mic", "UI wiring only — a perfect reading scores 100", `${exp.score}점`, await stepText(tab, "step3"), "stubbed SpeechRecognition");
+    lacksCk(rec, "step3", "mic", "no '발음 채점' promise (말하기 인식)", "발음 채점", await stepText(tab, "step3"));
     await jsEval(tab, `(() => { window.__kigSayError = null; window.__kigSay = ''; })()`, null);
   } else {
-    ck(rec, "step3", "mic", "microphone button present", "🎙️ 마이크 켜고 소리 내어 읽기", "button not found", "FAIL");
+    ck(rec, "step3", "mic", "reading-aloud button present", "소리 내어 읽기", "button not found", "FAIL");
   }
-
-  captured.step3 = `${captured.step3 ? `${captured.step3}\n` : ""}${await stepText(tab, "step3")}`;
 }
 
 // ---------------------------------------------------------------------------
-// checks — Step 4 (dual reading)
+// checks — Step 4 (rows, key words, views, re-read, memo)
 // ---------------------------------------------------------------------------
 
-async function hudText(tab) {
-  return jsText(tab, `document.querySelectorAll(${J(`${SEL.step4} > div`)})[2]`);
-}
-
-async function step4Checks(rec, tab, D, captured) {
+async function step4Checks(rec, tab, D, captured, firstRun) {
   const n = D.sentences.length;
-  hasCk(rec, "step4", "", "sentence alignment badge", `${n}개 문장 1:1 정합`, await stepText(tab, "step4"));
-  const enCount = await jsEval(tab, `((${dualCol("en")}) || { querySelectorAll: () => [] }).querySelectorAll('[data-sentence-id]').length`, 0);
-  const koCount = await jsEval(tab, `((${dualCol("ko")}) || { querySelectorAll: () => [] }).querySelectorAll('[data-sentence-id]').length`, 0);
-  ck(rec, "step4", "", "English column sentence count", String(n), String(enCount), enCount === n ? "PASS" : "FAIL");
-  ck(rec, "step4", "", "Korean column sentence count", String(n), String(koCount), koCount === n ? "PASS" : "FAIL");
-
-  for (let i = 0; i < Math.min(n, enCount, koCount); i++) {
+  hasCk(rec, "step4", "", "one heading line", "영어 원문 · 한글 해석", await stepText(tab, "step4"));
+  const rows = await count(tab, `${SEL.step4} [data-rows] [data-sentence-id]`);
+  ck(rec, "step4", "", "row count", String(n), String(rows), rows === n ? "PASS" : "FAIL");
+  for (let i = 0; i < Math.min(n, rows); i++) {
     const S = D.sentences[i];
-    eqCk(rec, "step4", `s${i + 1}`, "English column text", S.en, await jsText(tab, `(${dualSpan("en", i)}).querySelector('span')`));
-    eqCk(rec, "step4", `s${i + 1}`, "Korean column text", S.ko, await jsText(tab, `(${dualSpan("ko", i)}).querySelector('span')`));
-    eqCk(rec, "step4", `s${i + 1}`, "both columns carry the same sentence id", S.id, await jsEval(tab, `(${dualSpan("ko", i)}).getAttribute('data-sentence-id')`, null));
-
-    // hover the English sentence: the HUD shows the pair
-    await hover(tab, dualSpan("en", i));
-    await sleep(140);
-    const hud = await hudText(tab);
-    hasCk(rec, "step4", `s${i + 1}`, "HUD shows the sentence number", `#${i + 1}`, hud);
-    hasCk(rec, "step4", `s${i + 1}`, "HUD shows the English sentence", S.en, hud);
-    hasCk(rec, "step4", `s${i + 1}`, "HUD shows the Korean translation", `👉 ${S.ko}`, hud);
-
-    // click pins it and plays the clip; the pin survives the mouse leaving
-    await playProbe(rec, tab, { feature: "step4", item: `s${i + 1}`, trigger: `EN sentence ${i + 1} click`, text: S.en, expr: dualSpan("en", i) });
-    await hoverAway(tab);
-    await sleep(160);
-    hasCk(rec, "step4", `s${i + 1}`, "pinned sentence stays in the HUD without hover", `#${i + 1}`, await hudText(tab));
-    const enCls = await jsEval(tab, `((${dualSpan("en", i)}) || {}).className || ''`, "");
-    const koCls = await jsEval(tab, `((${dualSpan("ko", i)}) || {}).className || ''`, "");
-    ck(rec, "step4", `s${i + 1}`, "both columns highlight the pinned sentence", "bg-amber-200/90 on EN and KO", `${/bg-amber-200\/90/.test(enCls) ? "EN ok" : "EN not highlighted"} / ${/bg-amber-200\/90/.test(koCls) ? "KO ok" : "KO not highlighted"}`, /bg-amber-200\/90/.test(enCls) && /bg-amber-200\/90/.test(koCls) ? "PASS" : "FAIL");
-
-    // clicking the Korean sentence only moves the pin — it must not start audio
-    await H.audioLog(tab, { clear: true });
-    await H.click(tab, dualSpan("ko", i));
-    await sleep(500);
-    const koLog = await H.audioLog(tab);
-    ck(rec, "step4", `s${i + 1}`, "Korean column click does not speak", "no play()", koLog.filter((e) => e.ev === "play()").length ? "a clip was requested" : "no play()", koLog.some((e) => e.ev === "play()") ? "FAIL" : "PASS");
-    await hoverAway(tab);
-    await sleep(150);
-    hasCk(rec, "step4", `s${i + 1}`, "second click on the pinned sentence unpins it", "영어 또는 한국어 문장에 마우스를 올리거나 탭하면", await hudText(tab));
+    eqCk(rec, "step4", `s${i + 1}`, "English", S.en, await jsText(tab, inRow4(i, "[data-en]")));
+    eqCk(rec, "step4", `s${i + 1}`, "Korean", S.ko, await jsText(tab, inRow4(i, "[data-ko]")));
+    await playProbe(rec, tab, { feature: "step4", item: `s${i + 1}`, trigger: `row ${i + 1} number`, text: D.spoken(i), expr: inRow4(i, '[data-action="play-row"]') });
+    await stopProbe(rec, tab, { feature: "step4", item: `s${i + 1}`, expr: inRow4(i, '[data-action="play-row"]'), idle: idleRow(i) });
   }
-
-  // view toggles
-  await hover(tab, dualSpan("en", 0));
-  await sleep(120);
-  for (const [label, hiddenCol, visibleCol] of [["영어만", "ko", "en"], ["한글만", "en", "ko"], ["양방향", null, "en"]]) {
-    await press(tab, btnByExactText(`${SEL.step4} div[role=group]`, label), { settle: 250 });
-    const pressed = await jsEval(tab, `(() => { const b = ${btnByExactText(`${SEL.step4} div[role=group]`, label)}; return b ? b.getAttribute('aria-pressed') : null; })()`, null);
-    eqCk(rec, "step4", `view ${label}`, "aria-pressed", "true", pressed);
-    const vis = await jsEval(
-      tab,
-      `(() => { const c = [...(document.querySelectorAll(${J(`${SEL.step4} > div`)})[1] || { children: [] }).children]; return c.map((x) => getComputedStyle(x).display); })()`,
-      [],
-    );
-    if (hiddenCol) {
-      const idx = hiddenCol === "en" ? 0 : 1;
-      ck(rec, "step4", `view ${label}`, `${hiddenCol.toUpperCase()} column hidden`, "display none", String(vis[idx]), vis[idx] === "none" ? "PASS" : "FAIL");
-      ck(rec, "step4", `view ${label}`, `${visibleCol.toUpperCase()} column visible`, "displayed", String(vis[idx === 0 ? 1 : 0]), vis[idx === 0 ? 1 : 0] !== "none" ? "PASS" : "FAIL");
-    } else {
-      ck(rec, "step4", `view ${label}`, "both columns visible", "displayed, displayed", vis.join(","), vis.every((v) => v !== "none") ? "PASS" : "FAIL");
-    }
+  // a dotted key word opens its meaning, silently (D32 다 · RD-L08)
+  const kwRow = await jsEval(tab, `[...document.querySelectorAll(${J(`${SEL.step4} [data-rows] [data-sentence-id]`)})].findIndex((r) => r.querySelector('[data-keyword]'))`, -1);
+  if (kwRow >= 0) {
+    const order = await jsEval(tab, `Number(${inRow4(kwRow, "[data-keyword]")}.getAttribute('data-keyword'))`, 0);
+    await silentProbe(rec, tab, { feature: "step4", item: `k${order}`, action: "a key word press", expr: inRow4(kwRow, "[data-keyword]") });
+    hasCk(rec, "step4", `k${order}`, "the key word's meaning shows under the row", D.vocab[order - 1] ? D.vocab[order - 1].korean : "?", (await jsText(tab, inRow4(kwRow, "[data-gloss]"))) || "");
+    await press(tab, inRow4(kwRow, '[data-action="play-row"]'), { settle: 300 });
+    boolCk(rec, "step4", `k${order}`, "a played row lists its key words as buttons", true, await exists(tab, inRow4(kwRow, "[data-keyword-chip]")));
+    await press(tab, inRow4(kwRow, '[data-action="play-row"]'), { settle: 300 });
+  } else {
+    ck(rec, "step4", "", "a key word in the passage", "dotted key word", "none found", "FAIL");
   }
-
-  // HUD controls
-  await H.click(tab, dualSpan("en", 0));
-  await sleep(400);
-  await hoverAway(tab);
-  const hudPlay = `(() => { const h = document.querySelectorAll(${J(`${SEL.step4} > div`)})[2]; return h ? [...h.querySelectorAll('button')].find((b) => (b.innerText || '').includes('🔊')) : null; })()`;
-  await playProbe(rec, tab, { feature: "step4", item: "hud", trigger: "HUD 🔊", text: D.sentences[0].en, expr: hudPlay });
-  const hudBtnText = await jsText(tab, hudPlay);
-  ck(rec, "step4", "hud", "HUD play button shows its 발음 label", "🔊 발음", hudBtnText, norm(hudBtnText).includes("발음") ? "PASS" : "FAIL", "map R7 / §12-8: 'hidden xs:inline' with no xs breakpoint, so the accessible name is only 🔊");
-  const closeBtn = `document.querySelector(${J(`${SEL.step4} button[aria-label="닫기"]`)})`;
-  await press(tab, closeBtn, { settle: 300 });
-  hasCk(rec, "step4", "hud", "닫기 clears the pin", "영어 또는 한국어 문장에 마우스를 올리거나 탭하면", await hudText(tab));
-
+  // views: 영어만 → '해석 보기' per row · 한글만 · both
+  await press(tab, `document.querySelector(${J(`${SEL.step4} [data-view="en"]`)})`, { settle: 250 });
+  eqCk(rec, "step4", "view en", "Korean hidden", "0", String(await count(tab, `${SEL.step4} [data-rows] [data-ko]`)));
+  eqCk(rec, "step4", "view en", "'해석 보기' in every row", String(n), String(await count(tab, `${SEL.step4} [data-action="show-ko"]`)));
+  await press(tab, inRow4(0, '[data-action="show-ko"]'), { settle: 250 });
+  eqCk(rec, "step4", "view en", "'해석 보기' shows that row's Korean", D.sentences[0].ko, await jsText(tab, inRow4(0, "[data-ko]")));
+  await press(tab, `document.querySelector(${J(`${SEL.step4} [data-view="ko"]`)})`, { settle: 250 });
+  eqCk(rec, "step4", "view ko", "English hidden", "0", String(await count(tab, `${SEL.step4} [data-rows] [data-en]`)));
+  await press(tab, `document.querySelector(${J(`${SEL.step4} [data-view="both"]`)})`, { settle: 250 });
+  eqCk(rec, "step4", "view both", "both again", `${n}/${n}`, `${await count(tab, `${SEL.step4} [data-rows] [data-en]`)}/${await count(tab, `${SEL.step4} [data-rows] [data-ko]`)}`);
+  lacksCk(rec, "step4", "", "no bottom bar", "문장에 마우스를", await stepText(tab, "step4"));
   captured.step4 = await stepText(tab, "step4");
-}
 
-// ---------------------------------------------------------------------------
-// checks — notepad, bookmark, completion
-// ---------------------------------------------------------------------------
+  await playerTintChecks(rec, tab, D, "step4");
 
-const notesArea = `document.querySelector('textarea[aria-label="독해 핵심 메모 & 어휘 노트"]')`;
-const bookmarkBtn = `document.querySelector('main button[aria-label="북마크 추가"], main button[aria-label="북마크 해제"]')`;
-const completeBtn = `document.querySelector('main button[aria-label="학습 완료 체크"], main button[aria-label="학습 완료 취소"]')`;
+  // re-read the same passage (D31 나): two numbers only
+  const again = await timedRun(rec, tab, D, { purpose: "again", waitMs: D.minMs, label: "again" });
+  ck(rec, "wpm", "again", "the re-read is stored", "a run", again ? `${again.wpm} WPM` : "none", again ? "PASS" : "FAIL", speedKey(D));
+  if (again) {
+    const line = await jsText(tab, `document.querySelector(${J(`${SEL.step4} [data-reread-result]`)})`);
+    const want = D.timeOnly
+      ? `같은 글 다시 읽기: ${firstRun ? `${readingLearning.formatDuration(firstRun.ms)} → ` : ""}${readingLearning.formatDuration(again.ms)}`
+      : `같은 글 다시 읽기: ${firstRun ? `${firstRun.wpm} → ` : ""}${again.wpm} WPM`;
+    eqCk(rec, "wpm", "again", "the two numbers (no percentage)", want, line);
+    lacksCk(rec, "wpm", "again", "no improvement percentage", "%", line || "");
+  }
 
-async function notesWrite(rec, tab, D, note, { touch = false } = {}) {
-  const ph = await jsEval(tab, `(() => { const t = ${notesArea}; return t ? t.getAttribute('placeholder') : null; })()`, null);
-  eqCk(rec, "notes", "", "placeholder", "지문의 핵심 주제문, 새로 배운 단어, 문법 포인트 등을 자유롭게 메모하세요... (실시간 자동 저장)", ph);
-  const typed = await H.type(tab, notesArea, note);
-  ck(rec, "notes", "", "textarea accepts typing", "focusable textarea", typed ? "typed" : "could not focus", typed ? "PASS" : "FAIL");
+  // the memo — kept as it was stored, folded at the end of Step 4 (RD-U18)
+  const note = `QA 0927 ${D.id} 메모`;
+  await press(tab, `document.querySelector('main details[data-notes] > summary')`, { settle: 250 });
+  const typed = await H.type(tab, `document.querySelector('main textarea[aria-label="메모"]')`, note);
+  ck(rec, "notes", "", "the memo accepts typing", "typed", typed ? "typed" : "could not focus", typed ? "PASS" : "FAIL");
   await sleep(900);
-  eqCk(rec, "notes", "", "textarea value", note, await jsEval(tab, `(${notesArea} || {}).value || null`, null));
-  hasCk(rec, "notes", "", "autosave label", "자동 저장됨", await jsText(tab, el(SEL.notes)));
-  hasCk(rec, "notes", "", "character counter", `${note.length}자`, await jsText(tab, el(SEL.notes)));
-  const raw = await lsGet(tab, notesKey(D.id));
-  let stored = null;
-  try {
-    stored = JSON.parse(raw || "null");
-  } catch {}
-  eqCk(rec, "notes", "", "saved to localStorage", note, stored ? stored.notes : raw, notesKey(D.id));
-  void touch;
+  eqCk(rec, "notes", "", "saved as before", note, ((await lsJson(tab, notesKey(D))) || {}).notes, notesKey(D));
+  return note;
 }
 
-async function toggleProgress(rec, tab, D, kind, { touch = false } = {}) {
-  const isBookmark = kind === "bookmark";
-  const expr = isBookmark ? bookmarkBtn : completeBtn;
+// ---------------------------------------------------------------------------
+// completion, bookmark
+// ---------------------------------------------------------------------------
+
+async function toggleProgress(rec, tab, kind, { touch = false } = {}) {
+  const expr = kind === "bookmark" ? bookmarkBtn : completeBtn;
   const before = await jsEval(tab, `(() => { const b = ${expr}; return b ? b.getAttribute('aria-label') : null; })()`, null);
-  const r = await press(tab, expr, { touch, settle: 300 });
+  const r = await press(tab, expr, { touch, settle: 400 });
   if (!r.ok) {
     ck(rec, kind, "", "toggle clickable", "clickable", r.reason || "missing", "FAIL");
     return null;
@@ -1154,19 +1071,17 @@ async function toggleProgress(rec, tab, D, kind, { touch = false } = {}) {
 function contentCompare(rec, D, captured) {
   const expect = [];
   const push = (step, label, text) => text && expect.push({ step, label, text: norm(text) });
-  push("step1", "header stats", `총 ${D.wordCount}단어`);
   for (const s of D.sentences) {
     push("step1", `sentence ${s.index + 1} (en)`, s.en);
-    push("step4", `sentence ${s.index + 1} (en)`, s.en);
     push("step4", `sentence ${s.index + 1} (ko)`, s.ko);
   }
-  for (const v of D.vocab) {
+  for (const [i, v] of D.vocab.entries()) {
     push("step2", `word ${v.word}`, v.word);
-    push("step2", `meaning ${v.word}`, v.korean);
-    push("step2", `pos ${v.word}`, v.partOfSpeech);
+    // not the second word's meaning — the desktop run marks it '알아요' (which folds it) and checks it on its own
+    // (step2[k2] "meaning after '뜻 보기'"), so both runs count the same texts (2026-09-28: the desktop text is now read before the fold)
+    if (i !== 1) push("step2", `meaning ${v.word}`, v.korean);
   }
-  for (const c of D.cloze) push("step3", `cloze ${c.id}`, c.maskedSentence);
-  if (D.sentences[0]) push("step3", "mic target sentence", D.sentences[0].en);
+  if (D.sentences[0]) push("step3", "reading-aloud sentence", D.sentences[0].en);
 
   const missing = [];
   let found = 0;
@@ -1175,7 +1090,6 @@ function contentCompare(rec, D, captured) {
     if (hay.includes(e.text)) found++;
     else missing.push(`${e.step}: ${e.label} — ${cut(e.text, 80)}`);
   }
-
   // text that belongs to a DIFFERENT lesson
   const ownMain = D.id.replace(/-\d+$/, "");
   const own = new Set(D.sentences.flatMap((s) => [norm(s.en), norm(s.ko)]));
@@ -1188,7 +1102,6 @@ function contentCompare(rec, D, captured) {
     if (all.includes(t)) foreign.push(`${f.id}: ${cut(t, 80)}`);
     if (foreign.length >= 5) break;
   }
-
   rec.content = { expected: expect.length, found, missing: missing.slice(0, 40), foreign };
   if (missing.length) rec.problems.push(`content: ${missing.length} expected text(s) missing from the rendered steps`);
   if (foreign.length) rec.problems.push(`content: text of another lesson rendered (${foreign[0]})`);
@@ -1234,10 +1147,31 @@ async function loadPage(rec, tab, id) {
   rec.load = rec.load || l;
   const href = l.href || "";
   const pathName = href ? new URL(href).pathname : null;
-  if (pathName && pathName !== url) {
-    rec.redirect = { from: url, to: pathName };
-  }
+  if (pathName && pathName !== url) rec.redirect = { from: url, to: pathName };
   return l;
+}
+
+async function completionChecks(rec, tab, D, { touch = false, measured }) {
+  // D02 나: the timed reading opened the gate; --break gate presses without it (a fresh page state)
+  if (BREAK === "gate") {
+    await resetLessonState(tab, D);
+    await loadPage(rec, tab, D.id);
+    await H.waitFor(tab, R.VIEW_READY, 8000);
+  } else if (!measured) {
+    const r = await tab.eval(R.MEASURE_ONCE).catch((e) => ({ ok: false, why: String(e && e.message) }));
+    ck(rec, "complete", "gate", "one timed reading (lib/reading-page.cjs MEASURE_ONCE)", "done", r && r.ok ? `done (${r.words} words, ${r.waitedMs} ms)` : `failed: ${(r && r.why) || "?"}`, r && r.ok ? "PASS" : "FAIL");
+  }
+  await sleep(300);
+  const before = ((await lsJson(tab, "kig-learning:reading")) || { lessons: {}, items: {} });
+  const cAria = await toggleProgress(rec, tab, "complete", { touch });
+  eqCk(rec, "complete", "", "aria-label after completing", "학습 완료 취소", cAria, BREAK === "gate" ? "깨기 gate: pressed without the timed reading — must FAIL" : undefined);
+  boolCk(rec, "complete", "", "localStorage completion flag", true, ((await progressMap(tab, "completed")) || {})[progKey(D.id)] === true);
+  const after = ((await lsJson(tab, "kig-learning:reading")) || { lessons: {}, items: {} });
+  const words = (await lsJson(tab, wordsKey(D))) || { marks: {}, missed: [] };
+  const wantItems = readingLearning.reviewEntries(D.mainId, readingLearning.parseWordsRecord(J({ v: 1, ...words }), D.vocab.length)).map((e) => e.key);
+  const gotItems = Object.keys(after.items || {}).filter((k) => k.startsWith(`${D.mainId}#k`)).sort();
+  ck(rec, "engine", "done", "completing brings the '몰라요' words and missed blanks into review", J(wantItems), J(gotItems), J(wantItems.slice().sort()) === J(gotItems) && Boolean((after.lessons || {})[D.mainId]) ? "PASS" : "FAIL");
+  void before;
 }
 
 async function runDesktop(rec, tab, D) {
@@ -1251,178 +1185,60 @@ async function runDesktop(rec, tab, D) {
     ck(rec, "load", "", "lesson page renders", "READING lesson page", `navigated=${l.navigated} rendered=${l.rendered} href=${l.href}`, "FAIL");
     return captured;
   }
-  // a rerun must start from a known state
-  if (await resetLessonState(tab, D.id)) {
-    l = await loadPage(rec, tab, D.id);
-  }
-  let snap = await tab.eval(H.SNAPSHOT);
+  if (await resetLessonState(tab, D)) l = await loadPage(rec, tab, D.id);
+  const snap = await tab.eval(H.SNAPSHOT);
   mergeLayout(rec, snap);
   await shellChecks(rec, tab, D, snap);
   if (snap.paywall || snap.notFound) return captured;
 
-  ck(rec, "answers", "", "typed answer variants (capitalisation / spacing / punctuation)", "n/a", "READING has no typed-answer field: the cloze drill answers by clicking one of 4 options; the only text inputs are the notepad and the (microphone) reading test", "NA");
-
-  await wpmTooFastThenStart(rec, tab, D);
-  await playerChecks(rec, tab, D);
-  const run1 = await wpmFinish(rec, tab, D, { label: "run1", expectBest: null });
-  // ↺ reset
-  await press(tab, wpmResetBtn, { settle: 300 });
-  const afterReset = await stepText(tab, "step1");
-  lacksCk(rec, "wpm", "reset", "↺ clears the result card", "WPM", (afterReset || "").split("경과 시간")[1] || afterReset);
-  hasCk(rec, "wpm", "reset", "↺ resets the timer", "경과 시간 00:00", afterReset);
-  eqCk(rec, "wpm", "reset", "stored best survives ↺", String(run1.wpm), String(Number(await lsGet(tab, wpmKey(D.id)))));
-
   await step1Checks(rec, tab, D, captured);
+  const firstRun = await timingChecks(rec, tab, D);
+  await playerTintChecks(rec, tab, D, "step1");
   mergeLayout(rec, await tab.eval(H.SNAPSHOT));
 
-  if (await openStep(rec, tab, 2)) {
-    await step2Checks(rec, tab, D, captured);
-    mergeLayout(rec, await tab.eval(H.SNAPSHOT));
-  }
-
-  // stuck-highlight probe (map R3): a sentence left "playing" after a word clip
-  if (await openStep(rec, tab, 1)) {
-    await H.click(tab, sent1(0));
-    await sleep(700);
-    await openStep(rec, tab, 2);
-    await H.click(tab, `(() => { const c = ${vocaCard(0)}; return c ? c.querySelector('button[title="발음 듣기"]') : null; })()`);
-    await sleep(1200);
-    await openStep(rec, tab, 1);
-    await sleep(300);
-    const cls = await jsEval(tab, `((${sent1(0)}) || {}).className || ''`, "");
-    const stuck = /bg-red-500\/15/.test(cls);
-    let dead = false;
-    if (stuck) {
-      await H.audioLog(tab, { clear: true });
-      await H.click(tab, sent1(0));
-      await sleep(900);
-      dead = !(await H.audioLog(tab)).some((e) => e.ev === "play()");
-    }
-    ck(
-      rec,
-      "step1",
-      "stuck-highlight",
-      "sentence highlight clears when another clip is played",
-      "no sentence marked as playing",
-      stuck ? `sentence 1 still marked playing${dead ? "; the next click plays nothing" : ""}` : "cleared",
-      stuck ? "FAIL" : "PASS",
-      stuck ? "map R3 / §12-4: stopSpeech() never calls the old run's onEnd" : undefined,
-    );
-    await H.click(tab, sent1(0));
-    await sleep(300);
-    await H.click(tab, stopBtn).catch(() => {});
-  }
-
-  if (await openStep(rec, tab, 3)) {
-    await step3Checks(rec, tab, D, captured, { mode: "correct" });
-    mergeLayout(rec, await tab.eval(H.SNAPSHOT));
-  }
-  if (await openStep(rec, tab, 4)) {
-    await step4Checks(rec, tab, D, captured);
-    mergeLayout(rec, await tab.eval(H.SNAPSHOT));
-    // pin leaking into Step 1 (map R5) — documented behaviour, recorded either way
-    await H.click(tab, dualSpan("en", 0));
-    await sleep(300);
-    await hoverAway(tab);
-    await openStep(rec, tab, 1);
-    await sleep(250);
-    const bar = await stepText(tab, "step1");
-    ck(rec, "step1", "pin", "a pin set in Step 4 shows in the Step 1 translation bar", `👉 ${cut(D.sentences[0].ko, 60)}`, norm(bar).includes(norm(`👉 ${D.sentences[0].ko}`)) ? "shown" : "not shown", "PASS", "map R5 / §4.7: documented cross-step pin; Step 1 has no control to unpin");
-    await openStep(rec, tab, 4);
-    await H.click(tab, `document.querySelector(${J(`${SEL.step4} button[aria-label="닫기"]`)})`);
-    await sleep(200);
-  }
-
-  // notepad + bookmark + completion
-  const note = `QA 0918 ${D.id} 메모`;
-  await notesWrite(rec, tab, D, note);
-  const bAria = await toggleProgress(rec, tab, D, "bookmark");
-  eqCk(rec, "bookmark", "", "aria-label after adding", "북마크 해제", bAria);
-  hasCk(rec, "bookmark", "", "button label after adding", "북마크됨", await jsText(tab, bookmarkBtn));
-  const cAria = await toggleProgress(rec, tab, D, "complete");
-  eqCk(rec, "complete", "", "aria-label after completing", "학습 완료 취소", cAria);
-  hasCk(rec, "complete", "", "button label after completing", "학습 완료", await jsText(tab, completeBtn));
-  boolCk(rec, "bookmark", "", "localStorage bookmark flag", true, ((await progressMap(tab, "bookmarks")) || {})[progKey(D.id)] === true);
-  boolCk(rec, "complete", "", "localStorage completion flag", true, ((await progressMap(tab, "completed")) || {})[progKey(D.id)] === true);
-  const recent = await jsEval(tab, `(() => { try { return JSON.parse(localStorage.getItem('kig:progress:recent') || 'null'); } catch (e) { return null; } })()`, null);
-  eqCk(rec, "recent", "", "lesson recorded as the recent lesson", `${COURSE}/${D.id}`, recent ? `${recent.course}/${recent.lessonId}` : null);
-
-  const nav4 = await bottomNavState(tab);
-  boolCk(rec, "stepnav", "", "다음 Step → disabled on Step 4", true, nav4.nextDisabled);
-
-  // ---- reload: persistence -------------------------------------------------
-  await loadPage(rec, tab, D.id);
-  await sleep(400);
-  eqCk(rec, "bookmark", "", "bookmark survives a reload", "북마크 해제", await jsEval(tab, `(() => { const b = ${bookmarkBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
-  eqCk(rec, "complete", "", "completion survives a reload", "학습 완료 취소", await jsEval(tab, `(() => { const b = ${completeBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
-  eqCk(rec, "notes", "", "note survives a reload", note, await jsEval(tab, `(${notesArea} || {}).value || null`, null));
-  hasCk(rec, "notes", "", "autosave label after a reload", "자동 저장됨", await jsText(tab, el(SEL.notes)));
-  eqCk(rec, "wpm", "persist", "best WPM survives a reload", String(run1.wpm), String(Number(await lsGet(tab, wpmKey(D.id)))));
-
-  // second WPM run: slower than the first, so the restored best must be shown
-  await wpmTooFastThenStart(rec, tab, D);
-  const bAria2 = await toggleProgress(rec, tab, D, "bookmark");
-  eqCk(rec, "bookmark", "", "aria-label after removing", "북마크 추가", bAria2);
-  const cAria2 = await toggleProgress(rec, tab, D, "complete");
-  eqCk(rec, "complete", "", "aria-label after un-completing", "학습 완료 체크", cAria2);
-  boolCk(rec, "bookmark", "", "localStorage key removed when off", false, progKey(D.id) in ((await progressMap(tab, "bookmarks")) || {}));
-  boolCk(rec, "complete", "", "localStorage key removed when off", false, progKey(D.id) in ((await progressMap(tab, "completed")) || {}));
-  await H.type(tab, notesArea, "");
-  await sleep(900);
-  let clearedRaw = await lsGet(tab, notesKey(D.id));
-  let cleared = null;
-  try {
-    cleared = JSON.parse(clearedRaw || "null");
-  } catch {}
-  eqCk(rec, "notes", "", "clearing the note is saved", "", cleared ? cleared.notes : clearedRaw);
-  // keep run2 slower than run1 so a lower WPM cannot overwrite the stored best
-  const target = Math.max(D.minScoredSeconds + 1, (run1.seconds || 0) + 1);
-  for (let i = 0; i < 400; i++) {
-    const e = await wpmElapsed(tab);
-    if (e != null && e >= target) break;
-    await sleep(500);
-  }
-  await wpmFinish(rec, tab, D, { label: "run2", expectBest: run1.wpm });
-
-  // quiz shortcut + bottom step navigation (map R4)
-  await press(tab, btnByText(SEL.step1, "독해 이해도 퀴즈 풀기"), { settle: 500 });
-  const afterShortcut = await activeStep(tab);
-  eqCk(rec, "stepnav", "quiz-shortcut", "독해 이해도 퀴즈 풀기 ➔ opens Step 3", "step3", afterShortcut);
-  const navAfterShortcut = await bottomNavState(tab);
-  boolCk(rec, "stepnav", "quiz-shortcut", "← 이전 Step enabled once Step 3 is shown", false, navAfterShortcut.prevDisabled, "map R4 / §12-5: the shortcut does not update LessonStepNavigation's currentStep");
+  // the result's '다음: Step 2 핵심 어휘' presses the tab, so the bottom bar follows (RD-U12 · G05)
+  await press(tab, action(SEL.step1, "to-step2"), { settle: 500 });
+  eqCk(rec, "stepnav", "to-step2", "'다음: Step 2 핵심 어휘' opens Step 2", "step2", await activeStep(tab));
+  await step2Checks(rec, tab, D, captured);
+  mergeLayout(rec, await tab.eval(H.SNAPSHOT));
   await press(tab, `document.querySelectorAll('nav[aria-label="학습 단계 이동"] button')[1]`, { settle: 500 });
-  const afterNext = await activeStep(tab);
-  eqCk(rec, "stepnav", "quiz-shortcut", "다음 Step → after the shortcut opens Step 4", "step4", afterNext, "map R4 / §12-5");
+  eqCk(rec, "stepnav", "to-step2", "then '다음 Step →' opens Step 3 (no mismatch)", "step3", await activeStep(tab));
 
-  // clean walk through the steps with the bottom navigation
-  await openStep(rec, tab, 1);
-  const nav1 = await bottomNavState(tab);
-  boolCk(rec, "stepnav", "walk", "← 이전 Step disabled on Step 1", true, nav1.prevDisabled);
-  for (const want of ["step2", "step3", "step4"]) {
-    await press(tab, `document.querySelectorAll('nav[aria-label="학습 단계 이동"] button')[1]`, { settle: 450 });
-    eqCk(rec, "stepnav", "walk", `다음 Step → opens ${want}`, want, await activeStep(tab));
-  }
-  const navEnd = await bottomNavState(tab);
-  boolCk(rec, "stepnav", "walk", "다음 Step → disabled on Step 4", true, navEnd.nextDisabled);
-  await press(tab, `document.querySelectorAll('nav[aria-label="학습 단계 이동"] button')[0]`, { settle: 450 });
-  eqCk(rec, "stepnav", "walk", "← 이전 Step goes back to Step 3", "step3", await activeStep(tab));
-
-  // wrong answers on every cloze item (options are re-shuffled on this load)
-  await step3Checks(rec, tab, D, captured, { mode: "wrong" });
+  await step3Checks(rec, tab, D, captured);
   mergeLayout(rec, await tab.eval(H.SNAPSHOT));
 
-  // ---- reload: removals stick ---------------------------------------------
+  if (await openStep(rec, tab, 4)) {
+    const note = await step4Checks(rec, tab, D, captured, firstRun);
+    mergeLayout(rec, await tab.eval(H.SNAPSHOT));
+    // reload: the memo, the marks and the runs survive; the memo opens because it holds something
+    await jsEval(tab, `sessionStorage.setItem('kig:audit:keep', '1')`, null);
+    await loadPage(rec, tab, D.id);
+    await H.waitFor(tab, R.VIEW_READY, 8000);
+    if (await openStep(rec, tab, 4)) {
+      eqCk(rec, "notes", "", "the memo survives a reload", note, await jsEval(tab, `(document.querySelector('main textarea[aria-label="메모"]') || {}).value || null`, null));
+      boolCk(rec, "notes", "", "a memo that holds something is open", true, await jsEval(tab, `!!(document.querySelector('main details[data-notes]') || {}).open`, false));
+    }
+    if (await openStep(rec, tab, 2)) eqCk(rec, "step2", "marks", "'알아요' stays folded after a reload", "known", await jsEval(tab, `(${vocaRow(2)} || {}).getAttribute ? ${vocaRow(2)}.getAttribute('data-mark') : null`, null));
+    await openStep(rec, tab, 1);
+    boolCk(rec, "wpm", "persist", "the first reading survives a reload", true, await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-speed-result]`)})`));
+  }
+
+  // bookmark + completion (and back)
+  const bAria = await toggleProgress(rec, tab, "bookmark");
+  eqCk(rec, "bookmark", "", "aria-label after adding", "북마크 해제", bAria);
+  boolCk(rec, "bookmark", "", "localStorage bookmark flag", true, ((await progressMap(tab, "bookmarks")) || {})[progKey(D.id)] === true);
+  await completionChecks(rec, tab, D, { measured: BREAK !== "gate" });
   await loadPage(rec, tab, D.id);
-  await sleep(400);
-  eqCk(rec, "bookmark", "", "removed bookmark stays removed after a reload", "북마크 추가", await jsEval(tab, `(() => { const b = ${bookmarkBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
-  eqCk(rec, "complete", "", "un-completed lesson stays un-completed after a reload", "학습 완료 체크", await jsEval(tab, `(() => { const b = ${completeBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
-  eqCk(rec, "notes", "", "cleared note stays cleared after a reload", "", await jsEval(tab, `(${notesArea} || {}).value == null ? null : ${notesArea}.value`, null));
+  await H.waitFor(tab, R.VIEW_READY, 8000);
+  eqCk(rec, "complete", "", "completion survives a reload", "학습 완료 취소", await jsEval(tab, `(() => { const b = ${completeBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
+  eqCk(rec, "complete", "", "un-completing works", "학습 완료 체크", await toggleProgress(rec, tab, "complete"));
+  eqCk(rec, "bookmark", "", "aria-label after removing", "북마크 추가", await toggleProgress(rec, tab, "bookmark"));
+  await jsEval(tab, `sessionStorage.removeItem('kig:audit:keep')`, null);
 
   // prev/next actually navigate (client-side <Link>)
   const go = D.next ? { dir: "next", label: "다음 강의", want: D.next } : D.prev ? { dir: "prev", label: "이전 강의", want: D.prev } : null;
   if (go) {
-    const linkExpr = `document.querySelector('main a[aria-label^=${J(go.label)}]')`;
-    await press(tab, linkExpr, { settle: 800 });
+    await press(tab, `document.querySelector('main a[aria-label^=${J(go.label)}]')`, { settle: 800 });
     const ok = await H.waitFor(tab, `location.pathname === ${J(`/${COURSE}/${go.want.id}`)}`, 20000);
     eqCk(rec, "nav", go.dir, `${go.label} navigates`, `/${COURSE}/${go.want.id}`, await jsEval(tab, `location.pathname`, null));
     if (ok) {
@@ -1431,10 +1247,8 @@ async function runDesktop(rec, tab, D) {
       eqCk(rec, "nav", go.dir, "neighbour page shows its own title", go.want.title, (await jsText(tab, `document.querySelector('h1')`)) || "");
       eqCk(rec, "nav", go.dir, "neighbour page opens on Step 1", "step1", await activeStep(tab));
     }
-  } else {
-    ck(rec, "nav", "", "prev/next boundary", "no neighbour to follow", "course boundary", "PASS");
   }
-
+  await resetLessonState(tab, D);
   mergeEvents(rec, H.events(tab));
   return captured;
 }
@@ -1446,115 +1260,73 @@ async function runTouch(rec, tab, D, viewport) {
     ck(rec, "load", "", "lesson page renders", "READING lesson page", `navigated=${l.navigated} rendered=${l.rendered} redirect=${rec.redirect ? rec.redirect.to : "-"}`, "FAIL");
     return captured;
   }
-  await resetLessonState(tab, D.id);
+  if (await resetLessonState(tab, D)) await loadPage(rec, tab, D.id);
+  await H.waitFor(tab, R.VIEW_READY, 8000);
   const snap = await tab.eval(H.SNAPSHOT);
   mergeLayout(rec, snap);
-  rec.steps = (await jsEval(tab, `[...document.querySelectorAll('nav[aria-label="리딩 4단계 학습 단계"] button')].map((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim())`, [])) || [];
+  rec.steps = (await jsEval(tab, `[...document.querySelectorAll('main [data-step-tab]')].map((b) => (b.textContent || '').replace(/\\s+/g, ' ').trim())`, [])) || [];
   eqCk(rec, "shell", "", "h1 title", D.title, (snap.h1 || [])[0]);
   boolCk(rec, "shell", "", "paywall absent (licensed profile)", false, !!snap.paywall);
   boolCk(rec, "layout", "", "no horizontal page scroll", false, !!snap.overflowX, `scrollWidth=${snap.scrollWidth} viewport=${(snap.viewport || []).join("x")}`);
   ck(rec, "layout", "", "no control pushed off screen", "none", (snap.offscreenControls || []).join(" | ") || "none", (snap.offscreenControls || []).length === 0 ? "PASS" : "FAIL");
   ck(rec, "layout", "", "no clipped text", "none", (snap.clippedText || []).join(" | ") || "none", (snap.clippedText || []).length === 0 ? "PASS" : "FAIL");
-  ck(rec, "layout", "", "tap targets are at least 24px", "0 small targets", String(snap.smallTargets), (snap.smallTargets || 0) === 0 ? "PASS" : "FAIL");
-  for (const dir of ["prev", "next"]) {
-    const label = dir === "prev" ? "이전 강의" : "다음 강의";
-    const href = await jsEval(tab, `(() => { const a = document.querySelector('main a[aria-label^=${J(label)}]'); return a ? a.getAttribute('href') : null; })()`, null);
-    if (D[dir]) eqCk(rec, "nav", dir, `${label} href`, `/${COURSE}/${D[dir].id}`, href);
-    else ck(rec, "nav", dir, `boundary: no ${label} link`, "no link", href || "no link", href ? "FAIL" : "PASS");
-  }
+  const firstY = await jsEval(tab, `(() => { const s = document.querySelector('main [data-learn-first]'); return s ? Math.round(s.getBoundingClientRect().top + scrollY) : null; })()`, null);
+  ck(rec, "layout", "", "the passage's first line is on the first screen (data-learn-first)", "≤ 450", String(firstY), firstY !== null && firstY <= 450 ? "PASS" : "FAIL", "계획 G05 확인");
+  eqCk(rec, "complete", "gate", "'이 강의 학습 완료' disabled before a timed reading", "true", String(!!(((await jsEval(tab, completeState, null)) || {}).disabled)));
 
-  // Step 1 — one control of each kind, by touch
+  // Step 1 — a tap plays the sentence and shows its Korean: a line under the sentence on a phone (< 640px), the panel under
+  // the passage from sm (the tablet); a second tap closes it
   const s0 = D.sentences[0];
-  await playProbe(rec, tab, { feature: "player", item: "play", trigger: "▶ 재생 (tap)", text: s0.en, expr: playBtn, touch: true });
-  await press(tab, stopBtn, { touch: true, settle: 300 });
-  await playProbe(rec, tab, { feature: "step1", item: "s1", trigger: "sentence 1 tap", text: s0.en, expr: sent1(0), touch: true });
-  hasCk(rec, "step1", "s1", "tap shows the Korean translation", `👉 ${s0.ko}`, await stepText(tab, "step1"));
-  await stopProbe(rec, tab, { feature: "step1", item: "s1", expr: sent1(0), touch: true });
-  await press(tab, `document.querySelector('main button[title="문장 번호 표시 On/Off"]')`, { touch: true, settle: 250 });
-  eqCk(rec, "step1", "numbers", "number toggle (tap)", "# 번호 OFF", await jsText(tab, `document.querySelector('main button[title="문장 번호 표시 On/Off"]')`));
-  await press(tab, `document.querySelector('main button[title="문장 번호 표시 On/Off"]')`, { touch: true, settle: 250 });
-  await press(tab, btnByExactText("main", "크게"), { touch: true, settle: 250 });
-  eqCk(rec, "step1", "font 크게", "passage font-size (tap)", "18px", await jsEval(tab, `(() => { const c = document.querySelector(${J(`${SEL.step1} .font-serif`)}); return c ? getComputedStyle(c).fontSize : null; })()`, null));
-  await press(tab, btnByExactText("main", "보통"), { touch: true, settle: 200 });
-  await press(tab, btnByText(SEL.step1, "지문 전체 복사"), { touch: true, settle: 350 });
-  hasCk(rec, "step1", "copy", "copy feedback (tap)", "✓ 복사 완료", await stepText(tab, "step1"));
-  await press(tab, wpmStartBtn, { touch: true, settle: 200 });
-  await press(tab, wpmFinishBtn, { touch: true, settle: 400 });
-  hasCk(rec, "wpm", "too-fast", "implausible run is not scored (tap)", "측정값을 저장하지 않았습니다", await stepText(tab, "step1"));
-  await press(tab, wpmResetBtn, { touch: true, settle: 250 });
+  const phone = H.VIEWPORTS[viewport].width < 640;
+  const koWhere = phone ? `document.querySelector(${J(`${SEL.step1} [data-ko-line]`)})` : `document.querySelector(${J(`${SEL.step1} [data-ko-panel]`)})`;
+  await playProbe(rec, tab, { feature: "step1", item: "s1", trigger: "sentence 1 tap", text: D.spoken(0), expr: sent1(0), touch: true });
+  hasCk(rec, "step1", "s1", phone ? "tap opens the Korean line under the sentence" : "tap shows the Korean in the panel under the passage", s0.ko, (await jsText(tab, koWhere)) || "");
+  await stopProbe(rec, tab, { feature: "step1", item: "s1", expr: sent1(0), touch: true, rearm: 2, idle: idleSentence(0) });
+  lacksCk(rec, "step1", "s1", "a second tap closes it", s0.ko, (await jsText(tab, koWhere)) || "");
+  const tooFast = await timedRun(rec, tab, D, { purpose: "first", waitMs: 200, label: "too-fast (tap)", touch: true });
+  boolCk(rec, "wpm", "too-fast", "not saved (tap)", true, tooFast === null);
   captured.step1 = await stepText(tab, "step1");
   mergeLayout(rec, await tab.eval(H.SNAPSHOT));
 
-  // Step 2
+  // Step 2 — reveal and mark by touch
   if (await openStep(rec, tab, 2, { touch: true })) {
-    await press(tab, btnByText(SEL.step2, "전체 뜻"), { touch: true, settle: 300 });
-    const t2 = await stepText(tab, "step2");
-    hasCk(rec, "step2", "toggle-all", "💡 전체 뜻 보기 reveals meanings (tap)", D.vocab[0].korean, t2);
-    await playProbe(rec, tab, { feature: "step2", item: "#1", trigger: `🔊 ${D.vocab[0].word} (tap)`, text: D.vocab[0].word, expr: `(() => { const c = ${vocaCard(0)}; return c ? c.querySelector('button[title="발음 듣기"]') : null; })()`, touch: true });
-    await stopProbe(rec, tab, { feature: "step2", item: "#1", expr: `(() => { const c = ${vocaCard(0)}; return c ? c.querySelector('button[title="발음 듣기"]') : null; })()`, touch: true });
+    await press(tab, inVoca(1, '[data-action="reveal"]'), { touch: true, settle: 250 });
+    eqCk(rec, "step2", "k1", "meaning after '뜻 보기' (tap)", D.vocab[0].korean, await jsText(tab, inVoca(1, "[data-meaning]")));
+    await press(tab, inVoca(1, '[data-action="unknown"]'), { touch: true, settle: 250 });
+    eqCk(rec, "step2", "k1", "'몰라요' saved (tap)", "unknown", (((await lsJson(tab, wordsKey(D))) || {}).marks || {})["1"]);
+    await press(tab, action(SEL.step2, "reveal-all"), { touch: true, settle: 300 });
     captured.step2 = await stepText(tab, "step2");
     mergeLayout(rec, await tab.eval(H.SNAPSHOT));
   }
 
-  // Step 3 — one correct and one wrong cloze answer, plus the mic wiring
+  // Step 3 — the set with '몰라요' k1 first; one right and one wrong by touch
   if (await openStep(rec, tab, 3, { touch: true })) {
-    const items = await clozeItemsInDom(tab);
-    ck(rec, "step3", "", "cloze item count matches generateClozeItems()", String(D.cloze.length), String(items.length), items.length === D.cloze.length ? "PASS" : "FAIL");
-    if (items[0]) {
-      const want = D.cloze[0];
-      const ai = items[0].options.findIndex((o) => o === want.missingWord);
-      if (ai >= 0) {
-        await press(tab, clozeOption(0, ai), { touch: true, settle: 300 });
-        hasCk(rec, "step3", "cloze1", "correct answer feedback (tap)", "✓ 정답입니다!", ((await clozeItemsInDom(tab))[0] || {}).feedback);
-      }
+    const round0 = D.cloze(0, [1]);
+    if (round0.length) {
+      const plan = round0.map((_, i) => (i === 1 ? "wrong" : "right"));
+      await answerSet(rec, tab, D, round0.slice(0, 2), { label: "round0 (tap)", plan, touch: true });
     }
-    if (items[1]) {
-      const want = D.cloze[1];
-      const wi = items[1].options.findIndex((o) => o !== want.missingWord);
-      if (wi >= 0) {
-        await press(tab, clozeOption(1, wi), { touch: true, settle: 300 });
-        hasCk(rec, "step3", "cloze2", "wrong answer feedback (tap)", `❌ 정답은 '${want.missingWord}' 입니다.`, ((await clozeItemsInDom(tab))[1] || {}).feedback);
-      }
-    }
-    ck(rec, "step3", "mic", "real microphone recognition", "a person reads the sentence aloud", "no microphone in a headless browser", "BLOCKED", "BLOCKED (real microphone)");
-    const micBtn = btnByText(SEL.step3, "마이크 켜고 소리 내어 읽기");
-    if (await exists(tab, micBtn)) {
-      await jsEval(tab, `(() => { window.__kigSayError = null; window.__kigSay = ${J(s0.en)}; })()`, null);
-      await press(tab, micBtn, { touch: true, settle: 900 });
-      const exp = speechRecognition.evaluatePronunciation(s0.en, s0.en);
-      hasCk(rec, "step3", "mic", "UI wiring only — perfect reading scores 100 (tap)", `${exp.score}점`, await stepText(tab, "step3"), "stubbed SpeechRecognition");
-    }
-    captured.step3 = await stepText(tab, "step3");
+    captured.step3 = `${(await stepText(tab, "step3")) || ""}\n${round0.map((it) => it.maskedSentence).join("\n")}`;
     mergeLayout(rec, await tab.eval(H.SNAPSHOT));
   }
 
-  // Step 4
+  // Step 4 — the number plays; 영어만 → '해석 보기'
   if (await openStep(rec, tab, 4, { touch: true })) {
-    await press(tab, btnByExactText(`${SEL.step4} div[role=group]`, "영어만"), { touch: true, settle: 300 });
-    const vis = await jsEval(tab, `(() => { const c = [...(document.querySelectorAll(${J(`${SEL.step4} > div`)})[1] || { children: [] }).children]; return c.map((x) => getComputedStyle(x).display); })()`, []);
-    ck(rec, "step4", "view 영어만", "Korean column hidden (tap)", "none", String(vis[1]), vis[1] === "none" ? "PASS" : "FAIL");
-    await press(tab, btnByExactText(`${SEL.step4} div[role=group]`, "양방향"), { touch: true, settle: 300 });
-    await playProbe(rec, tab, { feature: "step4", item: "s1", trigger: "EN sentence 1 tap", text: s0.en, expr: dualSpan("en", 0), touch: true });
-    hasCk(rec, "step4", "s1", "HUD shows the pair after a tap", `👉 ${s0.ko}`, await hudText(tab));
-    await press(tab, dualSpan("ko", 0), { touch: true, settle: 300 });
-    await press(tab, `document.querySelector(${J(`${SEL.step4} button[aria-label="닫기"]`)})`, { touch: true, settle: 300 });
+    await playProbe(rec, tab, { feature: "step4", item: "s1", trigger: "row 1 number (tap)", text: D.spoken(0), expr: inRow4(0, '[data-action="play-row"]'), touch: true });
+    await press(tab, `document.querySelector(${J(`${SEL.step4} [data-view="en"]`)})`, { touch: true, settle: 300 });
+    await press(tab, inRow4(0, '[data-action="show-ko"]'), { touch: true, settle: 300 });
+    eqCk(rec, "step4", "view en", "'해석 보기' shows that row's Korean (tap)", s0.ko, await jsText(tab, inRow4(0, "[data-ko]")));
+    await press(tab, `document.querySelector(${J(`${SEL.step4} [data-view="both"]`)})`, { touch: true, settle: 300 });
     captured.step4 = await stepText(tab, "step4");
     mergeLayout(rec, await tab.eval(H.SNAPSHOT));
   }
 
-  // notepad + bookmark + completion by touch
-  const note = `QA ${viewport} ${D.id}`;
-  await notesWrite(rec, tab, D, note, { touch: true });
-  await H.type(tab, notesArea, "");
-  await sleep(700);
-  const bAria = await toggleProgress(rec, tab, D, "bookmark", { touch: true });
-  eqCk(rec, "bookmark", "", "aria-label after adding (tap)", "북마크 해제", bAria);
-  const cAria = await toggleProgress(rec, tab, D, "complete", { touch: true });
-  eqCk(rec, "complete", "", "aria-label after completing (tap)", "학습 완료 취소", cAria);
-  await toggleProgress(rec, tab, D, "bookmark", { touch: true });
-  await toggleProgress(rec, tab, D, "complete", { touch: true });
-  boolCk(rec, "bookmark", "", "localStorage key removed when off", false, progKey(D.id) in ((await progressMap(tab, "bookmarks")) || {}));
+  // completion by touch, after one timed reading (lib/reading-page.cjs)
+  await jsEval(tab, `sessionStorage.setItem('kig:audit:keep', '1')`, null);
+  await completionChecks(rec, tab, D, { touch: true, measured: false });
+  await toggleProgress(rec, tab, "complete", { touch: true });
   boolCk(rec, "complete", "", "localStorage key removed when off", false, progKey(D.id) in ((await progressMap(tab, "completed")) || {}));
+  await jsEval(tab, `sessionStorage.removeItem('kig:audit:keep')`, null);
 
   // bottom step navigation by touch
   await openStep(rec, tab, 1, { touch: true });
@@ -1563,7 +1335,7 @@ async function runTouch(rec, tab, D, viewport) {
   await press(tab, `document.querySelectorAll('nav[aria-label="학습 단계 이동"] button')[0]`, { touch: true, settle: 450 });
   eqCk(rec, "stepnav", "walk", "← 이전 Step goes back to step1 (tap)", "step1", await activeStep(tab));
 
-  await resetLessonState(tab, D.id);
+  await resetLessonState(tab, D);
   mergeEvents(rec, H.events(tab));
   return captured;
 }
@@ -1574,15 +1346,16 @@ async function runTouch(rec, tab, D, viewport) {
 
 async function main() {
   const args = parseArgs(process.argv);
+  BREAK = args.brk;
   const pages = selectPages(args);
   const shardIdx = args.shard ? Number(args.shard.split("/")[0]) : null;
   const clone = shardIdx ? `drv-rd-${shardIdx}` : "drv-rd";
   const port = shardIdx ? 9470 + shardIdx : 9470;
-  const outFile = path.join(OUT, "features", `${COURSE}${args.suffix}.jsonl`);
+  const outFile = path.join(OUT, "features", `${COURSE}${args.suffix}${BREAK ? `-break-${BREAK}` : ""}.jsonl`);
 
   if (args.dry) {
     console.log(`${pages.length} pages: ${pages.join(",")}`);
-    console.log(`clone=${clone} port=${port} out=${outFile} viewports=${args.viewports.join(",")}`);
+    console.log(`clone=${clone} port=${port} out=${outFile} viewports=${args.viewports.join(",")}${BREAK ? ` break=${BREAK}` : ""}`);
     return;
   }
 
@@ -1594,6 +1367,7 @@ async function main() {
   console.log(`[reading] ${pages.length} pages x ${args.viewports.length} viewports — ${todo.length} to run (clone ${clone}, port ${port}) → ${outFile}`);
   if (!todo.length) return;
 
+  let failed = 0;
   const browser = await H.startBrowser(clone, port);
   try {
     const tab = await H.openTab(browser);
@@ -1604,8 +1378,9 @@ async function main() {
 
     for (const [id, viewport] of todo) {
       const started = Date.now();
-      const rec = newRecord(id, `${H.BASE}/${COURSE}/${id}`, viewport);
+      const rec = newRecord(id, viewport, `${H.BASE}/${COURSE}/${id}`);
       rec.viewport = viewport;
+      if (BREAK) rec.break = BREAK;
       let captured = {};
       try {
         const D = lessonData(id);
@@ -1627,6 +1402,7 @@ async function main() {
       } catch {}
       sink.write(rec);
       const tally = rec.checks.reduce((a, c) => ((a[c.status] = (a[c.status] || 0) + 1), a), {});
+      if (tally.FAIL || rec.visitError) failed++;
       const badAudio = rec.audio.filter((a) => !a.playing || a.error || (a.tts || []).length).length;
       console.log(
         `[reading] ${id} ${viewport} ${rec.seconds}s checks ${rec.checks.length} (PASS ${tally.PASS || 0} FAIL ${tally.FAIL || 0} BLOCKED ${tally.BLOCKED || 0} NA ${tally.NA || 0}) audio ${rec.audio.length - badAudio}/${rec.audio.length} content ${rec.content.found}/${rec.content.expected}` +
@@ -1637,6 +1413,7 @@ async function main() {
   } finally {
     browser.proc.kill();
   }
+  if (failed) process.exitCode = 1;
 }
 
 main().catch((e) => {

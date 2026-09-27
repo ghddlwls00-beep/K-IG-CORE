@@ -6,8 +6,9 @@
  * 준비는 drive-topic-lock.cjs 와 같음(버리는 시험 비밀값으로 켠 `npx next dev -p 3461`). 끝나면 data/*.json 을 지운다.
  *   node docs/pass-off-grammar/검사/drive-topic-admin.cjs --secrets <json> [--base http://localhost:3461] [--break=<아래>]
  *
- *   M1 STUDENT 목록(/student) — STUDENT 이용권: 1장 '해금 기준 …강 + 마지막 강의' · 2장 '챕터 1 완료 후 해금' · 카드
- *      '이전 챕터 완료 필요'(STUDENT 문구 그대로 — 이 과정의 'TOPIC' 문구가 새지 않음)
+ *   M1 STUDENT 목록(/student) — STUDENT 이용권: 1장 '…강과 마지막 강의를 마치면 다음 장' · 2장 '1장을 마치면 열립니다' · 자물쇠 ·
+ *      줄 '앞 장을 마치면 열림'(STUDENT 문구 그대로 — 이 과정의 'TOPIC' 문구가 새지 않음). 2026-09-28 main 합친 뒤: 기준 문구는
+ *      main 의 공통 틀 2(STU-U28)가 새로 짠 목록의 것 — 전의 '해금 기준 …강 + 마지막 강의' · '챕터 1 완료 후 해금' · '이전 챕터 완료 필요'
  *   M2 관리자 /admin/license — 'PASS-OFF 진도' → 'TOPIC 2까지 열림' · '완료 레슨 3/N' · 대주제 칩
  *   M3 '진도 초기화'(확인 창 두 번 — 두 번째 창에 '기기에 남은 레슨 연습 기록은 지워지지 않습니다') → TOPIC 1 · 0/N,
  *      학습자 쪽 API 도 1
@@ -113,8 +114,12 @@ const activate = (key, keep) => `(async () => {
     const s1 = await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').innerText.replace(/\\s+/g, ' ')`);
     await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').click(), true`);
     await sleep(500);
-    const card = await tab.eval(`(document.querySelector('#section-1 li') || {}).innerText || ''`);
-    check("M1 STUDENT 목록: 1장 '해금 기준 …강 + 마지막 강의' · 2장 '챕터 1 완료 후 해금' · 카드 '이전 챕터 완료 필요'", /해금 기준 \d+강 \+ 마지막 강의/.test(s0) && /챕터 1 완료 후 해금/.test(s1) && /🔒 잠금/.test(s1) && card.includes("이전 챕터 완료 필요") && !card.includes("TOPIC"), { s0, s1, card: card.replace(/\s+/g, " ").slice(0, 80) });
+    // textContent: main's rows are content-visibility:auto, so a row below the screen has an empty innerText
+    const card = await tab.eval(`(document.querySelector('#section-1 li') || {}).textContent || ''`);
+    const lock1 = await tab.eval(`Boolean(document.querySelector('#section-1 button[aria-expanded] svg[aria-label="잠김"]'))`);
+    check("M1 STUDENT 목록: 1장 '…강과 마지막 강의를 마치면 다음 장' · 2장 '1장을 마치면 열립니다' · 자물쇠 · 줄 '앞 장을 마치면 열림'(TOPIC 없음)",
+      /\d+강과 마지막 강의를 마치면 다음 장/.test(s0) && /1장을 마치면 열립니다/.test(s1) && lock1 && card.includes("앞 장을 마치면 열림") && !`${s0} ${s1} ${card}`.includes("TOPIC"),
+      { s0, s1, lock1, card: card.replace(/\s+/g, " ").slice(0, 80) });
 
     // M2 admin
     const login = await tab.eval(`fetch('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pin: ${JSON.stringify(sec.ADMIN_PIN)} }) }).then(r => r.json()).then(d => d.success)`);

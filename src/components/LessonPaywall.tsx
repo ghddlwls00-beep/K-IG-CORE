@@ -8,18 +8,30 @@ interface LessonPaywallProps {
   courseSlug: string;
   courseTitle?: string;
   lessonId: string;
+  /** @deprecated the page's h1 already shows the lesson title (점검 FRAME-U15: it showed twice) */
   title?: string;
   lockReason?: "license" | "progress";
   chapter?: number;
+  /** the course's free lessons — the way forward for a visitor (점검 FRAME-L09) */
+  freeLessons?: { href: string; title: string }[];
 }
 
+/**
+ * The screen that replaces a lesson the visitor cannot open.
+ *
+ * 2026-09-27 (docs/디자인-규칙.md · 점검 FRAME-U15 · L09): one message, one main button, and a
+ * way to the two free lessons; no emoji, no blue/amber, buttons that stay on one line.
+ * The small marker line keeps its text — 'ALL-PASS ONLY' · 'STUDENT PASS ONLY' ·
+ * 'VIP ALL-PASS REQUIRED' · '순차 학습 잠금' — because the paid-lock checks recognise the paywall by
+ * it (probe-entitlement-all.cjs PAYWALL · lib/harness.cjs PAYWALL_RE). Change those checks, with a
+ * deliberate-break proof, before changing these words.
+ */
 export function LessonPaywall({
   courseSlug,
   courseTitle = "코스",
-  lessonId,
-  title,
   lockReason = "license",
   chapter,
+  freeLessons = [],
 }: LessonPaywallProps) {
   const { openModal, licenseInfo } = useLicense();
   // A STUDENT pass on a course it does not open (license.ts planOpensCourse). STUDENT's own pages keep
@@ -30,122 +42,120 @@ export function LessonPaywall({
   // A course the STUDENT pass opens besides STUDENT itself (PASS-OFF GRAMMAR): either pass will do.
   const studentPassCourse = courseSlug !== "student" && STUDENT_PASS_COURSES.includes(courseSlug);
 
+  // 'STUDENT PASS · ALL-PASS' (PASS-OFF GRAMMAR, either pass opens it) is the fifth marker the paid-lock
+  // checks know (harness.cjs PAYWALL_RE · probe-entitlement-all · sweep-inventory · verify-sitemap …)
+  const marker =
+    lockReason === "progress"
+      ? "순차 학습 잠금"
+      : isStudentOnly
+        ? "VIP ALL-PASS REQUIRED"
+        : courseSlug === "student"
+          ? "STUDENT PASS ONLY"
+          : studentPassCourse
+            ? "STUDENT PASS · ALL-PASS"
+            : "ALL-PASS ONLY";
+
   return (
     <div
       // PERF-01: LicenseProvider reloads a lesson after verifying the licence only when
       // the server rendered THIS licence paywall (it had no valid session cookie).
       data-kig-paywall={lockReason === "license" ? "license" : undefined}
-      className="my-10 rounded-3xl border border-line bg-surface/80 backdrop-blur-xl p-8 sm:p-12 shadow-sm flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden"
+      className="mt-2 flex flex-col items-center gap-5 rounded-card border border-line bg-raised px-5 py-8 text-center sm:px-10 sm:py-10"
     >
-      {/* Icon Pill */}
-      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] text-[22px] text-ink shadow-2xs">
-        🔒
+      <div aria-hidden className="flex h-12 w-12 items-center justify-center rounded-full border border-line text-ink-soft">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="11" width="14" height="9" rx="2" />
+          <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        </svg>
       </div>
 
-      {/* Main Text */}
-      <div className="flex flex-col items-center gap-2.5 max-w-md">
+      <div className="flex max-w-md flex-col items-center gap-2">
+        <span className="text-caption font-semibold text-ink-soft">{marker}</span>
         {lockReason === "progress" ? (
           <>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-blue-700">
-              순차 학습 잠금
-            </span>
-            <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
-              챕터 {chapter || "다음"}은 이전 챕터 완료 후 열립니다
-            </h2>
-            <p className="text-[13px] text-ink-soft leading-relaxed">
-              현재 학습 중인 챕터의 필수 강의 80%와 마지막 강의를 완료해 주세요.
-              <br className="hidden sm:inline" /> 조건을 충족하면 다음 챕터가 즉시 열립니다.
+            {/* 2026-09-27 STU-U28: '{n}장은' fixes the particle ('챕터 2은(는)' read wrong) */}
+            <h2 className="text-title-s font-bold text-ink">{chapter ? `${chapter}장은` : "다음 장은"} 앞 장을 마치면 열립니다</h2>
+            <p className="text-label leading-relaxed text-ink-soft">
+              지금 장의 강의 80%와 마지막 강의를 마치면 다음 장이 바로 열립니다.
             </p>
           </>
         ) : isStudentOnly ? (
           <>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-blue-600 dark:text-blue-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-              VIP ALL-PASS REQUIRED
-            </span>
-            <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
-              본 레슨은 VIP 올패스 전용 강좌입니다
-            </h2>
-            <p className="text-[13px] text-ink-soft leading-relaxed">
-              현재 <strong className="text-ink font-semibold">STUDENT 패스</strong>({STUDENT_PASS_SCOPE})로 접속 중입니다.
-              <br className="hidden sm:inline" />
-              {courseTitle}을(를) 포함한 전체 과정을 이용하시려면 VIP 올패스 코드를 등록해 주세요.
+            <h2 className="text-title-s font-bold text-ink">올패스로 학습할 수 있는 강의입니다</h2>
+            <p className="text-label leading-relaxed text-ink-soft">
+              지금은 <strong className="font-semibold text-ink">STUDENT 패스</strong>({STUDENT_PASS_SCOPE})로 이용 중입니다. {courseTitle}을(를) 포함한 모든 과정은 올패스로 열립니다.
             </p>
           </>
         ) : (
           <>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] px-3 py-1 font-mono text-[11px] font-semibold tracking-wider text-ink-soft">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500/70" />
-              {courseSlug === "student" ? "STUDENT PASS ONLY" : studentPassCourse ? "STUDENT PASS · ALL-PASS" : "ALL-PASS ONLY"}
-            </span>
-            <h2 className="text-[20px] sm:text-[23px] font-bold text-ink tracking-tight mt-0.5">
-              {title || (courseSlug === "student" ? "본 레슨은 STUDENT 이용권 등록 후 학습하실 수 있습니다" : studentPassCourse ? "본 레슨은 STUDENT 이용권 또는 올패스 등록 후 학습하실 수 있습니다" : "본 레슨은 올패스 등록 후 학습하실 수 있습니다")}
+            <h2 className="text-title-s font-bold text-ink">
+              {courseSlug === "student"
+                ? "STUDENT 이용권을 등록하면 학습할 수 있는 강의입니다"
+                : studentPassCourse
+                  ? "STUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 레슨입니다"
+                  : "올패스를 등록하면 학습할 수 있는 강의입니다"}
             </h2>
-            <p className="text-[13px] text-ink-soft leading-relaxed">
-              {courseSlug === "student" ? (
-                <>
-                  발급받으신 이용권 인증 코드를 등록하시면
-                  <br className="hidden sm:inline" />
-                  <strong className="text-ink font-semibold"> STUDENT 과정</strong>을 제한 없이 학습하실 수 있습니다.
-                </>
-              ) : studentPassCourse ? (
-                <>
-                  STUDENT 이용권이나 올패스 인증 코드를 등록하시면
-                  <br className="hidden sm:inline" />
-                  <strong className="text-ink font-semibold"> {courseTitle} 과정</strong>을 제한 없이 학습하실 수 있습니다.
-                </>
-              ) : (
-                <>
-                  공식 판매처에서 발급받으신 인증 코드를 등록하시면
-                  <br className="hidden sm:inline" />
-                  <strong className="text-ink font-semibold"> 모든 유료 레슨</strong>을 제한 없이 학습하실 수 있습니다.
-                </>
-              )}
+            <p className="text-label leading-relaxed text-ink-soft">
+              {courseSlug === "student"
+                ? "받으신 이용권 코드를 등록하면 STUDENT 과정 전체를 학습할 수 있습니다."
+                : studentPassCourse
+                  ? `받으신 STUDENT 이용권이나 올패스 코드를 등록하면 ${courseTitle} 과정 전체를 학습할 수 있습니다.`
+                  : "받으신 이용권 코드를 등록하면 모든 유료 강의를 학습할 수 있습니다."}
             </p>
           </>
         )}
       </div>
 
-      {/* Action Buttons */}
       {lockReason === "progress" ? (
         <Link
           href="/student"
-          className="rounded-full bg-ink px-6 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all shadow-2xs"
+          className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity hover:opacity-90"
         >
-          현재 학습 챕터로 돌아가기
+          지금 장으로 돌아가기
         </Link>
-      ) : <div className="flex flex-wrap items-center justify-center gap-2.5 w-full max-w-sm mt-1">
-        <button
-          type="button"
-          onClick={openModal}
-          className="flex-1 min-w-[140px] rounded-full bg-ink px-5 py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
-        >
-          🔑 이용권 코드 등록
-        </button>
+      ) : (
+        <div className="grid w-full max-w-sm grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={openModal}
+            className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90"
+          >
+            이용권 등록
+          </button>
+          <button
+            type="button"
+            onClick={openModal}
+            className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control border border-line px-4 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
+          >
+            구매 안내
+          </button>
+        </div>
+      )}
 
-        <button
-          type="button"
-          onClick={openModal}
-          className="flex-1 min-w-[140px] rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] px-5 py-2.5 text-[13px] font-medium text-ink-soft hover:text-ink hover:bg-black/[0.06] dark:hover:bg-white/[0.12] transition-all cursor-pointer shadow-2xs active:scale-[0.98]"
-        >
-          🛒 구매 안내
-        </button>
-      </div>}
+      {lockReason !== "progress" && freeLessons.length > 0 ? (
+        <div className="w-full max-w-sm border-t border-line pt-5">
+          <p className="text-caption text-ink-soft">이용권 없이 먼저 해 볼 수 있는 강의</p>
+          <div className="mt-2 flex flex-col gap-2">
+            {freeLessons.map((lesson) => (
+              <Link
+                key={lesson.href}
+                href={lesson.href}
+                className="flex min-h-11 items-center justify-between gap-2 rounded-control border border-line px-4 text-label font-medium text-ink transition-colors hover:bg-sunken"
+              >
+                <span className="truncate">{lesson.title}</span>
+                <span aria-hidden>→</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
-      {/* Secondary Back Navigation */}
-      <div className="border-t border-line/60 pt-5 mt-1 flex flex-wrap items-center justify-center gap-3 text-[12px] text-ink-faint">
-        <Link
-          href={`/${courseSlug}`}
-          className="hover:text-ink transition-colors underline underline-offset-4 decoration-black/20 hover:decoration-black"
-        >
-          ← {courseTitle} 전체 목록
-        </Link>
-        <span className="opacity-40">·</span>
-        <span className="font-mono">
-          1~2강은 무료로 상시 체험 가능합니다
-        </span>
-      </div>
+      <Link
+        href={`/${courseSlug}`}
+        className="inline-flex min-h-11 items-center rounded-control px-3 text-label text-ink-soft transition-colors hover:bg-sunken hover:text-ink"
+      >
+        ← {courseTitle} 전체 목록
+      </Link>
     </div>
   );
 }
-
