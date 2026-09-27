@@ -1,0 +1,177 @@
+[
+  {
+    "lesson": "pg01-1",
+    "item": "pg01-1:s3 → 새 pg01-1:s7",
+    "problem": "③ 문장 'By the way, where do we go?'가 ④ p10 의 정답을 먼저 보여 줌(check-lessons)",
+    "action": "fixed",
+    "note": "s3 에 reserve: true(지우지 않음 — 날을 넘기는 복습에서 ④ 뒤에 나옴). 같은 기술(문장 가운데의 we 를 누르고 1인칭 고르기)을 새 문장 'Can we play outside now?'로 묻는 s7(select · 라벨 1인칭 · source new · bookRef null)을 s3 바로 뒤에 더함. 무료 판 ③ = s7 · s4 · s5 · s6(4개), 이용권 판 = s1 · s2 · s7 · s4 · s5 · s6(6개). 무료 레슨에 들어가는 새 글이라 checkPassoffFreeLeak.mjs 로 유출 0 확인(일부러 깨기 restore → FAIL 87 · 8)."
+  },
+  {
+    "lesson": "pg01-2",
+    "item": "pg01-2:s5 → 새 pg01-2:s7",
+    "problem": "③ 문장 'How do you commute every day?'가 ④ p6 의 정답을 먼저 보여 줌(check-lessons)",
+    "action": "fixed",
+    "note": "s5 reserve: true. 같은 기술(묻는 문장에서 do 뒤에 온 you → 2인칭)을 새 문장 'What do you eat for breakfast?'로 묻는 s7 을 s5 뒤에 더함. ③ = s1 · s2 · s3 · s4 · s7 · s6(6개). 무료 레슨 — 유출 검사 0."
+  },
+  {
+    "lesson": "pg01-2",
+    "item": "pg01-2:s6 (보기)",
+    "problem": "검사 도구가 보지 않는 곳: ③ 보기 'Do you like cold weather?'가 ④ p4 의 정답 전체를 먼저 보여 줌(보기는 check-lessons 가 대조하지 않음)",
+    "action": "fixed",
+    "note": "보기 → 'Can you swim?'(여전히 2인칭 you 가 든 유일한 보기 · 정답 번호 1 그대로 · why 그대로). note 칸에 바꾼 이유."
+  },
+  {
+    "lesson": "pg02-1",
+    "item": "pg02-1:s5 → 새 pg02-1:s8",
+    "problem": "검사 도구가 보지 않는 곳: ③ 'We ___ all 14 years old.'는 빈칸에 정답 are 를 넣으면 ④ p8 정답과 글자까지 같음(검사는 빈칸 문장을 그대로 대조해서 못 잡음). pg02-2:s7('Jamie ___ lunch at school.')은 같은 까닭으로 이미 reserve 였음",
+    "action": "fixed",
+    "note": "s5 reserve: true. 같은 기술(여럿인 주어 → are)을 새 문장 'My friends and I ___ in the same class.'(am/are/is → are, I 가 들어 있어도 am 이 아님을 짚음)로 묻는 s8 을 더함. ③ 6개."
+  },
+  {
+    "lesson": "pg02-2",
+    "item": "pg02-2:s3 · s4 → 새 pg02-2:s9 · s10",
+    "problem": "③ 'She mixes the milk and ice.'(= ④ p11) · 'He does his homework in my room.'(= ④ p12)이 ④ 정답을 먼저 보여 줌(check-lessons)",
+    "action": "fixed",
+    "note": "s3 · s4 reserve: true. 같은 기술(원형 쓰기)을 새 문장으로: s9 'My uncle fixes cars.' → fix(x 로 끝나 -es), s10 'My mom does yoga every morning.' → do(o 로 끝나 -es). ③ = s1 · s2 · s9 · s10 · s5 · s6(6개). 설명 카드 줄에 'mix → mixes · do → does'가 있는 것은 규칙 예시라 그대로(④ 문장 전체가 아님)."
+  },
+  {
+    "lesson": "pg03-2",
+    "item": "pg03-2:s1~s6 → 새 pg03-2:s30~s35",
+    "problem": "레슨 안 ③ 6개가 모두 ④ 정답과 같은 문장(s1=p13 · s2=p16 · s3=p17 · s4=p19 · s5=p22 · s6=p10, check-lessons 6줄)",
+    "action": "fixed",
+    "note": "s1~s6 reserve: true(교재 Review 문항이라 날을 넘기는 복습에 남음). 같은 품사를 묻는 새 문장 6개를 각 문항 바로 뒤에: s30 대명사 'Emma has a puppy. She loves it very much.'(She · it) · s31 동사 'The children run and jump in the park.'(run · jump) · s32 형용사 'She has long black hair.'(long · black) · s33 부사 'This box is too heavy.'(too) · s34 전치사 'The cat is under the table.'(under) · s35 접속사 'My brother was sick, so he stayed in bed.'(so). 판단: 앵커 문장으로 같은 품사를 묻는 문항(s8 · s9 · s13 · s15 · s16 · s19)이 이미 reserve 로 있어, 같은 앵커로 새 문항을 만들면 같은 문항이 둘이 되고 그것을 레슨 안으로 되돌리면 ② 발견 질문 · 풀이 예시가 이미 그 답(She=대명사, play=동사, very=부사)을 말해 연습이 되지 않음 — 그래서 설명 카드 예시 목록에 없는 낱말의 새 문장으로 함. 모두 이 레슨까지 배운 문법(기초 태그 · have/has · 3인칭 단수)만 씀."
+  },
+  {
+    "lesson": "pg03-3",
+    "item": "pg03-3:s1 · s2 · s5 · s6 → 새 pg03-3:s13 · s14 · s15 · s16",
+    "problem": "③ 4문항이 ④ 정답과 같은 문장(s1=p8 · s2=p11 · s5=p18 · s6=p6, check-lessons)",
+    "action": "fixed",
+    "note": "네 문항 reserve: true. 같은 기술을 새 문장으로: s13 보어 자리 명사구 누르기 'My goal is to win the race.'(to win the race) · s14 '밑줄 친 구는?' 'I have a lot of homework to do.'(to do → 형용사구, 카드의 'a book to read'와 같은 모양) · s15 구접속사 누르기 'I will call you as soon as I get home.'(as soon as) · s16 'Even when he is tired, he helps his mother.'(Even when 중 접속사는 when — s6 의 Even after 와 같은 가르침). ③ = s13 · s14 · s3 · s4 · s15 · s16(6개). 앵커 a1 'To choose one is hard.'는 ② 발견 질문 · 표가 이미 명사구라고 풀어 주어 쓰지 않음."
+  },
+  {
+    "lesson": "pg04-4",
+    "item": "pg04-4:s1 · s2 · s3 → 새 pg04-4:s14 · s15 · s16",
+    "problem": "③ 문장이 ④ 정답과 같음(s1=p2 · s2=p6 · s3=p9, check-lessons)",
+    "action": "fixed",
+    "note": "세 문항 reserve: true. 같은 기술(평서문·명령문·기원문 가리기)을 새 문장으로: s14 'Our school starts at nine.' → 평서문 · s15 'Please close the door.' → 명령문(please 가 있어도 명령문 — s2 의 가르침) · s16 'May all your dreams come true!' → 기원문(느낌표가 있어도 감탄문 아님 — s3 의 가르침). 앵커로 같은 것을 묻는 s7 · s8 · s12 는 이미 reserve 이고 ② 발견 질문이 그 답을 말해 쓰지 않음. ③ = s14 · s15 · s16 · s4 · s5 · s6(6개)."
+  },
+  {
+    "lesson": "pg04-4",
+    "item": "rule.points[1] · rule.points[2]",
+    "problem": "검사 도구가 보지 않는 곳(check-lessons 는 설명 카드의 worked · mistakes.right 만 대조): 규칙 줄의 예 'Sit down.'(= ④ p4) · 'God bless you!'(= ④ p10)가 ④ 정답 전체를 먼저 보여 줌",
+    "action": "fixed",
+    "note": "points[1] 예 → '(Open the door.)', points[2] 예 → 'God save the King!(3인칭이어도 동사원형)'. 가르치는 내용(주어 없는 동사원형 · 3인칭이어도 동사원형)은 그대로."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "rule.table.rows[1] (How + 주어 + 동사!)",
+    "problem": "검사 도구가 보지 않는 곳: 설명 카드 표의 예 'How time flies!'가 ⑤ t1(처음 보는 문장)과 같음 — 데이터-형식 v1.3 '⑤ 는 설명 카드에도 나오지 않아야'",
+    "action": "fixed",
+    "note": "표 예 → 'How I miss you!'(같은 틀). t1 은 그대로."
+  },
+  {
+    "lesson": "pg04-1",
+    "item": "pg04-1:t1 → 새 pg04-1:t3",
+    "problem": "검사 도구가 보지 않는 곳: ⑤ t1 'He lives in a small house in the suburbs.'는 바로 앞 레슨 pg03-3 의 ⑤ t2 와 같은 문장이라 '처음 보는 문장'이 아님(검사는 레슨 하나 안에서만 대조)",
+    "action": "fixed",
+    "note": "t1 을 빼고(id t1 은 비워 두고 재사용 안 함 — pg04-3 의 t2 와 같은 방식) GRAMMAR II gh2-009#5 단문 'He had lunch on the plane.' / 한국어 gh2-009-1#5 '그는 그 비행기에서 점심을 먹었다.'를 t3 으로. 허용 답 = GRAMMAR II 다른 답 4(ate · airplane · aeroplane) + 'that plane' 2, 목표형 had|ate, 오답 패턴 'He have lunch' · 'He eated'. 태그 simple-sentence · past-simple · preposition-basic. 과정 전체 29레슨에 쓰이지 않은 문장임을 확인. GRAMMAR II 문장이라 기존 클립 재사용 대상(음성 단계에서 확인)."
+  },
+  {
+    "lesson": "pg01-1",
+    "item": "pg01-1:p5 (유료 보충 파일 content/private/passoff-grammar/pg01-1.paid.json)",
+    "problem": "뒤 레슨 태그 subordinating-conjunction 이 있는데 challenge 아님(check-lessons)",
+    "action": "fixed",
+    "note": "도전 규칙(데이터-형식 v1.3): 기초 문법 before + 명사 'before bed'(허용 답)가 절 구조를 바꾸지 않고 같은 뜻을 만듦 → 태그를 빼고 challenge 는 그대로 false, challengeNote 에 이유. 보충 파일을 직접 고침(buildPassoffIndex.mjs 는 돌리지 않음). 문항 순서 그대로."
+  },
+  {
+    "lesson": "pg01-3",
+    "item": "pg01-3:p6",
+    "problem": "뒤 레슨 태그 participle(go skiing) 이 있는데 challenge 아님(check-lessons)",
+    "action": "fixed",
+    "note": "'She skis every Saturday in winter.'(허용 답)가 같은 뜻 → participle 태그를 빼고 challengeNote 를 이 이유로 고침."
+  },
+  {
+    "lesson": "pg04-2",
+    "item": "pg04-2:p1",
+    "problem": "뒤 레슨 태그 participle(go jogging) 이 있는데 challenge 아님(check-lessons)",
+    "action": "fixed",
+    "note": "'I clean my room and then I jog with my dog.'(허용 답)가 같은 뜻 → participle 태그를 빼고 challengeNote 를 새로 적음(pg01-3:p6 go skiing 과 같은 처리)."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5:p1 · pg04-5:p4",
+    "problem": "뒤 레슨 태그 it-dummy 가 있는데 challenge 아님(check-lessons)",
+    "action": "fixed",
+    "note": "감탄문은 끝의 주어 + 동사를 뺄 수 있어(설명 카드 5번째 줄) 'How cold!' · 'What a beautiful day!'(둘 다 이미 허용 답)가 비인칭 it 없이 같은 뜻 → 두 문항 모두 it-dummy 태그를 빼고 challengeNote 에 이유(이끄는 세션 메모와 같음)."
+  },
+  {
+    "lesson": "pg01-3 · pg02-1",
+    "item": "pg01-3:p10 · pg02-1:p11 (검사 줄 아님 — 일관성 확인)",
+    "problem": "위 다섯 문항과 같은 기준인지: p10(although)은 but 으로, p11(pleased to find her)은 so · because 로 쓴 허용 답이 있는데 도전(challenge true)",
+    "action": "kept",
+    "note": "그대로 둠. 기준을 하나로 맞춤: '절 구조를 바꾸지 않는 기초 표현(before bed · She skis · I jog · How cold! · What a beautiful day!)으로 같은 뜻을 만들 수 있으면 도전 아님, 문장을 다시 짜야 하면(although → but 로 두 절 순서 · 주어가 바뀜, to부정사 → so/because 절) 도전' — 1권 점검 반박 G1 의 기준이고 판정 14 이유에도 적혀 있음. 데이터-형식 v1.3 을 글자대로('그 문법 없이도 같은 뜻의 문장을 만들 수 있으면') 읽으면 이 둘도 태그를 빼야 하므로 이끄는 세션이 고를 일로 보고함(바꾸면 문항마다 tags · challenge · challengeTags 세 칸)."
+  },
+  {
+    "lesson": "pg01-1",
+    "item": "pg01-1:p11 · 판정 TOPIC-01-02 #22",
+    "problem": "교재 한국어 '20000달러'를 '2만 달러'(뒤에 '20,000달러')로 바꾼 것은 오류 고침이 아님(D6 = 오류만 고침) — 이끄는 세션 점검 메모",
+    "action": "fixed",
+    "note": "ko → 교재 그대로 '우리는 20000달러를 주고 그 차를 살 거야.', 바꾼 것이 한국어뿐이라 fix → null. 판정 #22 decision fix → keep, 이유 = 자릿점 쉼표는 쓸 수 있는 부호일 뿐 빠졌다고 틀린 표기가 아니고 '2만 달러'는 표기 바꾸기. 영어 모범 답과 허용 답 79개는 그대로(20000 · 20,000 · twenty thousand 모두 받음)."
+  },
+  {
+    "lesson": "pg03-1",
+    "item": "pg03-1:a2 · p2 studentRef {s14-1, adapted}",
+    "problem": "이끄는 세션 점검 메모: studentRef 는 지금 STUDENT 파일에 있는 문장에만(옛 middle 과정 일치는 꼬리표 없음)",
+    "action": "kept",
+    "note": "'There are many jobs in the world.'는 s14-1.json sentences #1 'There are many jobs in the world, and it is very hard to choose only one.'(한국어 '세계에는 많은 직업들이 있고 …')의 앞 절과 글자까지 같음 — 지금 STUDENT 파일에 있는 문장을 줄인 것이라 adapted 가 사실. 교재 꼬리표도 '(14과)'. 문장대조 결과가 middle p141 과 같은 줄(exactOther)로 분류한 것은 middle 이 이 문장을 두 줄로 잘라 둔 것일 뿐 'middle 하고만 같은 문장'이 아님."
+  },
+  {
+    "lesson": "pg03-2",
+    "item": "pg03-2:a3 · p2 · p4 · p9 studentRef",
+    "problem": "이끄는 세션 점검 메모: middle 일치 문장의 adapted 확인",
+    "action": "kept",
+    "note": "모두 이름 붙은 STUDENT 문장의 한 절: a3 · p2 'He can play all kinds of sports.' = s4-6 #3 앞 절 · p4 'I ride my bike to school.' = s5-2 #3 'Sometimes in the spring and the fall, I ride my bike to school.'의 주절 · p9 'He likes to hang out and play with friends.' = s3-2 #9 앞 절(He/She → He). 교재 꼬리표도 (4과) · (5과) · (3과). 그래서 adapted 그대로."
+  },
+  {
+    "lesson": "pg03-3",
+    "item": "pg03-3:a1 · p1 studentRef",
+    "problem": "'To choose one is hard.'는 STUDENT 에 없음(s14-1#1 은 it is hard to 가주어 꼴)",
+    "action": "kept",
+    "note": "이미 꼬리표 없음(a1 에 studentRef 필드 없음 · p1 null — G2 수정자가 뺌). 바꿀 것 없음을 확인."
+  },
+  {
+    "lesson": "pg04-3",
+    "item": "pg04-3:a1 · p1 studentRef {s6-3, adapted}",
+    "problem": "이끄는 세션 점검 메모: s6-3 6번째 문장에서 온 것이 맞는지",
+    "action": "kept",
+    "note": "s6-3 #6 'I think he/she likes the color black because he/she always wears a black suit.'의 한국어에 '(다른 예: 빨간색과 빨간 넥타이, 보라색과 보라색 드레스)'로 색을 바꿔 쓰는 틀이 적혀 있고, 교재 문장은 그 틀의 파란색 · 넥타이 판(교재 꼬리표 (6과), 옛 middle p06 과 같은 글) — 같은 문장 틀을 바꾼 것이라 adapted 그대로."
+  },
+  {
+    "lesson": "pg01-1 ~ pg04-5",
+    "item": "모든 studentRef (앵커 · 영작 · ⑤ · 유료 보충 12문항)",
+    "problem": "위 목록 밖 studentRef 도 같은 기준인지",
+    "action": "kept",
+    "note": "스크립트로 전부 대조: exact 는 check-lessons 가 영·한 글자 대조로 통과, adapted 는 모두 이름 붙은 레슨의 STUDENT 문장의 한 절이거나 같은 틀(주어 · 숫자 · 색만 바뀜)임을 문장 번호로 확인. 옛 middle · basics 과 같은 줄로도 분류된 것(pg02-1:a3/p3 s3-4#2 · pg02-2:a2/p2 s2-6#3 · pg02-3:a2/p2 s3-2#2 · pg04-1:a1/p1 s1-2#4 · pg04-4:a7/p14 s15-3#1 · pg04-4:p19 s15-1#2)도 모두 지금 STUDENT 문장 안에 있어 그대로. 꼬리표가 없는데 STUDENT 와 글자까지 같은 문장은 0."
+  },
+  {
+    "lesson": "pg01-1",
+    "item": "무료 판(보충 문항을 뺀 레슨 파일) — rule.discovery.anchorIds · ④ I 문장",
+    "problem": "이끄는 세션 점검 메모: 무료 판의 발견 질문 앵커가 무료 파일에 있는지 · 무료 판에서도 I 문장을 ④ 에서 쓰는지",
+    "action": "kept",
+    "note": "이미 맞음: anchorIds [a3, a4, a5] 모두 무료 파일에 있음(a1 · a2 는 보충 파일). 무료 ④ 에 I 문장 p13 'I live in Seoul.' · p14 'I am a 4th grade student.'(p13 유지). 이번에 무료 ③ 도 4개(s7 · s4 · s5 · s6)로 맞춤."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5:t1 한국어 '시간이 어떻게 날아가는지(세월 빠르기도 하다).'",
+    "problem": "직역투 · 끝나지 않은 문장(a1 의 '얼마나 추운지!'는 같은 까닭으로 고쳤음)",
+    "action": "kept",
+    "note": "GRAMMAR II gh2-024-1#18 번역 그대로이고(⑤ 는 GRAMMAR I·II 의 검수된 번역을 가져다 씀 — 설계 §3), 괄호 안이 자연스러운 뜻을 이미 줌. 직역 부분이 How + time + flies 를 떠올리게 하는 단서라 오류로 보지 않음."
+  },
+  {
+    "lesson": "pg03-2 · pg04-2 · pg02-3",
+    "item": "pg03-2:a7 · p27 '아, 얼마나 나의 인생이 멋진가!' · pg04-2:a3 · p3 '… 드시겠습니까, 또는 …' · pg02-3:t1 '약 백 불'",
+    "problem": "한국어가 조금 어색하거나 옛말투",
+    "action": "kept",
+    "note": "교재(또는 GRAMMAR II) 한국어 그대로이고 틀린 말이 아님(불 = 달러의 사전 낱말) — D6 에 따라 오류만 고침."
+  }
+]

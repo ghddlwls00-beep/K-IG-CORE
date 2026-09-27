@@ -1,0 +1,628 @@
+[
+  {
+    "page": 15,
+    "where": "TOPIC 3 passOff 1) 문장의 5형식 (application 1) 전체, review 1. 전체)",
+    "text": "Flowers bloom. … I want her to be a good pianist. (2과)",
+    "type": "answer_missing",
+    "decision": "fix",
+    "reason": "형식 표시·정답이 없던 것을 채움: ③ 형태 찾기(교재 Review 1 의 6문항 + 새 6문항)에 정답과 S/V/O/C 풀이, 설명 카드 표에 형식별 짜임. There are ~ 는 학교문법 기준 1형식이라고 풀이에 적음",
+    "appliedTo": [
+      "pg03-1:s1",
+      "pg03-1:s2",
+      "pg03-1:s3",
+      "pg03-1:s4",
+      "pg03-1:s5",
+      "pg03-1:s6",
+      "pg03-1:s7",
+      "pg03-1:s8",
+      "pg03-1:s9",
+      "pg03-1:s10",
+      "pg03-1:s11",
+      "pg03-1:s12"
+    ]
+  },
+  {
+    "page": 15,
+    "where": "TOPIC 3 passOff 2) 명사; application 2) item 1 (18쪽); review 2. 1) (22쪽)",
+    "text": "He wants to be a fire fighter, police officer, teacher, doctor, interpreter. (3과)",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "굵은 범위(be a …)에 동사·관사가 섞임 → 강조·밑줄을 명사 5개(firefighter, police officer, teacher, doctor, interpreter)에만",
+    "appliedTo": [
+      "pg03-2:a1",
+      "pg03-2:s7"
+    ]
+  },
+  {
+    "page": 15,
+    "where": "TOPIC 3 passOff 2) 명사 (같은 문장 18쪽·22쪽)",
+    "text": "He wants to be a fire fighter, police officer, teacher, doctor, interpreter.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "직업마다 a/an, 마지막 앞 or, firefighter 한 낱말로 고침(and 로 잇거나 관사를 한 번만 쓴 답, fire fighter 도 정답)",
+    "appliedTo": [
+      "pg03-2:a1",
+      "pg03-2:p1",
+      "pg03-2:s7"
+    ]
+  },
+  {
+    "page": 15,
+    "where": "TOPIC 3 passOff 2) 대명사",
+    "text": "My mother is a housewife. She is best mother in the world. 2과)",
+    "type": "layout_or_extraction",
+    "decision": "na",
+    "reason": "(N과) 표시는 화면 문장에 넣지 않고 studentRef 로만 씀 — 괄호 누락은 영향 없음",
+    "appliedTo": []
+  },
+  {
+    "page": 15,
+    "where": "TOPIC 3 passOff 2) 동사 (application 2) item 4, review 2. 4))",
+    "text": "His dream will come true. (3과)",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "동사 문항에서 come 에만 밑줄, 풀이에 'come true = 실현되다, true 는 형용사'를 적음. 영작 목표형은 come true 덩어리",
+    "appliedTo": [
+      "pg03-2:s10",
+      "pg03-2:p3"
+    ]
+  },
+  {
+    "page": 15,
+    "where": "TOPIC 3 passOff 2) 동사 (application 2) item 6, review 2. 6))",
+    "text": "He could take care of the baby.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "물음을 '밑줄 친 덩어리는 문장에서 어떤 품사 하나처럼 쓰였을까요?'로 바꿔 take care of 덩어리 전체가 하는 일(동사)을 묻게 함(care 명사 · of 전치사를 고를 여지를 없앰). 풀이에 여러 낱말이 뭉친 구동사임을 적음",
+    "appliedTo": [
+      "pg03-2:s12"
+    ]
+  },
+  {
+    "page": 16,
+    "where": "TOPIC 3 passOff 3) 형용사구; application 3) item 2 (20쪽)",
+    "text": "She is a girl with her blond.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "She is a girl with blond hair. 로 고침(blonde 도 정답). 교재 원문은 오답 패턴 힌트로 둠",
+    "appliedTo": [
+      "pg03-3:a2",
+      "pg03-3:p2",
+      "pg03-3:s11"
+    ]
+  },
+  {
+    "page": 16,
+    "where": "TOPIC 3 passOff 3) 동사구; application 3) item 3 (20쪽)",
+    "text": "She gave birth to a son and named him 단군 (17과)",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "로마자 Dangun + 마침표, STUDENT 17과 문장·한국어로 맞춤. koreanWords 에 Dangun",
+    "appliedTo": [
+      "pg03-3:a3",
+      "pg03-3:p3"
+    ]
+  },
+  {
+    "page": 16,
+    "where": "TOPIC 3 passOff 3) 전치사구; application 3) item 5 (20쪽)",
+    "text": "In spite of the lack of confidence in him, he never lost his confidence. (15과)",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "STUDENT 15과 원문(by many Korean people 포함)으로 영어·한국어 모두 맞춤",
+    "appliedTo": [
+      "pg03-3:a5",
+      "pg03-3:p5",
+      "pg03-3:s4"
+    ]
+  },
+  {
+    "page": 16,
+    "where": "TOPIC 3 passOff 3) 접속사구; application 3) item 6 (20쪽)",
+    "text": "Even after I come home, I study for a couple more hours. (8과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "STUDENT 꼬리표를 실제 위치 s10-3 으로 달음(8과 표시는 화면에 쓰지 않음)",
+    "appliedTo": [
+      "pg03-3:p6"
+    ]
+  },
+  {
+    "page": 16,
+    "where": "TOPIC 3 passOff 3) 구 (라벨 전체)",
+    "text": "동사구 : She gave birth to … / 전치사구: In spite of … / 접속사구: Even after … / 감탄사구: Oh, my goodness!",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "설명 카드의 표 하나에 역할로 나누는 명사구·형용사구·부사구와, 여러 낱말이 굳어 한 품사처럼 쓰이는 구동사·구전치사·구접속사를 함께 싣고 points[4] 로 굳은 덩어리를 따로 짚음. 교재 이름 '동사구'·'전치사구'는 용어 병기(terms)로 새 이름과 같은 것처럼 잇지 않고 표의 '하는 일' 칸에 '교재 이름: …'으로만 적음 — 지금 학교문법의 '전치사구'는 with blond hair 처럼 '전치사+명사' 덩어리를 뜻하는 현행 용어이고('동사구'도 영어 문법의 verb phrase 를 가리키는 말), 병기하면 '전치사구 = in spite of 같은 것'으로 잘못 배우게 됨. s4 풀이에 지금 뜻을 적음. 구접속사(교재: 접속사구)는 병기 유지. 접속사구 예문 자리를 as soon as 문장으로 바꾸고, Even after 는 '부사 even + 접속사 after'임을 형태 찾기 문항으로 가르침. s9 는 교재가 '동사구'라고 인쇄한 gave birth to 로 구동사를 물음",
+    "appliedTo": [
+      "pg03-3:a6",
+      "pg03-3:s6",
+      "pg03-3:s4",
+      "pg03-3:s5",
+      "pg03-3:s10",
+      "pg03-3:s9"
+    ]
+  },
+  {
+    "page": 17,
+    "where": "TOPIC 3 application 1) item 13",
+    "text": "I ’ll be late.",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "I'll be late. 로(빈칸 없앰)",
+    "appliedTo": [
+      "pg03-1:p13"
+    ]
+  },
+  {
+    "page": 17,
+    "where": "TOPIC 3 application 1) item 16",
+    "text": "Overweight is becoming more common.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "Obesity is becoming more common. 으로(Being overweight … · increasingly … 도 정답). 교재 원문 Overweight is … 는 받지 않음. Review 3. 16) 한국어 '비만(과체중)이 …'의 괄호가 교재 원답 Overweight 를 가리켜 '비만이 점점 보편화되어 가고 있다.'로 고침",
+    "appliedTo": [
+      "pg03-1:p24"
+    ]
+  },
+  {
+    "page": 17,
+    "where": "TOPIC 3 application 1) item 18",
+    "text": "They admit his proposals.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "They accept his proposals. 로(한국어 '받아들인다'와 맞음). admit 는 오답 패턴 힌트로 둠",
+    "appliedTo": [
+      "pg03-1:p16"
+    ]
+  },
+  {
+    "page": 17,
+    "where": "TOPIC 3 application 1) item 23",
+    "text": "Will you make me a chicken soup?",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Will you make me some chicken soup? 으로(some 없이도 정답). a chicken soup 는 오답 패턴 힌트로 둠",
+    "appliedTo": [
+      "pg03-1:p20"
+    ]
+  },
+  {
+    "page": 18,
+    "where": "TOPIC 3 application 2) item 2",
+    "text": "My mother is a housewife. She is best mother In the world. (2과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "STUDENT 2과 문장(the best mother, in 소문자)으로 영어·한국어 모두 맞춤",
+    "appliedTo": [
+      "pg03-2:a2",
+      "pg03-2:p25",
+      "pg03-2:s8"
+    ]
+  },
+  {
+    "page": 18,
+    "where": "TOPIC 3 application 2) item 15; review 2. 15) (23쪽)",
+    "text": "I love France; food, city, freedom, cheese and people.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "I love France: its food, cities, freedom, cheese and people. 로(its·the 없이, 쉼표 더한 답도 정답)",
+    "appliedTo": [
+      "pg03-2:p12",
+      "pg03-2:s20"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 3 application 2) item 16; review 2. 16) (23쪽)",
+    "text": "Bees like honey. They eat it everyday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "every day 로 고침. everyday 는 오답 패턴 힌트로 둠",
+    "appliedTo": [
+      "pg03-2:p13",
+      "pg03-2:s1"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 3 application 2) item 20",
+    "text": "She will have a clean, new, bright, convenient house.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "명사 앞 대등한 형용사를 쉼표로만 잇는 것도 올바른 영어라 교재 문장을 그대로 둠. and 를 넣은 답도 정답으로 받음",
+    "appliedTo": [
+      "pg03-2:p17",
+      "pg03-2:s3"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 3 application 2) item 21; review 2. 21) (23쪽)",
+    "text": "Hold the rope tight, or you‘re going to fall.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "품사 문항은 답이 하나인 or(접속사)를 묻도록 바꿈(tight 는 부사·형용사로 갈림). 영작에서는 tight·tightly 모두 정답, you‘re → you're",
+    "appliedTo": [
+      "pg03-2:s23",
+      "pg03-2:p18"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 3 application 2) item 28; review 2. 28) (23쪽)",
+    "text": "What a nice dress!",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "감탄사 Wow! 를 앞에 더해 Wow! What a nice dress! 로, 품사 문항은 Wow 에만 밑줄. 풀이에 'What a nice dress! 는 감탄문이고 what 은 감탄사가 아님'을 적음",
+    "appliedTo": [
+      "pg03-2:p29",
+      "pg03-2:s28"
+    ]
+  },
+  {
+    "page": 20,
+    "where": "TOPIC 3 application 3) item 9",
+    "text": "I’ll do the shopping when I finished washing dishes.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "I'll do the shopping when I finish washing dishes. 로(have finished·after·the dishes·go shopping 도 정답). 교재 원문 finished 는 오답 패턴 힌트로 둠",
+    "appliedTo": [
+      "pg03-3:p9",
+      "pg03-3:s12"
+    ]
+  },
+  {
+    "page": 20,
+    "where": "TOPIC 3 application 3) item 13",
+    "text": "Did she have the apple in the basket?",
+    "type": "answer_ambiguous",
+    "decision": "keep",
+    "reason": "영작에는 문제가 없고 한국어 '바구니 안의 사과'가 형용사구로 읽히게 해 줌. 구 종류를 묻는 형태 찾기 문항에는 이 문장을 쓰지 않음",
+    "appliedTo": [
+      "pg03-3:p13"
+    ]
+  },
+  {
+    "page": 20,
+    "where": "TOPIC 3 application 3) item 16",
+    "text": "Joshua has finished it by the time you come back.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Joshua will have finished it by the time you come back. 으로(will finish 도 정답)",
+    "appliedTo": [
+      "pg03-3:p16"
+    ]
+  },
+  {
+    "page": 20,
+    "where": "TOPIC 3 application 2) items 15~29, application 3) items 8~18, review 2. 전체 (22~23쪽)",
+    "text": "(Application 추가 문장에 품사·구 종류 표시 없음) / 2. 다음 문장을 보고 굵게 쓰여진 단어의 품사를 적어 보시오.",
+    "type": "answer_missing",
+    "decision": "fix",
+    "reason": "품사 29문항 모두 정답·풀이를 달고(6문항 기본 + 23문항 복습 풀), 구 단원은 교재에 요소 과제가 없어 새 형태 찾기 12문항(6 기본 + 6 복습 풀)에 종류와 풀이를 달음",
+    "appliedTo": [
+      "pg03-2:s1",
+      "pg03-2:s2",
+      "pg03-2:s3",
+      "pg03-2:s4",
+      "pg03-2:s5",
+      "pg03-2:s6",
+      "pg03-2:s7",
+      "pg03-2:s8",
+      "pg03-2:s9",
+      "pg03-2:s10",
+      "pg03-2:s11",
+      "pg03-2:s12",
+      "pg03-2:s13",
+      "pg03-2:s14",
+      "pg03-2:s15",
+      "pg03-2:s16",
+      "pg03-2:s17",
+      "pg03-2:s18",
+      "pg03-2:s19",
+      "pg03-2:s20",
+      "pg03-2:s21",
+      "pg03-2:s22",
+      "pg03-2:s23",
+      "pg03-2:s24",
+      "pg03-2:s25",
+      "pg03-2:s26",
+      "pg03-2:s27",
+      "pg03-2:s28",
+      "pg03-2:s29",
+      "pg03-3:s1",
+      "pg03-3:s2",
+      "pg03-3:s3",
+      "pg03-3:s4",
+      "pg03-3:s5",
+      "pg03-3:s6",
+      "pg03-3:s7",
+      "pg03-3:s8",
+      "pg03-3:s9",
+      "pg03-3:s10",
+      "pg03-3:s11",
+      "pg03-3:s12"
+    ]
+  },
+  {
+    "page": 24,
+    "where": "TOPIC 3 review 3. 3)",
+    "text": "3) 나의 아버지는 둘째 아드님이시다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "STUDENT 4과 한국어 '나의 아버지는 둘째 아들이십니다.'로(영어가 STUDENT 와 글자까지 같은 문장)",
+    "appliedTo": [
+      "pg03-1:a3",
+      "pg03-1:p3"
+    ]
+  },
+  {
+    "page": 24,
+    "where": "TOPIC 3 review 3. 8), 10), 11), 50)(27쪽)",
+    "text": "8) 여기에 그가 온다. / 10) 오늘 내 머리가 돌아가지 않는다. / 11) 이 약은 효과가 있을 거야. / 50) 당신 말이 전적으로 옳아요.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "관용 표현 답을 넉넉히 받음: Here he comes 는 조건 칩 'Here로 시작해서', My brain isn't working today, This medicine will work, You're completely/absolutely right · What you said is entirely right 등 정답 목록에. 11) 은 한국어도 고침 — 자동사 do 는 '충분하다·쓸모가 있다'(This will do. = 이거면 된다)라서 '이 약은 효과가 있을 거야'(= will work 의 뜻)를 '이 약이면 될 거야.'로 바꾸고, will be enough · will be effective 같은 2형식 답과 가르려고 조건 칩 '1형식으로'를 달음",
+    "appliedTo": [
+      "pg03-1:p8",
+      "pg03-1:p10",
+      "pg03-1:p11",
+      "pg03-2:p20"
+    ]
+  },
+  {
+    "page": 25,
+    "where": "TOPIC 3 review 3. 15)",
+    "text": "15) 티나는 오후 내내 차분하다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'티나는 오후 내내 침착함을 유지했다.'로(과거). stayed/remained calm 도 정답",
+    "appliedTo": [
+      "pg03-1:p15"
+    ]
+  },
+  {
+    "page": 25,
+    "where": "TOPIC 3 review 3. 19)",
+    "text": "19) 그는 우리를 만나기를 피하려고 노력한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그는 우리를 만나는 것을 피하려고 애썼다.'로(과거)",
+    "appliedTo": [
+      "pg03-1:p26"
+    ]
+  },
+  {
+    "page": 25,
+    "where": "TOPIC 3 review 3. 24)",
+    "text": "24) 우리는 짐이 늦는다고 생각했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'우리는 짐이 늦을 거라고 예상했다.'로 고치고 조건 칩 '5형식으로'(that 절 답은 힌트로 안내)",
+    "appliedTo": [
+      "pg03-1:p21"
+    ]
+  },
+  {
+    "page": 25,
+    "where": "TOPIC 3 review 3. 25)",
+    "text": "25) 그가 원하는 것 하도록 두어라.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'그가 원하는 것을 하도록 두어라.'로",
+    "appliedTo": [
+      "pg03-1:p27"
+    ]
+  },
+  {
+    "page": 26,
+    "where": "TOPIC 3 review 3. 26)",
+    "text": "26) 그는 내가 미소 짓고 밖에서 놀게 만들었다",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "마침표를 더함",
+    "appliedTo": [
+      "pg03-1:p22"
+    ]
+  },
+  {
+    "page": 26,
+    "where": "TOPIC 3 review 3. 29), 33)",
+    "text": "29) 내 어머니는 주부 이시다. … / 33) 그는 그 아이를 돌 볼 수 있었다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "29)는 영어가 STUDENT 2과로 바뀌며 STUDENT 한국어를 씀. 33)은 '그는 그 아기를 돌볼 수 있었다.'로",
+    "appliedTo": [
+      "pg03-2:a2",
+      "pg03-2:p25",
+      "pg03-2:p5"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "TOPIC 3 review 3. 39)",
+    "text": "39) 그는 돌아다니고 친구들과 함께 놀기를 좋아한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그는 친구들과 어울리고 노는 것을 좋아한다.'로 — hang out and play 는 두 동작(어울리다 · 놀다)이고 목표 낱말이 두 동사를 잇는 and 라서, 한 동작처럼 읽히는 '어울려 놀기' 대신 두 동작이 드러나게 함(STUDENT 3과 s3-2 문장의 일부를 바꾼 문장이라 한국어를 바꿀 수 있음). 한 동작만 쓴 답(likes to hang out with …)에는 힌트",
+    "appliedTo": [
+      "pg03-2:p9"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "TOPIC 3 review 3. 41)",
+    "text": "41) 그가 말할 때, 그는 외국인처럼 들린다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 7과 한국어 '그분이 말씀하실 때, 그분은 영어 원어민 같습니다.'로(영어가 STUDENT 와 글자까지 같음)",
+    "appliedTo": [
+      "pg03-2:a8",
+      "pg03-2:p11"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "TOPIC 3 review 3. 42), 47)",
+    "text": "42) 나는 프랑스가 좋아: 음식, 도시, 자유,치즈 그리고 사람들이. / 47) … 편리한 집을 가질거야.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "42) '자유, 치즈', 47) '가질 거야'와 쉼표를 고르게",
+    "appliedTo": [
+      "pg03-2:p12",
+      "pg03-2:p17"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 3 review 3. 52)",
+    "text": "52) 나의 아버지는 항상 시간을 잘 지키신다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'나의 아버지는 대개 시간을 잘 지키신다.'로. always 는 오답 패턴 힌트로 둠",
+    "appliedTo": [
+      "pg03-2:p22"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 3 review 3. 54)",
+    "text": "54) 너는 다음 거리에서 그 소음을 들을 수 있었어.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'다음 거리' → '옆 거리', 그리고 소리가 나는 곳(from)이 드러나게 '옆 거리에서 들려오는 그 소음을'로 → '너는 옆 거리에서 들려오는 그 소음을 들을 수 있었어.'(주어 '너는'은 영어 You 와 맞춰 둠). 추출 제안 '옆 거리에서도 … 들을 수 있었어'는 듣는 사람이 옆 거리에 있는 뜻으로 읽혀, 이 레슨이 풀이하는 from(출발점, pg03-2:s27)과 맞지 않아 쓰지 않음. coming from 답도 정답",
+    "appliedTo": [
+      "pg03-2:p23"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 3 review 3. 56)",
+    "text": "56) 야호, 내가 드디어 해 냈어.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'야호! 내가 해냈어!'로. finally 를 넣은 답도 정답",
+    "appliedTo": [
+      "pg03-2:p24"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 3 review 3. 61)",
+    "text": "61) 그에 대한 자신감이 없음에도 불구하고, 그는 결코 자신감을 잃지 않았다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 15과 원문과 한국어로 영어·한국어 모두 맞춤(신뢰 ↔ 자신감 모순 해소)",
+    "appliedTo": [
+      "pg03-3:a5",
+      "pg03-3:p5"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 3 review 3. 65)",
+    "text": "65) 내가 설거지를 끝낸 후에 쇼핑을 할거야.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'할 거야'로",
+    "appliedTo": [
+      "pg03-3:p9"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 3 review 3. 66)",
+    "text": "66) 누군가를 위한 스승이 된다는 것을 의미가 있다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'누군가를 위한 스승이 된다는 것은 정말 의미가 있다.'로(조사 · really 반영)",
+    "appliedTo": [
+      "pg03-3:p10"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 3 review 3. 68)",
+    "text": "68) 나는 파란 리본을 가진 그 모자가 좋다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'나는 파란 리본이 달린 그 모자가 좋다.'로",
+    "appliedTo": [
+      "pg03-3:p12"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 3 review 3. 70)",
+    "text": "70) 그는 투덜거리는 것 이외에는 아무것도 않는다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'그는 투덜거리는 것 이외에는 아무것도 하지 않는다.'로",
+    "appliedTo": [
+      "pg03-3:p14"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 3 review 3. 72)",
+    "text": "72) 조슈아는 네가 돌아왔을 때까지 그것을 마쳤다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'네가 돌아올 때쯤이면 조슈아는 그것을 끝냈을 거야.'로 — 영어를 미래완료로 고친 것과 맞춤",
+    "appliedTo": [
+      "pg03-3:p16"
+    ]
+  },
+  {
+    "source": "new-finding",
+    "page": 26,
+    "where": "TOPIC 3 review 3. 35) · application 2) item 8",
+    "text": "35) 그는 피아노와 기타를 잘 연주할 수 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "굵은 글씨 부사가 pretty well(꽤 잘) 전체인데 '꽤'가 빠짐 → '꽤 잘'",
+    "appliedTo": [
+      "pg03-2:p7"
+    ]
+  },
+  {
+    "source": "new-finding",
+    "page": 28,
+    "where": "TOPIC 3 review 3. 60) · passOff 3) 부사구",
+    "text": "60) 그 학생들은 서로서로 매우 친하다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "friendly to each other 는 '서로에게 친절하다' — '친하다'는 close 로 쓰게 만듦(STUDENT 5과도 '친절합니다')",
+    "appliedTo": [
+      "pg03-3:a4",
+      "pg03-3:p4"
+    ]
+  },
+  {
+    "source": "new-finding",
+    "page": 29,
+    "where": "TOPIC 3 review 3. 73) · application 3) item 17",
+    "text": "73) 그가 그 소식을 듣자마자, 그는 집으로 서둘러 갔다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "the house 는 '그 집' — '집으로'만 쓰면 home 으로 쓰기 쉬움 → '그 집으로'",
+    "appliedTo": [
+      "pg03-3:a6",
+      "pg03-3:p17"
+    ]
+  },
+  {
+    "source": "new-finding",
+    "page": 26,
+    "where": "TOPIC 3 review 3. 28) · passOff 2) item 1 · application 2) item 1",
+    "text": "28) 그는 소방관, 경찰관, 선생님, 의사, 통역관이 되고 싶다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "3인칭 주어에는 '-고 싶다'가 아니라 '-고 싶어 하다'가 맞고, 모범 답이 or(여럿 중 하나)라 '또는'을 넣음 → '그는 소방관, 경찰관, 선생님, 의사 또는 통역관이 되고 싶어 한다.'(and 로 이은 답도 그대로 정답)",
+    "appliedTo": [
+      "pg03-2:a1",
+      "pg03-2:p1"
+    ]
+  }
+]

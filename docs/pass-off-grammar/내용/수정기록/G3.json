@@ -1,0 +1,121 @@
+[
+  {
+    "lesson": "pg04-3",
+    "item": "pg04-3:t2 → pg04-3:t3 (+ 채점하지 않는 예문 6곳)",
+    "finding": "전이 문장 'While I was out, it rained for a while.'의 it rained 는 날씨 it(it-dummy, pg07-2 목표, base 아님)이라 '이 레슨과 앞 레슨 태그 + base 만' 규칙 위반. 선택(기준 통일): 채점하지 않는 예문의 날씨·시간 it 도 it 없는 문장으로.",
+    "action": "fixed",
+    "note": "pg07-2 가 'It rains.' · 'It is fine today.' · t1 'It was cold yesterday.'를 it-dummy 목표로 가르침을 확인. t2 를 빼고 번호는 비워 둠(데이터-형식.md: 뺀 번호는 다시 쓰지 않음). GRAMMAR II gh2-033#3 을 pg04-3:t3 으로 넣음 — 영어 · 한국어 · 원래 허용 답 3개가 gh2-033 · gh2-033-1 원문과 같음을 확인(GRAMMAR II 문장이라 그쪽 음성 재사용 가능). 점검자 문항에서 더한 것: ① 한국어 어순(빈털터리였기 때문에 → 원하지 않았다)대로 because 절을 앞에 쓴 답(쉼표 있음·없음), since, did not, get married to, 'I had no money'를 규칙적으로 조합해 허용 답 71개(모두 목표형 because/since 포함), ② 오답 패턴 셋째로 한국 학습자가 흔히 쓰는 'marry with'(hint: with 없이 바로 사람), ③ tags 에 base 인 be-past. 선택 부분도 적용(소리로 나가지 않는 글이라 음성 영향 없음): pg04-1 rule.check 보기 'It was late, so we went home.' → 'I was tired, so I went to bed.'(why 도 'I was · I went'), pg04-2 표 so 줄 같은 문장으로, pg04-3 표 though 줄 'Though it rained, we played outside.' → 'Though she was sick, she went to school.', pg04-3:s3 'We went out though it was cold.' → 'We went out though we were tired.'(정답 토큰 번호 3 그대로, why 도 고침). 점검자가 적지 않은 같은 종류 2곳도 함께 고침: pg04-2 흔한 실수 'It was cold, so (I) wore a coat.' → 'I was cold, so (I) wore a coat.', pg04-3 흔한 실수 'Because it was cold. We stayed inside.' → 'Because I was tired. I went to bed early.'. pg04-5 의 교재 원문 'How cold it is!'(예문 · 표 · 규칙 줄 · 흔한 실수 · s1)는 이 레슨의 대표 예문이라 그대로 둠."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5:p1, pg04-5:p4 (태그)",
+    "finding": "p1 'How cold it is!'와 p4 'What a beautiful day it is!'의 it 은 날씨·때의 it(it-dummy)인데 tags 에 없음.",
+    "action": "fixed",
+    "note": "p1 tags → [exclamative, it-dummy], p4 tags → [exclamative, it-dummy]. p4 는 점검자 판단대로 도전 아님 유지('What a beautiful day!'로 피할 수 있음). p1 의 도전 여부는 다음 항목."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5:p1 (도전 표시 · 세트 끝으로 옮기기)",
+    "finding": "'정말 춥구나!'는 날씨 it 없이 자연스럽게 말할 수 없으니 challenge=true, challengeTags [it-dummy] 로 하고 produce 맨 끝으로 옮길 것.",
+    "action": "rejected",
+    "note": "근거가 맞지 않는다고 판단. 감탄문은 끝의 '주어 + 동사'를 빼고 How + 형용사만으로 쓸 수 있음(How nice! · How kind! 처럼 — 영어 문법서·사전의 감탄문 설명, 우리 학교문법의 '감탄문의 주어·동사 생략'). 이 레슨 설명 카드 5번째 줄도 '끝의 주어 + 동사는 … 빼도 돼요'라고 가르치고, 같은 레슨 p2 · p4 · p6 · p7 은 생략 꼴(What a good boy! 등)을 정답으로 받음. 그런데 p1 허용 답은 비어 있어서, 배운 대로 'How cold!'라고 쓴 학생이 틀림 처리되는 거짓 오답이었음 → 'How cold!'를 허용 답에 넣음. 그러면 날씨 it 없이도 정답을 쓸 수 있으므로 태그.json 셋째 조건('그 문법 없이는 문장을 만들 수 없을 때만 challenge')에 따라 도전이 아님 — 점검자가 p4 에 쓴 판단('What a beautiful day!'로 피할 수 있어 도전 아님), pg03-1:p12('Today is Monday.'로 피함, 도전 아님)와 같은 기준. 그래서 순서도 교재 순서 그대로(p1 이 맨 앞). 공유 검사기 check-lessons.cjs 는 셋째 조건을 보지 않아 이 문항에 '뒤 레슨 태그 [it-dummy] 가 있는데 challenge 아님'을 냄 — pg01-3:p6 · pg03-1:p12 등 다른 레슨 14건과 같은 종류의 예상된 줄. 대신 자체 검사(scratchpad g3fix/verify-g3.cjs)가 '도전이 아닌 문장에 그 문법 없이 쓴 허용 답이 실제로 있는가'를 확인해 통과(허용 답을 일부러 비우면 잡힘). 참고: pg05-1:p22 는 it 없는 허용 답('Is there a lot of snow in France?')이 있는데도 도전으로 되어 있어 같은 기준에서 어긋남(다른 그룹 레슨이라 손대지 않음)."
+  },
+  {
+    "lesson": "pg04-2",
+    "item": "pg04-2:p1, pg04-2:p6, pg04-2:p3 (조건 칩)",
+    "finding": "한국어 주어가 하나뿐이라 뒤 주어를 뺀 단문 꼴이 자연스러운데, 조건 칩이 '(and)'·'(or)'뿐이라 맞는 영어를 쓰고도 첫 시도가 오답이 되는 거짓 오답 위험.",
+    "action": "fixed",
+    "note": "condition: p1 '(and)' → '(and) 뒤 문장에도 주어를 써서', p3 · p6 '(or)' → '(or) 뒤 문장에도 주어를 써서'. 주어를 뺀 단문 꼴은 이 레슨 목표(중문)를 피하므로 계속 허용 답에 넣지 않음. 오답 패턴은 그대로."
+  },
+  {
+    "lesson": "pg04-3",
+    "item": "pg04-3:p6",
+    "finding": "'~해도 된다'의 may 꼴이 허용 답에 없음.",
+    "action": "fixed",
+    "note": "점검자가 적은 6개(may × you are/you're × 앞 if 절 쉼표 있음·없음 · 뒤 if 절)를 넣음(허용 답 5 → 11). 모두 목표형 If 포함. 모범 답(can)과 tags 는 그대로 — may 는 허용 답일 뿐이라 도전 판정과 무관."
+  },
+  {
+    "lesson": "pg04-3",
+    "item": "pg04-3:a1, pg04-3:p1 (studentRef)",
+    "finding": "교재 (6과) 문장 'I think he likes the color blue because he always wears a blue tie.'는 STUDENT s6-3 6번째 문장을 바꾼 판인데 studentRef 가 null.",
+    "action": "fixed",
+    "note": "a1 · p1 studentRef = {lesson s6-3, kind adapted}. s6-3 6번째 문장 'I think he/she likes the color black because he/she always wears a black suit.'(한국어에 '다른 예: 빨간색과 빨간 넥타이')을 확인. 문장대조(검사/결과-문장대조.json)는 이 문장을 middle p06 과 같은 줄(exactOther)로 분류했지만, 같은 G3 의 'I am 11 years old.'(middle p01 → s1-2 adapted)와 같은 기준으로 연결. 설계 §10 'middle 47 = 꼬리표 없음' 셈에서 하나가 '바꾼 문장'으로 옮겨 가는 점은 G6 수정기록(pg08-3:a1)과 같은 문제라 셈 조정은 이끄는 세션 몫."
+  },
+  {
+    "lesson": "pg04-3 (+pg04-2, pg04-1)",
+    "item": "pg04-3:p1, p3, p7, t1 / pg04-2:t1 / pg04-1:p7",
+    "finding": "채점 정규화가 문장 안 쉼표를 남기는데, 쉼표 있는 꼴·없는 꼴을 넣은 방식이 문항마다 다름.",
+    "action": "fixed",
+    "note": "기존 허용 답의 짜임을 규칙적으로 조합해 빠진 꼴을 채움(앞 딸린 절이면 쉼표 없는 꼴, 끝 though/although/even though 절이면 쉼표 있는 꼴; 기존 답은 순서 그대로 두고 뒤에 붙임, 조합이 기존 답을 하나도 빠뜨리지 않음을 스크립트로 확인): pg04-3:p1 19 → 35(앞 because/since 절 쉼표 없는 꼴 + colour 앞 꼴), p3 15 → 35(아래 '작은 빈틈'의 was at home 포함), p7 38 → 299(아래 '끔찍하게' 항목과 함께), t1 7 → 47, pg04-2:t1 5 → 11(child/kid × brother/older/elder × 쉼표), pg04-1:p7 14 → 35(In front of … 앞 꼴의 쉼표 유무 × There is/There's × big/large × my house/our house/my home). 문장 끝 because 절 앞 쉼표는 점검자 제안대로 넣지 않음. 채점기가 문장 안 쉼표를 무시하게 할지는 채점기(코드 세션) 몫으로 남김 — 무시하게 되면 이 쉼표 짝들은 겹칠 뿐 해가 없음."
+  },
+  {
+    "lesson": "pg04-3",
+    "item": "pg04-3:a3, pg04-3:p7",
+    "finding": "'그는 비록 끔찍하게 피곤했지만 계속 말을 했다.'의 '끔찍하게'는 terribly 를 글자대로 옮긴 어색한 한국어.",
+    "action": "fixed",
+    "note": "a3 · p7 ko → '그는 비록 몹시 피곤했지만 계속 말을 했다.', 둘 다 fix {from 원문, kind translation_mismatch, why}. TOPIC-04.json 에 newFinding 판정(page 34, where 'Review 1 item 9', decision fix, appliedTo [pg04-3:a3, pg04-3:p7])을 Review 1 item 10 앞에 넣음. 점검자는 'very/extremely/really tired 는 이미 accept 에 있음'이라 했지만 실제로는 went on talking + 끝 though 절 꼴 9개뿐이었음. '몹시'를 보면 very 를 쓰고 한국어 어순대로 though 절을 앞에 두는 답(Though he was very tired, he kept talking.)이 가장 흔할 텐데 틀림 처리됐을 것이라, 동사 5가지(went on talking · kept talking · kept on talking · continued talking · continued to talk) × though/although/even though × terribly/very/extremely/really/so × 네 꼴(끝 절 쉼표 있음·없음, 앞 절 쉼표 있음·없음)을 모두 넣음(38 → 299). 같은 까닭으로 시제 오답 패턴 'he is terribly tired'(terribly 로 쓸 때만 걸림)를 'he is'로 넓힘(힌트 그대로, 정답 300개 어디에도 he is 가 없음을 스크립트로 확인). 한국어는 소리로 나가지 않아 음성 영향 없음."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5 rule.table (t1 'How time flies!')",
+    "finding": "전이 문장 'How time flies!'는 How + 주어 + 동사! 꼴인데 설명 카드는 How + 형용사/부사 + 주어 + 동사!만 가르침.",
+    "action": "fixed",
+    "note": "rule.table.rows 의 How 줄 바로 아래에 ['How 감탄문(형용사 없이)', 'How + 주어 + 동사!', 'How time flies!']를 넣음(규칙 줄은 늘리지 않음). t1 은 GRAMMAR II 원문(gh2-024#18)이라 그대로."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5:s4",
+    "finding": "오답 보기 'How beautiful are the flowers!'는 시·옛 문어체의 도치 감탄문이라 틀렸다고 단정하기 어려워 정답이 둘로 읽힘.",
+    "action": "fixed",
+    "note": "options[0] → 'How the flowers are beautiful!'(형용사가 How 에서 떨어진 분명한 오답). answer 1 · why 그대로."
+  },
+  {
+    "lesson": "pg04-4",
+    "item": "pg04-4:p13 / TOPIC-04.json (p32 There is not a cake)",
+    "finding": "english_unnatural('is not a'는 강조 어감)을 keep 으로 판정해 모범 답이 'There is not a cake on the plate.'로 남음.",
+    "action": "fixed",
+    "note": "p13.en → 'There isn't a cake on the plate.', accept[0] 의 'There isn't …'를 교재 원문 'There is not a cake on the plate.'로 바꿈(허용 답 수 5 그대로), fix {from 원문, kind english_unnatural, why}. TOPIC-04.json 판정 keep → fix, reason 고침(처음 판정이 keep 이었다는 것도 적음). 교재가 굵게 보인 'is not'(there is 구문의 부정)은 isn't 로 그대로 가르치고, 같은 레슨 설명 카드 표('There isn't a pen on the desk.')와도 맞음. 추출자도 issues 에 같은 고친 판을 제안했었음. 이 문장은 STUDENT 문장이 아니라 재사용하던 클립이 없고, PASS-OFF 음성은 글 확정 뒤 음성 단계(설계 §9)에서 만듦."
+  },
+  {
+    "lesson": "pg04-2",
+    "item": "pg04-2:p4",
+    "finding": "오답 패턴 'washed dishes'가 맞는 영어(my dad washed dishes)를 틀렸다고 안내함.",
+    "action": "fixed",
+    "note": "오답 패턴 {match 'washed dishes'} 를 뺌(3 → 2개). 점검자가 적은 4개를 포함해 기존 짜임(My mom/my dad · My mother/my father · Mom/Dad · My mum/my dad · Mum/Dad × cooked/made × washed the dishes/did the dishes/washed dishes × 쉼표 유무)으로 채움(허용 답 23 → 59, mum 은 '작은 빈틈' 항목 몫 포함)."
+  },
+  {
+    "lesson": "pg04-2",
+    "item": "pg04-2:p1 (tags)",
+    "finding": "go jogging(go + -ing, 교재 TOPIC 13 (2) 분사) 태그가 빠짐.",
+    "action": "fixed",
+    "note": "p1 tags → [compound-sentence, present-simple, participle], 도전 아님 유지. 점검자의 근거('I jog with my dog 처럼 피할 수 있어')가 실제로 성립하도록, 그런 답이 허용 답에 없던 것을 채움: I clean (up) my room(,) and (then) I jog / go for a jog with my dog 16개(7 → 23) — pg01-3:p6 이 'She skis …'를 받는 것과 같은 처리. 공유 검사기는 이 문항에도 '뒤 레슨 태그 [participle] 가 있는데 challenge 아님'을 냄(pg01-3:p6 과 같은 예상된 줄, 자체 검사의 '피하는 허용 답 있음' 확인은 통과)."
+  },
+  {
+    "lesson": "pg04-2",
+    "item": "pg04-2:p6",
+    "finding": "'놀 수도 있고 … 볼 수도 있다'의 could 꼴이 허용 답에 없음.",
+    "action": "fixed",
+    "note": "점검자가 적은 could 4개 + 같은 짜임의 'We could play outside(,) or we could see a movie.' 2개(허용 답 5 → 11). 모두 목표형 or 포함."
+  },
+  {
+    "lesson": "pg04-3, pg04-4, pg04-2",
+    "item": "pg04-3:p3, pg04-3:p4, pg04-4:p15, pg04-4:p19, pg04-2:p4, pg04-4:p17",
+    "finding": "흔히 쓰는 맞는 답 몇 가지가 빠짐(was at home · when I was a kid · Nothing mattered · The Korean national soccer team · 영국 철자 mum).",
+    "action": "fixed",
+    "note": "점검자가 적은 답을 모두 넣고 같은 짜임으로 넓힘: pg04-3:p3 stayed home/stayed at home/was at home × had/caught a cold × because/since × 세 꼴(쉼표 항목과 함께 15 → 35), pg04-3:p4 a kid 6개(17 → 23), pg04-4:p15 'Nothing mattered but/except/except for you.' · 'Nothing but you mattered.' 4개(3 → 7), pg04-4:p19 'The Korean national soccer team is not/isn't one of the best teams( in the world).' 4개(15 → 19), pg04-2:p4 mum(위 washed dishes 항목과 함께), pg04-4:p17 My mum × doesn't/does not × allow us to watch/let us watch × a lot of/much/lots of 12개(23 → 35). 같은 짜임의 빈칸 하나 더: pg04-3:p2 는 끝에 오는 when 절 꼴이 4개뿐이라 나머지 4개('She had no friends when she got to London.' 등)를 채움(19 → 23). 모두 목표형 포함(스크립트 확인)."
+  },
+  {
+    "lesson": "pg04-5",
+    "item": "pg04-5:f1",
+    "finding": "틀 'What a ___ day it is!'에 amazing 같은 모음 소리 형용사를 넣으면 'What a amazing day'가 됨.",
+    "action": "fixed",
+    "note": "template → 'What a(n) ___ day it is!' (ko 그대로)."
+  },
+  {
+    "lesson": "pg04-3, pg04-4",
+    "item": "pg04-3 rule.points[1]·[3], pg04-4 rule.points[1]·[3]",
+    "finding": "규칙 줄이 '줄당 40자 안팎'의 두 배 가까이 길어 폰에서 4줄씩 감김.",
+    "action": "fixed",
+    "note": "점검자 문구 그대로 바꿈(공백 포함 글자 수): pg04-3 points[1] 96 → 65자, points[3] 78 → 44자, pg04-4 points[1] 90 → 56자, points[3] 74 → 59자. check.pointIndex(pg04-3: 0, pg04-4: 3)는 그대로 맞음. 고친 뒤 G3 가장 긴 줄은 68자(pg04-1 points[2], 점검자가 지적하지 않은 기존 줄)로 29레슨 전체 상위 10%(64자) 근처이고, 70자를 넘는 줄은 없음."
+  }
+]

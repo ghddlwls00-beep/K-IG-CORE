@@ -1,0 +1,128 @@
+[
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:a7, pg07-4:p9, pg07-4:rule(points[2]·table.rows[1]·discovery.why·check), pg07-4:s5",
+    "finding": "'Either of them is wrong.'은 긍정 평서문의 either('둘 중 어느 쪽이든')라 '어느 쪽을 골라도 틀렸다(둘 다 틀림)'처럼 읽히거나 어색하고, 한국어 '그들 중 한쪽은 틀린 거야'(한 명만 틀림)와 뜻이 어긋남. 설명 카드 · 규칙 확인 · s5 보기도 이 문장에 기댐.",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음: 학습 사전의 대명사 either 는 '둘 중 어느 하나(어느 쪽이든 상관없이)'이고, '둘 중 (누군지 모를) 한 명이 틀렸다'는 보통 One of them is wrong 이라고 말함. a7 · p9 → 'Either of them is fine. / 그들 둘 중 누구든 괜찮아.', koSource 'new (교재 문장 교체)', fix {from 'Either of them is wrong.', fromKo '그들 중 한쪽은 틀린 거야.', kind english_unnatural, why(제안 그대로)}. p9 허용 답 = 점검자 목록 5개 + 같은 틀 2개(Either one of them is OK. · Either one of them is all right.) = 7개. p9 오답 패턴 2개는 match 그대로 두고, 첫째 힌트의 '둘 중 한쪽'만 '둘 중 어느 쪽이든 하나'로 바꿈(규칙 확인 풀이와 같은 말 — 틀린 뜻풀이가 힌트에 남지 않게). rule.points[2] · table.rows[1][1] · discovery.why · check.question · check.why 는 제안 그대로. s5 보기[0] → 'One of them is wrong.'; 풀이는 제안의 \"one of them 은 '둘 중 한 명'\" 대신 \"'그들 중 한 명'\"으로 씀(one of them 은 둘일 때만 쓰는 말이 아니어서). 교재 문장은 fix.from 으로 남아 공용 점검기의 교재 문장 대조에서 빠짐 0. TOPIC-07.json 에 newFinding 판정 1건 추가(page 49 · passOff (4) item 12 + application (4) item 12(p53) + Review 4 item 12(p57) · english_unnatural · fix · appliedTo a7 · p9 · rule · s5). 원어민 확인은 아직 아무도 하지 않음(점검자 · 수정자 모두 같은 AI 계열)."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:p12 (+ 새 문항)",
+    "finding": "both A and B 문장(옛 p12)을 s4 · 설명 카드는 '짝 접속사'라고 가르치는데 tags=pronoun-indefinite · targets=[both] · challenge=false 로 이 레슨 문법처럼 표시됨. 그래서 부정대명사 · 부정형용사 both 를 영작으로 연습하는 문항이 하나도 없음.",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음(교재 추출 7개 파일 전체에서 both 를 찾아 TOPIC 20 에도 both A and B 가 없음을 확인). (1) 옛 p12 → id pg07-4:p16, tags [coordinating-conjunction, conjunction-and-but-or-so], challenge true, challengeTags [coordinating-conjunction], 도전 묶음 끝(교재 item 15 자리)으로 옮김. 영어 · 한국어 · 허용 답 15 · 목표형 · 오답 패턴 · studentRef s8-2 · bookRef · fix 는 그대로. (2) 비는 p12 자리(도전 묶음 앞)에 새 문항 '그들 둘 다 맞아. / Both of them are right.'(koSource new · source new · tags [pronoun-indefinite, be-present-agreement] · 목표형 [Both|both] · 도전 아님). 허용 답 = 점검자 4개 + They both are right. · They both are correct. · Both are correct.(be 앞에 오는 both 도 흔히 쓰는 맞는 영어) = 7개. 오답 패턴 = 점검자의 'both of them is' + 'all of them are'(둘에는 all 이 아니라 both) + 'both of they'(of 뒤 목적격, p9 와 같은 짜임) = 3개, 정답과 낱말 단위로 겹치는 것 0. (3) id 를 바꾼 것: 데이터-형식.md 의 '한 번 붙인 id 는 바꾸지 않는다'는 학생 기록의 열쇠라서인데, 출시 전이라 기록이 없어 점검자 권고대로 바꿈. 저장소 전체에서 pg07-*: id 를 가리키는 곳은 레슨 파일 4개와 TOPIC-07.json 뿐임을 검색으로 확인. 참고: G6 수정자는 비슷한 순서 문제에서 id 를 그대로 둠 — 과정 전체를 어느 쪽으로 맞출지는 이끄는 세션이 정할 일. (4) TOPIC-07.json: idx63(both) appliedTo [rule, s4, p16, p12] + reason 에 새 문항 · 도전 이동 · id 변경을 적음, idx76((10과)) appliedTo [p16] + reason 에 id 변경. (5) 3권 pg20-1(등위접속사) 설명 카드에 짝 접속사(both A and B) 한 줄이 있어야 이 도전 판정이 맞음 — 3권 작업 때 확인 필요. 새 영어 'Both of them are right.'은 음성 단계에서 클립이 필요함."
+  },
+  {
+    "lesson": "pg07-1",
+    "item": "pg07-1:a4, pg07-1:p3",
+    "finding": "영어는 강조 용법 'I know the truth myself.'로 고쳤는데 한국어 '나는 내 스스로 진실을 안다.'가 그대로라, '스스로(혼자 힘으로)'를 따라 쓰면 교재 원래 답(오답) by myself 가 나옴.",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음. a4 · p3: ko → '나 자신이 그 진실을 안다.', koSource → 'review 1 item 5 (고침)', fix 에 fromKo '나는 내 스스로 진실을 안다.' 추가, why 끝에 \"한국어도 강조 용법이 드러나게 '나 자신이'로 고쳤습니다.\" 추가. 허용 답(I myself know the truth.)과 오답 패턴 match 는 그대로. 다만 p3 둘째 힌트의 \"'나 스스로'는\"은 한국어에서 사라진 말이라 \"'나 자신'은\"으로 바꿈(뜻은 같음). TOPIC-07.json idx66 reason 을 제안대로 \"한국어는 '나 자신이 그 진실을 안다.'로 고칩니다\"로 바꾸고 까닭 한 줄을 덧붙임."
+  },
+  {
+    "lesson": "pg07-1~4 (공통)",
+    "item": "pg07-1:p2·p6·p8·t1, pg07-2:p8·p11, pg07-3:p4·p9, pg07-4:p13·p15·t1",
+    "finding": "오답 패턴 13개가 모범 답 안에 글자 그대로 들어 있어(예: 'it rain' ⊂ 'It rains'), 채점기가 부분 문자열로 비교하면 허용 목록에 없는 거의 맞는 답에 엉뚱한 힌트가 뜸. 데이터-형식.md 에 match 비교 규칙이 없음.",
+    "action": "rejected",
+    "note": "반대가 아니라 범위 밖이라 이번에 적용하지 않음. 지적 자체는 맞음(점검자 audit.cjs 로 다시 재도 부분 문자열로만 겹치는 패턴 13개, 낱말 단위로 겹치는 것 0 — 수정 뒤에도 같음). 레슨 데이터는 점검자 권고대로 그대로 둠. 권고의 실제 조치는 공용 형식 문서 데이터-형식.md 에 한 줄(\"match 는 채점 정규화(소문자 · 곡선 따옴표 · 축약형 전개) 뒤 낱말 경계 단위로 비교한다(부분 문자열 아님)\")을 넣고 코드 세션에 알리는 일인데, 이 수정자의 범위(레슨 · 판정 파일) 밖이고, 데이터-형식.md 는 코드 쪽이 03:03 에 v1.1 로 고친 공용 문서라 여러 수정자가 따로 고치면 겹침. G6 수정기록의 '문장 안 쉼표를 남긴 글에 맞춰 본다'와 함께 이끄는 세션이 v1.2 로 한 번에 넣고 코드 세션에 알려 주세요. 참고: 공용 점검기 check-lessons.cjs(03:18 판)는 이미 낱말 경계(gradeWords — 축약형 전개 · 아포스트로피 제거 뒤 앞뒤 빈칸)로 '정답에 걸리는 오답 패턴'을 세고, 주석에 '데이터-형식 v1.2' 의 literal: true 패턴을 적어 두었음(데이터-형식.md 자체는 아직 v1.1). 이 점검기로 pg07 은 '정답에 걸리는 오답 패턴' 0 — 채점기도 같은 규칙이면 이 13개는 문제가 없음."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:p5",
+    "finding": "채점 정규화는 끝 문장부호만 지우는데, 'If there are any, I will lend them to you.' · 'If I have any, …'의 쉼표 없는 모양이 허용 답에 없어 쉼표 하나로 오답이 됨.",
+    "action": "fixed",
+    "note": "허용 답에 'If there are any I will lend them to you.' · 'If I have any I will lend them to you.' 추가(3 → 5). 같은 종류라 pg07-3:p8 의 'In this city, where can you/I/we find her?' 3개에도 쉼표 없는 모양을 바로 뒤에 더함(8 → 11) — 점검자는 드물다고 뺐지만 설계 §8 정규화가 문장 안 쉼표를 남겨 쉼표 하나로 오답이 되므로. 수정 뒤 내 검사(verify.cjs)의 '쉼표 없는 모양 없음' 0, 점검자 commas.cjs 출력 0."
+  },
+  {
+    "lesson": "pg07-1",
+    "item": "pg07-1:p5",
+    "finding": "한국어 '사용되어져 왔어'의 '사용되어져'는 이중 피동(-되- + -어지-)이라 표준 문법에 어긋남(교재 p54 원문, issues 에 없던 것).",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음(피동 접미사 '-되-'에 '-어지-'를 겹친 이중 피동). ko → '새 기계가 우리의 사업을 위해 사용되어 왔어.', koSource → 'review 1 item 2 (고침)', fix 에 fromKo 추가(key 순서 from · fromKo · kind · why), why 끝에 \"한국어 '사용되어져'는 이중 피동이라 '사용되어'로 고쳤습니다.\" 추가. TOPIC-07.json 에 newFinding 판정 1건(page 54 · Review 1 item 2 · korean_typo · fix · appliedTo [pg07-1:p5])."
+  },
+  {
+    "lesson": "pg07-1",
+    "item": "pg07-1:rule.koDiff",
+    "finding": "'…주어에 따라 모양이 바뀝니다'는 부정확함. 소유대명사는 문장의 주어가 아니라 누구의 것인지(인칭 · 수)에 따라 바뀜(The purse is yours. 의 주어는 The purse).",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음. koDiff → \"우리말은 '내 것', '나 자신'처럼 말을 덧붙이지만, 영어는 mine · myself 처럼 한 낱말로 쓰고, 누구의 것 · 누구 자신인지(인칭과 수)에 따라 모양이 바뀝니다.\"(제안 그대로)."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:rule.table.rows[4]",
+    "finding": "표가 'any 는 의문문 · 부정문 · if 문'만 적어 같은 레슨 p4 모범 답 'Anyone can come here.'(긍정문의 any)와 어긋나 보이고, none 뜻이 '아무도'뿐(사물에도 씀).",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음(긍정문의 any- 는 '누구든 · 무엇이든', none 은 사람 · 사물 모두). rows[4][1] → '약간 · 조금이라도 · 하나도 없는 · 아무도/하나도 (~않다)', rows[4][2] → \"some 은 긍정문, any 는 의문문 · 부정문 · if 문. 긍정문의 any- 는 '누구든 · 무엇이든': Anyone can come here.\"(제안 그대로)."
+  },
+  {
+    "lesson": "pg07-2",
+    "item": "pg07-2:rule.points[1]",
+    "finding": "형태 찾기 s6 은 날씨 · 밝기의 비인칭 주어 it(it is dark)을 묻는데 설명 카드에는 '날씨 · 시간 · 거리 · 요일'만 있고 밝기(명암)가 없음.",
+    "action": "fixed",
+    "note": "points[1] → '날씨·시간·거리·요일·밝기를 말하는 it: 뜻 없음(비인칭 주어)'(제안 그대로)."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "pg07-3:p8",
+    "finding": "targets=[[\"Where\"]] 인데 이 레슨은 where 를 의문부사(이 레슨 문법 아님)라고 가르침. 이 레슨 문법이 드러나는 낱말은 this city 의 this(지시형용사).",
+    "action": "fixed",
+    "note": "targets → [[\"Where\"],[\"this\"]](제안 그대로). 모범 답과 허용 답 11개(쉼표 없는 모양 3개를 더한 뒤) 모두에 this 가 있음을 공용 점검기와 verify.cjs 로 확인."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "pg07-3:p16",
+    "finding": "'그는 이 부패 사건들과 무관했다.'의 흔한 맞는 답 'He was not involved in these corruption cases.' 등이 허용 목록에 없음.",
+    "action": "fixed",
+    "note": "허용 답에 'He was not involved in these corruption cases.' · 'He was not involved in these cases of corruption.' · 'He had no involvement in these corruption cases.' + 같은 틀 'He had no involvement in these cases of corruption.' 추가(5 → 9, 축약 wasn't 는 채점기가 양쪽을 펼쳐 맞춤). 점검자 목록의 'He was unrelated to these corruption cases.'는 넣지 않음: 사전의 unrelated 는 사건 · 화제가 '관련 없는'(unrelated incidents) 또는 사람이 '친척이 아닌'이라, 사람이 사건에 '연루되지 않았다'는 뜻으로는 흔한 표현이 아니고(원어민은 had nothing to do with · wasn't involved in · had no connection with), be + 형용사만으로 만들 수 있어 challenge=true(도전 판정 3번째 조건)와도 어긋나기 때문. challenge 는 그대로(모범 답 nothing, 대안의 no involvement 는 부정형용사 no, was involved 는 분사형 형용사)."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:p10",
+    "finding": "한국어 '틀리지 않았어'는 과거형 어미라 'Neither of them was wrong.'도 맞는 답인데 허용 목록에 없음. 목표를 피한 'Both of them are right.'에는 힌트가 없음.",
+    "action": "fixed",
+    "note": "허용 답에 'Neither of them was wrong.' · 'Neither one of them was wrong.' 추가(1 → 3). 다음 일꾼 판단으로 넘긴 오답 패턴은 지금 3개(neither of them are · both of them are not · none of them)를 그대로 둠: 이 한국어에서 가장 흔한 실수는 직역 'Both of them are not wrong'과 none/neither 혼동이고, 뜻을 바꿔 쓴 'Both of them are right'는 한국어 '틀리지 않았어'에서 나올 가능성이 더 낮음. 그런 답은 목표형(Neither)이 없어 틀림 처리되고 틀린 자리 표시가 나옴."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "pg07-3:p14",
+    "finding": "도전이 아닌 근거가 허용 답 'hate to listen'인데 hate to V 도 부정사(pg13-1)라, base(like-to · want-to)만으로는 모든 허용 답이 동명사나 부정사를 써서 태그 규칙과 판정이 맞지 않음.",
+    "action": "fixed",
+    "note": "지적은 맞음(수정 전 허용 답 8개가 모두 hate/dislike + 동명사 또는 hate to V). 점검자의 (a) · (b) 대신 다른 길로 고침: 아래 p9 · p12 · p14 지적대로 'Those people don't like to listen to long messages on answering machines.'(+ the answering machine · an answering machine)를 허용 답에 넣어, base 태그(like-to · negative-basic)만으로 만들 수 있는 맞는 답이 생김 → 도전 판정 3번째 조건('그 문법 없이는 만들 수 없을 때만')에 따라 challenge=false 가 규칙대로 맞게 됨. (a)로 하면 이 허용 답과 3번째 조건이 서로 어긋나고, (b)는 태그.json 을 바꾸는 공용 결정이라 하지 않음. tags · 자리 · id 는 그대로. 알림: 공용 점검기 check-lessons.cjs(03:13 · 03:18 판)는 3번째 조건을 볼 수 없어 '뒤 레슨 태그가 있는데 challenge 아님'으로 이 문항과 pg07-4:p1 · p3 · p6(각각 must · 과거형 · no way out 같은 base 허용 답이 있어 도전 아님)을 셈 — 다른 그룹에도 같은 줄이 많으니 표시 방식(피할 수 있는 태그를 tags 에서 뺄지, 따로 필드를 둘지)은 이끄는 세션이 정해 주세요. 같은 03:18 점검기로 수정 전 사본(scratchpad g5fix/before)과 지금 파일을 돌려 pg07 줄이 이 4줄로 똑같음을 확인함 — 이번 수정으로 생긴 줄이 아님."
+  },
+  {
+    "lesson": "pg07-1",
+    "item": "pg07-1:s5",
+    "finding": "'The dog hurt ___.'의 정답이 itself 하나뿐인데, 암수를 아는 반려동물은 he/she 로도 받아 himself · herself 도 맞는 영어라 모호함.",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음. sentence → 'The computer turned ___ off.', instruction → '빈칸에 알맞은 재귀대명사를 쓰세요. (그 컴퓨터는 스스로 꺼졌다.)', answer ['itself'] 그대로, why → \"the computer 는 it 으로 받으니 '그것 자신' = itself.\"(제안 그대로). 컴퓨터는 it 으로만 받아 정답이 하나. TOPIC-07 판정(표에 빠진 itself → s5 로 연습)은 그대로 맞음."
+  },
+  {
+    "lesson": "pg07-1",
+    "item": "pg07-1:p8",
+    "finding": "'그들 자신 이외에는 아무도…'를 except 로 앞에 둔 흔한 답이 없음(Nobody/No one but themselves 모양만 있음).",
+    "action": "fixed",
+    "note": "허용 답에 'Nobody except themselves could save them.' · 'No one except themselves could save them.'(제안) + 같은 틀 'Nobody other than themselves could save them.' · 'No one other than themselves could save them.' 추가(7 → 11). 모두 목표형 themselves 포함."
+  },
+  {
+    "lesson": "pg07-2",
+    "item": "pg07-2:p2, pg07-2:p3, pg07-2:p5",
+    "finding": "흔한 맞는 답이 빠짐: p2 didn't know anything about it, p3 '너무'를 '매우'로 읽은 very/really hard, p5 mental problems(복수).",
+    "action": "fixed",
+    "note": "p2 에 \"Vivaldi didn't know anything about it.\" 추가(1 → 2). p3 은 기존과 같은 틀 전부(feel like · feel that · think × 쉼표 있음/없음 × hard · difficult × very · really) 24개 추가(23 → 47) — 요즘 한국어 '너무'는 '매우' 뜻으로도 널리 씀. p5 에 제안 4개 + 같은 틀 'It looked like James had mental problems.' · 'It seemed like James had mental problems.' = 6개 추가(5 → 11). 모두 목표형 it/It 포함, 중복 0."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "pg07-3:p9, pg07-3:p12, pg07-3:p14",
+    "finding": "흔한 맞는 답이 빠짐: p9 take roll(미국식), p12 '사귄 친구들'을 관계사 that 으로 쓴 답, p14 '싫어한다'를 don't like, '듣기'를 hear 로 쓴 답.",
+    "action": "fixed",
+    "note": "p9 에 제안 3개 추가(11 → 14). p12 에 제안 2개 추가(5 → 7, 관계사 that 은 허용 답에만 있어 도전 판정과 무관). p14 는 제안 3개를 기존 목록처럼 answering machines · the answering machine · an answering machine 세 모양으로 넓혀 9개 추가(8 → 17). 모두 목표형(this · these · Those) 포함."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:p7, pg07-4:p13, pg07-4:p14",
+    "finding": "흔한 맞는 답이 빠짐: p7 '그것을' → that, p13 'the day that'은 있는데 'the date that'이 없음, p14 '다른 사람들은'(나머지 사람들) → The other people / The others.",
+    "action": "fixed",
+    "note": "p7 에 'None of us knows that.' · 'None of us know that.'(제안) + 기존 목록과 같은 틀 'No one among us knows that.' · 'Nobody among us knows that.' 추가(3 → 7). p13 에 No one / Nobody / No-one knows the date that he will die. 3개를 각 주어의 'the date when' 바로 뒤에 넣음(17 → 20). p14 에 'The other people are singing and dancing.' · 'The others are singing and dancing.' 추가(1 → 3, 목표형 Other/Others 포함 확인)."
+  }
+]

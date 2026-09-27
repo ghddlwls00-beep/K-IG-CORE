@@ -1,0 +1,219 @@
+[
+  {
+    "lesson": "pg05-2 · pg05-3 · pg05-4 · pg06-1 · pg06-2 (+ 데이터-형식.md · 코드 계약)",
+    "item": "reject 필드 전체(15문항) · 오답 패턴 'it's'(pg05-2:p1) · 'I'm'(p7) · 'there's'(p24) · 'Is not this'(pg05-4:p1) · 'In Saudi,'(pg06-2:p18)",
+    "finding": "reject 는 데이터 형식에도 코드 타입에도 없어서, 축약형을 양쪽으로 펴는 채점기에서는 'Yes, it's.' · 'Is not this a hat?' 같은 틀린 꼴이 정답이 됨. 오답 패턴도 펼친 글이나 쉼표를 없앤 글에 맞추면 엉뚱하게 걸림.",
+    "action": "fixed",
+    "note": "지적은 맞음. 다만 고친 방법은 점검자 제안(형식 문서에 reject 추가 · 원문에 맞추는 오답 패턴)과 다름. 이 점검 뒤 이끄는 세션이 데이터-형식.md v1.2(03:21)에 같은 문제의 해법을 정해 두었음: ① 채점기는 대소문자 · 문장부호를 무시하고 축약형을 양쪽으로 폄. ② 보통 오답 패턴은 그 정규화로 정답에 걸리면 안 됨. ③ 축약형만 다른 오답은 errorPatterns 에 literal: true 로 틀린 답 전체를 적음. 형식 문서는 고치지 않고 데이터를 v1.2 에 맞춤. (1) reject 필드를 15문항에서 모두 없앰. 빌더가 적은 reject 21개 가운데 축약형만 다른 18개는 literal 오답 패턴으로 옮겼음(pg05-4:p3 'Cannot you swim?' 포함). 축약형과 상관없이 틀리는 3개('Yes, this is.' · 'Everyday he wants …' · '… everyday.')는 보통 패턴(this is · everyday)이 이미 잡아서 뺐음. (2) 정답에도 걸리던 보통 패턴 5개를 바꿈. 'it's' · 'I'm' · 'there's' · 'Is not this' 는 literal 줄이 대신하므로 뺐고, 'In Saudi,' 는 틀린 곳까지 적은 'Saudi one'(교재 원문 'In Saudi, one man …')으로 바꿈. 힌트도 정답을 말하지 않게 '나라 이름을 줄이지 않고 끝까지 써 보세요(사우디아라비아).'로 바꿈. (3) pg05-4:p1 에 보통 패턴 'this hat'(관사 힌트)을 더함. 그래서 'Isn't this hat?'은 어순이 아니라 관사 힌트를 받음. 증거: 공용 검사 check-lessons.cjs 기준으로 이 종류가 고치기 전 G4 13건(패턴 5개가 정답 13개에 걸림) → 0건. v1.3 검사(03:42)로 다시 돌려도 G4 문제 0이고, --selftest 도 통과함. 자체 참조 채점기(scratchpad g4fix/refgrade.cjs, v1.2 순서)에 점검자 대조 사례를 포함한 25건을 넣으면 고친 데이터는 25건 모두 기대대로 나옴. literal 단계를 빼면 10건, 고치기 전 데이터는 19건이 틀림. 이끄는 세션이 코드 세션에 넘길 것: src/lib/passoffTypes.ts 의 errorPatterns 타입에 literal?: boolean 이 아직 없음. passoffGrading.ts 를 만들 때 literal 을 허용 답보다 먼저 보고, cannot 도 can not 으로 펴야 함(grammarGrading.ts 는 펴고 공용 검사기 expand 는 안 폄). 점검자가 권한 일반 규칙('조동사 + not + 주어' 어순 · 'Yes, 대명사's.')을 코드에 넣을지는 코드 쪽이 고를 일."
+  },
+  {
+    "lesson": "pg05-3 · pg05-4 (+ pg05-2)",
+    "item": "pg05-3:p1·p4·p10·p14·t1·t2, pg05-4:p5·p6·p7 과 같은 문항의 다른 허용 답",
+    "finding": "부정 꼬리 · 부정의문문 문항 일부에만 'not 이 주어 앞' 꼴을 막아 두어서, 'It is a long way, is not it?' · 'Does not he have his faults?' 같은 답이 정답으로 샘.",
+    "action": "fixed",
+    "note": "reject 대신 v1.2 의 literal 오답 패턴을 씀. 모범 답과 허용 답 하나하나에서 '줄이지 않은 not 이 주어 앞' 꼴과 '끝을 줄인 짧은 Yes 대답'을 기계로 만들어 넣었음. 점검자 목록에 허용 답 변형(road · candies · sweets · very much · wise/smart/sensible · were/selected/exam 등)까지 더함. 합계 literal 57줄: pg05-2 10줄(p1 1 · p4 1 · p7 2 · p10 1 · p12 3 · p13 1 · p24 1), pg05-3 15줄(p1 4 · p2 1 · p4 3 · p10 3 · p14 2 · t1 1 · t2 1), pg05-4 32줄(p1 1 · p2 4 · p3 2 · p4 3 · p5 8 · p6 3 · p7 8 · t1 1 · t2 2). can't 는 'Can not' 과 'Cannot' 둘 다 넣음. 줄마다 힌트는 정답을 말하지 않는 규칙 한 줄: '꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.' · '줄이지 않을 때는 not 을 주어 뒤에 둬요.' · 'Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.' 빠짐 확인: 자체 검사(verify.cjs)가 허용 답마다 만들어야 할 꼴 57개를 literal 57줄과 맞춰 봐서 빠짐 0. literal 한 줄을 지운 사본에서는 FAIL 이 나는 것을 확인함. 축약형 없이 올바르게 쓴 허용 답('… is it not?' · 'Does he not have …?')은 그대로 정답."
+  },
+  {
+    "lesson": "pg05-3",
+    "item": "pg05-3:s6 (short)",
+    "finding": "'You will come to my party, ___ you?'의 정답에 'will not'이 있어 틀린 어순 'will not you?'를 정답으로 받음. 지시는 '한 낱말'.",
+    "action": "fixed",
+    "note": "점검자 제안대로 answer 를 [won't] 하나로만 두면, v1.2 채점기(축약형을 양쪽으로 폄)에서 입력 'will not'이 여전히 'won't'와 같아져 정답이 될 수 있음. 그래서 G6 수정자가 pg08-4:s4 에서 한 것처럼 choice 로 바꿈. 지시 '빈칸에 알맞은 꼬리를 고르세요', 보기 [won't, will, don't], 정답 0. why 에 '풀어 쓰면 will you not? 순서예요(will not you ✗).'를 더함. id · sentence · source 는 그대로. 'will not'이 보기에 없으니 정답이 될 길이 없음(refgrade.cjs 로 확인)."
+  },
+  {
+    "lesson": "pg05-2 · pg05-3",
+    "item": "errorPatterns.hint — pg05-2:p1·p2·p3·p7·p16·p19·p20·p21·p24·t2, pg05-3:p2·p3·p5·p8·p9 (15개)",
+    "finding": "힌트 끝에 모범 답 전체가 붙어 있어서 사다리가 첫 힌트에서 끝남.",
+    "action": "fixed",
+    "note": "15개 모두 정답 부분을 지우고 단서만 남김. 점검자 문안을 따르되, p2 · p16 · p19 · t2 는 문항 동사에 맞춤(예: p2 'Do 로 물었으니 like 를 되풀이하지 말고 do 로 짧게 대답해 보세요.', t2 'Did 로 물었으니 finish 를 되풀이하지 말고 did 로 짧게 대답해 보세요.'). p1 · p7 · p24 의 패턴('it's' · 'I'm' · 'there's')은 F1 에서 literal 줄로 바뀌었으므로 힌트 'Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.'는 그 literal 줄에 붙임. 같은 종류 2개도 고침: pg05-2:p4 'they are'('there are 로 대답해요' → 'There are 로 물었으니 대답도 they 가 아니라 there 로 받아요.'), p24 'it is'(같은 방식). 확인: 점검자 스크립트 hints.cjs 의 '힌트에 정답 전체' 15 → 0. 자체 검사도 0이고, 힌트를 되돌린 사본에서는 FAIL 이 남."
+  },
+  {
+    "lesson": "pg06-1",
+    "item": "pg06-1:p8 accept",
+    "finding": "고친 한국어가 'There are … in Korea' 꼴을 더 가리키는데 그 꼴 · like 꼴 · 'Lunar New Year' 꼴이 허용 답에 없음.",
+    "action": "fixed",
+    "note": "+23개(합 34). Korea has … / There are … in Korea / In Korea, there are … 세 틀 × (: · such as · like) × (Lunar New Year's Day · Seollal · Lunar New Year)에서 없던 것을 더함. 점검자가 말한 Oxford comma 는 v1.2 채점기가 문장부호를 무시하므로 쉼표만 다른 꼴은 따로 적지 않음. 모두 목표형 holidays 포함(공용 검사 · 자체 검사 확인). 판정 파일 p44 application (1) item 8 reason 에 '(such as · like · There are … in Korea · In Korea, there are … · Seollal · Lunar New Year 로 쓴 답도 정답)'으로 적음. 'a lot of' 판은 넣지 않음: '많다'를 곧게 옮기면 many 라서, 나머지 변형은 '내 답도 맞아요' 보류 신고로 모을 몫임."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:p24 accept",
+    "finding": "'-는데'를 but 으로 옮긴 답 · just 판 · 'in the restaurant' 판이 허용 답에 없음.",
+    "action": "fixed",
+    "note": "+15개(합 38): but 판 3개(a lot of · many · lots of), just 판 6개(and · but), the restaurant 판 6개(and · but). 쉼표 조합은 v1.2 채점기가 문장부호를 무시하므로 따로 적지 않음. 모두 목표형 mouse · mice 포함."
+  },
+  {
+    "lesson": "pg05-3",
+    "item": "pg05-3:p1 accept",
+    "finding": "제시문 '긴 길'을 글자대로 옮긴 'It is(It's) a long road, isn't it?'이 허용 답에 없음.",
+    "action": "fixed",
+    "note": "점검자 목록 3개를 더함('It is a long road, isn't it?' · 'It's a long road, isn't it?' · 'It is a long road, is it not?'). 이 두 꼴의 틀린 꼬리 'is not it?'도 literal 줄로 막음(F2). 판정 파일 p41 Review 2 item 1 reason 에 '긴 길을 글자대로 옮긴 a long road 도 정답' 한 문장을 더함."
+  },
+  {
+    "lesson": "pg05-3 · pg05-4 · pg06-1 · pg06-2 · pg06-3",
+    "item": "hint — 점검자 목록 20문항(26줄) + 같은 레슨의 같은 종류 힌트",
+    "finding": "힌트 끝에 목표 낱말을 그대로 줌(예: '…-es: babies.', '8월은 August 예요.').",
+    "action": "fixed",
+    "note": "점검자 목록 26줄을 모두 고침(예: pg06-2:p15 '자음 + y 는 y 를 i 로 바꾸고 -es 를 붙여요.', pg06-3:t2 '8월 철자에서 빠진 글자가 있어요.', pg05-3:p7 '앞이 부정(can't)이면 꼬리는 긍정이에요.', pg05-4:p7 'Isn't 바로 뒤에 주어가 빠졌어요. 뒤의 that 절을 대신하는 가주어를 넣어 보세요.'). '나머지도 같은 방식으로'에 따라, 같은 7레슨에서 같은 종류(고친 꼴을 ':' 뒤에 붙이거나 'X 예요'로 그대로 주는 힌트) 53줄도 규칙만 말하게 고침: pg05-1:p2 · p3 · p7 · p8 · p22, pg05-4:p4 · p5 · p7, pg06-1:p2(2) · p5 · p6 · p8 · p11 · p12 · t2, pg06-2:p9(2) · p10(3) · p16 · p22 · p23(2) · p24(2) · t1, pg06-3:p1 · p2(2) · p3(2) · p4 · p5(3) · p6 · p7(2) · p8(2) · p10(3) · p11(2) · p12(2) · p13 · p15(2) · p16. 불규칙 복수는 'mouse 는 -s 를 붙이지 않고 모양이 바뀌어요.'처럼 규칙만 줌. 남긴 것: 점검자 스크립트가 '목표 낱말이 다 들어 있음'으로 세는 39줄. 모두 옮길 낱말이나 맞출 낱말을 이유와 함께 말하는 규칙 문장이고(예: 'Is 를 Jane 앞으로 옮겨요.', 'four people 은 복수라 Are there 예요.'), 점검자도 이 종류는 지적하지 않았음. 확인: hints.cjs '목표 낱말이 다 들어 있음' 79 → 39, '정답 전체' 0."
+  },
+  {
+    "lesson": "pg05-2",
+    "item": "pg05-2:s3 options",
+    "finding": "보기 these 로 만든 'Yes, these are.'는 대조할 때 쓰는 맞는 영어라 정답이 둘로 읽힘.",
+    "action": "fixed",
+    "note": "options ['it', 'they', 'these'] → ['it', 'they', 'them']. 정답 1(they)과 why 는 그대로. them 은 주어 자리에 올 수 없어 정답이 하나뿐임."
+  },
+  {
+    "lesson": "pg05-2",
+    "item": "pg05-2:p9 accept · errorPatterns[your house]",
+    "finding": "'아니, 우리 집이 아니야.'를 글자대로 옮긴 'No, it isn't our house.'가 없음. 힌트는 my house 만 말함.",
+    "action": "fixed",
+    "note": "accept 에 'No, it isn't our house.' · 'No, it is not our house.' · 'No, it's not our house.'를 더함(합 8). 힌트 → ''너의 집이니?'에는 '우리 집(my/our house)'으로 대답해요.'(점검자 문안). 'our house'는 오답 패턴 'your house'에 걸리지 않음(낱말 단위 비교)."
+  },
+  {
+    "lesson": "pg05-2 · pg05-3",
+    "item": "pg05-2:p21, pg05-3:p2·p3·p6 accept",
+    "finding": "조동사를 살린 완전한 대답을 다른 문항은 받는데 이 문항들은 받지 않음.",
+    "action": "fixed",
+    "note": "pg05-2:p21 +3('Yes, they can win.' · 'Yes, they can win it.' · 'Yes, they can win the soccer game.'). pg05-3:p2 +2('Yes, it is a long way.' · 제시문 '응, 멀어'를 곧게 옮긴 'Yes, it is far.'). p3 +6(a long way · far × isn't / is not / 's not). p6 +2('No, he doesn't like candy.' · 'No, he does not like candy.'). 점검자 목록에 제시문 '멀어'에 맞는 far 판을 더했고, 모두 목표형 포함."
+  },
+  {
+    "lesson": "pg05-4",
+    "item": "pg05-4:p2 targets · accept",
+    "finding": "'케이크가 없니?'는 '(너) 케이크 없니?'로도 읽혀, 맞는 부정의문문 'Don't you have a cake?'가 오답이 됨.",
+    "action": "fixed",
+    "note": "점검자 안 (가)를 택함. 교재 Review 한국어는 그대로 두고 두 뜻을 모두 받음. targets → [[Isn't, Is there not, Don't, Do you not]]. accept +4('Don't you have a cake?' · 'Don't you have any cake?' · 'Do you not have a cake?' · 'Do you not have any cake?'). 틀린 꼴 'Do not you have a cake?' · 'Do not you have any cake?'(+ 'Is not there …' 2개)는 literal 줄로 막음. 판정 파일 p37 passOff (4) item 2 reason 에 이 두 번째 뜻을 적음."
+  },
+  {
+    "lesson": "pg05-4",
+    "item": "pg05-4:p4 accept",
+    "finding": "'그 문제의 양면'의 '문제'를 problem 으로 옮긴 답이 없음.",
+    "action": "fixed",
+    "note": "accept +2('Don't you understand both sides of the problem?' · 'Do you not understand both sides of the problem?'). 틀린 꼴 'Do not you understand … the problem?'도 literal 로 막음. 판정 파일 p41 Review 3 item 4 reason 에 'the issue · the problem'으로 적음."
+  },
+  {
+    "lesson": "pg05-4",
+    "item": "pg05-4:p7 accept",
+    "finding": "'선택된'을 과거 were chosen 으로 옮긴 답이 없음(도전 문장).",
+    "action": "fixed",
+    "note": "점검자 3개를 포함해 (Isn't it · Is it not) × (are · were) × (chosen · selected) × (exams · exam) 16가지 가운데 없던 12개를 더함(합 15). Isn't 판 8개의 'Is not it …' 꼴은 literal 로 막음. challenge · challengeTags 는 그대로(it-dummy · passive)."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:p21 accept",
+    "finding": "'싫어한다'를 곧게 옮긴 hate 판과 'I dislike taking pictures.'가 없음.",
+    "action": "fixed",
+    "note": "점검자 목록 5개('I hate taking photos.' · 'I hate taking pictures.' · 'I hate to take photos.' · 'I hate to take pictures.' · 'I dislike taking pictures.')를 더함(합 11). 판정 파일 p47 Review 1 item 23 reason 을 'hate · dislike · taking pictures 로 쓴 답도 정답'으로 고침."
+  },
+  {
+    "lesson": "pg05-1",
+    "item": "pg05-1:p18 accept · targets, pg05-1:p11 accept",
+    "finding": "p18 제시문에는 there 단서가 없어 흔한 답(members · Does your family have …)이 빠짐. p11 은 'Does your dad keep a dog?'가 빠짐.",
+    "action": "fixed",
+    "note": "p18 targets [[Are, Do]] → [[Are, Do, Does]], accept +4('Are there four members in your family?' · 'Do you have four family members?' · 'Does your family have four people?' · 'Does your family have four members?'). p11 accept +1('Does your dad keep a dog?'). 모두 목표형 포함."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:p14 accept",
+    "finding": "fancy + jewels 조합과 'set with gems' 표현이 없음.",
+    "action": "fixed",
+    "note": "점검자 2개를 포함해 (luxurious · fancy) × (with gems · with jewels · set with gems · set with jewels · jeweled · jewelled) 12가지 가운데 없던 7개를 더함(합 11). 모두 목표형 watches 포함."
+  },
+  {
+    "lesson": "pg06-1",
+    "item": "rule.koDiff",
+    "finding": "'물 두 개'처럼 어떤 명사에나 수를 붙인다는 대비는 틀림. 한국어도 '물 한 잔'처럼 단위를 씀.",
+    "action": "fixed",
+    "note": "koDiff → '한국어는 '책 한 권 · 물 한 잔'처럼 명사 모양은 그대로 두고 세는 말(권 · 잔)만 붙이지만, 영어는 셀 수 있는 명사(book)에 a · -s 를 붙이고(a book, two books), 셀 수 없는 명사(water · meat)에는 붙이지 못해 a glass of 같은 단위로 셉니다.'(점검자 문안에 세는 말과 예를 더함)."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "rule.table.rows[8] ['+ en', 'oxen, children']",
+    "finding": "children 은 child + ren 이라 '+ en' 칸에 두면 childen 으로 오해할 수 있음.",
+    "action": "fixed",
+    "note": "행 → ['+ en (child 는 + ren)', 'oxen, children']. 같은 뜻으로 오답 힌트 'childs'(p9 · t1)도 'child 는 -s 대신 -ren 을 붙여요.'로 맞춤(F8)."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:a8 · p11 · rule (Chinese · Japanese 뺌) + 판정 파일 p42 row 11",
+    "finding": "민감하다는 이유로 뺀 것은 D6 과 어긋나고, '-ese 국적 낱말은 단수 = 복수'라는 교재의 문법 사실이 레슨에서 사라짐.",
+    "action": "fixed",
+    "note": "fish(①예문 a8 · ④영작 p11)는 그대로 둠. 규칙 카드 표 11행을 'deer, sheep, fish, Chinese, Japanese'로 해서 교재 낱말을 되살리고, koDiff 끝에 '나라 사람을 뜻하는 Chinese · Japanese 도 단수와 복수의 모양이 같아요(사람을 말할 때는 보통 Chinese people · a Japanese person 처럼 써요).'를 더함. 줄 수 제한(3~5줄)이 있어 points 대신 표 · koDiff 에 넣었음. a8 · p11 의 fix.why 와 판정 파일 reason 은 '사람을 a Chinese 로 세는 꼴은 현대 영어에서 어색(english_unnatural) — 문법 사실은 규칙 카드에 남김, 민감성 때문이 아님(D6)'으로 고침. 근거: 사전에서 Chinese · Japanese 는 복수도 같은 꼴(plural Chinese / Japanese)이고, 사람 한 명은 a Chinese person 처럼 쓰는 것이 요즘 쓰임임."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "판정 파일 p45 'In Saudi, …' reason (pg06-2:p18)",
+    "finding": "issue 가 지적한 사실 정확성(이슬람 법상 최대 4명)에 대한 판단이 판정 이유에 없음.",
+    "action": "fixed",
+    "note": "데이터는 그대로 두고 reason 에 한 문장을 더함: '사실 부분: 이슬람 법으로는 한 번에 네 명까지라 many 는 조금 넓은 말이지만, 여럿으로 읽으면 교재 시대(2012)에도 지금도 사실과 크게 어긋나지 않아 그대로 둡니다. 더 정확한 꼴(up to four wives)로 바꿀지는 사장님 확인 후보로 이끄는 세션에 넘깁니다.' → 이끄는 세션: 작업기록.md '사장님이 돌아오시면 하실 일'에 올릴지 판단해 주세요(수정자는 그 파일을 고치지 않음)."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:p15 koFix · fix.why",
+    "finding": "영어와 한국어를 모두 바꿨는데 koFix 가 없고, fix.why 가 옛 한국어를 인용해 헷갈림.",
+    "action": "fixed",
+    "note": "옛 한국어를 기록함. 처음에는 점검자 말대로 koFix 로 넣었다가, 이끄는 세션의 데이터-형식.md v1.3(03:44)이 koFix 를 없애고 fix.fromKo 로 바꿨으므로 그 모양으로 옮김: fix = {from 'He has five babies in his home.', fromKo '그는 그의 집에 다섯 명의 아기가 있다.'(교재 Review 1 item 17 글자 그대로, 추출 JSON 으로 확인), field 'en+ko', kind english_unnatural, why ''He has five babies in his home.'은 어색해 There are … 로 바꿨고(원문도 정답으로 인정), 한국어도 그에 맞춰 '그의 집에는 아기가 다섯 명 있다'로 고쳤습니다.'}. 옛 한국어를 인용해 헷갈리던 예전 why 는 이것으로 바뀜. 같은 모양인 pg06-1:p8 · pg06-2:p18 의 koFix 도 fix.fromKo 로 옮김(아래 v1.3 기록)."
+  },
+  {
+    "lesson": "pg06-3",
+    "item": "pg06-3:p15 condition",
+    "finding": "'1st'를 오답으로 보면서 '숫자는 영어 낱말로' 조건 칩이 없음.",
+    "action": "fixed",
+    "note": "condition null → '숫자는 영어 낱말로'(p4 · p16 · p17 · p18 과 같음). 이 문항의 두 힌트도 정답 낱말 없이 고침(F8): '1st' → '서수를 영어 낱말로 써 보세요.', 'one month' → ''첫 번째'는 기수가 아니라 서수로 말해요.'"
+  },
+  {
+    "lesson": "pg05-1",
+    "item": "rule.points[4]",
+    "finding": "'의문사는 맨 앞, 그 뒤는 의문문 순서'를 주어 의문사까지 넓히면 'Who does like pizza?' 같은 오답을 부름.",
+    "action": "fixed",
+    "note": "points[4] → '의문사(How · Who)는 맨 앞, 그 뒤는 의문문 순서 → How was your day? (Who 가 주어면 순서 그대로: Who likes pizza?)'(점검자 문안). 문법 근거: 의문사가 주어인 의문문에는 do 를 쓰지 않고 어순도 바꾸지 않음."
+  },
+  {
+    "lesson": "pg05-2",
+    "item": "pg05-2:a6 · p6 promptEn",
+    "finding": "대답 레슨의 질문 칸이 'Who is my best friend?'라서 'My best friend is Daehan.'과 대화가 안 됨. STUDENT 판 규칙은 그 문장을 배우는 pg05-1 에만 걸림.",
+    "action": "fixed",
+    "note": "pg05-2:a6 · p6 promptEn → 'Who is your best friend?', a6 ko → '(너의 가장 친한 친구는 누구니?) 나의 가장 친한 친구는 대한이야.' pg05-1:a6 · p21 은 STUDENT s3-2 판(영어 · 한국어) 그대로임(점검자 stuscan.cjs 로 글자 일치 확인). 판정 파일 p37 passOff (1) item 6 + (2) item 6 reason 을 'pg05-1 은 STUDENT 판, pg05-2 질문 칸만 your'로 고침. promptEn 은 소리로 읽지 않으므로 음성에는 영향 없음."
+  },
+  {
+    "lesson": "pg05-2 · pg05-3",
+    "item": "anchors 의 promptEn (pg05-2:a1~a6, pg05-3:a2 · a4 · a6)",
+    "finding": "anchors.promptEn 은 형식 문서 · 코드 타입에 없어 화면에 안 나옴. pg05-3 대답 예문은 무슨 질문에 대한 대답인지 사라짐.",
+    "action": "fixed",
+    "note": "점검자의 두 번째 안(ko 에 질문을 넣기)으로 데이터를 고침. pg05-3:a2 '(그것은 긴 길이야, 그렇지? — 멀 때) 응, 그래. / (멀지 않을 때) 아니, 그렇지 않아.', a4 '(그는 사탕을 좋아해, 그렇지? — 좋아할 때) …', a6 '(그는 프랑스어를 말할 수 없어, 그렇지? — 할 줄 알 때) …'. pg05-2 는 이미 ko 에 질문이 있었음. 그래서 promptEn 을 화면에 쓰지 않아도 뜻이 통함. 첫 번째 안(형식 문서에 적기)은 이 점검 뒤 이끄는 세션이 데이터-형식.md v1.3 에 넣었음: 앵커 promptEn 은 화면에서 한국어 위에 보이고 소리는 내지 않음, koSource · source · note 는 기록용, koFix 는 fix.fromKo 로. 그래서 형식 문서는 고치지 않음. 남은 것은 코드 쪽 일: src/lib/passoffTypes.ts 의 PassoffAnchor 에 promptEn 이 아직 없음 → 이끄는 세션이 코드 세션에 넘겨 주세요."
+  },
+  {
+    "lesson": "pg05-3 · pg06-2",
+    "item": "소리 내는 en 안의 ' / ' (pg05-3:a2 · a4 · a6, pg06-2:a3 · a6 · a7)",
+    "finding": "예문 en 은 그대로 소리가 되는데 ' / '가 쉼 없이 붙거나 'slash'로 읽힐 수 있음(passoff 분기는 cleanText 를 안 거침).",
+    "action": "fixed",
+    "note": "en 에서 ' / '를 뺌: 'Yes, it is. No, it isn't.' · 'Yes, he does. No, he doesn't.' · 'Yes, he can. No, he can't.' · 'babies, flies, cities, days, boys' · 'heroes, potatoes, volcanoes, pianos, photos' · 'oxen, children, men, feet, teeth, mice'. 한국어 칸의 '/'는 두 경우를 나누려고 남김. focus 는 모두 en 안에 그대로 있음. pg05-3:a2 에 fix(layout_or_extraction, 교재 원문 'Yes, it is. / No, it isn’t.')를 새로 달고, a4 · a6 의 fix.why 에 '/' 뺀 까닭을 더함. 판정 파일에는 p37 passOff (3) item 2 줄을 새로 넣고(newFinding) p37 (2)(3) 줄 reason 도 고침. pg06-2 의 '/'는 빌더가 표 두 행을 한 예문으로 합치며 넣은 것이라 교재 원문 판정은 없음. 음성 클립은 아직 만들지 않은 단계라 사라지는 클립이 없음. 이 글로 새로 만들면 됨."
+  },
+  {
+    "lesson": "pg06-1 · pg06-2",
+    "item": "③ 본 문항 pg06-1:s1 · s5 · s6, pg06-2:s1~s6",
+    "finding": "'명사에 동그라미' 문항이 영어 문장 전체를 보여 주는데 ③이 ④보다 먼저라서, 바로 뒤 ④ 영작의 정답이 먼저 보임.",
+    "action": "fixed",
+    "note": "처음에는 데이터로 고치면 교재 Review 순서가 깨진다고 보고 코드 · 설계 쪽으로 넘기려 했음. 그런데 이 점검 뒤 이끄는 세션이 데이터-형식.md v1.3(03:44)에 해법을 정했으므로(그런 ③ 문항은 reserve 로 날을 넘기는 복습에서 ④ 뒤에, 본 문항 4~6개는 ① 예문 문장이나 새 문장으로 채움) 그대로 고침. pg06-1: s1 · s5 · s6(④ p9 · p8 · p11 문장)을 reserve 로 돌림. ① 예문 문장인 교재 문항 s8(a1 She is a pianist.) · s13(a4 Two families …)을 본 문항으로 올림. 본 문항에서 빠질 뻔한 고유명사는 새 문항 s16('Tom visited Songnisan with his family.' — 고유 · 고유 · 집합)으로 채움. 본 문항 6개는 s8 · s2 · s13 · s16 · s3 · s4 순서(보통 → 집합 → 고유 → 물질 → 추상, 배열 순서만 바꾸고 id 는 그대로). pg06-2: s1~s6(④ p12 · p17 · p22 · p23 · p24 · p14 문장)을 모두 reserve 로 돌림. s7(sheep 보기)을 본 문항으로 올리고 새 문항 4개를 더함: s15 'Two women carried three boxes to the bus.'(women · boxes · bus), s16 'My brother has two knives and a watch.'(brother · knives · watch), s17 'Every city has its own heroes.'(city · heroes), s18 choice mouse → mice. 본 문항 5개(s7 · s15~s18). 새 문장은 모두 ④ · ⑤ 에 없고, 쓰인 복수형은 ① 예문 목록에 있는 규칙들임. 교재 Review 문항은 지우지 않고 reserve 로 남겼으므로 교재 대조(빠짐 0 · 판정 없음 0)는 그대로임. 확인: v1.3 check-lessons 에서 '③ 문장이 ④ 정답을 먼저 보여 줌' G4 9건 → 0건."
+  },
+  {
+    "lesson": "pg05-1 · pg05-2 · pg05-3 · pg06-1 · pg06-3",
+    "item": "② 설명 카드 worked · mistakes[].right (v1.3 공용 검사)",
+    "finding": "점검자 지적은 아님. 이 점검 뒤 이끄는 세션이 정한 v1.3 규칙('② 설명 카드의 worked · mistakes[].right 는 앵커가 아닌 ④ 문장을 쓰지 않는다')에 공용 검사가 G4 에서 7건을 찾음.",
+    "action": "fixed",
+    "note": "모두 ④ 에 없는 새 예로 바꾸고, 규칙과 풀이 단계는 그대로 둠. pg05-1: worked 를 p14 'Does she understand me well?' 대신 'Does she play the piano every day?'로 바꿈(표 3행도 'She plays the piano. → Does she play the piano?'로 맞춰 p14 를 미리 보여 주지 않게 함), mistakes[1].right 를 p11 대신 'Does your sister have a cat?'(wrong 'Does your sister has a cat?')으로. pg05-2: worked 를 p8 'Is Jane a teacher? → No, she isn't.' 대신 'Are your parents teachers? → No, they aren't.'로, mistakes[1] 을 p15 'No, he doesn't.' 대신 'Does it rain a lot here? — No, it isn't.' ✗ / 'No, it doesn't.'로. pg05-3: worked 를 p10 대신 'You swim well, don't you?'로. pg06-1: worked 를 p11 대신 'Please give me a glass of milk.'(우유 한 잔)로. pg06-3: mistakes[1] 을 p18 대신 'His office is on the four floor.' ✗ / 'His office is on the fourth floor.'로 하고, koDiff 의 예도 p17 · p18 의 답(the fifth grade · the third floor) 대신 the fourth grade · the second floor 로 바꿈(koDiff 는 검사 대상이 아니지만 같은 까닭). 표(table)에 있는 짧은 대답 꼴(pg05-2 의 Yes, he does. / No, he doesn't. 등)은 규칙 그 자체라 그대로 둠. 확인: v1.3 check-lessons 에서 '② 설명 카드가 ④ 정답을 먼저 보여 줌' G4 7건 → 0건."
+  },
+  {
+    "lesson": "pg05-2",
+    "item": "pg05-2:t1 (⑤ 처음 보는 문장, v1.3 공용 검사)",
+    "finding": "점검자 지적은 아님. v1.3 규칙('⑤ 처음 보는 문장은 레슨의 다른 곳에 나오지 않아야')에 공용 검사가 걸림. t1 의 답 'No, she isn't.'이 ④ p8 의 답과 글자까지 같음.",
+    "action": "fixed",
+    "note": "t1 을 새 문장으로 바꿈(id 그대로). promptEn 'Do your parents drink coffee?' → en \"No, they don't.\", ko '아니, 커피를 안 드셔.', condition 'no로 대답', accept 3개('No, they do not.' · \"No, they don't drink coffee.\" · 'No, they do not drink coffee.'), targets [[No],[they],[don't, do not]], 오답 패턴 3개(they doesn't · they aren't · you don't — 정답을 말하지 않는 힌트), tags short-answer · present-simple(이 레슨 + base 만), source new. 이 답은 ①~④ · 설명 카드 · ③ 문장과 보기 어디에도 없음. 짧은 대답은 같은 글이 겹치기 쉬워서, 이 레슨의 ④ 답 24개 · ③ 보기 · 새 풀이 예('No, they aren't.')를 모두 피해서 고름. 소리 클립은 아직 만들기 전이라 사라지는 것이 없음."
+  },
+  {
+    "lesson": "pg06-1 · pg06-2",
+    "item": "pg06-1:p8 · pg06-2:p15 · pg06-2:p18 koFix (v1.3 공용 검사)",
+    "finding": "점검자 지적은 아님. v1.3 필드 목록에서 koFix 가 빠지고 fix.fromKo 로 바뀌어, 공용 검사가 '형식에 없는 필드 koFix' 3건을 찾음(p15 는 이번 F22 에서 넣은 것).",
+    "action": "fixed",
+    "note": "세 문항 모두 koFix 를 fix 에 합침: {from(옛 영어), fromKo(옛 한국어), field 'en+ko', kind(영어 쪽 종류), why(영어 · 한국어 고친 까닭을 한 문장씩)}. 옛 글은 그대로임: p8 fromKo '한국은 많은 전통 휴일들이 있다: 음력 설, 석가탄신일, 추석이다.', p15 '그는 그의 집에 다섯 명의 아기가 있다.', p18 '사우디에서, 한 남자는 많은 아내를 가질 수 있다.' 확인: v1.3 check-lessons '형식에 없는 필드' G4 0건. 참고: G4 의 다른 한국어만 고친 문항(pg05-3:p13 · pg05-4:p4 · p5 · pg06-1:p4 · p9 · p11 · pg06-2:p12 · p19 · p23)은 fix.from 에 옛 한국어가 들어 있음(레슨 전체에서 fix.from 에 한글이 든 문항 142곳 — 다른 그룹도 같은 꼴). 검사가 막지 않고 형식 문서 표에 'from(옛 영어·문장)'으로 되어 있어 이번에는 바꾸지 않음. 원문 대조표를 만들 때 fromKo 로 모을지는 이끄는 세션이 정할 일."
+  }
+]

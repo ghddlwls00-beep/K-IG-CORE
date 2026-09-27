@@ -1,0 +1,1110 @@
+{
+  "id": "pg05-3",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부가의문문",
+  "label": "TOPIC 5. 의문문",
+  "menuLabel": "5-3. 부가의문문",
+  "unit": 5,
+  "part": 1,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(3) 부가의문문",
+  "grammarTags": [
+    "tag-question"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg05-3:a1",
+          "en": "It is a long way, isn't it?",
+          "ko": "그것은 긴 길이야, 그렇지?",
+          "koSource": "review",
+          "focus": [
+            "isn't it"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 1",
+            "reviewWhere": "review 2 item 1"
+          }
+        },
+        {
+          "id": "pg05-3:a2",
+          "en": "Yes, it is. No, it isn't.",
+          "ko": "(그것은 긴 길이야, 그렇지? — 멀 때) 응, 그래. / (멀지 않을 때) 아니, 그렇지 않아.",
+          "koSource": "new",
+          "focus": [
+            "it is",
+            "it isn't"
+          ],
+          "promptEn": "It is a long way, isn't it?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 2"
+          },
+          "fix": {
+            "from": "Yes, it is. / No, it isn’t.",
+            "kind": "layout_or_extraction",
+            "why": "두 대답 사이의 '/'가 소리로 읽히지 않도록 빼고 두 문장으로 썼습니다(두 경우는 한국어 칸에서 나눕니다)."
+          }
+        },
+        {
+          "id": "pg05-3:a3",
+          "en": "He likes candy, doesn't he?",
+          "ko": "그는 사탕을 좋아해, 그렇지?",
+          "koSource": "review",
+          "focus": [
+            "doesn't he"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 3",
+            "reviewWhere": "review 2 item 2"
+          }
+        },
+        {
+          "id": "pg05-3:a4",
+          "en": "Yes, he does. No, he doesn't.",
+          "ko": "(그는 사탕을 좋아해, 그렇지? — 좋아할 때) 응, 좋아해. / (안 좋아할 때) 아니, 안 좋아해.",
+          "koSource": "new",
+          "focus": [
+            "he does",
+            "he doesn't"
+          ],
+          "promptEn": "He likes candy, doesn't he?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 4"
+          },
+          "fix": {
+            "from": "Yes, he does / No, he doesn’t",
+            "kind": "english_grammar",
+            "why": "두 대답 끝의 마침표가 빠져 있어 붙이고, 사이의 '/'가 소리로 읽히지 않도록 빼서 두 문장으로 썼습니다."
+          }
+        },
+        {
+          "id": "pg05-3:a5",
+          "en": "He can't speak French, can he?",
+          "ko": "그는 프랑스어를 말할 수 없어, 그렇지?",
+          "koSource": "review",
+          "focus": [
+            "can he"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 5",
+            "reviewWhere": "review 2 item 3"
+          }
+        },
+        {
+          "id": "pg05-3:a6",
+          "en": "Yes, he can. No, he can't.",
+          "ko": "(그는 프랑스어를 말할 수 없어, 그렇지? — 할 줄 알 때) 아니, 할 줄 알아. / (못 할 때) 응, 못 해.",
+          "koSource": "new",
+          "focus": [
+            "Yes, he can",
+            "No, he can't"
+          ],
+          "promptEn": "He can't speak French, can he?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 6"
+          },
+          "fix": {
+            "from": "Yes, he can / No, he can’t.",
+            "kind": "english_grammar",
+            "why": "'Yes, he can' 끝의 마침표가 빠져 있어 붙이고, 사이의 '/'가 소리로 읽히지 않도록 빼서 두 문장으로 썼습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg05-3:a1",
+          "pg05-3:a3",
+          "pg05-3:a5"
+        ],
+        "question": "꼬리(isn't it · doesn't he · can he)는 앞 문장과 어떤 관계일까요?",
+        "options": [
+          "앞이 긍정이면 꼬리는 부정, 앞이 부정이면 꼬리는 긍정",
+          "꼬리는 언제나 부정",
+          "꼬리는 언제나 앞 문장과 같은 모양"
+        ],
+        "answer": 0,
+        "why": "It is → isn't it?, He likes → doesn't he?, He can't → can he? 처럼 앞과 반대로 붙입니다."
+      },
+      "title": "부가의문문: 앞 문장과 반대로 꼬리를 붙여요",
+      "points": [
+        "앞 문장이 긍정이면 꼬리는 부정, 부정이면 꼬리는 긍정",
+        "꼬리 동사는 앞 문장의 be동사 · 조동사 그대로 (is → isn't it?)",
+        "일반동사는 do · does · did 로 받아요 (likes → doesn't he?)",
+        "꼬리 주어는 대명사: he · she · it · they (this · that → it)",
+        "대답은 사실대로: 사실이 긍정이면 Yes, 부정이면 No"
+      ],
+      "table": {
+        "columns": [
+          "앞 문장",
+          "꼬리"
+        ],
+        "rows": [
+          [
+            "It is a long way,",
+            "isn't it?"
+          ],
+          [
+            "He likes candy,",
+            "doesn't he?"
+          ],
+          [
+            "He can't speak French,",
+            "can he?"
+          ],
+          [
+            "You aren't tired,",
+            "are you?"
+          ],
+          [
+            "He didn't call you,",
+            "did he?"
+          ],
+          [
+            "She won't come,",
+            "will she?"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '그렇지?' 하나로 끝나지만, 영어는 앞 문장의 동사와 주어에 맞춰 꼬리 모양이 바뀝니다. 또 '그는 프랑스어를 못 하지?'에 '아니, 할 줄 알아'는 영어로 Yes, he can. 입니다.",
+      "mistakes": [
+        {
+          "wrong": "He likes candy, isn't he?",
+          "right": "He likes candy, doesn't he?",
+          "why": "likes 는 일반동사라 does 로 받아요."
+        },
+        {
+          "wrong": "He can't speak French, can't he?",
+          "right": "He can't speak French, can he?",
+          "why": "앞이 부정이면 꼬리는 긍정이에요."
+        }
+      ],
+      "worked": [
+        "너는 수영을 잘해, 그렇지?",
+        "앞 문장: You swim well. (긍정 · 일반동사)",
+        "일반동사 → do, 긍정 → 부정 don't",
+        "주어 you → don't you?",
+        "You swim well, don't you?"
+      ],
+      "terms": [],
+      "check": {
+        "question": "'She is your sister, ___?' 빈칸에 알맞은 것은?",
+        "options": [
+          "isn't she",
+          "doesn't she",
+          "is she"
+        ],
+        "answer": 0,
+        "why": "앞이 긍정 be동사 is 이니 꼬리는 부정 isn't + 주어 she 입니다.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg05-3:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 꼬리를 고르세요",
+          "sentence": "That car is new, ___?",
+          "options": [
+            "isn't that",
+            "isn't it",
+            "is it"
+          ],
+          "answer": 1,
+          "why": "꼬리의 주어는 대명사예요. that car 는 it 으로 받고, 앞이 긍정이니 isn't it?",
+          "source": "new"
+        },
+        {
+          "id": "pg05-3:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 꼬리를 고르세요",
+          "sentence": "Your sister plays the piano, ___?",
+          "options": [
+            "isn't she",
+            "doesn't she",
+            "don't she"
+          ],
+          "answer": 1,
+          "why": "plays 는 일반동사 3인칭 단수라 doesn't she? 예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-3:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 꼬리를 고르세요",
+          "sentence": "They aren't at home, ___?",
+          "options": [
+            "aren't they",
+            "are they",
+            "do they"
+          ],
+          "answer": 1,
+          "why": "앞이 부정(aren't)이면 꼬리는 긍정 are they? 예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-3:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 꼬리를 고르세요",
+          "sentence": "Tom went to the park, ___?",
+          "options": [
+            "didn't he",
+            "wasn't he",
+            "didn't Tom"
+          ],
+          "answer": 0,
+          "why": "went 는 일반동사 과거라 did 로 받고, 이름은 he 로 바꿔요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-3:s5",
+          "kind": "choice",
+          "instruction": "에이미가 자전거를 탈 줄 안다면, 알맞은 대답을 고르세요",
+          "sentence": "Amy can't ride a bike, can she?",
+          "options": [
+            "Yes, she can.",
+            "No, she can.",
+            "No, she can't."
+          ],
+          "answer": 0,
+          "why": "영어는 사실이 긍정이면 Yes 예요. 한국어로는 '아니, 탈 줄 알아.'",
+          "source": "new"
+        },
+        {
+          "id": "pg05-3:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 꼬리를 고르세요",
+          "sentence": "You will come to my party, ___ you?",
+          "options": [
+            "won't",
+            "will",
+            "don't"
+          ],
+          "answer": 0,
+          "why": "앞이 긍정 will 이니 꼬리는 부정 won't you? 예요. 풀어 쓰면 will you not? 순서예요(will not you ✗).",
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg05-3:p1",
+          "ko": "그것은 긴 길이야, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "It is a long way, isn't it?",
+          "accept": [
+            "It's a long way, isn't it?",
+            "It is a long way, is it not?",
+            "It is a long road, isn't it?",
+            "It's a long road, isn't it?",
+            "It is a long road, is it not?"
+          ],
+          "targets": [
+            [
+              "isn't it",
+              "is it not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "doesn't it",
+              "hint": "앞 문장의 동사가 is 이니 꼬리도 be동사(isn't)예요."
+            },
+            {
+              "match": "isn't that",
+              "hint": "꼬리의 주어는 대명사 it 이에요."
+            },
+            {
+              "match": "It is a long way, is not it?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "It's a long way, is not it?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "It is a long road, is not it?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "It's a long road, is not it?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "passOff (3) item 1 · application (2) item 1",
+            "reviewWhere": "review 2 item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p2",
+          "ko": "(멀 때) 응, 멀어.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "It is a long way, isn't it?",
+          "en": "Yes, it is.",
+          "accept": [
+            "Yes, it is a long way.",
+            "Yes, it is far."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "it"
+            ],
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Yes, it isn't",
+              "hint": "멀다면 사실이 긍정이라 Yes 뒤도 긍정으로 맞춰요."
+            },
+            {
+              "match": "Yes, it's.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "tag-question",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 2"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p3",
+          "ko": "(멀지 않을 때) 아니, 멀지 않아.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "It is a long way, isn't it?",
+          "en": "No, it isn't.",
+          "accept": [
+            "No, it is not.",
+            "No, it's not.",
+            "No, it isn't a long way.",
+            "No, it is not a long way.",
+            "No, it's not a long way.",
+            "No, it isn't far.",
+            "No, it is not far.",
+            "No, it's not far."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "it"
+            ],
+            [
+              "isn't",
+              "is not",
+              "'s not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Yes, it isn't",
+              "hint": "멀지 않다면 사실이 부정이라 No 로 시작해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "tag-question",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 2"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p4",
+          "ko": "그는 사탕을 좋아해, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "He likes candy, doesn't he?",
+          "accept": [
+            "He likes candies, doesn't he?",
+            "He likes sweets, doesn't he?",
+            "He likes candy, does he not?"
+          ],
+          "targets": [
+            [
+              "doesn't he",
+              "does he not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "isn't he",
+              "hint": "likes 는 일반동사라 꼬리는 doesn't 예요."
+            },
+            {
+              "match": "don't he",
+              "hint": "he 는 3인칭 단수라 doesn't 예요."
+            },
+            {
+              "match": "He likes candy, does not he?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "He likes candies, does not he?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "He likes sweets, does not he?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "passOff (3) item 3 · application (2) item 2",
+            "reviewWhere": "review 2 item 2"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p5",
+          "ko": "(좋아할 때) 응, 좋아해.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "He likes candy, doesn't he?",
+          "en": "Yes, he does.",
+          "accept": [],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "he"
+            ],
+            [
+              "does"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he is",
+              "hint": "일반동사(likes)로 말했으니 does 로 대답해요."
+            },
+            {
+              "match": "he likes",
+              "hint": "likes 를 되풀이하지 말고 does 로 짧게 대답해 보세요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "tag-question",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 4"
+          },
+          "fix": {
+            "from": "Yes, he does / No, he doesn’t",
+            "kind": "english_grammar",
+            "why": "두 대답 끝의 마침표가 빠져 있어 붙이고, 대답을 하나씩 나눴습니다."
+          }
+        },
+        {
+          "id": "pg05-3:p6",
+          "ko": "(안 좋아할 때) 아니, 안 좋아해.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "He likes candy, doesn't he?",
+          "en": "No, he doesn't.",
+          "accept": [
+            "No, he does not.",
+            "No, he doesn't like candy.",
+            "No, he does not like candy."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "he"
+            ],
+            [
+              "doesn't",
+              "does not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he don't",
+              "hint": "he 는 3인칭 단수라 doesn't 예요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "tag-question",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 4"
+          },
+          "fix": {
+            "from": "Yes, he does / No, he doesn’t",
+            "kind": "english_grammar",
+            "why": "두 대답 끝의 마침표가 빠져 있어 붙이고, 대답을 하나씩 나눴습니다."
+          }
+        },
+        {
+          "id": "pg05-3:p7",
+          "ko": "그는 프랑스어를 말할 수 없어, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "He can't speak French, can he?",
+          "accept": [
+            "He cannot speak French, can he?"
+          ],
+          "targets": [
+            [
+              "can he"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "can't he",
+              "hint": "앞이 부정(can't)이면 꼬리는 긍정이에요."
+            },
+            {
+              "match": "does he",
+              "hint": "앞 문장의 조동사 can 을 그대로 꼬리에 써요."
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "can-basic",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "passOff (3) item 5 · application (2) item 3",
+            "reviewWhere": "review 2 item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p8",
+          "ko": "(할 줄 알 때) 아니, 할 줄 알아.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "He can't speak French, can he?",
+          "en": "Yes, he can.",
+          "accept": [
+            "Yes, he can speak French."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "he"
+            ],
+            [
+              "can"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "No, he can",
+              "hint": "할 줄 안다면 사실이 긍정이라 영어는 Yes 로 시작해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "tag-question",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 6"
+          },
+          "fix": {
+            "from": "Yes, he can / No, he can’t.",
+            "kind": "english_grammar",
+            "why": "'Yes, he can' 끝의 마침표가 빠져 있어 붙이고, 대답을 하나씩 나눴습니다."
+          }
+        },
+        {
+          "id": "pg05-3:p9",
+          "ko": "(못 할 때) 응, 못 해.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "He can't speak French, can he?",
+          "en": "No, he can't.",
+          "accept": [
+            "No, he cannot.",
+            "No, he can't speak French.",
+            "No, he cannot speak French."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "he"
+            ],
+            [
+              "can't",
+              "cannot"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Yes, he can't",
+              "hint": "못 한다면 사실이 부정이라 영어는 No 로 시작해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "tag-question",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (3) item 6"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p10",
+          "ko": "너는 그녀를 많이 좋아해, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "You like her a lot, don't you?",
+          "accept": [
+            "You like her very much, don't you?",
+            "You really like her, don't you?",
+            "You like her a lot, do you not?"
+          ],
+          "targets": [
+            [
+              "don't you",
+              "do you not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "aren't you",
+              "hint": "like 는 일반동사라 꼬리는 don't 예요."
+            },
+            {
+              "match": "doesn't you",
+              "hint": "you 에는 don't 를 써요."
+            },
+            {
+              "match": "You like her a lot, do not you?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "You like her very much, do not you?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "You really like her, do not you?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (2) item 5",
+            "reviewWhere": "review 2 item 5"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p11",
+          "ko": "우리는 다음 시험에 준비되어 있지 않아, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "We aren't ready for the next exam, are we?",
+          "accept": [
+            "We are not ready for the next exam, are we?",
+            "We're not ready for the next exam, are we?",
+            "We aren't ready for the next test, are we?",
+            "We are not ready for the next test, are we?",
+            "We're not ready for the next test, are we?"
+          ],
+          "targets": [
+            [
+              "are we"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "aren't we",
+              "hint": "앞이 부정(aren't)이면 꼬리는 긍정이에요."
+            },
+            {
+              "match": "don't we",
+              "hint": "앞 문장의 동사가 are 라 꼬리도 be동사예요."
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "be-present",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (2) item 6",
+            "reviewWhere": "review 2 item 6"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p12",
+          "ko": "그녀는 저녁을 먹지 않았어, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "She didn't have dinner, did she?",
+          "accept": [
+            "She did not have dinner, did she?",
+            "She didn't eat dinner, did she?",
+            "She didn't have supper, did she?",
+            "She didn't eat supper, did she?"
+          ],
+          "targets": [
+            [
+              "did she"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "didn't she",
+              "hint": "앞이 부정(didn't)이면 꼬리는 긍정이에요."
+            },
+            {
+              "match": "does she",
+              "hint": "과거(didn't)로 말했으니 꼬리도 did 예요."
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "past-simple",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (2) item 7",
+            "reviewWhere": "review 2 item 7"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-3:p13",
+          "ko": "너는 정오 전에 돌아오지 않을 거야, 그렇지?",
+          "koSource": "review-fixed",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "You won't be back before noon, will you?",
+          "accept": [
+            "You will not be back before noon, will you?",
+            "You won't come back before noon, will you?",
+            "You will not come back before noon, will you?"
+          ],
+          "targets": [
+            [
+              "will you"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "won't you",
+              "hint": "앞이 부정(won't)이면 꼬리는 긍정이에요."
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "future-will",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (2) item 8",
+            "reviewWhere": "review 2 item 8"
+          },
+          "fix": {
+            "from": "너는 정오 전에 돌아 오지 않을 거야, 그렇지?",
+            "kind": "korean_typo",
+            "why": "'돌아오다'는 한 낱말이라 붙여 씁니다."
+          }
+        },
+        {
+          "id": "pg05-3:p14",
+          "ko": "그는 갈색 스웨터를 입고 있어, 그렇지?",
+          "koSource": "review",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "He's wearing a brown sweater, isn't he?",
+          "accept": [
+            "He is wearing a brown sweater, isn't he?",
+            "He is wearing a brown sweater, is he not?"
+          ],
+          "targets": [
+            [
+              "isn't he",
+              "is he not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "doesn't he",
+              "hint": "앞 문장의 동사는 is(He's)라 꼬리도 isn't 예요."
+            },
+            {
+              "match": "He's wearing a brown sweater, is not he?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "He is wearing a brown sweater, is not he?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "progressive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "progressive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (2) item 4",
+            "reviewWhere": "review 2 item 4"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg05-3:t1",
+          "ko": "이것은 너의 책이지?",
+          "koSource": "grammar",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "This is your book, isn't it?",
+          "accept": [
+            "This is your book, is it not?"
+          ],
+          "targets": [
+            [
+              "isn't it",
+              "is it not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "isn't this",
+              "hint": "꼬리의 주어는 대명사예요. this 는 it 으로 받아요."
+            },
+            {
+              "match": "This is your book, is not it?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-015#13",
+          "fix": null
+        },
+        {
+          "id": "pg05-3:t2",
+          "ko": "당신은 영어를 공부했지요?",
+          "koSource": "grammar",
+          "condition": "부가의문문으로",
+          "promptEn": null,
+          "en": "You studied English, didn't you?",
+          "accept": [
+            "You studied English, did you not?"
+          ],
+          "targets": [
+            [
+              "didn't you",
+              "did you not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "weren't you",
+              "hint": "studied 는 일반동사 과거라 didn't 로 받아요."
+            },
+            {
+              "match": "don't you",
+              "hint": "과거(studied)이니 didn't 예요."
+            },
+            {
+              "match": "You studied English, did not you?",
+              "hint": "꼬리를 줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "tag-question",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-067#54",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg05-3:f1",
+      "template": "You like ___, don't you?",
+      "ko": "너는 ___을(를) 좋아하지, 그렇지?"
+    }
+  ]
+}

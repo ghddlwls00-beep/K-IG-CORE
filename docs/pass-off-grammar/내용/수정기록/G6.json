@@ -1,0 +1,100 @@
+[
+  {
+    "lesson": "pg08-4",
+    "item": "pg08-4:p3, pg08-4:p4",
+    "finding": "한국어 안긴 절이 현재형('그가 원하는 것')이라 영어로 wanted 를 쓰려면 시제 일치(pg11-4, tense-agreement, base 아님)가 필요한데, tags 에 없고 challenge=false 였음. 'what he wants' 는 정답으로 받지 않음.",
+    "action": "fixed",
+    "note": "점검자 판단이 맞음: 주절(asked · knew)이 아니라 안긴 절 동사의 시제를 고르는 문제이고, 교재 2권 TOPIC 11 (5) 시제 일치 예문 'I knew that he did it.'과 같은 규칙임. p3 tags → [indirect-question, past-simple, tense-agreement], p4 tags → [relative-what, past-simple, tense-agreement], 둘 다 challenge=true · challengeTags [tense-agreement]. p4 오답 패턴 'I know what he'를 {match 'what he wants', hint \"'알았다'는 지난 일이에요. 그때 그가 원한 것이니 두 동사의 시제를 모두 확인하세요.\"}로 바꿈(3개 유지, 'I know what he wants'도 걸림, 모범 답 'I knew what he wanted.'에는 안 걸림). produce 순서를 p1,p2,p5,p6,p7,p8,p9,p3,p4 로 바꾸고 id 는 그대로 둠(데이터-형식.md: 한 번 붙인 id 는 바꾸지 않음). 한국어 제시문은 틀린 곳이 없어 그대로(D6). 'what he wants'는 시제가 바뀌는 답이라 허용 답에 넣지 않음. 참고: 점검자 검사기 rv8_check.cjs 는 배열 위치와 id 번호가 같기를 바라므로 pg08-4 에 'id 순서' 7줄을 내는데, 점검자가 권고한 대로 id 를 유지해서 생기는 예상된 결과임."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "pg08-1 rule.worked[2]",
+    "finding": "'소녀가 따르는 사람(주어 자리)'이 한국어로 '소녀가 따라가는 대상(him)'으로 읽혀, 주어 자리 설명이 목적어를 가리킴.",
+    "action": "fixed",
+    "note": "worked[2] → \"'그를 따르는' → 소녀가 그를 따른다: 따르는 쪽이 소녀(주어 자리) → who\"."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "pg08-1:p8",
+    "finding": "'존경하다'의 가장 흔한 번역 respect 가 허용 답에 없음(admire 만 있음).",
+    "action": "fixed",
+    "note": "respect 4개(The person whom/who I respect the most/most is Hiddink.)와 점검자가 선택으로 적은 어순 바꾼 답 8개(Hiddink is the person whom/who I admire/respect the most/most.)를 더함 — 허용 답 3개 → 15개. 모두 목표형 whom 또는 who 포함(스크립트로 확인)."
+  },
+  {
+    "lesson": "pg08-4",
+    "item": "pg08-4:s4",
+    "finding": "빈칸 'He is not ___ he was.'에 who 도 맞는 영어(He is not who he was)인데 short 정답이 what 하나뿐이라 모호함.",
+    "action": "fixed",
+    "note": "점검자 첫째 안대로 short → choice: instruction '빈칸에 알맞은 것을 고르세요(그는 예전의 그가 아니다)', 보기 [what, which, whose], 정답 0(what). which · whose 는 이 자리에 올 수 없어 정답이 하나뿐이고, who · that 은 보기에 넣지 않음. why · source · bookRef 는 그대로."
+  },
+  {
+    "lesson": "pg08-4",
+    "item": "pg08-4 rule.terms",
+    "finding": "terms 가 {now '관계대명사 what', book '복합 관계 대명사'}라 두 말이 같은 뜻처럼 나란히 보임. 지금 학교문법의 복합관계대명사는 whoever · whatever · whichever 라 틀린 등식.",
+    "action": "fixed",
+    "note": "rule.terms → []. 웹은 교재 Review 3 지시문을 보여 주지 않아 옛 이름을 이어 줄 자리도 없음. TOPIC-08.json 판정 7번째(p58, '(3) what …')의 reason 에서 '교재 용어는 설명 카드 용어 병기에만 적음'을 \"교재 용어 '복합 관계 대명사'는 화면에 쓰지 않음(설명 카드 용어 병기에도 넣지 않음 — 지금 교과서에서 그 이름은 whoever · whatever 를 뜻해, what 과 나란히 적으면 같은 개념의 옛 이름이 아니라 틀린 등식이 됨)\"로 고침."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "pg08-3:p8",
+    "finding": "'전화로 당신을 찾는 사람이 있어요'의 자연스러운 답 'There is someone who wants to talk(speak) to you on the phone.'이 허용 답에 없음.",
+    "action": "fixed",
+    "note": "기존 목록과 같은 짜임으로 There is / There's × someone / somebody / a person × who / that × wants to talk / speak to you on the phone 24개를 더함(허용 답 11 → 35). 모두 목표형 who 또는 that 포함, want to 는 base."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "pg08-3:t2",
+    "finding": "'수영장에서 수영하는 그 소년은 누구인가?'는 지금 수영하는 소년으로도 읽히는데 진행형 답(that is swimming)이 틀림 처리됨.",
+    "action": "fixed",
+    "note": "허용 답에만 4개 더함: Who is the boy that is swimming in the pool? · Who is the boy that's swimming in the pool? · Who's the boy that is swimming in the pool? · Who's the boy that's swimming in the pool? en · ko · source 는 그대로(GRAMMAR II gh2-041#3 음성 재사용). 모범 답이 아니어서 도전 판정과 무관."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "pg08-1:p8 errorPatterns[1], pg08-1:t1",
+    "finding": "p8 의 'The person I admire' 힌트가 '관계대명사가 빠졌어요'라고 해 맞는 영어(STUDENT s15-2 원문과 같은 꼴)를 틀린 것처럼 말함. t1 은 GRAMMAR II 원래 대안 'I know a student that studies very hard.'를 뺐는데 안내가 없음.",
+    "action": "fixed",
+    "note": "p8 errorPatterns[1].hint → '맞는 영어예요(목적어 자리 관계대명사는 뺄 수 있어요). 이 문항은 (whom)을 넣어 써 보세요.' (STUDENT s15-2 첫 문장 'The person I admire the most is Guus Hiddink, …' 확인). t1 errorPatterns 에 {match 'student that studies', hint '맞는 영어지만 이 문항은 (who)를 써요.'} 추가(2 → 3개, GRAMMAR II gh2-015#1 대안 목록에서 확인). 이 네 레슨의 다른 목적격 문항(pg08-1:p7·p9, pg08-2:p2·p5·p7, pg08-3:p2·p4·p5·p7·p11)에 줄 '관계사를 뺀 맞는 답' 안내는 문항당 오답 패턴 3개 한도 때문에 데이터로 넣지 않음 — 점검자 권고인 채점기 공통 규칙('허용 답에서 관계사만 빠진 답이면 맞는 영어지만 조건 칩의 관계사를 넣어 달라고 안내')을 코드 세션에 넘길지는 이끄는 세션이 판단할 일."
+  },
+  {
+    "lesson": "pg08-2",
+    "item": "pg08-2:p1 errorPatterns[1] (match 'songpyeon which')",
+    "finding": "쉼표를 지우고 맞춰 보는 채점기라면 이 패턴이 모범 답('songpyeon, which')에 걸려, 다른 실수를 한 학생에게 엉뚱한 힌트가 뜰 수 있음.",
+    "action": "rejected",
+    "note": "반대가 아니라 범위 밖이라 이번에 적용하지 않음. 레슨 데이터는 점검자 권고대로 그대로 둠(설계 §8 의 정규화는 대소문자 · 곡선 따옴표 · 끝 문장부호 · 공백 · 축약형이고 문장 안 쉼표는 남기므로, 설계대로 만든 채점기에서는 충돌 없음 — 쉼표를 남긴 비교로 다시 재서 충돌 0 확인). 권고의 나머지, 곧 데이터-형식.md 에 'errorPatterns.match 는 문장 안 쉼표를 남긴 글에 맞춰 본다'를 적고 코드 세션에 알리는 일, 그리고 코드 세션이 이 약속을 못 지키면 이 패턴을 지우는 일은 공용 형식 문서 · 다른 세션 통보라 수정자 범위(레슨 · 판정 파일) 밖. 이끄는 세션이 처리해 주세요."
+  },
+  {
+    "lesson": "pg08-1, pg08-2, pg08-4",
+    "item": "pg08-1:p3, pg08-2:p4, pg08-2:p7, pg08-4:p6",
+    "finding": "같은 뜻의 흔한 맞는 답이 빠짐: injured himself · was not delicious / tasted bad · had given · intended to say.",
+    "action": "fixed",
+    "note": "pg08-1:p3 에 'The man who injured himself in the accident is now in (the) hospital.' · '… is in (the) hospital now.' 4개(19 → 23). pg08-2:p4 에 didn't / did not × was not delicious · wasn't delicious · tasted bad 6개(9 → 15, 기존 목록처럼 축약형 · 풀어 쓴 형 모두). pg08-2:p7 에 father / dad × had given me · had given to me 4개(3 → 7). pg08-4:p6 에 That's · That is · That isn't · It's · It is · It isn't × not what I intended to say 6개(29 → 35). 모두 목표형 포함, 모범 답 · 한국어는 그대로."
+  },
+  {
+    "lesson": "pg08-4",
+    "item": "pg08-4 rule.table.rows[0]",
+    "finding": "관계대명사 what 과 의문사 절을 가르는 표의 첫 줄 예문 'I knew what he wanted.'가 '그가 무엇을 원하는지 알았다'(의문사 절)로도 읽혀 대표 예로 모호함.",
+    "action": "fixed",
+    "note": "rows[0][2] → \"I'll do what you want me to do.\" (do 뒤라 '무엇을 ~하는지'로 읽을 수 없는 관계대명사 what). anchors a4 · produce p4 는 한국어('그가 원하는 것을')를 따라 그대로."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "pg08-3 rule.points[1]",
+    "finding": "'선행사에 … -thing 이 붙으면'은 nothing · anything 처럼 -thing 낱말 자체가 선행사인 경우를 '붙는다'고 말해 부정확함(discovery.why 도 같은 말투).",
+    "action": "fixed",
+    "note": "points[1] → '선행사에 the first · the very · the only · all 이 붙거나, 선행사가 -thing(nothing · anything)이면 흔히 that 을 써요.' discovery.why 는 점검자가 제안한 최소 치환('붙거나 선행사가 이런 말이면')으로는 '-thing 같은 말이 선행사에 붙거나'가 남아서, 두 경우를 나눠 points[1] 과 같은 짜임으로 씀: '선행사에 the first · the very · the only · all 이 붙거나, 선행사가 nothing · anything 같은 -thing 낱말이면 who · which 보다 that 을 즐겨 써요.'"
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "pg08-3:a1, pg08-3:p1 studentRef",
+    "finding": "문장대조는 이 문장을 middle p10 과 같은 줄(§10 'middle 47 = 꼬리표 없음')로 분류했는데, 작업자는 STUDENT s10-5(adapted)에 연결했고 판정 파일에 이유가 없음.",
+    "action": "fixed",
+    "note": "studentRef 는 그대로 둠 — s10-5 셋째 문장 'I can reflect on things that did not go well and hopefully plan a better new week.'의 앞부분과 글자까지 같음을 확인했고, 결과-문장대조.json 에 exactOther(middle p10)로 분류된 것도 확인함. TOPIC-08.json 에 판정 1건 추가: type student_tag · decision keep · appliedTo [pg08-3:a1, pg08-3:p1] · newFinding true. page 는 점검자 제안 58 대신 59 로 적음((10과) 꼬리표가 인쇄된 곳이 p59 Application 줄이고, p58 Pass-Off 줄에는 꼬리표가 없음). §10 셈은 middle 47 → 46, 바꾼 문장 38 → 39 가 됨. §10 을 글자대로 지키려고 studentRef 를 뺄지는 이끄는 세션이 고를 일."
+  },
+  {
+    "lesson": "pg08-1, pg08-2, pg08-3, pg08-4",
+    "item": "select 항목 24개의 source, pg08-2:p6·p7 의 source, pg08-4 의 clauseLabel",
+    "finding": "데이터-형식.md v1 에 없는 필드 · 뜻: 요소 문항 source:'new'(문항은 새로 만들고 문장은 교재에서 옴)가 형식 문서의 'bookRef 대신 source:new(새 문장)'와 뜻이 달라, 원문대조표 스크립트가 교재 문장을 새 문장으로 셀 수 있음. passoffTypes.ts 에는 source 가 없음.",
+    "action": "rejected",
+    "note": "반대가 아니라 범위 밖이라 이번에 적용하지 않음. 점검자도 적었듯 데이터-형식.md v2(문항 출처를 itemSource 로 나눌지, source 의 뜻을 적고 passoffTypes.ts 에 source?: string 을 더할지)는 이끄는 세션과 코드 세션이 정할 일. 그 결정 전에 G6 레슨 파일만 바꾸면 다른 그룹과 형식이 갈라짐. 결정이 나면 G6 의 select 24개 · pg08-2:p6·p7 의 source 와 pg08-4 의 clauseLabel 을 한 번에 고치면 됨(clauseLabel 은 passoffTypes.ts 에 이미 있음)."
+  }
+]

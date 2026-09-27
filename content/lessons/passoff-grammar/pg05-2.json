@@ -1,0 +1,1635 @@
+{
+  "id": "pg05-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "의문문의 대답형",
+  "label": "TOPIC 5. 의문문",
+  "menuLabel": "5-2. 의문문의 대답형",
+  "unit": 5,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 의문문의 대답",
+  "grammarTags": [
+    "short-answer"
+  ],
+  "koreanWords": [
+    "Daehan",
+    "Seoul"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg05-2:a1",
+          "en": "Yes, it is.",
+          "ko": "(이것은 책상이니?) 응, 그래.",
+          "koSource": "new",
+          "focus": [
+            "it is"
+          ],
+          "promptEn": "Is this a desk?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 1"
+          }
+        },
+        {
+          "id": "pg05-2:a2",
+          "en": "Yes, I do.",
+          "ko": "(너는 친구들과 함께 있는 것을 좋아하니?) 응, 좋아해.",
+          "koSource": "new",
+          "focus": [
+            "I do"
+          ],
+          "promptEn": "Do you like to be around your friends?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 2"
+          }
+        },
+        {
+          "id": "pg05-2:a3",
+          "en": "No, he can't.",
+          "ko": "(그는 기타를 잘 칠 수 있니?) 아니, 잘 못 쳐.",
+          "koSource": "new",
+          "focus": [
+            "he can't"
+          ],
+          "promptEn": "Can he play the guitar well?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 3"
+          },
+          "fix": {
+            "from": "No, he can’t",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있어 붙였습니다."
+          }
+        },
+        {
+          "id": "pg05-2:a4",
+          "en": "Yes, there are.",
+          "ko": "(너의 가족은 네 명이니?) 응, 네 명이야.",
+          "koSource": "new",
+          "focus": [
+            "there are"
+          ],
+          "promptEn": "Are there four people in your family?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 4"
+          }
+        },
+        {
+          "id": "pg05-2:a5",
+          "en": "It was fun, Mom.",
+          "ko": "(오늘 너의 하루는 어땠니?) 재미있었어요, 엄마.",
+          "koSource": "new",
+          "focus": [
+            "It was"
+          ],
+          "promptEn": "How was your day?",
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 5"
+          },
+          "fix": {
+            "from": "It was fun, mom.",
+            "kind": "english_grammar",
+            "why": "엄마를 부르는 말 Mom 은 이름처럼 대문자로 씁니다."
+          }
+        },
+        {
+          "id": "pg05-2:a6",
+          "en": "My best friend is Daehan.",
+          "ko": "(너의 가장 친한 친구는 누구니?) 나의 가장 친한 친구는 대한이야.",
+          "koSource": "new",
+          "focus": [
+            "is"
+          ],
+          "promptEn": "Who is your best friend?",
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 6"
+          },
+          "fix": {
+            "from": "My best friend is 대한.",
+            "kind": "english_unnatural",
+            "why": "영어 문장 안의 한글 이름을 로마자 Daehan 으로 바꿨습니다(소리 · 입력용)."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg05-2:a1",
+          "pg05-2:a2",
+          "pg05-2:a3"
+        ],
+        "question": "대답 속 is · do · can't 는 어디에서 왔을까요?",
+        "options": [
+          "질문 맨 앞의 동사(Is · Do · Can)",
+          "대답하는 사람의 기분",
+          "문장의 길이"
+        ],
+        "answer": 0,
+        "why": "질문을 시작한 be동사 · do · 조동사를 대답에서 그대로 받아 짧게 대답합니다."
+      },
+      "title": "짧은 대답 = Yes/No + 대명사 + 질문의 동사",
+      "points": [
+        "질문 앞머리(Is · Do · Can)를 대답에서 그대로 써요.",
+        "주어는 대명사로: this · that → it, Jane → she, you → I",
+        "No 로 대답하면 not 을 붙여요: No, he can't.",
+        "Yes 대답은 끝을 줄이지 않아요: Yes, it is. (Yes, it's. ✗)",
+        "How · Who 질문에는 Yes/No 없이 내용으로 대답해요."
+      ],
+      "table": {
+        "columns": [
+          "질문",
+          "Yes",
+          "No"
+        ],
+        "rows": [
+          [
+            "Is this a desk?",
+            "Yes, it is.",
+            "No, it isn't."
+          ],
+          [
+            "Do you like it?",
+            "Yes, I do.",
+            "No, I don't."
+          ],
+          [
+            "Does he have a dog?",
+            "Yes, he does.",
+            "No, he doesn't."
+          ],
+          [
+            "Can he swim?",
+            "Yes, he can.",
+            "No, he can't."
+          ],
+          [
+            "Are there four people?",
+            "Yes, there are.",
+            "No, there aren't."
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '응, 그래' 한마디로 대답하지만, 영어는 질문의 동사(is · do · can)와 대명사를 맞춰서 대답합니다.",
+      "mistakes": [
+        {
+          "wrong": "Yes, it's.",
+          "right": "Yes, it is.",
+          "why": "Yes 로 짧게 대답할 때는 끝을 줄여 쓰지 않아요."
+        },
+        {
+          "wrong": "Does it rain a lot here? — No, it isn't.",
+          "right": "No, it doesn't.",
+          "why": "Does 로 물으면 does 로 대답해요."
+        }
+      ],
+      "worked": [
+        "Are your parents teachers? (no)",
+        "Are 로 물었으니 be동사 are 로",
+        "your parents → they",
+        "No 이니 are + not",
+        "No, they aren't."
+      ],
+      "terms": [],
+      "check": {
+        "question": "Are those apples green? 에 yes 로 대답하면?",
+        "options": [
+          "Yes, it is.",
+          "Yes, they are.",
+          "Yes, they're."
+        ],
+        "answer": 1,
+        "why": "those apples 는 they 로 받고, Yes 대답은 끝을 줄이지 않아요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg05-2:s1",
+          "kind": "choice",
+          "instruction": "no 로 대답할 때 알맞은 것을 고르세요",
+          "sentence": "Is Tom a doctor?",
+          "options": [
+            "No, it isn't.",
+            "No, he isn't.",
+            "No, he doesn't."
+          ],
+          "answer": 1,
+          "why": "Tom 은 남자 한 사람이라 대명사 he 로 받고, Is 로 물었으니 be동사로 대답해요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-2:s2",
+          "kind": "choice",
+          "instruction": "yes 로 대답할 때 알맞은 것을 고르세요",
+          "sentence": "Does your mother like coffee?",
+          "options": [
+            "Yes, she is.",
+            "Yes, she does.",
+            "Yes, she likes."
+          ],
+          "answer": 1,
+          "why": "Does 로 물었으니 does 로 짧게 대답해요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-2:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "Are these cookies sweet? — Yes, ___ are.",
+          "options": [
+            "it",
+            "they",
+            "them"
+          ],
+          "answer": 1,
+          "why": "여러 개(these cookies)는 대답에서 they 로 받아요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-2:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "Is this your pen? — Yes, ___.",
+          "options": [
+            "it is",
+            "it's",
+            "this is"
+          ],
+          "answer": 0,
+          "why": "this 는 it 으로 받고, Yes 대답의 끝은 줄이지 않아요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-2:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "Can your brother swim? — No, ___.",
+          "options": [
+            "he doesn't",
+            "he can't",
+            "he isn't"
+          ],
+          "answer": 1,
+          "why": "Can 으로 물었으니 can 으로 대답하고, No 이니 can't 예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-2:s6",
+          "kind": "short",
+          "instruction": "빈칸을 채워 no 대답을 완성하세요",
+          "sentence": "Are there many people in the park? — No, there ___.",
+          "answer": [
+            "aren't",
+            "are not"
+          ],
+          "why": "Are there 로 물었으니 there + are + not 으로 대답해요.",
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg05-2:p1",
+          "ko": "응, 책상이야.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Is this a desk?",
+          "en": "Yes, it is.",
+          "accept": [
+            "Yes, it is a desk."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "it"
+            ],
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this is",
+              "hint": "대답에서는 this 를 it 으로 받아요."
+            },
+            {
+              "match": "Yes, it's.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p2",
+          "ko": "응, 좋아해.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Do you like to be around your friends?",
+          "en": "Yes, I do.",
+          "accept": [],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "I"
+            ],
+            [
+              "do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I like",
+              "hint": "Do 로 물었으니 like 를 되풀이하지 말고 do 로 짧게 대답해 보세요."
+            },
+            {
+              "match": "you do",
+              "hint": "you 로 물으면 I 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 2",
+            "reviewWhere": "review 1 item 9"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p3",
+          "ko": "아니, 잘 못 쳐.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Can he play the guitar well?",
+          "en": "No, he can't.",
+          "accept": [
+            "No, he cannot.",
+            "No, he can't play the guitar well.",
+            "No, he cannot play the guitar well."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "he"
+            ],
+            [
+              "can't",
+              "cannot"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "doesn't",
+              "hint": "Can 으로 물었으니 대답도 can 으로 해 보세요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 3"
+          },
+          "fix": {
+            "from": "No, he can’t",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있어 붙였습니다."
+          }
+        },
+        {
+          "id": "pg05-2:p4",
+          "ko": "응, 네 명이야.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Are there four people in your family?",
+          "en": "Yes, there are.",
+          "accept": [
+            "Yes, there are four people in my family.",
+            "Yes, there are four."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "there"
+            ],
+            [
+              "are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "there is",
+              "hint": "four people 은 복수라 are 예요."
+            },
+            {
+              "match": "they are",
+              "hint": "There are 로 물었으니 대답도 they 가 아니라 there 로 받아요."
+            },
+            {
+              "match": "Yes, there're.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 4"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p5",
+          "ko": "재미있었어요, 엄마.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "How was your day?",
+          "en": "It was fun, Mom.",
+          "accept": [
+            "It was fun Mom."
+          ],
+          "targets": [
+            [
+              "It"
+            ],
+            [
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "It is fun",
+              "hint": "How was 로 물었으니 was 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 5"
+          },
+          "fix": {
+            "from": "It was fun, mom.",
+            "kind": "english_grammar",
+            "why": "엄마를 부르는 말 Mom 은 이름처럼 대문자로 씁니다."
+          }
+        },
+        {
+          "id": "pg05-2:p6",
+          "ko": "나의 가장 친한 친구는 대한(Daehan)이야.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "Who is your best friend?",
+          "en": "My best friend is Daehan.",
+          "accept": [
+            "Daehan is my best friend.",
+            "My best friend is Dae-han.",
+            "Dae-han is my best friend."
+          ],
+          "targets": [
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "My best friend are",
+              "hint": "My best friend 는 한 사람이라 is 예요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (2) item 6"
+          },
+          "fix": {
+            "from": "My best friend is 대한.",
+            "kind": "english_unnatural",
+            "why": "영어 문장 안의 한글 이름을 로마자 Daehan 으로 바꿨습니다(소리 · 입력용)."
+          }
+        },
+        {
+          "id": "pg05-2:p7",
+          "ko": "응, 스페인 출신이야.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Are you from Spain?",
+          "en": "Yes, I am.",
+          "accept": [
+            "Yes, we are.",
+            "Yes, I am from Spain.",
+            "Yes, we are from Spain."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "I",
+              "we"
+            ],
+            [
+              "am",
+              "are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you are",
+              "hint": "you 로 물으면 I(여럿이면 we)로 대답해요."
+            },
+            {
+              "match": "Yes, I'm.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            },
+            {
+              "match": "Yes, we're.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p8",
+          "ko": "아니, 선생님이 아니야.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Is Jane a teacher?",
+          "en": "No, she isn't.",
+          "accept": [
+            "No, she is not.",
+            "No, she's not.",
+            "No, she isn't a teacher.",
+            "No, she is not a teacher.",
+            "No, she's not a teacher."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "she"
+            ],
+            [
+              "isn't",
+              "is not",
+              "'s not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Jane isn't",
+              "hint": "대답에서는 이름 대신 대명사 she 를 써요."
+            },
+            {
+              "match": "No, he",
+              "hint": "Jane 은 여자 이름이라 she 로 받아요."
+            },
+            {
+              "match": "doesn't",
+              "hint": "Is 로 물으면 be동사로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 2"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p9",
+          "ko": "아니, 우리 집이 아니야.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Is that your house?",
+          "en": "No, it isn't.",
+          "accept": [
+            "No, it is not.",
+            "No, it's not.",
+            "No, it isn't my house.",
+            "No, it is not my house.",
+            "No, it's not my house.",
+            "No, it isn't our house.",
+            "No, it is not our house.",
+            "No, it's not our house."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "it"
+            ],
+            [
+              "isn't",
+              "is not",
+              "'s not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "that isn't",
+              "hint": "대답에서는 that 을 it 으로 받아요."
+            },
+            {
+              "match": "your house",
+              "hint": "'너의 집이니?'에는 '우리 집(my/our house)'으로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p10",
+          "ko": "응, 초록색이야.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Are those apples green?",
+          "en": "Yes, they are.",
+          "accept": [
+            "Yes, they are green."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "they"
+            ],
+            [
+              "are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "those are",
+              "hint": "대답에서는 those apples 를 they 로 받아요."
+            },
+            {
+              "match": "it is",
+              "hint": "사과 여러 개(복수)는 they 로 받아요."
+            },
+            {
+              "match": "Yes, they're.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 4"
+          },
+          "fix": {
+            "from": "Are those apples green (yes)",
+            "kind": "english_grammar",
+            "why": "질문 끝 물음표가 빠져 있어 붙였습니다(promptEn)."
+          }
+        },
+        {
+          "id": "pg05-2:p11",
+          "ko": "아니, 닫혀 있지 않아.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Is this window closed?",
+          "en": "No, it isn't.",
+          "accept": [
+            "No, it is not.",
+            "No, it's not.",
+            "No, it isn't closed.",
+            "No, it is not closed.",
+            "No, it's not closed."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "it"
+            ],
+            [
+              "isn't",
+              "is not",
+              "'s not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this isn't",
+              "hint": "대답에서는 this window 를 it 으로 받아요."
+            },
+            {
+              "match": "doesn't",
+              "hint": "Is 로 물으면 be동사로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 5"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p12",
+          "ko": "응, 아파.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Is your dog sick?",
+          "en": "Yes, it is.",
+          "accept": [
+            "Yes, he is.",
+            "Yes, she is.",
+            "Yes, it is sick.",
+            "Yes, he is sick.",
+            "Yes, she is sick."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "it",
+              "he",
+              "she"
+            ],
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "dog is",
+              "hint": "대답에서는 your dog 를 대명사(it)로 받아요."
+            },
+            {
+              "match": "it does",
+              "hint": "Is 로 물으면 be동사로 대답해요."
+            },
+            {
+              "match": "Yes, it's.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            },
+            {
+              "match": "Yes, he's.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            },
+            {
+              "match": "Yes, she's.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 6"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p13",
+          "ko": "응, 우리는 모두 학생이야.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Are you all students?",
+          "en": "Yes, we are.",
+          "accept": [
+            "Yes, we are all students.",
+            "Yes, we all are."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "we"
+            ],
+            [
+              "are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you are",
+              "hint": "you all(너희 모두)로 물으면 we 로 대답해요."
+            },
+            {
+              "match": "I am",
+              "hint": "'너희 모두'에게 물었으니 we 로 대답해요."
+            },
+            {
+              "match": "Yes, we're.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 7"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p14",
+          "ko": "아니, 컴퓨터 프로그래머가 아니야.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Is Jack a computer programmer?",
+          "en": "No, he isn't.",
+          "accept": [
+            "No, he is not.",
+            "No, he's not.",
+            "No, he isn't a computer programmer.",
+            "No, he is not a computer programmer.",
+            "No, he's not a computer programmer."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "he"
+            ],
+            [
+              "isn't",
+              "is not",
+              "'s not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Jack isn't",
+              "hint": "대답에서는 이름 대신 he 를 써요."
+            },
+            {
+              "match": "she",
+              "hint": "Jack 은 남자 이름이라 he 로 받아요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 8"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p15",
+          "ko": "아니, 개를 안 키우셔.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Does your father have a dog?",
+          "en": "No, he doesn't.",
+          "accept": [
+            "No, he does not.",
+            "No, he doesn't have a dog.",
+            "No, he does not have a dog."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "he"
+            ],
+            [
+              "doesn't",
+              "does not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he don't",
+              "hint": "he 는 3인칭 단수라 doesn't 예요."
+            },
+            {
+              "match": "isn't",
+              "hint": "Does 로 물으면 does 로 대답해요."
+            },
+            {
+              "match": "hasn't",
+              "hint": "Does 로 물으면 does 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 10"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p16",
+          "ko": "응, 토요일마다 가.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Do Emma and Jill go to the movies every Saturday?",
+          "en": "Yes, they do.",
+          "accept": [],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "they"
+            ],
+            [
+              "do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "they does",
+              "hint": "they 에는 do 를 써요."
+            },
+            {
+              "match": "they go",
+              "hint": "Do 로 물었으니 go 를 되풀이하지 말고 do 로 짧게 대답해 보세요."
+            },
+            {
+              "match": "they are",
+              "hint": "Do 로 물으면 do 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 11"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p17",
+          "ko": "아니, 충분하지 않아.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Do we have enough money?",
+          "en": "No, we don't.",
+          "accept": [
+            "No, we do not.",
+            "No, you don't.",
+            "No, you do not.",
+            "No, we don't have enough money.",
+            "No, we do not have enough money.",
+            "No, you don't have enough money.",
+            "No, you do not have enough money."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "we",
+              "you"
+            ],
+            [
+              "don't",
+              "do not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "doesn't",
+              "hint": "we 에는 don't 를 써요."
+            },
+            {
+              "match": "aren't",
+              "hint": "Do 로 물으면 do 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 12"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p18",
+          "ko": "아니, 잘 이해하지 못해.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Does she understand me well?",
+          "en": "No, she doesn't.",
+          "accept": [
+            "No, she does not.",
+            "No, she doesn't understand you well.",
+            "No, she does not understand you well."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "she"
+            ],
+            [
+              "doesn't",
+              "does not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she don't",
+              "hint": "she 는 3인칭 단수라 doesn't 예요."
+            },
+            {
+              "match": "isn't",
+              "hint": "Does 로 물으면 does 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 13"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p19",
+          "ko": "응, 눈이 많이 와.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Does it snow a lot in France?",
+          "en": "Yes, it does.",
+          "accept": [],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "it"
+            ],
+            [
+              "does"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it is",
+              "hint": "Does 로 물으면 does 로 대답해요."
+            },
+            {
+              "match": "snows",
+              "hint": "Does 로 물었으니 snow 를 되풀이하지 말고 does 로 짧게 대답해 보세요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 14"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p20",
+          "ko": "응, 잘 쳐.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Can he play the guitar well?",
+          "en": "Yes, he can.",
+          "accept": [
+            "Yes, he can play the guitar well."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "he"
+            ],
+            [
+              "can"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he does",
+              "hint": "Can 으로 물으면 can 으로 대답해요."
+            },
+            {
+              "match": "he plays",
+              "hint": "Can 으로 물었으니 대답도 can 으로 해 보세요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 15"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p21",
+          "ko": "응, 이길 수 있어.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Can they win the soccer game?",
+          "en": "Yes, they can.",
+          "accept": [
+            "Yes, they can win.",
+            "Yes, they can win it.",
+            "Yes, they can win the soccer game."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "they"
+            ],
+            [
+              "can"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "they do",
+              "hint": "Can 으로 물으면 can 으로 대답해요."
+            },
+            {
+              "match": "they win",
+              "hint": "Can 으로 물었으니 대답도 can 으로 해 보세요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 16"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p22",
+          "ko": "아니, 못 해.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Can you speak five languages?",
+          "en": "No, I can't.",
+          "accept": [
+            "No, I cannot.",
+            "No, we can't.",
+            "No, we cannot.",
+            "No, I can't speak five languages.",
+            "No, I cannot speak five languages."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "I",
+              "we"
+            ],
+            [
+              "can't",
+              "cannot"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you can't",
+              "hint": "you 로 물으면 I 로 대답해요."
+            },
+            {
+              "match": "don't",
+              "hint": "Can 으로 물으면 can 으로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 17"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p23",
+          "ko": "아니, 네 명이 아니야.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Are there four people in your family?",
+          "en": "No, there aren't.",
+          "accept": [
+            "No, there are not.",
+            "No, there aren't four people in my family.",
+            "No, there are not four people in my family."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "there"
+            ],
+            [
+              "aren't",
+              "are not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "there isn't",
+              "hint": "four people 은 복수라 aren't 예요."
+            },
+            {
+              "match": "they aren't",
+              "hint": "There are 로 물으면 there 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 18"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-2:p24",
+          "ko": "응, 있어.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Is there a letter from Seoul?",
+          "en": "Yes, there is.",
+          "accept": [
+            "Yes, there is a letter from Seoul."
+          ],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "there"
+            ],
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it is",
+              "hint": "There is 로 물었으니 대답도 it 이 아니라 there 로 받아요."
+            },
+            {
+              "match": "Yes, there's.",
+              "hint": "Yes 로 짧게 대답할 때는 끝을 줄이지 않아요. 줄이지 않은 꼴로 다시 써 보세요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 40,
+            "where": "review 1 item 19"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg05-2:t1",
+          "ko": "아니, 커피를 안 드셔.",
+          "koSource": "new",
+          "condition": "no로 대답",
+          "promptEn": "Do your parents drink coffee?",
+          "en": "No, they don't.",
+          "accept": [
+            "No, they do not.",
+            "No, they don't drink coffee.",
+            "No, they do not drink coffee."
+          ],
+          "targets": [
+            [
+              "No"
+            ],
+            [
+              "they"
+            ],
+            [
+              "don't",
+              "do not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "they doesn't",
+              "hint": "they 에는 does 가 아니라 do 를 써요."
+            },
+            {
+              "match": "they aren't",
+              "hint": "Do 로 물었으니 be동사가 아니라 do 로 대답해요."
+            },
+            {
+              "match": "you don't",
+              "hint": "your parents(부모님)는 they 로 받아요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg05-2:t2",
+          "ko": "응, 다 했어.",
+          "koSource": "new",
+          "condition": "yes로 대답",
+          "promptEn": "Did you finish your homework?",
+          "en": "Yes, I did.",
+          "accept": [],
+          "targets": [
+            [
+              "Yes"
+            ],
+            [
+              "I"
+            ],
+            [
+              "did"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I finished",
+              "hint": "Did 로 물었으니 finish 를 되풀이하지 말고 did 로 짧게 대답해 보세요."
+            },
+            {
+              "match": "you did",
+              "hint": "you 로 물으면 I 로 대답해요."
+            }
+          ],
+          "tags": [
+            "short-answer",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg05-2:f1",
+      "template": "Do you like ___? — Yes, I do. / No, I don't.",
+      "ko": "너는 ___을(를) 좋아하니? — 응, 좋아해. / 아니, 안 좋아해."
+    }
+  ]
+}

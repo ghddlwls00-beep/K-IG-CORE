@@ -1,0 +1,1140 @@
+{
+  "id": "pg01-3",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "3인칭",
+  "label": "TOPIC 1. 인칭",
+  "menuLabel": "1-3. 3인칭",
+  "unit": 1,
+  "part": 1,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "3인칭 단수 he / she / it 과 복수 they",
+  "grammarTags": [
+    "pronoun-3rd"
+  ],
+  "koreanWords": [
+    "Daehan"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg01-3:a1",
+          "en": "He is Daehan.",
+          "ko": "그는 대한이다.",
+          "focus": [
+            "He"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "passOff 3) item 1",
+            "reviewWhere": "review 1) item 5 (p7)"
+          },
+          "fix": {
+            "from": "He is 대한.",
+            "kind": "english_unnatural",
+            "why": "영어 문장 속 한글 이름을 로마자(Daehan)로 바꿈 — 음성은 한국어 발음표로"
+          }
+        },
+        {
+          "id": "pg01-3:a2",
+          "en": "She is the best mother in the world.",
+          "ko": "그분은 세상에서 최고의 어머니이십니다.",
+          "focus": [
+            "She"
+          ],
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "passOff 3) item 2",
+            "reviewWhere": "review 1) item 6 (p7)"
+          },
+          "fix": {
+            "from": "She is best mother in the world. / 그녀는 세상에서 제일 좋은 어머니이다.",
+            "kind": "english_grammar",
+            "why": "최상급 best 앞에는 the — STUDENT 2-3 이 이미 고친 문장이라 영어·한국어 모두 STUDENT 판으로"
+          }
+        },
+        {
+          "id": "pg01-3:a3",
+          "en": "It makes me happy.",
+          "ko": "그것은 나를 행복하게 만든다.",
+          "focus": [
+            "It"
+          ],
+          "studentRef": {
+            "lesson": "s1-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "passOff 3) item 3",
+            "reviewWhere": "review 1) item 7 (p7)"
+          }
+        },
+        {
+          "id": "pg01-3:a4",
+          "en": "They love each other.",
+          "ko": "그들은 서로 사랑한다.",
+          "focus": [
+            "They"
+          ],
+          "studentRef": {
+            "lesson": "s2-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "passOff 3) item 4",
+            "reviewWhere": "review 1) item 8 (p7)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg01-3:a1",
+          "pg01-3:a3",
+          "pg01-3:a4"
+        ],
+        "question": "굵게 표시된 He · It · They 는 누구를 가리킬까요?",
+        "options": [
+          "말하는 나",
+          "말을 듣는 너",
+          "나도 너도 아닌 다른 사람이나 물건"
+        ],
+        "answer": 2,
+        "why": "He(그), It(그것), They(그들)는 말하는 나도, 듣는 너도 아닌 다른 쪽을 가리켜요. 이것을 3인칭이라고 해요."
+      },
+      "title": "나 · 너 말고 다른 사람과 물건: he · she · it · they",
+      "points": [
+        "나(1인칭)와 너(2인칭)를 뺀 다른 사람이나 물건은 모두 3인칭이에요.",
+        "남자 한 명은 he, 여자 한 명은 she, 물건이나 동물 하나는 it 이에요.",
+        "둘 이상이면 사람이든 물건이든 모두 they 예요.",
+        "주어가 he · she · it 이면 동사 모양이 바뀌어요(He is, She goes). 다음 대주제에서 배워요.",
+        "날씨를 말하는 it(It was cold.)은 '그것'이라는 뜻이 없는 특별한 it 이에요. 뒤 레슨에서 따로 배워요."
+      ],
+      "table": {
+        "columns": [
+          "가리키는 것",
+          "한 명 · 한 개(단수)",
+          "여럿(복수)"
+        ],
+        "rows": [
+          [
+            "남자",
+            "he (그는)",
+            "they (그들은)"
+          ],
+          [
+            "여자",
+            "she (그녀는)",
+            "they (그들은)"
+          ],
+          [
+            "물건 · 동물",
+            "it (그것은)",
+            "they (그것들은)"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '그, 그녀'보다 이름이나 '엄마'처럼 명사를 되풀이해 말할 때가 많지만, 영어는 한 번 말한 사람·물건을 he · she · it · they 로 받아 써요. 또 한국어 '그들'은 주로 사람에게 쓰지만, 영어 they 는 물건 여러 개에도 써요.",
+      "mistakes": [
+        {
+          "wrong": "My brother is kind. She helps me.",
+          "right": "My brother is kind. He helps me.",
+          "why": "남자 한 명(형 · 오빠 · 남동생)은 he 예요."
+        },
+        {
+          "wrong": "I have two books. It is new.",
+          "right": "I have two books. They are new.",
+          "why": "물건이라도 여러 개면 it 이 아니라 they 예요."
+        }
+      ],
+      "worked": [
+        "그들은 서로 사랑한다.",
+        "'그들' = 나도 너도 아닌 여러 사람 → 3인칭 복수",
+        "3인칭 복수 → They",
+        "They love each other."
+      ],
+      "check": {
+        "question": "'Tom is my friend. ___ is kind.' 빈칸에 맞는 말은?",
+        "options": [
+          "He",
+          "She",
+          "It"
+        ],
+        "answer": 0,
+        "why": "Tom 은 남자 한 명 → he",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg01-3:s1",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "He",
+            "is",
+            "Daehan",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "3인칭"
+          ],
+          "why": "He 는 나도 너도 아닌 남자 한 명 → 3인칭(단수)",
+          "bookRef": {
+            "book": 1,
+            "page": 7,
+            "where": "review 1) item 5 (인칭대명사 밑줄 + 몇 인칭)"
+          },
+          "fix": {
+            "from": "He is 대한.",
+            "kind": "english_unnatural",
+            "why": "한글 이름을 로마자(Daehan)로"
+          }
+        },
+        {
+          "id": "pg01-3:s2",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "She",
+            "is",
+            "the",
+            "best",
+            "mother",
+            "in",
+            "the",
+            "world",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "3인칭"
+          ],
+          "why": "She 는 여자 한 명 → 3인칭(단수)",
+          "bookRef": {
+            "book": 1,
+            "page": 7,
+            "where": "review 1) item 6 (인칭대명사 밑줄 + 몇 인칭)"
+          },
+          "fix": {
+            "from": "She is best mother in the world.",
+            "kind": "english_grammar",
+            "why": "최상급 best 앞의 the (STUDENT 2-3 판)"
+          }
+        },
+        {
+          "id": "pg01-3:s3",
+          "kind": "select",
+          "instruction": "인칭대명사를 모두 누르고, 각각 몇 인칭인지 고르세요",
+          "tokens": [
+            "It",
+            "makes",
+            "me",
+            "happy",
+            "."
+          ],
+          "answer": [
+            0,
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "3인칭",
+            "1인칭"
+          ],
+          "why": "It 은 3인칭(단수), me 는 '나를'이라 1인칭이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 7,
+            "where": "review 1) item 7 (인칭대명사 밑줄 + 몇 인칭)"
+          },
+          "fix": {
+            "from": "(인칭대명사에 밑줄 긋고 몇 인칭인지 하나 쓰기)",
+            "kind": "answer_ambiguous",
+            "why": "문장에 인칭대명사가 It · me 두 개라 답이 하나로 정해지지 않음 → 둘 다 누르고 각각 인칭 고르기"
+          }
+        },
+        {
+          "id": "pg01-3:s4",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "They",
+            "love",
+            "each other",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "3인칭"
+          ],
+          "why": "They 는 여러 사람 → 3인칭(복수)",
+          "bookRef": {
+            "book": 1,
+            "page": 7,
+            "where": "review 1) item 8 (인칭대명사 밑줄 + 몇 인칭)"
+          }
+        },
+        {
+          "id": "pg01-3:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 대명사는?",
+          "sentence": "My parents love each other. ___ are kind.",
+          "underline": [],
+          "options": [
+            "He",
+            "She",
+            "They"
+          ],
+          "answer": 2,
+          "why": "My parents(부모님 두 분)는 여러 명 → they",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg01-3:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 대명사는?",
+          "sentence": "I have a new bike. ___ is blue.",
+          "underline": [],
+          "options": [
+            "He",
+            "It",
+            "They"
+          ],
+          "answer": 1,
+          "why": "물건 하나 → it",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg01-3:s7",
+          "kind": "choice",
+          "instruction": "다음 중 3인칭이 아닌 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "he",
+            "they",
+            "we"
+          ],
+          "answer": 2,
+          "why": "we(우리)는 1인칭이에요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg01-3:p1",
+          "ko": "그는 대한이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He is Daehan.",
+          "accept": [
+            "He is Dae-han.",
+            "He is Dae Han.",
+            "He's Daehan.",
+            "He's Dae-han.",
+            "He's Dae Han."
+          ],
+          "targets": [
+            [
+              "he",
+              "he's"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She is Daehan",
+              "hint": "'그는'은 남자 한 명이에요."
+            },
+            {
+              "match": "He is a Daehan",
+              "hint": "사람 이름 앞에는 a 를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 1",
+            "reviewWhere": "review 1) item 5 (p7)"
+          },
+          "fix": {
+            "from": "He is 대한.",
+            "kind": "english_unnatural",
+            "why": "영어 문장 속 한글 이름을 로마자(Daehan)로 바꿈 — 음성은 한국어 발음표로"
+          }
+        },
+        {
+          "id": "pg01-3:p2",
+          "ko": "그것은 나를 행복하게 만든다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "It makes me happy.",
+          "accept": [
+            "It makes me feel happy."
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "makes I happy",
+              "hint": "'나를'은 I 가 아닌 다른 모양이에요."
+            },
+            {
+              "match": "It make me",
+              "hint": "주어가 It(한 개)인 현재형이에요. 동사 끝을 살펴보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "present-simple",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 3",
+            "reviewWhere": "review 1) item 7 (p7)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-3:p3",
+          "ko": "그들은 서로 사랑한다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "They love each other.",
+          "accept": [
+            "They love one another."
+          ],
+          "targets": [
+            [
+              "they"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They loves",
+              "hint": "They 는 여러 명이에요. 동사에 -s 를 붙일까요?"
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 4",
+            "reviewWhere": "review 1) item 8 (p7)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-3:p4",
+          "ko": "그는 매일 아침 일찍 일어난다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He gets up early every morning.",
+          "accept": [
+            "He wakes up early every morning.",
+            "He gets up early every day.",
+            "He wakes up early every day.",
+            "Every morning he gets up early.",
+            "Every morning, he gets up early."
+          ],
+          "targets": [
+            [
+              "he"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He get up",
+              "hint": "주어가 He(한 명)인 현재형이에요. 동사 끝을 살펴보세요."
+            },
+            {
+              "match": "He wake up",
+              "hint": "주어가 He(한 명)인 현재형이에요. 동사 끝을 살펴보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 5",
+            "reviewWhere": "review 2) item 16 (p9)"
+          },
+          "fix": {
+            "from": "그는 매일 일찍 일어난다.",
+            "kind": "translation_mismatch",
+            "why": "영어 every morning(매일 아침)에 맞춰 '아침'을 넣음(every day 로 써도 정답)"
+          }
+        },
+        {
+          "id": "pg01-3:p5",
+          "ko": "그는 나의 남동생과 올 거야.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He will come here with my brother.",
+          "accept": [
+            "He will come here with my younger brother.",
+            "He will come here with my little brother.",
+            "He will come with my brother.",
+            "He will come with my younger brother.",
+            "He will come with my little brother.",
+            "He'll come here with my brother.",
+            "He'll come here with my younger brother.",
+            "He'll come here with my little brother.",
+            "He'll come with my brother.",
+            "He'll come with my younger brother.",
+            "He'll come with my little brother."
+          ],
+          "targets": [
+            [
+              "he",
+              "he'll"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will comes",
+              "hint": "will 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "He comes here with",
+              "hint": "'올 거야'는 앞으로 할 일이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 6",
+            "reviewWhere": "review 2) item 17 (p9)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-3:p6",
+          "ko": "그녀는 겨울에 매주 토요일마다 스키 타러 간다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She goes skiing every Saturday in winter.",
+          "accept": [
+            "She goes skiing every Saturday in the winter.",
+            "In winter, she goes skiing every Saturday.",
+            "In winter she goes skiing every Saturday.",
+            "In the winter, she goes skiing every Saturday.",
+            "She goes skiing on Saturdays in winter.",
+            "She goes skiing on Saturdays in the winter.",
+            "She skis every Saturday in winter.",
+            "She skis every Saturday in the winter.",
+            "In winter, she skis every Saturday."
+          ],
+          "targets": [
+            [
+              "she"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She go skiing",
+              "hint": "주어가 She(한 명)인 현재형이에요. 동사 끝을 살펴보세요."
+            },
+            {
+              "match": "goes to ski",
+              "hint": "'스키 타러 가다'는 정해진 표현이 있어요('쇼핑하러 가다'와 같은 모양)."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 7",
+            "reviewWhere": "review 2) item 18 (p9)"
+          },
+          "fix": {
+            "from": "She goes skiing every Saturday in winter",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표 누락"
+          },
+          "challengeNote": "go skiing 은 교재가 분사(TOPIC 13)에서 다루는 모양이지만, STUDENT 에서 go shopping 처럼 덩어리로 익힌 표현이고 절 구조를 바꾸지 않는 She skis every Saturday in winter.(허용 답)로도 같은 뜻을 만들 수 있어 도전으로 두지 않고 participle 태그를 뺌(정리-1권-A)"
+        },
+        {
+          "id": "pg01-3:p7",
+          "ko": "그들은 중국말을 할 수 있다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "They can speak Chinese.",
+          "accept": [
+            "They are able to speak Chinese.",
+            "They're able to speak Chinese."
+          ],
+          "targets": [
+            [
+              "they",
+              "they're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "can speaks",
+              "hint": "can 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "can to speak",
+              "hint": "can 뒤에는 to 없이 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 8",
+            "reviewWhere": "review 2) item 19 (p9)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-3:p8",
+          "ko": "그녀는 우리 반이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is in my class.",
+          "accept": [
+            "She is in our class.",
+            "She is my classmate.",
+            "She's in my class.",
+            "She's in our class.",
+            "She's my classmate."
+          ],
+          "targets": [
+            [
+              "she",
+              "she's"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She are",
+              "hint": "She 는 한 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "Her is",
+              "hint": "주어 자리에는 her 가 아닌 다른 모양을 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "be-present",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 9",
+            "reviewWhere": "review 2) item 20 (p9)"
+          },
+          "fix": {
+            "from": "그녀는 내 수업에 들어와 있다.",
+            "kind": "translation_mismatch",
+            "why": "She is in my class. 는 '그녀는 우리 반이다(나와 같은 반)'라는 뜻"
+          }
+        },
+        {
+          "id": "pg01-3:p9",
+          "ko": "그는 내 마음에 상처를 줬지만 그것은 심각하지 않았다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He hurt my feelings, but it was not serious.",
+          "accept": [
+            "He hurt my feelings but it was not serious.",
+            "He hurt me, but it was not serious.",
+            "He hurt me but it was not serious.",
+            "He hurt my feelings, but it wasn't serious.",
+            "He hurt my feelings but it wasn't serious.",
+            "He hurt me, but it wasn't serious.",
+            "He hurt me but it wasn't serious."
+          ],
+          "targets": [
+            [
+              "he"
+            ],
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gave me hurt",
+              "hint": "'상처를 주다'는 동사 hurt 하나로 말해요."
+            },
+            {
+              "match": "He hurted",
+              "hint": "hurt 는 과거형도 모양이 같아요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "past-simple",
+            "conjunction-and-but-or-so",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 10",
+            "reviewWhere": "review 2) item 21 (p9)"
+          },
+          "fix": {
+            "from": "He gave me hurt in my heart, but it was not serious.",
+            "kind": "english_unnatural",
+            "why": "hurt 를 명사로 쓴 직역투 비문 — '마음에 상처를 주다'는 hurt one's feelings"
+          }
+        },
+        {
+          "id": "pg01-3:p10",
+          "ko": "그는 그 책이 너무 비쌌지만 그것을 샀다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He bought the book although it was too expensive.",
+          "accept": [
+            "He bought the book although it was very expensive.",
+            "He bought the book even though it was too expensive.",
+            "He bought the book even though it was very expensive.",
+            "He bought the book though it was too expensive.",
+            "Although it was too expensive, he bought the book.",
+            "Although it was very expensive, he bought the book.",
+            "Even though it was too expensive, he bought the book.",
+            "The book was too expensive, but he bought it.",
+            "The book was very expensive, but he bought it.",
+            "The book was too expensive but he bought it.",
+            "He bought the book, although it was too expensive.",
+            "Although it was too expensive he bought the book.",
+            "Although the book was too expensive, he bought it.",
+            "Although the book was too expensive he bought it.",
+            "He bought the book, although it was very expensive.",
+            "Although it was very expensive he bought the book.",
+            "Although the book was very expensive, he bought it.",
+            "Although the book was very expensive he bought it.",
+            "He bought the book, even though it was too expensive.",
+            "Even though it was too expensive he bought the book.",
+            "Even though the book was too expensive, he bought it.",
+            "Even though the book was too expensive he bought it.",
+            "He bought the book, even though it was very expensive.",
+            "Even though it was very expensive, he bought the book.",
+            "Even though it was very expensive he bought the book.",
+            "Even though the book was very expensive, he bought it.",
+            "Even though the book was very expensive he bought it.",
+            "He bought the book, though it was too expensive.",
+            "Though it was too expensive, he bought the book.",
+            "Though it was too expensive he bought the book.",
+            "Though the book was too expensive, he bought it.",
+            "Though the book was too expensive he bought it.",
+            "He bought the book though it was very expensive.",
+            "He bought the book, though it was very expensive.",
+            "Though it was very expensive, he bought the book.",
+            "Though it was very expensive he bought the book.",
+            "Though the book was very expensive, he bought it.",
+            "Though the book was very expensive he bought it.",
+            "The book was very expensive but he bought it."
+          ],
+          "targets": [
+            [
+              "he"
+            ],
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He buyed",
+              "hint": "buy 의 과거형은 규칙대로 -ed 를 붙이지 않아요."
+            },
+            {
+              "match": "He buys the book",
+              "hint": "'샀다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "past-simple",
+            "subordinating-conjunction"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "subordinating-conjunction"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 11",
+            "reviewWhere": "review 2) item 22 (p9)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-3:p11",
+          "ko": "그분은 세상에서 최고의 어머니이십니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is the best mother in the world.",
+          "accept": [
+            "She's the best mother in the world."
+          ],
+          "targets": [
+            [
+              "she",
+              "she's"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is best mother",
+              "hint": "'최고의'(best) 앞에 꼭 붙는 작은 말이 있어요."
+            },
+            {
+              "match": "mother of the world",
+              "hint": "'세상에서'는 of 가 아닌 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "be-present",
+            "superlative"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "superlative"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 2",
+            "reviewWhere": "review 1) item 6 (p7)"
+          },
+          "fix": {
+            "from": "She is best mother in the world. / 그녀는 세상에서 제일 좋은 어머니이다.",
+            "kind": "english_grammar",
+            "why": "최상급 best 앞에는 the — STUDENT 2-3 이 이미 고친 문장이라 영어·한국어 모두 STUDENT 판으로"
+          }
+        },
+        {
+          "id": "pg01-3:p12",
+          "ko": "날씨가 추워서 나는 문을 닫았다.",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It was cold, so I shut the door.",
+          "accept": [
+            "It was cold, so I closed the door.",
+            "It was cold so I shut the door.",
+            "It was cold so I closed the door.",
+            "I shut the door because it was cold.",
+            "Because it was cold, I shut the door.",
+            "Because it was cold I shut the door.",
+            "Since it was cold, I shut the door.",
+            "I shut the door since it was cold.",
+            "I closed the door because it was cold.",
+            "Because it was cold, I closed the door.",
+            "Because it was cold I closed the door.",
+            "Since it was cold, I closed the door.",
+            "I closed the door since it was cold."
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I shutted",
+              "hint": "shut 은 과거형도 모양이 같아요."
+            },
+            {
+              "match": "It is cold",
+              "hint": "'추워서 … 닫았다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "it-dummy",
+            "past-simple",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "it-dummy"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 12",
+            "reviewWhere": "review 2) item 23 (p9)"
+          },
+          "fix": {
+            "from": "날씨가 너무 추워서 그래서 나는 문을 닫았다.",
+            "kind": "korean_typo",
+            "why": "'-서'와 '그래서'가 겹치고, 영어에 없는 '너무'가 들어 있어 고침"
+          }
+        },
+        {
+          "id": "pg01-3:p13",
+          "ko": "그들은 직업을 가지기엔 너무 어리다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "They are too young to have jobs.",
+          "accept": [
+            "They are too young to have a job.",
+            "They are too young to get jobs.",
+            "They are too young to get a job.",
+            "They're too young to have jobs.",
+            "They're too young to have a job.",
+            "They're too young to get jobs.",
+            "They're too young to get a job."
+          ],
+          "targets": [
+            [
+              "they",
+              "they're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "too young to having",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "They were too young",
+              "hint": "한국어는 지금 일(어리다)이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "be-present",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 3) item 13",
+            "reviewWhere": "review 2) item 24 (p9)"
+          },
+          "fix": {
+            "from": "그들은 직업을 가지기엔 너무 어렸다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 현재(are)인데 한국어가 과거(어렸다)라 한국어를 현재로 맞춤"
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg01-3:t1",
+          "ko": "그녀는 선생님이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is a teacher.",
+          "accept": [
+            "She's a teacher."
+          ],
+          "targets": [
+            [
+              "she",
+              "she's"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She is teacher",
+              "hint": "teacher(선생님 한 명) 앞에 '하나'를 뜻하는 작은 말이 필요해요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-021#2",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg01-3:t2",
+          "ko": "그들은 내 친구들이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "They are my friends.",
+          "accept": [
+            "They're my friends."
+          ],
+          "targets": [
+            [
+              "they",
+              "they're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They is",
+              "hint": "They 는 여러 명이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "be-present",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-021#3",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg01-3:f1",
+      "template": "___ is my friend. He / She is very ___.",
+      "ko": "___는(은) 나의 친구이다. 그(그녀)는 매우 ___하다."
+    }
+  ]
+}

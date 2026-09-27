@@ -1,0 +1,1569 @@
+{
+  "id": "pg07-3",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "의문대명사·지시대명사",
+  "label": "TOPIC 7. 대명사",
+  "menuLabel": "7-3. 의문대명사·지시대명사",
+  "unit": 7,
+  "part": 1,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(3) 의문대명사와 지시대명사",
+  "grammarTags": [
+    "pronoun-interrogative",
+    "pronoun-demonstrative"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg07-3:a1",
+          "en": "Who is my best friend?",
+          "ko": "누가 나의 가장 친한 친구일까요?",
+          "koSource": "student:s3-2#4",
+          "focus": [
+            "Who"
+          ],
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (3) 의문대명사 item 1"
+          }
+        },
+        {
+          "id": "pg07-3:a2",
+          "en": "Whose book is this?",
+          "ko": "이것은 누구의 책이니?",
+          "koSource": "new",
+          "focus": [
+            "Whose"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (3) 의문대명사 item 2"
+          }
+        },
+        {
+          "id": "pg07-3:a3",
+          "en": "Whom do you like most?",
+          "ko": "너는 누구를 가장 좋아하니?",
+          "koSource": "new",
+          "focus": [
+            "Whom"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (3) 의문대명사 item 3"
+          }
+        },
+        {
+          "id": "pg07-3:a4",
+          "en": "Which is yours?",
+          "ko": "어느 것이 너의 것이니?",
+          "koSource": "new",
+          "focus": [
+            "Which"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (3) 의문대명사 item 4"
+          }
+        },
+        {
+          "id": "pg07-3:a5",
+          "en": "This is the story about how the nation of Korea was founded.",
+          "ko": "이것은 어떻게 한국이라는 나라가 건국되었는가에 대한 이야기입니다.",
+          "koSource": "student:s17-1#1",
+          "focus": [
+            "This"
+          ],
+          "studentRef": {
+            "lesson": "s17-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 1"
+          }
+        },
+        {
+          "id": "pg07-3:a6",
+          "en": "These are the books about our history.",
+          "ko": "이것들은 우리 역사에 관한 책들이다.",
+          "koSource": "review 3 item 9",
+          "focus": [
+            "These"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 3"
+          }
+        },
+        {
+          "id": "pg07-3:a7",
+          "en": "That is the house I want to buy.",
+          "ko": "저것은 내가 사고 싶은 집이다.",
+          "koSource": "review 3 item 13",
+          "focus": [
+            "That"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 5"
+          },
+          "fix": {
+            "from": "That is the house I wanted to buy.",
+            "kind": "translation_mismatch",
+            "why": "Application·Review 한국어('사고 싶은')는 현재 want 인데 Pass-Off 만 wanted 였습니다. want 로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg07-3:a8",
+          "en": "Those are caps that I put on yesterday.",
+          "ko": "저것들은 내가 어제 썼던 모자들이다.",
+          "koSource": "review 3 item 15 (고침)",
+          "focus": [
+            "Those"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 7"
+          },
+          "fix": {
+            "from": "Those are caps that I put yesterday.",
+            "fromKo": "그것들은 내가 어제 썼던 모자들이다.",
+            "kind": "english_grammar",
+            "why": "'모자를 쓰다'는 put on 입니다(Application 에는 put on 으로 인쇄). 한국어 '그것들은'은 Those 에 맞게 '저것들은'으로 고쳤습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg07-3:a1",
+          "pg07-3:a2",
+          "pg07-3:a3"
+        ],
+        "question": "Who · Whose · Whom 은 무엇에 따라 골라 쓸까요?",
+        "options": [
+          "문장 속 역할(누가 / 누구의 / 누구를)",
+          "묻는 사람의 나이",
+          "문장의 시제"
+        ],
+        "answer": 0,
+        "why": "누가(주어)는 who, 누구의(소유)는 whose, 누구를(목적어)은 whom 입니다. 말할 때는 whom 대신 who 도 많이 씁니다."
+      },
+      "title": "묻는 대명사(who · what · which)와 가리키는 대명사(this · that)",
+      "points": [
+        "사람을 물을 때: who(누가) · whose(누구의) · whom(누구를)",
+        "사물을 물을 때: what(무엇), 몇 개 중 고를 때: which(어느 것)",
+        "가까이: this · these, 멀리: that · those (여럿이면 these · those)",
+        "명사 앞에서 꾸미면 형용사: this bag, whose book",
+        "where · when · why · how 는 의문부사(대명사가 아님)"
+      ],
+      "table": {
+        "columns": [
+          "종류",
+          "낱말",
+          "뜻",
+          "예문"
+        ],
+        "rows": [
+          [
+            "의문대명사(사람)",
+            "who / whose / whom",
+            "누가 / 누구의 (것) / 누구를",
+            "Who is my best friend?"
+          ],
+          [
+            "의문대명사(사물)",
+            "what / which",
+            "무엇 / 어느 것",
+            "Which is yours?"
+          ],
+          [
+            "지시대명사(가까이)",
+            "this / these",
+            "이것 / 이것들",
+            "These are the books about our history."
+          ],
+          [
+            "지시대명사(멀리)",
+            "that / those",
+            "저것 / 저것들",
+            "That is the house I want to buy."
+          ],
+          [
+            "명사를 꾸밀 때(형용사)",
+            "this · that · these · those / whose",
+            "이 · 저 · 이 ~들 · 저 ~들 / 누구의",
+            "this bag, that car / Whose book is this?"
+          ]
+        ]
+      },
+      "koDiff": "우리말 '이것 · 저것'은 여럿이어도 '들'을 빼고 말할 때가 많지만, 영어는 여럿이면 반드시 these · those 로 바꾸고 be동사도 are 로 맞춥니다.",
+      "mistakes": [
+        {
+          "wrong": "This are the books about our history.",
+          "right": "These are the books about our history.",
+          "why": "책이 여럿이면 these, 동사는 are"
+        },
+        {
+          "wrong": "Who book is this?",
+          "right": "Whose book is this?",
+          "why": "'누구의'는 whose"
+        }
+      ],
+      "worked": [
+        "이것들은 우리 역사에 관한 책들이다.",
+        "'이것들' → 가까이 · 여럿 → These",
+        "여럿이니 be동사는 are",
+        "These are the books about our history."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'___ are my shoes.' (저것들은 내 신발이다) 빈칸에 알맞은 것은?",
+        "options": [
+          "That",
+          "Those",
+          "These"
+        ],
+        "answer": 1,
+        "why": "멀리 있는 것 여럿 = those.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg07-3:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 의문사는? (너는 누구를 가장 좋아하니?)",
+          "sentence": "___ do you like most?",
+          "underline": [],
+          "options": [
+            "Whose",
+            "Which",
+            "Whom"
+          ],
+          "answer": 2,
+          "why": "'누구를'은 목적어를 묻는 말이라 whom(말할 때는 who 도 써요).",
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (3) 의문대명사 item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-3:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 this 의 쓰임은?",
+          "sentence": "I read this book last week.",
+          "underline": [
+            "this"
+          ],
+          "options": [
+            "혼자 쓰인 지시대명사",
+            "명사를 꾸미는 지시형용사",
+            "의문대명사"
+          ],
+          "answer": 1,
+          "why": "뒤에 명사 book 이 있어 그 명사를 꾸며요(지시형용사).",
+          "source": "new"
+        },
+        {
+          "id": "pg07-3:s8",
+          "kind": "choice",
+          "instruction": "밑줄 친 Those 의 쓰임은?",
+          "sentence": "Those are caps that I put on yesterday.",
+          "underline": [
+            "Those"
+          ],
+          "options": [
+            "명사를 꾸미는 지시형용사",
+            "혼자 쓰인 지시대명사",
+            "의문대명사"
+          ],
+          "answer": 1,
+          "why": "Those 뒤에 명사가 없고 혼자 '저것들'을 뜻해요(지시대명사).",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 7"
+          }
+        },
+        {
+          "id": "pg07-3:s9",
+          "kind": "choice",
+          "instruction": "밑줄 친 Where 는 무엇인가요?",
+          "sentence": "Where do you live?",
+          "underline": [
+            "Where"
+          ],
+          "options": [
+            "의문대명사",
+            "의문부사(장소를 물음)",
+            "지시대명사"
+          ],
+          "answer": 1,
+          "why": "where 는 '어디에'로 부사 역할을 하는 의문부사예요. who · what · which 같은 의문대명사와 달라요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-3:s5",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 지시대명사를 쓰세요. (이것들은 우리 역사에 관한 책들이다.)",
+          "sentence": "___ are the books about our history.",
+          "answer": [
+            "These"
+          ],
+          "why": "가까이 있는 것 여럿 = these.",
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-3:s6",
+          "kind": "select",
+          "instruction": "this 와 that 을 누르고, 혼자 쓰였는지(지시대명사) 명사를 꾸미는지(지시형용사) 고르세요",
+          "tokens": [
+            "This",
+            "is",
+            "my",
+            "bag",
+            ",",
+            "and",
+            "that",
+            "bag",
+            "is",
+            "yours",
+            "."
+          ],
+          "answer": [
+            0,
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "지시대명사",
+            "지시형용사"
+          ],
+          "labelAnswer": [
+            "지시대명사",
+            "지시형용사"
+          ],
+          "why": "This 는 혼자 '이것'(지시대명사), that 은 뒤의 bag 을 꾸며요(지시형용사).",
+          "source": "new"
+        },
+        {
+          "id": "pg07-3:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 this 의 쓰임은?",
+          "sentence": "During this time, our teacher calls roll.",
+          "underline": [
+            "this"
+          ],
+          "options": [
+            "혼자 쓰인 지시대명사",
+            "명사를 꾸미는 지시형용사",
+            "의문대명사"
+          ],
+          "answer": 1,
+          "why": "뒤에 명사 time 이 있어 그 명사를 꾸며요(지시형용사). 교재는 지시대명사로 함께 묶었지만 쓰임이 달라요.",
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (3) 지시대명사 item 2"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg07-3:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 That 의 쓰임은?",
+          "sentence": "That is a cloud.",
+          "underline": [
+            "That"
+          ],
+          "options": [
+            "명사를 꾸미는 지시형용사",
+            "혼자 쓰인 지시대명사",
+            "의문대명사"
+          ],
+          "answer": 1,
+          "why": "That 뒤에 명사가 없고 혼자 '저것'을 뜻해요(지시대명사).",
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 7"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg07-3:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 Where 는 무엇인가요?",
+          "sentence": "Where can you find her in this city?",
+          "underline": [
+            "Where"
+          ],
+          "options": [
+            "의문대명사",
+            "의문부사(장소를 물음)",
+            "지시대명사"
+          ],
+          "answer": 1,
+          "why": "where 는 '어디에서'로 부사 역할을 하는 의문부사예요. who · what · which 같은 의문대명사와 달라요.",
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 의문대명사 item 8"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg07-3:p1",
+          "ko": "누가 나의 가장 친한 친구일까요?",
+          "koSource": "student:s3-2#4",
+          "condition": null,
+          "promptEn": null,
+          "en": "Who is my best friend?",
+          "accept": [
+            "Who is my closest friend?"
+          ],
+          "targets": [
+            [
+              "Who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who my best friend is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "whose my best friend",
+              "hint": "'누가'는 주어를 묻는 말이에요. '누구의'와 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (3) 의문대명사 item 1",
+            "reviewWhere": "review 3 item 1 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p2",
+          "ko": "이것은 누구의 책이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Whose book is this?",
+          "accept": [
+            "Whose is this book?"
+          ],
+          "targets": [
+            [
+              "Whose"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who's book",
+              "hint": "who's 는 who is 의 줄임말이에요. '누구의'는 모양이 달라요."
+            },
+            {
+              "match": "who book",
+              "hint": "'누구의'를 뜻하는 의문사를 쓰세요."
+            },
+            {
+              "match": "whose book this is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "pronoun-demonstrative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (3) 의문대명사 item 2"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p3",
+          "ko": "너는 누구를 가장 좋아하니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Whom do you like most?",
+          "accept": [
+            "Whom do you like the most?",
+            "Whom do you like best?",
+            "Whom do you like the best?",
+            "Who do you like most?",
+            "Who do you like the most?",
+            "Who do you like best?",
+            "Who do you like the best?"
+          ],
+          "targets": [
+            [
+              "Whom",
+              "Who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "whom you like",
+              "hint": "일반동사가 있는 묻는 문장이에요. 주어 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "who you like",
+              "hint": "일반동사가 있는 묻는 문장이에요. 주어 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "who likes you",
+              "hint": "'누가 너를'이 아니라 '너는 누구를'이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (3) 의문대명사 item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p4",
+          "ko": "어느 것이 너의 것이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Which is yours?",
+          "accept": [
+            "Which one is yours?"
+          ],
+          "targets": [
+            [
+              "Which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what is yours",
+              "hint": "몇 개 중에서 '어느 것'을 고를 때 쓰는 의문사를 떠올려 보세요."
+            },
+            {
+              "match": "which is your",
+              "hint": "'너의 것'은 뒤에 명사가 없어요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "pronoun-possessive",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (3) 의문대명사 item 4"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p5",
+          "ko": "그의 직업은 무엇이니?",
+          "koSource": "review 3 item 2",
+          "condition": null,
+          "promptEn": null,
+          "en": "What does he do?",
+          "accept": [
+            "What is his job?",
+            "What does he do for a living?",
+            "What is his occupation?",
+            "What does he do for work?",
+            "What is he?"
+          ],
+          "targets": [
+            [
+              "What"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what he does",
+              "hint": "묻는 문장이에요. 주어 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "what does he does",
+              "hint": "does 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "what is he job",
+              "hint": "'그의'를 뜻하는 모양을 다시 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (3) 의문대명사 item 5",
+            "reviewWhere": "review 3 item 2 (p56)"
+          },
+          "fix": {
+            "from": "What is he?",
+            "kind": "english_unnatural",
+            "why": "직업을 묻는 말로 What is he? 는 요즘 영어에서 어색하거나 무례하게 들립니다. 모범 답을 What does he do? 로 바꾸고 원문은 허용 답으로 둡니다."
+          }
+        },
+        {
+          "id": "pg07-3:p6",
+          "ko": "이것은 무엇이니?",
+          "koSource": "review 3 item 3",
+          "condition": null,
+          "promptEn": null,
+          "en": "What is this?",
+          "accept": [],
+          "targets": [
+            [
+              "What"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this is what",
+              "hint": "의문사로 시작하는 묻는 문장이에요. 의문사를 맨 앞에 두세요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "pronoun-demonstrative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (3) 의문대명사 item 6",
+            "reviewWhere": "review 3 item 3 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p7",
+          "ko": "학교 교육의 목적은 무엇인가?",
+          "koSource": "review 3 item 4",
+          "condition": null,
+          "promptEn": null,
+          "en": "What is the purpose of school education?",
+          "accept": [
+            "What is the aim of school education?",
+            "What is the goal of school education?"
+          ],
+          "targets": [
+            [
+              "What"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "of the school education",
+              "hint": "일반적인 '학교 교육'을 말할 때는 관사를 붙이지 않아요."
+            },
+            {
+              "match": "what is purpose",
+              "hint": "'그 목적'이니 purpose 앞에 필요한 말이 있어요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 의문대명사 item 7",
+            "reviewWhere": "review 3 item 4 (p56)"
+          },
+          "fix": {
+            "from": "What is the purpose of the school education?",
+            "kind": "english_grammar",
+            "why": "일반적인 뜻의 school education 앞에는 the 를 쓰지 않습니다."
+          }
+        },
+        {
+          "id": "pg07-3:p8",
+          "ko": "이 도시에서 어디서 그녀를 찾을 수 있을까?",
+          "koSource": "review 3 item 5",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where can you find her in this city?",
+          "accept": [
+            "Where can I find her in this city?",
+            "Where can we find her in this city?",
+            "Where in this city can you find her?",
+            "Where in this city can I find her?",
+            "Where in this city can we find her?",
+            "In this city, where can you find her?",
+            "In this city where can you find her?",
+            "In this city, where can I find her?",
+            "In this city where can I find her?",
+            "In this city, where can we find her?",
+            "In this city where can we find her?"
+          ],
+          "targets": [
+            [
+              "Where"
+            ],
+            [
+              "this"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "where you can find",
+              "hint": "묻는 문장이에요. can 을 주어 앞으로 보내세요."
+            },
+            {
+              "match": "where i can find",
+              "hint": "묻는 문장이에요. can 을 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "question-wh",
+            "can-basic",
+            "pronoun-demonstrative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 의문대명사 item 8",
+            "reviewWhere": "review 3 item 5 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p9",
+          "ko": "이 시간 동안, 우리 선생님은 출석을 부르신다.",
+          "koSource": "review 3 item 7",
+          "condition": null,
+          "promptEn": null,
+          "en": "During this time, our teacher calls roll.",
+          "accept": [
+            "During this time, our teacher calls the roll.",
+            "During this time, our teacher takes attendance.",
+            "During this time, our teacher checks attendance.",
+            "During this time our teacher calls roll.",
+            "During this time our teacher calls the roll.",
+            "During this time our teacher takes attendance.",
+            "During this time our teacher checks attendance.",
+            "Our teacher calls roll during this time.",
+            "Our teacher calls the roll during this time.",
+            "Our teacher takes attendance during this time.",
+            "Our teacher checks attendance during this time.",
+            "During this time, our teacher takes roll.",
+            "During this time our teacher takes roll.",
+            "Our teacher takes roll during this time."
+          ],
+          "targets": [
+            [
+              "this"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "during these time",
+              "hint": "여기서 time 은 하나의 시간이에요. 가리키는 말도 하나 모양으로 쓰세요."
+            },
+            {
+              "match": "our teacher call",
+              "hint": "our teacher 는 3인칭 단수예요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "present-3sg-s",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 2",
+            "reviewWhere": "review 3 item 7 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p10",
+          "ko": "이것은 아브라함의 우물이다.",
+          "koSource": "review 3 item 8",
+          "condition": null,
+          "promptEn": null,
+          "en": "This is the well of Abraham.",
+          "accept": [
+            "This is Abraham's well."
+          ],
+          "targets": [
+            [
+              "This"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this is well of",
+              "hint": "well(우물)은 셀 수 있는 명사예요. 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "it is the well",
+              "hint": "'이것'은 가까이 있는 것을 가리키는 말로 써 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 3",
+            "reviewWhere": "review 3 item 8 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p11",
+          "ko": "이것들은 우리 역사에 관한 책들이다.",
+          "koSource": "review 3 item 9",
+          "condition": null,
+          "promptEn": null,
+          "en": "These are the books about our history.",
+          "accept": [
+            "These are the books on our history.",
+            "These are books about our history.",
+            "These are books on our history."
+          ],
+          "targets": [
+            [
+              "These"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this are",
+              "hint": "'이것들'은 여럿이에요. 가리키는 말도 여럿 모양으로 쓰세요."
+            },
+            {
+              "match": "these is",
+              "hint": "주어가 여럿이면 be동사 모양은?"
+            },
+            {
+              "match": "those are",
+              "hint": "'이것들'은 가까이 있는 것이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "be-present-agreement",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 4",
+            "reviewWhere": "review 3 item 9 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p12",
+          "ko": "학생들은 이 학원들에서 사귄 친구들에 대해 이야기할 수 있을 것이다.",
+          "koSource": "review 3 item 10 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Students will be able to talk about their friends at these academies.",
+          "accept": [
+            "Students will be able to talk about their friends from these academies.",
+            "Students will be able to talk about the friends they made at these academies.",
+            "The students will be able to talk about their friends at these academies.",
+            "The students will be able to talk about their friends from these academies.",
+            "The students will be able to talk about the friends they made at these academies.",
+            "Students will be able to talk about the friends that they made at these academies.",
+            "The students will be able to talk about the friends that they made at these academies."
+          ],
+          "targets": [
+            [
+              "these"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this academies",
+              "hint": "학원이 여럿이에요. 가리키는 말도 여럿 모양으로 쓰세요."
+            },
+            {
+              "match": "will can",
+              "hint": "will 과 can 은 나란히 쓸 수 없어요. '~할 수 있을 것이다'는 다른 표현을 써요."
+            },
+            {
+              "match": "talk with their friends",
+              "hint": "친구들'과' 이야기하는 것이 아니라 친구들'에 대해' 이야기하는 거예요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "future-will",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 5",
+            "reviewWhere": "review 3 item 10 (p56)"
+          },
+          "fix": {
+            "from": "학생들은 이 학원들에서 친구들과 이야기 할 수 있을 것이다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 친구들'에 대해(talk about)' 이야기하는 것인데 한국어는 친구들'과' 이야기하는 것이었고, '이야기 할'도 붙여 씁니다. 영어에 맞춰 한국어를 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-3:p13",
+          "ko": "저것은 구름이다.",
+          "koSource": "review 3 item 12",
+          "condition": null,
+          "promptEn": null,
+          "en": "That is a cloud.",
+          "accept": [],
+          "targets": [
+            [
+              "That"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this is a cloud",
+              "hint": "'저것'은 멀리 있는 것이에요."
+            },
+            {
+              "match": "that is cloud",
+              "hint": "cloud 는 셀 수 있는 명사라 하나일 때 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "it is a cloud",
+              "hint": "'저것'을 가리키는 말을 써 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 7",
+            "reviewWhere": "review 3 item 12 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p14",
+          "ko": "그 사람들은 전화응답기의 긴 메시지를 듣기 싫어한다.",
+          "koSource": "review 3 item 16",
+          "condition": "those를 써서",
+          "promptEn": null,
+          "en": "Those people hate listening to long messages on answering machines.",
+          "accept": [
+            "Those people hate listening to long messages on the answering machine.",
+            "Those people hate listening to long messages on an answering machine.",
+            "Those people hate to listen to long messages on answering machines.",
+            "Those people hate to listen to long messages on the answering machine.",
+            "Those people hate to listen to long messages on an answering machine.",
+            "Those people dislike listening to long messages on answering machines.",
+            "Those people dislike listening to long messages on the answering machine.",
+            "Those people dislike listening to long messages on an answering machine.",
+            "Those people don't like listening to long messages on answering machines.",
+            "Those people don't like listening to long messages on the answering machine.",
+            "Those people don't like listening to long messages on an answering machine.",
+            "Those people don't like to listen to long messages on answering machines.",
+            "Those people don't like to listen to long messages on the answering machine.",
+            "Those people don't like to listen to long messages on an answering machine.",
+            "Those people hate hearing long messages on answering machines.",
+            "Those people hate hearing long messages on the answering machine.",
+            "Those people hate hearing long messages on an answering machine."
+          ],
+          "targets": [
+            [
+              "Those"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "those hate",
+              "hint": "사람을 가리킬 때 those 는 혼자 쓰지 않아요. '그 사람들'을 두 낱말로 써 보세요."
+            },
+            {
+              "match": "those people hates",
+              "hint": "주어가 여럿이면 동사에 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "hate listening 의 동명사(pg13-3)는 곁가지예요 — 'Those people don't like to listen to …'(like-to, 기초)로도 '듣기 싫어한다'를 같은 뜻으로 쓸 수 있고 허용 답에 있어 도전으로 두지 않음(데이터-형식 v1.2 도전 규칙, 정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 11",
+            "reviewWhere": "review 3 item 16 (p56)"
+          },
+          "fix": {
+            "from": "Those hate listening to long messages on answering machine.",
+            "kind": "english_grammar",
+            "why": "사람을 가리키는 those 는 혼자 주어로 쓰지 않고(those who … 처럼 꾸밈말이 필요), answering machine 은 셀 수 있는 명사라 관사나 복수가 필요합니다. 한국어 '그 사람들'에 맞춰 Those people 로 고쳤습니다. 전화응답기는 교재 시대의 물건이라 그대로 둡니다."
+          }
+        },
+        {
+          "id": "pg07-3:p15",
+          "ko": "이것은 어떻게 한국이라는 나라가 건국되었는가에 대한 이야기입니다.",
+          "koSource": "student:s17-1#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "This is the story about how the nation of Korea was founded.",
+          "accept": [
+            "This is the story about how the country of Korea was founded.",
+            "This is the story about how Korea was founded.",
+            "This is the story of how the nation of Korea was founded.",
+            "This is the story of how the country of Korea was founded.",
+            "This is the story of how Korea was founded.",
+            "This is a story about how the nation of Korea was founded.",
+            "This is a story about how the country of Korea was founded.",
+            "This is a story about how Korea was founded.",
+            "This is a story of how the nation of Korea was founded.",
+            "This is a story of how the country of Korea was founded.",
+            "This is a story of how Korea was founded."
+          ],
+          "targets": [
+            [
+              "This"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "how was",
+              "hint": "문장 속에 들어간 '어떻게 ~되었는가'는 묻는 순서가 아니라 주어-동사 순서로 써요."
+            },
+            {
+              "match": "these is",
+              "hint": "'이것'은 하나예요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "passive",
+            "indirect-question",
+            "be-present"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "passive",
+            "indirect-question"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s17-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 1",
+            "reviewWhere": "review 3 item 6 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p16",
+          "ko": "그는 이 부패 사건들과 무관했다.",
+          "koSource": "review 3 item 11",
+          "condition": null,
+          "promptEn": null,
+          "en": "He had nothing to do with these corruption cases.",
+          "accept": [
+            "He had nothing to do with these cases of corruption.",
+            "He had no connection with these corruption cases.",
+            "He had no connection with these cases of corruption.",
+            "He had no connection to these corruption cases.",
+            "He had no connection to these cases of corruption.",
+            "He was not involved in these corruption cases.",
+            "He was not involved in these cases of corruption.",
+            "He had no involvement in these corruption cases.",
+            "He had no involvement in these cases of corruption."
+          ],
+          "targets": [
+            [
+              "these"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this corruption cases",
+              "hint": "사건이 여럿이에요. 가리키는 말도 여럿 모양으로 쓰세요."
+            },
+            {
+              "match": "has nothing to do",
+              "hint": "'무관했다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "pronoun-indefinite",
+            "past-simple"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "pronoun-indefinite"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 6",
+            "reviewWhere": "review 3 item 11 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p17",
+          "ko": "저것은 내가 사고 싶은 집이다.",
+          "koSource": "review 3 item 13",
+          "condition": null,
+          "promptEn": null,
+          "en": "That is the house I want to buy.",
+          "accept": [
+            "That is the house that I want to buy.",
+            "That is the house which I want to buy."
+          ],
+          "targets": [
+            [
+              "That"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this is the house",
+              "hint": "'저것'은 멀리 있는 것이에요."
+            },
+            {
+              "match": "the house i wanted",
+              "hint": "'사고 싶은'은 지금 마음이에요. 시제를 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "want-to",
+            "relative-that"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "relative-that"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 8",
+            "reviewWhere": "review 3 item 13 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-3:p18",
+          "ko": "학생들은 왜 그렇게 느끼는지 설명할 수 있어야 한다.",
+          "koSource": "review 3 item 14 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Students should be able to describe why they feel that way.",
+          "accept": [
+            "Students should be able to describe why they feel this way.",
+            "Students should be able to describe why they feel like that.",
+            "Students should be able to explain why they feel that way.",
+            "Students should be able to explain why they feel this way.",
+            "Students should be able to explain why they feel like that.",
+            "Students must be able to describe why they feel that way.",
+            "Students must be able to describe why they feel this way.",
+            "Students must be able to describe why they feel like that.",
+            "Students must be able to explain why they feel that way.",
+            "Students must be able to explain why they feel this way.",
+            "Students must be able to explain why they feel like that.",
+            "The students should be able to describe why they feel that way.",
+            "The students should be able to describe why they feel this way.",
+            "The students should be able to describe why they feel like that.",
+            "The students should be able to explain why they feel that way.",
+            "The students should be able to explain why they feel this way.",
+            "The students should be able to explain why they feel like that.",
+            "The students must be able to describe why they feel that way.",
+            "The students must be able to describe why they feel this way.",
+            "The students must be able to describe why they feel like that.",
+            "The students must be able to explain why they feel that way.",
+            "The students must be able to explain why they feel this way.",
+            "The students must be able to explain why they feel like that."
+          ],
+          "targets": [
+            [
+              "that",
+              "this"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "why do they feel",
+              "hint": "문장 속에 들어간 '왜 ~하는지'는 묻는 순서가 아니라 주어-동사 순서로 써요."
+            },
+            {
+              "match": "feel so",
+              "hint": "'그렇게'를 '그 방식'처럼 가리키는 말로 써 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "indirect-question",
+            "can-basic"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "indirect-question"
+          ],
+          "challengeNote": "should(pg17-3)는 곁가지예요 — must be able to(기초)로도 '~할 수 있어야 한다'를 같은 뜻으로 쓸 수 있고 허용 답에 있어 태그에서 뺌. 도전 태그는 why 절(indirect-question)만(정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 9",
+            "reviewWhere": "review 3 item 14 (p56)"
+          },
+          "fix": {
+            "from": "학생들은 왜 그들이 그렇게 느끼는지 설명 할 수 있어야 한다.",
+            "kind": "korean_typo",
+            "why": "'설명할'은 붙여 쓰고, 없어도 되는 '그들이'를 뺐습니다."
+          }
+        },
+        {
+          "id": "pg07-3:p19",
+          "ko": "저것들은 내가 어제 썼던 모자들이다.",
+          "koSource": "review 3 item 15 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Those are caps that I put on yesterday.",
+          "accept": [
+            "Those are caps that I wore yesterday.",
+            "Those are caps which I put on yesterday.",
+            "Those are caps which I wore yesterday.",
+            "Those are caps I put on yesterday.",
+            "Those are caps I wore yesterday.",
+            "Those are the caps that I put on yesterday.",
+            "Those are the caps that I wore yesterday.",
+            "Those are the caps which I put on yesterday.",
+            "Those are the caps which I wore yesterday.",
+            "Those are the caps I put on yesterday.",
+            "Those are the caps I wore yesterday.",
+            "Those are hats that I put on yesterday.",
+            "Those are hats that I wore yesterday.",
+            "Those are hats which I put on yesterday.",
+            "Those are hats which I wore yesterday.",
+            "Those are hats I put on yesterday.",
+            "Those are hats I wore yesterday.",
+            "Those are the hats that I put on yesterday.",
+            "Those are the hats that I wore yesterday.",
+            "Those are the hats which I put on yesterday.",
+            "Those are the hats which I wore yesterday.",
+            "Those are the hats I put on yesterday.",
+            "Those are the hats I wore yesterday."
+          ],
+          "targets": [
+            [
+              "Those"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i put yesterday",
+              "hint": "'(모자를) 쓰다'는 put 한 낱말로는 부족해요."
+            },
+            {
+              "match": "these are",
+              "hint": "'저것들'은 멀리 있는 것이에요."
+            },
+            {
+              "match": "that is caps",
+              "hint": "모자가 여럿이에요. 가리키는 말도 여럿 모양으로 쓰세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "relative-that",
+            "past-simple"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "relative-that"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 10",
+            "reviewWhere": "review 3 item 15 (p56)"
+          },
+          "fix": {
+            "from": "그것들은 내가 어제 썼던 모자들이다.",
+            "kind": "translation_mismatch",
+            "why": "Those 는 '저것들'입니다('그것들은'이면 They 로 쓰게 되어 이 레슨의 목표를 피해 갑니다)."
+          }
+        },
+        {
+          "id": "pg07-3:p20",
+          "ko": "너는 그가 왜 저 색깔들을 좋아한다고 생각하니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Why do you think he likes those colors?",
+          "accept": [
+            "Why do you think he likes those colours?"
+          ],
+          "targets": [
+            [
+              "those"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "do you think why",
+              "hint": "think 가 있는 질문에서는 의문사를 문장 맨 앞으로 보내요."
+            },
+            {
+              "match": "he like those",
+              "hint": "he 는 3인칭 단수예요. 동사 모양을 보세요."
+            },
+            {
+              "match": "why does he like",
+              "hint": "'너는 ~라고 생각하니?'가 바깥 질문이에요. 그 안에 '그가 왜 ~하는지'를 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "indirect-question",
+            "question-wh",
+            "present-3sg-s"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "indirect-question"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (3) 지시대명사 item 12"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg07-3:t1",
+          "ko": "누가 너를 사랑하니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Who loves you?",
+          "accept": [],
+          "targets": [
+            [
+              "Who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who love you",
+              "hint": "'누가'가 주어일 때 who 는 3인칭 단수로 받아요."
+            },
+            {
+              "match": "whom do you love",
+              "hint": "'누가 너를'이에요. 누가 주어인지 다시 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-interrogative",
+            "question-wh",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-015#10"
+        },
+        {
+          "id": "pg07-3:t2",
+          "ko": "이것들은 그의 것이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "These are his.",
+          "accept": [],
+          "targets": [
+            [
+              "These"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "this is his",
+              "hint": "'이것들'은 여럿이에요."
+            },
+            {
+              "match": "these are him",
+              "hint": "'그의 것'을 뜻하는 모양을 쓰세요."
+            }
+          ],
+          "tags": [
+            "pronoun-demonstrative",
+            "pronoun-possessive",
+            "be-present-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-033#40"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg07-3:f1",
+      "template": "This is my ___. Whose ___ is that?",
+      "ko": "이것은 내 ___이다. 저것은 누구의 ___이니?"
+    }
+  ]
+}

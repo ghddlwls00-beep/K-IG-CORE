@@ -1,0 +1,994 @@
+{
+  "id": "pg02-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "Be동사의 현재형",
+  "label": "TOPIC 2. 동사의 현재형",
+  "menuLabel": "2-1. Be동사의 현재형",
+  "unit": 2,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "be 동사의 현재형 : am / is / are",
+  "grammarTags": [
+    "be-present-agreement"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg02-1:a1",
+          "en": "I am eleven years old.",
+          "ko": "나는 11살입니다.",
+          "focus": [
+            "am"
+          ],
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "passOff 1) item 1",
+            "reviewWhere": "review 1. item 1 (p12)"
+          }
+        },
+        {
+          "id": "pg02-1:a2",
+          "en": "You are a girl.",
+          "ko": "당신은 소녀입니다.",
+          "focus": [
+            "are"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "passOff 1) item 2",
+            "reviewWhere": "review 1. item 2 (p12)"
+          }
+        },
+        {
+          "id": "pg02-1:a3",
+          "en": "He is a truly smart person.",
+          "ko": "그는 진실로 똑똑한 사람입니다.",
+          "focus": [
+            "is"
+          ],
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "passOff 1) item 3",
+            "reviewWhere": "review 1. item 3 (p12)"
+          }
+        },
+        {
+          "id": "pg02-1:a4",
+          "en": "It is the start of the weekend.",
+          "ko": "그것은 주말의 시작입니다.",
+          "focus": [
+            "is"
+          ],
+          "studentRef": {
+            "lesson": "s10-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "passOff 1) item 4",
+            "reviewWhere": "review 1. item 4 (p12)"
+          },
+          "fix": {
+            "from": "그것은 그 주의 시작입니다.",
+            "kind": "translation_mismatch",
+            "why": "the weekend 는 '주말' — '그 주'는 the week 를 부름(STUDENT 10-5 한국어도 '주말의 시작')"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg02-1:a1",
+          "pg02-1:a2",
+          "pg02-1:a3"
+        ],
+        "question": "am / are / is 는 무엇에 따라 바뀔까요?",
+        "options": [
+          "주어",
+          "시제",
+          "문장 길이"
+        ],
+        "answer": 0,
+        "why": "주어가 I 면 am, you 면 are, he · she · it 이면 is 예요."
+      },
+      "title": "am · are · is 는 주어에 따라 바뀝니다",
+      "points": [
+        "be동사 현재형은 am · are · is 로, '~이다', '(어떤 상태)이다', '~에 있다'를 나타내요.",
+        "I 뒤에는 am, you 와 여럿(we · they · 복수 명사) 뒤에는 are 를 써요.",
+        "he · she · it 과 한 명 · 한 개(My brother, The book) 뒤에는 is 를 써요.",
+        "묻는 문장은 be동사를 주어 앞으로: You are busy. → Are you busy?",
+        "줄여 쓰기: I am → I'm, you are → you're, he is → he's, it is → it's"
+      ],
+      "table": {
+        "columns": [
+          "주어",
+          "be동사",
+          "줄임말"
+        ],
+        "rows": [
+          [
+            "I",
+            "am",
+            "I'm"
+          ],
+          [
+            "you · we · they · 복수 명사",
+            "are",
+            "you're · we're · they're"
+          ],
+          [
+            "he · she · it · 단수 명사",
+            "is",
+            "he's · she's · it's"
+          ]
+        ]
+      },
+      "koDiff": "한국어 '~이다'는 주어가 누구든 모양이 같지만, 영어 be동사는 주어에 맞춰 am · are · is 로 바뀌어요. 또 한국어로는 '피곤하다 · 바쁘다'가 한 낱말이지만, 영어는 be동사 + tired · busy 로 써요.",
+      "mistakes": [
+        {
+          "wrong": "I busy today.",
+          "right": "I am busy today.",
+          "why": "'바쁘다'는 be동사 + busy 예요. be동사를 빼지 마세요."
+        },
+        {
+          "wrong": "The boys is in the park.",
+          "right": "The boys are in the park.",
+          "why": "The boys 는 여러 명 → are"
+        }
+      ],
+      "worked": [
+        "나의 여동생은 오늘 바쁘다.",
+        "주어 '나의 여동생' → My sister (한 명, 3인칭 단수)",
+        "3인칭 단수 → is",
+        "'바쁜' → busy",
+        "My sister is busy today."
+      ],
+      "check": {
+        "question": "'My brother ___ a truly smart person.' 빈칸에 맞는 것은?",
+        "options": [
+          "am",
+          "are",
+          "is"
+        ],
+        "answer": 2,
+        "why": "My brother 는 한 명(3인칭 단수) → is",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg02-1:s1",
+          "kind": "select",
+          "instruction": "be동사를 누르세요",
+          "tokens": [
+            "I",
+            "am",
+            "eleven",
+            "years",
+            "old",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어가 I 라서 am",
+          "bookRef": {
+            "book": 1,
+            "page": 12,
+            "where": "review 1. item 1 (be동사 동그라미)"
+          }
+        },
+        {
+          "id": "pg02-1:s2",
+          "kind": "select",
+          "instruction": "be동사를 누르세요",
+          "tokens": [
+            "You",
+            "are",
+            "a",
+            "girl",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어가 you 라서 are",
+          "bookRef": {
+            "book": 1,
+            "page": 12,
+            "where": "review 1. item 2 (be동사 동그라미)"
+          }
+        },
+        {
+          "id": "pg02-1:s3",
+          "kind": "select",
+          "instruction": "be동사를 누르세요",
+          "tokens": [
+            "He",
+            "is",
+            "a",
+            "truly",
+            "smart",
+            "person",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어가 he(한 명)라서 is",
+          "bookRef": {
+            "book": 1,
+            "page": 12,
+            "where": "review 1. item 3 (be동사 동그라미)"
+          }
+        },
+        {
+          "id": "pg02-1:s4",
+          "kind": "select",
+          "instruction": "be동사를 누르세요",
+          "tokens": [
+            "It",
+            "is",
+            "the",
+            "start",
+            "of",
+            "the",
+            "weekend",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어가 it(한 개)라서 is",
+          "bookRef": {
+            "book": 1,
+            "page": 12,
+            "where": "review 1. item 4 (be동사 동그라미)"
+          }
+        },
+        {
+          "id": "pg02-1:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "We ___ all 14 years old.",
+          "underline": [],
+          "options": [
+            "am",
+            "are",
+            "is"
+          ],
+          "answer": 1,
+          "why": "We 는 여러 명 → are",
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 10"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg02-1:s8",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "My friends and I ___ in the same class.",
+          "underline": [],
+          "options": [
+            "am",
+            "are",
+            "is"
+          ],
+          "answer": 1,
+          "why": "My friends and I(친구들과 나)는 여러 명이라 we 와 같아요 → are. I 가 들어 있어도 am 이 아니에요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s5(빈칸에 are 를 넣으면 ④ p8 의 정답)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(여럿인 주어 → are)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg02-1:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "The dogs ___ very cute.",
+          "underline": [],
+          "options": [
+            "am",
+            "are",
+            "is"
+          ],
+          "answer": 1,
+          "why": "The dogs 는 여러 마리(복수 명사) → are. 명사 주어도 여러 개면 are 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg02-1:s7",
+          "kind": "select",
+          "instruction": "be동사를 누르세요",
+          "tokens": [
+            "Are",
+            "you",
+            "busy",
+            "on",
+            "weekends",
+            "?"
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "묻는 문장에서는 be동사가 주어 앞에 와요.",
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 6"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg02-1:p1",
+          "ko": "나는 11살입니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am eleven years old.",
+          "accept": [
+            "I am 11 years old.",
+            "I am eleven.",
+            "I am 11.",
+            "I'm eleven years old.",
+            "I'm 11 years old.",
+            "I'm eleven.",
+            "I'm 11."
+          ],
+          "targets": [
+            [
+              "am",
+              "'m"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I is",
+              "hint": "주어가 I 일 때 be동사 모양은?"
+            },
+            {
+              "match": "I are",
+              "hint": "주어가 I 일 때 be동사 모양은?"
+            },
+            {
+              "match": "I have",
+              "hint": "나이는 have 가 아니라 be동사로 말해요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-1st"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 1",
+            "reviewWhere": "review 1. item 1 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p2",
+          "ko": "당신은 소녀입니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "You are a girl.",
+          "accept": [
+            "You're a girl."
+          ],
+          "targets": [
+            [
+              "are",
+              "'re"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You is",
+              "hint": "you 가 주어면 한 명이어도 be동사 모양이 정해져 있어요."
+            },
+            {
+              "match": "You am",
+              "hint": "you 가 주어면 한 명이어도 be동사 모양이 정해져 있어요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-2nd",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 2",
+            "reviewWhere": "review 1. item 2 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p3",
+          "ko": "그는 진실로 똑똑한 사람입니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He is a truly smart person.",
+          "accept": [
+            "He is a really smart person.",
+            "He is a very smart person.",
+            "He is truly a smart person.",
+            "He is really a smart person.",
+            "He's a truly smart person.",
+            "He's a really smart person.",
+            "He's a very smart person.",
+            "He's truly a smart person.",
+            "He's really a smart person."
+          ],
+          "targets": [
+            [
+              "is",
+              "'s"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He are",
+              "hint": "He 는 한 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "He is truly smart person",
+              "hint": "person(사람 한 명) 앞에 '하나'를 뜻하는 작은 말이 필요해요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-3rd",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 3",
+            "reviewWhere": "review 1. item 3 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p4",
+          "ko": "그것은 주말의 시작입니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "It is the start of the weekend.",
+          "accept": [
+            "It is the beginning of the weekend.",
+            "It's the start of the weekend.",
+            "It's the beginning of the weekend."
+          ],
+          "targets": [
+            [
+              "is",
+              "'s"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "It are",
+              "hint": "It 은 한 개예요. be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-3rd",
+            "article-basic",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 4",
+            "reviewWhere": "review 1. item 4 (p12)"
+          },
+          "fix": {
+            "from": "en: It is the start of the weekend / ko: 그것은 그 주의 시작입니다.",
+            "kind": "translation_mismatch",
+            "why": "the weekend 는 '주말'(STUDENT 10-5 한국어도 '주말의 시작'), Application 줄에 빠진 마침표도 넣음"
+          }
+        },
+        {
+          "id": "pg02-1:p5",
+          "ko": "너는 주말마다 바쁘니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are you busy on weekends?",
+          "accept": [
+            "Are you busy on the weekends?",
+            "Are you busy every weekend?",
+            "Are you busy at weekends?"
+          ],
+          "targets": [
+            [
+              "are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Do you busy",
+              "hint": "busy(바쁜)는 동사가 아니에요. 무엇으로 물을까요?"
+            },
+            {
+              "match": "Is you",
+              "hint": "you 가 주어면 be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-2nd",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 6",
+            "reviewWhere": "review 3. item 2 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p6",
+          "ko": "그가 너의 영어 선생님이시니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is he your English teacher?",
+          "accept": [],
+          "targets": [
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Are he",
+              "hint": "he 는 한 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "He is your English teacher",
+              "hint": "묻는 문장은 be동사를 주어 앞으로 보내요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-3rd",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 7",
+            "reviewWhere": "review 3. item 3 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p7",
+          "ko": "그녀는 오늘 피곤하다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is tired today.",
+          "accept": [
+            "Today she is tired.",
+            "Today, she is tired.",
+            "She's tired today.",
+            "Today she's tired.",
+            "Today, she's tired."
+          ],
+          "targets": [
+            [
+              "is",
+              "'s"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She tired",
+              "hint": "'피곤하다'는 be동사 + tired 로 써요."
+            },
+            {
+              "match": "She are",
+              "hint": "She 는 한 명이에요. be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-3rd"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 8",
+            "reviewWhere": "review 3. item 4 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p8",
+          "ko": "우리는 모두 14살이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We are all 14 years old.",
+          "accept": [
+            "We are all fourteen years old.",
+            "We are all 14.",
+            "We are all fourteen.",
+            "All of us are 14 years old.",
+            "All of us are fourteen years old.",
+            "We're all 14 years old.",
+            "We're all fourteen years old.",
+            "We're all 14.",
+            "We're all fourteen."
+          ],
+          "targets": [
+            [
+              "are",
+              "'re"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We is",
+              "hint": "We 는 여러 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "14 year old",
+              "hint": "14년이니 year 는 여러 개 모양이에요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-1st"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 10",
+            "reviewWhere": "review 3. item 6 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p9",
+          "ko": "나는 나무를 타기에는 너무 바빠.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am too busy to climb a tree.",
+          "accept": [
+            "I am too busy to climb trees.",
+            "I'm too busy to climb a tree.",
+            "I'm too busy to climb trees."
+          ],
+          "targets": [
+            [
+              "am",
+              "'m"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I too busy",
+              "hint": "'바쁘다'는 be동사 + busy 예요."
+            },
+            {
+              "match": "too busy to climbing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-1st",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 5",
+            "reviewWhere": "review 3. item 1 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p10",
+          "ko": "밖에 비가 오니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is it rainy outside?",
+          "accept": [
+            "Is it raining outside?"
+          ],
+          "targets": [
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Is rainy outside",
+              "hint": "날씨를 말할 때도 주어 자리를 비우지 않아요."
+            },
+            {
+              "match": "Does it rain outside",
+              "hint": "지금 밖의 날씨를 묻는 말이에요. be동사로 물어 보세요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "it-dummy",
+            "question-basic"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "it-dummy"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 9",
+            "reviewWhere": "review 3. item 5 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg02-1:p11",
+          "ko": "그들은 그녀를 찾아서 기쁘다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "They are pleased to find her.",
+          "accept": [
+            "They are happy to find her.",
+            "They are glad to find her.",
+            "They are pleased that they found her.",
+            "They are happy that they found her.",
+            "They are glad that they found her.",
+            "They are pleased because they found her.",
+            "They are happy because they found her.",
+            "They are glad because they found her.",
+            "They're pleased to find her.",
+            "They're happy to find her.",
+            "They're glad to find her.",
+            "They're pleased that they found her.",
+            "They're happy that they found her.",
+            "They're glad that they found her.",
+            "They're pleased because they found her.",
+            "They're happy because they found her.",
+            "They're glad because they found her.",
+            "They are pleased they found her.",
+            "They are happy they found her.",
+            "They are glad they found her.",
+            "They're pleased they found her.",
+            "They're happy they found her.",
+            "They're glad they found her.",
+            "They found her, so they are pleased.",
+            "They found her so they are pleased.",
+            "Because they found her, they are pleased.",
+            "They found her, so they are happy.",
+            "They found her so they are happy.",
+            "Because they found her, they are happy.",
+            "They found her, so they are glad.",
+            "They found her so they are glad.",
+            "Because they found her, they are glad.",
+            "They found her, so they're pleased.",
+            "They found her so they're pleased.",
+            "Because they found her, they're pleased.",
+            "They found her, so they're happy.",
+            "They found her so they're happy.",
+            "Because they found her, they're happy.",
+            "They found her, so they're glad.",
+            "They found her so they're glad.",
+            "Because they found her, they're glad."
+          ],
+          "targets": [
+            [
+              "are",
+              "'re"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They is",
+              "hint": "They 는 여러 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "They pleased",
+              "hint": "'기쁘다'는 be동사 + pleased 예요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "pronoun-3rd",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 10,
+            "where": "application 1) item 11",
+            "reviewWhere": "review 3. item 7 (p13)"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg02-1:t1",
+          "ko": "그 책은 책상 위에 있다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "The book is on the desk.",
+          "accept": [],
+          "targets": [
+            [
+              "is",
+              "'s"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "The book are",
+              "hint": "The book 은 한 권이에요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "article-basic",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-021#5",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg02-1:t2",
+          "ko": "우리 부모님은 집에 계신다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "My parents are at home.",
+          "accept": [
+            "Our parents are at home.",
+            "My parents are home.",
+            "Our parents are home."
+          ],
+          "targets": [
+            [
+              "are",
+              "'re"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "parents is",
+              "hint": "My parents 는 두 분(여럿)이에요."
+            }
+          ],
+          "tags": [
+            "be-present-agreement",
+            "noun-plural-basic",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-021#6",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg02-1:f1",
+      "template": "I am ___ years old.",
+      "ko": "나는 ___살이다."
+    }
+  ]
+}

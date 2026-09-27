@@ -1,0 +1,855 @@
+{
+  "id": "pg05-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부정의문문",
+  "label": "TOPIC 5. 의문문",
+  "menuLabel": "5-4. 부정의문문",
+  "unit": 5,
+  "part": 1,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(4) 부정의문문",
+  "grammarTags": [
+    "negative-question"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg05-4:a1",
+          "en": "Isn't this a hat?",
+          "ko": "이것은 모자가 아니냐?",
+          "koSource": "review",
+          "focus": [
+            "Isn't"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (4) item 1",
+            "reviewWhere": "review 3 item 1"
+          }
+        },
+        {
+          "id": "pg05-4:a2",
+          "en": "Isn't there a cake?",
+          "ko": "케이크가 없니?",
+          "koSource": "review",
+          "focus": [
+            "Isn't"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (4) item 2",
+            "reviewWhere": "review 3 item 2"
+          },
+          "fix": {
+            "from": "Is there not a cake ?",
+            "kind": "english_unnatural",
+            "why": "딱딱한 글말 Is there not …? 대신 흔히 쓰는 Isn't there …? 로 바꿨습니다(원문 꼴도 영작에서 정답)."
+          }
+        },
+        {
+          "id": "pg05-4:a3",
+          "en": "Can't you swim?",
+          "ko": "너는 수영할 수 없니?",
+          "koSource": "review",
+          "focus": [
+            "Can't"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (4) item 3",
+            "reviewWhere": "review 3 item 3"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg05-4:a1",
+          "pg05-4:a2",
+          "pg05-4:a3"
+        ],
+        "question": "Isn't · Can't 는 원래 어떤 말이 합쳐진 것일까요?",
+        "options": [
+          "is + not, can + not",
+          "is + it, can + to",
+          "it + is, can + do"
+        ],
+        "answer": 0,
+        "why": "부정의문문은 동사와 not 을 줄인 말(Isn't · Can't)을 문장 맨 앞에 둡니다."
+      },
+      "title": "부정의문문: Isn't · Don't · Can't 로 시작해요",
+      "points": [
+        "'~하지 않니?'는 Isn't · Don't · Can't 를 맨 앞에",
+        "줄이지 않으면 not 은 주어 뒤: Is this not a hat?",
+        "일반동사: Don't · Doesn't · Didn't + 주어 + 동사원형",
+        "대답은 사실대로: 할 수 있으면 Yes, I can. / 못 하면 No, I can't."
+      ],
+      "table": {
+        "columns": [
+          "긍정 의문문",
+          "부정의문문"
+        ],
+        "rows": [
+          [
+            "Is this a hat?",
+            "Isn't this a hat?"
+          ],
+          [
+            "Is there a cake?",
+            "Isn't there a cake?"
+          ],
+          [
+            "Can you swim?",
+            "Can't you swim?"
+          ],
+          [
+            "Do you understand?",
+            "Don't you understand?"
+          ],
+          [
+            "Does he eat meat?",
+            "Doesn't he eat meat?"
+          ]
+        ]
+      },
+      "koDiff": "한국어로 '수영 못 하니?'에 '아니, 할 수 있어'라고 하면 영어로는 Yes, I can. 입니다. 영어는 질문 모양과 상관없이 사실이 긍정이면 Yes, 부정이면 No 로 대답합니다.",
+      "mistakes": [
+        {
+          "wrong": "Isn't this a hat? — No, it is.",
+          "right": "Yes, it is.",
+          "why": "모자가 맞다면(사실이 긍정) Yes 로 대답해요."
+        },
+        {
+          "wrong": "Is not this a hat?",
+          "right": "Isn't this a hat? / Is this not a hat?",
+          "why": "줄이지 않을 때 not 은 주어 뒤에 와요."
+        }
+      ],
+      "worked": [
+        "너는 수영할 수 없니?",
+        "긍정 의문문: Can you swim?",
+        "can + not → can't 를 맨 앞에",
+        "Can't you swim?"
+      ],
+      "terms": [],
+      "check": {
+        "question": "Doesn't she like milk? — 그녀가 우유를 좋아한다면 대답은?",
+        "options": [
+          "No, she does.",
+          "Yes, she does.",
+          "Yes, she doesn't."
+        ],
+        "answer": 1,
+        "why": "사실이 긍정(좋아함)이면 Yes, she does. 입니다.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg05-4:s1",
+          "kind": "choice",
+          "instruction": "'이것은 네 가방이 아니니?'를 부정의문문으로 바르게 쓴 것을 고르세요",
+          "sentence": null,
+          "options": [
+            "This isn't your bag?",
+            "Isn't this your bag?",
+            "Is this your bag not?"
+          ],
+          "answer": 1,
+          "why": "부정의문문은 Isn't 를 맨 앞에 둡니다.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-4:s2",
+          "kind": "choice",
+          "instruction": "Aren't you tired? 를 줄이지 않고 쓴 것을 고르세요",
+          "sentence": null,
+          "options": [
+            "Are not you tired?",
+            "Are you not tired?",
+            "Are you tired not?"
+          ],
+          "answer": 1,
+          "why": "줄이지 않으면 not 은 주어(you) 뒤에 와요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-4:s3",
+          "kind": "choice",
+          "instruction": "자전거를 탈 줄 안다면, 알맞은 대답을 고르세요",
+          "sentence": "Can't you ride a bike?",
+          "options": [
+            "Yes, I can.",
+            "No, I can.",
+            "No, I can't."
+          ],
+          "answer": 0,
+          "why": "사실이 긍정이면 Yes 예요. 한국어로는 '아니, 탈 줄 알아.'",
+          "source": "new"
+        },
+        {
+          "id": "pg05-4:s4",
+          "kind": "choice",
+          "instruction": "피자를 좋아하지 않는다면, 알맞은 대답을 고르세요",
+          "sentence": "Don't you like pizza?",
+          "options": [
+            "Yes, I don't.",
+            "No, I don't.",
+            "No, I do."
+          ],
+          "answer": 1,
+          "why": "사실이 부정이면 No + 부정이에요. 한국어로는 '응, 안 좋아해.'",
+          "source": "new"
+        },
+        {
+          "id": "pg05-4:s5",
+          "kind": "choice",
+          "instruction": "'너의 아버지는 커피를 안 드시니?' 빈칸에 알맞은 것을 고르세요",
+          "sentence": "___ your father drink coffee?",
+          "options": [
+            "Isn't",
+            "Don't",
+            "Doesn't"
+          ],
+          "answer": 2,
+          "why": "drink 는 일반동사이고 your father 는 3인칭 단수라 Doesn't 예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-4:s6",
+          "kind": "short",
+          "instruction": "Isn't she your sister? 를 줄이지 않고 쓸 때 빈칸에 알맞은 낱말을 쓰세요",
+          "sentence": "Is she ___ your sister?",
+          "answer": [
+            "not"
+          ],
+          "why": "줄이지 않으면 not 은 주어 she 뒤에 와요.",
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg05-4:p1",
+          "ko": "이것은 모자가 아니냐?",
+          "koSource": "review",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Isn't this a hat?",
+          "accept": [
+            "Is this not a hat?"
+          ],
+          "targets": [
+            [
+              "Isn't",
+              "Is this not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "This isn't a hat",
+              "hint": "부정의문문은 Isn't 를 맨 앞으로 옮겨요."
+            },
+            {
+              "match": "this hat",
+              "hint": "셀 수 있는 명사 hat 하나 앞에는 a 가 필요해요."
+            },
+            {
+              "match": "Is not this a hat?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "passOff (4) item 1 · application (3) item 1",
+            "reviewWhere": "review 3 item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-4:p2",
+          "ko": "케이크가 없니?",
+          "koSource": "review",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Isn't there a cake?",
+          "accept": [
+            "Is there not a cake?",
+            "Isn't there any cake?",
+            "Don't you have a cake?",
+            "Don't you have any cake?",
+            "Do you not have a cake?",
+            "Do you not have any cake?"
+          ],
+          "targets": [
+            [
+              "Isn't",
+              "Is there not",
+              "Don't",
+              "Do you not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "There isn't a cake",
+              "hint": "Isn't 를 there 앞으로 옮겨요."
+            },
+            {
+              "match": "Aren't there a cake",
+              "hint": "a cake 는 하나라 Isn't there 예요."
+            },
+            {
+              "match": "Is not there a cake?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not there any cake?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Do not you have a cake?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Do not you have any cake?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "passOff (4) item 2 · application (3) item 2",
+            "reviewWhere": "review 3 item 2"
+          },
+          "fix": {
+            "from": "Is there not a cake?",
+            "kind": "english_unnatural",
+            "why": "Is there not …? 은 딱딱한 글말이라 흔히 쓰는 Isn't there …? 로 바꿨고, 원문도 정답으로 인정합니다."
+          }
+        },
+        {
+          "id": "pg05-4:p3",
+          "ko": "너는 수영할 수 없니?",
+          "koSource": "review",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Can't you swim?",
+          "accept": [
+            "Can you not swim?"
+          ],
+          "targets": [
+            [
+              "Can't",
+              "Can you not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You can't swim",
+              "hint": "Can't 를 주어 you 앞으로 옮겨요."
+            },
+            {
+              "match": "Don't you swim",
+              "hint": "'할 수 없니?'는 can't 로 물어요."
+            },
+            {
+              "match": "Can not you swim?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Cannot you swim?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "passOff (4) item 3 · application (3) item 3",
+            "reviewWhere": "review 3 item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-4:p4",
+          "ko": "너는 그 문제의 양면을 이해하지 못하니?",
+          "koSource": "review-fixed",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Don't you understand both sides of an issue?",
+          "accept": [
+            "Do you not understand both sides of an issue?",
+            "Don't you understand both sides of the issue?",
+            "Do you not understand both sides of the issue?",
+            "Don't you understand both sides of the problem?",
+            "Do you not understand both sides of the problem?"
+          ],
+          "targets": [
+            [
+              "Don't",
+              "Do you not"
+            ],
+            [
+              "understand"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Aren't you understand",
+              "hint": "understand 는 일반동사라 be동사가 아니라 do 로 물어요."
+            },
+            {
+              "match": "Doesn't you",
+              "hint": "you 에는 Don't 를 써요."
+            },
+            {
+              "match": "Do not you understand both sides of an issue?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Do not you understand both sides of the issue?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Do not you understand both sides of the problem?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (3) item 4",
+            "reviewWhere": "review 3 item 4"
+          },
+          "fix": {
+            "from": "너는 그 문제의 양면을 이해하지 않니 ?",
+            "kind": "translation_mismatch",
+            "why": "Don't you understand 는 '이해하지 못하니'라는 뜻이라 고쳤습니다('이해하지 않니'는 일부러 이해하지 않는다는 뜻으로 읽힘). 영어 an issue 와 한국어 '그 문제'가 조금 달라 the issue 도 정답으로 둡니다."
+          }
+        },
+        {
+          "id": "pg05-4:p5",
+          "ko": "너는 현명한 선택을 할 수 없니?",
+          "koSource": "review-fixed",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Can't you make an intelligent choice?",
+          "accept": [
+            "Can you not make an intelligent choice?",
+            "Can't you make a wise choice?",
+            "Can you not make a wise choice?",
+            "Can't you make a smart choice?",
+            "Can't you make a sensible choice?"
+          ],
+          "targets": [
+            [
+              "Can't",
+              "Can you not"
+            ],
+            [
+              "make"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You can't make",
+              "hint": "Can't 를 주어 you 앞으로 옮겨요."
+            },
+            {
+              "match": "Can't you make a intelligent",
+              "hint": "모음 소리로 시작하는 낱말 앞에는 a 가 아니라 an 을 써요."
+            },
+            {
+              "match": "Can not you make an intelligent choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Cannot you make an intelligent choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Can not you make a wise choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Cannot you make a wise choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Can not you make a smart choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Cannot you make a smart choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Can not you make a sensible choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Cannot you make a sensible choice?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (3) item 5",
+            "reviewWhere": "review 3 item 5"
+          },
+          "fix": {
+            "from": "너는 지성적인 선택을 할 수 없니 ?",
+            "kind": "translation_mismatch",
+            "why": "intelligent choice 를 '지성적인 선택'으로 옮기면 어색해 '현명한 선택'으로 고쳤고, wise · smart choice 도 정답으로 둡니다."
+          }
+        },
+        {
+          "id": "pg05-4:p6",
+          "ko": "그는 결점이 없니?",
+          "koSource": "review",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Doesn't he have his faults?",
+          "accept": [
+            "Does he not have his faults?",
+            "Doesn't he have any faults?",
+            "Does he not have any faults?",
+            "Doesn't he have any flaws?"
+          ],
+          "targets": [
+            [
+              "Doesn't",
+              "Does he not"
+            ],
+            [
+              "have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Doesn't he has",
+              "hint": "Doesn't 뒤에는 동사원형 have 를 써요."
+            },
+            {
+              "match": "Isn't he have",
+              "hint": "have 는 일반동사라 Doesn't 예요."
+            },
+            {
+              "match": "Don't he",
+              "hint": "he 는 3인칭 단수라 Doesn't 예요."
+            },
+            {
+              "match": "Does not he have his faults?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Does not he have any faults?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Does not he have any flaws?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "have-has",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (3) item 6",
+            "reviewWhere": "review 3 item 6"
+          },
+          "fix": {
+            "from": "Doesn’t he have his fault?",
+            "kind": "english_unnatural",
+            "why": "사람의 결점을 말할 때는 복수 faults 를 씁니다(have one's faults)."
+          }
+        },
+        {
+          "id": "pg05-4:p7",
+          "ko": "그 시험에 호머의 시가 선택된 것은 부당하지 않니?",
+          "koSource": "review",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Isn't it unfair that Homer's poems are chosen for the exams?",
+          "accept": [
+            "Is it not unfair that Homer's poems are chosen for the exams?",
+            "Isn't it unfair that Homer's poems are chosen for the exam?",
+            "Isn't it unfair that Homer's poems are selected for the exams?",
+            "Isn't it unfair that Homer's poems were chosen for the exams?",
+            "Isn't it unfair that Homer's poems were chosen for the exam?",
+            "Isn't it unfair that Homer's poems are selected for the exam?",
+            "Isn't it unfair that Homer's poems were selected for the exams?",
+            "Isn't it unfair that Homer's poems were selected for the exam?",
+            "Is it not unfair that Homer's poems are chosen for the exam?",
+            "Is it not unfair that Homer's poems were chosen for the exams?",
+            "Is it not unfair that Homer's poems were chosen for the exam?",
+            "Is it not unfair that Homer's poems are selected for the exams?",
+            "Is it not unfair that Homer's poems are selected for the exam?",
+            "Is it not unfair that Homer's poems were selected for the exams?",
+            "Is it not unfair that Homer's poems were selected for the exam?"
+          ],
+          "targets": [
+            [
+              "Isn't it",
+              "Is it not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Isn't unfair",
+              "hint": "Isn't 바로 뒤에 주어가 빠졌어요. 뒤의 that 절을 대신하는 가주어를 넣어 보세요."
+            },
+            {
+              "match": "are choose",
+              "hint": "'선택된'은 수동태(be동사 + 과거분사)로 써요."
+            },
+            {
+              "match": "Is not it unfair that Homer's poems are chosen for the exams?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems are chosen for the exam?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems are selected for the exams?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems were chosen for the exams?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems were chosen for the exam?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems are selected for the exam?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems were selected for the exams?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Is not it unfair that Homer's poems were selected for the exam?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "be-present",
+            "complex-sentence",
+            "it-dummy",
+            "passive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "it-dummy",
+            "passive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 39,
+            "where": "application (3) item 7",
+            "reviewWhere": "review 3 item 7"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg05-4:t1",
+          "ko": "그는 선생님이 아니니?",
+          "koSource": "grammar",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Isn't he a teacher?",
+          "accept": [
+            "Is he not a teacher?"
+          ],
+          "targets": [
+            [
+              "Isn't",
+              "Is he not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He isn't a teacher",
+              "hint": "Isn't 를 맨 앞으로 옮겨요."
+            },
+            {
+              "match": "Is not he a teacher?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-021#22",
+          "fix": null
+        },
+        {
+          "id": "pg05-4:t2",
+          "ko": "너는 그것을 좋아하지 않았니?",
+          "koSource": "grammar",
+          "condition": "부정의문문으로",
+          "promptEn": null,
+          "en": "Didn't you like it?",
+          "accept": [
+            "Didn't you like that?",
+            "Did you not like it?",
+            "Did you not like that?"
+          ],
+          "targets": [
+            [
+              "Didn't",
+              "Did you not"
+            ],
+            [
+              "like"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Didn't you liked",
+              "hint": "Didn't 뒤에는 동사원형 like 를 써요."
+            },
+            {
+              "match": "Don't you like",
+              "hint": "'좋아하지 않았니'는 과거라 Didn't 예요."
+            },
+            {
+              "match": "Did not you like it?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            },
+            {
+              "match": "Did not you like that?",
+              "hint": "줄이지 않을 때는 not 을 주어 뒤에 둬요.",
+              "literal": true
+            }
+          ],
+          "tags": [
+            "negative-question",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-011#44",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg05-4:f1",
+      "template": "Don't you like ___?",
+      "ko": "너는 ___을(를) 좋아하지 않니?"
+    }
+  ]
+}

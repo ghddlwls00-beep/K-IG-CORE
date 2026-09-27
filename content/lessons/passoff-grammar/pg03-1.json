@@ -1,0 +1,1955 @@
+{
+  "id": "pg03-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장의 5형식",
+  "label": "TOPIC 3. 문장의 기초",
+  "menuLabel": "3-1. 문장의 5형식",
+  "unit": 3,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "문장의 5형식",
+  "grammarTags": [
+    "sentence-pattern-1",
+    "sentence-pattern-2",
+    "sentence-pattern-3",
+    "sentence-pattern-4",
+    "sentence-pattern-5"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg03-1:a1",
+          "en": "Flowers bloom.",
+          "ko": "꽃들이 핀다.",
+          "koSource": "review",
+          "focus": [
+            "bloom"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 1) item 1"
+          }
+        },
+        {
+          "id": "pg03-1:a2",
+          "en": "There are many jobs in the world.",
+          "ko": "세상에는 많은 직업들이 있다.",
+          "koSource": "review",
+          "focus": [
+            "are",
+            "many jobs"
+          ],
+          "studentRef": {
+            "lesson": "s14-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 1) item 2"
+          }
+        },
+        {
+          "id": "pg03-1:a3",
+          "en": "My father is the second son.",
+          "ko": "나의 아버지는 둘째 아들이십니다.",
+          "koSource": "student",
+          "focus": [
+            "is",
+            "the second son"
+          ],
+          "studentRef": {
+            "lesson": "s4-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 1) item 3"
+          }
+        },
+        {
+          "id": "pg03-1:a4",
+          "en": "I want to become a teacher for several reasons.",
+          "ko": "나는 몇 가지 이유에서 선생님이 되고 싶습니다.",
+          "koSource": "student",
+          "focus": [
+            "want",
+            "to become a teacher"
+          ],
+          "studentRef": {
+            "lesson": "s14-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 1) item 4"
+          }
+        },
+        {
+          "id": "pg03-1:a5",
+          "en": "He always gives me candy.",
+          "ko": "그는 항상 나에게 사탕을 준다.",
+          "koSource": "review",
+          "focus": [
+            "gives",
+            "me",
+            "candy"
+          ],
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 1) item 5"
+          }
+        },
+        {
+          "id": "pg03-1:a6",
+          "en": "I want her to be a good pianist.",
+          "ko": "나는 그녀가 좋은 피아니스트가 되기를 원합니다.",
+          "koSource": "student",
+          "focus": [
+            "want",
+            "her",
+            "to be a good pianist"
+          ],
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 1) item 6"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg03-1:a1",
+          "pg03-1:a3",
+          "pg03-1:a5"
+        ],
+        "question": "세 문장의 동사(bloom · is · gives) 뒤를 보세요. 무엇이 다른가요?",
+        "options": [
+          "동사 뒤에 꼭 필요한 말이 몇 개, 어떤 역할로 오는지",
+          "문장이 마침표로 끝나는지",
+          "지금 일인지 지난 일인지"
+        ],
+        "answer": 0,
+        "why": "Flowers bloom.은 동사 뒤에 더 필요한 말이 없어요. My father is the second son.은 주어가 누구인지 설명하는 말이 하나, He always gives me candy.는 '나에게'와 '사탕을' 두 개가 와요. 이 차이로 문장의 형식을 나눕니다."
+      },
+      "title": "문장의 형식은 동사 뒤에 꼭 필요한 말로 정해져요",
+      "points": [
+        "S 주어 · V 동사 · C 보어 · O 목적어. 꾸밈말은 빼고 봐요.",
+        "1형식 S+V: 동사에서 끝나요(There is/are + 주어도 1형식). 2형식 S+V+C: 보어가 주어를 설명해요.",
+        "3형식 S+V+O: '~을/를'에 해당하는 목적어가 하나 와요.",
+        "4형식 S+V+IO+DO: '~에게'(IO)가 먼저, '~을'(DO)이 나중.",
+        "5형식 S+V+O+OC: 목적어 뒤의 말(OC)이 목적어를 설명해요."
+      ],
+      "table": {
+        "columns": [
+          "형식",
+          "짜임",
+          "예문"
+        ],
+        "rows": [
+          [
+            "1형식",
+            "S + V",
+            "Flowers bloom."
+          ],
+          [
+            "2형식",
+            "S + V + C",
+            "My father is the second son."
+          ],
+          [
+            "3형식",
+            "S + V + O",
+            "I want to become a teacher."
+          ],
+          [
+            "4형식",
+            "S + V + IO + DO",
+            "He always gives me candy."
+          ],
+          [
+            "5형식",
+            "S + V + O + OC",
+            "I want her to be a good pianist."
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '나에게', '사탕을'처럼 조사로 역할을 알려 주어서 순서를 바꿔도 뜻이 통해요. 영어는 자리(순서)로 역할을 알려 줘요. gives me candy 에서 동사 바로 뒤의 me 가 '~에게', 그다음 candy 가 '~을'입니다.",
+      "mistakes": [
+        {
+          "wrong": "He always gives candy me.",
+          "right": "He always gives me candy.",
+          "why": "4형식은 '~에게(me)'가 먼저, '~을(candy)'이 나중이에요."
+        },
+        {
+          "wrong": "I want that she is a good pianist.",
+          "right": "I want her to be a good pianist.",
+          "why": "want 는 5형식 '목적어 + to 동사원형'으로 써요."
+        }
+      ],
+      "worked": [
+        "He always gives me candy.",
+        "① 주어 He, 동사 gives",
+        "② always 는 꾸밈말이라 형식에서 빼요(today · in the world · for several reasons 도 꾸밈말)",
+        "③ gives 뒤: me(나에게) + candy(사탕을)",
+        "④ S+V+IO+DO → 4형식"
+      ],
+      "terms": [],
+      "check": {
+        "question": "'The news made him happy.'는 몇 형식일까요?",
+        "options": [
+          "2형식",
+          "4형식",
+          "5형식"
+        ],
+        "answer": 2,
+        "why": "made 뒤의 him(목적어)이 어떤 상태가 되었는지 happy 가 설명해요(him = happy). 그래서 5형식이에요.",
+        "pointIndex": 4
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg03-1:s1",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "Flowers bloom.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 0,
+          "why": "Flowers(주어) bloom(동사). 동사 뒤에 꼭 필요한 말이 없으니 1형식이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 21,
+            "where": "review 1 item 1"
+          }
+        },
+        {
+          "id": "pg03-1:s2",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "There are many jobs in the world.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 0,
+          "why": "There are + 주어(many jobs) 구문은 1형식이에요. in the world 는 장소를 꾸미는 말이라 형식에 넣지 않아요.",
+          "bookRef": {
+            "book": 1,
+            "page": 21,
+            "where": "review 1 item 2"
+          }
+        },
+        {
+          "id": "pg03-1:s3",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "He always gives me candy.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 3,
+          "why": "gives 뒤에 me(나에게)와 candy(사탕을) 두 목적어가 와요. always 는 꾸밈말이에요. → 4형식",
+          "bookRef": {
+            "book": 1,
+            "page": 21,
+            "where": "review 1 item 3"
+          }
+        },
+        {
+          "id": "pg03-1:s4",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "I want her to be a good pianist.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 4,
+          "why": "her(목적어)가 무엇이 되기를 바라는지 to be a good pianist 가 설명해요. → 5형식",
+          "bookRef": {
+            "book": 1,
+            "page": 21,
+            "where": "review 1 item 4"
+          }
+        },
+        {
+          "id": "pg03-1:s5",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "My father is the second son.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 1,
+          "why": "the second son 이 주어 My father 가 누구인지 설명하는 보어예요. → 2형식",
+          "bookRef": {
+            "book": 1,
+            "page": 21,
+            "where": "review 1 item 5"
+          }
+        },
+        {
+          "id": "pg03-1:s6",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "I want to become a teacher for several reasons.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 2,
+          "why": "to become a teacher(선생님이 되는 것)가 want 의 목적어예요. for several reasons 는 꾸밈말. → 3형식",
+          "bookRef": {
+            "book": 1,
+            "page": 21,
+            "where": "review 1 item 6"
+          }
+        },
+        {
+          "id": "pg03-1:s7",
+          "kind": "select",
+          "instruction": "간접목적어('~에게')를 누르세요",
+          "tokens": [
+            "My",
+            "mother",
+            "bought",
+            "me",
+            "a",
+            "pen",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "bought 뒤의 me 가 '나에게'(간접목적어), a pen 이 '펜을'(직접목적어)이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 22"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg03-1:s8",
+          "kind": "select",
+          "instruction": "목적격 보어(목적어를 설명하는 말)를 이루는 낱말을 모두 누르세요",
+          "tokens": [
+            "We",
+            "expected",
+            "Jim",
+            "to",
+            "be",
+            "late",
+            "."
+          ],
+          "answer": [
+            3,
+            4,
+            5
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "Jim(목적어)이 어떤 상태일지를 to be late 가 설명해요(Jim = 늦음).",
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 24"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg03-1:s9",
+          "kind": "select",
+          "instruction": "주어를 설명하는 보어를 누르세요",
+          "tokens": [
+            "Tina",
+            "kept",
+            "calm",
+            "all",
+            "afternoon",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "kept 뒤의 calm(침착한)이 주어 Tina 의 상태를 설명해요(2형식). all afternoon 은 때를 꾸미는 말이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 15"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg03-1:s10",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "Here he comes.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 0,
+          "why": "Here 는 장소를 꾸미는 말이고, he(주어) comes(동사)에서 끝나요. → 1형식",
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 8"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg03-1:s11",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "I enjoy singing.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 2,
+          "why": "singing(노래하기)이 enjoy 의 목적어예요. → 3형식",
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 17"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg03-1:s12",
+          "kind": "choice",
+          "instruction": "이 문장은 몇 형식일까요?",
+          "sentence": "He made me smile and play outside.",
+          "underline": [],
+          "options": [
+            "1형식",
+            "2형식",
+            "3형식",
+            "4형식",
+            "5형식"
+          ],
+          "answer": 4,
+          "why": "me(목적어)가 무엇을 하게 되었는지 smile and play 가 설명해요. → 5형식",
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 26"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg03-1:p1",
+          "ko": "꽃들이 핀다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Flowers bloom.",
+          "accept": [
+            "The flowers bloom."
+          ],
+          "targets": [
+            [
+              "bloom"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Flowers blooms",
+              "hint": "주어 Flowers 는 여러 송이예요. 동사에 -s 가 붙을까요?"
+            },
+            {
+              "match": "Flowers are bloom",
+              "hint": "일반동사 bloom 앞에 be동사를 함께 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 1",
+            "reviewWhere": "review 1 item 1 (p21), review 3 item 1 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p2",
+          "ko": "세상에는 많은 직업들이 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "There are many jobs in the world.",
+          "accept": [
+            "There are a lot of jobs in the world.",
+            "There are lots of jobs in the world.",
+            "In the world, there are many jobs.",
+            "There are many jobs in this world."
+          ],
+          "targets": [
+            [
+              "There are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "There is many jobs",
+              "hint": "jobs 는 여러 개예요. There 뒤의 be동사는 뒤에 오는 주어의 수에 맞춰요."
+            },
+            {
+              "match": "The world has many jobs",
+              "hint": "뜻은 비슷해요. 이번에는 '~에 …이 있다'를 There ___ 로 시작해 보세요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s14-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 2",
+            "reviewWhere": "review 1 item 2 (p21), review 3 item 2 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p3",
+          "ko": "나의 아버지는 둘째 아들이십니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "My father is the second son.",
+          "accept": [
+            "My dad is the second son."
+          ],
+          "targets": [
+            [
+              "is",
+              "'s"
+            ],
+            [
+              "second son"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is second son",
+              "hint": "second(둘째) 같은 서수 앞에는 무엇이 필요할까요?"
+            },
+            {
+              "match": "My father are",
+              "hint": "My father 는 한 사람이에요. be동사는?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-2",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 3",
+            "reviewWhere": "review 1 item 5 (p21), review 3 item 3 (p24)"
+          },
+          "fix": {
+            "from": "나의 아버지는 둘째 아드님이시다.",
+            "kind": "korean_typo",
+            "why": "'아드님'은 남의 아들을 높이는 말이라 어색함 — STUDENT 4과 한국어로 맞춤(교재 21쪽 Review 1-5 '둘째 아들이다'는 문제 없음)",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-1:p4",
+          "ko": "나는 몇 가지 이유에서 선생님이 되고 싶습니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "I want to become a teacher for several reasons.",
+          "accept": [
+            "I want to be a teacher for several reasons.",
+            "For several reasons, I want to become a teacher.",
+            "For several reasons, I want to be a teacher.",
+            "I want to become a teacher for a few reasons.",
+            "I want to be a teacher for a few reasons."
+          ],
+          "targets": [
+            [
+              "want to become a teacher",
+              "want to be a teacher"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I want become",
+              "hint": "want 뒤에 동사가 올 때 무엇이 필요할까요?"
+            },
+            {
+              "match": "to become teacher",
+              "hint": "teacher 는 한 명이에요. 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "to be teacher",
+              "hint": "teacher 는 한 명이에요. 앞에 무엇이 필요할까요?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-3",
+            "want-to",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s14-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 4",
+            "reviewWhere": "review 1 item 6 (p21), review 3 item 4 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p5",
+          "ko": "그는 항상 나에게 사탕을 준다.",
+          "koSource": "review",
+          "condition": "4형식으로",
+          "promptEn": null,
+          "en": "He always gives me candy.",
+          "accept": [
+            "He always gives me candies.",
+            "He always gives me some candy."
+          ],
+          "targets": [
+            [
+              "gives me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gives candy to me",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 '나에게(me)'를 동사 바로 뒤에 두는 4형식으로 써 보세요."
+            },
+            {
+              "match": "gives candy me",
+              "hint": "'~에게(me)'와 '~을(candy)' 중 어느 것이 먼저 올까요?"
+            },
+            {
+              "match": "always give me",
+              "hint": "주어 He 는 3인칭 한 명이에요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-4",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 5",
+            "reviewWhere": "review 1 item 3 (p21), review 3 item 5 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p6",
+          "ko": "나는 그녀가 좋은 피아니스트가 되기를 원합니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "I want her to be a good pianist.",
+          "accept": [
+            "I want her to become a good pianist."
+          ],
+          "targets": [
+            [
+              "want her to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I want she",
+              "hint": "want 뒤의 '그녀가'는 목적어 자리예요. she 의 목적격은?"
+            },
+            {
+              "match": "want that she",
+              "hint": "want 는 that 절 대신 '목적어 + to 동사원형'으로 써요."
+            },
+            {
+              "match": "want her be",
+              "hint": "her 뒤에 동사가 올 때 무엇이 필요할까요?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-5",
+            "want-to",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 6",
+            "reviewWhere": "review 1 item 4 (p21), review 3 item 6 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p7",
+          "ko": "잎이 떨어진다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "A leaf falls.",
+          "accept": [
+            "Leaves fall.",
+            "The leaf falls.",
+            "The leaves fall.",
+            "A leaf falls down.",
+            "Leaves fall down.",
+            "The leaves fall down.",
+            "The leaf falls down."
+          ],
+          "targets": [
+            [
+              "falls",
+              "fall"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Leaves falls",
+              "hint": "주어 Leaves 는 여러 장이에요. 동사에 -s 가 붙을까요?"
+            },
+            {
+              "match": "A leaf is fall",
+              "hint": "일반동사 fall 앞에 be동사를 함께 쓰지 않아요."
+            },
+            {
+              "match": "A leaves",
+              "hint": "a 는 하나일 때만 써요. 잎 하나면 leaf, 여럿이면 leaves."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "present-3sg-s",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 7",
+            "reviewWhere": "review 3 item 7 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p8",
+          "ko": "여기에 그가 온다.",
+          "koSource": "review",
+          "condition": "Here로 시작해서",
+          "promptEn": null,
+          "en": "Here he comes.",
+          "accept": [],
+          "targets": [
+            [
+              "Here he comes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Here comes he",
+              "hint": "주어가 he 같은 대명사일 때는 Here 뒤의 순서가 어떻게 될까요?"
+            },
+            {
+              "match": "He comes here",
+              "hint": "뜻은 비슷해요. 이번에는 조건대로 Here 로 시작해 보세요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 8",
+            "reviewWhere": "review 3 item 8 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p9",
+          "ko": "당신을 위한 약간의 선물이 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "There are some gifts for you.",
+          "accept": [
+            "There are some presents for you.",
+            "There are a few gifts for you.",
+            "There are a few presents for you."
+          ],
+          "targets": [
+            [
+              "There are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "There is some gifts",
+              "hint": "gifts 는 여러 개예요. be동사는?"
+            },
+            {
+              "match": "I have some gifts for you",
+              "hint": "뜻은 비슷해요. 이번에는 '~이 있다'를 There ___ 로 시작해 보세요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 16,
+            "where": "application 1) item 9",
+            "reviewWhere": "review 3 item 9 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p10",
+          "ko": "오늘 내 머리가 돌아가지 않는다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "My brain doesn't work today.",
+          "accept": [
+            "My brain does not work today.",
+            "My brain isn't working today.",
+            "My brain is not working today.",
+            "Today my brain doesn't work.",
+            "Today, my brain doesn't work.",
+            "Today my brain isn't working.",
+            "Today, my brain isn't working."
+          ],
+          "targets": [
+            [
+              "work",
+              "working"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "My brain don't",
+              "hint": "주어 My brain 은 3인칭 하나예요. don't 가 맞을까요?"
+            },
+            {
+              "match": "doesn't works",
+              "hint": "doesn't 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "present-3sg-s",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 10",
+            "reviewWhere": "review 3 item 10 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p11",
+          "ko": "이 약이면 될 거야.",
+          "koSource": "review",
+          "condition": "1형식으로",
+          "promptEn": null,
+          "en": "This medicine will do.",
+          "accept": [
+            "This medicine will work."
+          ],
+          "targets": [
+            [
+              "will do",
+              "will work"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will be effective",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 will 뒤에 동사 하나로 끝나는 1형식으로 써 보세요."
+            },
+            {
+              "match": "will works",
+              "hint": "will 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "will be enough",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 will 뒤에 동사 하나로 끝나는 1형식으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-1",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 11",
+            "reviewWhere": "review 3 item 11 (p24)"
+          },
+          "fix": {
+            "from": "이 약은 효과가 있을 거야.",
+            "kind": "translation_mismatch",
+            "why": "자동사 do 는 '충분하다·쓸모가 있다' — '이 약이면 될 거야'(will work 도 정답)",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-1:p12",
+          "ko": "오늘은 월요일이야.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "It is Monday today.",
+          "accept": [
+            "It's Monday today.",
+            "Today is Monday.",
+            "Today's Monday."
+          ],
+          "targets": [
+            [
+              "is Monday",
+              "'s Monday",
+              "Today's Monday"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "It Monday",
+              "hint": "동사가 빠졌어요. '~이다'는?"
+            },
+            {
+              "match": "is a Monday",
+              "hint": "요일 이름 앞에는 보통 a 를 붙이지 않아요."
+            },
+            {
+              "match": "Today Monday",
+              "hint": "동사가 빠졌어요. '~이다'는?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-2",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 12",
+            "reviewWhere": "review 3 item 12 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p13",
+          "ko": "나는 늦을 거야.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I'll be late.",
+          "accept": [
+            "I will be late.",
+            "I'm going to be late.",
+            "I am going to be late."
+          ],
+          "targets": [
+            [
+              "be late"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I will late",
+              "hint": "late 는 형용사예요. will 뒤에 무엇이 필요할까요?"
+            },
+            {
+              "match": "I'll late",
+              "hint": "late 는 형용사예요. will 뒤에 무엇이 필요할까요?"
+            },
+            {
+              "match": "I am late",
+              "hint": "앞으로의 일이에요. 시제를 확인해 보세요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-2",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 13",
+            "reviewWhere": "review 3 item 13 (p25)"
+          },
+          "fix": {
+            "from": "I ’ll be late.",
+            "kind": "layout_or_extraction",
+            "why": "I 와 ’ll 사이의 빈칸을 없앰",
+            "field": "en"
+          }
+        },
+        {
+          "id": "pg03-1:p14",
+          "ko": "삶은 때때로 공평하지 않다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Life is sometimes unfair.",
+          "accept": [
+            "Sometimes life is unfair.",
+            "Sometimes, life is unfair.",
+            "Life is unfair sometimes.",
+            "Life is sometimes not fair.",
+            "Sometimes life is not fair.",
+            "Life isn't always fair."
+          ],
+          "targets": [
+            [
+              "unfair",
+              "not fair",
+              "not always fair",
+              "isn't always fair"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is sometimes unfairly",
+              "hint": "be동사 뒤 보어 자리에는 부사가 아니라 형용사가 와요."
+            },
+            {
+              "match": "The life is",
+              "hint": "'삶(인생)' 전체를 말할 때는 앞에 the 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-2",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 14",
+            "reviewWhere": "review 3 item 14 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p15",
+          "ko": "티나는 오후 내내 침착함을 유지했다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Tina kept calm all afternoon.",
+          "accept": [
+            "Tina stayed calm all afternoon.",
+            "Tina remained calm all afternoon.",
+            "Tina kept calm the whole afternoon.",
+            "Tina stayed calm the whole afternoon.",
+            "Tina remained calm the whole afternoon."
+          ],
+          "targets": [
+            [
+              "kept calm",
+              "stayed calm",
+              "remained calm"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "kept calmly",
+              "hint": "keep 뒤에서 주어의 상태를 설명하는 보어는 부사가 아니라 형용사예요."
+            },
+            {
+              "match": "Tina keeps calm",
+              "hint": "이미 지난 일이에요. 동사 모양은?"
+            },
+            {
+              "match": "Tina keep calm",
+              "hint": "이미 지난 일이에요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-2",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 15",
+            "reviewWhere": "review 3 item 15 (p25)"
+          },
+          "fix": {
+            "from": "티나는 오후 내내 차분하다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거(kept)인데 한국어가 현재형 — '침착함을 유지했다'로",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-1:p16",
+          "ko": "그들은 그의 제안을 받아들인다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "They accept his proposals.",
+          "accept": [
+            "They accept his proposal."
+          ],
+          "targets": [
+            [
+              "accept his"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They admit his",
+              "hint": "admit 는 '(잘못·사실을) 인정하다'예요. 제안을 '받아들이다'는?"
+            },
+            {
+              "match": "They accepts",
+              "hint": "주어 They 는 여러 명이에요. 동사에 -s 가 붙을까요?"
+            },
+            {
+              "match": "accept to his",
+              "hint": "accept 는 전치사 없이 바로 목적어를 써요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-3",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 18",
+            "reviewWhere": "review 3 item 18 (p25)"
+          },
+          "fix": {
+            "from": "They admit his proposals.",
+            "kind": "english_unnatural",
+            "why": "admit 는 '(사실·잘못을) 인정하다' — 제안을 받아들이는 것은 accept(한국어 '받아들인다'와도 맞춤)",
+            "field": "en"
+          }
+        },
+        {
+          "id": "pg03-1:p17",
+          "ko": "너는 테니스 치고 싶니?",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do you want to play tennis?",
+          "accept": [
+            "Would you like to play tennis?"
+          ],
+          "targets": [
+            [
+              "to play tennis"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "play the tennis",
+              "hint": "운동 이름 앞에는 the 를 쓰지 않아요."
+            },
+            {
+              "match": "Are you want",
+              "hint": "일반동사 want 의 의문문은 be동사가 아니라 무엇으로 시작할까요?"
+            },
+            {
+              "match": "want play",
+              "hint": "want 뒤에 동사가 올 때 무엇이 필요할까요?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-3",
+            "question-basic",
+            "want-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 20",
+            "reviewWhere": "review 3 item 20 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p18",
+          "ko": "사라는 그녀의 첫 직업을 그만두고 외국으로 가기로 결심한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Sarah quits her first job and decides to go abroad.",
+          "accept": [
+            "Sarah quits her first job and decides to go overseas.",
+            "Sarah leaves her first job and decides to go abroad."
+          ],
+          "targets": [
+            [
+              "quits",
+              "leaves"
+            ],
+            [
+              "decides to go"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "go to abroad",
+              "hint": "abroad 는 '외국으로'라는 부사라 앞에 to 를 쓰지 않아요."
+            },
+            {
+              "match": "and decide to",
+              "hint": "and 뒤의 동사도 주어 Sarah 에 맞춰요."
+            },
+            {
+              "match": "decides going",
+              "hint": "decide 뒤에 동사가 올 때는 to 동사원형이에요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-3",
+            "present-3sg-s",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 21",
+            "reviewWhere": "review 3 item 21 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p19",
+          "ko": "나의 어머니는 나에게 펜을 사 주셨다.",
+          "koSource": "review",
+          "condition": "4형식으로",
+          "promptEn": null,
+          "en": "My mother bought me a pen.",
+          "accept": [
+            "My mom bought me a pen."
+          ],
+          "targets": [
+            [
+              "bought me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "bought a pen for me",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 '나에게(me)'를 동사 바로 뒤에 두는 4형식으로 써 보세요."
+            },
+            {
+              "match": "bought me pen",
+              "hint": "pen 은 하나예요. 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "buyed",
+              "hint": "buy 의 과거형은 불규칙이에요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-4",
+            "past-simple",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 22",
+            "reviewWhere": "review 3 item 22 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p20",
+          "ko": "나에게 닭고기 수프를 만들어 주겠니?",
+          "koSource": "review",
+          "condition": "4형식으로",
+          "promptEn": null,
+          "en": "Will you make me some chicken soup?",
+          "accept": [
+            "Will you make me chicken soup?",
+            "Would you make me some chicken soup?",
+            "Would you make me chicken soup?",
+            "Can you make me some chicken soup?",
+            "Could you make me some chicken soup?",
+            "Can you make me chicken soup?",
+            "Could you make me chicken soup?"
+          ],
+          "targets": [
+            [
+              "make me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "make some chicken soup for me",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 4형식으로 써 보세요."
+            },
+            {
+              "match": "make me a chicken soup",
+              "hint": "soup 는 보통 셀 수 없는 명사라 a 를 붙이지 않아요."
+            },
+            {
+              "match": "Will you makes",
+              "hint": "Will 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-4",
+            "future-will",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 23",
+            "reviewWhere": "review 3 item 23 (p25)"
+          },
+          "fix": {
+            "from": "Will you make me a chicken soup?",
+            "kind": "english_grammar",
+            "why": "soup 는 보통 셀 수 없는 명사라 a 대신 some(없어도 정답)",
+            "field": "en"
+          }
+        },
+        {
+          "id": "pg03-1:p21",
+          "ko": "우리는 짐이 늦을 거라고 예상했다.",
+          "koSource": "review",
+          "condition": "5형식으로",
+          "promptEn": null,
+          "en": "We expected Jim to be late.",
+          "accept": [
+            "We expected Jim to come late."
+          ],
+          "targets": [
+            [
+              "expected Jim to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "expected that Jim",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 that 절 대신 '목적어 + to 동사원형'(5형식)으로 써 보세요."
+            },
+            {
+              "match": "expected Jim will",
+              "hint": "expect + 목적어 뒤에는 to 동사원형이 와요."
+            },
+            {
+              "match": "expected Jim be",
+              "hint": "Jim 뒤에 빠진 낱말이 있어요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 24",
+            "reviewWhere": "review 3 item 24 (p25)"
+          },
+          "fix": {
+            "from": "우리는 짐이 늦는다고 생각했다.",
+            "kind": "translation_mismatch",
+            "why": "expected 는 '예상했다'이고 앞으로의 일(늦을 것) — '생각했다'로는 We thought Jim was late 로 쓰게 됨",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-1:p22",
+          "ko": "그는 내가 미소 짓고 밖에서 놀게 만들었다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He made me smile and play outside.",
+          "accept": [
+            "He made me smile and play outdoors."
+          ],
+          "targets": [
+            [
+              "made me smile"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "made me to smile",
+              "hint": "make 뒤의 목적어 다음에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "made me smiling",
+              "hint": "make + 목적어 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "He made I smile",
+              "hint": "make 뒤의 '내가'는 목적어 자리예요. I 의 목적격은?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-5",
+            "past-simple",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 26",
+            "reviewWhere": "review 3 item 26 (p26)"
+          },
+          "fix": {
+            "from": "그는 내가 미소 짓고 밖에서 놀게 만들었다",
+            "kind": "korean_typo",
+            "why": "마침표 빠짐",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-1:p23",
+          "ko": "아버지는 내가 그녀와 결혼하는 것을 허락했다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "My father allowed me to marry her.",
+          "accept": [
+            "My dad allowed me to marry her.",
+            "My father let me marry her.",
+            "My dad let me marry her.",
+            "My father permitted me to marry her.",
+            "My dad permitted me to marry her."
+          ],
+          "targets": [
+            [
+              "allowed me to",
+              "let me",
+              "permitted me to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "marry with her",
+              "hint": "marry 는 '~와'에 해당하는 전치사 없이 바로 사람을 써요."
+            },
+            {
+              "match": "allowed me marry",
+              "hint": "allow + 목적어 뒤에 빠진 낱말이 있어요."
+            },
+            {
+              "match": "allowed I to",
+              "hint": "allow 뒤의 '내가'는 목적어 자리예요. I 의 목적격은?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 27",
+            "reviewWhere": "review 3 item 27 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p24",
+          "ko": "비만이 점점 보편화되어 가고 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Obesity is becoming more common.",
+          "accept": [
+            "Being overweight is becoming more common.",
+            "Obesity is getting more common.",
+            "Obesity is becoming more and more common.",
+            "Obesity is getting more and more common.",
+            "Obesity is becoming increasingly common.",
+            "Obesity is getting increasingly common.",
+            "Being overweight is getting more common.",
+            "Being overweight is becoming more and more common.",
+            "Being overweight is getting more and more common.",
+            "Being overweight is becoming increasingly common."
+          ],
+          "targets": [
+            [
+              "becoming",
+              "getting"
+            ],
+            [
+              "common"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Obesity becomes",
+              "hint": "'점점 ~되어 가고 있다'는 지금 진행 중인 변화예요."
+            },
+            {
+              "match": "is becoming common",
+              "hint": "'점점 더' 흔해진다는 뜻을 나타내는 말이 빠졌어요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-2",
+            "progressive",
+            "comparative"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "progressive",
+            "comparative"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 16",
+            "reviewWhere": "review 3 item 16 (p25)"
+          },
+          "fix": {
+            "from": "Overweight is becoming more common. / 비만(과체중)이 점점 보편화되어 가고 있다.",
+            "kind": "english_unnatural",
+            "why": "overweight 는 주로 '과체중인'이라는 형용사 — 명사 주어는 obesity(Being overweight 도 정답) / 한국어의 '(과체중)'이 교재 원답 Overweight 를 가리켜서 뺌",
+            "field": "en+ko"
+          }
+        },
+        {
+          "id": "pg03-1:p25",
+          "ko": "나는 노래하기를 즐긴다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I enjoy singing.",
+          "accept": [],
+          "targets": [
+            [
+              "enjoy singing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I enjoy to sing",
+              "hint": "enjoy 뒤에 동사가 올 때는 -ing 모양이에요."
+            },
+            {
+              "match": "I am enjoy",
+              "hint": "일반동사 enjoy 앞에 be동사를 함께 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-3",
+            "present-simple",
+            "gerund"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "gerund"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 17",
+            "reviewWhere": "review 3 item 17 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-1:p26",
+          "ko": "그는 우리를 만나는 것을 피하려고 애썼다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He tried to avoid seeing us.",
+          "accept": [
+            "He tried to avoid meeting us."
+          ],
+          "targets": [
+            [
+              "tried to avoid"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "avoid to see",
+              "hint": "avoid 뒤에 동사가 올 때는 -ing 모양이에요."
+            },
+            {
+              "match": "avoid to meet",
+              "hint": "avoid 뒤에 동사가 올 때는 -ing 모양이에요."
+            },
+            {
+              "match": "He tries to",
+              "hint": "이미 지난 일이에요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "sentence-pattern-3",
+            "past-simple",
+            "gerund"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "gerund"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 19",
+            "reviewWhere": "review 3 item 19 (p25)"
+          },
+          "fix": {
+            "from": "그는 우리를 만나기를 피하려고 노력한다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거(tried)인데 한국어가 현재형 — '피하려고 애썼다'로",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-1:p27",
+          "ko": "그가 원하는 것을 하도록 두어라.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Let him do what he wants.",
+          "accept": [
+            "Let him do whatever he wants.",
+            "Let him do what he wants to do.",
+            "Let him do whatever he wants to do."
+          ],
+          "targets": [
+            [
+              "Let him do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Let him to do",
+              "hint": "let 뒤의 목적어 다음에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "Let he",
+              "hint": "let 뒤의 '그가'는 목적어 자리예요. he 의 목적격은?"
+            },
+            {
+              "match": "Let him does",
+              "hint": "let + 목적어 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-5",
+            "imperative-basic",
+            "relative-what"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "relative-what"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 17,
+            "where": "application 1) item 25",
+            "reviewWhere": "review 3 item 25 (p25)"
+          },
+          "fix": {
+            "from": "그가 원하는 것 하도록 두어라.",
+            "kind": "korean_typo",
+            "why": "목적격 조사 '을' 빠짐",
+            "field": "ko"
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg03-1:t1",
+          "ko": "그들은 나에게 약간의 돈을 빌려주었다.",
+          "condition": "4형식으로",
+          "promptEn": null,
+          "en": "They lent me some money.",
+          "accept": [
+            "They loaned me some money.",
+            "They lent me a little money."
+          ],
+          "targets": [
+            [
+              "lent me",
+              "loaned me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lent some money to me",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 '나에게(me)'를 동사 바로 뒤에 두는 4형식으로 써 보세요."
+            },
+            {
+              "match": "lended",
+              "hint": "lend 의 과거형은 불규칙이에요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-4",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-021#6"
+        },
+        {
+          "id": "pg03-1:t2",
+          "ko": "나를 빌이라고 불러라.",
+          "condition": null,
+          "promptEn": null,
+          "en": "Call me Bill.",
+          "accept": [
+            "Please call me Bill.",
+            "Call me Bill, please."
+          ],
+          "targets": [
+            [
+              "Call me Bill"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Call Bill me",
+              "hint": "'나를 빌이라고'는 call + 누구 + 이름 순서예요."
+            },
+            {
+              "match": "Call me as Bill",
+              "hint": "call + 목적어 + 이름 사이에 as 를 넣지 않아요."
+            }
+          ],
+          "tags": [
+            "sentence-pattern-5",
+            "imperative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-028#24"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg03-1:f1",
+      "template": "My mom gave me ___ for my birthday.",
+      "ko": "엄마는 내 생일에 나에게 ___을/를 주셨다."
+    }
+  ]
+}

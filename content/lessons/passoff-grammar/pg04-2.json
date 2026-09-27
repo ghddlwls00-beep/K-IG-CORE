@@ -1,0 +1,856 @@
+{
+  "id": "pg04-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "중문",
+  "label": "TOPIC 4. 문장의 종류",
+  "menuLabel": "4-2. 중문",
+  "unit": 4,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 문장의 종류 — 중문",
+  "grammarTags": [
+    "compound-sentence"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg04-2:a1",
+          "en": "I clean my room and then I go jogging with my dog.",
+          "ko": "나는 내 방을 청소하고 나의 개와 함께 조깅을 간다.",
+          "focus": [
+            "and"
+          ],
+          "studentRef": {
+            "lesson": "s9-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 30,
+            "where": "passOff (1) item 2 (중문)"
+          }
+        },
+        {
+          "id": "pg04-2:a2",
+          "en": "Sarah went to the party last week, but Paul stayed at his house.",
+          "ko": "사라는 지난주에 파티에 갔지만, 폴은 자기 집에 머물렀다.",
+          "focus": [
+            "but"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 5"
+          },
+          "fix": {
+            "from": "사라는 파티에 갔지만, 폴은 그의 집에 머물러 있었다.",
+            "kind": "translation_mismatch",
+            "why": "영어의 last week(지난주)가 한국어에 없어 넣고, '그의 집에 머물러 있었다'를 '자기 집에 머물렀다'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg04-2:a3",
+          "en": "Do you want some more salad, or do you want some dessert?",
+          "ko": "당신은 샐러드를 좀 더 드시겠습니까, 또는 약간의 디저트를 드시겠습니까?",
+          "focus": [
+            "or"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 6"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg04-2:a1",
+          "pg04-2:a2",
+          "pg04-2:a3"
+        ],
+        "question": "세 문장에서 두 문장을 이어 주는 말은 무엇일까요?",
+        "options": [
+          "and · but · or",
+          "because · when · though",
+          "very · some · more"
+        ],
+        "answer": 0,
+        "why": "and · but · or 가 주어 + 동사를 가진 두 문장을 나란히 이어요. 이런 문장이 중문이에요."
+      },
+      "title": "두 문장을 and · but · or · so 로 나란히 이으면 중문",
+      "points": [
+        "주어 + 동사가 있는 문장 두 개를 and, but, or, so 로 나란히 이으면 중문이에요.",
+        "and 그리고 · but 그러나(~지만) · or 또는(~거나) · so 그래서.",
+        "이어진 두 문장은 떼어 놓아도 각각 완전한 문장이에요.",
+        "접속사 앞에 쉼표를 찍는 경우가 많아요(짧은 문장이면 빼도 돼요).",
+        "and 뒤에 주어를 빼면 한 문장(단문)이 돼요. 중문은 뒤 문장에도 주어 + 동사를 써요."
+      ],
+      "table": {
+        "columns": [
+          "접속사",
+          "뜻",
+          "예"
+        ],
+        "rows": [
+          [
+            "and",
+            "그리고, ~하고",
+            "I clean my room and then I go jogging with my dog."
+          ],
+          [
+            "but",
+            "그러나, ~지만",
+            "Sarah went to the party last week, but Paul stayed at his house."
+          ],
+          [
+            "or",
+            "또는, ~거나",
+            "Do you want some more salad, or do you want some dessert?"
+          ],
+          [
+            "so",
+            "그래서",
+            "I was tired, so I went to bed."
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '~하고, ~지만'처럼 동사 끝을 바꿔 잇지만, 영어는 두 문장 사이에 and · but · or · so 한 낱말을 넣어 이어요.",
+      "mistakes": [
+        {
+          "wrong": "I was cold, so wore a coat.",
+          "right": "I was cold, so I wore a coat.",
+          "why": "so 뒤 문장에도 주어가 필요해요."
+        },
+        {
+          "wrong": "Sarah went to the party, but Paul stay at his house.",
+          "right": "Sarah went to the party, but Paul stayed at his house.",
+          "why": "뒤 문장도 지난 일이면 과거형으로 맞춰요."
+        }
+      ],
+      "worked": [
+        "사라는 지난주에 파티에 갔지만, 폴은 자기 집에 머물렀다.",
+        "앞 문장: Sarah went to the party last week",
+        "'~지만' → but (앞에 쉼표)",
+        "뒤 문장: Paul stayed at his house",
+        "→ Sarah went to the party last week, but Paul stayed at his house."
+      ],
+      "terms": [],
+      "check": {
+        "question": "빈칸에 알맞은 말은? I like soccer, ___ my brother likes baseball.",
+        "options": [
+          "so",
+          "but",
+          "or"
+        ],
+        "answer": 1,
+        "why": "서로 다른 내용을 맞세울 때는 but(~지만).",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg04-2:s1",
+          "kind": "select",
+          "instruction": "주어를 모두 누르세요",
+          "tokens": [
+            "I",
+            "clean",
+            "my",
+            "room",
+            "and",
+            "then",
+            "I",
+            "go",
+            "jogging",
+            "with",
+            "my",
+            "dog",
+            "."
+          ],
+          "answer": [
+            0,
+            6
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어 I 가 두 번 — 주어 + 동사가 있는 문장 두 개를 and 로 이은 중문이에요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 30,
+            "where": "passOff (1) item 2 (중문)"
+          }
+        },
+        {
+          "id": "pg04-2:s2",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "I clean my room and then I go jogging with my dog.",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 1,
+          "why": "I clean · I go — 두 문장을 and 로 나란히 이었으니 중문.",
+          "bookRef": {
+            "book": 1,
+            "page": 33,
+            "where": "review 1 item 4 (종류 쓰기)"
+          }
+        },
+        {
+          "id": "pg04-2:s3",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "Do you want some more salad, or do you want some dessert?",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 1,
+          "why": "묻는 문장 두 개를 or 로 이었어요. 하는 일로는 의문문이지만 모양으로는 중문이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 33,
+            "where": "review 1 item 6 (종류 쓰기)"
+          }
+        },
+        {
+          "id": "pg04-2:s4",
+          "kind": "select",
+          "instruction": "두 문장을 이어 주는 접속사를 누르세요",
+          "tokens": [
+            "Tom",
+            "plays",
+            "the",
+            "piano",
+            ",",
+            "and",
+            "his",
+            "sister",
+            "plays",
+            "the",
+            "violin",
+            "."
+          ],
+          "answer": [
+            5
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "and 가 Tom plays the piano 와 his sister plays the violin 을 나란히 이어요.",
+          "source": "new"
+        },
+        {
+          "id": "pg04-2:s5",
+          "kind": "choice",
+          "instruction": "다음 중 중문은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "My sister and I walk to school together.",
+            "The bus was full, so we took a taxi.",
+            "I know him very well."
+          ],
+          "answer": 1,
+          "why": "The bus was · we took — 두 문장을 so 로 이었어요. My sister and I 의 and 는 낱말만 이어요.",
+          "source": "new"
+        },
+        {
+          "id": "pg04-2:s6",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "Sarah went to the party last week, but Paul stayed at his house.",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 1,
+          "why": "Sarah went · Paul stayed — 두 문장을 but 으로 이었으니 중문.",
+          "bookRef": {
+            "book": 1,
+            "page": 33,
+            "where": "review 1 item 5 (종류 쓰기)"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg04-2:p1",
+          "ko": "나는 내 방을 청소하고 나의 개와 함께 조깅을 간다.",
+          "condition": "(and) 뒤 문장에도 주어를 써서",
+          "promptEn": null,
+          "en": "I clean my room and then I go jogging with my dog.",
+          "accept": [
+            "I clean my room and I go jogging with my dog.",
+            "I clean my room, and then I go jogging with my dog.",
+            "I clean my room, and I go jogging with my dog.",
+            "I clean up my room and then I go jogging with my dog.",
+            "I clean up my room and I go jogging with my dog.",
+            "I clean up my room, and then I go jogging with my dog.",
+            "I clean up my room, and I go jogging with my dog.",
+            "I clean my room and then I jog with my dog.",
+            "I clean my room and then I go for a jog with my dog.",
+            "I clean my room and I jog with my dog.",
+            "I clean my room and I go for a jog with my dog.",
+            "I clean my room, and then I jog with my dog.",
+            "I clean my room, and then I go for a jog with my dog.",
+            "I clean my room, and I jog with my dog.",
+            "I clean my room, and I go for a jog with my dog.",
+            "I clean up my room and then I jog with my dog.",
+            "I clean up my room and then I go for a jog with my dog.",
+            "I clean up my room and I jog with my dog.",
+            "I clean up my room and I go for a jog with my dog.",
+            "I clean up my room, and then I jog with my dog.",
+            "I clean up my room, and then I go for a jog with my dog.",
+            "I clean up my room, and I jog with my dog.",
+            "I clean up my room, and I go for a jog with my dog."
+          ],
+          "targets": [
+            [
+              "and"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "and then go jogging",
+              "hint": "중문은 뒤 문장에도 주어 + 동사가 있어야 해요. and 뒤에 누가 조깅을 가나요?"
+            },
+            {
+              "match": "and go jogging",
+              "hint": "중문은 뒤 문장에도 주어 + 동사가 있어야 해요. and 뒤에 누가 조깅을 가나요?"
+            },
+            {
+              "match": "I cleans",
+              "hint": "주어 I 에 맞는 동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s9-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 4",
+            "reviewWhere": "review 1 item 4 (p33)"
+          },
+          "fix": null,
+          "challengeNote": "go jogging 은 교재가 분사(TOPIC 13)에서 다루는 모양이지만, STUDENT s9-1 에서 덩어리로 익힌 표현이고 절 구조를 바꾸지 않는 … and then I jog with my dog.(허용 답)로도 같은 뜻을 만들 수 있어 도전으로 두지 않고 participle 태그를 뺌 — pg01-3:p6 go skiing 과 같은 처리(정리-1권-A)"
+        },
+        {
+          "id": "pg04-2:p2",
+          "ko": "사라는 지난주에 파티에 갔지만, 폴은 자기 집에 머물렀다.",
+          "condition": "(but)",
+          "promptEn": null,
+          "en": "Sarah went to the party last week, but Paul stayed at his house.",
+          "accept": [
+            "Sarah went to the party last week, but Paul stayed at home.",
+            "Sarah went to the party last week, but Paul stayed home.",
+            "Sarah went to the party last week, but Paul stayed at his home.",
+            "Sarah went to the party last week but Paul stayed at his house.",
+            "Sarah went to the party last week but Paul stayed at home.",
+            "Sarah went to the party last week but Paul stayed home.",
+            "Sarah went to the party last week but Paul stayed at his home.",
+            "Sarah went to a party last week, but Paul stayed at his house.",
+            "Sarah went to a party last week, but Paul stayed at home.",
+            "Sarah went to a party last week, but Paul stayed home.",
+            "Sarah went to a party last week, but Paul stayed at his home.",
+            "Sarah went to a party last week but Paul stayed at his house.",
+            "Sarah went to a party last week but Paul stayed at home.",
+            "Sarah went to a party last week but Paul stayed home.",
+            "Sarah went to a party last week but Paul stayed at his home.",
+            "Last week Sarah went to the party, but Paul stayed at his house.",
+            "Last week Sarah went to the party, but Paul stayed at home.",
+            "Last week Sarah went to the party, but Paul stayed home.",
+            "Last week Sarah went to the party, but Paul stayed at his home.",
+            "Last week Sarah went to the party but Paul stayed at his house.",
+            "Last week Sarah went to the party but Paul stayed at home.",
+            "Last week Sarah went to the party but Paul stayed home.",
+            "Last week Sarah went to the party but Paul stayed at his home.",
+            "Last week, Sarah went to the party, but Paul stayed at his house.",
+            "Last week, Sarah went to the party, but Paul stayed at home.",
+            "Last week, Sarah went to the party, but Paul stayed home.",
+            "Last week, Sarah went to the party, but Paul stayed at his home.",
+            "Last week, Sarah went to the party but Paul stayed at his house.",
+            "Last week, Sarah went to the party but Paul stayed at home.",
+            "Last week, Sarah went to the party but Paul stayed home.",
+            "Last week, Sarah went to the party but Paul stayed at his home.",
+            "Last week, Sarah went to a party, but Paul stayed at his house.",
+            "Last week, Sarah went to a party, but Paul stayed at home.",
+            "Last week, Sarah went to a party, but Paul stayed home.",
+            "Last week, Sarah went to a party, but Paul stayed at his home.",
+            "Last week, Sarah went to a party but Paul stayed at his house.",
+            "Last week, Sarah went to a party but Paul stayed at home.",
+            "Last week, Sarah went to a party but Paul stayed home.",
+            "Last week, Sarah went to a party but Paul stayed at his home."
+          ],
+          "targets": [
+            [
+              "but"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Paul stay at",
+              "hint": "뒤 문장도 지난 일이에요. 동사 모양을 앞 문장과 맞춰 보세요."
+            },
+            {
+              "match": "Paul stay home",
+              "hint": "뒤 문장도 지난 일이에요. 동사 모양을 앞 문장과 맞춰 보세요."
+            },
+            {
+              "match": "went to party",
+              "hint": "party 앞에 빠진 말이 있어요."
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 5",
+            "reviewWhere": "review 1 item 5 (p33)"
+          },
+          "fix": {
+            "from": "사라는 파티에 갔지만, 폴은 그의 집에 머물러 있었다.",
+            "kind": "translation_mismatch",
+            "why": "영어의 last week(지난주)가 한국어에 없어 넣고, '그의 집에 머물러 있었다'를 '자기 집에 머물렀다'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg04-2:p3",
+          "ko": "당신은 샐러드를 좀 더 드시겠습니까, 또는 약간의 디저트를 드시겠습니까?",
+          "condition": "(or) 뒤 문장에도 주어를 써서",
+          "promptEn": null,
+          "en": "Do you want some more salad, or do you want some dessert?",
+          "accept": [
+            "Do you want some more salad, or do you want dessert?",
+            "Do you want some more salad or do you want some dessert?",
+            "Do you want some more salad or do you want dessert?",
+            "Do you want more salad, or do you want some dessert?",
+            "Do you want more salad, or do you want dessert?",
+            "Do you want more salad or do you want some dessert?",
+            "Do you want more salad or do you want dessert?",
+            "Would you like some more salad, or would you like some dessert?",
+            "Would you like some more salad, or would you like dessert?",
+            "Would you like some more salad or would you like some dessert?",
+            "Would you like some more salad or would you like dessert?",
+            "Would you like more salad, or would you like some dessert?",
+            "Would you like more salad, or would you like dessert?",
+            "Would you like more salad or would you like some dessert?",
+            "Would you like more salad or would you like dessert?"
+          ],
+          "targets": [
+            [
+              "or"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "salad or some dessert",
+              "hint": "중문은 문장 두 개를 이어요. or 뒤에도 주어 + 동사를 써 보세요."
+            },
+            {
+              "match": "salad, or some dessert",
+              "hint": "중문은 문장 두 개를 이어요. or 뒤에도 주어 + 동사를 써 보세요."
+            },
+            {
+              "match": "Are you want",
+              "hint": "일반동사 want 로 묻는 문장은 be동사가 아니라 무엇으로 시작할까요?"
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "question-basic",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 6",
+            "reviewWhere": "review 1 item 6 (p33)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg04-2:p4",
+          "ko": "엄마는 저녁을 요리하셨고, 아빠는 설거지를 하셨다.",
+          "condition": "(and)",
+          "promptEn": null,
+          "en": "My mom cooked dinner, and my dad washed the dishes.",
+          "accept": [
+            "My mom cooked dinner and my dad washed the dishes.",
+            "My mom cooked dinner, and my dad did the dishes.",
+            "My mom cooked dinner and my dad did the dishes.",
+            "My mom made dinner, and my dad washed the dishes.",
+            "My mom made dinner and my dad washed the dishes.",
+            "My mom made dinner, and my dad did the dishes.",
+            "My mom made dinner and my dad did the dishes.",
+            "My mother cooked dinner, and my father washed the dishes.",
+            "My mother cooked dinner and my father washed the dishes.",
+            "My mother cooked dinner, and my father did the dishes.",
+            "My mother cooked dinner and my father did the dishes.",
+            "My mother made dinner, and my father washed the dishes.",
+            "My mother made dinner and my father washed the dishes.",
+            "My mother made dinner, and my father did the dishes.",
+            "My mother made dinner and my father did the dishes.",
+            "Mom cooked dinner, and Dad washed the dishes.",
+            "Mom cooked dinner and Dad washed the dishes.",
+            "Mom cooked dinner, and Dad did the dishes.",
+            "Mom cooked dinner and Dad did the dishes.",
+            "Mom made dinner, and Dad washed the dishes.",
+            "Mom made dinner and Dad washed the dishes.",
+            "Mom made dinner, and Dad did the dishes.",
+            "Mom made dinner and Dad did the dishes.",
+            "My mom cooked dinner, and my dad washed dishes.",
+            "My mom cooked dinner and my dad washed dishes.",
+            "My mom made dinner, and my dad washed dishes.",
+            "My mom made dinner and my dad washed dishes.",
+            "My mother cooked dinner, and my father washed dishes.",
+            "My mother cooked dinner and my father washed dishes.",
+            "My mother made dinner, and my father washed dishes.",
+            "My mother made dinner and my father washed dishes.",
+            "Mom cooked dinner, and Dad washed dishes.",
+            "Mom cooked dinner and Dad washed dishes.",
+            "Mom made dinner, and Dad washed dishes.",
+            "Mom made dinner and Dad washed dishes.",
+            "My mum cooked dinner, and my dad washed the dishes.",
+            "My mum cooked dinner and my dad washed the dishes.",
+            "My mum cooked dinner, and my dad did the dishes.",
+            "My mum cooked dinner and my dad did the dishes.",
+            "My mum cooked dinner, and my dad washed dishes.",
+            "My mum cooked dinner and my dad washed dishes.",
+            "My mum made dinner, and my dad washed the dishes.",
+            "My mum made dinner and my dad washed the dishes.",
+            "My mum made dinner, and my dad did the dishes.",
+            "My mum made dinner and my dad did the dishes.",
+            "My mum made dinner, and my dad washed dishes.",
+            "My mum made dinner and my dad washed dishes.",
+            "Mum cooked dinner, and Dad washed the dishes.",
+            "Mum cooked dinner and Dad washed the dishes.",
+            "Mum cooked dinner, and Dad did the dishes.",
+            "Mum cooked dinner and Dad did the dishes.",
+            "Mum cooked dinner, and Dad washed dishes.",
+            "Mum cooked dinner and Dad washed dishes.",
+            "Mum made dinner, and Dad washed the dishes.",
+            "Mum made dinner and Dad washed the dishes.",
+            "Mum made dinner, and Dad did the dishes.",
+            "Mum made dinner and Dad did the dishes.",
+            "Mum made dinner, and Dad washed dishes.",
+            "Mum made dinner and Dad washed dishes."
+          ],
+          "targets": [
+            [
+              "and"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "cooked dinner and washed",
+              "hint": "중문은 뒤 문장에도 주어가 필요해요. 누가 설거지를 했나요?"
+            },
+            {
+              "match": "made dinner and washed",
+              "hint": "중문은 뒤 문장에도 주어가 필요해요. 누가 설거지를 했나요?"
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg04-2:p5",
+          "ko": "내 남동생은 개를 좋아하지만, 나는 고양이를 좋아한다.",
+          "condition": "(but)",
+          "promptEn": null,
+          "en": "My brother likes dogs, but I like cats.",
+          "accept": [
+            "My brother likes dogs but I like cats.",
+            "My little brother likes dogs, but I like cats.",
+            "My little brother likes dogs but I like cats.",
+            "My younger brother likes dogs, but I like cats.",
+            "My younger brother likes dogs but I like cats."
+          ],
+          "targets": [
+            [
+              "but"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "brother like dogs",
+              "hint": "My brother 는 3인칭 한 명이에요. 동사 모양은?"
+            },
+            {
+              "match": "likes dog but",
+              "hint": "개라는 동물 전체를 좋아할 때 dog 는 어떤 모양일까요?"
+            },
+            {
+              "match": "I likes cats",
+              "hint": "주어 I 에 맞는 동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg04-2:p6",
+          "ko": "우리는 밖에서 놀 수도 있고, 아니면 영화를 볼 수도 있다.",
+          "condition": "(or) 뒤 문장에도 주어를 써서",
+          "promptEn": null,
+          "en": "We can play outside, or we can watch a movie.",
+          "accept": [
+            "We can play outside, or we can watch a film.",
+            "We can play outside, or we can see a movie.",
+            "We can play outside or we can watch a movie.",
+            "We can play outside or we can watch a film.",
+            "We can play outside or we can see a movie.",
+            "We could play outside, or we could watch a movie.",
+            "We could play outside or we could watch a movie.",
+            "We could play outside, or we could watch a film.",
+            "We could play outside or we could watch a film.",
+            "We could play outside, or we could see a movie.",
+            "We could play outside or we could see a movie."
+          ],
+          "targets": [
+            [
+              "or"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "outside or watch",
+              "hint": "중문은 뒤 문장에도 주어 + 동사를 써요. or 뒤에 누가 무엇을 할 수 있나요?"
+            },
+            {
+              "match": "outside, or watch",
+              "hint": "중문은 뒤 문장에도 주어 + 동사를 써요. or 뒤에 누가 무엇을 할 수 있나요?"
+            },
+            {
+              "match": "can plays",
+              "hint": "can 뒤에는 동사의 어떤 모양이 올까요?"
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg04-2:p7",
+          "ko": "나는 배가 고파서 샌드위치를 먹었다.",
+          "condition": "(so)",
+          "promptEn": null,
+          "en": "I was hungry, so I ate a sandwich.",
+          "accept": [
+            "I was hungry, so I had a sandwich.",
+            "I was hungry so I ate a sandwich.",
+            "I was hungry so I had a sandwich."
+          ],
+          "targets": [
+            [
+              "so"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I hungry",
+              "hint": "'배가 고프다'도 동사가 필요해요. 지난 일의 be동사는?"
+            },
+            {
+              "match": "so ate",
+              "hint": "so 뒤 문장에도 주어가 필요해요."
+            },
+            {
+              "match": "ate sandwich",
+              "hint": "샌드위치 하나를 먹었어요. sandwich 앞에 빠진 말이 있어요."
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "past-simple",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg04-2:t1",
+          "ko": "그 아이는 속삭이지만, 그의 형은 소리 지른다. (whisper, shout)",
+          "condition": "(but)",
+          "promptEn": null,
+          "en": "The child whispers, but his brother shouts.",
+          "accept": [
+            "The child whispers, but his older brother shouts.",
+            "The child whispers, but his elder brother shouts.",
+            "The kid whispers, but his brother shouts.",
+            "The child whispers but his brother shouts.",
+            "The child whispers but his older brother shouts.",
+            "The child whispers but his elder brother shouts.",
+            "The kid whispers but his brother shouts.",
+            "The kid whispers, but his older brother shouts.",
+            "The kid whispers but his older brother shouts.",
+            "The kid whispers, but his elder brother shouts.",
+            "The kid whispers but his elder brother shouts."
+          ],
+          "targets": [
+            [
+              "but"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "child whisper but",
+              "hint": "The child 는 3인칭 한 명이에요. 동사 모양은?"
+            },
+            {
+              "match": "child is whisper",
+              "hint": "'속삭인다'는 일반동사 하나로 충분해요. be동사는 빼요."
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-081#35",
+          "fix": null
+        },
+        {
+          "id": "pg04-2:t2",
+          "ko": "나는 베티에게 데이트 신청했으나 그녀는 나를 거절했다.",
+          "condition": "(but)",
+          "promptEn": null,
+          "en": "I asked Betty out but she turned me down.",
+          "accept": [
+            "I asked Betty out, but she turned me down.",
+            "I asked Betty out, but she rejected me.",
+            "I asked Betty out, but she refused.",
+            "I asked Betty out but she rejected me.",
+            "I asked Betty out but she refused.",
+            "I asked Betty for a date, but she turned me down.",
+            "I asked Betty for a date, but she rejected me.",
+            "I asked Betty for a date, but she refused.",
+            "I asked Betty for a date but she turned me down.",
+            "I asked Betty for a date but she rejected me.",
+            "I asked Betty for a date but she refused.",
+            "I asked Betty on a date, but she turned me down.",
+            "I asked Betty on a date, but she rejected me.",
+            "I asked Betty on a date, but she refused.",
+            "I asked Betty on a date but she turned me down.",
+            "I asked Betty on a date but she rejected me.",
+            "I asked Betty on a date but she refused.",
+            "I asked Betty out on a date, but she turned me down.",
+            "I asked Betty out on a date, but she rejected me.",
+            "I asked Betty out on a date, but she refused.",
+            "I asked Betty out on a date but she turned me down.",
+            "I asked Betty out on a date but she rejected me.",
+            "I asked Betty out on a date but she refused."
+          ],
+          "targets": [
+            [
+              "but"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "turned down me",
+              "hint": "turn down 의 목적어가 me 같은 대명사면 어디에 둘까요?"
+            },
+            {
+              "match": "she turn me down",
+              "hint": "그녀가 거절한 것도 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "compound-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-026#6",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg04-2:f1",
+      "template": "I like ___, but my friend likes ___.",
+      "ko": "나는 ___을(를) 좋아하지만, 내 친구는 ___을(를) 좋아한다."
+    }
+  ]
+}

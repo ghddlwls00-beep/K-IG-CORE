@@ -1,0 +1,911 @@
+{
+  "id": "pg08-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "관계대명사 What",
+  "label": "TOPIC 8. 관계대명사",
+  "menuLabel": "8-4. 관계대명사 What",
+  "unit": 8,
+  "part": 1,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "what (의문사 절과 구분)",
+  "grammarTags": [
+    "relative-what",
+    "indirect-question"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg08-4:a1",
+          "en": "I don't know who did it.",
+          "ko": "나는 누가 그것을 했는지 모른다.",
+          "focus": [
+            "who did it"
+          ],
+          "clauseLabel": "의문사 절",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (3) item 1"
+          }
+        },
+        {
+          "id": "pg08-4:a2",
+          "en": "I don't know which is his.",
+          "ko": "나는 어느 것이 그의 것인지 모른다.",
+          "focus": [
+            "which is his"
+          ],
+          "clauseLabel": "의문사 절",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (3) item 2"
+          }
+        },
+        {
+          "id": "pg08-4:a3",
+          "en": "I asked him what he wanted.",
+          "ko": "나는 그가 원하는 것이 무엇인지 그에게 물었다.",
+          "focus": [
+            "what he wanted"
+          ],
+          "clauseLabel": "의문사 절",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (3) item 3"
+          }
+        },
+        {
+          "id": "pg08-4:a4",
+          "en": "I knew what he wanted.",
+          "ko": "나는 그가 원하는 것을 알았다.",
+          "focus": [
+            "what he wanted"
+          ],
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (3) item 4"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg08-4:a1",
+          "pg08-4:a3",
+          "pg08-4:a4"
+        ],
+        "question": "굵게 표시한 덩어리(who did it · what he wanted)는 문장에서 어떤 역할을 할까요?",
+        "options": [
+          "앞 동사(know · asked · knew)의 목적어",
+          "앞 명사를 꾸미는 말",
+          "문장의 시제를 알려 주는 말"
+        ],
+        "answer": 0,
+        "why": "덩어리 전체가 명사처럼 동사의 목적어가 돼요. 앞에 꾸밈을 받는 명사(선행사)가 없다는 점이 who · which · that 관계대명사와 달라요."
+      },
+      "title": "선행사 없는 what, 그리고 의문사 절",
+      "points": [
+        "관계대명사 what 은 '~하는 것'(= the thing which)이에요. 앞에 선행사를 쓰지 않아요.",
+        "what 덩어리는 명사처럼 주어 · 목적어 · 보어가 돼요: What he said was true.",
+        "'누가 / 어느 것이 / 무엇을 ~하는지'는 의문사 절(간접의문문)이에요: I don't know who did it.",
+        "문장 속 의문사 절은 '의문사 + 주어 + 동사' 순서예요: what he wanted (what did he want ✗)",
+        "what + 명사 = '있는 ~ 전부': what books I have"
+      ],
+      "table": {
+        "columns": [
+          "구분",
+          "뜻",
+          "예"
+        ],
+        "rows": [
+          [
+            "관계대명사 what",
+            "~하는 것",
+            "I like what you made."
+          ],
+          [
+            "관계대명사 what",
+            "예전의 모습(~였던 것)",
+            "My town is not what it was."
+          ],
+          [
+            "의문사 절",
+            "누가 ~했는지",
+            "I don't know who did it."
+          ],
+          [
+            "의문사 절",
+            "무엇을 ~하는지",
+            "I asked him what he wanted."
+          ]
+        ]
+      },
+      "koDiff": "한국어 '~하는 것'은 영어로 the thing which 대신 what 한 낱말로 써요. '무엇을 원하는지'처럼 물음이 문장 속에 들어가면 질문 어순(did he want)이 아니라 '주어 + 동사' 어순(he wanted)이 돼요.",
+      "mistakes": [
+        {
+          "wrong": "I asked him what did he want.",
+          "right": "I asked him what he wanted.",
+          "why": "문장 속 의문사 절은 '의문사 + 주어 + 동사' 순서예요."
+        },
+        {
+          "wrong": "This is the thing what I wanted.",
+          "right": "This is what I wanted.",
+          "why": "what 은 선행사(the thing)를 품고 있어 앞에 명사를 또 쓰지 않아요(the thing that I wanted 는 맞아요)."
+        }
+      ],
+      "worked": [
+        "그녀가 요리한 것은 맛있었다.",
+        "'~한 것' + 앞에 꾸밀 명사 없음 → what",
+        "what + 주어 + 동사: What she cooked",
+        "What she cooked was delicious."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'___ I need is your help.' 빈칸에 알맞은 것은?",
+        "options": [
+          "What",
+          "That",
+          "Which"
+        ],
+        "answer": 0,
+        "why": "앞에 선행사가 없고 '내가 필요한 것'이라 What.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg08-4:s7",
+          "kind": "choice",
+          "instruction": "'~하는 것'이라는 뜻의 관계대명사 what 이 쓰인 문장을 고르세요",
+          "options": [
+            "I believe what he told me.",
+            "I asked him what he wanted.",
+            "I don't know which is his."
+          ],
+          "answer": 0,
+          "why": "what he told me 는 '그가 내게 말한 것'. asked · don't know 뒤는 '무엇을 / 어느 것이 ~인지'라는 의문사 절이에요.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-4:s2",
+          "kind": "choice",
+          "instruction": "어순이 바른 문장을 고르세요",
+          "options": [
+            "I asked him what did he want.",
+            "I asked him what he wanted.",
+            "I asked him what wanted he."
+          ],
+          "answer": 1,
+          "why": "문장 속 의문사 절은 '의문사 + 주어 + 동사' 순서예요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (3) item 3"
+          }
+        },
+        {
+          "id": "pg08-4:s8",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "Thank you for ___ you did for me.",
+          "options": [
+            "what",
+            "that",
+            "which"
+          ],
+          "answer": 0,
+          "why": "앞에 선행사가 없고 '네가 나를 위해 해 준 것'이라 what. that · which 는 앞에 꾸밀 명사가 있어야 해요.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-4:s9",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 관계대명사를 한 낱말로 쓰세요 (이것은 내가 주문한 것이 아니다.)",
+          "sentence": "This is not ___ I ordered.",
+          "answer": [
+            "what"
+          ],
+          "why": "앞에 선행사가 없고 '내가 주문한 것'이라 what.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-4:s5",
+          "kind": "choice",
+          "instruction": "두 문장의 뜻이 같도록 빈칸에 알맞은 것을 고르세요: This is the thing which I wanted.",
+          "sentence": "This is ___ I wanted.",
+          "options": [
+            "what",
+            "that",
+            "which"
+          ],
+          "answer": 0,
+          "why": "the thing which = what.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-4:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 who 는 어떻게 쓰였나요?",
+          "sentence": "I don't know who did it.",
+          "underline": [
+            "who"
+          ],
+          "options": [
+            "의문사 — '누가 ~했는지'",
+            "관계대명사 — 앞 명사를 꾸밈",
+            "관계대명사 what 처럼 '~하는 것'"
+          ],
+          "answer": 0,
+          "why": "앞에 꾸밀 명사가 없고 '누가 그것을 했는지'라는 물음이 문장 속에 들어간 의문사 절이에요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (3) item 1"
+          }
+        },
+        {
+          "id": "pg08-4:s1",
+          "kind": "choice",
+          "instruction": "'~하는 것'이라는 뜻의 관계대명사 what 이 쓰인 문장을 고르세요",
+          "options": [
+            "What I would like is a piano.",
+            "I asked him what he wanted.",
+            "I don't know which is his."
+          ],
+          "answer": 0,
+          "why": "What I would like 는 '내가 갖고 싶은 것'. asked · don't know 뒤는 '무엇을 / 어느 것이 ~인지'라는 의문사 절이에요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 5"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg08-4:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "That's not ___ I meant to say.",
+          "options": [
+            "what",
+            "that",
+            "which"
+          ],
+          "answer": 0,
+          "why": "앞에 선행사가 없고 '내가 말하려고 한 것'이라 what.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 6"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg08-4:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요(그는 예전의 그가 아니다)",
+          "sentence": "He is not ___ he was.",
+          "options": [
+            "what",
+            "which",
+            "whose"
+          ],
+          "answer": 0,
+          "why": "'예전의 그(그였던 것)' → what he was.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 9"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg08-4:p1",
+          "ko": "나는 누가 그것을 했는지 모른다.",
+          "condition": "의문사 절 (who)",
+          "promptEn": null,
+          "en": "I don't know who did it.",
+          "accept": [
+            "I don't know who did that.",
+            "I do not know who did it.",
+            "I do not know who did that."
+          ],
+          "targets": [
+            [
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who does it",
+              "hint": "'했는지' — 이미 지난 일이에요. 동사 시제를 확인하세요."
+            },
+            {
+              "match": "I know who did",
+              "hint": "'모른다'예요. 부정문으로 만들어 보세요."
+            },
+            {
+              "match": "know that who",
+              "hint": "의문사 절 앞에는 that 을 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "indirect-question",
+            "negative-basic",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "의문사 절",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 1",
+            "reviewWhere": "review 3 item 1 (p63)"
+          },
+          "fix": {
+            "from": "3. 복합 관계 대명사를 사용하여 문장을 영작하시오. (Review 3 지시문 · Pass-Off 소제목 (3) what)",
+            "kind": "grammar_explanation_wrong",
+            "why": "who · which · what 이 '누가/어느 것이/무엇이 ~인지'를 뜻하는 이 문장은 관계대명사가 아니라 의문사 절(간접의문문)이라 조건을 '의문사 절'로 표시."
+          }
+        },
+        {
+          "id": "pg08-4:p2",
+          "ko": "나는 어느 것이 그의 것인지 모른다.",
+          "condition": "의문사 절 (which)",
+          "promptEn": null,
+          "en": "I don't know which is his.",
+          "accept": [
+            "I don't know which one is his.",
+            "I do not know which is his.",
+            "I do not know which one is his."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "which is he's",
+              "hint": "'그의 것'은 he's(he is)가 아니라 소유대명사를 써요."
+            },
+            {
+              "match": "which is him",
+              "hint": "'그의 것'은 him 이 아니라 소유대명사를 써요."
+            },
+            {
+              "match": "know what is his",
+              "hint": "여러 개 가운데 '어느 것'인지예요. what 대신 쓸 의문사는?"
+            }
+          ],
+          "tags": [
+            "indirect-question",
+            "pronoun-possessive",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "의문사 절",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 2",
+            "reviewWhere": "review 3 item 2 (p63)"
+          },
+          "fix": {
+            "from": "3. 복합 관계 대명사를 사용하여 문장을 영작하시오. (Review 3 지시문 · Pass-Off 소제목 (3) what)",
+            "kind": "grammar_explanation_wrong",
+            "why": "who · which · what 이 '누가/어느 것이/무엇이 ~인지'를 뜻하는 이 문장은 관계대명사가 아니라 의문사 절(간접의문문)이라 조건을 '의문사 절'로 표시."
+          }
+        },
+        {
+          "id": "pg08-4:p5",
+          "ko": "내가 갖고 싶은 것은 피아노이다.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "What I would like is a piano.",
+          "accept": [
+            "What I would like is the piano.",
+            "What I'd like is a piano.",
+            "What I'd like is the piano.",
+            "What I want is a piano.",
+            "What I want is the piano.",
+            "What I would like to have is a piano.",
+            "What I would like to have is the piano.",
+            "What I'd like to have is a piano.",
+            "What I'd like to have is the piano.",
+            "What I want to have is a piano.",
+            "What I want to have is the piano."
+          ],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "What I like is",
+              "hint": "'좋아하는 것'이 아니라 '갖고 싶은 것'이에요."
+            },
+            {
+              "match": "The thing what",
+              "hint": "what 은 '~하는 것'을 이미 품고 있어요. 앞에 명사를 또 쓰지 않아요."
+            },
+            {
+              "match": "like are a piano",
+              "hint": "what 덩어리는 하나로 봐요. be동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 5",
+            "reviewWhere": "review 3 item 5 (p63)"
+          },
+          "fix": {
+            "from": "내가 좋아하는 것은 피아노이다.",
+            "kind": "translation_mismatch",
+            "why": "would like 는 '갖고 싶다'라 한국어를 영어에 맞춤. What I want … 도 정답."
+          }
+        },
+        {
+          "id": "pg08-4:p6",
+          "ko": "그것은 내가 말하려고 한 것이 아니다.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "That's not what I meant to say.",
+          "accept": [
+            "That's not what I meant.",
+            "That's not what I wanted to say.",
+            "That's not what I was trying to say.",
+            "That's not what I was going to say.",
+            "That is not what I meant to say.",
+            "That is not what I meant.",
+            "That is not what I wanted to say.",
+            "That is not what I was trying to say.",
+            "That is not what I was going to say.",
+            "That isn't what I meant to say.",
+            "That isn't what I meant.",
+            "That isn't what I wanted to say.",
+            "That isn't what I was trying to say.",
+            "That isn't what I was going to say.",
+            "It's not what I meant to say.",
+            "It's not what I meant.",
+            "It's not what I wanted to say.",
+            "It's not what I was trying to say.",
+            "It's not what I was going to say.",
+            "It is not what I meant to say.",
+            "It is not what I meant.",
+            "It is not what I wanted to say.",
+            "It is not what I was trying to say.",
+            "It is not what I was going to say.",
+            "It isn't what I meant to say.",
+            "It isn't what I meant.",
+            "It isn't what I wanted to say.",
+            "It isn't what I was trying to say.",
+            "It isn't what I was going to say.",
+            "That's not what I intended to say.",
+            "That is not what I intended to say.",
+            "That isn't what I intended to say.",
+            "It's not what I intended to say.",
+            "It is not what I intended to say.",
+            "It isn't what I intended to say."
+          ],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "That not what",
+              "hint": "That 뒤에 be동사가 빠졌어요."
+            },
+            {
+              "match": "the thing what",
+              "hint": "what 은 '~하는 것'을 이미 품고 있어요. 앞에 명사를 또 쓰지 않아요."
+            },
+            {
+              "match": "what I mean to say",
+              "hint": "'말하려고 한' — 지난 일이에요. 동사 시제를 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "negative-basic",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "to부정사(pg13-1)는 곁가지예요 — That's not what I meant.(기초)도 '내가 말하려고 한 것이 아니다'와 같은 뜻이고 허용 답에 있어 도전으로 두지 않음(정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 6",
+            "reviewWhere": "review 3 item 6 (p63)"
+          },
+          "fix": {
+            "from": "That’ not what I meant to say.",
+            "kind": "english_grammar",
+            "why": "That’s 의 s 가 빠짐."
+          }
+        },
+        {
+          "id": "pg08-4:p7",
+          "ko": "나는 당신이 내가 하기를 원하는 것을 할 겁니다.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "I'll do what you want me to do.",
+          "accept": [
+            "I will do what you want me to do.",
+            "I'm going to do what you want me to do.",
+            "I am going to do what you want me to do."
+          ],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "want me do",
+              "hint": "want + 사람 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "want I do",
+              "hint": "'내가 하기를' — want 뒤의 '나'는 목적어 모양으로 써요."
+            },
+            {
+              "match": "what you want to do",
+              "hint": "내가 하기를 원하는 거예요. want 뒤에 '나'를 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "future-will",
+            "sentence-pattern-5",
+            "want-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 7",
+            "reviewWhere": "review 3 item 7 (p63)"
+          },
+          "fix": {
+            "from": "나는 당신이 내가 하기를 원하는 것을 할겁니다.",
+            "kind": "korean_typo",
+            "why": "'할 겁니다'로 띄어 씀."
+          }
+        },
+        {
+          "id": "pg08-4:p8",
+          "ko": "당신이 가진 모든 돈을 우리에게 투자하시오.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "Invest what money you have in us.",
+          "accept": [
+            "Please invest what money you have in us.",
+            "Invest what money you have in us, please.",
+            "Invest in us what money you have.",
+            "Please invest in us what money you have."
+          ],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Invest us",
+              "hint": "invest 는 '~에 투자하다'를 invest A in B 로 써요. us 앞에 전치사가 필요해요."
+            },
+            {
+              "match": "all the money",
+              "hint": "뜻은 맞지만 이 문항은 what 을 써요. what 뒤에 명사를 바로 붙일 수 있어요."
+            },
+            {
+              "match": "have to us",
+              "hint": "'우리에게 투자하다'는 to 가 아닌 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "imperative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 8",
+            "reviewWhere": "review 3 item 8 (p63)"
+          },
+          "fix": {
+            "from": "Invest us what money you have.",
+            "kind": "english_grammar",
+            "why": "invest 는 사람을 바로 목적어로 받지 않음(invest A in B)."
+          }
+        },
+        {
+          "id": "pg08-4:p9",
+          "ko": "그는 예전의 그가 아니다.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "He is not what he was.",
+          "accept": [
+            "He is not what he used to be.",
+            "He's not what he was.",
+            "He's not what he used to be.",
+            "He isn't what he was.",
+            "He isn't what he used to be."
+          ],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the man that he",
+              "hint": "맞는 영어지만 이 문항은 (what)을 써서 짧게 말해요."
+            },
+            {
+              "match": "not what he is",
+              "hint": "'예전의 그' — 지난날의 모습이에요. 뒤쪽 be동사 시제를 확인하세요."
+            },
+            {
+              "match": "the man he",
+              "hint": "맞는 영어지만 이 문항은 (what)을 써서 짧게 말해요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "be-present",
+            "be-past",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 9",
+            "reviewWhere": "review 3 item 9 (p63)"
+          },
+          "fix": {
+            "from": "그는 예전의 그가 아니다.(Review 2 item 10 과 같은 한국어, 조건 표시 없음)",
+            "kind": "answer_ambiguous",
+            "why": "같은 한국어가 Review 2(that)에도 나와 조건 (what)으로 구분."
+          }
+        },
+        {
+          "id": "pg08-4:p3",
+          "ko": "나는 그가 원하는 것이 무엇인지 그에게 물었다.",
+          "condition": "의문사 절 (what)",
+          "promptEn": null,
+          "en": "I asked him what he wanted.",
+          "accept": [],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what did he want",
+              "hint": "문장 속 의문사 절은 '의문사 + 주어 + 동사' 순서예요."
+            },
+            {
+              "match": "what he wants",
+              "hint": "물어본 때가 과거예요. 그때 원한 것이니 동사 시제를 확인하세요."
+            },
+            {
+              "match": "asked to him",
+              "hint": "ask 는 '~에게 묻다'에서 to 없이 바로 사람을 써요."
+            }
+          ],
+          "tags": [
+            "indirect-question",
+            "past-simple",
+            "tense-agreement"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "tense-agreement"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "의문사 절",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 3",
+            "reviewWhere": "review 3 item 3 (p63)"
+          },
+          "fix": {
+            "from": "3. 복합 관계 대명사를 사용하여 문장을 영작하시오. (Review 3 지시문 · Pass-Off 소제목 (3) what)",
+            "kind": "grammar_explanation_wrong",
+            "why": "who · which · what 이 '누가/어느 것이/무엇이 ~인지'를 뜻하는 이 문장은 관계대명사가 아니라 의문사 절(간접의문문)이라 조건을 '의문사 절'로 표시."
+          }
+        },
+        {
+          "id": "pg08-4:p4",
+          "ko": "나는 그가 원하는 것을 알았다.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "I knew what he wanted.",
+          "accept": [],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the thing what",
+              "hint": "what 은 '~하는 것'을 이미 품고 있어요. 앞에 명사를 또 쓰지 않아요."
+            },
+            {
+              "match": "what did he want",
+              "hint": "문장 속 what 덩어리는 '주어 + 동사' 순서예요."
+            },
+            {
+              "match": "what he wants",
+              "hint": "'알았다'는 지난 일이에요. 그때 그가 원한 것이니 두 동사의 시제를 모두 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "past-simple",
+            "tense-agreement"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "tense-agreement"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "bookRef": {
+            "book": 1,
+            "page": 60,
+            "where": "application (3)[추론] item 4",
+            "reviewWhere": "review 3 item 4 (p63)"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg08-4:t1",
+          "ko": "이것이 그녀가 한 것(짓)이다.",
+          "condition": "(what)",
+          "promptEn": null,
+          "en": "This is what she did.",
+          "accept": [],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the thing what",
+              "hint": "what 은 '~하는 것'을 이미 품고 있어요. 앞에 명사를 또 쓰지 않아요."
+            },
+            {
+              "match": "what she does",
+              "hint": "'한 것' — 이미 지난 일이에요. 동사 시제를 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-what",
+            "past-simple",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "관계대명사 what",
+          "source": "grammar2:gh2-041#10",
+          "fix": null
+        },
+        {
+          "id": "pg08-4:t2",
+          "ko": "당신은 당신의 딸이 그에게 무엇(무슨 짓)을 했는지 압니까?",
+          "condition": "의문사 절 (what)",
+          "promptEn": null,
+          "en": "Do you know what your daughter did to him?",
+          "accept": [],
+          "targets": [
+            [
+              "what"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what did your daughter do",
+              "hint": "문장 속 의문사 절은 '의문사 + 주어 + 동사' 순서예요."
+            },
+            {
+              "match": "what your daughter does",
+              "hint": "'했는지' — 이미 지난 일이에요. 동사 시제를 확인하세요."
+            }
+          ],
+          "tags": [
+            "indirect-question",
+            "question-yes-no",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "clauseLabel": "의문사 절",
+          "source": "grammar2:gh2-041#9",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg08-4:f1",
+      "template": "What I would like is ___.",
+      "ko": "내가 갖고 싶은 것은 ___이다."
+    }
+  ]
+}

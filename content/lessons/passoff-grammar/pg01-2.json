@@ -1,0 +1,770 @@
+{
+  "id": "pg01-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "2인칭",
+  "label": "TOPIC 1. 인칭",
+  "menuLabel": "1-2. 2인칭",
+  "unit": 1,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "2인칭 단수 you 와 복수 you",
+  "grammarTags": [
+    "pronoun-2nd"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg01-2:a1",
+          "en": "You are a student.",
+          "ko": "당신은 학생이다.",
+          "focus": [
+            "You"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "passOff 2) item 1",
+            "reviewWhere": "review 1) item 3 (p7)"
+          }
+        },
+        {
+          "id": "pg01-2:a2",
+          "en": "You are my classmates.",
+          "ko": "여러분들은 나의 학급 친구들이다.",
+          "focus": [
+            "You"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "passOff 2) item 2",
+            "reviewWhere": "review 1) item 4 (p7)"
+          },
+          "fix": {
+            "from": "여러분들은 나의 학급친구들이다.",
+            "kind": "korean_typo",
+            "why": "'학급 친구'는 두 낱말이라 띄어 씀"
+          }
+        },
+        {
+          "id": "pg01-2:a3",
+          "en": "Are you ready for this class, everyone?",
+          "ko": "여러분들, 모두 수업 받을 준비가 되었나요?",
+          "focus": [
+            "you"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 3",
+            "reviewWhere": "review 2) item 11 (p8)"
+          },
+          "fix": {
+            "from": "여러분들, 모두 수업 받을 준비가 되었나요, ?",
+            "kind": "korean_typo",
+            "why": "물음표 앞의 쉼표·빈칸 삭제"
+          },
+          "note": "Pass-Off 문장이 2개뿐이라 발견 질문용으로 같은 소주제의 Application 문장을 더함"
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg01-2:a1",
+          "pg01-2:a2",
+          "pg01-2:a3"
+        ],
+        "question": "세 문장의 you 는 각각 몇 명을 가리킬까요?",
+        "options": [
+          "모두 한 명",
+          "한 명일 때도, 여러 명일 때도 있다",
+          "모두 여러 명"
+        ],
+        "answer": 1,
+        "why": "a student(학생 한 명)의 You 는 한 명, classmates · everyone 의 you 는 여러 명이에요. 모양은 똑같이 you 예요."
+      },
+      "title": "듣는 사람은 한 명이든 여러 명이든 you",
+      "points": [
+        "말을 듣는 상대를 가리키는 말을 2인칭이라고 해요.",
+        "한 명(너, 당신)이든 여러 명(너희, 여러분)이든 모두 you 예요.",
+        "you 가 몇 명인지는 뒤에 오는 말(a student / classmates)로 알 수 있어요.",
+        "you 가 주어면 한 명이어도 be동사는 are 예요: You are a student.",
+        "your(너의, 너희의)도 2인칭이에요. 자세한 모양은 뒤 레슨에서 배워요."
+      ],
+      "table": {
+        "columns": [
+          "",
+          "한 명(단수)",
+          "여러 명(복수)"
+        ],
+        "rows": [
+          [
+            "1인칭 (말하는 사람)",
+            "I",
+            "we"
+          ],
+          [
+            "2인칭 (듣는 사람)",
+            "you",
+            "you"
+          ],
+          [
+            "3인칭 (그 밖의 사람·물건)",
+            "he · she · it",
+            "they"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '너 · 당신 · 너희 · 여러분'처럼 상대와 사람 수에 따라 말이 바뀌지만, 영어는 모두 you 하나예요. 선생님이나 어른에게도 you 를 써요.",
+      "mistakes": [
+        {
+          "wrong": "You is my friend.",
+          "right": "You are my friend.",
+          "why": "you 는 한 명이어도 be동사 are 를 써요."
+        },
+        {
+          "wrong": "Are you like pizza?",
+          "right": "Do you like pizza?",
+          "why": "like 같은 일반동사로 물을 때는 Do 를 앞에 써요."
+        }
+      ],
+      "worked": [
+        "여러분들은 나의 학급 친구들이다.",
+        "'여러분' = 듣는 사람 여러 명 → 2인칭",
+        "2인칭은 한 명이든 여러 명이든 → You",
+        "여러 명이니 classmates",
+        "You are my classmates."
+      ],
+      "check": {
+        "question": "'너희들은 모두 내 친구야.'의 '너희들은'에 맞는 영어는?",
+        "options": [
+          "I",
+          "You",
+          "They"
+        ],
+        "answer": 1,
+        "why": "듣는 사람이 여러 명이어도 2인칭은 you 예요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg01-2:s1",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "You",
+            "are",
+            "a",
+            "student",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "2인칭"
+          ],
+          "why": "You 는 말을 듣는 상대 → 2인칭(여기서는 학생 한 명)",
+          "bookRef": {
+            "book": 1,
+            "page": 7,
+            "where": "review 1) item 3 (인칭대명사 밑줄 + 몇 인칭)"
+          }
+        },
+        {
+          "id": "pg01-2:s2",
+          "kind": "select",
+          "instruction": "인칭대명사를 모두 누르고, 각각 몇 인칭인지 고르세요",
+          "tokens": [
+            "You",
+            "are",
+            "my",
+            "classmates",
+            "."
+          ],
+          "answer": [
+            0,
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "2인칭",
+            "1인칭"
+          ],
+          "why": "You 는 듣는 사람들(2인칭), my 는 '나의'(1인칭)예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 7,
+            "where": "review 1) item 4 (인칭대명사 밑줄 + 몇 인칭)"
+          },
+          "fix": {
+            "from": "(인칭대명사에 밑줄 긋고 몇 인칭인지 하나 쓰기)",
+            "kind": "answer_ambiguous",
+            "why": "문장에 인칭대명사가 You · my 두 개라 답이 하나로 정해지지 않음 → 둘 다 누르고 각각 인칭 고르기"
+          }
+        },
+        {
+          "id": "pg01-2:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 you 는 한 명인가요, 여러 명인가요?",
+          "sentence": "Are you ready for this class, everyone?",
+          "underline": [
+            "you"
+          ],
+          "options": [
+            "한 명(단수)",
+            "여러 명(복수)"
+          ],
+          "answer": 1,
+          "why": "everyone(여러분 모두)에게 하는 말이라 여러 명이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg01-2:s4",
+          "kind": "choice",
+          "instruction": "'너'와 '너희들'을 영어로 바르게 짝지은 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "you — you",
+            "you — yous",
+            "your — you"
+          ],
+          "answer": 0,
+          "why": "2인칭은 한 명이든 여러 명이든 you 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg01-2:s5",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "How",
+            "do",
+            "you",
+            "commute",
+            "every day",
+            "?"
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "2인칭"
+          ],
+          "why": "묻는 문장에서는 do 뒤에 오지만 you 는 그대로 2인칭이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 6"
+          },
+          "source": "new",
+          "fix": {
+            "from": "How do you commute everyday?",
+            "kind": "english_grammar",
+            "why": "부사 '매일'은 every day(두 낱말)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg01-2:s7",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "What",
+            "do",
+            "you",
+            "eat",
+            "for",
+            "breakfast",
+            "?"
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "2인칭"
+          ],
+          "why": "묻는 문장에서는 do 뒤에 오지만 you 는 그대로 2인칭이에요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s5(교재 문장이 ④ p6 의 정답과 같음)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(묻는 문장 do 뒤의 you → 2인칭)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg01-2:s6",
+          "kind": "choice",
+          "instruction": "다음 중 2인칭 대명사가 들어 있는 문장은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "We are good friends.",
+            "Can you swim?",
+            "He is my uncle."
+          ],
+          "answer": 1,
+          "why": "you(너)는 듣는 사람 → 2인칭. We 는 1인칭, He 는 3인칭이에요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "보기 'Do you like cold weather?'가 ④ p4 의 정답을 먼저 보여 주어 'Can you swim?'으로 바꿈(정리-1권-A)"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg01-2:p1",
+          "ko": "당신은 학생이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "You are a student.",
+          "accept": [
+            "You're a student."
+          ],
+          "targets": [
+            [
+              "you",
+              "you're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You is",
+              "hint": "you 는 한 명이어도 be동사 모양이 정해져 있어요."
+            },
+            {
+              "match": "You are student",
+              "hint": "student(학생 한 명) 앞에 '하나'를 뜻하는 작은 말이 필요해요."
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 1",
+            "reviewWhere": "review 1) item 3 (p7)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-2:p2",
+          "ko": "여러분들은 나의 학급 친구들이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "You are my classmates.",
+          "accept": [
+            "You're my classmates."
+          ],
+          "targets": [
+            [
+              "you",
+              "you're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You is",
+              "hint": "you 는 몇 명이든 be동사 모양이 정해져 있어요."
+            },
+            {
+              "match": "You are my friends",
+              "hint": "'학급 친구'는 같은 반 친구예요. 알맞은 낱말은?"
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "be-present",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 2",
+            "reviewWhere": "review 1) item 4 (p7)"
+          },
+          "fix": {
+            "from": "여러분들은 나의 학급친구들이다.",
+            "kind": "korean_typo",
+            "why": "'학급 친구'는 두 낱말이라 띄어 씀"
+          }
+        },
+        {
+          "id": "pg01-2:p3",
+          "ko": "여러분들, 모두 수업 받을 준비가 되었나요?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are you ready for this class, everyone?",
+          "accept": [
+            "Everyone, are you ready for this class?",
+            "Are you all ready for this class?",
+            "Are you all ready for class?",
+            "Are you ready for class, everyone?",
+            "Are you ready for the class, everyone?",
+            "Everyone, are you ready for class?",
+            "Are you all ready for this class, everyone?",
+            "Everyone, are you all ready for this class?",
+            "Are you all ready for class, everyone?",
+            "Everyone, are you all ready for class?",
+            "Are you all ready for the class?",
+            "Are you all ready for the class, everyone?",
+            "Everyone, are you ready for the class?",
+            "Everyone, are you all ready for the class?"
+          ],
+          "targets": [
+            [
+              "you"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You are ready",
+              "hint": "묻는 문장은 be동사를 주어 앞으로 보내요."
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "be-present",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 3",
+            "reviewWhere": "review 2) item 11 (p8)"
+          },
+          "fix": {
+            "from": "여러분들, 모두 수업 받을 준비가 되었나요, ?",
+            "kind": "korean_typo",
+            "why": "물음표 앞의 쉼표·빈칸 삭제"
+          }
+        },
+        {
+          "id": "pg01-2:p4",
+          "ko": "너는 추운 날씨를 좋아하니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do you like cold weather?",
+          "accept": [
+            "Do you like the cold weather?"
+          ],
+          "targets": [
+            [
+              "you"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Are you like",
+              "hint": "like 는 일반동사예요. 일반동사로 물을 때 맨 앞에 오는 말은?"
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "present-simple",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 4",
+            "reviewWhere": "review 2) item 12 (p9)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-2:p5",
+          "ko": "왜 너는 이 모형 비행기를 만들었니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Why did you make this model airplane?",
+          "accept": [
+            "Why did you make this model plane?",
+            "Why did you make this airplane model?",
+            "Why did you build this model airplane?",
+            "Why did you make this model aeroplane?"
+          ],
+          "targets": [
+            [
+              "you"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "did you made",
+              "hint": "did 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "Why you made",
+              "hint": "지난 일을 물을 때는 주어 앞에 did 를 써요."
+            },
+            {
+              "match": "air plane",
+              "hint": "airplane 은 한 낱말이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "past-simple",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 5",
+            "reviewWhere": "review 2) item 13 (p9)"
+          },
+          "fix": {
+            "from": "Why do you make this model air plane?",
+            "kind": "english_grammar",
+            "why": "airplane 은 한 낱말이고, 한국어(만들었니)에 맞춰 과거형 did 로"
+          }
+        },
+        {
+          "id": "pg01-2:p6",
+          "ko": "당신은 어떻게 매일 출퇴근하십니까?",
+          "condition": null,
+          "promptEn": null,
+          "en": "How do you commute every day?",
+          "accept": [
+            "How do you commute to work every day?",
+            "How do you get to work every day?",
+            "How do you go to work every day?",
+            "How do you travel to work every day?"
+          ],
+          "targets": [
+            [
+              "you"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "everyday",
+              "hint": "'매일'은 두 낱말로 띄어 써요. 붙여 쓰면 '일상의'라는 뜻이에요."
+            },
+            {
+              "match": "How you commute",
+              "hint": "묻는 문장은 주어 앞에 do 를 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "present-simple",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 6",
+            "reviewWhere": "review 2) item 14 (p9)"
+          },
+          "fix": {
+            "from": "en: How do you commute everyday? / ko: 당신은 어떻게 매일 출 퇴근하십니까?",
+            "kind": "english_grammar",
+            "why": "부사 '매일'은 every day(두 낱말), '출퇴근'은 한 낱말"
+          }
+        },
+        {
+          "id": "pg01-2:p7",
+          "ko": "여러분들은 우리 농장에서 훌륭한 일꾼들입니다!",
+          "condition": null,
+          "promptEn": null,
+          "en": "You are great workers on our farm!",
+          "accept": [
+            "You are great workers at our farm!",
+            "You're great workers on our farm!",
+            "You're great workers at our farm!",
+            "You are excellent workers on our farm!",
+            "You are excellent workers at our farm!",
+            "You are wonderful workers on our farm!",
+            "You are wonderful workers at our farm!",
+            "You're excellent workers on our farm!",
+            "You're excellent workers at our farm!",
+            "You're wonderful workers on our farm!",
+            "You're wonderful workers at our farm!"
+          ],
+          "targets": [
+            [
+              "you",
+              "you're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in our farm",
+              "hint": "농장에서 일할 때는 in 이 아닌 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "be-present",
+            "noun-plural-basic",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 6,
+            "where": "application 2) item 7",
+            "reviewWhere": "review 2) item 15 (p9)"
+          },
+          "fix": {
+            "from": "en: You are great workers in our farm! / ko: 여러분들은 우리 농장에서 훌륭한 일군들입니다!",
+            "kind": "english_grammar",
+            "why": "농장에서 일할 때는 on the farm 이 관용 표현, '일군'은 비표준어라 '일꾼'"
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg01-2:t1",
+          "ko": "당신은 미국인이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "You are American.",
+          "accept": [
+            "You are an American.",
+            "You are an American person.",
+            "You're American.",
+            "You're an American.",
+            "You're an American person."
+          ],
+          "targets": [
+            [
+              "you",
+              "you're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You is",
+              "hint": "you 가 주어면 be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-007#3",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg01-2:t2",
+          "ko": "너는 어디에 있니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where are you?",
+          "accept": [],
+          "targets": [
+            [
+              "you"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Where you are",
+              "hint": "묻는 문장은 be동사를 주어 앞으로 보내요."
+            },
+            {
+              "match": "Where is you",
+              "hint": "you 가 주어면 be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "pronoun-2nd",
+            "be-present",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-007#20",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg01-2:f1",
+      "template": "You are my ___.",
+      "ko": "너는 나의 ___이다."
+    }
+  ]
+}

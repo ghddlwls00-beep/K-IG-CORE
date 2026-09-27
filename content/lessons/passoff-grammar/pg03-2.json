@@ -1,0 +1,2975 @@
+{
+  "id": "pg03-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "8품사",
+  "label": "TOPIC 3. 문장의 기초",
+  "menuLabel": "3-2. 8품사",
+  "unit": 3,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "8품사",
+  "grammarTags": [
+    "parts-of-speech"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg03-2:a1",
+          "en": "He wants to be a firefighter, a police officer, a teacher, a doctor, or an interpreter.",
+          "ko": "그는 소방관, 경찰관, 선생님, 의사 또는 통역관이 되고 싶어 한다.",
+          "koSource": "review",
+          "focus": [
+            "firefighter",
+            "police officer",
+            "teacher",
+            "doctor",
+            "interpreter"
+          ],
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 1"
+          },
+          "fix": {
+            "from": "He wants to be a fire fighter, police officer, teacher, doctor, interpreter. / 그는 소방관, 경찰관, 선생님, 의사, 통역관이 되고 싶다.",
+            "kind": "english_grammar",
+            "why": "firefighter 는 한 낱말, 직업마다 a/an, 나열 마지막 앞에 or(STUDENT 3과 문장과 같은 방식) · 굵은 글씨(be a …)를 명사에만 / 한국어: 3인칭 주어라 '되고 싶어 한다', 모범 답의 or 에 맞춰 '또는'",
+            "field": "en+ko"
+          }
+        },
+        {
+          "id": "pg03-2:a2",
+          "en": "My mother is a housewife. She is the best mother in the world.",
+          "ko": "나의 어머니는 가정주부이십니다. 그분은 세상에서 최고의 어머니이십니다.",
+          "koSource": "student",
+          "focus": [
+            "She"
+          ],
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 2"
+          },
+          "fix": {
+            "from": "My mother is a housewife. She is best mother in the world. / 내 어머니는 주부 이시다. 그녀는 세상에서 제일 좋은 엄마이다.",
+            "kind": "english_grammar",
+            "why": "최상급 best 앞 the 빠짐(18쪽은 In 대문자 오타도) — STUDENT 2과 두 문장(s2-3)으로 영어·한국어 모두 맞춤",
+            "field": "en+ko"
+          }
+        },
+        {
+          "id": "pg03-2:a3",
+          "en": "He can play all kinds of sports.",
+          "ko": "그는 모든 종류의 스포츠를 할 수 있다.",
+          "koSource": "review",
+          "focus": [
+            "play"
+          ],
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 3"
+          }
+        },
+        {
+          "id": "pg03-2:a4",
+          "en": "I am very outgoing.",
+          "ko": "나는 매우 외향적이다.",
+          "koSource": "review",
+          "focus": [
+            "outgoing"
+          ],
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 7"
+          }
+        },
+        {
+          "id": "pg03-2:a5",
+          "en": "He is also a very generous and kind person.",
+          "ko": "그분은 또한 매우 관대하고 친절한 분이십니다.",
+          "koSource": "student",
+          "focus": [
+            "very"
+          ],
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 9"
+          }
+        },
+        {
+          "id": "pg03-2:a6",
+          "en": "She is good at studying all kinds of subjects.",
+          "ko": "그녀는 모든 과목을 공부하는 것을 잘한다.",
+          "koSource": "review",
+          "focus": [
+            "at"
+          ],
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 10"
+          }
+        },
+        {
+          "id": "pg03-2:a7",
+          "en": "Oh, how wonderful my life is!",
+          "ko": "아, 얼마나 나의 인생이 멋진가!",
+          "koSource": "review",
+          "focus": [
+            "Oh"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 11"
+          }
+        },
+        {
+          "id": "pg03-2:a8",
+          "en": "When he speaks, he sounds like a native English speaker.",
+          "ko": "그분이 말씀하실 때, 그분은 영어 원어민 같습니다.",
+          "koSource": "student",
+          "focus": [
+            "When"
+          ],
+          "studentRef": {
+            "lesson": "s7-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 15,
+            "where": "passOff 2) item 14"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg03-2:a1",
+          "pg03-2:a2",
+          "pg03-2:a3"
+        ],
+        "question": "굵은 낱말 firefighter · She · play 는 무엇으로 나눈 걸까요?",
+        "options": [
+          "문장에서 하는 일",
+          "낱말의 길이",
+          "대문자로 시작하는지"
+        ],
+        "answer": 0,
+        "why": "firefighter 는 직업의 이름(명사), She 는 앞의 My mother 를 대신하는 말(대명사), play 는 동작(동사)이에요. 낱말을 하는 일에 따라 나눈 것이 품사이고, 모두 8가지예요."
+      },
+      "title": "낱말은 하는 일에 따라 8가지 품사로 나눠요",
+      "points": [
+        "명사는 이름, 대명사는 이름 대신(she, it, they), 동사는 동작이나 상태.",
+        "형용사는 명사를 꾸미거나 설명해요(outgoing, clean).",
+        "부사는 동사·형용사·다른 부사를 꾸며요(very, well, awfully).",
+        "전치사는 명사·대명사 앞에서 장소·시간·관계를 나타내요(at, on, from).",
+        "접속사는 말과 말을 이어요(and, but, when). 감탄사는 느낌(Oh, Wow)."
+      ],
+      "table": {
+        "columns": [
+          "품사",
+          "하는 일",
+          "예"
+        ],
+        "rows": [
+          [
+            "명사",
+            "사람·사물·생각의 이름",
+            "teacher, honey, freedom"
+          ],
+          [
+            "대명사",
+            "명사를 대신함",
+            "she, they, it"
+          ],
+          [
+            "동사",
+            "동작이나 상태",
+            "play, ride, is"
+          ],
+          [
+            "형용사",
+            "명사를 꾸미거나 설명함",
+            "outgoing, clean, new"
+          ],
+          [
+            "부사",
+            "동사·형용사·부사를 꾸밈",
+            "very, really, awfully"
+          ],
+          [
+            "전치사",
+            "명사·대명사 앞에서 관계를 나타냄",
+            "at, on, about, from"
+          ],
+          [
+            "접속사",
+            "낱말·구·문장을 이음",
+            "and, but, or, when"
+          ],
+          [
+            "감탄사",
+            "놀람·기쁨 같은 느낌",
+            "Oh, Wow, Hurrah"
+          ]
+        ]
+      },
+      "koDiff": "한국어 '외향적이다'는 혼자서 서술어가 되지만, 영어 형용사 outgoing 은 동사가 아니라서 I am outgoing 처럼 be동사가 꼭 필요해요. 또 한국어의 조사(-에, -에서) 자리에 영어는 명사 앞에 전치사(at, on, in)를 둡니다.",
+      "mistakes": [
+        {
+          "wrong": "I very outgoing.",
+          "right": "I am very outgoing.",
+          "why": "outgoing 은 형용사라 동사 am 이 필요해요."
+        },
+        {
+          "wrong": "He plays the piano good.",
+          "right": "He plays the piano well.",
+          "why": "동사 plays 를 꾸미는 말은 형용사 good 이 아니라 부사 well 이에요."
+        }
+      ],
+      "worked": [
+        "He is also a very generous and kind person.",
+        "① is: 동사(be동사)",
+        "② generous · kind: 명사 person 을 꾸밈 → 형용사",
+        "③ very: 형용사 generous 와 kind 를 꾸밈 → 부사"
+      ],
+      "terms": [],
+      "check": {
+        "question": "'She sings well.'에서 well 의 품사는?",
+        "options": [
+          "형용사",
+          "부사",
+          "동사"
+        ],
+        "answer": 1,
+        "why": "동사 sings 를 꾸며 '잘' 부른다는 뜻이므로 부사예요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg03-2:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Bees like honey. They eat it every day.",
+          "underline": [
+            "They",
+            "it"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 1,
+          "why": "They 는 앞의 Bees 를, it 은 honey 를 대신하는 대명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 16"
+          },
+          "fix": {
+            "from": "Bees like honey. They eat it everyday.",
+            "kind": "english_grammar",
+            "why": "'매일'이라는 부사는 every day(두 낱말)",
+            "field": "sentence"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s30",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Emma has a puppy. She loves it very much.",
+          "underline": [
+            "She",
+            "it"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 1,
+          "why": "She 는 앞의 Emma 를, it 은 a puppy 를 대신하는 대명사예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s1(④ p13 의 정답과 같은 문장)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(대명사 찾기)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg03-2:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "They arranged to meet us.",
+          "underline": [
+            "arranged",
+            "meet"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "arranged(약속을 정했다)와 meet(만나다)는 동작을 나타내는 동사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 19"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s31",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "The children run and jump in the park.",
+          "underline": [
+            "run",
+            "jump"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "run(달리다)과 jump(뛰다)는 동작을 나타내는 동사예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s2(④ p16 의 정답과 같은 문장)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(동사 찾기)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg03-2:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "She will have a clean, new, bright, convenient house.",
+          "underline": [
+            "clean",
+            "new",
+            "bright",
+            "convenient"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 3,
+          "why": "모두 명사 house 를 꾸미는 형용사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 20"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s32",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "She has long black hair.",
+          "underline": [
+            "long",
+            "black"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 3,
+          "why": "long(긴)과 black(검은)은 명사 hair 를 꾸미는 형용사예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s3(④ p17 의 정답과 같은 문장)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(형용사 찾기)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg03-2:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I am awfully hungry.",
+          "underline": [
+            "awfully"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 4,
+          "why": "형용사 hungry 를 꾸며 '몹시' 배고프다는 뜻을 더하는 부사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 22"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s33",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "This box is too heavy.",
+          "underline": [
+            "too"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 4,
+          "why": "too(너무)는 형용사 heavy 를 꾸며 정도를 더하는 부사예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s4(④ p19 의 정답과 같은 문장)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(부사 찾기)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg03-2:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "My father is usually on time.",
+          "underline": [
+            "on"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 5,
+          "why": "명사 time 앞에서 on time(제시간에)을 만드는 전치사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 25"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s34",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "The cat is under the table.",
+          "underline": [
+            "under"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 5,
+          "why": "under(~ 아래에)는 명사 the table 앞에서 장소를 나타내는 전치사예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s5(④ p22 의 정답과 같은 문장)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(전치사 찾기)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg03-2:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "But he does not like to talk to new people.",
+          "underline": [
+            "But"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 6,
+          "why": "앞 문장과 이 문장을 '그러나'로 이어 주는 접속사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 13"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s35",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "My brother was sick, so he stayed in bed.",
+          "underline": [
+            "so"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 6,
+          "why": "so(그래서)는 앞뒤 두 문장을 이어 주는 접속사예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s6(④ p10 의 정답과 같은 문장)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(접속사 찾기)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg03-2:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "He wants to be a firefighter, a police officer, a teacher, a doctor, or an interpreter.",
+          "underline": [
+            "firefighter",
+            "police officer",
+            "teacher",
+            "doctor",
+            "interpreter"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 0,
+          "why": "모두 직업을 가리키는 이름이라 명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 1"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "He wants to be a fire fighter, police officer, teacher, doctor, interpreter. (굵은 글씨: be a fire fighter, …, interpreter)",
+            "kind": "grammar_explanation_wrong",
+            "why": "굵은 범위에 동사 be·관사 a 가 섞여 있어 명사에만 밑줄 · 문장은 a/an·or 를 갖춘 형태로",
+            "field": "sentence+underline"
+          }
+        },
+        {
+          "id": "pg03-2:s8",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "My mother is a housewife. She is the best mother in the world.",
+          "underline": [
+            "She"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 1,
+          "why": "She 는 앞 문장의 My mother 를 대신하는 대명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 2"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "My mother is a housewife. She is best mother in the world.",
+            "kind": "english_grammar",
+            "why": "최상급 best 앞 the 빠짐 — STUDENT 2과 문장으로",
+            "field": "sentence"
+          }
+        },
+        {
+          "id": "pg03-2:s9",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "He can play all kinds of sports.",
+          "underline": [
+            "play"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "play(운동을 하다)는 동작을 나타내는 동사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 3"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s10",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "His dream will come true.",
+          "underline": [
+            "come"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "come true(실현되다)에서 come 이 동사이고, true 는 상태를 설명하는 형용사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 4"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "굵은 글씨: come true",
+            "kind": "grammar_explanation_wrong",
+            "why": "true 는 형용사라 동사 문항에서는 come 에만 밑줄",
+            "field": "underline"
+          }
+        },
+        {
+          "id": "pg03-2:s11",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I ride my bike to school.",
+          "underline": [
+            "ride"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "ride(타다)는 동작을 나타내는 동사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 5"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s12",
+          "kind": "choice",
+          "instruction": "밑줄 친 덩어리는 문장에서 어떤 품사 하나처럼 쓰였을까요?",
+          "sentence": "He could take care of the baby.",
+          "underline": [
+            "take care of"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "take care of(돌보다)는 여러 낱말이 뭉쳐 동사 하나처럼 쓰여요(구동사).",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 6"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s13",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I am very outgoing.",
+          "underline": [
+            "outgoing"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 3,
+          "why": "outgoing(외향적인)은 주어 I 의 성격을 설명하는 형용사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 7"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s14",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "He can play the piano and guitar pretty well.",
+          "underline": [
+            "pretty well"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 4,
+          "why": "well 은 동사 play 를, pretty 는 well 을 꾸미는 부사예요(꽤 잘).",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 8"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s15",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "He is also a very generous and kind person.",
+          "underline": [
+            "very"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 4,
+          "why": "very 는 형용사 generous 와 kind 를 꾸미는 부사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 9"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s16",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "She is good at studying all kinds of subjects.",
+          "underline": [
+            "at"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 5,
+          "why": "good at(~을 잘하는)의 at 은 뒤의 studying … 을 이어 주는 전치사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 10"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s17",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Oh, how wonderful my life is!",
+          "underline": [
+            "Oh"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 7,
+          "why": "Oh 는 놀람·기쁨 같은 느낌을 나타내는 감탄사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 11"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s18",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "He likes to hang out and play with friends.",
+          "underline": [
+            "and"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 6,
+          "why": "and 는 hang out 과 play 를 이어 주는 접속사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 12"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s19",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "When he speaks, he sounds like a native English speaker.",
+          "underline": [
+            "When"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 6,
+          "why": "When(~할 때)은 he speaks 와 뒤 문장을 이어 주는 접속사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 22,
+            "where": "review 2 item 14"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s20",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I love France: its food, cities, freedom, cheese and people.",
+          "underline": [
+            "France",
+            "food",
+            "cities",
+            "freedom",
+            "cheese",
+            "people"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 0,
+          "why": "나라·음식·도시·자유·치즈·사람들 — 모두 이름을 나타내는 명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 15"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "I love France; food, city, freedom, cheese and people.",
+            "kind": "english_grammar",
+            "why": "목록 앞은 쌍반점(;)이 아니라 쌍점(:) · 도시가 여럿이라 cities · its 로 프랑스의 것임을 밝힘",
+            "field": "sentence"
+          }
+        },
+        {
+          "id": "pg03-2:s21",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Bob waited for Tom but he didn't come.",
+          "underline": [
+            "he"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 1,
+          "why": "he 는 앞의 Tom 을 대신하는 대명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 17"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s22",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I want to live in the city, not in the country.",
+          "underline": [
+            "want",
+            "live"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 2,
+          "why": "want(원하다)와 live(살다)는 동사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 18"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s23",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Hold the rope tight, or you're going to fall.",
+          "underline": [
+            "or"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 6,
+          "why": "or(그렇지 않으면)는 앞뒤 두 문장을 이어 주는 접속사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 21"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "Hold the rope tight, or you‘re going to fall. (굵은 글씨: tight)",
+            "kind": "answer_ambiguous",
+            "why": "tight 는 부사로도 목적격 보어(형용사)로도 볼 수 있어 정답이 갈림 → 같은 문장에서 답이 하나인 or(접속사)를 묻도록 바꿈 · you‘re 의 여는 따옴표를 아포스트로피로",
+            "field": "underline+sentence"
+          }
+        },
+        {
+          "id": "pg03-2:s24",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "You're entirely in the right.",
+          "underline": [
+            "entirely"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 4,
+          "why": "entirely(전적으로)는 in the right(옳은)를 꾸미는 부사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 23"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s25",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I really love my mother and father.",
+          "underline": [
+            "really"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 4,
+          "why": "really(정말)는 동사 love 를 꾸미는 부사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 24"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s26",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "I can't remember anything about her.",
+          "underline": [
+            "about"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 5,
+          "why": "about(~에 대해)은 대명사 her 앞에서 관계를 나타내는 전치사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 26"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s27",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "You could hear the noise from the next street.",
+          "underline": [
+            "from"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 5,
+          "why": "from(~에서)은 명사 the next street 앞에서 출발점을 나타내는 전치사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 27"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg03-2:s28",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Wow! What a nice dress!",
+          "underline": [
+            "Wow"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 7,
+          "why": "Wow 는 놀람을 나타내는 감탄사예요. What a nice dress! 는 감탄문이고, 여기서 what 은 감탄사가 아니에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 28"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "What a nice dress! (문장 전체가 굵은 글씨, 감탄사 예문 자리)",
+            "kind": "grammar_explanation_wrong",
+            "why": "What a nice dress! 는 감탄문이고 what 은 감탄사가 아님 — 감탄사 Wow! 를 앞에 더해 그것만 밑줄",
+            "field": "sentence+underline"
+          }
+        },
+        {
+          "id": "pg03-2:s29",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 품사는 무엇일까요?",
+          "sentence": "Hurrah! I made it!",
+          "underline": [
+            "Hurrah"
+          ],
+          "options": [
+            "명사",
+            "대명사",
+            "동사",
+            "형용사",
+            "부사",
+            "전치사",
+            "접속사",
+            "감탄사"
+          ],
+          "answer": 7,
+          "why": "Hurrah 는 기쁨을 나타내는 감탄사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 23,
+            "where": "review 2 item 29"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg03-2:p1",
+          "ko": "그는 소방관, 경찰관, 선생님, 의사 또는 통역관이 되고 싶어 한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He wants to be a firefighter, a police officer, a teacher, a doctor, or an interpreter.",
+          "accept": [
+            "He wants to be a firefighter, a police officer, a teacher, a doctor or an interpreter.",
+            "He wants to be a firefighter, a police officer, a teacher, a doctor, and an interpreter.",
+            "He wants to be a firefighter, a police officer, a teacher, a doctor and an interpreter.",
+            "He wants to be a firefighter, police officer, teacher, doctor, or interpreter.",
+            "He wants to be a firefighter, police officer, teacher, doctor or interpreter.",
+            "He wants to be a fire fighter, a police officer, a teacher, a doctor, or an interpreter.",
+            "He wants to be a fire fighter, a police officer, a teacher, a doctor or an interpreter.",
+            "He wants to be a fireman, a policeman, a teacher, a doctor, or an interpreter.",
+            "He wants to be a fireman, a policeman, a teacher, a doctor, and an interpreter.",
+            "He wants to be a firefighter, a policeman, a teacher, a doctor, or an interpreter.",
+            "He wants to be a firefighter, a policeman, a teacher, a doctor, and an interpreter.",
+            "He wants to be a fireman, a police officer, a teacher, a doctor, or an interpreter.",
+            "He wants to be a fireman, a police officer, a teacher, a doctor, and an interpreter.",
+            "He wants to be a fireman, policeman, teacher, doctor, or interpreter."
+          ],
+          "targets": [
+            [
+              "firefighter",
+              "fire fighter",
+              "fireman"
+            ],
+            [
+              "police officer",
+              "policeman"
+            ],
+            [
+              "teacher"
+            ],
+            [
+              "doctor"
+            ],
+            [
+              "interpreter"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a interpreter",
+              "hint": "interpreter 는 모음 소리로 시작해요. a 가 맞을까요?"
+            },
+            {
+              "match": "He want to",
+              "hint": "주어 He 는 3인칭 한 명이에요. 동사 모양은?"
+            },
+            {
+              "match": "wants to be firefighter",
+              "hint": "직업 이름(명사) 하나 앞에는 무엇이 필요할까요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "want-to",
+            "present-3sg-s",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 1",
+            "reviewWhere": "review 3 item 28 (p26)"
+          },
+          "fix": {
+            "from": "He wants to be a fire fighter, police officer, teacher, doctor, interpreter. / 그는 소방관, 경찰관, 선생님, 의사, 통역관이 되고 싶다.",
+            "kind": "english_grammar",
+            "why": "firefighter 는 한 낱말, 직업마다 a/an, 나열 마지막 앞에 or(STUDENT 3과 문장과 같은 방식) / 한국어: 3인칭 주어라 '되고 싶어 한다', 모범 답의 or 에 맞춰 '또는'",
+            "field": "en+ko"
+          }
+        },
+        {
+          "id": "pg03-2:p2",
+          "ko": "그는 모든 종류의 스포츠를 할 수 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He can play all kinds of sports.",
+          "accept": [
+            "He can play all sorts of sports.",
+            "He can play every kind of sport.",
+            "He is able to play all kinds of sports."
+          ],
+          "targets": [
+            [
+              "play"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "can plays",
+              "hint": "can 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "all kind of sports",
+              "hint": "종류가 여럿이니 kind 도 여러 개예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 3",
+            "reviewWhere": "review 3 item 30 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p3",
+          "ko": "그의 꿈은 실현될 것이다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "His dream will come true.",
+          "accept": [
+            "His dream is going to come true."
+          ],
+          "targets": [
+            [
+              "come true"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will comes true",
+              "hint": "will 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "will be come true",
+              "hint": "will 뒤에 be 와 동사원형 come 을 함께 쓰지 않아요."
+            },
+            {
+              "match": "come truly",
+              "hint": "come 뒤에서 '이루어진 상태'를 설명하는 말은 부사가 아니라 형용사예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "future-will",
+            "sentence-pattern-2"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 4",
+            "reviewWhere": "review 3 item 31 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p4",
+          "ko": "나는 자전거를 타고 학교에 간다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I ride my bike to school.",
+          "accept": [
+            "I ride my bicycle to school.",
+            "I ride a bike to school.",
+            "I ride a bicycle to school.",
+            "I go to school by bike.",
+            "I go to school by bicycle."
+          ],
+          "targets": [
+            [
+              "ride",
+              "go"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "to the school",
+              "hint": "'학교에 (공부하러) 간다'의 school 앞에는 보통 관사를 쓰지 않아요."
+            },
+            {
+              "match": "by my bike",
+              "hint": "by 뒤의 교통수단에는 my 나 a 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 5",
+            "reviewWhere": "review 3 item 32 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p5",
+          "ko": "그는 그 아기를 돌볼 수 있었다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He could take care of the baby.",
+          "accept": [
+            "He could look after the baby.",
+            "He was able to take care of the baby.",
+            "He was able to look after the baby."
+          ],
+          "targets": [
+            [
+              "take care of",
+              "look after"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "could took",
+              "hint": "could 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "could takes",
+              "hint": "could 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "take care the baby",
+              "hint": "take care 뒤에 빠진 낱말이 있어요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "can-basic",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 6",
+            "reviewWhere": "review 3 item 33 (p26)"
+          },
+          "fix": {
+            "from": "그는 그 아이를 돌 볼 수 있었다.",
+            "kind": "korean_typo",
+            "why": "띄어쓰기(돌볼) · the baby 는 '그 아기'",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p6",
+          "ko": "나는 매우 외향적이다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am very outgoing.",
+          "accept": [
+            "I'm very outgoing.",
+            "I am really outgoing.",
+            "I'm really outgoing.",
+            "I am very extroverted.",
+            "I'm very extroverted."
+          ],
+          "targets": [
+            [
+              "outgoing",
+              "extroverted"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I very outgoing",
+              "hint": "outgoing 은 형용사예요. 문장에 동사가 있나요?"
+            },
+            {
+              "match": "I really outgoing",
+              "hint": "outgoing 은 형용사예요. 문장에 동사가 있나요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present",
+            "sentence-pattern-2"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 7",
+            "reviewWhere": "review 3 item 34 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p7",
+          "ko": "그는 피아노와 기타를 꽤 잘 연주할 수 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He can play the piano and guitar pretty well.",
+          "accept": [
+            "He can play the piano and the guitar pretty well.",
+            "He can play piano and guitar pretty well.",
+            "He can play the piano and guitar quite well.",
+            "He can play the piano and the guitar quite well.",
+            "He can play the piano and guitar fairly well.",
+            "He can play piano and guitar quite well.",
+            "He can play the piano and the guitar fairly well.",
+            "He can play piano and guitar fairly well."
+          ],
+          "targets": [
+            [
+              "pretty well",
+              "quite well",
+              "fairly well"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "pretty good",
+              "hint": "동사 play 를 꾸미는 말은 형용사 good 이 아니라 부사예요."
+            },
+            {
+              "match": "quite good",
+              "hint": "동사 play 를 꾸미는 말은 형용사 good 이 아니라 부사예요."
+            },
+            {
+              "match": "can plays",
+              "hint": "can 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "can-basic",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 8",
+            "reviewWhere": "review 3 item 35 (p26)"
+          },
+          "fix": {
+            "from": "그는 피아노와 기타를 잘 연주할 수 있다.",
+            "kind": "translation_mismatch",
+            "why": "pretty well(꽤 잘)의 '꽤'가 빠져 있어 더함 — 굵은 글씨 부사가 pretty well 전체이기 때문(추출 issues 에 없던 것, 이 작업에서 찾음)",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p8",
+          "ko": "그분은 또한 매우 관대하고 친절한 분이십니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "He is also a very generous and kind person.",
+          "accept": [
+            "He's also a very generous and kind person.",
+            "He is also a very kind and generous person.",
+            "He is a very generous and kind person, too.",
+            "He is also very generous and kind."
+          ],
+          "targets": [
+            [
+              "very"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is also very generous and kind person",
+              "hint": "person 은 한 명이에요. 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "kind people",
+              "hint": "한 사람을 말하고 있어요. people 이 맞을까요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 9",
+            "reviewWhere": "review 3 item 36 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p9",
+          "ko": "그는 친구들과 어울리고 노는 것을 좋아한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He likes to hang out and play with friends.",
+          "accept": [
+            "He likes to hang out and play with his friends.",
+            "He likes hanging out and playing with friends.",
+            "He likes hanging out and playing with his friends."
+          ],
+          "targets": [
+            [
+              "and"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He like to",
+              "hint": "주어 He 는 3인칭 한 명이에요. 동사 모양은?"
+            },
+            {
+              "match": "hang out and plays",
+              "hint": "and 로 이어진 두 동사는 같은 모양이어야 해요."
+            },
+            {
+              "match": "likes to hang out with",
+              "hint": "'어울리다'와 '놀다' 두 동작을 모두 써 보세요. 두 동사를 이어 주는 말은?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "like-to",
+            "present-3sg-s",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 12",
+            "reviewWhere": "review 3 item 39 (p27)"
+          },
+          "fix": {
+            "from": "그는 돌아다니고 친구들과 함께 놀기를 좋아한다.",
+            "kind": "translation_mismatch",
+            "why": "hang out and play 는 '어울리고 놀다'(두 동작) — '돌아다니다'는 오역",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p10",
+          "ko": "그러나 그는 낯선 사람들과 이야기하기를 좋아하지 않는다.",
+          "koSource": "review",
+          "condition": "But으로 시작해서",
+          "promptEn": null,
+          "en": "But he does not like to talk to new people.",
+          "accept": [
+            "But he doesn't like to talk to new people.",
+            "But he does not like talking to new people.",
+            "But he doesn't like talking to new people.",
+            "But he doesn't like to talk to strangers.",
+            "But he does not like to talk to strangers.",
+            "But he doesn't like talking to strangers.",
+            "But he doesn't like to talk with new people.",
+            "But he doesn't like to talk with strangers.",
+            "But he doesn't like talking with strangers.",
+            "But he doesn't like talking with new people."
+          ],
+          "targets": [
+            [
+              "But"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he don't like",
+              "hint": "주어 he 는 3인칭 한 명이에요. don't 가 맞을까요?"
+            },
+            {
+              "match": "However",
+              "hint": "뜻은 맞아요. 이번에는 조건대로 접속사 But 으로 시작해 보세요."
+            },
+            {
+              "match": "he isn't like",
+              "hint": "일반동사 like 의 부정은 be동사가 아니라 무엇으로 만들까요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "negative-basic",
+            "like-to",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 13",
+            "reviewWhere": "review 3 item 40 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p11",
+          "ko": "그분이 말씀하실 때, 그분은 영어 원어민 같습니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "When he speaks, he sounds like a native English speaker.",
+          "accept": [
+            "When he speaks he sounds like a native English speaker.",
+            "He sounds like a native English speaker when he speaks.",
+            "When he speaks, he sounds like a native speaker of English."
+          ],
+          "targets": [
+            [
+              "When"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sounds like native",
+              "hint": "speaker 는 한 명이에요. 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "he sound like",
+              "hint": "주어 he 는 3인칭 한 명이에요."
+            },
+            {
+              "match": "When he will speak",
+              "hint": "'~할 때'를 나타내는 when 절에는 will 을 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s7-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 14",
+            "reviewWhere": "review 3 item 41 (p27)"
+          },
+          "fix": {
+            "from": "그가 말할 때, 그는 외국인처럼 들린다.",
+            "kind": "translation_mismatch",
+            "why": "a native English speaker 는 '영어 원어민' — STUDENT 7과 한국어로",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p12",
+          "ko": "나는 프랑스가 좋아: 음식, 도시, 자유, 치즈 그리고 사람들이.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I love France: its food, cities, freedom, cheese and people.",
+          "accept": [
+            "I love France: its food, cities, freedom, cheese, and people.",
+            "I love France: the food, the cities, the freedom, the cheese and the people.",
+            "I love France: the food, the cities, the freedom, the cheese, and the people.",
+            "I love France: food, cities, freedom, cheese and people.",
+            "I love France: food, cities, freedom, cheese, and people.",
+            "I like France: its food, cities, freedom, cheese and people.",
+            "I like France: food, cities, freedom, cheese and people."
+          ],
+          "targets": [
+            [
+              "France"
+            ],
+            [
+              "food"
+            ],
+            [
+              "freedom"
+            ],
+            [
+              "cheese"
+            ],
+            [
+              "people"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "peoples",
+              "hint": "people 은 이미 '사람들'이라는 뜻이에요."
+            },
+            {
+              "match": "citys",
+              "hint": "city 처럼 '자음 + y'로 끝나는 명사의 복수형은?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 15",
+            "reviewWhere": "review 3 item 42 (p27)"
+          },
+          "fix": {
+            "from": "I love France; food, city, freedom, cheese and people. / 나는 프랑스가 좋아: 음식, 도시, 자유,치즈 그리고 사람들이.",
+            "kind": "english_grammar",
+            "why": "목록 앞은 쌍반점(;)이 아니라 쌍점(:) · 도시가 여럿이라 cities · its 로 프랑스의 것임을 밝힘 / 한국어 띄어쓰기(자유, 치즈)",
+            "field": "en+ko"
+          }
+        },
+        {
+          "id": "pg03-2:p13",
+          "ko": "벌은 꿀을 좋아한다. 그것들은 그것을 매일 먹는다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Bees like honey. They eat it every day.",
+          "accept": [
+            "Bees like honey. They eat it daily.",
+            "Bees like honey, and they eat it every day."
+          ],
+          "targets": [
+            [
+              "They"
+            ],
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "eat it everyday",
+              "hint": "'매일'이라는 부사는 두 낱말로 띄어 써요."
+            },
+            {
+              "match": "Bees likes",
+              "hint": "주어 Bees 는 여러 마리예요. 동사에 -s 가 붙을까요?"
+            },
+            {
+              "match": "They eat them",
+              "hint": "honey(꿀) 하나를 가리키는 대명사는?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "present-simple",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 16",
+            "reviewWhere": "review 3 item 43 (p27)"
+          },
+          "fix": {
+            "from": "Bees like honey. They eat it everyday.",
+            "kind": "english_grammar",
+            "why": "'매일'이라는 부사는 every day(두 낱말). everyday 는 '매일의'라는 형용사",
+            "field": "en"
+          }
+        },
+        {
+          "id": "pg03-2:p14",
+          "ko": "밥은 톰을 기다렸지만, 그는 오지 않았다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Bob waited for Tom but he didn't come.",
+          "accept": [
+            "Bob waited for Tom, but he didn't come.",
+            "Bob waited for Tom but he did not come.",
+            "Bob waited for Tom, but he did not come."
+          ],
+          "targets": [
+            [
+              "he"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Bob waited Tom",
+              "hint": "'~을 기다리다'는 wait 뒤에 어떤 전치사가 필요할까요?"
+            },
+            {
+              "match": "didn't came",
+              "hint": "didn't 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "he doesn't come",
+              "hint": "지난 일이에요. 부정은 어떻게 쓸까요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "past-simple",
+            "negative-basic",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 17",
+            "reviewWhere": "review 3 item 44 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p15",
+          "ko": "나는 도시에서 살고 싶어, 시골에서는 아니야.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I want to live in the city, not in the country.",
+          "accept": [
+            "I want to live in the city, not the country.",
+            "I want to live in the city, not in the countryside.",
+            "I want to live in the city, not the countryside.",
+            "I want to live in the city and not in the country."
+          ],
+          "targets": [
+            [
+              "want"
+            ],
+            [
+              "live"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I want live",
+              "hint": "want 뒤에 동사가 올 때 무엇이 필요할까요?"
+            },
+            {
+              "match": "live at the city",
+              "hint": "도시 '안에서' 사는 것은 at 대신 어떤 전치사일까요?"
+            },
+            {
+              "match": "want to living",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "want-to",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 18",
+            "reviewWhere": "review 3 item 45 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p16",
+          "ko": "그들은 우리를 만나려고 계획했다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "They arranged to meet us.",
+          "accept": [
+            "They planned to meet us.",
+            "They arranged to meet with us.",
+            "They planned to meet with us."
+          ],
+          "targets": [
+            [
+              "arranged",
+              "planned"
+            ],
+            [
+              "meet"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "arranged meeting",
+              "hint": "arrange 뒤에 동사가 올 때는 to 동사원형이에요."
+            },
+            {
+              "match": "planned meeting",
+              "hint": "plan 뒤에 동사가 올 때는 to 동사원형이에요."
+            },
+            {
+              "match": "to meet to us",
+              "hint": "meet 는 전치사 to 없이 바로 사람을 써요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 19",
+            "reviewWhere": "review 3 item 46 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p17",
+          "ko": "그녀는 깨끗하고, 새롭고, 화사하고, 편리한 집을 가질 거야.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "She will have a clean, new, bright, convenient house.",
+          "accept": [
+            "She will have a clean, new, bright and convenient house.",
+            "She will have a clean, new, bright, and convenient house.",
+            "She'll have a clean, new, bright, convenient house.",
+            "She'll have a clean, new, bright and convenient house."
+          ],
+          "targets": [
+            [
+              "clean"
+            ],
+            [
+              "new"
+            ],
+            [
+              "bright"
+            ],
+            [
+              "convenient"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will has",
+              "hint": "will 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "have clean",
+              "hint": "house 는 하나예요. 맨 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "conveniently",
+              "hint": "명사 house 를 꾸미는 말은 부사가 아니라 형용사예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "future-will",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 20",
+            "reviewWhere": "review 3 item 47 (p27)"
+          },
+          "fix": {
+            "from": "그녀는 깨끗하고 새롭고, 화사하고, 편리한 집을 가질거야.",
+            "kind": "korean_typo",
+            "why": "띄어쓰기(가질 거야) · 쉼표를 고르게",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p18",
+          "ko": "그 로프를 꽉 잡아, 그렇지 않으면 너는 떨어질 거야.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Hold the rope tight, or you're going to fall.",
+          "accept": [
+            "Hold the rope tight or you're going to fall.",
+            "Hold the rope tight, or you will fall.",
+            "Hold the rope tight or you will fall.",
+            "Hold the rope tightly, or you're going to fall.",
+            "Hold the rope tightly, or you will fall.",
+            "Hold the rope tightly or you will fall."
+          ],
+          "targets": [
+            [
+              "tight",
+              "tightly"
+            ],
+            [
+              "or"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "tight, and you",
+              "hint": "'그렇지 않으면'은 and 가 아니라 어떤 접속사일까요?"
+            },
+            {
+              "match": "you going to fall",
+              "hint": "going to 앞에 be동사가 필요해요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "imperative-basic",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 21",
+            "reviewWhere": "review 3 item 48 (p27)"
+          },
+          "fix": {
+            "from": "Hold the rope tight, or you‘re going to fall.",
+            "kind": "layout_or_extraction",
+            "why": "you‘re 의 여는 따옴표(‘)를 아포스트로피로",
+            "field": "en"
+          }
+        },
+        {
+          "id": "pg03-2:p19",
+          "ko": "나는 매우 배가 고파.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am awfully hungry.",
+          "accept": [
+            "I'm awfully hungry.",
+            "I am very hungry.",
+            "I'm very hungry.",
+            "I am really hungry.",
+            "I'm really hungry.",
+            "I am so hungry.",
+            "I'm so hungry.",
+            "I am terribly hungry.",
+            "I'm terribly hungry."
+          ],
+          "targets": [
+            [
+              "awfully",
+              "very",
+              "really",
+              "so",
+              "terribly"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I very hungry",
+              "hint": "hungry 는 형용사예요. 문장에 동사가 있나요?"
+            },
+            {
+              "match": "I awfully hungry",
+              "hint": "hungry 는 형용사예요. 문장에 동사가 있나요?"
+            },
+            {
+              "match": "awful hungry",
+              "hint": "형용사 hungry 를 꾸미는 말은 형용사 awful 이 아니라 부사예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present",
+            "sentence-pattern-2"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 22",
+            "reviewWhere": "review 3 item 49 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p20",
+          "ko": "당신 말이 전적으로 옳아요.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "You're entirely in the right.",
+          "accept": [
+            "You are entirely in the right.",
+            "You're entirely right.",
+            "You are entirely right.",
+            "You're completely right.",
+            "You are completely right.",
+            "You're totally right.",
+            "You are totally right.",
+            "You're absolutely right.",
+            "You are absolutely right.",
+            "You're completely in the right.",
+            "What you said is entirely right.",
+            "What you say is entirely right.",
+            "What you said is completely right.",
+            "What you said is absolutely right.",
+            "What you said is totally right."
+          ],
+          "targets": [
+            [
+              "entirely",
+              "completely",
+              "totally",
+              "absolutely"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Your",
+              "hint": "You're(= You are)와 Your(당신의)는 달라요. '당신 말이 옳다'는 영어로 흔히 '당신이 옳다'로 써요."
+            },
+            {
+              "match": "You entirely right",
+              "hint": "right 는 형용사예요. 문장에 동사가 있나요?"
+            },
+            {
+              "match": "You are entire right",
+              "hint": "형용사 right 를 꾸미는 말은 부사예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 23",
+            "reviewWhere": "review 3 item 50 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p21",
+          "ko": "나는 나의 어머니와 아버지를 정말 사랑합니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "I really love my mother and father.",
+          "accept": [
+            "I really love my mom and dad.",
+            "I really love my mum and dad.",
+            "I really love my father and mother.",
+            "I really love my parents."
+          ],
+          "targets": [
+            [
+              "really"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I love really",
+              "hint": "really 는 보통 동사 love 앞에 와요."
+            },
+            {
+              "match": "I really loves",
+              "hint": "주어 I 뒤의 동사에는 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "real love",
+              "hint": "동사 love 를 꾸미는 말은 형용사 real 이 아니라 부사예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 24",
+            "reviewWhere": "review 3 item 51 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p22",
+          "ko": "나의 아버지는 대개 시간을 잘 지키신다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "My father is usually on time.",
+          "accept": [
+            "My dad is usually on time.",
+            "Usually, my father is on time.",
+            "Usually my father is on time."
+          ],
+          "targets": [
+            [
+              "on time"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "usually is on time",
+              "hint": "usually 같은 빈도 부사는 보통 be동사 뒤에 와요."
+            },
+            {
+              "match": "in time",
+              "hint": "'시간을 (정확히) 지키다'는 in 이 아니라 어떤 전치사일까요?"
+            },
+            {
+              "match": "always on time",
+              "hint": "'대개'에 맞는 빈도 부사를 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 25",
+            "reviewWhere": "review 3 item 52 (p28)"
+          },
+          "fix": {
+            "from": "나의 아버지는 항상 시간을 잘 지키신다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 usually(대개) — '항상'은 always 로 쓰게 만듦",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p23",
+          "ko": "너는 옆 거리에서 들려오는 그 소음을 들을 수 있었어.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "You could hear the noise from the next street.",
+          "accept": [
+            "You were able to hear the noise from the next street.",
+            "You could hear the noise coming from the next street.",
+            "You were able to hear the noise coming from the next street."
+          ],
+          "targets": [
+            [
+              "from"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "could heard",
+              "hint": "could 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "could listen",
+              "hint": "소리가 '들리다'는 listen 이 아니라 어떤 동사일까요?"
+            },
+            {
+              "match": "noise in the next street",
+              "hint": "소리가 어디'에서' 들려오는지 나타내는 전치사는?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "can-basic",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 27",
+            "reviewWhere": "review 3 item 54 (p28)"
+          },
+          "fix": {
+            "from": "너는 다음 거리에서 그 소음을 들을 수 있었어.",
+            "kind": "translation_mismatch",
+            "why": "the next street 는 '옆 거리' — '다음 거리'는 직역투 · 소리가 나는 곳(from)이 드러나게 '들려오는'을 더함",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p24",
+          "ko": "야호! 내가 해냈어!",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Hurrah! I made it!",
+          "accept": [
+            "Hurray! I made it!",
+            "Hooray! I made it!",
+            "Hurrah, I made it!",
+            "Hooray, I made it!",
+            "Yay! I made it!",
+            "Hurrah! I finally made it!",
+            "Hooray! I finally made it!",
+            "Hurrah! I did it!",
+            "Hooray! I did it!",
+            "Hurray! I did it!",
+            "Yay! I did it!"
+          ],
+          "targets": [
+            [
+              "Hurrah",
+              "Hurray",
+              "Hooray",
+              "Yay"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I maked it",
+              "hint": "make 의 과거형은 불규칙이에요."
+            },
+            {
+              "match": "I make it",
+              "hint": "이미 해낸 일이에요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 29",
+            "reviewWhere": "review 3 item 56 (p28)"
+          },
+          "fix": {
+            "from": "야호, 내가 드디어 해 냈어.",
+            "kind": "korean_typo",
+            "why": "'해냈어'는 한 낱말 · '드디어'는 영어에 없음(finally 를 넣은 답도 정답)",
+            "field": "ko"
+          }
+        },
+        {
+          "id": "pg03-2:p25",
+          "ko": "나의 어머니는 가정주부이십니다. 그분은 세상에서 최고의 어머니이십니다.",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "My mother is a housewife. She is the best mother in the world.",
+          "accept": [
+            "My mother is a housewife. She's the best mother in the world.",
+            "My mom is a housewife. She is the best mom in the world.",
+            "My mom is a housewife. She's the best mom in the world.",
+            "My mother is a homemaker. She is the best mother in the world.",
+            "My mother is a housewife, and she is the best mother in the world."
+          ],
+          "targets": [
+            [
+              "She",
+              "She's"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She is best mother",
+              "hint": "최상급 best 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "is housewife",
+              "hint": "직업 이름(명사) 하나 앞에는 무엇이 필요할까요?"
+            },
+            {
+              "match": "housewife. He is",
+              "hint": "어머니를 대신하는 대명사는?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present",
+            "article-basic",
+            "superlative"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "superlative"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 2",
+            "reviewWhere": "review 3 item 29 (p26)"
+          },
+          "fix": {
+            "from": "My mother is a housewife. She is best mother In the world. / 내 어머니는 주부 이시다. 그녀는 세상에서 제일 좋은 엄마이다.",
+            "kind": "english_grammar",
+            "why": "최상급 best 앞 the 빠짐(18쪽은 In 대문자 오타도) — STUDENT 2과 두 문장(s2-3)으로 영어·한국어 모두 맞춤",
+            "field": "en+ko"
+          }
+        },
+        {
+          "id": "pg03-2:p26",
+          "ko": "그녀는 모든 과목을 공부하는 것을 잘한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is good at studying all kinds of subjects.",
+          "accept": [
+            "She's good at studying all kinds of subjects.",
+            "She is good at studying all subjects.",
+            "She's good at studying all subjects.",
+            "She is good at studying every subject."
+          ],
+          "targets": [
+            [
+              "good at"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "good at to study",
+              "hint": "전치사 at 뒤에 동사가 올 때는 -ing 모양이에요."
+            },
+            {
+              "match": "good in studying",
+              "hint": "'~을 잘한다'는 be good ___ 로 써요. 어떤 전치사일까요?"
+            },
+            {
+              "match": "She good at",
+              "hint": "good 은 형용사예요. 문장에 동사가 있나요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "be-present",
+            "gerund"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "gerund"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 10",
+            "reviewWhere": "review 3 item 37 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p27",
+          "ko": "아, 얼마나 나의 인생이 멋진가!",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Oh, how wonderful my life is!",
+          "accept": [
+            "Oh! How wonderful my life is!",
+            "Oh how wonderful my life is!",
+            "Ah, how wonderful my life is!"
+          ],
+          "targets": [
+            [
+              "Oh",
+              "Ah"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "how wonderful is my life",
+              "hint": "감탄문은 How + 형용사 + 주어 + 동사 순서예요."
+            },
+            {
+              "match": "what wonderful my life",
+              "hint": "형용사(wonderful)만 강조할 때는 What 대신 무엇을 쓸까요?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "exclamative"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "exclamative"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 18,
+            "where": "application 2) item 11",
+            "reviewWhere": "review 3 item 38 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p28",
+          "ko": "나는 그녀에 대한 어떤 것도 기억이 안 난다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I can't remember anything about her.",
+          "accept": [
+            "I cannot remember anything about her.",
+            "I don't remember anything about her.",
+            "I do not remember anything about her."
+          ],
+          "targets": [
+            [
+              "about"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "remember something about",
+              "hint": "부정문에서 '어떤 것도'는 something 대신 무엇을 쓸까요?"
+            },
+            {
+              "match": "can't remember nothing",
+              "hint": "can't 와 nothing 을 함께 쓰면 부정이 두 번이 돼요."
+            },
+            {
+              "match": "anything of her",
+              "hint": "'~에 대한'을 나타내는 전치사는?"
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "can-basic",
+            "negative-basic",
+            "pronoun-indefinite"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "pronoun-indefinite"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 26",
+            "reviewWhere": "review 3 item 53 (p28)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg03-2:p29",
+          "ko": "와! 참 예쁜 옷이구나!",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Wow! What a nice dress!",
+          "accept": [
+            "Wow, what a nice dress!",
+            "Wow! What a pretty dress!",
+            "Wow, what a pretty dress!",
+            "Wow! What a beautiful dress!",
+            "Wow, what a beautiful dress!",
+            "Wow! What a lovely dress!"
+          ],
+          "targets": [
+            [
+              "Wow"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "What nice dress",
+              "hint": "dress 는 하나예요. What 뒤에 무엇이 필요할까요?"
+            },
+            {
+              "match": "How a nice dress",
+              "hint": "명사(dress)가 있는 감탄문은 How 대신 무엇으로 시작할까요?"
+            },
+            {
+              "match": "What a dress nice",
+              "hint": "What a + 형용사 + 명사 순서예요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "exclamative"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "exclamative"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 19,
+            "where": "application 2) item 28",
+            "reviewWhere": "review 3 item 55 (p28)"
+          },
+          "fix": {
+            "from": "What a nice dress! / 참 예쁜 옷이구나!",
+            "kind": "grammar_explanation_wrong",
+            "why": "감탄사 예문 자리인데 What a nice dress! 는 감탄문이고 what 은 감탄사가 아님 — 감탄사 Wow!(와!)를 앞에 더함",
+            "field": "en+ko"
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg03-2:t1",
+          "ko": "그녀는 아름답게 미소 짓는다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She smiles beautifully.",
+          "accept": [],
+          "targets": [
+            [
+              "beautifully"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "smiles beautiful",
+              "hint": "동사 smiles 를 꾸미는 말은 형용사가 아니라 부사예요."
+            },
+            {
+              "match": "She is smile",
+              "hint": "일반동사 smile 앞에 be동사를 함께 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-017#25"
+        },
+        {
+          "id": "pg03-2:t2",
+          "ko": "식당 근처에서 만나자.",
+          "condition": null,
+          "promptEn": null,
+          "en": "Let's meet near the restaurant.",
+          "accept": [
+            "Let's meet near a restaurant."
+          ],
+          "targets": [
+            [
+              "near"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "meet at near",
+              "hint": "near 가 이미 장소를 나타내는 전치사예요. at 이 필요할까요?"
+            },
+            {
+              "match": "near by",
+              "hint": "'~ 근처에서'는 전치사 near 하나로 충분해요."
+            }
+          ],
+          "tags": [
+            "parts-of-speech",
+            "imperative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": {
+            "from": "Let's meet near a restaurant.",
+            "kind": "english_unnatural",
+            "why": "만날 곳을 정하는 말이라 정해진 식당(the restaurant)이 자연스러움 — GRAMMAR II 의 다른 답(the)을 모범 답으로, 원래 문장(a)은 허용 답으로",
+            "field": "en"
+          },
+          "source": "grammar2:gh2-017#18"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg03-2:f1",
+      "template": "I am very ___.",
+      "ko": "나는 매우 ___다."
+    }
+  ]
+}

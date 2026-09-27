@@ -1,0 +1,767 @@
+{
+  "id": "pg08-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "관계대명사 Which",
+  "label": "TOPIC 8. 관계대명사",
+  "menuLabel": "8-2. 관계대명사 Which",
+  "unit": 8,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "which / of which",
+  "grammarTags": [
+    "relative-which"
+  ],
+  "koreanWords": [
+    "songpyeon"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg08-2:a1",
+          "en": "Most people make songpyeon, which is a traditional Korean rice cake.",
+          "ko": "대부분의 사람들은 한국의 전통 떡인 송편을 만든다.",
+          "focus": [
+            "which"
+          ],
+          "studentRef": {
+            "lesson": "s18-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 4"
+          },
+          "fix": {
+            "from": "Most people make Song-Pyun which is a Korean traditional rice cake.",
+            "kind": "english_grammar",
+            "why": "하나뿐인 송편을 덧붙여 설명하므로 쉼표 + which(계속적 용법). 형용사 순서 traditional Korean, 표기 songpyeon(STUDENT s18-3 과 같은 꼴)."
+          }
+        },
+        {
+          "id": "pg08-2:a2",
+          "en": "She has a bird the color of which is beautiful.",
+          "ko": "그녀는 색깔이 아름다운 새를 가지고 있다.",
+          "focus": [
+            "the color of which"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 5"
+          },
+          "fix": {
+            "from": "She has a bird of which color is beautiful. (= whose)",
+            "kind": "english_grammar",
+            "why": "of which 는 the color of which 또는 of which the color 꼴로만 씀. '(= whose)'는 a bird whose color is beautiful 과 뜻이 같다는 설명이라 설명 카드 표로 옮김."
+          }
+        },
+        {
+          "id": "pg08-2:a3",
+          "en": "I have a dog which my son likes.",
+          "ko": "나는 내 아들이 좋아하는 개 한 마리를 가지고 있다.",
+          "focus": [
+            "which"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 6"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg08-2:a1",
+          "pg08-2:a2",
+          "pg08-2:a3"
+        ],
+        "question": "which 가 꾸미는 말(songpyeon · a bird · a dog)의 공통점은?",
+        "options": [
+          "사람이 아닌 것(사물 · 동물)",
+          "모두 사람",
+          "모두 장소"
+        ],
+        "answer": 0,
+        "why": "선행사가 사물이나 동물이면 which 를 써요(사람이면 who)."
+      },
+      "title": "사물 · 동물을 꾸밀 때: which",
+      "points": [
+        "선행사가 사물이나 동물이면 which 를 써요: a dog which my son likes",
+        "which 는 주어 자리(which is …)에도, 목적어 자리(which my son likes)에도 써요.",
+        "'그것의 ~'는 whose 나 the + 명사 + of which: a bird the color of which …",
+        "쉼표 + which 는 앞 말을 덧붙여 설명해요(계속적 용법): songpyeon, which is …",
+        "'그중 대부분'은 쉼표 + most of which: the cookies, most of which …"
+      ],
+      "table": {
+        "columns": [
+          "뒤 문장에서의 자리",
+          "사람",
+          "사물 · 동물"
+        ],
+        "rows": [
+          [
+            "주어(주격)",
+            "who",
+            "which"
+          ],
+          [
+            "'~의'(소유격)",
+            "whose",
+            "whose / the + 명사 + of which"
+          ],
+          [
+            "목적어(목적격)",
+            "whom (who)",
+            "which"
+          ],
+          [
+            "전치사 뒤",
+            "전치사 + whom",
+            "전치사 + which (the chair on which I sat)"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '한국의 전통 떡인 송편'처럼 앞에서 꾸미지만, 영어는 songpyeon 뒤에 쉼표와 which 를 붙여 덧붙여 설명해요.",
+      "mistakes": [
+        {
+          "wrong": "She has a bird of which color is beautiful.",
+          "right": "She has a bird the color of which is beautiful.",
+          "why": "of which 앞에 꾸밈을 받는 명사(the color)를 먼저 써요. whose 로 쓰면 a bird whose color is beautiful."
+        },
+        {
+          "wrong": "The chair which I sat on it was broken.",
+          "right": "The chair which I sat on was broken.",
+          "why": "which 가 이미 on 의 목적어(it) 자리를 맡았어요. it 을 또 쓰지 않아요."
+        }
+      ],
+      "worked": [
+        "이것은 내가 (그것에 대해) 이야기했던 책이다.",
+        "선행사: 책 → the book (사물) → which",
+        "'내가 (그 책에 대해) 이야기했던' → which I talked about",
+        "This is the book which I talked about."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'This is the house ___ he built.' 빈칸에 알맞은 것은?",
+        "options": [
+          "who",
+          "which",
+          "whose"
+        ],
+        "answer": 1,
+        "why": "house 는 사물이고 built 의 목적어 자리라 which.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg08-2:s1",
+          "kind": "select",
+          "instruction": "관계대명사 which 가 꾸며 주는 것(선행사)을 누르세요",
+          "tokens": [
+            "I",
+            "have",
+            "a",
+            "dog",
+            "which",
+            "my",
+            "son",
+            "likes",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [
+            2
+          ],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "which my son likes 는 dog 를 꾸며요: '내 아들이 좋아하는 개'.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 6"
+          }
+        },
+        {
+          "id": "pg08-2:s7",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 관계대명사를 고르세요",
+          "sentence": "The pen ___ I write with is blue.",
+          "options": [
+            "who",
+            "whose",
+            "which"
+          ],
+          "answer": 2,
+          "why": "펜(the pen)은 사물이고 with 의 목적어 자리라 which.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-2:s3",
+          "kind": "choice",
+          "instruction": "어법에 맞는 문장을 고르세요",
+          "options": [
+            "She has a bird of which color is beautiful.",
+            "She has a bird the color of which is beautiful.",
+            "She has a bird which color is beautiful."
+          ],
+          "answer": 1,
+          "why": "'그 새의 색깔'은 the color of which(또는 whose color)로 써요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 5"
+          }
+        },
+        {
+          "id": "pg08-2:s4",
+          "kind": "choice",
+          "instruction": "쉼표 뒤 which 문장의 뜻으로 알맞은 것을 고르세요",
+          "sentence": "Most people make songpyeon, which is a traditional Korean rice cake.",
+          "underline": [
+            "which"
+          ],
+          "options": [
+            "송편을 만든다 — 그런데 송편은 한국의 전통 떡이다",
+            "여러 송편 가운데 전통 떡인 송편만 만든다",
+            "한국의 전통 떡이 아닌 송편을 만든다"
+          ],
+          "answer": 0,
+          "why": "쉼표 + which 는 앞의 송편을 덧붙여 설명해요(계속적 용법).",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 4"
+          }
+        },
+        {
+          "id": "pg08-2:s8",
+          "kind": "short",
+          "instruction": "두 문장을 한 문장으로 이을 때 빈칸에 알맞은 한 낱말을 쓰세요: I have many books. + Most of them are old.",
+          "sentence": "I have many books, most of ___ are old.",
+          "answer": [
+            "which"
+          ],
+          "why": "쉼표 뒤, 사물(books)이라 most of which. 쉼표 뒤와 전치사 뒤에는 that 을 쓰지 않아요.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-2:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 which 는 뒤 문장에서 어떤 자리를 맡나요?",
+          "sentence": "I have a dog which my son likes.",
+          "underline": [
+            "which"
+          ],
+          "options": [
+            "주어(주격)",
+            "'~의'(소유격)",
+            "목적어(목적격)"
+          ],
+          "answer": 2,
+          "why": "which 가 likes 의 목적어 자리를 맡아요(my son likes the dog).",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 6"
+          }
+        },
+        {
+          "id": "pg08-2:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 관계대명사를 고르세요",
+          "sentence": "The bed ___ I slept in last night was not comfortable.",
+          "options": [
+            "who",
+            "whose",
+            "which"
+          ],
+          "answer": 2,
+          "why": "침대(the bed)는 사물이고 in 의 목적어 자리라 which.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 10"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg08-2:s5",
+          "kind": "short",
+          "instruction": "두 문장을 한 문장으로 이을 때 빈칸에 알맞은 한 낱말을 쓰세요: I didn't like the food. + Most of it was tasteless.",
+          "sentence": "I didn't like the food, most of ___ was tasteless.",
+          "answer": [
+            "which"
+          ],
+          "why": "쉼표 뒤, 사물(the food)이라 most of which. 쉼표 뒤와 전치사 뒤에는 that 을 쓰지 않아요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 12"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg08-2:p1",
+          "ko": "대부분의 사람들은 한국의 전통 떡인 송편을 만든다.",
+          "condition": "(which)",
+          "promptEn": null,
+          "en": "Most people make songpyeon, which is a traditional Korean rice cake.",
+          "accept": [
+            "Most people make song-pyeon, which is a traditional Korean rice cake.",
+            "Most people make songpyun, which is a traditional Korean rice cake.",
+            "Most people make song-pyun, which is a traditional Korean rice cake."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Korean traditional",
+              "hint": "형용사 순서를 보세요. '전통적인'이 '한국의'보다 앞에 와요."
+            },
+            {
+              "match": "songpyeon, that",
+              "hint": "쉼표 뒤(덧붙여 설명하는 자리)에는 that 을 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s18-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 9",
+            "reviewWhere": "review 1 item 9 (p61)"
+          },
+          "fix": {
+            "from": "Most people make Song-Pyun which is a Korean traditional rice cake.",
+            "kind": "english_grammar",
+            "why": "하나뿐인 송편을 덧붙여 설명하므로 쉼표 + which(계속적 용법). 형용사 순서 traditional Korean, 표기 songpyeon(STUDENT s18-3 과 같은 꼴)."
+          }
+        },
+        {
+          "id": "pg08-2:p2",
+          "ko": "지난밤 내가 잤던 침대는 편하지 않았다.",
+          "condition": "(which)",
+          "promptEn": null,
+          "en": "The bed which I slept in last night was not comfortable.",
+          "accept": [
+            "The bed which I slept in last night wasn't comfortable.",
+            "The bed which I slept in last night was uncomfortable.",
+            "The bed in which I slept last night was not comfortable.",
+            "The bed in which I slept last night wasn't comfortable.",
+            "The bed in which I slept last night was uncomfortable.",
+            "The bed which I slept on last night was not comfortable.",
+            "The bed which I slept on last night wasn't comfortable.",
+            "The bed which I slept on last night was uncomfortable.",
+            "The bed on which I slept last night was not comfortable.",
+            "The bed on which I slept last night wasn't comfortable.",
+            "The bed on which I slept last night was uncomfortable."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "convenient",
+              "hint": "convenient 는 '편리한'이에요. 잠자리가 '편한'은 다른 낱말이에요."
+            },
+            {
+              "match": "slept in it",
+              "hint": "which 가 이미 in 의 목적어예요. it 을 또 쓰지 않아요."
+            },
+            {
+              "match": "bed which I slept last",
+              "hint": "'침대에서' 잤어요. slept 뒤에 필요한 전치사는?"
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "past-simple",
+            "be-past",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 10",
+            "reviewWhere": "review 1 item 10 (p61)"
+          },
+          "fix": {
+            "from": "The bed which I slept in last night was not convenient.",
+            "kind": "english_unnatural",
+            "why": "convenient 는 '편리한', 잠자리가 편한 것은 comfortable."
+          }
+        },
+        {
+          "id": "pg08-2:p3",
+          "ko": "그녀는 색깔이 아름다운 새를 가지고 있다.",
+          "condition": "(of which)",
+          "promptEn": null,
+          "en": "She has a bird the color of which is beautiful.",
+          "accept": [
+            "She has a bird the colour of which is beautiful.",
+            "She has a bird of which the color is beautiful.",
+            "She has a bird of which the colour is beautiful."
+          ],
+          "targets": [
+            [
+              "of which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "of which color",
+              "hint": "of which 앞에 꾸밈을 받는 명사를 먼저 써요: the + 명사 + of which."
+            },
+            {
+              "match": "whose color",
+              "hint": "whose 도 맞는 영어예요. 이 문항은 (of which)로 같은 뜻을 만들어 보세요."
+            },
+            {
+              "match": "bird which color",
+              "hint": "'그 새의 색깔'이에요. of which 를 써서 소유를 나타내 보세요."
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 11",
+            "reviewWhere": "review 1 item 11 (p61)"
+          },
+          "fix": {
+            "from": "She has a bird of which color is beautiful. (= whose)",
+            "kind": "english_grammar",
+            "why": "of which 는 the color of which 또는 of which the color 꼴로만 씀. 조건이 (of which)라 whose 답은 정답 목록에 넣지 않고 오답 힌트로 안내."
+          }
+        },
+        {
+          "id": "pg08-2:p4",
+          "ko": "나는 그 음식을 좋아하지 않았는데, 그 대부분은 맛이 없었다.",
+          "condition": "(most of which)",
+          "promptEn": null,
+          "en": "I didn't like the food, most of which was tasteless.",
+          "accept": [
+            "I didn't like the food, most of which was not tasty.",
+            "I didn't like the food, most of which wasn't tasty.",
+            "I didn't like the food, most of which did not taste good.",
+            "I didn't like the food, most of which didn't taste good.",
+            "I did not like the food, most of which was tasteless.",
+            "I did not like the food, most of which was not tasty.",
+            "I did not like the food, most of which wasn't tasty.",
+            "I did not like the food, most of which did not taste good.",
+            "I did not like the food, most of which didn't taste good.",
+            "I didn't like the food, most of which was not delicious.",
+            "I didn't like the food, most of which wasn't delicious.",
+            "I didn't like the food, most of which tasted bad.",
+            "I did not like the food, most of which was not delicious.",
+            "I did not like the food, most of which wasn't delicious.",
+            "I did not like the food, most of which tasted bad."
+          ],
+          "targets": [
+            [
+              "most of which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "most of it",
+              "hint": "두 문장을 하나로 이어요. it 대신 관계대명사를 써 보세요."
+            },
+            {
+              "match": "most of that",
+              "hint": "쉼표 뒤와 전치사 뒤에는 that 을 쓰지 않아요."
+            },
+            {
+              "match": "most of which were",
+              "hint": "food 는 셀 수 없는 명사라 하나로 받아요. be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "past-simple",
+            "negative-basic",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 12",
+            "reviewWhere": "review 1 item 12 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg08-2:p5",
+          "ko": "나는 내 아들이 좋아하는 개 한 마리를 가지고 있다.",
+          "condition": "(which)",
+          "promptEn": null,
+          "en": "I have a dog which my son likes.",
+          "accept": [
+            "I've got a dog which my son likes.",
+            "I have got a dog which my son likes."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "likes it",
+              "hint": "which 가 이미 likes 의 목적어예요. it 을 또 쓰지 않아요."
+            },
+            {
+              "match": "I have dog",
+              "hint": "개 한 마리예요. dog 앞에 필요한 낱말은?"
+            },
+            {
+              "match": "dog who",
+              "hint": "이 문항은 동물을 꾸미는 (which)를 써요."
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 14",
+            "reviewWhere": "review 1 item 14 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg08-2:p6",
+          "ko": "공항으로 가는 버스는 한 시간마다 떠난다.",
+          "condition": "(which)",
+          "promptEn": null,
+          "en": "The bus which goes to the airport leaves every hour.",
+          "accept": [
+            "The bus which goes to the airport departs every hour."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "which go to",
+              "hint": "the bus 는 한 대예요. which 뒤 동사 모양을 확인하세요."
+            },
+            {
+              "match": "airport leave every",
+              "hint": "문장의 주어는 The bus(한 대)예요. leave 의 모양은?"
+            },
+            {
+              "match": "bus who",
+              "hint": "버스는 사물이에요. 사물을 꾸미는 관계대명사는?"
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg08-2:p7",
+          "ko": "나는 아버지가 나에게 주신 우산을 잃어버렸다.",
+          "condition": "(which)",
+          "promptEn": null,
+          "en": "I lost the umbrella which my father gave me.",
+          "accept": [
+            "I lost the umbrella which my father gave to me.",
+            "I lost the umbrella which my dad gave me.",
+            "I lost the umbrella which my dad gave to me.",
+            "I lost the umbrella which my father had given me.",
+            "I lost the umbrella which my father had given to me.",
+            "I lost the umbrella which my dad had given me.",
+            "I lost the umbrella which my dad had given to me."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gave me it",
+              "hint": "which 가 이미 gave 의 목적어(우산)예요. it 을 또 쓰지 않아요."
+            },
+            {
+              "match": "gave it to me",
+              "hint": "which 가 이미 우산을 가리켜요. it 을 빼 보세요."
+            },
+            {
+              "match": "umbrella who",
+              "hint": "우산은 사물이에요. 사물을 꾸미는 관계대명사는?"
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "past-simple",
+            "sentence-pattern-4"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg08-2:t1",
+          "ko": "그가 (그 안에) 사는 그 집은 매우 크다.",
+          "condition": "(which)",
+          "promptEn": null,
+          "en": "The house in which he lives is very large.",
+          "accept": [
+            "The house in which he lives is very big.",
+            "The house which he lives in is very large.",
+            "The house which he lives in is very big."
+          ],
+          "targets": [
+            [
+              "which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "house who",
+              "hint": "집은 사물이에요. 사물을 꾸미는 관계대명사는?"
+            },
+            {
+              "match": "in which he lives in",
+              "hint": "in 을 which 앞으로 옮겼으니 끝에 in 을 또 쓰지 않아요."
+            },
+            {
+              "match": "in that he lives",
+              "hint": "전치사 바로 뒤에는 that 을 쓸 수 없어요."
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "present-3sg-s",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-039#11",
+          "fix": null
+        },
+        {
+          "id": "pg08-2:t2",
+          "ko": "그것의 표지가 빨간 책은 나의 것이다.",
+          "condition": "(of which)",
+          "promptEn": null,
+          "en": "The book the cover of which is red is mine.",
+          "accept": [
+            "The book of which the cover is red is mine."
+          ],
+          "targets": [
+            [
+              "of which"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "of which cover",
+              "hint": "of which 앞에 꾸밈을 받는 명사를 먼저 써요: the + 명사 + of which."
+            },
+            {
+              "match": "whose cover",
+              "hint": "whose 도 맞는 영어예요. 이 문항은 (of which)로 같은 뜻을 만들어 보세요."
+            }
+          ],
+          "tags": [
+            "relative-which",
+            "pronoun-possessive",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-043#1",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg08-2:f1",
+      "template": "I like the ___ which my mom makes.",
+      "ko": "나는 엄마가 만드는 ___을(를) 좋아한다."
+    }
+  ]
+}

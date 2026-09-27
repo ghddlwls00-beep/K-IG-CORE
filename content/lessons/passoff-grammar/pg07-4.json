@@ -1,0 +1,1328 @@
+{
+  "id": "pg07-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부정대명사·부정형용사",
+  "label": "TOPIC 7. 대명사",
+  "menuLabel": "7-4. 부정대명사·부정형용사",
+  "unit": 7,
+  "part": 1,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(4) 부정대명사와 부정형용사",
+  "grammarTags": [
+    "pronoun-indefinite"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg07-4:a1",
+          "en": "One should obey one's parents.",
+          "ko": "사람은 자기 부모님 말씀에 순종해야 한다.",
+          "koSource": "review 4 item 1 (고침)",
+          "focus": [
+            "One",
+            "one's"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 1"
+          },
+          "fix": {
+            "from": "One should obey his parents.",
+            "fromKo": "사람은 그 부모님의 말씀에 순종해야 한다.",
+            "kind": "english_unnatural",
+            "why": "일반 사람을 뜻하는 one 은 요즘 표준 영어에서 one's 로 받습니다(his 는 옛 용법이라 허용 답으로 둠). 한국어 '그 부모님'은 '자기 부모님'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-4:a2",
+          "en": "Everyone will enjoy this party.",
+          "ko": "모두가 이 파티를 즐길 것이다.",
+          "koSource": "review 4 item 2",
+          "focus": [
+            "Everyone"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 2"
+          }
+        },
+        {
+          "id": "pg07-4:a3",
+          "en": "Someone has painted the floor.",
+          "ko": "누군가가 마루를 칠했다.",
+          "koSource": "review 4 item 3",
+          "focus": [
+            "Someone"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 3"
+          }
+        },
+        {
+          "id": "pg07-4:a4",
+          "en": "Other people are singing and dancing.",
+          "ko": "다른 사람들은 노래하고 춤추고 있다.",
+          "koSource": "review 4 item 6 (고침)",
+          "focus": [
+            "Other"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 6"
+          },
+          "fix": {
+            "from": "다른 사람들은 노래하고 춤춘다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 진행형(are singing and dancing)이라 한국어도 '~하고 있다'로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg07-4:a5",
+          "en": "Another solution will be given to us.",
+          "ko": "또 다른 해결책이 우리에게 주어질 것이다.",
+          "koSource": "review 4 item 7",
+          "focus": [
+            "Another"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 7"
+          }
+        },
+        {
+          "id": "pg07-4:a6",
+          "en": "Each person has a desk.",
+          "ko": "각 사람이 책상을 가진다.",
+          "koSource": "review 4 item 11",
+          "focus": [
+            "Each"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 11"
+          },
+          "fix": {
+            "from": "Each has a desk.",
+            "kind": "english_unnatural",
+            "why": "앞뒤 문맥 없이 Each 만 주어로 쓰면 '각각 무엇?'이 되어 어색합니다. 한국어 '각 사람이'에 맞춰 Each person 으로 바꿨습니다(원문도 허용 답)."
+          }
+        },
+        {
+          "id": "pg07-4:a7",
+          "en": "Either of them is fine.",
+          "ko": "그들 둘 중 누구든 괜찮아.",
+          "koSource": "new (교재 문장 교체)",
+          "focus": [
+            "Either of them"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 12"
+          },
+          "fix": {
+            "from": "Either of them is wrong.",
+            "fromKo": "그들 중 한쪽은 틀린 거야.",
+            "kind": "english_unnatural",
+            "why": "긍정문의 either 는 '둘 중 어느 쪽이든'이라 Either of them is wrong 은 '둘 다 틀림'처럼 읽히거나 어색합니다. either 의 자연스러운 쓰임으로 바꿨습니다."
+          }
+        },
+        {
+          "id": "pg07-4:a8",
+          "en": "Neither of them is wrong.",
+          "ko": "그들 둘 다 틀리지 않았어.",
+          "koSource": "review 4 item 13 (고침)",
+          "focus": [
+            "Neither of them"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 49,
+            "where": "passOff (4) item 13"
+          },
+          "fix": {
+            "from": "그들 둘 다 틀린 거야.",
+            "kind": "translation_mismatch",
+            "why": "Neither of them is wrong 은 '둘 다 틀리지 않았다'인데 교재 한국어는 정반대('둘 다 틀렸다')였습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg07-4:a6",
+          "pg07-4:a7",
+          "pg07-4:a8"
+        ],
+        "question": "Each · Either · Neither 뒤의 동사(has, is)는 어느 주어와 같은 모양인가요?",
+        "options": [
+          "he 가 주어일 때(하나)",
+          "they 가 주어일 때(여럿)",
+          "I 가 주어일 때"
+        ],
+        "answer": 0,
+        "why": "each(각각) · either(둘 중 어느 쪽이든) · neither(둘 다 아님)는 하나씩 따지는 말이라 단수로 받습니다: has, is."
+      },
+      "title": "정해지지 않은 사람·것을 가리키는 부정대명사",
+      "points": [
+        "부정(不定)대명사 = 정해지지 않은 사람·것. 부정문의 '부정'과 달라요",
+        "some- · any- · every- · no- + one/body 는 단수 동사(knows)",
+        "each · either · neither 도 단수: Either of them is fine.",
+        "another + 단수 명사(또 다른 하나), other + 복수 명사(다른 ~들)",
+        "명사 앞에서 꾸미면 부정형용사: each person, all day, no time"
+      ],
+      "table": {
+        "columns": [
+          "낱말",
+          "뜻",
+          "쓰는 법"
+        ],
+        "rows": [
+          [
+            "someone · anyone · everyone · no one",
+            "누군가 · 누구든 · 모두 · 아무도",
+            "단수 동사: No one knows."
+          ],
+          [
+            "each · either · neither",
+            "각각 · 둘 중 어느 쪽이든 · 둘 다 아님",
+            "단수 동사: Each person has a desk."
+          ],
+          [
+            "all · both",
+            "모두 · 둘 다",
+            "both 는 늘 복수 동사, all 은 가리키는 명사의 수에 맞춤. both A and B 는 'A와 B 둘 다'를 잇는 짝 접속사"
+          ],
+          [
+            "another · other · others",
+            "또 다른 하나 · 다른 · 다른 사람들",
+            "another + 단수 명사, other + 복수 명사 (the other = 둘 중 나머지 하나)"
+          ],
+          [
+            "some · any · no · none",
+            "약간 · 조금이라도 · 하나도 없는 · 아무도/하나도 (~않다)",
+            "some 은 긍정문, any 는 의문문 · 부정문 · if 문. 긍정문의 any- 는 '누구든 · 무엇이든': Anyone can use this computer."
+          ],
+          [
+            "one",
+            "(일반적인) 사람",
+            "one's(자기의)로 받음"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '아무도 모른다'처럼 동사에 부정을 붙이지만, 영어는 No one knows 처럼 부정이 주어에 들어가고 동사는 긍정 모양입니다.",
+      "mistakes": [
+        {
+          "wrong": "Each person have a desk.",
+          "right": "Each person has a desk.",
+          "why": "each 는 하나씩 → 단수"
+        },
+        {
+          "wrong": "Another people are singing.",
+          "right": "Other people are singing.",
+          "why": "another 는 '또 다른 하나'라 복수 명사 앞엔 other"
+        }
+      ],
+      "worked": [
+        "그들 둘 다 틀리지 않았어.",
+        "'둘 다 ~않다' → neither",
+        "neither 는 단수 → is",
+        "Neither of them is wrong."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Either of them ___ fine.' 빈칸에 알맞은 것은?",
+        "options": [
+          "is",
+          "are",
+          "be"
+        ],
+        "answer": 0,
+        "why": "either 는 '둘 중 어느 쪽이든 하나'라 단수로 받아요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg07-4:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (이 모자는 마음에 안 들어요. 다른 것을 하나 보여 주세요.)",
+          "sentence": "I don't like this cap. Show me ___ one.",
+          "underline": [],
+          "options": [
+            "other",
+            "another",
+            "others"
+          ],
+          "answer": 1,
+          "why": "'또 다른 하나'는 another + 단수(one).",
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "Each student ___ a desk.",
+          "underline": [],
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "answer": 1,
+          "why": "each 는 하나씩 따지는 말이라 단수 동사 has.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:s3",
+          "kind": "select",
+          "instruction": "부정대명사를 모두 누르세요",
+          "tokens": [
+            "Everyone",
+            "knows",
+            "that",
+            "none",
+            "of",
+            "us",
+            "is",
+            "perfect",
+            "."
+          ],
+          "answer": [
+            0,
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "Everyone(모두)과 none(아무도 ~않다)은 정해지지 않은 사람을 가리키는 부정대명사예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 both 의 쓰임은?",
+          "sentence": "She speaks both English and Korean.",
+          "underline": [
+            "both"
+          ],
+          "options": [
+            "혼자 쓰인 부정대명사",
+            "'A와 B 둘 다'를 잇는 짝 접속사(both A and B)",
+            "명사를 꾸미는 지시형용사"
+          ],
+          "answer": 1,
+          "why": "both … and … 는 A와 B를 함께 묶는 짝 접속사(상관접속사)예요. Both are good. 처럼 혼자 쓰면 부정대명사예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:s5",
+          "kind": "choice",
+          "instruction": "'그들 둘 다 틀리지 않았어.'와 뜻이 같은 문장은?",
+          "sentence": "그들 둘 다 틀리지 않았어.",
+          "underline": [],
+          "options": [
+            "One of them is wrong.",
+            "All of them are wrong.",
+            "Neither of them is wrong."
+          ],
+          "answer": 2,
+          "why": "neither = 둘 중 어느 쪽도 ~않다. one of them 은 '그들 중 한 명', all of them 은 '그들 모두'.",
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 13"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:s6",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 낱말을 쓰세요. (나는 돈이 조금도 없다.)",
+          "sentence": "I don't have ___ money.",
+          "answer": [
+            "any"
+          ],
+          "why": "부정문에서 '조금도'는 any.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 both 의 쓰임은?",
+          "sentence": "I have to do homework from both the academies and school.",
+          "underline": [
+            "both"
+          ],
+          "options": [
+            "혼자 쓰인 부정대명사",
+            "'A와 B 둘 다'를 잇는 짝 접속사(both A and B)",
+            "명사를 꾸미는 지시형용사"
+          ],
+          "answer": 1,
+          "why": "both … and … 는 A와 B를 함께 묶는 짝 접속사(상관접속사)예요. Both are good. 처럼 혼자 쓰면 부정대명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 15"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg07-4:p1",
+          "ko": "사람은 자기 부모님 말씀에 순종해야 한다.",
+          "koSource": "review 4 item 1 (고침)",
+          "condition": "one을 써서",
+          "promptEn": null,
+          "en": "One should obey one's parents.",
+          "accept": [
+            "One should obey his parents.",
+            "One should obey their parents.",
+            "One must obey one's parents.",
+            "One must obey his parents.",
+            "One must obey their parents.",
+            "One has to obey one's parents.",
+            "One has to obey his parents.",
+            "One has to obey their parents.",
+            "One ought to obey one's parents.",
+            "One ought to obey his parents.",
+            "One ought to obey their parents."
+          ],
+          "targets": [
+            [
+              "One"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "one should obeys",
+              "hint": "should 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "people should obey",
+              "hint": "조건은 'one을 써서'예요. '일반 사람'을 뜻하는 한 낱말 주어를 써 보세요."
+            },
+            {
+              "match": "one should obey our parents",
+              "hint": "'자기 부모님'은 주어 one 에 맞춰 받아요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "should(pg17-3)는 곁가지예요 — must · have to(기초)로도 '~해야 한다'를 같은 뜻으로 쓸 수 있고 허용 답에 있어 도전으로 두지 않음(데이터-형식 v1.2 도전 규칙, 정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 52,
+            "where": "application (4) item 1",
+            "reviewWhere": "review 4 item 1 (p57)"
+          },
+          "fix": {
+            "from": "One should obey his parents.",
+            "fromKo": "사람은 그 부모님의 말씀에 순종해야 한다.",
+            "kind": "english_unnatural",
+            "why": "일반 사람을 뜻하는 one 은 요즘 표준 영어에서 one's 로 받습니다(his 는 옛 용법이라 허용 답으로 둠). 한국어 '그 부모님'은 '자기 부모님'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-4:p2",
+          "ko": "모두가 이 파티를 즐길 것이다.",
+          "koSource": "review 4 item 2",
+          "condition": null,
+          "promptEn": null,
+          "en": "Everyone will enjoy this party.",
+          "accept": [
+            "Everybody will enjoy this party."
+          ],
+          "targets": [
+            [
+              "Everyone",
+              "Everybody"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "everyone will enjoys",
+              "hint": "will 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "will enjoy the party",
+              "hint": "'이 파티'를 가리키는 말을 다시 보세요."
+            },
+            {
+              "match": "everyone enjoy",
+              "hint": "'즐길 것이다'는 앞으로의 일이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 2",
+            "reviewWhere": "review 4 item 2 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-4:p3",
+          "ko": "누군가가 마루를 칠했다.",
+          "koSource": "review 4 item 3",
+          "condition": null,
+          "promptEn": null,
+          "en": "Someone has painted the floor.",
+          "accept": [
+            "Someone painted the floor.",
+            "Somebody has painted the floor.",
+            "Somebody painted the floor."
+          ],
+          "targets": [
+            [
+              "Someone",
+              "Somebody"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "someone have painted",
+              "hint": "someone 은 한 사람으로 받아요. 동사 모양을 보세요."
+            },
+            {
+              "match": "anyone painted",
+              "hint": "'누군가가 ~했다'는 긍정문이에요. any- 가 아닌 다른 말을 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "현재완료(pg12-1)는 곁가지예요 — 과거 Someone painted the floor.(기초)도 '칠했다'와 같은 뜻이고 허용 답에 있어 도전으로 두지 않음(정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 3",
+            "reviewWhere": "review 4 item 3 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-4:p4",
+          "ko": "누구든지 여기 올 수 있어.",
+          "koSource": "new (교재 문장 교체)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Anyone can come here.",
+          "accept": [
+            "Anybody can come here."
+          ],
+          "targets": [
+            [
+              "Anyone",
+              "Anybody"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "anyone can comes",
+              "hint": "can 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "someone can come",
+              "hint": "'누구든지'는 '아무나 다'라는 뜻이에요. some- 이 아닌 다른 말을 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 4",
+            "reviewWhere": "review 4 item 4 (p57)"
+          },
+          "fix": {
+            "from": "Anyone would be here.",
+            "fromKo": "누구라도 이곳에 있을 거야.",
+            "kind": "english_unnatural",
+            "why": "영어·한국어 모두 무슨 뜻인지 분명하지 않아 anyone 의 쓰임을 보여 주지 못합니다. 목표어 anyone 을 살려 'Anyone can come here. / 누구든지 여기 올 수 있어.'로 바꿨습니다."
+          }
+        },
+        {
+          "id": "pg07-4:p5",
+          "ko": "조금이라도 있다면, 내가 네게 그것들을 빌려줄 거야.",
+          "koSource": "review 4 item 8 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If there are any, I will lend them to you.",
+          "accept": [
+            "If I have any, I will lend them to you.",
+            "I will lend them to you if there are any.",
+            "I will lend them to you if I have any.",
+            "If there are any I will lend them to you.",
+            "If I have any I will lend them to you."
+          ],
+          "targets": [
+            [
+              "any"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "borrow them to you",
+              "hint": "borrow 는 '빌리다'예요. 남에게 '빌려주다'는 다른 동사를 써요."
+            },
+            {
+              "match": "if there is any",
+              "hint": "뒤에서 them(여럿)으로 받았으니 be동사도 여럿에 맞추세요."
+            },
+            {
+              "match": "if there are some",
+              "hint": "if 문에서 '조금이라도'는 some 이 아닌 다른 말을 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "complex-sentence",
+            "there-be",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 8",
+            "reviewWhere": "review 4 item 8 (p57)"
+          },
+          "fix": {
+            "from": "If there is any, I will borrow them to you.",
+            "fromKo": "조금이라도 있다면, 내가 네게 그것들을 빌려 줄 거야.",
+            "kind": "english_grammar",
+            "why": "borrow 는 '빌리다'라서 '빌려주다'는 lend 입니다. any 를 복수 them 으로 받으므로 there are 가 맞습니다. 한국어 '빌려 줄'은 한 낱말이라 '빌려줄'로 붙여 씁니다."
+          }
+        },
+        {
+          "id": "pg07-4:p6",
+          "ko": "밖으로 나가는 길이 없어.",
+          "koSource": "review 4 item 9",
+          "condition": null,
+          "promptEn": null,
+          "en": "There is no way to go outside.",
+          "accept": [
+            "There is no way out.",
+            "There is no way to get out.",
+            "There is no way to go out.",
+            "There is no way to get outside.",
+            "There isn't any way out.",
+            "There isn't any way to go outside.",
+            "There isn't any way to get out."
+          ],
+          "targets": [
+            [
+              "no",
+              "any"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "there is not way",
+              "hint": "명사 way 앞에서 '없는'은 not 이 아닌 다른 말을 써요."
+            },
+            {
+              "match": "there are no way",
+              "hint": "way 는 하나예요. be동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "to부정사(pg13-1)는 곁가지예요 — There is no way out.(기초)도 '밖으로 나가는 길이 없어'와 같은 뜻이고 허용 답에 있어 도전으로 두지 않음(정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 9",
+            "reviewWhere": "review 4 item 9 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-4:p7",
+          "ko": "우리 중 아무도 그것을 모른다.",
+          "koSource": "review 4 item 10 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "None of us knows it.",
+          "accept": [
+            "None of us know it.",
+            "No one among us knows it.",
+            "Nobody among us knows it.",
+            "None of us knows that.",
+            "None of us know that.",
+            "No one among us knows that.",
+            "Nobody among us knows that."
+          ],
+          "targets": [
+            [
+              "None",
+              "No one",
+              "Nobody"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "none of us doesn't know",
+              "hint": "none 에 이미 '아무도 ~않다'가 들어 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "none knows it",
+              "hint": "'우리 중'이 빠졌어요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 10",
+            "reviewWhere": "review 4 item 10 (p57)"
+          },
+          "fix": {
+            "from": "None knows it.",
+            "fromKo": "아무도 모른다.",
+            "kind": "english_unnatural",
+            "why": "사람을 뜻하는 None 을 혼자 주어로 쓰는 것은 옛 문어체입니다. 목표어 none 을 살려 None of us knows it. 으로 고치고, 한국어에 빠진 '그것을'과 '우리 중'을 넣었습니다."
+          }
+        },
+        {
+          "id": "pg07-4:p8",
+          "ko": "각 사람이 책상을 가진다.",
+          "koSource": "review 4 item 11",
+          "condition": null,
+          "promptEn": null,
+          "en": "Each person has a desk.",
+          "accept": [
+            "Each has a desk.",
+            "Each of us has a desk.",
+            "Each one has a desk."
+          ],
+          "targets": [
+            [
+              "Each"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "each person have",
+              "hint": "each 는 하나씩 따지는 말이라 단수로 받아요."
+            },
+            {
+              "match": "each people",
+              "hint": "each 뒤에는 단수 명사가 와요."
+            },
+            {
+              "match": "each person has desk",
+              "hint": "desk 는 셀 수 있는 명사예요. 하나일 때 앞에 필요한 말이 있어요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "present-3sg-s",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 11",
+            "reviewWhere": "review 4 item 11 (p57)"
+          },
+          "fix": {
+            "from": "Each has a desk.",
+            "kind": "english_unnatural",
+            "why": "앞뒤 문맥 없이 Each 만 주어로 쓰면 어색해서 한국어 '각 사람이'에 맞춰 Each person 으로 바꿨습니다. 원문 Each has a desk. 도 허용합니다."
+          }
+        },
+        {
+          "id": "pg07-4:p9",
+          "ko": "그들 둘 중 누구든 괜찮아.",
+          "koSource": "new (교재 문장 교체)",
+          "condition": "either를 써서",
+          "promptEn": null,
+          "en": "Either of them is fine.",
+          "accept": [
+            "Either one of them is fine.",
+            "Either of them is okay.",
+            "Either of them is OK.",
+            "Either of them is all right.",
+            "Either one of them is okay.",
+            "Either one of them is OK.",
+            "Either one of them is all right."
+          ],
+          "targets": [
+            [
+              "Either"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "either of them are",
+              "hint": "either 는 '둘 중 어느 쪽이든 하나'라 단수로 받아요."
+            },
+            {
+              "match": "either of they",
+              "hint": "of 뒤에는 목적격이 와요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "be-present-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 12",
+            "reviewWhere": "review 4 item 12 (p57)"
+          },
+          "fix": {
+            "from": "Either of them is wrong.",
+            "fromKo": "그들 중 한쪽은 틀린 거야.",
+            "kind": "english_unnatural",
+            "why": "긍정문의 either 는 '둘 중 어느 쪽이든'이라 Either of them is wrong 은 '둘 다 틀림'처럼 읽히거나 어색합니다. either 의 자연스러운 쓰임으로 바꿨습니다."
+          }
+        },
+        {
+          "id": "pg07-4:p10",
+          "ko": "그들 둘 다 틀리지 않았어.",
+          "koSource": "review 4 item 13 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Neither of them is wrong.",
+          "accept": [
+            "Neither one of them is wrong.",
+            "Neither of them was wrong.",
+            "Neither one of them was wrong."
+          ],
+          "targets": [
+            [
+              "Neither"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "neither of them are",
+              "hint": "neither 는 '둘 중 어느 쪽도 ~않다'라 단수로 받아요."
+            },
+            {
+              "match": "both of them are not",
+              "hint": "'둘 다 ~않다'는 not 대신 한 낱말로 부정하는 말을 써 보세요."
+            },
+            {
+              "match": "none of them",
+              "hint": "none 은 셋 이상일 때 써요. '둘' 중 어느 쪽도 아닐 때 쓰는 말을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "be-present-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 13",
+            "reviewWhere": "review 4 item 13 (p57)"
+          },
+          "fix": {
+            "from": "그들 둘 다 틀린 거야.",
+            "kind": "translation_mismatch",
+            "why": "Neither of them is wrong 은 '둘 다 틀리지 않았다'인데 교재 한국어는 정반대였습니다. 한국어를 영어에 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg07-4:p11",
+          "ko": "나는 주말 내내 공부해야 한다.",
+          "koSource": "review 4 item 14",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have to study all weekend long.",
+          "accept": [
+            "I have to study all weekend.",
+            "I must study all weekend long.",
+            "I must study all weekend.",
+            "I need to study all weekend long.",
+            "I need to study all weekend."
+          ],
+          "targets": [
+            [
+              "all"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "whole weekend",
+              "hint": "the whole weekend 도 맞는 말이지만, 이 레슨에서는 '주말 내내'를 부정형용사로 써 보세요."
+            },
+            {
+              "match": "i have to studying",
+              "hint": "have to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s11-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 14",
+            "reviewWhere": "review 4 item 14 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-4:p12",
+          "ko": "그들 둘 다 맞아.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Both of them are right.",
+          "accept": [
+            "They are both right.",
+            "They both are right.",
+            "Both are right.",
+            "Both of them are correct.",
+            "They are both correct.",
+            "They both are correct.",
+            "Both are correct."
+          ],
+          "targets": [
+            [
+              "Both",
+              "both"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "both of them is",
+              "hint": "both 는 둘이라 복수로 받아요. be동사 모양을 보세요."
+            },
+            {
+              "match": "all of them are",
+              "hint": "'둘 다'는 둘일 때만 쓰는 말이 따로 있어요."
+            },
+            {
+              "match": "both of they",
+              "hint": "of 뒤에는 목적격이 와요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "be-present-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg07-4:p13",
+          "ko": "아무도 그가 죽게 될 날짜를 모른다.",
+          "koSource": "review 4 item 5",
+          "condition": null,
+          "promptEn": null,
+          "en": "No one knows the day when he will die.",
+          "accept": [
+            "No one knows the day that he will die.",
+            "No one knows the day he will die.",
+            "No one knows the date when he will die.",
+            "No one knows the date that he will die.",
+            "No one knows the date he will die.",
+            "No one knows when he will die.",
+            "Nobody knows the day when he will die.",
+            "Nobody knows the day that he will die.",
+            "Nobody knows the day he will die.",
+            "Nobody knows the date when he will die.",
+            "Nobody knows the date that he will die.",
+            "Nobody knows the date he will die.",
+            "Nobody knows when he will die.",
+            "No-one knows the day when he will die.",
+            "No-one knows the day that he will die.",
+            "No-one knows the day he will die.",
+            "No-one knows the date when he will die.",
+            "No-one knows the date that he will die.",
+            "No-one knows the date he will die.",
+            "No-one knows when he will die."
+          ],
+          "targets": [
+            [
+              "No one",
+              "Nobody",
+              "No-one"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "no one know",
+              "hint": "no one 은 단수로 받아요. 동사 모양을 보세요."
+            },
+            {
+              "match": "no one doesn't know",
+              "hint": "no one 에 이미 '아무도 ~않다'가 들어 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "nobody doesn't know",
+              "hint": "nobody 에 이미 '아무도 ~않다'가 들어 있어요. not 을 또 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "relative-that",
+            "future-will",
+            "present-3sg-s"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "relative-that"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 5",
+            "reviewWhere": "review 4 item 5 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-4:p14",
+          "ko": "다른 사람들은 노래하고 춤추고 있다.",
+          "koSource": "review 4 item 6 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Other people are singing and dancing.",
+          "accept": [
+            "Others are singing and dancing.",
+            "The other people are singing and dancing.",
+            "The others are singing and dancing."
+          ],
+          "targets": [
+            [
+              "Other",
+              "Others"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "another people",
+              "hint": "another 는 '또 다른 하나'예요. 여럿에는 다른 말을 써요."
+            },
+            {
+              "match": "other people is",
+              "hint": "people 은 여럿이에요. be동사 모양을 보세요."
+            },
+            {
+              "match": "others people",
+              "hint": "명사 앞에서 꾸밀 때는 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "progressive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "progressive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 6",
+            "reviewWhere": "review 4 item 6 (p57)"
+          },
+          "fix": {
+            "from": "다른 사람들은 노래하고 춤춘다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 진행형(are singing and dancing)이라 한국어도 '~하고 있다'로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg07-4:p15",
+          "ko": "또 다른 해결책이 우리에게 주어질 것이다.",
+          "koSource": "review 4 item 7",
+          "condition": null,
+          "promptEn": null,
+          "en": "Another solution will be given to us.",
+          "accept": [
+            "We will be given another solution."
+          ],
+          "targets": [
+            [
+              "Another"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "other solution",
+              "hint": "'또 다른 하나'는 한 낱말로 써요."
+            },
+            {
+              "match": "another solutions",
+              "hint": "another 뒤에는 단수 명사가 와요."
+            },
+            {
+              "match": "will give to us",
+              "hint": "해결책은 '주어지는' 쪽이에요. 동사 모양을 다시 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "passive",
+            "future-will"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "passive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 7",
+            "reviewWhere": "review 4 item 7 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-4:p16",
+          "ko": "나는 학원과 학교 두 곳에서의 숙제를 해야만 한다.",
+          "koSource": "review 4 item 15",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have to do homework from both the academies and school.",
+          "accept": [
+            "I have to do homework from both the academies and the school.",
+            "I have to do homework from both academies and school.",
+            "I have to do homework from both academies and the school.",
+            "I have to do homework for both the academies and school.",
+            "I have to do homework for both the academies and the school.",
+            "I have to do homework for both academies and school.",
+            "I have to do homework for both academies and the school.",
+            "I must do homework from both the academies and school.",
+            "I must do homework from both the academies and the school.",
+            "I must do homework from both academies and school.",
+            "I must do homework from both academies and the school.",
+            "I must do homework for both the academies and school.",
+            "I must do homework for both the academies and the school.",
+            "I must do homework for both academies and school.",
+            "I must do homework for both academies and the school."
+          ],
+          "targets": [
+            [
+              "both"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "both the academies or school",
+              "hint": "'학원과 학교 둘 다'예요. both 와 짝을 이루는 접속사를 다시 보세요."
+            },
+            {
+              "match": "homeworks",
+              "hint": "homework 는 셀 수 없는 명사라 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "coordinating-conjunction",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "coordinating-conjunction"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s8-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 53,
+            "where": "application (4) item 15",
+            "reviewWhere": "review 4 item 15 (p57)"
+          },
+          "fix": {
+            "from": "I have to do homework from both the academies and school. (10과)",
+            "kind": "layout_or_extraction",
+            "why": "교재의 (10과)는 잘못된 과 번호입니다. 이 문장은 STUDENT 8과(s8-2)에 있어 studentRef 를 s8-2 로 달았습니다. 문장은 그대로입니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg07-4:t1",
+          "ko": "아무도 그것을 좋아하지 않아.",
+          "condition": null,
+          "promptEn": null,
+          "en": "Nobody likes it.",
+          "accept": [
+            "No one likes it.",
+            "Nobody likes that.",
+            "No one likes that.",
+            "No-one likes it."
+          ],
+          "targets": [
+            [
+              "Nobody",
+              "No one",
+              "No-one"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "nobody doesn't like",
+              "hint": "nobody 에 이미 '아무도 ~않다'가 들어 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "nobody like",
+              "hint": "nobody 는 단수로 받아요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-015#27"
+        },
+        {
+          "id": "pg07-4:t2",
+          "ko": "각 학생이 자기 자신의 생각을 갖고 있다. (idea)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Each student has his own idea.",
+          "accept": [
+            "Every student has his own idea.",
+            "Each student has their own idea.",
+            "Each student has his or her own idea.",
+            "Every student has their own idea.",
+            "Every student has his or her own idea."
+          ],
+          "targets": [
+            [
+              "Each",
+              "Every"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "each student have",
+              "hint": "each 는 단수로 받아요."
+            },
+            {
+              "match": "each students",
+              "hint": "each 뒤에는 단수 명사가 와요."
+            }
+          ],
+          "tags": [
+            "pronoun-indefinite",
+            "pronoun-possessive",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-059#29"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg07-4:f1",
+      "template": "Everyone in my family likes ___, but no one likes ___.",
+      "ko": "우리 가족은 모두 ___을(를) 좋아하지만, 아무도 ___은(는) 좋아하지 않는다."
+    }
+  ]
+}

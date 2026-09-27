@@ -1,0 +1,921 @@
+{
+  "id": "pg08-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "관계대명사 Who",
+  "label": "TOPIC 8. 관계대명사",
+  "menuLabel": "8-1. 관계대명사 Who",
+  "unit": 8,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "who / whose / whom",
+  "grammarTags": [
+    "relative-who"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg08-1:a1",
+          "en": "He loves the girl who follows him.",
+          "ko": "그는 그를 따르는 소녀를 사랑한다.",
+          "focus": [
+            "who"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 1"
+          }
+        },
+        {
+          "id": "pg08-1:a2",
+          "en": "He loves the girl whose father is humble and honest.",
+          "ko": "그는 아버지가 겸손하고 정직한 소녀를 사랑한다.",
+          "focus": [
+            "whose"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 2"
+          }
+        },
+        {
+          "id": "pg08-1:a3",
+          "en": "The person whom I admire the most is Hiddink.",
+          "ko": "내가 가장 존경하는 사람은 히딩크이다.",
+          "focus": [
+            "whom"
+          ],
+          "studentRef": {
+            "lesson": "s15-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 3"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg08-1:a1",
+          "pg08-1:a2",
+          "pg08-1:a3"
+        ],
+        "question": "who · whose · whom 은 무엇에 따라 골라 쓸까요?",
+        "options": [
+          "뒤 문장에서 맡는 자리(주어 · '~의' · 목적어)",
+          "앞 명사가 남자인지 여자인지",
+          "문장의 시제"
+        ],
+        "answer": 0,
+        "why": "who 는 follows 의 주어, whose 는 '소녀의' 아버지, whom 은 admire 의 목적어 자리를 대신해요."
+      },
+      "title": "사람을 뒤에서 꾸밀 때: who · whose · whom",
+      "points": [
+        "관계대명사는 앞 명사(선행사)를 뒤에서 꾸미는 문장을 이끌어요.",
+        "선행사가 사람이면 who · whose · whom 중에서 골라요.",
+        "뒤 문장의 주어 자리면 who: the girl who follows him",
+        "'그 사람의 ~'면 whose + 명사: the girl whose father …",
+        "목적어 자리면 whom(말할 때는 who 도 써요), 전치사 바로 뒤는 whom 만: to whom"
+      ],
+      "table": {
+        "columns": [
+          "뒤 문장에서의 자리",
+          "관계대명사",
+          "예"
+        ],
+        "rows": [
+          [
+            "주어(주격)",
+            "who",
+            "the girl who follows him"
+          ],
+          [
+            "'~의'(소유격)",
+            "whose + 명사",
+            "the girl whose father is honest"
+          ],
+          [
+            "목적어(목적격)",
+            "whom (who)",
+            "the person whom I admire"
+          ],
+          [
+            "전치사 뒤",
+            "전치사 + whom",
+            "the friend to whom I wrote"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 꾸미는 말이 명사 앞에 와요('그를 따르는 소녀'). 영어는 명사를 먼저 말하고 그 뒤에 who 로 시작하는 문장을 붙여요(the girl who follows him).",
+      "mistakes": [
+        {
+          "wrong": "The person whom I admire him the most is Hiddink.",
+          "right": "The person whom I admire the most is Hiddink.",
+          "why": "whom 이 이미 admire 의 목적어(him) 자리를 맡았어요. him 을 또 쓰지 않아요."
+        },
+        {
+          "wrong": "She is the singer who songs I like.",
+          "right": "She is the singer whose songs I like.",
+          "why": "'가수의 노래'처럼 '~의'가 필요하면 whose 를 써요."
+        }
+      ],
+      "worked": [
+        "그는 그를 따르는 소녀를 사랑한다.",
+        "꾸밈을 받는 말(선행사): 소녀 → the girl (사람)",
+        "'그를 따르는' → 소녀가 그를 따른다: 따르는 쪽이 소녀(주어 자리) → who",
+        "He loves the girl who follows him."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'I know a boy ___ father is a doctor.' 빈칸에 알맞은 것은?",
+        "options": [
+          "who",
+          "whose",
+          "whom"
+        ],
+        "answer": 1,
+        "why": "빈칸 뒤 father 는 '소년의 아버지'예요. '~의'를 나타내는 whose.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg08-1:s1",
+          "kind": "select",
+          "instruction": "관계대명사 who 가 꾸며 주는 사람(선행사)을 누르세요",
+          "tokens": [
+            "He",
+            "loves",
+            "the",
+            "girl",
+            "who",
+            "follows",
+            "him",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [
+            2
+          ],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "who follows him 은 girl 을 꾸며요: '그를 따르는 소녀'.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 1"
+          }
+        },
+        {
+          "id": "pg08-1:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 who 는 뒤 문장에서 어떤 자리를 맡나요?",
+          "sentence": "The boy who sits next to me is funny.",
+          "underline": [
+            "who"
+          ],
+          "options": [
+            "주어(주격)",
+            "'~의'(소유격)",
+            "목적어(목적격)"
+          ],
+          "answer": 0,
+          "why": "who 가 sits 의 주어 자리를 맡아요(그 소년이 내 옆에 앉음).",
+          "source": "new"
+        },
+        {
+          "id": "pg08-1:s8",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 관계대명사를 고르세요",
+          "sentence": "I have a friend ___ dog is very big.",
+          "options": [
+            "who",
+            "whose",
+            "whom"
+          ],
+          "answer": 1,
+          "why": "'친구의 개' → whose + dog.",
+          "source": "new"
+        },
+        {
+          "id": "pg08-1:s9",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 관계대명사를 고르세요",
+          "sentence": "The girl ___ I met yesterday was very kind.",
+          "options": [
+            "whose",
+            "whom",
+            "which"
+          ],
+          "answer": 1,
+          "why": "사람(the girl)이고 met 의 목적어 자리라 whom. (말할 때는 who 도 써요.)",
+          "source": "new"
+        },
+        {
+          "id": "pg08-1:s10",
+          "kind": "short",
+          "instruction": "두 문장을 한 문장으로 이을 때 빈칸에 알맞은 한 낱말을 쓰세요: This is the teacher. + I spoke to him.",
+          "sentence": "This is the teacher to ___ I spoke.",
+          "answer": [
+            "whom"
+          ],
+          "why": "전치사 to 바로 뒤에는 whom 을 써요(who 는 쓰지 않아요).",
+          "source": "new"
+        },
+        {
+          "id": "pg08-1:s6",
+          "kind": "choice",
+          "instruction": "어법에 맞는 문장을 고르세요",
+          "options": [
+            "The person whom I admire him the most is Hiddink.",
+            "The person whom I admire the most is Hiddink.",
+            "The person whose I admire the most is Hiddink."
+          ],
+          "answer": 1,
+          "why": "whom 이 admire 의 목적어를 대신하므로 him 을 또 쓰지 않아요. whose 뒤에는 명사가 와야 해요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 58,
+            "where": "passOff (1) item 3"
+          }
+        },
+        {
+          "id": "pg08-1:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 who 는 뒤 문장에서 어떤 자리를 맡나요?",
+          "sentence": "A hairdresser is someone who styles people's hair.",
+          "underline": [
+            "who"
+          ],
+          "options": [
+            "주어(주격)",
+            "'~의'(소유격)",
+            "목적어(목적격)"
+          ],
+          "answer": 0,
+          "why": "who 가 styles 의 주어 자리를 맡아요(someone 이 머리를 손질함).",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 2"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg08-1:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 관계대명사를 고르세요",
+          "sentence": "I met the boy ___ mother translates foreign books.",
+          "options": [
+            "who",
+            "whose",
+            "whom"
+          ],
+          "answer": 1,
+          "why": "'소년의 어머니' → whose + mother.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 6"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg08-1:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 관계대명사를 고르세요",
+          "sentence": "The man ___ I saw last Sunday was a famous singer.",
+          "options": [
+            "whose",
+            "whom",
+            "which"
+          ],
+          "answer": 1,
+          "why": "사람(the man)이고 saw 의 목적어 자리라 whom. (말할 때는 who 도 써요.)",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 8"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg08-1:s5",
+          "kind": "short",
+          "instruction": "두 문장을 한 문장으로 이을 때 빈칸에 알맞은 한 낱말을 쓰세요: The woman was his wife. + He was talking to her.",
+          "sentence": "The woman to ___ he was talking was his wife.",
+          "answer": [
+            "whom"
+          ],
+          "why": "전치사 to 바로 뒤에는 whom 을 써요(who 는 쓰지 않아요).",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 13"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg08-1:p1",
+          "ko": "그는 그를 따르는 소녀를 사랑한다.",
+          "condition": "(who)",
+          "promptEn": null,
+          "en": "He loves the girl who follows him.",
+          "accept": [
+            "He loves a girl who follows him."
+          ],
+          "targets": [
+            [
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who follow him",
+              "hint": "the girl 은 한 사람이에요. who 뒤 동사에 무엇이 빠졌을까요?"
+            },
+            {
+              "match": "girl which",
+              "hint": "소녀는 사람이에요. 사람을 꾸미는 관계대명사는 무엇일까요?"
+            },
+            {
+              "match": "He love the",
+              "hint": "주어 He 는 3인칭 한 명이에요. love 의 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 1",
+            "reviewWhere": "review 1 item 1 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg08-1:p2",
+          "ko": "미용사는 사람들의 머리를 손질하는 사람이다.",
+          "condition": "(who)",
+          "promptEn": null,
+          "en": "A hairdresser is someone who styles people's hair.",
+          "accept": [
+            "A hairdresser is someone who styles other people's hair.",
+            "A hairdresser is someone who cuts people's hair.",
+            "A hairdresser is someone who cuts other people's hair.",
+            "A hairdresser is someone who does people's hair.",
+            "A hairdresser is someone who does other people's hair.",
+            "A hairdresser is a person who styles people's hair.",
+            "A hairdresser is a person who styles other people's hair.",
+            "A hairdresser is a person who cuts people's hair.",
+            "A hairdresser is a person who cuts other people's hair.",
+            "A hairdresser is a person who does people's hair.",
+            "A hairdresser is a person who does other people's hair."
+          ],
+          "targets": [
+            [
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who style people",
+              "hint": "someone 은 한 사람으로 봐요. who 뒤 동사 모양은?"
+            },
+            {
+              "match": "persons'",
+              "hint": "'사람들의'는 보통 people's 로 써요."
+            },
+            {
+              "match": "someone which",
+              "hint": "someone 은 사람이에요. which 대신 무엇을 쓸까요?"
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "present-3sg-s",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 2",
+            "reviewWhere": "review 1 item 2 (p61)"
+          },
+          "fix": {
+            "from": "A hairdresser is someone who designs persons’ hair. / 미용사는 사람의 머리를 디자인하는 사람이다.",
+            "kind": "english_grammar",
+            "why": "persons’ 는 거의 쓰지 않는 꼴이라 people's, '머리를 디자인하다'는 styles 로 고침(cuts · does 도 정답). 한국어도 영어에 맞춰 '사람들의 머리를 손질하는'으로."
+          }
+        },
+        {
+          "id": "pg08-1:p3",
+          "ko": "그 사고에서 다쳤던 그 남자는 지금 병원에 있다.",
+          "condition": "(who)",
+          "promptEn": null,
+          "en": "The man who was injured in the accident is now in hospital.",
+          "accept": [
+            "The man who was injured in the accident is now in the hospital.",
+            "The man who was injured in the accident is in hospital now.",
+            "The man who was injured in the accident is in the hospital now.",
+            "The man who was hurt in the accident is now in hospital.",
+            "The man who was hurt in the accident is now in the hospital.",
+            "The man who was hurt in the accident is in hospital now.",
+            "The man who was hurt in the accident is in the hospital now.",
+            "The man who got hurt in the accident is now in hospital.",
+            "The man who got hurt in the accident is now in the hospital.",
+            "The man who got hurt in the accident is in hospital now.",
+            "The man who got hurt in the accident is in the hospital now.",
+            "The man who got injured in the accident is now in hospital.",
+            "The man who got injured in the accident is now in the hospital.",
+            "The man who got injured in the accident is in hospital now.",
+            "The man who got injured in the accident is in the hospital now.",
+            "The man who hurt himself in the accident is now in hospital.",
+            "The man who hurt himself in the accident is now in the hospital.",
+            "The man who hurt himself in the accident is in hospital now.",
+            "The man who hurt himself in the accident is in the hospital now.",
+            "The man who injured himself in the accident is now in hospital.",
+            "The man who injured himself in the accident is now in the hospital.",
+            "The man who injured himself in the accident is in hospital now.",
+            "The man who injured himself in the accident is in the hospital now."
+          ],
+          "targets": [
+            [
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who injured in",
+              "hint": "'다쳤던'은 다침을 당한 거예요. injured 앞에 필요한 낱말은?"
+            },
+            {
+              "match": "The man was injured in the accident is",
+              "hint": "두 문장을 잇는 관계대명사가 빠졌어요."
+            },
+            {
+              "match": "the accident was now in",
+              "hint": "'지금 병원에 있다'예요. 문장 전체의 동사 시제를 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "be-past",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "수동태(pg14-2)는 곁가지예요 — who hurt himself in the accident(재귀대명사, pg07-1)처럼 수동태 없이 '다쳤던'을 같은 뜻으로 쓸 수 있고 허용 답에 있어 도전으로 두지 않음(정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 3",
+            "reviewWhere": "review 1 item 3 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg08-1:p4",
+          "ko": "그는 아버지가 겸손하고 정직한 소녀를 사랑한다.",
+          "condition": "(whose)",
+          "promptEn": null,
+          "en": "He loves the girl whose father is humble and honest.",
+          "accept": [
+            "He loves the girl whose father is modest and honest.",
+            "He loves the girl whose father is honest and humble.",
+            "He loves the girl whose father is honest and modest.",
+            "He loves a girl whose father is humble and honest.",
+            "He loves a girl whose father is modest and honest.",
+            "He loves a girl whose father is honest and humble.",
+            "He loves a girl whose father is honest and modest."
+          ],
+          "targets": [
+            [
+              "whose"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who father",
+              "hint": "'소녀의 아버지'처럼 '~의'가 필요해요. who 의 소유격은?"
+            },
+            {
+              "match": "whose the father",
+              "hint": "whose 뒤에는 the 없이 명사를 바로 써요."
+            },
+            {
+              "match": "whose father are",
+              "hint": "father 는 한 사람이에요. be동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "present-3sg-s",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 4",
+            "reviewWhere": "review 1 item 4 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg08-1:p5",
+          "ko": "네가 차를 빌린 그 남자의 이름은 무엇이니?",
+          "condition": "(whose)",
+          "promptEn": null,
+          "en": "What is the name of the man whose car you borrowed?",
+          "accept": [
+            "What's the name of the man whose car you borrowed?"
+          ],
+          "targets": [
+            [
+              "whose"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who car",
+              "hint": "'그 남자의 차'예요. '~의'를 나타내는 관계대명사는?"
+            },
+            {
+              "match": "whose car did you borrow",
+              "hint": "문장 속 관계대명사절은 질문 어순이 아니에요. '주어 + 동사' 순서로 써 보세요."
+            },
+            {
+              "match": "you borrowed it",
+              "hint": "whose car 가 이미 borrowed 의 목적어예요. it 을 또 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "question-wh",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 5",
+            "reviewWhere": "review 1 item 5 (p61)"
+          },
+          "fix": {
+            "from": "네가 빌린 차주의 이름이 무엇이니?",
+            "kind": "translation_mismatch",
+            "why": "'차주'가 빌린 차의 주인인지 분명하지 않아 whose 구조(그 남자의 차)가 드러나게 고침."
+          }
+        },
+        {
+          "id": "pg08-1:p6",
+          "ko": "나는 어머니가 외국 서적을 번역하는 소년을 만났다.",
+          "condition": "(whose)",
+          "promptEn": null,
+          "en": "I met the boy whose mother translates foreign books.",
+          "accept": [
+            "I met a boy whose mother translates foreign books."
+          ],
+          "targets": [
+            [
+              "whose"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "interprets",
+              "hint": "interpret 는 '통역하다'예요. 책을 '번역하다'는 다른 낱말이에요."
+            },
+            {
+              "match": "who mother",
+              "hint": "'소년의 어머니'예요. '~의'를 나타내는 관계대명사는?"
+            },
+            {
+              "match": "mother translate foreign",
+              "hint": "mother 는 한 사람이에요. translate 의 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "past-simple",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 6",
+            "reviewWhere": "review 1 item 6 (p61)"
+          },
+          "fix": {
+            "from": "I met the boy whose mother interprets foreign books. / 나는 어머니가 외국서적을 번역하는 소년을 만났다.",
+            "kind": "english_unnatural",
+            "why": "책을 옮기는 것은 translate(번역), interpret 는 통역. 한국어 띄어쓰기도 '외국 서적'으로."
+          }
+        },
+        {
+          "id": "pg08-1:p7",
+          "ko": "지난 일요일에 내가 본 그 남자는 유명한 가수였다.",
+          "condition": "(whom)",
+          "promptEn": null,
+          "en": "The man whom I saw last Sunday was a famous singer.",
+          "accept": [
+            "The man whom I met last Sunday was a famous singer.",
+            "The man who I saw last Sunday was a famous singer.",
+            "The man who I met last Sunday was a famous singer."
+          ],
+          "targets": [
+            [
+              "whom",
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I saw him last",
+              "hint": "whom 이 이미 saw 의 목적어예요. him 을 또 쓰지 않아요."
+            },
+            {
+              "match": "man which",
+              "hint": "사람을 꾸밀 때는 which 대신 무엇을 쓸까요?"
+            },
+            {
+              "match": "Sunday is a famous",
+              "hint": "지난 일요일 일이에요. be동사 시제를 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "past-simple",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 8",
+            "reviewWhere": "review 1 item 8 (p61)"
+          },
+          "fix": {
+            "from": "지난 일요일에 내가 만난 사람은 유명한 가수였다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 saw(보았다). 한국어를 '내가 본 그 남자'로 맞추고, met 로 쓴 답도 정답."
+          }
+        },
+        {
+          "id": "pg08-1:p8",
+          "ko": "내가 가장 존경하는 사람은 히딩크이다.",
+          "condition": "(whom)",
+          "promptEn": null,
+          "en": "The person whom I admire the most is Hiddink.",
+          "accept": [
+            "The person whom I admire most is Hiddink.",
+            "The person who I admire the most is Hiddink.",
+            "The person who I admire most is Hiddink.",
+            "The person whom I respect the most is Hiddink.",
+            "The person whom I respect most is Hiddink.",
+            "The person who I respect the most is Hiddink.",
+            "The person who I respect most is Hiddink.",
+            "Hiddink is the person whom I admire the most.",
+            "Hiddink is the person whom I admire most.",
+            "Hiddink is the person who I admire the most.",
+            "Hiddink is the person who I admire most.",
+            "Hiddink is the person whom I respect the most.",
+            "Hiddink is the person whom I respect most.",
+            "Hiddink is the person who I respect the most.",
+            "Hiddink is the person who I respect most."
+          ],
+          "targets": [
+            [
+              "whom",
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "admire him",
+              "hint": "whom 이 이미 admire 의 목적어예요. him 을 또 쓰지 않아요."
+            },
+            {
+              "match": "The person I admire",
+              "hint": "맞는 영어예요(목적어 자리 관계대명사는 뺄 수 있어요). 이 문항은 (whom)을 넣어 써 보세요."
+            },
+            {
+              "match": "whose I admire",
+              "hint": "whose 뒤에는 명사가 와야 해요. admire 의 목적어 자리를 맡는 말은?"
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "superlative",
+            "be-present"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "superlative"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s15-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 7",
+            "reviewWhere": "review 1 item 7 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg08-1:p9",
+          "ko": "그가 이야기하고 있던 그 여자는 그의 아내였다.",
+          "condition": "(to whom)",
+          "promptEn": null,
+          "en": "The woman to whom he was talking was his wife.",
+          "accept": [
+            "The woman to whom he was speaking was his wife."
+          ],
+          "targets": [
+            [
+              "to whom"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "to who he",
+              "hint": "전치사 to 바로 뒤에는 who 가 아니라 목적격을 써요."
+            },
+            {
+              "match": "talking to was",
+              "hint": "to 를 whom 앞으로 옮겼으니 문장 끝에 to 를 또 쓰지 않아요."
+            },
+            {
+              "match": "whom he was talking to",
+              "hint": "맞는 영어지만 이 문항은 (to whom)처럼 to 를 whom 앞에 써요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "progressive",
+            "be-past"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "progressive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 59,
+            "where": "application (1)[추론] item 13",
+            "reviewWhere": "review 1 item 13 (p61)"
+          },
+          "fix": {
+            "from": "그가 말하고 있는 그 여자가 그의 아내이다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거(was talking, was)라 한국어를 과거로 맞춤."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg08-1:t1",
+          "ko": "나는 매우 열심히 공부하는 학생을 안다.",
+          "condition": "(who)",
+          "promptEn": null,
+          "en": "I know a student who studies very hard.",
+          "accept": [
+            "I know a student who studies really hard."
+          ],
+          "targets": [
+            [
+              "who"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who study very",
+              "hint": "a student 는 한 명이에요. who 뒤 동사 모양을 확인하세요."
+            },
+            {
+              "match": "student which",
+              "hint": "학생은 사람이에요. 사람을 꾸미는 관계대명사는?"
+            },
+            {
+              "match": "student that studies",
+              "hint": "맞는 영어지만 이 문항은 (who)를 써요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-015#1",
+          "fix": null
+        },
+        {
+          "id": "pg08-1:t2",
+          "ko": "자기 자녀들이 열심히 공부하는(일하는) 어머니는 행복하다.",
+          "condition": "(whose)",
+          "promptEn": null,
+          "en": "The mother whose children work hard is happy.",
+          "accept": [
+            "The mother whose children study hard is happy.",
+            "A mother whose children work hard is happy.",
+            "A mother whose children study hard is happy."
+          ],
+          "targets": [
+            [
+              "whose"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "who children",
+              "hint": "'어머니의 자녀들'이에요. '~의'를 나타내는 관계대명사는?"
+            },
+            {
+              "match": "children works",
+              "hint": "children 은 여러 명이에요. 동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "relative-who",
+            "present-simple",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-039#7",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg08-1:f1",
+      "template": "I have a friend who ___.",
+      "ko": "나에게는 ___하는 친구가 있다."
+    }
+  ]
+}

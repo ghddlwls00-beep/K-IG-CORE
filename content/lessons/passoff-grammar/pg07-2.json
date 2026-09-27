@@ -1,0 +1,1302 @@
+{
+  "id": "pg07-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "대명사 it",
+  "label": "TOPIC 7. 대명사",
+  "menuLabel": "7-2. 대명사 it",
+  "unit": 7,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 대명사 it",
+  "grammarTags": [
+    "it-dummy",
+    "it-cleft"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg07-2:a1",
+          "en": "I have a cat. I like it very much.",
+          "ko": "나는 고양이가 한 마리 있는데 그것을 매우 좋아한다.",
+          "koSource": "review 2 item 1",
+          "focus": [
+            "it"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 1"
+          }
+        },
+        {
+          "id": "pg07-2:a2",
+          "en": "I feel like I study too much, and it is too hard.",
+          "ko": "나는 너무 많이 공부하는 것 같고, 그게 너무 힘들다.",
+          "koSource": "review 2 item 3",
+          "focus": [
+            "it"
+          ],
+          "studentRef": {
+            "lesson": "s10-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 2"
+          }
+        },
+        {
+          "id": "pg07-2:a3",
+          "en": "It is a great way to talk to my friends about what we did during the day.",
+          "ko": "나의 친구들과 하루 동안 우리가 했던 것에 대해 이야기할 수 있는 좋은 방법입니다.",
+          "koSource": "student:s10-4#3",
+          "focus": [
+            "It"
+          ],
+          "studentRef": {
+            "lesson": "s10-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 3"
+          },
+          "fix": {
+            "from": "It is a great way to talk to my friends about what we did during the day. (가주어)",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 이 It 을 가주어라고 했지만, STUDENT 10과에서 바로 앞 문장(컴퓨터 채팅)을 받는 it 입니다(to talk 는 way 를 꾸밈). 문장은 그대로 두고 '가주어' 설명만 고쳤습니다. 한국어는 STUDENT 판."
+          }
+        },
+        {
+          "id": "pg07-2:a4",
+          "en": "It was the window that I broke yesterday.",
+          "ko": "어제 내가 깨뜨린 것은 유리창이다.",
+          "koSource": "review 2 item 8",
+          "focus": [
+            "It was",
+            "that"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 4"
+          }
+        },
+        {
+          "id": "pg07-2:a5",
+          "en": "It rains.",
+          "ko": "비가 온다.",
+          "koSource": "review 2 item 10",
+          "focus": [
+            "It"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 5 (한 줄 세 문장 중 1)"
+          },
+          "fix": {
+            "from": "It rains. / It is fine today / what time is it?",
+            "kind": "english_grammar",
+            "why": "교재는 세 문장을 한 줄에 붙여 인쇄했습니다(두 번째 문장 끝 마침표 없음, 세 번째 문장 첫 글자 소문자). 세 문장으로 나눠 앵커 a5 · a6 · a7 로 넣고 마침표와 대문자를 보충했습니다."
+          }
+        },
+        {
+          "id": "pg07-2:a6",
+          "en": "It is fine today.",
+          "ko": "오늘은 맑은 날이다.",
+          "koSource": "review 2 item 11",
+          "focus": [
+            "It"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 5 (한 줄 세 문장 중 2)"
+          },
+          "fix": {
+            "from": "It is fine today",
+            "kind": "english_grammar",
+            "why": "한 줄에 세 문장을 붙여 인쇄하면서 끝 마침표가 빠졌습니다."
+          }
+        },
+        {
+          "id": "pg07-2:a7",
+          "en": "What time is it?",
+          "ko": "몇 시입니까?",
+          "koSource": "review 2 item 12",
+          "focus": [
+            "it"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 5 (한 줄 세 문장 중 3)"
+          },
+          "fix": {
+            "from": "what time is it?",
+            "kind": "english_grammar",
+            "why": "문장 첫 글자 What 은 대문자로 씁니다."
+          }
+        },
+        {
+          "id": "pg07-2:a8",
+          "en": "It usually takes me 15 minutes to walk to school.",
+          "ko": "학교에 걸어가는 것은 보통 약 15분 걸립니다.",
+          "koSource": "student:s5-2#2",
+          "focus": [
+            "It"
+          ],
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 48,
+            "where": "passOff (2) item 6"
+          },
+          "fix": {
+            "from": "It usually takes me 15minutes to walk to school.",
+            "fromKo": "학교까지 걸어가는 데는 나에게는 15분 걸린다.",
+            "kind": "english_grammar",
+            "why": "'15minutes'는 띄어 씁니다. STUDENT 5과가 이미 고친 문장이라 영어·한국어 모두 STUDENT 판을 씁니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg07-2:a1",
+          "pg07-2:a5",
+          "pg07-2:a7"
+        ],
+        "question": "'It rains.'와 'What time is it?'의 it 은 무엇을 가리킬까요?",
+        "options": [
+          "아무것도 안 가리킨다(주어 자리만 채움)",
+          "앞에 나온 고양이",
+          "하늘과 시계"
+        ],
+        "answer": 0,
+        "why": "날씨·시간을 말할 때 it 은 뜻 없이 주어 자리만 채웁니다. 'I like it.'의 it 은 앞의 a cat 을 받는 '그것'이라 다릅니다."
+      },
+      "title": "it 은 '그것' 말고 빈 주어 자리도 채웁니다",
+      "points": [
+        "앞에 나온 것·내용을 받는 it: '그것'(I like it.)",
+        "날씨·시간·거리·요일·밝기를 말하는 it: 뜻 없음(비인칭 주어)",
+        "가주어 it: 긴 주어(to ~ · that ~)는 뒤로, 앞엔 It",
+        "가목적어 it: make it easy to ~ 처럼 목적어 자리를 채움",
+        "강조 it: It is/was + 강조할 말 + that ~"
+      ],
+      "table": {
+        "columns": [
+          "쓰임",
+          "예문",
+          "우리말"
+        ],
+        "rows": [
+          [
+            "앞의 것을 받음",
+            "I have a cat. I like it very much.",
+            "그것을"
+          ],
+          [
+            "앞 내용을 받음",
+            "I chat on the computer. It is a great way to talk to my friends.",
+            "그것은(채팅은)"
+          ],
+          [
+            "비인칭 주어",
+            "It rains. / What time is it?",
+            "옮기지 않음"
+          ],
+          [
+            "가주어",
+            "It usually takes me 15 minutes to walk to school.",
+            "나는 학교에 걸어가는 데 보통 15분 걸린다"
+          ],
+          [
+            "가목적어",
+            "The Internet makes it easy to find information.",
+            "인터넷은 정보를 찾는 것을 쉽게 만든다"
+          ],
+          [
+            "강조 구문",
+            "It was the window that I broke yesterday.",
+            "어제 내가 깨뜨린 것은 유리창이다"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '비가 온다', '몇 시니?'처럼 주어 없이도 말하지만, 영어 문장에는 주어가 꼭 있어야 해서 뜻 없는 It 을 넣습니다.",
+      "mistakes": [
+        {
+          "wrong": "Is fine today.",
+          "right": "It is fine today.",
+          "why": "날씨를 말할 때도 주어 It 이 필요해요"
+        },
+        {
+          "wrong": "The company changed it's name.",
+          "right": "The company changed its name.",
+          "why": "'그것의'는 its, it's 는 it is 의 줄임말"
+        }
+      ],
+      "worked": [
+        "나는 학교에 걸어가는 데 15분이 걸린다.",
+        "주어 '학교에 걸어가는 것'이 길다 → 뒤로: to walk to school",
+        "비어 있는 주어 자리에 It",
+        "It takes me 15 minutes to walk to school."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'It is fun to talk with friends.'에서 진짜 주어는?",
+        "options": [
+          "It",
+          "fun",
+          "to talk with friends"
+        ],
+        "answer": 2,
+        "why": "It 은 자리만 채우는 가주어이고, 진짜 주어는 뒤의 to talk with friends 입니다.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg07-2:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 It 의 쓰임은?",
+          "sentence": "It is true that she has a twin sister.",
+          "underline": [
+            "It"
+          ],
+          "options": [
+            "앞에 나온 것을 받는 '그것'",
+            "가주어(진짜 주어는 that 이하)",
+            "비인칭 주어(날씨·시간)"
+          ],
+          "answer": 1,
+          "why": "It 은 자리만 채우고, 진짜 주어는 that she has a twin sister 예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-2:s8",
+          "kind": "choice",
+          "instruction": "밑줄 친 it 의 쓰임은?",
+          "sentence": "I found it hard to wake up early.",
+          "underline": [
+            "it"
+          ],
+          "options": [
+            "비인칭 주어",
+            "앞에 나온 것을 받는 '그것'",
+            "가목적어(진짜 목적어는 to 이하)"
+          ],
+          "answer": 2,
+          "why": "found 의 목적어 자리를 it 이 채우고, 진짜 목적어는 to wake up early 예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-2:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 it 의 쓰임은?",
+          "sentence": "What time is it?",
+          "underline": [
+            "it"
+          ],
+          "options": [
+            "비인칭 주어(시간)",
+            "강조 구문의 It",
+            "가주어"
+          ],
+          "answer": 0,
+          "why": "시간을 말할 때 it 은 뜻 없이 주어 자리만 채워요.",
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 12"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-2:s4",
+          "kind": "select",
+          "instruction": "강조 구문에서 강조되는 말을 누르세요",
+          "tokens": [
+            "It",
+            "was",
+            "the window",
+            "that",
+            "I",
+            "broke",
+            "yesterday",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "It was 와 that 사이에 들어간 말(the window)이 강조돼요: '어제 내가 깨뜨린 것은 바로 유리창'.",
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 8"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-2:s9",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (그 새는 날개를 다쳤다.)",
+          "sentence": "The bird hurt ___ wing.",
+          "underline": [],
+          "options": [
+            "it's",
+            "its",
+            "it"
+          ],
+          "answer": 1,
+          "why": "'그것의(새의)'는 its. it's 는 it is 의 줄임말이에요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-2:s6",
+          "kind": "select",
+          "instruction": "날씨·밝기를 말하는 비인칭 주어 it 을 모두 누르세요",
+          "tokens": [
+            "It",
+            "is",
+            "cold",
+            ",",
+            "and",
+            "it",
+            "is",
+            "dark",
+            ".",
+            "I",
+            "don't",
+            "like",
+            "it",
+            "."
+          ],
+          "answer": [
+            0,
+            5
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "날씨와 밝기를 말하는 It · it 은 비인칭 주어예요. 마지막 it 은 앞 내용(춥고 어두운 것)을 받는 '그것'이에요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-2:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 It 의 쓰임은?",
+          "sentence": "It appeared that James had a mental problem.",
+          "underline": [
+            "It"
+          ],
+          "options": [
+            "앞에 나온 것을 받는 '그것'",
+            "가주어(진짜 주어는 that 이하)",
+            "비인칭 주어(날씨·시간)"
+          ],
+          "answer": 1,
+          "why": "It 은 자리만 채우고, 진짜 주어는 that James had a mental problem 이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 6"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg07-2:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 it 의 쓰임은?",
+          "sentence": "Scientific advances make it possible for us to control many diseases.",
+          "underline": [
+            "it"
+          ],
+          "options": [
+            "비인칭 주어",
+            "앞에 나온 것을 받는 '그것'",
+            "가목적어(진짜 목적어는 to 이하)"
+          ],
+          "answer": 2,
+          "why": "make 의 목적어 자리를 it 이 채우고, 진짜 목적어는 for us to control many diseases 예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 7"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg07-2:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (그것은 개이고 그것의 털은 회색이다.)",
+          "sentence": "It's a dog and ___ hair is gray.",
+          "underline": [],
+          "options": [
+            "it's",
+            "its",
+            "it"
+          ],
+          "answer": 1,
+          "why": "'그것의'는 its. it's 는 it is 의 줄임말이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (2) item 4"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg07-2:p1",
+          "ko": "나는 고양이가 한 마리 있는데 그것을 매우 좋아한다.",
+          "koSource": "review 2 item 1",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "I have a cat. I like it very much.",
+          "accept": [
+            "I have a cat. I like it a lot.",
+            "I have a cat. I really like it.",
+            "I have a cat, and I like it very much.",
+            "I have a cat, and I like it a lot.",
+            "I have a cat, and I really like it.",
+            "I have a cat and I like it very much.",
+            "I have a cat and I like it a lot.",
+            "I have a cat and I really like it.",
+            "I have one cat. I like it very much.",
+            "I have one cat. I like it a lot.",
+            "I have one cat. I really like it.",
+            "I have one cat, and I like it very much.",
+            "I have one cat, and I like it a lot.",
+            "I have one cat, and I really like it.",
+            "I have one cat and I like it very much.",
+            "I have one cat and I like it a lot.",
+            "I have one cat and I really like it."
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "like very much",
+              "hint": "'그것을'에 해당하는 목적어가 빠졌어요."
+            },
+            {
+              "match": "like them",
+              "hint": "고양이는 한 마리예요. 하나를 받는 대명사를 쓰세요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "have-has",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (2) item 1",
+            "reviewWhere": "review 2 item 1 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p2",
+          "ko": "비발디는 그것에 대해 몰랐다.",
+          "koSource": "review 2 item 2",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "Vivaldi didn't know about it.",
+          "accept": [
+            "Vivaldi knew nothing about it.",
+            "Vivaldi didn't know anything about it."
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "didn't knew",
+              "hint": "did 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "know it",
+              "hint": "'그것에 대해'에는 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "past-simple",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (2) item 2",
+            "reviewWhere": "review 2 item 2 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p3",
+          "ko": "나는 너무 많이 공부하는 것 같고, 그게 너무 힘들다.",
+          "koSource": "review 2 item 3",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "I feel like I study too much, and it is too hard.",
+          "accept": [
+            "I feel like I study too much, and it is so hard.",
+            "I feel like I study too much, and it is too difficult.",
+            "I feel like I study too much, and it is so difficult.",
+            "I feel like I study too much and it is too hard.",
+            "I feel like I study too much and it is so hard.",
+            "I feel like I study too much and it is too difficult.",
+            "I feel like I study too much and it is so difficult.",
+            "I feel that I study too much, and it is too hard.",
+            "I feel that I study too much, and it is so hard.",
+            "I feel that I study too much, and it is too difficult.",
+            "I feel that I study too much, and it is so difficult.",
+            "I feel that I study too much and it is too hard.",
+            "I feel that I study too much and it is so hard.",
+            "I feel that I study too much and it is too difficult.",
+            "I feel that I study too much and it is so difficult.",
+            "I think I study too much, and it is too hard.",
+            "I think I study too much, and it is so hard.",
+            "I think I study too much, and it is too difficult.",
+            "I think I study too much, and it is so difficult.",
+            "I think I study too much and it is too hard.",
+            "I think I study too much and it is so hard.",
+            "I think I study too much and it is too difficult.",
+            "I think I study too much and it is so difficult.",
+            "I feel like I study too much, and it is very hard.",
+            "I feel like I study too much, and it is really hard.",
+            "I feel like I study too much, and it is very difficult.",
+            "I feel like I study too much, and it is really difficult.",
+            "I feel like I study too much and it is very hard.",
+            "I feel like I study too much and it is really hard.",
+            "I feel like I study too much and it is very difficult.",
+            "I feel like I study too much and it is really difficult.",
+            "I feel that I study too much, and it is very hard.",
+            "I feel that I study too much, and it is really hard.",
+            "I feel that I study too much, and it is very difficult.",
+            "I feel that I study too much, and it is really difficult.",
+            "I feel that I study too much and it is very hard.",
+            "I feel that I study too much and it is really hard.",
+            "I feel that I study too much and it is very difficult.",
+            "I feel that I study too much and it is really difficult.",
+            "I think I study too much, and it is very hard.",
+            "I think I study too much, and it is really hard.",
+            "I think I study too much, and it is very difficult.",
+            "I think I study too much, and it is really difficult.",
+            "I think I study too much and it is very hard.",
+            "I think I study too much and it is really hard.",
+            "I think I study too much and it is very difficult.",
+            "I think I study too much and it is really difficult."
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "and is too hard",
+              "hint": "'그게'에 해당하는 주어가 빠졌어요. 영어 문장에는 주어가 꼭 있어야 해요."
+            },
+            {
+              "match": "and that is too hard",
+              "hint": "조건은 'it을 써서'예요. 앞 내용을 받는 대명사를 it 으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "compound-sentence",
+            "complex-sentence",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (2) item 3",
+            "reviewWhere": "review 2 item 3 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p4",
+          "ko": "그것은 개이고 그것의 털은 회색이다.",
+          "koSource": "review 2 item 4",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It's a dog and its hair is gray.",
+          "accept": [
+            "It's a dog, and its hair is gray.",
+            "It's a dog, and its hair is grey.",
+            "It's a dog, and its fur is gray.",
+            "It's a dog, and its fur is grey.",
+            "It's a dog and its hair is grey.",
+            "It's a dog and its fur is gray.",
+            "It's a dog and its fur is grey."
+          ],
+          "targets": [
+            [
+              "It's",
+              "It is"
+            ],
+            [
+              "its"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it's hair",
+              "hint": "'그것의'는 it is 의 줄임말(it's)과 모양이 달라요. 아포스트로피를 다시 보세요."
+            },
+            {
+              "match": "it's fur",
+              "hint": "'그것의'는 it is 의 줄임말(it's)과 모양이 달라요. 아포스트로피를 다시 보세요."
+            },
+            {
+              "match": "it hair",
+              "hint": "'그것의'는 소유를 나타내는 모양으로 써야 해요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "pronoun-possessive",
+            "compound-sentence",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (2) item 4",
+            "reviewWhere": "review 2 item 4 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p5",
+          "ko": "제임스는 정신적인 문제가 있는 것처럼 보였다.",
+          "koSource": "review 2 item 6 (고침)",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It appeared that James had a mental problem.",
+          "accept": [
+            "It appeared James had a mental problem.",
+            "It seemed that James had a mental problem.",
+            "It seemed James had a mental problem.",
+            "It looked like James had a mental problem.",
+            "It seemed like James had a mental problem.",
+            "It appeared that James had mental problems.",
+            "It appeared James had mental problems.",
+            "It seemed that James had mental problems.",
+            "It seemed James had mental problems.",
+            "It looked like James had mental problems.",
+            "It seemed like James had mental problems."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it appears",
+              "hint": "'보였다'는 지난 일이에요. 시제를 맞춰 보세요."
+            },
+            {
+              "match": "james seemed",
+              "hint": "조건은 'it을 써서'예요. 문장 맨 앞 주어 자리를 무엇으로 채울까요?"
+            },
+            {
+              "match": "james appeared",
+              "hint": "조건은 'it을 써서'예요. 문장 맨 앞 주어 자리를 무엇으로 채울까요?"
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 6",
+            "reviewWhere": "review 2 item 6 (p55)"
+          },
+          "fix": {
+            "from": "제임스 는 정신적인 문제가 있는 것으로 보인다.",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거(appeared, had)인데 한국어는 현재였고 '제임스 는' 띄어쓰기도 틀렸습니다. 한국어를 과거로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-2:p6",
+          "ko": "과학적 진보는 우리가 수많은 질병을 다스리는 것을 가능하게 만든다.",
+          "koSource": "review 2 item 7",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "Scientific advances make it possible for us to control many diseases.",
+          "accept": [
+            "Scientific advances make it possible for us to control numerous diseases.",
+            "Scientific advances make it possible for us to control a lot of diseases.",
+            "Scientific advances make it possible for us to control lots of diseases.",
+            "Scientific advances make it possible for us to control countless diseases.",
+            "Scientific progress makes it possible for us to control many diseases.",
+            "Scientific progress makes it possible for us to control numerous diseases.",
+            "Scientific progress makes it possible for us to control a lot of diseases.",
+            "Scientific progress makes it possible for us to control lots of diseases.",
+            "Scientific progress makes it possible for us to control countless diseases."
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "make possible",
+              "hint": "make 뒤 목적어 자리가 비었어요. 진짜 목적어(to ~)는 뒤로 보내고 그 자리를 채우세요."
+            },
+            {
+              "match": "makes possible",
+              "hint": "make 뒤 목적어 자리가 비었어요. 진짜 목적어(to ~)는 뒤로 보내고 그 자리를 채우세요."
+            },
+            {
+              "match": "scientific advances makes",
+              "hint": "advances 는 여럿이라 동사에 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "sentence-pattern-5",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 7",
+            "reviewWhere": "review 2 item 7 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p7",
+          "ko": "어제 내가 깨뜨린 것은 유리창이다.",
+          "koSource": "review 2 item 8",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It was the window that I broke yesterday.",
+          "accept": [
+            "It was the window which I broke yesterday.",
+            "It was the window I broke yesterday.",
+            "It is the window that I broke yesterday.",
+            "It is the window which I broke yesterday.",
+            "It is the window I broke yesterday."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what i broke yesterday",
+              "hint": "조건은 'it을 써서'예요. 강조할 말을 It was 와 that 사이에 넣어 보세요."
+            },
+            {
+              "match": "it was window",
+              "hint": "window 는 셀 수 있는 명사예요. 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "breaked",
+              "hint": "break 의 과거형은 불규칙이에요."
+            }
+          ],
+          "tags": [
+            "it-cleft",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 8",
+            "reviewWhere": "review 2 item 8 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p8",
+          "ko": "비가 온다.",
+          "koSource": "review 2 item 10",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It rains.",
+          "accept": [
+            "It is raining."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "rain comes",
+              "hint": "'비가 온다'를 낱말 그대로 옮기지 말고, 날씨를 말하는 빈 주어를 써 보세요."
+            },
+            {
+              "match": "it rain",
+              "hint": "주어 It 은 3인칭 단수예요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 10",
+            "reviewWhere": "review 2 item 10 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p9",
+          "ko": "오늘은 맑은 날이다.",
+          "koSource": "review 2 item 11",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It is fine today.",
+          "accept": [
+            "It is sunny today.",
+            "It is clear today.",
+            "It is a fine day today.",
+            "It is a sunny day today.",
+            "It is a clear day today."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "today is",
+              "hint": "조건은 'it을 써서'예요. 날씨를 말할 때 쓰는 빈 주어를 떠올려 보세요."
+            },
+            {
+              "match": "it is fine day",
+              "hint": "day 는 셀 수 있는 명사라 앞에 관사가 필요해요."
+            },
+            {
+              "match": "it is sunny day",
+              "hint": "day 는 셀 수 있는 명사라 앞에 관사가 필요해요."
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 11",
+            "reviewWhere": "review 2 item 11 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p10",
+          "ko": "몇 시입니까?",
+          "koSource": "review 2 item 12",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "What time is it?",
+          "accept": [
+            "What time is it now?"
+          ],
+          "targets": [
+            [
+              "it"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what time it is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "what's the time",
+              "hint": "조건은 'it을 써서'예요. 시간을 물을 때 쓰는 빈 주어를 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 12",
+            "reviewWhere": "review 2 item 12 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-2:p11",
+          "ko": "학교에 걸어가는 것은 보통 약 15분 걸립니다.",
+          "koSource": "student:s5-2#2",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It usually takes me 15 minutes to walk to school.",
+          "accept": [
+            "It usually takes me fifteen minutes to walk to school.",
+            "It usually takes me about 15 minutes to walk to school.",
+            "It usually takes me about fifteen minutes to walk to school.",
+            "It usually takes me around 15 minutes to walk to school.",
+            "It usually takes 15 minutes to walk to school.",
+            "It usually takes fifteen minutes to walk to school.",
+            "It usually takes about 15 minutes to walk to school.",
+            "It usually takes about fifteen minutes to walk to school.",
+            "It usually takes around 15 minutes to walk to school.",
+            "It usually takes 15 minutes for me to walk to school.",
+            "It usually takes fifteen minutes for me to walk to school.",
+            "It usually takes about 15 minutes for me to walk to school.",
+            "It usually takes about fifteen minutes for me to walk to school.",
+            "It usually takes around 15 minutes for me to walk to school.",
+            "Usually, it takes me 15 minutes to walk to school.",
+            "Usually, it takes me fifteen minutes to walk to school.",
+            "Usually, it takes me about 15 minutes to walk to school.",
+            "Usually, it takes me about fifteen minutes to walk to school.",
+            "Usually, it takes me around 15 minutes to walk to school.",
+            "Usually it takes me 15 minutes to walk to school.",
+            "Usually it takes me fifteen minutes to walk to school.",
+            "Usually it takes me about 15 minutes to walk to school.",
+            "Usually it takes me about fifteen minutes to walk to school.",
+            "Usually it takes me around 15 minutes to walk to school."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "15minutes",
+              "hint": "숫자와 단위 사이는 띄어 써요."
+            },
+            {
+              "match": "it usually take",
+              "hint": "주어 It 은 3인칭 단수예요. 동사 모양을 보세요."
+            },
+            {
+              "match": "walking to school takes",
+              "hint": "조건은 'it을 써서'예요. 긴 주어는 뒤로 보내고 앞에 빈 주어를 두세요."
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 13",
+            "reviewWhere": "review 2 item 13 (p55)"
+          },
+          "fix": {
+            "from": "It usually takes me 15minutes to walk to school.",
+            "fromKo": "학교까지 걸어가는 데는 나에게는 15분 걸린다.",
+            "kind": "english_grammar",
+            "why": "'15minutes'는 띄어 씁니다. STUDENT 5과가 이미 고친 문장이라 영어·한국어 모두 STUDENT 판을 씁니다(한국어에 '보통'도 들어감). STUDENT 한국어의 '약'에 맞춰 about 15 minutes 도 허용합니다."
+          }
+        },
+        {
+          "id": "pg07-2:p12",
+          "ko": "나의 친구들과 하루 동안 우리가 했던 것에 대해 이야기할 수 있는 좋은 방법입니다.",
+          "koSource": "student:s10-4#3",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It is a great way to talk to my friends about what we did during the day.",
+          "accept": [
+            "It is a great way to talk with my friends about what we did during the day.",
+            "It is a good way to talk to my friends about what we did during the day.",
+            "It is a good way to talk with my friends about what we did during the day."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what did we do",
+              "hint": "'우리가 했던 것'은 묻는 말이 아니에요. 주어-동사 순서로 써 보세요."
+            },
+            {
+              "match": "talk my friends",
+              "hint": "'친구들과 이야기하다'는 talk 뒤에 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "pronoun-3rd",
+            "infinitive",
+            "relative-what",
+            "past-simple"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive",
+            "relative-what"
+          ],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (2) item 5",
+            "reviewWhere": "review 2 item 5 (p55)"
+          },
+          "fix": {
+            "from": "It is a great way to talk to my friends about what we did during the day. (가주어)",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 가주어라고 했지만 앞 문장(컴퓨터 채팅)을 받는 it 입니다. 문장은 STUDENT 10과 그대로 두고 설명만 고쳤습니다. 한국어는 STUDENT 판."
+          }
+        },
+        {
+          "id": "pg07-2:p13",
+          "ko": "우리 삶의 모든 양상을 변화시켜 온 것은 유별나게 급속한 컴퓨터의 성장이다.",
+          "koSource": "review 2 item 9",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It is the exceptionally rapid growth of computers that has changed every aspect of our lives.",
+          "accept": [
+            "It is the exceptionally rapid growth of computers that has changed every aspect of our life.",
+            "It is the exceptionally rapid growth of computers that has changed all aspects of our lives.",
+            "It is the exceptionally rapid growth of computers which has changed every aspect of our lives.",
+            "It is the exceptionally rapid growth of computers which has changed every aspect of our life.",
+            "It is the exceptionally rapid growth of computers which has changed all aspects of our lives.",
+            "It is the exceptionally rapid growth of computer technology that has changed every aspect of our lives.",
+            "It is the exceptionally rapid growth of computer technology that has changed every aspect of our life.",
+            "It is the exceptionally rapid growth of computer technology that has changed all aspects of our lives.",
+            "It is the exceptionally rapid growth of computer technology which has changed every aspect of our lives.",
+            "It is the exceptionally rapid growth of computer technology which has changed every aspect of our life.",
+            "It is the exceptionally rapid growth of computer technology which has changed all aspects of our lives.",
+            "It is the unusually rapid growth of computers that has changed every aspect of our lives.",
+            "It is the unusually rapid growth of computers that has changed every aspect of our life.",
+            "It is the unusually rapid growth of computers that has changed all aspects of our lives.",
+            "It is the unusually rapid growth of computers which has changed every aspect of our lives.",
+            "It is the unusually rapid growth of computers which has changed every aspect of our life.",
+            "It is the unusually rapid growth of computers which has changed all aspects of our lives.",
+            "It is the unusually rapid growth of computer technology that has changed every aspect of our lives.",
+            "It is the unusually rapid growth of computer technology that has changed every aspect of our life.",
+            "It is the unusually rapid growth of computer technology that has changed all aspects of our lives.",
+            "It is the unusually rapid growth of computer technology which has changed every aspect of our lives.",
+            "It is the unusually rapid growth of computer technology which has changed every aspect of our life.",
+            "It is the unusually rapid growth of computer technology which has changed all aspects of our lives."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "growth of computer that",
+              "hint": "computer 는 셀 수 있는 명사예요. 컴퓨터 전반을 말할 때의 모양을 떠올려 보세요."
+            },
+            {
+              "match": "that have changed",
+              "hint": "that 뒤 동사는 강조된 말(growth, 하나)에 맞춰요."
+            }
+          ],
+          "tags": [
+            "it-cleft",
+            "present-perfect",
+            "pronoun-indefinite"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "present-perfect",
+            "pronoun-indefinite"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 51,
+            "where": "application (2) item 9",
+            "reviewWhere": "review 2 item 9 (p55)"
+          },
+          "fix": {
+            "from": "It is the exceptionally rapid growth of computer that has changed every aspect of our lives.",
+            "kind": "english_grammar",
+            "why": "computer 는 셀 수 있는 명사라 관사 없는 단수로 쓸 수 없습니다. 컴퓨터 전반을 뜻하는 복수 computers 로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg07-2:t1",
+          "ko": "어제는 추웠다.",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It was cold yesterday.",
+          "accept": [
+            "Yesterday, it was cold.",
+            "Yesterday it was cold."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "yesterday was cold",
+              "hint": "조건은 'it을 써서'예요. 날씨를 말하는 빈 주어를 써 보세요."
+            },
+            {
+              "match": "it is cold yesterday",
+              "hint": "'추웠다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "it-dummy",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-053#40",
+          "note": "GRAMMAR I 허용 답 중 'Yesterday was cold.'는 it 을 쓰지 않아 뺐습니다(이 레슨 조건: it을 써서)."
+        },
+        {
+          "id": "pg07-2:t2",
+          "ko": "이 집을 산 사람은 존이었다.",
+          "condition": "it을 써서",
+          "promptEn": null,
+          "en": "It was John that bought this house.",
+          "accept": [
+            "It was John who bought this house."
+          ],
+          "targets": [
+            [
+              "It"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "john bought this house",
+              "hint": "조건은 'it을 써서'예요. 강조할 말을 It was 와 that 사이에 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "it-cleft",
+            "past-simple",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-045#12"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg07-2:f1",
+      "template": "It takes me ___ minutes to get to school.",
+      "ko": "학교에 가는 데 ___분 걸린다."
+    }
+  ]
+}

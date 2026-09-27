@@ -1,0 +1,798 @@
+{
+  "id": "pg04-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "단문",
+  "label": "TOPIC 4. 문장의 종류",
+  "menuLabel": "4-1. 단문",
+  "unit": 4,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 문장의 종류 — 단문",
+  "grammarTags": [
+    "simple-sentence"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg04-1:a1",
+          "en": "I am 11 years old.",
+          "ko": "나는 11살이다.",
+          "focus": [
+            "I",
+            "am"
+          ],
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 30,
+            "where": "passOff (1) item 1 (단문)"
+          }
+        },
+        {
+          "id": "pg04-1:a2",
+          "en": "We are very close to one another.",
+          "ko": "우리는 서로서로 매우 가깝다.",
+          "focus": [
+            "We",
+            "are"
+          ],
+          "studentRef": {
+            "lesson": "s2-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 2"
+          },
+          "fix": {
+            "from": "We are very close to one another. (1과)",
+            "kind": "lesson_ref",
+            "why": "교재는 (1과)라고 적었지만 이 문장은 STUDENT 2과(s2-6)에 있어 2과로 연결했습니다."
+          }
+        },
+        {
+          "id": "pg04-1:a3",
+          "en": "I know him very well.",
+          "ko": "나는 그를 매우 잘 안다.",
+          "focus": [
+            "I",
+            "know"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 3"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg04-1:a1",
+          "pg04-1:a2",
+          "pg04-1:a3"
+        ],
+        "question": "세 문장에서 '주어 + 동사'는 몇 번씩 나올까요?",
+        "options": [
+          "한 번",
+          "두 번",
+          "세 번"
+        ],
+        "answer": 0,
+        "why": "I am · We are · I know — 주어와 동사가 한 번씩만 나와요. 이런 문장을 단문이라고 해요."
+      },
+      "title": "주어 + 동사가 한 번뿐인 문장 = 단문",
+      "points": [
+        "'주어 + 동사'가 한 번만 나오는 문장을 단문이라고 해요.",
+        "문장이 길어도 주어 + 동사가 하나면 단문이에요(every morning, in the kitchen 은 꾸밈말).",
+        "and 가 낱말끼리만 이으면(My sister and I, the spring and the fall) 그대로 단문이에요.",
+        "주어 + 동사가 두 번 이상 나오면 중문이나 복문이에요(다음 두 레슨).",
+        "단문·중문·복문은 '모양', 평서문·명령문·감탄문은 '하는 일'로 나눈 이름이라 둘 다 될 수 있어요."
+      ],
+      "table": {
+        "columns": [
+          "종류",
+          "주어 + 동사",
+          "예"
+        ],
+        "rows": [
+          [
+            "단문",
+            "1번",
+            "I know him very well."
+          ],
+          [
+            "중문",
+            "2번 이상 · and, but, or, so 로 나란히",
+            "Sarah went to the party last week, but Paul stayed at his house."
+          ],
+          [
+            "복문",
+            "2번 이상 · because, when 등으로 한쪽이 딸림",
+            "When she arrived in London, she didn't have any friends."
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '(나는) 11살이다'처럼 주어를 자주 빼지만, 영어 평서문에는 주어와 동사가 꼭 있어야 해요. '가깝다' 같은 상태도 be동사(are, is)를 써요.",
+      "mistakes": [
+        {
+          "wrong": "We very close to one another.",
+          "right": "We are very close to one another.",
+          "why": "'가깝다'에도 동사가 필요해요. close 앞에 be동사."
+        },
+        {
+          "wrong": "Am 11 years old.",
+          "right": "I am 11 years old.",
+          "why": "영어 평서문은 주어로 시작해요."
+        }
+      ],
+      "worked": [
+        "우리는 서로서로 매우 가깝다.",
+        "주어: 우리는 → We",
+        "동사: 가깝다 → are (very close)",
+        "서로서로 → to one another",
+        "We are very close to one another. → 주어 + 동사 1번 = 단문"
+      ],
+      "terms": [],
+      "check": {
+        "question": "다음 중 단문이 아닌 것은?",
+        "options": [
+          "Jane and Mike are good friends.",
+          "My grandmother lives in a small town near the sea.",
+          "I was tired, so I went to bed."
+        ],
+        "answer": 2,
+        "why": "I was · I went — 주어 + 동사가 두 번이라 단문이 아니에요(so 로 이은 중문).",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg04-1:s1",
+          "kind": "select",
+          "instruction": "주어와 동사를 누르고, 각각 이름표(주어·동사)를 고르세요",
+          "tokens": [
+            "I",
+            "am",
+            "11",
+            "years",
+            "old",
+            "."
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "주어",
+            "동사"
+          ],
+          "labelAnswer": [
+            "주어",
+            "동사"
+          ],
+          "why": "주어 I, 동사 am — 한 번씩뿐이라 단문이에요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 30,
+            "where": "passOff (1) item 1 (단문)"
+          }
+        },
+        {
+          "id": "pg04-1:s2",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "We are very close to one another.",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 0,
+          "why": "주어 We + 동사 are 가 한 번뿐 → 단문.",
+          "bookRef": {
+            "book": 1,
+            "page": 33,
+            "where": "review 1 item 2 (종류 쓰기)"
+          }
+        },
+        {
+          "id": "pg04-1:s3",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "Sometimes in the spring and the fall, I ride my bike to school.",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 0,
+          "why": "and 는 the spring 과 the fall 두 낱말을 이을 뿐, 주어 + 동사는 I ride 한 번 → 단문.",
+          "bookRef": {
+            "book": 1,
+            "page": 34,
+            "where": "review 1 item 11 (종류 쓰기 — 교재 답 '서술문'은 하는 일 기준, 여기서는 모양을 물음)"
+          }
+        },
+        {
+          "id": "pg04-1:s4",
+          "kind": "select",
+          "instruction": "동사를 누르세요",
+          "tokens": [
+            "Tom",
+            "and",
+            "his",
+            "brother",
+            "play",
+            "tennis",
+            "every",
+            "Sunday",
+            "."
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어는 Tom and his brother(두 사람), 동사는 play 하나 → 단문.",
+          "source": "new"
+        },
+        {
+          "id": "pg04-1:s5",
+          "kind": "choice",
+          "instruction": "다음 중 '주어 + 동사'가 한 번만 나오는 문장은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "I clean my room and then I go jogging with my dog.",
+            "I know him very well.",
+            "When she arrived in London, she didn't have any friends."
+          ],
+          "answer": 1,
+          "why": "I know 한 번 → 단문. 나머지는 주어 + 동사가 두 번이에요.",
+          "source": "new",
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] items 4 · 3 · 8"
+          }
+        },
+        {
+          "id": "pg04-1:s6",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "I am 11 years old.",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 0,
+          "why": "주어 I + 동사 am 한 번 → 단문.",
+          "bookRef": {
+            "book": 1,
+            "page": 33,
+            "where": "review 1 item 1 (종류 쓰기)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg04-1:s7",
+          "kind": "choice",
+          "instruction": "이 문장은 단문·중문·복문 중 무엇인가요?",
+          "sentence": "I know him very well.",
+          "underline": [],
+          "options": [
+            "단문",
+            "중문",
+            "복문"
+          ],
+          "answer": 0,
+          "why": "주어 I + 동사 know 한 번 → 단문.",
+          "bookRef": {
+            "book": 1,
+            "page": 33,
+            "where": "review 1 item 3 (종류 쓰기)"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg04-1:p1",
+          "ko": "나는 11살이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am 11 years old.",
+          "accept": [
+            "I'm 11 years old.",
+            "I am eleven years old.",
+            "I'm eleven years old.",
+            "I am 11.",
+            "I'm 11.",
+            "I am eleven.",
+            "I'm eleven."
+          ],
+          "targets": [
+            [
+              "am",
+              "'m"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I 11 years old",
+              "hint": "'~이다'에 해당하는 동사가 빠졌어요."
+            },
+            {
+              "match": "I have 11 years",
+              "hint": "나이는 '가지다'가 아니라 be동사로 말해요."
+            },
+            {
+              "match": "11 year old",
+              "hint": "11살은 여러 해예요. year 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 1",
+            "reviewWhere": "review 1 item 1 (p33)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg04-1:p2",
+          "ko": "우리는 서로서로 매우 가깝다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We are very close to one another.",
+          "accept": [
+            "We are very close to each other.",
+            "We are really close to one another.",
+            "We are really close to each other.",
+            "We're very close to one another.",
+            "We're very close to each other.",
+            "We're really close to one another.",
+            "We're really close to each other."
+          ],
+          "targets": [
+            [
+              "are",
+              "'re"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We very close",
+              "hint": "'가깝다'도 동사가 필요해요. 주어 We 에 맞는 be동사는?"
+            },
+            {
+              "match": "We is",
+              "hint": "주어 We 는 여러 사람이에요. be동사 모양을 확인하세요."
+            },
+            {
+              "match": "We am",
+              "hint": "주어 We 는 여러 사람이에요. be동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 2",
+            "reviewWhere": "review 1 item 2 (p33)"
+          },
+          "fix": {
+            "from": "We are very close to one another. (1과)",
+            "kind": "lesson_ref",
+            "why": "교재는 (1과)라고 적었지만 이 문장은 STUDENT 2과(s2-6)에 있어 2과로 연결했습니다."
+          }
+        },
+        {
+          "id": "pg04-1:p3",
+          "ko": "나는 그를 매우 잘 안다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I know him very well.",
+          "accept": [
+            "I know him really well."
+          ],
+          "targets": [
+            [
+              "know"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I know he ",
+              "hint": "'그를'은 목적어예요. he 의 목적어 모양은?"
+            },
+            {
+              "match": "I very well know",
+              "hint": "very well 은 보통 문장 끝에 둬요."
+            },
+            {
+              "match": "I knows",
+              "hint": "주어 I 에 맞는 동사 모양을 확인하세요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "present-simple",
+            "pronoun-3rd"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 31,
+            "where": "application (1)[추론] item 3",
+            "reviewWhere": "review 1 item 3 (p33)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg04-1:p4",
+          "ko": "매일 아침 우리 아빠는 부엌에서 커피를 마신다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "Every morning, my father drinks coffee in the kitchen.",
+          "accept": [
+            "Every morning my father drinks coffee in the kitchen.",
+            "My father drinks coffee in the kitchen every morning.",
+            "My father drinks coffee every morning in the kitchen.",
+            "Every morning, my father has coffee in the kitchen.",
+            "Every morning my father has coffee in the kitchen.",
+            "My father has coffee in the kitchen every morning.",
+            "My father has coffee every morning in the kitchen.",
+            "Every morning, my dad drinks coffee in the kitchen.",
+            "Every morning my dad drinks coffee in the kitchen.",
+            "My dad drinks coffee in the kitchen every morning.",
+            "My dad drinks coffee every morning in the kitchen.",
+            "Every morning, my dad has coffee in the kitchen.",
+            "Every morning my dad has coffee in the kitchen.",
+            "My dad has coffee in the kitchen every morning.",
+            "My dad has coffee every morning in the kitchen."
+          ],
+          "targets": [
+            [
+              "drinks",
+              "has"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "father drink coffee",
+              "hint": "my father 는 3인칭 한 명이에요. 동사 모양은?"
+            },
+            {
+              "match": "dad drink coffee",
+              "hint": "my dad 는 3인칭 한 명이에요. 동사 모양은?"
+            },
+            {
+              "match": "is drink",
+              "hint": "'마신다'는 일반동사 하나로 충분해요. be동사는 빼요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "present-3sg-s",
+            "phrases"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg04-1:p5",
+          "ko": "내 여동생과 나는 함께 걸어서 학교에 간다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "My sister and I walk to school together.",
+          "accept": [
+            "My sister and I walk together to school.",
+            "My sister and I go to school on foot together.",
+            "My younger sister and I walk to school together.",
+            "My younger sister and I walk together to school.",
+            "My younger sister and I go to school on foot together.",
+            "My little sister and I walk to school together.",
+            "My little sister and I walk together to school.",
+            "My little sister and I go to school on foot together."
+          ],
+          "targets": [
+            [
+              "walk",
+              "go"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I and my sister",
+              "hint": "영어에서는 '나'를 뒤에 두는 것이 예의예요."
+            },
+            {
+              "match": "sister and I walks",
+              "hint": "주어가 두 사람(My sister and I)이에요. 동사 모양은?"
+            },
+            {
+              "match": "sister and me walk",
+              "hint": "주어 자리에 me 가 맞을까요?"
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg04-1:p6",
+          "ko": "우리는 방과 후에 공원에서 축구를 했다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We played soccer in the park after school.",
+          "accept": [
+            "After school, we played soccer in the park.",
+            "After school we played soccer in the park.",
+            "We played soccer at the park after school.",
+            "After school, we played soccer at the park.",
+            "We played soccer after school in the park.",
+            "We played football in the park after school.",
+            "After school, we played football in the park.",
+            "After school we played football in the park.",
+            "We played football at the park after school.",
+            "After school, we played football at the park.",
+            "We played football after school in the park."
+          ],
+          "targets": [
+            [
+              "played"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We play soccer",
+              "hint": "'했다'는 지난 일이에요. 동사 모양은?"
+            },
+            {
+              "match": "played the soccer",
+              "hint": "운동 경기 이름 앞에는 관사를 붙이지 않아요."
+            },
+            {
+              "match": "We did soccer",
+              "hint": "축구 같은 공놀이는 do 가 아니라 어떤 동사를 쓸까요?"
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        },
+        {
+          "id": "pg04-1:p7",
+          "ko": "우리 집 앞에는 큰 나무가 있다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "There is a big tree in front of my house.",
+          "accept": [
+            "There is a big tree in front of our house.",
+            "There is a big tree in front of my home.",
+            "There is a large tree in front of my house.",
+            "There is a large tree in front of our house.",
+            "There is a large tree in front of my home.",
+            "There's a big tree in front of my house.",
+            "There's a big tree in front of our house.",
+            "There's a big tree in front of my home.",
+            "There's a large tree in front of my house.",
+            "There's a large tree in front of our house.",
+            "There's a large tree in front of my home.",
+            "In front of my house, there is a big tree.",
+            "In front of my house there is a big tree.",
+            "In front of our house, there is a big tree.",
+            "In front of my house, there's a big tree.",
+            "In front of my house there's a big tree.",
+            "In front of my house, there is a large tree.",
+            "In front of my house there is a large tree.",
+            "In front of my house, there's a large tree.",
+            "In front of my house there's a large tree.",
+            "In front of our house there is a big tree.",
+            "In front of our house, there's a big tree.",
+            "In front of our house there's a big tree.",
+            "In front of our house, there is a large tree.",
+            "In front of our house there is a large tree.",
+            "In front of our house, there's a large tree.",
+            "In front of our house there's a large tree.",
+            "In front of my home, there is a big tree.",
+            "In front of my home there is a big tree.",
+            "In front of my home, there's a big tree.",
+            "In front of my home there's a big tree.",
+            "In front of my home, there is a large tree.",
+            "In front of my home there is a large tree.",
+            "In front of my home, there's a large tree.",
+            "In front of my home there's a large tree."
+          ],
+          "targets": [
+            [
+              "is",
+              "'s"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "There are a",
+              "hint": "나무 한 그루(a big tree)에 맞는 be동사는?"
+            },
+            {
+              "match": "There have",
+              "hint": "'~이 있다'는 have 가 아니라 There + be동사로 말해요."
+            },
+            {
+              "match": "is big tree",
+              "hint": "나무 한 그루 앞에 빠진 말이 있어요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "new",
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg04-1:t3",
+          "ko": "그는 그 비행기에서 점심을 먹었다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He had lunch on the plane.",
+          "accept": [
+            "He ate lunch on the plane.",
+            "He had lunch on the airplane.",
+            "He ate lunch on the airplane.",
+            "He had lunch on the aeroplane.",
+            "He had lunch on that plane.",
+            "He ate lunch on that plane."
+          ],
+          "targets": [
+            [
+              "had",
+              "ate"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He have lunch",
+              "hint": "'먹었다'는 지난 일이에요. 동사 모양은?"
+            },
+            {
+              "match": "He eated",
+              "hint": "eat 의 과거형은 -ed 를 붙이지 않는 모양이에요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "past-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-009#5",
+          "koSource": "grammar gh2-009-1#5",
+          "fix": null,
+          "note": "t1(He lives in a small house in the suburbs.)은 바로 앞 레슨 pg03-3 의 ⑤ t2 와 같은 문장이라 '처음 보는 문장'이 아니어서 빼고(id t1 은 비워 둠), GRAMMAR II gh2-009#5 단문으로 바꿈 — 허용 답은 GRAMMAR II 다른 답 4 + that plane 2(정리-1권-A)"
+        },
+        {
+          "id": "pg04-1:t2",
+          "ko": "나는 밖에서 이상한 소리를 들었다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I heard a strange sound outside.",
+          "accept": [
+            "I heard a weird sound outside.",
+            "I heard an odd sound outside.",
+            "I heard a strange noise outside."
+          ],
+          "targets": [
+            [
+              "heard"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I hear a",
+              "hint": "'들었다'는 지난 일이에요. hear 의 과거형은?"
+            },
+            {
+              "match": "I heared",
+              "hint": "hear 의 과거형은 -ed 를 붙이지 않는 모양이에요."
+            }
+          ],
+          "tags": [
+            "simple-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-020#5",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg04-1:f1",
+      "template": "I ___ on weekends.",
+      "ko": "나는 주말에 ___."
+    }
+  ]
+}

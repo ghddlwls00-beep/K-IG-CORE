@@ -1,0 +1,933 @@
+{
+  "id": "pg07-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "인칭·소유·복합인칭 대명사",
+  "label": "TOPIC 7. 대명사",
+  "menuLabel": "7-1. 인칭·소유·복합인칭 대명사",
+  "unit": 7,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 인칭 / 소유 / 복합 인칭 대명사",
+  "grammarTags": [
+    "pronoun-possessive",
+    "pronoun-reflexive"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg07-1:a1",
+          "en": "The Bible was mine.",
+          "ko": "그 성경책은 내 것이었어.",
+          "koSource": "review 1 item 1",
+          "focus": [
+            "mine"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 1 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          },
+          "fix": {
+            "from": "The bible was mine.",
+            "kind": "english_grammar",
+            "why": "경전 이름 Bible 은 첫 글자를 대문자로 씁니다."
+          }
+        },
+        {
+          "id": "pg07-1:a2",
+          "en": "The purse is yours.",
+          "ko": "그 지갑은 너의 것이야.",
+          "koSource": "review 1 item 3",
+          "focus": [
+            "yours"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 3 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          }
+        },
+        {
+          "id": "pg07-1:a3",
+          "en": "Everyone knows that the company is hers, not theirs.",
+          "ko": "그 회사가 그녀의 것이지 그들의 것이 아니라는 것을 모두가 알아.",
+          "koSource": "review 1 item 4",
+          "focus": [
+            "hers",
+            "theirs"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 4 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          },
+          "fix": {
+            "from": "그 회사가 그녀의 것이지 그들의 것이 아니라는 것을 모두가 알아",
+            "kind": "korean_typo",
+            "why": "한국어 문장 끝 마침표가 빠져 있어 넣었습니다."
+          }
+        },
+        {
+          "id": "pg07-1:a4",
+          "en": "I know the truth myself.",
+          "ko": "나 자신이 그 진실을 안다.",
+          "koSource": "review 1 item 5 (고침)",
+          "focus": [
+            "myself"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 5 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          },
+          "fix": {
+            "from": "I know the truth by myself.",
+            "fromKo": "나는 내 스스로 진실을 안다.",
+            "kind": "english_unnatural",
+            "why": "by myself 는 '혼자서, 남의 도움 없이'라는 뜻이라 '진실을 안다'와 어울리지 않습니다. '나 스스로(직접)'를 강조하는 myself 로 고쳤습니다. 한국어도 강조 용법이 드러나게 '나 자신이'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-1:a5",
+          "en": "We have to go through this trouble ourselves.",
+          "ko": "우리는 이 난관을 우리 스스로 극복해야 한다.",
+          "koSource": "review 1 item 6",
+          "focus": [
+            "ourselves"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 6 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          }
+        },
+        {
+          "id": "pg07-1:a6",
+          "en": "Knowing yourself is really important for a happy life.",
+          "ko": "너 자신을 아는 것은 행복한 삶을 위해 정말 중요하다.",
+          "koSource": "review 1 item 7",
+          "focus": [
+            "yourself"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 7 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          },
+          "fix": {
+            "from": "Knowing yourself is really important in happy life.",
+            "fromKo": "네 자신을 아는 것은 행복한 삶을 위해 정말 중요하다.",
+            "kind": "english_grammar",
+            "why": "happy life 앞에 관사 a 가 없고, 한국어 '~을 위해'에 맞는 전치사는 for 입니다. 한국어 '네 자신'은 표준어 '너 자신'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-1:a7",
+          "en": "Nobody could save them but themselves.",
+          "ko": "그들 자신 이외에는 아무도 그들을 구원할 수 없었다.",
+          "koSource": "review 1 item 8",
+          "focus": [
+            "themselves"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 8 · 앵커(Pass-Off (1)은 표만 인쇄되어 Application 문장을 씀)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg07-1:a1",
+          "pg07-1:a2",
+          "pg07-1:a3"
+        ],
+        "question": "세 문장의 mine · yours · hers 뒤에는 무엇이 오나요?",
+        "options": [
+          "아무것도 안 온다(혼자서 '~의 것')",
+          "명사가 온다",
+          "동사가 온다"
+        ],
+        "answer": 0,
+        "why": "mine(내 것) · yours(너의 것) · hers(그녀의 것)는 '소유격 + 명사'를 한 낱말로 줄인 말이라 뒤에 명사를 또 쓰지 않습니다."
+      },
+      "title": "'~의 것'은 소유대명사, '~ 자신'은 재귀대명사",
+      "points": [
+        "'~의 것'은 소유대명사: mine · yours · his · hers · ours · theirs",
+        "소유격(my · our …) 뒤엔 명사가 오고, 소유대명사는 혼자 씁니다",
+        "'~ 자신'은 재귀대명사: 하나면 -self, 여럿이면 -selves",
+        "주어가 자기 자신에게 할 때 씁니다: He hurt himself.",
+        "'내가 직접'을 강조할 때도 씁니다: I know the truth myself."
+      ],
+      "table": {
+        "columns": [
+          "인칭",
+          "~는(주격)",
+          "~의(소유격)",
+          "~의 것(소유대명사)",
+          "~ 자신(재귀대명사)"
+        ],
+        "rows": [
+          [
+            "1인칭 하나",
+            "I",
+            "my",
+            "mine",
+            "myself"
+          ],
+          [
+            "1인칭 여럿",
+            "we",
+            "our",
+            "ours",
+            "ourselves"
+          ],
+          [
+            "2인칭 하나",
+            "you",
+            "your",
+            "yours",
+            "yourself"
+          ],
+          [
+            "2인칭 여럿",
+            "you",
+            "your",
+            "yours",
+            "yourselves"
+          ],
+          [
+            "3인칭 하나",
+            "he / she / it",
+            "his / her / its",
+            "his / hers / (거의 안 씀)",
+            "himself / herself / itself"
+          ],
+          [
+            "3인칭 여럿",
+            "they",
+            "their",
+            "theirs",
+            "themselves"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '내 것', '나 자신'처럼 말을 덧붙이지만, 영어는 mine · myself 처럼 한 낱말로 쓰고, 누구의 것 · 누구 자신인지(인칭과 수)에 따라 모양이 바뀝니다.",
+      "mistakes": [
+        {
+          "wrong": "The purse is your.",
+          "right": "The purse is yours.",
+          "why": "뒤에 명사가 없으면 '너의 것' = yours"
+        },
+        {
+          "wrong": "We have to do it ourself.",
+          "right": "We have to do it ourselves.",
+          "why": "우리(여럿)는 -selves"
+        }
+      ],
+      "worked": [
+        "그 지갑은 너의 것이야.",
+        "'너의 것' → 뒤에 명사 없음 → 소유대명사",
+        "you → yours",
+        "The purse is yours."
+      ],
+      "terms": [
+        {
+          "now": "재귀대명사",
+          "book": "복합 인칭 대명사"
+        }
+      ],
+      "check": {
+        "question": "'그는 거울 속 자기 자신을 보았다.' He saw ___ in the mirror.",
+        "options": [
+          "him",
+          "himself",
+          "his"
+        ],
+        "answer": 1,
+        "why": "주어 He 가 자기 자신을 보았으니 재귀대명사 himself.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg07-1:s1",
+          "kind": "select",
+          "instruction": "소유대명사('~의 것')를 모두 누르세요",
+          "tokens": [
+            "Everyone",
+            "knows",
+            "that",
+            "the",
+            "company",
+            "is",
+            "hers",
+            ",",
+            "not",
+            "theirs",
+            "."
+          ],
+          "answer": [
+            6,
+            9
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "hers(그녀의 것)와 theirs(그들의 것)는 뒤에 명사 없이 혼자 쓰였어요.",
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 4"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-1:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 our 는 무엇인가요?",
+          "sentence": "We cleaned our classroom after school.",
+          "underline": [
+            "our"
+          ],
+          "options": [
+            "소유대명사('~의 것')",
+            "소유격('~의' + 명사)",
+            "재귀대명사('~ 자신')"
+          ],
+          "answer": 1,
+          "why": "our 뒤에 명사 classroom 이 있으니 '우리의'라는 소유격이에요. '우리의 것'은 ours.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-1:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요. (이 새 기계는 우리 것이다.)",
+          "sentence": "This new machine is ___.",
+          "underline": [],
+          "options": [
+            "our",
+            "ours",
+            "us"
+          ],
+          "answer": 1,
+          "why": "뒤에 명사가 없고 '우리의 것'이니 ours. our 는 뒤에 명사가 와야 해요.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-1:s4",
+          "kind": "select",
+          "instruction": "재귀대명사('~ 자신')를 누르세요",
+          "tokens": [
+            "Nobody",
+            "could",
+            "save",
+            "them",
+            "but",
+            "themselves",
+            "."
+          ],
+          "answer": [
+            5
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "them 은 '그들을'(목적격), themselves 는 '그들 자신'이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 8"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg07-1:s5",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 재귀대명사를 쓰세요. (그 컴퓨터는 스스로 꺼졌다.)",
+          "sentence": "The computer turned ___ off.",
+          "answer": [
+            "itself"
+          ],
+          "why": "the computer 는 it 으로 받으니 '그것 자신' = itself.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-1:s6",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 재귀대명사를 쓰세요. (너희들은 너희 자신을 자랑스러워해야 한다.)",
+          "sentence": "You should be proud of ___.",
+          "answer": [
+            "yourselves"
+          ],
+          "why": "'너희들'처럼 you 가 여럿이면 yourselves.",
+          "source": "new"
+        },
+        {
+          "id": "pg07-1:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 our 는 무엇인가요?",
+          "sentence": "A new machine has been used for our business.",
+          "underline": [
+            "our"
+          ],
+          "options": [
+            "소유대명사('~의 것')",
+            "소유격('~의' + 명사)",
+            "재귀대명사('~ 자신')"
+          ],
+          "answer": 1,
+          "why": "our 뒤에 명사 business 가 있으니 '우리의'라는 소유격이에요. '우리의 것'은 ours.",
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 2"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg07-1:p1",
+          "ko": "그 성경책은 내 것이었어.",
+          "koSource": "review 1 item 1",
+          "condition": null,
+          "promptEn": null,
+          "en": "The Bible was mine.",
+          "accept": [
+            "That Bible was mine."
+          ],
+          "targets": [
+            [
+              "mine"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "was my",
+              "hint": "'내 것'은 뒤에 명사가 없어요. '나의'가 아니라 '나의 것'을 뜻하는 한 낱말을 쓰세요."
+            },
+            {
+              "match": "is mine",
+              "hint": "'~이었어'는 지난 일이에요. be동사의 시제를 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-possessive",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 1",
+            "reviewWhere": "review 1 item 1 (p54)"
+          },
+          "fix": {
+            "from": "The bible was mine.",
+            "kind": "english_grammar",
+            "why": "경전 이름 Bible 은 첫 글자를 대문자로 씁니다."
+          }
+        },
+        {
+          "id": "pg07-1:p2",
+          "ko": "그 지갑은 너의 것이야.",
+          "koSource": "review 1 item 3",
+          "condition": null,
+          "promptEn": null,
+          "en": "The purse is yours.",
+          "accept": [
+            "The wallet is yours.",
+            "That purse is yours.",
+            "That wallet is yours."
+          ],
+          "targets": [
+            [
+              "yours"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is your",
+              "hint": "'너의 것'은 뒤에 명사가 없어요. '너의'와 모양이 다른 한 낱말을 쓰세요."
+            }
+          ],
+          "tags": [
+            "pronoun-possessive",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 3",
+            "reviewWhere": "review 1 item 3 (p54)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-1:p3",
+          "ko": "나 자신이 그 진실을 안다.",
+          "koSource": "review 1 item 5 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I know the truth myself.",
+          "accept": [
+            "I myself know the truth."
+          ],
+          "targets": [
+            [
+              "myself"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by myself",
+              "hint": "by myself 는 '혼자서(남의 도움 없이)'라는 뜻이에요. 여기서는 '내가 직접'을 강조하는 말만 쓰세요."
+            },
+            {
+              "match": "know the truth me",
+              "hint": "'나 자신'은 목적격 me 가 아니라 '~ 자신' 모양이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-reflexive",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 5",
+            "reviewWhere": "review 1 item 5 (p54)"
+          },
+          "fix": {
+            "from": "I know the truth by myself.",
+            "fromKo": "나는 내 스스로 진실을 안다.",
+            "kind": "english_unnatural",
+            "why": "by myself 는 '혼자서, 남의 도움 없이'라는 뜻이라 '진실을 안다'와 어울리지 않습니다. '나 스스로(직접)'를 강조하는 myself 로 고쳤습니다. 한국어도 강조 용법이 드러나게 '나 자신이'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-1:p4",
+          "ko": "우리는 이 난관을 우리 스스로 극복해야 한다.",
+          "koSource": "review 1 item 6",
+          "condition": null,
+          "promptEn": null,
+          "en": "We have to go through this trouble ourselves.",
+          "accept": [
+            "We have to go through this trouble by ourselves.",
+            "We have to go through this difficulty ourselves.",
+            "We have to go through this difficulty by ourselves.",
+            "We have to go through this hardship ourselves.",
+            "We have to go through this hardship by ourselves.",
+            "We have to get through this trouble ourselves.",
+            "We have to get through this trouble by ourselves.",
+            "We have to get through this difficulty ourselves.",
+            "We have to get through this difficulty by ourselves.",
+            "We have to get through this hardship ourselves.",
+            "We have to get through this hardship by ourselves.",
+            "We have to overcome this trouble ourselves.",
+            "We have to overcome this trouble by ourselves.",
+            "We have to overcome this difficulty ourselves.",
+            "We have to overcome this difficulty by ourselves.",
+            "We have to overcome this hardship ourselves.",
+            "We have to overcome this hardship by ourselves.",
+            "We must go through this trouble ourselves.",
+            "We must go through this trouble by ourselves.",
+            "We must go through this difficulty ourselves.",
+            "We must go through this difficulty by ourselves.",
+            "We must go through this hardship ourselves.",
+            "We must go through this hardship by ourselves.",
+            "We must get through this trouble ourselves.",
+            "We must get through this trouble by ourselves.",
+            "We must get through this difficulty ourselves.",
+            "We must get through this difficulty by ourselves.",
+            "We must get through this hardship ourselves.",
+            "We must get through this hardship by ourselves.",
+            "We must overcome this trouble ourselves.",
+            "We must overcome this trouble by ourselves.",
+            "We must overcome this difficulty ourselves.",
+            "We must overcome this difficulty by ourselves.",
+            "We must overcome this hardship ourselves.",
+            "We must overcome this hardship by ourselves."
+          ],
+          "targets": [
+            [
+              "ourselves"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "ourself",
+              "hint": "'우리'는 여럿이에요. '~ 자신'도 여럿 모양으로 쓰세요."
+            },
+            {
+              "match": "by us",
+              "hint": "'우리 스스로'는 목적격 us 가 아니라 '~ 자신' 모양이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-reflexive",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 6",
+            "reviewWhere": "review 1 item 6 (p54)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg07-1:p5",
+          "ko": "새 기계가 우리의 사업을 위해 사용되어 왔어.",
+          "koSource": "review 1 item 2 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "A new machine has been used for our business.",
+          "accept": [
+            "The new machine has been used for our business."
+          ],
+          "targets": [
+            [
+              "our"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "for ours business",
+              "hint": "business 앞에서는 '우리의'예요. '우리의 것'을 뜻하는 모양이 아니에요."
+            },
+            {
+              "match": "has used",
+              "hint": "기계는 누군가에게 '사용되는' 쪽이에요. 빠진 낱말이 없는지 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-possessive",
+            "present-perfect",
+            "passive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "present-perfect",
+            "passive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 2",
+            "reviewWhere": "review 1 item 2 (p54)"
+          },
+          "fix": {
+            "from": "New machine has been used for our business.",
+            "fromKo": "새 기계가 우리의 사업을 위해 사용되어져 왔어.",
+            "kind": "english_grammar",
+            "why": "셀 수 있는 명사 machine 이 하나이므로 앞에 관사 a 가 필요합니다. 굵게 표시된 our 는 소유격(우리의)이라 소유대명사가 아닙니다. 한국어 '사용되어져'는 이중 피동이라 '사용되어'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-1:p6",
+          "ko": "그 회사가 그녀의 것이지 그들의 것이 아니라는 것을 모두가 알아.",
+          "koSource": "review 1 item 4",
+          "condition": null,
+          "promptEn": null,
+          "en": "Everyone knows that the company is hers, not theirs.",
+          "accept": [
+            "Everyone knows that the company is hers, and not theirs.",
+            "Everyone knows that the company is hers not theirs.",
+            "Everyone knows that the company is hers and not theirs.",
+            "Everyone knows the company is hers, not theirs.",
+            "Everyone knows the company is hers, and not theirs.",
+            "Everyone knows the company is hers not theirs.",
+            "Everyone knows the company is hers and not theirs.",
+            "Everybody knows that the company is hers, not theirs.",
+            "Everybody knows that the company is hers, and not theirs.",
+            "Everybody knows that the company is hers not theirs.",
+            "Everybody knows that the company is hers and not theirs.",
+            "Everybody knows the company is hers, not theirs.",
+            "Everybody knows the company is hers, and not theirs.",
+            "Everybody knows the company is hers not theirs.",
+            "Everybody knows the company is hers and not theirs."
+          ],
+          "targets": [
+            [
+              "hers"
+            ],
+            [
+              "theirs"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is her",
+              "hint": "'그녀의 것'은 뒤에 명사가 없어요. '그녀의'와 다른 한 낱말을 쓰세요."
+            },
+            {
+              "match": "not their",
+              "hint": "'그들의 것'도 뒤에 명사가 없어요."
+            },
+            {
+              "match": "everyone know",
+              "hint": "everyone 은 한 사람처럼 3인칭 단수로 받아요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-possessive",
+            "pronoun-indefinite",
+            "complex-sentence",
+            "present-3sg-s"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "pronoun-indefinite"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 4",
+            "reviewWhere": "review 1 item 4 (p54)"
+          },
+          "fix": {
+            "from": "그 회사가 그녀의 것이지 그들의 것이 아니라는 것을 모두가 알아",
+            "kind": "korean_typo",
+            "why": "한국어 문장 끝 마침표가 빠져 있어 넣었습니다."
+          }
+        },
+        {
+          "id": "pg07-1:p7",
+          "ko": "너 자신을 아는 것은 행복한 삶을 위해 정말 중요하다.",
+          "koSource": "review 1 item 7",
+          "condition": null,
+          "promptEn": null,
+          "en": "Knowing yourself is really important for a happy life.",
+          "accept": [
+            "Knowing yourself is really important to a happy life.",
+            "Knowing yourself is very important for a happy life.",
+            "Knowing yourself is very important to a happy life.",
+            "Knowing yourself is truly important for a happy life.",
+            "Knowing yourself is truly important to a happy life.",
+            "To know yourself is really important for a happy life.",
+            "To know yourself is really important to a happy life.",
+            "To know yourself is very important for a happy life.",
+            "To know yourself is very important to a happy life.",
+            "To know yourself is truly important for a happy life.",
+            "To know yourself is truly important to a happy life.",
+            "It is really important to know yourself for a happy life.",
+            "It is very important to know yourself for a happy life."
+          ],
+          "targets": [
+            [
+              "yourself"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in happy life",
+              "hint": "'행복한 삶을 위해'에서 '~을 위해'에 맞는 전치사와 life 앞의 관사를 다시 보세요."
+            },
+            {
+              "match": "for happy life",
+              "hint": "'하나의 행복한 삶'이니 life 앞에 관사가 필요해요."
+            },
+            {
+              "match": "yourselves",
+              "hint": "'너 자신'은 한 사람이에요. '~ 자신'도 하나 모양으로 쓰세요."
+            }
+          ],
+          "tags": [
+            "pronoun-reflexive",
+            "gerund"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "gerund"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 7",
+            "reviewWhere": "review 1 item 7 (p54)"
+          },
+          "fix": {
+            "from": "Knowing yourself is really important in happy life.",
+            "fromKo": "네 자신을 아는 것은 행복한 삶을 위해 정말 중요하다.",
+            "kind": "english_grammar",
+            "why": "happy life 앞에 관사 a 가 없고, 한국어 '~을 위해'에 맞는 전치사는 for 입니다. 한국어 '네 자신'은 표준어 '너 자신'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg07-1:p8",
+          "ko": "그들 자신 이외에는 아무도 그들을 구원할 수 없었다.",
+          "koSource": "review 1 item 8",
+          "condition": null,
+          "promptEn": null,
+          "en": "Nobody could save them but themselves.",
+          "accept": [
+            "Nobody could save them except themselves.",
+            "Nobody could save them other than themselves.",
+            "No one could save them but themselves.",
+            "No one could save them except themselves.",
+            "No one could save them other than themselves.",
+            "Nobody but themselves could save them.",
+            "No one but themselves could save them.",
+            "Nobody except themselves could save them.",
+            "No one except themselves could save them.",
+            "Nobody other than themselves could save them.",
+            "No one other than themselves could save them."
+          ],
+          "targets": [
+            [
+              "themselves"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "but them",
+              "hint": "'그들 자신'은 목적격 them 과 달라요. '~ 자신' 모양을 쓰세요."
+            },
+            {
+              "match": "themself",
+              "hint": "'그들'은 여럿이에요. '~ 자신'도 여럿 모양으로 쓰세요."
+            }
+          ],
+          "tags": [
+            "pronoun-reflexive",
+            "pronoun-indefinite",
+            "can-basic",
+            "past-simple"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "pronoun-indefinite"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 50,
+            "where": "application (1) item 8",
+            "reviewWhere": "review 1 item 8 (p54)"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg07-1:t1",
+          "ko": "그 반지는 너의 것이냐?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is the ring yours?",
+          "accept": [
+            "Is that ring yours?"
+          ],
+          "targets": [
+            [
+              "yours"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is the ring your",
+              "hint": "'너의 것'은 뒤에 명사가 없어요."
+            },
+            {
+              "match": "the ring is yours",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "pronoun-possessive",
+            "question-basic",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-089#7"
+        },
+        {
+          "id": "pg07-1:t2",
+          "ko": "나는 나 자신을 위한 햄버거를 샀다. (내가 먹을 햄버거를 샀다.)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I bought a hamburger for myself.",
+          "accept": [
+            "I bought myself a burger.",
+            "I bought myself a hamburger.",
+            "I bought a burger for myself."
+          ],
+          "targets": [
+            [
+              "myself"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "for me",
+              "hint": "'나 자신을 위한'이니 '~ 자신' 모양을 쓰세요."
+            },
+            {
+              "match": "buyed",
+              "hint": "buy 의 과거형은 불규칙이에요."
+            }
+          ],
+          "tags": [
+            "pronoun-reflexive",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-022#16"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg07-1:f1",
+      "template": "This ___ is mine. I made it myself.",
+      "ko": "이 ___은(는) 내 것이다. 내가 직접 만들었다."
+    }
+  ]
+}

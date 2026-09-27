@@ -1,0 +1,749 @@
+{
+  "id": "pg01-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "1인칭",
+  "label": "TOPIC 1. 인칭",
+  "menuLabel": "1-1. 1인칭",
+  "unit": 1,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "1인칭 단수 I 와 복수 We",
+  "grammarTags": [
+    "pronoun-1st"
+  ],
+  "koreanWords": [
+    "Hong Gil Dong",
+    "Seoul"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg01-1:a3",
+          "en": "My name is Hong Gil Dong, and I live in Seoul.",
+          "ko": "나의 이름은 홍길동이고, 나는 서울에 삽니다.",
+          "focus": [
+            "My",
+            "I"
+          ],
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "exact"
+          },
+          "source": "student:s1-2#1",
+          "note": "교재 1인칭 Pass-Off 두 문장이 모두 유료 STUDENT 문장이라, 무료 체험에서도 I 예문이 보이도록 무료 STUDENT 1-2 첫 문장을 더함(교재 밖 문장)"
+        },
+        {
+          "id": "pg01-1:a4",
+          "en": "We are good friends.",
+          "ko": "우리는 좋은 친구들이다.",
+          "focus": [
+            "We"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 9",
+            "reviewWhere": "review 2) item 7 (p8)"
+          },
+          "note": "Pass-Off 문장이 2개뿐이라 발견 질문용으로 같은 소주제의 Application 문장을 더함(무료 체험에서도 보임)"
+        },
+        {
+          "id": "pg01-1:a5",
+          "en": "I am a 4th grade student.",
+          "ko": "나는 4학년 학생입니다.",
+          "focus": [
+            "I"
+          ],
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "source": "student:s1-2#3",
+          "note": "교재 밖 문장 — 무료 판에서도 발견 질문 앵커가 3개가 되도록 무료 STUDENT 1-2 셋째 문장을 줄여 더함(pg01-1:a1 은 유료 보충 파일로 옮겨져 무료 판에 없음)"
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg01-1:a3",
+          "pg01-1:a4",
+          "pg01-1:a5"
+        ],
+        "question": "굵게 표시된 My · I · We 는 누구를 가리킬까요?",
+        "options": [
+          "말하는 사람 자신(나, 우리)",
+          "말을 듣는 상대(너)",
+          "나도 너도 아닌 다른 사람"
+        ],
+        "answer": 0,
+        "why": "My·I 는 '나', We 는 '나를 포함한 우리'예요. 말하는 사람 쪽을 가리키는 말을 1인칭이라고 해요."
+      },
+      "title": "말하는 나는 I, 나를 포함한 우리는 we",
+      "points": [
+        "말하는 사람 자신을 가리키는 말을 1인칭이라고 해요.",
+        "나 혼자면 I(단수), 나를 포함한 여러 명이면 we(복수)예요.",
+        "I 는 문장 맨 앞이 아니어도 언제나 대문자로 써요.",
+        "다른 사람과 함께 말할 때는 I 를 뒤에 써요: My sister and I",
+        "my(나의) · me(나를) · our(우리의) · us(우리를)도 1인칭이에요. 자세한 모양은 뒤 레슨에서 배워요."
+      ],
+      "table": {
+        "columns": [
+          "",
+          "한 명(단수)",
+          "여러 명(복수)"
+        ],
+        "rows": [
+          [
+            "1인칭 (말하는 사람)",
+            "I",
+            "we"
+          ],
+          [
+            "2인칭 (듣는 사람)",
+            "you",
+            "you"
+          ],
+          [
+            "3인칭 (그 밖의 사람·물건)",
+            "he · she · it",
+            "they"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '나는 · 저는 · 내가'처럼 나를 여러 말로 부르고, '학교에 가요'처럼 주어를 자주 빼요. 영어는 주어 자리의 '나'가 언제나 I 이고, 보통 주어를 빼지 않아요.",
+      "mistakes": [
+        {
+          "wrong": "I and my sister are good friends.",
+          "right": "My sister and I are good friends.",
+          "why": "다른 사람과 함께 쓸 때 I 는 뒤에 와요."
+        },
+        {
+          "wrong": "Like to read books.",
+          "right": "I like to read books.",
+          "why": "한국어는 '(나는)'을 빼도 되지만, 영어는 주어 I 를 꼭 써요."
+        }
+      ],
+      "worked": [
+        "우리는 좋은 친구들이다.",
+        "'우리' = 나를 포함한 여러 명 → 1인칭 복수",
+        "1인칭 복수 → We",
+        "We are good friends."
+      ],
+      "check": {
+        "question": "'우리는 같은 반이다.'에서 '우리는'에 맞는 영어는?",
+        "options": [
+          "I",
+          "We",
+          "You"
+        ],
+        "answer": 1,
+        "why": "'우리'는 나를 포함한 여러 명 → 1인칭 복수 we",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg01-1:s3",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "By the way",
+            ",",
+            "where",
+            "do",
+            "we",
+            "go",
+            "?"
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "1인칭"
+          ],
+          "why": "문장 가운데 있어도 we(우리)는 1인칭이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 11"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg01-1:s7",
+          "kind": "select",
+          "instruction": "인칭대명사를 누르고, 몇 인칭인지 고르세요",
+          "tokens": [
+            "Can",
+            "we",
+            "play",
+            "outside",
+            "now",
+            "?"
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "1인칭",
+            "2인칭",
+            "3인칭"
+          ],
+          "labelAnswer": [
+            "1인칭"
+          ],
+          "why": "묻는 문장에서 can 뒤에 와도 we(우리)는 1인칭이에요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재 밖 새 문장 — s3(교재 문장이 ④ p10 의 정답과 같음)를 날을 넘기는 복습용(reserve)으로 돌리고, 같은 기술(문장 가운데의 we → 1인칭)을 ④ 에 없는 문장으로 묻도록 더함(정리-1권-A)"
+        },
+        {
+          "id": "pg01-1:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 대명사는 한 명인가요, 여러 명인가요?",
+          "sentence": "We are good friends.",
+          "underline": [
+            "We"
+          ],
+          "options": [
+            "한 명(단수)",
+            "여러 명(복수)"
+          ],
+          "answer": 1,
+          "why": "We(우리)는 나를 포함한 여러 명이라 복수예요. 그래서 friends 도 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 9"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg01-1:s5",
+          "kind": "short",
+          "instruction": "빈칸에 '나는'에 알맞은 영어 한 낱말을 쓰세요",
+          "sentence": "___ read books every day.",
+          "answer": [
+            "I"
+          ],
+          "why": "'나'는 I. 문장 어디에 있든 대문자로 써요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg01-1:s6",
+          "kind": "choice",
+          "instruction": "'나의 언니와 나는 같은 반이다.'를 바르게 쓴 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "I and my sister are in the same class.",
+            "My sister and I are in the same class.",
+            "My sister and me are in the same class."
+          ],
+          "answer": 1,
+          "why": "다른 사람과 함께 쓸 때 I 는 뒤에 오고, 주어 자리에서는 me 가 아니라 I 예요.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg01-1:p13",
+          "ko": "나는 서울에 삽니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I live in Seoul.",
+          "accept": [],
+          "targets": [
+            [
+              "i"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I lives",
+              "hint": "주어가 I 일 때 동사 모양을 살펴보세요."
+            },
+            {
+              "match": "I live Seoul",
+              "hint": "'서울에'의 '에'에 해당하는 작은 말이 필요해요."
+            },
+            {
+              "match": "I am live",
+              "hint": "live 가 이미 동사예요. am 과 함께 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "present-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": null,
+          "fix": null,
+          "source": "student:s1-2#1",
+          "note": "교재 밖 문장 — 무료 판 ④ 영작에 I 문장이 없어 무료 STUDENT 1-2 첫 문장을 줄여 더함"
+        },
+        {
+          "id": "pg01-1:p14",
+          "ko": "나는 4학년 학생입니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am a 4th grade student.",
+          "accept": [
+            "I am a fourth grade student.",
+            "I am a 4th-grade student.",
+            "I am a fourth-grade student.",
+            "I am a 4th grader.",
+            "I am a fourth grader.",
+            "I am in the 4th grade.",
+            "I am in the fourth grade.",
+            "I am in 4th grade.",
+            "I am in fourth grade.",
+            "I am in grade 4.",
+            "I am in grade four.",
+            "I'm a 4th grade student.",
+            "I'm a fourth grade student.",
+            "I'm a 4th-grade student.",
+            "I'm a fourth-grade student.",
+            "I'm a 4th grader.",
+            "I'm a fourth grader.",
+            "I'm in the 4th grade.",
+            "I'm in the fourth grade.",
+            "I'm in 4th grade.",
+            "I'm in fourth grade.",
+            "I'm in grade 4.",
+            "I'm in grade four."
+          ],
+          "targets": [
+            [
+              "i",
+              "i'm"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I is",
+              "hint": "주어가 I 일 때 be동사 모양은?"
+            },
+            {
+              "match": "I am 4th grade student",
+              "hint": "student(학생 한 명) 앞에 '하나'를 뜻하는 작은 말이 필요해요."
+            },
+            {
+              "match": "I am fourth grade student",
+              "hint": "student(학생 한 명) 앞에 '하나'를 뜻하는 작은 말이 필요해요."
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": null,
+          "fix": null,
+          "source": "student:s1-2#3",
+          "note": "교재 밖 문장 — 무료 판 ④ 영작에 I 문장이 없어 무료 STUDENT 1-2 셋째 문장을 줄여 더함"
+        },
+        {
+          "id": "pg01-1:p9",
+          "ko": "우리는 좋은 친구들이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We are good friends.",
+          "accept": [
+            "We're good friends."
+          ],
+          "targets": [
+            [
+              "we",
+              "we're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We is",
+              "hint": "We 는 여러 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "We are a good",
+              "hint": "We 는 여러 명이라 '하나'를 뜻하는 a 를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "be-present",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 9",
+            "reviewWhere": "review 2) item 7 (p8)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-1:p10",
+          "ko": "그건 그렇고, 우리는 어디로 가지?",
+          "condition": null,
+          "promptEn": null,
+          "en": "By the way, where do we go?",
+          "accept": [
+            "By the way, where are we going?",
+            "By the way, where should we go?",
+            "Where do we go, by the way?",
+            "Where are we going, by the way?",
+            "By the way where do we go?",
+            "Where do we go by the way?",
+            "By the way where are we going?",
+            "Where are we going by the way?",
+            "By the way where should we go?",
+            "Where should we go, by the way?",
+            "Where should we go by the way?",
+            "By the way, where shall we go?",
+            "By the way where shall we go?",
+            "Where shall we go, by the way?",
+            "Where shall we go by the way?"
+          ],
+          "targets": [
+            [
+              "we",
+              "we're"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "where we go",
+              "hint": "묻는 문장은 주어 앞에 do 를 써요."
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "present-simple",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 11",
+            "reviewWhere": "review 2) item 9 (p8)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-1:p11",
+          "ko": "우리는 20000달러를 주고 그 차를 살 거야.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We'll pay $20,000 for the car.",
+          "accept": [
+            "We'll buy the car for $20,000.",
+            "We'll pay $20000 for the car.",
+            "We'll buy the car for $20000.",
+            "We'll pay 20,000 dollars for the car.",
+            "We'll buy the car for 20,000 dollars.",
+            "We'll pay 20000 dollars for the car.",
+            "We'll buy the car for 20000 dollars.",
+            "We'll pay twenty thousand dollars for the car.",
+            "We'll buy the car for twenty thousand dollars.",
+            "We will pay $20,000 for the car.",
+            "We will buy the car for $20,000.",
+            "We will pay $20000 for the car.",
+            "We will buy the car for $20000.",
+            "We will pay 20,000 dollars for the car.",
+            "We will buy the car for 20,000 dollars.",
+            "We will pay 20000 dollars for the car.",
+            "We will buy the car for 20000 dollars.",
+            "We will pay twenty thousand dollars for the car.",
+            "We will buy the car for twenty thousand dollars.",
+            "We'll pay $20,000 for that car.",
+            "We'll buy that car for $20,000.",
+            "We'll pay $20000 for that car.",
+            "We'll buy that car for $20000.",
+            "We'll pay 20,000 dollars for that car.",
+            "We'll buy that car for 20,000 dollars.",
+            "We'll pay 20000 dollars for that car.",
+            "We'll buy that car for 20000 dollars.",
+            "We'll pay twenty thousand dollars for that car.",
+            "We'll buy that car for twenty thousand dollars.",
+            "We will pay $20,000 for that car.",
+            "We will buy that car for $20,000.",
+            "We will pay $20000 for that car.",
+            "We will buy that car for $20000.",
+            "We will pay 20,000 dollars for that car.",
+            "We will buy that car for 20,000 dollars.",
+            "We will pay 20000 dollars for that car.",
+            "We will buy that car for 20000 dollars.",
+            "We will pay twenty thousand dollars for that car.",
+            "We will buy that car for twenty thousand dollars.",
+            "We're going to pay $20,000 for the car.",
+            "We're going to buy the car for $20,000.",
+            "We're going to pay $20000 for the car.",
+            "We're going to buy the car for $20000.",
+            "We're going to pay 20,000 dollars for the car.",
+            "We're going to buy the car for 20,000 dollars.",
+            "We're going to pay 20000 dollars for the car.",
+            "We're going to buy the car for 20000 dollars.",
+            "We're going to pay twenty thousand dollars for the car.",
+            "We're going to buy the car for twenty thousand dollars.",
+            "We're going to pay $20,000 for that car.",
+            "We're going to buy that car for $20,000.",
+            "We're going to pay $20000 for that car.",
+            "We're going to buy that car for $20000.",
+            "We're going to pay 20,000 dollars for that car.",
+            "We're going to buy that car for 20,000 dollars.",
+            "We're going to pay 20000 dollars for that car.",
+            "We're going to buy that car for 20000 dollars.",
+            "We're going to pay twenty thousand dollars for that car.",
+            "We're going to buy that car for twenty thousand dollars.",
+            "We are going to pay $20,000 for the car.",
+            "We are going to buy the car for $20,000.",
+            "We are going to pay $20000 for the car.",
+            "We are going to buy the car for $20000.",
+            "We are going to pay 20,000 dollars for the car.",
+            "We are going to buy the car for 20,000 dollars.",
+            "We are going to pay 20000 dollars for the car.",
+            "We are going to buy the car for 20000 dollars.",
+            "We are going to pay twenty thousand dollars for the car.",
+            "We are going to buy the car for twenty thousand dollars.",
+            "We are going to pay $20,000 for that car.",
+            "We are going to buy that car for $20,000.",
+            "We are going to pay $20000 for that car.",
+            "We are going to buy that car for $20000.",
+            "We are going to pay 20,000 dollars for that car.",
+            "We are going to buy that car for 20,000 dollars.",
+            "We are going to pay 20000 dollars for that car.",
+            "We are going to buy that car for 20000 dollars.",
+            "We are going to pay twenty thousand dollars for that car.",
+            "We are going to buy that car for twenty thousand dollars."
+          ],
+          "targets": [
+            [
+              "we",
+              "we'll"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We buy",
+              "hint": "'살 거야'는 앞으로 할 일이에요. 앞으로의 일을 나타내는 말을 넣어 보세요."
+            },
+            {
+              "match": "We pay",
+              "hint": "'살 거야'는 앞으로 할 일이에요. 앞으로의 일을 나타내는 말을 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 12",
+            "reviewWhere": "review 2) item 10 (p8)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg01-1:p12",
+          "ko": "우리는 사진을 찍을 기회가 많아.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We have a lot of chances to take a picture.",
+          "accept": [
+            "We have a lot of chances to take pictures.",
+            "We have lots of chances to take a picture.",
+            "We have lots of chances to take pictures.",
+            "We have many chances to take a picture.",
+            "We have many chances to take pictures.",
+            "We have a lot of opportunities to take pictures.",
+            "We have many opportunities to take pictures.",
+            "We have a lot of chances to take a photo.",
+            "We have a lot of chances to take photos.",
+            "We have a lot of opportunities to take a picture.",
+            "We have a lot of opportunities to take a photo.",
+            "We have a lot of opportunities to take photos.",
+            "We have lots of chances to take a photo.",
+            "We have lots of chances to take photos.",
+            "We have lots of opportunities to take a picture.",
+            "We have lots of opportunities to take pictures.",
+            "We have lots of opportunities to take a photo.",
+            "We have lots of opportunities to take photos.",
+            "We have many chances to take a photo.",
+            "We have many chances to take photos.",
+            "We have many opportunities to take a picture.",
+            "We have many opportunities to take a photo.",
+            "We have many opportunities to take photos."
+          ],
+          "targets": [
+            [
+              "we",
+              "we've"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "chances to taking",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "We are have",
+              "hint": "have 가 이미 동사예요. are 와 함께 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "present-simple",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 5,
+            "where": "application 1) item 10",
+            "reviewWhere": "review 2) item 8 (p8)"
+          },
+          "fix": {
+            "from": "우리는 사진을 찍을 많은 기회가 있을 거야.",
+            "kind": "translation_mismatch",
+            "why": "영어는 현재(have)인데 한국어가 미래(있을 거야)여서 한국어를 현재로 맞춤"
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg01-1:t1",
+          "ko": "나는 한국인이다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am Korean.",
+          "accept": [
+            "I am a Korean.",
+            "I am a Korean person.",
+            "I'm Korean.",
+            "I'm a Korean.",
+            "I'm a Korean person."
+          ],
+          "targets": [
+            [
+              "i",
+              "i'm"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I is",
+              "hint": "주어가 I 일 때 be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-007#1",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg01-1:t2",
+          "ko": "우리는 학생들이었다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "We were students.",
+          "accept": [],
+          "targets": [
+            [
+              "we"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We was",
+              "hint": "We 는 여러 명이에요. 지난 일을 말하는 be동사 모양은?"
+            },
+            {
+              "match": "We were a student",
+              "hint": "We 는 여러 명이에요. student 의 모양은?"
+            }
+          ],
+          "tags": [
+            "pronoun-1st",
+            "be-past",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-009#5",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg01-1:f1",
+      "template": "My name is ___, and I live in ___.",
+      "ko": "나의 이름은 ___이고, 나는 ___에 산다."
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+[
+  {
+    "lesson": "pg05~pg08 (1권 TOPIC 5~8, 15레슨)",
+    "item": "작업 시작 상태",
+    "problem": "이끄는 세션의 목록에 있던 TOPIC 5~6 줄(③ pg06-1:s1·s5·s6 · pg06-2:s1~s6, ② 카드 pg05-1·pg05-2·pg05-3·pg06-1·pg06-3, koFix 3곳, pg05-2:t1, 예문 en 의 ' / ')은 이 작업 시작 때(09:10) 공용 검사 check-lessons.cjs 에 더는 나오지 않았음.",
+    "action": "kept",
+    "note": "앞 수정자(G4, 03:54 — 수정기록/G4.json)가 v1.3 규칙으로 이미 고친 것을 이 작업에서 다시 확인함(아래 kept 줄들). 시작 때 내 15레슨의 검사 줄은 22줄이었고 모두 TOPIC 7~8. 같은 AI 계열이 쓰고 같은 AI 계열이 확인한 것이라 독립 검수가 아님."
+  },
+  {
+    "lesson": "pg06-1 · pg06-2",
+    "item": "③ pg06-1:s1·s5·s6, pg06-2:s1~s6",
+    "problem": "③ 문장이 ④ 정답을 먼저 보여 줌(목록 1).",
+    "action": "kept",
+    "note": "G4 가 이미 reserve 로 돌리고 새 문항(pg06-1:s16, pg06-2:s15~s18)으로 채움. 확인: 본 문항 pg06-1 6개 · pg06-2 5개(4~6 안), 검사 줄 0."
+  },
+  {
+    "lesson": "pg05-1 · pg05-2 · pg05-3 · pg06-1 · pg06-3",
+    "item": "② 카드 worked · mistakes[].right (목록 1의 p14·p11·p8·p15·p10·p11·p18)",
+    "problem": "설명 카드가 ④ 정답을 먼저 보여 줌.",
+    "action": "kept",
+    "note": "G4 가 이미 새 예로 바꿈. 검사 줄 0 확인. 다만 pg05-1 은 3번 줄(points[2])에 'Does she understand …?'(p14 첫머리)가 남아 있어 따로 고침(아래)."
+  },
+  {
+    "lesson": "pg06-1 · pg06-2",
+    "item": "pg06-1:p8 · pg06-2:p15 · pg06-2:p18 koFix",
+    "problem": "koFix → fix.fromKo (목록 3).",
+    "action": "kept",
+    "note": "G4 가 이미 fix.fromKo 로 옮김(koFix 0). pg06-2:p18 의 fix 는 이번에 사실 고침과 함께 다시 씀(아래)."
+  },
+  {
+    "lesson": "pg05-2",
+    "item": "pg05-2:t1",
+    "problem": "⑤ 처음 보는 문장이 레슨 앞에 이미 나옴(목록 5).",
+    "action": "kept",
+    "note": "G4 가 이미 새 문장(Do your parents drink coffee? → No, they don't., source new)으로 바꿈. 레슨 어디에도(①~④ · 카드 · ③ 보기) 같은 글 없음을 이 작업의 검사(scratchpad bfix/leaks.cjs, 포함 비교)로도 확인. 이미 해결된 줄이라 GRAMMAR 문장으로 다시 바꾸지 않음."
+  },
+  {
+    "lesson": "pg05-3 · pg06-2",
+    "item": "예문 en 의 ' / ' (pg05-3:a2·a4·a6, pg06-2:a3·a6·a7)",
+    "problem": "소리 내는 영어에 ' / ' 로 낱말을 붙임(목록 6).",
+    "action": "kept",
+    "note": "G4 가 이미 두 문장 · 쉼표 목록으로 고침. 확인: 여섯 곳 en 에 '/' 없음."
+  },
+  {
+    "lesson": "pg05-3",
+    "item": "pg05-3:a2 · a4 · a6 promptEn",
+    "problem": "대답 예문에 무엇에 대한 대답인지(영어 질문)가 없음(목록 6).",
+    "action": "kept",
+    "note": "세 앵커 모두 이미 promptEn 이 있음(It is a long way, isn't it? · He likes candy, doesn't he? · He can't speak French, can he?). 한국어 칸도 pg05-2 처럼 괄호 속 질문을 가짐."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:a8 · pg06-2:p11 · 판정 TOPIC-05-06 p42 표 11행",
+    "problem": "교재 '단수=복수: deer, sheep, Chinese, Japanese' 를 '어색하다'며 예문에서 fish 로 바꿔, D6 과 어긋나고 -ese 국적 낱말이 단수 = 복수라는 문법 사실이 예문에서 사라짐(목록 6).",
+    "action": "fixed",
+    "note": "a8 · p11 을 교재 줄 그대로 'deer, sheep, Chinese, Japanese'(한국어 '사슴들 · 양들 · 중국인들 · 일본인들', p11 promptEn 'deer · sheep · Chinese · Japanese')로 되돌림. 쉼표 앞 빈칸만 다르므로 fix 는 뺌(p11 fix null). p11 목표형 deer · sheep · Chinese · Japanese, 오답 패턴 fishes 를 빼고 Chineses · Japaneses('-ese 로 끝나는 나라 사람 낱말은 단수와 복수의 모양이 같아요.')를 더함. 규칙 카드 표 11행(deer, sheep, fish, Chinese, Japanese)과 koDiff 의 쓰임 안내(사람은 보통 Chinese people)는 G4 가 되살린 그대로 둠. 판정 파일 p42 줄은 decision keep 으로 고쳐 이유를 적음. 채점 확인(실제 채점기): 'deer, sheep, Chinese, Japanese' 정답, 'Chineses, Japaneses' 오답 + 힌트."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "pg06-2:p18 (+ ③ s11 reserve · 판정 TOPIC-05-06 p45)",
+    "problem": "'In Saudi Arabia, one man can have many wives.' — 이슬람 법으로는 한 번에 네 명까지라 사실이 부정확(목록 6).",
+    "action": "fixed",
+    "note": "en 'In Saudi Arabia, one man can have up to four wives.', ko '사우디아라비아에서는 한 남자가 아내를 네 명까지 둘 수 있다.', accept 5개(a man · 문장 끝 in Saudi Arabia · as many as four), targets [[wives]] 그대로. 오답 패턴 'have many wives'('네 명까지'를 옮기라는 힌트, 정답을 말하지 않음)를 더함. fix {from 'In Saudi, one man can have many wives.', fromKo '사우디에서, 한 남자는 많은 아내를 가질 수 있다.', field en+ko, kind fact, why}. 예문 자체(여러 아내)는 D6 대로 유지. ③ s11(reserve, 명사 고르기)도 같은 문장으로 토큰을 맞춤(정답 Saudi Arabia · man · wives). 채점 확인: 새 모범 답 · 허용 답 정답, 옛 교재 문장 'In Saudi, one man can have many wives.' 오답('나라 이름' 힌트), 'many wives' 오답('네 명까지' 힌트). 소리: en 이 바뀌어 이 문장 클립은 새로 필요(이 과정은 아직 음성 단계 전이라 사라지는 클립 없음 — 저장소에 이 글의 클립 기록 없음 확인)."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "pg08-3:a1 · p1 studentRef (+ 판정 TOPIC-08 p59)",
+    "problem": "studentRef 는 지금 STUDENT 레슨 파일에 있는 문장에만 — 옛 middle 과정하고만 같으면 뺄 것(목록 6).",
+    "action": "kept",
+    "note": "content/lessons/student/s10-5.json 의 sentences 셋째 'I can reflect on things that did not go well and hopefully plan a better new week.'의 앞부분과 글자까지 같음(scratchpad bfix/studentrefs.cjs 대조 1.00) → middle 하고만 같은 문장이 아니므로 s10-5(adapted) 유지. 판정 파일 p59 줄의 '이끄는 세션이 고름'을 이 규칙과 확인 결과로 바꿔 적음. 같은 방법으로 내 15레슨의 studentRef 36곳을 모두 대조: 모두 지금 STUDENT 파일의 실제 문장을 가리킴(pg06-1:p8 → s18-1 은 'My country has many holidays.' + 명절 목록을 합친 느슨한 adapted 라 그대로 둠)."
+  },
+  {
+    "lesson": "pg07-1",
+    "item": "③ s2 → reserve, 새 s7",
+    "problem": "s2 문장이 ④ p5(A new machine has been used for our business.) 정답(검사 줄).",
+    "action": "fixed",
+    "note": "s2 reserve(목록 끝으로). 같은 기술(our = 소유격 가리기)을 새 문장 s7 'We cleaned our classroom after school.'로. 판정 TOPIC-07 p50 줄에 적고 appliedTo 에 s7 추가."
+  },
+  {
+    "lesson": "pg07-2",
+    "item": "③ s1 · s2 → reserve, 새 s7 · s8",
+    "problem": "s1 = ④ p5(It appeared that James …), s2 = ④ p6(Scientific advances make it possible …) 정답(검사 줄).",
+    "action": "fixed",
+    "note": "s7 가주어 'It is true that she has a twin sister.', s8 가목적어 'I found it hard to wake up early.'(보기 · 답 번호는 원래 문항과 같은 구성)."
+  },
+  {
+    "lesson": "pg07-2",
+    "item": "③ s5 → reserve, 새 s9 (검사가 못 보는 것)",
+    "problem": "s5 'It's a dog and ___ hair is gray.'는 ④ p4 문장에서 목표 낱말 its 만 빈칸으로 뺀 것 — 답하면 ④ 정답 전체를 먼저 보여 줌. 검사는 빈칸 때문에 '같은 문장'으로 못 봄.",
+    "action": "fixed",
+    "note": "s5 reserve, 새 s9 'The bird hurt ___ wing.'(its). 같은 까닭으로 아래 pg08-1:s3~s5 · pg08-2:s2 · s5 · pg08-3:s3 · pg08-4:s3 · s4 도 고침. 이끄는 세션께: check-lessons.cjs 가 ③ 빈칸을 정답(또는 보기)으로 채워 비교하면 이 종류를 기계로 잡을 수 있음(코드라 이 작업에서는 안 고침)."
+  },
+  {
+    "lesson": "pg07-2",
+    "item": "rule.mistakes[1] · rule.table[4] · rule.points[3]",
+    "problem": "mistakes[1].right = ④ p4 정답(검사 줄). 표 4행 예문이 ④ p6 정답 전체, 4번 줄 'make it possible to ~'가 p6 핵심(검사가 표 · 줄은 안 봄).",
+    "action": "fixed",
+    "note": "mistakes[1] → ✗ The company changed it's name. / ✓ The company changed its name. 표 4행 → 'The Internet makes it easy to find information.'(인터넷은 정보를 찾는 것을 쉽게 만든다). 4번 줄 → 'make it easy to ~'."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "③ s2 · s3 · s4 → reserve, 새 s7 · s8 · s9",
+    "problem": "s2 = ④ p9, s3 = ④ p13, s4 = ④ p8 정답(검사 줄).",
+    "action": "fixed",
+    "note": "s7 지시형용사 'I read this book last week.', s8 지시대명사 — 앵커 a8 'Those are caps that I put on yesterday.'(bookRef 는 a8 것), s9 의문부사 'Where do you live?'. 판정 TOPIC-07 p49(지시대명사) · p52(Where) 줄에 적고 appliedTo 에 s7 · s9 추가."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "rule.table[3] · table[4] · points[3]",
+    "problem": "표 3행 예문 'That is a cloud.'가 ④ p13 정답 전체, 표 4행 'During this time, …'과 3번 줄 'this time'이 p9 첫머리(검사가 못 보는 곳).",
+    "action": "fixed",
+    "note": "표 3행 → 앵커 a7 'That is the house I want to buy.', 표 4행 → 'this bag, that car / Whose book is this?', 3번 줄 → 'this bag, whose book'."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "pg07-3:p14 (gerund)",
+    "problem": "뒤 레슨 태그 [gerund] 인데 challenge 아님(검사 줄, 목록 2).",
+    "action": "fixed",
+    "note": "판정: 곁가지 → tags 에서 gerund 를 뺌. '듣기 싫어한다'는 'Those people don't like to listen to …'(like-to, base 태그)로 같은 뜻을 쓸 수 있고 허용 답에 있음(pg06-2:p21 'I don't like to take photos'를 '싫어한다'의 맞는 옮김으로 둔 판정과 같은 기준). challengeNote 에 까닭. 판정 TOPIC-07 p52 줄에 한 문장."
+  },
+  {
+    "lesson": "pg07-3",
+    "item": "pg07-3:p18 (modal-should-ought-used-better)",
+    "problem": "검사는 challenge=true 라 통과시키지만, 뒤 레슨 태그 should 가 challengeTags 에 없음(태그와 도전이 어긋남 — 같은 규칙으로 봄).",
+    "action": "fixed",
+    "note": "must be able to(기초)가 허용 답에 있어 should 태그를 뺌. 도전은 why 절(indirect-question)만 남음. challengeNote 에 까닭."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "pg07-4:p1 · p3 · p6 (modal-should… · present-perfect · infinitive)",
+    "problem": "뒤 레슨 태그인데 challenge 아님(검사 줄 3, 목록 2).",
+    "action": "fixed",
+    "note": "세 문항 모두 같은 뜻의 기초 문장이 허용 답에 있어 태그를 뺌(challengeNote 에 까닭): p1 One must · has to obey one's parents. / p3 Someone painted the floor.(칠했다 = 과거) / p6 There is no way out. 채점 확인: 세 기초 답 모두 정답. 판정 TOPIC-07 p49(One should) 줄에 한 문장."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "③ s4 → reserve, 새 s7",
+    "problem": "s4 = ④ p16(I have to do homework from both the academies and school.) 정답(검사 줄).",
+    "action": "fixed",
+    "note": "s7 'She speaks both English and Korean.'(짝 접속사 both A and B, 보기 · 답 같은 구성). 판정 TOPIC-07 p49(both) 줄에 적고 appliedTo 에 s7 추가."
+  },
+  {
+    "lesson": "pg07-4",
+    "item": "rule.table[4] · points[4] · ③ s5 보기",
+    "problem": "표 4행 끝 예문 'Anyone can come here.'가 ④ p4 정답 전체. 5번 줄 'all weekend, no way'가 p11 · p6 의 목표 덩어리. s5 오답 보기 'Both of them are wrong.'이 ④ p12 'Both of them are right.'와 한 낱말 차이(검사가 못 보는 곳).",
+    "action": "fixed",
+    "note": "표 4행 예문 → 'Anyone can use this computer.', 5번 줄 → 'each person, all day, no time', s5 보기 → 'All of them are wrong.'(why 도 맞춤)."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "③ s2 → reserve, 새 s7",
+    "problem": "s2 = ④ p2 정답(검사 줄).",
+    "action": "fixed",
+    "note": "s7 'The boy who sits next to me is funny.'(who = 주격)."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "③ s3 · s4 · s5 → reserve, 새 s8 · s9 · s10 (검사가 못 보는 것)",
+    "problem": "셋 모두 ④ p6 · p7 · p9 문장에서 관계대명사 하나만 빈칸으로 뺀 것 — 답하면 ④ 정답 전체가 보임.",
+    "action": "fixed",
+    "note": "s8 'I have a friend ___ dog is very big.'(whose), s9 'The girl ___ I met yesterday was very kind.'(whom), s10 short 'This is the teacher to ___ I spoke.'(whom). 본 문항 6개(s1 · s7 · s8 · s9 · s10 · s6)."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "rule.mistakes[1] · rule.table[3]",
+    "problem": "mistakes[1].right = ④ p6 정답(검사 줄). 표 3행 'the woman to whom he was talking'이 p9 의 대부분(검사가 못 보는 곳).",
+    "action": "fixed",
+    "note": "mistakes[1] → ✗ She is the singer who songs I like. / ✓ She is the singer whose songs I like. 표 3행 → 'the friend to whom I wrote'."
+  },
+  {
+    "lesson": "pg08-1",
+    "item": "pg08-1:p3 (passive)",
+    "problem": "뒤 레슨 태그 [passive] 인데 challenge 아님(검사 줄, 목록 2).",
+    "action": "fixed",
+    "note": "'The man who hurt himself in the accident is now in hospital.'(재귀대명사 — 앞 레슨 pg07-1)이 같은 뜻으로 허용 답에 있어 passive 태그를 뺌. challengeNote 에 까닭."
+  },
+  {
+    "lesson": "pg08-2",
+    "item": "pg08-2:p1 오답 패턴 'songpyeon which' (+ 판정 TOPIC-08 p58)",
+    "problem": "쉼표 하나만 다른 패턴 — 채점은 문장부호를 보지 않음(목록 4).",
+    "action": "fixed",
+    "note": "패턴을 뺌. 쉼표는 설명 카드가 이미 가르침: 3번 줄 '쉼표 + which 는 앞 말을 덧붙여 설명해요(계속적 용법): songpyeon, which is …' + 한국어와 다른 점 'songpyeon 뒤에 쉼표와 which'. 판정 p58 줄의 '쉼표 없는 답은 오답 힌트로' 문장을 이 방침으로 고침. 채점 확인: 쉼표 없는 답은 정답(설계대로), 'Korean traditional' 답은 오답 + 어순 힌트."
+  },
+  {
+    "lesson": "pg08-2",
+    "item": "rule.worked · mistakes[1] · table[3] · points[4]",
+    "problem": "worked 끝 줄 = ④ p2 정답(검사 줄). mistakes[1] 이 p2 에서 last night 만 뺀 문장, 표 3행 'the bed in which I slept'도 p2 덩어리, 5번 줄 'the food, most of which'가 p4 덩어리(검사가 못 보는 곳).",
+    "action": "fixed",
+    "note": "worked → '이것은 내가 (그것에 대해) 이야기했던 책이다. … This is the book which I talked about.', mistakes[1] → ✗ The chair which I sat on it was broken. / ✓ The chair which I sat on was broken., 표 3행 → 'the chair on which I sat', 5번 줄 → 'the cookies, most of which …'."
+  },
+  {
+    "lesson": "pg08-2",
+    "item": "③ s2 · s5 → reserve, 새 s7 · s8 (검사가 못 보는 것)",
+    "problem": "s2 = p2, s5 = p4 문장에서 which 만 빈칸으로 뺀 것.",
+    "action": "fixed",
+    "note": "s7 'The pen ___ I write with is blue.'(which), s8 short 'I have many books, most of ___ are old.'(which)."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "pg08-3:p2 · p9 (present-perfect · modal-should…) + p11(present-perfect)",
+    "problem": "p2 · p9 뒤 레슨 태그인데 challenge 아님(검사 줄, 목록 2). p11 은 challenge 인데 present-perfect 가 challengeTags 에 없음(같은 규칙).",
+    "action": "fixed",
+    "note": "p2 'Did you find the key that you lost?'(과거), p9 'He is not the man that he was.', p11 'that I planned'(과거)가 허용 답에 있어 세 태그를 뺌. p11 도전은 start thinking 의 gerund 만. challengeNote 에 까닭."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "rule.mistakes[0] · points[3] · table[0] · points[0]",
+    "problem": "mistakes[0].right = ④ p8 정답(검사 줄). 4번 줄 'someone who(that) wants you'가 p8 덩어리, 표 1행 'anyone that speaks French'와 1번 줄 'anyone that …'이 p6 덩어리(검사가 못 보는 곳).",
+    "action": "fixed",
+    "note": "mistakes[0] → ✗ I know a man speaks five languages. / ✓ I know a man who speaks five languages., 4번 줄 → 'a man who(that) speaks five languages', 표 1행 → 'a doctor that works at night', 1번 줄 → 'a doctor that … / things that …'."
+  },
+  {
+    "lesson": "pg08-3",
+    "item": "③ s3 · s4 → reserve, 새 s7 · s8 (검사가 못 보는 것)",
+    "problem": "s3 'Do you know anyone ___ speaks French or German?'은 보기(who · that)로 채우면 ④ p6 정답, s4 보기 'There is someone (who) wants you on the phone.'은 ④ p8 정답.",
+    "action": "fixed",
+    "note": "s7 'I have a friend ___ lives in Canada.'(들어갈 수 없는 것 whom), s8 보기 3개(앵커 a5 'He is the very man (that) I want to see.' · 'The girl (who) lives next door is my cousin.' · 'I have a cat (that) likes fish.', 정답 0). 판정 TOPIC-08 p60 줄에 적고 appliedTo 에 s8 · rule 추가."
+  },
+  {
+    "lesson": "pg08-4",
+    "item": "rule.worked · points[1] · table[0] · table[1] · points[4]",
+    "problem": "worked 끝 줄과 2번 줄이 ④ p5 정답(검사 줄). 표 1행 = ④ p7, 표 2행 = ④ p9 정답 전체, 5번 줄 'what money you have'가 p8 덩어리(검사가 못 보는 곳).",
+    "action": "fixed",
+    "note": "worked → '그녀가 요리한 것은 맛있었다. … What she cooked was delicious.', 2번 줄 → 'What he said was true.', 표 1행 → 'I like what you made.', 표 2행 → 'My town is not what it was.'(뜻 칸 '예전의 모습(~였던 것)' — p9 의 관용 틀을 다른 주어로 가르침), 5번 줄 → 'what books I have'."
+  },
+  {
+    "lesson": "pg08-4",
+    "item": "③ s1 · s3 · s4 → reserve, 새 s7 · s8 · s9",
+    "problem": "s1 정답 보기 = ④ p5(검사 줄 없음 — 보기라서), s3 = p6, s4 = p9 문장에서 what 만 빈칸으로 뺀 것.",
+    "action": "fixed",
+    "note": "s7 보기 'I believe what he told me.'(관계대명사 what) · 앵커 두 의문사 절, s8 'Thank you for ___ you did for me.'(what — 처음 쓴 'I can't believe ___ I saw.'는 that 도 억지로 말이 되어 바꿈), s9 short 'This is not ___ I ordered.'(what). 판정 TOPIC-08 p58(what) 줄에 적고 appliedTo 에 s7 추가."
+  },
+  {
+    "lesson": "pg08-4",
+    "item": "pg08-4:p6 (infinitive)",
+    "problem": "뒤 레슨 태그 [infinitive] 인데 challenge 아님(검사 줄, 목록 2).",
+    "action": "fixed",
+    "note": "'That's not what I meant.'(기초)이 같은 뜻으로 허용 답에 있어 태그를 뺌. challengeNote 에 까닭."
+  },
+  {
+    "lesson": "pg05-1",
+    "item": "rule.points[2]",
+    "problem": "3번 줄 '→ Does she understand …?'가 ④ p14 첫머리 — G4 가 표 · 풀이 예시는 바꿨지만 이 줄이 남음.",
+    "action": "fixed",
+    "note": "'→ Does she play …?'(G4 가 바꾼 표 3행 · 풀이 예시와 같은 예)."
+  },
+  {
+    "lesson": "pg05-1",
+    "item": "pg05-1:p22 (challenge it-dummy)",
+    "problem": "검사 줄은 없지만 목록 2와 같은 규칙에 어긋남: 'Is there a lot of snow in France?' · 'Does France get a lot of snow?'처럼 it 없이 같은 뜻의 기초 답이 허용 답에 있는데 도전으로 둠.",
+    "action": "fixed",
+    "note": "일관성을 위해 challenge false · challengeTags [] · tags 에서 it-dummy 를 뺌, challengeNote 에 까닭. 도전이 아니게 되어 기초 답이 더 중요해지므로 흔한 꼴 3개를 허용 답에 더함(Does France have a lot of snow? · Does France have much snow? · Is there much snow in France?). 채점 확인: 정답. 내 15레슨의 다른 도전 문항은 모두 기초 대안이 허용 답에 없어 그대로(pg07-3:p16 'was not involved' 는 수동 꼴이라 기초로 보지 않음)."
+  },
+  {
+    "lesson": "pg05-3",
+    "item": "rule.table rows 3~5",
+    "problem": "표 5행이 ④ p12 정답 전체(She didn't have dinner, | did she?), 4 · 6행이 p11 · p13 의 대부분(검사가 표는 안 봄).",
+    "action": "fixed",
+    "note": "4행 → You aren't tired, | are you? · 5행 → He didn't call you, | did he? · 6행 → She won't come, | will she? (be 부정 · 과거 부정 · will 부정 규칙은 그대로)."
+  },
+  {
+    "lesson": "pg05-4",
+    "item": "rule.table row 5",
+    "problem": "'Does he have faults? | Doesn't he have faults?'가 ④ p6 'Doesn't he have his faults?'와 한 낱말 차이.",
+    "action": "fixed",
+    "note": "→ 'Does he eat meat? | Doesn't he eat meat?'."
+  },
+  {
+    "lesson": "pg06-1",
+    "item": "rule.mistakes[0] · mistakes[1] · points[4]",
+    "problem": "mistakes[0].right 'He wants to eat some meat.'가 ④ p12 에서 Every day 만 뺀 문장, mistakes[1].right 'Give me a glass of water.'가 p11 에서 Will you 만 뺀 문장, 5번 줄 'a glass of water'가 p11 의 목표 덩어리 그대로.",
+    "action": "fixed",
+    "note": "mistakes[0] → ✗ She drinks a lot of milks. / ✓ She drinks a lot of milk., mistakes[1] → ✗ He ate two breads. / ✓ He ate two pieces of bread., 5번 줄 → 'a glass of milk, a piece of paper'. G4 의 풀이 예시 'Please give me a glass of milk.'는 다른 낱말의 나란한 예라 그대로 둠."
+  },
+  {
+    "lesson": "pg06-2",
+    "item": "rule.mistakes[0] · mistakes[1]",
+    "problem": "mistakes[0].right 'There were a lot of mice.'가 ④ p24 뒷절 그대로, mistakes[1].right 'He gathered the leaves.'가 p17 에서 of the tree 만 뺀 문장.",
+    "action": "fixed",
+    "note": "→ ✗ My cat caught two mouses. / ✓ My cat caught two mice., ✗ I need two knifes. / ✓ I need two knives.(why '-fe 로 끝나면 fe 를 v 로 바꾸고 -es')."
+  },
+  {
+    "lesson": "pg05-2 · pg05-3 · pg06-2",
+    "item": "짧은 대답 · 복수형 목록의 겹침",
+    "problem": "이 작업의 겹침 검사가 짧은 대답(No, he isn't. 등)과 복수형 목록(babies, flies, cities 등)이 카드 · ③ 에도 나온다고 알림.",
+    "action": "kept",
+    "note": "짧은 대답 꼴은 규칙 그 자체(표)라 피할 수 없고(G4 도 같은 판단), 복수형 목록은 앵커(①, 일부러 보여 주는 교재 Pass-Off 목록)에 이미 있는 낱말이라 그대로 둠."
+  },
+  {
+    "lesson": "pg05~pg08",
+    "item": "판정 파일 3개",
+    "problem": "reserve 로 돌린 문항 · 새 문항 · 되살린 교재 예문 · 사실 고침 · 뺀 오답 패턴 · studentRef 결론을 원문 대조 기록에 반영.",
+    "action": "fixed",
+    "note": "TOPIC-05-06: p42(Chinese · Japanese → keep, 이유 새로) · p45(Saudi → up to four). TOPIC-07: p49 지시대명사 · p52 Where · p50 New machine · p49 both — reserve 와 새 문항(appliedTo 추가), p52 Those hate · p49 One should — 태그 판정 한 문장. TOPIC-08: p58 Song-Pyun(쉼표는 카드로) · p60 someone (who)(s8 · rule) · p59 studentRef(keep 결론) · p58 what(s7)."
+  }
+]

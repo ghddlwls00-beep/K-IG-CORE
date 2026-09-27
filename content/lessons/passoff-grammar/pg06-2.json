@@ -1,0 +1,2151 @@
+{
+  "id": "pg06-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "명사의 복수형",
+  "label": "TOPIC 6. 명사",
+  "menuLabel": "6-2. 명사의 복수형",
+  "unit": 6,
+  "part": 1,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 명사의 복수형",
+  "grammarTags": [
+    "noun-plural-rules"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg06-2:a1",
+          "en": "books, cups, cats, pens",
+          "ko": "책들 · 컵들 · 고양이들 · 펜들",
+          "koSource": "new",
+          "focus": [
+            "cats"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 1)"
+          }
+        },
+        {
+          "id": "pg06-2:a2",
+          "en": "buses, boxes, buzzes, brushes, watches",
+          "ko": "버스들 · 상자들 · 윙윙 소리들 · 솔들 · 시계들",
+          "koSource": "new",
+          "focus": [
+            "buses",
+            "watches"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 2)"
+          },
+          "fix": {
+            "from": "-es : buzzes, buses, brushes, watches",
+            "kind": "grammar_explanation_wrong",
+            "why": "-x 로 끝나는 예(boxes)를 더했습니다(규칙 카드의 -es 조건과 맞춤)."
+          }
+        },
+        {
+          "id": "pg06-2:a3",
+          "en": "babies, flies, cities, days, boys",
+          "ko": "아기들 · 파리들 · 도시들 / 날들 · 소년들",
+          "koSource": "new",
+          "focus": [
+            "babies",
+            "boys"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table rows 3)·4)"
+          }
+        },
+        {
+          "id": "pg06-2:a4",
+          "en": "leaves, knives, wives",
+          "ko": "잎들 · 칼들 · 아내들",
+          "koSource": "new",
+          "focus": [
+            "leaves",
+            "knives"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 5)"
+          }
+        },
+        {
+          "id": "pg06-2:a5",
+          "en": "roofs, handkerchiefs, safes",
+          "ko": "지붕들 · 손수건들 · 금고들",
+          "koSource": "new",
+          "focus": [
+            "roofs",
+            "safes"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 6)"
+          },
+          "fix": {
+            "from": "roof : roofs , handkerchiefs, safes",
+            "kind": "grammar_explanation_wrong",
+            "why": "규칙 이름을 '-f · -fe 인데 -s 만 붙는 예외'로 고쳤습니다(규칙 카드 표)."
+          }
+        },
+        {
+          "id": "pg06-2:a6",
+          "en": "heroes, potatoes, volcanoes, pianos, photos",
+          "ko": "영웅들 · 감자들 · 화산들 / 피아노들 · 사진들",
+          "koSource": "new",
+          "focus": [
+            "potatoes",
+            "pianos"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table rows 7)·8)"
+          }
+        },
+        {
+          "id": "pg06-2:a7",
+          "en": "oxen, children, men, feet, teeth, mice",
+          "ko": "황소들 · 아이들 / 남자들 · 발들 · 치아들 · 쥐들",
+          "koSource": "new",
+          "focus": [
+            "children",
+            "feet",
+            "mice"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table rows 9)·10)"
+          }
+        },
+        {
+          "id": "pg06-2:a8",
+          "en": "deer, sheep, Chinese, Japanese",
+          "ko": "사슴들 · 양들 · 중국인들 · 일본인들",
+          "koSource": "new",
+          "focus": [
+            "sheep",
+            "Chinese",
+            "Japanese"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 11)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg06-2:a1",
+          "pg06-2:a3",
+          "pg06-2:a4"
+        ],
+        "question": "baby 는 babies 인데 boy 는 왜 boys 일까요?",
+        "options": [
+          "y 앞 글자가 자음이면 ies, 모음이면 s",
+          "낱말이 짧아서",
+          "사람을 뜻하는 낱말이라서"
+        ],
+        "answer": 0,
+        "why": "bab-y 는 b(자음) + y 라 babies, bo-y 는 o(모음) + y 라 -s 만 붙인 boys 입니다."
+      },
+      "title": "명사의 복수형: 기본은 -s, 끝 글자에 따라 모양이 바뀌어요",
+      "points": [
+        "대부분 -s: book → books, cat → cats",
+        "-s · -x · -z · -ch · -sh 로 끝나면 -es: bus → buses",
+        "자음 + y 는 y 를 i 로 바꾸고 -es: baby → babies (모음 + y 는 boys)",
+        "-f · -fe 는 -ves: leaf → leaves (예외: roofs · safes)",
+        "모양이 바뀌거나 같은 말: child → children, foot → feet, sheep → sheep"
+      ],
+      "table": {
+        "columns": [
+          "규칙",
+          "예"
+        ],
+        "rows": [
+          [
+            "-s",
+            "books, cups, cats, pens"
+          ],
+          [
+            "-s · -x · -z · -ch · -sh + es",
+            "buses, boxes, buzzes, brushes, watches"
+          ],
+          [
+            "자음 + y → ies",
+            "babies, flies, cities"
+          ],
+          [
+            "모음 + y → s",
+            "days, boys"
+          ],
+          [
+            "-f · -fe → ves",
+            "leaves, knives, wives"
+          ],
+          [
+            "예외: -f · -fe 인데 + s",
+            "roofs, handkerchiefs, safes"
+          ],
+          [
+            "o + es",
+            "heroes, potatoes, volcanoes"
+          ],
+          [
+            "o + s",
+            "pianos, photos"
+          ],
+          [
+            "+ en (child 는 + ren)",
+            "oxen, children"
+          ],
+          [
+            "모양이 바뀜",
+            "men, feet, teeth, mice"
+          ],
+          [
+            "단수 = 복수",
+            "deer, sheep, fish, Chinese, Japanese"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '책 세 권'처럼 '-들'을 안 붙여도 되지만, 영어는 둘 이상이면 반드시 복수형을 씁니다: three books. o 로 끝나는 말은 -es(potatoes)와 -s(pianos)가 섞여 있어 낱말마다 외워요. 나라 사람을 뜻하는 Chinese · Japanese 도 단수와 복수의 모양이 같아요(사람을 말할 때는 보통 Chinese people · a Japanese person 처럼 써요).",
+      "mistakes": [
+        {
+          "wrong": "My cat caught two mouses.",
+          "right": "My cat caught two mice.",
+          "why": "mouse 의 복수형은 mice 예요."
+        },
+        {
+          "wrong": "I need two knifes.",
+          "right": "I need two knives.",
+          "why": "-fe 로 끝나면 fe 를 v 로 바꾸고 -es 예요."
+        }
+      ],
+      "worked": [
+        "아기들 → baby",
+        "끝이 자음(b) + y",
+        "y 를 i 로 바꾸고 -es",
+        "babies"
+      ],
+      "terms": [],
+      "check": {
+        "question": "city 의 복수형은?",
+        "options": [
+          "citys",
+          "cities",
+          "cityes"
+        ],
+        "answer": 1,
+        "why": "city 는 자음(t) + y 라 y 를 i 로 바꾸고 -es 를 붙여요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg06-2:s7",
+          "kind": "choice",
+          "instruction": "sheep 의 복수형을 고르세요",
+          "sentence": null,
+          "options": [
+            "sheeps",
+            "sheep",
+            "sheepes"
+          ],
+          "answer": 1,
+          "why": "sheep 은 단수와 복수의 모양이 같아요(one sheep, two sheep).",
+          "source": "new"
+        },
+        {
+          "id": "pg06-2:s15",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Two",
+            "women",
+            "carried",
+            "three",
+            "boxes",
+            "to",
+            "the",
+            "bus",
+            "."
+          ],
+          "answer": [
+            1,
+            4,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "복수",
+            "단수"
+          ],
+          "why": "women 은 woman 의 모양이 바뀐 복수, boxes 는 -x 로 끝나 -es 를 붙인 복수, bus 는 하나(단수)예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg06-2:s16",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "My",
+            "brother",
+            "has",
+            "two",
+            "knives",
+            "and",
+            "a",
+            "watch",
+            "."
+          ],
+          "answer": [
+            1,
+            4,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "단수",
+            "복수",
+            "단수"
+          ],
+          "why": "brother 와 watch 는 하나(단수), knives 는 knife 의 fe 를 v 로 바꾸고 -es 를 붙인 복수예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg06-2:s17",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Every",
+            "city",
+            "has",
+            "its",
+            "own",
+            "heroes",
+            "."
+          ],
+          "answer": [
+            1,
+            5
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "단수",
+            "복수"
+          ],
+          "why": "city 는 하나(단수)이고, heroes 는 o 로 끝나 -es 를 붙인 복수예요(도시 여럿은 cities).",
+          "source": "new"
+        },
+        {
+          "id": "pg06-2:s18",
+          "kind": "choice",
+          "instruction": "mouse(쥐)의 복수형을 고르세요",
+          "sentence": null,
+          "options": [
+            "mouses",
+            "mice",
+            "mices"
+          ],
+          "answer": 1,
+          "why": "mouse 는 -s 를 붙이지 않고 모양이 바뀌어 mice 가 돼요(one mouse, two mice).",
+          "source": "new"
+        },
+        {
+          "id": "pg06-2:s1",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "There",
+            "are",
+            "books",
+            ",",
+            "cups",
+            ",",
+            "and",
+            "pens",
+            "on",
+            "the",
+            "table",
+            "."
+          ],
+          "answer": [
+            2,
+            4,
+            7,
+            10
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "복수",
+            "복수",
+            "단수"
+          ],
+          "why": "books · cups · pens 는 -s 를 붙인 복수, table 은 하나(단수)예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 14 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s2",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "He",
+            "gathered",
+            "the",
+            "leaves",
+            "of",
+            "the",
+            "tree",
+            "."
+          ],
+          "answer": [
+            3,
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "단수"
+          ],
+          "why": "leaves 는 leaf 의 f 를 v 로 바꾸고 -es 를 붙인 복수, tree 는 단수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 19 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s3",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "His",
+            "farm",
+            "has",
+            "many",
+            "oxen",
+            "."
+          ],
+          "answer": [
+            1,
+            4
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "단수",
+            "복수"
+          ],
+          "why": "farm 은 단수, oxen 은 ox 에 -en 을 붙인 복수예요. 책은 oxen 만 굵게 표시했지만 farm 도 명사입니다.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 24 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s4",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Can",
+            "you",
+            "touch",
+            "your",
+            "feet",
+            "with",
+            "your",
+            "hands",
+            "?"
+          ],
+          "answer": [
+            4,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "복수"
+          ],
+          "why": "feet 은 foot 의 모양이 바뀐 복수, hands 는 -s 를 붙인 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 25 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s5",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "At first",
+            ",",
+            "there",
+            "was",
+            "only",
+            "one",
+            "mouse",
+            "and",
+            "two",
+            "months",
+            "later",
+            ",",
+            "there",
+            "were",
+            "a lot of",
+            "mice",
+            "in",
+            "that",
+            "restaurant",
+            "."
+          ],
+          "answer": [
+            6,
+            9,
+            15,
+            18
+          ],
+          "optional": [
+            0,
+            14
+          ],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "단수",
+            "복수",
+            "복수",
+            "단수"
+          ],
+          "why": "mouse 는 단수, months 는 -s 복수, mice 는 mouse 의 모양이 바뀐 복수, restaurant 는 단수예요. At first · a lot of 는 덩어리 표현이라 골라도 틀리지 않아요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 26 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s6",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "She",
+            "has",
+            "three",
+            "luxurious",
+            "watches",
+            "with",
+            "gems",
+            "."
+          ],
+          "answer": [
+            4,
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "복수"
+          ],
+          "why": "watches 는 -ch 로 끝나 -es, gems 는 -s 를 붙인 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 16 (명사에 동그라미)"
+          },
+          "fix": {
+            "from": "She has three luxurious watches with gem.",
+            "kind": "english_grammar",
+            "why": "영작 문항(고친 문장)과 같은 문장으로 맞췄습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s8",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Here",
+            "come",
+            "two",
+            "buses",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수"
+          ],
+          "why": "buses 는 -s 로 끝나는 bus 에 -es 를 붙인 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 15 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s9",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "There",
+            "are",
+            "five",
+            "babies",
+            "in",
+            "his",
+            "home",
+            "."
+          ],
+          "answer": [
+            3,
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "단수"
+          ],
+          "why": "babies 는 자음 + y 라 y 를 i 로 바꾸고 -es, home 은 단수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 17 (명사에 동그라미)"
+          },
+          "fix": {
+            "from": "He has five babies in his home.",
+            "kind": "english_unnatural",
+            "why": "영작 문항(고친 문장)과 같은 문장으로 맞췄습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s10",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Boys",
+            ",",
+            "be",
+            "ambitious",
+            "!"
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수"
+          ],
+          "why": "Boys 는 모음 + y 라 -s 만 붙인 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 18 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s11",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "In",
+            "Saudi Arabia",
+            ",",
+            "one",
+            "man",
+            "can",
+            "have",
+            "up",
+            "to",
+            "four",
+            "wives",
+            "."
+          ],
+          "answer": [
+            1,
+            4,
+            10
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "단수",
+            "단수",
+            "복수"
+          ],
+          "why": "Saudi Arabia 와 man 은 단수, wives 는 wife 의 fe 를 v 로 바꾼 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 20 (명사에 동그라미)"
+          },
+          "fix": {
+            "from": "In Saudi, one man can have many wives.",
+            "kind": "fact",
+            "why": "영작 문항(고친 문장 — 나라 이름 Saudi Arabia · 아내는 네 명까지)과 같은 문장으로 맞췄습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s12",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Don't",
+            "worry",
+            "!",
+            "Our",
+            "company",
+            "has",
+            "excellent",
+            "safes",
+            "."
+          ],
+          "answer": [
+            4,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "단수",
+            "복수"
+          ],
+          "why": "company 는 단수, safes 는 -fe 로 끝나도 -s 만 붙이는 예외예요. worry 는 여기서 동사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 21 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s13",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "Are",
+            "they",
+            "heroes",
+            "?",
+            "Or",
+            "just",
+            "liars",
+            "?"
+          ],
+          "answer": [
+            2,
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수",
+            "복수"
+          ],
+          "why": "heroes 는 o + es, liars 는 -s 를 붙인 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 22 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-2:s14",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 단수인지 복수인지 고르세요",
+          "tokens": [
+            "I",
+            "don't",
+            "like",
+            "to",
+            "take",
+            "photos",
+            "."
+          ],
+          "answer": [
+            5
+          ],
+          "optional": [],
+          "labels": [
+            "단수",
+            "복수"
+          ],
+          "labelAnswer": [
+            "복수"
+          ],
+          "why": "photos 는 o 로 끝나도 -s 만 붙이는 복수예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 23 (명사에 동그라미)"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg06-2:p1",
+          "ko": "책들 · 컵들 · 고양이들 · 펜들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "book · cup · cat · pen",
+          "en": "books, cups, cats, pens",
+          "accept": [
+            "books cups cats pens"
+          ],
+          "targets": [
+            [
+              "books"
+            ],
+            [
+              "cups"
+            ],
+            [
+              "cats"
+            ],
+            [
+              "pens"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "bookes",
+              "hint": "대부분의 명사는 -s 만 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 1)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p2",
+          "ko": "버스들 · 상자들 · 윙윙 소리들 · 솔들 · 시계들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "bus · box · buzz · brush · watch",
+          "en": "buses, boxes, buzzes, brushes, watches",
+          "accept": [
+            "buses boxes buzzes brushes watches"
+          ],
+          "targets": [
+            [
+              "buses"
+            ],
+            [
+              "boxes"
+            ],
+            [
+              "buzzes"
+            ],
+            [
+              "brushes"
+            ],
+            [
+              "watches"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "boxs",
+              "hint": "-x 로 끝나면 -es 를 붙여요."
+            },
+            {
+              "match": "watchs",
+              "hint": "-ch 로 끝나면 -es 를 붙여요."
+            },
+            {
+              "match": "brushs",
+              "hint": "-sh 로 끝나면 -es 를 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 2)"
+          },
+          "fix": {
+            "from": "-es : buzzes, buses, brushes, watches",
+            "kind": "grammar_explanation_wrong",
+            "why": "-es 를 붙이는 조건(-s · -x · -z · -ch · -sh)을 보이려고 box 를 더했습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p3",
+          "ko": "아기들 · 파리들 · 도시들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "baby · fly · city",
+          "en": "babies, flies, cities",
+          "accept": [
+            "babies flies cities"
+          ],
+          "targets": [
+            [
+              "babies"
+            ],
+            [
+              "flies"
+            ],
+            [
+              "cities"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "babys",
+              "hint": "자음 + y 는 y 를 i 로 바꾸고 -es 예요."
+            },
+            {
+              "match": "flys",
+              "hint": "자음 + y 는 y 를 i 로 바꾸고 -es 예요."
+            },
+            {
+              "match": "citys",
+              "hint": "자음 + y 는 y 를 i 로 바꾸고 -es 예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 3)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p4",
+          "ko": "날들 · 소년들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "day · boy",
+          "en": "days, boys",
+          "accept": [
+            "days boys"
+          ],
+          "targets": [
+            [
+              "days"
+            ],
+            [
+              "boys"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "daies",
+              "hint": "모음 + y 는 -s 만 붙여요."
+            },
+            {
+              "match": "boies",
+              "hint": "모음 + y 는 -s 만 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 4)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p5",
+          "ko": "잎들 · 칼들 · 아내들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "leaf · knife · wife",
+          "en": "leaves, knives, wives",
+          "accept": [
+            "leaves knives wives"
+          ],
+          "targets": [
+            [
+              "leaves"
+            ],
+            [
+              "knives"
+            ],
+            [
+              "wives"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "leafs",
+              "hint": "-f 는 v 로 바꾸고 -es 예요."
+            },
+            {
+              "match": "knifes",
+              "hint": "-fe 는 v 로 바꾸고 -es 예요."
+            },
+            {
+              "match": "wifes",
+              "hint": "-fe 는 v 로 바꾸고 -es 예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 5)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p6",
+          "ko": "지붕들 · 손수건들 · 금고들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "roof · handkerchief · safe",
+          "en": "roofs, handkerchiefs, safes",
+          "accept": [
+            "roofs handkerchiefs safes"
+          ],
+          "targets": [
+            [
+              "roofs"
+            ],
+            [
+              "handkerchiefs"
+            ],
+            [
+              "safes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "rooves",
+              "hint": "roof 는 -s 만 붙이는 예외예요."
+            },
+            {
+              "match": "handkerchieves",
+              "hint": "handkerchief 는 -s 만 붙이는 예외예요."
+            },
+            {
+              "match": "saves",
+              "hint": "safe 는 -s 만 붙이는 예외예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 6)"
+          },
+          "fix": {
+            "from": "roof : roofs , handkerchiefs, safes",
+            "kind": "grammar_explanation_wrong",
+            "why": "규칙 이름 자리에 roof 만 있어 '-f · -fe 인데 -s 만 붙는 예외'로 이름을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p7",
+          "ko": "영웅들 · 감자들 · 화산들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "hero · potato · volcano",
+          "en": "heroes, potatoes, volcanoes",
+          "accept": [
+            "heroes potatoes volcanoes",
+            "heroes, potatoes, volcanos",
+            "heroes potatoes volcanos"
+          ],
+          "targets": [
+            [
+              "heroes"
+            ],
+            [
+              "potatoes"
+            ],
+            [
+              "volcanoes",
+              "volcanos"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "heros",
+              "hint": "hero 는 -es 를 붙여요."
+            },
+            {
+              "match": "potatos",
+              "hint": "potato 는 -es 를 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 7)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p8",
+          "ko": "피아노들 · 사진들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "piano · photo",
+          "en": "pianos, photos",
+          "accept": [
+            "pianos photos"
+          ],
+          "targets": [
+            [
+              "pianos"
+            ],
+            [
+              "photos"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "pianoes",
+              "hint": "piano 는 -s 만 붙여요."
+            },
+            {
+              "match": "photoes",
+              "hint": "photo 는 -s 만 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 8)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p9",
+          "ko": "황소들 · 아이들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "ox · child",
+          "en": "oxen, children",
+          "accept": [
+            "oxen children"
+          ],
+          "targets": [
+            [
+              "oxen"
+            ],
+            [
+              "children"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "oxes",
+              "hint": "ox 는 -es 가 아니라 -en 을 붙여요."
+            },
+            {
+              "match": "childs",
+              "hint": "child 는 -s 대신 -ren 을 붙여요."
+            },
+            {
+              "match": "childrens",
+              "hint": "children 은 이미 복수라 -s 를 더 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 9)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p10",
+          "ko": "남자들 · 발들 · 치아들 · 쥐들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "man · foot · tooth · mouse",
+          "en": "men, feet, teeth, mice",
+          "accept": [
+            "men feet teeth mice"
+          ],
+          "targets": [
+            [
+              "men"
+            ],
+            [
+              "feet"
+            ],
+            [
+              "teeth"
+            ],
+            [
+              "mice"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "mans",
+              "hint": "man 은 -s 를 붙이지 않고 모음이 바뀌어요."
+            },
+            {
+              "match": "foots",
+              "hint": "foot 은 -s 를 붙이지 않고 모음이 바뀌어요."
+            },
+            {
+              "match": "mouses",
+              "hint": "mouse 는 -s 를 붙이지 않고 모양이 바뀌어요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 10)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p11",
+          "ko": "사슴들 · 양들 · 중국인들 · 일본인들",
+          "koSource": "new",
+          "condition": "복수형으로",
+          "promptEn": "deer · sheep · Chinese · Japanese",
+          "en": "deer, sheep, Chinese, Japanese",
+          "accept": [
+            "deer sheep Chinese Japanese"
+          ],
+          "targets": [
+            [
+              "deer"
+            ],
+            [
+              "sheep"
+            ],
+            [
+              "Chinese"
+            ],
+            [
+              "Japanese"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sheeps",
+              "hint": "sheep 은 단수와 복수의 모양이 같아요."
+            },
+            {
+              "match": "deers",
+              "hint": "deer 는 단수와 복수의 모양이 같아요."
+            },
+            {
+              "match": "Chineses",
+              "hint": "-ese 로 끝나는 나라 사람 낱말은 단수와 복수의 모양이 같아요."
+            },
+            {
+              "match": "Japaneses",
+              "hint": "-ese 로 끝나는 나라 사람 낱말은 단수와 복수의 모양이 같아요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (2) table row 11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p12",
+          "ko": "책, 컵, 그리고 펜이 탁자 위에 있다.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "There are books, cups, and pens on the table.",
+          "accept": [
+            "There are books, cups and pens on the table.",
+            "Books, cups, and pens are on the table.",
+            "Books, cups and pens are on the table."
+          ],
+          "targets": [
+            [
+              "books"
+            ],
+            [
+              "cups"
+            ],
+            [
+              "pens"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "There is books",
+              "hint": "여러 개(books · cups · pens)라 There are 예요."
+            },
+            {
+              "match": "on the desk",
+              "hint": "'탁자'는 table 이에요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 1",
+            "reviewWhere": "review 1 item 14"
+          },
+          "fix": {
+            "from": "책, 컵 그리고 펜이 책상 위에 있다.",
+            "kind": "translation_mismatch",
+            "why": "영어가 table(탁자)이라 한국어도 '탁자'로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p13",
+          "ko": "두 대의 버스가 온다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Here come two buses.",
+          "accept": [
+            "Two buses are coming."
+          ],
+          "targets": [
+            [
+              "buses"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "buss",
+              "hint": "-s 로 끝나면 -es 를 붙여요."
+            },
+            {
+              "match": "Here comes two",
+              "hint": "주어는 뒤에 오는 '두 대의 버스'(복수)예요. 동사를 복수 주어에 맞춰 보세요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 2",
+            "reviewWhere": "review 1 item 15"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p14",
+          "ko": "그녀는 보석이 박힌 화려한 시계가 세 개 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "She has three luxurious watches with gems.",
+          "accept": [
+            "She has three luxurious watches with jewels.",
+            "She has three fancy watches with gems.",
+            "She has three luxurious jeweled watches.",
+            "She has three luxurious jewelled watches.",
+            "She has three luxurious watches set with gems.",
+            "She has three luxurious watches set with jewels.",
+            "She has three fancy watches with jewels.",
+            "She has three fancy watches set with gems.",
+            "She has three fancy watches set with jewels.",
+            "She has three fancy jeweled watches.",
+            "She has three fancy jewelled watches."
+          ],
+          "targets": [
+            [
+              "watches"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "watchs",
+              "hint": "-ch 로 끝나면 -es 를 붙여요."
+            },
+            {
+              "match": "luxurious watch with",
+              "hint": "시계가 세 개라 복수형으로 써요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 3",
+            "reviewWhere": "review 1 item 16"
+          },
+          "fix": {
+            "from": "She has three luxurious watches with gem.",
+            "kind": "english_grammar",
+            "why": "gem 은 셀 수 있는 명사라 관사 없는 단수로 쓸 수 없어 gems 로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p15",
+          "ko": "그의 집에는 아기가 다섯 명 있다.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "There are five babies in his home.",
+          "accept": [
+            "He has five babies in his home.",
+            "There are five babies in his house."
+          ],
+          "targets": [
+            [
+              "babies"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "babys",
+              "hint": "자음 + y 는 y 를 i 로 바꾸고 -es 를 붙여요."
+            },
+            {
+              "match": "There is five",
+              "hint": "다섯 명(복수)이라 There are 예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 4",
+            "reviewWhere": "review 1 item 17"
+          },
+          "fix": {
+            "from": "He has five babies in his home.",
+            "fromKo": "그는 그의 집에 다섯 명의 아기가 있다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "'He has five babies in his home.'은 어색해 There are … 로 바꿨고(원문도 정답으로 인정), 한국어도 그에 맞춰 '그의 집에는 아기가 다섯 명 있다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p16",
+          "ko": "소년들이여, 야망을 가져라.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Boys, be ambitious!",
+          "accept": [],
+          "targets": [
+            [
+              "Boys"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Boy, be",
+              "hint": "'소년들'은 여럿이라 복수형으로 써요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "imperative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 5",
+            "reviewWhere": "review 1 item 18"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p17",
+          "ko": "그는 나무의 이파리들을 모았다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "He gathered the leaves of the tree.",
+          "accept": [
+            "He gathered the leaves from the tree.",
+            "He collected the leaves of the tree.",
+            "He collected the leaves from the tree."
+          ],
+          "targets": [
+            [
+              "leaves"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "leafs",
+              "hint": "-f 로 끝나면 f 를 v 로 바꾸고 -es 를 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 6",
+            "reviewWhere": "review 1 item 19"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p18",
+          "ko": "사우디아라비아에서는 한 남자가 아내를 네 명까지 둘 수 있다.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "In Saudi Arabia, one man can have up to four wives.",
+          "accept": [
+            "In Saudi Arabia, a man can have up to four wives.",
+            "One man can have up to four wives in Saudi Arabia.",
+            "A man can have up to four wives in Saudi Arabia.",
+            "In Saudi Arabia, one man can have as many as four wives.",
+            "In Saudi Arabia, a man can have as many as four wives."
+          ],
+          "targets": [
+            [
+              "wives"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "wifes",
+              "hint": "-fe 로 끝나면 fe 를 v 로 바꾸고 -es 를 붙여요."
+            },
+            {
+              "match": "Saudi one",
+              "hint": "나라 이름을 줄이지 않고 끝까지 써 보세요(사우디아라비아)."
+            },
+            {
+              "match": "have many wives",
+              "hint": "'네 명까지'를 옮겨 보세요. '최대 ~까지'를 나타내는 말이 필요해요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 7",
+            "reviewWhere": "review 1 item 20"
+          },
+          "fix": {
+            "from": "In Saudi, one man can have many wives.",
+            "fromKo": "사우디에서, 한 남자는 많은 아내를 가질 수 있다.",
+            "field": "en+ko",
+            "kind": "fact",
+            "why": "나라 이름을 Saudi Arabia(사우디아라비아)로 쓰고, 사실을 바로잡았습니다: 이슬람 법으로 한 남자가 둘 수 있는 아내는 한 번에 네 명까지라 many 가 아니라 up to four(네 명까지)입니다. 예문 내용(여러 아내) 자체는 사장님 결정 D6(민감한 예문은 원본 그대로)에 따라 그대로 둡니다."
+          }
+        },
+        {
+          "id": "pg06-2:p19",
+          "ko": "걱정하지 마! 우리 회사에는 훌륭한 금고들이 있어.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "Don't worry! Our company has excellent safes.",
+          "accept": [
+            "Don't worry. Our company has excellent safes.",
+            "Do not worry! Our company has excellent safes.",
+            "Do not worry. Our company has excellent safes."
+          ],
+          "targets": [
+            [
+              "safes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "saves",
+              "hint": "safe 는 -fe 로 끝나도 -s 만 붙이는 예외예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "imperative",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 8",
+            "reviewWhere": "review 1 item 21"
+          },
+          "fix": {
+            "from": "걱정하지마! 우리 회사는 훌륭한 금고들이 있어.",
+            "kind": "korean_typo",
+            "why": "'걱정하지 마'를 띄어 쓰고 '우리 회사에는 … 있어'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p20",
+          "ko": "그들은 영웅들인가, 아니면 그저 거짓말쟁이들인가?",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are they heroes? Or just liars?",
+          "accept": [
+            "Are they heroes, or just liars?",
+            "Are they heroes or just liars?",
+            "Are they heroes? Or are they just liars?",
+            "Are they heroes, or are they just liars?"
+          ],
+          "targets": [
+            [
+              "heroes"
+            ],
+            [
+              "liars"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "heros",
+              "hint": "hero 는 -es 를 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "question-yes-no"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 9",
+            "reviewWhere": "review 1 item 22"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p21",
+          "ko": "나는 사진 찍기를 싫어한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I don't like to take photos.",
+          "accept": [
+            "I don't like taking photos.",
+            "I do not like to take photos.",
+            "I do not like taking photos.",
+            "I don't like to take pictures.",
+            "I don't like taking pictures.",
+            "I dislike taking photos.",
+            "I hate taking photos.",
+            "I hate taking pictures.",
+            "I hate to take photos.",
+            "I hate to take pictures.",
+            "I dislike taking pictures."
+          ],
+          "targets": [
+            [
+              "photos",
+              "pictures"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "photoes",
+              "hint": "photo 는 -s 만 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "like-to",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 10",
+            "reviewWhere": "review 1 item 23"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p22",
+          "ko": "그의 농장에는 많은 황소들이 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "His farm has many oxen.",
+          "accept": [
+            "There are many oxen on his farm.",
+            "His farm has a lot of oxen.",
+            "There are a lot of oxen on his farm."
+          ],
+          "targets": [
+            [
+              "oxen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "oxes",
+              "hint": "ox 는 -es 가 아니라 -en 을 붙여요."
+            },
+            {
+              "match": "oxens",
+              "hint": "oxen 은 이미 복수예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 11",
+            "reviewWhere": "review 1 item 24"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-2:p23",
+          "ko": "너는 손으로 발을 만질 수 있니?",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "Can you touch your feet with your hands?",
+          "accept": [
+            "Are you able to touch your feet with your hands?"
+          ],
+          "targets": [
+            [
+              "feet"
+            ],
+            [
+              "hands"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "foots",
+              "hint": "foot 은 -s 를 붙이지 않고 모음이 바뀌어요."
+            },
+            {
+              "match": "your foot",
+              "hint": "두 발이라 복수형으로 써요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "can-basic",
+            "question-yes-no"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 12",
+            "reviewWhere": "review 1 item 25"
+          },
+          "fix": {
+            "from": "너는 손으로 발을 잡을 수 있니?",
+            "kind": "translation_mismatch",
+            "why": "영어가 touch(만지다 · 닿다)라 '만질'로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg06-2:p24",
+          "ko": "처음에는, 단지 한 마리의 쥐만 있었는데, 두 달 후에, 저 식당에는 많은 쥐들이 있게 되었어.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "At first, there was only one mouse and two months later, there were a lot of mice in that restaurant.",
+          "accept": [
+            "At first, there was only one mouse and two months later, there were many mice in that restaurant.",
+            "At first, there was only one mouse and two months later, there were lots of mice in that restaurant.",
+            "At first, there was only one mouse and two months later there were a lot of mice in that restaurant.",
+            "At first, there was only one mouse and two months later there were many mice in that restaurant.",
+            "At first, there was only one mouse and two months later there were lots of mice in that restaurant.",
+            "At first, there was only one mouse, and two months later, there were a lot of mice in that restaurant.",
+            "At first, there was only one mouse, and two months later, there were many mice in that restaurant.",
+            "At first, there was only one mouse, and two months later, there were lots of mice in that restaurant.",
+            "At first, there was only one mouse, and two months later there were a lot of mice in that restaurant.",
+            "At first, there was only one mouse, and two months later there were many mice in that restaurant.",
+            "At first, there was only one mouse, and two months later there were lots of mice in that restaurant.",
+            "At first there was only one mouse and two months later, there were a lot of mice in that restaurant.",
+            "At first there was only one mouse and two months later, there were many mice in that restaurant.",
+            "At first there was only one mouse and two months later, there were lots of mice in that restaurant.",
+            "At first there was only one mouse and two months later there were a lot of mice in that restaurant.",
+            "At first there was only one mouse and two months later there were many mice in that restaurant.",
+            "At first there was only one mouse and two months later there were lots of mice in that restaurant.",
+            "At first there was only one mouse, and two months later, there were a lot of mice in that restaurant.",
+            "At first there was only one mouse, and two months later, there were many mice in that restaurant.",
+            "At first there was only one mouse, and two months later, there were lots of mice in that restaurant.",
+            "At first there was only one mouse, and two months later there were a lot of mice in that restaurant.",
+            "At first there was only one mouse, and two months later there were many mice in that restaurant.",
+            "At first there was only one mouse, and two months later there were lots of mice in that restaurant.",
+            "At first, there was only one mouse, but two months later, there were a lot of mice in that restaurant.",
+            "At first, there was just one mouse, but two months later, there were a lot of mice in that restaurant.",
+            "At first, there was just one mouse and two months later, there were a lot of mice in that restaurant.",
+            "At first, there was only one mouse, but two months later, there were a lot of mice in the restaurant.",
+            "At first, there was only one mouse and two months later, there were a lot of mice in the restaurant.",
+            "At first, there was only one mouse, but two months later, there were many mice in that restaurant.",
+            "At first, there was just one mouse, but two months later, there were many mice in that restaurant.",
+            "At first, there was just one mouse and two months later, there were many mice in that restaurant.",
+            "At first, there was only one mouse, but two months later, there were many mice in the restaurant.",
+            "At first, there was only one mouse and two months later, there were many mice in the restaurant.",
+            "At first, there was only one mouse, but two months later, there were lots of mice in that restaurant.",
+            "At first, there was just one mouse, but two months later, there were lots of mice in that restaurant.",
+            "At first, there was just one mouse and two months later, there were lots of mice in that restaurant.",
+            "At first, there was only one mouse, but two months later, there were lots of mice in the restaurant.",
+            "At first, there was only one mouse and two months later, there were lots of mice in the restaurant."
+          ],
+          "targets": [
+            [
+              "mouse"
+            ],
+            [
+              "mice"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "mouses",
+              "hint": "mouse 는 -s 를 붙이지 않고 모양이 바뀌어요."
+            },
+            {
+              "match": "one mice",
+              "hint": "한 마리는 단수형으로 써요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "there-be",
+            "be-past",
+            "compound-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 45,
+            "where": "application (2)[추론] item 13",
+            "reviewWhere": "review 1 item 26"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg06-2:t1",
+          "ko": "너의 아이들은 건강했니?",
+          "koSource": "grammar",
+          "condition": null,
+          "promptEn": null,
+          "en": "Were your children healthy?",
+          "accept": [
+            "Were your children well?",
+            "Were your kids healthy?",
+            "Were your kids well?",
+            "Were your children in good health?"
+          ],
+          "targets": [
+            [
+              "children",
+              "kids"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "childs",
+              "hint": "child 는 -s 대신 -ren 을 붙여요."
+            },
+            {
+              "match": "childrens",
+              "hint": "children 은 이미 복수예요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "question-yes-no",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-063#23",
+          "fix": null
+        },
+        {
+          "id": "pg06-2:t2",
+          "ko": "그는 일주일에 얼마나 많은 영어 수업이 있나?",
+          "koSource": "grammar",
+          "condition": null,
+          "promptEn": null,
+          "en": "How many English classes does he have a week?",
+          "accept": [
+            "How many English classes does he have per week?",
+            "How many English classes does he have every week?",
+            "How many English classes does he have in a week?",
+            "How many English lessons does he have a week?"
+          ],
+          "targets": [
+            [
+              "classes",
+              "lessons"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "classs",
+              "hint": "-ss 로 끝나면 -es 를 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-plural-rules",
+            "question-wh",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-109#45",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg06-2:f1",
+      "template": "There are many ___ in my room.",
+      "ko": "내 방에는 ___이(가) 많이 있다."
+    }
+  ]
+}

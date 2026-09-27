@@ -25,7 +25,12 @@
           "where": "passOff 1) item 1",
           "reviewWhere": "review 1) item 1 (p7)"
         },
-        "paidStudent": true
+        "paidStudent": true,
+        "fix": {
+          "from": "나는 좋은 가족이 있습니다.",
+          "kind": "student_version",
+          "why": "STUDENT 2-2 와 글자까지 같은 문장이라 한국어도 STUDENT 판"
+        }
       }
     },
     {
@@ -87,7 +92,7 @@
           "3인칭"
         ],
         "labelAnswer": [
-          0
+          "1인칭"
         ],
         "why": "I 는 말하는 나 자신 → 1인칭(단수)",
         "bookRef": {
@@ -127,7 +132,7 @@
           "3인칭"
         ],
         "labelAnswer": [
-          0
+          "1인칭"
         ],
         "why": "We 는 나를 포함한 우리 → 1인칭(복수)",
         "bookRef": {
@@ -186,7 +191,11 @@
           "where": "application 1) item 1",
           "reviewWhere": "review 1) item 1 (p7)"
         },
-        "fix": null
+        "fix": {
+          "from": "나는 좋은 가족이 있습니다.",
+          "kind": "student_version",
+          "why": "STUDENT 2-2 와 글자까지 같은 문장이라 한국어도 STUDENT 판"
+        }
       }
     },
     {
@@ -366,7 +375,32 @@
           "I sometimes watch TV or listen to music before bed.",
           "Before I go to bed, I sometimes watch TV or listen to music.",
           "Before I go to bed, sometimes I watch TV or listen to music.",
-          "Sometimes I watch television or listen to music before I go to bed."
+          "Sometimes I watch television or listen to music before I go to bed.",
+          "Sometimes I watch TV or listen to music before I go to sleep.",
+          "Sometimes I watch TV or listen to music before I fall asleep.",
+          "Sometimes I watch TV or listen to music before going to sleep.",
+          "Sometimes I watch TV or listen to music before sleeping.",
+          "Sometimes, I watch TV or listen to music before bed.",
+          "Sometimes, I watch TV or listen to music before going to bed.",
+          "Sometimes, I watch TV or listen to music before I sleep.",
+          "Sometimes, I watch TV or listen to music before I go to sleep.",
+          "Sometimes, I watch TV or listen to music before I fall asleep.",
+          "Sometimes, I watch TV or listen to music before going to sleep.",
+          "Sometimes, I watch TV or listen to music before sleeping.",
+          "I sometimes watch TV or listen to music before going to bed.",
+          "I sometimes watch TV or listen to music before I sleep.",
+          "I sometimes watch TV or listen to music before I go to sleep.",
+          "I sometimes watch TV or listen to music before I fall asleep.",
+          "I sometimes watch TV or listen to music before going to sleep.",
+          "I sometimes watch TV or listen to music before sleeping.",
+          "Before I go to sleep, I sometimes watch TV or listen to music.",
+          "Before I go to sleep, sometimes I watch TV or listen to music.",
+          "Before I fall asleep, I sometimes watch TV or listen to music.",
+          "Before I fall asleep, sometimes I watch TV or listen to music.",
+          "Before going to bed, I sometimes watch TV or listen to music.",
+          "Before going to bed, sometimes I watch TV or listen to music.",
+          "Before bed, I sometimes watch TV or listen to music.",
+          "Before bed, sometimes I watch TV or listen to music."
         ],
         "targets": [
           [
@@ -382,8 +416,7 @@
         "tags": [
           "pronoun-1st",
           "present-simple",
-          "conjunction-and-but-or-so",
-          "subordinating-conjunction"
+          "conjunction-and-but-or-so"
         ],
         "challenge": false,
         "challengeTags": [],
@@ -403,7 +436,7 @@
           "kind": "english_grammar",
           "why": "STUDENT 10-4 가 이미 고친 문장이라 영어·한국어 모두 STUDENT 판으로 맞춤(or 앞 쉼표·겹공백 삭제, 두 조각으로 끊긴 한국어를 한 문장으로)"
         },
-        "challengeNote": "before I go to bed(종속접속사)는 뒤 레슨 문법이지만, 기초 문법인 전치사 before + 명사(before bed)로도 같은 뜻을 만들 수 있어 허용 답에 넣고 도전으로 두지 않음"
+        "challengeNote": "before I go to bed(종속접속사, pg20-2)는 뒤 레슨 문법이지만, 절 구조를 바꾸지 않는 기초 문법 — 전치사 before + 명사(before bed, 허용 답) — 으로 같은 뜻을 만들 수 있어 도전으로 두지 않고 subordinating-conjunction 태그를 뺌(데이터-형식 v1.3 도전 규칙, 정리-1권-A)"
       }
     },
     {
@@ -458,7 +491,11 @@
           "where": "application 1) item 6",
           "reviewWhere": "review 2) item 5 (p8)"
         },
-        "fix": null
+        "fix": {
+          "from": "내 가족과 나는 기독교인들이다.",
+          "kind": "student_version",
+          "why": "STUDENT 11-3 과 글자까지 같은 문장이라 한국어도 STUDENT 판"
+        }
       }
     },
     {
@@ -476,7 +513,13 @@
         "accept": [
           "We are free for the rest of the day.",
           "We're free for the day.",
-          "We're free for the rest of the day."
+          "We're free for the rest of the day.",
+          "We are free that day.",
+          "We're free that day.",
+          "We are free for that day.",
+          "We're free for that day.",
+          "We are free during that day.",
+          "We're free during that day."
         ],
         "targets": [
           [

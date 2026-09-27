@@ -1,0 +1,1321 @@
+{
+  "id": "pg05-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "의문문 만들기",
+  "label": "TOPIC 5. 의문문",
+  "menuLabel": "5-1. 의문문 만들기",
+  "unit": 5,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 의문문 만들기",
+  "grammarTags": [
+    "question-yes-no",
+    "question-wh"
+  ],
+  "koreanWords": [
+    "Seoul"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg05-1:a1",
+          "en": "Is this a desk?",
+          "ko": "이것은 책상이니?",
+          "koSource": "new",
+          "focus": [
+            "Is this"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 1"
+          }
+        },
+        {
+          "id": "pg05-1:a2",
+          "en": "Do you like to be around your friends?",
+          "ko": "너는 친구들과 함께 있는 것을 좋아하니?",
+          "koSource": "new",
+          "focus": [
+            "Do you like"
+          ],
+          "studentRef": {
+            "lesson": "s1-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 2"
+          }
+        },
+        {
+          "id": "pg05-1:a3",
+          "en": "Can he play the guitar well?",
+          "ko": "그는 기타를 잘 칠 수 있니?",
+          "koSource": "new",
+          "focus": [
+            "Can he play"
+          ],
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 3"
+          }
+        },
+        {
+          "id": "pg05-1:a4",
+          "en": "Are there four people in your family?",
+          "ko": "너의 가족은 네 명이니?",
+          "koSource": "new",
+          "focus": [
+            "Are there"
+          ],
+          "studentRef": {
+            "lesson": "s2-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 4"
+          }
+        },
+        {
+          "id": "pg05-1:a5",
+          "en": "How was your day?",
+          "ko": "오늘 너의 하루는 어땠니?",
+          "koSource": "student",
+          "focus": [
+            "How was"
+          ],
+          "studentRef": {
+            "lesson": "s8-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 5"
+          }
+        },
+        {
+          "id": "pg05-1:a6",
+          "en": "Who is my best friend?",
+          "ko": "누가 나의 가장 친한 친구일까요?",
+          "koSource": "student",
+          "focus": [
+            "Who is"
+          ],
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 6"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg05-1:a1",
+          "pg05-1:a2",
+          "pg05-1:a3"
+        ],
+        "question": "세 의문문의 맨 앞 낱말(Is · Do · Can)은 무엇에 따라 정해질까요?",
+        "options": [
+          "원래 문장의 동사 종류(be동사 · 일반동사 · 조동사)",
+          "주어가 몇 명인지",
+          "문장의 길이"
+        ],
+        "answer": 0,
+        "why": "be동사 문장은 be동사를, 조동사 문장은 조동사를 주어 앞으로 옮기고, 일반동사 문장은 Do/Does 를 앞에 붙입니다."
+      },
+      "title": "의문문은 동사 종류에 따라 맨 앞에 오는 말이 다릅니다",
+      "points": [
+        "be동사 문장: be동사를 주어 앞으로 → Is this a desk?",
+        "조동사(can) 문장: 조동사를 주어 앞으로 → Can he play …?",
+        "일반동사 문장: 앞에 Do/Does, 동사는 원형 → Does she play …?",
+        "There is/are 문장: Is/Are 를 there 앞으로 → Are there …?",
+        "의문사(How · Who)는 맨 앞, 그 뒤는 의문문 순서 → How was your day? (Who 가 주어면 순서 그대로: Who likes pizza?)"
+      ],
+      "table": {
+        "columns": [
+          "원래 문장",
+          "의문문"
+        ],
+        "rows": [
+          [
+            "This is a desk.",
+            "Is this a desk?"
+          ],
+          [
+            "He can play the guitar.",
+            "Can he play the guitar?"
+          ],
+          [
+            "She plays the piano.",
+            "Does she play the piano?"
+          ],
+          [
+            "There are four people.",
+            "Are there four people?"
+          ],
+          [
+            "Your day was (fun).",
+            "How was your day?"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 끝만 '~니?'로 바꾸면 의문문이 되지만, 영어는 동사(또는 Do/Does)를 주어 앞으로 보내 낱말 순서를 바꿉니다.",
+      "mistakes": [
+        {
+          "wrong": "Are you like candy?",
+          "right": "Do you like candy?",
+          "why": "like 는 일반동사라 be동사(Are)가 아니라 Do 로 물어요."
+        },
+        {
+          "wrong": "Does your sister has a cat?",
+          "right": "Does your sister have a cat?",
+          "why": "Does 가 3인칭 단수를 맡으니 뒤의 동사는 원형 have 예요."
+        }
+      ],
+      "worked": [
+        "그녀는 매일 피아노를 치니?",
+        "play 는 일반동사 → Do/Does 가 필요",
+        "주어 she 는 3인칭 단수 → Does",
+        "Does + she + 동사원형 play",
+        "Does she play the piano every day?"
+      ],
+      "terms": [],
+      "check": {
+        "question": "'___ your sister like cats?' 빈칸에 알맞은 것은?",
+        "options": [
+          "Is",
+          "Do",
+          "Does"
+        ],
+        "answer": 2,
+        "why": "like 는 일반동사이고 your sister 는 3인칭 단수라 Does 입니다.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg05-1:s1",
+          "kind": "select",
+          "instruction": "의문문으로 바꿀 때 주어 앞으로 옮기는 낱말을 누르세요",
+          "tokens": [
+            "He",
+            "can",
+            "swim",
+            "very",
+            "fast",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "조동사 can 이 주어 He 앞으로 가서 Can he swim very fast? 가 됩니다.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-1:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "___ your brother like soccer?",
+          "options": [
+            "Do",
+            "Does",
+            "Is"
+          ],
+          "answer": 1,
+          "why": "like 는 일반동사이고 your brother 는 3인칭 단수라 Does 를 씁니다.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-1:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것을 고르세요",
+          "sentence": "___ your shoes new?",
+          "options": [
+            "Is",
+            "Are",
+            "Do"
+          ],
+          "answer": 1,
+          "why": "new 는 형용사라 be동사로 묻고, your shoes 는 복수라 Are 입니다.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-1:s4",
+          "kind": "choice",
+          "instruction": "바른 의문문을 고르세요",
+          "sentence": null,
+          "options": [
+            "Does she likes pizza?",
+            "Does she like pizza?",
+            "Do she like pizza?"
+          ],
+          "answer": 1,
+          "why": "she 는 3인칭 단수라 Does, 그리고 Does 뒤의 동사는 원형 like 입니다.",
+          "source": "new"
+        },
+        {
+          "id": "pg05-1:s5",
+          "kind": "short",
+          "instruction": "의문문으로 바꿀 때 맨 앞에 올 낱말을 쓰세요",
+          "sentence": "They play tennis every Sunday.",
+          "answer": [
+            "Do"
+          ],
+          "why": "일반동사(play) 문장이고 주어 they 가 복수라 Do 를 앞에 붙입니다: Do they play tennis every Sunday?",
+          "source": "new"
+        },
+        {
+          "id": "pg05-1:s6",
+          "kind": "choice",
+          "instruction": "'너의 여행은 어땠니?'를 바르게 옮긴 것을 고르세요",
+          "sentence": null,
+          "options": [
+            "How was your trip?",
+            "What was your trip?",
+            "How your trip was?"
+          ],
+          "answer": 0,
+          "why": "'어땠니'는 How 로 묻고, 의문사 다음에 be동사(was), 그다음 주어가 옵니다.",
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg05-1:p1",
+          "ko": "이것은 책상이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is this a desk?",
+          "accept": [],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "This is a desk",
+              "hint": "의문문은 be동사 Is 를 주어 this 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 37,
+            "where": "passOff (1) item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p2",
+          "ko": "너는 스페인 출신이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are you from Spain?",
+          "accept": [
+            "Do you come from Spain?"
+          ],
+          "targets": [
+            [
+              "Are",
+              "Do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You are from",
+              "hint": "be동사 Are 를 주어 you 앞으로 옮겨요."
+            },
+            {
+              "match": "Do you from",
+              "hint": "from 앞에 일반동사가 없으면 be동사로 물어요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 1",
+            "reviewWhere": "review 1 item 1 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p3",
+          "ko": "제인은 선생님이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is Jane a teacher?",
+          "accept": [],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does Jane",
+              "hint": "'~이니?'는 be동사 의문문이에요."
+            },
+            {
+              "match": "Jane is a",
+              "hint": "Is 를 Jane 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 2",
+            "reviewWhere": "review 1 item 2 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p4",
+          "ko": "저것은 너의 집이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is that your house?",
+          "accept": [],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "That is your",
+              "hint": "Is 를 that 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 3",
+            "reviewWhere": "review 1 item 3 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p5",
+          "ko": "저 사과들은 초록색이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are those apples green?",
+          "accept": [],
+          "targets": [
+            [
+              "Are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Is those",
+              "hint": "those apples 는 복수라 Are 예요."
+            },
+            {
+              "match": "Those apples are",
+              "hint": "Are 를 맨 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 4",
+            "reviewWhere": "review 1 item 4 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p6",
+          "ko": "이 창문은 닫혀 있니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is this window closed?",
+          "accept": [
+            "Is this window shut?"
+          ],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does this window",
+              "hint": "'닫혀 있니?'는 be동사 + closed 로 물어요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 5",
+            "reviewWhere": "review 1 item 5 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p7",
+          "ko": "너의 개는 아프니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is your dog sick?",
+          "accept": [
+            "Is your dog ill?"
+          ],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does your dog",
+              "hint": "sick 은 형용사라 be동사로 물어요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 6",
+            "reviewWhere": "review 1 item 6 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p8",
+          "ko": "너희는 모두 학생이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are you all students?",
+          "accept": [
+            "Are all of you students?"
+          ],
+          "targets": [
+            [
+              "Are"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Do you all",
+              "hint": "'학생이니?'는 be동사로 물어요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 7",
+            "reviewWhere": "review 1 item 7 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p9",
+          "ko": "잭은 컴퓨터 프로그래머니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is Jack a computer programmer?",
+          "accept": [],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Jack is a",
+              "hint": "Is 를 Jack 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 8",
+            "reviewWhere": "review 1 item 8 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p10",
+          "ko": "너는 친구들과 함께 있는 것을 좋아하니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do you like to be around your friends?",
+          "accept": [
+            "Do you like being around your friends?",
+            "Do you like to be with your friends?",
+            "Do you like being with your friends?"
+          ],
+          "targets": [
+            [
+              "Do"
+            ],
+            [
+              "like"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Are you like",
+              "hint": "like 는 일반동사라 Do 로 물어요."
+            },
+            {
+              "match": "Do you likes",
+              "hint": "Do 뒤에는 동사원형 like 를 써요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "present-simple",
+            "like-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "passOff (1) item 2 · application (1) item 9",
+            "reviewWhere": "review 1 item 9 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p11",
+          "ko": "너의 아버지는 개를 키우시니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Does your father have a dog?",
+          "accept": [
+            "Does your dad have a dog?",
+            "Does your father keep a dog?",
+            "Does your dad keep a dog?"
+          ],
+          "targets": [
+            [
+              "Does"
+            ],
+            [
+              "have",
+              "keep"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does your father has",
+              "hint": "Does 뒤에는 동사원형 have 를 써요."
+            },
+            {
+              "match": "Do your father",
+              "hint": "your father 는 3인칭 단수라 Does 예요."
+            },
+            {
+              "match": "Is your father have",
+              "hint": "have 는 일반동사라 Does 로 물어요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "have-has",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 10",
+            "reviewWhere": "review 1 item 10 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p12",
+          "ko": "엠마와 질은 토요일마다 영화를 보러 가니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do Emma and Jill go to the movies every Saturday?",
+          "accept": [
+            "Do Emma and Jill go to the movies on Saturdays?",
+            "Do Emma and Jill go to the cinema every Saturday?",
+            "Do Emma and Jill go to a movie every Saturday?"
+          ],
+          "targets": [
+            [
+              "Do"
+            ],
+            [
+              "go"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does Emma and Jill",
+              "hint": "주어가 두 사람(Emma and Jill)이라 Do 예요."
+            },
+            {
+              "match": "Do Emma and Jill goes",
+              "hint": "Do 뒤에는 동사원형 go 를 써요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 11",
+            "reviewWhere": "review 1 item 11 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p13",
+          "ko": "우리는 돈이 충분히 있니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do we have enough money?",
+          "accept": [],
+          "targets": [
+            [
+              "Do"
+            ],
+            [
+              "have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Are we have",
+              "hint": "have 는 일반동사라 Do 로 물어요."
+            },
+            {
+              "match": "Do we has",
+              "hint": "Do 뒤에는 동사원형 have 를 써요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 12",
+            "reviewWhere": "review 1 item 12 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p14",
+          "ko": "그녀는 나를 잘 이해하니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Does she understand me well?",
+          "accept": [],
+          "targets": [
+            [
+              "Does"
+            ],
+            [
+              "understand"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does she understands",
+              "hint": "Does 뒤에는 동사원형 understand 를 써요."
+            },
+            {
+              "match": "Do she",
+              "hint": "she 는 3인칭 단수라 Does 예요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 13",
+            "reviewWhere": "review 1 item 13 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p15",
+          "ko": "그는 기타를 잘 칠 수 있니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Can he play the guitar well?",
+          "accept": [
+            "Can he play guitar well?"
+          ],
+          "targets": [
+            [
+              "Can"
+            ],
+            [
+              "play"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Can he plays",
+              "hint": "can 뒤에는 동사원형 play 를 써요."
+            },
+            {
+              "match": "He can play",
+              "hint": "Can 을 주어 he 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "passOff (1) item 3 · application (1) item 15",
+            "reviewWhere": "review 1 item 15 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p16",
+          "ko": "그들은 그 축구 경기에서 이길 수 있니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Can they win the soccer game?",
+          "accept": [
+            "Can they win the soccer match?",
+            "Can they win the football game?",
+            "Can they win the football match?"
+          ],
+          "targets": [
+            [
+              "Can"
+            ],
+            [
+              "win"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They can win",
+              "hint": "Can 을 주어 they 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 16",
+            "reviewWhere": "review 1 item 16 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p17",
+          "ko": "너는 5개 국어를 할 수 있니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Can you speak five languages?",
+          "accept": [
+            "Can you speak 5 languages?"
+          ],
+          "targets": [
+            [
+              "Can"
+            ],
+            [
+              "speak"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You can speak",
+              "hint": "Can 을 주어 you 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "can-basic",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 17",
+            "reviewWhere": "review 1 item 17 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p18",
+          "ko": "너의 가족은 네 명이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are there four people in your family?",
+          "accept": [
+            "Are there 4 people in your family?",
+            "Do you have four people in your family?",
+            "Are there four members in your family?",
+            "Do you have four family members?",
+            "Does your family have four people?",
+            "Does your family have four members?"
+          ],
+          "targets": [
+            [
+              "Are",
+              "Do",
+              "Does"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Is there four",
+              "hint": "four people 은 복수라 Are there 예요."
+            },
+            {
+              "match": "There are four",
+              "hint": "Are 를 there 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "passOff (1) item 4 · application (1) item 18",
+            "reviewWhere": "review 1 item 18 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p19",
+          "ko": "서울에서 온 편지가 있니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Is there a letter from Seoul?",
+          "accept": [],
+          "targets": [
+            [
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Are there a letter",
+              "hint": "a letter 는 하나라 Is there 예요."
+            },
+            {
+              "match": "There is a letter",
+              "hint": "Is 를 there 앞으로 옮겨요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 19",
+            "reviewWhere": "review 1 item 19 (질문)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p20",
+          "ko": "오늘 너의 하루는 어땠니?",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "How was your day?",
+          "accept": [
+            "How was your day today?"
+          ],
+          "targets": [
+            [
+              "How"
+            ],
+            [
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How is your day",
+              "hint": "이미 지난 하루를 물으니 was 예요."
+            },
+            {
+              "match": "How your day was",
+              "hint": "의문사 How 다음에 be동사 was, 그다음 주어가 와요."
+            }
+          ],
+          "tags": [
+            "question-wh",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s8-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "passOff (1) item 5 · application (1) item 20"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p21",
+          "ko": "누가 나의 가장 친한 친구일까요?",
+          "koSource": "student",
+          "condition": null,
+          "promptEn": null,
+          "en": "Who is my best friend?",
+          "accept": [],
+          "targets": [
+            [
+              "Who"
+            ],
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Who my best friend is",
+              "hint": "의문사 Who 다음에 is, 그다음 주어가 와요."
+            }
+          ],
+          "tags": [
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "passOff (1) item 6 · application (1) item 21"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg05-1:p22",
+          "ko": "프랑스에는 눈이 많이 오니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Does it snow a lot in France?",
+          "accept": [
+            "Does it snow much in France?",
+            "Is there a lot of snow in France?",
+            "Does France get a lot of snow?",
+            "Does France have a lot of snow?",
+            "Does France have much snow?",
+            "Is there much snow in France?"
+          ],
+          "targets": [
+            [
+              "Does",
+              "Is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Is it snow",
+              "hint": "여기서 snow 는 '눈이 오다'라는 일반동사예요. 일반동사 의문문 순서로 물어 보세요."
+            },
+            {
+              "match": "Does it snows",
+              "hint": "Does 뒤에는 동사원형 snow 를 써요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "비인칭 it(pg07-2)은 곁가지예요 — 'Is there a lot of snow in France?'(there-be) · 'Does France get(have) a lot of snow?'처럼 it 없이 같은 뜻을 쓸 수 있고 허용 답에 있어 도전으로 두지 않음(데이터-형식 v1.2 도전 규칙, 정리-1권-B).",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 38,
+            "where": "application (1) item 14",
+            "reviewWhere": "review 1 item 14 (질문)"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg05-1:t1",
+          "ko": "그는 영어를 공부하나?",
+          "koSource": "grammar",
+          "condition": null,
+          "promptEn": null,
+          "en": "Does he study English?",
+          "accept": [],
+          "targets": [
+            [
+              "Does"
+            ],
+            [
+              "study"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Does he studies",
+              "hint": "Does 뒤에는 동사원형 study 를 써요."
+            }
+          ],
+          "tags": [
+            "question-yes-no",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-035#15",
+          "fix": null
+        },
+        {
+          "id": "pg05-1:t2",
+          "ko": "그는 어디에서 사나?",
+          "koSource": "grammar",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where does he live?",
+          "accept": [],
+          "targets": [
+            [
+              "Where"
+            ],
+            [
+              "does"
+            ],
+            [
+              "live"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Where he lives",
+              "hint": "의문사 다음에 does + 주어 + 동사원형 순서예요."
+            },
+            {
+              "match": "does he lives",
+              "hint": "does 뒤에는 동사원형 live 를 써요."
+            }
+          ],
+          "tags": [
+            "question-wh",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-013#29",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg05-1:f1",
+      "template": "Do you like ___?",
+      "ko": "너는 ___을(를) 좋아하니?"
+    }
+  ]
+}

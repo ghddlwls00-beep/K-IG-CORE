@@ -1,0 +1,461 @@
+[
+  {
+    "page": 48,
+    "where": "table (1) 소유대명사 1인칭",
+    "text": "소유대명사 :  1인칭 : mine   /  2인칭 : yours  / 3인칭 : his, hers, theirs",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "표에 빠진 ours 를 설명 카드 표(pg07-1)에 넣고, 형태 찾기 문항(This new machine is ___.)으로 ours 를 연습시킵니다.",
+    "appliedTo": [
+      "pg07-1:rule",
+      "pg07-1:s3"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "table (1) 복합 인칭 대명사 3인칭",
+    "text": "3인칭- himself, herself , themselves",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "표에 빠진 itself 를 넣고, 용어는 '재귀대명사(교재: 복합 인칭 대명사)'로 병기합니다. itself 는 형태 찾기 문항으로도 연습합니다.",
+    "appliedTo": [
+      "pg07-1:rule",
+      "pg07-1:s5"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "passOff (2) 대명사 it item 3 (+ application (2) item 5, Review 2 item 5)",
+    "text": "It is a great way to talk to my friends about what we did during the day. (가주어)",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "문장은 STUDENT 10과 그대로 두고 '(가주어)' 설명만 '앞 내용(컴퓨터 채팅)을 받는 it'으로 고쳤습니다. 설명 카드 표에 이 쓰임을 따로 적었고, to부정사·관계대명사 what 이 들어 있어 영작에서는 도전 문장입니다. issue 가 제안한 새 가주어 예문(It is fun to talk …)은 규칙 확인 문항으로 씁니다.",
+    "appliedTo": [
+      "pg07-2:a3",
+      "pg07-2:p12",
+      "pg07-2:rule"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "passOff (2) item 5",
+    "text": "It rains. / It is fine today / what time is it? (비 인칭 주어)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "한 줄의 세 문장을 앵커 3개로 나누고 끝 마침표와 첫 글자 대문자(What)를 보충했습니다. '비인칭'으로 붙여 씁니다.",
+    "appliedTo": [
+      "pg07-2:a5",
+      "pg07-2:a6",
+      "pg07-2:a7"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "passOff (2) item 6 + application (2) item 13(p51) + Review 2 item 13(p55)",
+    "text": "It usually takes me 15minutes to walk to school.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "STUDENT 5과(s5-2)가 이미 고친 문장이라 영어(15 minutes)·한국어 모두 STUDENT 판을 씁니다.",
+    "appliedTo": [
+      "pg07-2:a8",
+      "pg07-2:p11"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "passOff (3) 의문대명사 item 5 + application (3) item 5 + Review 3 item 2(p56)",
+    "text": "What is he? / 그의 직업은 무엇이니?",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답을 What does he do? 로 바꾸고, What is his job? 과 원문 What is he? 는 허용 답으로 둡니다(앵커에는 넣지 않음).",
+    "appliedTo": [
+      "pg07-3:p5"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "passOff (3) 의문대명사 item 2 + application (3) item 2",
+    "text": "Whose book is this?",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "문장은 자연스러운 영어라 그대로 두고, 설명 카드에 'whose + 명사는 명사를 꾸미는 말(의문형용사)'로 구분해 적었습니다. 의문대명사 쓰임인 Whose is this book? 은 허용 답에 넣었습니다.",
+    "appliedTo": [
+      "pg07-3:rule",
+      "pg07-3:a2",
+      "pg07-3:p2"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (3) 지시대명사 items 2·4·6·8 (+ application 같은 문장)",
+    "text": "During this time … / … at these academies. / … feel that way. / … those colors?",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "설명 카드에 '명사 앞에서 꾸미면 지시형용사'를 적고, 형태 찾기 문항 2개(During this time … / This is my bag, and that bag …)로 두 쓰임을 구분합니다. 문장은 그대로 둡니다. (정리-1권-B: s2 는 ④ p9 와 같은 문장이라 레슨 안에서는 reserve(날을 넘기는 복습에서 ④ 뒤)로 돌리고, 같은 구분을 새 문항 s7 'I read this book last week.'로 연습합니다. 설명 카드의 형용사 예도 p9 를 미리 보이지 않게 this bag · that car 로 바꿨습니다.)",
+    "appliedTo": [
+      "pg07-3:rule",
+      "pg07-3:s2",
+      "pg07-3:s6",
+      "pg07-3:s7"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (3) 지시대명사 item 5",
+    "text": "That is the house I wanted to buy.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "Application·Review 한국어('사고 싶은')에 맞춰 want 로 고쳤습니다.",
+    "appliedTo": [
+      "pg07-3:a7"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (3) 지시대명사 item 7",
+    "text": "Those are caps that I put yesterday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "'모자를 쓰다'는 put on 이라 Application 판(put on)으로 맞췄습니다.",
+    "appliedTo": [
+      "pg07-3:a8"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 8 + application (4) item 8(p53) + Review 4 item 8(p57)",
+    "text": "If there is any, I will borrow them to you.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "If there are any, I will lend them to you. 로 고쳤습니다(borrow → lend, any 를 복수 them 으로 받으므로 are).",
+    "appliedTo": [
+      "pg07-4:p5"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 4 + application (4) item 4 + Review 4 item 4(p57)",
+    "text": "Anyone would be here. / 누구라도 이곳에 있을 거야.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "영어·한국어 모두 뜻이 불분명해 목표어 anyone 을 살린 'Anyone can come here. / 누구든지 여기 올 수 있어.'로 바꿨습니다.",
+    "appliedTo": [
+      "pg07-4:p4"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 10 + application (4) item 10 + Review 4 item 10(p57)",
+    "text": "None knows it. / 아무도 모른다.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "사람을 뜻하는 단독 None 대신 None of us knows it. 으로 고쳐 목표어 none 을 살리고, 한국어도 '우리 중 아무도 그것을 모른다.'로 맞췄습니다(교재 한국어에는 '그것을'이 빠져 있었음).",
+    "appliedTo": [
+      "pg07-4:p7"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 11 + application (4) item 11",
+    "text": "Each has a desk.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답을 한국어 '각 사람이'에 맞는 Each person has a desk. 로 바꾸고, 원문 Each has a desk. 와 Each of us has a desk. 는 허용 답으로 둡니다.",
+    "appliedTo": [
+      "pg07-4:a6",
+      "pg07-4:p8"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 1 + application (4) item 1 + Review 4 item 1(p57)",
+    "text": "One should obey his parents. / 사람은 그 부모님의 말씀에 순종해야 한다.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답을 One should obey one's parents. 로 바꾸고 his · their 는 허용 답으로 둡니다. 한국어 '그 부모님'은 '자기 부모님'으로 고쳤습니다. 문장 내용은 민감 예문이 아니라 영어 용법 문제로 보았습니다. (정리-1권-B: should 태그는 뺐습니다 — must · have to(기초)도 허용 답이라 도전 문장이 아닙니다.)",
+    "appliedTo": [
+      "pg07-4:a1",
+      "pg07-4:p1"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 15 + application (4) item 15",
+    "text": "I have to do homework from both the academies and school.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "문장(STUDENT 8과 일부)은 그대로 두고, 설명 카드 표와 형태 찾기 문항에서 both A and B 는 짝 접속사, 혼자 쓰는 both 는 부정대명사로 구분했습니다. G5 점검 반영: 영작에 부정대명사 both 를 연습하는 문항이 없어 새 문항 p12(그들 둘 다 맞아. / Both of them are right.)를 더하고, both A and B 문장은 짝 접속사(등위접속사 pg20-1) 도전 문장 p16 으로 세트 끝에 옮겼습니다(출시 전이라 id 를 p12 → p16 으로 바꿈). 교재 3권 TOPIC 20 에는 both A and B 가 따로 나오지 않으니 pg20-1 설명 카드에 짝 접속사 한 줄이 필요합니다. (정리-1권-B: s4 는 ④ p16 과 같은 문장이라 reserve 로 돌리고, 짝 접속사 both A and B 구분은 새 문항 s7 'She speaks both English and Korean.'으로 연습합니다.)",
+    "appliedTo": [
+      "pg07-4:rule",
+      "pg07-4:s4",
+      "pg07-4:p16",
+      "pg07-4:p12",
+      "pg07-4:s7"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "application (1) 인칭/소유/복합[추론] item 1 + Review 1 item 1(p54)",
+    "text": "The bible was mine.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Bible 첫 글자를 대문자로 고쳤습니다.",
+    "appliedTo": [
+      "pg07-1:a1",
+      "pg07-1:p1"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "application (1) item 2 + Review 1 item 2(p54)",
+    "text": "New machine has been used for our business.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "관사 A 를 넣었습니다. our 는 소유격이라 소유대명사가 아님을 형태 찾기 문항과 설명 카드(표에 소유격 줄 추가)로 구분합니다. 현재완료 수동태라 영작에서는 도전 문장입니다. (정리-1권-B: s2 는 ④ p5 와 같은 문장이라 reserve 로 돌리고, our = 소유격 구분은 새 문항 s7 'We cleaned our classroom after school.'로 연습합니다.)",
+    "appliedTo": [
+      "pg07-1:p5",
+      "pg07-1:s2",
+      "pg07-1:rule",
+      "pg07-1:s7"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "application (1) item 5 + Review 1 item 5(p54)",
+    "text": "I know the truth by myself. / 나는 내 스스로 진실을 안다.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "I know the truth myself.(강조 용법)로 고치고 한국어는 '나 자신이 그 진실을 안다.'로 고칩니다('내 스스로'는 '혼자 힘으로'로 읽혀 원래 답 by myself 를 부르기 때문, G5 점검 반영). by myself 는 오답 패턴 힌트로 짚습니다.",
+    "appliedTo": [
+      "pg07-1:a4",
+      "pg07-1:p3"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "application (1) item 7 + Review 1 item 7(p54)",
+    "text": "Knowing yourself is really important in happy life.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Knowing yourself is really important for a happy life. 로 고쳤습니다.",
+    "appliedTo": [
+      "pg07-1:a6",
+      "pg07-1:p7"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "application (2) 대명사 it[추론] item 6 + Review 2 item 6(p55)",
+    "text": "It appeared that James had a mental problem. / 제임스 는 정신적인 문제가 있는 것으로 보인다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어는 그대로 두고, 한국어를 '제임스는 정신적인 문제가 있는 것처럼 보였다.'로 과거에 맞추고 띄어쓰기를 고쳤습니다.",
+    "appliedTo": [
+      "pg07-2:p5"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "application (2) item 9 + Review 2 item 9(p55)",
+    "text": "It is the exceptionally rapid growth of computer that has changed every aspect of our lives.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "growth of computers 로 고쳤습니다(computer technology 도 허용).",
+    "appliedTo": [
+      "pg07-2:p13"
+    ]
+  },
+  {
+    "page": 52,
+    "where": "application (3) 의문대명사[추론] item 7 + Review 3 item 4(p56)",
+    "text": "What is the purpose of the school education?",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "What is the purpose of school education? 으로 고쳤습니다. the school education 은 오답 패턴 힌트로 짚습니다.",
+    "appliedTo": [
+      "pg07-3:p7"
+    ]
+  },
+  {
+    "page": 52,
+    "where": "application (3) 의문대명사[추론] item 8 + Review 3 item 5(p56)",
+    "text": "Where can you find her in this city?",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "문장은 그대로 두고, 설명 카드와 형태 찾기 문항에서 where 를 의문부사로 구분했습니다. 태그도 의문대명사가 아닌 의문사 의문문(question-wh)으로 달았습니다. (정리-1권-B: s4 는 ④ p8 과 같은 문장이라 reserve 로 돌리고, 새 문항 s9 'Where do you live?'로 의문부사 구분을 연습합니다.)",
+    "appliedTo": [
+      "pg07-3:rule",
+      "pg07-3:s4",
+      "pg07-3:p8",
+      "pg07-3:s9"
+    ]
+  },
+  {
+    "page": 52,
+    "where": "application (3) 지시대명사[추론] item 11 + Review 3 item 16(p56)",
+    "text": "Those hate listening to long messages on answering machine.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Those people hate listening to long messages on answering machines. 로 고쳤습니다. 전화응답기는 교재 시대(2012)의 물건이라 그대로 둡니다. (정리-1권-B: 동명사(gerund) 태그는 뺐습니다 — don't like to listen(like-to, 기초)도 허용 답이라 도전 문장이 아닙니다.)",
+    "appliedTo": [
+      "pg07-3:p14"
+    ]
+  },
+  {
+    "page": 52,
+    "where": "application (3) 지시대명사[추론] item 5 + Review 3 item 10(p56)",
+    "text": "Students will be able to talk about their friends at these academies. / 학생들은 이 학원들에서 친구들과 이야기 할 수 있을 것이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어는 그대로 두고 한국어를 '학생들은 이 학원들에서 사귄 친구들에 대해 이야기할 수 있을 것이다.'로 고쳤습니다(about 반영, 띄어쓰기).",
+    "appliedTo": [
+      "pg07-3:p12"
+    ]
+  },
+  {
+    "page": 52,
+    "where": "application (3) 지시대명사[추론] items 5·9·12 의 (N과)",
+    "text": "Students will be able to … (7과) / Students should be able to describe why they feel that way. (15과) / Why do you think he likes those colors?(6과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "STUDENT 에서 찾을 수 없는 세 문장이라 studentRef(STUDENT 링크)를 달지 않았습니다.",
+    "appliedTo": [
+      "pg07-3:p12",
+      "pg07-3:p18",
+      "pg07-3:p20"
+    ]
+  },
+  {
+    "page": 52,
+    "where": "application (3) 지시대명사[추론] item 10 + Review 3 item 15(p56)",
+    "text": "Those are caps that I put on yesterday. / 그것들은 내가 어제 썼던 모자들이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어 '그것들은'을 Those 에 맞게 '저것들은'으로 고쳤습니다.",
+    "appliedTo": [
+      "pg07-3:p19",
+      "pg07-3:a8"
+    ]
+  },
+  {
+    "page": 53,
+    "where": "application (4) 부정대명사[추론] item 15",
+    "text": "I have to do homework from both the academies and school. (10과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "STUDENT 8과(s8-2)에 있는 문장이라 studentRef 를 s8-2(adapted)로 달았습니다. (G5 점검 반영으로 문항 id 가 p12 → p16)",
+    "appliedTo": [
+      "pg07-4:p16"
+    ]
+  },
+  {
+    "page": 53,
+    "where": "application (4) item 13 + Review 4 item 13(p57)",
+    "text": "Neither of them is wrong. / 그들 둘 다 틀린 거야.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어를 '그들 둘 다 틀리지 않았어.'로 고쳐 neither 연습이 되게 했습니다.",
+    "appliedTo": [
+      "pg07-4:a8",
+      "pg07-4:p10"
+    ]
+  },
+  {
+    "page": 54,
+    "where": "Review 1 items 4·7",
+    "text": "…모두가 알아 / 네 자신을 아는 것은 …",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "4번 끝 마침표를 넣고, 7번 '네 자신'을 '너 자신'으로 고쳤습니다.",
+    "appliedTo": [
+      "pg07-1:a3",
+      "pg07-1:p6",
+      "pg07-1:a6",
+      "pg07-1:p7"
+    ]
+  },
+  {
+    "page": 54,
+    "where": "Review 1 item 6",
+    "text": "우리는 이 난관을 우리 스스로 극복해야 한다.",
+    "type": "translation_mismatch",
+    "decision": "keep",
+    "reason": "'극복하다'도 go through(어려움을 헤쳐 나가다)의 흔한 우리말 풀이라 오역으로 보지 않았습니다. overcome · get through 로 쓴 답도 허용 목록에 넣어 학습자가 손해 보지 않게 했습니다.",
+    "appliedTo": [
+      "pg07-1:p4"
+    ]
+  },
+  {
+    "page": 55,
+    "where": "Review 2 item 13",
+    "text": "학교까지 걸어가는 데는 나에게는 15분 걸린다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 5과 한국어('학교에 걸어가는 것은 보통 약 15분 걸립니다.')를 써서 '보통'이 들어갔습니다. '약'에 맞춰 about 15 minutes 도 허용합니다.",
+    "appliedTo": [
+      "pg07-2:p11",
+      "pg07-2:a8"
+    ]
+  },
+  {
+    "page": 56,
+    "where": "Review 3 item 14",
+    "text": "학생들은 왜 그들이 그렇게 느끼는지 설명 할 수 있어야 한다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'학생들은 왜 그렇게 느끼는지 설명할 수 있어야 한다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg07-3:p18"
+    ]
+  },
+  {
+    "page": 57,
+    "where": "Review 4 item 6",
+    "text": "다른 사람들은 노래하고 춤춘다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어를 진행형 '다른 사람들은 노래하고 춤추고 있다.'로 고쳤습니다. 그래서 영작에서는 진행형(pg12-3)이 필요한 도전 문장입니다.",
+    "appliedTo": [
+      "pg07-4:a4",
+      "pg07-4:p14"
+    ]
+  },
+  {
+    "page": 57,
+    "where": "Review 4 item 8",
+    "text": "조금이라도 있다면, 내가 네게 그것들을 빌려 줄 거야.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'빌려줄'로 붙여 썼습니다('~할 거야'는 교재 말투대로 둠).",
+    "appliedTo": [
+      "pg07-4:p5"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "passOff (4) item 12 + application (4) item 12(p53) + Review 4 item 12(p57)",
+    "text": "Either of them is wrong. / 그들 중 한쪽은 틀린 거야.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "긍정 평서문의 either 는 '둘 중 어느 쪽이든(아무거나)'이라 Either of them is wrong 은 '어느 쪽을 골라도 틀렸다(둘 다 틀림)'처럼 읽히거나 어색하고, 한국어 '그들 중 한쪽은 틀린 거야'(한 명만 틀림)는 보통 One of them is wrong 이라고 말합니다. 목표어 either 를 살려 'Either of them is fine. / 그들 둘 중 누구든 괜찮아.'로 바꾸고, 설명 카드(규칙 줄 · 표 · 발견 질문 풀이 · 규칙 확인)와 형태 찾기 s5 보기(One of them is wrong.)도 맞췄습니다. 추출 issues 에 없던 것을 G5 점검에서 찾음(같은 AI 계열 판단 — 원어민 확인 전).",
+    "appliedTo": [
+      "pg07-4:a7",
+      "pg07-4:p9",
+      "pg07-4:rule",
+      "pg07-4:s5"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 54,
+    "where": "Review 1 item 2",
+    "text": "새 기계가 우리의 사업을 위해 사용되어져 왔어.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'사용되어져'는 피동 접미사 '-되-'에 '-어지-'를 또 붙인 이중 피동이라 '새 기계가 우리의 사업을 위해 사용되어 왔어.'로 고쳤습니다. 추출 issues 에 없던 것을 G5 점검에서 찾음.",
+    "appliedTo": [
+      "pg07-1:p5"
+    ],
+    "newFinding": true
+  }
+]

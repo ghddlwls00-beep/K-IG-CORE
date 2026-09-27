@@ -1,0 +1,587 @@
+[
+  {
+    "page": 2,
+    "where": "frontMatter 특징 2. (Pass-Off Sentences 와 Application Sentences)",
+    "text": "Sentences에서는 문법 설명에 앞서 상황예문이나 표로 문법내용을 설명한다.",
+    "type": "korean_typo",
+    "decision": "na",
+    "reason": "앞부분 특징 소개글의 문장이라 웹 레슨 데이터에 들어가지 않음",
+    "appliedTo": [],
+    "issueIndex": 0,
+    "outOfRange": "5~14쪽 밖(앞부분)이지만 맡은 사람이 없어 함께 판정. Have/Has(3번)는 pg02-3 에 직접 걸림"
+  },
+  {
+    "page": 2,
+    "where": "frontMatter 특징 1.·2.·3., 학습법 2.",
+    "text": "Pass-Off Grammar는 전체 문법이 대주제 20개와 연결고리 70개로 이루어져 있다.",
+    "type": "layout_or_extraction",
+    "decision": "na",
+    "reason": "레슨 수는 설계.md §2 에서 구성도 기준 67개로 정함(사이트에 67로 표기). 문항 데이터에는 해당 없음",
+    "appliedTo": [],
+    "issueIndex": 1,
+    "outOfRange": "5~14쪽 밖(앞부분)이지만 맡은 사람이 없어 함께 판정. Have/Has(3번)는 pg02-3 에 직접 걸림"
+  },
+  {
+    "page": 2,
+    "where": "frontMatter 특징·학습법 여러 곳",
+    "text": "형성 시켜준다 / 소주제70개 / 전시간에 / 70개의 문법 소주제 별로 / 각 소 주제별로 / Pass Off English를",
+    "type": "korean_typo",
+    "decision": "na",
+    "reason": "앞부분 소개글의 띄어쓰기라 웹 레슨 데이터에 들어가지 않음",
+    "appliedTo": [],
+    "issueIndex": 2,
+    "outOfRange": "5~14쪽 밖(앞부분)이지만 맡은 사람이 없어 함께 판정. Have/Has(3번)는 pg02-3 에 직접 걸림"
+  },
+  {
+    "page": 3,
+    "where": "frontMatter 연결고리 구성도(3쪽)·목차(4쪽) — 동사의 현재형",
+    "text": "Be동사의 현재형 · 일반동사의 현재형 · Have/Has",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "설계.md §2 대로 Have/Has 를 pg02-3 레슨으로 따로 두고, 본문 have/has 2문장(She has … / I have …)을 옮긴 뒤 새 문장 6개(STUDENT 2 · 새 4)와 요소 문항 4개로 보충",
+    "appliedTo": [
+      "pg02-3:a3",
+      "pg02-3:s3",
+      "pg02-3:s4",
+      "pg02-3:s5",
+      "pg02-3:s6",
+      "pg02-3:p3",
+      "pg02-3:p4",
+      "pg02-3:p5",
+      "pg02-3:p6",
+      "pg02-3:p7",
+      "pg02-3:p8"
+    ],
+    "issueIndex": 3,
+    "outOfRange": "5~14쪽 밖(앞부분)이지만 맡은 사람이 없어 함께 판정. Have/Has(3번)는 pg02-3 에 직접 걸림"
+  },
+  {
+    "page": 5,
+    "where": "TOPIC 1 passOff 3) item 2; application 3) item 2 (6쪽); TOPIC 3 passOff 2) 대명사 (15쪽); TOPIC 3 application 2) item 2 (18쪽); TOPIC 3 review 2. 2) (22쪽)",
+    "text": "She is best mother in the world.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "STUDENT 2-3 판(She is the best mother in the world.)과 그 한국어로 맞춤. 최상급(the best)은 뒤 레슨 문법이라 영작 문항은 도전 문장으로 세트 끝에 둠. 같은 문장의 TOPIC 3 쪽(15·18·22쪽)은 G2 담당",
+    "appliedTo": [
+      "pg01-3:a2",
+      "pg01-3:s2",
+      "pg01-3:p11"
+    ],
+    "issueIndex": 4
+  },
+  {
+    "page": 5,
+    "where": "TOPIC 1 passOff 3) item 1; application 3) item 1 (6쪽)",
+    "text": "He is 대한.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "Daehan 으로 로마자 표기하고 koreanWords 에 적음(음성은 한국어 발음표로, 코드 쪽 IPA 행 필요)",
+    "appliedTo": [
+      "pg01-3:a1",
+      "pg01-3:s1",
+      "pg01-3:p1"
+    ],
+    "issueIndex": 5
+  },
+  {
+    "page": 5,
+    "where": "TOPIC 1 application 1) item 5",
+    "text": "Sometimes I watch TV, or listen to music  before I go to bed. (10 과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "STUDENT 10-4 가 이미 고친 문장이라 영어·한국어 모두 STUDENT 판으로",
+    "appliedTo": [
+      "pg01-1:p5"
+    ],
+    "issueIndex": 6
+  },
+  {
+    "page": 5,
+    "where": "TOPIC 1 application 1) item 8",
+    "text": "We are very close to one another .(2 과)",
+    "type": "layout_or_extraction",
+    "decision": "na",
+    "reason": "마침표 앞 빈칸은 조판 문제 — 웹 문장에는 빈칸 없이 씀",
+    "appliedTo": [
+      "pg01-1:p8"
+    ],
+    "issueIndex": 7
+  },
+  {
+    "page": 5,
+    "where": "TOPIC 1 application 1) item 11",
+    "text": "By the way, where do we go?",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "'where do we go?'도 '(우리) 어디로 가지?'라는 뜻으로 맞는 영어라 그대로 두고, where are we going? · where should we go? 를 허용 답에 넣음",
+    "appliedTo": [
+      "pg01-1:p10"
+    ],
+    "issueIndex": 8
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 2) item 5",
+    "text": "Why do you make this model air plane?",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "airplane 한 낱말 + 한국어(만들었니)에 맞춰 Why did you make this model airplane?",
+    "appliedTo": [
+      "pg01-2:p5"
+    ],
+    "issueIndex": 9
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 2) item 6",
+    "text": "How do you commute everyday?",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "every day 로 고침. everyday 를 오답 패턴으로 넣어 힌트를 줌",
+    "appliedTo": [
+      "pg01-2:s5",
+      "pg01-2:p6"
+    ],
+    "issueIndex": 10
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 2) item 7",
+    "text": "You are great workers in our farm!",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "on our farm 으로 고침(at our farm 도 허용). in our farm 은 오답 패턴",
+    "appliedTo": [
+      "pg01-2:p7"
+    ],
+    "issueIndex": 11
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 3) item 7",
+    "text": "She goes skiing every Saturday in winter",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "끝 마침표를 넣음",
+    "appliedTo": [
+      "pg01-3:p6"
+    ],
+    "issueIndex": 12
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 3) item 10",
+    "text": "He gave me hurt in my heart, but it was not serious.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "He hurt my feelings, but it was not serious. 로 고침(He hurt me … 도 허용)",
+    "appliedTo": [
+      "pg01-3:p9"
+    ],
+    "issueIndex": 13
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 3) item 11",
+    "text": "He bought the book although it was too expensive.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "too expensive 는 '지나치게 비싼'이라 비싼 줄 알면서 샀다는 문장이 성립함 — 문법 오류 아님. very expensive · but 으로 쓴 답도 허용. 종속접속사 although 는 뒤 레슨(pg20-2) 문법이고 but 으로 바꾸려면 절 구조를 바꿔야 해서 도전 문장으로 둠(점검 반박 G1 뒤 기준)",
+    "appliedTo": [
+      "pg01-3:p10"
+    ],
+    "issueIndex": 14
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 3) item 12",
+    "text": "It was cold, so I shut the door.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "문장은 맞으므로 그대로 두고, 비인칭 it 을 뒤 레슨(pg07-2) 문법으로 보아 도전 문장 + 조건 칩 'it을 써서' 로 표시하고 설명 카드에 한 줄(날씨를 말하는 it) 보충",
+    "appliedTo": [
+      "pg01-3:p12"
+    ],
+    "issueIndex": 15
+  },
+  {
+    "page": 6,
+    "where": "TOPIC 1 application 3) 전체(6쪽), TOPIC 2 application 1) 전체(10쪽)",
+    "text": "He is 대한.(3과) … They are too young to have jobs. / I am eleven years old.(1과) … They are pleased to find her.",
+    "type": "layout_or_extraction",
+    "decision": "na",
+    "reason": "PDF 글자층이 두 겹인 추출 문제 — 웹 데이터는 한 번씩만 넣음",
+    "appliedTo": [],
+    "issueIndex": 16
+  },
+  {
+    "page": 7,
+    "where": "TOPIC 1 review 1) items 4, 7",
+    "text": "4. 여러분들은 나의 학급친구들이다. / 7. 그것은 나를 행복하게 만든다.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "형태 찾기 문항을 '인칭대명사를 모두 누르고 각각 몇 인칭인지' 로 바꿔 You·my / It·me 를 모두 정답 처리",
+    "appliedTo": [
+      "pg01-2:s2",
+      "pg01-3:s3"
+    ],
+    "issueIndex": 17
+  },
+  {
+    "page": 7,
+    "where": "TOPIC 1 review 1) item 2",
+    "text": "우리는 그 날 동안 자유롭다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'그날'로 붙여 씀(우리는 그날 동안 자유롭다.)",
+    "appliedTo": [
+      "pg01-1:a2",
+      "pg01-1:p7"
+    ],
+    "issueIndex": 18
+  },
+  {
+    "page": 8,
+    "where": "TOPIC 1 review 2) item 2 (번호 없음)",
+    "text": "나는 공부하기와 친구 사귀기를 좋아해요",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "끝 마침표를 넣음",
+    "appliedTo": [
+      "pg01-1:p3"
+    ],
+    "issueIndex": 19
+  },
+  {
+    "page": 8,
+    "where": "TOPIC 1 review 2) item 4 (번호 없음)",
+    "text": "때때로 나는 TV 를 보거나 음악을 들어요. 내가 잠자리에 들기 전에",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "STUDENT 10-4 한국어(가끔씩 나는 내가 잠들기 전에 TV를 보거나 음악을 듣습니다.)로 한 문장으로 맞춤",
+    "appliedTo": [
+      "pg01-1:p5"
+    ],
+    "issueIndex": 20
+  },
+  {
+    "page": 8,
+    "where": "TOPIC 1 review 2) item 8 (번호 없음)",
+    "text": "우리는 사진을 찍을 많은 기회가 있을 거야.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어를 현재로 고침(우리는 사진을 찍을 기회가 많아.). 영어 원문 유지",
+    "appliedTo": [
+      "pg01-1:p12"
+    ],
+    "issueIndex": 21
+  },
+  {
+    "page": 8,
+    "where": "TOPIC 1 review 2) item 10 (번호 없음)",
+    "text": "우리는 20000달러를 주고 그 차를 살 거야.",
+    "type": "korean_typo",
+    "decision": "keep",
+    "reason": "'20000달러'는 오류가 아님 — 아라비아 숫자의 자릿점 쉼표(한글 맞춤법 문장 부호)는 쓸 수 있는 부호이지 빠졌다고 틀린 표기가 아니고, '2만 달러'는 표기를 바꾼 것. D6(영어·한국어 오류만 고침)에 따라 교재 한국어 '우리는 20000달러를 주고 그 차를 살 거야.'를 그대로 두고, 앞서 '2만 달러' → '20,000달러'로 바꾼 한국어와 문항의 fix 기록을 되돌림(정리-1권-A, 이끄는 세션 지시). 영어 답은 $20,000 · $20000 · 20,000 dollars · 20000 dollars · twenty thousand dollars, the car · that car, will · 'll · be going to 모두 허용",
+    "appliedTo": [
+      "pg01-1:p11"
+    ],
+    "issueIndex": 22
+  },
+  {
+    "page": 8,
+    "where": "TOPIC 1 review 2) item 11 (번호 없음)",
+    "text": "여러분들, 모두 수업 받을 준비가 되었나요, ?",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'되었나요?'로 고침(물음표 앞 쉼표·빈칸 삭제). '여러분들'은 흔히 쓰는 말이라 그대로",
+    "appliedTo": [
+      "pg01-2:a3",
+      "pg01-2:p3"
+    ],
+    "issueIndex": 23
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 13 (번호 없음)",
+    "text": "왜 너는 이 모형 비행기를 만들었니?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어를 과거형(Why did you make …)으로 맞춤 — 9번과 같은 문항",
+    "appliedTo": [
+      "pg01-2:p5"
+    ],
+    "issueIndex": 24
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 14 (번호 없음)",
+    "text": "당신은 어떻게 매일 출 퇴근하십니까?",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'출퇴근'으로 붙여 씀. 어순은 원문 그대로",
+    "appliedTo": [
+      "pg01-2:p6"
+    ],
+    "issueIndex": 25
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 15 (번호 없음)",
+    "text": "여러분들은 우리 농장에서 훌륭한 일군들입니다!",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'일꾼'으로 고침. '여러분들'은 그대로",
+    "appliedTo": [
+      "pg01-2:p7"
+    ],
+    "issueIndex": 26
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 16 (번호 없음)",
+    "text": "그는 매일 일찍 일어난다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어에 '아침'을 넣어 영어와 맞춤(그는 매일 아침 일찍 일어난다.). every day 로 쓴 답도 허용",
+    "appliedTo": [
+      "pg01-3:p4"
+    ],
+    "issueIndex": 27
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 20 (번호 없음)",
+    "text": "그녀는 내 수업에 들어와 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그녀는 우리 반이다.'로 고침. She is in our class. · She is my classmate. 도 허용",
+    "appliedTo": [
+      "pg01-3:p8"
+    ],
+    "issueIndex": 28
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 23 (번호 없음)",
+    "text": "날씨가 너무 추워서 그래서 나는 문을 닫았다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'날씨가 추워서 나는 문을 닫았다.'로 고침(겹친 '그래서'와 영어에 없는 '너무' 삭제)",
+    "appliedTo": [
+      "pg01-3:p12"
+    ],
+    "issueIndex": 29
+  },
+  {
+    "page": 9,
+    "where": "TOPIC 1 review 2) item 24 (번호 없음)",
+    "text": "그들은 직업을 가지기엔 너무 어렸다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어를 현재로 고침(너무 어리다). 영어 원문 유지",
+    "appliedTo": [
+      "pg01-3:p13"
+    ],
+    "issueIndex": 30
+  },
+  {
+    "page": 10,
+    "where": "TOPIC 2 application 1) item 4",
+    "text": "It is the start of the weekend(10과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "끝 마침표를 넣음(Pass-Off 쪽과 같게)",
+    "appliedTo": [
+      "pg02-1:p4"
+    ],
+    "issueIndex": 31
+  },
+  {
+    "page": 10,
+    "where": "TOPIC 2 application 1) item 5",
+    "text": "I am too busy to climb a tree.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "문법이 맞는 문장이고 상황이 조금 엉뚱할 뿐이라 원문 그대로(too ~ to 는 뒤 레슨 문법이라 도전 문장으로 표시)",
+    "appliedTo": [
+      "pg02-1:p9"
+    ],
+    "issueIndex": 32
+  },
+  {
+    "page": 11,
+    "where": "TOPIC 2 passOff 2) item 4; application 2) item 4",
+    "text": "I have many friends.(1과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "STUDENT 연결을 3-2(Because of this, I have many friends.)의 '바꾼 문장'으로 고침. 1-3 의 I have a lot of friends. 는 허용 답으로",
+    "appliedTo": [
+      "pg02-3:a2",
+      "pg02-3:p2"
+    ],
+    "issueIndex": 33
+  },
+  {
+    "page": 11,
+    "where": "TOPIC 2 application 2) item 7",
+    "text": "Jamie eats lunch at the school.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답을 at school 로 바꾸고 원문(at the school)도 허용 답으로 둠",
+    "appliedTo": [
+      "pg02-2:p5"
+    ],
+    "issueIndex": 34
+  },
+  {
+    "page": 11,
+    "where": "TOPIC 2 application 2) item 8",
+    "text": "Rita reads the newspaper everyday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "every day 로 고침. everyday 는 오답 패턴",
+    "appliedTo": [
+      "pg02-2:p6"
+    ],
+    "issueIndex": 35
+  },
+  {
+    "page": 11,
+    "where": "TOPIC 2 application 2) item 10",
+    "text": "Rice grows in Britain.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "Rice grows in Korea. 로 고침(3인칭 단수 -s 연습 유지). 한국어도 '벼는 한국에서 자란다.'",
+    "appliedTo": [
+      "pg02-2:p8"
+    ],
+    "issueIndex": 36
+  },
+  {
+    "page": 12,
+    "where": "TOPIC 2 review 1. item 4)",
+    "text": "4) 그것은 그 주의 시작입니다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그것은 주말의 시작입니다.'로 고침(STUDENT 10-5 한국어와 같은 뜻)",
+    "appliedTo": [
+      "pg02-1:a4",
+      "pg02-1:p4"
+    ],
+    "issueIndex": 37
+  },
+  {
+    "page": 12,
+    "where": "TOPIC 2 review 1. item 3)",
+    "text": "3) 그는 진실로 똑똑한 사람입니다.",
+    "type": "korean_typo",
+    "decision": "keep",
+    "reason": "'진실로'는 truly 의 사전 뜻 그대로라 오역이 아님(조금 딱딱할 뿐). really · very 로 쓴 답도 허용. 점검 반박에서 '정말'로 바꾸자는 선택 권장이 있었으나 오류가 아니어서 D6(오류만 고침)에 따라 그대로 — 수정기록 G1.json",
+    "appliedTo": [
+      "pg02-1:a3",
+      "pg02-1:p3"
+    ],
+    "issueIndex": 38
+  },
+  {
+    "page": 12,
+    "where": "TOPIC 2 review 2. item 2)",
+    "text": "2) 그녀는 또한 음악듣기를 좋아한다.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "'음악 듣기'로 띄어 쓰고, 원형 쓰기 문항 지시를 '주어 She 의 동사'로 좁혀 답을 love 하나로 정함",
+    "appliedTo": [
+      "pg02-2:a2",
+      "pg02-2:s2",
+      "pg02-2:p2"
+    ],
+    "issueIndex": 39
+  },
+  {
+    "page": 12,
+    "where": "TOPIC 2 review 2. item 3)",
+    "text": "3) 그녀는 두 명의 남동생과 두 명의 여동생이 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그녀는 남자 형제가 두 명, 여자 형제가 두 명 있다.'로 고침",
+    "appliedTo": [
+      "pg02-3:a1",
+      "pg02-3:p1"
+    ],
+    "issueIndex": 40
+  },
+  {
+    "page": 13,
+    "where": "TOPIC 2 review 3. item 5)",
+    "text": "5) 밖에 비가 오니?",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "Is it rainy outside? · Is it raining outside? 모두 허용 답(비인칭 it 이라 도전 문장)",
+    "appliedTo": [
+      "pg02-1:p10"
+    ],
+    "issueIndex": 41
+  },
+  {
+    "page": 13,
+    "where": "TOPIC 2 review 3. item 8)",
+    "text": "8) 그 아이는 장군이 되기를 원한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어를 '바란다'로 고치고 wants 로 쓴 답도 허용",
+    "appliedTo": [
+      "pg02-2:p3"
+    ],
+    "issueIndex": 42
+  },
+  {
+    "page": 14,
+    "where": "TOPIC 2 review 3. item 13)",
+    "text": "13) 라이스는 영국에서 성장하고 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'벼는 한국에서 자란다.'로 고침(36번 영어 수정과 짝)",
+    "appliedTo": [
+      "pg02-2:p8"
+    ],
+    "issueIndex": 43
+  },
+  {
+    "page": 14,
+    "where": "TOPIC 2 review 3. items 14)~18)",
+    "text": "14)리즈는 … / 17)그는 내방에서 숙제를 한다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'내 방'으로 띄어 씀(번호 뒤 빈칸은 조판이라 해당 없음)",
+    "appliedTo": [
+      "pg02-2:p12"
+    ],
+    "issueIndex": 44
+  },
+  {
+    "origin": "self",
+    "page": 7,
+    "where": "TOPIC 1 review 1) item 4",
+    "text": "여러분들은 나의 학급친구들이다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'학급 친구'는 사전에 한 낱말로 없는 두 낱말이라 띄어 씀",
+    "appliedTo": [
+      "pg01-2:a2",
+      "pg01-2:p2"
+    ]
+  },
+  {
+    "origin": "self",
+    "page": 14,
+    "where": "TOPIC 2 review 3. item 14",
+    "text": "리즈는 식사값을 내기를 원한다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'식사값'은 사이시옷 규칙에 어긋남(맞는 표기는 '식삿값', 찻값 · 최솟값과 같은 규칙). 점검 반박 G1 에서 '식삿값'이 학습자에게 낯설다는 지적을 받아 같은 뜻의 쉬운 말 '식사비'로 씀(식사 + 비는 한자어끼리라 사이시옷 없음)",
+    "appliedTo": [
+      "pg02-2:p9"
+    ]
+  }
+]

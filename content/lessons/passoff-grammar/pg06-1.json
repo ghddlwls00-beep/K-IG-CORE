@@ -1,0 +1,1528 @@
+{
+  "id": "pg06-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "명사의 종류·성격",
+  "label": "TOPIC 6. 명사",
+  "menuLabel": "6-1. 명사의 종류·성격",
+  "unit": 6,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 명사의 종류와 성격",
+  "grammarTags": [
+    "noun-countable-uncountable",
+    "noun-types"
+  ],
+  "koreanWords": [
+    "Chuseok",
+    "Songnisan"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg06-1:a1",
+          "en": "She is a pianist.",
+          "ko": "그녀는 피아니스트이다.",
+          "koSource": "review",
+          "focus": [
+            "a pianist"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 1 (보통명사)",
+            "reviewWhere": "review 1 item 1"
+          }
+        },
+        {
+          "id": "pg06-1:a2",
+          "en": "They are students.",
+          "ko": "그들은 학생들이다.",
+          "koSource": "review",
+          "focus": [
+            "students"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 2 (보통명사)",
+            "reviewWhere": "review 1 item 3"
+          }
+        },
+        {
+          "id": "pg06-1:a3",
+          "en": "My family is always happy.",
+          "ko": "나의 가족은 항상 행복하다.",
+          "koSource": "review",
+          "focus": [
+            "family"
+          ],
+          "studentRef": {
+            "lesson": "s2-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 3 (집합명사)",
+            "reviewWhere": "review 1 item 6"
+          }
+        },
+        {
+          "id": "pg06-1:a4",
+          "en": "Two families lived happily together.",
+          "ko": "두 가족이 함께 행복하게 살았다.",
+          "koSource": "review",
+          "focus": [
+            "families"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 4 (집합명사)",
+            "reviewWhere": "review 1 item 7"
+          }
+        },
+        {
+          "id": "pg06-1:a5",
+          "en": "Lunar New Year's Day, Buddha's Birthday, Chuseok, Songnisan.",
+          "ko": "설날, 석가탄신일, 추석, 속리산",
+          "koSource": "new",
+          "focus": [
+            "Lunar New Year's Day",
+            "Buddha's Birthday",
+            "Chuseok",
+            "Songnisan"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 5 (고유명사)"
+          },
+          "fix": {
+            "from": "Lunar New Year’s,  Buddha’s Birthday,  Chu-seok,  Soungni-san.",
+            "kind": "english_unnatural",
+            "why": "한국 고유명사를 표준 로마자로 고치고(Chuseok · Songnisan) 명절 이름을 Lunar New Year's Day 로 갖췄습니다."
+          }
+        },
+        {
+          "id": "pg06-1:a6",
+          "en": "There is much paper, water and meat.",
+          "ko": "많은 종이와 물과 고기가 있다.",
+          "koSource": "review",
+          "focus": [
+            "paper",
+            "water",
+            "meat"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 6 (물질명사)",
+            "reviewWhere": "review 1 item 10"
+          }
+        },
+        {
+          "id": "pg06-1:a7",
+          "en": "I want to live in kindness, truth and happiness.",
+          "ko": "나는 친절, 진실 그리고 행복 속에서 살기를 원한다.",
+          "koSource": "review",
+          "focus": [
+            "kindness",
+            "truth",
+            "happiness"
+          ],
+          "bookRef": {
+            "book": 1,
+            "page": 42,
+            "where": "passOff (1) item 7 (추상명사)",
+            "reviewWhere": "review 1 item 13"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg06-1:a1",
+          "pg06-1:a2",
+          "pg06-1:a6"
+        ],
+        "question": "pianist · students 와 달리 paper · water · meat 에는 왜 a 나 -s 가 없을까요?",
+        "options": [
+          "셀 수 없는 명사라서",
+          "짧은 낱말이라서",
+          "문장 끝에 있어서"
+        ],
+        "answer": 0,
+        "why": "종이 · 물 · 고기처럼 일정한 모양으로 셀 수 없는 것에는 a 도 -s 도 붙이지 않습니다."
+      },
+      "title": "명사는 종류에 따라 셀 수 있는 것과 셀 수 없는 것이 있어요",
+      "points": [
+        "보통명사(pianist · bird)는 셀 수 있어요: a pianist, two birds",
+        "집합명사(family)는 여럿이 모인 한 덩어리: My family is …",
+        "고유명사(Korea · Chuseok)는 하나뿐인 이름 — 대문자로 시작",
+        "물질명사(water · meat) · 추상명사(kindness)는 셀 수 없어 a · -s ✗",
+        "셀 수 없는 명사는 단위로 세요: a glass of milk, a piece of paper"
+      ],
+      "table": {
+        "columns": [
+          "종류",
+          "예",
+          "셀 수 있나"
+        ],
+        "rows": [
+          [
+            "보통명사",
+            "pianist, student, bird",
+            "○ (a · -s)"
+          ],
+          [
+            "집합명사",
+            "family",
+            "○ (한 덩어리면 단수 취급)"
+          ],
+          [
+            "고유명사",
+            "Korea, Chuseok, Mr. Hillman",
+            "✕ (대문자로 시작)"
+          ],
+          [
+            "물질명사",
+            "paper, water, meat",
+            "✕ (a glass of … 로 셈)"
+          ],
+          [
+            "추상명사",
+            "kindness, truth, happiness",
+            "✕"
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '책 한 권 · 물 한 잔'처럼 명사 모양은 그대로 두고 세는 말(권 · 잔)만 붙이지만, 영어는 셀 수 있는 명사(book)에 a · -s 를 붙이고(a book, two books), 셀 수 없는 명사(water · meat)에는 붙이지 못해 a glass of 같은 단위로 셉니다.",
+      "mistakes": [
+        {
+          "wrong": "She drinks a lot of milks.",
+          "right": "She drinks a lot of milk.",
+          "why": "milk(우유)는 셀 수 없는 물질명사예요."
+        },
+        {
+          "wrong": "He ate two breads.",
+          "right": "He ate two pieces of bread.",
+          "why": "bread 는 a piece of 같은 단위로 셉니다."
+        }
+      ],
+      "worked": [
+        "우유 한 잔 주세요.",
+        "우유(milk)는 셀 수 없는 물질명사",
+        "한 잔 → a glass of",
+        "Please give me a glass of milk."
+      ],
+      "terms": [],
+      "check": {
+        "question": "다음 중 a 를 붙일 수 없는 명사는?",
+        "options": [
+          "bird",
+          "water",
+          "student"
+        ],
+        "answer": 1,
+        "why": "water 는 셀 수 없는 물질명사라 a 를 붙이지 않아요.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg06-1:s8",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "She",
+            "is",
+            "a",
+            "pianist",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사"
+          ],
+          "why": "pianist 는 셀 수 있는 사람이라 보통명사예요(a pianist).",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 1 (명사에 동그라미)"
+          }
+        },
+        {
+          "id": "pg06-1:s2",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "My",
+            "family",
+            "is",
+            "always",
+            "happy",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "집합명사"
+          ],
+          "why": "family 는 여러 사람이 모인 한 덩어리라 집합명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 6 (명사에 동그라미)"
+          }
+        },
+        {
+          "id": "pg06-1:s13",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Two",
+            "families",
+            "lived",
+            "happily",
+            "together",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "집합명사"
+          ],
+          "why": "families 는 집합명사 family 의 복수형이에요(두 가족).",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 7 (명사에 동그라미)"
+          }
+        },
+        {
+          "id": "pg06-1:s16",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Tom",
+            "visited",
+            "Songnisan",
+            "with",
+            "his",
+            "family",
+            "."
+          ],
+          "answer": [
+            0,
+            2,
+            5
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "고유명사",
+            "고유명사",
+            "집합명사"
+          ],
+          "why": "Tom 과 Songnisan(속리산)은 하나뿐인 이름이라 고유명사(대문자로 시작), family 는 여러 사람이 모인 한 덩어리라 집합명사예요.",
+          "source": "new"
+        },
+        {
+          "id": "pg06-1:s3",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "There",
+            "is",
+            "much",
+            "paper",
+            ",",
+            "water",
+            "and",
+            "meat",
+            "."
+          ],
+          "answer": [
+            3,
+            5,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "물질명사",
+            "물질명사",
+            "물질명사"
+          ],
+          "why": "paper · water · meat 는 일정한 모양으로 셀 수 없는 물질명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 10 (명사에 동그라미)"
+          }
+        },
+        {
+          "id": "pg06-1:s4",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "I",
+            "want",
+            "to",
+            "live",
+            "in",
+            "kindness",
+            ",",
+            "truth",
+            "and",
+            "happiness",
+            "."
+          ],
+          "answer": [
+            5,
+            7,
+            9
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "추상명사",
+            "추상명사",
+            "추상명사"
+          ],
+          "why": "kindness · truth · happiness 는 눈에 보이지 않는 성질 · 생각이라 추상명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 47,
+            "where": "review 1 item 13 (명사에 동그라미)"
+          }
+        },
+        {
+          "id": "pg06-1:s1",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Mr. Hillman",
+            "was",
+            "a",
+            "crazy",
+            "man",
+            "."
+          ],
+          "answer": [
+            0,
+            4
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "고유명사",
+            "보통명사"
+          ],
+          "why": "Mr. Hillman 은 사람 이름이라 고유명사, man 은 셀 수 있는 보통명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 9 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s5",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Korea",
+            "has",
+            "many",
+            "traditional",
+            "holidays",
+            ":",
+            "Lunar New Year's Day",
+            ",",
+            "Buddha's Birthday",
+            "and",
+            "Chuseok",
+            "."
+          ],
+          "answer": [
+            0,
+            4,
+            6,
+            8,
+            10
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "고유명사",
+            "보통명사",
+            "고유명사",
+            "고유명사",
+            "고유명사"
+          ],
+          "why": "Korea · Lunar New Year's Day · Buddha's Birthday · Chuseok 는 하나뿐인 이름이라 고유명사(대문자로 시작), holidays 는 셀 수 있는 보통명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 8 (명사에 동그라미)"
+          },
+          "fix": {
+            "from": "Korea has many traditional days; Lunar New Year’s, Buddha’s Birthday, Chu-seok,",
+            "kind": "english_grammar",
+            "why": "영작 문항(고친 문장)과 같은 문장으로 맞췄습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s6",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Will",
+            "you",
+            "give",
+            "me",
+            "a",
+            "glass",
+            "of",
+            "water",
+            "?"
+          ],
+          "answer": [
+            5,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사",
+            "물질명사"
+          ],
+          "why": "glass(유리잔)는 셀 수 있는 보통명사, water 는 셀 수 없는 물질명사라 a glass of water 처럼 단위로 세요. 책은 water 만 굵게 표시했지만 glass 도 명사입니다.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 11 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s7",
+          "kind": "choice",
+          "instruction": "'물 한 잔'을 바르게 쓴 것을 고르세요",
+          "sentence": null,
+          "options": [
+            "a water",
+            "two waters",
+            "a glass of water"
+          ],
+          "answer": 2,
+          "why": "water 는 셀 수 없는 물질명사라 a glass of 같은 단위로 셉니다.",
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s9",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Dolphins",
+            "look",
+            "like",
+            "small",
+            "whales",
+            ",",
+            "and",
+            "they",
+            "have",
+            "large",
+            "brains",
+            "."
+          ],
+          "answer": [
+            0,
+            4,
+            10
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사",
+            "보통명사",
+            "보통명사"
+          ],
+          "why": "Dolphins · whales · brains 는 셀 수 있는 보통명사라 여럿이면 -s 를 붙여요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 2 (명사에 동그라미)"
+          },
+          "fix": {
+            "from": "Dolphins look like a small whale and they have large brains.",
+            "kind": "english_unnatural",
+            "why": "영작 문항(고친 문장)과 같은 문장으로 맞췄습니다. 책의 굵은 글씨처럼 관사 a 를 명사로 고르지 않습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s10",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "They",
+            "are",
+            "students",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사"
+          ],
+          "why": "students 는 셀 수 있는 보통명사의 복수형이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 3 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s11",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "The",
+            "concert",
+            "was",
+            "successful",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사"
+          ],
+          "why": "concert 는 셀 수 있는 보통명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 4 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s12",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Penguins",
+            "are",
+            "birds",
+            "."
+          ],
+          "answer": [
+            0,
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사",
+            "보통명사"
+          ],
+          "why": "Penguins · birds 는 셀 수 있는 보통명사의 복수형이에요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 5 (명사에 동그라미)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s14",
+          "kind": "select",
+          "instruction": "명사를 모두 누르고, 종류를 고르세요",
+          "tokens": [
+            "Every",
+            "day",
+            "he",
+            "wants",
+            "to",
+            "eat",
+            "some",
+            "meat",
+            "."
+          ],
+          "answer": [
+            1,
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "보통명사",
+            "집합명사",
+            "고유명사",
+            "물질명사",
+            "추상명사"
+          ],
+          "labelAnswer": [
+            "보통명사",
+            "물질명사"
+          ],
+          "why": "day 는 셀 수 있는 보통명사, meat 는 셀 수 없는 물질명사예요.",
+          "bookRef": {
+            "book": 1,
+            "page": 46,
+            "where": "review 1 item 12 (명사에 동그라미)"
+          },
+          "fix": {
+            "from": "Everyday he wants to eat some meat.",
+            "kind": "english_grammar",
+            "why": "'매일'은 두 낱말 every day 라 영작 문항과 같게 고쳤습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg06-1:s15",
+          "kind": "choice",
+          "instruction": "셀 수 없는 명사를 고르세요",
+          "sentence": null,
+          "options": [
+            "pianist",
+            "meat",
+            "family"
+          ],
+          "answer": 1,
+          "why": "meat(고기)는 일정한 모양이 없어 셀 수 없는 물질명사예요.",
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg06-1:p1",
+          "ko": "그녀는 피아니스트이다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is a pianist.",
+          "accept": [],
+          "targets": [
+            [
+              "a pianist"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She is pianist",
+              "hint": "셀 수 있는 명사 하나 앞에는 a 가 필요해요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "passOff (1) item 1 · application (1) item 1",
+            "reviewWhere": "review 1 item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-1:p2",
+          "ko": "돌고래는 작은 고래같이 생겼고 큰 두뇌를 가지고 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Dolphins look like small whales, and they have large brains.",
+          "accept": [
+            "Dolphins look like small whales and they have large brains.",
+            "Dolphins look like small whales, and they have big brains.",
+            "Dolphins look like small whales and they have big brains.",
+            "Dolphins look like small whales and have large brains.",
+            "Dolphins look like small whales and have big brains."
+          ],
+          "targets": [
+            [
+              "Dolphins"
+            ],
+            [
+              "whales"
+            ],
+            [
+              "brains"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a small whale",
+              "hint": "돌고래들(복수)과 비교하니 고래도 복수로 맞춰요."
+            },
+            {
+              "match": "Dolphin look",
+              "hint": "돌고래 전체를 말할 때는 복수형으로 써요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "noun-countable-uncountable",
+            "compound-sentence",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 2",
+            "reviewWhere": "review 1 item 2"
+          },
+          "fix": {
+            "from": "Dolphins look like a small whale and they have large brains.",
+            "kind": "english_unnatural",
+            "why": "복수 주어 Dolphins 에 맞춰 small whales 로 고치고, 두 절 사이에 쉼표를 넣었습니다."
+          }
+        },
+        {
+          "id": "pg06-1:p3",
+          "ko": "그들은 학생들이다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "They are students.",
+          "accept": [],
+          "targets": [
+            [
+              "students"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a students",
+              "hint": "여럿이면 a 없이 -s 만 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "passOff (1) item 2 · application (1) item 3",
+            "reviewWhere": "review 1 item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-1:p4",
+          "ko": "그 콘서트는 성공적이었다.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "The concert was successful.",
+          "accept": [
+            "The concert was a success."
+          ],
+          "targets": [
+            [
+              "concert"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "The concert is",
+              "hint": "'성공적이었다'는 과거라 was 예요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 4",
+            "reviewWhere": "review 1 item 4"
+          },
+          "fix": {
+            "from": "그 콘서트는 성공적이다.",
+            "kind": "translation_mismatch",
+            "why": "영어가 과거(was)라 한국어도 과거로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg06-1:p5",
+          "ko": "펭귄은 새이다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Penguins are birds.",
+          "accept": [
+            "A penguin is a bird."
+          ],
+          "targets": [
+            [
+              "Penguins",
+              "penguin"
+            ],
+            [
+              "birds",
+              "bird"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Penguin is bird",
+              "hint": "하나를 말할 때는 셀 수 있는 명사 앞에 a 가 필요해요."
+            },
+            {
+              "match": "Penguins is",
+              "hint": "Penguins(복수)에는 are 예요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "be-present",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 5",
+            "reviewWhere": "review 1 item 5"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-1:p6",
+          "ko": "나의 가족은 항상 행복하다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "My family is always happy.",
+          "accept": [],
+          "targets": [
+            [
+              "family"
+            ],
+            [
+              "is"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "family are",
+              "hint": "가족을 한 덩어리로 볼 때는 단수 동사 is 를 써요."
+            },
+            {
+              "match": "families",
+              "hint": "'나의 가족'은 한 집이라 단수형으로 써요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "passOff (1) item 3 · application (1) item 6",
+            "reviewWhere": "review 1 item 6"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-1:p7",
+          "ko": "두 가족이 함께 행복하게 살았다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Two families lived happily together.",
+          "accept": [
+            "Two families lived together happily."
+          ],
+          "targets": [
+            [
+              "families"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "familys",
+              "hint": "자음 + y 는 y 를 i 로 바꾸고 -es 를 붙여요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "passOff (1) item 4 · application (1) item 7",
+            "reviewWhere": "review 1 item 7"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-1:p8",
+          "ko": "한국에는 설날, 석가탄신일, 추석 같은 전통 명절이 많다.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "Korea has many traditional holidays: Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+          "accept": [
+            "Korea has many traditional holidays: Lunar New Year's Day, Buddha's Birthday, and Chuseok.",
+            "Korea has many traditional holidays: Seollal, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays: Seollal, Buddha's Birthday, and Chuseok.",
+            "Korea has many traditional holidays such as Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays such as Lunar New Year's Day, Buddha's Birthday, and Chuseok.",
+            "Korea has many traditional holidays such as Seollal, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays such as Seollal, Buddha's Birthday, and Chuseok.",
+            "Korea has many traditional holidays, such as Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays, such as Lunar New Year's Day, Buddha's Birthday, and Chuseok.",
+            "Korea has many traditional holidays, such as Seollal, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays, such as Seollal, Buddha's Birthday, and Chuseok.",
+            "There are many traditional holidays in Korea: Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays: Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea, such as Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays such as Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays like Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea, like Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays like Lunar New Year's Day, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea: Seollal, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays: Seollal, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea, such as Seollal, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays such as Seollal, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays like Seollal, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea, like Seollal, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays like Seollal, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays: Lunar New Year, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea: Lunar New Year, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays: Lunar New Year, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays such as Lunar New Year, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea, such as Lunar New Year, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays such as Lunar New Year, Buddha's Birthday and Chuseok.",
+            "Korea has many traditional holidays like Lunar New Year, Buddha's Birthday and Chuseok.",
+            "There are many traditional holidays in Korea, like Lunar New Year, Buddha's Birthday and Chuseok.",
+            "In Korea, there are many traditional holidays like Lunar New Year, Buddha's Birthday and Chuseok."
+          ],
+          "targets": [
+            [
+              "holidays"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "traditional days",
+              "hint": "'명절'은 그냥 day 가 아니라 쉬는 날을 뜻하는 낱말로 써요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s18-1",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 8",
+            "reviewWhere": "review 1 item 8"
+          },
+          "fix": {
+            "from": "Korea has many traditional days; Lunar New Year’s, Buddha’s Birthday, Chu-seok,",
+            "fromKo": "한국은 많은 전통 휴일들이 있다: 음력 설, 석가탄신일, 추석이다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "쉼표로 끝난 미완성 문장을 마치고, 목록 앞 세미콜론을 콜론으로, days 를 holidays 로, Chu-seok 을 Chuseok 으로 고쳤습니다. 한국어도 어색한 '…있다: …추석이다'를 자연스러운 문장으로 고치고 '음력 설'을 '설날'로 썼습니다('석가탄신일'은 교재 시대(2012)의 공식 이름이라 그대로)."
+          }
+        },
+        {
+          "id": "pg06-1:p9",
+          "ko": "힐만 씨는 미친 사람이었다.",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "Mr. Hillman was a crazy man.",
+          "accept": [
+            "Mr Hillman was a crazy man."
+          ],
+          "targets": [
+            [
+              "a crazy man"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "was crazy man",
+              "hint": "한 사람 앞에는 a 가 필요해요."
+            },
+            {
+              "match": "is a crazy man",
+              "hint": "'미친 사람이었다'는 과거라 was 예요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 9",
+            "reviewWhere": "review 1 item 9"
+          },
+          "fix": {
+            "from": "힐만씨는 미친 사람이다.",
+            "kind": "translation_mismatch",
+            "why": "영어가 과거(was)라 한국어도 과거로 맞추고 '힐만 씨'를 띄어 썼습니다."
+          }
+        },
+        {
+          "id": "pg06-1:p10",
+          "ko": "많은 종이와 물과 고기가 있다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "There is much paper, water and meat.",
+          "accept": [
+            "There is much paper, water, and meat.",
+            "There is a lot of paper, water and meat.",
+            "There is a lot of paper, water, and meat.",
+            "There is lots of paper, water and meat."
+          ],
+          "targets": [
+            [
+              "There is"
+            ],
+            [
+              "paper"
+            ],
+            [
+              "water"
+            ],
+            [
+              "meat"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "There are",
+              "hint": "첫 명사 paper 가 셀 수 없는 명사라 There is 를 써요."
+            },
+            {
+              "match": "many paper",
+              "hint": "셀 수 없는 명사에는 many 가 아니라 much 예요."
+            },
+            {
+              "match": "papers",
+              "hint": "종이(재료)는 셀 수 없어 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-countable-uncountable",
+            "noun-types",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "passOff (1) item 6 · application (1) item 10",
+            "reviewWhere": "review 1 item 10"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg06-1:p11",
+          "ko": "제게 물 한 잔 주시겠어요?",
+          "koSource": "review-fixed",
+          "condition": null,
+          "promptEn": null,
+          "en": "Will you give me a glass of water?",
+          "accept": [
+            "Can you give me a glass of water?",
+            "Could you give me a glass of water?",
+            "Would you give me a glass of water?",
+            "Will you please give me a glass of water?",
+            "Could you please give me a glass of water?",
+            "Can I have a glass of water?",
+            "Could I have a glass of water?",
+            "May I have a glass of water?"
+          ],
+          "targets": [
+            [
+              "a glass of water"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a water",
+              "hint": "물은 셀 수 없어 '한 잔'처럼 담는 단위를 붙여 세요."
+            },
+            {
+              "match": "glass of waters",
+              "hint": "water 에는 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-countable-uncountable",
+            "future-will",
+            "question-yes-no",
+            "sentence-pattern-4"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 11",
+            "reviewWhere": "review 1 item 11"
+          },
+          "fix": {
+            "from": "제게 물 한잔을 주시겠어요?",
+            "kind": "korean_typo",
+            "why": "'한 잔'은 띄어 씁니다."
+          }
+        },
+        {
+          "id": "pg06-1:p12",
+          "ko": "매일 그는 약간의 고기를 먹기 원한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "Every day he wants to eat some meat.",
+          "accept": [
+            "He wants to eat some meat every day.",
+            "Every day, he wants to eat some meat."
+          ],
+          "targets": [
+            [
+              "every day"
+            ],
+            [
+              "meat"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "everyday",
+              "hint": "'매일'은 두 낱말로 띄어 써요(붙여 쓴 everyday 는 '일상적인')."
+            },
+            {
+              "match": "meats",
+              "hint": "meat(고기)는 셀 수 없어 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-countable-uncountable",
+            "want-to",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "application (1) item 12",
+            "reviewWhere": "review 1 item 12"
+          },
+          "fix": {
+            "from": "Everyday he wants to eat some meat.",
+            "kind": "english_grammar",
+            "why": "'매일'이라는 부사는 두 낱말 every day 입니다(everyday 는 '일상적인'이라는 형용사)."
+          }
+        },
+        {
+          "id": "pg06-1:p13",
+          "ko": "나는 친절, 진실 그리고 행복 속에서 살기를 원한다.",
+          "koSource": "review",
+          "condition": null,
+          "promptEn": null,
+          "en": "I want to live in kindness, truth and happiness.",
+          "accept": [
+            "I want to live in kindness, truth, and happiness."
+          ],
+          "targets": [
+            [
+              "kindness"
+            ],
+            [
+              "truth"
+            ],
+            [
+              "happiness"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "kindnesses",
+              "hint": "추상명사는 셀 수 없어 -es 를 붙이지 않아요."
+            },
+            {
+              "match": "a kindness",
+              "hint": "추상명사 앞에는 a 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-types",
+            "want-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 1,
+            "page": 44,
+            "where": "passOff (1) item 7 · application (1) item 13",
+            "reviewWhere": "review 1 item 13"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg06-1:t1",
+          "ko": "당신은 얼마나 많은 돈을 필요로 하나?",
+          "koSource": "grammar",
+          "condition": null,
+          "promptEn": null,
+          "en": "How much money do you need?",
+          "accept": [],
+          "targets": [
+            [
+              "much money"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How many money",
+              "hint": "money 는 셀 수 없는 명사라 How much 로 물어요."
+            },
+            {
+              "match": "moneys",
+              "hint": "money 에는 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-countable-uncountable",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-017#13",
+          "fix": null
+        },
+        {
+          "id": "pg06-1:t2",
+          "ko": "그는 충고 한마디를 들으려고 그의 친구에게 갔다.",
+          "koSource": "grammar",
+          "condition": null,
+          "promptEn": null,
+          "en": "He went to his friend for a piece of advice.",
+          "accept": [
+            "He went to his friend for a word of advice.",
+            "He went to his friend for some advice.",
+            "He went to see his friend for a piece of advice."
+          ],
+          "targets": [
+            [
+              "a piece of advice",
+              "a word of advice",
+              "some advice"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "an advice",
+              "hint": "advice(충고)는 셀 수 없어 '한 마디'처럼 단위를 붙여 세요."
+            },
+            {
+              "match": "advices",
+              "hint": "advice 에는 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "noun-countable-uncountable",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-010#10",
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg06-1:f1",
+      "template": "I drink a glass of ___ every morning.",
+      "ko": "나는 매일 아침 ___ 한 잔을 마신다."
+    }
+  ]
+}

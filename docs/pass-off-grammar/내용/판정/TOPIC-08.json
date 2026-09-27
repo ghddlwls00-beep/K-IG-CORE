@@ -1,0 +1,299 @@
+[
+  {
+    "page": 58,
+    "where": "passOff (1) item 4 + application (1) item 9(p59) + Review 1 item 9(p61)",
+    "text": "Most people make Song-Pyun which is a Korean traditional rice cake.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "하나뿐인 송편을 덧붙여 설명하므로 쉼표 + which(계속적 용법)가 맞고, 형용사 순서는 traditional Korean, 표기는 songpyeon. STUDENT s18-3 이 이미 같은 꼴로 고쳐 두어 그 영어를 씀(한국어는 Review 1 item 9 그대로). Korean traditional 은 정답 목록에 넣지 않고 오답 힌트로 안내합니다. 쉼표는 채점이 문장부호를 보지 않아(마이크 답의 쉼표는 인식기가 찍음 — 설계 §8 · 데이터-형식 v1.2) 오답 패턴으로 가려낼 수 없으므로 오답 패턴 'songpyeon which'는 뺐고(정리-1권-B), 계속적 용법의 쉼표는 설명 카드(3번 줄 · 한국어와 다른 점)로 가르칩니다.",
+    "appliedTo": [
+      "pg08-2:a1",
+      "pg08-2:p1",
+      "pg08-2:rule"
+    ]
+  },
+  {
+    "page": 58,
+    "where": "passOff (1) item 5 + application (1) item 11(p59) + Review 1 item 11(p61)",
+    "text": "She has a bird of which color is beautiful. (= whose)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "of which 는 the color of which 또는 of which the color 꼴로만 써서 원문은 비문. 모범 답 She has a bird the color of which is beautiful.(of which the color · colour 도 정답). '(= whose)'는 설명 카드 표(소유격: whose / the + 명사 + of which)와 오답 힌트로 옮김. 조건이 (of which)라 whose 답은 정답 목록에 넣지 않음.",
+    "appliedTo": [
+      "pg08-2:a2",
+      "pg08-2:p3"
+    ]
+  },
+  {
+    "page": 58,
+    "where": "passOff (2) item 4 + application (2) item 5(p60) + Review 2 item 5(p62)",
+    "text": "He is my friend that I love. / He is my friend that I have loved.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "이미 정해진 my friend 뒤에 한정하는 관계절은 어색하고, Pass-Off(love)와 Application(have loved)이 서로 달라 He is the friend that I love. 하나로 합침(a friend 도 정답). 한국어도 '그는 내가 사랑하는 친구이다.'로 맞춤. 교재 두 문장은 fix.from 에 남김(Application 문장은 p4 에 합쳐져 제외 문장 없음).",
+    "appliedTo": [
+      "pg08-3:a4",
+      "pg08-3:p4"
+    ]
+  },
+  {
+    "page": 58,
+    "where": "passOff (2) item 5",
+    "text": "He is the very man that I want to see",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Pass-Off 문장 끝 마침표만 보충(Application p60 은 마침표 있음).",
+    "appliedTo": [
+      "pg08-3:a5"
+    ]
+  },
+  {
+    "page": 58,
+    "where": "passOff (2) item 6 + application (2) item 8(p60) + Review 2 item 8(p62)",
+    "text": "It is all knowledge that I have. / 이것은 내가 가진 지식의 전부이다.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "'내가 가진 지식 전부'는 all the knowledge, 한국어 '이것은'에 맞춰 This. It is · That is 로 쓴 답도 정답.",
+    "appliedTo": [
+      "pg08-3:a6",
+      "pg08-3:p7"
+    ]
+  },
+  {
+    "page": 58,
+    "where": "passOff (2) item 7 + application (2) item 11(p60) + Review 2 item 11(p62)",
+    "text": "I can do anything that man can do. / 나는 사람이 할 수 있는 일은 무엇이라도 한다.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "관사 없는 man(인류)은 옛 말투라 모범 답은 a person(원문 man · a man · people 등도 정답). 한국어에 빠진 '할 수 있다'를 넣음.",
+    "appliedTo": [
+      "pg08-3:a7",
+      "pg08-3:p10"
+    ]
+  },
+  {
+    "page": 58,
+    "where": "passOff (3) what 소제목 + Review 3 지시문(p63)",
+    "text": "(3) what / I don’t know who did it. / I don’t know which is his. / I asked him what he wanted. / 3. 복합 관계 대명사를 사용하여 문장을 영작하시오.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "① what 을 '복합 관계 대명사'로 부른 것은 옛 영문법 용어(what = that which 를 compound relative 로 부름)이고 지금 학교문법의 복합관계대명사는 whoever · whatever · whichever 라, 화면 용어는 '관계대명사 what'으로 쓰고 교재 용어 '복합 관계 대명사'는 화면에 쓰지 않음(설명 카드 용어 병기에도 넣지 않음 — 지금 교과서에서 그 이름은 whoever · whatever 를 뜻해, what 과 나란히 적으면 같은 개념의 옛 이름이 아니라 틀린 등식이 됨). ② who did it · which is his · asked him what he wanted 는 의문사 절(간접의문문)이라 문항마다 clauseLabel '의문사 절'과 조건 칩 '의문사 절 (who)' 등으로 구분하고, 설명 카드 표 · 요소 문항(s1 · s6)에서 두 쓰임을 나란히 비교함. 레슨 제목은 설계.md §2 그대로 '관계대명사 What'. (정리-1권-B: s1 의 정답 보기가 ④ p5 문장이라 reserve 로 돌리고, 같은 비교를 새 문항 s7 'I believe what he told me.'로 합니다.)",
+    "appliedTo": [
+      "pg08-4:a1",
+      "pg08-4:a2",
+      "pg08-4:a3",
+      "pg08-4:a4",
+      "pg08-4:p1",
+      "pg08-4:p2",
+      "pg08-4:p3",
+      "pg08-4:s1",
+      "pg08-4:s6",
+      "pg08-4:s7"
+    ]
+  },
+  {
+    "page": 59,
+    "where": "application (1) who/whose/whom/which/of which[추론] item 2 + Review 1 item 2(p61)",
+    "text": "A hairdresser is someone who designs persons’ hair.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "persons’ 는 거의 쓰지 않는 꼴 → people's, '머리를 디자인하다' → styles(cuts · does 도 정답). 한국어도 '사람들의 머리를 손질하는'으로 맞춤.",
+    "appliedTo": [
+      "pg08-1:p2"
+    ]
+  },
+  {
+    "page": 59,
+    "where": "application (1) item 6 + Review 1 item 6(p61)",
+    "text": "I met the boy whose mother interprets foreign books.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "책을 옮기는 것은 translate(번역). Review 한국어도 '번역하는'.",
+    "appliedTo": [
+      "pg08-1:p6"
+    ]
+  },
+  {
+    "page": 59,
+    "where": "application (1) item 10 + Review 1 item 10(p61)",
+    "text": "The bed which I slept in last night was not convenient.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "잠자리가 편한 것은 comfortable. uncomfortable · wasn't comfortable · in which I slept 도 정답.",
+    "appliedTo": [
+      "pg08-2:p2"
+    ]
+  },
+  {
+    "page": 59,
+    "where": "application (1) item 13 + Review 1 item 13(p61)",
+    "text": "The woman to whom he was talking was his wife. / 그가 말하고 있는 그 여자가 그의 아내이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어(was talking, was)에 맞춰 한국어를 '그가 이야기하고 있던 그 여자는 그의 아내였다.'로. 진행형(pg12-3) 없이는 만들 수 없어 도전 문장으로 표시.",
+    "appliedTo": [
+      "pg08-1:p9"
+    ]
+  },
+  {
+    "page": 59,
+    "where": "application (1) item 8 + Review 1 item 8(p61)",
+    "text": "The man whom I saw last Sunday was a famous singer. / 지난 일요일에 내가 만난 사람은 유명한 가수였다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어를 '지난 일요일에 내가 본 그 남자는 유명한 가수였다.'로 맞추고, met 로 쓴 답도 정답(만나다 · 보다 모두 자연스러움).",
+    "appliedTo": [
+      "pg08-1:p7"
+    ]
+  },
+  {
+    "page": 61,
+    "where": "Review 1 item 5",
+    "text": "네가 빌린 차주의 이름이 무엇이니? (whose)",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'네가 차를 빌린 그 남자의 이름은 무엇이니?'로 whose 구조(그 남자의 차)가 드러나게 고침.",
+    "appliedTo": [
+      "pg08-1:p5"
+    ]
+  },
+  {
+    "page": 60,
+    "where": "application (2) that[추론] item 9 + Review 2 item 9(p62)",
+    "text": "There is someone (who) wants you on the phone.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "주어 자리 관계대명사는 뺄 수 없으므로 모범 답에 who 를 넣고, that 과제에 (who) 단서가 섞인 충돌은 조건 칩 '(who 또는 that)'과 목표형 who · that 둘 다로 해결. 관계대명사를 뺀 답은 오답 힌트로 안내하고 설명 카드 흔한 실수에도 넣음. There's someone on the phone for you 처럼 관계절을 피한 답은 넣지 않음. (정리-1권-B: s4 의 보기가 ④ p8 의 정답 문장을 보여 줘 reserve 로 돌리고, 같은 판단(주어 자리는 못 뺌 · 목적어 자리는 뺌)을 새 문항 s8 로 연습합니다. 설명 카드의 흔한 실수도 p8 대신 새 문장 'I know a man (who) speaks five languages.'로 바꿨습니다.)",
+    "appliedTo": [
+      "pg08-3:p8",
+      "pg08-3:s4",
+      "pg08-3:s8",
+      "pg08-3:rule"
+    ]
+  },
+  {
+    "page": 60,
+    "where": "application (3) what[추론] item 6 + Review 3 item 6(p63)",
+    "text": "That’ not what I meant to say.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "That's 의 s 보충.",
+    "appliedTo": [
+      "pg08-4:p6"
+    ]
+  },
+  {
+    "page": 60,
+    "where": "application (3) item 8 + Review 3 item 8(p63)",
+    "text": "Invest us what money you have.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "invest A in B 꼴로 Invest what money you have in us. what + 명사(있는 ~ 전부)는 설명 카드에 한 줄로 설명. all the money 로 쓴 답은 뜻은 맞지만 what 을 피해 가므로 오답 힌트로 안내.",
+    "appliedTo": [
+      "pg08-4:p8"
+    ]
+  },
+  {
+    "page": 60,
+    "where": "application (3) item 5 + Review 3 item 5(p63)",
+    "text": "What I would like is a piano. / 내가 좋아하는 것은 피아노이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "would like 는 '갖고 싶다'라 한국어를 '내가 갖고 싶은 것은 피아노이다.'로. What I want · What I'd like 도 정답.",
+    "appliedTo": [
+      "pg08-4:p5"
+    ]
+  },
+  {
+    "page": 62,
+    "where": "Review 2 지시문",
+    "text": "다음 문장은 관계 대명사 that을 이용하여 영작하세요.",
+    "type": "korean_typo",
+    "decision": "na",
+    "reason": "웹에서는 교재 지시문 글을 쓰지 않고 문항마다 조건 칩 '(that)'으로 대신하므로 이 오타가 들어갈 자리가 없음.",
+    "appliedTo": []
+  },
+  {
+    "page": 62,
+    "where": "Review 2 item 2",
+    "text": "나는 다가오는 주말 동안 내가 준비했던 재미있는 것들에 대해 생각하기 시작한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어는 '다가오는 주말을 위해 계획해 둔'. STUDENT s10-5 한국어('다가오는 주말을 위해 내가 계획했던 재미있는 것들에 대해 생각하기 시작합니다')에 맞춰 '…계획했던 재미있는 것들에 대해 생각하기 시작한다.'로.",
+    "appliedTo": [
+      "pg08-3:a2",
+      "pg08-3:p11"
+    ]
+  },
+  {
+    "page": 62,
+    "where": "Review 2 item 3",
+    "text": "너는 잃어버렸던 키를 찾았니?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'키'는 신장과 헷갈려 '열쇠'로, '잃어버렸던'은 '잃어버린'으로. Did you find … 도 정답.",
+    "appliedTo": [
+      "pg08-3:p2"
+    ]
+  },
+  {
+    "page": 62,
+    "where": "Review 2 item 10 + Review 3 item 9(p63)",
+    "text": "그는 예전의 그가 아니다.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "두 문항(8-3 · 8-4)에 조건 칩 '(that)' · '(what)'을 달아 구분. 다른 쪽 문법으로 쓴 맞는 영어는 '맞는 영어지만 이 문항은 …' 오답 힌트로 안내.",
+    "appliedTo": [
+      "pg08-3:p9",
+      "pg08-4:p9"
+    ]
+  },
+  {
+    "page": 63,
+    "where": "Review 3 item 7",
+    "text": "나는 당신이 내가 하기를 원하는 것을 할겁니다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'할 겁니다'로 띄어 씀.",
+    "appliedTo": [
+      "pg08-4:p7"
+    ]
+  },
+  {
+    "page": 61,
+    "where": "Review 1 item 6",
+    "text": "나는 어머니가 외국서적을 번역하는 소년을 만났다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'외국 서적'으로 띄어 씀. 추출 issues 에 없던 것을 이번 작업에서 찾음.",
+    "appliedTo": [
+      "pg08-1:p6"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 62,
+    "where": "Review 2 item 9",
+    "text": "전화로 당신을 원하는 누군가가 있네요.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "want you on the phone 은 '전화로 당신을 찾다'인데 '원하는'으로 직역함. '전화로 당신을 찾는 사람이 있어요.'로 고침(someone · somebody · a person 모두 정답). 추출 issues 에 없던 것을 이번 작업에서 찾음.",
+    "appliedTo": [
+      "pg08-3:p8"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 59,
+    "where": "application (2) item 1 의 (10과) 꼬리표 + passOff (2) item 1(p58) + Review 2 item 1(p62)",
+    "text": "I can reflect on things that did not go well.",
+    "type": "student_tag",
+    "decision": "keep",
+    "reason": "문장대조(검사/결과-문장대조.json)는 middle p10 과 글자까지 같다고 분류했지만(exactOther), STUDENT s10-5 셋째 문장 'I can reflect on things that did not go well and hopefully plan a better new week.'의 앞부분과 글자까지 같아 studentRef 를 s10-5(adapted)로 연결함. 그래서 설계 §10 의 셈에서 middle 47 은 46 으로 줄고 바꾼 문장 38 은 39 로 늚. 이끄는 세션 규칙(2026-09-27, 정리-1권-B): studentRef 는 지금 STUDENT 레슨 파일의 sentences 에 있는 문장에만 답니다 — content/lessons/student/s10-5.json 의 sentences 셋째 문장의 앞부분과 글자까지 같아 옛 middle 과정하고만 같은 문장이 아니므로 s10-5(adapted)를 그대로 둡니다.",
+    "appliedTo": [
+      "pg08-3:a1",
+      "pg08-3:p1"
+    ],
+    "newFinding": true
+  }
+]
