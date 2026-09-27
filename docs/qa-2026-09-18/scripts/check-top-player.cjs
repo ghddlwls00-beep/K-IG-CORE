@@ -14,6 +14,9 @@ const URLS = arg("--ids", "/reading/pr005,/reading/pr100,/ld/d005,/grammar2/gh2-
 const PORT = Number(arg("--port", 9590));
 
 const BUTTON = `[...document.querySelectorAll('main button, header button')].find((b) => /재생/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')) && b.offsetParent)`;
+// 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-L03 ④): in GRAMMAR the top player reads every English answer, so it waits folded
+// under '정답 문장 전체 듣기' (details[data-answer-player]); its play button has no offsetParent until that is opened.
+const FOLDED_PLAYER = `document.querySelector('main details[data-answer-player]:not([open]) > summary')`;
 
 (async () => {
   const browser = await H.startBrowser("topplayer", PORT);
@@ -23,6 +26,7 @@ const BUTTON = `[...document.querySelectorAll('main button, header button')].fin
     for (const url of URLS) {
       const course = url.split("/")[1];
       await H.load(tab, url, { marker: H.MARKERS[course] });
+      if (await tab.eval(`Boolean(${FOLDED_PLAYER})`).catch(() => false)) await H.click(tab, FOLDED_PLAYER, { settle: 300 });
       const label = await tab.eval(`(() => { const b = ${BUTTON}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '')).replace(/\\s+/g, ' ').trim().slice(0, 60) : null; })()`).catch(() => null);
       const press = async () => {
         await tab.eval("window.__kigAudio && (window.__kigAudio.length = 0)").catch(() => {});

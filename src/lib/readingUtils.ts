@@ -17,6 +17,11 @@
  * and audit scripts in scripts/.
  */
 
+// 2026-09-27 (READING 학습법 · 화면 — RD-L13): the table of Korean words written in romanization. It holds words
+// only (no lesson text) and has no imports, so it is safe in this client module.
+import { KOREAN_WORD_SOUNDS } from "@/lib/lessonSpeechForm";
+// the "this option fits too" pairs of the 2026-09-27 review of every blank (words only — generated, see that file)
+
 // Comprehensive vocabulary database for reading course passages
 const VOCAB_DATABASE: Record<string, { meaning: string; pos: string }> = {
   // Common core & high-yield academic reading terms
@@ -682,6 +687,14 @@ export function generateReadingQuiz(
   ];
 }
 
+/**
+ * One blank of READING Step 3 (빈칸 퀴즈).
+ *
+ * 2026-09-27 (READING 학습법 · 화면 — 계획 G02 · D33 나 · RD-L06 · RD-L13): the blank is always one of the lesson's KEY
+ * WORDS (readingVocabulary, the 14 words of Step 2), and a set takes one from the start, one from the middle and one
+ * from the end of the passage. Everything is decided by the lesson's own seed — no Math.random — so the item a
+ * reviewer checked with reading-cloze-probe.cjs is exactly the item every learner sees.
+ */
 export interface ClozeItem {
   id: number;
   originalSentence: string;
@@ -689,6 +702,37 @@ export interface ClozeItem {
   missingWord: string;
   options: string[];
   answerIndex: number;
+  /** the key word's 1-based place in the lesson's vocabulary list — the learning engine's key `<lesson id>#k<order>` */
+  order: number;
+  /** the passage sentence (0-based) the blank is in — the view shows its translation and plays its sound */
+  sentenceIndex: number;
+  /** where in the passage: 0 the start, 1 the middle, 2 the end (the sentence's third of the passage) */
+  region: 0 | 1 | 2;
+}
+
+/** A key word as the blanks need it — ReadingVocabularyItem `word` (as the passage writes it) and `partOfSpeech`. */
+export interface ClozeKeyword {
+  word: string;
+  pos?: string;
+}
+
+export interface ClozeOptions {
+  /**
+   * The seed: the lesson's key ("reading/pr001"). The view passes the MAIN page's key on its "-1" page too, so both pages
+   * (the same passage and words — 256/256) show the same blanks.
+   */
+  lessonKey: string;
+  /** the lesson's key words in their order; a blank's `order` is the 1-based place in this list */
+  keywords: readonly ClozeKeyword[];
+  /** 0 for the first set; '다른 빈칸으로 다시 풀기' asks for 1, 2, … (each region moves to its next word, then wraps) */
+  round?: number;
+  /** the orders of the words the learner marked '몰라요' in Step 2 — asked first in their part of the passage */
+  unknown?: readonly number[];
+  /**
+   * The reviewed "also fits" pairs for THIS lesson (answer → words that fill the same blank) — the page computes them on the
+   * server (src/lib/readingClozeFitsForLesson.ts) so the course-wide table never reaches the browser. Absent → none.
+   */
+  alsoFits?: Readonly<Record<string, readonly string[]>>;
 }
 
 /**
@@ -698,17 +742,111 @@ export interface ClozeItem {
  */
 const CLOZE_TOKEN_SPLIT = /[\s–—―]+/;
 
+const isLetterOrDigit = (c: string | undefined) => c !== undefined && /[A-Za-z0-9]/.test(c);
+const isApostrophe = (c: string | undefined) => c === "'" || c === "’";
+
+/**
+ * Where `word` stands in `text` as a whole word, ignoring case — [start, end) index pairs. 2026-09-27: one rule for the
+ * blank, the word's passage line in Step 2 and the key-word marks of Step 4, so the three always agree.
+ *   - a hyphen joins: "sex" is not found in "other-sex", "well" not in "well-known" (but "other-sex" itself is);
+ *   - an apostrophe inside a word joins ("don" is not in "don't", "clock" not in "o'clock"), except a possessive:
+ *     "adults" is found in "adults'" and "children" in "children's";
+ *   - dashes (– — ―), spaces and other punctuation separate.
+ * No look-behind in a pattern here: older iOS Safari throws on it (see lessonSpeechForm.ts).
+ */
+export function findWordSpans(text: string, word: string): [number, number][] {
+  const out: [number, number][] = [];
+  const needle = String(word || "").trim().toLowerCase();
+  if (!text || !needle) return out;
+  const hay = text.toLowerCase();
+  for (let from = 0; ; ) {
+    const at = hay.indexOf(needle, from);
+    if (at < 0) break;
+    const end = at + needle.length;
+    const before = text[at - 1];
+    const after = text[end];
+    const joinedBefore = isLetterOrDigit(before) || before === "-" || (isApostrophe(before) && isLetterOrDigit(text[at - 2]));
+    const possessive = isApostrophe(after) && (!isLetterOrDigit(text[end + 1]) || (/[sS]/.test(text[end + 1] ?? "") && !isLetterOrDigit(text[end + 2])));
+    const joinedAfter = isLetterOrDigit(after) || after === "-" || (isApostrophe(after) && !possessive);
+    if (!joinedBefore && !joinedAfter) out.push([at, end]);
+    from = at + 1;
+  }
+  return out;
+}
+
+/**
+ * A short piece of `sentence` around the word at `span` — the word's passage line on a Step 2 card (D32 나 · RD-L05 ②).
+ * Whole words are added on both sides while the piece stays within `maxChars`; a cut side gets "…".
+ */
+export function contextSnippet(
+  sentence: string,
+  span: [number, number],
+  maxChars = 56,
+): { before: string; match: string; after: string } {
+  const match = sentence.slice(span[0], span[1]);
+  const left = sentence.slice(0, span[0]).match(/\S+\s*/g) || [];
+  const right = sentence.slice(span[1]).match(/\s*\S+/g) || [];
+  let before = "";
+  let after = "";
+  let length = match.length;
+  let li = left.length - 1;
+  let ri = 0;
+  for (;;) {
+    let grew = false;
+    if (ri < right.length && length + right[ri].length <= maxChars) {
+      after += right[ri];
+      length += right[ri].length;
+      ri += 1;
+      grew = true;
+    }
+    if (li >= 0 && length + left[li].length <= maxChars) {
+      before = left[li] + before;
+      length += left[li].length;
+      li -= 1;
+      grew = true;
+    }
+    if (!grew) break;
+  }
+  return {
+    before: `${li >= 0 ? "… " : ""}${before.replace(/^\s+/, "")}`,
+    match,
+    after: `${after.replace(/\s+$/, "")}${ri < right.length ? " …" : ""}`,
+  };
+}
+
+/**
+ * The Korean words written in romanization that the app says in Korean (lessonSpeechForm KOREAN_WORD_SOUNDS — hanji,
+ * Jikji, Heungdeok, Cheongju, Hanseong Sunbo · Jubo …), one entry per written word. They are not English vocabulary:
+ * never a blank's answer and never an option (RD-L13 — pr154 offered hanji with paper, and paper fits too).
+ */
+const ROMANIZED_KOREAN = new Set(
+  Object.keys(KOREAN_WORD_SOUNDS ?? {})
+    .flatMap((written) => written.split(" "))
+    .map((w) => w.toLowerCase()),
+);
+
+export function isRomanizedKorean(word: string): boolean {
+  return ROMANIZED_KOREAN.has(String(word || "").trim().toLowerCase());
+}
+
+/** the stem the independent checker (check-reading-cloze.cjs) uses — its rule is added below so the two never disagree */
+const familyStem = (w: string) =>
+  w.toLowerCase().replace(/ies$/, "y").replace(/(ing|ed|es|s)$/, "").replace(/(.)\1$/, "$1");
+
 /**
  * Two spellings of one word — relationship/relationships, influence/influenced. Offering
  * one as a wrong option for the other marks a learner wrong for knowing the word (#73).
  * Measured as a shared stem: the shorter word, minus at most two letters, starts the longer.
+ * 2026-09-27: also the checker's own stem rule and "one starts the other, at most 3 letters longer" (art · arts).
  */
 function sameWordFamily(a: string, b: string): boolean {
   const x = a.toLowerCase();
   const y = b.toLowerCase();
   if (x === y) return true;
+  if (familyStem(x) === familyStem(y)) return true;
   const [short, long] = x.length <= y.length ? [x, y] : [y, x];
   if (long.length - short.length > 3) return false;
+  if (long.startsWith(short)) return true;
   let common = 0;
   while (common < short.length && short[common] === long[common]) common++;
   return common >= Math.max(4, short.length - 2);
@@ -730,6 +868,11 @@ const CLOZE_SAME_SLOT: string[][] = [
  * each measured with docs/qa-2026-09-18/scripts/reading-cloze-probe.cjs). One way, so that a
  * pair found in one lesson does not thin the options of another lesson whose answer is the
  * second word.
+ *
+ * 2026-09-27 (READING 학습법 · 화면 — the blanks became the lesson's key words): more pairs come from reading every
+ * option of every blank the new generator can ask (reading-cloze-probe.cjs --dump) — src/lib/readingClozeFits.ts,
+ * generated from the record of each verdict, docs/qa-2026-09-18/scripts/reading-cloze-review.json. check-reading-cloze.cjs
+ * fails when a blank offers a pair that was never judged or was judged to fit. Words only, no lesson text.
  */
 const CLOZE_ALSO_FITS: Record<string, string[]> = {
   plant: ["fish", "river"], // pr003 "the amount of ___ food" (6-1040)
@@ -758,121 +901,259 @@ const CLOZE_ALSO_FITS: Record<string, string[]> = {
   behavioral: ["reasonable"], // pr246 "Robert Simmons, a ___ ecologist" (6-1284)
 };
 
-export function generateClozeItems(sentences: { en: string; ko: string }[]): ClozeItem[] {
-  const result: ClozeItem[] = [];
-  const candidates = sentences.filter((s) => s.en.split(CLOZE_TOKEN_SPLIT).length >= 6);
+/** A blank the lesson CAN ask: one per usable key word, fixed — its sentence, its options and their order. */
+export interface ClozeCandidate {
+  order: number;
+  word: string;
+  sentenceIndex: number;
+  region: 0 | 1 | 2;
+  originalSentence: string;
+  maskedSentence: string;
+  options: string[];
+  answerIndex: number;
+}
 
-  // KIG-018: the target word is interpolated into a RegExp, so it must be clean
-  // and escaped. Quotes, semicolons and colons used to survive into the pattern
-  // (only .,!? were stripped), and metacharacters like ( or . either threw or
-  // failed to match — leaving the sentence unmasked and the answer on screen.
-  //
-  // Edge punctuation is stripped including trailing apostrophes: a possessive
-  // plural such as adults' would otherwise build \badults'\b, which can never
-  // match because ' and the following space are both non-word characters.
-  // Apostrophes inside a word (don't, It’s) are kept.
-  const stripEdgePunctuation = (word: string) =>
-    word.replace(/^[^A-Za-z0-9]+/, "").replace(/[^A-Za-z0-9]+$/, "");
-  const escapeRegExp = (word: string) => word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** Why a key word gives no blank (the audit counts them — check-reading-learning.cjs). */
+export type ClozeSkip =
+  | "empty"
+  | "not-one-word"
+  | "digit"
+  | "name"
+  | "function-word"
+  | "romanized"
+  | "not-in-passage"
+  | "short-sentence"
+  | "in-compound";
 
-  // Numbers (1800s, 175cm, 1,909) are not vocabulary: never the blank, never an option.
-  const hasDigit = (word: string) => /\d/.test(word);
+const BLANK = "_______";
 
-  // CNT-10: the wrong options come from THIS passage. They used to be one fixed
-  // list of six words lifted from the first two lessons, so on an air-pollution
-  // passage every blank offered "communication / respect / problems" and the
-  // answer was the only option on topic. Now every content word of the passage
-  // (other than the answer) is a candidate, nearest in length first.
-  //
-  // Except names: a word the passage only ever writes with a capital (Spanish, Latin,
-  // Dewey, Korea) was lower-cased into a misspelled option ("spanish"), and a name is no
-  // fair wrong answer for a common-word blank. A word also written in lower case
-  // somewhere ("Music …" / "… music") stays.
-  const passageWords = sentences
-    .flatMap((s) => s.en.split(CLOZE_TOKEN_SPLIT))
-    .map(stripEdgePunctuation)
-    .filter(Boolean);
-  const writtenLowerCase = new Set(
-    passageWords.filter((w) => !/^[A-Z]/.test(w)).map((w) => w.toLowerCase()),
-  );
+// Edge punctuation is stripped including trailing apostrophes (KIG-018): "adults'" is the word "adults".
+const stripEdgePunctuation = (word: string) => word.replace(/^[^A-Za-z0-9]+/, "").replace(/[^A-Za-z0-9]+$/, "");
+
+// Numbers (1800s, 175cm, 1,909) are not vocabulary: never the blank, never an option.
+const hasDigit = (word: string) => /\d/.test(word);
+
+const posKey = (pos: string | undefined) => String(pos || "").trim().toLowerCase();
+
+/** Why this key word cannot be a blank, or null when it can. */
+function keywordSkip(word: string): ClozeSkip | null {
+  if (!word) return "empty";
+  if (/\s/.test(word)) return "not-one-word";
+  if (hasDigit(word)) return "digit";
+  // a word the list writes with a capital is a name (Western · Buddhist · Congress · Latin): a lower-case option list
+  // would give it away, and a name is not the vocabulary this drill is for
+  if (/^[A-Z]/.test(word)) return "name";
+  if (word.length < 3 || STOP_WORDS.has(word.toLowerCase())) return "function-word";
+  if (isRomanizedKorean(word)) return "romanized";
+  return null;
+}
+
+/** `sentence` with every whole-word `word` blanked, and "a"/"an" right before a blank shown as "a(n)" (it told the answer). */
+function maskSentence(sentence: string, spans: [number, number][]): string {
+  let masked = sentence;
+  for (const [start, end] of [...spans].sort((a, b) => b[0] - a[0])) masked = masked.slice(0, start) + BLANK + masked.slice(end);
+  return masked.replace(/\b(a|an)(\s+_______)/gi, (_m, article: string, rest: string) => `${article[0] === "A" ? "A" : "a"}(n)${rest}`);
+}
+
+/**
+ * Every blank a lesson can ask — one per key word that can be one, each FIXED: the first sentence of at least six
+ * words that holds the word (every occurrence in it is blanked), the passage third it is in, three wrong options
+ * and the order of the four. `skipped` says why the other key words give no blank.
+ *
+ * The wrong options (계획 G02 · RD-L06 CHECK ②): the lesson's key words of the SAME part of speech first — in an
+ * order fixed by the seed, those not already visible in the sentence before those that are — and when fewer than
+ * three can be used, the passage's own words nearest the answer in length (the rule since CNT-10) fill the rest.
+ * Never: the answer's other spellings (#73), a pair known to fill the same slot (CLOZE_SAME_SLOT · CLOZE_ALSO_FITS),
+ * a romanized Korean word (RD-L13), a number, a contraction, a word the passage only writes with a capital (a name),
+ * or a function word. Each list is ordered BEFORE those rules take words out, so a pair added to CLOZE_ALSO_FITS after
+ * a review replaces only that option — the other two stay as the reviewer saw them.
+ */
+export function clozeCandidates(
+  sentences: readonly { en: string }[],
+  keywords: readonly ClozeKeyword[],
+  lessonKey: string,
+  alsoFitsReviewed: Readonly<Record<string, readonly string[]>> = {},
+): { candidates: ClozeCandidate[]; skipped: { order: number; word: string; why: ClozeSkip }[] } {
+  const candidates: ClozeCandidate[] = [];
+  const skipped: { order: number; word: string; why: ClozeSkip }[] = [];
+  const n = sentences.length;
+
+  const passageWords = sentences.flatMap((s) => s.en.split(CLOZE_TOKEN_SPLIT)).map(stripEdgePunctuation).filter(Boolean);
+  const writtenLowerCase = new Set(passageWords.filter((w) => !/^[A-Z]/.test(w)).map((w) => w.toLowerCase()));
   const passagePool = Array.from(
     new Set(
       passageWords
-        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w.toLowerCase()) && !hasDigit(w))
+        .filter((w) => w.length >= 4 && !STOP_WORDS.has(w.toLowerCase()) && !hasDigit(w) && !/['’]/.test(w))
         .map((w) => w.toLowerCase())
         .filter((w) => writtenLowerCase.has(w)),
     ),
   );
 
-  // A word already blanked earlier in the lesson is not blanked again — pr020 asked
-  // "plants" three times and pr099 "essential" twice. The next candidate is taken instead.
-  const usedTargets = new Set<string>();
-
-  // Up to three items, taking the next sentence when one yields no blank (for example when its
-  // only candidate words are capitalised) instead of showing the learner fewer questions.
-  for (const s of candidates) {
-    if (result.length >= 3) break;
-    const words = s.en
-      .split(CLOZE_TOKEN_SPLIT)
-      .map(stripEdgePunctuation)
-      .filter(Boolean);
-    const validTargetWords = words.filter(
-      (w) => w.length >= 5 && !STOP_WORDS.has(w.toLowerCase()) && !hasDigit(w),
-    );
-
-    // The middle candidate, as before — but never a capitalised word. The wrong options are
-    // lower-cased passage words, so a "February" or "Shakespeare" answer was the only
-    // capitalised option on screen and gave itself away (21 items before 2026-09-23). Stepping
-    // to the nearest lower-case candidate, rather than dropping capitalised words from the
-    // list, leaves every other sentence's blank exactly where it was.
-    const middle = Math.floor(validTargetWords.length / 2);
-    const target = validTargetWords
-      .map((w, i) => ({ w, distance: Math.abs(i - middle) + (i < middle ? 0.5 : 0) }))
-      .sort((a, b) => a.distance - b.distance)
-      .find((c) => !/^[A-Z]/.test(c.w) && !usedTargets.has(c.w.toLowerCase()))?.w;
-
-    if (target) {
-      // Every occurrence is blanked. Only the first used to be, so the answer stayed on
-      // screen later in the same sentence ("all _______ has … but that all music has").
-      const regex = new RegExp(`\\b${escapeRegExp(target)}\\b`, "gi");
-      let masked = s.en.replace(regex, "_______");
-
-      // Never emit an item whose blank was not actually applied — that would show
-      // the learner the answer instead of a gap.
-      if (masked === s.en) continue;
-
-      // "a" / "an" right before the blank told which options could fit ("as an _______
-      // miracle" had one vowel-initial option). Shown as "a(n)", the usual test convention.
-      masked = masked.replace(
-        /\b(a|an)(\s+_______)/gi,
-        (_m, article: string, rest: string) => `${article[0] === "A" ? "A" : "a"}(n)${rest}`,
-      );
-
-      const answer = target.toLowerCase();
-      usedTargets.add(answer);
-      const alsoFits = CLOZE_ALSO_FITS[answer] || [];
-      const distractors = passagePool
-        .filter((w) => !sameWordFamily(w, answer))
-        .filter((w) => !CLOZE_SAME_SLOT.some((g) => g.includes(w) && g.includes(answer)))
-        .filter((w) => !alsoFits.includes(w))
-        .map((w) => ({ w, spread: Math.abs(w.length - target.length) + Math.random() }))
-        .sort((a, b) => a.spread - b.spread)
-        .slice(0, 3)
-        .map((c) => c.w);
-
-      const allOptions = [target, ...distractors].sort(() => 0.5 - Math.random());
-      const answerIndex = allOptions.indexOf(target);
-
-      result.push({
-        id: result.length + 1,
-        originalSentence: s.en,
-        maskedSentence: masked,
-        missingWord: target,
-        options: allOptions,
-        answerIndex,
-      });
+  keywords.forEach((kw, index) => {
+    const order = index + 1;
+    const word = String(kw.word || "").trim();
+    const why = keywordSkip(word);
+    if (why) {
+      skipped.push({ order, word, why });
+      return;
     }
+    let sentenceIndex = -1;
+    let spans: [number, number][] = [];
+    let seen = false;
+    let inCompound = false;
+    // the answer must not stay readable in the blanked sentence as part of a compound ("either _______ or non-living")
+    const showsInCompound = new RegExp(`(^|[^A-Za-z0-9])${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z0-9]|$)`, "i");
+    for (let i = 0; i < n; i++) {
+      const found = findWordSpans(sentences[i].en, word);
+      if (!found.length) continue;
+      seen = true;
+      if (sentences[i].en.split(CLOZE_TOKEN_SPLIT).filter(Boolean).length < 6) continue;
+      if (showsInCompound.test(maskSentence(sentences[i].en, found))) {
+        inCompound = true;
+        continue;
+      }
+      sentenceIndex = i;
+      spans = found;
+      break;
+    }
+    if (sentenceIndex < 0) {
+      skipped.push({ order, word, why: inCompound ? "in-compound" : seen ? "short-sentence" : "not-in-passage" });
+      return;
+    }
+    const originalSentence = sentences[sentenceIndex].en;
+    const maskedSentence = maskSentence(originalSentence, spans);
+    const answer = word.toLowerCase();
+    const alsoFits = [...(CLOZE_ALSO_FITS[answer] || []), ...(alsoFitsReviewed[answer] || [])];
+    const visible = (w: string) => findWordSpans(maskedSentence, w).length > 0;
+    const usable = (w: string) =>
+      w !== answer &&
+      writtenLowerCase.has(w) &&
+      !hasDigit(w) &&
+      !/['’]/.test(w) &&
+      !STOP_WORDS.has(w) &&
+      !isRomanizedKorean(w) &&
+      !sameWordFamily(w, answer) &&
+      !CLOZE_SAME_SLOT.some((g) => g.includes(w) && g.includes(answer)) &&
+      !alsoFits.includes(w);
+    const notVisibleFirst = (list: string[]) => [...list.filter((w) => !visible(w)), ...list.filter((w) => visible(w))];
+
+    // 1. the lesson's key words of the same part of speech
+    const samePos = Array.from(
+      new Set(
+        keywords
+          .filter((other, j) => j !== index && posKey(other.pos) !== "" && posKey(other.pos) === posKey(kw.pos))
+          .map((other) => String(other.word || "").trim())
+          .filter((w) => w && !/\s/.test(w) && !/^[A-Z]/.test(w))
+          .map((w) => w.toLowerCase()),
+      ),
+    );
+    const picked: string[] = [];
+    const add = (list: string[]) => {
+      for (const w of list) {
+        if (picked.length >= 3) break;
+        // two options that are one word in two spellings would both be "wrong" for the same reason
+        if (usable(w) && !picked.includes(w) && !picked.some((p) => sameWordFamily(p, w))) picked.push(w);
+      }
+    };
+    add(notVisibleFirst(shuffleWithSeed(samePos, `${lessonKey}#k${order}#pos`)));
+
+    // 2. the passage's words, nearest the answer in length (ties in the seed's order)
+    if (picked.length < 3) {
+      const rng = getSeededRandom(`${lessonKey}#k${order}#pool`);
+      add(
+        notVisibleFirst(
+          passagePool
+            .map((w) => ({ w, spread: Math.abs(w.length - answer.length) + rng() }))
+            .sort((a, b) => a.spread - b.spread)
+            .map((c) => c.w),
+        ),
+      );
+    }
+
+    const options = shuffleWithSeed([word, ...picked], `${lessonKey}#k${order}#order`);
+    candidates.push({
+      order,
+      word,
+      sentenceIndex,
+      region: Math.min(2, Math.floor((3 * sentenceIndex) / Math.max(1, n))) as 0 | 1 | 2,
+      originalSentence,
+      maskedSentence,
+      options,
+      answerIndex: options.indexOf(word),
+    });
+  });
+
+  return { candidates, skipped };
+}
+
+/**
+ * One set of blanks (계획 G02 · D33 나 · RD-L06 CHECK FIX): one from the start, one from the middle and one from the end
+ * of the passage, each the round's word of its part — the learner's '몰라요' words first, then the others, both in the
+ * lesson's seeded order. A part with no usable word lends its place to the others, so a lesson still gets three when
+ * it can. The set comes in passage order (the view asks one blank at a time); two blanks never share a sentence, and
+ * no blank's sentence shows the answer of a blank asked after it. The same lesson, round and '몰라요' words give the
+ * same set every time: nothing here is random.
+ *
+ * `options` is required (2026-09-27): a caller that still passes only the sentences — the old signature — gets an
+ * error instead of a quietly different drill.
+ */
+export function generateClozeItems(sentences: readonly { en: string; ko?: string }[], options: ClozeOptions): ClozeItem[] {
+  if (!options || typeof options.lessonKey !== "string" || !Array.isArray(options.keywords)) {
+    throw new Error("generateClozeItems(sentences, { lessonKey, keywords }) — since 2026-09-27 the blanks come from the lesson's key words");
+  }
+  const { candidates } = clozeCandidates(sentences, options.keywords, options.lessonKey, options.alsoFits ?? {});
+  const unknown = new Set(options.unknown || []);
+  const round = Math.max(0, Math.floor(Number(options.round) || 0));
+
+  const ordered = ([0, 1, 2] as const).map((region) => {
+    const list = shuffleWithSeed(
+      candidates.filter((c) => c.region === region),
+      `${options.lessonKey}#region${region}`,
+    );
+    return [...list.filter((c) => unknown.has(c.order)), ...list.filter((c) => !unknown.has(c.order))];
+  });
+
+  // The view asks the blanks one at a time in passage order, so a blank's sentence must not show the answer of a
+  // blank asked AFTER it (a later sentence may show an earlier answer — that one was already answered).
+  const picked: ClozeCandidate[] = [];
+  const clashes = (c: ClozeCandidate) =>
+    picked.some((p) => {
+      if (p.sentenceIndex === c.sentenceIndex) return true;
+      const [first, later] = p.sentenceIndex < c.sentenceIndex ? [p, c] : [c, p];
+      return findWordSpans(first.maskedSentence, later.word).length > 0;
+    });
+  const take = (list: ClozeCandidate[], start: number) => {
+    for (let k = 0; k < list.length; k++) {
+      const c = list[(start + k) % list.length];
+      if (!picked.includes(c) && !clashes(c)) {
+        picked.push(c);
+        return true;
+      }
+    }
+    return false;
+  };
+  for (const list of ordered) if (list.length) take(list, round % list.length);
+  // a part of the passage without a usable word: the others lend their next word, one part at a time
+  for (let pass = 1; picked.length < 3; pass++) {
+    let grew = false;
+    for (const list of ordered) {
+      if (picked.length >= 3) break;
+      if (list.length && take(list, (round + pass) % list.length)) grew = true;
+    }
+    if (!grew) break;
   }
 
-  return result;
+  return picked
+    .sort((a, b) => a.sentenceIndex - b.sentenceIndex)
+    .map((c, i) => ({
+      id: i + 1,
+      originalSentence: c.originalSentence,
+      maskedSentence: c.maskedSentence,
+      missingWord: c.word,
+      options: [...c.options],
+      answerIndex: c.answerIndex,
+      order: c.order,
+      sentenceIndex: c.sentenceIndex,
+      region: c.region,
+    }));
 }

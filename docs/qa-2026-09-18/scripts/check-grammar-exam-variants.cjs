@@ -27,8 +27,14 @@ const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.inde
 const COURSE = arg("--course", "grammar1");
 const IDS = arg("--ids", "gh1-006").split(",").filter(Boolean);
 const PORT = Number(arg("--port", 9703));
-const FILL = (pairs) => `(() => { const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set; const pairs = ${JSON.stringify(pairs)}; let filled = 0, missing = []; for (const [label, value] of pairs) { const el = document.querySelector('input[aria-label=' + JSON.stringify(label + '번 시험 답안') + ']'); if (!el) { missing.push(label); continue; } set.call(el, value); el.dispatchEvent(new Event('input', { bubbles: true })); filled++; } return { filled, missing }; })()`;
-const READ = `(() => { const out = []; for (const row of document.querySelectorAll('main div')) { const q = row.querySelector(':scope > div > div > span.font-mono'); if (!q || !/^Q.+\\.$/.test((q.innerText || '').trim())) continue; const badge = row.querySelector(':scope > div > div > span[class*="rounded-md"]'); const input = row.querySelector('input[aria-label$="번 시험 답안"]'); if (!input) continue; out.push({ n: (q.innerText || '').trim().replace(/^Q|\\.$/g, ''), verdict: badge ? (badge.innerText || '').trim() : null, typed: input.value }); } return out; })()`;
+// 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — check-grammar-exam.cjs 와 같은 까닭): 답 칸이 <textarea>(GRM-U07)라 aria-label 로 찾고 그 칸의
+// 원형(prototype) setter 로 넣음. 줄은 li[data-exam-row] · 번호 [data-q] · 배지 [data-badge](글은 그대로 — ✓ 정답 (100점) · △ 부분 정답 (70점) ·
+// ✕ 오답 (0점)); 번호의 font-mono · 배지의 rounded-md 는 디자인 규칙으로 빠짐. data-exam-row 가 없는 옛 화면(배포 전 운영)도 그대로 읽음.
+const FILL = (pairs) => `(() => { const pairs = ${JSON.stringify(pairs)}; let filled = 0, missing = []; for (const [label, value] of pairs) { const el = document.querySelector('main [aria-label=' + JSON.stringify(label + '번 시험 답안') + ']'); if (!el) { missing.push(label); continue; } const proto = el instanceof HTMLTextAreaElement ? window.HTMLTextAreaElement.prototype : window.HTMLInputElement.prototype; Object.getOwnPropertyDescriptor(proto, 'value').set.call(el, value); el.dispatchEvent(new Event('input', { bubbles: true })); filled++; } return { filled, missing }; })()`;
+const READ = `(() => { const out = []; const rows = [...document.querySelectorAll('main [data-exam-row]')]; if (rows.length) { for (const row of rows) { const q = row.querySelector('[data-q]'); const input = row.querySelector('[aria-label$="번 시험 답안"]'); if (!q || !input || !/^Q.+\\.$/.test((q.innerText || '').trim())) continue; const badge = row.querySelector('[data-badge]'); out.push({ n: (q.innerText || '').trim().replace(/^Q|\\.$/g, ''), verdict: badge ? (badge.innerText || '').trim() : null, typed: input.value }); } return out; } for (const row of document.querySelectorAll('main div')) { const q = row.querySelector(':scope > div > div > span.font-mono'); if (!q || !/^Q.+\\.$/.test((q.innerText || '').trim())) continue; const badge = row.querySelector(':scope > div > div > span[class*="rounded-md"]'); const input = row.querySelector('input[aria-label$="번 시험 답안"]'); if (!input) continue; out.push({ n: (q.innerText || '').trim().replace(/^Q|\\.$/g, ''), verdict: badge ? (badge.innerText || '').trim() : null, typed: input.value }); } return out; })()`;
+// 2026-09-27 (GRM-L01): 채점 뒤 '답안 다시 수정하기' 대신 '새 시험'(data-exam-action="new" — 시험 칸을 모두 비움). 제출 단추는 글 그대로 + data-exam-submit.
+const NEW_SHEET = `(document.querySelector('main [data-exam-action="new"]') || [...document.querySelectorAll('main button')].find((b) => /답안 다시 수정하기/.test(b.innerText || '')))`;
+const SUBMIT = `(document.querySelector('main [data-exam-submit]') || [...document.querySelectorAll('main button')].find((b) => /전체 시험 채점하기/.test(b.innerText || '')))`;
 const AUX = /^(am|is|are|was|were)$/i;
 const words = (a) => a.text.replace(/[.?!]$/, "").split(/\s+/);
 const end = (a) => (a.text.match(/[.?!]$/) || ["."])[0];
@@ -108,9 +114,9 @@ function scopePlan(exp) {
       if (!loaded.rendered) { console.log(`✗ ${id} 페이지가 뜨지 않음`); bad++; continue; }
       const mode = await H.click(tab, `[...document.querySelectorAll('main button, nav button')].find((b) => /종합 평가/.test(b.innerText || ''))`, { settle: 700 });
       if (!mode.ok) { console.log(`✗ ${id} 종합 평가를 열 수 없음: ${mode.reason}`); bad++; continue; }
-      await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /답안 다시 수정하기/.test(b.innerText || ''))`, { settle: 400 }).catch(() => {});
+      await H.click(tab, NEW_SHEET, { settle: 400 }).catch(() => {});
       await tab.eval(FILL(plan.map((p) => [String(p.a.n), p.typed])));
-      const submit = await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /전체 시험 채점하기/.test(b.innerText || ''))`, { settle: 900 });
+      const submit = await H.click(tab, SUBMIT, { settle: 900 });
       if (!submit.ok) { console.log(`✗ ${id} 채점 버튼: ${submit.reason}`); bad++; continue; }
       const rows = (await tab.eval(READ)) || [];
       for (const p of plan) {

@@ -14,7 +14,9 @@
  *      불렀다 — VOCA 단어판에 있는 그 20낱말의 맨 낱말 키만 따로 센다(READING 과 같이 쓰는 6낱말은 READING 이 여전히 불러 새 정의 안).
  *   6. (BUG-029, 소유자 결정 2026-09-24) READING 단어 카드도 카드 뜻의 발음(`<낱말> ⟨IPA⟩`)을 말한다 — 그렇게 바뀐 카드의 맨 낱말 키만 따로 셈.
  *   (a) BUG-027 은 VOCA 단어판의 **쓴 꼴**(colo(u)r)로 만든 키 — 위 플레이어가 이제 말하는 꼴로 넘겨 새 정의의 글에서는 안 나오므로 쓴 꼴에서 셈.
- *   node docs/qa-2026-09-18/scripts/prove-spoken-definition.cjs [--list] [--break=history] [--break=bug028] [--break=voca76] [--break=reading29]
+ *   7. (2026-09-27 LISTENING F03 · 계획 D26 가) 소리 클리닉의 틀린 카드를 뺐다 — 바꾸기 전 커밋(f2a1b2d)의 generateLiaisonPoints 를 git 에서 읽어
+ *      지금 함수가 더는 내지 않는 구절의 키만 (f) 로 따로 센다. 깨기 --break=clinic.
+ *   node docs/qa-2026-09-18/scripts/prove-spoken-definition.cjs [--list] [--break=history] [--break=bug028] [--break=voca76] [--break=reading29] [--break=clinic]
  */
 const fs = require("fs");
 const path = require("path");
@@ -214,6 +216,19 @@ if (LIST) for (const k of retiredOnly) console.log(`  폐지 과정에만 ${k}: 
 //   (a)(b) 어디에도 없으면 까닭 없는 것 → 실패.
 const { execFileSync, spawnSync } = require("child_process");
 const git = (args) => execFileSync("git", ["-c", "core.quotepath=false", "-c", "core.safecrlf=false", ...args], { cwd: REPO, encoding: "utf8", maxBuffer: 256 << 20 });
+// 2026-09-27 LISTENING F03: the sound clinic's function before its wrong cards were dropped (see (f) below) — every sweep ran
+// before that, so the old versions of the lessons (b) are spoken with it too. --break=clinic uses today's function everywhere.
+const BREAK_CL = process.argv.includes("--break=clinic");
+const CLINIC_REV = "f2a1b2d";
+const CLINIC_GEN = (() => {
+  const tsc = require(path.join(REPO, "node_modules/typescript"));
+  const js = tsc.transpileModule(git(["show", `${CLINIC_REV}:src/lib/listeningUtils.ts`]), { compilerOptions: { module: tsc.ModuleKind.CommonJS, target: tsc.ScriptTarget.ES2020 } }).outputText;
+  const mod = { exports: {} };
+  new Function("module", "exports", "require", js)(mod, mod.exports, require);
+  if (typeof mod.exports.generateLiaisonPoints !== "function") throw new Error(`${CLINIC_REV} 의 generateLiaisonPoints 를 못 읽음`);
+  return mod.exports.generateLiaisonPoints;
+})();
+const HIST_FNS = BREAK_CL ? PLAIN_FNS : { ...PLAIN_FNS, generateLiaisonPoints: CLINIC_GEN };
 const rawKey = (value) => { const clean = unified.normalizeUnifiedSpeechText(String(value)); return clean && isSpeakable(clean) ? unified.unifiedSpeechKey(clean) : null; };
 const NEW_RAW = new Set();
 for (const course of SPOKEN_COURSES) {
@@ -279,8 +294,9 @@ for (const { rev, course, id } of lessonAt) {
   const pair = p ? { id: p, ...(parseMaybe(pass2.get(`${rev}:content/lessons/${course}/${p}.json`)) || {}) } : null;
   const scriptsThen = parseMaybe(pass1.get(`${rev}:content/ld_english_scripts.json`)) || ldScripts;
   let texts = [];
-  // 옛 판은 쪽마다 정한 소리 꼴 표(2026-09-25)가 생기기 전 — 그때 운영이 말하던 쓴 꼴 그대로(PLAIN_FNS)로 센다(표를 대면 옛 키를 못 찾음)
-  try { texts = spokenTexts({ course, id, lesson, pair, ldScripts: scriptsThen, dictionary, fns: PLAIN_FNS }); } catch { continue; }
+  // 옛 판은 쪽마다 정한 소리 꼴 표(2026-09-25)가 생기기 전 — 그때 운영이 말하던 쓴 꼴 그대로(PLAIN_FNS)로 센다(표를 대면 옛 키를 못 찾음).
+  // 소리 클리닉도 그때의 함수로(2026-09-27 F03 전 — HIST_FNS)
+  try { texts = spokenTexts({ course, id, lesson, pair, ldScripts: scriptsThen, dictionary, fns: HIST_FNS }); } catch { continue; }
   for (const t of texts) for (const k of [keyOf(t) && keyOf(t).key, rawKey(t)]) if (k && !HISTORY.has(k)) HISTORY.set(k, `${rev.slice(0, 8)} ${course}/${id}`);
   if (course === "student") for (const k of slashOldKeysOf(lesson)) if (!BUG028.has(k)) BUG028.set(k, `${rev.slice(0, 8)} student/${id}`);
 }
@@ -311,16 +327,35 @@ const SPEECHFORM_1 = new Map(); // key → '<과정>/<쪽>'
     }
   }
 }
+// ── (f) 2026-09-27 LISTENING 학습법 · 화면 고침 F03(계획 D26 가 · LD-L15 — 사장님 "검토 결과대로"): 소리 클리닉의 틀린 카드만 뺐다(have one ·
+//     동사 아닌 말 앞의 going to · 문장부호를 넘는 짝 · 축약 조각 · 자음 소리로 시작하는 낱말 앞 · -aw 뒤). 그 전 판 운영을 돈 스윕은 그 카드의
+//     구절 키를 불렀다 — 바꾸기 전 커밋의 함수를 git 에서 그대로 읽어(지금 함수로 흉내 내지 않음) LISTENING 모든 줄에 돌리고, 지금 함수가 더는 내지 않는
+//     구절의 키만 따로 센다(목록: docs/qa-2026-09-18/학습법-화면-0927/ld-clinic-removed-phrases.json — check-ld-dictation-0927.cjs 가 만듦).
+//     깨기 --break=clinic — 이 칸(과 옛 판의 옛 함수)을 끄면 그 키들이 '까닭 없음' 으로 돌아와 exit 1 이어야 한다.
+const CLINIC_OLD = new Map(); // key → phrase
+{
+  for (const rows of Object.values(ldScripts)) for (const r of rows || []) {
+    if (!r || !r.en) continue;
+    const now = new Set((fns.generateLiaisonPoints(String(r.en)) || []).map((c) => c && c.original));
+    for (const c of CLINIC_GEN(String(r.en)) || []) {
+      if (!c || !c.original || now.has(c.original)) continue;
+      for (const k of [keyOf(c.original) && keyOf(c.original).key, rawKey(c.original)]) if (k && !NEW.has(k) && !CLINIC_OLD.has(k)) CLINIC_OLD.set(k, c.original);
+    }
+  }
+}
 // 깨기 시험: --break=history — 옛 판을 안 본 것으로 치면 '까닭 없음' 이 생겨 exit 1 이어야 한다
 if (process.argv.includes("--break=history")) { HISTORY.clear(); console.log("(깨기 시험 --break=history — 옛 판 확인을 비움)"); }
+if (BREAK_CL) console.log("(깨기 시험 --break=clinic — 소리 클리닉에서 뺀 카드(F03) 칸을 끔)");
 if (BREAK_SF1) console.log("(깨기 시험 --break=speechform1 — 소리 꼴 첫 판(397f1e8 한글 꼴) 칸을 끔)");
 const bug027 = stale.filter((k) => NEW_RAW.has(k));
 const fromHistory = stale.filter((k) => !NEW_RAW.has(k) && HISTORY.has(k));
 const bug028 = BREAK_028 ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && BUG028.has(k));
 const staleSF = BREAK_SF ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && SPEECHFORM_OLD.has(k));
 const staleSF1 = BREAK_SF1 ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k) && SPEECHFORM_1.has(k));
-const unexplained = stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k) && !staleSF1.includes(k));
-console.log(`'둘 다 없음' ${stale.length} 확인 — (a) 앱이 글 그대로 요청(BUG-027, 고침) ${bug027.length} · (b) 옛 판(git ${commits.length}커밋의 직전 판 + HEAD, 강의 쪽 ${lessonAt.length})에서 소리 내던 글 ${fromHistory.length} · (c) BUG-028 옛 꼴(옛 판의 빗금 문장 두 꼴 글) ${bug028.length} · (d) 소리 꼴 옛 꼴(표 없이 돌린 글) ${staleSF.length} · (e) 소리 꼴 첫 판(${SF1_REV} 한글 꼴) ${staleSF1.length} · 까닭 없음 ${unexplained.length}`);
+const staleCL = BREAK_CL ? [] : stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k) && !staleSF1.includes(k) && CLINIC_OLD.has(k));
+const unexplained = stale.filter((k) => !NEW_RAW.has(k) && !HISTORY.has(k) && !bug028.includes(k) && !staleSF.includes(k) && !staleSF1.includes(k) && !staleCL.includes(k));
+console.log(`'둘 다 없음' ${stale.length} 확인 — (a) 앱이 글 그대로 요청(BUG-027, 고침) ${bug027.length} · (b) 옛 판(git ${commits.length}커밋의 직전 판 + HEAD, 강의 쪽 ${lessonAt.length})에서 소리 내던 글 ${fromHistory.length} · (c) BUG-028 옛 꼴(옛 판의 빗금 문장 두 꼴 글) ${bug028.length} · (d) 소리 꼴 옛 꼴(표 없이 돌린 글) ${staleSF.length} · (e) 소리 꼴 첫 판(${SF1_REV} 한글 꼴) ${staleSF1.length} · (f) 소리 클리닉에서 뺀 카드(F03, ${CLINIC_REV} 의 함수 — 구절 ${new Set(CLINIC_OLD.values()).size}) ${staleCL.length} · 까닭 없음 ${unexplained.length}`);
+if (LIST) for (const k of staleCL) console.log(`  소리 클리닉에서 뺀 카드 ${k} ← "${CLINIC_OLD.get(k)}"`);
 if (LIST) for (const k of staleSF) console.log(`  소리 꼴 옛 꼴 ${k} ← ${SPEECHFORM_OLD.get(k)}`);
 if (LIST) for (const k of staleSF1) console.log(`  소리 꼴 첫 판 ${k} ← ${SPEECHFORM_1.get(k)}`);
 if (LIST) for (const k of bug028) console.log(`  BUG-028 옛 꼴 ${k} ← ${BUG028.get(k)}`);

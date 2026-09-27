@@ -57,17 +57,15 @@ const LESSONS_AFTER = [
 ];
 const LESSONS = CONTROL ? LESSONS_BEFORE : LESSONS_AFTER;
 
-/** VOCA STEP 1 카드의 [낱말, 뜻] — voca-grid 읽개와 같은 칸, 뜻 줄까지. */
-const VOCA_MEANINGS = `(async () => {
+/**
+ * VOCA STEP 1 카드의 [낱말, 뜻] — voca-grid 읽개와 같은 칸, 뜻 줄까지.
+ * 2026-09-27 (VOCA 학습법 · 화면 고침 — E01): Step 1 은 모든 낱말을 한 목록으로 보임(펼쳐보기 · min-h-[96px] 카드 없음) — 낱말은
+ * [data-step-panel="1"] li[data-word] 안의 [data-word-text], 뜻은 [data-word-meaning](뜻 가리기가 꺼져 있을 때 — 기본).
+ */
+const VOCA_MEANINGS = `(() => {
   const main = document.querySelector('main'); if (!main) return [];
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  const btn = (re) => [...main.querySelectorAll('button')].find((b) => re.test((b.innerText || '').replace(/\\s+/g, ' ').trim()));
-  const open = btn(/^전체 \\d+단어 펼쳐보기$/);
-  if (open) { open.click(); await sleep(500); }
-  const cards = [...main.querySelectorAll('div')].filter((d) => /(^|\\s)min-h-\\[96px\\](\\s|$)/.test(d.className) && d.children.length >= 3);
-  const out = cards.map((c) => [(c.children[1].innerText || '').trim(), (c.children[2].innerText || '').replace(/\\s+/g, ' ').trim()]);
-  if (open) { const close = btn(/전체 펼쳐보기 닫기/); if (close) { close.click(); await sleep(300); } }
-  return out;
+  const cards = [...main.querySelectorAll('[data-step-panel="1"] [data-word]')];
+  return cards.map((c) => [((c.querySelector('[data-word-text]') || {}).innerText || '').trim(), ((c.querySelector('[data-word-meaning]') || {}).innerText || '').replace(/\\s+/g, ' ').trim()]);
 })()`;
 
 (async () => {

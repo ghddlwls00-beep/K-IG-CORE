@@ -42,19 +42,29 @@ const DEST = path.join(OUT, TAG ? `grammar-exam-${TAG}.json` : "grammar-exam.jso
 
 // React tracks its own value on the DOM node, so assigning .value is ignored. Go through the
 // native setter and fire the event React listens for, exactly as typing would.
+// 2026-09-27 (GRAMMAR 학습법 · 화면 고침, GRM-U07): the answer box is a <textarea> now (it grows with a long
+// sentence). The box is found by its aria-label 'N번 시험 답안' whatever its tag, and set through the
+// setter of ITS prototype — the input setter on a textarea throws "Illegal invocation".
 const FILL = (pairs) => `(() => {
-  const set = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
   const pairs = ${JSON.stringify(pairs)};
   let filled = 0, missing = [];
   for (const [label, value] of pairs) {
-    const el = document.querySelector('input[aria-label=' + JSON.stringify(label + '번 시험 답안') + ']');
+    const el = document.querySelector('main [aria-label=' + JSON.stringify(label + '번 시험 답안') + ']');
     if (!el) { missing.push(label); continue; }
-    set.call(el, value);
+    const proto = el instanceof HTMLTextAreaElement ? window.HTMLTextAreaElement.prototype : window.HTMLInputElement.prototype;
+    Object.getOwnPropertyDescriptor(proto, 'value').set.call(el, value);
     el.dispatchEvent(new Event('input', { bubbles: true }));
     filled++;
   }
   return { filled, missing };
 })()`;
+
+// 2026-09-27 (GRM-L01 · U08): Step 4 keeps its own answers and freezes the result when graded. The old
+// '↺ 답안 다시 수정하기' (reopen the same answers) is gone; '새 시험' (data-exam-action="new") empties the sheet,
+// which is what every pass below needs before it fills. The submit button keeps its words and gained
+// data-exam-submit. Both finders still take the old screen (production before the deploy).
+const NEW_SHEET = `(document.querySelector('main [data-exam-action="new"]') || [...document.querySelectorAll('main button')].find((b) => /답안 다시 수정하기/.test(b.innerText || '')))`;
+const SUBMIT = `(document.querySelector('main [data-exam-submit]') || [...document.querySelectorAll('main button')].find((b) => /전체 시험 채점하기/.test(b.innerText || '')))`;
 
 // GRAMMAR I 홀수 번호 쪽(/grammar1/gh1-007 등 97쪽)은 운영에서 짝수 쪽으로 넘어간다(307). 전에는 넘어간 주소를 기다리지 않아 97쪽이 '페이지가 뜨지 않음'
 // (9/22 결과 BLOCKED 97). drive-generic 과 같게 넘어갈 곳을 먼저 알아 그 주소를 기다리고, 넘어간 곳을 이미 같은 답으로 쟀으면 그 결과를 쓴다(답이 다르면 다시 잼).
@@ -68,8 +78,23 @@ async function resolveRedirect(url) {
   return url;
 }
 
+// 2026-09-27 (GRM-U04 · U11): a Step 4 row is li[data-exam-row]; its number is [data-q] ('Q7.'), its badge
+// [data-badge] (same words: ✓ 정답 (100점) · △ 부분 정답 (70점) · ✕ 오답 (0점)). The number used to be found as
+// span.font-mono and the badge as span.rounded-md — both classes left with the design rules. The old
+// markup is still read when no data-exam-row is on the page.
 const READ = `(() => {
   const out = [];
+  const rows = [...document.querySelectorAll('main [data-exam-row]')];
+  if (rows.length) {
+    for (const row of rows) {
+      const q = row.querySelector('[data-q]');
+      const input = row.querySelector('[aria-label$="번 시험 답안"]');
+      if (!q || !input || !/^Q.+\\.$/.test((q.innerText || '').trim())) continue;
+      const badge = row.querySelector('[data-badge]');
+      out.push({ n: (q.innerText || '').trim().replace(/^Q|\\.$/g, ''), verdict: badge ? (badge.innerText || '').trim() : null, typed: input.value });
+    }
+    return out;
+  }
   for (const row of document.querySelectorAll('main div')) {
     const q = row.querySelector(':scope > div > div > span.font-mono');
     if (!q || !/^Q.+\\.$/.test((q.innerText || '').trim())) continue;
@@ -119,14 +144,14 @@ const READ = `(() => {
 
       // GrammarLearningView saves answers and the submitted flag to localStorage and restores
       // them, so a lesson visited before comes back already graded and has no submit button.
-      // Put it back into editing first.
-      await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /답안 다시 수정하기/.test(b.innerText || ''))`, { settle: 400 }).catch(() => {});
+      // Put it back into editing first (2026-09-27: '새 시험' — an empty sheet; the old screen's '답안 다시 수정하기').
+      await H.click(tab, NEW_SHEET, { settle: 400 }).catch(() => {});
 
       const pairs = exp.answers.map((a) => [String(a.n), a.text]);
       const fill = await tab.eval(FILL(pairs)).catch((e) => ({ filled: 0, missing: [], error: e.message }));
       if (!fill.filled) { results.push({ course, id: p.id, status: "BLOCKED", note: `답안 칸을 찾지 못함 (${fill.error || "입력 0개"})` }); continue; }
 
-      const submit = await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /전체 시험 채점하기/.test(b.innerText || ''))`, { settle: 900 });
+      const submit = await H.click(tab, SUBMIT, { settle: 900 });
       if (!submit.ok) { results.push({ course, id: p.id, status: "BLOCKED", note: `채점 버튼을 누를 수 없음: ${submit.reason}` }); continue; }
 
       const rows = (await tab.eval(READ).catch(() => [])) || [];
@@ -147,11 +172,11 @@ const READ = `(() => {
         const altPairs = exp.answers.filter((a) => (a.alternatives || []).length > k).map((a) => [String(a.n), a.alternatives[k]]);
         if (!altPairs.length) continue;
         altCount += altPairs.length;
-        const again = await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /답안 다시 수정하기/.test(b.innerText || ''))`, { settle: 500 });
+        const again = await H.click(tab, NEW_SHEET, { settle: 500 });
         if (!again.ok) { roundsBlocked++; continue; }
         const fill2 = await tab.eval(FILL(altPairs)).catch(() => ({ filled: 0 }));
         if (!fill2.filled) { roundsBlocked++; continue; }
-        const submit2 = await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => /전체 시험 채점하기/.test(b.innerText || ''))`, { settle: 900 });
+        const submit2 = await H.click(tab, SUBMIT, { settle: 900 });
         if (!submit2.ok) { roundsBlocked++; continue; }
         const rows2 = (await tab.eval(READ).catch(() => [])) || [];
         const want = new Map(altPairs.map(([n, v]) => [String(n), v]));

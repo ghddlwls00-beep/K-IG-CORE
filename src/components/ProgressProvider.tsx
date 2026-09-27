@@ -1,7 +1,26 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { useLicense } from "./LicenseProvider";
+import { useLicense, type StudentProgressSnapshot } from "./LicenseProvider";
+
+/**
+ * 2026-09-27: fired on window by toggleComplete — a learner marking a lesson done (or undone) by hand. Never by the
+ * restore on mount or the server-progress sync, which are not a learner finishing a lesson.
+ * detail: { course, lessonId, completed }.
+ */
+export const LESSON_COMPLETE_EVENT = "kig:lesson-complete";
+
+/**
+ * What flushStudentUpdates reports (A11 — STUDENT's '다음 강의' waits for it):
+ *   saved    the queue reached the server (or was already empty) · `progress` is the server's answer when one came
+ *   local    nothing to send — no licence on this device, the record lives here only
+ *   offline  no connection: the queue stays on this device and goes out when the browser is back online
+ *   error    the server did not take it: the queue stays and is sent again later
+ */
+export interface StudentFlushResult {
+  status: "saved" | "local" | "offline" | "error";
+  progress: StudentProgressSnapshot | null;
+}
 
 export interface RecentLesson {
   course: string;
@@ -15,6 +34,8 @@ interface ProgressContextType {
   completed: Record<string, boolean>;
   bookmarks: Record<string, boolean>;
   recent: RecentLesson | null;
+  /** 2026-09-27 (점검 FRAME-U02 · FRAME-L02): the last lesson opened in each course, for '이어서 학습' */
+  recentByCourse: Record<string, RecentLesson>;
   isCompleted: (course: string, lessonId: string) => boolean;
   toggleComplete: (course: string, lessonId: string) => void;
   isBookmarked: (course: string, lessonId: string) => boolean;
@@ -23,12 +44,15 @@ interface ProgressContextType {
   getCourseCompletedCount: (course: string) => number;
   getCourseBookmarkCount: (course: string) => number;
   studentSyncStatus: "local" | "syncing" | "saved" | "pending" | "error";
+  /** Sends the queued STUDENT progress now; resolves when the server answered or the send failed (A11). */
+  flushStudentUpdates: () => Promise<StudentFlushResult>;
 }
 
 const ProgressContext = createContext<ProgressContextType>({
   completed: {},
   bookmarks: {},
   recent: null,
+  recentByCourse: {},
   isCompleted: () => false,
   toggleComplete: () => {},
   isBookmarked: () => false,
@@ -37,11 +61,14 @@ const ProgressContext = createContext<ProgressContextType>({
   getCourseCompletedCount: () => 0,
   getCourseBookmarkCount: () => 0,
   studentSyncStatus: "local",
+  flushStudentUpdates: async () => ({ status: "local", progress: null }),
 });
 
 const COMPLETED_KEY = "kig:progress:completed";
 const BOOKMARKS_KEY = "kig:progress:bookmarks";
 const RECENT_KEY = "kig:progress:recent";
+/** { [course]: RecentLesson } — RECENT_KEY keeps only the one lesson opened last, in any course */
+const RECENT_BY_COURSE_KEY = "kig:progress:recent:v2";
 const PENDING_KEY = "kig:student:pending:v1";
 
 interface StudentPendingUpdate {
@@ -61,29 +88,53 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [bookmarks, setBookmarks] = useState<Record<string, boolean>>({});
   const [recent, setRecent] = useState<RecentLesson | null>(null);
+  const [recentByCourse, setRecentByCourse] = useState<Record<string, RecentLesson>>({});
   const [studentSyncStatus, setStudentSyncStatus] = useState<ProgressContextType["studentSyncStatus"]>("local");
   const pendingRef = useRef<StudentPendingUpdate[]>([]);
   const legacyStudentIdsRef = useRef<string[]>([]);
   const flushTimerRef = useRef<number | null>(null);
+  const flushingRef = useRef<Promise<StudentFlushResult> | null>(null);
 
-  const flushStudentUpdates = useCallback(async () => {
-    if (!hasActiveLicense || pendingRef.current.length === 0) return;
-    const updates = pendingRef.current.slice(0, 100);
-    setStudentSyncStatus("syncing");
+  /**
+   * 2026-09-27 (A11 · STU-U10): also callable by a view — STUDENT's '다음 강의' awaits it, so the completion reaches the
+   * server before the next lesson's page asks the server whether that lesson is open. It answers with the outcome; the
+   * request and the record format are unchanged. A send already under way is waited for, not repeated.
+   */
+  const flushStudentUpdates = useCallback(async (): Promise<StudentFlushResult> => {
+    if (flushTimerRef.current) {
+      window.clearTimeout(flushTimerRef.current);
+      flushTimerRef.current = null;
+    }
+    if (flushingRef.current) await flushingRef.current.catch(() => null);
+    if (!hasActiveLicense) return { status: "local", progress: null };
+    if (pendingRef.current.length === 0) return { status: "saved", progress: null };
+    const run = (async (): Promise<StudentFlushResult> => {
+      const updates = pendingRef.current.slice(0, 100);
+      setStudentSyncStatus("syncing");
+      try {
+        const response = await fetch("/api/progress/student", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ updates }),
+        });
+        const data = await response.json();
+        if (!response.ok || !data.success) throw new Error(data.error || "sync failed");
+        pendingRef.current = pendingRef.current.slice(updates.length);
+        window.localStorage.setItem(PENDING_KEY, JSON.stringify(pendingRef.current));
+        applyStudentProgress(data.progress);
+        setStudentSyncStatus(pendingRef.current.length ? "pending" : "saved");
+        return { status: "saved", progress: (data.progress as StudentProgressSnapshot) ?? null };
+      } catch {
+        const online = navigator.onLine;
+        setStudentSyncStatus(online ? "error" : "pending");
+        return { status: online ? "error" : "offline", progress: null };
+      }
+    })();
+    flushingRef.current = run;
     try {
-      const response = await fetch("/api/progress/student", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ updates }),
-      });
-      const data = await response.json();
-      if (!response.ok || !data.success) throw new Error(data.error || "sync failed");
-      pendingRef.current = pendingRef.current.slice(updates.length);
-      window.localStorage.setItem(PENDING_KEY, JSON.stringify(pendingRef.current));
-      applyStudentProgress(data.progress);
-      setStudentSyncStatus(pendingRef.current.length ? "pending" : "saved");
-    } catch {
-      setStudentSyncStatus(navigator.onLine ? "error" : "pending");
+      return await run;
+    } finally {
+      if (flushingRef.current === run) flushingRef.current = null;
     }
   }, [applyStudentProgress, hasActiveLicense]);
 
@@ -129,6 +180,14 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
       const savedRecent = window.localStorage.getItem(RECENT_KEY);
       if (savedRecent) setRecent(JSON.parse(savedRecent));
+
+      const savedByCourse = window.localStorage.getItem(RECENT_BY_COURSE_KEY);
+      if (savedByCourse) setRecentByCourse(JSON.parse(savedByCourse));
+      else if (savedRecent) {
+        // first visit after this change: seed the per-course map from the single old record
+        const old = JSON.parse(savedRecent) as RecentLesson;
+        if (old?.course) setRecentByCourse({ [old.course]: old });
+      }
 
       const pending = window.localStorage.getItem(PENDING_KEY);
       if (pending) pendingRef.current = JSON.parse(pending);
@@ -208,26 +267,37 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [completed]
   );
 
+  /**
+   * 2026-09-27: the new value is decided here, from the state this press saw, so the saved record, the server queue and
+   * the LESSON_COMPLETE_EVENT all carry the same value (the event is how the learning engine hears a learner finish a
+   * lesson; only this function sends it).
+   */
   const toggleComplete = useCallback((course: string, lessonId: string) => {
+    const key = `${course}:${lessonId}`;
+    const willBe = !completed[key];
     setCompleted((prev) => {
-      const key = `${course}:${lessonId}`;
-      const next = { ...prev, [key]: !prev[key] };
+      const next = { ...prev, [key]: willBe };
       if (!next[key]) delete next[key];
       try {
         window.localStorage.setItem(COMPLETED_KEY, JSON.stringify(next));
       } catch {
         // ignore
       }
-      if (course === "student" && hasActiveLicense) {
-        queueStudentUpdate({
-          lessonId,
-          completed: Boolean(next[key]),
-          clientUpdatedAt: Date.now(),
-        });
-      }
       return next;
     });
-  }, [hasActiveLicense, queueStudentUpdate]);
+    if (course === "student" && hasActiveLicense) {
+      queueStudentUpdate({
+        lessonId,
+        completed: willBe,
+        clientUpdatedAt: Date.now(),
+      });
+    }
+    try {
+      window.dispatchEvent(new CustomEvent(LESSON_COMPLETE_EVENT, { detail: { course, lessonId, completed: willBe } }));
+    } catch {
+      // an old browser without CustomEvent: the completion is saved; only listeners miss it
+    }
+  }, [completed, hasActiveLicense, queueStudentUpdate]);
 
   const isBookmarked = useCallback(
     (course: string, lessonId: string) => {
@@ -260,6 +330,15 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
       setRecent(item);
+      setRecentByCourse((previous) => {
+        const next = { ...previous, [course]: item };
+        try {
+          window.localStorage.setItem(RECENT_BY_COURSE_KEY, JSON.stringify(next));
+        } catch {
+          // ignore
+        }
+        return next;
+      });
       try {
         window.localStorage.setItem(RECENT_KEY, JSON.stringify(item));
       } catch {
@@ -294,6 +373,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         completed,
         bookmarks,
         recent,
+        recentByCourse,
         isCompleted,
         toggleComplete,
         isBookmarked,
@@ -302,6 +382,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         getCourseCompletedCount,
         getCourseBookmarkCount,
         studentSyncStatus,
+        flushStudentUpdates,
       }}
     >
       {children}

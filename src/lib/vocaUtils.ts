@@ -8,6 +8,15 @@
  * 4. In-Context Cloze Fill-in Generator (문맥 속 실전 빈칸 완성)
  * 5. 60-Second Speed Reflex Drill Queue (반사신경 타임어택 훈련)
  * 6. Leitner 3-Tier Spaced Repetition Tracker (에빙하우스 망각곡선 오답 복습)
+ *
+ * 2026-09-27 VOCA 학습법 · 화면 고침 (voca-verified.md · 계획.md E02–E04 · D20–D22): a Step 2 ROUND (every word once, a new order,
+ * the direction flipped every round, about a third asked by sound, a miss asked again at the end with new options — at most
+ * twice), the Step 4 score rule (a wrong press costs points), the Step 3 spelling check, and Leitner cards with a '새 단어' box 0,
+ * a streak that grows once a day and an old record read by one rule. Checked over all 195 lessons by
+ * docs/qa-2026-09-18/scripts/check-voca-learning.cjs (with --break cases that must fail).
+ *
+ * KEEP THIS FILE FREE OF IMPORTS: check-voca-distractors.cjs and check-voca-quiz-notes.cjs run it with Node's own `require`, and
+ * the "@/…" alias would not resolve there. A caller that needs the learning day passes it in (updateLeitnerCard).
  */
 
 export interface EtymologyInfo {
@@ -34,6 +43,16 @@ export interface ActiveRecallQuestion {
   correctIndex: number;
   etymologyHint?: string;
   collocationHint?: string;
+  /**
+   * 2026-09-27 (VOCA-L08 · D20): "listen" — an English → Korean item whose word is HEARD, not read (the same clip as the word's
+   * button). It stays questionType "en-to-ko" — the options are meanings — so every check that reads that type still applies.
+   * Absent = shown as text.
+   */
+  prompt?: "text" | "listen";
+  /** 2026-09-27: the word's 1-based place in the lesson grid, read row by row (the engine key `<lesson id>#<order>`) */
+  order?: number;
+  /** 2026-09-27 (VOCA-L03): how many times this word was asked again in the round after a miss (absent = first ask) */
+  retry?: number;
 }
 
 export interface ClozeQuestion {
@@ -52,21 +71,31 @@ export interface SpeedDrillItem {
   displayedMeaning: string;
   isMatch: boolean;
   actualMeaning: string;
+  /** 2026-09-27: the word's 1-based place in the lesson grid (the engine key) */
+  order?: number;
 }
+
+/** 0 새 단어 (never answered) · 1 틀림 · 2 익숙 (right since the last miss) · 3 외움 (right on MASTERY_STREAK different days) */
+export type LeitnerBox = 0 | 1 | 2 | 3;
 
 export interface LeitnerCard {
   word: string;
   meaning: string;
-  box: 1 | 2 | 3; // 1: Need Review, 2: Familiar, 3: Mastered
+  box: LeitnerBox;
+  /** the last graded answer (ms); 0 = never answered */
   lastTestedAt: number;
   streak: number;
+  /** 2026-09-27 (VOCA-L02 CHECK ④ · L04): the learning day the streak last grew — it grows once a day, so one sitting cannot master a word */
+  streakDay?: string | null;
+  /** 2026-09-27 (VOCA-L05 · D21): '안다고 표시' — a mark the learner sets; it moves no box and Step 2 still asks the word */
+  known?: boolean;
+  /** 2 = written by this version. A card without it is from before 2026-09-27 and is read by readLeitnerCards' rule */
+  v?: 2;
 }
 
 /**
- * Consecutive correct quiz answers needed before the quiz itself promotes a
- * card to Box 3. The "마스터 체크" button bypasses this — see
- * `setLeitnerMastery` — because there the learner asserts mastery directly
- * rather than earning it one answer at a time (KIG-033).
+ * Consecutive right answers — on different learning days since 2026-09-27 — that move a card to Box 3 (외움). Nothing else
+ * does: the old '마스터 체크' button that set Box 3 at once (KIG-033) and the Step 3 '다음 Box로 승급' went with D21 나.
  */
 export const MASTERY_STREAK = 3;
 
@@ -318,6 +347,19 @@ function quizMeaning(meaning: string): string {
   return m;
 }
 
+/**
+ * 2026-09-27 (VOCA-L13 CHECK): two glosses that differ only by a part-of-speech ending — '고대의' (ancient) and '고대'
+ * (antiquity), '예측하다' / '예측', '생산적인' / '생산' — name the same idea, so one cannot be the other's wrong answer.
+ * `sharesSense` compares whole segments and does not see it. Compared segment by segment, like sharesSense.
+ */
+const STEM_ENDINGS = ["의", "하다", "적인"];
+function stemPair(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  const first = senseSegments(a);
+  const second = senseSegments(b);
+  return first.some((x) => second.some((y) => STEM_ENDINGS.some((e) => x === y + e || y === x + e)));
+}
+
 /** Whether two words of one lesson can stand as each other's wrong answer. */
 function conflicts(
   wordA: string,
@@ -328,43 +370,190 @@ function conflicts(
   const b = wordB.toLowerCase().trim();
   if (a === b) return true;
   if (sharesSense(vocaDict[a]?.meaning || "", vocaDict[b]?.meaning || "")) return true;
+  if (stemPair(vocaDict[a]?.meaning || "", vocaDict[b]?.meaning || "")) return true;
   return SYNONYM_GROUPS.some((group) => group.includes(a) && group.includes(b));
 }
 
-export function generateActiveRecallQuizzes(
-  words: string[],
-  vocaDict: Record<string, { meaning: string }>,
-): ActiveRecallQuestion[] {
-  const validWords = words.filter((w) => Boolean(w && vocaDict[w.toLowerCase().trim()]?.meaning));
-  if (validWords.length === 0) return [];
-
-  const allMeanings = Array.from(
-    new Set(Object.values(vocaDict).map((v) => v.meaning).filter(Boolean).map(quizMeaning)),
-  );
-
-  return validWords.map((word, idx) => {
-    const clean = word.toLowerCase().trim();
-    const correctMeaning = quizMeaning(vocaDict[clean]?.meaning || "뜻");
-    const isEnToKo = idx % 2 === 0;
-
-    const poolMeanings = validWords
-      .filter((w) => !conflicts(w, clean, vocaDict))
-      .map((w) => vocaDict[w.toLowerCase().trim()]?.meaning)
-      .filter((m): m is string => Boolean(m))
-      .map(quizMeaning);
-
-    const shuffledPool = [...poolMeanings].sort(() => Math.random() - 0.5);
-    const distractors: string[] = [];
-
-    for (const m of shuffledPool) {
-      if (distractors.length < 3 && !distractors.includes(m)) {
-        distractors.push(m);
-      }
+/**
+ * 2026-09-27 (VOCA-L08 CHECK · D20 나): common English homophones (American English). A word in any of these groups is never
+ * asked by sound alone — hearing /seɪl/ could be `sail` or `sale` (mv2-19 holds both), and hearing /noʊ/ (`know`) with '아니다'
+ * (`not`) among the options has two fair answers. Near-homophones a Korean learner hears as one (accept / except, hv-21) are in.
+ * It only decides which words may be LISTEN items; it takes nothing away from any other question.
+ */
+const HOMOPHONE_GROUPS: string[][] = [
+  ["accept", "except"], ["ad", "add"], ["affect", "effect"], ["aid", "aide"], ["air", "heir"], ["aisle", "isle", "i'll"],
+  ["allowed", "aloud"], ["altar", "alter"], ["ant", "aunt"], ["ascent", "assent"], ["ate", "eight"], ["bail", "bale"],
+  ["ball", "bawl"], ["band", "banned"], ["bare", "bear"], ["base", "bass"], ["be", "bee"], ["beach", "beech"], ["beat", "beet"],
+  ["bell", "belle"], ["berry", "bury"], ["berth", "birth"], ["billed", "build"], ["blew", "blue"], ["board", "bored"],
+  ["boarder", "border"], ["bough", "bow"], ["boy", "buoy"], ["brake", "break"], ["bread", "bred"], ["but", "butt"],
+  ["buy", "by", "bye"], ["cache", "cash"], ["capital", "capitol"], ["carat", "carrot"], ["cause", "caws"], ["ceiling", "sealing"],
+  ["cell", "sell"], ["cellar", "seller"], ["cent", "scent", "sent"], ["cereal", "serial"], ["cheap", "cheep"], ["chews", "choose"],
+  ["chord", "cord"], ["chute", "shoot"], ["cite", "sight", "site"], ["close", "clothes"], ["coarse", "course"],
+  ["complement", "compliment"], ["council", "counsel"], ["creak", "creek"], ["crews", "cruise"], ["cymbal", "symbol"],
+  ["dear", "deer"], ["dew", "do", "due"], ["die", "dye"], ["doe", "dough"], ["dual", "duel"], ["earn", "urn"], ["eye", "i"],
+  ["faint", "feint"], ["fair", "fare"], ["fairy", "ferry"], ["feat", "feet"], ["find", "fined"], ["fir", "fur"], ["flair", "flare"],
+  ["flea", "flee"], ["flew", "flu"], ["flour", "flower"], ["for", "four", "fore"], ["forth", "fourth"], ["foul", "fowl"],
+  ["gait", "gate"], ["genes", "jeans"], ["grate", "great"], ["groan", "grown"], ["guessed", "guest"], ["guise", "guys"],
+  ["hail", "hale"], ["hair", "hare"], ["hall", "haul"], ["hay", "hey"], ["heal", "heel", "he'll"], ["hear", "here"],
+  ["heard", "herd"], ["hi", "high"], ["higher", "hire"], ["him", "hymn"], ["hoarse", "horse"], ["hole", "whole"],
+  ["holy", "wholly"], ["hostel", "hostile"], ["hour", "our"], ["idle", "idol"], ["in", "inn"], ["its", "it's"],
+  ["knead", "need"], ["knew", "new"], ["knight", "night"], ["knot", "not"], ["know", "no"], ["knows", "nose"], ["lead", "led"],
+  ["leak", "leek"], ["least", "leased"], ["lessen", "lesson"], ["lie", "lye"], ["loan", "lone"], ["made", "maid"],
+  ["mail", "male"], ["main", "mane"], ["manner", "manor"], ["marshal", "martial"], ["meat", "meet"], ["medal", "meddle"],
+  ["might", "mite"], ["mind", "mined"], ["miner", "minor"], ["missed", "mist"], ["morning", "mourning"], ["muscle", "mussel"],
+  ["naval", "navel"], ["none", "nun"], ["oar", "or", "ore"], ["one", "won"], ["pail", "pale"], ["pain", "pane"],
+  ["pair", "pare", "pear"], ["passed", "past"], ["patience", "patients"], ["pause", "paws"], ["peace", "piece"],
+  ["peak", "peek"], ["peal", "peel"], ["peer", "pier"], ["place", "plaice"], ["plain", "plane"], ["please", "pleas"],
+  ["plum", "plumb"], ["pole", "poll"], ["poor", "pour", "pore"], ["pray", "prey"], ["presence", "presents"], ["pride", "pried"],
+  ["principal", "principle"], ["profit", "prophet"], ["rain", "reign", "rein"], ["raise", "rays"], ["rap", "wrap"],
+  ["read", "reed"], ["real", "reel"], ["red", "read"], ["rest", "wrest"], ["right", "rite", "write"], ["ring", "wring"],
+  ["road", "rode", "rowed"], ["role", "roll"], ["root", "route"], ["rose", "rows"], ["rough", "ruff"], ["sail", "sale"],
+  ["scene", "seen"], ["sea", "see"], ["seam", "seem"], ["sew", "so", "sow"], ["shear", "sheer"], ["shone", "shown"],
+  ["side", "sighed"], ["sighs", "size"], ["soar", "sore"], ["sole", "soul"], ["some", "sum"], ["son", "sun"], ["soared", "sword"],
+  ["stair", "stare"], ["stake", "steak"], ["stationary", "stationery"], ["steal", "steel"], ["straight", "strait"],
+  ["suite", "sweet"], ["tacks", "tax"], ["tail", "tale"], ["tea", "tee"], ["team", "teem"], ["tear", "tier"], ["tense", "tents"],
+  ["tern", "turn"], ["their", "there", "they're"], ["threw", "through"], ["throne", "thrown"], ["thyme", "time"],
+  ["tide", "tied"], ["to", "too", "two"], ["toe", "tow"], ["vain", "vane", "vein"], ["vary", "very"], ["waist", "waste"],
+  ["wait", "weight"], ["war", "wore"], ["ware", "wear", "where"], ["way", "weigh"], ["weak", "week"], ["weather", "whether"],
+  ["wheel", "we'll"], ["which", "witch"], ["whine", "wine"], ["whirled", "world"], ["wood", "would"], ["yoke", "yolk"],
+  ["you", "ewe"], ["your", "you're"],
+  // also in src/lib/speechSingleWord.ts HOMOPHONES (the speaking check's list, made separately)
+  ["whose", "who's"], ["warn", "worn"], ["bore", "boar"], ["oh", "owe"], ["story", "storey"], ["sunday", "sundae"],
+];
+const HOMOPHONES = (() => {
+  const map = new Map<string, Set<string>>();
+  for (const group of HOMOPHONE_GROUPS) {
+    for (const w of group) {
+      const set = map.get(w) || new Set<string>();
+      for (const other of group) if (other !== w) set.add(other);
+      map.set(w, set);
     }
+  }
+  return map;
+})();
+
+/** The words that sound like `word` (lower case; empty when the table has none). */
+export function homophonesOf(word: string): string[] {
+  return [...(HOMOPHONES.get(String(word || "").toLowerCase().trim()) || [])];
+}
+
+/** Whether `word` may be asked by sound alone: never when it has a homophone (VOCA-L08 CHECK — sail / sale in mv2-19). */
+export function canAskByListening(word: string): boolean {
+  return homophonesOf(word).length === 0;
+}
+
+/** About this share of a round is asked by sound only (VOCA-L08 · D20 나). */
+export const LISTEN_SHARE = 1 / 3;
+/** A word missed in a round comes back at the end of that round at most this many times (VOCA-L03 · D20 나). */
+export const MAX_REASKS = 2;
+
+export type RecallDirection = "en-to-ko" | "ko-to-en";
+
+export interface RecallRoundOptions {
+  /**
+   * 1-based round. A word asked English → Korean in one round is asked Korean → English in the next (VOCA-L02 CHECK ②): the
+   * words at even places of the lesson start English → Korean in round 1 — the order the quiz always used — and every round
+   * flips them all, so two rounds take every word both ways. Default 1.
+   */
+  round?: number;
+  /** the share of the round asked by sound only (default LISTEN_SHARE; 0 turns it off) */
+  listenShare?: number;
+  /** the lesson grid's rows: from the second round on, wrong options come from the word's own row first (VOCA-L13 CHECK) */
+  rows?: string[][];
+}
+
+const lc = (w: string) => String(w || "").toLowerCase().trim();
+
+function shuffled<T>(list: readonly T[]): T[] {
+  const out = [...list];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+/**
+ * Up to `count` wrong options: first those the previous version of the question did not show (so a question asked again is not
+ * answered by where its options were — VOCA-L02), within that the word's row first (from round 2), each group in random order.
+ */
+function pickDistractors<T>(candidates: readonly T[], preferred: ReadonlySet<T>, avoid: ReadonlySet<T>, count: number): T[] {
+  const groups: T[][] = [[], [], [], []];
+  for (const c of [...new Set(candidates)]) groups[(avoid.has(c) ? 2 : 0) + (preferred.has(c) ? 0 : 1)].push(c);
+  return groups.flatMap((g) => shuffled(g)).slice(0, count);
+}
+
+/** The options in random order — with the right answer somewhere else than `avoidIndex` (the last time this word was asked). */
+function arrange(options: string[], answer: string, avoidIndex?: number | null): string[] {
+  const out = shuffled(options);
+  const at = out.indexOf(answer);
+  if (avoidIndex !== undefined && avoidIndex !== null && out.length > 1 && at === avoidIndex) {
+    const swap = (at + 1) % out.length;
+    [out[at], out[swap]] = [out[swap], out[at]];
+  }
+  return out;
+}
+
+interface RecallEntry {
+  word: string;
+  order: number;
+  /** its place among the lesson's words that have a meaning (0-based) — the direction rule counts on it */
+  place: number;
+}
+
+function recallEntries(words: string[], vocaDict: Record<string, { meaning: string }>): RecallEntry[] {
+  const out: RecallEntry[] = [];
+  words.forEach((w, i) => {
+    if (w && vocaDict[lc(w)]?.meaning) out.push({ word: w, order: i + 1, place: out.length });
+  });
+  return out;
+}
+
+function directionOf(place: number, round: number): RecallDirection {
+  return (place + round - 1) % 2 === 0 ? "en-to-ko" : "ko-to-en";
+}
+
+function rowMatesOf(word: string, rows?: string[][]): Set<string> {
+  const key = lc(word);
+  const row = (rows || []).find((r) => r.some((w) => lc(w) === key));
+  return new Set((row || []).map(lc).filter((w) => w && w !== key));
+}
+
+/**
+ * One question. The rules of the wrong options are the ones the quiz always had (VOCA-L01 — never a word or a meaning that is
+ * also right: `conflicts`, the synonym groups, the pronunciation notes taken off) for every kind of question, the heard one too.
+ */
+function buildRecallQuestion(
+  entry: RecallEntry,
+  validWords: string[],
+  vocaDict: Record<string, { meaning: string }>,
+  type: RecallDirection,
+  prompt: "text" | "listen",
+  opts: { rows?: string[][]; sameRowFirst: boolean; previous?: ActiveRecallQuestion | null; idTag: string },
+): ActiveRecallQuestion {
+  const { word } = entry;
+  const clean = lc(word);
+  const correctMeaning = quizMeaning(vocaDict[clean]?.meaning || "뜻");
+  const mates = opts.sameRowFirst ? rowMatesOf(word, opts.rows) : new Set<string>();
+  const avoid = new Set(opts.previous ? opts.previous.options : []);
+  const etymologyHint = analyzeEtymology(word)?.explanation;
+
+  if (type === "en-to-ko") {
+    const pool = validWords.filter((w) => !conflicts(w, clean, vocaDict));
+    const preferred = new Set(pool.filter((w) => mates.has(lc(w))).map((w) => quizMeaning(vocaDict[lc(w)]?.meaning || "")));
+    const distractors = pickDistractors(
+      pool.map((w) => quizMeaning(vocaDict[lc(w)]?.meaning || "")).filter((m) => m && m !== correctMeaning),
+      preferred,
+      avoid,
+      3,
+    );
 
     if (distractors.length < 3) {
       // The whole-dictionary fallback holds meanings, not words, so a synonym-group mate
       // (precious ~ priceless) is excluded by its meaning here — `conflicts` cannot see it.
+      const allMeanings = Array.from(
+        new Set(Object.values(vocaDict).map((v) => v.meaning).filter(Boolean).map(quizMeaning)),
+      );
       const mateMeanings = new Set(
         SYNONYM_GROUPS.filter((g) => g.includes(clean))
           .flat()
@@ -373,9 +562,9 @@ export function generateActiveRecallQuizzes(
           .filter((m): m is string => Boolean(m))
           .map(quizMeaning),
       );
-      const shuffledGlobal = [...allMeanings].sort(() => Math.random() - 0.5);
+      const shuffledGlobal = shuffled(allMeanings);
       for (const m of shuffledGlobal) {
-        if (distractors.length < 3 && !sharesSense(m, correctMeaning) && !mateMeanings.has(m) && !distractors.includes(m)) {
+        if (distractors.length < 3 && !sharesSense(m, correctMeaning) && !stemPair(m, correctMeaning) && !mateMeanings.has(m) && !distractors.includes(m)) {
           distractors.push(m);
         }
       }
@@ -385,51 +574,127 @@ export function generateActiveRecallQuizzes(
       distractors.push(`단어 의미 ${distractors.length + 1}`);
     }
 
-    if (isEnToKo) {
-      const options = [correctMeaning, ...distractors].sort(() => Math.random() - 0.5);
-      const correctIndex = options.indexOf(correctMeaning);
-      return {
-        id: `quiz-en-${clean}-${idx}`,
-        word,
-        correctMeaning,
-        questionType: "en-to-ko",
-        questionPrompt: `"${word}" 의 가장 알맞은 한국어 뜻은 무엇일까요?`,
-        options,
-        correctIndex,
-        etymologyHint: analyzeEtymology(word)?.explanation,
-      };
-    } else {
-      // CNT-10: sampled at random rather than `slice(0, 3)`, which offered the
-      // first three words of the list ("yes / day / school") on nearly every
-      // Korean-to-English question of a lesson.
-      const distractorWords = validWords
-        .filter((w) => {
-          const other = w.toLowerCase().trim();
-          if (other === clean) return false;
-          // KIG-019: a word that carries the same Korean meaning as the answer is
-          // also correct, so it must never be offered as a wrong option.
-          // e.g. hv-15 "운이 좋은" would otherwise list both `lucky` and `fortunate`.
-          return !conflicts(other, clean, vocaDict);
-        })
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
-      while (distractorWords.length < 3) {
-        distractorWords.push(`vocab${distractorWords.length + 1}`);
-      }
-      const options = [word, ...distractorWords].sort(() => Math.random() - 0.5);
-      const correctIndex = options.indexOf(word);
-      return {
-        id: `quiz-ko-${clean}-${idx}`,
-        word,
-        correctMeaning,
-        questionType: "ko-to-en",
-        questionPrompt: `[ ${correctMeaning} ] 에 해당하는 올바른 영단어를 고르세요.`,
-        options,
-        correctIndex,
-        etymologyHint: analyzeEtymology(word)?.explanation,
-      };
-    }
+    const options = arrange([correctMeaning, ...distractors], correctMeaning, opts.previous?.correctIndex);
+    return {
+      id: `quiz-${prompt === "listen" ? "listen" : "en"}-${clean}-${entry.order}-${opts.idTag}`,
+      word,
+      correctMeaning,
+      questionType: "en-to-ko",
+      prompt,
+      questionPrompt:
+        prompt === "listen" ? "소리를 듣고 알맞은 뜻을 고르세요." : `"${word}" 의 가장 알맞은 한국어 뜻은 무엇일까요?`,
+      options,
+      correctIndex: options.indexOf(correctMeaning),
+      etymologyHint,
+      order: entry.order,
+    };
+  }
+
+  // CNT-10: sampled at random rather than `slice(0, 3)`, which offered the
+  // first three words of the list ("yes / day / school") on nearly every
+  // Korean-to-English question of a lesson.
+  const pool = validWords.filter((w) => {
+    const other = lc(w);
+    if (other === clean) return false;
+    // KIG-019: a word that carries the same Korean meaning as the answer is
+    // also correct, so it must never be offered as a wrong option.
+    // e.g. hv-15 "운이 좋은" would otherwise list both `lucky` and `fortunate`.
+    return !conflicts(other, clean, vocaDict);
   });
+  const distractorWords = pickDistractors(pool, new Set(pool.filter((w) => mates.has(lc(w)))), avoid, 3);
+  while (distractorWords.length < 3) {
+    distractorWords.push(`vocab${distractorWords.length + 1}`);
+  }
+  const options = arrange([word, ...distractorWords], word, opts.previous?.correctIndex);
+  return {
+    id: `quiz-ko-${clean}-${entry.order}-${opts.idTag}`,
+    word,
+    correctMeaning,
+    questionType: "ko-to-en",
+    prompt: "text",
+    questionPrompt: `[ ${correctMeaning} ] 에 해당하는 올바른 영단어를 고르세요.`,
+    options,
+    correctIndex: options.indexOf(word),
+    etymologyHint,
+    order: entry.order,
+  };
+}
+
+/**
+ * A Step 2 round (2026-09-27 — VOCA-L02 · L08 · L13 · E02 · D20 나): every word of the lesson once, in a new random order,
+ * English → Korean or Korean → English by the round (see RecallRoundOptions.round), about a third of the round's English →
+ * Korean items heard instead of read (never a word with a homophone), new wrong options each time it is called, and from the
+ * second round the word's own row first. Called with two arguments (the audit checks do) it gives round 1.
+ */
+export function generateActiveRecallQuizzes(
+  words: string[],
+  vocaDict: Record<string, { meaning: string }>,
+  options: RecallRoundOptions = {},
+): ActiveRecallQuestion[] {
+  const entries = recallEntries(words, vocaDict);
+  if (entries.length === 0) return [];
+  const validWords = entries.map((e) => e.word);
+  const round = Math.max(1, Math.floor(options.round ?? 1));
+  const share = Math.max(0, Math.min(1, options.listenShare ?? LISTEN_SHARE));
+
+  const typed = entries.map((e) => ({ entry: e, type: directionOf(e.place, round) }));
+  const target = Math.round(entries.length * share);
+  const heard = new Set(
+    shuffled(typed.filter((t) => t.type === "en-to-ko" && canAskByListening(t.entry.word)))
+      .slice(0, target)
+      .map((t) => t.entry.order),
+  );
+
+  const questions = typed.map(({ entry, type }) =>
+    buildRecallQuestion(entry, validWords, vocaDict, type, heard.has(entry.order) ? "listen" : "text", {
+      rows: options.rows,
+      sameRowFirst: round >= 2,
+      idTag: `r${round}`,
+    }),
+  );
+  return shuffled(questions);
+}
+
+/**
+ * The same word asked again (VOCA-L03 · D20 나): the same kind of question with new wrong options where the lesson has them and
+ * the right answer in another place. `retry` counts the asks.
+ */
+export function rebuildRecallQuestion(
+  question: ActiveRecallQuestion,
+  words: string[],
+  vocaDict: Record<string, { meaning: string }>,
+  options: RecallRoundOptions = {},
+): ActiveRecallQuestion {
+  const entries = recallEntries(words, vocaDict);
+  const entry =
+    entries.find((e) => e.order === question.order) ||
+    entries.find((e) => lc(e.word) === lc(question.word)) || { word: question.word, order: question.order ?? 0, place: 0 };
+  const retry = (question.retry ?? 0) + 1;
+  const round = Math.max(1, Math.floor(options.round ?? 1));
+  const rebuilt = buildRecallQuestion(entry, entries.map((e) => e.word), vocaDict, question.questionType, question.prompt ?? "text", {
+    rows: options.rows,
+    sameRowFirst: round >= 2,
+    previous: question,
+    idTag: `r${round}-again${retry}`,
+  });
+  return { ...rebuilt, retry };
+}
+
+/**
+ * The round's queue after an answer: a miss is asked again at the end of the round — with new options — unless the word was
+ * already asked again MAX_REASKS times (VOCA-L03 · D20 나 "단어당 2번까지").
+ */
+export function queueAfterAnswer(
+  queue: ActiveRecallQuestion[],
+  index: number,
+  correct: boolean,
+  words: string[],
+  vocaDict: Record<string, { meaning: string }>,
+  options: RecallRoundOptions = {},
+): ActiveRecallQuestion[] {
+  const question = queue[index];
+  if (!question || correct || (question.retry ?? 0) >= MAX_REASKS) return queue;
+  return [...queue, rebuildRecallQuestion(question, words, vocaDict, options)];
 }
 
 // -----------------------------------------------------------------------------
@@ -487,12 +752,21 @@ export function generateClozeQuestions(
 // 5. 60-Second Speed Reflex Drill Queue
 // -----------------------------------------------------------------------------
 
+/**
+ * One pass of the 60-second drill: every word once, in random order, about 45% of them shown with another word's meaning.
+ * 2026-09-27 (VOCA-L09 CHECK · E04): the game calls this again after every pass, so from the 31st press the order and the
+ * mismatched pairs are new — a second pass used to repeat the first one exactly.
+ */
 export function generateSpeedDrillItems(
   words: string[],
   vocaDict: Record<string, { meaning: string }>,
 ): SpeedDrillItem[] {
   const validWords = words.filter((w) => Boolean(w && vocaDict[w.toLowerCase().trim()]?.meaning));
   if (validWords.length === 0) return [];
+  const orderOf = new Map<string, number>();
+  words.forEach((w, i) => {
+    if (w && !orderOf.has(w)) orderOf.set(w, i + 1);
+  });
 
   const items: SpeedDrillItem[] = [];
 
@@ -527,79 +801,200 @@ export function generateSpeedDrillItems(
       displayedMeaning,
       isMatch,
       actualMeaning,
+      order: orderOf.get(word),
     });
   }
 
-  return items.sort(() => Math.random() - 0.5);
+  return shuffled(items);
+}
+
+/**
+ * The drill's score rule (2026-09-27 — VOCA-L09 CHECK · D22 나 "틀리면 … 깎거나"): a right press earns 100 plus 10 for every
+ * press of the current run of right ones; a wrong press ends the run and costs SPEED_WRONG_PENALTY. The total never goes below
+ * 0. Before, a wrong press cost nothing, so pressing '일치' three times a second without reading scored about 12,000 — as much
+ * as an honest 95%. With the 0.4 s answer display (SPEED_FLASH_MS), check-voca-learning.cjs simulates 2,000 games of each
+ * learner: at 100 a guesser who always presses '맞음' as fast as allowed scores about 2,700, below an honest 80% at 1.5 s a pair
+ * (about 3,900) and far below an honest 95% (about 8,100); at 50 — the number the owner's question gave as an example — the
+ * guesser (about 4,900) still beats the honest 80% learner (about 4,300), against the plan's rule '찍기가 진지한 풀이를 이기지
+ * 않는다'. One number to change back.
+ */
+export const SPEED_WRONG_PENALTY = 100;
+/** How long each press shows right / wrong (and the right meaning) before the next pair — the buttons wait meanwhile. */
+export const SPEED_FLASH_MS = 400;
+export const SPEED_SECONDS = 60;
+
+/** The points of one press: `combo` is the run of right presses INCLUDING this one when it is right. */
+export function speedPressPoints(correct: boolean, combo: number): number {
+  return correct ? 100 + combo * 10 : -SPEED_WRONG_PENALTY;
+}
+
+// -----------------------------------------------------------------------------
+// 5b. Spelling (Step 3 — 2026-09-27 VOCA-L07 CHECK · D21 나)
+// -----------------------------------------------------------------------------
+
+/**
+ * The written forms a bracketed headword accepts — both spellings it teaches (VOCA_SPEECH_FORMS in src/lib/vocaSpeech.ts holds
+ * the same fourteen words; the spoken form is listed first). `autumn(=fall)` teaches a synonym, so both words are right.
+ */
+const BRACKET_SPELLINGS: Record<string, string[]> = {
+  "judg(e)ment": ["judgment", "judgement"],
+  "medi(a)eval": ["medieval", "mediaeval"],
+  "marvel(l)ous": ["marvelous", "marvellous"],
+  "enrol(l)": ["enroll", "enrol"],
+  "colo(u)r": ["color", "colour"],
+  "neighbo(u)r": ["neighbor", "neighbour"],
+  "favo(u)r": ["favor", "favour"],
+  "humo(u)r": ["humor", "humour"],
+  "gray(grey)": ["gray", "grey"],
+  "afterward(s)": ["afterward", "afterwards"],
+  "autumn(=fall)": ["autumn", "fall"],
+  "hono(u)r": ["honor", "honour"],
+  "dialog(ue)": ["dialogue", "dialog"],
+  "labo(u)r": ["labor", "labour"],
+};
+
+/** Every written form `word` accepts as a typed answer. A bracket not in the table: with and without its letters. */
+export function spellingForms(word: string): string[] {
+  const w = String(word || "").trim();
+  const listed = BRACKET_SPELLINGS[w];
+  if (listed) return [...listed];
+  const m = /^(.*)\(([^)]*)\)(.*)$/.exec(w);
+  if (!m) return [w];
+  if (m[2].startsWith("=")) return [`${m[1]}${m[3]}`.trim(), m[2].slice(1).trim()];
+  return [`${m[1]}${m[3]}`, `${m[1]}${m[2]}${m[3]}`];
+}
+
+/** Case, the ends, repeated spaces, curly apostrophes, spaces around a hyphen and a final period do not count. */
+function spellingKey(text: string): string {
+  return String(text || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[’‘`´]/g, "'")
+    .replace(/\s*-\s*/g, "-")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\.$/, "");
+}
+
+/**
+ * Whether a typed answer spells `word` (VOCA-L07 CHECK): case and the spaces at the ends are ignored; a bracketed headword takes
+ * either spelling; a hyphenated one takes the hyphen, one word or two (good-bye · goodbye · good bye); a two-word one is compared
+ * with one space between the words (living room).
+ */
+export function checkSpelling(typed: string, word: string): boolean {
+  const answer = spellingKey(typed);
+  if (!answer) return false;
+  for (const form of spellingForms(word)) {
+    const key = spellingKey(form);
+    if (answer === key) return true;
+    if (key.includes("-")) {
+      const parts = key.split("-");
+      if (answer === parts.join("") || answer === parts.join(" ")) return true;
+    }
+  }
+  return false;
 }
 
 // -----------------------------------------------------------------------------
 // 6. Leitner Spaced Repetition Logic (에빙하우스 망각곡선 모델)
 // -----------------------------------------------------------------------------
 
+/** A word never answered: '새 단어' (2026-09-27 — VOCA-L05 · U11: new words used to start in Box 1 '집중 복습'). */
+export function newLeitnerCard(word: string, meaning: string): LeitnerCard {
+  return { word, meaning, box: 0, lastTestedAt: 0, streak: 0, streakDay: null, v: 2 };
+}
+
+/**
+ * Old records (2026-09-27 — VOCA-U11 CHECK · 계획 E03): before this version every card of a lesson was created in Box 1 at the
+ * same moment the page opened, and all thirty were saved at the first answer. So in a card without `v`, Box 1 · streak 0 · a
+ * lastTestedAt within this many ms of the record's earliest one — when at least two cards share that moment — is a word that was
+ * never answered. A lone card at the earliest moment is a real answer (a quiz answered to the end has no untouched cards).
+ */
+export const LEITNER_LEGACY_WINDOW_MS = 2000;
+
+/**
+ * The lesson's cards from storage, for the lesson's CURRENT words (the meaning always comes from the dictionary — V-03/V-05/V-06).
+ * Accepts the record of any version; anything unreadable is a new card. Every card returned is `v: 2`.
+ */
+export function readLeitnerCards(
+  saved: unknown,
+  words: string[],
+  meaningOf: (word: string) => string,
+): Record<string, LeitnerCard> {
+  const record = saved && typeof saved === "object" && !Array.isArray(saved) ? (saved as Record<string, unknown>) : {};
+  const isCard = (c: unknown): c is Partial<LeitnerCard> => Boolean(c) && typeof c === "object";
+  const legacyTimes = Object.values(record)
+    .filter(isCard)
+    .filter((c) => c.v !== 2 && typeof c.lastTestedAt === "number" && c.lastTestedAt > 0)
+    .map((c) => c.lastTestedAt as number);
+  const earliest = legacyTimes.length ? Math.min(...legacyTimes) : null;
+  const atEarliest = earliest === null ? 0 : legacyTimes.filter((t) => t - earliest <= LEITNER_LEGACY_WINDOW_MS).length;
+
+  const cards: Record<string, LeitnerCard> = {};
+  for (const w of words) {
+    const clean = lc(w);
+    const meaning = meaningOf(w);
+    const prev = record[clean];
+    if (!isCard(prev)) {
+      cards[clean] = newLeitnerCard(w, meaning);
+      continue;
+    }
+    const box: LeitnerBox = prev.box === 0 || prev.box === 1 || prev.box === 2 || prev.box === 3 ? prev.box : 0;
+    const streak = typeof prev.streak === "number" && Number.isInteger(prev.streak) && prev.streak >= 0 ? prev.streak : 0;
+    const at = typeof prev.lastTestedAt === "number" && prev.lastTestedAt > 0 ? prev.lastTestedAt : 0;
+    if (prev.v !== 2) {
+      const untouched = box === 1 && streak === 0 && earliest !== null && atEarliest >= 2 && at > 0 && at - earliest <= LEITNER_LEGACY_WINDOW_MS;
+      cards[clean] = untouched ? newLeitnerCard(w, meaning) : { word: w, meaning, box, lastTestedAt: at, streak, streakDay: null, v: 2 };
+      continue;
+    }
+    cards[clean] = {
+      word: w,
+      meaning,
+      box,
+      lastTestedAt: at,
+      streak,
+      streakDay: typeof prev.streakDay === "string" ? prev.streakDay : null,
+      ...(prev.known === true ? { known: true } : {}),
+      v: 2,
+    };
+  }
+  return cards;
+}
+
+/**
+ * One graded answer. Right: the streak grows — once per learning day when `today` is given (VOCA-L02 CHECK ④, so rounds on
+ * one day cannot master a word) — and the card is at least Box 2, Box 3 at MASTERY_STREAK; a right answer never lowers a card.
+ * Wrong: Box 1, streak 0. Only answers move boxes (D21 나 — no button does).
+ */
 export function updateLeitnerCard(
   prevCards: Record<string, LeitnerCard>,
   word: string,
   meaning: string,
   isCorrect: boolean,
+  today: string | null = null,
+  nowMs: number = Date.now(),
 ): Record<string, LeitnerCard> {
   const clean = word.toLowerCase().trim();
-  const current = prevCards[clean] || {
-    word,
-    meaning,
-    box: 1,
-    lastTestedAt: Date.now(),
-    streak: 0,
-  };
+  const current = prevCards[clean] || newLeitnerCard(word, meaning);
 
-  let nextBox: 1 | 2 | 3 = current.box;
+  let nextBox: LeitnerBox = current.box;
   let nextStreak = current.streak;
+  let streakDay = current.streakDay ?? null;
 
   if (isCorrect) {
-    nextStreak += 1;
-    const earned: 1 | 2 | 3 = nextStreak >= MASTERY_STREAK ? 3 : 2;
-    // A correct answer may promote a card but must never demote one. A card can
-    // already sit above what the streak alone would earn — it was mastered by
-    // hand with the "마스터 체크" button — and answering it correctly used to
-    // knock it back down to Box 2.
-    nextBox = Math.max(current.box, earned) as 1 | 2 | 3;
+    if (today === null || streakDay !== today) {
+      nextStreak += 1;
+      streakDay = today;
+    }
+    const earned: LeitnerBox = nextStreak >= MASTERY_STREAK ? 3 : 2;
+    // A correct answer may promote a card but must never demote one (a card mastered before
+    // 2026-09-27 by the old "마스터 체크" button keeps its Box 3).
+    nextBox = Math.max(current.box, earned) as LeitnerBox;
   } else {
     nextStreak = 0;
     nextBox = 1;
+    streakDay = null;
   }
-
-  return {
-    ...prevCards,
-    [clean]: {
-      word,
-      meaning,
-      box: nextBox,
-      lastTestedAt: Date.now(),
-      streak: nextStreak,
-    },
-  };
-}
-
-/**
- * The learner asserted mastery directly with the "마스터 체크" button instead of
- * earning it through quiz answers. One click masters the card; the same button
- * un-masters it. The quiz path is untouched and still climbs 1 -> 2 -> 3 over
- * MASTERY_STREAK consecutive correct answers.
- */
-export function setLeitnerMastery(
-  prevCards: Record<string, LeitnerCard>,
-  word: string,
-  meaning: string,
-  mastered: boolean,
-): Record<string, LeitnerCard> {
-  const clean = word.toLowerCase().trim();
-  const current = prevCards[clean] || {
-    word,
-    meaning,
-    box: 1 as const,
-    lastTestedAt: Date.now(),
-    streak: 0,
-  };
 
   return {
     ...prevCards,
@@ -607,11 +1002,29 @@ export function setLeitnerMastery(
       ...current,
       word,
       meaning,
-      box: mastered ? 3 : 1,
-      // The click is one demonstration of knowledge, so the streak moves by one
-      // rather than being fabricated up to the quiz threshold.
-      streak: mastered ? current.streak + 1 : 0,
-      lastTestedAt: Date.now(),
+      box: nextBox,
+      lastTestedAt: nowMs,
+      streak: nextStreak,
+      streakDay,
+      v: 2,
     },
   };
+}
+
+/**
+ * '안다고 표시' (2026-09-27 — VOCA-L05 CHECK · D21 나): the learner's own mark. It replaced the '마스터 체크' button, which put the
+ * card in Box 3 at once and so took it out of review; now no box moves and Step 2 still asks the word. The next-day check of the
+ * common learning engine is where a known word is confirmed.
+ */
+export function setLeitnerKnown(
+  prevCards: Record<string, LeitnerCard>,
+  word: string,
+  meaning: string,
+  known: boolean,
+): Record<string, LeitnerCard> {
+  const clean = word.toLowerCase().trim();
+  const current = prevCards[clean] || newLeitnerCard(word, meaning);
+  const { known: _drop, ...rest } = current;
+  void _drop;
+  return { ...prevCards, [clean]: { ...rest, word, meaning, ...(known ? { known: true } : {}), v: 2 } };
 }

@@ -22,6 +22,8 @@
  *   N  GRAMMAR graded input FAIL 넷 — 판정 없는 칸(자가 채점 · 빈칸 안내 · no feedback · [전체 채점하기]) → PASS(도구 탓 ⑥)
  *   O  GRAMMAR graded input FAIL 이 다른 문구(정답인데 '오답입니다')   → FAIL · --break=grammar-any-note 는 PASS(옛 동작 — 진짜 FAIL 을 삼킴)
  *   P  한쪽만 판정 없음(correct→no feedback · wrong→'정답입니다')     → FAIL
+ *   N2 (2026-09-27) GRAMMAR 새 화면의 접힌 위 플레이어 이름 '정답 문장 전체 듣기' → PASS(도구 탓 ⑥)
+ *   O2 (2026-09-27) GRAMMAR 새 1단계 판정 글 '✕ 오답 — …'          → FAIL(진짜 판정은 그대로 셈)
  * exit 0 = 모두 기대대로.
  */
 const fs = require("fs");
@@ -84,6 +86,11 @@ lines.push(...all3("grammar1", "gh1-006", NEW, [pass("step"),
 lines.push(...all3("grammar2", "gh2-007", NEW, [pass("step"), gi("#5", "correct→오답입니다 | wrong→오답입니다 | lowercase→rejected, extra-spaces→rejected, no-final-period→rejected")], { driverRev: "7-1m" }));
 // P — grammar1 gh1-058: one side judgment-less, the other a verdict (a wrong answer accepted)
 lines.push(...all3("grammar1", "gh1-058", NEW, [pass("step"), gi("#6", "correct→no feedback | wrong→정답입니다 | lowercase→rejected, extra-spaces→rejected, no-final-period→rejected")], { driverRev: "7-1m" }));
+// N2 — 2026-09-27 (GRAMMAR 학습법 · 화면 고침): the reworked page's first 정답-line is the folded top player '정답 문장 전체 듣기' — a
+// button name, not a verdict → judgment-less, like the four in N
+lines.push(...all3("grammar1", "gh1-008", NEW, [pass("step"), gi("#1", "correct→정답 문장 전체 듣기 | wrong→정답 문장 전체 듣기 | lowercase→accepted, extra-spaces→accepted, no-final-period→accepted")], { driverRev: "7-1m" }));
+// O2 — the reworked Step 1 verdict wording ('✕ 오답 — …' on a correct answer) is the product's FAIL, not swallowed by N2's text
+lines.push(...all3("grammar2", "gh2-008", NEW, [pass("step"), gi("#1", "correct→✕ 오답 — 모범 답안과 견주어 보세요 | wrong→✕ 오답 — 모범 답안과 견주어 보세요 | lowercase→rejected, extra-spaces→rejected, no-final-period→rejected")], { driverRev: "7-1m" }));
 fs.writeFileSync(path.join(FEAT, "fixture.jsonl"), lines.map((l) => JSON.stringify(l)).join("\n") + "\n");
 
 function run(label, args) {
@@ -127,6 +134,8 @@ const cases = [
   ["O GRAMMAR 다른 문구의 FAIL → FAIL", st(now, "grammar2", "gh2-007").status === "FAIL", `지금 ${st(now, "grammar2", "gh2-007").status}`],
   ["O 깨기 grammar-any-note → PASS(옛 동작 — 진짜 FAIL 을 삼킴)", st(grammarOld, "grammar2", "gh2-007").status === "PASS", `깨기 ${st(grammarOld, "grammar2", "gh2-007").status}`],
   ["P 한쪽만 판정 없음(wrong→'정답입니다') → FAIL", st(now, "grammar1", "gh1-058").status === "FAIL", `지금 ${st(now, "grammar1", "gh1-058").status}`],
+  ["N2 (09-27) 접힌 위 플레이어 이름 '정답 문장 전체 듣기' → PASS(도구 탓)", st(now, "grammar1", "gh1-008").status === "PASS", `지금 ${st(now, "grammar1", "gh1-008").status}`],
+  ["O2 (09-27) 새 1단계 판정 글 '✕ 오답 — …' → FAIL", st(now, "grammar2", "gh2-008").status === "FAIL", `지금 ${st(now, "grammar2", "gh2-008").status}`],
 ];
 let wrong = 0;
 for (const [what, ok, got] of cases) { if (!ok) wrong++; console.log(`${ok ? "기대대로" : "!! 기대와 다름"} · ${what} — ${got}`); }

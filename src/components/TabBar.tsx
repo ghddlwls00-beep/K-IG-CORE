@@ -42,6 +42,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
     };
   }, [mobileMenuOpen]);
 
+  // The home page keeps its own look without this header (사장님 2026-09-27 "추가하지마 이건").
   if (pathname === "/") {
     return null;
   }
@@ -56,25 +57,32 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-line bg-surface/85 backdrop-blur-sm">
+      {/*
+        2026-09-27 (docs/디자인-규칙.md §6 · 점검 FRAME-U08): 56px on every width. On a 360px phone
+        the licence pill + search pill + menu used to be 23px wider than the screen, so a licensed
+        learner's whole page slid sideways; the phone header is now logo · search · menu, and the
+        licence status lives in the drawer. Desktop: the old 1fr_auto_1fr grid left ~225px for the
+        right side, which broke 'VIP 올패스' onto two lines.
+      */}
+      <header className="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-4 sm:px-5">
-          <div className="flex items-center justify-between xl:grid xl:grid-cols-[1fr_auto_1fr] gap-4 py-3">
+          <div className="flex h-14 items-center justify-between gap-3 xl:grid xl:grid-cols-[auto_1fr_auto]">
             {/* Logo */}
             <div className="flex items-center justify-start shrink-0">
               <Link
                 href="/"
-                className="shrink-0 font-mono text-[12.5px] font-bold tracking-[0.22em] text-ink uppercase hover:text-primary transition-colors flex items-center gap-1.5 select-none"
+                className="-ml-2 inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-control px-2 text-[15px] font-bold tracking-tight text-ink select-none hover:text-primary transition-colors"
               >
                 <span>K&#8209;IG</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                <span className="font-normal text-ink-soft tracking-widest text-[11px]">교육</span>
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span className="text-label font-medium text-ink-soft">교육</span>
               </Link>
             </div>
 
-            {/* Desktop Navigation (md+) */}
+            {/* Desktop Navigation (xl+) */}
             <nav
               aria-label="Courses"
-              className="no-scrollbar hidden xl:flex items-center justify-center gap-1 overflow-x-auto overflow-y-hidden py-1"
+              className="no-scrollbar hidden xl:flex xl:justify-self-center items-center justify-center gap-1 overflow-x-auto overflow-y-hidden py-1"
             >
               {ordered.map((tab) => {
                 const active = activeTab === tab.slug;
@@ -85,7 +93,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                     href={targetUrl}
                     aria-current={active ? "page" : undefined}
                     className={
-                      "relative shrink-0 px-3.5 py-1.5 text-[12.5px] whitespace-nowrap transition-colors select-none " +
+                      "relative inline-flex min-h-11 shrink-0 items-center px-3 text-label whitespace-nowrap transition-colors select-none " +
                       (active
                         ? "font-semibold text-ink"
                         : "font-normal text-ink-soft hover:text-ink")
@@ -105,8 +113,11 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             </nav>
 
             {/* Right Controls */}
-            <div className="flex items-center justify-end gap-2 sm:gap-2.5 shrink-0">
-              <LicenseButton />
+            <div className="flex items-center justify-end gap-1.5 sm:gap-2 shrink-0 xl:justify-self-end">
+              {/* the licence status sits in the drawer on phones (FRAME-U08) */}
+              <div className="hidden md:block">
+                <LicenseButton />
+              </div>
               <SearchDialog />
 
               {/* 3-bar Hamburger Button (Visible only below xl) */}
@@ -115,7 +126,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
                 aria-expanded={mobileMenuOpen}
-                className="flex xl:hidden h-10 w-10 min-w-[40px] items-center justify-center rounded-xl border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
+                className="flex xl:hidden h-11 w-11 items-center justify-center rounded-control border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
               >
                 <div className="flex flex-col items-center justify-center gap-1.5 w-4.5">
                   <span
@@ -154,17 +165,17 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
           <aside className="relative z-10 flex h-full w-[290px] max-w-[85vw] flex-col justify-between border-l border-line bg-surface p-5 sm:p-6 shadow-2xl animate-in slide-in-from-right duration-250 overflow-y-auto">
             <div className="flex flex-col gap-6">
               {/* Drawer Header */}
-              <div className="flex items-center justify-between border-b border-line/70 pb-4">
-                <span className="font-mono text-[11px] font-bold tracking-widest uppercase text-ink-faint">
-                  전체 커리큘럼 메뉴
-                </span>
+              <div className="flex items-center justify-between border-b border-line pb-3">
+                <span className="text-label font-semibold text-ink-soft">과정</span>
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label="닫기"
-                  className="rounded-lg p-2 text-ink-soft hover:bg-raised hover:text-ink cursor-pointer"
+                  className="-mr-2 flex h-11 w-11 items-center justify-center rounded-control text-ink-soft hover:bg-raised hover:text-ink cursor-pointer"
                 >
-                  ✕
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                    <path d="M6 6l12 12M18 6L6 18" />
+                  </svg>
                 </button>
               </div>
 
@@ -178,16 +189,15 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                       key={tab.slug}
                       href={targetUrl}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center justify-between rounded-xl px-3.5 py-3 text-[14px] transition-colors ${
+                      aria-current={active ? "page" : undefined}
+                      className={`flex min-h-12 items-center justify-between rounded-control px-3.5 text-body transition-colors ${
                         active
-                          ? "bg-ink/[0.07] text-ink font-bold border border-ink/15"
+                          ? "bg-sunken text-ink font-semibold"
                           : "text-ink hover:bg-raised font-medium"
                       }`}
                     >
                       <span>{tab.label}</span>
-                      {active && (
-                        <span className="text-[11px] font-mono font-semibold">학습중 ●</span>
-                      )}
+                      {active && <span className="text-caption text-ink-soft">지금 과정</span>}
                     </Link>
                   );
                 })}
@@ -202,33 +212,29 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
                   setMobileMenuOpen(false);
                   openModal();
                 }}
-                className={`flex items-center justify-center gap-2 rounded-xl py-3 text-[13px] font-bold transition-all cursor-pointer ${
+                className={`flex min-h-12 items-center justify-center gap-2 rounded-control text-label font-semibold transition-colors cursor-pointer ${
                   hasActiveLicense
-                    ? licenseInfo?.isStudentOnly
-                      ? "border border-blue-500/30 bg-blue-500/10 text-blue-700 hover:bg-blue-500/20"
-                      : "border border-amber-500/30 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20"
-                    : "bg-ink text-surface shadow-xs hover:opacity-90 active:scale-[0.99]"
+                    ? "border border-line bg-raised text-ink hover:bg-sunken"
+                    : "bg-ink text-surface hover:opacity-90"
                 }`}
               >
-                <span>
-                  {hasActiveLicense
-                    ? licenseInfo?.isStudentOnly
-                      ? "🎓 STUDENT 패스 회원 (확인)"
-                      : "👑 VIP 올패스 회원 (확인)"
-                    : "🔑 이용권 코드 등록"}
-                </span>
+                {hasActiveLicense ? (
+                  <>
+                    <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-primary" />
+                    <span>{licenseInfo?.isStudentOnly ? "STUDENT 패스 이용 중" : "올패스 이용 중"} · 확인</span>
+                  </>
+                ) : (
+                  <span>이용권 등록</span>
+                )}
               </button>
 
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center rounded-xl border border-line py-2.5 text-[12.5px] font-medium text-ink hover:bg-raised transition-colors"
+                className="flex min-h-11 items-center justify-center rounded-control border border-line text-label font-medium text-ink hover:bg-raised transition-colors"
               >
-                🏠 홈(대시보드)으로 이동
+                처음 화면으로
               </Link>
-              <div className="text-center font-mono text-[10.5px] text-ink-faint">
-                K-IG Core Language Curriculum
-              </div>
             </div>
           </aside>
         </div>
