@@ -9,7 +9,8 @@
  *   - B 검색: 번호 · 제목 검색은 결과를 눌러 그 강의로 가는지까지. 결과 수는 앱의 검색 함수(searchMatch.ts)를 같은 색인에 돌린 수와 같아야.
  *   - C 이동: 첫 쪽 → 목록 → 강의 → 뒤로 → 앞으로 → 새로고침 · 유료 강의 주소 바로 열기 + 새로고침 · 없는 주소 6개는 404 화면.
  *   - D 빠른 동작(6과정 한 쪽씩): 잠김 화면이면 BLOCKED · 재생 6번 연타 + 두 번 누르기 · 단계 빨리 바꾸기 3바퀴 → 그 뒤 '한 번 더 재생' 이 소리를 내는지 ·
- *     '다음 강의' 를 0.25초마다 6번(불러오는 중에 누르기) → 주소와 화면의 강의가 같은지 · LISTENING 받아쓰기 '정답 채점하기' 6번 연타 → STEP 2 완료 수가 한 번만 느는지.
+ *     '다음 강의' 를 0.25초마다 6번(불러오는 중에 누르기) → 주소와 화면의 강의가 같은지 · LISTENING 받아쓰기 '정답 채점하기' 6번 연타 → STEP 2 완료 수가 한 번만 느는지
+ *     (2026-09-27 LISTENING 학습법 · 화면 고침 뒤: 블록 방식 1번 문장 · '정답 확인'[data-action=check] · 맞힌 문장 수 data-solved-lines — 아래 D 참고).
  *   - E 오래 켜 두기: 목록 ↔ 강의 60번(화면 안 이동인지 셈) · 같은 목록 쪽에서 GC 뒤 두 번 재어 메모리 · DOM · 이벤트 수가 문턱을 넘게 늘면 FAIL.
  *   - F 화면 크기: 9/18 과 같음(첫 쪽 · 과정 목록 6 · /t/voca × 컴퓨터 · 태블릿 · 휴대폰).
  *   - --break A|B|C|D|E|F: 그 부분을 일부러 깨서 FAIL 이 나는지 — 기록은 따로 파일(common-0926-break-X.jsonl). --only 와 같이 씀.
@@ -280,6 +281,9 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         // (details[data-answer-player]) — open it like a learner would, or no visible 재생 button is found (BLOCKED).
         const foldedPlayer = `document.querySelector('main details[data-answer-player]:not([open]) > summary')`;
         if (await tab.eval(`Boolean(${foldedPlayer})`).catch(() => false)) await H.click(tab, foldedPlayer, { settle: 300 });
+        // 2026-09-27 (READING · 계획 D01 나): the whole passage plays after the timed reading and in Step 4 — the top player is hidden
+        // (A10) and Step 1 has no play button before timing, so go to Step 4 like a learner who wants to listen.
+        if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="4"]')`, { settle: 600 });
         tab.resetEvents();
         // 재생 단추는 누르면 🔊 → ⏹️ 로 바뀜(ReadingLearningView 등) — 첫 판은 글로 다시 찾다가 1 ~ 2번만 누름(도구 탓).
         // 처음 찾은 단추에 표를 달아 같은 단추를 6번(재생 ↔ 정지 연타), 단추가 새로 그려지면 재생/정지 글로 다시 찾아 표를 닮
@@ -310,6 +314,8 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
         await H.sleep(800);
         if (steps.length) await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(steps[0])})`, { settle: 900 });
+        // READING: the passage player lives in Step 4 (Step 1 has none before the timed reading) — back to it, as at the start
+        if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="4"]')`, { settle: 600 });
         await tab.eval(tagPlay("/재생|🔊/")).catch(() => false);
         await H.audioLog(tab, { clear: true });
         const again = await H.click(tab, tagged, { settle: 200 });
@@ -352,38 +358,41 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         rec(`D:fast-next:${start}`, "rapid actions", pressed ? (moved && head && shown && !exc.length ? "PASS" : "FAIL") : "BLOCKED", { note: `'다음 강의' 0.25초마다 ${pressed}번 → ${now} · 화면에 '${head}' ${shown} · 예외 ${exc.length}` });
       }
 
-      // 받아쓰기 '정답 채점하기' 연타 — 맞는 답을 조립한 뒤 6번 → STEP 2 완료 수가 한 번만
+      // 받아쓰기 '정답 확인' 연타 — 맞는 답을 조립한 뒤 6번 → 맞힌 문장 수가 한 번만(한 번 늘어야 하고, 더는 늘지 않아야)
+      // 2026-09-27 (LISTENING 학습법 · 화면 고침 — F02 · D24 나): 새 받아쓰기는 data-* 로 읽는다 — 탭 [data-step-tab="2"] · 방식
+      // [data-mode="blocks"](블록) · 문장 이동 [data-action="prev-line"] · 낱말 [data-word-bank] [data-tile] · 채점 [data-action="check"] ·
+      // 판정 [data-feedback] · 맞힌 문장 수 section[data-step-panel="2"][data-solved-lines](탭의 'STEP 2 (n/N)' 은 없어짐). 맞힌 뒤에는
+      // '정답 확인' 자리에 '다음 문장' 이 오므로 연타가 실제로 눌린 횟수도 적는다. 1번째 채점에서 수가 안 늘면(c1 ≠ c0 + 1) FAIL.
       {
         const id = FREE ? "d001" : "d020";
-        const rows = SCRIPTS[id]; const all = rows.map((r) => r.en);
-        const pool = [...new Set(all.flatMap((s) => s.split(/\s+/).map((w) => w.replace(/[^a-zA-Z]/g, ""))))].filter(Boolean);
-        const want = LU.generateWordBank(all[0], pool).correctWords;
-        const btnBy = (re) => `[...document.querySelectorAll('main button')].filter(${VIS}).find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ')))`;
-        const step2 = `(() => { const b = [...document.querySelectorAll('main button')].find((x) => /STEP 2/.test(x.innerText || '')); const m = b && (b.innerText || '').match(/\\((\\d+)\\s*\\/\\s*(\\d+)\\)/); return m ? Number(m[1]) : null; })()`;
-        await H.load(tab, `/ld/${id}`, { marker: "STEP 2" });
+        const want = LU.generateWordBank(SCRIPTS[id][0].en, []).correctWords; // 1번 문장의 낱말 — 화면의 블록(blockTiles)과 같은 함수
+        const q = (sel) => `document.querySelector('main [data-ld-view] ${sel}')`;
+        const solved = `(() => { const s = ${q('[data-step-panel="2"]')}; return s ? Number(s.getAttribute('data-solved-lines')) : null; })()`;
+        await H.load(tab, `/ld/${id}`, { marker: H.MARKERS.ld });
         tab.resetEvents();
-        await H.click(tab, `[...document.querySelectorAll('main button')].filter(${VIS}).find((b) => /STEP 2/.test(b.innerText || '') && /딕테이션/.test(b.innerText || ''))`, { settle: 800 });
-        if (await tab.eval(`Boolean(${btnBy("/블록 탭 모드로 전환/")})`)) await H.click(tab, btnBy("/블록 탭 모드로 전환/"), { settle: 600 });
-        await H.click(tab, `[...document.querySelectorAll('main button[aria-label]')].find((b) => /^문장 1(\\s|$)/.test(b.getAttribute('aria-label')))`, { settle: 500 });
-        await H.click(tab, btnBy("/전체 초기화/"), { settle: 500 });
-        const c0 = await tab.eval(step2);
+        await H.click(tab, q('[data-step-tab="2"]'), { settle: 800 });
+        await H.click(tab, q('[data-mode="blocks"]'), { settle: 500 });
+        for (let i = 0; i < 20; i++) { const back = await H.click(tab, `(() => { const b = ${q('[data-action="prev-line"]')}; return b && !b.disabled ? b : null; })()`, { settle: 250 }); if (!back.ok) break; }
+        if (await tab.eval(`Boolean(${q('[data-action="retry"]')})`).catch(() => false)) await H.click(tab, q('[data-action="retry"]'), { settle: 400 });
+        const lineNo = await tab.eval(`(() => { const d = ${q("[data-dictation]")}; return d ? Number(d.dataset.index) + 1 : null; })()`).catch(() => null);
+        const c0 = await tab.eval(solved);
         let placed = 0;
         for (const w of want) {
-          const r = await H.click(tab, `(() => { const main = document.querySelector('main'); const norm = (s) => s.replace(/[^\\w'\\u2019-]/g, '').toLowerCase();
-            const bank = [...main.querySelectorAll('button')].filter(${VIS}).filter((b) => !/✕|✖/.test(b.innerText || '') && !/되돌리/.test(b.getAttribute('title') || '') && !b.disabled && !b.getAttribute('aria-label'));
-            return bank.find((b) => norm(b.innerText || '') === norm(${JSON.stringify(w)})) || null; })()`, { settle: 150 });
+          const r = await H.click(tab, `(() => { const norm = (s) => s.replace(/[^\\w'\\u2019-]/g, '').toLowerCase();
+            return [...document.querySelectorAll('main [data-ld-view] [data-word-bank] [data-tile]')].filter(${VIS}).find((b) => !b.disabled && norm(b.textContent || '') === norm(${JSON.stringify(w)})) || null; })()`, { settle: 150 });
           if (r.ok) placed++;
         }
-        await H.click(tab, btnBy("/정답 채점하기/"), { settle: 700 });
-        const c1 = await tab.eval(step2);
-        for (let i = 0; i < 5; i++) await H.click(tab, btnBy("/정답 채점하기/"), { settle: 60 });
+        await H.click(tab, q('[data-action="check"]'), { settle: 700 });
+        const c1 = await tab.eval(solved);
+        let pressed = 0;
+        for (let i = 0; i < 5; i++) if ((await H.click(tab, q('[data-action="check"]'), { settle: 60 })).ok) pressed++;
         await H.sleep(1200);
-        const c2 = await tab.eval(step2);
-        const fb = await tab.eval(`(() => { const m = ${mainText}.match(/정답입니다[^\\n]*|순서가 조금 다릅니다[^\\n]*/); return m ? m[0] : null; })()`);
+        const c2 = await tab.eval(solved);
+        const fb = await tab.eval(`(() => { const f = ${q("[data-feedback]")}; return f ? f.getAttribute('data-feedback') + ' ' + (f.textContent || '').trim() : null; })()`);
         const exc = realExceptions(H.events(tab));
         const wantC2 = brk("D") ? c1 + 5 : c1;
-        const ok = placed === want.length && /정답입니다/.test(fb || "") && c1 !== null && c2 === wantC2 && !exc.length;
-        rec(`D:repeat-submit:/ld/${id}`, "rapid actions", c1 === null || placed !== want.length ? "BLOCKED" : ok ? "PASS" : "FAIL", { note: `1번 문장 낱말 ${placed}/${want.length} 조립 → 채점 1번: STEP 2 완료 ${c0} → ${c1} · 5번 더 연타 → ${c2}(기대 ${wantC2}) · 알림 '${fb}' · 예외 ${exc.length}` });
+        const ok = placed === want.length && /^correct/.test(fb || "") && c0 !== null && c1 === c0 + 1 && c2 === wantC2 && !exc.length;
+        rec(`D:repeat-submit:/ld/${id}`, "rapid actions", c1 === null || lineNo !== 1 || placed !== want.length ? "BLOCKED" : ok ? "PASS" : "FAIL", { note: `${lineNo}번 문장 낱말 ${placed}/${want.length} 조립 → 채점 1번: 맞힌 문장 ${c0} → ${c1} · 5번 더 연타(실제로 눌린 것 ${pressed}) → ${c2}(기대 ${wantC2}) · 알림 '${fb}' · 예외 ${exc.length}` });
       }
     }
 

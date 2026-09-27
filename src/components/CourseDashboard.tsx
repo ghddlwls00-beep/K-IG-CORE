@@ -13,6 +13,7 @@ import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
+import { READING_LENGTHS } from "@/lib/readingLengths";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 
 export interface DashboardLessonItem {
@@ -63,6 +64,8 @@ const LessonRow = memo(function LessonRow({
   sequentialLock: boolean;
 }) {
   const pres = lesson.presentation;
+  // 2026-09-27 (계획 D35 나 · RD-L14): a READING row says how long its passage is — numbers only (this page is public)
+  const length = courseSlug === "reading" ? READING_LENGTHS[lesson.id] : undefined;
   const state = isDone
     ? "완료"
     : !isUnlocked
@@ -87,9 +90,20 @@ const LessonRow = memo(function LessonRow({
         {courseSlug === "student" ? (
           <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code.replace(/^Ch\s*/, "")}</span>
         ) : null}
-        <span className={`min-w-0 flex-1 truncate text-label ${isUnlocked ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
-          {pres.title}
-        </span>
+        {length ? (
+          <span className="flex min-w-0 flex-1 flex-col">
+            <span className={`truncate text-label ${isUnlocked ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
+              {pres.title}
+            </span>
+            <span data-passage-length className="text-caption tabular-nums text-ink-soft">
+              {length[0]}단어 · {length[1]}문장
+            </span>
+          </span>
+        ) : (
+          <span className={`min-w-0 flex-1 truncate text-label ${isUnlocked ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
+            {pres.title}
+          </span>
+        )}
         {state ? (
           <span className={`flex shrink-0 items-center gap-1 text-caption ${isDone ? "text-success font-medium" : "text-ink-soft"}`}>
             {isDone ? (

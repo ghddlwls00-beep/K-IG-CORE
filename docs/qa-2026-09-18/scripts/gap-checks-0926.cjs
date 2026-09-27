@@ -14,6 +14,8 @@ const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
 const V = require("./lib/voca-page.cjs");
+const LDP = require("./lib/ld-page.cjs");
+const RDP = require("./lib/reading-page.cjs");
 const ts = require(path.join(H.REPO, "node_modules/typescript"));
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const ONLY = new Set(arg("--only", "M,S,P,R,W,O").split(","));
@@ -38,7 +40,8 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
     if (BREAK === "R") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `setInterval(() => fetch('/robots.txt?kig=' + Date.now()).catch(() => {}), 1000);` });
     if (BREAK === "O") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `document.addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = 'main h1, main h2 { margin-bottom: -40px !important; position: relative; }'; document.head.appendChild(s); });` });
     if (BREAK === "T") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `document.addEventListener('DOMContentLoaded', () => { const s = document.createElement('style'); s.textContent = '[data-sentence-id] { pointer-events: none !important; }'; document.head.appendChild(s); });` });
-    if (BREAK === "Z") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `document.addEventListener('click', (e) => { const b = e.target.closest && e.target.closest('button'); if (b && /전체 초기화/.test(b.innerText || '')) { e.stopImmediatePropagation(); e.preventDefault(); } }, true);` });
+    // 2026-09-27: LISTENING's reset is now '초기화' [data-action="reset-tiles"] (블록 방식) — the old '↺ 전체 초기화' text is kept for an old build
+    if (BREAK === "Z") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `document.addEventListener('click', (e) => { const b = e.target.closest && e.target.closest('button'); if (b && (b.getAttribute('data-action') === 'reset-tiles' || /전체 초기화/.test(b.innerText || ''))) { e.stopImmediatePropagation(); e.preventDefault(); } }, true);` });
     // K · X 깨기: 사이트의 CSP(connect-src 'self' · script-src nonce + strict-dynamic)가 심은 바깥 요청 · 인라인 코드를 막아(첫 깨기 PASS)
     // 검사가 '못 보는' 것인지 '막혀서 없는' 것인지 가를 수 없음 → 검사의 판정 자리를 깸: K 는 이 사이트 자신을 '밖' 으로, X 는 심은 코드가 곧바로 표를 올림
     if (BREAK === "X") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: `document.addEventListener('input', (e) => { if (!e.target || !e.target.closest || !e.target.closest('[role=dialog]')) return; if (/[<>]/.test(e.target.value)) window.__kigXss = 'break'; }, true);` });
@@ -122,12 +125,37 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
             await H.sleep(400);
           }
         }
+        // 2026-09-27 (LISTENING · 계획 D02 나): '학습 완료 체크' is disabled until one dictation line was checked on this device — check one
+        // like a learner first (lib/ld-page.cjs CHECK_ONE_LINE: Step 2, the first option of every blank, '정답 확인').
+        if (course === "ld") {
+          if (await H.waitFor(tab, LDP.VIEW_READY, 8000)) await H.sleep(300);
+          const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
+          if (gated) {
+            const r = await tab.eval(LDP.CHECK_ONE_LINE).catch(() => ({ ok: false, why: "eval failed" }));
+            practised = r && r.ok ? ` · 받아쓰기 한 줄을 채점함(${r.verdict})` : ` · 받아쓰기 한 줄을 채점하지 못함: ${(r && r.why) || "?"}`;
+            await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+            await H.sleep(400);
+          }
+        }
+        // 2026-09-27 (READING · 계획 D02 나): '학습 완료 체크' is disabled until one timed reading on this device — read once like a
+        // learner first (lib/reading-page.cjs MEASURE_ONCE: '읽기 시작' → wait → '다 읽었어요').
+        if (course === "reading") {
+          if (await H.waitFor(tab, RDP.VIEW_READY, 8000)) await H.sleep(300);
+          const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
+          if (gated) {
+            const r = await tab.eval(RDP.MEASURE_ONCE).catch(() => ({ ok: false, why: "eval failed" }));
+            practised = r && r.ok ? ` · 1단계를 한 번 잼` : ` · 1단계를 재지 못함: ${(r && r.why) || "?"}`;
+            await H.sleep(400);
+          }
+        }
         const mark = await H.click(tab, `document.querySelector('button[aria-label="학습 완료 체크"]')`, { settle: 800 });
         const shown = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 취소"]'))`).catch(() => false);
         await H.load(tab, `/${course}`, { marker: null });
         const c1 = await tab.eval(COUNTERS);
         await H.load(tab, `/${course}/${id}`, { marker: H.MARKERS[course] });
         if (course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
+        if (course === "ld" && (await H.waitFor(tab, LDP.VIEW_READY, 8000))) await H.sleep(300);
+        if (course === "reading" && (await H.waitFor(tab, RDP.VIEW_READY, 8000))) await H.sleep(300);
         const unmark = await H.click(tab, `document.querySelector('button[aria-label="학습 완료 취소"]')`, { settle: 800 });
         await H.load(tab, `/${course}`, { marker: null });
         const c2 = await tab.eval(COUNTERS);
@@ -210,24 +238,29 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
       }
     }
 
-    // ---------- Z. LISTENING 받아쓰기 '↺ 전체 초기화' ----------
+    // ---------- Z. LISTENING 받아쓰기 블록 '초기화' ----------
+    // 2026-09-27 (LISTENING 학습법 · 화면 고침 — F02 · LD-U02): read by the view's marks — Step 2 [data-step-tab="2"], the block way
+    // [data-mode="blocks"], the tiles still in the bank [data-word-bank] [data-tile] (a placed tile leaves a same-size empty place, so
+    // the bank does not move), the placed tiles [data-assembly] [data-placed], '초기화' [data-action="reset-tiles"]. It was '↺ 전체
+    // 초기화' and the bank label '단어 블록 뱅크 (총 N개)'.
     if (ONLY.has("Z")) {
       await H.setViewport(tab, "desktop");
-      const btnBy = (re) => `[...document.querySelectorAll('main button')].filter(${VIS}).find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ')))`;
-      const PLACED = `[...document.querySelectorAll('main button')].filter((b) => /✕|✖/.test(b.innerText || '') || /되돌리/.test(b.getAttribute('title') || '')).length`;
-      const BANK = `(() => { const m = ${mainText}.match(/단어 블록 뱅크 \\(총 (\\d+)개\\)/); return m ? Number(m[1]) : null; })()`;
+      const q = (sel) => `document.querySelector('main [data-ld-view] ${sel}')`;
+      const PLACED = `document.querySelectorAll('main [data-ld-view] [data-assembly] [data-placed]').length`;
+      const BANK = `(() => { const b = ${q("[data-word-bank]")}; return b ? b.querySelectorAll('[data-tile]').length : null; })()`;
       for (const id of ["d001", "d002"]) {
-        await H.load(tab, `/ld/${id}`, { marker: "STEP 2" });
-        await H.click(tab, `[...document.querySelectorAll('main button')].filter(${VIS}).find((b) => /STEP 2/.test(b.innerText || '') && /딕테이션/.test(b.innerText || ''))`, { settle: 800 });
-        if (await tab.eval(`Boolean(${btnBy("/블록 탭 모드로 전환/")})`)) await H.click(tab, btnBy("/블록 탭 모드로 전환/"), { settle: 600 });
-        await H.click(tab, btnBy("/전체 초기화/"), { settle: 500 });
+        await H.load(tab, `/ld/${id}`, { marker: H.MARKERS.ld });
+        await H.click(tab, q('[data-step-tab="2"]'), { settle: 800 });
+        await H.click(tab, q('[data-mode="blocks"]'), { settle: 500 });
+        if (await tab.eval(`Boolean(${q('[data-action="retry"]')})`).catch(() => false)) await H.click(tab, q('[data-action="retry"]'), { settle: 400 });
+        await H.click(tab, q('[data-action="reset-tiles"]'), { settle: 500 });
         const bank0 = await tab.eval(BANK);
-        for (let i = 0; i < 3; i++) await H.click(tab, `(() => { const main = document.querySelector('main'); return [...main.querySelectorAll('button')].filter(${VIS}).filter((b) => !/✕|✖/.test(b.innerText || '') && !b.disabled && !b.getAttribute('aria-label') && /^[A-Za-z'’-]+[.,!?]?$/.test((b.innerText || '').trim()))[0] || null; })()`, { settle: 200 });
+        for (let i = 0; i < 3; i++) await H.click(tab, `[...document.querySelectorAll('main [data-ld-view] [data-word-bank] [data-tile]')].filter(${VIS}).find((b) => !b.disabled) || null`, { settle: 200 });
         const placed1 = await tab.eval(PLACED); const bank1 = await tab.eval(BANK);
-        await H.click(tab, btnBy("/전체 초기화/"), { settle: 600 });
+        await H.click(tab, q('[data-action="reset-tiles"]'), { settle: 600 });
         const placed2 = await tab.eval(PLACED); const bank2 = await tab.eval(BANK);
         const ok = placed1 === 3 && placed2 === 0 && bank2 === bank0 && bank1 === bank0 - 3;
-        rec(`Z:ld-reset:${id}`, placed1 === 3 ? (ok ? "PASS" : "FAIL") : "BLOCKED", `보관함 ${bank0} → 3개 놓음: 놓인 ${placed1} · 보관함 ${bank1} → '↺ 전체 초기화': 놓인 ${placed2} · 보관함 ${bank2}`);
+        rec(`Z:ld-reset:${id}`, placed1 === 3 ? (ok ? "PASS" : "FAIL") : "BLOCKED", `보관함 ${bank0} → 3개 놓음: 놓인 ${placed1} · 보관함 ${bank1} → '초기화': 놓인 ${placed2} · 보관함 ${bank2}`);
       }
     }
 

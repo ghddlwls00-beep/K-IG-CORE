@@ -35,6 +35,7 @@ export function AudioPlayer({
   label,
   initialRate,
   onRateChange,
+  speeds,
 }: {
   src?: string;
   fallbackSentences?: string[];
@@ -49,6 +50,11 @@ export function AudioPlayer({
    */
   initialRate?: number;
   onRateChange?: (rate: number) => void;
+  /**
+   * 2026-09-27 (LISTENING · 계획 F01 · A10 · LD-U11): the speeds the one speed button steps through — LISTENING passes
+   * [0.75, 1, 1.25, 1.5], the one set all of its steps use. Absent → [0.8, 1, 1.2], exactly as before.
+   */
+  speeds?: readonly number[];
 }) {
   const { t } = useLanguage();
   const pathname = usePathname();
@@ -214,12 +220,13 @@ export function AudioPlayer({
   // button that steps through the same three speeds; the second row (a label, three 24px speed
   // chips and a status sentence) is gone. Play · 정지 · 이전/다음 keep their names — the audit
   // drivers and the BUG-034 checks press them by those names.
-  const SPEEDS = [0.8, 1, 1.2];
+  const SPEEDS = speeds && speeds.length > 0 ? speeds : [0.8, 1, 1.2];
   function cycleRate() {
     const i = SPEEDS.indexOf(rate);
     changeRate(SPEEDS[(i + 1) % SPEEDS.length]);
   }
   const rateText = `${rate === 1 ? "1.0" : rate}×`;
+  const speedsTitle = `속도 ${SPEEDS.map((s) => `${s === 1 ? "1.0" : s}×`).join(" · ")}`;
 
   return (
     <div className="rounded-card border border-line bg-raised px-2 py-1.5 sm:px-3 sm:py-2">
@@ -372,7 +379,7 @@ export function AudioPlayer({
           type="button"
           onClick={cycleRate}
           aria-label={`${t("player.speed")} ${rateText} — 누르면 바뀜`}
-          title="속도 0.8× · 1.0× · 1.2×"
+          title={speedsTitle}
           className="flex h-11 min-w-11 shrink-0 items-center justify-center rounded-control px-1.5 text-label font-medium tabular-nums text-ink transition-colors cursor-pointer hover:bg-sunken"
         >
           {rateText}

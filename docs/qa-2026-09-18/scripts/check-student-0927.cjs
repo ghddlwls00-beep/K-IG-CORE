@@ -110,7 +110,11 @@ async function speak(tab, idx, said) {
     const koHidden = (await count(tab, "[data-dictation] [data-ko]")) === 0 && (await count(tab, '[data-action="ko-hint"]')) === 1;
     check("D1 들어가면 문장이 먼저 나오고 우리말은 힌트 뒤", autoPlayed && koHidden, `재생 ${autoPlayed} · 우리말 숨김 ${koHidden}`);
     const lower = await tab.eval(`[...document.querySelectorAll('[data-word-bank] button')].map((b) => (b.innerText || '').trim())`);
-    check("D2 첫 낱말 타일은 소문자 · 같은 강의 낱말이 방해 낱말", lower.includes("nice") && !lower.includes("Nice") && !lower.some((w) => ["was", "the", "with", "in", "at"].includes(w)), `타일 ${lower.join(" · ")}`);
+    // every tile must be a word of this lesson (a distractor comes from its other sentences — 'with' is fine when s1-1 #2 has it;
+    // the first version of this check banned the old fixed list outright and failed on a legitimate 'with', 2026-09-27)
+    const lessonWords = new Set(JSON.parse(fs.readFileSync(path.join(H.REPO, "content/lessons/student/s1-1.json"), "utf8")).blocks.find((b) => b.type === "sentences").items.flatMap((it) => it.text.toLowerCase().replace(/[()/.,!?]/g, " ").split(/\s+/)).filter(Boolean));
+    const foreign = lower.filter((w) => !lessonWords.has(w.toLowerCase()));
+    check("D2 첫 낱말 타일은 소문자 · 방해 낱말도 이 강의 낱말", lower.includes("nice") && !lower.includes("Nice") && foreign.length === 0, `타일 ${lower.join(" · ")}${foreign.length ? ` · 강의 밖 ${foreign.join(",")}` : ""}`);
     await place(tab, ["to", "nice", "meet", "you", "sir"]);
     await click(tab, '[data-action="check"]', 400);
     const fb1 = await attr(tab, "[data-feedback]", "data-feedback");

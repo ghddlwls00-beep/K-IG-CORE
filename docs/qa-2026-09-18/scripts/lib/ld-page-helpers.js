@@ -8,6 +8,18 @@
  *
  * Read with textContent, never innerText: several LD labels sit in `uppercase` CSS
  * ("Step 1", "Sentence 1 of 6", "속도:") and innerText would return them upper-cased.
+ *
+ * 2026-09-27 (LISTENING 학습법 · 화면 고침 — 계획 F01–F05 · D24–D29): the view is read by its data-* marks now — the root
+ * [data-ld-view] (data-step · data-ready · data-owns-passage-player), the shared StepTabs [data-step-tab="N"] (aria-pressed), a step
+ * panel [data-step-panel="N"], the line nav [data-action="prev-line" | "next-line"] with [data-line-no], Step 1's hints
+ * [data-passage-hints] [data-hint-chip] and the page's player inside [data-ld-passage], Step 2's line [data-dictation] (data-index ·
+ * data-mode · data-blanks · data-checked · data-solved), its ways [data-mode], blank rows [data-blank-rows] > li[data-blank]
+ * [data-token] [data-option], tiles [data-word-bank] [data-tile] · [data-assembly] [data-placed], the typing box
+ * textarea[data-typing], the verdict [data-feedback], the line's hints [data-line-hints] [data-hint-chip]; Step 3's cards
+ * [data-cards] [data-card] (and [data-no-cards]); Step 4's line and the shared microphone tester; Step 5's rows [data-script]
+ * li[data-line] ([data-en] · [data-ko] · [data-line-mark]), the memo textarea[aria-label="청취 메모"] and [data-mastery]; a line not
+ * yet dictated shows [data-before-dictation] with [data-action="dictate-first" | "peek"]. The old texts ('전체 본문 듣기' · '단어 블록
+ * 뱅크' · 'Sentence #N' · '스마트 청취 노트' …) are gone — each reader below says what it reads.
  */
 (() => {
   if (window.__ld) return;
@@ -47,7 +59,22 @@
       return [...main().querySelectorAll("a[href]")].find((a) => a.getAttribute("aria-label") === label) || null;
     },
     stepTab(n) {
-      return buttons().find((b) => new RegExp("^Step\\s*" + n + "\\b").test(norm(b.textContent))) || null;
+      return main().querySelector(`[data-ld-view] [data-step-tab="${n}"]`) || buttons().find((b) => new RegExp("^Step\\s*" + n + "\\b").test(norm(b.textContent))) || null;
+    },
+    /** the view's own marks: the step on screen, the record read, whether it plays the page's whole-lesson player */
+    view() {
+      const v = main().querySelector("[data-ld-view]");
+      return v ? { step: Number(v.getAttribute("data-step")), ready: v.hasAttribute("data-ready"), ownsPlayer: v.hasAttribute("data-owns-passage-player") } : null;
+    },
+    panel(n) {
+      return main().querySelector(`[data-ld-view] [data-step-panel="${n}"]`);
+    },
+    action(name, n = 0) {
+      return [...main().querySelectorAll(`[data-ld-view] [data-action="${name}"]`)].filter(vis)[n] || null;
+    },
+    lineNo() {
+      const el = main().querySelector("[data-ld-view] [data-line-no]");
+      return el ? Number(norm(el.textContent)) : null;
     },
     /** Every visible button as {text, aria, title, disabled} — used for control inventories. */
     controls() {
@@ -72,9 +99,10 @@
       });
     },
     activeStep() {
+      // StepTabs marks the step on screen with aria-pressed (the old bar painted it bg-ink)
       for (const n of [1, 2, 3, 4, 5]) {
         const b = api.stepTab(n);
-        if (b && b.className.includes("bg-ink")) return n;
+        if (b && (b.getAttribute("aria-pressed") === "true" || b.className.includes("bg-ink"))) return n;
       }
       return null;
     },
@@ -115,8 +143,17 @@
             }
           : null,
         audioElements: document.querySelectorAll("audio").length,
-        courseware: (norm(main().textContent).match(/(\d+)개 문장 완성 코스웨어/) || [])[1] || null,
-        stepBadge: (norm(main().textContent).match(/Step 2 \((\d+)\/(\d+)\)/) || []).slice(1),
+        // 2026-09-27: the banner ('N개 문장 완성 코스웨어') and the tab count ('Step 2 (n/N)') are gone — the lines are the
+        // Step 5 rows or the line nav's 'N / M', the right lines Step 2's data-solved-lines
+        courseware: null,
+        stepBadge: (() => {
+          const p = api.panel(2);
+          return p ? [p.getAttribute("data-solved-lines")] : [];
+        })(),
+        topPlayerHidden: (() => {
+          const top = document.querySelector("main [data-passage-player]");
+          return top ? getComputedStyle(top).display === "none" : null;
+        })(),
         paywall: !!document.querySelector("[data-kig-paywall]"),
         quizText: /블라인드 리스닝 맥락 진단 퀴즈|(^|\s)Q1\./.test(norm(main().textContent)),
         stepLabels: api.stepLabels(),
@@ -158,96 +195,74 @@
       return true;
     },
 
-    // ---------- Step 1 / Step 5 whole-passage ----------
+    // ---------- Step 1 · whole lesson ----------
+    // 2026-09-27: Step 1 plays the page's own player ([data-ld-passage] — the AudioPlayer, read by player() above) under the lesson's
+    // names and numbers ([data-passage-hints] — two lines, [data-action="more-hints"] for the rest). The big '전체 본문 듣기' button
+    // and the speed pills are gone; the one speed button is the player's (0.75× · 1.0× · 1.25× · 1.5×).
     passage() {
-      const big =
-        api.btn("전체 본문 듣기") || api.btn("배속 연속 청취") || api.btn("⏹️ 정지");
-      const pills = buttons()
-        .filter((b) => /^[\d.]+x$/.test(norm(b.textContent)))
-        .map((b) => ({ label: norm(b.textContent), active: b.className.includes("bg-primary") }));
-      const speedPills = buttons()
-        .filter((b) => /배속|표준 속도|초고속 청취|실전 회화 속도/.test(norm(b.textContent)) && norm(b.textContent).length < 30)
-        .map((b) => ({ label: norm(b.textContent), active: b.className.includes("bg-ink") }));
-      return { label: big ? norm(big.textContent) : null, pills, speedPills };
+      const hints = main().querySelector("[data-ld-view] [data-passage-hints]");
+      return {
+        player: !!main().querySelector("[data-ld-view] [data-ld-passage] input[aria-label='문장 이동'], [data-ld-view] [data-ld-passage] button"),
+        hints: hints ? [...hints.querySelectorAll("[data-hint-chip]")].map((c) => norm(c.textContent)) : [],
+        moreHints: api.action("more-hints") ? norm(api.action("more-hints").textContent) : null,
+        label: null,
+        pills: [],
+        speedPills: [],
+      };
     },
 
     // ---------- Step 2 ----------
     step2() {
-      const sent = [...main().querySelectorAll("span")].find((s) => /^Sentence \d+ of \d+$/.test(norm(s.textContent)));
-      const numBadge = [...main().querySelectorAll("span")].find((s) => /^#\d+$/.test(norm(s.textContent)));
-      const koP = numBadge
-        ? (numBadge.parentElement.parentElement.querySelector("p") || null)
-        : null;
-      const dots = [...main().querySelectorAll("button")].filter((b) =>
-        /^문장 \d+( \(완료\))?$/.test(b.getAttribute("aria-label") || ""),
-      );
-      const bankLabel = [...main().querySelectorAll("span")].find((s) =>
-        norm(s.textContent).startsWith("단어 블록 뱅크"),
-      );
-      const details = main().querySelector("details");
-      const input = main().querySelector('input[placeholder="들리는 영문장을 직접 입력하세요..."]');
-      const correct = [...main().querySelectorAll("p")].find((p) =>
-        norm(p.textContent).startsWith("정답입니다!"),
-      );
-      const wrong = [...main().querySelectorAll("p")].find((p) =>
-        norm(p.textContent).startsWith("순서가 조금 다릅니다"),
-      );
+      const d = main().querySelector("[data-ld-view] [data-dictation]");
+      if (!d) return null;
+      const fb = d.querySelector("[data-feedback]");
+      const ko = d.querySelector("[data-ko-line] [data-ko]");
+      const details = d.querySelector("[data-ko-line] details");
+      const hints = d.querySelector("[data-line-hints]");
+      const mode = [...main().querySelectorAll("[data-ld-view] [data-mode]")].find((b) => b.tagName === "BUTTON" && b.getAttribute("aria-pressed") === "true");
       return {
-        sentence: sent ? norm(sent.textContent) : null,
-        num: numBadge ? norm(numBadge.textContent) : null,
-        ko: koP ? norm(koP.textContent) : null,
+        index: Number(d.dataset.index),
+        line: api.lineNo(),
+        mode: d.dataset.mode, // the way on screen (a line without blanks is dictated in blocks)
+        chosenMode: mode ? mode.getAttribute("data-mode") : null,
+        blanksCount: Number(d.dataset.blanks),
+        checked: d.dataset.checked === "true",
+        solved: d.dataset.solved === "true",
+        solvedLines: api.panel(2) ? Number(api.panel(2).getAttribute("data-solved-lines")) : null,
+        ko: ko ? norm(ko.textContent) : null,
         riddle: details
           ? { summary: norm(details.querySelector("summary").textContent), open: details.open, answer: norm((details.querySelector("p") || {}).textContent) }
           : null,
-        dots: dots.map((b) => ({
-          aria: b.getAttribute("aria-label"),
-          current: b.getAttribute("aria-current") === "step",
-          done: /\(완료\)$/.test(b.getAttribute("aria-label") || ""),
+        hints: hints ? { open: hints.open, chips: [...hints.querySelectorAll("[data-hint-chip]")].map((c) => norm(c.textContent)) } : null,
+        blanks: [...d.querySelectorAll("[data-blank-rows] > li[data-blank]")].map((li) => ({
+          blank: Number(li.dataset.blank),
+          token: Number(li.dataset.token),
+          mark: li.dataset.mark || null,
+          options: [...li.querySelectorAll("[data-option]")].map((b) => ({ word: norm(b.textContent), picked: b.getAttribute("aria-pressed") === "true" })),
+          typed: (li.querySelector("input") || {}).value ?? null,
         })),
-        prevDisabled: (() => {
-          const b = api.btn("← 이전 문장");
-          return b ? !!b.disabled : null;
-        })(),
-        nextDisabled: (() => {
-          const b = api.btn("다음 문장 →");
-          return b ? !!b.disabled : null;
-        })(),
-        typingMode: !!input,
-        typed: input ? input.value : null,
-        modeToggle: (() => {
-          const b = api.btn("타이핑 모드") || api.btn("블록 탭 모드로 전환");
-          return b ? norm(b.textContent) : null;
-        })(),
-        bankLabel: bankLabel ? norm(bankLabel.textContent) : null,
+        gaps: [...d.querySelectorAll("[data-cloze] [data-gap]")].map((g) => norm(g.textContent)),
+        typingMode: !!d.querySelector("textarea[data-typing]"),
+        typed: (d.querySelector("textarea[data-typing]") || {}).value ?? null,
         bankCount: api.bankTiles().length,
         bank: api.bankTiles().map((b) => norm(b.textContent)),
-        assembled: api.assembled().map((b) => norm(b.textContent).replace(/\s*✕$/, "")),
-        placeholder: norm(main().textContent).includes("아래의 단어 블록을 클릭하여 문장을 만드세요"),
-        emptyBank: norm(main().textContent).includes("모든 단어를 배치했습니다!"),
-        status: correct ? "correct" : wrong ? "incorrect" : "idle",
-        correctSentence: correct ? norm(correct.parentElement.querySelectorAll("p")[1].textContent) : null,
-        hasNextDrill: !!api.btn("다음 문장 풀기"),
+        assembled: api.assembled().map((b) => norm(b.textContent)),
+        status: fb ? fb.getAttribute("data-feedback") : null, // none · empty · correct · wrong · shown
+        feedback: fb ? norm(fb.textContent) : null,
+        answer: norm((d.querySelector("[data-answer]") || {}).textContent) || null,
+        buttons: ["check", "next", "reveal", "retry", "undo", "reset-tiles", "play-line", "play-slow"].filter((a) => !!d.querySelector(`[data-action="${a}"]`)),
       };
     },
     bankTiles() {
-      const label = [...main().querySelectorAll("span")].find((s) =>
-        norm(s.textContent).startsWith("단어 블록 뱅크"),
-      );
-      if (!label) return [];
-      const header = label.parentElement;
-      const box = header && header.nextElementSibling;
-      return box ? [...box.querySelectorAll("button")] : [];
+      return [...main().querySelectorAll("[data-ld-view] [data-word-bank] [data-tile]")].filter(vis);
     },
     bankTile(word, skip = 0) {
       const tiles = api.bankTiles();
       let seen = 0;
       for (const t of tiles) {
-        if (norm(t.textContent) === word) {
+        if (norm(t.textContent).toLowerCase() === String(word).toLowerCase()) {
           if (seen++ === skip) return t;
         }
-      }
-      for (const t of tiles) {
-        if (norm(t.textContent).toLowerCase() === String(word).toLowerCase()) return t;
       }
       return null;
     },
@@ -263,106 +278,89 @@
       return null;
     },
     assembled() {
-      return [...main().querySelectorAll('button[title="클릭하여 되돌리기"]')];
+      return [...main().querySelectorAll("[data-ld-view] [data-assembly] [data-placed]")];
     },
     assembledTile(word) {
-      return api.assembled().find((b) => norm(b.textContent).replace(/\s*✕$/, "") === word) || null;
+      return api.assembled().find((b) => norm(b.textContent).toLowerCase() === String(word).toLowerCase()) || null;
     },
     typingInput() {
-      return main().querySelector('input[placeholder="들리는 영문장을 직접 입력하세요..."]');
+      return main().querySelector("[data-ld-view] textarea[data-typing]");
+    },
+    /** the option button of blank `blank` whose word is `word` */
+    blankOption(blank, word) {
+      const li = main().querySelector(`[data-ld-view] [data-blank-rows] > li[data-blank="${blank}"]`);
+      return li ? [...li.querySelectorAll("[data-option]")].find((b) => norm(b.textContent).toLowerCase() === String(word).toLowerCase()) || null : null;
     },
 
     // ---------- Step 3 ----------
+    // 2026-09-27: the line is chosen with the shared line nav (the select is gone); a card is li[data-card] (its sound
+    // [data-action="play-card"], the heard form [data-heard] — 'author‿in'); a line without cards shows [data-no-cards] with
+    // '보통 1×' · '느리게 0.75×'; a line not yet dictated shows [data-before-dictation] instead of its English.
     liaisonSelect() {
-      return main().querySelector('select[aria-label="소리 클리닉 문장 선택"]');
+      return null;
     },
-    setLiaison(index) {
-      const sel = api.liaisonSelect();
-      if (!sel) return false;
-      const setter = Object.getOwnPropertyDescriptor(window.HTMLSelectElement.prototype, "value").set;
-      setter.call(sel, String(index));
-      sel.dispatchEvent(new Event("change", { bubbles: true }));
-      return true;
+    setLiaison() {
+      return false;
     },
     step3() {
-      const sel = api.liaisonSelect();
-      const head = [...main().querySelectorAll("span")].find((s) => /^Sentence #\d+$/.test(norm(s.textContent)));
-      const card = head ? head.closest("div").parentElement : null;
-      const ps = card ? [...card.querySelectorAll("p")] : [];
-      const details = card ? card.querySelector("details") : null;
-      const h3 = [...main().querySelectorAll("h3")].find((h) =>
-        norm(h.textContent).includes("핵심 소리 변이 현상"),
-      );
+      const p = api.panel(3);
+      if (!p) return null;
+      const line = p.querySelector("[data-line]");
+      const details = line ? line.querySelector("details") : null;
       return {
-        selectValue: sel ? Number(sel.value) : null,
-        options: sel ? [...sel.options].map((o) => norm(o.textContent)) : [],
-        head: head ? norm(head.textContent) : null,
-        en: ps[0] ? norm(ps[0].textContent) : null,
-        ko: ps[1] ? norm(ps[1].textContent) : null,
+        line: api.lineNo(),
+        hiddenBeforeDictation: !!p.querySelector("[data-before-dictation]"),
+        en: line ? norm((line.querySelector("[data-en]") || {}).textContent) : null,
+        ko: line ? norm((line.querySelector("[data-ko]") || {}).textContent) : null,
         riddle: details ? { summary: norm(details.querySelector("summary").textContent), answer: norm((details.querySelector("p") || {}).textContent) } : null,
-        heading: h3 ? norm(h3.textContent) : null,
-        headingCount: h3 ? Number((norm(h3.textContent).match(/\((\d+)개\)/) || [])[1]) : null,
-        emptyState: norm(main().textContent).includes("이 문장은 단어들이 비교적 독립적인 음소로"),
+        noCards: !!p.querySelector("[data-no-cards]"),
         cards: api.liaisonCards(),
       };
     },
     liaisonCards() {
-      const out = [];
-      for (const btn of buttons().filter((b) => norm(b.textContent).includes("소리 청취"))) {
-        let root = btn;
-        while (root && !norm(root.textContent).includes("원문 스펠링:")) root = root.parentElement;
-        if (!root) continue;
-        const spans = [...root.querySelectorAll("span")];
-        const origLabel = spans.find((s) => norm(s.textContent) === "원문 스펠링:");
-        const soundLabel = spans.find((s) => norm(s.textContent) === "실제 들리는 소리:");
-        const soundEl = soundLabel ? soundLabel.nextElementSibling : null;
-        const phoneticEl = soundEl ? soundEl.querySelector("span") : null;
-        const ps = [...root.querySelectorAll("p")];
-        out.push({
-          typeLabel: norm(btn.parentElement.querySelector("span").textContent),
-          original: origLabel ? norm(origLabel.nextElementSibling.textContent) : null,
-          koreanSound: soundEl ? norm(soundEl.textContent.replace(phoneticEl ? phoneticEl.textContent : "", "")) : null,
-          phonetic: phoneticEl ? norm(phoneticEl.textContent) : null,
-          rule: ps.length ? norm(ps[ps.length - 1].textContent) : null,
-        });
-      }
-      return out;
+      return [...main().querySelectorAll("[data-ld-view] [data-cards] [data-card]")].map((li) => {
+        const ps = [...li.querySelectorAll("p")];
+        const phrase = ps[1] || null;
+        const enEl = phrase ? phrase.querySelector("[lang='en']") : null;
+        const heard = phrase ? phrase.querySelector("[data-heard]") : null;
+        const phonetic = phrase ? [...phrase.querySelectorAll("span")].find((s) => s !== enEl && s !== heard && !s.getAttribute("aria-hidden")) : null;
+        return {
+          typeLabel: ps[0] ? norm(ps[0].textContent) : null,
+          original: enEl ? norm(enEl.textContent) : null,
+          koreanSound: heard ? norm(heard.textContent) : null,
+          phonetic: phonetic ? norm(phonetic.textContent) : null,
+          rule: ps[2] ? norm(ps[2].textContent) : null,
+        };
+      });
     },
     cardPlayButton(index) {
-      return buttons().filter((b) => norm(b.textContent).includes("소리 청취"))[index] || null;
+      return [...main().querySelectorAll("[data-ld-view] [data-action='play-card']")].filter(vis)[index] || null;
     },
 
     // ---------- Step 4 ----------
     step4() {
-      const head = [...main().querySelectorAll("span")].find((s) =>
-        /^Sentence #\d+ Shadowing Target$/.test(norm(s.textContent)),
-      );
-      const card = head ? head.parentElement : null;
-      const ps = card ? [...card.querySelectorAll("p")] : [];
-      const details = card ? card.querySelector("details") : null;
-      const counter = [...main().querySelectorAll("span")].find((s) => /^\d+ \/ \d+$/.test(norm(s.textContent)));
+      const p = api.panel(4);
+      if (!p) return null;
+      const en = p.querySelector("[data-en]");
+      const ko = p.querySelector("[data-ko]");
       const mic = api.btnTitle("마이크를 누르고 영어 문장을 소리내어 말해보세요.");
-      const best = [...main().querySelectorAll("span")].find((s) => norm(s.textContent).startsWith("내 최고 점수"));
-      const matched = [...main().querySelectorAll("span")].find((s) => norm(s.textContent).startsWith("단어 일치"));
-      const transcript = [...main().querySelectorAll("p")].find((p) => /^".*"$/.test(norm(p.textContent)));
-      const scoreBadge = [...main().querySelectorAll("span")].find((s) => /^\d+점$/.test(norm(s.textContent)));
-      const err = [...main().querySelectorAll("span")].find((s) =>
+      const best = p.querySelector("[data-best]");
+      const matched = [...p.querySelectorAll("span")].find((s) => norm(s.textContent).startsWith("단어 일치"));
+      const transcript = [...p.querySelectorAll("p")].find((pp) => /^".*"$/.test(norm(pp.textContent)));
+      const scoreBadge = [...p.querySelectorAll("span")].find((s) => /^\d+점$/.test(norm(s.textContent)));
+      const err = [...p.querySelectorAll("span")].find((s) =>
         /음성이 감지되지 않았습니다|마이크 접근 권한|음성 인식 오류|지원되지 않는/.test(norm(s.textContent)),
       );
+      const hide = p.querySelector("[data-action='hide-text']");
       return {
-        head: head ? norm(head.textContent) : null,
-        counter: counter ? norm(counter.textContent) : null,
-        en: ps[0] ? norm(ps[0].textContent) : null,
-        ko: ps[1] ? norm(ps[1].textContent) : null,
-        riddle: details ? norm((details.querySelector("p") || {}).textContent) : null,
-        prevDisabled: (() => {
-          const b = api.btn("← 이전");
-          return b ? !!b.disabled : null;
-        })(),
-        nextDisabled: (() => {
-          const b = api.btnExact("다음 →");
-          return b ? !!b.disabled : null;
-        })(),
+        line: api.lineNo(),
+        counter: api.lineNo(),
+        en: en ? norm(en.textContent) : null,
+        ko: ko ? norm(ko.textContent) : null,
+        hiddenBeforeDictation: !!p.querySelector("[data-before-dictation]"),
+        hideText: hide ? hide.getAttribute("aria-checked") === "true" : null,
+        prevDisabled: api.action("prev-line") ? !!api.action("prev-line").disabled : null,
+        nextDisabled: api.action("next-line") ? !!api.action("next-line").disabled : null,
         micLabel: mic ? norm(mic.textContent) : null,
         micExists: !!mic,
         retry: !!api.btn("다시 녹음"),
@@ -371,11 +369,9 @@
         transcript: transcript ? norm(transcript.textContent) : null,
         scoreBadge: scoreBadge ? norm(scoreBadge.textContent) : null,
         error: err ? norm(err.textContent) : null,
-        // 2026-09-27 (GRM-U27, VoiceSpeakingTester 공용): the row is a WORD-RECOGNITION result, so its label became
-        // '알아들은 낱말:' and each word's title '인식됨 / 인식 안 됨' (it said '단어별 발음 일치도' · '정확히 일치한 발음' — a
-        // pronunciation judgement it never made). Both labels are read; the chips also carry data-matched now.
+        // the shared tester's word row: '알아들은 낱말:' and a chip per word with data-matched (GRM-U27)
         wordChips: (() => {
-          const label = [...main().querySelectorAll("span")].find((s) => /^(단어별 발음 일치도|알아들은 낱말):$/.test(norm(s.textContent)));
+          const label = [...p.querySelectorAll("span")].find((s) => /^(단어별 발음 일치도|알아들은 낱말):$/.test(norm(s.textContent)));
           if (!label) return [];
           const box = label.nextElementSibling;
           return box
@@ -396,43 +392,50 @@
     },
 
     // ---------- Step 5 ----------
+    // 2026-09-27: one list of rows ([data-script] li[data-line]); the English is a button ([data-en]) that shows the Korean
+    // ([data-ko]) — or '해석 모두 보기' ([data-action="show-all-ko"]); a row's own sound is [data-action="play-row"]; the line the
+    // player is on carries data-current; a dictation mark is [data-line-mark] (right · wrong · helped). The memo is folded
+    // (details[data-notes], textarea[aria-label="청취 메모"]); the end line is [data-mastery].
     step5() {
-      const h3 = [...main().querySelectorAll("h3")].find((h) => norm(h.textContent).includes("원문 & 완역"));
-      const notes = main().querySelector('textarea[aria-label="스마트 청취 노트"]');
-      const mastery = [...main().querySelectorAll("span")].find((s) =>
-        /마스터리 코스웨어 완료|받아쓰기 \d+\/\d+ 완료/.test(norm(s.textContent)),
-      );
+      const p = api.panel(5);
+      if (!p) return null;
+      const notes = api.notesArea();
+      const mastery = p.querySelector("[data-mastery]");
+      const all = p.querySelector("[data-action='show-all-ko']");
       return {
-        heading: h3 ? norm(h3.textContent) : null,
-        headingCount: h3 ? Number((norm(h3.textContent).match(/\((\d+)문장\)/) || [])[1]) : null,
+        heading: null,
+        headingCount: api.step5Rows().length,
+        hiddenBeforeDictation: !!p.querySelector("[data-before-dictation]"),
+        allKo: all ? all.getAttribute("aria-checked") === "true" : null,
         rows: api.step5Rows(),
         notes: notes ? notes.value : null,
+        notesOpen: !!(p.querySelector("details[data-notes]") || {}).open,
         notesPlaceholder: notes ? notes.placeholder : null,
         mastery: mastery ? norm(mastery.textContent) : null,
-        masteryRole: mastery ? (mastery.closest("[role=status]") ? "status" : null) : null,
+        masteryRole: mastery ? mastery.getAttribute("role") : null,
       };
     },
     step5Rows() {
-      return [...main().querySelectorAll('button[title="개별 문장 청취"]')].map((btn) => {
-        const card = btn.parentElement.parentElement;
-        const ps = [...card.querySelectorAll("p")];
-        const details = card.querySelector("details");
-        const numEl = card.querySelector("span");
+      return [...main().querySelectorAll("[data-ld-view] [data-script] > li[data-line]")].map((li) => {
+        const details = li.querySelector("details");
+        const mark = li.querySelector("[data-line-mark]");
+        const play = li.querySelector("[data-action='play-row']");
         return {
-          num: norm(numEl && numEl.textContent),
-          en: ps[0] ? norm(ps[0].textContent) : null,
-          ko: ps[1] ? norm(ps[1].textContent) : null,
+          num: norm((li.querySelector("span") || {}).textContent),
+          en: norm((li.querySelector("[data-en]") || {}).textContent) || null,
+          ko: norm((li.querySelector("[data-ko]") || {}).textContent) || null,
           answer: details ? norm((details.querySelector("p") || {}).textContent) : null,
-          playLabel: norm(btn.textContent),
-          highlighted: /border-primary/.test(card.className),
+          mark: mark ? mark.getAttribute("data-line-mark") : null,
+          playLabel: play ? play.getAttribute("aria-label") : null,
+          highlighted: li.hasAttribute("data-current"),
         };
       });
     },
     step5PlayButton(index) {
-      return [...main().querySelectorAll('button[title="개별 문장 청취"]')][index] || null;
+      return [...main().querySelectorAll("[data-ld-view] [data-action='play-row']")][index] || null;
     },
     notesArea() {
-      return main().querySelector('textarea[aria-label="스마트 청취 노트"]');
+      return main().querySelector('textarea[aria-label="청취 메모"]');
     },
 
     // ---------- text capture ----------

@@ -27,7 +27,11 @@ const OUT = path.join(REPO, "docs/qa-2026-09-18/out/unit-0927");
 fs.mkdirSync(OUT, { recursive: true });
 
 // 기준: 고치기 전(2026-09-27 01:5x, 앱 29d527a · 기록 8bfc512) generate-azure-ava --dry-run 의 과정별 items
-const BASELINE_ITEMS = { student: 828, phonics: 3906, grammar1: 1454, grammar2: 795, ld: 5499, reading: 3873 };
+// 2026-09-27 LISTENING F03(계획 D26 가 · LD-L15 — 사장님 "검토 결과대로"): 소리 클리닉에서 틀린 카드만 뺌(have one · 동사 아닌 말 앞의
+// going to · 문장부호를 넘는 짝 · 축약 조각 · 자음 소리로 시작하는 낱말 앞 · -aw 뒤). 남은 카드의 글은 그대로라 새 클립 0 · 늘어난 글 0,
+// LISTENING 이 더는 소리 내지 않는 구절 347개만 빠져 ld 5,499 → 5,152. 빠진 구절 목록: docs/qa-2026-09-18/학습법-화면-0927/
+// ld-clinic-removed-phrases.json (check-ld-dictation-0927.cjs --write-removed 가 만듦 — 바탕 f2a1b2d 의 함수와 견줌). 다른 과정은 그대로.
+const BASELINE_ITEMS = { student: 828, phonics: 3906, grammar1: 1454, grammar2: 795, ld: 5152, reading: 3873 };
 const CONTENT_PATHS = ["content", "src/lib/readingSentences.json", "src/lib/readingVocabulary.json"];
 const SPOKEN_PATHS = ["scripts/lib/spoken-texts.cjs", "src/lib/lessonSpeechForm.ts", "src/lib/vocaSpeech.ts", "src/lib/unifiedSpeech.ts"];
 

@@ -39,6 +39,8 @@ const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
 const C = require("./lib/containers.cjs");
 const V = require("./lib/voca-page.cjs");
+const LDP = require("./lib/ld-page.cjs");
+const RDP = require("./lib/reading-page.cjs");
 const { contentCheck } = require("./lib/content-check.cjs");
 
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
@@ -74,7 +76,10 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // blanks · data-feedback) and the completion test practises to the new 80% rule first (see solveStudentTiles · practiseStudent).
 // 2026-09-27 VOCA 학습법 · 화면 고침: '-v0927' — a VOCA lesson completes after one finished Step 2 round (계획 D02 나 — lessonGate),
 // so the completion test finishes a round first when the button is disabled (lib/voca-page.cjs FINISH_ROUND).
-const DRIVER_REV = "7-1m-g15-s0927-v0927";
+// 2026-09-27 LISTENING 학습법 · 화면 고침: '-l0927' — the LISTENING dictation is read by the view's data-* marks (빈칸 · 블록 · 쓰기,
+// [data-feedback]) — solveLdTiles · typedDictation · walkDictation · HINT_CHIPS below — and a LISTENING lesson completes after one
+// checked line (계획 D02 나), so the completion test checks one first when the button is disabled (lib/ld-page.cjs CHECK_ONE_LINE).
+const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927";
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -259,39 +264,140 @@ async function pressAudio(tab, expr, stepLabel, exp, out) {
  * answer sentence 1 by typing: the right sentence must be accepted and a wrong one refused. The verdict is read from the
  * view's own banners (the generic reader would take '✓ 정답 채점하기' — the button — for a '정답' verdict).
  */
+/**
+ * 2026-09-27 LISTENING 학습법 · 화면 고침 (F02 · D24 나): the LISTENING dictation is read by its data-* marks, not by its words —
+ * the view [data-ld-view]; the line [data-dictation] (data-index · data-mode · data-blanks); the way of dictating
+ * [data-mode=blanks|blocks|typing]; a blank row li[data-blank][data-token=<the word's place in the line>] with its [data-option]
+ * buttons; the bank [data-word-bank] [data-tile]; the answer box [data-assembly] [data-placed]; the typing box textarea[data-typing];
+ * the buttons [data-action=check · retry · reset-tiles · next · prev-line · next-line · play-line]; the verdict [data-feedback] =
+ * correct · wrong · empty · shown. The words still come from the DATA (exp.tileWordsAll — generateWordBank's correctWords, the
+ * words the view's blockTiles uses) and the judges are the app's (verifyAnyWordSequence · typedDictationMatches). The way of
+ * dictating is remembered on the device (kig:ld:prefs), which this driver clears between pages.
+ */
+const LDD = {
+  view: `Boolean(document.querySelector('main [data-ld-view]'))`,
+  info: `(() => { const d = document.querySelector('main [data-ld-view] [data-dictation]'); return d ? { index: +d.dataset.index, mode: d.dataset.mode, blanks: +d.dataset.blanks } : null; })()`,
+  action: (name) => `document.querySelector('main [data-ld-view] [data-action="${name}"]')`,
+  mode: (m) => `document.querySelector('main [data-ld-view] [data-mode="${m}"]')`,
+  feedback: `(() => { const f = document.querySelector('main [data-ld-view] [data-feedback]'); return f ? { kind: f.getAttribute('data-feedback'), text: (f.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 90) } : null; })()`,
+  box: `[...document.querySelectorAll('main [data-ld-view] [data-assembly] [data-placed]')].map((b) => (b.textContent || '').trim())`,
+};
+/** On LISTENING, a finished line shows '다시 풀기' instead of '정답 확인' — press it so the same line can be answered again. */
+async function ldFreshAttempt(tab) {
+  if (await tab.eval(`Boolean(${LDD.action("retry")})`).catch(() => false)) await H.click(tab, LDD.action("retry"), { settle: 350 });
+}
+
+/**
+ * 7단계 7-1 m (3차 점검): a LISTENING MAIN page also takes a TYPED answer, graded by typedDictationMatches — which 7-4 f G1 changed.
+ * On the desktop pass, answer the line on screen by typing: a wrong one must be refused, then the right sentence accepted (in that
+ * order — a line answered right is finished and its box read-only). 2026-09-27: '쓰기' is chosen by [data-mode="typing"], the box
+ * is textarea[data-typing] and the verdict [data-feedback] (it was the '⌨️ 직접 키보드 타이핑 모드' switch and banners).
+ */
 async function typedDictation(tab, exp, checks) {
-  // Which sentence is the drill on? The every-control pass before this has usually moved it (the first try typed sentence 1
-  // into sentence 2+ and reported the right answer as refused). The view prints 'SENTENCE k OF n'.
-  const idx = await tab.eval(`(() => { const m = ((document.querySelector('main') || document.body).innerText || '').match(/SENTENCE\\s+(\\d+)\\s+OF\\s+(\\d+)/i); return m ? Number(m[1]) - 1 : 0; })()`).catch(() => 0);
-  const ans = (exp.answers || [])[idx];
+  if (!(await tab.eval(LDD.view).catch(() => false))) return false;
+  if (!(await tab.eval(`Boolean(${LDD.mode("typing")})`).catch(() => false))) return false; // not the dictation step
+  await H.click(tab, LDD.mode("typing"), { settle: 400 });
+  await ldFreshAttempt(tab);
+  const info = await tab.eval(LDD.info).catch(() => null);
+  const ans = info ? (exp.answers || [])[info.index] : null;
   if (!ans) return false;
-  const btn = (re) => `[...document.querySelectorAll('main button')].find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ').trim()))`;
-  // the verdict printed under the typing box (after its label '직접 듣고 영문 타이핑:')
-  const banner = async () => (await tab.eval(`(() => { const m = document.querySelector('main'); let t = m ? m.innerText : ''; const at = t.indexOf('직접 듣고 영문 타이핑'); if (at >= 0) t = t.slice(at); const hit = t.match(/[^\\n]{0,40}(정답입니다|훌륭한 청취력|정확히 청취|순서가 조금 다릅니다|다시 시도|오답|일치하지 않습니다)[^\\n]{0,60}/); return hit ? hit[0].replace(/\\s+/g, ' ').trim() : null; })()`).catch(() => null));
-  // the dictation input by its own placeholder — the first field on this step can be RiddleAnswer's box (LdLearningView), and typing
-  // there left the dictation empty: the first try graded an empty answer and reported the right sentence as refused
-  const field = `[...(document.querySelector('main') || document.body).querySelectorAll('input')].find((el) => /들리는 영문장/.test(el.placeholder || ''))`;
+  const field = `document.querySelector('main [data-ld-view] textarea[data-typing]')`;
   const trial = async (text) => {
     const ok = await H.type(tab, field, text);
     if (!ok) return { typed: false, feedback: null };
-    await H.click(tab, btn(/정답 채점하기/), { settle: 600 });
-    return { typed: true, feedback: await banner() };
+    await H.click(tab, LDD.action("check"), { settle: 600 });
+    return { typed: true, feedback: await tab.eval(LDD.feedback).catch(() => null) };
   };
-  const right = await trial(ans.text);
   const wrong = await trial("zzz qqq xxx");
-  const accepted = (r) => !!r.feedback && /정답입니다|훌륭한 청취력|정확히 청취/.test(r.feedback);
-  const status = !right.typed || !wrong.typed ? "BLOCKED" : accepted(right) && !accepted(wrong) ? "PASS" : "FAIL";
-  checks.push({ feature: "graded input", item: `typed dictation · 문장 ${idx + 1}`, status, note: `correct→${right.feedback || (right.typed ? "no feedback" : "field not typable")} | wrong→${wrong.feedback || (wrong.typed ? "no feedback" : "field not typable")}`, expected: String(ans.text).slice(0, 80) });
+  const right = await trial(ans.text);
+  const kind = (r) => (r.feedback ? r.feedback.kind : null);
+  const status = !right.typed || !wrong.typed ? "BLOCKED" : kind(right) === "correct" && kind(wrong) === "wrong" ? "PASS" : "FAIL";
+  checks.push({ feature: "graded input", item: `typed dictation · 문장 ${info.index + 1}`, status, note: `correct→${right.feedback ? `${kind(right)} "${right.feedback.text}"` : right.typed ? "no feedback" : "field not typable"} | wrong→${wrong.feedback ? `${kind(wrong)} "${wrong.feedback.text}"` : wrong.typed ? "no feedback" : "field not typable"}`, expected: String(ans.text).slice(0, 80) });
   return true;
 }
 
+/**
+ * LISTENING 블록 and 빈칸 on the line on screen (2026-09-27): the line assembled from the data must be right and reversed wrong
+ * ('tile dictation', as before); every blank answered with the line's own word must be right and with another option wrong
+ * ('blank dictation' — the default way since D24 나).
+ */
+async function solveLdTiles(tab, exp, checks, stepLabel) {
+  if (!(await tab.eval(`Boolean(${LDD.mode("blocks")})`).catch(() => false))) return; // not the dictation step
+  await H.click(tab, LDD.mode("blocks"), { settle: 450 });
+  await ldFreshAttempt(tab);
+  let info = await tab.eval(LDD.info).catch(() => null);
+  if (!info) return;
+  const words = (exp.tileWordsAll || [])[info.index];
+  const target = String(((exp.answers || [])[info.index] || {}).text || "");
+  if (!words || !words.length) { checks.push({ feature: "tile dictation", item: `${stepLabel} · (문장 못 고름)`, status: "BLOCKED", note: `문장 ${info.index + 1} 의 낱말이 기대값(tileWordsAll)에 없음` }); return; }
+  const tapTile = (word) => H.click(tab, `(() => {
+    const norm = (s) => String(s).replace(/[^\\w'\\u2019-]/g, '').toLowerCase();
+    const want = norm(${JSON.stringify(String(word))});
+    return [...document.querySelectorAll('main [data-ld-view] [data-word-bank] [data-tile]')].find((b) => !b.disabled && norm(b.textContent || '') === want) || null;
+  })()`, { settle: 120 });
+  const assemble = async (list) => {
+    if (await tab.eval(`Boolean(${LDD.action("reset-tiles")}) && !${LDD.action("reset-tiles")}.disabled`).catch(() => false)) await H.click(tab, LDD.action("reset-tiles"), { settle: 250 });
+    let placed = 0;
+    for (const w of list) if ((await tapTile(w)).ok) placed++;
+    const box = (await tab.eval(LDD.box).catch(() => [])) || [];
+    await H.click(tab, LDD.action("check"), { settle: 450 });
+    return { placed, box, fb: await tab.eval(LDD.feedback).catch(() => null) };
+  };
+  await H.waitFor(tab, `document.querySelectorAll('main [data-ld-view] [data-word-bank] [data-tile]').length > 0`, 5000);
+  const good = await assemble(words);
+  await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+  await ldFreshAttempt(tab);
+  const reversed = [...words].reverse();
+  const same = reversed.join(" ").toLowerCase() === words.join(" ").toLowerCase();
+  const bad = same ? null : await assemble(reversed);
+  const norm = (s) => String(s).replace(/[^\w'’-]/g, "").toLowerCase();
+  const assembledRight = good.box.map(norm).join(" ") === words.map(norm).join(" ");
+  checks.push({
+    feature: "tile dictation", item: `${stepLabel} · "${target.slice(0, 40)}"`,
+    status: good.placed !== words.length || !assembledRight || !good.fb ? "BLOCKED" : good.fb.kind === "correct" && (!bad || (bad.fb && bad.fb.kind === "wrong")) ? "PASS" : "FAIL",
+    note: `${good.placed}/${words.length} tiles placed${assembledRight ? "" : ` · ASSEMBLED "${good.box.join(" ").slice(0, 80)}"`} · correct→${good.fb ? `${good.fb.kind} "${good.fb.text}"` : "no feedback"} · reversed→${bad ? (bad.fb ? `${bad.fb.kind} "${bad.fb.text}"` : "no feedback") : "(a one-word line)"}`,
+  });
+  // 빈칸 — the same line
+  await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+  await H.click(tab, LDD.mode("blanks"), { settle: 450 });
+  await ldFreshAttempt(tab);
+  info = await tab.eval(LDD.info).catch(() => null);
+  if (!info || info.mode !== "blanks" || !info.blanks) return; // a line with no blank is dictated in blocks (checked above)
+  const answerRows = async (pickRight) => tab.eval(`(async () => {
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    const words = ${JSON.stringify(words)};
+    const norm = (s) => String(s).toLowerCase().replace(/\\u2019/g, "'").trim();
+    let answered = 0;
+    for (const row of document.querySelectorAll('main [data-ld-view] [data-blank-rows] > li[data-blank]')) {
+      const want = norm(words[+row.dataset.token] || '');
+      const opts = [...row.querySelectorAll('[data-option]')];
+      const o = opts.find((b) => (norm(b.textContent) === want) === ${pickRight ? "true" : "false"});
+      if (o) { o.click(); answered++; await sleep(40); }
+    }
+    return answered;
+  })()`).catch(() => 0);
+  const rightCount = await answerRows(true);
+  await H.click(tab, LDD.action("check"), { settle: 450 });
+  const blankGood = await tab.eval(LDD.feedback).catch(() => null);
+  await ldFreshAttempt(tab);
+  const wrongCount = await answerRows(false);
+  await H.click(tab, LDD.action("check"), { settle: 450 });
+  const blankBad = await tab.eval(LDD.feedback).catch(() => null);
+  checks.push({
+    feature: "blank dictation", item: `${stepLabel} · "${target.slice(0, 40)}"`,
+    status: rightCount !== info.blanks || !blankGood ? "BLOCKED" : blankGood.kind === "correct" && blankBad && blankBad.kind === "wrong" ? "PASS" : "FAIL",
+    note: `${info.blanks} blanks · right options ${rightCount} → ${blankGood ? `${blankGood.kind} "${blankGood.text}"` : "no feedback"} · wrong options ${wrongCount} → ${blankBad ? `${blankBad.kind} "${blankBad.text}"` : "no feedback"}`,
+  });
+}
+
 async function gradedInputs(tab, exp, checks, maxFields = 12, course = null) {
-  const fields = (await tab.eval(FIELDS).catch(() => [])) || [];
-  if (!fields.length) return;
-  // LISTENING main page, desktop pass, typing mode on screen: test the typed answer once (7-1 m) — the NA line below is for the rest
+  // LISTENING main page, desktop pass: test the typed answer once (7-1 m) — the NA line below is for the rest. 2026-09-27: before
+  // the field count, because the default way of dictating (빈칸, D24 나) has no text field until '쓰기' is chosen.
   if (course === "ld" && exp.variant !== "script" && maxFields === 12 && !checks.some((c) => c.feature === "graded input" && /^typed dictation/.test(String(c.item)))) {
     if (await typedDictation(tab, exp, checks)) return;
   }
+  const fields = (await tab.eval(FIELDS).catch(() => [])) || [];
+  if (!fields.length) return;
   // LISTENING and STUDENT are answered by tapping word TILES, not by typing: typing into
   // whatever field is on screen would be a false failure. Their grading is covered by the
   // offline grader harness and by the tile routine.
@@ -433,7 +539,9 @@ async function practiseStudent(tab, exp) {
  * sentence from the DATA, press the check button, then wreck the order and press it again.
  */
 async function solveTiles(tab, exp, checks, stepLabel) {
-  // 2026-09-27: STUDENT's reworked dictation has its own routine (above); LISTENING goes on below as before
+  // 2026-09-27: the reworked views have their own routines (above) — LISTENING (its view also marks [data-dictation]) first,
+  // then STUDENT; the text-based routine below is kept for an old build
+  if (await tab.eval(LDD.view).catch(() => false)) return solveLdTiles(tab, exp, checks, stepLabel);
   if (await tab.eval(`Boolean(document.querySelector('main [data-dictation]'))`).catch(() => false)) return solveStudentTiles(tab, exp, checks, stepLabel);
   const target = (exp.answers[0] || {}).text;
   if (!target && !exp.tileWordsAll) return;
@@ -609,7 +717,12 @@ async function solveTiles(tab, exp, checks, stepLabel) {
  * rendered nowhere on d001 and the sweep still reported content 6/6. Reading the
  * box itself is the difference between checking the screen and checking the data.
  */
+// 2026-09-27 (LISTENING 학습법 · 화면 고침 — LD-U21): the line's hints are li[data-hint-chip] in the Step 2 box
+// details[data-line-hints], folded in 빈칸 · 블록 — read by textContent, which a folded box still has. Step 1's list of the whole
+// lesson's names and numbers (data-passage-hints, D25) is another place and not read here. The old box is read on an old build.
 const HINT_CHIPS = `(() => {
+  const now = [...document.querySelectorAll('main [data-step-panel="2"] [data-line-hints] [data-hint-chip]')];
+  if (now.length || document.querySelector('main [data-ld-view]')) return now.map((s) => (s.textContent || '').trim()).filter(Boolean);
   const box = [...document.querySelectorAll('main div')].find((d) =>
     /고유 명사 · 숫자( · 어려운 낱말)? 참조/.test(d.innerText || '') && d.querySelectorAll('p span').length);
   return box ? [...box.querySelectorAll('p span')].map((s) => s.innerText.trim()).filter(Boolean) : [];
@@ -623,20 +736,28 @@ async function walkDictation(tab, exp, texts, rec, stepLabel, depth) {
   if (!sentences) return 0;
   const button = (label) =>
     `[...document.querySelectorAll('main button')].find((b) => /${label}/.test(b.innerText || '') && !b.disabled && (b.offsetParent || b.getClientRects().length))`;
-  const exists = async (label) =>
-    Boolean(await tab.eval(`Boolean(${button(label)})`).catch(() => false));
+  // 2026-09-27 (LISTENING 학습법 · 화면 고침): the line is moved by [data-action="prev-line"] · [data-action="next-line"] (icon
+  // buttons, '이전 문장' · '다음 문장' only as their names) and played by [data-action="play-line"]; the walk is on the dictation step
+  // only ([data-step-panel="2"] — Steps 3 and 4 share the line and its buttons). An old build keeps its text buttons.
+  const ld = await tab.eval(`Boolean(document.querySelector('main [data-ld-view] [data-step-panel="2"]'))`).catch(() => false);
+  if (!ld && (await tab.eval(LDD.view).catch(() => false))) return 0; // LISTENING, but not its dictation step
+  const ldButton = (action) => `(() => { const b = document.querySelector('main [data-ld-view] [data-step-panel="2"] [data-action="${action}"]'); return b && !b.disabled ? b : null; })()`;
+  const prevButton = ld ? ldButton("prev-line") : button("이전 문장");
+  const nextButton = ld ? ldButton("next-line") : button("다음 문장");
+  const playButton = ld ? ldButton("play-line") : button("표준 속도");
+  const exists = async (expr) => Boolean(await tab.eval(`Boolean(${expr})`).catch(() => false));
 
   // Only the tap-dictation step has a sentence walk. Running this on STEP 1/3/4 pressed a
   // "표준 속도" button that is not on those screens and recorded the miss as an audio
   // failure — noise of the driver's own making.
-  if (!(await exists("다음 문장")) && !(await exists("이전 문장"))) return 0;
-  const hasPlay = await exists("표준 속도");
+  if (!(await exists(nextButton)) && !(await exists(prevButton))) return 0;
+  const hasPlay = await exists(playButton);
 
   // REWIND FIRST. solveTiles has already answered several sentences by the time the step
   // loop opens this tab, so the drill sits near the END and "다음 문장" is disabled — the
   // first attempt at this walk recorded nothing for exactly that reason.
   for (let i = 0; i < sentences + 1; i++) {
-    const back = await H.click(tab, button("이전 문장"), { settle: 200 });
+    const back = await H.click(tab, prevButton, { settle: 200 });
     if (!back.ok) break;
   }
 
@@ -676,7 +797,7 @@ async function walkDictation(tab, exp, texts, rec, stepLabel, depth) {
     // The sentence's own speaker button, pressed directly (not through NEXT_CONTROL, which
     // would skip it after the first sentence because the element is marked as clicked).
     const pressThis = WALK_AUDIO === "all" || (WALK_AUDIO === "first" && i === 0);
-    if (hasPlay && pressThis) await pressAudio(tab, button("표준 속도"), where, exp, rec.audio);
+    if (hasPlay && pressThis) await pressAudio(tab, playButton, where, exp, rec.audio);
     const ev = H.events(tab);
     if (ev.exceptions.length || ev.console.length || ev.badResponses.length) {
       rec.problems.push(
@@ -684,7 +805,7 @@ async function walkDictation(tab, exp, texts, rec, stepLabel, depth) {
       );
     }
     if (i === sentences - 1) break;
-    const next = await H.click(tab, button("다음 문장"), { settle: 240 });
+    const next = await H.click(tab, nextButton, { settle: 240 });
     if (!next.ok) break;
   }
   return seen;
@@ -830,8 +951,9 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // for the queue to empty (the server answered) before reading or reloading; other courses save locally.
     const serverSaved = async () => page.course !== "student" || H.waitFor(tab, `(() => { try { const v = localStorage.getItem('kig:student:pending:v1'); return !v || v === '[]'; } catch (e) { return true; } })()`, 10000);
     await openStep3();
-    // 2026-09-27 (VOCA · D02 나): the completion button's gate is registered by the view after it read its record — read after that
+    // 2026-09-27 (VOCA · LISTENING · D02 나): the completion button's gate is registered by the view after it read its record — read after that
     if (page.course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
+    if (page.course === "ld" && (await H.waitFor(tab, LDP.VIEW_READY, 8000))) await H.sleep(300);
     let c0 = await tab.eval(cmState).catch(() => null);
     let practiceNote = "";
     if (page.course === "student" && c0 && /\|disabled$/.test(c0)) {
@@ -849,6 +971,23 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
       c0 = await tab.eval(cmState).catch(() => null);
     }
+    if (page.course === "ld" && c0 && /\|disabled$/.test(c0)) {
+      // 2026-09-27 (LISTENING · 계획 D02 나): '이 강의 학습 완료' opens once a dictation line was checked — check one like a learner
+      // (lib/ld-page.cjs CHECK_ONE_LINE: the first option of every blank, then '정답 확인'), then read the button again.
+      const r = await tab.eval(LDP.CHECK_ONE_LINE).catch((e) => ({ ok: false, why: String(e && e.message ? e.message : e).slice(0, 80) }));
+      practiceNote = r && r.ok ? `practised: one dictation line checked (${r.verdict})` : `could not check a dictation line: ${(r && r.why) || "?"}`;
+      await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+      await H.sleep(200);
+      c0 = await tab.eval(cmState).catch(() => null);
+    }
+    if (page.course === "reading" && c0 && /\|disabled$/.test(c0)) {
+      // 2026-09-27 (READING · 계획 D02 나): '이 강의 학습 완료' opens after one timed reading — read once like a learner
+      // (lib/reading-page.cjs MEASURE_ONCE), then read the button again. (READING's own driver is drive-reading.cjs.)
+      const r = await tab.eval(RDP.MEASURE_ONCE).catch((e) => ({ ok: false, why: String(e && e.message ? e.message : e).slice(0, 80) }));
+      practiceNote = r && r.ok ? "practised: one timed reading" : `could not time a reading: ${(r && r.why) || "?"}`;
+      await H.sleep(200);
+      c0 = await tab.eval(cmState).catch(() => null);
+    }
     if (c0 && !/\|disabled$/.test(c0)) {
       await H.click(tab, cm, { settle: 700 });
       const saved1 = await serverSaved();
@@ -856,6 +995,7 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
       await openStep3();
       if (page.course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
+      if (page.course === "ld" && (await H.waitFor(tab, LDP.VIEW_READY, 8000))) await H.sleep(300);
       const c2 = await tab.eval(cmState).catch(() => null);
       await H.click(tab, cm, { settle: 700 });
       const saved3 = await serverSaved();

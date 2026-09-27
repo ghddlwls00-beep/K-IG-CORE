@@ -30,6 +30,7 @@ import { firstSlashAlternative } from "@/lib/listeningUtils";
 import { vocaWordSpeech } from "@/lib/vocaSpeech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import { studentFirstWordKeepsCase } from "@/lib/studentCourseText";
+import { clozeAlsoFitsFor } from "@/lib/readingClozeFitsForLesson";
 import type { VoiceGender } from "@/lib/speech";
 
 export function generateStaticParams() {
@@ -452,6 +453,10 @@ export default async function LessonPage({
               readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
               readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
               passagePlayers={passagePlayers}
+              clozeAlsoFits={clozeAlsoFitsFor(
+                (lesson.readingSentences ?? pairLesson?.readingSentences ?? []).map((s) => s.english),
+                (lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? []).map((v) => v.word),
+              )}
             />
           ) : course === "grammar1" || course === "grammar2" ? (
             <GrammarLearningView

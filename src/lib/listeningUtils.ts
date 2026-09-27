@@ -29,7 +29,10 @@ export interface ContextQuizItem {
   explanation: string;
 }
 
-// Preset database of common high-yield phonetic patterns in conversational & news English
+// Preset database of common high-yield phonetic patterns in conversational & news English.
+// 2026-09-27 (F03 · LD-L15): the rows are read by scanLiaisonCandidates exactly as before — including 'have one', which
+// generateLiaisonPoints now drops — so that dropping a wrong card can never make another card appear (a new card would be a
+// new spoken phrase with no clip). The two exaggerated rule lines ('거의 100%', '95% 이상') are reworded; rules are shown, never spoken.
 const LIAISON_PRESETS: {
   regex: RegExp;
   original: string;
@@ -127,7 +130,7 @@ const LIAISON_PRESETS: {
     koreanSound: "아우러",
     type: "reduction",
     typeLabel: "플랩 & 구어 축약 (Reduction)",
-    rule: "원어민 회화에서 out of는 거의 100% '아웃 오브'가 아닌 '아우러'로 축약 발음됩니다.",
+    rule: "빠르게 말할 때 out of는 '아웃 오브'가 아니라 '아우러'처럼 줄어 들립니다.",
   },
   {
     regex: /\bwant\s+to\b/i,
@@ -145,7 +148,7 @@ const LIAISON_PRESETS: {
     koreanSound: "거너 (gonna)",
     type: "reduction",
     typeLabel: "구어 축약 (Reduction)",
-    rule: "말하기와 실전 청취에서 going to는 95% 이상 'gonna(거너)'로 소리납니다.",
+    rule: "뒤에 동사가 올 때 going to는 흔히 'gonna(거너)'처럼 줄어 들립니다.",
   },
   {
     regex: /\bpick\s+up\b/i,
@@ -177,9 +180,11 @@ const LIAISON_PRESETS: {
 ];
 
 /**
- * Automatically analyzes a sentence and returns high-yield liaison/phonetic mutation points.
+ * The cards the Step 3 sound clinic used to show (until 2026-09-27), unchanged: presets first, then — when fewer than two
+ * presets matched — word pairs "consonant letter + vowel letter" read off the sentence with its punctuation blanked.
+ * generateLiaisonPoints below keeps a SUBSET of these (F03), so no card is ever added.
  */
-export function generateLiaisonPoints(sentence: string): LiaisonCard[] {
+function scanLiaisonCandidates(sentence: string): LiaisonCard[] {
   const cards: LiaisonCard[] = [];
   const clean = sentence.replace(/[.,?!;:"'()]/g, " ").replace(/\s+/g, " ").trim();
 
@@ -232,6 +237,82 @@ export function generateLiaisonPoints(sentence: string): LiaisonCard[] {
   }
 
   return cards;
+}
+
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/** `a b` stands in the sentence as two whole words with only spaces between them — no comma, full stop or apostrophe word. */
+function adjacentWords(sentence: string, a: string, b: string): boolean {
+  return new RegExp(`(?<![A-Za-z0-9'’\\-])${escapeRe(a)}\\s+${escapeRe(b)}(?![A-Za-z0-9'’\\-])`, "i").test(sentence);
+}
+
+/**
+ * A word that starts with a vowel LETTER but a consonant SOUND — one, once (w-) · use, usual, unit, united, university, Europe
+ * (y-). "a car" does not link into them, so a "linking" card for "and one" or "can use" was wrong (LD-L15 ④).
+ */
+const CONSONANT_SOUND_START = /^(?:one(?:s|self)?|once|us(?:e|es|ed|ing|eful|age|ual|ually|er|ers)|unit(?:s|ed|y)?|unions?|univers(?:e|al|ity|ities)|unique|uniforms?|util(?:ity|ities|ize)|eu\w*)$/i;
+
+/** After "going to", these are not a verb — "going to the town", "going to a zoo" is never "gonna" (LD-L15 ①). */
+const GOING_TO_NOT_VERB = new Set([
+  "the", "a", "an", "this", "that", "these", "those", "my", "your", "his", "her", "its", "our", "their", "some", "any",
+  "every", "each", "no", "school", "church", "bed", "town", "work", "college", "class", "market", "sea", "hospital",
+]);
+
+/** The spelling of a word's last consonant sound, for the card's rule line: which → ch, wish → sh, with → th, back → k. */
+function finalConsonant(word: string): string {
+  const w = word.toLowerCase();
+  const m = w.match(/(tch|ch|sh|th|ph|gh|ck|ng|ss|ll|ff|zz|x)$/);
+  if (!m) return w.slice(-1);
+  return ({ tch: "ch", ph: "f", gh: "f", ck: "k", ss: "s", ll: "l", ff: "f", zz: "z", x: "ks" } as Record<string, string>)[m[1]] ?? m[1];
+}
+
+/**
+ * Automatically analyzes a sentence and returns high-yield liaison/phonetic mutation points.
+ *
+ * 2026-09-27 (계획 F03 · LD-L15 · D26 가 — "틀린 카드만 빼고 지금 방식 유지"): the cards of scanLiaisonCandidates minus the wrong
+ * ones, never a new one, so every `original` still has its clip and none needs a new one:
+ *   · 'have one → 해본' (d001 #5) — dropped.
+ *   · 'going to → gonna' only where a verb follows ("going to the town" d096 #9, "going to a zoo" d210 #6 — dropped).
+ *   · a pair is kept only where its two words stand whole and side by side in the sentence as written: no pair across a
+ *     comma or a full stop ("country. It"), no piece of a contraction ("It isn't" → "It isn").
+ *   · no pair before a word that starts with a consonant sound (one · once · use · usual · unit · university · Europe), and
+ *     none after a word ending in -aw (saw) or a silent vowel + h.
+ *   · a word ending in -y / -w / -igh (my · new · high) links with a [y] / [w] glide, not with a "final consonant [y]" — the
+ *     card now says so.
+ *   · the heard form of a pair shows as "author‿in" (it read "author_in (이어짐) [autho-rin]", spelling dressed as phonetics).
+ * The presets' own lines are unchanged except the two exaggerated rule sentences above.
+ */
+export function generateLiaisonPoints(sentence: string): LiaisonCard[] {
+  const out: LiaisonCard[] = [];
+  for (const card of scanLiaisonCandidates(sentence)) {
+    const isPair = card.koreanSound.endsWith("(이어짐)");
+    if (!isPair) {
+      if (card.original === "have one") continue;
+      if (card.original === "going to") {
+        const next = [...sentence.matchAll(/\bgoing\s+to\s+([A-Za-z'’]+)/gi)].map((m) => m[1]);
+        if (!next.some((w) => !/^[A-Z]/.test(w) && !GOING_TO_NOT_VERB.has(w.toLowerCase()))) continue;
+      }
+      const words = card.original.split(" ");
+      if (words.length === 2 && !adjacentWords(sentence, words[0], words[1])) continue;
+      out.push(card);
+      continue;
+    }
+    const [w1, w2] = card.original.split(" ");
+    if (!w1 || !w2 || !adjacentWords(sentence, w1, w2)) continue;
+    if (CONSONANT_SOUND_START.test(w2)) continue;
+    if (/aw$/i.test(w1) || /[aeiou]h$/i.test(w1)) continue;
+    const glide = /y$/i.test(w1) || /igh$/i.test(w1) ? "y" : /w$/i.test(w1) ? "w" : null;
+    out.push({
+      ...card,
+      koreanSound: `${w1}‿${w2}`,
+      phonetic: "",
+      typeLabel: glide ? "모음+모음 연음 (w/y 끼어듦)" : card.typeLabel,
+      rule: glide
+        ? `'${w1}' 끝 모음 뒤에 [${glide}] 소리가 살짝 끼어들며 '${w2}'와 한 낱말처럼 이어집니다.`
+        : `'${w1}' 끝의 ${finalConsonant(w1)} 소리가 '${w2}'의 첫 모음과 이어져 한 낱말처럼 들립니다.`,
+    });
+  }
+  return out;
 }
 
 /**
@@ -350,10 +431,16 @@ export function firstSlashAlternative(sentence: string): string {
  * of them, which the tiles and the hint follow. The words the other
  * alternatives need are added as tiles too, so each alternative can actually
  * be assembled.
+ *
+ * `options.distractors` (2026-09-27, LISTENING F02 · LD-L13): the caller has already chosen its distractor words — LISTENING
+ * takes sound-alike function words ("in"/"and"/"an", "a"/"the" …) that the fixed list and the sound-alike and two-letter
+ * filters below would drop. They are added as given (a word the sentence already has is skipped). Without `options` — every
+ * other caller, STUDENT included — the function is exactly what it was: the same tiles for the same random numbers.
  */
 export function generateWordBank(
   sentence: string,
-  extraDistractorPool: string[] = []
+  extraDistractorPool: string[] = [],
+  options?: { distractors?: readonly string[] }
 ): { correctWords: string[]; acceptedWordSequences: string[][]; allTiles: WordTile[] } {
   const acceptedWordSequences = expandSlashAlternatives(sentence).map(dictationWords);
   const correctWords = acceptedWordSequences[0] ?? [];
@@ -388,6 +475,14 @@ export function generateWordBank(
   }
   const existingSet = new Set(have.keys());
 
+  const addedDistractors: string[] = [];
+  if (options?.distractors) {
+    // the caller's own choice (LISTENING): as given, once each, never a word the sentence already has
+    for (const d of options.distractors) {
+      const key = d.toLowerCase();
+      if (d && !existingSet.has(key) && !addedDistractors.some((x) => x.toLowerCase() === key)) addedDistractors.push(d);
+    }
+  } else {
   // Add 2~3 smart distractor words
   const defaultDistractors = [
     "was", "the", "with", "in", "at", "for", "on", "is", "he", "she", "we", "are", "very"
@@ -397,12 +492,12 @@ export function generateWordBank(
     acceptedWordSequences.flat().map(soundAlikeForm),
   );
 
-  const addedDistractors: string[] = [];
   for (const d of pool) {
     if (!existingSet.has(d.toLowerCase()) && !soundAlikes.has(soundAlikeForm(d)) && d.length >= 2) {
       addedDistractors.push(d);
       if (addedDistractors.length >= 2) break;
     }
+  }
   }
 
   addedDistractors.forEach((dist, idx) => {

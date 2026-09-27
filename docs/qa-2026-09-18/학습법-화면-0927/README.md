@@ -39,6 +39,7 @@
 | 04:3x | GRAMMAR I · II | (이 커밋) 학습법 + 화면 한 번에 — 일꾼이 구현, 이 세션이 빌드 · 브라우저 확인 · 커밋 | verify-unit --build PASS · 디자인 0 · 채점 변화 0(2,431문항) · check-grammar-exam 오답 0 · all-alts 99/99 · 깨기 exit 1 · drive-common D 9/9 · 휴대폰 1단계 16.2 → 2.2화면 · 작은 누를 곳 238 → 0 · 확대 칸 69 → 0 | 설계 세션 대기열 |
 | 06:3x | STUDENT + 말하기 공용 | `1d14dea` 일꾼 1 = 말하기 채점 정렬 · [[칸]] · VoiceSpeakingTester 인자 / 일꾼 2 = STUDENT 화면 · 학습법 — 이 세션이 빌드 · 브라우저 확인 · 대비 · 문구 · 도구 고침 · 커밋 | verify-unit --build PASS · check-speech-scorer ①~⑦ PASS(--head · --break FAIL) · check-student-0927 22/22(깨기 넷 모두 FAIL) · check-student-dictation PASS(깨기 FAIL) · drive-common A·C·D·F 65/65 · drive-generic s1-1 · s1-2 × 2 문제 0 · gap M·S·P 14/14 · check-student-unlock 0 · 유출 0(깨기 1) · 디자인 17파일 0 · 휴대폰 44px 미만 29~35 → 0 · 단계 탭 3줄 → 1줄 | 설계 세션 대기열 |
 | 06:4x | GRAMMAR 엔진 기록 | `b842836` 채점한 답마다 recordAttempt · 완료 때 틀리거나 도움 받은 문장만 markLessonDone | check-student-0927 G1(틀린 1번만 복습 · 안 푼 2번 없음) | 설계 세션 대기열 |
+| 10:3x | LISTENING · READING | (이 커밋) 일꾼 둘 + 이 세션: READING 빈칸 '또 맞는 짝' 표(과정 전체 핵심어 685)를 서버 전용으로 — 강의 쪽이 그 강의 짝만 넘김(유출 규칙) · LISTENING 1~3단계 이름을 사장님 원래 짧은 이름으로 되돌림(4·5단계만 D05) · 드라이버에 READING 완료 조건 · 4단계 재생 길 | verify-unit --build PASS(ld 5,499 → 5,152 틀린 소리 카드 뺀 만큼 · 새 클립 0) · 휴대폰 · 작은 폰 · 데스크탑 LISTENING · READING 모든 단계 44px 미만 24~58 → 0 · 탭 2~4줄 → 1줄 · 확대 칸 0 · drive-common A·C·D·F 65/65 · gap P·Z·T 7/7 · drive-generic d001 · d001-1 × 2 문제 0 · check-reading-cloze 0(강의 짝 = 전체 표 2,560세트 · 깨기 FAIL) · 유출 0 · 디자인 0 · STUDENT 22/22 · VOCA 7/7 회귀 · **drive-reading pr001: 휴대폰 50/51 · 데스크탑 266/296 — 아래 '먼저 고칠 것'** | **READING 은 아래 두 가지를 고친 뒤에 올릴 것** |
 | 08:1x | VOCA + 한 낱말 판정 | `71815e0` 일꾼 1 = B03 · 일꾼 2 = VOCA 화면 · 학습법 — 이 세션이 빌드 · 브라우저 확인 · 과정 설명 글 되돌림(첫 쪽 슬라이드가 씀 — 사장님 몫) · 검사 도구 · 커밋 | verify-unit --build PASS · check-speech-single-word PASS(262줄 · --head · --break FAIL) · check-speech-scorer 그대로 · check-voca-learning 22/22(깨기 10 모두 FAIL) · 옛 check-voca-* 7 통과 · check-voca-0927 7/7(깨기 4 FAIL) · check-student-0927 22/22(회귀) · drive-common A·C·D·F 65/65 · gap P 3/3 · drive-generic mv1-01 × 2 문제 0 · 유출 0 · 디자인 0 · 휴대폰 44px 미만 19~89 → 0 · 3단계 7.1 → 0.8화면 | 설계 세션 대기열 |
 
 - 점검 워크플로우 끝(03:1x · 일꾼 13 · 오류 0): 과정별 검토 6 + 반박 점검 6(반박된 것 0 · 고침 조정 95 · 놓친 것 38 더함) + 종합 1. 결과 파일: [사장님-요약.md](사장님-요약.md) · [계획.md](계획.md) · 과정별-결과.json(합본 — 반박된 항목 빠지고 고침은 점검 쪽으로).
@@ -46,6 +47,12 @@
 - 과정별 검토 · 점검 합본: journal `…/subagents/workflows/wf_5e12a969-e40/journal.jsonl`. GRAMMAR 는 `grammar-verified.md`(이 폴더)로 뽑아 둠 — 과정 작업의 기준.
 - 사용량(03:1x): 5시간 36% · 주간 64%(09-28 05:00 재설정). 98% 면 멈추고 설계 세션에 알림. 새 문제 약 1,200개(LISTENING · READING)는 주간 재설정 뒤.
 - 첫 쪽은 사장님이 원래 사진 슬라이드를 고르심(머리줄 추가 안 함) — 휠 · 키 가로채기 제거 · 점 누름 영역만.
+
+### 먼저 고칠 것 — READING (10:3x · 주간 사용량 91% 에서 멈춤 · 09-28 05:00 재설정 뒤 첫 일)
+
+1. **소리 단추를 다시 눌러도 안 멈춤**: drive-reading pr001 에서 1단계 · 4단계 문장 누름과 2단계 낱말 🔊 를 두 번째 누를 때 소리가 멈추지 않음(휴대폰 1 · 데스크탑 25칸 — 'second press stops playback'). 다른 과정처럼 재생 ↔ 정지로.
+2. **데스크탑 2단계 뜻 13개를 드라이버가 못 읽음**(content 25/38 · reveal-all): 새 화면은 낱말마다 '뜻 보기' — drive-reading 의 데스크탑 길이 옛 '모두 보기'를 찾는 것으로 보임(도구 쪽). 고친 뒤 drive-reading --no-resume 과 --break gate · cloze · hover 를 다시.
+3. 그 뒤 README 표의 READING 줄을 고치고 설계 세션에 '올려도 됨' 알림. 디자인 규칙 §7 에 AudioPlayer `speeds` · LISTENING · READING 의 넘겨받기 · 완료 조건 한 줄씩.
 
 ### 다음 할 일 (06:4x 기준 — 압축 뒤 여기부터)
 
@@ -59,6 +66,16 @@
    완료 신호는 ProgressProvider 의 LESSON_COMPLETE_EVENT(toggleComplete 만 보냄). **복습 화면('오늘 복습 N')은 설계 세션이 PASS-OFF 로 먼저 만들고**(엔진 설계 §6) 섹션마다 붙임 — 그때 옛 완료(true)는 importUndatedDone 으로 '날짜 모름'.
    VOCA · LISTENING · READING 도 고치는 차례에 기록부터(엔진 설계 §5 표: VOCA 낱말 5초 · 요소 통과 2 / LISTENING 못 맞힌 줄 25초 / READING 몰라요 낱말 6초).
 5. 사용량: 무거운 일 전에 get_usage — 98% 면 멈추고 설계 세션에 알림. 04:4x 에 5시간 55% · 주간 69% · 06:4x 에 확인할 것.
+
+### LISTENING · READING 계획 (08:3x · `listening-verified.md` · `reading-verified.md` 의 CHECK 쪽 고침 + 계획.md F01 ~ F05 · G01 ~ G05)
+
+- 일꾼 1 = LISTENING(LdLearningView · listeningUtils · AudioPlayer speeds · ld 드라이버 · verify-unit 의 ld 기준값) · 일꾼 2 = READING(ReadingLearningView · readingUtils · CourseDashboard 의 READING 줄 · drive-reading) — 파일 안 겹침. 위 플레이어 넘겨받기 연결은 이 세션이 먼저 깔아 둠(`f2a1b2d`).
+- 사장님 질문은 새 음성이 필요 없는 추천대로(되돌릴 수 있게 보고서에 따로):
+  LISTENING — D24 나(받아쓰기 기본은 줄마다 3~6칸 · 소리 비슷한 3개 고르기나 타이핑 · 한글은 첫 채점 뒤 · 전체 블록/타이핑도 고를 수 있음) · D25 나(1단계 재생 위 이름 · 숫자 힌트 두 줄) · D26 가만(틀린 소리 카드 빼기 — 나는 새 음성) ·
+  D27 다(15낱말 이하 줄 '글 가리기' — 나는 새 음성 약 800) · D28 나(2~4단계 같은 줄로 이어짐) · D29 나(받아쓰기 전 원문은 흐리게 '먼저 받아쓰기 / 그래도 보기') · D05 나(4단계 '따라 말하기' · 5단계 '다시 듣기 · 대본 확인') · D01 · D02 나(받아쓰기 한 줄 채점 뒤 완료).
+  READING — D31 나(4단계 끝 '다시 읽고 재기' 두 숫자) · D32 다(어휘 카드에 지문 문장 · 알아요/몰라요 · 지문 핵심어 누르면 뜻) · D33 나(빈칸은 핵심어에서 글 앞 · 중간 · 끝 · 답한 뒤 해석 · 소리 · 다른 빈칸) · D35 나(목록에 'N단어 · N문장') · D01 나(재기 뒤 · 4단계에서 전체 듣기) · D02 나(한 번 잰 뒤 완료).
+- 안 하는 것: D30 대본 쪽(-1) 합치기(과정 구성 — 사장님 몫) · D26 나 · D27 나(새 음성) · D34(이해 문제 뒤) · 새 문제 약 1,200개(주간 재설정 뒤 따로).
+- 엔진: LISTENING 못 맞힌 줄(25초) · READING 몰라요 낱말 · 틀린 빈칸(요소 · 6초).
 
 ### VOCA 계획 (06:5x · `voca-verified.md` 의 '점검(CHECK)' 쪽 고침 + 계획.md E01 ~ E04 · B03 · A10)
 
