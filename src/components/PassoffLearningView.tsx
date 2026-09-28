@@ -255,8 +255,16 @@ export function PassoffLearningView({
     headingRefs.current[step]?.focus({ preventScroll: true });
   }, [step]);
 
-  /** What a step tab's click does. */
+  /**
+   * What a step tab's click does. 2026-09-28 (사장님 — STUDENT 060705c · VOCA ecc5761 의 규칙): a step change never starts sound —
+   * nothing here plays by itself (every sound is a press of a speaker button) — and it stops a sentence still playing, as the
+   * other sections do, so the old step's sound does not run on into the new one.
+   */
   function showStep(next: number, move: StepMove) {
+    if (next !== step) {
+      stopSpeech();
+      speaker.reset();
+    }
     if (move.focus) {
       if (next === step) headingRefs.current[next]?.focus({ preventScroll: true });
       else focusStep.current = next;
