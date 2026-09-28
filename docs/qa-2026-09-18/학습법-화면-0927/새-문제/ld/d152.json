@@ -14,7 +14,12 @@
         "어른들은 아이들 교육을 학교에만 맡겨 두었다"
       ],
       "answer": 2,
-      "evidence": [1, 2, 3, 4],
+      "evidence": [
+        1,
+        2,
+        3,
+        4
+      ],
       "note": "\"demands preparation\" · \"must have adequate schooling\" · \"placing more emphasis on the education of the young\" · \"working hard to give the children … the best preparation\""
     },
     {
@@ -22,13 +27,16 @@
       "type": "세부 사실",
       "prompt": "미국 50개 주의 학교 제도에 대한 설명으로 옳은 것은?",
       "options": [
-        "규칙은 저마다 정하지만 닮은 점이 많다",
-        "규칙을 저마다 정해 닮은 점이 거의 없다",
-        "규칙은 학교마다 교사들이 따로 정한다",
-        "규칙은 학교마다 부모들이 모여 정한다"
+        "주마다 규칙을 따로 정하지만 서로 닮은 점이 많다",
+        "주마다 규칙을 따로 정해서 서로 닮은 점이 거의 없다",
+        "주마다 규칙을 정하지만 학교마다 교사들이 다시 고친다",
+        "주마다 규칙을 정하지만 부모들의 허락을 받아야 한다"
       ],
       "answer": 0,
-      "evidence": [5, 6],
+      "evidence": [
+        5,
+        6
+      ],
       "note": "\"no national school policy\" · \"Each of the 50 states makes its own rules\" · \"many similarities among the 50 school systems\""
     }
   ]
