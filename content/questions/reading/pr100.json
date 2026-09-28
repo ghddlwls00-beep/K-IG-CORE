@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr100",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr100-q1",
+      "type": "중심 생각",
+      "prompt": "이 실험이 보여 주는 것으로 가장 적절한 것은?",
+      "options": [
+        "새끼 원숭이는 혼자 지내는 것을 더 좋아했다",
+        "새끼 원숭이는 접촉이 주는 편안함을 찾았다",
+        "새끼 원숭이는 먹이를 주는 엄마를 더 잘 따랐다",
+        "새끼 원숭이는 딱딱한 것을 더 편하게 여겼다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'repeatedly chose to spend their time with the towel cloth mothers' · 'looked for the comfort supplied by their contact'로 확인"
+    },
+    {
+      "id": "pr100-q2",
+      "type": "세부 사실",
+      "prompt": "이 실험에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "options": [
+        "가짜 엄마는 모두 철사로만 만들어졌다",
+        "새끼 원숭이들은 실험 내내 어미 곁에 있었다",
+        "새끼 원숭이들은 두 가짜 엄마 곁에 똑같이 머물렀다",
+        "새끼 원숭이들은 태어나자마자 어미와 떨어졌다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "'separated from their mothers at birth'로 확인"
+    }
+  ]
+}

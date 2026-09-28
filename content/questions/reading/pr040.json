@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr040",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr040-q1",
+      "type": "vocab",
+      "prompt": "이 글에서 'shadows'가 비유적으로 의미하는 것으로 가장 적절한 것은?",
+      "options": [
+        "부모가 자녀에게 남긴 재산",
+        "부모가 자녀에게 평생 미치는 영향",
+        "자녀가 어린 시절 느끼는 두려움",
+        "부모와 떨어져서 살게 되는 물리적인 거리"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        9
+      ],
+      "note": "1번 'cast long shadows over our lives'와 9번 'carry their being with us all our lives'로 보아 'shadows'는 부모가 평생 미치는 영향을 뜻한다."
+    },
+    {
+      "id": "pr040-q2",
+      "type": "inference",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "부모와 떨어져 살면 그 그림자에서 완전히 벗어난다",
+        "부모의 그림자는 자녀에게 부정적인 결과만 남긴다",
+        "독립했다고 느껴도 부모의 흔적은 우리 삶에 남아 있다",
+        "성인이 되면 부모에게서 아무것도 배우지 않는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        7,
+        8
+      ],
+      "note": "1번 'Our parents cast long shadows over our lives', 7번 'we can walk in the sun, free of the shadows', 8번 'still the shadows have not gone'으로 보아 독립했다고 느껴도 부모의 흔적은 우리 삶에 남아 있다."
+    }
+  ]
+}

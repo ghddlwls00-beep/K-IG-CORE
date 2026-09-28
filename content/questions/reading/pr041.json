@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr041",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr041-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "집단에 잘 어울리려면 실수하지 않도록 늘 조심해야 한다",
+        "집단에 어울리려다 하는 실수를 부끄러워할 필요는 없다",
+        "성취를 이루려면 다른 사람의 도움이 꼭 필요하다",
+        "야구나 농구 같은 운동을 하면 집단에 잘 어울릴 수 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        5
+      ],
+      "note": "1번 'trial and error', 2번 'need not feel ashamed of making mistakes', 5번 'hardly expect to learn without making a good many mistakes'에 근거함."
+    },
+    {
+      "id": "pr041-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'It is somewhat like learning to play a game'에서 'It'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "야구나 농구 같은 경기를 배우는 것",
+        "모든 성취에 필요한 시행착오",
+        "사회 집단에서 실수를 부끄러워하는 것",
+        "집단에 어울리는 법을 배우는 것"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "4번 'It is somewhat like learning to play a game'의 It은 3번 'learn to fit into a group'을 가리킴."
+    }
+  ]
+}

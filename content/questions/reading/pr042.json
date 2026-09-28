@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr042",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr042-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "여행은 상상만 하던 다른 삶을 잠시 살아 보게 해 준다",
+        "사람들은 대개 자기 삶에 불만이 있어서 여행을 떠난다",
+        "배우처럼 무대에 서 보는 것이 여행보다 더 값진 경험이다",
+        "우리의 호기심을 채워 줄 수 있는 것은 여행뿐이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        3,
+        5
+      ],
+      "note": "1번 'wanted to live another life', 3번 'satisfying this curiosity is through travel', 5번 'the chance to do things we have only imagined'에 근거함."
+    },
+    {
+      "id": "pr042-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'this curiosity'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "외국 음식에 대한 호기심",
+        "배우가 되어 무대에 서는 꿈",
+        "가 보지 않은 길에 대한 호기심",
+        "자기 삶에 대해 품은 불만"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "3번 'this curiosity'는 2번 'a curiosity about the road not traveled'를 가리킴."
+    }
+  ]
+}

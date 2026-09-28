@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "d001",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d001-q1",
+      "type": "세부 사실",
+      "prompt": "왓슨 부인의 직업으로 옳은 것은?",
+      "options": [
+        "과학자",
+        "의사",
+        "간호사",
+        "교사"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "'I'm a nurse and I work in a hospital'에서 왓슨 부인의 직업을 알 수 있음."
+    },
+    {
+      "id": "d001-q2",
+      "type": "세부 사실",
+      "prompt": "왓슨 부부의 집에 대한 설명으로 옳은 것은?",
+      "options": [
+        "새로 지은 큰 집이다",
+        "새집도 큰 집도 아니다",
+        "딸의 방이 아래층에 있다",
+        "좁아서 곧 이사할 생각이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'Our house isn't new and it isn't large'에서 집의 모습을 알 수 있음."
+    }
+  ]
+}

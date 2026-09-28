@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr230",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr230-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "뱃노래는 고된 선상 생활을 덜 힘들게 해 주었다",
+        "선원들의 배 위 생활은 대체로 편안했다",
+        "선원들은 긴 항해 동안 뱃노래를 거의 부르지 않았다",
+        "뱃노래는 선원들의 불평을 막으려고 만들어졌다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        9
+      ],
+      "note": "'had a hard life' · 'the sea shanties made their stay aboard less difficult' — 힘든 선상 생활을 덜 힘들게 했다"
+    },
+    {
+      "id": "pr230-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 뱃노래에 대한 설명으로 가장 적절한 것은?",
+      "options": [
+        "배 위에서 부르기 어려운 복잡한 노래였다",
+        "선원이 아닌 승객들이 주로 불렀다",
+        "많은 곡이 오랜 세월 동안 전해져 왔다",
+        "1900년대에 처음 불리기 시작했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'The songs are called sea shanties' · 'Many of these songs have lasted through the years' — 뱃노래 가운데 많은 곡이 오랫동안 이어져 왔다"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr002",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr002-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 공기를 계속 오염시키고 있다고 언급된 것은?",
+      "options": [
+        "공기를 깨끗하게 만들려고 애쓰는 민간단체",
+        "산소 탱크를 만들어 파는 회사들",
+        "가정에서 쓰는 난방 기구와 화학 세제",
+        "매연을 내뿜는 공장과 자동차"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "factories and cars are still producing too much dirty smoke로 확인"
+    },
+    {
+      "id": "pr002-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "공기 오염 문제는 이미 완전히 해결되었다",
+        "민간단체의 노력만으로는 공기 오염을 막기에 충분하지 않다",
+        "정부가 나서서 모든 공장의 가동과 자동차의 운행을 금지했다",
+        "사람들은 이제 산소 탱크 없이는 밖에 나가지 못한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "private organizations are trying / In spite of their continued efforts ... still producing로 확인"
+    }
+  ]
+}

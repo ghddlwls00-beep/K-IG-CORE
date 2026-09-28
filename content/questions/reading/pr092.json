@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr092",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr092-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "피부병은 피부과 진료를 받아야만 낫는다",
+        "최면 치료는 모든 피부병을 낫게 한다",
+        "마음 상태가 피부 문제에 영향을 줄 수 있다",
+        "대학생은 피부과 진료를 자주 받아야 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        6
+      ],
+      "note": "'stress and fear may actually make a lot of these skin problems worse' · 'the mind may play a bigger part in clear skin than we think' — 마음이 피부에 영향을 줄 수 있음"
+    },
+    {
+      "id": "pr092-q2",
+      "type": "세부 사실",
+      "prompt": "한 연구에 따르면 대학생들에게 여드름이 더 잘 나는 때로 언급된 것은?",
+      "options": [
+        "중요한 면접을 보기 직전",
+        "중요한 시험을 본 직후",
+        "중요한 면접을 본 직후",
+        "중요한 시험을 보기 직전"
+      ],
+      "answer": 3,
+      "evidence": [
+        4
+      ],
+      "note": "'college students are more likely to break out in pimples just before a big exam' — 중요한 시험 직전"
+    }
+  ]
+}

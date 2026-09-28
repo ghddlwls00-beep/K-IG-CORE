@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr193",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr193-q1",
+      "type": "세부 사실",
+      "prompt": "아이스크림 장수가 어찌할 바를 몰랐던 까닭으로 옳은 것은",
+      "options": [
+        "접시가 다 떨어져서",
+        "아이스크림이 다 팔려서",
+        "와플 장수가 자리를 차지해서",
+        "아이스크림이 더위에 녹아서"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "근거 문장의 핵심 표현: \"ran out of dishes\", \"didn't know what to do\""
+    },
+    {
+      "id": "pr193-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "지문에 쓰인 표현 \"It was an instant success\"에서 It이 가리키는 것으로 가장 적절한 것은",
+      "options": [
+        "1904년에 열린 세계 박람회",
+        "근처 와플 장수가 팔던 와플",
+        "와플을 말아 아이스크림을 담은 것",
+        "아이스크림이 잘 팔리던 일"
+      ],
+      "answer": 2,
+      "evidence": [
+        8,
+        9
+      ],
+      "note": "근거 문장의 핵심 표현: \"suggested rolling a waffle and putting the ice cream inside\", \"It was an instant success\""
+    }
+  ]
+}

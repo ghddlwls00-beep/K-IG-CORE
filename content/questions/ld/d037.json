@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d037",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d037-q1",
+      "type": "세부 사실",
+      "prompt": "의사가 바비를 진찰하며 한 일로 옳은 것은?",
+      "options": [
+        "혈압을 쟀다",
+        "주사를 한 대 놓았다",
+        "배를 여기저기 눌러 보았다",
+        "심장 소리를 들었다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'listened to his heart'가 근거"
+    },
+    {
+      "id": "d037-q2",
+      "type": "목적/태도",
+      "prompt": "의사가 바비 어머니에게 질문한 목적으로 가장 적절한 것은?",
+      "options": [
+        "바비가 어젯밤 몇 시에 잠들었는지 알아보려고",
+        "바비가 언제부터 아프기 시작했는지 알아보려고",
+        "바비가 평소에 먹는 약이 있는지 알아보려고",
+        "바비가 요즘 학교에서 무슨 일이 있었는지 알아보려고"
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        5
+      ],
+      "note": "3번 'When did Bobby begin to feel ill' · 5번 'What did he eat for breakfast'가 근거"
+    },
+    {
+      "id": "d037-q3",
+      "type": "세부 사실",
+      "prompt": "의사가 바비에게 한 말로 옳은 것은?",
+      "options": [
+        "당장 입원해서 검사를 받아야 한다고 말했다",
+        "며칠은 지나야 다 나을 것이라고 말했다",
+        "저녁때쯤이면 다 괜찮아질 것이라고 말했다",
+        "지금 바로 학교에 가도 괜찮다고 말했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "7번 'I think I'm going to die' · 8번 'you'll be fine by dinner time'가 근거"
+    }
+  ]
+}

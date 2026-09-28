@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d006",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d006-q1",
+      "type": "세부 사실",
+      "prompt": "그린 박사의 환자에 대한 설명으로 옳은 것은?",
+      "options": [
+        "주로 노인들이다",
+        "치과를 무서워한다",
+        "대부분이 어린이이다",
+        "모두 올니에 산다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "'Most of his patients are children'에서 알 수 있음."
+    },
+    {
+      "id": "d006-q2",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 치과의사들에 대해 말한 것으로 옳은 것은?",
+      "options": [
+        "모두 책임이 크다",
+        "모두 돈을 많이 번다",
+        "대부분 아침 일찍 일어난다",
+        "대부분 워싱턴에서 일한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        9
+      ],
+      "note": "'All dentists have a lot of responsibility'에서 알 수 있음."
+    },
+    {
+      "id": "d006-q3",
+      "type": "다음 할 일",
+      "prompt": "그린 박사가 아침을 먹은 뒤 이어서 하는 일로 옳은 것은?",
+      "options": [
+        "매디슨가 주차장에 차를 세운다",
+        "올니에서 버스를 탄다",
+        "일하는 곳에 도착한다",
+        "차를 몰고 직장으로 출발한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'He eats breakfast at 6:45 and leaves for work at 7:15', 'He drives to work'에서 아침을 먹은 뒤 이어서 하는 일을 알 수 있음."
+    }
+  ]
+}

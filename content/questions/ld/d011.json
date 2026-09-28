@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d011",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d011-q1",
+      "type": "세부 사실",
+      "prompt": "킴이 머물고 있는 집에 대한 설명으로 옳은 것은?",
+      "options": [
+        "침실이 3개인 크고 편안한 집이다",
+        "침실이 6개나 되는 저택이다",
+        "작지만 아늑한 집이다",
+        "낡고 좁아서 불편한 집이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "'The house here is very nice and comfortable', 'It's large, too. It has three bedrooms'에서 킴이 머무는 집이 침실 3개의 크고 편안한 집임을 알 수 있음."
+    },
+    {
+      "id": "d011-q2",
+      "type": "세부 사실",
+      "prompt": "베키에 대한 설명으로 옳은 것은?",
+      "options": [
+        "로라와 어릴 때부터 가장 친한 친구이다",
+        "금발의 곱슬머리를 가지고 있다",
+        "짧은 검은 머리에 늘 웃는 소녀이다",
+        "말이 없고 진지한 성격이다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'Do you remember Becky?' 다음에 'the short black hair', 'smiles and laughs all the time'이라고 베키를 설명함."
+    },
+    {
+      "id": "d011-q3",
+      "type": "목적/태도",
+      "prompt": "킴이 수영복을 두고 온 것에 대해 느낀 감정으로 가장 알맞은 것은?",
+      "options": [
+        "오히려 홀가분하고 기뻤다",
+        "몹시 화가 났다",
+        "대수롭지 않게 여겼다",
+        "무척 재미있어했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        10,
+        11
+      ],
+      "note": "'I forgot to bring it', 'I was really mad'에서 킴의 감정을 알 수 있음."
+    }
+  ]
+}

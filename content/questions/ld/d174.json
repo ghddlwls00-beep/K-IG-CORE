@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d174",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d174-q1",
+      "type": "목적/태도",
+      "prompt": "새 드릴 기계에 대한 존 헨리의 태도로 옳은 것은?",
+      "options": [
+        "다른 인부들처럼 기계를 크게 반겼다",
+        "기계가 신기해 구경만 했다",
+        "혼자서만 기계를 반기지 않았다",
+        "기계 다루는 법부터 배웠다"
+      ],
+      "answer": 2,
+      "evidence": [
+        7
+      ],
+      "note": "'The other men welcomed the machine, but not John Henry' — 존 헨리만 반기지 않음"
+    },
+    {
+      "id": "d174-q2",
+      "type": "세부 사실",
+      "prompt": "새 발명품인 드릴 기계를 사들인 쪽으로 옳은 것은?",
+      "options": [
+        "철도 공사를 하던 인부들",
+        "철도 공사 구경꾼들",
+        "철도에서 일하던 존 헨리",
+        "철도 사업에 돈을 대던 사람들"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'The men who were financing the railroad project bought a new invention, a drilling machine' — 철도 사업에 돈을 대던 사람들이 삼"
+    },
+    {
+      "id": "d174-q3",
+      "type": "세부 사실",
+      "prompt": "빅 벤드 터널 공사가 어려움에 부딪힌 까닭으로 옳은 것은?",
+      "options": [
+        "산의 바위가 너무 단단해서",
+        "땅이 너무 물러서 무너져 내려서",
+        "강철 드릴이 모자라서",
+        "구경꾼이 너무 많이 몰려와서"
+      ],
+      "answer": 0,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'When the Big Bend tunnel was started, trouble began' · 'The hard rock of the huge mountain seemed impossible to get through' — 바위가 너무 단단함"
+    }
+  ]
+}

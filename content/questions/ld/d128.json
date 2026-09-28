@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d128",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d128-q1",
+      "type": "세부 사실",
+      "prompt": "노르웨이의 집을 뛰쳐나온 뒤 테드가 맨 처음 한 일로 옳은 것은?",
+      "options": [
+        "배를 타는 선원이 되었다",
+        "여행사에서 일하기 시작했다",
+        "외국어를 배우러 학교에 갔다",
+        "서커스단에 들어갔다"
+      ],
+      "answer": 3,
+      "evidence": [
+        6,
+        7,
+        8
+      ],
+      "note": "'ran away from home in Norway', 'joined a circus and traveled all over Europe', 'Then he became a sailor'에서 확인 — 선원은 서커스 다음"
+    },
+    {
+      "id": "d128-q2",
+      "type": "목적/태도",
+      "prompt": "테드에 대한 글쓴이의 생각으로 가장 알맞은 것은?",
+      "options": [
+        "여행사 일을 자주 도와주는 고마운 사람이다",
+        "만나 본 사람 중 가장 흥미로운 사람이다",
+        "나이가 많아 옛이야기만 되풀이하는 사람이다",
+        "여행 계획을 자주 맡기는 단골손님이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "'the most interesting man I've ever met'에서 확인"
+    },
+    {
+      "id": "d128-q3",
+      "type": "세부 사실",
+      "prompt": "테드의 언어 실력에 대한 설명으로 옳은 것은?",
+      "options": [
+        "8개 언어를 모두 똑같이 잘한다",
+        "8개 언어를 모두 조금씩만 안다",
+        "5~6개 언어를 잘하고 2개는 조금 안다",
+        "2개 언어만 잘하고 나머지는 모두 조금 안다"
+      ],
+      "answer": 2,
+      "evidence": [
+        10,
+        11,
+        12
+      ],
+      "note": "'speak five or six languages well', 'Norwegian, French, Italian, Turkish, Chinese and English', 'a little Greek and Burmese'에서 확인"
+    }
+  ]
+}

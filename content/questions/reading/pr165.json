@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr165",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr165-q1",
+      "type": "세부 사실",
+      "prompt": "객관식 시험에 대해 글의 내용과 일치하는 것은?",
+      "options": [
+        "일반 개념을 다루는 능력을 증명하게 한다",
+        "서로 관련된 적은 수의 질문으로 이루어진다",
+        "암기 부담을 줄여 준다",
+        "사실들을 기계적으로 외우게 하기 쉽다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "\"The objective test\" · \"It often leads to rote memorization of isolated facts\" — 객관식 시험은 낱낱의 사실을 기계적으로 외우게 하기 쉬움"
+    },
+    {
+      "id": "pr165-q2",
+      "type": "한 단계 추론",
+      "prompt": "논술형 시험이 객관식 시험보다 나은 점으로 글에서 알 수 있는 것은?",
+      "options": [
+        "사실적 정보가 없어도 답할 수 있다",
+        "추측으로 정답을 맞히기가 어렵다",
+        "질문의 수가 훨씬 더 많다",
+        "짧은 답만 써도 충분하다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5,
+        8
+      ],
+      "note": "\"may be encouraged to guess answers\" · \"The essay exam\" · \"Mere guessing at answers is reduced to a minimum\" — 객관식은 추측을 부추기고 논술형은 추측이 최소로 줄어듦"
+    }
+  ]
+}

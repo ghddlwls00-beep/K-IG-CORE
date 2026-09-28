@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d084",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d084-q1",
+      "type": "세부 사실",
+      "prompt": "에스텔 존스가 하는 일로 옳은 것은?",
+      "options": [
+        "컴퓨터 포장 담당자",
+        "컴퓨터 판매 책임자",
+        "컴퓨터 개발 기술자",
+        "컴퓨터 배송 담당자"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'Estelle Jones is a sales manager'가 하는 일을 보여 줌"
+    },
+    {
+      "id": "d084-q2",
+      "type": "세부 사실",
+      "prompt": "컴퓨터가 다른 나라로 보내질 때 실리는 곳으로 옳은 것은?",
+      "options": [
+        "배의 화물칸",
+        "비행기의 화물칸",
+        "고속버스의 화물칸",
+        "기차의 화물칸"
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'delivered to the airport terminal'과 'taken to an airplane and loaded into the baggage compartment'가 비행기 화물칸임을 보여 줌"
+    },
+    {
+      "id": "d084-q3",
+      "type": "세부 사실",
+      "prompt": "손상된 컴퓨터는 어떻게 해야 하는가?",
+      "options": [
+        "도착한 나라에서 고쳐야 한다",
+        "그 나라 창고에 모아 두어야 한다",
+        "그 자리에서 바로 버려야 한다",
+        "미국으로 돌려보내야 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'The computers that are damaged must be sent back to the United States'가 손상된 컴퓨터를 어떻게 하는지 보여 줌"
+    }
+  ]
+}

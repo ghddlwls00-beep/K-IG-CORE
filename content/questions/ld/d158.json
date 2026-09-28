@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d158",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d158-q1",
+      "type": "세부사실",
+      "prompt": "취미에 드는 돈에 대해 말한 것은?",
+      "options": [
+        "우표 수집에는 돈이 꽤 많이 든다",
+        "어느 취미에나 돈이 조금씩은 든다",
+        "모형 비행기 만들기에 큰돈이 든다",
+        "돈이 전혀 들지 않는 취미도 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "Some hobbies are very expensive, but others don't cost anything at all"
+    },
+    {
+      "id": "d158-q2",
+      "type": "세부사실",
+      "prompt": "수집품(collections)에 대해 말한 것은?",
+      "options": [
+        "어떤 수집품은 주인에게만 소중하다",
+        "수집품은 오래될수록 값이 오른다",
+        "팔 수 없는 수집품은 가치가 없다",
+        "우표보다 모형 비행기가 더 비싸다"
+      ],
+      "answer": 0,
+      "evidence": [
+        8
+      ],
+      "note": "others are valuable only to their owners"
+    },
+    {
+      "id": "d158-q3",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "주말에는 운동을 하는 것이 제일 좋다",
+        "대부분의 사람은 주말에도 쉬지 못한다",
+        "사람마다 여가를 보내는 방법이 다르다",
+        "취미는 돈이 많이 들수록 더 가치 있다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "Some watch television... Others participate in sports · It depends on individual interests · many different ways to spend our spare time"
+    }
+  ]
+}

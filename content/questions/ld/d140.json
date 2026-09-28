@@ -1,0 +1,60 @@
+{
+  "v": 1,
+  "lesson": "d140",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d140-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "연극이 끝나고 친구들과 헤어져 곧장 집에 온 이야기",
+        "늦게 도착해 연극은 못 보고 친구들만 만난 이야기",
+        "연극이 끝나고 친구들 집에 초대받아 간 이야기",
+        "연극이 끝나고 옛 친구들과 늦게까지 어울린 이야기"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "'After the play was over, we met some friends we hadn't seen for a long time' · 'They wanted to go to a nightclub' · 'I finally agreed' · 'about 2:00 in the morning'이 연극이 끝나고 오랜만에 만난 친구들과 늦게까지 어울렸음을 보여 줌"
+    },
+    {
+      "id": "d140-q2",
+      "type": "다음에 할 일",
+      "prompt": "연극이 끝난 뒤 친구들이 하고 싶어 한 일로 알맞은 것은?",
+      "options": [
+        "나이트클럽에 가서 춤을 추는 것",
+        "곧장 집으로 돌아가는 것",
+        "식당에서 늦은 저녁을 먹는 것",
+        "집에 모여 수다를 떠는 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'They wanted to go to a nightclub' · 'since my wife and I had gone dancing, but I finally agreed'가 친구들이 나이트클럽에 가서 춤추기를 원했음을 보여 줌"
+    },
+    {
+      "id": "d140-q3",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "글의 마지막 부분에서 말하는 이의 심정으로 가장 알맞은 것은?",
+      "options": [
+        "이제 돈이 생겼으니 자주 놀러 가고 싶다",
+        "젊을 때처럼 돈을 아껴 써야겠다고 다짐한다",
+        "이제 돈은 있지만 즐길 힘이 없어 아쉽다",
+        "돈이 모자라 친구들과 더 놀지 못해 서운하다"
+      ],
+      "answer": 2,
+      "evidence": [
+        10,
+        11
+      ],
+      "note": "'didn't have the money to go out for an evening like this' · 'Now that I can afford it, I don't have the energy to really enjoy it'이 이제 돈은 있지만 즐길 힘이 없어 아쉬워함을 보여 줌"
+    }
+  ]
+}

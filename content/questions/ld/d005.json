@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d005",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d005-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "두 친구가 서로 다른 점",
+        "두 친구가 즐겨 먹는 음식의 조리법",
+        "두 친구의 비슷한 취향",
+        "두 친구가 함께 나간 운동 대회"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        7,
+        8
+      ],
+      "note": "'They like many of the same things', 'dislike many of the same kinds of things'에서 두 친구의 취향이 비슷함을 알 수 있음."
+    },
+    {
+      "id": "d005-q2",
+      "type": "세부 사실",
+      "prompt": "톰과 프레드에 대한 설명으로 옳은 것은?",
+      "options": [
+        "생선은 먹지 않는다",
+        "아침 일찍 일어나기를 즐긴다",
+        "야구를 가장 잘한다",
+        "낚시를 무척 좋아한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'both boys like to fish', 'They love to fish'에서 알 수 있음."
+    },
+    {
+      "id": "d005-q3",
+      "type": "목적/태도",
+      "prompt": "톰과 프레드의 학교와 공부에 대한 태도로 가장 알맞은 것은?",
+      "options": [
+        "그다지 좋아하지 않는다",
+        "매우 좋아한다",
+        "학교는 좋아하지만 공부는 싫어한다",
+        "공부는 좋아하지만 학교는 싫어한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        8
+      ],
+      "note": "'they don't like school very much and they don't like to study'에서 태도를 알 수 있음."
+    }
+  ]
+}

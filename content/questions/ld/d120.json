@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d120",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d120-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "새 생활 방식을 좇아 문화적 정체성을 버린 원주민",
+        "정부 통제 속에서도 문화적 정체성을 지켜 온 원주민",
+        "1890년 이후에도 정부와의 싸움을 멈추지 않은 원주민",
+        "수백만 명이 모두 보호구역에 모여 사는 원주민"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        7,
+        12
+      ],
+      "note": "'placed under the control of a government agency', 'refused to give up their cultural identity', 'proud of their traditions, history, and languages'가 정부 통제 속에서도 정체성을 지켜 왔음을 보여 줌"
+    },
+    {
+      "id": "d120-q2",
+      "type": "세부 사실",
+      "prompt": "인디언사무국에서 일한 사람들에 대한 설명으로 옳은 것은?",
+      "options": [
+        "원주민의 언어와 전통을 지켜 주려 했다",
+        "원주민이 보호구역을 스스로 다스리게 했다",
+        "원주민과 싸움을 다시 벌이려 했다",
+        "원주민을 거의 이해하지 못했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'The people who worked for the agency understood little about the Indians'가 원주민을 거의 이해하지 못했음을 보여 줌"
+    },
+    {
+      "id": "d120-q3",
+      "type": "목적/태도",
+      "prompt": "오늘날 많은 원주민이 힘쓰고 있는 일로 옳은 것은?",
+      "options": [
+        "보호구역의 생활 여건을 개선하는 일",
+        "보호구역을 떠나 도시로 옮겨 가는 일",
+        "보호구역을 300곳 넘게 새로 만드는 일",
+        "보호구역 관리를 인디언사무국에 맡기는 일"
+      ],
+      "answer": 0,
+      "evidence": [
+        11
+      ],
+      "note": "'Many Native Americans are working to improve conditions on the reservations'가 보호구역의 생활 여건을 개선하려고 애씀을 보여 줌"
+    }
+  ]
+}

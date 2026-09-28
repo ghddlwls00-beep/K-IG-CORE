@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d033",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d033-q1",
+      "type": "세부 사실",
+      "prompt": "해마다 뉴올리언스를 찾는 관광객 수로 옳은 것은?",
+      "options": [
+        "수천 명",
+        "수만 명",
+        "수십만 명",
+        "수백만 명"
+      ],
+      "answer": 3,
+      "evidence": [
+        8
+      ],
+      "note": "8번 줄 'Each year, millions of tourists visit New Orleans'에서 확인."
+    },
+    {
+      "id": "d033-q2",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "뉴올리언스는 무역이 활발한 큰 항구 도시이다",
+        "뉴올리언스는 라틴 아메리카에 바나나와 커피를 판다",
+        "뉴올리언스는 미시시피강 덕분에 농업이 발달했다",
+        "뉴올리언스는 멕시코만에서 160킬로미터 떨어진 섬이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "note": "1~5번 줄 'one of the busiest seaports' · 'along the Mississippi River' · 'a great shipping center' · 'a great deal of trade with Latin America' · 'come by ship to New Orleans'에서 확인."
+    },
+    {
+      "id": "d033-q3",
+      "type": "세부 사실",
+      "prompt": "뉴올리언스가 미국 남부에서 중심지 역할을 하는 분야로 옳은 것은?",
+      "options": [
+        "농업, 광업, 임업",
+        "사업, 문화, 산업",
+        "교육, 의료, 금융",
+        "정치, 군사, 외교"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "6번 줄 'a leading business, cultural, and industrial center'에서 확인."
+    }
+  ]
+}

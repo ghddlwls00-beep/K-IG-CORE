@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr253",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr253-q1",
+      "type": "세부 사실",
+      "prompt": "소의 먹이를 갑자기 바꾸면 나타날 수 있는 일로 글에 나온 것은?",
+      "options": [
+        "체중이 늘고 우유도 더 나올 수 있다",
+        "체중은 줄지만 우유는 더 나올 수 있다",
+        "체중이 줄고 우유도 덜 나올 수 있다",
+        "체중은 늘지만 우유는 덜 나올 수 있다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'may first lose weight', 'may give less milk' 문장으로 확인."
+    },
+    {
+      "id": "pr253-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것은?",
+      "options": [
+        "소가 새 먹이에 적응하려면 시간이 걸린다",
+        "농부는 소의 먹이를 한번 정하면 바꾸지 않는다",
+        "농부는 우유를 늘리려고 소의 먹이를 바꾼다",
+        "소는 어떤 먹이가 주어져도 곧바로 익숙해진다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "'a sudden change', 'suddenly eats lots of a new food', 'changes the cow's food slowly so that the cow can adapt' 문장으로 확인."
+    }
+  ]
+}

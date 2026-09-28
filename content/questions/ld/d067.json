@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d067",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d067-q1",
+      "type": "세부 사실",
+      "prompt": "애스컷 부인이 그 양조장에 한 일로 알맞은 것은?",
+      "options": [
+        "편지를 써서 항의했다",
+        "직접 찾아가 따졌다",
+        "전화를 걸어 따졌다",
+        "이름값을 내라고 했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        3
+      ],
+      "note": "'Mrs. Ruth Ascott'과 'She wrote to the brewery insisting that they could not use the word Lite'가 애스컷 부인이 편지로 항의했음을 보여줌"
+    },
+    {
+      "id": "d067-q2",
+      "type": "세부 사실",
+      "prompt": "'53년'이 나타내는 것으로 알맞은 것은?",
+      "options": [
+        "라이트 맥주가 그 이름으로 팔려 온 기간",
+        "애스컷 부인이 그 회사를 이끌어 온 기간",
+        "라이트 소프가 같은 이름을 써 온 기간",
+        "그 양조장이 맥주 광고를 내 온 기간"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'Lite Soap had the same name for 53 years'가 53년이 라이트 소프가 같은 이름을 써 온 기간임을 보여줌"
+    },
+    {
+      "id": "d067-q3",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "그 양조장이 '라이트는 비누 맛이 난다' 광고에 대해 취하기로 한 태도로 알맞은 것은?",
+      "options": [
+        "비누 회사를 법원에 고소하기로 했다",
+        "맥주 이름을 다른 것으로 바꾸기로 했다",
+        "그 광고를 무시하기로 했다",
+        "비누 회사에 사과하기로 했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'The brewery replied'와 'They planned to ignore the \"Lite tastes soapy\" ad'가 양조장의 태도를 보여줌"
+    }
+  ]
+}

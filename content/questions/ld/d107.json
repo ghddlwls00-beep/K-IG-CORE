@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "d107",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d107-q1",
+      "type": "세부 사실",
+      "prompt": "프랭클린의 배움에 대한 설명으로 옳은 것은?",
+      "options": [
+        "학교를 2년 다닌 뒤 형에게서 여러 언어를 배웠다",
+        "2년 동안 학교에서 인쇄 기술을 배웠다",
+        "학교는 2년만 다녔지만 여러 언어를 혼자 익혔다",
+        "학교를 2년 다녔고 책은 거의 읽지 않았다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "'attended school for only two years', 'read many books and managed to teach himself several languages'가 학교는 2년만 다녔지만 여러 언어를 혼자 익혔음을 보여 줌"
+    },
+    {
+      "id": "d107-q2",
+      "type": "세부 사실",
+      "prompt": "프랭클린이 17살에 필라델피아로 간 까닭으로 옳은 것은?",
+      "options": [
+        "형과 자주 다퉈서",
+        "형의 인쇄소를 물려받으려고",
+        "학교를 더 다니려고",
+        "보스턴의 학교가 싫어서"
+      ],
+      "answer": 0,
+      "evidence": [
+        5
+      ],
+      "note": "'Franklin and his brother had many arguments, so when he was 17, Franklin went to Philadelphia'가 형과 자주 다툰 것이 까닭임을 보여 줌"
+    }
+  ]
+}

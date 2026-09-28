@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d273",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d273-q1",
+      "type": "중심 내용",
+      "prompt": "이 글이 주로 다루는 내용으로 가장 적절한 것은?",
+      "options": [
+        "바벨탑이 무너지게 된 과정",
+        "여러 언어가 생겨나게 된 내력",
+        "영어가 세계 공용어가 된 까닭",
+        "라틴어가 사라지게 된 과정"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        6
+      ],
+      "note": "'an allegorical explanation of the origin of the various languages' · 'Many of them stem from a common source' — 여러 언어가 생겨난 내력"
+    },
+    {
+      "id": "d273-q2",
+      "type": "세부 사실",
+      "prompt": "사람들이 하늘에 닿는 탑을 지으려 한 까닭으로 말한 것은?",
+      "options": [
+        "이름을 널리 떨치려고",
+        "하늘에 있는 신을 기리려고",
+        "흩어진 말을 하나로 모으려고",
+        "교만에 대한 벌을 피하려고"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'In an attempt to make a name for themselves, people tried to build a tower' — 이름을 떨치려고"
+    },
+    {
+      "id": "d273-q3",
+      "type": "세부 사실",
+      "prompt": "영어에 대해 말한 것으로 옳은 것은?",
+      "options": [
+        "문법 일부는 라틴어에서 왔고 어휘는 독일어와 비슷하다",
+        "어휘 일부는 라틴어에서 왔고 문법은 프랑스어와 비슷하다",
+        "문법 일부는 라틴어에서 왔고 어휘는 프랑스어와 비슷하다",
+        "어휘 일부는 라틴어에서 왔고 문법은 독일어와 비슷하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        8,
+        9
+      ],
+      "note": "'English ... has borrowed elements from many languages' · 'Its vocabulary comes in part from Latin while its grammar is similar to that of German' — 어휘 일부는 라틴어, 문법은 독일어와 비슷"
+    }
+  ]
+}

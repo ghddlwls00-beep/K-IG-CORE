@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr011",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr011-q1",
+      "type": "detail",
+      "prompt": "이 글에 따르면, 거대한 망원경이 만들어지면 얻게 될 결과로 가장 알맞은 것은?",
+      "options": [
+        "달 주위를 도는 관광 여행을 떠날 수 있게 된다",
+        "태양광 발전소를 우주에 세울 수 있게 된다",
+        "더 긴 비행을 위한 추가 동력을 얻게 된다",
+        "우주를 7배나 더 멀리 볼 수 있게 된다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'help make a giant telescope' 다음에 3번 'see seven times further into space'가 이어진다"
+    },
+    {
+      "id": "pr011-q2",
+      "type": "vocab",
+      "prompt": "'It could help make a giant telescope'에서 It이 가리키는 것으로 가장 알맞은 것은?",
+      "options": [
+        "우주선 크레인호",
+        "거대한 망원경",
+        "태양광 발전소",
+        "달 주위 관광 여행"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번 'The Crane could help us' 다음 2번 'It could help make a giant telescope'의 It은 앞 문장의 주어를 가리킨다"
+    }
+  ]
+}

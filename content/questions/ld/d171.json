@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d171",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d171-q1",
+      "type": "목적/태도",
+      "prompt": "고양이 때문에 벌어진 일에 대해 친구들이 보인 반응으로 가장 적절한 것은?",
+      "options": [
+        "몹시 당황해 어쩔 줄 몰라 했다",
+        "웃으며 걱정하지 말라고 했다",
+        "화를 내며 자리를 떴다",
+        "음식을 새로 주문하자고 졸랐다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'My cousin was very embarrassed, but fortunately her friends just laughed and told her not to worry' — 당황한 것은 사촌, 친구들은 웃으며 안심시킴"
+    },
+    {
+      "id": "d171-q2",
+      "type": "세부 사실",
+      "prompt": "사촌이 고양이를 밖에 내놓은 뒤 사람들이 한 일로 옳은 것은?",
+      "options": [
+        "남은 음식을 모두 버리고 새로 시켰다",
+        "모두 곧장 병원으로 달려갔다",
+        "남은 음식을 함께 나누어 먹었다",
+        "새로 시킨 음식을 기다렸다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'My cousin put the cat out, and they all shared the remaining portions of food' — 남은 음식을 나눠 먹음"
+    },
+    {
+      "id": "d171-q3",
+      "type": "세부 사실",
+      "prompt": "응급실 의사가 사촌과 친구들을 살펴본 결과로 옳은 것은?",
+      "options": [
+        "모두 식중독이라고 진단했다",
+        "고양이만 식중독이라고 했다",
+        "몇 사람만 식중독이라고 진단했다",
+        "아무 이상도 못 찾았다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'The doctor in the emergency room couldn't find anything wrong with them, however' — 아무 이상도 찾지 못함"
+    }
+  ]
+}

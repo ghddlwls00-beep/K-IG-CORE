@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d185",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d185-q1",
+      "type": "세부 사실",
+      "prompt": "캐플런이 계산을 처음부터 다시 하지 않았다면 벌어졌을 수도 있는 일은 무엇인가?",
+      "options": [
+        "작은 다이아몬드를 더 얻었을 수도 있다",
+        "다이아몬드를 망가뜨렸을 수도 있다",
+        "소유주에게 값을 더 받았을 수도 있다",
+        "더 큰 다이아몬드를 얻었을 수도 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'He had to begin his calculations all over again' / 'Otherwise, he might have destroyed the stone' — 다시 계산하지 않았다면 돌을 망가뜨렸을 수도"
+    },
+    {
+      "id": "d185-q2",
+      "type": "목적/태도",
+      "prompt": "캐플런이 첫 일격을 가하기 전에 며칠 더 기다린 까닭으로 알맞은 것은?",
+      "options": [
+        "결함 때문에 계산을 다시 해야 해서",
+        "소유주가 작업을 조금 미루자고 해서",
+        "새 도구가 아직 오지 않아서",
+        "몸과 마음이 최상이 되길 바라서"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'waited a few more days until he felt he was in the best physical and mental condition possible' — 몸과 마음이 가장 좋은 상태가 될 때까지"
+    },
+    {
+      "id": "d185-q3",
+      "type": "세부 사실",
+      "prompt": "캐플런이 다이아몬드의 결함을 발견한 때로 알맞은 것은?",
+      "options": [
+        "작업을 시작할 준비가 됐다고 느꼈을 때",
+        "연구를 막 시작한 첫날",
+        "소유주에게 결과를 약속한 직후",
+        "첫 일격을 가하려고 도구를 들었을 때"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'When he felt he was ready to start work, he discovered a flaw' — 작업 준비가 됐다고 느꼈을 때 결함 발견"
+    }
+  ]
+}

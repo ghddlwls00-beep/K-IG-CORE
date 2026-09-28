@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "d100",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d100-q1",
+      "type": "중심 내용",
+      "prompt": "이 글이 어업에 대해 말하는 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "오래전부터 큰 산업이었지만 오늘날 이 일로 먹고사는 사람은 드물다",
+        "오래되고 큰 산업이지만 다른 일자리는 거의 만들지 못한다",
+        "오래되고 큰 산업이며 일자리도 많이 만든다",
+        "오래되고 큰 산업이며 이 일을 하는 사람 대부분이 미국에 있다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "note": "'one of the world's oldest industries' · 'over 30 million people in the world who make their living by catching fish' · 'create thousands of other jobs' · 'over 90 billion kilograms of fish a year' — 어업은 오래되고 큰 산업이며 많은 사람에게 일자리가 됨"
+    },
+    {
+      "id": "d100-q2",
+      "type": "세부 사실",
+      "prompt": "'11 kilograms'가 가리키는 것으로 알맞은 것은?",
+      "options": [
+        "미국 어부 한 명이 하루에 잡는 양",
+        "어부 한 명이 한 번에 파는 양",
+        "생선 한 상자를 포장하는 무게",
+        "세계 인구 한 명당 한 해 어획량"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'catches over 90 billion kilograms of fish a year' · 'about 11 kilograms for each person in the world' — 한 해 어획량을 세계 인구 한 명당으로 나눈 양"
+    }
+  ]
+}

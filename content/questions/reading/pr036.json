@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr036",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr036-q1",
+      "type": "detail",
+      "prompt": "이 글의 내용과 일치하지 않는 것은?",
+      "options": [
+        "낙타는 혹에 물을 저장한다",
+        "낙타는 몸에서 물이 아주 조금만 빠져나간다",
+        "낙타는 땀을 아주 적게 흘린다",
+        "목마른 낙타는 10분 만에 약 100리터를 마신다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'a camel stores water in its hump, but this is not true'로 보아 혹에 물을 저장한다는 말은 사실이 아니다."
+    },
+    {
+      "id": "pr036-q2",
+      "type": "inference",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "낙타는 더운 날씨에서는 살 수 없다",
+        "혹이 작아졌다면 먹이가 부족했을 가능성이 있다",
+        "혹이 한쪽으로 처진 낙타는 병에 걸린 것이다",
+        "낙타는 매일 정해진 양의 물을 마셔야 한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'made mostly of fat'과 3번 'When food is hard to find', 'the hump becomes smaller'로 보아 혹이 작아졌다면 먹이가 부족했을 가능성이 있다."
+    }
+  ]
+}

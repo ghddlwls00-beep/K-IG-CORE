@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr066",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr066-q1",
+      "type": "세부 사실",
+      "prompt": "문어가 적에게 들켰을 때 하는 행동으로 글에 나온 것은?",
+      "options": [
+        "몸 색깔을 순식간에 바꾸어 상대에게 달려든다",
+        "먹물을 뿜은 뒤 그 자리에서 상대와 맞서 싸운다",
+        "먹물을 뿜어 앞을 못 보게 하고 달아난다",
+        "바위틈으로 숨어 들어가 꼼짝하지 않고 기다린다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "5번 'If it is discovered, it can shoot out a cloud of dark ink and escape while the attacker cannot see'에 근거함."
+    },
+    {
+      "id": "pr066-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "변장 능력은 적을 피할 때뿐 아니라 사냥할 때도 쓰인다",
+        "문어는 등뼈가 있는 동물 가운데 가장 영리하다",
+        "문어는 몸 색깔은 바꾸어도 피부 질감은 바꾸지 못한다",
+        "문어는 먹이가 다가오기를 기다리지 않고 쫓아간다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "2번 'change its color', 3번 'change the texture of its skin', 4번 'In this way, an octopus can hide from enemies such as sharks and wait for crabs and fish to come close'에 근거함."
+    }
+  ]
+}

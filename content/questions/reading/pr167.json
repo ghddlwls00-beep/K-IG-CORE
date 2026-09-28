@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr167",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr167-q1",
+      "type": "세부 사실",
+      "prompt": "일부 사람들이 언어와 비슷하다고 여기는 행위로 언급된 것은?",
+      "options": [
+        "하품하기나 기지개 켜기",
+        "숨쉬기나 눈 깜빡이기",
+        "걷기나 뛰기",
+        "먹기나 마시기"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "\"a more or less automatic and natural act like breathing or winking\" — 일부 사람들이 언어를 숨쉬기나 눈 깜빡이기처럼 여김"
+    },
+    {
+      "id": "pr167-q2",
+      "type": "중심 생각",
+      "prompt": "글쓴이의 주장으로 가장 적절한 것은?",
+      "options": [
+        "언어는 부모에게서 저절로 물려받는다",
+        "언어는 일상에서 저절로 몸에 밴다",
+        "언어는 짧은 훈련으로 금방 익힌다",
+        "언어는 오랜 교육을 거쳐야만 전해진다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "\"nothing automatic about language\" · \"takes a long time\" · \"passed on ... only by intensive education\" — 언어는 오랜 교육으로만 전해진다는 주장"
+    }
+  ]
+}

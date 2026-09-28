@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr243",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr243-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "외국인 노동자는 한국어를 따로 배울 필요가 없다",
+        "한국어 교재를 더 많이 만드는 일이 무엇보다 급하다",
+        "외국인 노동자의 한국어 교육 과정을 개선해야 한다",
+        "한국어 교육은 이제 더 발전할 필요가 없다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4,
+        5
+      ],
+      "note": "'Only a small number of foreigners' · 'little or no teaching experience' · 'establish better educational programs'가 글의 요지"
+    },
+    {
+      "id": "pr243-q2",
+      "type": "세부 사실",
+      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "options": [
+        "한국어 교육은 1990년대 중반부터 오히려 뒷걸음질했다",
+        "대부분의 외국인이 한국어 교육 발전의 혜택을 받았다",
+        "많은 대학이 국내외에서 한국어 과정을 열고 있다",
+        "외국인 노동자는 주로 전문 교사에게 배운다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'Many universities now offer Korean language programs in Korea and abroad'와 일치"
+    }
+  ]
+}

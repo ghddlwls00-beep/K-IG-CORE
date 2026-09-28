@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr188",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr188-q1",
+      "type": "세부 사실",
+      "prompt": "어른이 생각하는 것으로 이 글의 내용과 일치하는 것은?",
+      "options": [
+        "12살 아이는 월급 걱정이 없다",
+        "어른 시절은 풍족한 시기다",
+        "고민은 어린 시절에만 있다",
+        "지붕이 새면 아이도 함께 걱정한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'The twelve-year-old, the adult thinks, does not worry about salary' 인용."
+    },
+    {
+      "id": "pr188-q2",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "행복은 언제나 현재에서 찾을 수 있다",
+        "어른이 되면 고민이 모두 사라진다",
+        "사람들은 행복을 과거나 미래에서 찾는다",
+        "아이들은 어른이 되는 것을 두려워한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        7,
+        9
+      ],
+      "note": "'childhood is a time of freedom', 'He finds freedom in the future', 'remembered as a thing of the past or looked forward to as a part of the future' 인용."
+    }
+  ]
+}

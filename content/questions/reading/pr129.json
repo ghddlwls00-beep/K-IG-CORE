@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr129",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr129-q1",
+      "type": "세부 사실",
+      "prompt": "많은 건물이 온수 온도를 낮춘 이유로 가장 적절한 것은?",
+      "options": [
+        "에너지를 아끼려고",
+        "레지오넬라균을 없애려고",
+        "냉각탑의 물을 아끼려고",
+        "수돗물을 덜 쓰려고"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'To save energy'가 온수 온도를 낮춘(lowered the temperature of their hot water) 까닭"
+    },
+    {
+      "id": "pr129-q2",
+      "type": "세부 사실",
+      "prompt": "1976년 필라델피아에서 일어난 일에 대한 설명으로 옳은 것은?",
+      "options": [
+        "180여 명이 모두 숨졌다",
+        "호텔 직원 180여 명이 병에 걸렸다",
+        "병에 걸린 사람 중 29명이 숨졌다",
+        "환자들이 모두 회복했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        6
+      ],
+      "note": "'more than 180 people … became ill, and 29 of them died' — 180여 명이 앓고 그중 29명이 숨짐"
+    }
+  ]
+}

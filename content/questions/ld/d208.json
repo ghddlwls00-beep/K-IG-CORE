@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "d208",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d208-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "대학은 공부보다 여가 활동을 먼저 생각해야 한다",
+        "대학은 무엇보다 학생의 건강을 먼저 챙겨야 한다",
+        "대학은 공부가 먼저지만 여가 활동도 중요하게 여긴다",
+        "대학생은 공부를 모두 마친 뒤에만 운동해야 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'first and foremost a place of learning' · 'give first place to his studies' · 'recreation plays an important role' — 공부가 먼저지만 여가 활동도 중요"
+    },
+    {
+      "id": "d208-q2",
+      "type": "세부 사실",
+      "prompt": "체육관에서 1시간 운동한 뒤의 학생에 대해 이 글에서 말한 것은?",
+      "options": [
+        "상쾌하지만 공부할 의욕은 오히려 줄어든다",
+        "개운한 기분으로 다시 책을 펴고 싶어진다",
+        "긴장이 풀려 공부보다 운동에 더 의욕이 생긴다",
+        "몸이 지쳐서 공부할 의욕을 잃는다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'return to his books refreshed and eager to study' — 개운한 기분으로 다시 책으로 돌아가 공부하고 싶어짐"
+    }
+  ]
+}

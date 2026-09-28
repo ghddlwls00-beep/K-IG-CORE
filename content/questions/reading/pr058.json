@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr058",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr058-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "미국 학교는 실생활에 쓸모 있는 지식과 사고력을 가르치려 한다",
+        "존 듀이는 학생들에게 많은 사실을 암기시켜야 한다고 주장했다",
+        "미국 학교는 무엇보다 학생들에게 철학 이론을 가르친다",
+        "존 듀이의 사상은 미국 교육에 별다른 영향을 주지 못했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "note": "1번 'try, above all, to be practical', 3번 'knowledge that can be used in real life', 5번 'teach thinking processes and skills'"
+    },
+    {
+      "id": "pr058-q2",
+      "type": "vocab",
+      "prompt": "이 글에서 'worthwhile'의 뜻으로 가장 적절한 것은?",
+      "options": [
+        "쓸모가 없는",
+        "외우기 쉬운",
+        "가치가 있는",
+        "널리 알려진"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 'the only worthwhile knowledge was knowledge that can be used in real life', 4번 'pointless ... useless facts'"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "v": 1,
+  "lesson": "d222",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d222-q1",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 자동차 · 기차 · 비행기 · 버스에 대해 말한 것은?",
+      "options": [
+        "모두 배 여행보다 더 즐겁다",
+        "모두 이국적인 곳으로 데려다준다",
+        "모두 나름대로 장점을 갖고 있다",
+        "모두 배 여행보다 값이 싸다"
+      ],
+      "answer": 2,
+      "evidence": [2],
+      "note": "The car, the train, the plane, the bus, all have their advantages"
+    },
+    {
+      "id": "d222-q2",
+      "type": "세부 사실",
+      "prompt": "열대 섬들을 여행하고 집에 돌아온 사람에 대해 말한 것은?",
+      "options": [
+        "친구들에게서 섬 이야기를 듣는다",
+        "친구들에게 들려줄 이야기가 많아진다",
+        "친구들과 다시 떠날 계획을 세운다",
+        "배 여행이 힘들었다며 후회한다"
+      ],
+      "answer": 1,
+      "evidence": [5],
+      "note": "when one returns home, he will have many interesting tales to tell his friends"
+    }
+  ]
+}

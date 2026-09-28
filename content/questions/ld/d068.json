@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d068",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d068-q1",
+      "type": "세부 사실",
+      "prompt": "그 당시 댈러스에 가 있던 사람으로 알맞은 것은?",
+      "options": [
+        "화자의 어머니",
+        "화자의 아버지",
+        "화자 자신",
+        "화자의 친구"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'My father was away in Dallas at the time'이 댈러스에 가 있던 사람이 아버지임을 보여줌"
+    },
+    {
+      "id": "d068-q2",
+      "type": "세부 사실",
+      "prompt": "화자가 당시 자기 운전에 대해 말한 내용으로 알맞은 것은?",
+      "options": [
+        "시내까지 자주 차를 몰고 다녔다",
+        "그 차를 딱 한 번 몰아 보았다",
+        "누구보다 운전에 자신이 넘쳤다",
+        "차를 몰다가 사고를 낸 적이 있었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'I had driven it only once before'가 화자가 그 차를 딱 한 번 몰아 보았음을 보여줌"
+    },
+    {
+      "id": "d068-q3",
+      "type": "다음에 할 일",
+      "prompt": "화자가 결국 한 행동으로 알맞은 것은?",
+      "options": [
+        "버스를 타고 시내에 갔다",
+        "걸어서 정거장까지 갔다",
+        "차를 집에 두고 기차를 탔다",
+        "차를 몰고 정거장으로 갔다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        8
+      ],
+      "note": "'meet him with the car'와 'I wanted to show everybody my brand new car, so off I went'가 화자가 결국 차를 몰고 나갔음을 보여줌"
+    }
+  ]
+}

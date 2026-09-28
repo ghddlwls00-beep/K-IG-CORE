@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr240",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr240-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "기억은 뇌의 한 영역에 통째로 저장된다",
+        "기억은 하나의 정보로만 이루어진다",
+        "하나로 보이는 기억도 여러 조각을 모은 것이다",
+        "기억은 이름보다 소리로 더 잘 떠오른다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'a single memory is actually a complex construction' · 'each extracted from a different region of the brain'"
+    },
+    {
+      "id": "pr240-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 기억력이 약해지는 것에 대해 알 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "누구나 노년이 되어서야 시작된다",
+        "정보가 뇌에서 지워져서 생기는 일이다",
+        "20대가 지나면 저절로 멈춘다",
+        "이르면 20대부터 시작되기도 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'the weakening of memory is ... the failure to put together' · 'the breakdown of that assembly process as early as in our 20s'"
+    }
+  ]
+}

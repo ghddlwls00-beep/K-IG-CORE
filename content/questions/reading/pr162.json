@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr162",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr162-q1",
+      "type": "세부 사실",
+      "prompt": "글에서 'Some star players'가 믿는 자신의 역할은 무엇인가?",
+      "options": [
+        "젊은이들의 본보기가 되는 것",
+        "훌륭한 선수가 되는 것",
+        "사생활을 모두 공개하는 것",
+        "돈을 받고 본보기가 되는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "\"their role is to be a great player, not a role model for young people\" — 본보기가 아니라 훌륭한 선수가 되는 것이 역할이라고 믿음"
+    },
+    {
+      "id": "pr162-q2",
+      "type": "한 단계 추론",
+      "prompt": "'We are chosen'이라는 말에 담긴 뜻으로 가장 적절한 것은?",
+      "options": [
+        "사람들이 스타 선수를 본보기로 삼는다",
+        "본보기가 될지 말지는 선수가 스스로 정한다",
+        "구단이 경기에 나갈 선수를 뽑는다",
+        "좋은 본보기만 사람들에게 뽑힌다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "\"sports stars are role models for people\" · \"We do not choose to be role models. We are chosen.\" — 스스로 고르는 것이 아니라 사람들이 본보기로 삼음"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr067",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr067-q1",
+      "type": "세부 사실",
+      "prompt": "돼지가 태양에 로켓을 보내도 녹지 않는다고 말한 이유로 가장 적절한 것은?",
+      "options": [
+        "로켓이 화성을 먼저 거쳐 갈 것이기 때문에",
+        "로켓이 한 달 뒤에야 태양에 닿기 때문에",
+        "침팬지가 보낸 로켓보다 튼튼하기 때문에",
+        "로켓을 밤에 쏘아 올릴 것이기 때문에"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "4번 'The rocket will melt before it gets there', 5번 'No, it won't', 'We're sending it up at night'에 근거함."
+    },
+    {
+      "id": "pr067-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "여우가 한 말 'That's nothing'에 담긴 뜻으로 가장 적절한 것은?",
+      "options": [
+        "침팬지의 말은 모두 거짓이다",
+        "침팬지가 한 일은 대단하지 않다",
+        "여우는 우주 탐사에 전혀 관심이 없다",
+        "여우는 침팬지를 도저히 이길 수 없다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번 'We sent a rocket to the moon', 2번 'That's nothing', 'We already sent our spaceship to Mars'에 근거함."
+    }
+  ]
+}

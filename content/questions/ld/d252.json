@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "d252",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d252-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "노크 없이 들어가면 자신감 있어 보여 좋은 인상을 준다",
+        "면접에서는 예절보다 기술과 재능이 중요하다",
+        "면접은 인사 책임자와 마주 앉은 뒤에야 시작된다",
+        "면접에서는 기본 예절과 잘 다듬어진 인품이 중요하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "note": "'begins the moment one raps on … door' · 'already made a bad impression' · 'common courtesy are never more important' · 'the most valuable asset … is a well-developed personality'"
+    },
+    {
+      "id": "d252-q2",
+      "type": "목적/태도",
+      "prompt": "노련한 면접관이 면접에서 하려고 애쓰는 것은?",
+      "options": [
+        "지원자의 긴장을 풀어 주는 것",
+        "지원자에게 회사 자랑을 늘어놓는 것",
+        "지원자의 예절부터 엄하게 따지는 것",
+        "지원자의 재능만 빠르게 확인하는 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "'The skillful interviewer, however, will try to put the applicant at ease'"
+    }
+  ]
+}

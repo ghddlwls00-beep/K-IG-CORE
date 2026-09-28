@@ -1,0 +1,61 @@
+{
+  "v": 1,
+  "lesson": "d014",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d014-q1",
+      "type": "세부 사실",
+      "prompt": "그가 하지 못하는 운동으로 옳은 것은?",
+      "options": [
+        "농구",
+        "테니스",
+        "수영",
+        "골프"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'But he can't swim', 'he could never learn to swim'에서 알 수 있음."
+    },
+    {
+      "id": "d014-q2",
+      "type": "세부 사실",
+      "prompt": "그의 외국어 실력에 대한 설명으로 옳은 것은?",
+      "options": [
+        "러시아어를 말하고 읽고 쓸 수 있다",
+        "중국어를 말할 수 있지만 읽지는 못한다",
+        "독일어를 읽고 쓸 수 있지만 말하지는 못한다",
+        "포르투갈어는 말할 수 있지만 쓰지는 못한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6,
+        7,
+        8
+      ],
+      "note": "'He can speak, read, and write Russian and Portuguese'에서 알 수 있음."
+    },
+    {
+      "id": "d014-q3",
+      "type": "목적/태도",
+      "prompt": "그에 대한 말하는 사람의 태도로 가장 알맞은 것은?",
+      "options": [
+        "그가 운동을 그만둘까 봐 걱정하고 있다",
+        "그의 남다른 재능과 특이한 점을 신기해하고 있다",
+        "그가 잘난 척하는 것을 못마땅해하고 있다",
+        "그의 재능을 시기하고 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        5,
+        9,
+        10
+      ],
+      "note": "'a very good athlete', 'He learns languages easily', 'Isn't that strange?'에서 그의 재능과 특이한 점을 신기하게 여김을 알 수 있음."
+    }
+  ]
+}

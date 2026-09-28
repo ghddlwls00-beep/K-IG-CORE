@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "d044",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d044-q1",
+      "type": "세부 사실",
+      "prompt": "빌과 존이 각각 전공하려는 분야를 바르게 짝지은 것은?",
+      "options": [
+        "빌은 러시아어, 존은 화학",
+        "빌은 화학, 존은 현대 언어",
+        "빌은 현대 언어, 존은 중국어",
+        "빌은 현대 언어, 존은 화학"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        4
+      ],
+      "note": "'Bill wants to major in modern languages', 'John has decided to major in something else, chemistry' 표현에서 알 수 있다."
+    },
+    {
+      "id": "d044-q2",
+      "type": "다음에 할 일",
+      "prompt": "빌과 존이 다음 주에 하기로 되어 있는 일로 가장 적절한 것은?",
+      "options": [
+        "2학년 수강 신청을 할 것이다",
+        "1학년 기말고사를 치를 것이다",
+        "러시아어 수업을 들을 것이다",
+        "화학자로 취직할 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        5
+      ],
+      "note": "'are going to finish their freshman year', 'are going to have their final examinations next week' 표현에서 알 수 있다."
+    }
+  ]
+}

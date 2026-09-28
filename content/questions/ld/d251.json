@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "d251",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d251-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "고용주는 면접보다 서류를 보고 지원자를 판단한다",
+        "면접관은 지원자의 성격보다 학력을 더 중요하게 본다",
+        "일자리를 구할 때는 첫인상에 신경 써야 한다",
+        "큰 회사의 인사 책임자는 직접 면접을 하지 않는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "note": "'First impressions are lasting' · 고용주는 'judge you by your appearance, your bearing … speech' · 'wants to have an interview' · 'size up the applicant'"
+    },
+    {
+      "id": "d251-q2",
+      "type": "세부사실",
+      "prompt": "고용주가 될 사람이 지원자를 판단할 때 무엇보다도 본다고 한 것은?",
+      "options": [
+        "지원자의 겉모습",
+        "지원자의 말투",
+        "지원자의 됨됨이",
+        "지원자의 몸가짐"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "'your appearance, your bearing, and above all by your speech'"
+    }
+  ]
+}

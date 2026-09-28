@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d186",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d186-q1",
+      "type": "세부 사실",
+      "prompt": "손님이 직원에게 100달러 지폐를 맡긴 까닭으로 알맞은 것은?",
+      "options": [
+        "영수증을 꼭 받아 두고 싶어서",
+        "많은 돈을 들고 다니기 싫어서",
+        "호텔 방값을 미리 내 두려고",
+        "수표로 바꾸어 두고 싶어서"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'didn't want to carry too much money with me' / 'put a $100 bill in the safe for me overnight' — 많은 돈을 들고 다니기 싫어서 맡김"
+    },
+    {
+      "id": "d186-q2",
+      "type": "목적/태도",
+      "prompt": "다음 날 아침 직원이 보인 태도로 알맞은 것은?",
+      "options": [
+        "돈을 이미 돌려주었다고 우겼다",
+        "다른 직원이 맡았다며 책임을 미뤘다",
+        "손님의 돈을 전혀 모른다고 잡아뗐다",
+        "금고에서 돈이 없어졌다며 사과했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'the clerk denied any knowledge of my money' — 돈을 전혀 모른다고 잡아뗌"
+    },
+    {
+      "id": "d186-q3",
+      "type": "다음에 할 일",
+      "prompt": "마지막에 손님이 한 일로 알맞은 것은?",
+      "options": [
+        "호텔 지배인을 찾아가 따졌다",
+        "경찰서에 가서 신고했다",
+        "돈을 포기하고 호텔을 떠났다",
+        "가까운 변호사를 찾아갔다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'There was nothing I could do but go to the nearest lawyer' — 가장 가까운 변호사에게 감"
+    }
+  ]
+}

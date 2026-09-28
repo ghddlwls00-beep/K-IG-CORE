@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr080",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr080-q1",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "윌리 메이스는 100피트쯤 떨어진 곳에 있었다",
+        "나는 끝까지 눈물을 꾹 참았다",
+        "나는 연필이 없어서 사인을 받지 못했다",
+        "나는 10살 때 윌리 메이스를 처음 보았다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5,
+        6,
+        8
+      ],
+      "note": "4번 'could I please have your autograph?', 5번 'You got a pencil?', 6번 'I didn’t have one in my pocket', 8번 'Sorry, kid'에 근거함."
+    },
+    {
+      "id": "pr080-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "본문의 'that team'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "윌리 메이스의 상대 팀",
+        "내가 응원하던 뉴욕 자이언츠",
+        "지금 내가 응원하는 새 팀",
+        "검은색과 주황색 모자를 쓴 관중들"
+      ],
+      "answer": 1,
+      "evidence": [
+        13,
+        14
+      ],
+      "note": "13번 'My team was the New York Giants', 14번 'remembering that team, which no longer exists'에 근거함."
+    }
+  ]
+}

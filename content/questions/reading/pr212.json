@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr212",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr212-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "자기 아이보다 남의 아이를 더 아끼는 여성이 많다",
+        "부모의 사랑은 여성만 느낄 수 있는 감정이다",
+        "부모의 사랑이 자기 아이에게만 향하지는 않는다",
+        "부모의 사랑은 자기 아이에게만 생겨난다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        4
+      ],
+      "note": "'love for their own children that they do not feel for other children', 'some women who feel the same parental love for other children'"
+    },
+    {
+      "id": "pr212-q2",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "자기 아이에게 이런 사랑을 느끼지 않는 부모도 있다",
+        "모든 부모가 자기 아이에게 이런 사랑을 느낀다",
+        "이 사랑은 아이가 부모에게 느끼는 감정이다",
+        "부모는 이 사랑을 남의 아이에게 더 느낀다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'not all parents feel this love for their own children'"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "d112",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d112-q1",
+      "type": "세부 사실",
+      "prompt": "한 노동자가 처음 눈여겨본, 모양이 특이한 것은 무엇인가?",
+      "options": [
+        "구슬 몇 개",
+        "깨진 그릇 조각",
+        "깨진 그릇과 구슬",
+        "돌 여러 개"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'a worker noticed several rocks with unusual shapes', 'When he looked more carefully, he found broken pots, some beads'가 처음 본 것은 돌이고 그릇과 구슬은 그 뒤에 찾았음을 보여 줌"
+    },
+    {
+      "id": "d112-q2",
+      "type": "다음에 할 일",
+      "prompt": "인류학자들이 앞으로 하려는 일로 가장 적절한 것은?",
+      "options": [
+        "그 지역을 조심스럽게 파며 조사한다",
+        "그 지역을 파지 않고 그대로 덮어 둔다",
+        "파낸 것들을 곧장 대학에 보낸다",
+        "그 지역 대신 근처 땅부터 먼저 파 본다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'The anthropologists plan to dig carefully and examine the contents of the area'가 그 지역을 조심스럽게 파며 조사할 계획임을 보여 줌"
+    }
+  ]
+}

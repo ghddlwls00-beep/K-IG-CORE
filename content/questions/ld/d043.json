@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "d043",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d043-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "조지가 시카고에서 친구를 우연히 만나 그 소개로 취직한 이야기",
+        "조지가 옛 대학촌에서 친구를 우연히 만나 같이 살게 된 이야기",
+        "조지가 주소를 몰라 찾아가지 못한 친구를 우연히 만난 이야기",
+        "조지가 친구를 우연히 만나 오래전 빌린 돈을 갚은 이야기"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5,
+        6
+      ],
+      "note": "'Many of his friends', 'wanted to call on Pete, but he couldn't find his address', 'ran into him downtown' 표현에서 알 수 있다."
+    },
+    {
+      "id": "d043-q2",
+      "type": "다음에 할 일",
+      "prompt": "조지와 피트가 다음 토요일에 함께 하기로 한 일로 가장 적절한 것은?",
+      "options": [
+        "저녁 식사를 한다",
+        "시내에서 쇼핑을 한다",
+        "대학 동창회에 참석한다",
+        "시카고에 함께 간다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'They are going to have dinner together next Saturday' 표현에서 알 수 있다."
+    }
+  ]
+}
