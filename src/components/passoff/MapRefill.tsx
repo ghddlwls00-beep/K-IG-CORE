@@ -39,7 +39,7 @@ import { PrimaryButton, SecondaryButton, tone, usePassoffLearner } from "./ui";
  *
  * 점검 18: moving to another stage (a press — place → a box → the next box → the result, and back) removes the button pressed,
  * so the new stage's heading takes the focus (tabIndex -1 — the place stage's is for screen readers only, its progress line
- * already says '레슨 놓기') and the stage starts at the top, as the review's items and screens do (ReviewSession). Not when
+ * already says '강의 놓기') and the stage starts at the top, as the review's items and screens do (ReviewSession). Not when
  * the page opens.
  */
 type Stage = { at: "place" } | { at: "pick"; box: number } | { at: "result" };
@@ -163,11 +163,11 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
     return (
       <div ref={topRef} className="flex flex-col gap-4" data-passoff-map-stage="place">
         <h2 ref={headingRef} tabIndex={-1} className="sr-only">
-          레슨 놓기
+          강의 놓기
         </h2>
-        <Progress label="레슨 놓기" at={placed} of={n} name="구성도 진행" />
+        <Progress label="강의 놓기" at={placed} of={n} name="구성도 진행" />
         <p className="text-label leading-relaxed text-ink-soft">
-          대주제의 레슨을 순서대로 칸에 놓으세요. 레슨 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요.
+          대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요.
         </p>
         <ol className="flex flex-col gap-2" aria-label="구성도 칸">
           {boxes.map((id, box) => (
@@ -187,7 +187,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
             </li>
           ))}
         </ol>
-        <div className="flex flex-wrap gap-2" role="group" aria-label="레슨 칩">
+        <div className="flex flex-wrap gap-2" role="group" aria-label="강의 칩">
           {chips
             .filter((chip) => !boxes.includes(chip.id))
             .map((chip) => (
@@ -222,7 +222,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
         </h2>
         <section aria-labelledby="map-rule" className="flex flex-col gap-2">
           <h3 id="map-rule" className="text-label font-semibold text-ink-soft">
-            이 레슨의 문법 설명 한 줄
+            이 강의의 문법 설명 한 줄
           </h3>
           <div className="flex flex-col gap-2" role="group" aria-labelledby="map-rule">
             {ruleOptions.map((option) => (
@@ -304,7 +304,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
                   <p className="text-body font-semibold text-ink">
                     <span className="tabular-nums text-ink-soft">{r.box + 1}.</span> {lesson.title}
                   </p>
-                  {!r.lessonOk ? <p className="text-label text-ink-soft">놓은 레슨: {placedLesson ? placedLesson.title : "없음"}</p> : null}
+                  {!r.lessonOk ? <p className="text-label text-ink-soft">놓은 강의: {placedLesson ? placedLesson.title : "없음"}</p> : null}
                   {!r.ruleOk && placedLesson ? (
                     <p className="text-label text-ink">
                       {about}문법 설명: {placedLesson.ruleTitle}
@@ -340,7 +340,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
             </div>
           ) : !taken ? (
             <p className="text-label text-ink" role="alert" data-passoff-map-not-taken>
-              대주제 레슨을 모두 마치기 전이라 이번 구성도는 기록되지 않았어요. 레슨을 마친 뒤 다시 해 주세요.
+              대주제 강의를 모두 마치기 전이라 이번 구성도는 기록되지 않았어요. 강의를 마친 뒤 다시 해 주세요.
             </p>
           ) : (
             <p className="text-label text-ink" role="status" data-passoff-map-saved>
@@ -350,10 +350,10 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
           {missed.length && save.at !== "saving" && (broughtHere || (saved && saved.forwarded !== null)) ? (
             <p className="text-label leading-relaxed text-ink-soft" data-passoff-map-forward>
               {saved && saved.forwarded === 0
-                ? `틀린 칸의 레슨(${missedNames})에는 지금 복습할 문항이 없어요.`
+                ? `틀린 칸의 강의(${missedNames})에는 지금 복습할 문항이 없어요.`
                 : saved && saved.forwarded !== null
-                  ? `틀린 칸의 레슨(${missedNames}) 문항은 내일부터 복습에 다시 나와요.`
-                  : `틀린 칸의 레슨(${missedNames}) 문항은 이 기기에서는 내일부터 복습에 나와요. 서버 기록은 다음에 연결될 때 맞춰요.`}
+                  ? `틀린 칸의 강의(${missedNames}) 문항은 내일부터 복습에 다시 나와요.`
+                  : `틀린 칸의 강의(${missedNames}) 문항은 이 기기에서는 내일부터 복습에 나와요. 서버 기록은 다음에 연결될 때 맞춰요.`}
             </p>
           ) : null}
         </div>

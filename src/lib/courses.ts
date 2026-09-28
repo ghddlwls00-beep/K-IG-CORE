@@ -59,7 +59,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Pass-Off Grammar",
     kind: "audio-drill",
     description:
-      "패스오프 문법. GRAMMAR I·II 가 문장을 되풀이해 영작하는 훈련이라면, 여기서는 레슨마다 예문 → 규칙 → 형태 찾기 → 영작 → 마무리 5단계로 문법 하나를 익혀 통과합니다.",
+      "패스오프 문법. GRAMMAR I·II 가 문장을 되풀이해 영작하는 훈련이라면, 여기서는 강의마다 예문 → 문법 설명 → 형태 찾기 → 영작 → 마무리 5단계로 문법 하나를 익혀 통과합니다.",
     series: [{ slug: "pg", title: "Grammar Lessons", prefix: "pg" }],
   },
   {

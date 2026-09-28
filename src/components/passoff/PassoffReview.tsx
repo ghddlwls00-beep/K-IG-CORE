@@ -248,7 +248,7 @@ export function PassoffReview({
   const course: ReviewCourse<PassoffReviewItem> = {
     profile: PASSOFF_PROFILE,
     listHref: `/${PASSOFF_COURSE}`,
-    unit: "레슨",
+    unit: "강의",
     sentenceKinds: PASSOFF_SENTENCE_KINDS,
     passedLabel: "통과한 문장",
     renderItem,

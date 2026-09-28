@@ -9,7 +9,7 @@
  * wrong come back in review from tomorrow (practice.ts applyBringForward). Doing it once, whatever the score, after the
  * topic's lessons, is the topic's last condition (passoffUnlock.ts requireMapRefill).
  *
- * E2 수정: a box's screen asks about the lesson PLACED in it ("2. 2인칭 — 이 레슨의 규칙 한 줄"), so its rule and sentence are
+ * E2 수정: a box's screen asks about the lesson PLACED in it ("2. 2인칭 — 이 강의의 문법 설명 한 줄"), so its rule and sentence are
  * judged against that lesson, and its sentences to pick from are that lesson's and two others' — they no longer give away
  * that the lesson was placed in the wrong box.
  *

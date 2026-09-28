@@ -453,7 +453,7 @@ export default function AdminLicensePage() {
     if (
       !confirm(
         "마지막 확인입니다. 서버의 완료 기록과 TOPIC 해금 상태를 초기화합니다(TOPIC 1 만 열림).\n\n" +
-          "학습자 기기에 남은 레슨 연습 기록은 지워지지 않습니다. 그 기기에서 마쳤던 레슨은 '처음부터 다시 하기'로 다시 마쳐야 다시 기록됩니다" +
+          "학습자 기기에 남은 강의 연습 기록은 지워지지 않습니다. 그 기기에서 마쳤던 강의는 '처음부터 다시 하기'로 다시 마쳐야 다시 기록됩니다" +
           "(목록의 완료 표시도 서버 기록을 따릅니다).",
       )
     ) {
@@ -1093,7 +1093,7 @@ export default function AdminLicensePage() {
                                   : `PASS-OFF GRAMMAR · TOPIC ${passoffProgressByKey[item.key].unlockedThrough}까지 열림`}
                               </strong>
                               <span>
-                                완료 레슨 {passoffProgressByKey[item.key].completedLessons}/{passoffProgressByKey[item.key].totalLessons}
+                                완료 강의 {passoffProgressByKey[item.key].completedLessons}/{passoffProgressByKey[item.key].totalLessons}
                               </span>
                               <span>
                                 마지막 완료 {passoffProgressByKey[item.key].lastLessonId || "기록 없음"}
@@ -1148,9 +1148,9 @@ export default function AdminLicensePage() {
                             ))}
                           </ul>
                           <p className="mt-2 text-[11.5px] text-blue-900/80">
-                            다음 TOPIC 이 열리는 조건: 레슨 80% 이상 + 마지막 레슨
+                            다음 TOPIC 이 열리는 조건: 강의 80% 이상 + 마지막 강의
                             {passoffProgressByKey[item.key].mapRefillRequired
-                              ? " + 구성도 다시 채우기 1번(레슨을 마친 뒤)"
+                              ? " + 구성도 다시 채우기 1번(강의를 마친 뒤)"
                               : " (구성도 다시 채우기 조건은 공통 학습 엔진이 생길 때까지 꺼져 있음)"}
                           </p>
                         </div>

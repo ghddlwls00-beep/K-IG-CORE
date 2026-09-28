@@ -45,7 +45,7 @@ export function FormStep({
   if (!items.length) {
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-body text-ink-soft">이 레슨에는 형태 찾기 문제가 없습니다.</p>
+        <p className="text-body text-ink-soft">이 강의에는 형태 찾기 문제가 없습니다.</p>
         <div className="flex justify-end">
           <PrimaryButton onClick={onNext}>다음 단계: 영작</PrimaryButton>
         </div>

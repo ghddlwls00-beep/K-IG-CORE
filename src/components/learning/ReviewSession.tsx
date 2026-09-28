@@ -93,7 +93,7 @@ export interface ReviewCourse<T> {
   profile: CourseProfile;
   /** the course list — the bottom bar's link and the end screen's button */
   listHref: string;
-  /** what the course calls one of its lessons in the frame's words ('강의' when absent — PASS-OFF says '레슨') */
+  /** what the course calls one of its lessons in the frame's words ('강의' when absent — every course says 강의, 사장님 2026-09-28 "강의로 맞춰") */
   unit?: string;
   /** the kinds the end screen's pass count counts (every kind when absent), and its words ('통과한 문항' when absent) */
   sentenceKinds?: readonly string[];

@@ -42,7 +42,7 @@ import { FONT_LABEL, segmentButton, spokenOf, usePassoffLearner, type FontSize, 
 /**
  * PASS-OFF GRAMMAR lesson view — the same five steps for every lesson (docs/pass-off-grammar/설계.md §3; the
  * owner's rule: one course, one way of learning):
- *   ① 예문 떠올리기  ② 규칙  ③ 형태 찾기  ④ 영작  ⑤ 마무리
+ *   ① 예문 떠올리기  ② 문법 설명  ③ 형태 찾기  ④ 영작  ⑤ 마무리
  *
  * It receives ONE lesson's blocks as props, after the server gate (ISS-00 — never import lesson JSON here), and
  * only what the steps draw (src/lib/passoffView.ts). On a free preview lesson the server leaves out the paid

@@ -587,7 +587,7 @@ export function DialogueLearningView({
                     <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary tracking-wide">
                       {info.chapterNum} CHAPTER OVERVIEW
                     </span>
-                    <span className="text-[12px] text-ink-faint">총 {info.subLessons.length}개 세부 레슨</span>
+                    <span className="text-[12px] text-ink-faint">총 {info.subLessons.length}개 세부 강의</span>
                   </div>
                   {/* RE-014: h2, not h1 — the lesson page already renders the
                       lesson title as the page's h1, and this is the chapter
@@ -614,7 +614,7 @@ export function DialogueLearningView({
           <div className="flex flex-col gap-3">
             <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
               <span>📖</span>
-              <span>챕터 세부 실전 회화 레슨 목록 (Sub-lessons)</span>
+              <span>챕터 세부 실전 회화 강의 목록 (Sub-lessons)</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {info.subLessons.map((sub, idx) => (
@@ -647,7 +647,7 @@ export function DialogueLearningView({
 
     return (
       <div className="rounded-2xl border border-line bg-surface p-8 text-center">
-        <p className="text-ink-soft">이 레슨에는 직접 발화할 대화 문장이 포함되어 있지 않습니다.</p>
+        <p className="text-ink-soft">이 강의에는 직접 발화할 대화 문장이 포함되어 있지 않습니다.</p>
         <Link
           href={`/${course}`}
           className="mt-4 inline-block rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-on-primary"

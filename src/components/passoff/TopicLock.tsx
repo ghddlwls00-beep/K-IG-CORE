@@ -113,7 +113,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
             : `${topicWithParticle(topic, "은/는")} 아직 열리지 않았어요`}
         </h2>
         <p className="text-label leading-relaxed text-ink-soft">
-          대주제는 차례로 열려요. 열린 대주제 안에서는 레슨을 순서와 상관없이 고를 수 있어요.
+          대주제는 차례로 열려요. 열린 대주제 안에서는 강의를 순서와 상관없이 고를 수 있어요.
         </p>
 
         {current ? (
@@ -122,17 +122,17 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
             <p className="text-body font-semibold text-ink">{current.label}</p>
             <ul className="flex flex-col gap-1.5">
               <Condition ok={completedCount >= current.requiredCount}>
-                레슨 {current.requiredCount}개 이상 마치기 (지금 {completedCount}/{lessons.length})
+                강의 {current.requiredCount}개 이상 마치기 (지금 {completedCount}/{lessons.length})
               </Condition>
               {last ? (
-                <Condition ok={counted(last)}>마지막 레슨 &lsquo;{last.title}&rsquo; 학습 완료하기</Condition>
+                <Condition ok={counted(last)}>마지막 강의 &lsquo;{last.title}&rsquo; 학습 완료하기</Condition>
               ) : null}
               {current.mapRefillRequired ? (
                 <Condition ok={mapRefilled}>
                   {mapRefilled ? (
                     <>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기</>
                   ) : !lessonsDone ? (
-                    <>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기(위 레슨을 마친 뒤)</>
+                    <>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기(위 강의를 마친 뒤)</>
                   ) : (
                     <Link
                       href={passoffMapHref(current.topic)}
@@ -147,7 +147,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
 
             {notCounted.length ? (
               <div className="mt-2 flex flex-col gap-1 border-t border-line pt-3">
-                <p className="text-label text-ink-soft">아직 기록되지 않은 레슨</p>
+                <p className="text-label text-ink-soft">아직 기록되지 않은 강의</p>
                 <ul className="flex flex-col">
                   {notCounted.map((lesson) => (
                     <li key={lesson.id} className="flex flex-wrap items-center gap-x-2">
@@ -163,7 +163,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
                 </ul>
                 {finishedHereOnly.size ? (
                   <p className="text-label leading-relaxed text-ink-soft">
-                    이 기기에서 마쳤는데 기록되지 않은 레슨은 그 레슨 5단계 끝의 &lsquo;처음부터 다시 하기&rsquo;로 다시 마치면
+                    이 기기에서 마쳤는데 기록되지 않은 강의는 그 강의 5단계 끝의 &lsquo;처음부터 다시 하기&rsquo;로 다시 마치면
                     기록돼요.
                   </p>
                 ) : null}
@@ -177,7 +177,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
             href={listHref}
             className="inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity hover:opacity-90"
           >
-            {current ? `TOPIC ${current.topic} 레슨 보기` : "목록으로"}
+            {current ? `TOPIC ${current.topic} 강의 보기` : "목록으로"}
           </Link>
         </div>
       </section>

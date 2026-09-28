@@ -7,7 +7,7 @@ import { IconCheck, IconX } from "../icons";
 import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, type FontSize } from "./ui";
 
 /**
- * ② 규칙 1~3분 (설계 §3): a discovery question on the sentences of ① (recorded, never graded — the answer and
+ * ② 문법 설명 1~3분 (설계 §3): a discovery question on the sentences of ① (recorded, never graded — the answer and
  * why come right after the choice) → the explanation card (rule 3~5 lines · a table · how Korean differs ·
  * ✗/✓ common mistakes · a worked example · old and new term) → one rule check. A wrong check points at the
  * rule line it is about and asks again.
@@ -46,7 +46,7 @@ export function RuleStep({
   onNext: () => void;
 }) {
   const [missedPoint, setMissedPoint] = useState<number | null>(null);
-  if (!rule) return <p className="text-body text-ink-soft">이 레슨에는 문법 설명 카드가 없습니다.</p>;
+  if (!rule) return <p className="text-body text-ink-soft">이 강의에는 문법 설명 카드가 없습니다.</p>;
   const d = rule.discovery;
   const cardOpen = !d || discovery !== null;
   const shownAnchors = d?.anchorIds?.length ? anchors.filter((a) => d.anchorIds?.includes(a.id)) : [];

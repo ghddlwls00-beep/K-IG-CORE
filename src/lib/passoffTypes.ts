@@ -4,7 +4,7 @@
  * item may carry, and the content check refuses any other). Field names are English and values
  * Korean. When the shape changes, that file changes first, then this one.
  *
- * A lesson's `blocks` hold these four, in this order: anchors (① 예문 떠올리기), rule (② 규칙),
+ * A lesson's `blocks` hold these four, in this order: anchors (① 예문 떠올리기), rule (② 문법 설명),
  * drill (③ 형태 찾기 · ④ 영작 · ⑤ 처음 보는 문장), frame (⑤ 내 문장).
  *
  * Item ids ("pg02-1:p4") never change once given — they are the keys of a learner's record.
@@ -80,7 +80,7 @@ export interface PassoffQuestion {
   why?: string;
 }
 
-/** ② 규칙 — a discovery question, the explanation card and one rule check. */
+/** ② 문법 설명 — a discovery question, the explanation card and one rule check. */
 export interface PassoffRuleBlock {
   type: "rule";
   discovery?: PassoffQuestion & { anchorIds?: string[] };

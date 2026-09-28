@@ -140,7 +140,7 @@ export function LicenseModal() {
                 {hasActiveLicense
                   ? licenseInfo?.isStudentOnly
                     ? `STUDENT 이용권이 활성화되어 ${STUDENT_PASS_SCOPE}를 챕터 1부터 순차적으로 학습할 수 있습니다.`
-                    : "전체 유료 레슨이 활성화되어 있습니다."
+                    : "전체 유료 강의가 활성화되어 있습니다."
                   : "발급받으신 코드를 등록하여 학습을 시작하세요."}
               </p>
             </div>
