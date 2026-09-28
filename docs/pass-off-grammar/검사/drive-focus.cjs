@@ -242,7 +242,7 @@ const check = (name, ok, detail = "") => rows.push({ ok: Boolean(ok), name, deta
       const placeShown = await waitFor(`Boolean(document.querySelector('[data-passoff-map-stage="place"]'))`, 30000);
       // the chips into the boxes (the order does not matter here — only where the focus goes)
       for (let i = 0; i < topic1.length; i++) {
-        await tab.eval(`(() => { const b = document.querySelector('[aria-label="레슨 칩"] button'); if (b) b.click(); return Boolean(b); })()`);
+        await tab.eval(`(() => { const b = document.querySelector('[aria-label="강의 칩"] button'); if (b) b.click(); return Boolean(b); })()`);
         await sleep(150);
       }
       const moves = [];
@@ -256,7 +256,7 @@ const check = (name, ok, detail = "") => rows.push({ ok: Boolean(ok), name, deta
         await tab.eval(`(() => { const r = document.querySelector('[aria-labelledby="map-rule"] button'); const s = document.querySelector('[aria-labelledby="map-sentence"] button'); if (r) r.click(); if (s) s.click(); return Boolean(r && s); })()`);
         await sleep(200);
       };
-      const isPlace = (at) => at.stage === "place" && at.text === "레슨 놓기";
+      const isPlace = (at) => at.stage === "place" && at.text === "강의 놓기";
       const isBox = (n) => (at) => at.stage === "pick" && at.text.startsWith(`${n}.`);
       await move("다음", isBox(1));
       await move("이전", isPlace);

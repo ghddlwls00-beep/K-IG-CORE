@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { preload } from "react-dom";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
@@ -19,6 +19,13 @@ export interface LandingTab extends Tab {
   num: string;
   courseDetails: CourseDetail[];
 }
+
+/** A roll of the wheel moves a slide once it adds up to this much (one mouse notch is about 100px; a trackpad adds up small steps). */
+const WHEEL_STEP_PX = 40;
+/** Wheel events closer together than this are one roll or swipe — a trackpad keeps sending them after the fingers lift. */
+const WHEEL_QUIET_MS = 200;
+/** How long one slide move is given before the wheel can move the next one. */
+const SLIDE_MOVE_MS = 800;
 
 /**
  * Section background photo. Renders the 20px blurred placeholder immediately,
@@ -97,34 +104,68 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     activeIdxRef.current = scrollActive;
   }, [scrollActive]);
 
-  const scrollToTab = (index: number) => {
+  const scrollToTab = useCallback(
+    (index: number) => {
+      const el = containerRef.current;
+      if (!el) return;
+      const targetIdx = Math.min(Math.max(index, 0), tabs.length - 1);
+      activeIdxRef.current = targetIdx;
+      setScrollActive(targetIdx);
+      isAnimatingRef.current = true;
+      el.style.scrollSnapType = "none";
+      el.scrollTo({
+        top: targetIdx * el.clientHeight,
+        behavior: "smooth",
+      });
+      setTimeout(() => {
+        // back to the container's own mandatory snapping
+        if (el) el.style.scrollSnapType = "";
+        isAnimatingRef.current = false;
+      }, 600);
+    },
+    [tabs.length],
+  );
+
+  // 2026-09-27 (점검 FRAME-U13 · 사장님 "그냥 다로 해": 원래 슬라이드 그대로, 불편한 점만): the arrow / space / page keys
+  // are not taken over — they scroll the browser's own way, and the container's mandatory snap stops them on a slide.
+  // 2026-09-28 (사장님 "데스크탑 렌딩 페이지 보면 페이지 내리고 올리는데 부자연스러워 이거 해결해", then — told that one
+  // roll of the wheel now stays where it stops — "마우스 휠을 한번 굴리면 아래 페이지로 내려가게 해줘"): one roll of the
+  // mouse wheel, or one trackpad swipe, moves exactly one slide, as the dots and the NEXT arrow do. Free scrolling
+  // (the first answer to 부자연스러워) was not what was meant. A trackpad keeps sending wheel events after the fingers
+  // lift, so after a move the wheel waits until it has been quiet for WHEEL_QUIET_MS before it can move again — one
+  // swipe never skips two slides. Pinch-zoom (ctrl + wheel) and sideways scrolling stay the browser's. A touch screen
+  // swipes one slide at a time through the same mandatory snap. The look (full-screen slides, dots, arrows) is the same.
+  useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    const targetIdx = Math.min(Math.max(index, 0), tabs.length - 1);
-    activeIdxRef.current = targetIdx;
-    setScrollActive(targetIdx);
-    isAnimatingRef.current = true;
-    el.style.scrollSnapType = "none";
-    el.scrollTo({
-      top: targetIdx * el.clientHeight,
-      behavior: "smooth",
-    });
-    setTimeout(() => {
-      // back to the container's own snapping classes (mandatory on a touch screen, none with a mouse or trackpad)
-      if (el) el.style.scrollSnapType = "";
-      isAnimatingRef.current = false;
-    }, 600);
-  };
+    let added = 0;
+    let lastAt = 0;
+    let lockedUntil = 0;
+    const onWheel = (e: WheelEvent) => {
+      if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      const now = performance.now();
+      const gap = now - lastAt;
+      lastAt = now;
+      if (now < lockedUntil) {
+        // the rest of the roll or swipe that just moved a slide
+        lockedUntil = Math.max(lockedUntil, now + WHEEL_QUIET_MS);
+        return;
+      }
+      if (gap > WHEEL_QUIET_MS) added = 0;
+      added += e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * el.clientHeight : e.deltaY;
+      if (Math.abs(added) < WHEEL_STEP_PX) return;
+      const next = activeIdxRef.current + (added > 0 ? 1 : -1);
+      added = 0;
+      if (next < 0 || next >= tabs.length) return;
+      lockedUntil = now + SLIDE_MOVE_MS;
+      scrollToTab(next);
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [scrollToTab, tabs.length]);
 
-  // 2026-09-27 (점검 FRAME-U13 · 사장님 "그냥 다로 해": 원래 슬라이드 그대로, 불편한 점만): the mouse wheel and
-  // the arrow / space / page keys are no longer taken over to jump exactly one slide — on a desktop one notch
-  // of the wheel used to move a whole screen and the keys could do nothing else. Scrolling is the browser's
-  // own again: slides still snap into place on a phone, and only gently near a slide from md up (see the
-  // container's scroll-snap classes). A resize still re-aligns the slide in view.
-  // 2026-09-28 (사장님 "데스크탑 렌딩 페이지 보면 페이지 내리고 올리는데 부자연스러워 이거 해결해"): with a mouse or
-  // trackpad (pointer: fine) there is no snapping at all — the gentle snap still pulled the page to the nearest slide
-  // after every wheel or trackpad stop, and scroll-snap-stop: always held it at each slide, so the page moved against
-  // the hand. A touch screen keeps the one-slide-per-swipe snap. The look (full-screen slides, dots, arrows) is the same.
+  // A resize re-aligns the slide in view.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -177,7 +218,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory] [@media(pointer:fine)]:[scroll-snap-type:none]"
+        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory]"
         style={{
           WebkitOverflowScrolling: "touch",
         }}

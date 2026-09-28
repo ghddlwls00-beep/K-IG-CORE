@@ -287,7 +287,7 @@ const clickText = (selector, text) => `(() => { const b = [...document.querySele
 async function fillMap(tab, map, wrongBox = -1) {
   const log = [];
   for (const lesson of map) {
-    log.push(await tab.eval(clickText('[aria-label="레슨 칩"] button', lesson.title)));
+    log.push(await tab.eval(clickText('[aria-label="강의 칩"] button', lesson.title)));
     await sleep(150);
   }
   log.push(await tab.eval(clickText("main button", "다음")));
@@ -337,7 +337,7 @@ const check = (label, ok, detail) => {
     await tab.goto(ORIGIN + "/passoff-grammar", 2500);
     const s0 = await tab.eval(SECTION(0));
     const s1 = await tab.eval(SECTION(1));
-    check("D1 이용권 없음: TOPIC 1 '첫 두 레슨 무료 체험' · TOPIC 2 '이용권 등록 후 열림'", /첫 두 레슨 무료 체험/.test(s0) && /이용권 등록 후 열림/.test(s1) && !/마치면 열림/.test(s1) && !(await tab.eval(MAIN_TEXT)).includes("서버에 저장됨"), { s0, s1 });
+    check("D1 이용권 없음: TOPIC 1 '첫 두 강의 무료 체험' · TOPIC 2 '이용권 등록 후 열림'", /첫 두 강의 무료 체험/.test(s0) && /이용권 등록 후 열림/.test(s1) && !/마치면 열림/.test(s1) && !(await tab.eval(MAIN_TEXT)).includes("서버에 저장됨"), { s0, s1 });
 
     // a STUDENT pass on this browser, as the licence window would do it
     const key = makeKey("STU1Y");
@@ -362,7 +362,7 @@ const check = (label, ok, detail) => {
     const lock0 = await tab.eval(LOCKED(0));
     const lock1 = await tab.eval(LOCKED(1));
     check("D2a '서버에 저장됨'", (await tab.eval(MAIN_TEXT)).includes("서버에 저장됨"));
-    check("D2b TOPIC 1: 열림(자물쇠 없음) · '레슨 3개와 마지막 레슨, 구성도 다시 채우기를 마치면 다음 대주제'", lock0 === false && /레슨 3개와 마지막 레슨, 구성도 다시 채우기를 마치면 다음 대주제/.test(a0), { a0, lock0 });
+    check("D2b TOPIC 1: 열림(자물쇠 없음) · '강의 3개와 마지막 강의, 구성도 다시 채우기를 마치면 다음 대주제'", lock0 === false && /강의 3개와 마지막 강의, 구성도 다시 채우기를 마치면 다음 대주제/.test(a0), { a0, lock0 });
     check("D2c TOPIC 2: 'TOPIC 1을 마치면 열림' · 자물쇠", /TOPIC 1을 마치면 열림/.test(a1) && lock1 === true, { a1, lock1 });
     await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').click(), true`);
     await sleep(500);
@@ -439,14 +439,14 @@ const check = (label, ok, detail) => {
     const barReady = await tab.eval(END_BAR);
     const serverBefore = await tab.eval(`${API_GET}.then(d => Boolean(d.progress.lessons['pg01-3']))`);
     const step5 = await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.replace(/\\s+/g, ' ')`);
-    check("D3f 5단계를 마쳐도 저절로 완료되지 않음 — 끝 막대 '이 강의 학습 완료' 켜짐 · 서버에 pg01-3 없음 · 5단계에 '누르면 레슨이 완료돼요'",
-      Boolean(barReady && barReady.button && barReady.button.label === "학습 완료 체크" && !barReady.button.disabled) && serverBefore === false && step5.includes("누르면 레슨이 완료돼요") && !step5.includes("레슨 완료 —"),
+    check("D3f 5단계를 마쳐도 저절로 완료되지 않음 — 끝 막대 '이 강의 학습 완료' 켜짐 · 서버에 pg01-3 없음 · 5단계에 '누르면 강의가 완료돼요'",
+      Boolean(barReady && barReady.button && barReady.button.label === "학습 완료 체크" && !barReady.button.disabled) && serverBefore === false && step5.includes("누르면 강의가 완료돼요") && !step5.includes("강의 완료 —"),
       { barReady, serverBefore, step5: step5.slice(-120) });
     const pressed = BREAK === "no-press" || BREAK === "press-early" ? "skipped" : await pressComplete(tab);
     const barAfter = await tab.eval(END_BAR);
-    check("D3e 끝 막대를 누름 → '학습 완료함' — 취소 단추 없음(서버는 완료만 받음) · 5단계 '레슨 완료'",
+    check("D3e 끝 막대를 누름 → '학습 완료함' — 취소 단추 없음(서버는 완료만 받음) · 5단계 '강의 완료'",
       pressed !== "no button" && Boolean(barAfter && barAfter.button === null && barAfter.status && barAfter.text.includes("학습 완료함") && !barAfter.text.includes("취소")) &&
-        (await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('레슨 완료')`)),
+        (await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('강의 완료')`)),
       { pressed, barAfter });
     const synced = await waitFor(tab, `${API_GET}.then(d => Boolean(d.progress.lessons['pg01-3']) && d.progress.unlockedThrough === 1 && d.progress.mapRefillRequired === true)`);
     const state = await tab.eval(`${API_GET}.then(d => ({ u: d.progress.unlockedThrough, map: d.progress.mapRefillRequired, pg013: d.progress.lessons['pg01-3'] || null }))`);
@@ -565,10 +565,10 @@ const check = (label, ok, detail) => {
     await tab.eval(clickTab(4));
     await waitFor(tab, `document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('기록되지 않았어요')`, 6000);
     const view = await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.replace(/\\s+/g, ' ')`);
-    check("D9b 끝낸 레슨 pg01-3 화면: '레슨 완료' 와 함께 '이 이용권의 진도에는 아직 이 레슨이 기록되지 않았어요'", view.includes("레슨 완료") && view.includes("기록되지 않았어요") && view.includes("처음부터 다시 하기"), view.slice(-160));
+    check("D9b 끝낸 레슨 pg01-3 화면: '강의 완료' 와 함께 '이 이용권의 진도에는 아직 이 강의가 기록되지 않았어요'", view.includes("강의 완료") && view.includes("기록되지 않았어요") && view.includes("처음부터 다시 하기"), view.slice(-160));
     await tab.goto(BASE + "pg02-1", 1800);
     const lock2 = await tab.eval(MAIN_TEXT);
-    check("D9c 잠금 화면 pg02-1: 아직 기록되지 않은 레슨에 '3인칭 … 이 기기에서 마침' · 다시 하기 안내", lock2.includes("TOPIC 1을 마치면 열려요") && lock2.includes("아직 기록되지 않은 레슨") && lock2.includes("이 기기에서 마침") && lock2.includes("처음부터 다시 하기"), lock2.slice(0, 260));
+    check("D9c 잠금 화면 pg02-1: 아직 기록되지 않은 강의에 '3인칭 … 이 기기에서 마침' · 다시 하기 안내", lock2.includes("TOPIC 1을 마치면 열려요") && lock2.includes("아직 기록되지 않은 강의") && lock2.includes("이 기기에서 마침") && lock2.includes("처음부터 다시 하기"), lock2.slice(0, 260));
     // the way back: 'start again' on pg01-3 and its five steps once more
     await tab.goto(BASE + "pg01-3", 1800);
     await tab.eval(`window.confirm = () => true, true`);

@@ -92,7 +92,7 @@ export function LessonPaywall({
               {courseSlug === "student"
                 ? "STUDENT 이용권을 등록하면 학습할 수 있는 강의입니다"
                 : studentPassCourse
-                  ? "STUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 레슨입니다"
+                  ? "STUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 강의입니다"
                   : "올패스를 등록하면 학습할 수 있는 강의입니다"}
             </h2>
             <p className="text-label leading-relaxed text-ink-soft">

@@ -144,7 +144,7 @@ const activate = (key, keep) => `(async () => {
     const c1 = await tab.eval(clickRowButton(key, "PASS-OFF 진도"));
     await waitFor(tab, `${passoffPanel(key)} !== ''`);
     const p1 = await tab.eval(passoffPanel(key));
-    check(`M2 관리자: 'PASS-OFF 진도' → 'TOPIC 2까지 열림' · '완료 레슨 3/${total}' · TOPIC 칩`, login === true && c1 === "clicked" && p1.includes("TOPIC 2까지 열림") && p1.includes(`완료 레슨 3/${total}`) && p1.includes("TOPIC 1 · 3/3 · 완료") && p1.includes("TOPIC 2 · 0/3 · 열림") && p1.includes("TOPIC 3 · 0/3 · 잠김"), p1.slice(0, 200));
+    check(`M2 관리자: 'PASS-OFF 진도' → 'TOPIC 2까지 열림' · '완료 강의 3/${total}' · TOPIC 칩`, login === true && c1 === "clicked" && p1.includes("TOPIC 2까지 열림") && p1.includes(`완료 강의 3/${total}`) && p1.includes("TOPIC 1 · 3/3 · 완료") && p1.includes("TOPIC 2 · 0/3 · 열림") && p1.includes("TOPIC 3 · 0/3 · 잠김"), p1.slice(0, 200));
 
     // M3 reset
     if (BREAK !== "no-reset") {
@@ -155,7 +155,7 @@ const activate = (key, keep) => `(async () => {
     const learner = await tab.eval(`fetch('/api/progress/passoff-grammar', { cache: 'no-store' }).then(r => r.json()).then(d => d.progress.unlockedThrough)`);
     const confirms = await tab.eval(`window.__confirms`);
     check(`M3 '진도 초기화' → TOPIC 1 · 0/${total} · 학습자 API 도 1 · 확인 창에 '기기에 남은 … 연습 기록은 지워지지 않습니다'`,
-      p2.includes("TOPIC 1까지 열림") && p2.includes(`완료 레슨 0/${total}`) && learner === 1 && confirms.length === 2 && confirms[1].includes("연습 기록은 지워지지 않습니다"),
+      p2.includes("TOPIC 1까지 열림") && p2.includes(`완료 강의 0/${total}`) && learner === 1 && confirms.length === 2 && confirms[1].includes("연습 기록은 지워지지 않습니다"),
       { panel: p2.slice(0, 90), learner, confirm2: (confirms[1] || "").slice(0, 80) });
 
     // M4 the owner's manual open — up only

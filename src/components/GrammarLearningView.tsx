@@ -2182,9 +2182,12 @@ export function GrammarLearningView({
                   (current ? "flex-1 bg-raised font-semibold text-ink shadow-2xs" : "min-w-11 font-medium text-ink-soft hover:bg-raised/60")
                 }
               >
-                <span className="sr-only sm:not-sr-only">{"Step "}</span>
-                <span className="tabular-nums">{step.n}</span>
-                <span className={current ? "" : "hidden sm:inline"}>{` · ${step.name}`}</span>
+                {/* one inline run, as in StepTabs (077f5c4): as separate flex items the spaces at their edges were dropped — 'Step2· …' */}
+                <span>
+                  <span className="sr-only sm:not-sr-only">{"Step "}</span>
+                  <span className="tabular-nums">{step.n}</span>
+                  <span className={current ? "" : "hidden sm:inline"}>{` · ${step.name}`}</span>
+                </span>
               </button>
             );
           })}

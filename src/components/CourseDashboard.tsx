@@ -138,7 +138,7 @@ const LessonRow = memo(function LessonRow({
         disabled={!isUnlocked}
         onClick={() => onToggleBookmark(courseSlug, lesson.id)}
         title={!isUnlocked ? "이용권 등록 후 북마크할 수 있습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
-        aria-label={!isUnlocked ? "잠긴 레슨은 북마크할 수 없습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
+        aria-label={!isUnlocked ? "잠긴 강의는 북마크할 수 없습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
         aria-pressed={isStarred}
         className={`mr-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-control transition-colors ${
           isUnlocked ? "cursor-pointer hover:bg-sunken" : "cursor-not-allowed opacity-30"
@@ -408,7 +408,7 @@ export function CourseDashboard({
       ) : (
         <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="무료 체험">
           <h2 className="text-label font-semibold text-ink">무료로 먼저 해 보기</h2>
-          <p className="mt-1 text-caption text-ink-soft">{`이용권 없이 첫 두 ${isPassoff ? "레슨을" : "강의를"} 끝까지 학습할 수 있습니다.`}</p>
+          <p className="mt-1 text-caption text-ink-soft">{`이용권 없이 첫 두 강의를 끝까지 학습할 수 있습니다.`}</p>
           {freeLessons.length ? (
             <div className={`mt-3 grid gap-2 ${freeLessons.length > 1 ? "sm:grid-cols-2" : ""}`}>
               {freeLessons.map((lesson, i) => (
@@ -492,11 +492,11 @@ export function CourseDashboard({
             const isLife = licenseInfo?.plan === "LIFE";
             /** PASS-OFF GRAMMAR's lock words (its topic line and each locked row): 'TOPIC 2를 마치면 열림' — the particle as the number is read */
             const passoffLock = `${topicWithParticle(passoffPreviousTopic ?? sectionIndex, "을/를")} 마치면 열림`;
-            // PASS-OFF GRAMMAR's line under the topic name — '레슨' throughout, as its lock screen says
+            // PASS-OFF GRAMMAR's line under the topic name — '강의' like every course (사장님 2026-09-28 "강의로 맞춰")
             const passoffNote = !isPassoff
               ? null
               : !hasCourseAccess
-                ? sectionIndex === 0 ? "첫 두 레슨 무료 체험" : "이용권 등록 후 열림"
+                ? sectionIndex === 0 ? "첫 두 강의 무료 체험" : "이용권 등록 후 열림"
                 : passoffChecking
                   ? "진도 확인 중…"
                   : !chapterUnlocked
@@ -504,7 +504,7 @@ export function CourseDashboard({
                     : chapterComplete
                       ? "대주제 완료"
                       : passoffState && !passoffProgress?.everyTopicOpen
-                        ? `진행 ${chapterPercent}% · 레슨 ${passoffState.requiredCount}개와 마지막 레슨${passoffProgress?.mapRefillRequired ? ", 구성도 다시 채우기를" : "을"} 마치면 다음 대주제`
+                        ? `진행 ${chapterPercent}% · 강의 ${passoffState.requiredCount}개와 마지막 강의${passoffProgress?.mapRefillRequired ? ", 구성도 다시 채우기를" : "를"} 마치면 다음 대주제`
                         : `진행 ${chapterPercent}%`;
             const studentNote = courseSlug !== "student"
               ? null

@@ -85,7 +85,7 @@ export function WrapUpStep({
           {!transfersDone ? (
             <>
               <p className="text-label text-ink-soft">
-                이 레슨에서 아직 보지 않은 문장이에요. 배운 문법으로 써 보세요. ({transfers.length - queue.length + 1} / {transfers.length})
+                이 강의에서 아직 보지 않은 문장이에요. 배운 문법으로 써 보세요. ({transfers.length - queue.length + 1} / {transfers.length})
               </p>
               <ComposeRun
                 items={transfers}
@@ -160,24 +160,24 @@ export function WrapUpStep({
 
       {lessonDone ? (
         <section aria-live="polite" className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4">
-          <Verdict ok>레슨 완료 — 5단계를 모두 마쳤어요.</Verdict>
+          <Verdict ok>강의 완료 — 5단계를 모두 마쳤어요.</Verdict>
           {notCounted ? (
             <p className="text-label leading-relaxed text-ink-soft">
-              이 이용권의 진도에는 아직 이 레슨이 기록되지 않았어요. &lsquo;처음부터 다시 하기&rsquo;로 5단계를 다시 마치면 기록돼요.
+              이 이용권의 진도에는 아직 이 강의가 기록되지 않았어요. &lsquo;처음부터 다시 하기&rsquo;로 5단계를 다시 마치면 기록돼요.
             </p>
           ) : null}
           {mapRefill && !mapRefill.ready ? (
             <div className="flex flex-col gap-1 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic} data-passoff-map-entry-waiting>
               <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
               <p className="text-label leading-relaxed text-ink-soft">
-                대주제의 레슨을 <span className="tabular-nums">{mapRefill.left}</span>개 더 마치면 할 수 있어요.
+                대주제의 강의를 <span className="tabular-nums">{mapRefill.left}</span>개 더 마치면 할 수 있어요.
               </p>
             </div>
           ) : mapRefill ? (
             <div className="flex flex-col gap-2 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic}>
               <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
               <p className="text-label leading-relaxed text-ink-soft">
-                대주제의 레슨을 칸에 놓고, 칸마다 문법 설명 한 줄과 대표 문장을 골라요.
+                대주제의 강의를 칸에 놓고, 칸마다 문법 설명 한 줄과 대표 문장을 골라요.
                 {mapRefill.required ? " 한 번 하면 다음 대주제가 열리는 조건이 채워져요." : ""}
               </p>
               <div>
@@ -197,7 +197,7 @@ export function WrapUpStep({
           <div className="flex justify-end">
             <SecondaryButton
               onClick={() => {
-                if (window.confirm("이 레슨의 연습 기록(이 기기)을 지우고 처음부터 다시 할까요? 완료 표시는 그대로 둡니다.")) onReset();
+                if (window.confirm("이 강의의 연습 기록(이 기기)을 지우고 처음부터 다시 할까요? 완료 표시는 그대로 둡니다.")) onReset();
               }}
             >
               처음부터 다시 하기
@@ -207,11 +207,11 @@ export function WrapUpStep({
       ) : stepsLeft.length === 0 && frameShown ? (
         <section aria-live="polite" className="flex flex-col gap-2 rounded-card border border-line bg-raised p-4" data-passoff-steps-done>
           <Verdict ok>5단계를 모두 마쳤어요.</Verdict>
-          <p className="text-label leading-relaxed text-ink-soft">아래 &lsquo;이 강의 학습 완료&rsquo;를 누르면 레슨이 완료돼요.</p>
+          <p className="text-label leading-relaxed text-ink-soft">아래 &lsquo;이 강의 학습 완료&rsquo;를 누르면 강의가 완료돼요.</p>
         </section>
       ) : frameShown && otherStepsLeft.length ? (
         <section className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4">
-          <p className="text-body text-ink">레슨을 마치려면 남은 단계를 끝내 주세요.</p>
+          <p className="text-body text-ink">강의를 마치려면 남은 단계를 끝내 주세요.</p>
           <div className="flex flex-wrap gap-2">
             {otherStepsLeft.map((s) => (
               <SecondaryButton key={s} onClick={() => onGoStep(s)}>

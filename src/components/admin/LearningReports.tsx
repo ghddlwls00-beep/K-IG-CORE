@@ -67,7 +67,7 @@ export function LearningReports({ course = "passoff-grammar", title = "PASS-OFF 
             {title} · &lsquo;내 답도 맞아요&rsquo; 신고
           </h2>
           <p className="text-label leading-relaxed text-ink-soft">
-            학습자 기록을 읽어 문항별로 모아요. 누구의 신고인지는 나오지 않아요. 맞는 답은 레슨 파일의 허용 답에 더해서 반영하고, 이 화면은
+            학습자 기록을 읽어 문항별로 모아요. 누구의 신고인지는 나오지 않아요. 맞는 답은 강의 파일의 허용 답에 더해서 반영하고, 이 화면은
             보기만 해요.
           </p>
         </div>

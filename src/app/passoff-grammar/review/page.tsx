@@ -63,8 +63,8 @@ export default async function PassoffReviewPage({ searchParams }: Search) {
         {withLicence ? null : (
           <p className="mt-1 text-label text-ink-soft" data-kig-paid-extra="license">
             {notes
-              ? "무료 체험 레슨 두 개의 문항만 모아요. 이용권이 있으면 마친 레슨의 문항이 모두 모여요."
-              : "무료 체험 레슨 두 개의 문항만 복습해요. 이용권이 있으면 마친 레슨의 문항이 모두 나와요."}
+              ? "무료 체험 강의 두 개의 문항만 모아요. 이용권이 있으면 마친 강의의 문항이 모두 모여요."
+              : "무료 체험 강의 두 개의 문항만 복습해요. 이용권이 있으면 마친 강의의 문항이 모두 나와요."}
           </p>
         )}
       </header>

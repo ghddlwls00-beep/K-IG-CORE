@@ -300,7 +300,7 @@ export function formatLessonPresentation(
     return {
       title: lesson.title || rawLabel || id,
       subtitle: lesson.label || `TOPIC ${topic}`,
-      badge: "규칙 · 영작",
+      badge: "문법 설명 · 영작",
       code: `Topic ${topic}-${link}`,
     };
   }

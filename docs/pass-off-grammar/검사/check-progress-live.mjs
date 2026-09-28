@@ -126,12 +126,12 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
   check("L3b 잠금 화면은 data-kig-paywall=\"progress\"(이용권 다시 불러오기 고리 없음)", r.body.includes('data-kig-paywall="progress"') && !r.body.includes('data-kig-paywall="license"'), r.body.match(/data-kig-paywall="[a-z]+"/)?.[0]);
   // E2 수정: the map is the topic's end — its condition is there, its link only once the lessons are done (L6)
   check("L3c 잠금 화면에 지금 대주제의 조건(TOPIC 1 · 레슨 3개 · 마지막 레슨 이름 · 구성도 다시 채우기 — 레슨 전이라 그 쪽 링크는 아직 없음)",
-    r.text.includes(index.groups[0].label) && r.text.includes(`레슨 ${Math.ceil(t1.length * 0.8)}개 이상`) && r.text.includes(lessonFile(t1[t1.length - 1]).title) &&
+    r.text.includes(index.groups[0].label) && r.text.includes(`강의 ${Math.ceil(t1.length * 0.8)}개 이상`) && r.text.includes(lessonFile(t1[t1.length - 1]).title) &&
       r.text.includes("구성도 다시 채우기") && !r.body.includes('href="/passoff-grammar/map?topic=1"'),
     r.text.match(/지금 학습할 대주제.{0,160}/)?.[0]);
   // 점검 1: the lessons the server has not counted, each a link into the open topic
-  const recorded = r.text.match(/아직 기록되지 않은 레슨.{0,120}/)?.[0] || "";
-  check("L3d 잠금 화면에 '아직 기록되지 않은 레슨' — TOPIC 1 의 레슨마다 이름 · 그 레슨으로 가는 링크",
+  const recorded = r.text.match(/아직 기록되지 않은 강의.{0,120}/)?.[0] || "";
+  check("L3d 잠금 화면에 '아직 기록되지 않은 강의' — TOPIC 1 의 레슨마다 이름 · 그 레슨으로 가는 링크",
     t1.every((id) => recorded.includes(lessonFile(id).title) && r.body.includes(`href="/passoff-grammar/${id}"`)), recorded);
   const open = await page(`/passoff-grammar/${t1[t1.length - 1]}`, stu.cookie);
   check(`L4 STUDENT 이용권: TOPIC 1 의 유료 ${t1[t1.length - 1]} 열림`, open.status === 200 && !PAYWALL.test(open.text) && open.text.includes(LESSON), open.status);
@@ -201,8 +201,8 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
   const wait2 = await page("/passoff-grammar/map?topic=2", all.cookie);
   const wait2Rsc = await page("/passoff-grammar/map?topic=2", all.cookie, { rsc: true });
   const waitLeak = [...found(wait2, mapWords(t2)), ...found(wait2Rsc, mapWords(t2))];
-  check(`L14e 올패스(TOPIC 2 열림 · 그 레슨 전): TOPIC 2 구성도 쪽 → '대주제의 레슨을 마친 뒤' · 레슨 ${t2.length}개 조건 · 그 레슨 글 0(HTML · RSC)`,
-    wait2.status === 200 && wait2.text.includes("대주제의 레슨을 마친 뒤") && wait2.body.includes('data-passoff-map-waiting="2"') && waitLeak.length === 0,
+  check(`L14e 올패스(TOPIC 2 열림 · 그 레슨 전): TOPIC 2 구성도 쪽 → '대주제의 강의를 마친 뒤' · 레슨 ${t2.length}개 조건 · 그 레슨 글 0(HTML · RSC)`,
+    wait2.status === 200 && wait2.text.includes("대주제의 강의를 마친 뒤") && wait2.body.includes('data-passoff-map-waiting="2"') && waitLeak.length === 0,
     waitLeak.join(" | ") || wait2.text.match(/구성도 다시 채우기는.{0,80}/)?.[0]);
   await complete(all.cookie, t2);
   const open2 = await page("/passoff-grammar/map?topic=2", all.cookie);
@@ -222,7 +222,7 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
   await complete(life.cookie, T[T.length - 1]);
   const lifeDeep = await page(`/passoff-grammar/map?topic=${T.length}`, life.cookie);
   check(`L14d LIFE: 맨 끝 TOPIC ${T.length} 구성도 — 레슨 전 '레슨을 마친 뒤'(글 0) → 레슨을 마치면 열림`,
-    lifeEarly.status === 200 && lifeEarly.text.includes("대주제의 레슨을 마친 뒤") && lifeEarlyLeak.length === 0 &&
+    lifeEarly.status === 200 && lifeEarly.text.includes("대주제의 강의를 마친 뒤") && lifeEarlyLeak.length === 0 &&
       lifeDeep.status === 200 && found(lifeDeep, mapWords(T[T.length - 1])).length === mapWords(T[T.length - 1]).length,
     `${lifeEarly.status} · 레슨 전 글 ${lifeEarlyLeak.length} · ${lifeDeep.status}`);
 }

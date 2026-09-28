@@ -263,12 +263,12 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
     body = !notes.length ? (
       <section className="flex flex-col gap-2 rounded-card border border-line bg-raised p-4" data-notes-empty>
         <h2 className="text-title-s font-bold text-ink">틀린 문항이 없어요</h2>
-        <p className="text-label leading-relaxed text-ink-soft">복습에서 틀리거나 도움을 받아 맞힌 문항이 레슨별로 여기에 모여요.</p>
+        <p className="text-label leading-relaxed text-ink-soft">복습에서 틀리거나 도움을 받아 맞힌 문항이 강의별로 여기에 모여요.</p>
       </section>
     ) : (
       <div className="flex flex-col gap-3">
         <p className="text-label leading-relaxed text-ink-soft">
-          틀린 적 있는 문항 <span className="tabular-nums">{count}</span>개를 레슨별로 모았어요. &lsquo;지금 다시 풀기&rsquo;는 연습이라 복습
+          틀린 적 있는 문항 <span className="tabular-nums">{count}</span>개를 강의별로 모았어요. &lsquo;지금 다시 풀기&rsquo;는 연습이라 복습
           일정은 바뀌지 않아요.
         </p>
         <ul className="flex flex-col divide-y divide-line overflow-hidden rounded-card border border-line bg-raised">
@@ -319,7 +319,7 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
                       </ul>
                     )}
                     {!ready && waits > 0 ? (
-                      <p className="text-label leading-relaxed text-ink-soft">이 레슨의 문항은 복습할 차례예요. 복습에서 먼저 풀면 여기서 다시 풀 수 있어요.</p>
+                      <p className="text-label leading-relaxed text-ink-soft">이 강의의 문항은 복습할 차례예요. 복습에서 먼저 풀면 여기서 다시 풀 수 있어요.</p>
                     ) : null}
                     {ready ? (
                       <div className="flex flex-col gap-1.5">

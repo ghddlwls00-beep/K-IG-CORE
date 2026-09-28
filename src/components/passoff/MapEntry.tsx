@@ -49,7 +49,7 @@ export function PassoffMapRow({ topic, done, ready }: { topic: number; done: boo
       <div className="border-t border-line" data-passoff-map-row={topic} data-passoff-map-row-waiting>
         <p className="flex min-h-12 items-center gap-2 px-4 text-label text-ink-soft">
           <span className="font-semibold">구성도 다시 채우기</span>
-          <span className="text-caption">대주제 레슨을 마친 뒤 할 수 있어요</span>
+          <span className="text-caption">대주제 강의를 마친 뒤 할 수 있어요</span>
         </p>
       </div>
     );
@@ -113,12 +113,12 @@ export function PassoffMapWaiting({
 
   return (
     <section className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4" data-passoff-map-waiting={topic}>
-      <p className="text-body text-ink">구성도 다시 채우기는 대주제의 레슨을 마친 뒤 할 수 있어요.</p>
+      <p className="text-body text-ink">구성도 다시 채우기는 대주제의 강의를 마친 뒤 할 수 있어요.</p>
       <ul className="flex flex-col gap-1 text-label text-ink-soft">
         <li>
-          레슨 {required}개 이상 마치기 <span className="tabular-nums">(지금 {state?.completedCount ?? completed}/{total})</span>
+          강의 {required}개 이상 마치기 <span className="tabular-nums">(지금 {state?.completedCount ?? completed}/{total})</span>
         </li>
-        <li>마지막 레슨 &lsquo;{lastTitle}&rsquo; 마치기</li>
+        <li>마지막 강의 &lsquo;{lastTitle}&rsquo; 마치기</li>
       </ul>
       <div>
         <Link
