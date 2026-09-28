@@ -11,9 +11,18 @@
  * The record lives on this device (localStorage "kig-learning:passoff-grammar"); the review screen and the server
  * copy come with the engine's shared page (설계 §12 2-나). The course list's check mark (ProgressProvider) is
  * recorded by the view itself.
+ *
+ * 2-나 (E1): the review screen (/passoff-grammar/review — src/components/passoff/PassoffReview.tsx on the engine's
+ * ReviewSession) answers the same items with where "review". With a licence the record also lives on the server
+ * (/api/learning/passoff-grammar, which sends the data of today's items only — src/lib/passoffReview.ts); without one the
+ * review has the two free lessons' items alone, on this device (passoffDevicePlan).
  */
+import { planDay } from "./learning/engine";
 import { markLessonDone, recordAttempt } from "./learning/record";
-import type { AnswerMode, CourseProfile, Help } from "./learning/types";
+import { restrictRecord } from "./learning/review";
+import type { AnswerMode, CourseProfile, CourseRecord, Day, Help, Plan } from "./learning/types";
+import { FREE_PREVIEW_LESSON_IDS } from "./license";
+import type { PassoffFormItem, PassoffProduceItem } from "./passoffTypes";
 
 export const PASSOFF_COURSE = "passoff-grammar";
 
@@ -79,4 +88,45 @@ export function notePassoffAttempt(attempt: PassoffAttempt): void {
 export function notePassoffLessonDone(lessonId: string, entries: { key: string; kind: PassoffItemKind }[], tomorrowFirst: readonly string[]): void {
   const first = new Set(tomorrowFirst);
   markLessonDone(PASSOFF_PROFILE, lessonId, [...entries.filter((e) => first.has(e.key)), ...entries.filter((e) => !first.has(e.key))]);
+}
+
+// ---------------------------------------------------------------------------
+// The review screen (공통-학습-엔진.md §8 — 2-나)
+// ---------------------------------------------------------------------------
+
+/** One item as the review screen draws it — the lesson's own view fields (src/lib/passoffReview.ts), nothing more. */
+export interface PassoffReviewItem {
+  lessonId: string;
+  kind: PassoffItemKind;
+  /** the lesson's title ("1인칭") — which lesson the item comes from */
+  lessonTitle: string;
+  /** the lesson's rule — ladder ②'s clue, as in the lesson */
+  ruleTitle?: string;
+  item: PassoffProduceItem | PassoffFormItem;
+}
+
+/** ④ · ⑤ sentences — '통과한 문장' on the review's end screen counts these (the form items are elements). */
+export const PASSOFF_SENTENCE_KINDS: readonly string[] = ["produce", "transfer"];
+
+/** The free trial (license.ts — pg01-1 · pg01-2): without a licence the review has these lessons' items alone. */
+export const PASSOFF_FREE_LESSONS: readonly string[] = FREE_PREVIEW_LESSON_IDS[PASSOFF_COURSE] ?? [];
+
+/** An item id's lesson: "pg02-1:p4" → "pg02-1". */
+export const passoffLessonOfItem = (key: string): string => key.split(":")[0];
+
+/** The record with the free lessons' items alone. */
+export function passoffFreeRecord(record: CourseRecord): CourseRecord {
+  return restrictRecord(
+    record,
+    (key) => PASSOFF_FREE_LESSONS.includes(passoffLessonOfItem(key)),
+    (lessonId) => PASSOFF_FREE_LESSONS.includes(lessonId),
+  );
+}
+
+/**
+ * Today's review from this device's record — the course list's '오늘 복습' button, and the whole review without a
+ * licence (`freeOnly`: the free lessons' items; no server).
+ */
+export function passoffDevicePlan(record: CourseRecord, today: Day, { freeOnly }: { freeOnly: boolean }): Plan {
+  return planDay(freeOnly ? passoffFreeRecord(record) : record, today, PASSOFF_PROFILE);
 }

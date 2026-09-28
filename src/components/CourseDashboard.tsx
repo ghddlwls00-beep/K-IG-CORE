@@ -17,6 +17,7 @@ import { READING_LENGTHS } from "@/lib/readingLengths";
 import { passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
+import { PassoffReviewEntry } from "./passoff/ReviewEntry";
 
 export interface DashboardLessonItem {
   id: string;
@@ -365,6 +366,8 @@ export function CourseDashboard({
               <span aria-hidden>→</span>
             </Link>
           ) : null}
+          {/* PASS-OFF GRAMMAR: today's review from this device's record (공통-학습-엔진.md §8-4) — other courses have none yet */}
+          {isPassoff ? <PassoffReviewEntry withLicence /> : null}
           <div className="mt-4 flex flex-col gap-2">
             <p className="text-label text-ink">
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
@@ -411,6 +414,8 @@ export function CourseDashboard({
               ))}
             </div>
           ) : null}
+          {/* without a licence the review has the free lessons' items alone, on this device */}
+          {isPassoff ? <PassoffReviewEntry withLicence={false} /> : null}
           {/* kept for the audit drivers, which read the counters on every list page */}
           <p className="mt-3 text-caption text-ink-soft">
             학습 진도율: <span className="tabular-nums">{completedCount}</span> / {totalLessons}개 완료 ({progressPercent}%)

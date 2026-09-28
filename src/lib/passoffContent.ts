@@ -66,3 +66,13 @@ export async function passoffLessonBlocks(
   }
   return { blocks: viewBlocks(lesson.blocks), lockedExtraCount: sentenceCount(supplement) };
 }
+
+/**
+ * The same view blocks for the review screen's items (src/lib/passoffReview.ts — 공통-학습-엔진.md §8): the paid STUDENT
+ * sentences only when `withPaid` — the learning API, whose caller holds a licence that opens the course. The free review
+ * page asks without them.
+ */
+export function passoffReviewBlocks(lesson: Lesson, { withPaid }: { withPaid: boolean }): Block[] {
+  const supplement = withPaid ? readSupplement(lesson.id) : null;
+  return viewBlocks(supplement && supplement.items.length ? attachPaidItems(lesson.blocks, supplement.items) : lesson.blocks);
+}

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import type { PassoffFormItem } from "@/lib/passoffTypes";
 import { expectedLabel, gradeChoice, gradeSelect, gradeShort, hasHangul } from "@/lib/passoffGrading";
-import { notePassoffAttempt } from "@/lib/passoffLearning";
+import { notePassoffAttempt, type PassoffAttempt } from "@/lib/passoffLearning";
 import type { FormItemState } from "@/lib/passoffLesson";
 import { IconCheck } from "../icons";
 import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, type FontSize } from "./ui";
@@ -86,7 +86,12 @@ export function FormStep({
 
 type Phase = "answer" | "retry" | "right" | "shown";
 
-function FormItemCard({
+/**
+ * One ③ item. The review screen (공통-학습-엔진.md §8 — src/components/passoff/PassoffReview.tsx) uses it too: its answers
+ * go to `onAttempt` (recorded there with where "review"), and `test` is the next-day check — one answer, recorded, and
+ * passed on at once with no result (the results come together at the end). Without them the card is the lesson's.
+ */
+export function FormItemCard({
   item,
   lessonId,
   firstPresentation,
@@ -95,6 +100,8 @@ function FormItemCard({
   onFirstTry,
   onShown,
   onDone,
+  onAttempt,
+  test = false,
 }: {
   item: PassoffFormItem;
   lessonId: string;
@@ -105,6 +112,10 @@ function FormItemCard({
   onFirstTry: (right: boolean) => void;
   onShown: () => void;
   onDone: (firstTryRight: boolean) => void;
+  /** who records each answer — the lesson's own record (notePassoffAttempt) when absent */
+  onAttempt?: (attempt: PassoffAttempt) => void;
+  /** the next-day check: one answer, recorded, then passed on at once — no result */
+  test?: boolean;
 }) {
   const [phase, setPhase] = useState<Phase>("answer");
   const [tries, setTries] = useState(0);
@@ -129,7 +140,7 @@ function FormItemCard({
       onFirstTry(correct);
     }
     // the help taken BEFORE this answer: "한 번 더" is not help; the answer shown in an earlier presentation is
-    notePassoffAttempt({
+    (onAttempt ?? notePassoffAttempt)({
       lessonId,
       itemId: item.id,
       kind: item.kind,
@@ -139,6 +150,11 @@ function FormItemCard({
       firstTry: first && firstPresentation,
       answer,
     });
+    if (test) {
+      // the next-day check: this one answer is the result — shown with the others at the end
+      onDone(correct);
+      return;
+    }
     setTries((t) => t + 1);
     if (correct) {
       setPhase("right");

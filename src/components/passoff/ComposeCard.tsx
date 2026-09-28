@@ -5,7 +5,7 @@ import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { gradeProduce, hasHangul, isCorrect, writingIssues, type DiffToken, type ProduceResult } from "@/lib/passoffGrading";
 import { contrastPool, contrastTiles, firstLetters } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
-import { notePassoffAttempt, strongerHelp, type PassoffHelp } from "@/lib/passoffLearning";
+import { notePassoffAttempt, strongerHelp, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, type FontSize, type Speaker } from "./ui";
 
@@ -40,6 +40,11 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  * lesson's rule, a missing target, each word's first letter) → ③ word tiles with two grammar distractors →
  * ④ the answer, the rule and its sound. Every answer is recorded with the help taken BEFORE it — in this
  * presentation or an earlier one (`priorHelp`: once the answer was shown, a comeback's answers carry "reveal").
+ *
+ * The review screen (공통-학습-엔진.md §8 — src/components/passoff/PassoffReview.tsx) uses the same card: its answers go
+ * to `onAttempt` (recorded there with where "review") instead of the lesson's record, `afterMiss` says when a missed
+ * sentence comes back, and `test` is the next-day check — one answer, recorded, and passed on at once with no result or
+ * ladder (the results come together at the end). Without these three the card is the lesson's, unchanged.
  */
 export function ComposeCard({
   item,
@@ -54,6 +59,9 @@ export function ComposeCard({
   onFirstTry,
   onHelp,
   onDone,
+  onAttempt,
+  afterMiss,
+  test = false,
 }: {
   item: PassoffProduceItem;
   kind: "produce" | "transfer";
@@ -70,7 +78,14 @@ export function ComposeCard({
   onFirstTry: (result: { right: boolean; first: ComposeOutcome["first"] }) => void;
   onHelp: (help: PassoffHelp) => void;
   onDone: (outcome: ComposeOutcome) => void;
+  /** who records each answer — the lesson's own record (notePassoffAttempt) when absent */
+  onAttempt?: (attempt: PassoffAttempt) => void;
+  /** what the card says under a sentence that was not right on its own — the lesson's comeback line when absent */
+  afterMiss?: string;
+  /** the next-day check: one answer, recorded, then passed on at once — no result, no ladder */
+  test?: boolean;
 }) {
+  const note = onAttempt ?? notePassoffAttempt;
   const [text, setText] = useState("");
   const [heard, setHeard] = useState<string | null>(null);
   const [checks, setChecks] = useState(0);
@@ -113,12 +128,12 @@ export function ComposeCard({
     setHangul(false);
     const correct = isCorrect(res);
     const firstTry = checks === 0;
+    const firstAnswer = { answer, verdict: res.verdict, reference: res.reference };
     if (firstTry) {
-      const firstAnswer = { answer, verdict: res.verdict, reference: res.reference };
       setFirst(firstAnswer);
       onFirstTry({ right: correct, first: presentation === 0 ? firstAnswer : null });
     }
-    notePassoffAttempt({
+    note({
       lessonId,
       itemId: item.id,
       kind,
@@ -128,6 +143,11 @@ export function ComposeCard({
       firstTry: firstTry && presentation === 0,
       answer,
     });
+    if (test) {
+      // the next-day check: this one answer is the result — shown with the others at the end
+      onDone({ success: correct && firstTry, first: presentation === 0 ? firstAnswer : null });
+      return;
+    }
     setChecks((c) => c + 1);
     setResult(res);
     if (correct) {
@@ -143,7 +163,7 @@ export function ComposeCard({
     const words = tilePicks.map((t) => t.word);
     const assembled = words.join(" ");
     const correct = verifyAnyWordSequence(words, bank.acceptedWordSequences) || isCorrect(gradeProduce(assembled, item));
-    notePassoffAttempt({ lessonId, itemId: item.id, kind, correct, help: strongerHelp(priorHelp, "tiles"), mode: "tap", firstTry: false, answer: assembled });
+    note({ lessonId, itemId: item.id, kind, correct, help: strongerHelp(priorHelp, "tiles"), mode: "tap", firstTry: false, answer: assembled });
     setChecks((c) => c + 1);
     if (correct) {
       setRightBy({ answer: assembled, result: null });
@@ -155,7 +175,9 @@ export function ComposeCard({
 
   const issues = rightBy?.result ? writingIssues(rightBy.answer, rightBy.result) : null;
   const typo = rightBy?.result?.verdict === "typo" ? rightBy.result.typo : null;
-  const comeback = success ? null : comebacksLeft > 0 ? "이 문장은 조금 뒤에 다시 나와요." : "이 문장은 여러 번 다시 풀었어요. 다음으로 넘어가요.";
+  const comeback = success
+    ? null
+    : afterMiss ?? (comebacksLeft > 0 ? "이 문장은 조금 뒤에 다시 나와요." : "이 문장은 여러 번 다시 풀었어요. 다음으로 넘어가요.");
 
   return (
     <section className="flex flex-col gap-4 rounded-card border border-line bg-raised p-4">
