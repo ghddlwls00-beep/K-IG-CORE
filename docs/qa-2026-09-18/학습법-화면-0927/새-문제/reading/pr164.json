@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr164",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr164-q1",
+      "type": "세부 사실",
+      "prompt": "소비자 옹호론자들이 요구한 것으로 언급된 것은?",
+      "options": [
+        "생명공학 식품의 전면 판매 금지",
+        "유전자 변형 제품 표시 의무화",
+        "농작물에 대한 검사의 대폭 축소",
+        "외국산 농작물의 수입 전면 금지"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "\"mandatory labeling of genetically engineered products\" — 유전자 변형 제품의 의무적 표시를 요구함"
+    },
+    {
+      "id": "pr164-q2",
+      "type": "한 단계 추론",
+      "prompt": "소비자 옹호론자들의 요구에 식품업계가 반대한 이유로 가장 적절한 것은?",
+      "options": [
+        "그런 조치는 전혀 필요하지 않다",
+        "소비자들이 이미 충분히 알고 있다",
+        "식품 가격이 지나치게 오른다",
+        "생명공학 식품에 부당한 오명이 씌워진다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "\"the food industry argued that it would unfairly stigmatize bio-tech food\" — 식품업계가 내세운 이유(\"unnecessary\"는 행정부 관계자들의 말)"
+    }
+  ]
+}

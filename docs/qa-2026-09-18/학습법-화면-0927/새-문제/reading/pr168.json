@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr168",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr168-q1",
+      "type": "세부 사실",
+      "prompt": "글에서 스타일링이 관심을 두는 것으로 언급된 것은?",
+      "options": [
+        "제품의 기능과 문제 해결",
+        "단순화와 본질의 추구",
+        "표면 처리와 외관",
+        "서구 경제의 순환 주기"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "\"Styling is concerned with surface treatment and appearance\" — 스타일링은 표면 처리와 외관에 관심을 둠"
+    },
+    {
+      "id": "pr168-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 디자인과 스타일링의 관계로 언급된 것은?",
+      "options": [
+        "서로 관련되지만 완전히 다른 분야이다",
+        "사실상 같은 일을 하는 분야이다",
+        "서로 아무 관련이 없는 분야이다",
+        "스타일링이 디자인의 한 부분이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "\"design and styling are interrelated\" · \"they are completely distinct fields\" — 서로 연관되지만 완전히 구별되는 분야"
+    }
+  ]
+}

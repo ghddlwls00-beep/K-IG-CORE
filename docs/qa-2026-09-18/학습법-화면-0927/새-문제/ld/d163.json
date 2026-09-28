@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d163",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d163-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "잡지는 신문과 달리 어른만을 위해 만든다",
+        "잡지가 늘어나 신문을 읽는 사람이 줄었다",
+        "신문과 잡지는 주로 뉴스만 다룬다",
+        "신문과 잡지는 모든 독자에게 맞게 다양하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "note": "'several sections', 'news magazines, literary magazines', 'publications for every taste and interest' 참고"
+    },
+    {
+      "id": "d163-q2",
+      "type": "세부 사실",
+      "prompt": "신문이 평소보다 두꺼워진다고 한 날은?",
+      "options": [
+        "일요일",
+        "토요일",
+        "월요일",
+        "금요일"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'especially on Sundays when the edition is larger than usual' 참고"
+    },
+    {
+      "id": "d163-q3",
+      "type": "세부 사실",
+      "prompt": "잡지가 나오는 간격으로 말한 것은?",
+      "options": [
+        "매주 또는 석 달마다",
+        "매주 또는 매달",
+        "두 주마다 또는 매달",
+        "두 주마다 또는 석 달마다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'Some magazines are published weekly, others are put out monthly' 참고"
+    }
+  ]
+}

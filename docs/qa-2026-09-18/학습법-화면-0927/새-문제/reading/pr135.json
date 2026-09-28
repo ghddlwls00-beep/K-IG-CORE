@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr135",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr135-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "모든 것은 뚜렷한 기준으로 분류할 수 있다",
+        "생명은 다른 것보다 정의하기 쉽다",
+        "인간은 분류하는 일에 관심이 없다",
+        "분명히 분류하기 어려운 경계선상의 것들이 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4,
+        6
+      ],
+      "note": "'fuzzy edges' · 'borderline cases' · 'cannot clearly be called either living or non-living' — 분명히 나누기 어려운 경계선상의 것들"
+    },
+    {
+      "id": "pr135-q2",
+      "type": "세부 사실",
+      "prompt": "바이러스에 대한 설명으로 옳은 것은?",
+      "options": [
+        "살아 있는 세포 안에서 번식한다",
+        "병 속에서도 스스로 늘어난다",
+        "생명의 특성을 대부분 지닌다",
+        "생명의 특성을 전혀 지니지 않는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "'when inside a living cell, can reproduce more of itself' — 살아 있는 세포 안에서 번식함"
+    }
+  ]
+}

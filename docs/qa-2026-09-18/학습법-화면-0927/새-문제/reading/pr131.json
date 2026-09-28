@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr131",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr131-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "공간은 시간보다 더 일반적이다",
+        "시간은 공간보다 더 일반적이다",
+        "시간과 공간은 똑같이 일반적이다",
+        "시간과 공간은 서로 비교할 수 없다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'Time is more general than space' — 시간이 공간보다 더 일반적"
+    },
+    {
+      "id": "pr131-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'it applies to the inner world of impressions, emotions, and ideas'에서 it이 가리키는 것은?",
+      "options": [
+        "공간",
+        "인상",
+        "질서",
+        "시간"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "'Time is more general than space, because it applies to' — it은 앞 절의 주어 Time"
+    }
+  ]
+}

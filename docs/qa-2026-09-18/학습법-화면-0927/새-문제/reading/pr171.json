@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr171",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr171-q1",
+      "type": "세부 사실",
+      "prompt": "본문 내용과 일치하는 것은?",
+      "options": [
+        "앨리스 폴은 1923년에 의회 의원이 되었다",
+        "앨리스 폴은 남녀평등 헌법 수정안을 작성했다",
+        "앨리스 폴은 남녀평등 헌법 수정안에 반대했다",
+        "남녀평등 헌법 수정안은 1932년에 제출되었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'Alice Paul, author of the Equal Rights Amendment introduced in Congress in 1923' — 앨리스 폴이 수정안을 작성했다"
+    },
+    {
+      "id": "pr171-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "본문의 posthumously가 뜻하는 바로 가장 적절한 것은?",
+      "options": [
+        "의회에서",
+        "생전에",
+        "사후에",
+        "상당히"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "'received little honor in her lifetime but has gained considerable fame posthumously' — 생전(lifetime)과 대비되는 때"
+    }
+  ]
+}

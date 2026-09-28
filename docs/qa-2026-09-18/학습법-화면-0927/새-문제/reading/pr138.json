@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr138",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr138-q1",
+      "type": "세부 사실",
+      "prompt": "글에서 대담한 모기들이 숨는 곳으로 언급된 것은?",
+      "options": [
+        "침대 아래",
+        "슬리퍼 속",
+        "베개 밑",
+        "천장 구석"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "'bold mosquitoes' · 'hide under' · 'pillows' — 대담한 모기들은 베개 밑에 숨음"
+    },
+    {
+      "id": "pr138-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 모기의 전략에 대해 추론할 수 있는 것은?",
+      "options": [
+        "먼 곳에 숨어 사람을 피하게 되었다",
+        "예전보다 느려진 대신 더 대담해졌다",
+        "천장에만 붙어 지내게 되었다",
+        "사람에게 잡히지 않도록 전략을 바꿔 왔다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "'with a slipper in our hand' · 'strategy has evolved' · 'quicker, more inconspicuous' — 사람에게 잡히지 않으려고 전략이 바뀜"
+    }
+  ]
+}

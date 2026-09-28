@@ -1,0 +1,61 @@
+{
+  "v": 1,
+  "lesson": "d172",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d172-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "금에 이어 영화를 꿈꾸며 캘리포니아로 몰려든 사람들",
+        "금을 찾아 몰려든 이들이 모두 부자가 된 일",
+        "스페인 선교부의 부름으로 캘리포니아에 몰려든 사람들",
+        "광산촌 사람들이 영화를 처음 만든 일"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4,
+        7,
+        8
+      ],
+      "note": "'rushed to California' · 'dreamed of making their fortunes panning for gold' · 'people again rushed to California' · 'not in gold, but in the movies' — 금, 다음엔 영화를 꿈꾸며 몰려듦"
+    },
+    {
+      "id": "d172-q2",
+      "type": "세부 사실",
+      "prompt": "금이 발견되기 전 캘리포니아의 모습으로 옳은 것은?",
+      "options": [
+        "정착민이 원주민보다 훨씬 많았다",
+        "정착민은 적고 원주민은 많았다",
+        "스페인 사람들이 원주민보다 많았다",
+        "목장주는 없고 농부만 있었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'few settlers lived in California, although many Native Americans did' · 'a few Spanish missions, some ranchers and farmers' · 'In 1848, everything changed' · 'Gold was discovered' — 금 발견 전: 정착민 적고 원주민 많음"
+    },
+    {
+      "id": "d172-q3",
+      "type": "세부 사실",
+      "prompt": "금이 나온 곳마다 생긴 광산촌의 모습으로 옳은 것은?",
+      "options": [
+        "술집과 감옥이 하나도 없는 마을",
+        "술집 대신 학교가 있는 마을",
+        "술집·감옥 등 몇 가지만 있는 마을",
+        "술집과 감옥이 늘어선 큰 도시"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'Mining towns appeared everywhere gold was found' · 'little more than a saloon, a hotel, a stable, a jail, and a cemetery' — 몇 가지뿐인 마을"
+    }
+  ]
+}

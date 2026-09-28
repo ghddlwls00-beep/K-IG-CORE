@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "lesson": "d190",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d190-q1",
+      "type": "세부사실",
+      "prompt": "날씨가 한층 더 나빠진 때로 알맞은 것은?",
+      "options": [
+        "아침이 되었을 때",
+        "한낮이 되었을 때",
+        "저녁이 되었을 때",
+        "한밤중이 되었을 때"
+      ],
+      "answer": 2,
+      "evidence": [5],
+      "note": "저녁이 되자 더 나빠짐: 'When evening fell, the weather got even worse'"
+    },
+    {
+      "id": "d190-q2",
+      "type": "세부사실",
+      "prompt": "화자가 걸어가기로 한 까닭으로 알맞은 것은?",
+      "options": [
+        "약속 장소가 아주 가까워서",
+        "택시를 잡을 수 없어서",
+        "안개 구경을 하고 싶어서",
+        "차들이 경적을 시끄럽게 울려서"
+      ],
+      "answer": 1,
+      "evidence": [8, 9],
+      "note": "택시가 없어 걷기로 함: 'impossible to find a taxi' · 'I decided to walk'"
+    },
+    {
+      "id": "d190-q3",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "짙은 안개 속에서 런던 구경을 한 경험",
+        "짙은 안개 속에서 버스를 놓친 경험",
+        "짙은 안개 속에서 교통사고를 당한 경험",
+        "짙은 안개 속에서 길을 잃어버린 경험"
+      ],
+      "answer": 3,
+      "evidence": [1, 2, 10],
+      "note": "잊지 못할 일, 짙은 안개, 길을 잃음: 'something happened' · 'one of the thickest fogs' · 'I was completely lost'"
+    }
+  ]
+}

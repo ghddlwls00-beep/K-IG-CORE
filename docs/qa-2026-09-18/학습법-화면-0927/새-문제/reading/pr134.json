@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr134",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr134-q1",
+      "type": "세부 사실",
+      "prompt": "빛의 속도에 대한 설명으로 옳은 것은?",
+      "options": [
+        "초당 약 300만 킬로미터",
+        "시속 약 3만 킬로미터",
+        "초당 약 30만 킬로미터",
+        "시속 약 300만 킬로미터"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "'about 300,000 kilometers per second' — 초당 약 30만 킬로미터"
+    },
+    {
+      "id": "pr134-q2",
+      "type": "세부 사실",
+      "prompt": "오늘날 우주선의 속도에 대한 설명으로 옳은 것은?",
+      "options": [
+        "광속의 절반을 조금 넘는다",
+        "광속의 1%에 못 미친다",
+        "광속과 거의 같은 속도를 낸다",
+        "광속보다 더 빨리 날 수 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'only capable of less than one percent of the speed of light' — 광속의 1%에도 못 미침"
+    }
+  ]
+}

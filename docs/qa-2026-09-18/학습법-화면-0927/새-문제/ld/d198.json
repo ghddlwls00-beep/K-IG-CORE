@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d198",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d198-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "고양이는 청결을 위해 집 안 구석구석을 살핀다",
+        "고양이는 스컹크를 만나면 재빨리 몸을 피한다",
+        "호기심이 고양이를 곤경에 빠뜨리기도 한다",
+        "고양이는 따돌림을 당해도 금방 잊는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        3,
+        9
+      ],
+      "note": "'cats possess a great curiosity', 'Sometimes his curiosity gets him into trouble', 'a real social outcast because of his curiosity' — 호기심 많은 고양이가 호기심 때문에 곤경에 빠지고 따돌림받는 신세가 됨"
+    },
+    {
+      "id": "d198-q2",
+      "type": "세부 사실",
+      "prompt": "고양이 몸에서 나던 냄새가 사라지는 데 걸린 기간으로 옳은 것은?",
+      "options": [
+        "약 1개월",
+        "약 1주일",
+        "약 2주일",
+        "약 1년"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "'It took about a month for the odor to wear away' — 냄새가 빠지는 데 약 1개월이 걸림"
+    },
+    {
+      "id": "d198-q3",
+      "type": "세부 사실",
+      "prompt": "냄새 때문에 그 고양이가 겪은 일로 옳은 것은?",
+      "options": [
+        "스컹크가 사는 구멍에서 지내게 되었다",
+        "집 안 구석에 숨어 지내게 되었다",
+        "다른 고양이들과 더 친해지게 되었다",
+        "한동안 집 가까이 오지 못하게 되었다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "'for the odor to wear away', 'During that time, the cat was not allowed near the house' — 냄새가 빠지는 동안 고양이는 집 근처에 오지 못함"
+    }
+  ]
+}

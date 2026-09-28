@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr154",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr154-q1",
+      "type": "세부 사실",
+      "prompt": "한지를 만드는 과정에서 나뭇가지에 하는 일로 언급되지 않은 것은?",
+      "options": [
+        "자르기",
+        "찌기",
+        "씻기",
+        "말리기"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        5
+      ],
+      "note": "'cut off', 'steamed, boiled, and then washed'는 나오지만 말린다는 말은 없다"
+    },
+    {
+      "id": "pr154-q2",
+      "type": "한 단계 추론",
+      "prompt": "나뭇가지가 많이 두들겨질수록 더 강해진다는 내용이 사람에 대해 빗대어 말하는 것으로 가장 적절한 것은?",
+      "options": [
+        "사람도 어려움을 이겨 내며 더 단련된다",
+        "사람도 힘든 일을 피할수록 더 현명해진다",
+        "사람도 오랜 시간 쉬고 나야 더 강해진다",
+        "사람도 예술가처럼 손으로 일해야 더 강해진다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "'The more they are beaten, the stronger'를 'getting wiser and more disciplined by overcoming the difficulties'에 빗대었다"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr186",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr186-q1",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'They are aware of its existence'에서 They가 가리키는 것은?",
+      "options": [
+        "구경꾼(onlookers)",
+        "감상자(observers)",
+        "일상생활(daily life)",
+        "작품(a work of art)"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "note": "'Observers, on the other hand…' 뒤로 'They have spent…', 'They don't simply exist…', 'They are aware of its existence' 가 이어짐."
+    },
+    {
+      "id": "pr186-q2",
+      "type": "세부 사실",
+      "prompt": "구경꾼(onlookers)에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "options": [
+        "작품 앞에 오래 머물며 자세히 살핀다",
+        "눈을 감은 채 작품 곁을 지나간다",
+        "예술 작품을 진정으로 감상할 줄 안다",
+        "딴생각을 하며 그냥 지나친다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "'Onlookers just walk by a work of art… while their minds are elsewhere' 인용."
+    }
+  ]
+}

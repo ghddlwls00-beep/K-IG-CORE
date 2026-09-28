@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr150",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr150-q1",
+      "type": "세부 사실",
+      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "options": [
+        "우리가 한 일 중에는 지구에 해로운 일이 더 많다",
+        "현생 인류는 지구에 약 3만 년 동안 살았다",
+        "지구 온난화는 자연이 스스로 만든 문제이다",
+        "인류는 그동안 지구를 거의 바꾸지 않았다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'Many of the things that we have done are good, but many more are not good for the Earth' 참고"
+    },
+    {
+      "id": "pr150-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글에서 추론할 수 있는 것은?",
+      "options": [
+        "환경 문제는 이미 손쓸 수 없을 만큼 늦었다",
+        "지금 힘쓰면 환경은 더 나아질 여지가 있다",
+        "환경을 지키는 일은 정부만 맡아야 한다",
+        "사람들은 아직 환경 문제에 아무 관심이 없다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5,
+        6
+      ],
+      "note": "'These problems are very serious for our future', 'we can do something now', 'people have already taken action to improve the environment' 참고"
+    }
+  ]
+}

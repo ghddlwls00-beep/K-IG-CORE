@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d143",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d143-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "삼촌이 곧 수술을 받아야 한다는 말에 낙담했다",
+        "의사가 끝내 무슨 병인지 알아내지 못했다",
+        "걱정할 것이 없다는 의사의 말에 마음을 놓았다",
+        "삼촌이 수혈을 받고 나서야 겨우 마음을 놓았다"
+      ],
+      "answer": 2,
+      "evidence": [
+        7,
+        10,
+        11
+      ],
+      "note": "'this wasn't a serious heart attack' · 'there was nothing to worry about' · 'I felt much better' — 심각하지 않다는 말에 안심함"
+    },
+    {
+      "id": "d143-q2",
+      "type": "세부사실",
+      "prompt": "존슨 박사의 진찰 내용으로 언급되지 않은 것은?",
+      "options": [
+        "심장 소리를 들었다",
+        "엑스레이를 찍었다",
+        "눈과 귀를 살폈다",
+        "몸무게를 쟀다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'listened to the patient's heart ... gave him an x-ray and examined his eyes and ears' — 몸무게를 쟀다는 말은 없음"
+    },
+    {
+      "id": "d143-q3",
+      "type": "목적/태도",
+      "prompt": "존슨 박사에 대한 그의 생각으로 가장 알맞은 것은?",
+      "options": [
+        "늘 꼼꼼하게 살피는 훌륭한 의사다",
+        "실력은 있지만 진찰을 서둘러 끝낸다",
+        "심장보다 눈과 귀를 더 잘 보는 의사다",
+        "환자 가족에게 결과를 잘 알려 주지 않는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "'He was an excellent doctor and his examinations were always complete' — 진찰이 늘 빈틈없는 훌륭한 의사"
+    }
+  ]
+}

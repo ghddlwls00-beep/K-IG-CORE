@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr152",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr152-q1",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "문장 \"But the adult needs to hear it all the same.\"에서 it이 가리키는 것은?",
+      "options": [
+        "아이의 그림을 칭찬하는 말",
+        "잘했다고 인정해 주는 말",
+        "지지가 필요하다는 고백",
+        "최선을 다하라는 격려"
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'Didn't I do a good job?', 'the adult needs to hear it all the same' 참고"
+    },
+    {
+      "id": "pr152-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글에서 추론할 수 있는 것은?",
+      "options": [
+        "청하지 않아도 어른을 칭찬해야 한다",
+        "어른은 칭찬이 필요하면 솔직하게 청한다",
+        "아이는 어른보다 칭찬을 훨씬 덜 바란다",
+        "칭찬은 결과가 좋을 때에만 해 주어야 한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4,
+        6
+      ],
+      "note": "'isn't likely to ask', 'the adult needs to hear it all the same', 'don't forget to praise others when they need support' 참고"
+    }
+  ]
+}

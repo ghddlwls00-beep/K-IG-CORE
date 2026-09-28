@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "lesson": "d154",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d154-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "올바른 진로를 늦게 찾은 정비공의 이야기",
+        "올바른 진로를 일찍 찾은 배우의 이야기",
+        "올바른 진로를 고르는 일이 중요한 까닭",
+        "올바른 진로를 끝내 못 찾은 경리의 이야기"
+      ],
+      "answer": 2,
+      "evidence": [5, 6, 7, 8],
+      "note": "\"not doing the kind of work they should be doing\" · \"certainly they are not happy\" · \"Choosing the right career is very important\" · \"spend a great part of our lives at our jobs\""
+    },
+    {
+      "id": "d154-q2",
+      "type": "세부 사실(인물)",
+      "prompt": "글에서 예로 든 정비공이 좋아하는 것으로 옳은 것은?",
+      "options": [
+        "연기하기",
+        "요리하기",
+        "장부 쓰기",
+        "차 고치기"
+      ],
+      "answer": 1,
+      "evidence": [3],
+      "note": "\"a bookkeeper who really wants to be an actor or a mechanic who likes cooking\""
+    },
+    {
+      "id": "d154-q3",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "세상에 'square pegs'가 많다는 것에 대한 글쓴이의 태도로 알맞은 것은?",
+      "options": [
+        "당연하게 여긴다",
+        "대수롭지 않게 여긴다",
+        "놀랍게 여긴다",
+        "안타깝게 여긴다"
+      ],
+      "answer": 3,
+      "evidence": [4],
+      "note": "\"Unfortunately, many people in the world are square pegs\""
+    }
+  ]
+}

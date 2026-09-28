@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "lesson": "d148",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d148-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "미국이 영국에서 독립하기까지의 과정",
+        "미국 인구가 늘어 온 과정",
+        "미국의 주와 국기의 별이 늘어난 과정",
+        "미국과 이웃 나라의 국경이 정해진 과정"
+      ],
+      "answer": 2,
+      "evidence": [4, 5, 7, 8, 9],
+      "note": "\"it had 13 states\" · \"represented on the American flag by a star\" · \"new states were added and new stars appeared on the flag\" · \"48 states\" · \"two more stars were added\"의 흐름"
+    },
+    {
+      "id": "d148-q2",
+      "type": "세부 사실(장소)",
+      "prompt": "미국이 처음 나라가 되었을 때 차지한 땅의 위치로 옳은 것은?",
+      "options": [
+        "대륙 동부에 모여 있었다",
+        "대륙 남부의 멕시코 가까이에 있었다",
+        "대륙 서부에 모여 있었다",
+        "대륙 북부의 캐나다 가까이에 있었다"
+      ],
+      "answer": 0,
+      "evidence": [4, 6],
+      "note": "\"first became a nation\" · \"All these states were in the eastern part of the continent\""
+    },
+    {
+      "id": "d148-q3",
+      "type": "세부 사실(숫자)",
+      "prompt": "1964년의 미국 인구에 대한 설명으로 옳은 것은?",
+      "options": [
+        "1억 8,500만 명에 못 미쳤다",
+        "1억 8,500만 명으로 세계 최다였다",
+        "1억 8,500만 명에서 줄고 있었다",
+        "1억 8,500만 명을 넘었다"
+      ],
+      "answer": 3,
+      "evidence": [3],
+      "note": "\"In 1964, its population was over 185 million\""
+    }
+  ]
+}

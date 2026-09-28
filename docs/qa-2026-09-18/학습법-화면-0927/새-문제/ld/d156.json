@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d156",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d156-q1",
+      "type": "중심내용",
+      "prompt": "이 글은 주로 무엇에 관한 내용인가?",
+      "options": [
+        "부모 둘이서만 농장을 일군 가족의 이야기",
+        "노르웨이에 농장을 둔 이민 가족의 이야기",
+        "온 가족이 함께 일해 온 한 농가의 이야기",
+        "두 아들이 도시로 떠나 버린 농가의 이야기"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        4,
+        6,
+        7,
+        9
+      ],
+      "note": "a typical American farm family · helped their father · helped their mother · the whole family worked very hard · Olaf runs the farm now and his wife and children help him"
+    },
+    {
+      "id": "d156-q2",
+      "type": "세부사실",
+      "prompt": "지금 농장을 꾸려 가는 사람은 누구인가?",
+      "options": [
+        "칼",
+        "올라프",
+        "잉가",
+        "시그리드"
+      ],
+      "answer": 1,
+      "evidence": [
+        9
+      ],
+      "note": "Their son Olaf runs the farm now"
+    },
+    {
+      "id": "d156-q3",
+      "type": "세부사실",
+      "prompt": "오늘날 젠슨 부부에 대해 말한 것은?",
+      "options": [
+        "고향 노르웨이로 돌아가 살고 있다",
+        "농장을 딸들에게 물려주었다",
+        "미네소타의 다른 농장으로 옮겼다",
+        "늙어서 예전만큼 일하지 못한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        8
+      ],
+      "note": "Mr. and Mrs. Jensen are old and cannot work as hard as they did when they were younger"
+    }
+  ]
+}
