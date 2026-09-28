@@ -10,7 +10,7 @@
  *   4. prove-spoken-definition exit 0 · check-completeness missing-clip 0
  *   5. npx tsc --noEmit exit 0 · (--build) prebuild 셋 + npx next build exit 0
  *
- *   node verify-unit-0927.cjs [--base <커밋, 기본 8bfc512>] [--build] [--tag frame] [--break content|spoken|items]
+ *   node verify-unit-0927.cjs [--base <커밋, 기본 8bfc512>] [--build] [--tag frame] [--break content|spoken|items|items-passoff]
  *   --break: 검사가 실패를 잡는지 — 임시로 어긋난 값을 넣은 것처럼 판정만 바꿔 exit 1 이 나는지 본다(파일은 건드리지 않음).
  * 결과: out/unit-0927/<tag>.json
  */
@@ -32,7 +32,9 @@ fs.mkdirSync(OUT, { recursive: true });
 // going to · 문장부호를 넘는 짝 · 축약 조각 · 자음 소리로 시작하는 낱말 앞 · -aw 뒤). 남은 카드의 글은 그대로라 새 클립 0 · 늘어난 글 0,
 // LISTENING 이 더는 소리 내지 않는 구절 347개만 빠져 ld 5,499 → 5,152. 빠진 구절 목록: docs/qa-2026-09-18/학습법-화면-0927/
 // ld-clinic-removed-phrases.json (check-ld-dictation-0927.cjs --write-removed 가 만듦 — 바탕 f2a1b2d 의 함수와 견줌). 다른 과정은 그대로.
-const BASELINE_ITEMS = { student: 828, phonics: 3906, grammar1: 1454, grammar2: 795, ld: 5152, reading: 3873 };
+// 2026-09-29 PASS-OFF GRAMMAR(09-28 출시 aa1cd8a): 1,281. 아래 정규식이 (\w+) 라 이름의 하이픈을 못 읽어 이 과정은 한 번도 세지 않았음
+// (올리기 전 확인 97d936d 가 찾음) — ([\w-]+) 로 고치고 기준값을 넣음. --break items-passoff 로 잡히는지 봄.
+const BASELINE_ITEMS = { student: 828, phonics: 3906, grammar1: 1454, grammar2: 795, ld: 5152, reading: 3873, "passoff-grammar": 1281 };
 const CONTENT_PATHS = ["content", "src/lib/readingSentences.json", "src/lib/readingVocabulary.json"];
 const SPOKEN_PATHS = ["scripts/lib/spoken-texts.cjs", "src/lib/lessonSpeechForm.ts", "src/lib/vocaSpeech.ts", "src/lib/unifiedSpeech.ts"];
 
@@ -56,14 +58,15 @@ let spokenDiff = diffNames(SPOKEN_PATHS);
 if (BREAK === "content") contentDiff = ["(깨기) content/lessons/ld/d001.json"];
 console.log(`(새 문제 폴더 ${QUESTION_DIR} 바뀐 파일 ${questionDiff.length} — '글 · 번역 그대로'에서 뺌)`);
 if (BREAK === "spoken") spokenDiff = ["(깨기) scripts/lib/spoken-texts.cjs"];
-check("글 · 번역 그대로", contentDiff.length === 0, contentDiff.length ? `바뀐 파일 ${contentDiff.length}: ${contentDiff.slice(0, 5).join(", ")}` : `기준 ${BASE_COMMIT} 과 같음`);
+check("글 · 번역 그대로", contentDiff.length === 0, contentDiff.length ? `바뀐 파일 ${contentDiff.length}: ${contentDiff.join(", ")}` : `기준 ${BASE_COMMIT} 과 같음`);
 check("소리 정의 그대로", spokenDiff.length === 0, spokenDiff.length ? `바뀐 파일: ${spokenDiff.join(", ")}` : "같음");
 
 // 3 — 과정별 소리 낼 글 수 · pending
 const gen = run("node", ["scripts/generate-azure-ava.mjs", "--dry-run"]);
 const items = {};
-for (const m of gen.out.matchAll(/^\s*(\w+)\s*: items ([\d,]+) · pending ([\d,]+)/gm)) items[m[1]] = { items: +m[2].replace(/,/g, ""), pending: +m[3].replace(/,/g, "") };
+for (const m of gen.out.matchAll(/^\s*([\w-]+)\s*: items ([\d,]+) · pending ([\d,]+)/gm)) items[m[1]] = { items: +m[2].replace(/,/g, ""), pending: +m[3].replace(/,/g, "") };
 if (BREAK === "items" && items.ld) items.ld.items += 1;
+if (BREAK === "items-passoff" && items["passoff-grammar"]) items["passoff-grammar"].items += 1;
 const itemBad = Object.entries(BASELINE_ITEMS).filter(([c, n]) => !items[c] || items[c].items !== n || items[c].pending !== 0);
 check("소리 낼 글 수 그대로 · 새 클립 0", gen.code === 0 && itemBad.length === 0, itemBad.length ? itemBad.map(([c, n]) => `${c} 기준 ${n} → ${items[c] ? `${items[c].items} · pending ${items[c].pending}` : "없음"}`).join(" | ") : Object.entries(items).map(([c, v]) => `${c} ${v.items}/${v.pending}`).join(" · "));
 
