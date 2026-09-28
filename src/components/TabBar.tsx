@@ -9,16 +9,11 @@ import { LicenseButton } from "./LicenseButton";
 import { useLicense } from "./LicenseProvider";
 
 /**
- * The persistent top navigation.
+ * The persistent top navigation: logo · licence · search · menu.
  *
- * Desktop (xl+): Shows the horizontal row of all curriculum tabs in the center.
- * Narrower: Cleanly consolidates the navigation tabs into a top-right 3-line hamburger menu drawer.
- *
- * The row is ten tabs wide and needs about 1100px of viewport to fit; from md
- * up to that point it used to overflow silently (141px of it at 800px, which
- * put "CNN NEWS" and "GVA 독해" out of reach behind a scrollbar that
- * no-scrollbar keeps invisible). Below xl the drawer lists every tab instead,
- * so nothing is ever clipped (KIG-036).
+ * 2026-09-28 (사장님 "지금 위에 섹션들 너무 많아 그냥 메뉴 바에 다 넣자"): every section is in the menu drawer on every
+ * width. The desktop row of all tabs (xl+) is gone — with PASS-OFF GRAMMAR it was eleven tabs and ran off the right edge
+ * even at 1280px. Before that, below xl the drawer already listed every tab so nothing was ever clipped (KIG-036).
  */
 export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<string, string> }) {
   const pathname = usePathname();
@@ -66,7 +61,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
       */}
       <header className="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-4 sm:px-5">
-          <div className="flex h-14 items-center justify-between gap-3 xl:grid xl:grid-cols-[auto_1fr_auto]">
+          <div className="flex h-14 items-center justify-between gap-3">
             {/* Logo */}
             <div className="flex items-center justify-start shrink-0">
               <Link
@@ -79,54 +74,21 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
               </Link>
             </div>
 
-            {/* Desktop Navigation (xl+) */}
-            <nav
-              aria-label="Courses"
-              className="no-scrollbar hidden xl:flex xl:justify-self-center items-center justify-center gap-1 overflow-x-auto overflow-y-hidden py-1"
-            >
-              {ordered.map((tab) => {
-                const active = activeTab === tab.slug;
-                const targetUrl = tab.courses[0] ? `/${tab.courses[0]}` : `/t/${tab.slug}`;
-                return (
-                  <Link
-                    key={tab.slug}
-                    href={targetUrl}
-                    aria-current={active ? "page" : undefined}
-                    className={
-                      "relative inline-flex min-h-11 shrink-0 items-center px-3 text-label whitespace-nowrap transition-colors select-none " +
-                      (active
-                        ? "font-semibold text-ink"
-                        : "font-normal text-ink-soft hover:text-ink")
-                    }
-                  >
-                    {tab.label}
-                    <span
-                      aria-hidden
-                      className={
-                        "absolute inset-x-3 bottom-0 h-[2px] origin-left bg-primary transition-transform duration-200 ease-out " +
-                        (active ? "scale-x-100" : "scale-x-0")
-                      }
-                    />
-                  </Link>
-                );
-              })}
-            </nav>
-
             {/* Right Controls */}
-            <div className="flex items-center justify-end gap-1.5 sm:gap-2 shrink-0 xl:justify-self-end">
+            <div className="flex items-center justify-end gap-1.5 sm:gap-2 shrink-0">
               {/* the licence status sits in the drawer on phones (FRAME-U08) */}
               <div className="hidden md:block">
                 <LicenseButton />
               </div>
               <SearchDialog />
 
-              {/* 3-bar Hamburger Button (Visible only below xl) */}
+              {/* 3-bar menu button — every width (2026-09-28) */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
                 aria-expanded={mobileMenuOpen}
-                className="flex xl:hidden h-11 w-11 items-center justify-center rounded-control border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
+                className="flex h-11 w-11 items-center justify-center rounded-control border border-line bg-surface text-ink hover:bg-raised transition-colors cursor-pointer"
               >
                 <div className="flex flex-col items-center justify-center gap-1.5 w-4.5">
                   <span
@@ -153,7 +115,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
 
       {/* Mobile Drawer Overlay & Slide-out Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 xl:hidden flex justify-end">
+        <div className="fixed inset-0 z-50 flex justify-end">
           {/* Backdrop */}
           <div
             className="fixed inset-0 bg-black/40 backdrop-blur-xs transition-opacity animate-fade-in"
@@ -180,7 +142,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
               </div>
 
               {/* Course Navigation Links */}
-              <nav className="flex flex-col gap-1.5">
+              <nav aria-label="과정" className="flex flex-col gap-1.5">
                 {ordered.map((tab) => {
                   const active = activeTab === tab.slug;
                   const targetUrl = tab.courses[0] ? `/${tab.courses[0]}` : `/t/${tab.slug}`;
