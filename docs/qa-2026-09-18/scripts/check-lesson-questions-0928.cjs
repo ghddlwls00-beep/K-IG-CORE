@@ -20,6 +20,8 @@
 const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
+// content.ts reads content/ from process.cwd() — run from anywhere (설계 세션이 짚음 09-29: scripts/ 에서 돌리면 TypeError)
+process.chdir(H.REPO);
 
 const BREAK = process.argv.includes("--break") ? process.argv[process.argv.indexOf("--break") + 1] : "";
 // seeds and clears this browser's storage — made for the LOCAL build with a logged-out profile (like check-voca-0927)
