@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr237",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr237-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "더 큰 공으로 경기를 늦추려 했지만 반대도 있었다",
+        "강한 서브 덕분에 테니스 인기가 더 높아졌다",
+        "1990년대 말 테니스는 인기가 절정에 달했다",
+        "더 큰 공은 선수 부상을 막으려고 도입되었다"
+      ],
+      "answer": 0,
+      "evidence": [
+        9,
+        10
+      ],
+      "note": "'a new, bigger ball would slow the game down' · 'Not everyone was in favor of the bigger ball'"
+    },
+    {
+      "id": "pr237-q2",
+      "type": "세부 사실",
+      "prompt": "피트 샘프러스에 대한 설명으로 이 글의 내용과 일치하는 것은?",
+      "options": [
+        "시속 138마일의 서브 기록을 세웠다",
+        "윔블던에서 이미 6번 우승했다",
+        "더 큰 공 도입에 찬성했다",
+        "팔과 인대 부상으로 은퇴했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        11
+      ],
+      "note": "'Pete Sampras, who had already won Wimbledon six times'"
+    }
+  ]
+}

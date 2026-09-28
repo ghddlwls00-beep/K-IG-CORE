@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr205",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr205-q1",
+      "type": "세부 사실",
+      "prompt": "글의 미신에서 효과가 있으려면 필요했던 달걀로 알맞은 것은?",
+      "options": [
+        "봄에 부화한 닭이 크리스마스 직후에 낳은 첫 알",
+        "겨울에 부화한 닭이 크리스마스 직전에 낳은 첫 알",
+        "겨울에 부화한 닭이 크리스마스 직후에 낳은 첫 알",
+        "봄에 부화한 닭이 크리스마스 직전에 낳은 첫 알"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "인용: couldn't be just any egg / hatched during the spring / its first egg shortly before Christmas"
+    },
+    {
+      "id": "pr205-q2",
+      "type": "중심 생각",
+      "prompt": "윗글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "달걀이 행운을 부른다는 옛 미신",
+        "달걀로 얼굴빛을 곱게 한다는 옛 미신",
+        "달걀이 불운을 부른다는 흔한 미신",
+        "달걀로 얼굴빛을 가꾸는 요즘 미용 비법"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "인용: a strange superstition regarding eggs / many years ago / beautify your complexion"
+    }
+  ]
+}

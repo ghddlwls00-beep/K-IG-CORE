@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr218",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr218-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "공정한 재판을 위해 재판을 중계해야 한다",
+        "재판을 TV로 중계하면 재판 모습이 왜곡된다",
+        "재판 중계는 대중 교육에만 도움이 된다",
+        "재판 중계는 시청자만 늘릴 뿐 이점이 없다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "'there are some benefits', 'necessary to televise trials to increase the chance of a fair trial'가 근거"
+    },
+    {
+      "id": "pr218-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 일부 사람들이 주장하는 재판 중계의 문제점으로 언급된 것은?",
+      "options": [
+        "피고인이 더 가벼운 벌을 받게 된다",
+        "증인이 법정에 나오기를 꺼리게 된다",
+        "판사가 더 무거운 형을 내리게 된다",
+        "시청자가 사건에 관심을 잃게 된다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "'leading some judges to pass harsher sentences'가 근거"
+    }
+  ]
+}

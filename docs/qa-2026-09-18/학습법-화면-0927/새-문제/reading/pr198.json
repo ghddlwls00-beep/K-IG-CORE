@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr198",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr198-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에 나타난 어른의 모습으로 옳은 것은",
+      "options": [
+        "스키를 신자마자 능숙하게 걷는다",
+        "한 번 넘어지면 다시는 넘어지지 않는다",
+        "일어나는 데 애를 먹는다",
+        "스키가 엇갈리지 않게 잘 다룬다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "근거 문장의 핵심 표현: \"has trouble getting up\", \"tumbles again\", \"gets his skis crossed\""
+    },
+    {
+      "id": "pr198-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은",
+      "options": [
+        "걷기에 익숙한 어른일수록 스키를 빨리 배운다",
+        "어려서 배우면 자존심 상할 일이 줄어든다",
+        "스키는 어른이 되어 배우는 게 낫다",
+        "어른은 스키를 타도 창피하지 않다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "근거 문장의 핵심 표현: \"one of the most humbling experiences an adult can undergo\", \"one reason to start young\""
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "d270",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d270-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "음악은 무엇보다 애국심을 일깨우는 데 쓰인다",
+        "음악은 즐거움 말고도 사회에서 중요한 역할을 한다",
+        "음악은 즐기기보다 행사를 치르려고 쓰인다",
+        "음악은 기쁠 때보다 슬플 때 더 많이 쓰인다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'In addition to giving enjoyment to thousands of individuals, music plays an important role in society' — 즐거움 말고도 사회에서 중요한 역할"
+    },
+    {
+      "id": "d270-q2",
+      "type": "세부 사실",
+      "prompt": "다채로운 민요와 발라드가 있다고 말한 곳은?",
+      "options": [
+        "도시와 마을",
+        "모든 나라",
+        "결혼식장",
+        "대회 개회식장"
+      ],
+      "answer": 0,
+      "evidence": [
+        5
+      ],
+      "note": "'Cities and towns have their colorful folk songs and ballads' — 도시와 마을"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr256",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr256-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "기술의 윤리적 한계는 이미 분명하게 정해져 있다",
+        "기술 발전이 낳은 윤리 문제는 이미 모두 해결되었다",
+        "기술의 윤리적 한계는 과학자들이 정해야 한다",
+        "기술 발전은 큰 혜택과 함께 어려운 윤리 문제도 낳았다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'We have come a long way because of technology', 'equally troubling ethical problems' 문장으로 확인."
+    },
+    {
+      "id": "pr256-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것은?",
+      "options": [
+        "새로운 치료법은 가벼운 병에만 효과가 있었다",
+        "새로운 치료법으로 목숨을 건진 중환자가 있다",
+        "20세기의 과학자들은 사람을 달에 보내지 못했다",
+        "텔레비전과 컴퓨터는 우리 삶을 거의 바꾸지 못했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'offered hope and even life itself to severely ill people' 문장으로 확인."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr251",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr251-q1",
+      "type": "세부 사실",
+      "prompt": "만리장성에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "options": [
+        "주변 땅과 색이 뚜렷하게 다르다",
+        "폭이 대부분 10미터가 안 된다",
+        "대부분 나무와 흙으로 지어졌다",
+        "길이는 짧지만 폭은 매우 넓다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'in most places it is less than ten meters wide' 문장으로 확인."
+    },
+    {
+      "id": "pr251-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것은?",
+      "options": [
+        "만리장성은 우주에서 보이는 유일한 인공 구조물이다",
+        "양리웨이는 2003년 비행 중 만리장성을 맨눈으로 보았다",
+        "우주에서는 밤의 큰 도시 불빛이 만리장성보다 잘 보인다",
+        "우주비행사들은 모두 만리장성을 보지 못했다고 말했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        7
+      ],
+      "note": "'extremely hard to see with the naked eye', 'the lights of large cities are easy to see from space at night' 문장으로 확인."
+    }
+  ]
+}

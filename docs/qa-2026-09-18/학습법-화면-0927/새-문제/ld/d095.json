@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d095",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d095-q1",
+      "type": "세부 사실",
+      "prompt": "팻이 샌프란시스코에 도착한 때로 옳은 것은?",
+      "options": [
+        "10일 저녁 9시 30분",
+        "11일 오전 8시 40분",
+        "11일 밤 8시",
+        "10일 오전 8시 40분"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'She left on the 10th at 9:30 in the evening' · 'She got to San Francisco at 8:40 a.m. on the 11th' — 도착은 11일 오전 8시 40분"
+    },
+    {
+      "id": "d095-q2",
+      "type": "다음에 할 일",
+      "prompt": "돈이 모자란다는 것을 안 뒤 팻이 한 일로 옳은 것은?",
+      "options": [
+        "곧바로 집으로 가는 비행기를 탔다",
+        "첫 호텔에 그대로 머물렀다",
+        "더 싼 호텔에 요금을 미리 냈다",
+        "박물관 대신 호텔에서 쉬기만 했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "'She found she hadn't brought nearly enough' · 'She found a cheaper hotel and paid her bill in advance' — 더 싼 호텔, 요금을 미리 냄"
+    },
+    {
+      "id": "d095-q3",
+      "type": "말한 사람의 태도",
+      "prompt": "여행 끝에 팻이 한 말로 옳은 것은?",
+      "options": [
+        "돈을 다 써 버려 후회스럽다고 했다",
+        "호텔에서 푹 쉬어 만족스럽다고 했다",
+        "상을 받지 못해 아쉽다고 했다",
+        "힘들었지만 그래도 즐거웠다고 했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        11
+      ],
+      "note": "'she was tired, broke, and hungry, but she told me that she enjoyed herself anyway' — 그래도 즐거웠다고 함"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr236",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr236-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "오래된 물건은 모두 값비싼 수집품이다",
+        "골동품 판매상에게 물건을 모두 팔아야 한다",
+        "버리기 전에 가치를 먼저 알아봐야 한다",
+        "차고 세일에서는 무엇이든 싸게 팔아야 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        5
+      ],
+      "note": "'don't throw out any junk until you determine its potential as a collectible' · 'separate the valuable from the worthless junk'"
+    },
+    {
+      "id": "pr236-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'only to see them resold for tens or hundreds of dollars'에서 them이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "수집품을 되파는 골동품 판매상들",
+        "유명 화가가 실제로 그린 그림들",
+        "차고 세일에 모인 구매자들",
+        "헐값에 팔린 레코드판, 병, 책"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "'sell old record albums, bottles and books for pennies only to see them resold'"
+    }
+  ]
+}

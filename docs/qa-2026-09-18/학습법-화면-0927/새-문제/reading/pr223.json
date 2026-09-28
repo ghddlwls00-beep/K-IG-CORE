@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr223",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr223-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 글쓴이의 행복과 밀접하게 이어진 것으로 가장 적절한 것은?",
+      "options": [
+        "돈을 많이 벌어 부자가 되는 것",
+        "원하는 일을 많이 해 보는 것",
+        "아내와 아이들이 돈을 많이 버는 것",
+        "가족이 화목하게 지내는 것"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5,
+        6
+      ],
+      "note": "'happiness is closely tied to my family', 'live in harmony', 'communicate with each other'가 근거"
+    },
+    {
+      "id": "pr223-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'these make them happy'에서 these가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "많은 돈과 부유함",
+        "종교와 지성과 건강",
+        "아내와 아이들",
+        "좋은 때와 슬픈 때"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'their religion, or their intelligence, or their health; these make them happy'가 근거"
+    }
+  ]
+}

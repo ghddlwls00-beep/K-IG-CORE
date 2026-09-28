@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr204",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr204-q1",
+      "type": "중심 생각",
+      "prompt": "윗글의 요지로 가장 적절한 것은?",
+      "options": [
+        "속담은 어떤 상황에서나 늘 옳다",
+        "속담은 우리 삶에 별 도움이 되지 않는다",
+        "상황을 따지지 않으면 속담끼리 어긋날 수 있다",
+        "뜻이 반대인 두 속담 중 하나는 틀렸다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "인용: correct, even insightful, when applied to life's circumstances / viewed without qualifications, they can cancel each other out"
+    },
+    {
+      "id": "pr204-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'two heads are better than one'이 뜻하는 것으로 알맞은 것은?",
+      "options": [
+        "여럿이 함께 생각하면 더 낫다",
+        "사람이 많으면 일을 그르친다",
+        "혼자 결정하는 편이 더 낫다",
+        "두 방법 중 하나를 골라야 한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "인용: too many cooks spoil the broth / two heads are better than one"
+    }
+  ]
+}

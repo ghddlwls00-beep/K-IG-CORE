@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr248",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr248-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "소수의 노력 덕분에 야생 식물의 가치를 아는 한국인이 늘었다",
+        "야생 식물의 가치는 예전부터 많은 한국인이 알고 있었다",
+        "야생 식물을 지키려는 노력은 대중에게 외면당했다",
+        "야생 식물은 아름답지만 지킬 만한 가치는 없다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "note": "'A small number of people have recognized the value' · 'these people have striven to conserve' · 'taught the public to value plant species' · 'Thanks to these efforts, more Koreans now understand the full value'가 글의 요지"
+    },
+    {
+      "id": "pr248-q2",
+      "type": "세부 사실",
+      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "options": [
+        "식물을 지키는 사람들은 그 아름다움에 관심이 없었다",
+        "야생 식물은 지나친 관심 때문에 위기를 맞았다",
+        "일부 야생 식물은 서식지 파괴로 앞날이 불확실하다",
+        "식물을 지키는 사람들은 지금 세대만을 위해 힘을 쏟았다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "'Because of indifference to and destruction of their natural habitats, some wild plants confront an uncertain future'와 일치"
+    }
+  ]
+}
