@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr226",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr226-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "과학은 필요한 순간에 늘 정확한 답을 준다",
+        "과학의 해결책은 문제를 더 만들지 않는다",
+        "우리는 과학 덕분에 이미 문제에서 벗어났다",
+        "과학이 모든 문제를 제때 해결해 주지는 못한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'science solutions that cause more problems than they solve' · 'does not always have the answer at the precise time' — 과학이 늘 제때 답을 주지는 못한다"
+    },
+    {
+      "id": "pr226-q2",
+      "type": "세부 사실",
+      "prompt": "현대 과학을 찬미하는 사람들이 자랑하는 내용으로 가장 적절한 것은?",
+      "options": [
+        "모든 공간을 활용해 많은 사람을 부양하리라는 것",
+        "인간의 영리함이 결국 과학을 대신하리라는 것",
+        "사람의 수를 알맞은 만큼 줄여 나가리라는 것",
+        "사람이 살 새로운 땅을 곧 찾아내리라는 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'find ways to sustain any number of people by using to the fullest every inch of space' — 공간을 최대한 써서 얼마든지 많은 사람을 부양한다"
+    }
+  ]
+}

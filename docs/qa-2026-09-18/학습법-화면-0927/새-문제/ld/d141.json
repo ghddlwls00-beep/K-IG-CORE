@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d141",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d141-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "오래 찾던 새 직장을 구해 몹시 기뻐했다",
+        "새로 지원한 회사에서 떨어져 크게 실망했다",
+        "고용 기관이 소개한 일자리에 모두 지원했다",
+        "면접 결과를 몰라 하루 종일 불안해했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        7,
+        11
+      ],
+      "note": "'looking for a new job for quite a while' · 'he told me that I was hired' · 'I was feeling so happy' — 오래 찾던 직장에 합격해 기뻐함"
+    },
+    {
+      "id": "d141-q2",
+      "type": "세부사실",
+      "prompt": "회사 사람이 그에게 전화를 걸어 온 때는 언제인가?",
+      "options": [
+        "지난주",
+        "오늘 아침",
+        "오늘 오후 2시",
+        "어제 오후"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'This morning, someone from the company called up' — 전화는 아침, 2시는 만나자고 한 시각"
+    },
+    {
+      "id": "d141-q3",
+      "type": "목적/태도",
+      "prompt": "그가 그날 곧장 집으로 간 목적으로 알맞은 것은?",
+      "options": [
+        "집에서 남은 약속을 모두 취소하려고",
+        "회사에 낼 지원서를 쓰려고",
+        "아내에게 좋은 소식을 알리려고",
+        "아내와 저녁을 먹으러 나가려고"
+      ],
+      "answer": 2,
+      "evidence": [
+        11
+      ],
+      "note": "'I went right home to tell my wife the good news' — 아내에게 좋은 소식을 전하려고 집에 감"
+    }
+  ]
+}

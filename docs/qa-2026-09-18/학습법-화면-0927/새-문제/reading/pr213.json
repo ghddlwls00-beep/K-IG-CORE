@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr213",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr213-q1",
+      "type": "세부 사실",
+      "prompt": "수에 대한 설명으로 이 글과 일치하는 것은?",
+      "options": [
+        "배달을 시작하고 얼마 안 되어 그만두었다",
+        "몸이 아픈 날에도 신문을 배달했다",
+        "비가 오는 날에는 배달을 쉬었다",
+        "고객들이 배달 시간에 불만을 가졌다"
+      ],
+      "answer": 1,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'Sue woke up feeling sick', 'she delivered the newspapers so as not to disappoint her customers'"
+    },
+    {
+      "id": "pr213-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아, 로버트에 대해 짐작할 수 있는 것은?",
+      "options": [
+        "친구들의 놀림에 신경 쓰지 않는 사람이다",
+        "혼자 힘으로 자전거를 익힌 사람이다",
+        "넘어지기만 하면 쉽게 포기하는 사람이다",
+        "넘어져도 다시 도전하는 사람이다"
+      ],
+      "answer": 3,
+      "evidence": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "note": "'he could not balance himself and fell', 'Robert got up and tried again', 'The same thing happened again and again', 'Robert kept trying and finally learned to ride a bike'"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d145",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d145-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "누이에게 걸려던 전화가 잘못 걸려 애를 먹었다",
+        "밀스 부인에게 사과할 기회를 얻어 마음이 놓였다",
+        "누이가 잘못 걸려 온 전화로 곤란을 겪었다",
+        "밀스 부인이 그의 실수를 이해하고 웃어넘겼다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        5,
+        8
+      ],
+      "note": "'I wanted to call up my sister' · 'I dialed the wrong number and I happened to get Mrs. Mills' · 'she wouldn't listen' · 'I couldn't interrupt her' — 누이 대신 밀스 부인에게 걸려 곤란을 겪음"
+    },
+    {
+      "id": "d145-q2",
+      "type": "세부사실",
+      "prompt": "밀스 부인이 알고 싶어 한 것은?",
+      "options": [
+        "그가 왜 아침부터 화가 나 있는지",
+        "그가 부인의 전화번호를 어떻게 알았는지",
+        "그가 몇 번이나 전화를 잘못 걸었는지",
+        "그가 무엇을 사과하려는 것인지"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'She just wanted to know how I got her telephone number' — 번호를 어떻게 알았는지만 궁금해함"
+    },
+    {
+      "id": "d145-q3",
+      "type": "목적/태도",
+      "prompt": "그가 그날 남은 시간 동안 전화를 쓰지 않은 이유로 알맞은 것은?",
+      "options": [
+        "누이에게 더는 그 일을 말하고 싶지 않아서",
+        "아침 일로 아직 화가 풀리지 않아서",
+        "밀스 부인의 번호가 또 걸릴까 봐 두려워서",
+        "누이가 곧 집으로 찾아오기로 해서"
+      ],
+      "answer": 2,
+      "evidence": [
+        10,
+        11
+      ],
+      "note": "'I was afraid I might get that lady's number again' · 'I didn't use the telephone for the rest of the day' — 그 부인에게 또 걸릴까 봐 전화를 안 씀"
+    }
+  ]
+}

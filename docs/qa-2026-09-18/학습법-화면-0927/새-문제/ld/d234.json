@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "d234",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d234-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "민스트럴 쇼는 지금도 미국의 인기 오락이다",
+        "민스트럴 쇼는 한때 미국에서 널리 사랑받은 오락이었다",
+        "민스트럴 쇼는 배 위에서 밴조만 연주하는 음악회였다",
+        "민스트럴 쇼는 100여 년 전 미국의 강가에서 처음 생겨났다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'One form of entertainment that was once popular in the United States is the minstrel show' — 한때 미국에서 인기 있던 오락"
+    },
+    {
+      "id": "d234-q2",
+      "type": "세부사실",
+      "prompt": "이 글에서 마을 사람들이 강으로 내려간 까닭으로 가장 적절한 것은?",
+      "options": [
+        "민스트럴들과 배를 타고 떠나려고",
+        "민스트럴들에게 밴조 연주를 배우려고",
+        "민스트럴들이 부르는 노래를 들으려고",
+        "민스트럴들이 탄 배를 강가로 끌어 주려고"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "'went down to the river to hear the songs and repartee of the minstrels' — 민스트럴들의 노래와 재치 있는 말을 들으러 감"
+    }
+  ]
+}

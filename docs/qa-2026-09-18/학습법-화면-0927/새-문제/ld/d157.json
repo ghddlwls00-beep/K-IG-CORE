@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d157",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d157-q1",
+      "type": "세부사실",
+      "prompt": "농장 일이 예전보다 덜 힘들어진 까닭은?",
+      "options": [
+        "기계가 손일을 많이 대신해 주어서",
+        "칼이 농장 일을 거들어서",
+        "소를 팔아서 일거리가 줄어서",
+        "잉가가 일꾼을 구해 주어서"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "The task is not as difficult as it once was · machines which do many of the things formerly done by hand"
+    },
+    {
+      "id": "d157-q2",
+      "type": "세부사실",
+      "prompt": "시그리드는 지금 어떻게 지내는가?",
+      "options": [
+        "여전히 부모님 집에서 함께 산다",
+        "세인트폴의 고등학교에서 가르친다",
+        "농부와 결혼해 가까이 산다",
+        "올라프의 농장에서 함께 일한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "The other three children have moved away. Sigrid married a farmer and lives nearby"
+    },
+    {
+      "id": "d157-q3",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "이제 농사는 더 이상 꼭 필요한 직업이 아니다",
+        "농업은 중요하나 많은 젊은이가 도시로 떠난다",
+        "젠슨 가족의 이야기는 아주 드문 경우이다",
+        "젊은이들은 도시 생활보다 농촌 생활을 더 좋아한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "note": "not unusual · farming is still a necessary and very important occupation · city life attracts young people · many of them leave the farms"
+    }
+  ]
+}

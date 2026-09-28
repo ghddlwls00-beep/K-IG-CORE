@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "d256",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d256-q1",
+      "type": "세부 사실",
+      "prompt": "치료사가 병을 고치는 동안 마을 사람들이 하는 일로 옳은 것은?",
+      "options": [
+        "함께 노래하며 큰 소리로 외친다",
+        "치료사를 따라 침상 둘레에서 춤춘다",
+        "조용히 지켜보며 환자가 낫기를 바란다",
+        "악령이 두려워 자리를 피한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "'The villagers watch quietly and hope that the sick man will soon get well' — 조용히 지켜보며 환자가 낫기를 바람"
+    },
+    {
+      "id": "d256-q2",
+      "type": "다음에 할 일",
+      "prompt": "치료사의 춤이 끝나는 모습으로 옳은 것은?",
+      "options": [
+        "점점 빨라지다가 치료사가 지쳐 쓰러진다",
+        "점점 느려지다가 마침내 지쳐 멈춘다",
+        "환자가 지쳐 잠들 때까지 계속된다",
+        "악령이 지쳐 달아날 때까지 계속된다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "'His dance grows faster and faster until he falls to the ground exhausted' — 점점 빨라지다가 치료사가 지쳐 쓰러짐"
+    }
+  ]
+}

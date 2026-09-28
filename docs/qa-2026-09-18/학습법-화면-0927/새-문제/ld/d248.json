@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d248",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d248-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "뉴욕 사람들은 사교 예법을 잘 몰라 실수가 잦다",
+        "사교 예법을 모르면 창피한 실수를 할 수 있다",
+        "예법을 모르고 한 실수는 그 자리에서 웃어넘길 일이다",
+        "사교 예법을 모르는 웨이터가 큰 실수를 저질렀다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        5,
+        6
+      ],
+      "note": "'Ignorance of social usage can result in many blunders' 의 예로 남편이 'drank the water in his finger bowl'"
+    },
+    {
+      "id": "d248-q2",
+      "type": "세부사실",
+      "prompt": "남편이 저지른 실수로 알맞은 것은?",
+      "options": [
+        "신부의 물그릇을 빼앗아 마셨다",
+        "은그릇을 몰래 주머니에 넣었다",
+        "손 씻는 그릇을 들고 물을 마셨다",
+        "물이 식었다고 웨이터를 불렀다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "남편이 'picked up the dish and began to drink the water' — 'the water in his finger bowl'"
+    },
+    {
+      "id": "d248-q3",
+      "type": "세부사실",
+      "prompt": "신부의 얼굴이 새빨개진 까닭으로 알맞은 것은?",
+      "options": [
+        "식당 안의 사람들이 모두 크게 웃어서",
+        "그릇에 담긴 물이 너무 뜨거워서",
+        "남편이 사람들 앞에서 자신을 나무라서",
+        "남편이 한 일을 누가 보았을까 봐"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'Her face turned scarlet as she fervently hoped that no one had noticed'"
+    }
+  ]
+}

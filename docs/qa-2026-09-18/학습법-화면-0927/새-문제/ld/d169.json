@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d169",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d169-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "사막에 기계로 파도를 만들어 서핑에 성공한 일",
+        "바닷가 서핑장의 파도를 몇 배나 높게 키운 일",
+        "파도 기계가 너무 세서 서퍼들이 모두 떠나 버린 일",
+        "파산한 카지노에서 서핑 대회를 크게 연 일"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        7
+      ],
+      "note": "'returned to Arizona' · 'built a machine that could produce waves several feet high' · 'Surfing in the desert is a fantastic success' — 사막에서 기계로 만든 파도로 서핑이 성공함"
+    },
+    {
+      "id": "d169-q2",
+      "type": "세부 사실(과정)",
+      "prompt": "덱스터가 몇 피트 높이의 파도를 만드는 기계를 완성하기까지의 과정으로 옳은 것은?",
+      "options": [
+        "처음 만든 모형으로 한 번에 완성했다",
+        "여러 번 실패한 끝에 완성했다",
+        "카지노를 인수하기 전에 이미 완성했다",
+        "카지노 주인의 도움을 받아 완성했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'began experimenting with model machines' · 'Then he took over a bankrupt casino' · 'After several failures, he successfully built a machine' — 모형 실험, 카지노 실험 뒤 여러 번 실패하고 완성함"
+    },
+    {
+      "id": "d169-q3",
+      "type": "다음에 할 일",
+      "prompt": "서퍼들이 한 번 타고 난 뒤에 하는 일로 옳은 것은?",
+      "options": [
+        "저수지로 가서 수문을 직접 연다",
+        "카지노 건물로 돌아가 잠시 쉰다",
+        "못 앞쪽으로 걸어가 다음 파도를 기다린다",
+        "애리조나의 다른 서핑장으로 돌아간다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'ride them for about 400 feet' · 'Then they walk back to the front of the lagoon to wait for another wave' — 못(lagoon) 앞으로 돌아가 다음 파도를 기다림"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr176",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr176-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "외국어는 읽고 쓰면서 배워야 한다",
+        "듣고 말하는 학습이 읽고 쓰는 학습보다 낫다",
+        "누구나 듣고 말하면서 가장 잘 배운다",
+        "사람마다 배우는 방식이 서로 다르다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "note": "'some people use their ears more, and others use their eyes more' · 'people learn things in different ways' — 사람마다 배우는 방식이 다르다"
+    },
+    {
+      "id": "pr176-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이 자신에 관한 설명으로 옳은 것은?",
+      "options": [
+        "설명서만 읽고서는 컴퓨터 사용법을 익히지 못한다",
+        "외국어를 듣고 말해 보기만 해도 익힌다",
+        "설명서만 읽고도 컴퓨터 사용법을 쉽게 익힌다",
+        "외국어를 익히려면 읽고 써야만 한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        5
+      ],
+      "note": "'I can't learn how to use a computer just by reading an instruction manual' — 글쓴이는 설명서만으로는 배우지 못한다"
+    }
+  ]
+}

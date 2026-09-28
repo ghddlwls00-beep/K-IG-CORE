@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr178",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr178-q1",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 \"This remained in my mind\"의 This가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "여성이 소년에게 요즘 어떠냐고 물은 것",
+        "소년이 요즘 좀 우울했다고 대답한 것",
+        "글쓴이가 고등학생 때 우울함을 알게 된 것",
+        "여성이 글쓴이에게 먼저 말을 건 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "소년이 'replied, Frankly, I've been a little depressed lately' 라고 한 바로 뒤에 'This remained in my mind' — This 는 소년의 대답"
+    },
+    {
+      "id": "pr178-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "예전 아이들이 어른 세계를 더 빨리 알았다",
+        "대중 매체는 아이들의 변화와 관계가 없다",
+        "예전 아이들은 지금보다 더 아이다웠다",
+        "요즘 아이들은 옷차림에 신경을 덜 쓴다"
+      ],
+      "answer": 2,
+      "evidence": [
+        8,
+        9
+      ],
+      "note": "'Children don't seem childlike anymore', 'behave more like adults than in the past' — 예전 아이들은 지금보다 더 아이다웠다는 뜻"
+    }
+  ]
+}

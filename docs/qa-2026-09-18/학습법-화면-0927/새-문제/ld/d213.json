@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d213",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d213-q1",
+      "type": "중심내용",
+      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "관람객이 주는 먹이가 동물에게 해가 될 수 있다",
+        "관람객이 주는 먹이로 동물과 친해질 수 있다",
+        "동물원은 관람객 안전 때문에 먹이 주기를 막는다",
+        "관람객이 주는 먹이가 동물원 먹이보다 몸에 좋다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4,
+        7,
+        8
+      ],
+      "note": "'insist on feeding the animals' · 'refrain from feeding them' · 'kill it with kindness' — 관람객이 주는 먹이가 동물을 해칠 수 있음"
+    },
+    {
+      "id": "d213-q2",
+      "type": "세부사실",
+      "prompt": "관람객들이 먹이를 주는 까닭으로 말한 것은?",
+      "options": [
+        "일부러 규칙에 맞서 보고 싶어서",
+        "먹는 모습이 재미있어서",
+        "그저 친절하려는 마음에서",
+        "관리들의 불평이 못마땅해서"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'not deliberately trying to be contrary' · 'merely trying to be kind' — 일부러 맞서려는 게 아니라 그저 친절하려는 마음"
+    },
+    {
+      "id": "d213-q3",
+      "type": "세부사실",
+      "prompt": "동물원 관리가 자주 하는 불평으로 옳은 것은?",
+      "options": [
+        "표지가 눈에 잘 띄지 않는다",
+        "사람들이 표지를 못 읽는 듯하다",
+        "사람들이 표지를 몰래 떼어 간다",
+        "표지가 너무 적게 붙어 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'people seem to be unable to read signs' — 사람들이 표지를 못 읽는 것 같다고 불평함"
+    }
+  ]
+}

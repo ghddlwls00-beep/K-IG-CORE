@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "lesson": "d219",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d219-q1",
+      "type": "세부 사실",
+      "prompt": "고양이를 모으는 미국 작가가 살아 있는 고양이에 대해 느끼는 감정으로 가장 적절한 것은?",
+      "options": [
+        "무척 아끼고 사랑한다",
+        "마음속 깊이 미워한다",
+        "조각상보다 더 좋아한다",
+        "별다른 관심이 없다"
+      ],
+      "answer": 1,
+      "evidence": [2, 3],
+      "note": "A famous American author collects cats … the author has a deep hatred of living cats"
+    },
+    {
+      "id": "d219-q2",
+      "type": "세부 사실",
+      "prompt": "‘푸른 수염’이 자신의 표본에 대해 더 좋아한 것은?",
+      "options": [
+        "표본이 살아 있는 것",
+        "표본을 남에게 자랑하는 것",
+        "표본을 하나만 갖는 것",
+        "표본이 죽어 있는 것"
+      ],
+      "answer": 3,
+      "evidence": [5],
+      "note": "Bluebeard collected wives … he preferred his specimens dead"
+    },
+    {
+      "id": "d219-q3",
+      "type": "목적/태도",
+      "prompt": "글쓴이가 보통 사람들의 취미에 대해 드러낸 태도로 가장 적절한 것은?",
+      "options": [
+        "다행스럽게 여긴다",
+        "이상하게 여긴다",
+        "지루하게 여긴다",
+        "못마땅하게 여긴다"
+      ],
+      "answer": 0,
+      "evidence": [7],
+      "note": "Fortunately, the ordinary person is content to indulge in more innocent pastimes"
+    }
+  ]
+}

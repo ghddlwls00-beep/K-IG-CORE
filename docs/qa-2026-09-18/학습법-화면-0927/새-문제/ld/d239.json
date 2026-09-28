@@ -1,0 +1,64 @@
+{
+  "v": 1,
+  "lesson": "d239",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d239-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "스포츠는 진짜 싸움이라 지면 누구나 풀이 죽는다",
+        "스포츠는 즐기는 싸움이지만 지는 것을 못 견디는 사람도 있다",
+        "스포츠는 팀워크를 기르려면 늘 이겨야 하는 싸움이다",
+        "대부분은 스포츠의 결과를 기분 좋게 받아들이지 못한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "note": "스포츠는 'good-natured fights' · 대개 'everyone takes the outcome in good spirit' · 소수는 'cannot take sports and games lightly' · 'if they lose, they become sullen and downcast' · 'poor losers'"
+    },
+    {
+      "id": "d239-q2",
+      "type": "세부 사실",
+      "prompt": "글의 내용과 일치하는 것은?",
+      "options": [
+        "대부분의 사람은 경기에 지면 시무룩해진다",
+        "몇몇 사람은 경기에 이기면 오히려 시무룩해진다",
+        "대부분의 사람은 늘 이겨야 한다고 느끼며 지면 풀이 죽는다",
+        "몇몇 사람은 늘 이겨야 한다고 느끼며 지면 풀이 죽는다"
+      ],
+      "answer": 3,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'Most people realize' 와 달리 'a few people who cannot take sports and games lightly' · 'They feel they must always win' · 'sullen and downcast'"
+    },
+    {
+      "id": "d239-q3",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "글쓴이가 이 글을 쓴 목적으로 가장 적절한 것은?",
+      "options": [
+        "스포츠를 대하는 바른 태도를 일깨우려고",
+        "팀워크 훈련 방법을 알려 주려고",
+        "진짜 싸움과 스포츠의 규칙을 비교해 알려 주려고",
+        "늘 이기는 선수가 되는 비결을 알려 주려고"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        6,
+        7,
+        8
+      ],
+      "note": "스포츠는 'good-natured fights' · 'takes the outcome in good spirit' · 'sports should be played for fun and recreation' · 늘 이기려는 사람은 'poor losers'"
+    }
+  ]
+}

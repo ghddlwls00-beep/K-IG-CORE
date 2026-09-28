@@ -1,0 +1,61 @@
+{
+  "v": 1,
+  "lesson": "d241",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d241-q1",
+      "type": "세부 사실",
+      "prompt": "교수의 친구가 건 내기의 내용으로 가장 적절한 것은?",
+      "options": [
+        "교수가 몇 주 만에 핸드볼 실력을 쌓을 것이다",
+        "교수가 핸드볼에서는 끝내 친구를 못 이길 것이다",
+        "교수가 몇 주 연습하면 첫 핸드볼 시합에서 이길 것이다",
+        "교수가 밤늦게까지 핸드볼 연습을 하지는 못할 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "친구가 'bet the professor he would never become skillful enough to beat him in handball'"
+    },
+    {
+      "id": "d241-q2",
+      "type": "세부 사실",
+      "prompt": "시합 결과에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "options": [
+        "교수는 첫 시합에서는 크게 졌지만 그 뒤로는 해마다 이겼다",
+        "교수는 밤늦게까지 연습한 끝에 첫 시합에서 이겼다",
+        "교수는 몇 주를 연습했지만 크게 졌고 지금까지 이긴 적이 없다",
+        "교수는 크게 진 뒤로 연습을 그만두고 시합에 나가지 않았다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6,
+        7
+      ],
+      "note": "'For weeks, he practiced until far into the night' · 'the professor was hopelessly beaten' · 'This friendly contest is held every year, but to date, the professor has never succeeded in winning'"
+    },
+    {
+      "id": "d241-q3",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "마음만 먹으면 누구나 어떤 운동이든 익힐 수 있다",
+        "타고난 예술가일수록 운동은 잘하지 못한다",
+        "밤늦게까지 연습하면 누구나 결국 이기게 된다",
+        "운동 재능은 타고나서 노력해도 안 될 때가 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "note": "'some are born sportsmen' · 교수는 'had almost no ability in sports' · 'he practiced until far into the night' 에도 'hopelessly beaten' · 'has never succeeded in winning'"
+    }
+  ]
+}

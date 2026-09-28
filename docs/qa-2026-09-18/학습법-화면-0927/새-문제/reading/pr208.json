@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr208",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr208-q1",
+      "type": "세부 사실",
+      "prompt": "공장의 소유주와 관리자들이 약속한 것은?",
+      "options": [
+        "지금 당장 오염 방지 장비를 다는 것",
+        "지금 당장 강을 더럽히지 않는 것",
+        "형편이 되는 대로 오염 방지 장비를 다는 것",
+        "세금을 지금보다 더 많이 내는 것"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "인용: promised to install antipollution equipment as soon as they can afford to"
+    },
+    {
+      "id": "pr208-q2",
+      "type": "한 단계 추론",
+      "prompt": "글쓴이가 공장 문을 강제로 닫게 하지 않는 까닭으로 짐작할 수 있는 것은?",
+      "options": [
+        "많은 사람이 일자리를 잃을까 봐",
+        "강 오염이 그리 심하지 않다고 봐서",
+        "공장들이 세금을 거의 내지 않아서",
+        "공장주들과 가까운 사이라서"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "인용: employ a lot of workers / many people would lose their jobs"
+    }
+  ]
+}

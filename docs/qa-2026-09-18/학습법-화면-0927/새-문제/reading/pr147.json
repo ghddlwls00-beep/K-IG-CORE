@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr147",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr147-q1",
+      "type": "중심 생각",
+      "prompt": "글의 요지로 가장 적절한 것은?",
+      "options": [
+        "도시에 집과 일자리를 더 늘려야 한다",
+        "농촌 생활을 매력적으로 바꿔야 한다",
+        "농촌보다 도시를 먼저 발전시켜야 한다",
+        "전통적인 농사 방식을 그대로 지켜야 한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "'The only long-term solution is to make life in the rural areas more attractive', 'providing incentives', 'Facilities ... should be improved', 'doubly important' 참고"
+    },
+    {
+      "id": "pr147-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "문장 \"This has been mainly caused by the drift of large numbers of people from the rural areas.\"에서 This가 가리키는 것은?",
+      "options": [
+        "인구과밀 도시들이 겪는 주요 문제",
+        "사람들이 떠나온 농촌 지역",
+        "사람들이 바란 더 나은 보수",
+        "농촌을 떠나 도시로 온 사람들"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'overcrowded cities face a major problem', 'This has been mainly caused by' 참고"
+    }
+  ]
+}

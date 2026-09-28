@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr181",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr181-q1",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 \"they show us what really happened\"의 they가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "사람들",
+        "법정",
+        "사진",
+        "컴퓨터"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "'photographs tell us the truth; they show us what really happened' — they 는 바로 앞의 photographs"
+    },
+    {
+      "id": "pr181-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "보는 것이 믿는 것이라는 말이 더 옳아졌다",
+        "이제는 사진을 그대로 믿기가 어려워졌다",
+        "법정에서는 이제 사진을 전혀 쓰지 않는다",
+        "사진이 거짓일 수 있음은 예전부터 알려졌다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'matters are not so simple', 'Photographs can be changed by computer; photographs are sometimes false' — 이제는 사진을 그대로 믿기 어려움"
+    }
+  ]
+}

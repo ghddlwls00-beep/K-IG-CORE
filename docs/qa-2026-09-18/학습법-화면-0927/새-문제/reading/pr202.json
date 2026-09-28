@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr202",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr202-q1",
+      "type": "세부 사실",
+      "prompt": "한성순보에 관한 설명으로 글의 내용과 일치하는 것은?",
+      "options": [
+        "한 달에 세 번씩 발행되었다",
+        "1886년에 처음 발행되었다",
+        "화재로 영영 문을 닫았다",
+        "나라 밖 소식은 싣지 않았다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "인용: Hanseong Sunbo / Three times a month"
+    },
+    {
+      "id": "pr202-q2",
+      "type": "세부 사실",
+      "prompt": "한성주보가 폐간된 까닭으로 글에 나온 것은?",
+      "options": [
+        "화재가 나서",
+        "독자가 줄어서",
+        "주간으로 바뀌어서",
+        "돈이 모자라서"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "인용: had to close in 1888 because of lack of money"
+    }
+  ]
+}

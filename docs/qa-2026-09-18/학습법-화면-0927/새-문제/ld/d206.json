@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d206",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d206-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "학생들의 장난으로 설립자 동상이 부서져 호수에 버려졌다",
+        "낚시를 좋아한 설립자를 기려 학교가 호숫가에 동상을 세웠다",
+        "학생들의 장난으로 설립자 동상이 다시 낚시를 즐기게 되었다",
+        "사라진 설립자 동상을 찾던 학생들이 호수에서 물고기를 잡았다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        4,
+        5,
+        7
+      ],
+      "note": "'the statue of the founder ... disappeared' · 'standing in a rowboat' · 'holding a fishing pole' · 'the student prank had enabled him to indulge in his favorite sport once more' — 장난 덕에 동상이 다시 낚시를 즐김"
+    },
+    {
+      "id": "d206-q2",
+      "type": "세부 사실",
+      "prompt": "동상이 사라지기 전에 서 있던 곳으로 옳은 것은?",
+      "options": [
+        "교정 한가운데",
+        "교정 호수 한가운데",
+        "학교 정문 앞",
+        "설립자가 살던 집 앞"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'disappeared from its place of honor in the center of the campus' — 교정 한가운데"
+    },
+    {
+      "id": "d206-q3",
+      "type": "목적/태도",
+      "prompt": "동상이 발견된 뒤 사람들의 반응으로 옳은 것은?",
+      "options": [
+        "당국은 화가 나서 장난친 학생들을 모두 쫓아냈다",
+        "몇몇은 화가 났지만 당국은 장난을 웃어넘겼다",
+        "당국은 화가 나서 호수의 배를 모두 치웠다",
+        "당국은 화가 났지만 몇몇은 동상이 웃는 것 같다고 했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'The school authorities were furious but some people say that the statue seemed to be smiling' — 당국은 격분, 몇몇은 동상이 웃는 듯하다고 함"
+    }
+  ]
+}

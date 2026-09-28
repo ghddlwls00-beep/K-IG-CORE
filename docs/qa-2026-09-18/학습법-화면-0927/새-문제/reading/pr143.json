@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr143",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr143-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "개인 정보를 지킬 더 효과적인 방법이 필요하다",
+        "개인 정보는 이미 충분히 잘 보호되고 있다",
+        "컴퓨터 사용을 막아야 사생활을 지킬 수 있다",
+        "시민 스스로 자기 정보를 지키는 수밖에 없다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "note": "'We need more effective ways' · 'We must protect citizens' · 'without control, causing harm to the right to privacy' — 개인 정보를 지킬 더 효과적인 방법이 필요함"
+    },
+    {
+      "id": "pr143-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 말한 내용으로 옳은 것은?",
+      "options": [
+        "컴퓨터 때문에 정보를 모으기가 더 어려워졌다",
+        "정보를 쌓고 퍼뜨리는 능력이 커졌다",
+        "개인 정보는 엄격한 통제 속에서 수집되어 왔다",
+        "개인 정보의 무제한 사용은 이미 금지되었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'The capacity to store and distribute information has increased through the use of computers and other devices' — 컴퓨터 등으로 정보를 쌓고 퍼뜨리는 능력이 커짐"
+    }
+  ]
+}

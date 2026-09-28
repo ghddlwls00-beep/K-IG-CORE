@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr145",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr145-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "사람은 불안할수록 쇼핑을 더 한다",
+        "경제가 성장할수록 쇼핑을 덜 하게 된다",
+        "경제가 성장하면 사람들은 덜 불안해진다",
+        "쇼핑을 많이 할수록 불안은 사라지게 된다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4,
+        5
+      ],
+      "note": "'helpless and insecure', 'we do what we can instead: we shop', 'we feel more helpless and insecure, so we shop still more' 참고"
+    },
+    {
+      "id": "pr145-q2",
+      "type": "세부 사실",
+      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "options": [
+        "우리 사회는 생산자가 이끄는 문화이다",
+        "자신의 처지를 정말로 개선하기는 매우 어렵다",
+        "우리 사회는 경제가 성장할수록 단순해진다",
+        "사람들은 자신의 처지가 나아지길 바라지 않는다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'truly improving ourselves or our lot is a superhuman task' 참고"
+    }
+  ]
+}

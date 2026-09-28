@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr179",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr179-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "자원봉사자는 예전부터 지원금을 넉넉히 받았다",
+        "초기 자원봉사자들은 단체를 이루어 일했다",
+        "자원봉사자가 줄어 사회 문제가 더 늘었다",
+        "사회가 변하며 자원봉사의 모습도 크게 바뀌었다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        7,
+        11
+      ],
+      "note": "'changes in society brought about a transformation of volunteerism', 'organized themselves, and became professional', 'a considerable increase in the number of volunteers' — 사회 변화로 자원봉사의 모습이 바뀜"
+    },
+    {
+      "id": "pr179-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 일자리를 구하는 젊은이들이 깨달은 것은?",
+      "options": [
+        "자원봉사 경험이 취업에 가장 좋은 길이다",
+        "고용주는 경험 없는 사람을 더 원한다",
+        "정부 지원금을 받아야만 일자리를 얻을 수 있다",
+        "자원봉사는 돈을 벌기 좋은 방법이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        10
+      ],
+      "note": "'the best way to get hired is to acquire some experience from volunteer work' — 자원봉사 경험이 취업에 가장 좋은 길"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d144",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d144-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "쿠퍼 박사의 비서가 여자의 예약을 다음 주로 옮겨 주었다",
+        "여자가 잘못 건 전화임을 한참 동안 알아채지 못했다",
+        "그가 전화를 잘못 걸어 여자에게 여러 번 사과했다",
+        "여자가 잘못 걸었다는 말을 듣자마자 사과하고 끊었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        3,
+        8
+      ],
+      "note": "'it took her a long time to find out' · 'I don't think she listened to me' · 'Finally she heard what I said' — 여자가 잘못 건 줄 한참 뒤에야 앎"
+    },
+    {
+      "id": "d144-q2",
+      "type": "세부사실",
+      "prompt": "여자가 2시 예약을 취소하려던 이유로 알맞은 것은?",
+      "options": [
+        "자신이 아파서 집에서 쉬어야 해서",
+        "아이가 아파서 병원에 데려가야 해서",
+        "남편이 아파서 곁에서 돌봐야 해서",
+        "쿠퍼 박사가 아파서 진료를 못 해서"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'her husband was sick and she had to take care of him' — 아픈 사람은 남편"
+    },
+    {
+      "id": "d144-q3",
+      "type": "목적/태도",
+      "prompt": "여자가 전화를 끊기 직전에 알고 싶어 한 것은?",
+      "options": [
+        "다음 주로 새로 예약할 수 있는지",
+        "그가 정말 쿠퍼 박사의 비서인지",
+        "2시 예약을 취소해 줄 수 있는지",
+        "잘못 걸었다고 왜 바로 말하지 않았는지"
+      ],
+      "answer": 3,
+      "evidence": [
+        9,
+        10
+      ],
+      "note": "'She wanted to know why I didn't tell her right away that she had the wrong number' · 'Before I could answer her, she hung up' — 끊기 직전의 물음"
+    }
+  ]
+}

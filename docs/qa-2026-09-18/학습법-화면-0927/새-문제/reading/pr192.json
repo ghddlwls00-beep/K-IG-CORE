@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr192",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr192-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 그리 중요하지 않다고 말하는 것은?",
+      "options": [
+        "나무의 종류",
+        "바이올린의 나이",
+        "나무를 자르는 방식",
+        "바이올린을 만든 곳"
+      ],
+      "answer": 0,
+      "evidence": [
+        9
+      ],
+      "note": "'the kind of wood is not so important', 'more important to cut the wood in a special way' 인용."
+    },
+    {
+      "id": "pr192-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "오늘날 만든 바이올린이 옛 바이올린보다 인기가 많다",
+        "과학자들이 옛 바이올린과 똑같은 악기를 만들어 냈다",
+        "옛 바이올린이 특별한 까닭은 아직 밝혀지지 않았다",
+        "옛 바이올린이 특별한 까닭은 누구나 알고 있다"
+      ],
+      "answer": 2,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'Why are these old Italian violins so special?', 'No one really knows' 인용."
+    }
+  ]
+}

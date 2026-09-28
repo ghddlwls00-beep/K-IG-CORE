@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr177",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr177-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "벌주는 방법에 대한 생각은 문화와 가정마다 다르다",
+        "아이를 때리는 벌에 모든 부모가 찬성한다",
+        "아이들은 벌 없이도 옳고 그름을 깨우친다",
+        "부모는 아이에게 벌을 주면 안 된다고 여긴다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        7
+      ],
+      "note": "'differ from culture to culture and family to family', 'a lot of disagreement about the best way to punish children' — 벌주는 방법에 대한 생각이 저마다 다르다는 것이 요지"
+    },
+    {
+      "id": "pr177-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 대부분의 부모에 관한 설명으로 옳은 것은?",
+      "options": [
+        "아이를 때리는 것이 가장 좋다고 믿는다",
+        "아이에게 벌을 전혀 주지 않는다",
+        "벌보다 칭찬으로 옳고 그름을 가르친다",
+        "자기가 벌 받은 방식 그대로 벌준다"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'Most parents punish their children in the same ways that they were punished by their parents' — 자기가 부모에게 벌 받은 방식 그대로 벌줌"
+    }
+  ]
+}

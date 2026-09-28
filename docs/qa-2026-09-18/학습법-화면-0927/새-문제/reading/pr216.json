@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr216",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr216-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 봄과 여름에 잎이 초록색인 까닭으로 알맞은 것은?",
+      "options": [
+        "낮이 점점 짧아지고 있어서",
+        "빨간 색소를 새로 만들어서",
+        "엽록소가 가득해서",
+        "노란색과 주황색이 없어서"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'leaves are green because they are full of chlorophyll'"
+    },
+    {
+      "id": "pr216-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아, 가을에 흐린 낮과 따뜻한 밤이 이어진 해의 단풍에 대해 짐작할 수 있는 것은?",
+      "options": [
+        "빨간색이 덜 선명할 것이다",
+        "빨간색이 더 많이 만들어질 것이다",
+        "노란색이 새로 만들어질 것이다",
+        "노란색이 빨간색으로 바뀔 것이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'especially when the days are sunny and the nights are cool', 'especially bright in years with many sunny days and cool nights'"
+    }
+  ]
+}

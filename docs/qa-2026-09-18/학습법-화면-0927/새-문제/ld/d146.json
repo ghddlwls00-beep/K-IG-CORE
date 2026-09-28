@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d146",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d146-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "특별 배달 편지가 늦게 와 짜증이 났다",
+        "소포가 너무 늦게 도착해 우체부에게 화가 났다",
+        "워싱턴 대학에 합격했다는 편지를 받고 기뻐했다",
+        "아침엔 실망했지만 나중에 온 편지에 기뻐했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        6,
+        7
+      ],
+      "note": "'I was quite disappointed this morning' · 'Later in the day, the mailman delivered a special delivery letter' · 'I was very happy to receive it' — 아침엔 실망, 나중에 온 편지로 기뻐함"
+    },
+    {
+      "id": "d146-q2",
+      "type": "세부사실",
+      "prompt": "그가 공부로 바쁜 중에도 매주 하는 일로 알맞은 것은?",
+      "options": [
+        "편지를 여러 통 쓴다",
+        "소포를 몇 개씩 부친다",
+        "엽서를 몇 장씩 보낸다",
+        "친구들을 찾아가 만난다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'I always find time to write several letters every week' — 매주 편지를 몇 통씩 씀"
+    },
+    {
+      "id": "d146-q3",
+      "type": "세부사실",
+      "prompt": "오늘 아침 우편물에 대해 그가 한 말로 알맞은 것은?",
+      "options": [
+        "편지는 없고 엽서만 왔다",
+        "기다리던 편지는 그 속에 없었다",
+        "소포가 망가진 채로 배달되었다",
+        "편지가 너무 많아 다 읽지 못했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'I didn't get the letter I was waiting for' — 기다리던 편지만 오지 않음"
+    }
+  ]
+}

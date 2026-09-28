@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr239",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr239-q1",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 첨단 의료 기술이 나오기 전의 상황으로 가장 적절한 것은?",
+      "options": [
+        "위중한 환자를 지금만큼 오래 살리지 못했다",
+        "의사들이 환자를 지금보다 더 오래 살려 두었다",
+        "환자에게는 치료를 거부할 권리가 없었다",
+        "인간다운 죽음을 둘러싼 고민이 더 복잡했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'has become more complicated in recent years' · 'enabled doctors to keep patients alive much longer'"
+    },
+    {
+      "id": "pr239-q2",
+      "type": "세부 사실",
+      "prompt": "네덜란드의 안락사 제도에 대한 설명으로 이 글의 내용과 일치하는 것은?",
+      "options": [
+        "1980년대에 처음 합법이 되었다",
+        "2002년부터 법으로 허용하고 있다",
+        "규정을 어긴 환자는 징역형을 받을 수 있다",
+        "합법이 된 뒤로는 어떤 의사도 처벌받지 않는다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'tolerate euthanasia under strict guidelines in the 1980s and made it legal in 2002'"
+    }
+  ]
+}

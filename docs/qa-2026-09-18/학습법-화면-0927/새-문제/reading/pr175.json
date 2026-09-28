@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr175",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr175-q1",
+      "type": "세부 사실",
+      "prompt": "본문에서 상황과 음식이 옳게 짝지어진 것은?",
+      "options": [
+        "신체 활동 - 빵과 시리얼",
+        "신체 활동 - 과일과 야채",
+        "낭만적인 저녁 - 빵과 시리얼",
+        "낭만적인 저녁 - 과일과 야채"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'choose fruit and vegetables to give them strength for physical activity' — 신체 활동에는 과일과 야채"
+    },
+    {
+      "id": "pr175-q2",
+      "type": "한 단계 추론",
+      "prompt": "본문의 사람들에 관해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "아침과 점심에는 늘 같은 음식을 먹는다",
+        "점심에는 섬유질이 적은 음식을 고른다",
+        "끼니마다 고르는 음식이 다를 수 있다",
+        "업무상 약속이 있는 날에는 식사를 거른다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'bread and cereal for breakfast, and salads for lunch' — 아침과 점심에 고르는 음식이 다르다"
+    }
+  ]
+}

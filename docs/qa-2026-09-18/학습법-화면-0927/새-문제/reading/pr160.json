@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr160",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr160-q1",
+      "type": "세부 사실",
+      "prompt": "토끼에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "options": [
+        "다 자란 나무의 겨울눈을 먹고 산다",
+        "눈이 깊을수록 겨울눈에 더 많이 닿는다",
+        "눈이 녹아야 나무 꼭대기에 닿을 수 있다",
+        "눈 무게에 부러진 나무의 뿌리를 먹는다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'the deeper icy snow helps the animal to reach more buds'라고 했다"
+    },
+    {
+      "id": "pr160-q2",
+      "type": "세부 사실",
+      "prompt": "사슴에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "options": [
+        "깊은 눈 덕분에 먹이를 더 쉽게 찾는다",
+        "깊은 눈 속에서는 걷기가 더 쉬워진다",
+        "깊은 눈 때문에 걷기도 먹이 찾기도 힘들다",
+        "깊은 눈 속에서도 굶는 사슴이 거의 없다"
+      ],
+      "answer": 2,
+      "evidence": [
+        7
+      ],
+      "note": "'Deep snow makes it hard for deer to walk and to find food'라고 했다"
+    }
+  ]
+}
