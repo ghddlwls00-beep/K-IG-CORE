@@ -196,8 +196,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
     const onKey = (e: KeyboardEvent) => {
       if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
       const k = e.key;
-      const onControl = e.target instanceof Element && e.target.closest("a, button, input, textarea, select, [contenteditable]");
-      if (k === " " && onControl) return; // Space presses the focused link or button
+      const onControl = e.target instanceof Element && e.target.closest("button, input, textarea, select, [contenteditable]");
+      if (k === " " && onControl) return; // Space presses the focused button (on a link it only scrolls, so it glides here)
       const here = Math.round((frame ? target : el.scrollTop) / height());
       let n: number;
       if (k === "ArrowDown" || k === "PageDown" || (k === " " && !e.shiftKey)) n = here + 1;
@@ -211,12 +211,44 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       glideTo(n);
     };
 
+    // With a mouse there is no snap, so a scroll the browser makes by itself would stop between slides (the pre-release
+    // check found Tab doing so 9 times in 12). Tab moving focus into another slide glides to that slide; any other
+    // browser-made scroll (find-in-page, middle-click autoscroll) glides onto the nearest slide once it has been still
+    // for a moment. Touch screens keep the browser's own snap.
+    const fine = window.matchMedia("(pointer: fine)");
+    let idleTimer = 0;
+    const onFocusIn = (e: FocusEvent) => {
+      if (!fine.matches || !(e.target instanceof Element)) return;
+      const slide = e.target.closest("section");
+      const n = slide ? Array.prototype.indexOf.call(el.children, slide) : -1;
+      if (n >= 0 && n !== Math.round((frame ? target : el.scrollTop) / height())) {
+        window.clearTimeout(settleTimer);
+        gestureFrom = null;
+        glideTo(n);
+      }
+    };
+    const onIdle = () => {
+      if (frame || gestureFrom !== null || !fine.matches) return;
+      const n = Math.round(el.scrollTop / height());
+      if (Math.abs(el.scrollTop - n * height()) > 1) glideTo(n);
+    };
+    const onScroll = () => {
+      if (frame || gestureFrom !== null) return;
+      window.clearTimeout(idleTimer);
+      idleTimer = window.setTimeout(onIdle, 150);
+    };
+
     el.addEventListener("wheel", onWheel, { passive: false });
+    el.addEventListener("scroll", onScroll, { passive: true });
+    el.addEventListener("focusin", onFocusIn);
     window.addEventListener("keydown", onKey);
     return () => {
       el.removeEventListener("wheel", onWheel);
+      el.removeEventListener("scroll", onScroll);
+      el.removeEventListener("focusin", onFocusIn);
       window.removeEventListener("keydown", onKey);
       window.clearTimeout(settleTimer);
+      window.clearTimeout(idleTimer);
       if (frame) cancelAnimationFrame(frame);
       glideToRef.current = () => {};
     };
